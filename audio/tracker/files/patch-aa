@@ -1,27 +1,5 @@
-*** Makefile.orig	Fri Mar  3 16:16:46 1995
---- Makefile	Sun Mar  5 17:47:06 1995
-***************
-*** 14,14 ****
-! MACHINE = sparc
---- 14,14 ----
-! MACHINE = freebsd
-***************
-*** 23,29 ****
-  # User interface type. Right now, this is Unix as there are no alternatives.
-  UI = Unix/./
-  
-! PREFIX=/users/algo/espie/pub
-  # Destination directory for tracker binaries and manpage.
-  #
-  # If you don't wish to use the 'make install' and 'make install.man'
---- 23,29 ----
-  # User interface type. Right now, this is Unix as there are no alternatives.
-  UI = Unix/./
-  
-! PREFIX=/usr/local
-  # Destination directory for tracker binaries and manpage.
-  #
-  # If you don't wish to use the 'make install' and 'make install.man'
+*** Makefile.orig	Thu Mar  2 16:53:34 1995
+--- Makefile	Fri Mar  3 07:37:29 1995
 ***************
 *** 32,38 ****
   MAN_DIR = $(PREFIX)/man
