@@ -2,6 +2,7 @@
 %%SITE_PERL%%/SVG.pm
 %%SITE_PERL%%/SVG/DOM.pm
 %%SITE_PERL%%/SVG/Element.pm
+%%SITE_PERL%%/SVG/Extension.pm
 %%SITE_PERL%%/SVG/Manual.pm
 %%SITE_PERL%%/SVG/XML.pm
 @unexec rmdir %D/%%SITE_PERL%%/SVG 2>/dev/null || true
@@ -16,6 +17,7 @@
 %%PORTDOCS%%%%EXAMPLESDIR%%/sun_text_sample.pl
 %%PORTDOCS%%%%EXAMPLESDIR%%/svg.pl
 %%PORTDOCS%%%%EXAMPLESDIR%%/svg_dom_sample.pl
+%%PORTDOCS%%%%EXAMPLESDIR%%/svg_gd_simple_1.pl
 %%PORTDOCS%%%%EXAMPLESDIR%%/svgtest2.pl
 %%PORTDOCS%%%%EXAMPLESDIR%%/yaph5.cgi
 %%PORTDOCS%%@dirrm %%EXAMPLESDIR%%
