@@ -44,6 +44,7 @@ share/gnome/pixmaps/gtranslator/untranslated_small.png
 share/locale/am/LC_MESSAGES/gtranslator.mo
 share/locale/az/LC_MESSAGES/gtranslator.mo
 share/locale/be/LC_MESSAGES/gtranslator.mo
+share/locale/bs/LC_MESSAGES/gtranslator.mo
 share/locale/ca/LC_MESSAGES/gtranslator.mo
 share/locale/cs/LC_MESSAGES/gtranslator.mo
 share/locale/da/LC_MESSAGES/gtranslator.mo
@@ -83,6 +84,7 @@ share/locale/sr@Latn/LC_MESSAGES/gtranslator.mo
 share/locale/sv/LC_MESSAGES/gtranslator.mo
 share/locale/ta/LC_MESSAGES/gtranslator.mo
 share/locale/th/LC_MESSAGES/gtranslator.mo
+share/locale/tk/LC_MESSAGES/gtranslator.mo
 share/locale/tr/LC_MESSAGES/gtranslator.mo
 share/locale/uk/LC_MESSAGES/gtranslator.mo
 share/locale/vi/LC_MESSAGES/gtranslator.mo
