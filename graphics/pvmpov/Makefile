@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	pvmpov
-PORTVERSION=	3.1e.2
+PORTVERSION=	3.1g.2
 CATEGORIES=	graphics parallel
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
-DISTNAME=	${PORTNAME}-3.1e2
+DISTNAME=	${PORTNAME}-3.1g2
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
@@ -24,9 +24,16 @@ RUN_DEPENDS=	povray:${PORTSDIR}/graphics/povray31 \
 USE_PERL5_BUILD=yes
 USE_XLIB=	yes
 
-WRKSRC=		${WRKDIR}/pvmpov3_1e_2
+WRKSRC=		${WRKDIR}/pvmpov3_1g_2
 BUILDBASE=	${WRKSRC}/povray31/source/pvm
 PVM_ROOT=	${LOCALBASE}/lib/pvm
+
+.if !defined(NOPORTDOCS)
+PORTDOCS=	*
+.endif
+
+PLIST_FILES=	bin/x-pvmpov \
+		lib/pvm/bin/FREEBSD/x-pvmpov
 
 pre-configure:
 		@ (cd ${WRKDIRPREFIX}${.CURDIR}/../../graphics/povray31/work && \
@@ -42,12 +49,11 @@ do-build:
 
 do-install:
 		@ ${MKDIR} ${PVM_ROOT}/bin/FREEBSD
-		@ ${MKDIR} ${PREFIX}/share/doc/pvmpov
 		@ ${INSTALL_PROGRAM} ${BUILDBASE}/FREEBSD/x-pvmpov ${PVM_ROOT}/bin/FREEBSD
 		@ ${LN} -sf ${PVM_ROOT}/bin/FREEBSD/x-pvmpov ${PREFIX}/bin/x-pvmpov
 .if !defined(NOPORTDOCS)
-		@ ${MKDIR} ${PREFIX}/share/doc/pvmpov
-		@ ${INSTALL_MAN} ${WRKSRC}/PVM* ${PREFIX}/share/doc/pvmpov
+		@ ${MKDIR} ${DOCSDIR}
+		@ ${INSTALL_DATA} ${WRKSRC}/doc/PVMPOV-HOWTO.html ${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>
