@@ -1878,6 +1878,7 @@ lib/X11/doc/html/twm.1.html
 lib/X11/doc/html/vesa.4.html
 lib/X11/doc/html/vga.4.html
 lib/X11/doc/html/viewres.1.html
+lib/X11/doc/html/vmware.4.html
 lib/X11/doc/html/void.4.html
 lib/X11/doc/html/wacom.4.html
 lib/X11/doc/html/x11perf.1.html
@@ -6495,6 +6496,7 @@ lib/modules/drivers/trident_drv.o
 lib/modules/drivers/tseng_drv.o
 lib/modules/drivers/vesa_drv.o
 lib/modules/drivers/vga_drv.o
+lib/modules/drivers/vmware_drv.o
 lib/modules/extensions/libGLcore.a
 lib/modules/extensions/libdbe.a
 lib/modules/extensions/libdri.a
