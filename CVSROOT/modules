@@ -4029,6 +4029,7 @@ latd		ports/net/latd
 latex		ports/print/latex
 latex-beamer	ports/print/latex-beamer
 latex-keystroke	ports/print/latex-keystroke
+latex-mathabx	ports/print/latex-mathabx
 latex-mk	ports/misc/latex-mk
 latex-pgf	ports/print/latex-pgf
 latex-xcolor	ports/print/latex-xcolor
