@@ -1,7 +1,7 @@
 #-*- mode: Fundamental; tab-width: 4; -*-
 # ex:ts=4
 #
-#	$Id: bsd.port.mk,v 1.306 1999/03/08 07:23:10 asami Exp $
+#	$Id: bsd.port.mk,v 1.307 1999/03/09 11:27:34 asami Exp $
 #	$NetBSD: $
 #
 #	bsd.port.mk - 940820 Jordan K. Hubbard.
@@ -332,7 +332,7 @@ OpenBSD_MAINTAINER=	imp@OpenBSD.ORG
 #				  HAS_CONFIGURE.
 # CONFIGURE_SCRIPT - Name of configure script (defaults: configure).
 # CONFIGURE_TARGET - The name of target to call when GNU_CONFIGURE is
-#				  defined (default: ${MACHINE_ARCH}--freebsd).
+#				  defined (default: ${MACHINE_ARCH}--freebsd${OSREL}).
 # CONFIGURE_ARGS - Pass these args to configure if ${HAS_CONFIGURE} is set
 #				  (default: "--prefix=${PREFIX} ${CONFIGURE_TARGET}" if
 #				  GNU_CONFIGURE is set, empty otherwise).
@@ -653,6 +653,7 @@ MAKEFILE?=		Makefile
 MAKE_ENV+=		PREFIX=${PREFIX} LOCALBASE=${LOCALBASE} X11BASE=${X11BASE} MOTIFLIB="${MOTIFLIB}" CFLAGS="${CFLAGS}" LIBDIR="${LIBDIR}"
 
 .if exists(/usr/bin/fetch)
+# avoid -A for 2.2 -- it's not ported to that branch
 .if ${OSVERSION} < 300000
 FETCH_CMD?=		/usr/bin/fetch
 .else
@@ -810,12 +811,6 @@ TRUE?=		/usr/bin/true
 # Used to print all the '===>' style prompts - override this to turn them off.
 ECHO_MSG?=		${ECHO}
 
-.for sub in ${PLIST_SUB}
-_sedsubplist!=	sym=`${ECHO} "${sub}" | ${SED} -e 's/=.*//'`; \
-		val=`${ECHO} "${sub}" | ${SED} -e 's/^[^=][^=]*=//'`; \
-		echo "${_sedsubplist} -e s!%%$${sym}%%!$${val}!g"
-.endfor
-
 ALL_TARGET?=		all
 INSTALL_TARGET?=	install
 
@@ -894,6 +889,15 @@ MASTER_SITE_PORTS_JP+=	\
 	ftp://ftp4.jp.freebsd.org/pub/FreeBSD-jp/ports-jp/LOCAL_PORTS/%SUBDIR%/ \
 	ftp://ftp.ics.es.osaka-u.ac.jp/pub/mirrors/FreeBSD-jp/ports-jp/LOCAL_PORTS/%SUBDIR%/ \
 	ftp://ftp.t-cnet.or.jp/pub/FreeBSD-jp/ports-jp/LOCAL_PORTS/%SUBDIR%/
+
+MASTER_SITE_TCLTK+= \
+	ftp://ftp.scriptics.com/pub/tcl/%SUBDIR%/ \
+	ftp://mirror.neosoft.com/pub/tcl/mirror/ftp.scriptics.com/%SUBDIR%/ \
+	ftp://sunsite.utk.edu/pub/tcl/%SUBDIR%/ \
+	ftp://ftp.funet.fi/pub/languages/tcl/tcl/%SUBDIR%/ \
+	ftp://ftp.cs.tu-berlin.de/pub/tcl/distrib/%SUBDIR%/ \
+	ftp://ftp.srcc.msu.su/mirror/ftp.scriptics.com/pub/tcl/%SUBDIR%/ \
+	ftp://ftp.lip6.fr/pub/tcl/distrib/%SUBDIR%/
 
 # Empty declaration to avoid "variable MASTER_SITES recursive" error
 MASTER_SITES?=
@@ -1133,7 +1137,12 @@ _MANPAGES:=	${_MANPAGES:S/$/.gz/}
 #
 # Don't build a port on an ELF machine if it's broken for ELF.
 #
-# Don't build a port if it's broken.
+# Don't build a port if it's broken, unless we're running a parallel
+# build (in case it's fixed).
+#
+# Don't build a port if it's forbidden for whatever reason.
+#
+# Don't build a port if the system is too old.
 ################################################################
 
 OLDSYSTCL!=	${ECHO} /usr/include/tcl.h /usr/lib/libtcl??.so.*.*
@@ -1151,6 +1160,18 @@ IGNORE=	": You have an old file \(${file}\) that could cause problems for some p
 IGNORE=	": You have an old file \(${file}\) that could cause problems for some ports to compile.  Please remove it and try again.  You may have to reinstall tk from the ports tree afterwards"
 .endif
 .endfor
+.endif
+
+# You need an upgrade kit or make world newer than this
+BSDPORTMKVERSION=	19990327
+VERSIONFILE=	${PKG_DBDIR}/.mkversion
+.if exists(${VERSIONFILE})
+SYSTEMVERSION!=	cat ${VERSIONFILE}
+.else
+SYSTEMVERSION=	0
+.endif
+.if ${BSDPORTMKVERSION} > ${SYSTEMVERSION}
+IGNORE=	": Your system is too old to use this bsd.port.mk.  You need a fresh make world or an upgrade kit.  Please go to http://www.freebsd.org/ports/ or a mirror site and follow the instructions"
 .endif
 
 .if defined(ONLY_FOR_ARCHS)
@@ -1201,10 +1222,14 @@ IGNORE=	"defines NO_EXTRACT, which is obsoleted.  Try changing it to EXTRACT_ONL
 IGNORE=	"defines NO_CONFIGURE, which is obsoleted"
 .elif defined(NO_PATCH)
 IGNORE=	"defines NO_PATCH, which is obsoleted"
-.elif (defined(BROKEN_ELF) && (${PORTOBJFORMAT} == "elf"))
+.elif defined(BROKEN_ELF) && (${PORTOBJFORMAT} == "elf") && \
+	  !defined(PARALLEL_PACKAGE_BUILD)
 IGNORE=	"is broken for ELF: ${BROKEN_ELF}"
 .elif defined(BROKEN) && !defined(PARALLEL_PACKAGE_BUILD)
+# try building even if marked BROKEN
 IGNORE=	"is marked as broken: ${BROKEN}"
+.elif defined(FORBIDDEN)
+IGNORE=	"is forbidden: ${FORBIDDEN}"
 .endif
 
 .if (defined(MANUAL_PACKAGE_BUILD) && defined(PACKAGE_BUILDING) && !defined(PARALLEL_PACKAGE_BUILD))
@@ -1467,7 +1492,7 @@ do-configure:
 		  ${SCRIPTDIR}/configure; \
 	fi
 .if defined(HAS_CONFIGURE)
-	@(cd ${WRKSRC} && CC="${CC}" CXX="${CXX}" ac_cv_path_CC="${CC}" \
+	@(cd ${WRKSRC} && CC="${CC}" CXX="${CXX}" \
 	    CFLAGS="${CFLAGS}" \
 	    INSTALL="/usr/bin/install -c -o ${BINOWN} -g ${BINGRP}" \
 	    INSTALL_DATA="${INSTALL_DATA}" \
@@ -2204,6 +2229,12 @@ pretty-print-run-depends-list:
 
 # Generate packing list.  Also tests to make sure all required package
 # files exist.
+
+.for sub in ${PLIST_SUB}
+_sedsubplist!=	sym=`${ECHO} "${sub}" | ${SED} -e 's/=.*//'`; \
+		val=`${ECHO} "${sub}" | ${SED} -e 's/^[^=][^=]*=//'`; \
+		echo "${_sedsubplist} -e s!%%$${sym}%%!$${val}!g"
+.endfor
 
 .if !target(generate-plist)
 generate-plist:
