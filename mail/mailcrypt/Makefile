@@ -3,7 +3,7 @@
 # Date created:        29 May 1998
 # Whom:                Murray Stokely <murray@cdrom.com>
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1998/07/04 19:46:38 steve Exp $
 #
 
 DISTNAME=	mailcrypt-3.4
@@ -12,6 +12,8 @@ MASTER_SITES=	http://cag-www.lcs.mit.edu/mailcrypt/
 MASTER_SITE_SUBDIR=	mailcrypt
 
 MAINTAINER=	murray@cdrom.com
+
+BROKEN= 	"requires emacs to build but has no dependency for it."
 
 GNU_CONFIGURE=	yes
 
