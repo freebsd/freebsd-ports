@@ -1,5 +1,7 @@
 bin/slib48
+lib/scheme48/slibcat
 lib/scheme48/slib.image
+share/slib/Bev2slib.scm
 share/slib/Template.scm
 share/slib/alist.scm
 share/slib/alistab.scm
@@ -23,14 +25,18 @@ share/slib/determ.scm
 share/slib/dwindtst.scm
 share/slib/dynamic.scm
 share/slib/dynwind.scm
+share/slib/eval.scm
 share/slib/factor.scm
 share/slib/fluidlet.scm
 share/slib/format.scm
 share/slib/formatst.scm
 share/slib/genwrite.scm
 share/slib/getopt.scm
+share/slib/getparam.scm
+share/slib/glob.scm
 share/slib/hash.scm
 share/slib/hashtab.scm
+share/slib/htmlform.scm
 share/slib/lineio.scm
 share/slib/logical.scm
 share/slib/macrotst.scm
@@ -44,13 +50,14 @@ share/slib/mularg.scm
 share/slib/mwdenote.scm
 share/slib/mwexpand.scm
 share/slib/mwsynrul.scm
+share/slib/nclients.scm
 share/slib/obj2str.scm
+share/slib/object.scm
 share/slib/paramlst.scm
 share/slib/plottest.scm
 share/slib/pp.scm
 share/slib/ppfile.scm
 share/slib/prec.scm
-share/slib/primes.scm
 share/slib/printf.scm
 share/slib/priorque.scm
 share/slib/process.scm
@@ -63,6 +70,7 @@ share/slib/randinex.scm
 share/slib/random.scm
 share/slib/ratize.scm
 share/slib/rdms.scm
+share/slib/recobj.scm
 share/slib/record.scm
 share/slib/repl.scm
 share/slib/report.scm
@@ -77,6 +85,7 @@ share/slib/scainit.scm
 share/slib/scamacr.scm
 share/slib/scanf.scm
 share/slib/scaoutp.scm
+share/slib/schmooz.scm
 share/slib/scmacro.scm
 share/slib/scmactst.scm
 share/slib/selfset.scm
@@ -102,8 +111,8 @@ share/slib/trnscrpt.scm
 share/slib/tsort.scm
 share/slib/tzfile.scm
 share/slib/values.scm
+share/slib/yasyn.scm
 share/slib/withfile.scm
 share/slib/wttest.scm
 share/slib/wttree.scm
-share/slib/yasos.scm
 @dirrm share/slib

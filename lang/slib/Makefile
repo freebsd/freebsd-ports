@@ -3,13 +3,14 @@
 # Date created:        01 April 1998
 # Whom:                Yukihiro Nakai <Nakai@technologist.com>
 #
-# $Id: Makefile,v 1.2 1998/10/26 13:15:54 vanilla Exp $
+# $Id: Makefile,v 1.3 1999/01/12 16:51:06 vanilla Exp $
 #
 
-DISTNAME=	slib2c0
-PKGNAME=	slib-2c0
+DISTNAME=	slib2c5
+PKGNAME=	slib-2c5
 CATEGORIES=	lang
-MASTER_SITES=	ftp://ftp.gnome.org/pub/GNOME/extra-src/
+MASTER_SITES=	${MASTER_SITE_GNU}
+MASTER_SITE_SUBDIR=	scm
 
 MAINTAINER=	nacai@iname.com
 
@@ -21,6 +22,8 @@ ALL_TARGET=	slib48
 INSTALL_TARGET=	install48
 
 post-install:
+	# 	moved here from author's makefile
+	${TOUCH} -r ${WRKSRC}/slibcat ${PREFIX}/lib/scheme48/slibcat
 	${MKDIR} ${PREFIX}/share/slib
 	${INSTALL_DATA} ${WRKSRC}/*.scm ${PREFIX}/share/slib
 
