@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	omniORB
-PORTVERSION=	3.0.1
+PORTVERSION=	3.0.2
 CATEGORIES=	devel
 MASTER_SITES=	ftp://ftp.orl.co.uk/pub/omniORB/omniORB3/
 DISTNAME=	${PORTNAME}_${PORTVERSION:S/.//g}
@@ -17,9 +17,6 @@ MAN1=		catior.1 genior.1 nameclt.1 obuildtree.1 ols.1 omake.1 \
 		omniNames.1 opriv.1 oshadow.1
 
 WRKSRC=		${WRKDIR}/omni/src
-
-BUILD_DEPENDS=  python1.5:${PORTSDIR}/lang/python15
-RUN_DEPENDS=    python1.5:${PORTSDIR}/lang/python15
 
 USE_PYTHON=	yes
 USE_NEWGCC=	yes
@@ -73,7 +70,7 @@ do-install:
 	${MKDIR} ${PREFIX}/share/doc/omniORB
 	${INSTALL_DATA} ${WRKSRC}/../README.unix ${PREFIX}/share/doc/omniORB
 	${INSTALL_DATA} ${WRKSRC}/../README.FreeBSD ${PREFIX}/share/doc/omniORB
-	${INSTALL_DATA} ${WRKSRC}/../ReleaseNote_omniORB_301 ${PREFIX}/share/doc/omniORB
+	${INSTALL_DATA} ${WRKSRC}/../ReleaseNote_omniORB_302 ${PREFIX}/share/doc/omniORB
 	cd ${WRKSRC}/../doc && \
 		find . |cpio -pdum -R ${SHAREOWN}:${SHAREGRP} ${PREFIX}/share/doc/omniORB
 .endif
