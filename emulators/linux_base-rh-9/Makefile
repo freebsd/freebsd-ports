@@ -43,10 +43,6 @@ PATCH_SITE_SUBDIR=	updates/${PORTVERSION}/${LANG}/os/${MACHINE_ARCH}
 PATCHFILES=		${UPDATES}
 
 MAINTAINER=		ports@FreeBSD.org
-.if (${MACHINE_ARCH} == "alpha")
-FORBIDDEN=	"see <URL:http://rhn.redhat.com/errata/RHSA-2003-089.html> or\
- <URL:http://www.cert.org/advisories/CA-2003-10.html>"
-.endif
 COMMENT=	The base set of packages needed in Linux mode
 
 BUILD_DEPENDS=		rpm:${PORTSDIR}/archivers/rpm
@@ -64,8 +60,13 @@ MD5_FILE=		${MASTERDIR}/distinfo.${MACHINE_ARCH}
 # Let's avoid hardcoding 'en' as the language.
 LANG=			en
 
+.if (${MACHINE_ARCH} == "alpha")
+UPD_SET1=		glibc-common-2.2.4-32.1.${MACHINE_ARCH}.rpm \
+			glibc-2.2.4-32.1.${MACHINE_ARCH}.rpm
+.else
 UPD_SET1=		glibc-common-2.2.4-32.${MACHINE_ARCH}.rpm \
 			glibc-2.2.4-32.${MACHINE_ARCH}.rpm
+.endif
 UPD_SET2=		zlib-1.1.3-25.7.${MACHINE_ARCH}.rpm
 UPDATES=		${UPD_SET1} ${UPD_SET2}
 
