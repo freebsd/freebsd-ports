@@ -31,13 +31,10 @@ CPPFLAGS=	-I${LOCALBASE}/include -I${X11BASE}/include ${PTHREAD_CFLAGS}
 LDFLAGS=	-L${LOCALBASE}/lib -L${X11BASE}/lib -lGL -lGLU \
 		${PTHREAD_LIBS}
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 502000
-BROKEN=		"Does not compile"
-.endif
-
 post-patch:
 	@${REINPLACE_CMD} -e "s,Bison ,Bison,g" ${WRKSRC}/vx68k-gtk/configure
+	@${REINPLACE_CMD} -e '/^#define _POSIX_C_SOURCE 199506L/d' \
+		${WRKSRC}/vx68k-gtk/libvx68k-gtk/gl.cc \
+		${WRKSRC}/vx68k-gtk/libvx68k-gtk/gtkconsole.cc
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
