@@ -8941,6 +8941,7 @@ resin3		ports/www/resin3
 resourceext	ports/x11/resourceext
 resume		ports/textproc/resume
 retawq		ports/www/retawq
+revelation	ports/security/revelation
 rexima		ports/audio/rexima
 rexx-curl	ports/ftp/rexx-curl
 rexx-imc	ports/lang/rexx-imc
