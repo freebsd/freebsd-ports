@@ -1,14 +1,14 @@
 # New ports collection makefile for:	tkinfo
-# Version required:     0.6
+# Version required:     0.8
 # Date created:         16 Jan 1995
 # Whom:                 thomas@ghpc8.ihf.rwth-aachen.de
 #
-# $Id: Makefile,v 1.8 1996/09/27 07:19:26 tg Exp $
+# $Id: Makefile,v 1.9 1996/11/11 05:50:14 obrien Exp $
 #
 
-DISTNAME=	tkinfo-0.6
+DISTNAME=	tkinfo-0.8
 CATEGORIES=	misc
-MASTER_SITES=	ftp://ptolemy.eecs.berkeley.edu/pub/misc/
+MASTER_SITES=	http://emile.math.ucsb.edu:8000/
 
 MAINTAINER=	tg@freebsd.org
 

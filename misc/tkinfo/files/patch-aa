@@ -1,13 +1,16 @@
-*** tkinfo.orig	Fri Aug 27 09:52:50 1993
---- tkinfo	Mon Jan 16 14:41:41 1995
-***************
-*** 4,7 ****
-  # a Bourne script: there is no way to get proper quoting and pass through ``~''
-  # in the csh.
-  # RCS: $Header: /home/ncvs/ports/misc/tkinfo/patches/patch-aa,v 1.1.1.1 1995/02/24 12:54:57 jmz Exp $
-! exec wish -f $0.tcl "$@"
---- 4,7 ----
-  # a Bourne script: there is no way to get proper quoting and pass through ``~''
-  # in the csh.
-  # RCS: $Header: /home/ncvs/ports/misc/tkinfo/patches/patch-aa,v 1.1.1.1 1995/02/24 12:54:57 jmz Exp $
-! exec wish4.1 -f /usr/local/lib/tk/tkinfo/`basename $0.tcl` "$@"
+--- tkinfo.orig	Fri Feb  7 05:34:36 1997
++++ tkinfo	Fri Feb  7 09:44:40 1997
+@@ -7,11 +7,11 @@
+ # uses the same directory as where this shell script is installed.
+ # You might consider installing the scripts into "/usr/local/lib/tkinfo",
+ # and using LIBDIR=/usr/local/lib/tkinfo instead.
+-LIBDIR=`dirname $0`
++LIBDIR=`dirname $0`/../share/tk/tkinfo
+ #LIBDIR=/usr/local/lib/tkinfo
+ 
+ # Set the name (or path) of the wish binary.  Normally just ``wish''.
+-WISH=wish
++WISH=wish4.1
+ 
+ exec $WISH -file $LIBDIR/tkinfo.tcl -name tkinfo ${1+"$@"}
+ exit 1

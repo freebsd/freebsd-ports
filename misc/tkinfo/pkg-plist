@@ -1,4 +1,6 @@
 bin/tkinfo
-lib/tk/tkinfo/searchbox.tcl
-lib/tk/tkinfo/tkinfo.tcl
-lib/tk/tkinfo/topgetopt.tcl
+share/tk/tkinfo/searchbox.tcl
+share/tk/tkinfo/tkicore.tcl
+share/tk/tkinfo/tkinfo.tcl
+share/tk/tkinfo/tkiwin.tcl
+share/tk/tkinfo/topgetopt.tcl
