@@ -1,0 +1,5 @@
+Gnome frontend to the Aspell library.  Or put another way a simple
+spell checker that does a way better job than ispell does with coming
+up with suggestions.
+
+WWW: http://aspell.sourceforge.net/

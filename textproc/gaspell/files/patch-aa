@@ -1,0 +1,21 @@
+--- Makefile.orig	Sun Feb  6 00:26:12 2000
++++ Makefile	Thu Feb 17 15:30:12 2000
+@@ -1,14 +1,14 @@
+ 
+ # You will need to specify the absolute path if gnome-config is not in 
+ # your path or if the one in your path is not the correct one
+-GNOME_CONFIG = gnome-config 
++GNOME_CONFIG = ${X11BASE}/bin/gnome-config 
+ 
+ # This should be set to where aspell was installed the default is
+ # /usr/local
+-ASPELL_PREFIX = /usr/local
++ASPELL_PREFIX = ${PREFIX}
+ 
+-CXX = g++
+-CXXFLAGS = -O2 -g
++CXX ?= g++
++CXXFLAGS ?= -O2 -g
+ 
+ # You should not need to modify anything below this comment
+ 
