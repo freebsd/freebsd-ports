@@ -77,6 +77,19 @@ share/apps/kmix/pics/mix_unknown.xpm
 share/apps/kmix/pics/mix_volume.xpm
 share/apps/kscd/pics/cdsmall.xpm
 share/apps/kscd/pics/kscdlogo.xpm
+@exec /bin/mkdir -p %D/share/apps/kscd/cddb
+@exec /bin/mkdir -p %D/share/apps/kscd/cddb/blues
+@exec /bin/mkdir -p %D/share/apps/kscd/cddb/classical
+@exec /bin/mkdir -p %D/share/apps/kscd/cddb/country
+@exec /bin/mkdir -p %D/share/apps/kscd/cddb/data
+@exec /bin/mkdir -p %D/share/apps/kscd/cddb/folk
+@exec /bin/mkdir -p %D/share/apps/kscd/cddb/jazz
+@exec /bin/mkdir -p %D/share/apps/kscd/cddb/misc
+@exec /bin/mkdir -p %D/share/apps/kscd/cddb/newage
+@exec /bin/mkdir -p %D/share/apps/kscd/cddb/reggae
+@exec /bin/mkdir -p %D/share/apps/kscd/cddb/rock
+@exec /bin/mkdir -p %D/share/apps/kscd/cddb/soundtrack
+@exec /bin/chmod 1777 %D/share/apps/kscd/cddb/*
 share/doc/HTML/de/kmidi/kmidi-1.html
 share/doc/HTML/de/kmidi/kmidi-2.html
 share/doc/HTML/de/kmidi/kmidi-3.html

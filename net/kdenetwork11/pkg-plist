@@ -768,6 +768,8 @@ share/toolbar/mini-ktalk.xpm
 @exec ln -sf libpbutton.so.0 %D/lib/ksirc/libpbutton.so
 @exec ln -sf libpalistbox.so.0 %D/lib/ksirc/libpalistbox.so
 @exec ln -sf libksirclistbox.so.0 %D/lib/ksirc/libksirclistbox.so
+@exec ln -sf kppp.html %D/share/doc/HTML/en/kppp/index.html
+@unexec rm -f %D/share/doc/HTML/en/kppp/index.html
 @dirrm share/doc/HTML/it/ktalkd
 @dirrm share/doc/HTML/fr/ktalkd
 @dirrm share/doc/HTML/en/pws
@@ -831,6 +833,7 @@ share/toolbar/mini-ktalk.xpm
 @dirrm share/apps/kmail
 @dirrm share/apps/kbiff/pics
 @dirrm share/apps/kbiff
+@dirrm share/applnk/Settings/Network
 @unexec rm -f %D/lib/ksirc/libksirclistbox.so
 @unexec rm -f %D/lib/ksirc/libpalistbox.so
 @unexec rm -f %D/lib/ksirc/libpbutton.so
@@ -848,5 +851,3 @@ share/toolbar/mini-ktalk.xpm
 @unexec rm -f %D/lib/ksirc/libptablevw.so
 @dirrm lib/ksirc
 @unexec rm -f %D/lib/libpuke.so
-@exec ln -sf kppp.html %D/share/doc/HTML/en/kppp/index.html
-@unexec rm -f %D/share/doc/HTML/en/kppp/index.html

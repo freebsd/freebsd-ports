@@ -24,7 +24,6 @@
     SUBDIR += bonobo
     SUBDIR += bugbuddy
     SUBDIR += c_c++_reference
-    SUBDIR += c_c++_reference-i18n
     SUBDIR += camlp4
     SUBDIR += cbrowser
     SUBDIR += cc65
@@ -113,11 +112,8 @@
     SUBDIR += imake-4
     SUBDIR += jam
     SUBDIR += kdbg
-    SUBDIR += kdbg-i18n
     SUBDIR += kdelibdocs
-    SUBDIR += kdelibdocs-i18n
     SUBDIR += kdevelop
-    SUBDIR += kdevelop-i18n
     SUBDIR += kpp
     SUBDIR += ktranslator
     SUBDIR += lclint

@@ -1,0 +1,11 @@
+--- kikbd/maps/Makefile.in.orig	Wed Sep  8 00:20:32 1999
++++ kikbd/maps/Makefile.in	Wed Sep 15 23:49:42 1999
+@@ -170,7 +170,7 @@
+ x_libraries = @x_libraries@
+ xdmconfigsubdir = @xdmconfigsubdir@
+ 
+-data_DATA = cf.kimap csz.kimap pl.kimap rum.kimap ua.kimap 	uawm.kimap csp.kimap hu.kimap plnew.kimap ruw.kimap 	uam.kimap csy.kimap ru.kimap ruwm.kimap uaw.kimap 	bg.kimap fr.kimap de.kimap en.kimap el1.kimap el7.kimap lt.kimap 	he.kimap rua.kimap rui.kimap rumcyr.kimap skp.kimap sky.kimap skz.kimap 	es.kimap no.kimap sv.kimap fi.kimap se.kimap weu.kimap is.kimap 	fr_ch.kimap de_ch.kimap dv.kimap hr.kimap it.kimap la.kimap 	th.kimap ro.kimap pt.kimap pt-acc.kimap et.kimap dva.kimap 	trq.kimap
++data_DATA = cf.kimap csz.kimap pl.kimap rum.kimap ua.kimap 	uawm.kimap csp.kimap hu.kimap plnew.kimap ruw.kimap 	uam.kimap csy.kimap ru.kimap ruwm.kimap uaw.kimap 	bg.kimap fr.kimap de.kimap en.kimap el1.kimap el7.kimap lt.kimap 	he.kimap rua.kimap rui.kimap rumcyr.kimap skp.kimap sky.kimap skz.kimap 	es.kimap no.kimap sv.kimap fi.kimap se.kimap weu.kimap is.kimap 	fr_ch.kimap de_ch.kimap dv.kimap hr.kimap it.kimap la.kimap 	th.kimap ro.kimap pt.kimap pt-acc.kimap et.kimap dva.kimap 	trq.kimap ja.kimap
+ 
+ 
+ #  pt.kimap pt-acc.kimap

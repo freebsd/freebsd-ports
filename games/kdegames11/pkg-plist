@@ -485,8 +485,8 @@ share/apps/kreversi/pics/zoomout.xpm
 share/apps/kreversi/sounds/click.wav
 share/apps/kreversi/sounds/lost.wav
 share/apps/kreversi/sounds/won.wav
-share/apps/ksame/pics/stones.gif
-share/apps/ksame/pics/stones_mask.gif
+share/apps/ksame/pics/stones.xpm
+share/apps/ksame/pics/stones_mask.xpm
 share/apps/kshisen/pics/kshisen.xpm
 share/apps/kshisen/pics/kshisen_bgnd.xpm
 share/apps/ksmiletris/data/bg1.bmp
