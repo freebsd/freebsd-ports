@@ -10,8 +10,6 @@ PORTVERSION=	1.6p0
 CATEGORIES=	games
 MASTER_SITES=	ftp://ftp.digex.net/pub/mud/tinymux/
 
-MAINTAINER=	cjohnson@camelot.com
-
 BUILD_DEPENDS=	${LOCALBASE}/lib/libgdbm.a:${PORTSDIR}/databases/gdbm
 
 WRKSRC=		${WRKDIR}/src
