@@ -1,7 +1,11 @@
---- Imakefile.orig	Sun Aug  8 21:25:29 1999
-+++ Imakefile	Sun Aug  8 21:25:53 1999
-@@ -9,7 +9,7 @@
- CCOPTIONS	= $(MOREFLAGS)
+--- Imakefile.orig	Sun Sep  5 09:24:23 1999
++++ Imakefile	Sat Sep 25 23:52:18 1999
+@@ -6,10 +6,10 @@
+ MANDIR		= CMANDIR
+ THEMESDIR	= CTHDIR
+ MOREFLAGS	= -I/usr/local/include -I/usr/X11R6/include -I.
+-CCOPTIONS	= $(MOREFLAGS)
++CCOPTIONS	= -O0 $(MOREFLAGS)
  SYS_LIBRARIES	= $(XLIB) -lXpm
  
 -LOCAL_LIBRARIES = -L../libworkman -lworkman -L/usr/local/lib
