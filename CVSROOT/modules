@@ -1171,6 +1171,7 @@ dviselect	ports/print/dviselect
 dxpc		ports/x11/dxpc
 dylan		ports/lang/dylan
 dynamag		ports/x11/dynamag
+dynamechs	ports/graphics/dynamechs
 e16utils	ports/x11-wm/e16utils
 e2fsprogs	ports/sysutils/e2fsprogs
 e3		ports/editors/e3
