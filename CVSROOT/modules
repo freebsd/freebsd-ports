@@ -4289,6 +4289,7 @@ p5-AxKit-XSP-Param	ports/www/p5-AxKit-XSP-Param
 p5-AxKit-XSP-PerForm	ports/www/p5-AxKit-XSP-PerForm
 p5-AxKit-XSP-Sendmail	ports/www/p5-AxKit-XSP-Sendmail
 p5-AxKit-XSP-Util	ports/www/p5-AxKit-XSP-Util
+p5-AxKit-XSP-WebUtils	ports/www/p5-AxKit-XSP-WebUtils
 p5-B-Graph	ports/devel/p5-B-Graph
 p5-BSD-Resource	ports/devel/p5-BSD-Resource
 p5-BSD-stat	ports/devel/p5-BSD-stat
