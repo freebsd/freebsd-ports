@@ -8,7 +8,7 @@
 PORTNAME=	mdbconv
 PORTVERSION=	1.6
 CATEGORIES=	palm databases
-MASTER_SITES=	http://www.mobilegeneration.com/downloads/
+MASTER_SITES=	http://www.handmark.com/downloads/
 DISTNAME=	${PORTNAME}freebsd3x
 
 MAINTAINER=	knu@FreeBSD.org
