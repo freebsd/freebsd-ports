@@ -3,43 +3,65 @@
 # Date created:         31 Aug 1995
 # Whom:                 ache
 #
-# $Id: Makefile,v 1.16 1997/12/25 22:42:19 ache Exp $
+# $Id: Makefile,v 1.17 1998/06/27 05:19:26 asami Exp $
 #
 
-DISTNAME=       x6rus-2.2.0-bin
-PKGNAME=        ru-X11-3.3
+DISTNAME=       ru-X11-3.3
 CATEGORIES=     russian x11
 MASTER_SITES=   ftp://ftp.kiarchive.ru/pub/misc/fonts/cyrillic/xwindows/
-EXTRACT_SUFX=   .tgz
+DISTFILES=      x6rus-2.2.0-bin.tgz Type1.koi8-r.tgz
 
 MAINTAINER=	ache@FreeBSD.ORG
 
 RUN_DEPENDS=	${X11BASE}/bin/xinit:${PORTSDIR}/x11/XFree86
 
-WRKSRC=         ${WRKDIR}/cyrillic
+NO_WRKSUBDIR=   YES
 NO_BUILD=       YES
 USE_X11=        YES
 
 XLIB = ${X11BASE}/lib/X11
+CYRF = ${XLIB}/fonts/cyrillic
+T1DIR = ${XLIB}/fonts/Type1/fonts.dir
+T1SCALE = ${XLIB}/fonts/Type1/fonts.scale
 
 #Be careful to not delete embedded tab characters
 do-install:
-	-mv ${XLIB}/fonts/cyrillic ${XLIB}/fonts/cyrillic.old
-	-mkdir -p ${XLIB}/fonts/cyrillic/100dpi
-	-mkdir -p ${XLIB}/fonts/cyrillic/75dpi
-	-mkdir -p ${XLIB}/fonts/cyrillic/misc
+	-if [ ! -d ${CYRF}.old ]; then \
+		mv ${CYRF} ${CYRF}.old; \
+	fi
+	-mkdir -p ${CYRF}/100dpi
+	-mkdir -p ${CYRF}/75dpi
+	-mkdir -p ${CYRF}/misc
 	cd ${WRKSRC}; \
-	${INSTALL_DATA} xrus.info ${XLIB}/fonts/cyrillic; \
+	${INSTALL_DATA} *.pfb ${XLIB}/fonts/Type1
+	grep -q cokoi8n ${T1DIR} || { \
+		cp ${T1DIR} ${T1DIR}.bak; \
+		d_cnt=`grep '^[1-9][0-9]*$$' ${T1DIR}.bak`; \
+		d_add=`wc -l < ${WRKSRC}/fonts.dir-scale.add`; \
+		d_new=`expr $$d_cnt + $$d_add`; \
+		sed 's/^[1-9][0-9]*$$/'$$d_new/ < ${T1DIR}.bak > ${T1DIR}; \
+		cat ${WRKSRC}/fonts.dir-scale.add >> ${T1DIR}; \
+	}
+	grep -q cokoi8n ${T1SCALE} || { \
+		cp ${T1SCALE} ${T1SCALE}.bak; \
+		d_cnt=`grep '^[1-9][0-9]*$$' ${T1SCALE}.bak`; \
+		d_add=`wc -l < ${WRKSRC}/fonts.dir-scale.add`; \
+		d_new=`expr $$d_cnt + $$d_add`; \
+		sed 's/^[1-9][0-9]*$$/'$$d_new/ < ${T1SCALE}.bak > ${T1SCALE}; \
+		cat ${WRKSRC}/fonts.dir-scale.add >> ${T1SCALE}; \
+	}
+	cd ${WRKSRC}/cyrillic; \
+	${INSTALL_DATA} xrus.info ${CYRF}; \
 	for i in 100dpi 75dpi misc; do \
-		${INSTALL_DATA} $$i/* ${XLIB}/fonts/cyrillic/$$i; \
+		${INSTALL_DATA} $$i/* ${CYRF}/$$i; \
 	done
 	if [ -f	/etc/XF86Config	]; then	\
-		grep -q ${XLIB}/fonts/cyrillic/misc /etc/XF86Config || { \
+		grep -q ${CYRF}/misc /etc/XF86Config || { \
 			cp /etc/XF86Config /etc/XF86Config.old; \
 			(echo "/^[ 	]*FontPath/i"; \
-			 echo "    FontPath	\"${XLIB}/fonts/cyrillic/75dpi\""; \
-			 echo "    FontPath	\"${XLIB}/fonts/cyrillic/100dpi\""; \
-			 echo "    FontPath	\"${XLIB}/fonts/cyrillic/misc\""; \
+			 echo "    FontPath     \"${CYRF}/75dpi\""; \
+			 echo "    FontPath     \"${CYRF}/100dpi\""; \
+			 echo "    FontPath     \"${CYRF}/misc\""; \
 			 echo "."; echo "w"; echo "q"; ) > /tmp/ed.$$$$; \
 			ed - /etc/XF86Config < /tmp/ed.$$$$; \
 			rm -f /tmp/ed.$$$$; \
