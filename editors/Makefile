@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.76 1999/05/09 17:15:51 shige Exp $
+# $Id: Makefile,v 1.77 1999/05/10 14:55:16 shige Exp $
 #
 
     SUBDIR += AbiWord
@@ -41,6 +41,7 @@
     SUBDIR += psgml-emacs
     SUBDIR += psgml-emacs20
     SUBDIR += psgml-mule
+    SUBDIR += psgml-xemacs-mule
     SUBDIR += sam
     SUBDIR += semi-emacs
     SUBDIR += semi-emacs-current
