@@ -1,11 +1,6 @@
 bin/inspect_plwm
 bin/plwm
 bin/wmm
-@unexec install-info --delete %D/info/plwm.info %D/info/dir
-info/plwm.info
-info/plwm.info-1
-info/plwm.info-2
-@exec install-info %D/info/plwm.info %D/info/dir
 lib/%%PYTHON_VERSION%%/site-packages/plwm/__init__.py
 lib/%%PYTHON_VERSION%%/site-packages/plwm/__init__.pyc
 lib/%%PYTHON_VERSION%%/site-packages/plwm/__init__.pyo

@@ -17,10 +17,12 @@ COMMENT=	A window manager construction kit
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/Xlib/X.py:${PORTSDIR}/x11-toolkits/py-xlib
 BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/Xlib/X.py:${PORTSDIR}/x11-toolkits/py-xlib
 
+INFO=		plwm
+
 USE_PYTHON=	yes
 GNU_CONFIGURE=	yes
 
-post-install:
+pre-install:
 	makeinfo -o ${PREFIX}/info/plwm.info ${WRKSRC}/doc/plwm.texi
 	install-info --section=X11 ${PREFIX}/info/plwm.info ${PREFIX}/info/dir
 
