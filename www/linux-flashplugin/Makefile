@@ -10,7 +10,7 @@ PORTVERSION=	5.0r47
 CATEGORIES=	www graphics linux
 MASTER_SITES=	http://download.macromedia.com/pub/shockwave/flash/english/linux/
 PKGNAMEPREFIX=	linux-
-DISTNAME=	5.0r47/flash_linux
+DISTNAME=	flash_linux
 
 MAINTAINER=	pat@databits.net
 
