@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	slimeforest
-PORTVERSION=	0.50
+PORTVERSION=	0.51
 CATEGORIES=	japanese games linux
 MASTER_SITES=	http://lrnj.com/sfa/
 DISTNAME=	sfa
