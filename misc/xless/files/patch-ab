@@ -1,0 +1,32 @@
+*** ../work/xless-1.7/xless.h	Mon Dec 23 15:57:37 1996
+--- xless.h	Mon Dec 23 16:11:53 1996
+***************
+*** 38,50 ****
+  
+  #define XLESS_MAX_INPUT		256
+  
+! /* handle differences between K&R and ANSI C */
+  #if __STDC__
+  #define __P(a)	a
+  #else
+  #define __P(a)	()
+  #define const
+  #endif
+  
+  /*
+   * The default editor; make sure the file exists.
+--- 38,51 ----
+  
+  #define XLESS_MAX_INPUT		256
+  
+! /* handle differences between K&R and ANSI C
+  #if __STDC__
+  #define __P(a)	a
+  #else
+  #define __P(a)	()
+  #define const
+  #endif
++ */
+  
+  /*
+   * The default editor; make sure the file exists.
