@@ -6,19 +6,20 @@
 #
 
 PORTNAME=	libbonobomm
-PORTVERSION=	1.3.7
+PORTVERSION=	1.3.8
 CATEGORIES=	devel gnome
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	gtkmm
+MASTER_SITES=	${MASTER_SITE_GNOME}
+MASTER_SITE_SUBDIR=	sources/${PORTNAME}/${PORTVERSION:R}
 DIST_SUBDIR=	gnome2
 
 MAINTAINER=	bland@FreeBSD.org
 COMMENT=	C++ interfaces for libbonobo
 
 LIB_DEPENDS=	gtkmm-2.0:${PORTSDIR}/x11-toolkits/gtk--2 \
-		ORBit-2-cpp.7:${PORTSDIR}/devel/orbitcpp
+		ORBit-2-cpp.8:${PORTSDIR}/devel/orbitcpp
 BUILD_DEPENDS=	gm4:${PORTSDIR}/devel/m4
 
+USE_BZIP2=	yes
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gnomehack libbonobo
