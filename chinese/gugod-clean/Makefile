@@ -10,6 +10,8 @@ MASTER_SITES=	ftp://freebsd.sinica.edu.tw/pub/gugod/
 
 MAINTAINER=	gugod@gugod.org
 
+.include <bsd.port.pre.mk>
+
 .if ${XFREE86_VERSION} == 4
 RUN_DEPENDS=	mkfontdir:${PORTSDIR}/x11/XFree86-4-clients
 .endif
@@ -21,8 +23,6 @@ WRKSRC=		${WRKDIR}
 NO_BUILD=	yes
 SHAREMODE=	644
 XFONTDIR=	${X11BASE}/lib/X11/fonts/local
-
-.include <bsd.port.pre.mk>
 
 do-install:
 	@${MKDIR} ${XFONTDIR}
