@@ -3,11 +3,11 @@
 # Date created:		02 Oct 1998
 # Whom:			jkoshy
 #
-# $Id: Makefile,v 1.4 1998/10/27 03:34:54 jkoshy Exp $
+# $Id: Makefile,v 1.5 1998/11/28 09:33:21 asami Exp $
 #
 
-DISTNAME=		tet3.2d-unsup
-PKGNAME=		tet-3.2d
+DISTNAME=		tet3.2e-unsup
+PKGNAME=		tet-3.2e
 CATEGORIES=		misc
 MASTER_SITES=		ftp://ftp.rdg.opengroup.org/pub/TET/TET3/ \
 			http://freefall.freebsd.org/~jkoshy/PORTS/
