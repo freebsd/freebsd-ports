@@ -1,0 +1,12 @@
+--- tools/Makefile.in.orig	Fri Mar 12 02:59:53 2004
++++ tools/Makefile.in	Fri Mar 12 03:00:37 2004
+@@ -267,7 +267,8 @@
+ 
+ 
+ killev_LDADD = \
+-	$(top_builddir)/e-util/libeutil.la
++	$(top_builddir)/e-util/libeutil.la \
++	$(E_UTIL_LIBS)
+ 
+ 
+ CLEANFILES = evolution-addressbook-clean $(BUILT_SOURCES)

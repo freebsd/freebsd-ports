@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	evolution
-PORTVERSION=	1.4.5
-PORTREVISION=	1
+PORTVERSION=	1.4.6
 CATEGORIES=	mail gnome
 MASTER_SITES=	${MASTER_SITE_GNOME} \
 		http://people.FreeBSD.org/~sobomax/:local
@@ -20,13 +19,7 @@ DIST_SUBDIR=	gnome2
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	An integrated mail, calendar and address book distributed suite
 
-.if defined(WITH_LDAP)
-USE_OPENLDAP=	yes
-.endif
 RUN_DEPENDS=	${X11BASE}/lib/gnome-spell/libgnome-spell-component-0.3.so:${PORTSDIR}/textproc/gnomespell
-.if !defined(WITHOUT_PILOT)
-LIB_DEPENDS+=	gpilotdconduit.2:${PORTSDIR}/palm/gnomepilot2
-.endif
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes
@@ -41,25 +34,34 @@ CONFIGURE_ARGS=	--with-db3-libs=${DB3_WRKSRC} \
 		--enable-nss=no \
 		--enable-openssl=yes \
 		--with-krb5=/usr
+CONFIGURE_ENV=	CPPFLAGS="-I${DB3_WRKSRC} -I${LOCALBASE}/include" \
+		LIBS="${PTHREAD_LIBS}"
+LDFLAGS+=	-L${LOCALBASE}/lib
 
 EVO_VERSION=	1.4
+PLIST_SUB=	VERSION=${EVO_VERSION}
+PKGINSTALL=	${WRKDIR}/pkg-install
 
-.if defined(WITH_LDAP)
-CONFIGURE_ARGS+= --with-openldap=${LOCALBASE}
-.endif
+OPTIONS=	PILOT "Enable Palm Pilot sync support" off \
+		LDAP "Enable LDAP support" on
 
-.if !defined(WITHOUT_PILOT)
+.include <bsd.port.pre.mk>
+
+.if defined(WITH_PILOT)
+LIB_DEPENDS+=	gpilotdconduit.2:${PORTSDIR}/palm/gnomepilot2
 CONFIGURE_ARGS+=	--with-pisock=${LOCALBASE} \
 			--enable-pilot-conduits=yes
-PLIST_SUB=	PILOT:=""
+PLIST_SUB+=	PILOT:=""
 .else
-PLIST_SUB=	PILOT:="@comment "
+PLIST_SUB+=	PILOT:="@comment "
 .endif
-CONFIGURE_ENV=	CPPFLAGS="-I${DB3_WRKSRC} -I${LOCALBASE}/include" \
-		LIBS="${PTHREAD_LIBS} -L${LOCALBASE}/lib"
 
-PLIST_SUB+=	VERSION=${EVO_VERSION}
-PKGINSTALL=	${WRKDIR}/pkg-install
+.if !defined(WITHOUT_LDAP)
+USE_OPENLDAP=	yes
+CONFIGURE_ARGS+=--with-openldap=${LOCALBASE}
+.else
+CONFIGURE_ARGS+=--with-openldap=no
+.endif
 
 post-patch:
 	@${FIND} ${WRKSRC} -type f -name "*.[ch]" | ${XARGS} ${GREP} -l '<db.h>' | \
@@ -95,4 +97,4 @@ post-install:
 	@${FIND} ${PREFIX}/share/gnome/evolution/${EVO_VERSION}/default_user \
 		-type f | ${XARGS} ${CHMOD} u+w
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
