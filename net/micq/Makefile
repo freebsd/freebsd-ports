@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	micq
-PORTVERSION=	0.4.10.2
+PORTVERSION=	0.4.10.3
 CATEGORIES=	net
 MASTER_SITES=	http://micq.org/source/ \
 		http://micq.alpha345.com/source/ \
@@ -31,6 +31,10 @@ CONFIGURE_ARGS+=	--disable-iconv
 LIB_DEPENDS+=	iconv.3:${PORTSDIR}/converters/libiconv
 CPPFLAGS=	-I${LOCALBASE}/include
 LDFLAGS=	-L${LOCALBASE}/lib -liconv
+.endif
+
+.if defined(WITHOUT_UTF8)
+CONFIGURE_ARGS+=	--disable-utf8
 .endif
 
 post-install:
