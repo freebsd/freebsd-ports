@@ -16,7 +16,7 @@ COMMENT=	An Ada-binding to the X Window System and *tif
 BUILD_DEPENDS=	gnatmake:${PORTSDIR}/lang/gnat
 
 USE_MOTIF=	yes
-PREFIX=		${X11BASE}
+USE_X_PREFIX=	yes
 
 post-patch:
 #	@mv ${WRKSRC}/lib ${WRKSRC}/src
