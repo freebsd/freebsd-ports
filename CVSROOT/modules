@@ -8666,7 +8666,6 @@ svg2swf		ports/graphics/svg2swf
 svgalib		ports/graphics/svgalib
 svnc		ports/net/svnc
 svr4_base	ports/emulators/svr4_base
-svrx		ports/irc/svrx
 swarm		ports/devel/swarm
 swatch		ports/security/swatch
 sweep		ports/audio/sweep
