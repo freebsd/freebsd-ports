@@ -1,6 +1,7 @@
 bin/lasergnu
 bin/gnuplot
 %%X11:%%bin/gnuplot_x11
+info/gnuplot.info
 share/gnuplot.gih
 share/doc/gnuplot/1.dat
 share/doc/gnuplot/2.dat
