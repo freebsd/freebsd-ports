@@ -5,28 +5,24 @@
 # $FreeBSD$
 #
 
-PORTNAME=		mp3info
-PORTVERSION=		0.2.16
-CATEGORIES=		audio
-MASTER_SITES=		ftp://bimbo.hive.no/pub/mp3info/ \
-			${MASTER_SITE_SUNSITE}
+PORTNAME=	mp3info
+PORTVERSION=	0.2.16
+CATEGORIES=	audio
+MASTER_SITES=	${MASTER_SITE_SUNSITE} \
+		ftp://bimbo.hive.no/pub/mp3info/
 MASTER_SITE_SUBDIR=	apps/sound/editors
 
-MAINTAINER=		ports@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 
-GNU_CONFIGURE=		yes
-CONFIGURE_ENV=		CPPFLAGS="${CFLAGS}"
+GNU_CONFIGURE=	yes
 
-MAN1=			mp3info.1
+MAN1=		mp3info.1
 
-do-install:
-	@ ${INSTALL_PROGRAM} ${WRKSRC}/mp3info ${PREFIX}/bin
-	@ ${INSTALL_MAN} ${WRKSRC}/mp3info.1 ${PREFIX}/man/man1
+post-install:
 .if !defined(NOPORTDOCS)
-	@ ${MKDIR} ${PREFIX}/share/doc/mp3info
-.for file in ChangeLog README
-	@ ${INSTALL_DATA} ${WRKSRC}/${file} ${PREFIX}/share/doc/mp3info
-.endfor
+	@${MKDIR} ${PREFIX}/share/doc/mp3info
+	${INSTALL_DATA} ${WRKSRC}/ChangeLog ${PREFIX}/share/doc/mp3info
+	${INSTALL_DATA} ${WRKSRC}/README ${PREFIX}/share/doc/mp3info
 .endif
 
 .include <bsd.port.mk>
