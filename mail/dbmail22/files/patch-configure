@@ -1,12 +1,14 @@
---- configure.orig	Mon Oct  6 18:12:06 2003
-+++ configure	Mon Oct  6 18:13:28 2003
-@@ -842,19 +842,22 @@
- 
+--- configure.orig	Mon Mar 17 17:04:08 2003
++++ configure	Mon Oct 13 17:06:33 2003
+@@ -846,23 +846,26 @@
  
  mysqllibpaths="/usr/lib /usr/local/lib /lib /usr/freeware/lib \
--               /usr/freeware/lib32 $HOME/lib $HOME/tcl/lib $HOME"
-+               /usr/freeware/lib32 $HOME/lib $HOME/tcl/lib $HOME \
-+               $LOCALBASE/lib $PREFIX/lib"
+                /usr/freeware/lib32 $HOME/lib $HOME/mysql/lib \ 
+-               /usr/lib/mysql /usr/local/lib/mysql $HOME/lib/mysql $HOME"
++               /usr/lib/mysql /usr/local/lib/mysql $HOME/lib/mysql \
++		$HOME $LOCALBASE/lib $PREFIX/lib \
++		$LOCALBASE/lib/mysql $PREFIX/lib/mysql"
+ 
  mysqlheaderpaths="/usr/include/mysql /usr/include /usr/local/include/mysql \
                    /usr/local/include /usr/freeware/include/mysql \
                    /usr/freeware/include $HOME/include $HOME/mysql/include \
@@ -14,15 +16,17 @@
 +                  $HOME $LOCALBASE/include/mysql $PREFIX/include/mysql"
  
  pgsqllibpaths="/usr/lib /usr/local/lib /lib /usr/freeware/lib \
--               /usr/freeware/lib32 $HOME/lib $HOME/tcl/lib $HOME"
-+               /usr/freeware/lib32 $HOME/lib $HOME/tcl/lib $HOME \
-+	       $LOCALBASE/lib $PREFIX/lib"
+                /usr/freeware/lib32 $HOME/lib $HOME/pgsql/lib \
+                /usr/lib/pgsql /usr/local/lib/pgsql /usr/lib/postgresql \
+                /usr/local/lib/postgresql $HOME/lib/pgsql $HOME/lib/postgresql \
+-               $HOME/postgresql/lib $HOME"
++               $HOME/postgresql/lib $HOME $LOCALBASE/lib $PREFIX/lib"
  
  pgsqlheaderpaths="/usr/include/pgsql /usr/include /usr/local/include/pgsql \
                    /usr/local/include /usr/freeware/include/pgsql \
                    /usr/freeware/include $HOME/include $HOME/pgsql/include \
--		  /usr/local/pgsql/include $HOME"
-+		  /usr/local/pgsql/include $HOME \
+-		  /usr/local/pgsql/include /usr/include/postgresql $HOME"
++		  /usr/local/pgsql/include /usr/include/postgresql $HOME\
 +		  $LOCALBASE/include/pgsql $PREFIX/include/pgsql"
  
  # Check whether --with-mysql or --without-mysql was given.

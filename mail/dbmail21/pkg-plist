@@ -10,28 +10,31 @@ bin/install-dbmail.sh
 etc/dbmail.conf-dist
 %%MYSQL%%lib/libmysqldbmail.a
 %%PGSQL%%lib/libpgsqldbmail.a
-%%MYSQL%%share/dbmail/sql/add-lastlogin.mysql
-%%MYSQL%%share/dbmail/sql/add_auto_notification.mysql
-%%MYSQL%%share/dbmail/sql/add_auto_reply.mysql
-%%MYSQL%%share/dbmail/sql/add_rfcsize.mysql
-%%MYSQL%%share/dbmail/sql/create_tables.mysql
-%%MYSQL%%share/dbmail/sql/create_tables_innoDB.mysql
-%%MYSQL%%share/dbmail/sql/newnames.mysql
-%%MYSQL%%share/dbmail/sql/pop_before_smtp.mysql
-%%MYSQL%%share/dbmail/sql/update_encryption.mysql
-%%MYSQL%%share/dbmail/sql/update_mailbox_subscribed_folders.mysql
-%%MYSQL%%share/dbmail/sql/update_mysql_tmptables.mysql
-%%MYSQL%%share/dbmail/sql/update_ownerid_aliases.mysql
-%%PGSQL%%share/dbmail/sql/add-constraints.pgsql
-%%PGSQL%%share/dbmail/sql/add-lastlogin.postgresql
-%%PGSQL%%share/dbmail/sql/add_auto_notification.pgsql
-%%PGSQL%%share/dbmail/sql/add_auto_reply.pgsql
-%%PGSQL%%share/dbmail/sql/add_rfcsize.postgresql
-%%PGSQL%%share/dbmail/sql/create_tables.pgsql
-%%PGSQL%%share/dbmail/sql/no-constraint-tables.pgsql
-%%PGSQL%%share/dbmail/sql/update_encryption.pgsql
+%%MYSQL%%%%DATADIR%%/sql/add-lastlogin.mysql
+%%MYSQL%%%%DATADIR%%/sql/add_auto_notification.mysql
+%%MYSQL%%%%DATADIR%%/sql/add_auto_reply.mysql
+%%MYSQL%%%%DATADIR%%/sql/add_rfcsize.mysql
+%%MYSQL%%%%DATADIR%%/sql/create_tables.mysql
+%%MYSQL%%%%DATADIR%%/sql/create_tables_innoDB.mysql
+%%MYSQL%%%%DATADIR%%/sql/newnames.mysql
+%%MYSQL%%%%DATADIR%%/sql/pop_before_smtp.mysql
+%%MYSQL%%%%DATADIR%%/sql/update_encryption.mysql
+%%MYSQL%%%%DATADIR%%/sql/update_mailbox_subscribed_folders.mysql
+%%MYSQL%%%%DATADIR%%/sql/update_mysql_tmptables.mysql
+%%MYSQL%%%%DATADIR%%/sql/update_ownerid_aliases.mysql
+%%PGSQL%%%%DATADIR%%/sql/add-constraints.pgsql
+%%PGSQL%%%%DATADIR%%/sql/add-lastlogin.postgresql
+%%PGSQL%%%%DATADIR%%/sql/add_auto_notification.pgsql
+%%PGSQL%%%%DATADIR%%/sql/add_auto_reply.pgsql
+%%PGSQL%%%%DATADIR%%/sql/add_rfcsize.postgresql
+%%PGSQL%%%%DATADIR%%/sql/create_tables.pgsql
+%%PGSQL%%%%DATADIR%%/sql/no-constraint-tables.pgsql
+%%PGSQL%%%%DATADIR%%/sql/update_encryption.pgsql
+%%PGSQL%%%%DATADIR%%/sql/md5_alter_users.7.3-pgsql
+%%PGSQL%%%%DATADIR%%/sql/md5_alter_users.pre_7.3-pgsql
+%%PGSQL%%%%DATADIR%%/sql/pop_before_smtp.pgsql
 %%PORTDOCS%%%%DOCSDIR%%/INSTALL
 %%PORTDOCS%%%%DOCSDIR%%/README
-@dirrm share/dbmail/sql
-@dirrm share/dbmail
+@dirrm %%DATADIR%%/sql
+@dirrm %%DATADIR%%
 @dirrm %%DOCSDIR%%
