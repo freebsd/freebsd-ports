@@ -1,7 +1,7 @@
 pdnMesh: A finite element program
 =================================
 
-Copyright (C) 2001-2004 Sarod Yatawatta
+Copyright (C) 2001-2005 Sarod Yatawatta
 
 pdnMesh is a program that can solve 2D potential problems (Poisson Equation) 
 and eigenvalue problems (Helmholtz Equation) using the Finite Element Method. 
