@@ -11,6 +11,7 @@ CATEGORIES=	sysutils
 MASTER_SITES=	http://arbornet.org/~bjk/userinfo/
 
 MAINTAINER=	bjk@m-net.arbornet.org
+COMMENT=	Show information about local users
 
 GNU_CONFIGURE=	yes
 

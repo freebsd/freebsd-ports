@@ -15,6 +15,7 @@ DISTFILES=	${DISTNAME}.tar.gz \
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	roam@FreeBSD.org
+COMMENT=	Configure various qmail services to run under daemontools
 
 ALL_TARGET=	it
 INSTALL_TARGET=	setup check
