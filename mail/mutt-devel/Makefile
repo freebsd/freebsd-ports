@@ -342,6 +342,7 @@ pre-install:
 post-install:
 	@${ECHO} > ${PKGMESSAGE}
 	${INSTALL_DATA} ${WRKSRC}/Muttrc ${PREFIX}/etc/Muttrc.dist
+	${INSTALL_DATA} ${WRKSRC}/mime.types ${PREFIX}/etc/mime.types.dist
 .if !defined(NOPORTDOCS)
 	@${ECHO} "===>   Installing Mutt documentation"
 	@${MKDIR} ${DOCSDIR} && ${CHMOD} a+rx ${DOCSDIR}
