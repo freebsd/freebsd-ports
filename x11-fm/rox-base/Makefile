@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	rox-base
-PORTVERSION=	1.0.1
+PORTVERSION=	1.0.2
 CATEGORIES=	x11-fm
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	rox
@@ -15,6 +15,9 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	olgeni@FreeBSD.org
 
 NO_BUILD= 	yes
+
+post-extract:
+	find ${WRKSRC} -type d -name CVS | xargs rm -rf
 
 do-install:
 	${MKDIR} ${PREFIX}/share/Choices
