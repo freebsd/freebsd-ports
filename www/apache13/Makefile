@@ -25,6 +25,9 @@ MASTER_SITES=	http://www.apache.org/dist/ \
 		ftp://apache.nextpath.com/pub/apache/dist/
 DISTNAME=	apache_${PORTVERSION}
 
+PATCH_SITES=    ${MASTER_SITES}
+PATCHFILES=     apache_1.3.17-fix.diff
+
 MAINTAINER=	ache@freebsd.org
 
 #
