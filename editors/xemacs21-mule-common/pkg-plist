@@ -711,10 +711,14 @@ lib/xemacs-%%XEMACS_VER%%/lisp/msw-select.el
 lib/xemacs-%%XEMACS_VER%%/lisp/msw-select.elc
 lib/xemacs-%%XEMACS_VER%%/lisp/mule/arabic.el
 lib/xemacs-%%XEMACS_VER%%/lisp/mule/arabic.elc
+lib/xemacs-%%XEMACS_VER%%/lisp/mule/auto-autoloads.el
+lib/xemacs-%%XEMACS_VER%%/lisp/mule/auto-autoloads.elc
 lib/xemacs-%%XEMACS_VER%%/lisp/mule/canna-leim.el
 lib/xemacs-%%XEMACS_VER%%/lisp/mule/canna-leim.elc
 lib/xemacs-%%XEMACS_VER%%/lisp/mule/chinese.el
 lib/xemacs-%%XEMACS_VER%%/lisp/mule/chinese.elc
+lib/xemacs-%%XEMACS_VER%%/lisp/mule/custom-load.el
+lib/xemacs-%%XEMACS_VER%%/lisp/mule/custom-load.elc
 lib/xemacs-%%XEMACS_VER%%/lisp/mule/cyrillic.el
 lib/xemacs-%%XEMACS_VER%%/lisp/mule/cyrillic.elc
 lib/xemacs-%%XEMACS_VER%%/lisp/mule/english.el
@@ -935,6 +939,8 @@ lib/xemacs-%%XEMACS_VER%%/lisp/x-win-sun.el
 lib/xemacs-%%XEMACS_VER%%/lisp/x-win-sun.elc
 lib/xemacs-%%XEMACS_VER%%/lisp/x-win-xfree86.el
 lib/xemacs-%%XEMACS_VER%%/lisp/x-win-xfree86.elc
+lib/xemacs-%%XEMACS_VER%%/lisp/xpm-button.el
+lib/xemacs-%%XEMACS_VER%%/lisp/xpm-button.elc
 @dirrm lib/xemacs-%%XEMACS_VER%%/lisp/term
 @dirrm lib/xemacs-%%XEMACS_VER%%/lisp/mule
 @dirrm lib/xemacs-%%XEMACS_VER%%/lisp

@@ -23,7 +23,7 @@
 MULE_SLAVE=	yes
 .endif
 
-MAINTAINER=	kiri@FreeBSD.org
+MAINTAINER?=	kiri@FreeBSD.org
 
 BUILD_DEPENDS=	${BUILD_INPUT_METHOD}
 .if defined(MULE_SLAVE)
@@ -43,6 +43,7 @@ CONFIGURE_ARGS?=--with-x11 \
 		--x-libraries=${X11BASE}/lib \
 		--site-libraries='${SITE_LIBRARIES}' \
 		--site-includes='${SITE_INCLUDES}' \
+		--gung-ho=yes \
 		--with-xface \
 		--with-xpm \
 		--with-sound=native \
