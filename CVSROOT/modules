@@ -2591,6 +2591,7 @@ interbase4	ports/databases/interbase4
 intercal	ports/lang/intercal
 intlfonts	ports/x11-fonts/intlfonts
 intltool	ports/textproc/intltool
+invitation_to_ruby	ports/devel/invitation_to_ruby
 ion		ports/x11-wm/ion
 iostat		src/usr.sbin/iostat
 iozone		ports/benchmarks/iozone
