@@ -1,0 +1,4 @@
+bin/wmpiki
+%%PORTDOCS%%%%DOCSDIR%%/config.example
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
