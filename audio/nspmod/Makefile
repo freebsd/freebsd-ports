@@ -8,8 +8,7 @@
 PORTNAME=	nspmod
 PORTVERSION=	0.1
 CATEGORIES=	audio
-MASTER_SITES=	http://www.jeton.or.jp/users/toru/www/orgsoft/nspmod/	\
-		${MASTER_SITE_SUNSITE}
+MASTER_SITES=	${MASTER_SITE_SUNSITE}
 MASTER_SITE_SUBDIR=	apps/sound/players
 
 MAINTAINER=	ports@freebsd.org
