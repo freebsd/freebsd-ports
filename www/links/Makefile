@@ -7,6 +7,7 @@
 
 PORTNAME=	links
 PORTVERSION=	2.0
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	www
 MASTER_SITES=	http://atrey.karlin.mff.cuni.cz/~clock/twibright/links/download/ \
@@ -19,6 +20,7 @@ CONFIGURE_ARGS+=	--enable-javascript --with-ssl --without-svgalib
 
 USE_OPENSSL=	yes
 USE_BZIP2=	yes
+USE_REINPLACE=	yes
 
 .if !defined(WITHOUT_X11)
 LIB_DEPENDS+=	png.5:${PORTSDIR}/graphics/png \
@@ -32,6 +34,9 @@ MAN1=		links.1
 
 pre-everything::
 		@${ECHO_MSG} "Define WITHOUT_X11 to disable graphics support."
+
+post-patch:
+	@${REINPLACE_CMD} -e "s!/etc/!${PREFIX}/etc/!" ${WRKSRC}/default.c
 
 post-install:
 .if !defined(NOPORTDOCS)
