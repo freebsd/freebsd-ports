@@ -161,7 +161,7 @@ host_lookup = 0.0.0.0/0
 # percent_hack_domains = *
 
 pid_file_path = /var/run/exim%s.pid
-log_file_path = /var/log/exim/%s.pid
+log_file_path = /var/log/exim/%slog
 
 
 end
