@@ -6,14 +6,13 @@
 #
 
 PORTNAME=	Test-Simple
-PORTVERSION=	0.47
-PORTREVISION=	1
+PORTVERSION=	0.54
 CATEGORIES=	devel perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Test
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	shell@shellhung.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Basic utilities for writing tests in perl
 
 BUILD_DEPENDS=	${SITE_PERL}/Test/Harness.pm:${PORTSDIR}/devel/p5-Test-Harness
@@ -21,8 +20,6 @@ RUN_DEPENDS=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
 
-MAN3=		Test::More.3 Test::Simple.3 Test::Tutorial.3 \
-		Test::Builder.3
-MAN3PREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
+MAN3=		Test::Builder.3 Test::More.3 Test::Simple.3 Test::Tutorial.3
 
 .include <bsd.port.mk>
