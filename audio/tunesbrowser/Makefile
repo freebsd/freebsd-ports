@@ -11,7 +11,7 @@ PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	http://craz.net/programs/itunes/files/
 
-MAINTAINER=	ahze@ahze.net
+MAINTAINER=	ahze@FreeBSD.org
 COMMENT=	Gnome frontend DAAP client
 
 LIB_DEPENDS=	opendaap.0:${PORTSDIR}/devel/libopendaap

@@ -11,7 +11,7 @@ CATEGORIES=	multimedia
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	gmerlin
 
-MAINTAINER=	ahze@ahze.net
+MAINTAINER=	ahze@FreeBSD.org
 COMMENT=	A library for handling uncompressed video and audio data
 
 LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png

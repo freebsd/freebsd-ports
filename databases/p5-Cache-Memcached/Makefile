@@ -13,7 +13,7 @@ MASTER_SITES=	${MASTER_SITE_PERL_CPAN} \
 MASTER_SITE_SUBDIR=	Cache
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	ahze@ahze.net
+MAINTAINER=	ahze@FreeBSD.org
 COMMENT=	Perl API for memcached, a distributed memory cache daemon
 
 RUN_DEPENDS=	memcached:${PORTSDIR}/databases/memcached

@@ -10,7 +10,7 @@ PORTVERSION=	1.2.4
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.monroe.net/~dhh/exifprobe.d/
 
-MAINTAINER=	ahze@ahze.net
+MAINTAINER=	ahze@FreeBSD.org
 COMMENT=	Probes JPEG or TIFF images and reports contents and structure
 
 USE_REINPLACE=	yes

@@ -10,7 +10,7 @@ PORTVERSION=	0.5
 CATEGORIES=	graphics
 MASTER_SITES=	http://home.arcor.de/ahuggel/exiv2/
 
-MAINTAINER=	ahze@ahze.net
+MAINTAINER=	ahze@FreeBSD.org
 COMMENT=	Exif and Iptc metadata manipulation library and tools
 
 .if defined(PORTDOCS)

@@ -13,7 +13,7 @@ CATEGORIES=	audio
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE_EXTENDED}
 MASTER_SITE_SUBDIR=	faac
 
-MAINTAINER=	ahze@ahze.net
+MAINTAINER=	ahze@FreeBSD.org
 COMMENT=	A LC, MAIN and LTP profile, MPEG2 and MPEG-4 AAC decoder
 
 LIB_DEPENDS=	sndfile.1:${PORTSDIR}/audio/libsndfile

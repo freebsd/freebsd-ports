@@ -10,7 +10,7 @@ PORTVERSION=	0.1.1
 CATEGORIES=	graphics
 MASTER_SITES=	http://cairographics.org/snapshots/
 
-MAINTAINER=	ahze@ahze.net
+MAINTAINER=	ahze@FreeBSD.org
 COMMENT=	Pixel region library
 
 USE_REINPLACE=	yes

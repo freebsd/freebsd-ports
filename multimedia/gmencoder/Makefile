@@ -13,7 +13,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	ahze@ahze.net
+MAINTAINER=	ahze@FreeBSD.org
 COMMENT=	Gmencoder is Gnome2 front-end to mplayer/mencoder
 
 BUILD_DEPENDS=	mencoder:${PORTSDIR}/multimedia/mplayer

@@ -13,7 +13,7 @@ CATEGORIES=	multimedia
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE_EXTENDED}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	ahze@ahze.net
+MAINTAINER=	ahze@FreeBSD.org
 COMMENT=	A library for reading and writing quicktime files
 
 LIB_DEPENDS=	avcodec.0:${PORTSDIR}/multimedia/ffmpeg \

@@ -12,7 +12,7 @@ MASTER_SITES=	http://www.mir.com/DMG/Software/
 DISTNAME=	${PKGNAME}-src
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	ahze@ahze.net
+MAINTAINER=	ahze@FreeBSD.org
 COMMENT=	Y4mscaler scales, crops, and shifts Y'CbCr video
 
 LIB_DEPENDS=	lavjpeg-1.6.2:${PORTSDIR}/multimedia/mjpegtools
