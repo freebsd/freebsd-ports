@@ -3,11 +3,11 @@
 # Date created:		June 19, 1997
 # Whom:			jfieber
 #
-# $Id: Makefile,v 1.9 1998/03/13 15:05:20 jfieber Exp $
+# $Id: Makefile,v 1.10 1998/06/03 18:08:11 jdp Exp $
 #
 
-DISTNAME=	jade1_1
-PKGNAME=	jade-1.1
+DISTNAME=	jade1_1_1
+PKGNAME=	jade-1.1.1
 CATEGORIES=	textproc
 MASTER_SITES=	ftp://ftp.jclark.com/pub/jade/
 EXTRACT_SUFX=	.zip
