@@ -3,7 +3,7 @@
 # Date created:		21 June 1995
 # Whom:			Satoshi Asami (asami)
 #
-# $Id: Makefile,v 1.4 1995/09/12 22:47:20 asami Exp $
+# $Id: Makefile,v 1.6 1996/06/12 02:35:37 asami Exp $
 #
 
 DISTNAME=	e93-1.2r6X
@@ -13,8 +13,6 @@ MASTER_SITES=	ftp://ftp.x.org/contrib/editors/ \
 		ftp://crl.dec.com/pub/X11/contrib/editors/
 
 MAINTAINER=	asami@FreeBSD.ORG
-
-LIB_DEPENDS=	tcl75\\.1\\.:${PORTSDIR}/lang/tcl75
 
 MAKEFILE=	makefile
 USE_X11=	yes
