@@ -8,7 +8,7 @@
 PORTNAME=	missey
 PORTVERSION=	1.1.1
 CATEGORIES=	mail
-MASTER_SITES=	http://snofe.dot66.net/missey/
+MASTER_SITES=	http://www.dengh.com/missey/
 
 MAINTAINER=	delphij@FreeBSD.org.cn
 COMMENT=	Secure small and high performance POP3 server
