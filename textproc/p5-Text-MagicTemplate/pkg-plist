@@ -5,6 +5,7 @@
 %%SITE_PERL%%/auto/Text/MagicTemplate/_EVAL_ATTRIBUTES_.al
 %%SITE_PERL%%/auto/Text/MagicTemplate/TRACE_DELETIONS.al
 %%SITE_PERL%%/auto/Text/MagicTemplate/ID_list.al
+%%SITE_PERL%%/auto/Text/MagicTemplate/INCLUDE_TEXT.al
 %%SITE_PERL%%/auto/Text/MagicTemplate/autosplit.ix
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Text/MagicTemplate/.packlist
 @dirrm %%SITE_PERL%%/Bundle/Text
