@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.175 1999/01/02 20:31:21 sada Exp $
+# $Id: Makefile,v 1.176 1999/01/03 20:08:01 sada Exp $
 #
 
     SUBDIR += Canna
@@ -51,6 +51,7 @@
     SUBDIR += japaneseAFM
     SUBDIR += jcode.pl
     SUBDIR += jhd
+    SUBDIR += jls
     SUBDIR += jtex209-ascii
     SUBDIR += jtex209-both
     SUBDIR += jtex209-ntt
