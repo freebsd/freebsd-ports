@@ -119,8 +119,9 @@ to You.
 
 3.Requirements and Responsibilities.
 
-3.1 Research Use License.  As a condition of exercising the rights 
-granted under Section 2.1 a) above, You agree to comply with the following:
+3.1 Research Use License.  As a condition of exercising 
+the rights granted under Section 2.1 a) above, You agree to 
+comply with the following:
 
 a) Your Contribution to the Community.  All Error
 Corrections and Shared Modifications which You create or
@@ -707,7 +708,7 @@ Java(tm) 2 SDK Technology
 
 Description of "Technology"
 
-Java(tm) 2 SDK Technology v.1.4.1 as described on the
+Java(tm) 2 SDK Technology v.1.4.2 as described on the
 Technology Download Site.
 
 ATTACHMENT C
@@ -993,16 +994,16 @@ must be delivered in person or by means evidenced by a
 delivery receipt and will be effective upon receipt by the
 persons at the addresses specified below.
 
-Original Contributor:  		You:
+Original Contributor:           You:
 
-Sun Microsystems, Inc.  	_____________________________
+Sun Microsystems, Inc.          _____________________________
 
-4150 Network Circle 		______________________________
+4150 Network Circle             ______________________________
 
-Santa Clara, California 95054 	______________________________
+Santa Clara, California 95054   ______________________________
 
 Attn.:  VP, Sun Software and 
-Technology Sales		______________________________
+Technology Sales                ______________________________
 cc:  Legal (Software Sales) 
 
 11.  Disclaimer of Agency.  The relationship created hereby
@@ -1014,16 +1015,16 @@ dealing with the establishment and regulation of franchises.
 
 Agreed:
 
-You: 				Original Contributor:
+You:                            Original Contributor:
 
-_____________________________ 	Sun Microsystems, Inc.
+_____________________________   Sun Microsystems, Inc.
 (Your Name) 
 
-By:_________________________	By:_____________________
+By:_________________________    By:_____________________
 
-Title:_______________________	Title:____________________
+Title:_______________________   Title:____________________
 
-Date:______________________ 	Date:____________________
+Date:______________________     Date:____________________
 
 ATTACHMENT E TECHNOLOGY COMPATIBILITY KIT
 
@@ -1139,14 +1140,3 @@ Contributor or the third party test facility if applicable,
 Your test results that demonstrate that Covered Code is
 Compliant Covered Code and that Original Contributor may
 publish or otherwise distribute such test results.
-
-ATTACHMENT F ADDITIONAL REQUIREMENTS AND RESPONSIBILITIES
-
-Original Contributor and/or its licensors grant You a non-exclusive and
-non-transferable license for the internal use only of any fonts
-accompanying the Technology.  Title to fonts and all associated
-intellectual property rights are retained by Original Contributor
-and/or its licensors. Unless enforcement is prohibited by applicable law, 
-You may not modify, decompile, or reverse engineer the fonts. 
-You may not redistribute the fonts in any form.
-
