@@ -1,0 +1,44 @@
+#!/usr/bin/perl
+# converts output of BSD tar(1) into GNU tar compatible format
+# tries to support localization
+# bug reports are welcome!
+
+# Version 0.01 26.07.1999 Dominik Brettnacher <domi@saargate.de>
+
+# we need POSIX::strftime to find out the national abbreviations for
+# month names (used by BSD tar)
+use POSIX qw(strftime);
+for(0..11)
+{
+	$Month{POSIX::strftime("%b", 0, 0, 0, 1, $_, 0)} = $_ + 1;
+}
+
+while(<>)
+{
+	m/^(.*) (.{6}) ([0-9 ]{2}:\d{2}) (\d{4}) (.*)/ || die "regular expression did not match, please report";
+	
+	($day,$month) = month_or_mday_first($2);
+
+	printf("%s %i-%02i-%02i %s %s\n",$1,$4,$Month{$month},$day,$3,$5);
+}
+
+# BSD tar uses a quite "different" way to output the date, roughly:
+# $date = strftime("%c", ...);
+# $date = substr($date,4,12) . " " . substr($date,20,4);
+# as it uses localization, we must try to find out whether mday is printed
+# before or after the month name itself. this seems to be a solution:
+sub month_or_mday_first
+{
+	if($_[0] =~ m/([0-9 ]{2}) (.{3})/)
+	{
+		return ($1, $2);
+	}
+	elsif($_[0] =~ m/(.{3}) ([0-9 ]{2})/)
+	{
+		return ($2, $1);
+	}
+	else
+	{
+		die "invalid date format $_[0]";
+	}
+}
