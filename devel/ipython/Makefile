@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ipython
-PORTVERSION=	0.6.2
+PORTVERSION=	0.6.3
 CATEGORIES=	devel python
 MASTER_SITES=	http://ipython.scipy.org/dist/
 PKGNAMESUFFIX=	${PYTHON_PKGNAMESUFFIX}
