@@ -1,12 +1,6 @@
 etc/boa.conf.sample
 sbin/boa
-share/doc/boa/boa-1.html
-share/doc/boa/boa-2.html
-share/doc/boa/boa-3.html
-share/doc/boa/boa-4.html
-share/doc/boa/boa.html
-share/doc/boa/boa.ps
-share/doc/boa/boa.txt
+share/doc/boa/boa.sgml
 share/doc/boa/boa_banner.png
 share/examples/boa/cgi-test.cgi
 share/examples/boa/nph-test.cgi
