@@ -1,0 +1,27 @@
+bin/evince
+bin/evince-thumbnailer
+share/gnome/applications/evince.desktop
+@exec update-desktop-database > /dev/null || /usr/bin/true
+share/gnome/evince/evince-password.glade
+share/gnome/evince/evince-ui.xml
+share/gnome/evince/pdf-icon.png
+share/locale/bg/LC_MESSAGES/evince.mo
+share/locale/ca/LC_MESSAGES/evince.mo
+share/locale/cs/LC_MESSAGES/evince.mo
+share/locale/da/LC_MESSAGES/evince.mo
+share/locale/de/LC_MESSAGES/evince.mo
+share/locale/el/LC_MESSAGES/evince.mo
+share/locale/en_CA/LC_MESSAGES/evince.mo
+share/locale/en_GB/LC_MESSAGES/evince.mo
+share/locale/fi/LC_MESSAGES/evince.mo
+share/locale/fr/LC_MESSAGES/evince.mo
+share/locale/ja/LC_MESSAGES/evince.mo
+share/locale/nb/LC_MESSAGES/evince.mo
+share/locale/nl/LC_MESSAGES/evince.mo
+share/locale/no/LC_MESSAGES/evince.mo
+share/locale/pt_BR/LC_MESSAGES/evince.mo
+share/locale/sv/LC_MESSAGES/evince.mo
+share/locale/zh_CN/LC_MESSAGES/evince.mo
+share/locale/zh_TW/LC_MESSAGES/evince.mo
+@dirrm share/gnome/evince
+@unexec update-desktop-database > /dev/null || /usr/bin/true
