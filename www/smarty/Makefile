@@ -6,13 +6,13 @@
 #
 
 PORTNAME=	smarty
-PORTVERSION=	2.6.4
+PORTVERSION=	2.6.5
 CATEGORIES=	www
 MASTER_SITES=	http://smarty.php.net/distributions/ \
 		http://smarty.php.net/distributions/manual/en/:manual
 DISTFILES=	Smarty-${PORTVERSION}${EXTRACT_SUFX}
 .if !defined(NOPORTDOCS)
-DISTFILES+=	Smarty-${PORTVERSION}-docs${EXTRACT_SUFX}:manual
+DISTFILES+=	Smarty-2.6.4-docs${EXTRACT_SUFX}:manual
 .endif
 
 MAINTAINER=	zaa@ulstu.ru
@@ -45,12 +45,6 @@ do-install:
 .endfor
 	@${MKDIR} ${DOCSDIR}/manual
 	@cd ${WRKDIR}/manual && ${FIND} . | ${CPIO} --quiet -dumpR ${SHAREOWN}:${SHAREGRP} ${DOCSDIR}/manual
-	@${MKDIR} ${EXAMPLESDIR}
-	@${INSTALL_DATA} ${WRKSRC}/demo/index.php ${EXAMPLESDIR}
-.for f in configs templates templates_c cache
-	@${MKDIR} ${EXAMPLESDIR}/$f
-	@-${INSTALL_DATA} ${WRKSRC}/demo/$f/* ${EXAMPLESDIR}/$f 2>/dev/null || ${TRUE}
-.endfor
 .endif
 
 post-install:

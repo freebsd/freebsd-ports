@@ -182,11 +182,6 @@
 %%PORTDOCS%%%%DOCSDIR%%/manual/variable.trusted.dir.html
 %%PORTDOCS%%%%DOCSDIR%%/manual/variable.use.sub.dirs.html
 %%PORTDOCS%%%%DOCSDIR%%/manual/what.is.smarty.html
-%%PORTDOCS%%%%EXAMPLESDIR%%/configs/test.conf
-%%PORTDOCS%%%%EXAMPLESDIR%%/index.php
-%%PORTDOCS%%%%EXAMPLESDIR%%/templates/footer.tpl
-%%PORTDOCS%%%%EXAMPLESDIR%%/templates/header.tpl
-%%PORTDOCS%%%%EXAMPLESDIR%%/templates/index.tpl
 %%DATADIR%%/Config_File.class.php
 %%DATADIR%%/Smarty.class.php
 %%DATADIR%%/Smarty_Compiler.class.php
@@ -260,11 +255,6 @@
 %%DATADIR%%/plugins/shared.make_timestamp.php
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/manual
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
-%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/cache
-%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/configs
-%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/templates
-%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/templates_c
-%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%
 @dirrm %%DATADIR%%/core
 @dirrm %%DATADIR%%/plugins
 @dirrm %%DATADIR%%
