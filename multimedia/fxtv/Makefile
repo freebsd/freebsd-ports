@@ -33,7 +33,16 @@ USE_GMAKE=	yes
 MAKE_FLAGS=	-e
 MAN1=		fxtv.1
 
+.include <bsd.port.pre.mk>
+
+pre-everything::
+.if ${OSVERSION} < 500000
+ONLY_FOR_ARCHS=	i386
+.else
+ONLY_FOR_ARCHS=	alpha i386 ia64
+.endif
+
 pre-install:
 	${CP} ${WRKSRC}/fxtv.1 ${WRKSRC}/fxtv.man
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
