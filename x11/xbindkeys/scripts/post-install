@@ -1,0 +1,9 @@
+#!/bin/sh
+
+if  [ ${WITH_GUI} ]
+then
+	WISHPROGNAME=`ls $(echo $PATH | sed 's/:/ /g') 2> /dev/null | egrep '^wish(step)?(x|([0-9]+\.[0-9]+))([a-z][a-z])?$' | head -1`
+	sed -e "s/wish/${WISHPROGNAME}/" < ${WRKSRC}/xbindkeys_show > ${WRKSRC}/xbindkeys_show.fix
+	chmod a+x ${WRKSRC}/xbindkeys_show.fix
+	cp -p ${WRKSRC}/xbindkeys_show.fix ${PREFIX}/bin/xbindkeys_show
+fi
