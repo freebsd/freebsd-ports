@@ -6,16 +6,14 @@
 #
 
 PORTNAME=	dbmail
-PORTVERSION=	1.2.8a
+PORTVERSION=	1.2.8b
 CATEGORIES=	mail
-MASTER_SITES=	http://www.dbmail.org/tgz/
+MASTER_SITES=	http://www.dbmail.org/download/
 PKGNAMESUFFIX=	-${DATABASE}
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An SQL database-based mail system (POP3 and IMAP)
-
-BROKEN=		"Unfetchable"
 
 USE_REINPLACE=	YES
 GNU_CONFIGURE=	YES
