@@ -1,0 +1,60 @@
+*** pop_msg.c.orig	Thu Nov 20 00:20:38 1997
+--- pop_msg.c	Sun Jun 28 21:39:56 1998
+***************
+*** 27,32 ****
+--- 27,33 ----
+  {
+      POP             *   p;
+      int                 stat;               /*  POP status indicator */
++     int			l, len;		    /*  remaining buffer length */
+      char            *   format;             /*  Format string for the message */
+      va_list             ap;
+      register char   *   mp;
+***************
+*** 50,55 ****
+--- 51,57 ----
+  
+      /*  Point to the message buffer */
+      mp = message;
++     len = sizeof(message);
+  
+      /*  Format the POP status code at the beginning of the message */
+      if (stat == POP_SUCCESS)
+***************
+*** 58,74 ****
+          (void)sprintf (mp,"%s ",POP_ERR);
+  
+      /*  Point past the POP status indicator in the message message */
+!     mp += strlen(mp);
+  
+      /*  Append the message (formatted, if necessary) */
+      if (format) 
+  #ifdef HAVE_VPRINTF
+!         vsprintf(mp,format,ap);
+  #else
+  # ifdef PYRAMID
+!         (void)sprintf(mp,format, arg1, arg2, arg3, arg4, arg5, arg6);
+  # else
+!         (void)sprintf(mp,format,((int *)ap)[0],((int *)ap)[1],((int *)ap)[2],
+                  ((int *)ap)[3],((int *)ap)[4]);
+  # endif
+  #endif
+--- 60,77 ----
+          (void)sprintf (mp,"%s ",POP_ERR);
+  
+      /*  Point past the POP status indicator in the message message */
+!     l = strlen(mp);
+!     len -= l, mp += l;
+  
+      /*  Append the message (formatted, if necessary) */
+      if (format) 
+  #ifdef HAVE_VPRINTF
+! 	vsnprintf(mp,len-3,format,ap);
+  #else
+  # ifdef PYRAMID
+! 	(void)snprintf(mp,len-3,format, arg1, arg2, arg3, arg4, arg5, arg6);
+  # else
+! 	(void)snprintf(mp,len-3,format,((int *)ap)[0],((int *)ap)[1],((int *)ap)[2],
+                  ((int *)ap)[3],((int *)ap)[4]);
+  # endif
+  #endif
