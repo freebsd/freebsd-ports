@@ -121,6 +121,9 @@ RUN_DEPENDS+=	${LOCALBASE}/bin/aspell:${PORTSDIR}/textproc/aspell
 
 IS_INTERACTIVE=	'need to build mod_php4 with mcrypt, cclient with SSL.'
 NO_BUILD=	yes
+USE_REINPLACE=	yes
+
+REINPLACE_ARGS=	-i.beforeIMP
 DOCS=		COPYING README docs/CHANGES docs/CREDITS docs/INSTALL
 CONFFILE=	conf.php filter.txt header.txt html.php menu.php \
 		mime_drivers.php motd.php prefs.php servers.php \
@@ -238,62 +241,66 @@ do-install:
 	  ${CP} ${CONFDIR}/${FILE}.dist ${CONFDIR}/${FILE} ; \
 	fi
 .endfor
-	@${CP} -p ${HCONFDIR}/mime_drivers.php ${HCONFDIR}/mime_drivers.php.beforeIMP
-	@${CP} -p ${HCONFDIR}/registry.php ${HCONFDIR}/registry.php.beforeIMP
-	@${CP} -p ${TURBADIR}/config/conf.php ${TURBADIR}/config/conf.php.beforeIMP
-	@${PERL} -pi -e "s:example.com:${HOSTNAME}:g" ${CONFDIR}/servers.php
-	@${PERL} -pi -e "s:%%LOCALBASE%%:${LOCALBASE}:g" ${CONFDIR}/mime_drivers.php
-	@${PERL} -pi -e "s:IMP_VERSION:IMP_VERSION . ' / ${SERVOS}':" \
+	@${CP} -p ${HCONFDIR}/mime_drivers.php ${HCONFDIR}/mime_drivers.php.beforeIMP3
+	@${CP} -p ${HCONFDIR}/registry.php ${HCONFDIR}/registry.php.beforeIMP3
+	@${CP} -p ${TURBADIR}/config/conf.php ${TURBADIR}/config/conf.php.beforeIMP3
+	@${REINPLACE_CMD} -e "s:example.com:${HOSTNAME}:g" ${CONFDIR}/servers.php
+	@${REINPLACE_CMD} -e "s:%%LOCALBASE%%:${LOCALBASE}:g" ${CONFDIR}/mime_drivers.php
+	@${RM} ${CONFDIR}/mime_drivers.php.beforeIMP
+	@${REINPLACE_CMD} -e "s:IMP_VERSION:IMP_VERSION . ' / ${SERVOS}':" \
 		${IMPDIR}/compose.php
+	@${RM} ${IMPDIR}/compose.php.beforeIMP
 .if defined(WITHOUT_SSL)
-	@${PERL} -pi -e "s:%%PROTOCOL%%:imap/notls:;s:%%IMAPPORT%%:143:" \
+	@${REINPLACE_CMD} -e "s:%%PROTOCOL%%:imap/notls:;s:%%IMAPPORT%%:143:" \
 		${CONFDIR}/servers.php
 .else
-	@${PERL} -pi -e "s:%%IMAPPORT%%:993:" ${CONFDIR}/servers.php
+	@${REINPLACE_CMD} -e "s:%%IMAPPORT%%:993:" ${CONFDIR}/servers.php
 .if defined(WITH_VALID_CERT)
-	@${PERL} -pi -e "s:%%PROTOCOL%%:imap/ssl:" ${CONFDIR}/servers.php
+	@${REINPLACE_CMD} -e "s:%%PROTOCOL%%:imap/ssl:" ${CONFDIR}/servers.php
 .else
-	@${PERL} -pi -e "s:%%PROTOCOL%%:imap/ssl/novalidate-cert:" \
+	@${REINPLACE_CMD} -e "s:%%PROTOCOL%%:imap/ssl/novalidate-cert:" \
 		${CONFDIR}/servers.php
 .endif
+	@${RM} ${CONFDIR}/servers.php.beforeIMP
 .endif
 .if !defined(WITHOUT_ASPELL)
-	@${PERL} -pi -e "s:spellchecker'] = '':spellchecker'] = '${LOCALBASE}/bin/aspell':" \
+	@${REINPLACE_CMD} -e "s:spellchecker'] = '':spellchecker'] = '${LOCALBASE}/bin/aspell':" \
 		${CONFDIR}/conf.php
 .endif
 .if !defined(WITHOUT_X11)
 .if !defined(WITHOUT_WV)
-	@${PERL} -pi -e "s://UNCOMMENTIFWV ::" ${HCONFDIR}/mime_drivers.php
+	@${REINPLACE_CMD} -e "s://UNCOMMENTIFWV ::" ${HCONFDIR}/mime_drivers.php
 .endif
 .if !defined(WITHOUT_XL)
-	@${PERL} -pi -e "s://UNCOMMENTIFXL ::" ${HCONFDIR}/mime_drivers.php
+	@${REINPLACE_CMD} -e "s://UNCOMMENTIFXL ::" ${HCONFDIR}/mime_drivers.php
 .endif
 .endif
 #.if !defined(NOCRYPT)
 #	@(if [ ! -d ${GNUPG_CNFDIR} ] ; then \
 #		${MKDIR} ${GNUPG_CNFDIR} ; \
 #	fi)
-#	@${PERL} -pi -e "s:pgp']['enabled'] = false:pgp']['enabled'] = true:g" \
+#	@${REINPLACE_CMD} -e "s:pgp']['enabled'] = false:pgp']['enabled'] = true:g" \
 #			${CONFDIR}/conf.php
-#	@${PERL} -pi -e "s:%%GNUPG_CNFDIR%%:${GNUPG_CNFDIR}:" \
+#	@${REINPLACE_CMD} -e "s:%%GNUPG_CNFDIR%%:${GNUPG_CNFDIR}:" \
 #			${CONFDIR}/conf.php
 #.endif
 .if !defined(WITHOUT_ZIP)
-	@${PERL} -pi -e "s://UNCOMMENTIFZIP ::" ${HCONFDIR}/mime_drivers.php
+	@${REINPLACE_CMD} -e "s://UNCOMMENTIFZIP ::" ${HCONFDIR}/mime_drivers.php
 .endif
 .if defined(WITH_RAR)
-	@${PERL} -pi -e "s://UNCOMMENTIFRAR ::" ${HCONFDIR}/mime_drivers.php
+	@${REINPLACE_CMD} -e "s://UNCOMMENTIFRAR ::" ${HCONFDIR}/mime_drivers.php
 .endif
 	@${CHOWN} -R www:www ${IMPDIR}
 	@${CHMOD} -R o-rwx ${CONFDIR}
 	@${CP} -p ${FILESDIR}/httpd.conf.imp ${HORDE_INC}/httpd.conf.imp
-	@${PERL} -pi -e "s:/home/httpd/html/horde/imp:${IMPDIR}:g" ${HORDE_INC}/httpd.conf.imp
+	@${REINPLACE_CMD} -e "s:/home/httpd/html/horde/imp:${IMPDIR}:g" ${HORDE_INC}/httpd.conf.imp
+	@${RM} ${HORDE_INC}/httpd.conf.imp.beforeIMP
 # Let's Horde use IMP for auth
-	@${PERL} -pi -e "s://UNCOMMENTWHENINSTIMP::" ${HCONFDIR}/registry.php
+	@${REINPLACE_CMD} -e "s://UNCOMMENTWHENINSTIMP::" ${HCONFDIR}/registry.php
 # Provide a link to IMP from Turba
 .if !defined(WITHOUT_TURBA)
-	@${PERL} -pi -e "s://UNCOMMENTWHENINSTIMP::" ${TURBADIR}/config/conf.php
-	@${PERL} -pi -e "s:apps'] = array\(\):apps'] = array('turba'):" \
+	@${REINPLACE_CMD} -e "s://UNCOMMENTWHENINSTIMP::" ${TURBADIR}/config/conf.php
+	@${REINPLACE_CMD} -e "s:apps'] = array():apps'] = array('turba'):" \
 		${CONFDIR}/conf.php
 .endif
 .if !defined(NOPORTDOCS)
@@ -304,6 +311,10 @@ do-install:
 	@${ECHO_MSG} "===> Documentation installed in ${DOCSDIR}."
 .endif
 # Prepare deinstallation
+	@${RM} ${CONFDIR}/conf.php.beforeIMP
+	@${MV} ${HCONFDIR}/mime_drivers.php.beforeIMP3 ${HCONFDIR}/mime_drivers.php.beforeIMP
+	@${MV} ${HCONFDIR}/registry.php.beforeIMP3 ${HCONFDIR}/registry.php.beforeIMP
+	@${MV} ${TURBADIR}/config/conf.php.beforeIMP3 ${TURBADIR}/config/conf.php.beforeIMP
 	@${CP} -p ${HCONFDIR}/mime_drivers.php ${HCONFDIR}/mime_drivers.php.afterIMP
 	@${CP} -p ${HCONFDIR}/registry.php ${HCONFDIR}/registry.php.afterIMP
 	@${CP} -p ${TURBADIR}/config/conf.php ${TURBADIR}/config/conf.php.afterIMP

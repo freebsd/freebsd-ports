@@ -18,9 +18,11 @@ RUN_DEPENDS=	${LOCALBASE}/www/horde/imp/index.php:${PORTSDIR}/mail/imp3
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
-IS_INTERACTIVE=	'need to build mod_php4 with mcrypt option set.'
+IS_INTERACTIVE=	'need to build mod_php4 with MCAL option set.'
 NO_BUILD=	yes
+USE_REINPLACE=	yes
 
+REINPLACE_ARGS=	-i.beforeKronolith
 DOCS=		COPYING README docs/CHANGES docs/CREDITS docs/INSTALL docs/TODO
 CONFFILE=	conf.php html.php keywords.php menu.php prefs.php
 SUB_DIRS=	config graphics lib locale po scripts templates
@@ -60,11 +62,10 @@ do-install:
 	@${CHOWN} -R www:www ${KRONOLITHDIR}
 	@${CHMOD} -R o-rwx ${CONFDIR}
 	@${CP} -p ${FILESDIR}/httpd.conf.kronolith ${HORDE_INC}
-	@${PERL} -pi -e "s:/home/httpd/html/horde/kronolith:${KRONOLITHDIR}:g" \
+	@${REINPLACE_CMD} -e "s:/home/httpd/html/horde/kronolith:${KRONOLITHDIR}:g" \
 		${HORDE_INC}/httpd.conf.kronolith
-	@${CP} -p ${HORDEDIR}/config/registry.php		\
-		${HORDEDIR}/config/registry.php.beforeKronolith
-	@${PERL} -pi -e "s://UNCOMMENTWHENINSTKRONOLITH::" \
+	@${RM} ${HORDE_INC}/httpd.conf.kronolith.beforeKronolith
+	@${REINPLACE_CMD} -e "s://UNCOMMENTWHENINSTKRONOLITH::" \
 		${HORDEDIR}/config/registry.php
 	@${CP} -p ${HORDEDIR}/config/registry.php		\
 		${HORDEDIR}/config/registry.php.afterKronolith
@@ -88,16 +89,17 @@ post-install:
 	  ${ECHO} -n "Please enter a password for www's calendar: " ; \
 	  (read PASSCAL;						\
 	   ${LOCALBASE}/bin/htpasswd -bc ${LOCALBASE}/etc/mpasswd www $${PASSCAL}; \
-	   ${PERL} -pi -e "s:%%PASSCAL%%:$${PASSCAL}:" ${CONFDIR}/conf.php) \
+	   ${REINPLACE_CMD} -e "s:%%PASSCAL%%:$${PASSCAL}:" ${CONFDIR}/conf.php) \
 	elif ! ${GREP} -q -e "^www" ${LOCALBASE}/etc/mpasswd ; then \
 	  ${ECHO_MSG} "===> Adding www into ${LOCALBASE}/etc/mpasswd" ; \
 	  ${ECHO} -n "Please enter a password for www's calendar: " ; \
 	  (read PASSCAL;						\
 	   ${LOCALBASE}/bin/htpasswd -b ${LOCALBASE}/etc/mpasswd www $${PASSCAL} ; \
-	   ${PERL} -pi -e "s:%%PASSCAL%%:$${PASSCAL}:" ${CONFDIR}/conf.php) \
+	   ${REINPLACE_CMD} -e "s:%%PASSCAL%%:$${PASSCAL}:" ${CONFDIR}/conf.php) \
 	else \
-	   ${PERL} -pi -e "s:%%PASSCAL%%:www_cal_password:" ${CONFDIR}/conf.php ; \
+	   ${REINPLACE_CMD} -e "s:%%PASSCAL%%:www_cal_password:" ${CONFDIR}/conf.php ; \
 	fi
+	@${RM} ${CONFDIR}/conf.php.beforeKronolith
 .endif
 	@${ECHO_MSG}
 	@${CAT} ${PKGMESSAGE} | \

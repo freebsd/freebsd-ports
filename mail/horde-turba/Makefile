@@ -39,6 +39,9 @@ LIB_DEPENDS+=	ldap.2:${PORTSDIR}/net/openldap2 \
 RUN_DEPENDS+=  ${LOCALBASE}/www/horde/index.php:${PORTSDIR}/www/horde2
 
 NO_BUILD=	yes
+USE_REINPLACE=	yes
+
+REINPLACE_ARGS=	-i.beforeTurba
 DOCS=		COPYING README docs/CHANGES docs/CREDITS \
 		docs/INSTALL docs/turba.dia docs/turba.pdf
 CONFFILE=	attributes.php conf.php html.php menu.php \
@@ -109,11 +112,10 @@ do-install:
 	@${CHOWN} -R www:www ${TURBADIR}
 	@${CHMOD} -R o-rwx ${CONFDIR}
 	@${CP} -p ${FILESDIR}/httpd.conf.turba ${HORDE_INC}
-	@${PERL} -pi -e "s:/home/httpd/html/horde/turba:${TURBADIR}:g"	\
+	@${REINPLACE_CMD} -e "s:/home/httpd/html/horde/turba:${TURBADIR}:g"	\
 		${HORDE_INC}/httpd.conf.turba
-	@${CP} -p ${HORDEDIR}/config/registry.php			\
-		${HORDEDIR}/config/registry.php.beforeTurba
-	@${PERL} -pi -e "s://UNCOMMENTWHENINSTTURBA::"			\
+	@${RM} ${HORDE_INC}/httpd.conf.turba.beforeTurba
+	@${REINPLACE_CMD} -e "s://UNCOMMENTWHENINSTTURBA::"			\
 		${HORDEDIR}/config/registry.php
 	@${CP} -p ${HORDEDIR}/config/registry.php			\
 		${HORDEDIR}/config/registry.php.afterTurba
