@@ -6,9 +6,7 @@ share/doc/xdigger/README
 share/xdigger/diamond.au
 share/xdigger/step.au
 share/xdigger/stone.au
-@mode 666
 share/xdigger/xdigger.hiscore
-@mode
 share/xdigger/xdigger.level
 @dirrm share/doc/xdigger
 @dirrm share/xdigger
