@@ -41,9 +41,9 @@ ac_add_options --disable-dtd-debug
 ac_add_options --disable-jsd
 ac_add_options --disable-ldap
 ac_add_options --disable-pedantic
-ac_add_options --disable-xinerama
-ac_add_options --enable-extensions=default,-inspector,-irc,-venkman,-content-packs,-help
-ac_add_options --enable-plaintext-editor-only
+ac_add_options --disable-profilesharing
+ac_add_options --disable-installer
+ac_add_options --enable-extensions=cookie,xml-rpc,xmlextras,p3p,pref,transformiix,universalchardet,typeaheadfind,webservices
 ######################################################################
 # conditional from port Makefile
 if test -n "$WITH_DEBUG"; then
