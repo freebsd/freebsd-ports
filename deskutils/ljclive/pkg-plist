@@ -1,0 +1,3 @@
+bin/clive
+share/clive/cliverc-example.conf
+@dirrm share/clive
