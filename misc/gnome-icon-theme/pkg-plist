@@ -16,6 +16,10 @@ share/icons/gnome/36x36/filesystems/gnome-fs-directory-accept.icon
 share/icons/gnome/36x36/filesystems/gnome-fs-directory-accept.png
 share/icons/gnome/36x36/filesystems/gnome-fs-directory.icon
 share/icons/gnome/36x36/filesystems/gnome-fs-directory.png
+share/icons/gnome/48x48/apps/gnome-desktop-config.png
+share/icons/gnome/48x48/apps/gnome-server-config.png
+share/icons/gnome/48x48/apps/gnome-starthere.png
+share/icons/gnome/48x48/apps/gnome-system-config.png
 share/icons/gnome/48x48/devices/gnome-dev-cdrom-audio.png
 share/icons/gnome/48x48/devices/gnome-dev-cdrom.png
 share/icons/gnome/48x48/devices/gnome-dev-dvd.png
@@ -24,17 +28,26 @@ share/icons/gnome/48x48/devices/gnome-dev-harddisk.png
 share/icons/gnome/48x48/devices/gnome-dev-jazdisk.png
 share/icons/gnome/48x48/devices/gnome-dev-memory.png
 share/icons/gnome/48x48/devices/gnome-dev-zipdisk.png
+share/icons/gnome/48x48/emblems/emblem-art.icon
 share/icons/gnome/48x48/emblems/emblem-art.png
+share/icons/gnome/48x48/emblems/emblem-camera.icon
 share/icons/gnome/48x48/emblems/emblem-camera.png
+share/icons/gnome/48x48/emblems/emblem-documents.icon
 share/icons/gnome/48x48/emblems/emblem-documents.png
+share/icons/gnome/48x48/emblems/emblem-mail.icon
 share/icons/gnome/48x48/emblems/emblem-mail.png
+share/icons/gnome/48x48/emblems/emblem-multimedia.icon
 share/icons/gnome/48x48/emblems/emblem-multimedia.png
 share/icons/gnome/48x48/emblems/emblem-noread.png
+share/icons/gnome/48x48/emblems/emblem-package.icon
 share/icons/gnome/48x48/emblems/emblem-package.png
+share/icons/gnome/48x48/emblems/emblem-pictures.icon
 share/icons/gnome/48x48/emblems/emblem-pictures.png
+share/icons/gnome/48x48/emblems/emblem-sound.icon
 share/icons/gnome/48x48/emblems/emblem-sound.png
 share/icons/gnome/48x48/emblems/emblem-symbolic-link.png
 share/icons/gnome/48x48/emblems/emblem-trash.png
+share/icons/gnome/48x48/emblems/emblem-web.icon
 share/icons/gnome/48x48/emblems/emblem-web.png
 share/icons/gnome/48x48/filesystems/gnome-fs-blockdev.png
 share/icons/gnome/48x48/filesystems/gnome-fs-bookmark-missing.png
@@ -49,12 +62,15 @@ share/icons/gnome/48x48/filesystems/gnome-fs-fifo.png
 share/icons/gnome/48x48/filesystems/gnome-fs-ftp.png
 share/icons/gnome/48x48/filesystems/gnome-fs-home.png
 share/icons/gnome/48x48/filesystems/gnome-fs-loading-icon.png
+share/icons/gnome/48x48/filesystems/gnome-fs-network.png
 share/icons/gnome/48x48/filesystems/gnome-fs-nfs.png
 share/icons/gnome/48x48/filesystems/gnome-fs-regular.icon
 share/icons/gnome/48x48/filesystems/gnome-fs-regular.png
+share/icons/gnome/48x48/filesystems/gnome-fs-server.png
 share/icons/gnome/48x48/filesystems/gnome-fs-share.png
 share/icons/gnome/48x48/filesystems/gnome-fs-smb.png
 share/icons/gnome/48x48/filesystems/gnome-fs-socket.png
+share/icons/gnome/48x48/filesystems/gnome-fs-ssh.png
 share/icons/gnome/48x48/filesystems/gnome-fs-trash-empty.png
 share/icons/gnome/48x48/filesystems/gnome-fs-trash-full.png
 share/icons/gnome/48x48/filesystems/gnome-fs-web.png
@@ -195,6 +211,7 @@ share/icons/gnome/48x48/mimetypes/gnome-mime-video-quicktime.png
 share/icons/gnome/48x48/mimetypes/gnome-mime-video-x-ms-asf.png
 share/icons/gnome/48x48/mimetypes/gnome-mime-video-x-ms-wmv.png
 share/icons/gnome/48x48/mimetypes/gnome-mime-video-x-msvideo.png
+share/icons/gnome/48x48/mimetypes/gnome-mime-x-directory-smb-share.png
 share/icons/gnome/48x48/mimetypes/gnome-mime-x-font-afm.png
 share/icons/gnome/48x48/mimetypes/gnome-package.png
 share/icons/gnome/72x72/devices/gnome-dev-harddisk.png
@@ -204,6 +221,7 @@ share/icons/gnome/72x72/filesystems/gnome-fs-directory.icon
 share/icons/gnome/72x72/filesystems/gnome-fs-directory.png
 share/icons/gnome/72x72/filesystems/gnome-fs-regular.icon
 share/icons/gnome/72x72/filesystems/gnome-fs-regular.png
+share/icons/gnome/96x96/apps/gnome-starthere.png
 share/icons/gnome/96x96/filesystems/gnome-fs-directory-accept.icon
 share/icons/gnome/96x96/filesystems/gnome-fs-directory-accept.png
 share/icons/gnome/96x96/filesystems/gnome-fs-directory.icon
@@ -211,21 +229,35 @@ share/icons/gnome/96x96/filesystems/gnome-fs-directory.png
 share/icons/gnome/96x96/filesystems/gnome-fs-regular.icon
 share/icons/gnome/96x96/filesystems/gnome-fs-regular.png
 share/icons/gnome/index.theme
+share/icons/gnome/scalable/emblems/emblem-OK.icon
 share/icons/gnome/scalable/emblems/emblem-OK.svg
+share/icons/gnome/scalable/emblems/emblem-certified.icon
 share/icons/gnome/scalable/emblems/emblem-certified.svg
+share/icons/gnome/scalable/emblems/emblem-cool.icon
 share/icons/gnome/scalable/emblems/emblem-cool.svg
+share/icons/gnome/scalable/emblems/emblem-danger.icon
 share/icons/gnome/scalable/emblems/emblem-danger.svg
+share/icons/gnome/scalable/emblems/emblem-distinguished.icon
 share/icons/gnome/scalable/emblems/emblem-distinguished.svg
+share/icons/gnome/scalable/emblems/emblem-draft.icon
 share/icons/gnome/scalable/emblems/emblem-draft.svg
+share/icons/gnome/scalable/emblems/emblem-favorite.icon
 share/icons/gnome/scalable/emblems/emblem-favorite.svg
+share/icons/gnome/scalable/emblems/emblem-generic.icon
 share/icons/gnome/scalable/emblems/emblem-generic.svg
+share/icons/gnome/scalable/emblems/emblem-important.icon
 share/icons/gnome/scalable/emblems/emblem-important.svg
+share/icons/gnome/scalable/emblems/emblem-new.icon
 share/icons/gnome/scalable/emblems/emblem-new.svg
 share/icons/gnome/scalable/emblems/emblem-noread.svg
 share/icons/gnome/scalable/emblems/emblem-nowrite.svg
+share/icons/gnome/scalable/emblems/emblem-ohno.icon
 share/icons/gnome/scalable/emblems/emblem-ohno.svg
+share/icons/gnome/scalable/emblems/emblem-personal.icon
 share/icons/gnome/scalable/emblems/emblem-personal.svg
+share/icons/gnome/scalable/emblems/emblem-special.icon
 share/icons/gnome/scalable/emblems/emblem-special.svg
+share/icons/gnome/scalable/emblems/emblem-urgent.icon
 share/icons/gnome/scalable/emblems/emblem-urgent.svg
 @dirrm share/icons/gnome/scalable/mimetypes
 @dirrm share/icons/gnome/scalable/filesystems
@@ -236,6 +268,7 @@ share/icons/gnome/scalable/emblems/emblem-urgent.svg
 @dirrm share/icons/gnome/96x96/filesystems
 @dirrm share/icons/gnome/96x96/emblems
 @dirrm share/icons/gnome/96x96/devices
+@dirrm share/icons/gnome/96x96/apps
 @dirrm share/icons/gnome/96x96
 @dirrm share/icons/gnome/72x72/mimetypes
 @dirrm share/icons/gnome/72x72/filesystems
@@ -246,6 +279,7 @@ share/icons/gnome/scalable/emblems/emblem-urgent.svg
 @dirrm share/icons/gnome/48x48/filesystems
 @dirrm share/icons/gnome/48x48/emblems
 @dirrm share/icons/gnome/48x48/devices
+@dirrm share/icons/gnome/48x48/apps
 @dirrm share/icons/gnome/48x48
 @dirrm share/icons/gnome/36x36/mimetypes
 @dirrm share/icons/gnome/36x36/filesystems
