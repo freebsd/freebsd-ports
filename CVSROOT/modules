@@ -547,7 +547,6 @@ bakery		ports/x11-toolkits/bakery
 bakery_gnomeui	ports/x11-toolkits/bakery_gnomeui
 balance		ports/net/balance
 balsa		ports/mail/balsa
-balsa2		ports/mail/balsa2
 bamg		ports/math/bamg
 bandwidthd	ports/net-mgmt/bandwidthd
 barcode		ports/graphics/barcode
