@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	icc
-PORTVERSION=	7.1.014
+PORTVERSION=	7.1.017
 #PORTREVISION=	1
 CATEGORIES=	lang linux devel
 MASTER_SITES=
-DISTNAME=	l_cc_pu_${PORTVERSION}
+DISTNAME=	l_cc_pc_${PORTVERSION}
 EXTRACT_SUFX=	.tar
 
 MAINTAINER=	netchild@FreeBSD.org
@@ -63,12 +63,12 @@ post-extract:
 		${FILESDIR}/cpio-exclude_noportdocs >>${WRKDIR}/cpio-exclude
 .endif
 .for i in \
-	intel-icc7-7.1-12.i386.rpm
-#	intel-iidb7-7.1-25.i386.rpm \
-#	intel-isubh7-7.1-12.i386.rpm \
-#	intel-ecc7-7.1-12.ia64.rpm \
-#	intel-eidb7-7.1-25.ia64.rpm \
-#	intel-esubh7-7.1-12.ia64.rpm
+	intel-icc7-7.1-16.i386.rpm
+#	intel-iidb7-7.1-33.i386.rpm \
+#	intel-isubh7-7.1-16.i386.rpm \
+#	intel-ecc7-7.1-16.ia64.rpm \
+#	intel-eidb7-7.1-33.ia64.rpm \
+#	intel-esubh7-7.1-16.ia64.rpm
 	@cd ${WRKSRC} && rpm2cpio 2>/dev/null ${i} | \
 		${CPIO} -idfuE ${WRKDIR}/cpio-exclude --quiet
 .endfor
