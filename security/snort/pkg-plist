@@ -1,25 +1,32 @@
+@comment $FreeBSD$
 bin/snort
 @unexec if [ -f %D/etc/snort.conf ] && cmp -s %D/etc/snort.conf %D/etc/snort.conf-sample; then rm -f %D/etc/snort.conf; fi
 etc/snort.conf-sample
 etc/rc.d/snort.sh.sample
 @exec [ -f %B/snort.conf ] || cp %B/%f %B/snort.conf
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS
-%%PORTDOCS%%%%DOCSDIR%%/NEWS
-%%PORTDOCS%%%%DOCSDIR%%/README.csv
 %%PORTDOCS%%%%DOCSDIR%%/BUGS
-%%PORTDOCS%%%%DOCSDIR%%/README
-%%PORTDOCS%%%%DOCSDIR%%/README.database
 %%PORTDOCS%%%%DOCSDIR%%/CREDITS
-%%PORTDOCS%%%%DOCSDIR%%/README.FLEXRESP
+%%PORTDOCS%%%%DOCSDIR%%/ChangeLog
 %%PORTDOCS%%%%DOCSDIR%%/FAQ
+%%PORTDOCS%%%%DOCSDIR%%/NEWS
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/README.FLEXRESP
 %%PORTDOCS%%%%DOCSDIR%%/README.PLUGINS
-%%PORTDOCS%%%%DOCSDIR%%/USAGE
-%%PORTDOCS%%%%DOCSDIR%%/README.thresholding
-%%PORTDOCS%%%%DOCSDIR%%/snort_manual.pdf
+%%PORTDOCS%%%%DOCSDIR%%/README.UNSOCK
+%%PORTDOCS%%%%DOCSDIR%%/README.WIN32
+%%PORTDOCS%%%%DOCSDIR%%/README.alert_order
+%%PORTDOCS%%%%DOCSDIR%%/README.csv
+%%PORTDOCS%%%%DOCSDIR%%/README.database
 %%PORTDOCS%%%%DOCSDIR%%/README.flow
 %%PORTDOCS%%%%DOCSDIR%%/README.flow-portscan
 %%PORTDOCS%%%%DOCSDIR%%/README.http_inspect
+%%PORTDOCS%%%%DOCSDIR%%/README.thresholding
 %%PORTDOCS%%%%DOCSDIR%%/README.wireless
+%%PORTDOCS%%%%DOCSDIR%%/TODO
+%%PORTDOCS%%%%DOCSDIR%%/USAGE
+%%PORTDOCS%%%%DOCSDIR%%/snort_manual.pdf
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
 %%DATADIR%%/attack-responses.rules
 %%DATADIR%%/backdoor.rules
 %%DATADIR%%/bad-traffic.rules
@@ -74,5 +81,4 @@ etc/rc.d/snort.sh.sample
 %%DATADIR%%/web-misc.rules
 %%DATADIR%%/web-php.rules
 %%DATADIR%%/x11.rules
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm %%DATADIR%%
