@@ -213,6 +213,7 @@
     SUBDIR += kdetelnet
     SUBDIR += kinkatta
     SUBDIR += kio_fish
+    SUBDIR += kmess
     SUBDIR += kmsn
     SUBDIR += konverse
     SUBDIR += kopete
