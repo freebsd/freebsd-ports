@@ -6,12 +6,10 @@
 # North America
 #
 35.2,  -80.9, "ftp2.freebsd.org"              # Charlotte, NC 
-29.7,  -95.4, "ftp3.freebsd.org"              # Houston, TX (neosoft.com)
+37.23  -80.41 "ftp3.freebsd.org"              # Blacksburg, VA (Va Tech)
 38.6,  -77.0, "ftp4.freebsd.org"              # Arlington, VA (atinc.com)
 43.6,  -83.9, "ftp5.freebsd.org"              # Mt. Pleasant, MI (C-Mich U)
-#              "ftp6.freebsd.org"              # Blacksburg, VA (Va Tech)
 44.9,  -68.8, "ftp7.freebsd.org"              # Orono, ME (U of Maine)
-#              "ftp.ca.freebsd.org"            # Gatineau, Quebec (synapse.net)
 #
 # South America
 #
