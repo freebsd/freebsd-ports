@@ -10,8 +10,10 @@ bin/montage
 bin/xtp
 include/magick/PreRvIcccm.h
 include/magick/X.h
+include/magick/classify.h
 include/magick/compress.h
 include/magick/config.h
+include/magick/defines.h
 include/magick/delegates.h
 include/magick/error.h
 include/magick/gems.h
@@ -26,7 +28,7 @@ include/magick/widget.h
 lib/libMagick.a
 lib/libMagick.la
 lib/libMagick.so
-lib/libMagick.so.4.14
+lib/libMagick.so.4
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Image/Magick.pm
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Image/Magick/.packlist
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Image/Magick/Magick.bs
