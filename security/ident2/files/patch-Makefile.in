@@ -1,0 +1,13 @@
+--- Makefile.in.orig	Sat Jun  9 17:44:19 2001
++++ Makefile.in	Sat Jun  9 17:44:36 2001
+@@ -36,8 +36,8 @@
+ doc_format = @doc_format@
+ 
+ PROG = ident2
+-BINDIR = /usr/local/sbin
+-MANDIR = /usr/local/man/man8
++BINDIR = ${prefix}/sbin
++MANDIR = ${prefix}/man/man8
+ 
+ SOURCES=ident2.c common.c daemon.c m_${MACHTARGET}.c
+ OBJS=ident2.o common.o daemon.o machine.o
