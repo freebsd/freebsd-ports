@@ -1,0 +1,16 @@
+
+$FreeBSD$
+
+--- librsvg-config.in	2001/10/05 14:55:24	1.1
++++ librsvg-config.in	2001/10/05 15:05:57
+@@ -39,9 +39,7 @@
+       echo @LIBRSVG_VERSION@
+       ;;
+     --cflags)
+-      if test @includedir@ != /usr/include ; then
+-        includes=-I@includedir@
+-      fi
++      includes=-I@includedir@/librsvg-1
+       echo $includes
+       ;;
+     --libs)
