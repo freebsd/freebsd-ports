@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ctwm
-PORTVERSION=	3.5.2c
+PORTVERSION=	3.6
 CATEGORIES=	x11-wm
 MASTER_SITES=	http://slpc1.epfl.ch/public/software/ctwm/
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ctwm-images${EXTRACT_SUFX}

@@ -1,22 +1,7 @@
+$FreeBSD$
+
 *** Imakefile.orig	Mon May 15 21:47:10 2000
 --- Imakefile	Sat Sep 22 11:50:14 2001
-***************
-*** 11,17 ****
-  #undef  USE_SOUND
-  #define XPM
-  #define USEM4
-! #undef X11R6
-  #define I18N
-  
-           YFLAGS = -d
---- 11,17 ----
-  #undef  USE_SOUND
-  #define XPM
-  #define USEM4
-! #define X11R6
-  #define I18N
-  
-           YFLAGS = -d
 ***************
 *** 19,26 ****
          LINTLIBS = $(LINTXMU) $(LINTEXTENSIONLIB) $(LINTXLIB)
