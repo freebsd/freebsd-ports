@@ -1,0 +1,12 @@
+JVim is a text editor that is upwards compatible to vi. It can be used
+to edit any ASCII and Japanese(EUC or JIS) text.  It is especially
+useful for editing programs.
+
+This package is built with Japanese support, using Canna and Wnn4.
+
+There are a lot of enhancements above vi: multi level undo, command
+line editing, filename completion, on line help, quoting, etc.. Read
+difference.doc for a summary of the differences between vi and Vim.
+
+-- S. Taoka
+<taoka@infonets.hiroshima-u.ac.jp>
