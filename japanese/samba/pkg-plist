@@ -16,7 +16,6 @@ bin/smbspool
 sbin/smbd
 sbin/nmbd
 sbin/swat
-share/swat-i18n.txt
 share/examples/samba/README
 share/examples/samba/smb.conf.default
 share/examples/samba/smb.conf.default.ja
@@ -47,14 +46,14 @@ share/examples/samba/smbchartool/README
 share/examples/samba/smbchartool/INSTALL.sh
 share/examples/samba/smbchartool/capecho
 share/examples/samba/smbchartool/hexecho
-share/examples/samba/smbchartool/smbfnconv
 share/examples/samba/smbchartool/dot.bashrc.example
 share/examples/samba/smbchartool/gendir.pl
 share/examples/samba/smbchartool/gengaiji.pl
 share/examples/samba/smbchartool/genibmkanji.pl
 share/examples/samba/smbchartool/hextestkanji.tar.gz
-share/examples/samba/smbchartool/smbfnconv.v1.9
 share/examples/samba/smbchartool/smbchartool.html
+share/examples/samba/smbchartool/smbfnconv
+share/examples/samba/smbchartool/smbutfconv
 share/examples/samba/thoralf/smb.conf
 share/examples/samba/tridge/README
 share/examples/samba/tridge/smb.conf
@@ -257,7 +256,6 @@ share/doc/samba/yodldocs/testprns.1.yo
 @dirrm share/doc/samba
 share/locale/en/LC_MESSAGES/i18n_swat.mo
 share/locale/ja/LC_MESSAGES/i18n_swat.mo
-share/locale/ja_JP.SJIS/LC_MESSAGES/i18n_swat.mo
 share/swat/help/welcome.html
 share/swat/help/DOMAIN_MEMBER.html
 share/swat/help/NT_Security.html
@@ -377,6 +375,7 @@ share/swat/ja/help/smbrun.1.html
 share/swat/ja/help/smbsh.1.html
 share/swat/ja/help/smbspool.8.html
 share/swat/ja/help/smbstatus.1.html
+share/swat/ja/help/smbumount.8.html
 share/swat/ja/help/smbtar.1.html
 share/swat/ja/help/swat.8.html
 share/swat/ja/help/testparm.1.html
@@ -404,25 +403,6 @@ share/swat/ja/include/header_css.html
 @dirrm share/swat/ja/images
 @dirrm share/swat/ja/include
 @dirrm share/swat/ja
-share/swat/ja_JP.SJIS/help/welcome.html
-share/swat/ja_JP.SJIS/images/globals.gif
-share/swat/ja_JP.SJIS/images/home.gif
-share/swat/ja_JP.SJIS/images/passwd.gif
-share/swat/ja_JP.SJIS/images/printers.gif
-share/swat/ja_JP.SJIS/images/samba.gif
-share/swat/ja_JP.SJIS/images/shares.gif
-share/swat/ja_JP.SJIS/images/status.gif
-share/swat/ja_JP.SJIS/images/viewconfig.gif
-share/swat/ja_JP.SJIS/include/footer.html
-share/swat/ja_JP.SJIS/include/header.JP1.html
-share/swat/ja_JP.SJIS/include/header.html
-share/swat/ja_JP.SJIS/include/header.nocss.html
-share/swat/ja_JP.SJIS/include/header.org.html
-share/swat/ja_JP.SJIS/include/header_css.html
-@dirrm share/swat/ja_JP.SJIS/help
-@dirrm share/swat/ja_JP.SJIS/images
-@dirrm share/swat/ja_JP.SJIS/include
-@dirrm share/swat/ja_JP.SJIS
 share/swat/using_samba/appa_01.html
 share/swat/using_samba/appa_02.html
 share/swat/using_samba/appa_03.html
