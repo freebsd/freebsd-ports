@@ -17,6 +17,12 @@ COMMENT=	A full Ada ORB to develop CORBA application
 BUILD_DEPENDS=	adagcc:${PORTSDIR}/lang/gnat
 LIB_DEPENDS=	adasockets.0:${PORTSDIR}/net/adasockets
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 500113
+BROKEN=         "Does not compile"
+.endif
+
 USE_LIBTOOL=	yes
 USE_AUTOMAKE_VER=14
 CONFIGURE_ARGS=	--enable-adasockets
@@ -29,4 +35,4 @@ MAN7=	adabroker.7
 post-install:
 	${RM} ${PREFIX}/lib/adabroker/allsrc.adb
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

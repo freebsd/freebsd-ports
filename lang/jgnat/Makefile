@@ -33,6 +33,10 @@ WRKSRC=		${WRKDIR}/${DISTNAME:C@-([^\-]+)$@/\1@}
 
 .include <bsd.port.pre.mk>
 
+.if ${OSVERSION} >= 500113
+BROKEN=         "Does not compile"
+.endif
+
 LIBDIR=		${PREFIX}/lib/jgnat
 ADAINCDIR=	${LIBDIR}/adainclude
 ADALIBDIR=	${LIBDIR}/adalib

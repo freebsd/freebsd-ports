@@ -24,6 +24,12 @@ BUILD_DEPENDS=	${LOCALBASE}/lib/libgdc.a:${PORTSDIR}/graphics/gdchart
 RUN_DEPENDS=	${LOCALBASE}/lib/libgdc.a:${PORTSDIR}/graphics/gdchart
 LIB_DEPENDS=	gdbm.3:${PORTSDIR}/databases/gdbm
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 500113
+BROKEN=         "Does not compile"
+.endif
+
 # ntop will store its runtime database files in ${DBDIR}/ntop/
 DBDIR?=		/var/db
 
@@ -46,7 +52,6 @@ CONFIGURE_ARGS=	--localstatedir=${DBDIR} \
 CONFIGURE_ARGS+=	--enable-tcpwrap
 .endif
 
-.include <bsd.port.pre.mk>
 .if ${OSVERSION} < 400014
 LIB_DEPENDS+=	ssl.3:${PORTSDIR}/security/openssl
 CONFIGURE_ARGS+=	--with-ossl-root=${LOCALBASE}
