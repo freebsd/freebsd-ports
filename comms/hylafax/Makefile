@@ -12,11 +12,9 @@ MASTER_SITES=	ftp://ftp.hylafax.org/source/
 
 MAINTAINER=	ports@FreeBSD.org
 
-BUILD_DEPENDS=	bash:${PORTSDIR}/shells/bash2 \
-		${LOCALBASE}/lib/afm/Courier:${PORTSDIR}/print/afm
+BUILD_DEPENDS=	${LOCALBASE}/lib/afm/Courier:${PORTSDIR}/print/afm
 # no dependency on ghostscript because we don't know which
 # version the user prefers
-RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash2
 LIB_DEPENDS=	tiff.4:${PORTSDIR}/graphics/tiff \
 		jpeg.9:${PORTSDIR}/graphics/jpeg
 
@@ -28,7 +26,11 @@ CONFIGURE_ARGS=	--with-INSTALL="" \
 		--with-TIFFINC="${LOCALBASE}/include" \
 		--with-GCOPTS=" " --with-GCXXOPTS=" " \
 		--with-REGEX=no --with-LIBREGEX='' --with-REGEXINC=none
-.ifdef PACKAGE_BUILDING
+# Defaults to "North American Letter".  Use "ISO A4" for A4.
+.ifdef PAGESIZE
+CONFIGURE_ARGS+=--with-PAGESIZE="${PAGESIZE}"
+.endif
+.if defined(PACKAGE_BUILDING) || defined(BATCH)
 CONFIGURE_ARGS+=--nointeractive
 .endif
 MAKE_ARGS+=	OPTIMIZER="" -EOPTIMIZER
