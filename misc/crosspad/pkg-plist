@@ -1,0 +1,12 @@
+bin/padload
+bin/crosspad2ps
+@exec cd %D/bin; ln -s crosspad2ps crosspad2eps
+@exec cd %D/bin; ln -s crosspad2ps crosspad2tgif
+@exec cd %D/bin; ln -s crosspad2ps crosspad2idraw
+@unexec rm %D/bin/crosspad2eps
+@unexec rm %D/bin/crosspad2tgif
+@unexec rm %D/bin/crosspad2idraw
+share/doc/crosspad/PROTOCOL
+share/doc/crosspad/README.english
+share/doc/crosspad/README.japanese
+@dirrm share/doc/crosspad
