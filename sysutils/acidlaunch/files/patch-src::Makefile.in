@@ -1,0 +1,11 @@
+--- src/Makefile.in.orig	Fri Apr 11 20:41:42 2003
++++ src/Makefile.in	Fri Apr 11 20:42:11 2003
+@@ -72,7 +72,7 @@
+ XML_CONFIG = @XML_CONFIG@
+ XML_LIBS = @XML_LIBS@
+ 
+-CPPFLAGS = -DPREFIX=\"@prefix@\"
++CPPFLAGS = -DPREFIX=\"${X11BASE}\"
+ 
+ bin_PROGRAMS = acidlaunch
+ 

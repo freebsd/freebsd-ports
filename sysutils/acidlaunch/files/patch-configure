@@ -1,0 +1,20 @@
+--- configure.orig	Fri Feb 22 04:45:04 2002
++++ configure	Fri Apr 11 20:25:11 2003
+@@ -1044,7 +1044,7 @@
+ #include <stdlib.h>
+ #include <stdio.h>
+ #include <string.h>
+-#include <xmlversion.h>
++#include <libxml/xmlversion.h>
+ 
+ int 
+ main()
+@@ -1155,7 +1155,7 @@
+ #line 1156 "configure"
+ #include "confdefs.h"
+ 
+-#include <xmlversion.h>
++#include <libxml/xmlversion.h>
+ #include <stdio.h>
+ 
+ int main() {

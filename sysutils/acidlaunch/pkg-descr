@@ -1,0 +1,7 @@
+Acidlaunch is a small, light-weight dockable app launcher with a simple
+XML-based configuration syntax.  It's written in C++ using gtk,
+gdk-pixbuf and libxml2.  It's great as a small, simple app launcher, and
+it can optionally run in a withdrawn mode for embedding in the BlackBox
+slit.
+
+WWW: http://linuxgamers.net/infoPage.php?page=acidlaunch
