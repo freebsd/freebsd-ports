@@ -1,0 +1,10 @@
+
+$FreeBSD$
+
+--- 10/Makefile.orig	Mon Jan 15 18:45:58 2001
++++ 10/Makefile	Mon Jan 15 18:46:31 2001
+@@ -0,0 +1,4 @@
++KMOD	 = snd_au8810
++SRCS	+= asp10.o
++
++.include <bsd.kmod.mk>

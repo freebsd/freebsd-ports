@@ -21,6 +21,7 @@
     SUBDIR += ari-yahoo
     SUBDIR += asbutton
     SUBDIR += astrolog
+    SUBDIR += aureal-kmod
     SUBDIR += bb
     SUBDIR += bbjd
     SUBDIR += biblereader
