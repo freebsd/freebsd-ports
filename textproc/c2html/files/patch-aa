@@ -5,7 +5,7 @@
  CC = gcc
  FLEX = flex
 -CFLAGS = -O2 -Wall -pedantic -ansi
-+CFLAGS+= -Wall -pedantic -ansi
++CFLAGS+= -Wall -pedantic -ansi -DCOMPRESSION=1
  
  all: c2html
  
