@@ -83,6 +83,7 @@
     SUBDIR += p5-Class-DBI
     SUBDIR += p5-Class-DBI-AbstractSearch
     SUBDIR += p5-Class-DBI-Pager
+    SUBDIR += p5-Class-DBI-Pg
     SUBDIR += p5-Class-DBI-SAK
     SUBDIR += p5-Class-DBI-SQLite
     SUBDIR += p5-Data-Page
