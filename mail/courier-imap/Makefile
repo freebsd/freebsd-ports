@@ -226,10 +226,17 @@ post-install:
 	@${ECHO_MSG} "in ${CONFDIR}."
 	@${ECHO_MSG} ""
 	@${ECHO_MSG} "In case you use authpam, you should put the following lines"
-	@${ECHO_MSG} "in your /etc/pam.conf or /etc/pam.d/imap"
+.if ${OSVERSION} >= 500000
+	@${ECHO_MSG} "in your /etc/pam.d/imap"
+	@${ECHO_MSG} "auth    required    pam_unix.so         try_first_pass"
+	@${ECHO_MSG} "account required    pam_unix.so         try_first_pass"
+	@${ECHO_MSG} "session required    pam_permit.so"
+.else
+	@${ECHO_MSG} "in your /etc/pam.conf"
 	@${ECHO_MSG} "imap    auth    required    pam_unix.so         try_first_pass"
 	@${ECHO_MSG} "imap    account required    pam_unix.so         try_first_pass"
 	@${ECHO_MSG} "imap    session required    pam_permit.so"
+.endif
 	@${ECHO_MSG} ""
 	@${ECHO_MSG} "In case you are upgrading an existing Installation, you need to run"
 	@${ECHO_MSG} "'make install-configure' to update your old configuration files."
