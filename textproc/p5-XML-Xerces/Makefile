@@ -39,7 +39,7 @@ FORBIDDEN=	"Does not respect PTHREAD_{CFLAGS,LIBS}"
 
 BROKEN=		dependency problems: also does not work with xerces-2.5
 DEPRECATED=	${IGNORE}
-EXPIRATION_DATE=	"06/12/2004"
+EXPIRATION_DATE=	"June 12, 2004"
 
 post-patch:
 	@${PERL} -pi -e "s|-lpthread|${PTHREAD_LIBS}|" ${WRKSRC}/Makefile.PL
