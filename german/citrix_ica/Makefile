@@ -23,7 +23,6 @@ IS_INTERACTIVE=	"Noisy license agreement ignores stdin"
 
 NO_WRKSUBDIR=	Yes
 NO_BUILD=       Yes
-USE_LINUX=	yes
 
 CDIR=	${PREFIX}/ICAClient
 BINDIR=		${PREFIX}/bin

@@ -23,7 +23,6 @@ BROKEN=		Unfetchable
 
 USE_X_PREFIX=	yes
 ONLY_FOR_ARCHS=	i386
-USE_LINUX=	yes
 NO_BUILD=	yes
 STRIP=
 

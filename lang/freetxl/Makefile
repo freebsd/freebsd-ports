@@ -14,7 +14,7 @@ DISTNAME=	txl${PORTVERSION}.linux
 MAINTAINER=	ryan@sasknow.com
 COMMENT=	The TXL Programming Language (transformation by example)
 
-USE_LINUX=	yes
+USE_LINUX?=	yes
 STRIP=
 NO_BUILD=	yes
 

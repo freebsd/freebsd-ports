@@ -31,7 +31,6 @@ USE_LINUX_PREFIX=	yes
 ARCH=		i386
 RPMFLAGS+=	--ignorearch
 .endif
-USE_LINUX=	yes
 DIST_SUBDIR?=	rpm
 EXTRACT_ONLY=
 NO_BUILD=	yes

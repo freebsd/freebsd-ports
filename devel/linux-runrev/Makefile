@@ -25,7 +25,6 @@ RUN_DEPENDS=	xanim:${PORTSDIR}/multimedia/xanim \
 NO_CDROM=	"Sale for profit is not permitted"
 
 ONLY_FOR_ARCHS=	i386
-USE_LINUX=	yes
 NO_BUILD=	yes
 
 WRKSRC=		${WRKDIR}/Revolution-${PORTVERSION}

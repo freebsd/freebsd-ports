@@ -33,7 +33,6 @@ PATCHFILES=	linux-beonex-generated-files-${PORTVERSION}.tar.bz2
 PKGMESSAGE=	${WRKDIR}/pkg-message
 PLIST=		${WRKDIR}/pkg-plist
 USE_BZIP2=	yes
-USE_LINUX=	yes
 PREFIX?=	${X11BASE}
 WRKSRC=		${WRKDIR}/beonex-comm
 

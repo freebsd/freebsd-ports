@@ -24,7 +24,6 @@ RESTRICTED=		"binary redistribution license needs clarification"
 NO_BUILD=		yes
 NO_WRKSUBDIR=		yes
 
-USE_LINUX=		yes
 USE_LINUX_PREFIX=	yes
 NO_MTREE=		yes
 LDCONFIG_LINUX=		${LINUXBASE}/sbin/ldconfig

@@ -22,7 +22,6 @@ EXTRACT_DEPENDS=rpm2cpio:${PORTSDIR}/archivers/rpm
 RUN_DEPENDS=	${LINUXBASE}/usr/X11R6/lib/libXrender.so.1:${PORTSDIR}/x11/linux-XFree86-libs
 
 ONLY_FOR_ARCHS=	i386
-USE_LINUX=	yes
 EXTRACT_CMD=	rpm2cpio
 EXTRACT_BEFORE_ARGS=
 EXTRACT_AFTER_ARGS= | ${CPIO} -id --quiet

@@ -25,7 +25,7 @@ RESTRICTED=	"Toute personne chargeant le logiciel HOMARD s'engage à ne\
 
 ONLY_FOR_ARCHS=	i386
 
-USE_LINUX=	yes
+USE_LINUX?=	yes
 USE_PYTHON=	yes
 USE_REINPLACE=	yes
 REINPLACE_ARGS=	-i ""

@@ -19,7 +19,6 @@ RUN_DEPENDS=	${LINUXBASE}/usr/lib/libSDL-1.2.so.0:${PORTSDIR}/devel/linux-sdl12 
 		${LINUXBASE}/usr/X11R6/lib/libXrender.so.1:${PORTSDIR}/x11/linux-XFree86-libs
 
 ONLY_FOR_ARCHS=	i386
-USE_LINUX=	yes
 USE_X_PREFIX=	yes
 USE_ZIP=	yes
 NO_WRKSUBDIR=	yes

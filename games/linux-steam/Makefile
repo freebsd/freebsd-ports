@@ -19,7 +19,6 @@ RUN_DEPENDS=	${LINUXBASE}/usr/X11R6/lib/libX11.so.6:${PORTSDIR}/x11/linux-XFree8
 
 IS_INTERACTIVE=	yes
 PKGMESSAGE=	${WRKDIR}/pkg-message
-USE_LINUX=	yes
 
 INSTALLDIR?=	steam
 

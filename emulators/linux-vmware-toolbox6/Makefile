@@ -25,7 +25,6 @@ WRKSRC=		${WRKDIR}/vmware-tools-distrib
 STRIP=
 
 ONLY_FOR_ARCHS=	i386
-USE_LINUX=	yes
 USE_X_PREFIX=	yes
 NO_BUILD=	yes
 .if !defined(BATCH)

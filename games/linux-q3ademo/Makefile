@@ -23,7 +23,6 @@ COMMENT=	Linux 3d shooter from id Software / Loki Software (demo version)
 
 PREFIX?=	${X11BASE}
 USE_GL=		yes
-USE_LINUX=	yes
 
 .include <bsd.port.pre.mk>
 

@@ -19,7 +19,6 @@ COMMENT=	General knowledge base and commonsense reasoning engine
 RUN_DEPENDS=	${LINUXBASE}/usr/X11R6/lib/libXrender.so.1:${PORTSDIR}/x11/linux-XFree86-libs
 
 NO_BUILD=	yes
-USE_LINUX=	yes
 
 PLIST_SUB=	PORTVERSION="${PORTVERSION}"
 

@@ -21,7 +21,6 @@ RUN_DEPENDS=	${LOCALBASE}/share/nwndata/NWNv129.txt:${PORTSDIR}/games/nwndata \
 		${LINUXBASE}/usr/X11R6/lib/libGL.so.1.2:${PORTSDIR}/graphics/linux_dri \
 		${LINUXBASE}/usr/lib/libSDL-1.2.so.0:${PORTSDIR}/devel/linux-sdl12
 
-USE_LINUX=	yes
 NO_BUILD=	yes
 ONLY_FOR_ARCHS=	i386
 NWNDATADIR=	${LOCALBASE}/share/nwndata

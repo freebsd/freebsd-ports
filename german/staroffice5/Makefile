@@ -26,7 +26,6 @@ RUN_DEPENDS=	${LINUXBASE}/usr/X11R6/lib/libXrender.so.1:${PORTSDIR}/x11/linux-XF
 NO_LATEST_LINK=	yes
 ONLY_FOR_ARCHS=	i386
 NO_CDROM=	'Sie muessen StarOffice manuell via WWW-Interface herunterladen.'
-USE_LINUX=	yes
 IS_INTERACTIVE=	yes
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 EXTRACT_CMD=	${CAT}

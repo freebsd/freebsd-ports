@@ -16,7 +16,7 @@ EXTRACT_SUFX=	_tar.gz
 MAINTAINER=	simond@irrelevant.org
 COMMENT=	Siemens PocketReader
 
-USE_LINUX=	YES
+USE_LINUX?=	YES
 NO_BUILD=	YES
 PLIST_FILES=	bin/pocketreader
 

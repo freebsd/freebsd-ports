@@ -33,7 +33,6 @@ COMMENT=	Integrated wordprocessor/dbase/spreadheet/drawing/chart/browser
 FETCH_DEPENDS=	${LINUXBASE}/lib/libc.so.6:${PORTSDIR}/emulators/linux_base-8
 RUN_DEPENDS=	${LINUXBASE}/usr/X11R6/lib/libXrender.so.1:${PORTSDIR}/x11/linux-XFree86-libs
 
-USE_LINUX=	yes
 NO_LATEST_LINK=	yes
 ONLY_FOR_ARCHS=	i386
 NO_CDROM=	'Sie muessen StarOffice manuell via WWW-Interface herunterladen.'

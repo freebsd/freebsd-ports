@@ -40,7 +40,6 @@ FREEBSD_MODULE_SITES=	\
 #		http://mirror.aarnet.edu.au/pub/vmware/freebsd/:patch
 
 USE_SUBMAKE=	yes
-USE_LINUX=	yes
 USE_PERL5=	yes
 VMDIR=		${PREFIX}/lib/vmware
 SRC_BASE?=	/usr/src

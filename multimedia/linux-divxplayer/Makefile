@@ -20,7 +20,6 @@ RUN_DEPENDS=	${LINUXBASE}/usr/X11R6/lib/libXrender.so.1:${PORTSDIR}/x11/linux-XF
 
 ONLY_FOR_ARCHS=	i386
 
-USE_LINUX=	yes
 USE_X_PREFIX=	yes
 NO_BUILD=	yes
 STRIP=

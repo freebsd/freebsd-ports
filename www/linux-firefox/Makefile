@@ -27,7 +27,6 @@ DESCR=		${.CURDIR}/pkg-descr
 MD5_FILE=	${.CURDIR}/distinfo
 PKGMESSAGE=	${WRKDIR}/pkg-message
 PLIST=		${WRKDIR}/pkg-plist
-USE_LINUX=	yes
 USE_XLIB=	yes
 USE_X_PREFIX=	yes
 WRKSRC=		${WRKDIR}/MozillaFirebird

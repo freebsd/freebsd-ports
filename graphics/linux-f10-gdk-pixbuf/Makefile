@@ -24,7 +24,7 @@ BUILD_DEPENDS=	rpm:${PORTSDIR}/archivers/rpm
 CONFLICTS=	linux-gtk2*
 
 USE_LINUX_PREFIX=yes
-USE_LINUX=	yes
+USE_LINUX?=	yes
 ONLY_FOR_ARCHS=	i386
 DIST_SUBDIR=	rpm
 NO_BUILD=	yes

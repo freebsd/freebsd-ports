@@ -35,7 +35,6 @@ FREEBSD_MODULE_SITES=	\
 		http://www.break.net/orlando/vmware3/:patch \
 
 USE_SUBMAKE=	yes
-USE_LINUX=	yes
 VMDIR=		${PREFIX}/lib/vmware
 SRC_BASE?=	/usr/src
 

@@ -15,7 +15,7 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	jylefort@brutele.be
 COMMENT=	A peer-to-peer network for broadcasting and listening to streams
 
-USE_LINUX=	yes
+USE_LINUX?=	yes
 NO_WRKSUBDIR=	yes
 
 do-build:

@@ -18,7 +18,7 @@ EXTRACT_ONLY=
 MAINTAINER=	freebsd-emulation@FreeBSD.org
 COMMENT=	Cross-platform game programming library (linux version)
 
-USE_LINUX=		yes
+USE_LINUX?=		yes
 USE_LINUX_PREFIX=	yes
 LDCONFIG_LINUX=	${LINUXBASE}/sbin/ldconfig
 

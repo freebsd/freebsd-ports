@@ -23,7 +23,6 @@ USE_BZIP2=	yes
 USE_REINPLACE=	yes
 USE_X_PREFIX=	yes
 USE_GL=		yes
-USE_LINUX=	yes
 INSTALLS_SHLIB=	yes
 NO_PACKAGE=	yes	# distfiles must be downloaded manually, wierd legal issues etc etc etc.
 

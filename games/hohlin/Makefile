@@ -27,7 +27,6 @@ ONLY_FOR_ARCHS=	i386
 SHORTPORTVERSION=${PORTVERSION:C/([0-9]*)\.([0-9]*)/\1\2/}
 
 .include <bsd.port.pre.mk>
-USE_LINUX=	YES
 
 do-install:
 	${MKDIR} ${DATADIR}

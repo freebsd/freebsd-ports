@@ -35,7 +35,6 @@ NO_CDROM=	'Deve ser obtido diretamente do site da Sun via interface www'
 CD_MOUNTPT=	'/cdrom'
 IS_INTERACTIVE=	yes
 NO_BUILD=	yes
-USE_LINUX=	yes
 USE_PERL5_BUILD=yes
 DIST_SUBDIR=	staroffice52
 WRKSRC=		${WRKDIR}/office52

@@ -20,7 +20,6 @@ RUN_DEPENDS=	${LINUXBASE}/usr/X11R6/lib/libXrender.so.1:${PORTSDIR}/x11/linux-XF
 
 WRKSRC=	${WRKDIR}/${DISTNAME:C/-.*//}
 
-USE_LINUX=	yes
 NO_BUILD=	yes
 USE_REINPLACE=	yes
 STRIP=

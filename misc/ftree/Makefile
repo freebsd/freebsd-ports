@@ -19,7 +19,6 @@ COMMENT=	An X11 genealogy program
 
 RUN_DEPENDS=	${LINUXBASE}/usr/X11R6/lib/libXrender.so.1:${PORTSDIR}/x11/linux-XFree86-libs
 
-USE_LINUX=	yes
 USE_X_PREFIX=	yes
 
 ONLY_FOR_ARCHS=	i386

@@ -21,7 +21,6 @@ NO_CDROM=	Copy of CD must be sent to author
 
 ONLY_FOR_ARCHS=	i386
 
-USE_LINUX=	yes
 WRKSRC=		${WRKDIR}/adom
 NO_BUILD=	yes
 STRIP=		# empty: do not strip linux binary!

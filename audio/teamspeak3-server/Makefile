@@ -20,7 +20,7 @@ WRKSRC=		${WRKDIR}/tss2_rc2
 ONLY_FOR_ARCHS=	i386
 USE_BZIP2=	yes
 NO_BUILD=	yes
-USE_LINUX=	yes
+USE_LINUX?=	yes
 NO_FILTER_SHLIBS=yes
 
 do-install:

@@ -24,7 +24,6 @@ RUN_DEPENDS=	${LINUXBASE}/usr/lib/libjpeg.so.62:${PORTSDIR}/graphics/linux-jpeg
 BASEVERSION=	8.0
 USE_LINUX_RPM=	yes
 USE_LINUX_PREFIX=	yes
-USE_LINUX=	yes
 ONLY_FOR_ARCHS=	i386
 
 DIST_SUBDIR=	rpm

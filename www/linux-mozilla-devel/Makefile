@@ -27,7 +27,6 @@ NO_FILTER_SHLIBS=	yes
 ONLY_FOR_ARCHS=	i386
 PREFIX?=	${X11BASE}
 USE_ZIP=	yes
-USE_LINUX=	yes
 WRKSRC=	${WRKDIR}/xpi
 INSTALL_DIR=	linux-mozilla-devel
 FULL_INSTALL_DIR=	${PREFIX}/lib/linux-mozilla-devel

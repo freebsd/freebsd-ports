@@ -25,7 +25,6 @@ NO_FILTER_SHLIBS=	yes
 ONLY_FOR_ARCHS=	i386
 PREFIX?=	${X11BASE}
 USE_ZIP=	yes
-USE_LINUX=	yes
 WRKSRC=	${WRKDIR}/xpi
 INSTALL_DIR=	${PREFIX}/lib/linux-mozilla
 PKGMESSAGE=	${WRKDIR}/pkg-message

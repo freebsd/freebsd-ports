@@ -20,7 +20,6 @@ COMMENT=	An unusual and spectacular shoot-em-up for the PC
 
 RUN_DEPENDS=	${LINUXBASE}/usr/lib/libSDL-1.2.so.0:${PORTSDIR}/devel/linux-sdl12
 
-USE_LINUX=	yes
 USE_ZIP=	yes
 
 NO_BUILD=	yes
