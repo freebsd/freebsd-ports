@@ -3,9 +3,9 @@
 # Date created:		12 December 1998
 # Whom:			Neil Blakey-Milner <nbm@rucus.ru.ac.za>
 #
-# $Id: Makefile,v 1.1.1.1 1999/02/09 15:31:34 billf Exp $
+# $Id: Makefile,v 1.2 1999/02/11 11:27:30 obrien Exp $
 
-DISTNAME=       curl-5.5
+DISTNAME=	curl-5.5
 CATEGORIES=	net www
 MASTER_SITES=	http://www.fts.frontec.se/~dast/stuff/ \
 		ftp://ftp.rhrz.uni-bonn.de/pub-koeln/net/inet/ \
@@ -16,7 +16,8 @@ MASTER_SITES=	http://www.fts.frontec.se/~dast/stuff/ \
 MAINTAINER=	kkennawa@physics.adelaide.edu.au
 
 .if defined(USE_SSL)
-BUILD_DEPENDS=  ssleay:${PORTSDIR}/security/SSLeay
+BUILD_DEPENDS=	${PREFIX}/lib/libssl.a:${PORTSDIR}/security/openssl \
+		${PREFIX}/lib/libcrypto.a:${PORTSDIR}/security/openssl
 .endif
 
 .if defined(USE_SSL)
