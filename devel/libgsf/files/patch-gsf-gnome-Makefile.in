@@ -1,0 +1,46 @@
+--- gsf-gnome/Makefile.in.orig	Sat May 22 18:56:24 2004
++++ gsf-gnome/Makefile.in	Sat May 22 18:57:23 2004
+@@ -170,7 +170,7 @@
+ 
+ lib_LTLIBRARIES = $(target_libgsf_gnome)
+ 
+-libgsf_gnome_1_la_LIBADD = $(top_builddir)/gsf/libgsf-1.la $(LIBGSF_GNOME_LIBS)
++libgsf_gnome_1_la_LIBADD = $(LIBGSF_GNOME_LIBS)
+ libgsf_gnome_1_la_LDFLAGS = -version-info $(VERSION_INFO)
+ libgsf_gnome_1_la_SOURCES = \
+ 	gsf-input-gnomevfs.c 	\
+@@ -199,7 +199,7 @@
+ CONFIG_CLEAN_FILES =
+ LTLIBRARIES = $(lib_LTLIBRARIES)
+ 
+-libgsf_gnome_1_la_DEPENDENCIES = $(top_builddir)/gsf/libgsf-1.la
++libgsf_gnome_1_la_DEPENDENCIES =
+ am_libgsf_gnome_1_la_OBJECTS = gsf-input-gnomevfs.lo \
+ 	gsf-output-gnomevfs.lo gsf-input-bonobo.lo gsf-output-bonobo.lo \
+ 	gsf-shared-bonobo-stream.lo
+--- gsf-gnome/Makefile.in.orig	Sat May 22 19:26:16 2004
++++ gsf-gnome/Makefile.in	Sat May 22 19:30:30 2004
+@@ -179,14 +179,15 @@
+ 	gsf-output-bonobo.c	\
+ 	gsf-shared-bonobo-stream.c
+ 
+-
+-libgsf_gnome_1_includedir = $(includedir)/libgsf-1/gsf-gnome
+-libgsf_gnome_1_include_HEADERS = \
+-	gsf-input-gnomevfs.h	\
+-	gsf-output-gnomevfs.h	\
+-	gsf-input-bonobo.h 	\
+-	gsf-output-bonobo.h	\
+-	gsf-shared-bonobo-stream.h
++@WITH_LIBGSF_GNOME_FALSE@libgsf_gnome_1_includedir =
++@WITH_LIBGSF_GNOME_FALSE@libgsf_gnome_1_include_HEADERS =
++@WITH_LIBGSF_GNOME_TRUE@libgsf_gnome_1_includedir = $(includedir)/libgsf-1/gsf-gnome
++@WITH_LIBGSF_GNOME_TRUE@libgsf_gnome_1_include_HEADERS = \
++@WITH_LIBGSF_GNOME_TRUE@	gsf-input-gnomevfs.h	\
++@WITH_LIBGSF_GNOME_TRUE@	gsf-output-gnomevfs.h	\
++@WITH_LIBGSF_GNOME_TRUE@	gsf-input-bonobo.h 	\
++@WITH_LIBGSF_GNOME_TRUE@	gsf-output-bonobo.h	\
++@WITH_LIBGSF_GNOME_TRUE@	gsf-shared-bonobo-stream.h
+ 
+ 
+ # include these just in case we are building a tarball without
