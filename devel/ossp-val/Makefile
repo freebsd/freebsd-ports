@@ -8,20 +8,20 @@
 #
 
 PORTNAME=	val
-PORTVERSION=	0.9.1
-PORTREVISION=	1
-PORTEPOCH=	0
+PORTVERSION=	0.9.2
 CATEGORIES=	devel
 MASTER_SITES=	ftp://ftp.ossp.org/pkg/lib/val/
 PKGNAMEPREFIX=	ossp-
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	OSSP val is a flexible name to value mapping library for C variables
+COMMENT=	A flexible name to value mapping library for C variables
+
+LIB_DEPENDS=	ex.10:${PORTSDIR}/devel/ossp-ex
 
 USE_GMAKE=	yes
-GNU_CONFIGURE=	yes
-USE_LIBTOOL_VER=	13
+USE_LIBTOOL_VER=	15
 INSTALLS_SHLIB=	yes
+CONFIGURE_ARGS=	--with-ex=${LOCALBASE}
 
 .include <bsd.port.pre.mk>
 
