@@ -4082,6 +4082,7 @@ linguist	ports/devel/linguist
 links		ports/www/links
 links1		ports/www/links1
 linpack		ports/math/linpack
+linphone	ports/net/linphone
 linplasma	ports/graphics/linplasma
 linpopup	ports/net/linpopup
 linprocfs	src/sys/compat/linprocfs
