@@ -15,8 +15,6 @@ MAINTAINER=	ports@FreeBSD.org
 
 LIB_DEPENDS=	intl.1:${PORTSDIR}/devel/gettext
 
-Y2K=		http://www.gnu.org/software/year2000.html
-
 GNU_CONFIGURE=	yes
 
 CONFIGURE_ARGS=	--program-prefix=g

@@ -18,8 +18,6 @@ PATCHFILES=	${PORTNAME}${PORTVERSION}plus.patch.gz
 
 MAINTAINER=	jseger@FreeBSD.org
 
-Y2K=            http://www.scriptics.com/Y2K.html
-
 PATCH_DIST_ARGS= -d ${WRKDIR}/${DISTNAME} -E ${PATCH_DIST_STRIP}
 WRKSRC=		${WRKDIR}/${DISTNAME}/unix
 INSTALLS_SHLIB=	yes

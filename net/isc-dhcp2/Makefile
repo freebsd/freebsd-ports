@@ -13,8 +13,6 @@ DISTNAME=	dhcp-2.0pl3
 
 MAINTAINER=	jseger@FreeBSD.org
 
-Y2K=		http://www.isc.org/y2k.html
-
 HAS_CONFIGURE=	yes
 
 MAN5=		dhcp-options.5 dhcpd.conf.5 dhcpd.leases.5

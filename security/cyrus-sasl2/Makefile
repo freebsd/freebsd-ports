@@ -20,8 +20,6 @@ USE_OPENSSL=	YES
 
 INSTALLS_SHLIB=	yes
 
-Y2K=		http://asg.web.cmu.edu/cyrus/imapd/y2k.html
-
 MAN3=		sasl.3 sasl_authorize_t.3 sasl_callbacks.3 sasl_checkpass.3 \
 		sasl_client_init.3 sasl_client_new.3 sasl_client_start.3 sasl_client_step.3 \
 		sasl_decode.3 sasl_done.3 sasl_encode.3 sasl_errstring.3 sasl_getopt_t.3 \

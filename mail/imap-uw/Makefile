@@ -24,8 +24,6 @@ MAINTAINER=	ports@FreeBSD.org
 
 LIB_DEPENDS=	c-client4.8:${PORTSDIR}/mail/cclient
 
-Y2K=		http://www.washington.edu/imap/IMAP-FAQs/faqs.xml#general1
-
 MAN8=		ipopd.8 imapd.8
 
 .include <bsd.port.pre.mk>

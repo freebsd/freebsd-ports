@@ -24,8 +24,6 @@ MAINTAINER=	girgen@partitur.se
 
 BUILD_DEPENDS=	autoconf:${PORTSDIR}/devel/autoconf
 
-Y2K=		http://www.postgresql.org/y2k.html
-
 INSTALLS_SHLIB=	YES
 LDCONFIG_DIRS=	%%PREFIX%%/pgsql/lib
 

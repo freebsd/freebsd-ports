@@ -14,8 +14,6 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
 
-Y2K=		http://www.gnu.org/software/year2000.html
-
 GNU_CONFIGURE=	yes
 
 do-install:

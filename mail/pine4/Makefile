@@ -16,8 +16,6 @@ DISTNAME?=	${PORTNAME}${PORTVERSION}
 
 MAINTAINER?=	ports@FreeBSD.org
 
-Y2K=		http://www.washington.edu/pine/QandA/sysadmins.html#Millenium
-
 MAN1=		pine.1 pico.1 pilot.1
 
 LIB_DEPENDS=	c-client4.8:${PORTSDIR}/mail/cclient

@@ -13,8 +13,6 @@ MASTER_SITE_SUBDIR=	ncurses
 
 MAINTAINER=		ports@FreeBSD.org
 
-Y2K=			http://www.gnu.org/software/year2000.html
-
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} >= 400000

@@ -13,8 +13,6 @@ DISTNAME=	${PORTNAME}-${PORTVERSION:R}
 
 MAINTAINER=	ports@FreeBSD.org
 
-Y2K=		ftp://ftp.astron.com/pub/tcsh/Y2K
-
 .include <bsd.port.pre.mk>
 .if ${OSVERSION} >= 400021
 DISTFILES=	# empty

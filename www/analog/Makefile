@@ -20,8 +20,6 @@ MASTER_SITES=   http://www.analog.cx/ \
 
 MAINTAINER=     ports@freebsd.org
 
-Y2K=            http://www.analog.cx/
-
 MAKE_FLAGS=     -DPREFIX=${PREFIX} -f
 ALL_TARGET=     analog
 

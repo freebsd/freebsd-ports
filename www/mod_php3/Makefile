@@ -25,8 +25,6 @@ MAINTAINER=	dirk@FreeBSD.org
 BUILD_DEPENDS=	${LOCALBASE}/sbin/apxs:${PORTSDIR}/www/apache13
 RUN_DEPENDS=	${LOCALBASE}/sbin/apxs:${PORTSDIR}/www/apache13
 
-Y2K=		http://www.php.net/y2k.php
-
 PHP_DISTDIR=	distributions
 
 APXS=		${PREFIX}/sbin/apxs

@@ -18,8 +18,6 @@ DISTNAME=	MHonArc2.4.7
 
 MAINTAINER=	jkoshy@freebsd.org
 
-Y2K=		http://www.oac.uci.edu/indiv/ehood/MHonArc/doc/faq/general.html#y2k
-
 USE_BZIP2=	Yes
 USE_PERL5=	Yes
 NO_BUILD=	Yes

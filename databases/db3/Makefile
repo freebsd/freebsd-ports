@@ -13,8 +13,6 @@ DISTNAME=	db-${PORTVERSION}
 
 MAINTAINER=	ozz@FreeBSD.org.ru
 
-Y2K=		http://www.sleepycat.com/faq.html#A8
-
 MANUAL_PACKAGE_BUILD=	incompatible with libc internal db calls
 WRKSRC=		${WRKDIR}/${DISTNAME}/build_unix
 

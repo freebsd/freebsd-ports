@@ -31,8 +31,6 @@ PATCH_DIST_STRIP=	-p1
 
 MAINTAINER=	sumikawa@FreeBSD.org
 
-Y2K=		http://www.apache.org/docs/misc/FAQ.html#year2000
-
 #
 # Set APACHE_PERF_TUNING env. variable to YES to get maximum performance
 #

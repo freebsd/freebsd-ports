@@ -13,8 +13,6 @@ DISTNAME=	tcl8.1b1
 
 MAINTAINER=	ejc@FreeBSD.org
 
-Y2K=            http://www.scriptics.com/Y2K.html
-
 FILE_DEPENDS=	${PORTSDIR}/lang/tcl80
 
 NO_LATEST_LINK=	yes

@@ -13,8 +13,6 @@ MASTER_SITE_SUBDIR=	gforth
 
 MAINTAINER=	clefevre@citeweb.net
 
-Y2K=		http://www.gnu.org/software/year2000.html
-
 CFLAGS=		#none
 STRIP=		#none
 

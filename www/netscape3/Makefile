@@ -15,8 +15,6 @@ MAINTAINER=	sada@FreeBSD.org
 
 RUN_DEPENDS=	${X11BASE}/lib/aout/libX11.so.6.1:${PORTSDIR}/x11/XFree86-aoutlibs
 
-Y2K=		http://home.netscape.com/products/year2000/faq/client.html
-
 ONLY_FOR_ARCHS=	i386
 
 USE_XLIB=	yes

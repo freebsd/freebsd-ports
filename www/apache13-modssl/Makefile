@@ -51,8 +51,6 @@ LIB_DEPENDS=	mm.11:${PORTSDIR}/devel/mm
 VERSION_APACHE=	1.3.14
 VERSION_MODSSL=	2.7.1
 
-Y2K=		http://www.modssl.org/docs/2.7/ssl_faq.html#y2k
-
 USE_PERL5=	yes
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	--prefix=${PREFIX} \

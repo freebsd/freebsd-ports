@@ -13,8 +13,6 @@ DISTFILES=	bind-src.tar.gz bind-doc.tar.gz
 
 MAINTAINER=	jseger@FreeBSD.org
 
-Y2K=		http://www.isc.org/y2k.html
-
 WRKSRC=		${WRKDIR}/src
 
 MAN1=		dig.1 dnskeygen.1 dnsquery.1 host.1
