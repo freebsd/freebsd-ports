@@ -3,8 +3,6 @@ info/exim_overview.info
 info/exim.info
 info/exim_filter.info
 sbin/exim
-sbin/eximon
-sbin/eximon.bin
 sbin/exim_dumpdb
 sbin/exim_fixdb
 sbin/exim_lock

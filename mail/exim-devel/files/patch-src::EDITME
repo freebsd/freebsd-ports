@@ -43,7 +43,16 @@
  
  
  # In some installations there may be multiple machines sharing file systems,
-@@ -284,7 +284,7 @@
+@@ -243,7 +243,7 @@
+ # are defaulted in the OS/Makefile-Default file, and can be overridden
+ # in local OS-specific make files.
+ 
+-EXIM_MONITOR=eximon.bin
++#EXIM_MONITOR=eximon.bin
+ 
+ 
+ # Compiling in support for embedded Perl: If you want to be able to
+@@ -286,7 +286,7 @@
  # "panic", or "reject" to form the final file name. For example, some
  # installations may want something like this:
  
@@ -52,7 +61,7 @@
  
  # which results in files with names /var/log/exim_mainlog, etc. The directory
  # in which the log files are placed must exist; Exim does not try to create
-@@ -350,6 +350,8 @@
+@@ -352,6 +352,8 @@
  
  # LOOKUP_INCLUDE=-I /usr/local/ldap/include -I /usr/local/mysql/include -I /usr/local/pgsql/include
  # LOOKUP_LIBS=-L/usr/local/lib -lldap -llber -lmysqlclient -lpq
@@ -61,7 +70,7 @@
  
  # If you have set LDAP=yes, you should set LDAP_LIB_TYPE to indicate which LDAP
  # library you have. Unfortunately, though most of their functions are the
-@@ -363,6 +365,7 @@
+@@ -365,6 +367,7 @@
  # LDAP_LIB_TYPE=OPENLDAP2
  # LDAP_LIB_TYPE=NETSCAPE
  # LDAP_LIB_TYPE=SOLARIS
@@ -69,7 +78,7 @@
  
  # If you don't set any of these, Exim assumes the original University of
  # Michigan (OpenLDAP 1) library.
-@@ -409,7 +412,7 @@
+@@ -411,7 +414,7 @@
  # the file name, allowing sites that run two separate daemons to distinguish
  # them. Some installations may want something like this
  
@@ -78,7 +87,7 @@
  
  # If PID_FILE_PATH is not defined, Exim writes a file in its spool directory
  # (see SPOOL_DIRECTORY below) with the name "exim-daemon.pid" for the standard
-@@ -458,7 +461,7 @@
+@@ -460,7 +463,7 @@
  # uid and gid.
  
  # Many installations will want something like this:
@@ -87,7 +96,7 @@
  
  # Others may prefer to keep all Exim things under one directory:
  # SPOOL_DIRECTORY=/usr/exim/spool
-@@ -523,7 +526,7 @@
+@@ -525,7 +528,7 @@
  # with TLS support.
  
  # SUPPORT_TLS=yes
@@ -96,7 +105,7 @@
  
  # If you are running Exim as a server, note that just building it with TLS
  # support is not usually all you need to do. You normally need to set up a
-@@ -573,5 +576,14 @@
+@@ -575,5 +578,14 @@
  # chapter on building and installing Exim.
  
  # USE_TCP_WRAPPERS=yes
