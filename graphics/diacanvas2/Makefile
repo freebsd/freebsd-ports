@@ -7,8 +7,7 @@
 #
 
 PORTNAME=	diacanvas2
-PORTVERSION=	0.13.1
-PORTREVISION=	1
+PORTVERSION=	0.14.1
 CATEGORIES=	graphics gnome
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	diacanvas
@@ -28,12 +27,6 @@ INSTALLS_SHLIB=	yes
 BUILD_DEPENDS+=	Xvfb:${X_VFBSERVER_PORT}
 .endif
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 502126
-BROKEN=		"Broken pkg-plist"
-.endif
-
 post-patch:
 	@${REINPLACE_CMD} -e \
 		's|unit_tests doc|unit_tests|g' ${WRKSRC}/Makefile.in
@@ -45,4 +38,4 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/doc/ref/html/*.png ${DOCSDIR}
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
