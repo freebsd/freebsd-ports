@@ -15,7 +15,7 @@ MASTER_SITES=	http://kvand.mit.edu/kvand/gVid/ \
 		ftp://ftp.infomagic.com/pub/mirrors/tucows/mlinux/files/gnome/xwin/ \
 		ftp://ftp.uni-c.dk/mirrors/mirror.linuxberg.com/files/gnome/xwin/
 
-MAINTAINER=	smoberly@xavier.dyndns.org
+MAINTAINER=	ports@FreeBSD.org
 
 USE_X_PREFIX=	yes
 USE_GNOME=	yes
