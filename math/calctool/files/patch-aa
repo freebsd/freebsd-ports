@@ -1,0 +1,22 @@
+*** tty.c.orig  Wed Dec  4 12:43:55 1996
+--- tty.c       Wed Dec  4 12:45:33 1996
+***************
+*** 1,5 ****
+- /*LINTLIBRARY*/
+- 
+  /*  @(#)tty.c 1.14 90/02/06
+   *
+   *  These are the dumb tty dependent graphics routines used by calctool.
+--- 1,3 ----
+***************
+*** 21,26 ****
+--- 19,26 ----
+  #include <sys/types.h>
+  #include <sys/ioctl.h>
+  #include <sys/time.h>
++ #include <sys/termios.h>
++ #include <sys/ioctl_compat.h>
+  #include "calctool.h"
+  #include "color.h"
+  #include "extern.h"
+

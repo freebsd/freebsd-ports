@@ -1,0 +1,48 @@
+--- Makefile.orig	Sat May 29 11:35:43 1993
++++ Makefile	Wed Dec 11 21:32:54 1996
+@@ -116,8 +116,8 @@
+ #  library files are not in a standard place, then the following
+ #  two lines should be uncommented, and set appropriately.
+ #
+-#X11INCDIR         = -I$(OPENWINHOME)/include
+-#X11LIBDIR         = -L$(OPENWINHOME)/lib
++X11INCDIR         = -I/usr/X11R6/include
++X11LIBDIR         = -L/usr/X11R6/lib
+ #-------------------------------------------------------------------------
+ #  If you are compiling the XView version, then the following two lines
+ #  should be uncommented.
+@@ -130,10 +130,10 @@
+ #  Default locations where calctool files will be installed.
+ #  You might wish to alter these values.
+ #
+-BINDIR          = /usr/local/bin
+-LIBDIR          = /usr/local/lib
+-MANDIR          = /usr/man/man$(MANSECT)
+-MANSECT         = l
++BINDIR          = ${PREFIX}/bin
++LIBDIR          = ${PREFIX}/lib/X11
++MANDIR          = ${PREFIX}/man/man$(MANSECT)
++MANSECT         = 1
+ #
+ #  Compilation flags and standard macro definitions.
+ #
+@@ -144,8 +144,9 @@
+ #
+ #=========================================================================
+ 
+-BINARIES        = mgr_calctool ps_calctool sv_calctool \
+-		  tty_calctool xcalctool xv_calctool
++#BINARIES        = mgr_calctool ps_calctool sv_calctool \
++#		  tty_calctool xcalctool xv_calctool
++BINARIES	= x11
+ 
+ CC		= cc
+ 
+@@ -233,7 +234,6 @@
+ 			ld -o libcalctool.so.1.1 -assert pure-text $?
+ 
+ install:
+-		install -c -m 644 $(LIBNAME) $(LIBDIR)
+ 		install -s -m 751 calctool $(BINDIR)
+ 		install -c -m 644 calctool.help $(LIBDIR)
+ 		install -c -m 644 calctool.ps $(LIBDIR)

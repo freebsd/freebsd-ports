@@ -1,0 +1,4 @@
+bin/calctool
+lib/X11/calctool.help
+lib/X11/calctool.ps
+man/man1/calctool.1.gz
