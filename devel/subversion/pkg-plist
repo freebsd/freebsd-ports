@@ -4,6 +4,7 @@ bin/svndumpfilter
 bin/svnlook
 bin/svnserve
 bin/svnversion
+include/subversion-1/mod_dav_svn.h
 include/subversion-1/svn-revision.txt
 include/subversion-1/svn_auth.h
 include/subversion-1/svn_base64.h
@@ -37,12 +38,6 @@ include/subversion-1/svn_version.h
 include/subversion-1/svn_wc.h
 include/subversion-1/svn_xml.h
 @dirrm include/subversion-1
-@unexec install-info --delete %D/info/svn-design.info %D/info/dir
-info/svn-design.info
-info/svn-design.info-1
-info/svn-design.info-2
-info/svn-design.info-3
-@exec install-info %D/info/svn-design.info %D/info/dir
 lib/libsvn_client-1.a
 lib/libsvn_client-1.la
 lib/libsvn_client-1.so
@@ -88,6 +83,7 @@ lib/libsvn_wc-1.la
 lib/libsvn_wc-1.so
 lib/libsvn_wc-1.so.0
 %%MOD_DAV_SVN%%libexec/apache2/mod_dav_svn.so
+%%MOD_DAV_SVN%%libexec/apache2/mod_authz_svn.so
 %%MOD_DAV_SVN%%@exec %D/sbin/apxs -e -S LIBEXECDIR=%D/libexec/apache2 -a -n dav libexec/apache2/mod_dav.so
 %%MOD_DAV_SVN%%@exec %D/sbin/apxs -e -S LIBEXECDIR=%D/libexec/apache2 -a -n dav_svn libexec/apache2/mod_dav_svn.so
 %%PORTDOCS%%share/doc/subversion/book/images/ch02dia1.png
