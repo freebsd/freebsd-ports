@@ -1,0 +1,9 @@
+libdvbpsi is a set of tools which allows to decode and generate all the
+Program specific Information (PSI) present in a MPEG2 TS or a DVB stream. The
+two keywords are portability and simplicity.
+
+Currently supported tables
+   - Program Association Table (PAT, MPEG2)
+   - Program Map Table (PMT, MPEG2)
+
+WWW: http://developers.videolan.org/libdvbpsi/
