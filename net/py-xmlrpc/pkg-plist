@@ -1,4 +1,7 @@
 lib/%%PYTHON_VERSION%%/site-packages/_xmlrpc.so
+lib/%%PYTHON_VERSION%%/site-packages/pyxmlrpclib.py
+lib/%%PYTHON_VERSION%%/site-packages/pyxmlrpclib.pyc
+lib/%%PYTHON_VERSION%%/site-packages/pyxmlrpclib.pyo
 lib/%%PYTHON_VERSION%%/site-packages/xmlrpc.py
 lib/%%PYTHON_VERSION%%/site-packages/xmlrpc.pyc
 lib/%%PYTHON_VERSION%%/site-packages/xmlrpc.pyo
