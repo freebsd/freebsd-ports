@@ -115,7 +115,6 @@
     SUBDIR += imlib2_loaders
     SUBDIR += ipe
     SUBDIR += isreal
-    SUBDIR += iview
     SUBDIR += jasper
     SUBDIR += jbigkit
     SUBDIR += jgraph
@@ -310,6 +309,7 @@
     SUBDIR += vid
     SUBDIR += view3ds
     SUBDIR += vlc
+    SUBDIR += vp
     SUBDIR += vterrain-apps
     SUBDIR += vterrain-sdk
     SUBDIR += whirlgif
