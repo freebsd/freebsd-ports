@@ -1,0 +1,26 @@
+
+$FreeBSD$
+
+--- qscanplot/Makefile.in	2002/01/10 16:00:24	1.1
++++ qscanplot/Makefile.in	2002/01/10 16:01:15
+@@ -615,16 +615,16 @@
+ install-data-local:
+ #>- 	$(mkinstalldirs) /opt/kde/share/icons/
+ #>+ 1
+-	$(mkinstalldirs) $(DESTDIR)/opt/kde/share/icons/
++#	$(mkinstalldirs) $(DESTDIR)/opt/kde/share/icons/
+ #>- 	$(INSTALL_DATA) $(srcdir)/mini-qscanplot.xpm /opt/kde/share/icons/mini-qscanplot.xpm
+ #>+ 1
+-	$(INSTALL_DATA) $(srcdir)/mini-qscanplot.xpm $(DESTDIR)/opt/kde/share/icons/mini-qscanplot.xpm
++#	$(INSTALL_DATA) $(srcdir)/mini-qscanplot.xpm $(DESTDIR)/opt/kde/share/icons/mini-qscanplot.xpm
+ #>- 	$(mkinstalldirs) /opt/kde/share/icons/
+ #>+ 1
+-	$(mkinstalldirs) $(DESTDIR)/opt/kde/share/icons/
++#	$(mkinstalldirs) $(DESTDIR)/opt/kde/share/icons/
+ #>- 	$(INSTALL_DATA) $(srcdir)/qscanplot.xpm /opt/kde/share/icons/qscanplot.xpm
+ #>+ 1
+-	$(INSTALL_DATA) $(srcdir)/qscanplot.xpm $(DESTDIR)/opt/kde/share/icons/qscanplot.xpm
++#	$(INSTALL_DATA) $(srcdir)/qscanplot.xpm $(DESTDIR)/opt/kde/share/icons/qscanplot.xpm
+ 
+ uninstall-local:
+ #>- 	-rm -f /opt/kde/share/icons/mini-qscanplot.xpm
