@@ -106,4 +106,4 @@ lib/ocaml/site-lib/extlib/META
 %%PORTDOCS%%%%DOCSDIR%%/type_UTF8.html
 %%PORTDOCS%%%%DOCSDIR%%/type_Unzip.html
 @dirrm lib/ocaml/site-lib/extlib
-@dirrm %%DOCSDIR%%
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
