@@ -1,5 +1,14 @@
---- gcalctool/get.c.orig	Thu Dec 25 00:15:16 2003
-+++ gcalctool/get.c	Thu Dec 25 00:22:50 2003
+--- gcalctool/get.c.orig	Tue Dec 23 23:21:12 2003
++++ gcalctool/get.c	Sat Jan  3 13:18:24 2004
+@@ -230,7 +230,7 @@
+     setlocale(LC_NUMERIC, "");
+     tsep = nl_langinfo(THOUSEP);
+ 
+-    if (tsep == NULL || tsep[0] == '\0') {
++    if (tsep == NULL) {
+         return(",");
+     } else {
+         return(tsep);
 @@ -242,6 +242,7 @@
  init_vars()    /* Setup default values for various variables. */
  {
