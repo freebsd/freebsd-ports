@@ -71,6 +71,7 @@
     SUBDIR += ghc
     SUBDIR += ghc-doc
     SUBDIR += ghc6
+    SUBDIR += ghc6-doc
     SUBDIR += glibstdc++28
     SUBDIR += gnat
     SUBDIR += gnat-doc-html
