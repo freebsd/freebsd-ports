@@ -23,4 +23,7 @@ MAN3=		CGI::Base.3 CGI::BasePlus.3 CGI::Carp.3 CGI::Form.3 \
 		CGI::MiniSvr.3 CGI::Request.3
 MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 
+post-patch:
+	@${RM} ${WRKSRC}/CGI/*.orig
+
 .include <bsd.port.mk>
