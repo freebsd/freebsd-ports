@@ -4,7 +4,7 @@
 #
 # $FreeBSD$
 #
- 
+
 PORTNAME=	dvi2tty
 PORTVERSION=	1.0
 CATEGORIES=	print
