@@ -10,7 +10,7 @@ PORTNAME=	stardict
 PORTVERSION=	1.3
 PORTREVISION=	1
 CATEGORIES=	chinese
-MASTER_SITES=	ftp://ftp.cn.FreeBSD.org/pub/ported/
+MASTER_SITES=	http://www.opencjk.org/~yumj/download/
 PKGNAMEPREFIX=	zh-
 DISTNAME=	${PKGNAME}
 
@@ -23,10 +23,6 @@ NO_LATEST_LINK=	yes
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_X_PREFIX=	yes
-
-BROKEN=		"Incorrect distinfo"
-DEPRECATED=	${BROKEN}
-EXPIRATION_DATE=2004-04-07
 
 port-install:
 	strip	$(PREFIX)/bin/${PORTNAME}
