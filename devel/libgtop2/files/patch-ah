@@ -1,5 +1,5 @@
---- sysdeps/freebsd/procmap.c.orig	Mon Jun 10 17:34:42 2002
-+++ sysdeps/freebsd/procmap.c	Sat Oct 26 01:20:26 2002
+--- sysdeps/freebsd/procmap.c.orig	Fri May 28 03:56:48 1999
++++ sysdeps/freebsd/procmap.c	Tue Sep  9 11:38:18 2003
 @@ -33,7 +33,11 @@
  #include <sys/proc.h>
  #include <sys/resource.h>
@@ -23,7 +23,17 @@
  #endif
  	int count, i = 0;
  	int update = 0;
-@@ -114,7 +119,11 @@
+@@ -108,13 +113,19 @@
+ 
+ 	/* Get the process data */
+ 	pinfo = kvm_getprocs (server->machine.kd, KERN_PROC_PID, pid, &count);
+-	if ((pinfo == NULL) || (count < 1))
+-		glibtop_error_io_r (server, "kvm_getprocs (%d)", pid);
++	if ((pinfo == NULL) || (count < 1)) {
++		glibtop_warn_io_r (server, "kvm_getprocs (%d)", pid);
++		return NULL;
++	}
+ 
  	/* Now we get the memory maps. */
  
  	if (kvm_read (server->machine.kd,
@@ -35,7 +45,7 @@
  		      (char *) &vmspace, sizeof (vmspace)) != sizeof (vmspace))
  		glibtop_error_io_r (server, "kvm_read (vmspace)");
  
-@@ -244,6 +253,15 @@
+@@ -244,6 +255,15 @@
  			      &vnode, sizeof (vnode)) != sizeof (vnode))
  			glibtop_error_io_r (server, "kvm_read (vnode)");
  
@@ -51,7 +61,7 @@
  		if ((vnode.v_type != VREG) || (vnode.v_tag != VT_UFS) ||
  		    !vnode.v_data) continue;
  
-@@ -252,13 +270,9 @@
+@@ -252,13 +272,9 @@
  			      &inode, sizeof (inode)) != sizeof (inode))
  			glibtop_error_io_r (server, "kvm_read (inode)");
  
