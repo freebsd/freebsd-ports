@@ -26,14 +26,14 @@
 # (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF
 # THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #
-#      $FreeBSD$
+# $FreeBSD$
 #
 
 use strict;
 use Fcntl;
 use Getopt::Long;
 
-my $VERSION	= "2.7.12";
+my $VERSION	= "2.7.13";
 my $COPYRIGHT	= "Copyright (c) 2000-2004 Dag-Erling Smørgrav. " .
 		  "All rights reserved.";
 
@@ -41,7 +41,6 @@ my $COPYRIGHT	= "Copyright (c) 2000-2004 Dag-Erling Smørgrav. " .
 sub ANONCVS_ROOT	{ ":pserver:anoncvs\@anoncvs.FreeBSD.org:/home/ncvs" }
 sub REQ_EXPLICIT	{ 1 }
 sub REQ_IMPLICIT	{ 2 }
-sub REQ_MASTER		{ 4 }
 
 sub CVS_PASSFILE	{ "%%PREFIX%%/share/porteasy/cvspass" }
 
@@ -459,8 +458,8 @@ sub add_port($$) {
 	} else {
 	    $realport = find_port($port);
 	}
+	$realport = find_moved($realport);
     }
-    $realport = find_moved($realport);
     if (!$realport) {
 	return 1;
     }
@@ -495,13 +494,15 @@ sub get_origin($) {
 	warn("$port has no known origin\n");
 	return undef;
     }
+    info("$port -> $origin\n");
+    $origin = find_moved($origin);
     return $origin;
 }
 
 #
-# Select installed ports
+# Get list of installed ports
 #
-sub add_installed() {
+sub get_installed() {
 
     local *DIR;			# Directory handle
     my $port;			# Installed port
@@ -514,8 +515,13 @@ sub add_installed() {
 	if (!defined($origin = get_origin($port))) {
 	    bsd::warnx("$port has no known origin");
 	} else {
-	    $installed{$port} = $origin;
-	    add_port($origin, &REQ_EXPLICIT);
+	    if ($installed{$origin}) {
+		bsd::warnx("$origin is already installed as " .
+		    join(', ', @{$installed{$origin}}));
+	    } else {
+		$installed{$origin} = [ ];
+	    }
+	    push(@{$installed{$origin}}, $port);
 	}
     }
     closedir(DIR);
@@ -536,7 +542,7 @@ sub find_master($) {
     # Look for MASTERDIR in the Makefile. We can't use 'make -V'
     # because the Makefile might try to include the master port's
     # Makefile, which might not be checked out yet.
-    open(FILE, "$portsdir/$port/Makefile")
+    sysopen(FILE, "$portsdir/$port/Makefile", O_RDONLY)
 	or bsd::err(1, "unable to read Makefile for $port");
     while (<FILE>) {
 	my $master;		# Master directory
@@ -589,20 +595,23 @@ sub find_library($) {
 }
 
 #
-# Find a binary
+# Find a file
 #
-sub find_binary($) {
-    my $binary = shift;		# Binary to find
+sub find_file($) {
+    my $file = shift;		# File to find
 
     my $dir;			# Directory
 
-    if ($binary =~ m|^/|) {
-	info("$binary is installed as $binary");
-	return (-x $binary);
+    if ($file =~ m|^/|) {
+	if (-e $file) {
+	    info("$file is installed");
+	    return 1;
+	}
+	return 0;
     }
     foreach $dir (split(/:/, $ENV{'PATH'})) {
-	if (-x "$dir/$binary") {
-	    info("$binary is installed as $dir/$binary");
+	if (-x "$dir/$file") {
+	    info("$file is installed as $dir/$file");
 	    return 1;
 	}
     }
@@ -670,9 +679,49 @@ sub find_dependencies($) {
 				       "-VDEPENDS"));
 	defined($dependvars)
 	    or bsd::errx(1, "failed to obtain dependency list");
-	add_dependencies($port, \&find_binary, split(' ', $dependvars));
+	add_dependencies($port, \&find_file, split(' ', $dependvars));
     }
     return keys(%{$port_dep{$port}});
+}
+
+#
+# Update a batch of port directories
+#
+my %have_updated;
+sub update_ports(@) {
+    my @origins = @_;
+
+    my %need_update;
+    my @updated;
+
+    foreach my $origin (@origins) {
+	my ($category, $port) = split('/', $origin);
+	if (!exists($have_updated{$category}) ||
+	    !exists($have_updated{$category}->{$port})) {
+	    if (!exists($need_update{$category})) {
+		$need_update{$category} = { };
+	    }
+	    $need_update{$category}->{$port} = 1;
+	}
+    }
+    if (keys(%need_update)) {
+	cd($portsdir);
+	cvs("update", "-l", keys(%need_update))
+	    or bsd::errx(1, "error updating categories");
+	foreach my $category (keys(%need_update)) {
+	    if (!exists($have_updated{$category})) {
+		$have_updated{$category} = { };
+	    }
+	    cd("$portsdir/$category");
+	    cvs("update", keys(%{$need_update{$category}}))
+		or bsd::errx(1, "error updating $category ports");
+	    foreach my $port (keys(%{$need_update{$category}})) {
+		$have_updated{$category}->{$port} = 1;
+		push(@updated, "$category/$port");
+	    }
+	}
+    }
+    return @updated;
 }
 
 #
@@ -681,18 +730,9 @@ sub find_dependencies($) {
 sub update_ports_tree(@) {
     my @ports = @_;		# Ports to update
 
-    my $port;			# Port name
-    my $category;		# Category name
-    my %upd_cat;		# Hash of updated categories
-    my %upd_port;		# Hash of updated ports
     my %processed;		# Hash of processed ports
-    my @additional;		# Additional dependencies
     my $n;			# Pass count
-    my $makev;			# Output from 'make -v'
 
-    foreach $port (@ports) {
-	push(@additional, $port);
-    }
     for ($n = 0; ; ++$n) {
 	my @update_now;		# Ports that need updating now
 	my $item;		# Iterator
@@ -701,59 +741,24 @@ sub update_ports_tree(@) {
 
 	setproctitle("updating");
 
-	# Determine which ports need updating
-	foreach $item (@additional) {
-	    next if $processed{$item};
-	    ($category, $port) = split(/\//, $item);
-	    if (!exists($upd_port{$category})) {
-		$upd_port{$category} = {};
-	    }
-	    if (!exists($upd_port{$category}->{$port})) {
-		$upd_port{$category}->{$port} = 0;
-	    }
-	    push(@update_now, $item);
-	}
-	last unless @update_now;
+	@update_now = update_ports(@ports);
+	last unless (@update_now);
 	info("Pass $n:", @update_now);
 
-	# Update the relevant sections of the ports tree
-	foreach $category (keys(%upd_port)) {
-	    my @ports;		# Ports to update
-
-	    if (!$upd_cat{$category}) {
-		cd($portsdir);
-		cvs("update", "-l", $category)
-		    or bsd::errx(1, "error updating the '$category' category");
-		$upd_cat{$category} = 1;
-	    }
-	    foreach $port (keys(%{$upd_port{$category}})) {
-		next if ($upd_port{$category}->{$port});
-		push(@ports, $port);
-		$upd_port{$category}->{$port} = 1;
-	    }
-	    if (@ports) {
-		cd("$portsdir/$category");
-		cvs("update", @ports)
-		    or bsd::errx(1, "error updating the '$category' category");
-	    }
-	}
-
 	# Process all unprocessed ports we know of so far
-	foreach $port (@update_now) {
+	foreach my $port (@update_now) {
+	    next if ($processed{$port});
 	    setproctitle("updating $port");
 
 	    # See if the port has an unprocessed master port
+	    # XXX what if the master has a master?
 	    if (($master = find_master($port)) && !$processed{$master}) {
-		add_port($master, &REQ_MASTER);
-		info("Adding $master to head of line\n");
-		unshift(@additional, $master);
-		# Need to process master before we continue
-		next;
+		update_ports($master);
 	    }
 
 	    # Find the port's package name
 	    if (!exists($pkgname{$port})) {
-		$makev = capture(\&make, ($port, "-VPKGNAME"));
+		my $makev = capture(\&make, ($port, "-VPKGNAME"));
 		if ($makev =~ m/^\s*(\S+)\s*$/s) {
 		    $pkgname{$port} = $1;
 		} else {
@@ -764,13 +769,9 @@ sub update_ports_tree(@) {
 	    # Find the port's dependencies
 	    foreach $dependency (find_dependencies($port)) {
 		next if ($processed{$dependency});
-		if ($reqd{$port} == &REQ_MASTER) {
-		    add_port($dependency, &REQ_MASTER);
-		} else {
-		    add_port($dependency, &REQ_IMPLICIT);
-		}
+		add_port($dependency, &REQ_IMPLICIT);
 		info("Adding $dependency to back of line\n");
-		push(@additional, $dependency);
+		push(@ports, $dependency);
 	    }
 
 	    # Mark port as processed
@@ -892,28 +893,26 @@ sub show_port_plist($) {
 #
 sub cmp_version($$) {
     my $inst = shift;		# Installed package
-    my $port = shift;		# Origin port
-
-    my $tree;			# Version in tree
+    my $port = shift;		# Newest version
 
     # Shortcut
-    if (($tree = $pkgname{$port}) eq $inst) {
+    if ($inst eq $port) {
 	return '=';
     }
 
     # Compare port epochs
-    my ($inst_epoch, $tree_epoch) = (0, 0);
+    my ($inst_epoch, $port_epoch) = (0, 0);
     $inst =~ s/,(\d+)$//
 	and $inst_epoch = $1;
-    $tree =~ s/,(\d+)$//
-	and $tree_epoch = $1;
-    if ($inst_epoch != $tree_epoch) {
-	return ($inst_epoch > $tree_epoch) ? '>' : '<';
+    $port =~ s/,(\d+)$//
+	and $port_epoch = $1;
+    if ($inst_epoch != $port_epoch) {
+	return ($inst_epoch > $port_epoch) ? '>' : '<';
     }
 
     # Split it into components
     my @a = split(/[\._-]/, $inst);
-    my @b = split(/[\._-]/, $tree);
+    my @b = split(/[\._-]/, $port);
 
     # Compare the components one by one
     while (@a && @b) {
@@ -935,26 +934,24 @@ sub cmp_version($$) {
 }
 
 #
-# List installed ports
+# Show port status
 #
-sub list_installed() {
+sub show_port_status($) {
+    my $port = shift;		# Port to show status for
 
-    my $pkg;			# Installed package
-    my $origin;			# Origin
     my $cmp;			# Comparator
 
-    foreach $pkg (sort(keys(%installed))) {
-	$origin = find_moved($installed{$pkg});
-	if (!defined($origin) || !defined($pkgname{$origin})) {
-	    print(" ? $pkg\n");
-	} else {
-	    $cmp = cmp_version($pkg, $origin);
+    if ($installed{$port}) {
+	foreach my $pkg (@{$installed{$port}}) {
+	    $cmp = cmp_version($pkg, $pkgname{$port});
 	    if ($cmp eq '=') {
 		print("   $pkg\n");
 	    } else {
-		printf(" $cmp $pkg ($pkgname{$origin})\n");
+		printf(" $cmp $pkg ($pkgname{$port})\n");
 	    }
 	}
+    } else {
+	printf(" ! $port\n");
     }
 }
 
@@ -1155,11 +1152,6 @@ MAIN:{
 	$build = 1;
     }
 
-    # 'status' implies 'installed'
-    if ($status) {
-	$installed = 1;
-    }
-
     # Set and check CVS root
     if ($anoncvs && !$cvsroot) {
 	$cvsroot = &ANONCVS_ROOT;
@@ -1201,8 +1193,13 @@ MAIN:{
     if ($err) {
 	bsd::errx(1, "some required ports were not found.");
     }
-    if ($installed) {
-	add_installed();
+    if ($installed || $status || $exclude) {
+	get_installed();
+    }
+    if ($installed || ($status && $requested == 0)) {
+	foreach $port (keys(%installed)) {
+	    add_port($port, &REQ_EXPLICIT);
+	}
     }
 
     # Step 3: update port directories and discover dependencies
@@ -1212,8 +1209,7 @@ MAIN:{
     # Step 4: deselect ports which are already installed
     if ($exclude) {
 	foreach $port (keys(%reqd)) {
-	    if ((exists($installed{$port}) && $installed{$port} > 0) ||
-		-d "$dbdir/$pkgname{$port}") {
+	    if (defined($installed{$port})) {
 		info("$port is already installed");
 		delete $reqd{$port};
 	    }
@@ -1223,7 +1219,6 @@ MAIN:{
     # Step 5: list selected ports
     if ($list) {
 	foreach $port (sort(keys(%reqd))) {
-	    next if ($reqd{$port} == &REQ_MASTER);
 	    print((($reqd{$port} & &REQ_EXPLICIT) ? " * " : "   "),
 		  "$port ($pkgname{$port})\n");
 	}
@@ -1231,7 +1226,9 @@ MAIN:{
 
     # Step 6: list installed ports
     if ($status) {
-	list_installed();
+	foreach $port (keys(%reqd)) {
+	    show_port_status($port);
+	}
     }
 
     # Step 7: show info
@@ -1277,9 +1274,7 @@ MAIN:{
     # Step B: fetch distfiles
     if ($fetch) {
 	foreach $port (keys(%reqd)) {
-	    if ($reqd{$port} != &REQ_MASTER) {
-		fetch_port($port);
-	    }
+	    fetch_port($port);
 	}
     }
 
