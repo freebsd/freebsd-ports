@@ -172,7 +172,7 @@ sub add_cvsweb_entry {
 			$rev = $prevrev if $status =~ /dead/;
 			$extra = "?rev=$rev&content-type=text/plain";
 		} else {
-			$extra = ".diff?r1=$prevrev&r2=$rev";
+			$extra = ".diff?r1=$prevrev&r2=$rev&f=h";
 		}
 		push @output, $_;
 		push @output, "$baseurl$extra";
