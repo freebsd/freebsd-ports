@@ -1,6 +1,6 @@
-#!/usr/bin/perl -w
+#!/usr/bin/perl
 #
-# $FreeBSD$
+# $Id$
 #
 #
 # Perl filter to handle pre-commit checking of files.  This program

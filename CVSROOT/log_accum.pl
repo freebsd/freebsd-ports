@@ -1,6 +1,6 @@
 #!/usr/bin/perl
 #
-# $Id: log_accum.pl,v 1.15 1995/11/27 08:28:42 peter Exp $
+# $Id$
 #
 # Perl filter to handle the log messages from the checkin of files in
 # a directory.  This script will group the lists of files by log
@@ -55,6 +55,7 @@ $CVSROOT       = "$ENV{'CVSROOT'}";
 
 $AVAIL_FILE    = "$CVSROOT/CVSROOT/avail";
 $MAIL_FILE     = "/tmp/#cvs.mail";
+$SUBJ_FILE     = "/tmp/#cvs.subj";
 $VERSION_FILE  = "version";
 $TRUNKREV_FILE = "TrunkRev";
 #$CHANGES_FILE  = "Changes";
@@ -88,9 +89,14 @@ sub cleanup_tmpfiles {
     opendir(DIR, ".");
     if ($all == 1) {
 	push(@files, grep(/$id$/, readdir(DIR)));
-	push(@files, "$MAIL_FILE.$id.db") if (-e "$MAIL_FILE.$id.db");
+
+	push(@files, "$MAIL_FILE.$id.db")  if (-e "$MAIL_FILE.$id.db");
 	push(@files, "$MAIL_FILE.$id.dir") if (-e "$MAIL_FILE.$id.dir");
 	push(@files, "$MAIL_FILE.$id.pag") if (-e "$MAIL_FILE.$id.pag");
+
+	push(@files, "$SUBJ_FILE.$id.db")  if (-e "$SUBJ_FILE.$id.db");
+	push(@files, "$SUBJ_FILE.$id.dir") if (-e "$SUBJ_FILE.$id.dir");
+	push(@files, "$SUBJ_FILE.$id.pag") if (-e "$SUBJ_FILE.$id.pag");
     } else {
 	push(@files, grep(/^$FILE_PREFIX.*$id$/, readdir(DIR)));
     }
@@ -287,21 +293,27 @@ sub do_changes_file {
     local($changes,$category);
     local(@text) = @_;
 
-    $category = $mlist;
-    $category =~ s/^cvs-//;
-    
-    $changes = "$CVSROOT/CVSROOT/commitlogs/$category";
+    dbmopen(%MAILFILE, "$MAIL_FILE.$id", 0666);
 
-    open(CHANGES, ">>$changes") || die("Cannot open $changes.\n");
-    print(CHANGES join("\n", @text), "\n\n");
-    close(CHANGES);
+    foreach $category (keys %MAILFILE) {
+	if ($category =~ /^cvs-/) {
+	    $category =~ s,\n,,;
+	    $category =~ s/^cvs-//;
+	    $changes = "$CVSROOT/CVSROOT/commitlogs/$category";
+
+	    open(CHANGES, ">>$changes") || die("Cannot open $changes.\n");
+	    print(CHANGES join("\n", @text), "\n\n");
+	    close(CHANGES);
+	}
+    }
+    dbmclose(%MAILFILE);
 }
 
 sub do_avail_file {
     local($where) = @_;
     local($users,$repo,$who);
 
-    dbmopen(MAILFILE, "$MAIL_FILE.$id", 0666);
+    dbmopen(%MAILFILE, "$MAIL_FILE.$id", 0666);
     open(AVAIL, "<$AVAIL_FILE") || die("Cannot open $AVAIL_FILE.\n");
     while(<AVAIL>) {
 	if(/^avail\|([^|]*)\|(.*)$/) {
@@ -319,7 +331,7 @@ sub do_avail_file {
 	}
     }
     close(AVAIL);
-    dbmclose(MAILFILE);
+    dbmclose(%MAILFILE);
 }
 
 sub add_cc {
@@ -333,25 +345,33 @@ sub add_cc {
     $who =~ s/^/"/;
     $who =~ s/$/"/;
 
-    dbmopen(MAILFILE, "$MAIL_FILE.$id", 0666);
+    dbmopen(%MAILFILE, "$MAIL_FILE.$id", 0666);
     $MAILFILE{$who} = 1;
-    dbmclose(MAILFILE);
+    dbmclose(%MAILFILE);
 }
 
 
 sub mail_notification {
     local(@text) = @_;
     local($names);
-    local($mailing_lists); 
-    $committers = "CVS-committers"; 
-    print "Mailing the commit message...\n";
-    dbmopen(MAILFILE, "$MAIL_FILE.$id", 0666);
-    $mailing_lists = join(' ', $mlist, $committers);
-    $names = join(" ", keys %MAILFILE) . " $mailing_lists";
-    $names =~ s,\n,,;
-    dbmclose(MAILFILE);
+    local($subject);
 
-    open(MAIL, "| mail -s \"cvs commit: $ARGV[0]\" $names");
+    print "Mailing the commit message...\n";
+
+    dbmopen(%MAILFILE, "$MAIL_FILE.$id", 0666);
+    $names = "CVS-committers " . join(" ", keys %MAILFILE);
+    $names =~ s,\n,,;
+    dbmclose(%MAILFILE);
+
+    dbmopen(%SUBJFILE, "$SUBJ_FILE.$id", 0666);
+    $subject = join(" ", keys %SUBJFILE);
+    $subject =~ s,\n,,;
+    $subject =~ s,[ 	]*, ,;
+    dbmclose(%SUBJFILE);
+
+    #print "mail -s \"cvs commit: $subject\" $names\n";
+
+    open(MAIL, "| mail -s \"cvs commit: $subject\" $names");
     print(MAIL join("\n", @text));
     close(MAIL);
 }
@@ -370,7 +390,7 @@ $state = $STATE_NONE;
 $login = $ENV{'USER'} || getlogin || (getpwuid($<))[0] || sprintf("uid#%d",$<);
 @files = split(' ', $ARGV[0]);
 @path = split('/', $files[0]);
-$repository = @path[0];
+$repository = $path[0];
 if ($#path == 0) {
     $dir = ".";
 } else {
@@ -383,6 +403,13 @@ if ($#path == 0) {
 #print("id    - ", $id, "\n");
 
 $mlist = &mlist_map($files[0]);
+dbmopen(%MAILFILE, "$MAIL_FILE.$id", 0666);
+$MAILFILE{$mlist} = 1;
+dbmclose(%MAILFILE);
+
+dbmopen(%SUBJFILE, "$SUBJ_FILE.$id", 0666);
+$SUBJFILE{$ARGV[0]} = 1;
+dbmclose(%SUBJFILE);
 
 #
 # Check for a new directory first.  This will always appear as a
@@ -400,8 +427,32 @@ if ($ARGV[0] =~ /New directory/) {
     exit 0;
 }
 
+# Check for an import command.  This will always appear as a
+# single item in the argument list, and a log message.
+#
+if ($ARGV[0] =~ /Imported sources/) {
+    $version = &bump_version if ($cisco_systems != 0);
+    $header = &build_header($version);
+
+    @text = ();
+    push(@text, $header);
+    push(@text, "");
+
+    push(@text, "  ".$ARGV[0]);
+    &do_changes_file(@text);
+
+    while (<STDIN>) {
+	chop;                   # Drop the newline
+	push(@text, "  ".$_);
+    }
+
+    &mail_notification(@text);
+    exit 0;
+}    
+
 #no longer useful. the CC: line would be _too_ big.
 #&do_avail_file($dir);
+
 
 #
 # Iterate over the body of the message collecting information.
@@ -428,11 +479,10 @@ while (<STDIN>) {
 	    /^Obtained from:$/i) {
 	    next;
 	}
-# Not accepted as generally useful yet.
-#	if (/^CC:/i) {
-#	    &add_cc($_);
-#	    # next;	# uncomment this to prevent logging CC: lines
-#	}
+	if (/^CC:/i) {
+	    &add_cc($_);
+	    # next;	# uncomment this to prevent logging CC: lines
+	}
 	push (@log_lines,     $_);
     }
 }

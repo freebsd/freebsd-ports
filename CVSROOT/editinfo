@@ -1,6 +1,5 @@
 #
-# editinfo,v 1.1 1992/03/21 06:49:39 berliner Exp
-# $FreeBSD$
+# $Id$
 #
 # The "editinfo" file is used to allow verification of logging
 # information.  It works best when a template (as specified in the
@@ -28,9 +27,8 @@
 # supported. There can be only one entry that matches a given
 # repository.
 #
-#DEFAULT			$CVSROOT/CVSROOT/edit
+# Note there is no "edit" example script currently available....
 #
-# uncomment this to deal with the new edit hook
-#DEFAULT			/home/ncvs/CVSROOT/new_edithook
+#DEFAULT		$CVSROOT/CVSROOT/edit "%s"
 # peter's edit post-processor..
-DEFAULT			/home/ncvs/CVSROOT/cvsedit
+DEFAULT			$CVSROOT/CVSROOT/cvsedit

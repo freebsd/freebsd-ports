@@ -1,10 +1,15 @@
 #
 # $Id$
 #
-# The "commitinfo" file is used to control pre-commit checks.
-# The filter on the right is invoked with the repository and a list 
-# of files to check.  A non-zero exit of the filter program will 
-# cause the commit to be aborted.
+# The "taginfo" file is used to control pre-tag checks.
+# The filter on the right is invoked with the following arguments:
+#
+# $1 -- tagname
+# $2 -- operation "add" for tag, "mov" for tag -F, and "del" for tag -d
+# $3 -- repository
+# $4->  file revision [file revision ...]
+#
+# A non-zero exit of the filter program will cause the tag to be aborted.
 #
 # The first entry on a line is a regular expression which is tested
 # against the directory that the change is being committed to, relative
@@ -17,5 +22,4 @@
 # If the name "ALL" appears as a regular expression it is always used
 # in addition to the first matching regex or "DEFAULT".
 #
-#
-ALL			$CVSROOT/CVSROOT/commitcheck
+#DEFAULT			$CVSROOT/CVSROOT/tag_logging_program
