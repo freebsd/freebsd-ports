@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	fvwm
-PORTVERSION=	2.4.4
+PORTVERSION=	2.4.5
 CATEGORIES=	x11-wm
 MASTER_SITES=	ftp://ftp.fvwm.org/pub/fvwm/version-2/ \
 		http://www.fvwm.org/generated/icon_download/
@@ -17,6 +17,10 @@ MAINTAINER=	petef@FreeBSD.org
 
 RUN_DEPENDS=	gm4:${PORTSDIR}/devel/m4
 
+.if defined(WITH_STROKE)
+LIB_DEPENDS+=	stroke.0:${PORTSDIR}/devel/libstroke
+.endif
+
 USE_GMAKE=	yes
 USE_GTK=	yes
 USE_IMLIB=	yes
@@ -25,6 +29,11 @@ USE_X_PREFIX=	yes
 WANT_GNOME=	yes
 
 GNU_CONFIGURE=	yes
+
+.if defined(WITH_STROKE)
+CONFIGURE_ARGS+=	--with-stroke --with-stroke-library=${LOCALBASE}/lib \
+			--with-stroke-includes=${LOCALBASE}/include
+.endif
 
 PLIST_SUB+=	FVWM_VERSION="${PORTVERSION}"
 
