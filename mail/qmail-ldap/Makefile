@@ -7,6 +7,7 @@
 
 PORTNAME=	qmail
 PORTVERSION=	${QMAIL_VERSION}.${LDAP_PATCH_DATE}
+PORTREVISION=	1
 CATEGORIES=	mail
 PKGNAMESUFFIX=	-ldap
 
@@ -20,8 +21,14 @@ MAINTAINER=	lioux@FreeBSD.org
 
 LIB_DEPENDS+=	ldap.1:${PORTSDIR}/net/openldap
 
+.if defined(WITH_TLS)
+PKGNAMESUFFIX=	-ldap-with_tls
+USE_OPENSSL=	yes
+.endif # WITH_TLS
+
 # Patches from the main qmail port are not wanted
-MAIN_QMAIL_PORT_PATCH_BARRIER=	yes
+MAIN_QMAIL_PORT_DNS_PATCH_BARRIER=	yes
+MAIN_QMAIL_PORT_WITH_BIG_CONCURRENCY_PATCH_BARRIER=	yes
 
 LDAP_PATCH_DATE=	20010201
 
@@ -35,6 +42,7 @@ PREFIX?=	${QMAIL_PORT_PREFIX}
 
 #QMAIL_PORT=	${PORTSDIR}/mail/qmail
 QMAIL_PORT=	${.CURDIR}/../qmail
+QMAIL_TLS_PORT=	${.CURDIR}/../qmail-tls
 QMAIL_PORT_PREFIX!=	cd ${QMAIL_PORT} && ${MAKE} -V PREFIX
 QMAIL_PORT_PATCHDIR!=	cd ${QMAIL_PORT} && ${MAKE} -V PATCHDIR
 
@@ -42,23 +50,23 @@ DOCFILES+=	${WRKSRC}/QLDAPINSTALL ${WRKSRC}/QLDAPNEWS \
 		${WRKSRC}/QLDAPTODO ${WRKSRC}/QLDAPPICTURE \
 		${WRKSRC}/ANTISPAM
 
-yetanotherone-pre-fetch: ldap-pre-fetch
+slaveport-pre-fetch: qmail-ldap-pre-fetch
 
-ldap-pre-fetch:
-	@${ECHO_MSG} ""
-	@${ECHO_MSG} "You may use the following build options:"
-	@${ECHO_MSG} ""
-	@${ECHO_MSG} "WITH_LDAP_CLUSTER=yes	enable cluster support"
+qmail-ldap-pre-fetch:
+	@${ECHO_MSG} "WITH_TLS=yes			enable SMTP TLS support"
+	@${ECHO_MSG} "WITH_LDAP_CLUSTER=yes		enable cluster support"
 	@${ECHO_MSG} "WITH_AUTOMAILDIRMAKE=yes	enable the auto-maildir-make feature"
 	@${ECHO_MSG} "WITH_AUTOHOMEDIRMAKE=yes	enable the auto-homedir-make feature"
-	@${ECHO_MSG} "WITH_LDAP_DEBUG=yes	enable the possibility to log and"
+	@${ECHO_MSG} "WITH_LDAP_DEBUG=yes		enable the possibility to log and"
 	@${ECHO_MSG} "				debug imap and pop"
 	@${ECHO_MSG} "WITH_CLEARTEXTPASSWD=yes	use cleartext passwords"
-	@${ECHO_MSG} ""
 
-yetanotherone-post-patch: ldap-post-patch
+slaveport-post-patch: qmail-ldap-post-patch
 
-ldap-post-patch:
+qmail-ldap-post-patch:
+.if defined(WITH_TLS)
+	@${PERL} -pi -ne "s|#TLSON=-DTLS|TLSON=-DTLS|;s|#TLSINCLUDES=-I/usr/local/include|TLSINCLUDES=-I${OPENSSLBASE}/include|;s|#TLSLIBS=-L/usr/local/lib|TLSLIBS=-L${OPENSSLBASE}/lib|" ${WRKSRC}/Makefile
+.endif # WITH_TLS
 .if defined(WITH_LDAP_CLUSTER)
 	@${PERL} -pi -ne "s|#LDAPFLAGS=-DQLDAP_CLUSTER|LDAPFLAGS\+=-DQLDAP_CLUSTER|" ${WRKSRC}/Makefile
 .endif # WITH_LDAP_CLUSTER
@@ -75,6 +83,12 @@ ldap-post-patch:
 	@${PERL} -pi -ne "s|# -DCLEARTEXTPASSWD to the LDAPFLAGS|LDAPFLAGS\+=-DCLEARTEXTPASSWD|" \
 		${WRKSRC}/Makefile
 .endif # WITH_CLEARTEXTPASSWD
+
+certificate:
+	@cd ${QMAIL_TLS_PORT} && ${MAKE} $@ clean
+
+certificate-req:
+	@cd ${QMAIL_TLS_PORT} && ${MAKE} $@ clean
 
 # Local overrides
 MASTERDIR=	${QMAIL_PORT}

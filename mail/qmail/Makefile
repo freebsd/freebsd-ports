@@ -7,27 +7,79 @@
 
 PORTNAME=	qmail
 PORTVERSION?= 	${QMAIL_VERSION}
+PORTREVISION?=	1
 CATEGORIES=	mail
 MASTER_SITES=	http://cr.yp.to/software/ \
 		ftp://ftp.ntnu.no/pub/unix/mail/qmail/ \
 		ftp://ftp.jp.qmail.org/qmail/ \
 		ftp://ftp.rifkin.technion.ac.il/pub/qmail/ \
 		ftp://ftp.net.ohio-state.edu/pub/networking/mail/qmail/ \
-		ftp://ftp.id.wustl.edu/pub/qmail/
+		ftp://mirror.pipex.net/pub/qmail/ \
+		ftp://ftp.mira.net.au/unix/mail/qmail/
 DISTNAME=	${PORTNAME}-${QMAIL_VERSION}
 
 # qmail-* skeleton ports including this port may not want
 # its patches
-.if !defined (MAIN_QMAIL_PORT_PATCH_BARRIER)
+.if !defined(MAIN_QMAIL_PORT_DNS_PATCH_BARRIER)
 # Patch necessary to cope with non-RFC >512 dns entries
 # Since AOL has been using those, the problem has skyrocketed from minor to
 # groundzero. qmail being RFC compliant need to be "fixed" to work with those
-PATCH_SITES+=	http://www.ckdhr.com/ckd/ \
-		${MASTER_SITE_LOCAL}
-PATCH_SITE_SUBDIR+=	lioux
+PATCH_SITES+=	http://www.ckdhr.com/ckd/
 PATCHFILES+=	qmail-103.patch
 PATCH_DIST_STRIP+=	-p1
+.endif # MAIN_QMAIL_PORT_DNS_PATCH_BARRIER
+
+MASTER_SITE_QMAIL+= \
+	http://www.qmail.org/ \
+	http://qmail.powerenterprises.net/ \
+	http://qmail.area.com/ \
+	http://qmail.valueclick.com/qmail/ \
+	http://itcentrx.com/mirrors/qmail/ \
+	http://qmail.geto.net/ \
+	http://qmail.advansys.net/ \
+	http://qmail.nac.net/ \
+	http://qmail.presys.com/ \
+	http://qmail.sgi.net/qmail/ \
+	http://qmail.goof.com/ \
+	http://www.cgiscripts.net/mirrors/qmail/ \
+	http://qmail.maximumbsd.com/ \
+	http://www.glasswings.com.au/qmail/ \
+	http://www.sczg.com/qmail/ \
+	http://infobase.ibase.com.hk/qmail/ \
+	http://www9.jp.qmail.org/ \
+	http://qmail.manic.co.kr/ \
+	http://qmail.sga.net.th/ \
+	http://gd.tuwien.ac.at/infosys/mail/qmail/www.qmail.org/ \
+	http://qmail.lightwerk.com/ \
+	http://qmail.imd.it/ \
+	http://qmail.sst.com.br/ \
+	http://madhaus.utcs.utoronto.ca/qmail/ \
+	http://qmail.ElectroCity.com/
+
+.if !defined(MAIN_QMAIL_PORT_DNS_PATCH_BARRIER) \
+ 	||(defined(WITH_QMAILQUEUE_PATCH)&&!defined(MAIN_QMAIL_PORT_WITH_QMAILQUEUE_PATCH_BARRIER)) \
+	||(defined(WITH_BIG_TODO_PATCH)&&!defined(MAIN_QMAIL_PORT_WITH_BIG_TODO_PATCH_BARRIER)) \
+	||(defined(WITH_BIG_CONCURRENCY_PATCH)&&!defined(MAIN_QMAIL_PORT_WITH_BIG_CONCURRENCY_PATCH_BARRIER))
+PATCH_SITES+=	${MASTER_SITE_QMAIL} \
+		${MASTER_SITE_LOCAL}
+PATCH_SITE_SUBDIR+=	lioux
 .endif
+
+# qmail-* skeleton ports including this port may not want
+# its patches
+# MAIN_QMAIL_PORT_WITH_QMAILQUEUE_PATCH_BARRIER
+# MAIN_QMAIL_PORT_WITH_BIG_TODO_PATCH_BARRIER
+# MAIN_QMAIL_PORT_WITH_BIG_CONCURRENCY_PATCH_BARRIER
+#
+.if defined(WITH_QMAILQUEUE_PATCH)&&!defined(MAIN_QMAIL_PORT_WITH_QMAILQUEUE_PATCH_BARRIER)
+PATCHFILES+= 	qmailqueue-patch
+.endif # WITH_QMAILQUEUE_PATCH && !MAIN_QMAIL_PORT_WITH_QMAILQUEUE_PATCH_BARRIER
+.if defined(WITH_BIG_TODO_PATCH)&&!defined(MAIN_QMAIL_PORT_WITH_BIG_TODO_PATCH_BARRIER)
+PATCHFILES+=	big-todo.103.patch
+.endif # WITH_BIG_TODO_PATCH && !MAIN_QMAIL_PORT_WITH_BIG_TODO_PATCH_BARRIER
+.if defined(WITH_BIG_CONCURRENCY_PATCH)&&!defined(MAIN_QMAIL_PORT_WITH_BIG_CONCURRENCY_PATCH_BARRIER)
+PATCHFILES+=	big-concurrency.patch
+.endif # WITH_BIG_CONCURRENCY_PATCH && !MAIN_QMAIL_PORT_WITH_BIG_CONCURRENCY_PATCH_BARRIER
 
 MAINTAINER=	lioux@FreeBSD.org
 
@@ -40,8 +92,21 @@ NO_PACKAGE=	djb\'s packaging license does not allow non-standard\
 PREFIX?=		/var/qmail
 QMAIL_VERSION?=		1.03
 
+# Some default values, these can be modified by make command line
+.if defined(WITH_BIG_CONCURRENCY_PATCH)&&!defined(MAIN_QMAIL_PORT_WITH_BIG_CONCURRENCY_PATCH_BARRIER)
+WITH_BIG_CONCURRENCY_PATCH_CONCURRENCY_LIMIT?=	509
+.endif # WITH_BIG_CONCURRENCY_PATCH && !MAIN_QMAIL_PORT_WITH_BIG_CONCURRENCY_PATCH_BARRIER
+
+# Some configuration files we use for installing the port
+MAILER_CONF_FILE?=	/etc/mail/mailer.conf
+MAKE_CONF_FILE?=	/etc/make.conf
+RC_CONF_FILE?=	/etc/rc.conf
 # Some programs we use when building/installing the port
-HEAD?=	/usr/bin/head
+FMT?=		/usr/bin/fmt
+HEAD?=		/usr/bin/head
+MAILQ?=		/usr/bin/mailq
+NEWALIASES?=	/usr/bin/newaliases
+SENDMAIL?=	/usr/sbin/sendmail
 
 ALL_TARGET=	default dot-qmail.5 qmail-control.5 qmail-getpw.8 \
 		qmail-limits.7 qmail-newmrh.8 qmail-newu.8 qmail-pw2u.8 \
@@ -106,14 +171,54 @@ NO_MTREE=	yes
 .include <bsd.port.pre.mk>
 .endif
 
-pre-fetch: yetanotherone-pre-fetch
+pre-fetch: pre-pre-fetch slaveport-pre-fetch post-pre-fetch
+
+pre-pre-fetch:
+.if !defined(MAIN_QMAIL_PORT_BUILD_WITH_OPTIONS_ADVERTISE_BARRIER)
+	@${ECHO_MSG} ""
+	@${ECHO_MSG} "You may use the following build options:"
+	@${ECHO_MSG} ""
+.if !defined(MAIN_QMAIL_PORT_WITH_QMAILQUEUE_PATCH_BARRIER)
+	@${ECHO_MSG} "WITH_QMAILQUEUE_PATCH=yes	enable patch to qmail to run a QMAILQUEUE"
+	@${ECHO_MSG} "				program instead of bin/qmail-sent"
+.endif # MAIN_QMAIL_PORT_WITH_QMAILQUEUE_PATCH_BARRIER
+.if !defined(MAIN_QMAIL_PORT_WITH_BIG_TODO_PATCH_BARRIER)
+	@${ECHO_MSG} "WITH_BIG_TODO_PATCH=yes		enable big_todo qmail patch"
+.endif # MAIN_QMAIL_PORT_WITH_BIG_TODO_PATCH_BARRIER
+.if !defined(MAIN_QMAIL_PORT_WITH_BIG_CONCURRENCY_PATCH_BARRIER)
+	@${ECHO_MSG} "WITH_BIG_CONCURRENCY_PATCH=yes	enable patch to qmail to"
+	@${ECHO_MSG} "				use a concurrency greater than 240"
+	@${ECHO_MSG} "WITH_BIG_CONCURRENCY_PATCH_CONCURRENCY_LIMIT=NUMBER"
+	@${ECHO_MSG} "				(default NUMBER=${WITH_BIG_CONCURRENCY_PATCH_CONCURRENCY_LIMIT})"
+	@${ECHO_MSG} "				set this to a value reasonable for"
+	@${ECHO_MSG} "				your system if you use the patch"
+.endif # MAIN_QMAIL_PORT_WITH_BIG_CONCURRENCY_PATCH_BARRIER
+	@${ECHO_MSG} "#"
+.endif # MAIN_QMAIL_PORT_BUILD_WITH_OPTIONS_ADVERTISE_BARRIER
 
 # Yet anther ugly hack (used by qmail-* skeleton ports)
 # Permits them to define local targets without braking everything
 # The ugly target name hopefully will avoid name clashing
-.if !target(yetanotherone-pre-fetch)
-yetanotherone-pre-fetch:
+.if !target(slaveport-pre-fetch)
+slaveport-pre-fetch:
 .endif
+
+post-pre-fetch:
+.if !defined(MAIN_QMAIL_PORT_BUILD_WITH_OPTIONS_ADVERTISE_BARRIER)
+	@${ECHO_MSG} ""
+.endif
+
+post-patch: thereal-post-patch slaveport-post-patch post-post-patch
+
+# Yet anther ugly hack (used by qmail-* skeleton ports)
+# Permits them to define local targets without braking everything
+# The ugly target name hopefully will avoid name clashing
+.if !target(slaveport-post-patch)
+slaveport-post-patch:
+.endif
+
+post-post-patch:
+	@${PERL} -pi -ne "s!/var/qmail!${PREFIX}!;s!/usr/local/!${LOCALBASE}/!" ${WRKSRC}/Makefile
 
 # If you want to change the qmail users, they must be changed in both
 # work/*/conf-users and pkg/INSTALL.
@@ -123,15 +228,15 @@ do-configure:
 	@PKG_PREFIX=${PREFIX} ${PERL5} ${PKGINSTALL}
 	@${ECHO} "${CC} ${CFLAGS}" > ${WRKSRC}/conf-cc
 	@${ECHO} ${PREFIX} > ${WRKSRC}/conf-qmail
-
-post-patch: thereal-post-patch yetanotherone-post-patch
-
-# Yet anther ugly hack (used by qmail-* skeleton ports)
-# Permits them to define local targets without braking everything
-# The ugly target name hopefully will avoid name clashing
-.if !target(yetanotherone-post-patch)
-yetanotherone-post-patch:
-.endif
+.if defined(WITH_BIG_CONCURRENCY_PATCH) \
+	&& !defined(MAIN_QMAIL_PORT_WITH_BIG_CONCURRENCY_PATCH_BARRIER) \
+	&& defined(WITH_BIG_CONCURRENCY_PATCH_CONCURRENCY_LIMIT)
+	@if [ ${WITH_BIG_CONCURRENCY_PATCH_CONCURRENCY_LIMIT} -gt 0 ]; \
+	then \
+		${ECHO} "${WITH_BIG_CONCURRENCY_PATCH_CONCURRENCY_LIMIT}" \
+			> ${WRKSRC}/conf-spawn ; \
+	fi
+.endif # MAIN_QMAIL_PORT_WITH_BIG_CONCURRENCY_PATCH_BARRIER
 
 do-install:
 	@# Check again, just in case (ideally should error if not found)
@@ -151,7 +256,7 @@ do-install:
 	${INSTALL_DATA} ${DOCFILES} ${PREFIX}/${DOCDIR}
 .endif
 .if defined(PACKAGE_BUILDING)
-	@${ECHO} "FreeBSD Binary package QMail installation" \
+	@${ECHO} "FreeBSD Binary package qmail installation" \
 		> ${PREFIX}/${DOCDIR}/SYSDEPS
 .else
 	@cd ${WRKSRC} && ${CAT} `${CAT} SYSDEPS` \
@@ -166,7 +271,7 @@ do-install:
 	@${MKDIR} ${LOCALBASE}/etc/rc.d
 	@${LN} -sf ${PREFIX}/rc ${LOCALBASE}/etc/rc.d/qmail.sh
 	@${ECHO}
-	@${SED} s!/var/qmail!${PREFIX}!g ${PKGMESSAGE} | /usr/bin/fmt
+	@${SED} s!/var/qmail!${PREFIX}!g ${PKGMESSAGE} | ${FMT}
 
 # hack to allow slave ports to include bsd.port.pre.mk and then this file
 .if defined(_PREMKINCLUDED)
@@ -199,16 +304,16 @@ ${WRKDIR}/.thereal_disable_sendmail_done:
 # I would like some input on the targets below. Only constructive ones
 # please. :)
 # based on shells/pdksh /etc/shells update PLIST.
-thereal-disable-sendmail: ${WRKDIR}/.thereal_disable_sendmail_done /etc/rc.conf
-	@if [ -f /etc/rc.conf ]; \
+thereal-disable-sendmail: ${WRKDIR}/.thereal_disable_sendmail_done ${RC_CONF_FILE}
+	@if [ -f ${RC_CONF_FILE} ]; \
 	then \
-		${CP} /etc/rc.conf /etc/rc.conf.bak && \
-			${GREP} -v sendmail_enable /etc/rc.conf.bak > \
-				/etc/rc.conf && \
+		${CP} ${RC_CONF_FILE} ${RC_CONF_FILE}.bak && \
+			${GREP} -v sendmail_enable ${RC_CONF_FILE}.bak > \
+				${RC_CONF_FILE} && \
 			${TOUCH} ${WRKDIR}/.thereal_disable_sendmail_done ; \
 	else \
-		${ECHO_MSG} ¨===> ERROR: YOU DO NOT HAVE A VALID /etc/rc.conf¨ ; \
-		${ECHO_MSG} ¨===> FIX this and try again¨ ; \
+		${ECHO_MSG} "===> ERROR: YOU DO NOT HAVE A VALID ${RC_CONF_FILE}" ; \
+		${ECHO_MSG} "===> FIX this and try again" ; \
 		${FALSE} ; \
 	fi
 
@@ -218,9 +323,9 @@ disable-sendmail: thereal-disable-sendmail
 	@${ECHO_MSG} "===> automaticaly start sendmail on your"
 	@${ECHO_MSG} "===> next startup."
 	@${ECHO_MSG} "===> (i.e., added sendmail_enable=\¨NO\¨ to rc.conf)"
-	@if [ -f /etc/rc.conf ]; \
+	@if [ -f ${RC_CONF_FILE} ]; \
 	then \
-		${ECHO} sendmail_enable=\"NO\" >> /etc/rc.conf ; \
+		${ECHO} sendmail_enable=\"NO\" >> ${RC_CONF_FILE} ; \
 	fi
 
 enable-sendmail: thereal-disable-sendmail
@@ -231,12 +336,12 @@ enable-sendmail: thereal-disable-sendmail
 	@${ECHO_MSG} "===> (i.e., removed sendmail_enable=\¨NO\¨ from rc.conf)"
 
 enable-qmail: install disable-sendmail
-	@if [ -f /etc/mail/mailer.conf ]; \
+	@if [ -f ${MAILER_CONF_FILE} ]; \
 	then \
-		${CP} /etc/mail/mailer.conf /etc/mail/mailer.conf.bak && \
-		${CP} ${WRKDIR}/mailer.conf.sample /etc/mail/mailer.conf ; \
+		${CP} ${MAILER_CONF_FILE} ${MAILER_CONF_FILE}.bak && \
+		${CP} ${WRKDIR}/mailer.conf.sample ${MAILER_CONF_FILE} ; \
 	else \
-		${ECHO_MSG} "===> ERROR: YOU DO NOT HAVE A VALID /etc/mail/mailer.conf" ; \
+		${ECHO_MSG} "===> ERROR: YOU DO NOT HAVE A VALID ${MAILER_CONF_FILE}" ; \
 		${ECHO_MSG} "===> FIX this and try again" ; \
 		${ECHO_MSG} "===> or, do \¨make force_enable_qmail\¨ if you are sure" ; \
 		${ECHO_MSG} "===> you want this port replacing some binaries" ; \
@@ -245,7 +350,7 @@ enable-qmail: install disable-sendmail
 		${ECHO_MSG} "=======> VERY IMPORTANT <=======" ; \
 		${ECHO_MSG} "===> One side issue is that if you do replace them," ; \
 		${ECHO_MSG} "===> you really should consider ADDING \"NO_SENDMAIL=true\"" ; \
-		${ECHO_MSG} "===> to your /etc/make.conf if you do \"make world\"." ; \
+		${ECHO_MSG} "===> to your ${MAKE_CONF_FILE} if you do \"make world\"." ; \
 		${ECHO_MSG} "===> Otherwise, \"make world\" will \"fix\" your sendmail" ; \
 		${ECHO_MSG} "===> installation breaking your qmail one." ; \
 		${ECHO_MSG} "===> Read the FreeBSD Handbook section on \"make world\"" ; \
@@ -261,28 +366,28 @@ enable-qmail: install disable-sendmail
 # taken from mail/postfix idea
 force-enable-qmail: install disable-sendmail
 	@${ECHO_MSG} "===> Replacing sendmail"
-	@if [ -e /usr/sbin/sendmail ]; then \
-		${MV} -f /usr/sbin/sendmail /usr/sbin/sendmail.OFF && \
-		${CHMOD} 0 /usr/sbin/sendmail.OFF; \
+	@if [ -e ${SENDMAIL} ]; then \
+		${MV} -f ${SENDMAIL} ${SENDMAIL}.OFF && \
+		${CHMOD} 0 ${SENDMAIL}.OFF; \
 	fi
 	@if [ -e ${PREFIX}/bin/sendmail ]; then \
-		${LN} -s ${PREFIX}/bin/sendmail /usr/sbin/sendmail; \
+		${LN} -sf ${PREFIX}/bin/sendmail ${SENDMAIL}; \
 	fi
 	@${ECHO_MSG} "===> Replacing mailq"
-	@if [ -e /usr/bin/mailq ]; then \
-		${MV} -f /usr/bin/mailq /usr/bin/mailq.OFF && \
-		${CHMOD} 0 /usr/bin/mailq.OFF; \
+	@if [ -e ${MAILQ} ]; then \
+		${MV} -f ${MAILQ} ${MAILQ}.OFF && \
+		${CHMOD} 0 ${MAILQ}.OFF; \
 	fi
 	@if [ -e ${PREFIX}/bin/qmail-qread ]; then \
-		${LN} -s ${PREFIX}/bin/qmail-qread /usr/bin/mailq; \
+		${LN} -sf ${PREFIX}/bin/qmail-qread ${MAILQ}; \
 	fi
 	@${ECHO_MSG} "===> Replacing newaliases"
-	@if [ -e /usr/bin/newaliases ]; then \
-		${MV} -f /usr/bin/newaliases /usr/bin/newaliases.OFF && \
-		${CHMOD} 0 /usr/bin/newaliases.OFF; \
+	@if [ -e ${NEWALIASES} ]; then \
+		${MV} -f ${NEWALIASES} ${NEWALIASES}.OFF && \
+		${CHMOD} 0 ${NEWALIASES}.OFF; \
 	fi
 	@if [ -e ${PREFIX}/bin/newaliases ]; then \
-		${LN} -s ${PREFIX}/bin/newaliases /usr/bin/newaliases; \
+		${LN} -sf ${PREFIX}/bin/newaliases ${NEWALIASES}; \
 	fi
 
 # The users are instructed (in PORT_NOTES) to install ${QUEUE_DIR}/rc
