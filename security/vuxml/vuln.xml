@@ -32,6 +32,38 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="65e99f52-1c5f-11d9-bc4a-000c41e2cdad">
+    <topic>squid -- SNMP module denial-of-service vulnerability</topic>
+    <affects>
+      <package>
+	<name>squid</name>
+	<range><lt>2.5.7</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The Squid-2.5 patches page notes:</p>
+	<blockquote cite="http://www.squid-cache.org/Versions/v2/2.5/bugs/#squid-2.5.STABLE6-SNMP_core_dump">
+	  <p>If a certain malformed SNMP request is received squid
+	    restarts with a Segmentation Fault error.</p>
+	</blockquote>
+	<p>This only affects squid installations where SNMP is
+	  explicitly enabled via "make config". As a workaround,
+	  SNMP can be disabled by defining "snmp_port 0" in
+	  squid.conf.</p>
+      </body>
+    </description>
+    <references>
+      <cvename>CAN-2004-0918</cvename>
+      <url>http://www.idefense.com/application/poi/display?id=152&amp;type=vulnerabilities</url>
+      <url>http://www.squid-cache.org/Versions/v2/2.5/bugs/#squid-2.5.STABLE6-SNMP_core_dump</url>
+    </references>
+    <dates>
+      <discovery>2004-09-29</discovery>
+      <entry>2004-10-12</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="0c592c4a-1bcc-11d9-a3ec-00061bd2d56f">
     <topic>cyrus-sasl -- potential buffer overflow in DIGEST-MD5 plugin</topic>
     <affects>
