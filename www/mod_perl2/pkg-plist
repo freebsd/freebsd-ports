@@ -3,6 +3,7 @@ bin/mp2doc
 include/apache2/modules/perl/mod_perl.h
 include/apache2/modules/perl/modperl_apache_compat.h
 include/apache2/modules/perl/modperl_apache_includes.h
+include/apache2/modules/perl/modperl_apr_compat.h
 include/apache2/modules/perl/modperl_apr_includes.h
 include/apache2/modules/perl/modperl_bucket.h
 include/apache2/modules/perl/modperl_callback.h
