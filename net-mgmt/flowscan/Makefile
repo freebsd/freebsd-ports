@@ -1,11 +1,11 @@
-# New ports collection makefile for:    FlowScan
+# New ports collection makefile for:    flowscan
 # Date created:         Di  13 Mär 2001 08:23:55 CET
 # Whom:                 andreas@freebsd.org
 #
 # $FreeBSD$
 #
 
-PORTNAME=	FlowScan
+PORTNAME=	flowscan
 PORTVERSION=    1.006
 CATEGORIES=	net
 MASTER_SITES=	http://net.doit.wisc.edu/~plonka/FlowScan/
