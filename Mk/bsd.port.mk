@@ -1246,6 +1246,7 @@ INSTALL_TARGET?=	install
 MASTER_SITES?=
 PATCH_SITES?=
 _MASTER_SITES_DEFAULT?=
+_PATCH_SITES_DEFAULT?=
 
 # Feed internal _{MASTER,PATCH}_SITES_n where n is a group designation
 # as per grouping rules (:something)
