@@ -2085,6 +2085,7 @@ fung-calc	ports/math/fung-calc
 funktrackergold	ports/audio/funktrackergold
 funnelweb	ports/devel/funnelweb
 fuse		ports/emulators/fuse
+fusenshi	ports/deskutils/fusenshi
 fuzz		ports/security/fuzz
 fvcool		ports/sysutils/fvcool
 fvwm		ports/x11-wm/fvwm
