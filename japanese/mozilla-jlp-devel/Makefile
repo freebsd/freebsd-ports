@@ -8,7 +8,7 @@
 PORTNAME=	mozilla
 PORTVERSION=	1.6.a
 CATEGORIES=	japanese www
-MASTER_SITES=	http://plaza25.mbn.or.jp/~snip/jlp/
+MASTER_SITES=	http://www33.ocn.ne.jp/~snip/mozilla/jlp/
 PKGNAMESUFFIX=	-jlp
 DISTNAME=	moz1.6a-langjajp-tm0.2
 EXTRACT_SUFX=	.xpi
