@@ -9,11 +9,11 @@ share/doc/Xtt/CHANGES.jis
 share/doc/Xtt/EXAMPLES.jis
 share/doc/Xtt/INSTALL.jis
 share/doc/Xtt/MISCNOTES.jis
-include/X11/fonts/codeconv/ftcap.h
-include/X11/fonts/codeconv/ftcconv.h
-include/X11/fonts/codeconv/ftcconvC.h
-include/X11/fonts/codeconv/ftcconvP.h
-include/X11/fonts/codeconv/ftmisc.h
+include/X11/fonts/codeconv/xttcap.h
+include/X11/fonts/codeconv/xttcconv.h
+include/X11/fonts/codeconv/xttcconvP.h
+include/X11/fonts/codeconv/xttcommon.h
+lib/modules/codeconv/ARABIC.so
 lib/modules/codeconv/ARMSCII8.so
 lib/modules/codeconv/BIG5.so
 lib/modules/codeconv/DOSENCODING.so

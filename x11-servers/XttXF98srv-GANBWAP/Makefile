@@ -1,13 +1,13 @@
 # New ports collection makefile for:	X98server for GANBWAP with X True Type
-# Version required:	1.1
+# Version required:	1.2.1
 # Date created:		25 October 1998
 # Whom:			NAKAJI Hiroyuki <nakaji@zeisei.dpri.kyoto-u.ac.jp>
 #
-# $Id: Makefile,v 1.2 1999/01/02 19:11:11 sada Exp $
+# $Id: Makefile,v 1.3 1999/01/15 09:49:39 asami Exp $
 #
 
 DISTNAME=	xc
-PKGNAME=	xtt-98GANBWAP-1.1
+PKGNAME=	xtt-98GANBWAP-${VERSION}.${PATCHLEVEL}
 CATEGORIES=	x11
 
 MAINTAINER=	nakaji@zeisei.dpri.kyoto-u.ac.jp

@@ -1,32 +1,31 @@
 # New ports collection makefile for:	Common Files for Xservers with Xtt
-# Version required:	1.1
+# Version required:	1.2.1
 # Date created:		15 April 1998
 # Whom:			Taguchi Takeshi <taguchi@tohoku.iij.ad.jp>
 #
-# $Id: Makefile,v 1.16 1999/03/08 07:28:36 asami Exp $
+# $Id: Makefile,v 1.17 1999/03/19 22:38:55 asami Exp $
 #
 
 DISTNAME=	xc
-PKGNAME?=	xtt-common-1.1
+PKGNAME?=	xtt-common-${VERSION}.${PATCHLEVEL}
 CATEGORIES=	x11
 MASTER_SITES=	ftp://ftp.xfree86.org/pub/XFree86/3.3.3/source/ \
 		ftp://xfree86.cdrom.com/pub/XFree86/3.3.3/source/ \
-		http://hawk.ise.chuo-u.ac.jp/student/person/tshiozak/x-tt/dists/1.x/
+		http://hawk.ise.chuo-u.ac.jp/student/person/tshiozak/x-tt/dists/1.x/1.2/
 DISTFILES=	X333src-1.tgz X333src-2.tgz \
-		xtt-1.1.tar.gz xttdoc11-to-pl01.diff.gz
+		xtt-1.2.tar.gz \
+		xtt-1.2-to-1.2.1.tar.gz
 
-PATCH_SITES=	ftp://ftp.xfree86.org/pub/XFree86/3.3.3/fixes/ \
-		http://hawk.ise.chuo-u.ac.jp/student/person/tshiozak/x-tt/dists/1.x/
-PATCHFILES=	3.3.3-3.3.3.1.diff.gz \
-		xtt11-to-pl00.diff.gz xtt11pl00-to-pl01.diff.gz \
-		xtt11pl01-to-pl02.diff.gz xtt11pl02-to-pl03.diff.gz \
-		xtt11pl03-to-pl04.diff.gz xtt11pl04-to-pl05.diff.gz
+PATCH_SITES=	ftp://ftp.xfree86.org/pub/XFree86/3.3.3/fixes/
+PATCHFILES=	3.3.3-3.3.3.1.diff.gz
 
 MAINTAINER=	taguchi@tohoku.iij.ad.jp
 
 LIB_DEPENDS+=	ttf.3:${PORTSDIR}/print/freetype
 RUN_DEPENDS=	mkttfdir:${PORTSDIR}/print/perlftlib
 
+VERSION=	1.2
+PATCHLEVEL=	1
 .if !defined(USE_SHARED_WRKSRC) && defined(COMPILE_ALL_SERVERS_AT_ONCE)
 USE_SHARED_WRKSRC= YES
 .endif
@@ -38,7 +37,8 @@ DISTFILES+=	Wraphelp.c
 IGNOREFILES=	Wraphelp.c
 .endif
 USE_X_PREFIX=	YES
-EXTRACT_ONLY=	X333src-1.tgz  X333src-2.tgz xtt-1.1.tar.gz
+EXTRACT_ONLY=	X333src-1.tgz  X333src-2.tgz \
+		xtt-1.2.tar.gz xtt-1.2-to-1.2.1.tar.gz
 BINOWN=		root
 BINGRP=		wheel
 MASTERDIR?=	${.CURDIR}/../XttXF86srv-common
@@ -49,7 +49,18 @@ WRKDIR=		${MASTERDIR}/work
 .endif
 WRKSRC=		${WRKDIR}/xc
 DIST_SUBDIR=	xc
-XTTDIR=		${WRKDIR}/xtt-1.1
+XTTDIR=		${WRKDIR}/xtt-1.2
+XTTPATCHDIR=	${WRKDIR}/xtt-1.2-to-1.2.1
+.if !defined(PATCH_DEBUG)
+XTTPATCHARGS=	-p1 -E -t -s -N
+.else
+XTTPATCHARGS=	-p1 -E
+.endif
+COREPATCHES=	shared-libfont-1.0.diff xfs-for-delayed-font-1.0.diff \
+		make-xfs-only-1.1.diff xtt-xf333-changes.diff
+XTTTARBALL=	xtt-core.tar
+ADDPATCHES=	${XTTDIR}/contribute/xtt-xfsft-lib.patch \
+		${XTTPATCHDIR}/xtt-core.diff
 DOCDIR=		${PREFIX}/share/doc/Xtt
 SERVER?=	common
 PATCH_DIST_ARGS= -d ${WRKDIR} --forward --quiet -E ${PATCH_STRIP}
@@ -127,10 +138,16 @@ pre-extract:
 .endif
 
 pre-patch:
-	@( cd ${WRKSRC}; ${PATCH} -p1 -t -s < ${XTTDIR}/xtt-1.1.diff ; \
-	   cd ${XTTDIR}; \
-           ${GZCAT} ${DISTDIR}/${DIST_SUBDIR}/xttdoc11-to-pl01.diff.gz | \
-             ${PATCH} -t -s )
+	@( cd ${WRKSRC}; \
+	   for i in ${COREPATCHES} ; do \
+		${PATCH} ${XTTPATCHARGS} < ${XTTDIR}/$${i}; \
+	   done; \
+	   ${TAR} xf ${XTTDIR}/${XTTTARBALL} -C ${WRKSRC}/lib/font; \
+	   for i in ${ADDPATCHES} ; do \
+		${PATCH} ${XTTPATCHARGS} < $${i}; \
+	   done; \
+	   cd ${XTTDIR}/doc; \
+	   ${PATCH} ${XTTPATCHARGS} < ${XTTPATCHDIR}/xtt-doc.diff )
 
 pre-configure:
 	@( \
@@ -148,10 +165,10 @@ do-install:
 	${SETENV} OBJFORMAT=${PORTOBJFORMAT} ${LDCONFIG} -m ${PREFIX}/lib; \
 	${INSTALL_SCRIPT} ${FILESDIR}/mkfontdir.pl ${PREFIX}/bin; \
 	${MKDIR} ${DOCDIR}; \
-	${INSTALL_DATA} ${XTTDIR}/[0A-Z]*.eng ${DOCDIR}; \
-	${INSTALL_DATA} ${XTTDIR}/[0A-Z]*.jis ${DOCDIR} )
+	${INSTALL_DATA} ${XTTDIR}/doc/[0A-Z]*.eng ${DOCDIR}; \
+	${INSTALL_DATA} ${XTTDIR}/doc/[0A-Z]*.jis ${DOCDIR} )
 .if ${PORTOBJFORMAT} == "aout"
-	${LN} -sf libfont.so.1.1 ${PREFIX}/lib/libfont.so
+	${LN} -sf libfont.so.1.2 ${PREFIX}/lib/libfont.so
 .endif
 .elif ${SERVER} == xfs
 do-install:
