@@ -10146,10 +10146,6 @@ straw		ports/net/straw
 stream		ports/benchmarks/stream
 streamripper	ports/audio/streamripper
 streamtuner	ports/audio/streamtuner
-streamtuner-live365	ports/audio/streamtuner-live365
-streamtuner-local	ports/audio/streamtuner-local
-streamtuner-python	ports/audio/streamtuner-python
-streamtuner-xiph	ports/audio/streamtuner-xiph
 stress		ports/sysutils/stress
 strobe		ports/security/strobe
 stuffit		ports/archivers/stuffit
