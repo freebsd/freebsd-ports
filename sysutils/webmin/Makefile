@@ -7,6 +7,7 @@
 
 PORTNAME=	webmin
 PORTVERSION=	1.110
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.webmin.com/updates/ \
 		${MASTER_SITE_SOURCEFORGE}
@@ -29,9 +30,11 @@ WEBMIN_MODULES=	dhcpd-1.110-9.wbm.gz \
 		fsdump-1.110-2.wbm.gz \
 		ldap-useradmin-1.110-3.wbm.gz \
 		lpadmin-1.110-1.wbm.gz \
-		mysql-1.110-1.wbm.gz \
+		mysql-1.110-5.wbm.gz \
 		postfix-1.110-1.wbm.gz \
-		sendmail-1.110-1.wbm.gz \
+		proc-1.110-7.wbm.gz \
+		samba-1.110-4.wbm.gz \
+		sendmail-1.110-7.wbm.gz \
 		stunnel-1.110-1.wbm.gz \
 		updown-1.110-1.wbm.gz \
 		upload-1.110-1.wbm.gz \
