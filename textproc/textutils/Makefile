@@ -17,6 +17,8 @@ COMMENT=	GNU text utilities
 
 LIB_DEPENDS=	intl.5:${PORTSDIR}/devel/gettext
 
+CONFLICTS=	coreutils-*
+
 USE_GMAKE=	yes
 USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
