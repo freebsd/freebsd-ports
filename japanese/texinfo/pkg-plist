@@ -31,7 +31,6 @@ info/info-stnd.info-3
 @exec install-info %D/info/info.info %D/info/dir
 @exec install-info %D/info/texinfo %D/info/dir
 @exec install-info %D/info/info-stnd.info %D/info/dir
-lib/charset.alias
 share/texinfo/texinfo.dtd
 share/texinfo/texinfo.xsl
 share/texmf/tex/generic/dvips/epsf.tex
@@ -57,7 +56,6 @@ share/locale/de_AT/LC_MESSAGES/texinfo.mo
 share/locale/eo/LC_MESSAGES/texinfo.mo
 share/locale/ru/LC_MESSAGES/texinfo.mo
 share/locale/da/LC_MESSAGES/texinfo.mo
-share/locale/locale.alias
 share/locale/he/LC_MESSAGES/texinfo.mo
 share/locale/hr/LC_MESSAGES/texinfo.mo
 share/locale/ja/LC_MESSAGES/texinfo.mo
@@ -68,3 +66,5 @@ share/locale/zh_TW/LC_MESSAGES/texinfo.mo
 @unexec rmdir %D/share/locale/*/LC_MESSAGES 2>/dev/null || true
 @unexec rmdir %D/share/locale/* 2>/dev/null || true
 @unexec rmdir %D/share/locale 2>/dev/null || true
+@unexec rmdir %D/share/texmf/tex/generic/dvips 2>/dev/null || true
+@unexec rmdir %D/share/texinfo 2>/dev/null || true
