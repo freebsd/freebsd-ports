@@ -3,12 +3,12 @@
 # Date created:         4 May 1995
 # Whom:                 ache
 #
-# $Id: Makefile,v 1.9 1995/11/16 03:13:14 asami Exp $
+# $Id: Makefile,v 1.10 1995/11/22 13:17:51 asami Exp $
 #
 
 DISTNAME=       pgp26ru
 PKGNAME=	ru-pgp-2.6
-CATEGORIES+=    russian utils
+CATEGORIES+=    russian
 MASTER_SITES=   ftp://ftp.kiae.su/unix/crypto/pgp/
 EXTRACT_SUFX=   .zip
 
