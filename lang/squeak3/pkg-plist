@@ -3,7 +3,7 @@ lib/Profiler.so
 lib/SoundCodecPrims.so
 lib/Squeak3D.so
 lib/System.so
-share/squeak/Squeak2.7.changes
-share/squeak/Squeak2.7.image
+share/squeak/Squeak-2.7.changes
+share/squeak/Squeak-2.7.image
 share/squeak/SqueakV2.sources
 @dirrm share/squeak
