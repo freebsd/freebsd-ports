@@ -19,7 +19,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION:S/a/-alpha/}
 MAINTAINER=	dwcjr@FreeBSD.org
 
 .if defined(WITH_CUPS)
-LIB_DEPENDS=	cups.2:${PORTSDIR}/print/cups
+LIB_DEPENDS=	cups.2:${PORTSDIR}/print/cups-base
 .endif
 
 # directories
