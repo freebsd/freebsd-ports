@@ -102,6 +102,8 @@ post-install:
 	@${TAR} --unlink -xzpf ${DISTDIR}/${DIST_SUBDIR}/${ERLANG_DOCS} \
 		-C ${PREFIX}/lib/erlang
 .endif
+	@${CHOWN} -R root:wheel ${PREFIX}/lib/erlang
+	@${CHMOD} -R o+rX-w,g+rX-w ${PREFIX}/lib/erlang
 	@sslapp=`ls -d ${PREFIX}/lib/erlang/lib/ssl-* | tail -1`; \
 	cd $$sslapp/priv/obj && ${MAKE} && strip ../bin/ssl_esock
 	@cd ${PREFIX} ; find lib/erlang/* -type f -o -type l \
