@@ -1,0 +1,8 @@
+--- cobpp/createver.sh.orig	Wed Dec  6 20:12:59 2000
++++ cobpp/createver.sh	Wed Dec  6 20:13:05 2000
+@@ -1,4 +1,4 @@
+-#!/bin/bash - 
++#!/bin/sh - 
+ #
+ #  This shell script create a version number, system, compiled date.  
+ #
