@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	gnomevfs
-PORTVERSION=	0.4.2
-PORTREVISION=	1
+PORTVERSION=	0.5
 CATEGORIES=	devel gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	unstable/sources/gnome-vfs
@@ -24,7 +23,7 @@ USE_X_PREFIX=	yes
 USE_GNOME=	yes
 USE_LIBTOOL=	yes
 INSTALL_SHLIBS=	yes
-CONFIGURE_ARGS=	--disable-gconf
+#CONFIGURE_ARGS=	--disable-gconf
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LIBS="-L${LOCALBASE}/lib"
 
@@ -36,5 +35,7 @@ pre-patch:
 	@find ${WRKSRC} -name "Makefile.in" | xargs ${PERL} -pi -e \
 		's|\$\(datadir\)/gnome/|\$\(datadir\)/|g ; \
 		 s|\$\(datadir\)/locale|\$\(prefix\)/share/locale|g'
+	@find ${WRKSRC} -name 'xml-i18n-*' | xargs ${PERL} -pi -e \
+		's|/usr/local/bin/perl|${PERL}|g'
 
 .include <bsd.port.mk>

@@ -1,5 +1,4 @@
 bin/gnome-vfs-config
-bin/gnome-vfs-gen-mimedb
 bin/gnome-vfs-slave
 bin/nautilus-mime-type-capplet
 etc/gnome-vfs-mime-magic
@@ -31,6 +30,7 @@ include/libgnomevfs/gnome-vfs-method.h
 include/libgnomevfs/gnome-vfs-mime-handlers.h
 include/libgnomevfs/gnome-vfs-mime-info.h
 include/libgnomevfs/gnome-vfs-mime-magic.h
+include/libgnomevfs/gnome-vfs-mime-monitor.h
 include/libgnomevfs/gnome-vfs-mime-sniff-buffer-private.h
 include/libgnomevfs/gnome-vfs-mime-sniff-buffer.h
 include/libgnomevfs/gnome-vfs-mime.h

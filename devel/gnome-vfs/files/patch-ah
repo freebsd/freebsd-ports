@@ -1,0 +1,139 @@
+--- libgnomevfs-pthread/gnome-vfs-thread-pool.c.orig	Tue Jan 16 15:46:59 2001
++++ libgnomevfs-pthread/gnome-vfs-thread-pool.c	Mon Jan 29 11:04:11 2001
+@@ -45,3 +45,7 @@
+ 
++#ifdef __FreeBSD__
++static pthread_mutex_t thread_list_lock;
++#else
+ static pthread_mutex_t thread_list_lock = PTHREAD_RECURSIVE_MUTEX_INITIALIZER_NP;
++#endif
+ 
+@@ -176,2 +180,19 @@
+ 	GnomeVFSThreadState *available_thread;
++
++#ifdef __FreeBSD__
++	static int init = 0;
++
++	if (init == 0) {
++		pthread_mutexattr_t	attr;
++
++		if (pthread_mutexattr_init(&attr) < 0)
++			return -1;
++		if (pthread_mutexattr_settype(&attr, PTHREAD_MUTEX_RECURSIVE) < 0)
++			return -1;
++		if (pthread_mutex_init(&thread_list_lock, &attr) < 0)
++			return -1;
++
++		init = 1;
++	}
++#endif
+ 	
+--- libgnomevfs-pthread/gnome-vfs-async-job-map.c.orig	Fri Jan 19 12:10:09 2001
++++ libgnomevfs-pthread/gnome-vfs-async-job-map.c	Mon Jan 29 11:19:10 2001
+@@ -33,3 +33,7 @@
+ static guint async_job_map_next_id;
++#ifdef	__FreeBSD__
++static pthread_mutex_t async_job_map_lock;
++#else
+ static pthread_mutex_t async_job_map_lock = PTHREAD_RECURSIVE_MUTEX_INITIALIZER_NP;
++#endif
+ gboolean async_job_map_locked;
+@@ -148,2 +152,28 @@
+ 
++#ifdef __FreeBSD__
++static void lock_and_load(pthread_mutex_t *mtx)
++{
++	static int init = 0;
++	int rc;
++
++	if (init == 0) {
++		pthread_mutexattr_t attr;
++
++		rc = pthread_mutexattr_init(&attr);
++		g_assert(rc == 0);
++
++		rc = pthread_mutexattr_settype(&attr, PTHREAD_MUTEX_RECURSIVE);
++		g_assert(rc == 0);
++
++		rc = pthread_mutex_init(mtx, &attr);
++		g_assert(rc == 0);
++
++		init = 1;
++	}
++
++	rc = pthread_mutex_lock(mtx);
++	g_assert(rc == 0);
++}
++#endif
++
+ void 
+@@ -151,3 +181,7 @@
+ {
++#ifdef __FreeBSD__
++	lock_and_load (&async_job_map_lock);
++#else
+ 	pthread_mutex_lock (&async_job_map_lock);
++#endif
+ 	async_job_map_locked = TRUE;
+@@ -180,3 +214,7 @@
+ 
++#ifdef __FreeBSD__
++	lock_and_load (&async_job_callback_map_lock);
++#else
+ 	pthread_mutex_lock (&async_job_callback_map_lock);
++#endif
+ 
+@@ -209,3 +247,7 @@
+ 
++#ifdef __FreeBSD__
++	lock_and_load (&async_job_callback_map_lock);
++#else
+ 	pthread_mutex_lock (&async_job_callback_map_lock);
++#endif
+ 	g_hash_table_insert (async_job_callback_map, GUINT_TO_POINTER (notify_result->callback_id),
+@@ -221,3 +263,7 @@
+ 	JOB_DEBUG (("removing callback %d ", callback_id));
++#ifdef __FreeBSD__
++	lock_and_load (&async_job_callback_map_lock);
++#else
+ 	pthread_mutex_lock (&async_job_callback_map_lock);
++#endif
+ 	g_hash_table_remove (async_job_callback_map, GUINT_TO_POINTER (callback_id));
+@@ -250,3 +296,7 @@
+ 
++#ifdef __FreeBSD__
++	lock_and_load (&async_job_callback_map_lock);
++#else
+ 	pthread_mutex_lock (&async_job_callback_map_lock);
++#endif
+ 	g_hash_table_foreach (async_job_callback_map,
+@@ -261,3 +311,7 @@
+ 
++#ifdef __FreeBSD__
++	lock_and_load (&async_job_callback_map_lock);
++#else
+ 	pthread_mutex_lock (&async_job_callback_map_lock);
++#endif
+ 	g_hash_table_destroy (async_job_callback_map);
+--- modules/ftp-method.c.orig	Tue Jan  9 13:54:02 2001
++++ modules/ftp-method.c	Mon Jan 29 11:42:30 2001
+@@ -39,2 +39,3 @@
+ 
++#include <sys/types.h>
+ #include <ctype.h> /* for isspace */
+--- modules/nfs-method.c.orig	Sat Dec 30 09:50:36 2000
++++ modules/nfs-method.c	Mon Jan 29 11:44:59 2001
+@@ -127,2 +127,3 @@
+ 			break;
++#ifndef __FreeBSD__
+ 		} else if (*success == ECOMM) {
+@@ -136,2 +137,3 @@
+ 			 */
++#endif
+ 		} else if ((rv == RPC_CANTSEND) || /* can't send */ 
+@@ -140,3 +142,5 @@
+ 			   (rv == RPC_SYSTEMERROR) || /* generic other problem at server */
++#ifndef __FreeBSD__
+ 			   (rv == RPC_RPCBFAILURE) || /* portmapper failed in its call */
++#endif
+ 			   (rv == RPC_CANTDECODEARGS) || /* can't decode arguments */
