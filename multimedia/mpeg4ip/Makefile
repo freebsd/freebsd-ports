@@ -7,6 +7,7 @@
 
 PORTNAME=	mpeg4ip
 PORTVERSION=	0.9.8
+PORTREVISION=	1
 CATEGORIES=	multimedia audio ipv6 net
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -16,8 +17,7 @@ COMMENT=	Standards-based system to encode, stream and play MPEG-4 audio/video
 
 BUILD_DEPENDS=	nasm:${PORTSDIR}/devel/nasm \
 		pkg-config:${PORTSDIR}/devel/pkgconfig
-LIB_DEPENDS=	SDL-1.1.5:${PORTSDIR}/devel/sdl12 \
-		gnugetopt.1:${PORTSDIR}/devel/libgnugetopt
+LIB_DEPENDS=	SDL-1.1.5:${PORTSDIR}/devel/sdl12
 
 USE_GNOME=	gtk20
 USE_GMAKE=	yes
@@ -111,10 +111,6 @@ post-patch:
 	@${REINPLACE_CMD} -E -e \
 		's!SDL_(AudioDelayMsec|HasAudioDelayMsec).*;$$!0;!' \
 		${WRKSRC}/player/src/audio_sdl.cpp
-# use libgnugetopt
-	@${REINPLACE_CMD} -E -e \
-		's|(-lm)|\1 -lgnugetopt|' \
-		${WRKSRC}/util/iptv/Makefile.in
 # do not install manm man pages
 	@${REINPLACE_CMD} -E \
 		-e 's|api.mpt||' \
