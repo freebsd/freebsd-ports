@@ -25,7 +25,7 @@ LIB_DEPENDS=	\
 	xml2.5:${PORTSDIR}/textproc/libxml2 \
 	xslt.1:${PORTSDIR}/textproc/libxslt
 BUILD_DEPENDS=	\
-	${LOCALBASE}/share/sgml/docbook/4.2/docbook.dtd:${PORTSDIR}/textproc/docbook-xml \
+	${LOCALBASE}/share/xml/docbook/4.2/docbookx.dtd:${PORTSDIR}/textproc/docbook-xml \
 	${LOCALBASE}/share/sgml/docbook/dsssl/modular/catalog:${PORTSDIR}/textproc/dsssl-docbook-modular \
 	${LOCALBASE}/share/xsl/docbook/fo/docbook.xsl:${PORTSDIR}/textproc/docbook-xsl \
 	${ARCH_PERL}/XML/Parser.pm:${PORTSDIR}/textproc/p5-XML-Parser \
