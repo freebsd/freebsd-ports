@@ -13,6 +13,8 @@ DISTNAME=	${PORTNAME}_src-0.8-38
 
 MAINTAINER=	aa8vb@nc.rr.com
 
+LIB_DEPENDS=	png.4:${PORTSDIR}/graphics/png
+
 WRKSRC=		${WRKDIR}/OpenSceneGraph-0.8
 
 USE_X_PREFIX=	yes
