@@ -13,7 +13,11 @@ MASTER_SITE_SUBDIR=	squirrelmail
 
 MAINTAINER=	simond@irrelevant.org
 
+.if defined(WITH_APACHE2)
+RUN_DEPENDS+=	${LOCALBASE}/libexec/apache2/libphp4.so:${PORTSDIR}/www/mod_php4
+.else
 RUN_DEPENDS+=	${LOCALBASE}/libexec/apache/libphp4.so:${PORTSDIR}/www/mod_php4
+.endif
 
 USE_BZIP2=	yes
 NO_BUILD=	yes
