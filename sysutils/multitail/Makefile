@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	multitail
-PORTVERSION=	3.0.6
+PORTVERSION=	3.2.1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.vanheusden.com/multitail/
 EXTRACT_SUFX=	.tgz
@@ -15,11 +15,12 @@ MAINTAINER=	obraun@FreeBSD.org
 COMMENT=	Tail multiple files on console with ncurses
 
 USE_REINPLACE=	yes
+USE_GMAKE=	yes
 
 MAN1=		multitail.1
 
 post-patch:
-	@${REINPLACE_CMD} -e '/^CC/d ; /^CFLAGS/d' ${WRKSRC}/Makefile
+	@${REINPLACE_CMD} -e '/^CC/d ; s/^CFLAGS=/CFLAGS+=/' ${WRKSRC}/Makefile
 	@${REINPLACE_CMD} -e 's,/etc/multitail.conf,${PREFIX}/etc/multitail.conf,' \
 		${WRKSRC}/mt.c
 
