@@ -2354,6 +2354,7 @@ ha		ports/archivers/ha
 hack		src/games/hack
 hackedbox	ports/x11-wm/hackedbox
 haddock		ports/devel/haddock
+hafiye		ports/security/hafiye
 hagelslag	ports/net/hagelslag
 halflifeserver	ports/games/halflifeserver
 handbook	doc/en_US.ISO8859-1/books/handbook
