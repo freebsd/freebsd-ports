@@ -11,16 +11,12 @@ CATEGORIES=	audio
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	extace
 
-MAINTAINER=	sobomax@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An Audio Visualization plugin for the X Window System
 
 LIB_DEPENDS=	fftw.2:${PORTSDIR}/math/fftw
 
 .include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 500113
-BROKEN=         "Does not compile"
-.endif
 
 USE_X_PREFIX=	yes
 USE_GNOME=	gnomehack gnomeprefix gtk12 imlib esound
