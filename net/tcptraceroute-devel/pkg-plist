@@ -1,1 +1,2 @@
-bin/tcptraceroute
+@comment $FreeBSD$
+sbin/tcptraceroute

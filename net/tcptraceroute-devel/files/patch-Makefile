@@ -1,18 +1,18 @@
---- Makefile.orig	Wed Aug  1 07:52:40 2001
-+++ Makefile	Sun Mar 24 10:36:40 2002
-@@ -1,20 +1,27 @@
+--- Makefile.orig	Mon May 20 03:11:38 2002
++++ Makefile	Tue Aug 20 01:49:27 2002
+@@ -3,20 +3,27 @@
  # tcptraceroute -- A traceroute implementation using TCP packets
- # Copyright (c) 2001, Michael C. Toren <mct@toren.net>
+ # Copyright (c) 2001, 2002 Michael C. Toren <mct@toren.net>
  
 -CC = gcc
 -CFLAGS = -O2 -Wall
 -DESTDIR=/usr/local/bin
-+CC ?= cc
-+CFLAGS ?= -O2 -Wall
++CC?= cc
++CFLAGS?= -O -pipe -Wall
 +LNETINC= -I/usr/local/include
 +LNETLIB= -L/usr/local/lib
 +
-+BINDIR= ${PREFIX}/bin
++BINDIR= ${PREFIX}/sbin
 +MANDIR= ${PREFIX}/man
 +
 +all: tcptraceroute
