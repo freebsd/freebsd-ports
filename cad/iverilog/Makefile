@@ -19,6 +19,6 @@ GNU_CONFIGURE=	yes
 USE_BISON=	yes
 USE_GMAKE=	yes
 
-MAN1=	iverilog.1
+MAN1=		iverilog.1 vvp.1
 
 .include <bsd.port.mk>
