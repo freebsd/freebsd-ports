@@ -7,6 +7,7 @@
 
 PORTNAME=	VirtualFramebufferServer
 PORTVERSION=	4.2.0
+PORTREVISION=	1
 CATEGORIES=	x11-servers
 MASTER_SITES=	${MASTER_SITE_XFREE} \
 		ftp://psych.psy.uq.oz.au/pub/X11R5/:wrap \
@@ -19,6 +20,10 @@ EXTRACT_ONLY=	X${PORTVERSION:S/.//g}src-1.tgz
 IGNOREFILES=	Wraphelp.c
 
 MAINTAINER=	taguchi@tohoku.iij.ad.jp
+
+RUN_DEPENDS=	${FONT}:${PORTSDIR}/x11-fonts/XFree86-4-fontDefaultBitmaps
+
+FONT=	${X11BASE}/lib/X11/fonts/misc/cursor.pcf.gz
 
 XFREE86_VERSION=	4
 USE_IMAKE=		YES
