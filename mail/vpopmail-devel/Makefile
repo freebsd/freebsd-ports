@@ -6,8 +6,8 @@
 #
 
 PORTNAME=	vpopmail
-PORTVERSION=	5.3.29
-PORTREVISION=	1
+PORTVERSION=	5.3.30
+PORTREVISION=	0
 CATEGORIES=	mail
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -309,15 +309,12 @@ post-install:
 			${TOUCH} ${PREFIX}/vpopmail/etc/tcp.smtp; \
 		fi; \
 	fi
-	if [ ! -e "${PREFIX}/vpopmail/etc/vlimits.default" ]; then \
-		${TOUCH} ${PREFIX}/vpopmail/etc/vlimits.default; \
-	fi
 .if defined(DEFAULT_DOMAIN)
 	${ECHO_CMD} ${DEFAULT_DOMAIN} > ${PREFIX}/vpopmail/etc/defaultdomain
 .endif
 .if defined(WITH_MYSQL)
 	${ECHO_CMD} "${WITH_MYSQL_READ_SERVER}|0|${WITH_MYSQL_READ_USER}|${WITH_MYSQL_READ_PASSWD}|${WITH_MYSQL_DB}" \
-		> ${PREFIX}/vpopmail/etc/vpopmail.mysql
+		>> ${PREFIX}/vpopmail/etc/vpopmail.mysql
 	${ECHO_CMD} "${WITH_MYSQL_UPDATE_SERVER}|0|${WITH_MYSQL_UPDATE_USER}|${WITH_MYSQL_UPDATE_PASSWD}|${WITH_MYSQL_DB}" \
 		>> ${PREFIX}/vpopmail/etc/vpopmail.mysql
 .endif
