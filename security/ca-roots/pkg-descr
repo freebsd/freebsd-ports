@@ -1,0 +1,11 @@
+This port simply contains a list of SSL Certificate Authority root
+certificates. Such a list performs a similar role for SSL Certificate
+verfication that the root cache does for DNS servers.
+
+This list originally came from mod_ssl (where it was ca-bundle.crt. They
+originally got their list from Netscape Communicator/Navigator),
+but will be maintained separately. The maintainer will apply strict
+criteria to suggestions for additions to this list (in concert with
+the FreeBSD security officer). CAs wishing to be added will need
+to assure the FreeBSD user community that their certification procedures
+are sufficiently secure to render their certificates trustworthy.

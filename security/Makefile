@@ -6,6 +6,7 @@
     SUBDIR += bjorb
     SUBDIR += bro
     SUBDIR += bugs
+    SUBDIR += ca-roots
     SUBDIR += calife
     SUBDIR += cfs
     SUBDIR += checkpassword
