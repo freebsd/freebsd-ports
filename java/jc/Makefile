@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	jc
-PORTVERSION=	1.2.1
+PORTVERSION=	1.2.2
 CATEGORIES=	java
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		http://ftp.gnu.org/gnu/classpath/:CLASSPATH
@@ -23,8 +23,8 @@ BUILD_DEPENDS=	jikes:${PORTSDIR}/java/jikes \
 LIB_DEPENDS=	popt.0:${PORTSDIR}/devel/popt \
 		ffi.2:${PORTSDIR}/devel/libffi
 
-#USE_LIBTOOL=	yes
-#LIBTOOLFILES=	${JCDIR}/aclocal.m4 ${CLASSPATHDIR}/aclocal.m4
+USE_LIBTOOL_VER=15
+LIBTOOLFILES=	${CLASSPATHDIR}/configure
 USE_GMAKE=	yes
 INSTALLS_SHLIB=	yes
 PLIST_SUB=	PORTVERSION=${PORTVERSION}
@@ -35,12 +35,7 @@ PATCH_WRKSRC=	${WRKDIR}
 INFO=		jc
 ONLY_FOR_ARCHS=	i386
 
-.if defined(WITH_GNOMELIBS) || exists(${X11BASE}/include/gnome-1.0/libart_lgpl/art_misc.h)
-USE_GNOME=	gnomelibs
-PLIST_SUB+=	GNOME:=""
-.else
 PLIST_SUB+=	GNOME:="@comment "
-.endif
 
 # Directories for the two source components
 JCDIR=		${PORTNAME}-${PORTVERSION}
@@ -53,25 +48,8 @@ CLASSPATHVERSION=0.10
 JIKESVERSION=	1.21
 
 # Configure args
-CLASSPATH_CONF=	--prefix=${PREFIX}/jc --enable-jni --with-jikes
+CLASSPATH_CONF=	--prefix=${PREFIX}/jc --enable-jni --with-jikes --disable-gtk-peer
 CONFIGURE_ARGS=	--prefix=${PREFIX}
-
-# Conditionally compile the gnome-dependent stuff
-.if !defined(WITH_GNOMELIBS) && !exists(${X11BASE}/include/gnome-1.0/libart_lgpl/art_misc.h)
-CLASSPATH_CONF+=--disable-gtk-peer
-pre-fetch:
-	@${ECHO} ''
-	@${ECHO} '***' '                 ' NOTICE
-	@${ECHO} '***'
-	@${ECHO} '***' You do not seem to have the Gnome libraries installed.
-	@${ECHO} '***' Therefore, Classpath will be built without graphics
-	@${ECHO} '***' support. If you would like to install the Classpath
-	@${ECHO} '***' libraries to include graphics support, hit Control-C
-	@${ECHO} '***' now and type \'make WITH_GNOMELIBS=yes\'.
-	@${ECHO} '***'
-	@${ECHO} ''
-	@sleep 3
-.endif
 
 pre-configure:
 		@${ECHO} "===>    Configuring ${CLASSPATHDIR}"
