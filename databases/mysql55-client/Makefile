@@ -6,7 +6,7 @@
 # $FreeBSD$
 #
 
-PKGNAME=	${DISTNAME:S/-/-client-/g}
+PORTNAME=	${MASTERPORTNAME:S/-server/-client/g}
 
 MASTERDIR=	${.CURDIR}/../mysql322-server
 COMMENT=	${PKGDIR}/COMMENT.client

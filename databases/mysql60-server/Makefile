@@ -6,13 +6,15 @@
 # $FreeBSD$
 #
 
-DISTNAME=	mysql-3.22.32
-PKGNAME?=	${DISTNAME:S/-/-server-/}
+MASTERPORTNAME=	mysql-server
+PORTNAME?=	${MASTERPORTNAME}
+PORTVERSION=	3.22.32
 CATEGORIES=	databases
 MASTER_SITES=	http://www.fh-wolfenbuettel.de/ftp/pub/database/mysql/Downloads/MySQL-3.22/ \
 		ftp://ftp.digex.net/pub/packages/database/mysql/Downloads/MySQL-3.22/ \
 		ftp://ftp.plig.net/pub/mysql/Downloads/MySQL-3.22/ \
 		ftp://ftp.sunet.se/pub/unix/databases/relational/mysql/Downloads/MySQL-3.22/
+DISTNAME=	mysql-${PORTVERSION}
 
 MAINTAINER=	dirk@FreeBSD.org
 
