@@ -20,6 +20,7 @@ do-install:
 	${MKDIR} ${PREFIX}/share/doc/gracula
 	${INSTALL_MAN} ${WRKSRC}/NNL ${PREFIX}/share/doc/gracula
 	${INSTALL_MAN} ${WRKSRC}/README ${PREFIX}/share/doc/gracula
+.endif
 	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
