@@ -57,6 +57,7 @@
     SUBDIR += bsd-airtools
     SUBDIR += bsdproxy
     SUBDIR += cacti
+    SUBDIR += callgen
     SUBDIR += cap
     SUBDIR += ccmsn
     SUBDIR += cdonkey
