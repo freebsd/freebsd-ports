@@ -80,7 +80,7 @@ xbone/programs/modules/cpan/auto/IO/Socket/Multicast6/Multicast6.bs
 xbone/programs/modules/cpan/auto/IO/Socket/Multicast6/.packlist
 xbone/programs/modules/cpan/IO/Socket/Multicast6.pm
 xbone/programs/modules/cpan/perllocal.pod
-xbone/programs/modules/cpan/lib/perl5/%%PERL_VER%%/man/man3/IO::Socket::Multicast6.3
+xbone/programs/modules/cpan/IO::Socket::Multicast6.3
 xbone/programs/modules/XB_API_GUI.pm
 xbone/programs/modules/XB_API_OM.pm
 xbone/programs/modules/XB_API_SUBS.pm
@@ -230,11 +230,8 @@ bin/xbonectl
 @dirrm xbone/programs/modules/cpan/auto/IO/Socket
 @dirrm xbone/programs/modules/cpan/auto/IO
 @dirrm xbone/programs/modules/cpan/auto
-@dirrm xbone/programs/modules/cpan/lib/perl5/%%PERL_VER%%/man/man3
-@dirrm xbone/programs/modules/cpan/lib/perl5/%%PERL_VER%%/man
 @dirrm xbone/programs/modules/cpan/lib/perl5/%%PERL_VER%%
 @dirrm xbone/programs/modules/cpan/lib/perl5
-@dirrm xbone/programs/modules/cpan/lib/%%PERL_VER%%
 @dirrm xbone/programs/modules/cpan/lib
 @dirrm xbone/programs/modules/cpan/Net/IP
 @dirrm xbone/programs/modules/cpan/Net

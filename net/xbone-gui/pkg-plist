@@ -69,7 +69,7 @@ www/xbone/cpan/auto/IO/Socket/Multicast6/Multicast6.bs
 www/xbone/cpan/auto/IO/Socket/Multicast6/.packlist
 www/xbone/cpan/IO/Socket/Multicast6.pm
 www/xbone/cpan/perllocal.pod
-www/xbone/cpan/lib/perl5/%%PERL_VER%%/man/man3/IO::Socket::Multicast6.3
+www/xbone/cpan/IO::Socket::Multicast6.3
 www/xbone/lib/api-1.0.dtd
 www/xbone/lib/api-2.0.dtd
 www/xbone/lib/XB_Params.pm
@@ -93,11 +93,8 @@ www/xbone/apache-conf/linux-ssl-2.0.conf
 @dirrm www/xbone/cpan/auto/IO/Socket
 @dirrm www/xbone/cpan/auto/IO
 @dirrm www/xbone/cpan/auto
-@dirrm www/xbone/cpan/lib/perl5/%%PERL_VER%%/man/man3
-@dirrm www/xbone/cpan/lib/perl5/%%PERL_VER%%/man
 @dirrm www/xbone/cpan/lib/perl5/%%PERL_VER%%
 @dirrm www/xbone/cpan/lib/perl5
-@dirrm www/xbone/cpan/lib/%%PERL_VER%%
 @dirrm www/xbone/cpan/lib
 @dirrm www/xbone/cpan/Net/IP
 @dirrm www/xbone/cpan/Net
@@ -106,6 +103,5 @@ www/xbone/apache-conf/linux-ssl-2.0.conf
 @dirrm www/xbone/cpan
 @dirrm www/xbone/apache-conf
 @dirrm www/xbone
-@dirrm www
 @dirrm etc/xbone/cert
 @dirrm etc/xbone
