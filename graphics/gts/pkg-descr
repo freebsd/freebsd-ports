@@ -1,0 +1,26 @@
+GTS stands for the GNU Triangulated Surface Library. It is an Open Source
+Free Software Library intended to provide a set of useful functions to deal
+with 3D surfaces meshed with interconnected triangles.
+
+The code is written entirely in C with an object-oriented approach based
+mostly on the design of GTK+. Careful attention is paid to performance related
+issues as the initial goal of GTS is to provide a simple and efficient library
+to scientists dealing with 3D computational surface meshes.
+
+A brief summary of its main features:
+   - Simple object-oriented structure giving easy access to topological
+     properties.
+   - 2D dynamic Delaunay and constrained Delaunay triangulations.
+   - Robust geometric predicates (orientation, in circle) using fast adaptive
+     floating point arithmetic.
+   - Robust set operations on surfaces (union, intersection, difference).
+   - Surface refinement and coarsening (multiresolution models).
+   - Dynamic view-independent continuous level-of-detail.
+   - Preliminary support for view-dependent level-of-detail.
+   - Bounding-boxes trees and Kd-trees for efficient point location and
+     collision/intersection detection.
+   - Graph operations: traversal, graph partitioning.
+   - Metric operations (area, volume, curvature ...).
+   - Triangle strips generation for fast rendering.
+
+WWW: http://gts.sourceforge.net/

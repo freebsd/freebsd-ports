@@ -114,6 +114,7 @@
     SUBDIR += gtkfig
     SUBDIR += gtkgraph
     SUBDIR += gtksee
+    SUBDIR += gts
     SUBDIR += guilib
     SUBDIR += gview
     SUBDIR += gxanim
