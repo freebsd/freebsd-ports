@@ -8,7 +8,7 @@
 PORTNAME=	ogmtools
 PORTVERSION=	0.9.60
 PORTREVISION=	1
-CATEGORIES=	graphics audio
+CATEGORIES=	multimedia audio
 MASTER_SITES=	http://www.bunkus.org/videotools/ogmtools/
 DISTNAME=	${PORTNAME}-${PORTVERSION:C/\.(.{2})$/\1/}
 
@@ -45,7 +45,7 @@ WITH_DVDREAD=yes
 .endif
 
 .ifdef(WITH_DVDREAD)
-LIB_DEPENDS+=	dvdread.2:${PORTSDIR}/graphics/libdvdread
+LIB_DEPENDS+=	dvdread.2:${PORTSDIR}/multimedia/libdvdread
 
 CONFIGURE_ARGS+=	--with-dvdread \
 			--with-dvdread-includes=${LOCALBASE} \

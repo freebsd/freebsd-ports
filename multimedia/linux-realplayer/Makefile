@@ -7,7 +7,7 @@
 
 PORTNAME=	linux-realplayer
 PORTVERSION=	8.cs2
-CATEGORIES=	audio graphics linux
+CATEGORIES=	multimedia audio linux
 MASTER_SITES=	# fetch manually
 DISTNAME=	rp${PORTVERSION:R}_linux20_libc6_i386_${PORTVERSION:E}
 EXTRACT_SUFX=	_rpm

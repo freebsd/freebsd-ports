@@ -7,7 +7,7 @@
 
 PORTNAME=	libdivxencore
 PORTVERSION=	0.4.0.50
-CATEGORIES=	graphics
+CATEGORIES=	multimedia
 MASTER_SITES=	http://download.projectmayo.com/dnload/divxcore/
 PKGNAMESUFFIX=	-devel
 DISTNAME=	encore${PORTVERSION:E}src

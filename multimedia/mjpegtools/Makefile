@@ -8,14 +8,14 @@
 PORTNAME=	mjpegtools
 PORTVERSION=	1.6.0
 PORTREVISION=	1
-CATEGORIES=	graphics
+CATEGORIES=	multimedia
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	mjpeg
 
 MAINTAINER=	lioux@FreeBSD.org
 
 BUILD_DEPENDS=	nasm:${PORTSDIR}/devel/nasm
-LIB_DEPENDS=	aviplay.0:${PORTSDIR}/graphics/avifile \
+LIB_DEPENDS=	aviplay.0:${PORTSDIR}/multimedia/avifile \
 		jpeg.9:${PORTSDIR}/graphics/jpeg
 
 USE_GNOMENG=	yes
@@ -83,13 +83,13 @@ USE_GNOME+=	gtk12
 .endif
 #
 .ifdef(WITH_LIBDV)
-LIB_DEPENDS+=	dv.2:${PORTSDIR}/graphics/libdv
+LIB_DEPENDS+=	dv.2:${PORTSDIR}/multimedia/libdv
 
 CONFIGURE_ARGS+=	--with-dv=${LOCALBASE}
 .endif
 #
 .ifdef(WITH_LIBMOVTAR)
-BUILD_DEPENDS+=	${LOCALBASE}/lib/libmovtar.a:${PORTSDIR}/graphics/libmovtar
+BUILD_DEPENDS+=	${LOCALBASE}/lib/libmovtar.a:${PORTSDIR}/multimedia/libmovtar
 
 CONFIGURE_ARGS+=	--with-movtar-prefix=${LOCALBASE}
 .endif
@@ -102,7 +102,7 @@ CONFIGURE_ENV+=		SDL_CONFIG="${SDL_CONFIG}"
 .endif
 #
 .ifdef(WITH_QUICKTIME)
-LIB_DEPENDS+=	openquicktime.0:${PORTSDIR}/graphics/openquicktime
+LIB_DEPENDS+=	openquicktime.0:${PORTSDIR}/multimedia/openquicktime
 
 CONFIGURE_ARGS+=	--with-quicktime=${LOCALBASE}
 .endif

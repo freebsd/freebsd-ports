@@ -7,8 +7,9 @@
 
 PORTNAME=	divx4linux
 PORTVERSION=	0.${RELEASE_DATE:S/_/./}
-CATEGORIES=	graphics linux
+CATEGORIES=	multimedia linux
 MASTER_SITES=	http://download.divx.com/videocodecs/linux/
+PKGNAMEPREFIX=	linux-
 DISTNAME=	${PORTNAME}-${RELEASE_DATE}
 EXTRACT_SUFX=	.tgz
 

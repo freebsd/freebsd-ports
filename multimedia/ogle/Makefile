@@ -7,13 +7,13 @@
 
 PORTNAME=	ogle
 PORTVERSION=	0.8.5
-CATEGORIES=	graphics
+CATEGORIES=	multimedia
 MASTER_SITES=	http://www.dtek.chalmers.se/groups/dvd/dist/
 
 MAINTAINER=	lioux@FreeBSD.org
 
 LIB_DEPENDS=	a52.0:${PORTSDIR}/audio/liba52 \
-		dvdread.2:${PORTSDIR}/graphics/libdvdread \
+		dvdread.2:${PORTSDIR}/multimedia/libdvdread \
 		jpeg.9:${PORTSDIR}/graphics/jpeg \
 		mad.1:${PORTSDIR}/audio/mad \
 		xml2.5:${PORTSDIR}/textproc/libxml2

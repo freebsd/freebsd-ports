@@ -7,13 +7,13 @@
 
 PORTNAME=	okle
 PORTVERSION=	0.2.3
-CATEGORIES=	graphics kde
+CATEGORIES=	multimedia kde
 MASTER_SITES=	http://okle.sourceforge.net/
 
 MAINTAINER=	lioux@FreeBSD.org
 
-BUILD_DEPENDS=	${LOCALBASE}/lib/ogle/libdvdcontrol.so.8:${PORTSDIR}/graphics/ogle
-RUN_DEPENDS=	ogle:${PORTSDIR}/graphics/ogle
+BUILD_DEPENDS=	${LOCALBASE}/lib/ogle/libdvdcontrol.so.8:${PORTSDIR}/multimedia/ogle
+RUN_DEPENDS=	ogle:${PORTSDIR}/multimedia/ogle
 
 USE_AUTOCONF_VER=	253
 USE_KDELIBS_VER=	3

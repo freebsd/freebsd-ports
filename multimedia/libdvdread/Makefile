@@ -7,12 +7,12 @@
 
 PORTNAME=	libdvdread
 PORTVERSION=	0.9.3
-CATEGORIES=	graphics
+CATEGORIES=	multimedia
 MASTER_SITES=	http://www.dtek.chalmers.se/groups/dvd/dist/
 
 MAINTAINER=	lioux@FreeBSD.org
 
-LIB_DEPENDS=	dvdcss.${DVDCSS_LIBVERSION}:${PORTSDIR}/graphics/libdvdcss
+LIB_DEPENDS=	dvdcss.${DVDCSS_LIBVERSION}:${PORTSDIR}/multimedia/libdvdcss
 
 GNU_CONFIGURE=	yes
 USE_LIBTOOL=	yes

@@ -8,7 +8,7 @@
 PORTNAME=	avifile
 PORTVERSION=	0.7.18.20021107
 PORTEPOCH=	2
-CATEGORIES=	graphics
+CATEGORIES=	multimedia
 MASTER_SITES=	http://avifile.sourceforge.net/
 DISTNAME=	${PORTNAME}-${PORTVERSION:C/.(.{8})$/-\1/}
 EXTRACT_SUFX=	.tgz
@@ -40,7 +40,7 @@ PLIST_SUB=	LIB_VERSION="${LIB_VERSION}" VERSION="${VERSION}"
 
 MAN1=		aviplay.1
 
-#CODEC_PORT=	${PORTSDIR}/graphics/win32-codecs
+#CODEC_PORT=	${PORTSDIR}/multimedia/win32-codecs
 CODEC_PORT=	${.CURDIR}/../win32-codecs
 CODEC_DETECTION_FILE!=	${MAKE} -f ${CODEC_PORT}/Makefile -V CODEC_DETECTION_FILE
 
