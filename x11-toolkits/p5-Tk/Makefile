@@ -3,7 +3,7 @@
 # Date created:				October 21st 1996
 # Whom:	      				James FitzGibbon <jfitz@FreeBSD.org>
 #
-# $Id: Makefile,v 1.19 1998/09/15 21:31:59 asami Exp $
+# $Id: Makefile,v 1.20 1998/09/25 10:05:13 asami Exp $
 #
 
 DISTNAME=	Tk800.008
@@ -18,6 +18,12 @@ MAINTAINER=	jfitz@FreeBSD.ORG
 LIB_DEPENDS=	tk80.1:${PORTSDIR}/x11-toolkits/tk80
 
 USE_PERL5=	YES
+
+OSVERSION!=     sysctl -n kern.osreldate
+.if ${OSVERSION} >= 300000
+BROKEN=         perl
+.endif
+
 
 MAN1=	ptked.1 ptksh.1 widget.1
 
