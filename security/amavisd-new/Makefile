@@ -7,8 +7,8 @@
 # Based on amavisd ports makefile.
 
 PORTNAME=	amavisd-new
-PORTVERSION=	20040701
-PORTREVISION=	1
+PORTVERSION=	2.1.0
+PORTEPOCH=	1
 CATEGORIES=	security
 MASTER_SITES=	http://www.ijs.si/software/amavisd/ \
 		http://mirrors.catpipe.net/amavisd-new/ \
@@ -98,7 +98,7 @@ pre-build:
 	for f in amavisd.sh amavis-milter.sh INSTALL DEINSTALL MESSAGE; do \
 		${SED} ${SED_SCRIPT} < ${FILESDIR}/$${f}.tmpl > ${WRKDIR}/$${f}; \
 	done
-	for f in amavisd.conf amavisd.conf-sample amavisd; do \
+	for f in amavisd.conf amavisd.conf-sample amavisd amavisd-nanny; do \
 		${SED} ${SED_SCRIPT} < ${WRKSRC}/$${f} > ${WRKDIR}/$${f}; \
 	done
 
@@ -112,6 +112,7 @@ do-install:
 	${INSTALL_SCRIPT} ${WRKDIR}/amavis-milter.sh ${PREFIX}/etc/rc.d
 .endif
 	${INSTALL_SCRIPT} ${WRKDIR}/amavisd ${PREFIX}/sbin
+	${INSTALL_SCRIPT} ${WRKDIR}/amavisd-nanny ${PREFIX}/sbin
 	${INSTALL_SCRIPT} ${WRKDIR}/amavisd.conf ${PREFIX}/etc/amavisd.conf-dist
 .if !exists(${PREFIX}/etc/amavisd.conf)
 	${INSTALL_SCRIPT} ${WRKDIR}/amavisd.conf ${PREFIX}/etc
