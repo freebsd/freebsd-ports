@@ -1,4 +1,3 @@
-@cd /usr/X11R6
 @owner root
 @group bin
 @mode 4755
