@@ -33,7 +33,7 @@
  
  						if test "$ac_cv_have_dash_pthread" = "yes"; then
 -				_PTHREAD_LDFLAGS=""
-+				_PTHREAD_LDFLAGS="-pthread -lgcc_r"
++				_PTHREAD_LDFLAGS="-pthread"
  			else
  				_PTHREAD_LDFLAGS="-lc_r"
  			fi
