@@ -4537,8 +4537,8 @@ misc.c:
     <affects>
       <package>
         <name>ruby</name>
-        <range><lt>1.6.8.2004.08.07</lt></range>
-        <range><ge>1.7.0</ge><lt>1.8.2.p2</lt></range>
+        <range><lt>1.6.8.2004.07.26</lt></range>
+        <range><ge>1.7.0</ge><lt>1.8.1.2004.07.23</lt></range>
       </package>
     </affects>
     <description>
@@ -4557,8 +4557,8 @@ misc.c:
       <url>http://marc.theaimsgroup.com/?l=bugtraq&amp;m=109267579822250&amp;w=2</url>
     </references>
     <dates>
-      <discovery>2004-08-07</discovery>
-      <entry>2004-08-17</entry>
+      <discovery>2004-08-16</discovery>
+      <entry>2004-08-16</entry>
     </dates>
   </vuln>
 </vuxml>
