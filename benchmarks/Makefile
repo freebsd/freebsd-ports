@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.2 1996/01/03 00:12:48 se Exp $
+# $Id: Makefile,v 1.3 1996/08/04 08:45:44 asami Exp $
 #
 
     SUBDIR += bonnie
@@ -7,5 +7,6 @@
     SUBDIR += lmbench
     SUBDIR += netperf
     SUBDIR += tcpblast
+    SUBDIR += xengine
 
 .include <bsd.port.subdir.mk>
