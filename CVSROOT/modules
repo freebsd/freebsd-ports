@@ -4003,6 +4003,7 @@ libgnome	ports/x11/libgnome
 libgnomecanvas	ports/graphics/libgnomecanvas
 libgnomedb	ports/databases/libgnomedb
 libgnomeprint	ports/print/libgnomeprint
+libgnomeprint20	ports/print/libgnomeprint20
 libgnomeprintui	ports/x11-toolkits/libgnomeprintui
 libgnomeui	ports/x11-toolkits/libgnomeui
 libgnugetopt	ports/devel/libgnugetopt
