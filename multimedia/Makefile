@@ -58,6 +58,7 @@
     SUBDIR += linux-xmovie
     SUBDIR += mjpegtools
     SUBDIR += mkvtoolnix
+    SUBDIR += mkxvcd
     SUBDIR += mmpython
     SUBDIR += mmsclient
     SUBDIR += mpeg

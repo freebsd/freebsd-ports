@@ -1,0 +1,16 @@
+Makes high quality X/K/S/VCD movies from any format mplayer can play
+
+From README:
+GOAL
+        Make a 2 hour vcd with good quality.
+        
+USAGE
+        mkxvcd.sh yourmovie.whateverextensionmplayercanplay
+        mkxvcd.sh /dev/dvd (or whatever device your dvd drive is using)
+        Options on the commandline are:
+                -d for debugging.
+                -m to force mplayer if you don't have transcode installed.
+                -t to force transcode (you can also edit the script in the :user
+ settings" section)
+
+WWW: http://kvcd4nix.sourceforge.net/
