@@ -1,6 +1,6 @@
-diff -cd ../xperfmon++/Imakefile ./Imakefile
+diff -c -N ../xperfmon++/Imakefile ./Imakefile
 *** ../xperfmon++/Imakefile	Wed Jul 27 22:29:29 1994
---- ./Imakefile	Mon May  6 18:19:34 1996
+--- ./Imakefile	Fri Mar 14 13:29:51 1997
 ***************
 *** 17,31 ****
   SYS_MODULE=	sgi_system
@@ -19,14 +19,14 @@ diff -cd ../xperfmon++/Imakefile ./Imakefile
   ComplexProgramTarget(xperfmon++)
   
 --- 17,38 ----
-  SYS_MODULE=   sgi_system
+  SYS_MODULE=	sgi_system
   #endif
   
 ! #if defined (FreeBSDArchitecture)
-! FreeBSDFLAGS= -lkvm
+! FreeBSDFLAGS=	-lkvm
 ! SYS_MODULE=     freebsd_system
-! CC=           gcc
-! EXTRA_DEFINES=  -D_HAVE_PARAM_H
+! CC=		gcc
+! EXTRA_DEFINES=  -DHAVE_SYS_PARAM_H
 ! #endif
 ! 
 ! EXTRA_LIBRARIES =     $(SUNFLAGS) $(MIPSFLAGS) $(SGIFLAGS) $(FreeBSDFLAGS)
@@ -40,32 +40,31 @@ diff -cd ../xperfmon++/Imakefile ./Imakefile
 !        OBJS = TimeChart.o StripChart.o misc.o $(SYS_MODULE).o xperfmon.o
   
   ComplexProgramTarget(xperfmon++)
-
-diff -cd ../xperfmon++/README ./README
+  
+diff -c -N ../xperfmon++/README ./README
 *** ../xperfmon++/README	Wed Jul 27 22:29:30 1994
---- ./README	Sat May  4 10:46:36 1996
+--- ./README	Fri Mar 14 13:59:13 1997
 ***************
 *** 18,20 ****
---- 18,52 ----
+--- 18,61 ----
   		Research Center, rsmith@proteus.arc.nasa.gov. Imake will build for correct
   		O/S if x11r5 is fully installed in all the right places.
   
-+ 
-+ 3-15-95		Completely new port of systemdependent file (bsd_system.c) for FreeBSD-2.X
-+ 		by Lars K$B(Bler @University of Rostock, Germany.
++ 3-15-95		Completely new port of systemdependent file (freebsd_system.c) for FreeBSD-2.X
++ 		by Lars Köller @University of Rostock, Germany.
 + 		E-Mail: <lars.koeller@odie.physik2.uni-rostock.de>
 + 
 + 8-16-95		Quick and dirty workaround of -geometry option bug.
 + 		But there are still some side effects when changing the geometry. 
-+ 		Fix memory leak in bsd_system.c
-+ 		by Lars K$B(Bler @University of Rostock, Germany.
++ 		Fix memory leak in freebsd_system.c
++ 		by Lars Köller @University of Rostock, Germany.
 + 		E-Mail: <lars.koeller@odie.physik2.uni-rostock.de>
 + 
 + 30-10-95	Change 'Free Mem' graph to 'Free Swap' cause the FreeBSD memory system
 + 		tries to minimize the free unused amount of memory.
 + 		Include basic support for FreeBSD > 2.1.
 + 		Number of interrupts now independent from 'Update Intervall'
-+ 		by Lars K$B(Bler @University of Rostock, Germany.
++ 		by Lars Köller @University of Rostock, Germany.
 + 		E-Mail: <Lars_Koeller@odie.physik2.uni-rostock.de>
 + 
 + 11-12-95        Fix -geometry bug! Now there is only a MIN_WIDTH of 185 pixels, and the
@@ -74,15 +73,25 @@ diff -cd ../xperfmon++/README ./README
 + 		Change 'Free  Swap' graph from absolut into percent values.
 + 		All graphs shoud be independent of the 'Update Intervall'.
 + 		Modify graph labels and add unit of each graph.
-+ 		by Lars K$B(Bler @University of Rostock, Germany.
++ 		by Lars Köller @University of Rostock, Germany.
 + 		E-Mail: <Lars_Koeller@odie.physik2.uni-rostock.de>
 + 
 + 5-4-96		Fix some event problems that consumes a lot of cpu power after resizing
 + 		(mwm) or restart of an window manager. Make xperfmon compile with
 + 		FreeBSD-current (2.2, changes in get_swapspace)
-+ 		by Lars K$B(Bler @University of Rostock, Germany.
++ 		by Lars Köller @University of Rostock, Germany.
 + 		E-Mail: <Lars_Koeller@odie.physik2.uni-rostock.de>
-diff -cd ../xperfmon++/XPerfmon++.ad ./XPerfmon++.ad
++ 
++ 3-14-97		Fix some problems with changed structures in 3.0,
++ 		clean up the FreeBSD version numbers #if's.
++ 		Now xperfmon++ should compile from FreeBSD-2.0 up to 3.0-current
++ 		by Lars Köller @University of Rostock, Germany.
++ 		E-Mail: <Lars_Koeller@odie.physik2.uni-rostock.de>
++ 		Jörg Wunsch, FreeBSD core team menber, Germany
++ 		E-Mail: <joerg_wunsch@uriah.heep.sax.de>
++ 		        <joerg@FreeBSD.ORG>
++ 
+diff -c -N ../xperfmon++/XPerfmon++.ad ./XPerfmon++.ad
 *** ../xperfmon++/XPerfmon++.ad	Wed Jul 27 22:29:32 1994
 --- ./XPerfmon++.ad	Tue Dec  5 09:32:54 1995
 ***************
@@ -149,10 +158,9 @@ diff -cd ../xperfmon++/XPerfmon++.ad ./XPerfmon++.ad
 ! *perfChartNFSServer.highAlarm:	200
   *font:				6x13
 + 
-Only in ./: freebsd_system.c
-diff -cd ../xperfmon++/xperfmon++.man ./xperfmon++.man
+diff -c -N ../xperfmon++/xperfmon++.man ./xperfmon++.man
 *** ../xperfmon++/xperfmon++.man	Wed Jul 27 22:29:39 1994
---- ./xperfmon++.man	Sat May  4 12:00:28 1996
+--- ./xperfmon++.man	Fri Mar 14 14:02:29 1997
 ***************
 *** 94,101 ****
   .B \-idlecpu | \+idlecpu
@@ -212,7 +220,7 @@ diff -cd ../xperfmon++/xperfmon++.man ./xperfmon++.man
   Set Disk Transfer count resource.
 ***************
 *** 395,398 ****
---- 395,413 ----
+--- 395,421 ----
   glad to incorporate the modifications into this master copy. Send me your changes via E-Mail at the
   above address.
   .PP
@@ -225,7 +233,15 @@ diff -cd ../xperfmon++/xperfmon++.man ./xperfmon++.man
 + .PP
 + .I xperfmon++ V1.33 for FreeBSD
 + contains some fixes due to event problems and compiles fine under
-+ FreeBSD 2.2 (changes in get_swapspace).
++ FreeBSD 2.2 (changes in get_swapspace). 
++ Now the -geometry switch works well!
++ Please E-Mail any bugs or comments with the subject
++ "xperfmon++: ..." to Lars_Koeller@odie.physik2.uni-rostock.de.
++ .PP
++ .I xperfmon++ V1.40 for FreeBSD
++ contains some fixes due to changes in the networking structs and
++ cleans up the FreeBSD version number #if's. Now it should compile fine
++ from FreeBSD 2.0 up to FreeBSD-3.0-current. 
 + Please E-Mail any bugs or comments with the subject
 + "xperfmon++: ..." to Lars_Koeller@odie.physik2.uni-rostock.de.
 + .PP

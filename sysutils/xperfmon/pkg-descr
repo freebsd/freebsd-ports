@@ -1,4 +1,4 @@
-This package contains the binary release of xperfmon++ V1.33 a X based
+This package contains the binary release of xperfmon++ V1.40 a X based
 system performance meter for several systems, ported to FreeBSD 2.X.
 
 The program monitors user-, system-, idle-cputime, free swap, disk io,
@@ -21,3 +21,10 @@ Changes from xperfmon++ V1.3 to xperfmon++ V1.33:
 	- Fix event bug when resizing or moving the window.
 	  (High cpu consumption when running xperfmon++ with mwm)
 	- Changes in get_swapspace to compile with FreeBSD 2.2 (-current)
+
+Changes from xperfmon++ V1.33 to xperfmon++ V1.40:
+
+	- Fix -geometry option. Changing the size of the window now wokes
+	  well. The start frame of the window has the correct size.
+	- Changes in freebsd_system.c to compile with FreeBSD 30-current. 
+	- Clean the FreeBSD version number #if's
