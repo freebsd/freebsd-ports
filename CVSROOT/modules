@@ -11488,6 +11488,7 @@ vpnd		ports/security/vpnd
 vpopmail	ports/mail/vpopmail
 vpopmail-devel	ports/mail/vpopmail-devel
 vqadmin		ports/mail/vqadmin
+vqcc-gtk	ports/net/vqcc-gtk
 vqregister	ports/mail/vqregister
 vrflash		ports/comms/vrflash
 vrfy		ports/mail/vrfy
