@@ -1,5 +1,5 @@
 *** webmagickrc.in.orig	Tue Mar 24 07:45:52 1998
---- webmagickrc.in	Fri May 22 02:51:00 1998
+--- webmagickrc.in	Thu Sep 24 08:32:41 1998
 ***************
 *** 32,38 ****
   # Name of per-directory rc file
@@ -18,8 +18,18 @@
   
   # File naming
 ***************
+*** 41,46 ****
+--- 41,47 ----
+  # $opt_pageindexname	= '.index';	# Base name of secondary index files
+  # $opt_dirindexname	= '.dirindex';	# Subdirectory Title cross-reference
+  					#  dirname   Directory Title
++ # $opt_dirhtmlext       = '.html';      # Use .shtml for SSI
+  # $opt_imgindexname	= '.imgindex';	# Image name to label cross-reference file
+  
+  #
+***************
 *** 82,94 ****
---- 82,102 ----
+--- 83,103 ----
   # $opt_forcehtml		= 0;	# Force HTML files to be generated (default off)
   # $opt_forcemontage	= 0;	# Force montage (default off)
   # $opt_forcegif		= 0;	# Force GIF imagemaps (default off)
