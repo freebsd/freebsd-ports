@@ -1,12 +1,16 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/Stream/.packlist
 %%SITE_PERL%%/XML/Stream.pm
-%%SITE_PERL%%/XML/Stream/Hash.pm
 %%SITE_PERL%%/XML/Stream/Namespace.pm
 %%SITE_PERL%%/XML/Stream/Node.pm
 %%SITE_PERL%%/XML/Stream/Parser.pm
 %%SITE_PERL%%/XML/Stream/Parser/DTD.pm
 %%SITE_PERL%%/XML/Stream/Tree.pm
+%%SITE_PERL%%/XML/Stream/XPath.pm
+%%SITE_PERL%%/XML/Stream/XPath/Value.pm
+%%SITE_PERL%%/XML/Stream/XPath/Op.pm
+%%SITE_PERL%%/XML/Stream/XPath/Query.pm
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/Stream
 @dirrm %%SITE_PERL%%/XML/Stream/Parser
+@dirrm %%SITE_PERL%%/XML/Stream/XPath
 @dirrm %%SITE_PERL%%/XML/Stream
 @unexec rmdir %D/%%SITE_PERL%%/XML 2>/dev/null || true
