@@ -353,7 +353,7 @@ post-install:
 
 test:
 	cd ${WRKSRC}; make test
-	echo "package require Tk" | tclsh${TK_VER}
-	echo "load libtk${SHORT_TK_VER}.so" | tclsh${TK_VER}
+	${ECHO_CMD} "package require Tk" | tclsh${TK_VER}
+	${ECHO_CMD} "load libtk${SHORT_TK_VER}.so" | tclsh${TK_VER}
 
 .include <bsd.port.post.mk>
