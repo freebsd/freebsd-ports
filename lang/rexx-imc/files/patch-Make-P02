@@ -1,0 +1,30 @@
+--- work/rexx-imc-1.76/Make	Tue Feb 22 01:35:58 2005
++++ Make	Tue Feb 22 01:27:08 2005
+@@ -452,6 +452,27 @@
+                 ;;
+         esac
+         ;;
++    FreeBSD:6.*)
++        REXXLIB="librexx.so"
++	SOLINK="librexx.so"
++        RANLIB=ranlib
++        MATH=rxmathfn.rxfn
++        LIBRARIES=""
++        SOFLAG="-shared --export-dynamic"
++        : ${RUNLIBS='-L$(LIBDIR) -Wl,-rpath,$(PREFIX)/lib'}
++        DLLFLAG="-shared --export-dynamic"
++        case $CC in
++            gcc)
++                CCFLAG="${CFLAGS} -DHAS_TTYCOM -DRENAME_UNDELETE -DHAS_GMTOFF"
++                PIC="-fPIC"
++                ;;
++            *)  echo "Warning: I don't know the options for $CC"\
++                      "- trying the gcc ones" >&2
++                CCFLAG="${CFLAGS} -DHAS_TTYCOM -DRENAME_UNDELETE -DHAS_GMTOFF"
++                PIC="-fPIC"
++                ;;
++        esac
++        ;;
+     unknown:*|*:*)
+         echo "I am not configured for this platform - guessing some options" >&2
+         echo "(You will not be able to use shared libraries)" >&2

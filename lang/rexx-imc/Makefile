@@ -10,10 +10,9 @@ PORTVERSION=	1.76
 PORTREVISION=	1
 CATEGORIES=	lang
 MASTER_SITES=	http://users.comlab.ox.ac.uk/ian.collier/distribution/ \
-		ftp://ftp.sai.msu.su/pub/unix/rexx/ \
-		ftp://crydee.sai.msu.ru/zeus/unix/rexx/
+		ftp://ftp.sai.msu.su/pub/unix/rexx/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	g.gonter@ieee.org
 COMMENT=	A procedural programming language designed by IBM's UK Laboratories
 
 CONFLICTS=	rexx-regina-*
@@ -37,10 +36,6 @@ RMEFILES=	README README.Y2K README.bugreport README.docs \
 		README.files README.make README.news README.platforms
 
 .include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 600000
-BROKEN=		"Does not compile on FreeBSD >= 6.x"
-.endif
 
 post-patch:
 # CFLAGS safeness for ARCHs other than i386
