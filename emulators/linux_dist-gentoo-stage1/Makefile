@@ -59,7 +59,7 @@ do-install:
 	- ${MKDIR} ${PREFIX}
 	${TAR} -C ${PREFIX} -xypSf ${DISTDIR}/${DIST_SUBDIR}/${DISTFILES}
 	- ${CP} -p /etc/resolv.conf ${PREFIX}/etc/
-	${RM} ${PREFIX}/dev/null ${PREFIX}/dev/null
+	${RM} ${PREFIX}/dev/null ${PREFIX}/dev/stdout
 	mknod ${PREFIX}/dev/null c 2 2
 	mknod ${PREFIX}/dev/stdout c 22 1
 	brandelf -t Linux ${PREFIX}/sbin/ldconfig ${PREFIX}/sbin/sln
