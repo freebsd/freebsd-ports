@@ -16,7 +16,6 @@ EXTRACT_ONLY=	# empty
 MAINTAINER=	nakai@FreeBSD.org
 
 LIB_DEPENDS=	gnome.5:${PORTSDIR}/japanese/gnomelibs \
-		panel_applet.5:${PORTSDIR}/japanese/gnomecore \
 		gal.19:${PORTSDIR}/japanese/gal
 RUN_DEPENDS=	gnumeric:${PORTSDIR}/japanese/gnumeric
 
