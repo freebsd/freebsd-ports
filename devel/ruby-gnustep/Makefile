@@ -18,16 +18,16 @@ DIST_SUBDIR=	ruby
 MAINTAINER=	knu@FreeBSD.org
 COMMENT=	A Ruby interface to the GNUstep development environment
 
-BUILD_DEPENDS=	${GNUSTEP_PREFIX}/System/Makefiles/GNUstep.sh:${PORTSDIR}/devel/gnustep-make \
+BUILD_DEPENDS=	${GNUSTEP_PREFIX}/System/Makefiles/GNUstep.sh:${PORTSDIR}/${GNUSTEP_MAKE_PORT} \
 		${LOCALBASE}/lib/libcallback.a:${PORTSDIR}/devel/ffcall \
-		${COMBOLIBDIR}/libgnustep-base.so:${PORTSDIR}/lang/gnustep-base \
-		${COMBOLIBDIR}/libgnustep-gui.so:${PORTSDIR}/x11-toolkits/gnustep-gui \
-		${BACKBUNDLEDIR}/libgnustep-back:${PORTSDIR}/x11-toolkits/gnustep-back
+		${COMBOLIBDIR}/libgnustep-base.so:${PORTSDIR}/${GNUSTEP_BASE_PORT} \
+		${COMBOLIBDIR}/libgnustep-gui.so:${PORTSDIR}/${GNUSTEP_GUI_PORT} \
+		${BACKBUNDLEDIR}/libgnustep-back:${PORTSDIR}/${GNUSTEP_BACK_PORT}
 LIB_DEPENDS+=	objc:${PORTSDIR}/${GNUSTEP_OBJC_PORT}
-RUN_DEPENDS=	${GNUSTEP_PREFIX}/System/Makefiles/GNUstep.sh:${PORTSDIR}/devel/gnustep-make \
-		${COMBOLIBDIR}/libgnustep-base.so:${PORTSDIR}/lang/gnustep-base \
-		${COMBOLIBDIR}/libgnustep-gui.so:${PORTSDIR}/x11-toolkits/gnustep-gui \
-		${BACKBUNDLEDIR}/libgnustep-back:${PORTSDIR}/x11-toolkits/gnustep-back
+RUN_DEPENDS=	${GNUSTEP_PREFIX}/System/Makefiles/GNUstep.sh:${PORTSDIR}/${GNUSTEP_MAKE_PORT} \
+		${COMBOLIBDIR}/libgnustep-base.so:${PORTSDIR}/${GNUSTEP_BASE_PORT} \
+		${COMBOLIBDIR}/libgnustep-gui.so:${PORTSDIR}/${GNUSTEP_GUI_PORT} \
+		${BACKBUNDLEDIR}/libgnustep-back:${PORTSDIR}/${GNUSTEP_BACK_PORT}
 
 USE_RUBY=	yes
 RUBY_WITH_PTHREAD=	yes
@@ -36,6 +36,10 @@ CC=		gcc32
 CXX=		g++32
 
 GNUSTEP_OBJC_PORT?=	lang/gnustep-objc
+GNUSTEP_MAKE_PORT?=	devel/gnustep-make
+GNUSTEP_BASE_PORT?=	lang/gnustep-base
+GNUSTEP_GUI_PORT?=	x11-toolkits/gnustep-gui
+GNUSTEP_BACK_PORT?=	x11-toolkits/gnustep-back
 GNUSTEP_PREFIX=		${LOCALBASE}/GNUstep
 GNUSTEP_LOCAL_ROOT=	${GNUSTEP_PREFIX}/Local
 GNUSTEP_SYSTEM_ROOT=	${GNUSTEP_PREFIX}/System
