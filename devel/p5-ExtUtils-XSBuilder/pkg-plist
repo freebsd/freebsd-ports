@@ -4,6 +4,7 @@
 %%SITE_PERL%%/ExtUtils/XSBuilder/CallbackMap.pm
 %%SITE_PERL%%/ExtUtils/XSBuilder/FunctionMap.pm
 %%SITE_PERL%%/ExtUtils/XSBuilder/MapUtil.pm
+%%SITE_PERL%%/ExtUtils/XSBuilder/PODTemplate.pm
 %%SITE_PERL%%/ExtUtils/XSBuilder/ParseSource.pm
 %%SITE_PERL%%/ExtUtils/XSBuilder/StructureMap.pm
 %%SITE_PERL%%/ExtUtils/XSBuilder/TypeMap.pm
