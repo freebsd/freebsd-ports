@@ -82,7 +82,6 @@ INSTALL_COOKIE=	${WRKDIR}/.install_done-${PKGNAME}
 PACKAGE_COOKIE=	${WRKDIR}/.package_done-${PKGNAME}
 STRIP=
 INSTALL_TARGET?=install-arch-dep
-DESCR?=		${WRKDIR}/DESCR
 PLIST?=		${PKGLDIR}/PLIST
 PLIST_SUB?=	XEMACS_DIR=${XEMACS_DIR} ARCH_SUBDIR=${ARCH_SUBDIR} EMACS_CMD=${EMACS_CMD}
 
@@ -102,10 +101,6 @@ WITH_INPUT_METHOD?=	--with-canna=no --with-wnn=no --with-wnn6=no
 .endif
 
 .if !defined(MULE_COMMON)
-post-configure::
-	@${SED} -e "s/%%XEMACS_VER%%/${XEMACS_VER}/g" \
-		${DESCR_TMPL} > ${DESCR}
-
 pre-build:
 	@find ${WRKSRC} \( -name \*.orig -o -name \*~ \) -exec ${RM} -f \{} \;
 	@${RM} -f ${WRKSRC}/lib-src/DOC* ${WRKSRC}/src/xemacs
@@ -125,5 +120,11 @@ post-install::
 
 post-package:
 	@${TOUCH} ${TOUCH_FLAGS} ${PACKAGE_COOKIE}
+
+# for make DESCR (only maintainer use)
+arrange::
+	@${MKDIR} ${PKGDIR}
+	@${SED} -e "s/%%XEMACS_VER%%/${XEMACS_VER}/g" \
+		${DESCR_TMPL} > ${DESCR}
 
 .include <bsd.port.mk>

@@ -1,0 +1,34 @@
+This is a package containing only the executables for XEmacs with
+Mule(version 21.1.8), the next generation of Emacs.
+
+You need to install a package, xemacs-common-21.1.8, containing emacs
+lisp files, info pages, and so on (except executables) for
+XEmacs with Mule(version 21.1.8).
+
+This package is not built with any particular language support except for
+already built-in Imput Method - SKK and SJ3.  If you want other built-in
+input method, look into the xemacs ports in language- specific directories.
+Currently only Japanese (Canna,Wnn4 and Wnn6) is available.
+
+This package and the package, xemacs-common-21.1.8 are designed
+*not* to clobber any existing emacs installation.  In particular, the
+executables and man pages of etags/ctags are not installed, and the
+info pages that come with the original emacs don't get installed too.
+The Japanese version is build to install everything, by the way.
+This is a package containing only the executables for XEmacs with
+Mule(version 21.1.8), the next generation of Emacs.
+
+You need to install a package, xemacs-common-21.1.8, containing emacs
+lisp files, info pages, and so on (except executables) for
+XEmacs with Mule(version 21.1.8).
+
+This package is not built with any particular language support except for
+already built-in Imput Method - SKK and SJ3.  If you want other built-in
+input method, look into the xemacs ports in language- specific directories.
+Currently only Japanese (Canna,Wnn4 and Wnn6) is available.
+
+This package and the package, xemacs-common-21.1.8 are designed
+*not* to clobber any existing emacs installation.  In particular, the
+executables and man pages of etags/ctags are not installed, and the
+info pages that come with the original emacs don't get installed too.
+The Japanese version is build to install everything, by the way.
