@@ -1,0 +1,17 @@
+Yorick is an interpreted language like Basic or Lisp.  For an interpreter,
+Yorick is very fast for many scientific applications.  It features:
+
+     * A C-like language, but without declarative statements.
+     * An X window system interactive graphics package.
+     * Yorick's binary file package can read or write floating point
+       formats foreign to the machine where Yorick is running.
+     * A library of functions written in the Yorick language.
+     * Provisions for embedding compiled subroutines and functions within
+       a Yorick interpreter.
+
+Because Yorick can read either text or binary files, it can be used
+"out of the box" as a pre- and post-processor for most existing
+physics simulation programs.
+
+Read the article in the Nov/Dec 1995 issue of Computers in Physics
+(Vol. 9, p. 609) for more details.
