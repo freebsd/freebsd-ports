@@ -6178,7 +6178,7 @@ pim6sd		ports/net/pim6sd
 pimp3		ports/audio/pimp3
 pinball		ports/games/pinball
 pine.language	ports/ukrainian/pine.language
-pine-pgp-filters	ports/mail/pine4-pgp-filters
+pine-pgp-filters	ports/mail/pine-pgp-filters
 pine4		ports/mail/pine4
 pinfo		ports/misc/pinfo
 ping		src/sbin/ping
