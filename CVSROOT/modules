@@ -8988,6 +8988,7 @@ staroffice5	ports/editors/staroffice5
 staroffice52	ports/editors/staroffice52
 staroffice60	ports/editors/staroffice60
 staroffice70	ports/editors/staroffice70
+staroffice70-german	ports/german/staroffice70
 starplot	ports/astro/starplot
 stars		ports/astro/stars
 starttls	ports/security/starttls
