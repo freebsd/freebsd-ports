@@ -6996,6 +6996,7 @@ p5-Net-BGP	ports/net/p5-Net-BGP
 p5-Net-CIDR	ports/net-mgmt/p5-Net-CIDR
 p5-Net-CIDR-Lite	ports/net/p5-Net-CIDR-Lite
 p5-Net-DAAP-Client-Auth	ports/audio/p5-Net-DAAP-Client-Auth
+p5-Net-DAAP-DMAP	ports/audio/p5-Net-DAAP-DMAP
 p5-Net-DLookup	ports/net/p5-Net-DLookup
 p5-Net-DNS	ports/dns/p5-Net-DNS
 p5-Net-DNS-SEC	ports/dns/p5-Net-DNS-SEC
