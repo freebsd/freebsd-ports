@@ -145,7 +145,6 @@
     SUBDIR += flow-tools
     SUBDIR += flowscan
     SUBDIR += forg
-    SUBDIR += forgate
     SUBDIR += fpc-inet
     SUBDIR += fping
     SUBDIR += fprobe

@@ -1,8 +1,0 @@
-Forgate (Forge Gateway) is a tool that allows you to capture
-traffic from a third party in a switched environment at the
-expense of a slight increase in latency to that third party
-host. Utilizing ARP cache poisoning, packet capture, and packet
-reconstruction techniques, it works with nearly all TCP, ICMP,
-and UDP IPv4 traffic flows.
-
-WWW: http://forgate.sf.net
