@@ -495,7 +495,7 @@ CODEC_PORT=	${PORTSDIR}/multimedia/win32-codecs
 CODEC_DETECTION_FILE!=	${MAKE} -f ${CODEC_PORT}/Makefile -V CODEC_DETECTION_FILE
 .else
 CONFIGURE_ARGS+=	--disable-win32 \
-			-disable-qtx-codecs
+			--disable-qtx-codecs
 .endif
 .endif # ARCH == i386
 
