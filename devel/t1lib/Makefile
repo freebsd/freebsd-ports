@@ -35,4 +35,6 @@ ALL_TARGET=	without_doc
 #BUILD_DEPEND+=	${LOCALBASE}/bin/latex:${PORTSDIR}/print/latex
 #.endif
 
+INSTALLS_SHLIB=	yes
+
 .include <bsd.port.mk>
