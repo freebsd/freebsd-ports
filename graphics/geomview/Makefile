@@ -14,102 +14,59 @@ MASTER_SITE_SUBDIR=	geomview
 MAINTAINER=	fenner@FreeBSD.org
 COMMENT=	An interactive viewer for 3- and 4-D geometric objects
 
-BROKEN=		"Does not install"
-
 LIB_DEPENDS=	tk83.1:${PORTSDIR}/x11-toolkits/tk83
-# can't get autoconf to like forms.h, punt for now
-#forms.1:${PORTSDIR}/x11-toolkits/xforms \
 
 USE_MOTIF=	yes
 USE_X_PREFIX=	yes
 USE_MESA=	yes
-USE_AUTOCONF=	yes
+
+USE_AUTOCONF=   yes
+
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-opengl=${X11BASE}
 
-MAN1=		addbbox.1 animate.1 anytooff.1 anytoucd.1 bdy.1 clip.1 \
-		cplxview.1 crayola.1 example.1 flythrough.1 geomview.1 \
-		ginsu.1 graffiti.1 hinge.1 hvectext.1 maniview.1 nose.1 \
-		offconsol.1 polymerge.1 sweep.1 tackdown.1 togeomview.1 \
-		transformer.1 ucdtooff.1
-MAN3=		anytopl.3 bdy.3 fsaparse.3 geomutil.3 lisp.3 plcombine.3 \
-		plconsol.3 pointlist.3 sweep.3
-MAN5=		discgrp.5 geomview.5 oogl.5
+MANCOMPRESSED=	no
+MAN1=		geomview.1 togeomview.1 bdy.1 oogl2rib.1 anytooff.1 \
+		bez2mesh.1 offconsol.1 polymerge.1 vrml2oogl.1 clip.1 \
+		math2oogl.1 oogl2vrml.1 anytoucd.1 ucdtooff.1
+MAN3=		lisp.3
+MAN5=		oogl.5 geomview.5
+
+MAN_FILES=	oogl.5 geomview.5
+DOC_FILES=	gvplot.txt oogltour OOGL.m.txt README
+
+EXAMPLE_FILES=	example1.c example2.c example3.c example4.tcl
 
 # Set "CPU" type for Geomview make
 # Allow user to specify "make install MAPLE_LIB=foo" as geomview wants
 MAKE_ENV=	CPU=FreeBSD MAPLE_LIB=${MAPLE_LIB}
 
-#
-# Don't let automake/autoconf try to rebuild everything.
 AC_FAKE_FILES=	aclocal.m4 config.h.in stamp-h stamp-h.in
 
 post-configure:
 	cd ${WRKSRC}; ${TOUCH} ${AC_FAKE_FILES}
 	${FIND} ${WRKSRC} -name Makefile.in | ${XARGS} ${TOUCH}
 
-pre-install:
-	${MKDIR} ${PREFIX}/share/geomview
-
-# Geomview presumes that you're installing in the source directory,
-# so massive parts of the source directory have to be copied to the
-# destination.
-INFO_FILES=	geomview geomview-1 geomview-2 geomview-3 geomview-4 geomview-5
-DOC_FILES=	OOGL.m.doc geomview.tex geomview_toc.html geomview_1.html \
-		geomview_2.html geomview_3.html geomview_4.html \
-		geomview_5.html geomview_6.html geomview_7.html \
-		geomview_8.html geomview_9.html geomview_10.html \
-		geomview_11.html geomview_12.html geomview_13.html \
-		gvplot.doc newsletter_article.txt oogltour
-EXAMPLE_FILES=	example1.c example2.c example3.c example4.tcl
-MAN_FILES=	geomview.5 oogl.5
-SHARE_DIRS=	data maple mathematica
-SHARE_MODS=	tcl
-LIBEXEC_DIRS=	bin
-LIBEXEC_MODS=	x11
-
 post-install:
-	${MKDIR} ${PREFIX}/info
-.for i in ${INFO_FILES}
-	${INSTALL_DATA} ${WRKSRC}/doc/${i} ${PREFIX}/info
-.endfor
-.if !defined(NOPORTDOCS)
-	${MKDIR} ${PREFIX}/share/doc/geomview
-.for i in ${DOC_FILES}
-	${INSTALL_DATA} ${WRKSRC}/doc/${i} ${PREFIX}/share/doc/geomview
-.endfor
-	${MKDIR} ${PREFIX}/share/examples/geomview
+	${MKDIR} ${EXAMPLESDIR}
 .for i in ${EXAMPLE_FILES}
-	${INSTALL_DATA} ${WRKSRC}/doc/${i} ${PREFIX}/share/examples/geomview
+	${INSTALL_DATA} ${WRKSRC}/doc/${i} ${EXAMPLESDIR}
 .endfor
-.endif
-.for i in ${MAN_FILES}
+.for i in ${MAN3}
+	${INSTALL_MAN} ${WRKSRC}/doc/${i} ${PREFIX}/man/man3
+.endfor
+.for i in ${MAN5}
 	${INSTALL_MAN} ${WRKSRC}/doc/${i} ${PREFIX}/man/man5
 .endfor
-.for i in ${SHARE_DIRS}
-	${RM} -rf ${PREFIX}/share/geomview/${i}
-	${MKDIR} ${PREFIX}/share/geomview/${i}
-	${CP} -pr ${WRKSRC}/${i} ${PREFIX}/share/geomview
-	${CHOWN} -R ${SHAREOWN}:${SHAREGRP} ${PREFIX}/share/geomview/${i}
+.if !defined(NOPORTDOCS)
+	${MKDIR} ${DOCSDIR} ${DOCSDIR}/figs ${DOCSDIR}/html \
+	    ${DOCSDIR}/html/pix
+.for i in ${DOC_FILES}
+	${INSTALL_MAN} ${WRKSRC}/doc/${i} ${DOCSDIR}
 .endfor
-	${CHMOD} -R g-w ${WRKSRC}/modules
-.for i in ${SHARE_MODS}
-	${RM} -rf ${PREFIX}/share/geomview/modules/${i}
-	${MKDIR} ${PREFIX}/share/geomview/modules/${i}
-	${CP} -pr ${WRKSRC}/modules/${i} ${PREFIX}/share/geomview/modules
-	${CHOWN} -R ${SHAREOWN}:${SHAREGRP} ${PREFIX}/share/geomview/modules/${i}
-.endfor
-.for i in ${LIBEXEC_DIRS}
-	${RM} -rf ${PREFIX}/libexec/geomview/${i}
-	${MKDIR} ${PREFIX}/libexec/geomview/${i}
-	${CP} -pr ${WRKSRC}/${i} ${PREFIX}/libexec/geomview/
-	${CHOWN} -R ${BINOWN}:${BINGRP} ${PREFIX}/libexec/geomview/${i}
-.endfor
-.for i in ${LIBEXEC_MODS}
-	${RM} -rf ${PREFIX}/libexec/geomview/modules/${i}
-	${MKDIR} ${PREFIX}/libexec/geomview/modules/${i}
-	${CP} -pr ${WRKSRC}/modules/${i} ${PREFIX}/libexec/geomview/modules
-	${CHOWN} -R ${BINOWN}:${BINGRP} ${PREFIX}/libexec/geomview/modules/${i}
-.endfor
+	${INSTALL_MAN} ${WRKSRC}/doc/figs/*.ps ${DOCSDIR}/figs
+	${INSTALL_MAN} ${WRKSRC}/doc/html/*.html ${DOCSDIR}/html
+	${INSTALL_MAN} ${WRKSRC}/doc/html/pix/*.gif ${DOCSDIR}/html/pix
+.endif
 
 .include <bsd.port.mk>
