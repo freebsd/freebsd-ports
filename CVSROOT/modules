@@ -1865,7 +1865,6 @@ games		src/games
 games_crimson	ports/games/crimson
 gap		ports/math/gap
 garith		ports/games/garith
-gaspell		ports/textproc/gaspell
 gate		ports/editors/gate
 gated		ports/net/gated
 gatekeeper	ports/net/gatekeeper
