@@ -5,10 +5,11 @@
 # $FreeBSD$
 #
 
-PORTNAME=       	sms_client
+PORTNAME=		sms_client
 PORTVERSION=		3.0.2
-CATEGORIES=     	comms
-MASTER_SITES=   	http://www.styx.demon.co.uk/archive/
+PORTREVISION=		1
+CATEGORIES=		comms
+MASTER_SITES=		http://www.styx.demon.co.uk/archive/
 
 MAINTAINER=		ports@FreeBSD.org
 COMMENT=	A simple UNIX SMS client to send messages to phones or pagers
@@ -20,5 +21,9 @@ MAN1=			sms_client.1
 post-configure:
 	${SED} -e 's@gcc@${CC}@g' -e 's@-Wall@${CFLAGS} -Wall@g' \
 		${FILESDIR}/Makefile.config > ${WRKSRC}/Makefile.config
+
+post-patch:
+	${MV} ${WRKSRC}/sms/services/vodafone_autralia \
+		${WRKSRC}/sms/services/vodafone_australia
 
 .include <bsd.port.mk>
