@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ifc
-PORTVERSION=	8.0.046
+PORTVERSION=	8.0.046.p049.1
 CATEGORIES=	lang linux devel
 MASTER_SITES=
 DISTNAME=	l_fc_pc_${PORTVERSION:C/\.p.+$//}
@@ -165,7 +165,6 @@ do-build:
 	@${OBJCOPY} \
 		--redefine-sym ftruncate=l_ftruncate \
 		--redefine-sym lseek64=lseek \
-		--redefine-sym open64=open \
 		--redefine-sym fopen64=fopen \
 		--redefine-sym freopen64=freopen \
 		--redefine-sym creat64=creat \

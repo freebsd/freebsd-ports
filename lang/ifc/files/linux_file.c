@@ -46,7 +46,34 @@ int l_open(const char *path, int flags, ...) {
     va_list args;
     mode_t mode;
     int bsd_flags, error;
+    bsd_flags = 0;
 
+    if (flags & LINUX_O_RDONLY  ) bsd_flags |= O_RDONLY;
+    if (flags & LINUX_O_WRONLY  ) bsd_flags |= O_WRONLY;
+    if (flags & LINUX_O_RDWR    ) bsd_flags |= O_RDWR;
+    if (flags & LINUX_O_NDELAY  ) bsd_flags |= O_NONBLOCK;
+    if (flags & LINUX_O_APPEND  ) bsd_flags |= O_APPEND;
+    if (flags & LINUX_O_SYNC    ) bsd_flags |= O_FSYNC;
+    if (flags & LINUX_O_NONBLOCK) bsd_flags |= O_NONBLOCK;
+    if (flags & LINUX_FASYNC    ) bsd_flags |= O_ASYNC;
+    if (flags & LINUX_O_CREAT   ) bsd_flags |= O_CREAT;
+    if (flags & LINUX_O_TRUNC   ) bsd_flags |= O_TRUNC;
+    if (flags & LINUX_O_EXCL    ) bsd_flags |= O_EXCL;
+    if (flags & LINUX_O_NOCTTY  ) bsd_flags |= O_NOCTTY;
+
+    if (bsd_flags & O_CREAT) {
+	va_start (args, flags);
+	mode = (mode_t) va_arg(args, int);
+	return open(path, bsd_flags, mode);
+	va_end (args);
+    } else
+	return open(path, bsd_flags);
+}
+
+int open64(const char *path, int flags, ...) {
+    va_list args;
+    mode_t mode;
+    int bsd_flags, error;
     bsd_flags = 0;
 
     if (flags & LINUX_O_RDONLY  ) bsd_flags |= O_RDONLY;
