@@ -34,6 +34,7 @@
     SUBDIR += piewm
     SUBDIR += qvwm
     SUBDIR += sapphire
+    SUBDIR += sapphire-themes
     SUBDIR += sawfish
     SUBDIR += scwm
     SUBDIR += spager
