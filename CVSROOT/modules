@@ -6923,6 +6923,7 @@ wmcpuload	ports/sysutils/wmcpuload
 wmcube		ports/sysutils/wmcube
 wmcube-gdk	ports/sysutils/wmcube-gdk
 wmdate		ports/x11-clocks/wmdate
+wmessage	ports/misc/wmessage
 wmeyes		ports/games/wmeyes
 wmfire		ports/sysutils/wmfire
 wmfishtime	ports/x11-clocks/wmfishtime
