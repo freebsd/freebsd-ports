@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	racc
-PORTVERSION=	1.3.0
+PORTVERSION=	1.3.2
 CATEGORIES=	devel ruby
 MASTER_SITES=	http://www1.u-netsurf.ne.jp/~brew/mine/soft/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
@@ -29,23 +29,21 @@ DOCS_JA=	changes.html command.html debug.html grammer.html \
 EXAMPLES=	calc-ja.y calc.y conflict.y lalr.y syntax.y yyerr.y
 
 post-extract:
-	${PERL} -i -ne '/^amstd\b/ || print' ${WRKSRC}/lib/PATHCONV
-	${RM} -rf ${WRKSRC}/lib/amstd
+	${RM} -rf ${WRKSRC}/ext
+	${PERL} -i -ne '/^amstd\b/ || /^strscan\b/ || print' ${WRKSRC}/lib/PATHCONV
+	${RM} -rf ${WRKSRC}/lib/amstd ${WRKSRC}/lib/strscan
 .if defined(RUNTIME)
 	${PERL} -i -ne '/^racc\b/ || print' ${WRKSRC}/bin/PATHCONV
 	${RM} -rf ${WRKSRC}/bin/racc
 	${PERL} -i -ne '/^racc\b/ || print' ${WRKSRC}/lib/PATHCONV
 	${RM} -rf ${WRKSRC}/lib/racc
 .else
-	${PERL} -i -ne '/^cparse\b/ || print' ${WRKSRC}/ext/PATHCONV
-	${RM} -rf ${WRKSRC}/ext/cparse
 	${PERL} -i -ne '/^raccrt\b/ || print' ${WRKSRC}/lib/PATHCONV
 	${RM} -rf ${WRKSRC}/lib/raccrt
 .endif
 
 .if !defined(RUNTIME)
 post-patch:
-	${RM} -rf ${WRKSRC}/ext
 	${PERL} -i -pe '$$. == 1 && s,^#!\s*\S+,#!${RUBY},' \
 		${WRKSRC}/misc/racc2y \
 		${WRKSRC}/misc/y2racc
