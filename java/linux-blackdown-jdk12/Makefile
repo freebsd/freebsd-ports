@@ -23,6 +23,7 @@ RUN_DEPENDS=	javavm:${PORTSDIR}/java/javavmwrapper
 
 NO_CDROM=	"License doesn\'t allow distribution with fee"
 NO_PACKAGE=	"License doesn\'t allow binary distributions"
+LATEST_LINK=	linux-blackdown-jdk12
 
 USE_LINUX=	YES
 ONLY_FOR_ARCHS=	i386

@@ -26,11 +26,14 @@ WRKSRC=		${WRKDIR}/j2sdk${PORTVERSION}
 PLIST_SUB+=	T=${APP_HOME:S/^${PREFIX}\///}
 
 NO_BUILD=	yes
+LATEST_LINK=	linux-blackdown-jdk13
+
 USE_LINUX=	yes
+ONLY_FOR_ARCHS=	arm i386 ppc sparc
+
 JDK_VERSION=	1.3.1
 JDK_VER_SUFFIX=	-02b-FCS
 DOWNLOAD_DIR=	${PORTNAME:U}-${JDK_VERSION}/${ARCH}/FCS-02b
-ONLY_FOR_ARCHS=	arm i386 ppc sparc
 
 NO_CDROM=	"License doesn\'t allow distribution with fee"
 NO_PACKAGE=	"License doesn\'t allow binary distributions"
