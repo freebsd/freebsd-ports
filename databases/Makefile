@@ -19,10 +19,12 @@
     SUBDIR += p5-Msql
     SUBDIR += p5-Mysql
     SUBDIR += p5-Pg
+    SUBDIR += p5-SQL-Statement
     SUBDIR += pgaccess
     SUBDIR += postgresql
     SUBDIR += py-PyGreSQL
     SUBDIR += ruby-postgres
+    SUBDIR += tcl-Mysql
     SUBDIR += tkgnats
     SUBDIR += typhoon
     SUBDIR += xmbase-grok
