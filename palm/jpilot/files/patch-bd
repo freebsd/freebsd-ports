@@ -1,0 +1,25 @@
+--- jpilot.c      Sat Feb 12 21:33:21 2000
++++ jpilot.c.orig Fri May 19 19:49:10 2000
+@@ -609,6 +609,11 @@
+            bad_sync_exit_status(exit_status);
+         }
+       }
++      /*Look for finish message */
++      Pstr1 = strstr(buf, "Finished");
++      if (Pstr1) {
++        cb_app_button(NULL, GINT_TO_POINTER(REDRAW));
++      }
+    }
+ }
+
+--- sync.c        Thu Feb 24 03:20:33 2000
++++ sync.c.orig   Fri May 19 19:48:43 2000
+@@ -107,7 +107,7 @@
+    waitpid(-1, NULL, WNOHANG);
+ 
+    /*refresh the screen after a sync */
+-   cb_app_button(NULL, GINT_TO_POINTER(REDRAW));
++   /*cb_app_button(NULL, GINT_TO_POINTER(REDRAW));*/
+ 
+    return;
+ }
