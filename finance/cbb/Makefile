@@ -1,15 +1,17 @@
 # New ports collection Makefile for:	cbb
-# Version required:     	0.78
+# Version required:     	0.8.1
 # Date created:			24 September, 1998
 # Whom:				kline
 #
 # $FreeBSD$
 #
 
-DISTNAME=	cbb-0.78
+DISTNAME=	cbb-0.8.1
 CATEGORIES=	deskutils
-MASTER_SITES=	ftp://ftp.me.umn.edu/pub/finance/ \
-		ftp://ftp.fifi.org/pub/cbb/
+MASTER_SITES=	http://www.FreeBSD.org/~jedgar/distfiles/
+# Former sites that may or may not be usable in the future:
+#		ftp://ftp.me.umn.edu/pub/finance/ \
+#		ftp://ftp.fifi.org/pub/cbb/
 
 MAINTAINER=	kline@thought.org
 
@@ -18,5 +20,6 @@ RUN_DEPENDS=	wish8.2:${PORTSDIR}/x11-toolkits/tk82
 NO_BUILD=       yes
 USE_PERL5=	yes
 MAKE_ENV=	PERL5=${PERL5}
+GNU_CONFIGURE=  yes
 
 .include <bsd.port.mk>
