@@ -1,0 +1,4 @@
+-------------------------------------------------------------------------------
+NOTE: To use Alliance you need to set several environment variables.
+      See %%PREFIX%%/alliance/etc/alc_env.{csh,sh} for the details.
+-------------------------------------------------------------------------------
