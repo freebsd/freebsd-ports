@@ -4747,6 +4747,7 @@ numchar		ports/misc/numchar
 nuppelvideo	ports/multimedia/nuppelvideo
 nurbs++		ports/graphics/nurbs++
 nut		ports/sysutils/nut
+nvclock		ports/sysutils/nvclock
 nvi-devel	ports/editors/nvi-devel
 nvi-m17n	ports/editors/nvi-m17n
 nvi-perl	ports/editors/nvi-perl
