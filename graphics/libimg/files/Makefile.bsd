@@ -1,12 +1,9 @@
-LIB=		img
+SHLIB_NAME=	libimg.so.1
 
 PORTVERSION?=	1.2.4
 LOCALBASE?=	/usr/local
 X11BASE?=	/usr/X11R6
 TCL_VER?=	8.3
-
-SHLIB_MAJOR=	1
-SHLIB_MINOR=	2
 
 .if exists(${LOCALBASE}/lib/tk${TCL_VER}/tkConfig.sh)
 # If for some reason  the file does not exist -- make the best guess. In
@@ -38,10 +35,7 @@ CFLAGS+=	-DHAVE_JPEGLIB_H -DHAVE_TIFF_H -DHAVE_DLFCN_H -DHAVE_IMG_H
 # libtiff itself does NOT install.	-mi
 CFLAGS+=	-I${.CURDIR}/libtiff
 
-INTERNALLIB	= don't build the useless static version
-NOPROFILE	= don't build the profilable lib
-
-all: ${SHLIB_NAME} pkgIndex.tcl
+all: pkgIndex.tcl
 
 pkgIndex.tcl: pkgIndex.tcl.in
 	sed -e 's,@IMG_PATCH_LEVEL@,${PORTVERSION},g' \
