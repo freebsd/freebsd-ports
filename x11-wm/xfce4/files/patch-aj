@@ -1,0 +1,37 @@
+--- xfwm/session.c.orig	Wed Jan 31 04:50:16 2001
++++ xfwm/session.c	Tue Feb  6 04:56:10 2001
+@@ -566,8 +566,10 @@
+ callback_save_yourself2 (SmcConn sm_conn, SmPointer client_data)
+ {
+   char *path = NULL;
+-  char *filename = NULL;
+-  FILE *f = NULL;
++  char *filename;
++  FILE *f;
++  int fd;
++
+   Bool success = True;
+   struct passwd *pwd;
+ 
+@@ -578,16 +580,18 @@
+       path = pwd->pw_dir;
+     }
+ 
+-  filename = tempnam (path, ".fs-");
++  sprintf (filename, "path/.fs-XXXXXXXX");
++  fd = mkstemp (filename);
+ 
+   if (Scr.Options & SessionMgt)
+     {
+-      f = fopen (filename, "w");
++      f = fdopen (fd, "w");
+       success = save_session_state (sm_conn, filename, f);
+       fclose (f);
+     }
+-  if (!success)
++  if (!success || fd < 0)
+     xfwm_msg (WARN, "SaveSession", "Can't save session\n");
++  close (fd);
+   /* also save session for builtin session mgt, so user will get
+    * back to his environmnent even if he doesn't use ICE
+    */

@@ -1,0 +1,11 @@
+--- libs/configure.h.orig	Tue Sep  5 02:26:09 2000
++++ libs/configure.h	Wed Feb  7 00:53:01 2001
+@@ -22,7 +22,7 @@
+ #define CLOSE_STRING4 "quit"
+ 
+ /* #ifdef __alpha */
+-#if defined(__alpha) && !defined(linux)
++#if defined(__alpha) && !(defined(linux) || defined(__NetBSD__) || defined(__FreeBSD__) || defined(__OpenBSD__))
+ #define NEEDS_ALPHA_HEADER
+ #undef BROKEN_SUN_HEADERS
+ #endif /* (__alpha) */
