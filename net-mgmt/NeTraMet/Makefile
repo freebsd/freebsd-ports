@@ -6,13 +6,20 @@
 #
 
 PORTNAME=	NeTraMet
-PORTVERSION=	4.3
+PORTVERSION=	4.4
 CATEGORIES=	net
-MASTER_SITES=	ftp://ftp.gla.ac.uk/pub/software/NeTraMet/
-DISTNAME=	NeTraMet${PORTVERSION:S/.//}
+MASTER_SITES=	ftp://ftp.auckland.ac.nz/pub/iawg/NeTraMet/ \
+		http://www2.auckland.ac.nz/net/Accounting/
+DISTFILES+=	NeTraMet${PORTVERSION:S/.//}${EXTRACT_SUFX} \
+		${NETRAMET_DOCS}
+EXTRACT_ONLY=	NeTraMet${PORTVERSION:S/.//}${EXTRACT_SUFX}
+DIST_SUBDIR=	netramet
 
 MAINTAINER=	olgeni@FreeBSD.org
 COMMENT=	Implementation of the Internet Accounting Architecture
+
+NETRAMET_DOCS=	usguide.pdf srlguide.pdf ntmref.pdf nm_rc.pdf \
+		nifty.pdf fdutil.pdf
 
 WRKSRC=		${WRKDIR}/NeTraMet${PORTVERSION:S/.//}
 
@@ -30,5 +37,11 @@ PLIST_SUB=	MOTIF="@comment "
 
 post-patch:
 	@${REINPLACE_CMD} -e "s|"/etc/mib.txt"|${LOCALBASE}/share/NeTraMet/mibs/mib.txt|g;" ${WRKSRC}/src/snmplib/mib.c
+
+post-install:
+	@${MKDIR} ${DOCSDIR}
+.for FILE in ${NETRAMET_DOCS}
+	${INSTALL_DATA} ${DISTDIR}/${DIST_SUBDIR}/${FILE} ${DOCSDIR}
+.endfor
 
 .include <bsd.port.mk>
