@@ -7,13 +7,14 @@
 #
 
 PORTNAME=	cmucl
-PORTVERSION=	18e
+PORTVERSION=	19a
 CATEGORIES=	lang
-MASTER_SITES=	http://www.pmsf.de/pub/cmucl/release/18e/ \
-		ftp://ftp.averillpark.net/cmucl/release/18e/ \
-		ftp://ftp.linux.org.uk/pub/lisp/cmucl/release/18e/ \
-		ftp://ftp.cn.freebsd.org/pub/cmucl/release/18e/
-DISTNAME=	cmucl-18e-x86-freebsd
+MASTER_SITES=	ftp://ftp.common-lisp.net/pub/project/cmucl/release/19a/ \
+		http://www.pmsf.de/pub/cmucl/release/19a/ \
+		ftp://ftp.averillpark.net/cmucl/release/19a/ \
+		ftp://ftp.linux.org.uk/pub/lisp/cmucl/release/19a/ \
+		ftp://ftp.tepus.com/pub/project/cmucl/release/19a/
+DISTNAME=	cmucl-19a-x86-FreeBSD
 
 MAINTAINER=	cracauer@cons.org
 COMMENT=	The CMU implementation of Common Lisp
