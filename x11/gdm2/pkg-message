@@ -8,7 +8,7 @@ script to gdm.sh, and restart.  This script is found in
 GDM uses its own locale.alias file to determine its language and especially
 the GNOME 2 fontencoding. This file is located in
 %%PREFIX%%/etc/gdm/locale.alias.  By default, the character set for every 
-county using the EURO currency is set to ISO8859-15 in order to enable the 
+country using the EURO currency is set to ISO8859-15 in order to enable the 
 EURO sign. If you do not feel comfortable with this, edit this file according 
 to your preferences.
 
