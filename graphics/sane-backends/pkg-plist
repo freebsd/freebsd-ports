@@ -315,3 +315,5 @@ share/locale/sv/LC_MESSAGES/sane-backends.mo
 @dirrm lib/sane
 @dirrm include/sane
 @dirrm etc/sane.d
+@dirrm share/sane/gt68xx
+@dirrm share/sane
