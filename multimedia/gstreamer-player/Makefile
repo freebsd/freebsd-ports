@@ -7,7 +7,7 @@
 
 PORTNAME=	gstreamer
 PORTVERSION=	0.6.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	multimedia audio gnome
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -24,13 +24,10 @@ LIB_DEPENDS=	gstreamer-0.6.1:${PORTSDIR}/multimedia/gstreamer \
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gnomehack \
-		gnomehier \
 		gnomeprefix \
-		pkgconfig \
-		gconf2 \
-		libglade2 \
-		libgnomeui
+		gnomedesktop
 USE_LIBTOOL=	yes
+GNOME_DESKTOP_VERSION=2
 WANT_GNOME=	yes
 PLIST_SUB=	\
 	VERSION="${PORTVERSION}" \
