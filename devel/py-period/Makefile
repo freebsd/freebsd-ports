@@ -12,7 +12,7 @@ CATEGORIES=	devel python
 MASTER_SITES=	http://www.biostat.wisc.edu/~annis/creations/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	AlanE@FreeBSD.org
+MAINTAINER=	alane@FreeBSD.org
 
 USE_PYTHON=	yes
 NO_BUILD=	yes

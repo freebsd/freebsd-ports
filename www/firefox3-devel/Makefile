@@ -2,7 +2,7 @@
 #
 # New ports collection makefile for:	phoenix
 # Date created:			2002/10/21
-# Whom:				Alan Eldridge <AlanE@FreeBSD.org>
+# Whom:				Alan Eldridge <alane@FreeBSD.org>
 #
 # $FreeBSD$
 #

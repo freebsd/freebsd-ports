@@ -9,7 +9,7 @@ PORTNAME=	cups-base
 PORTVERSION=	${CUPS_PORTVER}
 CATEGORIES=	french print
 
-MAINTAINER=	AlanE@FreeBSD.org
+MAINTAINER=	alane@FreeBSD.org
 
 CUPS_FR=	yes
 MASTERDIR=	${.CURDIR}/../../print/cups-base

@@ -9,7 +9,7 @@ PORTNAME=	cups-lpr
 PORTVERSION=	${CUPS_PORTVER}
 CATEGORIES=	french print
 
-MAINTAINER=	AlanE@FreeBSD.org
+MAINTAINER=	alane@FreeBSD.org
 
 LIB_DEPENDS=	cups.2:${.CURDIR}/../../french/cups-base
 

@@ -14,7 +14,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 MASTER_SITE_SUBDIR=	espgs
 DISTNAME=		espgs-${PORTVERSION}-source
 
-MAINTAINER=	AlanE@FreeBSD.org
+MAINTAINER=	alane@FreeBSD.org
 
 LIB_DEPENDS=	cups.2:${PORTSDIR}/print/cups-base
 RUN_DEPENDS=	${LOCALBASE}/share/ghostscript/fonts/fonts.scale:${PORTSDIR}/print/ghostscript-gnu
