@@ -21,6 +21,8 @@ GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 PLIST_SUB=	VERSION=${PORTVERSION}
 
+PLIST_FILES=	bin/nasm bin/nasm-%%VERSION%% bin/ndisasm
+
 MAN1=		nasm.1 ndisasm.1
 
 post-install:
