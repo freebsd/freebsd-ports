@@ -1,0 +1,5 @@
+bin/injail
+sbin/dmesg
+sbin/halt
+sbin/jailer
+sbin/reboot
