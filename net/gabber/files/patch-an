@@ -1,0 +1,11 @@
+--- src/TCPTransmitter.cc.orig Thu Jan 18 15:08:39 2001
++++ src/TCPTransmitter.cc      Thu Jan 18 15:09:13 2001
+@@ -33,6 +33,8 @@
+ #include <string.h>
+ #include <sys/wait.h>
+
++#define TRANSMITTER_DEBUG
++
+ using namespace std;
+
+

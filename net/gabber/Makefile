@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	gabber
-PORTVERSION=	0.7.0
-PORTREVISION=	2
+PORTVERSION=	0.8.1
 CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -17,7 +16,8 @@ MAINTAINER=	erich@tacni.net
 LIB_DEPENDS=	gtkmm.1:${PORTSDIR}/x11-toolkits/gtk-- \
 		gnomemm.3:${PORTSDIR}/x11-toolkits/gnome-- \
 		sigc.1:${PORTSDIR}/devel/libsigc++ \
-		gnet.0:${PORTSDIR}/net/gnet \
+		gal.3:${PORTSDIR}/x11-toolkits/gal \
+		giconv.2:${PORTSDIR}/converters/libiconv \
 		glade.4:${PORTSDIR}/devel/libglade
 
 USE_X_PREFIX=	yes
@@ -29,7 +29,7 @@ CONFIGURE_ENV+=	GNOME_LIBCONFIG_PATH="${LOCALBASE}/lib:${X11BASE}/lib" \
 		CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
-pre-patch:
+post-patch:
 	@${PERL} -pi -e 's|-lpthread|-pthread|g ; \
 		 s|DATADIRNAME=lib|DATADIRNAME=share|g' ${WRKSRC}/configure
 	@find ${WRKSRC} -name "Makefile.in" | xargs ${PERL} -pi -e \

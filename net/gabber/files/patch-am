@@ -1,0 +1,11 @@
+--- src/Makefile.in.orig	Thu Jan 18 08:32:41 2001
++++ src/Makefile.in	Mon Jan 29 23:59:01 2001
+@@ -148,7 +148,7 @@
+ gabber_SOURCES = main.cc           xtext.h xtext.c 	  e-cache.h e-cache.c 	  e-font.h e-font.c 	  e-unicode.h e-unicode.c           TCPTransmitter.hh TCPTransmitter.cc           GabberLogger.hh GabberLogger.cc           GabberUtility.hh GabberUtility.cc           ConfigManager.hh ConfigManager.cc           GabberApp.hh GabberApp.cc           BaseGabberWindow.hh BaseGabberWindow.cc           GabberWin.hh GabberWin.cc           ChatView.hh ChatView.cc           RosterView.hh RosterView.cc           LoginDlg.hh LoginDlg.cc           SubscriptionRequestDlg.hh SubscriptionRequestDlg.cc           PrefsWin.hh PrefsWin.cc           GCJoinDlg.hh GCJoinDlg.cc           EditUserDlg.hh EditUserDlg.cc           EasyOptionMenu.hh EasyOptionMenu.cc           StatusDlg.hh StatusDlg.cc           AddToGroupDlg.hh AddToGroupDlg.cc           AddUserDruid.hh AddUserDruid.cc           WelcomeDruid.hh WelcomeDruid.cc 	  UserInfoWin.hh UserInfoWin.cc 	  StatusDock.hh StatusDock.cc 	  RawXML.hh RawXML.cc 	  HistoryDlg.hh HistoryDlg.cc           TransInfoDlg.hh TransInfoDlg.cc           AgentInterface.hh AgentInterface.cc           FilterInterface.hh FilterInterface.cc 	  EditGroupsDlg.hh EditGroupsDlg.cc           MessageManager.hh MessageManager.cc           MessageViews.hh MessageViews.cc 	  GPGInterface.hh GPGInterface.cc 	  GabberGPG.hh GabberGPG.cc 	  $(ssl_sources)
+ 
+ 
+-gabber_LDADD = @EXTRA_GNOME_LIBS@ @GNOMEMM_LIBS@ @SSL_LIBS@                ../jabberoo/src/libjabberoo.a                ../jabberoo/expat/libexpat.a                -lxml
++gabber_LDADD = @EXTRA_GNOME_LIBS@ @GNOMEMM_LIBS@ @SSL_LIBS@                ../jabberoo/src/libjabberoo.a                ../jabberoo/expat/libexpat.a			 -lxml -liconv 
+ 
+ gabber_LDFLAGS = @GABBER_STATIC@
+ 

@@ -1,0 +1,11 @@
+--- jabberoo/src/Makefile.in.orig	Tue Jan 30 02:10:13 2001
++++ jabberoo/src/Makefile.in	Tue Jan 30 02:10:32 2001
+@@ -74,7 +74,7 @@
+ libjabberoo_a_LIBS = ../expat/libexpat.a @SIGC_LIBS@ 
+ INCLUDES = -I../include @SIGC_CFLAGS@
+ 
+-CXXFLAGS = -O2
++#CXXFLAGS = -O2
+ mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs
+ CONFIG_CLEAN_FILES = 
+ LIBRARIES =  $(noinst_LIBRARIES)

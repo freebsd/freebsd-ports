@@ -1,0 +1,68 @@
+--- configure.in.orig	Thu Jan 18 08:22:50 2001
++++ configure.in	Mon Jan 29 23:48:54 2001
+@@ -70,15 +70,15 @@
+ save_CFLAGS="$CFLAGS"
+ save_LDFLAGS="$LDFLAGS"
+ CFLAGS="$CFLAGS $ICONV_CFLAGS"
+-LDFLAGS="$LDFLAGS $ICONV_LIBS -liconv"
+-AC_CACHE_CHECK(for iconv in -liconv, ac_cv_libiconv, AC_TRY_LINK([
+-#include <iconv.h>
++LDFLAGS="$LDFLAGS $ICONV_LIBS -lgiconv"
++AC_CACHE_CHECK(for iconv in -lgiconv, ac_cv_libiconv, AC_TRY_LINK([
++#include <giconv.h>
+ ], [
+ 	iconv_t cd;
+ 	cd = iconv_open ("UTF-8", "ISO-8859-1");
+ ], ac_cv_libiconv=yes, ac_cv_libiconv=no))
+ if test $ac_cv_libiconv = yes; then
+-	ICONV_LIBS="$ICONV_LIBS -liconv"
++	ICONV_LIBS="$ICONV_LIBS -lgiconv"
+ 	have_iconv=yes
+ else
+ 	CFLAGS="$save_CFLAGS"
+@@ -91,7 +91,7 @@
+ 		AC_CHECK_FUNCS(gnu_get_libc_version)
+ 	fi
+ 	AC_CACHE_CHECK([if iconv() handles UTF-8], ac_cv_libiconv_utf8, AC_TRY_RUN([
+-#include <iconv.h>
++#include <giconv.h>
+ #include <stdlib.h>
+ #include <string.h>
+ #ifdef HAVE_GNU_GET_LIBC_VERSION
+@@ -151,22 +151,22 @@
+ dnl ******************************
+ dnl Gnome App Lib checking
+ dnl ******************************
+-dnl AC_MSG_CHECKING(for Gnome App libraries (GAL) >= 0.3)
+-dnl if $GNOME_CONFIG --libs gal > /dev/null 2>&1; then 
+-dnl    vers=`$GNOME_CONFIG --modversion gal | sed -e "s/gal-//" -e 's/cvs$//' -e 's/pre$//' | \
+-dnl        awk 'BEGIN { FS = "."; } { print $1 * 1000000 + $2 * 10000 + $3 * 100 + $4;}'`
+-dnl    if test "$vers" -ge 30000; then
+-dnl        AC_MSG_RESULT(found)
+-dnl    else
+-dnl        AC_MSG_ERROR(You need at least GNOME Application Lib (GAL) 0.3)
+-dnl    fi
+-dnl else
+-dnl    AC_MSG_ERROR(Did not find GnomeAppLib (GAL) installed)
+-dnl fi
++AC_MSG_CHECKING(for Gnome App libraries (GAL) >= 0.3)
++if $GNOME_CONFIG --libs gal > /dev/null 2>&1; then 
++   vers=`$GNOME_CONFIG --modversion gal | sed -e "s/gal-//" -e 's/cvs$//' -e 's/pre$//' | \
++       awk 'BEGIN { FS = "."; } { print $1 * 1000000 + $2 * 10000 + $3 * 100 + $4;}'`
++   if test "$vers" -ge 30000; then
++       AC_MSG_RESULT(found)
++   else
++       AC_MSG_ERROR(You need at least GNOME Application Lib (GAL) 0.3)
++   fi
++else
++   AC_MSG_ERROR(Did not find GnomeAppLib (GAL) installed)
++fi
+ 
+ dnl add 'gal' to both of these if you want gal dependency
+-EXTRA_GNOME_LIBS="`$GNOME_CONFIG --libs libglade gnomeui` $ICONV_LIBS $UNICODE_LIBS"
+-EXTRA_GNOME_CFLAGS="`$GNOME_CONFIG --cflags libglade` $ICONV_CFLAGS $UNICODE_CFLAGS"
++EXTRA_GNOME_LIBS="`$GNOME_CONFIG --libs libglade gnomeui gal` $ICONV_LIBS $UNICODE_LIBS"
++EXTRA_GNOME_CFLAGS="`$GNOME_CONFIG --cflags libglade gal` $ICONV_CFLAGS $UNICODE_CFLAGS"
+ 
+ AC_SUBST(EXTRA_GNOME_LIBS)
+ AC_SUBST(EXTRA_GNOME_CFLAGS)
