@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	molden
-PORTVERSION=	3.8
+PORTVERSION=	3.9
 CATEGORIES=	biology
 MASTER_SITES=	ftp://ftp.cmbi.kun.nl/pub/molgraph/molden/
 DISTNAME=	${PORTNAME}${PORTVERSION}
@@ -40,7 +40,7 @@ do-build:
 	(cd ${WRKSRC} && ${MAKE})
 
 do-install:
-	${INSTALL_SCRIPT} ${WRKSRC}/molden ${PREFIX}/bin/
+	${INSTALL_SCRIPT} ${WRKSRC}/molden ${WRKSRC}/moldenogl ${PREFIX}/bin
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${PREFIX}/share/doc/molden
 	${MKDIR} ${PREFIX}/share/molden/test

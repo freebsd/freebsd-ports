@@ -1,4 +1,5 @@
 bin/molden
+bin/moldenogl
 %%PORTDOCS%%share/doc/molden/figures.ps.Z
 %%PORTDOCS%%share/doc/molden/manual.ps.Z
 %%PORTDOCS%%share/doc/molden/manual.txt.Z
