@@ -1,0 +1,23 @@
+# New ports collection makefile for:	p5-Devel-PPPort
+# Date created:				8 Aug 2004
+# Whom:	      				mat
+#
+# $FreeBSD$
+#
+
+PORTNAME=	Devel-PPPort
+PORTVERSION=	2.99.01
+CATEGORIES=	devel perl5
+MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
+MASTER_SITE_SUBDIR=	../by-authors/id/M/MH/MHX/
+PKGNAMEPREFIX=	p5-
+DISTNAME=	${PORTNAME}-${PORTVERSION:C/\.(..)$/_\1/}
+
+MAINTAINER=	mat@FreeBSD.org
+COMMENT=	Perl/Pollution/Portability
+
+PERL_CONFIGURE=	yes
+
+MAN3=		Devel::PPPort.3
+
+.include <bsd.port.mk>

@@ -745,6 +745,7 @@
     SUBDIR += p5-Devel-LeakTrace
     SUBDIR += p5-Devel-Modlist
     SUBDIR += p5-Devel-ObjectTracker
+    SUBDIR += p5-Devel-PPPort
     SUBDIR += p5-Devel-Peek
     SUBDIR += p5-Devel-Pointer
     SUBDIR += p5-Devel-Profile
