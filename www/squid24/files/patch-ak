@@ -1,0 +1,18 @@
+*** /tmp/configure.in	Sat Feb  7 21:20:29 1998
+--- configure.in	Sat Feb  7 21:24:48 1998
+***************
+*** 19,31 ****
+  REGEXLIB=''	# -lregex
+  LIBREGEX=''	# libregex.a
+  
+- dnl use directory structure of cached as default (hack)
+- if test "$libexecdir" = '${exec_prefix}/libexec'; then
+- 	libexecdir='${bindir}'
+- 	localstatedir='${prefix}'
+- 
+- fi
+- 
+  if test -z "$CACHE_HTTP_PORT"; then
+  	CACHE_HTTP_PORT="3128"
+  fi
+--- 19,24 ----
