@@ -1,0 +1,6 @@
+usr/games/stvef/linuxstvefded_1.2-glibc2.1.3
+usr/games/stvef/linuxstvefded_1.2-static
+usr/games/stvef/readme.txt
+usr/games/stvef/baseEF/server.cfg
+@dirrm usr/games/stvef/baseEF
+@dirrm usr/games/stvef
