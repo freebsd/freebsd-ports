@@ -1,24 +1,50 @@
 # New ports collection makefile for:    rar
-# Version required:     2.00 beta
+# http://www.inetpros.net/rar.htm
+# Version required:     2.01
 # Date created:         15 May 1996
 # Whom:                 ache
 #
-# $Id: Makefile,v 1.1.1.1 1996/05/15 19:19:40 ache Exp $
+# $Id: Makefile,v 1.2 1996/11/12 02:17:36 obrien Exp $
 #
 
-DISTNAME=       rar2bsdb
-PKGNAME=        rar-2.00b
+DISTNAME=       rarbsd
+PKGNAME=        rar-2.01
 CATEGORIES=	archivers
-MASTER_SITES=   ftp://ftp.relcom.ru/unix/arcers/
-EXTRACT_SUFX=   .tgz
+MASTER_SITES=   ftp://ftp.inetpros.net/pub/rar/ \
+		ftp://ftp.relcom.ru/unix/arcers/
+EXTRACT_SUFX=   .exe
 
 MAINTAINER=     ache@FreeBSD.ORG
 
-NO_BUILD=       yes
+RESTRICTED=     "only unmodified original SFX can be distributed"
+
+NO_WRKSUBDIR=   yes
+EXTRACT_CMD=
+EXTRACT_BEFORE_ARGS=
+
+post-fetch:
+	chmod a+x ${DISTDIR}/${DISTFILES}
+
+do-build:
+	cd ${WRKSRC} && \
+		for i in *.Txt *.Lst; do \
+			tr -d '\015' < $$i > $$i.tmp; \
+			mv $$i.tmp $$i; \
+		done
 
 do-install:
-	cd ${WRKSRC}; \
-	${INSTALL_PROGRAM} rar_bsd ${PREFIX}/bin/rar; \
-	${INSTALL_MAN} rar.man ${PREFIX}/man/cat1/rar.1
+	install -d -m 755 -o ${SHAREOWN} -g ${SHAREGRP} \
+		${PREFIX}/share/doc/rar ${PREFIX}/share/rar
+	cd ${WRKSRC} && \
+		${INSTALL_PROGRAM} RAR ${PREFIX}/bin/rar && \
+		${INSTALL_MAN} Rar.Txt ${PREFIX}/man/cat1/rar.1 && \
+		${INSTALL_MAN} Rar_FAQ.Txt TechNote.Txt License.Txt Internet.Txt \
+			${PREFIX}/share/doc/rar && \
+		${INSTALL_DATA} RarFiles.Lst \
+			${PREFIX}/share/rar/rarfiles.lst && \
+		${INSTALL_DATA} DEFAULT.SFX \
+			${PREFIX}/share/rar/default.sfx && \
+		${INSTALL_DATA} Dos.SFX \
+			${PREFIX}/share/rar/dos.sfx
 
 .include <bsd.port.mk>
