@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	screem
-PORTVERSION=	0.6.2
+PORTVERSION=	0.8.2
 CATEGORIES=	www gnome
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -14,16 +14,26 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	coop9211@uidaho.edu
 COMMENT=	Nice GNOME/GTK-based HTML editor
 
+# www/neon needs to be updated to 0.24.3
+#LIB_DEPENDS=	neon.24:${PORTSDIR}/www/neon
+
 USE_GMAKE=	yes
 USE_X_PREFIX=	yes
 USE_XPM=	yes
-USE_GNOME=	gnomeprefix gnomehack libgnomeui libgnomeprintui libgtkhtml
+USE_GNOME=	gnomeprefix gnomehack libgnomeui libgnomeprintui libgtkhtml \
+		gtksourceview
 USE_LIBTOOL=	yes
+INSTALLS_SHLIB=	yes
+
+.ifndef WITHOUT_OPENSSL
 USE_OPENSSL=	yes
+CONFIGURE_ARGS+=	--with-ssl
+.endif
+
 USE_PERL5=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LIBS="-L${LOCALBASE}/lib"
-CONFIGURE_ARGS=	--with-ssl
+#CONFIGURE_ARGS+=	--with-neon="${LOCALBASE}/bin"
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|g ; \

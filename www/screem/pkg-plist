@@ -1,4 +1,6 @@
 bin/screem
+etc/gconf/gconf.xml.defaults/%gconf.xml
+etc/gconf/gconf.xml.defaults/apps/%gconf.xml
 etc/gconf/gconf.xml.defaults/apps/screem/%gconf.xml
 etc/gconf/gconf.xml.defaults/apps/screem/editor/%gconf.xml
 etc/gconf/gconf.xml.defaults/apps/screem/editor/print/%gconf.xml
@@ -6,6 +8,8 @@ etc/gconf/gconf.xml.defaults/apps/screem/general/%gconf.xml
 etc/gconf/gconf.xml.defaults/apps/screem/hint/%gconf.xml
 etc/gconf/gconf.xml.defaults/apps/screem/linkview/%gconf.xml
 etc/gconf/gconf.xml.defaults/apps/screem/ui/%gconf.xml
+etc/gconf/gconf.xml.defaults/schemas/%gconf.xml
+etc/gconf/gconf.xml.defaults/schemas/apps/%gconf.xml
 etc/gconf/gconf.xml.defaults/schemas/apps/screem/%gconf.xml
 etc/gconf/gconf.xml.defaults/schemas/apps/screem/editor/%gconf.xml
 etc/gconf/gconf.xml.defaults/schemas/apps/screem/editor/print/%gconf.xml
@@ -27,6 +31,7 @@ share/gnome/applications/screem.desktop
 share/gnome/help/screem/C/figures/dummy.png
 share/gnome/help/screem/C/legal.xml
 share/gnome/help/screem/C/screem.xml
+share/gnome/mime-info/screem.keys
 share/gnome/mime-info/screem.mime
 share/gnome/omf/screem/screem-C.omf
 share/gnome/pixmaps/screem.png
@@ -35,15 +40,17 @@ share/gnome/screem/dtd/HTMLlat1.ent
 share/gnome/screem/dtd/HTMLspecial.ent
 share/gnome/screem/dtd/HTMLsymbols.ent
 share/gnome/screem/dtd/catalog
-share/gnome/screem/dtd/frameset.dtd
-share/gnome/screem/dtd/loose.dtd
-share/gnome/screem/dtd/strict.dtd
+share/gnome/screem/dtd/http:%2F%2Fwww.w3.org%2FTR%2Fhtml4%2Fframeset.dtd
+share/gnome/screem/dtd/http:%2F%2Fwww.w3.org%2FTR%2Fhtml4%2Floose.dtd
+share/gnome/screem/dtd/http:%2F%2Fwww.w3.org%2FTR%2Fhtml4%2Fstrict.dtd
+share/gnome/screem/dtd/http:%2F%2Fwww.w3.org%2FTR%2Fxhtml1%2FDTD%2Fxhtml1-frameset.dtd
+share/gnome/screem/dtd/http:%2F%2Fwww.w3.org%2FTR%2Fxhtml1%2FDTD%2Fxhtml1-strict.dtd
+share/gnome/screem/dtd/http:%2F%2Fwww.w3.org%2FTR%2Fxhtml1%2FDTD%2Fxhtml1-transitional.dtd
+share/gnome/screem/dtd/screem-tagtree.dtd
 share/gnome/screem/dtd/xhtml-lat1.ent
 share/gnome/screem/dtd/xhtml-special.ent
 share/gnome/screem/dtd/xhtml-symbol.ent
-share/gnome/screem/dtd/xhtml1-frameset.dtd
-share/gnome/screem/dtd/xhtml1-strict.dtd
-share/gnome/screem/dtd/xhtml1-transitional.dtd
+share/gnome/screem/features.xml
 share/gnome/screem/glade/css.glade
 share/gnome/screem/glade/entityWizard.glade
 share/gnome/screem/glade/imageWizard.glade
@@ -56,40 +63,43 @@ share/gnome/screem/hints/screem_hints.txt
 share/gnome/screem/hints/screem_hints_fr.txt
 share/gnome/screem/hints/screem_hints_pt_BR.txt
 share/gnome/screem/hints/screem_hints_sv.txt
-share/gnome/screem/php/php3_functions
-share/gnome/screem/php/php4_functions
 share/gnome/screem/resources/Images/made.jpg
+share/gnome/screem/resources/Javascript/linktitle.js
+share/gnome/screem/resources/Javascript/preload.js
+share/gnome/screem/resources/Javascript/rollover.js
 share/gnome/screem/resources/Templates/template.html
-share/gnome/screem/screem.tagtree
-share/gnome/screem/syntax/asp.screem.syntax
-share/gnome/screem/syntax/html.screem.syntax
-share/gnome/screem/syntax/javascript.screem.syntax
-share/gnome/screem/syntax/perl.screem.syntax
-share/gnome/screem/syntax/php.screem.syntax
-share/gnome/screem/syntax/xml.screem.syntax
+share/gnome/screem/tagtrees/apache.tagtree
+share/gnome/screem/tagtrees/css.tagtree
+share/gnome/screem/tagtrees/funcref_php.tagtree
+share/gnome/screem/tagtrees/html.tagtree
+share/gnome/screem/tagtrees/javascript.tagtree
+share/gnome/screem/ui/layout
 share/gnome/screem/ui/screem-css-window-ui.xml
-share/gnome/screem/ui/screem-window-ui.xml
-share/locale/az/LC_MESSAGES/screem.mo
-share/locale/cs/LC_MESSAGES/screem.mo
-share/locale/da/LC_MESSAGES/screem.mo
-share/locale/de/LC_MESSAGES/screem.mo
-share/locale/el/LC_MESSAGES/screem.mo
-share/locale/es/LC_MESSAGES/screem.mo
-share/locale/fr/LC_MESSAGES/screem.mo
-share/locale/it/LC_MESSAGES/screem.mo
-share/locale/ja/LC_MESSAGES/screem.mo
-share/locale/ko/LC_MESSAGES/screem.mo
-share/locale/nb/LC_MESSAGES/screem.mo
-share/locale/no/LC_MESSAGES/screem.mo
-share/locale/pl/LC_MESSAGES/screem.mo
-share/locale/pt_BR/LC_MESSAGES/screem.mo
-share/locale/ru/LC_MESSAGES/screem.mo
-share/locale/sk/LC_MESSAGES/screem.mo
-share/locale/sv/LC_MESSAGES/screem.mo
-share/locale/tr/LC_MESSAGES/screem.mo
-share/locale/uk/LC_MESSAGES/screem.mo
-share/locale/vi/LC_MESSAGES/screem.mo
-share/locale/zh_CN/LC_MESSAGES/screem.mo
+share/gnome/screem/ui/screem-tag-tree-bar.xml
+share/gnome/screem/ui/screem-window-menu.xml
+share/gnome/screem/ui/screem-window-popups.xml
+share/gnome/screem/ui/screem-window-toolbar.xml
+share/locale/az.mo/LC_MESSAGES/screem.mo
+share/locale/cs.mo/LC_MESSAGES/screem.mo
+share/locale/da.mo/LC_MESSAGES/screem.mo
+share/locale/de.mo/LC_MESSAGES/screem.mo
+share/locale/el.mo/LC_MESSAGES/screem.mo
+share/locale/es.mo/LC_MESSAGES/screem.mo
+share/locale/fr.mo/LC_MESSAGES/screem.mo
+share/locale/it.mo/LC_MESSAGES/screem.mo
+share/locale/ja.mo/LC_MESSAGES/screem.mo
+share/locale/ko.mo/LC_MESSAGES/screem.mo
+share/locale/nb.mo/LC_MESSAGES/screem.mo
+share/locale/no.mo/LC_MESSAGES/screem.mo
+share/locale/pl.mo/LC_MESSAGES/screem.mo
+share/locale/pt_BR.mo/LC_MESSAGES/screem.mo
+share/locale/ru.mo/LC_MESSAGES/screem.mo
+share/locale/sk.mo/LC_MESSAGES/screem.mo
+share/locale/sv.mo/LC_MESSAGES/screem.mo
+share/locale/tr.mo/LC_MESSAGES/screem.mo
+share/locale/uk.mo/LC_MESSAGES/screem.mo
+share/locale/vi.mo/LC_MESSAGES/screem.mo
+share/locale/zh_CN.mo/LC_MESSAGES/screem.mo
 share/screem/pixmaps/add-link-16.png
 share/screem/pixmaps/add-link-24.png
 share/screem/pixmaps/add_column-16.png
@@ -144,8 +154,51 @@ share/screem/pixmaps/todo.png
 share/screem/pixmaps/tr.xpm
 @dirrm share/screem/pixmaps
 @dirrm share/screem
+@dirrm share/locale/zh_CN.mo/LC_MESSAGES
+@dirrm share/locale/zh_CN.mo
+@dirrm share/locale/vi.mo/LC_MESSAGES
+@dirrm share/locale/vi.mo
+@dirrm share/locale/uk.mo/LC_MESSAGES
+@dirrm share/locale/uk.mo
+@dirrm share/locale/tr.mo/LC_MESSAGES
+@dirrm share/locale/tr.mo
+@dirrm share/locale/sv.mo/LC_MESSAGES
+@dirrm share/locale/sv.mo
+@dirrm share/locale/sk.mo/LC_MESSAGES
+@dirrm share/locale/sk.mo
+@dirrm share/locale/ru.mo/LC_MESSAGES
+@dirrm share/locale/ru.mo
+@dirrm share/locale/pt_BR.mo/LC_MESSAGES
+@dirrm share/locale/pt_BR.mo
+@dirrm share/locale/pl.mo/LC_MESSAGES
+@dirrm share/locale/pl.mo
+@dirrm share/locale/no.mo/LC_MESSAGES
+@dirrm share/locale/no.mo
+@dirrm share/locale/nb.mo/LC_MESSAGES
+@dirrm share/locale/nb.mo
+@dirrm share/locale/ko.mo/LC_MESSAGES
+@dirrm share/locale/ko.mo
+@dirrm share/locale/ja.mo/LC_MESSAGES
+@dirrm share/locale/ja.mo
+@dirrm share/locale/it.mo/LC_MESSAGES
+@dirrm share/locale/it.mo
+@dirrm share/locale/fr.mo/LC_MESSAGES
+@dirrm share/locale/fr.mo
+@dirrm share/locale/es.mo/LC_MESSAGES
+@dirrm share/locale/es.mo
+@dirrm share/locale/el.mo/LC_MESSAGES
+@dirrm share/locale/el.mo
+@dirrm share/locale/de.mo/LC_MESSAGES
+@dirrm share/locale/de.mo
+@dirrm share/locale/da.mo/LC_MESSAGES
+@dirrm share/locale/da.mo
+@dirrm share/locale/cs.mo/LC_MESSAGES
+@dirrm share/locale/cs.mo
+@dirrm share/locale/az.mo/LC_MESSAGES
+@dirrm share/locale/az.mo
+@dirrm share/locale
 @dirrm share/gnome/screem/ui
-@dirrm share/gnome/screem/syntax
+@dirrm share/gnome/screem/tagtrees
 @dirrm share/gnome/screem/resources/Templates
 @dirrm share/gnome/screem/resources/PHP3
 @dirrm share/gnome/screem/resources/Javascript
@@ -153,25 +206,34 @@ share/screem/pixmaps/tr.xpm
 @dirrm share/gnome/screem/resources/HTML
 @dirrm share/gnome/screem/resources/Applets
 @dirrm share/gnome/screem/resources
-@dirrm share/gnome/screem/php
 @dirrm share/gnome/screem/hints
 @dirrm share/gnome/screem/glade
 @dirrm share/gnome/screem/dtd
 @dirrm share/gnome/screem
-@dirrm share/gnome/omf/screem
 @dirrm share/gnome/pixmaps/screem/splash
 @dirrm share/gnome/pixmaps/screem
+@dirrm share/gnome/pixmaps
+@dirrm share/gnome/omf/screem
+@dirrm share/gnome/omf
+@dirrm share/gnome/mime-info
 @dirrm share/gnome/help/screem/C/figures
 @dirrm share/gnome/help/screem/C
 @dirrm share/gnome/help/screem
+@dirrm share/gnome/help
+@dirrm share/gnome/applications
+@dirrm share/gnome/application-registry
+@dirrm share/gnome
 @dirrm lib/screem/plugins
 @dirrm lib/screem
+@dirrm etc/gconf/schemas
 @dirrm etc/gconf/gconf.xml.defaults/schemas/apps/screem/ui
 @dirrm etc/gconf/gconf.xml.defaults/schemas/apps/screem/hint
 @dirrm etc/gconf/gconf.xml.defaults/schemas/apps/screem/general
 @dirrm etc/gconf/gconf.xml.defaults/schemas/apps/screem/editor/print
 @dirrm etc/gconf/gconf.xml.defaults/schemas/apps/screem/editor
 @dirrm etc/gconf/gconf.xml.defaults/schemas/apps/screem
+@dirrm etc/gconf/gconf.xml.defaults/schemas/apps
+@dirrm etc/gconf/gconf.xml.defaults/schemas
 @dirrm etc/gconf/gconf.xml.defaults/apps/screem/ui
 @dirrm etc/gconf/gconf.xml.defaults/apps/screem/linkview
 @dirrm etc/gconf/gconf.xml.defaults/apps/screem/hint
@@ -179,3 +241,8 @@ share/screem/pixmaps/tr.xpm
 @dirrm etc/gconf/gconf.xml.defaults/apps/screem/editor/print
 @dirrm etc/gconf/gconf.xml.defaults/apps/screem/editor
 @dirrm etc/gconf/gconf.xml.defaults/apps/screem
+@dirrm etc/gconf/gconf.xml.defaults/apps
+@dirrm etc/gconf/gconf.xml.defaults
+@dirrm etc/gconf
+@exec scrollkeeper-install -q %D/share/gnome/omf/screem/screem-C.omf 2>/dev/null || /usr/bin/true
+@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/screem/screem-C.omf 2>/dev/null || /usr/bin/true
