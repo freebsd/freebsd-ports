@@ -2,7 +2,6 @@
 #
 
     SUBDIR += 44bsd-more
-    SUBDIR += GeoIP
     SUBDIR += Howto
     SUBDIR += achievo
     SUBDIR += aclgen
@@ -222,7 +221,6 @@
     SUBDIR += p5-Finance-Currency-Convert
     SUBDIR += p5-Finance-Quote
     SUBDIR += p5-Finance-QuoteHist
-    SUBDIR += p5-Geo-IP
     SUBDIR += p5-Geo-Weather
     SUBDIR += p5-I18N-Charset
     SUBDIR += p5-I18N-LangTags
