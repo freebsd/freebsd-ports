@@ -1,0 +1,5 @@
+This is SOAP4R, a Ruby library which implements SOAP 1.1.  Currently
+SOAP4R offers only SOAP-RPC specific features.
+
+Author:	NaHi (NAKAMURA, Hiroshi) <nahi@keynauts.com>
+WWW:	http://www.jin.gr.jp/~nahi/RWiki/?cmd=view&name=SOAP4R

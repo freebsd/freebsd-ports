@@ -277,6 +277,7 @@
     SUBDIR += ruby-ldap
     SUBDIR += ruby-pcap
     SUBDIR += ruby-snmp
+    SUBDIR += ruby-soap
     SUBDIR += ruby-uri
     SUBDIR += ruby-xmlrpc
     SUBDIR += rwhois
