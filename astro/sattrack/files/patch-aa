@@ -1,11 +1,10 @@
-diff -c -r -P ../run/getsts ../../SatTrack-FreeBSD/run/getsts
-*** ../run/getsts	Wed Mar 29 00:10:16 1995
---- ../../SatTrack-FreeBSD/run/getsts	Sat Apr  6 22:09:38 1996
+*** ../run/getsts.orig	Tue Jan 14 13:21:06 1997
+--- ../run/getsts	Sun Mar  2 00:52:30 1997
 ***************
-*** 28,46 ****
-  set stsnum=71
-  set prelaunch=1
-  set mir=1
+*** 24,42 ****
+  #
+  set stsnum=81
+  set prelaunch=0
 ! set ftphost=192.149.89.61
 ! set satdir=/home/manfred
 ! set satuser=manfred
@@ -22,27 +21,31 @@ diff -c -r -P ../run/getsts ../../SatTrack-FreeBSD/run/getsts
   endif
   #
   cd $satdirusr/SatTrack/tle
---- 28,44 ----
-  set stsnum=71
-  set prelaunch=1
-  set mir=1
+--- 24,45 ----
+  #
+  set stsnum=81
+  set prelaunch=0
 ! set ftphost=spacelink.msfc.nasa.gov
 ! set satdir=/usr/local/lib
 ! set satuser=sattrack
   #
   #
   #
-! set userid=$USER@`hostname`
+! set hostdot=`hostname | grep '\.'`
+! if ("$hostdot" == "") then
+!     set userid=$USER@`hostname`.`domainname`
+! else
+!     set userid=$USER@`hostname`
+! endif
   #
 ! set satdirusr=$satdir
-! if (! -d $satdiruser/SatTrack/tle) then 
+! if (! -d $satdirusr/SatTrack/tle) then
 !     mkdir -p $satdirusr/SatTrack/tle
   endif
   #
   cd $satdirusr/SatTrack/tle
-diff -c -r -P ../run/gettle ../../SatTrack-FreeBSD/run/gettle
-*** ../run/gettle	Wed Mar 15 04:26:06 1995
---- ../../SatTrack-FreeBSD/run/gettle	Sat Apr  6 21:20:43 1996
+*** ../run/gettle.orig	Tue Mar 14 22:26:06 1995
+--- ../run/gettle	Sun Mar  2 00:52:31 1997
 ***************
 *** 24,41 ****
   #
@@ -63,7 +66,7 @@ diff -c -r -P ../run/gettle ../../SatTrack-FreeBSD/run/gettle
       mkdir -p $satdirusr/SatTrack/tle
   endif
   #
---- 24,39 ----
+--- 24,44 ----
   #
   #
   #
@@ -73,18 +76,22 @@ diff -c -r -P ../run/gettle ../../SatTrack-FreeBSD/run/gettle
   #
   #
   #
-! set userid=$USER@`hostname`
+! set hostdot=`hostname | grep '\.'`
+! if ("$hostdot" == "") then
+!     set userid=$USER@`hostname`.`domainname`
+! else
+!     set userid=$USER@`hostname`
+! endif
   #
 ! set satdirusr=$satdir
-! if (! -d $satdiruser/SatTrack/tle) then 
+! if (! -d $satdirusr/SatTrack/tle) then
       mkdir -p $satdirusr/SatTrack/tle
   endif
   #
-diff -c -r -P ../src/Makefile ../../SatTrack-FreeBSD/src/Makefile
-*** ../src/Makefile	Fri Aug 25 17:39:13 1995
---- ../../SatTrack-FreeBSD/src/Makefile	Sat Apr  6 21:58:28 1996
+*** ../src/Makefile.orig	Mon Jan 13 17:51:01 1997
+--- ../src/Makefile	Sun Mar  2 00:52:30 1997
 ***************
-*** 92,101 ****
+*** 113,122 ****
   
   # Sun-4         (SPARCstation 5 or 10 with Solaris 2.x, using 'gcc' only)
   #
@@ -95,7 +102,7 @@ diff -c -r -P ../src/Makefile ../../SatTrack-FreeBSD/src/Makefile
   
   # Apollo 700    (HP Apollo 9000 Series 700 with HPUX)
   #
---- 92,101 ----
+--- 113,122 ----
   
   # Sun-4         (SPARCstation 5 or 10 with Solaris 2.x, using 'gcc' only)
   #
@@ -107,7 +114,7 @@ diff -c -r -P ../src/Makefile ../../SatTrack-FreeBSD/src/Makefile
   # Apollo 700    (HP Apollo 9000 Series 700 with HPUX)
   #
 ***************
-*** 148,157 ****
+*** 183,192 ****
   
   # i386          (i386 with FreeBSD)
   #
@@ -118,7 +125,7 @@ diff -c -r -P ../src/Makefile ../../SatTrack-FreeBSD/src/Makefile
   
   #
   #-------------------------------------------------------------------------------
---- 148,157 ----
+--- 183,192 ----
   
   # i386          (i386 with FreeBSD)
   #
@@ -130,7 +137,7 @@ diff -c -r -P ../src/Makefile ../../SatTrack-FreeBSD/src/Makefile
   #
   #-------------------------------------------------------------------------------
 ***************
-*** 193,199 ****
+*** 228,234 ****
   #CC_CUSR	= -DREVERSEVIDEO -DXWINDOW
   #CC_CUSR	= -DHOMEDIR -DREVERSEVIDEO -DXWINDOW
   
@@ -138,16 +145,16 @@ diff -c -r -P ../src/Makefile ../../SatTrack-FreeBSD/src/Makefile
   
   #
   #-------------------------------------------------------------------------------
---- 193,199 ----
+--- 228,234 ----
   #CC_CUSR	= -DREVERSEVIDEO -DXWINDOW
   #CC_CUSR	= -DHOMEDIR -DREVERSEVIDEO -DXWINDOW
   
-! CC_CUSR		= -DREVERSEVIDEO -DSUNTRANSITS -DXWINDOW
+! CC_CUSR		= -DREVERSEVIDEO -DSUNTRANSITS -DXWINDOW 
   
   #
   #-------------------------------------------------------------------------------
 ***************
-*** 210,216 ****
+*** 245,251 ****
   # but should be accessible by other users as well.
   #
   
@@ -155,7 +162,7 @@ diff -c -r -P ../src/Makefile ../../SatTrack-FreeBSD/src/Makefile
   
   #
   #-------------------------------------------------------------------------------
---- 210,217 ----
+--- 245,252 ----
   # but should be accessible by other users as well.
   #
   
@@ -165,50 +172,64 @@ diff -c -r -P ../src/Makefile ../../SatTrack-FreeBSD/src/Makefile
   #
   #-------------------------------------------------------------------------------
 ***************
-*** 221,226 ****
---- 222,231 ----
-  SRC		= $(HOME)/SatTrack/src
-  OBJ    		= $(HOME)/SatTrack/obj
-  RUN     	= $(HOME)/SatTrack/run
-+ DATA    	= $(HOME)/SatTrack/data
-+ PRED    	= $(HOME)/SatTrack/pred
-+ TLE     	= $(HOME)/SatTrack/tle
-+ DOC     	= $(HOME)/SatTrack/doc
+*** 253,261 ****
+  # SATTRACK SUB-DIRECTORIES
+  #
+  
+! SRC		= $(HOME)/SatTrack/src
+! OBJ    		= $(HOME)/SatTrack/obj
+! RUN     	= $(HOME)/SatTrack/run
+  
+  INC		= $(SRC)/include
+  
+--- 254,266 ----
+  # SATTRACK SUB-DIRECTORIES
+  #
+  
+! SRC		= $(HOME)/SatTrack-3.1.6/src
+! OBJ    		= $(HOME)/SatTrack-3.1.6/obj
+! RUN     	= $(HOME)/SatTrack-3.1.6/run
+! DATA    	= $(HOME)/SatTrack-3.1.6/data
+! PRED    	= $(HOME)/SatTrack-3.1.6/pred
+! TLE     	= $(HOME)/SatTrack-3.1.6/tle
+! DOC     	= $(HOME)/SatTrack-3.1.6/doc
   
   INC		= $(SRC)/include
   
 ***************
-*** 283,294 ****
+*** 318,330 ****
   #X11		= /usr/include
   #X11		= /usr/local/include
   #X11		= /usr/include/X11
 ! X11		= /usr/openwin/include
   
 ! LX11		= -lX11 -lXt                                           # X11R5
+  #LX11		= -lXt -lX11 -lsocket                                  # SCOV5
   #LX11		= -L/usr/openwin/lib -lX11 -lXt
   
   #LX11		= -lX11 -lXt -lICE -lSM                                # X11R6
   #LX11		= -L/usr/openwin/lib -lX11 -lXt -lICE -lSM
   
   #CC_CXINC	=
---- 288,301 ----
+--- 323,337 ----
   #X11		= /usr/include
   #X11		= /usr/local/include
   #X11		= /usr/include/X11
 ! #X11		= /usr/openwin/include
-! X11		= /usr/X11R6/include
+! X11		= $(X11BASE)/include
   
 ! #LX11		= -lX11 -lXt                                           # X11R5
+  #LX11		= -lXt -lX11 -lsocket                                  # SCOV5
   #LX11		= -L/usr/openwin/lib -lX11 -lXt
   
   #LX11		= -lX11 -lXt -lICE -lSM                                # X11R6
-+ LX11		= -L/usr/X11R6/lib -lX11 -lXt -lICE -lSM
++ LX11		= -L$(X11BASE)/lib -lX11 -lXt -lICE -lSM
   #LX11		= -L/usr/openwin/lib -lX11 -lXt -lICE -lSM
   
   #CC_CXINC	=
 ***************
-*** 319,324 ****
---- 326,355 ----
+*** 355,360 ****
+--- 362,391 ----
   	cd $(RUN) ; \
   	/bin/rm -f fixchecksum makeamsat makepassesx maketles maketlex \
   	satfilter sattrack xdemo
@@ -239,11 +260,10 @@ diff -c -r -P ../src/Makefile ../../SatTrack-FreeBSD/src/Makefile
   
   #
   #-------------------------------------------------------------------------------
-diff -c -r -P ../src/include/sattrack.h ../../SatTrack-FreeBSD/src/include/sattrack.h
-*** ../src/include/sattrack.h	Thu Feb 15 17:11:49 1996
---- ../../SatTrack-FreeBSD/src/include/sattrack.h	Sat Apr  6 21:45:26 1996
+*** ../src/include/sattrack.h.orig	Tue Jan 14 09:38:38 1997
+--- ../src/include/sattrack.h	Sun Mar  2 00:52:30 1997
 ***************
-*** 55,67 ****
+*** 74,86 ****
   /*                                                                            */
   /******************************************************************************/
   
@@ -257,7 +277,7 @@ diff -c -r -P ../src/include/sattrack.h ../../SatTrack-FreeBSD/src/include/sattr
   #define TLE                   "SatTrack/tle"
   #define SRC                   "SatTrack/src"
   #define INC                   "SatTrack/src/include"
---- 55,69 ----
+--- 74,88 ----
   /*                                                                            */
   /******************************************************************************/
   
@@ -273,4 +293,3 @@ diff -c -r -P ../src/include/sattrack.h ../../SatTrack-FreeBSD/src/include/sattr
   #define TLE                   "SatTrack/tle"
   #define SRC                   "SatTrack/src"
   #define INC                   "SatTrack/src/include"
-Only in ../src: patch
