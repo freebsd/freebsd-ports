@@ -199,16 +199,18 @@ MASTER_SITE_RUBY+= \
 
 MASTER_SITE_SOURCEWARE+= \
 	ftp://ftp.freesoftware.com/pub/sourceware/%SUBDIR%/ \
+	http://mirrors.rcn.net/pub/sourceware/%SUBDIR%/ \
 	ftp://ftp.funet.fi/pub/mirrors/sourceware.cygnus.com/pub/%SUBDIR%/ \
-	ftp://ftp-stud.fht-esslingen.de/pub/Mirrors/sources.redhat.com/%SUBDIR%/ \
 	ftp://ftp.pvv.ntnu.no/pub/cygnus/sourceware.cygnus.com/%SUBDIR%/ \
-	ftp://ftp.chg.ru/pub/sourceware/%SUBDIR%/ \
+	ftp://ftp1.sinica.edu.tw/pub3/CYGNUS/%SUBDIR%/ \
+	ftp://ftp-stud.fht-esslingen.de/pub/Mirrors/sources.redhat.com/%SUBDIR%/ \
 	ftp://gd.tuwien.ac.at/gnu/sourceware/%SUBDIR%/ \
 	ftp://ftp.unina.it/pub/Unix/cygnus/%SUBDIR%/ \
-	ftp://ftp1.sinica.edu.tw/pub3/CYGNUS/%SUBDIR%/ \
 	ftp://ftp.sdn.co.za/mirrors/sourceware.cygnus.com/pub/%SUBDIR%/ \
-	ftp://sunsite.org.uk/Mirrors/sourceware.cygnus.com/pub/%SUBDIR%/ \
-	ftp://unix.hensa.ac.uk/mirrors/sourceware.cygnus.com/pub/%SUBDIR%/
+	http://sunsite.org.uk/Mirrors/sourceware.cygnus.com/pub/%SUBDIR%/ \
+	ftp://unix.hensa.ac.uk/mirrors/sourceware.cygnus.com/pub/%SUBDIR%/ \
+	ftp://mirrors.rcn.net/pub/sourceware/%SUBDIR%/ \
+	ftp://sunsite.org.uk/Mirrors/sourceware.cygnus.com/pub/%SUBDIR%/
 
 MASTER_SITE_SOURCEFORGE+= \
 	ftp://ftp2.sourceforge.net/pub/sourceforge/%SUBDIR%/ \
