@@ -1,0 +1,161 @@
+bin/exif.py
+bin/fsview
+bin/jpegorient
+bin/orient.py
+lib/kde3/kcm_kuick.la
+lib/kde3/kcm_kuick.so
+lib/kde3/konq_smbmounterplugin.la
+lib/kde3/konq_smbmounterplugin.so
+lib/kde3/konqsidebar_mediaplayer.la
+lib/kde3/konqsidebar_mediaplayer.so
+lib/kde3/libautorefresh.la
+lib/kde3/libautorefresh.so
+lib/kde3/libbabelfishplugin.la
+lib/kde3/libbabelfishplugin.so
+lib/kde3/libcrashesplugin.la
+lib/kde3/libcrashesplugin.so
+lib/kde3/libdirfilterplugin.la
+lib/kde3/libdirfilterplugin.so
+lib/kde3/libdomtreeviewerplugin.la
+lib/kde3/libdomtreeviewerplugin.so
+lib/kde3/libfsviewpart.la
+lib/kde3/libfsviewpart.so
+lib/kde3/libkhtmlsettingsplugin.la
+lib/kde3/libkhtmlsettingsplugin.so
+lib/kde3/libkimgallery.la
+lib/kde3/libkimgallery.so
+lib/kde3/libkuickplugin.la
+lib/kde3/libkuickplugin.so
+lib/kde3/libminitoolsplugin.la
+lib/kde3/libminitoolsplugin.so
+lib/kde3/libuachangerplugin.la
+lib/kde3/libuachangerplugin.so
+lib/kde3/libvalidatorsplugin.la
+lib/kde3/libvalidatorsplugin.so
+lib/kde3/libwebarchiverplugin.la
+lib/kde3/libwebarchiverplugin.so
+lib/kde3/webarchivethumbnail.la
+lib/kde3/webarchivethumbnail.so
+share/applications/kdeaddons-konq-plugins-3.2.1
+share/applnk/.hidden/babelfishplugin.desktop
+share/applnk/.hidden/crashesplugin.desktop
+share/applnk/.hidden/dirfilterplugin.desktop
+share/applnk/.hidden/domtreeviewerplugin.desktop
+share/applnk/.hidden/kcmkuick.desktop
+share/applnk/.hidden/khtmlsettingsplugin.desktop
+share/applnk/.hidden/kimgalleryplugin.desktop
+share/applnk/.hidden/kuickplugin.desktop
+share/applnk/.hidden/mediaplayerplugin.desktop
+share/applnk/.hidden/minitoolsplugin.desktop
+share/applnk/.hidden/smbmounterplugin.desktop
+share/applnk/.hidden/uachangerplugin.desktop
+share/applnk/.hidden/validatorsplugin.desktop
+share/applnk/.hidden/webarchiverplugin.desktop
+share/apps/fsview/fsview_part.rc
+share/apps/khtml/kpartplugins/autorefresh.rc
+share/apps/khtml/kpartplugins/crashesplugin.rc
+share/apps/khtml/kpartplugins/khtmlsettingsplugin.rc
+share/apps/khtml/kpartplugins/minitoolsplugin.rc
+share/apps/khtml/kpartplugins/plugin_babelfish.rc
+share/apps/khtml/kpartplugins/plugin_domtreeviewer.rc
+share/apps/khtml/kpartplugins/plugin_validators.rc
+share/apps/khtml/kpartplugins/plugin_webarchiver.rc
+share/apps/khtml/kpartplugins/uachangerplugin.rc
+share/apps/konqiconview/kpartplugins/dirfilterplugin.rc
+share/apps/konqiconview/kpartplugins/kimgalleryplugin.rc
+share/apps/konqiconview/kpartplugins/smbmounterplugin.rc
+share/apps/konqlistview/kpartplugins/dirfilterplugin.rc
+share/apps/konqlistview/kpartplugins/kimgalleryplugin.rc
+share/apps/konqlistview/kpartplugins/smbmounterplugin.rc
+share/apps/konqsidebartng/add/mplayer_add.desktop
+share/apps/konqsidebartng/entries/mplayer.desktop
+share/apps/konqsidebartng/kicker_entries/mplayer.desktop
+share/apps/konqueror/servicemenus/imageconverter.desktop
+share/apps/konqueror/servicemenus/jpegorient.desktop
+share/doc/HTML/en/konq-plugins/babel/common
+share/doc/HTML/en/konq-plugins/babel/cr16-action-babelfish.png
+share/doc/HTML/en/konq-plugins/babel/index.cache.bz2
+share/doc/HTML/en/konq-plugins/babel/index.docbook
+share/doc/HTML/en/konq-plugins/common
+share/doc/HTML/en/konq-plugins/crashes/common
+share/doc/HTML/en/konq-plugins/crashes/index.cache.bz2
+share/doc/HTML/en/konq-plugins/crashes/index.docbook
+share/doc/HTML/en/konq-plugins/dirfilter/common
+share/doc/HTML/en/konq-plugins/dirfilter/index.cache.bz2
+share/doc/HTML/en/konq-plugins/dirfilter/index.docbook
+share/doc/HTML/en/konq-plugins/domtreeviewer/common
+share/doc/HTML/en/konq-plugins/domtreeviewer/index.cache.bz2
+share/doc/HTML/en/konq-plugins/domtreeviewer/index.docbook
+share/doc/HTML/en/konq-plugins/fsview/common
+share/doc/HTML/en/konq-plugins/fsview/index.cache.bz2
+share/doc/HTML/en/konq-plugins/fsview/index.docbook
+share/doc/HTML/en/konq-plugins/imgallery/common
+share/doc/HTML/en/konq-plugins/imgallery/index.cache.bz2
+share/doc/HTML/en/konq-plugins/imgallery/index.docbook
+share/doc/HTML/en/konq-plugins/index.cache.bz2
+share/doc/HTML/en/konq-plugins/index.docbook
+share/doc/HTML/en/konq-plugins/khtmlsettings/common
+share/doc/HTML/en/konq-plugins/khtmlsettings/index.cache.bz2
+share/doc/HTML/en/konq-plugins/khtmlsettings/index.docbook
+share/doc/HTML/en/konq-plugins/kuick/common
+share/doc/HTML/en/konq-plugins/kuick/index.cache.bz2
+share/doc/HTML/en/konq-plugins/kuick/index.docbook
+share/doc/HTML/en/konq-plugins/mediaplayer/common
+share/doc/HTML/en/konq-plugins/mediaplayer/index.cache.bz2
+share/doc/HTML/en/konq-plugins/mediaplayer/index.docbook
+share/doc/HTML/en/konq-plugins/smbmounter/common
+share/doc/HTML/en/konq-plugins/smbmounter/index.cache.bz2
+share/doc/HTML/en/konq-plugins/smbmounter/index.docbook
+share/doc/HTML/en/konq-plugins/uachanger/common
+share/doc/HTML/en/konq-plugins/uachanger/index.cache.bz2
+share/doc/HTML/en/konq-plugins/uachanger/index.docbook
+share/doc/HTML/en/konq-plugins/validators/common
+share/doc/HTML/en/konq-plugins/validators/index.cache.bz2
+share/doc/HTML/en/konq-plugins/validators/index.docbook
+share/doc/HTML/en/konq-plugins/webarchiver/common
+share/doc/HTML/en/konq-plugins/webarchiver/index.cache.bz2
+share/doc/HTML/en/konq-plugins/webarchiver/index.docbook
+share/icons/crystalsvg/16x16/actions/babelfish.png
+share/icons/crystalsvg/16x16/actions/cssvalidator.png
+share/icons/crystalsvg/16x16/actions/domtreeviewer.png
+share/icons/crystalsvg/16x16/actions/htmlvalidator.png
+share/icons/crystalsvg/16x16/actions/imagegallery.png
+share/icons/crystalsvg/16x16/actions/validators.png
+share/icons/crystalsvg/16x16/actions/webarchiver.png
+share/icons/crystalsvg/16x16/apps/konqsidebar_mediaplayer.png
+share/icons/crystalsvg/22x22/actions/babelfish.png
+share/icons/crystalsvg/22x22/actions/cssvalidator.png
+share/icons/crystalsvg/22x22/actions/domtreeviewer.png
+share/icons/crystalsvg/22x22/actions/htmlvalidator.png
+share/icons/crystalsvg/22x22/actions/imagegallery.png
+share/icons/crystalsvg/22x22/actions/validators.png
+share/icons/crystalsvg/22x22/actions/webarchiver.png
+share/icons/crystalsvg/22x22/apps/konqsidebar_mediaplayer.png
+share/icons/crystalsvg/32x32/apps/konqsidebar_mediaplayer.png
+share/icons/crystalsvg/48x48/apps/konqsidebar_mediaplayer.png
+share/icons/hicolor/22x22/apps/fsview.png
+share/icons/hicolor/32x32/apps/fsview.png
+share/icons/locolor/16x16/apps/autorefresh.png
+share/icons/locolor/32x32/apps/konqsidebar_mediaplayer.png
+share/mimelnk/application/x-webarchive.desktop
+share/services/fsview_part.desktop
+share/services/kuick_plugin.desktop
+share/services/webarchivethumbnail.desktop
+@dirrm share/icons/hicolor/22x22/apps
+@dirrm share/icons/hicolor/22x22
+@dirrm share/doc/HTML/en/konq-plugins/webarchiver
+@dirrm share/doc/HTML/en/konq-plugins/validators
+@dirrm share/doc/HTML/en/konq-plugins/uachanger
+@dirrm share/doc/HTML/en/konq-plugins/smbmounter
+@dirrm share/doc/HTML/en/konq-plugins/mediaplayer
+@dirrm share/doc/HTML/en/konq-plugins/kuick
+@dirrm share/doc/HTML/en/konq-plugins/khtmlsettings
+@dirrm share/doc/HTML/en/konq-plugins/imgallery
+@dirrm share/doc/HTML/en/konq-plugins/fsview
+@dirrm share/doc/HTML/en/konq-plugins/domtreeviewer
+@dirrm share/doc/HTML/en/konq-plugins/dirfilter
+@dirrm share/doc/HTML/en/konq-plugins/crashes
+@dirrm share/doc/HTML/en/konq-plugins/babel
+@dirrm share/doc/HTML/en/konq-plugins
+@dirrm share/apps/khtml/kpartplugins
+@dirrm share/apps/fsview
