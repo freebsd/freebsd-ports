@@ -25,6 +25,10 @@ NO_CDROM=	'old version, not worth the cost in real estate'
 
 .include <bsd.port.pre.mk>
 
+.if ${OSVERSION} >= 500113
+BROKEN=         "Does not compile (bad C++ code)"
+.endif
+
 CC=		gcc28
 CXX=		g++28
 .if ${PORTOBJFORMAT} == "elf"

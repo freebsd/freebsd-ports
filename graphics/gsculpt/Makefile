@@ -16,6 +16,12 @@ DISTNAME=	gSculpt-${PORTVERSION}-src
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An Opensource 3D modelling application
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 500113
+BROKEN=         "Does not compile (bad C++ code)"
+.endif
+
 WRKSRC=		${WRKDIR}/gSculpt-${PORTVERSION}
 USE_REINPLACE=	yes
 USE_GNOME=	gtk12
@@ -31,4 +37,4 @@ post-patch:
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/bin/gsculpt ${PREFIX}/bin
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

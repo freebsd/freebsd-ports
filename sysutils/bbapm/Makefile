@@ -17,6 +17,12 @@ PATCH_DIST_STRIP=	-p1
 MAINTAINER=	adamw@FreeBSD.org
 COMMENT=	APM monitor for the Blackbox slit
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 500113
+BROKEN=         "Does not compile (bad C++ code)"
+.endif
+
 USE_X_PREFIX=	yes
 USE_GNOME=	gtk12
 GNU_CONFIGURE=	yes
@@ -29,4 +35,4 @@ do-install:
 	@${INSTALL_DATA} ${WRKSRC}/data/${a} ${PREFIX}/share/bbtools
 .endfor
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

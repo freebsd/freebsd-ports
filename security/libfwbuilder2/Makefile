@@ -17,10 +17,16 @@ LIB_DEPENDS=	xml2.5:${PORTSDIR}/textproc/libxml2 \
 		xslt.1:${PORTSDIR}/textproc/libxslt \
 		sigc.1:${PORTSDIR}/devel/libsigc++
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 500113
+BROKEN=         "Does not compile (bad C++ code)"
+.endif
+
 USE_GMAKE=	yes
 USE_LIBTOOL=	yes
 USE_GNOME=	gtk12
 INSTALLS_SHLIB=	yes
 PLIST_SUB+=	PORTVERSION="${PORTVERSION}"
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

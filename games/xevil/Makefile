@@ -19,6 +19,12 @@ USE_ZIP=	yes
 USE_XPM=	yes
 ALL_TARGET=	freebsd
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 500113
+BROKEN=         "Does not compile (bad C++ code)"
+.endif
+
 # I'm not sure if this should be here
 .if (${MACHINE} == "alpha")
 CFLAGS+="-DXEVIL_KEYSET=UIalpha"
@@ -42,4 +48,4 @@ do-install:
 	${PREFIX}/share/doc/xevil/instructions
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

@@ -14,6 +14,12 @@ MASTER_SITE_SUBDIR=	xlogmaster
 MAINTAINER=	aw1@stade.co.uk
 COMMENT=	Quick & easy monitoring of logfiles and devices
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 500113
+BROKEN=         "Does not compile (bad C++ code)"
+.endif
+
 USE_XLIB=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gtk12
@@ -25,4 +31,4 @@ post-install:
 	@install-info ${PREFIX}/info/xlogmaster.info ${PREFIX}/info/dir
 	${INSTALL_DATA} ${FILESDIR}/xlogmasterrc ${PREFIX}/etc/xlogmaster
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

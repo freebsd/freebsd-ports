@@ -15,6 +15,12 @@ DISTNAME=	XJTEXT-${PORTVERSION}
 MAINTAINER=	sada@FreeBSD.org
 COMMENT=	A text viewer for Japanese virtical writings
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 500113
+BROKEN=         "Does not compile (bad C++ code)"
+.endif
+
 USE_BISON=	yes
 USE_GNOME=	imlib
 EXAMPLEDIR=	${PREFIX}/share/examples/xjtext
@@ -35,4 +41,4 @@ post-install:
 	${INSTALL_MAN} ${WRKSRC}/README.txt ${DOCDIR}
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

@@ -22,6 +22,10 @@ USE_X_PREFIX=	yes
 MAKE_ENV+=	HAVE_G2C=yes
 .endif
 
+.if ${OSVERSION} >= 500113
+BROKEN=         "Does not compile (bad C++ code)"
+.endif
+
 DIST_SUBDIR=	kaskade
 WRKSRC=		${WRKDIR}/3.1
 MAKEFILE=	makefile

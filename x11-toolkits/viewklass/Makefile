@@ -18,6 +18,12 @@ COMMENT=	C++ Framework for Motif
 
 BUILD_DEPENDS=	xmkmf:${PORTSDIR}/devel/imake
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 500113
+BROKEN=         "Does not compile (bad C++ code)"
+.endif
+
 USE_X_PREFIX=	yes
 USE_MOTIF=	yes
 USE_REINPLACE=	yes
@@ -28,4 +34,4 @@ post-patch:
 		 s/^CXXFLAGS=/CXXFLAGS+=/g ; \
 		 s/-g -Wall//g' ${WRKSRC}/Makefile.in
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

@@ -30,6 +30,10 @@ MAN1=	dns-terror.1 btree-dump.1 convert-dom-db.1 convert-ip-db.1 \
 
 .include <bsd.port.pre.mk>
 
+.if ${OSVERSION} >= 500113
+BROKEN=         "Does not compile (bad C++ code)"
+.endif
+
 pre-configure:
 	@(cd ${WRKSRC} && aclocal14)
 
