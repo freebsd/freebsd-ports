@@ -106,6 +106,7 @@ share/icewm/taskbar/start.xpm
 share/icewm/taskbar/windows.xpm
 share/icewm/taskbar/xfreeos2.xpm
 share/icewm/themes/Infadel2/Ergonomic.theme
+share/icewm/themes/Infadel2/Overloaded.theme
 share/icewm/themes/Infadel2/closeA.xpm
 share/icewm/themes/Infadel2/closeI.xpm
 share/icewm/themes/Infadel2/default.theme
@@ -125,6 +126,7 @@ share/icewm/themes/Infadel2/rolldownA.xpm
 share/icewm/themes/Infadel2/rolldownI.xpm
 share/icewm/themes/Infadel2/rollupA.xpm
 share/icewm/themes/Infadel2/rollupI.xpm
+share/icewm/themes/Infadel2/snap.pcf
 share/icewm/themes/Infadel2/titleAB.xpm
 share/icewm/themes/Infadel2/titleAJ.xpm
 share/icewm/themes/Infadel2/titleAM.xpm
@@ -141,6 +143,17 @@ share/icewm/themes/Infadel2/titleIQ.xpm
 share/icewm/themes/Infadel2/titleIR.xpm
 share/icewm/themes/Infadel2/titleIS.xpm
 share/icewm/themes/Infadel2/titleIT.xpm
+share/icewm/themes/Infadel2/cursors/left.xpm
+share/icewm/themes/Infadel2/cursors/move.xpm
+share/icewm/themes/Infadel2/cursors/right.xpm
+share/icewm/themes/Infadel2/cursors/sizeB.xpm
+share/icewm/themes/Infadel2/cursors/sizeBL.xpm
+share/icewm/themes/Infadel2/cursors/sizeBR.xpm
+share/icewm/themes/Infadel2/cursors/sizeL.xpm
+share/icewm/themes/Infadel2/cursors/sizeR.xpm
+share/icewm/themes/Infadel2/cursors/sizeT.xpm
+share/icewm/themes/Infadel2/cursors/sizeTL.xpm
+share/icewm/themes/Infadel2/cursors/sizeTR.xpm
 share/icewm/themes/Infadel2/icons/app_16x16.xpm
 share/icewm/themes/Infadel2/icons/folder_16x16.xpm
 share/icewm/themes/Infadel2/icons/folder_32x32.xpm
@@ -282,6 +295,7 @@ share/locale/zh_TW.Big5/LC_MESSAGES/icewm.mo
 @dirrm share/icewm/themes/Infadel2/taskbar
 @dirrm share/icewm/themes/Infadel2/mailbox
 @dirrm share/icewm/themes/Infadel2/icons
+@dirrm share/icewm/themes/Infadel2/cursors
 @dirrm share/icewm/themes/Infadel2
 @dirrm share/icewm/themes
 @dirrm share/icewm/taskbar
