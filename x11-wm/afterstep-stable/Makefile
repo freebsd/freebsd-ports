@@ -2,6 +2,9 @@
 # Version required:	0.98b18
 # Date created:		17 July 96
 # Whom:			james@bdd.net
+#
+# $Id$
+#
 
 DISTNAME=	as-b18
 PKGNAME=	afterstep-0.98b18
