@@ -173,6 +173,7 @@
     SUBDIR += syslog-ng
     SUBDIR += tcplist
     SUBDIR += tdir
+    SUBDIR += thefish
     SUBDIR += ticker.app
     SUBDIR += timelimit
     SUBDIR += tmpwatch
