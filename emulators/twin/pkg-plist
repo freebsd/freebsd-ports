@@ -41,3 +41,4 @@ share/doc/twin/src-issues.txt.gz
 share/doc/twin/twinrc.doc.gz
 share/doc/twin/win.ini.gz
 share/doc/twin/wrt-setup.txt.gz
+@dirrm share/doc/twin
