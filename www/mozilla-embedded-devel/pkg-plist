@@ -60,6 +60,7 @@ lib/mozilla-embedded/components/libnecko.so
 lib/mozilla-embedded/components/libnecko2.so
 lib/mozilla-embedded/components/libnsappshell.so
 lib/mozilla-embedded/components/libnslocale.so
+lib/mozilla-embedded/components/libpipboot.so
 lib/mozilla-embedded/components/libpipnss.so
 lib/mozilla-embedded/components/libpippki.so
 lib/mozilla-embedded/components/libpref.so
@@ -67,7 +68,6 @@ lib/mozilla-embedded/components/libprofile.so
 lib/mozilla-embedded/components/librdf.so
 lib/mozilla-embedded/components/libshistory.so
 lib/mozilla-embedded/components/libstrres.so
-lib/mozilla-embedded/components/libtimer_gtk.so
 lib/mozilla-embedded/components/libtxtsvc.so
 lib/mozilla-embedded/components/libuconv.so
 lib/mozilla-embedded/components/libucvcn.so
@@ -94,6 +94,7 @@ lib/mozilla-embedded/components/necko_http.xpt
 lib/mozilla-embedded/components/necko_jar.xpt
 lib/mozilla-embedded/components/necko_res.xpt
 lib/mozilla-embedded/components/necko_strconv.xpt
+lib/mozilla-embedded/components/pipboot.xpt
 lib/mozilla-embedded/components/pipnss.xpt
 lib/mozilla-embedded/components/pippki.xpt
 lib/mozilla-embedded/components/pref.xpt
@@ -115,6 +116,7 @@ lib/mozilla-embedded/components/xpcom_io.xpt
 lib/mozilla-embedded/components/xpcom_threads.xpt
 lib/mozilla-embedded/components/xpcom_xpti.xpt
 lib/mozilla-embedded/components/xpconnect.xpt
+lib/mozilla-embedded/components/xpti.dat
 @unexec rm -f %D/lib/mozilla-embedded/components/xpti.dat || true
 lib/mozilla-embedded/defaults/pref/all.js
 lib/mozilla-embedded/defaults/pref/initpref.js
