@@ -10,6 +10,11 @@ in the release notes.
 
 All ports committers are allowed to commit to this file.
 
+20040414:
+	When writing a port that uses GTK+ 2.X, you can now list the dependency
+	with "USE_GNOME=gtk20" which is preferable to LIB_DEPENDS because the
+	GTK+ library version only needs to be changed in bsd.gnome.mk.
+
 20040404:
 	The glib20 and gtk20 ports were updated to 2.4.0.  This new version
 	is completely source and binary compatible with the previous 2.2.x
