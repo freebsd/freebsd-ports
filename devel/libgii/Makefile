@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	libgii
-PORTVERSION=	0.8.4
-PORTREVISION=	1
+PORTVERSION=	0.8.5
 CATEGORIES=	devel
 MASTER_SITES=	ftp://ftp.ggi-project.org/pub/packages/ggi/ggi/v2.0/ \
 		${MASTER_SITE_SOURCEFORGE}
@@ -24,36 +23,42 @@ USE_REINPLACE=	yes
 INSTALLS_SHLIB=	yes
 GNU_CONFIGURE=	yes
 
-.if exists(/usr/include/kii/kii.h)
-CONFIGURE_ARGS+=	--enable-kii
+.if exists(/usr/include/dev/kii/kii.h)
+CONFIGURE_ARGS+=	--enable-kii --with-extra-includes=/usr/include/dev
 PLIST_SUB+=	KII=""
 .else
 PLIST_SUB+=	KII="@comment "
 .endif
 
 MAN1=		mhub.1
-MAN3=		giiEventPoll.3 giiEventSend.3 giiInit.3 \
-		giiOpen.3 giiPanic.3 giiSetEventMask.3 \
-		giiMTInit.3 giiQueryDeviceInfo.3 \
-		giiQueryDeviceInfoByNumber.3 giiQueryValInfo.3 \
-		giiSplitInputs.3 gii_any_event.3 gii_cmd_event.3 \
-		gii_cmd_nodata_event.3 gii_cmddata_getdevinfo.3 \
-		gii_cmddata_getvalinfo.3 gii_event.3 gii_event_mask.3 \
-		gii_event_type.3 gii_expose_event.3 gii_key_event.3 \
-		gii_pbutton_event.3 gii_phystype.3 gii_pmove_event.3 \
-		gii_val_event.3 gii_valrange.3
-MAN7=		libgii.7 \
-		filter-key.7 filter-keytrans.7 filter-mouse.7 \
-		filter-save.7 filter-tcp.7 input-directx.7 \
-		input-file.7 input-linux-evdev.7 input-linux-kbd.7 \
-		input-linux-mouse.7 input-lk201.7 input-mouse.7 \
-		input-tcp.7
-MLINKS=		giiEventPoll.3 giiEventRead.3 \
-		- giiEventSelect.3 - giiEventsQueued.3 \
-		giiInit.3 giiExit.3 \
-		giiOpen.3 giiClose.3 - giiJoinInputs.3 \
-		giiSetEventMask.3 giiAddEventMask.3 \
-		- giiGetEventMask.3 - giiRemoveEventMask.3
+MAN3=		ggGetSwarType.3 ggGetUserDir.3 ggInit.3 \
+		ggLockCreate.3 ggRegisterCleanup.3 giiEventPoll.3 \
+		giiEventSend.3 giiInit.3 giiMTInit.3 \
+		giiOpen.3 giiPanic.3 giiQueryDeviceInfo.3 \
+		giiQueryValInfo.3 giiSetEventMask.3 gii_cmd_event.3 \
+		gii_cmddata_getdevinfo.3 gii_cmddata_getvalinfo.3 \
+		gii_event.3 gii_expose_event.3 \
+		gii_key_event.3 gii_pbutton_event.3 gii_pmove_event.3 \
+		gii_val_event.3
+MAN7=		filter-key.7 filter-mouse.7 filter-save.7 filter-tcp.7 \
+		input-directx.7 input-file.7 input-linux-evdev.7 \
+		input-linux-kbd.7 input-linux-mouse.7 input-lk201.7 \
+		input-mouse.7 input-tcp.7 libgg.7 libgii.7
+MLINKS=		ggRegisterCleanup.3 ggCleanupForceExit.3 \
+		- ggUnregisterCleanup.3 ggInit.3 ggExit.3 \
+		ggLockCreate.3 ggLock.3 - ggLockDestroy.3 \
+		- ggTryLock.3 - ggUnlock.3 \
+		giiSetEventMask.3 giiAddEventMask.3 - giiGetEventMask.3 \
+		giiOpen.3 giiClose.3 - giiJoinInputs.3 - giiSplitInputs.3 \
+		giiEventPoll.3 giiEventRead.3 - giiEventSelect.3 \
+		- giiEventsQueued.3 giiInit.3 giiExit.3 \
+		giiQueryDeviceInfo.3 giiQueryDeviceInfoByNumber.3 \
+		giiSetEventMask.3 giiRemoveEventMask.3 \
+		gii_cmd_event.3 gii_cmd_nodata_event.3 \
+		gii_event.3 gii_any_event.3 - gii_event_mask.3 \
+		- gii_event_type.3 \
+		gii_cmddata_getvalinfo.3 gii_phystype.3 - gii_valrange.3 \
+		filter-key.7 filter-keytrans.7
 DOCSDIR=	share/doc/libgii
 DOCS=		ChangeLog NEWS README \
 		doc/env.txt doc/inputs.txt
@@ -63,7 +68,7 @@ EXAMPLES=	demos/demo.c demos/filter.c \
 
 .include <bsd.port.pre.mk>
 
-.if !exists(/usr/include/vgl.h) || ${MACHINE_ARCH} != "i386"
+.if !exists(/usr/include/vgl.h) || ${ARCH} != "i386"
 CONFIGURE_ARGS+=	--disable-vgl
 PLIST_SUB+=	VGL="@comment "
 .else
