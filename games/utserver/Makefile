@@ -7,7 +7,7 @@
 
 PORTNAME=	utserver
 PORTVERSION=	436
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	games linux
 MASTER_SITES=	ftp://utservers:idspispopd@ftp.lokigames.com/ \
 		http://arcadia.inf.udec.cl/ftp/pub/linux/ut-server/ \
@@ -33,12 +33,13 @@ WRKSRC=		${WRKDIR}/ut-server
 UTDIR=		usr/games/ut-server/
 PLIST_SUB=	UTDIR="${UTDIR}"
 EXTRA_PATCHES=	${WRKDIR}/patch-ngstatsut
-INSTALL_DIR=	${INSTALL} -d -o ${BINOWN} -g ${BINGRP} -m ${BINMODE}
+INSTALL_DIR=	${INSTALL} -d -o ${BINOWN} -g ${BINGRP} -m 755
+INSTALL_MY_DATA=	${INSTALL} -o ${SHAREOWN} -g ${SHAREGRP} -m 644
 SORT?=		/usr/bin/sort
 
 # files which should be installed with executable perms
 EXECUTABLES=	ucc ucc-bin ngStatsUT ngStatsUT.exe ngWorldStats \
-		ngWorldStats.exe
+		bgWorldStats ngWorldStats.exe
 
 post-extract:
 .for file in ${DISTFILES:S/${EXTRACT_ONLY}//}
@@ -85,7 +86,7 @@ install-parse-plist: generate-plist
 					-e '}' \
 				-e '}' \
 				-e 'print FFILES ($$program_flag == 0) ? \
-					"${INSTALL_DATA}" : "${INSTALL_SCRIPT}", \
+					"${INSTALL_MY_DATA}" : "${INSTALL_SCRIPT}", \
 					" ", "\"${WRKSRC}/$$file_partial\"", \
 					" ", "\"${PREFIX}/$$file\"", \
 					"\n";' \
