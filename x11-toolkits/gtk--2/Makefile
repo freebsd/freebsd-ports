@@ -7,6 +7,7 @@
 
 PORTNAME=	gtkmm
 PORTVERSION=	1.2.3
+PORTREVISION=	1
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -24,7 +25,8 @@ USE_LIBTOOL=	yes
 LIBTOOLFLAGS=	--disable-ltlibs --release-ignore
 INSTALLS_SHLIB=	yes
 CONFIGURE_ARGS=	--enable-static=yes \
-		--without-gnome
+		--without-gnome \
+		--with-sigc-prefix=${LOCALBASE}
 
 post-install:
 	@${CAT} ${PKGMESSAGE}
