@@ -7,6 +7,7 @@
 
 PORTNAME=	logjam2
 PORTVERSION=	4.2.4
+PORTREVISION=	1
 CATEGORIES=	deskutils
 MASTER_SITES=	http://logjam.danga.com/download/
 DISTNAME=	logjam-${PORTVERSION}
@@ -26,6 +27,8 @@ USE_GNOME=	gnomehack \
 		gtk20 \
 		libxml2
 CONFIGURE_ARGS=	--program-transform-name="s/$$//"
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
+		LIBS="-L${LOCALBASE}/lib"
 
 .if defined(WITH_GTKSPELL)
 LIB_DEPENDS+=	gtkspell.0:${PORTSDIR}/textproc/gtkspell2
