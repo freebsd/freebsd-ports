@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.75 1999/04/02 04:24:56 steve Exp $
+# $Id: Makefile,v 1.76 1999/04/02 04:33:16 steve Exp $
 #
 
     SUBDIR += 8hz-mp3
@@ -62,6 +62,7 @@
     SUBDIR += xmix
     SUBDIR += xmmix
     SUBDIR += xmpeg3
+    SUBDIR += xmradio
     SUBDIR += xtuner
 
 .include <bsd.port.subdir.mk>
