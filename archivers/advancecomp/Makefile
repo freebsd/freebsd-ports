@@ -22,4 +22,10 @@ USE_GMAKE=	yes
 PLIST_FILES=	bin/advzip bin/advpng bin/advmng bin/advdef
 MAN1=		advzip.1 advpng.1 advmng.1 advdef.1
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 502126
+BROKEN=		does not compile with gcc 3.4
+.endif
+
+.include <bsd.port.post.mk>
