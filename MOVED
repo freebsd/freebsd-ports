@@ -519,3 +519,9 @@ devel/gide|devel/anjuta|2003-08-17|gide was superceded by anjuta
 graphics/gd2|graphics/gd|2003-08-19|Cleanup gd-related ports
 graphics/gd-nox11|graphics/gd|2003-08-19|Cleanup gd-related ports
 graphics/p5-GD2|graphics/p5-GD|2003-08-19|Cleanup gd-related ports
+mail/sonicmail||2003-08-19|removed as part of GNOME 1.4 desktop phase out
+mail/gbiff||2003-08-19|removed as part of GNOME 1.4 desktop phase out
+x11/gnomeres_applet||2003-08-19|removed as part of GNOME 1.4 desktop phase out
+x11/finder||2003-08-19|removed as part of GNOME 1.4 desktop phase out
+x11-clocks/zclock||2003-08-19|removed as part of GNOME 1.4 desktop phase out
+x11/stockticker_applet||2003-08-19|removed as part of GNOME 1.4 desktop phase out
