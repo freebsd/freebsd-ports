@@ -2,7 +2,7 @@ Locale::Maketext is a base class providing a framework for software
 localization and inheritance-based lexicons, as described in my
 article in The Perl Journal #13 (which is on the way to your mailbox
 and/or newsstand).
- 
+
 Copyright 1999, Sean M. Burke <sburke@netadventure.net>, all rights
 reserved.  This program is free software; you can redistribute it
 and/or modify it under the same terms as Perl itself.

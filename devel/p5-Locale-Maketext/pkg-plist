@@ -1,4 +1,6 @@
 lib/perl5/site_perl/%%PERL_VER%%/Locale/Maketext.pm
+lib/perl5/site_perl/%%PERL_VER%%/Locale/Maketext.pod
+lib/perl5/site_perl/%%PERL_VER%%/Locale/Maketext/TPJ13.pod
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Locale-Maketext/.packlist
 @dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Locale-Maketext
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/Locale
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/Locale 2> /dev/null || true
