@@ -860,6 +860,7 @@ cl-meta-clisp	ports/textproc/cl-meta-clisp
 cl-meta-cmucl	ports/textproc/cl-meta-cmucl
 cl-meta-sbcl	ports/textproc/cl-meta-sbcl
 cl-port		ports/devel/cl-port
+cl-port-clisp	ports/devel/cl-port-clisp
 cl-port-cmucl	ports/devel/cl-port-cmucl
 cl-port-sbcl	ports/devel/cl-port-sbcl
 cl-ppcre	ports/textproc/cl-ppcre
