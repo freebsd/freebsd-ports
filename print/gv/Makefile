@@ -8,16 +8,19 @@
 
 PORTNAME=	gv
 PORTVERSION=	3.5.8
+PORTREVISION=	1
 CATEGORIES=	print
 MASTER_SITES=	ftp://ftpthep.physik.uni-mainz.de/pub/gv/unix/  \
 		${MASTER_SITE_TEX_CTAN}
 MASTER_SITE_SUBDIR=	support/ghostscript/gnu/gv/unix
 
+PATCHFILES=	gv_3.5.8-17.1.diff.gz
+PATCH_SITES=	http://security.debian.org/pool/updates/main/g/gv/
+PATCH_DIST_STRIP=	-p1
+
 MAINTAINER=	ports@freebsd.org
 
 LIB_DEPENDS=	Xaw3d.${XAWVER}:${PORTSDIR}/x11-toolkits/Xaw3d
-
-FORBIDDEN=	"Security vulnerability, see bugtraq id 5808"
 
 USE_IMAKE=	yes
 MAN1=		gv.1
