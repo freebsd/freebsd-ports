@@ -3,7 +3,7 @@
 # Date created:		23 June 1996
 # Whom:			markm@FreeBSD.ORG
 #
-# $Id: Makefile,v 1.30 1999/06/09 11:09:56 steve Exp $
+# $Id: Makefile,v 1.31 1999/06/16 02:55:31 simokawa Exp $
 #
 
 DISTNAME=	exim-3.02
@@ -21,6 +21,8 @@ MAINTAINER=	sheldonh@FreeBSD.ORG
 USE_XLIB=	YES
 
 USE_PERL5=	YES
+
+MAKE_ENV+=	OSTYPE=${OPSYS} ARCHTYPE=${MACHINE_ARCH}
 
 do-configure:
 	${MKDIR} ${WRKSRC}/Local
