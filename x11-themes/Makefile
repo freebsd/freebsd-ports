@@ -30,7 +30,7 @@
     SUBDIR += gtk-Mac2-theme
     SUBDIR += gtk-aqualightblue-theme
     SUBDIR += gtk-bluecurve-theme
-    SUBDIR += gtk-cleanice-theme
+    SUBDIR += gtk-cleanice-engine
     SUBDIR += gtk-engines
     SUBDIR += gtk-engines-collection
     SUBDIR += gtk-engines2
