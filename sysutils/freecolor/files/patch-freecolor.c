@@ -1,6 +1,13 @@
---- freecolor.c.bak	Wed Jan  7 20:04:01 2004
-+++ freecolor.c	Wed Jan  7 20:04:13 2004
-@@ -62,9 +62,6 @@
+--- freecolor.c.bak	Wed May 19 22:43:41 2004
++++ freecolor.c	Wed May 19 22:44:50 2004
+@@ -56,15 +56,13 @@
+ #define PROC_MEMINFO "/proc/meminfo"
+ #endif
+ #else
++#define SG_ENABLE_DEPRECATED
+ #include <statgrab.h>
+ #endif
+ #include <string.h>
  #include <unistd.h>
  #include <stdlib.h>
  #include <stdio.h>
