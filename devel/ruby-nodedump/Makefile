@@ -22,10 +22,13 @@ USE_RUBY_EXTCONF=	yes
 
 INSTALL_TARGET=	site-install
 
+RUBY_REQUIRE=	Ruby < 170
+
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} != "i386"
-BROKEN=		"Does not compile on !i386"
+.if !defined(RUBY_PROVIDED)
+IGNORE=		only works with Ruby 1.6
+RUBY_VER=	1.6	# This gets in effect when NO_IGNORE is defined
 .endif
 
 post-install:
