@@ -4,3 +4,15 @@ This directory contains the scripts that are used to break up the packages
 for a given release, so that they fit on a particular 4 CD set.  They rely
 on src/release/scripts/print-cdrom-packages.sh to give preference for
 particular packages to be located on particular CDs.
+
+The approximate procedure is:
+
+1) CVSROOT/avail lockout
+2) cvs rtag RELEASE_4_5_0 ports
+
+1) cd /a/steve/4.5/i386/RC3
+2) ./scripts/setup.sh (may want to redirect stdout to a file,
+   as this gives copious output.)
+3) ./doit.sh
+
+More documentation to come later.
