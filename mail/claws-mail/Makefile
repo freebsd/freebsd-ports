@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	sylpheed-claws
-PORTVERSION=	0.9.11
+PORTVERSION=	0.9.12
 CATEGORIES=	mail news ipv6
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	sylpheed-claws
-DISTNAME=	sylpheed-${PORTVERSION}claws
+#DISTNAME=	sylpheed-${PORTVERSION}claws
 DISTFILES=	${EXTRACT_ONLY} \
 		${THEMEFILE}
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
@@ -30,6 +30,7 @@ USE_X_PREFIX=	yes
 USE_LIBTOOL_VER=13
 USE_GNOME=	gnomehack pkgconfig gtk12
 USE_REINPLACE=	yes
+WANT_GNOME=	yes
 
 MAN1=		sylpheed-claws.1
 
@@ -44,6 +45,12 @@ CONFIGURE_ARGS=		--enable-openssl --with-openssl-includes=${OPENSSLINC} \
 .endif
 
 .include <bsd.port.pre.mk>
+
+.if ${HAVE_GNOME:Mgnomehier} != ""
+PLIST_SUB+=	GNOME=""
+.else
+PLIST_SUB+=	GNOME="@comment "
+.endif
 
 CONFIGURE_ARGS+=	--program-suffix="-claws" --enable-ipv6
 
