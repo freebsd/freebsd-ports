@@ -3,7 +3,7 @@
 # Date created:         Tue Feb  7 12:02:49  1995
 # Whom:                 hsu
 #
-# $Id: Makefile,v 1.17 1997/02/14 14:18:06 tg Exp $
+# $Id: Makefile,v 1.18 1997/09/30 19:20:00 max Exp $
 #
 
 DISTNAME=       Mesa-2.2
@@ -14,7 +14,7 @@ MAINTAINER=	ports@FreeBSD.ORG
 
 ALL_TARGET=	freebsd
 USE_X11=	yes
-LIBS=		libMesaGL libMesaGLU libMesaaux libMesatk 
+LIBS=		libMesaGL libMesaGLU libMesaaux libMesatk
 SHLIB_VERSION=	13.2
 
 do-install:
