@@ -57,8 +57,8 @@ INCS=		blocklist.h \
 		displaylist.h \
 		fill.h \
 		libming.h \
-		ming.h \
-		mingpp.h \
+		../ming.h \
+		../mingpp.h \
 		movie.h \
 		movieclip.h \
 		position.h \
