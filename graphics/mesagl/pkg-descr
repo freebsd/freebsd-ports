@@ -4,8 +4,7 @@ or state machine, it is being used with authorization from Silicon Graphics,
 Inc.  However, the author makes no claim that Mesa is in any way a
 compatible replacement for OpenGL or associated with Silicon Graphics, Inc.
 Those who want a licensed implementation of OpenGL should contact a licensed
-vendor.  This software is distributed under the terms of the GNU Library
-General Public License, see the LICENSE file for details.
+vendor.
 
 paulo@isr.uc.pt
 
