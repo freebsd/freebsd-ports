@@ -7,4 +7,3 @@ lib/libpgtcl.a
 lib/libpgtcl.so
 lib/libpgtcl.so.2
 %%TK%%bin/pgtksh
-%%TK%%@unexec rmdir %D/share/postgresql 2>/dev/null || true
