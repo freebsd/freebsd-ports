@@ -7,7 +7,7 @@
 
 PORTNAME=	clamav
 PORTVERSION=	0.60
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	security
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	clamav
@@ -26,20 +26,43 @@ USE_REINPLACE=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
-USE_LIBTOOL=	yes
+#USE_LIBTOOL_VER=14
 INSTALLS_SHLIB=	yes
 
-CONFIGURE_ARGS=	--prefix=${PREFIX} \
+PKGINSTALL=	${WRKDIR}/pkg-install
+
+CONFIGURE_ARGS=	--with-dbdir=${DATADIR} \
 		--disable-clamav --enable-bigstack
 CFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	${PTHREAD_LIBS}
 CONFIGURE_ENV+=	LDFLAGS="${LDFLAGS}"
 MAN1=		clamscan.1 freshclam.1 sigtool.1 clamdscan.1 clamav-milter.1
 MAN5=		clamav.conf.5
 MAN8=		clamd.8
 
+SED_SCRIPT=	-e 's|%%PREFIX%%|${PREFIX}|g' \
+		-e 's|%%DATADIR%%|${DATADIR}|g'
+
+SED_CONF=	-E -e 's|^\#?(Example)$$|\#\1|' \
+		-e 's|^\#?(LogFile) .*$$|\1 /var/log/clamav/clamd.log|' \
+		-e 's|^\#?(PidFile) .*$$|\1 /var/run/clamav/clamd.pid|' \
+		-e 's|^\#?(LocalSocket) .*$$|\1 /var/run/clamav/clamd|' \
+		-e 's|^\#?(User) .*$$|\1 clamav|' \
+		-e 's|^\#?(AllowSupplementaryGroups)$$|\1|' \
+		-e 's|^\#?(ScanMail)$$|\1|'
+
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 510001
+USE_RC_SUBR=	yes
+RC_DIR=		${PREFIX}/etc/rc.d
+RC_SUFX=	.sh
+SED_SCRIPT+=	-e 's|%%RC_SUBR%%|${RC_SUBR}|g' \
+		-e 's|%%RC_DIR%%|${RC_DIR}|g' \
+		-e 's|%%RC_SUFX%%|${RC_SUFX}|g'
+PLIST_SUB+=	RC_DIR=${RC_DIR} \
+		RC_SUFX=${RC_SUFX}
+
+.if ${OSVERSION} < 501100
 # compiles only with optimizer
 CFLAGS+=	-O
 LDFLAGS+=	-lcipher
@@ -47,21 +70,40 @@ LDFLAGS+=	-lcipher
 
 .if defined(WITH_MILTER)
 CONFIGURE_ARGS+=	--enable-milter
-PLIST_SUB+=	CLAMAV-MILTER:=""
+PLIST_SUB+=	CLAMAV-MILTER=""
 .else
-PLIST_SUB+=	CLAMAV-MILTER:="@comment "
+PLIST_SUB+=	CLAMAV-MILTER="@comment "
 .endif
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|-pthread|${PTHREAD_LIBS}|g' ${WRKSRC}/configure
+	@${REINPLACE_CMD} -e 's|-pthread|${PTHREAD_LIBS}|g' \
+		${CONFIGURE_WRKSRC}/${CONFIGURE_SCRIPT}
+
+pre-configure:
+	@${REINPLACE_CMD} -e 's|clamav.conf|&.default|' \
+		${CONFIGURE_WRKSRC}/${CONFIGURE_SCRIPT} \
+		${CONFIGURE_WRKSRC}/etc/Makefile.in
+.ifdef USE_LIBTOOL_VER
+	@${REINPLACE_CMD} -e '/^LIBTOOL=/s|\$$(top_builddir)/libtool|${LIBTOOL}|' \
+		${CONFIGURE_WRKSRC}/${CONFIGURE_SCRIPT}
+.endif
+
+post-build:
+	@${SED} ${SED_CONF} ${BUILD_WRKSRC}/etc/clamav.conf \
+		>${BUILD_WRKSRC}/etc/clamav.conf.default
+	@${SED} ${SED_SCRIPT} ${PKGDIR}/pkg-install >${PKGINSTALL}
+	@${SED} ${SED_SCRIPT} ${FILESDIR}/clamd.sh >${WRKDIR}/clamd.sh
 
 pre-install:
-	@${ECHO} "===>   Creating custom user to run clamav..."
-	${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
+	@${SETENV} PKG_PREFIX=${PREFIX} \
+		${SH} ${PKGINSTALL} ${PREFIX} PRE-INSTALL
 
 post-install:
-	@${ECHO} "===>   Setting permissions..."
-	@${SETENV} PKG_PREFIX=${PREFIX} ${sh} \
-	${SH} ${PKGINSTALL} ${PREFIX} POST-INSTALL
+	@${INSTALL_SCRIPT} ${WRKDIR}/clamd.sh ${RC_DIR}/clamd${RC_SUFX}
+	@${CHOWN} -R clamav:clamav ${DATADIR}
+	@[ -f ${PREFIX}/etc/clamav.conf ] || \
+		${CP} ${PREFIX}/etc/clamav.conf.default ${PREFIX}/etc/clamav.conf
+	@${SETENV} PKG_PREFIX=${PREFIX} \
+		${SH} ${PKGINSTALL} ${PREFIX} POST-INSTALL
 
 .include <bsd.port.post.mk>
