@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.39 1996/12/11 22:52:31 obrien Exp $
+# $Id: Makefile,v 1.40 1997/01/09 12:40:00 asami Exp $
 #
 
     SUBDIR += SWIG
@@ -42,6 +42,7 @@
     SUBDIR += prcs
     SUBDIR += tkcvs
     SUBDIR += uulib
+    SUBDIR += xwpe
     SUBDIR += xxgdb
 
 .include <bsd.port.subdir.mk>
