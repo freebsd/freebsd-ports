@@ -8,7 +8,7 @@ $FreeBSD$
  	../jabberoo/src/libjabberoo.a \
  	../jabberoo/expat/libexpat.a \
 -	-lxml
-+	-lxml -lgiconv
++	-lxml -liconv
  
  
  gabber_LDFLAGS = @GABBER_STATIC@
