@@ -3,7 +3,7 @@
 # Date created:		Feb, 8, 1998
 # Whom:			Nate Williams <nate@FreeBSD.org>
 #
-# $Id: Makefile,v 1.17 1998/12/22 05:43:52 nate Exp $
+# $Id: Makefile,v 1.18 1999/03/26 21:05:27 steve Exp $
 #
 
 DISTNAME=	jdk-1.1.7
@@ -21,7 +21,7 @@ NO_BUILD=       yes
 .include <bsd.port.pre.mk>
 
 .if ${PORTOBJFORMAT} == "aout"
-DISTFILES=	jdk1.1.7_AOUT.V99-3-24.tar.gz
+DISTFILES=	jdk1.1.7_AOUT.V99-4-16.tar.gz
 .else
 DISTFILES=	jdk1.1.7_ELF.V99-3-25.tar.gz
 do-configure:
