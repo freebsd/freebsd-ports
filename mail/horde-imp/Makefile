@@ -50,8 +50,8 @@ LIB_DEPENDS=	c-client4.8:${PORTSDIR}/mail/cclient
 
 .if !defined(WITHOUT_LDAP)
 .if defined(WITH_LDAP2)
-LIB_DEPENDS+=	ldap.2:\${PORTSDIR}/net/openldap2 \
-		lber.2:\${PORTSDIR}/net/openldap2
+LIB_DEPENDS+=	ldap.2:${PORTSDIR}/net/openldap2 \
+		lber.2:${PORTSDIR}/net/openldap2
 .else
 LIB_DEPENDS+=	ldap.1:${PORTSDIR}/net/openldap \
 		lber.1:${PORTSDIR}/net/openldap
