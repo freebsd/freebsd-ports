@@ -1,0 +1,11 @@
+Small chat server written in C.  The compiled code is still under
+50k (at this time around 40k).  The chat offers many features
+including private channels, gagging, squelching, banning,
+censoring, and much more.  Users can connect to the chat through
+many ways including telnet and a Java applet through a webpage.
+
+WWW: http://nakenchat.naken.cc/
+
+-Michael Kohn
+
+mike@mikekohn.net

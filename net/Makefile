@@ -329,6 +329,7 @@
     SUBDIR += nagios
     SUBDIR += nagios-plugins
     SUBDIR += naim
+    SUBDIR += nakenchat
     SUBDIR += nam
     SUBDIR += napshare
     SUBDIR += nast
