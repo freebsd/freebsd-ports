@@ -17,7 +17,9 @@
     SUBDIR += gtkportscan
     SUBDIR += identify
     SUBDIR += john
+    SUBDIR += keynote
     SUBDIR += keyprint
+    SUBDIR += kmap
     SUBDIR += krb5
     SUBDIR += l0pht-watch
     SUBDIR += libident
