@@ -13,8 +13,6 @@ MASTER_SITES=	http://unixcode.org/downloads/monopd/
 MAINTAINER=	jhb@FreeBSD.org
 COMMENT=	Server for Atlantik and gtkAtlantic Games
 
-BROKEN=		Unfetchable
-
 LIB_DEPENDS=	capsinetwork.0:${PORTSDIR}/devel/libcapsinetwork \
 		math\\+\\+.0:${PORTSDIR}/math/libmath++
 
