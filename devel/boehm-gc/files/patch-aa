@@ -1,5 +1,5 @@
---- Makefile.orig	Sat Sep 11 01:49:18 1999
-+++ Makefile	Tue Oct 12 17:27:25 1999
+--- Makefile.orig	Fri Sep 10 16:49:18 1999
++++ Makefile	Sat Mar 11 09:44:56 2000
 @@ -8,15 +8,42 @@
  #	 c++ interface to gc.a
  # cord/de - builds dumb editor based on cords.
@@ -20,7 +20,7 @@
 +# to fill anyone's log with leak messages! - MMCG
 +
 +GCFLAGS= -DNO_SIGNALS -DALL_INTERIOR_POINTERS -DATOMIC_UNCOLLECTABLE \
-+               -DNO_EXECUTE_PERMISSION -DSILENT
++               -DNO_EXECUTE_PERMISSION -DSILENT -DREDIRECT_MALLOC=GC_malloc
 +CFLAGS+= $(GCFLAGS)
 +
 +LEAKFLAGS=$(CFLAGS) -DFIND_LEAK
