@@ -19,7 +19,7 @@ COMMENT=	GNU Transport Layer Security library
 
 LIB_DEPENDS=	gcrypt.6:${PORTSDIR}/security/libgcrypt \
 		tasn1.2:${PORTSDIR}/security/libtasn1 \
-		opencdk.6:${PORTSDIR}/security/opencdk
+		opencdk.8:${PORTSDIR}/security/opencdk
 
 USE_LIBTOOL=	yes
 INSTALLS_SHLIB=	yes
