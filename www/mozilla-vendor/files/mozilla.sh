@@ -6,13 +6,18 @@ LOCATION='new-tab'
 
 cd $MOZILLA_DIR                                     || exit 1
 
-# catch calls for mozilla mail
-if [ "$1" = "-mail" ]; then
-   REMOTE_COMMAND="xfeDoCommand (openInbox)"
-else
-   REMOTE_COMMAND="openURL($@, $LOCATION)"
-fi
-
+case $1 in
+    -mail)
+    	REMOTE_COMMAND="xfeDoCommand (openInbox)"
+	;;
+    -*)
+    	exec ./$MOZILLA_EXEC "$@"
+	;;
+    *)
+    	REMOTE_COMMAND="openURL($@, $LOCATION)"
+	;;
+esac
+    
 # process found
 ./$MOZILLA_EXEC -remote "ping()"                    &&
 ./$MOZILLA_EXEC -remote "$REMOTE_COMMAND"           && exit 0
