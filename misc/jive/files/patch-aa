@@ -3,8 +3,8 @@
 @@ -1,5 +1,5 @@
 -CC	= gcc
 -CFLAGS	= -O2 -fomit-frame-pointer
-+CC	?= cc
-+CFLAGS	+= -fomit-frame-pointer
++#CC	= gcc
++#CFLAGS	= -O2 -fomit-frame-pointer
  LDFLAGS	= -s
  LEX	= flex
  LEXLIB	= -lfl
