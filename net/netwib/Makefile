@@ -8,9 +8,8 @@
 PORTNAME=	lcrzo
 PORTVERSION=	4.17.0
 CATEGORIES=	security
-MASTER_SITES=	http://www.laurentconstantin.com/common/lcrzo/download/v4/ \
-		http://www.mirrors.wiretapped.net/security/packet-construction/lcrzo/ \
-		ftp://ftp.mirrors.wiretapped.net/sd3a/security/packet-construction/lcrzo/
+MASTER_SITES=	http://www.laurentconstantin.com/common/netw/netwib/download/v4/ \
+		http://fresh.t-systems-sfr.com/unix/src/privat2/
 EXTRACT_SUFX=	-src.tgz
 
 MAINTAINER=	king@v2project.com
