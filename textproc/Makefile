@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.26 1998/07/20 03:46:54 steve Exp $
+# $Id: Makefile,v 1.27 1998/07/20 23:56:17 dburr Exp $
 #
 
     SUBDIR += agrep
@@ -19,6 +19,7 @@
     SUBDIR += latex2html
     SUBDIR += linuxdoc
     SUBDIR += mgdiff
+    SUBDIR += nfbtrans
     SUBDIR += par
     SUBDIR += pilot_makedoc
     SUBDIR += rman
