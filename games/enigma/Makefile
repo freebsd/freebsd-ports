@@ -9,7 +9,8 @@ PORTNAME=	enigma
 PORTVERSION=	0.81
 PORTREVISION=	2
 CATEGORIES=	games
-MASTER_SITES=	${MASTER_SITE_SAVANNAH}
+MASTER_SITES=	http://www.rzuser.uni-heidelberg.de/~dheck/ \
+		${MASTER_SITE_SAVANNAH}	# savannah is locked temporarely
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	edwin@mavetju.org
