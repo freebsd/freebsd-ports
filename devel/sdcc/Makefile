@@ -15,6 +15,7 @@ MAINTAINER=	ambrisko@whistle.com
 
 WRKSRC=         ${WRKDIR}/sdcc219Ea
 GNU_CONFIGURE=	yes
+USE_BISON=	yes
 USE_GMAKE=      yes
 ALL_TARGET=	dep all
 
