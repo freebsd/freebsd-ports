@@ -11,6 +11,10 @@ System/Library/Bundles/TextConverters/RTFConverter.bundle/stamp.make
 System/Library/Bundles/libgmodel.bundle/Resources/Info-gnustep.plist
 System/Library/Bundles/libgmodel.bundle/%%NOFLAT%%libgmodel
 System/Library/Bundles/libgmodel.bundle/stamp.make
+%%GNUSTEP_DEVEL%%System/Library/ColorPickers/NamedPicker.bundle/NamedPicker
+%%GNUSTEP_DEVEL%%System/Library/ColorPickers/NamedPicker.bundle/Resources/Info-gnustep.plist
+%%GNUSTEP_DEVEL%%System/Library/ColorPickers/NamedPicker.bundle/Resources/GSNamedColorPicker.tiff
+%%GNUSTEP_DEVEL%%System/Library/ColorPickers/NamedPicker.bundle/stamp.make
 System/Library/ColorPickers/StandardPicker.bundle/Resources/English.lproj/StandardPicker.strings
 System/Library/ColorPickers/StandardPicker.bundle/Resources/French.lproj/StandardPicker.strings
 System/Library/ColorPickers/StandardPicker.bundle/Resources/GSCMYKColorPicker.tiff
@@ -47,6 +51,7 @@ System/Library/ColorPickers/WheelPicker.bundle/stamp.make
 %%SYSTEMLIBRARY%%/Headers/AppKit/GSServicesManager.h
 %%SYSTEMLIBRARY%%/Headers/AppKit/GSTable.h
 %%SYSTEMLIBRARY%%/Headers/AppKit/GSTextConverter.h
+%%GNUSTEP_DEVEL%%System/Library/Headers/AppKit/GSToolbarView.h
 %%SYSTEMLIBRARY%%/Headers/AppKit/GSTrackingRect.h
 %%SYSTEMLIBRARY%%/Headers/AppKit/GSTypesetter.h
 %%SYSTEMLIBRARY%%/Headers/AppKit/GSVbox.h
@@ -170,22 +175,83 @@ System/Library/ColorPickers/WheelPicker.bundle/stamp.make
 %%SYSTEMLIBRARY%%/Headers/AppKit/NSWindowController.h
 %%SYSTEMLIBRARY%%/Headers/AppKit/NSWorkspace.h
 %%SYSTEMLIBRARY%%/Headers/AppKit/PSOperators.h
+%%GNUSTEP_DEVEL%%System/Library/Headers/GNUstepGUI/GSVersion.h
+%%GNUSTEP_DEVEL%%System/Library/Headers/GNUstepGUI/GMAppKit.h
+%%GNUSTEP_DEVEL%%System/Library/Headers/GNUstepGUI/GMArchiver.h
+%%GNUSTEP_DEVEL%%System/Library/Headers/GNUstepGUI/GSFontInfo.h
+%%GNUSTEP_DEVEL%%System/Library/Headers/GNUstepGUI/GSMemoryPanel.h
+%%GNUSTEP_DEVEL%%System/Library/Headers/GNUstepGUI/GSInfoPanel.h
+%%GNUSTEP_DEVEL%%System/Library/Headers/GNUstepGUI/GSMethodTable.h
+%%GNUSTEP_DEVEL%%System/Library/Headers/GNUstepGUI/GSPasteboardServer.h
+%%GNUSTEP_DEVEL%%System/Library/Headers/GNUstepGUI/GSServicesManager.h
+%%GNUSTEP_DEVEL%%System/Library/Headers/GNUstepGUI/GSTextConverter.h
+%%GNUSTEP_DEVEL%%System/Library/Headers/GNUstepGUI/GSTrackingRect.h
+%%GNUSTEP_DEVEL%%System/Library/Headers/GNUstepGUI/GSHelpManagerPanel.h
+%%GNUSTEP_DEVEL%%System/Library/Headers/GNUstepGUI/GSNibTemplates.h
+%%GNUSTEP_DEVEL%%System/Library/Headers/GNUstepGUI/GSDisplayServer.h
+%%GNUSTEP_DEVEL%%System/Library/Headers/GNUstepGUI/GSFusedSilica.h
+%%GNUSTEP_DEVEL%%System/Library/Headers/GNUstepGUI/GSTable.h
+%%GNUSTEP_DEVEL%%System/Library/Headers/GNUstepGUI/GSHbox.h
+%%GNUSTEP_DEVEL%%System/Library/Headers/GNUstepGUI/GSVbox.h
+%%GNUSTEP_DEVEL%%System/Library/Headers/GNUstepGUI/IMConnectors.h
+%%GNUSTEP_DEVEL%%System/Library/Headers/GNUstepGUI/IMCustomObject.h
+%%GNUSTEP_DEVEL%%System/Library/Headers/GNUstepGUI/IMLoading.h
+%%GNUSTEP_DEVEL%%System/Library/Headers/GNUstepGUI/GSLayoutManager.h
+%%GNUSTEP_DEVEL%%System/Library/Headers/GNUstepGUI/GSLayoutManager_internal.h
+%%GNUSTEP_DEVEL%%System/Library/Headers/GNUstepGUI/GSTypesetter.h
+%%GNUSTEP_DEVEL%%System/Library/Headers/GNUstepGUI/GSHorizontalTypesetter.h
+%%GNUSTEP_DEVEL%%System/Library/Headers/GNUstepGUI/GSToolbarView.h
 %%SYSTEMLIBRARY%%/Headers/gnustep/gui/GMAppKit.h
 %%SYSTEMLIBRARY%%/Headers/gnustep/gui/GMArchiver.h
+%%GNUSTEP_DEVEL%%System/Library/Headers/gnustep/gui/GSVersion.h
+%%GNUSTEP_DEVEL%%System/Library/Headers/gnustep/gui/GSFontInfo.h
+%%GNUSTEP_DEVEL%%System/Library/Headers/gnustep/gui/GSMemoryPanel.h
+%%GNUSTEP_DEVEL%%System/Library/Headers/gnustep/gui/GSInfoPanel.h
+%%GNUSTEP_DEVEL%%System/Library/Headers/gnustep/gui/GSMethodTable.h
+%%GNUSTEP_DEVEL%%System/Library/Headers/gnustep/gui/GSPasteboardServer.h
+%%GNUSTEP_DEVEL%%System/Library/Headers/gnustep/gui/GSServicesManager.h
+%%GNUSTEP_DEVEL%%System/Library/Headers/gnustep/gui/GSTextConverter.h
+%%GNUSTEP_DEVEL%%System/Library/Headers/gnustep/gui/GSTrackingRect.h
+%%GNUSTEP_DEVEL%%System/Library/Headers/gnustep/gui/GSHelpManagerPanel.h
+%%GNUSTEP_DEVEL%%System/Library/Headers/gnustep/gui/GSNibTemplates.h
+%%GNUSTEP_DEVEL%%System/Library/Headers/gnustep/gui/GSDisplayServer.h
+%%GNUSTEP_DEVEL%%System/Library/Headers/gnustep/gui/GSFusedSilica.h
+%%GNUSTEP_DEVEL%%System/Library/Headers/gnustep/gui/GSTable.h
+%%GNUSTEP_DEVEL%%System/Library/Headers/gnustep/gui/GSHbox.h
+%%GNUSTEP_DEVEL%%System/Library/Headers/gnustep/gui/GSVbox.h
+%%GNUSTEP_DEVEL%%System/Library/Headers/gnustep/gui/GSLayoutManager.h
+%%GNUSTEP_DEVEL%%System/Library/Headers/gnustep/gui/GSLayoutManager_internal.h
+%%GNUSTEP_DEVEL%%System/Library/Headers/gnustep/gui/GSTypesetter.h
+%%GNUSTEP_DEVEL%%System/Library/Headers/gnustep/gui/GSHorizontalTypesetter.h
+%%GNUSTEP_DEVEL%%System/Library/Headers/gnustep/gui/GSToolbarView.h
 %%SYSTEMLIBRARY%%/Headers/gnustep/gui/IMConnectors.h
 %%SYSTEMLIBRARY%%/Headers/gnustep/gui/IMCustomObject.h
 %%SYSTEMLIBRARY%%/Headers/gnustep/gui/IMLoading.h
+%%GNUSTEP_DEVEL%%System/Library/Documentation/Developer/Gui/Additions/.cvsignore
+%%GNUSTEP_DEVEL%%System/Library/Documentation/Developer/Gui/Additions/GNUmakefile
+%%GNUSTEP_DEVEL%%System/Library/Documentation/Developer/Gui/Additions/GuiAdditions.gsdoc
+%%GNUSTEP_DEVEL%%System/Library/Documentation/Developer/Gui/Additions/TypesAndConstants.gsdoc
+%%GNUSTEP_DEVEL%%System/Library/Documentation/Developer/Gui/Additions/Functions.gsdoc
+%%GNUSTEP_DEVEL%%System/Library/Documentation/Developer/Gui/Additions/GSDisplayServer.gsdoc
+%%GNUSTEP_DEVEL%%System/Library/Documentation/Developer/Gui/Additions/GSTable.gsdoc
+%%GNUSTEP_DEVEL%%System/Library/Documentation/Developer/Gui/Additions/GSHbox.gsdoc
+%%GNUSTEP_DEVEL%%System/Library/Documentation/Developer/Gui/Additions/GSVbox.gsdoc
+%%GNUSTEP_DEVEL%%System/Library/Documentation/Developer/Gui/Additions/GuiAdditions.igsdoc
+%%GNUSTEP_DEVEL%%System/Library/Documentation/Developer/Gui/Additions/GSDisplayServer.html
+%%GNUSTEP_DEVEL%%System/Library/Documentation/Developer/Gui/Additions/Functions.html
+%%GNUSTEP_DEVEL%%System/Library/Documentation/Developer/Gui/Additions/TypesAndConstants.html
+%%GNUSTEP_DEVEL%%System/Library/Documentation/Developer/Gui/Additions/GSTable.html
+%%GNUSTEP_DEVEL%%System/Library/Documentation/Developer/Gui/Additions/GSHbox.html
+%%GNUSTEP_DEVEL%%System/Library/Documentation/Developer/Gui/Additions/GSVbox.html
 %%GNUSTEP_DEVEL%%System/Library/Documentation/Developer/Gui/ReleaseNotes/%%VERSION%%/INSTALL
 %%GNUSTEP_DEVEL%%System/Library/Documentation/Developer/Gui/ReleaseNotes/%%VERSION%%/NEWS
 %%GNUSTEP_DEVEL%%System/Library/Documentation/Developer/Gui/ReleaseNotes/%%VERSION%%/README
 %%GNUSTEP_DEVEL%%System/Library/Documentation/Developer/Gui/ReleaseNotes/%%VERSION%%/ANNOUNCE
 %%GNUSTEP_DEVEL%%System/Library/Documentation/Developer/Gui/ReleaseNotes/%%VERSION%%/BUGS
 %%GNUSTEP_DEVEL%%System/Library/Documentation/Developer/Gui/Reference/.cvsignore
-%%GNUSTEP_DEVEL%%System/Library/Documentation/Developer/Gui/Reference/DefaultsSummary.gsdoc
 %%GNUSTEP_DEVEL%%System/Library/Documentation/Developer/Gui/Reference/GNUmakefile
 %%GNUSTEP_DEVEL%%System/Library/Documentation/Developer/Gui/Reference/Gui.gsdoc
 %%GNUSTEP_DEVEL%%System/Library/Documentation/Developer/Gui/Reference/Introduction.gsdoc
-%%GNUSTEP_DEVEL%%System/Library/Documentation/Developer/Gui/Reference/LanguageSetup.gsdoc
 %%GNUSTEP_DEVEL%%System/Library/Documentation/Developer/Gui/Reference/NSBundleAdditions.gsdoc
 %%GNUSTEP_DEVEL%%System/Library/Documentation/Developer/Gui/Reference/NSCoderAdditions.gsdoc
 %%GNUSTEP_DEVEL%%System/Library/Documentation/Developer/Gui/Reference/NSMutableAttributedStringAdditions.gsdoc
@@ -193,10 +259,6 @@ System/Library/ColorPickers/WheelPicker.bundle/stamp.make
 %%GNUSTEP_DEVEL%%System/Library/Documentation/Developer/Gui/Reference/NSDocumentController.gsdoc
 %%GNUSTEP_DEVEL%%System/Library/Documentation/Developer/Gui/Reference/TypesAndConstants.gsdoc
 %%GNUSTEP_DEVEL%%System/Library/Documentation/Developer/Gui/Reference/Functions.gsdoc
-%%GNUSTEP_DEVEL%%System/Library/Documentation/Developer/Gui/Reference/GSDisplayServer.gsdoc
-%%GNUSTEP_DEVEL%%System/Library/Documentation/Developer/Gui/Reference/GSTable.gsdoc
-%%GNUSTEP_DEVEL%%System/Library/Documentation/Developer/Gui/Reference/GSHbox.gsdoc
-%%GNUSTEP_DEVEL%%System/Library/Documentation/Developer/Gui/Reference/GSVbox.gsdoc
 %%GNUSTEP_DEVEL%%System/Library/Documentation/Developer/Gui/Reference/NSActionCell.gsdoc
 %%GNUSTEP_DEVEL%%System/Library/Documentation/Developer/Gui/Reference/NSAffineTransform.gsdoc
 %%GNUSTEP_DEVEL%%System/Library/Documentation/Developer/Gui/Reference/NSApplication.gsdoc
@@ -300,13 +362,9 @@ System/Library/ColorPickers/WheelPicker.bundle/stamp.make
 %%GNUSTEP_DEVEL%%System/Library/Documentation/Developer/Gui/Reference/NSWorkspace.gsdoc
 %%GNUSTEP_DEVEL%%System/Library/Documentation/Developer/Gui/Reference/Gui.igsdoc
 %%GNUSTEP_DEVEL%%System/Library/Documentation/Developer/Gui/Reference/Gui.html
-%%GNUSTEP_DEVEL%%System/Library/Documentation/Developer/Gui/Reference/GSDisplayServer.html
 %%GNUSTEP_DEVEL%%System/Library/Documentation/Developer/Gui/Reference/Functions.html
 %%GNUSTEP_DEVEL%%System/Library/Documentation/Developer/Gui/Reference/NSActionCell.html
 %%GNUSTEP_DEVEL%%System/Library/Documentation/Developer/Gui/Reference/TypesAndConstants.html
-%%GNUSTEP_DEVEL%%System/Library/Documentation/Developer/Gui/Reference/GSHbox.html
-%%GNUSTEP_DEVEL%%System/Library/Documentation/Developer/Gui/Reference/GSTable.html
-%%GNUSTEP_DEVEL%%System/Library/Documentation/Developer/Gui/Reference/GSVbox.html
 %%GNUSTEP_DEVEL%%System/Library/Documentation/Developer/Gui/Reference/NSAffineTransform.html
 %%GNUSTEP_DEVEL%%System/Library/Documentation/Developer/Gui/Reference/NSApplication.html
 %%GNUSTEP_DEVEL%%System/Library/Documentation/Developer/Gui/Reference/NSBezierPath.html
@@ -409,13 +467,17 @@ System/Library/ColorPickers/WheelPicker.bundle/stamp.make
 %%GNUSTEP_DEVEL%%System/Library/Documentation/Developer/Gui/Reference/NSWindowController.html
 %%GNUSTEP_DEVEL%%System/Library/Documentation/Developer/Gui/Reference/NSWorkspace.html
 %%GNUSTEP_DEVEL%%System/Library/Documentation/Developer/Gui/Reference/Introduction.html
-%%GNUSTEP_DEVEL%%System/Library/Documentation/Developer/Gui/Reference/DefaultsSummary.html
-%%GNUSTEP_DEVEL%%System/Library/Documentation/Developer/Gui/Reference/LanguageSetup.html
 %%GNUSTEP_DEVEL%%System/Library/Documentation/Developer/Gui/Reference/NSBundleAdditions.html
 %%GNUSTEP_DEVEL%%System/Library/Documentation/Developer/Gui/Reference/NSCoderAdditions.html
 %%GNUSTEP_DEVEL%%System/Library/Documentation/Developer/Gui/Reference/NSMutableAttributedStringAdditions.html
 %%GNUSTEP_DEVEL%%System/Library/Documentation/Developer/Gui/Reference/NSStringAdditions.html
-%%GNUSTEP_DEVEL%%System/Library/Documentation/info/gnustep-gui.info
+%%GNUSTEP_DEVEL%%System/Library/Documentation/User/Gui/.cvsignore
+%%GNUSTEP_DEVEL%%System/Library/Documentation/User/Gui/DefaultsSummary.gsdoc
+%%GNUSTEP_DEVEL%%System/Library/Documentation/User/Gui/LanguageSetup.gsdoc
+%%GNUSTEP_DEVEL%%System/Library/Documentation/User/Gui/DefaultsSummary.html
+%%GNUSTEP_DEVEL%%System/Library/Documentation/User/Gui/GuiUser.igsdoc
+%%GNUSTEP_DEVEL%%System/Library/Documentation/User/Gui/LanguageSetup.html
+%%GNUSTEP_DEVEL%%System/Library/Documentation/man/man1/gopen.1.gz
 %%GNUSTEP_DEVEL%%System/Library/Images/GNUstep.tiff
 %%GNUSTEP_DEVEL%%System/Library/Images/GNUstepMenuImage.tiff
 %%GNUSTEP_DEVEL%%System/Library/Images/GNUstep_Images_Copyright
@@ -426,13 +488,9 @@ System/Library/ColorPickers/WheelPicker.bundle/stamp.make
 %%GNUSTEP_DEVEL%%System/Library/Images/common_3DArrowRight.tiff
 %%GNUSTEP_DEVEL%%System/Library/Images/common_3DArrowRightH.tiff
 %%GNUSTEP_DEVEL%%System/Library/Images/common_ArrowDown.tiff
-%%GNUSTEP_DEVEL%%System/Library/Images/common_ArrowDownH.tiff
 %%GNUSTEP_DEVEL%%System/Library/Images/common_ArrowLeft.tiff
-%%GNUSTEP_DEVEL%%System/Library/Images/common_ArrowLeftH.tiff
 %%GNUSTEP_DEVEL%%System/Library/Images/common_ArrowRight.tiff
-%%GNUSTEP_DEVEL%%System/Library/Images/common_ArrowRightH.tiff
 %%GNUSTEP_DEVEL%%System/Library/Images/common_ArrowUp.tiff
-%%GNUSTEP_DEVEL%%System/Library/Images/common_ArrowUpH.tiff
 %%GNUSTEP_DEVEL%%System/Library/Images/common_CenterTabStop.tiff
 %%GNUSTEP_DEVEL%%System/Library/Images/common_Close.tiff
 %%GNUSTEP_DEVEL%%System/Library/Images/common_CloseBroken.tiff
@@ -500,6 +558,8 @@ System/Library/ColorPickers/WheelPicker.bundle/stamp.make
 %%GNUSTEP_DEVEL%%System/Library/Libraries/Resources/gnustep-gui/English.lproj/GSPageLayout.gorm/objects.gorm
 %%GNUSTEP_DEVEL%%System/Library/Libraries/Resources/gnustep-gui/English.lproj/GSPrintPanel.gorm/data.classes
 %%GNUSTEP_DEVEL%%System/Library/Libraries/Resources/gnustep-gui/English.lproj/GSPrintPanel.gorm/objects.gorm
+%%GNUSTEP_DEVEL%%System/Library/Libraries/Resources/gnustep-gui/English.lproj/GSSpellPanel.gorm/data.classes
+%%GNUSTEP_DEVEL%%System/Library/Libraries/Resources/gnustep-gui/English.lproj/GSSpellPanel.gorm/objects.gorm
 %%GNUSTEP_DEVEL%%System/Library/Libraries/Resources/gnustep-gui/English.lproj/Localizable.strings
 %%GNUSTEP_DEVEL%%System/Library/Libraries/Resources/gnustep-gui/Italian.lproj/Localizable.strings
 %%GNUSTEP_STABLE%%%%SYSTEMLIBRARY%%/Libraries/Resources/English.lproj/GSPageLayout.gorm
@@ -1245,15 +1305,17 @@ System/Tools/%%NOFLAT%%set_show_service
 %%GNUSTEP_DEVEL%%@dirrm System/Library/PostScript/PPD/English.lproj
 %%GNUSTEP_DEVEL%%@dirrm System/Library/PostScript/PPD
 %%GNUSTEP_DEVEL%%@dirrm System/Library/Libraries/Resources/gnustep-gui/Italian.lproj
+%%GNUSTEP_DEVEL%%@dirrm System/Library/Libraries/Resources/gnustep-gui/English.lproj/GSSpellPanel.gorm
 %%GNUSTEP_DEVEL%%@dirrm System/Library/Libraries/Resources/gnustep-gui/English.lproj/GSPrintPanel.gorm
 %%GNUSTEP_DEVEL%%@dirrm System/Library/Libraries/Resources/gnustep-gui/English.lproj/GSPageLayout.gorm
 %%GNUSTEP_DEVEL%%@dirrm System/Library/Libraries/Resources/gnustep-gui/English.lproj/GSDataLinkPanel.gorm
 %%GNUSTEP_DEVEL%%@dirrm System/Library/Libraries/Resources/gnustep-gui/English.lproj
 %%GNUSTEP_DEVEL%%@dirrm System/Library/Libraries/Resources/gnustep-gui
+%%GNUSTEP_DEVEL%%@dirrm System/Library/Documentation/User/Gui
 %%GNUSTEP_DEVEL%%@dirrm System/Library/Documentation/Developer/Gui/ReleaseNotes/%%VERSION%%
 %%GNUSTEP_DEVEL%%@dirrm System/Library/Documentation/Developer/Gui/ReleaseNotes
 %%GNUSTEP_DEVEL%%@dirrm System/Library/Documentation/Developer/Gui/Reference
-%%GNUSTEP_DEVEL%%@dirrm System/Library/Documentation/Developer/Gui/Manual
+%%GNUSTEP_DEVEL%%@dirrm System/Library/Documentation/Developer/Gui/Additions
 %%GNUSTEP_DEVEL%%@dirrm System/Library/Documentation/Developer/Gui
 %%GNUSTEP_STABLE%%@dirrm System/Library/Model
 %%GNUSTEP_STABLE%%@dirrm %%SYSTEMLIBRARY%%/Libraries/Resources/PrinterTypes/Swedish.lproj
@@ -1266,6 +1328,7 @@ System/Tools/%%NOFLAT%%set_show_service
 %%GNUSTEP_STABLE%%@dirrm %%SYSTEMLIBRARY%%/Libraries/Resources/KeyBindings
 %%GNUSTEP_STABLE%%@dirrm %%SYSTEMLIBRARY%%/Libraries/Resources/Images
 @dirrm %%SYSTEMLIBRARY%%/Headers/gnustep/gui
+%%GNUSTEP_DEVEL%%@dirrm System/Library/Headers/GNUstepGUI
 @dirrm %%SYSTEMLIBRARY%%/Headers/AppKit
 %%GNUSTEP_STABLE%%@dirrm System/Library/ColorPickers/WheelPicker.bundle/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu
 %%GNUSTEP_STABLE%%@dirrm System/Library/ColorPickers/WheelPicker.bundle/%%GNU_ARCH%%/%%OPSYS%%
@@ -1280,6 +1343,8 @@ System/Tools/%%NOFLAT%%set_show_service
 @dirrm System/Library/ColorPickers/StandardPicker.bundle/Resources/English.lproj
 @dirrm System/Library/ColorPickers/StandardPicker.bundle/Resources
 @dirrm System/Library/ColorPickers/StandardPicker.bundle
+%%GNUSTEP_DEVEL%%@dirrm System/Library/ColorPickers/NamedPicker.bundle/Resources
+%%GNUSTEP_DEVEL%%@dirrm System/Library/ColorPickers/NamedPicker.bundle
 %%GNUSTEP_STABLE%%@dirrm System/Library/ColorPickers
 %%GNUSTEP_STABLE%%@dirrm System/Library/Bundles/libgmodel.bundle/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu
 %%GNUSTEP_STABLE%%@dirrm System/Library/Bundles/libgmodel.bundle/%%GNU_ARCH%%/%%OPSYS%%
@@ -1298,4 +1363,3 @@ System/Tools/%%NOFLAT%%set_show_service
 %%GNUSTEP_STABLE%%@dirrm System/Libraries/Resources/gnustep-gui
 %%GNUSTEP_DEVEL%%@dirrm System/Applications/md5Digest.app/Resources
 %%GNUSTEP_DEVEL%%@dirrm System/Applications/md5Digest.app
-%%GNUSTEP_DEVEL%%@exec mkdir -p %D/System/Library/Documentation/Developer/Gui/Manual
