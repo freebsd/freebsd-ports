@@ -19,6 +19,7 @@
 %%RUBY_SITELIBDIR%%/soap/parser.rb
 %%RUBY_SITELIBDIR%%/soap/processor.rb
 %%RUBY_SITELIBDIR%%/soap/proxy.rb
+%%RUBY_SITELIBDIR%%/soap/rexmlparser.rb
 %%RUBY_SITELIBDIR%%/soap/rpcRouter.rb
 %%RUBY_SITELIBDIR%%/soap/rpcUtils.rb
 %%RUBY_SITELIBDIR%%/soap/saxdriver.rb
@@ -28,33 +29,51 @@
 %%RUBY_SITELIBDIR%%/soap/streamHandler.rb
 %%RUBY_SITELIBDIR%%/soap/xmlparser.rb
 @dirrm %%RUBY_SITELIBDIR%%/soap
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/soap/apacheClient.rb
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/soap/babelfish.rb
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/soap/babelfishVelociGen.rb
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/soap/digraph.rb
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/soap/hippo5tq.rb
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/soap/httpserver.rb
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/soap/hippo5tq2.rb
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/soap/hippoClient.rb
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/soap/whois.rb
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/soap/whois2.rb
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/soap/webrick/exchange.rb
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/soap/webrick/exchangeClient.rb
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/soap/webrick/httpd.rb
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/soap/webrick/soaplet.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/soap/Calc/calc.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/soap/Calc/calc2.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/soap/Calc/client.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/soap/Calc/client2.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/soap/Calc/server.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/soap/Calc/server2.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/soap/Exchange/client.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/soap/Exchange/exchange.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/soap/Exchange/iExchange.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/soap/Exchange/server.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/soap/ICD/IICD.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/soap/ICD/icd.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/soap/RAA/RAA.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/soap/RAA/SOAP::Lite.pl
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/soap/RAA/hotpage.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/soap/RAA/iRAA.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/soap/RAA/pocketSOAP.js
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/soap/RAA/raa-div.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/soap/RAA/soap4r.rb
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/soap/RAA/soap4rApp.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/soap/RAA/xmlrpc4r.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/soap/RWiki/rwikiClient.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/soap/RWiki/rwikiServer.cgi
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/soap/SampleStruct/client.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/soap/SampleStruct/iSampleStruct.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/soap/SampleStruct/sampleStruct.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/soap/SampleStruct/server.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/soap/WSDemo/iSeminarService.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/soap/WSDemo/server.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/soap/WSDemo/subscription.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/soap/apacheClient.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/soap/babelfish.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/soap/digraph.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/soap/hippo5tq.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/soap/hippo5tq2.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/soap/hippoClient.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/soap/httpserver.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/soap/webrick/exchange.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/soap/webrick/exchangeClient.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/soap/webrick/httpd.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/soap/webrick/iExchange.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/soap/webrick/iSampleStruct.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/soap/webrick/sampleStruct.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/soap/webrick/sampleStructClient.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/soap/webrick/soaplet.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/soap/whois.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/soap/test/interop/README.txt
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/soap/test/interop/base.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/soap/test/interop/client4S4C1.3.rb
@@ -124,17 +143,18 @@
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/soap/test/interopR2/server.cgi
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/soap/test/interopR2/server.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/soap/test/interopR2/simonReg.rb
+%%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/soap/Calc
+%%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/soap/Exchange
+%%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/soap/ICD
+%%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/soap/RAA
+%%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/soap/RWiki
+%%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/soap/SampleStruct
+%%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/soap/WSDemo
+%%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/soap/webrick
 %%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/soap/test/interopR2
 %%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/soap/test/interop
 %%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/soap/test
-%%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/soap/WSDemo
-%%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/soap/RWiki
-%%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/soap/RAA
-%%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/soap/ICD
-%%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/soap/webrick
 %%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/soap
 %%PORTDOCS%%%%RUBY_DOCDIR%%/soap/RELEASE_en.html
 %%PORTDOCS%%%%RUBY_DOCDIR%%/soap/rubyStyle.css
-%%PORTDOCS%%%%RUBY_DOCDIR%%/soap/ja/RELEASE_ja.html
-%%PORTDOCS%%@dirrm %%RUBY_DOCDIR%%/soap/ja
 %%PORTDOCS%%@dirrm %%RUBY_DOCDIR%%/soap
