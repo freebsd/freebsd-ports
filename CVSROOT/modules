@@ -6621,6 +6621,7 @@ ricochet	ports/mail/ricochet
 rid		ports/security/rid
 rinetd		ports/net/rinetd
 rinfo		ports/devel/rinfo
+ringtonetools	ports/misc/ringtonetools
 rio		ports/audio/rio
 rio500		ports/audio/rio500
 rioutil		ports/audio/rioutil
