@@ -6,7 +6,12 @@ info/ecb.info-3
 info/ecb.info-4
 info/ecb.info-5
 info/ecb.info-6
+info/ecb.info-7
+info/ecb.info-8
 @exec install-info --section="%%INFOSECTION%%" %D/info/ecb.info %D/info/dir
+%%EMACS_VERSION_SITE_LISPDIR%%/ecb/ecb-autogen.el
+%%EMACS_VERSION_SITE_LISPDIR%%/ecb/ecb-autogen.elc
+%%EMACS_VERSION_SITE_LISPDIR%%/ecb/ecb-autoloads.el
 %%EMACS_VERSION_SITE_LISPDIR%%/ecb/ecb-compilation.el
 %%EMACS_VERSION_SITE_LISPDIR%%/ecb/ecb-compilation.elc
 %%EMACS_VERSION_SITE_LISPDIR%%/ecb/ecb-create-layout.el
@@ -21,6 +26,8 @@ info/ecb.info-6
 %%EMACS_VERSION_SITE_LISPDIR%%/ecb/ecb-face.elc
 %%EMACS_VERSION_SITE_LISPDIR%%/ecb/ecb-help.el
 %%EMACS_VERSION_SITE_LISPDIR%%/ecb/ecb-help.elc
+%%EMACS_VERSION_SITE_LISPDIR%%/ecb/ecb-jde.el
+%%EMACS_VERSION_SITE_LISPDIR%%/ecb/ecb-jde.elc
 %%EMACS_VERSION_SITE_LISPDIR%%/ecb/ecb-layout-defs.el
 %%EMACS_VERSION_SITE_LISPDIR%%/ecb/ecb-layout-defs.elc
 %%EMACS_VERSION_SITE_LISPDIR%%/ecb/ecb-layout.el
@@ -44,7 +51,7 @@ info/ecb.info-6
 %%EMACS_VERSION_SITE_LISPDIR%%/ecb/tree-buffer.el
 %%EMACS_VERSION_SITE_LISPDIR%%/ecb/tree-buffer.elc
 @dirrm %%EMACS_VERSION_SITE_LISPDIR%%/ecb
-%%PORTDOCS%%%%DOCSDIR%%/HISTORY
+%%PORTDOCS%%%%DOCSDIR%%/NEWS
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%%%DOCSDIR%%/RELEASE_NOTES
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
