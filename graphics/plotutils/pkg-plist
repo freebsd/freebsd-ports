@@ -1,9 +1,11 @@
-bin/spline
 bin/double
-bin/ode
-bin/plot
-bin/tek2plot
 bin/graph
+bin/ode
+bin/pic2plot
+bin/plot
+bin/plotfont
+bin/spline
+bin/tek2plot
 share/ode/README
 share/ode/atwoods.ode
 share/ode/bead.ode
@@ -24,11 +26,10 @@ share/ode/viscous.ode
 share/libplot/README
 share/libplot/colors.txt
 share/libplot/demo-page
-share/libplot/hershey-demo.c
-share/libplot/hershey-fonts
-share/libplot/hershey-number
+share/libplot/h-demo.c
+share/libplot/h-fonts.doc
+share/libplot/h-glyphs.doc
 share/libplot/hershey.bib
-share/libplot/hershey.doc
 share/libplot/kana.doc
 share/libplot/kanji.doc
 share/tek2plot/README
@@ -42,12 +43,16 @@ share/tek2plot/scale.tek
 share/tek2plot/skymap.tek
 share/tek2plot/usmap.tek
 lib/libplot.so
-lib/libplot.so.1
+lib/libplot.so.2
 lib/libplot.a
-lib/libplot.la
+lib/libplotter.so
+lib/libplotter.so.2
+lib/libplotter.a
 @exec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -m %B
 @unexec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -R
 include/plot.h
+include/plotcompat.h
+include/plotter.h
 @unexec install-info --delete --info-dir=/usr/local/info /usr/local/info/plotutils.info
 info/plotutils.info
 @exec install-info --info-dir=/usr/local/info /usr/local/info/plotutils.info
