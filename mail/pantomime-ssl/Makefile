@@ -10,7 +10,7 @@ PORTVERSION=	1.1.2
 PORTREVISION=	1
 CATEGORIES=	mail
 MASTER_SITES=	http://www.collaboration-world.com/pantomime.data/releases/Stable/
-PKGNAMESUFFIX=	-ssl
+PKGNAMESUFFIX?=	-ssl${PKGNAMESUFFIX2}
 DISTNAME=	Pantomime-${PORTVERSION}
 
 MAINTAINER=	dinoex@FreeBSD.org
