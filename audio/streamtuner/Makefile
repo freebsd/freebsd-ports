@@ -6,7 +6,7 @@
 #
 
 PORTNAME=		streamtuner
-PORTVERSION=		0.12.5
+PORTVERSION=		0.99
 CATEGORIES=		audio www
 MASTER_SITES=		${MASTER_SITE_SAVANNAH}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -25,4 +25,58 @@ USE_LIBTOOL_VER=	15
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
 
-.include <bsd.port.mk>
+OPTIONS=		SHOUTCAST "SHOUTcast plugin" on \
+			LIVE365 "Live365 plugin" on \
+			XIPH "Xiph plugin" on \
+			LOCAL "Local plugin" on \
+			LOCAL_METADATA "metadata support for the Local plugin" on \
+			PYTHON "Python plugin" on
+
+.include <bsd.port.pre.mk>
+
+.if defined(WITHOUT_SHOUTCAST)
+CONFIGURE_ARGS+=	--disable-shoutcast
+PLIST_SUB+=		SHOUTCAST="@comment "
+.else
+PLIST_SUB+=		SHOUTCAST=""
+.endif
+
+.if defined(WITHOUT_LIVE365)
+CONFIGURE_ARGS+=	--disable-live365
+PLIST_SUB+=		LIVE365="@comment "
+.else
+PLIST_SUB+=		LIVE365=""
+.endif
+
+.if defined(WITHOUT_XIPH)
+CONFIGURE_ARGS+=	--disable-xiph
+PLIST_SUB+=		XIPH="@comment "
+.else
+PLIST_SUB+=		XIPH=""
+USE_GNOME+=		libxml2
+.endif
+
+.if defined(WITHOUT_LOCAL)
+CONFIGURE_ARGS+=	--disable-local
+PLIST_SUB+=		LOCAL="@comment "
+.else
+PLIST_SUB+=		LOCAL=""
+.if defined(WITHOUT_LOCAL_METADATA)
+CONFIGURE_ARGS+=	--disable-local-metadata
+.else
+LIB_DEPENDS+=		tag_c:${PORTSDIR}/audio/taglib
+.endif
+.endif
+
+.if defined(WITHOUT_PYTHON)
+CONFIGURE_ARGS+=	--disable-python
+PLIST_SUB+=		PYTHON="@comment "
+.else
+PLIST_SUB+=		PYTHON=""
+USE_PYTHON=		2.2+
+# we need to manually include this, because USE_PYTHON is defined
+# after including bsd.port.pre.mk
+.include "${PORTSDIR}/Mk/bsd.python.mk"
+.endif
+
+.include <bsd.port.post.mk>

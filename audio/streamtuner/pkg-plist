@@ -14,9 +14,14 @@ include/streamtuner/st-sgml-ref-api.h
 include/streamtuner/st-state-api.h
 include/streamtuner/st-stream-api.h
 include/streamtuner/st-transfer-api.h
+include/streamtuner/st-util-api.h
 include/streamtuner/st-version-api.h
 include/streamtuner/streamtuner.h
-lib/streamtuner/plugins/shoutcast.so
+%%LIVE365%%lib/streamtuner/plugins/live365.so
+%%LOCAL%%lib/streamtuner/plugins/local.so
+%%PYTHON%%lib/streamtuner/plugins/python.so
+%%SHOUTCAST%%lib/streamtuner/plugins/shoutcast.so
+%%XIPH%%lib/streamtuner/plugins/xiph.so
 libdata/pkgconfig/streamtuner.pc
 share/gnome/applications/streamtuner.desktop
 share/gnome/doc/streamtuner/C/documentation-license.xml
@@ -26,6 +31,12 @@ share/gnome/doc/streamtuner/C/streamtuner.xml
 share/gnome/omf/streamtuner/streamtuner-C.omf
 @exec scrollkeeper-install -q %D/share/gnome/omf/streamtuner/streamtuner-C.omf 2>/dev/null || /usr/bin/true
 share/gnome/pixmaps/streamtuner.png
+%%PYTHON%%share/gnome/streamtuner/python/icons/basic.ch.png
+%%PYTHON%%share/gnome/streamtuner/python/icons/google-stations.png
+%%PYTHON%%share/gnome/streamtuner/python/icons/punkcast.com.png
+%%PYTHON%%share/gnome/streamtuner/python/scripts/basic.ch.py
+%%PYTHON%%share/gnome/streamtuner/python/scripts/google-stations.py
+%%PYTHON%%share/gnome/streamtuner/python/scripts/punkcast.com.py
 share/locale/de/LC_MESSAGES/streamtuner.mo
 share/locale/fr/LC_MESSAGES/streamtuner.mo
 share/locale/hu/LC_MESSAGES/streamtuner.mo
@@ -38,3 +49,7 @@ share/locale/pt/LC_MESSAGES/streamtuner.mo
 @dirrm share/gnome/doc/streamtuner
 @dirrm share/gnome/omf/streamtuner
 @unexec scrollkeeper-uninstall -q %D/share/gnome/omf/streamtuner/streamtuner-C.omf 2>/dev/null || /usr/bin/true
+%%PYTHON%%@dirrm share/gnome/streamtuner/python/icons
+%%PYTHON%%@dirrm share/gnome/streamtuner/python/scripts
+%%PYTHON%%@dirrm share/gnome/streamtuner/python
+%%PYTHON%%@dirrm share/gnome/streamtuner
