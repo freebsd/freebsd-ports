@@ -1,5 +1,14 @@
---- Makefile.orig	Tue Feb 16 01:06:47 1999
-+++ Makefile	Tue Oct 26 14:56:09 1999
+--- Makefile.orig	Mon Sep 25 16:11:49 2000
++++ Makefile	Sun Dec 17 00:12:03 2000
+@@ -34,7 +34,7 @@
+ include Make.sysdefs
+ 
+ TOBUILD = all
+-GENMASTER = $(TOBUILD) GLOBALCFLAGS="$(GLOBALCFLAGS)" GLOBALLFLAGS="$(GLOBALLFLAGS)"
++GENMASTER = $(TOBUILD) GLOBALCFLAGS="$(CFLAGS) $(GLOBALCFLAGS)" GLOBALLFLAGS="$(GLOBALLFLAGS)"
+ CLIENTLIBS = -ltermcap
+ 
+ 
 @@ -80,7 +80,6 @@
  	($(MAKE) genlibs $(ALPHAMASTER))
  	(cd src/lib/lwp; $(MAKE) $(ALPHAMASTER))
@@ -35,7 +44,7 @@
 @@ -112,7 +108,6 @@
  	($(MAKE) genlibs $(HPMASTER))
  	(cd src/lib/lwp; $(MAKE) $(HPMASTER))
- 	($(MAKE) binaries $(HPMASTER) CLIENTLIBS="")
+ 	($(MAKE) binaries $(HPMASTER))
 -	($(MAKE) install)
  
  hpux:
@@ -128,7 +137,15 @@
  
  nt:
  	@echo 'building a $(WORLDX) by $(WORLDY) server...'
-@@ -222,7 +206,6 @@
+@@ -214,7 +198,6 @@
+ 	$(MAKE) nt $(NTMASTER)
+ 	cd ../../..
+ 	$(MAKE) ntbinaries TOBUILD=nt $(NTMASTER)
+-	$(MAKE) ntinstall
+ 
+ vaxultrix:
+ 	@echo 'building a $(WORLDX) by $(WORLDY) server...'
+@@ -222,7 +205,6 @@
  	($(MAKE) genlibs $(VAXULTMASTER))
  	(cd src/lib/lwp; $(MAKE) $(VAXULTMASTER))
  	($(MAKE) binaries $(VAXULTMASTER))
@@ -136,7 +153,7 @@
  
  aix:
  	@echo 'building a $(WORLDX) by $(WORLDY) server...'
-@@ -230,7 +213,6 @@
+@@ -230,7 +212,6 @@
  	($(MAKE) genlibs $(AIXMASTER))
  	(cd src/lib/lwp; $(MAKE) aix $(AIXMASTER))
  	($(MAKE) binaries $(AIXMASTER))
@@ -144,7 +161,7 @@
  
  rtpc:
  	@echo 'building a $(WORLDX) by $(WORLDY) server...'
-@@ -238,7 +220,6 @@
+@@ -238,7 +219,6 @@
  	($(MAKE) genlibs $(RTPCMASTER))
  	(cd src/lib/lwp; $(MAKE) aix $(RTPCMASTER))
  	($(MAKE) binaries $(RTPCMASTER))
@@ -152,7 +169,7 @@
  
  sequent:
  	@echo 'building a $(WORLDX) by $(WORLDY) server...'
-@@ -246,7 +227,6 @@
+@@ -246,7 +226,6 @@
  	($(MAKE) genlibs $(SEQMASTER))
  	(cd src/lib/lwp; $(MAKE) $(SEQMASTER))
  	($(MAKE) binaries $(SEQMASTER))
@@ -160,7 +177,7 @@
  
  sequent.fpa:
  	@echo 'building a $(WORLDX) by $(WORLDY) server...'
-@@ -254,7 +234,6 @@
+@@ -254,7 +233,6 @@
  	($(MAKE) genlibs $(SEQFPAMASTER))
  	(cd src/lib/lwp; $(MAKE) $(SEQFPAMASTER))
  	($(MAKE) binaries $(SEQFPAMASTER))
@@ -168,7 +185,7 @@
  
  solaris:
  	@echo 'building a $(WORLDX) by $(WORLDY) server...'
-@@ -262,7 +241,6 @@
+@@ -262,7 +240,6 @@
  	($(MAKE) genlibs $(SOLMASTER))
  	(cd src/lib/lwp; $(MAKE) $(SOLMASTER))
  	($(MAKE) binaries $(SOLMASTER))
@@ -176,7 +193,7 @@
  
  sun3:
  	@echo 'building a $(WORLDX) by $(WORLDY) server...'
-@@ -270,7 +248,6 @@
+@@ -270,7 +247,6 @@
  	($(MAKE) genlibs $(SUN3MASTER))
  	(cd src/lib/lwp; $(MAKE) $(SUN3MASTER))
  	($(MAKE) binaries $(SUN3MASTER))
@@ -184,7 +201,7 @@
  
  sun4:
  	@echo 'building a $(WORLDX) by $(WORLDY) server...'
-@@ -278,7 +255,6 @@
+@@ -278,7 +254,6 @@
  	($(MAKE) genlibs $(SUN4MASTER))
  	(cd src/lib/lwp; $(MAKE) $(SUN4MASTER))
  	($(MAKE) binaries $(SUN4MASTER))
@@ -192,7 +209,7 @@
  
  sun4.opt:
  	@echo 'building a $(WORLDX) by $(WORLDY) server...'
-@@ -286,7 +262,6 @@
+@@ -286,7 +261,6 @@
  	($(MAKE) genlibs $(SUN4OPTMASTER))
  	(cd src/lib/lwp; $(MAKE) $(SUN4OPTMASTER))
  	($(MAKE) binaries $(SUN4OPTMASTER))
@@ -200,7 +217,7 @@
  
  sun4.debug:
  	@echo 'building a $(WORLDX) by $(WORLDY) server...'
-@@ -294,7 +269,6 @@
+@@ -294,7 +268,6 @@
  	($(MAKE) genlibs $(SUN4DBGMASTER))
  	(cd src/lib/lwp; $(MAKE) $(SUN4DBGMASTER))
  	($(MAKE) binaries $(SUN4DBGMASTER))
@@ -208,7 +225,7 @@
  
  #
  # Generic stuff that is called from the architecture specific stuff.
-@@ -527,9 +501,16 @@
+@@ -528,9 +501,16 @@
  # data directory if you didn't have one before.
  
  install:

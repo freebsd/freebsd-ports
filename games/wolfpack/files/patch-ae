@@ -1,0 +1,14 @@
+--- src/lib/lwp/sem.c.orig	Sat Dec 16 18:54:39 2000
++++ src/lib/lwp/sem.c	Sat Dec 16 18:55:01 2000
+@@ -20,7 +20,11 @@
+  * Imperial College of Science, Technology and Medicine, 180 Queen's
+  * Gate, London SW7 2BZ, England.
+  */
++#if defined(__FreeBSD__)
++#include <stdlib.h>
++#else
+ #include <malloc.h>
++#endif
+ #include <string.h>
+ 
+ #include "lwp.h"

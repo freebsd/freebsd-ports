@@ -1,0 +1,14 @@
+--- src/lib/lwp/misc/echo.c.orig	Sat Dec 16 18:55:16 2000
++++ src/lib/lwp/misc/echo.c	Sat Dec 16 18:55:41 2000
+@@ -5,7 +5,11 @@
+  *
+  */
+ 
++#if defined(__FreeBSD__)
++#include <stdlib.h>
++#else
+ #include <malloc.h>
++#endif
+ #include <stdio.h>
+ #include <sys/types.h>
+ #include <sys/time.h>

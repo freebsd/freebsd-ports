@@ -1,0 +1,36 @@
+--- src/lib/commands/mfir.c.orig	Sat Mar 11 15:36:42 2000
++++ src/lib/commands/mfir.c	Sat Dec 16 22:45:46 2000
+@@ -522,6 +522,7 @@
+ 			}
+ 		}
+ */
++		/* Now check treaties, based on the target */
+ 		switch (target) {
+ 		case targ_ship:
+ 			if (!trechk(player->cnum, vict, SEAFIR))
+@@ -531,9 +532,13 @@
+ 			if (!trechk(player->cnum, vict, SUBFIR))
+ 				continue;
+ 			break;
+-		default:
++		case targ_unit:
++		case targ_land:
+ 			if (!trechk(player->cnum, vict, LANFIR))
+ 				continue;
++			break;
++		default:
++			break;
+ 		}
+ 		
+ 		if (opt_SLOW_WAR) {
+@@ -614,6 +619,10 @@
+ 			
+ 			break ;
+ 		}
++		/* Ok, now, check if we had a bogus target.  If so,
++		   just continue on, since there is no defender. */
++		if (target == targ_bogus)
++			continue;
+ 		if (attacker == targ_unit){
+ 			attacker = targ_land;
+ 			getsect(fland.lnd_x,fland.lnd_y,&fsect);
