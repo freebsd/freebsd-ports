@@ -39,6 +39,7 @@
     SUBDIR += crafty-open-small
     SUBDIR += crossfire
     SUBDIR += cursive
+    SUBDIR += digger-vgl
     SUBDIR += dontspace
     SUBDIR += doom
     SUBDIR += dopewars
