@@ -1,0 +1,6 @@
+These are the NVidia binary drivers for hardware OpenGL rendering in X, using
+the GLX/DRI extensions.
+
+***WARNING***:	THESE ARE BETA QUALITY DRIVERS AND MAY RENDER YOUR SYSTEM
+		UNSTABLE, UNUSABLE OR PRONE TO LOCKUP! INSTALL AT YOUR
+		OWN RISK!

@@ -77,6 +77,7 @@
     SUBDIR += mgapdesk
     SUBDIR += mlterm
     SUBDIR += multi-gnome-terminal
+    SUBDIR += nvidia-driver
     SUBDIR += offix-clipboard
     SUBDIR += offix-execute
     SUBDIR += oooqs

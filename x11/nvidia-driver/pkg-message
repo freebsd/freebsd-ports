@@ -1,0 +1,20 @@
+
+***WARNING***:	THESE ARE BETA QUALITY DRIVERS AND MAY RENDER YOUR SYSTEM
+		UNSTABLE, UNUSABLE OR PRONE TO LOCKUP! INSTALL AT YOUR
+		OWN RISK!
+
+To use these drivers, make sure that you have loaded the nvidia kernel
+module, by doing
+
+# kldload nvidia
+
+If you compile this package with USE_FREEBSD_AGP=yes, you must load
+the agp.ko kernel module *at boot time* by putting the following
+line into your /boot/loader.conf:
+
+agp_load="YES"
+
+Otherwise the nvidia kernel module will not load.
+
+See ${PREFIX}/share/doc/NVIDIA/README for more information.
+
