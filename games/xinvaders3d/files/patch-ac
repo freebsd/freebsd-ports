@@ -1,0 +1,11 @@
+--- vec4x1.c.orig	Thu Jan 20 23:26:05 2000
++++ vec4x1.c	Fri Jan 21 23:16:28 2000
+@@ -160,7 +160,7 @@
+ {
+    float len;
+ 
+-   len = (float) sqrt ( (a[0] * a[0]) + (a[1] * a[1]) + (a[2] * a[2]) );
++   len = (float) sqrt ( (a[0] * a[0]) + (a[1] * a[1]) + (a[2] * a[2]) ) + 0.00001;
+ 
+    a[0] /= len;
+    a[1] /= len;
