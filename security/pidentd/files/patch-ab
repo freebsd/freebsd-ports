@@ -1,24 +1,24 @@
-*** Makefile.orig	Thu Oct 20 17:08:27 1994
---- Makefile	Wed Nov  9 21:16:56 1994
+*** Makefile.orig	Mon Jun  5 19:49:08 1995
+--- Makefile	Thu Jul 27 21:10:17 1995
 ***************
-*** 14,20 ****
-  # on the command line (like "make DESTROOT=/usr/wheel sunos4")
+*** 15,21 ****
   #
+  TAR=tar
   MAKE=make
 ! DESTROOT=/usr/local
   DESTDIR=$(DESTROOT)/sbin
   MANROOT=$(DESTROOT)/man
   MANDIR=$(MANROOT)/man8
---- 14,20 ----
-  # on the command line (like "make DESTROOT=/usr/wheel sunos4")
+--- 15,21 ----
   #
+  TAR=tar
   MAKE=make
 ! DESTROOT=${PREFIX}
   DESTDIR=$(DESTROOT)/sbin
   MANROOT=$(DESTROOT)/man
   MANDIR=$(MANROOT)/man8
 ***************
-*** 43,49 ****
+*** 44,50 ****
   
   CFLAGS=-O
   
@@ -26,7 +26,7 @@
   	@echo "Please specify the type of system you wish to build for."
   	@echo "Valid systems are:"
   	@echo ""
---- 43,51 ----
+--- 44,52 ----
   
   CFLAGS=-O
   
@@ -36,22 +36,20 @@
   	@echo "Please specify the type of system you wish to build for."
   	@echo "Valid systems are:"
   	@echo ""
-*** src/Makefile.ORIG	Fri Oct 14 17:17:36 1994
---- src/Makefile	Sat Mar  4 22:50:09 1995
 ***************
-*** 11,17 ****
+*** 387,393 ****
   
-  foo:
-  	@echo 'Nono! Don't type "make" in this directory, use the one above!'
-! 	
-  in.identd:	identd.o $(COBJS)   idecrypt itest
-  	$(CC) $(LDFLAGS) -o in.identd identd.o $(COBJS) $(LIBS)
-  	@mv in.identd ..
---- 11,17 ----
+  install: in.identd
+  	cp identd.8  $(MANDIR)/identd.8
+! 	cp in.identd $(DESTDIR)/in.identd
   
-  foo:
-  	@echo 'Nono! Don't type "make" in this directory, use the one above!'
-! 
-  in.identd:	identd.o $(COBJS)   idecrypt itest
-  	$(CC) $(LDFLAGS) -o in.identd identd.o $(COBJS) $(LIBS)
-  	@mv in.identd ..
+  tests:
+  	(cd testdir ; make)
+--- 389,395 ----
+  
+  install: in.identd
+  	cp identd.8  $(MANDIR)/identd.8
+! 	cp in.identd $(DESTDIR)/identd
+  
+  tests:
+  	(cd testdir ; make)

@@ -1,2 +1,2 @@
-sbin/in.identd
+sbin/identd
 man/man8/identd.8.gz
