@@ -1,0 +1,14 @@
+%%SITE_PERL%%/POE/Filter/XML.pm
+%%SITE_PERL%%/POE/Filter/XML/Handler.pm
+%%SITE_PERL%%/POE/Filter/XML/Meta.pm
+%%SITE_PERL%%/POE/Filter/XML/NS.pm
+%%SITE_PERL%%/POE/Filter/XML/Node.pm
+%%SITE_PERL%%/POE/Filter/XML/Parser.pm
+%%SITE_PERL%%/POE/Filter/XML/Utils.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/POE/Filter/XML/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/POE/Filter/XML
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/POE/Filter 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/POE 2>/dev/null || true
+@dirrm %%SITE_PERL%%/POE/Filter/XML
+@unexec rmdir %D/%%SITE_PERL%%/POE/Filter 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/POE 2>/dev/null || true
