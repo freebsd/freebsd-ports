@@ -162,3 +162,4 @@ graphics/xine_dvdnav_plugin||2003-02-01|integrated into graphics/libxine
 devel/ossp-mm||2003-02-01|accidental dupe of devel/mm
 archivers/linux_rar||2003-02-03|FreeBSD/i386 binary is available
 security/pam_krb5||2003-02-05|deleted: functionality in base system
+deskutils/gnucash|finance/gnucash|2003-02-05|new category

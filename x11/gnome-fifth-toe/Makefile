@@ -30,7 +30,7 @@ RUN_DEPENDS=	gabber:${PORTSDIR}/net/gabber \
 		gnomeicu:${PORTSDIR}/net/gnomeicu \
 		gob:${PORTSDIR}/x11-toolkits/gob \
 		gtm:${PORTSDIR}/ftp/gtm \
-		gnucash:${PORTSDIR}/deskutils/gnucash \
+		gnucash:${PORTSDIR}/finance/gnucash \
 		AbiWord:${PORTSDIR}/editors/AbiWord \
 		anjuta:${PORTSDIR}/devel/anjuta \
 		guppi-gnumeric:${PORTSDIR}/math/guppi \
