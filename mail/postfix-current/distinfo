@@ -1,3 +1,4 @@
-MD5 (postfix/postfix-1.1.10-20020514.tar.gz) = b6445a740fbf5ce8d157335ebb75e019
-MD5 (postfix/postfix-1.1.9+ipv6.patch.gz) = 6ac3b3e201d2d31d28542a3b5ad1d096
+MD5 (postfix/postfix-1.1.11-20020613.tar.gz) = 7c7f2f27463539c00c6bfe8bf50bc0d9
+MD5 (postfix/postfix-1.1.11+ipv6.patch.gz) = dc2a6362518025583a17305607eb8f0e
+MD5 (postfix/pfixtls-0.8.11a-1.1.11-20020613-0.9.6d.tar.gz) = 6ed63e3941e8de1a9ca4c884dbc84125
 MD5 (postfix/postfix-pg.postfix-1.1.8.patch) = e0f4d910a6d6648d9b48e2244f2764ba
