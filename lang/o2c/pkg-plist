@@ -39,6 +39,7 @@ lib/o2c-1.16/X11.Mod
 lib/o2c-1.16/Xresource.Mod
 lib/o2c-1.16/Xutil.Mod
 lib/o2c-1.16/XYplane.Mod
+lib/o2c-1.16/o2c.red.template
 man/man1/o2b.1.gz
 man/man1/o2c.1.gz
 man/man1/o2ef.1.gz

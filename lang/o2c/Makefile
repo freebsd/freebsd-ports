@@ -3,7 +3,7 @@
 # Date created:		December 3, 1997
 # Whom:			Oliver Breuninger <ob@seicom.NET>
 #
-# $Id: Makefile,v 1.1.1.1 1998/06/12 12:08:08 tg Exp $
+# $Id: Makefile,v 1.2 1998/06/16 12:06:13 asami Exp $
 
 DISTNAME=	o2c-1.16
 CATEGORIES=	lang
@@ -11,8 +11,6 @@ MASTER_SITES=	ftp://ftp.uni-kl.de/pub/informatik/software/ \
 		ftp://cognac.informatik.uni-kl.de/pub/ooc/misc/
 
 MAINTAINER=	ob@seicom.NET
-
-BROKEN=		attempts to install file to home directory
 
 MAKE_ENV= 	MAKEOBJDIR=.
 
@@ -23,5 +21,9 @@ post-extract:
 
 post-patch:
 	@/usr/bin/perl -pi -e "s|@PREFIX@|${PREFIX}|g;" ${WRKSRC}/system/o2c.red.template
+
+post-install:
+	${INSTALL_DATA} ${WRKSRC}/system/o2c.red.template ${PREFIX}/lib/o2c-1.16
+	@${CAT} ${PKGDIR}/MESSAGE
 
 .include <bsd.port.mk>
