@@ -1,0 +1,5 @@
+CPAN::Mini provides a simple mechanism to build and update a minimal
+mirror of the CPAN on your local disk.  It contains only those files
+needed to install the newest version of every distribution.
+
+WWW: http://search.cpan.org/dist/CPAN-Mini
