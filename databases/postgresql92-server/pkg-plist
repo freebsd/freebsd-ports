@@ -82,9 +82,10 @@ share/postgresql/dot.cshrc.dist
 @exec [ -f %D/share/postgresql/dot.cshrc.dist ] && cp %D/share/postgresql/dot.cshrc.dist ~pgsql/.
 @exec [ -f ~pgsql/.profile ] || (cp %D/share/postgresql/dot.profile.dist ~pgsql/.profile && chown pgsql:pgsql ~pgsql/.profile)
 @exec [ -f ~pgsql/.cshrc ] || (cp %D/share/postgresql/dot.cshrc.dist ~pgsql/.cshrc && chown pgsql:pgsql ~pgsql/.cshrc)
-@unexec rmdir %D/%%PG_PREFIX%%bin 2> /dev/null || true
-@unexec rmdir %D/%%PG_PREFIX%%lib 2> /dev/null || true
-@unexec rmdir %D/%%PG_PREFIX%%man/man1 2> /dev/null || true
-@unexec rmdir %D/%%PG_PREFIX%%man/manl 2> /dev/null || true
-@unexec rmdir %D/%%PG_PREFIX%%man 2> /dev/null || true
+@unexec [ X%%PG_PREFIX%% != X ] && rmdir %D/%%PG_PREFIX%%bin 2> /dev/null || true
+@unexec [ X%%PG_PREFIX%% != X ] && rmdir %D/%%PG_PREFIX%%lib 2> /dev/null || true
+@unexec [ X%%PG_PREFIX%% != X ] && rmdir %D/%%PG_PREFIX%%man/man1 2> /dev/null || true
+@unexec [ X%%PG_PREFIX%% != X ] && rmdir %D/%%PG_PREFIX%%man/manl 2> /dev/null || true
+@unexec [ X%%PG_PREFIX%% != X ] && rmdir %D/%%PG_PREFIX%%man 2> /dev/null || true
+@unexec rmdir ~pgsql 2> /dev/null || true
 @unexec echo "Warning: If you will *NOT* use this package anymore, please remove %D/pgsql and the pgsql user manually."
