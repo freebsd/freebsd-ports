@@ -117,6 +117,7 @@
     SUBDIR += mrt
     SUBDIR += mrtg
     SUBDIR += mtr
+    SUBDIR += mudix
     SUBDIR += naim
     SUBDIR += nam
     SUBDIR += ncplib

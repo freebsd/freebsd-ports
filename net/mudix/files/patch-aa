@@ -1,0 +1,18 @@
+--- Makefile	Sun Mar 26 13:02:11 2000
++++ Makefile.new	Sun Mar 26 13:41:34 2000
+@@ -1,10 +1,11 @@
+-CC      = gcc
++LOCALBASE ?=	/usr/local
++CC      ?= gcc
+ PROF    = 
+ DEBUG   =  
+ NOCRYPT =
+-O_FLAGS = -O -g
+-C_FLAGS = $(O_FLAGS) -DPOLLING -Wall $(DEBUG) $(PROF) $(NOCRYPT)
+-L_FLAGS = $(O_FLAGS) -lpanel -lncurses      $(DEBUG) $(PROF)
++O_FLAGS = ${CFLAGS}
++C_FLAGS = $(O_FLAGS) -DPOLLING -Wall $(DEBUG) $(PROF) $(NOCRYPT) -I$(LOCALBASE)/include/ncurses -I$(LOCALBASE)/include
++L_FLAGS = $(O_FLAGS) -lpanel -lncurses      $(DEBUG) $(PROF) -L$(LOCALBASE)/lib
+ 
+ O_FILES = alias.o commands.o file.o input.o log.o mudix.o output.o parse.o \
+ 	  path.o settings.o tabs.o telnet.o trigger.o
