@@ -1,0 +1,10 @@
+sbox is a CGI wrapper script that allows Web site hosting services to safely
+grant CGI authoring privileges to untrusted clients. In addition to changing
+the process privileges of client scripts to match their owners, it goes
+beyond other wrappers by placing configurable ceilings on script resource
+usage, avoiding unintentional (as well as intentional) denial of service
+attacks. It also optionally allows the Webmaster to place client's CGI
+scripts in a chroot'ed shell restricted to the author's home directories.
+
+sbox is compatible with all Web servers running under BSD-derived flavors of
+Unix. You can use and redistribute it freely.

@@ -655,6 +655,7 @@
     SUBDIR += ruby-tmpl
     SUBDIR += ruby-webunit
     SUBDIR += sarg
+    SUBDIR += sbox-dtc
     SUBDIR += scout
     SUBDIR += screem
     SUBDIR += script4rss
