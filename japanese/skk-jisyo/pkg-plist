@@ -1,4 +1,4 @@
-share/skk/SKK-JISYO.L
-share/skk/SKK-JISYO.M
-share/skk/SKK-JISYO.S
-@dirrm share/skk
+%%SKKDIR%%/SKK-JISYO.L%%JISYO_SUFFIX%%
+%%SKKDIR%%/SKK-JISYO.M%%JISYO_SUFFIX%%
+%%SKKDIR%%/SKK-JISYO.S%%JISYO_SUFFIX%%
+@dirrm %%SKKDIR%%

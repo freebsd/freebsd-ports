@@ -343,6 +343,7 @@
     SUBDIR += skk
     SUBDIR += skk-elisp
     SUBDIR += skk-jisyo
+    SUBDIR += skk-jisyo-cdb
     SUBDIR += skk-tools
     SUBDIR += skk10-elisp-emacs20
     SUBDIR += skkfep
