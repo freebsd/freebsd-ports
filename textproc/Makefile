@@ -306,6 +306,7 @@
     SUBDIR += p5-WordNet-QueryData
     SUBDIR += p5-WordNet-Similarity
     SUBDIR += p5-XML-Atom
+    SUBDIR += p5-XML-AutoWriter
     SUBDIR += p5-XML-Catalog
     SUBDIR += p5-XML-DBMS
     SUBDIR += p5-XML-DOM
