@@ -1,0 +1,8 @@
+pgsql/include/iodbc/iodbc.h
+pgsql/include/iodbc/isql.h
+pgsql/include/iodbc/isqlext.h
+pgsql/lib/libpsqlodbc.a
+pgsql/lib/libpsqlodbc.so
+pgsql/lib/libpsqlodbc.so.0
+pgsql/odbcinst.ini
+@dirrm pgsql/include/iodbc
