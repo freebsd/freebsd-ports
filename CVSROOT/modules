@@ -3575,6 +3575,7 @@ ifd-gempc410	ports/security/ifd-gempc410
 ifd-gpr400	ports/security/ifd-gpr400
 ifd-slb_rf60	ports/security/ifd-slb_rf60
 ifd-test	ports/devel/ifd-test
+ifdepd		ports/net/ifdepd
 ifgraph		ports/net-mgmt/ifgraph
 ifhp		ports/print/ifhp
 ifile		ports/mail/ifile
