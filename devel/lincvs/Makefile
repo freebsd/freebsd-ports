@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	lincvs
-PORTVERSION=	1.3.1
+PORTVERSION=	1.3.2
 CATEGORIES=	devel kde
-MASTER_SITES=	http://ppprs1.phy.tu-dresden.de/~trogisch/lincvs/download/20_LinCVS/hn_${PORTNAME}-${PORTVERSION}/
-DISTNAME=	${PORTNAME}-${PORTVERSION}-0-generic-src
+MASTER_SITES=	http://ppprs1.phy.tu-dresden.de/~trogisch/lincvs/download/20_LinCVS/hl_${PORTNAME}-${PORTVERSION}/
+DISTNAME=	${PORTNAME}-${PORTVERSION}-1-generic-src
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	markus@FreeBSD.org
@@ -21,7 +21,7 @@ USE_GMAKE=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 USE_QT_VER=	3
 QTDIR?=		${X11BASE}
-MAKE_ENV+=      QTDIR=${QTDIR}
+MAKE_ENV+=      QTDIR=${QTDIR} QMAKESPEC=${LOCALBASE}/share/qt/mkspecs/freebsd-g++
 ALL_TARGET=	install
 USE_REINPLACE=	yes
 
@@ -31,7 +31,7 @@ post-patch:
 		${WRKSRC}/src/lincvs.cpp
 
 pre-build:
-	( cd ${WRKSRC} && qmake -spec freebsd-g++ -o Makefile lincvs.pro )
+	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} qmake lincvs.pro
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/LinCVS/lincvs.bin ${PREFIX}/bin/lincvs
