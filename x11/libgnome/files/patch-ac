@@ -1,0 +1,24 @@
+--- gnome-config.in.orig	Wed Aug 26 19:16:24 1998
++++ gnome-config.in	Wed Aug 26 19:16:57 1998
+@@ -36,7 +36,7 @@
+     glib	(calls glib-config)
+     gnome
+     gnomeui
+-    gtk		(calls gtk-config)
++    gtk11	(calls gtk11-config)
+     gtkxmhtml	(only --libs)
+     zvt		(only --libs)
+ 
+@@ -92,9 +92,9 @@
+ 	the_libs="$the_libs `glib-config --libs`"
+ 	the_flags="$the_flags `glib-config --cflags`"
+ 	;;
+-    gtk)
+-	the_libs="$the_libs `gtk-config --libs`"
+-	the_flags="$the_flags `gtk-config --cflags`"
++    gtk11)
++	the_libs="$the_libs `gtk11-config --libs`"
++	the_flags="$the_flags `gtk11-config --cflags`"
+ 	;;
+     gnome)
+        	the_libs="$the_libs @GNOME_LIBDIR@ @GNOME_LIBS@"

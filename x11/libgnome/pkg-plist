@@ -1,0 +1,173 @@
+bin/gnome-config
+include/argp.h
+include/error.h
+include/getopt.h
+include/gnome-argp.h
+include/gnome.h
+include/gnomesupport.h
+include/long-options.h
+include/gtk-xmhtml/HTML.h
+include/gtk-xmhtml/XmHTML.h
+include/gtk-xmhtml/XmHTMLI.h
+include/gtk-xmhtml/XmHTMLP.h
+include/gtk-xmhtml/gtk-xmhtml-p.h
+include/gtk-xmhtml/gtk-xmhtml.h
+include/gtk-xmhtml/miniparse.h
+include/gtk-xmhtml/toolkit.h
+include/gtktty/gtkled.h
+include/gtktty/gtkterm.h
+include/gtktty/gtktty.h
+include/gtktty/gtkvtemu.h
+include/gtktty/libgtktty.h
+include/libgnome/gnome-config.h
+include/libgnome/gnome-defs.h
+include/libgnome/gnome-dentry.h
+include/libgnome/gnome-dl.h
+include/libgnome/gnome-exec.h
+include/libgnome/gnome-fileconvert.h
+include/libgnome/gnome-help.h
+include/libgnome/gnome-history.h
+include/libgnome/gnome-hook.h
+include/libgnome/gnome-i18n.h
+include/libgnome/gnome-mime.h
+include/libgnome/gnome-parse.h
+include/libgnome/gnome-score.h
+include/libgnome/gnome-string.h
+include/libgnome/gnome-triggers.h
+include/libgnome/gnome-util.h
+include/libgnome/libgnome.h
+include/libgnomeui/gnome-about.h
+include/libgnomeui/gnome-actionarea.h
+include/libgnomeui/gnome-app-helper.h
+include/libgnomeui/gnome-app-util.h
+include/libgnomeui/gnome-app.h
+include/libgnomeui/gnome-appbar.h
+include/libgnomeui/gnome-calculator.h
+include/libgnomeui/gnome-canvas-image.h
+include/libgnomeui/gnome-canvas-line.h
+include/libgnomeui/gnome-canvas-rect-ellipse.h
+include/libgnomeui/gnome-canvas-text.h
+include/libgnomeui/gnome-canvas-util.h
+include/libgnomeui/gnome-canvas-widget.h
+include/libgnomeui/gnome-canvas.h
+include/libgnomeui/gnome-client.h
+include/libgnomeui/gnome-color-selector.h
+include/libgnomeui/gnome-dateedit.h
+include/libgnomeui/gnome-dentry-edit.h
+include/libgnomeui/gnome-dialog-util.h
+include/libgnomeui/gnome-dialog.h
+include/libgnomeui/gnome-dns.h
+include/libgnomeui/gnome-entry.h
+include/libgnomeui/gnome-file-entry.h
+include/libgnomeui/gnome-font-selector.h
+include/libgnomeui/gnome-geometry.h
+include/libgnomeui/gnome-ice.h
+include/libgnomeui/gnome-icon-list.h
+include/libgnomeui/gnome-icon-sel.h
+include/libgnomeui/gnome-lamp.h
+include/libgnomeui/gnome-less.h
+include/libgnomeui/gnome-mdi-child.h
+include/libgnomeui/gnome-mdi.h
+include/libgnomeui/gnome-messagebox.h
+include/libgnomeui/gnome-net.h
+include/libgnomeui/gnome-number-entry.h
+include/libgnomeui/gnome-pixmap.h
+include/libgnomeui/gnome-popupmenu.h
+include/libgnomeui/gnome-preferences.h
+include/libgnomeui/gnome-properties.h
+include/libgnomeui/gnome-propertybox.h
+include/libgnomeui/gnome-rootwin.h
+include/libgnomeui/gnome-scores.h
+include/libgnomeui/gnome-startup.h
+include/libgnomeui/gnome-stock.h
+include/libgnomeui/gnome-types.h
+include/libgnomeui/gnome-uidefs.h
+include/libgnomeui/gnometypebuiltins.h
+include/libgnomeui/gtk-clock.h
+include/libgnomeui/gtk-plug.h
+include/libgnomeui/gtk-socket.h
+include/libgnomeui/gtk-ted.h
+include/libgnomeui/gtkcalendar.h
+include/libgnomeui/gtkcauldron.h
+include/libgnomeui/gtkdial.h
+include/libgnomeui/gtklayout.h
+include/libgnomeui/gtkspell.h
+include/libgnomeui/libgnomeui.h
+include/zvt/lists.h
+include/zvt/subshell.h
+include/zvt/vt.h
+include/zvt/vtx.h
+include/zvt/zvtterm.h
+lib/libgnome.a
+lib/libgnome.la
+lib/libgnome.so
+lib/libgnome.so.0.27
+lib/libgnomesupport.a
+lib/libgnomesupport.la
+lib/libgnomesupport.so
+lib/libgnomesupport.so.0.27
+lib/libgnomeui.a
+lib/libgnomeui.la
+lib/libgnomeui.so
+lib/libgnomeui.so.0.27
+lib/libgtktty.la
+lib/libgtktty.so
+lib/libgtktty.so.0.4
+lib/libgtkxmhtml.a
+lib/libgtkxmhtml.la
+lib/libgtkxmhtml.so
+lib/libgtkxmhtml.so.0.27
+lib/libzvt.a
+lib/libzvt.la
+lib/libzvt.so
+lib/libzvt.so.0.0
+@exec /sbin/ldconfig -m %B
+@unexec /sbin/ldconfig -R
+share/gnome/gnomeConf.sh
+share/gnome/gtkrc
+share/gnome/pixmaps/calculator-font.xpm
+share/locale/cs/LC_MESSAGES/gnome-libs.mo
+share/locale/de/LC_MESSAGES/gnome-libs.mo
+share/locale/es/LC_MESSAGES/gnome-libs.mo
+share/locale/fi/LC_MESSAGES/gnome-libs.mo
+share/locale/fr/LC_MESSAGES/gnome-libs.mo
+share/locale/ga/LC_MESSAGES/gnome-libs.mo
+share/locale/it/LC_MESSAGES/gnome-libs.mo
+share/locale/ja/LC_MESSAGES/gnome-libs.mo
+share/locale/ko/LC_MESSAGES/gnome-libs.mo
+share/locale/no/LC_MESSAGES/gnome-libs.mo
+share/locale/pt/LC_MESSAGES/gnome-libs.mo
+share/locale/sv/LC_MESSAGES/gnome-libs.mo
+@dirrm include/gtk-xmhtml
+@dirrm include/gtktty
+@dirrm include/libgnome
+@dirrm include/libgnomeui
+@dirrm include/zvt
+@dirrm share/gnome/games
+@dirrm share/gnome/html
+@dirrm share/gnome/pixmaps
+@dirrm share/gnome
+@dirrm share/locale/cs/LC_MESSAGES
+@dirrm share/locale/cs/
+@dirrm share/locale/de/LC_MESSAGES
+@dirrm share/locale/de/
+@dirrm share/locale/es/LC_MESSAGES
+@dirrm share/locale/es/
+@dirrm share/locale/fi/LC_MESSAGES
+@dirrm share/locale/fi/
+@dirrm share/locale/fr/LC_MESSAGES
+@dirrm share/locale/fr/
+@dirrm share/locale/ga/LC_MESSAGES
+@dirrm share/locale/ga/
+@dirrm share/locale/it/LC_MESSAGES
+@dirrm share/locale/it/
+@dirrm share/locale/ja/LC_MESSAGES
+@dirrm share/locale/ja/
+@dirrm share/locale/ko/LC_MESSAGES
+@dirrm share/locale/ko/
+@dirrm share/locale/no/LC_MESSAGES
+@dirrm share/locale/no/
+@dirrm share/locale/pt/LC_MESSAGES
+@dirrm share/locale/pt/
+@dirrm share/locale/sv/LC_MESSAGES
+@dirrm share/locale/sv/

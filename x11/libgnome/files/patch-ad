@@ -1,0 +1,11 @@
+--- libgnome/gnome-help.c.orig	Tue Sep  1 13:30:25 1998
++++ libgnome/gnome-help.c	Tue Sep  1 13:30:44 1998
+@@ -35,7 +35,7 @@
+       lang= language_list->data;
+ 
+       buf= g_string_new (NULL);
+-      g_string_sprintf (buf, "gnome/help/%s/%s/%s", app, lang, path);
++      g_string_sprintf (buf, "help/%s/%s/%s", app, lang, path);
+       res= (gchar *)gnome_unconditional_datadir_file (buf->str);
+       p = strrchr(res, '#');
+       if (p)
