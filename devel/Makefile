@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.154 1999/01/10 19:06:11 steve Exp $
+# $Id: Makefile,v 1.155 1999/01/11 05:18:26 steve Exp $
 #
 
     SUBDIR += ElectricFence
@@ -42,6 +42,7 @@
     SUBDIR += gindent
     SUBDIR += glade
     SUBDIR += glib
+    SUBDIR += glib11
     SUBDIR += glib11-devel
     SUBDIR += gmake
     SUBDIR += id-utils
