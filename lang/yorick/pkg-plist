@@ -3,6 +3,7 @@ bin/yorick
 lib/yorick/Make.cfg
 lib/yorick/Maketmpl
 lib/yorick/bin/gist
+lib/yorick/bin/paths.i
 lib/yorick/bin/yorick
 lib/yorick/include/bcast.h
 lib/yorick/include/binio.h
@@ -31,9 +32,13 @@ lib/yorick/include/xfancy.h
 lib/yorick/include/yasync.h
 lib/yorick/include/ydata.h
 lib/yorick/include/yio.h
+lib/yorick/include/yversion.h
 lib/yorick/lib/codger
+lib/yorick/lib/libdrat.a
+lib/yorick/lib/libhex.a
 lib/yorick/lib/libyor.a
 lib/yorick/lib/main.o
+lib/yorick/g
 %%PORTDOCS%%share/doc/yorick/FILE_FORMATS
 %%PORTDOCS%%share/doc/yorick/README
 %%PORTDOCS%%share/doc/yorick/drat.doc
@@ -42,12 +47,14 @@ lib/yorick/lib/main.o
 %%PORTDOCS%%share/doc/yorick/hex.doc
 %%PORTDOCS%%share/doc/yorick/library.doc
 %%PORTDOCS%%share/doc/yorick/math.doc
+%%PORTDOCS%%share/doc/yorick/refs.pdf
 %%PORTDOCS%%share/doc/yorick/refs.ps
 %%PORTDOCS%%share/doc/yorick/refs.tex
 %%PORTDOCS%%share/doc/yorick/std.doc
 %%PORTDOCS%%share/doc/yorick/yorick.pdf
 %%PORTDOCS%%share/doc/yorick/yorick.ps
 %%PORTDOCS%%share/doc/yorick/yorick.tex
+%%PORTDOCS%%share/yorick/doc
 share/yorick/g/README
 share/yorick/g/axes.gs
 share/yorick/g/boxed.gs
@@ -146,6 +153,15 @@ share/yorick/i0/matrix.i
 share/yorick/i0/paths.i
 share/yorick/i0/std.i
 share/yorick/i0/stdx.i
+share/yorick/yorick.el
+%%PORTDOCS%%@unexec install-info --delete %D/info/yorick.info.gz %D/info/dir
+%%PORTDOCS%%info/yorick.info.gz
+%%PORTDOCS%%info/yorick.info-1.gz
+%%PORTDOCS%%info/yorick.info-4.gz
+%%PORTDOCS%%info/yorick.info-2.gz
+%%PORTDOCS%%info/yorick.info-5.gz
+%%PORTDOCS%%info/yorick.info-3.gz
+%%PORTDOCS%%@exec install-info %D/info/yorick.info.gz %D/info/dir
 @dirrm share/yorick/i0
 @dirrm share/yorick/i
 @dirrm share/yorick/g

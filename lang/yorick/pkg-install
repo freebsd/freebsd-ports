@@ -1,0 +1,19 @@
+#!/bin/sh
+if test "$2" = "POST-INSTALL"; then
+  YS=$PKG_PREFIX/share/yorick
+  YH=$PKG_PREFIX/lib/yorick
+  x=`grep "^Y_HOME = $YH" $YH/Maketmpl`
+  if test -z "$x"; then
+    YB=$PKG_PREFIX/lib/yorick/bin
+    ln -sf $YB/gist $PKG_PREFIX/bin/gist
+    ln -sf $YB/yorick $PKG_PREFIX/bin/yorick
+    s="s%^...set_site,.*%set_site, \"$YS\", \"$YH\"\\;%g"
+    sed -e "$s" $YB/paths.i >$YB/paths.tmp
+    mv -f $YB/paths.tmp $YB/paths.i
+    sed -e "s%^Y_SITE = .*%Y_SITE = $YS%g" $YH/Maketmpl >$YH/Maketmpl.tmp
+    rm -f $YH/Maketmpl
+    sed -e "s%^Y_HOME = .*%Y_HOME = $YH%g" $YH/Maketmpl.tmp >$YH/Maketmpl
+    rm -f $YH/Maketmpl.tmp
+  fi
+fi
+true
