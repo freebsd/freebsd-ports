@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	chasen
-PORTVERSION=	2.2.7
+PORTVERSION=	2.2.9
 CATEGORIES=	japanese
 MASTER_SITES=	# empty
 DISTFILES=	# empty
