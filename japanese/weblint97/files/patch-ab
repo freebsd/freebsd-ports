@@ -5,7 +5,7 @@
  	    'noglobals', 'pedantic', 'urlget=s', 'v', 'version', 'warnings',
  	    'x=s', 'c=s', 'explain');
 -
-+@INC = ('/usr/share/perl','%PERLLIBDIR%');
++@INC = ( @INC, '%PERLLIBDIR%');
  $exit_status = 0;
  
  require 'newgetopt.pl';
