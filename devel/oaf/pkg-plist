@@ -26,8 +26,8 @@ lib/liboaf.so.0
 share/aclocal/oaf.m4
 share/gnome/idl/oaf-factory.idl
 share/gnome/idl/oaf.idl
+share/gnome/oaf/OAF_naming-service.oaf
 share/gnome/oaf/empty.oafinfo
-share/gnome/oaf/oafd.oafinfo
 share/locale/da/LC_MESSAGES/oaf.mo
 share/locale/de/LC_MESSAGES/oaf.mo
 share/locale/es/LC_MESSAGES/oaf.mo
@@ -35,12 +35,14 @@ share/locale/fi/LC_MESSAGES/oaf.mo
 share/locale/fr/LC_MESSAGES/oaf.mo
 share/locale/ga/LC_MESSAGES/oaf.mo
 share/locale/gl/LC_MESSAGES/oaf.mo
+share/locale/hu/LC_MESSAGES/oaf.mo
 share/locale/it/LC_MESSAGES/oaf.mo
 share/locale/ja/LC_MESSAGES/oaf.mo
 share/locale/ko/LC_MESSAGES/oaf.mo
 share/locale/no/LC_MESSAGES/oaf.mo
 share/locale/pl/LC_MESSAGES/oaf.mo
 share/locale/ru/LC_MESSAGES/oaf.mo
+share/locale/sk/LC_MESSAGES/oaf.mo
 share/locale/sl/LC_MESSAGES/oaf.mo
 share/locale/sv/LC_MESSAGES/oaf.mo
 share/locale/tr/LC_MESSAGES/oaf.mo
