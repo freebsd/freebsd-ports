@@ -1,12 +1,12 @@
 # New ports collection makefile for:	smtpfeed
-# Version required:	0.72
+# Version required:	0.73
 # Date created:		17 January 1998
 # Whom:			itojun@itojun.org
 #
-# $Id: Makefile,v 1.11 1998/07/02 14:17:02 itojun Exp $
+# $Id: Makefile,v 1.12 1998/08/01 05:45:18 itojun Exp $
 #
 
-DISTNAME=	smtpfeed-0.72
+DISTNAME=	smtpfeed-0.73
 CATEGORIES=	mail
 MASTER_SITES=	ftp://ftp.kyoto.wide.ad.jp/pub/mail/smtpfeed/ \
 		ftp://ftp.kyoto.wide.ad.jp/pub/mail/sendmail/ \
@@ -41,7 +41,6 @@ post-patch:
 	@(cd ${_DISTDIR}; for i in ${SENDMAILPATCH}.patch.gz; do \
 		${GZCAT} $$i | ${PATCH} ${PATCH_SENDMAIL_ARGS}; \
 	done)
-#	@(cd ${WRKSRC_SENDMAIL}; sh Patch-makefiles)
 
 post-build:
 	@${ECHO_MSG} "===>  Building patched ${SENDMAIL}"
