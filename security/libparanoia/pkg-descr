@@ -18,6 +18,6 @@ standard functions in libc (using libparanoia/copy-to-libc
 shell script) - in this case you'll get any application,
 which uses shared libc, automatically protected.
 
-http://www.lexa.ru/snar/libparanoia/
+WWW: http://www.lexa.ru/snar/libparanoia/
 -- 
 Alexandre Snarskii <snar@paranoia.ru>. 	Baltika-3 is better :)
