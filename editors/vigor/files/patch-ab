@@ -1,0 +1,33 @@
+--- ../vigor/vigor.c.orig	Fri Sep 15 18:41:47 2000
++++ ../vigor/vigor.c	Fri Sep 15 18:41:54 2000
+@@ -13,7 +13,7 @@
+ #include <sys/types.h>
+ #include <sys/queue.h>
+ #include <sys/time.h>
+-#ifdef HAVE_SYS_SELECT_H
++#if 0
+ #include <sys/select.h>
+ #endif
+ 
+--- ../cl/cl_read.c.orig	Fri Sep 15 18:37:07 2000
++++ ../cl/cl_read.c	Fri Sep 15 18:40:21 2000
+@@ -15,7 +15,7 @@
+ 
+ #include <sys/types.h>
+ #include <sys/queue.h>
+-#ifdef HAVE_SYS_SELECT_H
++#if 0
+ #include <sys/select.h>
+ #endif
+ #include <sys/time.h>
+--- ../ex/ex_script.c.orig	Fri Sep 15 18:40:53 2000
++++ ../ex/ex_script.c	Fri Sep 15 18:41:02 2000
+@@ -19,7 +19,7 @@
+ #include <sys/types.h>
+ #include <sys/ioctl.h>
+ #include <sys/queue.h>
+-#ifdef HAVE_SYS_SELECT_H
++#if 0
+ #include <sys/select.h>
+ #endif
+ #include <sys/stat.h>
