@@ -1,0 +1,81 @@
+! Cyrillic keyboard mapping table for XFree86-3.1 server of X11R6.
+! Copyright (C) 1995 Cronyx Ltd., info@cronyx.ru
+! Changes Copyright (C) 1995 by Andrey A. Chernov, Moscow, Russia.
+!
+! This product is free Software, you can use it free of charge
+! without restriction (e.g. use, copy, modify, merge, publish,
+! distribute, sublicense, and/or sell), provided that
+! the above copyright notice and this permission notice is retained.
+!
+! WARNING: Control keys NOT WORKS when russian mode is active due
+! to X11 bug (control handling when modeswitch is on),
+! if you know, how to fix it, I am all ears.
+!                                              <ache@astral.msk.su>
+!
+! Standard definitions first:
+
+clear shift
+clear control
+clear mod1
+clear mod2
+clear mod3
+clear mod4
+
+add shift   = Shift_L Shift_R
+add control = Control_L Control_R
+add mod1    = Alt_L Alt_R
+add mod2    = Num_Lock
+
+! Use CapsLock as rus/lat switch key.
+
+clear lock
+clear mod5
+keycode  66 = Caps_Lock 0x1007ff01
+keycode  78 = Mode_switch
+add mod5 = Caps_Lock Mode_switch
+
+!       Key       Base            Shift           Caps    ShiftCaps
+!------------------------------------------------------------------------
+keycode 10      = 1               exclam          exclam     1
+keycode 11      = 2               at              quotedbl   2
+keycode 12      = 3               numbersign      grave      3
+keycode 13      = 4               dollar          semicolon  4
+keycode 14      = 5               percent         colon      5
+keycode 15      = 6               asciicircum     comma      6
+keycode 16      = 7               ampersand       period     7
+keycode 17      = 8               asterisk        asterisk   8
+keycode 18      = 9               parenleft       parenleft  9
+keycode 19      = 0               parenright      parenright 0
+keycode 24      = q               Q               0xca    0xea
+keycode 25      = w               W               0xc3    0xe3
+keycode 26      = e               E               0xd5    0xf5
+keycode 27      = r               R               0xcb    0xeb
+keycode 28      = t               T               0xc5    0xe5
+keycode 29      = y               Y               0xce    0xee
+keycode 30      = u               U               0xc7    0xe7
+keycode 31      = i               I               0xdb    0xfb
+keycode 32      = o               O               0xdd    0xfd
+keycode 33      = p               P               0xda    0xfa
+keycode 34      = bracketleft     braceleft       0xc8    0xe8
+keycode 35      = bracketright    braceright      0xdf    0xff
+keycode 38      = a               A               0xc6    0xe6
+keycode 39      = s               S               0xd9    0xf9
+keycode 40      = d               D               0xd7    0xf7
+keycode 41      = f               F               0xc1    0xe1
+keycode 42      = g               G               0xd0    0xf0
+keycode 43      = h               H               0xd2    0xf2
+keycode 44      = j               J               0xcf    0xef
+keycode 45      = k               K               0xcc    0xec
+keycode 46      = l               L               0xc4    0xe4
+keycode 47      = semicolon       colon           0xd6    0xf6
+keycode 48      = apostrophe      quotedbl        0xdc    0xfc
+keycode 49      = grave           asciitilde      0xa3    0xb3
+keycode 52      = z               Z               0xd1    0xf1
+keycode 53      = x               X               0xde    0xfe
+keycode 54      = c               C               0xd3    0xf3
+keycode 55      = v               V               0xcd    0xed
+keycode 56      = b               B               0xc9    0xe9
+keycode 57      = n               N               0xd4    0xf4
+keycode 58      = m               M               0xd8    0xf8
+keycode 59      = comma           less            0xc2    0xe2
+keycode 60      = period          greater         0xc0    0xe0
