@@ -20,6 +20,7 @@ cyrus/bin/cyrquota
 cyrus/bin/deliver
 %%NNTP%%cyrus/bin/fetchnews
 cyrus/bin/fud
+%%IDLED%%cyrus/bin/idled
 cyrus/bin/imapd
 cyrus/bin/ipurge
 cyrus/bin/lmtpd
