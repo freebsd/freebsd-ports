@@ -2429,6 +2429,7 @@ gsm		ports/audio/gsm
 gsmlib		ports/comms/gsmlib
 gsnes9x		ports/emulators/gsnes9x
 gspoof		ports/net/gspoof
+gss		ports/security/gss
 gstopd		ports/sysutils/gstopd
 gstreamer	ports/multimedia/gstreamer
 gstreamer-editor	ports/multimedia/gstreamer-editor
