@@ -203,6 +203,7 @@
     SUBDIR += naim
     SUBDIR += nam
     SUBDIR += nat
+    SUBDIR += nbtscan
     SUBDIR += nc
     SUBDIR += ncat
     SUBDIR += ncplib

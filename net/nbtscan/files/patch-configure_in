@@ -1,0 +1,11 @@
+$OpenBSD: patch-configure_in,v 1.1 2001/03/16 10:20:50 wilfried Exp $
+--- configure.in.orig	Wed Mar 29 11:28:13 2000
++++ configure.in	Thu Mar 15 22:28:22 2001
+@@ -2,7 +2,6 @@ dnl Process this file with autoconf to p
+ AC_INIT(statusq.c)
+ 
+ dnl Checks for programs.
+-CFLAGS=-O2
+ AC_PROG_CC
+ AC_PROG_INSTALL
+ 
