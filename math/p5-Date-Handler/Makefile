@@ -8,13 +8,13 @@
 # I putted it into 'math' and not 'devel' or other
 
 PORTNAME=	Date-Handler
-PORTVERSION=	1.1
+PORTVERSION=	1.2
 CATEGORIES=	math perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Date
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl module for calculating time differences
 
 PERL_CONFIGURE=	yes
