@@ -11,11 +11,8 @@ CATEGORIES=	japanese print
 MASTER_SITES=	ftp://ftp.ascii.co.jp/pub/TeX/ascii-ptex/tetex/
 PKGNAMEPREFIX=	ja-
 PKGNAMESUFFIX=	-euc
-DISTNAME=	ptex-src-2.1.9-1
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
-		  ${PTEX_PATCHFILES}
+DISTNAME=	ptex-src-2.1.10
 DIST_SUBDIR=	teTeX/ptex
-EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	max@FreeBSD.org
 
@@ -29,9 +26,7 @@ CONFIGURE_ARGS=	euc
 WRKSRC=	${WRKDIRPREFIX}${.CURDIR}/../ptex-common/work/teTeX-1.0/texk/web2c/${SRCDIR}
 ALL_TARGET=	default
 
-SRCDIR=		ptex-src-2.1.9
-PTEX_PATCHFILES=	ptex2.1.9-10.patch ptex2.1.9-10_2.patch \
-			pltotf1.3-4.patch
+SRCDIR=		ptex-src-2.1.10
 BINARIES=	ptex pdvitype jbibtex pltotf tftopl
 
 pre-extract:
@@ -43,12 +38,6 @@ pre-extract:
 post-extract:
 	@${RM} -rf ${WRKSRC}
 	@${MV} ${WRKDIR}/${SRCDIR} ${WRKDIRPREFIX}${.CURDIR}/../ptex-common/work/teTeX-1.0/texk/web2c
-
-do-patch:
-.for f in ${PTEX_PATCHFILES}
-	@/usr/bin/uudecode -p ${DISTDIR}/${DIST_SUBDIR}/$f | \
-	  ${PATCH} ${PATCH_DIST_ARGS}
-.endfor
 
 pre-install:
 	@${SETENV} PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
