@@ -1,16 +1,25 @@
---- Makefile.orig	Tue Jul 31 19:27:40 2001
-+++ Makefile	Wed Aug 29 13:13:18 2001
-@@ -9,10 +9,9 @@
- # To facilitate packaging- leave blank for normal installation
- DESTDIR =
+--- Makefile.orig	Sat Sep 15 14:52:10 2001
++++ Makefile	Sat Sep 15 14:52:45 2001
+@@ -12,10 +12,9 @@
+ # This should point to the GKrellM headers
+ GKRELLM_HDRS = /usr/include/gkrellm
  
 -CC := gcc
 -GTKFLAGS := $(shell gtk-config --cflags)
 -IMLIBFLAGS := $(shell imlib-config --cflags-gdk)
--CFLAGS := $(CFLAGS) -fPIC -Wall $(GTKFLAGS) $(IMLIBFLAGS)
+-CFLAGS := $(CFLAGS) -fPIC -Wall $(GTKFLAGS) $(IMLIBFLAGS) -I$(GKRELLM_HDRS)
 +GTKFLAGS = `${GTK_CONFIG} --cflags`
 +IMLIBFLAGS = `${IMLIB_CONFIG} --cflags-gdk`
-+CFLAGS += -fPIC -Wall $(GTKFLAGS) $(IMLIBFLAGS)
++CFLAGS += -fPIC -Wall $(GTKFLAGS) $(IMLIBFLAGS) -I${X11BASE}/include/gkrellm
  LDFLAGS := -shared -Wl
  INST_DIR := $(DESTDIR)/usr/lib/gkrellm/plugins
  USER_INST_DIR := $(DESTDIR)$(HOME)/.gkrellm/plugins
+@@ -27,7 +26,7 @@
+ all: $(TARGET).so
+ 
+ %.so: %.o
+-	$(CC) $(LDFLAGS) -o $@ $<
++	$(CC) $(CFLAGS) $(LDFLAGS) -o $@ $<
+ 
+ clean:
+ 	-rm -f $(TARGET).so $(TARGET).o
