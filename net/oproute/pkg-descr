@@ -1,0 +1,18 @@
+Everyone knows that no one can agree on a system of metrics for
+measuring general performance of the Internet. It's one of these
+horrible religious issues that no matter how hard we try, we just
+can't reach a happy middle ground.
+
+The purpose of OpRoute is to attempt to establish a *generalized*
+measurement system which takes into account all of the factors that
+are usually considered to be important when it comes to performance.
+Specifically:
+
+   - Packet Loss 
+   - Latency 
+   - Layer 3 Hops 
+   - AS Hops 
+   - NAP Hops 
+   - Throughput
+
+WWW: http://www.oproute.net/
