@@ -45,7 +45,7 @@ include/sqlca.h
 include/sql3types.h
 lib/libpq.so
 lib/libpq.a
-lib/libpq.so.2
+lib/libpq.so.3
 lib/libecpg.so
 lib/libecpg.a
 lib/libecpg.so.3

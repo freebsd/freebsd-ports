@@ -7,6 +7,7 @@
 
 PORTNAME?=	postgresql
 PORTVERSION?=	7.3.1
+PORTREVISION=	1
 PKGNAMESUFFIX=	-devel
 CATEGORIES?=	databases
 MASTER_SITES=	ftp://ftp9.us.postgresql.org/pub/mirrors/postgresql/%SUBDIR%/ \
@@ -204,9 +205,6 @@ do-install:
 	${GMAKE} -C src/include ${INSTALL_TARGET} ;\
 	${GMAKE} -C src/interfaces ${INSTALL_TARGET}
 .endif
-
-post-clean:
-	@ ${RM} -f ${WRKDIRPREFIX}${.CURDIR}/Makefile.inc
 
 check:
 	@ cd ${WRKSRC}; \
