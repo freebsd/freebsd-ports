@@ -3,9 +3,6 @@ bin/nex
 bin/nview
 bin/regular
 bin/qregular
-man/cat1/nvi.0
-man/cat1/nex.0
-man/cat1/nview.0
 man/man1/nvi.1
 man/man1/nex.1
 man/man1/nview.1
