@@ -1,0 +1,46 @@
+# New ports collection makefile for:	leafpad
+# Date created:		2004-10-18
+# Whom:			Michael Johnson <ahze@ahze.net>
+#
+# $FreeBSD$
+#
+
+PORTNAME=	leafpad
+PORTVERSION=	0.7.3.1
+CATEGORIES=	editors
+MASTER_SITES=	http://tarot.freeshell.org/leafpad/
+
+MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Light-weight GTK+ Editor similar to notepad.exe
+
+USE_GNOME=	gnomeprefix gtk20
+GNU_CONFIGURE=	yes
+USE_REINPLACE=	yes
+
+DOCS=		AUTHORS COPYING ChangeLog INSTALL README
+
+.if !defined(WITHOUT_NLS)
+USE_GETTEXT=	yes
+CONFIGURE_ARGS=	--enable-nls \
+		--with-libiconv-prefix=${LOCALBASE} \
+		--with-libintl-prefix=${LOCALBASE}
+PLIST_SUB+=	NLS:=""
+.else
+CONFIGURE_ARGS=	--disable-nls
+PLIST_SUB+=	NLS:="@comment "
+.endif
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|/icons|/pixmaps|g' ${WRKSRC}/Makefile.in
+	@${REINPLACE_CMD} -e 's|/share/icons/|/share/gnome/pixmaps/|g' \
+		${WRKSRC}/src/callback.c ${WRKSRC}/src/window.c
+
+.ifndef (NOPORTDOCS)
+post-install:
+	@${MKDIR} ${DOCSDIR}
+.for i in ${DOCS}
+	@${INSTALL_DATA} ${WRKSRC}/${i} ${DOCSDIR}
+.endfor
+.endif
+
+.include <bsd.port.mk>

@@ -87,6 +87,7 @@
     SUBDIR += koffice-kde3
     SUBDIR += kxmleditor
     SUBDIR += le
+    SUBDIR += leafpad
     SUBDIR += led
     SUBDIR += leim20
     SUBDIR += leim21
