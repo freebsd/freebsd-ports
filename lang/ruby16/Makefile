@@ -96,14 +96,14 @@ post-install:
 		-e ' end;' \
 		-e 'end' \
 		${IRB_WITH_SUFFIX}
-.if !defined(NOPORTDOCS)
 	${MKDIR} ${RUBY_EXAMPLESDIR}
+	${MKDIR} ${RUBY_DOCDIR}
+.if !defined(NOPORTDOCS)
 	${INSTALL_DATA} ${WRKSRC}/sample/* ${RUBY_EXAMPLESDIR}
 	${MKDIR} ${RUBY_EXAMPLESDIR}/curses
 	${INSTALL_DATA} ${WRKSRC}/ext/curses/hello.rb ${WRKSRC}/ext/curses/rain.rb ${WRKSRC}/ext/curses/view.rb ${RUBY_EXAMPLESDIR}/curses
 	${MKDIR} ${RUBY_EXAMPLESDIR}/pty
 	${INSTALL_DATA} ${WRKSRC}/ext/pty/expect_sample.rb ${WRKSRC}/ext/pty/script.rb ${WRKSRC}/ext/pty/shl.rb ${RUBY_EXAMPLESDIR}/pty
-	${MKDIR} ${RUBY_DOCDIR}
 	${INSTALL_DATA} ${WRKSRC}/README* ${RUBY_DOCDIR}
 	${MKDIR} ${RUBY_DOCDIR}/etc
 	${INSTALL_DATA} ${WRKSRC}/ext/etc/etc.txt* ${RUBY_DOCDIR}/etc
