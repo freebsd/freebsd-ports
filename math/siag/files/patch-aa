@@ -1,54 +1,21 @@
---- topdir.mk.orig	Fri Jan 23 05:03:22 1998
-+++ topdir.mk	Wed Jan 28 03:08:06 1998
-@@ -1,10 +1,10 @@
+--- topdir.mk.orig	Tue Jun 30 02:14:15 1998
++++ topdir.mk	Tue Jul  7 01:55:37 1998
+@@ -1,7 +1,7 @@
  
- # Set this to wherever you unpacked the archive.
- # This is normally not needed, it should be autodetected
--#SIAG_HOME = -DSIAGHOME=\"/usr/local/siag\"
-+SIAG_HOME = -DSIAGHOME=\"${PREFIX}/lib/siag\"
+ # Set this to where you want the support files installed
+-SIAG_HOME = /usr/local/lib/siag
+-XCOMM SIAG_HOME = $(LIBDIR)/siag
++SIAG_HOME = $(PREFIX)/lib/siag
++# SIAG_HOME = $(LIBDIR)/siag
  
  # Set this to your web browser of choice
- SIAG_HELP = -DSIAGHELP=\"chimera\"
- 
- # This creates a file TRACEME in the current directory
- #DEBUG = -DDEBUG
-@@ -25,11 +25,12 @@
+ SIAG_HELP = chimera
+@@ -28,7 +28,7 @@
  NDBM = -DNDBM
- # And one of the following two lines
+ # And one of the following two lines (none for Solaris)
  #DBLIB = -lndbm
 -DBLIB = -ldb
 +#DBLIB = -ldb
  
  # Uncomment one of the following:
--SYSDEP_LIB =				# for Linux or HP/UX
-+#SYSDEP_LIB =				# for Linux or HP/UX
- #SYSDEP_LIB = -lposix4			# for Solaris
-+SYSDEP_LIB = -lcrypt			# FreeBSD
- 
- 
- ######
-@@ -69,7 +70,7 @@
- 
- ######
- # Uncomment this if you want to use Xaw3d widgets
--XAW3D = -lXaw3d
-+#XAW3D = -lXaw3d
- # Or this if you have Xaw95 widgets installed
- #XAW3D = -lXaw95
- # Or this for a NeXT look
-@@ -83,11 +84,11 @@
- 
- ######
- # To use Guile (requires libguile)
--GUILE = -DGUILE
--GUILELIB = -lguile
-+#GUILE = -DGUILE
-+#GUILELIB = -lguile
- # To use Tcl (requires libtcl)
--TCL = -DTCL
--TCLLIB = -ltcl -ldl
-+#TCL = -DTCL
-+#TCLLIB = -ltcl -ldl
- # To use Perl (requires installed Perl library)
- # There is *no* Perl support in Siag yet!
- #PERL = -DPERL
+ #SYSDEP_LIB =				# for Linux or HP/UX

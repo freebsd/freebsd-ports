@@ -1,7 +1,79 @@
+bin/egon
+bin/pw
 bin/siag
 bin/tsiag
+lib/X11/app-defaults/Egon
+lib/X11/app-defaults/Pw
 lib/X11/app-defaults/Siag
+lib/siag/common/bitmaps/C.xbm
+lib/siag/common/bitmaps/F1.xbm
+lib/siag/common/bitmaps/N.xbm
+lib/siag/common/bitmaps/O.xbm
+lib/siag/common/bitmaps/P.xbm
+lib/siag/common/bitmaps/S.xbm
+lib/siag/common/bitmaps/V.xbm
+lib/siag/common/bitmaps/W.xbm
+lib/siag/common/bitmaps/blank.xbm
+lib/siag/common/bitmaps/bold.xbm
+lib/siag/common/bitmaps/bold.xpm
+lib/siag/common/bitmaps/borders.xbm
+lib/siag/common/bitmaps/borders.xpm
+lib/siag/common/bitmaps/copyright.xbm
+lib/siag/common/bitmaps/copyright.xpm
+lib/siag/common/bitmaps/egon_bg.xbm
+lib/siag/common/bitmaps/egon_fg.xbm
+lib/siag/common/bitmaps/egon_fg.xpm
+lib/siag/common/bitmaps/egon_old.xpm
+lib/siag/common/bitmaps/fld_closed.xbm
+lib/siag/common/bitmaps/fld_open.xbm
+lib/siag/common/bitmaps/fld_open.xpm
+lib/siag/common/bitmaps/floppy3.xbm
+lib/siag/common/bitmaps/floppy3.xpm
+lib/siag/common/bitmaps/grid.xbm
+lib/siag/common/bitmaps/grid.xpm
+lib/siag/common/bitmaps/hcenter.xbm
+lib/siag/common/bitmaps/hcenter.xpm
+lib/siag/common/bitmaps/hleft.xbm
+lib/siag/common/bitmaps/hleft.xpm
+lib/siag/common/bitmaps/hright.xbm
+lib/siag/common/bitmaps/hright.xpm
+lib/siag/common/bitmaps/info.xbm
+lib/siag/common/bitmaps/info.xpm
+lib/siag/common/bitmaps/italic.xbm
+lib/siag/common/bitmaps/italic.xpm
+lib/siag/common/bitmaps/new.xbm
+lib/siag/common/bitmaps/new.xpm
+lib/siag/common/bitmaps/next.xbm
+lib/siag/common/bitmaps/none.xbm
+lib/siag/common/bitmaps/none.xpm
+lib/siag/common/bitmaps/play.xbm
+lib/siag/common/bitmaps/plotter.xbm
+lib/siag/common/bitmaps/plotter.xpm
+lib/siag/common/bitmaps/preview.xbm
+lib/siag/common/bitmaps/preview.xpm
+lib/siag/common/bitmaps/previous.xbm
+lib/siag/common/bitmaps/printer.xbm
+lib/siag/common/bitmaps/printer.xpm
+lib/siag/common/bitmaps/pw_bg.xbm
+lib/siag/common/bitmaps/pw_fg.xbm
+lib/siag/common/bitmaps/pw_fg.xpm
+lib/siag/common/bitmaps/qmark.xbm
+lib/siag/common/bitmaps/quit.xbm
+lib/siag/common/bitmaps/scr_icon.xbm
+lib/siag/common/bitmaps/siag.xbm
+lib/siag/common/bitmaps/siag_bg.xbm
+lib/siag/common/bitmaps/siag_fg.xbm
+lib/siag/common/bitmaps/siag_fg.xpm
+lib/siag/common/bitmaps/sigma.xbm
+lib/siag/common/bitmaps/sigma.xpm
+lib/siag/common/bitmaps/stop.xbm
+lib/siag/common/bitmaps/uchar.xbm
+lib/siag/common/bitmaps/uline.xbm
+lib/siag/common/bitmaps/uline.xpm
+lib/siag/common/bitmaps/vbottom.xbm
+lib/siag/common/bitmaps/vtop.xbm
 lib/siag/common/docs/COPYING.LIB
+lib/siag/common/docs/Copyright
 lib/siag/common/docs/credits.html
 lib/siag/common/docs/embedding.html
 lib/siag/common/docs/form.html
@@ -9,6 +81,106 @@ lib/siag/common/docs/interpreters.html
 lib/siag/common/docs/office.html
 lib/siag/common/docs/search.html
 lib/siag/common/docs/siaghelp.html
+lib/siag/egon/animator.scm
+lib/siag/egon/docs/CHANGES
+lib/siag/egon/docs/COPYING
+lib/siag/egon/docs/Copying
+lib/siag/egon/docs/TODO
+lib/siag/egon/docs/commands.html
+lib/siag/egon/docs/concepts.html
+lib/siag/egon/docs/egon.gif
+lib/siag/egon/docs/egon.html
+lib/siag/egon/docs/fileformats.html
+lib/siag/egon/docs/intro.html
+lib/siag/egon/docs/invocation.html
+lib/siag/egon/docs/keys.html
+lib/siag/egon/docs/mouse.html
+lib/siag/egon/docs/scheme.html
+lib/siag/egon/docs/scrollbars.html
+lib/siag/egon/docs/strings.html
+lib/siag/egon/docs/toolbar.html
+lib/siag/egon/egon.scm
+lib/siag/egon/examples/Plaid.xpm
+lib/siag/egon/examples/bg_pixmap.xpm
+lib/siag/egon/examples/bounce.scm
+lib/siag/egon/examples/box.scm
+lib/siag/egon/examples/circle.scm
+lib/siag/egon/examples/eye.scm
+lib/siag/egon/examples/eye.xpm
+lib/siag/egon/examples/eye1.xpm
+lib/siag/egon/examples/eye10.xpm
+lib/siag/egon/examples/eye11.xpm
+lib/siag/egon/examples/eye12.xpm
+lib/siag/egon/examples/eye13.xpm
+lib/siag/egon/examples/eye14.xpm
+lib/siag/egon/examples/eye15.xpm
+lib/siag/egon/examples/eye16.xpm
+lib/siag/egon/examples/eye17.xpm
+lib/siag/egon/examples/eye18.xpm
+lib/siag/egon/examples/eye19.xpm
+lib/siag/egon/examples/eye2.scm
+lib/siag/egon/examples/eye2.xpm
+lib/siag/egon/examples/eye20.xpm
+lib/siag/egon/examples/eye21.xpm
+lib/siag/egon/examples/eye22.xpm
+lib/siag/egon/examples/eye23.xpm
+lib/siag/egon/examples/eye24.xpm
+lib/siag/egon/examples/eye3.xpm
+lib/siag/egon/examples/eye4.xpm
+lib/siag/egon/examples/eye5.xpm
+lib/siag/egon/examples/eye6.xpm
+lib/siag/egon/examples/eye7.xpm
+lib/siag/egon/examples/eye8.xpm
+lib/siag/egon/examples/eye9.xpm
+lib/siag/egon/examples/line.scm
+lib/siag/egon/examples/mpfoot.xpm
+lib/siag/egon/examples/ms.scm
+lib/siag/egon/examples/noname.scm
+lib/siag/egon/examples/question.xpm
+lib/siag/egon/examples/ring.xpm
+lib/siag/egon/examples/siag.xbm
+lib/siag/egon/examples/toady.xpm
+lib/siag/egon/examples/window.xpm
+lib/siag/egon/menu.scm
+lib/siag/pw/docs/BUGS
+lib/siag/pw/docs/CHANGES
+lib/siag/pw/docs/COPYING
+lib/siag/pw/docs/Copying
+lib/siag/pw/docs/TODO
+lib/siag/pw/docs/commands.html
+lib/siag/pw/docs/concepts.html
+lib/siag/pw/docs/fileformats.html
+lib/siag/pw/docs/intro.html
+lib/siag/pw/docs/invocation.html
+lib/siag/pw/docs/keys.html
+lib/siag/pw/docs/mouse.html
+lib/siag/pw/docs/pw.gif
+lib/siag/pw/docs/pw.html
+lib/siag/pw/docs/scheme.html
+lib/siag/pw/docs/scrollbars.html
+lib/siag/pw/docs/strings.html
+lib/siag/pw/docs/toolbar.html
+lib/siag/pw/examples/chead.doc
+lib/siag/pw/examples/chead.html
+lib/siag/pw/examples/chead.pw
+lib/siag/pw/examples/chead.rtf
+lib/siag/pw/examples/chead.txt
+lib/siag/pw/examples/color.pw
+lib/siag/pw/examples/formats.html
+lib/siag/pw/examples/formats.pw
+lib/siag/pw/examples/formats.siag
+lib/siag/pw/examples/formats.xbm
+lib/siag/pw/examples/newpw.pw
+lib/siag/pw/examples/rtfex.rtf
+lib/siag/pw/examples/standard.bmk
+lib/siag/pw/examples/styles.html
+lib/siag/pw/examples/styles.pw
+lib/siag/pw/examples/styles2.pw
+lib/siag/pw/examples/svenska.pw
+lib/siag/pw/examples/svenska.rtf
+lib/siag/pw/menu.scm
+lib/siag/pw/pw.scm
+lib/siag/siag/123.scm
 lib/siag/siag/data.scm
 lib/siag/siag/docs/BUGS
 lib/siag/siag/docs/CHANGES
@@ -38,6 +210,8 @@ lib/siag/siag/examples/fibonacci-c.siag
 lib/siag/siag/examples/fibonacci.siag
 lib/siag/siag/examples/filemgr.scm
 lib/siag/siag/examples/fonts.siag
+lib/siag/siag/examples/foo.siag
+lib/siag/siag/examples/foo.wk1
 lib/siag/siag/examples/formtest.siag
 lib/siag/siag/examples/group.siag
 lib/siag/siag/examples/heaven-c.siag
@@ -70,13 +244,22 @@ lib/siag/siag/menu.scm
 lib/siag/siag/plot.scm
 lib/siag/siag/siag.scm
 lib/siag/siag/splot.scm
-lib/siag/siag/startup.siag
 lib/siag/siod/siod.scm
 lib/siag/xcommon/StringDefs.scm
 lib/siag/xcommon/form.scm
-@dirrm lib/siag/common/docs
-@dirrm lib/siag/siag/docs
-@dirrm lib/siag/siag/examples
-@dirrm lib/siag/siag
-@dirrm lib/siag/siod
+@dirrm lib/siag/xsiag
 @dirrm lib/siag/xcommon
+@dirrm lib/siag/siod
+@dirrm lib/siag/siag/examples
+@dirrm lib/siag/siag/docs
+@dirrm lib/siag/siag
+@dirrm lib/siag/pw/examples
+@dirrm lib/siag/pw/docs
+@dirrm lib/siag/pw
+@dirrm lib/siag/egon/examples
+@dirrm lib/siag/egon/docs
+@dirrm lib/siag/egon
+@dirrm lib/siag/common/docs
+@dirrm lib/siag/common/bitmaps
+@dirrm lib/siag/common
+@dirrm lib/siag
