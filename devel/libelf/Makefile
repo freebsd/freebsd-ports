@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	libelf
-PORTVERSION=	0.8.2
+PORTVERSION=	0.8.4
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_SUNSITE} \
 		http://www.stud.uni-hannover.de/~michael/software/ \
@@ -23,8 +23,7 @@ CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib -lintl"
 CONFIGURE_ARGS+=	--enable-shared --disable-compat
 INSTALLS_SHLIB=	yes
-PLIST_SUB+=	LIBVER=${PORTVERSION} \
-		LIBVER_SHORT=${PORTVERSION:R}
+PLIST_SUB+=	LIBVER=${PORTVERSION:R}
 
 NOMAN=		defined
 
