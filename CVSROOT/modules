@@ -4017,6 +4017,7 @@ mei		ports/sysutils/mei
 memcontrol	src/usr.sbin/memcontrol
 memtest		ports/sysutils/memtest
 menushki	ports/misc/menushki
+mergelog	ports/www/mergelog
 mergemaster	src/usr.sbin/mergemaster
 merlin		ports/games/merlin
 merlinmon	ports/net/merlinmon
