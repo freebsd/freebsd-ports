@@ -7,7 +7,9 @@
 PORTNAME=	xdx
 PORTVERSION=	1.2
 CATEGORIES=	comms
-MASTER_SITES=	http://www.qsl.net/pg4i/download/
+MASTER_SITES=	http://www.qsl.net/pg4i/download/ \
+		${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	pav
 
 MAINTAINER=	matt@mattsnetwork.co.uk
 COMMENT=	Amateur Radio DX cluster monitor
