@@ -12,7 +12,7 @@ CATEGORIES=	shells
 MASTER_SITES=	ftp://ftp.sys.toronto.edu/pub/es/
 DISTNAME=	es-0.9-beta1
 
-MAINTAINER=	rittle@latour.rsch.comm.mot.com
+MAINTAINER=	ljrittle@acm.org
 
 GNU_CONFIGURE=	yes
 
