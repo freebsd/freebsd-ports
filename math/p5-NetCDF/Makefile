@@ -18,6 +18,8 @@ COMMENT=	Perl5 module to read and write netCDF files
 
 LIB_DEPENDS=	netcdf.1:${PORTSDIR}/math/netcdf
 
+USE_PERL5=	yes
+
 WRKSRC=		${WRKDIR}/netcdf-perl-${PORTVERSION}/src
 HAS_CONFIGURE=	yes
 CONFIGURE_ENV=	CPP_NETCDF=-I${PREFIX}/include LD_NETCDF=-lnetcdf PERL_MANDIR=${PREFIX}/lib/perl5/${PERL_VERSION}/man
