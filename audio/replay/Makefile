@@ -1,13 +1,13 @@
 # New ports collection makefile for:	replay
-# Version required:		0.57
+# Version required:		0.58
 # Date created:			Oct 27 1998
 # Whom:				Vanilla Pooh Shu <vanilla@FreeBSD.ORG>
 #
-# $Id: Makefile,v 1.2 1998/11/02 11:23:59 jseger Exp $
+# $Id: Makefile,v 1.3 1998/11/04 08:55:06 vanilla Exp $
 #
 
-DISTNAME=	replay-source-dgtk_0.57a
-PKGNAME=	replay-0.57a
+DISTNAME=	replay-source-dgtk_0.58
+PKGNAME=	replay-0.58
 CATEGORIES=	audio
 MASTER_SITES=	http://replay.linuxpower.org/files/
 
