@@ -8,7 +8,7 @@
 PORTNAME=	linux_locale
 PORTVERSION=	${VERSION}.0
 CATEGORIES=	japanese emulators linux
-MASTER_SITES=	ftp://ftp.debian.org/debian/dists/potato/main/source/admin/ \
+MASTER_SITES=	ftp://ftp.debian.org/debian/dists/woody/main/source/admin/ \
 		${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	imura
 DISTNAME=	locale-ja_${VERSION}
@@ -16,19 +16,17 @@ DISTNAME=	locale-ja_${VERSION}
 MAINTAINER=	imura@FreeBSD.org
 
 BUILD_DEPENDS=	${LCDEF_CMD}:${PORTSDIR}/emulators/linux_base
-RUN_DEPENDS=	${LINUX_BASE}/lib/libc.so.6:${PORTSDIR}/emulators/linux_base
 
-LINUX_BASE=	/compat/linux
-PREFIX=		${LINUX_BASE}
+USE_LINUX_PREFIX=	yes
 NO_MTREE=	yes
 WRKSRC=		${WRKDIR}/locale-ja-${VERSION}
 PLIST_SUB=	VER=${VERSION}
 
-VERSION=	13
+VERSION=	18
 SRCDEF=		${WRKSRC}/ja_JP
 CHARMAPS=	${WRKSRC}/charmaps/EUC-JP
-REPERTOIRE_MAP=	${LINUX_BASE}/usr/share/i18n/repertoiremaps/charids.894
-LCDEF_CMD=	${LINUX_BASE}/usr/bin/localedef
+REPERTOIRE_MAP=	${LINUXBASE}/usr/share/i18n/repertoiremaps/charids.894
+LCDEF_CMD=	${LINUXBASE}/usr/bin/localedef
 LCDEF_ARGS=	--repertoire-map=${REPERTOIRE_MAP} \
 		-c -f ${CHARMAPS} -i ${SRCDEF}
 LCDIR=		${PREFIX}/usr/share/locale/ja_JP
