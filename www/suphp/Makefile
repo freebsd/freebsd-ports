@@ -52,7 +52,7 @@ CONFIGURE_ARGS+=	--disable-checkuid
 CONFIGURE_ARGS+=	--disable-checkgid
 .endif
 ##   WITH_SETID_MODE: Mode to use for setting UID/GID.
-CONFIGURE_ARGS+=	--enable-setid-mode=${WITH_SETID_MODE}
+CONFIGURE_ARGS+=	--with-setid-mode=${WITH_SETID_MODE}
 ##   WITH_LOGPATH (formerly known as LOG_PATH): logging directory 
 ##   (default: /var/log)
 ##   WITH_LOGNAME: log file name (default suphp.log)
