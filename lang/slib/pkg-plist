@@ -1,17 +1,26 @@
 %%DATADIR%%/Bev2slib.scm
+%%DATADIR%%/DrScheme.init
+%%DATADIR%%/RScheme.init
+%%DATADIR%%/STk.init
 %%DATADIR%%/Template.scm
 %%DATADIR%%/alist.scm
 %%DATADIR%%/alistab.scm
 %%DATADIR%%/array.scm
 %%DATADIR%%/arraymap.scm
 %%DATADIR%%/batch.scm
+%%DATADIR%%/bigloo.init
 %%DATADIR%%/break.scm
 %%DATADIR%%/byte.scm
+%%DATADIR%%/bytenumb.scm
 %%DATADIR%%/chap.scm
 %%DATADIR%%/charplot.scm
+%%DATADIR%%/chez.init
+%%DATADIR%%/cie1931.xyz
+%%DATADIR%%/cie1964.xyz
 %%DATADIR%%/cltime.scm
 %%DATADIR%%/coerce.scm
 %%DATADIR%%/collect.scm
+%%DATADIR%%/collectx.scm
 %%DATADIR%%/color.scm
 %%DATADIR%%/colornam.scm
 %%DATADIR%%/colorspc.scm
@@ -23,6 +32,7 @@
 %%DATADIR%%/daylight.scm
 %%DATADIR%%/db2html.scm
 %%DATADIR%%/dbcom.scm
+%%DATADIR%%/dbinterp.scm
 %%DATADIR%%/dbrowse.scm
 %%DATADIR%%/dbsyn.scm
 %%DATADIR%%/dbutil.scm
@@ -34,16 +44,19 @@
 %%DATADIR%%/dwindtst.scm
 %%DATADIR%%/dynamic.scm
 %%DATADIR%%/dynwind.scm
+%%DATADIR%%/elk.init
 %%DATADIR%%/eval.scm
 %%DATADIR%%/factor.scm
 %%DATADIR%%/fft.scm
 %%DATADIR%%/fluidlet.scm
-%%DATADIR%%/format.scm
-%%DATADIR%%/formatst.scm
+%%DATADIR%%/gambit.init
 %%DATADIR%%/genwrite.scm
 %%DATADIR%%/getopt.scm
 %%DATADIR%%/getparam.scm
 %%DATADIR%%/glob.scm
+%%DATADIR%%/grapheps.ps
+%%DATADIR%%/grapheps.scm
+%%DATADIR%%/guile.init
 %%DATADIR%%/hash.scm
 %%DATADIR%%/hashtab.scm
 %%DATADIR%%/html4each.scm
@@ -52,10 +65,14 @@
 %%DATADIR%%/lineio.scm
 %%DATADIR%%/logical.scm
 %%DATADIR%%/macrotst.scm
+%%DATADIR%%/macscheme.init
 %%DATADIR%%/macwork.scm
+%%DATADIR%%/manifest.scm
 %%DATADIR%%/matfile.scm
 %%DATADIR%%/mbe.scm
 %%DATADIR%%/minimize.scm
+%%DATADIR%%/mitscheme.init
+%%DATADIR%%/mkclrnam.scm
 %%DATADIR%%/mklibcat.scm
 %%DATADIR%%/modular.scm
 %%DATADIR%%/mulapply.scm
@@ -63,10 +80,12 @@
 %%DATADIR%%/mwdenote.scm
 %%DATADIR%%/mwexpand.scm
 %%DATADIR%%/mwsynrul.scm
+%%DATADIR%%/ncbi-dna.scm
 %%DATADIR%%/null.scm
 %%DATADIR%%/obj2str.scm
 %%DATADIR%%/object.scm
 %%DATADIR%%/paramlst.scm
+%%DATADIR%%/phil-spc.scm
 %%DATADIR%%/plottest.scm
 %%DATADIR%%/pnm.scm
 %%DATADIR%%/pp.scm
@@ -76,6 +95,7 @@
 %%DATADIR%%/priorque.scm
 %%DATADIR%%/process.scm
 %%DATADIR%%/promise.scm
+%%DATADIR%%/pscheme.init
 %%DATADIR%%/psxtime.scm
 %%DATADIR%%/qp.scm
 %%DATADIR%%/queue.scm
@@ -87,9 +107,11 @@
 %%DATADIR%%/recobj.scm
 %%DATADIR%%/record.scm
 %%DATADIR%%/repl.scm
-%%DATADIR%%/report.scm
 %%DATADIR%%/require.scm
+%%DATADIR%%/resenecolours.txt
 %%DATADIR%%/root.scm
+%%DATADIR%%/s48-0_57.init
+%%DATADIR%%/saturate.txt
 %%DATADIR%%/sc2.scm
 %%DATADIR%%/sc4opt.scm
 %%DATADIR%%/sc4sc3.scm
@@ -99,8 +121,12 @@
 %%DATADIR%%/scamacr.scm
 %%DATADIR%%/scanf.scm
 %%DATADIR%%/scaoutp.scm
+%%DATADIR%%/scheme2c.init
+%%DATADIR%%/scheme48.init
 %%DATADIR%%/schmooz.scm
+%%DATADIR%%/scm.init
 %%DATADIR%%/scmacro.scm
+%%DATADIR%%/scsh.init
 %%DATADIR%%/selfset.scm
 %%DATADIR%%/sierpinski.scm
 %%DATADIR%%/simetrix.scm
@@ -108,6 +134,9 @@
 %%DATADIR%%/sort.scm
 %%DATADIR%%/soundex.scm
 %%DATADIR%%/srfi-1.scm
+%%DATADIR%%/srfi-2.scm
+%%DATADIR%%/srfi-8.scm
+%%DATADIR%%/srfi-9.scm
 %%DATADIR%%/srfi.scm
 %%DATADIR%%/stdio.scm
 %%DATADIR%%/strcase.scm
@@ -118,30 +147,27 @@
 %%DATADIR%%/synchk.scm
 %%DATADIR%%/synclo.scm
 %%DATADIR%%/synrul.scm
+%%DATADIR%%/t3.init
 %%DATADIR%%/timezone.scm
+%%DATADIR%%/top-refs.scm
 %%DATADIR%%/trace.scm
 %%DATADIR%%/transact.scm
 %%DATADIR%%/tree.scm
 %%DATADIR%%/trnscrpt.scm
 %%DATADIR%%/tsort.scm
 %%DATADIR%%/tzfile.scm
+%%DATADIR%%/umbscheme.init
 %%DATADIR%%/uri.scm
 %%DATADIR%%/values.scm
+%%DATADIR%%/vet.scm
+%%DATADIR%%/vscm.init
 %%DATADIR%%/withfile.scm
 %%DATADIR%%/wttest.scm
 %%DATADIR%%/wttree.scm
 %%DATADIR%%/yasyn.scm
-%%PORTDOCS%%share/doc/slib/ANNOUNCE
-%%PORTDOCS%%share/doc/slib/COPYING
-%%PORTDOCS%%share/doc/slib/ChangeLog
-%%PORTDOCS%%share/doc/slib/FAQ
-%%PORTDOCS%%share/doc/slib/README
-%%PORTDOCS%%@unexec install-info --delete %D/info/slib.info %D/info/dir
-%%PORTDOCS%%info/slib.info
-%%PORTDOCS%%@exec install-info %D/info/slib.info %D/info/dir
-%%PORTDOCS%%@dirrm share/doc/slib
-@exec ln -shf %D/%%DATADIR%% %%LOCALBASE%%/share/guile/slib
-@exec %%LOCALBASE%%/bin/guile -c "(use-modules (ice-9 slib)) (require 'new-catalog)"
-@unexec rm -f %%LOCALBASE%%/share/guile/slib
-@unexec rm -f %%LOCALBASE%%/share/guile/slibcat
+%%PORTDOCS%%%%DOCSDIR%%/ANNOUNCE
+%%PORTDOCS%%%%DOCSDIR%%/ChangeLog
+%%PORTDOCS%%%%DOCSDIR%%/FAQ
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm %%DATADIR%%

@@ -1,9 +1,4 @@
-A portable scheme library
+SLIB is a portable scheme library providing compatibility and utility
+functions for standard Scheme implementations.
 
-This package is constructed to work with GNU Guile. To use the
-features offered by the SLIB library, add the following construct
-to your programs:
-
-       (use-modules (ice-9 slib))
-
-WWW: http://www.swiss.ai.mit.edu/~jaffer/SLIB.html
+WWW: http://swissnet.ai.mit.edu/~jaffer/SLIB.html

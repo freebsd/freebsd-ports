@@ -1,0 +1,4 @@
+@exec ln -shf %D/share/slib %D/share/guile/slib
+@exec %D/bin/guile -c "(use-modules (ice-9 slib)) (require 'new-catalog)"
+@unexec rm -f %D/share/guile/slib
+@unexec rm -f %D/share/guile/slibcat

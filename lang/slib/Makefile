@@ -6,37 +6,29 @@
 #
 
 PORTNAME=	slib
-PORTVERSION=	2d5
-PORTREVISION=	1
+PORTVERSION=	3a1
 CATEGORIES=	lang scheme
 MASTER_SITES=	http://swissnet.ai.mit.edu/ftpdir/scm/
 DISTNAME=	slib${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	fuyuki@nigredo.org
 COMMENT=	A portable scheme library
 
-RUN_DEPENDS=	guile:${PORTSDIR}/lang/guile
-
 WRKSRC=		${WRKDIR}/slib
-
-NO_BUILD=	yes
+USE_GMAKE=	yes
+ALL_TARGET=	slib.info
+INFO=		slib
 
 do-install:
 	${MKDIR} ${DATADIR}
-	${INSTALL_DATA} ${WRKSRC}/*.scm ${DATADIR}
-	${RM} -f ${LOCALBASE}/share/guile/slib
-	${LN} -sf ${PREFIX}/share/slib ${LOCALBASE}/share/guile/slib
-	${LOCALBASE}/bin/guile -c \
-		"(use-modules (ice-9 slib)) (require 'new-catalog)"
-
-post-install:
-.if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}
-.for file in ANNOUNCE COPYING ChangeLog FAQ README
-	${INSTALL_MAN} ${WRKSRC}/${file} ${DOCSDIR}
-.endfor
+	cd ${WRKSRC}; ${INSTALL_DATA} *.scm *.init *.txt *.xyz *.ps ${DATADIR}
 	${INSTALL_MAN} ${WRKSRC}/slib.info ${PREFIX}/info
 	install-info ${PREFIX}/info/slib.info ${PREFIX}/info/dir
+.if !defined(NOPORTDOCS)
+	${MKDIR} ${DOCSDIR}
+.for file in ANNOUNCE ChangeLog FAQ README
+	${INSTALL_MAN} ${WRKSRC}/${file} ${DOCSDIR}
+.endfor
 .endif
 
 .include <bsd.port.mk>
