@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.26 1996/10/24 08:19:57 jfitz Exp $
+# $Id: Makefile,v 1.27 1996/10/30 14:29:08 max Exp $
 #
 
     SUBDIR += ImageMagick
@@ -35,6 +35,7 @@
     SUBDIR += xfractint
     SUBDIR += xgrasp
     SUBDIR += xli
+    SUBDIR += xmandel
     SUBDIR += xmfract
     SUBDIR += xmorph
     SUBDIR += xpaint
