@@ -7,7 +7,7 @@
 
 PORTNAME=	linphone
 PORTVERSION=	0.11.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net
 MASTER_SITES=	http://simon.morlat.free.fr/download/${PORTVERSION}/source/
 
