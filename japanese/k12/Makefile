@@ -3,13 +3,13 @@
 # Date created:		24 June 1996
 # Whom:			Mita Yoshio <mita@jp.FreeBSD.org>
 #
-# $Id: Makefile,v 1.6 1998/08/07 22:43:07 asami Exp $
+# $Id: Makefile,v 1.7 1998/11/20 20:17:14 sada Exp $
 #
 
 DISTNAME=	kaname_k12_bdf
 PKGNAME=	ja-kaname12-1.0
 CATEGORIES=	japanese x11-fonts
-MASTER_SITES=	ftp://ftp.noc.titech.ac.jp/pub/tmp/aki/FreeBSD/etc/
+MASTER_SITES=	${MASTER_SITE_PORTS_JP}
 
 MAINTAINER=	mita@jp.FreeBSD.org
 
