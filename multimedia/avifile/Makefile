@@ -7,6 +7,7 @@
 
 PORTNAME=	avifile
 PORTVERSION=	0.60.20010429
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	http://ernie.eit.uni-kl.de/avifile/ \
 		http://divx.euro.ru/ \
@@ -34,9 +35,6 @@ CONFIGURE_ENV=	SDL_CONFIG="${SDL_CONFIG}" \
 		CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include -L${LOCALBASE}/lib"
 CONFIGURE_ARGS=	--with-win32-path=${LOCALBASE}/lib/win32 \
 		--enable-release --with-gnu-ld
-.if defined(WITH_MGA)
-CONFIGURE_ARGS+=--enable-mga
-.endif
 
 PLIST_SUB=	LIB_VERSION="${LIB_VERSION}"
 
@@ -59,10 +57,11 @@ DIFF?=		/usr/bin/diff
 .include <bsd.port.pre.mk>
 
 pre-extract:
-.if !defined(WITH_MGA)
-	@${ECHO_MSG} "You can enable special MGA support by building with -DWITH_MGA."
-.endif
-
+	@if [ -f ${LOCALBASE}/lib/libpth.so ]; then \
+	  ${ECHO_MSG} "Error: This packet does not compile when the \
+packet 'pth' is installed.";\
+	  ${FALSE};\
+	fi
 do-configure:
 	(cd ${WRKSRC} && aclocal && ./autogen.sh &&\
 	${CONFIGURE_ENV} ./configure ${CONFIGURE_ARGS})
