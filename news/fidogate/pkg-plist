@@ -1,4 +1,3 @@
-@comment $FreeBSD: /tmp/pcvs/ports/news/fidogate/pkg-plist,v 1.8 2001-06-05 04:52:47 dinoex Exp $
 libexec/fidogate/areafix.help
 libexec/fidogate/areasbbssync
 libexec/fidogate/charset.bin
@@ -113,6 +112,9 @@ libexec/fidogate/sumcrc
 %%PORTDOCS%%share/doc/fidogate/html/fidogate_5.html
 %%PORTDOCS%%share/doc/fidogate/html/fidogate_6.html
 %%PORTDOCS%%share/doc/fidogate/html/fidogate_7.html
+%%PORTDOCS%%share/doc/fidogate/html/fidogate_8.html
+%%PORTDOCS%%share/doc/fidogate/html/fidogate_abt.html
+%%PORTDOCS%%share/doc/fidogate/html/fidogate_ovr.html
 %%PORTDOCS%%share/doc/fidogate/html/fidogate_toc.html
 %%PORTDOCS%%share/doc/fidogate/html/gate.cgi
 %%PORTDOCS%%share/doc/fidogate/html/msgid-1.html
