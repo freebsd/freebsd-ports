@@ -22,7 +22,13 @@ PATCH_DIST_STRIP=	-p1
 
 MAINTAINER=	olgeni@FreeBSD.org
 
-BUILD_DEPENDS=  ${JAVAPORT}
+# Set JAVABINDIR to where you have javac, if different from below
+JAVABINDIR?=	${LOCALBASE}/jdk1.3.1/bin
+JAVAPORT?=	${JAVABINDIR}/javac:${PORTSDIR}/java/jdk13
+
+.if !exists(${JAVABINDIR}/java)
+WITHOUT_JAVA=	yes
+.endif
 
 CONFIGURE_TARGET=	# Empty
 
@@ -61,29 +67,15 @@ UPDATED_PACKAGES=	erts lib/compiler lib/erl_interface \
 # this is the case (that I could think of at least) was to make sure
 # JAVABINDIR is added to the PATH, using the *_ENV macros.
 
+BUILD_DEPENDS+=  ${JAVAPORT}
+
 # The following UPDATED_PACKAGES depend on java.
 UPDATED_PACKAGES+=	lib/jinterface
-
-# Set JAVABINDIR to where you have javac, if different from below
-JAVABINDIR?=	${LOCALBASE}/jdk1.2.2/bin
-JAVAPORT?=	${JAVABINDIR}/javac:${PORTSDIR}/java/jdk12-beta
 
 # Make sure javabindir is in the path
 CONFIGURE_ENV+= PATH=${PATH}:${JAVABINDIR}
 MAKE_ENV+=      PATH=${PATH}:${JAVABINDIR}
 SCRIPT_ENV+=    PATH=${PATH}:${JAVABINDIR}
-.endif
-
-.if !defined(WITHOUT_X11)
-PLIST_SUB+= 	WITHOUT_X11=""
-.else
-PLIST_SUB+= 	WITHOUT_X11="@comment "
-.endif
-
-.if !defined(WITHOUT_JAVA)
-PLIST_SUB+= 	WITHOUT_JAVA=""
-.else
-PLIST_SUB+= 	WITHOUT_JAVA="@comment "
 .endif
 
 # If X11 is not used, skip gs and etk applications.
@@ -141,11 +133,11 @@ post-install:
 	sslapp=`ls -d ${PREFIX}/lib/erlang/lib/ssl-* | tail -1`; \
 	cd $$sslapp/priv/obj && ${MAKE} && strip ../bin/ssl_esock
 	@cd ${PREFIX} ; find lib/erlang/* -type f -o -type l \
-		| grep -v "^lib/erlang/man" \
+		| ${GREP} -v "^lib/erlang/man" \
 		| sort \
 		> ${WRKDIR}/PLIST.lib-erlang
 	@cd ${PREFIX} ; find lib/erlang/* -type d | sort -r \
-		| grep -v "^lib/erlang/man" \
+		| ${GREP} -v "^lib/erlang/man" \
 	    	| ${SED} -e 's/^/@dirrm /g' \
 		>> ${WRKDIR}/PLIST.lib-erlang
 
