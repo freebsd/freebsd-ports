@@ -60,6 +60,7 @@ CONFIGURE_ARGS?=${XEMACS_ARCH} \
 		--infopath=${PREFIX}/lib/xemacs/info:${PREFIX}/info:${X11BASE}/info:/usr/info:${PREFIX}/lib/texmf/doc/info:/usr/lib/texmf/doc:/usr/share/info \
 		--with-clash-detection \
 		--lockdir=/var/run/emacs/lock \
+		--with-database=berkdb \
 		${WITH_INPUT_METHOD}
 MAKE_ENV=	LANG=C
 INSTALL_COOKIE=	${WRKDIR}/.install_done-${PKGNAME}

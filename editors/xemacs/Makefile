@@ -44,6 +44,7 @@ CONFIGURE_ARGS?=${XEMACS_ARCH} --prefix=${PREFIX} \
 		--with-png=yes \
 		--with-tiff=yes \
 		--with-site-lisp \
+		--with-database=berkdb \
 		${WITH_XFACE} ${WITH_DIALOGS} ${WITH_OFFIX}
 MAKE_ARGS=	prefix=${PREFIX}
 .if !defined(MULE_SLAVE)
