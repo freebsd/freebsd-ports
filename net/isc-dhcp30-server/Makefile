@@ -24,7 +24,7 @@ PKGNAMEPREFIX=	isc-
 PKGNAMESUFFIX=	3
 DISTNAME=	${PORTNAME}-${RELEASE}${VERSION}${PATCHLEVEL}
 
-MAINTAINER=	clefevre@poboxes.com
+MAINTAINER=	clefevre@redirect.to
 
 #
 # Global variables
