@@ -1,4 +1,4 @@
-# New ports collection makefile for:	Wanderlust (for emacs)
+# New ports collection makefile for:	Wanderlust
 # Date created:		7 Apr 1999
 # Whom: 		MANTANI Nobutaka <nobutaka@nobutaka.com>
 #
@@ -6,43 +6,33 @@
 #
 
 PORTNAME=	wanderlust
-PORTVERSION=	2.4.1
+PORTVERSION=	2.6.1
 CATEGORIES=	mail elisp
 MASTER_SITES=	ftp://ftp.gohome.org/wl/stable/ \
 		${MASTER_SITE_RINGSERVER:S,%SUBDIR%,text/elisp/wl/stable/&,} \
 		ftp://ftp.jaist.ac.jp/pub/GNU/elisp/ftp.gohome.org/wl/stable/ \
-		http://www.jpl.org/elips/wl/
+		http://www.jpl.org/elips/wl/stable/
 
 PKGNAMESUFFIX=	-${EMACS_PORT_NAME}
 DISTNAME=	wl-${PORTVERSION}
 
 MAINTAINER=	nobutaka@FreeBSD.org
 
-MIMEUI_PRODUCT?=	semi
-MIMEUI_BRANCH?=		1.13
-MIMEUI_PORT_NAME?=	${MIMEUI_PRODUCT}${MIMEUI_BRANCH:S/.//}-${EMACS_PORT_NAME}
-MIMEUI_COOKIE=	${MIMEUI_PRODUCT}-${EMACS_PORT_NAME}-${MIMEUI_BRANCH}.FreeBSD-packages
+EMACS_PORT_NAME?=	emacs21
 
-.if !defined (IS_SLAVE)
-# for emacs19
-EMACS_PORT_NAME=	emacs
-.endif
-
-.if (${EMACS_PORT_NAME} == "emacs20" || ${EMACS_PORT_NAME} == "mule" || \
-     ${EMACS_PORT_NAME} == "xemacs21-mule")
-WITH_MULE=yes
+.if (${EMACS_PORT_NAME} == "emacs21")
+MIMEUI_PORT_NAME=	${MIMEUI_PRODUCT}
 .else
-WITHOUT_MULE=yes
+MIMEUI_PORT_NAME=	${MIMEUI_PRODUCT}-${EMACS_PORT_NAME}
 .endif
+
+MIMEUI_PRODUCT=	semi
+MIMEUI_VERSION=	1.14
+MIMEUI_COOKIE=	${MIMEUI_PRODUCT}-${EMACS_PORT_NAME}-${MIMEUI_VERSION}.FreeBSD-packages
 
 # depends on semi
 BUILD_DEPENDS+=	${LOCALBASE}/share/semi/${MIMEUI_COOKIE}:${PORTSDIR}/editors/${MIMEUI_PORT_NAME}
 RUN_DEPENDS+=	${LOCALBASE}/share/semi/${MIMEUI_COOKIE}:${PORTSDIR}/editors/${MIMEUI_PORT_NAME}
-
-# depends on nkf
-.if (${EMACS_PORT_NAME} == "emacs" || ${EMACS_PORT_NAME} == "xemacs20")
-BUILD_DEPENDS+=	nkf:${PORTSDIR}/japanese/nkf
-.endif
 
 .if defined(EMACS_PACKAGESDIR)
 ALL_TARGET=	package
@@ -53,29 +43,31 @@ STARTUPDIR=	${EMACS_PACKAGESDIR}/lisp/wl
 ALL_TARGET=	all info
 INSTALL_TARGET=	install install-info
 INFODIR=	${PREFIX}/info
-UTILSDIR=	${EMACS_SITE_LISPDIR}/wl
-.if (${EMACS_PORT_NAME} == "xemacs20")
-STARTUPDIR=	${EMACS_SITE_LISPDIR}
-.else
+UTILSDIR=	${EMACS_VERSION_SITE_LISPDIR}/wl
+WL_LISPDIR=	${EMACS_VERSION_SITE_LISPDIR}/wl
+WL_ICONDIR=	${EMACS_LIBDIR_WITH_VER}/etc/wl/icons
 STARTUPDIR=	${EMACS_VERSION_SITE_LISPDIR}
-.endif
 .endif
 
 DIRSECTION=	"The Emacs editor and associated tools"
 PORTDOCDIR=	share/doc/wanderlust
-DOCS=		README README.ja ChangeLog BUGS BUGS.ja \
-		NEWS NEWS.ja doc/wl-ja.texi doc/wl.texi
+PORTDOCDIR_JA=share/doc/ja/wanderlust
+DOCS=		README NEWS doc/wl.texi
+DOCS_JA=	README.ja NEWS.ja doc/wl-ja.texi
 SAMPLESDIR=	share/examples/wanderlust
 SAMPLESLANG=	en ja
 SAMPLES=	dot.addresses dot.folders dot.wl
 UTILS=		bbdb-wl.el im-wl.el ssl.el
 
 PLIST_SUB+=	EMACS_PACKAGESDIR=${EMACS_PACKAGESDIR} \
-		DIRSECTION=${DIRSECTION}
+		DIRSECTION=${DIRSECTION} \
+		STARTUPDIR=${STARTUPDIR} \
+		WL_LISPDIR=${WL_LISPDIR} \
+		WL_ICONDIR=${WL_ICONDIR}
 
 PLIST=		${PKGDIR}/pkg-plist.${EMACS_PORT_NAME}
 MAKE_ARGS+=	EMACS=${EMACS_CMD} XEMACS=${EMACS_CMD} \
-		LISPDIR=${PREFIX}/${EMACS_SITE_LISPDIR} \
+		LISPDIR=${PREFIX}/${EMACS_VERSION_SITE_LISPDIR} \
 		FLAGS="-batch -q -no-site-file -l ${WRKDIR}/wanderlust-startup.el"
 .if defined(EMACS_PACKAGESDIR)
 MAKE_ARGS+=	PACKAGEDIR=${PREFIX}/${EMACS_PACKAGESDIR}
@@ -85,11 +77,6 @@ MAKE_ARGS+=	INFODIR=${INFODIR}
 
 post-extract:
 	@${CP} ${FILESDIR}/WL-CFG ${WRKSRC}
-.if defined(WITH_MULE) && !defined(WITHOUT_MULE)
-	@${ECHO} '(setq wl-info-lang (list "en" "ja"))' >> ${WRKSRC}/WL-CFG
-.else
-	@${ECHO} '(setq wl-info-lang "en")' >> ${WRKSRC}/WL-CFG
-.endif
 
 post-configure:
 	@${SED} \
@@ -98,10 +85,6 @@ post-configure:
 		-e "s,%%EMACS_LIBDIR_WITH_VER%%,${EMACS_LIBDIR_WITH_VER},g" \
 		-e "s,%%EMACS_PACKAGESDIR%%,${EMACS_PACKAGESDIR},g" \
 		< ${FILESDIR}/wanderlust-startup.${EMACS_PORT_NAME}.el.tmpl > ${WRKDIR}/wanderlust-startup.el
-	@${CP} ${WRKSRC}/wl/wl-vars.el ${WRKSRC}/wl/wl-vars.el.temp
-.if (${EMACS_PORT_NAME} == "emacs" || ${EMACS_PORT_NAME} == "xemacs20")
-	@nkf -e ${WRKSRC}/wl/wl-vars.el.temp > ${WRKSRC}/wl/wl-vars.el
-.endif
 
 pre-build:
 .if defined(EMACS_PACKAGESDIR)
@@ -124,18 +107,18 @@ post-install:
 
 # local targets
 install-info:
-	@install-info --section=${DIRSECTION} ${WRKSRC}/doc/wl.info ${INFODIR}/dir
-.if defined(WITH_MULE) && !defined(WITHOUT_MULE)
-	@install-info --section=${DIRSECTION} ${WRKSRC}/doc/wl-ja.info ${INFODIR}/dir
-.endif
+	@install-info --section=${DIRSECTION} ${WRKSRC}/doc/wl.info ${INFODIR}/dir 2>/dev/null
+	@install-info --section=${DIRSECTION} ${WRKSRC}/doc/wl-ja.info ${INFODIR}/dir 2>/dev/null
 
 install-docs:
 	@${MKDIR} ${PREFIX}/${PORTDOCDIR}
+	@${MKDIR} ${PREFIX}/${PORTDOCDIR_JA}
 .for i in ${DOCS}
 	${INSTALL_DATA} ${WRKSRC}/${i} ${PREFIX}/${PORTDOCDIR}
 .endfor
-	${INSTALL_DATA} ${WRKSRC}/elmo/ChangeLog ${PREFIX}/${PORTDOCDIR}/ChangeLog.elmo
-	${INSTALL_DATA} ${WRKSRC}/wl/ChangeLog ${PREFIX}/${PORTDOCDIR}/ChangeLog.wl
+.for i in ${DOCS_JA}
+	${INSTALL_DATA} ${WRKSRC}/${i} ${PREFIX}/${PORTDOCDIR_JA}
+.endfor
 
 install-samples:
 .for l in ${SAMPLESLANG}
@@ -152,9 +135,6 @@ install-utils:
 .for i in ${UTILS}
 	${INSTALL_DATA} ${WRKSRC}/utils/${i} ${PREFIX}/${UTILSDIR}
 .endfor
-.if (${EMACS_PORT_NAME} == "emacs")
-	@${INSTALL_DATA} ${WRKSRC}/wl/wl-mule.el ${PREFIX}/${EMACS_SITE_LISPDIR}/wl
-.endif
 	@${MKDIR} ${PREFIX}/${STARTUPDIR}
 	@${INSTALL_DATA} ${WRKDIR}/wanderlust-startup.el ${PREFIX}/${STARTUPDIR}
 

@@ -7,11 +7,9 @@
 
 MAINTAINER=	nobutaka@FreeBSD.org
 
-MASTERDIR=	${.CURDIR}/../../mail/wanderlust-emacs
+MASTERDIR=	${.CURDIR}/../../mail/wanderlust
 
 EMACS_PORT_NAME=	emacs20
-
-IS_SLAVE=		yes
 
 .if !defined(WITHOUT_X11) && !defined(WITHOUT_BITMAP)
 RUN_DEPENDS=	${LOCALBASE}/${EMACS_SITE_LISPDIR}/bitmap/bitmap.el:${PORTSDIR}/editors/bitmap-emacs20
