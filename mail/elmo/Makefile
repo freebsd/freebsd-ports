@@ -29,8 +29,8 @@ MAN1=		elmo.1 elmoconf.pl.1
 
 .include <bsd.port.pre.mk>
 
-.if exists(${LOCALBASE}/lib/libgpgme.so) || defined(WITH_GPGME)
-LIB_DEPENDS+=	gpgme:${PORTSDIR}/security/gpgme03
+.if exists(${LOCALBASE}/lib/libgpgme03.so) || defined(WITH_GPGME)
+LIB_DEPENDS+=	gpgme03:${PORTSDIR}/security/gpgme03
 .else
 pre-everything::
 	@${ECHO_CMD}

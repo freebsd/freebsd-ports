@@ -1,0 +1,28 @@
+--- configure.orig	Mon Dec 20 20:32:43 2004
++++ configure	Mon Dec 20 20:34:13 2004
+@@ -8603,13 +8603,13 @@
+ 
+ else
+ 
+-echo "$as_me:$LINENO: checking for main in -lgpgme" >&5
+-echo $ECHO_N "checking for main in -lgpgme... $ECHO_C" >&6
++echo "$as_me:$LINENO: checking for main in -lgpgme03" >&5
++echo $ECHO_N "checking for main in -lgpgme03... $ECHO_C" >&6
+ if test "${ac_cv_lib_gpgme_main+set}" = set; then
+   echo $ECHO_N "(cached) $ECHO_C" >&6
+ else
+   ac_check_lib_save_LIBS=$LIBS
+-LIBS="-lgpgme  $LIBS"
++LIBS="-lgpgme03  $LIBS"
+ cat >conftest.$ac_ext <<_ACEOF
+ #line $LINENO "configure"
+ /* confdefs.h.  */
+@@ -8656,7 +8656,7 @@
+ #define HAVE_LIBGPGME 1
+ _ACEOF
+ 
+-  LIBS="-lgpgme $LIBS"
++  LIBS="-lgpgme03 $LIBS"
+ 
+ else
+   with_gpgme=no

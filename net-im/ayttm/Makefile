@@ -7,7 +7,7 @@
 
 PORTNAME=	ayttm
 PORTVERSION=	0.4.6.17
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -18,7 +18,7 @@ COMMENT=	A "chat" program that combines AIM, ICQ, and Yahoo! Chat into one
 
 LIB_DEPENDS=	audiofile.0:${PORTSDIR}/audio/libaudiofile \
 		jasper.4:${PORTSDIR}/graphics/jasper \
-		gpgme.9:${PORTSDIR}/security/gpgme03 \
+		gpgme03.9:${PORTSDIR}/security/gpgme03 \
 		pspell.16:${PORTSDIR}/textproc/aspell
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:R}
@@ -79,7 +79,8 @@ pre-everything::
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS:S/"//g}|g; \
-		 s|-pthread|${PTHREAD_CFLAGS:S/"//g}|g' ${WRKSRC}/configure
+		 s|-pthread|${PTHREAD_CFLAGS:S/"//g}|g; \
+		 s|gpgme-config|gpgme03-config|g' ${WRKSRC}/configure
 	@${REINPLACE_CMD} -e 's|= pixmaps|=|g ; \
 		 s|^Utilities|#Utilities|g ; \
 		 s|^gnome|#gnome|g' ${WRKSRC}/Makefile.in
