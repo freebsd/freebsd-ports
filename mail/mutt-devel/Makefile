@@ -7,9 +7,11 @@
 #
 
 PORTNAME=	mutt-devel
-PORTVERSION=	1.3.20
-PORTREVISION=	2
+PORTVERSION=	1.3.21
 CATEGORIES+=	mail
+.if defined(WITH_MUTT_NNTP)
+CATEGORIES+=	news
+.endif
 MASTER_SITES=	ftp://ftp.demon.co.uk/pub/mirrors/mutt/devel/ \
 		ftp://ftp.parodius.com/pub/mutt/devel/
 DISTNAME=	mutt-${PORTVERSION}i
@@ -38,6 +40,7 @@ PATCH_SITES+=	http://www.mutt.org.ua/download/mutt-${PATCH_VERSION}/ \
 		ftp://ftp2.mutt.org.ua/pub/mutt/mutt-${PATCH_VERSION}/
 .endif
 
+PATCH_VERSION=	1.3.20
 .if !defined(PATCH_VERSION)
 PATCH_VERSION=	${PORTVERSION}
 .endif
