@@ -3,7 +3,7 @@
 # Date created:		29 October 1994
 # Whom:			jkh
 #
-# $Id: Makefile,v 1.25 1996/11/18 10:22:58 asami Exp $
+# $Id: Makefile,v 1.26 1996/11/19 13:14:40 asami Exp $
 #
 
 DISTNAME=	emacs-19.34b
@@ -21,5 +21,9 @@ post-install:
 	for file in emacs-19.34 emacsclient etags ctags b2m; do \
 	  strip ${PREFIX}/bin/$$file; \
 	done
+	if [ ! -f ${PREFIX}/info/dir ]; then \
+	  sed -ne '1,/Menu:/p' /usr/share/info/dir > ${PREFIX}/info/dir; \
+	fi
+	install-info ${PREFIX}/info/emacs ${PREFIX}/info/dir
 
 .include <bsd.port.mk>
