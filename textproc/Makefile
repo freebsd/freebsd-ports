@@ -308,6 +308,7 @@
     SUBDIR += rtf2htm
     SUBDIR += rtfreader
     SUBDIR += ruby-amatch
+    SUBDIR += ruby-amrita
     SUBDIR += ruby-csv
     SUBDIR += ruby-erb
     SUBDIR += ruby-format
