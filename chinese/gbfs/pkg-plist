@@ -1,4 +1,5 @@
 etc/rc.d/gbfs.sh
 modules/cd9660.ko
 modules/%%MSDOSFSKO%%
+modules/ntfs.ko
 @unexec rmdir %D/modules 2>/dev/null || true

@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gbfs
-PORTVERSION=	1.1
+PORTVERSION=	1.3
 CATEGORIES=	chinese
 MASTER_SITES=	ftp://freebsd.sinica.edu.tw/pub/statue/gbfs/
 
@@ -18,6 +18,7 @@ NO_PACKAGE=	"Different versions definitely cause crash"
 SYSDIR=		/usr/src/sys
 KMODDIR=	${PREFIX}/modules
 PLIST_SUB=	MSDOSFSKO=${MSDOSFSKO}
+USE_REINPLACE=	yes
 
 .include <bsd.port.pre.mk>
 
@@ -27,48 +28,43 @@ MSDOSFSKO=	msdosfs.ko
 MSDOSFSKODIR=	${SYSDIR}/modules/msdosfs
 MSDOSFSPATCH=	msdosfs.diff.5
 CD9660PATCH=	cd9660.diff.5
+NTFSDIR=	${SYSDIR}/fs/ntfs
+NTFSPATCH=	ntfs.diff.5
 .else
 MSDOSFSDIR=	${SYSDIR}/msdosfs
 MSDOSFSKO=	msdos.ko
 MSDOSFSKODIR=	${SYSDIR}/modules/msdos
 MSDOSFSPATCH=	msdosfs.diff
 CD9660PATCH=	cd9660.diff
+NTFSDIR=	${SYSDIR}/ntfs
+NTFSPATCH=	ntfs.diff
 .endif
 
-pre-extract:
-	@if [ ! -d /sys -o ! -d /usr/src/sys ]; then \
-		${ECHO_CMD} "****************************************" ; \
-		${ECHO_CMD} " You need to extract kernel source tree" ; \
-		${ECHO_CMD} " before you build this package..." ; \
-		${ECHO_CMD} "****************************************" ; \
-		${FALSE} ; \
-	fi
+.if !exists (${SYSDIR})
+IGNORE= "You need to extract kernel source tree before you build this package"
+.endif
 
 do-extract:
-	@${MKDIR} ${WRKDIR}/msdos ${WRKDIR}/cd9660
-	@${CP} -R ${MSDOSFSDIR}/*.[ch] ${WRKDIR}/msdos
-	@${CP} ${MSDOSFSKODIR}/Makefile ${WRKDIR}/msdos/Makefile.ori
-	@${CP} -R ${SYSDIR}/isofs/cd9660/*.[ch] ${WRKDIR}/cd9660
-	@${CP} ${SYSDIR}/modules/cd9660/Makefile ${WRKDIR}/cd9660/Makefile.ori
+	@${MKDIR} ${WRKDIR}/msdos ${WRKDIR}/cd9660 ${WRKDIR}/ntfs
+	@${CP} ${MSDOSFSDIR}/* ${MSDOSFSKODIR}/Makefile ${WRKDIR}/msdos
+	@${CP} ${SYSDIR}/isofs/cd9660/* ${SYSDIR}/modules/cd9660/Makefile ${WRKDIR}/cd9660
+	@${CP} ${NTFSDIR}/* ${SYSDIR}/modules/ntfs/Makefile ${WRKDIR}/ntfs
 	@(cd ${WRKDIR}; ${TAR} xzf ${DISTDIR}/${DISTFILES} )
-	@${SED} -e 's,@@PREFIX@@,${PREFIX},' ${FILESDIR}/gbfs.sh > ${WRKDIR}/gbfs.sh
+	@${REINPLACE_CMD} -e "/^\.PATH/d" ${WRKDIR}/*/Makefile
 
 do-patch:
-	(cd ${WRKDIR}/msdos; ${PATCH} --quiet < ${WRKDIR}/${MSDOSFSPATCH} )
-	@${SED} -e "/^\.PATH/d" ${WRKDIR}/msdos/Makefile.ori > ${WRKDIR}/msdos/Makefile
-	(cd ${WRKDIR}/cd9660; ${PATCH} --quiet < ${WRKDIR}/${CD9660PATCH} )
-	@${SED} -e "/^\.PATH/d" ${WRKDIR}/cd9660/Makefile.ori > ${WRKDIR}/cd9660/Makefile
+	@(cd ${WRKDIR}/msdos; ${PATCH} --quiet < ${WRKDIR}/${MSDOSFSPATCH} )
+	@(cd ${WRKDIR}/cd9660; ${PATCH} --quiet < ${WRKDIR}/${CD9660PATCH} )
+	@(cd ${WRKDIR}/ntfs; ${PATCH} --quiet < ${WRKDIR}/${NTFSPATCH} )
 
 do-build:
 	@(cd ${WRKDIR}/msdos; make all)
 	@(cd ${WRKDIR}/cd9660; make all)
-
-pre-install:
-	@${MKDIR} ${KMODDIR}
+	@(cd ${WRKDIR}/ntfs; make all)
 
 do-install:
-	@${INSTALL_SCRIPT} ${WRKDIR}/gbfs.sh ${PREFIX}/etc/rc.d
-	@${INSTALL_SCRIPT} ${WRKDIR}/msdos/${MSDOSFSKO} ${KMODDIR}/${MSDOSFSKO}
-	@${INSTALL_SCRIPT} ${WRKDIR}/cd9660/cd9660.ko ${KMODDIR}/cd9660.ko
+	@${MKDIR} ${KMODDIR}
+	@${INSTALL_SCRIPT} ${FILESDIR}/gbfs.sh ${PREFIX}/etc/rc.d
+	@${INSTALL_SCRIPT} ${WRKDIR}/*/*.ko ${KMODDIR}
 
 .include <bsd.port.post.mk>
