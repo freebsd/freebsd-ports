@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	aide
-PORTVERSION=	0.7
-PORTREVISION=	1
+PORTVERSION=	0.9
 CATEGORIES=	security
 MASTER_SITES=	http://www.cs.tut.fi/~rammer/ \
 		ftp://ftp.cs.tut.fi/pub/src/gnu/
@@ -20,7 +19,7 @@ USE_BISON=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=--with-mhash \
 		--with-zlib \
-		--with-config_file=/var/adm/aide/aide.conf
+		--with-config_file=/var/db/aide/aide.conf
 
 CONFIGURE_ENV+=	LIBS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}"
 
@@ -29,12 +28,12 @@ MAN5=		aide.conf.5
 
 post-install:
 	@${INSTALL_DATA} ${FILESDIR}/aide.conf.freebsd ${PREFIX}/etc/aide.conf.sample
-	@${MKDIR} /var/adm/aide/databases
-	@if [ ! -f /var/adm/aide/aide.conf ]; then \
-		${CHOWN} root:wheel /var/adm/aide ; \
-		${CHOWN} root:wheel /var/adm/aide/databases ; \
-		${CHMOD} 0700 /var/adm/aide ; \
-		${CHMOD} 0700 /var/adm/aide/databases ; \
+	@${MKDIR} /var/db/aide/databases
+	@if [ ! -f /var/db/aide/aide.conf ]; then \
+		${CHOWN} root:wheel /var/db/aide ; \
+		${CHOWN} root:wheel /var/db/aide/databases ; \
+		${CHMOD} 0700 /var/db/aide ; \
+		${CHMOD} 0700 /var/db/aide/databases ; \
 	fi
 	@${ECHO}
 	@${CAT} ${PKGMESSAGE}
@@ -44,8 +43,8 @@ post-install:
 	@newfs -u 0 -t 0 -i 196608 -m 0 -T minimum -o space /dev/rfd0c
 	@mount /dev/fd0c /mnt
 	@${CP} ${PREFIX}/bin/aide /mnt/aide
-	@${CP} -p /var/adm/aide/aide.conf /mnt/aide.conf
-	@${CP} < /var/adm/aide/databases/aide.db /mnt/aide.db
+	@${CP} -p /var/db/aide/aide.conf /mnt/aide.conf
+	@${CP} < /var/db/aide/databases/aide.db /mnt/aide.db
 	@${CHMOD} 555 /mnt/aide
 	@umount /mnt
 	@${ECHO} Do not forget to remove and write-protect the floppy.

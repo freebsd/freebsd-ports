@@ -1,0 +1,11 @@
+--- configure.orig	Tue Jun  4 01:31:27 2002
++++ configure	Fri Jul 12 06:13:48 2002
+@@ -2838,7 +2838,7 @@
+ EOF
+ 
+   cat >> confdefs.h <<EOF
+-#define AIDE_BLKCNT_TYPE blkcnt_t
++#define AIDE_BLKCNT_TYPE int32_t
+ EOF
+ 
+   compoptionstring="${compoptionstring}WITH_LSTAT\\n"
