@@ -6,14 +6,18 @@
 #
 
 PORTNAME=	pcre
-PORTVERSION=	3.7
+PORTVERSION=	3.9
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	dom@happygiraffe.net
 
-USE_BZIP2=	yes
+# Disabled until SourceForge put a proper copy of .tar.bz2 file on its mirrors
+# Currently, it is corrupted and does not match the one on the master site:
+#     ftp://ftp.csx.cam.ac.uk/pub/software/programming/pcre/
+#
+# USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 INSTALLS_SHLIB=	yes
 
