@@ -9,12 +9,12 @@ include/libxml++-1.0/libxml++/node.h
 include/libxml++-1.0/libxml++/parsers/domparser.h
 include/libxml++-1.0/libxml++/parsers/parser.h
 include/libxml++-1.0/libxml++/parsers/saxparser.h
-@dirrm include/libxml++-1.0/libxml++/exceptions
-@dirrm include/libxml++-1.0/libxml++/parsers
-@dirrm include/libxml++-1.0/libxml++
-@dirrm include/libxml++-1.0
 lib/libxml++-0.1.a
 lib/libxml++-0.1.so
-lib/libxml++-0.1.so.2
+lib/libxml++-0.1.so.3
 libdata/pkgconfig/libxml++-1.0.pc
 share/aclocal/libxml++.m4
+@dirrm include/libxml++-1.0/libxml++/parsers
+@dirrm include/libxml++-1.0/libxml++/exceptions
+@dirrm include/libxml++-1.0/libxml++
+@dirrm include/libxml++-1.0

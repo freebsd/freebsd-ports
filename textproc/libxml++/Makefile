@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	libxml++
-PORTVERSION=	0.16.0
+PORTVERSION=	0.17.0
 CATEGORIES=	textproc
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME:S/+/plus/g}
@@ -24,5 +24,7 @@ INSTALLS_SHLIB=	yes
 post-patch:
 	@${FIND} ${WRKSRC} -name "Makefile.in" | ${XARGS} ${REINPLACE_CMD} -e \
 		's|[(]libdir[)]/pkgconfig|(prefix)/libdata/pkgconfig|g'
+	@${FIND} ${WRKSRC} -name "*.h" | ${XARGS} ${REINPLACE_CMD} -e \
+		's|<istream>|<iostream>|g'
 
 .include <bsd.port.mk>
