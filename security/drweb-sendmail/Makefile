@@ -46,7 +46,7 @@ IGNORE=	"depends on the system sources. Please place them under /usr/src first"
 .endif
 
 post-extract:
-	cd ${WRKDIR}/${DISTNAME} && ${TAR} -xvzf ${WRKDIR}/${DISTNAME}/${DISTNAME}.tar.gz clients/drwebdc clients/sendmail
+	cd ${WRKDIR}/${DISTNAME} && ${TAR} -xzf ${WRKDIR}/${DISTNAME}/${DISTNAME}.tar.gz clients/drwebdc clients/sendmail
 
 pre-build:
 	@${CAT} pkg-message
