@@ -257,6 +257,7 @@
     SUBDIR += nscache
     SUBDIR += nspostgres
     SUBDIR += ocaml-net
+    SUBDIR += ocaml-wdialog
     SUBDIR += oops
     SUBDIR += openvrml
     SUBDIR += opera
