@@ -65,11 +65,8 @@ PLIST_SUB+=	DIVX=''
 WITH_LIBDV=	yes
 .endif
 # LIBGNUGETOPT
-# If this is found in the system, the port tries to use it
-# Furthermore, we will only do this if gnugetopt is installed so
-# that we don't break -CURRENT since libgnugetopt is a problem for
-# -CURRENT right now
-.if exists(${LOCALBASE}/lib/libgnugetopt.so)
+# -CURRENT after 500041 has getopt_long
+.if ${OSVERSION} < 500041
 WITH_LIBGNUGETOPT=	yes
 .endif
 # LIBMOVTAR
