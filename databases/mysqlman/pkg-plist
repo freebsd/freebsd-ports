@@ -1,0 +1,85 @@
+%%MYMANDIR%%/GT/Base.pm
+%%MYMANDIR%%/GT/CGI/EventLoop.pm
+%%MYMANDIR%%/GT/CGI.pm
+%%MYMANDIR%%/GT/Template/Editor.pm
+%%MYMANDIR%%/GT/Template/Parser.pm
+%%MYMANDIR%%/GT/Template.pm
+%%MYMANDIR%%/GT/TempFile.pm
+%%MYMANDIR%%/GT/Date.pm
+%%MYMANDIR%%/GT/Cache.pm
+%%MYMANDIR%%/GT/Dumper.pm
+%%MYMANDIR%%/bases.pm
+%%MYMANDIR%%/README
+%%MYMANDIR%%/html.pl
+%%MYMANDIR%%/mysql.cgi
+%%MYMANDIR%%/mysql.cfg.dist
+%%MYMANDIR%%/constants.pm
+%%MYMANDIR%%/templates/help/col_def.jpg
+%%MYMANDIR%%/templates/help/help_add_col.html
+%%MYMANDIR%%/templates/help/help_browse.html
+%%MYMANDIR%%/templates/help/help_col_def.html
+%%MYMANDIR%%/templates/help/help_col_def_change.html
+%%MYMANDIR%%/templates/help/help_confirm.html
+%%MYMANDIR%%/templates/help/help_create_db.html
+%%MYMANDIR%%/templates/help/help_create_table.html
+%%MYMANDIR%%/templates/help/help_db_list.html
+%%MYMANDIR%%/templates/help/help_demo.html
+%%MYMANDIR%%/templates/help/help_edit.html
+%%MYMANDIR%%/templates/help/help_export.html
+%%MYMANDIR%%/templates/help/help_home.html
+%%MYMANDIR%%/templates/help/help_import.html
+%%MYMANDIR%%/templates/help/help_insert.html
+%%MYMANDIR%%/templates/help/help_login.html
+%%MYMANDIR%%/templates/help/help_login_back.html
+%%MYMANDIR%%/templates/help/insert.jpg
+%%MYMANDIR%%/templates/help/help_login_dbname.html
+%%MYMANDIR%%/templates/help/help_logout.html
+%%MYMANDIR%%/templates/help/help_properties.html
+%%MYMANDIR%%/templates/help/help_rename.html
+%%MYMANDIR%%/templates/help/help_save_search_result.html
+%%MYMANDIR%%/templates/help/help_select.html
+%%MYMANDIR%%/templates/help/help_sql_dump.html
+%%MYMANDIR%%/templates/help/help_sql_monitor.html
+%%MYMANDIR%%/templates/help/help_sqlerr.html
+%%MYMANDIR%%/templates/help/help_table_list.html
+%%MYMANDIR%%/templates/help/help_toolbar.html
+%%MYMANDIR%%/templates/alter_col.html
+%%MYMANDIR%%/templates/confirm.html
+%%MYMANDIR%%/templates/create_field.txt
+%%MYMANDIR%%/templates/create_table.html
+%%MYMANDIR%%/templates/database.html
+%%MYMANDIR%%/templates/demo_prompt.html
+%%MYMANDIR%%/templates/edit.html
+%%MYMANDIR%%/templates/fields_selection.txt
+%%MYMANDIR%%/templates/functions.txt
+%%MYMANDIR%%/templates/header.txt
+%%MYMANDIR%%/templates/insert.html
+%%MYMANDIR%%/templates/login.html
+%%MYMANDIR%%/templates/login_back.html
+%%MYMANDIR%%/templates/login_dbname.html
+%%MYMANDIR%%/templates/logout.html
+%%MYMANDIR%%/templates/message.txt
+%%MYMANDIR%%/templates/op_add_fields.html
+%%MYMANDIR%%/templates/op_create_db.html
+%%MYMANDIR%%/templates/op_create_table.html
+%%MYMANDIR%%/templates/op_export.html
+%%MYMANDIR%%/templates/op_import.html
+%%MYMANDIR%%/templates/op_mysqldump.html
+%%MYMANDIR%%/templates/op_rename_table.html
+%%MYMANDIR%%/templates/op_sql_monitor.html
+%%MYMANDIR%%/templates/page_jump.txt
+%%MYMANDIR%%/templates/property.html
+%%MYMANDIR%%/templates/save_search.html
+%%MYMANDIR%%/templates/show_query.html
+%%MYMANDIR%%/templates/sqlerr.html
+%%MYMANDIR%%/templates/table.html
+%%MYMANDIR%%/templates/table_browse.html
+%%MYMANDIR%%/templates/table_select.html
+www/mysqlman
+@dirrm %%MYMANDIR%%/GT/CGI
+@dirrm %%MYMANDIR%%/GT/Template
+@dirrm %%MYMANDIR%%/GT
+@dirrm %%MYMANDIR%%/templates/help
+@dirrm %%MYMANDIR%%/templates/compiled
+@dirrm %%MYMANDIR%%/templates
+@dirrm %%MYMANDIR%%/

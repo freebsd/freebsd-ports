@@ -1,0 +1,11 @@
+MySQLMan is a web based database manager. It allows you to perform common 
+maintenance and administration tasks in Mysql. MySQLMan was based off of 
+PHPmyadmin, but written in Perl. It allows you to do common tasks like: 
+
+- browse/create/drop databases 
+- browse/search/create/drop/alter tables 
+- import/export data 
+- add/remove/alter table columns 
+- add/remove/alter table keys 
+
+WWW: http://www.gossamer-threads.com/scripts/mysqlman/index.htm
