@@ -3,7 +3,7 @@
 # Date created:         Sa   9 Nov 1996 00:52:22 MET
 # Whom:			se
 #
-# $Id: Makefile,v 1.33 1996/11/08 23:57:24 se Exp $
+# $Id: Makefile,v 1.34 1996/11/12 02:17:06 obrien Exp $
 #
 
 DATE=		961102
@@ -22,6 +22,7 @@ LIB_DEPENDS=	Xpm\\.4\\.:${PORTSDIR}/graphics/xpm
 
 WRKSRC=		${WRKDIR}/wine${DATE}
 GNU_CONFIGURE=	yes
+MAN1=		wine.1
 
 pre-configure:
 	@${ECHO} "WINE_INI_GLOBAL \"${PREFIX}/etc/wine.conf\"" \
@@ -37,8 +38,5 @@ do-install:
 		|| ${CP} ${WRKSRC}/wine.ini ${PREFIX}/etc/wine.conf
 	cp ${WRKSRC}/wine.sym ${PREFIX}/etc
 	cp ${WRKSRC}/wine.man ${PREFIX}/man/man1/wine.1
-.if !defined(NOMANCOMPRESS)
-	gzip -9f ${PREFIX}/man/man1/wine.1
-.endif
 
 .include <bsd.port.mk>
