@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	DateTime-Event-Cron
-PORTVERSION=	0.03
+PORTVERSION=	0.05
 CATEGORIES=	devel perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	DateTime
@@ -32,6 +32,5 @@ post-patch:
 		     -e 's/->\$$_->l/->{\$$_}->/g;' \
 		     ${WRKSRC}/lib/DateTime/Event/Cron.pm
 .endif
-
 
 .include <bsd.port.post.mk>
