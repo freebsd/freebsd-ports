@@ -12,7 +12,7 @@ MASTER_SITES=	ftp://ftp.bitchx.com/pub/BitchX/source/ \
 		ftp://ftp.bitchx.org/pub/BitchX/source/
 DISTNAME=	ircii-pana-1.0c19
 
-MAINTAINER=	calle.madestrand@norrgarden.se
+MAINTAINER=	ports@FreeBSD.org
 
 WRKSRC=		${WRKDIR}/BitchX
 
