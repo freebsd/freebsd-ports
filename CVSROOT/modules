@@ -3961,6 +3961,7 @@ linuxigd	ports/net/linuxigd
 linuxthreads	ports/devel/linuxthreads
 lire		ports/sysutils/lire
 listmanager	ports/mail/listmanager
+liteamp		ports/audio/liteamp
 liveMedia	ports/net/liveMedia
 livecd		ports/sysutils/livecd
 ljcharm		ports/deskutils/ljcharm
