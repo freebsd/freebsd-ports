@@ -3,7 +3,7 @@
 # Date created:         5 January 1995
 # Whom:                 jmz
 #
-# $Id: Makefile,v 1.35 1997/08/23 16:35:19 jmz Exp $
+# $Id: Makefile,v 1.36 1997/08/23 20:37:17 jmz Exp $
 #
 
 DISTNAME=	xc
@@ -19,6 +19,7 @@ DISTFILES=	X331src-1.tgz X331src-2.tgz
 MAINTAINER=	jmz@FreeBSD.ORG
 
 IS_INTERACTIVE=	yes	# configure script asks questions
+NO_PACKAGE=	package available from XFree86
 USE_X11=	yes
 ALL_TARGET=	World
 INSTALL_TARGET=	install install.man
