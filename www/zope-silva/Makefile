@@ -6,17 +6,16 @@
 #
 
 PORTNAME=	silva
-PORTVERSION=	0.9.3
-PORTREVISION=	1
+PORTVERSION=	0.9.3.6
 PORTEPOCH=	1
 CATEGORIES=	www zope
 MASTER_SITES=	http://zope.org/Members/infrae/%SUBDIR%/:silva,document,metadata
 MASTER_SITE_SUBDIR=	Silva/Silva-${PORTVERSION}/:silva \
-			SilvaDocument/SilvaDocument-0.9.3/:document \
+			SilvaDocument/SilvaDocument-0.9.3.6/:document \
 			SilvaMetadata/SilvaMetadata-0.7.5/:metadata
 PKGNAMEPREFIX=	zope-
 DISTFILES=	Silva-${PORTVERSION}.tgz:silva \
-		SilvaDocument-0.9.3.tgz:document \
+		SilvaDocument-0.9.3.6.tgz:document \
 		SilvaMetadata-0.7.5.tgz:metadata
 
 MAINTAINER=	x@Vex.Net
@@ -35,17 +34,13 @@ DIST_SUBDIR=	zope
 
 ZOPEPRODUCTNAME=Silva
 
-CPIO_CMD=	${CPIO} --quiet -pdum -R
-
 do-build:
 	-@${PYTHON_CMD} ${PYTHON_LIBDIR}/compileall.py ${WRKDIR}
 
 do-install:
+	@${MKDIR} ${ZOPEBASEDIR}/${ZOPEPRODUCTDIR}/
 	@${CHMOD} -R og+rX ${WRKDIR}/
-	@${RM} -rf ${WRKDIR}/SilvaMetadata/Extensions/.svn
-	@ cd ${WRKDIR} && ${FIND} Silva* \
-	  | ${CPIO_CMD} ${BINOWN}:${BINGRP} \
-	  ${ZOPEBASEDIR}/${ZOPEPRODUCTDIR}
+	@${CP} -R ${WRKDIR}/Silva* ${ZOPEBASEDIR}/${ZOPEPRODUCTDIR}/
 
 post-install:
 .if !defined(BATCH)
