@@ -1,6 +1,17 @@
-# $Id: Makefile,v 1.20 1995/06/22 21:33:35 joerg Exp $
+# $Id: Makefile,v 1.21 1995/10/02 16:17:08 erich Exp $
 #
 
-SUBDIR=	axe e93 emacs jove mule tkHTML uemacs uzap vile xcoral xemacs xvile
+    SUBDIR += axe
+    SUBDIR += e93
+    SUBDIR += emacs
+    SUBDIR += jove
+    SUBDIR += mule
+    SUBDIR += tkHTML
+    SUBDIR += uemacs
+    SUBDIR += uzap
+    SUBDIR += vile
+    SUBDIR += xcoral
+    SUBDIR += xemacs
+    SUBDIR += xvile
 
 .include <bsd.port.subdir.mk>
