@@ -56,6 +56,7 @@ post-extract:
 .for i in _core filter forward icq remote
 	@${TOUCH} ${WRKSRC}/plugins/${i}/Makefile.in
 .endfor
+	@${RM} -f ${WRKSRC}/plugins/remote/simctrl.o
 
 post-patch:
 	@${REINPLACE_CMD} -e 's/-O2//g; s/-lpthread/${PTHREAD_LIBS}/g' \
