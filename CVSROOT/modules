@@ -4763,6 +4763,7 @@ pccts		ports/devel/pccts
 pcemu		ports/emulators/pcemu
 pchar		ports/net/pchar
 pciconf		src/usr.sbin/pciconf
+pciid		src/tools/tools/pciid
 pcl-cvs-emacs	ports/devel/pcl-cvs-emacs
 pcl-cvs-emacs20	ports/devel/pcl-cvs-emacs20
 pclock		ports/x11-clocks/pclock
