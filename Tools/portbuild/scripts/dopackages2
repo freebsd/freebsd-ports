@@ -7,7 +7,8 @@ pb=/var/portbuild
 
 lock=${pb}/lock
 status=${pb}/status
-date=$(date '+%Y%m%d')
+date=$(date '+%Y%m%d%H')
+shortdate=$(date '+%Y%m%d')
 
 if [ -e ${lock} ]; then
 # echo "Skipped package build since lock file exists" | sendmail $mailto
@@ -22,10 +23,12 @@ if [ -f ${pb}/scripts/dopackages.new ]; then
   mv -f ${pb}/scripts/dopackages.new ${pb}/scripts/dopackages
 fi
 ln -sf ${pb}/archive/buildlogs/log.4.${date} ${pb}/4/build.log
+ln -sf log.4.${date} ${pb}/archive/buildlogs/log.4.${shortdate}
 ${pb}/scripts/dopackages $@ 4 ${date} 2>&1 \
 	| tee ${pb}/archive/buildlogs/log.4.${date} \
 	| sendmail $mailto
 if [ -f ${status} ]; then
+	rm -f ${lock}
 	exit "$(cat ${status})"
 fi
 
@@ -33,10 +36,12 @@ if [ -f ${pb}/scripts/dopackages.new ]; then
   mv -f ${pb}/scripts/dopackages.new ${pb}/scripts/dopackages
 fi
 ln -sf ${pb}/archive/buildlogs/log.5.${date} ${pb}/5/build.log
+ln -sf log.5.${date} ${pb}/archive/buildlogs/log.5.${shortdate}
 ${pb}/scripts/dopackages -nocvsup $@ 5 ${date} 2>&1 \
 	| tee ${pb}/archive/buildlogs/log.5.${date} \
 	| sendmail $mailto
 if [ -f ${status} ]; then
+	rm -f ${lock}
 	exit "$(cat ${status})"
 fi
 
@@ -44,10 +49,12 @@ if [ -f ${pb}/scripts/dopackages.new ]; then
   mv -f ${pb}/scripts/dopackages.new ${pb}/scripts/dopackages
 fi
 ln -sf ${pb}/archive/buildlogs/log.3.${date} ${pb}/3/build.log
+ln -sf log.3.${date} ${pb}/archive/buildlogs/log.3.${shortdate}
 ${pb}/scripts/dopackages -nocvsup $@ 3 ${date} 2>&1 \
 	| tee ${pb}/archive/buildlogs/log.3.${date} \
 	| sendmail $mailto
 if [ -f ${status} ]; then
+	rm -f ${lock}
 	exit "$(cat ${status})"
 fi
 
