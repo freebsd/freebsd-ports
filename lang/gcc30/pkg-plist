@@ -1,9 +1,9 @@
 @comment $FreeBSD$
-bin/gg++filt
-bin/gg++
-bin/gg77
-bin/ggcc
-bin/ggcov
+bin/g++filt30
+bin/g++30
+bin/g77-30
+bin/gcc30
+bin/gcov30
 bin/%%GNU_HOST%%-gcc
 bin/%%GNU_HOST%%-g++
 bin/gccbug-%%SNAPVER%%
