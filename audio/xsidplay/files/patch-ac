@@ -1,0 +1,70 @@
+--- src/MainDialogData.cpp.orig	Mon Dec 14 06:50:51 1998
++++ src/MainDialogData.cpp	Tue Sep 12 03:57:49 2000
+@@ -43,9 +43,30 @@
+ 	songLCD = new QLCDNumber( this, "LCDNumber_2" );
+ 	songLCD->setGeometry( 90, 35, 40, 30 );
+ 	{
+-		QColorGroup normal( QColor( QRgb(0) ), QColor( QRgb(11513755) ), QColor( QRgb(16777215) ), QColor( QRgb(6316128) ), QColor( QRgb(10789024) ), QColor( QRgb(0) ), QColor( QRgb(16777215) ) );
+-		QColorGroup disabled( QColor( QRgb(8421504) ), QColor( QRgb(12632256) ), QColor( QRgb(16777215) ), QColor( QRgb(6316128) ), QColor( QRgb(10789024) ), QColor( QRgb(8421504) ), QColor( QRgb(12632256) ) );
+-		QColorGroup active( QColor( QRgb(0) ), QColor( QRgb(12632256) ), QColor( QRgb(16777215) ), QColor( QRgb(6316128) ), QColor( QRgb(10789024) ), QColor( QRgb(0) ), QColor( QRgb(16777215) ) );
++		QColorGroup normal(
++			QColor( (unsigned int)0 ),
++			QColor( (unsigned int)11513755 ),
++			QColor( (unsigned int)16777215 ),
++			QColor( (unsigned int)6316128 ),
++			QColor( (unsigned int)10789024 ),
++			QColor( (unsigned int)0 ),
++			QColor( (unsigned int)16777215 ) );
++		QColorGroup disabled(
++			QColor( (unsigned int)8421504 ),
++			QColor( (unsigned int)12632256 ),
++			QColor( (unsigned int)16777215 ),
++			QColor( (unsigned int)6316128 ),
++			QColor( (unsigned int)10789024 ),
++			QColor( (unsigned int)8421504 ),
++			QColor( (unsigned int)12632256 ) );
++		QColorGroup active(
++			QColor( (unsigned int)0 ),
++			QColor( (unsigned int)12632256 ),
++			QColor( (unsigned int)16777215 ),
++			QColor( (unsigned int)6316128 ),
++			QColor( (unsigned int)10789024 ),
++			QColor( (unsigned int)0 ),
++			QColor( (unsigned int)16777215 ) );
+ 		QPalette palette( normal, disabled, active );
+ 		songLCD->setPalette( palette );
+ 	}
+@@ -58,9 +79,30 @@
+ 	timeLCD = new TimeLCD( this, "TimeLCD_1" );
+ 	timeLCD->setGeometry( 10, 35, 75, 30 );
+ 	{
+-		QColorGroup normal( QColor( QRgb(0) ), QColor( QRgb(11513755) ), QColor( QRgb(16777215) ), QColor( QRgb(6316128) ), QColor( QRgb(10789024) ), QColor( QRgb(0) ), QColor( QRgb(16777215) ) );
+-		QColorGroup disabled( QColor( QRgb(8421504) ), QColor( QRgb(12632256) ), QColor( QRgb(16777215) ), QColor( QRgb(6316128) ), QColor( QRgb(10789024) ), QColor( QRgb(8421504) ), QColor( QRgb(12632256) ) );
+-		QColorGroup active( QColor( QRgb(0) ), QColor( QRgb(12632256) ), QColor( QRgb(16777215) ), QColor( QRgb(6316128) ), QColor( QRgb(10789024) ), QColor( QRgb(0) ), QColor( QRgb(16777215) ) );
++		QColorGroup normal(
++			QColor( (unsigned int)0 ),
++			QColor( (unsigned int)11513755 ),
++			QColor( (unsigned int)16777215 ),
++			QColor( (unsigned int)6316128 ),
++			QColor( (unsigned int)10789024 ),
++			QColor( (unsigned int)0 ),
++			QColor( (unsigned int)16777215 ) );
++		QColorGroup disabled(
++			QColor( (unsigned int)8421504 ),
++			QColor( (unsigned int)12632256 ),
++			QColor( (unsigned int)16777215 ),
++			QColor( (unsigned int)6316128 ),
++			QColor( (unsigned int)10789024 ),
++			QColor( (unsigned int)8421504 ),
++			QColor( (unsigned int)12632256 ) );
++		QColorGroup active(
++			QColor( (unsigned int)0 ),
++			QColor( (unsigned int)12632256 ),
++			QColor( (unsigned int)16777215 ),
++			QColor( (unsigned int)6316128 ),
++			QColor( (unsigned int)10789024 ),
++			QColor( (unsigned int)0 ),
++			QColor( (unsigned int)16777215 ) );
+ 		QPalette palette( normal, disabled, active );
+ 		timeLCD->setPalette( palette );
+ 	}
