@@ -1,11 +1,11 @@
---- configure~	Fri Oct 17 17:54:05 2003
-+++ configure	Fri Oct 17 17:54:12 2003
-@@ -5023,7 +5023,7 @@
- EOF
+--- configure.orig	Wed Nov 26 06:55:22 2003
++++ configure	Wed Nov 26 06:57:21 2003
+@@ -7446,7 +7446,7 @@
+ _ACEOF
  
- if test $ac_cv_func_lstat_dereferences_slashed_symlink = no; then
--  LIBOBJS="$LIBOBJS lstat.$ac_objext"
+ else
+-  LIBOBJS="$LIBOBJS $ac_func.$ac_objext"
 +  LIBOBJS="$LIBOBJS"
  fi
+ done
  
- echo "$as_me:5029: checking whether stat accepts an empty string" >&5
