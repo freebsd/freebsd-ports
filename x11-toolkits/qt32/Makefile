@@ -1,9 +1,9 @@
 # New ports collection makefile for:   qt-1.0
-# Version required:	0.98
+# Version required:	1.0
 # Date created:		30 Jul 1996
 # Whom:			searle@longacre.demon.co.uk
 #
-# $Id: Makefile,v 1.2 1996/07/31 01:09:19 chuckr Exp $
+# $Id: Makefile,v 1.3 1996/10/02 02:22:27 jkh Exp $
 #
 
 DISTNAME=	qt-1.0
