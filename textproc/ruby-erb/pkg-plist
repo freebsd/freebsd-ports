@@ -1,0 +1,17 @@
+bin/erb
+%%RUBY_SITELIBDIR%%/erb/compile.rb
+%%RUBY_SITELIBDIR%%/erb/erb.rb
+%%RUBY_SITELIBDIR%%/erb/erbcgi.rb
+%%RUBY_SITELIBDIR%%/erb/erbl.rb
+%%RUBY_SITELIBDIR%%/erb/erbu.rb
+%%RUBY_SITELIBDIR%%/erb/main.rb
+%%RUBY_SITELIBDIR%%/erb/strio.rb
+@dirrm %%RUBY_SITELIBDIR%%/erb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/erb/cgi_test.rhtml
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/erb/dot.htaccess
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/erb/erbux.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/erb/err.rhtml
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/erb/succ.rhtml
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/erb/ja/sample.rhtml
+%%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/erb/ja
+%%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/erb
