@@ -29,6 +29,10 @@ NO_PACKAGE?=	${RESTRICTED}
 
 INDEX_FILES=	index.desktop index.theme
 
+# do not install some files
+PLIST_FILE_PATTERN=	-i -v "(Thumbs\.db|(\.(bak|txt)|/(copying|readme))\$$)"
+PLIST_FILE_PATTERN_EXTRA?=	.
+
 post-patch:
 # correctly inherits crystal per default
 .for file in ${INDEX_FILES}
@@ -40,15 +44,54 @@ post-patch:
 		fi
 .endfor
 
-do-install:
-	@${MKDIR} ${PREFIX}/share/icons/${PORT_SHAREDIR}
-# create dirs
+# annotate what should be installed
+annotate-install:
+# annotate dirs
 	@cd ${WRKSRC} ; ${FIND} . -type d ! -empty \
-		-exec ${MKDIR} -m 0755 \
-		${PREFIX}/share/icons/${PORT_SHAREDIR}/"{}" \;
-# copy files
-	@cd ${WRKSRC} ; ${FIND} . -type f \
-		-exec ${INSTALL_DATA} ${WRKSRC}/"{}" \
-			${PREFIX}/share/icons/${PORT_SHAREDIR}/"{}" \;
+		| ${SORT} -r \
+		> ${WRKDIR}/dirs.list
+# annotate files
+	@cd ${WRKSRC} ; ${FIND} . -type f ! -empty \
+		| ${GREP} -E ${PLIST_FILE_PATTERN} \
+		| ${GREP} -E ${PLIST_FILE_PATTERN_EXTRA} \
+		| ${SORT} \
+		> ${WRKDIR}/files.list
+
+# prepare scripts for installation based on aforementioned annotations
+generate-install-scripts:
+# annotate dirs
+	@${CAT} ${WRKDIR}/dirs.list \
+		| ${SED} -E \
+			-e 's|^\.|${MKDIR} -m 755 ${PREFIX}/share/icons/${PORT_SHAREDIR:S/"//g}|' \
+			> ${WRKDIR}/dirs.sh
+# annotate files
+	@${CAT} ${WRKDIR}/files.list \
+		| ${SED} -E \
+			-e 's|^\./(.+)$$|${INSTALL_DATA} ${WRKSRC}/\1 ${PREFIX}/share/icons/${PORT_SHAREDIR:S/"//g}/\1|' \
+			> ${WRKDIR}/files.sh
+
+# generate on the fly packaging lists based on aforementioned annotations
+generate-tmpplist:
+# annotate files
+	@${CAT} ${WRKDIR}/files.list \
+		| ${SED} -E \
+			-e 's|^\.|share/icons/${PORT_SHAREDIR:S/"//g}|' \
+			> ${TMPPLIST}
+# annotate dirs
+	@${CAT} ${WRKDIR}/dirs.list \
+		| ${SED} -E \
+			-e 's|^\.|@dirrm share/icons/${PORT_SHAREDIR:S/"//g}|' \
+			>> ${TMPPLIST}
+	@${ECHO_CMD} \
+		'@unexec rmdir %D/share/icons 2>/dev/null || true' \
+		>> ${TMPPLIST}
+
+# use generated installation scripts
+install-run-scripts:
+.for script in dirs files
+	@${SH} ${WRKDIR}/${script}.sh
+.endfor
+
+do-install: annotate-install generate-install-scripts generate-tmpplist install-run-scripts
 
 .include <bsd.port.mk>
