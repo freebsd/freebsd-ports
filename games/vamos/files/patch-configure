@@ -1,6 +1,6 @@
---- configure.orig	Sun Nov  9 06:15:34 2003
-+++ configure	Mon Nov 10 13:08:47 2003
-@@ -8402,7 +8403,6 @@
+--- configure.orig	Tue Oct 12 11:11:25 2004
++++ configure	Tue Nov  2 19:29:17 2004
+@@ -8722,7 +8722,6 @@
  fi
  
  LIBS="$LIBS -L$x_libraries"
@@ -8,7 +8,7 @@
  
  
  ac_ext=cc
-@@ -10890,71 +10890,6 @@
+@@ -11352,81 +11351,6 @@
      opengl_LIBS="$LIBS $x_suffix"
  
  
@@ -20,7 +20,6 @@
 -  ac_check_lib_save_LIBS=$LIBS
 -LIBS="-lfreeglut $opengl_LIBS $LIBS"
 -cat >conftest.$ac_ext <<_ACEOF
--#line $LINENO "configure"
 -/* confdefs.h.  */
 -_ACEOF
 -cat confdefs.h >>conftest.$ac_ext
@@ -44,11 +43,21 @@
 -_ACEOF
 -rm -f conftest.$ac_objext conftest$ac_exeext
 -if { (eval echo "$as_me:$LINENO: \"$ac_link\"") >&5
--  (eval $ac_link) 2>&5
+-  (eval $ac_link) 2>conftest.er1
 -  ac_status=$?
+-  grep -v '^ *+' conftest.er1 >conftest.err
+-  rm -f conftest.er1
+-  cat conftest.err >&5
 -  echo "$as_me:$LINENO: \$? = $ac_status" >&5
 -  (exit $ac_status); } &&
--         { ac_try='test -s conftest$ac_exeext'
+-	 { ac_try='test -z "$ac_c_werror_flag"
+-			 || test ! -s conftest.err'
+-  { (eval echo "$as_me:$LINENO: \"$ac_try\"") >&5
+-  (eval $ac_try) 2>&5
+-  ac_status=$?
+-  echo "$as_me:$LINENO: \$? = $ac_status" >&5
+-  (exit $ac_status); }; } &&
+-	 { ac_try='test -s conftest$ac_exeext'
 -  { (eval echo "$as_me:$LINENO: \"$ac_try\"") >&5
 -  (eval $ac_try) 2>&5
 -  ac_status=$?
@@ -61,7 +70,8 @@
 -
 -ac_cv_lib_freeglut_glutGetModifiers=no
 -fi
--rm -f conftest.$ac_objext conftest$ac_exeext conftest.$ac_ext
+-rm -f conftest.err conftest.$ac_objext \
+-      conftest$ac_exeext conftest.$ac_ext
 -LIBS=$ac_check_lib_save_LIBS
 -fi
 -echo "$as_me:$LINENO: result: $ac_cv_lib_freeglut_glutGetModifiers" >&5
@@ -80,7 +90,7 @@
  echo "$as_me:$LINENO: checking for glutGetModifiers in -lglut" >&5
  echo $ECHO_N "checking for glutGetModifiers in -lglut... $ECHO_C" >&6
  if test "${ac_cv_lib_glut_glutGetModifiers+set}" = set; then
-@@ -11018,7 +10953,6 @@
+@@ -11500,7 +11424,6 @@
  
  fi
  
