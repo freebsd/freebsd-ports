@@ -3,13 +3,12 @@
 # Date Created:				23 Dec 1998
 # Whom:					Vanilla I. Shu <vanilla@FreeBSD.ORG>
 #
-# $Id: Makefile,v 1.4 1999/01/27 08:31:54 fenner Exp $
+# $Id: Makefile,v 1.5 1999/01/30 19:42:47 vanilla Exp $
 #
 
 DISTNAME=	gtk-engines-0.1
 CATEGORIES=	x11-toolkits
-MASTER_SITES=	ftp://freebsd.csie.nctu.edu.tw/Upload/  \
-		${MASTER_SITE_GNOME}
+MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	gtk-engines
 
 MAINTAINER=	vanilla@FreeBSD.ORG
