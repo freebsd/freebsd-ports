@@ -17,6 +17,8 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	sobomax@FreeBSD.org
 COMMENT=	A lightweight web browser for the Gnome Desktop Environment
 
+BROKEN=		"Does not fetch"
+
 LIB_DEPENDS=	neon.23:${PORTSDIR}/www/neon
 
 USE_GNOME=	gnomeprefix gnomehack gnomelibs gtkhtml

@@ -10,6 +10,8 @@ MASTERDIR=	${.CURDIR}/../fltk
 MAINTAINER=	knu@FreeBSD.org
 COMMENT=	FLTK with Unicode support
 
+BROKEN=		"Does not fetch"
+
 WITH_XUNICODE=	yes
 
 .include "${MASTERDIR}/Makefile"
