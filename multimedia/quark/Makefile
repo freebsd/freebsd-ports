@@ -5,10 +5,11 @@
 # $FreeBSD$
 
 PORTNAME=	quark
-PORTVERSION=	3.11
-PORTREVISION=	3
+PORTVERSION=	3.21
+PORTREVISION=	0
 CATEGORIES=	multimedia gnome
-MASTER_SITES=	http://quark.sunsite.dk/
+MASTER_SITES=	http://quark.sunsite.dk/ \
+		http://demian.dyndns.org/src/
 
 MAINTAINER=	rael@vectorstar.net
 COMMENT=	Quark is an audio player, for geeks, by geeks
