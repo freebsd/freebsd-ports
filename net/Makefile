@@ -56,7 +56,6 @@
     SUBDIR += doc
     SUBDIR += domtools
     SUBDIR += echoping
-    SUBDIR += elsa
     SUBDIR += etherboot
     SUBDIR += ethereal
     SUBDIR += everybuddy
@@ -220,6 +219,7 @@
     SUBDIR += tcpflow
     SUBDIR += tcpshow
     SUBDIR += tcptrace
+    SUBDIR += tcserver
     SUBDIR += tdetect
     SUBDIR += telnetx
     SUBDIR += telserv
