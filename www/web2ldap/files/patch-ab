@@ -1,62 +1,13 @@
-*** etc/web2ldap/web2ldapcnf/hosts.py.orig	Thu Jan 11 23:52:07 2001
---- etc/web2ldap/web2ldapcnf/hosts.py	Thu Jan 11 23:52:42 2001
+*** contrib/occonf2ldapoc-esj.py.orig	Wed Mar 20 15:54:51 2002
+--- contrib/occonf2ldapoc-esj.py	Wed Mar 20 15:55:02 2002
 ***************
-*** 55,71 ****
-      # vCard template files
-      'vcard_template': {
-        # 'object class':'pathname of vCard template file'
-!       'person':'/usr/lib/web2ldap/templates/vcard_person.txt',
-      },
-      # HTML template files for printing table entries
-      'print_template': {
-        # 'object class':'pathname of printable HTML template file'
-!       'person':'/usr/lib/web2ldap/templates/print_person.html',
-!       'organization':'/usr/lib/web2ldap/templates/print_organization.html',
-!       'organizationalUnit':'/usr/lib/web2ldap/templates/print_organizationalUnit.html',
-      },
-      # HTML template file for Basic Search form
-!     'searchform_template': '/usr/lib/web2ldap/templates/searchform_Base.html',
-      # Attributes which should be present in attribute select list of advanced search form
-      'search_attrs':['cn','mail','o','ou','telephoneNumber','homePhone','description'],
-      # There are some situations where this client just wants to get the
---- 55,71 ----
-      # vCard template files
-      'vcard_template': {
-        # 'object class':'pathname of vCard template file'
-!       'person':'/usr/local/web2ldap/templates/vcard_person.txt',
-      },
-      # HTML template files for printing table entries
-      'print_template': {
-        # 'object class':'pathname of printable HTML template file'
-!       'person':'/usr/local/web2ldap/templates/print_person.html',
-!       'organization':'/usr/local/web2ldap/templates/print_organization.html',
-!       'organizationalUnit':'/usr/local/web2ldap/templates/print_organizationalUnit.html',
-      },
-      # HTML template file for Basic Search form
-!     'searchform_template': '/usr/local/web2ldap/templates/searchform_Base.html',
-      # Attributes which should be present in attribute select list of advanced search form
-      'search_attrs':['cn','mail','o','ou','telephoneNumber','homePhone','description'],
-      # There are some situations where this client just wants to get the
-***************
-*** 113,122 ****
-      },
-      'read_template': {
-        # 'object class':'pathname of HTML template file'
-!       'person':'/usr/lib/web2ldap/templates/read_person.html',
-!       'posixAccount':'/usr/lib/web2ldap/templates/read_posixAccount.html',
-!       'bankArrangement':'/usr/lib/web2ldap/templates/read_bankArrangement.html',
-!       'musician':'/usr/lib/web2ldap/templates/read_musician.html',
-      }
-    },
+*** 1,4 ****
+! #!/usr/bin/python
   
---- 113,122 ----
-      },
-      'read_template': {
-        # 'object class':'pathname of HTML template file'
-!       'person':'/usr/local/web2ldap/templates/read_person.html',
-!       'posixAccount':'/usr/local/web2ldap/templates/read_posixAccount.html',
-!       'bankArrangement':'/usr/local/web2ldap/templates/read_bankArrangement.html',
-!       'musician':'/usr/local/web2ldap/templates/read_musician.html',
-      }
-    },
+  import sys,string,fileinput,re,getopt
+  
+--- 1,4 ----
+! #!/usr/local/bin/python
+  
+  import sys,string,fileinput,re,getopt
   

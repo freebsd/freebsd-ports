@@ -1,13 +1,13 @@
-*** sbin/compile.py.orig	Thu Jan 11 23:46:13 2001
---- sbin/compile.py	Thu Jan 11 23:46:30 2001
+*** sbin/occonf2ldapoc.py.orig	Wed Mar 20 15:58:24 2002
+--- sbin/occonf2ldapoc.py	Wed Mar 20 15:58:49 2002
 ***************
 *** 1,4 ****
 ! #!/usr/bin/python
   
-  import compileall
+  import sys,string,fileinput
   
 --- 1,4 ----
-! #!/usr/local/bin/python2.0
+! #!/usr/local/bin/python
   
-  import compileall
+  import sys,string,fileinput
   
