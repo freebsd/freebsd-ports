@@ -31,8 +31,14 @@ libexec/courier-imap/makedatprog
 libexec/courier-imap/pop3d-ssl.rc
 libexec/courier-imap/pop3d.rc
 sbin/imaplogin
+sbin/makeuserdb
+sbin/mkimapdcert
+sbin/mkpop3dcert
 sbin/pop3login
+sbin/pw2userdb
+sbin/userdb
 sbin/userdbpw
+sbin/vchkpw2userdb
 share/courier-imap/makeuserdb
 share/courier-imap/mkimapdcert
 share/courier-imap/mkpop3dcert
