@@ -16,7 +16,7 @@ MAINTAINER?=	gnome@FreeBSD.org
 COMMENT?=	A set of libraries and applications which provide a thesaurus
 
 USE_GMAKE=	yes
-USE_GNOME=	gnomehack gnometarget
+USE_GNOME?=	gnomehack gnometarget
 USE_X_PREFIX=	yes
 INSTALLS_SHLIB=	yes
 USE_LIBTOOL_VER=15
