@@ -1,0 +1,11 @@
+--- doc/libgnomedb-C.omf.in.orig	Thu Oct  2 12:15:36 2003
++++ doc/libgnomedb-C.omf.in	Thu Oct  2 12:15:52 2003
+@@ -15,7 +15,7 @@
+     </description>
+     <type>user's guide</type>
+     <format mime="text/html"/>
+-    <identifier url="file:/@prefix@/share/gtk-doc/html/libgnomedb/index.html"/>
++    <identifier url="file:/@prefix@/share/doc/libgnomedb/index.html"/>
+     <language code="C"/>
+     <relation seriesid="0c3a2de2-d4ca-11d6-8994-cd3caececda4"/>
+     <rights type="GNU FDL" license.version="1.1"/>
