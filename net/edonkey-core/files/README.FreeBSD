@@ -25,13 +25,15 @@ type 'donkey - !' from the command line.
 	3) Run the GUI and connect to the core client
 
 	Install the port "net/edonkey-gui-gtk" or "net/edonkey-gui-java",
-whichever one you prefer. Next run 'ed2k_gui' (if you chose the GTK
-gui client) or 'edonkey2000-gui-java' (if you chose the Java gui
-client). The Java GUI still lacks many features but it can modify
-configuration parameters whereas the GTK has many features but
-cannot modify anything. Therefore, I would advise using both, each
-for what it is strong. The java one to configure and the GTK one
-for normal use.
+whichever one you prefer. Next run 'edonkey-gui-gtk' (if you chose
+the FreeBSD native GTK GUI client, or linux-edonkey-gui-gtk if Linux
+one) or 'edonkey-gui-java' (if you chose the Java GUI client). The
+Java GUI is very slow compared to the GTK one but it both supports
+multiple line selections and ed2k link pastes. The GTK one cannot
+do that now but it's very fast; it can accept ed2k link drag-n-drops
+using a mouse and keeps getting new features all the time. Therefore,
+I would advise using both, each for what their strong points are.
+The Java one to multiple select and the GTK one for normal use.
 
 	Okay, the GUI starts and there is that 'connect to' dialog,
 now what do I do?
