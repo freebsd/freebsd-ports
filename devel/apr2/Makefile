@@ -14,7 +14,7 @@
 
 PORTNAME=	apr
 PORTVERSION=	0.9.4
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	devel
 #MASTER_SITES=	http://www.apache.org/dist/apr/
 #DISTFILES=	apr-${PORTVERSION}.tar.gz apr-util-${PORTVERSION}.tar.gz
