@@ -1,0 +1,8 @@
+Data::Hexdumper provides a simple way to format and display arbitary binary
+data in a way similar to how some debuggers do for lesser languages. It
+gives the programmer a considerable degree of flexibility in how the data is
+formatted, with sensible defaults. It is envisaged that it will primarily be
+of use for those wrestling alligators in the swamp of binary file formats,
+which is why it was written in the first place.
+
+WWW: http://search.cpan.org/dist/Data-Hexdumper/

@@ -604,6 +604,7 @@
     SUBDIR += p5-Data-DumpXML
     SUBDIR += p5-Data-Flow
     SUBDIR += p5-Data-HexDump
+    SUBDIR += p5-Data-Hexdumper
     SUBDIR += p5-Data-Properties
     SUBDIR += p5-Data-Serializer
     SUBDIR += p5-Data-ShowTable
