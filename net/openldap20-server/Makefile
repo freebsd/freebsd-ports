@@ -24,7 +24,7 @@ MASTER_SITES=		ftp://ftp.OpenLDAP.org/pub/OpenLDAP/%SUBDIR%/ \
 			ftp://sunsite.cnlab-switch.ch/mirror/OpenLDAP/%SUBDIR%/ \
 			http://openldap.cdpa.nsysu.edu.tw/OpenLDAP/%SUBDIR%/ \
 			ftp://ftp.plig.org/pub/OpenLDAP/%SUBDIR%/
-MASTER_SITE_SUBDIR=	openldap-test
+MASTER_SITE_SUBDIR=	openldap-release
 PKGNAMESUFFIX=		${OPENLDAP_PKGNAMESUFFIX}
 EXTRACT_SUFX=		.tgz
 
