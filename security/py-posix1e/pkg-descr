@@ -1,0 +1,3 @@
+This module provides support for manipulating POSIX.1e ACLs.
+
+WWW: http://pylibacl.sourceforge.net/
