@@ -20,6 +20,7 @@ LIB_DEPENDS=	jx-1_5_3.1:${JXPORT} \
 		jsearch-0_5_6.0:${PORTSDIR}/x11-toolkits/libjsearch \
 		jtoolbar-0_5_4.0:${PORTSDIR}/x11-toolkits/libjtoolbar \
 		jtree-1_1_7.1:${PORTSDIR}/x11-toolkits/libjtree
+RUN_DEPENDS=	procmail:${PORTSDIR}/mail/procmail
 
 WRKSRC=		${WRKDIR}/JX-1.5.3
 
