@@ -1,11 +1,17 @@
 #!/bin/sh
+
+# wait 4 hours maximum
+timeout=14400
+
 command=$1
 shift
 
 if pwd | grep -qF 2.2; then
   branch=2.2
+elif pwd | grep -qF 3; then
+  branch=3
 else
-  branch=3.0
+  branch=4
 fi
 
 # ssh -x doesn't work on some machines
@@ -26,8 +32,8 @@ set $mach
 shift $(echo "$$ $num" | awk '{srand($1); print(int(rand()*$2))}')
 if [ "x$NOCLEAN" != "x" ]; then
   echo "dispatching: ssh -a $1 ${command} ${branch} -noclean $args"
-  ssh -a $1 ${command} ${branch} -noclean $args
+  ${buildroot}/scripts/ptimeout $timeout ssh -a $1 ${command} ${branch} -noclean $args
 else
   echo "dispatching: ssh -a $1 ${command} ${branch} $args"
-  ssh -a $1 ${command} ${branch} $args
+  ${buildroot}/scripts/ptimeout $timeout ssh -a $1 ${command} ${branch} $args
 fi
