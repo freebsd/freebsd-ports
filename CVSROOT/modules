@@ -2244,6 +2244,7 @@ gnuserv		ports/editors/gnuserv
 gnuserv-emacs20	ports/editors/gnuserv-emacs20
 gnushogi	ports/games/gnushogi
 gnustep		ports/devel/gnustep
+gnustep-back	ports/lang/gnustep-back
 gnustep-base	ports/lang/gnustep-base
 gnustep-gui	ports/x11-toolkits/gnustep-gui
 gnustep-guile	ports/lang/gnustep-guile
@@ -5784,6 +5785,7 @@ panel--		ports/x11-toolkits/panel--
 pango		ports/x11-toolkits/pango
 panorama	ports/graphics/panorama
 pantomime	ports/mail/pantomime
+pantomime-ssl	ports/mail/pantomime-ssl
 papaya		ports/net/papaya
 papaya-plugins	ports/net/papaya-plugins
 papers		src/share/doc/papers
