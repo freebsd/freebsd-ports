@@ -1,0 +1,20 @@
+--- ddd/Makefile.in.orig	Tue Jun 27 10:30:32 2000
++++ ddd/Makefile.in	Tue Jun 27 10:30:51 2000
+@@ -316,7 +316,7 @@
+ NROFF = $(GROFF) -Tascii
+ 
+ # The makeinfo program.  (makeinfo)
+-MAKEINFO = @MAKEINFO@
++MAKEINFO = @MAKEINFO@ --no-split
+ 
+ # The texindex program.  (texindex)
+ TEXINDEX = texindex
+@@ -978,7 +978,7 @@
+ 
+ ## The info files.
+ INFO = $(docdir)/ddd.info
+-INFOS = $(docdir)/ddd.info*
++INFOS = $(docdir)/ddd.info
+ 
+ ## PostScript pictures in the DDD manual.
+ # All of these are generated from FIG and XPM files.
