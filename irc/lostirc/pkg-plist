@@ -1,0 +1,9 @@
+share/gnome/apps/Internet/lostirc.desktop
+bin/lostirc
+%%PORTDOCS%%share/doc/lostirc/AUTHORS
+%%PORTDOCS%%share/doc/lostirc/COPYING
+%%PORTDOCS%%share/doc/lostirc/ChangeLog
+%%PORTDOCS%%share/doc/lostirc/INSTALL
+%%PORTDOCS%%share/doc/lostirc/README
+%%PORTDOCS%%share/doc/lostirc/TODO
+%%PORTDOCS%%@dirrm share/doc/lostirc
