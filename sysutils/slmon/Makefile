@@ -30,6 +30,8 @@ PLIST_FILES=	bin/slmon
 CPPFLAGS=	-I${LOCALBASE}/include
 LDFLAGS=	-L${LOCALBASE}/lib -lncurses
 
+IGNORE=	"Needs update for libgtop2"
+
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 400010
