@@ -1,0 +1,19 @@
+--- rules.make.orig	Mon Mar 12 22:31:55 2001
++++ rules.make	Mon Apr 30 14:02:44 2001
+@@ -145,14 +145,8 @@
+ 	cp $(MANUAL) $@
+ $(MANDIR)/man3/$(MANUAL):	$(MANDIR)/man3 $(MANUAL)
+ 	cp $(MANUAL) $@
+-$(MANDIR)/man3f/$(MANUAL):	$(MANDIR)/man3 $(MANDIR)/man3/$(MANUAL) \
+-				$(MANDIR)/man3f
+-	rm -f $@
+-	ln -s $(MANDIR)/man3/$(MANUAL) $@
+-$(MANDIR)/man3f90/$(MANUAL):	$(MANDIR)/man3 $(MANDIR)/man3/$(MANUAL) \
+-				$(MANDIR)/man3f90
+-	rm -f $@
+-	ln -s $(MANDIR)/man3/$(MANUAL) $@
++$(MANDIR)/man3f/$(MANUAL):	$(MANDIR)/man3 $(MANDIR)/man3/$(MANUAL)
++$(MANDIR)/man3f90/$(MANUAL):	$(MANDIR)/man3 $(MANDIR)/man3/$(MANUAL)
+ 
+ ################################################################################
+ # Cleanup:

@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	netcdf
-PORTVERSION=	3.5.b8
+PORTVERSION=	3.5.0
 CATEGORIES=	math
 MASTER_SITES=	ftp://unidata.ucar.edu/pub/netcdf/
-DISTNAME=	${PORTNAME}-${PORTVERSION:S/.b/-beta/}
+#DISTNAME=	${PORTNAME}-${PORTVERSION:S/.b/-beta/}
 EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=	ports@FreeBSD.org
@@ -21,7 +21,7 @@ CONFIGURE_ENV=	CPPFLAGS="-fPIC -DPIC -Df2cFortran"
 INSTALLS_SHLIB=	yes
 
 MAN1=	ncdump.1 ncgen.1
-MAN3=	netcdf.3
+MAN3=	netcdf.3 netcdf.3f
 
 post-build:
 	@(cd ${WRKSRC}/libsrc && \
