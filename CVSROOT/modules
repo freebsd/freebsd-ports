@@ -7804,6 +7804,7 @@ sendip		ports/net/sendip
 sendmail-ldap	ports/mail/sendmail-ldap
 sendmail-old	ports/mail/sendmail-old
 sendmail-sasl	ports/mail/sendmail-sasl
+senken		ports/games/senken
 senso		ports/games/senso
 sentinel	ports/mail/sentinel
 seqio		ports/biology/seqio
