@@ -1,0 +1,4 @@
+@cwd /usr/local
+bin/xrisk
+lib/xrisk
+man/man6/xrisk.6.gz
