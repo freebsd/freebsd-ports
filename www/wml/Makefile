@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	wml
-PORTVERSION=	2.0.7
+PORTVERSION=	2.0.8
 CATEGORIES=	www lang
 MASTER_SITES=	http://www.engelschall.com/sw/wml/distrib/ \
 		ftp://ftp.engelschall.com/sw/wml/
@@ -17,14 +17,13 @@ USE_PERL5=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-perl=${PERL5}
 
-CAT1=	wml_aux_linklint.1 wml_aux_txt2html.1 \
-	wml_aux_tidy.1 wml_p4_gm4.1
+CAT1=	wml_aux_txt2html.1 wml_aux_tidy.1 wml_p4_gm4.1
 
 MAN1=	wmd.1 wmd_missing.1 wmk.1 wml.1 wmb.1 wmu.1 \
 	wml_aux_freetable.1 wml_aux_htmlclean.1 wml_aux_htmlinfo.1 wml_aux_iselect.1 \
 	wml_aux_map2html.1 wml_aux_weblint.1 wml_p1_ipp.1 \
 	wml_p2_mp4h.1 wml_p3_eperl.1 wml_p5_divert.1 wml_p6_asubst.1 \
-	wml_p7_htmlfix.1 wml_p8_htmlstrip.1 wml_p9_slice.1
+	wml_p7_htmlfix.1 wml_p8_htmlstrip.1 wml_p9_slice.1 wml_aux_linklint.1
 
 MAN3=	wml::all.3 wml::des::all.3 wml::des::gfont.3 \
 	wml::des::lowsrc.3 wml::des::imgdot.3 wml::des::imgbg.3 \
