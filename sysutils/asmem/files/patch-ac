@@ -1,0 +1,18 @@
+--- asmem.c	Thu Dec 16 17:39:59 1999
++++ asmem.c.new	Sun Feb 13 01:22:32 2000
+@@ -168,7 +168,7 @@
+  
+ }
+ 
+-void main(int argc, char** argv)
++int main(int argc, char** argv)
+ {
+ 	defaults();
+ 	parsecmdline(argc, argv);
+@@ -182,5 +182,6 @@
+ 		asmem_update();
+ 		usleep(X11_INTERVAL);
+ 	}
++	return 0;
+ }
+ 
