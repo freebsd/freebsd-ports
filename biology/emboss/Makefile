@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	emboss
-PORTVERSION=	1.5.0
+PORTVERSION=	1.6.0
 CATEGORIES=	biology
 MASTER_SITES=	ftp://ftp.uk.embnet.org/pub/EMBOSS/ \
 		ftp://ftp.no.embnet.org/pub/EMBOSS/
