@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	consolehm
-PORTVERSION=	1.3
+PORTVERSION=	1.31
 CATEGORIES=	sysutils
 MASTER_SITES= 	ftp://muir.yi.org/pub/consolehm/ \
 		http://www.es.co.nz/~mmuir/
