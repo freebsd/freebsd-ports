@@ -113,6 +113,10 @@ SHLIB_VERSION=	6
 PLIST_SUB+=	shlib=${SHLIB_VERSION}
 RC_SCRIPTS_SUB=	PREFIX=${PREFIX} RC_SUBR=${RC_SUBR}
 
+.if defined(WITH_INETADDRESS_HACK)
+EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-snmplib::mib.c
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} \
 		-e 's|%%LTCONFIG%%|${LIBTOOL_SHAREDIR}/ltconfig${LIBTOOL_VERSION}|g' \
