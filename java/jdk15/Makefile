@@ -19,7 +19,8 @@ COMMENT=	Java Development Kit 1.4.1
 
 BUILD_DEPENDS=	gm4:${PORTSDIR}/devel/m4 \
 		zip:${PORTSDIR}/archivers/zip \
-		${X11BASE}/lib/libXm.so:${PORTSDIR}/x11-toolkits/open-motif
+		${X11BASE}/lib/libXm.so:${PORTSDIR}/x11-toolkits/open-motif \
+		${LOCALBASE}/include/nspr/prtypes.h:${PORTSDIR}/devel/nspr
 .if !defined(NATIVE_BOOTSTRAP)
 BUILD_DEPENDS+=	${JDK14DIR}/bin/javac:${PORTSDIR}/java/linux-sun-jdk14
 .endif
