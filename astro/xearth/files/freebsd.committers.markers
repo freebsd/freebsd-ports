@@ -3,26 +3,7 @@
 #
 37.91  -122.06 "Walnut Creek"		# Walnut Creek CD-ROM
 #
-# FreeBSD core team members
-#
-40.0, -123.5,  "jkh"                            # Miranda, CA
-37.9, -122.3,  "asami"                          # Berkeley, CA
-40.1, -105.3,  "gibbs"                          # Boulder, CO (wow!)
-45.5, -122.6,  "dg"                             # near Portland, OR
-47.5, -122.4,  "jdp"                            # Seattle, WA
-42.34, -71.19, "gwollman"                       # Brighton, MA
-39.2,  -77.0,  "jmb"                            # Silver Spring, MD
-56.0,   -4.5,  "gary"                           # Glasgow, UK
-55.8,   37.6,  "ache"                           # Moscow
-53.0,    5.0,  "guido"                          # Eindhoven, the Netherlands
-55.4,   11.3,  "phk"                            # Denmark
-52.2,   10.2,  "   ,sos"                        # Denmark
-52.0,   13.8,  "joerg"                          # Germany
-29.7,  -95.4,  "rich"                           # Houston, TX
--33.55,151.1,  "bde"                            # Sydney, Australia.
--31.58,115.49, "peter"                          # Perth, Australia.
-#
-# Other committers
+# FreeBSD's committers excluding the Core
 #
   39.25, -121.02 "truckman"                     # Nevada City, CA
   38.54  -121.76 "     ,obrien,mharo"           # Davis, CA
