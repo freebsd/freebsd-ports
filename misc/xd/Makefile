@@ -8,7 +8,7 @@
 PORTNAME=	xd
 PORTVERSION=	2.3
 CATEGORIES=	misc
-MASTER_SITES=	http://spock.vector.co.jp/authors/VA004959/xd/
+MASTER_SITES=	http://www.bsddiary.net/xd/
 DISTNAME=	xd-8087
 
 MAINTAINER=	kiri@kiri.toba-cmt.ac.jp
