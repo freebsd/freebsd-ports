@@ -40,7 +40,7 @@ post-install:
 		  ${INSTALL_MAN} ${WRKSRC}/$$i \
 			${LOCALBASE}/share/doc/${PORTNAME} ; done
 		${MKDIR} ${LOCALBASE}/share/doc/${PORTNAME}/doc_german
-		for i in INSTALL_de LIESMICH-daemontools README README_de ${MAN1} ${MAN8} ; do \
+		for i in INSTALL_de README README_de ${MAN1} ${MAN8} ; do \
 		  ${INSTALL_MAN} ${WRKSRC}/doc_german/$$i \
 			${LOCALBASE}/share/doc/${PORTNAME}/doc_german ; done
 .endif
