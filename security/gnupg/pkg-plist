@@ -47,5 +47,5 @@ share/doc/gnupg/VERSION
 @unexec rmdir %D/share/locale/pt_PT 2>/dev/null || true
 @unexec rmdir %D/share/locale/ru/LC_MESSAGES 2>/dev/null || true
 @unexec rmdir %D/share/locale/ru 2>/dev/null || true
-@unexec rmdir %D/share/local 2>/dev/null || true
+@unexec rmdir %D/share/locale 2>/dev/null || true
 @dirrm share/doc/gnupg
