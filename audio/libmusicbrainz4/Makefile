@@ -13,7 +13,6 @@ MASTER_SITES=	ftp://ftp.musicbrainz.org/pub/musicbrainz/
 MAINTAINER=	roman@xpert.com
 
 USE_BZIP2=	yes
-USE_NEWGCC=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 INSTALLS_SHLIB=	yes

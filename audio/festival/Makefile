@@ -47,7 +47,6 @@ PLIST=		${WRKDIR}/pkg-plist
 WRKSRC=		${WRKDIR}
 
 USE_GMAKE=	yes
-USE_NEWGCC=	yes
 
 SPEECHTOOLS=	${WRKSRC}/speech_tools
 FESTIVAL=	${WRKSRC}/festival
