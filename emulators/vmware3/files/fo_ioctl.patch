@@ -1,0 +1,67 @@
+--- vmmon-only/freebsd/linux_emu.c	Tue Aug 20 12:40:02 2002
++++ vmmon-only/freebsd/linux_emu.c	Tue Aug 20 12:42:23 2002
+@@ -306,7 +306,7 @@
+ 	struct linux_floppy_struct fls;
+ 	struct fd_type fdt;
+ 
+-	if ((error = fo_ioctl(fp, FD_GTYPE, (caddr_t)&fdt, td)) != 0)
++	if ((error = fo_ioctl(fp, FD_GTYPE, (caddr_t)&fdt, td->td_ucred, td)) != 0)
+ 	    return error;
+ 	bzero(&fls, sizeof(fls));
+ 	
+@@ -330,7 +330,7 @@
+ 	struct linux_hd_geometry drive_geo;
+ 	struct disklabel dl;
+ 	
+-	if ((error = fo_ioctl(fp, DIOCGDINFO, (caddr_t)&dl, td)) != 0)
++	if ((error = fo_ioctl(fp, DIOCGDINFO, (caddr_t)&dl, td->td_ucred, td)) != 0)
+ 	    return error;
+ 
+ 	bzero(&drive_geo, sizeof(drive_geo));
+@@ -351,7 +351,7 @@
+ 	struct linux_hd_driveid driveid;
+ 	unsigned int capacity;
+ 
+-	if ((error = fo_ioctl(fp, DIOCGDINFO, (caddr_t)&dl, td)) != 0)
++	if ((error = fo_ioctl(fp, DIOCGDINFO, (caddr_t)&dl, td->td_ucred, td)) != 0)
+ 	    return error;
+ 
+ 	bzero(&driveid, sizeof(driveid));
+@@ -388,7 +388,7 @@
+ 	struct ioc_vol bsd_vol;
+ 	struct linux_cdrom_volctrl linux_vol;
+ 
+-	if ((error = fo_ioctl(fp, CDIOCGETVOL, (caddr_t)&bsd_vol, td)) != 0)
++	if ((error = fo_ioctl(fp, CDIOCGETVOL, (caddr_t)&bsd_vol, td->td_ucred, td)) != 0)
+ 	    return error;
+ 
+ 	linux_vol.channel0 = bsd_vol.vol[0];
+@@ -411,7 +411,7 @@
+ 	if ((error = copyin(muls, &ms, sizeof(ms))) != 0)
+ 	    return error;
+ 
+-	if ((error = fo_ioctl(fp, CDIOREADTOCHEADER, (caddr_t)&h, td)) != 0)
++	if ((error = fo_ioctl(fp, CDIOREADTOCHEADER, (caddr_t)&h, td->td_ucred, td)) != 0)
+ 	    return error;
+ 	
+ 	bzero(&t, sizeof(t));
+@@ -419,7 +419,7 @@
+ 	t.address_format = ms.addr_format ; /* BSD and LINUX formats equal */
+ 	t.track = 0; /* get content from the first track */
+ 
+-	if ((error = fo_ioctl(fp, CDIOREADTOCENTRY, (caddr_t)&t, td)) != 0) 
++	if ((error = fo_ioctl(fp, CDIOREADTOCENTRY, (caddr_t)&t, td->td_ucred, td)) != 0) 
+ 	    return error;
+ 	    
+ 	bsd_to_linux_msf_lba(ms.addr_format, &t.entry.addr, &ms.addr);
+--- vmnet-only/freebsd/vmnet_linux.c	Tue Aug 20 12:40:02 2002
++++ vmnet-only/freebsd/vmnet_linux.c	Tue Aug 20 12:42:59 2002
+@@ -90,7 +90,7 @@
+ 
+     switch (macAddr.version) {
+ 	case 1:
+-	  error = fo_ioctl(fp, SIOCSIFADDR, (caddr_t)macAddr.addr, td);
++	  error = fo_ioctl(fp, SIOCSIFADDR, (caddr_t)macAddr.addr, td->td_ucred, td);
+ 	  DEB(printf("Get ethernet address: %6D\n", macAddr.addr, ":"));
+ 	  break;
+ 	default:
