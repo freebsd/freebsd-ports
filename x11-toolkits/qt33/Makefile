@@ -8,7 +8,7 @@
 
 PORTNAME=	qt
 PORTVERSION=	3.3.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES?=	x11-toolkits ipv6
 MASTER_SITES=	ftp://sunsite.rediris.es/mirror/Qt/source/ \
 		ftp://ftp.iasi.roedu.net/mirrors/ftp.trolltech.com/qt/sources/	\
@@ -26,9 +26,9 @@ COMMENT=	Multiplatform C++ application framework
 
 BUILD_DEPENDS=	qmake:${PORTSDIR}/devel/qmake
 
-LIB_DEPENDS+=	mng.1:${PORTSDIR}/graphics/libmng \
-		png.5:${PORTSDIR}/graphics/png \
-		jpeg.9:${PORTSDIR}/graphics/jpeg
+LIB_DEPENDS+=	mng:${PORTSDIR}/graphics/libmng \
+		png:${PORTSDIR}/graphics/png \
+		jpeg:${PORTSDIR}/graphics/jpeg
 
 CONFLICTS=	linguist-0.* qt-2.* qt-3.0.* \
 		qt-3.1.* qt-3.2.* qt-designer-2.* xfmail-1.5.[0-5] \
