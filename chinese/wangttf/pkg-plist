@@ -1,13 +1,13 @@
-share/fonts/ttf/wangttf.txt
-share/fonts/ttf/wcl-01.ttf
-share/fonts/ttf/wcl-02.ttf
-share/fonts/ttf/wcl-03.ttf
-share/fonts/ttf/wcl-04.ttf
-share/fonts/ttf/wcl-05.ttf
-share/fonts/ttf/wcl-06.ttf
-share/fonts/ttf/wcl-07.ttf
-share/fonts/ttf/wcl-08.ttf
-share/fonts/ttf/wcl-09.ttf
-share/fonts/ttf/wcl-10.ttf
-@unexec rmdir %D/share/fonts/ttf 2>/dev/null || true
+share/fonts/TrueType/wangttf.txt
+share/fonts/TrueType/wcl-01.ttf
+share/fonts/TrueType/wcl-02.ttf
+share/fonts/TrueType/wcl-03.ttf
+share/fonts/TrueType/wcl-04.ttf
+share/fonts/TrueType/wcl-05.ttf
+share/fonts/TrueType/wcl-06.ttf
+share/fonts/TrueType/wcl-07.ttf
+share/fonts/TrueType/wcl-08.ttf
+share/fonts/TrueType/wcl-09.ttf
+share/fonts/TrueType/wcl-10.ttf
+@unexec rmdir %D/share/fonts/TrueType 2>/dev/null || true
 @unexec rmdir %D/share/fonts 2>/dev/null || true
