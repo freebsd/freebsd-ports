@@ -1,4 +1,5 @@
 # New ports collection makefile for:	gnupg
+# http://www.gnupg.org/
 # Version required:	1.0.0
 # Date created:		Sep 30, 1998
 # Whom:			kuriyama@FreeBSD.org
