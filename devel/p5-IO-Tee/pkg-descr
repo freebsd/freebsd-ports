@@ -1,0 +1,11 @@
+IO::Tee
+=======
+
+The `IO::Tee' constructor, given a list of output handles,
+returns a tied handle that can be written to but not read from.
+When written to (using print or printf), it multiplexes the
+output to the list of handles originally passed to the
+constructor. As a shortcut, you can also directly pass a string
+or an array reference to the constructor, in which case
+`IO::File::new' is called for you with the specified argument or
+arguments.
