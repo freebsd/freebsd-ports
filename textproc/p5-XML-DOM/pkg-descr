@@ -1,3 +1,5 @@
 This is a Perl extension to XML::Parser. It adds a new 'Style' to
 XML::Parser, called 'Dom', that allows XML::Parser to build an Object
 Oriented datastructure with a DOM Level 1 compliant interface.
+
+WWW: http://search.cpan.org/search?dist=XML-DOM
