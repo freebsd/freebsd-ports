@@ -32,8 +32,8 @@ CONFIGURE_ENV=		OSTYPE=${OPSYS} CFLAGS="${CFLAGS}"
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} != "i386"
-BROKEN=			"Does not compile on !i386"
+.if ${ARCH} != "i386" || ${OSVERSION} > 502105
+BROKEN=			"Does not compile on !i386 or FreeBSD >= 5.x"
 .endif
 
 post-patch:
