@@ -13,6 +13,24 @@ upgrades.
   The configruration file for the clamd daemon has changed from
   /usr/local/etc/clamav.conf to /usr/local/etc/clamd.conf.
 
+20041013:
+  AFFECTS: users of mail/getmail
+  AUTHOR: question+fbsdports@closedsrc.org
+
+  If you are using a version of mail/getmail earlier than 4.x and 
+  are planning to upgrade to 4.2.2, please note that the configuration file 
+  syntax has changed and the existing configuration file(s) will not work. 
+  Please refer to the online documentation available at:
+
+    (http://www.qcc.ca/~charlesc/software/getmail-4/documentation.html)
+
+  If you already upgraded to the latest version of getmail, you can refer 
+  to the installed documentation under:
+
+    ${PREFIX}/share/docs/getmail
+
+  The 4.x branch of getmail also requires Python 2.3.3 or newer.
+
 20041012:
   AFFECTS: users of devel/perforce
   AUTHOR: marshall@chezmarshall.com
