@@ -5814,7 +5814,7 @@ p5-Mail-GnuPG		ports/mail/p5-Mail-GnuPG
 p5-Mail-IMAPClient	ports/mail/p5-Mail-IMAPClient
 p5-Mail-ListDetector	ports/mail/p5-Mail-ListDetector
 p5-Mail-MailStats	ports/mail/p5-Mail-MailStats
-p5-Mail-MessageParser	ports/mail/p5-Mail-MessageParser
+p5-Mail-Mbox-MessageParser	ports/mail/p5-Mail-Mbox-MessageParser
 p5-Mail-POP3Client	ports/mail/p5-Mail-POP3Client
 p5-Mail-Procmail	ports/mail/p5-Mail-Procmail
 p5-Mail-Procmailrc	ports/mail/p5-Mail-Procmailrc
@@ -7498,12 +7498,10 @@ ruby-dbd_proxy	ports/databases/ruby-dbd_proxy
 ruby-dbd_sqlite	ports/databases/ruby-dbd_sqlite
 ruby-dbd_sqlrelay	ports/databases/ruby-dbd_sqlrelay
 ruby-dbi	ports/databases/ruby-dbi
-ruby-devel-logger	ports/sysutils/ruby-devel-logger
 ruby-dialogs	ports/devel/ruby-dialogs
 ruby-dict	ports/net/ruby-dict
 ruby-diff	ports/textproc/ruby-diff
 ruby-div	ports/www/ruby-div
-ruby-drb	ports/net/ruby-drb
 ruby-dump.rb	ports/converters/ruby-dump.rb
 ruby-esound	ports/audio/ruby-esound
 ruby-evas	ports/graphics/ruby-evas
@@ -7540,7 +7538,6 @@ ruby-gnustep	ports/devel/ruby-gnustep
 ruby-google	ports/www/ruby-google
 ruby-gpgme	ports/security/ruby-gpgme
 ruby-graph	ports/graphics/ruby-graph
-ruby-gserver	ports/net/ruby-gserver
 ruby-gsl	ports/math/ruby-gsl
 ruby-gst	ports/multimedia/ruby-gst
 ruby-gtk	ports/x11-toolkits/ruby-gtk
@@ -7605,7 +7602,6 @@ ruby-nqxml	ports/textproc/ruby-nqxml
 ruby-o_dbm	ports/databases/ruby-o_dbm
 ruby-odbc	ports/databases/ruby-odbc
 ruby-opengl	ports/graphics/ruby-opengl
-ruby-openssl	ports/security/ruby-openssl
 ruby-p4		ports/devel/ruby-p4
 ruby-pam	ports/security/ruby-pam
 ruby-panda	ports/print/ruby-panda
@@ -7635,7 +7631,6 @@ ruby-rdbc1	ports/databases/ruby-rdbc1
 ruby-rdoc	ports/textproc/ruby-rdoc
 ruby-rdtool	ports/textproc/ruby-rdtool
 ruby-reference	ports/lang/ruby-reference
-ruby-rexml	ports/textproc/ruby-rexml
 ruby-rfilter	ports/mail/ruby-rfilter
 ruby-ri		ports/lang/ruby-ri
 ruby-rica	ports/irc/ruby-rica
@@ -7658,7 +7653,6 @@ ruby-shout	ports/audio/ruby-shout
 ruby-slang	ports/devel/ruby-slang
 ruby-smf	ports/audio/ruby-smf
 ruby-snmp	ports/net/ruby-snmp
-ruby-soap	ports/net/ruby-soap
 ruby-spread	ports/net/ruby-spread
 ruby-spreadsheet-excel	ports/textproc/ruby-spreadsheet-excel
 ruby-sqlite	ports/databases/ruby-sqlite
@@ -7680,18 +7674,15 @@ ruby-tserver	ports/net/ruby-tserver
 ruby-tzfile	ports/devel/ruby-tzfile
 ruby-usersguide	ports/lang/ruby-usersguide
 ruby-vorbisfile	ports/audio/ruby-vorbisfile
-ruby-webrick	ports/www/ruby-webrick
 ruby-webunit	ports/www/ruby-webunit
 ruby-wordnet	ports/textproc/ruby-wordnet
 ruby-xmlconfigfile	ports/textproc/ruby-xmlconfigfile
 ruby-xmlparser	ports/textproc/ruby-xmlparser
-ruby-xmlrpc	ports/net/ruby-xmlrpc
 ruby-xmlscan	ports/textproc/ruby-xmlscan
 ruby-xmlscan-old	ports/textproc/ruby-xmlscan-old
 ruby-xmms	ports/audio/ruby-xmms
 ruby-xslt	ports/textproc/ruby-xslt
 ruby-xtemplate	ports/textproc/ruby-xtemplate
-ruby-yaml	ports/devel/ruby-yaml
 ruby-zip	ports/archivers/ruby-zip
 ruby16		ports/lang/ruby16
 ruby16-shim-ruby18	ports/lang/ruby16-shim-ruby18
