@@ -54,6 +54,7 @@
     SUBDIR += npadmin
     SUBDIR += nut
     SUBDIR += obliterate
+    SUBDIR += p5-SyslogScan
     SUBDIR += pib
     SUBDIR += pkg_remove
     SUBDIR += prips

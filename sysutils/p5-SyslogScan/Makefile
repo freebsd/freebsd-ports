@@ -1,0 +1,30 @@
+# New ports collection makefile for:    p5-SyslogScan
+# Version required:		0.32
+# Date created:			26 December 1999
+# Whom:	      			Dmitry Sivachenko <dima@Chg.RU>
+#
+# $FreeBSD$
+#
+
+DISTNAME=	SyslogScan-0.32
+PKGNAME=	p5-SyslogScan-0.32
+CATEGORIES=	sysutils perl5
+MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
+MASTER_SITE_SUBDIR=	SyslogScan
+
+MAINTAINER=	dima@Chg.RU
+
+USE_PERL5=	YES
+
+MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
+MAN3=		SyslogScan::ByGroup.3 SyslogScan::Delivery.3 \
+		SyslogScan::DeliveryIterator.3 \
+		SyslogScan::SendmailLine.3 SyslogScan::SendmailLineFrom.3 \
+		SyslogScan::SendmailLineTo.3 SyslogScan::SendmailUtil.3 \
+		SyslogScan::Summary.3 SyslogScan::SyslogEntry.3 \
+		SyslogScan::Usage.3 SyslogScan::WhereIs.3 read_mail_log.3
+
+do-configure:
+		@cd ${WRKSRC}; ${SETENV} ${CONFIGURE_ENV} ${PERL5} Makefile.PL
+
+.include <bsd.port.mk>

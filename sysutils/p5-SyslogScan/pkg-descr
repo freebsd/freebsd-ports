@@ -1,0 +1,18 @@
+SyslogScan contains routines to parse system logs.  The package
+includes a sample application, read_mail_log.pl, which can print out
+various statistics about mail sent and received.
+
+SyslogScan::SyslogLine encapsulates generic log lines in syslog files.
+
+SyslogScan::Delivery encapsulates a delivery of mail from one user to
+a list of users.
+
+SyslogScan::Summary generates reports of how much mail each user has
+sent and received.
+
+Delivery and Summary information can be efficiently persisted to a
+file and recovered for later analysis.
+
+
+--dima
+dima@Chg.RU
