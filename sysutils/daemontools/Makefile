@@ -7,7 +7,7 @@
 
 PORTNAME=	daemontools
 PORTVERSION=	0.76
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	sysutils
 MASTER_SITES=	http://cr.yp.to/daemontools/ \
 		ftp://cr.yp.to/daemontools/
@@ -54,10 +54,7 @@ do-install:
 	done) < ${WRKSRC}/../package/commands
 
 post-install:
-	@${INSTALL} -d -o ${SHAREOWN} -g ${SHAREGRP} -m 755 \
-		${PREFIX}/share/examples/${PORTNAME}
-	@${INSTALL_DATA} ${WRKDIR}/${SAMPLERC} \
-		${PREFIX}/share/examples/${PORTNAME}
+	@${INSTALL_SCRIPT} ${WRKDIR}/${SAMPLERC} ${PREFIX}/etc/rc.d/
 .if !defined(WITHOUT_MAN)
 	@${INSTALL_MAN} ${WRKDIR}/daemontools-man/*.8 ${PREFIX}/man/man8/
 .endif
