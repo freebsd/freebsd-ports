@@ -1,0 +1,57 @@
+diff -ur sysutil.c work2/vsftpd-0.0.10/sysutil.c
+--- sysutil.c	Wed Jan 31 03:39:15 2001
++++ sysutil.c	Sat Feb  3 18:08:05 2001
+@@ -19,7 +19,7 @@
+ #include <string.h>
+ #include <stdlib.h>
+ #include <unistd.h>
+-#include <sys/types.h>
++#include <sys/param.h>
+ #include <sys/socket.h>
+ #include <sys/mman.h>
+ #include <sys/stat.h>
+@@ -30,7 +30,12 @@
+ #include <sys/file.h>
+ #include <time.h>
+ #include <arpa/inet.h>
++#ifndef BSD
+ #include <sys/sendfile.h>
++#endif
++#ifdef BSD
++#include <machine/limits.h>
++#endif
+ #include <errno.h>
+ #include <pwd.h>
+ #include <grp.h>
+@@ -38,6 +43,7 @@
+ #include <sys/wait.h>
+ #include <sys/time.h>
+ #include <sys/uio.h>
++#include <netinet/in_systm.h>
+ #include <netinet/ip.h>
+ #include <netinet/tcp.h>
+ 
+@@ -378,7 +384,11 @@
+ vsf_sysutil_set_nodelay(int fd)
+ {
+   int nodelay = 1;
++#ifndef BSD
+   int retval = setsockopt(fd, SOL_TCP, TCP_NODELAY, &nodelay, sizeof(nodelay));
++#else
++  int retval = setsockopt(fd, IPPROTO_TCP, TCP_NODELAY, &nodelay, sizeof(nodelay));
++#endif
+   if (retval != 0)
+   {
+     die("setsockopt");
+@@ -413,7 +423,11 @@
+   int tos = IPTOS_THROUGHPUT;
+ 
+   /* Ignore failure to set (maybe this IP stack demands privilege for this) */
++#ifndef BSD
+   (void) setsockopt(fd, SOL_IP, IP_TOS, &tos, sizeof(tos));
++#else
++  (void) setsockopt(fd, IPPROTO_IP, IP_TOS, &tos, sizeof(tos));
++#endif
+ }
+ 
+ int

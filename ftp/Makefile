@@ -33,6 +33,7 @@
     SUBDIR += proftpd
     SUBDIR += sftp
     SUBDIR += spegla
+    SUBDIR += vsftpd
     SUBDIR += wget
     SUBDIR += wu-ftpd
     SUBDIR += xrmftp

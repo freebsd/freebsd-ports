@@ -1,0 +1,11 @@
+A FTP daemon that aims to be "very secure"
+
+From the README file:
+
+	Author: Chris Evans
+	Contact: chris@scary.beasts.org
+
+	vsftpd is an FTP server, or daemon. The "vs" stands for Very
+	Secure.  Obviously this is not a guarantee, but a reflection
+	that I have written the entire codebase with security in mind,
+	and carefully designed the program to be resilient to attack.
