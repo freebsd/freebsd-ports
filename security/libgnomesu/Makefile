@@ -19,6 +19,7 @@ USE_GETOPT_LONG=yes
 USE_LIBTOOL_VER=15
 USE_GMAKE=	yes
 USE_GNOME=	gnomehack gnomeprefix libgnomeui
+CONFIGURE_ARGS+=--disable-install-pam
 CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LIBS="-L${LOCALBASE}/lib"
 
