@@ -7,7 +7,7 @@
 
 PORTNAME=	clients
 PORTVERSION=	4.2.0
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	x11
 MASTER_SITES=	${MASTER_SITE_XFREE:S/$/:x/} \
 		${MASTER_SITE_LOCAL:S/$/:local/}
@@ -20,6 +20,9 @@ DISTFILES=	X${PORTVERSION:S/.//g}src-1.tgz:x \
 EXTRACT_ONLY=	X${PORTVERSION:S/.//g}src-1.tgz
 
 MAINTAINER=	anholt@freebsd.org
+
+LIB_DEPENDS=	freetype.9:${PORTSDIR}/print/freetype2 \
+		GLU.1:${PORTSDIR}/x11/XFree86-4-libraries
 
 XFREE86_VERSION=	4
 USE_IMAKE=		YES
