@@ -8789,6 +8789,7 @@ radvd		ports/net/radvd
 ragel		ports/devel/ragel
 raggle		ports/net/raggle
 rain		ports/security/rain
+raine		ports/emulators/raine
 rancid		ports/net-mgmt/rancid
 rand		ports/textproc/rand
 randrext	ports/x11/randrext
