@@ -1,2 +1,3 @@
+bin/enhance
 lib/libtecla.a
 include/libtecla.h
