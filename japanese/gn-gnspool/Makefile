@@ -3,7 +3,7 @@
 # Date created:				14 Feb. 1997
 # Whom:					Kiroh HARADA <kiroh@kh.rim.or.jp>
 #
-# $Id: Makefile,v 1.3 1998/03/21 01:49:56 itojun Exp $
+# $Id: Makefile,v 1.4 1998/06/04 14:47:24 kuriyama Exp $
 #
 
 DISTNAME=	gn-1.36
@@ -12,6 +12,8 @@ CATEGORIES=	japanese news
 MASTER_SITES=	ftp://ftp.omronsoft.co.jp/pub/misc/gn/
 
 MAINTAINER=	kiroh@kh.rim.or.jp
+
+BROKEN=		infinite loop
 
 WRKSRC=		${WRKDIR}/gn-1.36/src
 
