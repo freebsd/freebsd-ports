@@ -24,6 +24,7 @@ share/doc/xmltv-%%VERSION%%/COPYING
 share/doc/xmltv-%%VERSION%%/QuickStart
 share/doc/xmltv-%%VERSION%%/README
 share/doc/xmltv-%%VERSION%%/README.tv_check
+share/doc/xmltv-%%VERSION%%/README.win32
 share/doc/xmltv-%%VERSION%%/tv_check_doc.html
 share/doc/xmltv-%%VERSION%%/tv_check_doc.jpg
 share/xmltv/tv_grab_uk/channel_ids
@@ -37,16 +38,22 @@ share/xmltv/tv_grab_uk/channel_pkgs/entertainment
 share/xmltv/tv_grab_uk/channel_pkgs/factual
 share/xmltv/tv_grab_uk/channel_pkgs/film
 share/xmltv/tv_grab_uk/channel_pkgs/gratis
+share/xmltv/tv_grab_uk/channel_pkgs/ireland
 share/xmltv/tv_grab_uk/channel_pkgs/lifestyle
 share/xmltv/tv_grab_uk/channel_pkgs/misc
 share/xmltv/tv_grab_uk/channel_pkgs/music
 share/xmltv/tv_grab_uk/channel_pkgs/musicchoice
+share/xmltv/tv_grab_uk/channel_pkgs/national
 share/xmltv/tv_grab_uk/channel_pkgs/news
+share/xmltv/tv_grab_uk/channel_pkgs/not_england
+share/xmltv/tv_grab_uk/channel_pkgs/regional
 share/xmltv/tv_grab_uk/channel_pkgs/religion
 share/xmltv/tv_grab_uk/channel_pkgs/scifi
+share/xmltv/tv_grab_uk/channel_pkgs/scotland
 share/xmltv/tv_grab_uk/channel_pkgs/shop
 share/xmltv/tv_grab_uk/channel_pkgs/sport
 share/xmltv/tv_grab_uk/channel_pkgs/travel
+share/xmltv/tv_grab_uk/channel_pkgs/wales
 share/xmltv/tv_grab_uk_rt/channel_ids
 @dirrm share/xmltv/tv_grab_uk_rt
 @dirrm share/xmltv/tv_grab_uk/channel_pkgs
