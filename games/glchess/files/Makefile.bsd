@@ -1,0 +1,24 @@
+CFLAGS += `${GTK_CONFIG} --cflags` $(INCLDIR) ${PTHREAD_CFLAGS}
+LIBS = `${GTK_CONFIG} --libs` -lgtkgl -lGL -lGLU -lm -lXi -lXmu ${PTHREAD_LIBS}
+
+OBJS =	main.o \
+	anim.o \
+	config.o \
+	draw.o \
+	dialog.o \
+	engine.o \
+	game.o \
+	global.o \
+	image.o \
+	interface.o \
+	menu.o \
+	models.o \
+	move.o \
+	player.o \
+	prefs.o \
+	san.o \
+	splash.o \
+	texture.o \
+
+all: $(OBJS)
+	$(CC) $(CFLAGS) $(OBJS) -o glchess $(LIBS)
