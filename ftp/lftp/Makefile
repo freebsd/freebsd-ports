@@ -6,16 +6,16 @@
 #
 
 PORTNAME=	lftp
-PORTVERSION=	2.4.7
+PORTVERSION=	2.4.8
 CATEGORIES=	ftp ipv6
 MASTER_SITES=	ftp://ftp.yars.free.net/pub/software/unix/net/ftp/client/lftp/ \
 		ftp://ftp.yars.free.net/pub/software/unix/net/ftp/client/lftp/old/ \
 		ftp://ftp.phear.org/pub/linux/networking/ftp/client/lftp/ \
 		ftp://ftp.phear.org/pub/linux/networking/ftp/client/lftp/old/ \
 		http://the.wiretapped.net/mirrors/lftp/ \
-		http://the.wiretapped.net/mirrors/lftp/old \
+		http://the.wiretapped.net/mirrors/lftp/old/ \
 		ftp://ftp.wiretapped.net/pub/mirrors/lftp/ \
-		ftp://ftp.wiretapped.net/pub/mirrors/lftp/old \
+		ftp://ftp.wiretapped.net/pub/mirrors/lftp/old/ \
 		ftp://ftp.ayamura.org/pub/lftp/ \
 		ftp://ftp.ayamura.org/pub/lftp/old/
 
