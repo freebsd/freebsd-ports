@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	sylpheed
-PORTVERSION=	0.6.4
+PORTVERSION=	0.6.5
 CATEGORIES=	mail ipv6
 MASTER_SITES=	http://sylpheed.good-day.net/sylpheed/
 
@@ -53,9 +53,9 @@ pre-extract:
 
 pre-configure:
 	${PERL} -pi -e "s|AM_PROG_INSTALL|AC_PROG_INSTALL|g" ${WRKSRC}/aclocal.m4
-.if defined(WITH_GPGME)
-	${RM} -f ${WRKSRC}/ac/gpgme.m4
-.endif
+	if ([ ${WITH_GPGME} ] || [ -f "${LOCALBASE}/share/aclocal/gpgme.m4" ]) ; then \
+		${RM} -f ${WRKSRC}/ac/gpgme.m4 ; \
+	fi
 
 post-install:
 .if !defined(NOPORTDOCS)
