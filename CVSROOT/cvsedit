@@ -1,0 +1,22 @@
+#! /bin/sh
+# CVS only passes one argument here.. the filename in /tmp...
+ARG="$1"
+
+# same rules as CVS
+ED="vi"
+{ test -n "$EDITOR"; } && ED="$EDITOR"
+{ test -n "$CVSEDITOR"; } && ED="$CVSEDITOR"
+
+$EDITOR "$ARG"
+EDSTATUS=$?
+
+# In-place edit the result of the user's edit on the file.
+/usr/bin/perl -i -e '
+while(<>) {
+	# Delete the following lines if they only have whitespace after them.
+	print unless /^Reviewed by:[\s]*$/ ||
+		     /^Submitted by:[\s]*$/ ||
+		     /^Obtained from:[\s]*$/;
+}' "$ARG"
+
+exit $EDSTATUS
