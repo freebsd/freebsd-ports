@@ -1,0 +1,103 @@
+*** Makefile.orig	Mon Jan 20 15:52:28 1997
+--- Makefile	Wed Jan 22 06:24:30 1997
+***************
+*** 5,39 ****
+  # ---------------------------------------------------------------------------
+  
+  #
+! # インストールディレクトリ
+! # 書き込み権限が無いとインストール出来ません．=> 遊べない．(^^;
+  #
+! PIXMAPDIR = /usr/local/games/lib/xsoldier
+! SCOREDIR  = /usr/local/games/lib/xsoldier
+! BINDIR    = /usr/local/games
+  
+  #
+! # スコアファイル名．SCOREDIR 以下に置かれます．
+  #
+  SCOREFILE = .scorefile
+  
+  #
+! # X のコンパイルにオプションが必要なら．
+! # xpm ライブラリのパスもここで設定します．
+  #
+! INCLUDE = /usr/X11/include
+! LIBPATH = /usr/X11/lib
+  
+  #
+! # ゲームのウエイト
+  #
+  WAIT     = 35000
+  
+  #
+! # コンパイルオプション
+! #     -DDUPSCORE … 同一人物がハイスコアに複数エントリ出来る
+! #     -DDEBUG    … デバッグモード
+! #             すみません．まだこれしかないです．(^^;
+  #
+  DEFINES = -DSCORE=\"$(SCOREDIR)\" -DPIXMAP=\"$(PIXMAPDIR)\" \
+            -DSCOREFILE=\"$(SCOREFILE)\" \
+--- 5,39 ----
+  # ---------------------------------------------------------------------------
+  
+  #
+! # Install Directory
+! # You cannot install without write permission. => You can't enjoy. (^^;
+  #
+! PIXMAPDIR = /usr/X11R6/lib/X11/xsoldier
+! SCOREDIR  = /usr/X11R6/lib/X11/xsoldier
+! BINDIR    = /usr/X11R6/bin
+  
+  #
+! # Score file name. These are under SCOREDIR.
+  #
+  SCOREFILE = .scorefile
+  
+  #
+! # If you need options to compile X application, 
+! # please configure xpm library path here.
+  #
+! INCLUDE = /usr/X11R6/include
+! LIBPATH = /usr/X11R6/lib
+  
+  #
+! # Game wait
+  #
+  WAIT     = 35000
+  
+  #
+! # Compile option
+! #     -DDUPSCORE    Multi entries of one person
+! #     -DDEBUG       Debug mode
+! #             Sorry, only these are available. (^^;
+  #
+  DEFINES = -DSCORE=\"$(SCOREDIR)\" -DPIXMAP=\"$(PIXMAPDIR)\" \
+            -DSCOREFILE=\"$(SCOREFILE)\" \
+***************
+*** 44,50 ****
+  INSTALL = install
+  
+  # ---------------------------------------------------------------------------
+! # 基本的にここから下はいぢらなくて済むハズ．
+  
+  OBJ     = main.o game.o opening.o ending.o manage.o player.o \
+            common.o callback.o boss.o enemy.o enemyshot.o sin.o \
+--- 44,50 ----
+  INSTALL = install
+  
+  # ---------------------------------------------------------------------------
+! # Basically, you may not change the following.
+  
+  OBJ     = main.o game.o opening.o ending.o manage.o player.o \
+            common.o callback.o boss.o enemy.o enemyshot.o sin.o \
+***************
+*** 108,111 ****
+  star.o: image.h xsoldier.h extern.h star.h
+  score.o: image.h xsoldier.h extern.h
+  
+! convert: convert.o
+--- 108,111 ----
+  star.o: image.h xsoldier.h extern.h star.h
+  score.o: image.h xsoldier.h extern.h
+  
+! #convert: convert.o
