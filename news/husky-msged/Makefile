@@ -1,4 +1,4 @@
-# New ports collection makefile for:    husky-base
+# New ports collection makefile for:    husky-msged
 # Date created:                         6 January 2003
 # Whom:                                 Max Khon
 #
@@ -16,14 +16,6 @@ MAINTAINER=	fjoe@FreeBSD.org
 LIB_DEPENDS=	fidoconfig.0:${PORTSDIR}/news/husky-fidoconf
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
-#MAN1=		hpt.1 hptlink.1 hpttree.1 txt2pkt.1
-#MANCOMPRESSED=	yes
-
-#post-build:
-#	@cd ${WRKSRC}/doc && ${GMAKE}
-
-#post-install:
-#	@cd ${WRKSRC}/doc && ${GMAKE} install
 
 .include <bsd.port.pre.mk>
 .include "${PORTSDIR}/news/husky-base/Makefile.inc"
