@@ -6,7 +6,7 @@
 #
 
 PORTNAME=		libsrs2
-PORTVERSION=		1.0.16
+PORTVERSION=		1.0.18
 CATEGORIES=		mail
 MASTER_SITES=		http://www.libsrs2.org/%SUBDIR%/
 MASTER_SITE_SUBDIR=	srs
