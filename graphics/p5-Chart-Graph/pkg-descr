@@ -1,0 +1,7 @@
+Graph.pm is a wrapper module that allows easy generation of graphs within perl.
+Currently Graph.pm supports three graphing packages, gnuplot, XRT, and Xmgrace.
+These software packages must be obtained separately from this Perl module.
+Information on each graphing package and it's availability is provided in the
+documentation on that module.
+
+WWW: http://search.cpan.org/dist/Chart-Graph/
