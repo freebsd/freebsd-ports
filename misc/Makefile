@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.84 1996/08/19 12:35:39 asami Exp $
+# $Id: Makefile,v 1.85 1996/08/24 04:05:11 chuckr Exp $
 #
 
     SUBDIR += amanda
@@ -24,6 +24,10 @@
     SUBDIR += mc
     SUBDIR += mmv
     SUBDIR += mshell
+    SUBDIR += p5-Array-PrintCols
+    SUBDIR += p5-Business-CreditCard
+    SUBDIR += p5-Convert-UU
+    SUBDIR += p5-Search
     SUBDIR += plan
     SUBDIR += recode
     SUBDIR += rman
