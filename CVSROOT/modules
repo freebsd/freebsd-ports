@@ -105,7 +105,6 @@ R-a4		ports/math/R-a4
 R-letter	ports/math/R-letter
 SETIsupport	ports/astro/SETIsupport
 SN		ports/devel/SN
-SSLtelnet	ports/net/SSLtelnet
 STk		ports/lang/STk
 SWIG		ports/devel/SWIG
 SWIG-devel	ports/devel/SWIG-devel
@@ -235,7 +234,6 @@ aewm++		ports/x11-wm/aewm++
 afbackup	ports/misc/afbackup
 afbackup-client	ports/misc/afbackup-client
 afbackup-server	ports/misc/afbackup-server
-afd		ports/ftp/afd
 affenspiel	ports/games/affenspiel
 afio		ports/sysutils/afio
 afm		ports/print/afm
@@ -630,7 +628,6 @@ brandelf	src/usr.bin/brandelf
 bricons		ports/x11/bricons
 british-ispell	ports/textproc/british-ispell
 bro		ports/security/bro
-brouted		ports/net/brouted
 brs		ports/misc/brs
 bs		src/games/bs
 bsd-airtools	ports/net/bsd-airtools
@@ -888,7 +885,6 @@ colldef		src/usr.bin/colldef
 collections	ports/java/collections
 color-mate	ports/editors/color-mate
 colorize	ports/sysutils/colorize
-colorls		ports/misc/colorls
 colorstep	ports/x11-toolkits/colorstep
 colortail	ports/misc/colortail
 colrm		src/usr.bin/colrm
@@ -1193,7 +1189,6 @@ deepforest	ports/archivers/deepforest
 defendguin	ports/games/defendguin
 deft		ports/biology/deft
 dejagnu		ports/misc/dejagnu
-dejasearch	ports/news/dejasearch
 delay		ports/misc/delay
 delegate	ports/net/delegate
 deleted		ports/sysutils/deleted
@@ -2754,7 +2749,6 @@ ja-bible_names-fpw	ports/japanese/bible_names-fpw
 ja-binder	ports/japanese/binder
 ja-bookview	ports/japanese/bookview
 ja-cannadic	ports/japanese/cannadic
-ja-canuum	ports/japanese/canuum
 ja-cdrom2	ports/japanese/cdrom2
 ja-celrw	ports/japanese/celrw
 ja-chasen	ports/japanese/chasen
@@ -2936,7 +2930,6 @@ ja-mendexk-euc	ports/japanese/mendexk-euc
 ja-mendexk-sjis	ports/japanese/mendexk-sjis
 ja-mh		ports/japanese/mh
 ja-mhonarc	ports/japanese/mhonarc
-ja-micq		ports/japanese/micq
 ja-migemo	ports/japanese/migemo
 ja-migemo-emacs20	ports/japanese/migemo-emacs20
 ja-migemo-emacs21	ports/japanese/migemo-emacs21
@@ -3091,7 +3084,6 @@ ja-srd-fpw-package	ports/japanese/srd-fpw-package
 ja-t2ps		ports/japanese/t2ps
 ja-tcl76	ports/japanese/tcl76
 ja-tcl80	ports/japanese/tcl80
-ja-tcsh		ports/japanese/tcsh
 ja-tcsh-nls-asuka	ports/japanese/tcsh-nls-asuka
 ja-tcsh-nls-ayanami	ports/japanese/tcsh-nls-ayanami
 ja-tcsh-nls-generic	ports/japanese/tcsh-nls-generic
@@ -3140,7 +3132,6 @@ ja-web1913-fpw	ports/japanese/web1913-fpw
 ja-webalizer	ports/japanese/webalizer
 ja-weblint97	ports/japanese/weblint97
 ja-wnn7egg	ports/japanese/wnn7egg
-ja-word		ports/japanese/word
 ja-wordnet-fpw	ports/japanese/wordnet-fpw
 ja-wwasw-fpw	ports/japanese/wwasw-fpw
 ja-xchat	ports/japanese/xchat
@@ -3535,7 +3526,6 @@ ko-nvi-euc-kr	ports/korean/nvi-euc-kr
 ko-nvi-iso-2022-kr	ports/korean/nvi-iso-2022-kr
 ko-openoffice	ports/korean/openoffice
 ko-pgp.language	ports/korean/pgp.language
-ko-pine		ports/korean/pine
 ko-pinetreefonts	ports/korean/pinetreefonts
 ko-pycodec	ports/korean/pycodec
 ko-texinfo	ports/korean/texinfo
@@ -3634,7 +3624,6 @@ leim21		ports/editors/leim21
 lemon		ports/devel/lemon
 leoarg		ports/devel/leoarg
 leocad		ports/cad/leocad
-less		src/usr.bin/less
 lesstif		ports/x11-toolkits/lesstif
 lex		src/usr.bin/lex
 lexter		ports/games/lexter
@@ -4265,7 +4254,6 @@ mgp-mode.el	ports/misc/mgp-mode.el
 mgstat		ports/www/mgstat
 mguesser	ports/textproc/mguesser
 mgv		ports/print/mgv
-mh		ports/mail/mh
 mhash		ports/security/mhash
 mhc		ports/deskutils/mhc
 mhc-emacs20	ports/deskutils/mhc-emacs20
@@ -4628,7 +4616,6 @@ ncplib		ports/net/ncplib
 ncplist		src/usr.bin/ncplist
 ncplogin	src/usr.bin/ncplogin
 ncrcontrol	src/usr.sbin/ncrcontrol
-ncurses		ports/devel/ncurses
 nd		ports/www/nd
 ndc		src/usr.sbin/ndc
 ndir		ports/sysutils/ndir
@@ -5818,7 +5805,6 @@ pdq		ports/print/pdq
 pdss		ports/lang/pdss
 pdumpfs		ports/sysutils/pdumpfs
 peacock		ports/www/peacock
-pear		ports/devel/pear
 pedisassem	ports/devel/pedisassem
 peeper		ports/x11/peeper
 pen		ports/net/pen
@@ -6984,7 +6970,6 @@ scli		ports/net/scli
 scm		ports/lang/scm
 scmxx		ports/comms/scmxx
 scons		ports/devel/scons
-scotty		ports/net/scotty
 scotty3		ports/net/scotty3
 scout		ports/www/scout
 scponly		ports/shells/scponly
@@ -7617,7 +7602,6 @@ tcltutor	ports/lang/tcltutor
 tcm		ports/graphics/tcm
 tconv		src/usr.bin/tconv
 tcopy		src/usr.bin/tcopy
-tcp_wrapper	ports/security/tcp_wrapper
 tcpblast	ports/benchmarks/tcpblast
 tcpcat		ports/net/tcpcat
 tcpdump		src/usr.sbin/tcpdump
@@ -7818,7 +7802,6 @@ true		src/usr.bin/true
 trueprint	ports/print/trueprint
 truereality	ports/emulators/truereality
 truevision	ports/graphics/truevision
-truncate	src/usr.bin/truncate
 truss		src/usr.bin/truss
 trustedbsd-www	projects/trustedbsd/www
 tset		src/usr.bin/tset
