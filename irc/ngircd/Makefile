@@ -30,7 +30,7 @@ CONFIGURE_ARGS+=	--without-syslog
 CONFIGURE_ARGS+=	--without-zlib
 .endif
 
-MAN5=		ngircd.5
+MAN5=		ngircd.conf.5
 MAN8=		ngircd.8
 
 pre-configure:
