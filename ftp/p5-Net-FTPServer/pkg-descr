@@ -1,8 +1,6 @@
-A full-featured, secure, extensible and configurable Perl FTP server
-
+A full-featured, secure, extensible and configurable Perl FTP server.
 Major features of Net::FTPServer include:
-
-   * Feature parity with wu-ftpd.
+   * Feature parity with wu-ftpd, wu-ftpd style aliases and cdpath.
    * IP-based and IP-less virtual hosting.
    * Virtual filesystem allows the FTP server to serve files from a SQL
      database.
@@ -10,15 +8,17 @@ Major features of Net::FTPServer include:
    * <Perl> sections in ftpd.conf file.
    * Supports all the latest RFCs and Internet Drafts, including MLST, MLSD,
      FEAT, OPTS, LANG.
-   * Secure by design and implementation.
-   * PAM authentication.
+   * Secure by design and implementation, can run in a chroot jail.
+   * PAM authentication and anonymous mode.
    * Resource limits.
    * Run standalone or from inetd.
    * Configurable server greetings and welcome messages.
-   * Anonymous mode.
-   * Run in chroot jail.
    * Sophisticated access control rules.
-   * wu-ftpd style aliases and cdpath.
    * SITE EXEC (disabled by default).
    * Syslog logging.
    * Set TCP parameters.
+
+WWW: http://search.cpan.org/search?dist=Net-FTPServer
+
+- Pete
+petef@databits.net

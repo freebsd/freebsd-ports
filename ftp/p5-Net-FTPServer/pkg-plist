@@ -1,26 +1,39 @@
-lib/perl5/site_perl/%%PERL_VER%%/Net/FTPServer.pm
-lib/perl5/site_perl/%%PERL_VER%%/Net/FTPServer/DBeg1/FileHandle.pm
-lib/perl5/site_perl/%%PERL_VER%%/Net/FTPServer/DBeg1/IOBlob.pm
-lib/perl5/site_perl/%%PERL_VER%%/Net/FTPServer/DBeg1/DirHandle.pm
-lib/perl5/site_perl/%%PERL_VER%%/Net/FTPServer/DBeg1/Server.pm
-lib/perl5/site_perl/%%PERL_VER%%/Net/FTPServer/Full/DirHandle.pm
-lib/perl5/site_perl/%%PERL_VER%%/Net/FTPServer/Full/Server.pm
-lib/perl5/site_perl/%%PERL_VER%%/Net/FTPServer/Full/FileHandle.pm
-lib/perl5/site_perl/%%PERL_VER%%/Net/FTPServer/InMem/Server.pm
-lib/perl5/site_perl/%%PERL_VER%%/Net/FTPServer/InMem/FileHandle.pm
-lib/perl5/site_perl/%%PERL_VER%%/Net/FTPServer/InMem/DirHandle.pm
-lib/perl5/site_perl/%%PERL_VER%%/Net/FTPServer/RO/FileHandle.pm
-lib/perl5/site_perl/%%PERL_VER%%/Net/FTPServer/RO/Server.pm
-lib/perl5/site_perl/%%PERL_VER%%/Net/FTPServer/RO/DirHandle.pm
-lib/perl5/site_perl/%%PERL_VER%%/Net/FTPServer/DirHandle.pm
-lib/perl5/site_perl/%%PERL_VER%%/Net/FTPServer/FileHandle.pm
-lib/perl5/site_perl/%%PERL_VER%%/Net/FTPServer/Handle.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Net/FTPServer.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Net/FTPServer/DBeg1/DirHandle.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Net/FTPServer/DBeg1/FileHandle.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Net/FTPServer/DBeg1/IOBlob.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Net/FTPServer/DBeg1/Server.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Net/FTPServer/DirHandle.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Net/FTPServer/FileHandle.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Net/FTPServer/Full/DirHandle.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Net/FTPServer/Full/FileHandle.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Net/FTPServer/Full/Server.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Net/FTPServer/Handle.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Net/FTPServer/InMem/DirHandle.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Net/FTPServer/InMem/FileHandle.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Net/FTPServer/InMem/Server.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Net/FTPServer/RO/DirHandle.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Net/FTPServer/RO/FileHandle.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Net/FTPServer/RO/Server.pm
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Net/FTPServer/.packlist
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/Net/FTPServer/DBeg1
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/Net/FTPServer/Full
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/Net/FTPServer/InMem
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/Net/FTPServer/RO
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/Net/FTPServer
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Net/FTPServer/FTPServer.bs
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Net/FTPServer/FTPServer.so
+sbin/perlftpd
+%%PORTDOCS%%share/doc/Net-FTPServer/FAQ
+%%PORTDOCS%%share/doc/Net-FTPServer/README
+%%PORTDOCS%%share/doc/Net-FTPServer/TODO
+%%PORTDOCS%%share/doc/Net-FTPServer/eg1-psql63.sql
+%%PORTDOCS%%share/doc/Net-FTPServer/eg1.sql
+%%PORTDOCS%%share/doc/Net-FTPServer/rfcs.txt
+%%PORTDOCS%%share/doc/Net-FTPServer/safesignals.txt
+%%PORTDOCS%%@dirrm share/doc/Net-FTPServer
+share/examples/Net-FTPServer/ftpd.conf
+@dirrm share/examples/Net-FTPServer
 @dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Net/FTPServer
-@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/Net 2>/dev/null || true
 @unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Net 2>/dev/null || true
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Net/FTPServer/RO
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Net/FTPServer/InMem
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Net/FTPServer/Full
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Net/FTPServer/DBeg1
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Net/FTPServer
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Net 2>/dev/null || true
