@@ -6,19 +6,18 @@
 #
 
 PORTNAME=	osg
-PORTVERSION=	0.9.6.2
+PORTVERSION=	0.9.8
 CATEGORIES=	graphics
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	openscenegraph
-DISTNAME=	OpenSceneGraph-${PORTVERSION:R}-${PORTVERSION:E}
+MASTER_SITES=	http://www.openscenegraph.org/downloads/snapshots/
+DISTNAME=	OSG_OP_OT-${PORTVERSION}-2
 
-MAINTAINER=	yinjieh@csie.nctu.edu.tw
+MAINTAINER=	boris@brooknet.com.au
 COMMENT=	C++ OpenGL scene graph library for real-time rendering
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/libOpenThreads.so:${PORTSDIR}/devel/openthreads \
 		${X11BASE}/lib/libProducer.so:${PORTSDIR}/graphics/openproducer
-RUN_DEPENDS=	${BUILD_DEPENDS}
-
+RUN_DEPENDS=	${LOCALBASE}/lib/libOpenThreads.so:${PORTSDIR}/devel/openthreads \
+		${X11BASE}/lib/libProducer.so:${PORTSDIR}/graphics/openproducer
 LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png \
 		jpeg.9:${PORTSDIR}/graphics/jpeg \
 		ungif.5:${PORTSDIR}/graphics/libungif \
@@ -26,35 +25,46 @@ LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png \
 		freetype.9:${PORTSDIR}/print/freetype2 \
 		xml2.5:${PORTSDIR}/textproc/libxml2
 
-BROKEN=		"Does not compile"
-EXPIRATION_DATE=2005-02-18
-DEPRECATED=	${BROKEN}
-
+USE_ZIP=	yes
 USE_REINPLACE=	yes
 USE_X_PREFIX=	yes
-USE_MESA=	yes
+USE_GL=		yes
 INSTALLS_SHLIB=	yes
 USE_GMAKE=	yes
-MAKE_ENV=	OSGHOME=${WRKSRC} \
-		PTHREAD_LIBS=${PTHREAD_LIBS}
+MAKE_ENV=	OSGHOME="${WRKSRC}" \
+		PTHREAD_LIBS="${PTHREAD_LIBS}" \
+		EXAMPLESDIR="${EXAMPLESDIR}" \
+		DOCSDIR="${DOCSDIR}" \
+		DATADIR="${DATADIR}" \
+		OPTF="${CXXFLAGS}"
 MAKEFILE=	GNUmakefile
-WRKSRC=		${WRKDIR}/OpenSceneGraph-${PORTVERSION:R}-${PORTVERSION:E}
+WRKSRC=		${WRKDIR}/${DISTNAME}/OpenSceneGraph
 
 # opt = optimized ($OPTF added); debug = debug ($DBGF added); opt is default
 ALL_TARGET=	opt
 
 .include <bsd.port.pre.mk>
 
-post-patch:
-	@${GREP} -lR "malloc\.h" ${WRKSRC} | ${XARGS} ${REINPLACE_CMD} \
-		-e "s|malloc\.h|stdlib.h|"
-	 @${REINPLACE_CMD} -e 's,%%CXXFLAGS%%,${CXXFLAGS},g' \
-		${WRKSRC}/Make/makedefs
+.if ${OSVERSION} < 500035
+EXTRA_PATCHES=	${FILESDIR}/freebsd4-osg-patches
+.endif
+
+.if !defined(NOPORTDOCS)
+
+BUILD_DEPENDS+=	doxygen:${PORTSDIR}/devel/doxygen	\
+		dot:${PORTSDIR}/graphics/graphviz
+PORTDOCS=	html
+
+post-build:
+	cd ${WRKSRC}/doc/Doxyfiles && OSGHOME=${WRKSRC} doxygen all_Doxyfile
+
+pre-install:
+	${FIND} ${WRKSRC} -name '*.orig' -delete
 
 post-install:
-.if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
-	${CP} -r ${WRKSRC}/doc/ ${DOCSDIR}
+	${CP} -r ${WRKSRC}/doc/doxygen/ ${DOCSDIR}
+
 .endif
 
 .include <bsd.port.post.mk>
