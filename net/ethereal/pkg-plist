@@ -1,6 +1,8 @@
 bin/editcap
 bin/ethereal
+bin/mergecap
 bin/tethereal
+bin/text2pcap
 etc/manuf
 lib/ethereal/plugins/%%PORTVERSION%%/gryphon.so
 lib/ethereal/plugins/%%PORTVERSION%%/mgcp.so
