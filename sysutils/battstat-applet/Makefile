@@ -13,6 +13,8 @@ DISTNAME=	battstat_applet-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 
+BROKEN=		"Does not install"
+
 WRKSRC=		${WRKDIR}/${DISTNAME}
 
 USE_REINPLACE=	yes
