@@ -4644,6 +4644,7 @@ mozilla-embedded ports/www/mozilla-embedded
 mozilla-embedded-devel ports/www/mozilla-embedded-devel
 mozilla-embedded-vendor ports/www/mozilla-embedded-vendor
 mozilla-fonts	ports/x11-fonts/mozilla-fonts
+mozilla-gtk2	ports/www/mozilla-gtk2
 mozilla-headers	ports/www/mozilla-headers
 mozilla-headers-devel	ports/www/mozilla-headers-devel
 mozilla-headers-vendor	ports/www/mozilla-headers-vendor
