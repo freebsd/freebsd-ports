@@ -7,7 +7,7 @@
 
 PORTNAME=	pine
 PORTVERSION=	4.60
-CATEGORIES=	mail news
+CATEGORIES=	mail news ipv6
 MASTER_SITES=	ftp://ftp.cac.washington.edu/pine/ \
 		http://mirror.sit.wisc.edu/pub/net/mail/pine/ \
 		ftp://sunsite.icm.edu.pl/pub/unix/mail/pine/ \
@@ -39,6 +39,10 @@ EXTRA_OPTS+=	SSLTYPE=unix
 .else
 EXTRA_OPTS+=	SSLTYPE=unix.nopwd
 .endif
+.endif
+
+.if defined(WITH_IPV6)
+EXTRA_OPTS+=	IP=6
 .endif
 
 MAN1=		pine.1 pico.1 pilot.1 rpdump.1 rpload.1
