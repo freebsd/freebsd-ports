@@ -1,6 +1,5 @@
 bin/gnome-font-install
 etc/gnome/fonts/gnome-print-ghostscript.fontmap
-@exec touch %D/etc/gnome/fonts/gnome-print-x11.fontmap
 etc/gnome/fonts/gnome-print-x11.fontmap
 etc/gnome/fonts/gnome-print.fontmap
 etc/printConf.sh
