@@ -3,7 +3,7 @@
 # Date created:         20 Sep 1997
 # Whom:                 Thomas Gellekum <tg@FreeBSD.ORG>
 #
-# $Id: Makefile,v 1.10 1999/01/11 11:29:24 dirk Exp $
+# $Id: Makefile,v 1.11 1999/04/13 07:17:06 mharo Exp $
 #
 
 DISTNAME=       xfpovray-1.3.1
@@ -26,6 +26,6 @@ USE_GMAKE=	yes
 NO_INSTALL_MANPAGES=	yes
 
 post-patch:
-	@${PERL} -pi -e "s|\@LOCALBASE\@|${LOCALBASE}|g;" ${WRKSRC}/src/xfpovray.h
+	@/usr/bin/perl -pi -e "s|\@LOCALBASE\@|${LOCALBASE}|g;" ${WRKSRC}/src/xfpovray.h
 
 .include <bsd.port.mk>
