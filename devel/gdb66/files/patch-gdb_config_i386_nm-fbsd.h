@@ -4,7 +4,7 @@
  
  #include "i386/nm-i386.h"
  
-+#ifndef _SYS_PARAM_H_
++#ifdef HAVE_SYS_PARAM_H
 +#include <sys/param.h>
 +#endif
 +
