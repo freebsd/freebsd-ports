@@ -14,7 +14,9 @@ bin/autodia_java.pl
 %%SITE_PERL%%/Autodia/Handler/PHP.pm
 %%SITE_PERL%%/Autodia/Handler/Perl.pm
 %%SITE_PERL%%/Autodia/Handler/SQL.pm
+%%SITE_PERL%%/Autodia/Handler/Torque.pm
 %%SITE_PERL%%/Autodia/Handler/dia.pm
+%%SITE_PERL%%/Autodia/Handler/python.pm
 %%SITE_PERL%%/Autodia.pm
 %%SITE_PERL%%/autodia.pl
 %%SITE_PERL%%/autodia_java.pl
@@ -30,4 +32,5 @@ bin/autodia_java.pl
 %%PORTDOCS%%%%DOCSDIR%%/FAQ
 %%PORTDOCS%%%%DOCSDIR%%/INSTALL
 %%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/TODO
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
