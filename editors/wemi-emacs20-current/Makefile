@@ -3,7 +3,7 @@
 # Date created:		23 September 1998
 # Whom:			Shigeyuki FUKUSHIMA <shige@kuis.kyoto-u.ac.jp>
 #
-# $Id: Makefile,v 1.4 1999/03/01 09:37:53 shige Exp $
+# $Id: Makefile,v 1.5 1999/03/09 04:40:12 shige Exp $
 #
 
 DISTNAME=	wemi-${WEMI_VER}
@@ -66,9 +66,10 @@ post-install:
 	done)
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${PREFIX}/${WEMIDOCDIR}
-	@for i in ChangeLog NEWS README.* TODO VERSION ; do \
-		${INSTALL_DATA} ${WRKSRC}/$${i} ${PREFIX}/${WEMIDOCDIR}/ ; \
-	done
+	@(cd ${WRKSRC} ; \
+	for i in ChangeLog NEWS README.* TODO VERSION ; do \
+		${INSTALL_DATA} $${i} ${PREFIX}/${WEMIDOCDIR}/ ; \
+	done)
 .endif
 
 .include <bsd.port.post.mk>
