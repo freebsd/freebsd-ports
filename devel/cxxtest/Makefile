@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	cxxtest
-PORTVERSION=	3.7.1
+PORTVERSION=	3.9.1
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -19,8 +19,8 @@ NO_BUILD=	yes
 USE_PERL5_RUN=	yes
 
 DOCS=		README TODO docs/*.html docs/*.png
-EXAMPLES=	sample/*.cpp sample/*.h sample/*.tpl \
-	  	sample/Construct sample/Makefile.unix \
+EXAMPLES=	sample/*.cpp sample/*.h sample/*.tpl sample/Construct \
+		sample/Makefile.unix sample/gui/GreenYellowRed.h
 
 do-install:
 # scripts
@@ -34,15 +34,13 @@ do-install:
 	cd ${WRKSRC} && ${INSTALL_DATA} ${DOCS} ${DOCSDIR}
 	@${ECHO_MSG} "* Documentation has been installed in ${DOCSDIR}"
 .endif
-	@${MKDIR} ${EXAMPLESDIR}/test
+	@${MKDIR} ${EXAMPLESDIR}
 	cd ${WRKSRC} && ${INSTALL_DATA} ${EXAMPLES} ${EXAMPLESDIR}
-	cd ${WRKSRC}/test && ${TAR} -cf - * | \
-		(cd ${EXAMPLESDIR}/test && ${TAR} -xf -)
 	@${ECHO_MSG} "* Samples have been installed in ${EXAMPLESDIR}"
-	@${ECHO_MSG} "* Beware that the sample makefiles aren't compatible with FreeBSD's make,"
-	@${ECHO_MSG} "* use ${GMAKE} instead."
 	@${ECHO_MSG} "* The CxxTest scripts have been installed into ${PREFIX}/bin/."
 	@${ECHO_MSG} "* The include files are in ${PREFIX}/include/cxxtest/"
+	@${ECHO_MSG} "* Beware that the sample makefiles aren't compatible with FreeBSD's make,"
+	@${ECHO_MSG} "* use ${GMAKE} instead."
 	@${ECHO_MSG} "* The obvious reminder: don't forget to add ${PREFIX}/include to your include path."
 
 .include <bsd.port.mk>
