@@ -22,6 +22,8 @@ RUN_DEPENDS=	${RUBY_SITEARCHLIBDIR}/gtk.so:${PORTSDIR}/x11-toolkits/ruby-gtk \
 		${RUBY_SITELIBDIR}/gdk_imlib.rb:${PORTSDIR}/graphics/ruby-gdk_imlib \
 		${RUBY_SITEARCHLIBDIR}/libart.so:${PORTSDIR}/graphics/ruby-libart
 
+BROKEN=		Incomplete pkg-plist
+
 USE_RUBY=	yes
 USE_RUBY_EXTCONF=	yes
 USE_XLIB=	yes

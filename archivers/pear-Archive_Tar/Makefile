@@ -12,6 +12,8 @@ CATEGORIES=	archivers pear
 MAINTAINER=	antonio@php.net
 COMMENT=	PEAR tar file management class
 
+BROKEN=		Incomplete pkg-plist
+
 USE_PHP=	yes
 WANT_PHP_PEAR=	yes
 
