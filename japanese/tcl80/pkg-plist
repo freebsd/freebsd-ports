@@ -31,7 +31,7 @@ share/doc/tcl8.0jp/changes
 share/doc/tcl8.0jp/README.JP
 share/doc/tcl8.0jp/changes.JP
 share/doc/tcl8.0jp/Incompat80jp
-share/doc/tcl8.0jp/README.FreeBSD
+share/doc/tcl8.0jp/README.FreeBSD.JP
 @dirrm include/tcl8.0jp/generic
 @dirrm include/tcl8.0jp/unix
 @dirrm include/tcl8.0jp
