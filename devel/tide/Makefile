@@ -6,24 +6,23 @@
 #
 
 PORTNAME=	tide
-PORTVERSION=	1.6
+PORTVERSION=	2.0.4
 CATEGORIES=	devel
-MASTER_SITES=	http://www.not-compatible.org/files/ \
+MASTER_SITES=	http://t3x.dyndns.org/files/ \
 		http://www.t3x.org/files/
 DISTNAME=	tide-${PORTVERSION:S/.//g}
 
 MAINTAINER=	nmh@t3x.org
-COMMENT=	T3X Integrated Development Environment and T3X Tool classes
-
-BROKEN=		Does not build
+COMMENT=	T3X Integrated Development Environment and tools
 
 BUILD_DEPENDS=	tx:${PORTSDIR}/lang/t3x
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
-MAKE_ENV+=	T3XDIR=/usr/local/t3x/r7
+ONLY_FOR_ARCHS=	i386
+
+MAKE_ENV+=	T3XDIR=${LOCALBASE}/t3x/r8
 
 do-configure:
-	@(cd ${WRKSRC}; ${LN} Makefile.UNX Makefile)
-	@(cd ${WRKSRC}/T3Xtools; ${LN} Makefile.UNX Makefile)
+	@(cd ${WRKSRC}; make unix)
 
 .include <bsd.port.mk>
