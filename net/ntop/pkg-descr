@@ -1,0 +1,6 @@
+ntop is a tool that shows the network usage, similar to what the popular top
+Unix command does. ntop is based on libpcap.
+
+http://jake.unipi.it/~deri/ntop/
+
+Bill Fumerola <billf@chc-chimes.com>
