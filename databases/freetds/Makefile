@@ -5,24 +5,26 @@
 # $FreeBSD$
 
 PORTNAME=	freetds
-PORTVERSION=	0.61
-PORTREVISION=	1
+PORTVERSION=	0.61.2
 CATEGORIES=	databases
 MASTER_SITES=	${MASTER_SITE_SUNSITE}
 MASTER_SITE_SUBDIR=	ALPHA/freetds/stable
-EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	kiesel@schlund.de
 COMMENT=	Sybase/Microsoft TDS protocol library
 
 LIB_DEPENDS=	iconv.3:${PORTSDIR}/converters/libiconv
+BUILD_DEPENDS=	${LOCALBASE}/bin/automake17:${PORTSDIR}/devel/automake17
 
 USE_REINPLACE=	yes
 USE_GMAKE=	yes
+GNU_GONFIGURE=	yes
 USE_LIBTOOL=	yes
+NO_AUTOCONF=	yes
+NO_AUTOMAKE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
-CONFIGURE_ARGS=	--with-tdsver=4.2
+CONFIGURE_ARGS=	--with-tdsver=5.0
 INSTALLS_SHLIB=	yes
 
 MAN1=		freebcp.1 tsql.1
@@ -55,6 +57,11 @@ post-patch:
 		 s|/locales.conf|/locales.conf.dist|g ; \
 		 s|/pool.conf|/pool.conf.dist|g ; \
 		 s| common.h||g'
+
+post-configure:
+	@cd ${WRKSRC} && ${REINPLACE_CMD} -e \
+		's|automake-1..|automake17|g ; \
+		 s|aclocal-1..|aclocal17|g' Makefile
 
 post-install:
 	@${MKDIR} ${PREFIX}/etc/freetds
