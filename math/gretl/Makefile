@@ -14,8 +14,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
 
-BUILD_DEPENDS=	autoconf:${PORTSDIR}/devel/autoconf \
-		gnuplot:${PORTSDIR}/math/gnuplot
+BUILD_DEPENDS=	gnuplot:${PORTSDIR}/math/gnuplot
 LIB_DEPENDS=	gmp.6:${PORTSDIR}/math/libgmp4 \
 		xml2.5:${PORTSDIR}/textproc/libxml2 \
 		gtk-x11-2.0.0:${PORTSDIR}/x11-toolkits/gtk20
@@ -25,6 +24,7 @@ USE_X_PREFIX=	yes
 USE_GMAKE=	yes
 USE_GNOMENG=	yes
 GNU_CONFIGURE=	yes
+USE_AUTOCONF_VER=	253
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
@@ -42,8 +42,5 @@ LIB_DEPENDS+=	gnomeprintui-2.0:${PORTSDIR}/x11-toolkits/libgnomeprintui \
 USE_GNOME=	gnomeprefix
 PLIST_SUB+=	GNOME2:="" DATADIR="share/gnome"
 .endif
-
-pre-configure:
-	@cd ${CONFIGURE_WRKSRC} && ${LOCALBASE}/bin/autoconf
 
 .include <bsd.port.mk>
