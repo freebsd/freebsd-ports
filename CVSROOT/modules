@@ -901,6 +901,7 @@ crypto_libdes	src/crypto/libdes
 crypto_openssh	src/crypto/openssh
 crypto_telnet	src/crypto/telnet
 cryptopp	ports/security/cryptopp
+cryptoslam	ports/games/cryptoslam
 cs		ports/devel/cs
 cscope		ports/devel/cscope
 csh		src/bin/csh
