@@ -956,8 +956,12 @@ jdk%%JDK_VERSION%%/jre/lib/fonts/LucidaBrightDemiItalic.ttf
 jdk%%JDK_VERSION%%/jre/lib/fonts/LucidaBrightItalic.ttf
 jdk%%JDK_VERSION%%/jre/lib/fonts/LucidaBrightRegular.ttf
 jdk%%JDK_VERSION%%/jre/lib/fonts/LucidaSansDemiBold.ttf
+jdk%%JDK_VERSION%%/jre/lib/fonts/LucidaSansDemiOblique.ttf
+jdk%%JDK_VERSION%%/jre/lib/fonts/LucidaSansOblique.ttf
 jdk%%JDK_VERSION%%/jre/lib/fonts/LucidaSansRegular.ttf
 jdk%%JDK_VERSION%%/jre/lib/fonts/LucidaTypewriterBold.ttf
+jdk%%JDK_VERSION%%/jre/lib/fonts/LucidaTypewriterBoldOblique.ttf
+jdk%%JDK_VERSION%%/jre/lib/fonts/LucidaTypewriterOblique.ttf
 jdk%%JDK_VERSION%%/jre/lib/fonts/LucidaTypewriterRegular.ttf
 jdk%%JDK_VERSION%%/jre/lib/fonts/fonts.dir
 jdk%%JDK_VERSION%%/jre/lib/i386/awt_robot
