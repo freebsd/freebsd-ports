@@ -13,6 +13,4 @@ PORTVERSION=	1.0.0
 PORTREVISION=	2
 MASTERDIR=	${.CURDIR}/../ispell
 
-BROKEN=		"Install fails"
-
 .include        "${MASTERDIR}/Makefile"
