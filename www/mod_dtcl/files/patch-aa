@@ -1,12 +1,18 @@
---- testdtcl.c.orig	Mon Oct 18 10:29:02 1999
-+++ testdtcl.c	Sun Jan  9 19:13:53 2000
+--- testdtcl.c.orig	Mon Dec  6 00:26:28 1999
++++ testdtcl.c	Thu Feb 17 15:01:52 2000
 @@ -14,4 +14,5 @@
  #include <tcl.h>
  #include <unistd.h>
 +#include <stdlib.h> /* In older FreeBSD, this is where getopt(3) lives */
  
  #ifndef DEBUG_SCRIPT_DIR
-@@ -229,4 +230,5 @@
+@@ -51,5 +52,4 @@
+ 	    "Testdtcl is out of date, you should only "
+ 	    "really be using it if you wish to improve it\n");
+-    exit(0);
+ 
+     interp = Tcl_CreateInterp();
+@@ -233,4 +233,5 @@
  	}
      }
 +    return 0;
