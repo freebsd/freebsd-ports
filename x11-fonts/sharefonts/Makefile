@@ -14,8 +14,6 @@ MAINTAINER=	dburr@FreeBSD.org
 COMMENT=	A collection of shareware ATM fonts from the CICA archives
 
 RESTRICTED=	"Shareware.  Cannot be distributed w/o prior authorization."
-NO_CDROM=	${RESTRICTED}
-NO_PACKAGE=	${RESTRICTED}
 
 NO_BUILD=	yes
 
