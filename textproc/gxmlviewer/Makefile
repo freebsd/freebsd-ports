@@ -7,20 +7,22 @@
 #
 
 PORTNAME=	gxmlviewer
-PORTVERSION=	1.3.1
+PORTVERSION=	1.3.3
 CATEGORIES=	textproc
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
 
-LIB_DEPENDS=	intl.1:${PORTSDIR}/devel/gettext \
-		xml2.5:${PORTSDIR}/textproc/libxml2
+LIB_DEPENDS=	xml2.5:${PORTSDIR}/textproc/libxml2
 
+USE_X_PREFIX=	yes
 USE_GNOME=	yes
 GNU_CONFIGURE=	yes
 
 post-patch:
-	@${PERL} -pi -e "s,-lpthread,${PTHREAD_LIBS},g" ${WRKSRC}/configure
+	@${PERL} -pi -e 's|-lpthread|${PTHREAD_LIBS}|g ; \
+		 s|<iconv.h>|<giconv.h>|g ; \
+		 s|-liconv|-lgiconv|g' ${WRKSRC}/configure
 
 .include <bsd.port.mk>
