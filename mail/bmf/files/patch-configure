@@ -1,0 +1,14 @@
+--- configure.orig	Fri Apr  4 14:07:12 2003
++++ configure	Fri Apr  4 14:08:48 2003
+@@ -134,9 +134,9 @@
+     AR=ar
+     ARFLAGS="-rc"
+     LD=gcc
+-    LDFLAGS="$LDDBG"
++    LDFLAGS="${LDFLAGS}"
+     SYSLIBS=""
+-    LIBDB_LIB=""
++    LIBDB_LIB="${DB_LIBNAME}"
+     MYSQL_LIB="-lmysqlclient"
+     ;;
+   OpenBSD)
