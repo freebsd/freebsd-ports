@@ -1,0 +1,29 @@
+--- aclocal.m4.orig	Thu Mar 22 11:44:24 2001
++++ aclocal.m4	Thu Mar 22 11:45:00 2001
+@@ -631,7 +631,7 @@
+ 
+ CXXFLAGS="$CXXFLAGS -I$qt_includes"
+ LDFLAGS="$X_LDFLAGS"
+-LIBS="-lqt -lXext -lX11 $LIBSOCKET"
++LIBS="-lqt2 -lXext -lX11 $LIBSOCKET"
+ LD_LIBRARY_PATH=
+ export LD_LIBRARY_PATH
+ LIBRARY_PATH=
+@@ -678,7 +678,7 @@
+ [
+ AC_REQUIRE([K_PATH_X])
+ AC_REQUIRE([KDE_USE_QT])
+-LIBQT="-lqt"
++LIBQT="-lqt2"
+ if test $kde_qtver = 2; then
+ 
+   AC_REQUIRE([AC_FIND_PNG])
+@@ -825,7 +825,7 @@
+ AC_SUBST(QT_LDFLAGS)
+ AC_PATH_QT_MOC
+ 
+-LIB_QT='-lqt $(LIBPNG) -lXext $(LIB_X11) $(X_PRE_LIBS)'
++LIB_QT='-lqt2 $(LIBPNG) -lXext $(LIB_X11) $(X_PRE_LIBS)'
+ AC_SUBST(LIB_QT)
+ 
+ ])
