@@ -1,0 +1,16 @@
+       The Archie module finds files available via anonymous ftp
+       by making requests to an Archie server.  The package
+       communicates with the Archie server via the Prospero
+       protocol, which is layered on the Asynchronous Reliable
+       Delivery Protocol, which is layered on UDP.
+
+       The usual entry point is Archie::archie_request, which
+       takes arguments similar to the Unix archie command-line
+       client, and returns an array of hash references which
+       point to the returned data.
+
+       The routine Archie::archie_cancel cancels the request on
+       the server; this stops the server from sending packets to
+       a canceled client process.
+
+       This release is $Revision: 1.5 $.
