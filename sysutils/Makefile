@@ -457,6 +457,7 @@
     SUBDIR += xfce4-showdesktop-plugin
     SUBDIR += xfce4-systemload-plugin
     SUBDIR += xfce4-utils
+    SUBDIR += xfce4-wavelan-plugin
     SUBDIR += xfsm
     SUBDIR += xin
     SUBDIR += xloadface
