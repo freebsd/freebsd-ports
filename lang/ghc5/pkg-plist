@@ -1,5 +1,6 @@
 bin/ghc
 bin/ghc-4.08
+bin/ghcprof
 bin/hp2ps
 bin/stat2resid
 bin/DrIFT
