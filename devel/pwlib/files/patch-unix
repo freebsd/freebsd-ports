@@ -1,0 +1,70 @@
+*** make/unix.mak.orig	Thu Aug 28 08:39:18 2003
+--- make/unix.mak	Thu Aug 28 08:42:30 2003
+*************** endif # linux
+*** 338,348 ****
+  
+  ifeq ($(OSTYPE),FreeBSD)
+  
+! ifeq ($(MACHTYPE),x86)
+! ifdef CPUTYPE
+! STDCCFLAGS	+= -mcpu=$(CPUTYPE)
+! endif
+! endif
+  
+  ifndef OSRELEASE
+  OSRELEASE	:= $(shell sysctl -n kern.osreldate)
+--- 338,348 ----
+  
+  ifeq ($(OSTYPE),FreeBSD)
+  
+! #ifeq ($(MACHTYPE),x86)
+! #ifdef CPUTYPE
+! #STDCCFLAGS	+= -mcpu=$(CPUTYPE)
+! #endif
+! #endif
+  
+  ifndef OSRELEASE
+  OSRELEASE	:= $(shell sysctl -n kern.osreldate)
+*************** SHELL		:= /bin/sh
+*** 871,881 ****
+  
+  # Directories
+  
+! ifdef PREFIX
+! UNIX_INC_DIR	= $(PREFIX)/include/ptlib/unix
+! else
+  UNIX_INC_DIR	= $(PWLIBDIR)/include/ptlib/unix
+! endif
+  
+  ifndef UNIX_SRC_DIR
+  UNIX_SRC_DIR	= $(PWLIBDIR)/src/ptlib/unix
+--- 871,881 ----
+  
+  # Directories
+  
+! ##ifdef PREFIX
+! ##UNIX_INC_DIR	= $(PREFIX)/include/ptlib/unix
+! ##else
+  UNIX_INC_DIR	= $(PWLIBDIR)/include/ptlib/unix
+! ##endif
+  
+  ifndef UNIX_SRC_DIR
+  UNIX_SRC_DIR	= $(PWLIBDIR)/src/ptlib/unix
+*************** LDFLAGS		+= $(DEBLDFLAGS)
+*** 912,918 ****
+  else
+  
+  ifneq ($(OSTYPE),Darwin)
+!   OPTCCFLAGS	+= -O3 -DNDEBUG
+  else
+    OPTCCFLAGS	+= -O2 -DNDEBUG
+  endif
+--- 912,919 ----
+  else
+  
+  ifneq ($(OSTYPE),Darwin)
+! #  OPTCCFLAGS	+= -O3 -DNDEBUG
+!   OPTCCFLAGS	+= -DNDEBUG
+  else
+    OPTCCFLAGS	+= -O2 -DNDEBUG
+  endif

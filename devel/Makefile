@@ -823,6 +823,7 @@
     SUBDIR += pth
     SUBDIR += ptypes
     SUBDIR += publib
+    SUBDIR += pwlib
     SUBDIR += py-ansistyle
     SUBDIR += py-ciphon
     SUBDIR += py-coro

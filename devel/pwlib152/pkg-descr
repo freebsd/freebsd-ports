@@ -1,0 +1,12 @@
+PWLib is a multi-platform code library that can be used to write
+applications that will compile and run on the BSD Unixes, Windows, Linux
+and a few other Unix variants. It was developed by Equivalence Ltd Pty.
+
+It is used by the OpenH323 library.
+
+NOTE: This port does not install anything.
+The ports which use pwlib all look inside their local
+pwlib port directory for the library and header files
+and are compiled statically.
+
+WWW: http://www.openh323.org/
