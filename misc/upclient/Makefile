@@ -6,9 +6,10 @@
 #
 
 PORTNAME=	upclient
-PORTVERSION=	4.2.1.23
+PORTVERSION=	5.0.b5
 CATEGORIES=	misc
-MASTER_SITES=	http://uptimes.atomicvoid.net/files/
+MASTER_SITES=	http://uptimes.wonko.com/files/
+DISTNAME=	${PORTNAME}-${PORTVERSION:R}${PORTVERSION:E}
 
 MAINTAINER=	cyrille.lefevre@laposte.net
 
@@ -22,20 +23,24 @@ BUILD_WRKSRC=	${WRKSRC}/src
 MSG_FILE=	${PKGDIR}/pkg-message
 PKGMESSAGE=	${WRKDIR}/pkg-message
 
+MAN8=		upclient.8
+
 # Local variables
 #
 
 DOC_FILES=	AUTHORS COPYING FAQ HISTORY INSTALL README TODO
+DOC_FILES+=	HISTORY-BETA
 
 .include <bsd.port.pre.mk>
 
 # Post-patch
 #
 
-post-patch: patch-script patch-message
+post-patch: patch-prefix patch-message
 
-patch-script:
-	@${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|g' ${WRKSRC}/scripts/upchk
+patch-prefix:
+	@${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|g' \
+		${WRKSRC}/scripts/upchk ${WRKSRC}/src/Makefile
 
 patch-message:
 	@${SED} 's|%%PREFIX%%|${PREFIX}|g' ${MSG_FILE} > ${PKGMESSAGE}
@@ -43,14 +48,18 @@ patch-message:
 # Install
 #
 
-do-install: install-program install-sample install-script
+do-install: install-program install-man install-sample install-script
 
 install-program:
-	@${INSTALL_PROGRAM} -g kmem -m 2555 ${WRKSRC}/src/upclient \
+	@${INSTALL_PROGRAM} -g kmem -m 2555 ${WRKSRC}/src/products/upclient \
 		${PREFIX}/sbin/upclient
 
+install-man:
+	@${INSTALL_MAN} ${WRKSRC}/src/products/upclient.8 \
+		${MAN8PREFIX}/man/man8
+
 install-sample:
-	@${INSTALL_DATA} -m 600 ${WRKSRC}/conf/upclient.conf \
+	@${INSTALL_DATA} -m 600 ${WRKSRC}/src/products/upclient.conf \
 		${PREFIX}/etc/upclient.conf.sample
 
 install-script:

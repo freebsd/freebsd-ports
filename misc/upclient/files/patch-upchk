@@ -1,5 +1,5 @@
---- scripts/upchk.orig	Fri Jun  1 01:30:24 2001
-+++ scripts/upchk	Sun Nov 18 16:45:59 2001
+--- scripts/upchk.orig	Mon Sep 23 19:28:31 2002
++++ scripts/upchk	Sat Oct 19 22:52:27 2002
 @@ -24,7 +24,7 @@
  #
  
