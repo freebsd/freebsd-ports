@@ -7,6 +7,7 @@
 
 PORTNAME=	tvp
 PORTVERSION=	0.9.7.1
+PORTREVISION=	1
 CATEGORIES=	games tk82
 MASTER_SITES=	http://www3.sympatico.ca/john.vanderhoek/tim/src/president/
 
@@ -39,14 +40,8 @@ post-install:
 .endfor
 .endif
 	${INSTALL_MAN} ${FILESDIR}/tvp.6 ${PREFIX}/man/man6/tvp.6
-	a='${PREFIX}/share/doc/tvp/' perl -pi -e 's/TOKEN/$$ENV{a}/' \
+	a='${PREFIX}/share/doc/tvp/' ${PERL} -pi -e 's/TOKEN/$$ENV{a}/' \
 		${PREFIX}/man/man6/tvp.6
 	${STRIP_CMD} ${PREFIX}/bin/aprez ${PREFIX}/bin/prez ${PREFIX}/bin/xpwish
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 500113
-BROKEN=		"Does not compile on FreeBSD ${OSVERSION}"
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
