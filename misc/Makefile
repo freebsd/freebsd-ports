@@ -211,6 +211,7 @@
     SUBDIR += muuz
     SUBDIR += nsf
     SUBDIR += numchar
+    SUBDIR += nut
     SUBDIR += nwrite
     SUBDIR += orville-write
     SUBDIR += opencyc
