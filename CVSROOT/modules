@@ -7449,6 +7449,7 @@ tclock		ports/x11-clocks/tclock
 tclreadline	ports/devel/tclreadline
 tcltls		ports/devel/tcltls
 tcltutor	ports/lang/tcltutor
+tclxml		ports/devel/tclxml
 tcm		ports/graphics/tcm
 tcpblast	ports/benchmarks/tcpblast
 tcpcat		ports/net/tcpcat
