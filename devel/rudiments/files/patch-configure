@@ -1,6 +1,26 @@
---- configure.orig	Sat Nov 29 22:39:23 2003
-+++ configure	Wed May 26 15:31:52 2004
-@@ -13768,7 +13768,7 @@
+--- configure.orig	Tue Dec 30 20:12:47 2003
++++ configure	Fri May 28 15:32:46 2004
+@@ -1505,7 +1505,7 @@
+   enableval="$enable_debug"
+   CXXFLAGS="-g -pg -fno-exceptions -Wall"; INSTALLSTRIP=""
+ else
+-  CXXFLAGS="-fomit-frame-pointer -fno-exceptions -Wall"; INSTALLSTRIP="-s"
++  CXXFLAGS="${CXXFLAGS} -fomit-frame-pointer -fno-exceptions -Wall"; INSTALLSTRIP="-s"
+ fi;
+ 
+ # Check whether --with-system-libtool or --without-system-libtool was given.
+@@ -19444,8 +19444,8 @@
+ 
+ 
+ HAVE_PTHREAD=""
+-PTHREADINCLUDES=""
+-PTHREADLIB=""
++#PTHREADINCLUDES=""
++#PTHREADLIB=""
+ 
+ if ( test "$cross_compiling" = "yes" )
+ then
+@@ -25251,7 +25251,7 @@
  #define RUDIMENTS_VERSION "$RUDIMENTS_VERSION"
  _ACEOF
  
