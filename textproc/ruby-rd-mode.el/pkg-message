@@ -1,0 +1,8 @@
+====
+To use rd-mode in Emacs/XEmacs, add the following lines to
+your ~/.emacs:
+
+(autoload 'rd-mode "rd-mode"
+  "major mode for ruby document formatter RD" t)
+(add-to-list 'auto-mode-alist '("\\.rd\\(\.en\\|\.ja\\)?$" . rd-mode))
+====
