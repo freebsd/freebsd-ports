@@ -20,10 +20,4 @@ WRKSRC=		${WRKDIR}/Striphigh-${PORTVERSION}
 
 MAN3=		Text::Striphigh.3
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 500000
-BROKEN=		"Broken pkg-plist"
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
