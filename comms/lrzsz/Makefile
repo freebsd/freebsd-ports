@@ -6,11 +6,13 @@
 #
 # $FreeBSD$
 
-DISTNAME=	lrzsz-0.12.19
+DISTNAME=	lrzsz-0.12.20
 CATEGORIES=	comms
-MASTER_SITES=	ftp://ftp.ihg.uni-duisburg.de/uwe/ \
-		ftp://ftp.ohse.de/comp/unix/comm/ \
-		ftp://ftp.uven.ru/pub/unix/comms/
+MASTER_SITES=	ftp://tirka.ohse.de/uwe/releases/  \
+		ftp://ftp.netsw.org/netsw/Network/Modem/Protocols/ZModem/lrzsz/  \
+		http://www.nrw.net/uwe/archive/  \
+		ftp://ftp.ihg.uni-duisburg.de/uwe/  \
+		ftp://ftp.kddlabs.co.jp/pub/Linux/packages/stampedelinux/stampedelinux/unstable/pre-0.90/source/comm/lrzsz/source/
 
 MAINTAINER=	obrien@FreeBSD.org
 
