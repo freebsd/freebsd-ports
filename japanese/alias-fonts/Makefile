@@ -1,4 +1,4 @@
-# Ports collection makefile for: Japanese Font Setup for Netscape browsers
+# Ports collection makefile for: Japanese Font Setup
 # Date created:		22 Jun 1998
 # Whom:                 sada
 #
