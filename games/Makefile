@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.206 1999/05/27 13:57:06 tg Exp $
+# $Id: Makefile,v 1.207 1999/05/29 05:00:12 steve Exp $
 #
 
     SUBDIR += 3dc
@@ -76,6 +76,7 @@
     SUBDIR += netrek-COW3-bin
     SUBDIR += netris
     SUBDIR += oneko
+    SUBDIR += oneko-sakura
     SUBDIR += oonsoo
     SUBDIR += pmars
     SUBDIR += pp
