@@ -17,6 +17,6 @@ CATEGORIES=	japanese x11
 
 MAINTAINER=	honda@kashio.info.mie-u.ac.jp
 
-USE_X11=	yes
+USE_X_PREFIX=	yes
 HAS_CONFIGURE=  yes
 CONFIGURE_ARGS=	--prefix=${PREFIX} --enable-menubar --enable-kanji --with-x

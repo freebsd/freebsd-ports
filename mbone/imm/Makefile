@@ -3,7 +3,7 @@
 # Date created:		13 October 1994
 # Whom:			wollman
 #
-# $Id: Makefile,v 1.15 1997/09/13 16:58:21 fenner Exp $
+# $Id: Makefile,v 1.17 1998/03/20 14:35:13 tg Exp $
 #
 
 DISTNAME=	imm-3.5a1
@@ -16,7 +16,7 @@ MAINTAINER=	fenner@freebsd.org
 
 LIB_DEPENDS=	tk80\\.1:${PORTSDIR}/x11/tk80
 
-USE_X11=	yes
+USE_X_PREFIX=	yes
 
 post-extract:
 	@${MKDIR} ${WRKSRC}/freebsd

@@ -3,7 +3,7 @@
 # Date created:				1 November 1996
 # Whom:	      Bill Fenner <fenner@FreeBSD.ORG>
 #
-#   $Id: Makefile,v 1.5 1997/09/25 00:10:58 fenner Exp $
+#   $Id: Makefile,v 1.6 1998/02/21 22:38:06 fenner Exp $
 #
 
 DISTNAME=	rtpmon-1.0a7
@@ -16,7 +16,7 @@ LIB_DEPENDS=	tk42\\.1:${PORTSDIR}/x11/tk42
 BUILD_DEPENDS=	autoconf:${PORTSDIR}/devel/autoconf
 
 GNU_CONFIGURE=	yes
-USE_X11=	yes
+USE_X_PREFIX=	yes
 MAN1=		rtpmon.1
 
 pre-configure:

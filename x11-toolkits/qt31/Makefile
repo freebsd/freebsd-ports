@@ -3,7 +3,7 @@
 # Date created:		30 Jul 1996
 # Whom:			searle@longacre.demon.co.uk
 #
-# $Id: Makefile,v 1.18 1998/07/20 16:51:14 andreas Exp $
+# $Id: Makefile,v 1.19 1998/07/21 14:05:32 asami Exp $
 #
 
 DISTNAME=	qt-${MAJ}.${MIN}
@@ -17,8 +17,8 @@ LIB_DEPENDS=	MesaGL\\.13\\.:${PORTSDIR}/graphics/Mesa2
 MAJ=		1
 MIN=		40
 USE_GMAKE=	yes
-USE_X11=	yes
-MAKE_ENV+=	QTDIR=${WRKSRC}
+USE_X_PREFIX=	yes
+MAKE_ENV=	QTDIR=${WRKSRC}
 
 MAN1=	moc.1
 MAN3=	QAccel.3qt QApplication.3qt QArray.3qt QAsyncIO.3qt \

@@ -3,7 +3,7 @@
 # Date created:		14 December 1994
 # Whom:			wollman
 #
-# $Id: Makefile,v 1.14 1998/03/17 07:47:52 tg Exp $
+# $Id: Makefile,v 1.15 1998/06/26 18:39:14 fenner Exp $
 #
 
 DISTNAME=	vic-2.8
@@ -16,7 +16,7 @@ MAINTAINER=	fenner@FreeBSD.ORG
 LIB_DEPENDS=	tk80\\.1:${PORTSDIR}/x11/tk80
 
 USE_AUTOCONF=	yes
-USE_X11=	yes
+USE_X_PREFIX=	yes
 MAN1=		vic.1
 
 post-install:

@@ -3,7 +3,7 @@
 # Date created:				4 May 1998
 # Whom:					Andrey Zakhvatov
 #
-# $Id: Makefile,v 1.4 1998/07/27 22:12:27 asami Exp $
+# $Id: Makefile,v 1.5 1998/08/04 00:55:57 mph Exp $
 #
 
 DISTNAME=	EZWGL-1.39
@@ -16,7 +16,7 @@ MAINTAINER=	andy@icc.surw.chel.su
 LIB_DEPENDS=	jpeg\\.9\\.:${PORTSDIR}/graphics/jpeg
 
 ALL_TARGET=	shared clean static
-USE_X11=	yes
+USE_X_PREFIX=	yes
 WRKSRC=		${WRKDIR}/${PKGNAME}
 
 MAN3=	EZ.3 EZ_ActivateNoteBookPage.3 EZ_ActivateWidget.3 \

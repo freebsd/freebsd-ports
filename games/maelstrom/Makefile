@@ -3,7 +3,7 @@
 # Date created:				13 May 1998
 # Whom:					Andrey Zakhvatov
 #
-# $Id: Makefile,v 1.2 1998/05/17 23:09:43 mph Exp $
+# $Id: Makefile,v 1.3 1998/07/27 23:24:42 asami Exp $
 #
 
 DISTNAME=		Maelstrom-1.4.3-L2.0.6-src
@@ -15,7 +15,7 @@ MAINTAINER=		andy@icc.surw.chel.su
 
 LIB_DEPENDS=		Xpm\\.4\\.:${PORTSDIR}/graphics/xpm
 
-USE_X11=		yes
+USE_X_PREFIX=		yes
 WRKSRC=			${WRKDIR}/Maelstrom
 
 do-configure:

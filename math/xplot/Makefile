@@ -3,7 +3,7 @@
 # Date created:		3 March 1997
 # Whom:			fenner
 #
-# $Id: Makefile,v 1.1.1.1 1997/03/06 01:23:08 asami Exp $
+# $Id: Makefile,v 1.2 1998/03/20 19:25:35 fenner Exp $
 #
 
 DISTNAME=	xplot-0.90
@@ -12,7 +12,7 @@ MASTER_SITES=	ftp://mercury.lcs.mit.edu/pub/shep/
 
 MAINTAINER=	fenner@FreeBSD.ORG
 
-USE_X11=	yes
+USE_X_PREFIX=	yes
 GNU_CONFIGURE=	yes
 
 XPLOT_DEMOS=	demo.0 demo.1 demo.2 demo.3 demo.4 demo.5 demo.6 demo.7

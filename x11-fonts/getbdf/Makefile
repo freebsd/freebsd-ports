@@ -3,7 +3,7 @@
 # Date created:         30 August 1996
 # Whom:                 ache
 #
-# $Id: Makefile,v 1.3 1996/08/31 05:11:40 asami Exp $
+# $Id: Makefile,v 1.4 1996/11/18 11:43:12 asami Exp $
 #
 
 DISTNAME=       getbdf
@@ -14,7 +14,7 @@ EXTRACT_SUFX=   .tar.Z
 
 MAINTAINER=     ache@FreeBSD.org
 
-USE_X11=        yes
+USE_X_PREFIX=   yes
 NO_WRKSUBDIR=   yes
 ALL_TARGET=     getbdf
 

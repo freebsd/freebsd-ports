@@ -3,7 +3,7 @@
 # Date created:				17 May 1998
 # Whom:					Andrey Zakhvatov
 #
-# $Id: Makefile,v 1.2 1998/07/20 16:34:57 asami Exp $
+# $Id: Makefile,v 1.3 1998/07/27 23:24:33 asami Exp $
 #
 
 DISTNAME=	battalion-1.4
@@ -17,7 +17,7 @@ LIB_DEPENDS=	MesaGL\\.13\\.:${PORTSDIR}/graphics/Mesa2 \
 		MesaGLU\\.13\\.:${PORTSDIR}/graphics/Mesa2
 
 ALL_TARGET=
-USE_X11=	yes
+USE_X_PREFIX=	yes
 WRKSRC=		${WRKDIR}/battalionSource
 
 MAN6=		battalion.6

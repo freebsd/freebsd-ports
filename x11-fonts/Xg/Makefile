@@ -3,7 +3,7 @@
 # Date created:         Sun Aug 13 12:36:14 CDT 1995
 # Whom:                 erich@rrnet.com
 #
-# $Id: Makefile,v 1.3 1996/11/12 02:19:36 obrien Exp $
+# $Id: Makefile,v 1.4 1997/01/27 15:59:35 erich Exp $
 #
 
 DISTNAME=	libXg.utf.fonts
@@ -14,6 +14,6 @@ MASTER_SITES=	ftp://ftp.ecf.toronto.edu/pub/plan9/matty/
 MAINTAINER=	erich@FreeBSD.org
 
 NO_WRKSUBDIR=	yes
-USE_X11=	yes
+USE_X_PREFIX=	yes
 
 .include <bsd.port.mk>

@@ -3,7 +3,7 @@
 # Date created:		19 Nov 1997
 # Whom:			Brian Handy <handy@physics.montana.edu>
 #
-# $Id: Makefile,v 1.4 1998/05/22 06:36:00 mph Exp $
+# $Id: Makefile,v 1.5 1998/06/04 20:33:16 steve Exp $
 #
 
 DISTNAME=	xosview-1.6.1.a
@@ -14,7 +14,7 @@ MASTER_SITES=	http://lore.ece.utexas.edu/~bgrayson/xosview/ \
 MAINTAINER=	handy@physics.montana.edu
 
 FETCH_BEFORE_ARGS=	-b
-USE_X11=	yes
+USE_X_PREFIX=	yes
 HAS_CONFIGURE=	yes
 MAN1=		xosview.1
 

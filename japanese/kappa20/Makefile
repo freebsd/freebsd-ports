@@ -3,7 +3,7 @@
 # Date created:		30 Sep 1997
 # Whom: Kawaguti Ginga <ginga@amalthea.phys.s.u-tokyo.ac.jp>
 #
-# $Id: Makefile,v 1.1.1.1 1998/04/22 14:19:07 kuriyama Exp $
+# $Id: Makefile,v 1.2 1998/04/24 05:37:15 asami Exp $
 #
 
 DISTNAME=	Kappa20-0.2
@@ -14,7 +14,7 @@ MASTER_SITES=	ftp://ftp.st.ryukoku.ac.jp/pub/X11/fonts/ \
 
 MAINTAINER=	ginga@amalthea.phys.s.u-tokyo.ac.jp
 
-USE_X11=	yes
+USE_X_PREFIX=	yes
 MAKE_ENV=	INSTALL_DATA="${INSTALL_DATA}"
 
 post-install:

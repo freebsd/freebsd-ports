@@ -3,7 +3,7 @@
 # Date created:				23 March 1998
 # Whom:					Andrey Zakhvatov
 #
-# $Id: Makefile,v 1.1.1.1 1998/05/18 14:18:40 tg Exp $
+# $Id: Makefile,v 1.2 1998/07/27 23:25:04 asami Exp $
 #
 
 DISTNAME=		xmastermind-0.1
@@ -15,7 +15,7 @@ MAINTAINER=		andy@icc.surw.chel.su
 
 LIB_DEPENDS=		xforms\\.0\\.:${PORTSDIR}/x11/xforms
 
-USE_X11=		yes
+USE_X_PREFIX=		yes
 
 do-install:
 	@ ${INSTALL_PROGRAM} ${WRKSRC}/xmastermind ${PREFIX}/bin

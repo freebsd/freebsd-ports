@@ -3,7 +3,7 @@
 # Date created:		So   2 Mär 1997 12:11:43 MET
 # Whom:			Andreas Klemm <andreas@klemm.gtn.com>
 #
-# $Id: Makefile,v 1.6 1998/04/30 08:52:05 tg Exp $
+# $Id: Makefile,v 1.7 1998/06/29 18:46:39 andreas Exp $
 #
 
 DISTNAME=	xmgr-4.1.1
@@ -19,7 +19,7 @@ BUILD_DEPENDS=	${X11BASE}/lib/libhlpclient.a:${PORTSDIR}/x11/libhelp \
 		${LOCALBASE}/lib/libmfhdf.a:${PORTSDIR}/graphics/hdf
 LIB_DEPENDS=	Xbae\\.6\\.:${PORTSDIR}/x11/xbae
 
-USE_X11=	YES
+USE_X_PREFIX=	YES
 REQUIRE_MOTIF=	YES
 HAS_CONFIGURE=	YES
 CONFIGURE_ARGS=	-prefix=${X11BASE} \

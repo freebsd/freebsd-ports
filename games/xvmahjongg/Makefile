@@ -3,7 +3,7 @@
 # Date created:				21 March 1998
 # Whom:					Andrey Zakhvatov
 #
-# $Id: Makefile,v 1.1.1.1 1998/05/14 07:11:06 tg Exp $
+# $Id: Makefile,v 1.2 1998/07/27 23:25:33 asami Exp $
 #
 
 DISTNAME=	xvmahjongg2.1
@@ -19,7 +19,7 @@ LIB_DEPENDS=	xview\\.3\\.2:${PORTSDIR}/x11/xview-lib \
 		olgx\\.3\\.2:${PORTSDIR}/x11/xview-lib
 
 ALL_TARGET=	mahjongg.swap
-USE_X11=	yes
+USE_X_PREFIX=	yes
 WRKSRC=		${WRKDIR}/mahjongg2.1
 MAN6=		xvmahjongg.6
 

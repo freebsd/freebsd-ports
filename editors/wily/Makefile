@@ -3,7 +3,7 @@
 # Date created:   	23 September 1997
 # Whom: 		koshy
 #
-# $Id: Makefile,v 1.1.1.1 1997/11/17 11:53:02 tg Exp $
+# $Id: Makefile,v 1.2 1998/07/07 11:39:46 jkoshy Exp $
 #
 
 DISTNAME=	wily-0.13.36
@@ -15,7 +15,7 @@ EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	jkoshy@freebsd.org
 
-USE_X11=	YES
+USE_X_PREFIX=	YES
 GNU_CONFIGURE=	YES
 
 WILYDOCDIR=	${PREFIX}/share/doc/wily

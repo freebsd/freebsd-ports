@@ -3,7 +3,7 @@
 # Date created:         9 January 1994
 # Whom:                 jmz
 #
-# $Id: Makefile,v 1.9 1998/06/10 02:23:25 jmz Exp $
+# $Id: Makefile,v 1.10 1998/06/17 20:12:02 jmz Exp $
 #
 
 DISTNAME=	xloadimage.4.1
@@ -13,7 +13,7 @@ MASTER_SITES=	ftp://ftp.cdrom.com/pub/X11/R5contrib/
 
 MAINTAINER=	jmz@FreeBSD.org
 
-USE_X11=	yes
+USE_X_PREFIX=	yes
 
 ALL_TARGET=
 

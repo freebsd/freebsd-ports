@@ -3,7 +3,7 @@
 # Date created:      28 Jun 1997
 # Whom:              Ruslan Shevchenko <ruslan@shevchenko.kiev.ua>
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1998/05/06 12:27:04 tg Exp $
 #
 
 DISTNAME=	Files-2.4
@@ -22,7 +22,7 @@ LIB_DEPENDS=	Dnd\\.1\\.:${PORTSDIR}/x11/libdnd \
 
 GNU_CONFIGURE=	YES
 USE_GMAKE=	YES
-USE_X11=	YES
+USE_X_PREFIX=	YES
 MAN1=		files.1
 MAN3=		regexp.3
 

@@ -3,7 +3,7 @@
 # Date created:				2 March 1998
 # Whom:					Andrey Zakhvatov
 #
-# $Id: Makefile,v 1.2 1998/03/16 03:19:02 hoek Exp $
+# $Id: Makefile,v 1.3 1998/07/27 23:25:09 asami Exp $
 #
 
 DISTNAME=	xnibbles-1.0BETA3
@@ -17,7 +17,7 @@ LIB_DEPENDS=	Xpm\\.4\\.:${PORTSDIR}/graphics/xpm
 
 ALL_TARGET=	linux
 USE_GMAKE=	yes
-USE_X11=	yes
+USE_X_PREFIX=	yes
 WRKSRC=		${WRKDIR}/xnibbles
 
 MAN6=		xnibbles.6

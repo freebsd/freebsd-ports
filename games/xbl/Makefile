@@ -3,7 +3,7 @@
 # Date created:		May 25 1997
 # Whom:			pgs (original)
 #
-# $Id: Makefile,v 1.1.1.1 1997/06/04 01:38:15 asami Exp $
+# $Id: Makefile,v 1.2 1998/02/20 18:39:48 steve Exp $
 #
 
 DISTNAME=	xbl-1.0h
@@ -13,7 +13,7 @@ EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=	giffunip@asme.org
 
-USE_X11=	yes
+USE_X_PREFIX=	yes
 HAS_CONFIGURE=	yes
 MANN=		xbl.n
 

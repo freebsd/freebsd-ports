@@ -3,7 +3,7 @@
 # Date created:		19 December 1994
 # Whom:			janek
 #
-# $Id: Makefile,v 1.13 1997/10/28 18:12:43 jseger Exp $
+# $Id: Makefile,v 1.14 1997/10/30 00:59:20 asami Exp $
 #
 
 DISTNAME=	moxftp-2.2
@@ -12,7 +12,7 @@ MASTER_SITES=	ftp://ftp.pacbell.com/X11/contrib/applications/
 EXTRACT_SUFX=	.tar.Z
 
 HAS_CONFIGURE=	yes
-USE_X11=	yes
+USE_X_PREFIX=	yes
 STRIP=
 MAN1=		${PROGRAM_NAME}.1
 

@@ -3,7 +3,7 @@
 # Date created:        21 April 1998
 # Whom:                Yukihiro Nakai <Nakai@technologist.com>
 #
-# $Id: Makefile,v 1.1.1.1 1998/07/13 02:21:33 steve Exp $
+# $Id: Makefile,v 1.2 1998/07/20 18:57:55 asami Exp $
 #
 
 DISTNAME=	gtkDPS-0.2.11
@@ -19,7 +19,7 @@ BUILD_DEPENDS=	pswrap:${PORTSDIR}/x11/dgs
 CONFIGURE_ARGS=	--with-dps-includes=${X11BASE}/include \
 		--with-dps-libraries=${X11BASE}/lib
 GNU_CONFIGURE=	yes
-USE_X11=	yes
+USE_X_PREFIX=	yes
 
 post-install:
 	${LDCONFIG} -m ${PREFIX}/lib

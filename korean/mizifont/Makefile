@@ -3,7 +3,7 @@
 # Date created:		16 Mar 1998
 # Whom:			CHOI Junho <junker@jazz.snu.ac.kr>
 #
-# $Id: Makefile,v 1.1.1.1 1998/05/09 14:19:16 kuriyama Exp $
+# $Id: Makefile,v 1.2 1998/06/27 05:19:54 asami Exp $
 #
 
 DISTNAME=	xfntmizi-1.1-1.noarch
@@ -18,7 +18,7 @@ BUILD_DEPENDS=	rpm2cpio:${PORTSDIR}/misc/rpm
 
 NO_CDROM=	"Not a free software, but redistributable on FreeBSD mirrors"
 
-USE_X11=	yes
+USE_X_PREFIX=	yes
 NO_WRKSUBDIR=	yes
 
 RPM2CPIO=	rpm2cpio

@@ -3,7 +3,7 @@
 # Date created:         9 Jul 1996
 # Whom:            searle
 #
-# $Id: Makefile,v 1.6 1998/01/29 15:51:38 jseger Exp $
+# $Id: Makefile,v 1.7 1998/04/11 02:35:57 jseger Exp $
 #
 
 DISTNAME=	blast-1.0-ss-10.20
@@ -15,7 +15,7 @@ MASTER_SITES=	ftp://hpux.csc.liv.ac.uk/hpux/X11/Demos/blast-1.0/ \
 
 MAINTAINER=	jseger@FreeBSD.org
 
-USE_X11=	yes
+USE_X_PREFIX=	yes
 MAN1=		blast.1
 WRKSRC=		${WRKDIR}/blast-1.0
 

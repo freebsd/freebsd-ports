@@ -3,7 +3,7 @@
 # Date created:		10 Jul 1996
 # Whom:			searle
 #
-# $Id: Makefile,v 1.5 1998/01/28 21:11:20 jseger Exp $
+# $Id: Makefile,v 1.6 1998/07/27 23:23:36 asami Exp $
 #
 
 DISTNAME=	stars-1.0-ss-10.10
@@ -14,7 +14,7 @@ MASTER_SITES=	ftp://hpux.csc.liv.ac.uk/hpux/X11/Demos/stars-1.0/ \
 
 MAINTAINER=	jseger@FreeBSD.org
 
-USE_X11=	yes
+USE_X_PREFIX=	yes
 WRKSRC=		$(WRKDIR)/$(PKGNAME)
 
 do-build:

@@ -3,7 +3,7 @@
 # Date created:         20 July 1997
 # Whom:                 Yukihiro Nakai<Nakai@Mlab.t.u-tokyo.ac.jp>
 #
-# $Id: Makefile,v 1.1.1.1 1997/11/02 14:56:42 jseger Exp $
+# $Id: Makefile,v 1.2 1998/07/27 01:00:43 steve Exp $
 #
 
 DISTNAME=	s9x.linux.105.i386
@@ -18,7 +18,7 @@ RUN_DEPENDS=    /compat/linux/lib/libc.so.5:${PORTSDIR}/emulators/linux_lib
 
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
-USE_X11=	yes
+USE_X_PREFIX=	yes
 
 STRIP=
 BINOWN=		root

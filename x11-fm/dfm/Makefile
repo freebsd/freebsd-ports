@@ -3,7 +3,7 @@
 # Date created:				25 May 1998
 # Whom:					Andrey Zakhvatov
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1998/06/11 03:41:58 mph Exp $
 #
 
 DISTNAME=	dfm-0.9.8
@@ -15,7 +15,7 @@ MAINTAINER=	andy@icc.surw.chel.su
 LIB_DEPENDS=	Xpm\\.4\\.:${PORTSDIR}/graphics/xpm \
 		xforms\\.0\\.:${PORTSDIR}/x11/xforms
 
-USE_X11=	yes
+USE_X_PREFIX=	yes
 
 WRKSRC=		${WRKDIR}/dfm
 

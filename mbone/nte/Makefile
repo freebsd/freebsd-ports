@@ -3,7 +3,7 @@
 # Date created:				5 September 1996
 # Whom:	      Bill Fenner <fenner@FreeBSD.ORG>
 #
-#   $Id: Makefile,v 1.6 1997/04/20 13:19:23 wosch Exp $
+#   $Id: Makefile,v 1.7 1997/09/25 04:12:57 fenner Exp $
 #
 
 DISTNAME=	nt.1.5a23
@@ -22,7 +22,7 @@ LIB_DEPENDS=	tk42\\.1:${TK_DIR}
 RESTRICTED=	"Contains DES encryption"
 NO_WRKSUBDIR=	yes
 USE_GMAKE=	yes
-USE_X11=	yes
+USE_X_PREFIX=	yes
 # Pass this on to our child
 MAKE_ENV=	TK_SRC=${TK_SRC}
 

@@ -3,7 +3,7 @@
 # Date created:        20 October 1996
 # Whom:                Yukihiro Nakai <Nakai@Mlab.t.u-tokyo.ac.jp>
 #
-# $Id: Makefile,v 1.1.1.1 1996/11/17 11:53:34 asami Exp $
+# $Id: Makefile,v 1.2 1997/01/03 09:26:34 obrien Exp $
 #
 
 DISTNAME=	xshogi-1.2p03
@@ -15,7 +15,7 @@ MAINTAINER=     Nakai@Mlab.t.u-tokyo.ac.jp
 
 RUN_DEPENDS=    ${LOCALBASE}/libexec/gnushogix:${PORTSDIR}/games/gnushogi
 
-USE_X11=	yes
+USE_X_PREFIX=	yes
 MAKEFILE=	Makefile.custom
 MAN6=		xshogi.6
 

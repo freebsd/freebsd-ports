@@ -3,7 +3,7 @@
 # Date created:				13 March 1998
 # Whom:					Andrey Zakhvatov
 #
-# $Id: Makefile,v 1.1.1.1 1998/04/27 04:36:16 mph Exp $
+# $Id: Makefile,v 1.2 1998/07/27 23:24:51 asami Exp $
 #
 
 DISTNAME=	xchain_1.0-2
@@ -15,7 +15,7 @@ MAINTAINER=	andy@icc.surw.chel.su
 
 RUN_DEPENDS=	wish8.0:${PORTSDIR}/x11/tk80
 
-USE_X11=	yes
+USE_X_PREFIX=	yes
 WRKSRC=		${WRKDIR}/xchain-1.0
 
 MAN6=		xchain.6

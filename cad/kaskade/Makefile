@@ -3,7 +3,7 @@
 # Date created:		19 Sept. 1997
 # Whom:			Pedro Giffuni
 #
-# $Id: Makefile,v 1.2 1997/11/22 09:56:34 asami Exp $
+# $Id: Makefile,v 1.3 1997/11/26 23:10:55 jseger Exp $
 #
 
 DISTNAME=	3.1.1
@@ -18,7 +18,7 @@ DIST_SUBDIR=	kaskade
 WRKSRC=         ${WRKDIR}/3.1
 MAKEFILE=	makefile
 ALL_TARGET=	k6
-USE_X11=	yes
+USE_X_PREFIX=	yes
 
 do-install:
 	$(INSTALL_PROGRAM) $(WRKSRC)/k6 $(PREFIX)/bin

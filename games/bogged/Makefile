@@ -3,7 +3,7 @@
 # Date created:				18 May 1998
 # Whom:					Andrey Zakhvatov
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1998/07/12 23:53:06 steve Exp $
 #
 
 DISTNAME=		bogged-1.0.0
@@ -21,7 +21,7 @@ EXTRACT_BEFORE_ARGS=
 EXTRACT_AFTER_ARGS=	${WRKDIR}
 
 NO_BUILD=		yes
-USE_X11=		yes
+USE_X_PREFIX=		yes
 WRKSRC=			${WRKDIR}
 
 post-extract:

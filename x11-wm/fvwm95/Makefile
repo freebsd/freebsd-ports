@@ -3,7 +3,7 @@
 # Date created:		Sa   1 Feb 1997 14:46:05 MET
 # Whom:			Andreas Klemm <andreas@klemm.gtn.com>
 #
-# $Id: Makefile,v 1.16 1997/12/04 22:47:32 vanilla Exp $
+# $Id: Makefile,v 1.17 1997/12/24 01:21:18 alex Exp $
 #
 
 DISTNAME=	fvwm95-2.0.43a-Autoconf
@@ -18,7 +18,7 @@ LIB_DEPENDS=	Xpm\\.4\\.:${PORTSDIR}/graphics/xpm
 BUILD_DEPENDS=	${LOCALBASE}/lib/librplay.a:${PORTSDIR}/audio/rplay
 RUN_DEPENDS=	${X11BASE}/icons/chuck.xpm:${PORTSDIR}/x11/fbsd-icons
 
-USE_X11=	yes
+USE_X_PREFIX=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS= --includedir=${LOCALBASE}/include \
 		--libdir=${LOCALBASE}/lib

@@ -3,7 +3,7 @@
 # Date created:         8 Feb 1998
 # Whom:                 Donald Burr <dburr@FreeBSD.ORG>
 #
-# $Id: Makefile,v 1.4 1998/07/19 06:56:14 dburr Exp $
+# $Id: Makefile,v 1.5 1998/07/25 12:51:12 asami Exp $
 #
 
 DISTNAME=	v-1.19
@@ -16,7 +16,7 @@ BROKEN=		fetch
 
 WRKSRC=		${WRKDIR}/v
 
-USE_X11=	YES
+USE_X_PREFIX=	YES
 USE_GMAKE=	YES
 MAKE_ENV=	INSTALLDIR=${PREFIX} HOMEV=${WRKSRC}
 

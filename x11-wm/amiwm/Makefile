@@ -3,7 +3,7 @@
 # Date created: 13 November 1997
 # Whom: Douglas Carmichael <dcarmich@mcs.com>
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1997/11/14 09:37:44 tg Exp $
 #
 
 DISTNAME=	amiwm0.20pl28
@@ -15,7 +15,7 @@ MAINTAINER=	ports@FreeBSD.org
 
 WRKSRC=		${WRKDIR}/amiwm
 GNU_CONFIGURE=	yes
-USE_X11=	yes
+USE_X_PREFIX=	yes
 MAN1=		amiwm.1
 
 post-install:

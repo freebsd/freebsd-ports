@@ -3,7 +3,7 @@
 # Date created:         Mon Aug 28 13:35:31 CDT 1995
 # Whom:                 erich@rrnet.com
 #
-# $Id: Makefile,v 1.7 1997/08/11 15:16:10 erich Exp $
+# $Id: Makefile,v 1.8 1998/05/11 03:16:04 steve Exp $
 #
 
 DISTNAME=	aero_1.7.0_src
@@ -17,7 +17,7 @@ BUILD_DEPENDS=	${X11BASE}/lib/libfwf.a:${PORTSDIR}/x11/FWF
 RUN_DEPENDS=	povray:${PORTSDIR}/graphics/povray
 LIB_DEPENDS=    Xpm\\.4\\.:${PORTSDIR}/graphics/xpm
 
-USE_X11=	yes
+USE_X_PREFIX=	yes
 WRKSRC=		${WRKDIR}/aero/src
 MAKEFILE=	Makefile.linux
 

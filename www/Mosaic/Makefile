@@ -3,7 +3,7 @@
 # Date created:         7 August 1995
 # Whom:                 torstenb
 #
-# $Id: Makefile,v 1.14 1998/05/10 22:15:45 steve Exp $
+# $Id: Makefile,v 1.15 1998/05/27 08:44:56 dburr Exp $
 #
 
 DISTNAME=       Mosaic-src-2.7b5
@@ -18,7 +18,7 @@ LIB_DEPENDS=    jpeg\\.9\\.:${PORTSDIR}/graphics/jpeg \
 REQUIRES_MOTIF=	yes
 WRKSRC=		${WRKDIR}/Mosaic-src
 ALL_TARGET=	bsdi
-USE_X11=	yes
+USE_X_PREFIX=	yes
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/src/Mosaic ${PREFIX}/bin

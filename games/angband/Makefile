@@ -3,7 +3,7 @@
 # Date created:        21 Feb 1997
 # Whom:                Matthew Hunt <mph@pobox.com>
 #
-# $Id: Makefile,v 1.5 1998/02/10 08:17:19 tg Exp $
+# $Id: Makefile,v 1.6 1998/04/17 23:26:22 mph Exp $
 #
 
 DISTNAME=	angband-283
@@ -14,7 +14,7 @@ DISTFILES=	angband-283.tar.gz ext-x11-283.tar.gz
 
 MAINTAINER=	mph@freebsd.org
 
-USE_X11=	yes
+USE_X_PREFIX=	yes
 DIST_SUBDIR=	angband
 
 EXTSRC=		${WRKDIR}/ext-x11-283

@@ -3,7 +3,7 @@
 # Date created:		29 June 1998
 # Whom:			Dom Mitchell <dom@myrddin.demon.co.uk>
 #
-# $Id: Makefile,v 1.3 1998/07/03 23:21:56 steve Exp $
+# $Id: Makefile,v 1.4 1998/07/30 05:33:15 vanilla Exp $
 #
 
 DISTNAME=	glade-0.3
@@ -15,7 +15,7 @@ MAINTAINER=     dom@myrddin.demon.co.uk
 LIB_DEPENDS=	gtk\\.1\\.5:${PORTSDIR}/x11/gtk
 
 GNU_CONFIGURE=	yes
-USE_X11=	yes
+USE_X_PREFIX=	yes
 
 post-install:
 .if !defined(NOPORTDOCS)

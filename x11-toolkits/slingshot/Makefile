@@ -3,7 +3,7 @@
 # Date created:        5 March 1997
 # Whom:                Pedro Giffuni
 #
-# $Id: Makefile,v 1.1.1.1 1997/06/03 22:53:07 asami Exp $
+# $Id: Makefile,v 1.2 1998/02/20 18:39:58 steve Exp $
 #
 
 DISTNAME=	SlingShot2.1
@@ -17,7 +17,7 @@ MAINTAINER=	giffunip@asme.org
 LIB_DEPENDS=	xview\\.3\\.:${PORTSDIR}/x11/xview-lib
 
 WRKSRC=		$(WRKDIR)/sspkg2.1
-USE_X11=	yes
+USE_X_PREFIX=	yes
 USE_GMAKE=	yes
 MAKE_ENV=       OPENWINHOME=$(X11BASE)
 

@@ -4,7 +4,7 @@
 # Date created:		30 June 1996
 # Whom:			gena
 #
-# $Id: Makefile,v 1.10 1998/01/10 18:36:55 jdp Exp $
+# $Id: Makefile,v 1.11 1998/07/05 23:44:39 steve Exp $
 #
 
 DISTNAME=       xfmail-1.3
@@ -16,7 +16,7 @@ MAINTAINER=	gena@NetVision.net.il
 LIB_DEPENDS=	Xpm\\.4\\.:${PORTSDIR}/graphics/xpm \
 		xforms\\.0\\.88\\.1:${PORTSDIR}/x11/xforms
 
-USE_X11=	yes
+USE_X_PREFIX=	yes
 GNU_CONFIGURE=	yes
 MAN1=		xfmail.1
 

@@ -3,7 +3,7 @@
 # Date created:		10 February 1995
 # Whom:			jkh
 #
-# $Id: Makefile,v 1.5 1996/11/18 11:27:45 asami Exp $
+# $Id: Makefile,v 1.6 1997/04/30 03:18:01 asami Exp $
 #
 
 DISTNAME=	pdore-6.0
@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_LOCAL}
 EXTRACT_SUFX=	.tar.Z
 
 USE_GMAKE=	yes
-USE_X11=	yes
+USE_X_PREFIX=	yes
 WRKSRC=		${WRKDIR}/dore
 EXTRACT_CMD=	mkdir -p dore; cd dore; tar
 MAKEFILE=	mk.stdx

@@ -3,7 +3,7 @@
 # Date created:				18 March 1998
 # Whom:					Andrey Zakhvatov
 #
-# $Id: Makefile,v 1.1.1.1 1998/07/04 19:31:54 steve Exp $
+# $Id: Makefile,v 1.2 1998/07/05 11:41:43 asami Exp $
 #
 
 DISTNAME=	xworm102
@@ -14,7 +14,7 @@ MASTER_SITES=	http://www.ekran.no/archive/x/
 MAINTAINER=	andy@icc.surw.chel.su
 
 ALL_TARGET=	freebsd
-USE_X11=	yes
+USE_X_PREFIX=	yes
 WRKSRC=		${WRKDIR}/XWorm
 
 do-install:

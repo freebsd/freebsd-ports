@@ -3,7 +3,7 @@
 # Date created:		2 Novermber 1996
 # Whom:			fenner
 #
-# $Id: Makefile,v 1.2 1996/11/18 11:33:42 asami Exp $
+# $Id: Makefile,v 1.3 1998/06/24 05:17:29 fenner Exp $
 #
 
 DISTNAME=       wb-1.59
@@ -15,7 +15,7 @@ MAINTAINER=	fenner@FreeBSD.ORG
 
 NO_WRKSUBDIR=	yes
 NO_BUILD=	yes
-USE_X11=	yes
+USE_X_PREFIX=	yes
 
 # XXX ghostscript, ghostscript3, ghostscript4 or ghostscript5 will all do.
 RUN_DEPENDS=	gs:${PORTSDIR}/print/ghostscript5

@@ -3,7 +3,7 @@
 # Date created:        31 October 1996
 # Whom:                Yukihiro Nakai <Nakai@Mlab.t.u-tokyo.ac.jp>
 #
-# $Id: Makefile,v 1.3 1996/11/29 19:47:00 torstenb Exp $
+# $Id: Makefile,v 1.4 1997/04/30 03:18:00 asami Exp $
 #
 
 DISTNAME=	GB
@@ -14,8 +14,8 @@ DISTFILES=	VGB.tar.Z
 
 MAINTAINER=	Nakai@Mlab.t.u-tokyo.ac.jp
 
-USE_X11=	yes
-CONFIGURE_ENV+= X11BASE=${X11BASE}
+USE_X_PREFIX=	yes
+CONFIGURE_ENV=  X11BASE=${X11BASE}
 
 do-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/gblist ${PREFIX}/bin

@@ -3,7 +3,7 @@
 # Date created:        02 November 1996
 # Whom:                Yukihiro Nakai <Nakai@Mlab.t.u-tokyo.ac.jp>
 #
-# $Id: Makefile,v 1.4 1997/07/01 11:40:41 tg Exp $
+# $Id: Makefile,v 1.5 1998/01/25 17:03:52 steve Exp $
 #
 
 DISTNAME=	SMS
@@ -14,7 +14,7 @@ DISTFILES=	MG.tar.Z
 
 MAINTAINER=	Nakai@Mlab.t.u-tokyo.ac.jp
 
-USE_X11=	yes
+USE_X_PREFIX=	yes
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/mg ${PREFIX}/bin

@@ -3,7 +3,7 @@
 # Date created:				12 April 1998
 # Whom:					Andrey Zakhvatov
 #
-# $Id: Makefile,v 1.1.1.1 1998/05/02 02:35:47 mph Exp $
+# $Id: Makefile,v 1.1.1.1 1998/05/02 18:02:43 mph Exp $
 #
 
 DISTNAME=	shhcards-1.0.3
@@ -15,7 +15,7 @@ MASTER_SITES=	http://www.computas.no/users/shh/pub-unix/files/ \
 MAINTAINER=	andy@icc.surw.chel.su
 
 USE_GMAKE=	yes
-USE_X11=	yes
+USE_X_PREFIX=	yes
 
 do-install:
 	@ ${INSTALL_DATA} ${WRKSRC}/shhcards.h ${PREFIX}/include

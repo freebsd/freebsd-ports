@@ -3,7 +3,7 @@
 # Date created:         22 Mar 1997
 # Whom:                 Choi Jun Ho <junker@jazz.snu.ac.kr>
 #
-# $Id: Makefile,v 1.3 1997/09/22 16:21:52 max Exp $
+# $Id: Makefile,v 1.4 1998/04/19 17:51:34 steve Exp $
 #
 
 DISTNAME=       hanyang-font-pcf
@@ -14,7 +14,7 @@ MASTER_SITES=   ftp://ftp.kaist.ac.kr/pub/hangul/fonts/ \
 
 MAINTAINER=     junker@jazz.snu.ac.kr
 
-USE_X11=        yes
+USE_X_PREFIX=        yes
 NO_WRKSUBDIR=   yes
 
 FONTS=		hgm10 hgm12 hgm14 hgm16 hgm18 hgm20 \

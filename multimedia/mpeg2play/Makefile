@@ -3,7 +3,7 @@
 # Date created:		June 21, 1996
 # Whom:			"Philippe Charnier" <charnier@lirmm.fr>
 #
-# $Id: Makefile,v 1.2 1996/11/18 11:28:32 asami Exp $
+# $Id: Makefile,v 1.3 1997/08/12 06:55:47 charnier Exp $
 #
 
 DISTNAME=	mpeg2play-1.1b
@@ -13,7 +13,7 @@ DISTFILES=	mpeg2play-1.1b.tar.gz
 
 MAINTAINER=	charnier@lirmm.fr
 
-USE_X11=	yes
+USE_X_PREFIX=	yes
 USE_IMAKE=	yes
 REQUIRES_MOTIF=	yes
 ALL_TARGET=	mpeg2play

@@ -3,7 +3,7 @@
 # Date created:		11. Jan 1998
 # Whom:			Stefan Zehl <sec@42.org>
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1998/06/24 10:52:08 max Exp $
 #
 
 DISTNAME=	wmx-4
@@ -15,7 +15,7 @@ MAINTAINER=	sec@42.org
 
 LIB_DEPENDS=	Xpm\\.4\\.:${PORTSDIR}/graphics/xpm
 
-USE_X11=	yes
+USE_X_PREFIX=	yes
 ALL_TARGET=	depend wmx
 
 do-install:

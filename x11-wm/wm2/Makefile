@@ -3,7 +3,7 @@
 # Date created:		16 February 1997
 # Whom:			Yukihiro Nakai <Nakai@Mlab.t.u-tokyo.ac.jp>
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1997/07/08 06:23:30 max Exp $
 #
 
 DISTNAME=	wm2-3
@@ -13,7 +13,7 @@ MASTER_SITES=   http://www.netcomuk.co.uk/~cannam/
 
 MAINTAINER=	Nakai@Mlab.t.u-tokyo.ac.jp
 
-USE_X11=	yes
+USE_X_PREFIX=	yes
 WRKSRC=		${WRKDIR}/wm2
 ALL_TARGET=	depend wm2
 

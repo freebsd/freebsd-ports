@@ -3,7 +3,7 @@
 # Date created:		12 January 1996
 # Whom:			nate
 #
-# $Id: Makefile,v 1.10 1998/04/15 22:17:54 jseger Exp $
+# $Id: Makefile,v 1.11 1998/05/04 20:22:38 jseger Exp $
 #
 
 DISTNAME=	scanner
@@ -17,7 +17,7 @@ MAINTAINER=	nate@FreeBSD.org
 LIB_DEPENDS+=  jpeg\\.9\\.:${PORTSDIR}/graphics/jpeg
 
 NO_WRKSUBDIR=		yes
-USE_X11=		yes
+USE_X_PREFIX=		yes
 USE_IMAKE=		yes
 NO_INSTALL_MANPAGES=	yes
 

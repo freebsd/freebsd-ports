@@ -3,7 +3,7 @@
 # Date created:		22 December 1995
 # Whom:			markm
 #
-# $Id: Makefile,v 1.6 1997/03/12 08:21:18 asami Exp $
+# $Id: Makefile,v 1.7 1998/07/27 23:25:22 asami Exp $
 #
 
 DISTNAME=	xroach
@@ -13,7 +13,7 @@ MASTER_SITES=	ftp://ftp.cdrom.com/pub/bsd-sources/4.4BSD-Lite/usr/src/games/
 
 MAINTAINER=	markm@FreeBSD.ORG
 
-USE_X11=	yes
+USE_X_PREFIX=	yes
 IGNOREFILES=	${DISTFILES}
 WRKSRC=		${WRKDIR}/pub/bsd-sources/4.4BSD-Lite/usr/src/games/xroach
 

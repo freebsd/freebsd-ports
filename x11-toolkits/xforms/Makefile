@@ -3,7 +3,7 @@
 # Date created:		28 March 1997
 # Whom:			gena
 #
-# $Id: Makefile,v 1.15 1998/02/09 02:02:24 jseger Exp $
+# $Id: Makefile,v 1.16 1998/05/12 06:34:18 tg Exp $
 #
 
 DISTNAME=	bxform-088
@@ -16,7 +16,7 @@ EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	gena@NetVision.net.il
 
-USE_X11=	yes
+USE_X_PREFIX=	yes
 WRKSRC=		${WRKDIR}/xforms
 MAN1=		fdesign.1 fd2ps.1
 MAN5=		xforms.5

@@ -3,7 +3,7 @@
 # Date created:				9 April 1998
 # Whom:					Andrey Zakhvatov
 #
-# $Id: Makefile,v 1.1.1.1 1998/04/24 01:54:53 mph Exp $
+# $Id: Makefile,v 1.2 1998/07/27 23:24:57 asami Exp $
 #
 
 DISTNAME=	xjumpjump
@@ -16,7 +16,7 @@ MAINTAINER=	andy@icc.surw.chel.su
 
 LIB_DEPENDS=	xforms\\.0\\.:${PORTSDIR}/x11/xforms
 
-USE_X11=	yes
+USE_X_PREFIX=	yes
 
 pre-build:
 	@ ${RM} ${WRKSRC}/xjumpjump

@@ -3,7 +3,7 @@
 # Date created:				7 March 1998
 # Whom:					Andrey Zakhvatov
 #
-# $Id: Makefile,v 1.2 1998/03/28 22:18:38 asami Exp $
+# $Id: Makefile,v 1.3 1998/04/14 07:59:03 tg Exp $
 #
 
 DISTNAME=	workplace-1.0.a3
@@ -16,7 +16,7 @@ MAINTAINER=	andy@icc.surw.chel.su
 LIB_DEPENDS=	gtk\\.1\\.:${PORTSDIR}/x11/gtk
 
 GNU_CONFIGURE=	yes
-USE_X11=	yes
+USE_X_PREFIX=	yes
 
 pre-configure:
 	@ ${RM} ${WRKSRC}/config.cache

@@ -3,7 +3,7 @@
 # Date created:		19 October 1996
 # Whom:			pgs
 #
-# $Id: Makefile,v 1.4 1997/10/29 12:28:36 tg Exp $
+# $Id: Makefile,v 1.5 1998/02/20 18:39:48 steve Exp $
 #
 
 DISTNAME=	hobbes-icons-xpm3
@@ -16,7 +16,7 @@ MASTER_SITES=   ftp://ftp.x.org/R5contrib/  \
 
 MAINTAINER=	giffunip@asme.org
 
-USE_X11=	yes
+USE_X_PREFIX=	yes
 NO_BUILD=	yes
 
 # Where it will be installed (change pkg/PLIST if you change this)

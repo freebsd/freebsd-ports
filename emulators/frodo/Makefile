@@ -3,7 +3,7 @@
 # Date created:		11 Dez 1997
 # Whom:			dirk.meyer@dinoex.sub.org
 #
-# $Id: Makefile,v 1.1.1.1 1998/02/21 21:24:35 steve Exp $
+# $Id: Makefile,v 1.2 1998/02/22 08:34:59 fenner Exp $
 
 DISTNAME=	FrodoV4_1a.Src
 PKGNAME=	frodo-4.1
@@ -14,7 +14,7 @@ MAINTAINER=	dirk.meyer@dinoex.sub.org
 
 RUN_DEPENDS=	wish8.0:${PORTSDIR}/x11/tk80
 
-USE_X11=	YES
+USE_X_PREFIX=	YES
 ALL_TARGET=	Frodo
 WRKSRC=		${WRKDIR}/Frodo/Src
 

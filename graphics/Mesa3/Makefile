@@ -3,7 +3,7 @@
 # Date created:         Tue Feb  7 12:02:49  1995
 # Whom:                 hsu
 #
-# $Id: Makefile,v 1.24 1998/07/20 10:14:24 asami Exp $
+# $Id: Makefile,v 1.25 1998/07/25 13:08:27 jseger Exp $
 #
 
 DISTNAME=       MesaLib-3.0beta6
@@ -17,7 +17,7 @@ MAINTAINER=	jseger@FreeBSD.ORG
 WRKSRC=		${WRKDIR}/Mesa-3.0
 
 ALL_TARGET=	freebsd
-USE_X11=	yes
+USE_X_PREFIX=	yes
 LIBS=		libMesaGL libMesaGLU
 SHLIB_VERSION=	14.0
 NO_LATEST_LINK=	yes

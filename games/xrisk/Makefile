@@ -3,7 +3,7 @@
 # Date created:         4 Jan 1995
 # Whom:                 swallace
 #
-# $Id: Makefile,v 1.9 1996/12/08 01:44:40 max Exp $
+# $Id: Makefile,v 1.10 1997/01/03 09:37:42 obrien Exp $
 #
 
 DISTNAME=       xrisk-2.13
@@ -13,7 +13,7 @@ EXTRACT_SUFX=   .tar.Z
 
 MAINTAINER=	swallace@FreeBSD.org
 
-USE_X11=	yes
+USE_X_PREFIX=	yes
 RESTRICTED=	"Possible trademark infringement"
 
 .include <bsd.port.mk>

@@ -3,7 +3,7 @@
 # Date created:       26 July 1997
 # Whom:               Filip Bovyn (bovynf@awe.be)
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1998/05/12 14:04:51 kuriyama Exp $
 
 DISTNAME=	amulet
 PKGNAME=	amulet-3.0
@@ -13,7 +13,7 @@ EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=	bovynf@awe.be
 
-USE_X11=	yes
+USE_X_PREFIX=	yes
 WRKSRC=		$(WRKDIR)/amulet
 MAKE_ENV+=	AMULET_DIR=$(WRKSRC) AMULET_VARS_FILE=Makefile.vars.gcc.FreeBSD
 

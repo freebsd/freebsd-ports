@@ -3,7 +3,7 @@
 # Date created:		December 10, 1996
 # Whom:			1wardd@airmail.net
 #
-# $Id: Makefile,v 1.19 1998/06/05 06:33:35 tg Exp $
+# $Id: Makefile,v 1.20 1998/07/01 11:35:32 tg Exp $
 #
 
 DISTNAME=	lesstif-0.85
@@ -19,7 +19,7 @@ MANUAL_PACKAGE_BUILD=	do not want to install during interactive build
 GNU_CONFIGURE=  yes
 # comment this and remove the strip statement in post-install for debugging
 CONFIGURE_ARGS=	--disable-debug
-USE_X11=	yes
+USE_X_PREFIX=	yes
 
 MAN1=	mwm.1 xmbind.1 lesstif.1
 MAN3=	XmClipboard.3 LessTifInternals.3 \

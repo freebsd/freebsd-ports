@@ -3,7 +3,7 @@
 # Date created:		Sat Jun 14 09:43:24 CEST 1997
 # Whom:			Andreas Klemm <andreas@klemm.gtn.com>
 #
-# $Id: Makefile,v 1.2 1997/06/29 10:50:38 obrien Exp $
+# $Id: Makefile,v 1.3 1998/06/27 05:19:51 asami Exp $
 #
 
 DISTNAME=	fbsd-icons
@@ -13,7 +13,7 @@ MASTER_SITES=	${MASTER_SITE_LOCAL}
 
 MAINTAINER=	andreas@FreeBSD.ORG
 
-USE_X11=	yes
+USE_X_PREFIX=	yes
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
 

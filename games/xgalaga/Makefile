@@ -3,7 +3,7 @@
 # Date created:		27 August 1995
 # Whom:			asami
 #
-# $Id: Makefile,v 1.6 1997/12/25 22:29:20 asami Exp $
+# $Id: Makefile,v 1.7 1998/05/28 07:39:14 tg Exp $
 #
 
 DISTNAME=	xgalaga-2.0
@@ -16,7 +16,7 @@ MAINTAINER=	ports@FreeBSD.ORG
 LIB_DEPENDS=	Xpm\\.4\\.:${PORTSDIR}/graphics/xpm
 
 HAS_CONFIGURE=	yes
-USE_X11=	yes
+USE_X_PREFIX=	yes
 # xgalaga has a very strange usage of these variables...
 CONFIGURE_ARGS=	--prefix=${X11BASE}/lib/X11/xgalaga \
 		--exec_prefix=${X11BASE}/bin
