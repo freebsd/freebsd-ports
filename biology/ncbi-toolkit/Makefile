@@ -14,6 +14,7 @@ DISTNAME=	ncbi
 MAINTAINER=	tonym@biolateral.com.au
 
 USE_MOTIF=	yes
+USE_REINPLACE=	yes
 
 #
 # In the files directory we have:
