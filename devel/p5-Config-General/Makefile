@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Config-General
-PORTVERSION=	2.15
+PORTVERSION=	2.19
 CATEGORIES=	devel perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Config
@@ -17,8 +17,14 @@ COMMENT=	Perl5 module for handling Apache-style configuration files
 
 PERL_CONFIGURE=	YES
 
-MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 MAN3=		Config::General::Extended.3 Config::General::Interpolated.3 \
 		Config::General.3
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} <= 500600
+BUILD_DEPENDS=	${SITE_PERL}/File/Spec.pm:${PORTSDIR}/devel/p5-File-Spec
+RUN_DEPENDS=	${BUILD_DEPENDS}
+.endif
+
+.include <bsd.port.post.mk>
