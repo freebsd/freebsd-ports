@@ -8,6 +8,7 @@
     SUBDIR += bind9
     SUBDIR += bind9-dlz
     SUBDIR += bind9-sdb-mysql
+    SUBDIR += crossip
     SUBDIR += ddclient
     SUBDIR += ddup
     SUBDIR += dhid
