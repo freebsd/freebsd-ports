@@ -1,17 +1,13 @@
 *** adcomplain.pl.orig	Wed Oct  8 02:02:29 1997
 --- adcomplain.pl	Wed Oct  8 02:13:15 1997
 ***************
-*** 1,6 ****
+*** 1,4 ****
 ! #! /bin/sh -- # -*- perl -*-
 ! eval 'exec perl $0 ${1+"$@"}'
 ! if 0;
   
-  # $Id: adcomplain.pl,v 2.56 1997/10/03 23:09:02 jason Exp $
-  
---- 1,4 ----
+--- 1,2 ----
 ! #!/usr/bin/perl
-  
-  # $Id: adcomplain.pl,v 2.56 1997/10/03 23:09:02 jason Exp $
   
 ***************
 *** 172,178 ****
