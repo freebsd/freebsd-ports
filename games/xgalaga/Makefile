@@ -7,7 +7,7 @@
 
 PORTNAME=	xgalaga
 PORTVERSION=	2.0.34
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	http://www.cit.uws.edu.au/pub/unix/games/ \
 		http://ftp.yars.free.net/pub/software/unix/games/arcade/ \

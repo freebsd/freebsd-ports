@@ -1,0 +1,18 @@
+--- main.c.orig	Mon May 11 08:52:59 1998
++++ main.c	Sat Nov 15 19:34:53 2003
+@@ -779,6 +779,7 @@
+     if(gameOver) {
+         while(W_EventsPending()) {
+             W_NextEvent(&wev);
++	    if (wev.key >= 256) wev.key -= 256;
+         
+ 	    if(gameOver)
+ 	      mouseControl = 1;
+@@ -826,6 +827,7 @@
+ 
+     while(W_EventsPending()) {
+         W_NextEvent(&wev);
++	if (wev.key >= 256) wev.key -= 256;
+ 
+         switch(wev.type) {
+         case W_EV_KEY_OFF:
