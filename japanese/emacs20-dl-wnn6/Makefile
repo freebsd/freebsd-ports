@@ -11,7 +11,7 @@ PKGNAME=	ja-emacs20-dl-wnn6-0.3.6
 CATEGORIES=	japanese editors
 MASTER_SITES=	http://tt-www.cs.titech.ac.jp/~katsuya/emacs/
 
-MAINTAINER=	shige@FreeBSD.ORG
+MAINTAINER=	shige@FreeBSD.org
 
 LIB_DEPENDS=	wnn6.1:${.CURDIR}/../../japanese/Wnn6-lib
 BUILD_DEPENDS=	emacs-dl-${EMACS_VER}:${EMACSDL_DIR} \

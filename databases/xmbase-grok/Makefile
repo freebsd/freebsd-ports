@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_XCONTRIB} \
 		ftp://ftp.fu-berlin.de/pub/unix/databases/xmbase-grok/
 MASTER_SITE_SUBDIR=	applications
 
-MAINTAINER=	andreas@FreeBSD.ORG
+MAINTAINER=	andreas@FreeBSD.org
 
 REQUIRES_MOTIF=	yes
 USE_IMAKE=	yes

@@ -11,7 +11,7 @@ CATEGORIES=	graphics
 MASTER_SITES=	http://sunsite.cqi.com.cn/~hotaru/gtksee/ \
 		http://www.physik.TU-Berlin.DE/~ibex/ports/distfiles/
 
-MAINTAINER=	dirk@FreeBSD.ORG
+MAINTAINER=	dirk@FreeBSD.org
 
 LIB_DEPENDS=	gtk12.2:${PORTSDIR}/x11-toolkits/gtk12 \
 		jpeg.9:${PORTSDIR}/graphics/jpeg \

@@ -1,7 +1,7 @@
 # New ports collection makefile for:    xsok
 # Version required:     1.02
 # Date created:         07 Feb 1998
-# Whom:                 Thomas Gellekum <tg@FreeBSD.ORG>
+# Whom:                 Thomas Gellekum <tg@FreeBSD.org>
 #
 # $FreeBSD$
 #
@@ -13,7 +13,7 @@ MASTER_SITES=	ftp://tsx-11.mit.edu/pub/linux/sources/usr.bin.X11/ \
 		ftp://ftp.cdrom.com/pub/linux/tsx-11/sources/usr.bin.X11/
 EXTRACT_SUFX=	-src.tar.gz
 
-MAINTAINER=	ports@FreeBSD.ORG
+MAINTAINER=	ports@FreeBSD.org
 
 LIB_DEPENDS=	Xpm.4:${PORTSDIR}/graphics/xpm
 

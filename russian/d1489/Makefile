@@ -12,6 +12,6 @@ CATEGORIES=     russian
 MASTER_SITES=   ftp://ftp.kiarchive.ru/pub/unix/convert/char/
 EXTRACT_SUFX=   .tgz
 
-MAINTAINER=	ache@FreeBSD.ORG
+MAINTAINER=	ache@FreeBSD.org
 
 .include <bsd.port.mk>

@@ -1,7 +1,7 @@
 # New ports collection makefile for:	joe
 # Version required:	2.8
 # Date created:		01 Jul 1995
-# Whom:			torstenb@FreeBSD.ORG
+# Whom:			torstenb@FreeBSD.org
 #
 # $FreeBSD$
 #

@@ -11,7 +11,7 @@ CATEGORIES=	mbone
 MASTER_SITES=   ftp://ftp.ee.lbl.gov/conferencing/wb/
 DISTFILES=      i386-wb-1.59.tar.Z
 
-MAINTAINER=	fenner@FreeBSD.ORG
+MAINTAINER=	fenner@FreeBSD.org
 
 NO_WRKSUBDIR=	yes
 NO_BUILD=	yes

@@ -1,7 +1,7 @@
 # New ports collection makefile for:	quakeserver
 # Version required:			0.991
 # Date created:				October 26th 1996
-# Whom:					jfitz@FreeBSD.ORG
+# Whom:					jfitz@FreeBSD.org
 #
 # $FreeBSD$
 #

@@ -10,7 +10,7 @@ DISTNAME=	rtptools-1.9
 CATEGORIES=	mbone
 MASTER_SITES=	ftp://ftp.cs.columbia.edu/pub/schulzrinne/rtptools/
 
-MAINTAINER=	fenner@FreeBSD.ORG
+MAINTAINER=	fenner@FreeBSD.org
 
 MAKE_ENV=	ARCH=freebsd CC=cc
 

@@ -13,7 +13,7 @@ MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	PV
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	jfitz@FreeBSD.ORG
+MAINTAINER=	jfitz@FreeBSD.org
 
 RUN_DEPENDS=	${PREFIX}/lib/perl5/site_perl/${PERL_VER}/i386-freebsd/Curses.pm:${PORTSDIR}/devel/p5-Curses
 

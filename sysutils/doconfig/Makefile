@@ -1,7 +1,7 @@
 # Ports collection Makefile for:	doconfig
 # Version required:			1.1
 # Date created:				7/27/1998
-# Whom:					nectar@FreeBSD.ORG
+# Whom:					nectar@FreeBSD.org
 #
 # $FreeBSD$
 #
@@ -10,7 +10,7 @@ DISTNAME=		doconfig-1.1
 CATEGORIES=		sysutils
 MASTER_SITES=		ftp://ftp.cold.org/pub/brandon/
 
-MAINTAINER=		nectar@FreeBSD.ORG
+MAINTAINER=		nectar@FreeBSD.org
 
 MAN8=			autokernconf.8 doconfig.8
 

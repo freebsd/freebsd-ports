@@ -13,7 +13,7 @@ MASTER_SITES=	ftp://ftp.ascii.co.jp/pub/TeX/ascii-ptex/ptex218/
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} plib-1.4-jis.tar.gz \
 		Makefile.in.patch.txt
 
-MAINTAINER=	max@FreeBSD.ORG
+MAINTAINER=	max@FreeBSD.org
 
 RUN_DEPENDS=	ptex-common:${PORTSDIR}/japanese/ptex-common
 

@@ -11,7 +11,7 @@ CATEGORIES=	editors elisp
 MASTER_SITES=	ftp://ftp.dina.kvl.dk/pub/Staff/Per.Abrahamsen/custom/ \
 		ftp://ftp.win.ne.jp/pub/word/elisp/
 
-MAINTAINER?=	shige@FreeBSD.ORG
+MAINTAINER?=	shige@FreeBSD.org
 
 # custom library
 CUSTOM_VER=	1.9962

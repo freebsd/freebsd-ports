@@ -11,7 +11,7 @@ CATEGORIES=	www net
 MASTER_SITES=	ftp://ftp.nlc.net.au/pub/linux/www/
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	peter@FreeBSD.ORG
+MAINTAINER=	peter@FreeBSD.org
 
 ALL_TARGET=	tproxy
 

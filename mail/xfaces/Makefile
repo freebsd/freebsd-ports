@@ -3,7 +3,7 @@
 # Date created:		11 December 96
 # Whom:			Lars Koeller <Lars_Koeller@odie.physik2.uni-rostock.de>
 # With some 
-# modifications from:	Andreas Klemm <andreas@FreeBSD.ORG>
+# modifications from:	Andreas Klemm <andreas@FreeBSD.org>
 #
 # $FreeBSD$
 #

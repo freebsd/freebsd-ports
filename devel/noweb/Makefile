@@ -11,7 +11,7 @@ CATEGORIES=	devel
 MASTER_SITES=	ftp://ftp.cs.virginia.edu/pub/nr/
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	tg@FreeBSD.ORG
+MAINTAINER=	tg@FreeBSD.org
 
 BUILD_DEPENDS=	icont:${PORTSDIR}/lang/icon
 RUN_DEPENDS=	iconx:${PORTSDIR}/lang/icon

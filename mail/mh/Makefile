@@ -15,7 +15,7 @@ EXTRACT_SUFX=	.tar.Z
 PATCH_SITES=	ftp://ftp.ics.uci.edu/pub/mh/updates/
 PATCHFILES=	MH.6.8.4.Z
 
-MAINTAINER=	pst@FreeBSD.ORG
+MAINTAINER=	pst@FreeBSD.org
 
 MAN1=	ali.1 anno.1 burst.1 comp.1 dist.1 folder.1 forw.1 inc.1 mark.1  \
 	mh-chart.1 mh.1 mhl.1 mhook.1 mhmail.1 mhn.1 mhparam.1 mhpath.1  \

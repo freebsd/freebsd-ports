@@ -11,7 +11,7 @@ PKGNAME=	flick-1.1
 CATEGORIES=	devel
 MASTER_SITES=	ftp://flux.cs.utah.edu/flux/flick/1.1/
 
-MAINTAINER=     ports@FreeBSD.ORG
+MAINTAINER=     ports@FreeBSD.org
 
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes

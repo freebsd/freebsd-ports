@@ -10,7 +10,7 @@ DISTNAME=	ircii-4.4
 CATEGORIES=	irc
 MASTER_SITES=	ftp://cs-ftp.bu.edu/irc/clients/
 
-MAINTAINER=	torstenb@FreeBSD.ORG
+MAINTAINER=	torstenb@FreeBSD.org
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	IRCLIB=${PREFIX}/share/irc

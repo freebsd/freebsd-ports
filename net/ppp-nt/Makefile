@@ -1,7 +1,7 @@
 # New ports collection makefile for:	ppp + nat + time schedule
 # Version required:	2.2.7
 # Date created:		10 August 1998
-# Whom:			SADA Kenji <sada@FreeBSD.ORG>
+# Whom:			SADA Kenji <sada@FreeBSD.org>
 #
 # $FreeBSD$
 #
@@ -17,7 +17,7 @@ PATCH_SITES=	http://www.rr.iij4u.or.jp/~sada/patches/ \
 PATCHFILES=	nat-980920.patch.gz ppp-2.2.7-telehoudai.diff.gz
 PATCH_DIST_STRIP= -p1
 
-MAINTAINER=	sada@FreeBSD.ORG
+MAINTAINER=	sada@FreeBSD.org
 
 MANCOMPRESSED=	yes
 MAN8=		ppp.8

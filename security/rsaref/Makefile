@@ -16,7 +16,7 @@ MASTER_SITES=   ftp://utopia.hacktic.nl/pub/replay/pub/crypto/LIBS/rsa/ \
 		ftp://ftp.nstu.ru/pub/sources/security/crypt/
 EXTRACT_SUFX=   .tar.Z
 
-MAINTAINER=	ache@FreeBSD.ORG
+MAINTAINER=	ache@FreeBSD.org
 
 WRKSRC=         ${WRKDIR}/source
 RESTRICTED=     "Crypto"

@@ -15,7 +15,7 @@ MASTER_SITES= 	ftp://ftp.uni-koeln.de/util/arc/ \
 		${MASTER_SITE_SUNSITE}
 MASTER_SITE_SUBDIR=libs/compression
 
-MAINTAINER=     ports@FreeBSD.ORG
+MAINTAINER=     ports@FreeBSD.org
 
 USE_LIBTOOL=	yes
 CONFIGURE_ARGS+= 	--enable-shared=yes \

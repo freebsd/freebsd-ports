@@ -1,7 +1,7 @@
 # New ports collection makefile for:	asclock-gtk
 # Version required:	2.1.10beta
 # Date created:		16 March 1998
-# Whom:			Jun Kuriyama <kuriyama@FreeBSD.ORG>
+# Whom:			Jun Kuriyama <kuriyama@FreeBSD.org>
 #
 # $FreeBSD$
 #
@@ -11,7 +11,7 @@ PKGNAME=	asclock-gtk-beta-2.1.10
 CATEGORIES=	x11-clocks afterstep windowmaker
 MASTER_SITES=	http://www.asclock.org/tar/
 
-MAINTAINER=	kuriyama@FreeBSD.ORG
+MAINTAINER=	kuriyama@FreeBSD.org
 
 LIB_DEPENDS=	gtk12.2:${PORTSDIR}/x11-toolkits/gtk12
 

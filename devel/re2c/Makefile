@@ -1,7 +1,7 @@
 # New ports collection makefile for:	re2c
 # Version required:	0.5
 # Date created:		14 May 1998
-# Whom:			Eivind Eklund <eivind@FreeBSD.ORG>
+# Whom:			Eivind Eklund <eivind@FreeBSD.org>
 #
 # $FreeBSD$
 #
@@ -13,7 +13,7 @@ MASTER_SITES=	ftp://csg.uwaterloo.ca/pub/peter/ \
 		ftp://ftp.uni-trier.de/pub/unix/compiler-toolkit/re2c/ \
 		ftp://ftp.tut.ac.jp/.h3/UNIX/lib/
 
-MAINTAINER=	eivind@FreeBSD.ORG
+MAINTAINER=	eivind@FreeBSD.org
 
 MAN1=		re2c.1
 

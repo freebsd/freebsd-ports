@@ -12,7 +12,7 @@ CATEGORIES=	converters tk80
 MASTER_SITES=	ftp://tsx-11.mit.edu/pub/linux/sources/usr.bin/ \
 		http://www.informatik.uni-frankfurt.de/~fp/uudeview/Apps/frank/
 
-MAINTAINER=	hoek@FreeBSD.ORG
+MAINTAINER=	hoek@FreeBSD.org
 
 LIB_DEPENDS=	tk80.1:${PORTSDIR}/x11-toolkits/tk80 \
 		uu.1:${PORTSDIR}/converters/uulib

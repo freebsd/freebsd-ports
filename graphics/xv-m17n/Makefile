@@ -9,7 +9,7 @@
 PKGNAME=	xv-m17n-3.10a
 CATEGORIES=	graphics
 
-MAINTAINER=	shige@FreeBSD.ORG
+MAINTAINER=	shige@FreeBSD.org
 
 MASTERDIR=	${.CURDIR}/../../graphics/xv
 PKGDIR=		${.CURDIR}/pkg

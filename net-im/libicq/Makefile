@@ -11,7 +11,7 @@ CATEGORIES=	net
 MASTER_SITES=	ftp://ftp.korsoft.com/pub/gicq/                        \
 		http://www.nectar.com/distfiles/
 
-MAINTAINER=	flathill@FreeBSD.ORG
+MAINTAINER=	flathill@FreeBSD.org
 
 LIB_DEPENDS=	glib12.2:${PORTSDIR}/devel/glib12
 

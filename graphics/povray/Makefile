@@ -15,7 +15,7 @@ MASTER_SITES=	ftp://ftp.povray.org/pub/povray/Old-Versions/Official-3.0/Unix/ \
 		ftp://ftp.kappa.ro/pub/Linux/Graphics/Editors/povray/
 DISTFILES=	povuni_s.tgz povuni_d.tgz
 
-MAINTAINER=	kris@FreeBSD.ORG
+MAINTAINER=	kris@FreeBSD.org
 
 LIB_DEPENDS=	png.3:${PORTSDIR}/graphics/png
 

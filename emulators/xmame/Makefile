@@ -1,7 +1,7 @@
 # New ports collection makefile for:    xmame
 # Version required:     0.33b6.1
 # Date created:         8 Feb 1998
-# Whom:                 Donald Burr <dburr@FreeBSD.ORG>
+# Whom:                 Donald Burr <dburr@FreeBSD.org>
 #
 # $FreeBSD$
 #
@@ -11,7 +11,7 @@ CATEGORIES=	emulators
 MASTER_SITES=	ftp://drake.dit.upm.es/xmame/ftpsite/
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	dburr@FreeBSD.ORG
+MAINTAINER=	dburr@FreeBSD.org
 
 LIB_DEPENDS=	Xpm.4:${PORTSDIR}/graphics/xpm
 

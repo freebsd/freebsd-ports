@@ -1,7 +1,7 @@
 # Ports collection Makefile for:	gtm
 # Version required:			0.3.1
 # Date created:				05/28/1999
-# Whom:					nectar@FreeBSD.ORG
+# Whom:					nectar@FreeBSD.org
 #
 # $FreeBSD$
 #
@@ -11,7 +11,7 @@ CATEGORIES=		ftp gnome
 MASTER_SITES=		http://www.rnl.ist.utl.pt/~bapm/gtm/files/     \
 			http://www.nectar.cc/distfiles/
 
-MAINTAINER=		nectar@FreeBSD.ORG
+MAINTAINER=		nectar@FreeBSD.org
 
 # wget is in BUILD_DEPENDS because the configure script checks for it
 LIB_DEPENDS=		gnome.2:${PORTSDIR}/x11/gnomelibs

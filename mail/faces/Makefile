@@ -2,7 +2,7 @@
 # Version required:	1.6.1
 # Date created:		09 December 96
 # Whom:			Lars Koeller <Lars_Koeller@odie.physik2.uni-rostock.de>
-#			Andreas Klemm <andreas@FreeBSD.ORG>
+#			Andreas Klemm <andreas@FreeBSD.org>
 #
 # $FreeBSD$
 #

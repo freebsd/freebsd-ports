@@ -15,7 +15,7 @@ DISTFILES=	wwwstat-2.0.tar.gz
 PATCH_SITES=	${MASTER_SITES}
 PATCHFILES=	patch-2.01.txt
 
-MAINTAINER=	andreas@FreeBSD.ORG
+MAINTAINER=	andreas@FreeBSD.org
 
 RUN_DEPENDS=    ${PREFIX}/etc/apache/httpd.conf:${PORTSDIR}/www/apache13
 

@@ -11,7 +11,7 @@ CATEGORIES=	news
 MASTER_SITES=	ftp://ftp.demon.co.uk/pub/news/slurp/
 EXTRACT_SUFX=	.tar.Z
 
-MAINTAINER=	jraynard@FreeBSD.ORG
+MAINTAINER=	jraynard@FreeBSD.org
 
 NO_WRKSUBDIR=	yes
 MAN1=		slurp.1

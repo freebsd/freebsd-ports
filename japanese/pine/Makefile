@@ -16,7 +16,7 @@ DISTFILES=	pine3.95.tar.gz pine3.95lj1.1b2.tar.gz
 PATCHFILES=	pine3.95lj1.1b2-b3.diff.gz
 PATCH_SITES=	${MASTER_SITE_PORTS_JP}
 
-MAINTAINER=	max@FreeBSD.ORG
+MAINTAINER=	max@FreeBSD.org
 
 BROKEN_ELF=	yes
 

@@ -10,7 +10,7 @@ DISTNAME=	kmpg-0.4.3a
 CATEGORIES=	audio kde
 MASTER_SITES=	http://www.freebsd.org/~tom/distfiles/
 
-MAINTAINER=	tom@FreeBSD.ORG
+MAINTAINER=	tom@FreeBSD.org
 
 LIB_DEPENDS=	kdecore.2:${PORTSDIR}/x11/kdelibs11 \
 		kdeui.2:${PORTSDIR}/x11/kdelibs11

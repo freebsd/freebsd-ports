@@ -10,7 +10,7 @@ DISTNAME=	hfsutils-3.2.6
 CATEGORIES=	emulators tk80
 MASTER_SITES=	ftp://ftp.mars.org/pub/hfs/
 
-MAINTAINER=	vanilla@FreeBSD.ORG
+MAINTAINER=	vanilla@FreeBSD.org
 
 LIB_DEPENDS=	tk80.1:${PORTSDIR}/x11-toolkits/tk80
 

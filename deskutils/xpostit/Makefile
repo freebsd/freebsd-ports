@@ -17,7 +17,7 @@ CATEGORIES=    deskutils
 MASTER_SITES=  ftp://ftp.hrz.tu-darmstadt.de/pub/X11/R5contrib/
 EXTRACT_SUFX=  .tar.Z
 
-MAINTAINER=    joerg@FreeBSD.ORG
+MAINTAINER=    joerg@FreeBSD.org
 
 USE_IMAKE=     yes
 WRKSRC=        ${WRKDIR}/xpostit

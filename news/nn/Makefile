@@ -12,7 +12,7 @@ MASTER_SITES=	ftp://ftp.visi.com/users/mtpins/ \
 		ftp://maroon.webmaster.com/pub/nn/
 EXTRACT_SUFX=	.tar.Z
 
-MAINTAINER=     ports@FreeBSD.ORG
+MAINTAINER=     ports@FreeBSD.org
 MAINTAINER=	jooji@webnology.com
 
 IS_INTERACTIVE=	yes

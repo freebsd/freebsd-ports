@@ -1,7 +1,7 @@
 # New ports collection makefile for:    python-doc
 # Version required:     1.5.2
 # Date created:         12 May 1999
-# Whom:                 Thomas Gellekum <tg@FreeBSD.ORG>
+# Whom:                 Thomas Gellekum <tg@FreeBSD.org>
 #
 # $FreeBSD$
 #
@@ -13,7 +13,7 @@ MASTER_SITES=	ftp://www.python.org/pub/python/doc/1.5.2/ \
 		ftp://ftp.cwi.nl/pub/python/doc/1.5.2/
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	tg@FreeBSD.ORG
+MAINTAINER=	tg@FreeBSD.org
 
 DIST_SUBDIR=	python
 NO_BUILD=	yes

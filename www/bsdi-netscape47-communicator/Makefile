@@ -9,7 +9,7 @@
 MASTER_SITES?=	ftp://ftp.netscape.com/pub/communicator/english/4.61/unix/unsupported/freebsd/complete_install/
 DISTFILES?=	communicator-v461-export.x86-unknown-freebsd.tar.gz
 
-MAINTAINER?=	sada@FreeBSD.ORG
+MAINTAINER?=	sada@FreeBSD.org
 
 MASTERDIR=	${.CURDIR}/../netscape4-communicator
 NO_LATEST_LINK=	yes

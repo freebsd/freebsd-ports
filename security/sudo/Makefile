@@ -11,7 +11,7 @@ PKGNAME=	sudo-1.5.9.4
 CATEGORIES=	security
 MASTER_SITES=	ftp://ftp.cs.colorado.edu/pub/sysadmin/sudo/
 
-MAINTAINER=	mharo@FreeBSD.ORG
+MAINTAINER=	mharo@FreeBSD.org
 
 WRKSRC=		${WRKDIR}/sudo.v1.5.9p4
 GNU_CONFIGURE=	yes

@@ -15,7 +15,7 @@ CATEGORIES=	games
 # but right now only available from:
 MASTER_SITES=	http://www.ikp.uni-koeln.de/~vogel/archive/
 
-MAINTAINER=	se@FreeBSD.ORG
+MAINTAINER=	se@FreeBSD.org
 
 WRKSRC=		${WRKDIR}/XBlast-2.6.beta
 USE_IMAKE=      yes

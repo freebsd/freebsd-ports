@@ -15,7 +15,7 @@ MASTER_SITES=	http://c64.org/~nr/ \
 		ftp://ftp.infodrom.north.de/pub/unix/gtkbuffet/apps/xwhois/ \
 		http://www.physics.adelaide.edu.au/~kkennawa/
 
-MAINTAINER=	kris@FreeBSD.ORG
+MAINTAINER=	kris@FreeBSD.org
 
 LIB_DEPENDS=	gtk12.2:${PORTSDIR}/x11-toolkits/gtk12
 

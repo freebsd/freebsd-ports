@@ -1,7 +1,7 @@
 # New ports collection makefile for: checkpassword
 # Version required:	0.81
 # Date created:		05 August 1998
-# Whom:			sada@FreeBSD.ORG
+# Whom:			sada@FreeBSD.org
 #
 # $FreeBSD$
 #
@@ -9,10 +9,10 @@
 DISTNAME=	checkpassword-0.81
 CATEGORIES=	security
 MASTER_SITES=	ftp://koobera.math.uic.edu/www/software/ \
-		http://WWW.FreeBSD.ORG/~sada/distfiles/ \
+		http://WWW.FreeBSD.org/~sada/distfiles/ \
 		${MASTER_SITE_PORTS_JP}
 
-MAINTAINER=	sada@FreeBSD.ORG
+MAINTAINER=	sada@FreeBSD.org
 
 ALL_TARGET=	it
 INSTALL_TARGET=	setup

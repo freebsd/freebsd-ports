@@ -1,7 +1,7 @@
 # New ports collection makefile for:	py-gnome
 # Version required:			1.0.1
 # Date created:				03/14/1999
-# Whom:					nectar@FreeBSD.ORG
+# Whom:					nectar@FreeBSD.org
 #
 # $FreeBSD$
 #
@@ -15,7 +15,7 @@ MASTER_SITES=	ftp://ftp.daa.com.au/pub/james/python/ \
 		ftp://ftp.cs.umn.edu/pub/gimp/gtk/python/ \
 		ftp://stef.u-picardie.fr/mirror/ftp.gimp.org/gtk/python/
 
-MAINTAINER=	nectar@FreeBSD.ORG
+MAINTAINER=	nectar@FreeBSD.org
 
 BUILD_DEPENDS=	python:${PORTSDIR}/lang/python
 LIB_DEPENDS=	capplet.1:${PORTSDIR}/sysutils/gnomecontrolcenter

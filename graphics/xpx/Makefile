@@ -11,7 +11,7 @@ PKGNAME=	xpx-1.41
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.oersted.co.jp/~yav/soft/xpx/
 
-MAINTAINER=	flathill@FreeBSD.ORG
+MAINTAINER=	flathill@FreeBSD.org
 
 WRKSRC=		${WRKDIR}/xpx
 USE_IMAKE=	yes

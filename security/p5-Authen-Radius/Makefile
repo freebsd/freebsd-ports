@@ -12,7 +12,7 @@ CATEGORIES=	security net perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Authen
 
-MAINTAINER=	jfitz@FreeBSD.ORG
+MAINTAINER=	jfitz@FreeBSD.org
 
 BUILD_DEPENDS=	${PREFIX}/lib/perl5/site_perl/${PERL_VER}/MD5.pm:${PORTSDIR}/security/p5-MD5
 USE_PERL5=	YES

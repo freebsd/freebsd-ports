@@ -10,7 +10,7 @@ DISTNAME=	cdb-0.55
 CATEGORIES=	databases
 MASTER_SITES=	ftp://koobera.math.uic.edu/www/software/
 
-MAINTAINER=	ports@FreeBSD.ORG
+MAINTAINER=	ports@FreeBSD.org
 
 ALL_TARGET=	it
 MAN1=		cdbget.1 cdbmake.1 cdbdump.1 cdbstats.1 cdbtest.1

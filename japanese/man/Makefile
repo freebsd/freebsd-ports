@@ -12,7 +12,7 @@ CATEGORIES=	japanese
 MASTER_SITES=	ftp://daemon.jp.freebsd.org/pub/FreeBSD-jp/man-jp/ \
 		${MASTER_SITE_PORTS_JP}
 
-MAINTAINER=	kuriyama@FreeBSD.ORG
+MAINTAINER=	kuriyama@FreeBSD.org
 
 RUN_DEPENDS=	${PREFIX}/bin/groff:${PORTSDIR}/japanese/groff \
 		jless:${PORTSDIR}/japanese/less

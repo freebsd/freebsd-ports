@@ -10,7 +10,7 @@ DISTNAME=	xflame-1.1.1
 CATEGORIES=	games
 MASTER_SITES=	http://www.owlnet.rice.edu/~rahul/
 
-MAINTAINER=	kris@FreeBSD.ORG
+MAINTAINER=	kris@FreeBSD.org
 
 USE_IMAKE=	yes
 

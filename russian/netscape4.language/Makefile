@@ -9,7 +9,7 @@
 PKGNAME=        ru-netscape-3.01
 CATEGORIES=     russian www
 
-MAINTAINER=	ache@FreeBSD.ORG
+MAINTAINER=	ache@FreeBSD.org
 
 RUN_DEPENDS += ${X11BASE}/lib/X11/nls/ru_SU.KOI8-R:${PORTSDIR}/russian/X.language
 RUN_DEPENDS += netscape:${PORTSDIR}/www/netscape3

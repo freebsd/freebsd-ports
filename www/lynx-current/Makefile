@@ -11,7 +11,7 @@ PKGNAME=        lynx-2.8.3dev.5
 CATEGORIES=	www
 MASTER_SITES=   http://sol.slcc.edu/lynx/current/
 
-MAINTAINER=	ache@FreeBSD.ORG
+MAINTAINER=	ache@FreeBSD.org
 
 USE_BZIP2=      YES
 NO_LATEST_LINK=	YES

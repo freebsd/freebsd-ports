@@ -10,7 +10,7 @@ DISTNAME=	ical-2.2
 CATEGORIES=	deskutils tk80
 MASTER_SITES=	http://www.research.digital.com/SRC/personal/Sanjay_Ghemawat/ical/icalbins/
 
-MAINTAINER=	erich@FreeBSD.ORG
+MAINTAINER=	erich@FreeBSD.org
 
 LIB_DEPENDS=    tk80.1:${PORTSDIR}/x11-toolkits/tk80
 

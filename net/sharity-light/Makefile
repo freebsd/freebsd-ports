@@ -13,7 +13,7 @@ MASTER_SITES=	ftp://ftp.obdev.at/pub/Products/Sharity-Light/	\
 		ftp://ftp.warpnet.ro/mirrors/ftp.obdev.at/pub/Products/Sharity-Light/ \
 		http://www.freebsd.org/~dt/distfiles/
 
-MAINTAINER=	dt@FreeBSD.ORG
+MAINTAINER=	dt@FreeBSD.org
 
 MAN8=		smbmount.8
 

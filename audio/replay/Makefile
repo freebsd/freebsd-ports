@@ -1,7 +1,7 @@
 # New ports collection makefile for:	replay
 # Version required:		0.61
 # Date created:			Oct 27 1998
-# Whom:				Vanilla Pooh Shu <vanilla@FreeBSD.ORG>
+# Whom:				Vanilla Pooh Shu <vanilla@FreeBSD.org>
 #
 # $FreeBSD$
 #

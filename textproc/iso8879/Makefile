@@ -12,7 +12,7 @@ CATEGORIES=	textproc
 MASTER_SITES=	http://fallout.campusview.indiana.edu/ports/distfiles/
 EXTRACT_SUFX=	.zip
 
-MAINTAINER=	jfieber@FreeBSD.ORG
+MAINTAINER=	jfieber@FreeBSD.org
 
 BUILD_DEPENDS=	unzip:${PORTSDIR}/archivers/unzip
 

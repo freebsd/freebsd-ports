@@ -13,7 +13,7 @@ MASTER_SITES=	ftp://metalab.unc.edu/pub/X11/contrib/applications/ \
 		ftp://ftp.tk.mesh.ad.jp/pub/X/contrib/applications/
 EXTRACT_SUFX=	.tar.Z
 
-MAINTAINER=	ports@FreeBSD.ORG
+MAINTAINER=	ports@FreeBSD.org
 
 REQUIRES_MOTIF=	yes
 GNU_CONFIGURE=	yes

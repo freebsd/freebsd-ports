@@ -13,7 +13,7 @@ MASTER_SITES=	ftp://ftp.gimp.org/pub/gtk/v1.2/ \
 		ftp://ftp.cs.umn.edu/pub/gimp/gtk/v1.2/ \
 		http://www.ameth.org/gimp/gtk/v1.2/
 
-MAINTAINER=	vanilla@FreeBSD.ORG
+MAINTAINER=	vanilla@FreeBSD.org
 
 LIB_DEPENDS=	glib12.2:${PORTSDIR}/devel/glib12 \
 		intl.1:${PORTSDIR}/devel/gettext

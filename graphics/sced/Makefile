@@ -11,7 +11,7 @@ CATEGORIES=	graphics
 MASTER_SITES=	http://www.cs.berkeley.edu/~schenney/sced/src/ \
 		http://www.physik.TU-Berlin.DE/~ibex/ports/distfiles/
 
-MAINTAINER=	ports@FreeBSD.ORG
+MAINTAINER=	ports@FreeBSD.org
 
 RUN_DEPENDS=	povray:${PORTSDIR}/graphics/povray
 

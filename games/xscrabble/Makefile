@@ -11,7 +11,7 @@ PKGNAME=	xscrabble-1.0
 CATEGORIES=	games
 MASTER_SITES=	http://www.freebsd.org/~mph/distfiles/
 
-MAINTAINER=	ports@FreeBSD.ORG
+MAINTAINER=	ports@FreeBSD.org
 
 LIB_DEPENDS=	Xpm.4:${PORTSDIR}/graphics/xpm
 

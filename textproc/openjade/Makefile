@@ -10,7 +10,7 @@ DISTNAME=	jade-1.2.1
 CATEGORIES=	textproc
 MASTER_SITES=	ftp://ftp.jclark.com/pub/jade/
 
-MAINTAINER=	jfieber@FreeBSD.ORG
+MAINTAINER=	jfieber@FreeBSD.org
 
 .if ${MACHINE_ARCH} == "alpha"
 BROKEN=		nsgmls coredumps in static constructors

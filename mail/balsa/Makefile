@@ -11,7 +11,7 @@ CATEGORIES=	mail gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/balsa
 
-MAINTAINER=	ports@FreeBSD.ORG
+MAINTAINER=	ports@FreeBSD.org
 
 RUN_DEPENDS=	panel:${PORTSDIR}/x11/gnomecore
 LIB_DEPENDS=	gnome.2:${PORTSDIR}/x11/gnomelibs \

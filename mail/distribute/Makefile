@@ -14,7 +14,7 @@ MASTER_SITES=	ftp://ftp.foretune.co.jp/pub/network/mail/distribute/
 PATCH_SITES=	${MASTER_SITES}BETA/
 PATCHFILES=	patch.20.gz patch.21e.gz patch.22e.gz patch.23e.gz patch.24e.gz
 
-MAINTAINER=	kuriyama@FreeBSD.ORG
+MAINTAINER=	kuriyama@FreeBSD.org
 
 WRKSRC=		${WRKDIR}/distribute-pl19
 MAN1=		distribute.1

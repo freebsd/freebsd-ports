@@ -6,7 +6,7 @@
 # $FreeBSD$
 #
 
-MAINTAINER=	kuriyama@FreeBSD.ORG
+MAINTAINER=	kuriyama@FreeBSD.org
 
 # This is a slave port.
 PORTCLASS=	slave

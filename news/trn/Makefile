@@ -10,7 +10,7 @@ DISTNAME=	trn-3.6
 CATEGORIES=	news
 MASTER_SITES=	ftp://ftp.uu.net/networking/news/readers/trn/
 
-MAINTAINER=	smace@FreeBSD.ORG
+MAINTAINER=	smace@FreeBSD.org
 
 RUN_DEPENDS=  munpack:${PORTSDIR}/converters/mpack
 

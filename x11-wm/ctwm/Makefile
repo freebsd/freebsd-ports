@@ -15,7 +15,7 @@ PATCH_SITES=	${MASTER_SITES}
 PATCHFILES=	ctwm-3.5-3.5.1.diffs.gz
 PATCH_DIST_STRIP=	-p1
 
-MAINTAINER=	torstenb@FreeBSD.ORG
+MAINTAINER=	torstenb@FreeBSD.org
 
 LIB_DEPENDS=	Xpm.4:${PORTSDIR}/graphics/xpm
 

@@ -12,7 +12,7 @@ CATEGORIES=	net
 MASTER_SITES=	ftp://ftp.uu.net/networking/info-service/archie/clients/
 EXTRACT_SUFX=	.tar.Z
 
-MAINTAINER=	torstenb@FreeBSD.ORG
+MAINTAINER=	torstenb@FreeBSD.org
 
 WRKSRC=		${WRKDIR}/archie-1.4.1-FIX
 MAN1=		archie.1

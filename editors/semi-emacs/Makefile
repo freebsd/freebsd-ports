@@ -1,7 +1,7 @@
 # New ports collection makefile for:	semi for emacs
 # Version required:	1.8.6
 # Date created:		9 May 1999
-# Whom:			Shigeyuki FUKUSHIMA <shige@FreeBSD.ORG>
+# Whom:			Shigeyuki FUKUSHIMA <shige@FreeBSD.org>
 #
 # $FreeBSD$
 #
@@ -10,7 +10,7 @@ DISTNAME=	semi-${SEMI_VER}
 CATEGORIES=	editors elisp
 MASTER_SITES=	ftp://ftp.jaist.ac.jp/pub/GNU/elisp/semi/semi-1.08-for-flim-1.9/
 
-MAINTAINER?=	shige@FreeBSD.ORG
+MAINTAINER?=	shige@FreeBSD.org
 
 PORTCLASS?=	master
 

@@ -1,7 +1,7 @@
 # New ports collection makefile for:    netshow
 # Version required:     2.00.251
 # Date created:         Thu Jun 11 22:38:52 PDT 1998
-# Whom:                 dburr@FreeBSD.ORG
+# Whom:                 dburr@FreeBSD.org
 #
 # $FreeBSD$
 #
@@ -12,7 +12,7 @@ CATEGORIES=	graphics net
 MASTER_SITES=	http://microsoft.com/netshow/download/en/beta/
 EXTRACT_SUFX=	.gz
 
-MAINTAINER=	dburr@FreeBSD.ORG
+MAINTAINER=	dburr@FreeBSD.org
 
 RUN_DEPENDS=	/compat/linux/usr/i486-linux-libc5/lib/libc.so.5:${PORTSDIR}/emulators/linux_base
 

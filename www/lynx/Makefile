@@ -11,7 +11,7 @@ PKGNAME=        lynx-2.8.2rel.1
 CATEGORIES=	www
 MASTER_SITES=   http://sol.slcc.edu/lynx/current/
 
-MAINTAINER=	jseger@FreeBSD.ORG
+MAINTAINER=	jseger@FreeBSD.org
 
 USE_BZIP2=      YES
 WRKSRC=         ${WRKDIR}/lynx2-8-2

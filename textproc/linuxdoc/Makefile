@@ -10,7 +10,7 @@ DISTNAME=	linuxdoc-1.1
 CATEGORIES=	textproc
 MASTER_SITES=	http://fallout.campusview.indiana.edu/ports/distfiles/
 
-MAINTAINER=	jfieber@FreeBSD.ORG
+MAINTAINER=	jfieber@FreeBSD.org
 
 RUN_DEPENDS=    ${ISOCAT}:${PORTSDIR}/textproc/iso8879
 

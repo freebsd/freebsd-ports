@@ -12,7 +12,7 @@ PKGNAME=	ja-Canna-3.2.2
 CATEGORIES=	japanese
 MASTER_SITES=	ftp://ftp.nec.co.jp/pub/Canna/Canna32/
 
-MAINTAINER=	max@FreeBSD.ORG
+MAINTAINER=	max@FreeBSD.org
 
 BUILD_DEPENDS=	imake:${PORTSDIR}/x11/XFree86
 

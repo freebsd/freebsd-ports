@@ -12,7 +12,7 @@ CATEGORIES=	emulators
 MASTER_SITES=	ftp://crl.nmsu.edu/pub/non-lexical/6811/
 EXTRACT_SUFX=	.tar.Z
 
-MAINTAINER=	erich@FreeBSD.ORG
+MAINTAINER=	erich@FreeBSD.org
 
 NO_WRKSUBDIR=	yes
 

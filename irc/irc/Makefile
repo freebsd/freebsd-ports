@@ -15,7 +15,7 @@ MASTER_SITES=	ftp://ftp.funet.fi/pub/networking/services/irc/server/ \
 		ftp://ftp.ut.ee/pub/unix/irc/server/ \
 		ftp://ftp.ntua.gr/pub/net/irc/server/
 
-MAINTAINER=	torstenb@FreeBSD.ORG
+MAINTAINER=	torstenb@FreeBSD.org
 
 # the NOTE command is disabled by default
 # ENABLE_NOTE=yes

@@ -13,7 +13,7 @@ MASTER_SITES= 	ftp://iris.ssec.wisc.edu/pub/Mesa/ \
 		ftp://ftp.fu-berlin.de/pub/unix/X11/graphics/Mesa/
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} MesaDemos-3.0.tar.gz
 
-MAINTAINER=	jseger@FreeBSD.ORG
+MAINTAINER=	jseger@FreeBSD.org
 
 WRKSRC=		${WRKDIR}/Mesa-3.0
 

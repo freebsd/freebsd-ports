@@ -1,7 +1,7 @@
 # New ports collection makefile for:		qcc
 # Version required:				1.01
 # Date created:					October 25th 1996
-# Whom:						jfitz@FreeBSD.ORG
+# Whom:						jfitz@FreeBSD.org
 #
 # $FreeBSD$
 #

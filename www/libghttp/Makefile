@@ -1,7 +1,7 @@
 # New ports collection makefile for:	libghttp
 # Version required:			1.0.4
 # Date Created:				24 Dec 1998
-# Whom:					Vanilla I. Shu <vanilla@FreeBSD.ORG>
+# Whom:					Vanilla I. Shu <vanilla@FreeBSD.org>
 #
 # $FreeBSD$
 #
@@ -11,7 +11,7 @@ CATEGORIES=	www gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/libghttp
 
-MAINTAINER=	vanilla@FreeBSD.ORG
+MAINTAINER=	vanilla@FreeBSD.org
 
 USE_LIBTOOL=	yes
 

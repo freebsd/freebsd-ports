@@ -15,7 +15,7 @@ MASTER_SITES=	ftp://ftp.cdrom.com/pub/perl/CPAN/scripts/news/nntpstuff/aub/ \
 		ftp://ftp.perl.org/pub/CPAN/scripts/news/nntpstuff/aub/
 DISTFILES=	aub aub.1 BUG_FIXES
 
-MAINTAINER=	obrien@FreeBSD.ORG
+MAINTAINER=	obrien@FreeBSD.org
 
 DIST_SUBDIR=	aub
 NO_WRKSUBDIR=	yes

@@ -12,7 +12,7 @@ MASTER_SITES=	ftp://ftp.uu.net/networking/mail/smail/ \
 		ftp://ftp.planix.com/pub/Smail/ \
 		ftp://ftp.fu-berlin.de/unix/mail/smail/
 
-MAINTAINER=	torstenb@FreeBSD.ORG
+MAINTAINER=	torstenb@FreeBSD.org
 
 BUILD_DEPENDS=	${PREFIX}/lib/libident.a:${PORTSDIR}/security/libident
 .if !exists(/usr/include/tcpd.h)

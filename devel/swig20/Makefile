@@ -13,7 +13,7 @@ MASTER_SITES=	ftp://ftp.cs.utah.edu/pub/beazley/SWIG/ \
 		ftp://ftp.rge.com/pub/languages/swig/ \
 		ftp://ftp.mcc.ac.uk/pub/mvc/swig/
 
-MAINTAINER=	erich@FreeBSD.ORG
+MAINTAINER=	erich@FreeBSD.org
 
 BUILD_DEPENDS=	${PREFIX}/bin/python:${PORTSDIR}/lang/python \
 		${PREFIX}/bin/tclsh8.0:${PORTSDIR}/lang/tcl80

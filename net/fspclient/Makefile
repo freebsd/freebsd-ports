@@ -12,7 +12,7 @@ CATEGORIES=	net
 MASTER_SITES=   ftp://ftp.germany.eu.net/pub/networking/fsp/
 EXTRACT_SUFX=   .tar.z
 
-MAINTAINER=     ache@FreeBSD.ORG
+MAINTAINER=     ache@FreeBSD.org
 
 WRKSRC=		${WRKDIR}/fspclient
 GNU_CONFIGURE=	yes

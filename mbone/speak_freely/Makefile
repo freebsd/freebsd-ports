@@ -11,7 +11,7 @@ DISTNAME=       speak_freely-6.1c
 CATEGORIES=     mbone audio security
 MASTER_SITES=   http://www.fourmilab.ch/speakfree/unix/prior-releases/6.1/
 
-MAINTAINER=     ache@FreeBSD.ORG
+MAINTAINER=     ache@FreeBSD.org
 
 LIB_DEPENDS=    gsm.1:${PORTSDIR}/audio/gsm
 

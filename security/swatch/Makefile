@@ -11,7 +11,7 @@ CATEGORIES=	security sysutils
 MASTER_SITES=	ftp://ftp.stanford.edu/general/security-tools/swatch/ \
 		ftp://ftp.cert.dfn.de/pub/tools/audit/swatch/
 
-MAINTAINER=	jfitz@FreeBSD.ORG
+MAINTAINER=	jfitz@FreeBSD.org
 
 NO_BUILD=	YES
 

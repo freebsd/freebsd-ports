@@ -1,7 +1,7 @@
 # New ports collection makefile for:	afterstep
 # Version required:	1.0
 # Date created:		October 29th 1996
-# Whom:			jfitz@FreeBSD.ORG
+# Whom:			jfitz@FreeBSD.org
 #
 # $FreeBSD$
 #
@@ -13,7 +13,7 @@ MASTER_SITES=	${MASTER_SITE_AFTERSTEP} \
 		ftp://ftp.cs.tu-berlin.de/pub/X/afterstep/
 MASTER_SITE_SUBDIR=	stable/archives
 
-MAINTAINER=	jfitz@FreeBSD.ORG
+MAINTAINER=	jfitz@FreeBSD.org
 
 LIB_DEPENDS=	Xpm.4:${PORTSDIR}/graphics/xpm
 

@@ -13,7 +13,7 @@ MASTER_SITES=   ftp://ftp.cs.titech.ac.jp/pub/tool/lha/ \
 		ftp://ftp.hipecs.hokudai.ac.jp/pub/unix/lha/ \
 		ftp://ftp.win.or.jp/pub/misc/
 
-MAINTAINER=     ache@FreeBSD.ORG
+MAINTAINER=     ache@FreeBSD.org
 
 MAN1=		lha.1
 MANLANG=	ja

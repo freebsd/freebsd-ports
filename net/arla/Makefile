@@ -1,7 +1,7 @@
 # New ports collection makefile for:	arla
 # Version required:		2.7.1ac-0.84
 # Date created:			09 Sep 1998
-# Whom:				Peter Hawkins <thepish@FreeBSD.ORG>
+# Whom:				Peter Hawkins <thepish@FreeBSD.org>
 #
 # $FreeBSD$
 #

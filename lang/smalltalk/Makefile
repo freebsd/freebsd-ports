@@ -11,7 +11,7 @@ CATEGORIES=	lang
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	smalltalk
 
-MAINTAINER=	jraynard@FreeBSD.ORG
+MAINTAINER=	jraynard@FreeBSD.org
 
 BUILD_DEPENDS=	${PREFIX}/lib/libgdbm.a:${PORTSDIR}/databases/gdbm
 

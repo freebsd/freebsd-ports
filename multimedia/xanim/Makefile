@@ -13,7 +13,7 @@ MASTER_SITES=	ftp://xanim.va.pubnix.com/ \
 		ftp://xanim.va.pubnix.com/dlls/
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${EXTRA_FILES}
 
-MAINTAINER=	ports@FreeBSD.ORG
+MAINTAINER=	ports@FreeBSD.org
 
 EXTRA_FILES=    vid_cvid_2.1_freebsdELFx86.tgz \
 		vid_cyuv_1.0_freebsdELFx86.tgz \

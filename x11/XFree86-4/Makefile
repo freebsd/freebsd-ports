@@ -17,7 +17,7 @@ MASTER_SITES=	ftp://ftp.xfree86.org/pub/XFree86/3.3.4/source/ \
 DISTFILES=	X334src-1.tgz X334src-2.tgz
 
 
-MAINTAINER=	jmz@FreeBSD.ORG
+MAINTAINER=	jmz@FreeBSD.org
 
 IS_INTERACTIVE=	yes	# configure script asks questions
 NO_PACKAGE=	package available from XFree86

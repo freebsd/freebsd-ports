@@ -17,7 +17,7 @@ DISTFILES += Type1.koi8-r.tgz
 DISTFILES += Type1.koi8-r.free.tgz
 .endif
 
-MAINTAINER=	ache@FreeBSD.ORG
+MAINTAINER=	ache@FreeBSD.org
 
 RUN_DEPENDS=	${X11BASE}/bin/xinit:${PORTSDIR}/x11/XFree86
 

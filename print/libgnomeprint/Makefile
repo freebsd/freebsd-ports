@@ -1,7 +1,7 @@
 # New ports collection makefile for:	gnomeprint
 # Version required:			0.4
 # Date created:				15 Jan 1999
-# Whom:					Vanilla I. Shu <vanilla@FreeBSD.ORG>
+# Whom:					Vanilla I. Shu <vanilla@FreeBSD.org>
 #
 # $FreeBSD$
 #

@@ -1,7 +1,7 @@
 # New ports collection makefile for:    gadfly
 # Version required:     1.0
 # Date created:         30 October 1998
-# Whom:                 Thomas Gellekum <tg@FreeBSD.ORG>
+# Whom:                 Thomas Gellekum <tg@FreeBSD.org>
 #
 # $FreeBSD$
 #
@@ -11,7 +11,7 @@ PKGNAME=	gadfly-1.0
 CATEGORIES=	databases
 MASTER_SITES=	http://www.chordate.com/kwParsing/
 
-MAINTAINER=	ports@FreeBSD.ORG
+MAINTAINER=	ports@FreeBSD.org
 
 BUILD_DEPENDS=	python:${PORTSDIR}/lang/python
 RUN_DEPENDS=	python:${PORTSDIR}/lang/python

@@ -1,12 +1,12 @@
 # New ports collection makefile for:	semi for emacs
 # Version required:	1.8.6
 # Date created:		23 September 1998
-# Whom:			Shigeyuki FUKUSHIMA <shige@FreeBSD.ORG>
+# Whom:			Shigeyuki FUKUSHIMA <shige@FreeBSD.org>
 #
 # $FreeBSD$
 #
 
-MAINTAINER=	shige@FreeBSD.ORG
+MAINTAINER=	shige@FreeBSD.org
 
 # This is a slave port.
 PORTCLASS=	slave

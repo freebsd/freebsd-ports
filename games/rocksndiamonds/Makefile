@@ -1,7 +1,7 @@
 # New ports collection makefile for:	rocksndiamonds
 # Version required:	1.2.0
 # Date created:		27 May 1999
-# Whom:			Thomas Gellekum <tg@FreeBSD.ORG>
+# Whom:			Thomas Gellekum <tg@FreeBSD.org>
 #
 # $FreeBSD$
 #
@@ -11,7 +11,7 @@ CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_XCONTRIB}
 MASTER_SITE_SUBDIR=	games
 
-MAINTAINER=	ports@FreeBSD.ORG
+MAINTAINER=	ports@FreeBSD.org
 
 USE_XLIB=	yes
 USE_GMAKE=	yes

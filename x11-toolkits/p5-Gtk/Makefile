@@ -13,7 +13,7 @@ MASTER_SITES=	ftp://ftp.gtk.org/pub/gtk/perl/ \
 		${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Gtk
 
-MAINTAINER=	vanilla@FreeBSD.ORG
+MAINTAINER=	vanilla@FreeBSD.org
 
 LIB_DEPENDS=	gdk_imlib.4:${PORTSDIR}/graphics/imlib
 

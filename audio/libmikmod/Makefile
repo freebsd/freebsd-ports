@@ -11,7 +11,7 @@ CATEGORIES=	audio
 # The files at multimania.com seem to be corrupted
 MASTER_SITES=	http://mikmod.darkorb.net/libmikmod/
 
-MAINTAINER=	mharo@FreeBSD.ORG
+MAINTAINER=	mharo@FreeBSD.org
 
 LIB_DEPENDS=	esd.1:${PORTSDIR}/audio/esound
 

@@ -11,7 +11,7 @@ PKGNAME=	tk-8.1.1
 CATEGORIES=	x11-toolkits tk81
 MASTER_SITES=	ftp://ftp.scriptics.com/pub/tcl/tcl8_1/
 
-MAINTAINER=	jseger@FreeBSD.ORG
+MAINTAINER=	jseger@FreeBSD.org
 
 LIB_DEPENDS=	tcl81.1:${PORTSDIR}/lang/tcl81
 FILE_DEPENDS=	${PORTSDIR}/x11-toolkits/tk80

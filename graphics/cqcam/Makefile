@@ -11,7 +11,7 @@ CATEGORIES=	graphics tk80
 MASTER_SITES=	http://www.cs.virginia.edu/~patrick/cqcam/
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	ports@FreeBSD.ORG
+MAINTAINER=	ports@FreeBSD.org
 
 LIB_DEPENDS=	tk80.1:${PORTSDIR}/x11-toolkits/tk80 \
 		jpeg.9:${PORTSDIR}/graphics/jpeg

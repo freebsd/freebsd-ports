@@ -12,7 +12,7 @@ MASTER_SITES=	ftp://www.rasterman.com/pub/enlightenment/enlightenment/ \
 		http://www.rasterman.com/files/ \
 		ftp://ftp.dti.ad.jp/pub/X/enlightenment/enlightenment/
 
-MAINTAINER=	vanilla@FreeBSD.ORG
+MAINTAINER=	vanilla@FreeBSD.org
 
 LIB_DEPENDS=	esd.1:${PORTSDIR}/audio/esound \
 		Fnlib.0:${PORTSDIR}/graphics/fnlib \

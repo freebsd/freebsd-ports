@@ -1,7 +1,7 @@
 # New ports collection makefile for:	rpm
 # Version required:	2.5.5
 # Date created:		30 April 1999
-# Whom:			Thomas Gellekum <tg@FreeBSD.ORG>
+# Whom:			Thomas Gellekum <tg@FreeBSD.org>
 #
 # $FreeBSD$
 #
@@ -10,7 +10,7 @@ DISTNAME=	rpm-2.5.5
 CATEGORIES=	misc
 MASTER_SITES=	ftp://ftp.rpm.org/pub/rpm/dist/rpm-2.5.x/
 
-MAINTAINER=	ports@FreeBSD.ORG
+MAINTAINER=	ports@FreeBSD.org
 
 BUILD_DEPENDS=	${PREFIX}/lib/libgdbm.a:${PORTSDIR}/databases/gdbm
 

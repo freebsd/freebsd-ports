@@ -1,7 +1,7 @@
 # New ports collection makefile for:	flim for emacs
 # Version required:	1.12.5
 # Date created:		9 May 1999
-# Whom:			Shigeyuki FUKUSHIMA <shige@FreeBSD.ORG>
+# Whom:			Shigeyuki FUKUSHIMA <shige@FreeBSD.org>
 #
 # $FreeBSD$
 #
@@ -10,7 +10,7 @@ DISTNAME=	flim-${FLIM_VER}
 CATEGORIES=	editors elisp
 MASTER_SITES=	ftp://ftp.jaist.ac.jp/pub/GNU/elisp/flim/flim-1.12/
 
-MAINTAINER?=	shige@FreeBSD.ORG
+MAINTAINER?=	shige@FreeBSD.org
 
 PORTCLASS?=	master
 

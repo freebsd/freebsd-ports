@@ -13,7 +13,7 @@ MASTER_SITES=	ftp://www.python.org/pub/python/src/ \
 		ftp://ftp.cwi.nl/pub/python/src/
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	tg@FreeBSD.ORG
+MAINTAINER=	tg@FreeBSD.org
 
 LIB_DEPENDS=	${TK_DEPENDS}
 

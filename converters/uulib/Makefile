@@ -12,7 +12,7 @@ CATEGORIES=	converters
 MASTER_SITES=	ftp://tsx-11.mit.edu/pub/linux/sources/usr.bin/ \
 		http://www.informatik.uni-frankfurt.de/~fp/uudeview/Apps/frank/
 
-MAINTAINER=	hoek@FreeBSD.ORG
+MAINTAINER=	hoek@FreeBSD.org
 
 GNU_CONFIGURE=		yes
 

@@ -10,7 +10,7 @@ DISTNAME=	rshell-1.0
 CATEGORIES=	net
 MASTER_SITES=	http://www.freebsd.org/~wosch/src/
 
-MAINTAINER=	wosch@FreeBSD.ORG
+MAINTAINER=	wosch@FreeBSD.org
 
 MAN1=		rshell.1
 MLINKS=		rshell.1 rcopy.1

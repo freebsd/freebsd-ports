@@ -11,7 +11,7 @@ PKGNAME=	wcolEpre-1998.07.13
 CATEGORIES=	www
 MASTER_SITES=	http://shika.aist-nara.ac.jp/products/DEST/Wcol/
 
-MAINTAINER=	shige@FreeBSD.ORG
+MAINTAINER=	shige@FreeBSD.org
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/src
 

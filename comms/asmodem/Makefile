@@ -11,7 +11,7 @@ CATEGORIES=     comms
 MASTER_SITES=   ftp://afterstep.foo.net/pub/AfterStep/apps/asmodem/ \
 		ftp://ftp.cs.tu-berlin.de/pub/X/afterstep/apps/asmodem/
 
-MAINTAINER=     ports@FreeBSD.ORG
+MAINTAINER=     ports@FreeBSD.org
 
 LIB_DEPENDS=    Xpm.4:${PORTSDIR}/graphics/xpm
 

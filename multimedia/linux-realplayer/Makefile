@@ -11,7 +11,7 @@ PKGNAME=	linux-realplayer-5.0
 CATEGORIES=	audio
 MASTER_SITES=	
 
-MAINTAINER=	kris@FreeBSD.ORG
+MAINTAINER=	kris@FreeBSD.org
 
 RUN_DEPENDS=	/compat/linux/usr/i486-linux-libc5/lib/libc.so.5:${PORTSDIR}/emulators/linux_base
 

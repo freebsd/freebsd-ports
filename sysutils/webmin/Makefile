@@ -10,7 +10,7 @@ DISTNAME=	webmin-0.73
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.webmin.com/webmin/download/
 
-MAINTAINER=	andreas@FreeBSD.ORG
+MAINTAINER=	andreas@FreeBSD.org
 
 NO_BUILD=	yes
 IS_INTERACTIVE=	yes

@@ -11,7 +11,7 @@ CATEGORIES=	misc tk80
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	dejagnu
 
-MAINTAINER=	markm@FreeBSD.ORG
+MAINTAINER=	markm@FreeBSD.org
 
 RUN_DEPENDS=	expect:${PORTSDIR}/lang/expect
 

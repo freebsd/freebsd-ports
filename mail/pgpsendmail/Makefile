@@ -11,7 +11,7 @@ PKGNAME=	pgpsendmail-1.4
 CATEGORIES=	mail
 MASTER_SITES=   ftp://ftp.dhp.com/pub/crypto/pgp/PGPsendmail/
 
-MAINTAINER=     ache@FreeBSD.ORG
+MAINTAINER=     ache@FreeBSD.org
 
 BUILD_DEPENDS += pgp:${PORTSDIR}/security/pgp
 

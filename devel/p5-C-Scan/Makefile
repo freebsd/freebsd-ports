@@ -12,7 +12,7 @@ CATEGORIES=	devel perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	C
 
-MAINTAINER=	jfitz@FreeBSD.ORG
+MAINTAINER=	jfitz@FreeBSD.org
 
 BUILD_DEPENDS= 	${PREFIX}/lib/perl5/site_perl/${PERL_VER}/Data/Flow.pm:${PORTSDIR}/devel/p5-Data-Flow
 

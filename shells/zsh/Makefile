@@ -17,7 +17,7 @@ MASTER_SITES=	ftp://ftp.sterling.com/zsh/ \
 		ftp://ftp.ips.oz.au/pub/packages/zsh/ \
 		ftp://ftp.uit.no/pub/unix/shells/zsh/
 
-MAINTAINER=	torstenb@FreeBSD.ORG
+MAINTAINER=	torstenb@FreeBSD.org
 
 GNU_CONFIGURE=	yes
 MAN1=		zsh.1 zshbuiltins.1 zshcompctl.1 zshexpn.1 zshmisc.1 \

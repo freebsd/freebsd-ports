@@ -11,7 +11,7 @@ PKGNAME=	ldapsdk-1998.12.31
 CATEGORIES=	net
 MASTER_SITES=	ftp://ftp.mozilla.org/pub/directory/c-sdk/ldap/
 
-MAINTAINER=	paul@FreeBSD.ORG
+MAINTAINER=	paul@FreeBSD.org
 
 WRKSRC=			${WRKDIR}/mozilla
 MAKEFILE=	${WRKSRC}/directory/ldapsdk.mk

@@ -11,7 +11,7 @@ PKGNAME=	tclX-8.0.2
 CATEGORIES=	lang tcl80 tk80
 MASTER_SITES=	ftp://ftp.neosoft.com/pub/tcl/tclx-distrib/
 
-MAINTAINER=	jseger@FreeBSD.ORG
+MAINTAINER=	jseger@FreeBSD.org
 
 LIB_DEPENDS=	tk80.1:${PORTSDIR}/x11-toolkits/tk80
 

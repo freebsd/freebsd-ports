@@ -12,7 +12,7 @@ CATEGORIES=	www perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	CGI
 
-MAINTAINER=	jfitz@FreeBSD.ORG
+MAINTAINER=	jfitz@FreeBSD.org
 
 BUILD_DEPENDS= 	${PREFIX}/lib/perl5/site_perl/URI/Escape.pm:${PORTSDIR}/www/p5-libwww
 

@@ -10,7 +10,7 @@ DISTNAME=	xinetd-2.1.8.6b6
 CATEGORIES=	security
 MASTER_SITES=	http://synack.net/xinetd/
 
-MAINTAINER=	markm@FreeBSD.ORG
+MAINTAINER=	markm@FreeBSD.org
 
 FETCH_BEFORE_ARGS=	-b
 GNU_CONFIGURE=	yes

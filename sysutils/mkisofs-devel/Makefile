@@ -12,7 +12,7 @@ MASTER_SITES=	ftp://ftp.fokus.gmd.de/pub/unix/cdrecord/mkisofs/ \
 		ftp://ftp.gwdg.de/pub/linux/misc/cdrecord/mkisofs/ \
 		ftp://ftp.cs.tu-berlin.de/pub/misc/cdrecord/mkisofs/
 
-MAINTAINER=	dirk@FreeBSD.ORG
+MAINTAINER=	dirk@FreeBSD.org
 
 GNU_CONFIGURE=	yes
 MAKE_FLAGS=	XCFLAGS='-c -I. ${CFLAGS} -DSYSTEM_ID_DEFAULT=\"FREEBSD\"' -f

@@ -16,7 +16,7 @@ PATCH_SITES=	http://www.etl.go.jp/~tomo/comp/emacsen/
 PATCHFILES=	emacs-20.4-dl.diff.gz
 PATCH_DIST_STRIP= -p1
 
-MAINTAINER=	shige@FreeBSD.ORG
+MAINTAINER=	shige@FreeBSD.org
 
 RUN_DEPENDS=	emacs-20.4:${PORTSDIR}/editors/emacs20
 

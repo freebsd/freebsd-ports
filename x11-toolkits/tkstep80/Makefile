@@ -1,7 +1,7 @@
 # New ports collection makefile for:	TkStep
 # Version required:	8.0p2
 # Date created:		06 November 1997
-# Whom:			Thomas Gellekum <tg@FreeBSD.ORG>
+# Whom:			Thomas Gellekum <tg@FreeBSD.org>
 #
 # $FreeBSD$
 #
@@ -14,7 +14,7 @@ MASTER_SITES=	ftp://ftp.scriptics.com/pub/tcl/tcl8_0/
 PATCH_SITES= 	ftp://touchwood.ee.uts.edu.au/pub/TkSTEP/
 PATCHFILES=	tk8.0.4-to-tkstep8.0.4-2.patch.tar.gz
 
-MAINTAINER=	tg@FreeBSD.ORG
+MAINTAINER=	tg@FreeBSD.org
 
 LIB_DEPENDS=	tcl80.1:${PORTSDIR}/lang/tcl80 \
 		Xpm.4:${PORTSDIR}/graphics/xpm \

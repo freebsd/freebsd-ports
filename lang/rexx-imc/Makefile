@@ -10,7 +10,7 @@ DISTNAME=	rexx-imc-1.6d
 CATEGORIES=	lang
 MASTER_SITES=	http://www.comlab.ox.ac.uk/oucl/users/ian.collier/distribution/
 
-MAINTAINER=	jfitz@FreeBSD.ORG
+MAINTAINER=	jfitz@FreeBSD.org
 
 NO_WRKSUBDIR=	YES
 

@@ -13,7 +13,7 @@ MASTER_SITES=	http://www.tcx.se/Contrib/ \
 		http://web.tryc.on.ca/mysql/Downloads/Contrib/ \
 		http://mysql.acer.net/Contrib/
 
-MAINTAINER=	andreas@FreeBSD.ORG
+MAINTAINER=	andreas@FreeBSD.org
 
 LIB_DEPENDS=	Xpm.4:${PORTSDIR}/graphics/xpm \
 		xforms.0:${PORTSDIR}/x11-toolkits/xforms \

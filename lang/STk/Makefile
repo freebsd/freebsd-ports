@@ -10,7 +10,7 @@ DISTNAME=       STk-3.1.1
 CATEGORIES=	lang
 MASTER_SITES=	ftp://kaolin.unice.fr/pub/
 
-MAINTAINER=	jmacd@FreeBSD.ORG
+MAINTAINER=	jmacd@FreeBSD.org
 
 BROKEN_ELF=	yes
 

@@ -1,7 +1,7 @@
 # New ports collection makefile for: ppxp
 # Version required:	depend on ports/net/ppxp
 # Date created:         01 Jan 1999
-# Whom:                 sada@FreeBSD.ORG
+# Whom:                 sada@FreeBSD.org
 #
 # $FreeBSD$
 #
@@ -9,7 +9,7 @@
 PKGNAME=	ja-${DISTNAME}
 MASTERDIR=	${.CURDIR}/../../net/ppxp
 
-MAINTAINER=	sada@FreeBSD.ORG
+MAINTAINER=	sada@FreeBSD.org
 
 USE_TCLJP=	yes
 

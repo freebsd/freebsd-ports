@@ -1,7 +1,7 @@
 # New ports collection makefile for:    graphviz
 # Version required:     1.4
 # Date created:         03 Feb 1998
-# Whom:                 Thomas Gellekum <tg@FreeBSD.ORG>
+# Whom:                 Thomas Gellekum <tg@FreeBSD.org>
 #
 # $FreeBSD$
 #
@@ -11,7 +11,7 @@ PKGNAME=	graphviz-1.4
 CATEGORIES=	graphics tk80
 MASTER_SITES=	# http://www.research.att.com/sw/tools/graphviz/
 
-MAINTAINER=	ports@FreeBSD.ORG
+MAINTAINER=	ports@FreeBSD.org
 
 LIB_DEPENDS=	tk80.1:${PORTSDIR}/x11-toolkits/tk80
 

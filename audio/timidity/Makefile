@@ -14,7 +14,7 @@ MASTER_SITES=   ftp://ftp.kiarchive.ru/pub/misc/hardware/soundcard/gus/ \
 TIINS=          goemon.tgz
 DISTFILES=      ${TIINS} ${DISTNAME}.tar.gz
 
-MAINTAINER=     ache@FreeBSD.ORG
+MAINTAINER=     ache@FreeBSD.org
 
 NO_CDROM=       "Uses copyrighted patches"
 

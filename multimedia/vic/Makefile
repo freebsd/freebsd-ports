@@ -11,7 +11,7 @@ CATEGORIES=	mbone tk80
 MASTER_SITES=	ftp://ftp.ee.lbl.gov/conferencing/vic/
 DISTFILES=	vicsrc-2.8.tar.gz
 
-MAINTAINER=	fenner@FreeBSD.ORG
+MAINTAINER=	fenner@FreeBSD.org
 
 LIB_DEPENDS=	tk80.1:${PORTSDIR}/x11-toolkits/tk80
 

@@ -10,7 +10,7 @@ DISTNAME=       bzip-0.21
 CATEGORIES=	archivers
 MASTER_SITES=   ftp://ftp.connectnet.com/pub/bzip/bzip-0.21/
 
-MAINTAINER=     andreas@FreeBSD.ORG
+MAINTAINER=     andreas@FreeBSD.org
 
 NO_CDROM=       "Restrictive copyright (don't sell for profit)"
 MAN1=		bzip.1 bunzip.1

@@ -1,12 +1,12 @@
 # New ports collection makefile for:	wemi for xemacs20
 # Version required:	1.8.6
 # Date created:		25 July 1999
-# Whom:			Shigeyuki FUKUSHIMA <shige@FreeBSD.ORG>
+# Whom:			Shigeyuki FUKUSHIMA <shige@FreeBSD.org>
 #
 # $FreeBSD$
 #
 
-MAINTAINER=	shige@FreeBSD.ORG
+MAINTAINER=	shige@FreeBSD.org
 
 # This is a slave port.
 PORTCLASS=	slave

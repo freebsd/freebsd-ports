@@ -8,7 +8,7 @@
 
 DISTNAME=       cd-write-1.4.1
 CATEGORIES=     sysutils
-MASTER_SITES=   http://www.FreeBSD.ORG/~jmz/
+MASTER_SITES=   http://www.FreeBSD.org/~jmz/
 
 MAINTAINER=     jmz@FreeBSD.org
 

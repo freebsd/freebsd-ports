@@ -1,7 +1,7 @@
 # New ports collection makefile for:   xglobe
 # Version required:    0.3.1
 # Date created:        20 January 1998
-# Whom:                Kris Kennaway <kris@FreeBSD.ORG>
+# Whom:                Kris Kennaway <kris@FreeBSD.org>
 #
 # $FreeBSD$
 #
@@ -10,7 +10,7 @@ DISTNAME=	xglobe-0.3.1
 CATEGORIES=	astro
 MASTER_SITES=	http://www.uni-karlsruhe.de/~uddn/xglobe/
 
-MAINTAINER=	kris@FreeBSD.ORG
+MAINTAINER=	kris@FreeBSD.org
 
 USE_QT=		yes
 USE_X_PREFIX=   yes

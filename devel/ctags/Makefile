@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_SUNSITE}\
 		http://fly.hiwaay.net/~darren/archives/ \
 		http://www.freebsd.org/~jkoshy/PORTS/
 
-MAINTAINER=	jkoshy@FreeBSD.ORG
+MAINTAINER=	jkoshy@FreeBSD.org
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-macro-patterns

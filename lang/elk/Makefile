@@ -11,7 +11,7 @@ PKGNAME=	elk-3.0.3
 CATEGORIES=	lang
 MASTER_SITES=	http://www-rn.informatik.uni-bremen.de/software/elk/dist/
 
-MAINTAINER=	ports@FreeBSD.ORG
+MAINTAINER=	ports@FreeBSD.org
 
 USE_XLIB=	yes
 PATCH_STRIP=	-p1

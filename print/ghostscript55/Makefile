@@ -14,7 +14,7 @@ MASTER_SITES=	ftp://ftp.cs.wisc.edu/ghost/aladdin/gs550/ \
 DISTFILES=	${GS_SOURCES} ${GS_FONTS_STD} ${GS_FONTS_OTHER} \
 		${HP850_DRV} ${DECRYPT_PDF}
 
-MAINTAINER=	andreas@FreeBSD.ORG
+MAINTAINER=	andreas@FreeBSD.org
 
 Y2K=		http://www.cs.wisc.edu/~ghost/aladdin/y2k.html 
 

@@ -10,7 +10,7 @@ DISTNAME=	pgaccess-0.96
 CATEGORIES=	databases
 MASTER_SITES=	http://www.flex.ro/pgaccess/
 
-MAINTAINER=	andreas@FreeBSD.ORG
+MAINTAINER=	andreas@FreeBSD.org
 
 RUN_DEPENDS=	${PREFIX}/pgsql/bin/postmaster:${PORTSDIR}/databases/postgresql\
 		wish8.0:${PORTSDIR}/x11-toolkits/tk80

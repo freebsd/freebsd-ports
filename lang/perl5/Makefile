@@ -12,7 +12,7 @@ CATEGORIES=	lang devel perl5
 MASTER_SITES=	ftp://ftp.digital.com/pub/plan/perl/CPAN/src/5.0/ \
 		ftp://ftp.cdrom.com/pub/perl/CPAN/src/5.0/
 
-MAINTAINER=	markm@FreeBSD.ORG
+MAINTAINER=	markm@FreeBSD.org
 
 HAS_CONFIGURE=		yes
 CONFIGURE_SCRIPT=	Configure

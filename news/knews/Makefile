@@ -10,7 +10,7 @@ DISTNAME=	knews-1.0b.1
 CATEGORIES=	news
 MASTER_SITES=	http://www.matematik.su.se/~kjj/
 
-MAINTAINER=	andreas@FreeBSD.ORG
+MAINTAINER=	andreas@FreeBSD.org
 
 LIB_DEPENDS=    Xpm.4:${PORTSDIR}/graphics/xpm \
 		jpeg.9:${PORTSDIR}/graphics/jpeg \

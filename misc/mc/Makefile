@@ -1,7 +1,7 @@
 # New ports collection makefile for:	mc
 # Version required:	4.5.31
 # Date created:		15 Jul 1995
-# Whom:			torstenb@FreeBSD.ORG
+# Whom:			torstenb@FreeBSD.org
 #
 # $FreeBSD$
 #

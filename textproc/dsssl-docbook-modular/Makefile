@@ -12,7 +12,7 @@ CATEGORIES=	textproc
 MASTER_SITES=	http://nwalsh.com/docbook/dsssl/
 DISTFILES=	${DISTNAME}.zip ${DISTNAME}d.zip
 
-MAINTAINER=	kuriyama@FreeBSD.ORG
+MAINTAINER=	kuriyama@FreeBSD.org
 
 BUILD_DEPENDS=	unzip:${PORTSDIR}/archivers/unzip \
 		${PREFIX}/share/sgml/docbook/3.0/catalog:${PORTSDIR}/textproc/docbook-300

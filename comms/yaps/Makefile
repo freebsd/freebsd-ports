@@ -11,7 +11,7 @@ CATEGORIES=	comms
 MASTER_SITES=   ${MASTER_SITE_SUNSITE}
 MASTER_SITE_SUBDIR=	apps/serialcomm/machines
 
-MAINTAINER=     se@FreeBSD.ORG
+MAINTAINER=     se@FreeBSD.org
 
 USE_GMAKE=	true
 

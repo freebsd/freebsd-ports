@@ -11,7 +11,7 @@ PKGNAME=	ratoolset-3.5.2
 CATEGORIES=	net tk41
 MASTER_SITES=	ftp://ftp.isi.edu/ra/RAToolSet/
 
-MAINTAINER=	jfitz@FreeBSD.ORG
+MAINTAINER=	jfitz@FreeBSD.org
 
 LIB_DEPENDS=	tk41.1:${PORTSDIR}/x11-toolkits/tk41
 

@@ -11,7 +11,7 @@ PKGNAME=	p5-SNMP_Session-0.72
 CATEGORIES=	net perl5
 MASTER_SITES=	ftp://ftp.switch.ch/software/sources/network/snmp/perl/
 
-MAINTAINER=	ports@FreeBSD.ORG
+MAINTAINER=	ports@FreeBSD.org
 
 USE_PERL5=	yes
 

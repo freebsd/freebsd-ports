@@ -12,7 +12,7 @@ CATEGORIES=	archivers
 MASTER_SITES=   ftp://ftp.kiarchive.ru/pub/unix/arcers/
 EXTRACT_SUFX=   .tgz
 
-MAINTAINER=     ache@FreeBSD.ORG
+MAINTAINER=     ache@FreeBSD.org
 
 NO_WRKSUBDIR=   yes
 MAKEFILE=       makefile.nix

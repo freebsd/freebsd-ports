@@ -12,7 +12,7 @@ CATEGORIES=	www
 MASTER_SITES=	ftp://ftp.rent-a-guru.de/pub/http-analyze2.01/
 EXTRACT_SUFX=	-src.tar.gz
 
-MAINTAINER=	andreas@FreeBSD.ORG
+MAINTAINER=	andreas@FreeBSD.org
 
 BUILD_DEPENDS=	${PREFIX}/lib/libgd.a:${PORTSDIR}/graphics/gd
 

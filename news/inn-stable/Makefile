@@ -12,7 +12,7 @@ CATEGORIES=	news
 MASTER_SITES=	http://www.FreeBSD.org/~andreas/download/ \
 		ftp://ftp.isc.org/isc/inn/snapshots/
 
-MAINTAINER=	andreas@FreeBSD.ORG
+MAINTAINER=	andreas@FreeBSD.org
 
 Y2K=		http://www.isc.org/inn-y2k.html
 

@@ -11,7 +11,7 @@ CATEGORIES=	databases
 MASTER_SITES=	http://www.loth.demon.co.uk/gmysql/ \
 		http://www.physik.TU-Berlin.DE/~ibex/ports/distfiles/
 
-MAINTAINER=	dirk@FreeBSD.ORG
+MAINTAINER=	dirk@FreeBSD.org
 
 LIB_DEPENDS=	gtk12.2:${PORTSDIR}/x11-toolkits/gtk12 \
 		mysqlclient.6:${PORTSDIR}/databases/mysql322-client

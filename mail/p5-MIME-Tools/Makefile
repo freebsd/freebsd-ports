@@ -1,7 +1,7 @@
 # New ports collection makefile for:	p5-MIME-Tools
 # Version required:			4.122
 # Date created:				April 27th 1998
-# Whom:	      				Eivind Eklund <eivind@FreeBSD.ORG>
+# Whom:	      				Eivind Eklund <eivind@FreeBSD.org>
 #
 # $FreeBSD$
 #
@@ -12,7 +12,7 @@ CATEGORIES=	mail perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	MIME
 
-MAINTAINER=	eivind@FreeBSD.ORG
+MAINTAINER=	eivind@FreeBSD.org
 
 RUN_DEPENDS=	${PREFIX}/lib/perl5/site_perl/${PERL_VER}/Mail/Header.pm:${PORTSDIR}/mail/p5-Mail-Tools \
 		${PREFIX}/lib/perl5/site_perl/${PERL_VER}/${PERL_ARCH}/MIME/Base64.pm:${PORTSDIR}/converters/p5-MIME-Base64	\

@@ -1,7 +1,7 @@
 # New ports collection makefile for:	platex2e-common
 # Version required:		<1998/09/01>
 # Date created:			05 Oct 1997
-# Whom:				Masafumi NAKANE <max@FreeBSD.ORG>
+# Whom:				Masafumi NAKANE <max@FreeBSD.org>
 #
 # $FreeBSD$
 #
@@ -15,7 +15,7 @@ MASTER_SITES=	ftp://ftp.ascii.co.jp/pub/TeX/ascii-ptex/platex/1998-09-01/ \
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ecfonts-1.0.tar.gz tfm.tar \
 		amsfonts-sources.tar.Z
 
-MAINTAINER=	max@FreeBSD.ORG
+MAINTAINER=	max@FreeBSD.org
 
 BUILD_DEPENDS=	ptex-common:${PORTSDIR}/japanese/ptex-common
 RUN_DEPENDS=	ptex-common:${PORTSDIR}/japanese/ptex-common

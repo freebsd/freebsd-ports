@@ -14,7 +14,7 @@ MASTER_SITES=   ftp://ftp.rarsoft.com/pub/rar/ \
 		ftp://ftp.cdrom.com/pub/sac/pack/
 EXTRACT_SUFX=   .sfx
 
-MAINTAINER=     ache@FreeBSD.ORG
+MAINTAINER=     ache@FreeBSD.org
 
 CAT1=		rar.1
 

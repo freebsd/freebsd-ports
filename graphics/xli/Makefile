@@ -14,7 +14,7 @@ MASTER_SITES=	${MASTER_SITE_XCONTRIB} \
 MASTER_SITE_SUBDIR=	applications
 DISTFILES=	xli.1.16.tar.gz xli-png.tar.gz
 
-MAINTAINER=	jkoshy@FreeBSD.ORG
+MAINTAINER=	jkoshy@FreeBSD.org
 
 LIB_DEPENDS=	png.3:${PORTSDIR}/graphics/png
 

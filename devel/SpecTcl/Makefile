@@ -11,7 +11,7 @@ PKGNAME=	SpecTcl-1.1
 CATEGORIES=	devel tk80
 MASTER_SITES=	ftp://ftp.scriptics.com/pub/tcl/guitools/
 
-MAINTAINER=	andreas@FreeBSD.ORG
+MAINTAINER=	andreas@FreeBSD.org
 
 RUN_DEPENDS=	wish8.0:${PORTSDIR}/x11-toolkits/tk80
 

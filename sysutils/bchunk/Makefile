@@ -12,7 +12,7 @@ MASTER_SITES=	http://hes.iki.fi/bchunk/ \
 		${MASTER_SITE_SUNSITE}
 MASTER_SITE_SUBDIR= utils/disk-management
 
-MAINTAINER=	ports@FreeBSD.ORG
+MAINTAINER=	ports@FreeBSD.org
 
 ALL_TARGET=
 

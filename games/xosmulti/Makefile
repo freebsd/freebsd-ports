@@ -12,7 +12,7 @@ CATEGORIES=	games
 MASTER_SITES=	http://www01.u-page.so-net.ne.jp/ka2/nakanita/multi/
 EXTRACT_SUFX=	.gz
 
-MAINTAINER=	flathill@FreeBSD.ORG
+MAINTAINER=	flathill@FreeBSD.org
 
 WRKSRC=		${WRKDIR}/xosmulti
 USE_X_PREFIX=	yes

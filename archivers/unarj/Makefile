@@ -11,7 +11,7 @@ CATEGORIES=	archivers
 MASTER_SITES=   ftp://ftp.kiarchive.ru/pub/unix/arcers/
 EXTRACT_SUFX=   .tgz
 
-MAINTAINER=     ache@FreeBSD.ORG
+MAINTAINER=     ache@FreeBSD.org
 
 do-install:
 	${INSTALL} -d -m 755 -o $(SHAREOWN) -g ${SHAREGRP} \

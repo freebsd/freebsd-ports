@@ -1,7 +1,7 @@
 # New ports collection makefile for:	gnomepim
 # Version required:			1.0.9
 # Date created:				17 Jan 1999
-# Whom:					Vanilla I. Shu <vanilla@FreeBSD.ORG>
+# Whom:					Vanilla I. Shu <vanilla@FreeBSD.org>
 #
 # $FreeBSD$
 #

@@ -12,7 +12,7 @@ CATEGORIES=	japanese
 MASTER_SITES=	ftp://ftp.aist-nara.ac.jp/lab/nlp/tools/chasen/ \
 		http://www.freebsd.org/~kuriyama/distfiles/
 
-MAINTAINER=	kuriyama@FreeBSD.ORG
+MAINTAINER=	kuriyama@FreeBSD.org
 
 WRKSRC=		${WRKDIR}/chasen1.51
 

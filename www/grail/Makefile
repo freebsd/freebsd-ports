@@ -1,7 +1,7 @@
 # Ports collection Makefile for:	Grail
 # Version required:			0.5
 # Date created:				1/11/1999
-# Whom:					nectar@FreeBSD.ORG
+# Whom:					nectar@FreeBSD.org
 #
 # $FreeBSD$
 #

@@ -10,7 +10,7 @@ DISTNAME=	inn-2.2
 CATEGORIES=	news
 MASTER_SITES=	ftp://ftp.isc.org/isc/inn/
 
-MAINTAINER=	torstenb@FreeBSD.ORG
+MAINTAINER=	torstenb@FreeBSD.org
 
 Y2K=		http://www.isc.org/inn-y2k.html
 
