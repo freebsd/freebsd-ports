@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	posadis
-PORTVERSION=	0.50.9
+PORTVERSION=	0.60.1
 CATEGORIES=	dns
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -14,22 +14,23 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	sergei@kolobov.com
 COMMENT=	"Domain Name Server (DNS) implementation"
 
+LIB_DEPENDS=	poslib.0:${PORTSDIR}/devel/poslib
+
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--with-cxxflags="${CXXFLAGS}" --disable-gtk
+CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
+USE_LIBTOOL=	yes
+INSTALLS_SHLIB=	yes
 
-MAN1=		posadis.1 posctl.1 posask.1
-MAN5=		posadis.conf.5 posadis-domains.conf.5
-DOCS=		AUTHORS ChangeLog NEWS README TODO
+PLIST_SUB=	VERSION="${PORTVERSION}"
 
-post-patch:
-	${RM} -f ${WRKSRC}/doc/posadis.info*
+MAN1=		getzone.1 posadis.1 posadis-getroots.1 posask.1 poshost.1
+MAN5=		posadisrc.5
+DOCS=		AUTHORS ChangeLog README TODO
 
 .if !defined(NOPORTDOCS)
 post-install:
 	@${MKDIR} ${DOCSDIR}
-.for file in ${DOCS}
-	${INSTALL_DATA} ${WRKSRC}/${file} ${DOCSDIR}
-.endfor
+	cd ${WRKSRC} && ${INSTALL_DATA} ${DOCS} ${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>
