@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	doc++
-PORTVERSION=	3.4.2
+PORTVERSION=	3.4.4
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_SUNSITE} \
 		http://www.linuxsupportline.com/~doc++/
@@ -25,31 +25,35 @@ ADDITIONAL_DOCS=	ClassGraph.class \
 			ClassGraphPanel.class \
 			ClassLayout.class \
 			CommonBase.html \
+			CommandLineOptions.html \
+			ConfigurationFile.html \
 			Derived_Class.html \
 			Example.html \
 			FileInclusion.html \
 			FrequentlyAskedQuestions.html \
 			General.html \
+			GeneralInformations.html \
 			HIER.html \
 			HIERjava.html \
 			InstallationInstructions.html \
 			Intermediate.html \
 			Introduction.html \
 			ManualEntries.html \
+                        ManualEntryFields.html \
 			NavigatorButton.class \
 			Quickstart.html \
 			ReferenceManual.html \
 			Structure.html \
+			Tags.html \
 			TextFormatting.html \
 			Usage.html \
-			down.gif \
 			function.html \
 			icon1.gif \
 			icon2.gif \
 			index.html \
-			logo.gif \
 			supportedHTMLmacros.html \
-			supportedTeXmacros.html 
+			supportedTeXmacros.html \
+			toc.html
 
 post-install:
 .if !defined(NOPORTSDOCS)
