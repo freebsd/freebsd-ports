@@ -17,6 +17,7 @@ LIB_DEPENDS=	intl.2:${PORTSDIR}/devel/gettext
 RUN_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/Palm/PDB.pm:${PORTSDIR}/palm/p5-Palm
 
 GNU_CONFIGURE=	yes
+USE_REINPLACE=	yes
 
 # The ColdSync.3 man page describes a Perl package. That's why it goes
 # in the Perl manpage directory.
@@ -37,7 +38,7 @@ CONFIGURE_ARGS+=	--with-i18n
 CONFIGURE_ARGS+=	--with-usb
 .if ${OSVERSION} >= 450000
 post-patch:
-	${PERL} -pi -e 's,udi\.(\S+),udi.udi_\1,g;' \
+	${REINPLACE_CMD} -e 's,udi\.(\S+),udi.udi_\1,g;' \
 		-e 's,ur\.(\S+),ur.ucr_\1,g;' \
 		${WRKSRC}/configure ${WRKSRC}/libpconn/PConnection_usb.c
 .endif
