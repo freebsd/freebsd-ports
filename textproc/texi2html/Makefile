@@ -7,7 +7,7 @@
 
 PORTNAME=	texi2html
 PORTVERSION=	1.66
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	textproc
 MASTER_SITES=	http://www.cvshome.org/files/70/10/
 
@@ -20,7 +20,20 @@ USE_AUTOCONF_VER=	253
 AUTOMAKE_ARGS=	-a
 USE_GMAKE=	yes
 
-MAN1=		texi2html.1
+PROGRAM_PREFIX?=
+PLIST_SUB=	PROGRAM_PREFIX=${PROGRAM_PREFIX}
+
+.if !empty(PROGRAM_PREFIX)
+CONFIGURE_ARGS=	--program-prefix="${PROGRAM_PREFIX}"
+.endif
+
+MAN1=		${PROGRAM_PREFIX}texi2html.1
 INFO=		texi2html
+
+pre-everything::
+	@${ECHO} ""
+	@${ECHO} "You can define the PROGRAM_PREFIX variable to change the name that"
+	@${ECHO} "the texi2html program is installed as."
+	@${ECHO} ""
 
 .include <bsd.port.mk>
