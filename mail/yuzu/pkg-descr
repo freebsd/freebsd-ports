@@ -1,0 +1,14 @@
+Yuzu is a MUA (Mail User Agent) powered by Java with JavaMail and
+JFC/Swing API sets.  It has some special features as follows:
+
+  o POP3/SMTP multi account administration
+  o Support for JDK1.1/1.2/1.3
+  o Multi-platform support (FreeBSD, Linux, BeOS, MacOS, Windows,
+    Solalis, etc...)
+  o Dynamic language switching facility (English and Japanese messages
+    are supported by default)
+
+WWW: http://www.ongs.net/yuzu/
+
+- Daichi T.GOTO
+daichi@ongs.net
