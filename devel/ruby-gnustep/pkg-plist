@@ -1,14 +1,67 @@
+%%RUBY_SITELIBDIR%%/AppKit.rb
+%%RUBY_SITELIBDIR%%/Foundation.rb
 %%RUBY_SITELIBDIR%%/rigs.rb
+%%RUBY_SITELIBDIR%%/rigs/NSApplication.rb
 %%RUBY_SITELIBDIR%%/rigs/NSArray.rb
+%%RUBY_SITELIBDIR%%/rigs/NSBezierPath.rb
+%%RUBY_SITELIBDIR%%/rigs/NSBitmapImageRep.rb
+%%RUBY_SITELIBDIR%%/rigs/NSBox.rb
+%%RUBY_SITELIBDIR%%/rigs/NSButtonCell.rb
+%%RUBY_SITELIBDIR%%/rigs/NSCStringText.rb
+%%RUBY_SITELIBDIR%%/rigs/NSCell.rb
+%%RUBY_SITELIBDIR%%/rigs/NSColor.rb
+%%RUBY_SITELIBDIR%%/rigs/NSColorPanel.rb
+%%RUBY_SITELIBDIR%%/rigs/NSDataLink.rb
+%%RUBY_SITELIBDIR%%/rigs/NSDecimalNumber.rb
 %%RUBY_SITELIBDIR%%/rigs/NSDictionary.rb
+%%RUBY_SITELIBDIR%%/rigs/NSDistributedNotificationCenter.rb
+%%RUBY_SITELIBDIR%%/rigs/NSDocument.rb
+%%RUBY_SITELIBDIR%%/rigs/NSDraggingInfo.rb
+%%RUBY_SITELIBDIR%%/rigs/NSDrawer.rb
+%%RUBY_SITELIBDIR%%/rigs/NSEvent.rb
+%%RUBY_SITELIBDIR%%/rigs/NSFont.rb
+%%RUBY_SITELIBDIR%%/rigs/NSFontManager.rb
+%%RUBY_SITELIBDIR%%/rigs/NSFontPanel.rb
+%%RUBY_SITELIBDIR%%/rigs/NSGraphicsContext.rb
+%%RUBY_SITELIBDIR%%/rigs/NSImageCell.rb
+%%RUBY_SITELIBDIR%%/rigs/NSImageRep.rb
+%%RUBY_SITELIBDIR%%/rigs/NSLayoutManager.rb
+%%RUBY_SITELIBDIR%%/rigs/NSMatrix.rb
 %%RUBY_SITELIBDIR%%/rigs/NSMutableArray.rb
+%%RUBY_SITELIBDIR%%/rigs/NSNotificationQueue.rb
 %%RUBY_SITELIBDIR%%/rigs/NSMutableDictionary.rb
 %%RUBY_SITELIBDIR%%/rigs/NSMutableString.rb
 %%RUBY_SITELIBDIR%%/rigs/NSObject.rb
+%%RUBY_SITELIBDIR%%/rigs/NSPageLayout.rb
+%%RUBY_SITELIBDIR%%/rigs/NSParagraphStyle.rb
+%%RUBY_SITELIBDIR%%/rigs/NSPoint.rb
+%%RUBY_SITELIBDIR%%/rigs/NSPopUpButtonCell.rb
+%%RUBY_SITELIBDIR%%/rigs/NSPrintInfo.rb
+%%RUBY_SITELIBDIR%%/rigs/NSPrintOperation.rb
+%%RUBY_SITELIBDIR%%/rigs/NSPrintPanel.rb
+%%RUBY_SITELIBDIR%%/rigs/NSPrinter.rb
+%%RUBY_SITELIBDIR%%/rigs/NSRange.rb
+%%RUBY_SITELIBDIR%%/rigs/NSRect.rb
+%%RUBY_SITELIBDIR%%/rigs/NSResponder.rb
+%%RUBY_SITELIBDIR%%/rigs/NSRulerView.rb
+%%RUBY_SITELIBDIR%%/rigs/NSRunLoop.rb
+%%RUBY_SITELIBDIR%%/rigs/NSSavePanel.rb
+%%RUBY_SITELIBDIR%%/rigs/NSScroller.rb
 %%RUBY_SITELIBDIR%%/rigs/NSSelector.rb
+%%RUBY_SITELIBDIR%%/rigs/NSSize.rb
 %%RUBY_SITELIBDIR%%/rigs/NSString.rb
+%%RUBY_SITELIBDIR%%/rigs/NSTabView.rb
+%%RUBY_SITELIBDIR%%/rigs/NSTabViewItem.rb
+%%RUBY_SITELIBDIR%%/rigs/NSText.rb
+%%RUBY_SITELIBDIR%%/rigs/NSTextAttachement.rb
+%%RUBY_SITELIBDIR%%/rigs/NSTextContainer.rb
+%%RUBY_SITELIBDIR%%/rigs/NSTextStorage.rb
+%%RUBY_SITELIBDIR%%/rigs/NSTextView.rb
+%%RUBY_SITELIBDIR%%/rigs/NSURLHandle.rb
+%%RUBY_SITELIBDIR%%/rigs/NSView.rb
+%%RUBY_SITELIBDIR%%/rigs/NSWindow.rb
 @dirrm %%RUBY_SITELIBDIR%%/rigs
-GNUstep/Local/Libraries/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu/librigs.so.0.1.0
+GNUstep/Local/Libraries/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu/librigs.so.0.2.0
 GNUstep/Local/Libraries/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu/librigs.so.0
 GNUstep/Local/Libraries/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu/librigs.so
 @unexec /bin/rmdir %D/GNUstep/Local/Libraries/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu 2> /dev/null || true
@@ -28,6 +81,7 @@ GNUstep/Local/Libraries/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu/librigs.so
 %%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/gnustep/Gui/FirstApp
 %%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/gnustep/Gui
 %%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/gnustep
+%%PORTDOCS%%%%RUBY_DOCDIR%%/gnustep/ChangeLog
 %%PORTDOCS%%%%RUBY_DOCDIR%%/gnustep/NEWS
 %%PORTDOCS%%%%RUBY_DOCDIR%%/gnustep/README
 %%PORTDOCS%%%%RUBY_DOCDIR%%/gnustep/TODO

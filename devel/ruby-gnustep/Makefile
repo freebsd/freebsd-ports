@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gnustep
-PORTVERSION=	0.1.0
+PORTVERSION=	0.2.0
 CATEGORIES=	devel ruby
 MASTER_SITES=	ftp://ftp.gnustep.org/pub/gnustep/libs/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
@@ -60,7 +60,7 @@ post-install:
 	${MKDIR} ${RUBY_EXAMPLESDIR}/${PORTNAME}
 	${CP} -R ${WRKSRC}/Examples/* ${RUBY_EXAMPLESDIR}/${PORTNAME}/
 	${MKDIR} ${RUBY_DOCDIR}/${PORTNAME}
-.for f in NEWS README TODO
+.for f in ChangeLog NEWS README TODO
 	${INSTALL_DATA} ${WRKSRC}/${f} ${RUBY_DOCDIR}/${PORTNAME}/
 .endfor
 .endif
