@@ -8,6 +8,11 @@ bin/runcmd
 bin/gvu
 bin/siaghelp
 share/siag/siod/siod.scm
+share/siag/common/dictionary.cs
+share/siag/common/dictionary.gl
+share/siag/common/dictionary.ru
+share/siag/common/fonts.txt
+share/siag/common/rgb.txt
 share/siag/common/bitmaps/blank.xpm
 share/siag/common/bitmaps/bold.xpm
 share/siag/common/bitmaps/borders.xpm
@@ -135,10 +140,8 @@ share/siag/common/bitmaps/kde/smaller.xpm
 share/siag/common/bitmaps/kde/stop.xpm
 share/siag/common/any2xpm
 share/siag/common/readpfa
-share/siag/common/colors.scm
 share/siag/common/common.scm
 share/siag/common/position.scm
-share/siag/common/fonts.scm
 share/siag/common/tools.scm
 share/siag/common/t1lib.config
 share/siag/common/FontDataBase
