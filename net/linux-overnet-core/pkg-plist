@@ -1,0 +1,8 @@
+sbin/overnetclc
+share/overnet-core/contact.dat
+%%PORTDOCS%%%%DOCSDIR%%-core/ChangeLog
+%%PORTDOCS%%%%DOCSDIR%%-core/LISEZMOI
+%%PORTDOCS%%%%DOCSDIR%%-core/README
+%%PORTDOCS%%%%DOCSDIR%%-core/changelog.Debian.gz
+%%PORTDOCS%%@dirrm share/doc/overnet-core
+@dirrm share/overnet-core

@@ -1,0 +1,9 @@
+The Overnet 'core' is the actual Overnet program which does
+everything behind the scenes - connecting to peers, searching,
+downloading, uploading, all that stuff. It is the serverless
+equivalent to eDonkey2000.
+
+The 'core' comes with a very simple text interface (=command line
+client), where you can tell it what to do by typing in commands.
+
+WWW: http://www.overnet.com/
