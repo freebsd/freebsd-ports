@@ -1,0 +1,25 @@
+--- Makefile.orig	Tue Mar 28 12:07:51 2000
++++ Makefile	Fri Mar 31 02:28:34 2000
+@@ -1,15 +1,16 @@
+-CC		= gcc
+-LIBS		= -L/usr/X11R6/e/lib -lepplet
+-CFLAGS		= -O -Wall -I/usr/X11R6/e/include
+-IMLIB-CONFIG	= /usr/gnome/bin/imlib-config
++#CC		= gcc
++LIBS		= -L${X11BASE}/lib -lepplet
++CFLAGS		+= -I${X11BASE}/include
++IMLIB-CONFIG	= ${X11BASE}/bin/imlib-config
+ BIN_PREFIX	= /usr/X11R6/e/bin
+ ICON_PREFIX	= /usr/X11R6/e/share/enlightenment/epplet_icons
+ 
+ all: e-weather
+ 
+ e-weather:E-Weather.c
+-	$(CC) $(CFLAGS) E-Weather.c -o E-Weather.epplet $(LIBS) \
+-        $(shell $(IMLIB-CONFIG) --cflags) $(shell $(IMLIB-CONFIG) --libs)
++	$(CC) E-Weather.c -o E-Weather.epplet $(LIBS) \
++	   $(shell $(IMLIB-CONFIG) --cflags) $(shell $(IMLIB-CONFIG) --libs) \
++	   $(CFLAGS)
+ 
+ install: e-weather
+ 	install -m 755 E-Weather.epplet $(BIN_PREFIX)/E-Weather.epplet
