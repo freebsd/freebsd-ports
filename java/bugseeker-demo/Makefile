@@ -1,6 +1,6 @@
 # New ports collection makefile for:   bugseeker
 # Date created:        22 December 2000
-# Whom:                Ernst de Haan <ernst@jollem.com>
+# Whom:                Ernst de Haan <znerd@FreeBSD.org>
 #
 # $FreeBSD$
 #
@@ -11,10 +11,10 @@ CATEGORIES=	java
 MASTER_SITES=	http://www.karmira.com/products/bugseeker2/download/
 DISTNAME=	bugseeker2demo
 
-PATCH_SITES=	http://www.jollem.com/~ernst/
+PATCH_SITES=	http://www.metaverse.nl/~ernst/
 PATCHFILES=	bugseeker2demo.sh.diff
 
-MAINTAINER=	ernst@jollem.com
+MAINTAINER=	znerd@FreeBSD.org
 
 RUN_DEPENDS=	${LOCALBASE}/linux-jdk1.3.1/bin/java:${PORTSDIR}/java/linux-jdk13
 
