@@ -1,20 +1,22 @@
-bin/mup
 bin/mkmupfnt
+bin/mup
 bin/mupdisp
 bin/mupprnt
-%%PORTDOCS%%%%DOCSDIR%%/overview.txt
-%%PORTDOCS%%%%DOCSDIR%%/register.txt
 %%PORTDOCS%%%%DOCSDIR%%/README0
 %%PORTDOCS%%%%DOCSDIR%%/README1
-%%PORTDOCS%%%%DOCSDIR%%/mupfeat.txt
 %%PORTDOCS%%%%DOCSDIR%%/faq.txt
 %%PORTDOCS%%%%DOCSDIR%%/license.txt
+%%PORTDOCS%%%%DOCSDIR%%/mupfeat.txt
+%%PORTDOCS%%%%DOCSDIR%%/overview.txt
+%%PORTDOCS%%%%DOCSDIR%%/register.txt
+%%PORTDOCS%%%%DOCSDIR%%/uguide.ps
 %%PORTDOCS%%%%DOCSDIR%%/uguide/adjust.html
 %%PORTDOCS%%%%DOCSDIR%%/uguide/altinp.html
 %%PORTDOCS%%%%DOCSDIR%%/uguide/bars.html
 %%PORTDOCS%%%%DOCSDIR%%/uguide/basics.html
 %%PORTDOCS%%%%DOCSDIR%%/uguide/brackmac.html
 %%PORTDOCS%%%%DOCSDIR%%/uguide/cadenza.html
+%%PORTDOCS%%%%DOCSDIR%%/uguide/chant.html
 %%PORTDOCS%%%%DOCSDIR%%/uguide/chordinp.html
 %%PORTDOCS%%%%DOCSDIR%%/uguide/chrdattr.html
 %%PORTDOCS%%%%DOCSDIR%%/uguide/cmdargs.html
@@ -36,6 +38,7 @@ bin/mupprnt
 %%PORTDOCS%%%%DOCSDIR%%/uguide/macros.html
 %%PORTDOCS%%%%DOCSDIR%%/uguide/manual.html
 %%PORTDOCS%%%%DOCSDIR%%/uguide/midi.html
+%%PORTDOCS%%%%DOCSDIR%%/uguide/midmeas.html
 %%PORTDOCS%%%%DOCSDIR%%/uguide/mixtsig.html
 %%PORTDOCS%%%%DOCSDIR%%/uguide/mugex10.gif
 %%PORTDOCS%%%%DOCSDIR%%/uguide/mugex11.gif
@@ -124,9 +127,16 @@ bin/mupprnt
 %%PORTDOCS%%%%DOCSDIR%%/uguide/mugex87.gif
 %%PORTDOCS%%%%DOCSDIR%%/uguide/mugex88.gif
 %%PORTDOCS%%%%DOCSDIR%%/uguide/mugex89.gif
+%%PORTDOCS%%%%DOCSDIR%%/uguide/mugex9.gif
 %%PORTDOCS%%%%DOCSDIR%%/uguide/mugex90.gif
 %%PORTDOCS%%%%DOCSDIR%%/uguide/mugex91.gif
-%%PORTDOCS%%%%DOCSDIR%%/uguide/mugex9.gif
+%%PORTDOCS%%%%DOCSDIR%%/uguide/mugex92.gif
+%%PORTDOCS%%%%DOCSDIR%%/uguide/mugex93.gif
+%%PORTDOCS%%%%DOCSDIR%%/uguide/mugex94.gif
+%%PORTDOCS%%%%DOCSDIR%%/uguide/mugex95.gif
+%%PORTDOCS%%%%DOCSDIR%%/uguide/mugex96.gif
+%%PORTDOCS%%%%DOCSDIR%%/uguide/mugex97.gif
+%%PORTDOCS%%%%DOCSDIR%%/uguide/mugex98.gif
 %%PORTDOCS%%%%DOCSDIR%%/uguide/multirst.html
 %%PORTDOCS%%%%DOCSDIR%%/uguide/multsong.html
 %%PORTDOCS%%%%DOCSDIR%%/uguide/muschar.gif
@@ -145,6 +155,7 @@ bin/mupprnt
 %%PORTDOCS%%%%DOCSDIR%%/uguide/pstools.html
 %%PORTDOCS%%%%DOCSDIR%%/uguide/register.html
 %%PORTDOCS%%%%DOCSDIR%%/uguide/roll.html
+%%PORTDOCS%%%%DOCSDIR%%/uguide/shaped.html
 %%PORTDOCS%%%%DOCSDIR%%/uguide/slashmrk.html
 %%PORTDOCS%%%%DOCSDIR%%/uguide/stuff.html
 %%PORTDOCS%%%%DOCSDIR%%/uguide/tabstaff.html
@@ -157,6 +168,5 @@ bin/mupprnt
 %%PORTDOCS%%%%DOCSDIR%%/uguide/uguide.html
 %%PORTDOCS%%%%DOCSDIR%%/uguide/utilpgms.html
 %%PORTDOCS%%%%DOCSDIR%%/uguide/verses.html
-%%PORTDOCS%%%%DOCSDIR%%/uguide.ps
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/uguide
 %%PORTDOCS%%@dirrm %%DOCSDIR%%

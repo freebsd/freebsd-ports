@@ -6,11 +6,10 @@
 #
 
 PORTNAME=	mup
-PORTVERSION=	4.6
-PORTREVISION=	0
+PORTVERSION=	5.0
 CATEGORIES=	print audio
 MASTER_SITES=	ftp://ftp.arkkra.com/pub/unix/
-DISTFILES=	mup46src.tar.gz mup46doc.tar.gz
+DISTFILES=	mup50src.tar.gz mup50doc.tar.gz
 
 MAINTAINER=	darius@dons.net.au
 COMMENT=	A shareware program for typesetting music
@@ -35,7 +34,7 @@ do-install:
 	${INSTALL_MAN} ${WRKSRC}/docs/mupprnt.1 ${PREFIX}/man/man1
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
-	tar -cf - -C ${WRKSRC}/docs/ overview.txt register.txt README1 mupfeat.txt faq.txt license.txt uguide uguide.ps | tar -C ${DOCSDIR} -xf -
+	${TAR} -cf - -C ${WRKSRC}/docs/ overview.txt register.txt README1 mupfeat.txt faq.txt license.txt uguide uguide.ps | ${TAR} -C ${DOCSDIR} -xf -
 	${INSTALL_DATA} ${WRKSRC}/README0 ${DOCSDIR}
 .endif
 
