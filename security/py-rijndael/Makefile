@@ -9,7 +9,7 @@
 PORTNAME=	rijndael
 PORTVERSION=	1.1
 CATEGORIES=	security python
-MASTER_SITES=	http://bluesine.com/archives/software/python-mods/rijndael/
+MASTER_SITES=	http://ftp.bluesine.com/pub/bluesine.com/python-mods/rijndael/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	pyRijndael-${PORTVERSION}.py
 EXTRACT_SUFX=	.gz
