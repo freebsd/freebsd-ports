@@ -1,12 +1,12 @@
 # New ports collection makefile for:	proftpd
-# Version required:	1.0.3pl1
+# Version required:	1.2.0pl3
 # Date created:		26 January 1998
 # Whom:			Stephane Legrand
 #
-# $Id: Makefile,v 1.7 1999/02/12 21:55:04 obrien Exp $
+# $Id: Makefile,v 1.8 1999/03/15 02:13:32 steve Exp $
 #
 
-DISTNAME=	proftpd-1.2.0pre2
+DISTNAME=	proftpd-1.2.0pre3
 PKGNAME=	proftpd-1.2.0
 CATEGORIES=	net
 MASTER_SITES=	ftp://ftp.proftpd.org/distrib/
@@ -20,10 +20,9 @@ USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 
 CONFIGURE_ARGS=	--localstatedir=/var/run \
-			--with-modules=mod_ratio
+		--with-modules=mod_ratio
 
 post-configure:
-
 	@${MV} ${WRKSRC}/src/proftpd.8 ${WRKSRC}/src/proftpd.8.pre_sed
 	@${SED}	-e 's:/etc:${PREFIX}/etc:' \
 		-e 's:/usr/sbin/proftpd:${PREFIX}/libexec/proftpd:' \
@@ -41,7 +40,6 @@ post-configure:
 		< ${WRKSRC}/src/ftpcount.1.pre_sed > ${WRKSRC}/src/ftpcount.1
 
 do-install:
-
 	@${INSTALL_PROGRAM} ${WRKSRC}/ftpcount ${PREFIX}/bin/ftpcount
 	@${INSTALL_PROGRAM} ${WRKSRC}/proftpd ${PREFIX}/libexec/proftpd
 	@${INSTALL_PROGRAM} ${WRKSRC}/ftpshut ${PREFIX}/sbin/ftpshut

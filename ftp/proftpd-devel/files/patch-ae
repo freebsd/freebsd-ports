@@ -1,15 +1,15 @@
---- modules/mod_auth.c.orig	Sat Oct 17 22:24:41 1998
-+++ modules/mod_auth.c	Mon Dec 14 15:26:02 1998
-@@ -61,7 +61,7 @@
+--- modules/mod_auth.c.orig	Thu Mar  4 18:29:19 1999
++++ modules/mod_auth.c	Thu Apr  1 14:36:03 1999
+@@ -65,7 +65,7 @@
    /* Is this the proper behavior when timing out? */
    send_response_async(R_421,"Login Timeout (%d seconds): closing control connection.",
                        TimeoutLogin);
--  schedule(main_exit,0,(void*)LOG_NOTICE,"FTP login timed out, disconnected.",
-+  schedule(main_exit,0,(void*)LOG_INFO,"FTP login timed out, disconnected.",
-            (void*)0,NULL);
-   remove_timer(TIMER_IDLE,ANY_MODULE);
-   remove_timer(TIMER_NOXFER,ANY_MODULE);
-@@ -763,13 +763,13 @@
+-  main_exit((void*)LOG_NOTICE,"FTP login timed out, disconnected.",
++  main_exit((void*)LOG_INFO,"FTP login timed out, disconnected.",
+ 		  (void*)0,NULL);
+ 
+ /*
+@@ -787,13 +787,13 @@
      resolve_anonymous_dirs(c->subset);
  
    if(c)
@@ -25,7 +25,7 @@
        origuser,session.c->remote_name,
        inet_ascii(p,session.c->remote_ipaddr),
        inet_ascii(p,session.c->local_ipaddr),
-@@ -1132,7 +1132,7 @@
+@@ -1156,7 +1156,7 @@
        send_response(R_530,"%s",
                      sreplace(cmd->tmp_pool,maxstr,"%m",maxn,NULL));
  
@@ -34,7 +34,7 @@
                 max);
        end_login(0);
      }
-@@ -1156,7 +1156,7 @@
+@@ -1180,7 +1180,7 @@
        send_response(R_530,"%s",
                      sreplace(cmd->tmp_pool,maxstr,"%m",maxn,NULL));
  
@@ -43,7 +43,7 @@
                 max);
        end_login(0);
      }
-@@ -1243,7 +1243,7 @@
+@@ -1267,7 +1267,7 @@
  
      if(++auth_tries >= max) {
        send_response(R_530,"Login incorrect");
