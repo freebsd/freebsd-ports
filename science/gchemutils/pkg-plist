@@ -1,32 +1,25 @@
 bin/gchem3d
 bin/gchem3d-viewer
-include/gcu/chem3d/gtkchem3dviewer.h
-include/gcu/chemistry/atom.h
-include/gcu/chemistry/bond.h
-include/gcu/chemistry/object.h
-include/gcu/chemistry/element.h
-include/gcu/chemistry/matrix.h
-include/gcu/chemistry/xml-utils.h
-include/gcu/chemistry/chemistry.h
-include/gcu/crystalviewer/gtkcrystalviewer.h
-include/gcu/crystalviewer/crystalview.h
-include/gcu/crystalviewer/crystaldoc.h
-include/gcu/crystalviewer/crystalatom.h
-include/gcu/crystalviewer/crystalline.h
-include/gcu/crystalviewer/crystalcleavage.h
-include/gcu/gtkperiodic/gtkperiodic.h
+include/gcu/gcu/atom.h
+include/gcu/gcu/bond.h
+include/gcu/gcu/object.h
+include/gcu/gcu/document.h
+include/gcu/gcu/element.h
+include/gcu/gcu/matrix.h
+include/gcu/gcu/matrix2d.h
+include/gcu/gcu/xml-utils.h
+include/gcu/gcu/chemistry.h
+include/gcu/gcu/gtkperiodic.h
+include/gcu/gcu/gtkcrystalviewer.h
+include/gcu/gcu/crystalview.h
+include/gcu/gcu/crystaldoc.h
+include/gcu/gcu/crystalatom.h
+include/gcu/gcu/crystalline.h
+include/gcu/gcu/crystalcleavage.h
+include/gcu/gcu/gtkchem3dviewer.h
 lib/libgcu.a
 lib/libgcu.so
-lib/libgtkchem3dviewer.a
-lib/libgtkchem3dviewer.so
-lib/libgtkchem3dviewer.so.2
-lib/libgcu.so.2
-lib/libgtkcrystalviewer.a
-lib/libgtkcrystalviewer.so
-lib/libgtkcrystalviewer.so.2
-lib/libgtkperiodic.a
-lib/libgtkperiodic.so
-lib/libgtkperiodic.so.2
+lib/libgcu.so.4
 libdata/bonobo/servers/gchem3d.server
 libdata/pkgconfig/gcu.pc
 share/gnome/applications/gchem3d-viewer.desktop
@@ -54,10 +47,15 @@ share/gnome/doc/gchemutils/reference/html/classgcu_1_1CrystalLine.html
 share/gnome/doc/gchemutils/reference/html/classgcu_1_1CrystalLine-members.html
 share/gnome/doc/gchemutils/reference/html/classgcu_1_1CrystalView.html
 share/gnome/doc/gchemutils/reference/html/classgcu_1_1CrystalView-members.html
+share/gnome/doc/gchemutils/reference/html/classgcu_1_1Document.html
+share/gnome/doc/gchemutils/reference/html/classgcu_1_1Document.png
+share/gnome/doc/gchemutils/reference/html/classgcu_1_1Document-members.html
 share/gnome/doc/gchemutils/reference/html/classgcu_1_1Element.html
 share/gnome/doc/gchemutils/reference/html/classgcu_1_1Element-members.html
 share/gnome/doc/gchemutils/reference/html/classgcu_1_1Matrix.html
 share/gnome/doc/gchemutils/reference/html/classgcu_1_1Matrix-members.html
+share/gnome/doc/gchemutils/reference/html/classgcu_1_1Matrix2D.html
+share/gnome/doc/gchemutils/reference/html/classgcu_1_1Matrix2D-members.html
 share/gnome/doc/gchemutils/reference/html/classgcu_1_1Object.html
 share/gnome/doc/gchemutils/reference/html/classgcu_1_1Object.png
 share/gnome/doc/gchemutils/reference/html/classgcu_1_1Object-members.html
@@ -66,6 +64,10 @@ share/gnome/doc/gchemutils/reference/html/crystalcleavage_8h-source.html
 share/gnome/doc/gchemutils/reference/html/crystaldoc_8h-source.html
 share/gnome/doc/gchemutils/reference/html/crystalline_8h-source.html
 share/gnome/doc/gchemutils/reference/html/crystalview_8h-source.html
+share/gnome/doc/gchemutils/reference/html/dir_000000.html
+share/gnome/doc/gchemutils/reference/html/dir_000001.html
+share/gnome/doc/gchemutils/reference/html/dirs.html
+share/gnome/doc/gchemutils/reference/html/document_8h-source.html
 share/gnome/doc/gchemutils/reference/html/doxygen.css
 share/gnome/doc/gchemutils/reference/html/doxygen.png
 share/gnome/doc/gchemutils/reference/html/element_8h-source.html
@@ -89,9 +91,11 @@ share/gnome/doc/gchemutils/reference/html/chemistry_8h.html
 share/gnome/doc/gchemutils/reference/html/chemistry_8h-source.html
 share/gnome/doc/gchemutils/reference/html/index.html
 share/gnome/doc/gchemutils/reference/html/matrix_8h-source.html
+share/gnome/doc/gchemutils/reference/html/matrix2d_8h-source.html
 share/gnome/doc/gchemutils/reference/html/namespacegcu.html
 share/gnome/doc/gchemutils/reference/html/namespacemembers.html
 share/gnome/doc/gchemutils/reference/html/namespacemembers_enum.html
+share/gnome/doc/gchemutils/reference/html/namespacemembers_type.html
 share/gnome/doc/gchemutils/reference/html/namespaces.html
 share/gnome/doc/gchemutils/reference/html/object_8h-source.html
 share/gnome/doc/gchemutils/reference/html/structGcuAtomicRadius.html
@@ -123,10 +127,7 @@ share/mime/chemical/x-mdl-molfile.xml
 share/mime/chemical/x-pdb.xml
 share/mime/chemical/x-xyz.xml
 share/mime/packages/gchemutils.xml
-@dirrm include/gcu/chem3d
-@dirrm include/gcu/chemistry
-@dirrm include/gcu/crystalviewer
-@dirrm include/gcu/gtkperiodic
+@dirrm include/gcu/gcu
 @dirrm include/gcu
 @dirrm share/gnome/gchemutils/glade
 @dirrm share/gnome/gchemutils
