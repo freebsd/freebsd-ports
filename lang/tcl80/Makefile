@@ -3,7 +3,7 @@
 # Date created:		19 August 1997
 # Whom:			jkh
 #
-# $Id: Makefile,v 1.12 1998/12/24 06:51:12 cwt Exp $
+# $Id: Makefile,v 1.13 1999/03/11 21:47:13 scrappy Exp $
 #
 
 DISTNAME=	tcl8.0.4
@@ -14,7 +14,7 @@ MASTER_SITES=	ftp://ftp.scriptics.com/pub/tcl/tcl8_0/
 MAINTAINER=	cwt@freebsd.org
 
 Y2K=            http://www.scriptics.com/Y2K.html
-WWW_SITE=       http://www.scriptics.com  
+WWW_SITE=       http://www.scriptics.com/
 
 
 WRKSRC=		${WRKDIR}/tcl8.0.4/unix

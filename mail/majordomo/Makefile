@@ -3,7 +3,7 @@
 # Date created:		23 October 1996
 # Whom:			jfitz@FreeBSD.ORG
 #
-# $Id: Makefile,v 1.11 1997/09/10 02:52:38 itojun Exp $
+# $Id: Makefile,v 1.12 1999/03/11 21:47:14 scrappy Exp $
 #
 
 DISTNAME=	majordomo-1.94.4
@@ -16,7 +16,7 @@ EXTRACT_SUFX=   .tgz
 MAINTAINER=	jfitz@FreeBSD.ORG
 
 Y2K=		http://www.greatcircle.com/majordomo/majordomo-faq.html#1.8
-WWW_SITE=	http://www.greatcircle.com/majordomo
+WWW_SITE=	http://www.greatcircle.com/majordomo/
 
 # Needs to create a user and group
 IS_INTERACTIVE= yes

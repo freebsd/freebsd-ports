@@ -1,10 +1,9 @@
 # New ports collection makefile for:	pine
-# http://www.washington.edu/pine/
 # Version required:     4.10
 # Date created:		09 July 1998
 # Whom:			Adrian Penisoara <ady@freebsd.ady.ro>
 #
-# $Id: Makefile,v 1.29 1999/03/11 21:47:15 scrappy Exp $
+# $Id: Makefile,v 1.30 1999/03/15 01:41:15 steve Exp $
 #
 
 DISTNAME=       pine4.10
@@ -15,7 +14,7 @@ MASTER_SITES=	ftp://ftp.cac.washington.edu/pine/
 MAINTAINER=	pine@freebsd.ady.ro
 
 Y2K=		http://www.washington.edu/pine/QandA/sysadmins.html#Millenium
-WWW_SITE=	http://www.washington.edu/pine
+WWW_SITE=	http://www.washington.edu/pine/
 
 NO_LATEST_LINK= yes
 
