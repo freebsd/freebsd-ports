@@ -16,18 +16,18 @@ MASTER_SITES=	ftp://ports.jp.FreeBSD.org/pub/FreeBSD-jp/OD/ \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Utility for ejecting media from CD or optical disk drive
 
-DOCDIR=		share/doc/eject
-PLIST_SUB=	DOCDIR=${DOCDIR}
+PLIST_FILES=	sbin/eject
+PORTDOCS=	README README-J
 
 MAN1=		eject.1
 MANCOMPRESSED=	yes
 
 post-install:
-	@if [ ! -d ${PREFIX}/${DOCDIR} ] ; then \
-		${MKDIR} ${PREFIX}/${DOCDIR} ; \
-	fi
-	@for i in README README-J ; do \
-		${INSTALL_DATA} ${WRKSRC}/$${i} ${PREFIX}/${DOCDIR} ; \
-	done
+.if !defined(NOPORTDOCS)
+	${MKDIR} ${DOCSDIR}
+.for i in ${PORTDOCS}
+	${INSTALL_DATA} ${WRKSRC}/${i} ${DOCSDIR}
+.endfor
+.endif
 
 .include <bsd.port.mk>

@@ -1,5 +1,5 @@
---- eject.c.orig	Tue Jan  4 09:42:12 2000
-+++ eject.c	Wed Dec 24 01:11:34 2003
+--- eject.c.orig	Tue Jan  4 15:42:12 2000
++++ eject.c	Sun Feb  1 17:59:10 2004
 @@ -43,8 +43,8 @@
  extern int optind;
  
@@ -11,7 +11,15 @@
  int eject(char *, char *);
  
  char *program = "eject";
-@@ -65,8 +65,8 @@
+@@ -52,6 +52,7 @@
+ int fflag;	/* force unmount filesystem */
+ int nflag;	/* not execute operation */
+ int vflag;	/* verbose operation */
++int tflag;	/* tray close */
+ 
+ /*
+  *  simple eject program
+@@ -65,14 +66,14 @@
  {
      int ch;
      int sts;
@@ -21,8 +29,26 @@
 +    char *err;
      char *defdev;
  
-     fflag = nflag = vflag = 0;
-@@ -95,18 +95,28 @@
+-    fflag = nflag = vflag = 0;
++    fflag = nflag = vflag = tflag = 0;
+     defdev = getenv("EJECT");
+ 
+-    while ((ch = getopt(argc, argv, "fnv?")) != EOF) {
++    while ((ch = getopt(argc, argv, "fnvt?")) != EOF) {
+ 	switch (ch) {
+ 	  case 'f' :
+ 	    fflag = 1;
+@@ -83,6 +84,9 @@
+ 	  case 'v' :
+ 	    vflag = 1;
+ 	    break;
++	  case 't' :
++	    tflag = 1;
++	    break;
+ 	  case '?' :
+ 	  default :
+ 	    usage();
+@@ -95,18 +99,51 @@
  	if (argc == 0) {
  	    usage();
  	}
@@ -41,12 +67,35 @@
 +    } else {
 +         int c;
 +         char *dev_bak = malloc(MAXPATHLEN);
-+         if ((c = readlink(device, dev_bak, MAXPATHLEN-1)) != -1) {
++         free(name);
++         if ((c = readlink(device, dev_bak, MAXPATHLEN))>0) {
 +              dev_bak[c] = '\0';
-+              free(name);
 +              name = dev_bak;
 +         } else {
 +              free(dev_bak);
++	      name = device;
++         }
++         if (strncmp(device, "/dev/", 5) != 0)
++         {
++              int mnts;
++              struct statfs *mntbuf;
++              mnts = getmntinfo(&mntbuf, MNT_NOWAIT);
++              if (mnts == 0) {
++                  perror(program);
++                  exit(1);
++              }
++              for (ch = 0; ch < mnts; ch++) {
++                  if (strcmp(mntbuf[ch].f_mntonname, name) == 0) {
++                      device = strdup(mntbuf[ch].f_mntfromname);
++                      name = strdup(mntbuf[ch].f_mntfromname);
++                      break;
++                  }
++              }
++              if (strncmp(device, "/dev/", 5) != 0)
++              {
++                  perror(program);
++                  exit(1);
++              }
 +         }
      }
  
@@ -55,7 +104,7 @@
      if (sts < 0) {
  	perror(err);
  	exit(1);
-@@ -128,16 +138,26 @@
+@@ -128,16 +165,26 @@
  int
  check_device(name, device)
      char *name;
@@ -69,8 +118,8 @@
 -    sprintf(device, "/dev/r%sc", name);
 -    if (vflag || nflag) {
 -	printf("%s: using device %s\n", program, device);
-+    const char* dev_list[] = { "/dev/%sc", "/dev/%s", "%s", NULL };
-+    for (i = 0; dev_list[i]; i++) {
++    const char* dev_list[] = { "/dev/%sc", "/dev/%s", "%s" };
++    for (i = 0; i < 3; i++) {
 +         if ((sts = asprintf(device, dev_list[i], name)) == -1)
 +              return sts;
 +         if (vflag || nflag) {
@@ -88,7 +137,7 @@
  
      return sts;
  }
-@@ -155,7 +175,7 @@
+@@ -155,7 +202,7 @@
  int
  unmount_fs(name, err)
      char *name;
@@ -97,7 +146,16 @@
  {
      int mnts;
      struct statfs *mntbuf;
-@@ -221,7 +241,7 @@
+@@ -173,7 +220,7 @@
+     /* get proper mount information into the list */
+     len = strlen(name);
+     for (n = 0; n < mnts; n++) {
+-	p = rindex(mntbuf[n].f_mntfromname, '/');
++	p = mntbuf[n].f_mntfromname - 1;
+ 	if (p == NULL) {
+ 	    continue;
+ 	}
+@@ -221,7 +268,7 @@
  	    sts = 0;
  	}
  	if (sts < 0 && fflag == 0) {
@@ -106,3 +164,41 @@
  	    return sts;
  	}
  	nextp = mp->next;
+@@ -255,14 +302,26 @@
+     }
+     if (!nflag) {
+ 	if (vflag) {
+-	    printf("%s: ejecting media from %s\n", program, name);
++	    if (tflag) {
++	        printf("%s: tray close on %s\n", program, name);
++	    } else {
++	        printf("%s: ejecting media from %s\n", program, name);
++	    }
+ 	}
+ 	sts = ioctl(fd, CDIOCALLOW);
+ 	if (sts >= 0) {
+-	    sts = ioctl(fd, CDIOCEJECT);
++            if (tflag) {
++	        sts = ioctl(fd, CDIOCCLOSE);
++	    } else {
++	        sts = ioctl(fd, CDIOCEJECT);
++	    }
+ 	}
+     } else {
+-	printf("%s: ejecting media from %s\n", program, name);
++        if (tflag) {
++            printf("%s: tray close on %s\n", program, name);
++        } else {
++	    printf("%s: ejecting media from %s\n", program, name);
++	}
+ 	sts = 0;
+     }
+     close(fd);
+@@ -277,6 +336,6 @@
+ void
+ usage(void)
+ {
+-    fprintf(stderr, "usage: %s [-fnv] device\n", program);
++    fprintf(stderr, "usage: %s [-fnvt] device\n", program);
+     exit(1);
+ }
