@@ -1,4 +1,5 @@
 bin/htcobol
+bin/htcobpp
 bin/htcobf2f
 bin/htcobdispcv.tcl
 bin/htcobviscomp.tcl
