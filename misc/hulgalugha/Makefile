@@ -1,0 +1,17 @@
+# New ports collection makefile for:	hulgalugha
+# Date created:				22 Apr 2003
+# Whom:					alfred@freebsd.org
+#
+# $FreeBSD$
+#
+
+PORTNAME=	hulgalugha
+PORTVERSION=	1.0
+CATEGORIES=	misc
+MASTER_SITES=	http://people.freebsd.org/~alfred/sources/hulgalugha/
+USE_BZIP2=	dongs
+
+MAINTAINER=	alfred@FreeBSD.org
+COMMENT=	A very jerky text filter.
+
+.include <bsd.port.mk>
