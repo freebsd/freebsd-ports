@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	pycodec
-PORTVERSION=	1.4.6
+PORTVERSION=	1.4.7
 CATEGORIES=	japanese python converters
 MASTER_SITES=	http://www.python.jp/Zope/download/JapaneseCodecs/ \
 		http://pseudo.grad.sccs.chukyo-u.ac.jp/~kajiyama/python/ \
@@ -18,15 +18,10 @@ MAINTAINER=	perky@FreeBSD.org
 BUILD_DEPENDS=	${PYDISTUTILS}
 
 USE_PYTHON=	yes
+USE_PYDISTUTILS=yes
 DOCSDIR=	${PREFIX}/share/doc/ja-pycodec
-PLIST_SUB=	PYTHON_SITELIBDIR="lib/${PYTHON_VERSION}/site-packages"
-SETUP_CMD=	cd ${WRKSRC} && ${PYTHON_CMD} setup.py
 
-do-build:
-	${SETUP_CMD} build
-
-do-install:
-	${SETUP_CMD} install -c -O1 --prefix=${PREFIX}
+post-install:
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/README.en ${DOCSDIR}
