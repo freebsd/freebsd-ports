@@ -1,0 +1,58 @@
+#!/bin/sh
+
+PATH=/bin:/usr/sbin
+
+case $2 in
+POST-INSTALL)
+	USER=bnetd
+	GROUP=${USER}
+	UID=700
+	GID=${UID}
+	HOME_DIR=/nonexistent
+	LOGDIR=/var/log/pvpgn
+	PIDDIR=/var/run/pvpgn
+
+	if pw group show "${GROUP}" 2>/dev/null; then
+		echo "You already have a group \"${GROUP}\", so I will use it."
+	else
+		if pw groupadd ${GROUP} -g ${GID}; then
+			echo "Added group \"${GROUP}\"."
+		else
+			echo "Adding group \"${GROUP}\" failed..."
+			exit 1
+		fi
+	fi
+
+	if pw user show "${USER}" 2>/dev/null; then
+		echo "You already have a user \"${USER}\", so I will use it."
+	else
+		if pw useradd ${USER} -u ${UID} -g ${GROUP} -h - \
+			-d ${HOME_DIR} -s /sbin/nologin -c "Bnetd user"
+		then
+			echo "Added user \"${USER}\"."
+		else
+			echo "Adding user \"${USER}\" failed..."
+			exit 1
+		fi
+	fi
+
+	mkdir -p %%PVPGN_DIR%%/bak/charinfo
+	mkdir -p %%PVPGN_DIR%%/bak/charsave
+	mkdir -p %%PVPGN_DIR%%/bnmail
+	mkdir -p %%PVPGN_DIR%%/chanlogs
+	mkdir -p %%PVPGN_DIR%%/charinfo
+	mkdir -p %%PVPGN_DIR%%/charsave
+	mkdir -p %%PVPGN_DIR%%/clans
+	mkdir -p %%PVPGN_DIR%%/ladders
+	mkdir -p %%PVPGN_DIR%%/reports
+	mkdir -p %%PVPGN_DIR%%/status
+	mkdir -p %%PVPGN_DIR%%/teams
+	mkdir -p %%PVPGN_DIR%%/users
+	mkdir -p %%PVPGN_DIR%%/userscdb
+
+	chown -R ${USER}:${GROUP} %%PVPGN_DIR%%
+	mkdir -m 750 ${LOGDIR} ${PIDDIR} 2> /dev/null
+	chown -R ${USER}:${GROUP} ${LOGDIR} ${PIDDIR}
+	exit 0
+	;;
+esac
