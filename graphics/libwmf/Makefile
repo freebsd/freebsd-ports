@@ -3,10 +3,10 @@
 # Date Created:		22 May 1999
 # Whom:			Chris Piazza <cpiazza@home.net>
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1999/06/16 13:32:18 billf Exp $
 #
 
-DISTNAME=	libwmf-0.1.10
+DISTNAME=	libwmf-0.1.11
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.csn.ul.ie/~caolan/publink/libwmf/
 
