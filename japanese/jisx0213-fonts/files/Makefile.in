@@ -5,7 +5,8 @@ MKBOLD_CMD?=	mkbold
 MKITALIC_CMD?=	mkitalic
 
 DIST_ALL=	K12-1.bdf K12-2.bdf K14-1.bdf K14-2.bdf \
-		jiskan16-2000-1.bdf jiskan16-2000-2.bdf
+		jiskan16-2000-1.bdf jiskan16-2000-2.bdf \
+		jiskan24-2000-1.bdf jiskan24-2000-2.bdf
 
 DIST_NOBOLD=	${DIST_ALL}
 MADE_BOLD=	${DIST_NOBOLD:S/.bdf/b.bdf/g}
