@@ -1,3 +1,4 @@
+bin/autogen
 bin/freefem
 share/doc/freefem/freefem.txt.gz
 share/doc/freefem/freefem.dvi
