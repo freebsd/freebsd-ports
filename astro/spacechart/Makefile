@@ -18,7 +18,8 @@ LIB_DEPENDS=	intl.4:${PORTSDIR}/devel/gettext
 
 USE_X_PREFIX=	yes
 GNU_CONFIGURE=	yes
-USE_GNOMELIBS=	yes
+USE_GNOMENG=	yes
+USE_GNOME=	gnomelibs
 CONFIGURE_ARGS=	--without-included-gettext --datadir=${PREFIX}/share
 
 # trick it into using ports installed gettext

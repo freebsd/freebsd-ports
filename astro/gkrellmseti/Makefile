@@ -17,10 +17,10 @@ MAINTAINER=     hmendes@brturbo.com
 BUILD_DEPENDS=  ${X11BASE}/include/gkrellm/gkrellm.h:${PORTSDIR}/sysutils/gkrellm
 RUN_DEPENDS=	gkrellm:${PORTSDIR}/sysutils/gkrellm
 
-USE_BZIP2=      yes
-USE_X_PREFIX=   yes
-USE_GTK=        yes
-USE_IMLIB=      yes
+USE_BZIP2=	yes
+USE_X_PREFIX=	yes
+USE_GNOMENG=	yes
+USE_GNOME=	imlib
 USE_XPM=	yes
 
 DOC_FILES=	AUTHORS README TODO

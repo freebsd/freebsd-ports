@@ -17,7 +17,8 @@ RUN_DEPENDS=	gkrellm:${PORTSDIR}/sysutils/gkrellm
 
 WRKSRC=		${WRKDIR}/${DISTNAME:S/_/-/}
 USE_X_PREFIX=	yes
-USE_IMLIB=	yes
+USE_GNOMENG=	yes
+USE_GNOME=	imlib
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/gkrellsun.so \

@@ -14,7 +14,8 @@ MASTER_SITES=	http://www.lsw.uni-heidelberg.de/~rwichman/ \
 MAINTAINER=	chris@unixpages.org
 
 .if !defined(WITHOUT_GTK)
-USE_GTK=        yes
+USE_GNOMENG=	yes
+USE_GNOME=	gtk12
 .endif
 .if !defined(WITHOUT_GNUPLOT)
 BUILD_DEPENDS+= gnuplot:${PORTSDIR}/math/gnuplot

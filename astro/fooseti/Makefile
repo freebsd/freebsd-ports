@@ -16,6 +16,7 @@ MAINTAINER=	ports@FreeBSD.org
 LIB_DEPENDS=	intl.4:${PORTSDIR}/devel/gettext
 
 GNU_CONFIGURE=	yes
-USE_GTK=	yes
+USE_GNOMENG=	yes
+uSE_GNOME=	gtk12
 
 .include <bsd.port.mk>
