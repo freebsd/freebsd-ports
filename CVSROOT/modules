@@ -1714,6 +1714,7 @@ galeon		ports/www/galeon
 gallery		ports/www/gallery
 games		src/games
 games_crimson	ports/games/crimson
+gap		ports/math/gap
 garith		ports/games/garith
 gaspell		ports/textproc/gaspell
 gate		ports/editors/gate
