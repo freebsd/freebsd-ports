@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	clamsmtp
-PORTVERSION=	1.1
+PORTVERSION=	1.2
 PORTREVISION=	0
 CATEGORIES=	security
 MASTER_SITES=	http://memberwebs.com/nielsen/software/clamsmtp/
@@ -28,11 +28,20 @@ CLAMAV_PID_DIR?=	/var/run/clamav
 MAN5=		clamsmtpd.conf.5
 MAN8=		clamsmtpd.8
 
+.if !defined(NOPORTDOCS)
+PORTDOCS=	*
+.endif
+
 post-install:
 	@${SED} ${RC_SCRIPTS_SUB:S/$/!g/:S/^/ -e s!%%/:S/=/%%!/} \
 		${FILESDIR}/clamsmtpd.sh.tmpl > ${STARTUP_FILE}
 	@${INSTALL_DATA} ${WRKSRC}/doc/clamsmtpd.conf ${PREFIX}/etc/clamsmtpd.conf-sample
 	@${CHMOD} 755 ${STARTUP_FILE}
+.if !defined(NOPORTDOCS)
+	@${MKDIR} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/scripts/virus_action.sh ${DOCSDIR}
+.endif
 	@${SED} -e "s,%%PREFIX%%,${PREFIX},g" ${PKGMESSAGE}
 
 .include <bsd.port.mk>
