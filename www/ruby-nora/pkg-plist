@@ -86,3 +86,4 @@
 %%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/simplebbs/simplebbs
 %%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/simplebbs
 %%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/rinda
+%%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%
