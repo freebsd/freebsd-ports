@@ -8,6 +8,7 @@
 PORTNAME=	flf
 PORTVERSION=	1.3a
 MASTER_SITES=	http://www.flfmod.com/download/ \
+		ftp://ftp.netgames-uk.net/pub/local/games/halflife/mods/front_line_force/ \
 		ftp://ftp.task.gda.pl/vol/d33/ftp.extreme-players.de/exp/hl/mod/frontlineforce/ \
 		http://www.spies.com/flf/downloads/ \
 		http://fileplanet.games-world.net/dl/ftp1.gamespy.com/fpnew/action/half-life/modifications/frontlineforce/
