@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gftp
-PORTVERSION=	2.0.15.r1
+PORTVERSION=	2.0.15.r2
 PORTREVISION=	0
 CATEGORIES=	ftp
 MASTER_SITES=	http://gftp.seul.org/ \
@@ -18,6 +18,7 @@ COMMENT=	A free multithreaded GTK-based GUI ftp and sftp client
 
 GNU_CONFIGURE=	yes
 
+CONFIGURE_ARGS=	--without-included-gettext
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LIBS="-L${LOCALBASE}/lib"
 
@@ -71,9 +72,15 @@ pre-everything::
 	@${ECHO} ""
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|g ; \
-		 s|DATADIRNAME=lib|DATADIRNAME=share|g ; \
-		 s|USE_INCLUDED_LIBINTL=yes|#USE_INCLUDED_LIBINTL=yes|g ; \
-		 s|\$$\(top_builddir\)/intl/libintl.a|-lintl|g' ${WRKSRC}/configure
+#	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|g ; \
+#		 s|DATADIRNAME=lib|DATADIRNAME=share|g ; \
+#		 s|USE_INCLUDED_LIBINTL=yes|#USE_INCLUDED_LIBINTL=yes|g ; \
+#		 s|\$$\(top_builddir\)/intl/libintl.a|-lintl|g' ${WRKSRC}/configure
 
+	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|g ; \
+		s|DATADIRNAME=lib|DATADIRNAME=share|g ; \
+		s|"-lssl |& -lcrypto|' ${WRKSRC}/configure
+
+#	@${REINPLACE_CMD} -e 's|LDADD = |& @LIBINTL@ |g' \
+#		${WRKSRC}/src/text/Makefile.in ${WRKSRC}/src/gtk/Makefile.in
 .include <bsd.port.post.mk>

@@ -1,24 +1,5 @@
 --- configure.orig	Thu Jul 24 19:13:01 2003
 +++ configure	Thu Jul 24 19:27:00 2003
-@@ -3526,7 +3526,7 @@
- 
- fi
- 
--for ac_func in gai_strerror getaddrinfo getcwd gettimeofday getwd mkdir mktime putenv rmdir select socket strdup strstr strtod strtol uname grantpt openpty getdtablesize
-+for ac_func in gai_strerror getaddrinfo getcwd gettimeofday getwd mkdir mktime putenv rmdir select socket strdup strstr strtod strtol uname openpty getdtablesize
- do
- echo $ac_n "checking for $ac_func""... $ac_c" 1>&6
- echo "configure:3533: checking for $ac_func" >&5
-@@ -3974,6 +3974,9 @@
- if { (eval echo configure:3975: \"$ac_link\") 1>&5; (eval $ac_link) 2>&5; } && test -s conftest${ac_exeext}; then
-   rm -rf conftest*
-   eval "ac_cv_lib_$ac_lib_var=yes"
-+  cat >> confdefs.h <<EOF
-+#define HAVE_OPENPTY 1
-+EOF
- else
-   echo "configure: failed program was:" >&5
-   cat conftest.$ac_ext >&5
 @@ -4372,7 +4375,7 @@
  
    fi
