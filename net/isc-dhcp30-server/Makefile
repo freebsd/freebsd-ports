@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	isc-dhcp3
-PORTVERSION=	3.0.b2.6
+PORTVERSION=	3.0.b2.9
 CATEGORIES=	net
 MASTER_SITES=   ftp://ftp.isc.org/isc/dhcp/
 DISTNAME=	dhcp-3.0b2pl${PORTVERSION:S/3.0.b2.//g}
