@@ -1409,9 +1409,9 @@ share/pysol/html/rules_seahaventowers.html
 share/pysol/html/rules_spider.html
 share/pysol/html/todo.html
 share/pysol/html/usage.html
-share/pysol/icon.xpm
-share/pysol/jester4.gif
-share/pysol/jester7.gif
+share/pysol/images/jester01.gif
+share/pysol/images/jester02.gif
+share/pysol/images/jester03.gif
 share/pysol/plugins/calculation.py
 share/pysol/plugins/canfield.py
 share/pysol/plugins/eightoff.py
@@ -1425,7 +1425,17 @@ share/pysol/plugins/rules_golf.html
 share/pysol/plugins/rules_grandfathersclock.html
 share/pysol/plugins/rules_numerica.html
 share/pysol/pysol.xbm
+share/pysol/pysol.xpm
 share/pysol/python.gif
+share/pysol/tiles/Atari_Classic.gif
+share/pysol/tiles/Chequered_Field.gif
+share/pysol/tiles/Fade_Blue-ffffff.ppm
+share/pysol/tiles/Fade_Green.ppm
+share/pysol/tiles/Fade_Red.ppm
+share/pysol/tiles/Funky_Rainbow.ppm
+share/pysol/tiles/Olive_Fossils.gif
+share/pysol/tiles/Orange_Ornaments.gif
+share/pysol/tiles/RGB_Rainbow.ppm
 share/pysol/toolbar/auto.gif
 share/pysol/toolbar/exit.gif
 share/pysol/toolbar/new.gif
@@ -1438,7 +1448,9 @@ share/pysol/toolbar/save.gif
 share/pysol/toolbar/stats.gif
 share/pysol/toolbar/undo.gif
 @dirrm share/pysol/toolbar
+@dirrm share/pysol/tiles
 @dirrm share/pysol/plugins
+@dirrm share/pysol/images
 @dirrm share/pysol/html
 @dirrm share/pysol/cardset-xskat-large
 @dirrm share/pysol/cardset-xpat2-nox-tiny
