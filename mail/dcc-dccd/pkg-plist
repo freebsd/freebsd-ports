@@ -5,9 +5,9 @@ dcc/libexec/fetch-testmsg-whitelist
 dcc/libexec/updatedcc
 dcc/libexec/dbclean
 dcc/libexec/dccd
-dcc/libexec/dccm
+%%WITH_SENDMAIL%%dcc/libexec/dccm
 dcc/libexec/dblist
-dcc/libexec/dccifd
+%%WITH_SENDMAIL%%dcc/libexec/dccifd
 dcc/libexec/dccsight
 dcc/libexec/wlist
 dcc/libexec/cron-dccd
