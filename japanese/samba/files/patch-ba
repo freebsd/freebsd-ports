@@ -1,15 +1,40 @@
---- configure.in.orig	Mon Nov 26 17:55:39 2001
-+++ configure.in	Tue Dec 11 00:42:47 2001
-@@ -19,7 +19,7 @@
-     codepagedir="\$(LIBDIR)/codepages"
-     configdir="\$(LIBDIR)"
-     lockdir="\$(VARDIR)/locks"
--    logfilebase="\$(VARDIR)"
-+    logfilebase="\$(VARDIR)/log"
-     privatedir="\${prefix}/private"
-     swatdir="\${prefix}/swat")
+--- configure.in.orig	Thu May  2 20:02:46 2002
++++ configure.in	Thu May  9 02:29:20 2002
+@@ -498,9 +498,23 @@
+ ############################################
+ # we need dlopen/dlclose/dlsym/dlerror for PAM, the password database plugins and the new VFS code
+ AC_CHECK_FUNCS(dlopen)
++case "$host_os" in
++	*bsd*)
++		AC_CHECK_LIB(c, dlopen, [LIBS="$LIBS -lc";
++		AC_DEFINE(HAVE_DLOPEN)])
++		;;
++esac
+ if test x"$ac_cv_func_dlopen" = x"no"; then
+-	AC_CHECK_LIB(dl, dlopen, [LIBS="$LIBS -ldl";
+-	AC_DEFINE(HAVE_DLOPEN)])
++	case "$host_os" in
++	 *bsd*)
++		AC_CHECK_LIB(c, dlopen, [LIBS="$LIBS -lc";
++		AC_DEFINE(HAVE_DLOPEN)])
++		;;
++	     *)
++		AC_CHECK_LIB(dl, dlopen, [LIBS="$LIBS -ldl";
++		AC_DEFINE(HAVE_DLOPEN)])
++		;;
++	esac
+ fi
+ # dlopen/dlclose/dlsym/dlerror will be checked again later and defines will be set then
  
-@@ -1655,7 +1655,7 @@
+@@ -870,6 +884,7 @@
+ 		;;
+ 		*bsd*)  BLDSHARED="true"
+ 			LDSHFLAGS="-shared"
++			DYNEXP="-Wl,--export-dynamic"
+ 			SONAMEFLAG="-Wl,-soname,"
+ 			PICFLAG="-fPIC"
+ 			AC_DEFINE(STAT_ST_BLOCKSIZE,512)
+@@ -1868,7 +1883,7 @@
    yes)
      AC_MSG_RESULT(yes)
      AC_DEFINE(KRB5_AUTH)
@@ -18,3 +43,12 @@
      CFLAGS="$CFLAGS -I$withval/include"
      LDFLAGS="$LDFLAGS -L$withval/lib"
      ;;
+@@ -2042,7 +2057,7 @@
+   yes)
+     AC_MSG_RESULT(yes)
+     AC_DEFINE(WITH_LDAP_SAM)
+-    LIBS="-lldap -llber -lresolv $LIBS"
++    LIBS="-lldap -llber $LIBS"
+     with_smbpasswd_sam=no
+     ;;
+   *)
