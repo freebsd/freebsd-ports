@@ -2545,7 +2545,7 @@ gfslicer	ports/sysutils/gfslicer
 gftp		ports/ftp/gftp
 ggiterm		ports/x11/ggiterm
 ggsd		ports/net/ggsd
-ggv2		ports/print/ggv2
+ggv		ports/print/ggv
 ggz-client-libs	ports/games/ggz-client-libs
 ggz-txt-client	ports/games/ggz-txt-client
 ghc		ports/lang/ghc
