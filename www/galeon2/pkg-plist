@@ -26,6 +26,7 @@ share/gnome/galeon/freshmeat.png
 share/gnome/galeon/galeon-bookmark-alias-mark.png
 share/gnome/galeon/galeon-bookmark.png
 share/gnome/galeon/galeon-default.png
+share/gnome/galeon/galeon-download.png
 share/gnome/galeon/galeon-egg-ui-toolbar.xml
 share/gnome/galeon/galeon-egg-ui.xml
 share/gnome/galeon/galeon-folder.png
@@ -68,7 +69,6 @@ share/gnome/galeon/slack.png
 share/gnome/galeon/smart-bm-fold.png
 share/gnome/galeon/smart-bm-unfold.png
 share/gnome/galeon/stocks.png
-share/gnome/galeon/toolbar-editor.glade
 share/gnome/gnome-2.0/ui/galeon-bookmarks-editor-ui.xml
 share/gnome/help/galeon/C/apx-authors.xml
 share/gnome/help/galeon/C/apx-bugs.xml

@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	galeon2
-PORTVERSION=	1.3.15
-PORTREVISION=	1
+PORTVERSION=	1.3.16
 CATEGORIES=	www gnome
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		http://osdn.dl.sourceforge.net/sourceforge/galeon/
@@ -20,8 +19,6 @@ COMMENT=	A GNOME 2 Web browser based on gecko (the Mozilla rendering engine)
 BUILD_DEPENDS=	${X11BASE}/lib/${MOZILLA}/components/libwidget_gtk2.so:${PORTSDIR}/www/${MOZILLA}
 RUN_DEPENDS=	${X11BASE}/lib/${MOZILLA}/components/libwidget_gtk2.so:${PORTSDIR}/www/${MOZILLA}
 
-MOZ_CONFIGURE_ARGS=	--with-mozilla-snapshot="1.7"
-
 MOZILLA=	mozilla
 HEADERS_SUFX=
 
@@ -32,7 +29,6 @@ HEADERS_SUFX=
 .if ${WITH_MOZILLA}=="mozilla-devel" || ${WITH_MOZILLA}=="mozilla-devel-gtk2"
 MOZILLA=	mozilla-devel
 HEADERS_SUFX=	-devel
-MOZ_CONFIGURE_ARGS=	--with-mozilla-snapshot="1.8a"
 .else
 MOZILLA=	mozilla
 HEADERS_SUFX=
@@ -42,14 +38,13 @@ HEADERS_SUFX=
 WRKSRC=		${WRKDIR}/${PORTNAME:S/2$//}-${PORTVERSION:S/a$//}
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes
-USE_GNOME=	gnomeprefix intlhack gnomehack libgnomeui
+USE_GNOME=	gnomeprefix lthack intlhack gnomehack libgnomeui
 USE_LIBTOOL_VER=13
 USE_GMAKE=	yes
 USE_REINPLACE=	yes
 CONFIGURE_ARGS=	--with-mozilla-includes="${X11BASE}/include/mozilla${HEADERS_SUFX}" \
 		--with-mozilla-libs="${X11BASE}/lib/${MOZILLA}" \
-		--enable-nautilus-view=no \
-		${MOZ_CONFIGURE_ARGS}
+		--enable-nautilus-view=no
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include ${PTHREAD_CFLAGS}" \
 		LIBS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}"
 
