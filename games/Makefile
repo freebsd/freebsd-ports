@@ -166,7 +166,6 @@
     SUBDIR += kdegames3
     SUBDIR += klondike
     SUBDIR += kobodeluxe
-    SUBDIR += kpuzzle
     SUBDIR += kxl
     SUBDIR += ladder
     SUBDIR += lbreakout
