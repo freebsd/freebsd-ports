@@ -8,14 +8,18 @@ lib/%%PYTHON_VERSION%%/site-packages/happydoc/StructuredText.py
 lib/%%PYTHON_VERSION%%/site-packages/happydoc/StructuredText.pyc
 lib/%%PYTHON_VERSION%%/site-packages/happydoc/cvsversion.py
 lib/%%PYTHON_VERSION%%/site-packages/happydoc/cvsversion.pyc
-lib/%%PYTHON_VERSION%%/site-packages/happydoc/emptytest.py
-lib/%%PYTHON_VERSION%%/site-packages/happydoc/emptytest.pyc
+lib/%%PYTHON_VERSION%%/site-packages/happydoc/debug_happydoc.py
+lib/%%PYTHON_VERSION%%/site-packages/happydoc/debug_happydoc.pyc
+lib/%%PYTHON_VERSION%%/site-packages/happydoc/guitest_happydoc.py
+lib/%%PYTHON_VERSION%%/site-packages/happydoc/guitest_happydoc.pyc
+lib/%%PYTHON_VERSION%%/site-packages/happydoc/happydocset.py
+lib/%%PYTHON_VERSION%%/site-packages/happydoc/happydocset.pyc
 lib/%%PYTHON_VERSION%%/site-packages/happydoc/happydoc_class.py
 lib/%%PYTHON_VERSION%%/site-packages/happydoc/happydoc_class.pyc
 lib/%%PYTHON_VERSION%%/site-packages/happydoc/happyformatter.py
 lib/%%PYTHON_VERSION%%/site-packages/happydoc/happyformatter.pyc
-lib/%%PYTHON_VERSION%%/site-packages/happydoc/hdpathmanagement.py
-lib/%%PYTHON_VERSION%%/site-packages/happydoc/hdpathmanagement.pyc
+lib/%%PYTHON_VERSION%%/site-packages/happydoc/hdpath.py
+lib/%%PYTHON_VERSION%%/site-packages/happydoc/hdpath.pyc
 lib/%%PYTHON_VERSION%%/site-packages/happydoc/indentstring.py
 lib/%%PYTHON_VERSION%%/site-packages/happydoc/indentstring.pyc
 lib/%%PYTHON_VERSION%%/site-packages/happydoc/optiontools.py
@@ -26,6 +30,8 @@ lib/%%PYTHON_VERSION%%/site-packages/happydoc/pluginloader.py
 lib/%%PYTHON_VERSION%%/site-packages/happydoc/pluginloader.pyc
 lib/%%PYTHON_VERSION%%/site-packages/happydoc/prettyast.py
 lib/%%PYTHON_VERSION%%/site-packages/happydoc/prettyast.pyc
+lib/%%PYTHON_VERSION%%/site-packages/happydoc/profile_happydoc.py
+lib/%%PYTHON_VERSION%%/site-packages/happydoc/profile_happydoc.pyc
 lib/%%PYTHON_VERSION%%/site-packages/happydoc/test_happydoc.py
 lib/%%PYTHON_VERSION%%/site-packages/happydoc/test_happydoc.pyc
 lib/%%PYTHON_VERSION%%/site-packages/happydoc/ts_regex.py
@@ -46,6 +52,8 @@ lib/%%PYTHON_VERSION%%/site-packages/happydoc/hdformatter/hdformatter_file.py
 lib/%%PYTHON_VERSION%%/site-packages/happydoc/hdformatter/hdformatter_file.pyc
 lib/%%PYTHON_VERSION%%/site-packages/happydoc/hdformatter/hdformatter_htmlfile.py
 lib/%%PYTHON_VERSION%%/site-packages/happydoc/hdformatter/hdformatter_htmlfile.pyc
+lib/%%PYTHON_VERSION%%/site-packages/happydoc/hdformatter/hdformatter_null.py
+lib/%%PYTHON_VERSION%%/site-packages/happydoc/hdformatter/hdformatter_null.pyc
 lib/%%PYTHON_VERSION%%/site-packages/happydoc/hdformatter/hdformatter_textfile.py
 lib/%%PYTHON_VERSION%%/site-packages/happydoc/hdformatter/hdformatter_textfile.pyc
 @dirrm lib/%%PYTHON_VERSION%%/site-packages/happydoc/docset
