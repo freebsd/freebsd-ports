@@ -7,7 +7,7 @@
 
 PORTNAME=	goodweather
 PORTVERSION=	0.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	astro gnome
 MASTER_SITES=	http://gdesklets.gnomedesktop.org/files/ \
 		http://people.roqe.org/kr/misc/
@@ -31,6 +31,7 @@ SKINS=		liquid um weather.com
 do-build:
 	@${WRKSRC}/Install_${NAME}_Sensor.bin --nomsg ${WRKSRC}
 	@${PATCH} ${WRKSRC}/${NAME}/__init__.py < ${FILESDIR}/${NAME}::__init__.py
+	@${PATCH} ${WRKSRC}/${NAME}/weather.py < ${FILESDIR}/${NAME}::weather.py
 	@${FIND} ${WRKSRC} -name '*.orig' -delete
 
 do-install:
