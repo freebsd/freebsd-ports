@@ -9,7 +9,7 @@
 PORTNAME=	pygopherd
 PORTVERSION=	1.1.0
 CATEGORIES=	net python
-MASTER_SITES=	http://gopher.quux.org:70/devel/gopher/Downloads/pygopherd/
+MASTER_SITES=	http://gopher.quux.org:70/devel/gopher/Downloads/pygopherd/old/
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
