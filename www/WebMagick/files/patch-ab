@@ -1,0 +1,19 @@
+*** webmagick.in.bak	Tue Mar 24 07:45:45 1998
+--- webmagick.in	Thu May 21 02:06:06 1998
+***************
+*** 249,255 ****
+  # Name of per-directory rc file
+  $opt_webmagickrc	= '.webmagickrc';
+  # global rc files
+! @global_option_files	= ("/etc/webmagickrc", "$ENV{'HOME'}/${opt_webmagickrc}");
+  
+  
+  # File naming
+--- 249,255 ----
+  # Name of per-directory rc file
+  $opt_webmagickrc	= '.webmagickrc';
+  # global rc files
+! @global_option_files    = ("@prefix@/etc/webmagickrc", "$ENV{'HOME'}/${opt_webmagickrc}");
+  
+  
+  # File naming
