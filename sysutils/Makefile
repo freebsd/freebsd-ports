@@ -104,6 +104,7 @@
     SUBDIR += lfm
     SUBDIR += libretto-config
     SUBDIR += linux-acu
+    SUBDIR += lire
     SUBDIR += livecd
     SUBDIR += lmmon
     SUBDIR += log_analysis

@@ -1,0 +1,22 @@
+Lire, the french word for `to read', is a toolset of logfile analysers.
+
+The Lire package is targeted at automatically generating useful
+reports from raw log files from various services. Currently, Lire
+can generate reports for a variety of email, web, dns, ftp, print
+servers and firewalls, and supports multiple output formats.
+
+Lire is built around the concept of a superservice. A superservice
+is a class of applications which share the same reports. Lire
+supports 6 superservices: dns, email, firewall, ftp, print and www.
+This means that log files for all supported email servers (service
+in Lire's parlance) will get similar reports. This is important for
+heterogeneous environments where you could have e.g. Sendmail and
+Postfix mail servers running. You will get similar reports which
+you can compare.
+
+Notes:
+- PDF output can be enabled if you follow the instructions coming
+  with "make pdf"
+- Excel output only works if you have Perl 5.6.1
+
+WWW: www.logreport.org
