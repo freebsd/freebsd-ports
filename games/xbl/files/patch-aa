@@ -1,5 +1,5 @@
---- Makefile.in.orig	Mon Aug 31 22:41:27 1998
-+++ Makefile.in	Thu Sep 17 09:05:39 1998
+--- Makefile.in.orig	Thu Nov 12 22:57:13 1998
++++ Makefile.in	Tue Dec  1 09:12:18 1998
 @@ -14,7 +14,7 @@
  USE_SETGID=-DUSE_SETGID
  
@@ -54,7 +54,7 @@
  	 -DXBLVERSION=\"$(XBLVERSION)\" \
  	 -DGROUP_GID=$(GROUP_GID) \
 -	  $(USE_SETGID) @DEFS@ -g
-+	  $(USE_SETGID) @DEFS@
++	  $(USE_SETGID) @DEFS@ @CFLAGS@
  # For link edit options
  LDOPTIONS=$(CFLAGS)
  LDOPTIONS=@LDOPTIONS@
