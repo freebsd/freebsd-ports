@@ -15,16 +15,14 @@ MASTER_SITES=	http://gnuboy.unix-fu.org/src/ \
 MAINTAINER=	ijliao@FreeBSD.org
 COMMENT=	Nintendo GameBoy emulator
 
-LIB_DEPENDS=	vga.1:${PORTSDIR}/graphics/svgalib \
-		SDL-1.1.5:${PORTSDIR}/devel/sdl12
+LIB_DEPENDS=	vga.1:${PORTSDIR}/graphics/svgalib
 
+USE_SDL=	sdl
 USE_REINPLACE=	yes
 USE_XLIB=	yes
 USE_AUTOCONF=	yes
 GNU_CONFIGURE=	yes
-SDL_CONFIG?=	${LOCALBASE}/bin/sdl11-config
-CONFIGURE_ENV=	SDL_CONFIG=${SDL_CONFIG} \
-		CPPFLAGS="-I${LOCALBASE}/include"
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include"
 CONFIGURE_ARGS=	--with-sdl
 
 post-patch:
