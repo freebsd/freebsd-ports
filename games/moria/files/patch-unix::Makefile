@@ -1,8 +1,8 @@
 $FreeBSD$
 
 --- unix/Makefile.orig	Thu Jul 21 16:37:08 1994
-+++ unix/Makefile	Wed Aug  6 16:17:52 2003
-@@ -3,10 +3,10 @@
++++ unix/Makefile	Tue Aug 12 10:12:16 2003
+@@ -3,15 +3,15 @@
  # LIBDIR must be the same directory defined in config.h
  # OWNER is who you want the game to be chown to.
  # GROUP is who you wnat the game to be chgrp to.
@@ -17,15 +17,49 @@ $FreeBSD$
  
  # For testing and debugging the program, it is best to use this line.
  # CFLAGS = -g
-@@ -60,9 +60,11 @@
+ # For playing the game, you may want to use this line
+-CFLAGS = -O
++#CFLAGS = -O
+ 
+ # For BSD Systems
+ CURSES = -lcurses -ltermcap
+@@ -26,7 +26,7 @@
+ # Normal systems don't require anything here.
+ LFLAGS = 
+ 
+-CC = cc
++#CC = cc
+ 
+ SRCS = main.c misc1.c misc2.c misc3.c misc4.c store1.c files.c io.c \
+ 	create.c desc.c generate.c sets.c dungeon.c creature.c death.c \
+@@ -60,17 +60,19 @@
  # you must define BINDIR and LIBDIR before installing
  # assumes that BINDIR and LIBDIR exist
  install:
-+	-mkdir -p $(BINDIR)
- 	chmod 755 $(BINDIR)
- 	cp moria $(BINDIR)
- 	chmod 4711 $(BINDIR)/moria
-+	-mkdir -p $(LIBDIR)
- 	chmod 711 $(LIBDIR)
- 	(cd files; cp $(LIBFILES) $(LIBDIR))
- 	(cd $(LIBDIR); chmod 444 $(LIBFILES))
+-	chmod 755 $(BINDIR)
+-	cp moria $(BINDIR)
+-	chmod 4711 $(BINDIR)/moria
+-	chmod 711 $(LIBDIR)
+-	(cd files; cp $(LIBFILES) $(LIBDIR))
+-	(cd $(LIBDIR); chmod 444 $(LIBFILES))
+-	(cd $(LIBDIR); touch scores; chmod 644 scores)
+-	chown $(OWNER) $(BINDIR)/moria
+-	chgrp $(GROUP) $(BINDIR)/moria
+-	(cd $(LIBDIR); chown $(OWNER) $(LIBFILES) scores)
+-	(cd $(LIBDIR); chgrp $(GROUP) $(LIBFILES) scores)
++	-${MKDIR} $(BINDIR)
++	${CHMOD} 755 $(BINDIR)
++	${BSD_INSTALL_PROGRAM} moria $(BINDIR)
++	${CHMOD} 4711 $(BINDIR)/moria
++	-${MKDIR} $(LIBDIR)
++	${CHMOD} 711 $(LIBDIR)
++	(cd files; ${BSD_INSTALL_DATA} $(LIBFILES) $(LIBDIR))
++	(cd $(LIBDIR); ${CHMOD} 444 $(LIBFILES))
++	(cd $(LIBDIR); ${TOUCH} scores; ${CHMOD} 644 scores)
++	${CHOWN} $(OWNER) $(BINDIR)/moria
++	${CHGRP} $(GROUP) $(BINDIR)/moria
++	(cd $(LIBDIR); ${CHOWN} $(OWNER) $(LIBFILES) scores)
++	(cd $(LIBDIR); ${CHGRP} $(GROUP) $(LIBFILES) scores)
+ # If you are short on disk space, or aren't interested in debugging moria.
+ #	strip $(BINDIR)/moria
+ 
