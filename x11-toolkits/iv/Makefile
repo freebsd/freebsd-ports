@@ -88,5 +88,4 @@ post-install:
 .endif
 	${SETENV} OBJFORMAT=${PORTOBJFORMAT} ${LDCONFIG} -m ${PREFIX}/lib
 
-
 .include <bsd.port.post.mk>
