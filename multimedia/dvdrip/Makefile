@@ -28,6 +28,7 @@ RUN_DEPENDS+=	cdrdao:${PORTSDIR}/sysutils/cdrdao \
 		convert:${PORTSDIR}/graphics/ImageMagick \
 		mkisofs:${PORTSDIR}/sysutils/mkisofs \
 		mplayer:${PORTSDIR}/multimedia/mplayer \
+		oggenc:${PORTSDIR}/audio/vorbis-tools \
 		ogmmerge:${PORTSDIR}/multimedia/ogmtools \
 		transcode:${PORTSDIR}/graphics/transcode \
 		vcdimager:${PORTSDIR}/multimedia/vcdimager
