@@ -7,6 +7,7 @@
 
 PORTNAME=	suck
 PORTVERSION=	4.3.2
+PORTREVISION=	1
 CATEGORIES=	news
 MASTER_SITES=	http://www.sucknews.org/
 
@@ -53,9 +54,15 @@ post-patch:
 	${SED} -e "s=/usr/local/=${LOCALBASE}/=" \
 		${WRKSRC}/Makefile.in.sed > ${WRKSRC}/Makefile.in
 	@${MV} ${WRKSRC}/suck_config.h ${WRKSRC}/suck_config.h.sed
+.if defined(NEWSBIN) && !defined(SUCK_WITH_INN)
+	${SED} -e "s=/usr/local/lib/suck=${PREFIX}/lib/suck=" \
+		-e "s=/usr/local/news/lib=${NEWSCTL}=" \
+		${WRKSRC}/suck_config.h.sed > ${WRKSRC}/suck_config.h
+.else
 	${SED} -e "s=/usr/local/lib/suck=${PREFIX}/lib/suck=" \
 		-e "s=/usr/local/news/lib=${LOCALBASE}/news/lib=" \
 		${WRKSRC}/suck_config.h.sed > ${WRKSRC}/suck_config.h
+.endif
 
 .if !defined(NOPORTDOCS)
 post-install:
