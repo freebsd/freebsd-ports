@@ -6,7 +6,7 @@
 
 PORTNAME=	gaim
 PORTVERSION=	0.71
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES?=	net
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -116,8 +116,10 @@ pre-everything::
 	@${ECHO_MSG} "	WITHOUT_GTKSPELL	Turns off spell checking"
 	@${ECHO_MSG} "	WITHOUT_AUDIO		Disable audio support"
 	@${ECHO_MSG} "	WITHOUT_OPENSSL		Disable OpenSSL encryption support"
-	@${ECHO_MSG} "	WITH_GNUTLS		Enable TLS encryption support"
+	@${ECHO_MSG} "	WITH_GNUTLS		Enable GNUTLS encryption support"
+	@${ECHO_MSG} "	WITHOUT_GNUTLS		Disable GNUTLS encryption support"
 	@${ECHO_MSG} "	WITH_NSS		Enable Mozilla NSS encryption support"
+	@${ECHO_MSG} "	WITHOUT_NSS		Disable Mozilla NSS encryption support"
 	@${ECHO_MSG} "	TCL_VER			Use Tcl/Tk (version)"
 	@${ECHO_MSG} ""
 .if !defined(WITH_GNUTLS) && !defined(WITH_NSS) && defined(WITHOUT_OPENSSL)
