@@ -6,7 +6,6 @@
 #
 # 2004 Travis Poppe <tlp@LiquidX.org>
 
-USERDIR=$HOME/.wargus
 DATADIR=%%PREFIX%%/share/wargus/data.wc2
 
 if [ ! -d $DATADIR ]; then
@@ -39,28 +38,14 @@ if [ ! -d $DATADIR ]; then
 	echo "user you intend to play the game with."
  	echo ""
 	echo "For more information, please visit: http://wargus.sourceforge.net"
-fi
-
-if [ -d $USERDIR ]; then
-	echo "Warcraft2 data appears to be installed/linked to $USERDIR/"
-	echo ""
-	echo "Attempting to run Stratagus with Warcraft2 data"
-	echo ""
-	cd $USERDIR
-	stratagus -d $USERDIR/data $*
 	exit
 fi
 
 if [ -d $DATADIR ]; then
-	mkdir $USERDIR
-	mkdir $USERDIR/data
-	ln -s %%PREFIX%%/share/wargus/data.wc2/* $USERDIR/data
-
-	echo "Installed/linked Warcraft2 data to $USERDIR/"
+	echo "Warcraft2 data found in $DATADIR/"
 	echo ""
 	echo "Attempting to run Stratagus with Warcraft2 data"
 	echo ""
-	cd $USERDIR
-	stratagus -d $USERDIR/data $*
+	stratagus -d $DATADIR $*
 	exit
 fi
