@@ -1,0 +1,14 @@
+
+$FreeBSD$
+
+--- Makefile.in	2002/05/17 18:44:19	1.1
++++ Makefile.in	2002/05/17 18:44:46
+@@ -185,7 +185,7 @@
+ 
+ bin_SCRIPTS = gimptool-1.3 @GIMPINSTALL@
+ 
+-pkgconfigdir = $(libdir)/pkgconfig
++pkgconfigdir = $(prefix)/libdata/pkgconfig
+ pkgconfig_DATA = gimp-1.3.pc gimpui-1.3.pc
+ 
+ EXTRA_SCRIPTS = gimpinstall-1.3

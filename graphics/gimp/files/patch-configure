@@ -1,8 +1,8 @@
 
 $FreeBSD$
 
---- configure.orig	Sun Feb 10 08:21:30 2002
-+++ configure	Sun May 19 23:52:50 2002
+--- configure.orig	Sun Feb 10 22:25:19 2002
++++ configure	Fri May 17 20:53:47 2002
 @@ -746,7 +746,7 @@
  GIMP_VERSION=$GIMP_MAJOR_VERSION.$GIMP_MINOR_VERSION.$GIMP_MICRO_VERSION
  
@@ -11,8 +11,8 @@ $FreeBSD$
 +LT_CURRENT=2
  LT_REVISION=$GIMP_INTERFACE_AGE
  LT_AGE=`expr $GIMP_BINARY_AGE - $GIMP_INTERFACE_AGE`
- LT_CURRENT_MINUS_AGE=`expr $LT_CURRENT - $LT_AGE`
-@@ -5577,6 +5577,7 @@
+ 
+@@ -5310,6 +5310,7 @@
  
  # This can be used to rebuild libtool when needed
  LIBTOOL_DEPS="$ac_aux_dir/ltmain.sh"
@@ -20,7 +20,7 @@ $FreeBSD$
  
  # Always use our own libtool.
  LIBTOOL='$(SHELL) $(top_builddir)/libtool'
-@@ -11957,8 +11958,8 @@
+@@ -11392,8 +11393,8 @@
  
  fi
  
@@ -31,7 +31,7 @@ $FreeBSD$
  gimpsysconfdir=$sysconfdir/$PACKAGE/$GIMP_MAJOR_VERSION.$GIMP_MINOR_VERSION
  
  localedir='${prefix}/${DATADIRNAME}/locale'
-@@ -13133,11 +13134,6 @@
+@@ -12526,11 +12527,6 @@
    *) # Relative path.
      srcdir="$ac_dots$ac_given_srcdir$ac_dir_suffix"
      top_srcdir="$ac_dots$ac_given_srcdir" ;;

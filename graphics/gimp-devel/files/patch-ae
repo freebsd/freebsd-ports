@@ -1,11 +1,13 @@
---- plug-ins/common/plugindetails.c.orig	Fri Jan 14 17:26:07 2000
-+++ plug-ins/common/plugindetails.c	Fri Jan 14 17:26:21 2000
-@@ -27,7 +27,7 @@
+
+$FreeBSD$
+
+--- plug-ins/common/plugindetails.c.orig	Wed Jan 30 17:25:54 2002
++++ plug-ins/common/plugindetails.c	Fri May 17 20:45:33 2002
+@@ -27,6 +27,7 @@
  #include <stdio.h>
  #include <string.h>
  #include <time.h>
--
 +#include <sys/types.h>
- #include <gtk/gtk.h>
  
- #include "libgimp/gimp.h"
+ #ifdef __GNUC__
+ #warning GTK_DISABLE_DEPRECATED
