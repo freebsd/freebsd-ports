@@ -104,6 +104,23 @@ open (F, ">/etc/ttys");
 print F @ttys;
 close (F);
 
+# install new_fax
+if (-e "$prefix/lib/mgetty+sendfax/lib/new_fax") {
+    print STDERR "$prefix/lib/mgetty+sendfax/lib/new_fax already exists - not changed\n";
+} else {
+    print STDERR "installing $prefix/lib/mgetty+sendfax/lib/samples/new_fax.mail as new_fax\n";
+    open (F, "$prefix/lib/mgetty+sendfax/lib/samples/new_fax.mail");
+    open (G, "$prefix/lib/mgetty+sendfax/lib/new_fax");
+    while (<F>) {
+      s:/usr/local/bin/:$prefix:;
+      s:/usr/lib/sendmail:/usr/sbin/sendmail:;
+      s/^MAILTO=.*/$def{'notify'}\n/;
+      print G "$_";
+    }
+    close F;
+    close G;
+    chmod 0755, "$prefix/lib/mgetty+sendfax/lib/new_fax";
+}
 print STDERR "\n\n*** WARNING the directory /var/spool/fax/outgoing/ is world writable.\n*** This is potentially insecure\n";
 
 exit 0;

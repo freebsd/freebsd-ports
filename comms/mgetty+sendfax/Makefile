@@ -6,14 +6,14 @@
 #
 
 PORTNAME=	mgetty
-PORTVERSION=	1.1.25.02.01
+PORTVERSION=	1.1.27.10.21
 CATEGORIES=	comms
 MASTER_SITES=	ftp://alpha.greenie.net/pub/mgetty/source/1.1/
-DISTNAME=	mgetty1.1.25-Feb01
+DISTNAME=	mgetty1.1.27-Oct21
 
 MAINTAINER=	jmz@FreeBSD.org
 
-WRKSRC=		${WRKDIR}/mgetty-1.1.25
+WRKSRC=		${WRKDIR}/mgetty-1.1.27
 MAKE_FLAGS=	prefix=${PREFIX} -f
 MAN1=		coverpg.1 \
 		fax.1 \
@@ -45,6 +45,7 @@ post-install:
 		${PREFIX}/etc/mgetty+sendfax/faxrunq.config.dist
 	@${CP} ${PREFIX}/etc/mgetty+sendfax/login.config \
 		${PREFIX}/etc/mgetty+sendfax/login.config.dist
+	@${TAR}  -cf - -C ${WRKSRC} samples | ${TAR}  -xf - -C ${PREFIX}/lib/mgetty+sendfax/
 	@install-info ${PREFIX}/info/mgetty.info ${PREFIX}/info/dir
 .if !defined(BATCH)
 	@(cd ${PKGDIR}; export PKG_PREFIX=${PREFIX}; ${PERL5} ${PKGINSTALL} _ POST-INSTALL)
