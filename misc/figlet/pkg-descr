@@ -12,7 +12,8 @@ Figlet can print in a variety of fonts, both left-to-right and right-to-left.
 Figlet comes with several fonts.  Also, many other fonts are avaiable,
 including Hebrew, Cyrillic (Russian), and Greek.
 
-There is also a "Figlet Home Page" on the Worldwide Web. The URL is
-http://www.math.uiuc.edu/~chappell/figlet
+There is also a "Figlet Home Page" on the Worldwide Web.
+
+WWW: http://www.math.uiuc.edu/~chappell/figlet
 
 -- David	(obrien@cs.ucdavis.edu)

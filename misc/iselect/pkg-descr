@@ -12,5 +12,4 @@
   as its control script or in batch mode as a pipeline filter (usually
   between grep and the final executing command).   
 
-  The latest release can be found on
-  http://www.engelschall.com/sw/iselect/
+WWW: http://www.engelschall.com/sw/iselect/
