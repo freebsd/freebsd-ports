@@ -1,3 +1,4 @@
+etc/freetds/interfaces
 include/bkpublic.h
 include/cspublic.h
 include/cstypes.h
@@ -11,7 +12,6 @@ include/sybfront.h
 include/tds.h
 include/tdsutil.h
 include/tdsver.h
-interfaces
 lib/libct.a
 lib/libct.la
 lib/libct.so.0
