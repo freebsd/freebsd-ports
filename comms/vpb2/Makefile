@@ -23,6 +23,12 @@ INSTALLS_SHLIB=	yes
 CONFIGURE_ENV=	CPPFLAGS=-I${LOCALBASE}/include LDFLAGS=-L${LOCALBASE}/lib \
 		LDFLAGS=${PTHREAD_LIBS}
 
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} != "i386"
+BROKEN=		"Does not compile on !i386"
+.endif
+
 post-extract:
 	@${FIND} ${WRKSRC} -name "Makefile.in" | \
 		${XARGS} ${REINPLACE_CMD} -e 's|-release \$$\(LT_RELEASE\)||g'
@@ -30,4 +36,4 @@ post-extract:
 post-patch:
 	${REINPLACE_CMD} -e "s|PREFIX|${PREFIX}|" ${WRKSRC}/vpbreg.cpp
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
