@@ -278,6 +278,7 @@
     SUBDIR += libevent
     SUBDIR += libffi
     SUBDIR += libformat
+    SUBDIR += libfs++
     SUBDIR += libg++
     SUBDIR += libgetline
     SUBDIR += libghthash

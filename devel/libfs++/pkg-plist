@@ -1,0 +1,11 @@
+lib/libfs++.a
+lib/libfs++.la
+lib/libfs++.so
+lib/libfs++.so.0
+include/fs++/file_iterator-impl.h
+include/fs++/file_iterator.h
+include/fs++/file_monitor.h
+include/fs++/file_t.h
+include/fs++/general-impl.h
+include/fs++/general.h
+@dirrm include/fs++
