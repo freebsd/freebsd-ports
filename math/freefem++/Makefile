@@ -29,6 +29,10 @@ DOCS=		BUGS COPYRIGHT HISTORY README DOC/manual.pdf
 
 .include <bsd.port.pre.mk>
 
+.if ${OSVERSION} < 501103
+USE_GCC=	3.2
+.endif
+
 HOSTTYPE!=	${UNAME} -s
 
 post-patch:
