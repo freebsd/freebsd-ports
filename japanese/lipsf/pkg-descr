@@ -1,0 +1,12 @@
+lipsf is a text filter which converts plain text file 
+to LIPS (LIPSIII is default).
+EUC and JIS KANJI codes are detected automatically.
+
+pols is an interactive tool for printing through lipsf.
+see /usr/local/share/doc/lipsf/ for details.
+
+An example for startup:
+Put lipsf entry to /etc/printcap file:
+
+lipsf|lipsf printer:\
+	:lp=/dev/lpt0:sd=/var/spool/output/lpd:lf=/var/log/lpd-errs:sh:
