@@ -9,9 +9,9 @@ PORTNAME=	icecast
 PORTVERSION=	1.3.12
 PORTREVISION=	1
 CATEGORIES=	audio net
-MASTER_SITES=	http://www.icecast.org/releases/
+MASTER_SITES=	http://www.icecast.org/files/
 
-MAINTAINER=	zach@pabst.bendnet.com
+MAINTAINER=	michaelnottebrock@gmx.net
 COMMENT=	A streaming mp3 audio server
 
 HAS_CONFIGURE=	yes
