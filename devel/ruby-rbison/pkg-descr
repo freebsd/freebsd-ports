@@ -1,0 +1,7 @@
+rbison generates a Ruby parser class from a Bison-like specification
+file.  rbison uses Bison to do all the hard work (generating state
+transition tables, etc), then translates the Bison-generated C code
+into Ruby code.
+
+Author:	Jonathan Aseltine <aseltine@cs.umass.edu>
+WWW:	http://www.cs.umass.edu/~aseltine/rbison.html
