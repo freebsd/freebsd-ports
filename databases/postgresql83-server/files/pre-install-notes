@@ -1,0 +1,9 @@
+# ----------------------------------------------------------------
+# UPGRADE NOTE! Depending on which version you are upgrading from,
+# you may have to dump/restore existing databases
+# as part of the update.
+# This is *NOT* done by this port!
+# For detailed instructions, see
+# %%WRKDIR%%/%%DISTNAME%%/INSTALL
+# after extraction.
+# --------------------------------------------------------------

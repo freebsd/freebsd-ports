@@ -1,0 +1,9 @@
+This patches let you disable Tk even if you have it installed and
+makes sure the TCL-library is added as a dependency for libpgtcl.
+--- interfaces/libpgtcl/Makefile.in	Tue Mar  7 20:58:36 2000
++++ interfaces/libpgtcl/Makefile.in	Wed Sep 20 08:57:28 2000
+@@ -29,3 +29,3 @@
+ 
+-SHLIB_LINK+= $(LIBPQ)
++SHLIB_LINK+= $(LIBPQ) @TCL_LIB_SPEC@
+ 

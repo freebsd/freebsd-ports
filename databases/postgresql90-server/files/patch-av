@@ -1,0 +1,17 @@
+--- interfaces/libpq/fe-connect.c	Sun May 21 17:19:53 2000
++++ interfaces/libpq/fe-connect.c	Fri Sep 15 13:53:52 2000
+@@ -801 +801 @@
+-			sprintf(conn->errorMessage,
++			printfPQExpBuffer(&conn->errorMessage,
+@@ -809 +809 @@
+-			sprintf(conn->errorMessage, "PQconnectDB() -- couldn't read postmaster response: errno=%d\n%s\n",
++			printfPQExpBuffer(&conn->errorMessage, "PQconnectDB() -- couldn't read postmaster response: errno=%d\n%s\n",
+@@ -822 +822 @@
+-					sprintf(conn->errorMessage,
++					printfPQExpBuffer(&conn->errorMessage,
+@@ -832 +832 @@
+-				sprintf(conn->errorMessage,
++				printfPQExpBuffer(&conn->errorMessage,
+@@ -850 +850 @@
+-			strcpy(conn->errorMessage,
++			printfPQExpBuffer(&conn->errorMessage,
