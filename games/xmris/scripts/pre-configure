@@ -1,0 +1,20 @@
+#!/bin/sh
+
+# X must be running when the scram program creates the bitmaps
+xwd -root >/dev/null
+if [ $? != 0 ]; then
+  echo "X needs to be started to build xmris"
+  exit 1
+fi
+
+mv $3/Imakefile $3/Imakefile.orig
+
+echo "LOCAL=/usr/local" >$3/Imakefile || exit 1;
+
+# remove extra space after \ in continuation lines
+sed -e 's/\\ $/\\/' <$3/Imakefile.orig >>$3/Imakefile || exit 1
+
+echo "CDEBUGFLAGS=-O2" >>$3/Imakefile  || exit 1
+echo "MANSUFFIX=6" >>$3/Imakefile  || exit 1
+
+exit 0
