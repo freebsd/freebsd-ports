@@ -61,7 +61,7 @@ PKGNAMESUFFIX=	-gtk
 CONFIGURE_ARGS+=--without-gtk
 .elif defined(WITH_GTK2)
 PKGNAMESUFFIX=	-gtk
-LIB_DEPENDS+=	gtk-x11-2.0.200:${PORTSDIR}/x11-toolkits/gtk20
+USE_GNOME=	gtk20
 CONFIGURE_ARGS+=--without-gtk1
 .else
 CONFIGURE_ARGS+=--without-gtk --without-gtk1

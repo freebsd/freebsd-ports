@@ -16,7 +16,7 @@ MAINTAINER=	flynn@energyhq.es.eu.org
 COMMENT=	QNX-inspired theme for GTK1 and GTK2
 
 .if defined(WITH_GTK2)
-LIB_DEPENDS+=	gtk-x11-2.0.200:${PORTSDIR}/x11-toolkits/gtk20
+USE_GNOME=	gtk20
 PLIST_SUB+=	GTK2=""
 .else
 PLIST_SUB+=	GTK2="@comment "
