@@ -75,8 +75,8 @@ SEDLIST+=	-e 's,XX_TLS_LIBS_XX,-lssl -lcrypto,' \
 SEDLIST+=	-e 's,^TLS_LIBS,\#TLS_LIBS,'
 .endif
 
-.if !defined(WITH_PERL) && ${WITH_PERL} == "yes"
-SEDLIST+=	-e 's,^EXIM_PERL,\#EXIM_PERL,'
+.if defined(WITH_PERL) && ${WITH_PERL} == "yes"
+SEDLIST+=	-e 's,^\# EXIM_PERL,EXIM_PERL,'
 .endif
 
 .if defined(WITH_TCP_WRAPPERS) && ${WITH_TCP_WRAPPERS} == "yes"

@@ -249,7 +249,7 @@ EXIM_MONITOR=eximon.bin
 # use Perl code in Exim's string manipulation language and you have Perl
 # (version 5.004 or later) installed, set EXIM_PERL to perl.o.
 
-EXIM_PERL=perl.o
+# EXIM_PERL=perl.o
 
 
 # There are also three options which are used when compiling the Perl interface
@@ -576,7 +576,7 @@ TRANSPORT_SMTP=yes
 # this setting. See the manual section entitled "Use of tcpwrappers" in the
 # chapter on building and installing Exim.
 
-USE_TCP_WRAPPERS=yes
-EXTRALIBS=-lwrap XX_PAM_LIBS_XX
+# USE_TCP_WRAPPERS=yes
+EXTRALIBS=XX_TCP_WRAPPERS_LIBS_XX XX_PAM_LIBS_XX
 
 # End of EDITME
