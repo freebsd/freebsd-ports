@@ -6,13 +6,13 @@
 #
 
 PORTNAME=	ExtUtils-MakeMaker
-PORTVERSION=	6.24
+PORTVERSION=	6.25
 CATEGORIES=	devel perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	ExtUtils
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Designed to write a Makefile for an extension module
 
 PERL_CONFIGURE=	YES
