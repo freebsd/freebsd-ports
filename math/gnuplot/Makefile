@@ -12,7 +12,7 @@ CATEGORIES=	math graphics
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	glewis@FreeBSD.org
 COMMENT=	A command-driven interactive function plotting program
 
 GNU_CONFIGURE=	yes
