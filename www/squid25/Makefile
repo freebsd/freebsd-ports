@@ -74,7 +74,7 @@
 
 PORTNAME=	squid
 PORTVERSION=	2.5.6
-PORTREVISION=	9
+PORTREVISION=	10
 CATEGORIES=	www
 MASTER_SITES=	\
 		ftp://ftp.squid-cache.org/pub/%SUBDIR%/ \
@@ -106,7 +106,11 @@ PATCHFILES=	squid-2.5.STABLE6-ufs_no_valid_dir.patch \
 		squid-2.5.STABLE6-ntlm_fetch_string.patch \
 		squid-2.5.STABLE6-ntlm_noreuse_leak.patch \
 		squid-2.5.STABLE6-ntlm_challengereuse_leak.patch \
-		squid-2.5.STABLE6-rotate_error.patch
+		squid-2.5.STABLE6-rotate_error.patch \
+		squid-2.5.STABLE6-digest_crash.patch \
+		squid-2.5.STABLE6-acl_times.patch \
+		squid-2.5.STABLE6-http_header_range.patch \
+		squid-2.5.STABLE6-Content-Disposition.patch
 PATCH_DIST_STRIP=	-p1
 
 MAINTAINER=	tmseck@netcologne.de
@@ -148,7 +152,8 @@ OPTIONS=	SQUID_LDAP_AUTH "Install LDAP authentication helpers" off \
 		SQUID_FOLLOW_XFF "Follow X-Forwarded-For headers" off \
 		SQUID_AUFS "Enable the aufs storage scheme" off \
 		SQUID_COSS "Enable the COSS storage scheme" off \
-		SQUID_STACKTRACES "Create backtraces on fatal errors" off
+		SQUID_STACKTRACES "Create backtraces on fatal errors" off \
+		SQUID_RCNG "Install an rcNG startup script" on
 
 PLIST_FILES=	etc/rc.d/squid.sh etc/squid/mib.txt etc/squid/mime.conf.default \
 		etc/squid/msntauth.conf.default etc/squid/squid.conf.default \
@@ -298,6 +303,14 @@ CONFIGURE_ARGS+=	--enable-follow-x-forwarded-for
 .if defined(WITH_SQUID_STACKTRACES)
 CONFIGURE_ARGS+=	--enable-stacktraces
 .endif
+.if !defined(WITHOUT_SQUID_RCNG)
+USE_RC_SUBR=	yes
+rc_del=		rcold
+rc_state=	rcng
+.else
+rc_del=		rcng
+rc_state=	rcold
+.endif
 
 # Languages:
 #
@@ -338,8 +351,12 @@ pre-install:
 # Prevent installation of .orig files by deleting them.
 	@${FIND} ${WRKSRC} -name '*.bak' -delete
 	@${FIND} ${WRKSRC} -name '*.orig' -delete
+# create an rcOld/rcNG squid.sh:
 	@${SED} -e 's|%%PREFIX%%|${PREFIX}|g' \
-	    -e 's|%%SQUID_UID%%|${SQUID_UID}|g' ${FILESDIR}/squid.sh \
+	    -e 's|%%SQUID_UID%%|${SQUID_UID}|g' \
+	    -e 's|%%RC_SUBR%%|${RC_SUBR}|g' \
+	    -e '/--begin ${rc_del}/,/--end ${rc_del}/d' \
+	    -e '/--.*${rc_state}/d' ${FILESDIR}/squid.sh \
 	    >${WRKDIR}/squid.sh
 
 pre-su-install:

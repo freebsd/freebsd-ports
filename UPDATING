@@ -6,6 +6,23 @@ You should get into the habit of checking this file for changes each
 time you update your ports collection, before attempting any port
 upgrades.
 
+20040901:
+  AFFECTS: users of www/squid
+  AUTHOR: tmseck@netcologne.de
+
+  www/squid now installs an rcNG script by default. This means you
+  need to explicitly enable squid by setting squid_enable=yes in
+  /etc/rc.conf.
+  The squid.sh script uses the following variables:
+  squid_chdir
+  squid_flags
+  squid_user
+
+  Please see the squid.sh script for further details.
+  If you want to install an old style rc-script, build the port with
+  "WITHOUT_SQUID_RCNG=YES" or by rerunning "make config" and disabling this
+  option.
+
 20040830:
   AFFECTS: users of x11/kde3, x11/kdelibs3, x11/kdebase3
   AUTHOR: kde@freebsd.org

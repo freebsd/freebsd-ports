@@ -11,13 +11,5 @@ continued development of the cache where Harvest finished.
 
 Please see this port's Makefile for a list of compilation options.
 
-*** UPDATE NOTICE ***
-Starting from Version 2.5.4_6 the default user:group changed from
-nobody:nogroup to squid:squid. You can restore the old behavior
-of this port by specifying SQUID_UID=nobody SQUID_GID=nogroup in
-your make environment. Helper applications are now installed to
-$PREFIX/libexec/squid instead of $PREFIX/libexec, too.
-
 You can find further information on the project's website at
-
 WWW: http://www.squid-cache.org/
