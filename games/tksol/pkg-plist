@@ -5,6 +5,7 @@ bin/tksol
 %%DATADIR%%/cardbacks/default
 %%DATADIR%%/cardbacks/leopard.xbm
 %%DATADIR%%/cardbacks/lines.xbm
+%%DATADIR%%/cardbacks/linux.xbm
 %%DATADIR%%/cardbacks/rock.xbm
 %%DATADIR%%/cardbacks/x.xbm
 %%DATADIR%%/cardbacks/xx.xbm
