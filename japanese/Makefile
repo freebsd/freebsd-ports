@@ -147,6 +147,7 @@
     SUBDIR += mutt
     SUBDIR += namazu
     SUBDIR += ndtpd
+    SUBDIR += ne
     SUBDIR += nethack
     SUBDIR += netscape-fonts
     SUBDIR += netscape3.language
