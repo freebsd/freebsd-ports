@@ -21,7 +21,7 @@ COMMENT=	Headers and Libraries for Windows cross-development
 CONFLICTS=	mingw-bin-msvcrt-*
 
 RUNTIMEVERSION=	3.2
-APIVERSION=	2.4
+APIVERSION=	2.5
 
 NO_MTREE=	yes
 NO_WRKSUBDIR=	yes

@@ -5,6 +5,7 @@ mingw32/include/GL/glu.h
 mingw32/include/_mingw.h
 mingw32/include/accctrl.h
 mingw32/include/aclapi.h
+mingw32/include/afxres.h
 mingw32/include/assert.h
 mingw32/include/basetsd.h
 mingw32/include/basetyps.h
@@ -98,6 +99,7 @@ mingw32/include/ddk/winnt4.h
 mingw32/include/ddk/winxp.h
 mingw32/include/ddk/ws2san.h
 mingw32/include/ddk/xfilter.h
+mingw32/include/dhcpcsdk.h
 mingw32/include/dir.h
 mingw32/include/direct.h
 mingw32/include/dirent.h
@@ -105,6 +107,7 @@ mingw32/include/dlgs.h
 mingw32/include/docobj.h
 mingw32/include/dos.h
 mingw32/include/errno.h
+mingw32/include/errorrep.h
 mingw32/include/excpt.h
 mingw32/include/exdisp.h
 mingw32/include/exdispid.h
@@ -262,10 +265,12 @@ mingw32/include/sys/utime.h
 mingw32/include/tchar.h
 mingw32/include/time.h
 mingw32/include/tlhelp32.h
+mingw32/include/tmschema.h
 mingw32/include/unistd.h
 mingw32/include/unknwn.h
 mingw32/include/userenv.h
 mingw32/include/utime.h
+mingw32/include/uxtheme.h
 mingw32/include/values.h
 mingw32/include/varargs.h
 mingw32/include/vfw.h
@@ -278,6 +283,7 @@ mingw32/include/winber.h
 mingw32/include/wincon.h
 mingw32/include/wincrypt.h
 mingw32/include/windef.h
+mingw32/include/windns.h
 mingw32/include/windows.h
 mingw32/include/windowsx.h
 mingw32/include/winerror.h
@@ -319,6 +325,8 @@ mingw32/lib/gcrt1.o
 mingw32/lib/gcrt2.o
 mingw32/lib/libadvapi32.a
 mingw32/lib/libapcups.a
+mingw32/lib/libavicap32.a
+mingw32/lib/libavifil32.a
 mingw32/lib/libcap.a
 mingw32/lib/libcfgmgr32.a
 mingw32/lib/libcoldname.a
@@ -331,13 +339,16 @@ mingw32/lib/libd3dim.a
 mingw32/lib/libd3drm.a
 mingw32/lib/libd3dxof.a
 mingw32/lib/libddraw.a
+mingw32/lib/libdhcpcsvc.a
 mingw32/lib/libdinput.a
 mingw32/lib/libdlcapi.a
+mingw32/lib/libdnsapi.a
 mingw32/lib/libdplayx.a
 mingw32/lib/libdsetup.a
 mingw32/lib/libdsound.a
 mingw32/lib/libdxapi.a
 mingw32/lib/libdxguid.a
+mingw32/lib/libfaultrep.a
 mingw32/lib/libgdi32.a
 mingw32/lib/libglaux.a
 mingw32/lib/libglu32.a
@@ -374,6 +385,7 @@ mingw32/lib/libmsvcr71.a
 mingw32/lib/libmsvcr71d.a
 mingw32/lib/libmsvcrt.a
 mingw32/lib/libmsvcrtd.a
+mingw32/lib/libmsvfw32.a
 mingw32/lib/libmswsock.a
 mingw32/lib/libnddeapi.a
 mingw32/lib/libndis.a
@@ -420,6 +432,7 @@ mingw32/lib/libusbcamd2.a
 mingw32/lib/libuser32.a
 mingw32/lib/libuserenv.a
 mingw32/lib/libuuid.a
+mingw32/lib/libuxtheme.a
 mingw32/lib/libvdmdbg.a
 mingw32/lib/libversion.a
 mingw32/lib/libvfw32.a
