@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	cgoban2
-PORTVERSION=	2.6.1
+PORTVERSION=	2.6.4
 CATEGORIES=	games
 MASTER_SITES=	http://kgs.kiseido.com/
 DISTNAME=	cgoban-unix-${PORTVERSION}
@@ -14,13 +14,14 @@ DISTNAME=	cgoban-unix-${PORTVERSION}
 MAINTAINER=	smazanek@steffen-mazanek.de
 COMMENT=	Internet Go Server client and game editor
 
-BROKEN=		Unfetchable
-
 WRKSRC=		${WRKDIR}/cgoban
 INSTALLDIR=	${PREFIX}/share/java/cgoban2
 
 USE_JAVA=	1.3+
 NO_BUILD=	yes
+
+PLIST_FILES=	bin/cgoban2 share/java/cgoban2/cgoban.jar
+PLIST_DIRS=	share/java/cgoban2
 
 post-patch:
 	${SED} -e 's|_DIR=.|_DIR=${INSTALLDIR}| ; s|^java|javavm|'\
