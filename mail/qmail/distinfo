@@ -6,4 +6,5 @@ MD5 (tls.patch) = 57447ec135ddb32ada13a56b70ccf6d4
 MD5 (qmailqueue-patch) = 5a8d7a5863b0c56236af945dedd45754
 MD5 (big-todo.103.patch) = 39b6f70f65056472ff97ab40c1dba7b4
 MD5 (big-concurrency.patch) = 2ff58c3570870a8ff9a1d9eb9aec05a6
-MD5 (outgoingip.patch) = 4286231d925105b6c71a91d668778eb5
+MD5 (outgoingip.patch) = 27e07ea6328cd763481c6d8887b20fe2
+MD5 (sendmail-flagf.patch) = 4e1f2d8315e7e2a5482798c9d19fac4d
