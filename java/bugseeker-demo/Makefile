@@ -16,7 +16,7 @@ PATCHFILES=	bugseeker2demo.sh.diff
 
 MAINTAINER=	znerd@FreeBSD.org
 
-RUN_DEPENDS=	${LOCALBASE}/linux-jdk1.3.1/bin/java:${PORTSDIR}/java/linux-sun-jdk13
+RUN_DEPENDS=	${LOCALBASE}/linux-sun-jdk1.3.1/bin/java:${PORTSDIR}/java/linux-sun-jdk13
 
 NO_BUILD=	YES
 

@@ -19,7 +19,7 @@ MAINTAINER=	sobomax@FreeBSD.org
 BUILD_DEPENDS=	${JAVAVM}:${PORTSDIR}/java/linux-sun-jdk13
 RUN_DEPENDS=	${JAVAVM}:${PORTSDIR}/java/linux-sun-jdk13
 
-JDK13DIR?=	${LOCALBASE}/linux-jdk1.3.1
+JDK13DIR?=	${LOCALBASE}/linux-sun-jdk1.3.1
 JAVAVM=		${JDK13DIR}/bin/java
 
 RESTRICTED=     "Restrictive license"

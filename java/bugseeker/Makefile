@@ -23,7 +23,7 @@ NO_BUILD=	YES
 WRKSRC=		${WRKDIR}/bugseeker2
 PLIST_SUB+=	T=${TARGET_DIR:S/^${PREFIX}\///}
 TARGET_DIR=	${PREFIX}/${PKGBASE}${PORTVERSION}
-JAVA_HOME?=	${LOCALBASE}/linux-jdk1.3.1
+JAVA_HOME?=	${LOCALBASE}/linux-sun-jdk1.3.1
 DOWNLOAD_URL?=	http://www.karmira.com/store/index.html
 
 .include <bsd.port.pre.mk>
