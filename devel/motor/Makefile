@@ -8,7 +8,9 @@
 PORTNAME=	motor
 PORTVERSION=	2.6.3
 CATEGORIES=	devel
-MASTER_SITES=	http://konst.org.ua/download/
+MASTER_SITES=	http://konst.org.ua/download/ \
+		${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	sobomax
 
 MAINTAINER=	sobomax@FreeBSD.org
 
