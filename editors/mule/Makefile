@@ -1,5 +1,4 @@
 # New ports collection makefile for:	mule 2.3@19.34
-# Version required:	2.3@19.34
 # Date created:		6 July 1997
 # Whom:			Satoshi Taoka <taoka@FreeBSD.org>
 #
@@ -7,27 +6,31 @@
 #
 
 PORTNAME=	mule
-PORTVERSION=	2.3
-CATEGORIES?=	editors
+PORTVERSION=	${MULE_VERSION}
+CATEGORIES+=	editors
 MASTER_SITES=	ftp://etlport.etl.go.jp/pub/mule/ \
 		ftp://ftp.mei.co.jp/archive/free/gnu/emacs/Mule/ \
 		ftp://ftp.iij.ad.jp/pub/misc/mule/ \
 		http://www.infonets.hiroshima-u.ac.jp/~taoka/FreeBSD/mule/
-DISTFILES=	emacs-19.34b.tar.gz mule-2.3-19.34.patch-981002.tar.gz
+DISTFILES=	emacs-${EMACS_VERSION}b${EXTRACT_SUFX} \
+		mule-${MULE_VERSION}-${EMACS_VERSION}.patch-981002.tar.gz
 
 PATCH_SITES=	ftp://etlport.etl.go.jp/pub/mule/
-PATCHFILES=	mule-23-1934-alpha01.diff.gz
+PATCHFILES=	mule-${MULE_VERSION:S/.//}-${EMACS_VERSION:S/.//}-alpha01.diff.gz
 PATCH_DIST_STRIP= -p1
 
 MAINTAINER?=	taoka@FreeBSD.org
 
-RUN_DEPENDS=	${PREFIX}/share/${EMACS_PREFIX}/19.34/lisp/mule.el:${PORTSDIR}/editors/mule-common
+RUN_DEPENDS=	${PREFIX}/share/${EMACS_PREFIX}/${EMACS_VERSION}/lisp/mule.el:${PORTSDIR}/editors/mule-common
 LIB_DEPENDS=	${LIB_INPUT_METHOD}
 BUILD_DEPENDS=	${BUILD_INPUT_METHOD}
 
+MULE_VERSION=	2.3
+EMACS_VERSION=	19.34
+
 USE_XLIB=	yes
-EXTRACT_ONLY=	emacs-19.34b.tar.gz
-WRKSRC=		${WRKDIR}/emacs-19.34
+EXTRACT_ONLY=	emacs-${EMACS_VERSION}b${EXTRACT_SUFX}
+WRKSRC=		${WRKDIR}/emacs-${EMACS_VERSION}
 PATCHDIR=	${.CURDIR}/../../editors/mule-common/patches
 FILESDIR=	${.CURDIR}/../../editors/mule-common/files
 SCRIPTDIR=	${.CURDIR}/../../editors/mule-common/scripts
@@ -81,7 +84,7 @@ ELC_DIR=	../lisp
 
 WITH_DIALOGS=	--with-x-toolkit
 
-SITE_START=${PREFIX}/share/${EMACS_PREFIX}/19.34/site-lisp/site-start.el
+SITE_START=${PREFIX}/share/${EMACS_PREFIX}/${EMACS_VERSION}/site-lisp/site-start.el
 
 # ORIGINAL, MEW_ORG_PATCH and MEW_PATCH are used for debugging.
 #
@@ -89,10 +92,10 @@ SITE_START=${PREFIX}/share/${EMACS_PREFIX}/19.34/site-lisp/site-start.el
 #   MEW_ORG_PATCH: apply mew's patches to original mule (http://www.mew.org)
 #   MEW_PATCH: apply mew's patch after apply Mr. Katayama's patches
 post-extract:
-	${EXTRACT_CMD} ${EXTRACT_BEFORE_ARGS} ${_DISTDIR}/mule-2.3-19.34.patch-981002.tar.gz ${EXTRACT_AFTER_ARGS} -C ${WRKDIR}
+	${EXTRACT_CMD} ${EXTRACT_BEFORE_ARGS} ${_DISTDIR}/mule-${MULE_VERSION}-${EMACS_VERSION}.patch-981002.tar.gz ${EXTRACT_AFTER_ARGS} -C ${WRKDIR}
 	${CP} ${FILESDIR}/unexfreebsd.c ${WRKSRC}/src
 .if !defined(ORIGINAL) && !defined(MEW_ORG_PATCH)
-	${EXTRACT_CMD} ${EXTRACT_BEFORE_ARGS} ${WRKDIR}/takana-19.34.tar.gz ${EXTRACT_AFTER_ARGS} -C ${WRKDIR}
+	${EXTRACT_CMD} ${EXTRACT_BEFORE_ARGS} ${WRKDIR}/takana-${EMACS_VERSION}.tar.gz ${EXTRACT_AFTER_ARGS} -C ${WRKDIR}
 	${MKDIR} ${WRKSRC}/lisp/its
 	${CP} ${WRKDIR}/lisp/its/* ${WRKSRC}/lisp/its/
 .endif
@@ -100,24 +103,24 @@ post-extract:
 .if !defined(ORIGINAL)
 post-patch:
 .if !defined(MEW_ORG_PATCH)
-	cd ${WRKSRC}; ${PATCH} --forward --quiet -E -p0 < ${WRKDIR}/patch-19.34
-	cd ${WRKSRC}; ${PATCH} --forward --quiet -E -p0 < ${WRKDIR}/Mule-2.3-19.34.patch
+	cd ${WRKSRC}; ${PATCH} --forward --quiet -E -p0 < ${WRKDIR}/patch-${EMACS_VERSION}
+	cd ${WRKSRC}; ${PATCH} --forward --quiet -E -p0 < ${WRKDIR}/Mule-${MULE_VERSION}-${EMACS_VERSION}.patch
 	cd ${WRKSRC}; ${PATCH} --forward --quiet -E -p0 < ${WRKDIR}/extra.patch
 .if defined(MEW_PATCH)
-	cd ${WRKSRC}/lisp; ${PATCH} --forward --quiet -E -p0 < ${WRKDIR}/mew/egg.el-19.34.patch-for_katayama
+	cd ${WRKSRC}/lisp; ${PATCH} --forward --quiet -E -p0 < ${WRKDIR}/mew/egg.el-${EMACS_VERSION}.patch-for_katayama
 .endif
 .else
-	cd ${WRKSRC}/lisp; ${PATCH} --forward --quiet -E -p0 < ${WRKDIR}/mew/egg.el-19.34.patch
+	cd ${WRKSRC}/lisp; ${PATCH} --forward --quiet -E -p0 < ${WRKDIR}/mew/egg.el-${EMACS_VERSION}.patch
 .endif
 .if defined(MEW_PATCH) || defined(MEW_ORG_PATCH)
-	cd ${WRKSRC}/lisp; ${PATCH} --forward --quiet -E -p0 < ${WRKDIR}/mew/canna.el-19.34.patch
+	cd ${WRKSRC}/lisp; ${PATCH} --forward --quiet -E -p0 < ${WRKDIR}/mew/canna.el-${EMACS_VERSION}.patch
 	cd ${WRKSRC}/lisp; ${PATCH} --forward --quiet -E -p0 < ${WRKDIR}/mew/sj3-egg.el.patch
 .endif
 .endif
 
 pre-build:
 	find ${WRKSRC} \( -name \*.orig -o -name \*~ \) -exec ${RM} -f \{} \;
-	${RM} -f ${WRKSRC}/etc/DOC* ${WRKSRC}/src/emacs ${WRKSRC}/src/emacs-19.34.*
+	${RM} -f ${WRKSRC}/etc/DOC* ${WRKSRC}/src/emacs ${WRKSRC}/src/emacs-${EMACS_VERSION}.*
 
 post-build:
 # bytecompile elisps for Japanese input method
@@ -137,7 +140,7 @@ pre-install:
 	 fi
 
 post-install:
-	strip ${PREFIX}/bin/${EMACS_EXECUTABLE}-19.34
+	strip ${PREFIX}/bin/${EMACS_EXECUTABLE}-${EMACS_VERSION}
 # for wnn4+sj3 or wnn6+sj3
 	@if [ -e ${PKGDIR}/INSTALL ]; then \
 		${SH} ${PKGDIR}/INSTALL ${PKGNAME} POST-INSTALL; \

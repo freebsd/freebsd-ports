@@ -6,7 +6,7 @@
 #
 
 PKGNAMESUFFIX=	-wnn4
-CATEGORIES=	chinese editors
+CATEGORIES=	chinese
 CWNN4=		yes
 
 MASTERDIR=	${.CURDIR}/../../editors/mule

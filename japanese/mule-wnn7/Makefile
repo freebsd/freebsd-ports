@@ -6,7 +6,7 @@
 #
 
 PKGNAMESUFFIX=	-wnn6
-CATEGORIES=	japanese editors
+CATEGORIES=	japanese
 
 WNN6=		yes
 

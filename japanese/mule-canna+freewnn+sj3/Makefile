@@ -6,7 +6,7 @@
 #
 
 PKGNAMESUFFIX=	-canna+sj3+wnn4
-CATEGORIES=	japanese editors
+CATEGORIES=	japanese
 
 CANNA=		yes
 SJ3=		yes
