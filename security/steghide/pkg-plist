@@ -1,8 +1,9 @@
 bin/steghide
-share/doc/steghide/BUGS
-share/doc/steghide/CREDITS
-share/doc/steghide/HISTORY
-share/doc/steghide/INSTALL
-share/doc/steghide/README
-share/doc/steghide/TODO
-@dirrm share/doc/steghide
+%%PORTDOCS%%share/doc/steghide/BUGS
+%%PORTDOCS%%share/doc/steghide/CREDITS
+%%PORTDOCS%%share/doc/steghide/HISTORY
+%%PORTDOCS%%share/doc/steghide/README
+%%PORTDOCS%%share/doc/steghide/TODO
+share/locale/de/LC_MESSAGES/steghide.mo
+share/locale/fr/LC_MESSAGES/steghide.mo
+%%PORTDOCS%%@dirrm share/doc/steghide

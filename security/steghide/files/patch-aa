@@ -1,13 +1,13 @@
---- Makefile.in.orig	Wed Dec  5 19:27:13 2001
-+++ Makefile.in	Wed Dec  5 19:27:01 2001
-@@ -67,8 +67,8 @@
- bin_PROGRAMS = steghide
- steghide_SOURCES = bufmanag.c crypto.c ff_au.c ff_bmp.c ff_wav.c hash.c io.c main.c msg.c stegano.c support.c
- man_MANS = steghide.1
+--- Makefile.in.orig	Tue May 14 08:50:09 2002
++++ Makefile.in	Sat Aug 10 22:12:35 2002
+@@ -99,8 +99,8 @@
+ 
+ EXTRA_DIST = ABOUT-NLS BUGS CREDITS HISTORY depcomp
+ SUBDIRS = doc intl po src
 -docdir = $(prefix)/doc/$(PACKAGE)-$(VERSION)
--doc_DATA = BUGS COPYING CREDITS HISTORY INSTALL README TODO
+-doc_DATA = ABOUT-NLS BUGS COPYING CREDITS HISTORY INSTALL README TODO
 +docdir = $(prefix)/share/doc/$(PACKAGE)
-+doc_DATA = BUGS CREDITS HISTORY INSTALL README TODO
++doc_DATA = BUGS CREDITS HISTORY README TODO
+ subdir = .
  ACLOCAL_M4 = $(top_srcdir)/aclocal.m4
  mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs
- CONFIG_CLEAN_FILES = 
