@@ -17,6 +17,8 @@ BUILD_DEPENDS=	${X11BASE}/lib/libqscintilla.so:${PORTSDIR}/x11-toolkits/qscintil
 		${LOCALBASE}/bin/sip:${PORTSDIR}/devel/py-sip\
 		pyuic:${PORTSDIR}/x11-toolkits/py-qt
 
+BROKEN=		"Does not compile"
+
 USE_PYTHON=	yes
 USE_REINPLACE=	yes
 NO_BUILD=	yes
