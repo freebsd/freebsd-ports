@@ -1,0 +1,16 @@
+--- tixAppInit.c.orig	Sat Feb 19 18:28:15 2005
++++ tixAppInit.c	Sat Feb 19 18:28:23 2005
+@@ -22,13 +22,6 @@
+ #include "itk.h"
+ #include <tix.h>
+ 
+-/*
+- * The following variable is a special hack that is needed in order for
+- * Sun shared libraries to be used for Tcl.
+- */
+-
+-extern int matherr();
+-int *tclDummyMathPtr = (int *) matherr;
+ 
+ /*
+  *----------------------------------------------------------------------
