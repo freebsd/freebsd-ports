@@ -1,0 +1,16 @@
+This is a game of pentix for terminals
+
+pentix is one of the various flavours of good old tetris.
+however, pentix surpassed its famous parent in playbility
+
+this version of pentix is based on the original msdos version of
+pentix by Marta & Adrian Soncodi (C) 1986 ICE/APP
+which is considered standard of pentix
+
+I've tried to keep this port and the original version as alike as possible
+in all relevant respects
+
+Play Pentix!
+
+Andrey Tchoritch <andy@sympad.net>
+http://www.sympad.net/~andy/pentix
