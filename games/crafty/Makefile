@@ -1,12 +1,12 @@
 # New ports collection makefile for:	crafty
-# Version required:			17.3
+# Version required:			17.6
 # Date created:				31 May 1998
 # Whom:					Stefan Eggers <seggers@semyam.dinoco.de>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	crafty-17.3
+DISTNAME=	crafty-17.6
 CATEGORIES=	games
 MASTER_SITES=	ftp://ftp.cis.uab.edu/pub/hyatt/ \
 		ftp://ftp.cis.uab.edu/pub/hyatt/common/ \
@@ -14,13 +14,13 @@ MASTER_SITES=	ftp://ftp.cis.uab.edu/pub/hyatt/ \
 		ftp://ftp.jpunix.com/pub/hyatt/ \
 		ftp://ftp.jpunix.com/pub/hyatt/common/ \
 		ftp://ftp.jpunix.com/pub/hyatt/v17/
-DISTFILES=	crafty-17.3.tar.gz crafty.doc crafty.faq read.me start.zip
+DISTFILES=	crafty-17.6.tar.gz crafty.doc crafty.faq read.me start.zip
 
 MAINTAINER=	seggers@semyam.dinoco.de
 
 ALL_TARGET=	crafty
 DIST_SUBDIR=	crafty
-EXTRACT_ONLY=	crafty-17.3.tar.gz
+EXTRACT_ONLY=	crafty-17.6.tar.gz
 IGNOREFILES=	crafty.doc crafty.faq read.me
 
 MAN6=		crafty.6
