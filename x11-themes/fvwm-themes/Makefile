@@ -6,20 +6,19 @@
 #
 
 PORTNAME=	fvwm-themes
-PORTVERSION=	0.6.2
+PORTVERSION=	0.7.0
 CATEGORIES=	x11-themes
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 		${PORTNAME}-extra-${PORTVERSION}${EXTRACT_SUFX}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	ports@brandon.dvalentine.com
 COMMENT=	Themes for the Fvwm2 window manager
 
 BUILD_DEPENDS=	gm4:${PORTSDIR}/devel/m4 \
 		fvwm2:${PORTSDIR}/x11-wm/fvwm2
-RUN_DEPENDS=	gm4:${PORTSDIR}/devel/m4 \
-		fvwm2:${PORTSDIR}/x11-wm/fvwm2
+RUN_DEPENDS=	fvwm2:${PORTSDIR}/x11-wm/fvwm2
 
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes
@@ -28,7 +27,7 @@ USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 
 MAN1=		fvwm-themes-config.1 fvwm-themes-menuapp.1 fvwm-themes-com.1 \
-		fvwm-themes-images.1 fvwm-themes-start.1
+		fvwm-themes-images.1 fvwm-themes-start.1 fvwm-themes-root.1
 
 post-install:
 	@cd ${WRKDIR}/${PORTNAME}-extra-${PORTVERSION} && ${FIND} . | \
