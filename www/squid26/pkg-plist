@@ -43,7 +43,7 @@ etc/squid/icons/anthony-text.gif
 etc/squid/icons/anthony-unknown.gif
 etc/squid/icons/anthony-xbm.gif
 etc/squid/icons/anthony-xpm.gif
-etc/squid/mib.txt.default
+etc/squid/mib.txt
 etc/squid/mime.conf.default
 etc/squid/squid.conf.default
 sbin/RunAccel
