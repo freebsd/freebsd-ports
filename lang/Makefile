@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.70 1997/06/10 09:35:51 asami Exp $
+# $Id: Makefile,v 1.71 1997/06/16 03:05:31 jfitz Exp $
 #
 
     SUBDIR += Gofer
@@ -26,6 +26,7 @@
     SUBDIR += logo
     SUBDIR += mit-scheme
     SUBDIR += mixal
+    SUBDIR += mocka
     SUBDIR += modula-3
     SUBDIR += modula-3-lib
     SUBDIR += modula-3-socks
