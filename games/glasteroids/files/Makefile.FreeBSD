@@ -5,6 +5,7 @@ OBJS  = Glasteroids.o   Bobcat.o   MarchingCubes.o   BCship.o   BCobject.o\
         BCcollide.o   GlutFunctions.o   BCmenu.o   BCenemy.o   TexFont.o \
 	SplashScreen.o
 CXX  ?= c++
+CXXFLAGS += -DGL_GLEXT_LEGACY
 PROG  = Glasteroids
 
 LIBES = -lglut -lMesaGLU -lMesaGL -lXmu -lX11 -lXext -lm -lXi
