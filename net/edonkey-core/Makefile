@@ -6,14 +6,11 @@
 #
 
 PORTNAME=	edonkey
-PORTVERSION=	0.2000.16.16.59.3
-PORTREVISION=	1
+PORTVERSION=	16.16.58.2
 CATEGORIES=	net linux
 MASTER_SITES=	http://users.aber.ac.uk/tpm01/
 PKGNAMESUFFIX=	-core
-DISTNAME=	donkey_s_59-3
-EXTRACT_SUFX=	.gz
-EXTRACT_ONLY=
+DISTNAME=	donkey_s_1658-gaps-2
 
 MAINTAINER=	lioux@FreeBSD.org
 
@@ -31,17 +28,15 @@ BRANDELF?=	/usr/bin/brandelf
 BRANDELF?=	brandelf
 .endif
 
+BINARY_NAME_OLD=	donkey_s_1658-gaps-2b
 BINARY_NAME=	donkey
-
-post-extract:
-	@${GZCAT} ${DISTDIR}/${DISTNAME}${EXTRACT_SUFX} > ${WRKSRC}/${BINARY_NAME}
 
 post-patch:
 	@${SED} -e "s|%%PREFIX%%|${PREFIX}|" ${FILESDIR}/wrapper.sh > \
 		${WRKDIR}/wrapper.sh
 
 do-install:
-	@${INSTALL_PROGRAM} ${WRKSRC}/${BINARY_NAME} ${PREFIX}/sbin/${BINARY_NAME}-real
+	@${INSTALL_PROGRAM} ${WRKSRC}/${BINARY_NAME_OLD} ${PREFIX}/sbin/${BINARY_NAME}-real
 	@${INSTALL_SCRIPT} ${WRKDIR}/wrapper.sh ${PREFIX}/bin/${BINARY_NAME}
 .ifndef(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}${PKGNAMESUFFIX}
@@ -53,8 +48,8 @@ do-install:
 
 pre-install:
 .if exists(${STRIP_CMD})
-	@${STRIP_CMD} ${WRKSRC}/${BINARY_NAME}
+	@${STRIP_CMD} ${WRKSRC}/${BINARY_NAME_OLD}
 .endif
-	@${BRANDELF} -t Linux ${WRKSRC}/${BINARY_NAME}
+	@${BRANDELF} -t Linux ${WRKSRC}/${BINARY_NAME_OLD}
 
 .include <bsd.port.post.mk>
