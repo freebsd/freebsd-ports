@@ -3,7 +3,7 @@
 # Date created:			23 Sep 1996
 # Whom:				Masafumi NAKANE <max@FreeBSD.ORG>
 #
-# $Id: Makefile,v 1.2 1996/11/02 20:24:00 max Exp $
+# $Id: Makefile,v 1.3 1996/11/10 21:31:33 obrien Exp $
 #
 
 DISTNAME=	mailagent-3.0pl44
@@ -30,14 +30,9 @@ CONFIGURE_ARGS=		-dres \
 			-Dnotifypatches='false'
 INSTALL_TARGET=	install install.man
 
-MANPAGES=			edusers.1 mailagent.1 maildist.1  \
-				maillist.1 mailpatch.1 package.1
+MAN1=			edusers.1 mailagent.1 maildist.1  \
+			maillist.1 mailpatch.1 package.1
 # Note that mailhelp.1 is intentionally left uncompressed as it is referred
 # from several other man pages with .so macro.
-
-post-install:
-.for manpage in ${MANPAGES}
-	${COMPRESS_MAN} ${PREFIX}/man/man1/${manpage}
-.endfor
 
 .include <bsd.port.mk>

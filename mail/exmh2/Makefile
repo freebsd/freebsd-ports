@@ -3,7 +3,7 @@
 # Date released:		10 Oct 96
 # Whom:				Peter Wemm <peter@freebsd.org>
 #
-# $Id: Makefile,v 1.2 1996/10/15 11:27:26 peter Exp $
+# $Id: Makefile,v 1.3 1996/11/10 21:31:21 obrien Exp $
 #
 
 DISTNAME=	exmh-1.6.9
@@ -31,6 +31,8 @@ RUN_DEPENDS+=	mmencode:${PORTSDIR}/mail/metamail
 # faces
 # play
 
+MAN1=		exmh-custom.1 exmh-ref.1 exmh-use.1 exmh.1
+
 post-extract:
 	@rm -rf ${WRKSRC}/lib/*.orig
 
@@ -42,11 +44,5 @@ do-build:
 do-install:
 	@cd ${WRKSRC} && ${SETENV} PREFIX=${PREFIX} \
 		WRKSRC=${WRKSRC} ${SCRIPTDIR}/install
-.if !defined(NOMANCOMPRESS)
-	gzip -9f ${PREFIX}/man/man1/exmh-custom.1
-	gzip -9f ${PREFIX}/man/man1/exmh-ref.1
-	gzip -9f ${PREFIX}/man/man1/exmh-use.1
-	gzip -9f ${PREFIX}/man/man1/exmh.1
-.endif
 
 .include <bsd.port.mk>

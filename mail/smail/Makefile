@@ -3,7 +3,7 @@
 # Date created:		16 Oct 1994
 # Whom:			torstenb
 #
-# $Id: Makefile,v 1.11 1995/11/09 06:01:03 asami Exp $
+# $Id: Makefile,v 1.12 1996/11/10 21:32:45 obrien Exp $
 #
 
 DISTNAME=	smail-3.1.29.1
@@ -15,26 +15,19 @@ MAINTAINER=	torstenb@FreeBSD.ORG
 BUILD_DEPENDS=	bash:${PORTSDIR}/shells/bash
 
 MAKE_FLAGS=	"SHELL=${PREFIX}/bin/bash"
+MAN1=		pathto.1 uuwho.1 uupath.1
+MAN5=		smail.5
+MAN8=		pathalias.8 mkdbm.8 mkline.8 mksort.8 mkaliases.8 smail.8 \
+		mkpath.8 pathmerge.8 checkerr.8 getmap.8 mkhpath.8 savelog.8 \
+		mkuuwho.8 mailq.8 sendmail.8 runq.8 rmail.8 rsmtp.8 smtpd.8
 
 pre-install:
-	mkdir -p ${PREFIX}/lib/smail
+	${MKDIR} ${PREFIX}/lib/smail
 
 post-install:
-	@cp ${WRKSRC}/samples/generic/config ${PREFIX}/lib/smail/config.sample
-	@cp ${WRKSRC}/samples/generic/directors ${PREFIX}/lib/smail/directors.sample
-	@cp ${WRKSRC}/samples/generic/routers ${PREFIX}/lib/smail/routers.sample
-	@cp ${WRKSRC}/samples/generic/transports ${PREFIX}/lib/smail/transports.sample
-	gzip -9nf ${PREFIX}/man/man1/pathto.1 ${PREFIX}/man/man1/uuwho.1 \
-	${PREFIX}/man/man1/uupath.1 ${PREFIX}/man/man5/smail.5 \
-	${PREFIX}/man/man8/pathalias.8 ${PREFIX}/man/man8/mkdbm.8 \
-	${PREFIX}/man/man8/mkline.8 ${PREFIX}/man/man8/mksort.8 \
-	${PREFIX}/man/man8/mkaliases.8 ${PREFIX}/man/man8/smail.8 \
-	${PREFIX}/man/man8/mkpath.8 ${PREFIX}/man/man8/pathmerge.8 \
-	${PREFIX}/man/man8/checkerr.8 ${PREFIX}/man/man8/getmap.8 \
-	${PREFIX}/man/man8/mkhpath.8 ${PREFIX}/man/man8/savelog.8 \
-	${PREFIX}/man/man8/mkuuwho.8 ${PREFIX}/man/man8/mailq.8 \
-	${PREFIX}/man/man8/sendmail.8 ${PREFIX}/man/man8/runq.8 \
-	${PREFIX}/man/man8/rmail.8 ${PREFIX}/man/man8/rsmtp.8 \
-	${PREFIX}/man/man8/smtpd.8
+	@${INSTALL_DATA} ${WRKSRC}/samples/generic/config ${PREFIX}/lib/smail/config.sample
+	@${INSTALL_DATA} ${WRKSRC}/samples/generic/directors ${PREFIX}/lib/smail/directors.sample
+	@${INSTALL_DATA} ${WRKSRC}/samples/generic/routers ${PREFIX}/lib/smail/routers.sample
+	@${INSTALL_DATA} ${WRKSRC}/samples/generic/transports ${PREFIX}/lib/smail/transports.sample
 
 .include <bsd.port.mk>
