@@ -19,7 +19,8 @@ along with this program; if not, write to the Free Software
 Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.
 */
 
-/* $FreeBSD$ */
+#include <sys/cdefs.h>
+__FBSDID("$FreeBSD$");
 
 /*
  * This works like "remote" but, you use it like this:
@@ -33,32 +34,37 @@ Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.
  */
 
 #include <sys/param.h>
-#include <machine/frame.h>
-#include <sys/proc.h>
-#include <sys/sysctl.h>
-#include <sys/time.h>
 #include <sys/user.h>
+#include <machine/frame.h>
+//#include <sys/proc.h>
+//#include <sys/sysctl.h>
+//#include <sys/time.h>
+//#include <sys/user.h>
 
 #include <ctype.h>
-#include <errno.h>
-#include <signal.h>
+//#include <errno.h>
+//#include <signal.h>
 #include <fcntl.h>
 #include <kvm.h>
+#include <sys/sysctl.h>
 #include <paths.h>
 
 #include "defs.h"
 #include "gdb_string.h"
 #include "frame.h"  /* required by inferior.h */
 #include "inferior.h"
-#include "symtab.h"
+//#include "symtab.h"
 #include "symfile.h"
 #include "objfiles.h"
 #include "command.h"
 #include "bfd.h"
-#include "target.h"
+//#include "target.h"
 #include "gdbcore.h"
+#include "solist.h"
 #include "regcache.h"
 #include <readline/tilde.h>
+
+#include "kvm-fbsd.h"
 
 #if __FreeBSD_version >= 500032
 static void
@@ -340,375 +346,6 @@ kcore_detach (char *args, int from_tty)
   if (from_tty)
     printf_filtered ("No kernel core file now.\n");
 }
-
-#ifdef __alpha__
-
-#include "alpha/tm-alpha.h"
-#include "alpha-tdep.h"
-
-#ifndef S0_REGNUM
-#define S0_REGNUM (ALPHA_T7_REGNUM+1)
-#endif
-
-static void
-fetch_kcore_registers (struct pcb *pcbp)
-{
-
-  /* First clear out any garbage.  */
-  memset (deprecated_registers, '\0', DEPRECATED_REGISTER_BYTES);
-
-  /* SP */
-  *(long *) &deprecated_registers[DEPRECATED_REGISTER_BYTE (SP_REGNUM)] =
-    pcbp->pcb_hw.apcb_ksp;
-
-  /* S0 through S6 */
-  memcpy (&deprecated_registers[DEPRECATED_REGISTER_BYTE (S0_REGNUM)],
-          &pcbp->pcb_context[0], 7 * sizeof (long));
-
-  /* PC */
-  *(long *) &deprecated_registers[DEPRECATED_REGISTER_BYTE (PC_REGNUM)] =
-    pcbp->pcb_context[7];
-
-  deprecated_registers_fetched ();
-}
-
-
-CORE_ADDR
-fbsd_kern_frame_saved_pc (struct frame_info *fi)
-{
-  struct minimal_symbol *sym;
-  CORE_ADDR this_saved_pc;
-
-  this_saved_pc = DEPRECATED_FRAME_SAVED_PC(fi);
-
-  sym = lookup_minimal_symbol_by_pc (this_saved_pc);
-
-  if (sym != NULL &&
-      (strcmp (DEPRECATED_SYMBOL_NAME (sym), "XentArith") == 0 ||
-       strcmp (DEPRECATED_SYMBOL_NAME (sym), "XentIF") == 0 ||
-       strcmp (DEPRECATED_SYMBOL_NAME (sym), "XentInt") == 0 ||
-       strcmp (DEPRECATED_SYMBOL_NAME (sym), "XentMM") == 0 ||
-       strcmp (DEPRECATED_SYMBOL_NAME (sym), "XentSys") == 0 ||
-       strcmp (DEPRECATED_SYMBOL_NAME (sym), "XentUna") == 0 ||
-       strcmp (DEPRECATED_SYMBOL_NAME (sym), "XentRestart") == 0))
-    {
-      return (read_memory_integer (get_frame_base (fi) + 32 * 8, 8));
-    }
-  else
-    {
-      return (this_saved_pc);
-    }
-}
-
-#endif /* __alpha__ */
-
-#ifdef __i386__
-
-#include "i386-tdep.h"
-
-static CORE_ADDR
-ksym_maxuseraddr (void)
-{
-  static CORE_ADDR maxuseraddr;
-  struct minimal_symbol *sym;
-
-  if (maxuseraddr == 0)
-    {
-      sym = lookup_minimal_symbol ("PTmap", NULL, NULL);
-      if (sym == NULL) {
-	maxuseraddr = VM_MAXUSER_ADDRESS;
-      } else {
-	maxuseraddr = SYMBOL_VALUE_ADDRESS (sym);
-      }
-    }
-  return maxuseraddr;
-}
-
-
-/* Symbol names of kernel entry points.  Use special frames.  */
-#define	KSYM_TRAP	"calltrap"
-#define	KSYM_INTR	"Xintr"
-#define	KSYM_FASTINTR	"Xfastintr"
-#define	KSYM_OLDSYSCALL	"Xlcall_syscall"
-#define	KSYM_SYSCALL	"Xint0x80_syscall"
-
-/* The following is FreeBSD-specific hackery to decode special frames
-   and elide the assembly-language stub.  This could be made faster by
-   defining a frame_type field in the machine-dependent frame information,
-   but we don't think that's too important right now.  */
-enum frametype { tf_normal, tf_trap, tf_interrupt, tf_syscall };
-
-CORE_ADDR
-fbsd_kern_frame_saved_pc (struct frame_info *fi)
-{
-  struct minimal_symbol *sym;
-  CORE_ADDR this_saved_pc;
-  enum frametype frametype;
-
-  this_saved_pc = read_memory_integer (get_frame_base (fi) + 4, 4);
-  sym = lookup_minimal_symbol_by_pc (this_saved_pc);
-  frametype = tf_normal;
-  if (sym != NULL)
-    {
-      if (strcmp (DEPRECATED_SYMBOL_NAME (sym), KSYM_TRAP) == 0)
-	frametype = tf_trap;
-      else
-	if (strncmp (DEPRECATED_SYMBOL_NAME (sym), KSYM_INTR,
-	    strlen (KSYM_INTR)) == 0 || strncmp (DEPRECATED_SYMBOL_NAME(sym),
-	    KSYM_FASTINTR, strlen (KSYM_FASTINTR)) == 0)
-	  frametype = tf_interrupt;
-      else
-	if (strcmp (DEPRECATED_SYMBOL_NAME (sym), KSYM_SYSCALL) == 0 ||
-	    strcmp (DEPRECATED_SYMBOL_NAME (sym), KSYM_OLDSYSCALL) == 0)
-	  frametype = tf_syscall;
-    }
-
-  switch (frametype)
-    {
-      default:
-      case tf_normal:
-        return (this_saved_pc);
-#define oEIP   offsetof (struct trapframe, tf_eip)
-
-      case tf_trap:
-	return (read_memory_integer (get_frame_base (fi) + 8 + oEIP, 4));
-
-      case tf_interrupt:
-	return (read_memory_integer (get_frame_base (fi) + 12 + oEIP, 4));
-
-      case tf_syscall:
-	return (read_memory_integer (get_frame_base (fi) + 8 + oEIP, 4));
-#undef oEIP
-    }
-}
-
-static void
-fetch_kcore_registers (struct pcb *pcb)
-{
-  int i;
-  int noreg;
-
-  /* Get the register values out of the sys pcb and store them where
-     `read_register' will find them.  */
-  /*
-   * XXX many registers aren't available.
-   * XXX for the non-core case, the registers are stale - they are for
-   *     the last context switch to the debugger.
-   * XXX gcc's register numbers aren't all #defined in tm-i386.h.
-   */
-  noreg = 0;
-  for (i = 0; i < 3; ++i)		/* eax,ecx,edx */
-    supply_register (i, (char *)&noreg);
-
-  /* DEO:XXX use SP_REGNUM and PC_REGNUM -- this is GDB_MULTI_ARCH */
-  supply_register (3, (char *) &pcb->pcb_ebx);
-  supply_register (SP_REGNUM, (char *) &pcb->pcb_esp);
-  supply_register (I386_EBP_REGNUM, (char *) &pcb->pcb_ebp);
-  supply_register (6, (char *) &pcb->pcb_esi);
-  supply_register (7, (char *) &pcb->pcb_edi);
-  supply_register (PC_REGNUM, (char *) &pcb->pcb_eip);
-
-  for (i = 9; i < 14; ++i)		/* eflags, cs, ss, ds, es, fs */
-    supply_register (i, (char *) &noreg);
-  supply_register (15, (char *) &pcb->pcb_gs);
-
-  /* XXX 80387 registers?  */
-}
-
-#endif /* __i386__ */
-
-#ifdef __amd64__
-
-#include "amd64-tdep.h"
-
-static CORE_ADDR
-ksym_maxuseraddr (void)
-{
-  static CORE_ADDR maxuseraddr;
-  struct minimal_symbol *sym;
-
-  if (maxuseraddr == 0)
-    {
-      sym = lookup_minimal_symbol ("PTmap", NULL, NULL);
-      if (sym == NULL) {
-	maxuseraddr = VM_MAXUSER_ADDRESS;
-      } else {
-	maxuseraddr = SYMBOL_VALUE_ADDRESS (sym);
-      }
-    }
-  return maxuseraddr;
-}
-
-
-/* Symbol names of kernel entry points.  Use special frames.  */
-#define	KSYM_TRAP	"calltrap"
-#define	KSYM_INTR	"Xintr"
-#define	KSYM_FASTINTR	"Xfastintr"
-#define	KSYM_OLDSYSCALL	"Xlcall_syscall"
-#define	KSYM_SYSCALL	"Xint0x80_syscall"
-
-/* The following is FreeBSD-specific hackery to decode special frames
-   and elide the assembly-language stub.  This could be made faster by
-   defining a frame_type field in the machine-dependent frame information,
-   but we don't think that's too important right now.  */
-enum frametype { tf_normal, tf_trap, tf_interrupt, tf_syscall };
-
-CORE_ADDR
-fbsd_kern_frame_saved_pc (struct frame_info *fi)
-{
-  struct minimal_symbol *sym;
-  CORE_ADDR this_saved_pc;
-  enum frametype frametype;
-
-  this_saved_pc = read_memory_integer (get_frame_base (fi) + 4, 4);
-  sym = lookup_minimal_symbol_by_pc (this_saved_pc);
-  frametype = tf_normal;
-  if (sym != NULL)
-    {
-      if (strcmp (DEPRECATED_SYMBOL_NAME (sym), KSYM_TRAP) == 0)
-	frametype = tf_trap;
-      else
-	if (strncmp (DEPRECATED_SYMBOL_NAME (sym), KSYM_INTR,
-	    strlen (KSYM_INTR)) == 0 || strncmp (DEPRECATED_SYMBOL_NAME(sym),
-	    KSYM_FASTINTR, strlen (KSYM_FASTINTR)) == 0)
-	  frametype = tf_interrupt;
-      else
-	if (strcmp (DEPRECATED_SYMBOL_NAME (sym), KSYM_SYSCALL) == 0 ||
-	    strcmp (DEPRECATED_SYMBOL_NAME (sym), KSYM_OLDSYSCALL) == 0)
-	  frametype = tf_syscall;
-    }
-
-  switch (frametype)
-    {
-      default:
-      case tf_normal:
-        return (this_saved_pc);
-#define oEIP   offsetof (struct trapframe, tf_rip)
-
-      case tf_trap:
-	return (read_memory_integer (get_frame_base (fi) + 8 + oEIP, 4));
-
-      case tf_interrupt:
-	return (read_memory_integer (get_frame_base (fi) + 12 + oEIP, 4));
-
-      case tf_syscall:
-	return (read_memory_integer (get_frame_base (fi) + 8 + oEIP, 4));
-#undef oEIP
-    }
-}
-
-static void
-fetch_kcore_registers (struct pcb *pcb)
-{
-  int i;
-  int noreg;
-
-  /* Get the register values out of the sys pcb and store them where
-     `read_register' will find them.  */
-  /*
-   * XXX many registers aren't available.
-   * XXX for the non-core case, the registers are stale - they are for
-   *     the last context switch to the debugger.
-   * XXX gcc's register numbers aren't all #defined in tm-amd64.h.
-   */
-  noreg = 0;
-  for (i = 0; i < 3; ++i)		/* eax,ecx,edx */
-    supply_register (i, (char *)&noreg);
-
-  /* DEO:XXX use SP_REGNUM and PC_REGNUM -- this is GDB_MULTI_ARCH */
-  supply_register (3, (char *) &pcb->pcb_rbx);
-  supply_register (SP_REGNUM, (char *) &pcb->pcb_rsp);
-  supply_register (AMD64_RBP_REGNUM, (char *) &pcb->pcb_rbp);
-  supply_register (PC_REGNUM, (char *) &pcb->pcb_rip);
-
-  for (i = 9; i < 14; ++i)		/* rflags, cs, ss, ds, es, fs */
-    supply_register (i, (char *) &noreg);
-  supply_register (15, (char *) &pcb->pcb_gs);
-
-  /* XXX 80387 registers?  */
-}
-
-#endif /* __amd64__ */
-
-#ifdef __sparc64__
-
-#include "sparc-tdep.h"
-
-#define	SPARC_INTREG_SIZE	8
-
-static void
-fetch_kcore_registers (struct pcb *pcbp)
-{
-  static struct frame top;
-  CORE_ADDR f_addr;
-  int i;
-
-  /* Get the register values out of the sys pcb and store them where
-     `read_register' will find them.  */
-  /*
-   * XXX many registers aren't available.
-   * XXX for the non-core case, the registers are stale - they are for
-   *     the last context switch to the debugger.
-   * XXX do something with the floating-point registers?
-   */
-  supply_register (SP_REGNUM, &pcbp->pcb_sp);
-  supply_register (PC_REGNUM, &pcbp->pcb_pc);
-  f_addr = extract_unsigned_integer (&pcbp->pcb_sp, SPARC_INTREG_SIZE);
-  /* Load the previous frame by hand (XXX) and supply it. */
-  read_memory (f_addr + SPOFF, (char *)&top, sizeof (top));
-  for (i = 0; i < 8; i++)
-    supply_register (i + SPARC_L0_REGNUM, &top.fr_local[i]);
-  for (i = 0; i < 8; i++)
-    supply_register (i + SPARC_I0_REGNUM, &top.fr_in[i]);
-}
-
-CORE_ADDR
-fbsd_kern_frame_saved_pc (struct frame_info *fi)
-{
-  struct minimal_symbol *sym;
-  CORE_ADDR frame, pc_addr, pc;
-  char *buf;
-
-  buf = alloca (MAX_REGISTER_SIZE); //or use DEPRECATED_MAX_REGISTER_RAW_SIZE
-  /* XXX: duplicates fi->extra_info->bottom. */
-  frame = (get_next_frame (fi) != NULL) ? get_frame_base (get_next_frame (fi)) : read_sp ();
-  pc_addr = frame + offsetof (struct frame, fr_in[7]);
-
-#define	READ_PC(pc, a, b) do { \
-  read_memory (a, b, SPARC_INTREG_SIZE); \
-  pc = extract_unsigned_integer (b, SPARC_INTREG_SIZE); \
-} while (0)
-
-  READ_PC (pc, pc_addr, buf);
-
-  sym = lookup_minimal_symbol_by_pc (pc);
-  if (sym != NULL)
-    {
-      if (strncmp (DEPRECATED_SYMBOL_NAME (sym), "tl0_", 4) == 0 ||
-	  strcmp (DEPRECATED_SYMBOL_NAME (sym), "btext") == 0 ||
-	  strcmp (DEPRECATED_SYMBOL_NAME (sym), "mp_startup") == 0 ||
-	  strcmp (DEPRECATED_SYMBOL_NAME (sym), "fork_trampoline") == 0)
-        {
-	  /*
-	   * Ugly kluge: user space addresses aren't separated from kernel
-	   * ones by range; if encountering a trap from user space, just
-	   * return a 0 to stop the trace.
-	   * Do the same for entry points of kernel processes to avoid
-	   * printing garbage.
-	   */
-	  pc = 0;
-        }
-      if (strncmp (DEPRECATED_SYMBOL_NAME (sym), "tl1_", 4) == 0)
-        {
-          pc_addr = get_frame_base (fi) + sizeof (struct frame) +
-	    offsetof (struct trapframe, tf_tpc);
-          READ_PC (pc, pc_addr, buf);
-	}
-    }
-  return (pc);
-}
-
-#endif /* __sparc64__ */
 
 /* Get the registers out of a core file.  This is the machine-
    independent part.  Fetch_core_registers is the machine-dependent
