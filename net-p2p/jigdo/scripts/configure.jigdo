@@ -47,7 +47,8 @@ while [ "$1" ]; do
 	case $1 in
 		\"GUI\")
 			echo "CONFIGURE_ARGS+= --with-gui"
-			echo "BUILD_DEPENDS+= gtk12-config:\${PORTSDIR}/x11-toolkits/gtk12"
+			echo "LIB_DEPENDS+= gtk-x11-2.0.200:\${PORTSDIR}/x11-toolkits/gtk20"
+			echo "MAN+= jigdo.1"
 			SUB_GUI=""
 			;;
 		\"DB3\")
