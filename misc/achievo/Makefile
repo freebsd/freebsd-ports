@@ -6,15 +6,17 @@
 #
 
 PORTNAME=	achievo
-PORTVERSION=	0.8.4
+PORTVERSION=	1.0.2
 CATEGORIES=	misc www
 MASTER_SITES=	http://ftp.achievo.org/pub/achievo/
 DISTNAME=	${PORTNAME}-stable-${PORTVERSION}
 
-MAINTAINER=	nbm@FreeBSD.org
+MAINTAINER=	kevin@caomhin.demon.co.uk
 COMMENT=	A flexible web-based resource management tool
 
-RUN_DEPENDS=	${LOCALBASE}/libexec/apache/libphp4.so:${PORTSDIR}/www/mod_php4
+WANT_PHP_MOD=	yes
+PHP_VER=	4
+.include <../../lang/php4/bsd.php.mk>
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 NO_BUILD=	YES
