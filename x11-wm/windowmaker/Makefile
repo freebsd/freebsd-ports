@@ -1,12 +1,12 @@
 # New ports collection makefile for:	WindowMaker
-# Version required:	0.60.0
+# Version required:	0.61.0
 # Date created:		August 13, 1997
 # Whom:			handy@physics.montana.edu
 #
 # $FreeBSD$
 
-DISTNAME=	WindowMaker-0.60.0
-PKGNAME=	windowmaker-0.60.0
+DISTNAME=	WindowMaker-0.61.0
+PKGNAME=	windowmaker-0.61.0
 CATEGORIES=	x11-wm windowmaker
 MASTER_SITES=	${MASTER_SITE_WINDOWMAKER} \
 		http://jgo.local.net/cool_downloads/wm/
