@@ -8,7 +8,8 @@
 PORTNAME=	FLF
 PORTVERSION=	1.2
 CATEGORIES=	games linux
-MASTER_SITES=	ftp://ftp.icrontic.com/pub/ \
+MASTER_SITES=	http://hex.databits.net/~pat/ \
+		ftp://ftp.icrontic.com/pub/ \
 		ftp://ftp.task.gda.pl/vol/d33/ftp.extreme-players.de/exp/hl/mod/frontlineforce/
 DISTNAME=	frontline_linux_1.2
 EXTRACT_ONLY=
