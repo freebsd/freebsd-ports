@@ -35,7 +35,7 @@ PLIST_SUB+=	NLS="@comment "
 .endif
 
 .ifdef WITH_OPTIMIZED_CFLAGS
-CFLAGS+=	-Wuninitialized -ffast-math -finline-functions-fomit-frame-pointer -fexpensive-optimizations -fforce-mem -fforce-addr -O3
+CFLAGS+=	-Wuninitialized -ffast-math -finline-functions -fomit-frame-pointer -fexpensive-optimizations -fforce-mem -fforce-addr -O3
 .endif
 
 pre-everything::
