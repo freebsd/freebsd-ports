@@ -44,6 +44,17 @@ share/examples/cdk/buttonbox_ex.c
 share/examples/cdk/calendar_ex.c
 share/examples/cdk/cdkscreen_ex.c
 share/examples/cdk/dialog_ex.c
+share/examples/cdk/demos/Makefile
+share/examples/cdk/demos/appointment.c
+share/examples/cdk/demos/clock.c
+share/examples/cdk/demos/command.c
+share/examples/cdk/demos/fileview.c
+share/examples/cdk/demos/rolodex.c
+share/examples/cdk/demos/rolodex.h
+share/examples/cdk/demos/serial.c
+share/examples/cdk/demos/stopSign.c
+share/examples/cdk/demos/syb.c
+share/examples/cdk/demos/vinstall.c
 share/examples/cdk/entry_ex.c
 share/examples/cdk/fselect_ex.c
 share/examples/cdk/graph_ex.c
@@ -68,6 +79,7 @@ share/examples/cdk/template_ex.c
 share/examples/cdk/tst.c
 share/examples/cdk/viewer_ex.c
 share/examples/cdk/vinstall.c
+@dirrm share/examples/cdk/demos
 @dirrm share/examples/cdk
 @dirrm share/doc/cdk
 @dirrm include/cdk
