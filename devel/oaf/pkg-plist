@@ -60,8 +60,6 @@ share/locale/tr/LC_MESSAGES/oaf.mo
 share/locale/uk/LC_MESSAGES/oaf.mo
 share/locale/zh_CN/LC_MESSAGES/oaf.mo
 share/locale/zh_TW/LC_MESSAGES/oaf.mo
-@unexec rmdir %D/share/gnome/oaf 2>/dev/null || true
-@unexec rmdir %D/share/gnome/idl 2>/dev/null || true
 @unexec rmdir %D/share/gnome 2>/dev/null || true
 @dirrm include/liboaf
 @dirrm etc/oaf
