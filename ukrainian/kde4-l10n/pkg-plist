@@ -46,6 +46,7 @@ share/doc/HTML/uk/common/xml.dcl
 share/doc/HTML/uk/kaddressbook/common
 share/doc/HTML/uk/kaddressbook/index.cache.bz2
 share/doc/HTML/uk/kaddressbook/index.docbook
+share/doc/HTML/uk/kdebase/kate_plugins.po
 share/doc/HTML/uk/khelpcenter/common
 share/doc/HTML/uk/khelpcenter/contact.docbook
 share/doc/HTML/uk/khelpcenter/help.docbook
@@ -114,6 +115,7 @@ share/locale/uk/LC_MESSAGES/artscontrol.mo
 share/locale/uk/LC_MESSAGES/artsmodules.mo
 share/locale/uk/LC_MESSAGES/atlantikdesigner.mo
 share/locale/uk/LC_MESSAGES/babelfish.mo
+share/locale/uk/LC_MESSAGES/cervisia.mo
 share/locale/uk/LC_MESSAGES/charlatanui.mo
 share/locale/uk/LC_MESSAGES/childpanelextension.mo
 share/locale/uk/LC_MESSAGES/clockapplet.mo
@@ -180,6 +182,7 @@ share/locale/uk/LC_MESSAGES/kaudiocreator.mo
 share/locale/uk/LC_MESSAGES/kbattleship.mo
 share/locale/uk/LC_MESSAGES/kblackbox.mo
 share/locale/uk/LC_MESSAGES/kbounce.mo
+share/locale/uk/LC_MESSAGES/kbugbuster.mo
 share/locale/uk/LC_MESSAGES/kcalc.mo
 share/locale/uk/LC_MESSAGES/kcardchooser.mo
 share/locale/uk/LC_MESSAGES/kcharselect.mo
@@ -304,6 +307,7 @@ share/locale/uk/LC_MESSAGES/kfloppy.mo
 share/locale/uk/LC_MESSAGES/kfmclient.mo
 share/locale/uk/LC_MESSAGES/kfmexec.mo
 share/locale/uk/LC_MESSAGES/kfontviewpart.mo
+share/locale/uk/LC_MESSAGES/kfouleggs.mo
 share/locale/uk/LC_MESSAGES/kget.mo
 share/locale/uk/LC_MESSAGES/kghostview.mo
 share/locale/uk/LC_MESSAGES/kgpgcertmanager.mo
@@ -356,6 +360,7 @@ share/locale/uk/LC_MESSAGES/knotes.mo
 share/locale/uk/LC_MESSAGES/knotify.mo
 share/locale/uk/LC_MESSAGES/kodo.mo
 share/locale/uk/LC_MESSAGES/kolourpicker.mo
+share/locale/uk/LC_MESSAGES/kompare.mo
 share/locale/uk/LC_MESSAGES/konqsidebar_mediaplayer.mo
 share/locale/uk/LC_MESSAGES/konqueror.mo
 share/locale/uk/LC_MESSAGES/konquest.mo
@@ -368,6 +373,7 @@ share/locale/uk/LC_MESSAGES/kpager.mo
 share/locale/uk/LC_MESSAGES/kpaint.mo
 share/locale/uk/LC_MESSAGES/kpartapp.mo
 share/locale/uk/LC_MESSAGES/kpartsaver.mo
+share/locale/uk/LC_MESSAGES/kpat.mo
 share/locale/uk/LC_MESSAGES/kpersonalizer.mo
 share/locale/uk/LC_MESSAGES/kpf.mo
 share/locale/uk/LC_MESSAGES/kpilot.mo
@@ -493,6 +499,7 @@ share/locale/uk/flag.png
 @dirrm share/doc/HTML/uk/kinfocenter/protocols
 @dirrm share/doc/HTML/uk/kinfocenter
 @dirrm share/doc/HTML/uk/khelpcenter
+@dirrm share/doc/HTML/uk/kdebase
 @dirrm share/doc/HTML/uk/kaddressbook
 @dirrm share/doc/HTML/uk/common
 @dirrm share/doc/HTML/uk

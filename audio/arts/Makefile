@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	arts
-PORTVERSION=	1.1
+PORTVERSION=	1.1.1
 PORTREVISION=	0
 PORTEPOCH=	1
 CATEGORIES=	audio kde
@@ -18,7 +18,7 @@ DIST_SUBDIR=	KDE
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Audio system for the KDE integrated X11 desktop
 
-LIB_DEPENDS=	audiofile.0:${PORTSDIR}/audio/libaudiofile
+LIB_DEPENDS+=	audiofile.0:${PORTSDIR}/audio/libaudiofile
 
 USE_QT_VER=	3
 USE_BZIP2=	yes
@@ -26,6 +26,9 @@ GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 INSTALLS_SHLIB=	yes
 QTCPPFLAGS+=	-L${LOCALBASE}/lib
+DO_NOT_COMPILE+=gmcop
+
+CONFIGURE_ENV+=	DO_NOT_COMPILE="${DO_NOT_COMPILE}"
 
 .include "${.CURDIR}/../../x11/kde3/Makefile.kde"
 .include <bsd.port.mk>

@@ -8,6 +8,9 @@ share/doc/HTML/xh/kate-plugins/htmltools.docbook
 share/doc/HTML/xh/kate-plugins/openheader.docbook
 share/doc/HTML/xh/kate-plugins/projectmanager.docbook
 share/doc/HTML/xh/kate-plugins/textfilter.docbook
+share/doc/HTML/xh/kdeprint/extensions.docbook
+share/doc/HTML/xh/kdeprint/lpr-bsd.docbook
+share/doc/HTML/xh/kdeprint/lprng.docbook
 share/doc/HTML/xh/kdeprint/rlpr.docbook
 share/doc/HTML/xh/khelpcenter/common
 share/doc/HTML/xh/khelpcenter/contact.docbook

@@ -15,7 +15,7 @@ MASTER_SITE_SUBDIR=	stable/${KDE_VERSION}/src
 DIST_SUBDIR=	KDE
 
 MAINTAINER=	kde@FreeBSD.org
-COMMENT=	This is the base set of libraries needed by KDE programs
+COMMENT=        This is the base set of libraries needed by KDE programs
 
 BUILD_DEPENDS=	mkfontdir:${PORTSDIR}/x11/XFree86-4-clients
 LIB_DEPENDS=	tiff.4:${PORTSDIR}/graphics/tiff \
@@ -44,29 +44,31 @@ LDCONFIG_DIRS+=	%%PREFIX%%/lib %%PREFIX%%/lib/kde3
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=--disable-ltdl-install	\
 		--enable-mt		\
-		--enable-cups		\
-		${XINERAMA}
+		--enable-cups
 
 FONTSCALE=	${X11BASE}/lib/X11/fonts/TTF/luximb.ttf
 FONTENCOD=	${X11BASE}/lib/X11/fonts/encodings/tcvn-0.enc
 
-.include "${.CURDIR}/../../x11/kde3/Makefile.kde"
-.include <bsd.port.pre.mk>
-
+# fam provides a measurable performance increase for file watching
+# operations within KDE
 .if exists(${LOCALBASE}/bin/fam)
 LIB_DEPENDS+=	fam.0:${PORTSDIR}/devel/fam
 .endif # exists(${LOCALBASE}/bin/fam)
 
+# bzip2 is required as a libdepend for the help: kioslave
 .if !exists(/usr/bin/bzip2)
 LIB_DEPENDS+=	bz2.1:${PORTSDIR}/archivers/bzip2
 .endif # !exists(/usr/bin/bzip2)
 
-.if defined(WITH_XINERAMA)
-XINERAMA=	-with-xinerama
-PKGNAMESUFFIX=	-xinerama
-.else
-XINERAMA=	-without-xinerama
-.endif # defined(WITH_XINERAMA)
+KDE_BUILD_PLIST=	yes
+# kabc (the addressbook backend) can use ldap if it's available
+.if defined(WITH_LDAP) || exists($(LOCALBASE)/lib/libldap.so)
+LIB_DEPENDS+=	libldap.so:${PORTSDIR}/net/openldap21
+PLIST_APPEND+=	plist.ldap
+.endif
+
+.include "${.CURDIR}/../../x11/kde3/Makefile.kde"
+.include <bsd.port.pre.mk>
 
 pre-configure:
 	${REINPLACE_CMD} "s, kspell,,g" ${WRKSRC}/doc/Makefile.in

@@ -466,9 +466,6 @@ share/doc/HTML/sv/kdvi/index.cache.bz2
 share/doc/HTML/sv/kdvi/index.docbook
 share/doc/HTML/sv/kdvi/optionrequester1.png
 share/doc/HTML/sv/kdvi/optionrequester2.png
-share/doc/HTML/sv/kedit/common
-share/doc/HTML/sv/kedit/index.cache.bz2
-share/doc/HTML/sv/kedit/index.docbook
 share/doc/HTML/sv/keduca/common
 share/doc/HTML/sv/keduca/index.cache.bz2
 share/doc/HTML/sv/keduca/index.docbook
@@ -670,9 +667,6 @@ share/doc/HTML/sv/kioslave/telnet.docbook
 share/doc/HTML/sv/kioslave/thumbnail.docbook
 share/doc/HTML/sv/kioslave/webdav.docbook
 share/doc/HTML/sv/kioslave/webdavs.docbook
-share/doc/HTML/sv/kit/common
-share/doc/HTML/sv/kit/index.cache.bz2
-share/doc/HTML/sv/kit/index.docbook
 share/doc/HTML/sv/kiten/common
 share/doc/HTML/sv/kiten/index.cache.bz2
 share/doc/HTML/sv/kiten/index.docbook
@@ -699,8 +693,16 @@ share/doc/HTML/sv/klipper/common
 share/doc/HTML/sv/klipper/index.cache.bz2
 share/doc/HTML/sv/klipper/index.docbook
 share/doc/HTML/sv/kmail/common
+share/doc/HTML/sv/kmail/configure.docbook
+share/doc/HTML/sv/kmail/credits-and-licenses.docbook
+share/doc/HTML/sv/kmail/faq.docbook
+share/doc/HTML/sv/kmail/getting-started.docbook
+share/doc/HTML/sv/kmail/importing.docbook
 share/doc/HTML/sv/kmail/index.cache.bz2
 share/doc/HTML/sv/kmail/index.docbook
+share/doc/HTML/sv/kmail/intro.docbook
+share/doc/HTML/sv/kmail/menus.docbook
+share/doc/HTML/sv/kmail/using-kmail.docbook
 share/doc/HTML/sv/kmathtool/common
 share/doc/HTML/sv/kmathtool/index.cache.bz2
 share/doc/HTML/sv/kmathtool/index.docbook
@@ -839,17 +841,28 @@ share/doc/HTML/sv/konq-plugins/validators/index.docbook
 share/doc/HTML/sv/konq-plugins/webarchiver/common
 share/doc/HTML/sv/konq-plugins/webarchiver/index.cache.bz2
 share/doc/HTML/sv/konq-plugins/webarchiver/index.docbook
+share/doc/HTML/sv/konqueror/basics.docbook
+share/doc/HTML/sv/konqueror/bookmarks.docbook
+share/doc/HTML/sv/konqueror/browser.docbook
 share/doc/HTML/sv/konqueror/cmndline.png
+share/doc/HTML/sv/konqueror/commands.docbook
 share/doc/HTML/sv/konqueror/common
+share/doc/HTML/sv/konqueror/config.docbook
+share/doc/HTML/sv/konqueror/credits.docbook
 share/doc/HTML/sv/konqueror/dirtree.png
 share/doc/HTML/sv/konqueror/dragdrop.png
+share/doc/HTML/sv/konqueror/faq.docbook
 share/doc/HTML/sv/konqueror/filetype1.png
 share/doc/HTML/sv/konqueror/filetype3.png
 share/doc/HTML/sv/konqueror/filetype4.png
 share/doc/HTML/sv/konqueror/index.cache.bz2
 share/doc/HTML/sv/konqueror/index.docbook
+share/doc/HTML/sv/konqueror/introduction.docbook
 share/doc/HTML/sv/konqueror/konqorg.png
 share/doc/HTML/sv/konqueror/parts.png
+share/doc/HTML/sv/konqueror/path-complete.docbook
+share/doc/HTML/sv/konqueror/plugins.docbook
+share/doc/HTML/sv/konqueror/save-settings.docbook
 share/doc/HTML/sv/konqueror/shortcut1.png
 share/doc/HTML/sv/konqueror/shortcut2.png
 share/doc/HTML/sv/konquest/common
@@ -1777,7 +1790,6 @@ share/locale/sv/flag.png
 @dirrm share/doc/HTML/sv/kjumpingcube
 @dirrm share/doc/HTML/sv/kjots
 @dirrm share/doc/HTML/sv/kiten
-@dirrm share/doc/HTML/sv/kit
 @dirrm share/doc/HTML/sv/kioslave
 @dirrm share/doc/HTML/sv/kinfocenter/xserver
 @dirrm share/doc/HTML/sv/kinfocenter/usb
@@ -1816,7 +1828,6 @@ share/locale/sv/flag.png
 @dirrm share/doc/HTML/sv/kfind
 @dirrm share/doc/HTML/sv/kenolaba
 @dirrm share/doc/HTML/sv/keduca
-@dirrm share/doc/HTML/sv/kedit
 @dirrm share/doc/HTML/sv/kdvi
 @dirrm share/doc/HTML/sv/kdm
 @dirrm share/doc/HTML/sv/kdict

@@ -92,6 +92,9 @@ share/doc/HTML/fr/artsbuilder/modules.docbook
 share/doc/HTML/fr/artsbuilder/porting.docbook
 share/doc/HTML/fr/artsbuilder/references.docbook
 share/doc/HTML/fr/artsbuilder/tools.docbook
+share/doc/HTML/fr/atlantik/common
+share/doc/HTML/fr/atlantik/index.cache.bz2
+share/doc/HTML/fr/atlantik/index.docbook
 share/doc/HTML/fr/cervisia/common
 share/doc/HTML/fr/cervisia/index.cache.bz2
 share/doc/HTML/fr/cervisia/index.docbook
@@ -143,15 +146,24 @@ share/doc/HTML/fr/common/web-docbottom.png
 share/doc/HTML/fr/common/web-doctop.png
 share/doc/HTML/fr/common/x11-license.html
 share/doc/HTML/fr/common/xml.dcl
-share/doc/HTML/fr/helpindex/common
-share/doc/HTML/fr/helpindex/index.cache.bz2
-share/doc/HTML/fr/helpindex/index.docbook
 share/doc/HTML/fr/kaboodle/common
 share/doc/HTML/fr/kaboodle/index.cache.bz2
 share/doc/HTML/fr/kaboodle/index.docbook
 share/doc/HTML/fr/kaddressbook/common
 share/doc/HTML/fr/kaddressbook/index.cache.bz2
 share/doc/HTML/fr/kaddressbook/index.docbook
+share/doc/HTML/fr/kalarm/alarmmessage.png
+share/doc/HTML/fr/kalarm/common
+share/doc/HTML/fr/kalarm/editwindow.png
+share/doc/HTML/fr/kalarm/index.cache.bz2
+share/doc/HTML/fr/kalarm/index.docbook
+share/doc/HTML/fr/kalarm/mainwindow.png
+share/doc/HTML/fr/kalzium/common
+share/doc/HTML/fr/kalzium/index.cache.bz2
+share/doc/HTML/fr/kalzium/index.docbook
+share/doc/HTML/fr/kalzium/screenshot1.png
+share/doc/HTML/fr/kalzium/screenshot3.png
+share/doc/HTML/fr/kalzium/screenshot4.png
 share/doc/HTML/fr/kamera/common
 share/doc/HTML/fr/kamera/index.cache.bz2
 share/doc/HTML/fr/kamera/index.docbook
@@ -281,6 +293,9 @@ share/doc/HTML/fr/kcontrol/filetypes/index.docbook
 share/doc/HTML/fr/kcontrol/fonts/common
 share/doc/HTML/fr/kcontrol/fonts/index.cache.bz2
 share/doc/HTML/fr/kcontrol/fonts/index.docbook
+share/doc/HTML/fr/kcontrol/helpindex/common
+share/doc/HTML/fr/kcontrol/helpindex/index.cache.bz2
+share/doc/HTML/fr/kcontrol/helpindex/index.docbook
 share/doc/HTML/fr/kcontrol/icons/common
 share/doc/HTML/fr/kcontrol/icons/index.cache.bz2
 share/doc/HTML/fr/kcontrol/icons/index.docbook
@@ -1114,6 +1129,7 @@ share/doc/HTML/fr/kuickshow/screenshot.png
 share/doc/HTML/fr/kuser/common
 share/doc/HTML/fr/kuser/index.cache.bz2
 share/doc/HTML/fr/kuser/index.docbook
+share/doc/HTML/fr/kuser/kuser.png
 share/doc/HTML/fr/kview/common
 share/doc/HTML/fr/kview/index.cache.bz2
 share/doc/HTML/fr/kview/index.docbook
@@ -1802,6 +1818,7 @@ share/locale/fr/flag.png
 @dirrm share/doc/HTML/fr/kcontrol/kcmaccess
 @dirrm share/doc/HTML/fr/kcontrol/kalarmd
 @dirrm share/doc/HTML/fr/kcontrol/icons
+@dirrm share/doc/HTML/fr/kcontrol/helpindex
 @dirrm share/doc/HTML/fr/kcontrol/fonts
 @dirrm share/doc/HTML/fr/kcontrol/filetypes
 @dirrm share/doc/HTML/fr/kcontrol/filemanager
@@ -1835,11 +1852,13 @@ share/locale/fr/flag.png
 @dirrm share/doc/HTML/fr/kaphorism
 @dirrm share/doc/HTML/fr/kandy
 @dirrm share/doc/HTML/fr/kamera
+@dirrm share/doc/HTML/fr/kalzium
+@dirrm share/doc/HTML/fr/kalarm
 @dirrm share/doc/HTML/fr/kaddressbook
 @dirrm share/doc/HTML/fr/kaboodle
-@dirrm share/doc/HTML/fr/helpindex
 @dirrm share/doc/HTML/fr/common
 @dirrm share/doc/HTML/fr/cervisia
+@dirrm share/doc/HTML/fr/atlantik
 @dirrm share/doc/HTML/fr/artsbuilder/images
 @dirrm share/doc/HTML/fr/artsbuilder
 @dirrm share/doc/HTML/fr/ark

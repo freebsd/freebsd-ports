@@ -614,9 +614,6 @@ share/doc/HTML/de/kioslave/telnet.docbook
 share/doc/HTML/de/kioslave/thumbnail.docbook
 share/doc/HTML/de/kioslave/webdav.docbook
 share/doc/HTML/de/kioslave/webdavs.docbook
-share/doc/HTML/de/kit/common
-share/doc/HTML/de/kit/index.cache.bz2
-share/doc/HTML/de/kit/index.docbook
 share/doc/HTML/de/kiten/common
 share/doc/HTML/de/kiten/index.cache.bz2
 share/doc/HTML/de/kiten/index.docbook
@@ -1120,6 +1117,7 @@ share/locale/de/LC_MESSAGES/appletproxy.mo
 share/locale/de/LC_MESSAGES/ark.mo
 share/locale/de/LC_MESSAGES/artsbuilder.mo
 share/locale/de/LC_MESSAGES/artscontrol.mo
+share/locale/de/LC_MESSAGES/artsmodules.mo
 share/locale/de/LC_MESSAGES/atlantik.mo
 share/locale/de/LC_MESSAGES/atlantikdesigner.mo
 share/locale/de/LC_MESSAGES/babelfish.mo
@@ -1614,7 +1612,6 @@ share/locale/de/flag.png
 @dirrm share/doc/HTML/de/kjumpingcube
 @dirrm share/doc/HTML/de/kjots
 @dirrm share/doc/HTML/de/kiten
-@dirrm share/doc/HTML/de/kit
 @dirrm share/doc/HTML/de/kioslave
 @dirrm share/doc/HTML/de/kinfocenter/xserver
 @dirrm share/doc/HTML/de/kinfocenter/usb

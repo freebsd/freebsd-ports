@@ -1,8 +1,4 @@
-share/doc/HTML/af/kicker-applets/common
-share/doc/HTML/af/kicker-applets/index.cache.bz2
-share/doc/HTML/af/kicker-applets/index.docbook
 share/doc/HTML/af/kicker-applets/kolourpicker.docbook
-share/doc/HTML/af/kicker-applets/ktimemon.docbook
 share/locale/af/LC_MESSAGES/aktion.mo
 share/locale/af/LC_MESSAGES/alarmdaemonctrl.mo
 share/locale/af/LC_MESSAGES/alsaplayerui.mo

@@ -578,7 +578,6 @@ share/services/kweatherservice.desktop
 @dirrm share/doc/HTML/en/amor
 @dirrm share/doc/HTML/en
 @dirrm share/doc/HTML
-@dirrm share/doc
 @dirrm share/apps/kworldclock/pics
 @dirrm share/apps/kworldclock/maps/depths
 @dirrm share/apps/kworldclock/maps

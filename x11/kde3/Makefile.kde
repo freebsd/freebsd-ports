@@ -79,8 +79,14 @@ STRIP=''
 .if !defined(_NO_KDE_NON_I386_OPTS)
 .if ${MACHINE_ARCH} == "alpha"
 CFLAGS=		-O0 ${KDE_CFLAGS}
+.endif # ${MACHINE_ARCH} == "alpha"
+.endif # !defined(_NO_KDE_NON_I386_OPTS)
+
+.if !defined(_NO_KDE_XINERAMA)
+.if !defined(WITHOUT_XINERAMA)
+CONFIGURE_ARGS+=	--with-xinerama
 .endif
-.endif
+.endif # !defined(_NO_KDE_XINERAMA)
 
 kde-version-check:
 .if exists(${LOCALBASE}/include/kfm.h)

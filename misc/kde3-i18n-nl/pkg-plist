@@ -368,9 +368,6 @@ share/doc/HTML/nl/kmoon/index.docbook
 share/doc/HTML/nl/kompare/common
 share/doc/HTML/nl/kompare/index.cache.bz2
 share/doc/HTML/nl/kompare/index.docbook
-share/doc/HTML/nl/konsole/common
-share/doc/HTML/nl/konsole/index.cache.bz2
-share/doc/HTML/nl/konsole/index.docbook
 share/doc/HTML/nl/konsole/konsole.png
 share/doc/HTML/nl/kpager/common
 share/doc/HTML/nl/kpager/index.cache.bz2
@@ -395,6 +392,7 @@ share/locale/nl/LC_MESSAGES/appletproxy.mo
 share/locale/nl/LC_MESSAGES/ark.mo
 share/locale/nl/LC_MESSAGES/artsbuilder.mo
 share/locale/nl/LC_MESSAGES/artscontrol.mo
+share/locale/nl/LC_MESSAGES/artsmodules.mo
 share/locale/nl/LC_MESSAGES/atlantik.mo
 share/locale/nl/LC_MESSAGES/atlantikdesigner.mo
 share/locale/nl/LC_MESSAGES/babelfish.mo
