@@ -1,0 +1,19 @@
+*** Imakefile.orig	Wed Dec  4 08:27:18 1996
+--- Imakefile	Wed Dec  4 08:27:53 1996
+***************
+*** 23,29 ****
+  /**/#   this may not work if xalarm is invoked from a pseudo terminal).
+  /**/# o Define USECUSERID to use cuserid(3) to get the user name.
+  
+! DEFINES = $(SIGNAL_DEFINES) -DUSERENAME -DUSEGETHOSTNAME -DUSEGETPWUID
+  
+  
+  OBJS = alarm.o when.o warnings.o times.o dates.o file.o fns.o xalarm.o
+--- 23,29 ----
+  /**/#   this may not work if xalarm is invoked from a pseudo terminal).
+  /**/# o Define USECUSERID to use cuserid(3) to get the user name.
+  
+! DEFINES = $(SIGNAL_DEFINES) -DFORKRETURNSPID_T -DUSERENAME -DUSEGETHOSTNAME -DUSEGETPWUID
+  
+  
+  OBJS = alarm.o when.o warnings.o times.o dates.o file.o fns.o xalarm.o
