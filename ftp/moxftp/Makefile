@@ -3,7 +3,7 @@
 # Date created:		19 December 1994
 # Whom:			janek
 #
-# $Id: Makefile,v 1.17 1998/08/18 23:23:02 hoek Exp $
+# $Id: Makefile,v 1.18 1998/08/19 04:16:15 hoek Exp $
 #
 
 DISTNAME=	moxftp-2.2
@@ -35,7 +35,7 @@ PROGRAM_NAME=xftp
 RESOURCE_NAME=Xftp
 .endif
 
-#LIB_DEPENDS=	Xaw3d\\.6:${PORTSDIR}/x11-toolkits/Xaw3d
+#LIB_DEPENDS=	Xaw3d.6:${PORTSDIR}/x11-toolkits/Xaw3d
 
 post-install:
 	@strip ${PREFIX}/bin/${PROGRAM_NAME}

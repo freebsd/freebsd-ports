@@ -3,7 +3,7 @@
 # Date created:		27 Jan 1998
 # Whom:			Jun-ichiro itojun Itoh <itojun@itojun.org>
 #
-# $Id: Makefile,v 1.5 1998/08/05 09:31:29 asami Exp $
+# $Id: Makefile,v 1.6 1998/08/10 12:35:43 itojun Exp $
 #
 
 DISTNAME=	siag-2.80
@@ -13,7 +13,7 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX} tsiag-2.80.tar.gz
 
 MAINTAINER=	itojun@itojun.org
 
-LIB_DEPENDS=	Xaw3d\\.6\\.:${PORTSDIR}/x11-toolkits/Xaw3d
+LIB_DEPENDS=	Xaw3d.6:${PORTSDIR}/x11-toolkits/Xaw3d
 
 USE_X_PREFIX=	yes
 WRKSRC=		${WRKDIR}/siag
