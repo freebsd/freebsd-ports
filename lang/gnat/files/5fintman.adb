@@ -101,13 +101,13 @@ package body System.Interrupt_Management is
      (signo   : Signal;
       code    : Interfaces.C.int;
       context : access struct_sigcontext) is
+      Result : Interfaces.C.int;
    begin
+      --  With the __builtin_longjmp, the signal mask is not restored, so we
+      --  need to restore it explicitely.
 
-      --  As long as we are using a longjmp to return control to the
-      --  exception handler on the runtime stack, we are safe. The original
-      --  signal mask (the one we had before coming into this signal catching
-      --  function) will be restored by the longjmp. Therefore, raising
-      --  an exception in this handler should be a safe operation.
+      Result := pthread_sigmask (SIG_UNBLOCK, Signal_Mask'Access, null);
+      pragma Assert (Result = 0);
 
       --  Check that treatment of exception propagation here
       --  is consistent with treatment of the abort signal in
@@ -147,20 +147,23 @@ begin
 
    begin
 
-      Abort_Task_Interrupt := SIGABRT;
+      Abort_Task_Interrupt := SIGADAABORT;
       --  Change this if you want to use another signal for task abort.
       --  SIGTERM might be a good one.
 
       act.sa_handler := Notify_Exception'Address;
 
-      act.sa_flags := 16#010#;
-      --  Set sa_flags to SA_NODEFER so that during the handler execution
-      --  we do not change the Signal_Mask to be masked for the Signal.
+      act.sa_flags := 0;
+
+      --  On some targets, we set sa_flags to SA_NODEFER so that during the
+      --  handler execution we do not change the Signal_Mask to be masked for
+      --  the Signal.
       --  This is a temporary fix to the problem that the Signal_Mask is
       --  not restored after the exception (longjmp) from the handler.
       --  The right fix should be made in sigsetjmp so that we save
       --  the Signal_Set and restore it after a longjmp.
-      --  In that case, this field should be changed back to 0. ???
+      --  Since SA_NODEFER is obsolete, instead we reset explicitely
+      --  the mask in the exception handler.
 
       Result := sigemptyset (Signal_Mask'Access);
       pragma Assert (Result = 0);
@@ -184,8 +187,6 @@ begin
       end loop;
 
       Keep_Unmasked (Abort_Task_Interrupt) := True;
-      Keep_Unmasked (SIGSTOP) := True;
-      Keep_Unmasked (SIGKILL) := True;
 
       --  By keeping SIGINT unmasked, allow the user to do a Ctrl-C, but in the
       --  same time, disable the ability of handling this signal
@@ -195,24 +196,19 @@ begin
 
       if Unreserve_All_Interrupts = 0 then
          Keep_Unmasked (SIGINT) := True;
-      else
-         Keep_Unmasked (SIGINT)  := False;
       end if;
 
-      --  FreeBSD uses SIGINFO to dump thread status to stdout.  If
-      --  the user really wants to attach his own handler, let him.
+      for I in Unmasked'Range loop
+         Keep_Unmasked (Interrupt_ID (Unmasked (I))) := True;
+      end loop;
 
-      --  FreeBSD pthreads uses setitimer/getitimer for thread scheduling.
-      --  Specifically, it uses timer ITIMER_PROF which generates SIGPROF.
-      --  FreeBSD pthreads also needs SIGCHLD.  The FreeBSD threads library
-      --  also uses SIGINFO for debugging, but it's not required so we'll
-      --  let an Ada application use it.
-      Keep_Unmasked (SIGCHLD) := True;
-      Keep_Unmasked (SIGPROF) := True;
+      Reserve := Keep_Unmasked or Keep_Masked;
 
-      Reserve := Reserve or Keep_Unmasked or Keep_Masked;
+      for I in Reserved'Range loop
+         Reserve (Interrupt_ID (Reserved (I))) := True;
+      end loop;
 
-      Reserve (0) := true;
+      Reserve (0) := True;
       --  We do not have Signal 0 in reality. We just use this value
       --  to identify non-existent signals (see s-intnam.ads). Therefore,
       --  Signal 0 should not be used in all signal related operations hence

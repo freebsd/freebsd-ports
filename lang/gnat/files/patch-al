@@ -14,7 +14,7 @@
 + 
 +    procedure tmpnam (tname : chars) is
 +       use type System.Address;
-+       Template : string (1 .. 18) := "/var/tmp/tmp.XXXX" & Ascii.Nul;
++       Template : String (1 .. 18) := "/var/tmp/tmp.XXXX" & ASCII.Nul;
 +       Name     : chars;
 +    begin
 +       Name := C_mktemp (Template'Address);
@@ -24,8 +24,8 @@
 +    end tmpnam;
 + 
 +    function tmpfile return FILEs is
-+       Name : string (1 .. L_tmpnam) := (others => Ascii.Nul);
-+       Mode : string (1 .. 3) := "w+" & Ascii.Nul;
++       Name : String (1 .. L_tmpnam) := (others => ASCII.Nul);
++       Mode : String (1 .. 3) := "w+" & ASCII.Nul;
 +    begin
 +       tmpnam (Name'Address);
 +       return (fopen (Name'Address, Mode'Address));

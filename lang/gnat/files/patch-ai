@@ -1,8 +1,8 @@
-*** ./ada/a-init.c.orig	Fri Sep 24 08:42:43 1999
---- ./ada/a-init.c	Mon Jun 26 21:43:54 2000
+*** ada/a-init.c.orig	Wed Jul 19 15:09:57 2000
+--- ada/a-init.c	Fri Oct 13 11:25:52 2000
 ***************
-*** 1445,1450 ****
---- 1445,1532 ----
+*** 1441,1446 ****
+--- 1441,1528 ----
   }
   
   
@@ -80,11 +80,11 @@
 + {
 +    __gnat_install_handler ();
 + 
-+    /* XXX - Initialize floating-point coprocessor.  This call is
-+       needed because FreeBSD defaults to 53-bit precision instead
-+       of 64-bit precision.   We require the full precision for
++    /* XXX - Initialize floating-point coprocessor. This call is
++       needed because FreeBSD defaults to 64-bit precision instead
++       of 80-bit precision?  We require the full precision for
 +       proper operation, given that we have set Max_Digits etc
-+       with this in mind. */
++       with this in mind */
 +    __gnat_init_float ();
 + }
 + 
@@ -92,19 +92,19 @@
   /* __gnat_initialize (default version) */
   /***************************************/
 ***************
-*** 1470,1476 ****
-     defined in all Win32 versions, but only actually does something on
-     the i386 version, where it properly initializes the FPU for GNAT use.  */
+*** 1466,1472 ****
+     WIN32 and could be used under OS/2 */
   
-! #if defined (_WIN32) || defined (__INTERIX)
-  void
-  __gnat_init_float ()
-  {
---- 1552,1558 ----
-     defined in all Win32 versions, but only actually does something on
-     the i386 version, where it properly initializes the FPU for GNAT use.  */
+  #if defined (_WIN32) || defined (__INTERIX) || defined (__EMX__) \
+!   || defined (__Lynx__)
   
-! #if defined (_WIN32) || defined (__INTERIX) || defined (__FreeBSD__)
-  void
-  __gnat_init_float ()
-  {
+  #define HAVE_GNAT_INIT_FLOAT
+  
+--- 1548,1554 ----
+     WIN32 and could be used under OS/2 */
+  
+  #if defined (_WIN32) || defined (__INTERIX) || defined (__EMX__) \
+!   || defined (__Lynx__) || defined (__FreeBSD__)
+  
+  #define HAVE_GNAT_INIT_FLOAT
+  

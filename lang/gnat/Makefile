@@ -14,21 +14,26 @@
 #   using symbolic links.
 
 PORTNAME=	gnat
-PORTVERSION=	3.12p
+PORTVERSION=	3.13p
 CATEGORIES=	lang
-MASTER_SITES=	ftp://cs.nyu.edu/pub/gnat/ \
-		${MASTER_SITE_GNU}
-DISTNAME=	gcc-2.8.1
-DISTFILES=	gnat-3.12p-src.tar.gz gcc-2.8.1.tar.gz
+MASTER_SITES=	ftp://cs.nyu.edu/pub/gnat/${PORTVERSION}/ \
+		${MASTER_SITE_LOCAL} ${MASTER_SITE_GNU}
+MASTER_SITE_SUBDIR=	gcc
+DISTFILES=	${GNATNAME}.tgz gcc-2.8.1.tar.gz
 
 MAINTAINER=	eischen@vigrid.com
 
 .include <bsd.port.pre.mk>
 
+WRKSRC=		${WRKDIR}/gcc-2.8.1
+GNATNAME=	gnat-${PORTVERSION}-src
 GNUHOST=	${ARCH}-unknown-freebsd${OSREL}
 GCC_VERSION=	2.8.1
 
-PLIST_SUB=	GNUHOST=${GNUHOST} GCC_VERSION=${GCC_VERSION}
+PLIST_SUB=	GNUHOST=${GNUHOST} GCC_VERSION=${GCC_VERSION} \
+		LIBRARY_VERSION=${LIBRARY_VERSION} \
+		SHARED_MAJOR=${SHARED_MAJOR}
+
 # Make no mistake about what host/target we are building on/for.
 # This package does not support cross-compiling, and this fixes
 # problems with bsd.port.mk files from earlier FreeBSD 3.x releases.
@@ -38,12 +43,12 @@ GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 MAN1=		adagcc.1 cccp.1
 
-# You need a compiler who calls an existing GNAT compiler (3.11 or greater).
+# You need a compiler who calls an existing GNAT compiler (3.12 or greater).
 # If you have one, point CC at it.  By default, we'll look for one in the
 # obvious places.  If we can't find one, we'll fetch a distfile containing
 # a minimum (still pretty large) compiler toolset and use that to build.
 
-# For the GNAT compiler, we look in ${PREFIX} and in /usr/local.
+# For the GNAT compiler, we look in ${PREFIX} and in ${LOCALBASE}.
 .ifdef PREFIX
 have_boot!=	if [ -x ${PREFIX}/bin/adagcc -a -x ${PREFIX}/bin/gnatbind ]; then \
 			${ECHO} "${PREFIX}/bin"; \
@@ -54,8 +59,8 @@ have_boot!=	if [ -x ${PREFIX}/bin/adagcc -a -x ${PREFIX}/bin/gnatbind ]; then \
 have_boot=
 .endif
 .if empty(have_boot)
-have_boot!=	if [ -x /usr/local/bin/adagcc -a -x /usr/local/bin/gnatbind ]; then \
-			${ECHO} "/usr/local/bin"; \
+have_boot!=	if [ -x {LOCALBASE}/bin/adagcc -a -x {LOCALBASE}/bin/gnatbind ]; then \
+			${ECHO} "{LOCALBASE}/bin"; \
 		else \
 			${ECHO} ""; \
 		fi
@@ -86,7 +91,7 @@ BROKEN=	"Cannot build with or for an aout compiler."
 .endif
 
 .if empty(have_boot)
-DISTFILES+=	gnat-3.11p-boot.tar.gz
+DISTFILES+=	gnat-3.13p-boot.tar.gz
 # Warning!  You need the trailing slash on GCC_EXEC_PREFIX.
 COMPILEDATA=	GCC_EXEC_PREFIX=${WRKDIR}/adaboot/lib/gcc-lib/ \
 		ADA_INCLUDE_PATH=${WRKDIR}/adaboot/lib/gcc-lib/adainclude \
@@ -95,8 +100,20 @@ have_boot=	${WRKDIR}/adaboot
 .endif
 
 # Make sure we use the Ada-aware gcc compiler.
-CC = adagcc
+CC =	adagcc
 CONFIGURE_ENV=	${COMPILE_DATA} PATH=${have_boot}/bin:$$PATH
+
+.if OVERRIDE_CFLAGS
+GNATCFLAGS=	${CFLAGS}
+GNATLIBCFLAGS=	${CFLAGS}
+.else
+GNATCFLAGS=	-O2
+GNATLIBCFLAGS=	-O2
+.endif
+
+# Shared library handling
+LIBRARY_VERSION=	3.13
+SHARED_MAJOR=	1
 
 # Account for signal set changes
 .if ${OSVERSION} > 400010
@@ -108,14 +125,16 @@ SIGACTION=	old_struct_sigaction
 .endif
 
 pre-patch:
-	@${MV} ${WRKSRC}/config/i386/freebsd.h ${WRKSRC}/config/i386/freebsd-aout.h
-	@${MV} ${WRKSRC}/config/i386/freebsd-elf.h ${WRKSRC}/config/i386/freebsd.h
+	@if [ ! -f ${WRKSRC}/config/i386/freebsd-aout.h ]; then \
+	 	${MV} ${WRKSRC}/config/i386/freebsd.h ${WRKSRC}/config/i386/freebsd-aout.h; \
+		${MV} ${WRKSRC}/config/i386/freebsd-elf.h ${WRKSRC}/config/i386/freebsd.h; \
+	fi
 	@${ECHO} "===>  Applying FreeBSD patches to gcc for ${DISTNAME}"
 	-( ${PATCH} ${PATCH_ARGS} < ${FILESDIR}/freebsdgcc28-patches )
-	@${ECHO} "===>  Patching gcc for ${DISTNAME}"
-	-( ${PATCH} ${PATCH_ARGS} < ${WRKDIR}/gnat-3.12p-src/src/gcc-281.dif )
+	@${ECHO} "===>  Patching gcc for ${GNATNAME}"
+	-( ${PATCH} ${PATCH_ARGS} < ${WRKDIR}/${GNATNAME}/src/gcc-281.dif )
 	@${ECHO} "===>  Copying GNAT compiler sources into GCC tree."
-	-( ${MV} ${WRKDIR}/gnat-3.12p-src/src/ada ${WRKDIR}/gcc-2.8.1 )
+	-( ${MV} ${WRKDIR}/${GNATNAME}/src/ada ${WRKDIR}/gcc-2.8.1 )
 	@${ECHO} "===>  Making way for FreeBSD GNAT support files"
 	-( ${RM} -f ${WRKSRC}/ada/[45]f* )
 
@@ -149,23 +168,40 @@ do-configure:
 
 #
 # We intentionally override CFLAGS because the build procedure is explicitly
-# spelled out in gnat-3.12p-src/src/README.BUILD.  Remove CFLAGS from the
+# spelled out in gnat-3.13p-src/src/README.BUILD.  Remove CFLAGS from the
 # do-build target at your own risk.
 #
 do-build:
 	(cd ${WRKSRC}; \
 	    PATH=${have_boot}/bin:$$PATH \
-	    ${COMPILEDATA} ${GMAKE} CC="${CC}" OLDCC="adagcc" CFLAGS="-O2" LANGUAGES="c ada gcov" )
+	    ${COMPILEDATA} ${GMAKE} CC="${CC}" OLDCC="adagcc" CFLAGS="${GNATCFLAGS}" LANGUAGES="c ada gcov" )
 	(cd ${WRKSRC}; \
-	    ${GMAKE} CFLAGS="-O2" LANGUAGES="c ada gcov" bootstrap )
+	    ${GMAKE} CFLAGS="${GNATCFLAGS}" LANGUAGES="c ada gcov" bootstrap )
 	(cd ${WRKSRC}; \
-	    ${GMAKE} CFLAGS="-O2" gnattools )
+	    ${GMAKE} CFLAGS="${GNATCFLAGS}" gnattools )
 	(cd ${WRKSRC}; \
-	    ${GMAKE} CFLAGS="-O2" GNATLIBCFLAGS="-O2" gnatlib )
+	    ${GMAKE} CFLAGS="${GNATCFLAGS}" GNATLIBCFLAGS="-fPIC ${GNATLIBCFLAGS}" \
+	    soext=.so.${SHARED_MAJOR} LIBRARY_VERSION=${LIBRARY_VERSION} \
+	    gnatlib-shared )
+	${MV} ${WRKSRC}/ada/rts/lib*-${LIBRARY_VERSION}.so.${SHARED_MAJOR} \
+		${WRKSRC}/ada
+	${RM} ${WRKSRC}/stamp-gnatlib2
+	(cd ${WRKSRC}; \
+	    ${GMAKE} CFLAGS="${GNATCFLAGS}" GNATLIBCFLAGS="${GNATLIBCFLAGS}" gnatlib )
 
 do-install:
 	(cd ${WRKSRC}; \
 	    ${GMAKE} CC="${CC}" LANGUAGES="c ada gcov" ${INSTALL_TARGET} )
+	${INSTALL_DATA} \
+	    ${WRKSRC}/ada/libgnat-${LIBRARY_VERSION}.so.${SHARED_MAJOR} \
+	    ${PREFIX}/lib
+	${INSTALL_DATA} \
+	    ${WRKSRC}/ada/libgnarl-${LIBRARY_VERSION}.so.${SHARED_MAJOR} \
+	    ${PREFIX}/lib
+	${LN} -s ${PREFIX}/lib/libgnat-${LIBRARY_VERSION}.so.${SHARED_MAJOR} \
+	    ${PREFIX}/lib/gcc-lib/${GNUHOST}/${GCC_VERSION}/adalib/libgnat.so
+	${LN} -s ${PREFIX}/lib/libgnarl-${LIBRARY_VERSION}.so.${SHARED_MAJOR} \
+	    ${PREFIX}/lib/gcc-lib/${GNUHOST}/${GCC_VERSION}/adalib/libgnarl.so
 
 post-install:
 	@(for prog in ${PREFIX}/bin/adagcc \
@@ -193,13 +229,7 @@ post-install:
 	    fi \
 	done)
 	@(${TOUCH} ${TOUCH_FLAGS} ${PREFIX}/lib/gcc-lib/${GNUHOST}/${GCC_VERSION}/include/float.h)
-	@(${CHOWN} -R bin:bin ${PREFIX}/lib/gcc-lib/${GNUHOST}/${GCC_VERSION})
-	@(${ECHO} "-----------------------------------------------------------" )
-	@(${ECHO} "" )
-	@(${ECHO} "For information about using the tasking library please read" )
-	@(${ECHO} "the README.Tasking file" )
-	@(${ECHO} "" )
-	@(${ECHO} "-----------------------------------------------------------" )
-	@(${ECHO} "" )
+	@(chown -R bin:bin ${PREFIX}/lib/gcc-lib/${GNUHOST}/${GCC_VERSION})
+	${LDCONFIG} -m ${PREFIX}/lib
 
 .include <bsd.port.post.mk>
