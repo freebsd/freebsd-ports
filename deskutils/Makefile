@@ -21,7 +21,6 @@
     SUBDIR += jlj
     SUBDIR += kdepim
     SUBDIR += kmymoney2
-    SUBDIR += korganizer
     SUBDIR += kproject
     SUBDIR += logjam
     SUBDIR += loserjabber
