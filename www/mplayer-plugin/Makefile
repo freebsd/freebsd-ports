@@ -14,7 +14,7 @@ MASTER_SITE_SUBDIR=	mplayerplug-in
 MAINTAINER=	marcus@FreeBSD.org
 COMMENT=	A Mozilla plugin for the MPlayer media player
 
-.if defined(WITH_MOZILLA) && WITH_MOZILLA=="firefox"
+.if defined(WITH_MOZILLA) && ${WITH_MOZILLA}=="firefox"
 BUILD_DEPENDS=	${X11BASE}/lib/firefox/lib/pkgconfig/mozilla-plugin.pc:${PORTSDIR}/www/firefox
 RUN_DEPENDS=	${X11BASE}/lib/firefox/lib/pkgconfig/mozilla-plugin.pc:${PORTSDIR}/www/firefox
 .else
