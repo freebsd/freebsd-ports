@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	cc65
-PORTVERSION=	2.10.0a
-PORTREVISION=	1
+PORTVERSION=	2.10.1
 CATEGORIES=	devel
 MASTER_SITES=	ftp://ftp.musoftware.de/pub/uz/cc65/ \
 		http://www.funet.fi/pub/cbm/programming/cc65/ \
@@ -17,7 +16,7 @@ MASTER_SITES=	ftp://ftp.musoftware.de/pub/uz/cc65/ \
 #		ftp://ftp.elysium.pl/tools/crossplatform/programming/c/cc65/ \
 DISTNAME=	${PORTNAME}-sources-${PORTVERSION}
 
-MAINTAINER=	watchman@ludd.luth.se
+MAINTAINER=	watchman@ludd.ltu.se
 COMMENT=	Cross-compiler for 6502-based systems, includes 65816 assembler
 
 USE_SUBMAKE=	yes
@@ -30,9 +29,6 @@ CFLAGS+=	-DCC65_INC=\\\"${PREFIX}/lib/cc65/include\\\" \
 # Need ${WRKSRC} so that the (slightly ugly) != assignments work
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} != "i386"
-BROKEN=		"Does not compile on !i386"
-.endif
 
 WRKDIR?=	${WRKDIRPREFIX}${.CURDIR}/work
 WRKSRC=		${WRKDIR}/cc65-${PORTVERSION}
