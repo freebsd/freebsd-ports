@@ -1,15 +1,15 @@
 # New ports collection makefile for:	TkStep
-# Version required:	8.0p2
 # Date created:		06 November 1997
 # Whom:			Thomas Gellekum <tg@FreeBSD.org>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	tk8.0.4
-PKGNAME=	tkstep-8.0.4
+PORTNAME=	tkstep
+PORTVERSION= 	8.0.4
 CATEGORIES=	x11-toolkits tk80
 MASTER_SITES=	ftp://ftp.scriptics.com/pub/tcl/tcl8_0/
+DISTNAME=	tk${PORTVERSION}
 
 PATCH_SITES= 	ftp://touchwood.ee.uts.edu.au/pub/TkSTEP/
 PATCHFILES=	tk8.0.4-to-tkstep8.0.4-2.patch.tar.gz

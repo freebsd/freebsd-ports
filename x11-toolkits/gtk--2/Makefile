@@ -1,16 +1,16 @@
 # New ports collection makefile for:   gtk--
-# Version required:    1.0.3
 # Date created:        11 May 1998
 # Whom:                Yukihiro Nakai <Nakai@technologist.com>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	Gtk---1.0.3
-PKGNAME=	gtk---1.0.3
+PORTNAME=	gtk--
+PORTVERSION= 	1.0.3
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	stable/sources/Gtk--
+DISTNAME=	Gtk---${PORTVERSION}
 
 MAINTAINER=	nakai@FreeBSD.org
 

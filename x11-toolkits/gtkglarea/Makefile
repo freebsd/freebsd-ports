@@ -1,12 +1,12 @@
 # New ports collection makefile for:   gtkglarea
-# Version required:    1.2.1
 # Date created:        1 August 1999
 # Whom:                Michael Sardo <jaeger16@yahoo.com>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	gtkglarea-1.2.1
+PORTNAME=	gtkglarea
+PORTVERSION= 	1.2.1
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	http://www.student.oulu.fi/~jlof/gtkglarea/download/
 

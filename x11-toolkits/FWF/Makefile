@@ -1,12 +1,12 @@
 # New ports collection makefile for:	FWF Widgets
-# Version required:	4.0
 # Date created:		14 July 1995
 # Whom:			jkh
 #
 # $FreeBSD$
 #
 
-DISTNAME=	fwf-4.0
+PORTNAME=	fwf
+PORTVERSION= 	4.0
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	${MASTER_SITE_SUNSITE}	\
 		ftp://ftp.let.rug.nl/pub/FWF/

@@ -1,15 +1,15 @@
 # New ports collection makefile for:	iv
-# Version required:	3.2a
 # Date created:		23.sept.1994
 # Whom:			adam
 #
 # $FreeBSD$
 #
 
-DISTNAME=	3.2a
-PKGNAME=	iv-3.2a
+PORTNAME=	iv
+PORTVERSION= 	3.2a
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	ftp://sgi.com/graphics/interviews/
+DISTNAME=	${PORTVERSION}
 EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=	tanimura@FreeBSD.org

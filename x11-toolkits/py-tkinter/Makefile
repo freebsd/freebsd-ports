@@ -1,16 +1,16 @@
 # New ports collection makefile for:    py-Tkinter
-# Version required:     1.5.2
 # Date created:         12 Jan 1999
 # Whom:                 Thomas Gellekum <tg@FreeBSD.org>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	py152
-PKGNAME=	py-tkinter-1.5.2
+PORTNAME=	py-tkinter
+PORTVERSION= 	1.5.2
 CATEGORIES=	x11-toolkits python
 MASTER_SITES=	ftp://www.python.org/pub/python/src/ \
 		ftp://ftp.cwi.nl/pub/python/src/
+DISTNAME=	py152
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	tg@FreeBSD.org

@@ -1,15 +1,15 @@
 # New ports collection makefile for:   qt21
-# Version required:	2.1.0 beta2
 # Date created:		17 Jul 1999
 # Whom:			imura@kml.cs.titech.ac.jp
 #
 # $FreeBSD$
 #
 
-DISTNAME=	qt-x11-2.1.0-beta3
-PKGNAME=	qt-2.1.0b3
+PORTNAME=	qt
+PORTVERSION= 	2.1.0b3
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	ftp://ftp.troll.no/qt/source/
+DISTNAME=	qt-x11-2.1.0-beta3
 
 MAINTAINER=	imura@FreeBSD.org
 

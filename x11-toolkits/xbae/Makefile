@@ -1,5 +1,4 @@
 # New ports collection makefile for:	Xbae
-# Version required:	4.6.2
 # Date created:		11 December 96
 # Whom:			Lars Koeller <Lars_Koeller@odie.physik2.uni-rostock.de>
 # With some
@@ -8,12 +7,13 @@
 # $FreeBSD$
 #
 
-DISTNAME=	Xbae-4.7
-PKGNAME=	xbae-4.7
+PORTNAME=	xbae
+PORTVERSION= 	4.7
 CATEGORIES=	x11-toolkits math
 MASTER_SITES=	ftp://sunsite.doc.ic.ac.uk/packages/X11/contrib/widgets/ \
 		${MASTER_SITE_XCONTRIB}
 MASTER_SITE_SUBDIR=	widgets/motif
+DISTNAME=	Xbae-${PORTVERSION}
 
 MAINTAINER=	Lars.Koeller@Uni-Bielefeld.de
 

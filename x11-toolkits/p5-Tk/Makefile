@@ -1,16 +1,16 @@
 # New ports collection makefile for:	p5-Tk
-# Version required:			402.002
 # Date created:				October 21st 1996
 # Whom:	      				James FitzGibbon <jfitz@FreeBSD.org>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	Tk800.008
-PKGNAME=	p5-Tk-800.008
+PORTNAME=	p5-Tk
+PORTVERSION= 	800.008
 CATEGORIES=	x11-toolkits tk80 perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Tk
+DISTNAME=	Tk${PORTVERSION}
 
 MAINTAINER=	jfitz@FreeBSD.org
 

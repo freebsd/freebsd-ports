@@ -1,16 +1,16 @@
 # New ports collection makefile for:	xg
-# Version required:			1.0
 # Date created:				3 December 1998
 # Whom:					Andrey Zakhvatov
 #
 # $FreeBSD$
 #
 
-DISTNAME=	xg
-PKGNAME=	xg-1.0
+PORTNAME=	xg
+PORTVERSION= 	1.0
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	ftp://messners.com/code/ \
 		http://www.messners.com/code/
+DISTNAME=	${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
 

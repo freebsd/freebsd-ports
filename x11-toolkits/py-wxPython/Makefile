@@ -1,16 +1,16 @@
 # New ports collection makefile for:    wxPython
-# Version required:     		2.1.11
 # Date created:         		September 18, 1999
 # Whom:					nectar@FreeBSD.ORG
 #
 # $FreeBSD$
 #
 
-DISTNAME=	wxPython-2.1.11
-PKGNAME=	py-wxPython-2.1.11
+PORTNAME=	py-wxPython
+PORTVERSION= 	2.1.11
 CATEGORIES=	x11-toolkits python
 MASTER_SITES=	http://alldunn.com/wxPython/dist/ \
 		http://www.nectar.com/distfiles/
+DISTNAME=	wxPython-${PORTVERSION}
 
 MAINTAINER=	nectar@FreeBSD.ORG
 

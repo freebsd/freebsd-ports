@@ -1,16 +1,16 @@
 # New ports collection makefile for:	xview-clients
-# Version required:     3.2p1-X11R6
 # Date created:         22 November 1994
 # Whom:                 ljo (orig)
 #
 # $FreeBSD$
 #
 
-DISTNAME=	xview3.2p1-X11R6
-PKGNAME=	xview-clients-3.2.1
+PORTNAME=	xview-clients
+PORTVERSION= 	3.2.1
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	${MASTER_SITE_LOCAL} \
 		${MASTER_SITE_XCONTRIB}
+DISTNAME=	xview3.2p1-X11R6
 
 MAINTAINER=	ports@FreeBSD.org
 

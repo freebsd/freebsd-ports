@@ -1,15 +1,15 @@
 # New ports collection makefile for:	itk
-# Version required:	3.0.1
 # Date created:		Aug 17 1996
 # Whom:			chuckr
 #
 # $FreeBSD$
 #
 
-DISTNAME=	itcl3.0.1
-PKGNAME=	iwidgets-3.0.0
+PORTNAME=	iwidgets
+PORTVERSION= 	3.0.0
 CATEGORIES=	x11-toolkits tk82
 MASTER_SITES=	ftp://ftp.tcltk.com/pub/itcl/
+DISTNAME=	itcl3.0.1
 
 MAINTAINER=	dmlb@ragnet.demon.co.uk
 

@@ -1,5 +1,4 @@
 # New ports collection makefile for:	xforms
-# Version required:	0.88.1
 # Date created:		28 March 1997
 # Whom:			gena
 #
@@ -24,7 +23,8 @@ MASTER_SITES=	ftp://bragg.phys.uwm.edu/pub/xforms/freeBSD/ \
 		ftp://ftp.via.ecp.fr/pub2/xforms/freeBSD/ \
 		ftp://ftp.st.ryukoku.ac.jp/pub/X11/xforms/freeBSD/
 .endif
-PKGNAME=	xforms-0.88.1
+PORTNAME=	xforms
+PORTVERSION= 	0.88.1
 CATEGORIES=	graphics x11-toolkits
 EXTRACT_SUFX=	.tgz
 

@@ -1,12 +1,12 @@
 # New ports collection makefile for:   guile-gtk
-# Version required:    0.17
 # Date created:        1 January 2000
 # Whom:                Matt Braithwaite <mab@red-bean.com>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	guile-gtk-0.17
+PORTNAME=	guile-gtk
+PORTVERSION= 	0.17
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	http://www.ping.de/sites/zagadka/guile-gtk/download/
 
