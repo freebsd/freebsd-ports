@@ -107,7 +107,8 @@ bin/highlight
 %%DATADIR%%/themes/matlab.style
 %%DATADIR%%/themes/navy.style
 %%DATADIR%%/themes/neon.style
-%%DATADIR%%/themes/neon2.style %%DATADIR%%/themes/night.style
+%%DATADIR%%/themes/neon2.style
+%%DATADIR%%/themes/night.style
 %%DATADIR%%/themes/nightvision.style
 %%DATADIR%%/themes/peachy.style
 %%DATADIR%%/themes/print.style
