@@ -5,8 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	gd
-PORTVERSION=	0.42
-PORTREVISION=	1
+PORTVERSION=	0.51
 CATEGORIES=	graphics python
 MASTER_SITES=	http://newcenturycomputers.net/projects/download.cgi/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
