@@ -69,10 +69,16 @@ share/xpenguins/themes/Turtles/floater.xpm
 share/xpenguins/themes/Turtles/tumbler.xpm
 share/xpenguins/themes/Turtles/turtle.png
 share/xpenguins/themes/Turtles/walker.xpm
+share/xpenguins/themes/Daemon/about
+share/xpenguins/themes/Daemon/config
+share/xpenguins/themes/Daemon/daemon.png
+share/xpenguins/themes/Daemon/walker.xpm
+share/xpenguins/themes/Daemon/faller.xpm
 @dirrm share/xpenguins/themes/Turtles
 @dirrm share/xpenguins/themes/Penguins
 @dirrm share/xpenguins/themes/Classic_Penguins
 @dirrm share/xpenguins/themes/Bill
 @dirrm share/xpenguins/themes/Big_Penguins
+@dirrm share/xpenguins/themes/Daemon
 @dirrm share/xpenguins/themes
 @dirrm share/xpenguins
