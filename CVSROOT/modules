@@ -1318,7 +1318,7 @@ electric	ports/cad/electric
 electriceyes	ports/graphics/electriceyes
 electricfence	ports/devel/ElectricFence
 electricsheep	ports/x11/electricsheep
-elf2aout	src/usr.bin/elf2aout
+elf2aout	src/usr.sbin/elf2aout
 elf2exe		src/usr.sbin/elf2exe
 elfio		ports/devel/elfio
 elftoaout	ports/devel/elftoaout
