@@ -6,9 +6,8 @@
 #
 
 PORTNAME=	ntop
-PORTVERSION=	3.0
-PORTREVISION=	1
-CATEGORIES=	net ipv6
+PORTVERSION=	3.1
+CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/.p/pre/}
@@ -22,6 +21,7 @@ LIB_DEPENDS=	gd.4:${PORTSDIR}/graphics/gd \
 		png.5:${PORTSDIR}/graphics/png
 
 DBDIR?=		/var/db
+WRKSRC=		${WRKDIR}/${PORTNAME}
 
 USE_GETOPT_LONG=yes
 USE_GMAKE=	yes
@@ -38,6 +38,8 @@ CONFIGURE_ARGS=	--localstatedir=${DBDIR} \
 		--with-gd-root=${LOCALBASE} \
 		--with-libpng-root=${LOCALBASE} \
 		--with-zlib-root=/usr
+# we currently disable IPv6
+CONFIGURE_ARGS+=--disable-ipv6
 
 MAN8=		ntop.8
 
@@ -94,8 +96,8 @@ post-install:
 	@${MKDIR} ${DBDIR}/ntop
 	@${CHOWN} -R nobody:nobody ${DBDIR}/ntop
 	@${RMDIR} ${PREFIX}/lib/plugins
-	@${SED} -e "s#%%PREFIX%%#${PREFIX}#g" ${FILESDIR}/ntop.sh > \
-		${WRKDIR}/ntop.sh
+	@${SED} -e "s#%%PREFIX%%#${PREFIX}#g;s#%%DBDIR%%#${DBDIR}#g" \
+		${FILESDIR}/ntop.sh > ${WRKDIR}/ntop.sh
 	@${INSTALL_DATA} ${WRKDIR}/ntop.sh ${PREFIX}/etc/rc.d
 	@${SED} "s,%%LOCALBASE%%,${LOCALBASE},g" < ${PKGMESSAGE}
 

@@ -1,6 +1,6 @@
---- configure.orig	Sun Mar 21 23:45:17 2004
-+++ configure	Tue Mar 23 14:37:28 2004
-@@ -4898,7 +4898,7 @@
+--- configure.orig	Tue Dec 21 05:07:24 2004
++++ configure	Sun Jan 16 10:19:25 2005
+@@ -5173,7 +5173,7 @@
          exit 1
          ;;
      *1\.3\.[45]\-freebsd\-ports*)
@@ -9,7 +9,7 @@
          echo "*"
          echo "* Fasten your seat belt and good luck!  If you are injured, the"
          echo "* development team will disavow any knowledge of your intentions."
-@@ -20276,13 +20276,13 @@
+@@ -22928,13 +22928,13 @@
  
  
  
@@ -25,9 +25,9 @@
 -LIBS="-lglib  $LIBS"
 +LIBS="-lglib-2.0  $LIBS"
  cat >conftest.$ac_ext <<_ACEOF
- #line $LINENO "configure"
  /* confdefs.h.  */
-@@ -20297,11 +20297,11 @@
+ _ACEOF
+@@ -22948,11 +22948,11 @@
  #endif
  /* We use char because int might match the return type of a gcc2
     builtin and then its argument prototype would still apply.  */
@@ -41,29 +41,7 @@
    ;
    return 0;
  }
-@@ -20318,24 +20318,24 @@
-   ac_status=$?
-   echo "$as_me:$LINENO: \$? = $ac_status" >&5
-   (exit $ac_status); }; }; then
--  ac_cv_lib_glib_g_date_julian=yes
-+  ac_cv_lib_glib_g_date_new_julian=yes
- else
-   echo "$as_me: failed program was:" >&5
- sed 's/^/| /' conftest.$ac_ext >&5
- 
--ac_cv_lib_glib_g_date_julian=no
-+ac_cv_lib_glib_g_date_new_julian=no
- fi
- rm -f conftest.$ac_objext conftest$ac_exeext conftest.$ac_ext
- LIBS=$ac_check_lib_save_LIBS
- fi
--echo "$as_me:$LINENO: result: $ac_cv_lib_glib_g_date_julian" >&5
--echo "${ECHO_T}$ac_cv_lib_glib_g_date_julian" >&6
--if test $ac_cv_lib_glib_g_date_julian = yes; then
-+echo "$as_me:$LINENO: result: $ac_cv_lib_glib_g_date_new_julian" >&5
-+echo "${ECHO_T}$ac_cv_lib_glib_g_date_new_julian" >&6
-+if test $ac_cv_lib_glib_g_date_new_julian = yes; then
-   cat >>confdefs.h <<_ACEOF
+@@ -22997,7 +22997,7 @@
  #define HAVE_LIBGLIB 1
  _ACEOF
  
@@ -72,7 +50,7 @@
  
  fi
  
-@@ -24989,7 +24989,7 @@
+@@ -28604,7 +28604,7 @@
     test ".${ac_cv_header_glibconfig_h}" = ".yes"      &&
     test ".${ac_cv_header_xmlversion_h}" = ".yes"      &&
     test ".${ac_cv_header_gdome_h}" = ".yes"           &&
@@ -81,7 +59,7 @@
     test ".${ac_cv_lib_xml2_xmlCheckVersion}" = ".yes" &&
     test ".${ac_cv_lib_gdome_gdome_di_saveDocToFile}" = ".yes"; then
      echo "$as_me:$LINENO: result: ok" >&5
-@@ -25008,7 +25008,7 @@
+@@ -28623,7 +28623,7 @@
      echo "*                  gdome.h...${ac_cv_header_gdome_h}"
      echo "*                  libgdome.so or libgdome.a...${ac_cv_lib_gdome_gdome_di_saveDocToFile}"
      echo "*                  glib.h...${ac_cv_header_glib_h}"
