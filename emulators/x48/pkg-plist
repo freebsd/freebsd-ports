@@ -1,8 +1,9 @@
-bin/x48
-bin/dump2rom
 bin/checkrom
+bin/dump2rom
 bin/mkcard
+bin/x48
 lib/X11/app-defaults/X48
-share/x48/README-x48
 share/x48/CARDS.doc
+share/x48/README-x48
 share/x48/ROMDump.doc
+@dirrm share/x48

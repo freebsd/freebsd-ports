@@ -6,15 +6,21 @@
 #
 
 PORTNAME=	x48
-PORTVERSION=	0.4.0
+PORTVERSION=	0.4.1d
 CATEGORIES=	emulators
-MASTER_SITES=	${MASTER_SITE_SUNSITE}
-MASTER_SITE_SUBDIR=	system/emulators
+MASTER_SITES=	http://home.earthlink.net/~rmmlgetz/
+DISTNAME=	${PORTNAME}_041d
 
 MAINTAINER=	ports@FreeBSD.org
 
 USE_IMAKE=	yes
 NO_INSTALL_MANPAGES=	yes
+
+
+WRKSRC=		${WRKDIR}/x48-0.4.1
+
+post-extract:
+	cd ${WRKSRC}/readline && ${RM} *.o
 
 post-install:
 	${MKDIR} ${PREFIX}/share/x48
