@@ -14,8 +14,7 @@ MASTER_SITE_SUBDIR=	sqlrelay
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A persistent DB connection pooling/proxying/load balancing system
 
-LIB_DEPENDS=	rudiments.0:${PORTSDIR}/devel/rudiments \
-		xml2.5:${PORTSDIR}/textproc/libxml2
+LIB_DEPENDS=	rudiments.0:${PORTSDIR}/devel/rudiments
 
 USE_ICONV=	yes
 USE_REINPLACE=	yes
@@ -26,12 +25,12 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		PTHREADLIBS="${PTHREAD_LIBS}"
 CONFIGURE_ARGS=	${SQLRELAY_CONFIGURE_ARGS} \
 		--disable-tcl \
-		--without-java-prefix \
-		--without-perl-prefix \
-		--without-php-prefix \
-		--without-python-prefix \
-		--without-ruby-prefix \
-		--without-zope-prefix
+		--disable-java \
+		--disable-perl \
+		--disable-php \
+		--disable-python \
+		--disable-ruby \
+		--disable-zope
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 MAKE_ARGS=	VERSION="${PORTVERSION:R}"
 INSTALLS_SHLIB=	yes
@@ -40,14 +39,16 @@ POSTGRESQL_PORT?=	databases/postgresql7
 
 .include "${.CURDIR}/Makefile.common"
 
-WITH_SQLITE?=		no
-WITH_MYSQL?=		yes
-WITH_MSQL?=		no
-WITH_POSTGRESQL?=	no
-WITH_ODBC?=		no
-WITH_FREETDS?=		no
-WITH_INTERBASE?=	no
-WITH_GTK?=		no
+OPTIONS=	MSQL "Build MSQL connection" off \
+		MYSQL "Build MySQL connection" off \
+		ODBC "Build ODBC connection" off \
+		POSTGRESQL "Build PostgreSQL connection" off \
+		SQLITE "Build SQLite connection" off \
+		FREETDS "Build FreeTDS connection" off \
+		INTERBASE "Build Interbase connection" off \
+		GTK "Build GTK configuration tool" off
+
+.include <bsd.port.pre.mk>
 
 .if defined(WITH_SQLITE) && ${WITH_SQLITE:L} != no
 LIB_DEPENDS+=		gdbm.3:${PORTSDIR}/databases/gdbm \
@@ -57,7 +58,7 @@ CONFIGURE_ARGS+=	--with-gdbm-prefix="${LOCALBASE}" \
 IF_SQLITE=	""
 .else
 CONFIGURE_ARGS+=	--without-gdbm-prefix \
-			--without-sqlite-prefix
+			--disable-sqlite
 IF_SQLITE=	"@comment "
 .endif
 
@@ -66,7 +67,7 @@ USE_MYSQL=	yes
 CONFIGURE_ARGS+=	--with-mysql-prefix="${LOCALBASE}"
 IF_MYSQL=	""
 .else
-CONFIGURE_ARGS+=	--without-mysql-prefix
+CONFIGURE_ARGS+=	--disable-mysql
 IF_MYSQL=	"@comment "
 .endif
 
@@ -75,7 +76,7 @@ LIB_DEPENDS+=		gds.1:${PORTSDIR}/databases/firebird
 CONFIGURE_ARGS+=	--with-interbase-prefix="${LOCALBASE}/firebird"
 IF_INTERBASE=	""
 .else
-CONFIGURE_ARGS+=	--without-interbase-prefix
+CONFIGURE_ARGS+=	--disable-interbase
 IF_INTERBASE=	"@comment "
 .endif
 
@@ -84,7 +85,7 @@ LIB_DEPENDS+=		msql.1:${PORTSDIR}/databases/msql
 CONFIGURE_ARGS+=	--with-msql-prefix="${LOCALBASE}"
 IF_MSQL=	""
 .else
-CONFIGURE_ARGS+=	--without-msql-prefix
+CONFIGURE_ARGS+=	--disable-msql
 IF_MSQL=	"@comment "
 .endif
 
@@ -93,7 +94,7 @@ LIB_DEPENDS+=		pq.3:${PORTSDIR}/${POSTGRESQL_PORT}
 CONFIGURE_ARGS+=	--with-postgresql-prefix="${LOCALBASE}"
 IF_POSTGRESQL=	""
 .else
-CONFIGURE_ARGS+=	--without-postgresql-prefix
+CONFIGURE_ARGS+=	--disable-postgresql
 IF_POSTGRESQL=	"@comment "
 .endif
 
@@ -102,7 +103,7 @@ LIB_DEPENDS+=		odbc.1:${PORTSDIR}/databases/unixODBC
 CONFIGURE_ARGS+=	--with-odbc-prefix="${LOCALBASE}"
 IF_ODBC=	""
 .else
-CONFIGURE_ARGS+=	--without-odbc-prefix
+CONFIGURE_ARGS+=	--disable-odbc
 IF_ODBC=	"@comment "
 .endif
 
@@ -111,16 +112,16 @@ LIB_DEPENDS+=		tds.3:${PORTSDIR}/databases/freetds
 CONFIGURE_ARGS+=	--with-freetds-prefix="${LOCALBASE}"
 IF_FREETDS=	""
 .else
-CONFIGURE_ARGS+=	--without-freetds-prefix
+CONFIGURE_ARGS+=	--disable-freetds
 IF_FREETDS=	"@comment "
 .endif
 
 .if defined(WITH_GTK) && ${WITH_GTK:L} != no
-USE_GNOME=		gtk12
+LIB_DEPENDS+=		gtk12.2:${PORTSDIR}/x11-toolkits/gtk12
 CONFIGURE_ARGS+=	--with-gtk-prefix="${X11BASE}"
 IF_GTK=		""
 .else
-CONFIGURE_ARGS+=	--without-gtk-prefix
+CONFIGURE_ARGS+=	--disable-gtk
 IF_GTK=		"@comment "
 .endif
 
@@ -137,11 +138,6 @@ MAN1=		fields.1 query.1 query.py.1 sqlr-config-gtk.1 sqlrsh.1
 MAN8=		sqlr-connection.8 sqlr-cachemanager.8 sqlr-ipclean.8 \
 		sqlr-listener.8 sqlr-scaler.8 sqlr-start.8 sqlr-stop.8
 
-#  --with-sybase-prefix          Location of Sybase
-#  --with-oracle-home            Location of Oracle
-#  --with-interbase-prefix       Location of Interbase
-#  --with-db2-prefix             Location of DB2
-
 post-patch:
 	${REINPLACE_CMD} -E \
 		-e 's,/usr/local[[:>:]],${PREFIX},g;' \
@@ -154,4 +150,4 @@ post-patch:
 	${FIND} ${WRKSRC} -name Makefile | ${XARGS} ${REINPLACE_CMD} -E \
 		-e 's#-release \$$\(SQLR_VERSION\)##g;'
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
