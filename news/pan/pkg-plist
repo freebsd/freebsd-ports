@@ -2,8 +2,10 @@ bin/pan
 share/gnome/apps/Internet/pan.desktop
 share/gnome/pixmaps/pan.png
 share/gnome/pixmaps/pan_druid.xpm
+share/locale/ca/LC_MESSAGES/pan.mo
 share/locale/da/LC_MESSAGES/pan.mo
 share/locale/de/LC_MESSAGES/pan.mo
+share/locale/en_GB/LC_MESSAGES/pan.mo
 share/locale/es/LC_MESSAGES/pan.mo
 share/locale/fi/LC_MESSAGES/pan.mo
 share/locale/fr/LC_MESSAGES/pan.mo
@@ -12,6 +14,7 @@ share/locale/gl/LC_MESSAGES/pan.mo
 share/locale/it/LC_MESSAGES/pan.mo
 share/locale/ja/LC_MESSAGES/pan.mo
 share/locale/ko/LC_MESSAGES/pan.mo
+share/locale/lt/LC_MESSAGES/pan.mo
 share/locale/no/LC_MESSAGES/pan.mo
 share/locale/pl/LC_MESSAGES/pan.mo
 share/locale/ru/LC_MESSAGES/pan.mo

@@ -6,15 +6,14 @@
 #
 
 PORTNAME=	pan
-PORTVERSION=	0.9
+PORTVERSION=	0.9.1
 CATEGORIES=	news gnome
 MASTER_SITES=	http://download.superpimp.org/pan/${PORTVERSION}/
 
 MAINTAINER=	ade@FreeBSD.org
 
 LIB_DEPENDS=	gnomeprint.12:${PORTSDIR}/print/gnomeprint \
-		uu.1:${PORTSDIR}/converters/uulib \
-		unicode.0:${PORTSDIR}/devel/libunicode
+		uu.1:${PORTSDIR}/converters/uulib
 
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes
