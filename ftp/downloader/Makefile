@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	downloader
-PORTVERSION=	2.0
+PORTVERSION=	2.01
 CATEGORIES=	ftp
 MASTER_SITES=	http://www.krasu.ru/soft/chuchelo/files/ \
 		ftp://ftp.chg.ru/pub/X11/applications/Xdownloader/ \
@@ -17,25 +17,39 @@ DISTNAME=	d4x-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 
-LIB_DEPENDS=	gdk_pixbuf:${PORTSDIR}/graphics/gdk-pixbuf \
-		intl.2:${PORTSDIR}/devel/gettext \
-		iconv.3:${PORTSDIR}/converters/libiconv
+LIB_DEPENDS=	gnugetopt.1:${PORTSDIR}/devel/libgnugetopt \
+		gdk_pixbuf.2:${PORTSDIR}/graphics/gdk-pixbuf
 
-USE_BISON=	yes
-USE_GLIB=	yes
 USE_GTK=	yes
 USE_ESOUND=	yes
-GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CPPFLAGS="${CXXFLAGS} -I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib"
-CONFIGURE_ARGS=	--mandir=${PREFIX}/man
 USE_GMAKE=	yes
+GNU_CONFIGURE=	yes
+CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
+		LDFLAGS="-L${LOCALBASE}/lib"
+CONFIGURE_ARGS=	--enable-release
 
 MAN1=		nt.1
 
+DOCSDIR=	${PREFIX}/share/doc/d4x
+PORTDOCS=	FAQ FAQ.de FAQ.es FAQ.fr FAQ.gr INSTALL INSTALL.de \
+		INSTALL.es INSTALL.fr INSTALL.gr INSTALL.he INSTALL.pl \
+		INSTALL.pt_BR LICENSE NAMES THANKS TROUBLES
+
 post-patch:
-	@${PERL} -pi -e "s,Bison ,Bison,g ; \
-		s,-lpthread,${PTHREAD_LIBS},g" ${WRKSRC}/configure
-	@${PERL} -pi -e 's,-not,\\!,g' ${WRKSRC}/share/Makefile.in
+	@${PERL} -pi -e 's|CXXFLAGS="-O."|CXXFLAGS=\$$CXXFLAGS|g ; \
+		 s|OS_CXXFLAGS="-pthread"|OS_CXXFLAGS="${PTHREAD_CFLAGS}"|g ; \
+		 s|-lpthread|${PTHREAD_LIBS}|g' ${WRKSRC}/configure
+	@${PERL} -pi -e 's| DOC||g' ${WRKSRC}/Makefile.in
+	@${PERL} -pi -e 's|-not|\\!|g' ${WRKSRC}/share/Makefile.in
+
+post-install:
+	${INSTALL_MAN} ${WRKSRC}/DOC/nt.1 ${MANPREFIX}/man/man1
+.if !defined(NOPORTDOCS)
+	@${MKDIR} ${DOCSDIR}
+.for file in ${PORTDOCS}
+	${INSTALL_DATA} ${WRKSRC}/DOC/${file} ${DOCSDIR}
+.endfor
+.endif
 
 .include <bsd.port.mk>

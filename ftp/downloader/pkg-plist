@@ -1,28 +1,4 @@
 bin/nt
-share/doc/d4x/FAQ
-share/doc/d4x/FAQ.de
-share/doc/d4x/FAQ.es
-share/doc/d4x/FAQ.fr
-share/doc/d4x/FAQ.gr
-share/doc/d4x/INSTALL
-share/doc/d4x/INSTALL.de
-share/doc/d4x/INSTALL.es
-share/doc/d4x/INSTALL.fr
-share/doc/d4x/INSTALL.gr
-share/doc/d4x/INSTALL.he
-share/doc/d4x/INSTALL.pl
-share/doc/d4x/INSTALL.pt_BR
-share/doc/d4x/LICENSE
-share/doc/d4x/NAMES
-share/doc/d4x/THANKS
-share/doc/d4x/TROUBLES
-@dirrm share/doc/d4x
-share/locale/bg/LC_MESSAGES/d4x.mo
-share/locale/de/LC_MESSAGES/d4x.mo
-share/locale/es/LC_MESSAGES/d4x.mo
-share/locale/fr/LC_MESSAGES/d4x.mo
-share/locale/it/LC_MESSAGES/d4x.mo
-share/locale/ru/LC_MESSAGES/d4x.mo
 share/d4x/sounds/add.wav
 share/d4x/sounds/complete.wav
 share/d4x/sounds/dnd.wav
@@ -55,9 +31,34 @@ share/d4x/themes/old_theme/dnd1.png
 share/d4x/themes/old_theme/dnd2.png
 share/d4x/themes/old_theme/dndmini.png
 share/d4x/themes/tooltip.xml
-@dirrm share/d4x/sounds
+%%PORTDOCS%%share/doc/d4x/FAQ
+%%PORTDOCS%%share/doc/d4x/FAQ.de
+%%PORTDOCS%%share/doc/d4x/FAQ.es
+%%PORTDOCS%%share/doc/d4x/FAQ.fr
+%%PORTDOCS%%share/doc/d4x/FAQ.gr
+%%PORTDOCS%%share/doc/d4x/INSTALL
+%%PORTDOCS%%share/doc/d4x/INSTALL.de
+%%PORTDOCS%%share/doc/d4x/INSTALL.es
+%%PORTDOCS%%share/doc/d4x/INSTALL.fr
+%%PORTDOCS%%share/doc/d4x/INSTALL.gr
+%%PORTDOCS%%share/doc/d4x/INSTALL.he
+%%PORTDOCS%%share/doc/d4x/INSTALL.pl
+%%PORTDOCS%%share/doc/d4x/INSTALL.pt_BR
+%%PORTDOCS%%share/doc/d4x/LICENSE
+%%PORTDOCS%%share/doc/d4x/NAMES
+%%PORTDOCS%%share/doc/d4x/THANKS
+%%PORTDOCS%%share/doc/d4x/TROUBLES
+share/locale/bg/LC_MESSAGES/d4x.mo
+share/locale/de/LC_MESSAGES/d4x.mo
+share/locale/es/LC_MESSAGES/d4x.mo
+share/locale/fr/LC_MESSAGES/d4x.mo
+share/locale/it/LC_MESSAGES/d4x.mo
+share/locale/ru/LC_MESSAGES/d4x.mo
+share/locale/uk/LC_MESSAGES/d4x.mo
+%%PORTDOCS%%@dirrm share/doc/d4x
 @dirrm share/d4x/themes/old_theme/buttons
 @dirrm share/d4x/themes/old_theme
 @dirrm share/d4x/themes/glass
 @dirrm share/d4x/themes
+@dirrm share/d4x/sounds
 @dirrm share/d4x
