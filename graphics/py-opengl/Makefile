@@ -7,6 +7,7 @@
 
 PORTNAME=	opengl
 PORTVERSION=	2.0.1.07
+PORTREVISION=	1
 CATEGORIES=	graphics python
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	py${PORTNAME}
@@ -31,11 +32,13 @@ USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
 
 post-patch:
+	@${FIND} ${WRKSRC} -type f | ${XARGS} ${REINPLACE_CMD} -e "s|||"
 	@${FIND} ${WRKSRC} -name '*.[ch]' | ${XARGS} ${REINPLACE_CMD} -e \
 		's|<malloc\.h>|<stdlib.h>|g'
 	@${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|g' \
 		-e 's|%%X11BASE%%|${X11BASE}|g' \
 		${WRKSRC}/config/freebsd.cfg ${WRKSRC}/Tkinter.py
+	@${FIND} ${WRKSRC} -name "*.bak" -delete
 
 post-install:
 	@${FIND} ${PYTHON_SITELIBDIR}/OpenGL -type f | \
