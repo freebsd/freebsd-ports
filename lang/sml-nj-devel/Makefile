@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	smlnj
-PORTVERSION=	110.40
+PORTVERSION=	110.41
 CATEGORIES=	lang
 MASTER_SITES=	ftp://ftp.research.bell-labs.com/dist/smlnj/working/${PORTVERSION}/ \
 		ftp://flint.cs.yale.edu/pub/smlnj/working/${PORTVERSION}/ \
