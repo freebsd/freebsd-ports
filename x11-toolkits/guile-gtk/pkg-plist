@@ -1,0 +1,25 @@
+bin/build-guile-gtk
+bin/guile-gtk-1.2
+include/guile-gtk.h
+lib/libguiledlopenhelper.a
+lib/libguiledlopenhelper.la
+lib/libguiledlopenhelper.so
+lib/libguiledlopenhelper.so.0
+lib/libguilegtk-1.2.a
+lib/libguilegtk-1.2.la
+lib/libguilegtk-1.2.so
+lib/libguilegtk-1.2.so.0
+@unexec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -R
+@exec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -m %B
+share/guile-gtk/gdk-1.2.defs
+share/guile-gtk/gtk-1.2.defs
+share/guile/gtk-1.2/gdk.scm
+share/guile/gtk-1.2/gtk.scm
+share/guile/gtk/config.scm
+share/guile/gtk/dynlink.scm
+share/guile/gtk/event-repl.scm
+share/guile/gtk/gdk.scm
+share/guile/gtk/gtk.scm
+@dirrm share/guile-gtk
+@dirrm share/guile/gtk-1.2
+@dirrm share/guile/gtk
