@@ -3,10 +3,10 @@
 # Date created:		15 November 1994
 # Whom:			torstenb
 #
-# $Id: Makefile,v 1.19 1997/09/22 12:37:49 tg Exp $
+# $Id: Makefile,v 1.20 1997/10/13 11:47:10 tg Exp $
 #
 
-DISTNAME=	ImageMagick-3.9.0
+DISTNAME=	ImageMagick-3.9.1
 CATEGORIES=	graphics
 MASTER_SITES=	ftp://ftp.wizards.dupont.com/pub/ImageMagick/ \
 		ftp://ftp.cci.fr/pub/unix/gfx/ImageMagick/ \
@@ -17,7 +17,7 @@ MAINTAINER=	ports@freebsd.org
 
 LIB_DEPENDS=    jpeg\\.7\\.:${PORTSDIR}/graphics/jpeg \
 		mpeg\\.1\\.:${PORTSDIR}/graphics/mpeg-lib \
-		tiff\\.3\\.:${PORTSDIR}/graphics/tiff \
+		tiff34\\.1\\.:${PORTSDIR}/graphics/tiff34 \
 		png\\.0\\.:${PORTSDIR}/graphics/png \
 		jbig\\.0\\.:${PORTSDIR}/graphics/jbigkit
 
