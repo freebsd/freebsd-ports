@@ -3,7 +3,7 @@
 # Date created:         03 Feb 1998
 # Whom:                 Thomas Gellekum <tg@FreeBSD.ORG>
 #
-# $Id: Makefile,v 1.3 1998/02/21 22:37:58 fenner Exp $
+# $Id: Makefile,v 1.4 1998/08/07 23:56:25 asami Exp $
 #
 
 DISTNAME=       graphviz_1_21
@@ -14,7 +14,7 @@ EXTRACT_SUFX=	.src.unix.tgz
 
 MAINTAINER=	ports@FreeBSD.ORG
 
-LIB_DEPENDS=	tk42\\.1:${PORTSDIR}/x11-toolkits/tk42
+LIB_DEPENDS=	tk42.1:${PORTSDIR}/x11-toolkits/tk42
 
 RESTRICTED=	"Can't be fetched without license"
 NO_PACKAGE=	${RESTRICTED}

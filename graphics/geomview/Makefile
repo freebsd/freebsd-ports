@@ -3,7 +3,7 @@
 # Date created:				5 November 1996
 # Whom:					fenner
 #
-# $Id: Makefile,v 1.6 1998/08/05 09:31:08 asami Exp $
+# $Id: Makefile,v 1.7 1998/08/07 23:56:25 asami Exp $
 
 DISTNAME=	geomview-1.6.1
 CATEGORIES=	graphics tk42
@@ -15,7 +15,7 @@ MAINTAINER=	fenner@freebsd.org
 
 LIB_DEPENDS=	xforms\\.0:${PORTSDIR}/x11-toolkits/xforms \
 		MesaGL\\.13:${PORTSDIR}/graphics/Mesa2 \
-		tk42:${PORTSDIR}/x11-toolkits/tk42
+		tk42.1:${PORTSDIR}/x11-toolkits/tk42
 
 WRKSRC=		${WRKDIR}/Geomview
 REQUIRES_MOTIF=	yes
