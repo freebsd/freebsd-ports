@@ -5,12 +5,8 @@
 # $FreeBSD$
 #
 
-CATEGORIES=	print linux
 PORTVERSION=	1.3
-MASTER_SITES=	http://www.epkowa.on.arena.ne.jp/pips/data/${PRTYPE}/
 MASTERDIR=	${.CURDIR}/../pips800
-COMMENT=	${.CURDIR}/pkg-comment
-DESCR=		${.CURDIR}/pkg-descr
 PRTYPE=		2200
 
 .include "${MASTERDIR}/Makefile"

@@ -6,10 +6,7 @@
 #
 
 MASTER_SITES=	http://www.epkowa.on.arena.ne.jp/pips/data/${PRTYPE:S,_3300,,}/
-
 MASTERDIR=	${.CURDIR}/../pips800
-COMMENT=	${.CURDIR}/pkg-comment
-DESCR=		${.CURDIR}/pkg-descr
 PRTYPE=		820_3300
 
 .include "${MASTERDIR}/Makefile"

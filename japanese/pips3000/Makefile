@@ -5,10 +5,8 @@
 # $FreeBSD$
 #
 
-CATEGORIES?=	japanese print linux
+PORTVERSION=	1.3
 MASTERDIR=	${.CURDIR}/../pips800
-COMMENT=	${.CURDIR}/pkg-comment
-DESCR=		${.CURDIR}/pkg-descr
 PRTYPE=		3000
 
 do-install:     # empty
