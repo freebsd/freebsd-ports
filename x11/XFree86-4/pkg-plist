@@ -1734,6 +1734,7 @@ lib/X11/doc/html/rman.1.html
 lib/X11/doc/html/rstart.1.html
 lib/X11/doc/html/rstartd.1.html
 lib/X11/doc/html/s3virge.4.html
+lib/X11/doc/html/savage.4.html
 lib/X11/doc/html/scanpci.1.html
 lib/X11/doc/html/sessreg.1.html
 lib/X11/doc/html/setxkbmap.1.html
@@ -3317,6 +3318,7 @@ lib/modules/drivers/r128_drv.o
 lib/modules/drivers/radeon_drv.o
 lib/modules/drivers/rendition_drv.o
 lib/modules/drivers/s3virge_drv.o
+lib/modules/drivers/savage_drv.o
 lib/modules/drivers/siliconmotion_drv.o
 lib/modules/drivers/sis_drv.o
 lib/modules/drivers/tdfx_drv.o
@@ -4527,6 +4529,7 @@ man/man4/nv.4.gz
 man/man4/r128.4.gz
 man/man4/rendition.4.gz
 man/man4/s3virge.4.gz
+man/man4/savage.4.gz
 man/man4/siliconmotion.4.gz
 man/man4/sis.4.gz
 man/man4/tdfx.4.gz
