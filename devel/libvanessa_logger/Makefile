@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	libvanessa_logger
-PORTVERSION=	0.0.1
-PORTREVISION=	1
+PORTVERSION=	0.0.2
 CATEGORIES=	devel
 MASTER_SITES=	ftp://vanessa.sourceforge.net/pub/vanessa/%SUBDIR%/ \
 		ftp://ftp.au.vergenet.net/pub/vanessa/%SUBDIR%/ \
@@ -22,10 +21,6 @@ MAINTAINER=	kkonstan@daemon.gr
 MAN1=		vanessa_logger_sample.1
 
 INSTALLS_SHLIB= YES
-
 USE_LIBTOOL=	YES
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib"
-WRKSRC=		${WRKDIR}/vanessa_logger-${PORTVERSION}
 
 .include <bsd.port.mk>
