@@ -1,0 +1,10 @@
+
+
+Sep 10 23:17 2002 diff -ruN -l0 krss/Makefile.am~ krss/Makefile.am Page 1
+
+
+--- krss/Makefile.am~	Tue Sep 10 23:15:10 2002
++++ krss/Makefile.am	Tue Sep 10 23:15:19 2002
+@@ -4 +4 @@
+-krss_LDADD   =  $(LIB_KFILE) $(LIB_KHTML) $(LIB_KDEUI) $(LIB_KDECORE) $(LIB_QT) $(LIBSOCKET)
++krss_LDADD   =  -lkio $(LIB_KHTML) $(LIB_KDEUI) $(LIB_KDECORE) $(LIB_QT) $(LIBSOCKET)
