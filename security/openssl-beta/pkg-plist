@@ -1,250 +1,178 @@
-bin/ssleay
-@exec ln -sf %D/%F %B/asn1parse
-@exec ln -sf %D/%F %B/base64
-@exec ln -sf %D/%F %B/bf
-@exec ln -sf %D/%F %B/bf-cbc
-@exec ln -sf %D/%F %B/bf-cfb
-@exec ln -sf %D/%F %B/bf-ecb
-@exec ln -sf %D/%F %B/bf-ofb
-@exec ln -sf %D/%F %B/ca
-@exec ln -sf %D/%F %B/cast
-@exec ln -sf %D/%F %B/cast-cbc
-@exec ln -sf %D/%F %B/cast5-cbc
-@exec ln -sf %D/%F %B/cast5-cfb
-@exec ln -sf %D/%F %B/cast5-ecb
-@exec ln -sf %D/%F %B/cast5-ofb
-@exec ln -sf %D/%F %B/ciphers
-@exec ln -sf %D/%F %B/crl
-@exec ln -sf %D/%F %B/crl2pkcs7
-@exec ln -sf %D/%F %B/des
-@exec ln -sf %D/%F %B/des-cbc
-@exec ln -sf %D/%F %B/des-cfb
-@exec ln -sf %D/%F %B/des-ecb
-@exec ln -sf %D/%F %B/des-ede
-@exec ln -sf %D/%F %B/des-ede-cbc
-@exec ln -sf %D/%F %B/des-ede-cfb
-@exec ln -sf %D/%F %B/des-ede-ofb
-@exec ln -sf %D/%F %B/des-ede3
-@exec ln -sf %D/%F %B/des-ede3-cbc
-@exec ln -sf %D/%F %B/des-ede3-cfb
-@exec ln -sf %D/%F %B/des-ede3-ofb
-@exec ln -sf %D/%F %B/des-ofb
-@exec ln -sf %D/%F %B/des3
-@exec ln -sf %D/%F %B/desx
-@exec ln -sf %D/%F %B/dgst
-@exec ln -sf %D/%F %B/dh
-@exec ln -sf %D/%F %B/dsa
-@exec ln -sf %D/%F %B/dsaparam
-@exec ln -sf %D/%F %B/enc
-@exec ln -sf %D/%F %B/errstr
-@exec ln -sf %D/%F %B/gendh
-@exec ln -sf %D/%F %B/genrsa
-@exec ln -sf %D/%F %B/idea
-@exec ln -sf %D/%F %B/idea-cbc
-@exec ln -sf %D/%F %B/idea-cfb
-@exec ln -sf %D/%F %B/idea-ecb
-@exec ln -sf %D/%F %B/idea-ofb
-@exec ln -sf %D/%F %B/md2
-@exec ln -sf %D/%F %B/md5
-@exec ln -sf %D/%F %B/mdc2
-@exec ln -sf %D/%F %B/pkcs7
-@exec ln -sf %D/%F %B/rc2
-@exec ln -sf %D/%F %B/rc2-cbc
-@exec ln -sf %D/%F %B/rc2-cfb
-@exec ln -sf %D/%F %B/rc2-ecb
-@exec ln -sf %D/%F %B/rc2-ofb
-@exec ln -sf %D/%F %B/rc4
-@exec ln -sf %D/%F %B/rc5
-@exec ln -sf %D/%F %B/rc5-cbc
-@exec ln -sf %D/%F %B/rc5-cfb
-@exec ln -sf %D/%F %B/rc5-ecb
-@exec ln -sf %D/%F %B/rc5-ofb
-@exec ln -sf %D/%F %B/req
-@exec ln -sf %D/%F %B/rsa
-@exec ln -sf %D/%F %B/s_client
-@exec ln -sf %D/%F %B/s_server
-@exec ln -sf %D/%F %B/s_time
-@exec ln -sf %D/%F %B/sess_id
-@exec ln -sf %D/%F %B/sha
-@exec ln -sf %D/%F %B/sha1
-@exec ln -sf %D/%F %B/speed
-@exec ln -sf %D/%F %B/verify
-@exec ln -sf %D/%F %B/version
-@exec ln -sf %D/%F %B/x509
-@unexec rm %B/asn1parse
-@unexec rm %B/base64
-@unexec rm %B/bf
-@unexec rm %B/bf-cbc
-@unexec rm %B/bf-cfb
-@unexec rm %B/bf-ecb
-@unexec rm %B/bf-ofb
-@unexec rm %B/ca
-@unexec rm %B/cast
-@unexec rm %B/cast-cbc
-@unexec rm %B/cast5-cbc
-@unexec rm %B/cast5-cfb
-@unexec rm %B/cast5-ecb
-@unexec rm %B/cast5-ofb
-@unexec rm %B/ciphers
-@unexec rm %B/crl
-@unexec rm %B/crl2pkcs7
-@unexec rm %B/des
-@unexec rm %B/des-cbc
-@unexec rm %B/des-cfb
-@unexec rm %B/des-ecb
-@unexec rm %B/des-ede
-@unexec rm %B/des-ede-cbc
-@unexec rm %B/des-ede-cfb
-@unexec rm %B/des-ede-ofb
-@unexec rm %B/des-ede3
-@unexec rm %B/des-ede3-cbc
-@unexec rm %B/des-ede3-cfb
-@unexec rm %B/des-ede3-ofb
-@unexec rm %B/des-ofb
-@unexec rm %B/des3
-@unexec rm %B/desx
-@unexec rm %B/dgst
-@unexec rm %B/dh
-@unexec rm %B/dsa
-@unexec rm %B/dsaparam
-@unexec rm %B/enc
-@unexec rm %B/errstr
-@unexec rm %B/gendh
-@unexec rm %B/genrsa
-@unexec rm %B/idea
-@unexec rm %B/idea-cbc
-@unexec rm %B/idea-cfb
-@unexec rm %B/idea-ecb
-@unexec rm %B/idea-ofb
-@unexec rm %B/md2
-@unexec rm %B/md5
-@unexec rm %B/mdc2
-@unexec rm %B/pkcs7
-@unexec rm %B/rc2
-@unexec rm %B/rc2-cbc
-@unexec rm %B/rc2-cfb
-@unexec rm %B/rc2-ecb
-@unexec rm %B/rc2-ofb
-@unexec rm %B/rc4
-@unexec rm %B/rc5
-@unexec rm %B/rc5-cbc
-@unexec rm %B/rc5-cfb
-@unexec rm %B/rc5-ecb
-@unexec rm %B/rc5-ofb
-@unexec rm %B/req
-@unexec rm %B/rsa
-@unexec rm %B/s_client
-@unexec rm %B/s_server
-@unexec rm %B/s_time
-@unexec rm %B/sess_id
-@unexec rm %B/sha
-@unexec rm %B/sha1
-@unexec rm %B/speed
-@unexec rm %B/verify
-@unexec rm %B/version
-@unexec rm %B/x509
 bin/CA.sh
-bin/der_chop
+bin/asn1parse
+bin/base64
+bin/bf
+bin/bf-cbc
+bin/bf-cfb
+bin/bf-ecb
+bin/bf-ofb
 bin/c_hash
 bin/c_info
 bin/c_issuer
 bin/c_name
 bin/c_rehash
+bin/ca
+bin/cast
+bin/cast-cbc
+bin/cast5-cbc
+bin/cast5-cfb
+bin/cast5-ecb
+bin/cast5-ofb
+bin/ciphers
+bin/crl
+bin/crl2pkcs7
+bin/der_chop
+bin/des
+bin/des-cbc
+bin/des-cfb
+bin/des-ecb
+bin/des-ede
+bin/des-ede-cbc
+bin/des-ede-cfb
+bin/des-ede-ofb
+bin/des-ede3
+bin/des-ede3-cbc
+bin/des-ede3-cfb
+bin/des-ede3-ofb
+bin/des-ofb
+bin/des3
+bin/desx
+bin/dgst
+bin/dh
+bin/dsa
+bin/dsaparam
+bin/enc
+bin/errstr
+bin/gendh
+bin/genrsa
+bin/idea
+bin/idea-cbc
+bin/idea-cfb
+bin/idea-ecb
+bin/idea-ofb
+bin/md2
+bin/md5
+bin/mdc2
+bin/pkcs7
+bin/rc2
+bin/rc2-cbc
+bin/rc2-cfb
+bin/rc2-ecb
+bin/rc2-ofb
+bin/rc4
+bin/rc5
+bin/rc5-cbc
+bin/rc5-cfb
+bin/rc5-ecb
+bin/rc5-ofb
+bin/req
+bin/rmd160
+bin/rsa
+bin/s_client
+bin/s_server
+bin/s_time
+bin/sess_id
+bin/sha
+bin/sha1
+bin/speed
+bin/ssleay
+bin/verify
+bin/version
+bin/x509
 etc/ssleay.cnf.sample
-include/crypto.h
+include/asn1.h
+include/asn1_mac.h
+include/bio.h
+include/blowfish.h
+include/bn.h
+include/bss_file.c
+include/buffer.h
+include/cast.h
+include/comp.h
+include/conf.h
 include/cryptall.h
+include/crypto.h
+include/des.h
+include/dh.h
+include/dsa.h
+include/err.h
+include/evp.h
+include/hmac.h
+include/idea.h
+include/lhash.h
 include/md2.h
 include/md5.h
-include/sha.h
 include/mdc2.h
-include/hmac.h
-include/ripemd.h
-include/des.h
+include/objects.h
+include/pem.h
+include/pkcs7.h
+include/rand.h
 include/rc2.h
 include/rc4.h
 include/rc5.h
-include/idea.h
-include/blowfish.h
-include/cast.h
-include/bn.h
+include/ripemd.h
 include/rsa.h
-include/dsa.h
-include/dh.h
-include/buffer.h
-include/bio.h
-include/bss_file.c
-include/stack.h
-include/lhash.h
-include/rand.h
-include/err.h
-include/objects.h
-include/evp.h
-include/pem.h
-include/asn1.h
-include/asn1_mac.h
-include/x509.h
-include/x509_vfy.h
-include/conf.h
-include/txt_db.h
-include/pkcs7.h
+include/sha.h
 include/ssl.h
 include/ssl2.h
-include/ssl3.h
 include/ssl23.h
+include/ssl3.h
+include/stack.h
 include/tls1.h
-lib/ssleay.cnf
-lib/libcrypto.a
-@exec ranlib %D/%F
-lib/libssl.a
-@exec ranlib %D/%F
+include/tmdiff.h
+include/txt_db.h
+include/x509.h
+include/x509_vfy.h
 lib/libRSAglue.a
-@exec ranlib %D/%F
-share/doc/SSLeay/API.doc
-share/doc/SSLeay/a_verify.doc
-share/doc/SSLeay/apps.doc
-share/doc/SSLeay/asn1.doc
-share/doc/SSLeay/bio.doc
-share/doc/SSLeay/blowfish.doc
-share/doc/SSLeay/bn.doc
-share/doc/SSLeay/ca.1
-share/doc/SSLeay/callback.doc
-share/doc/SSLeay/cipher.doc
-share/doc/SSLeay/cipher.m
-share/doc/SSLeay/conf.doc
-share/doc/SSLeay/des.doc
-share/doc/SSLeay/digest.doc
-share/doc/SSLeay/encode.doc
-share/doc/SSLeay/envelope.doc
-share/doc/SSLeay/error.doc
-share/doc/SSLeay/idea.doc
-share/doc/SSLeay/legal.doc
-share/doc/SSLeay/lhash.doc
-share/doc/SSLeay/md2.doc
-share/doc/SSLeay/md5.doc
-share/doc/SSLeay/memory.doc
-share/doc/SSLeay/ms3-ca.doc
-share/doc/SSLeay/ns-ca.doc
-share/doc/SSLeay/obj.doc
-share/doc/SSLeay/rand.doc
-share/doc/SSLeay/rc2.doc
-share/doc/SSLeay/rc4.doc
-share/doc/SSLeay/readme
-share/doc/SSLeay/ref.doc
-share/doc/SSLeay/req.1
-share/doc/SSLeay/rsa.doc
-share/doc/SSLeay/rsaref.doc
-share/doc/SSLeay/s_mult.doc
-share/doc/SSLeay/session.doc
-share/doc/SSLeay/sha.doc
-share/doc/SSLeay/speed.doc
-share/doc/SSLeay/ssl-ciph.doc
-share/doc/SSLeay/ssl.doc
-share/doc/SSLeay/ssl_ctx.doc
-share/doc/SSLeay/ssleay.doc
-share/doc/SSLeay/ssluse.doc
-share/doc/SSLeay/stack.doc
-share/doc/SSLeay/threads.doc
-share/doc/SSLeay/txt_db.doc
-share/doc/SSLeay/verify
-share/doc/SSLeay/why.doc
-@unexec rm -rf share/doc/SSLeay
+lib/libcrypto.a
+lib/libssl.a
+share/doc/openssl/API.doc
+share/doc/openssl/a_verify.doc
+share/doc/openssl/apps.doc
+share/doc/openssl/asn1.doc
+share/doc/openssl/bio.doc
+share/doc/openssl/blowfish.doc
+share/doc/openssl/bn.doc
+share/doc/openssl/ca.1
+share/doc/openssl/callback.doc
+share/doc/openssl/cipher.doc
+share/doc/openssl/cipher.m
+share/doc/openssl/conf.doc
+share/doc/openssl/danger
+share/doc/openssl/des.doc
+share/doc/openssl/digest.doc
+share/doc/openssl/encode.doc
+share/doc/openssl/envelope.doc
+share/doc/openssl/error.doc
+share/doc/openssl/idea.doc
+share/doc/openssl/legal.doc
+share/doc/openssl/lhash.doc
+share/doc/openssl/md2.doc
+share/doc/openssl/md5.doc
+share/doc/openssl/memory.doc
+share/doc/openssl/ms3-ca.doc
+share/doc/openssl/ns-ca.doc
+share/doc/openssl/obj.doc
+share/doc/openssl/rand.doc
+share/doc/openssl/rc2.doc
+share/doc/openssl/rc4.doc
+share/doc/openssl/readme
+share/doc/openssl/ref.doc
+share/doc/openssl/req.1
+share/doc/openssl/rsa.doc
+share/doc/openssl/rsaref.doc
+share/doc/openssl/s_mult.doc
+share/doc/openssl/session.doc
+share/doc/openssl/sha.doc
+share/doc/openssl/speed.doc
+share/doc/openssl/ssl-ciph.doc
+share/doc/openssl/ssl.doc
+share/doc/openssl/ssl_ctx.doc
+share/doc/openssl/ssleay.doc
+share/doc/openssl/ssluse.doc
+share/doc/openssl/stack.doc
+share/doc/openssl/threads.doc
+share/doc/openssl/txt_db.doc
+share/doc/openssl/verify
+share/doc/openssl/why.doc
+@dirrm share/doc/openssl

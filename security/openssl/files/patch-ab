@@ -1,18 +1,11 @@
---- Makefile.ssl.orig	Fri Jun 26 10:25:25 1998
-+++ Makefile.ssl	Sat Aug 22 13:14:34 1998
-@@ -175,7 +175,7 @@
- 	VERSION PROBLEMS MINFO makefile.one e_os.h \
- 	MICROSOFT makevms.com config PATENTS
+--- Makefile.ssl.orig	Wed Dec 23 09:20:52 1998
++++ Makefile.ssl	Sun Jan  3 20:03:00 1999
+@@ -174,7 +174,7 @@
+ ONEDIRS=out tmp
+ EDIRS=  times doc bugs util include certs ms shlib mt demos perl sf dep
  WDIRS=  windows
 -LIBS=   libcrypto.a libssl.a 
 +LIBS=	libcrypto.a libssl.a libRSAglue.a
  
  GENERAL=        Makefile
- BASENAME=       SSLeay
-@@ -327,5 +327,6 @@
- 		sh util/ranlib.sh $(INSTALLTOP)/lib/$$i; \
- 		chmod 644 $(INSTALLTOP)/lib/$$i ); \
- 	done
-+	cp apps/ssleay.cnf $(INSTALLTOP)/etc/ssleay.cnf.sample
- 
- # DO NOT DELETE THIS LINE -- make depend depends on it.
+ BASENAME=       openssl
