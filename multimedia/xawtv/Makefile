@@ -20,8 +20,7 @@ RUN_DEPENDS=	iconv:${PORTSDIR}/converters/libiconv \
 		${X11BASE}/lib/X11/fonts/misc/led-iso8859-1.pcf.gz:${PORTSDIR}/x11-fonts/tv-fonts
 LIB_DEPENDS=	Xaw3d.${XAWVER}:${PORTSDIR}/x11-toolkits/Xaw3d \
 		png.5:${PORTSDIR}/graphics/png \
-		jpeg.9:${PORTSDIR}/graphics/jpeg \
-		aa.1:${PORTSDIR}/graphics/aalib
+		jpeg.9:${PORTSDIR}/graphics/jpeg
 
 USE_MOTIF=	yes
 GNU_CONFIGURE=	yes
@@ -48,6 +47,15 @@ MAN8=		v4l-conf.8
 ONLY_FOR_ARCHS=	i386
 .else
 ONLY_FOR_ARCHS=	alpha i386
+.endif
+
+.if defined(WITHOUT_AA)
+CONFIGURE_ARGS+=--disable-aa
+PLIST_SUB+=	AA="@comment "
+.else
+CONFIGURE_ARGS+=--enable-aa
+LIB_DEPENDS+=	aa.1:${PORTSDIR}/graphics/aalib
+PLIST_SUB+=	AA=""
 .endif
 
 .if defined(WITH_LIBZVBI)
