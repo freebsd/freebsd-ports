@@ -1,0 +1,102 @@
+<?xml version="1.0"?>
+<RDF:RDF xmlns:c="http://www.mozilla.org/rdf/chrome#"
+         xmlns:RDF="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+  <RDF:Seq about="urn:mozilla:skin:root">
+    <RDF:li resource="urn:mozilla:skin:modern/1.0"/>
+    <RDF:li resource="urn:mozilla:skin:classic/1.0"/>
+  </RDF:Seq>
+  <RDF:Description about="urn:mozilla:skin:modern/1.0:global"
+                   c:skinVersion="0.9.4"
+                   c:baseURL="jar:resource:/chrome/modern.jar!/skin/modern/global/"
+                   c:allowScripts="false">
+    <c:package resource="urn:mozilla:package:global"/>
+  </RDF:Description>
+  <RDF:Description about="urn:mozilla:skin:classic/1.0:messenger"
+                   c:baseURL="jar:resource:/chrome/classic.jar!/skin/classic/messenger/"
+                   c:allowScripts="false"
+                   c:skinVersion="0.9.4">
+    <c:package resource="urn:mozilla:package:messenger"/>
+  </RDF:Description>
+  <RDF:Description about="urn:mozilla:skin:classic/1.0:editor"
+                   c:baseURL="jar:resource:/chrome/classic.jar!/skin/classic/editor/"
+                   c:allowScripts="false"
+                   c:skinVersion="0.9.4">
+    <c:package resource="urn:mozilla:package:editor"/>
+  </RDF:Description>
+  <RDF:Description about="urn:mozilla:skin:modern/1.0:editor"
+                   c:skinVersion="0.9.4"
+                   c:baseURL="jar:resource:/chrome/modern.jar!/skin/modern/editor/"
+                   c:allowScripts="false">
+    <c:package resource="urn:mozilla:package:editor"/>
+  </RDF:Description>
+  <RDF:Description about="urn:mozilla:skin:modern/1.0:messenger"
+                   c:skinVersion="0.9.4"
+                   c:baseURL="jar:resource:/chrome/modern.jar!/skin/modern/messenger/"
+                   c:allowScripts="false">
+    <c:package resource="urn:mozilla:package:messenger"/>
+  </RDF:Description>
+  <RDF:Description about="urn:mozilla:skin:modern/1.0:navigator"
+                   c:skinVersion="0.9.4"
+                   c:baseURL="jar:resource:/chrome/modern.jar!/skin/modern/navigator/"
+                   c:allowScripts="false">
+    <c:package resource="urn:mozilla:package:navigator"/>
+  </RDF:Description>
+  <RDF:Description about="urn:mozilla:skin:modern/1.0:communicator"
+                   c:baseURL="jar:resource:/chrome/modern.jar!/skin/modern/communicator/"
+                   c:allowScripts="false"
+                   c:skinVersion="0.9.4">
+    <c:package resource="urn:mozilla:package:communicator"/>
+  </RDF:Description>
+  <RDF:Seq about="urn:mozilla:skin:modern/1.0:packages">
+    <RDF:li resource="urn:mozilla:skin:modern/1.0:communicator"/>
+    <RDF:li resource="urn:mozilla:skin:modern/1.0:editor"/>
+    <RDF:li resource="urn:mozilla:skin:modern/1.0:global"/>
+    <RDF:li resource="urn:mozilla:skin:modern/1.0:messenger"/>
+    <RDF:li resource="urn:mozilla:skin:modern/1.0:navigator"/>
+  </RDF:Seq>
+  <RDF:Seq about="urn:mozilla:skin:classic/1.0:packages">
+    <RDF:li resource="urn:mozilla:skin:classic/1.0:communicator"/>
+    <RDF:li resource="urn:mozilla:skin:classic/1.0:editor"/>
+    <RDF:li resource="urn:mozilla:skin:classic/1.0:global"/>
+    <RDF:li resource="urn:mozilla:skin:classic/1.0:messenger"/>
+    <RDF:li resource="urn:mozilla:skin:classic/1.0:navigator"/>
+  </RDF:Seq>
+  <RDF:Description about="urn:mozilla:skin:classic/1.0"
+                   c:displayName="クラシック"
+                   c:accessKey="C"
+                   c:author="mozilla.org"
+                   c:description="これは以前の Windows 版 Netscape バージョンでお馴染みのテーマによく似ています。"
+                   c:name="classic/1.0"
+                   c:image="jar:resource:///chrome/classic.jar!/skin/classic/global/preview.gif"
+                   c:locType="install">
+    <c:packages resource="urn:mozilla:skin:classic/1.0:packages"/>
+  </RDF:Description>
+  <RDF:Description about="urn:mozilla:skin:classic/1.0:communicator"
+                   c:baseURL="jar:resource:/chrome/classic.jar!/skin/classic/communicator/"
+                   c:allowScripts="false"
+                   c:skinVersion="0.9.4">
+    <c:package resource="urn:mozilla:package:communicator"/>
+  </RDF:Description>
+  <RDF:Description about="urn:mozilla:skin:classic/1.0:navigator"
+                   c:skinVersion="0.9.4"
+                   c:baseURL="jar:resource:/chrome/classic.jar!/skin/classic/navigator/"
+                   c:allowScripts="false">
+    <c:package resource="urn:mozilla:package:navigator"/>
+  </RDF:Description>
+  <RDF:Description about="urn:mozilla:skin:modern/1.0"
+                   c:displayName="モダン"
+                   c:author="Netscape"
+                   c:description="これは Netscape 6 でデフォルトとして使用されているテーマです。テーマをオリジナルの設定に戻したい場合に適用します。"
+                   c:name="modern/1.0"
+                   c:accessKey="M"
+                   c:image="jar:resource:/chrome/modern.jar!/skin/modern/global/preview.gif"
+                   c:locType="install">
+    <c:packages resource="urn:mozilla:skin:modern/1.0:packages"/>
+  </RDF:Description>
+  <RDF:Description about="urn:mozilla:skin:classic/1.0:global"
+                   c:baseURL="jar:resource:/chrome/classic.jar!/skin/classic/global/"
+                   c:allowScripts="false"
+                   c:skinVersion="0.9.4">
+    <c:package resource="urn:mozilla:package:global"/>
+  </RDF:Description>
+</RDF:RDF>

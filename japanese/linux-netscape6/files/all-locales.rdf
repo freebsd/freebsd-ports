@@ -1,0 +1,197 @@
+<?xml version="1.0"?>
+<RDF:RDF xmlns:c="http://www.mozilla.org/rdf/chrome#"
+         xmlns:RDF="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+  <RDF:Seq about="urn:mozilla:locale:US:packages">
+    <RDF:li resource="urn:mozilla:locale:US:global-region"/>
+    <RDF:li resource="urn:mozilla:locale:US:communicator-region"/>
+    <RDF:li resource="urn:mozilla:locale:US:editor-region"/>
+    <RDF:li resource="urn:mozilla:locale:US:messenger-region"/>
+    <RDF:li resource="urn:mozilla:locale:US:navigator-region"/>
+  </RDF:Seq>
+  <RDF:Description about="urn:mozilla:locale:JP"
+                   c:displayName="JP Region"
+                   c:localeType="region"
+                   c:author="mozilla.org"
+                   c:name="JP"
+                   c:previewURL="http://www.mozilla.org/locales/JP.gif"
+                   c:locType="install">
+    <c:packages resource="urn:mozilla:locale:JP:packages"/>
+  </RDF:Description>
+  <RDF:Description about="urn:mozilla:locale:ja-JP:global"
+                   c:localeVersion="0.9.4"
+                   c:baseURL="jar:resource:/chrome/ja-JP.jar!/locale/ja-JP/global/">
+    <c:package resource="urn:mozilla:package:global"/>
+  </RDF:Description>
+  <RDF:Description about="urn:mozilla:locale:ja-JP:content-packs"
+                   c:localeVersion="0.9.4"
+                   c:baseURL="jar:resource:/chrome/ja-JP.jar!/locale/ja-JP/content-packs/">
+    <c:package resource="urn:mozilla:package:content-packs"/>
+  </RDF:Description>
+  <RDF:Description about="urn:mozilla:locale:US:messenger-region"
+                   c:baseURL="jar:resource:/chrome/US.jar!/locale/US/messenger-region/"
+                   c:localeVersion="0.9.4">
+    <c:package resource="urn:mozilla:package:messenger-region"/>
+  </RDF:Description>
+  <RDF:Description about="urn:mozilla:locale:US:editor-region"
+                   c:localeVersion="0.9.4"
+                   c:baseURL="jar:resource:/chrome/US.jar!/locale/US/editor-region/">
+    <c:package resource="urn:mozilla:package:editor-region"/>
+  </RDF:Description>
+  <RDF:Description about="urn:mozilla:locale:JP:messenger-region"
+                   c:localeVersion="0.9.4"
+                   c:baseURL="jar:resource:/chrome/JP.jar!/locale/JP/messenger-region/">
+    <c:package resource="urn:mozilla:package:messenger-region"/>
+  </RDF:Description>
+  <RDF:Description about="urn:mozilla:locale:ja-JP:communicator"
+                   c:localeVersion="0.9.4"
+                   c:baseURL="jar:resource:/chrome/ja-JP.jar!/locale/ja-JP/communicator/">
+    <c:package resource="urn:mozilla:package:communicator"/>
+  </RDF:Description>
+  <RDF:Description about="urn:mozilla:locale:ja-JP:help"
+                   c:localeVersion="0.9.4"
+                   c:baseURL="jar:resource:/chrome/ja-JP.jar!/locale/ja-JP/help/">
+    <c:package resource="urn:mozilla:package:help"/>
+  </RDF:Description>
+  <RDF:Description about="urn:mozilla:locale:ja-JP:wallet"
+                   c:localeVersion="0.9.4"
+                   c:baseURL="jar:resource:/chrome/ja-JP.jar!/locale/ja-JP/wallet/">
+    <c:package resource="urn:mozilla:package:wallet"/>
+  </RDF:Description>
+  <RDF:Description about="urn:mozilla:locale:US"
+                   c:displayName="US Region"
+                   c:localeType="region"
+                   c:author="mozilla.org"
+                   c:name="US"
+                   c:previewURL="http://www.mozilla.org/locales/US.gif"
+                   c:locType="install">
+    <c:packages resource="urn:mozilla:locale:US:packages"/>
+  </RDF:Description>
+  <RDF:Description about="urn:mozilla:locale:US:global-region"
+                   c:baseURL="jar:resource:/chrome/US.jar!/locale/US/global-region/"
+                   c:localeVersion="0.9.4">
+    <c:package resource="urn:mozilla:package:global-region"/>
+  </RDF:Description>
+  <RDF:Description about="urn:mozilla:locale:ja-JP:necko"
+                   c:localeVersion="0.9.4"
+                   c:baseURL="jar:resource:/chrome/ja-JP.jar!/locale/ja-JP/necko/">
+    <c:package resource="urn:mozilla:package:necko"/>
+  </RDF:Description>
+  <RDF:Description about="urn:mozilla:locale:ja-JP:pippki"
+                   c:localeVersion="0.9.4"
+                   c:baseURL="jar:resource:/chrome/ja-JP.jar!/locale/ja-JP/pippki/">
+    <c:package resource="urn:mozilla:package:pippki"/>
+  </RDF:Description>
+  <RDF:Description about="urn:mozilla:locale:ja-JP:global-platform"
+                   c:localeVersion="0.9.4"
+                   c:baseURL="jar:resource:/chrome/ja-unix.jar!/locale/ja-JP/global-platform/">
+    <c:package resource="urn:mozilla:package:global-platform"/>
+  </RDF:Description>
+  <RDF:Description about="urn:mozilla:locale:JP:global-region"
+                   c:localeVersion="0.9.4"
+                   c:baseURL="jar:resource:/chrome/JP.jar!/locale/JP/global-region/">
+    <c:package resource="urn:mozilla:package:global-region"/>
+  </RDF:Description>
+  <RDF:Description about="urn:mozilla:locale:ja-JP:navigator"
+                   c:localeVersion="0.9.4"
+                   c:baseURL="jar:resource:/chrome/ja-JP.jar!/locale/ja-JP/navigator/">
+    <c:package resource="urn:mozilla:package:navigator"/>
+  </RDF:Description>
+  <RDF:Description about="urn:mozilla:locale:JP:communicator-region"
+                   c:localeVersion="0.9.4"
+                   c:baseURL="jar:resource:/chrome/JP.jar!/locale/JP/communicator-region/">
+    <c:package resource="urn:mozilla:package:communicator-region"/>
+  </RDF:Description>
+  <RDF:Description about="urn:mozilla:locale:US:navigator-region"
+                   c:localeVersion="0.9.4"
+                   c:baseURL="jar:resource:/chrome/US.jar!/locale/US/navigator-region/">
+    <c:package resource="urn:mozilla:package:navigator-region"/>
+  </RDF:Description>
+  <RDF:Seq about="urn:mozilla:locale:ja-JP:packages">
+    <RDF:li resource="urn:mozilla:locale:ja-JP:global"/>
+    <RDF:li resource="urn:mozilla:locale:ja-JP:communicator"/>
+    <RDF:li resource="urn:mozilla:locale:ja-JP:messenger"/>
+    <RDF:li resource="urn:mozilla:locale:ja-JP:editor"/>
+    <RDF:li resource="urn:mozilla:locale:ja-JP:navigator"/>
+    <RDF:li resource="urn:mozilla:locale:ja-JP:mozldap"/>
+    <RDF:li resource="urn:mozilla:locale:ja-JP:necko"/>
+    <RDF:li resource="urn:mozilla:locale:ja-JP:cookie"/>
+    <RDF:li resource="urn:mozilla:locale:ja-JP:wallet"/>
+    <RDF:li resource="urn:mozilla:locale:ja-JP:content-packs"/>
+    <RDF:li resource="urn:mozilla:locale:ja-JP:help"/>
+    <RDF:li resource="urn:mozilla:locale:ja-JP:pipnss"/>
+    <RDF:li resource="urn:mozilla:locale:ja-JP:pippki"/>
+    <RDF:li resource="urn:mozilla:locale:ja-JP:global-platform"/>
+    <RDF:li resource="urn:mozilla:locale:ja-JP:communicator-platform"/>
+    <RDF:li resource="urn:mozilla:locale:ja-JP:navigator-platform"/>
+  </RDF:Seq>
+  <RDF:Description about="urn:mozilla:locale:ja-JP:messenger"
+                   c:baseURL="jar:resource:/chrome/ja-JP.jar!/locale/ja-JP/messenger/"
+                   c:localeVersion="0.9.4">
+    <c:package resource="urn:mozilla:package:messenger"/>
+  </RDF:Description>
+  <RDF:Description about="urn:mozilla:locale:JP:editor-region"
+                   c:localeVersion="0.9.4"
+                   c:baseURL="jar:resource:/chrome/JP.jar!/locale/JP/editor-region/">
+    <c:package resource="urn:mozilla:package:editor-region"/>
+  </RDF:Description>
+  <RDF:Description about="urn:mozilla:locale:ja-JP:communicator-platform"
+                   c:baseURL="jar:resource:/chrome/ja-unix.jar!/locale/ja-JP/communicator-platform/"
+                   c:localeVersion="0.9.4">
+    <c:package resource="urn:mozilla:package:communicator-platform"/>
+  </RDF:Description>
+  <RDF:Description about="urn:mozilla:locale:ja-JP:mozldap"
+                   c:baseURL="jar:resource:/chrome/ja-JP.jar!/locale/ja-JP/mozldap/"
+                   c:localeVersion="0.9.4">
+    <c:package resource="urn:mozilla:package:mozldap"/>
+  </RDF:Description>
+  <RDF:Description about="urn:mozilla:locale:ja-JP:cookie"
+                   c:localeVersion="0.9.4"
+                   c:baseURL="jar:resource:/chrome/ja-JP.jar!/locale/ja-JP/cookie/">
+    <c:package resource="urn:mozilla:package:cookie"/>
+  </RDF:Description>
+  <RDF:Description about="urn:mozilla:locale:ja-JP:pipnss"
+                   c:baseURL="jar:resource:/chrome/ja-JP.jar!/locale/ja-JP/pipnss/"
+                   c:localeVersion="0.9.4">
+    <c:package resource="urn:mozilla:package:pipnss"/>
+  </RDF:Description>
+  <RDF:Description about="urn:mozilla:locale:ja-JP:navigator-platform"
+                   c:localeVersion="0.9.4"
+                   c:baseURL="jar:resource:/chrome/ja-unix.jar!/locale/ja-JP/navigator-platform/">
+    <c:package resource="urn:mozilla:package:navigator-platform"/>
+  </RDF:Description>
+  <RDF:Description about="urn:mozilla:locale:ja-JP"
+                   c:displayName="Japanese (Japan)"
+                   c:author="mozilla.org"
+                   c:name="ja-JP"
+                   c:previewURL="http://www.mozilla.org/locales/ja-JP.gif"
+                   c:locType="install">
+    <c:packages resource="urn:mozilla:locale:ja-JP:packages"/>
+  </RDF:Description>
+  <RDF:Description about="urn:mozilla:locale:JP:navigator-region"
+                   c:baseURL="jar:resource:/chrome/JP.jar!/locale/JP/navigator-region/"
+                   c:localeVersion="0.9.4">
+    <c:package resource="urn:mozilla:package:navigator-region"/>
+  </RDF:Description>
+  <RDF:Description about="urn:mozilla:locale:ja-JP:editor"
+                   c:localeVersion="0.9.4"
+                   c:baseURL="jar:resource:/chrome/ja-JP.jar!/locale/ja-JP/editor/">
+    <c:package resource="urn:mozilla:package:editor"/>
+  </RDF:Description>
+  <RDF:Seq about="urn:mozilla:locale:JP:packages">
+    <RDF:li resource="urn:mozilla:locale:JP:global-region"/>
+    <RDF:li resource="urn:mozilla:locale:JP:communicator-region"/>
+    <RDF:li resource="urn:mozilla:locale:JP:editor-region"/>
+    <RDF:li resource="urn:mozilla:locale:JP:messenger-region"/>
+    <RDF:li resource="urn:mozilla:locale:JP:navigator-region"/>
+  </RDF:Seq>
+  <RDF:Seq about="urn:mozilla:locale:root">
+    <RDF:li resource="urn:mozilla:locale:ja-JP"/>
+    <RDF:li resource="urn:mozilla:locale:JP"/>
+    <RDF:li resource="urn:mozilla:locale:US"/>
+  </RDF:Seq>
+  <RDF:Description about="urn:mozilla:locale:US:communicator-region"
+                   c:baseURL="jar:resource:/chrome/US.jar!/locale/US/communicator-region/"
+                   c:localeVersion="0.9.4">
+    <c:package resource="urn:mozilla:package:communicator-region"/>
+  </RDF:Description>
+</RDF:RDF>
