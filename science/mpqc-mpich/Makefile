@@ -9,7 +9,7 @@ MASTERDIR=	${.CURDIR}/../mpqc/
 
 PKGNAMESUFFIX=	-mpich
 
-.include "${.CURDIR}/../mpqc/Makefile"
+.include "${MASTERDIR}/Makefile"
 
 BUILD_DEPENDS+=	${LOCALBASE}/mpich/lib/libmpich.a:${PORTSDIR}/net/mpich
 
