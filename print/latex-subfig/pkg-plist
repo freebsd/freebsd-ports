@@ -1,0 +1,16 @@
+@comment $FreeBSD$
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/test1.tex
+%%PORTDOCS%%%%DOCSDIR%%/test2.tex
+%%PORTDOCS%%%%DOCSDIR%%/test3.tex
+%%PORTDOCS%%%%DOCSDIR%%/test4.tex
+%%PORTDOCS%%%%DOCSDIR%%/test5.tex
+%%PORTDOCS%%%%DOCSDIR%%/test6.tex
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
+%%CLASSDIR%%/subfig.dtx
+%%CLASSDIR%%/subfig.ins
+%%CLASSDIR%%/subfig.sty
+%%CLASSDIR%%/subfig.cfg
+@dirrm %%CLASSDIR%%
+@exec %%MKTEXLSR%%
+@unexec %%MKTEXLSR%%

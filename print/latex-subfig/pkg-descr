@@ -1,0 +1,12 @@
+Subfig Style:
+
+This is a LaTeX package that supports the inclusion of small "sub" figures
+and tables. It simplifies the positioning, captioning and labeling of them
+within a single figure or table environment. 
+
+The subfig package replaces the older subfigure package, but is not
+completely backward compatible with it.  Therefore the name has changed to
+insure that the older package will remain around awhile, however the use of
+the older subfigure package is discouraged.
+
+WWW: http://www-2.cs.cmu.edu/afs/cs/usr/sdc/www/latex/subfigure.html
