@@ -21,6 +21,6 @@ lib/Counter/digits/mkstrip.sh
 bin/mkstrip
 man/man1/mkstrip.1.gz
 @exec touch /var/log/Counter.log
-@exec chown nobody.nobody /var/log/Counter.log
+@exec chown nobody.nogroup /var/log/Counter.log
 @exec chmod 644 /var/log/Counter.log
 @unexec rm /var/log/Counter.log
