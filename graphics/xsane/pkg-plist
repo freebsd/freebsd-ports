@@ -17,6 +17,7 @@ share/locale/sr/LC_MESSAGES/xsane.mo
 share/locale/sv/LC_MESSAGES/xsane.mo
 share/locale/tr/LC_MESSAGES/xsane.mo
 share/locale/vi/LC_MESSAGES/xsane.mo
+share/locale/zh/LC_MESSAGES/xsane.mo
 share/sane/xsane/Mustek-logo.xpm
 share/sane/xsane/Plustek-logo.xpm
 share/sane/xsane/UMAX-logo.xpm
