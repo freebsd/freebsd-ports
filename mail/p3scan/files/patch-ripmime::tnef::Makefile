@@ -1,0 +1,19 @@
+--- ripmime/tnef/Makefile.orig	Sat Nov 15 20:39:06 2003
++++ ripmime/tnef/Makefile	Wed Feb 18 11:03:29 2004
+@@ -1,13 +1,13 @@
+ 
+-CC=cc
++CC?=cc
+ 
+ # Possible platforms are SUN, HPUX, DEC, SGI, AIX, Linux and MSDOS
+ # The main definitions are for 32/16 bits and for byte order, the 
+ # default is big endian.  You can do -D__TNEF_BYTE_ORDER 1234 for little
+ # endian
+-PLATFORM=-D___TNEF_BYTE_ORDER=4321 
++PLATFORM=-D___TNEF_BYTE_ORDER=_BYTE_ORDER -include /usr/include/machine/endian.h 
+ #CFLAGS = -O2 -ggdb
+-CFLAGS = -Wall -g -I..
++CFLAGS += -Wall -g -I..
+ 
+ 
+ default: config.h tnef.h tnef.c
