@@ -32,6 +32,11 @@ PLIST_SUB+=	ONIGURUMA=""
 PLIST_SUB+=	ONIGURUMA="@comment "
 .endif
 
+# Ruby 1.6 does not support IA64 yet.
+ONLY_FOR_ARCHS=		i386
+# There are some problems on alpha and sparc64; use 1.8 or later.
+ONLY_FOR_ARCHS+=	alpha sparc64
+
 #USE_BZIP2=	yes
 
 USE_RUBY=	yes
