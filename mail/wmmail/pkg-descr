@@ -1,8 +1,16 @@
-A Reworked ASMail to sit on the WindowMaker dock.
-It notifies you whenever new mail has arrived, and
-displays a nice icon animation.
+WMMail.app is a "mail-checker" like xbiff.  It indicates the status of the
+user's mailbox by showing animated XPM icons when incoming mails are
+detected.  Additionally, it can be configured to execute a program on
+incoming mail and/or on mouse double-clicks, and can provide a count of
+emails in the user's mailbox.  It currently supports UNIX mbox files, MH
+and MailDir mail folders, and IMAP4 remote mailboxes.
 
-http://www-ug.eecg.utoronto.ca/~chanb/
+WMMail.app is based on asmail, a similar applet designed to work with the
+Wharf of the AfterStep window manager.  However, WMMail.app has been
+re-written to be compatible with the Window Maker Dock, i.e. WMMail.app
+can be dragged and dropped on to (and off from) the Dock dynamically. 
 
- - Rom.
-rom_glsa@ein-hashofet.co.il
+The latest and greatest version can be found at
+http://www.eecg.utoronto.ca/~chanb/wmmail.html
+
+- Jim <jim@phrantic.phear.net>
