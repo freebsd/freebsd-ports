@@ -1,13 +1,13 @@
 # New ports collection makefile for:    elm
 # See also: http://www.ozone.fmi.fi/KEH/
-# Version required:     2.4.25.ME+28s
+# Version required:     2.4.25.ME+29
 # Date created:         26 June 1995
 # Whom:                 ache
 #
-# $Id: Makefile,v 1.34 1996/12/19 04:19:30 ache Exp $
+# $Id: Makefile,v 1.35 1996/12/20 02:40:11 asami Exp $
 #
 
-DISTNAME=       elm-2.4ME+28s
+DISTNAME=       elm-2.4ME+29
 CATEGORIES=	mail
 MASTER_SITES=   ftp://dionysos.fmi.fi/KEH/ \
 		ftp://ftp.funet.fi/pub/unix/mail/elm/elm-2.4ME+/ \
@@ -15,9 +15,14 @@ MASTER_SITES=   ftp://dionysos.fmi.fi/KEH/ \
 
 MAINTAINER=	ache@FreeBSD.ORG
 
-WRKSRC=         ${WRKDIR}/elm2.4.ME+.28s
-MAN1=		answer.1 checkalias.1 elm.1 elmalias.1 fastmail.1 filter.1 \
+WRKSRC=         ${WRKDIR}/elm2.4.ME+.29
+MAN1=           answer.1 checkalias.1 elm.1 elmalias.1 fastmail.1 \
 		listalias.1 messages.1 newalias.1 printmail.1 readmsg.1
+
+HAS_CONFIGURE=  Yes
+CONFIGURE_SCRIPT= Configure
+CONFIGURE_ENV+= PREFIX="${PREFIX}"
+CONFIGURE_ARGS+= -S
 
 post-install:
 	cd ${WRKSRC}/nls; ${MAKE} install
