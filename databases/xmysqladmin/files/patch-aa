@@ -1,5 +1,5 @@
 --- Makefile.orig	Mon Dec  7 12:52:39 1998
-+++ Makefile	Sun Mar 11 14:02:11 2001
++++ Makefile	Thu Sep 19 13:45:22 2002
 @@ -34,7 +34,7 @@
  # This is used by 'make install' command
  #-------------------------------------------------------
@@ -69,7 +69,7 @@
  #-------------------------------------------------------
  #XFORMINCDIR = -I/opt/local/include
 -XFORMINCDIR = -I/usr/X11R6/include
-+XFORMINCDIR = -I${X11BASE}/include
++XFORMINCDIR = -I${X11BASE}/include -I${X11BASE}/include/X11
  ########################################################
  
  

@@ -1,5 +1,5 @@
 --- Makefile.orig	Wed Nov 18 05:19:06 1998
-+++ Makefile	Sun Mar 11 13:59:59 2001
++++ Makefile	Thu Sep 19 13:43:36 2002
 @@ -31,24 +31,23 @@
  PROGRAM = 	xmysql
  
@@ -27,7 +27,7 @@
 +MYSQLINC = -I${LOCALBASE}/include/mysql
 +MYSQLLOAD = -L${LOCALBASE}/lib/mysql -lmysqlclient
 +XFORMLIBDIR = -L${X11BASE}/lib
-+XFORMINCDIR = -I${X11BASE}/include
++XFORMINCDIR = -I${X11BASE}/include -I${X11BASE}/include/X11
  XINC = 
 -XLOAD = -L/usr/X11R6/lib  -lX11
 +XLOAD = -L${X11BASE}/lib  -lX11
