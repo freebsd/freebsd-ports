@@ -7,7 +7,7 @@
 
 PORTNAME=	musicbrainz
 PORTVERSION=	0.1.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	audio ruby
 MASTER_SITES=	http://www.pablotron.org/download/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
@@ -17,7 +17,7 @@ DIST_SUBDIR=	ruby
 MAINTAINER=	knu@FreeBSD.org
 COMMENT=	MusicBrainz bindings for Ruby
 
-LIB_DEPENDS=	musicbrainz.3:${PORTSDIR}/audio/libmusicbrainz
+LIB_DEPENDS=	musicbrainz.4:${PORTSDIR}/audio/libmusicbrainz
 
 USE_RUBY=	yes
 USE_RUBY_EXTCONF=	yes

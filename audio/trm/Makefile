@@ -7,7 +7,7 @@
 
 PORTNAME=	trm
 PORTVERSION=	0.2.1
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	audio
 MASTER_SITES=	ftp://ftp.musicbrainz.org/pub/musicbrainz/ \
 		ftp://ftp.nl.musicbrainz.org/ \
@@ -18,7 +18,7 @@ COMMENT=	TRM generator to generate acoustic fingerprints
 
 BUILD_DEPENDS=	madplay:${PORTSDIR}/audio/madplay
 LIB_DEPENDS=	id3-3.8.3:${PORTSDIR}/audio/id3lib \
-		musicbrainz.3:${PORTSDIR}/audio/libmusicbrainz \
+		musicbrainz.4:${PORTSDIR}/audio/libmusicbrainz \
 		vorbisfile.4:${PORTSDIR}/audio/libvorbis
 
 USE_REINPLACE=	yes
