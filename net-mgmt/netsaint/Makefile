@@ -7,7 +7,7 @@
 
 PORTNAME=	netsaint
 PORTVERSION=	0.0.7
-PORTREVISION=	1
+PORTREVISION=	2
 PORTEPOCH=	1
 CATEGORIES=	net
 MASTER_SITES=	http://netsaint.sourceforge.net/download/ \
@@ -26,7 +26,7 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		CFLAGS="${CFLAGS} -I${LOCALBASE}/include" \
 		LIBS="-L${LOCALBASE}/lib -lgd -lgnugetopt"
 CONFIGURE_ARGS=	--with-command-user=netsaint \
-		--with-command-grp=nogroup \
+		--with-command-grp=www \
 		--with-netsaint-user=netsaint \
 		--with-netsaint-grp=netsaint \
 		--sbindir=${PREFIX}/share/netsaint/sbin \
