@@ -18,9 +18,10 @@ LIB_DEPENDS=		tcl82.1:${PORTSDIR}/lang/tcl82
 BUILD_DEPENDS=		${NONEXISTENT}:${PORTSDIR}/lang/tcl82:patch
 
 WRKSRC=			${WRKDIR}/${DISTNAME}/src
-HAS_CONFIGURE=		YES
-CONFIGURE_ARGS= 	--with-tcl=${PREFIX}/lib/tcl8.2 \
+GNU_CONFIGURE=		YES
+CONFIGURE_ARGS+= 	--with-tcl=${PREFIX}/lib/tcl8.2 \
 			--with-docdir=${PREFIX}/share/doc/cost --with-charmaps
+CONFIGURE_ENV+=	CFLAGS="${CFLAGS} -fPIC"	
 
 do-install:
 	${MKDIR} ${PREFIX}/lib/cost2.2
