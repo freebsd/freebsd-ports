@@ -1,0 +1,11 @@
+--- init.c.orig	Sun Aug  6 21:20:35 2000
++++ init.c	Sun Aug  6 21:20:50 2000
+@@ -363,7 +363,7 @@
+ }
+ 
+ void init(void) {
+-    extern long time();
++    extern time_t time();
+     int i = 0;
+     NODE *proc = NIL, *pname = NIL, *cnd = NIL;
+ 
