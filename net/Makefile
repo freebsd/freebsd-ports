@@ -673,6 +673,7 @@
     SUBDIR += trafshow
     SUBDIR += tramp
     SUBDIR += tramp-emacs20
+    SUBDIR += trickle
     SUBDIR += tridiavnc
     SUBDIR += tsclient
     SUBDIR += ttcp

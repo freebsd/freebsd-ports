@@ -1,0 +1,5 @@
+Trickle is a portable lightweight userspace bandwidth shaper.
+It can run in collaborative mode (together with trickled) or in
+stand alone mode.
+
+WWW: http://monkey.org/~marius/trickle/
