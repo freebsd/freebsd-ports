@@ -3,10 +3,10 @@
 # Date created:		Do  19 Nov 1998 21:13:55 CET
 # Whom:			Andreas Klemm <andreas@klemm.gtn.com>
 #
-# $Id: Makefile,v 1.3 1998/11/19 21:59:54 andreas Exp $
+# $Id: Makefile,v 1.4 1999/01/07 19:44:18 andreas Exp $
 #
 
-DISTNAME=	webmin-0.65
+DISTNAME=	webmin-0.71
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.webmin.com/webmin/download/
 
