@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	GraphViz
-PORTVERSION=	2.01
+PORTVERSION=	2.02
 CATEGORIES=	graphics perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	GraphViz
@@ -16,9 +16,7 @@ MAINTAINER=	clsung@FreeBSD.org
 COMMENT=	GraphViz - Perl interface to the GraphViz graphing tool
 
 BUILD_DEPENDS=	${SITE_PERL}/IPC/Run.pm:${PORTSDIR}/devel/p5-IPC-Run \
-		${SITE_PERL}/Graph.pm:${PORTSDIR}/math/p5-Graph \
 		${SITE_PERL}/Test/More.pm:${PORTSDIR}/devel/p5-Test-Simple \
-		${SITE_PERL}/Math/Bezier.pm:${PORTSDIR}/math/p5-Math-Bezier \
 		dot:${PORTSDIR}/graphics/graphviz
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
