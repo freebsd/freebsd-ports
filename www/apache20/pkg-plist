@@ -114,6 +114,12 @@ lib/libaprutil.so.0
 lib/libexpat.a
 lib/libexpat.la
 lib/libexpat.so.1
+@exec ln -fs libapr.so.0 %D/lib/libapr.so
+@exec ln -fs libaprutil.so.0 %D/lib/libaprutil.so
+@exec ln -fs libexpat.so.1 %D/lib/libexpat.so
+@unexec rm -f %D/lib/libapr.so
+@unexec rm -f %D/lib/libaprutil.so
+@unexec rm -f %D/lib/libexpat.so
 libexec/apache/httpd.exp
 libexec/apache/mod_access.la
 libexec/apache/mod_access.so
