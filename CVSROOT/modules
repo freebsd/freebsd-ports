@@ -3121,6 +3121,7 @@ gstreamer-plugins-esound	ports/audio/gstreamer-plugins-esound
 gstreamer-plugins-faac		ports/audio/gstreamer-plugins-faac
 gstreamer-plugins-faad		ports/audio/gstreamer-plugins-faad
 gstreamer-plugins-flac		ports/audio/gstreamer-plugins-flac
+gstreamer-plugins-gconf		ports/devel/gstreamer-plugins-gconf
 gstreamer-plugins-gdkpixbuf	ports/graphics/gstreamer-plugins-gdkpixbuf
 gstreamer-plugins-gnomevfs	ports/devel/gstreamer-plugins-gnomevfs
 gstreamer-plugins-gsm		ports/audio/gstreamer-plugins-gsm
