@@ -28,7 +28,7 @@ DEFAULTHOST?=	localhost
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} == "alpha" || ${ARCH} == "sparc64" || ${ARCH} == "ia64"
+.if ${ARCH} != "i386"
 CONFIGURE_ARGS+=--with-64bit
 .endif
 
