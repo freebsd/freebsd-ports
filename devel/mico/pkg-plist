@@ -4,12 +4,14 @@ bin/imr
 bin/ird
 bin/mico-ar
 bin/mico-c++
+bin/mico-cpp
 bin/mico-ld
 bin/mico-shc++
 bin/mico-shld
 bin/micod
 bin/nsadmin
 bin/nsd
+bin/propertyd
 doc/mico/examples/MakeVars
 doc/mico/examples/README
 doc/mico/examples/account/Makefile
@@ -77,6 +79,17 @@ doc/mico/examples/interceptor/runit
 doc/mico/examples/interceptor/server.cc
 doc/mico/examples/interop/Makefile
 doc/mico/examples/interop/README
+doc/mico/examples/interop/jacorb/Account.idl
+doc/mico/examples/interop/jacorb/Client.java
+doc/mico/examples/interop/jacorb/ClientApplet.html.in
+doc/mico/examples/interop/jacorb/ClientApplet.java
+doc/mico/examples/interop/jacorb/Makefile
+doc/mico/examples/interop/jacorb/README
+doc/mico/examples/interop/jacorb/Server.java
+doc/mico/examples/interop/jacorb/account
+doc/mico/examples/interop/jacorb/client.cc
+doc/mico/examples/interop/jacorb/run_applet
+doc/mico/examples/interop/jacorb/server.cc
 doc/mico/examples/interop/jdk/Account.idl
 doc/mico/examples/interop/jdk/Client.java
 doc/mico/examples/interop/jdk/ClientApplet.html.in
@@ -104,6 +117,33 @@ doc/mico/examples/naming/account.idl
 doc/mico/examples/naming/account_test
 doc/mico/examples/naming/client.cc
 doc/mico/examples/naming/server.cc
+doc/mico/examples/poa/Makefile
+doc/mico/examples/poa/README
+doc/mico/examples/poa/account-1/Makefile
+doc/mico/examples/poa/account-1/account
+doc/mico/examples/poa/account-1/account.idl
+doc/mico/examples/poa/account-1/client.cc
+doc/mico/examples/poa/account-1/server.cc
+doc/mico/examples/poa/account-2/Makefile
+doc/mico/examples/poa/account-2/account
+doc/mico/examples/poa/account-2/account.idl
+doc/mico/examples/poa/account-2/client.cc
+doc/mico/examples/poa/account-2/server.cc
+doc/mico/examples/poa/hello-1/Makefile
+doc/mico/examples/poa/hello-1/client.cc
+doc/mico/examples/poa/hello-1/hello
+doc/mico/examples/poa/hello-1/hello.idl
+doc/mico/examples/poa/hello-1/server.cc
+doc/mico/examples/poa/hello-2/Makefile
+doc/mico/examples/poa/hello-2/client.cc
+doc/mico/examples/poa/hello-2/hello
+doc/mico/examples/poa/hello-2/hello.idl
+doc/mico/examples/poa/hello-2/server.cc
+doc/mico/examples/poa/inherit/Makefile
+doc/mico/examples/poa/inherit/client.cc
+doc/mico/examples/poa/inherit/inherit
+doc/mico/examples/poa/inherit/inherit.idl
+doc/mico/examples/poa/inherit/server.cc
 doc/mico/examples/qtmico/Makefile
 doc/mico/examples/qtmico/README
 doc/mico/examples/qtmico/client.cc
@@ -241,6 +281,9 @@ include/mico/CosObjectIdentity.idl
 include/mico/CosRelationships.h
 include/mico/CosRelationships.idl
 include/mico/IdentifiableObject_impl.h
+include/mico/PropertyService.h
+include/mico/PropertyService.idl
+include/mico/PropertyService_impl.h
 include/mico/RelationshipFactory_impl.h
 include/mico/RelationshipIterator_impl.h
 include/mico/Relationship_impl.h
@@ -261,9 +304,12 @@ include/mico/codec.h
 include/mico/codec_impl.h
 include/mico/codeset.h
 include/mico/codeset_impl.h
+include/mico/config-win32.h
 include/mico/config.h
 include/mico/config.h.in
 include/mico/conv_frame.idl
+include/mico/current.h
+include/mico/current.idl
 include/mico/dii.h
 include/mico/dispatch.h
 include/mico/dsi.h
@@ -294,19 +340,33 @@ include/mico/object.h
 include/mico/orb.h
 include/mico/orb_fwd.h
 include/mico/orb_impl.h
+include/mico/os-math.h
+include/mico/os-misc.h
+include/mico/os-net.h
+include/mico/poa.h
+include/mico/poa.idl
+include/mico/poa_impl.h
+include/mico/policy.h
+include/mico/policy.idl
+include/mico/policy_impl.h
 include/mico/process.h
 include/mico/process_impl.h
 include/mico/qtmico.h
 include/mico/rtti.h
 include/mico/sequence.h
+include/mico/service_info.h
+include/mico/service_info.idl
 include/mico/shlib.h
 include/mico/shlib_impl.h
 include/mico/ssl.h
+include/mico/ssliop.h
+include/mico/ssliop.idl
 include/mico/static.h
 include/mico/stream.h
 include/mico/stream.idl
 include/mico/stream_impl.h
 include/mico/string.h
+include/mico/tcconst.h
 include/mico/tclmico.h
 include/mico/template_impl.h
 include/mico/throw.h
@@ -337,15 +397,21 @@ include/ministl/set.h
 include/ministl/string
 include/ministl/vector
 include/ministl/vector.h
-lib/libmico2.1.0.a
-lib/libmicoaux2.1.0.a
-lib/libmicocoss2.1.0.a
-lib/libmicogtk2.1.0.a
-lib/libmicoqt2.1.0.a
-lib/libmicotcl2.1.0.a
-lib/libmicox2.1.0.a
+lib/libmico2.2.1.a
+lib/libmicoaux2.2.1.a
+lib/libmicocoss2.2.1.a
+lib/libmicogtk2.2.1.a
+lib/libmicoqt2.2.1.a
+lib/libmicox2.2.1.a
 lib/mico-setup.csh
 lib/mico-setup.sh
+man/man1/idl.1
+man/man1/imr.1
+man/man1/nsadmin.1
+man/man5/micorc.5
+man/man8/ird.8
+man/man8/micod.8
+man/man8/nsd.8
 @dirrm include/ministl
 @dirrm include/mico
 @dirrm doc/mico/examples/x11
@@ -365,10 +431,17 @@ lib/mico-setup.sh
 @dirrm doc/mico/examples/redlich/Calc-1
 @dirrm doc/mico/examples/redlich
 @dirrm doc/mico/examples/qtmico
+@dirrm doc/mico/examples/poa/inherit
+@dirrm doc/mico/examples/poa/hello-2
+@dirrm doc/mico/examples/poa/hello-1
+@dirrm doc/mico/examples/poa/account-2
+@dirrm doc/mico/examples/poa/account-1
+@dirrm doc/mico/examples/poa
 @dirrm doc/mico/examples/naming
 @dirrm doc/mico/examples/interop/visibroker
 @dirrm doc/mico/examples/interop/orbix
 @dirrm doc/mico/examples/interop/jdk
+@dirrm doc/mico/examples/interop/jacorb
 @dirrm doc/mico/examples/interop
 @dirrm doc/mico/examples/interceptor
 @dirrm doc/mico/examples/gtkmico
