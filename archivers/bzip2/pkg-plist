@@ -8,11 +8,11 @@ include/bzlib.h
 lib/libbz2.a
 lib/libbz2.so
 lib/libbz2.so.1
-share/doc/bzip2/manual.ps.bz2
-share/doc/bzip2/manual.texi
-share/doc/bzip2/manual_1.html
-share/doc/bzip2/manual_2.html
-share/doc/bzip2/manual_3.html
-share/doc/bzip2/manual_4.html
-share/doc/bzip2/manual_toc.html
-@dirrm share/doc/bzip2
+%%PORTDOCS%%share/doc/bzip2/manual.ps.bz2
+%%PORTDOCS%%share/doc/bzip2/manual.texi
+%%PORTDOCS%%share/doc/bzip2/manual_1.html
+%%PORTDOCS%%share/doc/bzip2/manual_2.html
+%%PORTDOCS%%share/doc/bzip2/manual_3.html
+%%PORTDOCS%%share/doc/bzip2/manual_4.html
+%%PORTDOCS%%share/doc/bzip2/manual_toc.html
+%%PORTDOCS%%@dirrm share/doc/bzip2
