@@ -34,7 +34,7 @@ NO_FILTER_SHLIBS=	yes
 ICCCFGVAL!=	${UNAME} -r | ${SED} -e 's/\..*//'
 
 .if !exists(${DISTDIR}/${DISTNAME}${EXTRACT_SUFX})
-IGNORE=	"Please manually download the version for RedHat 7.1 from ${MASTER_SITES} (e.g. http://www.intel.com/software/products/compilers/c50/linux/noncom.htm), put it into ${DISTDIR} and run make again. WARNING: this will lead to a mixed up installation if you already use the default linux emulation. This port uses the linux_base-7 port instead of the default linux_base port"
+IGNORE=	"Please manually download the version for RedHat 7.1 from ${MASTER_SITES}, e.g. from http://www.intel.com/software/products/compilers/c50/linux/noncom.htm. Put it into ${DISTDIR} and run make again. WARNING: this will lead to a mixed up installation if you already use the default linux emulation. This port uses the linux_base-7 port instead of the default linux_base port"
 .endif
 
 post-extract:
