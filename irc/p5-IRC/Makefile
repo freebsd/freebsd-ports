@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	Net-IRC
-PORTVERSION=	0.71
+PORTVERSION=	0.74
 CATEGORIES=	irc perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
-MASTER_SITE_SUBDIR=	Net
+MASTER_SITE_SUBDIR=	Net/JMUHLICH
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	jedgar@fxp.org
@@ -17,7 +17,6 @@ COMMENT=	Perl5 modules to implement the IRC protocol (RFC 1459)
 
 PERL_CONFIGURE=	yes
 
-MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 MAN3=		Net::Connection.3 \
 		Net::DCC.3 \
 		Net::Event.3 \

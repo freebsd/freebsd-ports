@@ -1,9 +1,9 @@
-lib/perl5/site_perl/%%PERL_VER%%/Net/IRC.pm
-lib/perl5/site_perl/%%PERL_VER%%/Net/IRC/Connection.pm
-lib/perl5/site_perl/%%PERL_VER%%/Net/IRC/DCC.pm
-lib/perl5/site_perl/%%PERL_VER%%/Net/IRC/Event.pm
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Net/IRC/.packlist
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/Net/IRC
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Net/IRC
-@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Net 2>/dev/null || true
-@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/Net 2>/dev/null || true
+%%SITE_PERL%%/Net/IRC.pm
+%%SITE_PERL%%/Net/IRC/Connection.pm
+%%SITE_PERL%%/Net/IRC/DCC.pm
+%%SITE_PERL%%/Net/IRC/Event.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/IRC/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/IRC
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Net 2>/dev/null || true
+@dirrm %%SITE_PERL%%/Net/IRC
+@unexec rmdir %D/%%SITE_PERL%%/Net 2>/dev/null || true
