@@ -166,11 +166,12 @@ include/txt_db.h
 include/x509.h
 include/x509_vfy.h
 lib/libRSAglue.a
+@exec ranlib %D/%F
 lib/libcrypto.a
 @exec ranlib %D/%F
 lib/libssl.a
 @exec ranlib %D/%F
-lib/ssleay.cnf
+etc/ssleay.cnf.sample
 share/doc/SSLeay/API.doc
 share/doc/SSLeay/a_verify.doc
 share/doc/SSLeay/apps.doc
