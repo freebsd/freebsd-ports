@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	apache
-PORTVERSION=	2.0.43
-PORTREVISION=	2
+PORTVERSION=	2.0.44
 CATEGORIES=	www ipv6
 MASTER_SITES=	http://www.apache.org/dist/httpd/ \
 		http://apache.mirrorcentral.com/dist/httpd/ \
@@ -53,6 +52,10 @@ MAKE_ENV+=	DESTDIR=${DESTDIR} EXPR_COMPAT=yes
 
 .if defined(NOPORTDOCS)
 MAKE_ENV+=	NOPORTDOCS=yes
+.endif
+
+.if !defined(IPV6_V6ONLY)
+CONFIGURE_ARGS+= --enable-v4-mapped
 .endif
 
 .if !defined(WITHOUT_SSL)
@@ -126,7 +129,7 @@ PLIST_SUB+=	EXPERIMENTAL="@comment "
 CONFIGURE_ARGS+= --enable-mods-shared="${SHARED_MODULES}" ${CONFIGURE_TARGET}
 
 MAN1=		dbmmanage.1 htdigest.1 htpasswd.1
-MAN8=		ab.8 apachectl.8 apxs.8 httpd.8 logresolve.8 rotatelogs.8 suexec.8
+MAN8=		ab.8 apxs.8 logresolve.8 rotatelogs.8 suexec.8
 
 post-extract:
 	@${INSTALL_DATA} ${DISTDIR}/powerlogo.gif ${WRKSRC}/docs/icons/freebsd.gif
