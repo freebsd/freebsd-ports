@@ -22,11 +22,18 @@ GNU_CONFIGURE=	yes
 USE_GCC=	2.95
 USE_GETTEXT=	yes
 
+# -ino: 20050214-1307 taken from lang/perl5.8:
+LOCALE_CLEANUP= LANG="" LC_ALL="" LC_COLLATE="" LC_CTYPE="" \
+                LC_MESSAGES="" LC_MONETARY="" LC_NUMERIC="" \
+                LC_TIME=""
+CONFIGURE_ENV+= ${LOCALE_CLEANUP}
+MAKE_ENV+=      ${LOCALE_CLEANUP}
+
 # In clisp-2.28, the build dies in the "regexp" module: the build target
 # invokes a configure script, which encounters a different CC variable than
 # the one the top-level configure cached.  We'll explicitly set CC to avoid
 # this.
-MAKE_ENV+= CC="${CC}" LANG=C
+MAKE_ENV+= CC="${CC}"
 CONFIGURE_ENV+= CC="${CC}"
 
 # The build uses INSTALL_* to copy files around, but since the Ports
