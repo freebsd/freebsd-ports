@@ -3,7 +3,7 @@
 # Date created:		26 Dec 1997
 # Whom:			taguchi@tohoku.iij.ad.jp
 #
-# $Id: Makefile,v 1.4 1998/07/27 00:19:21 steve Exp $
+# $Id: Makefile,v 1.5 1998/08/07 23:55:47 asami Exp $
 #
 
 DISTNAME=	tk8.0p2
@@ -16,7 +16,7 @@ PATCHFILES=	tk8.0p2jp1.1b0.patch.gz
 
 MAINTAINER=	taguchi@tohoku.iij.ad.jp
 
-LIB_DEPENDS=	tcl80jp\\.1\\.2:${PORTSDIR}/japanese/tcl80
+LIB_DEPENDS=	tcl80jp.1:${PORTSDIR}/japanese/tcl80
 
 VERSION=	8.0
 TOPDIR=		${WRKDIR}/tk${VERSION}
