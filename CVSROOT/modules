@@ -5792,6 +5792,7 @@ powerpc-rtems-objc	ports/devel/powerpc-rtems-objc
 powershell	ports/x11/powershell
 ppbus		src/sys/dev/ppbus
 ppgen		ports/security/ppgen
+ppl		ports/devel/ppl
 ppm2fli		ports/graphics/ppm2fli
 ppmcaption	ports/graphics/ppmcaption
 ppmtoTbmp	ports/palm/ppmtoTbmp
