@@ -7,7 +7,7 @@
 
 PORTNAME=	gnome-themes-extras
 PORTVERSION=	0.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	x11-toolkits gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/${PORTNAME}/0.1
@@ -24,6 +24,7 @@ USE_GNOME=	gnomehack libgnomeui
 
 post-patch:
 	@${FIND} ${WRKSRC} -name Makefile.in | ${XARGS} ${REINPLACE_CMD} -e \
-		"/^SUBDIRS/s/Gorilla//; /^themedir =/s|themes|gnome/themes|"
+		"/^SUBDIRS/s/Gorilla//; \
+		 /^themedir =.*metacity-1$$/s|themes|gnome/themes|"
 
 .include <bsd.port.mk>
