@@ -49,8 +49,8 @@ MAN5+=		dhcp-eval.5 dhcp-options.5
 .endif
 
 MSG_FILE=	${.CURDIR}/pkg-message
-MSG_FILE=	${.CURDIR}/pkg-message
-PKGMESSAGE=	${.CURDIR}/pkg-message
+DESCR=		${.CURDIR}/pkg-descr
+PKGMESSAGE=	${WRKDIR}/pkg-message
 PLIST=		${.CURDIR}/pkg-plist
 
 # Local variables
