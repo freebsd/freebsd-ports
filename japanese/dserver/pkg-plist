@@ -34,3 +34,5 @@ lib/dserver/deinstall.sh
 man/manl/kenjiro.l.gz
 @dirrm lib/dserver/doc
 @dirrm lib/dserver
+@exec /bin/mkdir -p %D/share/dict/cdrom
+@dirrm share/dict/cdrom
