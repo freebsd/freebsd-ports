@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	frox
-PORTVERSION=	0.7.14
+PORTVERSION=	0.7.15
 CATEGORIES=	ftp
 MASTER_SITES=	http://www.hollo.org/frox/download/ \
 		http://frox.sourceforge.net/download/ \
@@ -34,7 +34,9 @@ PLIST_SUB+=	RC_DIR=${RC_DIR} RC_SUFX=${RC_SUFX}
 MAN1=	frox.1
 MAN5=	frox.conf.5
 
-PORTDOCS=	FAQ SECURITY CREDITS ChangeLog
+PORTDOCS=	SECURITY CREDITS ChangeLog FAQ.html FAQ-1.html FAQ-2.html \
+		FAQ-3.html FAQ-4.html FAQ-5.html FAQ-6.html FAQ-7.html \
+		FAQ-8.html
 PLIST_FILES=	sbin/frox etc/frox.conf.sample etc/rc.d/frox.sh
 
 PKGMESSAGE=	${WRKDIR}/pkg-message
