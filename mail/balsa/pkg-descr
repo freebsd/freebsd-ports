@@ -1,0 +1,10 @@
+A mail reader for gnome. It supports local mail, pop3, and IMAP. It can
+view mail files in mbox, maildir, and mh format. However, MIME is not
+working yet and you cannot use attachments.
+
+The pop3 support is not complete. All mail retrieved will be left on the
+server, and hence retrieved again if not deleted through some other pop3
+client. I would recommend using fetchmail to retrieve pop3 mail.
+
+Website:
+  * http://www.balsa.net/
