@@ -99,6 +99,7 @@ MASTER_SITE_COMP_SOURCES+=	\
 	ftp://rtfm.mit.edu/pub/usenet/comp.sources.%SUBDIR%/
 
 MASTER_SITE_DEBIAN+=	\
+	http://www.gtlib.cc.gatech.edu/pub/debian/%SUBDIR%/ \
 	ftp://ftp.us.debian.org/debian/%SUBDIR%/ \
 	${MASTER_SITE_DEBIAN_NON_US:S,/debian-non-US/,/debian/,}
 
@@ -314,6 +315,7 @@ MASTER_SITE_GENTOO+=	\
 	ftp://gentoo.kems.net/%SUBDIR%/
 
 MASTER_SITE_GNOME+=	\
+	http://www.gtlib.cc.gatech.edu/pub/gnome/%SUBDIR%/ \
 	ftp://ftp.mirror.ac.uk/sites/ftp.gnome.org/pub/GNOME/%SUBDIR%/ \
 	http://ftp.linux.org.uk/mirrors/ftp.gnome.org/%SUBDIR%/ \
 	http://public.planetmirror.com/pub/GNOME/%SUBDIR%/ \
@@ -330,6 +332,7 @@ MASTER_SITE_GNOME+=	\
 	http://ftp.gnome.org/pub/GNOME/%SUBDIR%/
 
 MASTER_SITE_GNU+=	\
+	http://www.gtlib.cc.gatech.edu/pub/gnu/%SUBDIR%/ \
 	ftp://ftp.gnu.org/gnu/%SUBDIR%/ \
 	http://mirrors.usc.edu/pub/gnu/%SUBDIR%/ \
 	ftp://gatekeeper.dec.com/pub/GNU/%SUBDIR%/ \
@@ -424,6 +427,7 @@ MASTER_SITE_KDE+=	\
 MASTER_SITE_MOZILLA+= \
 	http://download.mozilla.org/pub/%SUBDIR%/ \
 	http://ftp.mozilla.org/pub/%SUBDIR%/ \
+	http://www.gtlib.cc.gatech.edu/pub/mozilla.org/%SUBDIR%/ \
 	ftp://ftp.mozilla.org/pub/mozilla.org/%SUBDIR%/ \
 	ftp://sunsite.utk.edu/pub/netscape-source/%SUBDIR%/ \
 	ftp://ftp.informatik.uni-bonn.de/pub/www/mozilla/%SUBDIR%/ \
@@ -438,6 +442,7 @@ MASTER_SITE_MOZILLA+= \
 	ftp://ftp.chg.ru/pub/WWW/mozilla/%SUBDIR%/
 
 MASTER_SITE_NETBSD+=	\
+	http://www.gtlib.cc.gatech.edu/pub/NetBSD/packages/distfiles/%SUBDIR%/ \
 	ftp://ftp.netbsd.org/pub/NetBSD/packages/distfiles/%SUBDIR%/ \
 	ftp://gatekeeper.dec.com/pub/BSD/NetBSD/packages/distfiles/%SUBDIR%/ \
 	ftp://ftp.iastate.edu/pub/netbsd/packages/distfiles/%SUBDIR%/ \
@@ -614,6 +619,7 @@ MASTER_SITE_PYTHON+= \
 	http://shattered.teched.net/www.python.org/%SUBDIR%/
 
 MASTER_SITE_REDHAT_LINUX+= \
+	http://www.gtlib.cc.gatech.edu/pub/redhat/linux/%SUBDIR%/ \
 	ftp://ftp.rutgers.edu/pub/redhat/linux/%SUBDIR%/ \
 	http://mirrors.usc.edu/pub/linux/distributions/redhat/redhat/linux/%SUBDIR%/ \
 	ftp://ftp.redhat.com/pub/redhat/linux/%SUBDIR%/ \
@@ -689,6 +695,7 @@ MASTER_SITE_SOURCEWARE+= \
 MASTER_SITE_SUNSITE+=	\
 	http://www.ibiblio.org/pub/Linux/%SUBDIR%/ \
 	http://linux.dsi.internet2.edu/%SUBDIR%/ \
+	http://www.gtlib.cc.gatech.edu/pub/Linux/%SUBDIR%/ \
 	ftp://ftp.unicamp.br/pub/systems/Linux/%SUBDIR%/ \
 	ftp://ftp.tuwien.ac.at/pub/linux/ibiblio/%SUBDIR%/ \
 	ftp://sunsite.cnlab-switch.ch/mirror/linux/sunsite/%SUBDIR%/ \
@@ -781,6 +788,7 @@ MASTER_SITE_XEMACS+= \
 	${MASTER_SITE_RINGSERVER:S,%SUBDIR%,text/xemacs/&,}
 
 MASTER_SITE_XFREE+= \
+	http://www.gtlib.cc.gatech.edu/pub/XFree86/%SUBDIR%/source/ \
 	ftp://ftp.xfree86.org/pub/XFree86/%SUBDIR%/source/ \
 	ftp://ftp.rge.com/pub/X/XFree86/%SUBDIR%/source/ \
 	ftp://archive.progeny.com/XFree86/%SUBDIR%/source/ \
