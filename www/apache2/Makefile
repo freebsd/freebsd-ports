@@ -9,7 +9,7 @@
 
 PORTNAME=	apache
 PORTVERSION=	2.0.50
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_APACHE_HTTPD} \
 		http://sheepkiller.nerim.net/ports/${PORTNAME}/:powerlogo
