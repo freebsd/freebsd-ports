@@ -38,6 +38,8 @@ CONFIGURE_ARGS=	--localstatedir=${DB_DIR} \
 		--program-prefix='' \
 		--with-innodb
 
+.include <bsd.port.pre.mk>
+
 .if ${MACHINE_ARCH} == "i386"
 CONFIGURE_ARGS+=--enable-assembler --with-berkeley-db
 .endif
@@ -56,7 +58,11 @@ CFLAGS+=	-mcpu=pentiumpro -O3
 .if defined(WITH_LINUXTHREADS)
 CONFIGURE_ARGS+=--with-named-thread-libs='-DHAVE_GLIBC2_STYLE_GETHOSTBYNAME_R -D_THREAD_SAFE -I${LOCALBASE}/include/pthread/linuxthreads -L${LOCALBASE}/lib -llthread -llgcc_r'
 CFLAGS+=	-D__USE_UNIX98 -D_REENTRANT -D_THREAD_SAFE -I${LOCALBASE}/include/pthread/linuxthreads
+.if ${OSVERSION} > 500000
+LIB_DEPENDS+=	lthread.3:${PORTSDIR}/devel/linuxthreads
+.else
 LIB_DEPENDS+=	lthread.2:${PORTSDIR}/devel/linuxthreads
+.endif
 .endif
 .if defined(THREAD_SAFE_CLIENT)
 CONFIGURE_ARGS+=--enable-thread-safe-client
@@ -67,7 +73,6 @@ CONFIGURE_ENV+=	PERL=${PERL} \
 		CFLAGS="${CFLAGS}" \
 		CONFIGURE_ARGS="${CONFIGURE_ARGS}"
 
-.include <bsd.port.pre.mk>
 # without including these flags mysqld may crash under heavy load
 # and multiple connections at the same time
 CXXFLAGS=	${CFLAGS} -felide-constructors -fno-rtti
@@ -96,8 +101,6 @@ pre-fetch:
 	@${ECHO} "	DB_DIR=directory	Set alternate directory for database files"
 	@${ECHO} "				(default is /var/db/mysql)."
 	@${ECHO} "	WITH_LINUXTHREADS=yes	Use the linuxthreads pthread library."
-	@${ECHO} "				This is _NOT_ recommended for production"
-	@${ECHO} "				servers. Expect problems when enabled."
 	@${ECHO} "	SKIP_INSTALL_DB=yes	Skip mysql_install_db"
 	@${ECHO} "				(i. e. leave ${DB_DIR} alone)."
 	@${ECHO} "				This is useful for upgrades."

@@ -47,6 +47,8 @@ CONFIGURE_ARGS=	--localstatedir=${DB_DIR} \
 		--with-server-suffix='' \
 		--program-prefix=''
 
+.include <bsd.port.pre.mk>
+
 .if ${MACHINE_ARCH} == "i386"
 CONFIGURE_ARGS+=--enable-assembler --with-berkeley-db
 .endif
@@ -72,7 +74,11 @@ CONFIGURE_ARGS+=-D_THREAD_SAFE -I${LOCALBASE}/include/pthread/linuxthreads
 CONFIGURE_ARGS+=-L${LOCALBASE}/lib -llthread -llgcc_r'
 CFLAGS+=	-D__USE_UNIX98 -D_REENTRANT -D_THREAD_SAFE
 CFLAGS+=	-I${LOCALBASE}/include/pthread/linuxthreads
-LIB_DEPENDS+=	lthread.2:${PORTSDIR}/devel/linuxthreads
+.if ${OSVERSION} > 500000
+LIB_DEPENDS+=   lthread.3:${PORTSDIR}/devel/linuxthreads
+.else
+LIB_DEPENDS+=   lthread.2:${PORTSDIR}/devel/linuxthreads
+.endif
 .endif
 .if defined(THREAD_SAFE_CLIENT)
 CONFIGURE_ARGS+=--enable-thread-safe-client
@@ -81,7 +87,6 @@ CONFIGURE_ARGS+=--enable-thread-safe-client
 CFLAGS+=	-O3 -fno-omit-frame-pointer
 CXXFLAGS=	${CFLAGS} -felide-constructors -fno-rtti
 
-.include <bsd.port.pre.mk>
 .if ${OSVERSION} >= 400002
 CXXFLAGS+=	-fno-exceptions
 .endif
