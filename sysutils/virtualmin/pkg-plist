@@ -210,3 +210,4 @@ lib/webmin/virtual-server/warnbw-template
 @dirrm lib/webmin/virtual-server
 @exec [ -e %D/etc/webmin/virtual-server ] || mkdir %D/etc/webmin/virtual-server
 @unexec rmdir %D/etc/webmin/virtual-server 2>/dev/null || true
+@unexec rmdir %D/etc/webmin 2>/dev/null || true
