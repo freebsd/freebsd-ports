@@ -6,8 +6,8 @@
 #
 
 PORTNAME=	msql
-PORTVERSION=    2.0.12
-PORTREVISION=   3
+PORTVERSION=	2.0.12
+PORTREVISION=	3
 CATEGORIES=	databases
 
 MAINTAINER=	ports@FreeBSD.org
@@ -20,7 +20,7 @@ USE_REINPLACE=	YES
 # Not free for commercial use.
 RESTRICTED=	"restrictive copyright (no commercial use)"
 
-CFLAGS+=        -DANSI_ARGS
+CFLAGS+=	-DANSI_ARGS
 MAKE_ENV+=	WRKSRC=${WRKSRC}
 
 # Uncomment this if you're upgrading from <= b4 to >= b5 and have already
@@ -66,6 +66,10 @@ post-install:
 .endif
 
 .include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 500113
+BROKEN=		"Does not compile due to varargs.h being deprecated"
+.endif
 
 .if !exists(${DISTDIR}/${DISTNAME}${EXTRACT_SUFX})
 IGNORE="- You must manually obtain ${DISTFILES} from 'http://www.Hughes.com.au' and place it in ${DISTDIR}.  The distribution requires registration prior to use"
