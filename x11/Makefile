@@ -1,6 +1,7 @@
-# $Id: Makefile,v 1.71 1995/07/11 06:52:29 asami Exp $
+# $Id: Makefile,v 1.72 1995/07/12 23:41:04 asami Exp $
 #
 
+   SUBDIR += FWF
    SUBDIR += XFree86
    SUBDIR += Xaw3d
    SUBDIR += blt
