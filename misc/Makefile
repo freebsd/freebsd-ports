@@ -376,6 +376,7 @@
     SUBDIR += wmcalendar
     SUBDIR += wmcp
     SUBDIR += wmfirew
+    SUBDIR += wminfo
     SUBDIR += wmjulia
     SUBDIR += wmmand
     SUBDIR += wmpal
