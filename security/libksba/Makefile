@@ -9,9 +9,6 @@ PORTVERSION=	0.9.5
 CATEGORIES=	security
 MASTER_SITES=	${MASTER_SITE_GNUPG}
 MASTER_SITE_SUBDIR=	alpha/${PORTNAME}
-DISTFILES=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX} \
-		${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX}.sig
-EXTRACT_ONLY=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX}
 
 MAINTAINER=	lofi@FreeBSD.org
 COMMENT=	KSBA is an X.509 Library
@@ -24,23 +21,8 @@ USE_INC_LIBTOOL_VER=13
 INSTALLS_SHLIB=	yes
 CONFIGURE_TARGET=
 CONFIGURE_ARGS+=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
-USE_PERL5_BUILD=	yes
+USE_PERL5_BUILD=yes
 
 INFO=	ksba
 
-.include <bsd.port.pre.mk>
-
-pre-extract:
-.if exists(${PREFIX}/bin/gpg)
-	@${MKDIR} ${WRKDIR}
-	@${ECHO_CMD} "===> Verifying GnuPG Signature."
-	-${PREFIX}/bin/gpg --no-default-keyring --keyring ${WRKDIR}/keyring \
-		--keyserver pgp.mit.edu --recv-key 57548DCD
-	cd ${DISTDIR}; ${PREFIX}/bin/gpg --keyring ${WRKDIR}/keyring --verify \
-		${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX}.sig \
-		${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX}
-.else
-	@${ECHO_CMD} "===> GnuPG not installed. Signature can not be verified"
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
