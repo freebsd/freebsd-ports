@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	logjam2
-PORTVERSION=	4.0.0
+PORTVERSION=	4.1.0
 CATEGORIES=	deskutils
 MASTER_SITES=	http://logjam.danga.com/download/
 DISTNAME=	logjam-${PORTVERSION}
 
-MAINTAINER=	ahze@rgv.net
+MAINTAINER=	mike.patterson@unb.ca
 COMMENT=	A GTK interface to user journals on www.livejournal.com
 
 LIB_DEPENDS=	curl.2:${PORTSDIR}/ftp/curl \
@@ -22,5 +22,6 @@ MAN1=		logjam.1
 USE_GMAKE=	yes
 USE_X_PREFIX=	yes
 GNU_CONFIGURE=	yes
+CONFIGURE_ARGS= --program-transform-name="s/$$//"
 
 .include <bsd.port.mk>
