@@ -3,24 +3,22 @@
 # Date created:				19 March 1998
 # Whom:					Andrey Zakhvatov
 #
-# $Id: Makefile,v 1.2 1998/12/22 08:22:08 asami Exp $
+# $Id: Makefile,v 1.3 1999/03/15 01:50:13 steve Exp $
 #
 
-DISTNAME=		pavuk-0.9pl5
-PKGNAME=		pavuk-0.9.5
+DISTNAME=		pavuk-0.9pl9
+PKGNAME=		pavuk-0.9.9
 CATEGORIES=		net www
-MASTER_SITES=		ftp://ftp.idata.sk/pub/unix/www/ \
-			ftp://ftp.max.irk.ru/pub/unix/net/www/wget/ \
-			${MASTER_SITE_SUNSITE}
+MASTER_SITES=		${MASTER_SITE_SUNSITE} \
+			ftp://ftp.idata.sk/pub/unix/www/
 MASTER_SITE_SUBDIR=	apps/www/mirroring
 EXTRACT_SUFX=		.tgz
 
 MAINTAINER=		andy@icc.surw.chel.su
 
 LIB_DEPENDS=		Xpm.4:${PORTSDIR}/graphics/xpm \
-			gtk11.1:${PORTSDIR}/x11-toolkits/gtk11
+			gtk12.1:${PORTSDIR}/x11-toolkits/gtk12
 
-USE_XLIB=		yes
 GNU_CONFIGURE=		yes
 USE_GMAKE=		yes
 
@@ -34,7 +32,7 @@ do-install:
 	@ ${INSTALL_DATA} ${WRKSRC}/pavuk_authinfo.sample ${PREFIX}/etc
 .if !defined(NOPORTDOCS)
 	@ ${MKDIR} ${PREFIX}/share/doc/pavuk
-.for file in AUTHORS COPYING ChangeLog README THANK_TO TODO
+.for file in AUTHORS ChangeLog README THANK_TO TODO
 	@ ${INSTALL_DATA} ${WRKSRC}/${file} ${PREFIX}/share/doc/pavuk
 .endfor
 .endif

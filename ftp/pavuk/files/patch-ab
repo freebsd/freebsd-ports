@@ -1,22 +1,36 @@
---- src/net.c	Sun Feb  1 10:53:47 1998
-+++ /home/andy/tmp/wrk/src/net.c	Fri Mar 20 22:00:21 1998
-@@ -129,7 +129,9 @@
- 			
- 		}
- 
-+#ifndef __FreeBSD__
- 		fcntl(sock , F_SETFL , O_SYNC);
-+#endif
- 		if ((connect(sock, (struct sockaddr*)&addr, sizeof(addr)) == -1) &&
- 		     (errno && (errno != EISCONN)))
- 		{
-@@ -259,7 +261,9 @@
- 			}
- 		}
- 
-+#ifndef __FreeBSD__
- 		fcntl(sock , F_SETFL , O_SYNC);
-+#endif
+--- src/net.c.orig	Sun Apr 18 06:53:46 1999
++++ src/net.c	Wed Apr 21 22:44:24 1999
+@@ -101,9 +101,9 @@
+ 	{
+ 		return -1;
  	}
+-
++#ifndef __FreeBSD__
+ 	fcntl(sock , F_SETFL , O_NONBLOCK);
+-
++#endif
+ 	rv = connect(sock, (struct sockaddr*)&addr, sizeof(addr));
+ 	if (rv && (errno != EINPROGRESS) && (errno != EISCONN))
+ 	{
+@@ -121,8 +121,8 @@
  #endif
- 	if ((rsock < 0) && ((rsock = accept(sock, (struct sockaddr*)&caller, &p)) == -1))
+ 
+ #ifdef GTK_FACE
+-		cfg.gtk.inid = gtk_timeout_add(cfg.ctimeout * 60000 ,
+-					(GtkFunction)TOut , NULL);
++		cfg.gtk.inid = cfg.ctimeout ? gtk_timeout_add(cfg.ctimeout * 60000 ,
++					(GtkFunction)TOut , NULL) : 0;
+ #endif
+ 
+ 
+@@ -261,8 +261,9 @@
+ #ifdef I_FACE
+ 	if (cfg.xi_face)
+ 	{
++#ifndef __FreeBSD__
+ 		fcntl(sock , F_SETFL , O_NONBLOCK);
+-
++#endif
+ 		rsock = accept(sock, (struct sockaddr*)&caller, &p);
+ 		if ((rsock < 0) && (errno != EWOULDBLOCK))
+ 		{
