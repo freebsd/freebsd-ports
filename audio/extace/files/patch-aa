@@ -1,43 +1,11 @@
 --- configure.orig	Sun May 26 19:57:47 2002
 +++ configure	Sat Aug  3 10:36:04 2002
-@@ -1595,13 +1595,13 @@
-   CFLAGS="$ac_save_CFLAGS"
- elif test $ac_cv_prog_cc_g = yes; then
-   if test "$GCC" = yes; then
--    CFLAGS="-g -O2"
-+#    CFLAGS="-g -O2"
-   else
-     CFLAGS="-g"
-   fi
- else
-   if test "$GCC" = yes; then
--    CFLAGS="-O2"
-+#    CFLAGS="-O2"
-   else
-     CFLAGS=
-   fi
-@@ -5706,13 +5706,13 @@
-   CFLAGS="$ac_save_CFLAGS"
- elif test $ac_cv_prog_cc_g = yes; then
-   if test "$GCC" = yes; then
--    CFLAGS="-g -O2"
-+#    CFLAGS="-g -O2"
-   else
-     CFLAGS="-g"
-   fi
- else
-   if test "$GCC" = yes; then
--    CFLAGS="-O2"
-+#    CFLAGS="-O2"
-   else
-     CFLAGS=
-   fi
 @@ -6717,7 +6717,7 @@
  done
  
  
 -CFLAGS="-O2 "
-+#CFLAGS="-O2 "
++CFLAGS="$CFLAGS"
  
  
  EFENCE=""
@@ -46,8 +14,8 @@
  else
    ac_save_LIBS="$LIBS"
 -LIBS="-lgdk_imlib `gtk-config --libs`  $LIBS"
-+IMLIB_LIBS=`imlib-config --libs`
-+LIBS="-lgdk_imlib ${GTK_LIBS} ${IMLIB_LIBS}  $LIBS"
++GDK_IMLIB_LIBS=`imlib-config --libs-gdk`
++LIBS="${GTK_LIBS} ${GDK_IMLIB_LIBS}  $LIBS"
  cat > conftest.$ac_ext <<EOF
  #line 7155 "configure"
  #include "confdefs.h"
@@ -55,7 +23,7 @@
  s%@GTK_CONFIG@%$GTK_CONFIG%g
  s%@GTK_CFLAGS@%$GTK_CFLAGS%g
  s%@GTK_LIBS@%$GTK_LIBS%g
-+s%@IMLIB_LIBS@%$IMLIB_LIBS%g
++s%@GDK_IMLIB_LIBS@%$GDK_IMLIB_LIBS%g
  s%@GLIB_CONFIG@%$GLIB_CONFIG%g
  s%@GLIB_CFLAGS@%$GLIB_CFLAGS%g
  s%@GLIB_LIBS@%$GLIB_LIBS%g
