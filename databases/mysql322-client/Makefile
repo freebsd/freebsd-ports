@@ -1,12 +1,12 @@
 # ports collection makefile for:	mySQL
-# Version required:			v3.20.29
-# Date created:				15 Sep 1997
+# Version required:			v3.20.30b
+# Date created:				26 Sep 1997
 # Whom:					Josh Tiefenbach <josh@ican.net>
 #
 # $Id: Makefile,v 1.3 1997/09/05 20:23:04 jfitz Exp $
 #
 
-DISTNAME=	mysql-3.20.29
+DISTNAME=	mysql-3.20.30b
 CATEGORIES=	databases
 MASTER_SITES=	http://www.tcx.se/ \
 		http://www.buoy.com/mysql/ \
