@@ -16,7 +16,7 @@ MASTER_SITES=	http://www.htdig.org/files/ \
 		ftp://ftp.htdig.org/pub/htdig/
 MASTER_SITE_SUBDIR=	apps/www/indexing
 
-MAINTAINER=	kris@FreeBSD.org
+MAINTAINER=	billf@FreeBSD.org
 
 RUN_DEPENDS=	${LOCALBASE}/share/apache:${PORTSDIR}/www/apache13
 
