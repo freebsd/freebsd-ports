@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	liveMedia
-PORTVERSION=	2002.10.19
+PORTVERSION=	2002.10.21
 CATEGORIES=	net devel
 MASTER_SITES=	http://www.LIVE.COM/liveMedia/public/
 MASTER_SITES+=	${MASTER_SITE_LOCAL}
@@ -16,6 +16,8 @@ DISTNAME=	live.${PORTVERSION}
 MAINTAINER=	nork@FreeBSD.org
 
 WRKSRC=		${WRKDIR}/live
+
+USE_REINPLACE=	YES
 
 BasicUsageEnvironment= \
 		BasicUsageEnvironment/include/BasicHashTable.hh \
@@ -94,6 +96,11 @@ liveMedia= \
 
 post-extract:
 	@${CP} ${FILESDIR}/config.fixed-${OPSYS:L} ${WRKSRC}/
+
+post-patch:
+	${REINPLACE_CMD} \
+		-e 's/make --directory=\(\$$([_A-Z][_A-Z]*)\)/cd \1; $${MAKE}/' \
+	${WRKSRC}/Makefile.tail
 
 do-configure:
 	@(cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} ./genMakefiles fixed-${OPSYS:L})
