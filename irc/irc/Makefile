@@ -3,7 +3,7 @@
 # Date created:		23 August 1994
 # Whom:			torstenb
 #
-# $Id: Makefile,v 1.8 1995/06/27 00:12:28 torstenb Exp $
+# $Id: Makefile,v 1.9 1995/11/27 04:05:02 asami Exp $
 #
 
 DISTNAME=	irc2.8.21
@@ -17,7 +17,7 @@ MAINTAINER=	torstenb@FreeBSD.ORG
 # ENABLE_NOTE=yes
 
 # Restrictive copyright in irc2.8.21/ircd/res.c
-NO_PACKAGE=	yes
+RESTRICTED=	"No redistribution allowed."
 
 pre-install:
 	mkdir -p ${PREFIX}/lib/ircd
