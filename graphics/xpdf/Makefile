@@ -3,11 +3,10 @@
 # Date created:         02 Feb 1996
 # Whom:                 chuckr@glue.umd.edu
 #
-# $Id:$
+# $Id: Makefile,v 1.1.1.1 1996/02/10 20:33:08 fenner Exp $
 #
 
 DISTNAME=       xpdf-0.3
-PKGNAME=	xpdf-0.3
 CATEGORIES+=	graphics
 KEYWORDS=	pdf "Portable Document Format" adobe acrobat
 MASTER_SITES=   ftp://ftp.andrew.cmu.edu/pub/xpdf/
