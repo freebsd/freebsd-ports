@@ -25,3 +25,14 @@
   
   OBJECTS=jikes.$(O) scanner.$(O) code.$(O) zip.$(O) unzip.$(O) ast.$(O) diagnose.$(O) \
   	parser.$(O) lpginput.$(O) lcase.$(O) javaact.$(O) error.$(O) set.$(O) symbol.$(O) \
+--- jikes/src/jikes.cpp.orig	Tue Dec 15 21:46:33 1998
++++ jikes/src/jikes.cpp	Tue Dec 15 21:47:17 1998
+@@ -75,7 +75,7 @@
+              << "+U                 do full dependence check including Zip and Jar files\n"
+              << "+V                 generate veracious listing\n"
+              << "+Z                 treat cautions as errors\n"
+-             << "\nVersion 0.41 (01 Dec 98)"
++             << "\nVersion 0.41-FreeBSD-ae (15 Dec 98)"
+              << " by Philippe Charles and David Shields, IBM Research.\n";
+         cerr << "Please report problems to shields@watson.ibm.com.\n" ;
+     cerr << "or via browser at http://www.ibm.com/research/jikes\n";
