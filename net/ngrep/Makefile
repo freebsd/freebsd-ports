@@ -7,9 +7,9 @@
 #
 
 PORTNAME=	ngrep
-PORTVERSION=	1.35
+PORTVERSION=	1.38
 CATEGORIES=	net security
-MASTER_SITES=	http://www.packetfactory.net/ngrep/
+MASTER_SITES=	http://www.packetfactory.net/Projects/ngrep/
 
 MAINTAINER=	obrien@FreeBSD.org
 
