@@ -3,7 +3,9 @@ $FreeBSD$
 addport	- future replacement for easy-import
 
 consistency-check -  check whether all your ports are installed properly,
-                     what files have changed, and what new files there are
+                     what files have changed, and what new files there are.
+checkcats.py - verify that master categories in all ports are correct and
+               report any problems.
 checknewvers - checks for availability for a newest version of distfiles on
                MASTER_SITES (ftp only).
 close-pr  - a slightly hacked version of edit-pr(1) to quickly close PR.
@@ -39,6 +41,12 @@ For sgmlnorm, package md5 312d7b63d591e07629e0da4ae4a0ac07 is DIFFERENT from fs 
 
 change $do_md5 to 0 to not check md5, and $do_fs to 0 to not check for
 files above those installed by packages.
+
+----------------------------------------------------------------------
+
+The checkcats.py script verifyes that master categories in all ports are
+correct and report any problems. It doesn't require any command-line options.
+Please beware that full check takes quite some time.
 
 ----------------------------------------------------------------------
 
