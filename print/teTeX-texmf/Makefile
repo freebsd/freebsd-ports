@@ -8,7 +8,8 @@ PORTNAME=	teTeX-texmf
 PORTVERSION=	2.99.13.20050204
 PORTREVISION=	0
 CATEGORIES=	print
-MASTER_SITES=	ftp://ftp.dante.de/tex-archive/systems/unix/teTeX-beta/ \
+MASTER_SITES=	http://people.freebsd.org/~edwin/ \
+		ftp://ftp.dante.de/tex-archive/systems/unix/teTeX-beta/ \
 		${MASTER_SITE_TEX_CTAN} \
 		ftp://ftp.ascii.co.jp/pub/TeX/ascii-ptex/dvips/:1
 MASTER_SITE_SUBDIR=	systems/unix/teTeX-beta
