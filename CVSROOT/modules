@@ -5115,6 +5115,7 @@ nikto		ports/security/nikto
 nil		ports/games/nil
 ninix-aya	ports/games/ninix-aya
 ninja		ports/irc/ninja
+nip		ports/graphics/nip
 nitpicker	ports/net/nitpicker
 njam		ports/games/njam
 njs		ports/lang/njs
