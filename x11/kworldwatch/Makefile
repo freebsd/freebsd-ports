@@ -3,7 +3,7 @@
 # Date created:        12 July 1998
 # Whom:                Marc G. Fournier <scrappy@freebsd.org>
 #
-# $Id: Makefile,v 1.9 1998/10/09 23:47:06 asami Exp $
+# $Id: Makefile,v 1.10 1998/10/10 04:52:24 asami Exp $
 #
 
 DISTNAME=	kworldwatch-0.6
@@ -19,9 +19,7 @@ LIB_DEPENDS=	gif.3:${PORTSDIR}/graphics/giflib \
 		kdeui.1:${PORTSDIR}/x11/kdelibs \
 		kfm.1:${PORTSDIR}/x11/kdelibs
 
-BROKEN=		giflib
-
 USE_QT=		yes
-HAS_CONFIGURE=	yes
+GNU_CONFIGURE=	yes
 
 .include <bsd.port.mk>
