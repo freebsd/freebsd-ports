@@ -7,6 +7,7 @@
 
 PORTNAME=	gstreamer
 PORTVERSION=	0.5.1
+PORTREVISION=	1
 CATEGORIES=	multimedia audio gnome
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -32,6 +33,7 @@ USE_GNOME=	gnomehack \
 USE_LIBTOOL=	yes
 USE_REINPLACE=	yes
 CONFIGURE_ENV=	PKG_CONFIG=${PKG_CONFIG}
+WANT_GNOME=	yes
 PLIST_SUB=	\
 	VERSION="${PORTVERSION}" \
 	SHLIB_VERSION="${SHLIB_VERSION}"
@@ -48,4 +50,13 @@ pre-install:
 # required for PREFIX safeness, the dir might not exist under PREFIX
 	@${MKDIR} ${PREFIX}/etc/gconf/
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${HAVE_GNOME:Mnautilus2}!=""
+USE_GNOME+=	nautilus2
+PLIST_SUB+=	GST_PLAYER_VIEW=""
+.else
+PLIST_SUB+=	GST_PLAYER_VIEW="@comment "
+.endif
+
+.include <bsd.port.post.mk>
