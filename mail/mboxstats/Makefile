@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	mboxstats
-PORTVERSION=	2.4
+PORTVERSION=	2.5
 CATEGORIES=	mail
 MASTER_SITES=	http://vanheusden.com/mboxstats/
 EXTRACT_SUFX=	.tgz
@@ -28,6 +28,7 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|^CPPFLAGS|CXXFLAGS|g' ${WRKSRC}/${MAKEFILE}
 .if ${ARCH} == "i386" || ${ARCH} == "alpha"
 	@${REINPLACE_CMD} -Ee 's,(stat|open)64,\1,g' ${WRKSRC}/main.cpp
+	@${REINPLACE_CMD} -Ee 's,(stat|mmap|lseek|off)64,\1,g' ${WRKSRC}/br.h ${WRKSRC}/br.cpp
 .endif
 
 do-install:
