@@ -12,14 +12,3 @@ print out more than one page. Then you execute the next command:
 /usr/local/libexec/pips2200/setup
 
 to setup /etc/printcap, make a spool in /var/spool/lpd/ and so on.
-
-To run with Japanese/French/Germany/Spanish/Italian/Dutch/
-Portugue/Korean messages, you should execute as follows:
-  env LANG=ja_JP pips2200          env LANG=fr pips2200	  
-  env LANG=de pips2200             env LANG=es pips2200	  
-  env LANG=it pips2200             env LANG=nl pips2200
-  env LANG=pt pips2200             env LANG=ko pips2200 (*)
-  env LANG=zh_CN pips2200 (*)(**)  env LANG=zh_TW.Big5 pips2200 (**)
-
-(*) These do not work well.
-(**) See more informations in /usr/local/share/doc/pips2200/readme_for_zh

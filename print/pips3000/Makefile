@@ -10,4 +10,4 @@ COMMENT=	Photo Image Print System for Linux --- EPSON PM-3000C
 
 PRTYPE=		3000
 
-.include "${MASTERDIR}/Makefile"
+.include "${MASTERDIR}/Makefile.pips"

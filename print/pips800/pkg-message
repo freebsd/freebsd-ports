@@ -1,0 +1,8 @@
+
+You need to add following lines into /etc/libmap.conf:
+
+# Photo Image Print System (for EPSON bubble jet printer)
+[/usr/local/lib/pips/%%LIB_FILE%%]
+libc.so.6			pluginwrapper/pips.so
+libdl.so.2			pluginwrapper/pips.so
+

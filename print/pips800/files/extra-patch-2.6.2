@@ -1,0 +1,109 @@
+Index: ekpd/cbtd.c
+diff -u -p ekpd/cbtd.c.orig ekpd/cbtd.c
+--- ekpd/cbtd.c.orig	Tue Jun 24 15:22:12 2003
++++ ekpd/cbtd.c	Tue Aug 24 19:41:40 2004
+@@ -293,3 +293,14 @@ end_epson_cbt (P_CBTD_INFO p_info)
+ 	
+ 	return err;
+ }
++
++#ifdef __FreeBSD__
++
++void
++__assert_fail(const char *assertion, const char *file, unsigned int line,
++	      const char *function)
++{
++	abort();
++}
++
++#endif
+Index: ekpd/cbtd_comserv.c
+diff -u -p ekpd/cbtd_comserv.c.orig ekpd/cbtd_comserv.c
+--- ekpd/cbtd_comserv.c.orig	Tue Jun 24 15:22:12 2003
++++ ekpd/cbtd_comserv.c	Tue Aug 24 23:37:04 2004
+@@ -591,9 +591,16 @@ servsock_open (int port)
+ 	fd = socket (AF_INET, SOCK_STREAM, 0);
+ 	if (fd < 0) return -1;
+ 
++	memset(&addr, 0, sizeof(addr));
+ 	addr.sin_family = AF_INET;
+ 	addr.sin_addr.s_addr = htonl (INADDR_ANY);
+ 	addr.sin_port = htons (port);
++#ifdef __FreeBSD__
++	addr.sin_len = sizeof(addr);
++#endif
++#if !defined(MSG_NOSIGNAL) && defined(SO_NOSIGPIPE)
++	setsockopt(fd, SOL_SOCKET, SO_NOSIGPIPE, &opt, sizeof(opt));
++#endif
+ 	bind (fd, (struct sockaddr *)&addr, sizeof (addr));
+ 	setsockopt (fd, SOL_SOCKET, SO_REUSEADDR, (char *)&opt, sizeof(int));
+ 	listen (fd, 5);
+@@ -611,7 +618,11 @@ sock_read (int fd, char* buf, int read_s
+ 
+ 	for (i = 0; i < SOCK_ACCSESS_WAIT_MAX; i++)
+ 	{
++#ifndef MSG_NOSIGNAL
++		size = recv (fd, buf, read_size, MSG_DONTWAIT);
++#else
+ 		size = recv (fd, buf, read_size, MSG_NOSIGNAL | MSG_DONTWAIT);
++#endif
+ 		if (size == read_size)
+ 		{
+ 			return 0;
+@@ -641,7 +652,11 @@ sock_write (int fd, char* buf, int write
+ 
+ 	for (i = 0; i < SOCK_ACCSESS_WAIT_MAX; i++)
+ 	{
++#ifndef MSG_NOSIGNAL
++		size = send (fd, buf, write_size, MSG_DONTWAIT);
++#else
+ 		size = send (fd, buf, write_size, MSG_NOSIGNAL | MSG_DONTWAIT);
++#endif
+ 		if (size == write_size)
+ 		{
+ 			fsync (fd);
+Index: src/pfpng.c
+diff -u -p src/pfpng.c.orig src/pfpng.c
+--- src/pfpng.c.orig	Tue Jun 24 15:41:46 2003
++++ src/pfpng.c	Tue Aug 24 19:41:41 2004
+@@ -57,6 +57,8 @@ lib_png_sig_cmp                *dl_png_s
+ void *
+ open_png_library (void)
+ {
++	if (dl_handle_libpng)
++		return (void *)dl_handle_libpng;
+ 	dl_handle_libpng = dlopen ("libpng.so", RTLD_LAZY);
+ 	if (dl_handle_libpng)
+ 	{
+@@ -116,8 +118,12 @@ open_png_library (void)
+ void
+ close_png_library (void)
+ {
+-	if (dl_handle_libpng)
++#if 0
++	if (dl_handle_libpng) {
+ 		dlclose (dl_handle_libpng);
++		dl_handle_libpng = NULL;
++	}
++#endif
+ 
+ 	return;
+ }
+Index: src/pipsCom.c
+diff -u -p src/pipsCom.c.orig src/pipsCom.c
+--- src/pipsCom.c.orig	Tue Jun 24 15:41:46 2003
++++ src/pipsCom.c	Tue Aug 24 23:38:06 2004
+@@ -56,9 +56,13 @@ connect_server (char *host)
+   if (!servinfo) return -1;
+ 
+   sockfd = socket (AF_INET, SOCK_STREAM, 0);
++  memset(&address, 0, sizeof(address));
+   address.sin_family = AF_INET;
+   address.sin_addr = *(struct in_addr *)*hostinfo->h_addr_list;
+   address.sin_port = servinfo->s_port;
++#ifdef __FreeBSD__
++  address.sin_len = sizeof(address);
++#endif
+ 
+   len = sizeof (address);
+   if (connect (sockfd, (struct sockaddr *)&address, len) == -1)

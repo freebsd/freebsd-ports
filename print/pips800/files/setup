@@ -6,13 +6,13 @@
 ### in pips900-2.1.i386.tgz
 ### by taoka
 
-SCRIPT_PATH=%%PREFIX%%/libexec/pips%%PRTYPE%%/scripts
+SCRIPT_PATH=%%PREFIX%%/libexec/pips/%%PRT_MODEL%%/scripts
 PRT_MODEL=%%PRT_MODEL%%
 PIPS_COMMAND=pips%%PRTYPE%%
-PIPS_FILTER_PATH=%%PREFIX%%/libexec/%%BASE_NAME%%/filter%%PRTYPE%%.rev
+PIPS_FILTER_PATH=%%PREFIX%%/libexec/pips/%%PRT_MODEL%%/filter%%PRTYPE%%.rev
 
-SETUP_PATH=%%PREFIX%%/libexec/pips%%PRTYPE%%/setup
-EKPDRC=%%LINUXBASE%%/etc/ekpdrc
+SETUP_PATH=%%PREFIX%%/libexec/pips/%%PRT_MODEL%%/setup
+EKPDRC=%%PREFIX%%/etc/ekpdrc
 VERSION=%%VERSION%%
 DEF_PRT_PATH=/dev/ulpt0
 WITH_EKPD=%%WITH_EKPD%%

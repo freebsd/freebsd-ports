@@ -1,48 +1,38 @@
 #!/bin/sh
 #
-#  ekpd
+# $FreeBSD$
+#
 
-PATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin
-DAEMON=/usr/local/libexec/ekpd
-LOCK=/var/ekpd/lpr_lock
+# PROVIDE: ekpd
+# REQUIRE: DAEMON
+# BEFORE: LOGIN
+# KEYWORD: FreeBSD shutdown
 
-NAME=ekpd
+# Define these ekpd_* variables in one of these files:
+#	/etc/rc.conf
+#	/etc/rc.conf.local
+#	/etc/rc.conf.d/ekpd
+#
+# DO NOT CHANGE THESE DEFAULT VALUES HERE
+#
+ekpd_enable=${ekpd_enable:-"NO"}		# Enable ekpd
+ekpd_flags=${ekpd_flags:-""}			# Flags to ekpd program
 
-[ -f $DAEMON ] || exit 0
+. %%RC_SUBR%%
 
-OLDMASK=`umask`
-umask 000
+name="ekpd"
+rcvar=`set_rcvar`
+command="%%PREFIX%%/libexec/pips/printer/ekpd"
+start_precmd="ekpd_prestart"
 
-case "$1" in
-
-    start)
-	if [ -x $DAEMON ]; then
-	    echo -n "Starting $NAME:"
-	    [ ! -d /var/ekpd ] && mkdir -p /var/ekpd && chmod 1777 /var/ekpd
-	    [ ! -e /var/ekpd/ekplp0 ] && rm -f /var/ekpd/ekplp0 && \
+ekpd_prestart() {
+	OLDMASK=`umask`
+	umask 000
+	[ ! -d /var/ekpd ] && mkdir -p /var/ekpd && chmod 1777 /var/ekpd
+	[ ! -e /var/ekpd/ekplp0 ] && rm -f /var/ekpd/ekplp0 && \
 		mkfifo -m 666 /var/ekpd/ekplp0
-	    $DAEMON 2>/dev/null
-	    echo
-	fi
-	;;
+	umask $OLDMASK
+}
 
-    stop)
-	echo -n "Stopping ekpd:"
-	killall ${NAME} 2>/dev/null
-	echo
-	;;
-
-    restart)
-	$0 stop
-	sleep 2
-	$0 start
-	;;
-
-    *)
-	echo "Usage: ekpd { start | stop | restart }" >&2
-	exit 1
-	;;
-esac
-
-umask $OLDMASK
-exit 0
+load_rc_config $name
+run_rc_command "$1"

@@ -10,4 +10,4 @@ COMMENT=	Photo Image Print System for Linux --- EPSON PM-670C
 
 PRTYPE=		670
 
-.include "${MASTERDIR}/Makefile"
+.include "${MASTERDIR}/Makefile.pips"
