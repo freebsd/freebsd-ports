@@ -26,6 +26,8 @@ USE_XPM=	yes
 MAN1=	xtel.1 xteld.1
 
 .if defined(LANG)
+LANGUE!=${ECHO} ${LANG} | ${CUT} -c 1-2
+.else
 LANGUE=	english
 .endif
 
