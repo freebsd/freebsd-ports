@@ -6,7 +6,7 @@
 #
 
 PORTNAME=		WiKicker
-PORTVERSION=		0.22
+PORTVERSION=		0.23
 CATEGORIES+=		japanese www perl5
 MASTER_SITES=		\
 			http://www.naney.org/comp/distrib/WiKicker/archive/
