@@ -1,0 +1,5 @@
+#!/bin/sh
+#
+# $FreeBSD$
+
+"%%LOCALBASE%%/bin/java" -cp "%%DATADIR%%" dmachine
