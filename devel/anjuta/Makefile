@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	anjuta
-PORTVERSION=	1.0.2
+PORTVERSION=	1.2.0
 CATEGORIES=	devel gnome
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	anjuta
@@ -14,21 +14,27 @@ MASTER_SITE_SUBDIR=	anjuta
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Integrated Development Environment for C and C++
 
-LIB_DEPENDS=	scintilla.1:${PORTSDIR}/x11-toolkits/scintilla \
-		pcre.0:${PORTSDIR}/devel/pcre
+LIB_DEPENDS=	pcre.0:${PORTSDIR}/devel/pcre
 
+NO_LATEST_LINK=	yes
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
-USE_GNOME=	gnomeprefix gnomehack gnomevfs gnomeprint gdkpixbuf libglade
-USE_REINPLACE=	yes
+USE_GNOME=	gnomeprefix gnomehack libgnomeprintui libgnomeui vte
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LIBS="-L${LOCALBASE}/lib"
+		LDFLAGS="-L${LOCALBASE}/lib"
 
-CONFLICTS=	anjuta-1.1.*
+MAN1=		anjuta.1 anjuta_launcher.1
 
-post-patch:
-	@${REINPLACE_CMD} -e 's|%%X11BASE%%|${X11BASE}|g' \
-		${WRKSRC}/src/Makefile.in
+post-install:
+	${INSTALL_DATA} ${WRKSRC}/pixmaps/applogo.png \
+		${PREFIX}/share/gnome/anjuta/glade
+.if !defined(NOPORTDOCS)
+	${MKDIR} ${DOCSDIR}
+.for f in AUTHORS COPYING ChangeLog FUTURE INSTALL NEWS README \
+	doc/ScintillaDoc.html TODO
+	${INSTALL_DATA} ${WRKSRC}/${f} ${DOCSDIR}
+.endfor
+.endif
 
 .include <bsd.port.mk>

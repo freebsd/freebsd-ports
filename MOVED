@@ -737,3 +737,4 @@ graphics/gthumb|graphics/gthumb2|2004-01-04|Old gtk1 version retired
 www/gnujsp||2004-01-05|Project abandoned, contain security compromise
 irc/irssi+perl|irc/irssi|2004-01-05|Main irssi port has Perl support
 devel/simpleparse|devel/py-simpleparse|2004-01-06|readd as py-simpleparse
+devel/anjuta-devel|devel/anjuta|2004-01-07|moved to devel/anjuta as new stable release
