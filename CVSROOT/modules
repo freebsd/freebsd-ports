@@ -7478,3 +7478,4 @@ zthread		ports/devel/zthread
 ztrack		ports/games/ztrack
 zziplib		ports/devel/zziplib
 pari-devel	ports/math/pari-devel
+apel-emacs19	ports/editors/apel-emacs19
