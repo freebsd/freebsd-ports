@@ -6,15 +6,16 @@
 #
 
 PORTNAME=	yaucg
-PORTVERSION=	0.11
+PORTVERSION=	0.2
 CATEGORIES=	misc
 MASTER_SITES=	http://home.balcab.ch/joelle.wiesmann/secuserv/
-DISTNAME=	${PORTNAME}
 
 MAINTAINER=	gslin@ccca.nctu.edu.tw
 
 RUN_DEPENDS=	wget:${PORTSDIR}/ftp/wget \
 		bash:${PORTSDIR}/shells/bash2
+
+WRKSRC=		${WRKDIR}/${PORTNAME}
 
 NO_BUILD=	yes
 STRIP=		# empty
