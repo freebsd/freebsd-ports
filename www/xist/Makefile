@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	xist
-PORTVERSION= 	2.5
+PORTVERSION=	2.8
 CATEGORIES=	www python
 MASTER_SITES=	ftp://ftp.livinglogic.de/pub/livinglogic/xist/
 DISTNAME=	ll-${PORTNAME}-${PORTVERSION}
@@ -19,14 +19,12 @@ RUN_DEPENDS=	${PYXML} \
 		${PYTHON_SITELIBDIR}/PIL.pth:${PORTSDIR}/graphics/py-imaging \
 		${PYTHON_SITELIBDIR}/mx/Tidy/mxTidy/mxTidy.so:${PORTSDIR}/devel/py-mx-experimental
 
-BROKEN=		Broken dependency after python 2.4 update
-
-USE_PYTHON=	2.3
+USE_PYTHON=	2.4
 USE_PYDISTUTILS=	yes
 USE_BZIP2=	yes
 
 post-install:
-.for file in doc2txt dtd2xsc tld2xsc xscmake
+.for file in doc2txt dtd2xsc tld2xsc
 	@${MV} ${PREFIX}/bin/${file}.py ${PREFIX}/bin/${file}
 .endfor
 

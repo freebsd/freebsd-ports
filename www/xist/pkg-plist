@@ -1,10 +1,6 @@
 bin/doc2txt
 bin/dtd2xsc
 bin/tld2xsc
-bin/xscmake
-%%PYTHON_SITELIBDIR%%/ll/__init__.py
-%%PYTHON_SITELIBDIR%%/ll/__init__.pyc
-%%PYTHON_SITELIBDIR%%/ll/__init__.pyo
 %%PYTHON_SITELIBDIR%%/ll/xist/__init__.py
 %%PYTHON_SITELIBDIR%%/ll/xist/__init__.pyc
 %%PYTHON_SITELIBDIR%%/ll/xist/__init__.pyo
@@ -19,6 +15,9 @@ bin/xscmake
 %%PYTHON_SITELIBDIR%%/ll/xist/errors.pyc
 %%PYTHON_SITELIBDIR%%/ll/xist/errors.pyo
 %%PYTHON_SITELIBDIR%%/ll/xist/helpers.so
+%%PYTHON_SITELIBDIR%%/ll/xist/xfind.py
+%%PYTHON_SITELIBDIR%%/ll/xist/xfind.pyc
+%%PYTHON_SITELIBDIR%%/ll/xist/xfind.pyo
 %%PYTHON_SITELIBDIR%%/ll/xist/ns/__init__.py
 %%PYTHON_SITELIBDIR%%/ll/xist/ns/__init__.pyc
 %%PYTHON_SITELIBDIR%%/ll/xist/ns/__init__.pyo
@@ -73,6 +72,9 @@ bin/xscmake
 %%PYTHON_SITELIBDIR%%/ll/xist/ns/php.py
 %%PYTHON_SITELIBDIR%%/ll/xist/ns/php.pyc
 %%PYTHON_SITELIBDIR%%/ll/xist/ns/php.pyo
+%%PYTHON_SITELIBDIR%%/ll/xist/ns/rng.py
+%%PYTHON_SITELIBDIR%%/ll/xist/ns/rng.pyc
+%%PYTHON_SITELIBDIR%%/ll/xist/ns/rng.pyo
 %%PYTHON_SITELIBDIR%%/ll/xist/ns/ruby.py
 %%PYTHON_SITELIBDIR%%/ll/xist/ns/ruby.pyc
 %%PYTHON_SITELIBDIR%%/ll/xist/ns/ruby.pyo
