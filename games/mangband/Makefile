@@ -4,33 +4,33 @@
 # $FreeBSD$
 #
 
-PORTNAME=       mangband
-PORTVERSION=	0.5.4
+PORTNAME=	mangband
+PORTVERSION=	0.7.0
 CATEGORIES=	games
 MASTER_SITES=	http://mangband.org/download/
-DISTNAME=       mangband-054
+DISTNAME=	${PORTNAME}-${PORTVERSION:S/.//g}
 
-MAINTAINER=     ports@freebsd.org
+MAINTAINER=	ports@FreeBSD.org
 
-WRKSRC=         ${WRKDIR}/mangband/src
-ALL_TARGET=     install
+WRKSRC=		${WRKDIR}/${PORTNAME}/src
 
-USE_XLIB=       yes
+USE_XLIB=	yes
+ALL_TARGET=	install
 
-MALIB=          ${PREFIX}/lib/mangband
+MALIB=		${PREFIX}/lib/mangband
 
 do-install:
-	${INSTALL} -d -o ${BINOWN} -g ${BINGRP} -m 555 ${MALIB}
-	cd ${WRKSRC}/../lib; ${CP} -R -p * ${MALIB}; \
-	   cd ${MALIB}; \
-	   ${TOUCH} file/wizards.txt; \
-	   ${CHMOD} 750 *; ${CHOWN} -R root.games *; \
-	   ${CHMOD} 755 user;
-	cd ${WRKSRC}; \
-	   ${INSTALL_PROGRAM} -o root -g games -m 2550 \
-		mangband ${PREFIX}/bin; \
-	   ${INSTALL_PROGRAM} -o root -g games -m 550 \
-		mangconsole ${PREFIX}/bin; \
-	   ${INSTALL_PROGRAM} mangclient ${PREFIX}/bin
+	${INSTALL_PROGRAM} -o root -g games -m 2550 \
+		${WRKSRC}/mangband ${PREFIX}/bin
+	${INSTALL_PROGRAM} -o root -g games -m 550 \
+		${WRKSRC}/mangconsole ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/mangclient ${PREFIX}/bin
+	@${MKDIR} ${MALIB}/file
+	@${TOUCH} ${MALIB}/file/wizards.txt
+	cd ${WRKSRC}/../lib && pax -rw * ${MALIB}
+	${CHMOD} 750 ${MALIB}/*
+	${CHMOD} 755 ${MALIB}/user
+	${CHOWN} -R root.games ${MALIB}/*
+	${CHOWN} ${SHAREOWN}:${SHAREGRP} ${MALIB}
 
 .include <bsd.port.mk>
