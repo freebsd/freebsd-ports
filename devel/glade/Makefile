@@ -1,21 +1,23 @@
 # New ports collection makefile for:	glade
-# Version required:     0.3.4
+# Version required:     0.3.5
 # Date created:		29 June 1998
 # Whom:			Dom Mitchell <dom@myrddin.demon.co.uk>
 #
-# $Id: Makefile,v 1.7 1998/09/17 04:41:40 vanilla Exp $
+# $Id: Makefile,v 1.8 1998/09/22 22:55:52 asami Exp $
 #
 
-DISTNAME=	glade-0.3.4
+DISTNAME=	glade-0.3.5
 CATEGORIES=	devel
-MASTER_SITES=   http://www.comp.lancs.ac.uk/~damon/builder/
+MASTER_SITES=   http://glade.pn.org/
 
 MAINTAINER=     dom@myrddin.demon.co.uk
 
+BUILD_DEPENS=	gettext:${PORTSDIR}/devel/gettext
 LIB_DEPENDS=	gtk11.1:${PORTSDIR}/x11-toolkits/gtk11
 
-GNU_CONFIGURE=	yes
 USE_X_PREFIX=	yes
+GNU_CONFIGURE=	yes
+CONFIGURE_ENV=	GTK_CONFIG="${X11BASE}/bin/gtk11-config"
 
 post-install:
 .if !defined(NOPORTDOCS)
