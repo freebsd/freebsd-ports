@@ -1,5 +1,5 @@
-*** adcomplain.pl.bak	Sat Nov  8 18:32:40 1997
---- adcomplain.pl	Sat Nov  8 18:45:04 1997
+*** adcomplain.pl.orig	Fri Nov 14 19:36:55 1997
+--- adcomplain.pl	Fri Nov 14 19:38:44 1997
 ***************
 *** 1,3 ****
 --- 1,4 ----
@@ -27,7 +27,7 @@
   #-----------------------------------------------
   # DESCRIPTION
 ***************
-*** 252,258 ****
+*** 255,261 ****
   
   # this is the name of the mail utility (see sendmail(8) man page)
   # type "/bin/which sendmail" to find out where sendmail is on your system
@@ -35,7 +35,7 @@
   
   # this is a list of domain names for your system (e.g., "compuserve.com")
   # Names in this list are considered "friendly".  Including your own system
---- 253,259 ----
+--- 256,262 ----
   
   # this is the name of the mail utility (see sendmail(8) man page)
   # type "/bin/which sendmail" to find out where sendmail is on your system
@@ -44,30 +44,7 @@
   # this is a list of domain names for your system (e.g., "compuserve.com")
   # Names in this list are considered "friendly".  Including your own system
 ***************
-*** 270,279 ****
-  # If you have external executables that allow you to confirm host
-  # addresses and names (i.e., gethostbyaddr and gethostbyname don't do it),
-  # put them here, otherwise leave them empty.
-! #$GETHOSTBYNAME = "";
-! #$GETHOSTBYADDR = "";
-! $GETHOSTBYNAME = "gethostbyname";
-! $GETHOSTBYADDR = "gethostbyaddr";
-  
-  # Well, it works at GemStone.  Your mileage may vary :-(.
-  #if (-x "/bin/remsh") { # HP-UX
---- 271,280 ----
-  # If you have external executables that allow you to confirm host
-  # addresses and names (i.e., gethostbyaddr and gethostbyname don't do it),
-  # put them here, otherwise leave them empty.
-! $GETHOSTBYNAME = "";
-! $GETHOSTBYADDR = "";
-! #$GETHOSTBYNAME = "gethostbyname";
-! #$GETHOSTBYADDR = "gethostbyaddr";
-  
-  # Well, it works at GemStone.  Your mileage may vary :-(.
-  #if (-x "/bin/remsh") { # HP-UX
-***************
-*** 398,404 ****
+*** 423,429 ****
     }
   
   # Make sure critical messages are seen
@@ -75,7 +52,7 @@
     print "Press enter to continue.... ";
     $ans = <STDIN>;
     }
---- 399,405 ----
+--- 424,430 ----
     }
   
   # Make sure critical messages are seen
@@ -84,8 +61,8 @@
     $ans = <STDIN>;
     }
 ***************
-*** 489,494 ****
---- 490,496 ----
+*** 516,521 ****
+--- 517,523 ----
   close TEXTFILE;
   $response = ""; # garbage collection
   
@@ -94,8 +71,8 @@
   print "\n";
   $pager = $ENV{"PAGER"};
 ***************
-*** 523,528 ****
---- 525,534 ----
+*** 550,555 ****
+--- 552,561 ----
     } # for
   
   print "\n";
@@ -107,7 +84,7 @@
   close STDIN;
   exit 0;
 ***************
-*** 1974,1980 ****
+*** 2032,2038 ****
       "0200", "EET, MET DST, METDST, MEST, MESZ, SST, FST, O",
   				# Middle Europe Daylight
   				# Swedish Summer Time, French Summer Time
@@ -115,7 +92,7 @@
       "0330", "IT",		# Iran?
       "0400", "IDT, MSD, ZP4, Q",
       "0500", "ZP5, R",		# USSR Zone 4
---- 1980,1986 ----
+--- 2038,2044 ----
       "0200", "EET, MET DST, METDST, MEST, MESZ, SST, FST, O",
   				# Middle Europe Daylight
   				# Swedish Summer Time, French Summer Time
