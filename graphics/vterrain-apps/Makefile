@@ -8,7 +8,9 @@
 PORTNAME=	vterrain-apps
 PORTVERSION=	010829
 CATEGORIES=	graphics
-MASTER_SITES=	ftp://ftp.vterrain.org/pub/vterrain/dist/
+MASTER_SITES=	${MASTER_SITE_LOCAL} \
+		ftp://ftp.vterrain.org/pub/vterrain/dist/
+MASTER_SITE_SUBDIR=	rhh
 DISTNAME=	TerrainApps-${PORTVERSION}
 
 MAINTAINER=	aa8vb@nc.rr.com

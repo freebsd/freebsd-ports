@@ -8,7 +8,9 @@
 PORTNAME=	vterrain-sdk
 PORTVERSION=	010829
 CATEGORIES=	graphics
-MASTER_SITES=	ftp://ftp.vterrain.org/pub/vterrain/dist/
+MASTER_SITES=	${MASTER_SITE_LOCAL} \
+		ftp://ftp.vterrain.org/pub/vterrain/dist/
+MASTER_SITE_SUBDIR=	rhh
 DISTFILES=	TerrainSDK-${PORTVERSION}.zip
 
 MAINTAINER=	aa8vb@nc.rr.com
