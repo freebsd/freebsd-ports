@@ -38,6 +38,7 @@
     SUBDIR += cisco_conf
     SUBDIR += ciscoconf
     SUBDIR += citrix_ica
+    SUBDIR += click
     SUBDIR += clog
     SUBDIR += clusterit
     SUBDIR += cnet
