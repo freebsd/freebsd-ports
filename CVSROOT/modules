@@ -4895,6 +4895,7 @@ pclock		ports/x11-clocks/pclock
 pclprint	ports/print/pclprint
 pcnfsd		ports/net/pcnfsd
 pcre		ports/devel/pcre
+pcre++		ports/devel/pcre++
 pcsc-lite	ports/devel/pcsc-lite
 pcvt		src/usr.sbin/pcvt
 pdftohtml	ports/textproc/pdftohtml
