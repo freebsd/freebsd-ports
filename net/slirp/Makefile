@@ -10,7 +10,7 @@ PORTVERSION=	1.0c
 CATEGORIES=	net
 MASTER_SITES=	ftp://blitzen.canberra.edu.au/pub/slirp/
 
-MAINTAINER=	freebsd-ports@FreeBSD.Org
+MAINTAINER=	ports@FreeBSD.Org
 
 WRKSRC=		${WRKDIR}/slirp-1.0c/src
 GNU_CONFIGURE=	yes
