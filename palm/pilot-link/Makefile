@@ -3,7 +3,7 @@
 # Date created:         November, 1997
 # Whom:                 Paul Traina <pst@freebsd.org>
 #
-# $Id: Makefile,v 1.18 1998/08/07 23:56:12 asami Exp $
+# $Id: Makefile,v 1.19 1998/09/25 10:05:00 asami Exp $
 
 DISTNAME=	pilot-link.0.8.13
 PKGNAME=	pilot-link-0.8.13
@@ -13,6 +13,8 @@ MASTER_SITES=	ftp://ryeham.ee.ryerson.ca/pub/PalmOS/
 MAINTAINER=	dima@freebsd.org
 
 LIB_DEPENDS=	tk80.1:${PORTSDIR}/x11-toolkits/tk80
+
+BROKEN=		package
 
 USE_PERL5=	yes
 PREFIX=		${LOCALBASE}/pilot
