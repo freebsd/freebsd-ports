@@ -1,1 +1,6 @@
-the game applications package for the Gnome Desktop Environment
+The GNOME Desktop Environment's games application package, which includes
+card games (including a solitaire package which knows 69 distinct solitaire
+variations), knockoffs of Minesweeper, Tetris, mahjongg, Nibbles, action
+games, puzzle games, and more card games.
+
+WWW: http://www.gnome.org
