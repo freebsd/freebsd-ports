@@ -1,0 +1,18 @@
+PixiePlus is a free, fast, and feature packed image browser, viewer, and 
+image/photo editor for Unix/Linux/X11 systems that run KDE.
+
+Features:
+- Fast, flexible thumbnail preview generation
+- Embedded JPEG and TIFF thumbnail support
+- Lossless JPEG transformations
+- Supports many image formats
+- Highly configurable HTML export
+- Batch conversion and effects
+- Animated slideshows
+- Similiar image finding
+- File management optimized for images 
+
+WWW: http://www.mosfet.org/pixie/
+
+- Arjan
+avleeuwen@piwebs.com
