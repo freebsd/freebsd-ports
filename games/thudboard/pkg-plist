@@ -26,6 +26,8 @@ bin/thudboard
 %%DATADIR%%/battle.pyc
 %%DATADIR%%/images.pyc
 %%DATADIR%%/thud.pyc
+%%DATADIR%%/bugfix_askyesno.py
+%%DATADIR%%/bugfix_askyesno.pyc
 %%PORTDOCS%%%%DOCSDIR%%/about.html
 %%PORTDOCS%%%%DOCSDIR%%/download.html
 %%PORTDOCS%%%%DOCSDIR%%/howto.html
