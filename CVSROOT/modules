@@ -8582,6 +8582,7 @@ py-ski		ports/games/py-ski
 py-smb		ports/net/py-smb
 py-smbpasswd	ports/net/py-smbpasswd
 py-snmp		ports/net-mgmt/py-snmp
+py-soappy	ports/net/py-soappy
 py-soapy	ports/net/py-soapy
 py-spambayes	ports/mail/py-spambayes
 py-spark	ports/devel/py-spark
