@@ -161,6 +161,7 @@ COMMENT=        Editor texto/grBaGico, banco de dados/planilha/navegador integra
 CATEGORIES=     portuguese
 LANG_PKGNAME=	pt
 LANG_SUFFIX=	BR
+L10NHELP=	helpcontent_${LANG_EXT}_unix.tgz
 LANG_EXT=	55
 LANG_CONFIGURE_ARG=	PORTBR
 .endif
