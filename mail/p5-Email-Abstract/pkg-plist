@@ -1,0 +1,10 @@
+%%SITE_PERL%%/Email/Abstract.pm
+%%SITE_PERL%%/Email/Abstract/EmailMIME.pm
+%%SITE_PERL%%/Email/Abstract/EmailSimple.pm
+%%SITE_PERL%%/Email/Abstract/MIMEEntity.pm
+%%SITE_PERL%%/Email/Abstract/MailInternet.pm
+%%SITE_PERL%%/Email/Abstract/MailMessage.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Email/Abstract/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Email/Abstract
+@unexec rmdir %D/%%SITE_PERL%%/Email/Abstract 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/Email 2>/dev/null || true
