@@ -1,6 +1,7 @@
-Another gtk-base graphic file viewer.
+A GTK-based mp3 front-end.
+Uses mpg123 for decoding and supports winamp themes..
 
-author's homepage: http://www.geocities.com/SiliconValley/Haven/5235/
+Author's homepage: http://www.geocities.com/SiliconValley/Haven/5235/
 
 -Vanilla
 vanilla@FreeBSD.ORG
