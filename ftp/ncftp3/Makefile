@@ -20,12 +20,15 @@ PATCH_DIST_STRIP=	-p1
 MAINTAINER=	obrien@FreeBSD.org
 COMMENT=	ftp replacement with advanced user interface
 
+USE_BZIP2=	yes
+
+.include <bsd.port.pre.mk>
+
 .if defined(INSTALL_AS_NCFTP)
 LATEST_LINK=	ncftp
 .else
 LATEST_LINK=	ncftp3
 .endif
-USE_BZIP2=	yes
 WRKSRC=		${WRKDIR}/${DISTNAME:S/-src//}
 INSTALLS_SHLIB=	yes
 GNU_CONFIGURE=	yes
@@ -69,4 +72,4 @@ do-install:
 		${PREFIX}/man/man1
 	@${INSTALL_MAN} ${WRKSRC}/Strn/Strn.3 ${PREFIX}/man/man3
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
