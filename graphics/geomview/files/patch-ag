@@ -1,0 +1,33 @@
+--- makefiles/Makerules.allsrc.orig	Tue Jan 18 16:04:06 2000
++++ makefiles/Makerules.allsrc	Tue Jan 18 16:04:30 2000
+@@ -65,18 +65,18 @@
+ # Copy ${MANDIR} to a shell variable in case it includes trailing blanks.
+ 	
+ formatman:
+-	@mans="${MANS}"; mandir=${MANDIR}; \
+-	if nroff </dev/null >/dev/null 2>&1; then \
+-	    for f in $$mans ; do \
+-		cdir=$$mandir/cat`expr "$$f" : ".*\(.\)"` ; \
+-		${GEOM}/tools/insuredir $$cdir; \
+-		rm -f $$cdir/$$f ; \
+-		echo "nroff -man $$f | col -b > $$cdir/$$f" ; \
+-		nroff -man $$f | col -b > $$cdir/$$f; \
+-		rm -f ${GEOM}/doc/$$f ; \
+-		cp $$cdir/$$f ${GEOM}/doc; \
+-	    done; \
+-	fi
++#	@mans="${MANS}"; mandir=${MANDIR}; \
++#	if nroff </dev/null >/dev/null 2>&1; then \
++#	    for f in $$mans ; do \
++#		cdir=$$mandir/cat`expr "$$f" : ".*\(.\)"` ; \
++#		${GEOM}/tools/insuredir $$cdir; \
++#		rm -f $$cdir/$$f ; \
++#		echo "nroff -man $$f | col -b > $$cdir/$$f" ; \
++#		nroff -man $$f | col -b > $$cdir/$$f; \
++#		rm -f ${GEOM}/doc/$$f ; \
++#		cp $$cdir/$$f ${GEOM}/doc; \
++#	    done; \
++#	fi
+ 
+ installman:
+ 	@mans="${MANS}"; mandir=${MANDIR}; \
