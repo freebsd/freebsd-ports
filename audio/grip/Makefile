@@ -13,7 +13,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	ahze@ahze.net
-COMMENT=	GTK front-end to external cd rippers and mp3 encoders
+COMMENT=	GTK front-end to external cd rippers and audio encoders
 
 LIB_DEPENDS=	id3-3.8.3:${PORTSDIR}/audio/id3lib \
 		curl.2:${PORTSDIR}/ftp/curl
@@ -102,7 +102,7 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|/dev/cdrom|${DEFAULT_CDROM_DEVICE}|' \
 		${WRKSRC}/src/grip.c
 	@${REINPLACE_CMD} -e 's|{"xingmp3enc","-B %b -Q %w","mp3"},||; \
-		s|{"l3enc","-br %b %w %m","mp3"},|"faac","-w -b %b %w -o %m", "m4a"},|; \
+		s|{"l3enc","-br %b %w %m","mp3"},|{"faac","-w -b %b %w -o %m", "m4a"},|; \
 		s|mp3encode|encode|' \
 		${WRKSRC}/src/gripcfg.c
 
