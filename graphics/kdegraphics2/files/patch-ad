@@ -1,0 +1,11 @@
+--- pixie/plugins/magick/magick.cpp	Tue Aug  8 03:55:58 2000
++++ pixie/plugins/magick/magick.cpp.new	Sun Sep 17 19:45:31 2000
+@@ -708,7 +708,7 @@
+ 
+     // tell imagemagick what routines to run for messages
+     MonitorHandler oldMonitor;
+-    oldMonitor = SetMonitorHandler(runMagickProgress);
++    oldMonitor = SetMonitorHandler((void (*)(const char *, long long int, long long int))runMagickProgress);
+     
+     ErrorHandler oldError;
+     oldError = SetErrorHandler(runMagickErrorDlg);
