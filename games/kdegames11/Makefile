@@ -18,6 +18,7 @@ LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
 		kdecore.3:${PORTSDIR}/x11/kdelibs11 \
 		QwSpriteField.7:${PORTSDIR}/converters/kdesupport11
 
+NO_LATEST_LINK=	yes
 USE_BZIP2=	yes
 USE_QT=		yes
 GNU_CONFIGURE=	yes

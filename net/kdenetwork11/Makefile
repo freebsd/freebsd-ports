@@ -26,6 +26,7 @@ LIB_DEPENDS=	uu.1:${PORTSDIR}/converters/uulib \
 		kdecore.3:${PORTSDIR}/x11/kdelibs11 \
 		QwSpriteField.7:${PORTSDIR}/converters/kdesupport11
 		
+NO_LATEST_LINK=	yes
 USE_BZIP2=	yes
 USE_QT=		yes
 GNU_CONFIGURE=	yes

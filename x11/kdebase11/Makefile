@@ -22,6 +22,7 @@ BUILD_DEPENDS=	convert:${PORTSDIR}/graphics/ImageMagick
 LIB_DEPENDS=	kdecore.3:${PORTSDIR}/x11/kdelibs11 \
 		intl.1:${PORTSDIR}/devel/gettext
 
+NO_LATEST_LINK=	yes
 USE_XLIB=	yes
 USE_XPM=	yes
 USE_BZIP2=	yes

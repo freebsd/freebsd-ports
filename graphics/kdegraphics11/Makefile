@@ -17,6 +17,7 @@ LIB_DEPENDS=	ungif.5:${PORTSDIR}/graphics/libungif \
 		jpeg.9:${PORTSDIR}/graphics/jpeg \
 		kdecore.3:${PORTSDIR}/x11/kdelibs11
 
+NO_LATEST_LINK=	yes
 USE_BZIP2=	yes
 USE_QT=		yes
 HAS_CONFIGURE=	yes
