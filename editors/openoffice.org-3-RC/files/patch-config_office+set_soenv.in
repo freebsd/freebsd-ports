@@ -1,5 +1,5 @@
---- set_soenv.in.orig	Thu Feb 27 14:12:36 2003
-+++ set_soenv.in	Sat Mar 29 23:11:54 2003
+--- set_soenv.in.orig	Fri Mar 28 12:02:25 2003
++++ set_soenv.in	Fri Apr  4 10:36:54 2003
 @@ -52,7 +52,7 @@
  #-------------------------------------------------
  #
@@ -9,35 +9,43 @@
  "JAPN", "KOREAN", "POL", "PORT", "RUSS", "SPAN", "SWED", "TURK" ); 
  my ( $CALL_CDECL, $COMMON_OUTDIR, $NO_SRS_PATCH, $PRODUCT, $PROFULLSWITCH, $BIG_GOODIES, $BMP_WRITES_FLAG, 
       $common_build, $MK_UNROLL, $NO_REC_RES, $PROEXT, $SO3, $SOLAR_JAVA, 
-@@ -88,7 +88,7 @@
-      $SOLARINC, $LOCALINI, $MAC_LIB, $PATHEXTRA, $FRAMEWORKSHOME, $COMEX, $MULTITHREAD_OBJ, $PERL, 
-      $COMP_ENV, $IENV, $ILIB, $WIN_INCLUDE, $JAVAHOME, $WIN_LIB, $WIN_HOME, $PSDK_HOME, $USE_NEW_SDK, $NO_HIDS,
-      $BISON_HAIRY, $BISON_SIMPLE, $TEMP, $COMMON_BUILD_TOOLS, $WIN_GREP, $WIN_FIND, $WIN_LS,
--     $WIN_GNUCOPY, $WIN_TOUCH, $STLPORT4, $USE_GCC3, $ENABLE_DEBUG );
-+     $WIN_GNUCOPY, $WIN_TOUCH, $STLPORT4, $USE_GCC3, $ENABLE_DEBUG, $USE_LINUXJDK );
- #
- #-------------------------------------------
- # IId. Declaring the aliases.
-@@ -140,7 +140,8 @@
- $CC			= '@CC@';           # C compiler
- $CXX		= '@CXX@';          # C++ compiler
- $EXCEPTIONS	= '@EXCEPTIONS@';   # Exception handling type
--$ENABLE_DEBUG	= '@ENABLE_DEBUG@';  # Enable a debug build
-+$ENABLE_DEBUG	= '@ENABLE_DEBUG@'; # Enable a debug build
-+$USE_LINUXJDK	= '@USE_LINUXJDK@'; # Use the Linux JDK
- $WRAPCMD	= "";				# Wrapper (only for winnt)
- 
- #
-@@ -863,7 +864,7 @@
- # Location of 
- $STAR_SSCOMMON        = '$SOLARENV'.$CONFIG.$ds."ssolar.cmn";
- # Location of 
--$STAR_SSOLARINI       = '$SOLARENV'.$CONFIG.$ds."ssolar.ini";
-+$STAR_SSOLARINI       = '$SOLARENV'.$CONFIG.$ds."ssrx644.ini";
- # Path to the OpenOffice.org recourses.
- $STAR_RESOURCEPATH    = '$SOLARVER'.$ds.'$UPD'.$ds.'$INPATH'.$BIN;
- # Location of the registry file.
-@@ -1184,7 +1185,7 @@
+@@ -338,7 +338,7 @@
+       $PTHREAD_LIBS   = '@PTHREAD_LIBS@';
+       $JRELIBDIR      = '$JAVA_HOME'.$ds."jre".$ds."lib".$ds."i386";
+       $JRETOOLKITDIR  = '$JAVA_HOME'.$ds."jre".$ds."lib".$ds."i386".$ds."client";
+-      $JRETHREADDIR   = '$JAVA_HOME'.$ds."jre".$ds."lib".$ds."i386".$ds."green_threads";
++      $JRETHREADDIR   = '$JAVA_HOME'.$ds."jre".$ds."lib".$ds."i386".$ds."native_threads";
+ } 
+ elsif ( $platform eq "$Linux" ) 
+ {
+@@ -888,7 +888,8 @@
+                         $ps.$JRETHREADDIR.
+                         $ps.'$SOLARVER'.$ds.'$UPD'.$ds.'$INPATH'.$LIB;
+ }
+-elsif (($platform eq "$Linux") || ($platform eq "$NetBSD") || ($platform eq "$Tru64"))
++elsif (($platform eq "$Linux") || ($platform eq "$NetBSD")
++|| ($platform eq "$Tru64") || ($platform eq "$FreeBSD"))
+ {  $LD_LIBRARY_PATH   = $cur_dir.
+                         $ps.'$SOLARENV'.$ds.'$INPATH'.$LIB.
+                         $ps.$JRELIBDIR.
+@@ -899,16 +900,6 @@
+                         $ps.'$SOLARVER'.$ds.'$UPD'.$ds.'$INPATH'.$LIB.
+                        $ps.$ENV{'LD_LIBRARY_PATH'};
+ }
+-elsif ($platform eq "$FreeBSD")
+-{  $LD_LIBRARY_PATH   = $cur_dir.
+-                        $ps.'$SOLARENV'.$ds.'$INPATH'.$LIB.
+-                        $ps.$JRELIBDIR.
+-                        $ps.$JRETOOLKITDIR.
+-                        $ps.$JRETHREADDIR.
+-                        $ps.$par_dir.$LIB.
+-			$ps_STLPORT_LIB.
+-                        $ps.'$SOLARVER'.$ds.'$UPD'.$ds.'$INPATH'.$LIB;
+-}
+ elsif ($platform eq "$Irix" || $platform eq "$Irix64")
+ {  $LD_LIBRARY_PATH   = $cur_dir.
+                         $ps.'$SOLARENV'.$ds.'$INPATH'.$LIB.
+@@ -1183,7 +1174,7 @@
                          $L_STLPORT_LIB.
                          $L.$XLIB;
  }
@@ -46,7 +54,7 @@
  {  $SOLARLIB          = $L.$par_dir.$LIB.
  			$L.'$SOLARENV'.$ds.'$OUTPATH'.$LIB.
                          $L.'$SOLARVER'.$ds.'$UPD'.$ds.'$INPATH'.$LIB.
-@@ -1196,15 +1197,6 @@
+@@ -1195,15 +1186,6 @@
                          $L_STLPORT_LIB.
                          $L.$XLIB;
  }
@@ -62,18 +70,28 @@
  elsif ($platform eq "$Winnt")
  {  $SOLARLIB          = $L.'$SOLARVER'.$ds.'$UPD'.$ds.'$INPATH'.$LIB.
                          $L.$par_dir.$LIB.
-@@ -1265,7 +1257,13 @@
+@@ -1264,7 +1246,9 @@
  {  $SOLARINC          .=$I.'$JAVA_HOME'.$INCLUDE.$ds."linux";
  }
  elsif ($platform eq "$FreeBSD")
 -{  $SOLARINC          .=$I.'$JAVA_HOME'.$INCLUDE.$ds."freebsd";
 +{
-+   if ($USE_LINUXJDK eq "TRUE") {
-+       $SOLARINC          .=$I.'$JAVA_HOME'.$INCLUDE.$ds."linux";
-+   } else {
-+       $SOLARINC          .=$I.'$JAVA_HOME'.$INCLUDE.$ds."freebsd";
-+       $SOLARINC          .=$I.'$JAVA_HOME'.$INCLUDE.$ds."bsd";
-+   }
++   $SOLARINC          .=$I.'$JAVA_HOME'.$INCLUDE.$ds."freebsd";
++   $SOLARINC          .=$I.'$JAVA_HOME'.$INCLUDE.$ds."bsd";
  }
  elsif ($platform eq "$NetBSD")
  {  $SOLARINC          .=$I.'$JAVA_HOME'.$INCLUDE.$ds."netbsd";
+@@ -1275,12 +1259,7 @@
+ 
+ #java threads include path
+ 
+-if ($platform eq "$FreeBSD")
+-{  $SOLARINC          .=$I.'$JAVA_HOME'.$INCLUDE.$ds."green_threads".$ds."include";
+-}
+-else
+-{  $SOLARINC          .=$I.'$JAVA_HOME'.$INCLUDE.$ds."native_threads".$ds."include";
+-}
++   $SOLARINC          .=$I.'$JAVA_HOME'.$INCLUDE.$ds."native_threads".$ds."include";
+ 
+ #The tail, if needed
+ if (($platform eq "$Linux") or  ($platform eq "$FreeBSD") or ($platform eq "$NetBSD"))
