@@ -7928,6 +7928,7 @@ pstotext	ports/print/pstotext
 pstree		ports/sysutils/pstree
 psutils-a4	ports/print/psutils-a4
 psutils-letter	ports/print/psutils-letter
+psvn		ports/devel/psvn
 psybnc		ports/irc/psybnc
 pt-aspell	ports/portuguese/aspell
 pt-frontpage-pt_BR	ports/portuguese/frontpage-pt_BR
