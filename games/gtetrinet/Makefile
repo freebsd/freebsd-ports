@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	gtetrinet
-PORTVERSION=	0.5.1
+PORTVERSION=	0.5.2
 CATEGORIES=	games gnome
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -28,7 +28,8 @@ CONFIGURE_ARGS=	--bindir=${PREFIX}/bin
 MAN6=		gtetrinet.6
 
 post-patch:
-	@${REINPLACE_CMD} \
-		's|[(]prefix[)]/games|{bindir}|g' ${WRKSRC}/src/Makefile.in
+	@${FIND} ${WRKSRC} -name "Makefile.in*" | ${XARGS} ${REINPLACE_CMD} \
+		's|[(]prefix[)]/games|{bindir}|g ; \
+		 s|[(]libdir[)]/locale|(prefix)/share/locale|g'
 
 .include <bsd.port.mk>
