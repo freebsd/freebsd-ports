@@ -33,18 +33,12 @@ XMLCATMGR=	${LOCALBASE}/bin/xmlcatmgr
 post-extract:
 	@${CHMOD} u+w ${WRKSRC}/configure
 
-.include <bsd.port.pre.mk>
-
-.if ${ARCH} == "alpha" || ${ARCH} == "sparc64" || ${ARCH} == "ia64"
-CXXFLAGS:=	${CXXFLAGS} -DSIZEOF_SIZE_T=8
-.endif
-
 pre-install:
 	@find ${WRKSRC} \( -name \*.orig -o -name \*~ \) -exec ${RM} -f \{} \;
 
 post-install:
 .for i in jade nsgmls sgmlnorm spam spent sx
-	strip ${PREFIX}/bin/$i
+	${STRIP} ${PREFIX}/bin/$i
 .endfor
 	${MKDIR} ${PREFIX}/include/sp
 	${INSTALL_DATA} ${WRKSRC}/include/* ${PREFIX}/include/sp
@@ -54,4 +48,4 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/dsssl/* ${PREFIX}/share/sgml/jade
 	@${XMLCATMGR} -sc ${CATALOG_PORTS_SGML} add CATALOG ${PORTNAME}/catalog
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
