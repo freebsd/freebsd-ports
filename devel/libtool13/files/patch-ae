@@ -1,6 +1,6 @@
---- configure.orig	Fri Feb 19 00:50:06 1999
-+++ configure	Fri Feb 19 00:50:21 1999
-@@ -5288,10 +5288,6 @@
+--- configure.orig	Fri Jul  2 09:01:56 1999
++++ configure	Tue Aug 31 23:45:29 1999
+@@ -1853,10 +1853,6 @@
        *) # Relative path.
          ac_sub_cache_file="$ac_dots$cache_file" ;;
        esac
