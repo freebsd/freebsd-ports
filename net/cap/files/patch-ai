@@ -1,0 +1,29 @@
+--- support/ethertalk/bpfiltp.c.orig	Mon Feb  1 10:09:12 1999
++++ support/ethertalk/bpfiltp.c	Mon Feb  1 10:07:12 1999
+@@ -47,6 +47,8 @@
+ #endif
+ #if __FreeBSD_version >= 300000
+ #include <net/if_var.h>
++#include <net/if_dl.h>
++#include <net/ethernet.h>
+ #endif
+ #endif /*__FreeBSD__*/
+ #include <netinet/if_ether.h>
+@@ -347,9 +349,17 @@
+ struct ifreq *ifr;
+ {
+   int sock;
++#if defined(__FreeBSD__) && __FreeBSD_version >= 300000
++  struct sockaddr_dl	*sdl;
+ 
++  sdl = (struct sockaddr_dl *)&ifr->ifr_addr;
++  sdl->sdl_len = sizeof(struct sockaddr_dl);
++  sdl->sdl_family = AF_LINK;
++  bcopy(multi, LLADDR(sdl), ETHER_ADDR_LEN);
++#else
+   ifr->ifr_addr.sa_family = AF_UNSPEC;
+   bcopy(multi, ifr->ifr_addr.sa_data, EHRD);
++#endif
+   /*
+    * open a socket, temporarily, to use for SIOC* ioctls
+    *
