@@ -20,9 +20,12 @@ source src { unix-dgram("/var/run/log");
 #
 destination messages { file("/var/log/messages"); };
 destination security { file("/var/log/security"); };
+destination authlog { file("/var/log/auth.log"); };
 destination maillog { file("/var/log/maillog"); };
 destination lpd-errs { file("/var/log/lpd-errs"); };
+destination xferlog { file("/var/log/xferlog"); };
 destination cron { file("/var/log/cron"); };
+destination debuglog { file("/var/log/debug.log"); };
 destination consolelog { file("/var/log/console.log"); };
 destination all { file("/var/log/all.log"); };
 destination newscrit { file("/var/log/news/news.crit"); };
@@ -39,6 +42,7 @@ destination allusers { usertty("*"); };
 #
 filter f_auth { facility(auth); };
 filter f_authpriv { facility(authpriv); };
+filter f_not_authpriv { not facility(authpriv); };
 filter f_console { facility(console); };
 filter f_cron { facility(cron); };
 filter f_daemon { facility(daemon); };
@@ -70,6 +74,7 @@ filter f_warning { level(warning..emerg); };
 filter f_notice { level(notice..emerg); };
 filter f_info { level(info..emerg); };
 filter f_debug { level(debug..emerg); };
+filter f_is_debug { level(debug); };
 
 #
 # program filters
@@ -78,17 +83,17 @@ filter f_ppp { program("ppp"); };
 filter f_slip { program("startslip"); };
 
 #
-# *.err;kern.debug;auth.notice;mail.crit		/dev/console
+# *.err;kern.warning;auth.notice;mail.crit		/dev/console
 #
 log { source(src); filter(f_err); destination(console); };
-log { source(src); filter(f_kern); filter(f_debug); destination(console); };
+log { source(src); filter(f_kern); filter(f_warning); destination(console); };
 log { source(src); filter(f_auth); filter(f_notice); destination(console); };
 log { source(src); filter(f_mail); filter(f_crit); destination(console); };
 
 #
-# *.notice;kern.debug;lpr.info;mail.crit;news.err	/var/log/messages
+# *.notice;authpriv.none;kern.debug;lpr.info;mail.crit;news.err	/var/log/messages
 #
-log { source(src); filter(f_notice); destination(messages); };
+log { source(src); filter(f_notice); filter(f_not_authpriv); destination(messages); };
 log { source(src); filter(f_kern); filter(f_debug); destination(messages); };
 log { source(src); filter(f_lpr); filter(f_info); destination(messages); };
 log { source(src); filter(f_mail); filter(f_crit); destination(messages); };
@@ -98,6 +103,11 @@ log { source(src); filter(f_news); filter(f_err); destination(messages); };
 # security.*						/var/log/security
 #
 log { source(src); filter(f_security); destination(security); };
+
+#
+# auth.info;authpriv.info				/var/log/auth.log
+log { source(src); filter(f_auth); filter(f_info); destination(authlog); };
+log { source(src); filter(f_authpriv); filter(f_info); destination(authlog); };
 
 #
 # mail.info						/var/log/maillog
@@ -110,9 +120,19 @@ log { source(src); filter(f_mail); filter(f_info); destination(maillog); };
 log { source(src); filter(f_lpr); filter(f_info); destination(lpd-errs); };
 
 #
+# ftp.info						/var/log/xferlog
+#
+log { source(src); filter(f_ftp); filter(f_info); destination(xferlog); };
+
+#
 # cron.*						/var/log/cron
 #
 log { source(src); filter(f_cron); destination(cron); };
+
+#
+# *.=debug						/var/log/debug.log
+#
+log { source(src); filter(f_is_debug); destination(debuglog); };
 
 #
 # *.emerg						*
