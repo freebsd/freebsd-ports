@@ -8,7 +8,8 @@
 PORTNAME=	wordpress-mu
 PORTVERSION=	2005.02.23
 CATEGORIES=	www
-MASTER_SITES=	http://mu.wordpress.org/download/
+MASTER_SITES=	http://blogs.linux.ie/download/wpmu/ \
+		http://mu.wordpress.org/download/
 DISTNAME=	wpmu-${PORTVERSION:S/./-/g}
 
 MAINTAINER=	tjs@cdpa.nsysu.edu.tw
