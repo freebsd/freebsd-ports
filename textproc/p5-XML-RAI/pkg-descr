@@ -1,0 +1,5 @@
+RSS Abstraction Interface. An object-oriented layer that maps overlapping
+and alternate tags in RSS to one common simplified interface.  
+
+WWW:	http://search.cpan.org/dist/XML-RAI
+Author:	Timothy Appnel

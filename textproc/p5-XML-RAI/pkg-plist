@@ -1,0 +1,10 @@
+%%SITE_PERL%%/XML/RAI.pm
+%%SITE_PERL%%/XML/RAI/Object.pm
+%%SITE_PERL%%/XML/RAI/Item.pm
+%%SITE_PERL%%/XML/RAI/Channel.pm
+%%SITE_PERL%%/XML/RAI/Image.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/RAI/.packlist
+@dirrm %%SITE_PERL%%/XML/RAI/
+@unexec rmdir %D/%%SITE_PERL%%/XML 2>/dev/null || true
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/RAI
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/XML 2>/dev/null || true
