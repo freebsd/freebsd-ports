@@ -30,6 +30,12 @@ MAN1=		nt.1
 DATADIR=	${PREFIX}/share/d4x
 DOCSDIR=	${PREFIX}/share/doc/d4x
 
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == "sparc64"
+BROKEN=		"Does not compile on sparc64"
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} -e 's| $$OPTFLAGS||g ; \
 		 s| $$OS_CXXFLAGS||g ; \
@@ -51,4 +57,4 @@ post-install:
 	@${CHOWN} ${SHAREOWN}:${SHAREGRP} ${DOCSDIR}
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
