@@ -363,6 +363,7 @@
     SUBDIR += xshodou
     SUBDIR += xv
     SUBDIR += xyagamo
+    SUBDIR += xyaku
     SUBDIR += yc.el
     SUBDIR += zangband
     SUBDIR += zipcodes
