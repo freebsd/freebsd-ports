@@ -7,7 +7,7 @@
 
 PORTNAME=	gimageview
 PORTVERSION=	0.2.25
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	gtkmmviewer
@@ -18,7 +18,7 @@ COMMENT=	Yet another GTK+ based image viewer
 USE_REINPLACE=	yes
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
-USE_GNOME=	gdkpixbuf
+USE_GNOME=	gdkpixbuf gnomehier
 USE_GETTEXT=	yes
 WANT_GNOME=	yes
 GNU_CONFIGURE=	yes
