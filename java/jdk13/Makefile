@@ -22,7 +22,7 @@ BUILD_DEPENDS=	gm4:${PORTSDIR}/devel/m4 \
 		zip:${PORTSDIR}/archivers/zip \
 		${X11BASE}/lib/libXm.so:${PORTSDIR}/x11-toolkits/open-motif
 .if !defined(NATIVE_BOOTSTRAP)
-BUILD_DEPENDS+=	${JDK13DIR}/bin/javac:${PORTSDIR}/java/linux-sun-jdk13
+BUILD_DEPENDS+=	${JDK13DIR}/bin/javac:${PORTSDIR}/java/linux-blackdown-jdk13
 .endif
 .if !defined(WITHOUT_PLUGIN)
 BUILD_DEPENDS+=	msgfmt:${PORTSDIR}/devel/gettext
@@ -52,7 +52,7 @@ JDK_PATCHSET_VERSION=	8
 .if defined(NATIVE_BOOTSTRAP)
 JDK13DIR?=	${LOCALBASE}/jdk${JDK_VERSION}
 .else
-JDK13DIR?=	${LOCALBASE}/linux-sun-jdk${JDK_VERSION}
+JDK13DIR?=	${LOCALBASE}/linux-blackdown-jdk${JDK_VERSION}
 .endif
 
 ONLY_FOR_ARCHS=	i386

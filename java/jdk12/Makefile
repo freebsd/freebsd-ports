@@ -22,7 +22,7 @@ BUILD_DEPENDS=	gm4:${PORTSDIR}/devel/m4 \
 		${JDK11DIR}/bin/javac:${PORTSDIR}/java/jdk11 \
 		${X11BASE}/lib/libXm.so:${PORTSDIR}/x11-toolkits/open-motif
 .if !defined(NATIVE_BOOTSTRAP)
-BUILD_DEPENDS+=	${JDK12DIR}/bin/javac:${PORTSDIR}/java/linux-sun-jdk12
+BUILD_DEPENDS+=	${JDK12DIR}/bin/javac:${PORTSDIR}/java/linux-blackdown-jdk12
 .endif
 PATCH_DEPENDS=	${NONEXISTENT}:${PORTSDIR}/java/jfc:extract
 LIB_DEPENDS=	odbc.1:${PORTSDIR}/databases/unixODBC
@@ -40,7 +40,7 @@ JFC11DIR?=	${WRKDIRPREFIX}${.CURDIR}/../../java/jfc/work/swing-1.1.1fcs
 .if defined(NATIVE_BOOTSTRAP)
 JDK12DIR?=      ${LOCALBASE}/jdk${JDK_VERSION}
 .else
-JDK12DIR?=	${LOCALBASE}/linux-sun-jdk${JDK_VERSION}
+JDK12DIR?=	${LOCALBASE}/linux-blackdown-jdk${JDK_VERSION}
 .endif
 
 ONLY_FOR_ARCHS=	i386
