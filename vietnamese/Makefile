@@ -2,6 +2,7 @@
 #
     SUBDIR += vntex
 
+    SUBDIR += libviet
     SUBDIR += vn7to8
     SUBDIR += vnconvert
     SUBDIR += vnelvis
