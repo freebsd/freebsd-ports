@@ -32,20 +32,25 @@
 # the default is to build mplayer with mencoder. If you're sure that you
 # don't want to encode or recode any media file, then define this.
 #
-# WITH_GUI
-# default: defined if gtk12 libs are installed on the system
-# defining this knob will force the ports system to install gtk12 first
-# (if not available) and then link mplayer against it. Then you'll
-# be able to use gmplayer, the graphical version of mplayer
-# Note: Defining both WITH_GUI and WITHOUT_GUI will build mplayer without
-#       grapical inteface.
-
+# WITH_GTK1|WITH_GTK2
+# default: autodetect GTK1
+# if you want mplayer to have gui abilities, you can use this knob to define
+# which graphical toolkit set mplayer is built with.
+# It defaults to detect and use GTK1 if it finds a working installation on the
+# system. This can be overridden by choosing WITH_GTK2 or disable graphical
+# user interface by defining WITHOUT_GUI
+# Note: If you define WITH_GTK* *and* WITHOUT_GUI, mplayer will be built without
+#       gui capabilities.
+#       The GTK2 patches are not official ones, so they should be considered as
+#       experimental.
+# Note: GTK2 patches are not included at the moment. So defining this knob has
+#       no effect until new working patches are available
+#
 # WITHOUT_GUI
 # default: undefined
 # normally mplayer comes with gmplayer if gtk is installed on the system.
 # If you want to force mplayer to disable the graphical user interface and
 # build without gui ability, define this.
-#
 #
 # WITHOUT_FREETYPE
 # default: undefined
@@ -104,29 +109,22 @@
 # the libary on your system, it is used, otherwise not.
 # If you define it, it will be built and installed as dependency.)
 #
-# WITH_DVD
-# default: autodetect
-#
-# WITH_DVD_DEVICE
+# WITH_DVD_DEVICE=/path/to/desired/device
 # default 5.x: /dev/acd0
 # default 4.x: /dev/acd0c
-# change the default dvd device
+# This option changes the default device where mplayer looks for
+# a DVD medium
 #
-# WITH_CDROM_DEVICE
+# WITH_CDROM_DEVICE=/path/to/desired/device
 # default 5.x: /dev/acd0
 # default 4.x: /dev/acd0c
-# change the default cdrom device
-# useful for VCD's
-#
-# WITH_LIBDVDREAD
-# default: disabled
-# define this if you prefer the use of libdvdread instead of the
-# mplayer-internal dvd reading routine (which is derived from
-# libdvdread). This only affect mplayer if WITH_DVD is used.
+# This option changes the default cdrom device, maybe useful for VCDs
 #
 # WITH_LIBDVDNAV
-# Completely disabled at the moment because of incompatibility issues
-# with the new libdvdnav. This will probably be fixed in mplayer-1.0.
+# default: autodetect
+# NOTE: This is disabled in the development tree at the moment
+#       because it simply doesn't work, so defining it has no
+#       effect until it works again.
 #
 # WITH_LIBUNGIF
 # default: autodetect
@@ -135,7 +133,7 @@
 # default: autodetect
 # Note: arts audio output cannot work together with mplayer's gtk1-gui
 # 	because of conflicting glib versions, so it it is disabled if
-# 	mplayer is built with graphical user interface
+# 	mplayer is built with gtk1 graphical user interface
 #
 # WITH_CDPARANOIA
 # default: autodetect
@@ -171,10 +169,10 @@
 # WITH_LIVEMEDIA
 # default: autotedect
 #
-# WITH_XVID
-# default: autodetect
+# WITH_MATROSKA
+# default: autotedect
 #
-# WITH_FAAD
+# WITH_XVID
 # default: autodetect
 #
 # WITH_LZO
@@ -205,8 +203,7 @@
 # to be installed.
 
 PORTNAME=	mplayer
-PORTVERSION=	0.92.1
-PORTREVISION=	2
+PORTVERSION=	0.99.4
 CATEGORIES=	multimedia audio ipv6
 MASTER_SITES=	http://www1.mplayerhq.hu/MPlayer/releases/ \
 		http://www2.mplayerhq.hu/MPlayer/releases/ \
@@ -218,11 +215,7 @@ MASTER_SITES=	http://www1.mplayerhq.hu/MPlayer/releases/ \
 		ftp://ftp.lug.udel.edu/MPlayer/releases/ \
 		ftp://mirrors.xmission.com/MPlayer/releases/ \
 		http://www.rrr.de/~riggs/mplayer/
-DISTNAME=	MPlayer-0.92.1
-
-PATCH_SITES=	${MASTER_SITE_RINGSERVER:S,%SUBDIR%,net/kame/misc/&,}
-PATCHFILES=	mplayer-0.9.2-v6-20030930.diff.gz
-PATCH_DIST_STRIP=	-p1
+DISTNAME=	MPlayer-1.0pre4
 
 MAINTAINER=	riggs@rrr.de
 COMMENT=	High performance media player/encoder supporting many formats
@@ -243,8 +236,8 @@ CONFIGURE_ARGS=	--with-extralibdir=${LOCALBASE}/lib \
 		--with-x11incdir=${X11BASE}/include \
 		--enable-png \
 		--disable-libfame \
-		--disable-tv-v4l \
-		--disable-dvdnav
+		--disable-external-faad \
+		--disable-tv-v4l
 
 .if defined(WITH_LANG)
 CONFIGURE_ARGS+=--language=${WITH_LANG}
@@ -257,11 +250,6 @@ MAN1=		mplayer.1
 MANCOMPRESSED=	no
 
 CONFFILES=	codecs.conf example.conf input.conf menu.conf
-DOCFILES=	bugreports.html cd-dvd.html codecs-in.html \
-		codecs.html documentation.html faq.html skin.html \
-		encoding.html formats.html sound.html \
-		users_against_developers.html \
-		video.html
 TOOLFILES=	calcbpp.pl countquant.pl \
 		dvd2divxscript.pl menc2pass \
 		mencvcd mp.pl sws-test w32codec_dl.pl \
@@ -292,17 +280,9 @@ WITH_ARTS=	yes
 WITH_CDPARANOIA=	yes
 .endif
 
-.if exists(${LOCALBASE}/lib/libdv.a)
+.if exists(${LOCALBASE}/lib/libdv.so.4)
 WITH_LIBDV=	yes
 .endif
-
-.if exists(${LOCALBASE}/lib/libdvdcss.so.2)
-WITH_DVD=	yes
-.endif
-
-#.if exists(${LOCALBASE}/lib/libdvdnav.so.3)
-#WITH_LIBDVDNAV=	yes
-#.endif
 
 .if exists(${LOCALBASE}/lib/libungif.so.5)
 WITH_LIBUNGIF=	yes
@@ -353,10 +333,6 @@ WITH_LIVEMEDIA=	yes
 WITH_XVID=	yes
 .endif
 
-.if exists(${LOCALBASE}/lib/libfaad.so)
-WITH_FAAD=	yes
-.endif
-
 .if exists(${X11BASE}/lib/libxmms.so)
 WITH_XMMS=	yes
 .endif
@@ -369,6 +345,10 @@ WITH_LZO=	yes
 WITH_FREETYPE=	yes
 .endif
 
+.if exists(${LOCALBASE}/lib/libmatroska.a)
+WITH_MATROSKA=	yes
+.endif
+
 .if defined (DEBUG)
 CONFIGURE_ARGS+=	--enable-debug
 .endif
@@ -377,14 +357,40 @@ CONFIGURE_ARGS+=	--enable-debug
 CFLAGS+=	-O3 -ffast-math -fomit-frame-pointer
 .endif
 
-.if ${HAVE_GNOME:Mgtk12}!=""
-WITH_GUI=	yes
+.if ${HAVE_GNOME:Mgtk12}!="" && !defined(WITHOUT_GUI) && !defined(WITH_GTK2)
+WITH_GTK1=	yes
 .endif
 
-.if defined(WITH_GUI) && !defined(WITHOUT_GUI)
+.if !defined(WITHOUT_GUI)
 PLIST_SUB+=	GMPLAYER=""
 .else
 PLIST_SUB+=	GMPLAYER="@comment "
+.endif
+
+#.if defined(WITH_GTK2) && !defined(WITHOUT_GUI)
+#USE_GNOME+=	gtk20
+#RUN_DEPENDS+=	${LOCALBASE}/share/mplayer/Skin:${PORTSDIR}/multimedia/mplayer-skins
+#.if defined(PKGNAMESUFFIX)
+#PKGNAMESUFFIX:=	${PKGNAMESUFFIX}-gtk2
+#.else
+#PKGNAMESUFFIX=	-gtk2
+#.endif
+#CONFIGURE_ARGS+=	--enable-gui
+#.endif
+
+.if defined(WITH_GTK1) && !defined(WITHOUT_GUI)
+USE_GNOME+=	gtk12
+RUN_DEPENDS+=	${LOCALBASE}/share/mplayer/Skin:${PORTSDIR}/multimedia/mplayer-skins
+.if defined(PKGNAMESUFFIX)
+PKGNAMESUFFIX:=	${PKGNAMESUFFIX}-gtk
+.else
+PKGNAMESUFFIX=	-gtk
+.endif
+CONFIGURE_ARGS+=	--enable-gui
+.endif
+
+.if defined(WITHOUT_GUI)
+CONFIGURE_ARGS+=	--disable-gui
 .endif
 
 .if defined(WITH_RTC)
@@ -396,19 +402,6 @@ CONFIGURE_ENV+=		CFLAGS+="-I/${LOCALBASE}/include"
 CONFIGURE_ARGS+=	--disable-rtc
 .endif
 
-.if defined(WITH_GUI) && !defined(WITHOUT_GUI)
-USE_GNOME+=	gtk12
-RUN_DEPENDS+=	${LOCALBASE}/share/mplayer/Skin:${PORTSDIR}/multimedia/mplayer-skins
-.if defined(PKGNAMESUFFIX)
-PKGNAMESUFFIX:=	${PKGNAMESUFFIX}-gtk
-.else
-PKGNAMESUFFIX=	-gtk
-.endif
-CONFIGURE_ARGS+=	--enable-gui
-.else
-CONFIGURE_ARGS+=	--disable-gui
-.endif
-
 .if !defined(WITHOUT_MENCODER)
 LIB_DEPENDS+=	mp3lame.0:${PORTSDIR}/audio/lame
 MLINKS+=	mplayer.1 mencoder.1
@@ -418,7 +411,7 @@ CONFIGURE_ARGS+=	--disable-mencoder
 PLIST_SUB+=	MENCODER="@comment "
 .endif
 
-.if defined(WITH_ARTS) && (!defined(WITH_GUI) || defined(WITHOUT_GUI))
+.if defined(WITH_ARTS) && (!defined(WITH_GTK1) || defined(WITHOUT_GUI))
 LIB_DEPENDS+=	artsc.0:${PORTSDIR}/audio/arts
 
 CONFIGURE_ARGS+=	--enable-arts
@@ -430,26 +423,6 @@ CONFIGURE_ARGS+=	--disable-arts
 LIB_DEPENDS+=	cdda_paranoia.0:${PORTSDIR}/audio/cdparanoia
 .else
 CONFIGURE_ARGS+=	--disable-cdparanoia
-.endif
-
-.if defined(WITH_DVD)
-.if !defined(WITH_LIBDVDREAD)
-LIB_DEPENDS+=	dvdcss.2:${PORTSDIR}/multimedia/libdvdcss
-.else
-LIB_DEPENDS+=	dvdread.3:${PORTSDIR}/multimedia/libdvdread
-.endif
-#.if defined(WITH_LIBDVDNAV)
-#LIB_DEPENDS+=	dvdnav.3:${PORTSDIR}/multimedia/libdvdnav
-
-#CONFIGURE_ARGS+=	--enable-dvdnav
-#.else
-#CONFIGURE_ARGS+=	--disable-dvdnav
-#.endif
-
-CONFIGURE_ARGS+=	--enable-css \
-			--with-csslibdir=${LOCALBASE}/lib
-.else
-CONFIGURE_ARGS+=	--disable-css
 .endif
 
 .if defined(WITH_LIBUNGIF)
@@ -474,6 +447,14 @@ CONFIGURE_ARGS+=	--enable-mad \
 			--with-madlibdir=${LOCALBASE}/lib
 .else
 CONFIGURE_ARGS+=	--disable-mad
+.endif
+
+.if defined(WITH_MATROSKA)
+BUILD_DEPENDS+=	${LOCALBASE}/lib/libmatroska.a:${PORTSDIR}/multimedia/libmatroska
+
+CONFIGURE_ARGS+=	--enable-matroska
+.else
+CONFIGURE_ARGS+=	--disable-matroska
 .endif
 
 .if defined(WITH_SVGALIB)
@@ -516,8 +497,7 @@ BUILD_DEPENDS+=		${LOCALBASE}/live/liveMedia/libliveMedia.a:${PORTSDIR}/net/live
 .endif
 
 .if defined(WITH_XVID)
-CONFIGURE_ARGS+=	--enable-xvid \
-			--with-xvidcore=${LOCALBASE}/lib/libxvidcore.so
+CONFIGURE_ARGS+=	--enable-xvid
 LIB_DEPENDS+=		xvidcore.2:${PORTSDIR}/multimedia/xvid
 .endif
 
@@ -530,11 +510,6 @@ CONFIGURE_ARGS+=	--disable-liblzo
 .if defined(WITH_XMMS)
 CONFIGURE_ARGS+=	--enable-xmms
 LIB_DEPENDS+=	xmms.4:${PORTSDIR}/multimedia/xmms
-.endif
-
-.if defined(WITH_FAAD)
-CONFIGURE_ARGS+=	--enable-faad
-LIB_DEPENDS+=	faad.0:${PORTSDIR}/audio/faad
 .endif
 
 .if defined(WITH_FREETYPE)
@@ -629,10 +604,10 @@ pre-everything::
 	@${ECHO_MSG} "Take a careful look into the Makefile in order"
 	@${ECHO_MSG} "to learn how to tune mplayer towards you personal preferences!"
 	@${ECHO_MSG} "For example,"
-	@${ECHO_MSG} "make WITH_GUI=yes"
-	@${ECHO_MSG} "builds MPlayer with GUI support."
+	@${ECHO_MSG} "make WITH_GTK1
+	@${ECHO_MSG} "builds MPlayer with GTK1-GUI support."
 
-.if defined(WITH_GUI) && !defined(WITHOUT_GUI)
+.if !defined(WITHOUT_GUI)
 	@${ECHO_MSG} "If you want to use the GUI, you can either install"
 	@${ECHO_MSG} "${PORTSDIR}/multimedia/mplayer-skins"
 	@${ECHO_MSG} "or download official skin collections from"
@@ -640,6 +615,9 @@ pre-everything::
 .endif
 
 post-patch:
+#.if defined(WITH_GTK2) && !defined(WITHOUT_GUI)
+#	@cd ${WRKSRC} && ${PATCH} < ${PATCHDIR}/extra-patch-gtk2
+#.endif
 	@${REINPLACE_CMD} -e \
 		's|libxmms.so.1|libxmms.so|' \
 		${CONFIGURE_WRKSRC}/${CONFIGURE_SCRIPT}
@@ -666,11 +644,6 @@ post-patch:
 		${WRKSRC}/mplayer.c
 .endif
 
-pre-configure:
-.if defined(WITH_LIBDVDREAD)
-	@${RM} -Rf ${WRKSRC}/libmpdvdkit2/
-.endif
-
 post-configure:
 	@${REINPLACE_CMD} -e 's#-pthread#${PTHREAD_LIBS}#g' \
 		${WRKSRC}/config.mak
@@ -689,11 +662,9 @@ post-install:
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 	@${CHMOD} 755 ${DOCSDIR}
-.for doc in ${DOCFILES}
-	@${INSTALL_DATA} ${WRKSRC}/DOCS/${doc} ${DOCSDIR}
-.endfor
+	@${INSTALL_DATA} ${WRKSRC}/DOCS/HTML/en/* ${DOCSDIR}
 .endif
-.if defined(WITH_GUI) && !defined(WITHOUT_GUI)
+.if !defined(WITHOUT_GUI)
 	@${LN} -sf ${PREFIX}/bin/mplayer ${PREFIX}/bin/gmplayer
 .endif
 	@${CAT} ${.CURDIR}/pkg-message
