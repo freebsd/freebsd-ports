@@ -16,6 +16,8 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	CMU's Software Update Protocol package
 
 FORBIDDEN=	"Unmaintained, potential security issues (CAN-2004-0451)"
+DEPRECATED=	${FORBIDDEN}
+EXPIRATION_DATE=12/07/2004
 
 MAN1=		sup.1
 MAN8=		supservers.8
