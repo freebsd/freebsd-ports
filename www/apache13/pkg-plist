@@ -105,6 +105,7 @@ sbin/httpd
 sbin/logresolve
 sbin/rotatelogs
 %%SUB_SUEXEC%%sbin/suexec
+@exec mkdir -p -m 755 www/data-dist
 www/data-dist/EXAMPLE_DIRECTORY-DONT_ADD_OR_TOUCH_ANYTHING
 @exec [ -d %D/www/data/ ] || ln -fs %B %D/www/data
 www/data-dist/apache_pb.gif
@@ -138,6 +139,7 @@ www/data-dist/index.html.ru.ucs4
 www/data-dist/index.html.ru.utf8
 www/data-dist/index.html.se
 www/data-dist/index.html.zh-tw.big5
+@exec chmod a-w www/data-dist
 share/doc/apache/LICENSE
 share/doc/apache/bind.html.en
 share/doc/apache/bind.html.fr
@@ -431,10 +433,12 @@ share/doc/apache/win_service.html.ja.jis
 share/doc/apache/windows.html.en
 share/doc/apache/windows.html.html
 share/doc/apache/windows.html.ja.jis
+@exec mkdir -p -m 755 www/cgi-bin-dist
 www/cgi-bin-dist/EXAMPLE_DIRECTORY-DONT_ADD_OR_TOUCH_ANYTHING
 @exec [ -d %D/www/cgi-bin/ ] || ln -fs %B %D/www/cgi-bin
 www/cgi-bin-dist/printenv
 www/cgi-bin-dist/test-cgi
+@exec chmod a-w www/cgi-bin-dist
 www/icons/README
 www/icons/a.gif
 www/icons/a.png
