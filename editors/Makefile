@@ -17,6 +17,7 @@
     SUBDIR += bitmap-mule
     SUBDIR += bpatch
     SUBDIR += bvi
+    SUBDIR += codecommander
     SUBDIR += color-mate
     SUBDIR += cooledit
     SUBDIR += custom-emacs

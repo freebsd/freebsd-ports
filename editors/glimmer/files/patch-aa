@@ -1,0 +1,11 @@
+--- src/build.C	2000/08/01 09:43:29	1.1
++++ src/build.C	2000/08/01 09:44:08
+@@ -2,7 +2,7 @@
+ #include <sys/types.h>
+ #include <unistd.h>
+ 
+-#ifdef __NetBSD__
++#if defined(__NetBSD__) || defined(__FreeBSD__)
+ #include <sys/wait.h>
+ #else
+ #include <sched.h>
