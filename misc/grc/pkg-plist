@@ -1,6 +1,7 @@
 bin/grc
 bin/grcat
 etc/grc.conf
+share/grc/conf.diff
 share/grc/conf.esperanto
 share/grc/conf.gcc
 share/grc/conf.irclog

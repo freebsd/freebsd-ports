@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	grc
-PORTVERSION=	1.0.2
+PORTVERSION=	1.0.4
 CATEGORIES=	misc
 MASTER_SITES=	http://melkor.dnp.fmph.uniba.sk/~garabik/grc/
 DISTNAME=	${PORTNAME}_${PORTVERSION}
@@ -35,7 +35,7 @@ do-install:
 	${INSTALL_MAN} ${WRKSRC}/${file} ${MAN1PREFIX}/man/man1
 .endfor
 	@${MKDIR} ${DATADIR}
-	${CP} ${WRKSRC}/conf.* ${DATADIR}
-	${CP} ${WRKSRC}/grc.conf ${PREFIX}/etc
+	${INSTALL_DATA} ${WRKSRC}/conf.* ${DATADIR}
+	${INSTALL_DATA} ${WRKSRC}/grc.conf ${PREFIX}/etc
 
 .include <bsd.port.mk>

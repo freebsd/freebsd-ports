@@ -1,17 +1,17 @@
---- grc.orig	Sun Mar 25 20:40:51 2001
-+++ grc	Sun Mar 25 20:43:14 2001
+--- grc.orig	Wed Sep  4 05:01:42 2002
++++ grc	Tue Nov 12 00:58:50 2002
 @@ -1,4 +1,4 @@
 -#! /usr/bin/python
 +#!%%PYTHON_CMD%%
  
  import os, re, string, sys, getopt, signal
  
-@@ -65,7 +65,7 @@
- 
- conffile = None
- if cfile == "":
--    conffilename = [os.environ['HOME']+"/.grc/grc.conf", "/etc/grc.conf"]
-+    conffilename = [os.environ['HOME']+"/.grc/grc.conf", "%%PREFIX%%/etc/grc.conf"]
-     for i in conffilename:
+@@ -74,7 +74,7 @@
+     home = []
+     if os.environ.has_key('HOME'):
+         home = [os.environ['HOME']+"/.grc/grc.conf"]
+-    conffilenames = home + ["/etc/grc.conf"]
++    conffilenames = home + ["%%PREFIX%%/etc/grc.conf"]
+     for i in conffilenames:
          if os.path.isfile(i):
              conffile = i
