@@ -7,6 +7,7 @@
 
 PORTNAME=	bbkeys
 PORTVERSION=	0.9.0
+PORTREVISION=	1
 CATEGORIES=	x11-wm
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -18,25 +19,27 @@ BUILD_DEPENDS=	blackbox:${PORTSDIR}/x11-wm/blackbox
 
 USE_X_PREFIX=	yes
 USE_PERL5=	yes
+USE_GCC=	3.3+
 GNU_CONFIGURE=	yes
-USE_GNOME=	gnomehack pkgconfig
+USE_REINPLACE=	yes
 
 MAN1=		bbkeys.1
 MAN5=		bbkeysrc.5
-PORTDOCS=	AUTHORS BUGS ChangeLog NEWS README
-PLIST_FILES=	bin/bbkeys share/bbkeys/bbkeysrc share/bbkeys/defaultStyle
+PORTDOCS=	AUTHORS BUGS ChangeLog LICENSE NEWS README TODO
+
+PLIST_FILES=	bin/bbkeys %%DATADIR%%/bbkeysrc %%DATADIR%%/defaultStyle
+PLIST_DIRS=	%%DATADIR%%
 
 post-patch:
-	@${PERL} -pi -e 's|: install-docDATA|:|g' ${WRKSRC}/Makefile.in
+	@${REINPLACE_CMD} -e 's#: install-docDATA#:#g' ${WRKSRC}/Makefile.in
 
 post-install:
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 .for file in ${PORTDOCS}
-	${INSTALL_DATA} ${WRKSRC}/${file} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/${file} ${DOCSDIR}/
 .endfor
 .endif
-	@${ECHO_CMD} "@unexec ${RMDIR} %D/share/bbtools 2>/dev/null || true" \
-		>> ${TMPPLIST}
+	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>

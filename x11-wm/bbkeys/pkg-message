@@ -1,0 +1,7 @@
+********************************************************************************
+* This version of bbkeys includes various changes in features, behaviour and   *
+* configuration. See the README for details of the changes.                    *
+*                                                                              *
+* You can create a new bbkeys configuration by copying some or all of bbkeysrc *
+* to your ~/.bbkeysrc file. The new sytax resembles the blackbox menu config.  *
+********************************************************************************

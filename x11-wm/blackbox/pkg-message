@@ -1,0 +1,14 @@
+********************************************************************************
+* This version of blackbox includes various changes in features, behaviour and *
+* configuration. See the ChangeLog for details.                                *
+*                                                                              *
+* Styles from version 0.65.0 should be converted to the new format with        *
+* bstyleconvert, eg.                                                           *
+*                                                                              *
+*   # bstyleconvert ~/.blackbox/Styles/BSD                                     *
+*   /home/user/.blackbox/Styles/BSD -> /home/user/.blackbox/Styles/BSD-new     *
+*                                                                              *
+* The new Stlye (BSD-new) can replace the old one (BSD), ie.                   *
+*                                                                              *
+*   # mv ~/.blackbox/Styles/BSD-new ~/.blackbox/Styles/BSD                     *
+********************************************************************************
