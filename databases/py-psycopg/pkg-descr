@@ -1,0 +1,18 @@
+psycopg is a PostgreSQL database adapter for the Python programming
+language. It was written from scratch with the aim of being very small and
+fast, and stable as a rock. The main advantages of psycopg are that it
+supports the full Python DBAPI-2.0 and being thread safe at level 2.
+
+psycopg is different from the other database adapter because it was designed
+for heavily multi-threaded applications that create and destroy lots of
+cursors and make a conspicuous number of concurrent INSERTs or UPDATEs.
+Every open Python connection keeps a pool of real (UNIX or TCP/IP)
+connections to the database. Every time a new cursor is created, a new
+connection does not need to be opened; instead one of the unused connections
+from the pool is used. That makes psycopg very fast in typical client-server
+applications that create a servicing thread every time a client request
+arrives.
+
+WWW: http://initd.org/software/psycopg
+
+- Alex Rodioukov <simuran@shaw.ca>

@@ -1,0 +1,27 @@
+%%PORTDOCS%%share/doc/py-psycopg/AUTHORS
+%%PORTDOCS%%share/doc/py-psycopg/COPYING
+%%PORTDOCS%%share/doc/py-psycopg/CREDITS
+%%PORTDOCS%%share/doc/py-psycopg/ChangeLog
+%%PORTDOCS%%share/doc/py-psycopg/FAQ
+%%PORTDOCS%%share/doc/py-psycopg/NEWS
+%%PORTDOCS%%share/doc/py-psycopg/README
+%%PORTDOCS%%share/doc/py-psycopg/RELEASE-1.0
+%%PORTDOCS%%share/doc/py-psycopg/SUCCESS
+%%PORTDOCS%%share/doc/py-psycopg/TODO
+%%PORTDOCS%%share/doc/py-psycopg/dbapi20programming.tex
+%%PORTDOCS%%share/doc/py-psycopg/dbapiext.tex
+%%PORTDOCS%%share/doc/py-psycopg/psycopg-guide.tex
+%%PORTDOCS%%share/examples/py-psycopg/binary.py
+%%PORTDOCS%%share/examples/py-psycopg/commit.py
+%%PORTDOCS%%share/examples/py-psycopg/dictfetch.py
+%%PORTDOCS%%share/examples/py-psycopg/dt.py
+%%PORTDOCS%%share/examples/py-psycopg/first.py
+%%PORTDOCS%%share/examples/py-psycopg/oid.py
+%%PORTDOCS%%share/examples/py-psycopg/somehackers.jpg
+%%PORTDOCS%%share/examples/py-psycopg/threads.py
+%%PORTDOCS%%share/examples/py-psycopg/usercast.py
+%%PORTDOCS%%share/examples/py-psycopg/whereareyou.jpg
+%%PORTDOCS%%share/examples/py-psycopg/work.py
+lib/%%PYTHON_VERSION%%/site-packages/psycopgmodule.so
+%%PORTDOCS%%@dirrm share/examples/py-psycopg
+%%PORTDOCS%%@dirrm share/doc/py-psycopg
