@@ -147,6 +147,8 @@ share/analog/lang/usform.html
 share/analog/lang/yu.lng
 share/analog/lang/yua.lng
 share/analog/lang/yudom.tab
+%%PORTDOCS%%share/doc/analog/LicBSD.txt
+%%PORTDOCS%%share/doc/analog/Licapach.txt
 %%PORTDOCS%%share/doc/analog/Licence.txt
 %%PORTDOCS%%share/doc/analog/Licgd.txt
 %%PORTDOCS%%share/doc/analog/Licpcre.txt
@@ -168,6 +170,8 @@ share/analog/lang/yudom.tab
 %%PORTDOCS%%share/doc/analog/barf8.gif
 %%PORTDOCS%%share/doc/analog/barg8.gif
 %%PORTDOCS%%share/doc/analog/barh8.gif
+%%PORTDOCS%%share/doc/analog/bari8.gif
+%%PORTDOCS%%share/doc/analog/barj8.gif
 %%PORTDOCS%%share/doc/analog/basiccmd.html
 %%PORTDOCS%%share/doc/analog/cache.html
 %%PORTDOCS%%share/doc/analog/custom.html
