@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.11 1996/06/10 01:50:49 asami Exp $
+# $Id: Makefile,v 1.12 1996/08/09 08:16:50 asami Exp $
 #
 
     SUBDIR += arc
@@ -12,6 +12,7 @@
     SUBDIR += unrar
     SUBDIR += unzip
     SUBDIR += unzip.with_encryption
+    SUBDIR += uudeview
     SUBDIR += uudx
     SUBDIR += zip
     SUBDIR += zip.with_encryption
