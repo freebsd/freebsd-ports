@@ -46,6 +46,7 @@ else
     (echo "${portloc}|${pkgbase}|${pkgname}|${date}|${date}|1" >> failure) || cleanup
 fi
 
-
-
-
+link=${pb}/${arch}/${branch}/latest/${portloc}
+mkdir -p $(dirname ${link})
+errorloc=$(realpath ${pb}/${arch}/${branch}/errors/${pkgname}.log)
+ln -sf ${errorloc} ${link}
