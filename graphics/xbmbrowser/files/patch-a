@@ -1,0 +1,21 @@
+*** Imakefile.orig	Fri Aug  4 05:19:36 1995
+--- Imakefile	Wed Sep  6 13:53:32 1995
+***************
+*** 17,24 ****
+  #    -DNO_TRANS_COLOR    Turn off setting the `none' color in xpixmaps
+  
+          DO_XPMS = -DDO_XPMS
+!         XPM_INC = -I/usr/include/X11
+!         XPM_LIB = -L$(LIBDIR)/xpm -lXpm
+  
+  
+  # If you need this uncomment (particularly on decstations)
+--- 17,24 ----
+  #    -DNO_TRANS_COLOR    Turn off setting the `none' color in xpixmaps
+  
+          DO_XPMS = -DDO_XPMS
+!         XPM_INC = -I/usr/X11R6/include/X11
+!         XPM_LIB = -lXpm
+  
+  
+  # If you need this uncomment (particularly on decstations)
