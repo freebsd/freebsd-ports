@@ -1,10 +1,22 @@
 bin/nickle
+include/nickle/builtin-namespaces.h
+include/nickle/builtin.h
+include/nickle/config.h
+include/nickle/gram.h
+include/nickle/mem.h
+include/nickle/memp.h
+include/nickle/nickle.h
+include/nickle/opcode.h
+include/nickle/ref.h
+include/nickle/stack.h
+include/nickle/value.h
+%%DATADIR%%/COPYING
 %%DATADIR%%/abort.5c
 %%DATADIR%%/arc4.5c
 %%DATADIR%%/builtin.5c
 %%DATADIR%%/command.5c
 %%DATADIR%%/ctype.5c
-%%DATADIR%%/examples/circle.5c
+%%DATADIR%%/examples/COPYING
 %%DATADIR%%/examples/comb.5c
 %%DATADIR%%/examples/cribbage.5c
 %%DATADIR%%/examples/erat.5c
@@ -20,15 +32,18 @@ bin/nickle
 %%DATADIR%%/examples/qbrating.5c
 %%DATADIR%%/examples/randtest.5c
 %%DATADIR%%/examples/restart.5c
-%%DATADIR%%/examples/rijndael.5c
 %%DATADIR%%/examples/roman.5c
 %%DATADIR%%/examples/rsa-demo.5c
 %%DATADIR%%/examples/rsa.5c
+%%DATADIR%%/examples/skiplist.5c
+%%DATADIR%%/examples/skiplisttest.5c
+%%DATADIR%%/examples/smlng/COPYING
 %%DATADIR%%/examples/smlng/context.5c
 %%DATADIR%%/examples/smlng/generate.5c
 %%DATADIR%%/examples/smlng/parse.5c
 %%DATADIR%%/examples/smlng/test.5c
 %%DATADIR%%/examples/sort.5c
+%%DATADIR%%/examples/turtle/COPYING
 %%DATADIR%%/examples/turtle/snowflake.5c
 %%DATADIR%%/examples/turtle/snowflake.tex
 %%DATADIR%%/examples/turtle/turtle.5c
@@ -42,6 +57,7 @@ bin/nickle
 %%DATADIR%%/scanf.5c
 %%DATADIR%%/socket.5c
 %%DATADIR%%/string.5c
+%%DATADIR%%/svg.5c
 @dirrm %%DATADIR%%/examples/turtle/
 @dirrm %%DATADIR%%/examples/smlng
 @dirrm %%DATADIR%%/examples
