@@ -6,26 +6,31 @@
 #
 
 PORTNAME=	xabacus
-PORTVERSION=	5.5.2
+PORTVERSION=	7.0.3
 CATEGORIES=	games
-MASTER_SITES=	${MASTER_SITE_XCONTRIB} \
+MASTER_SITES=	${MASTER_SITE_SUNSITE} \
 		ftp://ftp.tux.org/pub/tux/bagleyd/xabacus/
-MASTER_SITE_SUBDIR=	applications
+MASTER_SITE_SUBDIR=	apps/math
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Abacus for X Window System
 
-WRKSRC=		${WRKDIR}/xabacus
-USE_MOTIF=	yes
+USE_BZIP2=	yes
 USE_X_PREFIX=	yes
+USE_XPM=	yes
+USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
+CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 
-MAN1=		xabacus.1
+MAN6=		xabacus.6
 
-do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/xabacus ${PREFIX}/bin
-	${INSTALL_PROGRAM} ${WRKSRC}/xmabacus ${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/xabacus.man ${PREFIX}/man/man1/xabacus.1
-	${INSTALL_DATA} ${WRKSRC}/Abacus.ad ${X11BASE}/lib/X11/app-defaults/Abacus
+.if defined(WITHOUT_MOTIF)
+CONFIGURE_ARGS+=	--without-motif
+.else
+USE_MOTIF=	yes
+.endif
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|/games/|/|g' ${WRKSRC}/Makefile.in
 
 .include <bsd.port.mk>
