@@ -1,4 +1,4 @@
-o# New ports collection makefile for:	ONEW for FreeWnn
+# New ports collection makefile for:	ONEW for FreeWnn
 # Date created:		5 Sep 1997
 # Whom:			Satoshi TAOKA <taoka@FreeBSD.org>
 #
