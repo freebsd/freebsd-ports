@@ -14,7 +14,7 @@ DISTNAME=	${PORTNAME}
 MAINTAINER=	nakai@FreeBSD.org
 
 USE_IMAKE=	yes
-NO_INSTALL_MANPAGE=	yes
+NO_INSTALL_MANPAGES=	yes
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/xmold ${PREFIX}/bin
