@@ -3,13 +3,13 @@
 # Date created:         9 july 1995
 # Whom:                 jmz
 #
-# $Id: Makefile,v 1.8 1997/03/06 02:03:28 asami Exp $
+# $Id: Makefile,v 1.9 1997/08/25 00:26:59 jmz Exp $
 #
 
-DISTNAME=       musixtex-T76
+DISTNAME=       musixtex-T77
 CATEGORIES=	print
 MASTER_SITES=	ftp://ftp.tex.ac.uk//tex-archive/macros/musixtex/taupin/
-DISTFILES=      musixtex-T76.tar.gz musixexa-T74.tar.gz
+DISTFILES=      musixtex-T77.tar.gz musixexa-T74.tar.gz
 
 MAINTAINER=	jmz@FreeBSD.org
 
