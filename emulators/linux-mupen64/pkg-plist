@@ -1,0 +1,27 @@
+bin/linux-mupen64
+bin/linux-mupen64_install
+lib/linux-mupen64/mupen64
+lib/linux-mupen64/mupen64.ini
+lib/linux-mupen64/lang/dutch.lng
+lib/linux-mupen64/lang/english.lng
+lib/linux-mupen64/lang/french.lng
+lib/linux-mupen64/lang/german.lng
+lib/linux-mupen64/lang/italian.lng
+lib/linux-mupen64/lang/spanish.lng
+lib/linux-mupen64/save/empty
+lib/linux-mupen64/plugins/RiceDaedalus5.1.0.ini
+lib/linux-mupen64/plugins/blight_input-0.0.8.so
+lib/linux-mupen64/plugins/glNintendo64-0.3.1.so
+lib/linux-mupen64/plugins/mupen64_audio.so
+lib/linux-mupen64/plugins/mupen64_gfx.so
+lib/linux-mupen64/plugins/mupen64_hle_rsp.so
+lib/linux-mupen64/plugins/mupen64_input.so
+lib/linux-mupen64/plugins/ricedaedalus.so
+lib/linux-mupen64/plugins/tr64gl.so
+%%PORTDOCS%%%%DOCSDIR%%/whatsnew.txt
+%%PORTDOCS%%%%DOCSDIR%%/readme.pdf
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
+@dirrm lib/linux-mupen64/plugins
+@dirrm lib/linux-mupen64/save
+@dirrm lib/linux-mupen64/lang
+@dirrm lib/linux-mupen64
