@@ -3,7 +3,7 @@
 # Date created:        11 July 1998
 # Whom:                Marc G. Fournier <scrappy@freebsd.org>
 #
-# $Id: Makefile,v 1.29 1999/03/11 21:47:09 scrappy Exp $
+# $Id: Makefile,v 1.30 1999/04/22 00:16:53 scrappy Exp $
 #
 
 DISTNAME=	mico-2.2.3
@@ -25,6 +25,8 @@ LIB_DEPENDS=	gtk10.1:${PORTSDIR}/x11-toolkits/gtk10 \
 BUILD_DEPENDS=	g++28:${PORTSDIR}/lang/gcc28 \
 		${LIBSTDC}:${PORTSDIR}/lang/glibstdc++28
 
+BROKEN=		Cannot find a working cpp
+
 CC=		gcc28
 CXX=		g++28
 
@@ -43,6 +45,6 @@ MAN5=		micorc.5
 MAN8=		ird.8 micod.8 nsd.8
 
 post-install:
-	${SETENV} OBJFORMAT=${PORTOBJFORMAT} ${LDCONFIG} -m 
+	${SETENV} OBJFORMAT=${PORTOBJFORMAT} ${LDCONFIG} -m
 
 .include <bsd.port.post.mk>
