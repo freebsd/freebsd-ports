@@ -10,6 +10,7 @@ CATEGORIES=	biology
 MASTER_SITES=	http://www.st.hirosaki-u.ac.jp/~rmiya/xmolwt/
 
 MAINTAINER=	rmiya@cc.hirosaki-u.ac.jp
+COMMENT=	Calculate formula weight and percent of each element for a given formula
 
 WRKSRC=		${WRKDIR}/${DISTNAME}
 MAKEFILE=	Makefile.gtk

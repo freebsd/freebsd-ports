@@ -12,6 +12,7 @@ MASTER_SITE_SUBDIR=	Unicode
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	rtdean@cytherianage.net
+COMMENT=	Perl class that converts strings to/from 2-byte Unicode UCS2 format
 
 PERL_CONFIGURE=	yes
 

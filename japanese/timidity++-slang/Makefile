@@ -7,6 +7,9 @@
 
 CATEGORIES=	japanese
 
+MAINTAINER=	yatt@luna2.org
+COMMENT=	Slang interface for TiMidity++ with Japanese support
+
 INTERFACE=	slang
 JAPANESE=	yes
 

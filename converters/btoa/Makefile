@@ -14,6 +14,7 @@ MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	asami/LOCAL_PORTS
 
 MAINTAINER=	martin@raq.cx
+COMMENT=	Encode/decode binary to printable ASCII
 
 MAKE_FLAGS=	DESTDIR=${PREFIX} -f
 MAKEFILE=	Makefile.sun

@@ -13,6 +13,7 @@ MASTER_SITES=	ftp://dasher.wustl.edu/pub/
 DISTNAME=	${PORTNAME}
 
 MAINTAINER=	gjohnson@srrc.ars.usda.gov
+COMMENT=	A general purpose molecular modelling package
 
 MAKE_ENV+=	HAVE_G2C=yes INSTALL_PROGRAM="${INSTALL_PROGRAM}"
 

@@ -17,6 +17,7 @@ PATCHFILES=	cce-0.36_security.ukai-lin-fok.patch.gz
 PATCH_DIST_ARGS=	-d ${WRKSRC} -p1
 
 MAINTAINER=	statue@freebsd.sinica.edu.tw
+COMMENT=	GB Chinese console
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 USE_REINPLACE=	yes

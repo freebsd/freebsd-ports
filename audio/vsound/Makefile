@@ -11,6 +11,7 @@ CATEGORIES=	audio
 MASTER_SITES=	http://rsidd.online.fr/
 
 MAINTAINER=	rsidd@online.fr
+COMMENT=	Utility for capturing audio streams from programs with OSS output
 
 RUN_DEPENDS=	sox:${PORTSDIR}/audio/sox
 

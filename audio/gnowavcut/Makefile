@@ -11,6 +11,7 @@ CATEGORIES=	audio gnome
 MASTER_SITES=	http://gnowavcut.good-day.net/src/
 
 MAINTAINER=	spcoltri@omcl.org
+COMMENT=	A GNOME/GTK+ based RIFF PCM Wave file splitter
 
 USE_X_PREFIX=	yes
 GNU_CONFIGURE=	yes

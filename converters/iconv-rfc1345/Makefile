@@ -11,6 +11,7 @@ CATEGORIES=	converters
 MASTER_SITES=	http://www.dante.net/staff/konstantin/FreeBSD/iconv/
 
 MAINTAINER=	Konstantin.Chuguev@dante.org.uk
+COMMENT=	Additional charset modules for the iconv library (from RFC1345)
 
 LIB_DEPENDS=	biconv.2:${PORTSDIR}/converters/iconv
 

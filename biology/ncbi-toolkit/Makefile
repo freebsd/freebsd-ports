@@ -12,6 +12,7 @@ MASTER_SITES=	ftp://ftp.ncbi.nih.gov/toolbox/ncbi_tools/old/${PORTVERSION:S/.//g
 DISTNAME=	ncbi
 
 MAINTAINER=	tonym@biolateral.com.au
+COMMENT=	NCBI development toolkit, including BLAST 2 and GenBank/Entrez support
 
 USE_MOTIF=	yes
 USE_REINPLACE=	yes

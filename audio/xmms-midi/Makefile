@@ -10,6 +10,7 @@ CATEGORIES=	audio
 MASTER_SITES=	http://ban.joh.cam.ac.uk/~cr212/xmms-midi/
 
 MAINTAINER=	hendrik@scholz.net
+COMMENT=	XMMS input plugin to play midi files
 
 LIB_DEPENDS=	xmms.3:${PORTSDIR}/multimedia/xmms
 RUN_DEPENDS=    timidity:${PORTSDIR}/audio/timidity

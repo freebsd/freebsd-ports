@@ -12,6 +12,7 @@ MASTER_SITES=	http://www.zipworld.com.au/~erikd/XMMS/
 DISTNAME=	xmms_sndfile-${PORTVERSION}
 
 MAINTAINER=	dyeske@yahoo.com
+COMMENT=	XMMS plugin to allow playing libsndfile supported files
 
 LIB_DEPENDS=	sndfile.1:${PORTSDIR}/audio/libsndfile \
 		xmms.3:${PORTSDIR}/multimedia/xmms

@@ -11,6 +11,7 @@ CATEGORIES=	audio
 MASTER_SITES=	${MASTER_SITE_PORTS_JP}
 
 MAINTAINER=	seiken@ARGV.AC
+COMMENT=	A simple audio file player
 
 MANLANG=	ja
 MAN1=		play.1

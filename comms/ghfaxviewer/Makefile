@@ -13,6 +13,7 @@ MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	halifax
 
 MAINTAINER=	domi@saargate.de
+COMMENT=	a GNOME compliant fax viewer which ist capable of displaying TIFF G3 faxes
 
 LIB_DEPENDS=	gnomeprint.16:${PORTSDIR}/print/gnomeprint \
 		gconf-1.1:${PORTSDIR}/devel/gconf \

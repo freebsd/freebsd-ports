@@ -11,6 +11,7 @@ CATEGORIES=	audio
 MASTER_SITES=	http://www.68k.org/~michael/xmms/
 
 MAINTAINER=	dyeske@yahoo.com
+COMMENT=	XMMS plugin to allow playing libaudiofile supported files
 
 LIB_DEPENDS=	audiofile.0:${PORTSDIR}/audio/libaudiofile
 BUILD_DEPENDS=	xmms-config:${PORTSDIR}/multimedia/xmms

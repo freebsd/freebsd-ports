@@ -13,6 +13,7 @@ DISTNAME=	${PORTNAME}-1.0-beta1
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	rneswold@enteract.com
+COMMENT=	An audio mixer for the WindowMaker dock
 
 WRKSRC=			${WRKDIR}/wmmixer
 USE_IMAKE=		yes

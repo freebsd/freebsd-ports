@@ -14,6 +14,7 @@ DISTNAME=	DeFT_${PORTVERSION}
 EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=	rmiya@cc.hirosaki-u.ac.jp
+COMMENT=	Density functional molecular orbital calculation
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/source
 USE_REINPLACE=	yes

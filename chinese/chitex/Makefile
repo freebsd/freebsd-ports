@@ -19,6 +19,7 @@ DISTFILES=	chitex6121.tar.gz chitex6122.tar.gz moe_kai.ttf.gz \
 		nwdsung3.tgz
 
 MAINTAINER=	statue@freebsd.sinica.edu.tw
+COMMENT=	ChiTeX/ChiLaTeX let you use Chinese Big5 codes in TeX/LaTeX documents
 
 BUILD_DEPENDS=	latex:${PORTSDIR}/print/teTeX
 

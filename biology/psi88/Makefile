@@ -14,6 +14,7 @@ DISTNAME=	${PORTNAME}
 EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=	rmiya@cc.hirosaki-u.ac.jp
+COMMENT=	Plotting wavefunctions (molecular orbitals) in 3D
 
 pre-patch:
 	${MV} ${WRKSRC}/src/makefile ${WRKSRC}/src/Makefile

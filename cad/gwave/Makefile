@@ -11,6 +11,7 @@ CATEGORIES=	cad
 MASTER_SITES=	http://geda.seul.org/dist/
 
 MAINTAINER=	dmlb@dmlb.org
+COMMENT=	Waveform viewer for analogue electronic simulation tools
 
 RUN_DEPENDS=	graph:${PORTSDIR}/graphics/plotutils
 LIB_DEPENDS=	geda.16:${PORTSDIR}/cad/libgeda \

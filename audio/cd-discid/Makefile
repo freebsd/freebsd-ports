@@ -12,6 +12,7 @@ MASTER_SITES=	http://frantica.lly.org/~rcw/cd-discid/
 DISTNAME=	${PORTNAME}_${PORTVERSION}.orig
 
 MAINTAINER=	mchopra@engmail.uwaterloo.ca
+COMMENT=	Backend utility to retrieve CDDB discid information
 
 WRKSRC=		${WRKDIR}/${PKGNAME}
 

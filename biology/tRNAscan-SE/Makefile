@@ -12,6 +12,7 @@ MASTER_SITES=	ftp://ftp.genetics.wustl.edu/pub/eddy/software/
 EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=	chuynh@biolateral.com.au
+COMMENT=	An improved tool for transfer RNA detection
 
 MAN1=		tRNAscan-SE.1
 

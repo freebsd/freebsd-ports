@@ -17,6 +17,7 @@ PATCHFILES=	mopac7-linux.diff.Z
 PATCH_DIST_STRIP=	-p1
 
 MAINTAINER=	rmiya@cc.hirosaki-u.ac.jp
+COMMENT=	Semi-empirical (MNDO, etc.) molecular orbital calculation
 
 USE_GMAKE=	yes
 

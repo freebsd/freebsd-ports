@@ -12,6 +12,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	dyeske@yahoo.com
+COMMENT=	A XMMS future composer input plugin
 
 BUILD_DEPENDS=  xmms-config:${PORTSDIR}/multimedia/xmms
 RUN_DEPENDS=    xmms:${PORTSDIR}/multimedia/xmms

@@ -11,6 +11,7 @@ CATEGORIES+=	audio sysutils x11-clocks
 MASTER_SITES=	http://arnfast.net/projects/
 
 MAINTAINER=	jens@arnfast.net
+COMMENT=	Minimalistic statusbar with XMMS control, APM status and clock
 
 GNU_CONFIGURE=	yes
 

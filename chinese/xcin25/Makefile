@@ -16,6 +16,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION:S/p/pre/}
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} chewing-2002Jan07-snapshot.tar.gz
 
 MAINTAINER=	kcwu@ck.tp.edu.tw
+COMMENT=	Chinese input method server under X
 
 LIB_DEPENDS=	tabe.2:${PORTSDIR}/chinese/libtabe \
 		intl.4:${PORTSDIR}/devel/gettext \

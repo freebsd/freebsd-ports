@@ -11,6 +11,7 @@ CATEGORIES=	audio
 MASTER_SITES=	http://home.kc.rr.com/ripenc/
 
 MAINTAINER=	freebsdports@arved.de
+COMMENT=	Script that automates the ripping, encoding, and naming of CD's
 
 WRKSRC=		${WRKDIR}/ripenc
 

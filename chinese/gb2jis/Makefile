@@ -12,6 +12,7 @@ MASTER_SITES=  http://kanji.zinbun.kyoto-u.ac.jp/~yasuoka/ftp/program/
 DISTFILES= gb2jis.tar.Z
 
 MAINTAINER=    jo-c@is.aist-nara.ac.jp
+COMMENT=	Convert GuoBiao Hanzi to JIS Kanji
 
 WRKSRC= ${WRKDIR}/gb2jis
 ALL_TARGET=

@@ -13,6 +13,7 @@ DISTNAME=	CommAPI
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ari.suutari@syncrontech.com
+COMMENT=	Java Communication API for FreeBSD
 
 BUILD_DEPENDS=	${JDK13DIR}/bin/javac:${PORTSDIR}/java/jdk13 \
 		${JDK13DIR}/jre/lib/ext/comm.jar:${PORTSDIR}/comms/java-commapi

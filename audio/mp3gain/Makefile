@@ -13,6 +13,7 @@ MASTER_SITES=	http://www.mpex.net/software/mirror/ \
 DISTNAME=	${PORTNAME}${PORTVERSION:C/\.//g}_src${EXTSUFFIX}
 
 MAINTAINER=	corecode@corecode.ath.cx
+COMMENT=	A tool to normalize the gain of mp3 files
 
 USE_REINPLACE=	yes
 USE_ZIP=	yes

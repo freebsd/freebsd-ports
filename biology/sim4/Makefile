@@ -12,6 +12,7 @@ MASTER_SITES=	http://globin.cse.psu.edu/ftp/dist/sim4/
 DISTNAME=	${PORTNAME}.${PORTVERSION:S/./-/g}
 
 MAINTAINER=	bio@freebsd.net
+COMMENT=	An algorithm for aligning expressed DNA with genomic sequences
 
 WRKSRC=		${WRKDIR}/sim4.${PORTVERSION:S/./-/g}
 

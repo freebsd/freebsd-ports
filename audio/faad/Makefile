@@ -11,6 +11,7 @@ CATEGORIES=	audio
 MASTER_SITES=	http://faac.sourceforge.net/files/
 
 MAINTAINER=	sean@sfarc.net
+COMMENT=	A LC, MAIN and LTP profile, MPEG2 and MPEG-4 AAC decoder
 
 LIB_DEPENDS=	sndfile.1:${PORTSDIR}/audio/libsndfile \
 		gnugetopt.1:${PORTSDIR}/devel/libgnugetopt

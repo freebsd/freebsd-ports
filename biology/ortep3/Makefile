@@ -15,6 +15,7 @@ DISTFILES=	ortep.tar.Z ortep.f
 EXTRACT_ONLY=	ortep.tar.Z
 
 MAINTAINER=	rmiya@cc.hirosaki-u.ac.jp
+COMMENT=	The Oak Ridge Thermal Ellipsoid Plot Program for Crystal Structure
 
 .if defined(WITH_PGPLOT)
 LIB_DEPENDS=	pgplot.5:${PORTSDIR}/graphics/pgplot

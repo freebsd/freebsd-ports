@@ -12,6 +12,7 @@ MASTER_SITES=	${MASTER_SITE_SUNSITE}
 MASTER_SITE_SUBDIR=	apps/sound/cdrom
 
 MAINTAINER=	clkao@CirX.ORG
+COMMENT=	Read audio tracks from a CD into wav sound files
 
 MAN1=		dagrab.1
 

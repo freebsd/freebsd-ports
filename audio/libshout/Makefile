@@ -11,6 +11,7 @@ CATEGORIES=	audio net
 MASTER_SITES=	http://developer.icecast.org/libshout/releases/
 
 MAINTAINER=	zach@pabst.bendnet.com
+COMMENT=	A library providing routines for connecting and transmitting data to the icecast server
 
 GNU_CONFIGURE=	yes
 INSTALLS_SHLIB=	yes

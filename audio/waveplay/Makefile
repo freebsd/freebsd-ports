@@ -12,6 +12,7 @@ MASTER_SITES=		http://sore.totto.to/~ysonoda/FreeBSD/ports/
 DISTNAME=		waveplay-20010924
 
 MAINTAINER=		yshd@na.rim.or.jp
+COMMENT=	A simple wav file player
 
 MAN1=			waveplay.1
 MANLANG=		"" ja

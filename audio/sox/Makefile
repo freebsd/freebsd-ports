@@ -13,6 +13,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	sox
 
 MAINTAINER=		dnelson@emsphone.com
+COMMENT=	SOund eXchange - universal sound sample translator
 
 MAN1=			sox.1 play.1 soxexam.1
 MLINKS=			play.1 rec.1 sox.1 soxmix.1

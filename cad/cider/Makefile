@@ -14,6 +14,7 @@ DISTNAME=	cider1b1
 EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=	amakawa@jp.FreeBSD.org
+COMMENT=	A mixed-level circuit and device simulator (includes SPICE3)
 
 WRKSRC=		${WRKDIR}/sim
 USE_XLIB=	yes

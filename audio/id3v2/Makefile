@@ -12,6 +12,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	id3v2
 
 MAINTAINER=	djm@pix.net
+COMMENT=	Command line id3v2 tag editor
 
 LIB_DEPENDS=	id3-3.8.2:${PORTSDIR}/audio/id3lib \
 		gnugetopt.1:${PORTSDIR}/devel/libgnugetopt

@@ -12,6 +12,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	xmms-a52dec
 
 MAINTAINER=	verm@drunkmonk.net
+COMMENT=	A52 (aka AC3) decoder plugin for XMMS
 
 LIB_DEPENDS=	xmms.3:${PORTSDIR}/multimedia/xmms \
 		a52.0:${PORTSDIR}/audio/liba52

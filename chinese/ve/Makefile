@@ -13,5 +13,6 @@ MASTER_SITES=	ftp://freebsd.ntu.edu.tw/FreeBSD/woju/source/ \
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	woju@freebsd.ntu.edu.tw
+COMMENT=	NTHU-CS Maple BBS 2.36 BBS-like editor
 
 .include <bsd.port.mk>

@@ -13,6 +13,7 @@ PKGNAMEPREFIX=	p5-
 DISTNAME=	${PORTNAME}-Perl-${PORTVERSION}
 
 MAINTAINER=	jeremy@external.org
+COMMENT=	Interactive remote control shell for xmms
 
 BUILD_DEPENDS=	xmms:${PORTSDIR}/multimedia/xmms \
 		${site_perl}/MPEG/MP3Info.pm:${PORTSDIR}/audio/p5-MP3-Info \

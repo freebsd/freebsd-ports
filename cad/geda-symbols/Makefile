@@ -14,6 +14,7 @@ MASTER_SITES=	ftp://ftp.geda.seul.org/pub/geda/devel/${PORTVERSION}/ \
 DISTNAME=	geda-${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	bruno@tinkerbox.org
+COMMENT=	gEDA symbols
 
 #USE_AUTOCONF=	yes
 

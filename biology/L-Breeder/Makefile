@@ -13,6 +13,7 @@ DISTNAME=	LBreeder
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	dyeske@yahoo.com
+COMMENT=	Allows you to display and breed L-system forms
 
 LIB_DEPENDS=	wx_gtk-2.2_gl.2:${PORTSDIR}/x11-toolkits/wxgtk
 

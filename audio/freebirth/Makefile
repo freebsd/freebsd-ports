@@ -11,6 +11,7 @@ CATEGORIES=	audio
 MASTER_SITES=	http://www.bitmechanic.com/projects/freebirth/
 
 MAINTAINER=	dyeske@yahoo.com
+COMMENT=	A bass synthesizer, step sequencer, and sample player
 
 USE_X_PREFIX=	yes
 USE_GNOMENG=	yes

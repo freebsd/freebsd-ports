@@ -12,6 +12,7 @@ MASTER_SITES=	http://www.ibiblio.org/tkan/download/xmcd/3.2.0/src/
 DISTNAME=	xmcd-3.2.0
 
 MAINTAINER=	eischen@vigrid.com
+COMMENT=	Motif CD player
 
 LIB_DEPENDS+=	vorbis.2:${PORTSDIR}/audio/libvorbis
 RUN_DEPENDS+=	lame:${PORTSDIR}/audio/lame

@@ -14,6 +14,7 @@ EXTRACT_SUFX=	.tar.Z
 EXTRACT_ONLY=	${PORTNAME}${PORTVERSION}.tar.Z
 
 MAINTAINER=	rmiya@cc.hirosaki-u.ac.jp
+COMMENT=	Display molecular orbitals and electron densities in 2D and 3D
 
 USE_XLIB=	yes
 

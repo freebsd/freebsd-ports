@@ -12,6 +12,7 @@ MASTER_SITES=	ftp://ftp.whizkidtech.net/unix/ \
 		http://www.whizkidtech.net/fports/
 
 MAINTAINER=	adam@whizkidtech.net
+COMMENT=	Tools for the conversion to and from UTF-8 Unicode encoding
 
 LIB_DEPENDS=	utf-8:${PORTSDIR}/converters/libutf-8
 RUN_DEPENDS=	tuc:${PORTSDIR}/converters/tuc

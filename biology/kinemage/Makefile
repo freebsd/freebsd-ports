@@ -18,6 +18,7 @@ MASTER_SITE_SUBDIR=	will
 DISTNAME=	mage-001120
 
 MAINTAINER=	jeremy@external.org
+COMMENT=	A molecular visualization program with special functions
 
 WRKSRC=		${WRKDIR}/${DISTNAME}
 

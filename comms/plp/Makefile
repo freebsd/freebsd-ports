@@ -14,6 +14,7 @@ MASTER_SITE_SUBDIR=	kris
 DISTNAME=	${PORTNAME}_1_8
 
 MAINTAINER=	maurice@serc.rmit.edu.au
+COMMENT=	Transfer data between a Psion Series 5(mx) and Unix
 
 USE_GMAKE=	yes
 USE_REINPLACE=	yes

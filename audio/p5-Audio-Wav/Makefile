@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=Audio
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	dom@happygiraffe.net
+COMMENT=	Perl modules for reading and writing Microsoft WAV files
 
 PERL_CONFIGURE=	yes
 

@@ -11,6 +11,7 @@ CATEGORIES=	chinese
 MASTER_SITES=	http://www.whizkidtech.net/i18n/muni/
 
 MAINTAINER=	adam@whizkidtech.net
+COMMENT=	Find Unicode values for Chinese characters
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/muni ${PREFIX}/bin

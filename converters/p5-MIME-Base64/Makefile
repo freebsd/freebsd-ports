@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	MIME
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	erwin@lansing.dk
+COMMENT=	Perl5 module for Base64 and Quoted-Printable encodings
 
 PERL_CONFIGURE=	YES
 

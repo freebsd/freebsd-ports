@@ -13,6 +13,7 @@ MASTER_SITES=	ftp://ftp.cn.freebsd.org/pub/ported/
 DISTNAME=	zh-chinput2-1.3.1
 
 MAINTAINER=	phj@cn.FreeBSD.org
+COMMENT=	Another Chinese GB2312 and Big5 X11 input server
 
 BUILD_DEPENDS=	mysql:${PORTSDIR}/databases/mysql323-client
 RUN_DEPENDS=	mysql:${PORTSDIR}/databases/mysql323-client

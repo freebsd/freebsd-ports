@@ -13,6 +13,7 @@ MASTER_SITES=	http://www.jumbo.narod.ru/src/fmio/ \
 WRKSRC=		${WRKDIR}/${DISTNAME}/src
 
 MAINTAINER=	kunia@istc.kiev.ua
+COMMENT=	FM radio card manipulation utility
 
 MAN1=		fmio.1
 MANCOMPRESSED=	no

@@ -13,6 +13,7 @@ DISTNAME=	javax_comm-${PORTVERSION:S/./_/g}-solsparc
 EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=	ari.suutari@syncrontech.com
+COMMENT=	Sun's Java Communications API
 
 RUN_DEPENDS=	${LOCALBASE}/jdk1.3.1/bin/java:${PORTSDIR}/java/jdk13
 

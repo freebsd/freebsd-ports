@@ -14,6 +14,7 @@ DISTFILES=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX}:src \
 		cdrip.sh:script
 
 MAINTAINER=	wiebel@FreeBSD.nl
+COMMENT=	A CD to mp3c converter with a console frontend
 
 RUN_DEPENDS=	dagrab:${PORTSDIR}/audio/dagrab \
 		gogo:${PORTSDIR}/audio/gogo \

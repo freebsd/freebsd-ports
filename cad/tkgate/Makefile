@@ -12,6 +12,7 @@ MASTER_SITES=		ftp://gadoid.ices.cmu.edu/pub/tkgate/
 EXTRACT_SUFX=		.tgz
 
 MAINTAINER=		hansen@cmu.edu
+COMMENT=	A Tcl/Tk based digital circuit editor and simulator
 
 LIB_DEPENDS=		tk83.1:${PORTSDIR}/x11-toolkits/tk83
 RUN_DEPENDS=		tclsh8.3:${PORTSDIR}/lang/tcl83

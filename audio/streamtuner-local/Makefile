@@ -14,6 +14,7 @@ PKGNAMEPREFIX=		streamtuner-
 DISTNAME=		${PKGNAMEPREFIX}${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=		jylefort@brutele.be
+COMMENT=	A plugin for streamtuner that browses a local MP3 repository
 
 BUILD_DEPENDS=		${X11BASE}/include/streamtuner/streamtuner.h:${PORTSDIR}/audio/streamtuner
 RUN_DEPENDS=		${X11BASE}/bin/streamtuner:${PORTSDIR}/audio/streamtuner

@@ -11,6 +11,7 @@ CATEGORIES=	comms
 MASTER_SITES=	http://lev.serebryakov.spb.ru/download/0.48/
 
 MAINTAINER=	dsh@vlink.ru
+COMMENT=	An FidoNet Technology Network (FTN) compatible mailer for Unix systems
 
 USE_GMAKE=	yes
 MAKE_ENV+=	SH=${SH} AWK=${AWK} MORDA="${MORDA}" DEFS="${DEFS}"

@@ -13,6 +13,7 @@ DISTNAME=	adpcm
 EXTRACT_SUFX=	.shar
 
 MAINTAINER=		andrew@ugh.net.au
+COMMENT=	An Intel/DVI IMA ADPCM codec library
 
 NO_WRKSUBDIR=	true
 EXTRACT_CMD=	${SH}

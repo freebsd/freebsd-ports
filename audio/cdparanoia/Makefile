@@ -14,6 +14,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION:C/^3\./III-alpha/}
 EXTRACT_SUFX=	.src.tgz
 
 MAINTAINER=	corecode@corecode.ath.cx
+COMMENT=	A CDDA extraction tool (also known as ripper)
 
 .if !exists(/usr/include/getopt.h)
 CONFIGURE_ENV=	CFLAGS="${CFLAGS} -I${LOCALBASE}/include" \

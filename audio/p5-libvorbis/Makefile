@@ -14,6 +14,7 @@ PKGNAMEPREFIX=	p5-
 DISTNAME=	${PORTNAME}-perl-${PORTVERSION}
 
 MAINTAINER=	dom@happygiraffe.net
+COMMENT=	Perl extension for Ogg Vorbis streams
 
 LIB_DEPENDS=	vorbis.2:${PORTSDIR}/audio/libvorbis
 

@@ -12,6 +12,7 @@ MASTER_SITES=	ftp://ftp.scripps.edu/pub/case/ \
 		http://www.scripps.edu/case/
 
 MAINTAINER=	bdodson@scms.utmb.edu
+COMMENT=	This is nab (nucleic acid builder), a language for macromolecules
 
 MAKE_ENV+=	NABHOME=${WRKSRC} ARCH= PATH=${WRKSRC}/bin:${PATH}
 

@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	xmms-a52dec
 DISTNAME=	xmms-a52dec-1.0
 
 MAINTAINER=	verm@drunkmonk.net
+COMMENT=	OSSSuround adds Surround Sound capabilities to XMMS
 
 LIB_DEPENDS=	xmms.3:${PORTSDIR}/multimedia/xmms
 

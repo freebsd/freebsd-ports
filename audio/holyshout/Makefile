@@ -11,6 +11,7 @@ CATEGORIES=	audio net
 MASTER_SITES=	ftp://ftp.holywar.net/pub/FreeBSD/
 
 MAINTAINER=	hollywar@mail.holywar.net
+COMMENT=	Streaming audio to Icecast/shoutcast supports multiple bitrate stream
 
 USE_GMAKE=	yes
 USE_REINPLACE=	yes

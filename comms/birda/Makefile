@@ -11,6 +11,7 @@ CATEGORIES=	comms
 MASTER_SITES=	ftp://ftp.netbsd.org/pub/NetBSD/packages/distfiles/
 
 MAINTAINER=	allbery@ece.cmu.edu
+COMMENT=	Bohlin's IrDA utilities, ported from NetBSD's pkgsrc
 
 MAN1=		ircomm.1 irobex.1 irs.1 \
 		mkobexcard.1 mkobexdate.1 mkobexmemo.1 mkobexpdb.1 \

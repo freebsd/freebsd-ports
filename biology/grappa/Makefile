@@ -12,6 +12,7 @@ MASTER_SITES=	http://www.cs.unm.edu/~moret/
 DISTNAME=	GRAPPA-1.03
 
 MAINTAINER=	dbader@eece.unm.edu
+COMMENT=	Genome Rearrangements Analysis and Phylogeny Software
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/libconcorde.a:${PORTSDIR}/math/concorde
 

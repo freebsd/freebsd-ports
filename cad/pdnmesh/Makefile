@@ -13,6 +13,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 MASTER_SITE_SUBDIR=	${PORTNAME} science/visualization
 
 MAINTAINER=	sarod@cs.pdn.ac.lk
+COMMENT=	A finite element program
 
 USE_XLIB=	yes
 USE_MESA=	yes

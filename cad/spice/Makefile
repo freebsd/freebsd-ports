@@ -14,6 +14,7 @@ DISTNAME=	sp3f4.kit
 EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=	kaveman@magna.com.au
+COMMENT=	A general-purpose circuit simulation program
 
 # documentation in ftp://ic.eecs.berkeley.edu/pub/Spice3/um.3f3.ps
 

@@ -16,6 +16,7 @@ PATCH_SITES=	ftp://freebsd.ntu.edu.tw/OS/FreeBSD/taiwan/users/benedick/patch/pin
 PATCHFILES=	${PORTNAME}${PORTVERSION}.patch.gz
 
 MAINTAINER=	avatar@mmlab.cse.yzu.edu.tw
+COMMENT=	A Program for Internet News & Email with Chinese(BIG-5) support
 
 USE_BZIP2=	yes
 

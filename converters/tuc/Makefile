@@ -11,6 +11,7 @@ CATEGORIES=	converters
 MASTER_SITES=	http://www.whizkidtech.net/fports/
 
 MAINTAINER=	adam@whizkidtech.net
+COMMENT=	Text to Unix Conversion
 
 MAN1=		tuc.1
 

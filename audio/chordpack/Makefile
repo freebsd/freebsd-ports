@@ -12,6 +12,7 @@ MASTER_SITES=	http://sweb.cz/dan.polansky/chordpack/
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	sethk@meowfishies.com
+COMMENT=	Script to convert ChordPro files to HTML, ASCII, and TeX
 
 NO_WRKSUBDIR=	true
 NO_BUILD=	true

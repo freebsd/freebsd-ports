@@ -34,6 +34,7 @@ EXTRACT_SUFX=	.xpi
 #IGNOREFILES=	${PORTNAME}-langzhtw-${MOZRV}${EXTRACT_SUFX}
 
 MAINTAINER=	piaip@csie.ntu.edu.tw
+COMMENT=	Mozilla Traditional Chinese Language Pack (TCLP)
 
 FETCH_DEPENDS=	${PREFIX}/lib/mozilla/mozilla:${PORTSDIR}/www/mozilla
 BUILD_DEPENDS=	${PREFIX}/lib/mozilla/regxpcom:${PORTSDIR}/www/mozilla

@@ -11,6 +11,7 @@ CATEGORIES=	biology
 MASTER_SITES=	ftp://megasun.bch.umontreal.ca/pub/flip/
 
 MAINTAINER=	tonym@biolateral.com.au
+COMMENT=	Flip is  used to find/translate orfs
 
 USE_REINPLACE=	yes
 

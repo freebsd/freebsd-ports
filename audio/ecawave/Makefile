@@ -11,6 +11,7 @@ CATEGORIES=	audio
 MASTER_SITES=	http://ecasound.seul.org/download/
 
 MAINTAINER=	anarcat@anarcat.dyndns.org
+COMMENT=	Simple graphical audio file editor
 
 LIB_DEPENDS=	ecasound.7:${PORTSDIR}/audio/ecasound
 

@@ -13,6 +13,7 @@ PKGNAMEPREFIX=	linux-
 DISTNAME=	baudline_${PORTVERSION:S/.p/pre/}_i686
 
 MAINTAINER=	dyeske@yahoo.com
+COMMENT=	A real-time signal analysis tool and an offline time-frequency browser
 
 USE_X_PREFIX=	yes
 ONLY_FOR_ARCHS=	i386

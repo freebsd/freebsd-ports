@@ -12,6 +12,7 @@ CATEGORIES=	benchmarks net
 MASTER_SITES=	http://michael.bacarella.com/projects/tmetric/
 
 MAINTAINER=	mbac@nyct.net
+COMMENT=	A bandwidth measurement tool
 
 HAS_CONFIGURE=	yes
 ALL_TARGET=	${PORTNAME}

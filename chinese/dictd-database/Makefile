@@ -12,6 +12,7 @@ MASTER_SITES=	ftp://freebsd.sinica.edu.tw/pub/statue/dictd-database/
 DISTNAME=	dict-zh-${PORTVERSION}
 
 MAINTAINER=	statue@freebsd.sinica.edu.tw
+COMMENT=	A Chinese <-> English dictd words database
 
 BUILD_DEPENDS=  ${LOCALBASE}/bin/dictzip:${PORTSDIR}/chinese/dictd
 

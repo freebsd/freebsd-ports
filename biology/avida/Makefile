@@ -11,6 +11,7 @@ CATEGORIES=	biology
 MASTER_SITES=	http://dllab.caltech.edu/avida/versions/
 
 MAINTAINER=	karlj000@unbc.ca
+COMMENT=	Avida is an auto-adaptive genetic system designed for ALife research
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:C/\.[[:alnum:]]+$//}
 USE_GMAKE=	yes

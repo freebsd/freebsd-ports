@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	trevor
 DISTNAME=	${PORTNAME}${PORTVERSION:S/./v/}
 
 MAINTAINER=	martin.kraft@fal.de
+COMMENT=	Audio player/recorder/editor for the X Window System
 
 WRKSRC=		${WRKDIR}/${PORTNAME}2-981109
 USE_IMAKE=	yes

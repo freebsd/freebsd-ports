@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=MP3
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	leo@florida.sarang.net
+COMMENT=	Manipulate / fetch info from MP3 audio files
 
 PERL_CONFIGURE=	yes
 

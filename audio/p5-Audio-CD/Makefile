@@ -14,6 +14,7 @@ MASTER_SITE_SUBDIR=	Audio
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	roman@xpert.com
+COMMENT=	Perl interface to libcdaudio (cd + cddb)
 
 LIB_DEPENDS=	cdaudio.1:${PORTSDIR}/audio/libcdaudio
 

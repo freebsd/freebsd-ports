@@ -12,6 +12,7 @@ MASTER_SITES=	ftp://freebsd.sinica.edu.tw/pub/statue/gbfs/ \
 		ftp://ftp.gnuchina.org/incoming/zhBSD/
 
 MAINTAINER=	statue@freebsd.sinica.edu.tw
+COMMENT=	Reads GB2312 filenames on Joliet and VFAT filesystems
 
 NO_PACKAGE=	"Different versions definitely cause crash"
 

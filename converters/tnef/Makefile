@@ -11,6 +11,7 @@ CATEGORIES=	converters mail
 MASTER_SITES=	http://world.std.com/~damned/
 
 MAINTAINER=	cr@jcmax.com
+COMMENT=	Unpack data encapsulated into Microsoft Outlook's application/ms-tnef format
 
 GNU_CONFIGURE=	yes
 

@@ -11,6 +11,7 @@ CATEGORIES=	converters textproc
 MASTER_SITES=	http://physics.muni.cz/~yeti/Ftp/enca/
 
 MAINTAINER=	never@nevermind.kiev.ua
+COMMENT=	A package for detecting encoding of text files
 
 LIB_DEPENDS=	iconv.3:${PORTSDIR}/converters/libiconv
 

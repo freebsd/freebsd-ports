@@ -11,6 +11,7 @@ CATEGORIES=	chinese
 MASTER_SITES=	http://people.debian.org/~ygh/
 
 MAINTAINER=	yinjieh@csie.nctu.edu.tw
+COMMENT=	Intelligent Chinese encoding converter
 
 LIB_DEPENDS=	gnugetopt.1:${PORTSDIR}/devel/libgnugetopt
 

@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	ngspice
 DISTNAME=	ng-spice-rework-${PORTVERSION}
 
 MAINTAINER=	amakawa@jp.FreeBSD.org
+COMMENT=	A circuit simulator derived from spice3f5
 
 USE_AUTOCONF_VER?=	213
 

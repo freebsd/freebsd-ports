@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	String
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	svenasse@polaris.ca
+COMMENT=	Perl module to manipulate multibyte character strings
 
 PERL_CONFIGURE=	yes
 

@@ -14,6 +14,7 @@ MASTER_SITE_SUBDIR=	zssh
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	gslin@ccca.nctu.edu.tw
+COMMENT=	Allows you to tunnel a ssh connection over the zmodem protocol
 
 RUN_DEPENDS=	lrz:${PORTSDIR}/comms/lrzsz
 

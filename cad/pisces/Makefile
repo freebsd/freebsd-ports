@@ -13,6 +13,7 @@ DISTNAME=	relB.9009
 EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=	masini@uniroma3.it
+COMMENT=	A 2-d electronic device simulator
 
 BUILD_DEPENDS=	f2c:${PORTSDIR}/lang/f2c
 

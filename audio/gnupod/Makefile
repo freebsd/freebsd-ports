@@ -12,6 +12,7 @@ MASTER_SITES=	http://www.blinkenlights.ch/gnupod/
 DISTNAME=	${PORTNAME}-tools-${PORTVERSION}
 
 MAINTAINER=	david@dyn-ns.net
+COMMENT=	A set of Perl scripts for using an Apple iPod
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/MP3/Info.pm:${PORTSDIR}/audio/p5-MP3-Info \
 		${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/${PERL_ARCH}/XML/Parser.pm:${PORTSDIR}/textproc/p5-XML-Parser \
