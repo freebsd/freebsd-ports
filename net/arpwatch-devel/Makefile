@@ -25,7 +25,7 @@ MAN8=		arpwatch.8 arpsnmp.8
 post-install:
 	if [ ! -d ${PREFIX}/arpwatch ]; then				\
 		${MKDIR} ${PREFIX}/arpwatch;				\
-		${CHMOD} 775 ${PREFIX}/arpwatch;			\
+		${CHMOD} 755 ${PREFIX}/arpwatch;			\
 		${CHOWN} root:operator ${PREFIX}/arpwatch;		\
 	fi
 	${TOUCH} ${PREFIX}/arpwatch/arp.dat
