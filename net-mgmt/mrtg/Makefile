@@ -21,6 +21,7 @@ LIB_DEPENDS=	gd.4:${PORTSDIR}/graphics/gd2
 CONFIGURE_ARGS=	--with-gd-lib=${LOCALBASE}/lib \
 		--with-gd-inc=${LOCALBASE}/include
 .else
+LIB_DEPENDS=	gd.2:${PORTSDIR}/graphics/gd
 CONFIGURE_ARGS=	--with-gd-lib=${LOCALBASE}/lib \
 		--with-gd-inc=${LOCALBASE}/include/gd
 .endif
