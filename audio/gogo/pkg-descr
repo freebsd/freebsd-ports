@@ -1,4 +1,4 @@
-This is the FreeBSD version of 'Gogo no coder', very fast MP3
-encoder.
+This is the FreeBSD version of 'Gogo no coder' (which means 'afternoon
+coder'), a very fast MP3 encoder.  Gogo includes AMD's 3D Now! support.
 
 Translated document of 'gogo -h' is provided.
