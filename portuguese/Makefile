@@ -10,7 +10,7 @@
     SUBDIR += netscape7
     SUBDIR += ooodict-pt_BR
     SUBDIR += ooodict-pt_PT
-    SUBDIR += openoffice
+    SUBDIR += openoffice-1.0
     SUBDIR += staroffice52
     SUBDIR += webalizer-pt_BR
     SUBDIR += webalizer-pt_PT
