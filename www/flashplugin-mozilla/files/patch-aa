@@ -1,12 +1,12 @@
---- Makefile.orig	Tue Sep 28 20:13:38 1999
-+++ Makefile	Thu Oct 23 18:03:06 2003
+--- Makefile.orig	Tue Sep 28 05:13:38 1999
++++ Makefile	Sat Mar 13 20:06:26 2004
 @@ -35,8 +35,8 @@
  # Linux
  SHARED=-shared
  
 -CFLAGS=  $(OPTIMIZER) $(PLUGIN_DEFINES) -I$(FLASH) -I/usr/X11R6/include
 -LDFLAGS= $(FLASH)/libflash.a $(LIBCXX) ../Jpeg/libjpeg.a ../Zlib/libz.a
-+CFLAGS+=  $(OPTIMIZER) $(PLUGIN_DEFINES) -I$(FLASH) -I/usr/X11R6/include
++CFLAGS+=  $(OPTIMIZER) $(PLUGIN_DEFINES) -I$(FLASH) -I/usr/X11R6/include -fPIC
 +LDFLAGS= -L${LOCALBASE}/lib -lflash -ljpeg -lz -L$(X11BASE)/lib -lXt
  
  SRC= plugin.c npunix.c
