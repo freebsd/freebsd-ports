@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mod_proxy_html
-PORTVERSION=	2.1
+PORTVERSION=	2.2
 CATEGORIES=	www
 MASTER_SITES=	http://apache.webthing.com/${PORTNAME}/
 DISTNAME=	${PORTNAME}
@@ -32,8 +32,8 @@ do-build:
 
 do-install:
 	@(cd ${WRKSRC} && ${APXS} -A -i ${PORTNAME}.la)
-	@${ECHO} "================================================================================"
-	@${ECHO} "Enable mod_proxy_html in Apache's config manually."
-	@${ECHO} "================================================================================"
+
+post-install:
+	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
