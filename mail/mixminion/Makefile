@@ -8,12 +8,12 @@
 PORTNAME=	Mixminion
 PORTVERSION=	0.0.7.1
 CATEGORIES=	mail security
-MASTER_SITES=	http://www.mixminion.net/dist/${PORTVERSION}/
+MASTER_SITES=	http://www.mixminion.net/dist/${PORTVERSION}/ \
+		ftp://ftp.aha.ru/pub/FreeBSD/ports/distfiles/ \
+		http://www.mirrors.wiretapped.net/security/cryptography/apps/mail/mixminion/0.0.7.1/
 
 MAINTAINER=	freebsd-ports@rikrose.net
 COMMENT=	A Type III Anonymous Remailer
-
-BROKEN=		"Unfetchable"
 
 USE_OPENSSL=	yes
 USE_REINPLACE=	yes
