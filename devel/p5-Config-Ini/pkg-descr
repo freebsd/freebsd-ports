@@ -1,0 +1,4 @@
+Config::Ini provides easy access to MS-Windows style .ini files, Unreal
+style extended .ini files (where multiple values can be associated with
+a single key), as well as registry files with automatic conversion from
+native Perl to Windows registry data encoding and vice versa.
