@@ -1079,6 +1079,7 @@ cvsync		ports/net/cvsync
 cweb		ports/devel/cweb
 cwish		ports/misc/cwish
 cwtext		ports/textproc/cwtext
+cxmon		ports/devel/cxmon
 cxref		ports/devel/cxref
 cxsc		ports/math/cxsc
 cy-aspell	ports/textproc/cy-aspell
