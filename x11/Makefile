@@ -1,11 +1,11 @@
-# $Id: Makefile,v 1.85 1996/05/06 11:48:35 joerg Exp $
+# $Id: Makefile,v 1.86 1996/05/21 10:19:18 jkh Exp $
 #
 
     SUBDIR += FWF
     SUBDIR += XFree86
     SUBDIR += Xaw3d
+    SUBDIR += afterstep
     SUBDIR += auis
-    SUBDIR += bowman
     SUBDIR += blt
     SUBDIR += color_xterm
     SUBDIR += ctwm
