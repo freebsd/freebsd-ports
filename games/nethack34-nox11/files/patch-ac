@@ -1,20 +1,36 @@
---- include/unixconf.h.orig	Sat Dec 11 14:20:51 1999
-+++ include/unixconf.h	Sat Jul 29 06:58:37 2000
-@@ -45,7 +45,7 @@
- /* #define AIX_31 */	/* In AIX 3.1 (IBM RS/6000) use BSD ioctl's to gain
- 			 * job control (note that AIX is SYSV otherwise)
- 			 * Also define this for AIX 3.2 */
--#define TERMINFO	/* uses terminfo rather than termcap */
-+/* #define TERMINFO */	/* uses terminfo rather than termcap */
- 			/* Should be defined for most SYSV, SVR4 (including
- 			 * Solaris 2+), HPUX, and Linux systems.  In
- 			 * particular, it should NOT be defined for the UNIXPC
-@@ -135,7 +135,7 @@
-  * A stat system call is done on the mailbox every MAILCKFREQ moves.
-  */
- 
--#define MAIL			/* Deliver mail during the game */
-+/* #define MAIL			/* Deliver mail during the game */
- 
- /* The Andrew Message System does mail a little differently from normal
-  * UNIX.  Mail is deposited in the user's own directory in ~/Mailbox
+*** include/unixconf.h.orig	Sun Jul 16 18:03:51 2000
+--- include/unixconf.h	Sat Sep 23 01:09:25 2000
+***************
+*** 47,53 ****
+  			 * job control (note that AIX is SYSV otherwise)
+  			 * Also define this for AIX 3.2 */
+  
+! #define TERMINFO	/* uses terminfo rather than termcap */
+  			/* Should be defined for most SYSV, SVR4 (including
+  			 * Solaris 2+), HPUX, and Linux systems.  In
+  			 * particular, it should NOT be defined for the UNIXPC
+--- 47,53 ----
+  			 * job control (note that AIX is SYSV otherwise)
+  			 * Also define this for AIX 3.2 */
+  
+! /* #define TERMINFO */	 /* uses terminfo rather than termcap */
+  			/* Should be defined for most SYSV, SVR4 (including
+  			 * Solaris 2+), HPUX, and Linux systems.  In
+  			 * particular, it should NOT be defined for the UNIXPC
+***************
+*** 143,149 ****
+   * A stat system call is done on the mailbox every MAILCKFREQ moves.
+   */
+  
+! #define MAIL			/* Deliver mail during the game */
+  
+  /* The Andrew Message System does mail a little differently from normal
+   * UNIX.  Mail is deposited in the user's own directory in ~/Mailbox
+--- 143,149 ----
+   * A stat system call is done on the mailbox every MAILCKFREQ moves.
+   */
+  
+! /* #define MAIL	*/		/* Deliver mail during the game */
+  
+  /* The Andrew Message System does mail a little differently from normal
+   * UNIX.  Mail is deposited in the user's own directory in ~/Mailbox

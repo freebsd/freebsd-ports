@@ -1,51 +1,61 @@
---- ./sys/unix/Makefile.src.orig	Sat Dec 11 00:21:05 1999
-+++ ./sys/unix/Makefile.src	Sun Dec 12 20:27:50 1999
-@@ -132,8 +132,8 @@
- # flags for debugging:
- # CFLAGS = -g -I../include
- 
--CFLAGS = -O -I../include
--LFLAGS = 
-+CFLAGS += -O -I../include -I${X11BASE}/include
-+LFLAGS =  -L${X11BASE}/lib
- 
- # Only used for Qt interface (other interfaces are standard C)
- CXXFLAGS = -g $(CFLAGS) -I. -I$(QTDIR)/include
-@@ -165,8 +165,8 @@
- 
- #
- # 
--WINSRC = $(WINTTYSRC)
--WINOBJ = $(WINTTYOBJ)
-+WINSRC = $(WINTTYSRC) $(WINX11SRC)
-+WINOBJ = $(WINTTYOBJ) $(WINX11OBJ)
- 
- # on some systems the termcap library is in -ltermcap or -lcurses
- # on 386 Xenix, the -ltermlib tputs() seems not to work; use -lcurses instead
-@@ -186,7 +186,7 @@
- #
- # libraries for X11
- # If USE_XPM is defined in config.h, you will also need -lXpm here.
--WINX11LIB = -lXaw -lXmu -lXext -lXt -lX11
-+WINX11LIB = -lXaw -lXmu -lXext -lXt -lX11 -lXpm
- # WINX11LIB = -lXaw -lXmu -lXt -lX11
- # WINX11LIB = -lXaw -lXmu -lXext -lXt -lXpm -lX11 -lm
- # WINX11LIB = -lXaw -lXmu -lXpm -lXext -lXt -lX11 -lSM -lICE -lm # BSD/OS 2.0
-@@ -199,7 +199,7 @@
- #
- #
- 
--WINLIB = $(WINTTYLIB)
-+WINLIB = $(WINTTYLIB) $(WINX11LIB)
- 
- # any other strange libraries your system needs (for Sysunix only -- the more
- # specialized targets should already be right)
-@@ -223,7 +223,7 @@
- # IRIX 4.0.x needs -lsun if NIS (YP) is being used for passwd file lookup
- # LIBS = -lsun
- #
--LIBS =
-+LIBS = -lSM -lICE
- 
- # make NetHack
- GAME     = nethack
+*** sys/unix/Makefile.top.orig	Mon Jul  3 17:42:05 2000
+--- sys/unix/Makefile.top	Sat Sep 23 01:14:48 2000
+***************
+*** 14,31 ****
+  # MAKE = make
+  
+  # make NetHack
+- PREFIX	 = /usr
+  GAME     = nethack
+  # GAME     = nethack.prg
+  GAMEUID  = games
+! GAMEGRP  = bin
+  
+  # Permissions - some places use setgid instead of setuid, for instance
+  # See also the option "SECURE" in include/config.h
+! GAMEPERM = 04755
+! FILEPERM = 0644
+  EXEPERM  = 0755
+! DIRPERM  = 0755
+  
+  # GAMEDIR also appears in config.h as "HACKDIR".
+  # VARDIR may also appear in unixconf.h as "VAR_PLAYGROUND" else GAMEDIR
+--- 14,30 ----
+  # MAKE = make
+  
+  # make NetHack
+  GAME     = nethack
+  # GAME     = nethack.prg
+  GAMEUID  = games
+! GAMEGRP  = games
+  
+  # Permissions - some places use setgid instead of setuid, for instance
+  # See also the option "SECURE" in include/config.h
+! GAMEPERM = 02755
+! FILEPERM = 0664
+  EXEPERM  = 0755
+! DIRPERM  = 0775
+  
+  # GAMEDIR also appears in config.h as "HACKDIR".
+  # VARDIR may also appear in unixconf.h as "VAR_PLAYGROUND" else GAMEDIR
+***************
+*** 35,43 ****
+  # therefore there should not be anything in GAMEDIR that you want to keep
+  # (if there is, you'll have to do the installation by hand or modify the
+  # instructions)
+! GAMEDIR  = $(PREFIX)/games/lib/$(GAME)dir
+  VARDIR  = $(GAMEDIR)
+! SHELLDIR = $(PREFIX)/games
+  
+  # per discussion in Install.X11 and Install.Qt
+  VARDATND = 
+--- 34,42 ----
+  # therefore there should not be anything in GAMEDIR that you want to keep
+  # (if there is, you'll have to do the installation by hand or modify the
+  # instructions)
+! GAMEDIR  = $(PREFIX)/share/$(GAME)
+  VARDIR  = $(GAMEDIR)
+! SHELLDIR = $(PREFIX)/bin
+  
+  # per discussion in Install.X11 and Install.Qt
+  VARDATND = 
