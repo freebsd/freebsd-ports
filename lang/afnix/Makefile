@@ -15,16 +15,21 @@ DISTNAME=	${PORTNAME}-src-${PORTVERSION:S,.,-,g}
 
 MAINTAINER=	ijliao@FreeBSD.org
 
-USE_GMAKE=	yes
 USE_NEWGCC=	yes
-
+USE_GMAKE=	yes
+MAKE_ARGS=	CC="${CXX}" LD="${CXX}" LK="${CXX}" OPTCCFLAGS="${CXXFLAGS}" \
+		DYNCCFLAGS="-fPIC -DPIC" DEBUGFLAGS="" DBGDEFINES="" \
+		STDDEFINES="${PTHREAD_CFLAGS}" EXELDFLAGS="${PTHREAD_LIBS}"
 INSTALLS_SHLIB=	yes
 
-PLIST_SUB=	PORTVER=${PORTVERSION}
+PLIST_SUB=	PORTVER=${PORTVERSION:R}
 
 MAN1=	aleph.1
 
 do-configure:
 	@(cd ${WRKSRC}; ./cnf/bin/aleph-setup -o)
+
+post-install:
+	@strip ${PREFIX}/bin/aleph
 
 .include <bsd.port.mk>
