@@ -1,0 +1,8 @@
+POE::Component::Jabber is a module that simplies for the POE
+developer, access to the Jabber protocol through the use of one of
+the four Client classes. With built in events for common Jabber
+packets, all a POE developer need do is provide an event and arguments
+for most events so the responses to the requests can be properly
+handled by the coder.
+
+WWW: http://search.cpan.org/dist/POE-Component-Jabber/
