@@ -17,7 +17,7 @@ EXTRACT_ONLY=	leocad-${PORTVERSION:S/.p/pre/}.tgz
 MAINTAINER=	dyeske@yahoo.com
 COMMENT=	A CAD program that uses bricks similar to those found in many toys
 
-BUILD_DEPENDS=	unzip:${PORTSDIR}/archivers/unzip
+EXTRACT_DEPENDS=unzip:${PORTSDIR}/archivers/unzip
 LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
 		png.5:${PORTSDIR}/graphics/png
 
