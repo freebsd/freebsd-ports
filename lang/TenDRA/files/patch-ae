@@ -1,0 +1,7 @@
+--- src/lib/machines/freebsd/80x86/startup/xpg3.h.orig	Mon Mar 16 12:39:19 1998
++++ src/lib/machines/freebsd/80x86/startup/xpg3.h	Sat Jun 20 20:17:08 1998
+@@ -10,3 +10,4 @@
+ #define __WRONG_XPG3_SEARCH_H_SRCH_PROTO
+ #define __WRONG_XPG3_TERMIOS_H
+ #define __WRONG_XPG3_ULIMIT_H
++#define __WRONG_XPG3_SYS_SEM_H
