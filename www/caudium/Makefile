@@ -6,16 +6,16 @@
 #
 
 PORTNAME=	caudium
-PORTVERSION=	1.0.36
+PORTVERSION=	1.0.52
 CATEGORIES=	www
-MASTER_SITES=	ftp://ftp.oav.net/caudium/pre-dist/	\
-		ftp://ftp.caudium.net/caudium/pre-dist/
+MASTER_SITES=	ftp://ftp.oav.net/caudium/source/	\
+		ftp://ftp.caudium.net/caudium/source/
 DISTNAME=	caudium-${PORTVERSION}
 
 MAINTAINER=	kiwi@oav.net
 
 BUILD_DEPENDS=	pike:${PORTSDIR}/lang/pike70cvs/
-LIB_DEPENDS=	sablot.66:${PORTSDIR}/textproc/sablotron/
+LIB_DEPENDS=	sablot.69:${PORTSDIR}/textproc/sablotron/
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/
 
@@ -23,6 +23,7 @@ GNU_CONFIGURE=  yes
 CONFIGURE_ARGS+= --without-debug --with-PiXSL
 
 USE_GMAKE=	yes
+USE_BZIP2=	yes
 
 pre-configure:
 	@${ECHO} ${CONFIGURE_ARGS}
