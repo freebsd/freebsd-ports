@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	tetrinet
-PORTVERSION=	0.7
+PORTVERSION=	0.7a
 CATEGORIES=	games net
 MASTER_SITES=	http://achurch.org/tetrinet/
 DISTNAME=	${PORTNAME}

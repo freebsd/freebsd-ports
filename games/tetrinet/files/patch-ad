@@ -1,0 +1,10 @@
+--- Makefile.orig	Sat May  4 14:47:40 2002
++++ Makefile	Sat May  4 14:47:50 2002
+@@ -1,5 +1,5 @@
+-CC = cc
+-CFLAGS = -O2 -I/usr/include/ncurses
++CC ?= cc
++CFLAGS += -I/usr/include/ncurses
+ 
+ OBJS = server.o sockets.o tetrinet.o tetris.o tty.o xwin.o
+ 
