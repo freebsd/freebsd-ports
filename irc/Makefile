@@ -1,9 +1,10 @@
-# $Id$
+# $Id: Makefile,v 1.1 1999/06/26 22:19:48 asami Exp $
 #
 
     SUBDIR += bitchx
     SUBDIR += blackened
     SUBDIR += bnc
+    SUBDIR += epic4
     SUBDIR += ezbounce
     SUBDIR += irc
     SUBDIR += ircII
