@@ -1,0 +1,18 @@
+-------------------------------------------------------------------------------
+You must run 'linux-mupen64_install' as the user you intend to use mupen64 with
+before 'linux-mupen64' will work.
+
+Note:
+
+For some of the graphics plugins to work, you must have a working libGLU.so.1
+and libGLcore.so.1 file located in /compat/linux/usr/lib/
+
+If you're using the FreeBSD nVidia drivers, you can create a link to libGLU.so.1
+by issuing the following command as root:
+
+ln -s /compat/linux/usr/X11R6/lib/libGLU.so.1 /compat/linux/usr/lib/libGLU.so.1
+
+The other file should already be there. If not, look for it, and create a link.
+
+Enjoy!
+-------------------------------------------------------------------------------

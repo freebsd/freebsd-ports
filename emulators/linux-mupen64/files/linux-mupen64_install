@@ -1,0 +1,22 @@
+#!/bin/sh
+# linux-mupen64 - linux-Mupen64 user installation
+#
+# 2003 Travis Poppe
+
+if [ -x ~/.linux-mupen64 ]; then
+	echo "linux-Mupen64 user directory appears to already exist."
+	echo "Removing first..."
+	echo ""
+	rm -rf ~/.linux-mupen64
+fi
+
+mkdir ~/.linux-mupen64/
+mkdir ~/.linux-mupen64/lang
+mkdir ~/.linux-mupen64/save
+mkdir ~/.linux-mupen64/plugins
+cd ~/.linux-mupen64
+ln -s /usr/local/lib/linux-mupen64/plugins/* plugins/
+ln -s /usr/local/lib/linux-mupen64/lang/* lang/
+ln -s /usr/local/lib/linux-mupen64/mupen64* .
+echo "User installation of linux-Mupen64 complete!"
+echo "Run 'linux-mupen64' to start."
