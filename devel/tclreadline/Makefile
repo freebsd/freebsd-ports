@@ -13,7 +13,6 @@ MASTER_SITES=	http://www.zellner.org/tclreadline/download/
 MAINTAINER=	darius@dons.net.au
 
 GNU_CONFIGURE=	yes
-GMAKE=		yes
 MANN=		tclreadline.n
 
 .include <bsd.port.pre.mk>
