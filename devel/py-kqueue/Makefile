@@ -6,7 +6,7 @@
 #
 
 PORTNAME=		kqueue
-PORTVERSION=		1.0
+PORTVERSION=		1.1
 CATEGORIES=		devel python
 MASTER_SITES=		http://people.freebsd.org/~dwhite/PyKQueue/
 PKGNAMEPREFIX=		py-
