@@ -1,5 +1,5 @@
 --- config/cf/FreeBSD.cf.orig	Tue Jan 14 18:52:12 2003
-+++ config/cf/FreeBSD.cf	Tue Jul 15 19:57:04 2003
++++ config/cf/FreeBSD.cf	Fri Aug 22 20:02:11 2003
 @@ -162,11 +162,11 @@
   *    ld: warning: libXThrStub.so.6, needed by libX11.so, not found
   */
@@ -25,18 +25,7 @@
  #endif
  #endif
  #ifndef ExtraLibraries
-@@ -209,6 +209,10 @@
- #endif
- 
- /* 3.3(?) and later has support for setting MTRRs */
-+#ifdef x86_64Architecture
-+#define HasMTRRSupport		NO	/* not yet */
-+#endif
-+
- #ifndef HasMTRRSupport
- #if OSMajorVersion > 3 || (OSMajorVersion == 3 && OSMinorVersion >= 3)
- #define HasMTRRSupport		YES
-@@ -228,21 +232,25 @@
+@@ -228,21 +228,25 @@
  #endif
  
  /*
@@ -65,7 +54,7 @@
  # define HasX86Support          YES
  # define HasMMXSupport		YES
  # define Has3DNowSupport	YES
-@@ -455,10 +463,8 @@
+@@ -455,10 +459,8 @@
  #ifdef i386Architecture
  #define ServerExtraDefines GccGasOption XFree86ServerDefines
  #endif
@@ -78,7 +67,7 @@
  #define ServerExtraDefines GccGasOption XFree86ServerDefines -D_XSERVER64
  #endif
  
-@@ -482,18 +488,8 @@
+@@ -482,18 +484,8 @@
  #define XawI18nDefines		-DUSE_XWCHAR_STRING -DUSE_XMBTOWC
  #endif
  
