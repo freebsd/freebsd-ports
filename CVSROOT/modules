@@ -4969,6 +4969,7 @@ libsvm		ports/science/libsvm
 libsvm-python	ports/science/libsvm-python
 libsx		ports/x11/libsx
 libtai		ports/devel/libtai
+libtap		ports/devel/libtap
 libtar		ports/devel/libtar
 libtasn1	ports/security/libtasn1
 libtcp4u	ports/net/libtcp4u
