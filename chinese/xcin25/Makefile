@@ -44,27 +44,27 @@ post-install:
 	${MKDIR} ${PREFIX}/lib/X11/xcin25/doc
 .for DOC in Bugs COPYING CREDITS Changes Cin CopyRight FAQ README \
 		SETUP Todo Usage UserGuide
-	${INSTALL_MAN} ${WRKSRC}/doc/${DOC} ${PREFIX}/lib/X11/xcin25/doc
+	${INSTALL_DATA} ${WRKSRC}/doc/${DOC} ${PREFIX}/lib/X11/xcin25/doc
 .endfor
 	${MKDIR} ${PREFIX}/lib/X11/xcin25/doc/En
 	${MKDIR} ${PREFIX}/lib/X11/xcin25/doc/En/internal
 .for En in README.En SETUP.En Usage.En UserGuide.En
-	${INSTALL_MAN} ${WRKSRC}/doc/En/${En} ${PREFIX}/lib/X11/xcin25/doc/En
+	${INSTALL_DATA} ${WRKSRC}/doc/En/${En} ${PREFIX}/lib/X11/xcin25/doc/En
 .endfor
 .for Eninternal in module.En structer.En
-	${INSTALL_MAN} ${WRKSRC}/doc/En/internal/${Eninternal} ${PREFIX}/lib/X11/xcin25/doc/En/internal
+	${INSTALL_DATA} ${WRKSRC}/doc/En/internal/${Eninternal} ${PREFIX}/lib/X11/xcin25/doc/En/internal
 .endfor
 	${MKDIR} ${PREFIX}/lib/X11/xcin25/doc/history
-	${INSTALL_MAN} ${WRKSRC}/doc/history/Changes-19991011 \
+	${INSTALL_DATA} ${WRKSRC}/doc/history/Changes-19991011 \
 		${PREFIX}/lib/X11/xcin25/doc/history
 	${MKDIR} ${PREFIX}/lib/X11/xcin25/doc/internal
 .for INTERNAL in IMdkit gen_inp gui_request module structer
-	${INSTALL_MAN} ${WRKSRC}/doc/internal/${INTERNAL} \
+	${INSTALL_DATA} ${WRKSRC}/doc/internal/${INTERNAL} \
 		${PREFIX}/lib/X11/xcin25/doc/internal
 .endfor
 	${MKDIR} ${PREFIX}/lib/X11/xcin25/doc/modules
 .for MODULES in bimsphone gen_inp im_comm zh_hex
-	${INSTALL_MAN} ${WRKSRC}/doc/modules/${MODULES} \
+	${INSTALL_DATA} ${WRKSRC}/doc/modules/${MODULES} \
 		${PREFIX}/lib/X11/xcin25/doc/modules
 .endfor
 .endif
