@@ -1,0 +1,26 @@
+--- Makefile.orig	Fri Jun 26 22:05:28 1998
++++ Makefile	Fri Jun 26 22:06:00 1998
+@@ -0,0 +1,5 @@
++all:
++	$(CC) $(CFLAGS) -o ttf2psm ttf2psm.c
++
++clean:
++	-@rm ttf2psm
+--- bg5ps.orig	Mon Dec  8 15:28:30 1997
++++ bg5ps	Wed Jun 17 13:08:09 1998
+@@ -1,4 +1,4 @@
+-#!/usr/bin/python
++#!/usr/local/bin/python
+ ################################################################################
+ # bg5ps.py which use the ttf2ps program to convert the Big5 Coding chinese     #
+ # text into printable postscript file.  Since it uses true type font, the      #
+--- ttf2psm.c.orig	Mon Dec  8 03:57:58 1997
++++ ttf2psm.c	Wed Jun 17 13:35:48 1998
+@@ -6,7 +6,6 @@
+ #include <math.h>
+ #include <stdlib.h>
+ #include <string.h>
+-#include <malloc.h>
+ #include <memory.h>
+ #include <time.h>
+ 

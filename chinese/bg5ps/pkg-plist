@@ -1,0 +1,8 @@
+bin/bg5ps
+bin/ttf2psm
+share/doc/bg5ps/README
+share/doc/bg5ps/bg5ps.conf
+share/doc/bg5ps/test.big5
+share/doc/bg5ps/test.sh
+share/doc/bg5ps/ttf2ps.doc
+@dirrm share/doc/bg5ps
