@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	agenda-headers
-PORTVERSION=	1.0
+PORTVERSION=	1.2.0
 CATEGORIES=	devel
 MASTER_SITES=	http://lev.serebryakov.spb.ru/download/agenda/
 
