@@ -5,7 +5,7 @@ ripit is a small front-end program written in perl for ripping,
 encoding & tagging MP3s. It is a console program that needs no user
 intervention. It requires tosha, bladeenc and xmcd (for CDDB access).
 
-WWW: http://www.netcomuk.co.uk/~squinn/ripit.html
+WWW: http://www.bigfoot.com/~simon.quinn/ripit.html
 
 --
 Port by Oyvind Moll <oyvindmo@initio.no>
