@@ -1,13 +1,12 @@
-apps/ROX-Filer/AppIcon.xpm
-apps/ROX-Filer/AppRun
 apps/ROX-Filer/FreeBSD-ix86/ROX-Filer
+apps/ROX-Filer/Help/README
 apps/ROX-Filer/Help/COPYING
 apps/ROX-Filer/Help/Changes
-apps/ROX-Filer/Help/Manual-fr.html
 apps/ROX-Filer/Help/Manual.html
-apps/ROX-Filer/Help/README
 apps/ROX-Filer/Help/README-es
 apps/ROX-Filer/Help/TODO
+apps/ROX-Filer/Help/Manual-fr.html
+apps/ROX-Filer/Messages/sp.gmo
 apps/ROX-Filer/Messages/README
 apps/ROX-Filer/Messages/de.gmo
 apps/ROX-Filer/Messages/fr.gmo
@@ -16,27 +15,30 @@ apps/ROX-Filer/Messages/it.gmo
 apps/ROX-Filer/Messages/nl.gmo
 apps/ROX-Filer/Messages/pl.gmo
 apps/ROX-Filer/Messages/ru.gmo
-apps/ROX-Filer/Messages/sp.gmo
+apps/ROX-Filer/Messages/da.gmo
 apps/ROX-Filer/Options.xml
-apps/ROX-Filer/Styles
-apps/ROX-Filer/pixmaps/application.xpm
-apps/ROX-Filer/pixmaps/close.xpm
-apps/ROX-Filer/pixmaps/details.xpm
-apps/ROX-Filer/pixmaps/dirs.xpm
-apps/ROX-Filer/pixmaps/error.xpm
-apps/ROX-Filer/pixmaps/help.xpm
-apps/ROX-Filer/pixmaps/hidden.xpm
-apps/ROX-Filer/pixmaps/home.xpm
-apps/ROX-Filer/pixmaps/mount.xpm
-apps/ROX-Filer/pixmaps/mounted.xpm
-apps/ROX-Filer/pixmaps/multiple.xpm
-apps/ROX-Filer/pixmaps/refresh.xpm
-apps/ROX-Filer/pixmaps/symlink.xpm
-apps/ROX-Filer/pixmaps/unknown.xpm
-apps/ROX-Filer/pixmaps/up.xpm
-apps/ROX-Filer/pixmaps/zoom.xpm
+apps/ROX-Filer/AppRun
+apps/ROX-Filer/images/zoom.png
+apps/ROX-Filer/images/close.png
+apps/ROX-Filer/images/details.png
+apps/ROX-Filer/images/dirs.png
+apps/ROX-Filer/images/error.png
+apps/ROX-Filer/images/help.png
+apps/ROX-Filer/images/hidden.png
+apps/ROX-Filer/images/home.png
+apps/ROX-Filer/images/mount.png
+apps/ROX-Filer/images/mounted.png
+apps/ROX-Filer/images/multiple.png
+apps/ROX-Filer/images/refresh.png
+apps/ROX-Filer/images/symlink.png
+apps/ROX-Filer/images/unknown.png
+apps/ROX-Filer/images/up.png
+apps/ROX-Filer/images/application.png
+apps/ROX-Filer/style.css
+apps/ROX-Filer/Action.png
+apps/ROX-Filer/AppInfo.xml
 bin/rox
-@dirrm apps/ROX-Filer/pixmaps
+@dirrm apps/ROX-Filer/images
 @dirrm apps/ROX-Filer/Messages
 @dirrm apps/ROX-Filer/Help
 @dirrm apps/ROX-Filer/FreeBSD-ix86
