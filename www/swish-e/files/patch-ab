@@ -1,0 +1,21 @@
+*** Makefile.orig	Mon May  3 12:23:45 1999
+--- Makefile	Mon May  3 12:24:04 1999
+***************
+*** 8,15 ****
+  #CC= /opt/SUNWspro/bin/cc
+  #CC= /usr/ccs/bin/ucbcc
+  #CC = /vol/moby/moby_a/gnu/sun4_sunos5.1/bin/gcc
+! CC = /usr/local/bin/gcc
+! #CC = gcc
+  
+  #CFLAGS = -Xa
+  CFLAGS= -O2
+--- 8,15 ----
+  #CC= /opt/SUNWspro/bin/cc
+  #CC= /usr/ccs/bin/ucbcc
+  #CC = /vol/moby/moby_a/gnu/sun4_sunos5.1/bin/gcc
+! #CC = /usr/local/bin/gcc
+! CC = gcc
+  
+  #CFLAGS = -Xa
+  CFLAGS= -O2
