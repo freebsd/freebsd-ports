@@ -1,0 +1,11 @@
+--- Makefile.am.orig	Sat Sep 13 01:14:52 2003
++++ Makefile.am	Mon Oct 20 22:35:00 2003
+@@ -24,7 +24,7 @@
+ 	for i in `find $(distdir) -name .cvsignore` ; do rm -rf $$i; done;
+ 
+ install-data-local:
+-	cp -a {boot-messages,mplayer-fonts,keyboard-i18n} $(emovix_share_dir)
++	for i in boot-messages mplayer-fonts keyboard-i18n; do cp -r $$i $(emovix_share_dir); done;
+ 	for language in boot-messages/[a-z]* ; do perl -pw -i -e "s/MoviX +v[\.\w]+/MoviX v$(MOVIX_VERSION)/" $(emovix_share_dir)/$$language/mxhelp.txt ; done;
+ 
+ uninstall-local:

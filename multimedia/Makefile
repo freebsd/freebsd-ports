@@ -14,6 +14,7 @@
     SUBDIR += dvdauthor
     SUBDIR += dvdrip
     SUBDIR += dvts
+    SUBDIR += emovix
     SUBDIR += enjoympeg
     SUBDIR += ffmpeg
     SUBDIR += ffmpeg045

@@ -1,0 +1,229 @@
+bin/lf-mkmovixiso
+bin/mkmovixiso
+bin/movix-conf
+bin/movix-files
+bin/movix-version
+share/emovix/boot-messages/README.encoding
+share/emovix/boot-messages/de/credits.txt
+share/emovix/boot-messages/de/help.txt
+share/emovix/boot-messages/de/mphelp.txt
+share/emovix/boot-messages/de/mxhelp.txt
+share/emovix/boot-messages/de/trblst.txt
+share/emovix/boot-messages/de/trblst2.txt
+share/emovix/boot-messages/en/credits.txt
+share/emovix/boot-messages/en/help.txt
+share/emovix/boot-messages/en/mphelp.txt
+share/emovix/boot-messages/en/mxhelp.txt
+share/emovix/boot-messages/en/trblst.txt
+share/emovix/boot-messages/en/trblst.txt~
+share/emovix/boot-messages/en/trblst2.txt
+share/emovix/boot-messages/es/credits.txt
+share/emovix/boot-messages/es/mphelp.txt
+share/emovix/boot-messages/es/mxhelp.txt
+share/emovix/boot-messages/es/trblst.txt
+share/emovix/boot-messages/esp/credits.txt
+share/emovix/boot-messages/esp/mphelp.txt
+share/emovix/boot-messages/esp/mxhelp.txt
+share/emovix/boot-messages/esp/trblst.txt
+share/emovix/boot-messages/fr/credits.txt
+share/emovix/boot-messages/fr/help.txt
+share/emovix/boot-messages/fr/mphelp.txt
+share/emovix/boot-messages/fr/mxhelp.txt
+share/emovix/boot-messages/fr/trblst.txt
+share/emovix/boot-messages/fr/trblst2.txt
+share/emovix/boot-messages/hu/credits.txt
+share/emovix/boot-messages/hu/help.txt
+share/emovix/boot-messages/hu/mphelp.txt
+share/emovix/boot-messages/hu/mxhelp.txt
+share/emovix/boot-messages/hu/trblst.txt
+share/emovix/boot-messages/hu/trblst2.txt
+share/emovix/boot-messages/it/credits.txt
+share/emovix/boot-messages/it/help.txt
+share/emovix/boot-messages/it/mphelp.txt
+share/emovix/boot-messages/it/mxhelp.txt
+share/emovix/boot-messages/it/trblst.txt
+share/emovix/boot-messages/it/trblst2.txt
+share/emovix/boot-messages/jp/credits.txt
+share/emovix/boot-messages/jp/mphelp.txt
+share/emovix/boot-messages/jp/mxhelp.txt
+share/emovix/boot-messages/jp/trblst.txt
+share/emovix/boot-messages/nl/credits.txt
+share/emovix/boot-messages/nl/mphelp.txt
+share/emovix/boot-messages/nl/mxhelp.txt
+share/emovix/boot-messages/nl/trblst.txt
+share/emovix/boot-messages/pl/credits.txt
+share/emovix/boot-messages/pl/mphelp.txt
+share/emovix/boot-messages/pl/mxhelp.txt
+share/emovix/boot-messages/pl/trblst.txt
+share/emovix/boot-messages/pl/trblst2.txt
+share/emovix/boot-messages/pt/credits.txt
+share/emovix/boot-messages/pt/mphelp.txt
+share/emovix/boot-messages/pt/mxhelp.txt
+share/emovix/boot-messages/pt/trblst.txt
+share/emovix/boot-messages/sar/credits.txt
+share/emovix/boot-messages/sar/mphelp.txt
+share/emovix/boot-messages/sar/mxhelp.txt
+share/emovix/boot-messages/sar/trblst.txt
+share/emovix/isolinux/credits.txt
+share/emovix/isolinux/initrd.gz
+share/emovix/isolinux/iso.sort
+share/emovix/isolinux/isolinux.bin
+share/emovix/isolinux/isolinux.cfg
+share/emovix/isolinux/kernel/vmlinuz
+share/emovix/isolinux/movix.lss
+share/emovix/isolinux/movix.msg
+share/emovix/isolinux/mphelp.txt
+share/emovix/isolinux/mxhelp.txt
+share/emovix/isolinux/trblst.txt
+share/emovix/keyboard-i18n/README
+share/emovix/keyboard-i18n/de/bootkey.map
+share/emovix/keyboard-i18n/de/shellkey.map
+share/emovix/keyboard-i18n/es/bootkey.map
+share/emovix/keyboard-i18n/es/shellkey.map
+share/emovix/keyboard-i18n/fr/bootkey.map
+share/emovix/keyboard-i18n/fr/shellkey.map
+share/emovix/keyboard-i18n/hu/bootkey.map
+share/emovix/keyboard-i18n/hu/shellkey.map
+share/emovix/keyboard-i18n/it/bootkey.map
+share/emovix/keyboard-i18n/it/shellkey.map
+share/emovix/keyboard-i18n/nl/bootkey.map
+share/emovix/keyboard-i18n/nl/shellkey.map
+share/emovix/keyboard-i18n/pt/bootkey.map
+share/emovix/keyboard-i18n/pt/shellkey.map
+share/emovix/keyboard-i18n/us/bootkey.map
+share/emovix/keyboard-i18n/us/shellkey.map
+share/emovix/movix/bugReport.sh
+share/emovix/movix/config
+share/emovix/movix/input.conf
+share/emovix/movix/isapnpmodules.sh
+share/emovix/movix/lircd.conf
+share/emovix/movix/lircrc
+share/emovix/movix/manpage.txt
+share/emovix/movix/menu.conf
+share/emovix/movix/mixer.pl
+share/emovix/movix/movix-files
+share/emovix/movix/movix.pl
+share/emovix/movix/profile
+share/emovix/movix/rc.lirc
+share/emovix/movix/rc.movix
+share/emovix/movix/setHardware.pl
+share/emovix/movix/showisapnpmodules.sh
+share/emovix/movix/showpcimodules.sh
+share/emovix/mplayer-fonts/FreeMonoBoldOblique.ttf
+share/emovix/mplayer-fonts/FreeSansBold.ttf
+share/emovix/mplayer-fonts/FreeSansBoldOblique.ttf
+share/emovix/mplayer-fonts/FreeSansOblique.ttf
+share/emovix/mplayer-fonts/FreeSerifBoldItalic.ttf
+share/emovix/mplayer-fonts/FreeSerifItalic.ttf
+share/emovix/mplayer-fonts/Vera.ttf
+share/emovix/mplayer-fonts/VeraBd.ttf
+share/emovix/mplayer-fonts/VeraIt.ttf
+share/emovix/mplayer-fonts/VeraMoBd.ttf
+share/emovix/mplayer-fonts/VeraMoIt.ttf
+share/emovix/mplayer-fonts/VeraMono.ttf
+share/emovix/mplayer-fonts/VeraSe.ttf
+share/emovix/mplayer-fonts/VeraSeBd.ttf
+share/emovix/mplayer-fonts/centralEU-cp1250/cp1250-a.raw
+share/emovix/mplayer-fonts/centralEU-cp1250/cp1250-b.raw
+share/emovix/mplayer-fonts/centralEU-cp1250/font.desc
+share/emovix/mplayer-fonts/centralEU-cp1250/osd-mplayer-a.raw
+share/emovix/mplayer-fonts/centralEU-cp1250/osd-mplayer-b.raw
+share/emovix/mplayer-fonts/centralEU-cp1250/runme
+share/emovix/mplayer-fonts/centralEU-iso-8859-2/font.desc
+share/emovix/mplayer-fonts/centralEU-iso-8859-2/iso-8859-2-a.raw
+share/emovix/mplayer-fonts/centralEU-iso-8859-2/iso-8859-2-b.raw
+share/emovix/mplayer-fonts/centralEU-iso-8859-2/osd-mplayer-a.raw
+share/emovix/mplayer-fonts/centralEU-iso-8859-2/osd-mplayer-b.raw
+share/emovix/mplayer-fonts/centralEU-iso-8859-2/runme
+share/emovix/mplayer-fonts/cyrillic/arial-26-cyr-a.raw
+share/emovix/mplayer-fonts/cyrillic/arial-26-cyr-b.raw
+share/emovix/mplayer-fonts/cyrillic/arial-26i-cyr-a.raw
+share/emovix/mplayer-fonts/cyrillic/arial-26i-cyr-b.raw
+share/emovix/mplayer-fonts/cyrillic/arial-cyr-italic.desc
+share/emovix/mplayer-fonts/cyrillic/font.desc
+share/emovix/mplayer-fonts/czech/arpi_a.raw
+share/emovix/mplayer-fonts/czech/arpi_b.raw
+share/emovix/mplayer-fonts/czech/arpi_hun_a.raw
+share/emovix/mplayer-fonts/czech/arpi_hun_b.raw
+share/emovix/mplayer-fonts/czech/arpi_osd_a.raw
+share/emovix/mplayer-fonts/czech/arpi_osd_b.raw
+share/emovix/mplayer-fonts/czech/arpi_progress_a.raw
+share/emovix/mplayer-fonts/czech/arpi_progress_b.raw
+share/emovix/mplayer-fonts/czech/cz_a.raw
+share/emovix/mplayer-fonts/czech/cz_b.raw
+share/emovix/mplayer-fonts/czech/font.desc
+share/emovix/mplayer-fonts/czech/kato_large.desc
+share/emovix/mplayer-fonts/czech/kato_large_a.raw
+share/emovix/mplayer-fonts/czech/kato_large_b.raw
+share/emovix/mplayer-fonts/czech/kato_large_cz_a.raw
+share/emovix/mplayer-fonts/czech/kato_large_cz_b.raw
+share/emovix/mplayer-fonts/czech/kato_medium.desc
+share/emovix/mplayer-fonts/czech/kato_medium_a.raw
+share/emovix/mplayer-fonts/czech/kato_medium_b.raw
+share/emovix/mplayer-fonts/czech/kato_medium_cz_a.raw
+share/emovix/mplayer-fonts/czech/kato_medium_cz_b.raw
+share/emovix/mplayer-fonts/czech/kato_small.desc
+share/emovix/mplayer-fonts/czech/large.desc
+share/emovix/mplayer-fonts/czech/medium.desc
+share/emovix/mplayer-fonts/czech/small.desc
+share/emovix/mplayer-fonts/greek/font.desc
+share/emovix/mplayer-fonts/greek/iso-8859-7-a.raw
+share/emovix/mplayer-fonts/greek/iso-8859-7-b.raw
+share/emovix/mplayer-fonts/greek/osd-mplayer-a.raw
+share/emovix/mplayer-fonts/greek/osd-mplayer-b.raw
+share/emovix/mplayer-fonts/hebrew/font.desc
+share/emovix/mplayer-fonts/hebrew/iso-8859-1-a.raw
+share/emovix/mplayer-fonts/hebrew/iso-8859-1-b.raw
+share/emovix/mplayer-fonts/hebrew/iso-8859-8-a.raw
+share/emovix/mplayer-fonts/hebrew/iso-8859-8-b.raw
+share/emovix/mplayer-fonts/hebrew/osd-mplayer-a.raw
+share/emovix/mplayer-fonts/hebrew/osd-mplayer-b.raw
+share/emovix/mplayer-fonts/polish/font.desc
+share/emovix/mplayer-fonts/polish/iso-8859-2-a.raw
+share/emovix/mplayer-fonts/polish/iso-8859-2-b.raw
+share/emovix/mplayer-fonts/polish/osd-mplayer-a.raw
+share/emovix/mplayer-fonts/polish/osd-mplayer-b.raw
+share/emovix/mplayer-fonts/russian/font.desc
+share/emovix/mplayer-fonts/russian/koi8-r-a.raw
+share/emovix/mplayer-fonts/russian/koi8-r-b.raw
+share/emovix/mplayer-fonts/turkish/font.desc
+share/emovix/mplayer-fonts/turkish/iso-8859-9-a.raw
+share/emovix/mplayer-fonts/turkish/iso-8859-9-b.raw
+share/emovix/mplayer-fonts/turkish/osd-mplayer-a.raw
+share/emovix/mplayer-fonts/turkish/osd-mplayer-b.raw
+@dirrm share/emovix/mplayer-fonts/turkish
+@dirrm share/emovix/mplayer-fonts/russian
+@dirrm share/emovix/mplayer-fonts/polish
+@dirrm share/emovix/mplayer-fonts/hebrew
+@dirrm share/emovix/mplayer-fonts/greek
+@dirrm share/emovix/mplayer-fonts/czech
+@dirrm share/emovix/mplayer-fonts/cyrillic
+@dirrm share/emovix/mplayer-fonts/centralEU-iso-8859-2
+@dirrm share/emovix/mplayer-fonts/centralEU-cp1250
+@dirrm share/emovix/mplayer-fonts
+@dirrm share/emovix/movix
+@dirrm share/emovix/keyboard-i18n/us
+@dirrm share/emovix/keyboard-i18n/pt
+@dirrm share/emovix/keyboard-i18n/nl
+@dirrm share/emovix/keyboard-i18n/it
+@dirrm share/emovix/keyboard-i18n/hu
+@dirrm share/emovix/keyboard-i18n/fr
+@dirrm share/emovix/keyboard-i18n/es
+@dirrm share/emovix/keyboard-i18n/de
+@dirrm share/emovix/keyboard-i18n
+@dirrm share/emovix/isolinux/kernel
+@dirrm share/emovix/isolinux
+@dirrm share/emovix/boot-messages/sar
+@dirrm share/emovix/boot-messages/pt
+@dirrm share/emovix/boot-messages/pl
+@dirrm share/emovix/boot-messages/nl
+@dirrm share/emovix/boot-messages/jp
+@dirrm share/emovix/boot-messages/it
+@dirrm share/emovix/boot-messages/hu
+@dirrm share/emovix/boot-messages/fr
+@dirrm share/emovix/boot-messages/esp
+@dirrm share/emovix/boot-messages/es
+@dirrm share/emovix/boot-messages/en
+@dirrm share/emovix/boot-messages/de
+@dirrm share/emovix/boot-messages
+@dirrm share/emovix
