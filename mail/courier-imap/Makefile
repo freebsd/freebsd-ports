@@ -206,5 +206,11 @@ post-install:
 	@${ECHO_MSG} "And you will have to copy and edit the *.dist files to *"
 	@${ECHO_MSG} "in ${CONFDIR}."
 	@${ECHO_MSG} ""
+	@${ECHO_MSG} "In case you use authpam, you should put the following lines"
+	@${ECHO_MSG} "in your /etc/pam.conf or /etc/pam.d/imap"
+	@${ECHO_MSG} "imap    auth    required    pam_unix.so         try_first_pass"
+	@${ECHO_MSG} "imap    account required    pam_unix.so         try_first_pass"
+	@${ECHO_MSG} "imap    session required    pam_permit.so"
+	@${ECHO_MSG} ""
 
 .include <bsd.port.post.mk>
