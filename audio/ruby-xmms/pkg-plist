@@ -1,5 +1,7 @@
 %%RUBY_SITEARCHLIBDIR%%/xmms.so
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/get_playlist.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/m3u.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/pls.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/xmms_test.rb
 %%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/AUTHORS
@@ -7,6 +9,7 @@
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/ChangeLog
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/README
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/Xmms.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/Xmms/Error.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/Xmms/Remote.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/Xmms/Remote.src/M000001.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/Xmms/Remote.src/M000002.html
@@ -65,6 +68,7 @@
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/Xmms/Remote.src/M000055.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/Xmms/Remote.src/M000056.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/Xmms/Remote.src/M000057.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/Xmms/Remote.src/M000058.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/created.rid
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/files/xmms_c.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/fr_class_index.html
