@@ -7,13 +7,12 @@
 #
 
 PORTNAME=	autodia
-PORTVERSION=	1.7
-PORTREVISION=	0
+PORTVERSION=	1.8
 CATEGORIES=	devel perl5
 MASTER_SITES=	http://droogs.org/autodia/download/
 DISTNAME=	Autodia-${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	fernan@iib.unsam.edu.ar
 COMMENT=	Automatic Dia XML - from Source Code and Data
 
 BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Template.pm:${PORTSDIR}/www/p5-Template-Toolkit \
@@ -39,7 +38,7 @@ MAN3=	Autodia.3 autodia.3 autodia_java.3 \
 	Autodia::Handler::Torque.3 \
 	Autodia::Handler::dia.3
 
-DOCS=	CHANGES COPYING CREDITS DEVELOP FAQ INSTALL README TODO
+DOCS=	CHANGES COPYING CREDITS DEVELOP FAQ INSTALL MANIFEST README TODO
 
 pre-install:
 	@${RM} -f ${WRKSRC}/blib/man3/*.3pm
