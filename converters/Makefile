@@ -1,8 +1,7 @@
-# $Id: Makefile,v 1.7 1997/11/05 04:19:41 asami Exp $
+# $Id: Makefile,v 1.8 1997/11/16 22:45:25 jseger Exp $
 #
 
     SUBDIR += btoa
-    SUBDIR += c2html
     SUBDIR += ish
     SUBDIR += kdesupport
     SUBDIR += mimepp
