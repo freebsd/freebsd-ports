@@ -15,7 +15,7 @@ MASTER_SITES=	ftp://ftp.efd.lth.se/pub/X11/ \
 MASTER_SITE_SUBDIR=	pav
 DISTNAME=	xview3.2p1-X11R6
 
-MAINTAINER=	gagnon_s@sympatico.ca
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	X Window-System-based Visual/Integrated Environment for Workstations
 
 USE_REINPLACE=	yes

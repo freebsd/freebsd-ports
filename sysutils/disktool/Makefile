@@ -11,7 +11,7 @@ CATEGORIES=	sysutils
 MASTER_SITES=	http://ftp.auxio.org/pub/mirrors/step.polymtl.ca/pub/Xview/apps/disktool/
 DISTNAME=	disktool-2.0c
 
-MAINTAINER=	gagnon_s@sympatico.ca
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	XView sysadmin tool for monitoring diskfull situations
 
 LIB_DEPENDS=	xview.3:${PORTSDIR}/x11-toolkits/xview

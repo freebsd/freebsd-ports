@@ -12,7 +12,7 @@ CATEGORIES=	x11
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	thierry
 
-MAINTAINER=	gagnon_s@sympatico.ca
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	9box can "pack" windows inside itself
 
 PLIST_FILES=	bin/9box

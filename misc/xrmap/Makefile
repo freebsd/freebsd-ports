@@ -14,7 +14,7 @@ DISTFILES=	${XRMAPFILE} ${DISTFILE} \
 		pdfmaps-1.1.tar.gz ${CIAFILE}
 EXTRACT_ONLY=	${XRMAPFILE}
 
-MAINTAINER=	gagnon_s@sympatico.ca
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Map portions of the earth from a given longitude/latitude
 
 USE_BZIP2=	yes
