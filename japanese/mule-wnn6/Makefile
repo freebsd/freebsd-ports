@@ -3,12 +3,13 @@
 # Date created:		22 November 1994
 # Whom:			Satoshi Asami (asami)
 #
-# $Id: Makefile,v 1.9 1995/03/04 10:58:29 asami Exp $
+# $Id: Makefile,v 1.10 1995/03/16 00:09:45 asami Exp $
 #
 
 DISTNAME=	mule-2.2.2
 DISTFILES=	emacs-19.28.tar.gz
 MASTER_SITES=	ftp://prep.ai.mit.edu/pub/gnu/
+MAINTAINER=	asami@FreeBSD.ORG
 USE_GMAKE=	yes
 HAS_CONFIGURE=	yes
 STRIP=

@@ -3,11 +3,12 @@
 # Date created:         15 March 1995
 # Whom:                 asami
 #
-# $Id: Makefile,v 1.1.1.1 1995/01/03 08:46:26 swallace Exp $
+# $Id: Makefile,v 1.1.1.1 1995/03/16 09:19:17 asami Exp $
 #
 
 DISTNAME=       xlife
 MASTER_SITES=	ftp://gatekeeper.dec.com/pub/X11/R5-contrib/
+MAINTAINER=	asami@FreeBSD.ORG
 EXTRACT_SUFX=	.tar.Z
 USE_IMAKE=      yes
 PKGNAME=	xlife-3.0

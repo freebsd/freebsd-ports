@@ -3,11 +3,12 @@
 # Date created:		22 November 1994
 # Whom:			asami
 #
-# $Id: Makefile,v 1.4 1994/11/25 18:20:48 asami Exp $
+# $Id: Makefile,v 1.5 1995/01/11 07:20:03 asami Exp $
 #
 
 DISTNAME=	Wnn4.2
 MASTER_SITES=	ftp://utsun.s.u-tokyo.ac.jp/fj/
+MAINTAINER=	asami@FreeBSD.ORG
 IS_INTERACTIVE=	yes
 WRKSRC=		${WRKDIR}/Xsi
 PKG_ARGS?=	-v -c ${PKGDIR}/COMMENT -d ${PKGDIR}/DESCR -f ${PKGDIR}/PLIST \
