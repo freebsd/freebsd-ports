@@ -1,0 +1,6 @@
+The Dialyzer is a static analysis tool that identifies software
+discrepancies such as obvious type errors, unreachable code, redundant
+tests, virtual machine bytecode which is unsafe, etc. in single
+Erlang modules or entire applications.
+
+WWW: http://www.it.uu.se/research/group/hipe/dialyzer/

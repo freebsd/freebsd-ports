@@ -195,6 +195,7 @@
     SUBDIR += devhelp
     SUBDIR += devtodo
     SUBDIR += dia2code
+    SUBDIR += dialyzer
     SUBDIR += diffconvert
     SUBDIR += directfb
     SUBDIR += distcc

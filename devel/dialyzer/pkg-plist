@@ -1,0 +1,37 @@
+lib/erlang/lib/dialyzer-%%VERSION%%/README
+lib/erlang/lib/dialyzer-%%VERSION%%/RELEASE_NOTES
+lib/erlang/lib/dialyzer-%%VERSION%%/dialyzer
+lib/erlang/lib/dialyzer-%%VERSION%%/doc/about.txt
+lib/erlang/lib/dialyzer-%%VERSION%%/doc/manual.txt
+lib/erlang/lib/dialyzer-%%VERSION%%/doc/overview.txt
+lib/erlang/lib/dialyzer-%%VERSION%%/doc/warnings.txt
+lib/erlang/lib/dialyzer-%%VERSION%%/ebin/dialyzer.app
+lib/erlang/lib/dialyzer-%%VERSION%%/ebin/dialyzer.beam
+lib/erlang/lib/dialyzer-%%VERSION%%/ebin/dialyzer_analysis.beam
+lib/erlang/lib/dialyzer-%%VERSION%%/ebin/dialyzer_cl.beam
+lib/erlang/lib/dialyzer-%%VERSION%%/ebin/dialyzer_gui.beam
+lib/erlang/lib/dialyzer-%%VERSION%%/ebin/dialyzer_module_callgraph.beam
+lib/erlang/lib/dialyzer-%%VERSION%%/ebin/dialyzer_options.beam
+lib/erlang/lib/dialyzer-%%VERSION%%/ebin/dialyzer_plt.beam
+lib/erlang/lib/dialyzer-%%VERSION%%/plt/dialyzer_empty_plt
+lib/erlang/lib/dialyzer-%%VERSION%%/src/dialyzer.app.src
+lib/erlang/lib/dialyzer-%%VERSION%%/src/dialyzer.erl
+lib/erlang/lib/dialyzer-%%VERSION%%/src/dialyzer.hrl
+lib/erlang/lib/dialyzer-%%VERSION%%/src/dialyzer.hrl.src
+lib/erlang/lib/dialyzer-%%VERSION%%/src/dialyzer.src
+lib/erlang/lib/dialyzer-%%VERSION%%/src/dialyzer_analysis.erl
+lib/erlang/lib/dialyzer-%%VERSION%%/src/dialyzer_cl.erl
+lib/erlang/lib/dialyzer-%%VERSION%%/src/dialyzer_gui.erl
+lib/erlang/lib/dialyzer-%%VERSION%%/src/dialyzer_module_callgraph.erl
+lib/erlang/lib/dialyzer-%%VERSION%%/src/dialyzer_options.erl
+lib/erlang/lib/dialyzer-%%VERSION%%/src/dialyzer_plt.erl
+lib/erlang/lib/dialyzer-%%VERSION%%/src/hipe_icode_type.hrl
+@dirrm lib/erlang/lib/dialyzer-%%VERSION%%/src
+@dirrm lib/erlang/lib/dialyzer-%%VERSION%%/plt
+@dirrm lib/erlang/lib/dialyzer-%%VERSION%%/ebin
+@dirrm lib/erlang/lib/dialyzer-%%VERSION%%/doc
+@dirrm lib/erlang/lib/dialyzer-%%VERSION%%
+@exec ln -sf dialyzer-%%VERSION%% %D/lib/erlang/lib/dialyzer
+@unexec rm -f %D/lib/erlang/lib/dialyzer 2>&1 >/dev/null || true
+@exec ln -sf %D/lib/erlang/lib/dialyzer-%%VERSION%%/dialyzer %D/bin/dialyzer
+@unexec rm %D/bin/dialyzer 2>&1 >/dev/null || true
