@@ -12,7 +12,7 @@ MASTER_SITES=	ftp://ftp.granch.ru/pub/drivers/sbni16/freebsd/sb16config/
 DISTFILES=	sb16config.c.gz sb16config.8.gz
 EXTRACT_ONLY=
 
-MAINTAINER=	fjoe@freebsd.org
+MAINTAINER=	fjoe@FreeBSD.org
 COMMENT=	Configuration utility for Granch SBNI16-SHDSL PCI modems
 
 NO_WRKSUBDIR=	yes

@@ -13,7 +13,7 @@ DISTNAME=	sbniconfig.c
 EXTRACT_SUFX=	.gz
 EXTRACT_ONLY=
 
-MAINTAINER=	fjoe@freebsd.org
+MAINTAINER=	fjoe@FreeBSD.org
 COMMENT=	Configurator for Granch SBNI12-xx adapters
 
 NO_WRKSUBDIR=	yes
