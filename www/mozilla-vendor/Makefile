@@ -126,12 +126,12 @@ post-build:
 
 pre-install:
 	${TOUCH} -f ${PLIST}
-	if [ ! -x ${PREFIX}/bin/mozilla -a ! -L ${PREFIX}/bin/mozilla ]; then
-	    ${ECHO_CMD} bin/mozilla >> ${PLIST}
+	if [ ! -x ${PREFIX}/bin/mozilla -a ! -L ${PREFIX}/bin/mozilla ]; then \
+	    ${ECHO_CMD} bin/mozilla >> ${PLIST} ; \
 	fi
 	${ECHO_CMD} bin/mozilla-vendor >> ${PLIST}
-	if [ ! -L ${PREFIX}/lib/browser_plugins/libjavaplugin_oji.so ]; then
-	    ${ECHO_CMD} lib/browser_plugins/libjavaplugin_oji.so >> ${PLIST}
+	if [ ! -L ${PREFIX}/lib/browser_plugins/libjavaplugin_oji.so ]; then \
+	    ${ECHO_CMD} lib/browser_plugins/libjavaplugin_oji.so >> ${PLIST} ; \
 	fi
 	cd ${WRKSRC}/dist/bin && ${FIND} -s * -type f -o -type l | \
 		${SED} -e 's:^:lib/mozilla-vendor/:' >> ${PLIST} \
@@ -145,15 +145,15 @@ do-install:
 	cd ${WRKSRC}/dist/bin && ${FIND} . | \
 		cpio -pdm -L -R ${LIBOWN}:${LIBGRP} ${PREFIX}/lib/mozilla-vendor
 	${INSTALL_SCRIPT} ${WRKSRC}/mozilla ${PREFIX}/bin/mozilla-vendor
-	if [ ! -x ${PREFIX}/bin/mozilla -a ! -L ${PREFIX}/bin/mozill ]; then
-	    ${LN} -sf ${PREFIX}/bin/mozilla-vendor ${PREFIX}/bin/mozilla
+	if [ ! -x ${PREFIX}/bin/mozilla -a ! -L ${PREFIX}/bin/mozill ]; then \
+	    ${LN} -sf ${PREFIX}/bin/mozilla-vendor ${PREFIX}/bin/mozilla ; \
 	fi
-	if [ ! -d ${PREFIX}/lib/browser_plugins ]; then
-	    ${MKDIR} ${PREFIX}/lib/browser_plugins
+	if [ ! -d ${PREFIX}/lib/browser_plugins ]; then \
+	    ${MKDIR} ${PREFIX}/lib/browser_plugins ; \
 	fi
-	if [ ! -L ${PREFIX}/lib/browser_plugins/libjavaplugin_oji.so ]; then
+	if [ ! -L ${PREFIX}/lib/browser_plugins/libjavaplugin_oji.so ]; then \
 	    ${LN} -sf ${LOCALBASE}/jdk1.3.1/jre/plugin/i386/ns600/libjavaplugin_oji.so \
-	    	${PREFIX}/lib/browser_plugins/libjavaplugin_oji.so
+	    	${PREFIX}/lib/browser_plugins/libjavaplugin_oji.so ; \
 	fi
 
 post-install:
