@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	svk
-PORTVERSION=	0.16
+PORTVERSION=	0.17
 PORTREVISION=	0
 CATEGORIES=	devel perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
@@ -37,6 +37,7 @@ PERL_CONFIGURE=	yes
 
 MAN1=		svk.1
 MAN3=		SVK.3 \
+		SVK::Command.3 \
 		SVK::Command::Add.3 \
 		SVK::Command::Annotate.3 \
 		SVK::Command::Cat.3 \
@@ -57,6 +58,7 @@ MAN3=		SVK.3 \
 		SVK::Command::Merge.3 \
 		SVK::Command::Mirror.3 \
 		SVK::Command::Mkdir.3 \
+		SVK::Command::Move.3 \
 		SVK::Command::Patch.3 \
 		SVK::Command::Propdel.3 \
 		SVK::Command::Propedit.3 \
@@ -75,8 +77,10 @@ MAN3=		SVK.3 \
 		SVK::Editor::Merge.3 \
 		SVK::Editor::Patch.3 \
 		SVK::Editor::XD.3 \
+		SVK::Merge.3 \
 		SVK::Notify.3 \
 		SVK::Patch.3 \
+		SVK::Target.3 \
 		SVK::XD.3
 
 .include <bsd.port.pre.mk>
