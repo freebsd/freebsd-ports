@@ -1,9 +1,9 @@
-* ja-perl-5.004.01
+* ja-perl-5.004.04
 
 	This port collection was used:
 		port collection lang/perl5
 				by markm@FreeBSD.ORG,
-	    and jperl5.004_01-970617
+	    and jperl5.004_04-980303
 				by yasushi@cs.washington.edu. 
 
 ----------- From lang/perl5/pkg/DESC
@@ -24,3 +24,6 @@ This is due to a bug in vprintf in the C library.
 
 - Hironori Ikura
 <hikura@kaisei.org>
+
+- Shigeyuki FUKUSHIMA
+<shige@kuis.kyoto-u.ac.jp>
