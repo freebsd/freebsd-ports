@@ -6,14 +6,13 @@
 #
 
 PORTNAME=	mozilla
-PORTVERSION=	1.4b
-PORTREVISION?=	0
+PORTVERSION=	1.5b
 #PORTEPOCH=	1
 CATEGORIES=	japanese www
-MASTER_SITES=	http://plaza25.mbn.or.jp/~snip/jlp/
+MASTER_SITES=	http://snip.skillup.jp/mozilla/jlp/
 #MASTER_SITE_SUBDIR=	jlpmoz
 PKGNAMESUFFIX=	-jlp
-DISTNAME=	${PORTNAME}${PORTVERSION}-jajppack-tm0.1
+DISTNAME=	moz${PORTVERSION}-langjajp-tm0.3
 EXTRACT_SUFX=	.xpi
 
 MAINTAINER=	yatt@luna2.org
@@ -24,7 +23,7 @@ RUN_DEPENDS=	${MOZILLA}:${PORTSDIR}/www/${MOZILLA} \
 		${PKG_DBDIR}/ja-alias-fonts-1.0:${PORTSDIR}/japanese/alias-fonts
 
 WRKSRC=		${WRKDIR}/bin
-IGNORE=		"japanese/mozilla-jlp has been updated to 1.4"
+#IGNORE=		"japanese/mozilla-jlp has been updated to 1.4"
 
 LATEST_LINK=	ja-mozilla-jlp-devel
 USE_X_PREFIX=	yes
