@@ -22,26 +22,26 @@ PATCH_DIST_STRIP=	-p1
 
 MAINTAINER=	billf@FreeBSD.org
 
+RUN_DEPENDS=	${PREFIX}/share/apache:${PORTSDIR}/www/apache13
+
 Y2K=		http://www.htdig.org/FAQ.html#q1.7
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS= --with-cgi-bin-dir=${PREFIX}/www/cgi-bin \
-		--with-image-dir=${PREFIX}/www/icons \
-		--with-search-dir=${PREFIX}/www/data
+CONFIGURE_ARGS= --with-cgi-bin-dir=${PREFIX}/share/apache/cgi-bin \
+		--with-image-dir=${PREFIX}/share/apache/icons \
+		--with-search-dir=${PREFIX}/share/apache/htdocs
 BUILD_TARGET=	depends all
 
 post-patch:
 
 	@ ${MV} ${WRKSRC}/CONFIG.in ${WRKSRC}/CONFIG.in.Dist
-	@ ${SED} -e 's#htdocs#data#g' \
-		-e 's#/conf#/etc#' \
+	@ ${SED} -e 's#/conf#/etc#' \
 		-e 's#/common#/share/htdig#' \
 		-e 's#/db#/share/htdig#' \
 	${WRKSRC}/CONFIG.in.Dist > ${WRKSRC}/CONFIG.in
 
 	@ ${MV} ${WRKSRC}/CONFIG ${WRKSRC}/CONFIG.Dist
-	@ ${SED} -e 's#htdocs#data#g' \
-		-e 's#/conf#/etc#' \
+	@ ${SED} -e 's#/conf#/etc#' \
 		-e 's#/common#/share/htdig#' \
 		-e 's#/db#/share/htdig#' \
 	${WRKSRC}/CONFIG.Dist > ${WRKSRC}/CONFIG
