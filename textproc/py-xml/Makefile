@@ -6,7 +6,7 @@
 #
 
 PORTNAME=		xml
-PORTVERSION=		0.8
+PORTVERSION=		0.8.1
 CATEGORIES=		textproc python
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	pyxml
@@ -23,11 +23,12 @@ USE_PYDISTUTILS=	yes
 CPIO=			cpio --quiet -pdum -R
 DOCSDIR=		${PREFIX}/share/doc/py-xml
 EXAMPLESDIR=		${PREFIX}/share/examples/py-xml
-.if ${PYTHON_REL} < 200
-PLIST_SUB+=		PACKAGE_DIR=xml
-.else
 PLIST_SUB+=		PACKAGE_DIR=_xmlplus
-.endif
+PYDISTUTILS_BUILDARGS+=	--with-xslt
+PYDISTUTILS_INSTALLARGS+=	--with-xslt
+
+pre-install:
+	@ ${SH} ${PKGREQ} INSTALL
 
 post-install:
 .if !defined(NOPORTDOCS)
