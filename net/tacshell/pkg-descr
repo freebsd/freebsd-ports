@@ -1,0 +1,5 @@
+tacshell is a drop-in replacement for the RSA ACE/Server
+sdshell program, which allows Un*x shell authentication via a
+SecurID token.
+
+WWW: http://www.rezrov.net/software/tacshell.html

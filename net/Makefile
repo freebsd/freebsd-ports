@@ -641,6 +641,7 @@
     SUBDIR += svnc
     SUBDIR += tac_plus-libradius
     SUBDIR += tac_plus4
+    SUBDIR += tacshell
     SUBDIR += tas
     SUBDIR += tcpcat
     SUBDIR += tcpdstat
