@@ -1,17 +1,17 @@
 # New ports collection makefile for:	bonobo
-# Version required:			0.4
+# Version required:			0.6
 # Date created:				8th October 1999
 # Whom:					Ade Lovett <ade@lovett.com>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	bonobo-0.4
+DISTNAME=	bonobo-0.6
 CATEGORIES=	devel gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	unstable/sources/bonobo
 
-MAINTAINER=	ade@lovett.com
+MAINTAINER=	ade@FreeBSD.org
 
 LIB_DEPENDS=	gnome.3:${PORTSDIR}/x11/gnomelibs \
 		gdk_pixbuf.1:${PORTSDIR}/graphics/gdk-pixbuf
@@ -29,5 +29,8 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		GLIB_CONFIG="${GLIB_CONFIG}" \
 		GTK_CONFIG="${GTK_CONFIG}" \
 		LIBS="-L${LOCALBASE}/lib"
+
+post-patch:
+	@(cd ${WRKSRC}; ${LN} -s bonobo/bonobo.h)
 
 .include <bsd.port.mk>
