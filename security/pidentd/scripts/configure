@@ -1,10 +1,10 @@
 #!/bin/sh
 #
-# $Id: configure,v 1.2 1994/11/10 05:54:55 gpalmer Exp $
+# $Id: configure,v 1.3 1995/07/27 20:30:09 torstenb Exp $
 #
 
 mv ${WRKSRC}/src/paths.h ${WRKSRC}/src/paths.h.bak
 sed <${WRKSRC}/src/paths.h.bak >${WRKSRC}/src/paths.h s+!!PREFIX!!+$PREFIX+g
 
-mv ${WRKSRC}/identd.8 ${WRKSRC}/identd.8.bak
-sed <${WRKSRC}/identd.8.bak >${WRKSRC}/identd.8 s+!!PREFIX!!+$PREFIX+g
+mv ${WRKSRC}/identd.man ${WRKSRC}/identd.man.bak
+sed <${WRKSRC}/identd.man.bak >${WRKSRC}/identd.man s+!!PREFIX!!+$PREFIX+g
