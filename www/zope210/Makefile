@@ -7,16 +7,24 @@
 
 PORTNAME=	zope
 PORTVERSION=	2.2.2
+PORTREVISION=	1
 CATEGORIES=	www python
-MASTER_SITES=	http://www.zope.org/Products/Zope/${PORTVERSION}/
+MASTER_SITES=	http://www.zope.org/Products/Zope/${PORTVERSION}/ \
+		http://www.zope.org/Products/Zope/Hotfix_2000-10-02/ \
+		http://www.zope.org/Products/Zope/Hotfix_2000-10-11/
 DISTNAME=	Zope-${PORTVERSION}-src
 EXTRACT_SUFX=	.tgz
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
+		Hotfix_2000-10-02.tar.gz \
+		Hotfix_2000-10-11.tgz
 
 MAINTAINER=	nbm@FreeBSD.org
 
 BUILD_DEPENDS=	python1.5:${PORTSDIR}/lang/python15
 
 #RUN_DEPENDS=	${LOCALBASE}/sbin/apache:${PORTSDIR}/www/apache13-modssl
+
+DIST_SUBDIR=	zope
 
 # Build has to be done in the final location after installing the sources
 # there. It were a major action to fix all paths otherwise.
@@ -62,6 +70,7 @@ do-install:	#
 	@${ECHO} "===>   Please be patient, some builds need their time."
 	@${ECHO} "===>   Copying..."
 	@${CP} -Rp ${WRKSRC}/* ${ZOPEBASEDIR}/
+	@${CP} -Rp ${WRKDIR}/lib ${ZOPEBASEDIR}/
 	@#
 	@${CHMOD} -R u+w ${ZOPEBASEDIR}
 	@(cd ${ZOPEBASEDIR} && ${PYTHON15} w_pcgi.py)
@@ -97,7 +106,7 @@ do-install:	#
 	@${ECHO} "===>   Please have a look at this file and the instructions"
 	@${ECHO} "===>   therein and incorporate them to your apache.conf."
 	@${ECHO} "===>   Creating rc startup file for Zope-${PORTVERSION}..."
-	@${MKDIR} -p ${PREFIX}/etc/rc.d
+	@${MKDIR} ${PREFIX}/etc/rc.d
 	@${SED} -e "s|%%ZOPEBASEDIR%%|${ZOPEBASEDIR}|g" -e "s|%%CGIBINDIR%%|${CGIBINDIR}|g" \
 		< ${FILESDIR}/zope.sh.in > ${PREFIX}/etc/rc.d/zope.sh
 	@${CHMOD} ug+x,o-rwx ${PREFIX}/etc/rc.d/zope.sh
