@@ -1,0 +1,13 @@
+--- delay.c.orig	Mon Jan 24 00:13:12 2000
++++ delay.c	Mon Jan 24 00:20:24 2000
+@@ -24,8 +24,8 @@
+ #include <string.h>
+ #include "parsetime.h"
+ 
+-#ifdef HAVE_CURSES_H
+-#include <curses.h>
++#ifdef HAVE_NCURSES_H
++#include <ncurses.h>
+ #endif
+ 
+ /* The following code implements the actual delaying. If precise is true, it
