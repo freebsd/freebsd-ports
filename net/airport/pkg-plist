@@ -3,6 +3,7 @@ bin/hostmon
 bin/linkmon
 bin/airmodem
 share/java/Airport2BaseStationConfig.jar
+share/java/AirportBaseStationConfig.jar
 share/java/HostMonitor.jar
 share/java/LinkMonitor.jar
 share/java/AirportModemUtility.jar

@@ -2,6 +2,9 @@
 
 case $0 in
 	*airport)
+		file=AirportBaseStationConfig
+	;;
+	*airport2)
 		file=Airport2BaseStationConfig
 	;;
 	*hostmon)
