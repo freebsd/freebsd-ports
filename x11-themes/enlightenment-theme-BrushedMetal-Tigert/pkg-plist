@@ -1,0 +1,436 @@
+share/enlightenment/themes/BrushedMetal-Tigert/ABOUT/Edoc_bg.png
+share/enlightenment/themes/BrushedMetal-Tigert/ABOUT/MAIN
+share/enlightenment/themes/BrushedMetal-Tigert/ABOUT/aircut3.ttf
+share/enlightenment/themes/BrushedMetal-Tigert/ABOUT/title.png
+share/enlightenment/themes/BrushedMetal-Tigert/README
+share/enlightenment/themes/BrushedMetal-Tigert/backgrounds/backgrounds.cfg
+share/enlightenment/themes/BrushedMetal-Tigert/backgrounds/images/dark_brushed.png
+share/enlightenment/themes/BrushedMetal-Tigert/backgrounds/images/dark_vertical_gradient_brushed.png
+share/enlightenment/themes/BrushedMetal-Tigert/backgrounds/images/light_brushed.png
+share/enlightenment/themes/BrushedMetal-Tigert/backgrounds/images/light_vertical_gradient_brushed.png
+share/enlightenment/themes/BrushedMetal-Tigert/backgrounds/images/small_turquoise_pebbles.jpg
+share/enlightenment/themes/BrushedMetal-Tigert/backgrounds/images/turqouise_bg.jpg
+share/enlightenment/themes/BrushedMetal-Tigert/backgrounds/images/turquoise_garage_floor.jpg
+share/enlightenment/themes/BrushedMetal-Tigert/backgrounds/images/turquoise_leather.jpg
+share/enlightenment/themes/BrushedMetal-Tigert/backgrounds/images/turquoise_tiles.jpg
+share/enlightenment/themes/BrushedMetal-Tigert/backgrounds/images/turquoise_treemoon.jpg
+share/enlightenment/themes/BrushedMetal-Tigert/backgrounds/images/turquoise_wrinkles.jpg
+share/enlightenment/themes/BrushedMetal-Tigert/borders/BORDERLESS/border.cfg
+share/enlightenment/themes/BrushedMetal-Tigert/borders/BORDER_ONLY/border.cfg
+share/enlightenment/themes/BrushedMetal-Tigert/borders/DEFAULT/border.cfg
+share/enlightenment/themes/BrushedMetal-Tigert/borders/FIXED_SIZE/border.cfg
+share/enlightenment/themes/BrushedMetal-Tigert/borders/ICONBOX/border.cfg
+share/enlightenment/themes/BrushedMetal-Tigert/borders/MENU/border.cfg
+share/enlightenment/themes/BrushedMetal-Tigert/borders/MENU_BORDER_ONLY/border.cfg
+share/enlightenment/themes/BrushedMetal-Tigert/borders/PAGER/border.cfg
+share/enlightenment/themes/BrushedMetal-Tigert/borders/PAGER/images/pb1.png
+share/enlightenment/themes/BrushedMetal-Tigert/borders/PAGER/images/pb2.png
+share/enlightenment/themes/BrushedMetal-Tigert/borders/PAGER/images/pb3.png
+share/enlightenment/themes/BrushedMetal-Tigert/borders/PAGER/images/pb4.png
+share/enlightenment/themes/BrushedMetal-Tigert/borders/PAGER/images/pb5.png
+share/enlightenment/themes/BrushedMetal-Tigert/borders/PAGER/images/pb6.png
+share/enlightenment/themes/BrushedMetal-Tigert/borders/PAGER/images/pb8.png
+share/enlightenment/themes/BrushedMetal-Tigert/borders/PAGER/images/pb9.png
+share/enlightenment/themes/BrushedMetal-Tigert/borders/RIGHT_PAGER/border.cfg
+share/enlightenment/themes/BrushedMetal-Tigert/borders/RIGHT_PAGER/images/pb1.png
+share/enlightenment/themes/BrushedMetal-Tigert/borders/RIGHT_PAGER/images/pb2.png
+share/enlightenment/themes/BrushedMetal-Tigert/borders/RIGHT_PAGER/images/pb3.png
+share/enlightenment/themes/BrushedMetal-Tigert/borders/RIGHT_PAGER/images/pb4.png
+share/enlightenment/themes/BrushedMetal-Tigert/borders/RIGHT_PAGER/images/pb5.png
+share/enlightenment/themes/BrushedMetal-Tigert/borders/RIGHT_PAGER/images/pb6.png
+share/enlightenment/themes/BrushedMetal-Tigert/borders/RIGHT_PAGER/images/pb8.png
+share/enlightenment/themes/BrushedMetal-Tigert/borders/RIGHT_PAGER/images/pb9.png
+share/enlightenment/themes/BrushedMetal-Tigert/borders/SHAPED/border.cfg
+share/enlightenment/themes/BrushedMetal-Tigert/borders/TRANSIENT/border.cfg
+share/enlightenment/themes/BrushedMetal-Tigert/borders/borders.cfg
+share/enlightenment/themes/BrushedMetal-Tigert/borders/borders.cfg.ja
+share/enlightenment/themes/BrushedMetal-Tigert/borders/borders.cfg.pl
+share/enlightenment/themes/BrushedMetal-Tigert/borders/common/border.cfg
+share/enlightenment/themes/BrushedMetal-Tigert/borders/common/border.cfg.ja
+share/enlightenment/themes/BrushedMetal-Tigert/borders/common/border.cfg.pl
+share/enlightenment/themes/BrushedMetal-Tigert/borders/common/images/b0-.png
+share/enlightenment/themes/BrushedMetal-Tigert/borders/common/images/b0.png
+share/enlightenment/themes/BrushedMetal-Tigert/borders/common/images/b1-.png
+share/enlightenment/themes/BrushedMetal-Tigert/borders/common/images/b1.png
+share/enlightenment/themes/BrushedMetal-Tigert/borders/common/images/b2-.png
+share/enlightenment/themes/BrushedMetal-Tigert/borders/common/images/b2.png
+share/enlightenment/themes/BrushedMetal-Tigert/borders/common/images/b3-.png
+share/enlightenment/themes/BrushedMetal-Tigert/borders/common/images/b3.png
+share/enlightenment/themes/BrushedMetal-Tigert/borders/common/images/b4-.png
+share/enlightenment/themes/BrushedMetal-Tigert/borders/common/images/b4.png
+share/enlightenment/themes/BrushedMetal-Tigert/borders/common/images/b5-.png
+share/enlightenment/themes/BrushedMetal-Tigert/borders/common/images/b5.png
+share/enlightenment/themes/BrushedMetal-Tigert/borders/common/images/b6-.png
+share/enlightenment/themes/BrushedMetal-Tigert/borders/common/images/b6.png
+share/enlightenment/themes/BrushedMetal-Tigert/borders/common/images/b7-.png
+share/enlightenment/themes/BrushedMetal-Tigert/borders/common/images/b7.png
+share/enlightenment/themes/BrushedMetal-Tigert/borders/common/images/b8-.png
+share/enlightenment/themes/BrushedMetal-Tigert/borders/common/images/b8.png
+share/enlightenment/themes/BrushedMetal-Tigert/borders/common/images/bb4-.png
+share/enlightenment/themes/BrushedMetal-Tigert/borders/common/images/bb4.png
+share/enlightenment/themes/BrushedMetal-Tigert/borders/common/images/bb5-.png
+share/enlightenment/themes/BrushedMetal-Tigert/borders/common/images/bb5.png
+share/enlightenment/themes/BrushedMetal-Tigert/borders/common/images/bb6-.png
+share/enlightenment/themes/BrushedMetal-Tigert/borders/common/images/bb6.png
+share/enlightenment/themes/BrushedMetal-Tigert/borders/common/images/bb8-.png
+share/enlightenment/themes/BrushedMetal-Tigert/borders/common/images/bb8.png
+share/enlightenment/themes/BrushedMetal-Tigert/borders/common/images/black.png
+share/enlightenment/themes/BrushedMetal-Tigert/borders/common/images/blank.png
+share/enlightenment/themes/BrushedMetal-Tigert/borders/common/images/t1-.png
+share/enlightenment/themes/BrushedMetal-Tigert/borders/common/images/t1-b.png
+share/enlightenment/themes/BrushedMetal-Tigert/borders/common/images/t1.png
+share/enlightenment/themes/BrushedMetal-Tigert/borders/common/images/t1b.png
+share/enlightenment/themes/BrushedMetal-Tigert/borders/common/images/t2-.png
+share/enlightenment/themes/BrushedMetal-Tigert/borders/common/images/t2.png
+share/enlightenment/themes/BrushedMetal-Tigert/borders/common/images/t2s-.png
+share/enlightenment/themes/BrushedMetal-Tigert/borders/common/images/t2s.png
+share/enlightenment/themes/BrushedMetal-Tigert/borders/common/images/t3-.png
+share/enlightenment/themes/BrushedMetal-Tigert/borders/common/images/t3-b.png
+share/enlightenment/themes/BrushedMetal-Tigert/borders/common/images/t3.png
+share/enlightenment/themes/BrushedMetal-Tigert/borders/common/images/t3b.png
+share/enlightenment/themes/BrushedMetal-Tigert/borders/common/images/t4-.png
+share/enlightenment/themes/BrushedMetal-Tigert/borders/common/images/t4-b.png
+share/enlightenment/themes/BrushedMetal-Tigert/borders/common/images/t4.png
+share/enlightenment/themes/BrushedMetal-Tigert/borders/common/images/t4b.png
+share/enlightenment/themes/BrushedMetal-Tigert/borders/common/images/t5-.png
+share/enlightenment/themes/BrushedMetal-Tigert/borders/common/images/t5-b.png
+share/enlightenment/themes/BrushedMetal-Tigert/borders/common/images/t5.png
+share/enlightenment/themes/BrushedMetal-Tigert/borders/common/images/t5b.png
+share/enlightenment/themes/BrushedMetal-Tigert/borders/common/images/tt1-.png
+share/enlightenment/themes/BrushedMetal-Tigert/borders/common/images/tt1-b.png
+share/enlightenment/themes/BrushedMetal-Tigert/borders/common/images/tt1.png
+share/enlightenment/themes/BrushedMetal-Tigert/borders/common/images/tt1b.png
+share/enlightenment/themes/BrushedMetal-Tigert/borders/common/images/tt2-.png
+share/enlightenment/themes/BrushedMetal-Tigert/borders/common/images/tt2.png
+share/enlightenment/themes/BrushedMetal-Tigert/borders/common/images/tt2s-.png
+share/enlightenment/themes/BrushedMetal-Tigert/borders/common/images/tt2s.png
+share/enlightenment/themes/BrushedMetal-Tigert/borders/common/images/tt3-.png
+share/enlightenment/themes/BrushedMetal-Tigert/borders/common/images/tt3-b.png
+share/enlightenment/themes/BrushedMetal-Tigert/borders/common/images/tt3.png
+share/enlightenment/themes/BrushedMetal-Tigert/borders/common/images/tt3b.png
+share/enlightenment/themes/BrushedMetal-Tigert/borders/common/images/tt4-.png
+share/enlightenment/themes/BrushedMetal-Tigert/borders/common/images/tt4-b.png
+share/enlightenment/themes/BrushedMetal-Tigert/borders/common/images/tt4.png
+share/enlightenment/themes/BrushedMetal-Tigert/borders/common/images/tt4b.png
+share/enlightenment/themes/BrushedMetal-Tigert/borders/common/images/tt5-.png
+share/enlightenment/themes/BrushedMetal-Tigert/borders/common/images/tt5-b.png
+share/enlightenment/themes/BrushedMetal-Tigert/borders/common/images/tt5.png
+share/enlightenment/themes/BrushedMetal-Tigert/borders/common/images/tt5b.png
+share/enlightenment/themes/BrushedMetal-Tigert/borders.cfg
+share/enlightenment/themes/BrushedMetal-Tigert/borders.cfg.ja
+share/enlightenment/themes/BrushedMetal-Tigert/borders.cfg.pl
+share/enlightenment/themes/BrushedMetal-Tigert/buttons/buttons.cfg
+share/enlightenment/themes/BrushedMetal-Tigert/buttons.cfg
+share/enlightenment/themes/BrushedMetal-Tigert/colormodifiers.cfg
+share/enlightenment/themes/BrushedMetal-Tigert/common/images/blank.png
+share/enlightenment/themes/BrushedMetal-Tigert/common/images/light_brushed.png
+share/enlightenment/themes/BrushedMetal-Tigert/coords/coords.cfg
+share/enlightenment/themes/BrushedMetal-Tigert/coords/coords.cfg.ja
+share/enlightenment/themes/BrushedMetal-Tigert/coords/coords.cfg.pl
+share/enlightenment/themes/BrushedMetal-Tigert/coords/images/coord.png
+share/enlightenment/themes/BrushedMetal-Tigert/cursors/bw_images/cursor.xbm
+share/enlightenment/themes/BrushedMetal-Tigert/cursors/bw_images/cursor.xbm.mask
+share/enlightenment/themes/BrushedMetal-Tigert/cursors/bw_images/iconify.xbm
+share/enlightenment/themes/BrushedMetal-Tigert/cursors/bw_images/iconify.xbm.mask
+share/enlightenment/themes/BrushedMetal-Tigert/cursors/bw_images/kill.xbm
+share/enlightenment/themes/BrushedMetal-Tigert/cursors/bw_images/kill.xbm.mask
+share/enlightenment/themes/BrushedMetal-Tigert/cursors/bw_images/move.xbm
+share/enlightenment/themes/BrushedMetal-Tigert/cursors/bw_images/move.xbm.mask
+share/enlightenment/themes/BrushedMetal-Tigert/cursors/bw_images/resize_br.xbm
+share/enlightenment/themes/BrushedMetal-Tigert/cursors/bw_images/resize_br.xbm.mask
+share/enlightenment/themes/BrushedMetal-Tigert/cursors/bw_images/resize_h.xbm
+share/enlightenment/themes/BrushedMetal-Tigert/cursors/bw_images/resize_h.xbm.mask
+share/enlightenment/themes/BrushedMetal-Tigert/cursors/bw_images/resize_tr.xbm
+share/enlightenment/themes/BrushedMetal-Tigert/cursors/bw_images/resize_tr.xbm.mask
+share/enlightenment/themes/BrushedMetal-Tigert/cursors/bw_images/resize_v.xbm
+share/enlightenment/themes/BrushedMetal-Tigert/cursors/bw_images/resize_v.xbm.mask
+share/enlightenment/themes/BrushedMetal-Tigert/cursors/cursors.cfg
+share/enlightenment/themes/BrushedMetal-Tigert/cursors.cfg
+share/enlightenment/themes/BrushedMetal-Tigert/desktops.cfg
+share/enlightenment/themes/BrushedMetal-Tigert/dialogs/dialogs.cfg
+share/enlightenment/themes/BrushedMetal-Tigert/dialogs/dialogs.cfg.ja
+share/enlightenment/themes/BrushedMetal-Tigert/dialogs/dialogs.cfg.pl
+share/enlightenment/themes/BrushedMetal-Tigert/dialogs/images/bg.png
+share/enlightenment/themes/BrushedMetal-Tigert/dialogs/images/bt1.png
+share/enlightenment/themes/BrushedMetal-Tigert/dialogs/images/bt2.png
+share/enlightenment/themes/BrushedMetal-Tigert/dialogs/images/button1.png
+share/enlightenment/themes/BrushedMetal-Tigert/dialogs/images/button2.png
+share/enlightenment/themes/BrushedMetal-Tigert/dialogs/images/button3.png
+share/enlightenment/themes/BrushedMetal-Tigert/dialogs/images/indent.png
+share/enlightenment/themes/BrushedMetal-Tigert/dialogs/images/r1-.png
+share/enlightenment/themes/BrushedMetal-Tigert/dialogs/images/r1.png
+share/enlightenment/themes/BrushedMetal-Tigert/dialogs/images/sl1.png
+share/enlightenment/themes/BrushedMetal-Tigert/dialogs/images/sl1b.png
+share/enlightenment/themes/BrushedMetal-Tigert/dialogs/images/sl2.png
+share/enlightenment/themes/BrushedMetal-Tigert/dialogs/images/sl2b.png
+share/enlightenment/themes/BrushedMetal-Tigert/dialogs/images/slh.png
+share/enlightenment/themes/BrushedMetal-Tigert/dialogs/images/slv.png
+share/enlightenment/themes/BrushedMetal-Tigert/dialogs/images/w0-.png
+share/enlightenment/themes/BrushedMetal-Tigert/dialogs/images/w0.png
+share/enlightenment/themes/BrushedMetal-Tigert/dialogs/images/w1-.png
+share/enlightenment/themes/BrushedMetal-Tigert/dialogs/images/w1.png
+share/enlightenment/themes/BrushedMetal-Tigert/dock/dock.cfg
+share/enlightenment/themes/BrushedMetal-Tigert/dock/images/bt1.png
+share/enlightenment/themes/BrushedMetal-Tigert/dock/images/bt2.png
+share/enlightenment/themes/BrushedMetal-Tigert/dragbar/dragbar.cfg
+share/enlightenment/themes/BrushedMetal-Tigert/dragbar/images/a1.png
+share/enlightenment/themes/BrushedMetal-Tigert/dragbar/images/a1b.png
+share/enlightenment/themes/BrushedMetal-Tigert/dragbar/images/a2.png
+share/enlightenment/themes/BrushedMetal-Tigert/dragbar/images/a2b.png
+share/enlightenment/themes/BrushedMetal-Tigert/dragbar/images/bt1.png
+share/enlightenment/themes/BrushedMetal-Tigert/dragbar/images/bt2.png
+share/enlightenment/themes/BrushedMetal-Tigert/epplets/epplets.cfg
+share/enlightenment/themes/BrushedMetal-Tigert/epplets/epplets.cfg.ja
+share/enlightenment/themes/BrushedMetal-Tigert/epplets/epplets.cfg.pl
+share/enlightenment/themes/BrushedMetal-Tigert/epplets/images/ar_d1.png
+share/enlightenment/themes/BrushedMetal-Tigert/epplets/images/ar_d2.png
+share/enlightenment/themes/BrushedMetal-Tigert/epplets/images/ar_d3.png
+share/enlightenment/themes/BrushedMetal-Tigert/epplets/images/ar_l1.png
+share/enlightenment/themes/BrushedMetal-Tigert/epplets/images/ar_l2.png
+share/enlightenment/themes/BrushedMetal-Tigert/epplets/images/ar_l3.png
+share/enlightenment/themes/BrushedMetal-Tigert/epplets/images/ar_r1.png
+share/enlightenment/themes/BrushedMetal-Tigert/epplets/images/ar_r2.png
+share/enlightenment/themes/BrushedMetal-Tigert/epplets/images/ar_r3.png
+share/enlightenment/themes/BrushedMetal-Tigert/epplets/images/ar_u1.png
+share/enlightenment/themes/BrushedMetal-Tigert/epplets/images/ar_u2.png
+share/enlightenment/themes/BrushedMetal-Tigert/epplets/images/ar_u3.png
+share/enlightenment/themes/BrushedMetal-Tigert/epplets/images/b1.png
+share/enlightenment/themes/BrushedMetal-Tigert/epplets/images/b2.png
+share/enlightenment/themes/BrushedMetal-Tigert/epplets/images/b3.png
+share/enlightenment/themes/BrushedMetal-Tigert/epplets/images/bb1.png
+share/enlightenment/themes/BrushedMetal-Tigert/epplets/images/bb2.png
+share/enlightenment/themes/BrushedMetal-Tigert/epplets/images/bg.png
+share/enlightenment/themes/BrushedMetal-Tigert/epplets/images/bg_v.png
+share/enlightenment/themes/BrushedMetal-Tigert/epplets/images/close1.png
+share/enlightenment/themes/BrushedMetal-Tigert/epplets/images/close2.png
+share/enlightenment/themes/BrushedMetal-Tigert/epplets/images/close3.png
+share/enlightenment/themes/BrushedMetal-Tigert/epplets/images/config1.png
+share/enlightenment/themes/BrushedMetal-Tigert/epplets/images/config2.png
+share/enlightenment/themes/BrushedMetal-Tigert/epplets/images/config3.png
+share/enlightenment/themes/BrushedMetal-Tigert/epplets/images/da.png
+share/enlightenment/themes/BrushedMetal-Tigert/epplets/images/eject1.png
+share/enlightenment/themes/BrushedMetal-Tigert/epplets/images/eject2.png
+share/enlightenment/themes/BrushedMetal-Tigert/epplets/images/eject3.png
+share/enlightenment/themes/BrushedMetal-Tigert/epplets/images/ff1.png
+share/enlightenment/themes/BrushedMetal-Tigert/epplets/images/ff2.png
+share/enlightenment/themes/BrushedMetal-Tigert/epplets/images/ff3.png
+share/enlightenment/themes/BrushedMetal-Tigert/epplets/images/help1.png
+share/enlightenment/themes/BrushedMetal-Tigert/epplets/images/help2.png
+share/enlightenment/themes/BrushedMetal-Tigert/epplets/images/help3.png
+share/enlightenment/themes/BrushedMetal-Tigert/epplets/images/next1.png
+share/enlightenment/themes/BrushedMetal-Tigert/epplets/images/next2.png
+share/enlightenment/themes/BrushedMetal-Tigert/epplets/images/next3.png
+share/enlightenment/themes/BrushedMetal-Tigert/epplets/images/pause1.png
+share/enlightenment/themes/BrushedMetal-Tigert/epplets/images/pause2.png
+share/enlightenment/themes/BrushedMetal-Tigert/epplets/images/pause3.png
+share/enlightenment/themes/BrushedMetal-Tigert/epplets/images/pb_h.png
+share/enlightenment/themes/BrushedMetal-Tigert/epplets/images/pb_v.png
+share/enlightenment/themes/BrushedMetal-Tigert/epplets/images/play1.png
+share/enlightenment/themes/BrushedMetal-Tigert/epplets/images/play2.png
+share/enlightenment/themes/BrushedMetal-Tigert/epplets/images/play3.png
+share/enlightenment/themes/BrushedMetal-Tigert/epplets/images/prev1.png
+share/enlightenment/themes/BrushedMetal-Tigert/epplets/images/prev2.png
+share/enlightenment/themes/BrushedMetal-Tigert/epplets/images/prev3.png
+share/enlightenment/themes/BrushedMetal-Tigert/epplets/images/repeat1.png
+share/enlightenment/themes/BrushedMetal-Tigert/epplets/images/repeat2.png
+share/enlightenment/themes/BrushedMetal-Tigert/epplets/images/repeat3.png
+share/enlightenment/themes/BrushedMetal-Tigert/epplets/images/rw1.png
+share/enlightenment/themes/BrushedMetal-Tigert/epplets/images/rw2.png
+share/enlightenment/themes/BrushedMetal-Tigert/epplets/images/rw3.png
+share/enlightenment/themes/BrushedMetal-Tigert/epplets/images/s_h.png
+share/enlightenment/themes/BrushedMetal-Tigert/epplets/images/s_k1.png
+share/enlightenment/themes/BrushedMetal-Tigert/epplets/images/s_k2.png
+share/enlightenment/themes/BrushedMetal-Tigert/epplets/images/s_v.png
+share/enlightenment/themes/BrushedMetal-Tigert/epplets/images/skip1.png
+share/enlightenment/themes/BrushedMetal-Tigert/epplets/images/skip2.png
+share/enlightenment/themes/BrushedMetal-Tigert/epplets/images/skip3.png
+share/enlightenment/themes/BrushedMetal-Tigert/epplets/images/stop1.png
+share/enlightenment/themes/BrushedMetal-Tigert/epplets/images/stop2.png
+share/enlightenment/themes/BrushedMetal-Tigert/epplets/images/stop3.png
+share/enlightenment/themes/BrushedMetal-Tigert/eterm/eterm.cfg
+share/enlightenment/themes/BrushedMetal-Tigert/eterm/images/a_d_1.png
+share/enlightenment/themes/BrushedMetal-Tigert/eterm/images/a_d_2.png
+share/enlightenment/themes/BrushedMetal-Tigert/eterm/images/a_l_1.png
+share/enlightenment/themes/BrushedMetal-Tigert/eterm/images/a_l_2.png
+share/enlightenment/themes/BrushedMetal-Tigert/eterm/images/a_r_1.png
+share/enlightenment/themes/BrushedMetal-Tigert/eterm/images/a_r_2.png
+share/enlightenment/themes/BrushedMetal-Tigert/eterm/images/a_u_1.png
+share/enlightenment/themes/BrushedMetal-Tigert/eterm/images/a_u_2.png
+share/enlightenment/themes/BrushedMetal-Tigert/eterm/images/bg.jpg
+share/enlightenment/themes/BrushedMetal-Tigert/eterm/images/bt.png
+share/enlightenment/themes/BrushedMetal-Tigert/eterm/images/mb2.png
+share/enlightenment/themes/BrushedMetal-Tigert/eterm/images/mb3.png
+share/enlightenment/themes/BrushedMetal-Tigert/eterm/images/sb1.png
+share/enlightenment/themes/BrushedMetal-Tigert/eterm/images/sb2.png
+share/enlightenment/themes/BrushedMetal-Tigert/eterm/images/t.png
+share/enlightenment/themes/BrushedMetal-Tigert/focuslist/focuslist.cfg
+share/enlightenment/themes/BrushedMetal-Tigert/focuslist/focuslist.cfg.ja
+share/enlightenment/themes/BrushedMetal-Tigert/focuslist/focuslist.cfg.pl
+share/enlightenment/themes/BrushedMetal-Tigert/focuslist/images/mb1.png
+share/enlightenment/themes/BrushedMetal-Tigert/focuslist/images/mb2.png
+share/enlightenment/themes/BrushedMetal-Tigert/iconbox/iconbox.cfg
+share/enlightenment/themes/BrushedMetal-Tigert/iconbox/iconbox.cfg.ja
+share/enlightenment/themes/BrushedMetal-Tigert/iconbox/iconbox.cfg.pl
+share/enlightenment/themes/BrushedMetal-Tigert/iconbox/images/ar_d1.png
+share/enlightenment/themes/BrushedMetal-Tigert/iconbox/images/ar_d2.png
+share/enlightenment/themes/BrushedMetal-Tigert/iconbox/images/ar_l1.png
+share/enlightenment/themes/BrushedMetal-Tigert/iconbox/images/ar_l2.png
+share/enlightenment/themes/BrushedMetal-Tigert/iconbox/images/ar_r1.png
+share/enlightenment/themes/BrushedMetal-Tigert/iconbox/images/ar_r2.png
+share/enlightenment/themes/BrushedMetal-Tigert/iconbox/images/ar_u1.png
+share/enlightenment/themes/BrushedMetal-Tigert/iconbox/images/ar_u2.png
+share/enlightenment/themes/BrushedMetal-Tigert/iconbox/images/bt1.png
+share/enlightenment/themes/BrushedMetal-Tigert/iconbox/images/ib_cover_h.png
+share/enlightenment/themes/BrushedMetal-Tigert/iconbox/images/ib_cover_v.png
+share/enlightenment/themes/BrushedMetal-Tigert/iconbox/images/ib_h.png
+share/enlightenment/themes/BrushedMetal-Tigert/iconbox/images/ib_v.png
+share/enlightenment/themes/BrushedMetal-Tigert/iconbox/images/mb1.png
+share/enlightenment/themes/BrushedMetal-Tigert/iconbox/images/sl1.png
+share/enlightenment/themes/BrushedMetal-Tigert/iconbox/images/sl2.png
+share/enlightenment/themes/BrushedMetal-Tigert/iconbox/images/slh.png
+share/enlightenment/themes/BrushedMetal-Tigert/iconbox/images/slv.png
+share/enlightenment/themes/BrushedMetal-Tigert/imageclasses.cfg
+share/enlightenment/themes/BrushedMetal-Tigert/imageclasses.cfg.ja
+share/enlightenment/themes/BrushedMetal-Tigert/imageclasses.cfg.pl
+share/enlightenment/themes/BrushedMetal-Tigert/init/images/bt1.png
+share/enlightenment/themes/BrushedMetal-Tigert/init/images/light_vetical_gradient_brushed.png
+share/enlightenment/themes/BrushedMetal-Tigert/init/images/progress_bar.png
+share/enlightenment/themes/BrushedMetal-Tigert/init/images/text_bg.png
+share/enlightenment/themes/BrushedMetal-Tigert/init/images/turquoise_brushed.png
+share/enlightenment/themes/BrushedMetal-Tigert/init/init.cfg
+share/enlightenment/themes/BrushedMetal-Tigert/init/init.cfg.ja
+share/enlightenment/themes/BrushedMetal-Tigert/init/init.cfg.pl
+share/enlightenment/themes/BrushedMetal-Tigert/init.cfg
+share/enlightenment/themes/BrushedMetal-Tigert/init.cfg.ja
+share/enlightenment/themes/BrushedMetal-Tigert/init.cfg.pl
+share/enlightenment/themes/BrushedMetal-Tigert/menustyles/images/mb1.png
+share/enlightenment/themes/BrushedMetal-Tigert/menustyles/images/mb2.png
+share/enlightenment/themes/BrushedMetal-Tigert/menustyles/images/mb3.png
+share/enlightenment/themes/BrushedMetal-Tigert/menustyles/menustyles.cfg
+share/enlightenment/themes/BrushedMetal-Tigert/menustyles/menustyles.cfg.ja
+share/enlightenment/themes/BrushedMetal-Tigert/menustyles/menustyles.cfg.pl
+share/enlightenment/themes/BrushedMetal-Tigert/menustyles.cfg
+share/enlightenment/themes/BrushedMetal-Tigert/menustyles.cfg.ja
+share/enlightenment/themes/BrushedMetal-Tigert/menustyles.cfg.pl
+share/enlightenment/themes/BrushedMetal-Tigert/pager/images/mb1.png
+share/enlightenment/themes/BrushedMetal-Tigert/pager/images/p_bg.png
+share/enlightenment/themes/BrushedMetal-Tigert/pager/images/p_sel.png
+share/enlightenment/themes/BrushedMetal-Tigert/pager/images/p_win.png
+share/enlightenment/themes/BrushedMetal-Tigert/pager/pager.cfg
+share/enlightenment/themes/BrushedMetal-Tigert/pager/pager.cfg.ja
+share/enlightenment/themes/BrushedMetal-Tigert/pager/pager.cfg.pl
+share/enlightenment/themes/BrushedMetal-Tigert/slideouts/slideouts.cfg
+share/enlightenment/themes/BrushedMetal-Tigert/slideouts.cfg
+share/enlightenment/themes/BrushedMetal-Tigert/sound/samples/E_already_active.wav
+share/enlightenment/themes/BrushedMetal-Tigert/sound/samples/E_error_ipc.wav
+share/enlightenment/themes/BrushedMetal-Tigert/sound/samples/E_goodbye.wav
+share/enlightenment/themes/BrushedMetal-Tigert/sound/samples/E_logout.wav
+share/enlightenment/themes/BrushedMetal-Tigert/sound/samples/E_scanning.wav
+share/enlightenment/themes/BrushedMetal-Tigert/sound/samples/E_settings_areas.wav
+share/enlightenment/themes/BrushedMetal-Tigert/sound/samples/E_settings_audio.wav
+share/enlightenment/themes/BrushedMetal-Tigert/sound/samples/E_settings_autoraise.wav
+share/enlightenment/themes/BrushedMetal-Tigert/sound/samples/E_settings_bg.wav
+share/enlightenment/themes/BrushedMetal-Tigert/sound/samples/E_settings_desktops.wav
+share/enlightenment/themes/BrushedMetal-Tigert/sound/samples/E_settings_focus.wav
+share/enlightenment/themes/BrushedMetal-Tigert/sound/samples/E_settings_fx.wav
+share/enlightenment/themes/BrushedMetal-Tigert/sound/samples/E_settings_moveresize.wav
+share/enlightenment/themes/BrushedMetal-Tigert/sound/samples/E_settings_pager.wav
+share/enlightenment/themes/BrushedMetal-Tigert/sound/samples/E_settings_placement.wav
+share/enlightenment/themes/BrushedMetal-Tigert/sound/samples/E_settings_tooltips.wav
+share/enlightenment/themes/BrushedMetal-Tigert/sound/samples/E_wait.wav
+share/enlightenment/themes/BrushedMetal-Tigert/sound/samples/E_warning.wav
+share/enlightenment/themes/BrushedMetal-Tigert/sound/samples/E_welcome.wav
+share/enlightenment/themes/BrushedMetal-Tigert/sound/samples/SOUND_DEICONIFY.wav
+share/enlightenment/themes/BrushedMetal-Tigert/sound/samples/SOUND_DESKTOP_SHUT.wav
+share/enlightenment/themes/BrushedMetal-Tigert/sound/samples/SOUND_FOCUS_SET.wav
+share/enlightenment/themes/BrushedMetal-Tigert/sound/samples/SOUND_ICONIFY.wav
+share/enlightenment/themes/BrushedMetal-Tigert/sound/samples/SOUND_MENU_SHOW.wav
+share/enlightenment/themes/BrushedMetal-Tigert/sound/samples/SOUND_MOVE_AREA_DOWN.wav
+share/enlightenment/themes/BrushedMetal-Tigert/sound/samples/SOUND_MOVE_RESIST.wav
+share/enlightenment/themes/BrushedMetal-Tigert/sound/samples/SOUND_NEW_ICONBOX.wav
+share/enlightenment/themes/BrushedMetal-Tigert/sound/samples/SOUND_SHADE.wav
+share/enlightenment/themes/BrushedMetal-Tigert/sound/samples/SOUND_UNSHADE.wav
+share/enlightenment/themes/BrushedMetal-Tigert/sound/samples/SOUND_WINDOW_BORDER_CHANGE.wav
+share/enlightenment/themes/BrushedMetal-Tigert/sound/samples/SOUND_WINDOW_CHANGE_LAYER_DOWN.wav
+share/enlightenment/themes/BrushedMetal-Tigert/sound/samples/SOUND_WINDOW_CLOSE.wav
+share/enlightenment/themes/BrushedMetal-Tigert/sound/samples/SOUND_WINDOW_SLIDE.wav
+share/enlightenment/themes/BrushedMetal-Tigert/sound/samples/SOUND_WINDOW_STICK.wav
+share/enlightenment/themes/BrushedMetal-Tigert/sound/samples/SOUND_WINDOW_UNSTICK.wav
+share/enlightenment/themes/BrushedMetal-Tigert/sound/sound.cfg
+share/enlightenment/themes/BrushedMetal-Tigert/sound.cfg
+share/enlightenment/themes/BrushedMetal-Tigert/tooltips/imageclasses.cfg
+share/enlightenment/themes/BrushedMetal-Tigert/tooltips/images/cloud1.png
+share/enlightenment/themes/BrushedMetal-Tigert/tooltips/images/cloud2.png
+share/enlightenment/themes/BrushedMetal-Tigert/tooltips/images/cloud_logo.png
+share/enlightenment/themes/BrushedMetal-Tigert/tooltips/tooltips.cfg
+share/enlightenment/themes/BrushedMetal-Tigert/tooltips/tooltips.cfg.ja
+share/enlightenment/themes/BrushedMetal-Tigert/tooltips/tooltips.cfg.pl
+share/enlightenment/themes/BrushedMetal-Tigert/tooltips.cfg
+share/enlightenment/themes/BrushedMetal-Tigert/tooltips.cfg.ja
+share/enlightenment/themes/BrushedMetal-Tigert/tooltips.cfg.pl
+share/enlightenment/themes/BrushedMetal-Tigert/windowmatches.cfg
+@dirrm share/enlightenment/themes/BrushedMetal-Tigert/ttfonts
+@dirrm share/enlightenment/themes/BrushedMetal-Tigert/tooltips/images
+@dirrm share/enlightenment/themes/BrushedMetal-Tigert/tooltips
+@dirrm share/enlightenment/themes/BrushedMetal-Tigert/sound/samples
+@dirrm share/enlightenment/themes/BrushedMetal-Tigert/sound
+@dirrm share/enlightenment/themes/BrushedMetal-Tigert/slideouts/images
+@dirrm share/enlightenment/themes/BrushedMetal-Tigert/slideouts
+@dirrm share/enlightenment/themes/BrushedMetal-Tigert/pager/images
+@dirrm share/enlightenment/themes/BrushedMetal-Tigert/pager
+@dirrm share/enlightenment/themes/BrushedMetal-Tigert/menustyles/images
+@dirrm share/enlightenment/themes/BrushedMetal-Tigert/menustyles
+@dirrm share/enlightenment/themes/BrushedMetal-Tigert/init/images
+@dirrm share/enlightenment/themes/BrushedMetal-Tigert/init
+@dirrm share/enlightenment/themes/BrushedMetal-Tigert/iconbox/images
+@dirrm share/enlightenment/themes/BrushedMetal-Tigert/iconbox
+@dirrm share/enlightenment/themes/BrushedMetal-Tigert/focuslist/images
+@dirrm share/enlightenment/themes/BrushedMetal-Tigert/focuslist
+@dirrm share/enlightenment/themes/BrushedMetal-Tigert/eterm/images
+@dirrm share/enlightenment/themes/BrushedMetal-Tigert/eterm
+@dirrm share/enlightenment/themes/BrushedMetal-Tigert/epplets/images
+@dirrm share/enlightenment/themes/BrushedMetal-Tigert/epplets
+@dirrm share/enlightenment/themes/BrushedMetal-Tigert/dragbar/images
+@dirrm share/enlightenment/themes/BrushedMetal-Tigert/dragbar
+@dirrm share/enlightenment/themes/BrushedMetal-Tigert/dock/images
+@dirrm share/enlightenment/themes/BrushedMetal-Tigert/dock
+@dirrm share/enlightenment/themes/BrushedMetal-Tigert/dialogs/images
+@dirrm share/enlightenment/themes/BrushedMetal-Tigert/dialogs
+@dirrm share/enlightenment/themes/BrushedMetal-Tigert/cursors/images
+@dirrm share/enlightenment/themes/BrushedMetal-Tigert/cursors/bw_images
+@dirrm share/enlightenment/themes/BrushedMetal-Tigert/cursors
+@dirrm share/enlightenment/themes/BrushedMetal-Tigert/coords/images
+@dirrm share/enlightenment/themes/BrushedMetal-Tigert/coords
+@dirrm share/enlightenment/themes/BrushedMetal-Tigert/common/images
+@dirrm share/enlightenment/themes/BrushedMetal-Tigert/common
+@dirrm share/enlightenment/themes/BrushedMetal-Tigert/buttons/images
+@dirrm share/enlightenment/themes/BrushedMetal-Tigert/buttons
+@dirrm share/enlightenment/themes/BrushedMetal-Tigert/borders/common/images
+@dirrm share/enlightenment/themes/BrushedMetal-Tigert/borders/common
+@dirrm share/enlightenment/themes/BrushedMetal-Tigert/borders/TRANSIENT/images
+@dirrm share/enlightenment/themes/BrushedMetal-Tigert/borders/TRANSIENT
+@dirrm share/enlightenment/themes/BrushedMetal-Tigert/borders/SHAPED/images
+@dirrm share/enlightenment/themes/BrushedMetal-Tigert/borders/SHAPED
+@dirrm share/enlightenment/themes/BrushedMetal-Tigert/borders/RIGHT_PAGER/images
+@dirrm share/enlightenment/themes/BrushedMetal-Tigert/borders/RIGHT_PAGER
+@dirrm share/enlightenment/themes/BrushedMetal-Tigert/borders/PAGER/images
+@dirrm share/enlightenment/themes/BrushedMetal-Tigert/borders/PAGER
+@dirrm share/enlightenment/themes/BrushedMetal-Tigert/borders/MENU_BORDER_ONLY/images
+@dirrm share/enlightenment/themes/BrushedMetal-Tigert/borders/MENU_BORDER_ONLY
+@dirrm share/enlightenment/themes/BrushedMetal-Tigert/borders/MENU/images
+@dirrm share/enlightenment/themes/BrushedMetal-Tigert/borders/MENU
+@dirrm share/enlightenment/themes/BrushedMetal-Tigert/borders/ICONBOX/images
+@dirrm share/enlightenment/themes/BrushedMetal-Tigert/borders/ICONBOX
+@dirrm share/enlightenment/themes/BrushedMetal-Tigert/borders/FIXED_SIZE/images
+@dirrm share/enlightenment/themes/BrushedMetal-Tigert/borders/FIXED_SIZE
+@dirrm share/enlightenment/themes/BrushedMetal-Tigert/borders/DEFAULT/images
+@dirrm share/enlightenment/themes/BrushedMetal-Tigert/borders/DEFAULT
+@dirrm share/enlightenment/themes/BrushedMetal-Tigert/borders/BORDER_ONLY/images
+@dirrm share/enlightenment/themes/BrushedMetal-Tigert/borders/BORDER_ONLY
+@dirrm share/enlightenment/themes/BrushedMetal-Tigert/borders/BORDERLESS/images
+@dirrm share/enlightenment/themes/BrushedMetal-Tigert/borders/BORDERLESS
+@dirrm share/enlightenment/themes/BrushedMetal-Tigert/borders
+@dirrm share/enlightenment/themes/BrushedMetal-Tigert/backgrounds/images
+@dirrm share/enlightenment/themes/BrushedMetal-Tigert/backgrounds
+@dirrm share/enlightenment/themes/BrushedMetal-Tigert/ABOUT
+@dirrm share/enlightenment/themes/BrushedMetal-Tigert
