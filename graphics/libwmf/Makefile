@@ -6,27 +6,39 @@
 #
 
 PORTNAME=	libwmf
-PORTVERSION=	0.1.21
+PORTVERSION=	0.2.1
 CATEGORIES=	graphics
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	wvware
 
 MAINTAINER=	ports@FreeBSD.org
 
-LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png
-
-WRKSRC=		${WRKDIR}/${PORTNAME}
+BUILD_DEPENDS=	freetype-config:${PORTSDIR}/print/freetype2     # XXX
+LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
+		png.5:${PORTSDIR}/graphics/png \
+		freetype.7:${PORTSDIR}/print/freetype2 \
+		xml2.5:${PORTSDIR}/textproc/libxml2
 
 USE_XLIB=	yes
-USE_XPM=	yes
-USE_FREETYPE=	yes
-GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
+USE_LIBTOOL=	yes
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include/freetype2 \
+			  -I${LOCALBASE}/include" \
 		LIBS="-L${LOCALBASE}/lib"
+CONFIGURE_ARGS=	--with-gsfontdir=${LOCALBASE}/share/ghostscript/fonts
 INSTALLS_SHLIB=	yes
 
-pre-configure:
-	(cd ${WRKSRC}; ${LN} -sf xgd-1.7.3 xgd)
-	(cd ${WRKSRC}/libdib; ${LN} -sf ../bytelevel.c)
+pre-patch:
+	@${PERL} -pi -e 's|src include fonts doc|src include fonts|g' \
+		${WRKSRC}/Makefile.in
+	@${PERL} -pi -e 's|\@LT_CURRENT\@|2|g ; \
+		 s|-release \$$\(LT_RELEASE\)||g' ${WRKSRC}/src/Makefile.in
+
+post-install:
+.if !defined(NOPORTDOCS)
+	@${MKDIR} ${DOCSDIR}
+	${TAR} -C ${WRKSRC}/doc --exclude '*Makefile*' -cf - . | \
+		${TAR} -C ${DOCSDIR} --unlink -xf -
+	@${CHOWN} -R ${SHAREOWN}:${SHAREGROUP} ${DOCSDIR}
+.endif
 
 .include <bsd.port.mk>
