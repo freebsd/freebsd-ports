@@ -1,0 +1,12 @@
+--- work/sablevm-1.0.6/src/libsablevm/java_lang_VMClassLoader.c.orig	Wed Mar 19 16:21:51 2003
++++ work/sablevm-1.0.6/src/libsablevm/java_lang_VMClassLoader.c	Wed Mar 19 16:22:20 2003
+@@ -460,8 +460,7 @@
+     }
+ 
+     /* check version and name */
+-    if (!(class->major_version == 45 ||
+-	  (class->major_version == 46 && class->minor_version == 0)))
++    if (!(class->major_version >= 45 && class->major_version <= 48))
+       {
+ 	_svmf_error_UnsupportedClassVersionError (env);
+ 	goto end;
