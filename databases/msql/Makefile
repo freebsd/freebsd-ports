@@ -7,7 +7,7 @@
 
 PORTNAME=	msql
 PORTVERSION=	2.0.12
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	databases
 
 MAINTAINER=	ports@FreeBSD.org
@@ -67,12 +67,8 @@ post-install:
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} >= 500113
-BROKEN=		"Does not compile due to varargs.h being deprecated"
-.endif
-
 .if !exists(${DISTDIR}/${DISTNAME}${EXTRACT_SUFX})
-IGNORE="- You must manually obtain ${DISTFILES} from 'http://www.Hughes.com.au' and place it in ${DISTDIR}.  The distribution requires registration prior to use"
+IGNORE="- You must manually obtain ${DISTFILES} from 'http://www.Hughes.com.au/download/' and place it in ${DISTDIR}.  The distribution requires registration prior to use"
 .endif
 
 .include <bsd.port.post.mk>
