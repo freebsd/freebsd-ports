@@ -1,0 +1,20 @@
+
+$FreeBSD$
+
+--- Makefile.in	2001/03/12 08:01:39	1.1
++++ Makefile.in	2001/03/12 08:02:46
+@@ -42,10 +42,10 @@
+ 
+ top_builddir = .
+ 
+-ACLOCAL = @ACLOCAL@
+-AUTOCONF = @AUTOCONF@
+-AUTOMAKE = @AUTOMAKE@
+-AUTOHEADER = @AUTOHEADER@
++ACLOCAL = /usr/bin/true
++AUTOCONF = /usr/bin/true
++AUTOMAKE = /usr/bin/true
++AUTOHEADER = /usr/bin/true
+ 
+ INSTALL = @INSTALL@
+ INSTALL_PROGRAM = @INSTALL_PROGRAM@ $(AM_INSTALL_PROGRAM_FLAGS)
