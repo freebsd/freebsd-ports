@@ -1129,6 +1129,7 @@
     SUBDIR += umbrello
     SUBDIR += upnp
     SUBDIR += ups-debug
+    SUBDIR += ustl
     SUBDIR += varconf
     SUBDIR += vb2c
     SUBDIR += veepee
