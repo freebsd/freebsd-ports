@@ -16,6 +16,8 @@ DIST_SUBDIR=	gnome2
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Python bindings for ORBit2
 
+CONFLICTS=	py*-omniorb* py*-orbit-0*
+
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gnomehack orbit2
