@@ -1,39 +1,16 @@
---- src/fe-text/gui-readline.c.orig	Sun Nov 23 20:30:02 2003
-+++ src/fe-text/gui-readline.c	Sun Dec  7 16:35:50 2003
-@@ -53,6 +53,9 @@
- static ENTRY_REDIRECT_REC *redir;
- static int escape_next_key;
- 
-+static int big5high = FALSE;
-+static unichar prekey = '\0';
-+
- static int readtag;
- static unichar prev_key;
- static GTimeVal last_keypress;
-@@ -339,7 +342,25 @@
- 		return;
+--- src/fe-text/gui-readline.c.orig	Thu Nov 27 01:30:03 2003
++++ src/fe-text/gui-readline.c	Sun Dec 14 01:54:28 2003
+@@ -187,7 +187,12 @@
+ 			out[utf16_char_to_utf8(arr[i], out)] = '\0';
+ 			g_string_append(str, out);
+ 		} else {
+-			g_string_append_c(str, arr[i]);
++			if(term_type==TERM_TYPE_BIG5) {
++				if(arr[i]>0xff)
++					g_string_append_c(str, arr[i]>>8&0xff);
++				g_string_append_c(str, arr[i]&0xff);
++			} else
++				g_string_append_c(str, arr[i]);
+ 		}
  	}
  
--	if (key < 32) {
-+	if(big5high || is_big5_hi(key))
-+	{
-+		if(big5high)
-+		{
-+			big5high = FALSE;
-+			str[0] = prekey;
-+			str[1] = key;
-+			str[2] = '\0';
-+			gui_entry_insert_text(active_entry, str);
-+			return;
-+		}
-+		else
-+		{
-+			big5high = TRUE;
-+			prekey = key;
-+			return;
-+		}
-+	}
-+	else if (key < 32) {
- 		/* control key */
-                 str[0] = '^';
- 		str[1] = (char)key+'@';
