@@ -3,6 +3,7 @@
 %%SITE_PERL%%/XML/RAI/Item.pm
 %%SITE_PERL%%/XML/RAI/Channel.pm
 %%SITE_PERL%%/XML/RAI/Image.pm
+%%SITE_PERL%%/XML/RSS/Parser.pm
 %%SITE_PERL%%/XML/RSS/Parser/Characters.pm
 %%SITE_PERL%%/XML/RSS/Parser/Element.pm
 %%SITE_PERL%%/XML/RSS/Parser/Feed.pm
