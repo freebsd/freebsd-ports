@@ -1,0 +1,79 @@
+--- include/faac.h.orig	Mon Nov 24 13:10:32 2003
++++ include/faac.h	Wed Jul 21 14:00:09 2004
+@@ -36,7 +36,6 @@
+ # endif
+ #endif
+ 
+-#pragma pack(push, 1)
+ 
+ typedef struct {
+   void *ptr;
+@@ -77,16 +76,11 @@
+ 					  unsigned long *pSizeOfDecoderSpecificInfo);
+ 
+ 
+-int FAACAPI faacEncEncode(faacEncHandle hEncoder, int32_t * inputBuffer, unsigned int samplesInput,
+-			 unsigned char *outputBuffer,
+-			 unsigned int bufferSize);
+-
+ 
+ int FAACAPI faacEncClose(faacEncHandle hEncoder);
+ 
+ 
+ 
+-#pragma pack(pop)
+ 
+ #ifdef __cplusplus
+ }
+--- include/faaccfg.h.orig	Wed Oct 29 05:31:24 2003
++++ include/faaccfg.h	Wed Jul 21 14:00:09 2004
+@@ -45,7 +45,6 @@
+ #define SHORTCTL_NOSHORT   1
+ #define SHORTCTL_NOLONG    2
+ 
+-#pragma pack(push, 1)
+ typedef struct faacEncConfiguration
+ {
+     /* config version */
+@@ -117,6 +116,5 @@
+ 
+ } faacEncConfiguration, *faacEncConfigurationPtr;
+ 
+-#pragma pack(pop)
+ 
+ #endif /* _FAACCFG_H_ */
+--- libfaac/frame.h.orig	Wed Jul 21 14:08:23 2004
++++ libfaac/frame.h	Wed Jul 21 14:08:32 2004
+@@ -60,7 +60,6 @@
+   #endif
+ #endif
+ 
+-#pragma pack(push, 1)
+ 
+ typedef struct {
+   psymodel_t *model;
+@@ -151,7 +150,6 @@
+ int FAACAPI faacEncClose(faacEncHandle hEncoder);
+ 
+ 
+-#pragma pack(pop)
+ 
+ #ifdef __cplusplus
+ }
+--- libfaac/aacquant.h.orig	Wed Jul 21 14:08:45 2004
++++ libfaac/aacquant.h	Wed Jul 21 14:08:53 2004
+@@ -37,14 +37,12 @@
+ #define POW20(x)  pow(2.0,((double)x)*.25)
+ #define IPOW20(x)  pow(2.0,-((double)x)*.1875)
+ 
+-#pragma pack(push, 1)
+ typedef struct
+   {
+     double *pow43;
+     double *adj43;
+     double quality;
+   } AACQuantCfg;
+-#pragma pack(pop)
+ 
+ void AACQuantizeInit(CoderInfo *coderInfo, unsigned int numChannels,
+ 		     AACQuantCfg *aacquantCfg);

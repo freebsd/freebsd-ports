@@ -7,6 +7,7 @@
 
 PORTNAME=	faac
 PORTVERSION=	1.24
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE_EXTENDED}
 MASTER_SITE_SUBDIR=	faac
@@ -31,6 +32,7 @@ INSTALLS_SHLIB=	yes
 pre-patch: build-depends
 
 post-patch:
+	@${ECHO_CMD} "" >>${WRKSRC}/libfaac/psych.h
 	@cd ${WRKSRC}; ${ACLOCAL} -I .; \
 		${SETENV} ${SCRIPTS_ENV} ${LIBTOOLIZE} --automake
 	@${REINPLACE_CMD} -e 's|$$lt_target|$$host|' \
