@@ -11,6 +11,15 @@ in the release notes.
 All ports committers are allowed to commit to this file.
 
 20040129:
+        SIZE lines in distinfo files:  if you set USE_SIZE when you do "make
+	makesum", the byte sizes of the distfiles will be listed in the
+	distinfo file. Then, if a distfile is replaced on its master site with
+	one of a different size than that listed, "make fetch" will fail with a
+	"size mismatch" error before downloading the file and the user will be
+	asked to fetch the file by hand. Also, a user will know the size of
+	the distfiles before fetching and decide to fetch later.
+
+20040129:
 	Start of CHANGES file.
 
 FORMAT:
