@@ -1,6 +1,6 @@
---- scripts/Makefile.in.orig	Mon Feb 23 13:02:34 2004
-+++ scripts/Makefile.in	Mon Feb 23 13:04:46 2004
-@@ -271,24 +271,7 @@
+--- scripts/Makefile.in.orig	Fri May 14 02:54:11 2004
++++ scripts/Makefile.in	Tue May 18 10:22:57 2004
+@@ -271,25 +271,7 @@
  vio_dir = @vio_dir@
  vio_libs = @vio_libs@
  
@@ -21,12 +21,13 @@
 -			mysql_explain_log \
 -			mysql_tableinfo \
 -			mysqld_multi \
--			make_win_src_distribution
+-			make_win_src_distribution \
+-			make_win_binary_distribution
 +bin_SCRIPTS =
  
  
  EXTRA_SCRIPTS = make_binary_distribution.sh \
-@@ -463,7 +446,7 @@
+@@ -465,7 +447,7 @@
  uninstall: uninstall-am
  
  install-am: all-am
