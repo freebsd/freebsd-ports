@@ -1,0 +1,24 @@
+--- doc/book/Makefile.orig	Mon May 19 17:06:16 2003
++++ doc/book/Makefile	Mon May 19 17:22:14 2003
+@@ -98,7 +98,7 @@
+ $(BOOK_INSTALL_DIR):
+ 	$(INSTALL) -d $(BOOK_INSTALL_DIR)
+ 
+-install-book-html: $(BOOK_HTML_TARGET)
++install-book-html:
+ 	$(INSTALL) -d $(BOOK_INSTALL_DIR)/images
+ 	$(INSTALL) $(BOOK_HTML_TARGET) $(BOOK_INSTALL_DIR)
+ 	$(INSTALL) $(BOOK_DIR)/styles.css $(BOOK_INSTALL_DIR)
+@@ -111,10 +111,10 @@
+ 	$(INSTALL) $(BOOK_DIR)/styles.css $(BOOK_INSTALL_DIR)
+ 	$(INSTALL) $(BOOK_DIR)/images/*.png $(BOOK_INSTALL_DIR)/images
+ 
+-install-book-pdf: $(BOOK_PDF_TARGET) $(BOOK_INSTALL_DIR)
++install-book-pdf:
+ 	$(INSTALL) $(BOOK_PDF_TARGET) $(BOOK_INSTALL_DIR)
+ 
+-install-book-ps: $(BOOK_PS_TARGET) $(BOOK_INSTALL_DIR)
++install-book-ps:
+ 	$(INSTALL) $(BOOK_PS_TARGET) $(BOOK_INSTALL_DIR)
+ 
+ book-clean:
