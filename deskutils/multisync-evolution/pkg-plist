@@ -1,0 +1,4 @@
+lib/multisync/libevolution_sync.a
+lib/multisync/libevolution_sync.so
+lib/multisync/libevolution_sync.so.0
+@unexec rmdir %D/lib/multisync 2>/dev/null || true
