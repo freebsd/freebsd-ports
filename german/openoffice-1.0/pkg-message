@@ -75,3 +75,15 @@ existierender Dateiname eingegeben wird. Der folgende
 Systempatch schafft Abhilfe:
 
 http://people.freebsd.org/~mbr/ooo/rtld-symlookup.diff
+
+5 Absturz nach dem Wechseln zu einer anderen Sprachversion
+----------------------------------------------------------
+
+Falls Sie zuerst die englische Version von OO.org installiert
+haben und nachträglich auf eine andere Sprachversion gewechselt
+haben, so kann dies OO.org zum Absturz bringen.
+
+Abhilfe schafft in diesem Fall nur das Löschen des bestehenden
+OpenOffice.org1.0.2 Verzeichnisses und des entsprechenden
+Eintrags aus der Datei ".sversionrc" mit anschliessender neuer
+Benutzer-Installation.
