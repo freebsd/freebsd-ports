@@ -1,0 +1,36 @@
+--- config.orig	Sun Jan 17 15:20:20 1999
++++ config	Tue Mar 23 23:26:36 1999
+@@ -282,15 +282,6 @@
+ esac
+ done
+ 
+-# figure out if gcc is available and if so we use it otherwise
+-# we fallback to whatever cc does on the system
+-GCCVER=`gcc -v 2>&1`
+-if [ $? = "0" ]; then
+-  CC=gcc
+-else
+-  CC=cc
+-fi
+-
+ # read the output of the embedded GuessOS 
+ read GUESSOS
+ 
+@@ -334,7 +325,7 @@
+ # run Configure to check to see if we need to specify the 
+ # compiler for the platform ... in which case we add it on
+ # the end ... otherwise we leave it off
+-perl ./Configure 2>&1 | grep "$OUT-$CC" > /dev/null
++${PERL} ./Configure 2>&1 | grep "$OUT-$CC" > /dev/null
+ if [ $? = "0" ]; then
+   OUT="$OUT-$CC"
+ fi
+@@ -349,7 +340,7 @@
+ if [ "$TEST" = "true" ]; then
+   echo ./Configure $OUT $options
+ else
+-  perl ./Configure $OUT $options
++  ${PERL} ./Configure $OUT $options
+ fi
+ 
+ )
