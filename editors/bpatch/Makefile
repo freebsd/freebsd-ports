@@ -3,7 +3,7 @@
 # Date created:         18 March 1996
 # Whom:                 joerg
 #
-# $Id: Makefile,v 1.4 1998/08/02 18:21:40 joerg Exp $
+# $Id: Makefile,v 1.5 1998/08/23 02:24:37 hoek Exp $
 #
 
 DISTNAME=	bpatch
@@ -13,6 +13,7 @@ MASTER_SITES=	ftp://ftp.interface-business.de/pub/outgoing/
 
 MAINTAINER=	joerg@FreeBSD.org
 
+MAN1=		bpatch.1
 NO_WRKSUBDIR=   yes
 
 .include <bsd.port.mk>
