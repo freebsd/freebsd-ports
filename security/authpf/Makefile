@@ -20,6 +20,7 @@ MAINTAINER=	max@love2party.net
 COMMENT=	Authentification shell for pf gateways
 
 WRKSRC=		${WRKDIR}/pf_freebsd_${PORTVERSION}
+ONLY_FOR_ARCHS=	i386
 
 RUN_DEPENDS=	${LOCALBASE}/modules/pf.ko:${PORTSDIR}/security/pf
 
