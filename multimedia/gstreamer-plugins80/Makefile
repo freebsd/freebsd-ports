@@ -101,7 +101,7 @@ post-configure:
 .include <bsd.port.pre.mk>
 
 post-install:
-.if ${ARCH} == "ia64"
+.if ${ARCH} == "ia64" || ${ARCH} == "amd64"
 # register plugins
 	@-${X11BASE}/bin/gst-register 2>/dev/null
 .else
@@ -110,7 +110,7 @@ post-install:
 
 # Fix build on ia64.  This patch breaks other archs, so include it
 # conditionally
-.if ${ARCH} == "ia64"
+.if ${ARCH} == "ia64" || ${ARCH} == "amd64"
 EXTRA_PATCHES=	${FILESDIR}/ia64-patch-ffmpeg::configure
 .endif
 
