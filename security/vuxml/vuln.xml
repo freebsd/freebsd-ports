@@ -32,6 +32,38 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="713c3913-8c2b-11d9-b58c-0001020eed82">
+    <topic>ImageMagick -- format string vulnerability</topic>
+    <affects>
+      <package>
+	<name>ImageMagick</name>
+	<range><lt>6.2.0.3</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Tavis Ormandy reports:</p>
+	<blockquote>
+	  <p>magemagick-6.2.0-3 fixes an potential issue handling
+	    malformed filenames, the flaw may affect webapps or
+	    scripts that use the imagemagick utilities for image
+	    processing, or applications linked with libMagick.</p>
+	</blockquote>
+	<p>This vulnerability could crash ImageMagick or potentially
+	  lead to the execution of arbitrary code with the permissions
+	  of the user running ImageMagick.</p>
+      </body>
+    </description>
+    <references>
+      <cvename>CAN-2005-0397</cvename>
+      <url>http://www.ubuntulinux.org/support/documentation/usn/usn-90-1</url>
+    </references>
+    <dates>
+      <discovery>2005-03-02</discovery>
+      <entry>2005-03-03</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="fb03b1c6-8a8a-11d9-81f7-02023f003c9f">
     <topic>uim -- privilege escalation vulnerability</topic>
     <affects>
@@ -3117,7 +3149,7 @@ http_access deny Gopher</pre>
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
 	<p>Dmitry V. Levin found a potential integer overflow in the
-	  tiffdump utility which could lead to execution of arbritrary
+	  tiffdump utility which could lead to execution of arbitrary
 	  code.  This could be exploited by tricking an user into
 	  executing tiffdump on a specially crafted tiff image.</p>
       </body>
