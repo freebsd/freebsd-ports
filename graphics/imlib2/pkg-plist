@@ -10,9 +10,9 @@ include/gdk_imlib_types.h
 lib/libImlib.a
 lib/libImlib.la
 lib/libImlib.so
-lib/libImlib.so.1.3
+lib/libImlib.so.1.6
 lib/libgdk_imlib.a
 lib/libgdk_imlib.la
 lib/libgdk_imlib.so
-lib/libgdk_imlib.so.1.3
+lib/libgdk_imlib.so.1.6
 @dirrm etc/imlib
