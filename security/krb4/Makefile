@@ -27,6 +27,7 @@ CONFIGURE_ARGS+= \
 	--disable-afs-support	\
 	--without-x
 CONFIGURE_ENV+=	\
+	"CFLAGS=${CFLAGS}" \
 	"CPPFLAGS=-DOPENSSL_DES_LIBDES_COMPATIBILITY" \
 	"LDFLAGS=-Wl,-rpath,${PREFIX}/lib"
 
@@ -45,4 +46,8 @@ setuids:
 .endfor
 
 .include "Makefile.man"
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+.if ${ARCH} == "amd64"
+CFLAGS+= -fPIC
+.endif
+.include <bsd.port.post.mk>
