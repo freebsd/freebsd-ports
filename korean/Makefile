@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.15 1997/06/06 07:45:13 obrien Exp $
+# $Id: Makefile,v 1.16 1997/09/10 08:49:21 asami Exp $
 #
 
     SUBDIR += Wnn
@@ -29,6 +29,7 @@
     SUBDIR += nvi-iso-2022-kr
     SUBDIR += pine
     SUBDIR += pinetreefonts
+    SUBDIR += vim
     SUBDIR += ztelnet
 
 .include <bsd.port.subdir.mk>
