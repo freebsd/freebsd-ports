@@ -1,28 +1,50 @@
-# New ports collection makefile for:   squeak
-# Version required:    1.18
-# Date created:        25 April 1997
-# Whom:                jesse
+# New ports collection makefile for:   	squeak1
+# Version required:    			1.31
+# Date created:        			20 December 1998
+# Whom:                			jesse@cs.uni-magdeburg.de
 #
-# $Id: Makefile,v 1.3 1998/11/28 02:18:44 asami Exp $
+# $Id$
 #
 
-DISTNAME=      Squeak-1.18
-PKGNAME=       squeak-1.18
-CATEGORIES=    lang
-MASTER_SITES=  ftp://ftp.create.ucsb.edu/pub/Smalltalk/Squeak/unix/
+DISTNAME=	1.31
+PKGNAME=	squeak-1.31
+CATEGORIES=	lang
+MASTER_SITES=	http://www.apfel.de/~jesse/squeak/ \
+		ftp://alix.inria.fr/pub/squeak/unix/ \
+		ftp://st.cs.uiuc.edu/pub/Smalltalk/Squeak/unix/ \
+		ftp://ftp.cs.uni-magdeburg.de/pub/Smalltalk/Smalltalk/Squeak/ \
+		ftp://ftp.cs.uni-magdeburg.de/pub/Smalltalk/Smalltalk/Squeak/unix/ \
+		http://st-www.cs.uiuc.edu/ftp/Smalltalk/Squeak/ \
+		ftp://uiarchive.cso.uiuc.edu/pub/lang/smalltalk/smalltalk/Squeak/ \
+		http://wuarchive.wustl.edu/languages/smalltalk/smalltalk/Squeak/
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX} image/${SQUEAK_SRC}
 
-MAINTAINER=    jesse@cs.uni-magdeburg.de
+MAINTAINER=	jesse@cs.uni-magdeburg.de
 
-BROKEN=		upgrade
+ALLFILES=	${DISTNAME}${EXTRACT_SUFX} ${SQUEAK_SRC}
+EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
-USE_XLIB=	yes
-WRKSRC=         $(WRKDIR)/Squeak-1.18/src
+DIST_SUBDIR=	squeak
+SQUEAK_SRC=	SqueakV1.sources
+USE_GMAKE=	yes
+MAKEFILE=	GNUmakefile
+VMBUILD=	freebsd
+MAKE_ARGS=	VMBUILD=${VMBUILD}
+PORTMAKE=	${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_FLAGS} \
+		${MAKEFILE} ${MAKE_ARGS}
+
+do-build:
+	@(cd ${WRKSRC} && ${PORTMAKE} mkdir)
+	@(cd ${WRKSRC}/${VMBUILD} && ${PORTMAKE} interp)
 
 do-install:
-	${INSTALL_PROGRAM} $(WRKSRC)/SqueakVM $(PREFIX)/bin
-	${MKDIR} $(PREFIX)/share/squeak 
-	${INSTALL_DATA} $(WRKSRC)/../image/SqueakV1.sources $(PREFIX)/share/squeak
-	${INSTALL_DATA} $(WRKSRC)/../image/Squeak1.18.image $(PREFIX)/share/squeak
-	${INSTALL_DATA} $(WRKSRC)/../image/Squeak1.18.changes $(PREFIX)/share/squeak
+	@(cd ${WRKSRC}/${VMBUILD} && \
+	${INSTALL_PROGRAM} SqueakVM-1.31-${VMBUILD} ${PREFIX}/bin/SqueakVM)
+	${MKDIR} ${PREFIX}/share/squeak
+.for f in Squeak1.31.changes Squeak1.31.image
+	(cd ${WRKSRC}/image && ${INSTALL_DATA} $f ${PREFIX}/share/squeak/$f)
+.endfor
+	${INSTALL_DATA} ${DISTDIR}/${DIST_SUBDIR}/${SQUEAK_SRC} \
+		${PREFIX}/share/squeak/${SQUEAK_SRC}
 
 .include <bsd.port.mk>
