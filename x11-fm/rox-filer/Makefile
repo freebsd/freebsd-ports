@@ -28,10 +28,6 @@ post-patch:
 
 .include <bsd.port.pre.mk>
 
-do-build:
-	# Run the custom build procedure
-	@cd ${WRKSRC} && GTK_CONFIG=${GTK_CONFIG} GLIB_CONFIG=${GLIB_CONFIG} ROX-Filer/AppRun --compile
-
 .if (${ARCH} == "i386")
 BINARIES=	FreeBSD-ix86
 .else
@@ -39,6 +35,10 @@ BINARIES=	FreeBSD-${ARCH}
 .endif
 
 PLIST_SUB=	BINARIES="${BINARIES}"
+
+do-build:
+	# Run the custom build procedure
+	@cd ${WRKSRC} && GTK_CONFIG=${GTK_CONFIG} GLIB_CONFIG=${GLIB_CONFIG} ROX-Filer/AppRun --compile
 
 do-install:
 	@${MKDIR} ${PREFIX}/apps/ROX-Filer
