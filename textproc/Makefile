@@ -295,6 +295,7 @@
     SUBDIR += p5-PerlPoint-Converters
     SUBDIR += p5-PerlPoint-Package
     SUBDIR += p5-Plucene
+    SUBDIR += p5-Plucene-Plugin-Analyzer-SnowballAnalyzer
     SUBDIR += p5-Pod-Constants
     SUBDIR += p5-Pod-DocBook
     SUBDIR += p5-Pod-Escapes
