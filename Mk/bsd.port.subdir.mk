@@ -239,7 +239,7 @@ describe:
 .if defined(PORTSTOP)
 readmes: readme ${SUBDIR:S/^/_/:S/$/.readmes/}
 	@${ECHO_MSG} "===>   Creating README.html for all ports"
-	@perl ${.CURDIR}/Tools/make_readmes < ${.CURDIR}/${INDEXFILE}
+	@perl ${PORTSDIR}/Tools/make_readmes < ${PORTSDIR}/${INDEXFILE}
 .else
 readmes: readme
 .endif

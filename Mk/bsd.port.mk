@@ -386,9 +386,14 @@ FreeBSD_MAINTAINER=	portmgr@FreeBSD.org
 # 				  routines found in etc/rc.subr and may need to
 # 				  depend on the sysutils/rc_subr port.
 # 				  If this is set to a list of files, these files will be
-# 				  automatically added to ${SUB_FILES} and some "variable=value"
+# 				  automatically added to ${SUB_FILES}, some %%VAR%%'s will
+# 				  automatically be expanded, they will be installed in
+# 				  ${PREFIX}/etc/rc.d and added to the packing list.
 # 				  pairs will be added to ${SUB_LIST}. These files will be
 # 				  installed in ${PREFIX}/etc/rc.d and added to the packing list.
+# RC_ORDER		- List of rcNG startup scripts to be called early in the boot
+# 				  process. This acts exactly like USE_RC_SUBR except that
+# 				  scripts are installed in /etc/rc.d.
 # RC_SUBR		- Set to path of rc.subr.
 #				  Default: ${LOCALBASE}/etc/rc.subr.
 ##
@@ -1300,7 +1305,7 @@ PERL=		${LOCALBASE}/bin/perl
 .include "${PORTSDIR}/Mk/bsd.php.mk"
 .endif
 
-.if defined(USE_PYTHON)
+.if defined(USE_PYTHON) || defined(USE_PYTHON_BUILD) || defined(USE_PYTHON_RUN)
 .include "${PORTSDIR}/Mk/bsd.python.mk"
 .endif
 
@@ -1318,6 +1323,10 @@ PERL=		${LOCALBASE}/bin/perl
 
 .if defined(WANT_GNOME) || defined(USE_GNOME) || defined(USE_GTK)
 .include "${PORTSDIR}/Mk/bsd.gnome.mk"
+.endif
+
+.if defined(WANT_GSTREAMER) || defined(USE_GSTREAMER)
+.include "${PORTSDIR}/Mk/bsd.gstreamer.mk"
 .endif
 
 .if defined(USE_SDL) || defined(WANT_SDL)
@@ -1462,16 +1471,19 @@ CONFIGURE_ENV+=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 .endif
 .endif
 
-.if defined(USE_RC_SUBR)
+.if defined(USE_RC_SUBR) || defined(USE_RCORDER)
 .if ${OSVERSION} < 500037
 RUN_DEPENDS+=	${LOCALBASE}/etc/rc.subr:${PORTSDIR}/sysutils/rc_subr
 RC_SUBR=	${LOCALBASE}/etc/rc.subr
 .else
 RC_SUBR=	/etc/rc.subr
 .endif
-.if ${USE_RC_SUBR:U} != "YES"
 SUB_LIST+=	RC_SUBR=${RC_SUBR}
+.if defined(USE_RC_SUBR) && ${USE_RC_SUBR:U} != "YES"
 SUB_FILES+=	${USE_RC_SUBR}
+.endif
+.if defined(USE_RCORDER)
+SUB_FILES+=	${USE_RCORDER}
 .endif
 .endif
 
@@ -1737,20 +1749,16 @@ LDFLAGS+=		-L${LOCALBASE}/lib
 CONFIGURE_ENV+=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 .endif # USE_PGSQL
 
-.if defined(USE_XLIB)
-LIB_DEPENDS+=	X11.6:${X_LIBRARIES_PORT}
-# Add explicit X options to avoid problems with false positives in configure
-.if defined(GNU_CONFIGURE)
-CONFIGURE_ARGS+=--x-libraries=${X11BASE}/lib --x-includes=${X11BASE}/include
-.endif
-.endif
-
 # XXX: (not yet): .if defined(USE_AUTOTOOLS)
 .include "${PORTSDIR}/Mk/bsd.autotools.mk"
 # XXX: (not yet): .endif
 
 .if defined(WANT_GNOME) || defined(USE_GNOME) || defined(USE_GTK)
 .include "${PORTSDIR}/Mk/bsd.gnome.mk"
+.endif
+
+.if defined(WANT_GSTREAMER) || defined(USE_GSTREAMER)
+.include "${PORTSDIR}/Mk/bsd.gstreamer.mk"
 .endif
 
 .if defined(USE_SDL) || defined(WANT_SDL)
@@ -3702,8 +3710,8 @@ _BUILD_SEQ=		build-message pre-build pre-build-script do-build \
 				post-build post-build-script
 _INSTALL_DEP=	build
 _INSTALL_SEQ=	install-message check-conflicts \
-			    run-depends lib-depends pre-install pre-install-script \
-				apply-slist generate-plist check-already-installed
+			    run-depends lib-depends apply-slist pre-install \
+				pre-install-script generate-plist check-already-installed
 _INSTALL_SUSEQ= check-umask install-mtree pre-su-install \
 				pre-su-install-script do-install post-install \
 				post-install-script add-plist-info add-plist-docs \
@@ -4811,6 +4819,7 @@ add-plist-docs:
 
 add-plist-info:
 # Process GNU INFO files at package install/deinstall time
+.if defined(INFO)
 .for i in ${INFO}
 	install-info --quiet ${PREFIX}/${INFO_PATH}/$i.info ${PREFIX}/${INFO_PATH}/dir
 	@${ECHO_CMD} "@unexec install-info --delete %D/${INFO_PATH}/$i.info %D/${INFO_PATH}/dir" \
@@ -4825,6 +4834,7 @@ add-plist-info:
 	@${ECHO_CMD} "@unexec rmdir %D/info 2> /dev/null || true" >> ${TMPPLIST}
 .endif
 .endif
+.endif
 
 # If we're installing into a non-standard PREFIX, we need to remove that directory at
 # deinstall-time
@@ -4837,16 +4847,22 @@ add-plist-post:
 
 .if !target(install-rc-script)
 install-rc-script:
-.if defined(USE_RC_SUBR)
-.if ${USE_RC_SUBR:U} != "YES"
-	@${ECHO_CMD} "===> Installing startup script(s) in ${PREFIX}/etc/rc.d"
-	@if ${EGREP} -qe '^@cw?d' ${TMPPLIST} && \
-		[ "`${SED} -En -e '/^@cw?d[ 	]*/s,,,p' ${TMPPLIST} | ${TAIL} -n 1`" != "${PREFIX}" ]; then \
-		${ECHO_CMD} "@cwd ${PREFIX}" >> ${TMPPLIST}; \
-	fi
+.if defined(USE_RCORDER) || defined(USE_RC_SUBR) && ${USE_RC_SUBR:U} != "YES"
+.if defined(USE_RCORDER)
+	@${ECHO_CMD} "===> Installing early rcNG startup script(s)"
+	@${ECHO_CMD} "@cwd /" >> ${TMPPLIST}
+	@for i in ${USE_RCORDER}; do \
+		${INSTALL_SCRIPT} ${WRKDIR}/$${i} /etc/rc.d/$${i%.sh}; \
+		${ECHO_CMD} "etc/rc.d/$${i%.sh}" >> ${TMPPLIST}; \
+	done
+	@${ECHO_CMD} "@cwd ${PREFIX}" >> ${TMPPLIST}
+.endif
+.if defined(USE_RC_SUBR) && ${USE_RC_SUBR:U} != "YES"
+	@${ECHO_CMD} "===> Installing rcNG startup script(s)"
+	@${ECHO_CMD} "@cwd ${PREFIX}" >> ${TMPPLIST}
 	@for i in ${USE_RC_SUBR}; do \
-		${INSTALL_SCRIPT} ${WRKDIR}/$${i} ${PREFIX}/etc/rc.d; \
-		${ECHO_CMD} etc/rc.d/$${i} >> ${TMPPLIST}; \
+		${INSTALL_SCRIPT} ${WRKDIR}/$${i} ${PREFIX}/etc/rc.d/$${i%.sh}.sh; \
+		${ECHO_CMD} "etc/rc.d/$${i%.sh}.sh" >> ${TMPPLIST}; \
 	done
 .endif
 .else
