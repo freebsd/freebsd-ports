@@ -1,17 +1,17 @@
---- src/init.c.orig	Wed Jan  8 23:43:57 2003
-+++ src/init.c	Wed Jan  8 23:45:36 2003
-@@ -289,8 +289,8 @@
+--- src/init.c.orig	Sun Mar 30 23:06:39 2003
++++ src/init.c	Sat May 10 22:14:28 2003
+@@ -291,8 +291,8 @@
  	2,		/* recent_time */
  	32,		/* groupname_max_length */
- 	KILL_READ,		/* kill_level */
+ 	KILL_UNREAD,		/* kill_level */
 -	MIME_ENCODING_7BIT,		/* mail_mime_encoding */
 -	MIME_ENCODING_7BIT,		/* post_mime_encoding */
 +	MIME_ENCODING_8BIT,		/* mail_mime_encoding */
 +	MIME_ENCODING_8BIT,		/* post_mime_encoding */
- 	POST_PROC_NONE,			/* post_process */
+ 	POST_PROC_NO,			/* post_process */
  	REREAD_ACTIVE_FILE_SECS,	/* reread_active_file_secs */
  	1,		/* scroll_lines */
-@@ -333,7 +333,7 @@
+@@ -339,7 +339,7 @@
  	TRUE,		/* word_highlight */
  	0,		/* wrap_column */
  #ifdef HAVE_COLOR
@@ -20,10 +20,10 @@
  #endif /* HAVE_COLOR */
  	TRUE,		/* add_posted_to_filter */
  	TRUE,		/* advertising */
-@@ -364,11 +364,11 @@
+@@ -369,11 +369,11 @@
+ #endif /* USE_INVERSE_HACK */
  	TRUE,		/* keep_dead_articles */
- 	TRUE,		/* keep_posted_articles */
- 	POSTED_FILE,	/* keep_posted_articles_file */
+ 	POSTED_FILE,	/* posted_articles_file */
 -	FALSE,		/* mail_8bit_header */
 +	TRUE,		/* mail_8bit_header */
  	TRUE,		/* mark_saved_read */
