@@ -26,6 +26,8 @@ share/dvdstyler/bin/rc/save.png
 share/dvdstyler/buttons/simple.xml
 share/dvdstyler/locale/de/LC_MESSAGES/dvdstyler.mo
 share/dvdstyler/locale/es/LC_MESSAGES/dvdstyler.mo
+share/dvdstyler/locale/fr/LC_MESSAGES/dvdstyler.mo
+share/dvdstyler/locale/hu/LC_MESSAGES/dvdstyler.mo
 share/dvdstyler/locale/it/LC_MESSAGES/dvdstyler.mo
 share/dvdstyler/locale/ru/LC_MESSAGES/dvdstyler.mo
 share/dvdstyler/silence.mp2
@@ -33,10 +35,14 @@ share/dvdstyler/silence.mp2
 @dirrm share/dvdstyler/locale/ru
 @dirrm share/dvdstyler/locale/it/LC_MESSAGES
 @dirrm share/dvdstyler/locale/it
-@dirrm share/dvdstyler/locale/de/LC_MESSAGES
-@dirrm share/dvdstyler/locale/de
+@dirrm share/dvdstyler/locale/hu/LC_MESSAGES
+@dirrm share/dvdstyler/locale/hu
+@dirrm share/dvdstyler/locale/fr/LC_MESSAGES
+@dirrm share/dvdstyler/locale/fr
 @dirrm share/dvdstyler/locale/es/LC_MESSAGES
 @dirrm share/dvdstyler/locale/es
+@dirrm share/dvdstyler/locale/de/LC_MESSAGES
+@dirrm share/dvdstyler/locale/de
 @dirrm share/dvdstyler/locale
 @dirrm share/dvdstyler/buttons
 @dirrm share/dvdstyler/bin/rc
