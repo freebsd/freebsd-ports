@@ -21,12 +21,6 @@ USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_X_PREFIX=	yes
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 500000
-BROKEN=		"Does not compile on 4.x"
-.endif
-
 do-configure:
 	cd ${WRKSRC} && \
 		bash ./0 --prefix=${PREFIX} --datadir=${PREFIX}/share/pawm
@@ -60,4 +54,4 @@ do-install:
 .endfor
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
