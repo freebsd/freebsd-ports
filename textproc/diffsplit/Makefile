@@ -18,20 +18,17 @@ COMMENT=	Splits a unified diff into pieces which patch one file each
 
 NO_BUILD=	YES
 NO_WRKSUBDIR=	YES
-PLIST=		${WRKDIR}/pkg-plist
+PLIST_FILES=	bin/diffsplit
 USE_PERL5=	YES
 
 do-extract:
-	${MKDIR} ${WRKDIR}
-	${CP} ${DISTDIR}/${DIST_SUBDIR}/diffsplit ${WRKDIR}
+	@${MKDIR} ${WRKDIR}
+	@${CP} ${DISTDIR}/${DIST_SUBDIR}/diffsplit ${WRKDIR}
 
 do-patch:
-	${PERL} -pi -e "s:/usr/bin/perl:${PERL5}:g" ${WRKDIR}/diffsplit
-
-pre-install:
-	${ECHO_CMD} bin/diffsplit > ${PLIST}
+	@${PERL} -pi -e "s:/usr/bin/perl:${PERL5}:g" ${WRKDIR}/diffsplit
 
 do-install:
-	${INSTALL_SCRIPT} ${WRKDIR}/diffsplit ${PREFIX}/bin
+	@${INSTALL_SCRIPT} ${WRKDIR}/diffsplit ${PREFIX}/bin
 
 .include <bsd.port.mk>
