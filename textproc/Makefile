@@ -406,6 +406,7 @@
     SUBDIR += py-docutils
     SUBDIR += py-dsv
     SUBDIR += py-expat
+    SUBDIR += py-feedparser
     SUBDIR += py-jaxml
     SUBDIR += py-ltxml
     SUBDIR += py-martel
