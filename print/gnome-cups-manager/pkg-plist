@@ -36,6 +36,7 @@ share/locale/el/LC_MESSAGES/gnome-cups-manager.mo
 share/locale/en_CA/LC_MESSAGES/gnome-cups-manager.mo
 share/locale/en_GB/LC_MESSAGES/gnome-cups-manager.mo
 share/locale/es/LC_MESSAGES/gnome-cups-manager.mo
+share/locale/eu/LC_MESSAGES/gnome-cups-manager.mo
 share/locale/fi/LC_MESSAGES/gnome-cups-manager.mo
 share/locale/fr/LC_MESSAGES/gnome-cups-manager.mo
 share/locale/he/LC_MESSAGES/gnome-cups-manager.mo
@@ -50,6 +51,7 @@ share/locale/no/LC_MESSAGES/gnome-cups-manager.mo
 share/locale/pa/LC_MESSAGES/gnome-cups-manager.mo
 share/locale/pt/LC_MESSAGES/gnome-cups-manager.mo
 share/locale/pt_BR/LC_MESSAGES/gnome-cups-manager.mo
+share/locale/ru/LC_MESSAGES/gnome-cups-manager.mo
 share/locale/sq/LC_MESSAGES/gnome-cups-manager.mo
 share/locale/sr/LC_MESSAGES/gnome-cups-manager.mo
 share/locale/sr@Latn/LC_MESSAGES/gnome-cups-manager.mo
