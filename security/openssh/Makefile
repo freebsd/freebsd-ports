@@ -119,7 +119,7 @@ post-patch:
 post-install:
 .if !exists(${PREFIX}/etc/ssh_host_key)
 	@${ECHO_MSG} ">> Generating a secret host key."
-	${PREFIX}/bin/ssh-keygen -N "" ${PREFIX}/etc/ssh_host_key
+	${PREFIX}/bin/ssh-keygen -N "" -f ${PREFIX}/etc/ssh_host_key
 .endif
 .if !exists(${PREFIX}/etc/rc.d/sshd.sh)
 	@${ECHO} "#!/bin/sh" > ${PREFIX}/etc/rc.d/sshd.sh
