@@ -3,7 +3,7 @@
 # Date created:		28 Oct 1996
 # Whom:			John Polstra <jdp@polstra.com>
 #
-# $Id: Makefile,v 1.12 1998/10/12 16:38:04 jseger Exp $
+# $Id: Makefile,v 1.13 1998/10/13 01:17:27 jseger Exp $
 #
 
 DISTNAME=	modula-3-lib-3.6
@@ -51,16 +51,6 @@ have_gcc!=	/bin/sh scripts/check_files files/T.gcc m3cc /usr/src/contrib
 DISTFILES+=	m3-fbsd-gcc-3.6.tar.gz
 .endif
 
-# Support building on systems with or without X11 installed.  The port
-# only supports X11R6 in the standard location, so we don't bother using
-# the X11BASE macro.  It's not defined yet at this point in the Makefile
-# anyway.
-.if exists(/usr/X11R6/lib/libX11.a)
-PLIST=		${WRKDIR}/PLIST
-.else
-PLIST=		${WRKDIR}/PLIST.noX11
-.endif
-
 # Startup script, run at boot time
 startup_dir=	${PREFIX}/etc/rc.d
 startup_script=	${startup_dir}/50.m3.sh
@@ -76,6 +66,17 @@ libdir=		lib/m3/FreeBSD2
 
 # Shared library major version number
 major=		6
+
+# Support building on systems with or without X11 installed.
+.ifdef NO_X11
+PLIST=		${WRKDIR}/PLIST.noX11
+.else
+pre-fetch:
+	@echo "To build this port without X11, define \"NO_X11\"."
+
+USE_XLIB=	yes
+PLIST=		${WRKDIR}/PLIST
+.endif
 
 post-extract:
 .if !empty(have_boot)
