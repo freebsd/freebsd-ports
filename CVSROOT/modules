@@ -2832,6 +2832,7 @@ harvest		ports/www/harvest
 hashcash	ports/mail/hashcash
 hashish		ports/security/hashish
 haskell-mode.el	ports/lang/haskell-mode.el
+hatari		ports/emulators/hatari
 hawk		ports/net/hawk
 hayes		ports/multimedia/hayes
 hb		ports/misc/hb
