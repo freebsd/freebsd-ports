@@ -1,15 +1,17 @@
 #
-# Fix nested brace vs. variable expansion
+# Fix brace expansion following quoted text
 #
-# http://lists.gnu.org/archive/html/bug-bash/2004-08/msg00056.html
+# http://lists.gnu.org/archive/html/bug-bash/2004-09/msg00255.html
 #
---- braces.c.orig	Tue Aug 04 14:32:33 2004
-+++ braces.c	Tue Aug 04 15:15:36 2004
-@@ -402,6 +402,7 @@
+--- braces.c.orig	Wed Sep  8 11:07:53 2004
++++ braces.c	Fri Sep 17 18:42:36 2004
+@@ -402,7 +402,8 @@
  	{
  	  pass_next = 1;
  	  i++;
-+	  level++;
+-	  level++;
++	  if (quoted == 0)
++	    level++;
  	  continue;
  	}
  #endif

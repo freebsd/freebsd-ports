@@ -7,7 +7,7 @@
 
 PORTNAME=		bash
 PORTVERSION=		3.0
-PORTREVISION=		4
+PORTREVISION=		5
 CATEGORIES=		shells
 MASTER_SITES=		${MASTER_SITE_GNU:S/$/:bash/} \
 			http://cnswww.cns.cwru.edu/~chet/%SUBDIR%/:faq \
@@ -16,6 +16,12 @@ MASTER_SITE_SUBDIR=	${PORTNAME}/:bash,faq
 DISTFILES=		${DISTNAME}${EXTRACT_SUFX}:bash
 DIST_SUBDIR=		${PORTNAME}
 EXTRACT_ONLY=		${DISTNAME}${EXTRACT_SUFX}
+
+PATCH_SITES=		ftp://ftp.cwru.edu/pub/%SUBDIR%/:bash
+PATCH_SITE_SUBDIR=	${PORTNAME}/${PORTNAME}-${PORTVERSION}-patches/:bash
+.for patch in		01 02 03 04 05 06 07 08 09 10 11 12 13
+PATCHFILES+=		${PORTNAME}${PORTVERSION:S/.//g}-0${patch}:bash
+.endfor
 
 MAINTAINER=		eik@FreeBSD.org
 COMMENT=		The GNU Project's Bourne Again SHell
@@ -71,6 +77,9 @@ CONFIGURE_ENV=		CPPFLAGS="${CPPFLAGS}" \
 
 post-patch:
 	@${REINPLACE_CMD} -e "s| /bin| ${PREFIX}/bin|g" ${WRKSRC}/doc/bash.1
+
+pre-build:
+	@${ECHO_CMD} $$((${PORTREVISION}-1)) > ${WRKSRC}/.build
 
 pre-install:
 	@${SETENV} PKG_PREFIX="${PREFIX}" PKG_DESTDIR="${DESTDIR}" ${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL; \

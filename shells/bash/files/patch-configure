@@ -1,0 +1,23 @@
+#
+# Fix process substitution on FreeBSD systems without fdescfs
+#
+# http://lists.gnu.org/archive/html/bug-bash/2004-10/msg00089.html
+#
+--- configure.orig	Fri Oct  8 12:46:28 2004
++++ configure	Fri Oct  8 12:48:44 2004
+@@ -23803,7 +23803,14 @@
+   echo $ECHO_N "(cached) $ECHO_C" >&6
+ else
+   if test -d /dev/fd  && test -r /dev/fd/0 < /dev/null; then
+-   bash_cv_dev_fd=standard
++# check for systems like FreeBSD 5 that only provide /dev/fd/[012]
++   exec 3<&0
++   if test -r /dev/fd/3; then
++     bash_cv_dev_fd=standard
++   else
++     bash_cv_dev_fd=absent
++   fi
++   exec 3<&-
+  elif test -d /proc/self/fd && test -r /proc/self/fd/0 < /dev/null; then
+    bash_cv_dev_fd=whacky
+  else
