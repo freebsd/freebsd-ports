@@ -29,6 +29,7 @@ DISTFILES+=	sa-exim-${SA_EXIM_VERSION}.tar.gz:sa_exim
 .endif
 
 EXIM_VERSION=	4.50
+SA_EXIM_VERSION=4.2
 
 IGNOREFILES=	FAQ.txt.bz2
 
