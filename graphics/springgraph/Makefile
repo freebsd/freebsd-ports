@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	springgraph
-PORTVERSION=	0.79
+PORTVERSION=	0.87
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.chaosreigns.com/code/springgraph/dl/
 DISTNAME=	${PORTNAME}
@@ -15,8 +15,6 @@ EXTRACT_SUFX=	.pl
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Render graph described in a .dot file
-
-BROKEN=		Size mismatch
 
 RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/GD.pm:${PORTSDIR}/graphics/p5-GD
 
