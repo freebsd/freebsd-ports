@@ -38,6 +38,11 @@ MASTER_SITES_RA=	ftp://ftp.lexa.ru/pub/apache-rus/ \
 # New feature: conflicts
 CONFLICTS=	apache+ipv6-* \
 		apache+mod_ssl-* \
+		apache+mod_ssl+ipv6-* \
+		apache+mod_ssl+modsnmp-* \
+		apache+mod_ssl+mod_snmp+ipv6-* \
+		apache+mod_ssl+mod_accel-* \
+		apache+mod_ssl+mod_snmp+mod_accel-* \
 		apache-* \
 		apache_fp-* \
 		publicfile-* \
