@@ -296,6 +296,9 @@ share/locale/it/cups_it
 @exec mkdir -p /var/log/cups
 @unexec rmdir /var/log/cups 2>/dev/null || true
 @exec mkdir -p /var/spool/cups/tmp
+@exec chown -R daemon /var/spool/cups
+@exec chmod 700 /var/spool/cups
+@exec chmod 1700 /var/spool/cups/tmp
 @unexec rmdir /var/spool/cups/tmp 2>/dev/null || true
 @unexec rmdir /var/spool/cups 2>/dev/null || true
 @exec mkdir -p %D/etc/cups/certs

@@ -7,7 +7,7 @@
 
 PORTNAME=	cups-base
 PORTVERSION=	${VERSION}
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	print
 MASTER_SITES=	ftp://ftp.easysw.com/pub/cups/${VERSION}/ \
 		ftp://ftp2.easysw.com/pub/cups/${VERSION}/ \
