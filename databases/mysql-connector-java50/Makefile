@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mysql-connector-java
-PORTVERSION=	3.0.14
+PORTVERSION=	3.0.15
 CATEGORIES=	databases java
 MASTER_SITES=	ftp://planetmirror.com/pub/mysql/Downloads/Connector-J/ \
 		http://www.softagency.co.jp/MySQL/Downloads/Connector-J/ \
@@ -19,7 +19,7 @@ MASTER_SITES=	ftp://planetmirror.com/pub/mysql/Downloads/Connector-J/ \
 		ftp://ftp.u-paris10.fr/mysql.com/Downloads/Connector-J/ \
 		http://mysql.proserve.nl/Downloads/Connector-J/ \
 		ftp://ftp.free.fr/pub/MySQL/Downloads/Connector-J/
-DISTNAME=	${PORTNAME}-${PORTVERSION}-production
+DISTNAME=	${PORTNAME}-${PORTVERSION}-ga
 
 MAINTAINER=	m.seaman@infracaninophile.co.uk
 COMMENT=	MySQL Connector/J: JDBC interface for MySQL
