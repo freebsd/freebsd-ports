@@ -1,0 +1,21 @@
+Debug module to find where perl objects (or arrays, hashes and globs)
+are created by checking for objects passed to and/or returned from subs,
+and monitoring when they are destroyed via destructor subs.  This can
+help detect memory leaks caused by objects being left behind in your
+programs when they shouldn't be.
+
+The main output is stored in a file which logs the first time a memory
+reference is seen with datetime, current session number (starts at 1),
+object type, call stack etc., and whether the object was first seen
+returned from a sub or passed as an argument.  Details are also logged
+whenever an object is destroyed.  This includes the datetime, session
+and call stack when the object was created.
+
+The subroutine Devel::ObjectTracker::output_details outputs details on
+the currently existing objects on demand.  These details contain
+date/time, session, call stack, etc. when the object was created.
+
+WWW: http://search.cpan.org/search?dist=Devel-ObjectTracker
+
+-- Sergey Skvortsov
+skv@FreeBSD.org
