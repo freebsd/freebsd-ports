@@ -46,7 +46,9 @@ BINMODE=	2111
 
 post-patch:
 	@${MV} ${WRKSRC}/gkrellm.h ${WRKSRC}/gkrellm.h.orig
-	@${SED} -e "s^/usr/share/^${PREFIX}/share/^" \
+	@${SED} \
+	-e "s^/usr/share/gkrellm/themes^${PREFIX}/share/gkrellm/themes^" \
+	-e "s^/usr/share/gkrellm/plugins^${PREFIX}/libexec/gkrellm/plugins^" \
 		${WRKSRC}/gkrellm.h.orig > ${WRKSRC}/gkrellm.h
 
 do-install:
