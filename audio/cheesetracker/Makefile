@@ -15,7 +15,7 @@ MASTER_SITE_SUBDIR=	cheesetronic
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An Impulse Tracker clone
 
-BUILD_DEPENDS= ${LOCALBASE}/include/ladspa.h:${PORTSDIR}/audio/ladspa
+BUILD_DEPENDS=	${LOCALBASE}/include/ladspa.h:${PORTSDIR}/audio/ladspa
 LIB_DEPENDS=	sigc-1.2.5:${PORTSDIR}/devel/libsigc++12
 
 USE_QT_VER=	3
@@ -26,7 +26,7 @@ post-patch:
 
 do-configure:
 	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} qmake \
-		-spec ${X11BASE}/share/qt/mkspecs/freebsd-g++ cheesetracker.pro
+		-spec ${LOCALBASE}/share/qt/mkspecs/freebsd-g++ cheesetracker.pro
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/cheesetracker ${PREFIX}/bin
