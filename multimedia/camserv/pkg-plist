@@ -28,7 +28,7 @@ lib/camserv/libvideo_fbsd_bttv.a
 lib/camserv/libvideo_fbsd_bttv.la
 lib/camserv/libvideo_fbsd_bttv.so
 lib/camserv/libvideo_fbsd_bttv.so.0
-share/camserv/camserv.cfg
+share/camserv/camserv.cfg.dist
 share/camserv/defpage.html
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%%%DOCSDIR%%/javascript.txt

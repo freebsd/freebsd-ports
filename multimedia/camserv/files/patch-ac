@@ -1,0 +1,13 @@
+--- camserv/video_fbsd_bttv.c.orig	Fri Mar  5 19:22:31 2004
++++ camserv/video_fbsd_bttv.c	Fri Mar  5 19:41:16 2004
+@@ -644,8 +644,8 @@
+   if( !fbttv_dev->autobright || --fbttv_dev->autoleft > 0 )
+     return 0;
+ 
+-  totmean = calculate_pic_mean( width, height, picbuf, 1, 0, 0, 
+-				width, height );
++  totmean = camserv_get_pic_mean( width, height, picbuf, 1, 0, 0, 
++				width-1, height-1 );
+   if( totmean < (256 / 2) - 10 || totmean > (256 / 2) + 10 ) {
+     newbright = fbttv_dev->brightness;
+     if( totmean > (256 / 2) + 10 ){
