@@ -4,10 +4,10 @@
 # Date created:         Thur July 25, 1996
 # Whom:                 David O'Brien (obrien@cs.ucdavis.edu)
 #
-# $Id: Makefile,v 1.10 1996/12/05 09:52:00 obrien Exp $
+# $Id: Makefile,v 1.11 1996/12/08 06:33:38 obrien Exp $
 
 DISTNAME=	${PKGNAME}-export
-PKGNAME=	mutt-0.53
+PKGNAME=	mutt-0.54
 CATEGORIES=	mail
 MASTER_SITES=	ftp://cs.hmc.edu/pub/me/mutt/  \
 		ftp://ftp.ibp.fr/pub/unix/mail/mutt/  \
@@ -20,25 +20,20 @@ PATCH_SITES=	ftp://nuxi.cs.ucdavis.edu/pub/mutt/${PKGNAME:S/^mutt-//}/  \
 		http://www.math.fu-berlin.de/~leitner/mutt/${PKGNAME:S/^mutt-//}/  \
 		http://www.efrei.fr/~parmelan/mutt/${PKGNAME:S/^mutt-//}/  \
 		ftp://www.frmug.org/pub/mutt/mutt/${PKGNAME:S/^mutt-//}/
-PATCHFILES=	02.keys.PATCH  \
-		03.configure.PATCH  \
-		04.mbox-hook.PATCH  \
-		05.bind.PATCH  \
-		08.undisclosed.PATCH  \
-		09.attach.PATCH  \
-		10.noop.PATCH  \
-		11.external.PATCH  \
-		12.tagged.PATCH  \
-		13.random.PATCH  \
-		15.mallocline.PATCH  \
-		16.defaultcolor.PATCH  \
-		17.variables.PATCH  \
-		19.fdleak.PATCH
+PATCHFILES=	02.control.PATCH  \
+		03.fileio.PATCH  \
+		04.parse.PATCH  \
+		05.url.PATCH  \
+		06.init.PATCH  \
+		08.dirlist.PATCH  \
+		09.complete.PATCH  \
+		10.prefix.PATCH  \
+		11.batchmode.PATCH  \
+		12.folderrecog.PATCH  \
+		14.savename.PATCH  \
+		15.postponed.PATCH
 #		don't apply cleanly:
-#		06.setgid.PATCH  \
-#		07.configure.in.PATCH  \
-#		14.mallocline.PATCH  \
-#		18.buffy.PATCH  \
+#		13.pagercontext.PATCH  \
 
 MAINTAINER=     obrien@cs.ucdavis.edu
 
@@ -48,14 +43,6 @@ WRKSRC=		${WRKDIR}/${PKGNAME}
 PATCH_DIST_STRIP=	
 GNU_CONFIGURE=	yes
 MAN1=		mutt.1
-
-
-#	distpatches weren't made relative to ${WRKSRC}
-pre-patch:
-	@ln ${WRKSRC}/doc/manual.sgml ${WRKSRC}
-
-post-patch:
-	@${CP} ${WRKSRC}/manual.sgml ${WRKSRC}/doc
 
 
 post-install:
