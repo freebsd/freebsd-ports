@@ -76,4 +76,3 @@
        The priorities handled by setpriority() are
        [PRIO_MIN,PRIO_MAX].  A normal user process can only lower
        its priority (make it more positive).
-
