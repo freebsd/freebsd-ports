@@ -24,8 +24,6 @@ MULE_SLAVE=	yes
 
 MAINTAINER=	kiri@kiri.toba-cmt.ac.jp
 
-#BUILD_DEPENDS=	${LOCALBASE}/lib/xemacs/xemacs-packages/pkginfo/MANIFEST.xemacs-devel:${PORTSDIR}/editors/xemacs-packages \
-#		${LOCALBASE}/lib/xemacs/mule-packages/pkginfo/MANIFEST.skk:${PORTSDIR}/editors/xemacs-basic-mule-packages \
 BUILD_DEPENDS=	${BUILD_INPUT_METHOD}
 .if defined(MULE_SLAVE)
 RUN_DEPENDS=	${LOCALBASE}/lib/xemacs-${XEMACS_VER}/lisp/x-win-xfree86.elc:${PORTSDIR}/editors/xemacs${XEMACS_MAJOR_VER}-mule-common \
@@ -34,6 +32,7 @@ RUN_DEPENDS=	${LOCALBASE}/lib/xemacs-${XEMACS_VER}/lisp/x-win-xfree86.elc:${PORT
 RUN_DEPENDS=	${LOCALBASE}/lib/xemacs/mule-packages/pkginfo/MANIFEST.skk:${PORTSDIR}/editors/xemacs-basic-mule-packages
 .endif
 LIB_DEPENDS=	compface.1:${PORTSDIR}/mail/faces \
+		intl.1:${PORTSDIR}/devel/gettext \
 		${LIB_INPUT_METHOD}
 
 CONFIGURE_ARGS?=${XEMACS_ARCH} \
@@ -120,6 +119,7 @@ post-package:
 #.if (${PKGNAMESUFFIX} == "-mule")
 #	${RM} -f ${WRKPLIST}
 #	if [ -f ${PLIST} ]; then ${MV} ${PLIST} ${PLIST}.org; fi
+#	${MAKE} build
 #	${MAKE} DIRRM2RMDIRS="lib/xemacs/mule-packages/etc lib/xemacs/mule-packages lib/xemacs/mule-packages/etc/app-defaults" \
 #		DIRRMDEPTH=2 plist
 #	${RM} -f ${PLIST}.org
@@ -128,7 +128,8 @@ post-package:
 #	${RM} -f ${WRKPLIST}.tmp
 #	if [ -f ${PLIST} ]; then ${MV} ${PLIST} ${PLIST}.org; fi
 #	${TOUCH} ${PLIST}
-#	${MAKE} DIRRM2RMDIRS="lib/xemacs-${XEMACS_VER} etc/rc.d" \
+#	${MAKE} build
+#	${MAKE} DIRRM2RMDIRS="lib/xemacs-${XEMACS_VER}" PLIST_EXCLS="etc/rc.d" \
 #		DIRRMDEPTH=1 plist
 #.for dirp in site mule xemacs
 #.for dir in etc info man pkginfo
@@ -146,7 +147,7 @@ post-package:
 #	fi
 #	${RM} -f ${PLIST}.org
 #.endif
-#
+
 .if ${PKGNAMESUFFIX} != "-mule-common"
 pre-plist:
 	@${ECHO} "===> pre-plist of ${PKGNAME}"
