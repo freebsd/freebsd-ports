@@ -3,12 +3,12 @@
 # Date created:		14 July 1995
 # Whom:			jkh
 #
-# $Id$
+# $Id: Makefile,v 1.2 1995/07/16 18:43:21 jkh Exp $
 #
 
 DISTNAME=	fwf-3.8
 CATEGORIES+=	x11
-MASTER_SITES=	ftp://ftp.let.rug.nl/pub/FWF
+MASTER_SITES=	ftp://ftp.let.rug.nl/pub/FWF/
 
 MAINTAINER=	jkh@FreeBSD.ORG
 
