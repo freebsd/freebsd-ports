@@ -7,6 +7,7 @@ bin/gimptool
 etc/gimp/1.1/gimprc
 etc/gimp/1.1/gimprc_user
 etc/gimp/1.1/gtkrc
+etc/gimp/1.1/gtkrc_user
 etc/gimp/1.1/ps-menurc
 etc/gimp/1.1/unitrc
 include/gck/gck.h
@@ -297,6 +298,7 @@ share/gimp/brushes/callig3.gbr
 share/gimp/brushes/callig4.gbr
 share/gimp/brushes/confetti.gbr
 share/gimp/brushes/dunes.gbr
+share/gimp/brushes/hsparks.gih
 share/gimp/brushes/galaxy.gbr
 share/gimp/brushes/galaxy_big.gbr
 share/gimp/brushes/galaxy_small.gbr
@@ -477,6 +479,7 @@ share/gimp/gimpressionist/Brushes/shape01.pgm
 share/gimp/gimpressionist/Brushes/shape02.pgm
 share/gimp/gimpressionist/Brushes/shape03.pgm
 share/gimp/gimpressionist/Brushes/shape04.pgm
+share/gimp/gimpressionist/Brushes/snow1.pgm
 share/gimp/gimpressionist/Brushes/sphere.ppm
 share/gimp/gimpressionist/Brushes/splat1.pgm
 share/gimp/gimpressionist/Brushes/splat2.pgm
@@ -769,7 +772,6 @@ share/gimp/help/C/filters/gauss_iir.html
 share/gimp/help/C/filters/gauss_rle.html
 share/gimp/help/C/filters/gbr.html
 share/gimp/help/C/filters/gdyntext.html
-share/gimp/help/C/filters/gee.html
 share/gimp/help/C/filters/gfig.html
 share/gimp/help/C/filters/gflare.html
 share/gimp/help/C/filters/gfli.html
