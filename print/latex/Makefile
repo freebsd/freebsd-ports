@@ -1,12 +1,24 @@
+# New ports collection makefile for:    latex
+# Version required:     ?
+# Date created:         29 September 1994
+# Whom:                 jmz
+#
+# $Id$
+#
+
+DISTNAME=	latex
+CATEGORIES+=	printing
 DISTFILES=	latex_mf.tar.gz latex_tfm.tar.gz latex_base.tar.gz \
 		latex_tools.tar.gz
-DISTNAME=	latex
-EXEC_DEPENDS=	tex:${PORTSDIR}/print/tex
-FTPGET=		${FILESDIR}/ftpget
-WRKDIR=		${.CURDIR}/work
-CATEGORIES+=	printing
-BUILD_COOKIE=	${WRKDIR}/.build_done
+
 MAINTAINER=	jmz@FreeBSD.org
+
+EXEC_DEPENDS=	tex:${PORTSDIR}/print/tex
+
+WRKDIR=		${.CURDIR}/work
+
+FTPGET=		${FILESDIR}/ftpget
+BUILD_COOKIE=	${WRKDIR}/.build_done
 
 #other equivalent sites: ftp.shsu.edu ftp.dante.de
 CTAN=		ftp.tex.ac.uk

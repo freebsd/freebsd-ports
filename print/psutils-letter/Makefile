@@ -1,8 +1,18 @@
+# New ports collection makefile for:    psutils
+# Version required:     1.13
+# Date created:         21 September 1994
+# Whom:                 jmz
+#
+# $Id$
+#
+
 DISTNAME=	psutils-1.13
-WRKSRC=		$(WRKDIR)/src-1.3
-MASTER_SITES=	ftp://ftp.sunet.se/pub/text-processing/postscript/utilities/psutils/
 CATEGORIES+=	printing
+MASTER_SITES=	ftp://ftp.sunet.se/pub/text-processing/postscript/utilities/psutils/
+
 MAINTAINER=	jmz@FreeBSD.org
+
+WRKSRC=		$(WRKDIR)/src-1.3
 
 pre-install:
 	@mkdir -p ${PREFIX}/share/psutils

@@ -1,9 +1,19 @@
-DISTFILES=	texinfo.tex lcircle10.tfm
+# New ports collection makefile for:    texinfo
+# Version required:     2.124
+# Date created:         2 October 1994
+# Whom:                 jmz
+#
+# $Id$
+#
+
 DISTNAME=	texinfo
+PKGNAME=	texinfo-2.124
+DISTFILES=	texinfo.tex lcircle10.tfm
+CATEGORIES+=	printing
 #other equivalent sites: ftp.shsu.edu ftp.dante.de
 MASTER_SITES=	ftp://ftp.tex.ac.uk/tex-archive/macros/eplain/doc/ \
 		ftp://ftp.tex.ac.uk/tex-archive/fonts/latex/tfm/
-CATEGORIES+=	printing
+
 EXTRACT_ONLY=
 NO_WRKSUBDIR=	yes
 

@@ -1,10 +1,21 @@
-DISTFILES=	xdvi.tar.Z
+# New ports collection makefile for:    xdvi
+# Version required:     patchlevel 18
+# Date created:         1 October 1994
+# Whom:                 jmz
+#
+# $Id$
+#
+
 DISTNAME=	xdvi
-MASTER_SITES=	ftp://ftp.x.org/contrib/applications/
+PKGNAME=	xdvi-pl18
 CATEGORIES+=	printing
+MASTER_SITES=	ftp://ftp.x.org/contrib/applications/
+DISTFILES=	xdvi.tar.Z
+
+MAINTAINER=	jmz@FreeBSD.org
+
 USE_IMAKE=	yes
 IS_INTERACTIVE=	yes
-MAINTAINER=	jmz@FreeBSD.org
 
 .if !defined(BATCH)
 install:
