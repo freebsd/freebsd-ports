@@ -1,5 +1,5 @@
---- ../make/Makefile.orig	Tue Nov 13 10:16:27 2001
-+++ ../make/Makefile	Mon Dec 31 15:33:40 2001
+--- ../make/Makefile.orig	Wed Nov 14 01:16:27 2001
++++ ../make/Makefile	Sat Jul 19 12:22:51 2003
 @@ -9,8 +9,8 @@
  ##
  ##   1. make all              Build all the TINKER executables

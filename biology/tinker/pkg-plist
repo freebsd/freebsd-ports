@@ -13,8 +13,6 @@ bin/intedit
 bin/intxyz
 bin/minimize
 bin/minirot
-bin/minrigid
-bin/monte
 bin/newton
 bin/newtrot
 bin/nucleic
@@ -43,6 +41,8 @@ bin/testrot
 bin/timer
 bin/timerot
 bin/vibrate
+bin/vibrot
+bin/xtalfit
 bin/vibrot
 bin/xtalfit
 bin/xtalmin

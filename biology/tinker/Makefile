@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	tinker
-PORTVERSION=	3.9
-PORTREVISION=	1
+PORTVERSION=	4.0
 CATEGORIES=	biology
 MASTER_SITES=	ftp://dasher.wustl.edu/pub/
 DISTNAME=	${PORTNAME}
@@ -24,11 +23,6 @@ ALL_TARGET=	all listing
 INSTALL_TARGET=	rename
 
 RESTRICTED=	author requests no distribution except from his FTP site
-
-pre-fetch:
-	@${ECHO_MSG} ""
-	@${ECHO_MSG} If you get a CHECKSUM mismatch, try doing a \'make distclean\' first.
-	@${ECHO_MSG} ""
 
 .include <bsd.port.pre.mk>
 
