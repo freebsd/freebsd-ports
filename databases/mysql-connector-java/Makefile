@@ -6,18 +6,21 @@
 #
 
 PORTNAME=	mysql-connector-java
-PORTVERSION=	3.0.16
+PORTVERSION=	3.1.6
 CATEGORIES=	databases java
 MASTER_SITES=	${MASTER_SITE_MYSQL}
 MASTER_SITE_SUBDIR=	Connector-J
-DISTNAME=	${PORTNAME}-${PORTVERSION}-ga
 
 MAINTAINER=	m.seaman@infracaninophile.co.uk
 COMMENT=	MySQL Connector/J: JDBC interface for MySQL
 
+RUN_DEPENDS=	${LOCALBASE}/share/java/classes/log4j.jar:${PORTSDIR}/devel/log4j
+
 .if !defined(WITHOUT_COMPILE)
 
-BUILD_DEPENDS=	${LOCALBASE}/share/java/classes/junit.jar:${PORTSDIR}/java/junit
+BUILD_DEPENDS=	${LOCALBASE}/share/java/classes/junit.jar:${PORTSDIR}/java/junit \
+		${LOCALBASE}/share/java/classes/log4j.jar:${PORTSDIR}/devel/log4j
+
 USE_JAVA=	yes
 USE_ANT=	yes
 JAVA_VERSION=	1.4+
