@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	edict-utf-8
-PORTVERSION=	20050214
+PORTVERSION=	20050310
 CATEGORIES=	japanese
 MASTER_SITES=	ftp://ftp.cc.monash.edu.au/pub/nihongo/ \
 		http://japanology.arts.kuleuven.ac.be/mirrors/monash/ \
