@@ -1,36 +1,46 @@
-# New ports collection makefile for:   mico
-# Version required:    2.0.6
-# Date created:        31 March 1998
-# Whom:                Yukihiro Nakai <Nakai@technologist.com>
+# New ports collection makefile for:   mico-latest
+# Version required:    2.1.0
+# Date created:        11 July 1998
+# Whom:                Marc G. Fournier <scrappy@freebsd.org>
 #
-# $Id: Makefile,v 1.3 1998/08/12 06:29:26 asami Exp $
+# $Id: Makefile,v 1.3 1998/07/12 19:28:33 scrappy Exp $
 #
 
-DISTNAME=	mico-2.0.6
+DISTNAME=	mico-2.1.0
 CATEGORIES=	devel
 MASTER_SITES=	http://diamant-atm.vsb.cs.uni-frankfurt.de/~mico/
 
-MAINTAINER=	Nakai@technologist.com
+MAINTAINER=	scrappy@freebsd.org
 
-LIB_DEPENDS=	gtk\\.1\\.:${PORTSDIR}/x11-toolkits/gtk
+LIB_DEPENDS=	gtk\\.1\\.4:${PORTSDIR}/x11/gtk \
+		qt\\.1\\.33:${PORTSDIR}/x11/qt133
 
-BROKEN=		gtk and tcl path
+BUILD_DEPENDS=	moc:${PORTSDIR}/x11/qt \
+		g++28:${PORTSDIR}/lang/gcc28 \
+		${PREFIX}/${GCC28DIR}/libstdc++.a:${PORTSDIR}/lang/glibstdc++28
 
-WRKSRC=		${WRKDIR}/mico
+CXX=		g++28
+CC=		gcc28
 
-CONFIGURE_ARGS=	--with-qt=${X11BASE}/include/X11/qt \
-		--with-gtk=${X11BASE}/include/gtk --with-tcl=/usr/include \
-		--disable-optimize
-
-USE_QT=		yes
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 
-MAN1=		idl.1 imr.1 nsadmin.1
+WRKSRC=		${WRKDIR}/mico
+
+CONFIGURE_ARGS=	--with-qt --with-gtk --with-tcl=/usr/include \
+		--disable-optimize --disable-mini-stl --disable-shared
+
+MAN1=		idl.1 imr.1 nsadmn.1
 MAN5=		micorc.5
 MAN8=		ird.8 micod.8 nsd.8
+
+pre-patch:
+	cd ${WRKSRC}/idl; flex -B -+ -8 -oscanner.cc scanner.l
 
 post-install:
 	${LDCONFIG} -m ${PREFIX}/lib
 
 .include <bsd.port.mk>
+
+GNUOSREL!=      uname -r | ${SED} -e 's/[-(].*//'
+GCC28DIR=       lib/gcc-lib/i386-unknown-freebsd${GNUOSREL}/2.8.1
