@@ -10,4 +10,5 @@ PORTNAME=	gdb
 MAINTAINER=	jim@thehousleys.net
 
 LCLTARGET=	sparc-rtems
+CONFIGURE_ARGS+=	--verbose --enable-sim
 .include "${.CURDIR}/../i386-rtems-gdb/Makefile"
