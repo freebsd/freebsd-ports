@@ -1,3 +1,4 @@
+======================================================================
 
 CUPS BSD and system V print compatibility system is installed.
 
@@ -16,3 +17,4 @@ The relevant files for the FreeBSD printing system are:
 /usr/bin/lp* /usr/sbin/lpc /usr/sbin/lpd /usr/share/man/cat*/lp*
 /usr/share/man/man1/lp.* /usr/share/man/man1/lp[a-s,u-z]*
 
+======================================================================

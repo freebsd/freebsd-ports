@@ -1,5 +1,5 @@
-CUPS provides a printing layer for UNIX based operating systems. This port
-provides binaries to make cups compatible (and indeed look just like) a standard
-BSD or system V printing system. WARNING: The compatibility binaries will
-conflict with the names of the native binaries.
-
+CUPS provides a printing layer for UNIX based operating systems. This
+port provides binaries to make cups compatible (and indeed look just
+like) a standard BSD or system V printing system. WARNING: The
+compatibility binaries will conflict with the names of the native
+binaries.
