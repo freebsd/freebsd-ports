@@ -5,15 +5,17 @@
 # $FreeBSD$
 #
 
-PORTNAME=	dodbeta
-PORTVERSION=	1.1
-MASTER_SITES=	ftp://ftp.gigabell.net/pub/exp/hl/mod/dod/ \
-		ftp://ftp.task.gda.pl/vol/d33/ftp.extreme-players.de/exp/hl/mod/dod/ \
-		http://www.thekillinggrounds.com/downloads/
-DISTNAME=	dod_linux_beta11_full
-EXTRACT_SUFX=	.tar
+PORTNAME=	dod
+PORTVERSION=	1.3
+MASTER_SITES=	http://www.vigilantegamers.com/dod/files/official/ \
+		http://ftp2.extreme-players.de/exp/hl/mod/dod/ \
+		ftp://ftp.task.gda.pl/mirror/ftp.extreme-players.de/exp/hl/mod/dod/ \
+		ftp://ftp.gigabell.net/pub/exp/hl/mod/dod/ \
+		http://194.195.228.180/exp/hl/mod/dod/ \
+		ftp://mos.eisa.net.au/pub/half-life/dod/linux/
+DISTNAME=	${PORTNAME}_v${PORTVERSION:S/.//}
 
-WRKSRC=		${WRKDIR}/dod
+WRKSRC=		${WRKDIR}/${PORTNAME}
 
 HALFLIFE_COUNTERSTRIKE_MASTER=	${.CURDIR}/../hlserver-cs
 
