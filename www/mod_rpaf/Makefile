@@ -19,6 +19,7 @@ USE_APACHE=	yes
 PLIST_SUB+=	APACHE=apache2
 AP_EXT=		la
 SRC_FILE=	mod_rpaf-2.0.c
+PKGNAMESUFFIX=	-ap2
 .else
 PLIST_SUB+=	APACHE=apache
 AP_EXT=		so
