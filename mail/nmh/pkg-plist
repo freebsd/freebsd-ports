@@ -11,10 +11,14 @@ bin/forw
 bin/inc
 bin/mark
 bin/mhbuild
+bin/mhlist
 bin/mhmail
 bin/mhn
 bin/mhparam
 bin/mhpath
+bin/mhshow
+bin/mhstore
+bin/mhtest
 bin/msgchk
 bin/msh
 bin/next
