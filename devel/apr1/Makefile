@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	apr
-PORTVERSION=	20020504162319
+PORTVERSION=	20020707163141
 CATEGORIES=	devel
 MASTER_SITES=	http://www.apache.org/dist/apr/not-released/
-DISTFILES=	apr_${PORTVERSION}.tar.gz apr-util_20020504162329.tar.gz
+DISTFILES=	apr_${PORTVERSION}.tar.gz apr-util_20020707163148.tar.gz
 
 MAINTAINER=	rooneg@electricjellyfish.net
 
@@ -22,25 +22,22 @@ GNU_CONFIGURE=	yes
 WRKSRC=	${WRKDIR}
 
 pre-fetch:
-	${SH} pkg-install apr PRE-INSTALL
+	@${SH} pkg-install apr PRE-INSTALL
 
 pre-configure:
-	(find ${WRKDIR}/apr-util/ -name Makefile.in -exec \
-	 ${PERL} -pi -e 's/\@APRUTIL_INCLUDES\@ \@APRUTIL_PRIV_INCLUDES\@/\@APRUTIL_PRIV_INCLUDES\@ \@APRUTIL_INCLUDES\@/g' \{\} \;)
-
-	(cd ${WRKDIR}/apr/ && ./buildconf)
-	(cd ${WRKDIR}/apr-util/ && ./buildconf)
+	@(cd ${WRKDIR}/apr/ && ./buildconf)
+	@(cd ${WRKDIR}/apr-util/ && ./buildconf)
 
 do-configure:
-	(cd ${WRKDIR}/apr/ && ./configure --prefix=${PREFIX})
-	(cd ${WRKDIR}/apr-util/ && ./configure --prefix=${PREFIX} --with-apr=../apr/ --with-expat=${PREFIX})
+	@(cd ${WRKDIR}/apr/ && ./configure --prefix=${PREFIX})
+	@(cd ${WRKDIR}/apr-util/ && ./configure --prefix=${PREFIX} --with-apr=../apr/ --with-expat=${PREFIX})
 
 do-build:
-	(cd ${WRKDIR}/apr/ && make)
-	(cd ${WRKDIR}/apr-util/ && make)
+	@(cd ${WRKDIR}/apr/ && make)
+	@(cd ${WRKDIR}/apr-util/ && make)
 
 do-install:
-	(cd ${WRKDIR}/apr/ && make install)
+	@(cd ${WRKDIR}/apr/ && make install)
 	(cd ${WRKDIR}/apr-util/ && make install)
 
 .include <bsd.port.mk>
