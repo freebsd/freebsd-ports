@@ -34,14 +34,16 @@ OPTIONS=	DEBUG "Enable Debugging" Off \
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH}=="i386" || ${ARCH}=="amd64"
+.if ${ARCH}=="i386"
 CFLAGS+=-DARCH_X86
+.endif
+
 .if ${MACHINE_CPU:Mmmx}
 CFLAGS+=-DHAVE_MMXEXT
 .endif
+
 .if ${MACHINE_CPU:Msse}
 CFLAGS+=-DHAVE_SSE2
-.endif
 .endif
 
 .if defined(WITH_DEBUG)
