@@ -7,7 +7,7 @@
 
 PORTNAME=	linuxthreads
 PORTVERSION=	2.2.3
-PORTREVISION=	9
+PORTREVISION=	10
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	glibc
@@ -30,6 +30,9 @@ MAKE_ENV+= USING_GCC3=true
 .if defined(INSTALL_LIBLTHREAD_PIC_ARCHIVE)
 MAKE_ENV+=	INSTALL_LIBLTHREAD_PIC_ARCHIVE=yes
 .endif
+.if defined(LINUXTHREADS_DETECT_UNSAFE_EXIT)
+MAKE_ENV+=	LINUXTHREADS_DETECT_UNSAFE_EXIT=yes
+.endif
 
 threads_files := README.FreeBSD clone.S clone.h freebsd-compat.h getgr_r.c \
 	gethostby_r.c getnetby_r.c getprotoby_r.c getpw_r.c getservby_r.c \
@@ -46,6 +49,13 @@ pre-fetch:
 	@${ECHO} You can use an experimental patch to reduce the number of
 	@${ECHO} condition variable triggered context switches by defining
 	@${ECHO} WITH_CONDWAIT_PATCH
+	@${ECHO}
+.endif
+.if !defined(LINUXTHREADS_DETECT_UNSAFE_EXIT)
+	@${ECHO}
+	@${ECHO} "Some unsafe calls to exit() can be detected by defining"
+	@${ECHO} "LINUXTHREADS_DETECT_UNSAFE_EXIT, see files/README.FreeBSD"
+	@${ECHO} "for more info."
 	@${ECHO}
 .endif
 	@if ${TEST} -f /usr/src/gnu/lib/libgcc/Makefile; then \
