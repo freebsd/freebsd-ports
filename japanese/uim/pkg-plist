@@ -38,7 +38,9 @@ share/uim/japanese.scm
 share/uim/key.scm
 share/uim/latin.scm
 share/uim/loader.scm
+share/uim/m17nlib.scm
 share/uim/prime.scm
+share/uim/pyload.scm
 share/uim/pyunihan.scm
 share/uim/rk.scm
 share/uim/romaja.scm
