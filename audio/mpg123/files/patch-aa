@@ -1,5 +1,5 @@
---- Makefile	2001/04/10 11:50:14	1.1
-+++ Makefile	2001/04/10 11:51:38
+--- Makefile.orig	Wed Oct 22 17:52:17 2003
++++ Makefile	Wed Oct 22 19:21:17 2003
 @@ -4,13 +4,15 @@
  
  # Where to install binary and manpage on "make install":
@@ -55,7 +55,7 @@
 +	${INSTALL} ./precompiled/linux-i386/decode_3dnow.o .
 +.endif
 +.endif
-+.elif ${MACHINE_ARCH} == "alpha"
++.else 
 +ARCHOPT= -funroll-loops
 +ARCHFILES= decode.o dct64.o
 +.endif
