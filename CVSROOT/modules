@@ -9055,6 +9055,7 @@ xmms-sid	ports/audio/xmms-sid
 xmms-sndfile	ports/audio/xmms-sndfile
 xmms-sndstretch	ports/audio/xmms-sndstretch
 xmms-speex	ports/audio/xmms-speex
+xmms-status-plugin	ports/multimedia/xmms-status-plugin
 xmms-tfmx	ports/audio/xmms-tfmx
 xmms-uade	ports/audio/xmms-uade
 xmms-volnorm	ports/audio/xmms-volnorm
