@@ -1,0 +1,7 @@
+#!/bin/sh
+if [ $# != 1 ]; then
+  echo "usage: $0 branch"
+  exit 1
+fi
+echo /etc/portbuild/scripts/cppackages $1 | at + 1 minute
+atq
