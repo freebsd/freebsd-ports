@@ -6,13 +6,13 @@
 #
 
 PORTNAME=	Astro-MoonPhase
-PORTVERSION=	0.11
+PORTVERSION=	0.52
 CATEGORIES=	astro perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Astro
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl interface to calculate information about the phase of the moon
 
 PERL_CONFIGURE=	yes
