@@ -6,18 +6,20 @@
 #
 
 PORTNAME=	Module-Build
-PORTVERSION=	0.25
+PORTVERSION=	0.25.01
 CATEGORIES=	devel perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
-MASTER_SITE_SUBDIR=	Module
+MASTER_SITE_SUBDIR=	Module/KWILLIAMS
 PKGNAMEPREFIX=	p5-
+DISTNAME=	${PORTNAME}-${PORTVERSION:C/\.(..)$/_\1/}
 
 MAINTAINER=	mat@FreeBSD.org
 COMMENT=	Build and install Perl modules
 
 BUILD_DEPENDS=	${SITE_PERL}/Archive/Tar.pm:${PORTSDIR}/archivers/p5-Archive-Tar \
 		${SITE_PERL}/YAML.pm:${PORTSDIR}/textproc/p5-YAML \
-		${SITE_PERL}/Pod/Man.pm:${PORTSDIR}/textproc/p5-podlators
+		${SITE_PERL}/Pod/Man.pm:${PORTSDIR}/textproc/p5-podlators \
+		${SITE_PERL}/ExtUtils/CBuilder.pm:${PORTSDIR}/devel/p5-ExtUtils-CBuilder
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 PERL_MODBUILD=	yes

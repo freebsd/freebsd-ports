@@ -1,5 +1,6 @@
 %%SITE_PERL%%/Module/Build.pm
 %%SITE_PERL%%/Module/Build/Base.pm
+%%SITE_PERL%%/Module/Build/BuildConfig.pm
 %%SITE_PERL%%/Module/Build/Compat.pm
 %%SITE_PERL%%/Module/Build/Cookbook.pm
 %%SITE_PERL%%/Module/Build/PPMMaker.pm
