@@ -3,7 +3,7 @@
 # Date created:		30 Jul 1995
 # Whom:			torstenb@FreeBSD.ORG
 #
-# $Id: Makefile,v 1.42 1997/07/01 02:39:26 adam Exp $
+# $Id: Makefile,v 1.43 1997/07/18 05:04:17 asami Exp $
 #
 # Maximal ssh package requires YES values for
 # USE_PERL, USE_TCPWRAP
@@ -67,7 +67,7 @@ MAN8=		sshd.8
 
 
 pre-patch:
-	@mv -f ${WRKSRC}/make-ssh-known-hosts.pl \
+	@${MV} -f ${WRKSRC}/make-ssh-known-hosts.pl \
 	    ${WRKSRC}/make-ssh-known-hosts.pl.in
 
 fetch-depends:
