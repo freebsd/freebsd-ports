@@ -1,12 +1,13 @@
---- Makefile.orig	Sat Jan  3 19:43:20 1998
-+++ Makefile	Wed Jan 21 09:36:57 1998
-@@ -45,13 +45,13 @@
+--- Makefile.orig	Mon Jul 13 11:44:32 1998
++++ Makefile	Wed Jul 22 16:12:08 1998
+@@ -44,14 +44,14 @@
  ### you need to localize the paths on these lines
  
  #WISH = /usr/sww/tcl-8.0/bin/wish
 -WISH = /private/share/bin/wish
--#WISH = /usr/local/bin/wish8.0
 +#WISH = /private/share/bin/wish
+ #WISH = /private/share/bin/wish8.1
+-#WISH = /usr/local/bin/wish8.0
 +WISH = ${PREFIX}/bin/wish8.0
  
  # the executable `tkman' is placed in BINDIR
@@ -18,24 +19,31 @@
  
  
  # OPTIONAL
-@@ -61,14 +61,14 @@
+@@ -61,19 +61,20 @@
  # This directory should not have any Texinfo source itself.
  # More information is given in tkman-help.html
  # if you don't have Texinfo files, leave this variable empty
 -texinfodir = ""
-+texinfodir = ${PREFIX}/info
++#texinfodir = ""
  #texinfodir = /home/orodruin/h/bair/phelps/spine/tkman/info
- #texinfodir = /usr/local/info
- # In order to search within Texinfo files you need the GNU gzgrep,
- # which can search within compressed files.  This should drive a version
- # of GNU grep (or gzgrep, if you'll be searching in compressed files)
- # such as 2.1, for which the -b (report byte offset) switch works.
+-#texinfodir = /usr/local/info
++texinfodir = ${PREFIX}/info
+ # In order to search within Texinfo files you need a grep, such as GNU grep 2.1,
+ # that can report byte offsets (with the -b switch).  This needs to be
+ # gzgrep if you'll be searching in compressed Texinfo source.
 -gzgrep = ""
-+gzgrep = /usr/bin/zgrep
- #gzgrep = gzgrep
- #gzgrep = "gzgrep -w"
++#gzgrep = ""
+ #gzgrep = "gzgrep -E"
+ #gzgrep = "gzgrep -Ew"
+ # Linux calls it zgrep
+ #gzgrep = "zgrep -E"
+ # if you don't compress your Texinfo source, this is fine
+ #gzgrep = grep
++gzgrep = "/usr/bin/zgrep -E"
  
-@@ -94,10 +94,12 @@
+ # OPTIONAL
+ # directory root of hierarchy of RFC files, with "rfc-index.txt" at the root
+@@ -97,10 +98,12 @@
  # will examine for matches if a search in the usual locations fails while searching
  # for a man pages and displaying its associated binaries (if any).
  # Use this feature carefully as a large number of directories can slow down startup.
@@ -50,31 +58,35 @@
  
  
  # names of common printers, in addition to default printer (PRINTER or LPDEST)
-@@ -127,11 +129,11 @@
- # lines are cached in .../man/cat<n>@<line-length>; 
+@@ -130,7 +133,7 @@
+ # Lines are cached in .../man/cat<n>@<line-length>; 
  #   that is, the line length is appended to the usual cache directory names
  #manformat = {groff -te -Tascii -man /tmp/ll - 2>/dev/null}
 -manformat = {groff -te -Tlatin1 -man /tmp/ll - 2>/dev/null}
 +#manformat = {groff -te -Tlatin1 -man /tmp/ll - 2>/dev/null}
  # Ultrix users should uncomment the following line (you don't have eqn)
  #manformat = {tbl | nroff -man }
- # BSD macros (.Sh, .Ss, .PP, ...) call for -mandoc
+ # HP-UX uses a number of macros that groff doesn't define, so use the builtin nroff
+@@ -138,7 +141,7 @@
+ #  space between the .de and the macro name, and groff doesn't like this.)
+ #manformat = {tbl | neqn | nroff -man }
+ # BSD macros (.Sh, .Ss, .PP, ...) need -mandoc
 -#manformat = {groff -Tascii -te -mandoc}
 +manformat = {groff -Tascii -te -mandoc}
  # BSDI
  #manformat = {tbl | eqn -Tascii | nroff -man }
  
-@@ -165,7 +167,7 @@
+@@ -174,7 +177,7 @@
  
  
  # pick a printing pipeline for which your platform has all the constituants
 -manprint = {groff -man -Tps -te -l}
 +manprint = {groff -mandoc -Tps -te -l}
  # alternatives
+ #manprint = {groff -man -Tps -te -l | psnup -n2}
  #manprint = {tbl | eqn | troff -man -t | lpr -t}
- #manprint = {tbl | eqn | psroff -man}
-@@ -201,7 +203,7 @@
- # Check contrib/glimpse4-fix.txt for a bug fix patch for glimpseindex.
+@@ -213,7 +216,7 @@
+ # the right-topmost menu's Rebuild Database/Glimpse Index menu choice.
  
  # BY DEFAULT ON (Boolean scope set to entire file)
 -glimpse = "glimpse -W"
@@ -82,7 +94,7 @@
  # IF YOU DON'T WANT TO BOTHER WITH GLIMPSE, you can disable it here
  #glimpse = ""
  # give the full path, if you'd like
-@@ -209,6 +211,7 @@
+@@ -221,6 +224,7 @@
  # variations (refer to the Glimpse manual page)
  # no characters treated as meta characters:
  #glimpse = "glimpse -Wk"
@@ -90,16 +102,7 @@
  
  # glimpseindex indexes the manual pages, for each component of one's MANPATH,
  # and places the results in a set of files named .glimpse_* in that MANPATH
-@@ -250,7 +253,7 @@
- # default MANPATH to use if user doesn't have a MANPATH environment variable set.
- # Leave this empty to have TkMan calculate a MANPATH based on a users PATH
- # (like Perl man does).
--manpathdef = ""
-+manpathdef = /usr/share/man:${PREFIX}/man:/usr/X11R6/man
- #manpathdef = /usr/man:/usr/local/man
- #manpathdef = /usr/man:/usr/local/man:/usr/sww/man:/usr/sww/X11/man
- # for SGI
-@@ -453,8 +456,8 @@
+@@ -468,8 +472,8 @@
  	chmod +rx $(BINDIR)/tkman
  	$(CP) retkman $(BINDIR)
  	chmod +rx $(BINDIR)/retkman
