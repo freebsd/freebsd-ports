@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	lesstif
-PORTVERSION= 	0.91.4
+PORTVERSION= 	0.91.8
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	ftp://ftp.lesstif.org/pub/hungry/lesstif/srcdist/  \
 		ftp://ftp.hungry.com/pub/hungry/lesstif/srcdist/ \
@@ -21,7 +21,8 @@ MANUAL_PACKAGE_BUILD=	do not want to install during interactive build
 USE_AUTOCONF=	yes
 USE_X_PREFIX=	yes
 INSTALLS_SHLIB=	yes
-GNU_CONFIGURE=  yes
+USE_LIBTOOL=	yes
+LIBTOOLFILES=	aclocal.m4 lib/Xbae/aclocal.m4 lib/Xlt/aclocal.m4 test/aclocal.m4
 CONFIGURE_ARGS+=--enable-static --enable-shared --disable-build-Xlt \
 		--enable-production --disable-debug --disable-build-Xbae
 
@@ -72,29 +73,27 @@ post-install:
 	${RM} -f ${PREFIX}/LessTif/INSTALL
 	${RM} -rf ${PREFIX}/LessTif/doc
 	${RM} -f ${PREFIX}/lib/libXm.so.2
+	${RM} -f ${PREFIX}/lib/libXm.la
 	${RM} -f ${PREFIX}/lib/libMrm.so.2
+	${RM} -f ${PREFIX}/lib/libMrm.la
 .if defined(MOTIF2)
 	${LN} -sf ${PREFIX}/LessTif/Motif2.0/include/Xm ${PREFIX}/include
 	${LN} -sf ${PREFIX}/LessTif/Motif2.0/include/Mrm ${PREFIX}/include
 	${LN} -sf ${PREFIX}/LessTif/Motif2.0/lib/libXm.so.1 ${PREFIX}/lib/libXm.so.1
 	${LN} -sf ${PREFIX}/lib/libXm.so.1 ${PREFIX}/lib/libXm.so
 	${LN} -sf ${PREFIX}/LessTif/Motif2.0/lib/libXm.a ${PREFIX}/lib/libXm.a
-	${LN} -sf ${PREFIX}/LessTif/Motif2.0/lib/libXm.la ${PREFIX}/lib/libXm.la
 	${LN} -sf ${PREFIX}/LessTif/Motif2.0/lib/libMrm.so.1 ${PREFIX}/lib/libMrm.so.1
 	${LN} -sf ${PREFIX}/lib/libMrm.so.1 ${PREFIX}/lib/libMrm.so
 	${LN} -sf ${PREFIX}/LessTif/Motif2.0/lib/libMrm.a ${PREFIX}/lib/libMrm.a
-	${LN} -sf ${PREFIX}/LessTif/Motif2.0/lib/libMrm.la ${PREFIX}/lib/libMrm.la
 .else
 	${LN} -sf ${PREFIX}/LessTif/Motif1.2/include/Xm ${PREFIX}/include
 	${LN} -sf ${PREFIX}/LessTif/Motif1.2/include/Mrm ${PREFIX}/include
 	${LN} -sf ${PREFIX}/LessTif/Motif1.2/lib/libXm.so.1 ${PREFIX}/lib/libXm.so.1
 	${LN} -sf ${PREFIX}/lib/libXm.so.1 ${PREFIX}/lib/libXm.so
 	${LN} -sf ${PREFIX}/LessTif/Motif1.2/lib/libXm.a ${PREFIX}/lib/libXm.a
-	${LN} -sf ${PREFIX}/LessTif/Motif1.2/lib/libXm.la ${PREFIX}/lib/libXm.la
 	${LN} -sf ${PREFIX}/LessTif/Motif1.2/lib/libMrm.so.1 ${PREFIX}/lib/libMrm.so.1
 	${LN} -sf ${PREFIX}/lib/libMrm.so.1 ${PREFIX}/lib/libMrm.so
 	${LN} -sf ${PREFIX}/LessTif/Motif1.2/lib/libMrm.a ${PREFIX}/lib/libMrm.a
-	${LN} -sf ${PREFIX}/LessTif/Motif1.2/lib/libMrm.la ${PREFIX}/lib/libMrm.la
 .endif
 	@${CAT} ${PKGMESSAGE}
 
