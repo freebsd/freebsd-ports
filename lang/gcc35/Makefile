@@ -4,7 +4,7 @@
 # Date created:				9 Jan 1998
 # Whom:					John Polstra <jdp@polstra.com>
 #
-# $Id: Makefile,v 1.64 1999/06/21 18:17:51 obrien Exp $
+# $Id: Makefile,v 1.65 1999/06/24 19:11:49 obrien Exp $
 #
 
 SNAPDATE=	1999-06-23
@@ -65,16 +65,16 @@ pre-patch:
 	${CP} ${FILESDIR}/alpha-freebsd.h ${WRKSRC}/gcc/config/alpha/freebsd.h
 
 pre-configure:
-	@# Keep from running `autoconf' and `autoheader' since we modified
-	@# configure.in by patching it.
-	@touch ${WRKSRC}/gcc/configure
-	@touch ${WRKSRC}/gcc/cstamp-h.in
 	@(MAJ=`sysctl -n kern.osreldate | ${SED} -e '/.....$$/s///'` ; \
 	${SED} -e "s:__FreeBSD__:__FreeBSD__=$${MAJ}:" ${FILESDIR}/freebsd.h \
 		>${WRKSRC}/gcc/config/freebsd.h )
 .if ${PORTOBJFORMAT} == "elf" && ${MACHINE_ARCH} == "i386"
 	@${SED} -e 's/^@comment ELF-only://' ${PKGDIR}/PLIST >${PLIST}
 .endif
+	@# Keep from running `autoconf' and `autoheader' since we modified
+	@# configure.in by patching it.
+	@touch ${WRKSRC}/gcc/configure
+	@touch ${WRKSRC}/gcc/cstamp-h.in
 
 pre-install:
 	${MKDIR} ${PREFIX}/info
