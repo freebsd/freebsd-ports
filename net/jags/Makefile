@@ -16,6 +16,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	pat@FreeBSD.org
 COMMENT=	JAGS - Just Another GTK+ Samba Client
 
+NO_LATEST_LINK=	yes
 USE_GMAKE=	yes
 USE_XPM=	yes
 USE_GNOME=	gtk12
