@@ -6,15 +6,17 @@
 #
 
 PORTNAME=		bugs
-PORTVERSION=		4.0.1
+PORTVERSION=		4.1.0
 CATEGORIES=		security
 MASTER_SITES=		http://www.encryptsolutions.com/english/download/ \
 			http://www.bcrypt.com/english/download/
 EXTRACT_SUFX=		.tgz
 
-MAINTAINER=		stephane.legrand@bigfoot.com
+MAINTAINER=		stephane@freebsd-fr.org
 
 PLIST_SUB+=		PORTVERSION=${PORTVERSION}
+
+USE_GMAKE=		yes
 
 # No Manual page
 
