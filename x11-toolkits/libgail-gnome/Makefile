@@ -16,13 +16,13 @@ DIST_SUBDIR=	gnome2
 MAINTAINER=	gnome@FreeBSD.org
 
 LIB_DEPENDS=	gnomeui-2.0:${PORTSDIR}/x11-toolkits/libgnomeui \
-		spi.0:${PORTSDIR}/x11-toolkits/at-spi
+		spi.1:${PORTSDIR}/x11-toolkits/at-spi
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_X_PREFIX=	yes
 INSTALLS_SHLIB=	yes
-GNU_CONFIGURE=	yes
+USE_LIBTOOL=	yes
 CONFIGURE_ARGS=	--localstatedir=${PREFIX}/share/gnome2 \
 		--datadir=${PREFIX}/share/gnome2 \
 		--with-html-dir=${PREFIX}/share/doc \
