@@ -1,5 +1,5 @@
---- install.sh.orig	Tue Nov 27 00:56:59 2001
-+++ install.sh	Tue Nov 27 01:01:20 2001
+--- install.sh.orig	Thu Nov 22 12:38:09 2001
++++ install.sh	Tue Nov 27 02:05:55 2001
 @@ -228,7 +228,16 @@
  	    mvv=''    # SunOS mv (no -v verbose option)
  	;;
@@ -18,19 +18,33 @@
  	;;
  
  	i[3456]86:Linux)
+@@ -477,10 +486,10 @@
+ 
+ # Opera enviroment
+ if test \"\${OPERA_DIR}\" = '' ; then 
+-  if test -d /usr/share/opera ; then 
+-    OPERA_DIR=/usr/share/opera
++  if test -d %%DATADIR%% ; then 
++    OPERA_DIR=%%DATADIR%%
+   else
+-    echo \"OPERA_DIR unset and not in default location (/usr/share/opera)\"
++    echo \"OPERA_DIR unset and not in default location (%%DATADIR%%)\"
+     exit 1
+   fi
+ fi
 @@ -491,18 +500,11 @@
  for DIR in \\
      \"\${HOME}/.opera/plugins\" \\
      ${plugin_dir} \\
 -    /usr/lib/opera/plugins \\
 -    /usr/local/Acrobat4/Browsers/intellinux \\
-+    %%PREFIX%%/lib/opera/plugins \\
-+    %%PREFIX%%/Acrobat4/Browsers/intellinux \\
 -    /usr/java/jre1.3.1/plugin/i386/ns4 \\
 -    /usr/lib/RealPlayer8/Plugins \\
 -    /usr/lib/realplay/plugins \\
 -    /usr/lib/RealPlayer8 \\
 -    /usr/lib/realplay \\
++    %%PREFIX%%/lib/opera/plugins \\
++    %%PREFIX%%/Acrobat4/Browsers/intellinux \\
 +    %%PREFIX%%/java/linux-*jdk*/jre/plugin/i386/ns4 \\
      \"\${HOME}/.netscape/plugins\" \\
 -    /opt/netscape/plugins \\

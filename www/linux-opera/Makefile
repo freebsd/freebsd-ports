@@ -8,6 +8,7 @@
 PORTNAME=	opera
 PKGNAMEPREFIX=	linux-
 PORTVERSION=	6.0-20011122.1
+PORTREVISION=	1
 CATEGORIES=	www linux
 MASTER_SITES=	http://opera.online.no/linux/600/tp1/ \
 		ftp://ftp.opera.com/pub/opera/linux/600/tp1/
@@ -25,7 +26,8 @@ NO_BUILD=	yes
 NO_FILTER_SHLIBS=yes
 
 do-configure:
-	${PERL} -p -i -e 's|%%PREFIX%%|${PREFIX}|' ${WRKSRC}/install.sh
+	${PERL} -pi -e 's|%%PREFIX%%|${PREFIX}|g; s|%%DATADIR%%|${DATADIR}|g'\
+	    ${WRKSRC}/install.sh
 
 do-install:
 	(cd ${WRKSRC} && ./install.sh \
