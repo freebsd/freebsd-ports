@@ -1,0 +1,11 @@
+--- configure.orig	Fri May 18 06:29:15 2001
++++ configure	Tue Jan 22 14:25:21 2002
+@@ -576,7 +576,7 @@
+ 
+ 
+ 
+-PDFLIB_LTCURRENT=2
++PDFLIB_LTCURRENT=4
+ PDFLIB_LTREVISION=1
+ PDFLIB_LTAGE=1
+ 
