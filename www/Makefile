@@ -506,6 +506,7 @@
     SUBDIR += php5-cgi
     SUBDIR += phpSysInfo
     SUBDIR += phpbb
+    SUBDIR += phpgedview
     SUBDIR += phpnuke
     SUBDIR += phpwiki
     SUBDIR += plone
