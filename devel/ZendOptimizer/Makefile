@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ZendOptimizer
-PORTVERSION=	2.1.0b
+PORTVERSION=	2.5.0
 CATEGORIES=	devel
 DISTNAME=	${PORTNAME}-${PORTVERSION}-FreeBSD4.0-i386
 
@@ -38,7 +38,7 @@ ECHO_MSG=/usr/bin/printf
 IGNORE=	:\n\
 Because of licensing restrictions, you must fetch the source distribution\n\
 manually.\n\
-Please access http://www.zend.com/store/getfreefile.php?pid=13&zbid=547\n\
+Please access http://www.zend.com/store/getfreefile.php?pid=13&zbid=713\n\
 with a web browser, read the license and click the \"I ACCEPT\" button.\n\
 Download the source file, ${DISTNAME}${EXTRACT_SUFX},\n\
 and place it in ${DISTDIR}.\n
@@ -51,6 +51,10 @@ do-install:
 		${PREFIX}/lib/php/${PHP_EXT_DIR}/ZendOptimizer.so
 	${INSTALL_DATA} ${WRKSRC}/data/4_3_x_comp/TS/ZendOptimizer.so \
 		${PREFIX}/lib/php/${PHP_EXT_DIR}/ZendOptimizer_TS.so
+	${INSTALL_DATA} ${WRKSRC}/data/ZendExtensionManager.so \
+		${PREFIX}/lib/php/${PHP_EXT_DIR}
+	${INSTALL_DATA} ${WRKSRC}/data/ZendExtensionManager_TS.so \
+		${PREFIX}/lib/php/${PHP_EXT_DIR}
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 	@${INSTALL_DATA} ${WRKSRC}/data/doc/* ${DOCSDIR}
