@@ -41,11 +41,6 @@ MASTER_SITES=	http://www.apache.org/dist/ \
 		ftp://ftp.fu-berlin.de/unix/security/mod_ssl/
 DISTFILES=	apache_${VERSION_APACHE}.tar.gz php-${VERSION_PHP}.tar.gz
 
-PATCH_SITES=	http://www.physik.TU-Berlin.DE/~ibex/ports/distfiles/
-PATCHFILES=	php_configure.2.diff php_gd.c.2.diff php_php3_gd.h.2.diff \
-		php_pdf.c.diff php_snmp.c.diff php_config.h.in.diff \
-		php_imap.c.diff
-
 MAINTAINER=	dirk@FreeBSD.org
 
 Y2K=		http://www.php.net/y2k.php3
@@ -53,7 +48,7 @@ Y2K=		http://www.php.net/y2k.php3
 PHP_DISTDIR=	distributions
 
 VERSION_APACHE=	1.3.9
-VERSION_PHP=	3.0.12
+VERSION_PHP=	3.0.13
 
 USE_PERL5=	yes
 HAS_CONFIGURE=	yes
@@ -118,7 +113,7 @@ post-extract:
 
 pre-configure:
 	@cd ${WRKSRC} \
-	&&  CC="${CC}" CFLAGS="${CFLAGS}" ./configure > /dev/null \
+	&& CC="${CC}" CFLAGS="${CFLAGS}" ./configure > /dev/null \
 	&& cd ${WRKDIR}/php-${VERSION_PHP} \
 	&& ${ECHO_MSG} "===>  Configuring for PHP-${VERSION_PHP}" \
 	&& CC="${CC}" \

@@ -1,21 +1,21 @@
---- ../php/configure.orig	Wed Jul 28 19:07:49 1999
-+++ ../php/configure	Fri Jul 30 17:55:10 1999
-@@ -5072,29 +5072,9 @@
+--- ../php/configure.orig	Sat Jan  1 05:53:20 2000
++++ ../php/configure	Sun Jan  2 17:34:39 2000
+@@ -5261,26 +5261,10 @@
    if test -n "$unique" && test "`eval $cmd`" = "" ; then
      eval "LIBPATH$unique=set"
      
--    EXTRA_LIBS="$EXTRA_LIBS -L$ai_p"
--    RAW_RPATHS="$RAW_RPATHS ${raw_runpath_switch}$ai_p"
--    if test -n "$APXS" ; then
--      RPATHS="$RPATHS ${apxs_runpath_switch}$ai_p'"
--    else
--      RPATHS="$RPATHS ${ld_runpath_switch}$ai_p"
--    fi
+-      EXTRA_LIBS="$EXTRA_LIBS -L$ai_p"
+-      if test -n "$APXS" ; then
+-        RPATHS="$RPATHS ${apxs_runpath_switch}$ai_p'"
+-      else
+-        RPATHS="$RPATHS ${ld_runpath_switch}$ai_p"
+-      fi
+-    
+-  fi
 +    EXTRA_LIBS="$EXTRA_LIBS $ai_p/libc-client4.a"
-   
+ 
    fi
--
--
+ 
 -  
 -  
 -  unique=`echo $ac_n "c-client4$ac_c" | tr -c -d a-zA-Z0-9`
@@ -25,9 +25,6 @@
 -    
 -    EXTRA_LIBS="$EXTRA_LIBS -lc-client4"
 -  
--  fi
--
--
+   fi
  
- 	    elif test -f "$IMAP_DIR/lib/libc-client.a" || test -f "$IMAP_DIR/lib/libc-client.so"; then
- 		  
+ 
