@@ -6,14 +6,12 @@
 #
 
 PORTNAME=	sodipodi
-PORTVERSION=	0.20
+PORTVERSION=	0.21
 CATEGORIES=	graphics gnome
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	nakai@FreeBSD.org
-
-BROKEN=		"Fails with new devel/bonobo"
 
 LIB_DEPENDS=	glade.4:${PORTSDIR}/devel/libglade \
 		gnomeprint.13:${PORTSDIR}/print/gnomeprint \
