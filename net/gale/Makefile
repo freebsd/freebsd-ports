@@ -8,7 +8,7 @@
 PORTNAME=	gale
 PORTVERSION=	0.99a
 CATEGORIES=     net
-MASTER_SITES=   http://www.gale.org/dist/
+MASTER_SITES=   http://download.gale.org/
 
 MAINTAINER=     peterh@sapros.com
 
