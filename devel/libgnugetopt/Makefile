@@ -6,6 +6,11 @@
 # $FreeBSD$
 #
 
+#	Note that GCC contains the master copy of GNU's getopt in libiberty/
+#	and include/.  The next time this port is updated, it should use
+#	the latest GCC release (the smaller -core dist is fine) for the
+#	distfile.	-- obrien
+
 PORTNAME=	libgnugetopt
 PORTVERSION=	1.1
 CATEGORIES=	devel
