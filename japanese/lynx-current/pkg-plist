@@ -28,6 +28,7 @@ share/doc/lynx/COPYHEADER
 share/doc/lynx/COPYING
 share/doc/lynx/PROBLEMS
 share/doc/lynx/README
+share/doc/lynx/samples/blue-background.lss
 share/doc/lynx/samples/cernrules.txt
 share/doc/lynx/samples/jumpsUnix.html
 share/doc/lynx/samples/jumpsVMS.html
@@ -36,6 +37,7 @@ share/doc/lynx/samples/lynx.cfg
 share/doc/lynx/samples/lynx.com
 share/doc/lynx/samples/lynx.lss
 share/doc/lynx/samples/mailcap
+share/doc/lynx/samples/mild-colors.lss
 share/doc/lynx/samples/mime.types
 share/doc/lynx/test/ALT88592.html
 share/doc/lynx/test/ISO_LATIN1_test.html
