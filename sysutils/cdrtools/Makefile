@@ -6,13 +6,12 @@
 #
 
 PORTNAME?=	cdrtools
-PORTVERSION?=	1.11.a40
+PORTVERSION?=	2.0
 PORTREVISION?=	0
 CATEGORIES?=	sysutils audio
-MASTER_SITES=	ftp://ftp.berlios.de/pub/cdrecord/alpha/OLD/2.0aX/ \
-		ftp://ftp.cs.tu-berlin.de/pub/misc/cdrecord/alpha/OLD/2.0aX/ \
-		ftp://ftp.gwdg.de/pub/linux/misc/cdrecord/alpha/OLD/2.0aX/
-DISTNAME=	cdrtools-1.11a40
+MASTER_SITES=	ftp://ftp.berlios.de/pub/cdrecord/ \
+		ftp://ftp.cs.tu-berlin.de/pub/misc/cdrecord/ \
+		ftp://ftp.gwdg.de/pub/linux/misc/cdrecord/
 
 MAINTAINER=	dirk@FreeBSD.org
 
@@ -25,7 +24,6 @@ MAN1=		cdda2wav.1 cdrecord.1 readcd.1
 USE_GMAKE=	yes
 MAKE_ENV=	COPTX="-DBSD_SCSI_SENSE_BUG"
 SLAVEDIRS=	sysutils/mkisofs
-WRKSRC=		${WRKDIR}/cdrtools-1.11
 
 .if ${MACHINE_ARCH} != "i386"
 post-extract:
