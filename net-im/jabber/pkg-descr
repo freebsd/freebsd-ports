@@ -5,7 +5,7 @@ After editing $PREFIX/etc/jabber.xml, the server can be started by
 rc.d script.
 
 Complete information about configuration can be found in the Jabber Server
-mini-HOWTO at http://docs.jabber.org/.
+mini-HOWTO at http://www.jabber.org/admin/.
 
 You can learn more about Jabber at
-WWW: http://server.jabber.org/
+WWW: http://www.jabber.org/
