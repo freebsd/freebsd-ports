@@ -4037,6 +4037,7 @@ kahakai		ports/x11-wm/kahakai
 kalbum		ports/graphics/kalbum
 kallers		ports/comms/kallers
 kallery		ports/graphics/kallery
+kamera		ports/graphics/kamera
 kanatest	ports/games/kanatest
 kannel		ports/www/kannel
 kappdock	ports/x11-wm/kappdock
@@ -4190,6 +4191,7 @@ kisomandel	ports/graphics/kisomandel
 kix-kmod	ports/graphics/kix-kmod
 kkbswitch	ports/sysutils/kkbswitch
 kkeyled		ports/sysutils/kkeyled
+klaptopdaemon	ports/sysutils/klaptopdaemon
 klassmodeler	ports/devel/klassmodeler
 klh10		ports/emulators/klh10
 klog		ports/comms/klog
@@ -4324,10 +4326,12 @@ koffice-i18n-zu	ports/misc/koffice-i18n-zu
 koffice-kde3	ports/editors/koffice-kde3
 kolourpaint	ports/graphics/kolourpaint
 konq-plugins	ports/misc/konq-plugins
+konqueror-nsplugins	ports/www/konqueror-nsplugins
 kontact-plugins	ports/net/kontact-plugins
 konversation	ports/irc/konversation
 konverse	ports/net/konverse
 konwert		ports/converters/konwert
+kooka		ports/graphics/kooka
 korelib		ports/devel/korelib
 kover		ports/print/kover
 kp		ports/misc/kp
@@ -4335,6 +4339,7 @@ kpacman		ports/games/kpacman
 kphone		ports/net/kphone
 kpicframer	ports/games/kpicframer
 kpictorial	ports/games/kpictorial
+kpilot		ports/palm/kpilot
 kplayer		ports/multimedia/kplayer
 kpopup		ports/net/kpopup
 kprof		ports/devel/kprof
@@ -4369,6 +4374,7 @@ ktextdecode	ports/converters/ktextdecode
 ktoblzcheck	ports/finance/ktoblzcheck
 ktritoc		ports/games/ktritoc
 kuake		ports/deskutils/kuake
+kuickshow	ports/graphics/kuickshow
 kvirc		ports/irc/kvirc
 kwappen		ports/games/kwappen
 kwatch		ports/misc/kwatch
@@ -5535,6 +5541,7 @@ mpeg_play	ports/multimedia/mpeg_play
 mpeg_stat	ports/multimedia/mpeg_stat
 mpegaudio	ports/audio/mpegaudio
 mpegedit	ports/multimedia/mpegedit
+mpeglib_artsplug	ports/audio/mpeglib_artsplug
 mpexpr		ports/math/mpexpr
 mpg123		ports/audio/mpg123
 mpg123.el	ports/audio/mpg123.el
@@ -9044,8 +9051,8 @@ ru-p5-cyrillic	ports/russian/p5-cyrillic
 ru-pgp.language	ports/russian/pgp.language
 ru-pine		ports/russian/pine.language
 ru-pine.language	ports/russian/pine.language
-ru-pscyr	ports/russian/pscyr
 ru-prawda	ports/russian/prawda
+ru-pscyr	ports/russian/pscyr
 ru-rispell		ports/russian/rispell
 ru-ru_pscyr	ports/russian/pscyr
 ru-rus-ispell	ports/russian/rus-ispell
@@ -9575,8 +9582,8 @@ skadns		ports/dns/skadns
 skalibs		ports/devel/skalibs
 skencil		ports/graphics/skencil
 ski		ports/emulators/ski
-skim		ports/textproc/skim
 skill		ports/sysutils/skill
+skim		ports/textproc/skim
 skip		ports/security/skip
 skippy		ports/x11-wm/skippy
 skribe		ports/textproc/skribe
@@ -11071,6 +11078,7 @@ ximp3		ports/audio/ximp3
 xin		ports/sysutils/xin
 xincluder	ports/textproc/xincluder
 xine		ports/multimedia/xine
+xine_artsplugin	ports/multimedia/xine_artsplugin
 xinetd		ports/security/xinetd
 xinfocom	ports/games/xinfocom
 xinput		ports/x11/xinput
@@ -11347,6 +11355,7 @@ xscorch		ports/games/xscorch
 xscrabble	ports/games/xscrabble
 xscreensaver	ports/x11/xscreensaver
 xscreensaver-gnome	ports/x11/xscreensaver-gnome
+xscreensaver-kde	ports/x11/xscreensaver-kde
 xsel		ports/x11/xsel
 xshipwars-client	ports/games/xshipwars-client
 xshisen		ports/games/xshisen
