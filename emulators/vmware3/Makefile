@@ -54,8 +54,8 @@ MODULES=	vmmon vmnet
 IGNORE=		"Systems prior to FreeBSD 480102 currently out of support"
 .endif
 
-.if !defined(HAVE_LINPROCFS) && !exists(/modules/linprocfs.ko) && !exists(/boot/kernel/linprocfs.ko) && !exists(${PREFIX}/modules/linprocfs.ko)
-IGNORE=		"This software absolutely requires Linux procfs support"
+.if !defined(HAVE_LINPROCFS) && !exists(/modules/linprocfs.ko) && !exists(/boot/kernel/linprocfs.ko) && !exists(${PREFIX}/modules/linprocfs.ko) && !exists(/compat/linux/proc/version)
+IGNORE=		"linprocfs is required, please build the module and/or add it to your kernel"
 .endif
 
 .if !exists(${SRC_BASE}/Makefile)
