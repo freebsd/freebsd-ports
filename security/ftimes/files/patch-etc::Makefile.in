@@ -1,0 +1,18 @@
+--- etc/Makefile.in.orig	Fri May  7 17:13:58 2004
++++ etc/Makefile.in	Fri May  7 17:14:09 2004
+@@ -27,7 +27,6 @@
+ 			get.cfg.sample\
+ 			mapfull.cfg.sample\
+ 			maplean.cfg.sample\
+-			nph-ftimes.cfg.sample\
+ 			put.cfg.sample
+ DST_FILES		=\
+ 			${etcdir}/digfull.cfg.sample\
+@@ -35,7 +34,6 @@
+ 			${etcdir}/get.cfg.sample\
+ 			${etcdir}/mapfull.cfg.sample\
+ 			${etcdir}/maplean.cfg.sample\
+-			${etcdir}/nph-ftimes.cfg.sample\
+ 			${etcdir}/put.cfg.sample
+ 
+ all: ${SRC_FILES}
