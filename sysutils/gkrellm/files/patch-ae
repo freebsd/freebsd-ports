@@ -1,8 +1,8 @@
 Index: src/Makefile.src
 diff -u src/Makefile.src.orig src/Makefile.src
---- src/Makefile.src.orig	Thu Jun 22 01:54:28 2000
-+++ src/Makefile.src	Thu Jun 22 09:38:17 2000
-@@ -13,19 +13,18 @@
+--- src/Makefile.src.orig	Sun Jul  9 00:55:41 2000
++++ src/Makefile.src	Mon Jul 10 20:04:52 2000
+@@ -13,23 +13,22 @@
  GTK_LIB = `$(GTK_CONFIG) --libs gthread`
  IMLIB_LIB = `imlib-config --libs-gdk`
  
@@ -19,6 +19,11 @@ diff -u src/Makefile.src.orig src/Makefile.src
  ifeq ($(enable_nls),1)
 -    FLAGS += -DENABLE_NLS -DLOCALEDIR=\"$(LOCALEDIR)\"
 +    CFLAGS += -DENABLE_NLS -DLOCALEDIR=\"$(LOCALEDIR)\"
+ endif
+ 
+ ifeq ($(HAVE_GETADDRINFO),1)
+-    FLAGS += -DHAVE_GETADDRINFO
++    CFLAGS += -DHAVE_GETADDRINFO
  endif
  
 -

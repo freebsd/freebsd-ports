@@ -1,7 +1,7 @@
 Index: Makefile.top
 diff -u Makefile.top.orig Makefile.top
---- Makefile.top.orig	Sun Jun 18 00:24:58 2000
-+++ Makefile.top	Thu Jun 22 09:33:42 2000
+--- Makefile.top.orig	Sun Jul  9 04:03:15 2000
++++ Makefile.top	Mon Jul 10 20:01:27 2000
 @@ -24,7 +24,7 @@
  #
  # Default
@@ -19,7 +19,7 @@ diff -u Makefile.top.orig Makefile.top
 +	(cd src && ${MAKE} GTK_CONFIG=$(GTK_CONFIG) GTOP_LIBS= GTOP_INCLUDE= \
  		SYS_LIBS="-lkvm" gkrellm )
  
- freebsd3 freebsd:
+ freebsd3 freebsd4 freebsd5 freebsd:
  	(cd locale && ${MAKE} all)
 -	(cd src && ${MAKE} GTK_CONFIG=gtk12-config GTOP_LIBS= GTOP_INCLUDE= \
 +	(cd src && ${MAKE} GTK_CONFIG=$(GTK_CONFIG) GTOP_LIBS= GTOP_INCLUDE= \
