@@ -12,7 +12,7 @@ MASTER_SITES=	ftp://ftp.xmms.org/xmms/plugins/smpeg-xmms/
 
 MAINTAINER=	sobomax@FreeBSD.org
 
-LIB_DEPENDS=	smpeg.0:${PORTSDIR}/graphics/smpeg \
+LIB_DEPENDS=	smpeg.1:${PORTSDIR}/graphics/smpeg \
 		xmms.1:${PORTSDIR}/audio/xmms
 
 SDL_CONFIG?=	${LOCALBASE}/bin/sdl11-config
