@@ -27,7 +27,7 @@ MAINTAINER=	olgeni@FreeBSD.org
 COMMENT=	A functional programming language from Ericsson
 
 # Set JAVABINDIR to where you have javac, if different from below
-JAVABINDIR?=	${LOCALBASE}/jdk1.4.1/bin
+JAVABINDIR?=	${LOCALBASE}/jdk1.4.2/bin
 JAVAPORT?=	${JAVABINDIR}/javac:${PORTSDIR}/java/jdk14
 
 ERLANG_MAN=     otp_man_R9C-0.tar.gz
