@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	BitTorrent
-PORTVERSION=	3.3
-PORTEPOCH=	1
+PORTVERSION=	3.4.1
 CATEGORIES?=	net python
-MASTER_SITES=	http://bitconjurer.org/BitTorrent/
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE_EXTENDED}
+MASTER_SITE_SUBDIR=	${PORTNAME:L}
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 #DISTNAME=	${PORTNAME}-${PORTVERSION:C/\.(.)$/\1/}
 
@@ -19,7 +19,7 @@ COMMENT?=	A peer-to-peer tool for distributing files written in Python
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
 USE_REINPLACE=	yes
-USE_SIZE=	yes
+USE_ZIP=	yes
 
 CONFLICTS=	py??-*[Bb]it[Tt]orrent*
 
