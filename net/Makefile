@@ -687,6 +687,7 @@
     SUBDIR += udptunnel
     SUBDIR += unison
     SUBDIR += unix2tcp
+    SUBDIR += uplog
     SUBDIR += urlendec
     SUBDIR += utftpd
     SUBDIR += v6eval
