@@ -3,11 +3,11 @@
 # Date created:		13 August 1997
 # Whom:			hosokawa
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1997/08/16 05:14:06 itojun Exp $
 
 DISTNAME=	ish-1.11
 CATEGORIES=	converters
-MASTER_SITES=	ftp://jaz.jp.freebsd.org/pub/incoming/distfiles/
+MASTER_SITES=	ftp://ports.jp.freebsd.org/pub/FreeBSD-jp/ports-jp/LOCAL_PORTS/
 
 MAINTAINER=	hosokawa@jp.FreeBSD.org
 
