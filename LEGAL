@@ -1,0 +1,23 @@
+# Creator:  Jordan Hubbard
+# $Id$
+
+Some of the ports in this directory have restrictive copyrights prohibiting
+their actual redistribution on mass media.  When creating compilations
+of FreeBSD on such mass media, you should be sure and NOT distribute
+the original source tarballs for such ports in your distfiles directory.
+To do so will invite needless problems from the various parties involved.
+
+Since those connected to the net will also be able to automatically fetch
+their own original sources and complete the puzzle, the hardship is not as
+severe as it might otherwise be.
+
+Such ports are listed below:
+
+Dist			Port			Why
+------------------------------------------------------------------------------
+cku190.tar.gz		ports/comms/kermit	Restrictive copyright
+rzsz3_36.zip		ports/comms/rzsz	Restrictive copyright
+xtetris-2.5.2.tar.gz	ports/games/xtetris	Possible trademark violation
+pgp262s.zip		ports/utils/pgp*	Various locality restrictions
+
+[please add more to this list]
