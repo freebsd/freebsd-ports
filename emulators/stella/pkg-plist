@@ -1,16 +1,14 @@
-bin/xstella
+bin/stella.x11
 bin/stella-sound
-share/stella/roms/ELK.BIN
-share/stella/roms/OKIEDOKE.BIN
-share/stella/roms/OYSTR29.BIN
-share/stella/roms/TEST.BIN
-share/stella/roms/TPS.BIN
-@dirrm share/stella/roms
 share/stella/stella.pro
 @dirrm share/stella
-share/doc/stella/Stella.pdf
-share/doc/stella/elk.doc
-share/doc/stella/okiedoke.doc
-share/doc/stella/oystron.doc
-share/doc/stella/tps.doc
+share/doc/stella/graphics/chucky_cheese.png
+share/doc/stella/graphics/circuit.png
+share/doc/stella/graphics/console.png
+share/doc/stella/graphics/jr_pacman.png
+share/doc/stella/graphics/pacman.png
+share/doc/stella/graphics/secret_quest.png
+share/doc/stella/graphics/space_invaders.png
+@dirrm share/doc/stella/graphics
+share/doc/stella/stella.html
 @dirrm share/doc/stella
