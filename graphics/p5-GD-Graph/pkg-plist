@@ -1,0 +1,15 @@
+lib/perl5/site_perl/%%PERL_VER%%/GD/Graph/colour.pm
+lib/perl5/site_perl/%%PERL_VER%%/GD/Graph/mixed.pm
+lib/perl5/site_perl/%%PERL_VER%%/GD/Graph/bars.pm
+lib/perl5/site_perl/%%PERL_VER%%/GD/Graph/linespoints.pm
+lib/perl5/site_perl/%%PERL_VER%%/GD/Graph/area.pm
+lib/perl5/site_perl/%%PERL_VER%%/GD/Graph/lines.pm
+lib/perl5/site_perl/%%PERL_VER%%/GD/Graph/points.pm
+lib/perl5/site_perl/%%PERL_VER%%/GD/Graph/pie.pm
+lib/perl5/site_perl/%%PERL_VER%%/GD/Graph/utils.pm
+lib/perl5/site_perl/%%PERL_VER%%/GD/Graph/axestype.pm
+lib/perl5/site_perl/%%PERL_VER%%/GD/Graph.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/GD/Graph/.packlist
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/GD/Graph
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/GD/Graph
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/GD 2>/dev/null || true
