@@ -8,7 +8,7 @@
 
 DISTNAME=	gawk-3.0.4
 PKGNAME=	ja-gawk-3.0.4
-CATEGORIES=	japanese textproc
+CATEGORIES=	japanese lang
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	gawk
 
@@ -21,6 +21,8 @@ PATCH_SITES=	http://member.nifty.ne.jp/wills/program/
 PATCHFILES=	gawkmb112.diff.gz
 PATCH_DIST_STRIP=	-p1
 FETCH_BEFORE_ARGS=	-b
+
+MAN1=		gawk.1 igawk.1
 
 post-install:
 .if !defined(NOPORTDOCS)
