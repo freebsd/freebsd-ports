@@ -1,8 +1,11 @@
 bin/cdrdao
-bin/xcdrdao
 share/doc/cdrdao/COPYING 
+share/doc/cdrdao/CREDITS
 share/doc/cdrdao/INSTALL 
 share/doc/cdrdao/README 
 share/doc/cdrdao/README.FreeBSD 
 share/doc/cdrdao/README.PlexDAE 
+share/doc/cdrdao/Release-1.1.0
+share/doc/cdrdao/Release-1.1.2
+share/doc/cdrdao/Release-1.1.3
 @dirrm share/doc/cdrdao

@@ -10,17 +10,17 @@
 # If You don't want to use pthreads, set DONT_USE_PTHREADS = yes
 # If You want the graphical X toc file editor, set XCDRDAO = yes
 
-DISTNAME=		cdrdao-1.1.2.src
-PKGNAME=		cdrdao-1.1.2
+DISTNAME=		cdrdao-1.1.3.src
+PKGNAME=		cdrdao-1.1.3
 CATEGORIES=		audio
 MASTER_SITES=		http://www.ping.de/sites/daneb/
 
-MAINTAINER=		futatuki@fureai.or.jp
+MAINTAINER=		futatuki@debug.gr.jp
 
 BUILD_DEPENDS=		antlr:${PORTSDIR}/devel/pccts\
 			dlg:${PORTSDIR}/devel/pccts
 
-WRKSRC=         	${WRKDIR}/cdrdao-1.1.2
+WRKSRC=         	${WRKDIR}/cdrdao-1.1.3
 
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
@@ -39,12 +39,10 @@ XCDRDAO=		yes
 .if defined(XCDRDAO)
 USE_NEWGCC=	yes
 LIB_DEPENDS+=		gtkmm-1.0.7:${PORTSDIR}/x11-toolkits/gtk--
+MAN1+=		xcdrdao.1
+PLIST=${PKGDIR}/PLIST.xcdrdao
 .else
 CONFIGURE_ARGS= 	--disable-gtkmmtest
-.endif
-
-.if defined(USE_NEWGCC) && ${USE_NEWGCC} == yes && ${OSVERSION} < 400004
-CFLAGS+=		-fpermissive
 .endif
 
 .if defined(DONT_USE_SCGLIB) && ${OSVERSION} > 300000
@@ -75,7 +73,8 @@ post-install:
 	strip $(PREFIX)/bin/xcdrdao
 .endif
 	@${MKDIR} ${PREFIX}/share/doc/cdrdao
-.for i in COPYING INSTALL README README.FreeBSD README.PlexDAE
+.for i in COPYING CREDITS INSTALL README README.FreeBSD README.PlexDAE \
+	Release-1.1.0 Release-1.1.2 Release-1.1.3
 	@${INSTALL_DATA} ${WRKSRC}/$i ${PREFIX}/share/doc/cdrdao/
 .endfor
 	@${CAT} ${PKGDIR}/MESSAGE
