@@ -203,7 +203,7 @@ pre-fetch:
 	@${ECHO} "automatically set LANG to a suitable"
 	@${ECHO} "value. You can change this with:"
 	@${ECHO}
-	@${ECHO} "USE_LANG=\"prefered language\""
+	@${ECHO} "USE_LANG=\"preferred language\""
 	@${ECHO}
 	@${ECHO} "and set a different language"
 	@${ECHO} "like:"
@@ -224,7 +224,7 @@ pre-fetch:
 	@${ECHO}
 	@${ECHO} "Add USE_GCC=2.95 or USE_GCC=3.2"
 	@${ECHO} "to compile openoffice with your"
-	@${ECHO} "prefered compiler."
+	@${ECHO} "preferred compiler."
 .endif
 .if !defined(WITH_DEBUG)
 	@${ECHO}
