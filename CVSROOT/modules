@@ -1605,6 +1605,7 @@ find_ddos	ports/security/find_ddos
 finder		ports/x11/finder
 findutils	ports/misc/findutils
 fine		ports/editors/fine
+finfo		ports/sysutils/finfo
 finger		src/usr.bin/finger
 fingerd		src/libexec/fingerd
 firebird	ports/databases/firebird
