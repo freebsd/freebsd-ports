@@ -1,0 +1,43 @@
+--- imapd-ssl.rc.in.orig	Fri Nov 28 06:07:33 2003
++++ imapd-ssl.rc.in	Wed Jan 28 02:06:31 2004
+@@ -53,6 +53,7 @@ start)
+ 		. @sysconfdir@/imapd ; \
+ 		. @sysconfdir@/imapd-ssl ; \
+ 		IMAP_TLS=1; export IMAP_TLS; \
++		DRACHOST=${DRACHOST:-localhost}; export DRACHOST; \
+ 		@libexecdir@/couriertcpd -address=$SSLADDRESS \
+ 			-stderrlogger=@libexecdir@/courierlogger \
+ 			-stderrloggername=imapd-ssl \
+--- imapd.rc.in.orig	Fri Nov 28 06:07:34 2003
++++ imapd.rc.in	Wed Jan 28 02:06:40 2004
+@@ -54,6 +54,7 @@ start)
+ 				. @sysconfdir@/imapd-ssl ; \
+ 		IMAP_STARTTLS=$IMAPDSTARTTLS ; export IMAP_STARTTLS ; \
+ 		TLS_PROTOCOL=$TLS_STARTTLS_PROTOCOL ; \
++		DRACHOST=${DRACHOST:-localhost}; export DRACHOST; \
+ 		@libexecdir@/couriertcpd -address=$ADDRESS \
+ 			-stderrlogger=@libexecdir@/courierlogger \
+ 			-stderrloggername=imapd \
+--- pop3d-ssl.rc.in.orig	Fri Nov 28 06:07:35 2003
++++ pop3d-ssl.rc.in	Wed Jan 28 02:06:51 2004
+@@ -49,6 +49,7 @@ start)
+ 		POP3_TLS=1; export POP3_TLS; \
+ 		POP3_STARTTLS=NO; export POP3_STARTTLS; \
+ 		POP3_TLS_REQUIRED=0; export POP3_TLS_REQUIRED; \
++		DRACHOST=${DRACHOST:-localhost}; export DRACHOST; \
+ 		@libexecdir@/couriertcpd -address=$SSLADDRESS \
+ 			-stderrlogger=@libexecdir@/courierlogger \
+ 			-stderrloggername=pop3d-ssl \
+--- pop3d.rc.in.orig	Fri Nov 28 06:07:35 2003
++++ pop3d.rc.in	Wed Jan 28 02:07:15 2004
+@@ -45,8 +45,8 @@ start)
+ 		libexecdir=@libexecdir@ ;
+ 		. @sysconfdir@/pop3d ; \
+ 				. @sysconfdir@/pop3d-ssl ; \
+-		TLS_PROTOCOL=$TLS_STARTTLS_PROTOCOL ; \
+-		export TLS_PROTOCOL ;
++		TLS_PROTOCOL=$TLS_STARTTLS_PROTOCOL; export TLS_PROTOCOL ; \
++		DRACHOST=${DRACHOST:-localhost}; export DRACHOST; \
+ 		@libexecdir@/couriertcpd -address=$ADDRESS \
+ 			-stderrlogger=@libexecdir@/courierlogger \
+ 			-stderrloggername=pop3d \

@@ -7,11 +7,17 @@
 
 PORTNAME=	courier-imap
 PORTVERSION=	2.2.1
-PORTREVISION=	0
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	mail ipv6
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	courier
+
+.if defined(WITH_DRAC)
+PATCH_SITES=	http://www.smalltown.ne.jp/~usata/pub/patch/
+PATCHFILES=	courier-imap-2.2.1-drac.patch
+PATCH_DIST_STRIP=	-p1
+.endif
 
 MAINTAINER=	oliver@FreeBSD.org
 COMMENT=	IMAP (and POP3) server that provides access to Maildir mailboxes
@@ -39,6 +45,7 @@ CONFIGURE_ENV=	CFLAGS="${CPPFLAGS} -I${LOCALBASE}/include" \
 # WITH_POSTGRESQL:		Build in postgresql support
 # WITH_LDAP:			Build in ldap support with openldap
 # WITH_FAM:			Build in fam support for IDLE command
+# WITH_DRAC:			Build in DRAC support
 # WITH_TRASHQUOTA:		Include deleted mails in the quota
 #
 
@@ -141,6 +148,11 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="${LDFLAGS}"
 LDFLAGS+=	-L${LOCALBASE}/lib
 LIB_DEPENDS+=	fam.0:${PORTSDIR}/devel/fam
+.endif
+
+.if defined(WITH_DRAC)
+EXTRA_PATCHES=	${FILESDIR}/extra-patch-drac
+BUILD_DEPENDS+=	${LOCALBASE}/lib/libdrac.a:${PORTSDIR}/mail/drac
 .endif
 
 MAN1=		couriertcpd.1 maildirkw.1 maildirmake.1
