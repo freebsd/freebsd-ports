@@ -1,1 +1,3 @@
 bin/mp
+%%PORTDOCS%%share/doc/mp/README.html
+%%PORTDOCS%%@dirrm share/doc/mp

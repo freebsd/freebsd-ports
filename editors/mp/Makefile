@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mp
-PORTVERSION=	3.1.8
+PORTVERSION=	3.2.5
 CATEGORIES=	editors
 MASTER_SITES=	http://triptico.dhis.org/download/
 
@@ -17,10 +17,14 @@ USE_REINPLACE=	yes
 MAKE_ARGS+=	PREFIX="${PREFIX}"
 MAKEFILE=	makefile
 
-pre-configure:
+post-patch:
 	${REINPLACE_CMD} -e "s@gcc -g -Wall@${CC} ${CFLAGS} -Wall@g" ${WRKSRC}/makefile
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/mp ${PREFIX}/bin
+.if !defined(NOPORTDOCS)
+	${MKDIR} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/README.html ${DOCSDIR}
+.endif
 
 .include <bsd.port.mk>
