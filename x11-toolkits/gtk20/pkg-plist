@@ -291,3 +291,4 @@ share/themes/Emacs/gtk-2.0-key/gtkrc
 @dirrm include/gtk-2.0
 @dirrm etc/gtk-2.0
 @unexec /bin/rmdir %D/share/themes/Default 2>/dev/null || /usr/bin/true
+@unexec /bin/rmdir %D/share/themes 2>/dev/null || /usr/bin/true

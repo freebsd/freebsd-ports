@@ -232,7 +232,7 @@ share/themes/Default/gtk/gtkrc.zh_TW.Big5
 @dirrm lib/gtk
 @dirrm share/themes/Default/gtk
 @dirrm share/themes/Default
-@dirrm share/themes
 @dirrm include/gtk12/gtk
 @dirrm include/gtk12/gdk
 @dirrm include/gtk12
+@unexec /bin/rmdir %D/share/themes 2>/dev/null || /usr/bin/true
