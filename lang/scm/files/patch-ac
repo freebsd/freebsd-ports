@@ -1,0 +1,9 @@
+--- build.orig	Mon Feb  7 06:05:12 2000
++++ build	Tue Aug 15 05:17:25 2000
+@@ -1,5 +1,5 @@
+ #!/bin/sh
+-:;exec scmlit -f $0 -e"(bi)" build $*
++:;exec $SCMLIT -f $0 -e"(bi)" build $*
+ 
+ (require (in-vicinity (program-vicinity) "build.scm"))
+ (require 'getopt)
