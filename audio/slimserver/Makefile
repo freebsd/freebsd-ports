@@ -6,26 +6,34 @@
 #
 
 PORTNAME=	slimserver
-PORTVERSION=	5.2.1
+PORTVERSION?=	5.3.0
 CATEGORIES=	audio
-MASTER_SITES=	http://www.slimdevices.com/downloads/SlimServer_v${PORTVERSION}/
-DISTNAME=	SlimServer_v${PORTVERSION}
+MASTER_SITES=	http://www.slimdevices.com/downloads/${NIGHTLY}SlimServer_v${DISTVERSION}/
+DISTNAME=	SlimServer_v${DISTVERSION}
 
 MAINTAINER=	brooks@FreeBSD.org
 COMMENT=	Slim Devices audio streaming server
 
+DISTVERSION?=	${PORTVERSION}
+
 RUN_DEPENDS+=	${LOCALBASE}/bin/mDNSResponderPosix:${PORTSDIR}/net/mDNSResponder \
 		${SITE_PERL}/Audio/Wav.pm:${PORTSDIR}/audio/p5-Audio-Wav \
+		${SITE_PERL}/MP3/Info.pm:${PORTSDIR}/audio/p5-MP3-Info \
+		${SITE_PERL}/${PERL_ARCH}/MIME/Base64.pm:${PORTSDIR}/converters/p5-MIME-Base64 \
+		${SITE_PERL}/Data/Page.pm:${PORTSDIR}/databases/p5-Data-Page \
+		${SITE_PERL}/DBIx/ContextualFetch.pm:${PORTSDIR}/databases/p5-DBIx-ContextualFetch \
+		${SITE_PERL}/Ima/DBI.pm:${PORTSDIR}/databases/p5-Ima-DBI \
 		${SITE_PERL}/Class/Accessor.pm:${PORTSDIR}/devel/p5-Class-Accessor \
 		${SITE_PERL}/File/Spec.pm:${PORTSDIR}/devel/p5-File-Spec \
-		${SITE_PERL}/File/Which.pm:${PORTSDIR}/sysutils/p5-File-Which \
-		${SITE_PERL}/LWP.pm:${PORTSDIR}/www/p5-libwww \
 		${SITE_PERL}/IO/String.pm:${PORTSDIR}/devel/p5-IO-String \
-		${SITE_PERL}/${PERL_ARCH}/MIME/Base64.pm:${PORTSDIR}/converters/p5-MIME-Base64 \
-		${SITE_PERL}/MP3/Info.pm:${PORTSDIR}/audio/p5-MP3-Info \
+		${SITE_PERL}/${PERL_ARCH}/Time/HiRes.pm:${PORTSDIR}/devel/p5-Time-HiRes \
 		${SITE_PERL}/${PERL_ARCH}/Net/DNS.pm:${PORTSDIR}/dns/p5-Net-DNS \
-		${SITE_PERL}/${PERL_ARCH}/Template.pm:${PORTSDIR}/www/p5-Template-Toolkit \
-		${SITE_PERL}/${PERL_ARCH}/Time/HiRes.pm:${PORTSDIR}/devel/p5-Time-HiRes
+		${SITE_PERL}/File/Which.pm:${PORTSDIR}/sysutils/p5-File-Which \
+		${SITE_PERL}/XML/NamespaceSupport.pm:${PORTSDIR}/textproc/p5-XML-NamespaceSupport \
+		${SITE_PERL}/XML/SAX.pm:${PORTSDIR}/textproc/p5-XML-SAX \
+		${SITE_PERL}/XML/Simple.pm:${PORTSDIR}/textproc/p5-XML-Simple \
+		${SITE_PERL}/LWP.pm:${PORTSDIR}/www/p5-libwww \
+		${SITE_PERL}/${PERL_ARCH}/Template.pm:${PORTSDIR}/www/p5-Template-Toolkit
 
 .include <bsd.port.pre.mk>
 
@@ -36,26 +44,33 @@ PGREPBASE=	${LOCALBASE}
 PGREPBASE=	/usr
 .endif
 
-NO_BUILD=	yes
 USE_RC_SUBR=	yes
+TMP_SLIMDIR=	${WRKDIR}/slimserver
+TMP_DOCSDIR=	${WRKDIR}/doc
 DOCFILES=	Changelog.html Installation.txt
 EXCEPTFILES=	${DOCFILES}
 EXCEPTDIRS=	Bin \
 		CPAN/arch \
 		CPAN/Audio/Wav \
+		CPAN/Bundle \
 		CPAN/Class \
+		CPAN/Data \
+		CPAN/DBIx \
 		CPAN/File \
 		CPAN/HTML \
 		CPAN/HTTP \
+		CPAN/Ima \
 		CPAN/IO \
 		CPAN/LWP \
 		CPAN/MIME \
 		CPAN/MP3 \
 		CPAN/Net \
 		CPAN/Template \
-		CPAN/URI
+		CPAN/URI \
+		CPAN/XML
 
 CPIOARGS=	--quiet -pdum -R
+PLIST=		${WRKDIR}/pkg-plist
 PLIST_SUB=	SLIMDIR=${SLIMDIR}
 
 SED_SCRIPT+=	-e 's,%%PREFIX%%,${PREFIX},g' \
@@ -76,47 +91,56 @@ post-patch:
 SLIMDIR?=	slimserver
 
 pre-install:
-	@${SH} ${.CURDIR}/pkg-install ${PKGNAME} PRE-INSTALL
+	@${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
+
+do-build:
+	@${MKDIR} -m 0755 ${TMP_SLIMDIR}
+	@cd ${WRKSRC} && \
+	    ${FIND} . -name \*.orig ${EXCEPTFILES:S/^/-o -name /} \
+	    ${EXCEPTDIRS:S/$/\*/:S/^/-o -path .\//} -o -print | \
+	    ${CPIO} ${CPIOARGS} ${BINOWN}:${BINGRP} ${TMP_SLIMDIR}
+.if !defined(NOPORTDOCS)
+	@${MKDIR} ${TMP_DOCSDIR}
+	@cd ${WRKSRC} && ${INSTALL_DATA} ${DOCFILES} ${TMP_DOCSDIR}
+.endif
+	@${ECHO} "etc/rc.d/slimserver${PKGNAMESUFFIX}.sh" > ${PLIST}
+.if !defined(NOPORTDOCS)
+	@${FIND} ${TMP_DOCSDIR} -type f | \
+	    ${SED} -e 's|${TMP_DOCSDIR}|%%DOCSDIR%%|' | \
+	    ${SORT} >> ${PLIST}
+.endif
+	@${FIND} ${TMP_SLIMDIR}/* -type f | \
+	    ${SED} -e 's|${TMP_SLIMDIR}|%%SLIMDIR%%|' | \
+	    ${SORT} >> ${PLIST}
+	@${ECHO} "${SLIMDIR}/Cache" >> ${PLIST}
+	@${FIND} ${TMP_SLIMDIR} -type d | \
+	    ${SED} -e 's|${TMP_SLIMDIR}|@dirrm %%SLIMDIR%%|' | \
+	    ${SORT} -r >> ${PLIST}
+.if !defined(NOPORTDOCS)
+	@${FIND} ${TMP_DOCSDIR} -type d | \
+	    ${SED} -e 's|${TMP_DOCSDIR}|@dirrm %%DOCSDIR%%|' | \
+	    ${SORT} -r >> ${PLIST}
+.endif
+	@${ECHO} '@unexec rmdir /var/db/slimserver 2>/dev/null || (echo "Configuration information saved.  If you will *NOT* use this package anymore," && echo "please remove /var/db/slimserver and its contents manually.")' >> ${PLIST}
 
 do-install:
 	@${MKDIR} -m 0755 ${PREFIX}/${SLIMDIR}
 	@${LN} -s /var/db/slimserver/cache ${PREFIX}/${SLIMDIR}/Cache
-	@cd ${WRKSRC} && \
-	    ${FIND} . -name \*.orig ${EXCEPTFILES:S/^/-o -name /} \
-	    ${EXCEPTDIRS:S/$/\*/:S/^/-o -path .\//} -o -print | \
+	@cd ${TMP_SLIMDIR} && \
+	    ${FIND} . | \
 	    ${CPIO} ${CPIOARGS} ${BINOWN}:${BINGRP} ${PREFIX}/${SLIMDIR}
-	@${INSTALL_SCRIPT} ${WRKDIR}/slimserver.sh ${PREFIX}/etc/rc.d/
+	@${INSTALL_SCRIPT} ${WRKDIR}/slimserver.sh \
+	    ${PREFIX}/etc/rc.d/slimserver${PKGNAMESUFFIX}.sh
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
-	@cd ${WRKSRC} && ${INSTALL_DATA} ${DOCFILES} ${DOCSDIR}
+	@cd ${TMP_DOCSDIR} && \
+	    ${FIND} . | \
+	    ${CPIO} ${CPIOARGS} ${BINOWN}:${BINGRP} ${DOCSDIR}
 .endif
 
 post-install:
-	@${SH} ${.CURDIR}/pkg-install ${PKGNAME} POST-INSTALL
+	@${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 	@${ECHO}
 	@${CAT} ${PKGMESSAGE}
-
-########################################################################
-# The following targets are for the port maintainer.  Use are your own #
-# risk, no user-serviceable parts inside.                              #
-########################################################################
-# Assuming the port is installed cleanly (i.e. it's unconfigured)
-# build a pkg-plist file.
-build-plist:
-	${ECHO} "etc/rc.d/slimserver.sh" > pkg-plist
-	${FIND} ${DOCSDIR} -type f | \
-	    ${SED} -e 's|${DOCSDIR}|%%PORTDOCS%%%%DOCSDIR%%|' | \
-	    ${SORT} >> pkg-plist
-	${FIND} ${PREFIX}/${SLIMDIR}/* -type f | \
-	    ${SED} -e 's|${PREFIX}/${SLIMDIR}|%%SLIMDIR%%|' | \
-	    ${SORT} >> pkg-plist
-	${ECHO} "${SLIMDIR}/Cache" >> pkg-plist
-	${FIND} ${PREFIX}/${SLIMDIR} -type d | \
-	    ${SED} -e 's|${PREFIX}/${SLIMDIR}|@dirrm %%SLIMDIR%%|' | \
-	    ${SORT} -r >> pkg-plist
-	${FIND} ${DOCSDIR} -type d | \
-	    ${SED} -e 's|${DOCSDIR}|%%PORTDOCS%%@dirrm %%DOCSDIR%%|' | \
-	    ${SORT} -r >> pkg-plist
-	${ECHO} '@unexec rmdir /var/db/slimserver 2>/dev/null || (echo "Configuration information saved.  If you will *NOT* use this package anymore," && echo "please remove /var/db/slimserver and its contents manually.")' >> pkg-plist
 
 .include <bsd.port.post.mk>

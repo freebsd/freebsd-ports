@@ -11,6 +11,7 @@ comment="Slim Devices SlimServer pseudo-user"
 statedir=/var/db/slimserver
 cachedir=${statedir}/cache
 pidfile=/var/run/${name}.pid
+newsyslogfile=/etc/newsyslog.conf
 logfile=/var/log/slimserver.log
 logcomment="# added by audio/slimserver port"
 logline="${logfile}	${u}:${g} 644 3	   100	*     Z     ${pidfile}"
@@ -48,12 +49,12 @@ POST-INSTALL)
 		mkdir -p ${cachedir}
 		chown -R ${u}:${g} ${cachedir}
 	fi
-	if egrep -q "^${logfile}\>" /etc/newsyslog.conf; then
-		echo "Using existing /etc/newsyslog.conf entry."
+	if egrep -q "^${logfile}\>" ${newsyslogfile}; then
+		echo "Using existing ${newsyslogfile} entry."
 	else
-		echo "Adding slimserver log entry to /etc/newsyslog.conf."
-		echo "$logcomment" >> /etc/newsyslog.conf
-		echo "$logline" >> /etc/newsyslog.conf
+		echo "Adding slimserver log entry to ${newsyslogfile}."
+		echo "$logcomment" >> ${newsyslogfile}
+		echo "$logline" >> ${newsyslogfile}
 	fi
 	;;
 esac
