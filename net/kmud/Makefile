@@ -6,13 +6,14 @@
 #
 
 PORTNAME=	kmud
-PORTVERSION=	0.3
-CATEGORIES=	games
+PORTVERSION=	0.4.1
+CATEGORIES=	net
 MASTER_SITES=	ftp://ftp.kmud.de/pub/kmud/
 
 MAINTAINER=	will@FreeBSD.org
 
 LIB_DEPENDS=	kdecore.3:${PORTSDIR}/x11/kdelibs11
+BUILD_DEPENDS=	gettext:${PORTSDIR}/devel/gettext
 
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes

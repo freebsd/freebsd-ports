@@ -1,15 +1,32 @@
 bin/kmud
-share/applnk/Applications/kmud.kdelnk
+share/doc/HTML/de/kmud/index-1.html
+share/doc/HTML/de/kmud/index-2.html
+share/doc/HTML/de/kmud/index-3.html
+share/doc/HTML/de/kmud/index-4.html
+share/doc/HTML/de/kmud/index.html
+share/doc/HTML/de/kmud/logotp3.gif
+share/doc/HTML/de/kmud/logotp3.png
 share/doc/HTML/en/kmud/index-1.html
 share/doc/HTML/en/kmud/index-2.html
 share/doc/HTML/en/kmud/index-3.html
 share/doc/HTML/en/kmud/index-4.html
 share/doc/HTML/en/kmud/index.html
+share/doc/HTML/en/kmud/logotp3.gif
+share/doc/HTML/en/kmud/logotp3.png
+share/doc/HTML/ru/kmud/index-1.html
+share/doc/HTML/ru/kmud/index-2.html
+share/doc/HTML/ru/kmud/index-3.html
+share/doc/HTML/ru/kmud/index-4.html
+share/doc/HTML/ru/kmud/index.html
+share/doc/HTML/ru/kmud/logotp3.gif
+share/doc/HTML/ru/kmud/logotp3.png
 share/doc/HTML/sv/kmud/index-1.html
 share/doc/HTML/sv/kmud/index-2.html
 share/doc/HTML/sv/kmud/index-3.html
 share/doc/HTML/sv/kmud/index-4.html
 share/doc/HTML/sv/kmud/index.html
+share/doc/HTML/sv/kmud/logotp3.gif
+share/doc/HTML/sv/kmud/logotp3.png
 share/icons/kmud.xpm
 share/icons/mini/kmud.xpm
 share/icons/mini/kmud_aliases.xpm
@@ -21,4 +38,6 @@ share/icons/mini/kmud_triggers.xpm
 share/locale/de/LC_MESSAGES/kmud.mo
 share/locale/sv/LC_MESSAGES/kmud.mo
 @dirrm share/doc/HTML/sv/kmud
+@dirrm share/doc/HTML/ru/kmud
 @dirrm share/doc/HTML/en/kmud
+@dirrm share/doc/HTML/de/kmud
