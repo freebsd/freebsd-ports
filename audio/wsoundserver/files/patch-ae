@@ -1,0 +1,44 @@
+--- wslib/audio_voxware.c.orig	Fri Mar 31 23:14:40 2000
++++ wslib/audio_voxware.c	Wed May 24 11:08:24 2000
+@@ -403,6 +403,7 @@
+ 	long		blkFrames;		/* number of frames in current audio block */
+ 	int		blockSize = 8192;	/* Size of an audio block buffer in frames */
+ 	int		i;
++	u_int8_t	fakebuffer[2] = {0, 0};
+ 
+ #ifdef DEBUG
+ 	fprintf(stderr, " >> writing data\n");
+@@ -413,7 +414,11 @@
+ 		SErrorCode = SERR_NOMEMORY;
+ 		return -1;
+ 	}
+-	
++
++	/* Following line is a simple workarround for buggy pcm driver, which seens need at least to write()
++	   calls for sound to be actually played */
++	write(audiofd, fakebuffer, 2);
++
+ 	curFrame = 0;
+ 	while (curFrame < afInfo->FrameCount) {
+ 		if ((blkFrames = (afInfo->FrameCount - curFrame)) > blockSize) {
+@@ -503,6 +508,7 @@
+ 	long		blkFrames;		/* number of frames in current audio block */
+ 	int		blockSize = 4096;	/* Size of an audio block buffer in frames */
+ 	int		i;
++	u_int16_t	fakebuffer[2] = {0, 0};
+ 
+ #ifdef DEBUG
+ 	fprintf(stderr, " >> writing data\n");
+@@ -513,7 +519,11 @@
+ 		SErrorCode = SERR_NOMEMORY;
+ 		return -1;
+ 	}
+-	
++
++	/* Following line is a simple workarround for buggy pcm driver, which seens need at least to write()
++	   calls for sound to be actually played */
++	write(audiofd, fakebuffer, 4);
++
+ 	curFrame = 0;
+ 	while (curFrame < afInfo->FrameCount) {
+ 		if ((blkFrames = (afInfo->FrameCount - curFrame)) > blockSize) {
