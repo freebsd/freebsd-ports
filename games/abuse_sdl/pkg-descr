@@ -1,0 +1,15 @@
+Abuse-SDL is a port of Abuse by Crack Dot Com to Linux using the Simple
+DirectMedia Layer library. This allows Abuse to run at screen depths
+greater than 8bpp as well as fullscreen.
+
+Abuse-SDL has the following extra features over the original Abuse:
+
+ - Run at any screen depth from 8bpp to 32bpp.
+ - Run fullscreen or in a window.
+ - Lock the mouse to the window.
+ - Mousewheel support for changing weapons.
+ - Stereo sound.
+
+Note that this port does not install any data files.
+
+WWW: http://www.labyrinth.net.au/~trandor/abuse/
