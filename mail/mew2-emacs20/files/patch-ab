@@ -1,5 +1,5 @@
---- bin/Makefile.in~	Fri May 25 12:58:39 2001
-+++ bin/Makefile.in	Thu Aug  2 19:11:38 2001
+--- bin/Makefile.in.orig	Mon Sep 24 21:40:37 2001
++++ bin/Makefile.in	Tue Nov 20 10:10:42 2001
 @@ -65,7 +65,7 @@
  	$(CC) $(COFLAG) $(OBJ1) $(LIBS)
  	$(RM) $(ALT)
@@ -11,18 +11,18 @@
  	$(CC) $(COFLAG) $(CFLAGS) $(OBJ2)
 @@ -88,14 +88,14 @@
  	fi
- 	$(INSTALL) $(PRG1) $(bindir)
+ 	$(INSTALL) -m 555 $(PRG1) $(bindir)
  	for f in $(ALT); do \
 -	  $(RM) $(bindir)/$${f}; $(LN) $(bindir)/$(PRG1) $(bindir)/$${f}; done
-+	  $(RM) $(bindir)/$${f}; $(LN) -sf $(bindir)/$(PRG1) $(bindir)/$${f}; done
- 	$(INSTALL) $(PRG2) $(bindir)
++ 	  $(RM) $(bindir)/$${f}; $(LN) -sf $(bindir)/$(PRG1) $(bindir)/$${f}; done
+ 	$(INSTALL) -m 555 $(PRG2) $(bindir)
  	-@if [ ! -d $(mandir) ]; then \
  		$(MKDIR) $(mandir); \
  	fi
- 	$(INSTALL) $(MAN1) $(mandir)
+ 	$(INSTALL) -m 444 $(MAN1) $(mandir)
  	for f in $(MALT); do \
 -	  $(RM) $(mandir)/$${f}; $(LN) $(mandir)/$(MAN1) $(mandir)/$${f}; done
-+	  $(RM) $(mandir)/$${f}; $(LN) -sf $(mandir)/$(MAN1) $(mandir)/$${f}; done
- 	$(INSTALL) $(MAN2) $(mandir)
++ 	  $(RM) $(mandir)/$${f}; $(LN) -sf $(mandir)/$(MAN1) $(mandir)/$${f}; done
+ 	$(INSTALL) -m 444 $(MAN2) $(mandir)
  
  ##
