@@ -54,10 +54,9 @@ case "${sasl_saslauthd_enable}" in
 		;;
 
 	    stop)
-		if [ -r /var/state/saslauthd/mux.pid ]; then
-		    kill `cat /var/state/saslauthd/mux.pid` && \
+		if [ -r /var/state/saslauthd/saslauthd.pid ]; then
+		    kill `cat /var/state/saslauthd/saslauthd.pid` && \
 			echo -n " saslauthd"
-		    rm /var/state/saslauthd/mux.pid
 		fi
 		;;
 

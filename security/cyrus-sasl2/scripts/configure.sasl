@@ -125,7 +125,7 @@ while [ "$1" ]; do
 				exit 1
 			fi
 			echo "LIB_DEPENDS+=	db41.1:\${PORTSDIR}/databases/db41"
-			echo "CONFIGURE_ARGS+=	--with-dblib=berkeley --with-bdb-incdir=${PREFIX}/include/db41  --with-bdb-libdir=${PREFIX}/lib"
+			echo "CONFIGURE_ARGS+=	--with-dblib=berkeley --with-bdb=db41 --with-bdb-incdir=${PREFIX}/include/db41 --with-bdb-libdir=${PREFIX}/lib"
 			echo "SASLDB_NAME=	sasldb2"
 			DBLIB=1
 			;;
@@ -136,7 +136,7 @@ while [ "$1" ]; do
 				exit 1
 			fi
 			echo "LIB_DEPENDS+=	db4.0:\${PORTSDIR}/databases/db4"
-			echo "CONFIGURE_ARGS+=	--with-dblib=berkeley --with-bdb-incdir=${PREFIX}/include/db4  --with-bdb-libdir=${PREFIX}/lib"
+			echo "CONFIGURE_ARGS+=	--with-dblib=berkeley --with-bdb=db4 --with-bdb-incdir=${PREFIX}/include/db4 --with-bdb-libdir=${PREFIX}/lib"
 			echo "SASLDB_NAME=	sasldb2"
 			DBLIB=1
 			;;
@@ -147,7 +147,7 @@ while [ "$1" ]; do
 				exit 1
 			fi
 			echo "LIB_DEPENDS+=	db3.3:\${PORTSDIR}/databases/db3"
-			echo "CONFIGURE_ARGS+=	--with-dblib=berkeley --with-bdb-incdir=${PREFIX}/include/db3  --with-bdb-libdir=${PREFIX}/lib"
+			echo "CONFIGURE_ARGS+=	--with-dblib=berkeley --with-bdb=db3 --with-bdb-incdir=${PREFIX}/include/db3 --with-bdb-libdir=${PREFIX}/lib"
 			echo "SASLDB_NAME=	sasldb2"
 			DBLIB=1
 			;;
