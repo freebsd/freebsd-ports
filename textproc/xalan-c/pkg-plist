@@ -16,6 +16,7 @@ include/xalanc/DOMSupport/XalanNamespacesStack.hpp
 %%ICUDEP%%include/xalanc/ICUBridge/ICUXalanNumberFormatFactory.hpp
 %%ICUDEP%%include/xalanc/ICUBridge/ICUXalanNumberFormatProxy.hpp
 include/xalanc/Include/AIXDefinitions.hpp
+include/xalanc/Include/CygwinDefinitions.hpp
 include/xalanc/Include/GCCDefinitions.hpp
 include/xalanc/Include/HPUXDefinitions.hpp
 include/xalanc/Include/IntelDefinitions.hpp
@@ -65,7 +66,6 @@ include/xalanc/PlatformSupport/XalanDOMStringAllocator.hpp
 include/xalanc/PlatformSupport/XalanDOMStringCache.hpp
 include/xalanc/PlatformSupport/XalanDOMStringHashTable.hpp
 include/xalanc/PlatformSupport/XalanDOMStringPool.hpp
-include/xalanc/PlatformSupport/XalanDecimalFormat.hpp
 include/xalanc/PlatformSupport/XalanDecimalFormatSymbols.hpp
 include/xalanc/PlatformSupport/XalanEncodingPropertyCache.hpp
 include/xalanc/PlatformSupport/XalanFStreamOutputStream.hpp
@@ -298,6 +298,7 @@ include/xalanc/XSLT/XalanElemVariableAllocator.hpp
 include/xalanc/XSLT/XalanNumberingResourceBundle.hpp
 include/xalanc/XSLT/XalanSourceTreeDocumentAllocator.hpp
 include/xalanc/XSLT/XalanSourceTreeDocumentFragmentAllocator.hpp
+include/xalanc/XSLT/XalanSpaceNodeTester.hpp
 include/xalanc/XalanDOM/XalanAttr.hpp
 include/xalanc/XalanDOM/XalanCDATASection.hpp
 include/xalanc/XalanDOM/XalanCharacterData.hpp
