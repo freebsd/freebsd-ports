@@ -13,6 +13,7 @@ include/qhacctablerows.h
 include/qhaccutils.h
 include/resultset.h
 include/sqldbplugin.h
+include/tableops.h
 lib/libarcio.a
 lib/libarcio.so
 lib/libarcio.so.1
