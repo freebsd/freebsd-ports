@@ -25,11 +25,8 @@ HASSECURERPC=	 YES
 #if HasXdmAuth
 HASXDMAUTH=	 YES
 #endif
-#if HasKrb4
-HASKRB4=	 YES
-#endif	
 
-all:: SecureRPCCheck XdmAuthCheck Krb4Check \
+all:: SecureRPCCheck XdmAuthCheck \
 	InputExtCheck pexCheck xieCheck \
 	ELFCheck
 
@@ -54,6 +51,7 @@ initialize::
 	${ECHO} "#undef XF86AGXServer" >> ${CONFFILE}; \
 	${ECHO} "#undef XF86W32Server" >> ${CONFFILE}; \
 	${ECHO} "#undef XF86I128Server" >> ${CONFFILE}; \
+	${ECHO} "#undef XF86GLINTServer" >> ${CONFFILE}; \
 	${ECHO} "#undef XF98EGCServer" >> ${CONFFILE}; \
 	${ECHO} "#undef XF98GA968Server" >> ${CONFFILE}; \
 	${ECHO} "#undef XF98GANBWAPServer" >> ${CONFFILE}; \
@@ -151,17 +149,3 @@ XdmAuthCheck:: initialize
 .else
 	@${DO_NADA}
 .endif
-
-Krb4Check:: initialize
-.if defined(HASKRB4) && ${HASKRB4} == YES
-	@( \
-	${ECHO} "#define HasKrb4 ${HASKRB4}" >> ${CONFFILE} ; \
-	${ECHO_MSG} "   Using KerberosIV." ; \
-	${ECHO_MSG} "     Applying KerberosIV patches" ; \
-	${CP} ${FILESDIR}/krb4auth.c ${FILESDIR}/krb4auth.h ${WRKDIR}/xc/programs/xdm/; \
-	patch -s -d ${WRKDIR}/xc -E -p0 < ${FILESDIR}/kerberos4.diffs ; \
-	)
-.else
-	@${DO_NADA}
-.endif
-

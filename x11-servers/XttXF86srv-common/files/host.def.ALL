@@ -17,6 +17,7 @@
 #define XF86AGXServer		YES
 #define XF86W32Server		YES
 #define XF86I128Server		YES
+#define XF86GLINTServer		YES
 
 #define BuildPC98Servers	YES
 

@@ -1,4 +1,3 @@
-
 #define BuildServersOnly	YES
 #define BuildFontServer		NO
 
@@ -13,11 +12,10 @@
 #define XF86Mach8Server         NO
 #define XF86Mach32Server        NO
 #define XF86Mach64Server        NO
-#define XF86P9000Server		YES
+#define XF86P9000Server		NO
 #define XF86AGXServer		NO
 #define XF86W32Server		NO
 #define XF86I128Server		NO
-#define XF86GLINTServer		NO
 
 #undef BuildPC98Servers
 #define BuildPC98Servers	NO

@@ -1,16 +1,14 @@
 bin/mkfontdir.pl
-share/doc/Xtt/xtt10-announce.eng
-share/doc/Xtt/xtt10-announce.jis
-share/doc/Xtt/xtt10-example.eng
-share/doc/Xtt/xtt10-example.jis
-share/doc/Xtt/xtt10-install.eng
-share/doc/Xtt/xtt10-install.jis
-share/doc/Xtt/xtt10-miscnote.eng
-share/doc/Xtt/xtt10-miscnote.jis
-share/doc/Xtt/xtt10-readme.eng
-share/doc/Xtt/xtt10-readme.jis
-share/doc/Xtt/xtt10-changes.eng
-share/doc/Xtt/xtt10-changes.jis
+share/doc/Xtt/00README.eng
+share/doc/Xtt/CHANGES.eng
+share/doc/Xtt/EXAMPLES.eng
+share/doc/Xtt/INSTALL.eng
+share/doc/Xtt/MISCNOTES.eng
+share/doc/Xtt/00README.jis
+share/doc/Xtt/CHANGES.jis
+share/doc/Xtt/EXAMPLES.jis
+share/doc/Xtt/INSTALL.jis
+share/doc/Xtt/MISCNOTES.jis
 include/X11/fonts/codeconv/ftcap.h
 include/X11/fonts/codeconv/ftcconv.h
 include/X11/fonts/codeconv/ftcconvC.h
@@ -37,10 +35,11 @@ lib/modules/codeconv/JISX0212.so
 lib/modules/codeconv/KOI8.so
 lib/modules/codeconv/KSC5601.so
 lib/modules/codeconv/KSCJOHAB.so
+lib/modules/codeconv/TCVN.so
 lib/modules/codeconv/VISCII.so
 lib/libfont.a
 lib/libfont.so
-lib/libfont.so.1.0
+lib/libfont.so.1.1
 @exec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -m %B
 @unexec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -R
 @dirrm share/doc/Xtt
