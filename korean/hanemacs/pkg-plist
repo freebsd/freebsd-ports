@@ -12,9 +12,6 @@ bin/emacsclient
 @comment scare user in that case
 @unexec %D/share/hanemacs/site-lisp 2>/dev/null || true
 @unexec %D/share/hanemacs/19.34/site-lisp 2>/dev/null || true
-man/man1/emacs.1.gz
-man/man1/etags.1.gz
-man/man1/ctags.1.gz
 @unexec install-info --delete %D/info/emacs %D/info/dir
 @unexec install-info --delete %D/info/vip %D/info/dir
 @unexec install-info --delete %D/info/viper %D/info/dir
