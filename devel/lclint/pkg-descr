@@ -4,5 +4,5 @@ invested adding annotations to programs, LCLint can perform stronger
 checks than can be done by any standard lint.
 
 Check the LCLint home page at 
-	http://larch-www.lcs.mit.edu:8001/larch/lclint/
+	http://www.sds.lcs.mit.edu/lclint/
 for more information and complete documentation.
