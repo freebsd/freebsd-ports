@@ -29,7 +29,7 @@ RUN_DEPENDS=	${THEMESBASE}/libbuffy.so:${PORTSDIR}/x11-themes/buffy \
 		${THEMESBASE}/libqnx.so:${PORTSDIR}/x11-themes/gtk-qn-x11-theme \
 		${THEMESBASE}/libstep.so:${PORTSDIR}/x11-themes/gtkstep \
 		${THEMESBASE}/libsteppastel.so:${PORTSDIR}/x11-themes/gtkstep-pastel \
-		${THEMESBASE}/libzenith.so:${PORTSDIR}/gtk-zenith-theme \
+		${THEMESBASE}/libzenith.so:${PORTSDIR}/x11-themes/gtk-zenith-theme \
 		${THEMESBASE}/libthinice.so:${PORTSDIR}/x11-themes/thinice \
 		${THEMESBASE}/libXenoStep.so:${PORTSDIR}/x11-themes/xenostep \
 		${THEMESBASE}/libxeno.so:${PORTSDIR}/x11-themes/xenophilia \
