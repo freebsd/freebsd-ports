@@ -36,15 +36,15 @@ pre-configure:
 pre-build:
 	cd ${WRKSRC} && ${GMAKE} depend
 
-.if !defined(NOPORTDOCS)
 post-install:
+.if !defined(NOPORTDOCS)
 	${MKDIR} ${PREFIX}/share/doc/allegro
 	${CP} ${WRKSRC}/docs/html/* ${PREFIX}/share/doc/allegro
+.endif
 	@${MV} ${LOCALBASE}/lib/liballeg-4.0.0.so \
-		${LOCALBASE}/lib/liballeg.so.4.0
+		${LOCALBASE}/lib/liballeg.so.4
 	@${MV} ${LOCALBASE}/lib/liballeg_unsharable.a \
 		${LOCALBASE}/lib/liballeg.a
-.endif
 
 .if !defined (WITHOUT_MAN)
 INSTALL_TARGET+=	install-man
