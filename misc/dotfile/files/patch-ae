@@ -1,0 +1,14 @@
+*** configure.orig	Sun Feb 22 10:05:56 1998
+--- configure	Sun Feb 22 10:06:13 1998
+***************
+*** 1427,1435 ****
+  chmod 755 dotfile
+  chmod 755 Modules/fvwm2/fvwmrc_convert
+  
+- echo ----------------------------------------------------------------------
+- echo ----------------------------------------------------------------------
+- echo please login to your mail host, go to the directory Modules/procmail
+- echo and run ./configure from there.
+- echo ----------------------------------------------------------------------
+- echo ----------------------------------------------------------------------
+--- 1427,1429 ----
