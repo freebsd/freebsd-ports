@@ -6,11 +6,14 @@
 #
 
 PORTNAME=	firebird
-PORTVERSION=	0.6
+PORTVERSION=	0.6.1
 CATEGORIES=	www
-MASTER_SITES=	http://komodo.mozilla.org/pub/firebird/releases/${PORTVERSION}/
+#MASTER_SITES=	${MASTER_SITE_MOZILLA}
+#MASTER_SITE_SUBDIR=	firebird/releases/${PORTVERSION}
+MASTER_SITES=	http://pryan.org/firebird/pryan/
 PKGNAMEPREFIX=	mozilla-
-DISTNAME=	MozillaFirebird-${PORTVERSION}-source
+#DISTNAME=	MozillaFirebird-source-${PORTVERSION}
+DISTNAME=	MozillaFirebird-${PORTVERSION}-source-pryan
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Mozilla Firebird is the next generation browser from the mozilla.org project
@@ -31,6 +34,7 @@ USE_GMAKE=	yes
 USE_PERL5=	yes
 USE_REINPLACE=	yes
 HAS_CONFIGURE=	yes
+ALL_TARGET=	default
 
 .if defined(WITH_GTK2)
 USE_GNOME=	gtk20 libidl
