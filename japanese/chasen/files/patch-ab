@@ -1,0 +1,18 @@
+--- lib/pat.h~	Tue May 27 06:12:58 1997
++++ lib/pat.h	Thu Oct 22 00:58:38 1998
+@@ -14,6 +14,7 @@
+ #define OL(x)  /* */
+ #endif
+ 
++#include <sys/types.h>
+ #ifndef NO_MMAP
+ #ifdef _WIN32
+ #define ONMEM_DIC
+@@ -21,7 +22,6 @@
+ #include <sys/mman.h>
+ #endif
+ #endif /* !NO_MMAP */
+-#include <sys/types.h>
+ #include <sys/stat.h>
+ 
+ #ifdef ONMEM_DIC
