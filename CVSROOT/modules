@@ -6176,6 +6176,7 @@ sim		ports/emulators/sim
 sim4		ports/biology/sim4
 sim6811		ports/emulators/sim6811
 simpack		ports/math/simpack
+since		ports/misc/since
 sing		ports/net/sing
 siod		ports/lang/siod
 sip		ports/devel/sip
