@@ -10,7 +10,7 @@ PORTVERSION=	3.1.5
 CATEGORIES=	print
 MASTER_SITES=	http://www.trends.net/~mu/srcs/
 
-MAINTAINER=	handy@physics.montana.edu
+MAINTAINER=	ports@FreeBSD.Org
 
 USE_X_PREFIX=	yes
 USE_XPM=	yes
