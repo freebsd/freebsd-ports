@@ -1,9 +1,0 @@
-bin/sfspeaker
-bin/sfmike
-bin/sflwl
-sbin/sfecho
-sbin/sflwld
-sbin/sfvod
-lib/speak_freely/ring.au
-lib/speak_freely/busy.au
-@dirrm lib/speak_freely

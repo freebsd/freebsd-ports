@@ -1,9 +1,0 @@
-Wget [formerly known as Geturl] is a freely available network utility
-to retrieve files from the World Wide Web using HTTP and FTP, the two
-most widely used Internet protocols.  It works non-interactively, thus
-enabling work in the background, after having logged off.
-
-The recursive retrieval of HTML pages, as well as FTP sites is
-supported -- you can use Wget to make mirrors of archives and home
-pages, or traverse the web like a WWW robot (Wget understands
-/robots.txt).
