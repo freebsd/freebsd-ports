@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	starlogo
-PORTVERSION=	1.1
+PORTVERSION=	1.2
 CATEGORIES=	lang java
 MASTER_SITES=	http://el.www.media.mit.edu/groups/el/Projects/starlogo/download/
 
