@@ -6534,6 +6534,7 @@ p5-POE-Component-Client-POP3	ports/devel/p5-POE-Component-Client-POP3
 p5-POE-Component-Client-Ping	ports/devel/p5-POE-Component-Client-Ping
 p5-POE-Component-Client-UserAgent	ports/devel/p5-POE-Component-Client-UserAgent
 p5-POE-Component-DBIAgent	ports/devel/p5-POE-Component-DBIAgent
+p5-POE-Component-DebugShell	ports/devel/p5-POE-Component-DebugShell
 p5-POE-Component-DirWatch	ports/devel/p5-POE-Component-DirWatch
 p5-POE-Component-IKC	ports/devel/p5-POE-Component-IKC
 p5-POE-Component-IKC-ReallySimple	ports/devel/p5-POE-Component-IKC-ReallySimple
