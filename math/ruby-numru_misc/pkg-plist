@@ -1,0 +1,14 @@
+%%RUBY_SITELIBDIR%%/numru/misc.rb
+%%RUBY_SITELIBDIR%%/numru/misc/emath.rb
+%%RUBY_SITELIBDIR%%/numru/misc/keywordopt.rb
+%%RUBY_SITELIBDIR%%/numru/misc/md_iterators.rb
+%%RUBY_SITELIBDIR%%/numru/misc/misc.rb
+@dirrm %%RUBY_SITELIBDIR%%/numru/misc
+@unexec rmdir %D/%%RUBY_SITELIBDIR%%/numru 2>/dev/null || true
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/ChangeLog
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/emath.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/index.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/keywordopt.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/md_iterators.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/misc.html
+%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%
