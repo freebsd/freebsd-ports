@@ -8,7 +8,7 @@
 PORTNAME=	vrflash
 PORTVERSION=	0.20
 CATEGORIES=	comms
-MASTER_SITES=	http://www.apex.net/~jeff/agenda-utils/vrflash-unix/
+MASTER_SITES=	ftp://ftp.agendacomputing.com/agenda/utils/
 
 MAINTAINER=	dinoex@FreeBSD.org
 
