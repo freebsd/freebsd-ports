@@ -146,6 +146,7 @@
     SUBDIR += tinymux
     SUBDIR += tkmoo
     SUBDIR += tksol
+    SUBDIR += trojka
     SUBDIR += tvp
     SUBDIR += omega
     SUBDIR += uox3

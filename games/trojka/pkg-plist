@@ -1,0 +1,5 @@
+bin/trojka
+share/trojka/COPYRIGHT
+share/trojka/README
+share/trojka/trojka.scores
+@dirrm share/trojka
