@@ -1,0 +1,21 @@
+--- old/audio.cc	Fri May  3 13:27:20 1996
++++ audio.cc	Thu Apr 16 21:36:33 1998
+@@ -70,6 +70,7 @@
+ 	filter(new Filter(this)),
+ 	handler_(0)
+ {
++	ext_fname[0]='\0';
+ 	for (u_int i = 0; i < sizeof(omode)/sizeof(omode[0]); ++i)
+ 		omode[i] = mode_mikemutesnet;
+ }
+@@ -479,6 +480,10 @@
+ 				*cp++ = '\0';
+ 				return (TCL_OK);
+ 			}
++		} else if (strcmp(argv[1], "filename") == 0) {
++			strncpy(ext_fname, argv[2], sizeof(ext_fname));
++			InputPort(input_line3);
++			return (TCL_OK);
+ 		}
+ 	} else if (argc == 4) {
+ 		if (strcmp(argv[1], "input") == 0) {
