@@ -8,3 +8,4 @@ lib/libpng.a
 lib/libpng.so.%%SHLIB_VER%%
 @exec ln -sf %f %B/libpng.so
 @unexec rm -f %B/libpng.so
+@dirrm include/libpng
