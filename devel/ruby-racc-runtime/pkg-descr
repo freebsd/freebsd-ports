@@ -1,0 +1,5 @@
+This package only installs runtime libraries for Racc, an LALR(1)
+parser generator for Ruby.
+
+Author:	Minero Aoki <aamine@dp.u-netsurf.ne.jp>
+WWW:	http://www1.u-netsurf.ne.jp/~brew/mine/en/index.html

@@ -271,6 +271,7 @@
     SUBDIR += ruby-optparse
     SUBDIR += ruby-property
     SUBDIR += ruby-racc
+    SUBDIR += ruby-racc-runtime
     SUBDIR += ruby-strscan
     SUBDIR += rvm
     SUBDIR += sdcc
