@@ -3,11 +3,12 @@
 # Date created:		15 November 1994
 # Whom:			torstenb
 #
-# $Id: Makefile,v 1.1.1.1 1995/02/27 21:43:11 jmz Exp $
+# $Id: Makefile,v 1.2 1995/03/28 06:29:01 gpalmer Exp $
 #
 
 DISTNAME=	ImageMagick-3.6
 MASTER_SITES=	ftp://ftp.x.org/contrib/applications/ImageMagick/
+CATEGORIES+=	graphics
 WRKSRC=		${WRKDIR}/ImageMagick
 USE_IMAKE=	YES
 

@@ -1,5 +1,6 @@
 DISTNAME=	golddig2
 MASTER_SITES=	ftp://qiclab.scn.rain.com/pub/games/
+CATEGORIES+=	games
 EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=	jmz@FreeBSD.org

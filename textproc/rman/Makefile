@@ -7,5 +7,6 @@
 DISTNAME=       rman-2.0
 EXTRACT_SUFX=	.tar.Z
 MASTER_SITES=   ftp://ftp.cs.berkeley.edu/ucb/people/phelps/tcltk/
+CATEGORIES+=	utilities
 
 .include <bsd.port.mk>

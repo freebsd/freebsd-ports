@@ -2,6 +2,7 @@ DISTFILES=	makeindex-3.0.8.tar.Z
 DISTNAME=	makeindex
 
 MASTER_SITES=	ftp://achilles.doc.ic.ac.uk/tex/contrib/Schrod/
+CATEGORIES+=	printing
 
 build: configure pre-build
 	@echo "===>  Building for ${DISTNAME}"

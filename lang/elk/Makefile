@@ -6,6 +6,7 @@
 
 DISTNAME=       elk-2.2
 MASTER_SITES=	ftp://ftp.x.org/contrib/devel_tools/
+CATEGORIES+=	languages
 PATCH_STRIP=	-p1
 
 #

@@ -3,11 +3,12 @@
 # Date created:		17 Oct 1994
 # Whom:			torstenb
 #
-# $Id: Makefile,v 1.1.1.1 1994/10/23 01:16:14 torstenb Exp $
+# $Id: Makefile,v 1.2 1994/11/10 06:55:37 gpalmer Exp $
 #
 
 DISTNAME=	sox10p11
 MASTER_SITES=	ftp://nic.switch.ch/software/sources/audio/
+CATEGORIES+=	audio
 EXTRACT_SUFX=	.tar.Z
 
 pre-install:

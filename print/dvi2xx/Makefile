@@ -1,5 +1,6 @@
 DISTNAME=	dvi2xx
 DISTFILES=	dvi2xx.tar.gz
+CATEGORIES+=	printing
 
 .if !defined(MASTER_SITE_OVERRIDE)
 #other equivalent sites: ftp.shsu.edu dtp.dante.de

@@ -8,6 +8,7 @@
 
 DISTNAME=       gnat-2.03-src
 MASTER_SITES=   ftp://cs.nyu.edu/pub/gnat/
+CATEGORIES+=	languages
 EXTRACT_SUFX=	.tar.gz
 
 # You need a compiler who calls an existing gnat compiler:

@@ -3,11 +3,12 @@
 # Date created:		7 March 1995
 # Whom:			Nobuhiro Yasutomi
 #
-# $Id: Makefile,v 1.1.1.1 1995/03/20 12:48:02 asami Exp $
+# $Id: Makefile,v 1.3 1995/03/28 06:20:54 asami Exp $
 #
 DISTNAME=	jless-237
 DISTFILES=	less-237.tar.gz
 MASTER_SITES=	ftp://ftp.aist-nara.ac.jp/pub/misc/less/
+CATEGORIES+=	japanese
 MAINTAINER=	asami@FreeBSD.ORG
 HAS_CONFIGURE=	yes
 WRKSRC=		${WRKDIR}/less-237

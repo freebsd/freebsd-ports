@@ -4,7 +4,7 @@
 # Whom:			asami
 # Original by:		roberto
 #
-# $Id: Makefile,v 1.6 1995/02/27 23:51:31 jmz Exp $
+# $Id: Makefile,v 1.7 1995/03/24 11:09:12 asami Exp $
 #
 
 DISTNAME=	xfig.3.1.3
@@ -12,6 +12,7 @@ PKGNAME=	xfig-3.1.3
 WRKSRC=		${WRKDIR}/xfig
 MASTER_SITES=	ftp://ftp.x.org/contrib/applications/drawing_tools/xfig/ \
 	ftp://crl.dec.com/pub/X11/contrib/applications/drawing_tools/xfig/
+CATEGORIES+=	graphics x11
 MAINTAINER=	asami@FreeBSD.ORG
 LIB_DEPENDS=	Xpm\\.4\\.:${PORTSDIR}/graphics/xpm
 USE_IMAKE=	yes

@@ -3,12 +3,13 @@
 # Date created:		29 October 1994
 # Whom:			pst
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1995/02/02 18:01:15 pst Exp $
 #
 
 DISTNAME=	gated-R3_5Alpha_9
 EXTRACT_SUFX=	.tar.Z
 MASTER_SITES=	ftp://gated.cornell.edu/pub/gated/
+CATEGORIES+=	networking
 ALL_TARGET=	gated
 
 .include <bsd.port.mk>

@@ -3,13 +3,14 @@
 # Date created:		28 September 1994
 # Whom:			adam
 #
-# $Id: Makefile,v 1.1.1.1 1994/09/30 15:09:34 adam Exp $
+# $Id: Makefile,v 1.2 1995/01/24 16:43:07 pst Exp $
 #
 
 DISTNAME=	cnews
 EXTRACT_SUFFIX=	.tar.Z
 DISTFILES=	${DISTNAME}${EXTRACT_SUFFIX}
 MASTER_SITES=	ftp://ftp.zoo.toronto.edu/pub/
+CATEGORIES+=	news
 WRKSRC=		${WRKDIR}
 MAKEFILE=	makefile
 NEWSSPOOL=	/usr/local/newsspool

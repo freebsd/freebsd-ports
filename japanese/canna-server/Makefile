@@ -3,11 +3,12 @@
 # Date created:		3 November 1995
 # Whom:			Nobuhiro Yasutomi
 #
-# $Id: Makefile,v 1.1.1.1 1995/03/06 08:12:39 asami Exp $
+# $Id: Makefile,v 1.2 1995/03/24 11:09:21 asami Exp $
 #
 
 DISTNAME=	Canna32p1
 MASTER_SITES=	ftp://ftp.nec.co.jp/pub/packages/Canna32/
+CATEGORIES+=	japanese
 MAINTAINER=	asami@FreeBSD.ORG
 PATCH_STRIP=	-p1
 ALL_TARGET=	canna

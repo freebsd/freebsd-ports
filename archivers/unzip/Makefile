@@ -1,6 +1,7 @@
 DISTFILES=	unzip512.tar.Z
 DISTNAME=	unzip-5.12
 MASTER_SITES=	ftp://garbo.uwasa.fi/unix/arcers/
+CATEGORIES+=	archivers
 MAKEFILE=       unix/Makefile
 ALL_TARGET=     bsd
 MAKE_FLAGS=     LOCAL_UNZIP="-O2 -DCHECK_EOF" \

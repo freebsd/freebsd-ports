@@ -6,6 +6,7 @@
 DISTNAME=       ecu-3.33
 EXTRACT_SUFX=   .cpio.Z
 MASTER_SITES=   ftp://ftp.kiae.su/unix/comm/
+CATEGORIES+=	comms
 EXTRACT_CMD=    (zcat | cpio -idm)
 EXTRACT_ARGS=   <
 HAS_CONFIGURE=  YES

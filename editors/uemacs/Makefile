@@ -6,6 +6,7 @@
 
 DISTNAME=	uemacs
 MASTER_SITES=	ftp://midas.mgmt.purdue.edu/pub/ue312/
+CATEGORIES+=	editors
 PATCH_STRIP=	-p1
 DISTFILES=	ue312dev.zip
 EXEC_DEPENDS=	unzip:${PORTSDIR}/archivers/unzip

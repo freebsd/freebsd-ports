@@ -3,11 +3,12 @@
 # Date created:         Wed Feb  8 01:49:11  1995
 # Whom:                 hsu
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1995/02/12 21:10:01 hsu Exp $
 #
 
 DISTNAME=       gcl-1.1
 MASTER_SITES=   ftp://ftp.cli.com/pub/gcl/ ftp://math.utexas.edu/pub/gcl/
+CATEGORIES+=	languages
 EXTRACT_SUFX=	.tgz
 MAKEFILE=	makefile
 

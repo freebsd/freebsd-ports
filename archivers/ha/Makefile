@@ -3,11 +3,12 @@
 # Date created:         24 Jan 1995
 # Whom:                 ache
 #
-# $Id: Makefile,v 1.1.1.1 1995/01/24 16:43:32 ache Exp $
+# $Id: Makefile,v 1.2 1995/01/24 16:56:05 ache Exp $
 #
 DISTNAME=       ha0999
 EXTRACT_SUFX=   .tgz
 MASTER_SITES=   ftp://ftp.kiae.su/unix/arcers/
+CATEGORIES+=	archivers
 NO_WRKSUBDIR=   YES
 MAKEFILE=       makefile.nix
 MAKE_FLAGS=     CC=cc -f

@@ -3,7 +3,7 @@
 # Date created:		7 March 1995
 # Whom:			joerg
 #
-# $Id: Makefile,v 1.1.1.1 1995/03/05 23:32:25 joerg Exp $
+# $Id: Makefile,v 1.1.1.1 1995/03/27 21:35:16 joerg Exp $
 #
 
 DISTNAME=	pcemu1.01alpha
@@ -26,5 +26,6 @@ MASTER_SITES+=	ftp://ftp.iij.ad.jp/pub/linux/tsx-11/ALPHA/dosemu/Misc/
 #
 # This is the original master site, but better use a well-connected server
 MASTER_SITES+=	ftp://ftp.cs.bris.ac.uk/users/hedley/
+CATEGORIES+=	utilities emulation
 
 .include <bsd.port.mk>

@@ -11,6 +11,7 @@ DISTFILES=	Seyon-2.14b-tar.Z
 WRKSRC=		${WRKDIR}/seyon
 USE_IMAKE=	yes
 MASTER_SITES=	ftp://sipb.mit.edu/pub/seyon/
+CATEGORIES+=	comms
 MAINTAINER=	me@FreeBSD.org
 
 .include <bsd.port.mk>

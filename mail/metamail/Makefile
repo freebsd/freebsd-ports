@@ -3,12 +3,13 @@
 # Date created:		17 Oct 1994
 # Whom:			torstenb
 #
-# $Id:$
+# $Id: Makefile,v 1.1.1.1 1994/10/23 01:19:50 torstenb Exp $
 #
 
 DISTNAME=	mm2.7
 WRKSRC=		${WRKDIR}/${DISTNAME}/src
 MASTER_SITES=	ftp://thumper.bellcore.com/pub/nsb/
+CATEGORIES+=	mail
 EXTRACT_SUFX=	.tar.Z
 
 pre-install:

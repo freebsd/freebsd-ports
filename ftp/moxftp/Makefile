@@ -20,6 +20,7 @@ CONFIGURE_ARGS=	athena
 #DEPENDS=	${PORTSDIR}/x11/Xaw3d
 
 MASTER_SITES=	ftp://ftp.x.org/contrib/applications/
+CATEGORIES+=	networking
 
 .include <bsd.port.mk>
 

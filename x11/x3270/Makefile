@@ -8,5 +8,6 @@ DISTNAME=	x3270-3.0.3
 DISTFILES=	x3270-3.0.3.4.tar.gz
 USE_IMAKE=	yes
 MASTER_SITES=	ftp://ftp.icm.edu.pl/pub/X11/contrib/applications/x3270/
+CATEGORIES+=	x11 emulation
 
 .include <bsd.port.mk>

@@ -8,5 +8,6 @@ DISTNAME=	xminesweep3.0
 EXTRACT_SUFX=	.tar.Z
 USE_IMAKE=	yes
 MASTER_SITES=	ftp://ftp.icm.edu.pl/pub/X11/contrib/games/
+CATEGORIES+=	games
 
 .include <bsd.port.mk>

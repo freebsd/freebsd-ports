@@ -3,11 +3,12 @@
 # Date created:		10 February 1995
 # Whom:			jkh
 #
-# $Id: Makefile,v 1.1.1.1 1994/11/20 16:00:09 torstenb Exp $
+# $Id: Makefile,v 1.1.1.1 1995/02/19 10:34:04 jkh Exp $
 #
 
 DISTNAME=	pdore-6.0
 MASTER_SITES=   ftp://freefall.cdrom.com/pub/FreeBSD/LOCAL_PORTS/
+CATEGORIES+=	graphics
 USE_GMAKE=	yes
 PREFIX=		${X11BASE}
 EXTRACT_SUFX=	.tar.Z

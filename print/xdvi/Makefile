@@ -1,6 +1,7 @@
 DISTFILES=	xdvi.tar.Z
 DISTNAME=	xdvi
 MASTER_SITES=	ftp://ftp.x.org/contrib/applications/
+CATEGORIES+=	printing
 USE_IMAKE=	yes
 USE_GMAKE=	yes
 IS_INTERACTIVE=	yes

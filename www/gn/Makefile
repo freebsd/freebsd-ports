@@ -3,11 +3,12 @@
 # Date created:         20 Sep 1994
 # Whom:                 adam
 #
-# $Id: Makefile,v 1.4 1994/10/20 12:56:17 adam Exp $
+# $Id: Makefile,v 1.5 1994/11/09 23:08:51 jkh Exp $
 #
 
 DISTNAME=       gn-2.17
 MASTER_SITES=	ftp://ftp.acns.nwu.edu/pub/gn/
+CATEGORIES+=	networking
 INETD_CONF=	/etc/inetd.conf
 CONF=	'	stream	tcp	nowait	nobody	/usr/local/etc/gn	gn'
 DEPENDS=	${PORTSDIR}/net/wais

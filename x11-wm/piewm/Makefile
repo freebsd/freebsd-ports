@@ -3,12 +3,13 @@
 # Date created:		24 November 1994
 # Whom:			asami
 #
-# $Id: Makefile,v 1.6 1995/02/11 13:51:31 asami Exp $
+# $Id: Makefile,v 1.7 1995/03/24 11:11:44 asami Exp $
 #
 
 DISTNAME=	piewm
 USE_IMAKE=	yes
 MASTER_SITES=	ftp://ftp.x.org/R5contrib/
+CATEGORIES+=	x11
 MAINTAINER=	asami@FreeBSD.ORG
 EXTRACT_SUFX=	.tar.Z
 PKG_CMD=	pkg_create -N

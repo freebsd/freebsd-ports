@@ -3,11 +3,12 @@
 # Date created:         Sat Nov  5 01:16:33 PST 1994
 # Whom:                 hsu
 #
-# $Id: Makefile,v 1.1.1.1 1994/11/05 09:56:05 hsu Exp $
+# $Id: Makefile,v 1.2 1994/11/22 09:16:22 hsu Exp $
 #
 
 DISTNAME=       mprof-3.0
 MASTER_SITES=   ftp://cs.colorado.edu/pub/misc/
+CATEGORIES+=	development programming
 EXTRACT_SUFX=	.tar.Z
 WRKSRC=		${WRKDIR}
 MAKEFILE=	Makefile.i386

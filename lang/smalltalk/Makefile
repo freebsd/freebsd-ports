@@ -3,11 +3,12 @@
 # Date created:		09 Feb 1995
 # Whom:			gpalmer
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1995/02/10 06:15:03 gpalmer Exp $
 #
 
 DISTNAME=	smalltalk-1.1.1
 MASTER_SITES=	ftp://prep.ai.mit.edu/pub/gnu/
+CATEGORIES+=	languages
 MAINTAINER=	gpalmer@FreeBSD.ORG
 
 pre-configure:
