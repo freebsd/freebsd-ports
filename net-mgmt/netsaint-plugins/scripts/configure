@@ -39,6 +39,7 @@ OpenLDAP	"OpenLDAP support" OFF \
 	esac
 fi
 
+${MKDIR} ${WRKDIRPREFIX}${CURDIR}
 exec > ${WRKDIRPREFIX}${CURDIR}/Makefile.inc
 
 SUB_QSTAT="@comment "
