@@ -82,7 +82,6 @@
     SUBDIR += crafty
     SUBDIR += crafty-open-large
     SUBDIR += crafty-open-medium
-    SUBDIR += crafty-open-small
     SUBDIR += crimson
     SUBDIR += criticalmass
     SUBDIR += crossfire-client
