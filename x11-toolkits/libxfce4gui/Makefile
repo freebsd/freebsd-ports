@@ -11,6 +11,7 @@ CATEGORIES=	x11-toolkits xfce
 MASTER_SITES=	http://www.xfce.org/archive/xfce-${PORTVERSION}/src/ \
 		http://linux.imp.mx/xfce4/xfce_${PORTVERSION}/src/
 DISTNAME=	libxfcegui4-${PORTVERSION}
+DIST_SUBDIR=	xfce4
 
 MAINTAINER=	oliver@FreeBSD.org
 COMMENT=	XFce 4 widget library required by xfce4 and xfwm4
