@@ -1,0 +1,11 @@
+--- tsiag/tsiag.c.orig	Wed Jan 28 02:39:28 1998
++++ tsiag/tsiag.c	Wed Jan 28 02:39:34 1998
+@@ -2,7 +2,7 @@
+ #include <stdio.h>
+ #include <stdlib.h>
+ #include <string.h>
+-#include <curses.h>
++#include <ncurses.h>
+ #include "../siod/siod.h"
+ #include "../siag/types.h"
+ #include "../siag/calc.h"

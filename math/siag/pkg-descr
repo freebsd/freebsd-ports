@@ -1,0 +1,18 @@
+SIAG (Scheme In A Grid)
+=======================
+Siag is a spreadsheet based on X and Scheme. I originally
+wrote it out of frustration with the fact that almost no free,
+good looking applications were available for Linux. It is
+based on my old program Calc, which which I started
+writing in the late -80's. 
+
+Multiple user interfaces
+
+In addition to the old Xt interface, Siag is now available
+with two alternative user interfaces. One of them is based
+on the Curses library and runs on plain text terminals. The
+other is based on Gtk, used by the Gnome desktop project. 
+All versions of Siag have the same fundamental
+functionality. 
+
+see http://www.edu.stockholm.se/siag/ for more information.
