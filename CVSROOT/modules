@@ -8302,8 +8302,6 @@ python-doc-pdf-a4	ports/lang/python-doc-pdf-a4
 python-doc-pdf-letter	ports/lang/python-doc-pdf-letter
 python-doc-postscript-a4	ports/lang/python-doc-postscript-a4
 python-doc-postscript-letter	ports/lang/python-doc-postscript-letter
-python15	ports/lang/python15
-python20	ports/lang/python20
 python21	ports/lang/python21
 python22	ports/lang/python22
 pythoncad	ports/cad/pythoncad
