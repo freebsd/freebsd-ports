@@ -1,0 +1,5 @@
+
+===>  COMPATIBILITY NOTE:
+      The "drac_flags" rc.conf(5) variable has been renamed to "dracd_flags".
+      Please be sure to update your rc.conf(5) if necessary.
+
