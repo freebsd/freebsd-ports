@@ -2,26 +2,28 @@
 %%RUBY_SITELIBDIR%%/sdl.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/sdl/alpha.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/sdl/cdrom.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/sdl/cursor.bmp
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/sdl/cursor.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/sdl/event2.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/sdl/font.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/sdl/icon.bmp
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/sdl/joy.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/sdl/joy2.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/sdl/movesp.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/sdl/playmod.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/sdl/plaympeg.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/sdl/playwave.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/sdl/rotate.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/sdl/sgetest.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/sdl/testgl.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/sdl/testsprite.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/sdl/transformblit.rb
 %%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/sdl
 %%PORTDOCS%%%%RUBY_DOCDIR%%/sdl/README.en
-%%PORTDOCS%%%%RUBY_DOCDIR%%/sdl/event2_doc.en.html
-%%PORTDOCS%%%%RUBY_DOCDIR%%/sdl/event2_doc.en.rd
 %%PORTDOCS%%%%RUBY_DOCDIR%%/sdl/rubysdl_const_list.txt
 %%PORTDOCS%%%%RUBY_DOCDIR%%/sdl/rubysdl_doc.en.html
 %%PORTDOCS%%%%RUBY_DOCDIR%%/sdl/rubysdl_doc.en.rd
 %%PORTDOCS%%%%RUBY_DOCDIR%%/sdl/ja/README.ja
-%%PORTDOCS%%%%RUBY_DOCDIR%%/sdl/ja/event2_doc.html
-%%PORTDOCS%%%%RUBY_DOCDIR%%/sdl/ja/event2_doc.rd
 %%PORTDOCS%%%%RUBY_DOCDIR%%/sdl/ja/rubysdl_doc.html
 %%PORTDOCS%%%%RUBY_DOCDIR%%/sdl/ja/rubysdl_doc.rd
 %%PORTDOCS%%@dirrm %%RUBY_DOCDIR%%/sdl/ja
