@@ -1,11 +1,26 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Graph/.packlist
 %%SITE_PERL%%/Graph.pm
+%%SITE_PERL%%/Graph.pod
+%%SITE_PERL%%/Graph/AdjacencyMap.pm
+%%SITE_PERL%%/Graph/AdjacencyMap/Heavy.pm
+%%SITE_PERL%%/Graph/AdjacencyMap/Light.pm
+%%SITE_PERL%%/Graph/AdjacencyMap/Vertex.pm
+%%SITE_PERL%%/Graph/AdjacencyMatrix.pm
+%%SITE_PERL%%/Graph/Attribute.pm
+%%SITE_PERL%%/Graph/BitMatrix.pm
 %%SITE_PERL%%/Graph/Directed.pm
-%%SITE_PERL%%/Graph/HeapElem.pm
-%%SITE_PERL%%/Graph/DFS.pm
-%%SITE_PERL%%/Graph/Base.pm
+%%SITE_PERL%%/Graph/MSTHeapElem.pm
+%%SITE_PERL%%/Graph/Matrix.pm
+%%SITE_PERL%%/Graph/SPTHeapElem.pm
+%%SITE_PERL%%/Graph/TransitiveClosure.pm
+%%SITE_PERL%%/Graph/TransitiveClosure/Matrix.pm
 %%SITE_PERL%%/Graph/Traversal.pm
-%%SITE_PERL%%/Graph/BFS.pm
+%%SITE_PERL%%/Graph/Traversal/BFS.pm
+%%SITE_PERL%%/Graph/Traversal/DFS.pm
 %%SITE_PERL%%/Graph/Undirected.pm
+%%SITE_PERL%%/Graph/UnionFind.pm
+@dirrm %%SITE_PERL%%/Graph/AdjacencyMap
+@dirrm %%SITE_PERL%%/Graph/TransitiveClosure
+@dirrm %%SITE_PERL%%/Graph/Traversal
 @unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Graph 2>/dev/null || true
 @unexec rmdir %D/%%SITE_PERL%%/Graph 2>/dev/null || true
