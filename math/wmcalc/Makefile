@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	wmcalc
-PORTVERSION=	0.1
+PORTVERSION=	0.21
 CATEGORIES=	math windowmaker
 MASTER_SITES=	http://members.access1.net/ehflora/wmcalc/
 
@@ -15,7 +15,7 @@ MAINTAINER=	jedgar@FreeBSD.org
 ALL_TARGET=	clean wmcalc
 USE_X_PREFIX=   yes
 USE_XPM=	yes
-WRKSRC=		${WRKDIR}/wmcalc
+NO_WRKSUBDIR=	yes
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/wmcalc ${PREFIX}/bin
