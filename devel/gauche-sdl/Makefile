@@ -11,7 +11,7 @@ CATEGORIES=	devel scheme
 MASTER_SITES=	http://www.michaelvess.com/text/code/
 DISTNAME=	${PORTFAKENAME}-${PORTVERSION}
 
-MAINTAINER=	erik@smluc.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Scheme script interpreter with multibyte character handling
 
 BUILD_DEPENDS=	gosh:${PORTSDIR}/lang/gauche \

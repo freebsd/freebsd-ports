@@ -14,7 +14,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 EXTRACT_SUFX=	-src.tar.gz
 
-MAINTAINER=	erik@smluc.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An OpenGL & SDL action flight simulator
 
 WRKSRC=		${WRKDIR}/${DISTNAME}-src

@@ -13,7 +13,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 DISTNAME=	Gauche-${PORTVERSION}
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	erik@smluc.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Scheme script interpreter with multibyte character handling
 
 # Choices are: "pthreads" and "no", but it seems that FreeBSD does not
