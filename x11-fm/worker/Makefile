@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	worker
-PORTVERSION=	2.8.3
+PORTVERSION=	2.8.4
 CATEGORIES=	x11-fm
 MASTER_SITES=	http://www.boomerangsworld.de/worker/downloads/
 
