@@ -1,0 +1,20 @@
+--- makefile.orig	Mon Oct  6 21:04:50 2003
++++ makefile	Tue Mar  9 16:48:34 2004
+@@ -117,13 +117,15 @@
+ # build a library
+ install: $(MAINLIB) $(PKG)
+ 	install -d $(LIBDIR)/imports/Graphics/UI/GIO
+-	install -d $(LIBDIR)/doc/html/gio
+ 	install -m 644 $(HOUTDIR)/*.hi $(LIBDIR)/imports/Graphics/UI
+ 	install -m 644 $(HOUTDIR)/GIO/*.hi $(LIBDIR)/imports/Graphics/UI/GIO
+ 	install -m 644 $(MAINLIB) $(LIBDIR)	
+ 	$(RM) $(LIBDIR)/$(MAINOBJ)
+ 	$(HCPKG) -u -g -i $(PKG)
+-	install -m 644 doc/*.html doc/*.css doc/*.gif doc/*.haddock $(LIBDIR)/doc/html/gio
++
++install-doc:
++	install -d ${DOCSDIR}
++	${INSTALL_DATA} doc/*.html doc/*.css doc/*.gif doc/*.haddock ${DOCSDIR}
+ 
+ $(MAINLIB): $(HOBJS) $(COBJS) $(STUBSTUBOBJS)
+ 	  $(AR) -r  $@ $^
