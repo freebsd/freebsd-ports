@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	DB_DataObject_FormBuilder
-PORTVERSION=	0.10.3
+PORTVERSION=	0.11.1
 CATEGORIES=	databases www pear
 
 MAINTAINER=	antonio@php.net
@@ -19,7 +19,7 @@ RUN_DEPENDS=	${BUILD_DEPENDS}
 USE_PHP=	yes
 
 CATEGORY=	DB/DataObject
-FILES=		FormBuilder.php FormBuilder/QuickForm.php
+FILES=		FormBuilder.php FormBuilder/QuickForm.php FormBuilder/QuickForm/ElementTable.php
 
 LATEST_LINK=	pear-DB_DataObject_FormBuilder
 OPTIONS=	PEAR_DATE "PEAR::Date support" off \
