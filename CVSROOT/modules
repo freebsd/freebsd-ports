@@ -2483,6 +2483,7 @@ ilu		ports/devel/ilu
 im		ports/mail/im
 imageindex	ports/graphics/imageindex
 imagesort	ports/graphics/imagesort
+imageviewer	ports/graphics/imageviewer
 imake		ports/devel/imake
 imake-4		ports/devel/imake-4
 imap-uw		ports/mail/imap-uw
