@@ -8876,7 +8876,6 @@ xmedcon		ports/graphics/xmedcon
 xmemory		ports/games/xmemory
 xmess		ports/emulators/xmess
 xmfract		ports/graphics/xmfract
-xmgr		ports/math/xmgr
 xmhtml		ports/x11-toolkits/xmhtml
 xmille		ports/games/xmille
 xmine		ports/games/xmine
