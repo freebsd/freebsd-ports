@@ -10,11 +10,11 @@
 PORTNAME=		phoenix
 PORTVERSION=		0.5
 PORTREVISION=		4
-CATEGORIES=		www # pita
+CATEGORIES=		www
 MASTER_SITES=		${MASTER_SITE_LOCAL} ${BSD_WEBDIR}
 MASTER_SITE_SUBDIR=	alane
 
-MAINTAINER=		phoenix@freebsd.org # alane@fbsd and trevor@fbsd
+MAINTAINER=		gnome@freebsd.org
 COMMENT=	Phoenix is a fast, low-overhead browser from the Mozilla project
 
 LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
