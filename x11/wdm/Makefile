@@ -28,7 +28,7 @@ USE_X_PREFIX=	yes
 USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
-CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}" \
+CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" \
 		DEF_SERVER="${DEF_SERVER}"
 CONFIGURE_ARGS=	--with-logdir=/var/log \
 		--with-runlockdir=/var/run \
