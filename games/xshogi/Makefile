@@ -1,4 +1,4 @@
-# New ports collection makefile for:   xshogi 
+# New ports collection makefile for:   xshogi
 # Date created:        20 October 1996
 # Whom:                Yukihiro Nakai <Nakai@Mlab.t.u-tokyo.ac.jp>
 #
@@ -6,30 +6,30 @@
 #
 
 PORTNAME=	xshogi
-PORTVERSION=	1.2.3
+PORTVERSION=	${GNUSHOGI_PORTVERSION}
 CATEGORIES=	games
-MASTER_SITES=	${MASTER_SITE_GNU}
-MASTER_SITE_SUBDIR=	xshogi
-DISTNAME=	xshogi-1.2p03
+MASTER_SITES=	${GNUSHOGI_MASTER_SITES}
+MASTER_SITE_SUBDIR=	${GNUSHOGI_MASTER_SITE_SUBDIR}
+DISTNAME=	${GNUSHOGI_DISTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The Japanese chess-like game for X Window System
 
-RUN_DEPENDS=	${LOCALBASE}/libexec/gnushogix:${PORTSDIR}/games/gnushogi
+RUN_DEPENDS=	gnushogi:${PORTSDIR}/games/gnushogi
+
+BUILD_WRKSRC=	${WRKSRC}/xshogi
 
 USE_X_PREFIX=	yes
-MAKEFILE=	Makefile.custom
+GNU_CONFIGURE=	yes
+
 MAN6=		xshogi.6
 PLIST_FILES=	bin/xshogi
 
-post-configure:
-	@${ECHO_CMD} "DISTDIR=${WRKDIR}" >> ${WRKSRC}/${MAKEFILE}
-	@${ECHO_CMD} "LOCALBASE=${LOCALBASE}" >> ${WRKSRC}/${MAKEFILE}
+.include "${.CURDIR}/../../games/gnushogi/Makefile.common"
+.include <bsd.port.pre.mk>
 
-post-install:
-	@${STRIP_CMD} ${PREFIX}/bin/xshogi
-	@${CHMOD} 755 ${PREFIX}/bin/xshogi
-	@${CHOWN} ${BINOWN}:${BINGRP} ${PREFIX}/bin/xshogi
-	${INSTALL_MAN} ${WRKSRC}/xshogi.man ${PREFIX}/man/man6/xshogi.6
+do-install:
+	${INSTALL_PROGRAM} ${WRKSRC}/xshogi/xshogi ${PREFIX}/bin/xshogi
+	${INSTALL_MAN} ${WRKSRC}/doc/xshogi.6 ${MANPREFIX}/man/man6/xshogi.6
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
