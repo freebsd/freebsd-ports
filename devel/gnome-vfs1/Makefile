@@ -7,7 +7,7 @@
 
 PORTNAME=	gnomevfs
 PORTVERSION=	1.0.5
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	devel gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	stable/sources/gnome-vfs
@@ -30,7 +30,8 @@ USE_X_PREFIX=	yes
 USE_GNOMELIBS=	yes
 GNU_CONFIGURE=	yes
 INSTALLS_SHLIB=	yes
-CONFIGURE_ARGS=	--with-html-dir=${PREFIX}/share/doc
+CONFIGURE_ARGS=	--with-html-dir=${PREFIX}/share/doc \
+		--disable-gtk-doc
 CONFIGURE_ENV=	CPPFLAGS="${PTHREAD_CFLAGS} -I${LOCALBASE}/include" \
 		LIBS="-L${LOCALBASE}/lib" \
 		BSD_PTHREAD_LIBS=${PTHREAD_LIBS}
