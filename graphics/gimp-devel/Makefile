@@ -3,7 +3,7 @@
 # Date created:         Mon Nov 18 21:28:43 CST 1996
 # Whom:                 erich@FreeBSD.org
 #
-# $Id: Makefile,v 1.10 1997/07/14 22:19:04 erich Exp $
+# $Id: Makefile,v 1.11 1997/10/15 20:17:47 erich Exp $
 #
 
 VERSION=	0.99.14
@@ -27,12 +27,13 @@ LIB_DEPENDS+=	jpeg\\.7\\.:${PORTSDIR}/graphics/jpeg
 LIB_DEPENDS+=	tiff\\.3\\.:${PORTSDIR}/graphics/tiff
 LIB_DEPENDS+=	Xpm\\.4\\.:${PORTSDIR}/graphics/xpm
 LIB_DEPENDS+=	mpeg\\.1\\.2:${PORTSDIR}/graphics/mpeg-lib
-LIB_DEPENDS+=  tk80\\.1\\.:${PORTSDIR}/x11/tk80
+LIB_DEPENDS+=	tk80\\.1\\.:${PORTSDIR}/x11/tk80
 
 USE_X11=	yes
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
-CONFIGURE_ENV= CPPFLAGS=-I/usr/local/include LIBS=-L/usr/local/lib
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${LOCALBASE}/include/tcl8.0 \
+		  -I${LOCALBASE}/include/tk8.0" LIBS=-L${LOCALBASE}/lib
 
 DATASTUFF=  brushes palettes gradients patterns
 
