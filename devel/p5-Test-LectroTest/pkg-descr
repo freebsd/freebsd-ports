@@ -1,0 +1,7 @@
+This module provides a simple (yet full featured)  automated,
+specification-based testing system for Perl. To use it, you declare
+properties that specify the expected behavior of your software.
+LectroTest then checks your software to see whether those properties
+hold for semi-random input values in the specified range.
+
+WWW: http://community.moertel.com/LectroTest

@@ -1013,6 +1013,7 @@
     SUBDIR += p5-Test-Exception
     SUBDIR += p5-Test-Harness
     SUBDIR += p5-Test-Inline
+    SUBDIR += p5-Test-LectroTest
     SUBDIR += p5-Test-Manifest
     SUBDIR += p5-Test-MockObject
     SUBDIR += p5-Test-NoWarnings

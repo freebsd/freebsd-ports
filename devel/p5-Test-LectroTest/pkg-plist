@@ -1,0 +1,7 @@
+%%SITE_PERL%%/Test/LectroTest.pm
+%%SITE_PERL%%/Test/LectroTest/Generator.pm
+%%SITE_PERL%%/Test/LectroTest/Property.pm
+%%SITE_PERL%%/Test/LectroTest/TestRunner.pm
+%%SITE_PERL%%/Test/LectroTest/Tutorial.pod
+@dirrm %%SITE_PERL%%/Test/LectroTest
+@dirrm %%SITE_PERL%%/Test
