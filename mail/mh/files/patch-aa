@@ -3,7 +3,7 @@
 ***************
 *** 0 ****
 --- 1,26 ----
-+ # @(#)$Id: MH,v 1.7 1990/04/06 09:44:31 sources Exp $
++ # @(#)$Id: patch-aa,v 1.1.1.1 1994/10/04 23:32:54 pst Exp $
 + # FreeBSD running sendmail
 + 
 + bin	/usr/local/bin
@@ -27,5 +27,5 @@
 + # free to customize it.
 + #pop		on
 + #popdir		/usr/local/libexec
-+ #options	APOP='"/etc/pop.auth"' MPOP RPOP
++ #options	MPOP RPOP
 + #ldoptlibs	-lcrypt
