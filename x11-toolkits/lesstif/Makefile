@@ -1,12 +1,12 @@
 # New ports collection makefile for:	lesstif
-# Version required:	0.85
+# Version required:	0.86.0
 # Date created:		December 10, 1996
 # Whom:			1wardd@airmail.net
 #
-# $Id: Makefile,v 1.21 1998/08/05 09:31:43 asami Exp $
+# $Id: Makefile,v 1.22 1998/08/07 22:56:38 asami Exp $
 #
 
-DISTNAME=	lesstif-0.85
+DISTNAME=	lesstif-0.86.0
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	ftp://ftp.lesstif.org/pub/hungry/lesstif/srcdist/  \
 		ftp://ftp.hungry.com/pub/hungry/lesstif/srcdist/
@@ -19,6 +19,8 @@ MANUAL_PACKAGE_BUILD=	do not want to install during interactive build
 GNU_CONFIGURE=  yes
 # comment this and remove the strip statement in post-install for debugging
 CONFIGURE_ARGS=	--disable-debug
+# I don't want to change the shared lib major version number right now.
+CONFIGURE_ARGS+=	--enable-back-compat
 USE_X_PREFIX=	yes
 
 MAN1=	mwm.1 xmbind.1 lesstif.1
