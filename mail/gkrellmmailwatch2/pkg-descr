@@ -1,0 +1,8 @@
+GKrellM mailwatch plugin
+
+A plugin for gkrellm, that watches in multiple mailboxes for new mail.
+
+WWW: http://gkrellm.luon.net/mailwatch.phtml
+
+- Jean-Yves Lefort
+jylefort@brutele.be
