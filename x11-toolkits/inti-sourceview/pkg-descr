@@ -1,0 +1,9 @@
+Inti-SourceView is an Inti binding for GtkSourceView, the new GTK+ source
+code editing widget.
+
+GtkSourceView is a text widget that extends the standard GTK+ 2.x text widget
+GtkTextView. It improves GtkTextView by implementing features typical of a
+source code editor such as syntax highlighting, bracket matching, markers and
+adds support for undo/redo operations.
+
+WWW: http://inti.sourceforge.net/
