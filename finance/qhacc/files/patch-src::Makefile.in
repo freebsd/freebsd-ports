@@ -1,0 +1,15 @@
+--- src/Makefile.in.orig	Sun Dec  7 04:25:21 2003
++++ src/Makefile.in	Mon Dec 15 01:19:39 2003
+@@ -169,9 +169,9 @@
+ EXTRA_DIST = lupdate.info
+ 
+ SUBDIRS = pixmaps
+-INCLUDES = $(all_includes) -I$(QTINCDIR) -I$(top_srcdir)/lib
+-qhacc_gui_LDFLAGS = -L$(QTLIBDIR) -L$(top_builddir)/lib $(LDFLAGS)
+-qhacc_cli_LDFLAGS = -L$(QTLIBDIR) -L$(top_builddir)/lib $(LDFLAGS)
++INCLUDES = -I$(top_srcdir)/lib $(all_includes) -I$(QTINCDIR)
++qhacc_gui_LDFLAGS = -L$(top_builddir)/lib -L$(QTLIBDIR) $(LDFLAGS)
++qhacc_cli_LDFLAGS = -L$(top_builddir)/lib -L$(QTLIBDIR) $(LDFLAGS)
+ qhacc_gui_LDADD = -l$(QHACCQT) -lqhacc
+ qhacc_cli_LDADD = -l$(QHACCQT) -lqhacc -lqhaccext
+ MOC = $(QTMOCDIR)/moc
