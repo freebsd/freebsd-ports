@@ -279,6 +279,7 @@ share/smalltalk/vfs/uzoo
 share/smalltalk/xml/XML.st
 share/smalltalk/xml/XPath.st
 share/smalltalk/xml/XSL.st
+@dirrm include/snprintfv
 @dirrm share/smalltalk/xml
 @dirrm share/smalltalk/vfs
 @dirrm share/smalltalk/tcp
