@@ -194,6 +194,7 @@ share/gnome/gtkrc
 share/gnome/gtkrc.ja
 share/gnome/gtkrc.ko
 share/gnome/idl/Table.idl
+share/gnome/idl/base.idl
 share/gnome/idl/gnome-factory.idl
 share/gnome/idl/name-service.idl
 share/gnome/libartConf.sh
@@ -201,10 +202,12 @@ share/gnome/mime-info/gnome.mime
 share/gnome/pixmaps/calculator-font.png
 share/gnome/pixmaps/no.xpm
 share/gnome/pixmaps/yes.xpm
+share/gnome/type-convert/type.convert
 share/locale/ca/LC_MESSAGES/gnome-libs.mo
 share/locale/cs/LC_MESSAGES/gnome-libs.mo
 share/locale/da/LC_MESSAGES/gnome-libs.mo
 share/locale/de/LC_MESSAGES/gnome-libs.mo
+share/locale/es/LC_MESSAGES/gnome-libs.mo
 share/locale/fi/LC_MESSAGES/gnome-libs.mo
 share/locale/fr/LC_MESSAGES/gnome-libs.mo
 share/locale/ga/LC_MESSAGES/gnome-libs.mo
@@ -230,4 +233,5 @@ share/locale/sv/LC_MESSAGES/gnome-libs.mo
 @dirrm share/gnome/idl
 @dirrm share/gnome/mime-info
 @dirrm share/gnome/pixmaps
+@dirrm share/gnome/type-convert
 @dirrm share/gnome
