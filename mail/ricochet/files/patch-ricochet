@@ -1,6 +1,25 @@
---- ricochet.orig	Thu Feb  8 22:23:19 2001
-+++ ricochet	Tue Jun 24 18:14:09 2003
-@@ -574,7 +607,8 @@
+--- ricochet.old	Tue Jun 24 22:40:18 2003
++++ ricochet	Wed Sep 24 16:33:42 2003
+@@ -566,15 +566,14 @@
+     my ( $domain ) = @_;
+     $ua = new LWP::UserAgent;
+     $ua->agent("Ricochet/0.1 " . $ua->agent);
+-    my $req = new HTTP::Request POST => 'http://www.abuse.net/lookup.phtml'; 
+-    $req->content_type('application/x-www-form-urlencoded');
+-    $req->content("DOMAIN=$domain");
++    my $req = new HTTP::Request GET => "http://www.abuse.net/lookup.phtml?DOMAIN=$domain";
++    $ua->timeout(20);
+     my $res = $ua->request($req);
+ 
+    if ($res->is_success) {
+         my $content = $res->content;
+         return undef if $content =~ /no information for this domain/;
+-        my @matches = $content =~ /(\S+\@\S+)\s*<BR>/ig; 
++	my @matches = $content =~ /<tt>(\S+\@\S+)<\/tt>/g;
+         return \@matches;
+    } else {
+         return undef;
+@@ -607,7 +606,8 @@
  
  sub initialize { 
      my $self = shift; 
