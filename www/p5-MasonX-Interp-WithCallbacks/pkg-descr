@@ -1,0 +1,16 @@
+MasonX::Interp::WithCallbacks subclasses HTML::Mason::Interp in order to
+provide a Mason callback system built on Params::CallbackRequest. Callbacks
+may be either code references provided to the C<new()> constructor, or methods
+defined in subclasses of Params::Callback. Callbacks are triggered either for
+every request or by specially named keys in the Mason request arguments, and
+all callbacks are executed at the beginning of a request, just before Mason
+creates and executes the request component stack.
+
+This module brings support for a sort of plugin architecture based on
+Params::CallbackRequest to Mason. Mason then executes code before executing
+any components. This approach allows you to carry out logical processing of
+data submitted from a form, to affect the contents of the Mason request
+arguments (and thus the %ARGS hash in components), and even to redirect or
+abort the request before Mason handles it.
+
+WWW: http://search.cpan.org/dist/MasonX-Interp-WithCallbacks/
