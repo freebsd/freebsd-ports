@@ -34,7 +34,7 @@ MAN1=	ginac-config.1 ginsh.1 viewgar.1
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 500000
-BROKEN=	"need gcc32 and cln must build with gcc32"
+IGNORE=	"needs gcc32 and cln must be built with gcc32"
 .endif
 
 post-extract:
