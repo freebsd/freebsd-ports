@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	radvd
-PORTVERSION=	0.7.1
+PORTVERSION=	0.7.2
 CATEGORIES=	net ipv6
 MASTER_SITES=	http://v6web.litech.org/radvd/dist/
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/p4/pl4/}
