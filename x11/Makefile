@@ -150,6 +150,7 @@
     SUBDIR += xcut
     SUBDIR += xdialog
     SUBDIR += xdtm
+    SUBDIR += xextensions
     SUBDIR += xfce4-clipman-plugin
     SUBDIR += xfedor
     SUBDIR += xfishtank
