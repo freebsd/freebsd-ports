@@ -6,38 +6,52 @@
 #
 
 PORTNAME=       xawtv
-PORTVERSION=	3.37
+PORTVERSION=	3.67
 CATEGORIES=     graphics
-MASTER_SITES=   http://www.strusel007.de/linux/xawtv/
+MASTER_SITES=   http://bytesex.org/xawtv/
 DISTNAME=	${PORTNAME}_${PORTVERSION}
+WRKSRC=		${WRKDIR}/${DISTNAME:S/_/-/}
 
-MAINTAINER=	greid@ukug.uk.freebsd.org
+MAINTAINER=	lehmann@ans-netz.de
 
 LIB_DEPENDS=	Xaw3d.${XAWVER}:${PORTSDIR}/x11-toolkits/Xaw3d \
 		png.5:${PORTSDIR}/graphics/png \
 		jpeg.9:${PORTSDIR}/graphics/jpeg
 
-WRKSRC=		${WRKDIR}/${DISTNAME:S/_/-/}
+CONFIGURE_ARGS=	--prefix=${PREFIX}
+
 
 GNU_CONFIGURE=	yes
-
+USE_GMAKE=	yes
 USE_X_PREFIX=	yes
 
-SEDFILES=	. font i2c man src radio contrib/cc webcam oldstuff/vtx \
+
+FILES_CFLAGS=	. font i2c man src radio webcam oldstuff/vtx \
 		libng libvbi http
+FILES_X11BASE=	configure Make.config.in
 
-MAN1=		alevtd.1 fbtv.1 propwatch.1 rootv.1 showriff.1 v4l-conf.1 \
-		v4lctl.1 webcam.1 xawtv-remote.1 xawtv.1
 
-post-configure:
-.for M in ${SEDFILES}
-	@(${SED} -e 's,^CFLAGS=,CFLAGS+=,g' ${WRKSRC}/$M/Makefile | \
-		${SED} -e 's,-O2,,g' > ${WRKSRC}/foo && ${MV} ${WRKSRC}/foo ${WRKSRC}/$M/Makefile)
+MAN1=		alevtd.1 dump-mixers.1 fbtv.1 motv.1 ntsc-cc.1 propwatch.1 record.1 \
+		rootv.1 scantv.1 showriff.1 \
+		streamer.1 subtitles.1 ttv.1 v4lctl.1 \
+		webcam.1 xawtv-remote.1 xawtv.1
+MAN5=		xawtvrc.5
+MAN8=		v4l-conf.8
+
+PLIST_SUB+=	X11PREFIX=${X11BASE}
+STRCASESTRFILES=src/commands.c
+
+post-patch:
+.for i in ${FILES_X11BASE}
+	${PERL} -pi -e "s|%%X11BASE%%|${X11BASE}|g" ${WRKSRC}/$i
+.endfor
+.for i in ${STRCASESTRFILES}
+	${PERL} -pi -e "s|strcasestr|mystrcasestr|g" ${WRKSRC}/$i
 .endfor
 
-post-install:
-.for F in led-koi8.pcf led-latin1.pcf led-latin2.pcf
-	@gzip ${PREFIX}/lib/X11/fonts/misc/$F
+post-configure:
+.for i in ${FILES_CFLAGS}
+	${PERL} -pi -e "s|^CFLAGS=|CFLAGS+=|g" ${WRKSRC}/$i/Makefile
 .endfor
 
 .include <bsd.port.mk>

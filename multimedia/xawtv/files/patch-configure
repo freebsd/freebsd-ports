@@ -1,0 +1,24 @@
+--- configure.orig	Mon Jan 14 20:33:50 2002
++++ configure	Mon Jan 14 20:35:51 2002
+@@ -2914,19 +2914,13 @@
+ 
+ echo $ac_n "checking for X11 config directory""... $ac_c" 1>&6
+ echo "configure:2917: checking for X11 config directory" >&5
+-x11conf=/usr/X11R6/lib/X11
+-if test -d /etc/X11; then
+-	x11conf=/etc/X11
+-fi
++x11conf=%%X11BASE%%/lib/X11
+ echo "$ac_t""$x11conf" 1>&6
+ 
+ 
+ echo $ac_n "checking for X11 app-defaults directory""... $ac_c" 1>&6
+ echo "configure:2926: checking for X11 app-defaults directory" >&5
+-resdir=/usr/X11R6/lib/X11
+-if test -d /etc/X11/app-defaults; then
+-	resdir=/etc/X11
+-fi
++resdir=%%X11BASE%%/lib/X11
+ echo "$ac_t""$resdir/app-defaults" 1>&6
+ 
+ 

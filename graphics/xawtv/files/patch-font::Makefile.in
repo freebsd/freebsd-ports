@@ -1,9 +1,10 @@
---- font/Makefile.in.orig	Sat Mar  3 22:50:32 2001
-+++ font/Makefile.in		Sat Mar  3 22:50:44 2001
-@@ -16,7 +16,6 @@
+--- font/Makefile.in.orig	Sun Sep  2 12:01:30 2001
++++ font/Makefile.in	Sun Sep  2 12:01:45 2001
+@@ -23,7 +23,6 @@
  	done
- 	if test "$(ROOT)" = ""; then		\
- 		(cd $(FONTDIR); mkfontdir);	\
--		xset fp rehash;			\
- 		true;				\
+ 	if test "$(DESTDIR)" = ""; then		\
+ 		(cd $(fontdir); mkfontdir);	\
+-		xset fp rehash || true;		\
  	fi
+ 
+ 
