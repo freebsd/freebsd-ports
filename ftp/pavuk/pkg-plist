@@ -2,8 +2,13 @@ bin/pavuk
 etc/pavukrc.sample
 etc/pavuk_authinfo.sample
 share/doc/pavuk/AUTHORS
+share/doc/pavuk/BUGS
 share/doc/pavuk/ChangeLog
+share/doc/pavuk/FAQ
 share/doc/pavuk/README
 share/doc/pavuk/THANK_TO
 share/doc/pavuk/TODO
+share/locale/cs/LC_MESSAGES/pavuk.mo
+share/locale/de/LC_MESSAGES/pavuk.mo
+share/locale/sk/LC_MESSAGES/pavuk.mo
 @dirrm share/doc/pavuk
