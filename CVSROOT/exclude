@@ -5,6 +5,11 @@
 # Skip dot files.
 ^(.*/)?\.
 
+^CVSROOT/
+^distrib/
+^doc/
+^www/
+
 ^src/contrib/.*/FREEBSD-Xlist
 ^src/contrib/nvi/catalog
 ^src/etc/motd
