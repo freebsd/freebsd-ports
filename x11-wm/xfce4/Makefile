@@ -5,8 +5,8 @@
 # $FreeBSD$
 #
 
-PORTNAME=	xfce4
-PORTVERSION=	r3
+PORTNAME=	xfce
+PORTVERSION=	4.0.r3
 CATEGORIES=	x11-wm xfce
 MASTER_SITES=	# empty
 DISTFILES=	# empty
