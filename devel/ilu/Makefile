@@ -3,15 +3,18 @@
 # Date created:         29.9.1997
 # Whom:                 cracauer@cons.org "Martin Cracauer"
 #
-# $Id: Makefile,v 1.15 1998/11/28 00:44:32 asami Exp $
+# $Id: Makefile,v 1.16 1998/12/01 16:21:59 cracauer Exp $
 #
 
 DISTNAME=	ilu-2.0alpha13
 PKGNAME=	ilu-2.0a13
 CATEGORIES=	devel
-MASTER_SITES=	ftp://parcftp.xerox.com/pub/ilu/2.0a13/
+MASTER_SITES=	ftp://parcftp.xerox.com/pub/ilu/2.0a13/ \
+		http://www2.cons.org:8000/freebsd-distfiles/ \
+		http://www.freebsd.org/~cracauer/freebsd-distfiles/
 
-PATCH_SITES=	http://www2.cons.org:8000/freebsd-distfiles/
+PATCH_SITES=	http://www2.cons.org:8000/freebsd-distfiles/ \
+		http://www.freebsd.org/~cracauer/freebsd-distfiles/
 PATCHFILES=	${DISTNAME}-patches.html.gz
 
 MAINTAINER=	cracauer@cons.org
