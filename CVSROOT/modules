@@ -290,6 +290,7 @@ alphabet_sounds_fr	ports/french/alphabet_sounds_fr
 alsaplayer	ports/audio/alsaplayer
 althea		ports/mail/althea
 altivore	ports/security/altivore
+am-aspell	ports/textproc/am-aspell
 am-utils	ports/sysutils/am-utils
 amanda-client	ports/misc/amanda-client
 amanda-server	ports/misc/amanda-server
@@ -1237,7 +1238,6 @@ curly		ports/sysutils/curly
 cursive		ports/games/cursive
 custom-emacs	ports/editors/custom-emacs
 custom-mule	ports/editors/custom-mule
-ports_cut		ports/devel/cut
 cutecom		ports/comms/cutecom
 cutils		ports/devel/cutils
 cvm		ports/security/cvm
@@ -2265,6 +2265,7 @@ fspanel		ports/x11/fspanel
 fspclient	ports/net/fspclient
 fspd		ports/net/fspd
 fsv		ports/x11-fm/fsv
+fswiki		ports/www/fswiki
 ft2demos	ports/print/ft2demos
 ftdi-eeprom	ports/misc/ftdi-eeprom
 fte		ports/editors/fte
@@ -3638,13 +3639,13 @@ ja-eb		ports/japanese/eb
 ja-eb3		ports/japanese/eb3
 ja-ebd-fpw	ports/japanese/ebd-fpw
 ja-eblook	ports/japanese/eblook
+ja-ebnetd	ports/japanese/ebnetd
 ja-ebview	ports/japanese/ebview
 ja-ebview-gtk2	ports/japanese/ebview-gtk2
 ja-ebw3		ports/japanese/ebw3
 ja-edict	ports/japanese/edict
 ja-edict-fpw	ports/japanese/edict-fpw
 ja-edict-utf-8	ports/japanese/edict-utf-8
-ja-ebnetd	ports/japanese/ebnetd
 ja-eijiro-fpw	ports/japanese/eijiro-fpw
 ja-elisa10x8	ports/japanese/elisa10x8
 ja-elisa8x8	ports/japanese/elisa8x8
@@ -3918,6 +3919,7 @@ ja-ruby-usersguide	ports/japanese/ruby-usersguide
 ja-rxvt		ports/japanese/rxvt
 ja-ryaku-fpw	ports/japanese/ryaku-fpw
 ja-samba	ports/japanese/samba
+ja-samba3	ports/japanese/samba3
 ja-sazanami-ttf	ports/japanese/sazanami-ttf
 ja-scim-tables	ports/japanese/scim-tables
 ja-scim-uim	ports/japanese/scim-uim
@@ -4008,7 +4010,6 @@ ja-xvi-euc	ports/japanese/xvi-euc
 ja-xvi-sjis	ports/japanese/xvi-sjis
 ja-xyagamo	ports/japanese/xyagamo
 ja-xyaku	ports/japanese/xyaku
-ya-yasou-fpw	ports/japanese/yasou-fpw
 ja-yc.el	ports/japanese/yc.el
 ja-zangband	ports/japanese/zangband
 ja-zipcodes	ports/japanese/zipcodes
@@ -5998,6 +5999,7 @@ ncurses		ports/devel/ncurses
 nd		ports/www/nd
 ndiff		ports/math/ndiff
 ndir		ports/sysutils/ndir
+nds-aspell	ports/textproc/nds-aspell
 neXtaw		ports/x11-toolkits/neXtaw
 nedit		ports/editors/nedit
 nefu		ports/net-mgmt/nefu
@@ -6090,8 +6092,8 @@ nfdump		ports/net-mgmt/nfdump
 ng_daphne	ports/net/ng_daphne
 ng_netflow	ports/net/ng_netflow
 nget		ports/news/nget
-ngircd		ports/irc/ngircd
 nginx		ports/www/nginx
+ngircd		ports/irc/ngircd
 ngpt		ports/devel/ngpt
 ngraph		ports/math/ngraph
 ngrep		ports/net/ngrep
@@ -6389,6 +6391,7 @@ oproute		ports/net-mgmt/oproute
 optipng		ports/graphics/optipng
 oqtencoder	ports/multimedia/oqtencoder
 oqtplayer	ports/multimedia/oqtplayer
+or-aspell	ports/textproc/or-aspell
 oracle7-client	ports/databases/oracle7-client
 orbital_eunuchs_sniper	ports/games/orbital_eunuchs_sniper
 orbitcpp	ports/devel/orbitcpp
@@ -7864,7 +7867,6 @@ p5-Validate-Net	ports/net/p5-Validate-Net
 p5-Video-Info	ports/multimedia/p5-Video-Info
 p5-Video-OpenQuicktime	ports/multimedia/p5-Video-OpenQuicktime
 p5-W3C-LogValidator	ports/www/p5-W3C-LogValidator
-p5-WebService-Bloglines	ports/www/p5-WebService-Bloglines
 p5-WDDX		ports/textproc/p5-WDDX
 p5-WWW-Automate	ports/www/p5-WWW-Automate
 p5-WWW-Babelfish	ports/www/p5-WWW-Babelfish
@@ -7882,6 +7884,7 @@ p5-WWW-Search-Google	ports/www/p5-WWW-Search-Google
 p5-WWW-Shorten	ports/www/p5-WWW-Shorten
 p5-WWW-Wikipedia	ports/www/p5-WWW-Wikipedia
 p5-Want		ports/devel/p5-Want
+p5-WebService-Bloglines	ports/www/p5-WebService-Bloglines
 p5-WordNet-QueryData	ports/textproc/p5-WordNet-QueryData
 p5-WordNet-Similarity	ports/textproc/p5-WordNet-Similarity
 p5-X11-GUITest	ports/x11/p5-X11-GUITest
@@ -8643,6 +8646,7 @@ ports_cdplay	ports/audio/cdplay
 ports_chinese	ports/chinese
 ports_comms	ports/comms
 ports_converters	ports/converters
+ports_cut		ports/devel/cut
 ports_databases	ports/databases
 ports_deskutils	ports/deskutils
 ports_devel	ports/devel
@@ -12055,6 +12059,7 @@ xzoom		ports/x11/xzoom
 xzx		ports/emulators/xzx
 y2l		ports/textproc/y2l
 y4mscaler	ports/multimedia/y4mscaler
+ya-yasou-fpw	ports/japanese/yasou-fpw
 yabasic		ports/lang/yabasic
 yacas		ports/math/yacas
 yacl		ports/devel/yacl
@@ -12318,5 +12323,3 @@ zthread		ports/devel/zthread
 ztrack		ports/games/ztrack
 zu-aspell	ports/textproc/zu-aspell
 zziplib		ports/devel/zziplib
-fswiki		ports/www/fswiki
-ja-samba3	ports/japanese/samba3
