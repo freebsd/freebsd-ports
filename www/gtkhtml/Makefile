@@ -7,6 +7,7 @@
 
 PORTNAME=	gtkhtml
 PORTVERSION=	1.1.10
+PORTREVISION=	1
 CATEGORIES=	www gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/${PORTNAME}/1.1
@@ -24,7 +25,7 @@ USE_GNOME=	gnomehack gnomeprefix gnomehier glibwww libghttp libcapplet gal
 INSTALLS_SHLIB=	yes
 USE_LIBTOOL=	yes
 USE_REINPLACE=	yes
-CONFIGURE_ARGS=	--with-gconf=yes
+CONFIGURE_ARGS=	--with-gconf=no
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LIBS="-L${LOCALBASE}/lib"
 
