@@ -17,5 +17,6 @@ MAINTAINER=	archie@freebsd.org
 MTREE_FILE=	${FILESDIR}/mpd.mtree
 MAN8=		mpd.8
 MANCOMPRESSED=	yes
+NO_LATEST_LINK=
 
 .include <bsd.port.mk>
