@@ -3,6 +3,7 @@
 
     SUBDIR += SoXt
     SUBDIR += Xaw3d
+    SUBDIR += XawPlus
     SUBDIR += at-spi
     SUBDIR += bakery
     SUBDIR += blt
