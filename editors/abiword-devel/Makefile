@@ -21,8 +21,7 @@ COMMENT=	An open-source, cross-platform WYSIWYG word processor
 BUILD_DEPENDS=	unzip:${PORTSDIR}/archivers/unzip
 LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png \
 		fribidi.0:${PORTSDIR}/converters/fribidi \
-		popt.0:${PORTSDIR}/devel/popt \
-		aspell.15:${PORTSDIR}/textproc/aspell
+		popt.0:${PORTSDIR}/devel/popt
 
 DIST_SUBDIR=	AbiWord
 
@@ -64,10 +63,19 @@ LIB_DEPENDS+=		gucharmap.3:${PORTSDIR}/deskutils/gucharmap
 CONFIGURE_ARGS+=	--enable-cmap=no
 .endif
 
+.if defined(WITH_ENCHANT) || exists(${LOCALBASE}/lib/libenchant.so)
+LIB_DEPENDS+=		enchant.2:${PORTSDIR}/textproc/enchant
+.elif exists(${LOCALBASE}/lib/libaspell.so)
+LIB_DEPENDS+=		aspell.15:${PORTSDIR}/textproc/aspell
+.else
+LIB_DEPENDS+=		enchant.2:${PORTSDIR}/textproc/enchant
+.endif
+
 pre-everything::
 	@${ECHO_MSG} ""
 	@${ECHO_MSG} "AbiWord2 has the following tunable option(s):"
 	@${ECHO_MSG} "	WITH_GUCHARMAP=yes	Enable use of Gucharmap as the symbol insertion tool (default: auto)"
+	@${ECHO_MSG} "	WITH_ENCHANT=yes	Enable use of the Enchant dictionary backend broker (default: auto)"
 	@${ECHO_MSG} ""
 
 post-patch:
