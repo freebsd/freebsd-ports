@@ -1,5 +1,5 @@
---- src/init.c.orig	Sun Mar 30 23:06:39 2003
-+++ src/init.c	Sat May 10 22:14:28 2003
+--- src/init.c.orig	Sun May 11 14:06:09 2003
++++ src/init.c	Sun May 11 14:07:53 2003
 @@ -291,8 +291,8 @@
  	2,		/* recent_time */
  	32,		/* groupname_max_length */
