@@ -1,1 +1,4 @@
 bin/pngcheck
+share/doc/pngcheck/CHANGELOG
+share/doc/pngcheck/README
+@dirrm share/doc/pngcheck
