@@ -34,4 +34,5 @@ share/spice/news
 %%PORTDOCS%%%%EXAMPLESDIR%%/rtlinv.cir
 %%PORTDOCS%%%%EXAMPLESDIR%%/schmitt.cir
 %%PORTDOCS%%%%EXAMPLESDIR%%/simplepz.cir
-%%PORTDOCS%%@dirrm share/examples/spice
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%
