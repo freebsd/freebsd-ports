@@ -7,7 +7,7 @@
 
 PORTNAME=	html-parser
 PORTVERSION=	19990912p2
-CATEGORIES=	textproc ruby
+CATEGORIES=	textproc www ruby
 MASTER_SITES=	http://www.jin.gr.jp/~nahi/Ruby/html-parser/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
 DIST_SUBDIR=	ruby
