@@ -3,7 +3,7 @@
 # Date created:		10 May 1996
 # Whom:			Mita Yoshio <mita@jp.FreeBSD.org>
 #
-# $Id: Makefile,v 1.16 1998/09/21 08:41:44 asami Exp $
+# $Id: Makefile,v 1.17 1998/10/04 14:47:13 kuriyama Exp $
 #
 
 DISTNAME=	VFlib-2.23-PL1
@@ -15,7 +15,7 @@ DISTFILES=	TypeHack-19980625.tar.gz watanabe-vf.tar.Z
 MAINTAINER=	mita@jp.FreeBSD.org
 
 BUILD_DEPENDS=	libtool:${PORTSDIR}/devel/libtool
-LIB_DEPENDS=	ttf.2:${PORTSDIR}/print/freetype
+LIB_DEPENDS=	ttf.3:${PORTSDIR}/print/freetype
 
 EXTRACT_ONLY=	TypeHack-19980625.tar.gz
 WRKSRC=		${WRKDIR}/TypeHack-19980625/VFlib2-2.23.1

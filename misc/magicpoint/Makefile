@@ -3,7 +3,7 @@
 # Date created:		24 December 1997
 # Whom:			itojun@itojun.org
 #
-# $Id: Makefile,v 1.6 1998/09/14 06:38:04 itojun Exp $
+# $Id: Makefile,v 1.7 1998/09/21 08:41:45 asami Exp $
 #
 
 DISTNAME=	magicpoint-1.04a
@@ -15,7 +15,7 @@ MASTER_SITES=	ftp://ftp.mew.org/pub/MagicPoint/
 MAINTAINER=	itojun@itojun.org
 
 # plus sign is for localized (i.e. Japanese) version
-LIB_DEPENDS+=	ttf.2:${PORTSDIR}/print/freetype
+LIB_DEPENDS+=	ttf.3:${PORTSDIR}/print/freetype
 
 USE_IMAKE=	yes
 GNU_CONFIGURE=	yes
