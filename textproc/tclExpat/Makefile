@@ -7,14 +7,14 @@
 
 PORTNAME=	TclExpat
 PORTVERSION=	1.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	textproc tcl83
 MASTER_SITES=	http://www.zveno.com/in-tclxml/
 
 MAINTAINER=	mi@aldan.algebra.com
 
 LIB_DEPENDS=	tcl${TCL_DVER}:${PORTSDIR}/lang/tcl${TCL_DVER} \
-		expat.3:${PORTSDIR}/textproc/expat2
+		expat.4:${PORTSDIR}/textproc/expat2
 
 INSTALLS_SHLIB=	yes
 

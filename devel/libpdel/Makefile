@@ -7,13 +7,14 @@
 
 PORTNAME=		libpdel
 PORTVERSION=		0.3.3
+PORTREVISION=		1
 CATEGORIES=		devel net www
 MASTER_SITES=		${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	archie
 
 MAINTAINER=		archie@freebsd.org
 
-LIB_DEPENDS=		expat.3:${PORTSDIR}/textproc/expat2
+LIB_DEPENDS=		expat.4:${PORTSDIR}/textproc/expat2
 
 INSTALLS_SHLIB=		yes
 
