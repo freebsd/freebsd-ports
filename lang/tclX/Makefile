@@ -1,21 +1,21 @@
 # New ports collection makefile for:	tclX
-# Version required:	7.5-b3
+# Version required:	7.5
 # Date created:		6 February 1996
 # Whom:			jkh
 #
-# $Id: Makefile,v 1.1.1.1 1996/03/16 05:01:43 pst Exp $
+# $Id: Makefile,v 1.2 1996/03/18 02:04:26 asami Exp $
 #
 
-DISTNAME=	tclX7.5.0-b3
-PKGNAME=	tclX-7.5b3
+DISTNAME=	tclX7.5.0
+PKGNAME=	tclX-7.5
 CATEGORIES+=	lang
-MASTER_SITES=	ftp://ftp.neosoft.com/pub/tcl/distrib/
+MASTER_SITES=	ftp://ftp.neosoft.com/pub/tcl/tclx-distrib/
 
 TCL_DIR=	${PORTSDIR}/lang/tcl75
-TCL_SRC=	${TCL_DIR}/work/tcl7.5b3
+TCL_SRC=	${TCL_DIR}/work/tcl7.5
 
 TK_DIR=		${PORTSDIR}/x11/tk41
-TK_SRC=		${TK_DIR}/work/tk4.1b3
+TK_SRC=		${TK_DIR}/work/tk4.1
 
 DEPENDS=	${TCL_DIR} ${TK_DIR}
 LIB_DEPENDS=	tcl7\\.5\\.1:${TCL_DIR} \
