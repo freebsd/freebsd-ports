@@ -1,0 +1,10 @@
+# Date created:		29 December 2002
+# Whom:			"Bjoern A. Zeeb" (bzeeb+freebsdports@zabbadoz.net)
+#
+# $FreeBSD$
+#
+
+# set bitsToBuild to 64
+CONFIGURE_ARGS+=	-b 64
+SAMPLES_CONFIG_ARGS+=	-b 64
+
