@@ -41,7 +41,7 @@ post-install:
 	${MKDIR} ${PREFIX}/share/doc/Xaw3d
 	${CP} ${WRKSRC}/README.XAW3D ${PREFIX}/share/doc/Xaw3d
 .if exists(${X11BASE}/bin/XFree86)
-	${LN} ${X11BASE}/lib/libXaw3d.so.7 ${X11BASE}/lib/libXaw3d.so.6
+	${LN} -sf ${X11BASE}/lib/libXaw3d.so.7 ${X11BASE}/lib/libXaw3d.so.6
 .endif
 	@${CAT} ${PKGMESSAGE}
 
