@@ -272,6 +272,7 @@
     SUBDIR += p5-Net-IPv6Addr
     SUBDIR += p5-Net-Jabber
     SUBDIR += p5-Net-Netmask
+    SUBDIR += p5-Net-ParseWhois
     SUBDIR += p5-Net-Patricia
     SUBDIR += p5-Net-RawIP
     SUBDIR += p5-Net-SNMP
