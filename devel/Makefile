@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.153 1999/01/09 08:52:07 asami Exp $
+# $Id: Makefile,v 1.154 1999/01/10 19:06:11 steve Exp $
 #
 
     SUBDIR += ElectricFence
@@ -31,6 +31,7 @@
     SUBDIR += dmake
     SUBDIR += doc++
     SUBDIR += f77flow
+    SUBDIR += flick
     SUBDIR += fpp
     SUBDIR += ftnchek
     SUBDIR += gcc11
