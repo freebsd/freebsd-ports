@@ -1,0 +1,13 @@
+diff -u -r1.8 t.frame
+--- ./src/tests/t.frame	19 May 2003 22:05:24 -0000	1.8
++++ ./src/tests/t.frame	22 May 2003 03:14:17 -0000
+@@ -99,5 +99,7 @@
+     export EF_ALIGNMENT
+ fi
+ 
+-DIFF_BRIEF=""
+-[ "`uname -s`" = "Linux" ] && DIFF_BRIEF="--brief -s"
++case `uname -s` in
++    Linux)  DIFF_BRIEF="--brief -s" ;;
++    *)      DIFF_BRIEF="" ;;
++esac
