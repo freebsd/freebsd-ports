@@ -1,5 +1,5 @@
---- FLIM-CFG.orig	Tue Sep 15 15:26:08 1998
-+++ FLIM-CFG	Sun May  9 01:33:26 1999
+--- FLIM-CFG.orig	Mon May 31 18:23:26 1999
++++ FLIM-CFG	Thu Oct 14 23:56:32 1999
 @@ -8,6 +8,8 @@
  
  (add-to-list 'load-path
@@ -9,3 +9,11 @@
  
  (if (boundp 'LISPDIR)
      (progn
+@@ -19,6 +21,7 @@
+ (if (boundp 'VERSION_SPECIFIC_LISPDIR)
+     (add-to-list 'load-path VERSION_SPECIFIC_LISPDIR))
+ 
++(require 'emu)
+ (require 'install)
+ 
+ (add-latest-path "custom")
