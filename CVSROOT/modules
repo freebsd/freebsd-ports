@@ -5613,6 +5613,7 @@ p5-CDDB		ports/audio/p5-CDDB
 p5-CDDB-File	ports/audio/p5-CDDB-File
 p5-CDDB_get	ports/audio/p5-CDDB_get
 p5-CGI-Application	ports/www/p5-CGI-Application
+p5-CGI-Application-ValidateRM	ports/www/p5-CGI-Application-ValidateRM
 p5-CGI-ArgChecker	ports/www/p5-CGI-ArgChecker
 p5-CGI-Cache	ports/www/p5-CGI-Cache
 p5-CGI-FastTemplate	ports/www/p5-CGI-FastTemplate
