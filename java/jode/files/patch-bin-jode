@@ -1,0 +1,18 @@
+--- bin/jode.in	Mon Oct  2 09:08:36 2000
++++ bin/jode.in	Tue Jun 24 16:13:17 2003
+@@ -1,4 +1,3 @@
+ #!@SHELL@
+-prefix=@prefix@
+ 
+ case $1 in
+@@ -9,6 +8,7 @@
+ esac
+   
++# This will only set CP if CLASSPATH is non-empty:
++CP=`echo $CLASSPATH | sed -e 's/:/,/g' -e 's/..*/--classpath &/'`
+ 
+-CP=`echo $CLASSPATH | sed s/:/,/`
+-CLASSPATH=@datadir@/jode-@VERSION@.jar:@CLASSPATH@ \
+-@JAVA@ $CLAZZ --classpath $CP $*
++exec javavm -cp @datadir@/jode-@VERSION@.jar:@datadir@/getopt.jar \
++	$CLAZZ $CP "$@"

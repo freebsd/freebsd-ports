@@ -53,6 +53,7 @@
     SUBDIR += jlex
     SUBDIR += jlint
     SUBDIR += jmp
+    SUBDIR += jode
     SUBDIR += jre
     SUBDIR += jsdk
     SUBDIR += jump
