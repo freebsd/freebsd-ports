@@ -15,4 +15,12 @@ PWLib is a multi-platform code library that can be used to write
 applications that will compile and run on the BSD Unixes, Windows, Linux
 and a few other Unix variants. It was developed by Equivalence Ltd Pty.
 
+By default, the OpenH323 library contains code to display video images
+using X Windows. This is not needed in certain applications such
+as gatekeepers, gateways or the OpenAM application.
+You can compile the port with
+  make -DNO_XWINDOWS
+to build the port without X Windows support.
+
+
 WWW: http://www.openh323.org
