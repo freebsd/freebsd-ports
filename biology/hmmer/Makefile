@@ -6,28 +6,29 @@
 #
 
 PORTNAME=	hmmer
-PORTVERSION=	2.1.1
+PORTVERSION=	2.2.g
 CATEGORIES=	biology
-MASTER_SITES=	ftp://ftp.genetics.wustl.edu/pub/eddy/hmmer/
-EXTRACT_SUFX=	.tar.Z
+MASTER_SITES=	ftp://ftp.genetics.wustl.edu/pub/eddy/hmmer/${VERSIONSTRING}/
+DISTNAME=	${PORTNAME}-${VERSIONSTRING}
 
 MAINTAINER=	wjv@FreeBSD.org
 
 GNU_CONFIGURE=	yes
 USE_PERL5=	yes
+VERSIONSTRING=	${PORTVERSION:C|\.([^.]*)$|\1|}
 
-MAN1=		hmmalign.1 hmmbuild.1 hmmcalibrate.1 hmmconvert.1 hmmemit.1 \
-		hmmer.1 hmmpfam.1 hmmsearch.1 hmmfetch.1 hmmindex.1 alistat.1 \
-		getseq.1 seqstat.1 sreformat.1
-
-HMMER_DOCDIR=	${PREFIX}/share/doc/${PORTNAME}
+DOCFILES=	00README COPYRIGHT NOTES Userguide.pdf
+MAN1=		afetch.1 alistat.1 hmmalign.1 hmmbuild.1 hmmcalibrate.1 \
+		hmmconvert.1 hmmemit.1 hmmer.1 hmmfetch.1 hmmindex.1 \
+		hmmpfam.1 hmmsearch.1 seqstat.1 sfetch.1 shuffle.1 \
+		sreformat.1
 
 post-install:
 .if !defined(NOPORTDOCS)
-	@ ${MKDIR} ${HMMER_DOCDIR}
-	@ ${INSTALL_DATA} ${WRKSRC}/Userguide/Userguide.pdf ${HMMER_DOCDIR}
-	@ ${INSTALL_DATA} ${WRKSRC}/Userguide/Userguide.ps ${HMMER_DOCDIR}
-	@ ${TAR} xzfC ${WRKSRC}/Userguide/hmmer-html.tar.Z ${HMMER_DOCDIR}
+	@ ${MKDIR} ${DOCSDIR}
+.for docfile in ${DOCFILES}
+	@ ${INSTALL_DATA} ${WRKSRC}/${docfile} ${DOCSDIR}
+.endfor
 .endif
 .if !defined(BATCH)
 	@ ${CAT} ${PKGMESSAGE}

@@ -1,5 +1,5 @@
---- Makefile.in.orig	Thu Dec 10 01:11:07 1998
-+++ Makefile.in	Wed Jul  4 15:41:09 2001
+--- Makefile.in.orig	Mon Aug  6 01:55:36 2001
++++ Makefile.in	Wed Aug 22 14:52:30 2001
 @@ -34,7 +34,7 @@
  # how to install the man pages; 
  # cp is generally fine, unless you preformat your pages.
@@ -9,12 +9,19 @@
  MANSUFFIX = 1
  
  # your compiler and compiler flags
-@@ -142,7 +142,7 @@
- #          installs man pages in MANDIR/man1/  (if MANSUFFIX is 1)
+@@ -144,12 +144,12 @@
+ #          installs man pages in MANDIR/man1/  (e.g. if MANSUFFIX is 1)
  install: 
  	for file in $(PROGS) $(SQUIDPROGS) $(PVMPROGS); do\
 -	   cp binaries/$$file $(BINDIR)/;\
 +	   $(BSD_INSTALL_PROGRAM) binaries/$$file $(BINDIR)/;\
  	done
- 	for file in hmmer $(PROGS) $(SQUIDPROGS); do\
- 	   $(INSTMAN) Man/$$file.man $(MANDIR)/man$(MANSUFFIX)/$$file.$(MANSUFFIX);\
+-	for file in hmmer $(PROGS) $(SQUIDPROGS); do\
++	for file in hmmer $(PROGS); do\
+ 	   $(INSTMAN) documentation/man/$$file.man $(MANDIR)/man$(MANSUFFIX)/$$file.$(MANSUFFIX);\
+ 	done
+-	for file in $(SQUIDPROGS); do\
++	for file in afetch alistat seqstat sfetch shuffle sreformat; do\
+ 	   $(INSTMAN) squid/Man/$$file.man $(MANDIR)/man$(MANSUFFIX)/$$file.$(MANSUFFIX);\
+ 	done
+ 
