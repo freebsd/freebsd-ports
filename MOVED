@@ -728,3 +728,4 @@ mail/mailscanner|mail/MailScanner|2003-12-16|renamed port to MailScanner
 net/py-soap||2003-12-16|author no longer distributes the module
 net/roadrunner||2003-12-19|Project discontinued, distfiles removed
 deskutils/xfce4-notes|deskutils/xfce4-notes-plugin|2003-12-20|renamed
+devel/sip||2003-12-27|Integrated into py-sip
