@@ -1,9 +1,9 @@
-# New ports collection makefile for: Japanese Aladdin ghostscript + vector font library
+# New ports collection makefile for: Japanese Aladdin ghostscript + vector font library(FreeType)
 # Version required:	5.10
 # Date created:		26 Aug 1997
 # Whom:			Mita Yoshio <mita@jp.FreeBSD.org>
 #
-# $Id: Makefile,v 1.14 1997/11/16 19:58:36 max Exp $
+# $Id: Makefile,v 1.15 1998/01/23 00:44:37 itojun Exp $
 #
 
 DISTNAME=	ghostscript-5.10
@@ -19,6 +19,8 @@ MASTER_SITES=	ftp://ftp.cs.wisc.edu/ghost/aladdin/gs510/ \
 		http://www.jp.FreeBSD.org/~mita/LOCAL_PORTS/ \
 		http://ldl-www.jaist.ac.jp:8080/~akr/nonresearch/free-software/ghostscript/ \
 		http://www.jaist.ac.jp/~daisuke/Linux/gs/gs5/Original-sources/OLD/ \
+		http://www.rd.nacsis.ac.jp/~katayama/homepage/ghostscript/jpdf/ \
+		http://itohws03.ee.noda.sut.ac.jp/~matsuda/VFlib-FT/ \
 		http://www.bpe.es.osaka-u.ac.jp/~watanabe/
 DISTFILES=	${GS_SOURCES} ${GS_DRIVERS} ${GS_FONTS_STD} ${GS_FONTS_OTHER}
 
@@ -40,6 +42,8 @@ GS_SOURCES=	ghostscript-5.10.tar.gz
 GS_SOURCES+=	jpegsrc.v6a.tar.gz
 GS_SOURCES+=	libpng-0.96.tgz
 GS_DRIVERS=	gs5.10-vflib-1.1.tar.gz
+GS_DRIVERS+=	gs5.10-jpdf-0.1.tar.gz
+GS_DRIVERS+=	gs5.10-VFlibBM.diff.gz
 GS_DRIVERS+=	gdevlips4-1.2.0.tar.gz
 GS_DRIVERS+=	gdevmjc-0.7.tar.gz
 GS_DRIVERS+=	gdevrpdl.tar.gz
@@ -53,11 +57,23 @@ GS_DRIVERS+=	gdevnpdl-1.4.tar.gz
 GS_FONTS_STD=	ghostscript-fonts-std-4.0.tar.gz
 GS_FONTS_OTHER=	ghostscript-fonts-other-4.40.tar.gz
 
+pre-fetch:
+.if !defined(PDFENCRYPT)
+	@${ECHO_MSG} "NOTE: You can have encrypted PDF support by adding "
+	@${ECHO_MSG} "\"PDFENCRYPT=yes\" to argument of make."
+.endif
+
 pre-patch:
-	@(cd ${WRKSRC} ; tar xzf ${DISTDIR}/gs5.10-vflib-1.1.tar.gz )
-	@(cd ${WRKDIR} ; \
-	  ${PATCH} -p < ${WRKSRC}/gs5.10-vflib-1.1/gs5.10-vflib-1.1.diff >/dev/null 2>&1; \
-	)
+	(cd ${WRKSRC} ; tar xzf ${DISTDIR}/gs5.10-vflib-1.1.tar.gz )
+	(cd ${WRKSRC} ; tar xzf ${DISTDIR}/gs5.10-jpdf-0.1.tar.gz )
+	(cd ${WRKDIR} ; \
+	  ${PATCH} -p < ${WRKSRC}/gs5.10-vflib-1.1/gs5.10-vflib-1.1.diff \
+		>/dev/null 2>&1)
+	(cd ${WRKDIR} ; \
+	  ${PATCH} -p < ${WRKSRC}/gs5.10-jpdf-0.1/gs5.10-jpdf.diff \
+		>/dev/null 2>&1)
+	(cd ${WRKDIR} ;  zcat ${DISTDIR}/gs5.10-VFlibBM.diff.gz | ${PATCH} -p \
+		>/dev/null 2>&1)
 
 post-patch:
 	@( ${MKDIR} ${PRINTER} ; \
@@ -104,6 +120,7 @@ post-install:
 	  ${CP} ${WRKSRC}/gs5.10-vflib-1.1/README.CID ${DOC_DIR}/README.CID.gs5.10-vflib ; \
 	  ${CP} ${WRKSRC}/gs5.10-vflib-1.1/OLD-DOC/gs261d13-doc/* ${DOC_DIR} ; \
 	  ${CP} ${WRKSRC}/gs5.10-vflib-1.1/OLD-DOC/gs261j10-doc/* ${DOC_DIR} ; \
+	  ${CP} ${WRKSRC}/gs5.10-jpdf-0.1/README ${DOC_DIR}/README.gs5.10-jpdf ; \
 	  ${CP} ${PRINTER}/gdev10v/gdev10v.jis ${DOC_DIR} ; \
 	  ${CP} ${PRINTER}/gdevep82/gdevep82.jis ${DOC_DIR} ; \
 	  ${CP} ${PRINTER}/gdevlips4-1.2.0/Readme ${DOC_DIR}/gdevlips4.euc ; \
@@ -116,5 +133,15 @@ post-install:
 	  ${CP} ${PRINTER}/gdevdmpr/escp_24.src ${GSINST_DIR} ; \
 	  ${CP} ${PRINTER}/gdevdmpr/testpage.ps ${GSINST_DIR} ; \
 	)
+.if defined(PDFENCRYPT)
+	@${CP} -f ${DISTDIR}/pdf_sec.ps ${GSINST_DIR}
+.endif
+
+# encrypted PDF support.  can't be packaged due to export control issues.
+.if defined(PDFENCRYPT)
+MASTER_SITES+=	http://www.ozemail.com.au/~geoffk/pdfencrypt/
+DISTFILES+=	pdf_sec.ps
+RESTRICTED=	"Crypto; export controlled, RC4 in PostScript code included"
+.endif
 
 .include <bsd.port.mk>
