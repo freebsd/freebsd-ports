@@ -9,7 +9,7 @@
 PORTNAME=	clarence
 PORTVERSION=	0.2.0
 CATEGORIES=	math python
-MASTER_SITES=	http://clay.ll.pl/clarence/
+MASTER_SITES=	http://clay.ll.pl/download/
 
 MAINTAINER=	ports@FreeBSD.org
 
