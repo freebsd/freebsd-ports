@@ -1,4 +1,4 @@
-# New ports collection makefile for:	libpcapnav
+# New ports collection makefile for:	libnetdude
 # Date created:		2004-04-23
 # Whom:			Yann Berthier <yb@sainte-barbe.org>
 #
