@@ -1,0 +1,16 @@
+--- programs/Xserver/hw/xfree86/etc/bindist/build-bindist.orig	Wed Aug 29 13:52:27 2001
++++ programs/Xserver/hw/xfree86/etc/bindist/build-bindist	Wed Aug 29 14:12:28 2001
+@@ -45,10 +45,10 @@
+ DIRFILE=dir
+ BINDIR=bindist
+ EXTRASFILE=extras
+-TAR="gnu-tar"
+-EXTRACT="extract"
++TAR="tar"
++EXTRACT="tar"
+ TAROPTS="-c -v -z"
+-EXTRACTLOPTS="-t -v"
++EXTRACTLOPTS="-t -v -z -f"
+ SUMFILE=SUMS.md5
+ LISTFILE=FILES
+ 
