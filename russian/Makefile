@@ -20,6 +20,7 @@
     SUBDIR += rus-ispell
     SUBDIR += wmcyrx
     SUBDIR += xcode
+    SUBDIR += xcyrBGR
     SUBDIR += xruskb
 
 .include <bsd.port.subdir.mk>
