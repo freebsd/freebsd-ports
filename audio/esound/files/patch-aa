@@ -5,7 +5,7 @@
  	audio.c
  
 -libesd_la_LDFLAGS = -version-info @ESD_VERSION_INFO@
-+libesd_la_LDFLAGS = -version-info 0:2:0
++libesd_la_LDFLAGS = -version-info 1:0:0
  
  libesd_la_LIBADD = @AUDIOFILE_LIBS@ -lm
  
@@ -13,7 +13,7 @@
  	libesddsp.la
  
 -libesddsp_la_LDFLAGS = -rpath $(libdir) -version-info @ESD_VERSION_INFO@
-+libesddsp_la_LDFLAGS = -rpath $(libdir) -version-info 0:2:0
++libesddsp_la_LDFLAGS = -rpath $(libdir) -version-info 1:0:0
  
  libesddsp_la_LIBADD = -ldl -lm
  
