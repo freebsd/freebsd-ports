@@ -3,12 +3,14 @@
 # Date created:		29 Jun 1995
 # Whom:			peter@haywire.dialix.oz.au
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1995/07/01 10:07:17 asami Exp $
 #
 
 DISTNAME=	tin-1.22
 CATEGORIES+=	news
 MASTER_SITES=	ftp://ftp.germany.eu.net/pub/news/newsreader/unix/tin/
+
+ALL_TARGET=     freebsd
 
 post-install:
 	gzip -9nf ${PREFIX}/man/man1/tin.1

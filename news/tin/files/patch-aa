@@ -1,21 +1,20 @@
-diff -rc2 ../../work/tin-1.22/Makefile ./Makefile
-*** ../../work/tin-1.22/Makefile	Sat Sep 25 22:29:52 1993
---- ./Makefile	Thu Jun 29 09:13:24 1995
+*** Makefile.orig	Sat Sep 25 18:29:52 1993
+--- Makefile	Sun Mar  3 15:49:48 1996
 ***************
-*** 2,6 ****
+*** 2,8 ****
   #
   # Options that may need changing. For advanced options read the INSTALL file.
-! # 
-  CC	= cc
+  # 
+- CC	= cc
   COPTS	= -c -O
---- 2,6 ----
-  #
-  # Options that may need changing. For advanced options read the INSTALL file.
-! #
-  CC	= cc
-  COPTS	= -c -O
+  #CC	= gcc
+  #COPTS	= -c -g
+--- 2,7 ----
 ***************
-*** 15,21 ****
+*** 12,27 ****
+  #YACC = bison -y
+  #DEBUG	=
+  DEBUG	= -g -DDEBUG
   
   # Where are your news libdir & spooldir?
 ! LIBDIR	= /usr/lib/news
@@ -23,404 +22,100 @@ diff -rc2 ../../work/tin-1.22/Makefile ./Makefile
 ! NOVROOTDIR= $(SPOOLDIR)
   
   # Where do you want the binary & manual page installed?
---- 15,21 ----
+! INS_BINARY_DIR	= /usr/local/bin
+  INS_DAEMON_DIR	= $(LIBDIR)
+! INS_MANUAL_DIR	= /usr/local/man/man
+  INS_MANUAL_EXT	= 1
+  
+  # From: address in posted articles (don't use both - read the INSTALL file)
+--- 11,29 ----
+  #YACC = bison -y
+  #DEBUG	=
+  DEBUG	= -g -DDEBUG
++ PREFIX  = /usr/local
   
   # Where are your news libdir & spooldir?
-! LIBDIR	= /usr/local/lib/news
+! LIBDIR  = ${PREFIX}/lib/news
 ! SPOOLDIR= /var/news
 ! NOVROOTDIR= $(SPOOLDIR)/over.view
+! NNTP_SERVER_FILE=${PREFIX}/etc/nntpserver
+! SMTP_SERVER_FILE=${PREFIX}/etc/smtpserver
   
   # Where do you want the binary & manual page installed?
+! INS_BINARY_DIR  = ${PREFIX}/bin
+  INS_DAEMON_DIR	= $(LIBDIR)
+! INS_MANUAL_DIR  = ${PREFIX}/man/man
+  INS_MANUAL_EXT	= 1
+  
+  # From: address in posted articles (don't use both - read the INSTALL file)
 ***************
-*** 46,51 ****
+*** 45,52 ****
+  SHELL	= /bin/sh
   STRIP	= strip
   STRIP2	= mcs -d
 ! #ROFF	= nroff -man 
 ! ROFF	= groff -Tascii -man 
   #BASE_VER= 1.21/tin-1.21
   BASE_VER= 170993
---- 46,51 ----
+  VER = 1.22
+--- 47,54 ----
+  SHELL	= /bin/sh
   STRIP	= strip
   STRIP2	= mcs -d
-! #ROFF	= nroff -man
-! ROFF	= groff -Tascii -man
+! ROFF   = nroff -man
+! #ROFF    = groff -Tascii -man
   #BASE_VER= 1.21/tin-1.21
   BASE_VER= 170993
+  VER = 1.22
 ***************
-*** 79,85 ****
-  ALL_FILES = $(SUPPORT) $(NNTP_PATCH) $(HFILES) patchlev.h $(CFILES)
-  
-! LINTFLAGS=-a -c -h -n -x 
-  
-! all: 
-  	@echo "Makefile for the TIN v$(VER) Usenet newsreader. Configuration:"
+*** 100,115 ****
+  	@echo "  make qnx     [ QNX 4.1 ]                 make sco       [ SCO Unix ]"
+  	@echo "  make sinix   [ SNI Sinix ]               make tower     [ NCR Tower]"
+  	@echo "  make xenix   [ SCO Xenix 386 ]"
   	@echo " "
---- 79,98 ----
-  ALL_FILES = $(SUPPORT) $(NNTP_PATCH) $(HFILES) patchlev.h $(CFILES)
-  
-! LINTFLAGS=-a -c -h -n -x
-  
-! # For FreeBSD systems
-! all:
-! 	@echo "Compiling $(EXE) v$(VER) for FreeBSD..."
-! 	@$(MAKE) CC=$(CC) CFLAGS='$(COPTS) \
-! 			-DNNTP_INEWS_GATEWAY=\"$(NNTP_INEWS_GATEWAY)\" \
-! 			-DNNTP_INEWS_DOMAIN=\"$(NNTP_INEWS_DOMAIN)\" \
-! 			-DNNTP_DEFAULT_SERVER=\"$(NNTP_DEFAULT_SERVER)\" \
-! 			-DLIBDIR=\"$(LIBDIR)\" \
-! 			-DSPOOLDIR=\"$(SPOOLDIR)\" \
-! 			-DNOVROOTDIR=\"$(NOVROOTDIR)\"' \
-! 			LIBS="-lcurses -ltermcap $(INN_NNTPLIB)" \
-! 			EXE=tin linkit
-! 
-! oldall:
-  	@echo "Makefile for the TIN v$(VER) Usenet newsreader. Configuration:"
+  	@echo "Note that targets marked with '(nntp)' have -DNNTP_ABLE defined automatically."
   	@echo " "
-***************
-*** 130,134 ****
-  	$(MAKE) CC=$(CC) "CFLAGS=$(AMIGA_COPTS)" LIBS=-lc EXE=tin linkit
   
-! # For Apollo 
-  apollo:
-  	@echo "Compiling $(EXE) v$(VER) for Apollo..."
---- 143,147 ----
-  	$(MAKE) CC=$(CC) "CFLAGS=$(AMIGA_COPTS)" LIBS=-lc EXE=tin linkit
+! .c.o:
+! 	$(CC) $(CFLAGS) $*.c
   
-! # For Apollo
-  apollo:
-  	@echo "Compiling $(EXE) v$(VER) for Apollo..."
-***************
-*** 223,227 ****
-  			LIBS="-lcurses $(INN_NNTPLIB)" \
-  			EXE=tin linkit
-! 	chmem +131072 $(EXE) 
+  # Uncomment for COHERENT os
+  #.c.y:
+  #	$(YACC) $*.y
   
-  # For Mips/CDC EPIX
---- 236,240 ----
-  			LIBS="-lcurses $(INN_NNTPLIB)" \
-  			EXE=tin linkit
-! 	chmem +131072 $(EXE)
+  # For IBM AIX
+  aix:
+--- 102,134 ----
+  	@echo "  make qnx     [ QNX 4.1 ]                 make sco       [ SCO Unix ]"
+  	@echo "  make sinix   [ SNI Sinix ]               make tower     [ NCR Tower]"
+  	@echo "  make xenix   [ SCO Xenix 386 ]"
++ 	@echo "  make freebsd [ FreeBSD ]"
+  	@echo " "
+  	@echo "Note that targets marked with '(nntp)' have -DNNTP_ABLE defined automatically."
+  	@echo " "
   
-  # For Mips/CDC EPIX
-***************
-*** 467,471 ****
-  linkit: $(OFILES)
-  	@echo "Linking $(EXE) v$(VER)..."
-! 	$(LD) $(LFLAGS) -o $(EXE) $(OFILES) $(NNTPLIB) $(NETLIBS) $(LIBS) 
-  	@ls -l $(EXE)
+! #.c.o:
+! #        $(CC) $(CFLAGS) $*.c
   
---- 480,484 ----
-  linkit: $(OFILES)
-  	@echo "Linking $(EXE) v$(VER)..."
-! 	$(LD) $(LFLAGS) -o $(EXE) $(OFILES) $(NNTPLIB) $(NETLIBS) $(LIBS)
-  	@ls -l $(EXE)
+  # Uncomment for COHERENT os
+  #.c.y:
+  #	$(YACC) $*.y
++ 
++ # For FreeBSD systems
++ freebsd:
++ 	@echo "Compiling $(EXE) v$(VER) for FreeBSD..."
++ 	@$(MAKE) CFLAGS='$(CFLAGS) \
++ 			-DHAVE_ISPELL \
++ 			-DNNTP_INEWS_GATEWAY=\"$(NNTP_INEWS_GATEWAY)\" \
++ 			-DNNTP_INEWS_DOMAIN=\"$(NNTP_INEWS_DOMAIN)\" \
++ 			-DNNTP_DEFAULT_SERVER=\"$(NNTP_DEFAULT_SERVER)\" \
++ 			-DLIBDIR=\"$(LIBDIR)\" \
++ 			-DSPOOLDIR=\"$(SPOOLDIR)\" \
++ 			-DNNTP_SERVER_FILE=\"$(NNTP_SERVER_FILE)\" \
++ 			-DSMTP_SERVER_FILE=\"$(SMTP_SERVER_FILE)\" \
++ 			-DNOVROOTDIR=\"$(NOVROOTDIR)\"' \
++ 			LIBS="-ltermcap $(INN_NNTPLIB)" \
++ 			EXE=tin linkit
   
-***************
-*** 487,492 ****
-  	@-$(STRIP2) $(EXE)
-  	@-mv $(EXE) $(INS_BINARY_DIR)
-! 	@chown news $(INS_BINARY_DIR)/$(EXE) 
-! 	@chgrp news $(INS_BINARY_DIR)/$(EXE) 
-  	@-rm $(INS_BINARY_DIR)/r$(EXE)
-  	@ln $(INS_BINARY_DIR)/$(EXE) $(INS_BINARY_DIR)/r$(EXE)
---- 500,505 ----
-  	@-$(STRIP2) $(EXE)
-  	@-mv $(EXE) $(INS_BINARY_DIR)
-! 	@chown news $(INS_BINARY_DIR)/$(EXE)
-! 	@chgrp news $(INS_BINARY_DIR)/$(EXE)
-  	@-rm $(INS_BINARY_DIR)/r$(EXE)
-  	@ln $(INS_BINARY_DIR)/$(EXE) $(INS_BINARY_DIR)/r$(EXE)
-***************
-*** 501,505 ****
-  	@-$(STRIP2) $(EXED)
-  	@-mv $(EXED) $(INS_DAEMON_DIR)
-! 	@chown news $(INS_DAEMON_DIR)/$(EXED) 
-  	@chmod 0755 $(INS_DAEMON_DIR)/$(EXED)
-  	@ls -l $(INS_DAEMON_DIR)/$(EXED)
---- 514,518 ----
-  	@-$(STRIP2) $(EXED)
-  	@-mv $(EXED) $(INS_DAEMON_DIR)
-! 	@chown news $(INS_DAEMON_DIR)/$(EXED)
-  	@chmod 0755 $(INS_DAEMON_DIR)/$(EXED)
-  	@ls -l $(INS_DAEMON_DIR)/$(EXED)
-***************
-*** 541,545 ****
-  	@uuencode $(PROJECT).tar.Z $(PROJECT).tar.Z > $(PROJECT).tar.Z.uue
-  	@ls -l $(PROJECT).tar.Z.uue
-!  
-  diff:
-  	@echo "Generating diffs against $(PROJECT)-$(BASE_VER)..."
---- 554,558 ----
-  	@uuencode $(PROJECT).tar.Z $(PROJECT).tar.Z > $(PROJECT).tar.Z.uue
-  	@ls -l $(PROJECT).tar.Z.uue
-! 
-  diff:
-  	@echo "Generating diffs against $(PROJECT)-$(BASE_VER)..."
-***************
-*** 564,570 ****
-  	@-rm $(PROJECT).tar $(PROJECT).tar.Z > /dev/null 2>&1
-  	$(MAKE) chmod
-! 	@tar cvf $(PROJECT).tar $(ALL_FILES)  
-  	@echo "Compressing $(PROJECT).tar..."
-! 	@compress $(PROJECT).tar 
-  	@ls -l $(PROJECT).tar.Z
-  
---- 577,583 ----
-  	@-rm $(PROJECT).tar $(PROJECT).tar.Z > /dev/null 2>&1
-  	$(MAKE) chmod
-! 	@tar cvf $(PROJECT).tar $(ALL_FILES)
-  	@echo "Compressing $(PROJECT).tar..."
-! 	@compress $(PROJECT).tar
-  	@ls -l $(PROJECT).tar.Z
-  
-***************
-*** 573,579 ****
-  	@-rm $(PROJECT).t $(PROJECT).t.[gz] > /dev/null 2>&1
-  	$(MAKE) chmod
-! 	@tar cvf $(PROJECT).t $(ALL_FILES)  
-  	@echo "Gzipping $(PROJECT).t..."
-! 	@gzip $(PROJECT).t 
-  	@ls -l $(PROJECT).t.[gz]
-  
---- 586,592 ----
-  	@-rm $(PROJECT).t $(PROJECT).t.[gz] > /dev/null 2>&1
-  	$(MAKE) chmod
-! 	@tar cvf $(PROJECT).t $(ALL_FILES)
-  	@echo "Gzipping $(PROJECT).t..."
-! 	@gzip $(PROJECT).t
-  	@ls -l $(PROJECT).t.[gz]
-  
-***************
-*** 586,590 ****
-  	@tar cvf $(PROJECT)-$(VER).tar $(PROJECT)-$(VER)
-  	@echo "Compressing $(PROJECT)-$(VER).tar..."
-! 	@compress $(PROJECT)-$(VER).tar 
-  	@ls -l $(PROJECT)-$(VER).tar.Z
-  
---- 599,603 ----
-  	@tar cvf $(PROJECT)-$(VER).tar $(PROJECT)-$(VER)
-  	@echo "Compressing $(PROJECT)-$(VER).tar..."
-! 	@compress $(PROJECT)-$(VER).tar
-  	@ls -l $(PROJECT)-$(VER).tar.Z
-  
-***************
-*** 607,611 ****
-  	@echo "Generating tags (results in ./tags)..."
-  	@-rm tags
-! 	@ctags $(HFILES) patchlev.h $(CFILES) 
-  
-  lint:
---- 620,624 ----
-  	@echo "Generating tags (results in ./tags)..."
-  	@-rm tags
-! 	@ctags $(HFILES) patchlev.h $(CFILES)
-  
-  lint:
-***************
-*** 619,623 ****
-  clobber:
-  	@echo "Clobbering..."
-! 	/bin/rm -f $(OFILES) $(EXE) tags 
-  
-  cflow:
---- 632,636 ----
-  clobber:
-  	@echo "Clobbering..."
-! 	/bin/rm -f $(OFILES) $(EXE) tags
-  
-  cflow:
-***************
-*** 642,647 ****
-  	@echo "Compiling actived for AmigaDOS (Manx-C 5.2)..."
-  	$(CC) CFLAGS=$(AMIGA_COPTS) actived
-! 	$(LD) actived -lc 
-! 	
-  active.o:	active.c $(HFILES)
-  amiga.o:	amiga.c $(HFILES)
---- 655,660 ----
-  	@echo "Compiling actived for AmigaDOS (Manx-C 5.2)..."
-  	$(CC) CFLAGS=$(AMIGA_COPTS) actived
-! 	$(LD) actived -lc
-! 
-  active.o:	active.c $(HFILES)
-  amiga.o:	amiga.c $(HFILES)
-
-
-
-diff -rc2 ../../work/tin-1.22/config.h ./config.h
-*** ../../work/tin-1.22/config.h	Sat Sep 25 22:30:03 1993
---- ./config.h	Wed Jun 28 05:38:27 1995
-***************
-*** 30,34 ****
-  
-  #if defined(_POSIX_SOURCE) || defined(__386BSD__) || defined(DGUX) || \
-!     defined(SVR4) || defined(UMAXV)
-  #	if !defined(M_OS2)
-  #		define	HAVE_POSIX_JC
---- 30,34 ----
-  
-  #if defined(_POSIX_SOURCE) || defined(__386BSD__) || defined(DGUX) || \
-!     defined(SVR4) || defined(UMAXV) || defined(__FreeBSD__)
-  #	if !defined(M_OS2)
-  #		define	HAVE_POSIX_JC
-***************
-*** 82,86 ****
-  #endif
-  
-! #if defined(BSD)
-  #	define	HAVE_STRINGS_H
-  #else
---- 82,86 ----
-  #endif
-  
-! #if defined(BSD) && !defined(__FreeBSD__)
-  #	define	HAVE_STRINGS_H
-  #else
-***************
-*** 89,93 ****
-  
-  #if defined(apollo) || defined(BSD) || defined(EPIX) || defined(M_AMIGA) || \
-!     defined(M_OS2) || defined(__osf__) || defined(UMAXV)
-  #	define	HAVE_FCNTL_H
-  #endif
---- 89,94 ----
-  
-  #if defined(apollo) || defined(BSD) || defined(EPIX) || defined(M_AMIGA) || \
-!     defined(M_OS2) || defined(__osf__) || defined(UMAXV) || \
-!     defined(__FreeBSD__)
-  #	define	HAVE_FCNTL_H
-  #endif
-***************
-*** 111,115 ****
-      defined(__hpux) || defined(linux) || defined(M_OS2) || \
-      defined(__osf__) || defined(RS6000) || defined(sinix) || \
-!     defined(UMAXV)
-  #	define	HAVE_NETDB_H
-  #endif
---- 112,116 ----
-      defined(__hpux) || defined(linux) || defined(M_OS2) || \
-      defined(__osf__) || defined(RS6000) || defined(sinix) || \
-!     defined(UMAXV) || defined(__FreeBSD__)
-  #	define	HAVE_NETDB_H
-  #endif
-***************
-*** 165,169 ****
-  #if defined(apollo) || defined(AUX) || defined(BSD) || defined(linux) || \
-      defined(__hpux) || defined(__osf__) || defined(PTX) || defined(QNX4) || \
-!     defined(RS6000) || defined(sinix) || defined(SVR4) || defined(UMAXV)
-  #	define	HAVE_LONG_FILENAMES
-  #endif
---- 166,171 ----
-  #if defined(apollo) || defined(AUX) || defined(BSD) || defined(linux) || \
-      defined(__hpux) || defined(__osf__) || defined(PTX) || defined(QNX4) || \
-!     defined(RS6000) || defined(sinix) || defined(SVR4) || defined(UMAXV) || \
-!     defined(__FreeBSD__)
-  #	define	HAVE_LONG_FILENAMES
-  #endif
-***************
-*** 171,179 ****
-  #if defined(apollo) || defined(BSD) || defined(__hpux) || defined(linux) || \
-      defined(__osf__) || defined(M_OS2) || defined(RS6000) || defined(sinix) || \
-!     defined(UMAXV) 
-  #	define	HAVE_GETHOSTBYNAME
-  #endif
-  
-! #if defined(M_AMIGA) || defined(apollo) || defined(BSD) || defined(MINIX)
-  #	define	HAVE_CR_AS_CHAR
-  #endif
---- 173,182 ----
-  #if defined(apollo) || defined(BSD) || defined(__hpux) || defined(linux) || \
-      defined(__osf__) || defined(M_OS2) || defined(RS6000) || defined(sinix) || \
-!     defined(UMAXV)  || defined(__FreeBSD__)
-  #	define	HAVE_GETHOSTBYNAME
-  #endif
-  
-! #if defined(M_AMIGA) || defined(apollo) || defined(BSD) || defined(MINIX) || \
-!     defined(__FreeBSD__)
-  #	define	HAVE_CR_AS_CHAR
-  #endif
-***************
-*** 206,210 ****
-  
-  #if defined(BSD) || defined(EPIX) && !defined(__386BSD__) && \
-!     !defined(sinix)
-  #	define	DONT_HAVE_GETCWD
-  #endif
---- 209,213 ----
-  
-  #if defined(BSD) || defined(EPIX) && !defined(__386BSD__) && \
-!     !defined(sinix) && !defined(__FreeBSD__)
-  #	define	DONT_HAVE_GETCWD
-  #endif
-***************
-*** 214,218 ****
-  #endif
-  
-! #if defined(BSD) && !defined(__386BSD__)
-  #	define	DONT_HAVE_STRCHR
-  #endif
---- 217,221 ----
-  #endif
-  
-! #if defined(BSD) && !defined(__386BSD__) && !defined(__FreeBSD__)
-  #	define	DONT_HAVE_STRCHR
-  #endif
-***************
-*** 227,231 ****
-  
-  #if defined(apollo) || defined(__arm) || defined(__convex__) || \
-!     defined(DGUX) || defined(pyr) || defined(sequent) || !defined(BSD)
-  #	define	DONT_HAVE_TM_GMTOFF
-  #endif
---- 230,235 ----
-  
-  #if defined(apollo) || defined(__arm) || defined(__convex__) || \
-!     defined(DGUX) || defined(pyr) || defined(sequent) || \
-!     (!defined(BSD) && !defined(__FreeBSD__))
-  #	define	DONT_HAVE_TM_GMTOFF
-  #endif
-***************
-*** 316,320 ****
-  #endif
-  
-! #if defined(BSD) || defined(__osf__) || defined(_POSIX_SOURCE)
-  #	define	HAVE_REWINDDIR
-  #endif
---- 320,325 ----
-  #endif
-  
-! #if defined(BSD) || defined(__osf__) || defined(_POSIX_SOURCE) || \
-!     defined(__FreeBSD__)
-  #	define	HAVE_REWINDDIR
-  #endif
-***************
-*** 333,337 ****
-   */
-   
-! #if defined(BSD) || defined(linux) || defined(RS6000)
-  #	if !defined(NNTP_ABLE)
-  #		define	NNTP_ABLE
---- 338,342 ----
-   */
-   
-! #if defined(BSD) || defined(linux) || defined(RS6000) || defined(__FreeBSD__)
-  #	if !defined(NNTP_ABLE)
-  #		define	NNTP_ABLE
-
-
-diff -rc2 ../../work/tin-1.22/screen.c ./screen.c
-*** ../../work/tin-1.22/screen.c	Sat Sep 25 22:30:29 1993
---- ./screen.c	Wed Jun 28 05:43:44 1995
-***************
-*** 70,74 ****
-  	char *str;
-  {
-! #ifdef HAVE_SYSERRLIST
-  	extern char *sys_errlist[];
-  #endif
---- 70,74 ----
-  	char *str;
-  {
-! #if defined(HAVE_SYSERRLIST) && !defined(__FreeBSD__)
-  	extern char *sys_errlist[];
-  #endif
+  # For IBM AIX
+  aix:
