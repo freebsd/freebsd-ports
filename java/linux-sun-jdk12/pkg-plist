@@ -1,4 +1,3 @@
-@exec %%LOCALBASE%%/bin/registervm "%D/%%T%%/bin/java"
 @unexec %%LOCALBASE%%/bin/unregistervm "%D/%%T%%/bin/java"
 %%T%%/CHANGES
 %%T%%/COPYRIGHT
@@ -719,7 +718,6 @@
 %%T%%/lib/dt.jar
 %%T%%/lib/i386/libdt_socket.so
 %%T%%/lib/i386/libjdwp.so
-%%T%%/lib/jpda.jar
 %%T%%/lib/tools.jar
 %%T%%/src.jar
 @dirrm %%T%%/bin/i386/green_threads

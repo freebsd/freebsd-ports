@@ -7,11 +7,10 @@
 
 PORTNAME=	jdk
 PORTVERSION=	${JDK_VERSION}
-PORTREVISION=	1
 CATEGORIES=	java
 MASTER_SITES=	#
 PKGNAMEPREFIX=	linux-sun-
-DISTNAME=	${PORTNAME}-${JDK_VERSION:S/./_/g}-linux-${ARCH}
+DISTNAME=	${PORTNAME}-${JDK_VERSION:S/./_/g}-linux-i586
 
 MAINTAINER=	znerd@FreeBSD.org
 
@@ -23,7 +22,7 @@ PLIST_SUB+=	T=${APP_HOME:S/^${PREFIX}\///}
 
 NO_BUILD=	yes
 USE_LINUX=	yes
-JDK_VERSION=	1.2.2.012
+JDK_VERSION=	1.2.2.013
 ONLY_FOR_ARCHS=	i386
 
 NO_CDROM=	"License doesn\'t allow distribution with fee"
@@ -34,7 +33,7 @@ IGNORE=	"You can not legally distribute binaries"
 .endif
 
 APP_HOME=	${PREFIX}/${PKGNAMEPREFIX}jdk1.2.2
-DOWNLOAD_URL=	http://java.sun.com/Download5?config-file=${PORTNAME}-${JDK_VERSION:S/./_/g}.config&platform=linux-${ARCH}
+DOWNLOAD_URL=	http://java.sun.com/Download5?config-file=${PORTNAME}-${JDK_VERSION:S/./_/g}.config&platform=linux-i586
 
 .include <bsd.port.pre.mk>
 
@@ -46,16 +45,16 @@ post-patch:
 	@${FIND} ${WRKSRC} -name '*.orig' -print | xargs ${RM} -f
 
 do-install:
-	@${ECHO} -n "Creating destination directory ${APP_HOME}..."
+	@${ECHO_CMD} -n ">> Creating destination directory ${APP_HOME}..."
 	@${MKDIR} ${APP_HOME}
-	@${ECHO} " [ DONE ]"
+	@${ECHO_CMD} " [ DONE ]"
 
-	@${ECHO} -n "Copying files..."
+	@${ECHO_CMD} -n ">> Copying files..."
 	@${CP} -R ${WRKSRC}/* ${APP_HOME}
-	@${ECHO} " [ DONE ]"
+	@${ECHO_CMD} " [ DONE ]"
 
-	@${ECHO} -n "Registering with javavm..."
+	@${ECHO_CMD} -n ">> Registering with javavm..."
 	@${LOCALBASE}/bin/registervm "${APP_HOME}/bin/java # Sun-JDK${PORTVERSION}_${PORTREVISION}"
-	@${ECHO} " [ DONE ]"
+	@${ECHO_CMD} " [ DONE ]"
 
 .include <bsd.port.post.mk>
