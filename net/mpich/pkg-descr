@@ -4,3 +4,5 @@ widely used standard for writing message-passing programs. As such the
 interface should establish a practical, portable, efficient, and
 flexible standard for message passing. Included are a full set of
 documents and parallel programming examples.
+
+WWW: http://www.mcs.anl.gov/mpi/mpich/
