@@ -1,0 +1,5 @@
+wxGlade is a GUI designer written in Python with the popular GUI toolkit
+wxPython, that helps you create wxWindows/wxPython user interfaces. At the
+moment it can generate Python, C++ and XRC (wxWindows' XML resources) code.
+
+WWW: http://wxglade.sourceforge.net/
