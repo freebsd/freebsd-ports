@@ -37,7 +37,7 @@ tolower() {
 # Rename all files in a directory to lowercase
 lowerdir() {
 	set -e
-	find "${@}" -name '*[A-Z]*' | while read name ; do
+	find "$@" -name '*[A-Z]*' | while read name ; do
 		mv -v "${name}" "$(tolower ${name})"
 	done
 }
@@ -60,7 +60,8 @@ if [ ! -d "${NWNUSERDIR}" ] ; then
 	copydir "${NWNDATADIR}"
 
 	# Some files need to have their names converted to lowercase
-	lowerdir "${LCDIRS}"
+	cd "${NWNUSERDIR}"
+	lowerdir ${LCDIRS}
 
 	echo "Your Neverwinter Nights directory (~/.nwn) has now been"
 	echo "created and populated.  Press ENTER to start the game."
