@@ -11,7 +11,7 @@ CATEGORIES=		irc gnome
 MASTER_SITES=		http://xchat.org/files/source/1.7/ \
 			http://xchat.linuxpower.org/files/source/1.7/
 
-MAINTAINER=		jim@FreeBSD.org
+MAINTAINER=		gnome@FreeBSD.org
 
 USE_X_PREFIX=		yes
 USE_BZIP2=		yes
