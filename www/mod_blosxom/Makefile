@@ -14,6 +14,8 @@ MASTER_SITE_SUBDIR=	mod-blosxom
 MAINTAINER=	gslin@ccca.nctu.edu.tw
 COMMENT=	Apache module to build the extremely lightweight Weblog environment
 
+BROKEN=		"Does not compile"
+
 BUILD_DEPENDS=	${APXS}:${APACHE_PORT}
 RUN_DEPENDS=	${BUILD_DEPENDS}
 

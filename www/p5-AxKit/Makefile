@@ -14,6 +14,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	dom@happygiraffe.net
 COMMENT=	XML Delivery Toolkit for Apache/Perl
 
+BROKEN=		"Does not compile"
+
 LIB_DEPENDS=	iconv.3:${PORTSDIR}/converters/libiconv
 BUILD_DEPENDS=	\
 		${SITE_PERL}/${PERL_ARCH}/Apache/libapreq.pm:${PORTSDIR}/www/p5-libapreq \

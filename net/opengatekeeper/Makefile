@@ -15,6 +15,8 @@ DISTNAME=	opengate_0.9alpha4
 MAINTAINER=	roger@FreeBSD.org
 COMMENT=	H323 GateKeeper (MPL Licence) for OpenH323 OhPhone and NetMeeting
 
+BROKEN=		"Does not compile"
+
 BUILD_DEPENDS=	${NONEXISTENT}:${PORTSDIR}/net/openh323:build
 
 WRKSRC=		${WRKDIR}/opengate
