@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	jmode
-PORTVERSION=	0.6.6
+PORTVERSION=	0.6.7
 CATEGORIES=	japanese
-MASTER_SITES=	http://downloads.sourceforge.jp/anthy/4445/
+MASTER_SITES=	http://downloads.sourceforge.jp/anthy/5467/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	XIM server for Anthy input method
