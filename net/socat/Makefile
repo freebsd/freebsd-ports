@@ -7,8 +7,7 @@
 #
 
 PORTNAME=	socat
-PORTVERSION=	1.4.0.0
-PORTREVISION=	1
+PORTVERSION=	1.4.0.3
 CATEGORIES=	net
 MASTER_SITES=	http://www.dest-unreach.org/socat/download/
 
@@ -31,9 +30,6 @@ USE_OPENSSL=	yes
 MAN1=		socat.1
 PORTDOCS=	EXAMPLES README SECURITY FAQ
 PLIST_FILES=	bin/filan bin/procan bin/socat
-
-post-patch:
-	@${CP} ${FILESDIR}/xio-socks.c ${WRKSRC}/xio-socks.c
 
 .if !defined(NOPORTDOCS)
 post-install:
