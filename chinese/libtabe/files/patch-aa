@@ -1,6 +1,6 @@
---- src/Makefile.in.orig	Thu Jun  7 00:26:26 2001
-+++ src/Makefile.in	Sun Jun 17 09:49:05 2001
-@@ -60,8 +60,7 @@
+--- src/Makefile.in.orig	Wed Dec  5 13:56:10 2001
++++ src/Makefile.in	Wed Dec  5 13:56:23 2001
+@@ -55,8 +55,7 @@
  
  $(LIBNAME): $(LIBOBJS)
  	$(LIBTOOL) --mode=link $(CC) -o $@ $(LIBOBJS) -rpath $(libdir) \
@@ -8,22 +8,5 @@
 -		-release $(RELEASE_VER)
 +		-version-info $(CURRENT_VER):$(REVISION_VER):$(AGE_VER)
  
- subsys:
+ bims:
  	(cd supports/bims; $(MAKE))
-@@ -110,7 +109,7 @@
- 
- install: install_binary install_data
- 
--install_binary: binary
-+install_binary:
- 	if [ ! -d $(libdir) ]; then $(INSTALL) -d $(libdir); fi
- 	if [ ! -d $(includedir) ]; then $(INSTALL) -d $(includedir); fi
- 	$(LIBTOOL) --mode=install $(INSTALL_DATA) $(LIBNAME) $(libdir)
-@@ -118,6 +117,6 @@
- 	(cd supports/bims; $(MAKE) install)
- 	(cd util; $(MAKE) install)
- 
--install_data: data
-+install_data:
- 	(cd tsi-src; $(MAKE) install)
- 
