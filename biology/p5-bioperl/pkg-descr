@@ -6,8 +6,8 @@ Bioperl Project.  It forms the basis of a large number of bioinformatics and
 genomics applications.
 
 (For an interesting aside on "How Perl saved the Human Genome Project", see
-http://bio.perl.org/GetStarted/tpj_ls_bio.html)
+http://bioperl.org/GetStarted/tpj_ls_bio.html)
 
-WWW: http://bio.perl.org/
+WWW: http://bioperl.org/
 
--- Johann Visagie <johann@egenetics.com>
+-- Johann Visagie <wjv@FreeBSD.org>
