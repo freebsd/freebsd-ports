@@ -53,6 +53,8 @@ start)
 		echo "Your VMware installation seems broken.  Please reinstall VMware port." >&2
 		exit 255
 	fi
+	(echo -n > $dev_vmnet1) 2>/dev/null || \
+	    echo -n > /dev/vmnet1 2>&1
     	echo -n > /dev/vmnet1 2>&1 || true
 	echo -n > $dev_vmnet1 2>&1
 	ifconfig vmnet1 $host_ip netmask $netmask
