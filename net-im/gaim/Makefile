@@ -5,8 +5,7 @@
 #
 
 PORTNAME=	gaim
-PORTVERSION=	0.67
-PORTREVISION=	1
+PORTVERSION=	0.68
 CATEGORIES?=	net
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -19,6 +18,7 @@ USE_GMAKE=	yes
 USE_REINPLACE=	yes
 USE_GNOME=	gnomeprefix gnomehack gtk20
 USE_PERL5=	yes
+USE_BZIP2=	yes
 INSTALLS_SHLIB=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-static=yes
@@ -26,6 +26,15 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib"
 
 MAN1=		gaim.1 gaim-remote.1
+
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} < 500800
+CONFIGURE_ARGS+=	--disable-perl
+PLIST_SUB+=		PERL:="@comment "
+.else
+PLIST_SUB+=		PERL:=""
+.endif
 
 .ifndef(WITHOUT_GTKSPELL)
 LIB_DEPENDS+=	gtkspell.0:${PORTSDIR}/textproc/gtkspell2
@@ -50,5 +59,7 @@ pre-everything::
 post-patch:
 	@${REINPLACE_CMD} -e 's|-lpthreads|${PTHREAD_LIBS:S/"//g}|g; \
 		s|-lpthread|${PTHREAD_LIBS:S/"//g}|g' ${WRKSRC}/configure
+	@${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|g' \
+		${WRKSRC}/configure
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

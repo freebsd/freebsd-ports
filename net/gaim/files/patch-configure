@@ -1,0 +1,11 @@
+--- configure.orig	Tue Sep  2 20:51:30 2003
++++ configure	Tue Sep  2 20:51:41 2003
+@@ -15914,7 +15914,7 @@
+ 	fi
+ 
+ 	prefix=`eval echo $prefix`
+-	PERL_MM_PARAMS="INSTALLDIRS=perl PREFIX=$prefix"
++	PERL_MM_PARAMS="INSTALLDIRS=perl PREFIX=%%LOCALBASE%%"
+ 
+ 
+ # Check whether --with-perl-lib or --without-perl-lib was given.
