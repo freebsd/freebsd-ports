@@ -7,6 +7,7 @@
 
 PORTNAME=	estctrl
 PORTVERSION=	0.8
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.daemonology.net/freebsd-est/
 
