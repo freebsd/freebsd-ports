@@ -3312,6 +3312,7 @@ kaptain		ports/devel/kaptain
 karamba		ports/deskutils/karamba
 kaskade		ports/cad/kaskade
 katalog		ports/misc/katalog
+kavmilter	ports/mail/kavmilter
 kawa		ports/lang/kawa
 kb2mb2		ports/x11/kb2mb2
 kbarcode	ports/graphics/kbarcode
