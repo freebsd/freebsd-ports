@@ -16,6 +16,8 @@ use vars qw($DEBUG $TMPDIR %TEMPLATE_HEADERS);
 ######################
 ### global options ###
 ######################
+### WARNING: these aren't global across all the scripts yet.
+### This is work in progress.
 
 # Debug level, 0 = off, 1 = on.
 $DEBUG = 0;
