@@ -12,6 +12,10 @@ include/avifile/audiodecoder.h
 include/avifile/audioencoder.h
 include/avifile/avifile.h
 include/avifile/aviplay.h
+include/avifile/avm_args.h
+include/avifile/avm_default.h
+include/avifile/avm_fourcc.h
+include/avifile/avm_locker.h
 include/avifile/avm_stl.h
 include/avifile/configfile.h
 include/avifile/cpuinfo.h
@@ -81,6 +85,7 @@ lib/libaviplay.so.0
 %%QT%%lib/libqavm.so.0
 share/aclocal/avifile.m4
 share/avifile/about.ppm
+share/avifile/action.cfg
 share/avifile/mute.ppm
 share/avifile/open.ppm
 share/avifile/opena.ppm

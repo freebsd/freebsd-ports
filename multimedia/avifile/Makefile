@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	avifile
-PORTVERSION=	0.7.16.20020913
+PORTVERSION=	0.7.18.20021107
 PORTEPOCH=	2
 CATEGORIES=	graphics
 MASTER_SITES=	http://avifile.sourceforge.net/
@@ -27,7 +27,6 @@ INSTALLS_SHLIB=	yes
 
 WRKSRC=		${WRKDIR}/${PORTNAME}${PORTVERSION:C/^(.{3}).*/\1/}-${PORTVERSION:C/^(.{6}).+$/\1/}
 
-USE_LIBTOOL=	yes
 LIBTOOLFILES=	acinclude.m4
 CONFIGURE_ENV=	SDL_CONFIG="${SDL_CONFIG}" \
 		CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include -L${LOCALBASE}/lib" \
@@ -59,8 +58,13 @@ WITHOUT_XVID=yes
 .endif
 
 # compilation optimizations
-.if !defined(WITHOUT_OPTIMIZED_CFLAGS)
+.if defined(WITH_OPTIMIZED_CFLAGS)
 CONFIGURE_ARGS+=	--enable-release
+. if ${ARCH} == "i386"
+CONFIGURE_ARGS+=	--enable-x86opt
+. endif
+.else
+CONFIGURE_ARGS+=	--disable-release
 .endif
 
 # soundblaster can be passed ac3 instead of letting avifile decode
@@ -145,9 +149,9 @@ PLIST_SUB+=	XVID="@comment "
 .endif
 
 pre-everything::
-.if !defined(WITHOUT_OPTIMIZED_CFLAGS)
-	@${ECHO_MSG} "You can disable compilation optimizations by defining"
-	@${ECHO_MSG} "	WITHOUT_OPTIMIZED_CFLAGS."
+.if !defined(WITH_OPTIMIZED_CFLAGS)
+	@${ECHO_MSG} "You can enable compilation optimizations by defining"
+	@${ECHO_MSG} "	WITH_OPTIMIZED_CFLAGS."
 .endif
 .if !defined(WITH_AC3_PASSTHROUGH)
 	@${ECHO_MSG} "You can enable soundblaster ac3 passthrough support by"
@@ -179,33 +183,15 @@ packet 'pth' is installed.";\
 	  ${FALSE};\
 	fi
 
-# insure that ports' liba52 is being used
 post-extract:
-.if !defined(WITHOUT_A52)
-	@${RM} -Rf ${WRKSRC}/ffmpeg/libavcodec/liba52
-	@${MKDIR} ${WRKSRC}/ffmpeg/libavcodec/liba52
-	@${TOUCH} ${WRKSRC}/ffmpeg/libavcodec/liba52/Makefile.in
-.endif
 # grab does not work outside Linux for now
 	@${RM} -f ${WRKSRC}/ffmpeg/libav/grab.c
 	@${TOUCH} ${WRKSRC}/ffmpeg/libav/grab.c
 
 post-patch:
-.if !defined(WITHOUT_A52)
-	@${REINPLACE_CMD} -e 's|-la52|${LIBA52_DEP_LIBS} -la52|' \
-		${WRKSRC}/configure
 # linux/ioctl.h -> sys/ioctl.h
 	@${REINPLACE_CMD} -e 's|linux/ioctl.h|sys/ioctl.h|' \
 		${WRKSRC}/drivers/libdha/kernelhelper/dhahelper.h
-# XXX - fool ffmpeg to use ports' version of liba52, revise this
-# at EVERY avifile update
-	@${REINPLACE_CMD} -e 's|liba52/liba52.la|${LOCALBASE}/lib/liba52.la|; \
-		s|SUBDIRS_LIBA52 = liba52|SUBDIRS_LIBA52 =|; \
-		s|mlib liba52 i386|mlib i386|' \
-		${WRKSRC}/ffmpeg/libavcodec/Makefile.in
-	@${REINPLACE_CMD} -e 's|"liba52/a52.h"|<a52dec/a52.h>|' \
-		${WRKSRC}/ffmpeg/libavcodec/a52dec.c
-.endif
 .if !defined(WITHOUT_MAD)
 	@${REINPLACE_CMD} -e 's|MAD_LDADD = \@MAD_LDADD\@|MAD_LDADD = -L${LOCALBASE}/lib \@MAD_LDADD\@|' \
 		${WRKSRC}/plugins/libmad/Makefile.in
@@ -251,10 +237,6 @@ post-patch:
 		s!AUTOMAKE =!AUTOMAKE = ${TRUE} || !'
 
 post-configure:
-# Libtool fix code kindly provided by Mr. Maxim Sobolev <sobomax@FreeBSD.org>
-	@${REINPLACE_CMD} -e \
-		's|^deplibs_check_method=.*|deplibs_check_method=pass_all|' \
-			${WRKSRC}/libtool
 	@${LN} -sf ${LOCALBASE}/bin/libtool ${WRKSRC}
 
 post-install:
