@@ -1,5 +1,6 @@
 bin/uim-helper-server
 %%GTK%%bin/uim-helper-candwin-gtk
+%%GTK%%bin/uim-helper-toolbar-gtk
 bin/uim-xim
 include/uim/uim-helper.h
 include/uim/uim.h
