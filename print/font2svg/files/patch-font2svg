@@ -1,0 +1,11 @@
+--- font2svg.orig	Fri Jan 17 17:53:07 2003
++++ font2svg	Fri Jan 17 17:54:22 2003
+@@ -57,7 +57,7 @@
+ dvipsencoding="none"
+ 
+ # parse options
+-TEMP=`getopt -q --long "--kpsewhich,--encoding:1,--dvipsencoding:1,--execute:1,--help,--symbols:1" "hke:1s:1d:1x:1" "$@"`
++TEMP=`getopt hke:s:d:x: $*`
+ echo "$TEMP"
+ eval set -- "$TEMP"
+ while [ ! $1 = "--" ] ; do
