@@ -17,6 +17,7 @@ COMMENT=	FreeBSD graphics console (VGL) version of the famous Digger game
 ONLY_FOR_ARCHS=	i386	# Alphas don't have libvgl yet...
 
 MAKEFILE=	Makefile.fbsd
+USE_REINPLACE=	yes
 
 .if defined(WITH_SOUND)
 USE_SDL=	yes
@@ -29,6 +30,9 @@ pre-everything::
 	@${ECHO_MSG} "Please use \"make -DWITH_SOUND\" if you want to build the game with sound support."
 	@${ECHO_MSG} ""
 .endif
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|Software|Software\\n\\|g' ${WRKSRC}/alpha.c
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/digger ${PREFIX}/bin
