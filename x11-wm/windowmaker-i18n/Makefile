@@ -3,7 +3,7 @@
 # Date created:		24 Nov 1998
 # Whom:			mac@jp.freebsd.org
 #
-# $Id: Makefile,v 1.58 1999/05/27 07:32:45 tg Exp $
+# $Id: Makefile,v 1.59 1999/07/17 03:50:11 cpiazza Exp $
 #
 
 DISTNAME=	WindowMaker-0.60.0
@@ -44,6 +44,19 @@ JA_CATALOGFILE=	WindowMaker-0.60.0ja2
 .if defined(JA_CATALOGFILE) && !empty(JA_CATALOGFILE)
 MASTER_SITES+=	ftp://muse.brain.riken.go.jp/pub/ja.po/
 DISTFILES+=	${JA_CATALOGFILE}${EXTRACT_SUFX}
+.endif
+
+.if defined(USE_GNOME)
+CONFIGURE_ARGS+=	--enable-gnome
+.endif
+.if defined(USE_KDE)
+CONFIGURE_ARGS+=	--enable-kde
+.endif
+
+.SILENT:
+.if !defined(USE_KDE) && !defined(USE_GNOME)
+pre-extract:
+	${ECHO} "You can add hooks for Gnome and KDE by defining USE_GNOME and/or USE_KDE"
 .endif
 
 .include <bsd.port.pre.mk>
