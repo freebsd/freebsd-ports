@@ -3112,6 +3112,7 @@ halflifeserver	ports/games/halflifeserver
 hamfax		ports/comms/hamfax
 hamlib		ports/comms/hamlib
 hammerhead	ports/sysutils/hammerhead
+handbrake	ports/multimedia/handbrake
 happydoc	ports/devel/happydoc
 happystats	ports/net/happystats
 haproxy		ports/net/haproxy
