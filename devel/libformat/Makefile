@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	libformat
-PORTVERSION=	0.1.5
+PORTVERSION=	0.1.6
 CATEGORIES=	devel
 MASTER_SITES=	http://home.pages.at/kingleo/development/
 DISTNAME=	Format-${PORTVERSION}
