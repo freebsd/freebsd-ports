@@ -1,0 +1,26 @@
+# New ports collection makefile for:	lookup for Emacs20
+# Version required:	1.0
+# Date created:		98/11/19
+# Whom:			Satoshi Taoka <taoka@infonets.hiroshima-u.ac.jp>
+#
+# $FreeBSD$
+#
+
+DISTNAME=	ja-lookup-emacs20-1.0
+CATEGORIES=	japanese elisp
+MASTER_SITES=	# empty
+DISTFILES=	# empty
+
+MAINTAINER=	taoka@infonets.hiroshima-u.ac.jp
+
+RUN_DEPENDS=	${PREFIX}/share/emacs/site-lisp/bitmap/bitmap.el:${PORTSDIR}/editors/bitmap-emacs20 \
+		${PREFIX}/share/emacs/site-lisp/lookup/lookup.el:${PORTSDIR}/japanese/lookup-mule
+
+EXTRACT_ONLY=	# empty
+NO_BUILD=	yes
+NO_CHECKSUM=	yes
+
+do-install:	# empty
+
+.include <bsd.port.mk>
+
