@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mplayerplug-in
-PORTVERSION=	2.11
+PORTVERSION=	2.45
 CATEGORIES=	www multimedia
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	mplayerplug-in
@@ -41,8 +41,12 @@ HEADERS_SUFX=	-devel
 .else
 .if ${WITH_MOZILLA}=="mozilla-devel-gtk1"
 HEADERS_SUFX=	-devel-gtk1
+CONFIGURE_ARGS+=	--disable-gtk2 \
+			--enable-gtk1
 .else
 HEADERS_SUFX=	-gtk1
+CONFIGURE_ARGS+=	--disable-gtk2 \
+			--enable-gtk1
 .endif
 .endif
 .endif
