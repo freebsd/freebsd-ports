@@ -12,7 +12,7 @@ MASTERDIR=	${.CURDIR}/../../mail/wanderlust-emacs
 
 EMACS_NAME=	emacs
 EMACS_PORT=	emacs20
-EMACS_VER=	20.5
+EMACS_VER=	20.6
 EMACS_LIBDIR=	share/emacs
 
 IS_SLAVE=	yes

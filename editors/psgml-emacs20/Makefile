@@ -16,7 +16,7 @@ MASTERDIR=	${.CURDIR}/../psgml-emacs
 # emacs port setup
 EMACS_NAME=	emacs
 EMACS_PORT=	emacs20
-EMACS_VER=	20.5
+EMACS_VER=	20.6
 EMACS_LIBDIR=	share/${EMACS_NAME}
 
 # pkg/* files are used in ${.CURDIR}
