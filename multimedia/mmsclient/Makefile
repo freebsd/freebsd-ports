@@ -7,7 +7,7 @@
 
 PORTNAME=	mmsclient
 PORTVERSION=	0.0.3
-CATEGORIES=	graphics audio
+CATEGORIES=	multimedia audio
 MASTER_SITES=	http://www.geocities.com/majormms/ \
 		ftp://danfe.rimusa.org/tmp/ \
 		http://inet.ssc.nsu.ru/~danfe/

@@ -7,7 +7,7 @@
 
 PORTNAME=	mpeg_encode
 PORTVERSION=	1.5b
-CATEGORIES=	graphics
+CATEGORIES=	multimedia
 MASTER_SITES=	ftp://mm-ftp.CS.Berkeley.EDU/pub/multimedia/mpeg/encode/
 DISTNAME=	${PKGNAME}-src
 

@@ -7,7 +7,7 @@
 
 PORTNAME=	mpeg_play
 PORTVERSION=	2.4
-CATEGORIES=	graphics
+CATEGORIES=	multimedia
 MASTER_SITES=	ftp://mm-ftp.cs.berkeley.edu/pub/multimedia/mpeg/play/
 EXTRACT_SUFX=	-patched-src.tar.gz
 

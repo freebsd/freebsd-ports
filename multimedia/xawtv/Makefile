@@ -7,7 +7,7 @@
 
 PORTNAME=	xawtv
 PORTVERSION=	3.86
-CATEGORIES=	graphics
+CATEGORIES=	multimedia
 MASTER_SITES=	http://bytesex.org/xawtv/
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
@@ -57,7 +57,7 @@ CFLAGS+=	-DMMX=1
 
 .if defined(WITH_LIBQTIME)
 CONFIGURE_ARGS+=--enable-quicktime
-LIB_DEPENDS+=	quicktime.0:${PORTSDIR}/graphics/libquicktime
+LIB_DEPENDS+=	quicktime.0:${PORTSDIR}/multimedia/libquicktime
 PLIST_SUB+=	QT=
 .else
 CONFIGURE_ARGS+=--enable-quicktime=no

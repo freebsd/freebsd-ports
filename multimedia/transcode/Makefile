@@ -7,7 +7,7 @@
 
 PORTNAME=	transcode
 PORTVERSION=	0.6.3
-CATEGORIES=	graphics
+CATEGORIES=	multimedia
 MASTER_SITES=	http://www.theorie.physik.uni-goettingen.de/~ostreich/transcode/pre/
 
 MAINTAINER=	hendrik@scholz.net
@@ -154,7 +154,7 @@ CONFIGURE_ARGS+=	--with-openqt=no
 .endif
 
 .if defined(WITH_FAME)
-LIB_DEPENDS+=	fame-0.9:${PORTSDIR}/graphics/libfame
+LIB_DEPENDS+=	fame-0.9:${PORTSDIR}/multimedia/libfame
 PLIST_SUB+=	WITH_FAME=""
 .else
 PLIST_SUB+=	WITH_FAME="@comment "

@@ -7,13 +7,13 @@
 
 PORTNAME=	smpeg-xmms
 PORTVERSION=	0.3.4
-CATEGORIES=	graphics gnome
+CATEGORIES=	multimedia gnome
 MASTER_SITES=	ftp://ftp.xmms.org/xmms/plugins/smpeg-xmms/
 
 MAINTAINER=	sobomax@FreeBSD.org
 COMMENT=	A mpeg video plugin for XMMS
 
-LIB_DEPENDS=	smpeg.1:${PORTSDIR}/graphics/smpeg \
+LIB_DEPENDS=	smpeg.1:${PORTSDIR}/multimedia/smpeg \
 		xmms.3:${PORTSDIR}/multimedia/xmms
 
 SDL_CONFIG?=	${LOCALBASE}/bin/sdl11-config

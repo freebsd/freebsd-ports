@@ -8,7 +8,7 @@
 PORTNAME=	xine_d5d_plugin
 PORTVERSION=	0.2.7
 PORTREVISION=	1
-CATEGORIES=	graphics
+CATEGORIES=	multimedia
 MASTER_SITES=	http://debianlinux.net/ \
 		http://hermes.homelinux.net/xine/
 DISTNAME=	xine-d5d-${PORTVERSION}

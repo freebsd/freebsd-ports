@@ -7,7 +7,7 @@
 
 PORTNAME=	xine_d4d_plugin
 PORTVERSION=	0.3.2
-CATEGORIES=	graphics
+CATEGORIES=	multimedia
 MASTER_SITES=	http://debianlinux.net/ \
 		http://hermes.homelinux.net/xine/
 

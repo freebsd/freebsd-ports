@@ -7,7 +7,7 @@
 
 PORTNAME=	splitmpg
 PORTVERSION=	1.0
-CATEGORIES=	graphics
+CATEGORIES=	multimedia
 MASTER_SITES=	ftp://ibiblio.org/pub/multimedia/utilities/ms-windows/mpegplay/
 DISTNAME=	${PORTNAME}
 EXTRACT_SUFX=	.tgz

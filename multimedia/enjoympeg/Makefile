@@ -8,14 +8,14 @@
 
 PORTNAME=	enjoympeg
 PORTVERSION=	0.4.1
-CATEGORIES=	graphics
+CATEGORIES=	multimedia
 MASTER_SITES=	http://people.freenet.de/for_Ki/
 
 MAINTAINER=	ijliao@FreeBSD.org
 COMMENT=	An MPEG-1 video player
 
 LIB_DEPENDS=	SDL-1.1.5:${PORTSDIR}/devel/sdl12 \
-		smpeg:${PORTSDIR}/graphics/smpeg
+		smpeg:${PORTSDIR}/multimedia/smpeg
 
 SDL_CONFIG?=	${LOCALBASE}/bin/sdl11-config
 GNU_CONFIGURE=	yes
