@@ -2729,6 +2729,7 @@ www/data-dist/phpgroupware/filemanager/setup/default_records.inc.php
 www/data-dist/phpgroupware/filemanager/setup/phpgw_de.lang
 www/data-dist/phpgroupware/filemanager/setup/phpgw_en.lang
 www/data-dist/phpgroupware/filemanager/setup/phpgw_fr.lang
+www/data-dist/phpgroupware/filemanager/setup/phpgw_it.lang
 www/data-dist/phpgroupware/filemanager/setup/phpgw_ja.lang
 www/data-dist/phpgroupware/filemanager/setup/phpgw_pl.lang
 www/data-dist/phpgroupware/filemanager/setup/phpgw_pt.lang
@@ -3571,6 +3572,39 @@ www/data-dist/phpgroupware/fudforum/setup/base/thm/default/i18n/italian/img/tree
 www/data-dist/phpgroupware/fudforum/setup/base/thm/default/i18n/italian/locale
 www/data-dist/phpgroupware/fudforum/setup/base/thm/default/i18n/italian/msg
 www/data-dist/phpgroupware/fudforum/setup/base/thm/default/i18n/italian/pspell_lang
+www/data-dist/phpgroupware/fudforum/setup/base/thm/default/i18n/japanese/charset
+www/data-dist/phpgroupware/fudforum/setup/base/thm/default/i18n/japanese/help/boardusage.hlp
+www/data-dist/phpgroupware/fudforum/setup/base/thm/default/i18n/japanese/help/create_poll.hlp
+www/data-dist/phpgroupware/fudforum/setup/base/thm/default/i18n/japanese/help/dis_sml.hlp
+www/data-dist/phpgroupware/fudforum/setup/base/thm/default/i18n/japanese/help/edit_tools.hlp
+www/data-dist/phpgroupware/fudforum/setup/base/thm/default/i18n/japanese/help/faq_index.hlp
+www/data-dist/phpgroupware/fudforum/setup/base/thm/default/i18n/japanese/help/forum_sub.hlp
+www/data-dist/phpgroupware/fudforum/setup/base/thm/default/i18n/japanese/help/no_replies.hlp
+www/data-dist/phpgroupware/fudforum/setup/base/thm/default/i18n/japanese/help/post_icon.hlp
+www/data-dist/phpgroupware/fudforum/setup/base/thm/default/i18n/japanese/help/post_not.hlp
+www/data-dist/phpgroupware/fudforum/setup/base/thm/default/i18n/japanese/help/readingposting.hlp
+www/data-dist/phpgroupware/fudforum/setup/base/thm/default/i18n/japanese/help/show_index.hlp
+www/data-dist/phpgroupware/fudforum/setup/base/thm/default/i18n/japanese/help/smilies.hlp
+www/data-dist/phpgroupware/fudforum/setup/base/thm/default/i18n/japanese/help/thread_sub.hlp
+www/data-dist/phpgroupware/fudforum/setup/base/thm/default/i18n/japanese/help/usermaintance.hlp
+www/data-dist/phpgroupware/fudforum/setup/base/thm/default/i18n/japanese/img/flat_view.gif
+www/data-dist/phpgroupware/fudforum/setup/base/thm/default/i18n/japanese/img/homepage.gif
+www/data-dist/phpgroupware/fudforum/setup/base/thm/default/i18n/japanese/img/msg_about.gif
+www/data-dist/phpgroupware/fudforum/setup/base/thm/default/i18n/japanese/img/msg_delete.gif
+www/data-dist/phpgroupware/fudforum/setup/base/thm/default/i18n/japanese/img/msg_edit.gif
+www/data-dist/phpgroupware/fudforum/setup/base/thm/default/i18n/japanese/img/msg_email.gif
+www/data-dist/phpgroupware/fudforum/setup/base/thm/default/i18n/japanese/img/msg_forward.gif
+www/data-dist/phpgroupware/fudforum/setup/base/thm/default/i18n/japanese/img/msg_pm.gif
+www/data-dist/phpgroupware/fudforum/setup/base/thm/default/i18n/japanese/img/msg_quote.gif
+www/data-dist/phpgroupware/fudforum/setup/base/thm/default/i18n/japanese/img/msg_reply.gif
+www/data-dist/phpgroupware/fudforum/setup/base/thm/default/i18n/japanese/img/new_pm.gif
+www/data-dist/phpgroupware/fudforum/setup/base/thm/default/i18n/japanese/img/new_thread.gif
+www/data-dist/phpgroupware/fudforum/setup/base/thm/default/i18n/japanese/img/post_reply.gif
+www/data-dist/phpgroupware/fudforum/setup/base/thm/default/i18n/japanese/img/show_posts.gif
+www/data-dist/phpgroupware/fudforum/setup/base/thm/default/i18n/japanese/img/tree_view.gif
+www/data-dist/phpgroupware/fudforum/setup/base/thm/default/i18n/japanese/locale
+www/data-dist/phpgroupware/fudforum/setup/base/thm/default/i18n/japanese/msg
+www/data-dist/phpgroupware/fudforum/setup/base/thm/default/i18n/japanese/pspell_lang
 www/data-dist/phpgroupware/fudforum/setup/base/thm/default/i18n/latvian/charset
 www/data-dist/phpgroupware/fudforum/setup/base/thm/default/i18n/latvian/help/boardusage.hlp
 www/data-dist/phpgroupware/fudforum/setup/base/thm/default/i18n/latvian/help/create_poll.hlp
@@ -5091,6 +5125,9 @@ www/data-dist/phpgroupware/phpgwapi/doc/ldap/phpgroupware.schema
 www/data-dist/phpgroupware/phpgwapi/doc/phpgroupware.spec
 www/data-dist/phpgroupware/phpgwapi/doc/phpgw.css
 www/data-dist/phpgroupware/phpgwapi/doc/pics/logo.png
+www/data-dist/phpgroupware/phpgwapi/doc/styles/dev-guide.css
+www/data-dist/phpgroupware/phpgwapi/doc/styles/print.css
+www/data-dist/phpgroupware/phpgwapi/doc/styles/screen.css
 www/data-dist/phpgroupware/phpgwapi/doc/vfs/index.html
 www/data-dist/phpgroupware/phpgwapi/doc/vfs/inline2lyx.pl
 www/data-dist/phpgroupware/phpgwapi/doc/vfs/vfs-1.html
@@ -8264,6 +8301,7 @@ www/data-dist/phpgroupware/xmlrpc/zopetest.php
 @dirrm www/data-dist/phpgroupware/phpgwapi/inc
 @dirrm www/data-dist/phpgroupware/phpgwapi/doc/xmlrpc
 @dirrm www/data-dist/phpgroupware/phpgwapi/doc/vfs
+@dirrm www/data-dist/phpgroupware/phpgwapi/doc/styles
 @dirrm www/data-dist/phpgroupware/phpgwapi/doc/pics
 @dirrm www/data-dist/phpgroupware/phpgwapi/doc/ldap/iplanet
 @dirrm www/data-dist/phpgroupware/phpgwapi/doc/ldap
@@ -8475,6 +8513,9 @@ www/data-dist/phpgroupware/xmlrpc/zopetest.php
 @dirrm www/data-dist/phpgroupware/fudforum/setup/base/thm/default/i18n/latvian/img
 @dirrm www/data-dist/phpgroupware/fudforum/setup/base/thm/default/i18n/latvian/help
 @dirrm www/data-dist/phpgroupware/fudforum/setup/base/thm/default/i18n/latvian
+@dirrm www/data-dist/phpgroupware/fudforum/setup/base/thm/default/i18n/japanese/img
+@dirrm www/data-dist/phpgroupware/fudforum/setup/base/thm/default/i18n/japanese/help
+@dirrm www/data-dist/phpgroupware/fudforum/setup/base/thm/default/i18n/japanese
 @dirrm www/data-dist/phpgroupware/fudforum/setup/base/thm/default/i18n/italian/img
 @dirrm www/data-dist/phpgroupware/fudforum/setup/base/thm/default/i18n/italian/help
 @dirrm www/data-dist/phpgroupware/fudforum/setup/base/thm/default/i18n/italian
