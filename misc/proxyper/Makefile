@@ -36,11 +36,13 @@ SHAREOWN=	${PROXYUID}
 SHAREGRP=	${PROXYGID}
 SHAREMODE=	644
 
+do-build:
+	${SED} s#CHANGETHIS#${BINDIR}# < ${FILESDIR}/proxyper.sh > ${WRKSRC}/proxyper.sh
+
 do-install:
 	if [ ! -d ${BINDIR} ]; then \
 		${MKDIR} ${BINDIR}; \
 	fi
-	${SED} s#CHANGETHIS#${BINDIR}# < ${FILESDIR}/proxyper.sh > ${WRKSRC}/proxyper.sh
 	${INSTALL_PROGRAM} ${WRKSRC}/proxyper ${BINDIR}
 	${INSTALL_SCRIPT} ${WRKSRC}/proxyper.sh ${BINDIR}
 	${INSTALL_DATA} ${WRKSRC}/proxyper.ini ${BINDIR}
