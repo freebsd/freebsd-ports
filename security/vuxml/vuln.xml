@@ -36,12 +36,46 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     <topic>mozilla -- BMP decoder vulnerabilities</topic>
     <affects>
       <package>
-	<name>thunderbird</name>
+        <name>mozilla-thunderbird</name>
+        <name>thunderbird</name>
 	<range><lt>0.7.3_1</lt></range>
       </package>
       <package>
-	<name>firefox</name>
+        <name>de-linux-mozillafirebird</name>
+        <name>firefox</name>
+        <name>ja-linux-mozillafirebird-gtk1</name>
+        <name>ja-mozillafirebird-gtk2</name>
+        <name>linux-mozillafirebird</name>
+        <name>linux-phoenix</name>
+        <name>mozilla-firebird</name>
+        <name>phoenix</name>
+        <name>ru-linux-mozillafirebird</name>
+        <name>zhCN-linux-mozillafirebird</name>
+        <name>zhTW-linux-mozillafirebird</name>
 	<range><lt>0.9.3_1</lt></range>
+      </package>
+      <package>
+        <name>de-linux-netscape</name>
+        <name>de-netscape7</name>
+        <name>fr-linux-netscape</name>
+        <name>fr-netscape7</name>
+        <name>ja-linux-netscape</name>
+        <name>ja-netscape7</name>
+        <name>linux-netscape</name>
+        <name>netscape7</name>
+        <name>pt_BR-netscape7</name>
+	<range><le>7.2</le></range>
+      </package>
+      <package>
+        <name>linux-mozilla</name>
+        <name>linux-mozilla-devel</name>
+        <range><lt>1.7.3</lt></range>
+      </package>
+      <package>
+        <name>mozilla-gtk</name>
+        <name>mozilla-gtk1</name>
+        <name>mozilla-gtk2</name>
+	<range><lt>1.7.2_3</lt></range>
       </package>
       <package>
 	<name>mozilla</name>
@@ -49,15 +83,8 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 	<range><ge>1.8.a,2</ge><lt>1.8.a3_1,2</lt></range>
       </package>
       <package>
-	<name>mozilla-gtk1</name>
-	<range><lt>1.7.2_3</lt></range>
-      </package>
-      <package>
-	<name>linux-mozilla</name>
-	<range><lt>1.7.3</lt></range>
-      </package>
-      <package>
-	<name>linux-mozillafirebird</name>
+        <name>mozilla+ipv6</name>
+        <name>mozilla-embedded</name>
 	<range><ge>0</ge></range>
       </package>
     </affects>
