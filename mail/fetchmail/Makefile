@@ -43,6 +43,7 @@ CONFIGURE_ARGS+=--enable-inet6
 CONFIGURE_ARGS+=--with-ssl=/usr
 .elif exists(${LOCALBASE}/lib/libssl.a) && exists(${LOCALBASE}/lib/libcrypto.a)
 CONFIGURE_ARGS+=-with-includes=${LOCALBASE}/include/openssl --with-ssl=${LOCALBASE}
+CONFIGURE_ENV+=	RSAGLUE=-lRSAglue
 .endif
 
 .if exists(/usr/lib/libkrb.a) && defined(MAKE_KERBEROS4)
