@@ -2904,6 +2904,7 @@ ical		ports/deskutils/ical
 icb		ports/net/icb
 icbm3d		ports/games/icbm3d
 icc		ports/lang/icc
+icc7		ports/lang/icc7
 icebreaker	ports/games/icebreaker
 icecast		ports/audio/icecast
 icecast2	ports/audio/icecast2
