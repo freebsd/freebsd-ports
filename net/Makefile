@@ -64,6 +64,7 @@
     SUBDIR += dgd-net
     SUBDIR += dhid
     SUBDIR += dhcpconf
+    SUBDIR += dhisd
     SUBDIR += dictd
     SUBDIR += dictd-database
     SUBDIR += djbdns
