@@ -7,7 +7,7 @@
 
 PORTNAME=	libraries
 PORTVERSION=	4.2.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	x11
 MASTER_SITES=	${MASTER_SITE_XFREE:S/$/:x/} \
 		${MASTER_SITE_LOCAL:S/$/:local/}
@@ -17,10 +17,12 @@ PKGNAMEPREFIX=	XFree86-
 DISTFILES=	X${PORTVERSION:S/.//g}src-1.tgz:x Wraphelp.gz:local
 EXTRACT_ONLY=	X${PORTVERSION:S/.//g}src-1.tgz
 
-PATCH_SITES=		${MASTER_SITE_XFREE:S/source//g}
-PATCH_SITE_SUBDIR=	${PORTVERSION}/fixes
-PATCHFILES=		4.2.0-xlib-i18n-module.patch \
-			4.2.0-libGLU-bad-extern.patch
+PATCH_SITES=		${MASTER_SITE_XFREE:S/source//g:S/$/:x/} \
+			${MASTER_SITE_LOCAL:S/$/:patch420/}
+PATCH_SITE_SUBDIR=	${PORTVERSION}/fixes/:x \
+			anholt/patches-4.2.0/:patch420
+PATCHFILES=		patch-XlcDL.c:patch420 \
+			4.2.0-libGLU-bad-extern.patch:x
 PATCH_DIST_STRIP=	-p1
 
 MAINTAINER=	anholt@freebsd.org
