@@ -1,5 +1,13 @@
 bin/gdesklets
 bin/gdesklets-display-thumbnailer
+lib/gdesklets/Controls/ArrayBuffer/__init__.py
+lib/gdesklets/Controls/ArrayBuffer/__init__.pyc
+lib/gdesklets/Controls/ArrayBuffer/IArrayBuffer.py
+lib/gdesklets/Controls/ArrayBuffer/IArrayBuffer.pyc
+lib/gdesklets/Controls/EventPipe/__init__.py
+lib/gdesklets/Controls/EventPipe/__init__.pyc
+lib/gdesklets/Controls/EventPipe/IEventPipe.py
+lib/gdesklets/Controls/EventPipe/IEventPipe.pyc
 lib/gdesklets/Controls/Calendar/ICalendar.py
 lib/gdesklets/Controls/Calendar/ICalendar.pyc
 lib/gdesklets/Controls/Calendar/ICalendar.pyo
@@ -60,6 +68,9 @@ lib/gdesklets/config/ConfigColor.pyo
 lib/gdesklets/config/ConfigDialog.py
 lib/gdesklets/config/ConfigDialog.pyc
 lib/gdesklets/config/ConfigDialog.pyo
+lib/gdesklets/config/ConfigDPI.py
+lib/gdesklets/config/ConfigDPI.pyc
+lib/gdesklets/config/ConfigDPI.pyo
 lib/gdesklets/config/ConfigEnum.py
 lib/gdesklets/config/ConfigEnum.pyc
 lib/gdesklets/config/ConfigEnum.pyo
@@ -75,9 +86,9 @@ lib/gdesklets/config/ConfigInteger.pyo
 lib/gdesklets/config/ConfigManager.py
 lib/gdesklets/config/ConfigManager.pyc
 lib/gdesklets/config/ConfigManager.pyo
-lib/gdesklets/config/ConfigSettings.py
-lib/gdesklets/config/ConfigSettings.pyc
-lib/gdesklets/config/ConfigSettings.pyo
+lib/gdesklets/config/ConfigUnit.py
+lib/gdesklets/config/ConfigUnit.pyc
+lib/gdesklets/config/ConfigUnit.pyo
 lib/gdesklets/config/ConfigString.py
 lib/gdesklets/config/ConfigString.pyc
 lib/gdesklets/config/ConfigString.pyo
@@ -90,12 +101,21 @@ lib/gdesklets/config/ConfigURI.pyo
 lib/gdesklets/config/ConfigWidget.py
 lib/gdesklets/config/ConfigWidget.pyc
 lib/gdesklets/config/ConfigWidget.pyo
+lib/gdesklets/config/DaemonConfigger.py
+lib/gdesklets/config/DaemonConfigger.pyc
+lib/gdesklets/config/DaemonConfigger.pyo
+lib/gdesklets/config/DisplayConfigger.py
+lib/gdesklets/config/DisplayConfigger.pyc
+lib/gdesklets/config/DisplayConfigger.pyo
 lib/gdesklets/config/GConfBackend.py
 lib/gdesklets/config/GConfBackend.pyc
 lib/gdesklets/config/GConfBackend.pyo
 lib/gdesklets/config/StateSaver.py
 lib/gdesklets/config/StateSaver.pyc
 lib/gdesklets/config/StateSaver.pyo
+lib/gdesklets/config/Win32Backend.py
+lib/gdesklets/config/Win32Backend.pyc
+lib/gdesklets/config/Win32Backend.pyo
 lib/gdesklets/config/__init__.py
 lib/gdesklets/config/__init__.pyc
 lib/gdesklets/config/__init__.pyo
@@ -125,6 +145,9 @@ lib/gdesklets/display/DisplayTarget.pyo
 lib/gdesklets/display/GlassWindow.py
 lib/gdesklets/display/GlassWindow.pyc
 lib/gdesklets/display/GlassWindow.pyo
+lib/gdesklets/display/Layouter.py
+lib/gdesklets/display/Layouter.pyc
+lib/gdesklets/display/Layouter.pyo
 lib/gdesklets/display/Plug.py
 lib/gdesklets/display/Plug.pyc
 lib/gdesklets/display/Plug.pyo
@@ -179,9 +202,6 @@ lib/gdesklets/display/Window.pyo
 lib/gdesklets/display/__init__.py
 lib/gdesklets/display/__init__.pyc
 lib/gdesklets/display/__init__.pyo
-lib/gdesklets/display/layouters.py
-lib/gdesklets/display/layouters.pyc
-lib/gdesklets/display/layouters.pyo
 lib/gdesklets/display/targetregistry.py
 lib/gdesklets/display/targetregistry.pyc
 lib/gdesklets/display/targetregistry.pyo
@@ -278,9 +298,6 @@ lib/gdesklets/main/Control.pyo
 lib/gdesklets/main/DisplayList.py
 lib/gdesklets/main/DisplayList.pyc
 lib/gdesklets/main/DisplayList.pyo
-lib/gdesklets/main/LogViewer.py
-lib/gdesklets/main/LogViewer.pyc
-lib/gdesklets/main/LogViewer.pyo
 lib/gdesklets/main/MetaData.py
 lib/gdesklets/main/MetaData.pyc
 lib/gdesklets/main/MetaData.pyo
@@ -314,15 +331,18 @@ lib/gdesklets/plugin/PluginRegistry.pyo
 lib/gdesklets/plugin/__init__.py
 lib/gdesklets/plugin/__init__.pyc
 lib/gdesklets/plugin/__init__.pyo
+lib/gdesklets/scripting/ElementWrapper.py
+lib/gdesklets/scripting/ElementWrapper.pyc
+lib/gdesklets/scripting/ElementWrapper.pyo
 lib/gdesklets/scripting/ControlWrapper.py
 lib/gdesklets/scripting/ControlWrapper.pyc
 lib/gdesklets/scripting/ControlWrapper.pyo
 lib/gdesklets/scripting/Script.py
 lib/gdesklets/scripting/Script.pyc
 lib/gdesklets/scripting/Script.pyo
-lib/gdesklets/scripting/TargetWrapper.py
-lib/gdesklets/scripting/TargetWrapper.pyc
-lib/gdesklets/scripting/TargetWrapper.pyo
+lib/gdesklets/scripting/Scriptlet.py
+lib/gdesklets/scripting/Scriptlet.pyc
+lib/gdesklets/scripting/Scriptlet.pyo
 lib/gdesklets/scripting/Vault.py
 lib/gdesklets/scripting/Vault.pyc
 lib/gdesklets/scripting/Vault.pyo
@@ -427,6 +447,16 @@ lib/gdesklets/shell/plugins/gDeskletsClient/__init__.py
 lib/gdesklets/shell/plugins/gDeskletsClient/__init__.pyc
 lib/gdesklets/shell/plugins/gDeskletsClient/__init__.pyo
 lib/gdesklets/test-control.py
+lib/gdesklets/test-control.pyc
+lib/gdesklets/utils/DOM.py
+lib/gdesklets/utils/DOM.pyc
+lib/gdesklets/utils/DOM.pyo
+lib/gdesklets/utils/Element.py
+lib/gdesklets/utils/Element.pyc
+lib/gdesklets/utils/Element.pyo
+lib/gdesklets/utils/ErrorFormatter.py
+lib/gdesklets/utils/ErrorFormatter.pyc
+lib/gdesklets/utils/ErrorFormatter.pyo
 lib/gdesklets/utils/BGWatcher.py
 lib/gdesklets/utils/BGWatcher.pyc
 lib/gdesklets/utils/BGWatcher.pyo
@@ -436,6 +466,9 @@ lib/gdesklets/utils/BinTree.pyo
 lib/gdesklets/utils/HIGDialog.py
 lib/gdesklets/utils/HIGDialog.pyc
 lib/gdesklets/utils/HIGDialog.pyo
+lib/gdesklets/utils/LogView.py
+lib/gdesklets/utils/LogView.pyc
+lib/gdesklets/utils/LogView.pyo
 lib/gdesklets/utils/Observable.py
 lib/gdesklets/utils/Observable.pyc
 lib/gdesklets/utils/Observable.pyo
@@ -454,9 +487,6 @@ lib/gdesklets/utils/TilingImage.pyo
 lib/gdesklets/utils/Trie.py
 lib/gdesklets/utils/Trie.pyc
 lib/gdesklets/utils/Trie.pyo
-lib/gdesklets/utils/TypeConverter.py
-lib/gdesklets/utils/TypeConverter.pyc
-lib/gdesklets/utils/TypeConverter.pyo
 lib/gdesklets/utils/Unit.py
 lib/gdesklets/utils/Unit.pyc
 lib/gdesklets/utils/Unit.pyo
@@ -490,6 +520,12 @@ lib/gdesklets/utils/pwstore.pyo
 lib/gdesklets/utils/svg.so
 lib/gdesklets/utils/systray.so
 lib/gdesklets/utils/tiling.so
+lib/gdesklets/utils/typeconverter.py
+lib/gdesklets/utils/typeconverter.pyc
+lib/gdesklets/utils/typeconverter.pyo
+lib/gdesklets/utils/vfs.py
+lib/gdesklets/utils/vfs.pyc
+lib/gdesklets/utils/vfs.pyo
 lib/gdesklets/utils/wallpaper.py
 lib/gdesklets/utils/wallpaper.pyc
 lib/gdesklets/utils/wallpaper.pyo
@@ -581,6 +617,8 @@ share/mime/packages/gdesklets.xml
 @dirrm lib/gdesklets/Controls/Sensors
 @dirrm lib/gdesklets/Controls/HDDTemp
 @dirrm lib/gdesklets/Controls/Calendar
+@dirrm lib/gdesklets/Controls/EventPipe
+@dirrm lib/gdesklets/Controls/ArrayBuffer
 @dirrm lib/gdesklets/Controls
 @dirrm lib/gdesklets
 @exec update-mime-database %D/share/mime

@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	gdesklets
-PORTVERSION=	0.33.1
-PORTREVISION=	1
+PORTVERSION=	0.34
 CATEGORIES=	deskutils gnome
 MASTER_SITES=	http://www.pycage.de/download/${PORTNAME}/
 DISTNAME=	gDesklets-${PORTVERSION}
@@ -18,7 +17,8 @@ COMMENT=	A framework for Gnome 2.x for desktop applets
 BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/gtk-2.0/gnome/__init__.py:${PORTSDIR}/x11-toolkits/py-gnome2
 LIB_DEPENDS=	gtop-2.0.2:${PORTSDIR}/devel/libgtop2
 RUN_DEPENDS=	${PYXML} \
-		${PYTHON_SITELIBDIR}/gtk-2.0/gnome/__init__.py:${PORTSDIR}/x11-toolkits/py-gnome2
+		${PYTHON_SITELIBDIR}/gtk-2.0/gnome/__init__.py:${PORTSDIR}/x11-toolkits/py-gnome2 \
+		${PYTHON_SITELIBDIR}/gtk-2.0/gtkhtml2.so:${PORTSDIR}/x11-toolkits/py-gnome-extras
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes
@@ -36,15 +36,7 @@ MAN1=		gdesklets.1
 post-install:
 	@${MKDIR} ${PREFIX}/share/gnome/gdesklets/Displays
 	@${MKDIR} ${PREFIX}/share/gnome/gdesklets/Sensors
-	@${PYTHON_CMD} ${PYTHON_LIBDIR}/compileall.py ${PREFIX}/lib/gdesklets/config
-	@${PYTHON_CMD} ${PYTHON_LIBDIR}/compileall.py ${PREFIX}/lib/gdesklets/data
-	@${PYTHON_CMD} ${PYTHON_LIBDIR}/compileall.py ${PREFIX}/lib/gdesklets/desktop
-	@${PYTHON_CMD} ${PYTHON_LIBDIR}/compileall.py ${PREFIX}/lib/gdesklets/display
-	@${PYTHON_CMD} ${PYTHON_LIBDIR}/compileall.py ${PREFIX}/lib/gdesklets/factory
-	@${PYTHON_CMD} ${PYTHON_LIBDIR}/compileall.py ${PREFIX}/lib/gdesklets/libdesklets
-	@${PYTHON_CMD} ${PYTHON_LIBDIR}/compileall.py ${PREFIX}/lib/gdesklets/main
-	@${PYTHON_CMD} ${PYTHON_LIBDIR}/compileall.py ${PREFIX}/lib/gdesklets/sensor
-	@${PYTHON_CMD} ${PYTHON_LIBDIR}/compileall.py ${PREFIX}/lib/gdesklets/utils
+	@${PYTHON_CMD} ${PYTHON_LIBDIR}/compileall.py ${PREFIX}/lib/gdesklets
 	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
