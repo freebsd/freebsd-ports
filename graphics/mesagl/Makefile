@@ -58,7 +58,7 @@ MAKE_ENV+=	SUB_GL="${SUB_GL}"		\
 .error You have `USE_MESA' variable defined either in environment or in make(1) arguments. Please undefine and try again.
 .endif
 
-pre-patch:
+post-patch:
 	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|g' ${WRKSRC}/configure
 
 post-install:

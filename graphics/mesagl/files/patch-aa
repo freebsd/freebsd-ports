@@ -32,6 +32,6 @@ $FreeBSD$
  echo "${ECHO_T}yes" >&6
 -    CFLAGS="$CFLAGS -D_REENTRANT -DPTHREADS"
 +    CFLAGS="$CFLAGS -D_THREAD_SAFE -D_REENTRANT -DPTHREADS"
-     THREAD_LIBS="$THREAD_LIBS -lc_r"
+     THREAD_LIBS="$THREAD_LIBS -lpthread"
  else
    echo "$as_me: failed program was:" >&5
