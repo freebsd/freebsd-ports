@@ -140,7 +140,7 @@ libexec/apache2/mod_auth_anon.so
 libexec/apache2/mod_auth_dbm.so
 libexec/apache2/mod_auth_digest.so
 libexec/apache2/mod_autoindex.so
-libexec/apache2/mod_bucketeer.so
+%%EXPERIMENTAL%%libexec/apache2/mod_bucketeer.so
 %%MODCACHE%%libexec/apache2/mod_cache.so
 %%EXPERIMENTAL%%libexec/apache2/mod_case_filter.so
 %%EXPERIMENTAL%%libexec/apache2/mod_case_filter_in.so
@@ -150,7 +150,7 @@ libexec/apache2/mod_cgid.so
 %%EXPERIMENTAL%%libexec/apache2/mod_charset_lite.so
 libexec/apache2/mod_dav.so
 libexec/apache2/mod_dav_fs.so
-%%EXPERIMENTAL%%libexec/apache2/mod_deflate.so
+libexec/apache2/mod_deflate.so
 libexec/apache2/mod_dir.so
 %%MODCACHE%%libexec/apache2/mod_disk_cache.so
 libexec/apache2/mod_env.so
@@ -166,6 +166,10 @@ libexec/apache2/mod_log_config.so
 libexec/apache2/mod_mime.so
 libexec/apache2/mod_mime_magic.so
 libexec/apache2/mod_negotiation.so
+%%EXPERIMENTAL%%libexec/apache2/mod_optional_hook_export.so
+%%EXPERIMENTAL%%libexec/apache2/mod_optional_hook_import.so
+%%EXPERIMENTAL%%libexec/apache2/mod_optional_fn_import.so
+%%EXPERIMENTAL%%libexec/apache2/mod_optional_fn_export.so
 %%MODPROXY%%libexec/apache2/mod_proxy.so
 %%MODPROXY%%libexec/apache2/mod_proxy_connect.so
 %%MODPROXY%%libexec/apache2/mod_proxy_ftp.so

@@ -7,7 +7,7 @@
 
 PORTNAME=	apache
 PORTVERSION=	2.0.39
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	www ipv6
 MASTER_SITES=	http://www.apache.org/dist/httpd/ \
 		http://apache.mirrorcentral.com/dist/httpd/ \
@@ -44,7 +44,7 @@ CONFIGURE_ARGS=	--prefix=${PREFIX_RELDEST} \
 		--includedir=${PREFIX_RELDEST}/include/apache2
 CONFIGURE_ENV=	CC="${CC}" CPPFLAGS="${CPPFLAGS}" CFLAGS="${CFLAGS}" \
 		LDFLAGS="${LDFLAGS}" CONFIG_SHELL="${SH}"
-SHARED_MODULES= all cgid ext_filter bucketeer
+SHARED_MODULES= all cgid deflate ext_filter
 PREFIX_RELDEST=	${PREFIX:S,^${DESTDIR},,}
 RC_SUB=		-e 's,@@PREFIX@@,${PREFIX_RELDEST},g'
 MAKE_ENV+=	DESTDIR=${DESTDIR} EXPR_COMPAT=yes
@@ -106,7 +106,9 @@ PLIST_SUB+=	MODPROXY="@comment "
 .endif
 
 .if defined(WITH_EXPERIMENTAL)
-SHARED_MODULES+= case_filter case_filter_in deflate ext_filter charset_lite
+SHARED_MODULES+= bucketeer case_filter case_filter_in ext_filter charset_lite \
+		optional_hook_export optional_hook_import \
+		optional_fn_import optional_fn_export
 PLIST_SUB+=	EXPERIMENTAL=""
 .else
 PLIST_SUB+=	EXPERIMENTAL="@comment "
