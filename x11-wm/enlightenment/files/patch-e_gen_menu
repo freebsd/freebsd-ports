@@ -1,0 +1,29 @@
+--- scripts/e_gen_menu.orig	Mon Jun 14 04:44:03 2004
++++ scripts/e_gen_menu	Wed Jun 30 12:00:37 2004
+@@ -25,7 +25,7 @@
+ ##############################################################################
+ 
+ # Likely  prefixes
+-$Prefixes = "/usr/local:/usr:/opt";
++$Prefixes = "/usr/local:/usr/X11R6";
+ 
+ # Where to look for GNOME2/KDE2,3 stuff
+ $AppDirs = MkDirList($Prefixes, "/share/applications");
+@@ -51,7 +51,7 @@
+ $loc1 = "" if ($loc1 eq $loc2);
+ 
+ $EdirUser = "$ENV{'HOME'}/.enlightenment" unless $EdirUser;
+-$EdirRoot = "/usr/share/enlightenment" unless $EdirRoot;
++$EdirRoot = "%%PREFIX%%/share/enlightenment" unless $EdirRoot;
+ $EdirBin  = "/usr/bin" unless $EdirBin;
+ 
+ $dbg      = "$ENV{'E_MENUGEN_DBG'}";
+@@ -96,7 +96,7 @@
+ 	"x:Firefox:firefox",
+ 	"x:Galeon:galeon",
+ 	"x:Opera:opera",
+-	"x:Electric Eyes:ee",
++	"x:Electric Eyes:ElectricEyes",
+ 	"x:Gmplayer:gmplayer",
+ 	"x:Xine:xine",
+ 	"x:The GIMP:gimp",
