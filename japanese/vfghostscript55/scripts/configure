@@ -4,7 +4,7 @@
 
 if [ ! "X"${BATCH} = "X" ] ; then
 
-PRINTER_JAPAN=' mjc180.dev mjc360.dev mjc720.dev mj500c.dev lips2p.dev lips3.dev lips4.dev lips4v.dev  bjc880j.dev epag.dev npdl.dev nx100f.dev nx100v.dev bj10v.dev bj10vh.dev dmprt.dev md2k.dev md5k.dev lp3000c lp8000c lp8200c lp8300c lp8500c lp8600f lp8400f lp8300f lp1900 lp1800'
+PRINTER_JAPAN=' mjc180.dev mjc360.dev mjc720.dev mj500c.dev lips2p.dev lips3.dev lips4.dev lips4v.dev  bjc880j.dev epag.dev npdl.dev nx100f.dev nx100v.dev bj10v.dev bj10vh.dev dmprt.dev md2k.dev md5k.dev lp3000c.dev lp8000c.dev lp8200c.dev lp8300c.dev lp8500c.dev lp8600f.dev lp8400f.dev lp8300f.dev lp1900.dev lp1800.dev'
 
 sed -e "s;DEVICE_DEVS15=pdfwrite.dev;DEVICE_DEVS15=pdfwrite.dev stcolor.dev st800.dev uniprint.dev bmp16m.dev ${PRINTER_JAPAN};" \
     < ${WRKSRC}/unix-gcc.mak > ${WRKSRC}/unix-gcc.mak.bak && \

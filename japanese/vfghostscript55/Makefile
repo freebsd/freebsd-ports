@@ -7,6 +7,7 @@
 
 PORTNAME=	vfghostscript
 PORTVERSION=	5.50a
+PORTREVISION=	1
 CATEGORIES=	japanese print
 MASTER_SITES=	${MASTER_SITE_GNU} \
 		ftp://ftp.cs.wisc.edu/ghost/gnu/gs550/ \
@@ -63,7 +64,7 @@ GS_DRIVERS+=	gdevnpdl-1.6.2.tar.gz
 GS_DRIVERS+=	epag-3.09.tar.gz
 GS_DRIVERS+=	gdevalps-0.21.tar.gz
 GS_DRIVERS+=	gdevmd2k-0.2a.tar.gz
-GS_DRIVERS+=	gdevrpdl-1.2.tar.gz
+GS_DRIVERS+=	gdevrpdl-1.4.tar.gz
 GS_DRIVERS+=	eplaser-2.0.2-550.tgz
 
 # replacement for pdf_sec.ps, that allows you to read encrypted PDF files
