@@ -18,6 +18,7 @@
     SUBDIR += mouseclock
     SUBDIR += pclock
     SUBDIR += rclock
+    SUBDIR += sanduhr
     SUBDIR += swisswatch
     SUBDIR += t3d
     SUBDIR += tclock

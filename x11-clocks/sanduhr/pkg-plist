@@ -1,0 +1,37 @@
+bin/sanduhr
+etc/CORBA/servers/sanduhr.gnorba
+share/gnome/apps/Utilities/sanduhr.desktop
+share/gnome/help/sanduhr/C/docbook.css
+share/gnome/help/sanduhr/C/index.html
+share/gnome/help/sanduhr/C/intro.html
+share/gnome/help/sanduhr/C/invocation.html
+share/gnome/help/sanduhr/C/ln14.html
+share/gnome/help/sanduhr/C/preferences.html
+share/gnome/help/sanduhr/C/sanduhr.html
+share/gnome/help/sanduhr/C/timespec.html
+share/gnome/help/sanduhr/C/topic.dat
+share/gnome/help/sanduhr/de/docbook.css
+share/gnome/help/sanduhr/de/index.html
+share/gnome/help/sanduhr/de/intro.html
+share/gnome/help/sanduhr/de/invocation.html
+share/gnome/help/sanduhr/de/ln14.html
+share/gnome/help/sanduhr/de/preferences.html
+share/gnome/help/sanduhr/de/sanduhr.html
+share/gnome/help/sanduhr/de/timespec.html
+share/gnome/help/sanduhr/de/topic.dat
+share/gnome/idl/sanduhr.idl
+share/gnome/pixmaps/sanduhr/about.png
+share/gnome/pixmaps/sanduhr/back.png
+share/gnome/pixmaps/sanduhr/front.png
+share/gnome/pixmaps/sanduhr/icon.xpm
+share/gnome/pixmaps/sanduhr/logo.png
+share/gnome/pixmaps/sanduhr/mask.png
+share/gnome/sounds/sanduhr/bell.wav
+share/locale/de/LC_MESSAGES/sanduhr.mo
+@dirrm share/gnome/sounds/sanduhr
+@dirrm share/gnome/pixmaps/sanduhr
+@dirrm share/gnome/help/sanduhr/de/images
+@dirrm share/gnome/help/sanduhr/de
+@dirrm share/gnome/help/sanduhr/C/images
+@dirrm share/gnome/help/sanduhr/C
+@dirrm share/gnome/help/sanduhr
