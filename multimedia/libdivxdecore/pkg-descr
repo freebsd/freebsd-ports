@@ -11,5 +11,4 @@ truly independent of any other code, making no system calls.
 profile. It also incorporates a video postprocessor which postprocessor,
 which hides many of the artifacts inherent in low bit-rate video.
 
-
-WWW: http://www.projectmayo.com/linux/divx4linux/
+WWW: http://www.projectmayo.com/
