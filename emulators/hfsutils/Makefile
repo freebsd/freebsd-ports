@@ -1,12 +1,12 @@
 # New ports collection makefile for:	hfsutils
-# Version required:	3.2.2
+# Version required:	3.2.6
 # Date Created:		7 Sep 1997
 # Whom:			Vanilla I. Shu <vanilla@MinJe.com.TW>
 #
-# $Id: Makefile,v 1.13 1998/10/26 07:19:47 asami Exp $
+# $Id: Makefile,v 1.14 1998/11/04 09:45:14 vanilla Exp $
 #
 
-DISTNAME=	hfsutils-3.2.2
+DISTNAME=	hfsutils-3.2.6
 CATEGORIES=	emulators tk80
 MASTER_SITES=	ftp://ftp.mars.org/pub/hfs/
 
