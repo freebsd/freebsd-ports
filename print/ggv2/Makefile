@@ -3,13 +3,13 @@
 # Date created:				21 August 1998
 # Whom:					Yukihiro Nakai <Nakai@technologist.com>
 #
-# $Id: Makefile,v 1.4 1999/01/27 08:31:51 fenner Exp $
+# $Id: Makefile,v 1.5 1999/02/02 13:04:05 vanilla Exp $
 #
 
 DISTNAME=	ggv-0.26
 CATEGORIES=	print gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
-MASTER_SITE_SUBDIR=	ggv
+MASTER_SITE_SUBDIR=	sources/ggv
 
 MAINTAINER=	nacai@iname.com
 

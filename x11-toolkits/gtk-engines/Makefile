@@ -3,13 +3,13 @@
 # Date Created:				23 Dec 1998
 # Whom:					Vanilla I. Shu <vanilla@FreeBSD.ORG>
 #
-# $Id: Makefile,v 1.9 1999/03/15 18:30:06 nectar Exp $
+# $Id: Makefile,v 1.10 1999/03/27 10:35:56 vanilla Exp $
 #
 
 DISTNAME=	gtk-engines-0.5
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	${MASTER_SITE_GNOME}
-MASTER_SITE_SUBDIR=	gtk-engines
+MASTER_SITE_SUBDIR=	sources/gtk-engines
 
 MAINTAINER=	vanilla@FreeBSD.ORG
 

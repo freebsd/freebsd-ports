@@ -3,13 +3,13 @@
 # Date created:				28 September 1998
 # Whom:					Yukihiro Nakai <Nakai@technologist.com>
 #
-# $Id: Makefile,v 1.7 1999/02/02 14:19:19 vanilla Exp $
+# $Id: Makefile,v 1.8 1999/03/09 01:09:02 nectar Exp $
 #
 
 DISTNAME=	gtop-1.0.1
 CATEGORIES=	sysutils gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
-MASTER_SITE_SUBDIR=	gnome-1.0/sources
+MASTER_SITE_SUBDIR=	sources/gtop
 
 MAINTAINER=	nacai@iname.com
 

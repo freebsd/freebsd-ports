@@ -3,13 +3,13 @@
 # Date created:				08 October 1998
 # Whom:					Yukihiro Nakai <Nakai@technologist.com>
 #
-# $Id: Makefile,v 1.8 1999/03/09 01:08:59 nectar Exp $
+# $Id: Makefile,v 1.9 1999/03/26 04:48:08 nectar Exp $
 #
 
 DISTNAME=	gnumeric-0.18
 CATEGORIES=	math gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
-MASTER_SITE_SUBDIR=	gnome-1.0/sources
+MASTER_SITE_SUBDIR=	sources/gnumeric
 
 MAINTAINER=	nacai@iname.com
 

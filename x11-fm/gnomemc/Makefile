@@ -3,14 +3,14 @@
 # Date created:		26 Jnuary 1999
 # Whom:			Jeremy Lea <reg@shale.csir.co.za>
 #
-# $Id: Makefile,v 1.2 1999/02/12 02:33:17 asami Exp $
+# $Id: Makefile,v 1.3 1999/03/09 01:09:06 nectar Exp $
 #
 
 DISTNAME=	mc-4.5.23
 PKGNAME=	gnomemc-4.5.23
 CATEGORIES=	x11-fm gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
-MASTER_SITE_SUBDIR=	gnome-1.0/sources
+MASTER_SITE_SUBDIR=	sources/mc
 
 MAINTAINER=	reg@shale.csir.co.za
 

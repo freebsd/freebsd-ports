@@ -3,13 +3,13 @@
 # Date created:		15 Jul 1995
 # Whom:			torstenb@FreeBSD.ORG
 #
-# $Id: Makefile,v 1.29 1999/03/15 04:39:10 nectar Exp $
+# $Id: Makefile,v 1.30 1999/03/19 04:39:58 nectar Exp $
 #
 
 DISTNAME=	mc-4.5.23
 CATEGORIES=	misc
 MASTER_SITES=	${MASTER_SITE_GNOME}
-MASTER_SITE_SUBDIR=	gnome-1.0/sources
+MASTER_SITE_SUBDIR=	sources/mc
 
 MAINTAINER=	reg@shale.csir.co.za
 

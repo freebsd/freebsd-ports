@@ -3,14 +3,14 @@
 # Date created:				03 July 1998
 # Whom:					Yukihiro Nakai <Nakai@technologist.com>
 #
-# $Id: Makefile,v 1.13 1999/02/24 22:09:22 vanilla Exp $
+# $Id: Makefile,v 1.14 1999/03/09 01:08:56 nectar Exp $
 #
 
 DISTNAME=	gnome-games-1.0.1
 PKGNAME=	gnomegames-1.0.1
 CATEGORIES=	games gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
-MASTER_SITE_SUBDIR=	gnome-1.0/sources
+MASTER_SITE_SUBDIR=	sources/gnome-games
 
 MAINTAINER=	nacai@iname.com
 
