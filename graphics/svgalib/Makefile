@@ -14,7 +14,6 @@ MASTER_SITES=	http://www.svgalib.org/
 MAINTAINER=	sobomax@FreeBSD.org
 
 USE_GMAKE=	yes
-USE_REINPLACE=	yes
 INSTALLS_SHLIB=	yes
 
 ALL_TARGET=	shared static
@@ -34,7 +33,10 @@ MAN${i}!=	/bin/cat ${FILESDIR}/man${i}
 .endfor
 
 pre-patch:
-	${REINPLACE_CMD} -e 's.\x0D..' ${WRKSRC}/utils/gtf/*
+	for file in ${WRKSRC}/utils/gtf/*.h; do \
+		${TR} -d '\015' < $${file} > $${file}.new; \
+		${MV} $${file}.new $${file}; \
+	done
 	${MKDIR} ${WRKSRC}/include/linux
 
 post-install:
