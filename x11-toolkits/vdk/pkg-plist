@@ -66,6 +66,7 @@ include/vdk2/vdk/vdkarray.h
 include/vdk2/vdk/vdkbtrees.h
 include/vdk2/vdk/vdkcalendar.h
 include/vdk2/vdk/vdkclist.h
+include/vdk2/vdk/vdkcomboentry.h
 include/vdk2/vdk/vdkcsortlist.h
 include/vdk2/vdk/vdkctree.h
 include/vdk2/vdk/vdkcursor.h
@@ -78,6 +79,7 @@ include/vdk2/vdk/vdkdockable.h
 include/vdk2/vdk/vdkdrawarea.h
 include/vdk2/vdk/vdkeditor.h
 include/vdk2/vdk/vdkfeatures.h
+include/vdk2/vdk/vdkfilechooser.h
 include/vdk2/vdk/vdkfileicondlg.h
 include/vdk2/vdk/vdkfont.h
 include/vdk2/vdk/vdkgnomeapp.h
@@ -100,7 +102,7 @@ include/vdk2/vdk/vdkutils.h
 include/vdk2/vdk/widcontain.h
 lib/libvdk.a
 lib/libvdk.so
-lib/libvdk.so.4
+lib/libvdk.so.6
 share/aclocal/vdk-2.m4
 @dirrm include/vdk2/vdk
 @dirrm include/vdk2

@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	vdk
-PORTVERSION=	2.0.3
-PORTREVISION=	2
+PORTVERSION=	2.4.0
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	vdkbuilder
@@ -16,10 +15,9 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	C++ wrapper for GTK+ toolkit
 
 USE_X_PREFIX=	yes
-WANT_GNOME=	yes
-USE_GNOME=	gnometarget gtk20
+USE_GNOME=	gnometarget gtk20 lthack
 USE_REINPLACE=	yes
-USE_INC_LIBTOOL_VER=13
+USE_INC_LIBTOOL_VER=	13
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include ${PTHREAD_CFLAGS}" \
 		LDFLAGS="-L${LOCALBASE}/lib -lgnuregex ${PTHREAD_LIBS}"
 CONFIGURE_ARGS=	--enable-opt=no --enable-doc-html=no
@@ -28,8 +26,8 @@ INSTALLS_SHLIB=	yes
 MAN1=		vdk-config-2.1
 
 post-patch:
-	@${REINPLACE_CMD} -e \
-		's|-lpthread|${PTHREAD_LIBS}|g' ${WRKSRC}/configure
+	@${REINPLACE_CMD} -e 's|CXXFLAGS="-s"|CXXFLAGS="$$CXXFLAGS"|g ; \
+		 s|-lpthread|${PTHREAD_LIBS}|g' ${WRKSRC}/configure
 .for file in vdk/FileDialog.h vdk/gtksourcebuffer.h vdk/gtksourcetag.h
 	@${REINPLACE_CMD} -e 's|<regex\.h>|<gnuregex.h>|g' ${WRKSRC}/${file}
 .endfor
