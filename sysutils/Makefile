@@ -195,6 +195,7 @@
     SUBDIR += slmon
     SUBDIR += sloth
     SUBDIR += socket
+    SUBDIR += socklog
     SUBDIR += ssync
     SUBDIR += stat
     SUBDIR += stmpclean

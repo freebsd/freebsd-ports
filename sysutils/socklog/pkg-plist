@@ -1,0 +1,19 @@
+bin/socklog-conf
+bin/socklog
+bin/tryto
+bin/uncat
+%%PORTDOCS%%share/doc/socklog/benefits.html
+%%PORTDOCS%%share/doc/socklog/configuration.html
+%%PORTDOCS%%share/doc/socklog/examples.html
+%%PORTDOCS%%share/doc/socklog/index.html
+%%PORTDOCS%%share/doc/socklog/install.html
+%%PORTDOCS%%share/doc/socklog/network.html
+%%PORTDOCS%%share/doc/socklog/notify.html
+%%PORTDOCS%%share/doc/socklog/readme.solaris.html
+%%PORTDOCS%%share/doc/socklog/socklog-conf.8.html
+%%PORTDOCS%%share/doc/socklog/socklog.8.html
+%%PORTDOCS%%share/doc/socklog/tryto.1.html
+%%PORTDOCS%%share/doc/socklog/uncat.1.html
+%%PORTDOCS%%share/doc/socklog/upgrade.html
+%%PORTDOCS%%share/doc/socklog/usedietlibc.html
+%%PORTDOCS%%@dirrm share/doc/socklog
