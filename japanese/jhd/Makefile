@@ -1,0 +1,30 @@
+# New ports collection makefile for: jhd
+# Version required:	2.3
+# Date created:		Feb 5, 1998
+# Whom:			Satoshi TAOKA <taoka@infonets.hiroshima-u.ac.jp>
+#
+# $Id$
+#
+
+DISTNAME=	jhd-2.3
+PKGNAME=	ja-jhd-2.3
+CATEGORIES=	japanese
+MASTER_SITES=	ftp://ftp.iamas.ac.jp/pub1/UNIX/File/
+
+MAINTAINER=	taoka@infonets.hiroshima-u.ac.jp
+
+BUILD_DEPENDS=	nkf:${PORTSDIR}/japanese/nkf
+
+MANLANG=	ja
+MAN1=		jhd.1
+
+post-build:
+	cd ${WRKSRC}; \
+	${MV} jhd.1 jhd.1.org; \
+	nkf -e jhd.1.org > jhd.1
+
+do-install:
+	${INSTALL_PROGRAM} ${WRKSRC}/jhd ${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/jhd.1 ${PREFIX}/man/ja/man1
+
+.include <bsd.port.mk>

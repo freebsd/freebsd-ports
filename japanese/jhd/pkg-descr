@@ -1,0 +1,6 @@
+Jhd is a 'Japanese Hexdecimal Dump' command.  This is for EUC KANJI
+code, as default.
+
+Example
+
+  % jhd -j EUC_FILE
