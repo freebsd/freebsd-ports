@@ -1,14 +1,14 @@
-lib/X11/fonts/korean/hanyang/hmm10.pcf.Z
-lib/X11/fonts/korean/hanyang/hmm12.pcf.Z
-lib/X11/fonts/korean/hanyang/hmm14.pcf.Z
-lib/X11/fonts/korean/hanyang/hmm16.pcf.Z
-lib/X11/fonts/korean/hanyang/hmm18.pcf.Z
-lib/X11/fonts/korean/hanyang/hmm20.pcf.Z
-lib/X11/fonts/korean/hanyang/hgm10.pcf.Z
-lib/X11/fonts/korean/hanyang/hgm12.pcf.Z
-lib/X11/fonts/korean/hanyang/hgm14.pcf.Z
-lib/X11/fonts/korean/hanyang/hgm16.pcf.Z
-lib/X11/fonts/korean/hanyang/hgm18.pcf.Z
-lib/X11/fonts/korean/hanyang/hgm20.pcf.Z
-lib/X11/fonts/korean/hanyang/fonts.dir
-@dirrm lib/X11/fonts/korean/hanyang
+lib/X11/fonts/misc/hmm10.pcf.gz
+lib/X11/fonts/misc/hmm12.pcf.gz
+lib/X11/fonts/misc/hmm14.pcf.gz
+lib/X11/fonts/misc/hmm16.pcf.gz
+lib/X11/fonts/misc/hmm18.pcf.gz
+lib/X11/fonts/misc/hmm20.pcf.gz
+lib/X11/fonts/misc/hgm10.pcf.gz
+lib/X11/fonts/misc/hgm12.pcf.gz
+lib/X11/fonts/misc/hgm14.pcf.gz
+lib/X11/fonts/misc/hgm16.pcf.gz
+lib/X11/fonts/misc/hgm18.pcf.gz
+lib/X11/fonts/misc/hgm20.pcf.gz
+@exec cd %D/lib/X11/fonts/misc ; mkfontdir
+@unexec cd %D/lib/X11/fonts/misc ; mkfontdir
