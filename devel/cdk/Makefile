@@ -7,11 +7,10 @@
 #
 
 PORTNAME=		cdk
-PORTVERSION=		4.9.9
+PORTVERSION=		4.9.10
 CATEGORIES=		devel
 MASTER_SITES=	http://www.vexus.ca/release/
-DISTNAME=	latestCDK
-EXTRACT_SUFX=	.tgz
+DISTNAME=	cdk
 
 MAINTAINER=	obrien@FreeBSD.org
 
