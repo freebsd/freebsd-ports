@@ -1,0 +1,6 @@
+CPAN::DistnameInfo uses heuristics that have been learnt by
+http://search.cpan.org/ to extract the distribution name and version
+from filenames and also report if the version is to be treated as
+a developer release.
+
+WWW: http://search.cpan.org/dist/CPAN-DistnameInfo/
