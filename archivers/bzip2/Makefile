@@ -9,9 +9,8 @@
 PORTNAME=	bzip2
 PORTVERSION=	1.0.1
 CATEGORIES=	archivers
-MASTER_SITES=	ftp://ftp.freesoftware.com/pub/sourceware/bzip2/v100/ \
-		ftp://sourceware.cygnus.com/pub/bzip2/v100/ \
-		http://www.kernel.org/pub/software/utils/compress/bzip2/
+MASTER_SITES=	${MASTER_SITE_SOURCEWARE}
+MASTER_SITE_SUBDIR=	bzip2/v100
 
 MAINTAINER=	obrien@FreeBSD.org
 
