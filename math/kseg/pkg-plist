@@ -31,6 +31,7 @@ lib/X11/kseg/examples/sierp2.sec
 lib/X11/kseg/examples/sinus.seg
 lib/X11/kseg/examples/tractix.sec
 lib/X11/kseg/examples/tractix.seg
+lib/X11/kseg/kseg_cy.qm
 lib/X11/kseg/kseg_de.qm
 lib/X11/kseg/kseg_en.qm
 lib/X11/kseg/kseg_es.qm
@@ -38,7 +39,11 @@ lib/X11/kseg/kseg_fr.qm
 lib/X11/kseg/kseg_hu.qm
 lib/X11/kseg/kseg_help_en.html
 lib/X11/kseg/kseg_help_es.html
+lib/X11/kseg/kseg_help_fr.html
 lib/X11/kseg/kseg_help_it.html
+lib/X11/kseg/kseg_help_ja.html
+lib/X11/kseg/kseg_help_nl.html
+lib/X11/kseg/kseg_help_pt.html
 lib/X11/kseg/kseg_it.qm
 lib/X11/kseg/kseg_ja.qm
 lib/X11/kseg/kseg_nb.qm
