@@ -1,0 +1,20 @@
+--- copytape.c.orig	Fri Oct 23 17:23:06 1998
++++ copytape.c	Fri Oct 23 17:23:46 1998
+@@ -36,7 +36,7 @@
+ 
+ extern int      errno;
+ 
+-#define BUFLEN		262144	/* max tape block size */
++#define BUFLEN		(1024*1024)	/* max tape block size */
+ #define TAPE_MARK	-100	/* return record length if we read a
+ 				 * tape mark */
+ #define END_OF_TAPE	-101	/* 2 consecutive tape marks */
+@@ -149,7 +149,7 @@
+ 	    len = input(from);
+ 	} while (len > 0);
+ 	if (len == FORMAT_ERROR) {
+-	    perror(stderr, "copytape: format error on skip");
++	    perror("copytape: format error on skip");
+ 	    exit(-1);
+ 	};
+ 	if (len == END_OF_TAPE) {

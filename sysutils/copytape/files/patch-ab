@@ -1,0 +1,11 @@
+--- Makefile.orig	Fri Oct 23 17:31:20 1998
++++ Makefile	Fri Oct 23 17:31:27 1998
+@@ -5,7 +5,7 @@
+ CFLAGS =	-O
+ CC =	cc $(CFLAGS)
+ 
+-copytape:	copytape.c
++all copytape:	copytape.c
+ 	$(CC) -o copytape copytape.c
+ 
+ install:	copytape
