@@ -19,7 +19,7 @@ MAKEFILE=	${FILESDIR}/Makefile
 WRKSRC=		${WRKDIR}/mvdsrc/source
 
 pre-everything::
-.if !defined(WITHOUT_X86_ASM)
+.if ${MACHINE_ARCH} == "i386" && !defined(WITHOUT_X86_ASM)
 	@${ECHO_MSG} "Define WITHOUT_X86_ASM to disable x86 assembly code"
 .endif
 
