@@ -8624,6 +8624,10 @@ postgresql-tcltk	ports/databases/postgresql-tcltk
 postgresql7	ports/databases/postgresql7
 postgresql72	ports/databases/postgresql72
 postgresql73	ports/databases/postgresql73
+postgresql73-client	ports/databases/postgresql73-client
+postgresql73-server	ports/databases/postgresql73-server
+postgresql74-client	ports/databases/postgresql74-client
+postgresql74-server	ports/databases/postgresql74-server
 postgresql_autodoc	ports/databases/postgresql_autodoc
 postgrey	ports/mail/postgrey
 postilion	ports/mail/postilion
