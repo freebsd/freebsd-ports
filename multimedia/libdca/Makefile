@@ -8,7 +8,8 @@
 PORTNAME=	libdts
 PORTVERSION=	0.0.2
 CATEGORIES=	multimedia
-MASTER_SITES=	http://download.videolan.org/pub/videolan/libdts/${PORTVERSION}/
+MASTER_SITES=	http://debian.unnet.nl/pub/videolan/libdts/${PORTVERSION}/ \
+		http://download.videolan.org/pub/videolan/libdts/${PORTVERSION}/
 
 MAINTAINER=	pav@FreeBSD.org
 COMMENT=	Free DTS Coherent Acoustics decoder
