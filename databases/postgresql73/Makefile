@@ -42,7 +42,7 @@ CONFIGURE_ENV=	LDFLAGS="${LDFLAGS}"
 USE_GETOPT_LONG=yes
 .endif
 
-.if !defined(WITHOUT_GETTEXT)
+.if !(defined(WITHOUT_GETTEXT) || defined(WITHOUT_NLS))
 CONFIGURE_ARGS+=--enable-nls
 PLIST_SUB+=	GETTEXT=""
 USE_GETTEXT=	yes
@@ -143,7 +143,7 @@ pre-everything::
 	@${ECHO} ""
 	@${ECHO} "	WITHOUT_GNUGETOPT	Don't install GNU getopt (will"
 	@${ECHO} "				still be used if already installed)"
-	@${ECHO} "	WITHOUT_GETTEXT		Skips building with support for"
+	@${ECHO} "	WITHOUT_NLS		Skips building with support for"
 	@${ECHO} "				internationalized error messages"
 	@${ECHO} "	WITHOUT_SERVER		Don't install the server,"
 	@${ECHO} "				only install binaries, headers and libs"
