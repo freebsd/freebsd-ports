@@ -1187,6 +1187,10 @@ share/gimp/tips/gimp_tips.uk.txt
 share/gimp/tips/gimp_tips.txt
 share/gimp/unitrc
 share/gimp/user_install
+share/locale/ca/LC_MESSAGES/gimp-libgimp.mo
+share/locale/ca/LC_MESSAGES/gimp-script-fu.mo
+share/locale/ca/LC_MESSAGES/gimp-std-plugins.mo
+share/locale/ca/LC_MESSAGES/gimp.mo
 share/locale/cs/LC_MESSAGES/gimp-libgimp.mo
 share/locale/cs/LC_MESSAGES/gimp-script-fu.mo
 share/locale/cs/LC_MESSAGES/gimp-std-plugins.mo
@@ -1203,6 +1207,10 @@ share/locale/en_GB/LC_MESSAGES/gimp-libgimp.mo
 share/locale/en_GB/LC_MESSAGES/gimp-script-fu.mo
 share/locale/en_GB/LC_MESSAGES/gimp-std-plugins.mo
 share/locale/en_GB/LC_MESSAGES/gimp.mo
+share/locale/es/LC_MESSAGES/gimp-libgimp.mo
+share/locale/es/LC_MESSAGES/gimp-script-fu.mo
+share/locale/es/LC_MESSAGES/gimp-std-plugins.mo
+share/locale/es/LC_MESSAGES/gimp.mo
 share/locale/fi/LC_MESSAGES/gimp-libgimp.mo
 share/locale/fi/LC_MESSAGES/gimp-script-fu.mo
 share/locale/fi/LC_MESSAGES/gimp-std-plugins.mo
