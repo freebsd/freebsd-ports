@@ -6,13 +6,12 @@
 #
 
 PORTNAME=	teapop
-PORTVERSION=	0.3.3
-PORTREVISION=	1
+PORTVERSION=	0.3.5
 CATEGORIES=	mail
 MASTER_SITES=	ftp://ftp.toontown.org/pub/teapop/ \
 		http://www.toontown.org/pub/teapop/
 
-MAINTAINER=	jim@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 
 .if defined(WITH_PGSQL)
 LIB_DEPENDS=	pq.2:${PORTSDIR}/databases/postgresql7
