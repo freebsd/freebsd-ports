@@ -1,0 +1,8 @@
+#!/bin/sh
+
+cat <<EOF >>$WRKSRC/Imakefile
+BINDIR  = $PREFIX/bin 
+HELPDIR = $PREFIX/lib
+MANDIR  = $PREFIX/man/man1
+EOF
+exit 0
