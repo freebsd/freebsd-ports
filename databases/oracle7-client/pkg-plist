@@ -1,4 +1,3 @@
-%%ORACLE_PREFIX%%/lib
 %%ORACLE_PREFIX%%/network/admin/tnsnames.ora
 %%ORACLE_PREFIX%%/ocommon/nls/mesg/lxbus.msb
 %%ORACLE_PREFIX%%/ocommon/nls/mesg/lxeus.msb
@@ -1697,6 +1696,7 @@
 %%ORACLE_PREFIX%%/rdbms/lib/ins_rdbms.mk
 %%ORACLE_PREFIX%%/rdbms/lib/libwrap.a
 %%ORACLE_PREFIX%%/rdbms/lib/libc3v6.a
+%%ORACLE_PREFIX%%/rdbms/lib/sysliblist
 %%ORACLE_PREFIX%%/rdbms/install/xa/partial.prd
 %%ORACLE_PREFIX%%/rdbms/install/xa/xa.map
 %%ORACLE_PREFIX%%/rdbms/install/xa/xa.vrf
@@ -1769,6 +1769,8 @@
 %%ORACLE_PREFIX%%/rdbms/lib.old/libmdhh.a
 %%ORACLE_PREFIX%%/rdbms/lib.old/config.o
 %%ORACLE_PREFIX%%/rdbms/lib.old/sysliblist
+@exec ln -s rdbms/lib %D/%%ORACLE_PREFIX%%/lib
+@unexec rm -f %D/%%ORACLE_PREFIX%%/lib
 @dirrm %%ORACLE_PREFIX%%/network/admin
 @dirrm %%ORACLE_PREFIX%%/network
 @dirrm %%ORACLE_PREFIX%%/ocommon/install
