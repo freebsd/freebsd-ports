@@ -7,6 +7,7 @@
 
 PORTNAME=	jakarta-tomcat
 PORTVERSION=	3.2.1
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	http://jakarta.apache.org/builds/jakarta-tomcat/release/v${PORTVERSION}/bin/
 DIST_SUBDIR=	jakarta/tomcat/${PORTVERSION}
@@ -19,6 +20,7 @@ RUN_DEPENDS=	${LOCALBASE}/jdk1.1.8/bin/javac:${PORTSDIR}/java/jdk
 NO_BUILD=	yes
 
 do-install:
+	/usr/bin/perl -i -pe "s|%%PREFIX%%|${PREFIX}|g" ${WRKSRC}/conf/workers.properties
 	@${LN} -fs ${WRKSRC} ${WRKDIR}/tomcat
 	@pinstall -v -d ${WRKDIR}
 
