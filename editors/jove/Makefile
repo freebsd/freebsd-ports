@@ -3,13 +3,14 @@
 # Date created:		21 August 1994
 # Whom:			jkh
 #
-# $Id: Makefile,v 1.11 1995/04/09 06:11:10 asami Exp $
+# $Id: Makefile,v 1.12 1996/09/24 13:41:07 erich Exp $
 #
 
 DISTNAME=	jove-4.16
 CATEGORIES+=	editors
 MASTER_SITES=	ftp://relay.cs.toronto.edu/pub/moraes/jove/
-EXTRACT_SUFX=	.tar.gz
+
+MAINTAINER=	erich@FreeBSD.ORG
 
 WRKSRC=		${WRKDIR}/jove
 
