@@ -1,5 +1,4 @@
 bin/spellcast
-share/doc/spellcast/README.1
-share/doc/spellcast/README.2
+share/doc/spellcast/README
 share/doc/spellcast/spelllist.ps
 @dirrm share/doc/spellcast
