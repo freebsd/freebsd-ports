@@ -1,15 +1,21 @@
---- Makefile.in.orig	Sun Mar 26 22:20:39 2000
-+++ Makefile.in	Mon Mar 27 12:04:17 2000
-@@ -146,7 +146,7 @@
+--- Makefile.in.orig	Tue May  9 21:57:18 2000
++++ Makefile.in	Tue May 16 12:16:37 2000
+@@ -152,12 +152,12 @@
  perl_val = @perl_val@
  python_val = @python_val@
  
--SUBDIRS = intl po macros idl plugins wizards src graph doc icons
-+SUBDIRS = intl po macros idl plugins wizards src graph icons
+-SUBDIRS = . intl po macros idl plugins wizards src graph doc icons
++SUBDIRS = . intl po macros idl plugins wizards src graph icons
  
  change_logs =  	OOChangeLog OChangeLog ChangeLog
  
-@@ -158,7 +158,7 @@
+ 
+-confexecdir = $(libdir)
++confexecdir = $(sysconfdir)
+ confexec_DATA = gnumericConf.sh
+ 
+ CLEANFILES = gnumericConf.sh
+@@ -169,7 +169,7 @@
  appicon_DATA = gnome-gnumeric.png                gnome-application-x-gnumeric.png                gnome-application-x-xls.png
  
  
