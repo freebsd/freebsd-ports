@@ -4871,6 +4871,11 @@ X11/xkb/types/pc
 X11/xkb/xkbcomp
 X11/xserver/SecurityPolicy
 X11/xsm/system.xsm
+@cwd /modules
+drm.ko
+gamma.ko
+mga.ko
+tdfx.ko
 @unexec rmdir /etc/X11/app-defaults
 @unexec rmdir /etc/X11/fs
 @unexec rmdir /etc/X11/lbxproxy

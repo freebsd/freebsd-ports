@@ -1,4 +1,4 @@
-bin/SuperProbe
+/bin/SuperProbe
 bin/X
 bin/XFree86
 bin/Xmark
@@ -4866,6 +4866,11 @@ X11/xserver/SecurityPolicy
 X11/xsm/system.xsm
 X11/xserver/SecurityPolicy
 X11/xsm/system.xsm
+@cwd /modules
+drm.ko
+gamma.ko
+mga.ko
+tdfx.ko
 @dirrm X11/app-defaults
 @dirrm X11/fs
 @dirrm X11/lbxproxy

@@ -220,6 +220,8 @@ yesno YES "Do you want to compile with PAM support?"
 echo "#define	HasPam			$answ"	>> $F
 
 echo "#define InstallXserverSetUID NO "	>> $F
+echo "#define BuildXF86DRI YES" 	>> $F
+echo "#define BuildXF86DRM YES" 	>> $F
 }
 
 configure
