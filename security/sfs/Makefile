@@ -16,6 +16,8 @@ COMMENT=	Self-Certifying File System: A secure global network file system
 
 PLIST_SUB=	SFS_VERSION=${PORTVERSION}
 
+INFO=		sfs
+
 USE_GMAKE=	yes
 
 GNU_CONFIGURE=	yes
