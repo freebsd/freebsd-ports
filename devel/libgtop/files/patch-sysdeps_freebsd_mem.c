@@ -5,7 +5,7 @@
  /* MIB array for sysctl */
  static int mib_length=2;
 -#ifdef __bsdi__
-+#ifdef VM_METER
++#ifndef VM_METER
  static int mib [] = { CTL_VM, VM_TOTAL };
  #else
  static int mib [] = { CTL_VM, VM_METER };
