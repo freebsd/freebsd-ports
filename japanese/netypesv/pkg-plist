@@ -1,0 +1,6 @@
+bin/netypesv
+share/java/netypesv-%%PORTVERSION%%/qlist
+share/java/netypesv-%%PORTVERSION%%/netypesv.conf
+share/java/netypesv-%%PORTVERSION%%/bin/netypesv
+@dirrm share/java/netypesv-%%PORTVERSION%%/bin
+@dirrm share/java/netypesv-%%PORTVERSION%%

@@ -1,0 +1,5 @@
+#!/bin/sh
+
+export JAVADIR JDKDIR
+
+perl -pi -e 's|%%JAVADIR%%|$ENV{JAVADIR}|g;s|%%JDKDIR%%|$ENV{JDKDIR}|g;s|%%PORTVERSION%%|$ENV{PORTVERSION}|g;' ${WRKSRC}/netypesv

@@ -241,6 +241,7 @@
     SUBDIR += netscape47-communicator
     SUBDIR += netscape47-navigator
     SUBDIR += netype
+    SUBDIR += netypesv
     SUBDIR += newosaka
     SUBDIR += ng
     SUBDIR += ng-canna

@@ -1,0 +1,7 @@
+NETYPE, The Network Type Trainer server program.
+
+This is a multi-player Japanese type trainer game, and if you prepare
+${PREFIX}/share/java/netypesv-0.1.0/qlist for another language than
+Japanese you can play this game in the language.
+
+WWW: http://bishop.fuis.fukui-u.ac.jp/~funakami/software/index.html

@@ -1,0 +1,6 @@
+#! /bin/sh
+
+INSTALLDIR=%%JAVADIR%%/classes
+NETYPESV_CONF=%%JAVADIR%%/netypesv-%%PORTVERSION%%/netypesv.conf
+
+%%JDKDIR%%/bin/java -classpath ${INSTALLDIR}/netypesv-%%PORTVERSION%%.jar jp.ac.fukui_u.netypesv.netypesv ${NETYPESV_CONF}
