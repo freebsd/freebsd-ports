@@ -1,5 +1,13 @@
 --- programs/Xserver/hw/xfree86/drivers/ati/r128_dri.c.orig	Sat Oct  6 05:29:25 2001
 +++ programs/Xserver/hw/xfree86/drivers/ati/r128_dri.c	Fri Oct  5 17:28:40 2001
+@@ -705,6 +705,7 @@
+     case PCI_CHIP_RAGE128LE:
+     case PCI_CHIP_RAGE128RE:
+     case PCI_CHIP_RAGE128RK:
++    case PCI_CHIP_RAGE128PE:
+ 	/* This is a PCI card, do nothing */
+ 	break;
+
 @@ -985,12 +985,12 @@
      /* Check the r128 DRM version */
      version = drmGetVersion(info->drmFD);
