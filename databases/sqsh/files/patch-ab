@@ -17,7 +17,7 @@
  	# on all platforms.
  	#
 -	SYBASE_LIBS="-lblk -lcs -lct -lcomn -ltcl -lintl"
-+	SYBASE_LIBS="-lct -lintl"
++	SYBASE_LIBS="-lct -lgiconv -lintl"
  
  	MAJOR_VERSION=`echo $SYBASE_VERSION | cut -d '.' -f 1`
  
