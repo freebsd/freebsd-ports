@@ -1,5 +1,5 @@
---- pbm/Makefile.orig	Fri Aug 17 13:40:04 2001
-+++ pbm/Makefile	Wed Sep  5 00:00:00 2001
+--- pbm/Makefile.orig	Fri Nov 16 02:33:04 2001
++++ pbm/Makefile	Sat Dec  8 00:00:00 2001
 @@ -52,6 +52,7 @@
  
  # Library objects to be built and linked by Makefile.common:
@@ -36,10 +36,10 @@
  
  HEADERLINKS = pm_config.h version.h compile.h
  
-@@ -109,6 +105,5 @@
- .PHONY: clean
+@@ -110,6 +106,5 @@
  clean: clean.common
  	rm -f thinkjettopbm.c
+ 	rm -f compile.h
 -	$(MAKE) -C pbmtoppa clean
  
  FORCE:

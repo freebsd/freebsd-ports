@@ -1,14 +1,22 @@
---- pnm/Makefile.orig	Wed Sep  5 12:10:50 2001
-+++ pnm/Makefile	Thu Sep  6 00:00:00 2001
-@@ -155,6 +155,7 @@
+--- pnm/Makefile.orig	Mon Nov 12 11:41:18 2001
++++ pnm/Makefile	Sat Dec  8 00:00:00 2001
+@@ -149,13 +149,14 @@
+ # MERGE_ALIASES is additional names to be linked to the merge binary which are
+ # alternate names for a program whose source is called something else.
+ # Every name here must be referenced in pnmmerge.c.
+-MERGE_ALIASES = pnmnoraw gemtopbm
++MERGE_ALIASES =
+ 
+ OBJECTS = $(patsubst %, %.o, $(BINARIES)) exif.o
+ 
  MERGE_OBJECTS = $(patsubst %,%.o2, $(MERGEBINARIES))
  
- LIBOBJECTS = libpnm1.o libpnm2.o libpnm3.o libpnm4.o libpam.o
+ LIBOBJECTS = libpnm1.o libpnm2.o libpnm3.o libpnm4.o libpam.o libpammap.o
 +SHLIBOBJECTS = $(patsubst %.o, %.lo, $(LIBOBJECTS))
  
  MANUALS1 = $(BINARIES) $(SCRIPTS)
  MANUALS3 = libpnm
-@@ -172,7 +173,7 @@
+@@ -173,7 +174,7 @@
  	$(MAKE) -C jbig all
  	$(MAKE) -C pnmtopalm all
  PHONY: merge
@@ -16,4 +24,16 @@
 +merge:    $(MERGENAME) $(NOMERGEBINARIES) $(EXTRA_STATICLIB)
  ifneq ($(BUILD_FIASCO), N) 
  	$(MAKE) -C fiasco all
+ endif
+@@ -261,11 +262,6 @@
+ 
+ .PHONY: install.man
+ install.man: install.man.common
+-# The following are for programs that have been renamed
+-	rm $(INSTALLMANUALS1)/pnmnowraw.*
+-	rm $(INSTALLMANUALS1)/gemtopnm.*
+-	rm $(INSTALLMANUALS1)/pnminterp.*
+-	rm $(INSTALLMANUALS1)/ppmtojpeg.*
+ ifneq ($(BUILD_FIASCO), N) 
+ 	$(MAKE) -C fiasco install.man
  endif
