@@ -78,7 +78,6 @@ include/apache2/apr_xlate.h
 include/apache2/apr_xml.h
 include/apache2/apu.h
 include/apache2/apu_compat.h
-%%EXPAT%%include/apache2/expat.h
 include/apache2/http_config.h
 include/apache2/http_connection.h
 include/apache2/http_core.h
@@ -131,11 +130,6 @@ lib/apache2/libaprutil.la
 lib/apache2/libaprutil.so.0
 @unexec rm -f %D/lib/apache2/libaprutil.so
 @exec ln -fs libaprutil.so.0 %D/lib/apache2/libaprutil.so
-%%EXPAT%%lib/apache2/libexpat.a
-%%EXPAT%%lib/apache2/libexpat.la
-%%EXPAT%%lib/apache2/libexpat.so.1
-%%EXPAT%%@unexec rm -f %D/lib/apache2/libexpat.so
-%%EXPAT%%@exec ln -fs libexpat.so.1 %D/lib/apache2/libexpat.so
 libexec/apache2/httpd.exp
 libexec/apache2/mod_access.so
 libexec/apache2/mod_actions.so
