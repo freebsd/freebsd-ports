@@ -46,6 +46,7 @@
     SUBDIR += freetype
     SUBDIR += freetype2
     SUBDIR += ft2demos
+    SUBDIR += gfontview
     SUBDIR += ggv
     SUBDIR += ghostscript55
     SUBDIR += ghostscript6

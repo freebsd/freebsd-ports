@@ -1,0 +1,11 @@
+--- Makefile.in.orig	Fri Jul 27 02:34:27 2001
++++ Makefile.in	Fri Jul 27 02:34:49 2001
+@@ -90,7 +90,7 @@
+ l = @l@
+ 
+ SUBDIRS = po intl
+-INCLUDES = -DLOCALEDIR=\""$(datadir)/locale"\" -I/usr/include/freetype
++INCLUDES = -DLOCALEDIR=\""$(datadir)/locale"\" -I%%LOCALBASE%%/include/freetype
+ bin_PROGRAMS = gfontview
+ gfontview_SOURCES = gfont.C dialogs.C t1.C tt.C gfont.h ps.h t1enc.h
+ EXTRA_DIST = ABOUT-NLS gfv.m4 emptypixmap.xpm error.xpm font.xpm mini-ofolder.xpm openhand.xpm t1.xpm tt.xpm stipple.xbm gfontview.lsm gfontview.spec gfontview.desktop gfontview.png gfontviewrc 

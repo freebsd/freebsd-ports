@@ -1,0 +1,8 @@
+An outline font viewer.
+
+I want to be able to view uninstalled fonts. So I started with the program,
+left alone all installation issues (handled by DTM), and tried to optimize
+it as a font displayer. It should handle Type 1 and True Type fonts and have
+some enhancements such as finding typographically similar fonts.
+
+WWW: http://gfontview.sourceforge.net/
