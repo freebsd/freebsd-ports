@@ -14,23 +14,16 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	lioux@FreeBSD.org
 
-BUILD_DEPENDS=	pkg-config:${PORTSDIR}/devel/pkgconfig
 LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
 		popt.0:${PORTSDIR}/devel/popt
 
-USE_GTK=	yes
+USE_GNOMELIBS=	yes
 USE_XLIB=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=  CFLAGS="${CFLAGS} -I${LOCALBASE}/include \
-		-I${X11BASE}/include `${GTK_CONFIG} --cflags` \
-		`${GDK_PIXBUF_CONFIG} --cflags`" \
-		LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib -L${X11BASE}/lib \
-		`${GTK_CONFIG} --libs` `${GDK_PIXBUF_CONFIG} --libs`"
 INSTALLS_SHLIB=	yes
 
 MAN1=	encodedv.1 playdv.1
 
-GDK_PIXBUF_CONFIG?=${X11BASE}/bin/gdk-pixbuf-config
 SDL_CONFIG?=	${LOCALBASE}/bin/sdl11-config
 
 DOC_FILES=	ChangeLog README.dvconnect README.encoder
