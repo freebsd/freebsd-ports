@@ -56,11 +56,14 @@ CFLAGS+=	-g
 STRIP=		# none
 .endif
 
-MAKE_ARGS=	-j3
 INSTALLS_SHLIB=	yes
 MAN1=		ruby${_RUBY_SUFFIX}.1
 
 .include <bsd.port.pre.mk>
+
+.if ${ARCH} != sparc64
+MAKE_ARGS=	-j3
+.endif
 
 .if ${OSVERSION} >= 400014
 CONFIGURE_ARGS+=	--enable-ipv6
