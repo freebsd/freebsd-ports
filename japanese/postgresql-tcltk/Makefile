@@ -16,7 +16,6 @@ POSTGRESQL_SUBPORT=YES
 LIB_DEPENDS=	tcl80jp.1:${PORTSDIR}/japanese/tcl80 \
 		pq:${PORTSDIR}/databases/postgresql7
 
-# you can use "make TCLVERSION=8.4" or similar for your favourite tcl version
 TCLVERSION?=	8.0jp
 PLIST_SUB+=	TCLVERSION=${TCLVERSION}
 CONFIGURE_ARGS=	--with-tcl \
@@ -39,16 +38,10 @@ PLIST_SUB+=	TK=""
 do-build:
 	@ cd ${WRKSRC} ; ${SETENV} ${MAKE_ENV} ${GMAKE} -C src/bin/pgtclsh
 	@ cd ${WRKSRC} ; ${SETENV} ${MAKE_ENV} ${GMAKE} -C src/interfaces/libpgtcl
-.if !defined(WITHOUT_TK)
-	@ cd ${WRKSRC} ; ${SETENV} ${MAKE_ENV} ${GMAKE} -C src/bin/pgaccess
-.endif
 
 do-install:
 	@ cd ${WRKSRC} ; ${SETENV} ${MAKE_ENV} ${GMAKE} -C src/bin/pgtclsh install
 	@ cd ${WRKSRC} ; ${SETENV} ${MAKE_ENV} ${GMAKE} -C src/interfaces/libpgtcl install
-.if !defined(WITHOUT_TK)
-	@ cd ${WRKSRC} ; ${SETENV} ${MAKE_ENV} ${GMAKE} -C src/bin/pgaccess install
-.endif
 # Preparing a loadable TCL-package (pkgIndex.tcl)
 	@${MKDIR} ${PREFIX}/lib/tcl${TCLVERSION}/Pgtcl1.3
 	@${SED} "s|%%PREFIX%%|${PREFIX}|g" < ${FILESDIR}/pkgIndex.tcl.in \
