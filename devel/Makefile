@@ -10,6 +10,7 @@
     SUBDIR += aap
     SUBDIR += ac-archive
     SUBDIR += acpicatools
+    SUBDIR += adabooch-doc-html
     SUBDIR += adacurses
     SUBDIR += adasdl
     SUBDIR += agenda-headers
