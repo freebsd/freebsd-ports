@@ -9,14 +9,10 @@ PORTNAME=		wininfo
 PORTVERSION=		0.5
 PORTREVISION=	1
 CATEGORIES=		devel
-MASTER_SITES=		http://www.freedesktop.org/Software/wininfo/
+MASTER_SITES=		http://www.freedesktop.org/software/wininfo/
 
 MAINTAINER=		jylefort@brutele.be
 COMMENT=		A window information utility
-
-BROKEN=			Checksum mismatch
-EXPIRATION_DATE=	2005-02-18
-DEPRECATED=		${BROKEN}
 
 USE_X_PREFIX=		yes
 USE_GNOME=		gtk20 gnomeprefix
