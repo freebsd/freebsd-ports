@@ -65,28 +65,38 @@ fi
 echo "#undef XF86SVGAServer"           >>$F
 echo "#define XF86SVGAServer     YES"  >>$F
 servers="VGA16 VGA16Dual Mono MonoDual S3 S3V I8514 Mach8 Mach32 Mach64 P9000 AGX  W32 I128"
+selected=SVGA
 for i in $servers; do
   yesno "Do you want to build the $i server? [YES] "
+  if [ $answ = YES ]; then selected="$selected $i"; fi
   echo "#undef XF86${i}Server"           >>$F
   echo "#define XF86${i}Server   $answ"  >>$F
 done
 
 echo
-echo -n "default server to install. [none] "
-read answ
-if [ X$answ = X ]; then answ=none; fi
-if [ $answ != none ]; then
-  echo "#define ServerToInstall		XF86_$answ" >>$F
-fi
-
+ok=0
+while [ $ok != 1 ]; do 
+  echo -n "default server to install. [none] "
+  read answ
+  if [ X$answ = X ]; then answ=none; ok=1; fi
+  if [ $answ != none ]; then
+    for i in $selected; do if [ $i = $answ ]; then
+      ok=1  
+      echo "#define ServerToInstall		XF86_$answ" >>$F
+      fi 
+    done
+  fi
+  if [ $ok = 0 ]; then echo you must choose a server among $selected; fi  
+done
 echo
 yesno "Do you want to build Xvfb? [YES] "
 echo "#define XVirtualFramebufferServer $answ" >>$F
 
 cat >> $F <<END
-#define XF86SvgaDrivers		nv et4000 et3000 pvga1 gvga ati sis tvga8900 \
-				cirrus ncr77c22 mga oak al2101 ali cl64xx \
-				video7 chips ark mx realtek apm s3v generic
+#define XF86SvgaDrivers         nv et4000 et3000 pvga1 gvga ati sis tvga8900 \
+                                cirrus ncr77c22 compaq mga oak al2101 ali \
+                                cl64xx video7 ark mx realtek apm \
+                                s3v s3_svga chips generic
 
 #define XF86Vga16Drivers	et4000 et3000 ncr77c22 ati sis tvga8900 oak \
 				cl64xx generic 
@@ -153,7 +163,7 @@ if [ $answ = NO ]; then
 fi
 echo
 
-echo "Build static libraries in addition to shared libraries? [YES] "
+yesno "Build static libraries in addition to shared libraries? [YES] "
 if [ $answ = YES ]; then
   echo "#define ForceNormalLib		YES" >> $F
 fi
