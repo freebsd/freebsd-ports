@@ -4,7 +4,7 @@ bin/gcursor
 %%PORTDOCS%%%%DOCSDIR%%/ChangeLog
 %%PORTDOCS%%%%DOCSDIR%%/INSTALL
 %%PORTDOCS%%%%DOCSDIR%%/TODO
-share/gnome/capplets/gcursor.desktop
+share/gnome/applications/gcursor.desktop
 share/gnome/gcursor/gcursor.glade
 share/locale/de/LC_MESSAGES/gcursor.mo
 share/locale/es/LC_MESSAGES/gcursor.mo
