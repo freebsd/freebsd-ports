@@ -7,6 +7,7 @@
 
 PORTNAME=	gnome2-office
 PORTVERSION=	2.8.1
+PORTREVISION=	1
 CATEGORIES=	editors gnome
 MASTER_SITES=	# empty
 DISTFILES=	# empty
@@ -19,7 +20,7 @@ RUN_DEPENDS=	gnumeric:${PORTSDIR}/math/gnumeric2 \
 		planner:${PORTSDIR}/deskutils/planner \
 		dia:${PORTSDIR}/graphics/dia \
 		glabels:${PORTSDIR}/deskutils/glabels \
-		AbiWord-2.0:${PORTSDIR}/editors/AbiWord2 \
+		abiword:${PORTSDIR}/editors/abiword \
 		mergeant:${PORTSDIR}/databases/mergeant
 
 NO_BUILD=	yes
