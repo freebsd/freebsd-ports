@@ -1,9 +1,27 @@
 WARNING: distcc[d] performs NO AUTHENTICATION at all and should
 ONLY be used in trusted networks!
 
+NEW in 2.18
+Distccd now requires the --allow (-a) argument when running
+in daemon mode. This option restricts distcc to a specific
+network, by default this port uses 127.0.0.0/8, you should
+change this by specifying your own distccd_flags in
+/etc/rc.conf, see the script in etc/rc.d/distccd.sh for a
+template.
+
+Additionally it is reccomended that you add entries to
+/etc/syslog.conf to record all distccd log messages to a file
+such as /var/log/distccd.log.
+
+Example syslog.conf entry:
+
+!distccd
+*.*					/var/log/distccd.log
+
 The daemon runs on port 3632 by default. You can change that
 value by calling distccd with the -p parameter, e.g.
-`distccd -p 4711'.
+`distccd -p 4711'. Do not edit the rc.d script to achieve this
+instead override the value of distccd_flags in /etc/rc.conf.
 
 Note that remote daemons currently won't work if they cannot
 resolve the reverse DNS of the master machine
