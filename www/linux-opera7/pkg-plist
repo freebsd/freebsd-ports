@@ -1,6 +1,7 @@
 bin/opera
 share/doc/opera/LICENSE
 share/doc/opera/help
+share/opera/bin/m2.so
 share/opera/bin/opera
 share/opera/buttons/DefSmall
 share/opera/buttons/Default
@@ -305,36 +306,41 @@ share/opera/buttons/standard/windowbar_unknown.png
 share/opera/chartables.bin
 share/opera/config/opera6rc
 share/opera/config/opera6rc.fixed
+share/opera/conmsg.html
+share/opera/console.html
+share/opera/contool.html
 share/opera/help/accessibility.html
 share/opera/help/advertising.html
+share/opera/help/context.html
 share/opera/help/dialogs.html
 share/opera/help/filetypes.html
 share/opera/help/fonts.html
+share/opera/help/glossary.html
 share/opera/help/help.css
 share/opera/help/history.html
+share/opera/help/hotlist.html
 share/opera/help/index.html
-share/opera/help/interface.html
 share/opera/help/keyboard.html
 share/opera/help/languages.html
-share/opera/help/layout.html
 share/opera/help/license.txt
 share/opera/help/look.html
-share/opera/help/menus.html
+share/opera/help/m2.html
+share/opera/help/main.html
 share/opera/help/mouse.html
 share/opera/help/multimedia.html
 share/opera/help/network.html
-share/opera/help/opera.html
 share/opera/help/page.html
 share/opera/help/paths.html
 share/opera/help/personal.html
-share/opera/help/plugins.html
 share/opera/help/privacy.html
 share/opera/help/search.html
 share/opera/help/security.html
 share/opera/help/sounds.html
 share/opera/help/start.html
-share/opera/help/startup.txt
-share/opera/help/tipday.txt
+share/opera/help/toc.html
+share/opera/help/toolbars.html
+share/opera/help/wand.html
+share/opera/help/welcome.html
 share/opera/help/windows.html
 share/opera/images/background.gif
 share/opera/images/blank.gif
@@ -352,18 +358,22 @@ share/opera/images/shared.gif
 share/opera/images/splash.png
 share/opera/images/startup1.png
 share/opera/images/startup2.png
-share/opera/java/lc.jar
+share/opera/ini/dialog.ini
+share/opera/ini/fastforward.ini
+share/opera/ini/minimal_toolbar.ini
+share/opera/ini/standard_keyboard.ini
+share/opera/ini/standard_menu.ini
+share/opera/ini/standard_mouse.ini
+share/opera/ini/standard_toolbar.ini
 share/opera/java/opera.jar
 share/opera/java/opera.policy
 share/opera/opera6.adr
 share/opera/plugins/libnpp.so
-share/opera/plugins/libnpp.so.0
-share/opera/plugins/libnpp.so.0.1
-share/opera/plugins/libnpp.so.0.1.8
 share/opera/plugins/operamotifwrapper
 share/opera/plugins/operaplugincleaner
 share/opera/search.ini
 share/opera/skin/foreground.png
+share/opera/skin/standard_skin.zip
 share/opera/styles/OPF.css
 share/opera/styles/about.css
 share/opera/styles/cache.css
@@ -373,16 +383,32 @@ share/opera/styles/drives.css
 share/opera/styles/email.css
 share/opera/styles/history.css
 share/opera/styles/im.css
+share/opera/styles/info.css
 share/opera/styles/mime.css
 share/opera/styles/mimehead.css
 share/opera/styles/opf.css
 share/opera/styles/plugins.css
+share/opera/styles/user/accessibility.css
+share/opera/styles/user/contrastbw.css
+share/opera/styles/user/contrastwb.css
+share/opera/styles/user/debugwithoutline.css
+share/opera/styles/user/defaultforms.css
+share/opera/styles/user/disabletables.css
+share/opera/styles/user/hidecertainsizes.css
+share/opera/styles/user/hidenonlinkimages.css
+share/opera/styles/user/imageandlinkonly.css
+share/opera/styles/user/nostalgia.css
+share/opera/styles/user/showstructure.css
+share/opera/styles/user/textonly.css
+share/opera/styles/user/userstyle.ini
 share/opera/styles/wml.css
+@dirrm share/opera/styles/user
 @dirrm share/opera/styles
 @dirrm share/opera/skin
 @dirrm share/opera/plugins
 @dirrm share/opera/locale
 @dirrm share/opera/java
+@dirrm share/opera/ini
 @dirrm share/opera/images
 @dirrm share/opera/help
 @dirrm share/opera/config
@@ -396,3 +422,16 @@ share/opera/styles/wml.css
 @dirrm share/opera/bin
 @dirrm share/opera
 @dirrm share/doc/opera
+
+@cwd %%X11BASE%%
+%%KDE:%%share/applnk/Internet/opera.desktop
+%%KDE2:%%share/applnk/Networking/WWW/opera.desktop
+%%GNOMELNK:%%share/gnome/apps/Internet/opera.desktop
+%%GNOME:%%share/gnome/pixmaps/opera.xpm
+share/icons/opera.xpm
+share/pixmaps/opera.xpm
+%%KDE2:%%@dirrm share/applnk/Networking/WWW
+
+@cwd /etc/X11
+wmconfig/opera
+%%APPLNK:%%applnk/Internet/opera.desktop
