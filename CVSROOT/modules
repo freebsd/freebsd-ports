@@ -1135,6 +1135,7 @@ cosmo		ports/games/cosmo
 cost		ports/textproc/cost
 cotty		ports/sysutils/cotty
 courier		ports/mail/courier
+courier-authlib	ports/mail/courier-authlib
 courier-imap	ports/mail/courier-imap
 coverhunter	ports/audio/coverhunter
 cowsay		ports/games/cowsay
