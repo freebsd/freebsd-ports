@@ -5089,6 +5089,7 @@ p5-SNMP-Util	ports/net/p5-SNMP-Util
 p5-SNMP_Session	ports/net/p5-SNMP_Session
 p5-SOAP		ports/net/p5-SOAP
 p5-SOAP-Lite	ports/net/p5-SOAP-Lite
+p5-SPOPS	ports/devel/p5-SPOPS
 p5-SQL-Statement	ports/databases/p5-SQL-Statement
 p5-SVG	ports/textproc/p5-SVG
 p5-Scalar-List-Utils	ports/lang/p5-Scalar-List-Utils
