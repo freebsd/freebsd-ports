@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	cdb
-PORTVERSION=	0.22.a
+PORTVERSION=	0.31.a
 CATEGORIES=	databases python
 MASTER_SITES=	http://pilcrow.madison.wi.us/sw/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
