@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	jaMailHost
-PORTVERSION=	0.3.1
+PORTVERSION=	0.3.2
 CATEGORIES=	japanese www zope
 MASTER_SITES=	http://www005.upp.so-net.ne.jp/nakagami/Download/
 
