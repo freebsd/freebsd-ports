@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gnumeric
-PORTVERSION=	0.69
+PORTVERSION=	0.70
 CATEGORIES?=	math gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	stable/sources/gnumeric
@@ -15,7 +15,8 @@ MAINTAINER?=	gnome@FreeBSD.org
 
 LIB_DEPENDS=	gnomeole2.0:${PORTSDIR}/devel/libole2 \
 		gbrun.0:${PORTSDIR}/lang/gnomebasic \
-		giconv.2:${PORTSDIR}/converters/libiconv
+		giconv.2:${PORTSDIR}/converters/libiconv \
+		psiconv.7:${PORTSDIR}/converters/psiconv
 
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes

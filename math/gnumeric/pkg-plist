@@ -23,6 +23,8 @@ lib/gnumeric/%%VERSION%%/plugins/numtheory/numtheory.so
 lib/gnumeric/%%VERSION%%/plugins/numtheory/plugin.xml
 lib/gnumeric/%%VERSION%%/plugins/oleo/oleo.so
 lib/gnumeric/%%VERSION%%/plugins/oleo/plugin.xml
+lib/gnumeric/%%VERSION%%/plugins/psiconv/plugin.xml
+lib/gnumeric/%%VERSION%%/plugins/psiconv/psiconv.so
 lib/gnumeric/%%VERSION%%/plugins/py-func/plugin.xml
 lib/gnumeric/%%VERSION%%/plugins/py-func/py_func.py
 lib/gnumeric/%%VERSION%%/plugins/python-loader/plugin.xml
@@ -723,6 +725,7 @@ share/locale/zh_TW.Big5/LC_MESSAGES/gnumeric.mo
 @dirrm lib/gnumeric/%%VERSION%%/plugins/python-loader
 @dirrm lib/gnumeric/%%VERSION%%/plugins/python
 @dirrm lib/gnumeric/%%VERSION%%/plugins/py-func
+@dirrm lib/gnumeric/%%VERSION%%/plugins/psiconv
 @dirrm lib/gnumeric/%%VERSION%%/plugins/plan_perfect
 @dirrm lib/gnumeric/%%VERSION%%/plugins/oleo
 @dirrm lib/gnumeric/%%VERSION%%/plugins/numtheory
