@@ -1,5 +1,5 @@
 --- src/fe-text/term-terminfo.c.orig	Mon Oct 20 03:10:02 2003
-+++ src/fe-text/term-terminfo.c	Sun Dec 14 01:54:28 2003
++++ src/fe-text/term-terminfo.c	Sun Apr 11 21:11:41 2004
 @@ -421,16 +421,21 @@
  	if (vcy == term_height-1 && vcx == term_width-1)
  		return; /* last char in screen */
@@ -33,3 +33,12 @@
          term_printed_text(len);
  
  	if (vcy != term_height || vcx != 0)
+@@ -640,7 +645,7 @@
+ 		if (i >= term_inbuf_pos)
+ 			term_inbuf_pos = 0;
+ 		else if (i > 0) {
+-			memmove(term_inbuf+i, term_inbuf, term_inbuf_pos-i);
++			memmove(term_inbuf, term_inbuf+i, term_inbuf_pos-i);
+                         term_inbuf_pos -= i;
+ 		}
+ 	}
