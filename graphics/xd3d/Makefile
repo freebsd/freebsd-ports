@@ -45,6 +45,11 @@ F77?=		f77
 FFLAGS?=	-O
 MEMORY_XD3D?=	64
 
+.if ${MACHINE_ARCH} == "i386"
+FFLAGS+=	-malign-double
+CFLAGS+=	-malign-double
+.endif
+
 .if defined(LANG) && ${LANG:Mfr*} != ""
 XD3D_LANG=	FRANCAIS
 .else

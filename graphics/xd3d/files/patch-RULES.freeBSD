@@ -1,0 +1,16 @@
+--- RULES.freeBSD.orig	Mon Dec  1 14:55:58 2003
++++ RULES.freeBSD	Thu Jan 29 21:43:28 2004
+@@ -54,11 +54,11 @@
+ #
+ # Options for the Fortran compiler
+ #
+-OPTF = %%FFLAGS%% -malign-double
++OPTF = %%FFLAGS%%
+ #
+ # Options for the C compiler
+ #
+-OPTC = %%CFLAGS%% -malign-double
++OPTC = %%CFLAGS%%
+ 
+ #-----------------------------------------------
+ # You should not need to change anything below !
