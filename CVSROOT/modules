@@ -5322,6 +5322,7 @@ py-twisted	ports/devel/py-twisted
 py-unit		ports/devel/py-unit
 py-websvcs	ports/www/py-websvcs
 py-wxPython	ports/x11-toolkits/py-wxPython
+py-xlib		ports/x11-toolkits/py-xlib
 py-xml		ports/textproc/py-xml
 py-xmlrpc	ports/net/py-xmlrpc
 py-xmlrpclib	ports/net/py-xmlrpclib
