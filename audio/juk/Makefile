@@ -20,7 +20,13 @@ RUN_DEPENDS=	${LOCALBASE}/lib/kde3/kfile_mp3.so:${PORTSDIR}/multimedia/kdemultim
 USE_KDELIBS_VER=3
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--program-transform-name=''
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
+USE_REINPLACE=	yes
+
+CONFIGURE_TARGET=	--build=${ARCH}-portsbld-freebsd${OSREL}
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|-O2||g; s|-pedantic ||g; \
+		s|-lpthread|${PTHREAD_LIBS}|g' \
+		${WRKSRC}/${CONFIGURE_SCRIPT}
 
 .include <bsd.port.mk>
