@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gnotepad+
-PORTVERSION=	1.2.1
+PORTVERSION=	1.3.0
 CATEGORIES=	editors www
 MASTER_SITES=	http://download.sourceforge.net/gnotepad/
 .if !defined(NOPORTDOCS)
@@ -16,15 +16,15 @@ DISTFILES=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX} \
 
 MAINTAINER=	brett@peloton.runet.edu
 
-LIB_DEPENDS=    Xpm.4:${PORTSDIR}/graphics/xpm \
-		gnome.3:${PORTSDIR}/x11/gnomelibs \
-		intl.1:${PORTSDIR}/devel/gettext
+LIB_DEPENDS=    gnome.3:${PORTSDIR}/x11/gnomelibs
 
 GTK_CONFIG?=	${X11BASE}/bin/gtk12-config
 
 DOCVERSION=	1.2.0
 USE_X_PREFIX=	yes
-GNU_CONFIGURE=	yes
+USE_LIBTOOL=	yes
+CONFIGURE_ARGS=	--localstatedir=${PREFIX}/share/gnome \
+		--datadir=${PREFIX}/share/gnome
 CONFIGURE_ENV=	GTK_CONFIG="${GTK_CONFIG}" \
 		CPPFLAGS="-I${LOCALBASE}/include" \
 		LIBS="-L${LOCALBASE}/lib"
@@ -33,9 +33,8 @@ MAN1=	gnp.1
 
 .if !defined(NOPORTDOCS)
 post-extract:
-		${MV} ${WRKSRC}/docs ${WRKSRC}/docs.old
-		${CP} -R ${WRKDIR}/${PORTNAME}-help-${DOCVERSION}/docs \
-			${WRKSRC}/docs
+	@${MV} ${WRKSRC}/docs ${WRKSRC}/docs.old
+	@${CP} -R ${WRKDIR}/${PORTNAME}-help-${DOCVERSION}/docs ${WRKSRC}/docs
 .endif
 
 .include <bsd.port.mk>
