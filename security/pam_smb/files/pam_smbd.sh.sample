@@ -9,6 +9,10 @@ if [ "x$1" = "x" -o "x$1" = "xstart" ]; then
 fi
 
 # stop
-elif [ "x$1" = "xstop" ]; then
-        kill `cat $pidfiledir/pamsmbd.pid`
+if [ "x$1" = "xstop" ]; then
+	if [ -f "$pidfiledir/pamsmbd.pid" ]; then
+        	kill `cat $pidfiledir/pamsmbd.pid`
+	else
+		killall 'pamsmbd'
+	fi
 fi
