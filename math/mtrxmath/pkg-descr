@@ -1,0 +1,7 @@
+Matrix Math is software to quickly and easily compute functions of
+matrices of any size. It supports addition, subtraction,
+multiplication, inversion, division, and will support whatever else is
+necessary.
+
+- George Reid
+greid@ukug.uk.freebsd.org
