@@ -7,6 +7,7 @@
 
 PORTNAME=	xvid
 PORTVERSION=	0.20020412
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.xvid.org/snapshots/
 DISTNAME=	xvid_snapshot_${PORTVERSION:S/^0.//}
@@ -22,6 +23,9 @@ INSTALLS_SHLIB=	yes
 
 CONFIGURE_WRKSRC=	${WRKDIR}
 WRKSRC=			${WRKDIR}/xvid_20020412/xvidcore/build/generic
+
+# XXX - compatility header installed for mplayer-devel port's benefit
+EXTRA_HEADER_FILES=	divx4.h
 
 pre-everything::
 .if !defined(WITH_OPTIMIZED_CFLAGS)
@@ -50,5 +54,10 @@ do-install:
 	@ ${INSTALL_DATA} ${WRKSRC}/libcore.a ${PREFIX}/lib/libcore.a
 	@ ${LN} -s libxvidcore.so.0 ${PREFIX}/lib/libxvidcore.so
 	@ ${INSTALL_DATA} ${WRKSRC}/../../src/xvid.h ${PREFIX}/include
+# XXX - compatility header installed for mplayer-devel port's benefit
+	@ ${MKDIR} ${PREFIX}/include/xvid
+.for header in ${EXTRA_HEADER_FILES}
+	@ ${INSTALL_DATA} ${WRKSRC}/../../src/${header} ${PREFIX}/include/xvid
+.endfor
 
 .include <bsd.port.mk>
