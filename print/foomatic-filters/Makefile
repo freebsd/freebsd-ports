@@ -7,14 +7,14 @@
 
 PORTNAME=	foomatic-filters
 PORTVERSION=	3.0.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	print
 MASTER_SITES=	http://www.linuxprinting.org/download/foomatic/
 
 MAINTAINER=	lofi@FreeBSD.org
 COMMENT=	Foomatic wrapper scripts
 
-USE_PERL=	yes
+USE_PERL5=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	ac_cv_path_A2PS=${LOCALBASE}/bin/a2ps \
 		ac_cv_path_CUPS=${LOCALBASE}/libexec/cups \
