@@ -14,7 +14,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 DISTNAME=	${PORTNAME}-${PORTVERSION}-src
 
 MAINTAINER=	jonc@chen.org.nz
-COMMENT=	JBoss 3, an open-source J2EE application server
+COMMENT=	JBoss 3.x, an open-source J2EE application server
 
 LATEST_LINK=	jboss3
 USE_JAVA=	1.4+

@@ -13,7 +13,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 DISTNAME=	${APP_TITLE}-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	JBoss 2, an open-source J2EE application server
+COMMENT=	JBoss 2.x, an open-source J2EE application server
 
 USE_JAVA=	1.2+
 
