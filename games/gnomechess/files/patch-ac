@@ -1,0 +1,11 @@
+--- src/Makefile.in.orig	Sat Nov  6 16:58:16 1999
++++ src/Makefile.in	Sat Jan 29 01:51:50 2000
+@@ -113,7 +113,7 @@
+ 
+ bin_PROGRAMS = gnome-chess
+ 
+-INCLUDES =   -DGNOMELOCALEDIR=\""$(datadir)/locale"\"  -DGNOMEDATADIR=\""$(datadir)"\"  -I$(includedir)  $(GNOME_INCLUDEDIR)
++INCLUDES =   -DGNOMELOCALEDIR=\""$(prefix)/share/locale"\"  -DGNOMEDATADIR=\""$(datadir)"\"  -I$(includedir)  $(GNOME_INCLUDEDIR)
+ 
+ 
+ gnome_chess_SOURCES =        debug.c position.c timer.c movgen.c       cho1.c movlist.c       ckis.c board.c misc.c       main.c disk.c  pgn.c       cfgfiles.c serverlist.c gtkutil.c       menu.c prefs.c child.c engine.c engine_local.c engine_null.c       zvt.c engine_ics_scan.l engine_ics.c dialog_login.c       level.c gnome_chess.h debug.h cfgfiles.h sound.c serverlist.h gtkutil.h       board.h ckis.h menu.h prefs.h pro.h position.h       timer.h engine.h engine_local.h zvt.h engine_ics_scan.h engine_ics.h       dialog_login.h child.h disk.h movlist.h pgn.h cho1.h       makros.h sound.h engine_null.h
