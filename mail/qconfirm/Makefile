@@ -27,7 +27,11 @@ do-configure:
 	${ECHO_CMD} "${CC} ${CFLAGS}" > ${WRKSRC}/src/conf-cc
 
 do-build:
-	cd ${WRKSRC} && package/compile && package/check
+	cd ${WRKSRC} && package/compile
+	@${ECHO_MSG} "Type 'make test' to run self-tests"
+
+test:
+	cd ${WRKSRC} && package/check
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/command/* ${PREFIX}/bin

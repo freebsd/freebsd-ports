@@ -30,7 +30,7 @@ do-configure:
 	${ECHO_CMD} "${CC} ${CFLAGS}" > ${WRKSRC}/src/conf-cc
 
 do-build:
-	cd ${WRKSRC} && package/compile && package/check
+	cd ${WRKSRC} && package/compile
 	@${MKDIR} ${WRKDIR}/etc/getty-ttyv4
 	@${SED} -e 's!%%PREFIX%%!${PREFIX}!' \
 		-e 's!%%SERVICE_DIR%%!${SERVICE_DIR}!' \
@@ -41,6 +41,10 @@ do-build:
 		-e 's!/usr/local!${PREFIX}!g' \
 		${WRKSRC}/${file} > ${WRKDIR}/${file:S!freebsd/!!}.sample
 .endfor
+	@${ECHO_MSG} "Type 'make test' to run self-tests"
+
+test:
+	cd ${WRKSRC} && package/check
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/command/* ${PREFIX}/sbin
