@@ -22,7 +22,7 @@ CONFLICTS=	libmorph*
 USE_X_PREFIX=	yes
 WANT_GNOME=	yes
 USE_GNOME=	gnometarget lthack
-USE_LIBTOOL_VER=13
+USE_LIBTOOL_VER=	13
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib"
 INSTALLS_SHLIB=	yes
@@ -33,11 +33,19 @@ INFO=		xmorph
 .include <bsd.port.pre.mk>
 
 .if ${HAVE_GNOME:Mgtk20}!=""
-USE_GNOME+=     gtk20
+USE_GNOME+=		gtk20
 CONFIGURE_ARGS+=	--with-gtk2
 MAN1+=		gtkmorph.1
 .else
 CONFIGURE_ARGS+=	--without-gtkmorph
+.endif
+
+.if defined(WITHOUT_NLS)
+CONFIGURE_ARGS+=	--disable-nls
+PLIST_SUB+=	NLS="@comment "
+.else
+USE_GETTEXT=	yes
+PLIST_SUB+=	NLS=""
 .endif
 
 post-extract:
