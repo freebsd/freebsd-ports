@@ -3,6 +3,8 @@ bin/ccexample
 bin/debugsh
 bin/dlpsh
 bin/getrom
+bin/hinotes
+bin/install-hinote
 bin/iambicexample
 bin/ietf2datebook
 bin/install-datebook
@@ -43,6 +45,7 @@ include/pi-dlp.h
 include/pi-dlp.hxx
 include/pi-expense.h
 include/pi-file.h
+include/pi-hinote.h
 include/pi-iambicExpense.h
 include/pi-iambicExpense.hxx
 include/pi-inet.h
