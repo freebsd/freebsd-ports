@@ -7,6 +7,7 @@
 
 PORTNAME=	samba
 PORTVERSION=	2.0.9
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	ftp://ftp.samba.org/pub/samba/%SUBDIR%/ \
 		ftp://ring.asahi-net.or.jp/pub/net/samba/%SUBDIR%/ \
@@ -17,6 +18,12 @@ MASTER_SITES=	ftp://ftp.samba.org/pub/samba/%SUBDIR%/ \
 MASTER_SITE_SUBDIR= . old-versions old
 
 MAINTAINER=	dwcjr@inethouston.net
+
+USE_AUTOCONF=	yes
+
+.if defined(WITH_CUPS)
+LIB_DEPENDS=	cups.2:${PORTSDIR}/print/cups
+.endif
 
 # directories
 VARDIR=		/var
@@ -37,6 +44,10 @@ CONFIGURE_ARGS=	 --libdir=${SAMBA_CONFDIR} \
 
 .if defined(KRB5_HOME) && exists(${KRB5_HOME})
 CONFIGURE_ARGS+=--with-krb5=${KRB5_HOME}
+.endif
+
+.if defined(WITH_CUPS)
+CONFIGURE_ARGS+=--with-cups=${LOCALBASE}
 .endif
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/source
