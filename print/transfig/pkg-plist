@@ -3,6 +3,7 @@ bin/fig2ps2tex
 bin/fig2ps2tex.sh
 bin/pic2tpic
 bin/transfig
+lib/X11/fig2dev/cs_CZ.ps
 lib/X11/fig2dev/japanese.ps
 @exec ln -sf japanese.ps %D/lib/X11/fig2dev/ja.ps
 @exec ln -sf japanese.ps %D/lib/X11/fig2dev/ja_JP.EUC.ps

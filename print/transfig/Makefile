@@ -6,16 +6,17 @@
 #
 
 PORTNAME=	transfig
-PORTVERSION=	3.2.3c
+PORTVERSION=	3.2.3d
 CATEGORIES=	print
-MASTER_SITES=	${MASTER_SITE_XCONTRIB} \
+MASTER_SITES=	http://www.xfig.org/xfigdist/ \
 		ftp://www-epb.lbl.gov/xfig/
 MASTER_SITE_SUBDIR=	applications/drawing_tools/transfig
 DISTNAME=	${PORTNAME}.${PORTVERSION}
 
 MAINTAINER=	chuckr@FreeBSD.org
 
-LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg
+LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
+		png.4:${PORTSDIR}/graphics/png
 RUN_DEPENDS=	ppmtogif:${PORTSDIR}/graphics/netpbm
 
 USE_IMAKE=	yes
