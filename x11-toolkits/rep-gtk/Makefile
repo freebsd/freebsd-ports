@@ -15,7 +15,7 @@ MASTER_SITE_SUBDIR=	stable/sources/rep-gtk
 
 MAINTAINER=	gnome@FreeBSD.org
 
-LIB_DEPENDS=	rep.11:${PORTSDIR}/lang/librep
+LIB_DEPENDS=	rep.12:${PORTSDIR}/lang/librep
 
 PLIST_SUB=	GNUHOST=${ARCH}-pc-freebsd${OSREL:C/\..*//}
 
