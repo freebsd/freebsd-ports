@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	liba52
-PORTVERSION=	0.7.2
+PORTVERSION=	0.7.3
 CATEGORIES=	audio
 MASTER_SITES=	http://liba52.sourceforge.net/files/
 DISTNAME=	a52dec-${PORTVERSION:S/.b/b/}
