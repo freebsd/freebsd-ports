@@ -29,10 +29,6 @@ USE_GMAKE=	yes
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} >= 500113
-BROKEN=         "Does not compile"
-.endif
-
 pre-patch:
 	${PATCH} -d ${WRKSRC}/clients -E  < ${DISTDIR}/kenjiro-ndtpd.diff
 	${PATCH} -d ${WRKSRC}/clients -E  <  ${DISTDIR}/kenjiro-dictlist.diff
