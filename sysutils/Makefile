@@ -59,6 +59,7 @@
     SUBDIR += clockspeed-conf
     SUBDIR += cloop-utils
     SUBDIR += cmdwatch
+    SUBDIR += cog
     SUBDIR += colorize
     SUBDIR += comconsole
     SUBDIR += consolehm
