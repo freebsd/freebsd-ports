@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	autogen
-PORTVERSION=	5.5.2
+PORTVERSION=	5.5.3
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		${MASTER_SITE_GNU}
@@ -16,15 +16,16 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The Automated Program Generator
 
-LIB_DEPENDS=	guile.10:${PORTSDIR}/lang/guile \
-		xml2.5:${PORTSDIR}/textproc/libxml2
+LIB_DEPENDS=	guile.10:${PORTSDIR}/lang/guile
 
-USE_REINPLACE=	yes
-USE_GMAKE=	yes
 GUILE_CONFIG?=	${LOCALBASE}/bin/guile-config
 XML2_CONFIG?=	${LOCALBASE}/bin/xml2-config
+
+USE_GNOME=	libxml2
+USE_REINPLACE=	yes
+USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
+CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS=	--with-libguile=yes --with-libxml2=yes
 INSTALLS_SHLIB=	yes
 
