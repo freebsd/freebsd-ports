@@ -1,15 +1,14 @@
-# New ports collection makefile for:   AquaGatekeeper
-# Date created:        2 November 2003
+# New ports collection makefile for:   AquaGatekeeper2
+# Date created:        11 March 2005
 # Whom:                Eugene Grosbein <eugen@grosbein.pp.ru>
 #
 # $FreeBSD$
 #
 
 PORTNAME=	AquaGatekeeper
-PORTVERSION=	1.22
-PORTREVISION=	1
+PORTVERSION=	2.0
 CATEGORIES=	net
-MASTER_SITES=	ftp://ftp.aqua.comptek.ru/pub/GateKeeper/ \
+MASTER_SITES=	http://www.infinetwireless.com/WirelessEq/tmp/software/docs/agk/ \
 		ftp://www.kuzbass.ru/pub/FreeBSD/ports/distfiles/
 EXTRACT_SUFX=	.tgz
 
@@ -36,7 +35,7 @@ do-install:
 	@${INSTALL_DATA} ${WRKSRC}/Config/Example.cfg ${EXAMPLESDIR}
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
-	@for docfile in ${WRKSRC}/Help/*; \
+	@for docfile in ${WRKSRC}/Help/* ${WRKSRC}/*.rtf; \
 		do ${INSTALL_MAN} $$docfile ${DOCSDIR}; \
 	done
 	@${MKDIR} ${DOCSDIR}/Rus
@@ -58,9 +57,9 @@ LIB_DEPENDS=	c.4:${PORTSDIR}/misc/compat4x
 .endif
 
 .if ${ARCH} == "amd64"
-DISTNAME=	AquaGatekeeper122FreeBSDamd64Build131
+DISTNAME=	AquaGatekeeper200FreeBSDamd64Build653
 .else
-DISTNAME=	AquaGatekeeper122FreeBSDBuild131
+DISTNAME=	AquaGatekeeper200FreeBSDBuild653
 .endif
 
 .include <bsd.port.post.mk>
