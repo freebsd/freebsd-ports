@@ -13,6 +13,8 @@ DISTNAME=	gopher2_3.1
 
 MAINTAINER=	ports@FreeBSD.org
 
+FORBIDDEN=	"Remote exploits"
+
 BUILD_DEPENDS=  /nonexistent:${PORTSDIR}/net/wais:build
 
 DATADIR=	$(PREFIX)/gopher-data
