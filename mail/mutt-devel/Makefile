@@ -4,7 +4,7 @@
 # Date created:         Thur July 25, 1996
 # Whom:                 David O'Brien (obrien@NUXI.com)
 #
-# $Id: Makefile,v 1.63 1999/07/08 23:28:54 obrien Exp $
+# $Id: Makefile,v 1.64 1999/07/09 20:17:53 asami Exp $
 
 DISTNAME=	mutt-0.95.6i
 PKGNAME=	mutt-0.95.6
@@ -33,7 +33,7 @@ LIB_DEPENDS=	slang.1:${PORTSDIR}/devel/libslang
 BUILD_DEPENDS=	ispell:${PORTSDIR}/textproc/ispell
 .if ${MACHINE_ARCH} != "alpha"
 #  coredump in sgmls
-BUILD_DEPEND+=	sgmlfmt:${PORTSDIR}/textproc/sgmlformat
+BUILD_DEPENDS+=	sgmlfmt:${PORTSDIR}/textproc/sgmlformat
 .endif
 RUN_DEPENDS=	ispell:${PORTSDIR}/textproc/ispell
 .elif defined(USE_NCURSES_PORT)
