@@ -53,6 +53,7 @@ etc/codepages/unicode_map.ISO8859-7
 etc/codepages/unicode_map.ISO8859-9
 etc/codepages/unicode_map.KOI8-R
 etc/rc.d/samba.sh.sample
+%%RECYCLE%%etc/recycle.conf.default
 etc/smb.conf.default
 %%AUDIT%%lib/samba/audit.so
 %%RECYCLE%%lib/samba/recycle.so
