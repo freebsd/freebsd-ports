@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	icebreaker
-PORTVERSION=	1.0
+PORTVERSION=	1.2
 CATEGORIES=	games
 MASTER_SITES=	http://www.mattdm.org/icebreaker/
 EXTRACT_SUFX=	.tgz
@@ -21,8 +21,11 @@ USE_GMAKE=	yes
 MAKE_ENV=	SDL_CONFIG="${SDL_CONFIG}" \
 		prefix="${PREFIX}" \
 		highscoredir="${PREFIX}/share/icebreaker/scores" \
+		mandir="${PREFIX}/man" \
 		CHMOD="${CHMOD}" \
 		CHOWN="${CHOWN}" \
 		MKDIR="${MKDIR}"
+
+MAN6=		${PORTNAME}.6
 
 .include <bsd.port.mk>
