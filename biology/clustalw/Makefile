@@ -20,7 +20,7 @@ ALL_TARGET=	# empty
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/clustalw ${PREFIX}/bin
-	@${MKDIR} ${PREFIX}/share/${PORTNAME}
-	${INSTALL_DATA} ${WRKSRC}/clustalw_help ${PREFIX}/share/${PORTNAME}
+	@${MKDIR} ${DATADIR}
+	${INSTALL_DATA} ${WRKSRC}/clustalw_help ${DATADIR}
 
 .include <bsd.port.mk>

@@ -21,9 +21,9 @@ NO_BUILD=	yes
 PLIST_SUB+=	VERSION="${PORTVERSION}"
 
 do-install:
-	@if [ ! -d ${PREFIX}/share/${DISTNAME} ]; then \
-		${MKDIR} ${PREFIX}/share/${PORTNAME}-${PORTVERSION}; \
+	@if [ ! -d ${DATADIR}-${PORTVERSION} ]; then \
+		${MKDIR} ${DATADIR}-${PORTVERSION}; \
 	fi
-	${CP} -R ${WRKSRC}/* ${PREFIX}/share/${PORTNAME}-${PORTVERSION}/
+	${CP} -R ${WRKSRC}/* ${DATADIR}-${PORTVERSION}/
 
 .include <bsd.port.mk>

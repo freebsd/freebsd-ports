@@ -26,9 +26,9 @@ MAN1=	Xdialog.1
 
 .if !defined(NOPORTDOCS)
 post-install:
-	${MKDIR} ${PREFIX}/share/${PORTNAME}
+	${MKDIR} ${DATADIR}
 	@(cd ${WRKSRC}/doc ; \
-	  ${CP} *.html *.png ${PREFIX}/share/${PORTNAME})
+	  ${CP} *.html *.png ${DATADIR})
 .endif
 
 .include <bsd.port.mk>
