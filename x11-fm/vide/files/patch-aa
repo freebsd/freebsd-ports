@@ -1,0 +1,16 @@
+--- src/search_mode.c.orig	Wed May 17 20:28:02 2000
++++ src/search_mode.c	Wed May 17 20:30:57 2000
+@@ -16,6 +16,13 @@
+  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA
+  */
+ 
++#ifdef HAVE_SYS_PARAM_H
++#include <sys/param.h>
++#endif
++
++#if (defined(BSD) && (BSD>=199103))
++#include <sys/types.h>
++#endif
+ #include <fnmatch.h>
+ #include<stdio.h>
+ #include<string.h>

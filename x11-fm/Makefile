@@ -13,6 +13,7 @@
     SUBDIR += mfm
     SUBDIR += offix-files
     SUBDIR += tkdesk
+    SUBDIR += vide
     SUBDIR += workplace
     SUBDIR += x-files
     SUBDIR += xcruise
