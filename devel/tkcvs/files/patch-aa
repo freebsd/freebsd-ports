@@ -1,65 +1,63 @@
---- tkcvs/doinstall.orig	Tue Jan  9 22:17:52 1996
-+++ tkcvs/doinstall	Fri Oct 31 09:21:23 1997
-@@ -5,31 +5,31 @@
+--- doinstall.tcl.orig	Sun May  7 01:12:41 2000
++++ doinstall.tcl	Mon Sep  4 17:06:32 2000
+@@ -4,1 +4,1 @@
+-exec wish "$0" -- ${1+"$@"}
++exec wish8.2 "$0" -- ${1+"$@"}
+@@ -30,13 +30,9 @@
+      set msg(5) [file join $MANDIR tkcvs.n]
+   }
+   foreach m [lsort [array names msg]] {
+-    if {[winfo exists .messages.$m]} {
+-      destroy .messages.$m
+-    }
+     global var$m
+     set var$m $msg($m)
+-    label .messages.$m -text $msg($m) -justify left -textvariable var$m
+-    pack .messages.$m -side top -anchor w
++    puts var$m
+   }
+ }
  
- # Some rational and reasonable defaults.
+@@ -94,11 +90,6 @@
+   }
+   cd ..
+   puts "Finished!"
+-
+-  destroy .bottom.do
+-  destroy .bottom.not
+-  button .bottom.done -text "Finished!" -command {destroy .}
+-  pack .bottom.done
+ }
  
--INSTALLDIR=/usr/local/lib
--BINDIR=/usr/local/bin
--MANDIR=/usr/local/man/mann
-+INSTALLDIR=${PREFIX}/share
-+BINDIR=${PREFIX}/bin
-+MANDIR=${PREFIX}/man/man1
+ #
+@@ -115,28 +106,6 @@
+   set TKDIFF "tkdiff"
+ }
  
- INSTALL_PROG=./install-sh
- 
- # This must be an X based editor -- do NOT use vi except via an xterm
- # or shelltool.
- 
--EDITOR=nedit
-+EDITOR="xedit"
- 
- # Find a Tk interpreter.
-  
--WISH=`which wish4.0`
-+WISH=`which wish8.2`
- if [ ! -f $WISH ]; then
--  WISH=`which wish4.1`
-+  WISH=`which wish4.0`
- fi
- if [ ! -f $WISH ]; then
--  echo "I cant find a Tk interpreter on your system"
-+  echo "I cant find a useful Tk interpreter on your system"
-   exit 1
- fi
- 
- # Find where the global bitmaps are.
- 
--for GDIR in /usr/include/X11/bitmaps /usr/openwin/include/X11/bitmaps /usr/X11/include/bitmaps /usr/include/bitmaps /usr/local/include/bitmaps
-+for GDIR in /usr/X11R6/include/X11/bitmaps /usr/openwin/include/X11/bitmaps /usr/X11/include/bitmaps /usr/include/bitmaps ${PREFIX}/include/bitmaps
- do
-   if [ -d "$GDIR" ]; then
-     break
-@@ -62,10 +62,10 @@
- 
- # Some directories we have to create.
- 
--LDIR=${INSTALLDIR}/bitmaps
- TCDIR=${INSTALLDIR}/tkcvs
--mkdir -p $LDIR $TCDIR
--for dir in $LDIR $TCDIR
-+LDIR=${TCDIR}/bitmaps
-+mkdir -p $LDIR $TCDIR 
-+for dir in $TCDIR $LDIR
- do
-   if [ ! -d $dir ]; then
-     echo "I cant create the directory $dir"
-@@ -99,7 +99,7 @@
-   fi
- done
- 
--for f in *.n ../tkdiff/*.n
-+for f in *.1 ../tkdiff/*.1
- do
-         $INSTALL_PROG -m 444 $f $MANDIR
- done
+-frame .title
+-label .title.lbl -text "TkCVS Installer" -font {Helvetica -14 bold}
+-pack .title -side top
+-pack .title.lbl -side top
+-frame .entry
+-label .entry.instlbl -text "Installation Root"
+-entry .entry.instent -textvariable INSTALLROOT
+-bind .entry.instent <Return> {show_paths $INSTALLROOT}
+-pack .entry -side top -pady 10
+-pack .entry.instlbl -side left
+-pack .entry.instent -side left
+-
+-frame .messages -relief groove -bd 2
+-pack .messages -side top -expand y -fill x
+-label .messages.adv -text "These files will be installed:"
+-pack .messages.adv -side top
+ show_paths $INSTALLROOT
+-
+-frame .bottom
+-button .bottom.do -text "Install" -command {doinstall $INSTALLROOT}
+-button .bottom.not -text "Cancel" -command {destroy .}
+-pack .bottom -side top
+-pack .bottom.do -side left
+-pack .bottom.not -side left
+-
++doinstall $INSTALLROOT
++exit 0
