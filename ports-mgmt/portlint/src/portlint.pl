@@ -17,7 +17,7 @@
 # OpenBSD and NetBSD will be accepted.
 #
 # $FreeBSD$
-# $Id: portlint.pl,v 1.18 2003/10/26 21:24:08 marcus Exp $
+# $Id: portlint.pl,v 1.19 2003/10/27 01:57:35 marcus Exp $
 #
 
 use vars qw/ $opt_a $opt_A $opt_b $opt_c $opt_h $opt_t $opt_v $opt_M $opt_N $opt_B $opt_V /;
@@ -903,7 +903,8 @@ sub checkmakefile {
 	if ($whole =~ /NOPORTSDOC/) {
 		&perror("WARN: NOPORTSDOC found. Do you mean NOPORTDOCS?");
 	}
-	if ($sharedocused && $whole !~ /defined\(NOPORTDOCS\)/
+	if ($sharedocused && $whole !~ /defined\s*\(NOPORTDOCS\)/
+	 && $whole !~ /def\s*\(NOPORTDOCS\)/
 	 && $whole !~ m#(\$[\{\(]PREFIX[\}\)]|$localbase)/share/doc#) {
 		&perror("WARN: use \".if !defined(NOPORTDOCS)\" to wrap ".
 			"installation of files into $localbase/share/doc.");
