@@ -9,6 +9,7 @@ share/gnome/liferea/opml/feedlist.opml
 share/gnome/liferea/opml/feedlist_de.opml
 share/gnome/liferea/opml/feedlist_es.opml
 share/gnome/liferea/opml/feedlist_fr.opml
+share/gnome/liferea/opml/feedlist_pl.opml
 share/gnome/liferea/opml/feedlist_sk.opml
 share/gnome/liferea/pixmaps/available.png
 share/gnome/liferea/pixmaps/directory.png
@@ -33,6 +34,7 @@ share/locale/it/LC_MESSAGES/liferea.mo
 share/locale/ja/LC_MESSAGES/liferea.mo
 share/locale/ko/LC_MESSAGES/liferea.mo
 share/locale/mk/LC_MESSAGES/liferea.mo
+share/locale/pl/LC_MESSAGES/liferea.mo
 share/locale/ru/LC_MESSAGES/liferea.mo
 share/locale/sk/LC_MESSAGES/liferea.mo
 share/locale/zh_TW/LC_MESSAGES/liferea.mo
