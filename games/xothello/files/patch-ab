@@ -1,0 +1,11 @@
+--- xothello.c	Sat Feb 15 18:01:04 1997
++++ /home/andy/tmp/wrk/xothello.c	Tue Mar 31 22:17:37 1998
+@@ -618,7 +618,7 @@
+ void
+ Usage(void)
+ {
+-    USEPRT("Usage: othello [options]\n\n");
++    USEPRT("Usage: xothello [options]\n\n");
+     USEPRT("Options:\n");
+     USEPRT("  -level <levelnr>       [default=3, min=1, max=9]\n");
+     USEPRT("  -changexo\n");

@@ -1,0 +1,32 @@
+--- Makefile.orig	Sat Feb 15 13:00:15 1997
++++ Makefile	Thu Apr 23 22:03:27 1998
+@@ -8,14 +8,14 @@
+ # Flags that might be overriden by top makefile
+ #=================================================================
+ 
+-CC      = gcc
+-CCFLAG  = -O2 -Wall -fno-strength-reduce
+-LDFLAG  = -O
++#CC      = gcc
++#CCFLAG  = -O2 -Wall -fno-strength-reduce
++#LDFLAG  = -O
+ SYSLIB  = -lX11 -lm
+-XINCLUDE= -I/usr/X11R6/include
+-XLIB    = -L/usr/X11R6/lib
++XINCLUDE= -I$(X11BASE)/include
++XLIB    = -L$(X11BASE)/lib
+ 
+-INSTDIR = /usr/local
++INSTDIR = $(PREFIX)
+ BINDIR = $(INSTDIR)/bin
+ INSTALL = install
+ 
+@@ -25,7 +25,7 @@
+ 
+ CFLAGS  = $(CCFLAG) $(XINCLUDE)
+ LDFLAGS = $(LDFLAG) 
+-LIBS    = -lforms $(SYSLIB) $(XLIB)
++LIBS    = -lxforms $(SYSLIB) $(XLIB)
+ 
+ #=================================================================
+ 
