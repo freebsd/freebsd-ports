@@ -1,16 +1,5 @@
 #!/bin/sh
 
-# Fix links to example files
-cd ${WRKSRC}/libs && for dir in *; do
-    if [ -d $dir/doc ]; then
-	for file in $dir/doc/*; do
-	    ${GREP} -s -q '\.\./example/' $file && \
-	    ${REINPLACE_CMD} -e\
-	    "s|../example/|${PREFIX}/share/examples/boost/$dir/|g" $file
-	done;
-    fi;
-done;
-
 # Install bjam tool
 ${BSD_INSTALL_PROGRAM} ${BJAM} ${PREFIX}/bin/
 
@@ -35,6 +24,18 @@ cd ${WRKSRC} && ${FIND} boost -type f\
 
 # Documentation & examples
 if [ -n ${NOPORTDOCS+xyz} ]; then
+    # Fix links to example files
+    cd ${WRKSRC}/libs && for dir in *; do
+	if [ -d $dir/doc ]; then
+	    for file in $dir/doc/*; do
+		${GREP} -s -q '\.\./example/' $file && \
+		${REINPLACE_CMD} -e\
+		"s|../example/|${PREFIX}/share/examples/boost/$dir/|g" $file
+	    done;
+	fi;
+    done;
+
+    # Installation
     ${MKDIR} ${DOCSDIR} ${EXAMPLESDIR}
 
     ${FIND} ${WRKSRC} -type f -exec chmod 0444 {} \;
