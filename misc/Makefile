@@ -92,6 +92,7 @@
     SUBDIR += getopt
     SUBDIR += git
     SUBDIR += gkrellm-gamma
+    SUBDIR += gkrellm-helium
     SUBDIR += gkrellm-reminder
     SUBDIR += gkrellm-xkb
     SUBDIR += gkrellmaflag
