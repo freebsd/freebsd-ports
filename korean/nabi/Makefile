@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	nabi
-PORTVERSION=	0.3
+PORTVERSION=	0.4
 CATEGORIES=	korean gnome x11
 MASTER_SITES=	http://download.kldp.net/nabi/
 
@@ -20,17 +20,10 @@ USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" LIBS="-L${LOCALBASE}/lib"
 
-.include <bsd.port.pre.mk>
-
-post-patch:
-	${REINPLACE_CMD} -e 's,#include <malloc.h>,,' ${WRKSRC}/IMdkit/IMConn.c
-.if ${OSVERSION} < 500028
-	${ECHO_CMD} "#include <sys/types.h>" > ${WRKSRC}/src/stdint.h
-.endif
 .if defined(WITH_LAYOUT_390)
-	${REINPLACE_CMD} -e 's,2qwerty,39qwerty,g' ${WRKSRC}/src/ui.c
+CONFIGURE_ARGS=	--with-default-keyboard=39
 .elif defined(WITH_LAYOUT_3FINAL)
-	${REINPLACE_CMD} -e 's,2qwerty,3fqwerty,g' ${WRKSRC}/src/ui.c
+CONFIGURE_ARGS=	--with-default-keyboard=3f
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
