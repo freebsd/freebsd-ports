@@ -221,21 +221,6 @@ share/dancer-services/help/statserv/stats
 @dirrm share/dancer-services/help/chanserv
 @dirrm share/dancer-services/help
 @dirrm share/dancer-services
+%%PORTDOCS%%%%DOCSDIR%%/ChangeLog
 %%PORTDOCS%%%%DOCSDIR%%/README
-%%PORTDOCS%%%%DOCSDIR%%/README.dancer
-%%PORTDOCS%%%%DOCSDIR%%/TODO
-%%PORTDOCS%%%%DOCSDIR%%/README-FLAGS
-%%PORTDOCS%%%%DOCSDIR%%/README-PTHREADS
-%%PORTDOCS%%%%DOCSDIR%%/ReleaseNotes/RELEASENOTES-1.4.0
-%%PORTDOCS%%%%DOCSDIR%%/ReleaseNotes/RELEASENOTES-1.4.2
-%%PORTDOCS%%%%DOCSDIR%%/ReleaseNotes/RELEASENOTES-1.4.5
-%%PORTDOCS%%%%DOCSDIR%%/ReleaseNotes/RELEASENOTES-1.4.6
-%%PORTDOCS%%%%DOCSDIR%%/ReleaseNotes/RELEASENOTES-1.5.0
-%%PORTDOCS%%%%DOCSDIR%%/ReleaseNotes/RELEASENOTES-1.6.0
-%%PORTDOCS%%%%DOCSDIR%%/ReleaseNotes/RELEASENOTES-1.6.1
-%%PORTDOCS%%%%DOCSDIR%%/ReleaseNotes/RELEASENOTES-1.7
-%%PORTDOCS%%%%DOCSDIR%%/ReleaseNotes/RELEASENOTES-1.7.2
-%%PORTDOCS%%%%DOCSDIR%%/ReleaseNotes/RELEASENOTES-1.7.3
-%%PORTDOCS%%%%DOCSDIR%%/TCM-LINKING
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/ReleaseNotes
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
