@@ -1,0 +1,61 @@
+*** mirror.pl.orig	Mon May 15 16:50:06 1995
+--- mirror.pl	Mon May 15 17:43:06 1995
+***************
+*** 42,48 ****
+  
+  # Try to find the default localation of various programs via
+  # the users PATH then using $extra_path
+! $extra_path = '/usr/local/bin:/usr/new/bin:/usr/public/bin:/usr/ucb:/usr/bin:/bin:/etc:/usr/etc:/usr/local/etc:';
+  $ENV{ 'PATH' } .= ':' . $extra_path;
+  
+  # If compressing a local file to send need somewhere to store the temp
+--- 42,48 ----
+  
+  # Try to find the default localation of various programs via
+  # the users PATH then using $extra_path
+! $extra_path = '/bin:/sbin:/usr/bin:/usr/sbin:/usr/local/bin:';
+  $ENV{ 'PATH' } .= ':' . $extra_path;
+  
+  # If compressing a local file to send need somewhere to store the temp
+***************
+*** 90,108 ****
+  $rm_prog = &find_prog( 'rm' );
+  
+  # Generate checksums
+! $sum_prog = &find_prog( 'sum' );
+  
+  # SPECIAL NOTE: This is eval'd, so DONT put double-quotes (") in it.
+  # You can get local variables to appear as in the second example:
+! $mail_subject = '-s \'mirror update\'';
+! # $mail_subject = ' -s \'mirror update of $package\'';
+  
+  # When scanning the local directory, how often to prod the remote
+  # system to keep the connection alive
+  $prod_interval = 60;
+  
+  # Put the directory that mirror is actually in at the start of PERLLIB.
+! $dir = &real_dir_from_path( $0 );
+  unshift( @INC, $dir );
+  
+  # Make sure that your PERLLIB environment variable can get you
+--- 90,109 ----
+  $rm_prog = &find_prog( 'rm' );
+  
+  # Generate checksums
+! $sum_prog = &find_prog( 'md5' );
+  
+  # SPECIAL NOTE: This is eval'd, so DONT put double-quotes (") in it.
+  # You can get local variables to appear as in the second example:
+! # $mail_subject = '-s \'mirror update\'';
+! $mail_subject = ' -s \'mirror update of $package\'';
+  
+  # When scanning the local directory, how often to prod the remote
+  # system to keep the connection alive
+  $prod_interval = 60;
+  
+  # Put the directory that mirror is actually in at the start of PERLLIB.
+! #$dir = &real_dir_from_path( $0 );
+! $dir = "!!PREFIX!!/lib/mirror";
+  unshift( @INC, $dir );
+  
+  # Make sure that your PERLLIB environment variable can get you
