@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.3 1998/08/12 22:31:33 asami Exp $
+# $Id: Makefile,v 1.4 1998/08/14 22:46:54 asami Exp $
 #
 
     SUBDIR += FWF
@@ -7,6 +7,7 @@
     SUBDIR += blt
     SUBDIR += gtk
     SUBDIR += gtk11
+    SUBDIR += gtkql
     SUBDIR += iv
     SUBDIR += lesstif
     SUBDIR += neXtaw
