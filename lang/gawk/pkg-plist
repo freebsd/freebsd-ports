@@ -1,5 +1,8 @@
+bin/awk
 bin/gawk
 bin/gawk-3.0.6
 info/gawk.info
+@exec install-info %D/%F %D/info/dir
+@unexec install-info --delete %D/%F %D/info/dir
 @dirrm libexec/awk
 @dirrm share/awk
