@@ -7,6 +7,7 @@
 
 PORTNAME=	ezmlm-web
 PORTVERSION=	2.1
+PORTREVISION=	1
 CATEGORIES=	mail www
 MASTER_SITES=	ftp://rucus.ru.ac.za/pub/mail/ezmlm/
 
