@@ -8,7 +8,7 @@
 PORTNAME=       kp
 PORTVERSION=	1.00
 CATEGORIES=	misc
-MASTER_SITES=   ftp://stampede.cs.berkeley.edu/pub/kp/
+MASTER_SITES=   http://people.FreeBSD.org/~asami/distfiles/kp/
 
 MAINTAINER=	asami@FreeBSD.org
 
