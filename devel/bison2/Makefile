@@ -14,23 +14,23 @@ MASTER_SITE_SUBDIR=	bison
 
 MAINTAINER=		ports@FreeBSD.org
 
-LIB_DEPENDS=		intl.1:${PORTSDIR}/devel/gettext
+LIB_DEPENDS=		giconv.2:${PORTSDIR}/converters/libiconv
 
 GNU_CONFIGURE=		yes
+CONFIGURE_ARGS=		--with-included-gettext
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
-			LDFLAGS="-L${LOCALBASE}/lib -lintl" \
+			LDFLAGS="-L${LOCALBASE}/lib" \
 			MAKEINFO="makeinfo --no-split"
 CONFIGURE_TARGET=	--target=${MACHINE_ARCH}-unknown-freebsd${OSREL}
 
 MAN1=			bison.1
 
 post-extract:
-	${RM} -f ${WRKSRC}/doc/bison.info*
+	@${RM} -f ${WRKSRC}/doc/bison.info*
+	@${FIND} ${WRKSRC} -type f | ${XARGS} ${PERL} -pi -e \
+		's|-liconv|-lgiconv|g ; s|iconv\.h|giconv\.h|g'
 
 post-install:
-	@if [ ! -f ${PREFIX}/info/dir ]; then \
-	  ${SED} -ne '1,/Menu:/p' \/usr\/share\/info/dir > ${PREFIX}/info/dir; \
-	 fi
-	@install-info ${PREFIX}/info/bison.info ${PREFIX}/info/dir
+	install-info ${PREFIX}/info/bison.info ${PREFIX}/info/dir
 
 .include <bsd.port.mk>
