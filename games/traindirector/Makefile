@@ -1,37 +1,37 @@
-# New ports collection makefile for:	oneko
-# Date created:				15/11/2002
+# New ports collection makefile for:	traindirector
+# Date created:				09/08/2003
 # Whom:					Guido Falsi <mad@madpilot.net>
 #
 # $FreeBSD$
 #
 
 PORTNAME=	tdir
-PORTVERSION=	1.17f
+PORTVERSION=	1.18e
 CATEGORIES=	games
-MASTER_SITES=	http://www.backerstreet.com/traindir/
-DISTNAME=	tdir117s
+MASTER_SITES=	http://xtsl.free.fr/118e/
+DISTNAME=	traindir-${PORTVERSION}-src
+WRKSRC=		${WRKDIR}/traindir-${PORTVERSION}
 
 MAINTAINER=	mad@madpilot.net
 COMMENT=	Train controller simulation
 
-USE_ZIP=	yes
+USE_GMAKE=	yes
 USE_XLIB=	yes
 USE_X_PREFIX=	yes
 USE_GNOME=	gtk12 glib12
 USE_REINPLACE=	yes
 
-NO_WRKSUBDIR=	yes
-
 post-extract:
-	${REINPLACE_CMD} -e 's///' ${WRKSRC}/*
+.for file in Makefile field.c loadsave.c run.c setup_trdir.sh tgraph.c track.c track1.c trsim.c
+	@${TR} -d '\015' < ${WRKSRC}/${file} > ${WRKDIR}/xxxx
+	@${MV} ${WRKDIR}/xxxx ${WRKSRC}/${file}
+.endfor
 
 post-patch:
-	@ cd ${WRKSRC} ; ${LN} MAKEFILE Makefile ; \
-	${MV} Gdialog.c gdialog.c ; ${MV} Gtkopen.c gtkopen.c ; \
-	${MV} Gtkopen.h gtkopen.h ; ${MV} Html.c html.c ; \
-	${MV} Html.h html.h
+	${REINPLACE_CMD} -e 's#PREFIX#$(PREFIX)#' $(WRKSRC)/setup_trdir.sh
 
 post-configure:
 	${REINPLACE_CMD} -e 's,\#include \<malloc.h\>,/* include malloc.h */,' \
 		${WRKSRC}/gdialog.c
+
 .include <bsd.port.mk>
