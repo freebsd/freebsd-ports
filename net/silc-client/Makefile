@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	silc
-PORTVERSION=	0.7.2
+PORTVERSION=	0.7.3
 CATEGORIES=	net security
 MASTER_SITES=	http://www.silcnet.org/download/client/sources/ \
 		ftp://ftp.silcnet.org/silc/client/sources/ \
