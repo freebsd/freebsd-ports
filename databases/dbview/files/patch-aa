@@ -1,36 +1,30 @@
---- Makefile.orig	Thu Sep 26 13:05:30 1996
-+++ Makefile	Sun Oct 20 14:24:16 2002
-@@ -18,8 +18,8 @@
+--- Makefile.orig	Fri Sep 27 00:05:30 1996
++++ Makefile	Tue Apr 29 02:41:08 2003
+@@ -18,8 +18,6 @@
  
  MAN=man
  
 -CC= gcc
 -CFLAGS= -O6 -fomit-frame-pointer -Wall -pipe
-+#CC= gcc
-+#CFLAGS= -O6 -fomit-frame-pointer -Wall -pipe
  # CFLAGS= -g -fomit-frame-pointer -Wall -pipe
  
  # Look where your install program is
-@@ -32,15 +32,15 @@
+@@ -32,12 +30,12 @@
  obj = db_dump.o dbview.o version.o
  
  .c.o:
 -	$(CC) ${CFLAGS} -c $*.c
-+	$(CC) ${CFLAGS} -I$(LOCALBASE)/include -c $*.c
++	$(CC) ${CFLAGS} $(CPPFLAGS) -c $*.c
  
  all:	dbview
  
  dbview: $(obj)
 -	$(CC) $(CFLAGS) -o dbview $(obj)
-+	$(CC) $(CFLAGS) -o dbview $(obj) -L$(LOCALBASE)/lib -lgnugetopt
++	$(CC) $(CFLAGS) $(LDFLAGS) -o dbview $(obj)
  
  depend:
--	makedepend *.c
-+	makedepend -I$(LOCALBASE)/include *.c
- 
- install: all
- 	$(INSTALL) -d -o root -g root -m 755 $(bindir)
-@@ -56,13 +56,13 @@
+ 	makedepend *.c
+@@ -56,13 +54,3 @@
  
  # DO NOT DELETE
  
@@ -44,13 +38,3 @@
 -db_dump.o: /usr/include/confname.h /usr/include/malloc.h
 -dbview.o: version.h db_dump.h /usr/include/stdio.h /usr/include/libio.h
 -dbview.o: /usr/include/_G_config.h /usr/include/getopt.h
-+db_dump.o: db_dump.h /usr/include/fcntl.h /usr/include/sys/types.h
-+db_dump.o: /usr/include/sys/cdefs.h /usr/include/inttypes.h
-+db_dump.o: /usr/include/machine/endian.h /usr/include/sys/stat.h
-+db_dump.o: /usr/include/sys/time.h /usr/include/time.h
-+db_dump.o: /usr/include/stdio.h
-+db_dump.o: /usr/include/unistd.h /usr/include/sys/unistd.h
-+db_dump.o: /usr/include/stdlib.h /usr/include/stdlib.h /usr/include/ctype.h
-+db_dump.o: /usr/include/runetype.h /usr/include/string.h
-+dbview.o: version.h db_dump.h /usr/include/stdio.h /usr/include/sys/cdefs.h
-+dbview.o: /usr/local/include/getopt.h
