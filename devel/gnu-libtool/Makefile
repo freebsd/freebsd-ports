@@ -29,7 +29,7 @@ CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 USE_REINPLACE=	yes
 
 .if defined(USE_LIBTOOL) || defined(USE_LIBTOOL_VER)
-pre-everything:
+pre-everything::
 	@${ECHO} ===========================================================
 	@${ECHO} "You have 'USE_LIBTOOL' or 'USE_LIBTOOL_VER' variables"
 	@${ECHO} "defined either in environment or in make(1) arguments."
