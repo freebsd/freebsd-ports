@@ -1,0 +1,7 @@
+'mailfmt' is a program to reformat mail and news to remove leading
+quotation characters and wrap the lines to a reasonable width.
+
+You need a reasonably current copy of Python to run the main script.
+
+- tim
+tundra@tundraware.com

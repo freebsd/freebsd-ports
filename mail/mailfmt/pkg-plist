@@ -1,0 +1,3 @@
+bin/mailfmt
+%%PORTDOCS%%share/doc/mailfmt/mailfmt-license.txt
+%%PORTDOCS%%@dirrm share/doc/mailfmt
