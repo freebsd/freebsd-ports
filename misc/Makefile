@@ -227,7 +227,6 @@
     SUBDIR += p5-LEGO-RCX
     SUBDIR += p5-Locale-Codes
     SUBDIR += p5-Locale-SubCountry
-    SUBDIR += p5-String-LRC
     SUBDIR += p5-Text-FIGlet
     SUBDIR += p5-Tie-DxHash
     SUBDIR += patanjali
