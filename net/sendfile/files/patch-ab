@@ -1,25 +1,9 @@
---- develop/install.orig	Tue Feb 24 14:06:09 1998
-+++ develop/install	Tue Feb 24 14:09:09 1998
-@@ -98,31 +98,6 @@
- if [ "$INETDCONF" = "" ]; then	INETDCONF=/etc/inetd.conf; fi
- if [ "$SERVICES" = "" ]; then	SERVICES=/etc/services; fi
+--- develop/install.orig	Fri Feb 27 08:29:16 1998
++++ develop/install	Sun Mar  1 15:34:53 1998
+@@ -133,14 +133,6 @@
+ To deinstall the sendfile-daemon, simply type: 	rm $SERVERDIR/sendfiled
  
--cat <<EOD
--WARNING: this sendfile install script will create or write to:
--
--	spool directory =	$SPOOL
--	binary directory =	$BINDIR
--	manual directory =	$MANDIR
--	sendfiled directory =	$SERVERDIR
--	configuration files =	$CONFIG
--				$DENY
--
--In /etc/services and /etc/inetd.conf apropriate ads will be inserted.
--In /etc/profile and /etc/csh.login a call to sendfile_check will be added.
--
--To deinstall the sendfile-daemon, simply type: 	rm $SERVERDIR/sendfiled
--
--EOD
+ EOD
 -echo 'If you are satisfied with these defaults, then type "ok" now:'
 -read answer
 -if [ "$answer" != ok ]; then
@@ -28,11 +12,26 @@
 -  echo
 -  exit
 -fi
--
+ 
  umask 022
  
- echo "checking for directories"
-@@ -234,33 +209,9 @@
+@@ -195,6 +187,7 @@
+   echo "         there is $SERVERDIR/sendfiled in makeconfig! Check it!"
+ fi
+ echo "installing the sendfile-daemon in $SERVERDIR"
++[ -x $SERVERDIR/sendfiled ] && mv $SERVERDIR/sendfiled $SERVERDIR/sendfiled.old
+ cp src/sendfiled $SERVERDIR  || exit 1
+ 
+ NOSENDFILE=`dirname $DENY 2>/dev/null`/nosendfile
+@@ -240,7 +233,6 @@
+     echo "saft	487/tcp		# simple asynchronous file transfer" | niload services .
+   else
+     echo "configuring $SERVICES"
+-    echo "#" >>$SERVICES
+     echo "saft	487/tcp		# simple asynchronous file transfer" >>$SERVICES
+   fi
+ fi
+@@ -253,8 +245,6 @@
    fi
    RESTART=true
    echo "configuring $INETDCONF"
@@ -41,38 +40,34 @@
    echo "saft	stream	tcp	nowait	root	$SFD" >>$INETDCONF
  fi
  
--if [ -f /etc/inetd.sec ]; then
--  if [ "`grep '^saft' /etc/inetd.sec`" = "" ]; then
--    echo >> /etc/inetd.sec
--    echo "saft allow" >> /etc/inetd.sec
--  fi
--fi
--
--if [ -f /etc/profile ]; then
--  if [ "`grep check_sendfile /etc/profile`" = "" ]; then
--    echo "adding check_sendfile to /etc/profile"
--    echo >>/etc/profile
--    echo test -x $BINDIR/check_sendfile && $BINDIR/check_sendfile >>/etc/profile
--  fi
--fi
--if [ -f /etc/csh.login ]; then
--  if [ "`grep check_sendfile /etc/csh.login`" = "" ]; then
--    echo "adding check_sendfile to /etc/csh.login"
--    echo >>/etc/csh.login
--    echo test -x $BINDIR/check_sendfile && $BINDIR/check_sendfile >>/etc/profile
--  fi
--fi
--				
- if [ ! -d "$SPOOL/OUTGOING" ]; then
-   echo "creating $SPOOL"
-   mkdir_recursive $SPOOL/OUTGOING
-@@ -303,9 +254,3 @@
- echo "This will start an outgoing spooling sendfile daemon on boot time"
- echo "which processes any old files in the outgoing spool."
- echo
--
--if [ "$RESTART" = true ]; then
+@@ -278,7 +268,7 @@
+     echo "adding check_sendfile to /etc/csh.login"
+     echo >>/etc/csh.login
+     echo "test -x $BINDIR/check_sendfile && $BINDIR/check_sendfile" \
+-         >>/etc/profile
++         >>/etc/csh.login
+   fi
+ fi
+ 				
+@@ -318,15 +308,11 @@
+ EOD
+ fi
+ 
+-echo
+-echo "You may want to add the following line to your system bootup script:"
+-echo "    $SERVERDIR/sendfiled -Q"
+-echo "This will start an outgoing spooling sendfile daemon on boot time"
+-echo "which processes any old files in the outgoing spool."
+-echo
++echo "[ -x $SERVERDIR/sendfiled ] && $SERVERDIR/sendfiled -Q && echo -n ' sendfiled'">${PREFIX}/etc/rc.d/sendfiled.sh
++chmod a+x ${PREFIX}/etc/rc.d/sendfiled.sh
+ 
+ if [ "$RESTART" = true ]; then
 -  echo
 -  echo "please restart now your inetd ( or simply reboot :-) )"
 -  echo
--fi
++  kill -HUP `ps auxw|awk '$11 == "inetd" { print $2 } '`
++  [ -f $SERVERDIR/sendfiled.old ] && rm -f $SERVERDIR/sendfiled.old
+ fi
++true
+\ No newline at end of file
