@@ -3,12 +3,12 @@
 # Date created:		11 January 1995
 # Whom:			jkh
 #
-# $Id: Makefile,v 1.3 1995/04/09 10:05:12 asami Exp $
+# $Id: Makefile,v 1.4 1995/06/24 11:37:20 asami Exp $
 #
 
 DISTNAME=	malloc
 PKGNAME=	malloc-1.17a
-CATEGORIES+=	development programming libraries
+CATEGORIES+=	devel
 MASTER_SITES=	ftp.cs.toronto.edu:/pub/moraes/
 
 post-install:

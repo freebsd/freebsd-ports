@@ -3,12 +3,12 @@
 # Date created:		29 July 1995
 # Whom:			thomas@ghpc8.ihf.rwth-aachen.de
 #
-# $Id: Makefile,v 1.2 1995/10/04 10:18:39 asami Exp $
+# $Id: Makefile,v 1.3 1995/10/11 09:45:29 asami Exp $
 #
 
 DISTNAME=	noweb-2.7a
-CATEGORIES+=	development documentation
-KEYWORDS+=	development documentation "literate programming"
+CATEGORIES+=	devel
+KEYWORDS+=	devel "literate programming"
 MASTER_SITES=	ftp://bellcore.com/pub/norman/
 EXTRACT_SUFX=	.tgz
 

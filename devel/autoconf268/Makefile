@@ -3,11 +3,11 @@
 # Date created:		7 October 1995
 # Whom:			torstenb@FreeBSD.ORG
 #
-# $Id: Makefile,v 1.2 1995/11/19 17:49:00 ache Exp $
+# $Id: Makefile,v 1.3 1995/11/22 17:26:29 ache Exp $
 #
 
 DISTNAME=       autoconf-2.6
-CATEGORIES=	development programming
+CATEGORIES=	devel
 MASTER_SITES=	ftp://prep.ai.mit.edu/pub/gnu/
 
 EXEC_DEPENDS=	gm4:${PORTSDIR}/devel/m4
