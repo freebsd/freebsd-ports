@@ -1,3 +1,4 @@
 bin/tin
 @exec ln -fs %f %B/rtin
 @unexec rm -f %B/rtin
+etc/tin.defaults.dist
