@@ -1,0 +1,50 @@
+#!/bin/sh
+#
+#
+
+# PROVIDE: privoxy
+# REQUIRE: NETWORKING
+
+#
+# DO NOT CHANGE THESE DEFAULT VALUES HERE
+# SET THEM IN THE /etc/rc.conf FILE
+#
+privoxy_enable=${privoxy_enable-"NO"}
+privoxy_flags=${privoxy_flags-""}
+privoxy_pidfile=${privoxy_pidfile-"/var/run/privoxy.pid"}
+
+. %%RC_SUBR%%
+
+name="privoxy"
+rcvar=`set_rcvar`
+command="%%PREFIX%%/sbin/privoxy"
+stop_cmd="privoxy_stop"
+start_cmd="privoxy_start"
+
+pidfile="${privoxy_pidfile}"
+configfile=%%PREFIX%%/etc/privoxy/config
+
+privoxy_start()
+{
+	if [ -f ${pidfile} ] ;then
+		echo "${name} is already running"
+	else
+		echo "Starting ${name}."
+        	${command} ${privoxy_flags} ${configfile} --pidfile ${pidfile} \
+		1>/dev/null 2>&1
+	fi
+}
+
+privoxy_stop()
+{
+	if [ ! -f ${pidfile} ] ;then
+		echo "${name} is not running"
+	else
+	        kill -9 `cat ${pidfile}`
+		rm -f ${pidfile}
+		echo "${name} stopped"
+	fi
+}
+
+load_rc_config $name
+run_rc_command "$1"
