@@ -23,6 +23,8 @@ DISTNAME=	bind-${ISCVERSION}
 MAINTAINER=	sheepkiller@cultdeadsheep.org
 COMMENT=	BIND DNS 9 server which supports a MySQL backend
 
+CONFLICTS=	bind-8.3.* bind84-8.4.* bind9-9.2.* bind9-dlz-9.2.* host-* skalibs-0.*
+
 # ISC releases things like 9.2.2rc1, which our versioning doesn't like
 ISCVERSION=	9.2.2-P3
 
