@@ -19,7 +19,6 @@ USE_GTK=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	SDL_CONFIG=${LOCALBASE}/bin/sdl11-config
-USE_REINPLACE=	yes
 
 MAN6=		sopwith.6
 
