@@ -3,7 +3,7 @@
 # Date created:         13 Jul 1998
 # Whom:                 Donald Burr <dburr@FreeBSD.ORG>
 #
-# $Id: Makefile,v 1.2 1998/07/13 22:55:43 dburr Exp $
+# $Id: Makefile,v 1.3 1998/08/05 09:30:44 asami Exp $
 #
 
 DISTNAME=	x11amp-0.7-FreeBSD
@@ -27,3 +27,7 @@ post-install:
 	@${CAT} ${PKGDIR}/MESSAGE
 
 .include <bsd.port.mk>
+
+.if ${PORTOBJFORMAT} == "elf"
+STRIP=
+.endif
