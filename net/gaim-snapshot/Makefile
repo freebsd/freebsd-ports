@@ -7,6 +7,7 @@
 
 PORTNAME=		gaim
 PORTVERSION=		0.11.0p15
+PORTREVISION=		1
 CATEGORIES=		net
 MASTER_SITES=		ftp://ftp.marko.net/pub/gaim/ \
 			${MASTER_SITE_SOURCEFORGE}
@@ -21,9 +22,10 @@ USE_GMAKE=		yes
 USE_GTK=		yes
 WANT_ESOUND=		yes
 WANT_GNOME=		yes
-USE_LIBTOOL=		yes
+GNU_CONFIGURE=		yes
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LIBS="-L${LOCALBASE}/lib"
+CONFIGURE_TARGET=	--target=${MACHINE_ARCH}-unknown-freebsd${OSREL}
 
 MAN1=			gaim.1
 
@@ -44,12 +46,9 @@ CONFIGURE_ARGS+=	--disable-esd
 
 pre-patch:
 	@${PERL} -pi -e 's|-lpthread|${PTHREAD_LIBS}|g ; \
-		 s|DATADIRNAME=lib|DATADIRNAME=share|g ; \
-		 s|USE_INCLUDED_LIBINTL=yes|#USE_INCLUDED_LIBINTL=yes|g ; \
-		 s|\$$\(top_builddir\)/intl/libintl.a|-lintl|g' ${WRKSRC}/configure
+		 s|DATADIRNAME=lib|DATADIRNAME=share|g' ${WRKSRC}/configure
 	@find ${WRKSRC} -name "Makefile.in" | xargs ${PERL} -pi -e \
 		's|\$$\(datadir\)/gnome/|\$$\(datadir\)/|g ; \
-		 s|\$$\(datadir\)/locale|\$$\(prefix\)/share/locale|g ; \
-		 s|\@LIBTOOL\@|\${LOCALBASE}/bin/libtool|g'
+		 s|\$$\(datadir\)/locale|\$$\(prefix\)/share/locale|g'
 
 .include <bsd.port.post.mk>
