@@ -7,7 +7,7 @@
 
 PORTNAME=	gnome2-fifth-toe
 PORTVERSION=	2.4.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11 gnome
 MASTER_SITES=	# empty
 DISTFILES=	# empty
@@ -34,6 +34,7 @@ RUN_DEPENDS=	pan:${PORTSDIR}/news/pan2 \
 		liferea:${PORTSDIR}/net/liferea \
 		rhythmbox:${PORTSDIR}/audio/rhythmbox \
 		jamboree:${PORTSDIR}/audio/jamboree \
+		sound-juicer:${PORTSDIR}/audio/sound-juicer \
 		gnotime:${PORTSDIR}/deskutils/gnotime
 
 .if !defined(PACKAGE_BUILDING) && !defined(PARALLEL_PACKAGE_BUILD)
