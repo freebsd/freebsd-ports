@@ -1,5 +1,4 @@
-@cwd /usr/local
-lib/octave
+share/octave/
 bin/octave
 bin/octave-bug
 bin/octave-1.1.1
@@ -16,4 +15,4 @@ info/octave.info-6
 info/octave.info-7
 info/octave.info-8
 info/octave.info-9
-include/octave
+include/octave/
