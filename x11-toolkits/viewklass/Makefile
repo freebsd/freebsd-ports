@@ -30,10 +30,6 @@ USE_MOTIF=	yes
 USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 
-.if ${OSVERSION} >= 500113
-BROKEN=         "Does not compile (bad C++ code)"
-.endif
-
 post-patch:
 	@${REINPLACE_CMD} -e 's/^CFLAGS=/CFLAGS+=/g ; \
 		 s/^CXXFLAGS=/CXXFLAGS+=/g ; \
