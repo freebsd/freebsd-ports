@@ -1,0 +1,1232 @@
+--- chsetupbig5Linux.orig	Tue Oct  9 22:20:46 2001
++++ chsetupbig5Linux	Tue Dec  4 23:46:18 2001
+@@ -57,7 +57,7 @@
+ 
+    gawkbin=awk
+    export gawkbin
+-   unixname="linux"
++   unixname="freebsd"
+ 
+ } # End of Setenvironment
+ 
+@@ -68,45 +68,45 @@
+ welcomea=""
+ if test "$welcomea" = "y"; then
+ #######    Welcome      #######
+-clear
+-echo " ";echo " ";echo " "
+-echo " "
+-echo "         ******************************************"
+-echo "         *                                        *"
+-echo "         *   Åwªï¨Ï¥Î  ChiTeX/ChiLaTeX (UNIX ª©)  *"
+-echo "         *                                        *"
+-echo "         ******************************************"
+-echo " "
+-echo " "
+-echo " "   
+-echo "         ChiTeX (ChiTeX/ChiLaTeX) written by:"
+-echo "             Hung-Yih Chen (³¯¥°¼Ý) (yih@math.ncu.edu.tw) "
+-echo " "
+-echo "         This version: ChiTeX 6.1.2p6, May 6, 2000"
+-echo " "
+-echo $echomode "         Press enter key to continue "$echocr
+-read inkey
++#clear
++#echo " ";echo " ";echo " "
++#echo " "
++#echo "         ******************************************"
++#echo "         *                                        *"
++#echo "         *   Åwªï¨Ï¥Î  ChiTeX/ChiLaTeX (UNIX ª©)  *"
++#echo "         *                                        *"
++#echo "         ******************************************"
++#echo " "
++#echo " "
++#echo " "   
++#echo "         ChiTeX (ChiTeX/ChiLaTeX) written by:"
++#echo "             Hung-Yih Chen (³¯¥°¼Ý) (yih@math.ncu.edu.tw) "
++#echo " "
++#echo "         This version: ChiTeX 6.1.2p6, May 6, 2000"
++#echo " "
++#echo $echomode "         Press enter key to continue "$echocr
++#read inkey
+ fi
+ 
+-clear
+-echo " ";echo " "
+-echo " "
+-echo "         *************************************************"
+-echo "         *                                               *"
+-echo "         *   ¥»¦w¸Ëµ{¦¡±N¬°§A¦w¸Ë ChiTeX 6.1.2p7 ©Î      *"
+-echo "         *                                               *"
+-echo "         *   ¦w¸Ë ChiTeX 6.1.2p7 ª©¤§«e, §Aªº¨t²Î¶·¤w    *"
+-echo "         *   ¸Ë¦³ teTeX, teTeX ¤§ª©¥» ³ >= 1.0           *"
+-echo "         *                                               *"
+-echo "         *************************************************"
+-echo $echomode "         Press enter key to continue "$echocr
+-read inkey
++#clear
++#echo " ";echo " "
++#echo " "
++#echo "         *************************************************"
++#echo "         *                                               *"
++#echo "         *   ¥»¦w¸Ëµ{¦¡±N¬°§A¦w¸Ë ChiTeX 6.1.2p7 ©Î      *"
++#echo "         *                                               *"
++#echo "         *   ¦w¸Ë ChiTeX 6.1.2p7 ª©¤§«e, §Aªº¨t²Î¶·¤w    *"
++#echo "         *   ¸Ë¦³ teTeX, teTeX ¤§ª©¥» ³ >= 1.0           *"
++#echo "         *                                               *"
++#echo "         *************************************************"
++#echo $echomode "         Press enter key to continue "$echocr
++#read inkey
+ 
+-if test "$LOGNAME" != "root"; then
++if test `whoami` != "root"; then
+ rootmessage="y"
+ while test "$rootmessage" = "y"
+ do
+-clear
++#clear
+ echo " ";echo " "
+ echo " "
+ echo "         **********************************************"
+@@ -121,7 +121,8 @@
+ echo "             q. °±¤î¦w¸Ë" 
+ echo " "
+ echo $echomode "         ½ÐÁä¤J 'c' ©Î 'q' : "$echocr
+-read inkey
++#read inkey
++inkey="q"
+ 
+ case $inkey in
+   "c") rootmessage="n";;
+@@ -137,24 +138,24 @@
+ 
+ #updatemenu ( ) {
+ #######    Welcome      #######
+-clear
+-echo " ";echo " "
+-echo " "
+-echo "         ******************************************"
+-echo "         *                                        *"
+-echo "         *   ²{¦b±N¶}©l¦w¸Ë  ChiTeX 6.1.2p6.7     *"
+-echo "         *                                        *"
+-echo "         ******************************************"
+-echo " "
+-echo " "
+-echo " "
+-echo "         ChiTeX (ChiTeX/ChiLaTeX) written by:"
+-echo "             Hung-Yih Chen (³¯¥°¼Ý) (yih@math.ncu.edu.tw) "
+-echo " "
+-echo "         This version: ChiTeX 6.1.2p7, April 21, 2001"
+-echo " "
+-echo $echomode "         Press enter key to continue "$echocr
+-read inkey
++#clear
++#echo " ";echo " "
++#echo " "
++#echo "         ******************************************"
++#echo "         *                                        *"
++#echo "         *   ²{¦b±N¶}©l¦w¸Ë  ChiTeX 6.1.2p6.7     *"
++#echo "         *                                        *"
++#echo "         ******************************************"
++#echo " "
++#echo " "
++#echo " "
++#echo "         ChiTeX (ChiTeX/ChiLaTeX) written by:"
++#echo "             Hung-Yih Chen (³¯¥°¼Ý) (yih@math.ncu.edu.tw) "
++#echo " "
++#echo "         This version: ChiTeX 6.1.2p7, April 21, 2001"
++#echo " "
++#echo $echomode "         Press enter key to continue "$echocr
++#read inkey
+ #}
+ 
+ newttf2pk="y"
+@@ -200,7 +201,8 @@
+ 
+ # (3) Find path of VARTEXFONTS
+ #
+-VARTEXFONTS=`kpsexpand '$VARTEXFONTS' `
++#VARTEXFONTS=`kpsexpand '$VARTEXFONTS' `
++VARTEXFONTS=$texmf"/fonts"
+ if test "$VARTEXFONTS" = ""; then
+    VARTEXFONTS=`kpsexpand '$VARFONTS' `
+ fi
+@@ -238,7 +240,7 @@
+ checkmenu="y"
+ while test "$checkmenu" = "y"
+ do
+-clear
++#clear
+ echo "         ¤w´ú¨ì©Î§A¿é¤Jªº¥Ø¿ý:  "
+ echo "         1.  texmf ªº¥Ø¿ý (¤@¯ë¬° /usr/.../texmf) ¬°:"
+ echo "               $texmf"
+@@ -256,7 +258,8 @@
+ echo "         ­Y¥þ³¡¥¿½TÁä¤J "y" Áä, §_«h½ÐÁä¤J '1' ©Î '2',.. "
+ echo "         (¥H«K­«·s¿é¤J¸Ó¶µ¥Ø¤§¿ù»~¥Ø¿ý)"
+ echo $echomode "         : " $echocr
+-read inkey
++#read inkey
++inkey="y"
+ 
+  
+    case "$inkey" in
+@@ -306,7 +309,8 @@
+      echo "         §A»¡¥Ø¿ý¥þ³¡¥¿½T."
+      echo "         ½Ð¦AÁä¤J "y" Áä ½T»{, §_«h½ÐÁä¤J 'n' ¥H¦A¿é¤J"
+      echo $echomode "         : " $echocr
+-     read inkeya
++     #read inkeya
++     inkeya="y"
+ 
+      case "$inkeya" in
+        "y")  checkmenu="n"; checksubmenu="n";;
+@@ -324,16 +328,17 @@
+ Askstop="y"
+ while test "$Askstop" = "y"
+ do
+-clear
+-echo " "
+-echo "         ¨âºØ¦w¸Ë¤è¦¡:"
+-echo "         1.  °±°Ý¤è¦¡"
+-echo "         2.  ¦w¸Ë¨ì©³ªº¤è¦¡(¦ý·|°±¤U´ú¸Õ¤¤¤å fmt files)"
+-echo "         "
+-echo "         ½ÐÁä¤J '1' ©M '2' "
+-echo " "
+-echo $echomode "         : " $echocr
+-read inkey
++#clear
++#echo " "
++#echo "         ¨âºØ¦w¸Ë¤è¦¡:"
++#echo "         1.  °±°Ý¤è¦¡"
++#echo "         2.  ¦w¸Ë¨ì©³ªº¤è¦¡(¦ý·|°±¤U´ú¸Õ¤¤¤å fmt files)"
++#echo "         "
++#echo "         ½ÐÁä¤J '1' ©M '2' "
++#echo " "
++#echo $echomode "         : " $echocr
++#read inkey
++inkey="2"
+    case "$inkey" in
+    "1") stopask="y"; Askstop="";;
+    "2") stopask=""; Askstop="";;
+@@ -392,17 +397,17 @@
+ if test ! -d $texmf/doc/chitex; then
+    mkdir -p $texmf/doc/chitex
+ fi
+-chmod +w $texmf/doc/chitex/*    # Add Mar. 26, 2000
++#chmod +w $texmf/doc/chitex/*    # Add Mar. 26, 2000
+ 
+-cp -f docdir/* $texmf/doc/chitex
++cp -v -f docdir/* $texmf/doc/chitex
+ /bin/rm -rf $SAVEPWD/doc
+ mv docdir doc
+-cp chitex612/doc/*.ps $texmf/doc/chitex
++cp -v chitex612/doc/*.ps $texmf/doc/chitex
+ 
+-chmod -w $texmf/doc/chitex/README* 
+-chmod -w $texmf/doc/chitex/ANNOUNCE*
+-chmod -w $texmf/doc/chitex/ChangeLog*
+-chmod -w $texmf/doc/chitex/*.ps
++#chmod -w $texmf/doc/chitex/README* 
++#chmod -w $texmf/doc/chitex/ANNOUNCE*
++#chmod -w $texmf/doc/chitex/ChangeLog*
++#chmod -w $texmf/doc/chitex/*.ps
+ 
+ echo "       End of modifying README*"
+ if test "$stopask" = "y"; then
+@@ -436,33 +441,33 @@
+    ./chmkfmtp; ./chmkfmt
+    echo $echomode "." $echocr       
+ 
+-   cp chitex.fmt $fmtname/chitex.fmt
+-   cp chitexl.fmt $fmtname/chitexl.fmt
+-   cp chitexg.fmt $fmtname/chitexg.fmt
+-   cp chitexlg.fmt $fmtname/chitexlg.fmt
+-   cp -f chitex.fmt $fmtname/chitex.fmt
+-   cp -f chitexl.fmt $fmtname/chitexl.fmt
+-   cp -f chitexg.fmt $fmtname/chitexg.fmt
+-   cp -f chitexlg.fmt $fmtname/chitexlg.fmt
++#   cp -v chitex.fmt $fmtname/chitex.fmt
++#   cp -v chitexl.fmt $fmtname/chitexl.fmt
++#   cp -v chitexg.fmt $fmtname/chitexg.fmt
++#   cp -v chitexlg.fmt $fmtname/chitexlg.fmt
++   cp -v -f chitex.fmt $fmtname/chitex.fmt
++   cp -v -f chitexl.fmt $fmtname/chitexl.fmt
++   cp -v -f chitexg.fmt $fmtname/chitexg.fmt
++   cp -v -f chitexlg.fmt $fmtname/chitexlg.fmt
+ 
+    /bin/rm -f *.fmt
+ 
+-   ./chmkfmtp; ./chmkfmt2 2>/dev/nul
++   ./chmkfmtp; ./chmkfmt2
+    echo $echomode "." $echocr          
+ 
+-   cp pdfchitex.fmt $fmtname
+-   cp pdfchitexl.fmt $fmtname
+-   cp pdfchitexg.fmt $fmtname
+-   cp pdfchitexlg.fmt $fmtname
+-   cp -f pdfchitex.fmt $fmtname
+-   cp -f pdfchitexl.fmt $fmtname
+-   cp -f pdfchitexg.fmt $fmtname
+-   cp -f pdfchitexlg.fmt $fmtname
++#   cp -v pdfchitex.fmt $fmtname
++#   cp -v pdfchitexl.fmt $fmtname
++#   cp -v pdfchitexg.fmt $fmtname
++#   cp -v pdfchitexlg.fmt $fmtname
++   cp -v -f pdfchitex.fmt $fmtname
++   cp -v -f pdfchitexl.fmt $fmtname
++   cp -v -f pdfchitexg.fmt $fmtname
++   cp -v -f pdfchitexlg.fmt $fmtname
+ 
+    /bin/rm -f *.fmt
+ 
+    echo $echomode "." $echocr       
+-   cp -f chmkfmt* $bindir      # move later
++   cp -v -f chmkfmt* $bindir      # move later
+    /bin/rm -f chmkfmt*
+    echo "       End of make fmt files "
+   }
+@@ -479,111 +484,111 @@
+ 
+ #  ChmkFmtrtn
+ # else
+-   gunzip -dc chitex612/fmt/chggfile.Redhat70.tgz|tar xvf - 2>&2 >/dev/null
++   gunzip -dc chitex612/fmt/chggfile.freebsd.tgz|tar xf -
+     chmod +x chmk*
+-    ./chmkfmtp 2> usagefile
+-    useage=`cat usagefile`
+-    rm -f usagefile
+-   if test "$useage" = ""; then
++    ./chmkfmtp
++#    useage=`cat usagefile`
++#    rm -f usagefile
++#   if test "$useage" = ""; then
+       ChmkFmtrtn
+-   else
+-     gunzip -dc chitex612/fmt/chggfile.linux.tgz|tar xvf - 2>&2 >/dev/null           
+-     ChmkFmtrtn 
+-   fi
++#   else
++#     gunzip -dc chitex612/fmt/chggfile.freebsd.tgz|tar xvf -
++#     ChmkFmtrtn 
++#   fi
+ # fi 
+ 
+ # Test 
+ 
+-echo "yes">tmp@
+-
+-  echo "     "
+-  echo "   The following is to test whether "
+-  echo "   the chinese fmt files work well"
+-  echo "  "
+-  echo "   If it fails, just type 'x' or 'control z' to exit"
+-  echo "   (Messages will contain characters ^^ which are not error message.)"
+-  echo "   and then it will try to make up the installation."
+-  echo " "
+-  echo "   Press Enter key to continue!"
+-  read xxxxxxx
++#echo "yes">tmp@
+ 
+-gawk '
+-BEGIN{}
+-{
+-print "\\nonstopmode" > "t1.tex"
+-print "\\makeatletter" > "t1.tex"
+-print "\\def\\ch@delay{y}" > "t1.tex"
+-print "\\makeatother" > "t1.tex"
+-print "\\documentclass{article}" > "t1.tex"
+-print "\\begin{document}" > "t1.tex"
+-print "test" > "t1.tex"
+-print "\\end{document}" > "t1.tex"
+-}
+-END{} ' tmp@
++#  echo "     "
++#  echo "   The following is to test whether "
++#  echo "   the chinese fmt files work well"
++#  echo "  "
++#  echo "   If it fails, just type 'x' or 'control z' to exit"
++#  echo "   (Messages will contain characters ^^ which are not error message.)"
++#  echo "   and then it will try to make up the installation."
++#  echo " "
++#  echo "   Press Enter key to continue!"
++#  read xxxxxxx
++
++#$gawkbin '
++#BEGIN{}
++#{
++#print "\\nonstopmode" > "t1.tex"
++#print "\\makeatletter" > "t1.tex"
++#print "\\def\\ch@delay{y}" > "t1.tex"
++#print "\\makeatother" > "t1.tex"
++#print "\\documentclass{article}" > "t1.tex"
++#print "\\begin{document}" > "t1.tex"
++#print "test" > "t1.tex"
++#print "\\end{document}" > "t1.tex"
++#}
++#END{} ' tmp@
+ 
+ 
+-  cp  $fmtname/chitexl.fmt .
+-  virtex \&chitexl t1
+-  fdfilemsg=`grep ".fdfile" t1.log`
+-  if test "$fdfilemsg" = ""; then
+-     gunzip -dc chitex612/fmt/chggfile.Redhat70.tgz|tar xvf - 2>&2 >/dev/null
+-     ChmkFmtrtn 
+-     echo "     "
+-     echo "   The following is to test again whether "
+-     echo "   the chinese fmt files work well"
+-     echo "  "
+-     echo "   If it fails, just type 'x' or 'ctl z' to exit"
+-     echo "   (Messages will contain characters ^^ which are not error message.)"
+-     echo "   and then it will try to make up the installation."
+-     echo " "
+-     echo "   Press Enter key to continue!"
+-     read xxxxxxx
+-  
+-     cp  $fmtname/chitexl.fmt .
+-     virtex \&chitexl t1
+-     fdfilemsg=`grep ".fdfile" t1.log`
+-     if test "$fdfilemsg" = ""; then
+-        echo " "
+-        echo "  It still fail to make chinese fmt files."
+-        echo "  After the completion of installtion, please follow the help"
+-        echo "  of file 'README.Makefmt' to make them manually. "
+-        echo "  "
+-        echo "  Press Enter key to continue!"
+-       read xxxxxxxxxxx
+-     else
+-       echo " "
+-       echo "  It has made chinese fmt files successfully."
+-       echo " "
+-       echo "   Press Enter key to continue!"
+-       read xxxxx
+-     fi
+-  else
+-    echo " "
+-    echo "  It has made chinese fmt files successfully."
+-    echo " "
+-    echo "   Press Enter key to continue!"
+-    read xxxxx
+-  fi
++#  cp -v  $fmtname/chitexl.fmt .
++#  virtex \&chitexl t1
++#  fdfilemsg=`grep ".fdfile" t1.log`
++#  if test "$fdfilemsg" = ""; then
++#     gunzip -dc chitex612/fmt/chggfile.freebsd.tgz|tar xvf - 2>&2 >/dev/null
++#     ChmkFmtrtn 
++#     echo "     "
++#     echo "   The following is to test again whether "
++#     echo "   the chinese fmt files work well"
++#     echo "  "
++#     echo "   If it fails, just type 'x' or 'ctl z' to exit"
++#     echo "   (Messages will contain characters ^^ which are not error message.)"
++#     echo "   and then it will try to make up the installation."
++#     echo " "
++#     echo "   Press Enter key to continue!"
++#     #read xxxxxxx
++#  
++#     cp -v  $fmtname/chitexl.fmt .
++#     virtex \&chitexl t1
++#     fdfilemsg=`grep ".fdfile" t1.log`
++#     if test "$fdfilemsg" = ""; then
++#        echo " "
++#        echo "  It still fail to make chinese fmt files."
++#        echo "  After the completion of installtion, please follow the help"
++#        echo "  of file 'README.Makefmt' to make them manually. "
++#        echo "  "
++#        echo "  Press Enter key to continue!"
++#       #read xxxxxxxxxxx
++#     else
++#       echo " "
++#       echo "  It has made chinese fmt files successfully."
++#       echo " "
++#       echo "   Press Enter key to continue!"
++#       #read xxxxx
++#     fi
++#  else
++#    echo " "
++#    echo "  It has made chinese fmt files successfully."
++#    echo " "
++#    echo "   Press Enter key to continue!"
++#    #read xxxxx
++#  fi
+ 
+ 
+ # The following now is only a backup of old procesure
+   CopyFMTFiles(){
+    gunzip -dc chitex612/fmt/chitex.fmt.gz > chitex.fmt
+    gunzip -dc chitex612/fmt/chitexl.fmt.gz > chitexl.fmt
+-   cp -f chitex*.fmt $fmtname
++   cp -v -f chitex*.fmt $fmtname
+    /bin/rm -f chitex*.fmt
+ 
+    gunzip -dc chitex612/fmt/chitexg.fmt.gz > chitexg.fmt
+    gunzip -dc chitex612/fmt/chitexlg.fmt.gz > chitexlg.fmt
+-   cp -f chitex*.fmt $fmtname
++   cp -v -f chitex*.fmt $fmtname
+    /bin/rm -f chitex*.fmt
+    gunzip -dc chitex612/fmt/pdfchitex.fmt.gz > pdfchitex.fmt
+    gunzip -dc chitex612/fmt/pdfchitexl.fmt.gz > pdfchitexl.fmt
+-   cp -f pdfchitex*.fmt $fmtname
++   cp -v -f pdfchitex*.fmt $fmtname
+    /bin/rm -f pdfchitex*.fmt
+    gunzip -dc chitex612/fmt/pdfchitexg.fmt.gz > pdfchitexg.fmt
+    gunzip -dc chitex612/fmt/pdfchitexlg.fmt.gz > pdfchitexlg.fmt
+-   cp -f pdfchitex*.fmt $fmtname
++   cp -v -f pdfchitex*.fmt $fmtname
+    /bin/rm -f pdfchitex*.fmt
+    echo "       End of copy fmt files "
+   }
+@@ -646,25 +651,25 @@
+ ##### Part6.1
+ ##### Copy tfm files ########
+ cd $SAVEPWD
+-/bin/rm -rf tfm
+-mkdir tfm 
+-cd tfm
+-rm -rf pbktfm
+-mkdir pbktfm
+-cd pbktfm
+-gunzip -dc $SAVEPWD/chitex612/data/pbktfm.tgz|tar xvf -
+-if test ! -d $texmf/fonts/tfm/adobe/bookman; then
+-  mkdir -p $texmf/fonts/tfm/adobe/bookman
+-fi
+-cp *.tfm $texmf/fonts/tfm/adobe/bookman
+-cd ..
+-/bin/rm -rf pbktfm
++#/bin/rm -rf tfm
++#mkdir tfm 
++#cd tfm
++#rm -rf pbktfm
++#mkdir pbktfm
++#cd pbktfm
++#gunzip -dc $SAVEPWD/chitex612/data/pbktfm.tgz|tar xf -
++#if test ! -d $texmf/fonts/tfm/adobe/bookman; then
++#  mkdir -p $texmf/fonts/tfm/adobe/bookman
++#fi
++#cp -v *.tfm $texmf/fonts/tfm/adobe/bookman
++#cd ..
++#/bin/rm -rf pbktfm
+ 
+-gunzip -dc ../../nuwpstfm.tgz|tar xvf -
+-cp -f nuwpstj*.tfm $texmf/fonts/tfm/chinese/nuwpstj
++gunzip -dc /usr/ports/distfiles/chitex/nuwpstfm.tgz|tar xf -
++cp -v -f nuwpstj*.tfm $texmf/fonts/tfm/chinese/nuwpstj
+ /bin/rm -f nuwpstj*.tfm
+-gunzip -dc ../../moekatfm.tgz|tar xvf -
+-cp -f moe_kai*.tfm $texmf/fonts/tfm/chinese/moe_kai
++gunzip -dc /usr/ports/distfiles/chitex/moekatfm.tgz|tar xf -
++cp -v -f moe_kai*.tfm $texmf/fonts/tfm/chinese/moe_kai
+ /bin/rm -f moe_kai*.tfm
+ 
+ 
+@@ -676,8 +681,8 @@
+ /bin/rm -rf pk
+ mkdir pk
+ cd pk
+-gunzip -dc $SAVEPWD/chitex612/data/fxntukai.tar.gz|tar xvf -
+-cp -f fxntukai*.*pk $texmf/fonts/pk/chinese/fxntukai
++gunzip -dc $SAVEPWD/chitex612/data/fxntukai.tar.gz|tar xf -
++cp -v -f fxntukai*.*pk $texmf/fonts/pk/chinese/fxntukai
+ /bin/rm -f fxntukai*.*pk
+ 
+ cd $SAVEPWD
+@@ -686,19 +691,19 @@
+ ###### Copy fx*'s tfm and link ttf files #######
+ tfm=$texmf/fonts/tfm
+ ttf=$texmf/fonts/chinese/ttf
+-/bin/cp chitex612/data/linkkai $tfm/chinese/fxntukai 
+-/bin/cp chitex612/data/linkfs $tfm/chinese/fxntufs
+-/bin/cp chitex612/data/linkli $tfm/chinese/fxntuli
+-#/bin/cp chitex612/data/fxntukai03.tfm $tfm/chinese/fxntukai 
+-/bin/cp chitex612/data/fxntukai03.tfm $tfm/chinese/fxntufs
+-/bin/cp chitex612/data/fxntukai03.tfm $tfm/chinese/fxntuli
+-/bin/cp chitex612/data/linkttf $ttf
++/bin/cp -v chitex612/data/linkkai $tfm/chinese/fxntukai 
++/bin/cp -v chitex612/data/linkfs $tfm/chinese/fxntufs
++/bin/cp -v chitex612/data/linkli $tfm/chinese/fxntuli
++#/bin/cp -v chitex612/data/fxntukai03.tfm $tfm/chinese/fxntukai 
++/bin/cp -v chitex612/data/fxntukai03.tfm $tfm/chinese/fxntufs
++/bin/cp -v chitex612/data/fxntukai03.tfm $tfm/chinese/fxntuli
++/bin/cp -v chitex612/data/linkttf $ttf
+ #rm -f fxntukai03.tfm
+ 
+ 
+ cd $tfm/chinese/fxntukai 
+ /bin/rm -f fxntukai*.tfm
+-/bin/cp $SAVEPWD/chitex612/data/fxntukai03.tfm $tfm/chinese/fxntukai  
++/bin/cp -v $SAVEPWD/chitex612/data/fxntukai03.tfm $tfm/chinese/fxntukai  
+ ./linkkai 
+ /bin/rm -f linkkai
+ cd $tfm/chinese/fxntufs
+@@ -772,10 +777,10 @@
+ }
+ END{}' $configps/config.ps
+ 
+-/bin/cp -f config.ps.300 config.ps.600 $configps
++/bin/cp -v -f config.ps.300 config.ps.600 $configps
+ /bin/rm -f config.ps.300 config.ps.600
+ cd chitex612/data
+-/bin/cp -f XDvi.300 XDvi.600 $texmf/xdvi
++/bin/cp -v -f XDvi.300 XDvi.600 $texmf/xdvi
+ cd $SAVEPWD
+ } # ModifyConfigps
+ 
+@@ -816,11 +821,10 @@
+ fi
+ chmod a+rwx $VARTEXFONTS/type1/fonts
+ 
+-if test ! -d $texmf/fonts/type1/chinese; then
+-   mkdir -p $texmf/fonts/type1/chinese
+-   ln -s $VARTEXFONTS/type1/fonts $texmf/fonts/type1/chinese/fonts \
+-       2>&2 >/dev/null
+-fi
++#if test ! -d $texmf/fonts/type1/chinese; then
++#   mkdir -p $texmf/fonts/type1/chinese
++#   ln -s $VARTEXFONTS/type1/fonts $texmf/fonts/type1/chinese/fonts
++#fi
+ 
+ 
+ 
+@@ -833,14 +837,14 @@
+ # .../texmf/fonts/chinese/ttf
+ #
+ 
+-ttfgzfiles=`ls ../*.ttf.gz`
++ttfgzfiles=`ls /usr/ports/distfiles/chitex/*.ttf.gz`
+ 
+-clear
++#clear
+ echo " "
+ echo "           It will unzip TrueType files: "
+ echo " "
+ cd ..
+-ls *.ttf.gz
++ls /usr/ports/distfiles/chitex/*.ttf.gz
+ cd $SAVEPWD
+ #echo "              $ttfgzfiles "
+ echo " "
+@@ -854,13 +858,13 @@
+ 
+ for cmd in $ttfgzfiles
+ do
+-    cmda=`echo "$cmd"|cut -d/ -f 2|cut -d. -f 1`
++    cmda=`echo "$cmd"|cut -d/ -f 6|cut -d. -f 1`
+     cmdnogz=$cmda".ttf"
+     echo "unzip $cmd"
+     gunzip -dc $cmd > $cmdnogz
+     echo "mv -f $cmdnogz $texmf/fonts/chinese/ttf"
+     /bin/rm -f $texmf/fonts/chinese/ttf$cmdnogz
+-    cp -f $cmdnogz $texmf/fonts/chinese/ttf
++    cp -v -f $cmdnogz $texmf/fonts/chinese/ttf
+     /bin/rm -f $cmdnogz
+ done
+ 
+@@ -886,51 +890,51 @@
+ #fi
+ mkdir pfb
+ cd pfb
+-moekaifiles=`/bin/ls ../../moekai*.tgz`
++moekaifiles=`/bin/ls /usr/ports/distfiles/chitex/moekai*.tgz`
+ for tgzfile in $moekaifiles
+ do
+-   gunzip -dc $tgzfile|tar xvf -
+-   cp -f *.pfb $VARTEXFONTS/type1/fonts
++   gunzip -dc $tgzfile|tar xf -
++   cp -v -f *.pfb $VARTEXFONTS/type1/fonts
+    /bin/rm -f *.pfb
+    if test ! -d $VARTEXFONTS/tfm/chinese/moe_kai_pfb; then
+       mkdir -p $VARTEXFONTS/tfm/chinese/moe_kai_pfb
+    fi
+    chmod a+w $VARTEXFONTS/tfm/chinese
+    chmod a+w $VARTEXFONTS/tfm/chinese/moe_kai_pfb
+-   cp -f *.tfm $VARTEXFONTS/tfm/chinese/moe_kai_pfb
++   cp -v -f *.tfm $VARTEXFONTS/tfm/chinese/moe_kai_pfb
+    /bin/rm -f *.tfm
+ done
+ 
+-nwdsungfiles=`/bin/ls ../../nwdsung*.tgz`
++nwdsungfiles=`/bin/ls /usr/ports/distfiles/chitex/nwdsung*.tgz`
+ for tgzfile in $nwdsungfiles
+ do
+-   gunzip -dc $tgzfile|tar xvf -
+-   cp *.pfb $VARTEXFONTS/type1/fonts
++   gunzip -dc $tgzfile|tar xf -
++   cp -v -f *.pfb $VARTEXFONTS/type1/fonts
+    /bin/rm -f *.pfb
+    if test ! -d $VARTEXFONTS/tfm/chinese/nbsmi00lp_pfb; then
+       mkdir -p $VARTEXFONTS/tfm/chinese/nbsmi00lp_pfb
+    fi
+    chmod a+w $VARTEXFONTS/tfm/chinese/nbsmi00lp_pfb
+-   cp -f *.tfm $VARTEXFONTS/tfm/chinese/nbsmi00lp_pfb
++   cp -v -f *.tfm $VARTEXFONTS/tfm/chinese/nbsmi00lp_pfb
+    /bin/rm -f *.tfm
+ done
+ 
+ #ngbfiles=`/bin/ls ../../nwdgkai.tgz;/bin/ls ../../nuwgsung.tgz`
+-ngbfiles="../../nwdgkai.tgz  ../../nuwgsung.tgz"
++ngbfiles="/usr/ports/distfiles/chitex/nwdgkai.tgz /usr/ports/distfiles/chitex/nuwgsung.tgz"
+ for tgzfile in $ngbfiles
+ do
+-   if test "$tgzfile" = "../../nuwgsung.tgz"; then
++   if test "$tgzfile" = "/usr/ports/distfiles/chitex/nuwgsung.tgz"; then
+       ngbdir="nuwpstj_pfb"
+    else
+       ngbdir="ngkai00mp_pfb"
+    fi
+-   gunzip -dc $tgzfile|tar xvf -
+-   cp -f *.pfb $VARTEXFONTS/type1/fonts
++   gunzip -dc $tgzfile|tar xf -
++   cp -v -f *.pfb $VARTEXFONTS/type1/fonts
+    /bin/rm -f *.pfb
+    if test ! -d $VARTEXFONTS/tfm/chinese/$ngbdir; then
+       mkdir -p $VARTEXFONTS/tfm/chinese/$ngbdir
+    fi
+-   cp -f *.tfm $VARTEXFONTS/tfm/chinese/$ngbdir
++   cp -v -f *.tfm $VARTEXFONTS/tfm/chinese/$ngbdir
+    /bin/rm -f *.tfm
+ done
+ 
+@@ -950,11 +954,11 @@
+ modifyttfontsmap="n"
+ 
+ # if test "$modifyttfontsmap = "y"; then
+-cp -f chitex612/data/ttfonts.map $texmf/ttfonts.map
++cp -v -f chitex612/data/ttfonts.map $texmf/ttfonts.map
+ if test ! -d $texmf/ttf2pk; then
+    mkdir $texmf/ttf2pk
+ fi
+-cp -f chitex612/data/ttfonts.map $texmf/ttf2pk/ttfonts.map
++cp -v -f chitex612/data/ttfonts.map $texmf/ttf2pk/ttfonts.map
+ 
+ $gawkbin '
+ BEGIN{
+@@ -1023,7 +1027,7 @@
+ }' texmf=$texmf vartexfonts=$VARTEXFONTS chitex612/data/ttfonts.map
+ 
+ if test ! -s $texmf/ttfonts.bak;then
+-   cp -f $texmf/ttfonts.map $texmf/ttfonts.bak
++   cp -v -f $texmf/ttfonts.map $texmf/ttfonts.bak
+ fi
+ 
+ warning=`egrep "Warning!" $texmf/ttfonts.map `
+@@ -1042,13 +1046,13 @@
+    echo " " >> appendfiles@
+ 
+    cat $texmf/ttfonts.map >> appendfiles@ 
+-   cp -f appendfiles@ $texmf/ttfonts.map
++   cp -v -f appendfiles@ $texmf/ttfonts.map
+    /bin/rm -f appendfiles@
+ fi
+ 
+   sed "s#/usr/local/TeX/share/texmf#$texmf#g" $texmf/ttfonts.map >ttfonts.map@
+-  cp -f ttfonts.map@ $texmf/ttfonts.map
+-  cp -f ttfonts.map@ $texmf/ttf2pk/ttfonts.map
++  cp -v -f ttfonts.map@ $texmf/ttfonts.map
++  cp -v -f ttfonts.map@ $texmf/ttf2pk/ttfonts.map
+   /bin/rm -f ttfonts.map@
+ 
+ 
+@@ -1063,44 +1067,44 @@
+ ##### Part11 
+ CopySfdAfm(){
+ ##### copy *.sfd  to $texmf, copy *.afm to $texmf/tex/chinese #####
+-cp -f chitex612/data/*.sfd $texmf
+-cp -f chitex612/data/*.sfd $texmf/ttf2pk
+-cp -f chitex612/data/*.afm $texmf/tex/chinese
++cp -v -f chitex612/data/*.sfd $texmf
++cp -v -f chitex612/data/*.sfd $texmf/ttf2pk
++cp -v -f chitex612/data/*.afm $texmf/tex/chinese
+ } # End of CopySfdAfm
+ 
+ 
+ ##### Part12
+ CopyPstfiles(){
+ cd $SAVEPWD
+-step5="y"
++#step5="y"
+ #if test "$step5" = "y"; then
+ #if test "$install" = "all"; then
+ ##### copy pst's files 
+-/bin/rm -rf pst
+-mkdir pst
+-cd pst
+-gunzip -dc ../chitex612/data/pst.tar.gz|tar xvf -
+-cp -f *.sty *.tex *.con $texmf/tex/chinese
+-cp -f *.pro $texmf/dvips/base
+-/bin/rm -f *.sty *.tex *.con *.pro
+-cd $SAVEPWD
++#/bin/rm -rf pst
++#mkdir pst
++#cd pst
++#gunzip -dc ../chitex612/data/pst.tar.gz|tar xf -
++#cp -v -f *.sty *.tex *.con $texmf/tex/chinese
++#cp -v -f *.pro $texmf/dvips/base
++#/bin/rm -f *.sty *.tex *.con *.pro
++#cd $SAVEPWD
+ #fi
+ 
+-cd $SAVEPWD
++#cd $SAVEPWD
+ ##### update pstricks if tetex version <= .09 #####
+-echo "yes" > tmp@
++#echo "yes" > tmp@
+ 
+-   /bin/rm -rf pstricks
+-   mkdir pstricks
+-   cd pstricks
+-   gunzip -dc $SAVEPWD/chitex612/data/pstricks.tgz|tar xvf -
+-   if test ! -d $texmf/tex/generic/pstricks; then
+-      mkdir -p $texmf/tex/generic/pstricks
+-      cp -f * $texmf/tex/generic/pstricks
+-   fi
+-   /bin/rm -f *
+-   cd $SAVEPWD
+-   rmdir pstricks
++#   /bin/rm -rf pstricks
++#   mkdir pstricks
++#   cd pstricks
++#   gunzip -dc $SAVEPWD/chitex612/data/pstricks.tgz|tar xf -
++#   if test ! -d $texmf/tex/generic/pstricks; then
++#      mkdir -p $texmf/tex/generic/pstricks
++#      cp -v -f * $texmf/tex/generic/pstricks
++#   fi
++#   /bin/rm -f *
++#   cd $SAVEPWD
++#   rmdir pstricks
+ } # CopyPstfiles
+ 
+ 
+@@ -1109,43 +1113,43 @@
+ Backupbinaryfiles(){
+ ##### Backup ttf2tfm, ttf2pk
+    if test -s $bindir/ttf2tfm -a ! -s $bindir/ttf2tfm.bak; then 
+-       cp $bindir/ttf2tfm $bindir/ttf2tfm.bak
++       cp -v $bindir/ttf2tfm $bindir/ttf2tfm.bak
+    fi
+    if test -s $bindir/ttf2pk -a ! -s $bindir/ttf2pk.bak; then 
+-       cp $bindir/ttf2pk $bindir/ttf2pk.bak
++       cp -v $bindir/ttf2pk $bindir/ttf2pk.bak
+    fi
+    if test -s $bindir/ttf2pfb -a ! -s $bindir/ttf2pfb.bak; then 
+-       cp $bindir/ttf2pfb $bindir/ttf2pfb.bak
++       cp -v $bindir/ttf2pfb $bindir/ttf2pfb.bak
+    fi
+ 
+ 
+ ##### Backup binary files
+ ####### backup old dvips and mv dvips to dvips.bin
+ ######  Important
+-echo "yes" > tmp@
++#echo "yes" > tmp@
+ #step22="y"
+ #if test "$step22" = "y"; then
+ 
+-if test ! -s $bindir/dvips.bin; then
+-   cp $bindir/dvips $bindir/dvips.bin
+-   if test ! -s $bindir/dvips.bak; then
+-      cp $bindir/dvips $bindir/dvips.bak
+-   fi
+-fi
++#if test ! -s $bindir/dvips.bin; then
++#   cp -v $bindir/dvips $bindir/dvips.bin
++#   if test ! -s $bindir/dvips.bak; then
++#      cp -v $bindir/dvips $bindir/dvips.bak
++#   fi
++#fi
+ ######## Backup mktextfm #########
+-if test "$newtextex" = "yes" -a "$newttf2pk" = "y"; then
+-  if test ! -s "$bindir/mktextfm.bak"; then
+-     cp $bindir/mktextfm $bindir/mktextfm.bak
+-  fi
+-#     cp -f chitex612/bin/mktextfm $bindir
+-fi
++#if test "$newtextex" = "yes" -a "$newttf2pk" = "y"; then
++#  if test ! -s "$bindir/mktextfm.bak"; then
++#     cp -v $bindir/mktextfm $bindir/mktextfm.bak
++#  fi
++#     cp -v -f chitex612/bin/mktextfm $bindir
++#fi
+ ######## Backup mktexpk #########
+-if test "$newtextex" = "yes" -a "$newttf2pk" = "y"; then
+-  if test ! -s "$bindir/mktexpk.bak"; then
+-     cp $bindir/mktexpk $bindir/mktexpk.bak
+-  fi
+-#     cp -f chitex612/bin/mktexpk $bindir
+-fi
++#if test "$newtextex" = "yes" -a "$newttf2pk" = "y"; then
++#  if test ! -s "$bindir/mktexpk.bak"; then
++#     cp -v $bindir/mktexpk $bindir/mktexpk.bak
++#  fi
++#     cp -v -f chitex612/bin/mktexpk $bindir
++#fi
+ #fi # step5
+ } # Backupbinaryfiles
+ 
+@@ -1159,16 +1163,16 @@
+    gunzip -dc chitex612/data/ttf2tfm.$unixname.gz> ttf2tfm
+    chmod +x ttf2tfm
+    if test "$unixname" != "linux"; then
+-      cp -f ttf2tfm $bindir
++      cp -v -f ttf2tfm $bindir
+    else
+       usage=`ttf2tfm --help|grep "Usage"`
+       if test "$usage" != ""; then
+          :
+       else
+-         gunzip -dc chitex612/data/ttf2tfm.linux.new.gz> ttf2tfm         
++         gunzip -dc chitex612/data/ttf2tfm.freebsd.gz> ttf2tfm         
+          chmod +x ttf2tfm 
+       fi
+-      cp -f ttf2tfm $bindir
++      cp -v -f ttf2tfm $bindir
+    fi   
+    /bin/rm -f ttf2tfm
+ 
+@@ -1176,16 +1180,16 @@
+    gunzip -dc chitex612/data/ttf2pk.$unixname.gz> ttf2pk
+    chmod +x ttf2pk
+    if test "$unixname" != "linux"; then
+-      cp -f ttf2pk $bindir
++      cp -v -f ttf2pk $bindir
+    else
+       usage=`ttf2pk --help|grep "Usage"`
+       if test "$usage" != ""; then
+          :
+       else
+-         gunzip -dc chitex612/data/ttf2pk.linux.new.gz> ttf2pk
++         gunzip -dc chitex612/data/ttf2pk.freebsd.gz> ttf2pk
+          chmod +x ttf2pk
+       fi
+-      cp -f ttf2pk $bindir
++      cp -v -f ttf2pk $bindir
+    fi   
+    /bin/rm -f ttf2pk
+ 
+@@ -1194,17 +1198,17 @@
+       gunzip -dc chitex612/data/ttf2pfb.$unixname.gz> ttf2pfb
+       chmod +x ttf2pfb
+     if test "$unixname" != "linux"; then
+-      cp -f ttf2pfb $bindir
++      cp -v -f ttf2pfb $bindir
+     else
+       ttf2pfb --help 2> msgtmp
+       usage=`grep "Usage" msgtmp`
+       if test "$usage" != ""; then
+          :
+       else
+-         gunzip -dc chitex612/data/ttf2pfb.linux.new.gz> ttf2pfb
++         gunzip -dc chitex612/data/ttf2pfb.freebsd.gz> ttf2pfb
+          chmod +x ttf2pfb
+       fi
+-      cp -f ttf2pfb $bindir
++      cp -v -f ttf2pfb $bindir
+     fi   
+     /bin/rm -f ttf2pfb
+     /bin/rm -f msgtmp
+@@ -1213,17 +1217,17 @@
+ 
+    if test "$unixname" = "linux" -o "$unixname" = "freebsd"; then
+       if test "$unixname" != "linux"; then
+-         cp $SAVEPWD/chitex612/data/t1asm.$unixname $bindir/t1asm
++         cp -v $SAVEPWD/chitex612/data/t1asm.$unixname $bindir/t1asm
+       else
+          t1asm --help 2> msgtmp
+          usage=`grep "Usage" msgtmp`
+          if test "$usage" != ""; then
+             :
+          else
+-            cp $SAVEPWD/chitex612/data/t1asm.linux.new t1asm
++            cp -v $SAVEPWD/chitex612/data/t1asm.freebsd t1asm
+             chmod +x t1asm
+          fi
+-         cp -f t1asm $bindir
++         cp -v -f t1asm $bindir
+          /bin/rm -f t1asm
+          /bin/rm -f msgtmp
+       fi
+@@ -1234,19 +1238,22 @@
+ ###### Copy chitex612/bin/* to $bindir 
+ 
+ /bin/rm -rf chitex612/bin/temp
++perl -pi -e 's|gawk|awk|g' chitex612/bin/*
+ 
+ # Copy chitex612/bin/* to $bindir
+-cp -f chitex612/bin/* $bindir
++rm -f chitex612/bin/MakeTeXPK chitex612/bin/dvips chitex612/bin/mktexpk
++rm -f chitex612/bin/mktextfm chitex612/bin/xdvi chitex612/bin/*~
++cp -v -f chitex612/bin/* $bindir
+ 
+-cp -f chitex612/data/chitran0.awk $bindir
+-cp -f chitex612/data/chitran1.awk $bindir
++cp -v -f chitex612/data/chitran0.awk $bindir
++cp -v -f chitex612/data/chitran1.awk $bindir
+ 
+ sed "s#chitran0.awk#$bindir/chitran0.awk#g" $bindir/chitranc > chitranc@
+ sed "s#chitran1.awk#$bindir/chitran1.awk#g" chitranc@ > chitranc@@
+ mv -f chitranc@@ $bindir/chitranc
+ 
+ 
+-if test "$unixname" != "linux"; then
++if test "$unixname" != "freebsd"; then
+    /bin/rm -f $bindir/ttf_edit $bindir/genttf
+ fi
+ } # Copybinaryfiles
+@@ -1281,7 +1288,7 @@
+ # Start to compile 'chitran0.c',...
+ # and move the resulted files into $bindir and its original place
+ # First it will compile awka
+-  gunzip -dc $SAVEPWD/chitex612/data/awka.tgz |tar xvf -
++  gunzip -dc $SAVEPWD/chitex612/data/awka.tgz |tar xf -
+   cd awka-0.3b-50
+   configure
+   make
+@@ -1301,9 +1308,9 @@
+ cd .temp00$$
+ mv ../libawka.* .
+ cp -f $SAVEPWD/chitex612/data/*.c .
+-gunzip -dc $SAVEPWD/chitex612/data/cfile.tgz|tar xvf -
+-#cp -f chitran1.awk $texmf/tex/chinese
+-cp -f $SAVEPWD/chitex612/data/chitran3a.awk $texmf/tex/chinese
++gunzip -dc $SAVEPWD/chitex612/data/cfile.tgz|tar xf -
++#cp -v -f chitran1.awk $texmf/tex/chinese
++cp -v -f $SAVEPWD/chitex612/data/chitran3a.awk $texmf/tex/chinese
+ 
+ 
+ #step6="y"
+@@ -1315,13 +1322,13 @@
+    eval $CC $cmd".c" -I./ -L./ -lawka -lm -o $cmd
+    eval cmddir=\$$cmd"dir"
+    if test "$cmddir" != ""; then 
+-      eval cp -f $cmd \$$cmd"dir"
+-      eval echo "cp -f $cmd" \$$cmd"dir"
++      eval cp -v -f $cmd \$$cmd"dir"
++      eval echo "cp -v -f $cmd" \$$cmd"dir"
+    else
+-      eval echo "cp -f $cmd $bindir"
++      eval echo "cp -v -f $cmd $bindir"
+    fi
+    
+-   eval cp -f $cmd $bindir
++   eval cp -v -f $cmd $bindir
+ done
+ 
+ #fi  # end of step6
+@@ -1332,12 +1339,12 @@
+    $CC -o $cmd $cmd".c" 
+    eval cmddir=\$$cmd"dir"
+    if test "$cmddir" != ""; then 
+-      eval cp -f $cmd \$$cmd"dir"
+-      eval echo "cp -f $cmd" \$$cmd"dir"
++      eval cp -v -f $cmd \$$cmd"dir"
++      eval echo "cp -v -f $cmd" \$$cmd"dir"
+    else
+-      eval echo "cp -f $cmd $bindir"
++      eval echo "cp -v -f $cmd $bindir"
+    fi
+-   eval cp -f $cmd $bindir
++   eval cp -v -f $cmd $bindir
+ #   /bin/rm -f $cmd
+ done
+ 
+@@ -1370,31 +1377,31 @@
+ 
+ ##### copy (update) *.tex files #######
+ 
+-chmod +w $texmf/tex/chinese/*.fdf
+-chmod +w $texmf/tex/chinese/*.tex
+-chmod +w $texmf/tex/chinese/*.png
++#chmod +w $texmf/tex/chinese/*.fdf
++#chmod +w $texmf/tex/chinese/*.tex
++#chmod +w $texmf/tex/chinese/*.png
+ #chmod +w $texmf/tex/chinese/*.pdf
+-chmod +w $texmf/tex/chinese/*.bib
+-chmod +w $texmf/tex/chinese/*.sty
+-cp -f chitex612/tex/* $texmf/tex/chinese
++#chmod +w $texmf/tex/chinese/*.bib
++#chmod +w $texmf/tex/chinese/*.sty
++cp -v -f chitex612/tex/* $texmf/tex/chinese
+ 
+ if test ! -d $SAVEPWD/tex; then
+    mkdir $SAVEPWD/tex
+ fi
+ 
+-cp -f chitex612/tex/math*.tex $SAVEPWD/tex
+-cp -f chitex612/tex/samp*.tex $SAVEPWD/tex
+-cp -f chitex612/tex/char*.tex $SAVEPWD/tex
+-cp -f chitex612/tex/*.png $SAVEPWD/tex
+-#cp -f chitex612/tex/*.pdf $SAVEPWD/tex
+-cp -f chitex612/tex/*.bib $SAVEPWD/tex
+-
+-chmod a-w $texmf/tex/chinese/*.fdf
+-chmod a-w $texmf/tex/chinese/*.tex
+-chmod a-w $texmf/tex/chinese/*.png
++#cp -f chitex612/tex/math*.tex $SAVEPWD/tex
++#cp -f chitex612/tex/samp*.tex $SAVEPWD/tex
++#cp -f chitex612/tex/char*.tex $SAVEPWD/tex
++#cp -f chitex612/tex/*.png $SAVEPWD/tex
++#cp -v -f chitex612/tex/*.pdf $SAVEPWD/tex
++#cp -f chitex612/tex/*.bib $SAVEPWD/tex
++
++#chmod a-w $texmf/tex/chinese/*.fdf
++#chmod a-w $texmf/tex/chinese/*.tex
++#chmod a-w $texmf/tex/chinese/*.png
+ #chmod a-w $texmf/tex/chinese/*.pdf
+-chmod a-w $texmf/tex/chinese/*.bib
+-chmod a-w $texmf/tex/chinese/*.sty
++#chmod a-w $texmf/tex/chinese/*.bib
++#chmod a-w $texmf/tex/chinese/*.sty
+ 
+ 
+ echo "       End of copy files to $texmf/tex/chinese "
+@@ -1429,12 +1436,12 @@
+ fi
+ fi
+ 
+-if test -s $texmf/dvips/base/psfonts.map; then
+-wafonts=`grep "%Wafonts begin" $texmf/dvips/base/psfonts.map`
+-if test "$wafonts" = ""; then
+-   cat chitex612/data/pfbadd.map >> $texmf/dvips/base/psfonts.map
+-fi
+-fi
++#if test -s $texmf/dvips/base/psfonts.map; then
++#wafonts=`grep "%Wafonts begin" $texmf/dvips/base/psfonts.map`
++#if test "$wafonts" = ""; then
++#   cat chitex612/data/pfbadd.map >> $texmf/dvips/base/psfonts.map
++#fi
++#fi
+ 
+ wafonts=`grep "%Wafonts begin" $texmf/dvips/config/pdftex.map`
+ if test "$wafonts" = ""; then
+@@ -1442,11 +1449,11 @@
+ fi
+ 
+ 
+-echo "       End of update  psfonts.map, pdftex.map "
+-if test "$stopask" = "y"; then
+-   echo $echomode "       Press any key to continue " $echoc
+-   read inkey
+-fi
++#echo "       End of update  psfonts.map, pdftex.map "
++#if test "$stopask" = "y"; then
++#   echo $echomode "       Press any key to continue " $echoc
++#   read inkey
++#fi
+ ##### end of Update psfonts.map, pdftex.map 
+ } # Updatepsfontsmappdftexmap
+ 
+@@ -1477,7 +1484,7 @@
+ 
+ if test -s config@; then   # 2nd if
+ lyxdir=`
+-awk '
++$gawkbin '
+ BEGIN{}
+ {
+   lyxrc=index($0,"/lyxrc.defaults")
+@@ -1489,11 +1496,11 @@
+    echo "lyxdir=$lyxdir found"
+ 
+ if test ! -s $lyxdir/configure.bak; then
+-   cp -f $lyxdir/configure  $lyxdir/configure.bak
++   cp -v -f $lyxdir/configure  $lyxdir/configure.bak
+ fi
+ 
+ modify=`
+-awk '
++$gawkbin '
+ BEGIN{}
+ {
+   if (modify==0) 
+@@ -1507,7 +1514,7 @@
+ rm -f tmp@
+ 
+ if test "$modify" = ""; then  # 3rd if
+-awk '
++$gawkbin '
+ BEGIN{}
+ { 
+   inline=$0
+@@ -1530,7 +1537,7 @@
+ END{ } ' $lyxdir/configure
+ 
+ cat $SAVEPWD/chitex612/data/configure.add >> tmp@
+-cp -f tmp@ $lyxdir/configure
++cp -v -f tmp@ $lyxdir/configure
+ chmod +x $lyxdir/configure
+ 
+  echo  'configure'  "has been modified"
+@@ -1551,7 +1558,7 @@
+ 
+  if test "$havecheck" = ""; then 
+ 
+-awk '
++$gawkbin '
+ BEGIN{}
+ { inline=""
+   lyx=index($0,"lyx")
+@@ -1583,7 +1590,7 @@
+ }
+ END{}' $clyx
+ 
+- cp tmp@ $clyx
++ cp -v tmp@ $clyx
+  fi  # if test "$havecheck" = ""; then  
+ fi # 
+ ##### end of modify configure for clyx #####
+@@ -1634,7 +1641,7 @@
+ ############# The messages of end of upadte ##################
+ message ( ) {
+ menua (){
+-clear
++#clear
+ echo " "
+ #echo " "
+ #echo "        If there are no error messages, then "
+@@ -1666,7 +1673,7 @@
+ echo " "
+ 
+ echo $echomode "        Press enter key to continue" $echocr
+-read inkeya
++#read inkeya
+ 
+ 
+ menubno="y"
+@@ -1682,7 +1689,7 @@
+ }
+ 
+ menub (){
+-clear
++#clear
+ echo "       10. ¤@¨Ç script µ{¦¡§ï¥Î c »y¨¥²£¥Í, ³t«×´£ª@¤@­¿¥H¤W(¹ïªøªº¤å¥ó)"
+ echo "       11. ´£¨Ñ¦³Ãö cbibtex, cmakeindex ¤¤¤å kay ¦b \\label, "
+ echo "           \\cite, \\ref ¨Ï¥Îªº¨Ò¤l¤å¥ó: mabibind.tex ¨Ñ´ú¸Õ"
+@@ -1711,7 +1718,8 @@
+ echo "        Type \"b\" to back"
+ echo "        or Type \"c\" to continue"
+ echo $echomode "        : " $echocr
+-read inkeyb
++#read inkeyb
++inkeyb="c"
+ }
+ 
+ #menuno="y"
+@@ -1725,7 +1733,7 @@
+ #done
+ 
+ submenuc (){
+-clear
++#clear
+ echo " "
+ echo " "
+    echo "        *** ©I¥s¥» message ½Ð¤U«ü¥O:  message "
+@@ -1744,7 +1752,8 @@
+    echo "     "
+    echo $echomode "        Type '1', '2', 'b' or 'q' to choose one of the above: " $echocr
+    
+-   read inkeyc
++#   read inkeyc
++   inkeyc="q"
+ #   export inkeyc
+ }
+ 

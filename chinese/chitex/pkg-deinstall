@@ -1,0 +1,30 @@
+#!/bin/sh
+
+# Run just once.
+if [ "x$2" != "xDEINSTALL" ]; then
+  exit 0
+fi
+
+TEXMFMAIN=`kpsexpand '$TEXMFMAIN'`
+SPECIALMAP=${TEXMFMAIN}/fontname/special.map
+PSFONTSMAP=${TEXMFMAIN}/dvips/config/psfonts.map
+PDFTEXMAP=${TEXMFMAIN}/dvips/config/pdftex.map
+
+# Edit fontname/special.map
+sed -e /@c\ chinese\ fonts\ begin/,/@c\ chinese\ fonts\ end/d $SPECIALMAP > $SPECIALMAP.tmp
+mv -f $SPECIALMAP.tmp $SPECIALMAP
+
+# Edit dvips/config/psfonts.map
+sed -e /%Wafonts\ begin/,/%Wafonts\ end/d $PSFONTSMAP > $PSFONTSMAP.tmp
+mv -f $PSFONTSMAP.tmp $PSFONTSMAP
+
+# Edit dvips/config/pdftex.map
+sed -e /%Wafonts\ begin/,/%Wafonts\ end/d $PDFTEXMAP > $PDFTEXMAP.tmp
+mv -f $PDFTEXMAP.tmp $PDFTEXMAP
+
+#
+# Update ls-R.  We have to run twice to get correct result.
+# Strange bug of texconfig.
+#
+texconfig rehash
+texconfig rehash

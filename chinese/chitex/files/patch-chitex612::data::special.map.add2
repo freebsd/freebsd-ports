@@ -1,0 +1,13 @@
+--- chitex612/data/special.map.add2.orig	Sat Nov 24 20:41:45 2001
++++ chitex612/data/special.map.add2	Sat Nov 24 20:42:23 2001
+@@ -1,4 +1,4 @@
+-@c chinese2 fonts
++@c chinese2 fonts begin
+ 
+ moe_kai_pfb01        chinese         moe_kai_pfb
+ moe_kai_pfb02        chinese         moe_kai_pfb
+@@ -1102,3 +1102,4 @@
+ bsmi00lp56        chinese         bsmi00lp
+ bsmi00lp57        chinese         bsmi00lp
+ bsmi00lp58        chinese         bsmi00lp
++@c chinese2 fonts end

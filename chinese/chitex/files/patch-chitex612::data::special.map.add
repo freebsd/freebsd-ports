@@ -1,0 +1,15 @@
+--- chitex612/data/special.map.add.orig	Sat Nov 24 20:41:40 2001
++++ chitex612/data/special.map.add	Sat Nov 24 20:42:03 2001
+@@ -1,5 +1,5 @@
+ 
+-@c chinese fonts 
++@c chinese fonts begin
+ 
+ nuwpstj01        chinese         nuwpstj
+ nuwpstj02        chinese         nuwpstj
+@@ -777,4 +777,5 @@
+ 
+ 
+ 
++@c chinese fonts end
+ 
