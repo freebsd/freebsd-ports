@@ -5,14 +5,14 @@
 # $FreeBSD$
 #
 
-MASTERDIR=	${.CURDIR}/../../x11-toolkits/qt22
+MASTERDIR=	${.CURDIR}/../../x11-toolkits/qt23
 
 PORTNAME=	qt-designer
 CATEGORIES=	devel
 
 .include "${MASTERDIR}/Makefile"
 
-LIB_DEPENDS+=	qt2.4:${PORTSDIR}/x11-toolkits/qt22
+LIB_DEPENDS+=	qt2.4:${PORTSDIR}/x11-toolkits/qt23
 
 WRKSRC=		${WRKDIR}/qt-${PORTVERSION}
 PATCHDIR=	${.CURDIR}/files

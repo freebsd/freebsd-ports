@@ -24,7 +24,7 @@ USE_X_PREFIX=	yes
 USE_NEWGCC=	yes
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	-system-zlib -system-libpng -system-jpeg -sm -gif \
-		-system-libmng -thread \
+		-system-libmng -thread -no-opengl \
 		-I${LOCALBASE}/include -L${LOCALBASE}/lib
 CONFIGURE_ENV=	${ECHO} yes | QTDIR=${WRKSRC}
 .if defined(MAKE_JOBS)
@@ -43,9 +43,11 @@ CONFIG=		${WRKSRC}/configs/freebsd-g++-${STATIC}
 .if defined(WANT_STATIC)
 STATIC=static
 CONFIGURE_ARGS+=-static
+PLIST_SUB+=	STATIC="@comment " SHARED=""
 .else
 STATIC=shared
 INSTALLS_SHLIB=yes
+PLIST_SUB+=	STATIC="" STATIC="@comment "
 .endif
 
 .include <bsd.port.pre.mk>
@@ -69,7 +71,7 @@ pre-fetch:
 pre-configure:
 	${PERL} -pi -e "s,gcc,${CC},g; s,g\+\+,${CXX},g; \
 			s,/usr/X11R6,${X11BASE},g; \
-			s,-pipe -O2,${CXXFLAGS} -frerun-cse-after-loop,g" ${CONFIG}
+			s,-fno-exceptions,-fno-exceptions ${CXXFLAGS} -I/usr/include -D_PTH_H_ -D_PTH_PTHREAD_H_ -frerun-cse-after-loop,g" ${CONFIG}
 	${PERL} -pi -e "s,VER_MAJ = 2,VER_MAJ = 4,g; \
 			s,TARGET	= qt,TARGET = qt2,g" ${WRKSRC}/src/Makefile.in
 	${PERL} -pi -e "s@TARGET\t= moc@TARGET = moc2@g" ${WRKSRC}/src/moc/Makefile.in
@@ -80,6 +82,21 @@ pre-configure:
 
 post-configure:
 	@(cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${GMAKE} symlinks)
+
+# Add hack to bring in support for GL.  The last line is necessary to ensure that
+# one can rebuild with the same tree and get the same results.
+do-build:
+	(cd ${BUILD_WRKSRC}; ${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} ${ALL_TARGET})
+.if !defined(WANT_STATIC)
+	(cd ${WRKSRC}/src && ${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} opengl/qgl.o opengl/qgl_x11.o opengl/moc_qgl.o)
+	${MV} ${WRKSRC}/lib/libqt2.so.4 ${WRKSRC}/lib/libqt2-real.so.4
+	${PERL} -pi.orig -e "s@		xml/qdom.o@xml/qdom.o opengl/qgl.o opengl/qgl_x11.o opengl/moc_qgl.o@g; \
+			     s@SYSCONF_LIBS_OPENGL =@SYSCONF_LIBS_OPENGL= -pthread -lGL -lGLU -lXmu@g" ${WRKSRC}/src/Makefile
+	(cd ${WRKSRC}/src && ${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} all)
+	${CP} ${WRKSRC}/lib/libqt2.so.4 ${WRKSRC}/lib/libqtgl.so.4
+	${CP} ${WRKSRC}/lib/libqt2-real.so.4 ${WRKSRC}/lib/libqt2.so.4
+	${CP} ${WRKSRC}/src/Makefile.orig ${WRKSRC}/src/Makefile
+.endif
 
 # XXX: This target looks like crap now.
 do-install:
@@ -93,7 +110,7 @@ do-install:
 .endfor
 	${INSTALL_DATA} ${WRKSRC}/include/*.h ${PREFIX}/include/qt2
 .if !defined(WANT_STATIC)
-.for LIB in qt2 qt2-mt
+.for LIB in qt2 qt2-mt qtgl
 	${INSTALL_PROGRAM} ${WRKSRC}/lib/lib${LIB}.so.4 ${PREFIX}/lib
 	${LN} -sf ${PREFIX}/lib/lib${LIB}.so.4 ${PREFIX}/lib/lib${LIB}.so
 .endfor
@@ -117,16 +134,6 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/doc/html/${FILE} ${PREFIX}/share/doc/qt2/html
 .endfor
 	${INSTALL_MAN} ${WRKSRC}/doc/man/man3/q* ${PREFIX}/man/man3
-.endif
-.endif
-
-.if defined(WANT_STATIC)
-.if (${PORTNAME} == "qt")
-post-install:
-	${CP} ${TMPPLIST} ${TMPPLIST}.new
-	${SED} -e "s/libqt2\/.so/libqt2\.a/" -e "s/.*libqt2\.a\.\d\n//" \
-		-e "s/libqutil\.so/libqutil.a/" -e "s/.*libqutil\.a\.\d\n//" \
-			${TMPPLIST}.new > ${TMPPLIST}
 .endif
 .endif
 

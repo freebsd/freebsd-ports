@@ -20,19 +20,19 @@ USE_QT2=	yes
 MOC?=		${X11BASE}/bin/moc2
 USE_BZIP2=	yes
 INSTALLS_SHLIB=	yes
-GNU_CONFIGURE=	yes
+USE_AUTOCONF=	yes
 CONFIGURE_ARGS+=--with-qt-includes=${X11BASE}/include/qt2 \
 		--with-qt-libraries=${X11BASE}/lib
-CONFIGURE_ENV+=	MOC="${MOC}" LIBQT="-lqt2" LIBQTFILE="libqt2" \
-		CPPFLAGS="-I${LOCALBASE}/include -D_GETOPT_H" \
-		LIBS="-Wl,-export-dynamic -L${LOCALBASE}/lib -ljpeg -lstdc++ -lgcc" \
-		USER_LDFLAGS="-Wl,-export-dynamic -L${LOCALBASE}/lib -ljpeg -lstdc++ -lgcc"
+CONFIGURE_ENV+=	MOC="${MOC}" LIBQT="-lqt2" \
+		CPPFLAGS="-I/usr/include -D_PTH_H_ -D_PTH_PTHREAD_H_ -D_GETOPT_H -D_XOPEN_UNIX -I${LOCALBASE}/include" \
+		LIBS="-Wl,-export-dynamic -L${LOCALBASE}/lib -ljpeg -lstdc++ -lgcc"
 USE_GMAKE=	yes
 
 pre-configure:
+	${PERL} -pi -e "s@all_includes=\"@all_includes=\"-I/usr/include @g" ${WRKSRC}/acinclude.m4 ${WRKSRC}/aclocal.m4
 	${PERL} -pi -e 's,kscd_compile=no,kscd_compile=yes,g; \
 			s,DO_NOT_COMPILE mpeglib_artsplug,DO_NOT_COMPILE,g; \
-			s,DO_NOT_COMPILE mpeglib,DO_NOT_COMPILE,g' ${WRKSRC}/configure
+			s,DO_NOT_COMPILE mpeglib,DO_NOT_COMPILE,g' ${WRKSRC}/configure.in
 
 post-install:
 	@${ECHO_MSG}
