@@ -7,7 +7,7 @@
 
 PORTNAME=	gnome-fifth-toe
 PORTVERSION=	1.4
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11 gnome
 MASTER_SITES=	# empty
 DISTFILES=	# empty
@@ -34,13 +34,14 @@ RUN_DEPENDS=	mozilla:${PORTSDIR}/www/mozilla \
 		gtm:${PORTSDIR}/ftp/gtm \
 		gnucash:${PORTSDIR}/deskutils/gnucash \
 		abiword:${PORTSDIR}/editors/AbiWord \
-		anjuta:${PORTSDIR}/devel/anjuta
+		anjuta:${PORTSDIR}/devel/anjuta \
+		guppi:${PORTSDIR}/math/guppi
 
 # We're still missing a few things from the "official" distribution
 # All can be found in stable/sources on MASTER_SITE_GNOME
 #
 # firestarter, fpm, gfax, gnome-db, gnome-lokkit, gnomoku,
-# gnorpm, googlizer, guppi, merlin-cpufire, radioactive, toutdoux
+# gnorpm, googlizer, merlin-cpufire, radioactive, toutdoux
 
 NO_BUILD=	yes
 USE_GNOME=	yes
