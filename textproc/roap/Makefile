@@ -16,17 +16,12 @@ DISTNAME=	${PORTNAME}_${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 
 USE_PYTHON=	yes
-
-SETUP_CMD=	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${PYTHON_CMD} setup.py
+USE_PYDISTUTILS=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 DOCS=	README README.ja USAGE USAGE.ja
 
-do-build:
-	@${SETUP_CMD} build
-
-do-install:
+post-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/roap ${PREFIX}/bin
-	@${SETUP_CMD} install
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 .for file in ${DOCS}
