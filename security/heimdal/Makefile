@@ -25,7 +25,7 @@ LIB_DEPENDS+=	ldap.2:${PORTSDIR}/net/openldap20-client
 BUILD_DEPENDS+= ${LOCALBASE}/lib/libcrack.a:${PORTSDIR}/security/cracklib
 .endif
 
-USE_LIBTOOL=		no	# Uses included version.
+USE_LIBTOOL=		yes
 USE_OPENSSL=		yes
 GNU_CONFIGURE=		yes
 INSTALLS_SHLIB=		yes
