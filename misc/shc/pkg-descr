@@ -1,0 +1,6 @@
+A generic shell script compiler. Shc takes a script, which is
+specified on the command line and produces c source code. The
+generated source code is then compiled and linked to produce a
+stripped binary executable. Use with care.
+
+WWW: http://www.datsi.fi.upm.es/~frosal/frosal.html
