@@ -159,7 +159,7 @@
 #
 # WITH_VLC_DEFAULT_FONT=/path/to/font
 #  default: ${X11BASE}/lib/X11/fonts/bitstream-vera/Vera.ttf
-#  This option lets you change the default font for subtitles  
+#  This option lets you change the default font for subtitles
 #
 # NOPORTDOCS=yes
 #  Do not install Vlc's Documents
@@ -167,21 +167,23 @@
 
 PORTNAME=	vlc
 PORTVERSION=	0.8.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	multimedia audio ipv6 net www
 MASTER_SITES=	http://download.videolan.org/pub/videolan/vlc/${PORTVERSION}/ \
-		http://download.videolan.org/pub/videolan/vlc/${PORTVERSION}/contrib/:ffmpeg \
+		http://ftp.snt.utwente.nl/pub/software/videolan/vlc/${PORTVERSION}/ \
+		ftp://ftp.crans.org/pub/videolan/vlc/${PORTVERSION}/ \
+		ftp://videolan.cs.pu.edu.tw/Windows/VideoLAN/vlc/${PORTVERSION}/ \
 		${MASTER_SITE_LOCAL:S|$|:mozilla|}
 MASTER_SITE_SUBDIR=	ahze/:mozilla
 PKGNAMESUFFIX?=	${ESOUND_SUFFIX}${MOZILLA_SUFFIX}${PKGNAMESUFFIX2}
 DISTFILES=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX} \
-		ffmpeg-${FFMPEG_SNAP}${EXTRACT_SUFX}:ffmpeg \
 		vlc-intf-mozilla-plugin${EXTRACT_SUFX}:mozilla
 
 MAINTAINER=	ahze@FreeBSD.org
 COMMENT=	Multimedia streaming server and player for various audio/video formats
 
 RUN_DEPEDNS=	${X11BASE}/lib/X11/fonts/bitstream-vera/Vera.ttf:${PORTSDIR}/x11-fonts/bitstream-vera
+LIB_DEPENDS=	avcodec.1:${PORTSDIR}/multimedia/ffmpeg
 
 ### BROKEN -- Needs newer verision of toolame ###
 WITHOUT_TOOLAME=	yes
@@ -201,31 +203,17 @@ WANT_SDL=	yes
 USE_XLIB=	yes
 USE_ICONV=	yes
 
-FFMPEG_SNAP=	20041113
-FFMPEG_SRC_DIR=	${WRKDIR}/ffmpeg-${FFMPEG_SNAP}
 FAKEDIR=	${WRKDIR}/fake
 PLIST=		${WRKDIR}/plist
 
 INSTALLS_SHLIB=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV+=	PATH_GTKCONFIG="${GTK_CONFIG}" CFLAGS="${CFLAGS}" \
-		CPPFLAGS="-I${WRKSRC}/include/vlc/ -I${FFMPEG_SRC_DIR}/libavcodec ${CPPFLAGS} -I${LOCALBASE}/include -I${X11BASE}/include ${PTHREAD_CFLAGS}" \
+		CPPFLAGS="-I${WRKSRC}/include/vlc/ -I${LOCALBASE}/ffmpeg ${CPPFLAGS} -I${LOCALBASE}/include -I${X11BASE}/include ${PTHREAD_CFLAGS}" \
 		LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib -L${X11BASE}/lib ${PTHREAD_LIBS}"
 
-FFMPEG_CONFIGURE_ARGS+=	--enable-gpl --disable-ffserver \
-			--enable-memalign-hack \
-			--cc="${CC}" \
-			--make="${GMAKE}" \
-			--extra-ldflags="-L${LOCALBASE}/lib -L${X11BASE}/lib" \
-			--extra-cflags="${CFLAGS} -I${LOCALBASE}/include -I${X11BASE}/include" \
-			--extra-libs"-lm" \
-			--enable-pp \
-			--enable-pthreads \
-			--disable-opts
-
 CONFIGURE_ARGS+=	--enable-ffmpeg \
-			--with-ffmpeg-tree=${FFMPEG_SRC_DIR} \
-			--with-ffmpeg=${FFMPEG_SRC_DIR} \
+			--with-ffmpeg=${LOCALBASE} \
 			--with-ffmpeg-zlib \
 			--disable-gnome \
 			--disable-gtk \
@@ -414,14 +402,12 @@ CONFIGURE_ARGS+=--enable-esd
 
 .if defined(WITH_FAAC) && !defined(WITHOUT_FAAC)
 CONFIGURE_ARGS+=--with-ffmpeg-faac
-FFMPEG_CONFIGURE_ARGS+=--enable-faac
 LIB_DEPENDS+=	faac.0:${PORTSDIR}/audio/faac
 .endif
 
 .if !defined(WITHOUT_FAAD)
 LIB_DEPENDS+=	faad.0:${PORTSDIR}/audio/faad
 CONFIGURE_ARGS+=--enable-faad
-FFMPEG_CONFIGURE_ARGS+=--enable-faad
 .else
 CONFIGURE_ARGS+=--disable-faad
 .endif
@@ -457,8 +443,7 @@ CONFIGURE_ARGS+=--disable-caca
 
 .if !defined(WITHOUT_DTS)
 BUILD_DEPENDS+=	${LOCALBASE}/lib/libdts.a:${PORTSDIR}/multimedia/libdts
-CONFIGURE_ARGS+=--enable-dts \
-		--with-ffmpeg-dts
+CONFIGURE_ARGS+=--enable-dts
 .else
 CONFIGURE_ARGS+=--disable-dts
 .endif
@@ -476,9 +461,9 @@ CONFIGURE_ARGS+=--disable-ggi
 
 .if !defined(WITHOUT_LAME)
 LIB_DEPENDS+=	mp3lame.0:${PORTSDIR}/audio/lame
-CONFIGURE_ARGS+=--enable-mp3lame \
-		--with-ffmpeg-mp3lame
-FFMPEG_CONFIGURE_ARGS+=--enable-mp3lame
+CONFIGURE_ARGS+=--enable-mp3lame
+.else
+CONFIGURE_ARGS+=--disable-mp3lame
 .endif
 
 .if !defined(WITHOUT_LIBMATROSKA)
@@ -487,9 +472,7 @@ BUILD_DEPENDS+=	${LOCALBASE}/lib/libmatroska.a:${PORTSDIR}/multimedia/libmatrosk
 
 .if !defined(WITHOUT_LIBA52)
 LIB_DEPENDS+=	a52.0:${PORTSDIR}/audio/liba52
-CONFIGURE_ARGS+=--enable-a52 \
-		--with-a52-tree=${LOCALBASE}
-FFMPEG_CONFIGURE_ARGS+=--enable-a52
+CONFIGURE_ARGS+=--enable-a52
 .else
 CONFIGURE_ARGS+=--disable-a52
 .endif
@@ -595,7 +578,6 @@ CONFIGURE_ARGS+=	--disable-toolame
 .if !defined(WITHOUT_VORBIS)
 LIB_DEPENDS+=	vorbis.3:${PORTSDIR}/audio/libvorbis
 CONFIGURE_ARGS+=--enable-vorbis
-FFMPEG_CONFIGURE_ARGS+=--enable-vorbis
 .else
 CONFIGURE_ARGS+=--disable-vorbis
 .endif
@@ -611,7 +593,6 @@ CONFIGURE_ARGS+=--disable-xosd
 CONFIGURE_AGRS+=--enable-debug
 .else
 CONFIGURE_ARGS+=--enable-release
-FFMPEG_CONFIGURE_ARGS+=--disable-debug
 .endif
 
 .if defined(WITH_OPTIMIZED_CFLAGS)
@@ -651,10 +632,6 @@ post-patch:
 		s|$$(libdir)/mozilla/components|${FAKEDIR}/mozilla|' \
 			${WRKSRC}/mozilla/Makefile.in
 .endif
-# a52
-	@${REINPLACE_CMD} -e 's|include/a52.h|include/a52dec/a52.h|' \
-		${WRKSRC}/modules/audio_filter/converter/a52tofloat32.c \
-		${WRKSRC}/configure
 # skins2 interface
 	@${REINPLACE_CMD} -e 's|lrint|rint|' \
 		${WRKSRC}/modules/gui/skins2/controls/ctrl_list.cpp
@@ -667,34 +644,15 @@ post-patch:
 # pthreads/cflags
 	@${REINPLACE_CMD} -e 's/-lpthread/${PTHREAD_LIBS}/' \
 		-e 's/-lc_r/${PTHREAD_LIBS}/' \
-		-e 's|postproc/postprocess.h|ffmpeg/postproc/postprocess.h|' \
 		-e 's|-mcpu=pentiumpro||' \
+		-e 's|postproc/postprocess.h|ffmpeg/postproc/postprocess.h|' \
 		${WRKSRC}/configure
 	@${REINPLACE_CMD} -e 's|cflags_tuning=|# cflags_tuning=|' \
 		${WRKSRC}/vlc-config.in
-	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|' \
-		${FFMPEG_SRC_DIR}/configure
-
 # cdrom/dvd support
 	@${REINPLACE_CMD} -e 's|/dev/cdrom|${DEFAULT_CDROM_DEVICE}|; \
 		s|/dev/dvd|${DEFAULT_DVD_DEVICE}|' \
 		${WRKSRC}/include/vlc_config.h
-# ffmpeg
-.if ${OSVERSION} < 502119
-	@${REINPLACE_CMD} -e 's|roundf|rintf|' \
-		${FFMPEG_SRC_DIR}/libavcodec/xvidff.c
-.endif
-	cd ${FFMPEG_SRC_DIR} && \
-		${PATCH} -p0 < ${PATCHDIR}/ffmpeg-patch \
-
-pre-configure:
-	cd ${FFMPEG_SRC_DIR} \
-	&& ${SETENV} ${SCRIPTS_ENV} ${CONFIGURE_ENV} \
-		${SH} ./configure ${FFMPEG_CONFIGURE_ARGS}
-.for dir in libavcodec libavformat
-	cd ${FFMPEG_SRC_DIR}/${dir} \
-	&& ${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_FLAGS} Makefile ${MAKE_ARGS} all
-.endfor
 
 pre-install:
 	${RM} -rf ${PLIST} ${FAKEDIR}
