@@ -1,0 +1,41 @@
+*** prn.c.orig	Thu May 26 11:37:45 1994
+--- prn.c	Mon Jun  9 12:29:28 1997
+***************
+*** 34,41 ****
+  #include <sys/stat.h>
+  #include "euc.h"
+  
+  #define KCCPATH		"/usr/local/bin/kcc"
+! #if defined (__bsdi__)
+  #define LPRPATH		"/usr/bin/lpr"
+  #else
+  #define LPRPATH		"/usr/ucb/lpr"
+--- 34,46 ----
+  #include <sys/stat.h>
+  #include "euc.h"
+  
++ #if !defined KCCPATH
+  #define KCCPATH		"/usr/local/bin/kcc"
+! #endif
+! #if (defined(__unix__) || defined(unix)) && !defined(USG)
+! #include <sys/param.h>
+! #endif
+! #if defined (__bsdi__) || (defined(BSD) && (BSD >= 199103))
+  #define LPRPATH		"/usr/bin/lpr"
+  #else
+  #define LPRPATH		"/usr/ucb/lpr"
+***************
+*** 48,55 ****
+--- 53,64 ----
+  
+  #else
+  
++ #if !defined CMTPATH
+  #define CMTPATH		"/usr/local/bin/cmt"
++ #endif
++ #if !defined PSPATH
+  #define PSPATH		"/usr/local/bin/psconv"
++ #endif
+  
+  #endif
+  
