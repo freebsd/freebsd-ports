@@ -310,6 +310,7 @@
     SUBDIR += mars_nwe
     SUBDIR += merlinmon
     SUBDIR += micq
+    SUBDIR += minisapserver
     SUBDIR += mldonkey
     SUBDIR += mldonkey-core
     SUBDIR += mldonkey-gui
