@@ -1,0 +1,22 @@
+This port is for a printer filter of Canon BJ F870. The filter is
+called Canon Bubble Jet Print Filter for Linux and there exist the
+filters for other Canon bubble jet printers. By using this driver you
+can print out as high quality as you use the Windows driver. See the
+below URLs:
+
+WWW: http://www.canon-sales.co.jp/drv-upd/linux/bjlinux100.html
+     file:/usr/local/share/doc/bjfiltercom-1.0/html/README.HTM
+     file:/usr/local/share/doc/bjfiltercom-1.0/html/INDEX.HTM
+     file:/usr/local/share/doc/bjfiltercom-1.0/html/FAQ.HTM
+
+And then this port has a filter "filter870" which is useful to print
+out more than one page. If you use it, you add the next entry into
+/etc/printcap.
+
+bjfilter870|Canon BJ F870:\
+        :lp=/dev/lpt0:\
+        :sh:\
+        :if=/usr/local/libexec/bjfilter870/filter870:\
+        :sd=/var/spool/lpd/bjfilter870:\
+        :mx#0:\
+        :lf=/var/log/lpd-errs

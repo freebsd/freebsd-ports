@@ -1,0 +1,7 @@
+bin/bjpsprn
+libexec/bjfilter870/filter870
+@dirrm libexec/bjfilter870
+@cwd /compat/linux
+usr/lib/bjlib/cnb_1020.tbl
+usr/lib/libcnbpo102.so.1.0.0
+@dirrm usr/lib/bjlib
