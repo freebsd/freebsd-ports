@@ -335,6 +335,7 @@
     SUBDIR += nttcp
     SUBDIR += nylon
     SUBDIR += obnc
+    SUBDIR += ocaml-jabbr
     SUBDIR += odsclient
     SUBDIR += ohphone
     SUBDIR += openam
