@@ -18,6 +18,7 @@ LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes
+USE_XLIB=	yes
 
 WRKSRC=		${WRKDIR}/CS
 
