@@ -18,6 +18,7 @@ MAINTAINER=		dwhite@FreeBSD.org
 COMMENT=	Python interface to kqueue(2) and kevent(2) system calls
 
 USE_PYTHON=		yes
+USE_REINPLACE=		yes
 PLIST_SUB+=		PYTHON_SITELIBDIR=${PYTHON_SITELIBDIR:S/^${LOCALBASE}\///g}
 
 .include <bsd.port.pre.mk>
@@ -27,6 +28,11 @@ IGNORE="requires new kqueue API"
 .endif
 .if ${OSVERSION} >= 500000 && ${OSVERSION} < 500010
 IGNORE="requires new kqueue API"
+.endif
+
+post-patch:
+.if ${PYTHON_REL} >= 230
+	@${REINPLACE_CMD} -e 's,@DEFS@,,' ${WRKSRC}/Makefile.pre.in
 .endif
 
 do-configure:
