@@ -8412,6 +8412,7 @@ pear-DB_Table	ports/databases/pear-DB_Table
 pear-DB_ldap	ports/databases/pear-DB_ldap
 pear-DBA	ports/databases/pear-DBA
 pear-Date	ports/devel/pear-Date
+pear-Event_Dispatcher	ports/devel/pear-Event_Dispatcher
 pear-File	ports/sysutils/pear-File
 pear-File_Find	ports/sysutils/pear-File_Find
 pear-File_Fstab	ports/sysutils/pear-File_Fstab
