@@ -141,7 +141,7 @@ cat >> $F <<EOF
 #ifdef AlphaArchitecture
 #define XF86CardDrivers         mga tdfx glint s3virge rendition tga \
 				savage nv DevelDrivers siliconmotion vga \
-				XF86OSCardDrivers XF86xtraCardDrivers
+				XF86OSCardDrivers XF86ExtraCardDrivers
 #endif
 #endif
 #endif
