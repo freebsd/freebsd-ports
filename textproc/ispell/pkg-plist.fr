@@ -1,0 +1,2 @@
+share/ispell/francais.aff
+share/ispell/francais.hash

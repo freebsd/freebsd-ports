@@ -1,5 +1,5 @@
 --- Makefile.orig	Thu Oct 12 20:04:06 1995
-+++ Makefile	Wed Jun  4 05:05:47 1997
++++ Makefile	Sat Jan 22 22:44:42 2000
 @@ -253,7 +253,7 @@
  	    set -ex; \
  	    rm -f $$ELISPDIR/ispell.el; \
@@ -9,6 +9,27 @@
  		echo '(byte-compile-file "'"$$ELISPDIR/ispell.el"'")' \
  		  > /tmp/emi$$$$; \
  		$$EMACS -batch -l /tmp/emi$$$$; \
+@@ -310,9 +310,9 @@
+ 	$(MAKE) LANGUAGE_TARGET=install SHELLDEBUG=$(SHELLDEBUG) \
+ 	  language-subdirs
+ 	. ./config.sh; \
+-	  [ -d $$LIBDIR ]  ||  (mkdir $$LIBDIR; chmod 755 $$LIBDIR); \
++	  [ -d $$SHAREDIR ]  ||  (mkdir $$SHAREDIR; chmod 755 $$SHAREDIR); \
+ 	  set -x; \
+-	  cd $$LIBDIR; \
++	  cd $$SHAREDIR; \
+ 	  if [ $$MASTERHASH != $DEFHASH ]; then \
+ 	    rm -f $$DEFHASH; \
+ 	    ln $$MASTERHASH $$DEFHASH; \
+@@ -412,7 +412,7 @@
+ config.sh:  config.X local.h
+ 	set $(SHELLDEBUG); \
+ 	for var in BINDIR CC CFLAGS COUNTSUFFIX DEFDICT DEFHASH DEFLANG \
+-	  ELISPDIR EMACS HASHSUFFIX INSTALL \
++	  ELISPDIR EMACS HASHSUFFIX INSTALL SHAREDIR \
+ 	  LANGUAGES LIBDIR LIBES LINT LINTFLAGS \
+ 	  MAKE_SORTTMP MAN1DIR MAN1EXT MAN4DIR MAN4EXT MASTERHASH \
+ 	  MSGLANG REGLIB STATSUFFIX \
 @@ -508,7 +508,7 @@
  local.h:
  	set +e; [ -r local.h ]  ||  cp local.h.samp local.h

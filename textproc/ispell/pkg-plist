@@ -7,7 +7,5 @@ bin/munchlist
 bin/sq
 bin/tryaffix
 bin/unsq
-lib/american.hash
-lib/americanmed+.hash
-lib/english.aff
-lib/english.hash
+share/ispell/english.aff
+share/ispell/english.hash
