@@ -12,8 +12,8 @@
 %%JFFNMSDIR%%/conf/functions.php
 %%JFFNMSDIR%%/docs/apache-example
 %%JFFNMSDIR%%/docs/cisco-example
-%%JFFNMSDIR%%/docs/jffnms-0.7.4.mysql
-%%JFFNMSDIR%%/docs/jffnms-0.7.4.pgsql
+%%JFFNMSDIR%%/docs/jffnms-0.7.5.mysql
+%%JFFNMSDIR%%/docs/jffnms-0.7.5.pgsql
 %%JFFNMSDIR%%/docs/unix/php.ini.example
 %%JFFNMSDIR%%/docs/unix/snmp.conf
 %%JFFNMSDIR%%/docs/unix/snmptrap.txt
@@ -21,7 +21,7 @@
 %%JFFNMSDIR%%/docs/unix/syslog.conf
 %%JFFNMSDIR%%/docs/unix/tac_plus.cfg
 %%JFFNMSDIR%%/docs/unix/tftp
-%%JFFNMSDIR%%/docs/upgrade/jffnms-0.7.3-to-0.7.4.patch
+%%JFFNMSDIR%%/docs/upgrade/jffnms-0.7.4-to-0.7.5.patch
 %%JFFNMSDIR%%/docs/upgrade/mysql/jffnms-0.7.2-to-0.7.3.mysql.diff.auth
 %%JFFNMSDIR%%/docs/upgrade/mysql/jffnms-0.7.2-to-0.7.3.mysql.diff.envmib
 %%JFFNMSDIR%%/docs/upgrade/mysql/jffnms-0.7.2-to-0.7.3.mysql.diff.hosts_config
@@ -46,6 +46,16 @@
 %%JFFNMSDIR%%/docs/upgrade/mysql/jffnms-0.7.3-to-0.7.4.mysql.diff.profile_len
 %%JFFNMSDIR%%/docs/upgrade/mysql/jffnms-0.7.3-to-0.7.4.mysql.diff.triggered
 %%JFFNMSDIR%%/docs/upgrade/mysql/jffnms-0.7.3-to-0.7.4.mysql.diff.juniper_state
+%%JFFNMSDIR%%/docs/upgrade/mysql/jffnms-0.7.4-to-0.7.5.mysql.diff.reach_fields
+%%JFFNMSDIR%%/docs/upgrade/mysql/jffnms-0.7.4-to-0.7.5.mysql.diff.x_fix_internal_ids
+%%JFFNMSDIR%%/docs/upgrade/mysql/jffnms-0.7.4-to-0.7.5.mysql.diff.zone_filter
+%%JFFNMSDIR%%/docs/upgrade/mysql/jffnms-0.7.4-to-0.7.5.mysql.diff.it
+%%JFFNMSDIR%%/docs/upgrade/mysql/jffnms-0.7.4-to-0.7.5.mysql.diff.it_fields
+%%JFFNMSDIR%%/docs/upgrade/mysql/jffnms-0.7.4-to-0.7.5.mysql.diff.pollers
+%%JFFNMSDIR%%/docs/upgrade/mysql/jffnms-0.7.4-to-0.7.5.mysql.diff.cpus
+%%JFFNMSDIR%%/docs/upgrade/mysql/jffnms-0.7.4-to-0.7.5.mysql.diff.hosts_poll
+%%JFFNMSDIR%%/docs/upgrade/mysql/jffnms-0.7.4-to-0.7.5.mysql.diff.slas
+%%JFFNMSDIR%%/docs/upgrade/mysql/jffnms-0.7.4-to-0.7.5.mysql.diff.admin_status
 %%JFFNMSDIR%%/docs/upgrade/pgsql/jffnms-0.7.2-to-0.7.3.pgsql.diff.auth
 %%JFFNMSDIR%%/docs/upgrade/pgsql/jffnms-0.7.2-to-0.7.3.pgsql.diff.envmib
 %%JFFNMSDIR%%/docs/upgrade/pgsql/jffnms-0.7.2-to-0.7.3.pgsql.diff.hosts_config
@@ -70,8 +80,20 @@
 %%JFFNMSDIR%%/docs/upgrade/pgsql/jffnms-0.7.3-to-0.7.4.pgsql.diff.profile_len
 %%JFFNMSDIR%%/docs/upgrade/pgsql/jffnms-0.7.3-to-0.7.4.pgsql.diff.triggered
 %%JFFNMSDIR%%/docs/upgrade/pgsql/jffnms-0.7.3-to-0.7.4.pgsql.diff.juniper_state
+%%JFFNMSDIR%%/docs/upgrade/pgsql/jffnms-0.7.4-to-0.7.5.pgsql.diff.reach_fields
+%%JFFNMSDIR%%/docs/upgrade/pgsql/jffnms-0.7.4-to-0.7.5.pgsql.diff.x_fix_internal_ids
+%%JFFNMSDIR%%/docs/upgrade/pgsql/jffnms-0.7.4-to-0.7.5.pgsql.diff.it
+%%JFFNMSDIR%%/docs/upgrade/pgsql/jffnms-0.7.4-to-0.7.5.pgsql.diff.it_fields
+%%JFFNMSDIR%%/docs/upgrade/pgsql/jffnms-0.7.4-to-0.7.5.pgsql.diff.pollers
+%%JFFNMSDIR%%/docs/upgrade/pgsql/jffnms-0.7.4-to-0.7.5.pgsql.diff.cpus
+%%JFFNMSDIR%%/docs/upgrade/pgsql/jffnms-0.7.4-to-0.7.5.pgsql.diff.zone_filter
+%%JFFNMSDIR%%/docs/upgrade/pgsql/jffnms-0.7.4-to-0.7.5.pgsql.diff.hosts_poll
+%%JFFNMSDIR%%/docs/upgrade/pgsql/jffnms-0.7.4-to-0.7.5.pgsql.diff.slas
+%%JFFNMSDIR%%/docs/upgrade/pgsql/jffnms-0.7.4-to-0.7.5.pgsql.diff.admin_status
 %%JFFNMSDIR%%/docs/utils/adjust_bw.php
 %%JFFNMSDIR%%/docs/utils/clean_auth.php
+%%JFFNMSDIR%%/docs/utils/exp_poller_test.php
+%%JFFNMSDIR%%/docs/utils/int_values_convert.php
 %%JFFNMSDIR%%/docs/utils/lines.sh
 %%JFFNMSDIR%%/docs/utils/makedb_release.php
 %%JFFNMSDIR%%/docs/utils/mib.php
@@ -83,6 +105,7 @@
 %%JFFNMSDIR%%/docs/utils/sql_alter_pg.php
 %%JFFNMSDIR%%/docs/utils/sql_diff.php
 %%JFFNMSDIR%%/docs/utils/syslog_file_import.php
+%%JFFNMSDIR%%/docs/utils/test_export.php
 %%JFFNMSDIR%%/docs/utils/tftp_put_host_config.php
 %%JFFNMSDIR%%/docs/utils/satellite-client.php
 %%JFFNMSDIR%%/docs/utils/jffnms-snmp/iptables.inc.php
@@ -94,9 +117,11 @@
 %%JFFNMSDIR%%/engine/actions/email.inc.php
 %%JFFNMSDIR%%/engine/actions/none.inc.php
 %%JFFNMSDIR%%/engine/actions/smsclient.inc.php
+%%JFFNMSDIR%%/engine/analyzers/sla.inc.php
 %%JFFNMSDIR%%/engine/autodiscovery_interfaces.php
 %%JFFNMSDIR%%/engine/backends/alarm.php
 %%JFFNMSDIR%%/engine/backends/buffer.php
+%%JFFNMSDIR%%/engine/backends/db.php
 %%JFFNMSDIR%%/engine/backends/no_backend.php
 %%JFFNMSDIR%%/engine/backends/rrd.php
 %%JFFNMSDIR%%/engine/backends/verify_interface_number.php
@@ -124,9 +149,10 @@
 %%JFFNMSDIR%%/engine/discovery/snmp_interfaces.inc.php
 %%JFFNMSDIR%%/engine/discovery/storage.inc.php
 %%JFFNMSDIR%%/engine/discovery/tcp_ports.inc.php
-%%JFFNMSDIR%%/engine/discovery/snmp_interfaces.inc.php.save
 %%JFFNMSDIR%%/engine/discovery/reachability.inc.php
 %%JFFNMSDIR%%/engine/discovery/linux_tc.inc.php
+%%JFFNMSDIR%%/engine/exp_poller_child.php
+%%JFFNMSDIR%%/engine/exp_poller_master.php
 %%JFFNMSDIR%%/engine/graphs/tc_rate.inc.php
 %%JFFNMSDIR%%/engine/graphs/tc_rate_aggregation.inc.php
 %%JFFNMSDIR%%/engine/graphs/acct_bytes.inc.php
@@ -164,6 +190,10 @@
 %%JFFNMSDIR%%/engine/graphs/ucd_cpu_solaris.inc.php
 %%JFFNMSDIR%%/engine/graphs/ucd_load_average.inc.php
 %%JFFNMSDIR%%/engine/graphs/ucd_memory.inc.php
+%%JFFNMSDIR%%/engine/handlers/tcp_ports.inc.php
+%%JFFNMSDIR%%/engine/handlers/none.inc.php
+%%JFFNMSDIR%%/engine/handlers/bool.inc.php
+%%JFFNMSDIR%%/engine/handlers/rrd_ds.inc.php
 %%JFFNMSDIR%%/engine/poller.php
 %%JFFNMSDIR%%/engine/pollers/bgp_peer_status.php
 %%JFFNMSDIR%%/engine/pollers/cisco_accounting.php
@@ -186,6 +216,7 @@
 %%JFFNMSDIR%%/engine/pollers/snmp_counter.php
 %%JFFNMSDIR%%/engine/pollers/snmp_interface_status.php
 %%JFFNMSDIR%%/engine/pollers/snmp_interface_status_all.php
+%%JFFNMSDIR%%/engine/pollers/snmp_walk_average.php
 %%JFFNMSDIR%%/engine/pollers/tcp_connection_number.php
 %%JFFNMSDIR%%/engine/pollers/tcp_status.php
 %%JFFNMSDIR%%/engine/pollers/verify_bgp_peer_number.php
@@ -216,6 +247,7 @@
 %%JFFNMSDIR%%/engine/windows/tftpget_hosts.bat
 %%JFFNMSDIR%%/htdocs/.check
 %%JFFNMSDIR%%/htdocs/.htaccess
+%%JFFNMSDIR%%/htdocs/admin/adm/adm_alarms.php
 %%JFFNMSDIR%%/htdocs/admin/adm/adm_auth.php
 %%JFFNMSDIR%%/htdocs/admin/adm/adm_hosts.php
 %%JFFNMSDIR%%/htdocs/admin/adm/adm_hosts_config.php
@@ -333,6 +365,7 @@
 %%JFFNMSDIR%%/htdocs/view_interfaces.php
 %%JFFNMSDIR%%/htdocs/view_interfaces_map_list.php
 %%JFFNMSDIR%%/htdocs/view_performance.php
+%%JFFNMSDIR%%/htdocs/views/infobox.js
 %%JFFNMSDIR%%/htdocs/views/source_hosts_get.inc.php
 %%JFFNMSDIR%%/htdocs/views/source_hosts_init.inc.php
 %%JFFNMSDIR%%/htdocs/views/source_hosts_normal.inc.php
@@ -340,6 +373,7 @@
 %%JFFNMSDIR%%/htdocs/views/source_hosts_urls.inc.php
 %%JFFNMSDIR%%/htdocs/views/source_interfaces_get.inc.php
 %%JFFNMSDIR%%/htdocs/views/source_interfaces_init.inc.php
+%%JFFNMSDIR%%/htdocs/views/source_interfaces_infobox.inc.php
 %%JFFNMSDIR%%/htdocs/views/source_interfaces_normal.inc.php
 %%JFFNMSDIR%%/htdocs/views/source_interfaces_performance.inc.php
 %%JFFNMSDIR%%/htdocs/views/source_interfaces_text.inc.php
@@ -401,8 +435,10 @@
 %%JFFNMSDIR%%/logs/.check
 %%JFFNMSDIR%%/rrd/.check
 %%JFFNMSDIR%%/tftpd/.check
-@dirrm %%JFFNMSDIR%%/engine/backends
 @dirrm %%JFFNMSDIR%%/engine/actions
+@dirrm %%JFFNMSDIR%%/engine/analyzers
+@dirrm %%JFFNMSDIR%%/engine/backends
+@dirrm %%JFFNMSDIR%%/engine/handlers
 @dirrm %%JFFNMSDIR%%/engine/ticket
 @dirrm %%JFFNMSDIR%%/engine/satellite
 @dirrm %%JFFNMSDIR%%/engine/pollers

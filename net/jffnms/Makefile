@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	jffnms
-PORTVERSION=	0.7.4
+PORTVERSION=	0.7.5
 CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=${PORTNAME}
@@ -24,14 +24,12 @@ USE_MYSQL=	yes
 USE_REINPLACE=	yes
 
 JFFNMSDIR?=	share/jffnms
-PHPSO?=		${LOCALBASE}/libexec/apache/libphp4.so
-LDD?=		/usr/bin/ldd
 CRONTAB?=	/usr/bin/crontab
 
 PLIST_SUB=	JFFNMSDIR=${JFFNMSDIR}
 
 do-build:
-	@${REINPLACE_CMD} -e 's|/opt/jffnms|${LOCALBASE}/${JFFNMSDIR}|g' \
+	@${REINPLACE_CMD} -e 's|/opt/jffnms|${PREFIX}/${JFFNMSDIR}|g' \
 		-e 's|/usr/bin/php|${LOCALBASE}/bin/php|g' \
 		-e 's|/usr/bin/rrdtool|${LOCALBASE}/bin/rrdtool|g' \
 		-e 's|/usr/bin/nmap|${LOCALBASE}/bin/nmap|g' \
@@ -40,16 +38,17 @@ do-build:
 		${WRKSRC}/conf/config.ini
 
 do-install:
-	@${MKDIR} ${LOCALBASE}/${JFFNMSDIR}
-	@${CP} -R ${WRKSRC}/* ${LOCALBASE}/${JFFNMSDIR}
-	@${CHOWN} -R www:www ${LOCALBASE}/${JFFNMSDIR}
-	@${SED} -e 's|%LOCALBASE%|${LOCALBASE}|g' \
-		-e 's|%JFFNMSDIR%|${LOCALBASE}/${JFFNMSDIR}|g' ${FILESDIR}/jffnms.cron \
-		> ${LOCALBASE}/${JFFNMSDIR}/jffnms.cron
-	@${SED} -e 's|%JFFNMSDIR%|${LOCALBASE}/${JFFNMSDIR}|g' \
+	@-${RM} ${WRKSRC}/engine/tmpwatch.sh.orig > /dev/null 2>&1
+	@${MKDIR} ${PREFIX}/${JFFNMSDIR}
+	@${CP} -R ${WRKSRC}/* ${PREFIX}/${JFFNMSDIR}
+	@${CHOWN} -R www:www ${PREFIX}/${JFFNMSDIR}
+	@${SED} -e 's|%LOCALBASE%|${PREFIX}|g' \
+		-e 's|%JFFNMSDIR%|${PREFIX}/${JFFNMSDIR}|g' ${FILESDIR}/jffnms.cron \
+		> ${PREFIX}/${JFFNMSDIR}/jffnms.cron
+	@${SED} -e 's|%JFFNMSDIR%|${PREFIX}/${JFFNMSDIR}|g' \
 		-e 's|%JFFNMS%|${DISTNAME}|g' ${FILESDIR}/jffnms_db.sh \
-		> ${LOCALBASE}/${JFFNMSDIR}/jffnms_db.sh
-	@${CRONTAB} -u www ${LOCALBASE}/${JFFNMSDIR}/jffnms.cron
-	@${SED} -e 's|%JFFNMSDIR%|${LOCALBASE}/${JFFNMSDIR}|g' ${PKGMESSAGE}
+		> ${PREFIX}/${JFFNMSDIR}/jffnms_db.sh
+	@${CRONTAB} -u www ${PREFIX}/${JFFNMSDIR}/jffnms.cron
+	@${SED} -e 's|%JFFNMSDIR%|${PREFIX}/${JFFNMSDIR}|g' ${PKGMESSAGE}
 
 .include <bsd.port.mk>
