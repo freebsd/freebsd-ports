@@ -1,0 +1,57 @@
+*** ../pwlib/src/ptlib/unix/tlibthrd.cxx.orig	Sun Nov 12 08:22:06 2000
+--- ../pwlib/src/ptlib/unix/tlibthrd.cxx	Sun Nov 12 08:22:17 2000
+*************** static void sigSuspendHandler(int)
+*** 261,266 ****
+--- 261,273 ----
+  }
+  
+  
++ static void sigResumeHandler(int)
++ {
++   // do nothing. This is here so the 'signal' is consumed
++   // and stops the application terminating with "User signal 2"
++ }
++ 
++ 
+  void HouseKeepingThread::Main()
+  {
+    PProcess & process = PProcess::Current();
+*************** void * PThread::PX_ThreadStart(void * ar
+*** 437,446 ****
+    }
+  
+    // set the signal handler for SUSPEND_SIG
+!   struct sigaction action;
+!   memset(&action, 0, sizeof(action));
+!   action.sa_handler = sigSuspendHandler;
+!   sigaction(SUSPEND_SIG, &action, 0);
+  
+    // now call the the thread main routine
+    //PTRACE(1, "tlibthrd\tAbout to call Main");
+--- 444,453 ----
+    }
+  
+    // set the signal handler for SUSPEND_SIG
+!   struct sigaction suspend_action;
+!   memset(&suspend_action, 0, sizeof(suspend_action));
+!   suspend_action.sa_handler = sigSuspendHandler;
+!   sigaction(SUSPEND_SIG, &suspend_action, 0);
+  
+    // now call the the thread main routine
+    //PTRACE(1, "tlibthrd\tAbout to call Main");
+*************** void PThread::Suspend(BOOL susp)
+*** 559,564 ****
+--- 566,578 ----
+  {
+    PAssertOS(pthread_mutex_lock(&PX_suspendMutex) == 0);
+    BOOL unlock = TRUE;
++ 
++ #if defined(P_FREEBSD)
++   struct sigaction resume_action;
++   memset(&resume_action, 0, sizeof(resume_action));
++   resume_action.sa_handler = sigResumeHandler;
++   sigaction(RESUME_SIG, &resume_action, 0);
++ #endif
+  
+    if (pthread_kill(PX_threadId, 0) == 0) {
+  
