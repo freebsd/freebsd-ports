@@ -1,6 +1,6 @@
 # New ports collection makefile for:	honeyd
 # Date created:				16/04/2002
-# Whom:				Dominic Marks <dominic_marks@btinternet.com>
+# Whom:				Dominic Marks <d.marks@students.umist.ac.uk>
 #
 # $FreeBSD$
 #
@@ -10,7 +10,7 @@ PORTVERSION=	0.3
 CATEGORIES=	net
 MASTER_SITES=	http://www.citi.umich.edu/u/provos/honeyd/
 
-MAINTAINER=	dominic_marks@btinternet.com
+MAINTAINER=	d.marks@students.umist.ac.uk
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/libdnet.a:${PORTSDIR}/net/libdnet \
 		${LOCALBASE}/lib/libevent.a:${PORTSDIR}/devel/libevent

@@ -1,6 +1,6 @@
 # New ports collection makefile for:	dovecot
 # Date created:				12/08/2002
-# Whom:			Dominic Marks <dominic_marks@btinternet.com>
+# Whom:			Dominic Marks <d.marks@students.umist.ac.uk>
 #
 # $FreeBSD$
 #
@@ -10,7 +10,7 @@ PORTVERSION=	0.97
 CATEGORIES=	mail ipv6
 MASTER_SITES=	http://dovecot.procontrol.fi/
 
-MAINTAINER=	dominic_marks@btinternet.com
+MAINTAINER=	d.marks@students.umist.ac.uk
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=	--disable-shadow --enable-ipv6 \
