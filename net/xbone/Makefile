@@ -7,6 +7,7 @@
 
 PORTNAME=	XBone
 PORTVERSION=	3.1.1
+PORTREVISION=	1
 CATEGORIES=	net perl5
 MASTER_SITES=	http://www.isi.edu/xbone/software/xbone/
 
