@@ -1,8 +1,9 @@
-# $Id: Makefile,v 1.14 1997/11/17 18:05:14 max Exp $
+# $Id: Makefile,v 1.15 1997/11/22 00:31:24 jseger Exp $
 #
 
     SUBDIR += agrep
     SUBDIR += c2html
+    SUBDIR += catdoc
     SUBDIR += docbook
     SUBDIR += glimpse
     SUBDIR += html
