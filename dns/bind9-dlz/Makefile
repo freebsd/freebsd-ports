@@ -7,6 +7,7 @@
 
 PORTNAME=	bind9
 PORTVERSION=	${ISCVERSION}+${DLZVERSION}
+PORTREVISION=	1
 CATEGORIES=	dns ipv6
 MASTER_SITES=	${MASTER_SITE_ISC} \
 		${MASTER_SITE_RINGSERVER:S,%SUBDIR%,dns/bind9/${ISCVERSION}/,} \
@@ -16,6 +17,10 @@ PKGNAMESUFFIX=	-dlz
 DISTFILES=	bind-${ISCVERSION}.tar.gz \
 	   	DLZ-${DLZVERSION}${EXTRACT_SUFX}:dlz
 
+PATCH_SITES=	${MASTER_SITES}
+PATCH_SITE_SUBDIR=	bind9/${ISCVERSION}
+PATCHFILES=	patch.9.2.2-P1
+
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	The Berkeley Internet Name Daemon, with DLZ extensions
 
@@ -24,9 +29,12 @@ MASTER_SITES_DLZ=	${MASTER_SITE_SOURCEFORGE}
 
 ISCVERSION=	9.2.2
 DLZVERSION=	0.5.0
-USE_SUBMAKE=	YES
-GNU_CONFIGURE=	YES
+USE_SUBMAKE=	yes
+GNU_CONFIGURE=	yes
+USE_REINPLACE=	yes
 CONFIGURE_ARGS=	--localstatedir=/var --disable-linux-caps
+PATCH_STRIP=	-p1
+PATCH_DIST_STRIP=  -p1
 
 # use user config if possible
 .if exists(${WRKDIRPREFIX}${.CURDIR}/Makefile.inc)
@@ -82,7 +90,6 @@ SCRIPTS_ENV=	WRKDIRPREFIX="${WRKDIRPREFIX}" \
 
 DOCSDIR=	${PREFIX}/share/doc/bind9
 EXTRA_DOCSDIR=	share/doc/bind9-dlz
-EXTRA_FIX=	${WRKSRC}/configure
 DOCS=		README.txt bind_dlz.txt changelog.txt \
 		dlz_bdb_driver.txt dlz_filesystem_driver.txt \
 		dlz_interface.txt dlz_mysql_driver.txt \
@@ -132,28 +139,19 @@ MAN8=	dnssec-keygen.8 dnssec-makekeyset.8 dnssec-signkey.8 dnssec-signzone.8 \
 pre-everything::
 	@ ${SETENV} ${SCRIPTS_ENV} ${SH} ${FILESDIR}/configure.bind9-dlz
 
-pre-patch:
-.for FILE in dlz.patch
-	@ ${MV} ${WRKDIR}/${FILE} ${WRKDIR}/${FILE}.sed
-	${SED} -e "s=bind-${ISCVERSION}/==" \
-		${WRKDIR}/${FILE}.sed | tr -d '\r' > ${WRKDIR}/${FILE}
-.endfor
-
-post-patch:
-	@ ${MV} ${EXTRA_FIX} ${EXTRA_FIX}.sed
-	${SED} -e "s=-lnsl==" ${EXTRA_FIX}.sed > ${EXTRA_FIX}
-	@ ${CHMOD} +x ${EXTRA_FIX}
+pre-configure:
 .for FILE in check/named-checkconf.8 named/named.8 nsupdate/nsupdate.8 \
 	rndc/rndc.8
-	@ ${MV} ${WRKSRC}/bin/${FILE} ${WRKSRC}/bin/${FILE}.sed
-	${SED} -e 's#/etc/named.conf#${PREFIX}/etc/named.conf#g' \
+	${REINPLACE_CMD} -e 's#/etc/named.conf#${PREFIX}/etc/named.conf#g' \
 		-e 's#/etc/rndc.conf#${PREFIX}/etc/rndc.conf#g' \
-		${WRKSRC}/bin/${FILE}.sed > ${WRKSRC}/bin/${FILE}
+		${WRKSRC}/bin/${FILE}
 .endfor
 	${MV} -f ${WRKSRC}/bin/Makefile.in.orig ${WRKSRC}/bin/Makefile.in 
-
-pre-configure:
 	@${ECHO_CMD} "configure: ${CONFIGURE_ARGS}"
+	${REINPLACE_CMD} -e "s=-lnsl==" \
+		-e 's=-pthread=${PTHREAD_LIBS}=' \
+		${WRKSRC}/configure
+	${CHMOD} +x ${WRKSRC}/configure
 
 pre-install:
 	${CAT} ${MASTERDIR}/pkg-plist >${PLIST}
