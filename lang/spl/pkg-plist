@@ -1,0 +1,12 @@
+bin/spl2c
+include/spl.h
+lib/libspl.a
+%%PORTDOCS%%share/examples/spl/Makefile
+%%PORTDOCS%%share/examples/spl/hello.spl
+%%PORTDOCS%%share/examples/spl/primes.spl
+%%PORTDOCS%%share/examples/spl/reverse.spl
+%%PORTDOCS%%share/examples/spl/fibonacci.spl
+%%PORTDOCS%%share/examples/spl/fibonacci2.spl
+%%PORTDOCS%%share/examples/spl/guess.spl
+%%PORTDOCS%%share/examples/spl/shakesbeer.spl
+%%PORTDOCS%%@dirrm share/examples/spl
