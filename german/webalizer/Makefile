@@ -1,12 +1,12 @@
 # New ports collection makefile for:	webalizer
-# Version required:	1.20
+# Version required:	1.22
 # Date created:		02.Jun 1998
 # Whom:			dirk.meyer@dinoex.sub.org
 #
-# $Id: Makefile,v 1.1.1.1 1998/07/13 00:13:21 steve Exp $
+# $Id: Makefile,v 1.2 1999/01/26 02:20:57 steve Exp $
 
-DISTNAME=	webalizer-1.20-07-src
-PKGNAME=	de-webalizer-1.20
+DISTNAME=	webalizer-1.22-03-src
+PKGNAME=	de-webalizer-1.22.3
 CATEGORIES=	german www
 MASTER_SITES=	ftp://ftp.mrunix.net/pub/webalizer/ \
 		ftp://ftp.dinoex.sub.de/pub/approved/
@@ -20,12 +20,11 @@ BIN1=		de-webalizer
 MAN1=		de-webalizer.1
 DOC1=		CHANGES COPYING Copyright INSTALL \
 		README country-codes.txt webalizer.LSM
-WRKSRC=		${WRKDIR}
+WRKSRC=		${WRKDIR}/webalizer-1.22-03
 
 post-configure:
-	@echo "config german"
 	@${ECHO_MSG} "===> customizing for german"
-	@cd ${WRKSRC}; ${LN} -sf webalizer_lang.german webalizer_lang.h
+	@cd ${WRKSRC}; ${LN} -sf lang/webalizer_lang.german webalizer_lang.h
 
 do-install:
 .for i in ${BIN1}
@@ -43,12 +42,12 @@ post-install:
 .endfor
 .endif
 	${MKDIR} ${PREFIX}/share/examples/de-webalizer
-.for i in msfree.gif sample.conf
+.for i in msfree.gif sample.conf webalizer.gif
 	@${INSTALL_DATA} ${WRKSRC}/${i} ${PREFIX}/share/examples/de-webalizer/${i}
 .endfor
-	@if [ ! -f ${PREFIX}/etc/webalizer.conf-dist ]; then \
+	@if [ ! -f ${PREFIX}/etc/de-webalizer.conf-dist ]; then \
 		${INSTALL_DATA} ${WRKSRC}/sample.conf \
-			${PREFIX}/etc/webalizer.conf-dist ; \
+			${PREFIX}/etc/de-webalizer.conf-dist ; \
 	fi
 
 .include <bsd.port.mk>
