@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	pysol
-PORTVERSION=	4.72
+PORTVERSION=	4.80
 CATEGORIES=	games
-MASTER_SITES=	http://wildsau.idv.uni-linz.ac.at/mfx/download/pysol/
+MASTER_SITES=	http://pysol2.sourceforge.net/download/
 
 MAINTAINER=	tg@FreeBSD.org
 
@@ -23,7 +23,8 @@ MAN6=		pysol.6
 
 do-install:
 	${SED}	-e "s|@pkgdatadir@|${PREFIX}/share/pysol|" \
-		-e "s|^exec python|exec ${PYTHON_CMD}|" \
+		-e "s|@prefix@|${PREFIX}|" \
+		-e "s|@PYTHON@|${PYTHON_CMD}|" \
 		< ${WRKSRC}/pysol > ${WRKDIR}/pysol
 	${INSTALL_SCRIPT} ${WRKDIR}/pysol ${PREFIX}/bin/pysol
 	${INSTALL_DATA} ${WRKSRC}/pysol.6 ${PREFIX}/man/man6
