@@ -4378,6 +4378,7 @@ latex-lineno	ports/print/latex-lineno
 latex-logpap	ports/print/latex-logpap
 latex-mathabx	ports/print/latex-mathabx
 latex-mk	ports/misc/latex-mk
+latex-msc	ports/print/latex-msc
 latex-pgf	ports/print/latex-pgf
 latex-pict2e	ports/print/latex-pict2e
 latex-subfig	ports/print/latex-subfig
