@@ -1,11 +1,34 @@
---- configure.in.orig	Tue Oct 28 22:48:40 1997
-+++ configure.in	Sun Apr 19 12:18:10 1998
-@@ -245,7 +245,7 @@
+--- configure.in.orig	Wed Oct 29 06:48:40 1997
++++ configure.in	Tue Dec  7 02:22:17 1999
+@@ -243,9 +243,9 @@
+ 	fi
+      fi
    ])
-   AC_SLANG(/usr/include, slang.h, , -I/usr/include/slang , "slang on /usr/include")
+-  AC_SLANG(/usr/include, slang.h, , -I/usr/include/slang , "slang on /usr/include")
++  AC_SLANG(/usr/include, slang.h, , -I/usr/include , "slang on /usr/include")
    AC_SLANG(/usr/include/slang, slang.h, , -I/usr/include/slang , "slang on /usr/include/slang")
 -  AC_SLANG(/usr/local/include, slang.h, , -I/usr/local/include/slang , "slang on /usr/local/include")
 +  AC_SLANG(/usr/local/include, slang.h, , -I/usr/local/include , "slang on /usr/local/include")
    AC_SLANG(/usr/local/include/slang, slang.h, , -I/usr/local/include/slang , "slang on /usr/local/include/slang")
    if test "$slang_driver" = true; then
      if test "$force_curses_driver" = false; then
+@@ -314,14 +314,14 @@
+ then
+     AC_CHECKING("location of curses")
+ 
+-    AC_NCURSES(/usr/include, ncurses.h, , -I/usr/include/ncurses , "ncurses on /usr/include")
+-    AC_NCURSES(/usr/include/ncurses, ncurses.h, , -I/usr/include/ncurses, "ncurses on /usr/include/ncurses")
+-    AC_NCURSES(/usr/local/include, ncurses.h, ,-L/usr/local/lib, -I/usr/local/include, "ncurses on /usr/local")
++    AC_NCURSES(/usr/include, ncurses.h, -L/usr/lib, -I/usr/include , "ncurses on /usr/include")
++    AC_NCURSES(/usr/include/ncurses, ncurses.h, -L/usr/lib, -I/usr/include/ncurses, "ncurses on /usr/include/ncurses")
++    AC_NCURSES(/usr/local/include, ncurses.h, -L/usr/local/lib, -I/usr/local/include, "ncurses on /usr/local")
+     AC_NCURSES(/usr/local/include/ncurses, ncurses.h, -L/usr/local/lib -L/usr/local/lib/ncurses, -I/usr/local/include/ncurses, "ncurses on /usr/local/include/ncurses")
+ 
+-    AC_NCURSES(/usr/local/include/ncurses, curses.h, -L/usr/local/lib, -I/usr/local/include/ncurses -DRENAMED_NCURSES, "renamed ncurses on /usr/local/.../ncurses")
++    AC_NCURSES(/usr/local/include/ncurses, curses.h, -L/usr/local/lib, -I/usr/local/include/ncurses -DRENAMED_NCURSES, "renamed ncurses on /usr/local/include/ncurses")
+ 
+-    AC_NCURSES(/usr/include/ncurses, curses.h, , -I/usr/include/ncurses -DRENAMED_NCURSES, "renamed ncurses on /usr/include/ncurses")
++    AC_NCURSES(/usr/include/ncurses, curses.h, -L/usr/lib, -I/usr/include/ncurses -DRENAMED_NCURSES, "renamed ncurses on /usr/include/ncurses")
+     AC_CURSES(/usr/include, curses.h, , , "curses on /usr/include")
+ 
+     dnl
