@@ -2079,6 +2079,7 @@ lib/mozilla/libgkgfx.so
 lib/mozilla/libgtkembedmoz.so
 lib/mozilla/libgtksuperwin.so
 lib/mozilla/libgtkxtbin.so
+lib/mozilla/libjpeg.so
 lib/mozilla/libjsdom.so
 lib/mozilla/libjsj.so
 lib/mozilla/libmozjs.so
