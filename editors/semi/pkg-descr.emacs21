@@ -1,4 +1,4 @@
-SEMI, Library of MIME feature for GNU Emacs for emacs.
+SEMI, Library of MIME feature for GNU Emacs for emacs20.
 
   SEMI is a library to provide MIME feature for GNU Emacs.  MIME is a
   proposed internet standard for including content and headers other
@@ -20,13 +20,6 @@ SEMI, Library of MIME feature for GNU Emacs for emacs.
   MUAs.  They are released as separated packages.
 
   SEMI is installed the following directory tree:
-	${LOCALBASE}/share/emacs/site-lisp/semi/	--- SEMI
+	${LOCALBASE}/share/emacs/site-lisp/semi/
 
-
-To use flim, put the following setup into your ~/.emacs:
-
-	(require 'apel-setupel)
-	(require 'flim-setupel)
-	(require 'semi-setupel)
-
---- Porting by shige <shige@FreeBSD.ORG>
+Ported by shige@FreeBSD.ORG
