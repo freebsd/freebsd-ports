@@ -12,12 +12,19 @@ MASTER_SITES=	http://www.lokigames.com/development/download/smpeg/
 
 MAINTAINER=	cpiazza@FreeBSD.org
 
-LIB_DEPENDS=  	SDL-1.0.2:${PORTSDIR}/devel/sdl
+LIB_DEPENDS=  	SDL-1.0.2:${PORTSDIR}/devel/sdl \
+		gtk12.2:${PORTSDIR}/x11-toolkits/gtk12
 
 GTK_CONFIG=	${X11BASE}/bin/gtk12-config
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
-CONFIGURE_ENV=	GTK_CONFIG="${GTK_CONFIG}"
+CONFIGURE_ENV=	GTK_CONFIG="${GTK_CONFIG}" \
+		GLBASE="${X11BASE}" \
+		CPPFLAGS="-I${X11BASE}/include"
+
+#If you want to try the opengl player (which doesn't seem to work)
+#comment out the following line.
+CONFIGURE_ARGS=	--disable-opengl-player
 
 MAN1=		gtv.1 plaympeg.1
 
