@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	DateTime-Format-Builder
-PORTVERSION=	0.75
+PORTVERSION=	0.77
 CATEGORIES=	devel perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	DateTime
@@ -27,9 +27,10 @@ PERL_CONFIGURE=	yes
 MAN3=		DateTime::Format::Builder.3 DateTime::Format::Builder::Parser.3 \
 		DateTime::Format::Builder::Parser::Dispatch.3 \
 		DateTime::Format::Builder::Parser::Regex.3 \
+		DateTime::Format::Builder::Parser::Quick.3 \
 		DateTime::Format::Builder::Parser::Strptime.3 \
 		DateTime::Format::Builder::Parser::generic.3 \
-		DateTime::Format::Builder::Tutorial.3 \
+		DateTime::Format::Builder::Tutorial.3
 
 .include <bsd.port.pre.mk>
 
