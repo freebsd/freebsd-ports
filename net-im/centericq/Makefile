@@ -7,18 +7,20 @@
 #
 
 PORTNAME=	centericq
-PORTVERSION=	4.2.1
+PORTVERSION=	4.5.0
 CATEGORIES=	net
 MASTER_SITES=	http://konst.org.ua/download/
 
 MAINTAINER=	ijliao@FreeBSD.org
 
-LIB_DEPENDS=	intl.1:${PORTSDIR}/devel/gettext
+LIB_DEPENDS=	intl.1:${PORTSDIR}/devel/gettext \
+		sigc.1:${PORTSDIR}/devel/libsigc++
 
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CFLAGS="${CFLAGS} -I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib -lintl"
+CONFIGURE_ENV=	CPPFLAGS="${CXXFLAGS} -I${LOCALBASE}/include" \
+		LIBS="-L${LOCALBASE}/lib -lintl"
+CONFIGURE_ARGS=	--without-included-gettext
 
 MAN1=	centericq.1
 
@@ -29,5 +31,10 @@ LIB_DEPENDS+=	ncurses.5:${PORTSDIR}/devel/ncurses
 CFLAGS+=	-nostdinc -I${LOCALBASE}/include/ncurses \
 		-I${LOCALBASE}/include -I/usr/include
 .endif
+
+post-patch:
+	@${PERL} -pi -e "s,\@mandir\@,\@mandir\@/man1,g ; \
+		s,\$\(pkgdatadir\),\$\(mandir\),g ; \
+		s,intl,,g" ${WRKSRC}/Makefile.in
 
 .include <bsd.port.post.mk>
