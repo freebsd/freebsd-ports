@@ -1,0 +1,168 @@
+--- libxml++/io/Makefile.in.orig	Wed Nov 12 12:14:40 2003
++++ libxml++/io/Makefile.in	Wed Nov 12 12:13:35 2003
+@@ -136,7 +136,7 @@
+ cc_sources = outputbuffer.cc ostreamoutputbuffer.cc
+ cc_sources_private = 
+ 
+-lib_LTLIBRARIES = libio.la
++noinst_LTLIBRARIES = libio.la
+ libio_la_SOURCES = $(cc_sources) $(h_sources_public) $(h_sources_private) $(cc_sources_private)
+ 
+ # Install the headers:
+@@ -146,7 +146,7 @@
+ ACLOCAL_M4 = $(top_srcdir)/aclocal.m4
+ mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs
+ CONFIG_CLEAN_FILES =
+-LTLIBRARIES = $(lib_LTLIBRARIES)
++LTLIBRARIES = $(noinst_LTLIBRARIES)
+ 
+ libio_la_LDFLAGS =
+ libio_la_LIBADD =
+@@ -179,8 +179,7 @@
+ DIST_SOURCES = $(libio_la_SOURCES)
+ HEADERS = $(library_include_HEADERS)
+ 
+-DIST_COMMON = $(library_include_HEADERS) $(srcdir)/Makefile.in \
+-	Makefile.am
++DIST_COMMON = $(library_include_HEADERS) Makefile.am Makefile.in
+ SOURCES = $(libio_la_SOURCES)
+ 
+ all: all-am
+@@ -192,36 +191,17 @@
+ 	  $(AUTOMAKE) --gnu  libxml++/io/Makefile
+ Makefile:  $(srcdir)/Makefile.in  $(top_builddir)/config.status
+ 	cd $(top_builddir) && $(SHELL) ./config.status $(subdir)/$@ $(am__depfiles_maybe)
+-libLTLIBRARIES_INSTALL = $(INSTALL)
+-install-libLTLIBRARIES: $(lib_LTLIBRARIES)
+-	@$(NORMAL_INSTALL)
+-	$(mkinstalldirs) $(DESTDIR)$(libdir)
+-	@list='$(lib_LTLIBRARIES)'; for p in $$list; do \
+-	  if test -f $$p; then \
+-	    f="`echo $$p | sed -e 's|^.*/||'`"; \
+-	    echo " $(LIBTOOL) --mode=install $(libLTLIBRARIES_INSTALL) $(INSTALL_STRIP_FLAG) $$p $(DESTDIR)$(libdir)/$$f"; \
+-	    $(LIBTOOL) --mode=install $(libLTLIBRARIES_INSTALL) $(INSTALL_STRIP_FLAG) $$p $(DESTDIR)$(libdir)/$$f; \
+-	  else :; fi; \
+-	done
+-
+-uninstall-libLTLIBRARIES:
+-	@$(NORMAL_UNINSTALL)
+-	@list='$(lib_LTLIBRARIES)'; for p in $$list; do \
+-	    p="`echo $$p | sed -e 's|^.*/||'`"; \
+-	  echo " $(LIBTOOL) --mode=uninstall rm -f $(DESTDIR)$(libdir)/$$p"; \
+-	  $(LIBTOOL) --mode=uninstall rm -f $(DESTDIR)$(libdir)/$$p; \
+-	done
+ 
+-clean-libLTLIBRARIES:
+-	-test -z "$(lib_LTLIBRARIES)" || rm -f $(lib_LTLIBRARIES)
+-	@list='$(lib_LTLIBRARIES)'; for p in $$list; do \
++clean-noinstLTLIBRARIES:
++	-test -z "$(noinst_LTLIBRARIES)" || rm -f $(noinst_LTLIBRARIES)
++	@list='$(noinst_LTLIBRARIES)'; for p in $$list; do \
+ 	  dir="`echo $$p | sed -e 's|/[^/]*$$||'`"; \
+ 	  test "$$dir" = "$$p" && dir=.; \
+ 	  echo "rm -f \"$${dir}/so_locations\""; \
+ 	  rm -f "$${dir}/so_locations"; \
+ 	done
+ libio.la: $(libio_la_OBJECTS) $(libio_la_DEPENDENCIES) 
+-	$(CXXLINK) -rpath $(libdir) $(libio_la_LDFLAGS) $(libio_la_OBJECTS) $(libio_la_LIBADD) $(LIBS)
++	$(CXXLINK)  $(libio_la_LDFLAGS) $(libio_la_OBJECTS) $(libio_la_LIBADD) $(LIBS)
+ 
+ mostlyclean-compile:
+ 	-rm -f *.$(OBJEXT) core *.core
+@@ -232,6 +212,9 @@
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/ostreamoutputbuffer.Plo@am__quote@
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/outputbuffer.Plo@am__quote@
+ 
++distclean-depend:
++	-rm -rf ./$(DEPDIR)
++
+ .cc.o:
+ @am__fastdepCXX_TRUE@	if $(CXXCOMPILE) -MT $@ -MD -MP -MF "$(DEPDIR)/$*.Tpo" \
+ @am__fastdepCXX_TRUE@	  -c -o $@ `test -f '$<' || echo '$(srcdir)/'`$<; \
+@@ -383,7 +366,7 @@
+ all-am: Makefile $(LTLIBRARIES) $(HEADERS)
+ 
+ installdirs:
+-	$(mkinstalldirs) $(DESTDIR)$(libdir) $(DESTDIR)$(library_includedir)
++	$(mkinstalldirs) $(DESTDIR)$(library_includedir)
+ install: install-am
+ install-exec: install-exec-am
+ install-data: install-data-am
+@@ -403,22 +386,20 @@
+ clean-generic:
+ 
+ distclean-generic:
+-	-rm -f $(CONFIG_CLEAN_FILES)
++	-rm -f Makefile $(CONFIG_CLEAN_FILES)
+ 
+ maintainer-clean-generic:
+ 	@echo "This command is intended for maintainers to use"
+ 	@echo "it deletes files that may require special tools to rebuild."
+ clean: clean-am
+ 
+-clean-am: clean-generic clean-libLTLIBRARIES clean-libtool \
++clean-am: clean-generic clean-libtool clean-noinstLTLIBRARIES \
+ 	mostlyclean-am
+ 
+ distclean: distclean-am
+-	-rm -rf ./$(DEPDIR)
+-	-rm -f Makefile
+ 
+-distclean-am: clean-am distclean-compile distclean-generic \
+-	distclean-libtool distclean-tags
++distclean-am: clean-am distclean-compile distclean-depend \
++	distclean-generic distclean-libtool distclean-tags
+ 
+ dvi: dvi-am
+ 
+@@ -430,7 +411,7 @@
+ 
+ install-data-am: install-library_includeHEADERS
+ 
+-install-exec-am: install-libLTLIBRARIES
++install-exec-am:
+ 
+ install-info: install-info-am
+ 
+@@ -439,8 +420,6 @@
+ installcheck-am:
+ 
+ maintainer-clean: maintainer-clean-am
+-	-rm -rf ./$(DEPDIR)
+-	-rm -f Makefile
+ 
+ maintainer-clean-am: distclean-am maintainer-clean-generic
+ 
+@@ -457,21 +436,19 @@
+ 
+ ps-am:
+ 
+-uninstall-am: uninstall-info-am uninstall-libLTLIBRARIES \
+-	uninstall-library_includeHEADERS
++uninstall-am: uninstall-info-am uninstall-library_includeHEADERS
+ 
+ .PHONY: CTAGS GTAGS all all-am check check-am clean clean-generic \
+-	clean-libLTLIBRARIES clean-libtool ctags distclean \
+-	distclean-compile distclean-generic distclean-libtool \
+-	distclean-tags distdir dvi dvi-am info info-am install \
+-	install-am install-data install-data-am install-exec \
+-	install-exec-am install-info install-info-am \
+-	install-libLTLIBRARIES install-library_includeHEADERS \
+-	install-man install-strip installcheck installcheck-am \
+-	installdirs maintainer-clean maintainer-clean-generic \
+-	mostlyclean mostlyclean-compile mostlyclean-generic \
+-	mostlyclean-libtool pdf pdf-am ps ps-am tags uninstall \
+-	uninstall-am uninstall-info-am uninstall-libLTLIBRARIES \
++	clean-libtool clean-noinstLTLIBRARIES ctags distclean \
++	distclean-compile distclean-depend distclean-generic \
++	distclean-libtool distclean-tags distdir dvi dvi-am info \
++	info-am install install-am install-data install-data-am \
++	install-exec install-exec-am install-info install-info-am \
++	install-library_includeHEADERS install-man install-strip \
++	installcheck installcheck-am installdirs maintainer-clean \
++	maintainer-clean-generic mostlyclean mostlyclean-compile \
++	mostlyclean-generic mostlyclean-libtool pdf pdf-am ps ps-am \
++	tags uninstall uninstall-am uninstall-info-am \
+ 	uninstall-library_includeHEADERS
+ 
+ # Tell versions [3.59,3.63) of GNU make to not export all variables.

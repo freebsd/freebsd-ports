@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	libxml++
-PORTVERSION=	0.26.0
+PORTVERSION=	0.27.0
 CATEGORIES=	textproc
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME:S/+/plus/g}
@@ -19,4 +19,14 @@ USE_GNOME=	gnomehack gnometarget libxml2 pkgconfig
 USE_LIBTOOL=	yes
 INSTALLS_SHLIB=	yes
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 500000
+post-patch:
+	@${FIND} ${WRKSRC}/libxml++ -name *.h \
+		| ${XARGS} ${REINPLACE_CMD} -e \
+			's|<ostream>|<iostream>|'
+
+.endif
+
+.include <bsd.port.post.mk>

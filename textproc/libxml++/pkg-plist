@@ -21,7 +21,7 @@ include/libxml++-1.0/libxml++/parsers/parser.h
 include/libxml++-1.0/libxml++/parsers/saxparser.h
 lib/libxml++-0.1.a
 lib/libxml++-0.1.so
-lib/libxml++-0.1.so.12
+lib/libxml++-0.1.so.13
 libdata/pkgconfig/libxml++-1.0.pc
 @dirrm include/libxml++-1.0/libxml++/exceptions
 @dirrm include/libxml++-1.0/libxml++/nodes
