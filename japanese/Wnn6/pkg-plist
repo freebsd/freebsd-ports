@@ -87,7 +87,6 @@ OMRONWnn6/Wnn6fbsd/wnntouch
 OMRONWnn6/README.sjis
 OMRONWnn6/README.jis
 OMRONWnn6/README.euc
-OMRONWnn6/setup.sh
 @dirrm OMRONWnn6/wnnsdk/sdk
 @dirrm OMRONWnn6/wnnsdk/mule-2.2.2
 @dirrm OMRONWnn6/wnnsdk
@@ -101,6 +100,6 @@ OMRONWnn6/setup.sh
 @dirrm OMRONWnn6/doc
 @dirrm OMRONWnn6/Wnn6fbsd
 @dirrm OMRONWnn6
-etc/rc.d/wnn6.sh
+etc/rc.d/Wnn6.sh
 @unexec rm /usr/local/bin/Wnn6
 @unexec rm /usr/local/lib/wnn6

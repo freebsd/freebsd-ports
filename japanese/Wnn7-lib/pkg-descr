@@ -1,5 +1,5 @@
-This has include files (e.g. wnn/commonhd.h) and a library (libwnn.a)
-to build Wnn6 clients. The files are included in
+This has include files (e.g. wnn/commonhd.h) and a library file
+(libwnn.a) to build Wnn6 clients. The files are included in
 
 ftp://ftp.omronsoft.co.jp/pub/Wnn6/sdk/FreeBSD-2.2R.tar.gz.
 
@@ -13,7 +13,6 @@ from Omron Software Co., Ltd.
 | TEL:     +81-44-246-6006                 |
 | FAX:     +81-44-246-6011                 |
 +------------------------------------------+
-
 
 Wnn6 is one of Japanese input methods. 'Wnn6 for Linux/FreeBSD' is
 supported an only Japanese method. However, Wnn4.2 which is free is

@@ -1,13 +1,13 @@
-# New ports collection makefile for:	Wnn6-demo
+# New ports collection makefile for:	Wnn6
 # Version required:	97.6.6
 # Date created:		15 July 1997
 # Whom:			Satoshi Taoka <taoka@infonets.hiroshima-u.ac.jp>
 #
-# $Id: Makefile,v 1.17 1997/09/10 06:51:52 asami Exp $
+# $Id: Makefile,v 1.18 1997/09/10 07:55:31 asami Exp $
 #
 
 DISTNAME=	OMRONWnn6
-PKGNAME=	jp-Wnn6-97.6.6
+PKGNAME=	ja-Wnn6-97.6.6
 CATEGORIES=	japanese
 EXTRACT_SUFX=	.tgz
 
@@ -16,74 +16,72 @@ MAINTAINER=	taoka@infonets.hiroshima-u.ac.jp
 IGNOREFILES=	${DISTFILES}
 WRKSRC=		${WRKDIR}
 LIBDIR=		${PREFIX}/OMRONWnn6
-STARTUP_SCRIPT=	${PREFIX}/etc/rc.d/wnn6.sh
 DISTDIR=	${MOUNT_PT}/fbsd
 MOUNT_PT?=	/cdrom
 MOUNT_DEV?=	/dev/wcd0c
 
-RESTRICTED=	"Restrictive copyright"
-
-NO_CDROM=	yes
-NO_PACKAGE=	yes
+RESTRICTED=	"You should buy from Omron Software Co., Ltd."
+NO_CDROM=	"You should buy from Omron Software Co., Ltd."
+NO_PACKAGE=	"You should buy from Omron Software Co., Ltd."
+NO_BUILD=	yes
 NO_CONFIGURE=	yes
 NO_PATCH=	yes
 IS_INTERACTIVE=	yes
 
+# If ${.CURDIR}/work/.build_done (which will be ${BUILD_COOKIE}) exists,
+# we do nothing in a 'do-fetch' stage.
+.if exists(${.CURDIR}/work/.build_done)
 do-fetch:
-	@echo -n "Please set the CD-ROM of 'Wnn6' into your cdrom-drive. (Press Return)"; \
+.else
+do-fetch:
+	@${ECHO} -n "Please set the CD-ROM of 'Wnn6' into your cdrom-drive. (Press Return)"; \
 	read dummy; \
-	echo "A mount point and the device file are '${MOUNT_PT}' and '${MOUNT_DEV}' respectively."; \
-	echo -n "Are these correct? (y/n) [y]"; \
+	${ECHO} "By default, a mount point and a device file"; \
+	${ECHO} "    are '${MOUNT_PT}' and '${MOUNT_DEV}' respectively."; \
+	${ECHO} -n "Are these correct? (y/n) [y]"; \
 	(read ans; \
 	case x$${ans} in \
 	  xn*|xN*) \
-		echo "Please rerun 'make' in specifying MOUNT_PT and MOUNT_DEV"; \
-		echo "For example:"; \
-		echo "	make MOUNT_PT=/mnt MOUNT_DEV=/dev/cd0c"; \
+		${ECHO} "###########################################################"; \
+		${ECHO} "Please rerun 'make' in specifying MOUNT_PT and MOUNT_DEV"; \
+		${ECHO} "For example:"; \
+		${ECHO} "	make MOUNT_PT=/mnt MOUNT_DEV=/dev/cd0c"; \
+		${ECHO} "###########################################################"; \
 		/usr/bin/false; \
 		;; \
 	  *) \
-		echo "Now mounting the CD-ROM ..."; \
+		${ECHO} "Now mounting the CD-ROM ..."; \
 		;; \
 	esac)
-	@for t in `mount | grep ${MOUNT_PT}`; do \
+	@for t in `mount | ${GREP} ${MOUNT_PT}`; do \
 	  if [ x"$$t" = x"${MOUNT_PT}" ]; then \
-	    echo "##################################################"; \
-	    echo "${MOUNT_PT} is busy"; \
-	    echo "Please umount ${MOUNT_PT}"; \
-	    echo "##################################################"; \
+	    ${ECHO} "##################################################"; \
+	    ${ECHO} "${MOUNT_PT} is busy"; \
+	    ${ECHO} "Please 'umount ${MOUNT_PT}'"; \
+	    ${ECHO} "##################################################"; \
 	    /usr/bin/false; \
 	  fi; \
 	done
 	@/sbin/mount_cd9660 ${MOUNT_DEV} ${MOUNT_PT}
+.endif
 
 pre-extract:
 	@if [ ! -e ${DISTDIR}/${DISTNAME}${EXTRACT_SUFX} ]; then \
-		echo "${DISTDIR}/${DISTNAME}${EXTRACT_SUFX}: No such file"; \
-		echo "Perhaps the CD-ROM is not one of Wnn6"; \
+		${ECHO} "${DISTDIR}/${DISTNAME}${EXTRACT_SUFX}: No such file"; \
+		${ECHO} "Perhaps the CD-ROM is not one of Wnn6"; \
 		/sbin/umount ${MOUNT_PT}; \
-		echo "Umounting is done ..."; \
+		${ECHO} "Umounting is done ..."; \
 		/usr/bin/false; \
 	fi
 
-do-build:
+post-extract:
 	@/sbin/umount ${MOUNT_PT}
+
+pre-install:
+	@${SETENV} PKG_PREFIX=${PREFIX} ${SH} ${PKGDIR}/INSTALL ${PKGNAME} PRE-INSTALL
 
 do-install:
 	@cd ${WRKSRC}/usr; tar cf - OMRONWnn6 | (cd ${PREFIX}; tar xvpf -)
-	@${INSTALL_SCRIPT} ${FILESDIR}/setup.sh ${LIBDIR}
-	@if [ ! -f ${STARTUP_SCRIPT} ]; then 				\
-		echo "Installing ${STARTUP_SCRIPT} startup file."; 	\
-		echo '#!/bin/sh' > ${STARTUP_SCRIPT}; 			\
-		echo 'wnn6=/usr/local/bin/Wnn6/jserver' 		\
-		  >> ${STARTUP_SCRIPT} ;				\
-		echo 'if [ -f $$wnn6 ]; then' >> ${STARTUP_SCRIPT} ;	\
-		echo "    echo -n ' Wnn6'" >> ${STARTUP_SCRIPT};	\
-		echo '     $$wnn6' >> ${STARTUP_SCRIPT} ;		\
-		echo "fi" >> ${STARTUP_SCRIPT} ;			\
-		chmod 755 ${STARTUP_SCRIPT} ;				\
-		chown bin.bin ${STARTUP_SCRIPT};			\
-	fi
 
 post-install:
 	@${SETENV} PKG_PREFIX=${PREFIX} ${SH} ${PKGDIR}/INSTALL ${PKGNAME} POST-INSTALL
