@@ -28,6 +28,12 @@ MAKEFILE=	makefile
 USE_GMAKE=	yes
 USE_SDL=	mixer image sound
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 500000
+BROKEN=		Does not build on 4.X
+.endif
+
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
 	${MKDIR} ${DATADIR}/music
@@ -35,4 +41,4 @@ do-install:
 	${INSTALL_DATA} ${TDATA}/tomatoes.mpk ${DATADIR}
 	${INSTALL_DATA} ${TDATA}/music/IHaveNoTomatoes.it ${DATADIR}/music
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
