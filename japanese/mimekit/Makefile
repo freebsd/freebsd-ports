@@ -6,13 +6,14 @@
 #
 
 PORTNAME=	mimekit
-PORTVERSION=	1.7
+PORTVERSION=	1.8
 CATEGORIES=	japanese devel mail
-MASTER_SITES=	ftp://etlport.etl.go.jp/pub/ccipr/DeleGate/ \
-		ftp://ftp.iij.ad.jp/pub/mail/mime/
-DISTNAME=	${PORTNAME}${PORTVERSION}
+MASTER_SITES=	ftp://ftp.etl.go.jp/pub/DeleGate/
+DISTNAME=	delegate6.1.19
 
 MAINTAINER=	max@FreeBSD.org
+
+WRKSRC=		${WRKDIR}/${DISTNAME}/mimekit
 
 post-install:
 .if !defined(NOPORTDOCS)
