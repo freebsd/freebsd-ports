@@ -1,0 +1,30 @@
+--- scsi.c.orig	Tue Mar 16 03:11:18 1999
++++ scsi.c	Sat Feb 26 00:48:35 2000
+@@ -49,7 +49,7 @@
+ #include <sys/scsicmd.h>
+ #endif
+ 
+-#if (defined(OS_freebsd)) && (__FreeBSD__ >= 2)
++#if (defined(OS_freebsd)) && (__FreeBSD__ >= 3)
+ #include <camlib.h>
+ #endif
+ 
+@@ -64,7 +64,7 @@
+ 
+ int scsi_open(const char *name, int flag, int mode, void **extra_data)
+ {
+-#if (defined(OS_freebsd)) && (__FreeBSD__ >= 2)
++#if (defined(OS_freebsd)) && (__FreeBSD__ >= 3)
+     struct cam_device *cam_dev;
+     cam_dev = cam_open_device(name, O_RDWR);
+     *extra_data = (void *) cam_dev;
+@@ -224,7 +224,7 @@
+         }
+         
+         return 0;
+-#elif (defined OS_freebsd) && (__FreeBSD__ >= 2)
++#elif (defined OS_freebsd) && (__FreeBSD__ >= 3)
+ #define MSG_SIMPLE_Q_TAG 0x20 /* O/O */
+       union ccb *ccb;
+       int flags;
+
