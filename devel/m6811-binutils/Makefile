@@ -16,7 +16,7 @@ PATCH_SITES=	http://home.worldnet.fr/~stcarrez/snapshots/
 PATCHFILES=	binutils-2.9.1-m68hc1x-20000225.diffs.gz
 PATCH_DIST_STRIP=	-p1
 
-MAINTAINER=	jburkhol@home.com
+MAINTAINER=	ports@FreeBSD.org
 
 USE_GMAKE=	yes
 HAS_CONFIGURE=	yes
