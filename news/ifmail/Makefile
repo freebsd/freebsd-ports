@@ -19,7 +19,7 @@ MAN3=		parsedate.3
 MAN8=		ifmail.8 iftoss.8
 
 pre-install:
-	@PREFIX=${PREFIX} ${SH} ${PKGDIR}/INSTALL ${PKGNAME} PRE-INSTALL
+	@PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
 	${MKDIR} ${PREFIX}/libexec/ifmail
 
 post-install:
