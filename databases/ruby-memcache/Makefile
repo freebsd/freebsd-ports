@@ -16,6 +16,9 @@ DIST_SUBDIR=	ruby
 MAINTAINER=	knu@FreeBSD.org
 COMMENT=	A memcached client library for Ruby
 
+BUILD_DEPENDS=	${RUBY_SITELIBDIR}/io/reactor.rb:${PORTSDIR}/devel/ruby-io-reactor
+RUN_DEPENDS=	${RUBY_SITELIBDIR}/io/reactor.rb:${PORTSDIR}/devel/ruby-io-reactor
+
 USE_RUBY=	yes
 
 NO_BUILD=	yes
