@@ -1,0 +1,14 @@
+--- info/faq.info.orig	Wed Mar  9 17:15:17 2005
++++ info/faq.info	Wed Mar  9 17:21:53 2005
+@@ -1,6 +1,11 @@
+ This is Info file faq.info, produced by Makeinfo version 1.68 from the
+ input file faq.texinfo.
+ 
++INFO-DIR-SECTION GiD: A graphical pre- and post-processor for numerical simulation programs
++START-INFO-DIR-ENTRY
++* FAQ: (gid-faq).           Frequently asked questions.
++END-INFO-DIR-ENTRY
++
+    This is the GiD FAQ
+ 
+    Copyright 1997-1999 CIMNE

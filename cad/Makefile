@@ -35,6 +35,7 @@
     SUBDIR += leocad
     SUBDIR += libgeda
     SUBDIR += linux-eagle
+    SUBDIR += linux-gid
     SUBDIR += magic
     SUBDIR += mars
     SUBDIR += netgen
