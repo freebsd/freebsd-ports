@@ -1,0 +1,4 @@
+etc/apache/mod_jk.conf
+libexec/apache/mod_jk.so
+@exec %D/sbin/apxs -e -A -n jk %f
+@unexec %D/sbin/apxs -e -A -n jk %f
