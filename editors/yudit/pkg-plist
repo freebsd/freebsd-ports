@@ -55,6 +55,7 @@ share/yudit/data/Gurmukhi.my
 share/yudit/data/Hangul.my
 share/yudit/data/Hangul2.my
 share/yudit/data/Hangul3.my
+share/yudit/data/Hanunoo.my
 share/yudit/data/Hebrew.my
 share/yudit/data/HebrewIsraeli.my
 share/yudit/data/Hungarian-prefix.my
@@ -252,6 +253,7 @@ share/yudit/locale/hu/LC_MESSAGES/messages.mo
 share/yudit/locale/ja/LC_MESSAGES/messages.mo
 share/yudit/locale/ko/LC_MESSAGES/messages.mo
 share/yudit/locale/mn/LC_MESSAGES/messages.mo
+share/yudit/locale/pa/LC_MESSAGES/messages.mo
 share/yudit/locale/pl/LC_MESSAGES/messages.mo
 share/yudit/locale/ru/LC_MESSAGES/messages.mo
 share/yudit/locale/sl/LC_MESSAGES/messages.mo
@@ -313,6 +315,7 @@ share/yudit/src/Gurmukhi-Inscript.kmap
 share/yudit/src/Gurmukhi.kmap
 share/yudit/src/Hangul2.kmap
 share/yudit/src/Hangul3.kmap
+share/yudit/src/Hanunoo.kmap
 share/yudit/src/Hebrew.kmap
 share/yudit/src/HebrewIsraeli.kmap
 share/yudit/src/Hungarian-prefix.kmap
@@ -401,6 +404,8 @@ share/yudit/src/Yiddish.kmap
 @dirrm share/yudit/locale/ru
 @dirrm share/yudit/locale/pl/LC_MESSAGES
 @dirrm share/yudit/locale/pl
+@dirrm share/yudit/locale/pa/LC_MESSAGES
+@dirrm share/yudit/locale/pa
 @dirrm share/yudit/locale/mn/LC_MESSAGES
 @dirrm share/yudit/locale/mn
 @dirrm share/yudit/locale/ko/LC_MESSAGES
