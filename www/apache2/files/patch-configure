@@ -1,5 +1,5 @@
 --- configure.orig	Wed Apr  4 12:45:36 2001
-+++ configure	Sun Apr  8 03:25:31 2001
++++ configure	Sat Apr 14 18:25:08 2001
 @@ -3760,7 +3760,9 @@
        -e "s/[ 	]*$/'/g" \
        $srcdir/config.layout > $pldconf
@@ -10,6 +10,24 @@
    rm $pldconf
    for var in prefix exec_prefix bindir sbindir libexecdir mandir \
               sysconfdir datadir iconsdir htdocsdir cgidir includedir \
+@@ -3777,7 +3779,7 @@
+         ;;
+     esac
+     val=`echo $val | sed -e 's:\(.\)/*$:\1:'`
+-    val=`echo $val | sed -e 's:$\([a-z_]*\):$(\1):g'`
++    val=`echo $val | sed -e 's:$\([a-z_]*\):${\1}:g'`
+     if test "$autosuffix" = "yes"; then
+       if echo $val | grep apache >/dev/null; then
+         addtarget=no
+@@ -3788,7 +3790,7 @@
+         val="$val/apache"
+       fi
+     fi
+-    eval "$var='$val'"
++    eval "$var=\"$val\""
+   done
+   
+ 
 @@ -9678,6 +9680,10 @@
  
    
