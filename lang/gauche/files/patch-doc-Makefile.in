@@ -1,6 +1,6 @@
---- doc/Makefile.in.orig	Fri Feb  7 13:22:54 2003
-+++ doc/Makefile.in	Fri Feb  7 13:25:36 2003
-@@ -48,7 +48,7 @@
+--- doc/Makefile.in.orig	Tue Jul 22 15:34:31 2003
++++ doc/Makefile.in	Mon Oct 27 15:58:31 2003
+@@ -74,7 +74,7 @@
  
  pdf : gauche-refe.pdf
  
@@ -9,31 +9,33 @@
  
  gauche-refe.html : gauche-refe.texi
  	texi2html -number gauche-refe.texi
-@@ -65,11 +65,9 @@
- gauche-refe.texi : gauche-ref.texi extract
+@@ -91,11 +91,9 @@
+ gauche-refe.texi : $(TEXIS) extract
  	$(GOSH) ./extract -en -o gauche-refe.texi gauche-ref.texi
  
 -gauche-refe.info.gz : gauche-refe.texi
 -	if test X$(MAKEINFO) != X -a X$(GZIP_PROGRAM) != X; then \
-+gauche-refe.info : gauche-refe.texi
-+	if test X$(MAKEINFO) != X ; then \
- 	  $(MAKEINFO) --no-warn gauche-refe.texi; \
+-	  $(MAKEINFO) --no-warn gauche-refe.texi; \
 -	  rm -rf gauche-refe.info*.gz; \
 -	  $(GZIP_PROGRAM) gauche-refe.info gauche-refe.info-[0-9]*; \
++gauche-refe.info : gauche-refe.texi
++	if test X$(MAKEINFO) != X ; then \
++	  $(MAKEINFO) --no-warn --no-split gauche-refe.texi; \
  	fi
  
  gauche-refj.html : gauche-refj.texi
-@@ -91,11 +89,9 @@
- gauche-refj.texi : gauche-ref.texi extract
+@@ -117,11 +115,9 @@
+ gauche-refj.texi : $(TEXIS) extract
  	$(GOSH) ./extract -jp -o gauche-refj.texi gauche-ref.texi
  
 -gauche-refj.info.gz : gauche-refj.texi
 -	if test X$(MAKEINFO) != X -a X$(GZIP_PROGRAM) != X; then \
-+gauche-refj.info : gauche-refj.texi
-+	if test X$(MAKEINFO) != X; then \
- 	  $(MAKEINFO) --no-warn gauche-refj.texi; \
+-	  $(MAKEINFO) --no-warn gauche-refj.texi; \
 -	  rm -rf gauche-refj.info*.gz; \
 -	  $(GZIP_PROGRAM) gauche-refj.info gauche-refj.info-[0-9]*; \
++gauche-refj.info : gauche-refj.texi
++	if test X$(MAKEINFO) != X; then \
++	  $(MAKEINFO) --no-warn --no-split gauche-refj.texi; \
  	fi
  
  libgauche-refe.texi : libgauche-ref.texi extract
