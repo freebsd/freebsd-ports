@@ -32,7 +32,6 @@ CONFIGURE_ENV=	GLIB_CONFIG="${GLIB_CONFIG}" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
 post-extract:
-	@${RM} -f ${WRKSRC}/config.cache
 	@${PERL} -pi -e 's|-lpthread|-pthread|g' ${WRKSRC}/configure
 	@find ${WRKSRC} -name "Makefile.in" | xargs ${PERL} -pi -e \
 		's|\$\(datadir\)/pixmaps|\$\(datadir\)/gnome/pixmaps|g ; \
