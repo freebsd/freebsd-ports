@@ -19,6 +19,7 @@ BUILD_DEPENDS=	ispell:${PORTSDIR}/textproc/ispell
 USE_GMAKE=	yes
 USE_GNOMENG=	yes
 USE_GNOME=	glib12
+USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-ncurses --without-gnome
 CONFIGURE_ENV=	CPPFLAGS=-I${LOCALBASE}/include \
@@ -28,9 +29,9 @@ CONFIGURE_TARGET=	--target=${MACHINE_ARCH}-unknown-freebsd${OSREL}
 MAN1=		mc.1 mcedit.1
 
 post-patch:
-	@find ${WRKSRC} -name "Makefile.in*" | xargs ${PERL} -pi -e \
-		's|\$\(libdir\)/mc|\$\(datadir\)/mc|g ; \
-		 s|\$\(datadir\)/locale|\$\(prefix\)/share/locale|g'
+	@find ${WRKSRC} -name "Makefile.in*" | xargs ${REINPLACE_CMD} \
+		-e 's|\$$(libdir)/mc|\$$(datadir)/mc|g' \
+		-e 's|\$$(datadir)/locale|\$$(prefix)/share/locale|g'
 
 post-install:
 	@${LN} -sf mc ${PREFIX}/bin/midc
