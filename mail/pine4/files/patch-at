@@ -1,7 +1,7 @@
-*** pine/pine.hlp.orig	Wed Sep 16 23:30:24 1998
---- pine/pine.hlp	Sun Sep 20 00:45:54 1998
+*** pine/pine.hlp.orig	Wed Sep 23 22:22:43 1998
+--- pine/pine.hlp	Mon Sep 28 22:23:33 1998
 ***************
-*** 835,843 ****
+*** 847,855 ****
   
    executable     &lt;Unix search path&gt;/pine
    persnl cfg     ~/.pinerc
@@ -11,7 +11,7 @@
   
    interrupted    ~/.pine-interrupted-mail
    debug          ~/.pine-debugN
---- 835,843 ----
+--- 847,855 ----
   
    executable     &lt;Unix search path&gt;/pine
    persnl cfg     ~/.pinerc
@@ -22,7 +22,7 @@
    interrupted    ~/.pine-interrupted-mail
    debug          ~/.pine-debugN
 ***************
-*** 849,856 ****
+*** 861,868 ****
    postponed#     ~/mail/postponed-msgs
    sentmail#      ~/mail/sent-mail
    mailcap#       ~/.mailcap + /etc/mailcap
@@ -31,7 +31,7 @@
   
    news-spool	varies across Unix flavors, e.g. /usr/spool/news or /var/news
    active-news	varies across Unix flavors, e.g. /usr/lib/news/active
---- 849,856 ----
+--- 861,868 ----
    postponed#     ~/mail/postponed-msgs
    sentmail#      ~/mail/sent-mail
    mailcap#       ~/.mailcap + /etc/mailcap
@@ -41,7 +41,7 @@
    news-spool	varies across Unix flavors, e.g. /usr/spool/news or /var/news
    active-news	varies across Unix flavors, e.g. /usr/lib/news/active
 ***************
-*** 1404,1412 ****
+*** 1416,1424 ****
   this link now to send a message to it:<BR>
   <A HREF="X-Pine-Gripe:_LOCAL_ADDRESS_?local"><!--#echo var="_LOCAL_FULLNAME_"--></A><P>
   <!--chtml endif-->
@@ -51,7 +51,7 @@
   <HR WIDTH="75%">
   <!--chtml endif-->
   <P> 
---- 1404,1412 ----
+--- 1416,1424 ----
   this link now to send a message to it:<BR>
   <A HREF="X-Pine-Gripe:_LOCAL_ADDRESS_?local"><!--#echo var="_LOCAL_FULLNAME_"--></A><P>
   <!--chtml endif-->
@@ -62,7 +62,7 @@
   <!--chtml endif-->
   <P> 
 ***************
-*** 1493,1499 ****
+*** 1505,1511 ****
   <OL>
     <LI> <A HREF="#intro">Introduction</A>
     <LI> <A HREF="#pine_help">Pine Help</A>
@@ -70,7 +70,7 @@
     <LI> <A HREF="#local_support">Local Support Contacts</A>
   <!--chtml endif-->
     <LI> <A HREF="#giving_cmds">Giving Commands in Pine</A>
---- 1493,1499 ----
+--- 1505,1511 ----
   <OL>
     <LI> <A HREF="#intro">Introduction</A>
     <LI> <A HREF="#pine_help">Pine Help</A>
@@ -79,7 +79,7 @@
   <!--chtml endif-->
     <LI> <A HREF="#giving_cmds">Giving Commands in Pine</A>
 ***************
-*** 1600,1608 ****
+*** 1612,1620 ****
   at your site.)
   
   
@@ -89,7 +89,7 @@
   <!--chtml endif-->
   
   <H2><A NAME="giving_cmds">Giving Commands in Pine</A></H2>
---- 1600,1608 ----
+--- 1612,1620 ----
   at your site.)
   
   
