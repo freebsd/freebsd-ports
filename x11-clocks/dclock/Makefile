@@ -3,12 +3,12 @@
 # Date created:		15 Aug 1996
 # Whom:			David Leonard <leonard@dstc.edu.au>
 #
-# $Id: Makefile,v 1.2 1996/11/18 11:42:53 asami Exp $
+# $Id: Makefile,v 1.3 1998/05/03 17:54:39 steve Exp $
 #
 
 DISTNAME=	dclock
 PKGNAME=	dclock-pl4
-CATEGORIES=	x11
+CATEGORIES=	x11-clock
 MASTER_SITES=	ftp://ftp.x.org/R5contrib/
 EXTRACT_SUFX=	.shar.Z
 

@@ -3,11 +3,11 @@
 # Date created:        1 July 1998
 # Whom:                Rich Neswold <rneswold@mcs.net>
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1998/07/12 23:14:12 steve Exp $
 #
 
 DISTNAME=	wmtime-1.0b2
-CATEGORIES=	x11
+CATEGORIES=	x11-clock
 MASTER_SITES=	http://www.xs4all.nl/~warp/files/
 
 MAINTAINER=	rneswold@mcs.net
