@@ -1,4 +1,6 @@
+@unexec if cmp -s %D/etc/ser/radiusclient.conf %D/etc/ser/radiusclient.conf.default; then rm -f %D/etc/ser/radiusclient.conf; fi
 etc/ser/radiusclient.conf.default
+@unexec if cmp -s %D/etc/ser/ser.cfg %D/etc/ser/ser.cfg.sample; then rm -f %D/etc/ser/ser.cfg; fi
 etc/ser/ser.cfg.sample
 etc/ser/servers.sample
 etc/ser/sip_dictionary
