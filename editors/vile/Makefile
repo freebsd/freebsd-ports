@@ -20,7 +20,7 @@ MAN1=		vile.1
 
 .if defined(WITH_PERL)
 CONFIGURE_ARGS=	--with-perl
-PLIST=		${PKGDIR}/PLIST.perl
+PLIST=		${PKGDIR}/pkg-plist.perl
 USE_PERL5=	yes
 .endif
 
