@@ -7,14 +7,15 @@
 
 PORTNAME=	yptransitd
 PORTVERSION=	0.5
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net
-MASTER_SITES=	http://unc.dl.sourceforge.net/sourceforge/yptransitd/
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE_EXTENDED}
+MASTER_SITE_SUBDIR=	yptransitd
 
 MAINTAINER=	mjoyner@hq.dyns.cx
 COMMENT=	A replacement for nss_ldap
 
-LIB_DEPENDS=	ldap.2:${PORTSDIR}/net/openldap20-client
+USE_OPENLDAP=	yes
 
 USE_BISON=	yes
 INSTALLS_SHLIB=	yes
