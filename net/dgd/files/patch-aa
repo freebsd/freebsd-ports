@@ -1,7 +1,7 @@
 $FreeBSD$
 
---- Makefile.orig	Wed Dec 20 03:13:29 2000
-+++ Makefile	Fri May 17 10:02:48 2002
+--- Makefile.orig	Mon Aug 26 07:21:20 2002
++++ Makefile	Mon Aug 26 09:24:19 2002
 @@ -3,13 +3,12 @@
  #
  HOST=	NETBSD
@@ -17,17 +17,17 @@ $FreeBSD$
 +CC?=	gcc
  LD=	$(CC)
  DMAKE=	make
- BIN=	../bin
-@@ -21,6 +20,8 @@
+ YACC=	yacc
+@@ -22,6 +21,8 @@
  COMPOBJ=alloc.o error.o hash.o path.o str.o array.o object.o data.o \
  	interpret.o config.o
  
 +all: a.out comp/a.out
 +
  a.out:	$(OBJ) always
- 	cd comp; $(DMAKE) 'CC=$(CC)' 'CCFLAGS=$(CCFLAGS)' dgd
+ 	cd comp; $(DMAKE) 'CC=$(CC)' 'CCFLAGS=$(CCFLAGS)' 'YACC=$(YACC)' dgd
  	cd lex; $(DMAKE) 'CC=$(CC)' 'CCFLAGS=$(CCFLAGS)' dgd
-@@ -38,10 +39,15 @@
+@@ -39,10 +40,15 @@
  	@rm -f a.out
  
  $(BIN)/driver: a.out
@@ -44,12 +44,13 @@ $FreeBSD$
  
  lint:
  	lint $(LINTFLAGS) $(CFLAGS) $(SRC)
-@@ -67,7 +73,7 @@
+@@ -68,7 +74,8 @@
  
  comp/a.out:
  	cd comp; $(DMAKE) 'DMAKE=$(DMAKE)' 'CC=$(CC)' 'CCFLAGS=$(CCFLAGS)' \
--			  'LIBS=$(LIBS)' a.out
-+			'LDFLAGS=$(LDFLAGS)' 'LIBS=$(LIBS)' a.out
+-			  'YACC=$(YACC)' 'LIBS=$(LIBS)' a.out
++			  'LDFLAGS=$(LDFLAGS)' 'YACC=$(YACC)' 'LIBS=$(LIBS)' \
++			  a.out
  
  clean:
  	rm -f a.out $(OBJ) comp.sub lex.sub ed.sub
