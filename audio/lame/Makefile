@@ -8,17 +8,11 @@
 PORTNAME=	lame
 PORTVERSION=	3.70
 CATEGORIES=	audio
-MASTER_SITES=	ftp://ftp.sunet.se/pub/multimedia/Berkeley/mpeg2/conformance-bitstreams/audio/mpeg2/software/technical_report/
-DISTNAME=	dist10
-
-PATCH_SITES=	http://www.sulaco.org/mp3/download/patches/
-PATCHFILES=	lame${PORTVERSION}.patch.gz
+MASTER_SITES=	http://lame.sourceforge.net/download/beta/
+DISTNAME=	${PORTNAME}${PORTVERSION}
 
 MAINTAINER=	yoshiaki@kt.rim.or.jp
 
-PATCH_DIST_STRIP = -p1
-
-WRKSRC= 	${WRKDIR}/dist10/lsf/encoder
 USE_GMAKE=	yes
 WANT_GTK=	yes
 ALL_TARGET=	lame
