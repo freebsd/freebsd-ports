@@ -1,7 +1,7 @@
-*** configure.orig	Sun Apr  6 03:56:58 1997
---- configure	Wed Apr 16 22:52:47 1997
+*** configure.orig	Wed Apr 23 08:40:06 1997
+--- configure	Fri Apr 25 12:38:54 1997
 ***************
-*** 1634,1645 ****
+*** 1757,1768 ****
   
   export CFLAGS CC
   
@@ -13,10 +13,10 @@
 - 
   
   echo $ac_n "checking that the compiler works""... $ac_c" 1>&6
-  echo "configure:1646: checking that the compiler works" >&5
---- 1634,1639 ----
+  echo "configure:1769: checking that the compiler works" >&5
+--- 1757,1762 ----
 ***************
-*** 2632,2638 ****
+*** 2759,2765 ****
   
   fi
   
@@ -24,7 +24,7 @@
   do
   ac_safe=`echo "$ac_hdr" | sed 'y%./+-%__p_%'`
   echo $ac_n "checking for $ac_hdr""... $ac_c" 1>&6
---- 2626,2632 ----
+--- 2753,2759 ----
   
   fi
   
@@ -33,7 +33,7 @@
   ac_safe=`echo "$ac_hdr" | sed 'y%./+-%__p_%'`
   echo $ac_n "checking for $ac_hdr""... $ac_c" 1>&6
 ***************
-*** 6749,6755 ****
+*** 7031,7037 ****
   
   cat >> $CONFIG_STATUS <<EOF
   
@@ -41,7 +41,7 @@
   EOF
   cat >> $CONFIG_STATUS <<\EOF
   for ac_file in .. $CONFIG_FILES; do if test "x$ac_file" != x..; then
---- 6743,6749 ----
+--- 7025,7031 ----
   
   cat >> $CONFIG_STATUS <<EOF
   
@@ -50,8 +50,8 @@
   cat >> $CONFIG_STATUS <<\EOF
   for ac_file in .. $CONFIG_FILES; do if test "x$ac_file" != x..; then
 ***************
-*** 6953,6958 ****
---- 6947,6954 ----
+*** 7235,7240 ****
+--- 7229,7236 ----
     done
   
     for ac_config_dir in gmp-2.0.2-ssh-2; do
