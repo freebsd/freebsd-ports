@@ -3531,7 +3531,6 @@ ko-elm		ports/korean/elm
 ko-engdic	ports/korean/engdic
 ko-eterm	ports/korean/eterm
 ko-ftghostscript5	ports/korean/ftghostscript5
-ko-gaim		ports/korean/gaim
 ko-gau		ports/korean/gau
 ko-ghostscript-gnu-korfont	ports/korean/ghostscript-gnu-korfont
 ko-ghostscript55httf	ports/korean/ghostscript55httf
