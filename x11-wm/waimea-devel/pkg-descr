@@ -1,0 +1,8 @@
+Waimea is a highly customizable window manager for the X Window system
+conforming to the latest EWMH specification.  Waimea supports multiple
+virtual desktops and by using the Cairo graphics library for all rendering,
+Waimea provides a modern vector-based style engine that takes advantage of
+display hardware acceleration when available (through the X Render
+Extension).
+
+WWW: http://waimea.org/wiki/Software_2fwaimea
