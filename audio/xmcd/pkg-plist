@@ -1,9 +1,60 @@
-bin/xmcd
 bin/cda
 bin/cddbcmd
 bin/dp2xmcd
 bin/wm2xmcd
+bin/xmcd
 lib/X11/app-defaults/XMcd
+lib/X11/xmcd/app-defaults/XMcd
+lib/X11/xmcd/bin-FreeBSD-i386/cda
+lib/X11/xmcd/bin-FreeBSD-i386/cddbcmd
+lib/X11/xmcd/bin-FreeBSD-i386/dp2xmcd
+lib/X11/xmcd/bin-FreeBSD-i386/wm2xmcd
+lib/X11/xmcd/bin-FreeBSD-i386/xmcd
+lib/X11/xmcd/config/.tbl/Acer
+lib/X11/xmcd/config/.tbl/Apple
+lib/X11/xmcd/config/.tbl/Aztech
+lib/X11/xmcd/config/.tbl/Chinon
+lib/X11/xmcd/config/.tbl/Compaq
+lib/X11/xmcd/config/.tbl/Compro
+lib/X11/xmcd/config/.tbl/Creative
+lib/X11/xmcd/config/.tbl/DEC
+lib/X11/xmcd/config/.tbl/Goldstar
+lib/X11/xmcd/config/.tbl/HP
+lib/X11/xmcd/config/.tbl/Hitachi
+lib/X11/xmcd/config/.tbl/IBM
+lib/X11/xmcd/config/.tbl/Longshin
+lib/X11/xmcd/config/.tbl/MDI
+lib/X11/xmcd/config/.tbl/MediaVis
+lib/X11/xmcd/config/.tbl/Mitsumi
+lib/X11/xmcd/config/.tbl/NEC
+lib/X11/xmcd/config/.tbl/Nakamich
+lib/X11/xmcd/config/.tbl/Okano
+lib/X11/xmcd/config/.tbl/Opticsto
+lib/X11/xmcd/config/.tbl/Orchid
+lib/X11/xmcd/config/.tbl/Panasoni
+lib/X11/xmcd/config/.tbl/Philips
+lib/X11/xmcd/config/.tbl/Pioneer
+lib/X11/xmcd/config/.tbl/Plextor
+lib/X11/xmcd/config/.tbl/Procom
+lib/X11/xmcd/config/.tbl/Regal
+lib/X11/xmcd/config/.tbl/Ricoh
+lib/X11/xmcd/config/.tbl/SGI
+lib/X11/xmcd/config/.tbl/Samsung
+lib/X11/xmcd/config/.tbl/Sanyo
+lib/X11/xmcd/config/.tbl/Sony
+lib/X11/xmcd/config/.tbl/Stratus
+lib/X11/xmcd/config/.tbl/Sun
+lib/X11/xmcd/config/.tbl/Tatung
+lib/X11/xmcd/config/.tbl/Teac
+lib/X11/xmcd/config/.tbl/Toshiba
+lib/X11/xmcd/config/.tbl/Yamaha
+lib/X11/xmcd/config/common.cfg
+lib/X11/xmcd/config/config.sh
+lib/X11/xmcd/config/device.cfg
+lib/X11/xmcd/config/sites
+lib/X11/xmcd/discog/bkgnd.gif
+lib/X11/xmcd/discog/discog.html
+lib/X11/xmcd/discog/xmcdlogo.gif
 lib/X11/xmcd/docs/ACKS
 lib/X11/xmcd/docs/CDDB
 lib/X11/xmcd/docs/CHANGES
@@ -124,71 +175,21 @@ lib/X11/xmcd/help/WwGo.btn
 lib/X11/xmcd/help/WwSearch.opt
 lib/X11/xmcd/help/WwSelect.rbx
 lib/X11/xmcd/pixmaps/xmcd.icon
+lib/X11/xmcd/pixmaps/xmcd.xpm
 lib/X11/xmcd/pixmaps/xmcd_a.px
 lib/X11/xmcd/pixmaps/xmcd_b.px
-lib/X11/xmcd/pixmaps/xmcd.xpm
-lib/X11/xmcd/config/common.cfg
-lib/X11/xmcd/config/config.sh
-lib/X11/xmcd/config/device.cfg
-lib/X11/xmcd/config/sites
-lib/X11/xmcd/config/.tbl/Acer
-lib/X11/xmcd/config/.tbl/Apple
-lib/X11/xmcd/config/.tbl/Aztech
-lib/X11/xmcd/config/.tbl/Chinon
-lib/X11/xmcd/config/.tbl/Compaq
-lib/X11/xmcd/config/.tbl/Compro
-lib/X11/xmcd/config/.tbl/Creative
-lib/X11/xmcd/config/.tbl/DEC
-lib/X11/xmcd/config/.tbl/Goldstar
-lib/X11/xmcd/config/.tbl/HP
-lib/X11/xmcd/config/.tbl/Hitachi
-lib/X11/xmcd/config/.tbl/IBM
-lib/X11/xmcd/config/.tbl/Longshin
-lib/X11/xmcd/config/.tbl/MDI
-lib/X11/xmcd/config/.tbl/MediaVis
-lib/X11/xmcd/config/.tbl/Mitsumi
-lib/X11/xmcd/config/.tbl/NEC
-lib/X11/xmcd/config/.tbl/Nakamich
-lib/X11/xmcd/config/.tbl/Okano
-lib/X11/xmcd/config/.tbl/Opticsto
-lib/X11/xmcd/config/.tbl/Orchid
-lib/X11/xmcd/config/.tbl/Panasoni
-lib/X11/xmcd/config/.tbl/Philips
-lib/X11/xmcd/config/.tbl/Pioneer
-lib/X11/xmcd/config/.tbl/Plextor
-lib/X11/xmcd/config/.tbl/Procom
-lib/X11/xmcd/config/.tbl/Regal
-lib/X11/xmcd/config/.tbl/Ricoh
-lib/X11/xmcd/config/.tbl/SGI
-lib/X11/xmcd/config/.tbl/Samsung
-lib/X11/xmcd/config/.tbl/Sanyo
-lib/X11/xmcd/config/.tbl/Sony
-lib/X11/xmcd/config/.tbl/Stratus
-lib/X11/xmcd/config/.tbl/Sun
-lib/X11/xmcd/config/.tbl/Tatung
-lib/X11/xmcd/config/.tbl/Teac
-lib/X11/xmcd/config/.tbl/Toshiba
-lib/X11/xmcd/config/.tbl/Yamaha
 lib/X11/xmcd/scripts/genidx
 lib/X11/xmcd/scripts/ncsarmt
 lib/X11/xmcd/scripts/ncsawrap
 lib/X11/xmcd/scripts/nswrap
+@dirrm lib/X11/xmcd/app-defaults
+@dirrm lib/X11/xmcd/bin-FreeBSD-i386
+@unexec rm -rf %D/lib/X11/xmcd/cddb
 @dirrm lib/X11/xmcd/config/.tbl
 @dirrm lib/X11/xmcd/config
+@dirrm lib/X11/xmcd/discog
 @dirrm lib/X11/xmcd/docs
 @dirrm lib/X11/xmcd/help
 @dirrm lib/X11/xmcd/pixmaps
 @dirrm lib/X11/xmcd/scripts
-@unexec rmdir lib/X11/xmcd/cddb/soundtrack 2>/dev/null || true
-@unexec rmdir lib/X11/xmcd/cddb/rock 2>/dev/null || true
-@unexec rmdir lib/X11/xmcd/cddb/reggae 2>/dev/null || true
-@unexec rmdir lib/X11/xmcd/cddb/newage 2>/dev/null || true
-@unexec rmdir lib/X11/xmcd/cddb/misc 2>/dev/null || true
-@unexec rmdir lib/X11/xmcd/cddb/jazz 2>/dev/null || true
-@unexec rmdir lib/X11/xmcd/cddb/folk 2>/dev/null || true
-@unexec rmdir lib/X11/xmcd/cddb/data 2>/dev/null || true
-@unexec rmdir lib/X11/xmcd/cddb/country 2>/dev/null || true
-@unexec rmdir lib/X11/xmcd/cddb/classical 2>/dev/null || true
-@unexec rmdir lib/X11/xmcd/cddb/blues 2>/dev/null || true
-@unexec rmdir lib/X11/xmcd/cddb 2>/dev/null || true
-@unexec rmdir lib/X11/xmcd 2>/dev/null || true
+@dirrm lib/X11/xmcd
