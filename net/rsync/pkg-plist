@@ -1,6 +1,6 @@
 bin/rsync
-bin/rsyncd
+libexec/rsyncd
 man/man1/rsync.1.gz
 share/doc/rsync/README.daemon
 share/doc/rsync/rsyncd_trees.eg
-share/doc/rsync/tech_report.ps
+share/doc/rsync/tech_report.tex
