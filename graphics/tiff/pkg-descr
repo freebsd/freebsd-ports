@@ -11,10 +11,7 @@ The library is capable of dealing with images that are written to
 follow the 5.0 or 6.0 TIFF spec.  There is also considerable support
 for some of the more esoteric portions of the 6.0 TIFF spec.
 
-SGI has also added html-documentation in addition to man-pages.
-
-	  TIFF web site: http://www-mipl.jpl.nasa.gov/~ndr/tiff
-	Master FTP site: ftp://ftp.sgi.com/graphics/tiff
-
 Unless NOPORTDOCS is defined, the html documentations is also
 installed locally in /usr/local/share/doc/tiff.
+
+WWW: http://www.libtiff.org/
