@@ -1,5 +1,5 @@
 # New ports collection makefile for:	inn
-# Version required:	1.7.2
+# Version required:	2.2
 # Date created:		20 Oct 1994 (1.4), 18 Dec 1996 (1.5.1)
 # Whom:			torstenb
 #
@@ -88,7 +88,7 @@ pre-extract:
 pre-install:
 .for dir in ${NEWSSPOOL} ${NEWSLIB} ${NEWSLOG} ${NEWSMAN} ${NEWSINFO}
 	${MKDIR} ${dir}
-	$(CHOWN} news.news ${dir}
+	${CHOWN} news:news ${dir}
 .endfor
 
 update: build
@@ -98,21 +98,21 @@ update: build
 
 post-install:
 	${MKDIR} -m 0775 ${NEWSSPOOL}/articles
-	${CHOWN} news.news ${NEWSSPOOL}/articles
+	${CHOWN} news:news ${NEWSSPOOL}/articles
 	${MKDIR} -m 0775 ${NEWSSPOOL}/cycbuffs
-	${CHOWN} news.news ${NEWSSPOOL}/cycbuffs
+	${CHOWN} news:news ${NEWSSPOOL}/cycbuffs
 	${MKDIR} -m 0775 ${NEWSSPOOL}/incoming/bad
-	${CHOWN} news.news ${NEWSSPOOL}/incoming/bad
+	${CHOWN} news:news ${NEWSSPOOL}/incoming/bad
 	${MKDIR} -m 0775 ${NEWSSPOOL}/innfeed
-	${CHOWN} news.news ${NEWSSPOOL}/innfeed
+	${CHOWN} news:news ${NEWSSPOOL}/innfeed
 	${MKDIR} -m 0775 ${NEWSSPOOL}/outgoing
-	${CHOWN} news.news ${NEWSSPOOL}/outgoing
+	${CHOWN} news:news ${NEWSSPOOL}/outgoing
 	${MKDIR} -m 0775 ${NEWSSPOOL}/overview
-	${CHOWN} news.news ${NEWSSPOOL}/overview
+	${CHOWN} news:news ${NEWSSPOOL}/overview
 	${MKDIR} -m 0775 ${NEWSSPOOL}/tmp
-	${CHOWN} news.news ${NEWSSPOOL}/tmp
+	${CHOWN} news:news ${NEWSSPOOL}/tmp
 	${MKDIR} -m 0775 ${NEWSSPOOL}/uniover
-	${CHOWN} news.news ${NEWSSPOOL}/uniover
+	${CHOWN} news:news ${NEWSSPOOL}/uniover
 	${SED} <${FILESDIR}/innd.sh >${PREFIX}/etc/rc.d/innd.sh \
 		s+!!PREFIX!!+${PREFIX}+g && ${CHMOD} +x ${PREFIX}/etc/rc.d/innd.sh
 	# make rnews work when getting news via uucp !
