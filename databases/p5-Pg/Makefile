@@ -3,18 +3,14 @@
 # Date created:				October 19th 1996
 # Whom:	      				James FitzGibbon <jfitz@FreeBSD.org>
 #
-#   $Id: Makefile,v 1.1.1.1 1996/10/23 23:59:20 jfitz Exp $
+#   $Id: Makefile,v 1.2 1996/10/24 09:59:24 jfitz Exp $
 #
 
 DISTNAME=	pg95perl5-1.2.0
 PKGNAME=	p5-Pg-1.2.0
-CATEGORIES+=	databases
-MASTER_SITES=	ftp://ftp.digital.com/pub/plan/perl/CPAN/modules/by-module/Pg/ \
-		ftp://ftp.cdrom.com/pub/perl/CPAN/modules/by-module/Pg/ \
-		ftp://ftp.cis.ufl.edu/pub/perl/CPAN/modules/by-module/Pg/ \
-		ftp://ftp.leo.org/pub/comp/programming/languages/perl/CPAN/modules/by-module/Pg/ \
-		ftp://ftp.demon.co.uk/pub/mirrors/perl/CPAN/modules/by-module/Pg/ \
-		ftp://ftp.lab.kdd.co.jp/lang/perl/CPAN/modules/by-module/Pg/
+CATEGORIES=	databases
+MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
+MASTER_SITE_SUBDIR=	Pg
 
 MAINTAINER=	jfitz@FreeBSD.ORG
 
