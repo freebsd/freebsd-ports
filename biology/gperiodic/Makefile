@@ -16,10 +16,15 @@ COMMENT=	Displays a periodic table of the elements
 
 USE_X_PREFIX=	yes
 USE_GNOME=	gtk20
-MAKE_ARGS=	CC="${CC} ${CFLAGS}"
 ALL_TARGET=	${PORTNAME}
+USE_REINPLACE=	yes
 
 LANGS=	da fr pl sv tr
+
+post-patch:
+	@${REINPLACE_CMD} -e "s|^CFLAGS=|CFLAGS+=|; \
+		s|-DGTK_DISABLE_DEPRECATED||" \
+		${WRKSRC}/Makefile
 
 post-build:
 .for lang in ${LANGS}
