@@ -1,6 +1,6 @@
 # New ports collection makefile for:	pbm2ppa
 # Date created:		18 November 1998
-# Whom:			smace@freebsd.org
+# Whom:			ports@freebsd.org
 #
 # $FreeBSD$
 #
@@ -11,7 +11,7 @@ CATEGORIES=	print
 MASTER_SITES=	http://www.httptech.com/ppa/files/
 DISTFILES=	ppa-${PORTVERSION}.tar.gz
 
-MAINTAINER=	smace@freebsd.org
+MAINTAINER=	ports@FreeBSD.org
 
 RUN_DEPENDS=	gs:${PORTSDIR}/print/ghostscript55 \
 		enscript:${PORTSDIR}/print/enscript-letter
