@@ -1,6 +1,6 @@
---- xfpovray.cf.orig	Tue Feb 10 04:46:25 1998
-+++ xfpovray.cf	Tue Feb 17 08:37:34 1998
-@@ -3,10 +3,10 @@
+--- xfpovray.cf.orig	Mon Feb  9 22:46:25 1998
++++ xfpovray.cf	Mon Jul  1 02:57:04 2002
+@@ -3,10 +3,14 @@
  XCOMM
  
  XCOMM Root installation directory for xfpovray
@@ -13,4 +13,8 @@
  
  XCOMM If your compiler can't find the xforms header file 
 -XFORMS_INCDIR = /usr/local/include
++.if exists(${X11BASE}/include/X11/forms.h)
++XFORMS_INCDIR = ${X11BASE}/include/X11
++.else
 +XFORMS_INCDIR = ${X11BASE}/include
++.endif

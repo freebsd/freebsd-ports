@@ -1,0 +1,11 @@
+--- src/xfpovray.c.orig	Mon Jul  1 03:06:04 2002
++++ src/xfpovray.c	Mon Jul  1 03:06:57 2002
+@@ -47,7 +47,7 @@
+ #include "xfpovray.xpm"
+ 
+ 
+-#if FL_VERSION < MIN_XFORMS_VER || FL_REVISION < MIN_XFORMS_REV
++#if FL_VERSION < MIN_XFORMS_VER || (FL_VERSION == MIN_XFORMS_VER && FL_REVISION < MIN_XFORMS_REV)
+ #error
+ #error CANNOT COMPILE WITH THIS VERSION OF XFORMS.
+ #error PLEASE UPGRADE TO THE LATEST VERSION.
