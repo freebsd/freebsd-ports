@@ -2153,6 +2153,7 @@ gate		ports/editors/gate
 gatekeeper	ports/net/gatekeeper
 gatling		ports/www/gatling
 gauche		ports/lang/gauche
+gauche-gaunit	ports/devel/gauche-gaunit
 gauche-gdbm	ports/databases/gauche-gdbm
 gauche-gl	ports/graphics/gauche-gl
 gauche-gtk	ports/x11-toolkits/gauche-gtk
