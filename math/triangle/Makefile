@@ -17,11 +17,10 @@ COMMENT=	A Two-Dimensional Quality Mesh Generator and Delaunay Triangulator
 
 NO_CDROM=	Triangle must not be sold for profit
 
+NO_WRKSUBDIR=	yes
 USE_ZIP=	yes
 USE_XLIB=	yes
 MAKEFILE=	makefile
-
-WRKSRC=		${WRKDIR}
 
 PLIST_FILES=	bin/triangle bin/showme
 

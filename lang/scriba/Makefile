@@ -25,7 +25,7 @@ PRFXFILES=	variations/standard/basiccmd.c \
 		configurer.c scriba.c scriba.conf.unix.lsp \
 		testconf.c
 
-WRKSRC=		${WRKDIR}
+NO_WRKSUBDIR=	yes
 USE_PERL5=	yes
 CFLAGS+=	-fPIC
 MAKE_ENV+=	PTHREAD_CFLAGS="${PTHREAD_CFLAGS}" PTHREAD_LIBS="${PTHREAD_LIBS}"

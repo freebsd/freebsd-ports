@@ -13,7 +13,7 @@ DISTFILES=	#empty
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Print the contents of a procfs map file
 
-WRKSRC=		${WRKDIR}
+NO_WRKSUBDIR=	yes
 MAKE_ENV=	MAKEOBJDIRPREFIX=${WRKSRC} MAKEOBJDIR=${WRKSRC}
 
 procmap_files := Makefile procmap.c procmap.8
