@@ -391,6 +391,7 @@
     SUBDIR += py-libnet
     SUBDIR += py-pcap
     SUBDIR += py-smb
+    SUBDIR += py-snmp
     SUBDIR += py-soap
     SUBDIR += py-xmlrpc
     SUBDIR += py-xmlrpclib
