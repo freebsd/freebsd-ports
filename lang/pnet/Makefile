@@ -10,7 +10,7 @@ PORTVERSION=	0.2.8
 CATEGORIES=	lang
 MASTER_SITES=	http://www.southern-storm.com.au/download/
 
-MAINTAINER=	ahze@ahze.net
+MAINTAINER=	ahze@rgv.net
 
 BUILD_DEPENDS=	treecc:${PORTSDIR}/lang/treecc
 
