@@ -14,11 +14,9 @@ MASTER_SITES=	http://www.enst.fr/~beyssac/pipsec/ \
 
 MAINTAINER=	patrick@mindstep.com
 
-LIB_DEPENDS=	crypto.1:${PORTSDIR}/security/openssl
+USE_OPENSSL=	RSA
 
 ALL_TARGET=	pipsecd
-
-.include <bsd.port.pre.mk>
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/pipsecd ${PREFIX}/sbin
@@ -36,4 +34,4 @@ do-install:
 post-install:
 	strip ${PREFIX}/sbin/pipsecd
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

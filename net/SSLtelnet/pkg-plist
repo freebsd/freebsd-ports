@@ -1,3 +1,2 @@
 bin/telnet
 libexec/telnetd
-@exec ( [ -f %D/openssl/certs/telnetd.pem ] && exit ; echo "Making certificate files" ; cd %D/openssl/certs ; %D/bin/openssl req -new -x509 -nodes -days 365 -out telnetd.pem -keyout telnetd.pem; ln -s telnetd.pem `%D/bin/openssl x509 -noout -hash < telnetd.pem`.0 ; chmod 644 %D/openssl/certs/telnetd.pem )

@@ -1,6 +1,12 @@
---- tunip.c.orig	Mon Aug 16 11:54:50 1999
-+++ tunip.c	Mon Aug 16 12:27:07 1999
-@@ -57,8 +57,8 @@
+--- tunip.c.orig	Tue Sep 21 18:20:40 1999
++++ tunip.c	Fri Feb  4 15:09:46 2000
+@@ -54,12 +54,14 @@
+ #include <blowfish.h>
+ #include <cast.h>
+ #include <des.h>
++#ifndef NO_IDEA
+ #include <idea.h>
++#endif
  
  #include "defs.h"
  
@@ -10,4 +16,78 @@
 +#define _PATH_STARTUP           FILE_PREFIX "/etc/ipsec/startup"
  #define _PATH_DEV_RANDOM	"/dev/random"
  
- #define MAX_HEADER	64
+ #ifdef USE_ETHERTAP
+@@ -87,10 +89,10 @@
+ 
+ #define UDP_PORT	2001
+ 
+-#ifdef USE_SYSTEM_HASH
+ #define MD5_Init		MD5Init
+ #define MD5_Update		MD5Update
+ #define MD5_Final		MD5Final
++#ifdef USE_SYSTEM_HASH
+ #define SHA1_Init		SHA1Init
+ #define SHA1_Update		SHA1Update
+ #define SHA1_Final		SHA1Final
+@@ -131,7 +133,9 @@
+ 	des_key_schedule k3;
+     } des3;
+     CAST_KEY cast;
++#ifndef NO_IDEA
+     IDEA_KEY_SCHEDULE idea;
++#endif
+ } crypt_key;
+ 
+ typedef struct crypt_method {
+@@ -304,12 +308,14 @@
+ void cast_cbc_decrypt(unsigned char *iv, crypt_key *dk,
+ 		      unsigned char *ct, unsigned int len);
+ int cast_setkey(unsigned char *b, unsigned int len, crypt_key *k);
++#ifndef NO_IDEA
+ void my_idea_cbc_encrypt(unsigned char *iv, crypt_key *ek,
+ 			 unsigned char *t, unsigned int len);
+ void my_idea_cbc_decrypt(unsigned char *iv, crypt_key *dk,
+ 			 unsigned char *ct, unsigned int len);
+ int my_idea_set_encrypt_key(unsigned char *b, unsigned int len, crypt_key *k);
+ int my_idea_set_decrypt_key(unsigned char *b, unsigned int len, crypt_key *k);
++#endif
+ void my_des_cbc_encrypt(unsigned char *iv, crypt_key *ek,
+ 			unsigned char *t, unsigned int len);
+ void my_des_cbc_decrypt(unsigned char *iv, crypt_key *dk,
+@@ -379,14 +385,20 @@
+ 
+ hash_method_t *hash_list = &hash_ripemd160;
+ 
++#ifndef NO_IDEA
+ crypt_method_t crypt_idea = {
+     NULL,
+     "idea_cbc", 8, 8,
+     my_idea_cbc_encrypt, my_idea_cbc_decrypt,
+     my_idea_set_encrypt_key, my_idea_set_decrypt_key
+ };
++#endif
+ crypt_method_t crypt_cast = {
++#ifndef NO_IDEA
+     &crypt_idea,
++#else
++    NULL,
++#endif
+     "cast_cbc", 8, 8,
+     cast_cbc_encrypt, cast_cbc_decrypt,
+     cast_setkey, cast_setkey
+@@ -1974,6 +1986,7 @@
+     return 0;
+ }
+ 
++#ifndef NO_IDEA
+ void my_idea_cbc_encrypt(unsigned char *iv, crypt_key *ek,
+ 			 unsigned char *t, unsigned int len)
+ {
+@@ -2002,6 +2015,7 @@
+     idea_set_decrypt_key(&k->idea, &k->idea);
+     return 0;
+ }
++#endif
+ 
+ void my_des_cbc_encrypt(unsigned char *iv, crypt_key *ek,
+ 			unsigned char *t, unsigned int len)
