@@ -14,6 +14,7 @@ DISTNAME=	AFsp-v6r5a
 MAINTAINER=	ginga-freebsd@ginganet.org
 
 USE_GMAKE=	yes
+USE_REINPLACE=	yes
 
 MAN1=	AFsp.1audio CompAudio.1audio CopyAudio.1audio FiltAudio.1audio \
 	GenNoise.1audio GenTone.1audio InfoAudio.1audio LPanal.1audio \
@@ -29,6 +30,6 @@ post-extract:
 
 post-patch:
 	cd ${WRKSRC} && find . -name Makefile | \
-		xargs -n10 ${PERL} -i -pe 's/^(COPTS)/#$$1/'
+		xargs -n10 ${REINPLACE_CMD} -e 's/^(COPTS)/#$$1/'
 
 .include <bsd.port.mk>

@@ -14,6 +14,7 @@ MASTER_SITE_SUBDIR=	hoek
 MAINTAINER=	hoek@FreeBSD.org
 
 USE_BZIP2=	yes
+USE_REINPLACE=	yes
 NO_WRKSUBDIR=	yes
 
 MAN1=		44bsd-more.1
@@ -25,7 +26,7 @@ post-extract:
 	-cd ${WRKSRC} && co -d${RELDATE} RCS/*,v
 
 post-patch:
-	${PERL} -pi.orig -e \
+	${REINPLACE_CMD} -e \
 	    's!/usr/share/misc/more.help!${PREFIX}/share/misc/44bsd-more.help!'\
 	    ${WRKSRC}/pathnames.h
 	${CP} ${FILESDIR}/queue.h ${WRKSRC}

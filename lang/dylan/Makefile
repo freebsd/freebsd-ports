@@ -52,6 +52,7 @@ MAN7=		dylan.7 gwydion.7
 
 .include <bsd.port.pre.mk>
 
+USE_REINPLACE=	yes
 .if ${HAVE_GNOME:Mgtk12}!=""
 USE_GNOME+=	gtk12
 PLIST_SUB+=	GTK_ONLY=""
@@ -64,7 +65,7 @@ post-extract:
 	${CHMOD} ugo+x $(WRKDIR)/d2c
 
 pre-patch:
-	@${PERL} -pi -e 's|gtk-config|${GTK_CONFIG}|' \
+	@${REINPLACE_CMD} -e 's|gtk-config|${GTK_CONFIG}|' \
 		${WRKSRC}/platform/gtk+/gtk+/gtk.lid
 
 patch-libtool:

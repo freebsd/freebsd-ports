@@ -16,9 +16,10 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	gmarco@giovannelli.it
 
 NO_BUILD=	yes
+USE_REINPLACE=	yes
 
 post-patch:
-	@(cd ${WRKSRC}; ${PERL} -i.bak -p -e 's,/usr/local,${PREFIX},' README \
+	@(cd ${WRKSRC}; ${REINPLACE_CMD} -e 's,/usr/local,${PREFIX},' README \
 		minimalist.conf-sample minimalist.pl)
 
 do-install:

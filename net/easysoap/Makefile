@@ -18,6 +18,7 @@ MAINTAINER=    gabriel_ambuehl@buz.ch
 LIB_DEPENDS=	expat.4:${PORTSDIR}/textproc/expat2
 
 USE_OPENSSL=	yes
+USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CXXFLAGS="${CPPFLAGS} -I${LOCALBASE}/include" \
 		LIBS="-L${LOCALBASE}/lib -lexpat"
@@ -30,6 +31,7 @@ BROKEN=		"Does not compile on 5.0"
 .endif
 
 pre-patch:
-	@${PERL} -pi -e 's,<malloc.h>,<stdlib.h>,' \
+	@${REINPLACE_CMD} -e 's,<malloc.h>,<stdlib.h>,' \
 		${WRKSRC}/src/abyss/src/data.c
+
 .include <bsd.port.post.mk>

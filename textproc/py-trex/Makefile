@@ -22,9 +22,10 @@ RUN_DEPENDS=	${PYTHON_SITELIBDIR}/pyexpat.so:${PORTSDIR}/textproc/py-expat
 USE_PYTHON=	yes
 
 NO_BUILD=	yes
+USE_REINPLACE=	yes
 
 post-patch:
-	@${PERL} -pi -e "s|%%LOCALBASE%%|${LOCALBASE}|g" ${WRKSRC}/pytrex.py
+	@${REINPLACE_CMD} -e "s|%%LOCALBASE%%|${LOCALBASE}|g" ${WRKSRC}/pytrex.py
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/pytrex.py ${PREFIX}/bin/pytrex

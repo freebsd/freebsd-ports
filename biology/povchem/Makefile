@@ -17,6 +17,7 @@ DISTFILES=	povchem.c \
 MAINTAINER=	frankch@waru.life.nthu.edu.tw
 
 NO_WRKSUBDIR=	yes
+USE_REINPLACE=	yes
 DIST_SUBDIR=	povchem
 
 DEFS=		-DDATADIR=\"${PREFIX}/share/povchem\" \
@@ -29,7 +30,7 @@ do-extract:
 .endfor
 
 post-patch:
-	@${PERL} -pi -e "s|%%LOCALBASE%%|${LOCALBASE}|g ; \
+	@${REINPLACE_CMD} -e "s|%%LOCALBASE%%|${LOCALBASE}|g ; \
 		s|%%X11BASE%%|${X11BASE}|g" ${WRKSRC}/povchem.cfg
 
 do-build:
