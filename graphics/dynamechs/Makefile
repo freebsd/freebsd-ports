@@ -17,6 +17,7 @@ DISTNAME=	${PORTNAME}_${PORTVERSION:S/.p/pre/}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A Multibody Dynamic Simulation Library
 
+USE_BZIP2=	yes
 USE_MESA=	yes
 USE_GMAKE=	yes
 MAKE_ENV=	OPENGLINCDIR="${X11BASE}/include" \
@@ -28,14 +29,15 @@ ALL_TARGET=	freebsd
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} >= 500113
-BROKEN=         "Does not compile (bad C++ code)"
+BROKEN=		"Does not compile (bad C++ code)"
 .endif
 
 do-configure:
-	@${CP} -f ${FILESDIR}/make.platform.freebsd ${WRKSRC}/make
+	@${CP} -f ${FILESDIR}/make.platform.freebsd ${WRKSRC}/make/
 
 do-install:
 .for dir in dm dmu dmGL
+	${RM} -f ${WRKSRC}/${dir}/*.orig
 	@${MKDIR} ${PREFIX}/include/${PORTNAME}/${dir}
 	${INSTALL_DATA} ${WRKSRC}/${dir}/*.h* ${PREFIX}/include/${PORTNAME}/${dir}
 	${INSTALL_DATA} ${WRKSRC}/lib/platform.freebsd/lib${dir}.so ${PREFIX}/lib

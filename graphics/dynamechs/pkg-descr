@@ -1,3 +1,21 @@
-DynaMechs (Dynamics of Mechanisms): A Multibody Dynamic Simulation Library
+		    DynaMechs (Dynamics of Mechanisms)
+		A Multibody Dynamics Simulation Library
 
-WWW: http://dynamechs.sourceforge.net/
+This is a set of cross-platform C++ libraries licensed under the Gnu's GPL
+(see LICENSE) which implements dynamic simulation functionality for multibody
+systems.  It currently supports all tree structured mechanism, a class of
+closed chain mechanisms as well.  It has provisions for generating both
+single and double precision version, and there is code for simplified
+hydrodynamic simulation.
+
+This work is an extension of my Ph.D. dissertation, "Computational Dynamics
+for Robotic Systems on Land and Underwater," The Ohio State University, 1994,
+and continued at the Naval Postgraduate School.
+
+The closed chain work is derived from Duane Marhefka's Ph.D. dissertation,
+"Fuzzy Control and Dynamic Simulation of a Quadruped Galloping Machine," The
+Ohio State University, 2000.
+
+(c) 1994 - 2001 by Scott McMillan
+
+	WWW: http://dynamechs.sourceforge.net/

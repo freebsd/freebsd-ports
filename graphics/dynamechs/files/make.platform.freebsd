@@ -5,7 +5,7 @@ DEPENDFLAGS := $(CXXFLAGS)
 LDFLAGS += -fPIC -L/$(OPENGLLIBDIR) -L${X11BASE}/lib -lX11 -lm -l$(MESA)GLU -l$(MESA)GL
 LDGLUT := -lglut
 
-# CXX := g++
+# CXX := c++
 LINKER := $(CXX)
 SHLINKER := $(CXX)
 
