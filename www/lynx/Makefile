@@ -1,10 +1,11 @@
 # New ports collection makefile for:    lynx
-# See http://www.wfbr.edu/dir/lynx/ for additional info
+# http://www.nyu.edu/pages/wsn/subir/lynx.html
+# http://www.wfbr.edu/dir/lynx/
 # Version required:     2.6
 # Date created:         15 Dec 1994
 # Whom:                 ache
 #
-# $Id: Makefile,v 1.22 1996/05/18 23:05:04 ache Exp $
+# $Id: Makefile,v 1.23 1996/09/03 09:38:51 ache Exp $
 #
 
 DISTNAME=       lynx2-6
@@ -13,6 +14,10 @@ CATEGORIES+=	www
 MASTER_SITES=   http://www.wfbr.edu/lynx/ \
 		ftp://ftp.more.net/pub/mirrors/lynx/
 EXTRACT_SUFX=   .zip
+PATCH_SITES=    http://www.nyu.edu/pages/wsn/subir/lynx/patches/
+PATCHFILES=     2-6-patch1.txt 2-6-patch3.txt 2-6-patch4.txt 2-6-patch5.txt \
+		2-6-patch6.txt
+PATCH_DIST_STRIP= -d ${WRKSRC}/.. -p0 -l
 
 MAINTAINER=	ache@FreeBSD.ORG
 
