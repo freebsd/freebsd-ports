@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Net-DNS-SEC
-PORTVERSION=	0.10
+PORTVERSION=	0.11
 CATEGORIES=	net perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN} \
 		http://www.ripe.net/ripencc/pub-services/np/DISI/SRC/
@@ -16,25 +16,28 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	erwin@FreeBSD.org
 COMMENT=	DNSSEC extensions to Net::DNS
 
-BUILD_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/Net/DNS.pm:${PORTSDIR}/net/p5-Net-DNS \
-		${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/${PERL_ARCH}/Crypt/OpenSSL/RSA.pm:${PORTSDIR}/security/p5-Crypt-OpenSSL-RSA \
-		${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/${PERL_ARCH}/Crypt/OpenSSL/DSA.pm:${PORTSDIR}/security/p5-Crypt-OpenSSL-DSA \
-		${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/Digest/BubbleBabble.pm:${PORTSDIR}/security/p5-Digest-BubbleBabble
+BUILD_DEPENDS=	${SITE_PERL}/Net/DNS.pm:${PORTSDIR}/net/p5-Net-DNS \
+		${SITE_PERL}/${PERL_ARCH}/Crypt/OpenSSL/RSA.pm:${PORTSDIR}/security/p5-Crypt-OpenSSL-RSA \
+		${SITE_PERL}/${PERL_ARCH}/Crypt/OpenSSL/DSA.pm:${PORTSDIR}/security/p5-Crypt-OpenSSL-DSA \
+		${SITE_PERL}/${PERL_ARCH}/Crypt/OpenSSL/Bignum.pm:${PORTSDIR}/security/p5-Crypt-OpenSSL-Bignum \
+		${SITE_PERL}/Digest/BubbleBabble.pm:${PORTSDIR}/security/p5-Digest-BubbleBabble
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
 
 MAN3=		Net::DNS::Keyset.3 Net::DNS::RR::DS.3 Net::DNS::RR::KEY.3 \
 		Net::DNS::RR::NXT.3 Net::DNS::RR::SIG.3 \
-		Net::DNS::RR::SIG::Private.3 Net::DNS::SEC.3
+		Net::DNS::RR::SIG::Private.3 Net::DNS::SEC.3 \
+		Net::DNS::SEC::Private.3 Net::DNS::RR::RRSIG.3 \
+		Net::DNS::RR::NSEC.3 Net::DNS::RR::DNSKEY.3
 
 .include <bsd.port.pre.mk>
 
 .if ${PERL_LEVEL} < 500800
-BUILD_DEPENDS+=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/Test/More.pm:${PORTSDIR}/devel/p5-Test-Simple \
-		${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/${PERL_ARCH}/MIME/Base64.pm:${PORTSDIR}/converters/p5-MIME-Base64
-RUN_DEPENDS+=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/Test/More.pm:${PORTSDIR}/devel/p5-Test-Simple \
-		${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/${PERL_ARCH}/MIME/Base64.pm:${PORTSDIR}/converters/p5-MIME-Base64
+BUILD_DEPENDS+=	${SITE_PERL}/Test/More.pm:${PORTSDIR}/devel/p5-Test-Simple \
+		${SITE_PERL}/${PERL_ARCH}/MIME/Base64.pm:${PORTSDIR}/converters/p5-MIME-Base64
+RUN_DEPENDS+=	${SITE_PERL}/Test/More.pm:${PORTSDIR}/devel/p5-Test-Simple \
+		${SITE_PERL}/${PERL_ARCH}/MIME/Base64.pm:${PORTSDIR}/converters/p5-MIME-Base64
 .endif
 
 .include <bsd.port.post.mk>
