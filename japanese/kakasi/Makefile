@@ -3,7 +3,7 @@
 # Date created:			26 Mar. 1996
 # Whom:				Masafumi NAKANE <max@FreeBSD.ORG>
 #
-# $Id: Makefile,v 1.7 1996/11/02 05:28:15 max Exp $
+# $Id: Makefile,v 1.8 1996/11/11 10:12:00 max Exp $
 #
 
 DISTNAME=	kakasi-2.2.5
@@ -21,14 +21,18 @@ MAINTAINER=	max@FreeBSD.ORG
 
 EXTRACT_ONLY=	kakasi-2.2.5.tar.gz
 WRKSRC=		${WRKDIR}/${DISTNAME}/src
-
+MANLANG=	ja_JP.EUC
+MAN1=		kakasi.1
 post-extract:
 	@gzip -cd ${DISTDIR}/kakasidict.940620.gz > ${WRKSRC}/kakasidict
 
 post-install:
+	${INSTALL_MAN} ${WRKSRC}/kakasi.1 ${PREFIX}/man/${MANLANG}/man1
+.if !defined(NOPORTDOCS)
 	${MKDIR} ${PREFIX}/share/doc/kakasi
-.for f in README README.jpn src/kakasi.1
+.for f in README README.jpn
 	${INSTALL_DATA} ${WRKSRC}/../$f ${PREFIX}/share/doc/kakasi
 .endfor
+.endif
 
 .include <bsd.port.mk>
