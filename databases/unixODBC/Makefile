@@ -6,13 +6,13 @@
 #
 
 PORTNAME=	unixODBC
-PORTVERSION=	2.2.0
+PORTVERSION=	2.2.1
 CATEGORIES=	databases
 MASTER_SITES=	http://www.unixodbc.org/
 
 MAINTAINER=	ports@FreeBSD.org
 
-GNU_CONFIGURE=	yes
+USE_LIBTOOL=	yes
 CONFIGURE_ARGS=	--enable-static --enable-shared
 INSTALLS_SHLIB=	yes
 
