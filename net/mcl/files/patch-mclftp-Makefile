@@ -1,0 +1,17 @@
+--- mclftp/Makefile.orig	Wed Dec 17 00:13:34 2003
++++ mclftp/Makefile	Wed Dec 17 00:15:56 2003
+@@ -36,6 +36,14 @@
+ 	LIBRARIES = -lc -lm -lsocket -lnsl /usr/ucblib/libucb.a -lposix4 -lpthread
+ endif
+ 
++ifeq (${OS},freebsd)
++	# FreeBSD version
++	# MCL library requires -pthread
++	#
++	BINDIR = ../bin/freebsd
++	LIBRARIES = -lm -pthread
++endif
++
+ 
+ 
+ ###### Other variables ######

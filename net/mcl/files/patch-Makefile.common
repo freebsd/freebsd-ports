@@ -1,5 +1,5 @@
---- Makefile.common.orig	Tue Jul 22 19:37:39 2003
-+++ Makefile.common	Tue Oct 14 15:04:38 2003
+--- Makefile.common.orig	Sun Dec  7 18:36:25 2003
++++ Makefile.common	Sun Dec  7 18:38:10 2003
 @@ -24,11 +24,15 @@
  ifeq (${SYSTEM},SunOS)
  	OS = solaris
@@ -22,7 +22,7 @@
  	LD = /opt/SUNWspro/bin/CC 
 +endif
 +ifeq (${OS},freebsd)
-+	OSFLAGS = -DFREEBSD -I/usr/include/g++
++	OSFLAGS = -DFREEBSD -I/usr/include/g++ -I/usr/include/c++/3.3
 +	# Which compiler?
 +	# NB: use -Wall for compilation warnings with gcc
 +	#
