@@ -1,143 +1,572 @@
-lib/%%PYTHON_VERSION%%/site-packages/Bio/__init__.py
-lib/%%PYTHON_VERSION%%/site-packages/Bio/ParserSupport.py
-lib/%%PYTHON_VERSION%%/site-packages/Bio/Seq.py
-lib/%%PYTHON_VERSION%%/site-packages/Bio/Index.py
-lib/%%PYTHON_VERSION%%/site-packages/Bio/PropertyManager.py
-lib/%%PYTHON_VERSION%%/site-packages/Bio/File.py
-lib/%%PYTHON_VERSION%%/site-packages/Bio/Sequence.py
-lib/%%PYTHON_VERSION%%/site-packages/Bio/utils.py
-lib/%%PYTHON_VERSION%%/site-packages/Bio/SeqRecord.py
-lib/%%PYTHON_VERSION%%/site-packages/Bio/SwissProt/__init__.py
-lib/%%PYTHON_VERSION%%/site-packages/Bio/SwissProt/KeyWList.py
-lib/%%PYTHON_VERSION%%/site-packages/Bio/SwissProt/SProt.py
-lib/%%PYTHON_VERSION%%/site-packages/Bio/Blast/__init__.py
-lib/%%PYTHON_VERSION%%/site-packages/Bio/Blast/NCBIWWW.py
-lib/%%PYTHON_VERSION%%/site-packages/Bio/Blast/Record.py
-lib/%%PYTHON_VERSION%%/site-packages/Bio/Blast/NCBIStandalone.py
-lib/%%PYTHON_VERSION%%/site-packages/Bio/Enzyme/__init__.py
-lib/%%PYTHON_VERSION%%/site-packages/Bio/Enzyme/Enzyme.py
-lib/%%PYTHON_VERSION%%/site-packages/Bio/Fasta/__init__.py
-lib/%%PYTHON_VERSION%%/site-packages/Bio/Fasta/Fasta.py
-lib/%%PYTHON_VERSION%%/site-packages/Bio/PDB/__init__.py
-lib/%%PYTHON_VERSION%%/site-packages/Bio/Prosite/__init__.py
-lib/%%PYTHON_VERSION%%/site-packages/Bio/Prosite/Prosite.py
-lib/%%PYTHON_VERSION%%/site-packages/Bio/Prosite/Pattern.py
-lib/%%PYTHON_VERSION%%/site-packages/Bio/Prosite/Prodoc.py
-lib/%%PYTHON_VERSION%%/site-packages/Bio/Medline/Medline.py
-lib/%%PYTHON_VERSION%%/site-packages/Bio/Medline/PubMed.py
-lib/%%PYTHON_VERSION%%/site-packages/Bio/Medline/__init__.py
-lib/%%PYTHON_VERSION%%/site-packages/Bio/Data/IUPACData.py
-lib/%%PYTHON_VERSION%%/site-packages/Bio/Data/__init__.py
-lib/%%PYTHON_VERSION%%/site-packages/Bio/Data/CodonTable.py
-lib/%%PYTHON_VERSION%%/site-packages/Bio/Entrez/__init__.py
-lib/%%PYTHON_VERSION%%/site-packages/Bio/Tools/mathfns.py
-lib/%%PYTHON_VERSION%%/site-packages/Bio/Tools/__init__.py
-lib/%%PYTHON_VERSION%%/site-packages/Bio/Tools/Transcribe.py
-lib/%%PYTHON_VERSION%%/site-packages/Bio/Tools/listfns.py
-lib/%%PYTHON_VERSION%%/site-packages/Bio/Tools/stringfns.py
-lib/%%PYTHON_VERSION%%/site-packages/Bio/Tools/Translate.py
-lib/%%PYTHON_VERSION%%/site-packages/Bio/Tools/Classification/__init__.py
-lib/%%PYTHON_VERSION%%/site-packages/Bio/Tools/Classification/NaiveBayes.py
-lib/%%PYTHON_VERSION%%/site-packages/Bio/Tools/Classification/SVM.py
-lib/%%PYTHON_VERSION%%/site-packages/Bio/Tools/Classification/kNN.py
-lib/%%PYTHON_VERSION%%/site-packages/Bio/WWW/__init__.py
-lib/%%PYTHON_VERSION%%/site-packages/Bio/WWW/NCBI.py
-lib/%%PYTHON_VERSION%%/site-packages/Bio/WWW/ExPASy.py
-lib/%%PYTHON_VERSION%%/site-packages/Bio/WWW/SCOP.py
-lib/%%PYTHON_VERSION%%/site-packages/Bio/Alphabet/__init__.py
+%%PLIST_CORBA%%lib/%%PYTHON_VERSION%%/site-packages/BioCorba/Adapters/Generic.py
+%%PLIST_CORBA%%lib/%%PYTHON_VERSION%%/site-packages/BioCorba/Adapters/Generic.pyc
+%%PLIST_CORBA%%lib/%%PYTHON_VERSION%%/site-packages/BioCorba/Adapters/Generic.pyo
+%%PLIST_CORBA%%lib/%%PYTHON_VERSION%%/site-packages/BioCorba/Adapters/__init__.py
+%%PLIST_CORBA%%lib/%%PYTHON_VERSION%%/site-packages/BioCorba/Adapters/__init__.pyc
+%%PLIST_CORBA%%lib/%%PYTHON_VERSION%%/site-packages/BioCorba/Adapters/__init__.pyo
+%%PLIST_CORBA%%lib/%%PYTHON_VERSION%%/site-packages/BioCorba/Adapters/fnorb_EnsemblPOA.py
+%%PLIST_CORBA%%lib/%%PYTHON_VERSION%%/site-packages/BioCorba/Adapters/fnorb_EnsemblPOA.pyc
+%%PLIST_CORBA%%lib/%%PYTHON_VERSION%%/site-packages/BioCorba/Adapters/fnorb_EnsemblPOA.pyo
+%%PLIST_CORBA%%lib/%%PYTHON_VERSION%%/site-packages/BioCorba/Adapters/fnorb_GnomePOA.py
+%%PLIST_CORBA%%lib/%%PYTHON_VERSION%%/site-packages/BioCorba/Adapters/fnorb_GnomePOA.pyc
+%%PLIST_CORBA%%lib/%%PYTHON_VERSION%%/site-packages/BioCorba/Adapters/fnorb_GnomePOA.pyo
+%%PLIST_CORBA%%lib/%%PYTHON_VERSION%%/site-packages/BioCorba/Adapters/fnorb_SeqcorePOA.py
+%%PLIST_CORBA%%lib/%%PYTHON_VERSION%%/site-packages/BioCorba/Adapters/fnorb_SeqcorePOA.pyc
+%%PLIST_CORBA%%lib/%%PYTHON_VERSION%%/site-packages/BioCorba/Adapters/fnorb_SeqcorePOA.pyo
+%%PLIST_CORBA%%lib/%%PYTHON_VERSION%%/site-packages/BioCorba/Adapters/orbit_Ensembl.py
+%%PLIST_CORBA%%lib/%%PYTHON_VERSION%%/site-packages/BioCorba/Adapters/orbit_Ensembl.pyc
+%%PLIST_CORBA%%lib/%%PYTHON_VERSION%%/site-packages/BioCorba/Adapters/orbit_Ensembl.pyo
+%%PLIST_CORBA%%lib/%%PYTHON_VERSION%%/site-packages/BioCorba/Adapters/orbit_EnsemblPOA.py
+%%PLIST_CORBA%%lib/%%PYTHON_VERSION%%/site-packages/BioCorba/Adapters/orbit_EnsemblPOA.pyc
+%%PLIST_CORBA%%lib/%%PYTHON_VERSION%%/site-packages/BioCorba/Adapters/orbit_EnsemblPOA.pyo
+%%PLIST_CORBA%%lib/%%PYTHON_VERSION%%/site-packages/BioCorba/Adapters/orbit_Gnome.py
+%%PLIST_CORBA%%lib/%%PYTHON_VERSION%%/site-packages/BioCorba/Adapters/orbit_Gnome.pyc
+%%PLIST_CORBA%%lib/%%PYTHON_VERSION%%/site-packages/BioCorba/Adapters/orbit_Gnome.pyo
+%%PLIST_CORBA%%lib/%%PYTHON_VERSION%%/site-packages/BioCorba/Adapters/orbit_GnomePOA.py
+%%PLIST_CORBA%%lib/%%PYTHON_VERSION%%/site-packages/BioCorba/Adapters/orbit_GnomePOA.pyc
+%%PLIST_CORBA%%lib/%%PYTHON_VERSION%%/site-packages/BioCorba/Adapters/orbit_GnomePOA.pyo
+%%PLIST_CORBA%%lib/%%PYTHON_VERSION%%/site-packages/BioCorba/Adapters/orbit_Seqcore.py
+%%PLIST_CORBA%%lib/%%PYTHON_VERSION%%/site-packages/BioCorba/Adapters/orbit_Seqcore.pyc
+%%PLIST_CORBA%%lib/%%PYTHON_VERSION%%/site-packages/BioCorba/Adapters/orbit_Seqcore.pyo
+%%PLIST_CORBA%%lib/%%PYTHON_VERSION%%/site-packages/BioCorba/Adapters/orbit_SeqcorePOA.py
+%%PLIST_CORBA%%lib/%%PYTHON_VERSION%%/site-packages/BioCorba/Adapters/orbit_SeqcorePOA.pyc
+%%PLIST_CORBA%%lib/%%PYTHON_VERSION%%/site-packages/BioCorba/Adapters/orbit_SeqcorePOA.pyo
+%%PLIST_CORBA%%lib/%%PYTHON_VERSION%%/site-packages/BioCorba/Bio/Fasta/__init__.py
+%%PLIST_CORBA%%lib/%%PYTHON_VERSION%%/site-packages/BioCorba/Bio/Fasta/__init__.pyc
+%%PLIST_CORBA%%lib/%%PYTHON_VERSION%%/site-packages/BioCorba/Bio/Fasta/__init__.pyo
+%%PLIST_CORBA%%lib/%%PYTHON_VERSION%%/site-packages/BioCorba/Bio/GenBank/__init__.py
+%%PLIST_CORBA%%lib/%%PYTHON_VERSION%%/site-packages/BioCorba/Bio/GenBank/__init__.pyc
+%%PLIST_CORBA%%lib/%%PYTHON_VERSION%%/site-packages/BioCorba/Bio/GenBank/__init__.pyo
+%%PLIST_CORBA%%lib/%%PYTHON_VERSION%%/site-packages/BioCorba/Bio/Seq.py
+%%PLIST_CORBA%%lib/%%PYTHON_VERSION%%/site-packages/BioCorba/Bio/Seq.pyc
+%%PLIST_CORBA%%lib/%%PYTHON_VERSION%%/site-packages/BioCorba/Bio/Seq.pyo
+%%PLIST_CORBA%%lib/%%PYTHON_VERSION%%/site-packages/BioCorba/Bio/SeqFeature.py
+%%PLIST_CORBA%%lib/%%PYTHON_VERSION%%/site-packages/BioCorba/Bio/SeqFeature.pyc
+%%PLIST_CORBA%%lib/%%PYTHON_VERSION%%/site-packages/BioCorba/Bio/SeqFeature.pyo
+%%PLIST_CORBA%%lib/%%PYTHON_VERSION%%/site-packages/BioCorba/Bio/SeqRecord.py
+%%PLIST_CORBA%%lib/%%PYTHON_VERSION%%/site-packages/BioCorba/Bio/SeqRecord.pyc
+%%PLIST_CORBA%%lib/%%PYTHON_VERSION%%/site-packages/BioCorba/Bio/SeqRecord.pyo
+%%PLIST_CORBA%%lib/%%PYTHON_VERSION%%/site-packages/BioCorba/Bio/__init__.py
+%%PLIST_CORBA%%lib/%%PYTHON_VERSION%%/site-packages/BioCorba/Bio/__init__.pyc
+%%PLIST_CORBA%%lib/%%PYTHON_VERSION%%/site-packages/BioCorba/Bio/__init__.pyo
+%%PLIST_CORBA%%lib/%%PYTHON_VERSION%%/site-packages/BioCorba/Client/BiocorbaConnect.py
+%%PLIST_CORBA%%lib/%%PYTHON_VERSION%%/site-packages/BioCorba/Client/BiocorbaConnect.pyc
+%%PLIST_CORBA%%lib/%%PYTHON_VERSION%%/site-packages/BioCorba/Client/BiocorbaConnect.pyo
+%%PLIST_CORBA%%lib/%%PYTHON_VERSION%%/site-packages/BioCorba/Client/Ensembl/Exon.py
+%%PLIST_CORBA%%lib/%%PYTHON_VERSION%%/site-packages/BioCorba/Client/Ensembl/Exon.pyc
+%%PLIST_CORBA%%lib/%%PYTHON_VERSION%%/site-packages/BioCorba/Client/Ensembl/Exon.pyo
+%%PLIST_CORBA%%lib/%%PYTHON_VERSION%%/site-packages/BioCorba/Client/Ensembl/Gene.py
+%%PLIST_CORBA%%lib/%%PYTHON_VERSION%%/site-packages/BioCorba/Client/Ensembl/Gene.pyc
+%%PLIST_CORBA%%lib/%%PYTHON_VERSION%%/site-packages/BioCorba/Client/Ensembl/Gene.pyo
+%%PLIST_CORBA%%lib/%%PYTHON_VERSION%%/site-packages/BioCorba/Client/Ensembl/Transcript.py
+%%PLIST_CORBA%%lib/%%PYTHON_VERSION%%/site-packages/BioCorba/Client/Ensembl/Transcript.pyc
+%%PLIST_CORBA%%lib/%%PYTHON_VERSION%%/site-packages/BioCorba/Client/Ensembl/Transcript.pyo
+%%PLIST_CORBA%%lib/%%PYTHON_VERSION%%/site-packages/BioCorba/Client/Ensembl/Translation.py
+%%PLIST_CORBA%%lib/%%PYTHON_VERSION%%/site-packages/BioCorba/Client/Ensembl/Translation.pyc
+%%PLIST_CORBA%%lib/%%PYTHON_VERSION%%/site-packages/BioCorba/Client/Ensembl/Translation.pyo
+%%PLIST_CORBA%%lib/%%PYTHON_VERSION%%/site-packages/BioCorba/Client/Ensembl/VirtualContig.py
+%%PLIST_CORBA%%lib/%%PYTHON_VERSION%%/site-packages/BioCorba/Client/Ensembl/VirtualContig.pyc
+%%PLIST_CORBA%%lib/%%PYTHON_VERSION%%/site-packages/BioCorba/Client/Ensembl/VirtualContig.pyo
+%%PLIST_CORBA%%lib/%%PYTHON_VERSION%%/site-packages/BioCorba/Client/Ensembl/__init__.py
+%%PLIST_CORBA%%lib/%%PYTHON_VERSION%%/site-packages/BioCorba/Client/Ensembl/__init__.pyc
+%%PLIST_CORBA%%lib/%%PYTHON_VERSION%%/site-packages/BioCorba/Client/Ensembl/__init__.pyo
+%%PLIST_CORBA%%lib/%%PYTHON_VERSION%%/site-packages/BioCorba/Client/GnomeMemory/CorbaUnknown.py
+%%PLIST_CORBA%%lib/%%PYTHON_VERSION%%/site-packages/BioCorba/Client/GnomeMemory/CorbaUnknown.pyc
+%%PLIST_CORBA%%lib/%%PYTHON_VERSION%%/site-packages/BioCorba/Client/GnomeMemory/CorbaUnknown.pyo
+%%PLIST_CORBA%%lib/%%PYTHON_VERSION%%/site-packages/BioCorba/Client/GnomeMemory/__init__.py
+%%PLIST_CORBA%%lib/%%PYTHON_VERSION%%/site-packages/BioCorba/Client/GnomeMemory/__init__.pyc
+%%PLIST_CORBA%%lib/%%PYTHON_VERSION%%/site-packages/BioCorba/Client/GnomeMemory/__init__.pyo
+%%PLIST_CORBA%%lib/%%PYTHON_VERSION%%/site-packages/BioCorba/Client/Seqcore/CorbaAnonymousSeq.py
+%%PLIST_CORBA%%lib/%%PYTHON_VERSION%%/site-packages/BioCorba/Client/Seqcore/CorbaAnonymousSeq.pyc
+%%PLIST_CORBA%%lib/%%PYTHON_VERSION%%/site-packages/BioCorba/Client/Seqcore/CorbaAnonymousSeq.pyo
+%%PLIST_CORBA%%lib/%%PYTHON_VERSION%%/site-packages/BioCorba/Client/Seqcore/CorbaBioEnv.py
+%%PLIST_CORBA%%lib/%%PYTHON_VERSION%%/site-packages/BioCorba/Client/Seqcore/CorbaBioEnv.pyc
+%%PLIST_CORBA%%lib/%%PYTHON_VERSION%%/site-packages/BioCorba/Client/Seqcore/CorbaBioEnv.pyo
+%%PLIST_CORBA%%lib/%%PYTHON_VERSION%%/site-packages/BioCorba/Client/Seqcore/CorbaExceptions.py
+%%PLIST_CORBA%%lib/%%PYTHON_VERSION%%/site-packages/BioCorba/Client/Seqcore/CorbaExceptions.pyc
+%%PLIST_CORBA%%lib/%%PYTHON_VERSION%%/site-packages/BioCorba/Client/Seqcore/CorbaExceptions.pyo
+%%PLIST_CORBA%%lib/%%PYTHON_VERSION%%/site-packages/BioCorba/Client/Seqcore/CorbaPrimarySeq.py
+%%PLIST_CORBA%%lib/%%PYTHON_VERSION%%/site-packages/BioCorba/Client/Seqcore/CorbaPrimarySeq.pyc
+%%PLIST_CORBA%%lib/%%PYTHON_VERSION%%/site-packages/BioCorba/Client/Seqcore/CorbaPrimarySeq.pyo
+%%PLIST_CORBA%%lib/%%PYTHON_VERSION%%/site-packages/BioCorba/Client/Seqcore/CorbaSeq.py
+%%PLIST_CORBA%%lib/%%PYTHON_VERSION%%/site-packages/BioCorba/Client/Seqcore/CorbaSeq.pyc
+%%PLIST_CORBA%%lib/%%PYTHON_VERSION%%/site-packages/BioCorba/Client/Seqcore/CorbaSeq.pyo
+%%PLIST_CORBA%%lib/%%PYTHON_VERSION%%/site-packages/BioCorba/Client/Seqcore/CorbaSeqFeature.py
+%%PLIST_CORBA%%lib/%%PYTHON_VERSION%%/site-packages/BioCorba/Client/Seqcore/CorbaSeqFeature.pyc
+%%PLIST_CORBA%%lib/%%PYTHON_VERSION%%/site-packages/BioCorba/Client/Seqcore/CorbaSeqFeature.pyo
+%%PLIST_CORBA%%lib/%%PYTHON_VERSION%%/site-packages/BioCorba/Client/Seqcore/CorbaUpdatableSeqDB.py
+%%PLIST_CORBA%%lib/%%PYTHON_VERSION%%/site-packages/BioCorba/Client/Seqcore/CorbaUpdatableSeqDB.pyc
+%%PLIST_CORBA%%lib/%%PYTHON_VERSION%%/site-packages/BioCorba/Client/Seqcore/CorbaUpdatableSeqDB.pyo
+%%PLIST_CORBA%%lib/%%PYTHON_VERSION%%/site-packages/BioCorba/Client/Seqcore/__init__.py
+%%PLIST_CORBA%%lib/%%PYTHON_VERSION%%/site-packages/BioCorba/Client/Seqcore/__init__.pyc
+%%PLIST_CORBA%%lib/%%PYTHON_VERSION%%/site-packages/BioCorba/Client/Seqcore/__init__.pyo
+%%PLIST_CORBA%%lib/%%PYTHON_VERSION%%/site-packages/BioCorba/Client/__init__.py
+%%PLIST_CORBA%%lib/%%PYTHON_VERSION%%/site-packages/BioCorba/Client/__init__.pyc
+%%PLIST_CORBA%%lib/%%PYTHON_VERSION%%/site-packages/BioCorba/Client/__init__.pyo
+%%PLIST_CORBA%%lib/%%PYTHON_VERSION%%/site-packages/BioCorba/GNOME/__init__.py
+%%PLIST_CORBA%%lib/%%PYTHON_VERSION%%/site-packages/BioCorba/GNOME/__init__.pyc
+%%PLIST_CORBA%%lib/%%PYTHON_VERSION%%/site-packages/BioCorba/GNOME/__init__.pyo
+%%PLIST_CORBA%%lib/%%PYTHON_VERSION%%/site-packages/BioCorba/GNOME__POA/__init__.py
+%%PLIST_CORBA%%lib/%%PYTHON_VERSION%%/site-packages/BioCorba/GNOME__POA/__init__.pyc
+%%PLIST_CORBA%%lib/%%PYTHON_VERSION%%/site-packages/BioCorba/GNOME__POA/__init__.pyo
+%%PLIST_CORBA%%lib/%%PYTHON_VERSION%%/site-packages/BioCorba/Server/GnomeMemory/CorbaUnknown.py
+%%PLIST_CORBA%%lib/%%PYTHON_VERSION%%/site-packages/BioCorba/Server/GnomeMemory/CorbaUnknown.pyc
+%%PLIST_CORBA%%lib/%%PYTHON_VERSION%%/site-packages/BioCorba/Server/GnomeMemory/CorbaUnknown.pyo
+%%PLIST_CORBA%%lib/%%PYTHON_VERSION%%/site-packages/BioCorba/Server/GnomeMemory/__init__.py
+%%PLIST_CORBA%%lib/%%PYTHON_VERSION%%/site-packages/BioCorba/Server/GnomeMemory/__init__.pyc
+%%PLIST_CORBA%%lib/%%PYTHON_VERSION%%/site-packages/BioCorba/Server/GnomeMemory/__init__.pyo
+%%PLIST_CORBA%%lib/%%PYTHON_VERSION%%/site-packages/BioCorba/Server/Seqcore/CorbaAnonymousSeq.py
+%%PLIST_CORBA%%lib/%%PYTHON_VERSION%%/site-packages/BioCorba/Server/Seqcore/CorbaAnonymousSeq.pyc
+%%PLIST_CORBA%%lib/%%PYTHON_VERSION%%/site-packages/BioCorba/Server/Seqcore/CorbaAnonymousSeq.pyo
+%%PLIST_CORBA%%lib/%%PYTHON_VERSION%%/site-packages/BioCorba/Server/Seqcore/CorbaBioEnv.py
+%%PLIST_CORBA%%lib/%%PYTHON_VERSION%%/site-packages/BioCorba/Server/Seqcore/CorbaBioEnv.pyc
+%%PLIST_CORBA%%lib/%%PYTHON_VERSION%%/site-packages/BioCorba/Server/Seqcore/CorbaBioEnv.pyo
+%%PLIST_CORBA%%lib/%%PYTHON_VERSION%%/site-packages/BioCorba/Server/Seqcore/CorbaPrimarySeq.py
+%%PLIST_CORBA%%lib/%%PYTHON_VERSION%%/site-packages/BioCorba/Server/Seqcore/CorbaPrimarySeq.pyc
+%%PLIST_CORBA%%lib/%%PYTHON_VERSION%%/site-packages/BioCorba/Server/Seqcore/CorbaPrimarySeq.pyo
+%%PLIST_CORBA%%lib/%%PYTHON_VERSION%%/site-packages/BioCorba/Server/Seqcore/CorbaSeq.py
+%%PLIST_CORBA%%lib/%%PYTHON_VERSION%%/site-packages/BioCorba/Server/Seqcore/CorbaSeq.pyc
+%%PLIST_CORBA%%lib/%%PYTHON_VERSION%%/site-packages/BioCorba/Server/Seqcore/CorbaSeq.pyo
+%%PLIST_CORBA%%lib/%%PYTHON_VERSION%%/site-packages/BioCorba/Server/Seqcore/CorbaSeqFeature.py
+%%PLIST_CORBA%%lib/%%PYTHON_VERSION%%/site-packages/BioCorba/Server/Seqcore/CorbaSeqFeature.pyc
+%%PLIST_CORBA%%lib/%%PYTHON_VERSION%%/site-packages/BioCorba/Server/Seqcore/CorbaSeqFeature.pyo
+%%PLIST_CORBA%%lib/%%PYTHON_VERSION%%/site-packages/BioCorba/Server/Seqcore/Database.py
+%%PLIST_CORBA%%lib/%%PYTHON_VERSION%%/site-packages/BioCorba/Server/Seqcore/Database.pyc
+%%PLIST_CORBA%%lib/%%PYTHON_VERSION%%/site-packages/BioCorba/Server/Seqcore/Database.pyo
+%%PLIST_CORBA%%lib/%%PYTHON_VERSION%%/site-packages/BioCorba/Server/Seqcore/Iterator.py
+%%PLIST_CORBA%%lib/%%PYTHON_VERSION%%/site-packages/BioCorba/Server/Seqcore/Iterator.pyc
+%%PLIST_CORBA%%lib/%%PYTHON_VERSION%%/site-packages/BioCorba/Server/Seqcore/Iterator.pyo
+%%PLIST_CORBA%%lib/%%PYTHON_VERSION%%/site-packages/BioCorba/Server/Seqcore/Vector.py
+%%PLIST_CORBA%%lib/%%PYTHON_VERSION%%/site-packages/BioCorba/Server/Seqcore/Vector.pyc
+%%PLIST_CORBA%%lib/%%PYTHON_VERSION%%/site-packages/BioCorba/Server/Seqcore/Vector.pyo
+%%PLIST_CORBA%%lib/%%PYTHON_VERSION%%/site-packages/BioCorba/Server/Seqcore/__init__.py
+%%PLIST_CORBA%%lib/%%PYTHON_VERSION%%/site-packages/BioCorba/Server/Seqcore/__init__.pyc
+%%PLIST_CORBA%%lib/%%PYTHON_VERSION%%/site-packages/BioCorba/Server/Seqcore/__init__.pyo
+%%PLIST_CORBA%%lib/%%PYTHON_VERSION%%/site-packages/BioCorba/Server/ServerFactory.py
+%%PLIST_CORBA%%lib/%%PYTHON_VERSION%%/site-packages/BioCorba/Server/ServerFactory.pyc
+%%PLIST_CORBA%%lib/%%PYTHON_VERSION%%/site-packages/BioCorba/Server/ServerFactory.pyo
+%%PLIST_CORBA%%lib/%%PYTHON_VERSION%%/site-packages/BioCorba/Server/__init__.py
+%%PLIST_CORBA%%lib/%%PYTHON_VERSION%%/site-packages/BioCorba/Server/__init__.pyc
+%%PLIST_CORBA%%lib/%%PYTHON_VERSION%%/site-packages/BioCorba/Server/__init__.pyo
+%%PLIST_CORBA%%lib/%%PYTHON_VERSION%%/site-packages/BioCorba/__init__.py
+%%PLIST_CORBA%%lib/%%PYTHON_VERSION%%/site-packages/BioCorba/__init__.pyc
+%%PLIST_CORBA%%lib/%%PYTHON_VERSION%%/site-packages/BioCorba/__init__.pyo
+%%PLIST_CORBA%%lib/%%PYTHON_VERSION%%/site-packages/BioCorba/biocorba.idl
+%%PLIST_CORBA%%lib/%%PYTHON_VERSION%%/site-packages/BioCorba/biocorbaconfig.py
+%%PLIST_CORBA%%lib/%%PYTHON_VERSION%%/site-packages/BioCorba/biocorbaconfig.pyc
+%%PLIST_CORBA%%lib/%%PYTHON_VERSION%%/site-packages/BioCorba/biocorbaconfig.pyo
+%%PLIST_CORBA%%lib/%%PYTHON_VERSION%%/site-packages/BioCorba/ensembl.idl
+%%PLIST_CORBA%%lib/%%PYTHON_VERSION%%/site-packages/BioCorba/org/__init__.py
+%%PLIST_CORBA%%lib/%%PYTHON_VERSION%%/site-packages/BioCorba/org/__init__.pyc
+%%PLIST_CORBA%%lib/%%PYTHON_VERSION%%/site-packages/BioCorba/org/__init__.pyo
+%%PLIST_CORBA%%lib/%%PYTHON_VERSION%%/site-packages/BioCorba/org/biocorba/__init__.py
+%%PLIST_CORBA%%lib/%%PYTHON_VERSION%%/site-packages/BioCorba/org/biocorba/__init__.pyc
+%%PLIST_CORBA%%lib/%%PYTHON_VERSION%%/site-packages/BioCorba/org/biocorba/__init__.pyo
+%%PLIST_CORBA%%lib/%%PYTHON_VERSION%%/site-packages/BioCorba/org/biocorba/seqcore/__init__.py
+%%PLIST_CORBA%%lib/%%PYTHON_VERSION%%/site-packages/BioCorba/org/biocorba/seqcore/__init__.pyc
+%%PLIST_CORBA%%lib/%%PYTHON_VERSION%%/site-packages/BioCorba/org/biocorba/seqcore/__init__.pyo
+%%PLIST_CORBA%%lib/%%PYTHON_VERSION%%/site-packages/BioCorba/org/ensembl/__init__.py
+%%PLIST_CORBA%%lib/%%PYTHON_VERSION%%/site-packages/BioCorba/org/ensembl/__init__.pyc
+%%PLIST_CORBA%%lib/%%PYTHON_VERSION%%/site-packages/BioCorba/org/ensembl/__init__.pyo
+%%PLIST_CORBA%%lib/%%PYTHON_VERSION%%/site-packages/BioCorba/org__POA/__init__.py
+%%PLIST_CORBA%%lib/%%PYTHON_VERSION%%/site-packages/BioCorba/org__POA/__init__.pyc
+%%PLIST_CORBA%%lib/%%PYTHON_VERSION%%/site-packages/BioCorba/org__POA/__init__.pyo
+%%PLIST_CORBA%%lib/%%PYTHON_VERSION%%/site-packages/BioCorba/org__POA/biocorba/__init__.py
+%%PLIST_CORBA%%lib/%%PYTHON_VERSION%%/site-packages/BioCorba/org__POA/biocorba/__init__.pyc
+%%PLIST_CORBA%%lib/%%PYTHON_VERSION%%/site-packages/BioCorba/org__POA/biocorba/__init__.pyo
+%%PLIST_CORBA%%lib/%%PYTHON_VERSION%%/site-packages/BioCorba/org__POA/biocorba/seqcore/__init__.py
+%%PLIST_CORBA%%lib/%%PYTHON_VERSION%%/site-packages/BioCorba/org__POA/biocorba/seqcore/__init__.pyc
+%%PLIST_CORBA%%lib/%%PYTHON_VERSION%%/site-packages/BioCorba/org__POA/biocorba/seqcore/__init__.pyo
+%%PLIST_CORBA%%lib/%%PYTHON_VERSION%%/site-packages/BioCorba/org__POA/ensembl/__init__.py
+%%PLIST_CORBA%%lib/%%PYTHON_VERSION%%/site-packages/BioCorba/org__POA/ensembl/__init__.pyc
+%%PLIST_CORBA%%lib/%%PYTHON_VERSION%%/site-packages/BioCorba/org__POA/ensembl/__init__.pyo
+%%PLIST_FNORB%%lib/%%PYTHON_VERSION%%/site-packages/BioCorba/GNOME_skel/__init__.py
+%%PLIST_FNORB%%lib/%%PYTHON_VERSION%%/site-packages/BioCorba/GNOME_skel/__init__.pyc
+%%PLIST_FNORB%%lib/%%PYTHON_VERSION%%/site-packages/BioCorba/GNOME_skel/__init__.pyo
+%%PLIST_FNORB%%lib/%%PYTHON_VERSION%%/site-packages/BioCorba/org_skel/__init__.py
+%%PLIST_FNORB%%lib/%%PYTHON_VERSION%%/site-packages/BioCorba/org_skel/__init__.pyc
+%%PLIST_FNORB%%lib/%%PYTHON_VERSION%%/site-packages/BioCorba/org_skel/__init__.pyo
+%%PLIST_FNORB%%lib/%%PYTHON_VERSION%%/site-packages/BioCorba/org_skel/biocorba_skel/__init__.py
+%%PLIST_FNORB%%lib/%%PYTHON_VERSION%%/site-packages/BioCorba/org_skel/biocorba_skel/__init__.pyc
+%%PLIST_FNORB%%lib/%%PYTHON_VERSION%%/site-packages/BioCorba/org_skel/biocorba_skel/__init__.pyo
+%%PLIST_FNORB%%lib/%%PYTHON_VERSION%%/site-packages/BioCorba/org_skel/biocorba_skel/seqcore_skel/__init__.py
+%%PLIST_FNORB%%lib/%%PYTHON_VERSION%%/site-packages/BioCorba/org_skel/biocorba_skel/seqcore_skel/__init__.pyc
+%%PLIST_FNORB%%lib/%%PYTHON_VERSION%%/site-packages/BioCorba/org_skel/biocorba_skel/seqcore_skel/__init__.pyo
+%%PLIST_FNORB%%lib/%%PYTHON_VERSION%%/site-packages/BioCorba/org_skel/ensembl_skel/__init__.py
+%%PLIST_FNORB%%lib/%%PYTHON_VERSION%%/site-packages/BioCorba/org_skel/ensembl_skel/__init__.pyc
+%%PLIST_FNORB%%lib/%%PYTHON_VERSION%%/site-packages/BioCorba/org_skel/ensembl_skel/__init__.pyo
+%%PLIST_OMNIORB%%lib/%%PYTHON_VERSION%%/site-packages/BioCorba/biocorba_idl.py
+%%PLIST_OMNIORB%%lib/%%PYTHON_VERSION%%/site-packages/BioCorba/biocorba_idl.pyc
+%%PLIST_OMNIORB%%lib/%%PYTHON_VERSION%%/site-packages/BioCorba/biocorba_idl.pyo
+%%PLIST_OMNIORB%%lib/%%PYTHON_VERSION%%/site-packages/BioCorba/ensembl_idl.py
+%%PLIST_OMNIORB%%lib/%%PYTHON_VERSION%%/site-packages/BioCorba/ensembl_idl.pyc
+%%PLIST_OMNIORB%%lib/%%PYTHON_VERSION%%/site-packages/BioCorba/ensembl_idl.pyo
+%%PORTDOCS%%%%PLIST_CORBA%%share/doc/py-biopython/BioCorba/IntroPythonClient.pdf
+%%PORTDOCS%%%%PLIST_CORBA%%share/doc/py-biopython/BioCorba/IntroPythonClient.tex
+%%PORTDOCS%%%%PLIST_CORBA%%share/doc/py-biopython/BioCorba/README.pdf
+%%PORTDOCS%%%%PLIST_CORBA%%share/doc/py-biopython/BioCorba/README.tex
+%%PORTDOCS%%%%PLIST_CORBA%%share/doc/py-biopython/BioCorba/biocorbahowto.pdf
+%%PORTDOCS%%%%PLIST_CORBA%%share/doc/py-biopython/BioCorba/biocorbahowto.tex
+%%PORTDOCS%%%%PLIST_CORBA%%share/examples/py-biopython/BioCorba/IntroClient/MyFirstClient/messenger/__init__.py
+%%PORTDOCS%%%%PLIST_CORBA%%share/examples/py-biopython/BioCorba/IntroClient/MyFirstClient/messenger__POA/__init__.py
+%%PORTDOCS%%%%PLIST_CORBA%%share/examples/py-biopython/BioCorba/IntroClient/MyFirstClient/secret_message_client.py
+%%PORTDOCS%%%%PLIST_CORBA%%share/examples/py-biopython/BioCorba/IntroClient/MyFirstClient/secret_message_idl.py
+%%PORTDOCS%%%%PLIST_CORBA%%share/examples/py-biopython/BioCorba/IntroClient/MySecondClient/biosequence_client.py
+%%PORTDOCS%%%%PLIST_CORBA%%share/examples/py-biopython/BioCorba/IntroClient/MySecondClient/biosequence_idl.py
+%%PORTDOCS%%%%PLIST_CORBA%%share/examples/py-biopython/BioCorba/IntroClient/MySecondClient/servers/__init__.py
+%%PORTDOCS%%%%PLIST_CORBA%%share/examples/py-biopython/BioCorba/IntroClient/MySecondClient/servers__POA/__init__.py
+%%PORTDOCS%%%%PLIST_CORBA%%share/examples/py-biopython/BioCorba/IntroClient/MyThirdClient/idl_demo/__init__.py
+%%PORTDOCS%%%%PLIST_CORBA%%share/examples/py-biopython/BioCorba/IntroClient/MyThirdClient/idl_demo__POA/__init__.py
+%%PORTDOCS%%%%PLIST_CORBA%%share/examples/py-biopython/BioCorba/IntroClient/MyThirdClient/idl_demo_client.py
+%%PORTDOCS%%%%PLIST_CORBA%%share/examples/py-biopython/BioCorba/IntroClient/MyThirdClient/idl_demo_idl.py
+%%PORTDOCS%%%%PLIST_CORBA%%share/examples/py-biopython/BioCorba/Scripts/bioenv_server.py
+%%PORTDOCS%%%%PLIST_CORBA%%share/examples/py-biopython/BioCorba/a_drought.fasta
+%%PORTDOCS%%%%PLIST_CORBA%%share/examples/py-biopython/BioCorba/a_drought.gb
+%%PORTDOCS%%%%PLIST_CORBA%%share/examples/py-biopython/BioCorba/embl_biocorba.py
+%%PORTDOCS%%%%PLIST_CORBA%%share/examples/py-biopython/BioCorba/fasta_bioenv.py
+%%PORTDOCS%%%%PLIST_CORBA%%share/examples/py-biopython/BioCorba/fasta_biopy.py
+%%PORTDOCS%%%%PLIST_CORBA%%share/examples/py-biopython/BioCorba/fasta_pseqit.py
+%%PORTDOCS%%%%PLIST_CORBA%%share/examples/py-biopython/BioCorba/fasta_server.py
+%%PORTDOCS%%%%PLIST_CORBA%%share/examples/py-biopython/BioCorba/gb_bioenv.py
+%%PORTDOCS%%%%PLIST_CORBA%%share/examples/py-biopython/BioCorba/gbclient.py
+%%PORTDOCS%%%%PLIST_CORBA%%share/examples/py-biopython/BioCorba/gbsrv.pl
+%%PORTDOCS%%%%PLIST_CORBA%%share/examples/py-biopython/BioCorba/genbank_db_server.py
+%%PORTDOCS%%share/doc/py-biopython/Blast.txt
+%%PORTDOCS%%share/doc/py-biopython/Enzyme.txt
+%%PORTDOCS%%share/doc/py-biopython/Fasta.txt
+%%PORTDOCS%%share/doc/py-biopython/Medline.txt
+%%PORTDOCS%%share/doc/py-biopython/Parser.txt
+%%PORTDOCS%%share/doc/py-biopython/Prosite.txt
+%%PORTDOCS%%share/doc/py-biopython/References.txt
+%%PORTDOCS%%share/doc/py-biopython/SCOP.txt
+%%PORTDOCS%%share/doc/py-biopython/SwissProt.txt
+%%PORTDOCS%%share/doc/py-biopython/Tutorial.tex
+%%PORTDOCS%%share/doc/py-biopython/Tutorial.txt
+%%PORTDOCS%%share/doc/py-biopython/make_api_docs.py
+%%PORTDOCS%%share/examples/py-biopython/Scripts/SeqGui/SeqGui.py
+%%PORTDOCS%%share/examples/py-biopython/Scripts/query_pubmed.py
+%%PORTDOCS%%share/examples/py-biopython/Scripts/xbbtools/README
+%%PORTDOCS%%share/examples/py-biopython/Scripts/xbbtools/nextorf.py
+%%PORTDOCS%%share/examples/py-biopython/Scripts/xbbtools/test.fas
+%%PORTDOCS%%share/examples/py-biopython/Scripts/xbbtools/testrp.fas
+%%PORTDOCS%%share/examples/py-biopython/Scripts/xbbtools/xbb_blast.py
+%%PORTDOCS%%share/examples/py-biopython/Scripts/xbbtools/xbb_blastbg.py
+%%PORTDOCS%%share/examples/py-biopython/Scripts/xbbtools/xbb_io.py
+%%PORTDOCS%%share/examples/py-biopython/Scripts/xbbtools/xbb_sequence.py
+%%PORTDOCS%%share/examples/py-biopython/Scripts/xbbtools/xbb_translations.py
+%%PORTDOCS%%share/examples/py-biopython/Scripts/xbbtools/xbb_utils.py
+%%PORTDOCS%%share/examples/py-biopython/Scripts/xbbtools/xbb_widget.py
+%%PORTDOCS%%share/examples/py-biopython/Scripts/xbbtools/xbbtools.py
+%%PORTDOCS%%share/examples/py-biopython/clustal_run.py
+%%PORTDOCS%%share/examples/py-biopython/fasta_consumer.py
+%%PORTDOCS%%share/examples/py-biopython/fasta_dictionary.py
+%%PORTDOCS%%share/examples/py-biopython/fasta_iterator.py
+%%PORTDOCS%%share/examples/py-biopython/getgene.py
+%%PORTDOCS%%share/examples/py-biopython/local_blast.py
+%%PORTDOCS%%share/examples/py-biopython/make_subsmat.py
+%%PORTDOCS%%share/examples/py-biopython/pubmed_search.py
+%%PORTDOCS%%share/examples/py-biopython/query_entrez.py
+%%PORTDOCS%%share/examples/py-biopython/swissprot.py
+%%PORTDOCS%%share/examples/py-biopython/www_blast.py
+lib/%%PYTHON_VERSION%%/site-packages/Bio/Align/AlignInfo.py
+lib/%%PYTHON_VERSION%%/site-packages/Bio/Align/AlignInfo.pyc
+lib/%%PYTHON_VERSION%%/site-packages/Bio/Align/AlignInfo.pyo
+lib/%%PYTHON_VERSION%%/site-packages/Bio/Align/FormatConvert.py
+lib/%%PYTHON_VERSION%%/site-packages/Bio/Align/FormatConvert.pyc
+lib/%%PYTHON_VERSION%%/site-packages/Bio/Align/FormatConvert.pyo
+lib/%%PYTHON_VERSION%%/site-packages/Bio/Align/Generic.py
+lib/%%PYTHON_VERSION%%/site-packages/Bio/Align/Generic.pyc
+lib/%%PYTHON_VERSION%%/site-packages/Bio/Align/Generic.pyo
+lib/%%PYTHON_VERSION%%/site-packages/Bio/Align/__init__.py
+lib/%%PYTHON_VERSION%%/site-packages/Bio/Align/__init__.pyc
+lib/%%PYTHON_VERSION%%/site-packages/Bio/Align/__init__.pyo
 lib/%%PYTHON_VERSION%%/site-packages/Bio/Alphabet/IUPAC.py
-lib/%%PYTHON_VERSION%%/site-packages/Bio/Encodings/IUPACEncoding.py
-lib/%%PYTHON_VERSION%%/site-packages/Bio/Encodings/__init__.py
-lib/%%PYTHON_VERSION%%/site-packages/Bio/SeqIO/__init__.py
-lib/%%PYTHON_VERSION%%/site-packages/Bio/SeqIO/FASTA.py
-lib/%%PYTHON_VERSION%%/site-packages/Bio/PDB/__init__.pyc
-lib/%%PYTHON_VERSION%%/site-packages/Bio/WWW/__init__.pyc
-lib/%%PYTHON_VERSION%%/site-packages/Bio/WWW/NCBI.pyc
-lib/%%PYTHON_VERSION%%/site-packages/Bio/WWW/ExPASy.pyc
-lib/%%PYTHON_VERSION%%/site-packages/Bio/WWW/SCOP.pyc
-lib/%%PYTHON_VERSION%%/site-packages/Bio/Data/IUPACData.pyc
-lib/%%PYTHON_VERSION%%/site-packages/Bio/Data/__init__.pyc
-lib/%%PYTHON_VERSION%%/site-packages/Bio/Data/CodonTable.pyc
-lib/%%PYTHON_VERSION%%/site-packages/Bio/Encodings/IUPACEncoding.pyc
-lib/%%PYTHON_VERSION%%/site-packages/Bio/Encodings/__init__.pyc
-lib/%%PYTHON_VERSION%%/site-packages/Bio/__init__.pyc
-lib/%%PYTHON_VERSION%%/site-packages/Bio/Blast/__init__.pyc
-lib/%%PYTHON_VERSION%%/site-packages/Bio/Blast/NCBIWWW.pyc
-lib/%%PYTHON_VERSION%%/site-packages/Bio/Blast/Record.pyc
-lib/%%PYTHON_VERSION%%/site-packages/Bio/Blast/NCBIStandalone.pyc
-lib/%%PYTHON_VERSION%%/site-packages/Bio/SeqIO/__init__.pyc
-lib/%%PYTHON_VERSION%%/site-packages/Bio/SeqIO/FASTA.pyc
-lib/%%PYTHON_VERSION%%/site-packages/Bio/ParserSupport.pyc
-lib/%%PYTHON_VERSION%%/site-packages/Bio/Medline/Medline.pyc
-lib/%%PYTHON_VERSION%%/site-packages/Bio/Medline/PubMed.pyc
-lib/%%PYTHON_VERSION%%/site-packages/Bio/Medline/__init__.pyc
-lib/%%PYTHON_VERSION%%/site-packages/Bio/Tools/mathfns.pyc
-lib/%%PYTHON_VERSION%%/site-packages/Bio/Tools/__init__.pyc
-lib/%%PYTHON_VERSION%%/site-packages/Bio/Tools/Transcribe.pyc
-lib/%%PYTHON_VERSION%%/site-packages/Bio/Tools/listfns.pyc
-lib/%%PYTHON_VERSION%%/site-packages/Bio/Tools/stringfns.pyc
-lib/%%PYTHON_VERSION%%/site-packages/Bio/Tools/Translate.pyc
-lib/%%PYTHON_VERSION%%/site-packages/Bio/Tools/Classification/__init__.pyc
-lib/%%PYTHON_VERSION%%/site-packages/Bio/Tools/Classification/NaiveBayes.pyc
-lib/%%PYTHON_VERSION%%/site-packages/Bio/Tools/Classification/SVM.pyc
-lib/%%PYTHON_VERSION%%/site-packages/Bio/Tools/Classification/kNN.pyc
-lib/%%PYTHON_VERSION%%/site-packages/Bio/Seq.pyc
-lib/%%PYTHON_VERSION%%/site-packages/Bio/Index.pyc
-lib/%%PYTHON_VERSION%%/site-packages/Bio/SwissProt/__init__.pyc
-lib/%%PYTHON_VERSION%%/site-packages/Bio/SwissProt/KeyWList.pyc
-lib/%%PYTHON_VERSION%%/site-packages/Bio/SwissProt/SProt.pyc
-lib/%%PYTHON_VERSION%%/site-packages/Bio/Fasta/__init__.pyc
-lib/%%PYTHON_VERSION%%/site-packages/Bio/Fasta/Fasta.pyc
-lib/%%PYTHON_VERSION%%/site-packages/Bio/Alphabet/__init__.pyc
 lib/%%PYTHON_VERSION%%/site-packages/Bio/Alphabet/IUPAC.pyc
-lib/%%PYTHON_VERSION%%/site-packages/Bio/PropertyManager.pyc
-lib/%%PYTHON_VERSION%%/site-packages/Bio/File.pyc
-lib/%%PYTHON_VERSION%%/site-packages/Bio/Sequence.pyc
-lib/%%PYTHON_VERSION%%/site-packages/Bio/utils.pyc
-lib/%%PYTHON_VERSION%%/site-packages/Bio/Entrez/__init__.pyc
+lib/%%PYTHON_VERSION%%/site-packages/Bio/Alphabet/IUPAC.pyo
+lib/%%PYTHON_VERSION%%/site-packages/Bio/Alphabet/__init__.py
+lib/%%PYTHON_VERSION%%/site-packages/Bio/Alphabet/__init__.pyc
+lib/%%PYTHON_VERSION%%/site-packages/Bio/Alphabet/__init__.pyo
+lib/%%PYTHON_VERSION%%/site-packages/Bio/Blast/NCBIStandalone.py
+lib/%%PYTHON_VERSION%%/site-packages/Bio/Blast/NCBIStandalone.pyc
+lib/%%PYTHON_VERSION%%/site-packages/Bio/Blast/NCBIStandalone.pyo
+lib/%%PYTHON_VERSION%%/site-packages/Bio/Blast/NCBIWWW.py
+lib/%%PYTHON_VERSION%%/site-packages/Bio/Blast/NCBIWWW.pyc
+lib/%%PYTHON_VERSION%%/site-packages/Bio/Blast/NCBIWWW.pyo
+lib/%%PYTHON_VERSION%%/site-packages/Bio/Blast/Record.py
+lib/%%PYTHON_VERSION%%/site-packages/Bio/Blast/Record.pyc
+lib/%%PYTHON_VERSION%%/site-packages/Bio/Blast/Record.pyo
+lib/%%PYTHON_VERSION%%/site-packages/Bio/Blast/__init__.py
+lib/%%PYTHON_VERSION%%/site-packages/Bio/Blast/__init__.pyc
+lib/%%PYTHON_VERSION%%/site-packages/Bio/Blast/__init__.pyo
+lib/%%PYTHON_VERSION%%/site-packages/Bio/Clustalw/__init__.py
+lib/%%PYTHON_VERSION%%/site-packages/Bio/Clustalw/__init__.pyc
+lib/%%PYTHON_VERSION%%/site-packages/Bio/Clustalw/__init__.pyo
+lib/%%PYTHON_VERSION%%/site-packages/Bio/Clustalw/clustal_format.py
+lib/%%PYTHON_VERSION%%/site-packages/Bio/Clustalw/clustal_format.pyc
+lib/%%PYTHON_VERSION%%/site-packages/Bio/Clustalw/clustal_format.pyo
+lib/%%PYTHON_VERSION%%/site-packages/Bio/Data/CodonTable.py
+lib/%%PYTHON_VERSION%%/site-packages/Bio/Data/CodonTable.pyc
+lib/%%PYTHON_VERSION%%/site-packages/Bio/Data/CodonTable.pyo
+lib/%%PYTHON_VERSION%%/site-packages/Bio/Data/IUPACData.py
+lib/%%PYTHON_VERSION%%/site-packages/Bio/Data/IUPACData.pyc
+lib/%%PYTHON_VERSION%%/site-packages/Bio/Data/IUPACData.pyo
+lib/%%PYTHON_VERSION%%/site-packages/Bio/Data/__init__.py
+lib/%%PYTHON_VERSION%%/site-packages/Bio/Data/__init__.pyc
+lib/%%PYTHON_VERSION%%/site-packages/Bio/Data/__init__.pyo
+lib/%%PYTHON_VERSION%%/site-packages/Bio/Encodings/IUPACEncoding.py
+lib/%%PYTHON_VERSION%%/site-packages/Bio/Encodings/IUPACEncoding.pyc
+lib/%%PYTHON_VERSION%%/site-packages/Bio/Encodings/IUPACEncoding.pyo
+lib/%%PYTHON_VERSION%%/site-packages/Bio/Encodings/__init__.py
+lib/%%PYTHON_VERSION%%/site-packages/Bio/Encodings/__init__.pyc
+lib/%%PYTHON_VERSION%%/site-packages/Bio/Encodings/__init__.pyo
+lib/%%PYTHON_VERSION%%/site-packages/Bio/Enzyme/__init__.py
 lib/%%PYTHON_VERSION%%/site-packages/Bio/Enzyme/__init__.pyc
-lib/%%PYTHON_VERSION%%/site-packages/Bio/Enzyme/Enzyme.pyc
-lib/%%PYTHON_VERSION%%/site-packages/Bio/SeqRecord.pyc
-lib/%%PYTHON_VERSION%%/site-packages/Bio/Prosite/__init__.pyc
-lib/%%PYTHON_VERSION%%/site-packages/Bio/Prosite/Prosite.pyc
+lib/%%PYTHON_VERSION%%/site-packages/Bio/Enzyme/__init__.pyo
+lib/%%PYTHON_VERSION%%/site-packages/Bio/Fasta/FastaAlign.py
+lib/%%PYTHON_VERSION%%/site-packages/Bio/Fasta/FastaAlign.pyc
+lib/%%PYTHON_VERSION%%/site-packages/Bio/Fasta/FastaAlign.pyo
+lib/%%PYTHON_VERSION%%/site-packages/Bio/Fasta/__init__.py
+lib/%%PYTHON_VERSION%%/site-packages/Bio/Fasta/__init__.pyc
+lib/%%PYTHON_VERSION%%/site-packages/Bio/Fasta/__init__.pyo
+lib/%%PYTHON_VERSION%%/site-packages/Bio/File.py
+lib/%%PYTHON_VERSION%%/site-packages/Bio/File.pyc
+lib/%%PYTHON_VERSION%%/site-packages/Bio/File.pyo
+lib/%%PYTHON_VERSION%%/site-packages/Bio/GenBank/LocationParser.py
+lib/%%PYTHON_VERSION%%/site-packages/Bio/GenBank/LocationParser.pyc
+lib/%%PYTHON_VERSION%%/site-packages/Bio/GenBank/LocationParser.pyo
+lib/%%PYTHON_VERSION%%/site-packages/Bio/GenBank/Record.py
+lib/%%PYTHON_VERSION%%/site-packages/Bio/GenBank/Record.pyc
+lib/%%PYTHON_VERSION%%/site-packages/Bio/GenBank/Record.pyo
+lib/%%PYTHON_VERSION%%/site-packages/Bio/GenBank/__init__.py
+lib/%%PYTHON_VERSION%%/site-packages/Bio/GenBank/__init__.pyc
+lib/%%PYTHON_VERSION%%/site-packages/Bio/GenBank/__init__.pyo
+lib/%%PYTHON_VERSION%%/site-packages/Bio/GenBank/genbank_format.py
+lib/%%PYTHON_VERSION%%/site-packages/Bio/GenBank/genbank_format.pyc
+lib/%%PYTHON_VERSION%%/site-packages/Bio/GenBank/genbank_format.pyo
+lib/%%PYTHON_VERSION%%/site-packages/Bio/Gobase/__init__.py
+lib/%%PYTHON_VERSION%%/site-packages/Bio/Gobase/__init__.pyc
+lib/%%PYTHON_VERSION%%/site-packages/Bio/Gobase/__init__.pyo
+lib/%%PYTHON_VERSION%%/site-packages/Bio/Index.py
+lib/%%PYTHON_VERSION%%/site-packages/Bio/Index.pyc
+lib/%%PYTHON_VERSION%%/site-packages/Bio/Index.pyo
+lib/%%PYTHON_VERSION%%/site-packages/Bio/Medline/PubMed.py
+lib/%%PYTHON_VERSION%%/site-packages/Bio/Medline/PubMed.pyc
+lib/%%PYTHON_VERSION%%/site-packages/Bio/Medline/PubMed.pyo
+lib/%%PYTHON_VERSION%%/site-packages/Bio/Medline/__init__.py
+lib/%%PYTHON_VERSION%%/site-packages/Bio/Medline/__init__.pyc
+lib/%%PYTHON_VERSION%%/site-packages/Bio/Medline/__init__.pyo
+lib/%%PYTHON_VERSION%%/site-packages/Bio/PDB/__init__.py
+lib/%%PYTHON_VERSION%%/site-packages/Bio/PDB/__init__.pyc
+lib/%%PYTHON_VERSION%%/site-packages/Bio/PDB/__init__.pyo
+lib/%%PYTHON_VERSION%%/site-packages/Bio/ParserSupport.py
+lib/%%PYTHON_VERSION%%/site-packages/Bio/ParserSupport.pyc
+lib/%%PYTHON_VERSION%%/site-packages/Bio/ParserSupport.pyo
+lib/%%PYTHON_VERSION%%/site-packages/Bio/PropertyManager.py
+lib/%%PYTHON_VERSION%%/site-packages/Bio/PropertyManager.pyc
+lib/%%PYTHON_VERSION%%/site-packages/Bio/PropertyManager.pyo
+lib/%%PYTHON_VERSION%%/site-packages/Bio/Prosite/Pattern.py
 lib/%%PYTHON_VERSION%%/site-packages/Bio/Prosite/Pattern.pyc
+lib/%%PYTHON_VERSION%%/site-packages/Bio/Prosite/Pattern.pyo
+lib/%%PYTHON_VERSION%%/site-packages/Bio/Prosite/Prodoc.py
 lib/%%PYTHON_VERSION%%/site-packages/Bio/Prosite/Prodoc.pyc
+lib/%%PYTHON_VERSION%%/site-packages/Bio/Prosite/Prodoc.pyo
+lib/%%PYTHON_VERSION%%/site-packages/Bio/Prosite/__init__.py
+lib/%%PYTHON_VERSION%%/site-packages/Bio/Prosite/__init__.pyc
+lib/%%PYTHON_VERSION%%/site-packages/Bio/Prosite/__init__.pyo
+lib/%%PYTHON_VERSION%%/site-packages/Bio/Rebase/Rebase.py
+lib/%%PYTHON_VERSION%%/site-packages/Bio/Rebase/Rebase.pyc
+lib/%%PYTHON_VERSION%%/site-packages/Bio/Rebase/Rebase.pyo
+lib/%%PYTHON_VERSION%%/site-packages/Bio/Rebase/__init__.py
+lib/%%PYTHON_VERSION%%/site-packages/Bio/Rebase/__init__.pyc
+lib/%%PYTHON_VERSION%%/site-packages/Bio/Rebase/__init__.pyo
+lib/%%PYTHON_VERSION%%/site-packages/Bio/SCOP/Dom.py
+lib/%%PYTHON_VERSION%%/site-packages/Bio/SCOP/Dom.pyc
+lib/%%PYTHON_VERSION%%/site-packages/Bio/SCOP/Dom.pyo
+lib/%%PYTHON_VERSION%%/site-packages/Bio/SCOP/Lin.py
+lib/%%PYTHON_VERSION%%/site-packages/Bio/SCOP/Lin.pyc
+lib/%%PYTHON_VERSION%%/site-packages/Bio/SCOP/Lin.pyo
+lib/%%PYTHON_VERSION%%/site-packages/Bio/SCOP/Location.py
+lib/%%PYTHON_VERSION%%/site-packages/Bio/SCOP/Location.pyc
+lib/%%PYTHON_VERSION%%/site-packages/Bio/SCOP/Location.pyo
+lib/%%PYTHON_VERSION%%/site-packages/Bio/SCOP/__init__.py
+lib/%%PYTHON_VERSION%%/site-packages/Bio/SCOP/__init__.pyc
+lib/%%PYTHON_VERSION%%/site-packages/Bio/SCOP/__init__.pyo
+lib/%%PYTHON_VERSION%%/site-packages/Bio/Seq.py
+lib/%%PYTHON_VERSION%%/site-packages/Bio/Seq.pyc
+lib/%%PYTHON_VERSION%%/site-packages/Bio/Seq.pyo
+lib/%%PYTHON_VERSION%%/site-packages/Bio/SeqFeature.py
+lib/%%PYTHON_VERSION%%/site-packages/Bio/SeqFeature.pyc
+lib/%%PYTHON_VERSION%%/site-packages/Bio/SeqFeature.pyo
+lib/%%PYTHON_VERSION%%/site-packages/Bio/SeqIO/FASTA.py
+lib/%%PYTHON_VERSION%%/site-packages/Bio/SeqIO/FASTA.pyc
+lib/%%PYTHON_VERSION%%/site-packages/Bio/SeqIO/FASTA.pyo
+lib/%%PYTHON_VERSION%%/site-packages/Bio/SeqIO/__init__.py
+lib/%%PYTHON_VERSION%%/site-packages/Bio/SeqIO/__init__.pyc
+lib/%%PYTHON_VERSION%%/site-packages/Bio/SeqIO/__init__.pyo
+lib/%%PYTHON_VERSION%%/site-packages/Bio/SeqRecord.py
+lib/%%PYTHON_VERSION%%/site-packages/Bio/SeqRecord.pyc
+lib/%%PYTHON_VERSION%%/site-packages/Bio/SeqRecord.pyo
+lib/%%PYTHON_VERSION%%/site-packages/Bio/Sequence.py
+lib/%%PYTHON_VERSION%%/site-packages/Bio/Sequence.pyc
+lib/%%PYTHON_VERSION%%/site-packages/Bio/Sequence.pyo
+lib/%%PYTHON_VERSION%%/site-packages/Bio/SubsMat/FreqTable.py
+lib/%%PYTHON_VERSION%%/site-packages/Bio/SubsMat/FreqTable.pyc
+lib/%%PYTHON_VERSION%%/site-packages/Bio/SubsMat/FreqTable.pyo
+lib/%%PYTHON_VERSION%%/site-packages/Bio/SubsMat/MatrixInfo.py
+lib/%%PYTHON_VERSION%%/site-packages/Bio/SubsMat/MatrixInfo.pyc
+lib/%%PYTHON_VERSION%%/site-packages/Bio/SubsMat/MatrixInfo.pyo
+lib/%%PYTHON_VERSION%%/site-packages/Bio/SubsMat/__init__.py
+lib/%%PYTHON_VERSION%%/site-packages/Bio/SubsMat/__init__.pyc
+lib/%%PYTHON_VERSION%%/site-packages/Bio/SubsMat/__init__.pyo
+lib/%%PYTHON_VERSION%%/site-packages/Bio/SwissProt/KeyWList.py
+lib/%%PYTHON_VERSION%%/site-packages/Bio/SwissProt/KeyWList.pyc
+lib/%%PYTHON_VERSION%%/site-packages/Bio/SwissProt/KeyWList.pyo
+lib/%%PYTHON_VERSION%%/site-packages/Bio/SwissProt/SProt.py
+lib/%%PYTHON_VERSION%%/site-packages/Bio/SwissProt/SProt.pyc
+lib/%%PYTHON_VERSION%%/site-packages/Bio/SwissProt/SProt.pyo
+lib/%%PYTHON_VERSION%%/site-packages/Bio/SwissProt/__init__.py
+lib/%%PYTHON_VERSION%%/site-packages/Bio/SwissProt/__init__.pyc
+lib/%%PYTHON_VERSION%%/site-packages/Bio/SwissProt/__init__.pyo
+lib/%%PYTHON_VERSION%%/site-packages/Bio/Tools/Classification/NaiveBayes.py
+lib/%%PYTHON_VERSION%%/site-packages/Bio/Tools/Classification/NaiveBayes.pyc
+lib/%%PYTHON_VERSION%%/site-packages/Bio/Tools/Classification/NaiveBayes.pyo
+lib/%%PYTHON_VERSION%%/site-packages/Bio/Tools/Classification/SVM.py
+lib/%%PYTHON_VERSION%%/site-packages/Bio/Tools/Classification/SVM.pyc
+lib/%%PYTHON_VERSION%%/site-packages/Bio/Tools/Classification/SVM.pyo
+lib/%%PYTHON_VERSION%%/site-packages/Bio/Tools/Classification/__init__.py
+lib/%%PYTHON_VERSION%%/site-packages/Bio/Tools/Classification/__init__.pyc
+lib/%%PYTHON_VERSION%%/site-packages/Bio/Tools/Classification/__init__.pyo
 lib/%%PYTHON_VERSION%%/site-packages/Bio/Tools/Classification/cSVM.so
+lib/%%PYTHON_VERSION%%/site-packages/Bio/Tools/Classification/kNN.py
+lib/%%PYTHON_VERSION%%/site-packages/Bio/Tools/Classification/kNN.pyc
+lib/%%PYTHON_VERSION%%/site-packages/Bio/Tools/Classification/kNN.pyo
+lib/%%PYTHON_VERSION%%/site-packages/Bio/Tools/MultiProc/Scheduler.py
+lib/%%PYTHON_VERSION%%/site-packages/Bio/Tools/MultiProc/Scheduler.pyc
+lib/%%PYTHON_VERSION%%/site-packages/Bio/Tools/MultiProc/Scheduler.pyo
+lib/%%PYTHON_VERSION%%/site-packages/Bio/Tools/MultiProc/Task.py
+lib/%%PYTHON_VERSION%%/site-packages/Bio/Tools/MultiProc/Task.pyc
+lib/%%PYTHON_VERSION%%/site-packages/Bio/Tools/MultiProc/Task.pyo
+lib/%%PYTHON_VERSION%%/site-packages/Bio/Tools/MultiProc/__init__.py
+lib/%%PYTHON_VERSION%%/site-packages/Bio/Tools/MultiProc/__init__.pyc
+lib/%%PYTHON_VERSION%%/site-packages/Bio/Tools/MultiProc/__init__.pyo
+lib/%%PYTHON_VERSION%%/site-packages/Bio/Tools/MultiProc/copen.py
+lib/%%PYTHON_VERSION%%/site-packages/Bio/Tools/MultiProc/copen.pyc
+lib/%%PYTHON_VERSION%%/site-packages/Bio/Tools/MultiProc/copen.pyo
+lib/%%PYTHON_VERSION%%/site-packages/Bio/Tools/Parsers/__init__.py
+lib/%%PYTHON_VERSION%%/site-packages/Bio/Tools/Parsers/__init__.pyc
+lib/%%PYTHON_VERSION%%/site-packages/Bio/Tools/Parsers/__init__.pyo
+lib/%%PYTHON_VERSION%%/site-packages/Bio/Tools/Parsers/spark.py
+lib/%%PYTHON_VERSION%%/site-packages/Bio/Tools/Parsers/spark.pyc
+lib/%%PYTHON_VERSION%%/site-packages/Bio/Tools/Parsers/spark.pyo
+lib/%%PYTHON_VERSION%%/site-packages/Bio/Tools/Transcribe.py
+lib/%%PYTHON_VERSION%%/site-packages/Bio/Tools/Transcribe.pyc
+lib/%%PYTHON_VERSION%%/site-packages/Bio/Tools/Transcribe.pyo
+lib/%%PYTHON_VERSION%%/site-packages/Bio/Tools/Translate.py
+lib/%%PYTHON_VERSION%%/site-packages/Bio/Tools/Translate.pyc
+lib/%%PYTHON_VERSION%%/site-packages/Bio/Tools/Translate.pyo
+lib/%%PYTHON_VERSION%%/site-packages/Bio/Tools/__init__.py
+lib/%%PYTHON_VERSION%%/site-packages/Bio/Tools/__init__.pyc
+lib/%%PYTHON_VERSION%%/site-packages/Bio/Tools/__init__.pyo
 lib/%%PYTHON_VERSION%%/site-packages/Bio/Tools/clistfns.so
 lib/%%PYTHON_VERSION%%/site-packages/Bio/Tools/cmathfns.so
 lib/%%PYTHON_VERSION%%/site-packages/Bio/Tools/cstringfns.so
-lib/%%PYTHON_VERSION%%/site-packages/Bio/Gobase/Gobase.py
-lib/%%PYTHON_VERSION%%/site-packages/Bio/Gobase/__init__.py
-lib/%%PYTHON_VERSION%%/site-packages/Bio/Gobase/Gobase.pyc
-lib/%%PYTHON_VERSION%%/site-packages/Bio/Gobase/__init__.pyc
-lib/%%PYTHON_VERSION%%/site-packages/Bio/Rebase/Rebase.py
-lib/%%PYTHON_VERSION%%/site-packages/Bio/Rebase/__init__.py
-lib/%%PYTHON_VERSION%%/site-packages/Bio/Rebase/Rebase.pyc
-lib/%%PYTHON_VERSION%%/site-packages/Bio/Rebase/__init__.pyc
-lib/%%PYTHON_VERSION%%/site-packages/Bio/SCOP/Dom.py
-lib/%%PYTHON_VERSION%%/site-packages/Bio/SCOP/Lin.py
-lib/%%PYTHON_VERSION%%/site-packages/Bio/SCOP/Location.py
-lib/%%PYTHON_VERSION%%/site-packages/Bio/SCOP/__init__.py
-lib/%%PYTHON_VERSION%%/site-packages/Bio/SCOP/Dom.pyc
-lib/%%PYTHON_VERSION%%/site-packages/Bio/SCOP/Lin.pyc
-lib/%%PYTHON_VERSION%%/site-packages/Bio/SCOP/Location.pyc
-lib/%%PYTHON_VERSION%%/site-packages/Bio/SCOP/__init__.pyc
+lib/%%PYTHON_VERSION%%/site-packages/Bio/Tools/listfns.py
+lib/%%PYTHON_VERSION%%/site-packages/Bio/Tools/listfns.pyc
+lib/%%PYTHON_VERSION%%/site-packages/Bio/Tools/listfns.pyo
+lib/%%PYTHON_VERSION%%/site-packages/Bio/Tools/mathfns.py
+lib/%%PYTHON_VERSION%%/site-packages/Bio/Tools/mathfns.pyc
+lib/%%PYTHON_VERSION%%/site-packages/Bio/Tools/mathfns.pyo
+lib/%%PYTHON_VERSION%%/site-packages/Bio/Tools/stringfns.py
+lib/%%PYTHON_VERSION%%/site-packages/Bio/Tools/stringfns.pyc
+lib/%%PYTHON_VERSION%%/site-packages/Bio/Tools/stringfns.pyo
+lib/%%PYTHON_VERSION%%/site-packages/Bio/UniGene/__init__.py
+lib/%%PYTHON_VERSION%%/site-packages/Bio/UniGene/__init__.pyc
+lib/%%PYTHON_VERSION%%/site-packages/Bio/UniGene/__init__.pyo
+lib/%%PYTHON_VERSION%%/site-packages/Bio/WWW/ExPASy.py
+lib/%%PYTHON_VERSION%%/site-packages/Bio/WWW/ExPASy.pyc
+lib/%%PYTHON_VERSION%%/site-packages/Bio/WWW/ExPASy.pyo
+lib/%%PYTHON_VERSION%%/site-packages/Bio/WWW/NCBI.py
+lib/%%PYTHON_VERSION%%/site-packages/Bio/WWW/NCBI.pyc
+lib/%%PYTHON_VERSION%%/site-packages/Bio/WWW/NCBI.pyo
+lib/%%PYTHON_VERSION%%/site-packages/Bio/WWW/SCOP.py
+lib/%%PYTHON_VERSION%%/site-packages/Bio/WWW/SCOP.pyc
+lib/%%PYTHON_VERSION%%/site-packages/Bio/WWW/SCOP.pyo
+lib/%%PYTHON_VERSION%%/site-packages/Bio/WWW/__init__.py
+lib/%%PYTHON_VERSION%%/site-packages/Bio/WWW/__init__.pyc
+lib/%%PYTHON_VERSION%%/site-packages/Bio/WWW/__init__.pyo
+lib/%%PYTHON_VERSION%%/site-packages/Bio/__init__.py
+lib/%%PYTHON_VERSION%%/site-packages/Bio/__init__.pyc
+lib/%%PYTHON_VERSION%%/site-packages/Bio/__init__.pyo
+lib/%%PYTHON_VERSION%%/site-packages/Bio/utils.py
+lib/%%PYTHON_VERSION%%/site-packages/Bio/utils.pyc
+lib/%%PYTHON_VERSION%%/site-packages/Bio/utils.pyo
 @dirrm lib/%%PYTHON_VERSION%%/site-packages/Bio/WWW
+@dirrm lib/%%PYTHON_VERSION%%/site-packages/Bio/UniGene
+@dirrm lib/%%PYTHON_VERSION%%/site-packages/Bio/Tools/Parsers
+@dirrm lib/%%PYTHON_VERSION%%/site-packages/Bio/Tools/MultiProc
 @dirrm lib/%%PYTHON_VERSION%%/site-packages/Bio/Tools/Classification
 @dirrm lib/%%PYTHON_VERSION%%/site-packages/Bio/Tools
 @dirrm lib/%%PYTHON_VERSION%%/site-packages/Bio/SwissProt
+@dirrm lib/%%PYTHON_VERSION%%/site-packages/Bio/SubsMat
 @dirrm lib/%%PYTHON_VERSION%%/site-packages/Bio/SeqIO
+@dirrm lib/%%PYTHON_VERSION%%/site-packages/Bio/SCOP
+@dirrm lib/%%PYTHON_VERSION%%/site-packages/Bio/Rebase
 @dirrm lib/%%PYTHON_VERSION%%/site-packages/Bio/Prosite
 @dirrm lib/%%PYTHON_VERSION%%/site-packages/Bio/PDB
 @dirrm lib/%%PYTHON_VERSION%%/site-packages/Bio/Medline
+@dirrm lib/%%PYTHON_VERSION%%/site-packages/Bio/Gobase
+@dirrm lib/%%PYTHON_VERSION%%/site-packages/Bio/GenBank
 @dirrm lib/%%PYTHON_VERSION%%/site-packages/Bio/Fasta
 @dirrm lib/%%PYTHON_VERSION%%/site-packages/Bio/Enzyme
-@dirrm lib/%%PYTHON_VERSION%%/site-packages/Bio/Entrez
 @dirrm lib/%%PYTHON_VERSION%%/site-packages/Bio/Encodings
 @dirrm lib/%%PYTHON_VERSION%%/site-packages/Bio/Data
+@dirrm lib/%%PYTHON_VERSION%%/site-packages/Bio/Clustalw
 @dirrm lib/%%PYTHON_VERSION%%/site-packages/Bio/Blast
 @dirrm lib/%%PYTHON_VERSION%%/site-packages/Bio/Alphabet
-@dirrm lib/%%PYTHON_VERSION%%/site-packages/Bio/Gobase
-@dirrm lib/%%PYTHON_VERSION%%/site-packages/Bio/Rebase
-@dirrm lib/%%PYTHON_VERSION%%/site-packages/Bio/SCOP
+@dirrm lib/%%PYTHON_VERSION%%/site-packages/Bio/Align
 @dirrm lib/%%PYTHON_VERSION%%/site-packages/Bio
+%%PORTDOCS%%%%PLIST_CORBA%%@dirrm share/examples/py-biopython/BioCorba/Scripts
+%%PORTDOCS%%%%PLIST_CORBA%%@dirrm share/examples/py-biopython/BioCorba/IntroClient/MyThirdClient/idl_demo__POA
+%%PORTDOCS%%%%PLIST_CORBA%%@dirrm share/examples/py-biopython/BioCorba/IntroClient/MyThirdClient/idl_demo
+%%PORTDOCS%%%%PLIST_CORBA%%@dirrm share/examples/py-biopython/BioCorba/IntroClient/MyThirdClient
+%%PORTDOCS%%%%PLIST_CORBA%%@dirrm share/examples/py-biopython/BioCorba/IntroClient/MySecondClient/servers__POA
+%%PORTDOCS%%%%PLIST_CORBA%%@dirrm share/examples/py-biopython/BioCorba/IntroClient/MySecondClient/servers
+%%PORTDOCS%%%%PLIST_CORBA%%@dirrm share/examples/py-biopython/BioCorba/IntroClient/MySecondClient
+%%PORTDOCS%%%%PLIST_CORBA%%@dirrm share/examples/py-biopython/BioCorba/IntroClient/MyFirstClient/messenger__POA
+%%PORTDOCS%%%%PLIST_CORBA%%@dirrm share/examples/py-biopython/BioCorba/IntroClient/MyFirstClient/messenger
+%%PORTDOCS%%%%PLIST_CORBA%%@dirrm share/examples/py-biopython/BioCorba/IntroClient/MyFirstClient
+%%PORTDOCS%%%%PLIST_CORBA%%@dirrm share/examples/py-biopython/BioCorba/IntroClient
+%%PORTDOCS%%%%PLIST_CORBA%%@dirrm share/examples/py-biopython/BioCorba
+%%PORTDOCS%%%%PLIST_CORBA%%@dirrm share/doc/py-biopython/BioCorba
+%%PORTDOCS%%@dirrm share/examples/py-biopython/Scripts/xbbtools
+%%PORTDOCS%%@dirrm share/examples/py-biopython/Scripts/SeqGui
+%%PORTDOCS%%@dirrm share/examples/py-biopython/Scripts
+%%PORTDOCS%%@dirrm share/examples/py-biopython
+%%PORTDOCS%%@dirrm share/doc/py-biopython
+%%PLIST_FNORB%%@dirrm lib/%%PYTHON_VERSION%%/site-packages/BioCorba/org_skel/ensembl_skel
+%%PLIST_FNORB%%@dirrm lib/%%PYTHON_VERSION%%/site-packages/BioCorba/org_skel/biocorba_skel/seqcore_skel
+%%PLIST_FNORB%%@dirrm lib/%%PYTHON_VERSION%%/site-packages/BioCorba/org_skel/biocorba_skel
+%%PLIST_FNORB%%@dirrm lib/%%PYTHON_VERSION%%/site-packages/BioCorba/org_skel
+%%PLIST_FNORB%%@dirrm lib/%%PYTHON_VERSION%%/site-packages/BioCorba/GNOME_skel
+%%PLIST_CORBA%%@dirrm lib/%%PYTHON_VERSION%%/site-packages/BioCorba/org__POA/ensembl
+%%PLIST_CORBA%%@dirrm lib/%%PYTHON_VERSION%%/site-packages/BioCorba/org__POA/biocorba/seqcore
+%%PLIST_CORBA%%@dirrm lib/%%PYTHON_VERSION%%/site-packages/BioCorba/org__POA/biocorba
+%%PLIST_CORBA%%@dirrm lib/%%PYTHON_VERSION%%/site-packages/BioCorba/org__POA
+%%PLIST_CORBA%%@dirrm lib/%%PYTHON_VERSION%%/site-packages/BioCorba/org/ensembl
+%%PLIST_CORBA%%@dirrm lib/%%PYTHON_VERSION%%/site-packages/BioCorba/org/biocorba/seqcore
+%%PLIST_CORBA%%@dirrm lib/%%PYTHON_VERSION%%/site-packages/BioCorba/org/biocorba
+%%PLIST_CORBA%%@dirrm lib/%%PYTHON_VERSION%%/site-packages/BioCorba/org
+%%PLIST_CORBA%%@dirrm lib/%%PYTHON_VERSION%%/site-packages/BioCorba/Server/Seqcore
+%%PLIST_CORBA%%@dirrm lib/%%PYTHON_VERSION%%/site-packages/BioCorba/Server/GnomeMemory
+%%PLIST_CORBA%%@dirrm lib/%%PYTHON_VERSION%%/site-packages/BioCorba/Server
+%%PLIST_CORBA%%@dirrm lib/%%PYTHON_VERSION%%/site-packages/BioCorba/GNOME__POA
+%%PLIST_CORBA%%@dirrm lib/%%PYTHON_VERSION%%/site-packages/BioCorba/GNOME
+%%PLIST_CORBA%%@dirrm lib/%%PYTHON_VERSION%%/site-packages/BioCorba/Client/Seqcore
+%%PLIST_CORBA%%@dirrm lib/%%PYTHON_VERSION%%/site-packages/BioCorba/Client/GnomeMemory
+%%PLIST_CORBA%%@dirrm lib/%%PYTHON_VERSION%%/site-packages/BioCorba/Client/Ensembl
+%%PLIST_CORBA%%@dirrm lib/%%PYTHON_VERSION%%/site-packages/BioCorba/Client
+%%PLIST_CORBA%%@dirrm lib/%%PYTHON_VERSION%%/site-packages/BioCorba/Bio/GenBank
+%%PLIST_CORBA%%@dirrm lib/%%PYTHON_VERSION%%/site-packages/BioCorba/Bio/Fasta
+%%PLIST_CORBA%%@dirrm lib/%%PYTHON_VERSION%%/site-packages/BioCorba/Bio
+%%PLIST_CORBA%%@dirrm lib/%%PYTHON_VERSION%%/site-packages/BioCorba/Adapters
+%%PLIST_CORBA%%@dirrm lib/%%PYTHON_VERSION%%/site-packages/BioCorba
