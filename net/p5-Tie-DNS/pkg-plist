@@ -1,0 +1,13 @@
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Tie/DNS/.packlist
+lib/perl5/site_perl/%%PERL_VER%%/Tie/DNS.pm
+%%PORTDOCS%%share/examples/p5-Tie-DNS/example1.pl
+%%PORTDOCS%%share/examples/p5-Tie-DNS/example2.pl
+%%PORTDOCS%%share/examples/p5-Tie-DNS/example3.pl
+%%PORTDOCS%%share/examples/p5-Tie-DNS/example4.pl
+%%PORTDOCS%%share/examples/p5-Tie-DNS/example5.pl
+%%PORTDOCS%%share/examples/p5-Tie-DNS/example6.pl
+%%PORTDOCS%%share/examples/p5-Tie-DNS/example7.pl
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/Tie 2>/dev/null || true
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Tie/DNS 2>/dev/null || true
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Tie 2>/dev/null || true
+%%PORTDOCS%%@unexec rmdir %D/share/examples/p5-Tie-DNS 2>/dev/null || true

@@ -1,0 +1,8 @@
+This module is meant to be a simplified interface to the 
+excellent Net::DNS module.  Its goal is to make operations
+that are easy in Net::DNS trivial, and operations that are
+hard in Net::DNS easy.
+
+WWW: http://search.cpan.org/search?dist=Tie-DNS
+
+Seamus Venasse <svenasse@polaris.ca>
