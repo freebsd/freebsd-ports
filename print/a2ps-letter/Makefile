@@ -12,7 +12,7 @@ CATEGORIES=	print
 MASTER_SITES=	ftp://ftp.enst.fr/pub/unix/a2ps/ \
 		${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	${PORTNAME}
-PKGNAMESUFFIX=	-${PAPERSIZE}
+PKGNAMESUFFIX=	-${PAPERSIZE}${PKGNAMESUFFIX2}
 
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	Formats an ascii file for printing on a postscript printer
