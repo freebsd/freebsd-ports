@@ -1,14 +1,14 @@
-lib/amanda/amanda-2.4.0-980319/examples/amanda.conf
-lib/amanda/amanda-2.4.0-980319/examples/chg-multi.conf
-lib/amanda/amanda-2.4.0-980319/examples/disklist
+lib/amanda/amanda-2.4.0/examples/amanda.conf
+lib/amanda/amanda-2.4.0/examples/chg-multi.conf
+lib/amanda/amanda-2.4.0/examples/disklist
 lib/libamanda.a
 lib/libamanda.la
 lib/libamanda.so
-lib/libamanda.so.4.1
+lib/libamanda.so.5.0
 lib/libamclient.a
 lib/libamclient.la
 lib/libamclient.so
-lib/libamclient.so.0.3
+lib/libamclient.so.0.4
 lib/libamnolog.a
 lib/libamnolog.la
 lib/libamnolog.so
@@ -16,11 +16,11 @@ lib/libamnolog.so.0.0
 lib/libamserver.a
 lib/libamserver.la
 lib/libamserver.so
-lib/libamserver.so.2.1
+lib/libamserver.so.3.0
 lib/libamtape.a
 lib/libamtape.la
 lib/libamtape.so
-lib/libamtape.so.1.0
+lib/libamtape.so.1.1
 @exec /sbin/ldconfig -m %B
 libexec/amanda/amandad
 libexec/amanda/amcat.awk
@@ -81,7 +81,7 @@ sbin/amrmtape
 sbin/amtape
 sbin/amtoc
 sbin/amverify
-@dirrm lib/amanda/amanda-2.4.0-980319/examples
-@dirrm lib/amanda/amanda-2.4.0-980319
+@dirrm lib/amanda/amanda-2.4.0/examples
+@dirrm lib/amanda/amanda-2.4.0
 @dirrm lib/amanda
 @dirrm libexec/amanda
