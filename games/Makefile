@@ -26,6 +26,7 @@
     SUBDIR += bugsx
     SUBDIR += CaribbeanStud
     SUBDIR += cgoban
+    SUBDIR += columns
     SUBDIR += connect4
     SUBDIR += cosmo
     SUBDIR += crafty
