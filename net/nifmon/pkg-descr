@@ -1,0 +1,11 @@
+Nifmon is a curses-based tool for FreeBSD which can be used to monitor network
+interfaces (also tun devices).
+
+It displays continously updated statistics for the following quantities:
+ - total amount of bytes/packets transferred in/out
+ - bytes/packets transferred in/out during the last second/minute/hour
+ - a stripped down tcpdump output
+
+You will need super-user permissions in order to use nifmon.
+
+WWW: http://www.freebsd-support.de/misc/

@@ -347,6 +347,7 @@
     SUBDIR += nic
     SUBDIR += nicmond
     SUBDIR += nicotine
+    SUBDIR += nifmon
     SUBDIR += nload
     SUBDIR += nocatauth-gateway
     SUBDIR += nocatauth-server

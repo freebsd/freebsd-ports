@@ -1,0 +1,11 @@
+--- Makefile.orig	Wed May  2 20:41:22 2001
++++ Makefile	Wed Feb 25 17:43:00 2004
+@@ -5,7 +5,7 @@
+ MANDIR	=	/usr/local/man/man
+ 
+ # compile debug support
+-COPTS	+=	-DDEBUG -g -Wall
++#COPTS	+=	-DDEBUG -g -Wall
+ 
+ DPADD	=	${LIBCURSES}
+ LDADD	=	-lcurses
