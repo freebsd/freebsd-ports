@@ -11,8 +11,8 @@ friend, which is encrypted by strong cryptograph.
 
 Info path and elisp load path would be set as follows :
 
-    Info path - ${PREFIX}/lib/xemacs-mule-20.4/info
-    load path - ${PREFIX}/lib/xemacs-mule-20.4/site-lisp/mew
+    Info path - ${PREFIX}/lib/xemacs/site-packages/info
+    load path - ${PREFIX}/lib/xemacs/site-packages/etc/mew
 
 Before build this port, You must be prepared Mew-common-port
 (mail/mew-common). 
