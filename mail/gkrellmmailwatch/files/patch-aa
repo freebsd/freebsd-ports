@@ -1,30 +1,29 @@
---- Makefile.orig	Fri Apr 13 13:52:32 2001
-+++ Makefile	Mon Apr 16 23:24:03 2001
-@@ -1,32 +1,30 @@
+--- Makefile.orig	Mon Jul  2 00:34:11 2001
++++ Makefile	Fri Aug 17 15:21:47 2001
+@@ -1,27 +1,25 @@
  # Makefile for the GKrellM mailwatch plugin
  
 -GTK_INCLUDE = `gtk-config --cflags`
 -GTK_LIB = `gtk-config --libs`
-+GTK_INCLUDE = `$(GTK_CONFIG) --cflags`
-+GTK_LIB = `$(GTK_CONFIG) --libs`
++GTK_INCLUDE = `${GTK_CONFIG} --cflags`
++GTK_LIB = `${GTK_CONFIG} --libs`
  
 -GKRELLM_INCLUDE= -I/usr/local/include
-+GKRELLM_INCLUDE= -I$(PREFIX)/include
++GKRELLM_INCLUDE= -I${PREFIX}/include
  
 -IMLIB_INCLUDE = `imlib-config --cflags-gdk`
 -IMLIB_LIB = `imlib-config --libs-gdk`
-+IMLIB_INCLUDE = `$(IMLIB_CONFIG) --cflags-gdk`
-+IMLIB_LIB = `$(IMLIB_CONFIG) --libs-gdk`
++IMLIB_INCLUDE = `${IMLIB_CONFIG} --cflags-gdk`
++IMLIB_LIB = `${IMLIB_CONFIG} --libs-gdk`
  
- INSTALL=install -c -s -m 755
+ INSTALL=install -c -m 755
  
 -FLAGS = -O2 -Wall -fPIC $(GTK_INCLUDE) $(IMLIB_INCLUDE) $(GKRELLM_INCLUDE)
--LIBS = $(GTK_LIB) $(IMLIB_LIB)
-+CFLAGS+= -Wall -fPIC $(GTK_INCLUDE) $(IMLIB_INCLUDE) $(GKRELLM_INCLUDE)
-+LIBS = $(GTK_LIB) $(IMLIB_LIB) -lc_r
++CFLAGS = -Wall -fPIC $(GTK_INCLUDE) $(IMLIB_INCLUDE) $(GKRELLM_INCLUDE)
+ LIBS = $(GTK_LIB) $(IMLIB_LIB)
  LFLAGS = -shared
  
--CC = gcc $(CFLAGS) $(FLAGS)
+-CC = gcc-3.0 $(CFLAGS) $(FLAGS)
 -
  OBJS = mailwatch.o
  
@@ -36,10 +35,3 @@
  
  clean:
  	rm -f *.o core *.so* *.bak *~
-+
- install: 
--	$(INSTALL) -c -s -m 755  mailwatch.so /usr/share/gkrellm/plugins
-+	$(INSTALL) mailwatch.so $(PREFIX)/libexec/gkrellm/plugins
- 
- mailwatch.c.o: mailwatch.c
--
