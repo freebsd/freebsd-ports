@@ -1,0 +1,5 @@
+bin/aube
+share/gnome/aube/aube_logo.ppm
+share/gnome/aube/aube_mini.png
+share/gnome/aube/gtkrc
+@dirrm share/gnome/aube
