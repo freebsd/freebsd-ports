@@ -1,20 +1,11 @@
---- src/Makefile.in.orig	Sun Jun 24 08:15:31 2001
-+++ src/Makefile.in	Thu Aug 23 15:52:25 2001
-@@ -73,7 +73,7 @@
- RANLIB = @RANLIB@
- VERSION = @VERSION@
- 
--INCLUDES = -I$(top_srcdir)/src
-+INCLUDES = -I%%LOCALBASE%%/include -I$(top_srcdir)/src
+--- src/Makefile.in.orig	Mon Jan 14 13:10:06 2002
++++ src/Makefile.in	Mon Jan 14 13:10:36 2002
+@@ -81,7 +81,7 @@
  
  lib_LTLIBRARIES = libborzoi.la
  
-@@ -92,7 +92,7 @@
+-libborzoiincludedir = $(includedir) $(oldincludedir) $(INCLUDES)
++libborzoiincludedir = $(includedir)
  
- borzoi_SOURCES = test.cpp fips186_2.h
+ libborzoi_la_SOURCES =  	aes.cpp 	asn.cpp 	borzoi.h 	borzoi_math.h 	borzoi_util.h 	curve.cpp 	ec_key_pair.cpp 	ecdsa.cpp 	ecies.cpp 	eckas_dh1.cpp 	ec_primitives.cpp 	hash.cpp 	nist_curves.h 	rijndael-alg-fst.c 	rijndael-alg-fst.h 	rng.c 	rng.h 	utilities.cpp 	@BORZOI_SOURCES@
  
--borzoi_LDADD = @BORZOI_LIBS@ -lntl
-+borzoi_LDADD = @BORZOI_LIBS@ -lntl -L%%LOCALBASE%%/lib
- mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs
- CONFIG_CLEAN_FILES = 
- LTLIBRARIES =  $(lib_LTLIBRARIES)

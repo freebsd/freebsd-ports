@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	borzoi
-PORTVERSION=	0.8.3
+PORTVERSION=	0.9.1
 CATEGORIES=	security
 MASTER_SITES=	http://www1.kcn.ne.jp/~anthony/software/
 DISTNAME=	borZoi-${PORTVERSION}
