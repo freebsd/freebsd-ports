@@ -1,0 +1,26 @@
+--- scsh/bsd/sigset.h.old	Tue Feb  1 16:04:42 2000
++++ scsh/bsd/sigset.h	Fri Feb  4 14:54:18 2000
+@@ -2,9 +2,18 @@
+ ** These macros are OS-dependent, and must be defined per-OS.
+ */
+ 
+-#define make_sigset(maskp, hi, lo) (*maskp=((hi)<<24)|(lo))
++#define make_sigset(maskp, hi, lo) sigemptyset(maskp),\
++	sigaddset(maskp, hi), \
++	sigaddset(maskp, lo);
+ 
+-/* Not a procedure: */
+-#define split_sigset(mask, hip, lop) \
+-	((*(hip)=(mask>>24)&0xff), \
+-	 (*(lop)=(mask&0xffffff)))
++static void
++split_sigset(sigset_t mask, int * hip, int * lop) {
++	int seen = 0;
++	int n;
++	for (n = 1; n <= _SIG_MAXSIG; n++) {
++		if (sigismember(&mask, n))
++			(seen ? *hip : *lop) = n, seen++;
++	}
++	if (seen == 1)
++		*hip = 0;
++}

@@ -13,7 +13,7 @@ MASTER_SITES=	ftp://ftp-swiss.ai.mit.edu/pub/su/scsh/ \
 		${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	cracauer
 
-MAINTAINER=	cracauer@cons.org
+MAINTAINER=	alex@FreeBSD.org
 
 CONFIGURE_ENV+=	LDFLAGS="-Wl,-E"
 
