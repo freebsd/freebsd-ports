@@ -1280,3 +1280,7 @@ devel/whups||2004-10-22|not compatible with latest version of Horde
 french/abispell-fr-FR||2004-10-22|did not work with AbiWord-2.0
 games/crafty-open-small||2004-10-23|failed to fetch
 games/fsgs||2004-10-23|removed for legal reasons
+games/hlserver-pvk||2004-10-23|current version no longer available
+games/hlserver-snow||2004-10-23|current version does not work with FreeBSD
+games/hlserver-svencoop||2004-10-23|current version does not work with FreeBSD
+games/hlserver-trainhunters||2004-10-23|current version no longer available
