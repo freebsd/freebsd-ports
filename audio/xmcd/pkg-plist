@@ -8,9 +8,6 @@ lib/X11/xmcd/bin-FreeBSD_%%RELEASE%%-%%ARCH%%/README
 lib/X11/xmcd/bin-FreeBSD_%%RELEASE%%-%%ARCH%%/cda
 lib/X11/xmcd/bin-FreeBSD_%%RELEASE%%-%%ARCH%%/gobrowser
 lib/X11/xmcd/bin-FreeBSD_%%RELEASE%%-%%ARCH%%/xmcd
-lib/X11/xmcd/config/common.cfg
-lib/X11/xmcd/config/device.cfg
-lib/X11/xmcd/config/wwwwarp.cfg
 lib/X11/xmcd/config/.tbl/Acer
 lib/X11/xmcd/config/.tbl/Apple
 lib/X11/xmcd/config/.tbl/Aztech
@@ -21,6 +18,7 @@ lib/X11/xmcd/config/.tbl/Creative
 lib/X11/xmcd/config/.tbl/Cyberdri
 lib/X11/xmcd/config/.tbl/DEC
 lib/X11/xmcd/config/.tbl/Goldstar
+lib/X11/xmcd/config/.tbl/Grundig
 lib/X11/xmcd/config/.tbl/HP
 lib/X11/xmcd/config/.tbl/Hitachi
 lib/X11/xmcd/config/.tbl/IBM
@@ -52,23 +50,26 @@ lib/X11/xmcd/config/.tbl/Teac
 lib/X11/xmcd/config/.tbl/Toshiba
 lib/X11/xmcd/config/.tbl/Yamaha
 lib/X11/xmcd/config/config.sh
-lib/X11/xmcd/discog/bkgnd.gif
-lib/X11/xmcd/discog/cda.html
-lib/X11/xmcd/discog/discog.html
-lib/X11/xmcd/discog/index.html
-lib/X11/xmcd/discog/xmcd.html
-lib/X11/xmcd/discog/xmcdlogo.gif
+lib/X11/xmcd/config/common.cfg
+lib/X11/xmcd/config/device.cfg
+lib/X11/xmcd/config/wwwwarp.cfg
 lib/X11/xmcd/discog/Blues/General_Blues/index.html
 lib/X11/xmcd/discog/Classical/General_Classical/index.html
 lib/X11/xmcd/discog/Country/General_Country/index.html
 lib/X11/xmcd/discog/Data/General_Data/index.html
 lib/X11/xmcd/discog/Folk/General_Folk/index.html
 lib/X11/xmcd/discog/Jazz/General_Jazz/index.html
-lib/X11/xmcd/discog/Newage/General_Newage/index.html
+lib/X11/xmcd/discog/New_Age/General_New_Age/index.html
 lib/X11/xmcd/discog/Rock/General_Rock/index.html
 lib/X11/xmcd/discog/Soundtrack/General_Soundtrack/index.html
 lib/X11/xmcd/discog/Unclassifiable/General_Unclassifiable/index.html
 lib/X11/xmcd/discog/World/Reggae/index.html
+lib/X11/xmcd/discog/bkgnd.gif
+lib/X11/xmcd/discog/cda.html
+lib/X11/xmcd/discog/discog.html
+lib/X11/xmcd/discog/index.html
+lib/X11/xmcd/discog/xmcd.html
+lib/X11/xmcd/discog/xmcdlogo.gif
 lib/X11/xmcd/docs/ACKS
 lib/X11/xmcd/docs/CDDB
 lib/X11/xmcd/docs/CHANGES
@@ -119,6 +120,7 @@ lib/X11/xmcd/help/Dl/Show.btn
 lib/X11/xmcd/help/Dl/Type.opt
 lib/X11/xmcd/help/Dp/AddPgm.btn
 lib/X11/xmcd/help/Dp/Artist.txw
+lib/X11/xmcd/help/Dp/Apply.btn
 lib/X11/xmcd/help/Dp/ClrPgm.btn
 lib/X11/xmcd/help/Dp/DCredits.btn
 lib/X11/xmcd/help/Dp/DExt.btn
@@ -127,7 +129,6 @@ lib/X11/xmcd/help/Dp/FName.btn
 lib/X11/xmcd/help/Dp/Flush.btn
 lib/X11/xmcd/help/Dp/Offline.btn
 lib/X11/xmcd/help/Dp/Ok.btn
-lib/X11/xmcd/help/Dp/UserReg.btn
 lib/X11/xmcd/help/Dp/PgmSeq.txw
 lib/X11/xmcd/help/Dp/Reload.btn
 lib/X11/xmcd/help/Dp/SavePgm.btn
@@ -140,6 +141,7 @@ lib/X11/xmcd/help/Dp/TimSel.btn
 lib/X11/xmcd/help/Dp/Title.txw
 lib/X11/xmcd/help/Dp/TotTim.lbl
 lib/X11/xmcd/help/Dp/Trk.lsw
+lib/X11/xmcd/help/Dp/UserReg.btn
 lib/X11/xmcd/help/Dt/Artist.txw
 lib/X11/xmcd/help/Dt/AutoTr.btn
 lib/X11/xmcd/help/Dt/BPM.txw
@@ -167,16 +169,23 @@ lib/X11/xmcd/help/Ms/Match.lsw
 lib/X11/xmcd/help/Ms/Ok.btn
 lib/X11/xmcd/help/Op/Bal.scl
 lib/X11/xmcd/help/Op/BalCtr.btn
+lib/X11/xmcd/help/Op/Categ.lsw
 lib/X11/xmcd/help/Op/ChRt.rbx
 lib/X11/xmcd/help/Op/Chgr.cbx
 lib/X11/xmcd/help/Op/Done.cbx
 lib/X11/xmcd/help/Op/Eject.cbx
 lib/X11/xmcd/help/Op/Exit.rbx
+lib/X11/xmcd/help/Op/FileFmt.opt
+lib/X11/xmcd/help/Op/Jitter.btn
 lib/X11/xmcd/help/Op/Load.cbx
 lib/X11/xmcd/help/Op/Load.rbx
+lib/X11/xmcd/help/Op/Mode.cbx
 lib/X11/xmcd/help/Op/Ok.btn
+lib/X11/xmcd/help/Op/Path.txt
+lib/X11/xmcd/help/Op/Prog.txt
 lib/X11/xmcd/help/Op/Reset.btn
 lib/X11/xmcd/help/Op/Save.btn
+lib/X11/xmcd/help/Op/TrkFile.btn
 lib/X11/xmcd/help/Op/VolTpr.rbx
 lib/X11/xmcd/help/Rs/Ok.btn
 lib/X11/xmcd/help/Rs/Region.lsw
@@ -264,8 +273,8 @@ lib/X11/xmcd/scripts/genidx
 @dirrm lib/X11/xmcd/discog/Folk
 @dirrm lib/X11/xmcd/discog/Jazz/General_Jazz
 @dirrm lib/X11/xmcd/discog/Jazz
-@dirrm lib/X11/xmcd/discog/Newage/General_Newage
-@dirrm lib/X11/xmcd/discog/Newage
+@dirrm lib/X11/xmcd/discog/New_Age/General_New_Age
+@dirrm lib/X11/xmcd/discog/New_Age
 @dirrm lib/X11/xmcd/discog/Rock/General_Rock
 @dirrm lib/X11/xmcd/discog/Rock
 @dirrm lib/X11/xmcd/discog/Soundtrack/General_Soundtrack
