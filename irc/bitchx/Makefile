@@ -11,8 +11,7 @@ CATEGORIES+=	irc
 MASTER_SITES=	ftp://ftp.bitchx.org/pub/BitchX/source/ \
 		ftp://ftp.cyberpunkz.org/pub/BitchX/source/ \
 		ftp://ftp.cyberpunkz.org/pub/BitchX/tcl-o/:tcl
-DISTFILES=	ircii-pana-${PORTVERSION}-final${EXTRACT_SUFX} \
-		ircii-pana-${PORTVERSION}-final${EXTRACT_SUFX}.sig
+DISTFILES=	ircii-pana-${PORTVERSION}-final${EXTRACT_SUFX}
 EXTRACT_ONLY=	ircii-pana-${PORTVERSION}-final${EXTRACT_SUFX}
 
 MAINTAINER?=	arved@FreeBSD.org
@@ -67,8 +66,7 @@ USE_OPENSSL=		yes
 .include <bsd.port.pre.mk>
 
 .if defined(WITH_TCL)
-DISTFILES+=	freebsd4-tcl83-bx1.0c19-tcl.o:tcl \
-		freebsd4-tcl83-bx1.0c19-tcl.o.sig:tcl
+DISTFILES+=	freebsd4-tcl83-bx1.0c19-tcl.o:tcl
 .endif
 
 .if defined(WITH_XMMS)
@@ -145,22 +143,6 @@ pre-fetch:
 .endif # WITH_TCL
 
 pre-extract:
-.if exists(${PREFIX}/bin/gpg)
-	@${MKDIR} ${WRKDIR}
-	@${ECHO_CMD} "===> Verifying GnuPG Signatures."
-	-gpg --keyserver pgp.mit.edu --no-default-keyring \
-		--keyring ${WRKDIR}/keyring --recv-key 42D1F77C
-	cd ${DISTDIR}; gpg --keyring ${WRKDIR}/keyring --verify \
-		ircii-pana-${PORTVERSION}-final${EXTRACT_SUFX}.sig \
-		ircii-pana-${PORTVERSION}-final${EXTRACT_SUFX}
-.if defined(WITH_TCL)
-	cd ${DISTDIR}; gpg --keyring ${WRKDIR}/keyring --verify \
-		freebsd4-tcl83-bx1.0c19-tcl.o.sig \
-		freebsd4-tcl83-bx1.0c19-tcl.o
-.endif
-.else
-	@${ECHO_CMD} "===> GnuPG not installed. Signatures can not be verified"
-.endif
 	@${ECHO_CMD} "Available switches:"
 	@${ECHO_CMD} "-------------------"
 .if !defined (WITH_XMMS)
