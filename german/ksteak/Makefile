@@ -16,8 +16,6 @@ COMMENT=	KDE frontend for steak, an english - german dictionary
 
 RUN_DEPENDS=	steak:${PORTSDIR}/german/steak
 
-CONFLICTS=	ispell-[0-9]*
-
 USE_BZIP2=	yes
 USE_KDELIBS_VER=3
 USE_GMAKE=	yes
