@@ -3,18 +3,16 @@
 # Date created:		14 March 97
 # Whom:			Lars Koeller <Lars_Koeller@odie.physik2.uni-rostock.de>
 #
-# $Id: Makefile,v 1.12 1997/03/15 12:32:52 asami Exp $
+# $Id: Makefile,v 1.15 1998/02/21 20:26:15 steve Exp $
 #
 
 DISTNAME=	xperfmon++
 PKGNAME=	xperfmon++-1.40
 CATEGORIES=     sysutils x11
-# In Germany try this
-#MASTER_SITES=	ftp://odie.physik2.uni-rostock.de/pub/
 MASTER_SITES=	ftp://proteus.arc.nasa.gov/pub/
 DISTFILES=	xperfmon++v1.1.tar.Z
 
-MAINTAINER=	Lars_Koeller@odie.physik2.uni-rostock.de
+MAINTAINER=	Lars.Koeller@Uni-Bielefeld.DE
 
 USE_IMAKE=	yes
 
