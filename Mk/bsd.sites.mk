@@ -134,7 +134,7 @@ MASTER_SITE_NETBSD+=	\
 
 MASTER_SITE_PERL_CPAN+=	\
 	ftp://ftp.digital.com/pub/plan/perl/CPAN/modules/by-module/%SUBDIR%/ \
-	ftp://ftp.cpan.org/CPAN/modules/by-module/%SUBDIR%/ \
+	ftp://ftp.cpan.org/pub/CPAN/modules/by-module/%SUBDIR%/ \
 	ftp://ftp.freesoftware.com/pub/perl/CPAN/modules/by-module/%SUBDIR%/ \
 	ftp://ftp.sourceforge.net/pub/mirrors/CPAN/modules/by-module/%SUBDIR%/ \
 	ftp://ftp.funet.fi/pub/languages/perl/CPAN/modules/by-module/%SUBDIR%/ \
