@@ -15,4 +15,12 @@ COMMENT=	A client/server based TV capture/display program
 
 RUN_DEPENDS=	wish8.4:${PORTSDIR}/x11-toolkits/tk84
 
-.include <bsd.port.mk>
+ONLY_FOR_ARCHS=	alpha i386 ia64
+
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == "alpha" && ${OSVERSION} < 500000
+IGNORE=		"cannot be build on alpha 4.x, which does not have bktr hardware support"
+.endif
+
+.include <bsd.port.post.mk>
