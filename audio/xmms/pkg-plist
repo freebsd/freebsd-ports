@@ -13,18 +13,17 @@ include/xmms/plugin.h
 include/xmms/util.h
 include/xmms/xmmsctrl.h
 lib/libxmms.a
+lib/libxmms.so
 lib/libxmms.so.1
-@exec ln -fs %D/%F %B/libxmms.so
-@unexec rm -f %B/libxmms.so
-lib/xmms/Effect/libvoice.so
 lib/xmms/Effect/libecho.so
 lib/xmms/Effect/libstereo.so
+lib/xmms/Effect/libvoice.so
 lib/xmms/General/libir.so
 lib/xmms/General/libsong_change.so
-lib/xmms/Input/libwav.so
-lib/xmms/Input/libmpg123.so
 lib/xmms/Input/libcdaudio.so
 lib/xmms/Input/libidcin.so
+lib/xmms/Input/libmpg123.so
+lib/xmms/Input/libwav.so
 %%MIKMODPLUGIN:%%lib/xmms/Input/libmikmod.so
 lib/xmms/Input/libtonegen.so
 lib/xmms/Output/libOSS.so
@@ -63,11 +62,11 @@ share/locale/wa/LC_MESSAGES/xmms.mo
 share/locale/zh_CN.GB2312/LC_MESSAGES/xmms.mo
 share/locale/zh_TW.Big5/LC_MESSAGES/xmms.mo
 share/xmms/wmxmms.xpm
-@dirrm include/xmms
-@dirrm lib/xmms/Effect
-@dirrm lib/xmms/General
-@dirrm lib/xmms/Input
-@dirrm lib/xmms/Output
-@dirrm lib/xmms/Visualization
-@dirrm lib/xmms
 @dirrm share/xmms
+@dirrm lib/xmms/Visualization
+@dirrm lib/xmms/Output
+@dirrm lib/xmms/Input
+@dirrm lib/xmms/General
+@dirrm lib/xmms/Effect
+@dirrm lib/xmms
+@dirrm include/xmms
