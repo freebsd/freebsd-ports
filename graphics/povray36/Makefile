@@ -7,6 +7,7 @@
 
 PORTNAME=	povray
 PORTVERSION=	3.5
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	ftp://ftp.povray.org/pub/povray/%SUBDIR%/ \
 		ftp://ftp.gigabell.net/pub/unix/apps/graphics/povray/%SUBDIR%/ \
@@ -18,34 +19,53 @@ DISTNAME=	povuni_s
 EXTRACT_SUFX=   .tgz
 DIST_SUBDIR=	povray35
 
-MAINTAINER=	chat95@mbox.kyoto-inet.or.jp
+MAINTAINER=	maho@FreeBSD.org
 
 LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png \
 		tiff:${PORTSDIR}/graphics/tiff \
 		jpeg:${PORTSDIR}/graphics/jpeg \
 		vga:${PORTSDIR}/graphics/svgalib
 
-WRKSRC=		${WRKDIR}/${PORTNAME}-3.50b
+WRKSRC=		${WRKDIR}/${PORTNAME}-3.50c
 USE_XLIB=	yes
 USE_REINPLACE=  yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=  yes
+
+.if defined(WITH_OPTIMIZED_FLAGS)
+CFLAGS+=	-O3 -ffast-math -finline-functions -fomit-frame-pointer -funroll-loops -fexpensive-optimizations -malign-double
+CXXFLAGS+=	-O3 -ffast-math -finline-functions -fomit-frame-pointer -funroll-loops -fexpensive-optimizations -malign-double  -Wno-multichar
+.if (${MACHINE_ARCH} == "i386")
+CFLAGS+=	-mcpu=i686 -march=i686 -mfancy-math-387
+CXXFLAGS+=	-mcpu=i686 -march=i686 -mfancy-math-387
+.endif # i386
+.endif
+
 CONFIGURE_TARGET= --target=${MACHINE_ARCH}-portbld-freebsd${OSREL}
-CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS} -L${LOCALBASE}/lib -I${LOCALBASE}/include"
+CONFIGURE_ARGS=	--x-includes=${X11BASE}/include
+CONFIGURE_ENV=	CXXFLAGS="${CXXFLAGS} -L${LOCALBASE}/lib -I${LOCALBASE}/include" \
+		CFLAGS="${CFLAGS} -L${LOCALBASE}/lib -I${LOCALBASE}/include"
 
 MAN1=		povray.1
 
 post-patch:
 	@${REINPLACE_CMD} -e 's+@PREFIX@+${PREFIX}+g;' ${WRKSRC}/povray.ini
+	@${REINPLACE_CMD} -e 's+%INSTALLDIR%+${PREFIX}/share/${PORTNAME}-${PORTVERSION}+g;' ${WRKSRC}/povray.conf
+.if !defined(WITH_OPTIMIZED_FLAGS)
+	@${ECHO} "You can optimize by setting WITH_OPTIMIZED_FLAGS=yes."
+.endif
 
 do-install:
-	@(cd ${WRKSRC} && ${GMAKE} install-exec)
-	@(cd ${WRKSRC} &&  ${GMAKE} install-data)
+	@(cd ${WRKSRC} ; ${GMAKE} install-exec)
+	@(cd ${WRKSRC} ; ${GMAKE} install-data)
 .if !defined(NOPORTDOCS)
-	@(cd ${WRKSRC} && ${GMAKE} install-docDATA)
-	@(cd ${WRKSRC}/doc && ${GMAKE} install)
+	@(cd ${WRKSRC} ; ${GMAKE} install-docDATA)
+	@(cd ${WRKSRC}/doc ; ${GMAKE} install)
 .endif
 	@${RM} -f ${PREFIX}/man/man1/povray.1*
 	@${INSTALL_MAN} ${WRKSRC}/doc/povray.1 ${PREFIX}/man/man1
+
+post-install:
+	@${SED} -e 's,/usr/local,${PREFIX},g' ${DESCR}
 
 .include <bsd.port.mk>
