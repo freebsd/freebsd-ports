@@ -3,7 +3,7 @@
 # Date created:        7 July 1997
 # Whom:                Jerry Hicks <jhicks@glenatl.glenayre.com>
 #
-# $Id: Makefile,v 1.1.1.1 1998/03/16 03:45:00 steve Exp $
+# $Id: Makefile,v 1.2 1998/11/21 17:55:43 steve Exp $
 #
 
 DISTNAME=	crossm68k-2.0
@@ -17,10 +17,8 @@ MAINTAINER=	Jerry.Hicks@Glenayre.com
 BUILD_DEPENDS=	${PREFIX}/m68k-coff/lib/crt0.o:${PORTSDIR}/devel/m68knewlib
 RUN_DEPENDS=	m68k-coff-gdb:${PORTSDIR}/devel/m68kgdb
 
-NO_PACKAGE=	limited audience
 EXTRACT_ONLY=	# empty
 NO_BUILD=	yes
-NO_CHECKSUM=	yes
 
 do-install:	# empty
 
