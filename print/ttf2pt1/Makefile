@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	ttf2pt1
-PORTVERSION=	3.4.3
+PORTVERSION=	3.4.4
 CATEGORIES=	print
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -16,12 +16,17 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	True Type Font to Postscript Type 1 Converter
 
-LIB_DEPENDS=	freetype:${PORTSDIR}/print/freetype2
+LIB_DEPENDS=	freetype.9:${PORTSDIR}/print/freetype2
 
-FREETYPE_CONFIG?=	${LOCALBASE}/bin/freetype-config
-MAKE_ENV=	FREETYPE_CONFIG="${FREETYPE_CONFIG}"
 USE_PERL5=	yes
+MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS} ${CPPFLAGS}" LIBS="${LDFLAGS}" \
+		INSTDIR="${PREFIX}" LIBXDIR="${PREFIX}/bin"
 
-MAN1=	ttf2pt1.1 ttf2pt1_convert.1 ttf2pt1_x2gs.1
+MAN1=		ttf2pt1.1 ttf2pt1_convert.1 ttf2pt1_x2gs.1
+
+CPPFLAGS=	`pkg-config --cflags freetype2` \
+		-I${LOCALBASE}/include -DUSE_FREETYPE 
+LDFLAGS=	`pkg-config --libs freetype2` \
+		-L${LOCALBASE}/lib -lm
 
 .include <bsd.port.mk>
