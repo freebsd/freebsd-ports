@@ -2597,6 +2597,7 @@ hgrep		ports/textproc/hgrep
 highlight	ports/textproc/highlight
 hinfo		ports/net/hinfo
 histring	ports/misc/histring
+hk_classes	ports/databases/hk_classes
 hlfl		ports/security/hlfl
 hlmaster	ports/net/hlmaster
 hlserver-action	ports/games/hlserver-action
