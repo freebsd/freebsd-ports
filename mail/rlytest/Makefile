@@ -26,7 +26,7 @@ pre-patch:
 	perl -pe 's,^#!/usr/local/bin/perl$$,#!/usr/bin/perl,' < ${_DISTDIR}${DISTFILES} > ${WRKSRC}/rlytest
 
 do-build:
-	pod2man ${WRKSRC}/rlytest ${WRKSRC}/rlytest.1
+	pod2man ${WRKSRC}/rlytest > ${WRKSRC}/rlytest.1
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/rlytest ${PREFIX}/bin/
