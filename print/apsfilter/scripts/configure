@@ -2,31 +2,11 @@
 
 # $FreeBSD$
 
+# runs if BATCH is NOT defined
+
 #
 # configure - apsfilter package dependency configuration
 #
-
-if [ "${BATCH}" ]; then
-	/bin/mkdir -p ${WRKDIRPREFIX}${CURDIR}
-	: > ${WRKDIRPREFIX}${CURDIR}/Makefile.inc
-	echo "RUN_DEPENDS+=	gs:${PORTSDIR}/print/ghostscript55" \
-		>> ${WRKDIRPREFIX}${CURDIR}/Makefile.inc
-	echo "RUN_DEPENDS+=	html2ps:${PORTSDIR}/print/html2ps-letter" \
-		>> ${WRKDIRPREFIX}${CURDIR}/Makefile.inc
-	echo "RUN_DEPENDS+=	transfig:${PORTSDIR}/print/transfig" \
-		>> ${WRKDIRPREFIX}${CURDIR}/Makefile.inc
-	echo "RUN_DEPENDS+=	cjpeg:${PORTSDIR}/graphics/jpeg" \
-		>> ${WRKDIRPREFIX}${CURDIR}/Makefile.inc
-	echo "RUN_DEPENDS+=	anytopnm:${PORTSDIR}/graphics/netpbm" \
-		>> ${WRKDIRPREFIX}${CURDIR}/Makefile.inc
-	echo "RUN_DEPENDS+=	bunzip2:${PORTSDIR}/archivers/bzip2" \
-		>> ${WRKDIRPREFIX}${CURDIR}/Makefile.inc
-	echo "RUN_DEPENDS+=	a2ps:${PORTSDIR}/print/a2ps-letter" \
-		>> ${WRKDIRPREFIX}${CURDIR}/Makefile.inc
-	echo "RUN_DEPENDS+=	psnup:${PORTSDIR}/print/psutils-letter" \
-		>> ${WRKDIRPREFIX}${CURDIR}/Makefile.inc
-	exit
-fi
 
 /usr/bin/dialog --title "supported file types" --clear \
 	--checklist "\n\

@@ -13,6 +13,16 @@ MASTER_SITES=	http://www.FreeBSD.org/~andreas/apsfilter/download/
 MAINTAINER=	andreas@FreeBSD.org
 
 RUN_DEPENDS=	recode:${PORTSDIR}/converters/recode
+.if defined(BATCH)
+RUN_DEPENDS+=	gs:${PORTSDIR}/print/ghostscript55
+RUN_DEPENDS+=	html2ps:${PORTSDIR}/print/html2ps-letter
+RUN_DEPENDS+=	transfig:${PORTSDIR}/print/transfig
+RUN_DEPENDS+=	cjpeg:${PORTSDIR}/graphics/jpeg
+RUN_DEPENDS+=	anytopnm:${PORTSDIR}/graphics/netpbm
+RUN_DEPENDS+=	bunzip2:${PORTSDIR}/archivers/bzip2
+RUN_DEPENDS+=	a2ps:${PORTSDIR}/print/a2ps-letter
+RUN_DEPENDS+=	psnup:${PORTSDIR}/print/psutils-letter
+.endif
 
 USE_BZIP2=	yes
 WRKSRC=		${WRKDIR}/apsfilter
@@ -20,8 +30,9 @@ WRKSRC=		${WRKDIR}/apsfilter
 # make a2ps port happy in this early stage
 PAPERSIZE?=letter
 
+.if !defined(BATCH)
 pre-configure:
-	rm -f ${WRKDIRPREFIX}${.CURDIR}/Makefile.inc
+	@${RM} -f ${WRKDIRPREFIX}${.CURDIR}/Makefile.inc
 
 # This was copied from bsd.port.mk because a missing post-clean target
 # is needed
@@ -41,6 +52,7 @@ clean:
 
 .if exists(${WRKDIRPREFIX}${.CURDIR}/Makefile.inc)
 .include "${WRKDIRPREFIX}${.CURDIR}/Makefile.inc"
+.endif
 .endif
 
 .include <bsd.port.mk>
