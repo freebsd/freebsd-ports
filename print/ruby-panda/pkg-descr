@@ -1,0 +1,5 @@
+Ruby/Panda is a Ruby extension library to access Panda, a GPL'ed
+library for dynamically generating PDF files.
+
+Author:	Noritsugu Nakamura <nnakamur@mxq.mesh.ne.jp>
+WWW:	http://www2s.biglobe.ne.jp/~Nori/ruby/
