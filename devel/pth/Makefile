@@ -15,9 +15,8 @@ MASTER_SITE_SUBDIR=	pth
 MAINTAINER=	ports@FreeBSD.org
 
 INSTALLS_SHLIB=	yes
-HAS_CONFIGURE=	yes
-CONFIGURE_ARGS=	--prefix=${PREFIX} \
-		--enable-pthread \
+GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	--enable-pthread \
 		--enable-syscall-soft \
 		--enable-optimize \
 		--enable-batch
