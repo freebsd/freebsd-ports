@@ -5459,6 +5459,7 @@ ruby-bitvector	ports/math/ruby-bitvector
 ruby-blowfish	ports/security/ruby-blowfish
 ruby-bsearch	ports/devel/ruby-bsearch
 ruby-byaccr	ports/devel/ruby-byaccr
+ruby-calendar	ports/devel/ruby-calendar
 ruby-cdb	ports/databases/ruby-cdb
 ruby-clibpdf	ports/print/ruby-clibpdf
 ruby-csv	ports/textproc/ruby-csv
