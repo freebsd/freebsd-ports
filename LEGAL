@@ -243,6 +243,7 @@ quake106.zip		ports/games/quakeserver	Shareware
 radiator		ports/net/radiator	Commercial software
 radius*			ports/net/radius	Binary redistribution only,
 						no fee allowed
+rar-*			ports/archivers/rar	Only unmodified original package can be distributed
 rarlnx*			ports/archivers/linux_rar	Only unmodified original package can be distributed
 ringtonetools-*		ports/misc/ringtonetools	Not free for commercial orgs
 rkive3.1.tar.gz		ports/news/rkive	Restrictive copyright
