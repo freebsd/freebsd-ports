@@ -1,0 +1,49 @@
+--- Makefile.orig	Mon Dec  6 07:19:16 1999
++++ Makefile	Sun Jan  2 13:07:30 2000
+@@ -11,35 +11,38 @@
+ #
+ 
+ #customize to fit your needs (it does not work for now).
+-architecture=-DPC_ARCHI
++#architecture=-DPC_ARCHI
++module_file=-DMODULE_FILE_PREFIX=\"$(PREFIX)/share/rubix/\"
+ 
+ #SOLARIS=-lsocket
+ 
+-CC=gcc
+-CFLAGS=-Wall -O3 -fomit-frame-pointer -ffast-math -Iplayer \
+-	$(architecture)
++CC?=gcc
++CFLAGS+=-Wall -fomit-frame-pointer -ffast-math -Iplayer \
++	$(architecture) $(module_file)
+ #CFLAGS=-Wall -g -ffast-math -Iplayer \
+ #	$(architecture)
+-XINC=-I/usr/X11R6/include
+-XLIB=-L/usr/X11R6/lib -lX11
++XINC=-I$(PREFIX)/include
++XLIB=-L$(PREFIX)/lib -lX11
+ 
+ #the following should not be changed.
+ 
+ OBJ=cube.o event.o fillpoly.o line.o main.o screen.o sound.o player/player.a
+ 
++all: rubix
++
+ rubix : $(OBJ)
+ 	$(CC) $(CFLAGS) -o $@ $^ -lm $(XLIB) $(SOLARIS)
+ #	strip rubix
+ 
+ clean :
+ 	rm -f *.o *~ core *.bak *.dat gmon.out
+-	(cd player; make clean)
++	(cd player; $(GMAKE) clean)
+ 
+ dep :
+ 	makedepend -Y *.c -s"#I like the GNU tools" -Iplayer
+ 
+ player/player.a : player/*.c player/*.h
+-	(cd player; make)
++	(cd player; $(GMAKE))
+ 
+ %.o : %.c
+ 	$(CC) $(CFLAGS) $(XINC) -c -o $@ $<

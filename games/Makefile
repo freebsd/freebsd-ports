@@ -107,6 +107,7 @@
     SUBDIR += quakeserver
     SUBDIR += rocksndiamonds
     SUBDIR += rollemup
+    SUBDIR += rubix
     SUBDIR += seabattle
     SUBDIR += seahaven
     SUBDIR += sl

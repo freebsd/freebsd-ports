@@ -1,0 +1,9 @@
+bin/rubix
+share/rubix/module.xm
+share/rubix/AUTHORS
+share/rubix/BUGS
+share/rubix/INSTALL
+share/rubix/NOISE
+share/rubix/README
+share/rubix/TODO
+@dirrm share/rubix
