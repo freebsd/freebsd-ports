@@ -1,0 +1,36 @@
+#!/bin/sh
+# $FreeBSD$
+
+PREFIX=${PKG_PREFIX:-%%PREFIX%%}
+
+DCCUSER=%%DCCUSER%%
+DCCUID=%%DCCUID%%
+DCCGROUP=%%DCCGROUP%%
+DCCGID=%%DCCGID%%
+
+if [ "$2" = "PRE-INSTALL" ]; then
+
+	if ! pw groupshow "$DCCGROUP" 2>/dev/null 1>&2; then
+		if pw groupadd $DCCGROUP -g $DCCGID; then
+			echo "=> Added group \"$DCCGROUP\"."
+		else
+			echo "=> Adding group \"$DCCGROUP\" failed..."
+			exit 1
+		fi
+	fi
+
+	if ! pw usershow "$DCCUSER" 2>/dev/null 1>&2; then
+		if pw useradd $DCCUSER -u $DCCUID -g $DCCGROUP -h - \
+			-s "/sbin/nologin" -d "/nonexistent" \
+			-c "Distributed Checksum Clearinghouse"; \
+		then
+			echo "=> Added user \"$DCCUSER\"."
+		else
+			echo "=> Adding user \"$DCCUSER\" failed..."
+			exit 1
+		fi
+	fi
+
+fi
+
+exit 0
