@@ -1200,3 +1200,12 @@ www/mod_php4-twig|www/mod_php4|2004-07-19|Useless with the new PHP modular infra
 databases/php4-sybase|databases/php4-sybase_ct|2004-07-21|Switch to use the new working library
 databases/php5-sybase|databases/php5-sybase_ct|2004-07-21|Switch to use the new working library
 textproc/cocoon|www/cocoon|2004-07-22|Moved to better category www
+audio/mq3||2004-07-23|Obsolete QT2 Application
+devel/moonshine||2004-07-23|Obsolete QT2 Application
+devel/qtez||2004-07-23|Obsolete QT2 Application
+mail/liamail||2004-07-23|Obsolete QT2 Application
+x11-fonts/xfontselector||2004-07-23|Obsolete QT2 Application
+x11-wm/xwmm||2004-07-23|Obsolete QT2 Application
+japanese/qt23||2004-07-23|QT2 is obsolete
+x11-toolkits/qt2-static||2004-07-23|QT2 is obsolete
+x11-toolkits/qt23||2004-07-23|QT2 is obsolete
