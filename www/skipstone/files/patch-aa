@@ -1,5 +1,5 @@
---- src/Makefile.orig	Tue Jul 24 06:16:22 2001
-+++ src/Makefile	Tue Jul 24 06:16:30 2001
+--- src/Makefile.orig	Thu Nov  8 14:34:21 2001
++++ src/Makefile	Thu Nov  8 14:34:51 2001
 @@ -7,7 +7,7 @@
  DOWNLOADOBJS = skipdownload.o
  PROG = skipstone
