@@ -14,8 +14,6 @@ MASTER_SITES=	http://www.false.com/security/john/ \
 
 MAINTAINER=	obrien@FreeBSD.org
 
-RESTRICTED=	"contains crypto (crypt())"
-
 .include <bsd.port.pre.mk>
 
 OSNAME=		${OPSYS:S/F/f/:S/N/n/:S/O/o/:S/B/b/:S/S/s/:S/D/d/}
