@@ -9,8 +9,7 @@
 DISTNAME=	bluefish-0.3.5
 CATEGORIES=	www editors
 MASTER_SITES=	http://bluefish.linuxbox.com/download/ \
-		http://student.wau.nl/~olivier/bluefish/download/ \
-		http://ha-pc.cheque.uq.edu.au/download/
+		http://student.wau.nl/~olivier/bluefish/download/
 
 MAINTAINER=	jim@FreeBSD.org
 
