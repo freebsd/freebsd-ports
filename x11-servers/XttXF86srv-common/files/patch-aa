@@ -1,29 +1,11 @@
---- Makefile.orig	Thu Oct 28 18:13:31 1999
-+++ Makefile	Fri Oct 29 10:04:43 1999
-@@ -56,7 +56,8 @@
- 		    echo "" > $(IRULESRC)/host.def; \
- 		fi; \
- 	    fi; \
--	fi
-+	fi	
-+	@echo "#include \"host.def.local\"" >> $(IRULESRC)/host.def
- 	cd $(IMAKESRC) && $(MAKE) $(FLAGS) clean
- 	$(MAKE) $(MFLAGS) Makefile.boot
- 	$(MAKE_CMD) $(MFLAGS) VerifyOS
-@@ -207,7 +208,7 @@
- 	@echo "#define IncludeFlags -I`pwd`/exports/include"\
- 		>> $(IRULESRC)/host.def
- 	@echo "#define BuildFontServerOnly YES" >> $(IRULESRC)/host.def
--	@echo "$(EXTRA_HOST_DEF)" >> $(IRULESRC)/host.def
-+	@echo "#include \"host.def.local\"" >> $(IRULESRC)/host.def
- 	imake  -I$(IRULESRC) $(IMAKE_DEFINES) $(IMAKE_EXTRA_OPTS) -s xmakefile -DTOPDIR=$(TOP) -DCURDIR=$(CURRENT_DIR) -DUseInstalled
- 	$(MAKE) $(MFLAGS) Makefiles
- 	$(MAKE) $(MFLAGS) clean
-@@ -234,6 +235,7 @@
- 	@echo "#define IncludeFlags -I`pwd`/exports/include"\
- 		>> $(IRULESRC)/host.def
- 	@echo "#define BuildFontLibOnly YES" >> $(IRULESRC)/host.def
-+	@echo "#include \"host.def.local\"" >> $(IRULESRC)/host.def
- 	imake  -I$(IRULESRC) $(IMAKE_DEFINES) $(IMAKE_EXTRA_OPTS) -s xmakefile -DTOPDIR=$(TOP) -DCURDIR=$(CURRENT_DIR) -DUseInstalled
- 	$(MAKE) $(MFLAGS) Makefiles
- 	$(MAKE) $(MFLAGS) clean
+--- programs/Xserver/Imakefile.ORIG	Sun Nov 14 18:16:17 1999
++++ programs/Xserver/Imakefile	Sun Nov 14 18:17:24 1999
+@@ -161,7 +161,7 @@
+         SYSLIBS = $(ZLIB) MathLibrary Krb5Libraries DBMLibrary $(EXTRASYSLIBS)
+ #endif
+ #if HasPam
+-	PAMLIBS = -lpam -lpam_misc -ldl
++        PAMLIBS = -lpam
+ #endif
+            CBRT = mi/LibraryTargetName(cbrt)
+         STDDIRS = include dix os mi $(XPDDXDIR) $(EXTDIRS)

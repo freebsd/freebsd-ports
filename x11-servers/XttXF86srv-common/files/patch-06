@@ -1,0 +1,26 @@
+diff -ur /usr/ports/x11/XFree86/work/xc/programs/Xserver/hw/xfree86/common/compiler.h programs/Xserver/hw/xfree86/common/compiler.h
+--- /usr/ports/x11/XFree86/work/xc/programs/Xserver/hw/xfree86/common/compiler.h	Mon Oct 19 21:39:32 1998
++++ programs/Xserver/hw/xfree86/common/compiler.h	Tue Dec  8 10:58:16 1998
+@@ -145,7 +145,21 @@
+   return _inl(port);
+ }
+ 
+-# else /* defined(linux) */
++# elif defined(__FreeBSD__)
++/* for FreeBSD on Alpha, we use the libio inx/outx routines */
++/* note that the appropriate setup via "ioperm" needs to be done */
++/*  *before* any inx/outx is done. */
++
++#include <sys/types.h>
++
++extern void outb(u_int32_t port, u_int8_t val);
++extern void outw(u_int32_t port, u_int16_t val);
++extern void outl(u_int32_t port, u_int32_t val);
++extern u_int8_t inb(u_int32_t port);
++extern u_int16_t inw(u_int32_t port);
++extern u_int32_t inl(u_int32_t port);
++
++# else /* defined(__FreeBSD__) */
+ 
+ #define outb(a, b)             /* NOP */
+ #define outw(a, b)             /* NOP */

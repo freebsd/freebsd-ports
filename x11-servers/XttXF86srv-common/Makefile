@@ -8,10 +8,10 @@
 PORTNAME?=	xtt-common
 PORTVERSION=	${VERSION}.${PATCHLEVEL}
 CATEGORIES=	x11-servers
-MASTER_SITES=	ftp://ftp.xfree86.org/pub/XFree86/3.3.5/source/ \
-		ftp://ftp.freesoftware.com/pub/XFree86/3.3.5/source/ \
-		http://X-TT.dsl.gr.jp/dists/1.x/1.3/
-DISTFILES=	X335src-1.tgz xtt-1.3.tgz
+MASTER_SITES=	ftp://ftp.xfree86.org/pub/XFree86/3.3.6/source/ \
+		ftp://ftp.freesoftware.com/pub/XFree86/3.3.6/source/ \
+		http://X-TT.dsl.gr.jp/dists/1.x/${VERSION}/
+DISTFILES=	X336src-1.tgz xtt-${VERSION}.tgz
 
 MAINTAINER=	taguchi@tohoku.iij.ad.jp
 
@@ -33,7 +33,7 @@ DISTFILES+=	Wraphelp.c
 IGNOREFILES=	Wraphelp.c
 .endif
 USE_X_PREFIX=	YES
-EXTRACT_ONLY=	X335src-1.tgz xtt-1.3.tgz
+EXTRACT_ONLY=	X336src-1.tgz xtt-${VERSION}.tgz
 BINOWN=		root
 BINGRP=		wheel
 MASTERDIR?=	${.CURDIR}/../XttXF86srv-common
@@ -44,7 +44,7 @@ WRKDIR=		${MASTERDIR}/work
 .endif
 WRKSRC=		${WRKDIR}/xc
 DIST_SUBDIR=	xc
-XTTDIR=		${WRKDIR}/xtt-1.3
+XTTDIR=		${WRKDIR}/xtt-${VERSION}
 .if !defined(PATCH_DEBUG)
 XTTPATCHARGS=	-p1 -E -t -s -N
 .else
@@ -138,6 +138,7 @@ pre-extract:
 
 pre-patch:
 	@( cd ${WRKSRC}; \
+	   ${PATCH} -s < ${PATCHDIR}/xttpatch ; \
 	   for i in ${COREPATCHES} ; do \
 		${PATCH} ${XTTPATCHARGS} < ${XTTDIR}/$${i}; \
 	   done; \

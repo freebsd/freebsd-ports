@@ -1,0 +1,12 @@
+diff -ur /usr/ports/x11/XFree86/work/xc/programs/Xserver/hw/xfree86/common_hw/BUSmemcpy.c programs/Xserver/hw/xfree86/common_hw/BUSmemcpy.c
+--- /usr/ports/x11/XFree86/work/xc/programs/Xserver/hw/xfree86/common_hw/BUSmemcpy.c	Sun Nov 24 09:55:37 1996
++++ programs/Xserver/hw/xfree86/common_hw/BUSmemcpy.c	Tue Dec  8 10:05:56 1998
+@@ -299,8 +299,6 @@
+  * "bge reg, xx"). I hope alpha-gcc will be fixed to notice this eventually..
+  */
+ 
+-#include <linux/types.h>
+-
+ /*
+  * This should be done in one go with ldq_u*2/mask/stq_u. Do it
+  * with a macro so that we can fix it up later..

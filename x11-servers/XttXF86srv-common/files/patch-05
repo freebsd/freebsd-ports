@@ -1,0 +1,12 @@
+diff -ur /usr/ports/x11/XFree86/work/xc/programs/Xserver/hw/xfree86/accel/s3/s3im.c programs/Xserver/hw/xfree86/accel/s3/s3im.c
+--- /usr/ports/x11/XFree86/work/xc/programs/Xserver/hw/xfree86/accel/s3/s3im.c	Fri Nov 13 14:15:12 1998
++++ programs/Xserver/hw/xfree86/accel/s3/s3im.c	Wed Dec  9 10:29:01 1998
+@@ -51,7 +51,7 @@
+ 	(a & 0x02) << 5 | \
+ 	(a & 0x01) << 7;
+ 
+-#ifdef __alpha__
++#if defined(__alpha__) && defined(linux)
+ extern Bool isJensen;
+ #define MemToBusBase(Base,dst,src,count) { if(isJensen) JensenMemToBus(Base,dst,src,count); else MemToBus(&Base[dst],src,count); }
+ #define BusToMemBase(dst,Base,src,count) { if(isJensen) JensenBusToMem(Base,dst,src,count); else BusToMem(dst,&Base[src],count); }

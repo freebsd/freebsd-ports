@@ -1,0 +1,398 @@
+diff -ur /usr/ports/x11/XFree86/work/xc/programs/Xserver/hw/xfree86/os-support/bsd/bsd_video.c programs/Xserver/hw/xfree86/os-support/bsd/bsd_video.c
+--- /usr/ports/x11/XFree86/work/xc/programs/Xserver/hw/xfree86/os-support/bsd/bsd_video.c	Mon Feb 16 00:42:01 1998
++++ programs/Xserver/hw/xfree86/os-support/bsd/bsd_video.c	Tue Dec  8 10:05:56 1998
+@@ -40,6 +40,13 @@
+ #define MAP_FLAGS (MAP_FILE | MAP_SHARED)
+ #endif
+ 
++#ifdef __alpha__
++extern u_int64_t dense_base();
++#define BUS_BASE	dense_base()
++#else
++#define BUS_BASE	0L
++#endif
++
+ /***************************************************************************/
+ /* Video Memory Mapping section                                            */
+ /***************************************************************************/
+@@ -77,7 +84,7 @@
+ 	{
+ 	    /* Try to map a page at the VGA address */
+ 	    base = (pointer)mmap((caddr_t)0, 4096, PROT_READ|PROT_WRITE,
+-				 MAP_FLAGS, fd, (off_t)0xA0000);
++				 MAP_FLAGS, fd, (off_t)0xA0000 + BUS_BASE);
+ 	
+ 	    if (base != (pointer)-1)
+ 	    {
+@@ -147,7 +154,6 @@
+ #endif
+ }
+ 
+-
+ pointer 
+ xf86MapVidMem(ScreenNum, Region, Base, Size)
+ int ScreenNum;
+@@ -160,6 +166,10 @@
+ 	if (!devMemChecked)
+ 		checkDevMem(FALSE);
+ 
++#ifdef __alpha__
++	Base = (pointer)((unsigned long)Base & ((1L<<32) - 1));
++#endif
++
+ 	if (useDevMem)
+ 	{
+ 	    if (devMemFd < 0) 
+@@ -169,7 +179,7 @@
+ 	    }
+ 	    base = (pointer)mmap((caddr_t)0, Size, PROT_READ|PROT_WRITE,
+ 				 MAP_FLAGS, devMemFd,
+-				 (off_t)(unsigned long) Base);
++				 (off_t)(unsigned long) Base + BUS_BASE);
+ 	    if (base == (pointer)-1)
+ 	    {
+ 		FatalError("%s: could not mmap %s [s=%x,a=%x] (%s)\n",
+@@ -195,11 +205,14 @@
+ 	}
+ 	base = (pointer)mmap(0, Size, PROT_READ|PROT_WRITE, MAP_FLAGS,
+ 			     xf86Info.screenFd,
+-#ifdef __mips__
+-			     (unsigned long)Base);
++#if defined(__alpha__)
++			     (unsigned long)Base + BUS_BASE
++#elif defined(__mips__)
++			     (unsigned long)Base
+ #else
+-			     (unsigned long)Base - 0xA0000);
++			     (unsigned long)Base - 0xA0000
+ #endif
++			     );
+ 	if (base == (pointer)-1)
+ 	{
+ 	    FatalError("xf86MapVidMem: Could not mmap /dev/vga (%s)\n",
+@@ -397,7 +410,73 @@
+ 		ErrorF("EnableIOPorts: failed to open %s (%s)\n",
+ 			"/dev/ttyC0", strerror(errno));
+ 	}
+-	
++
++	ExtendedEnabled = TRUE;
++
++	return;
++}
++
++void
++xf86DisableIOPorts(ScreenNum)
++int ScreenNum;
++{
++	int i;
++
++	ScreenEnabled[ScreenNum] = FALSE;
++
++	return;
++}
++
++void xf86DisableIOPrivs()
++{
++}
++
++#endif /* USE_ARC_MMAP */
++
++#ifdef USE_ALPHA_PORTS
++
++static Bool ScreenEnabled[MAXSCREENS];
++static Bool ExtendedEnabled = FALSE;
++static Bool InitDone = FALSE;
++
++void
++xf86ClearIOPortList(ScreenNum)
++int ScreenNum;
++{
++	if (!InitDone)
++	{
++		int i;
++		for (i = 0; i < MAXSCREENS; i++)
++			ScreenEnabled[i] = FALSE;
++		InitDone = TRUE;
++	}
++	return;
++}
++
++void
++xf86AddIOPorts(ScreenNum, NumPorts, Ports)
++int ScreenNum;
++int NumPorts;
++unsigned *Ports;
++{
++	return;
++}
++
++void
++xf86EnableIOPorts(ScreenNum)
++int ScreenNum;
++{
++	int i;
++	int fd;
++	pointer base;
++
++	ScreenEnabled[ScreenNum] = TRUE;
++
++	if (ExtendedEnabled)
++		return;
++
++	ioperm(0, 65536, TRUE);
++
+ 	ExtendedEnabled = TRUE;
+ 
+ 	return;
+@@ -411,6 +490,8 @@
+ 
+ 	ScreenEnabled[ScreenNum] = FALSE;
+ 
++	ioperm(0, 65536, FALSE);
++
+ 	return;
+ }
+ 
+@@ -428,7 +509,7 @@
+ xf86DisableInterrupts()
+ {
+ 
+-#if !defined(__mips__)
++#if !defined(__mips__) && !defined(__alpha__)
+ #ifdef __GNUC__
+ 	__asm__ __volatile__("cli");
+ #else 
+@@ -443,7 +524,7 @@
+ xf86EnableInterrupts()
+ {
+ 
+-#if !defined(__mips__)
++#if !defined(__mips__) && !defined(__alpha__)
+ #ifdef __GNUC__
+ 	__asm__ __volatile__("sti");
+ #else 
+@@ -453,3 +534,223 @@
+ 
+ 	return;
+ }
++
++#if defined(__alpha__)
++
++#if 0
++
++#include <machine/sysarch.h>
++
++#define SPARSE_SHIFT 5
++
++static pointer sparseMappedVirt;
++static unsigned long sparseMappedPhys;
++
++pointer xf86MapVidMemSparse(ScreenNum, Region, Base, Size)
++int ScreenNum;
++int Region;
++pointer Base;
++unsigned long Size;
++{
++	pointer base;
++      	int fd;
++
++	sparseMappedPhys = (unsigned long) Base;
++
++	Size <<= SPARSE_SHIFT;
++	Base = (pointer)((sparseMappedPhys & ~_bus_hae_mask()) << SPARSE_SHIFT);
++
++	if ((fd = open("/dev/mem", O_RDWR)) < 0)
++	{
++		FatalError("xf86MapVidMem: failed to open /dev/mem (%s)\n",
++			   strerror(errno));
++	}
++	/* This requirers linux-0.99.pl10 or above */
++	base = (pointer)mmap((caddr_t)0, Size,
++			     PROT_READ | PROT_WRITE,
++			     MAP_SHARED, fd,
++			     (off_t)Base + _bus_base_sparse());
++	close(fd);
++	if ((long)base == -1)
++	{
++		FatalError("xf86MapVidMem: Could not mmap framebuffer (%s)\n",
++			   strerror(errno));
++	}
++
++	/*
++	 * This enables user HAE settings for this process.
++	 */
++	alpha_sethae(0);
++
++	sparseMappedVirt = base;
++
++	return base;
++}
++
++void xf86UnMapVidMemSparse(ScreenNum, Region, Base, Size)
++int ScreenNum;
++int Region;
++pointer Base;
++unsigned long Size;
++{
++	Size <<= SPARSE_SHIFT;
++
++	munmap((caddr_t)Base, Size);
++}
++
++#define vuip    volatile unsigned int *
++
++static void
++setupAddress(Offset)
++unsigned long Offset;
++{
++	unsigned long phys = sparseMappedPhys + Offset;
++	alpha_sethae(phys & _bus_hae_mask());
++}
++
++int xf86ReadSparse8(Base, Offset)
++pointer Base;
++unsigned long Offset;
++{
++    unsigned long result, shift;
++
++    shift = (Offset & 0x3) * 8;
++    setupAddress(Offset);
++    result = *(vuip) ((unsigned long)Base + (Offset << SPARSE_SHIFT));
++    result >>= shift;
++    return 0xffUL & result;
++}
++
++int xf86ReadSparse16(Base, Offset)
++pointer Base;
++unsigned long Offset;
++{
++    unsigned long result, shift;
++
++    shift = (Offset & 0x2) * 8;
++    setupAddress(Offset);
++    result = *(vuip)((unsigned long)Base+(Offset<<SPARSE_SHIFT)+(1<<(SPARSE_SHIFT-2)));
++    result >>= shift;
++    return 0xffffUL & result;
++}
++
++int xf86ReadSparse32(Base, Offset)
++pointer Base;
++unsigned long Offset;
++{
++    unsigned long result;
++
++    setupAddress(Offset);
++    result = *(vuip)((unsigned long)Base+(Offset<<SPARSE_SHIFT)+(3<<(SPARSE_SHIFT-2)));
++    return result;
++}
++
++void xf86WriteSparse8(Value, Base, Offset)
++int Value;
++pointer Base;
++unsigned long Offset;
++{
++    unsigned int b = Value & 0xffU;
++
++    setupAddress(Offset);
++    *(vuip) ((unsigned long)Base + (Offset << SPARSE_SHIFT)) = b * 0x01010101;
++}
++
++void xf86WriteSparse16(Value, Base, Offset)
++int Value;
++pointer Base;
++unsigned long Offset;
++{
++    unsigned int w = Value & 0xffffU;
++
++    setupAddress(Offset);
++    *(vuip)((unsigned long)Base+(Offset<<SPARSE_SHIFT)+(1<<(SPARSE_SHIFT-2))) =
++      w * 0x00010001;
++}
++
++void xf86WriteSparse32(Value, Base, Offset)
++int Value;
++pointer Base;
++unsigned long Offset;
++{
++    setupAddress(Offset);
++    *(vuip)((unsigned long)Base+(Offset<<SPARSE_SHIFT)+(3<<(SPARSE_SHIFT-2))) = Value;
++}
++
++#else
++
++extern void *map_memory(u_int32_t address, u_int32_t size);
++extern void unmap_memory(void *handle, u_int32_t size);
++extern u_int8_t readb(void *handle, u_int32_t offset);
++extern u_int16_t readw(void *handle, u_int32_t offset);
++extern u_int32_t readl(void *handle, u_int32_t offset);
++extern void writeb(void *handle, u_int32_t offset, u_int8_t val);
++extern void writew(void *handle, u_int32_t offset, u_int16_t val);
++extern void writel(void *handle, u_int32_t offset, u_int32_t val);
++
++pointer xf86MapVidMemSparse(ScreenNum, Region, Base, Size)
++int ScreenNum;
++int Region;
++pointer Base;
++unsigned long Size;
++{
++	return (pointer) map_memory((u_int32_t) (u_int64_t) Base, Size);
++}
++
++void xf86UnMapVidMemSparse(ScreenNum, Region, Base, Size)
++int ScreenNum;
++int Region;
++pointer Base;
++unsigned long Size;
++{
++	unmap_memory(Base, Size);
++}
++
++int xf86ReadSparse8(Base, Offset)
++pointer Base;
++unsigned long Offset;
++{
++	return readb(Base, Offset);
++}
++
++int xf86ReadSparse16(Base, Offset)
++pointer Base;
++unsigned long Offset;
++{
++	return readw(Base, Offset);
++}
++
++int xf86ReadSparse32(Base, Offset)
++pointer Base;
++unsigned long Offset;
++{
++	return readl(Base, Offset);
++}
++
++void xf86WriteSparse8(Value, Base, Offset)
++int Value;
++pointer Base;
++unsigned long Offset;
++{
++	writeb(Base, Offset, Value);
++}
++
++void xf86WriteSparse16(Value, Base, Offset)
++int Value;
++pointer Base;
++unsigned long Offset;
++{
++	writel(Base, Offset, Value);
++}
++
++void xf86WriteSparse32(Value, Base, Offset)
++int Value;
++pointer Base;
++unsigned long Offset;
++{
++	writel(Base, Offset, Value);
++}
++
++#endif
++
++#endif /* __alpha__ */
