@@ -18,7 +18,7 @@ DISTNAME=	${PORTNAME}-NG-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A network sniffer/interceptor/injector/logger for switched LANs
 
-BUILD_DEPENDS=	${LOCALBASE}/lib/libnet.a:${PORTSDIR}/net/libnet-devel
+BUILD_DEPENDS=	${LOCALBASE}/include/libnet/libnet-types.h:${PORTSDIR}/net/libnet-devel
 .if !defined(WITHOUT_PCRE)
 LIB_DEPENDS=	pcre.0:${PORTSDIR}/devel/pcre
 .endif
