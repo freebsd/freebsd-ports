@@ -440,9 +440,6 @@ USE_GNOME=	esound
 .if defined(USE_IMLIB)
 USE_GNOME=	imlib
 .endif
-.if defined(USE_GLIB)
-USE_GNOME=	glib12
-.endif
 
 # Hack USE_GNOME to the modular infrastructure for port maintainers that
 # didn't do so themselves.  This will allow us to get rid of the old
