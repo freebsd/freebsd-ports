@@ -1,4 +1,5 @@
 lib/perl5/site_perl/%%PERL_VER%%/PGP/Sign.pm
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/PGP/Sign/.packlist
 @dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/PGP/Sign
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/PGP
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/PGP 2>/dev/null || true
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/PGP 2>/dev/null || true

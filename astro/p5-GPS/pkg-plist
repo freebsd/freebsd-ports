@@ -6,7 +6,11 @@ lib/perl5/site_perl/%%PERL_VER%%/GPS/Serial.pm
 lib/perl5/site_perl/%%PERL_VER%%/auto/GPS/Garmin/Handler/autosplit.ix
 lib/perl5/site_perl/%%PERL_VER%%/auto/GPS/Garmin/autosplit.ix
 lib/perl5/site_perl/%%PERL_VER%%/auto/GPS/Serial/autosplit.ix
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/GPS/Garmin
 @dirrm lib/perl5/site_perl/%%PERL_VER%%/auto/GPS/Garmin/Handler
 @dirrm lib/perl5/site_perl/%%PERL_VER%%/auto/GPS/Garmin
 @dirrm lib/perl5/site_perl/%%PERL_VER%%/auto/GPS/Serial
 @dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/GPS/Garmin
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/GPS 2>/dev/null || true
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/GPS 2>/dev/null || true
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/auto/GPS 2>/dev/null || true

@@ -1,2 +1,5 @@
-lib/perl5/site_perl/5.005/LJ/TextMessage.pm
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/LJ
+lib/perl5/site_perl/%%PERL_VER%%/LJ/TextMessage.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/LJ/TextMessage/.packlist
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/LJ/TextMessage
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/LJ 2>/dev/null || true
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/LJ 2>/dev/null || true

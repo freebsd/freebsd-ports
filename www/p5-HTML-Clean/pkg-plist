@@ -3,7 +3,10 @@ lib/perl5/site_perl/%%PERL_VER%%/HTML/Clean.pm
 @unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/HTML 2>/dev/null || true
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/HTML/Clean/.packlist
 @dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/HTML/Clean
-@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/HTML 2>/dev/null|| true
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/HTML 2>/dev/null || true
 lib/perl5/site_perl/%%PERL_VER%%/auto/HTML/Clean/autosplit.ix
 @dirrm lib/perl5/site_perl/%%PERL_VER%%/auto/HTML/Clean
 @unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/auto/HTML 2>/dev/null || true
+@unexec rmdir %D/lib/perl5/%%PERL_VERSION%%/man/man3 2>/dev/null || true
+@unexec rmdir %D/lib/perl5/%%PERL_VERSION%%/man/man1 2>/dev/null || true
+@unexec rmdir %D/lib/perl5/%%PERL_VERSION%%/man 2>/dev/null || true

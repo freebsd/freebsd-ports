@@ -3,3 +3,5 @@ lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Crypt/Blowfish/.packlist
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Crypt/Blowfish/Blowfish.bs
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Crypt/Blowfish/Blowfish.so
 @dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Crypt/Blowfish
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Crypt 2>/dev/null || true
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Crypt 2>/dev/null || true

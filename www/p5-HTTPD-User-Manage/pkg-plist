@@ -11,5 +11,10 @@ lib/perl5/site_perl/%%PERL_VER%%/HTTPD/UserAdmin/SQL.pm
 lib/perl5/site_perl/%%PERL_VER%%/HTTPD/UserAdmin/Text.pm
 lib/perl5/site_perl/%%PERL_VER%%/HTTPD/UserAdmin/Text/cern.pm
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/HTTPD-Tools/.packlist
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/HTTPD
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/HTTPD/UserAdmin/Text
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/HTTPD/UserAdmin
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/HTTPD/GroupAdmin/Text
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/HTTPD/GroupAdmin/DBM
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/HTTPD/GroupAdmin
 @dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/HTTPD-Tools
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/HTTPD 2>/dev/null || true

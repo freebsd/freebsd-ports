@@ -3,3 +3,5 @@ bin/MsgFormat
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Locale/PGetText/.packlist
 lib/perl5/site_perl/%%PERL_VER%%/Locale/PGetText.pm
 @dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Locale/PGetText
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Locale 2>/dev/null || true
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/Locale 2>/dev/null || true
