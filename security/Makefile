@@ -400,6 +400,7 @@
     SUBDIR += vlock
     SUBDIR += vlog
     SUBDIR += vncrypt
+    SUBDIR += vpnc
     SUBDIR += vpnd
     SUBDIR += vscan
     SUBDIR += xca

@@ -1,0 +1,5 @@
+sbin/vpnc
+etc/vpnc.conf.sample
+etc/rc.d/vpnc.sh.sample
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
