@@ -7,9 +7,10 @@
 #
 
 PORTNAME=	mahjong
-PORTVERSION=	1.3.2
+PORTVERSION=	1.4
 CATEGORIES=	games net
-MASTER_SITES=	http://www.stevens-bradfield.com/MahJong/Source/
+MASTER_SITES=	http://www.stevens-bradfield.com/MahJong/Source/ \
+		http://www.stevens-bradfield.com/MahJong/Source/Old/
 DISTNAME=	mj-${PORTVERSION}-src
 
 MAINTAINER=	ports@FreeBSD.org
