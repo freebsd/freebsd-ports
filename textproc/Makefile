@@ -7,6 +7,7 @@
     SUBDIR += c2html
     SUBDIR += catdoc
     SUBDIR += cocoon
+    SUBDIR += code2html
     SUBDIR += dict
     SUBDIR += docbook
     SUBDIR += docbook-241
