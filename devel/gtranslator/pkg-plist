@@ -1,10 +1,5 @@
 bin/gtranslator
 bin/pozilla.sh
-etc/gconf/gconf.xml.defaults/apps/gtranslator/%gconf.xml
-etc/gconf/gconf.xml.defaults/apps/gtranslator/history/%gconf.xml
-etc/gconf/gconf.xml.defaults/schemas/apps/gtranslator/%gconf.xml
-etc/gconf/gconf.xml.defaults/schemas/apps/gtranslator/history/%gconf.xml
-etc/gconf/schemas/gtranslator.schemas
 lib/gtranslator/backends/docbook.xml
 lib/gtranslator/backends/docbook/docbook.so
 lib/gtranslator/backends/text.xml
@@ -13,6 +8,7 @@ share/gnome/apps/Development/gtranslator.desktop
 share/gnome/gtranslator/colorschemes/arek.xml
 share/gnome/gtranslator/colorschemes/boom-boom.xml
 share/gnome/gtranslator/colorschemes/clean.xml
+share/gnome/gtranslator/colorschemes/curlymonster.xml
 share/gnome/gtranslator/colorschemes/default.xml
 share/gnome/gtranslator/colorschemes/extremely-kabalak.xml
 share/gnome/gtranslator/colorschemes/kabalak.xml
@@ -20,13 +16,18 @@ share/gnome/gtranslator/colorschemes/kbabel.xml
 share/gnome/gtranslator/colorschemes/menesis.xml
 share/gnome/gtranslator/colorschemes/mmc.xml
 share/gnome/gtranslator/colorschemes/nizuu.xml
+share/gnome/gtranslator/colorschemes/pdmc.xml
 share/gnome/gtranslator/colorschemes/sepia.xml
 share/gnome/gtranslator/colorschemes/spiffE.xml
+share/gnome/gtranslator/colorschemes/thinice.xml
+share/gnome/gtranslator/colorschemes/toyfactory.xml
 share/gnome/gtranslator/colorschemes/tuey.xml
 share/gnome/gtranslator/colorschemes/vim.xml
 share/gnome/gtranslator/colorschemes/waliays.xml
+share/gnome/gtranslator/colorschemes/yef.xml
 share/gnome/gtranslator/colorschemes/zuper.xml
 share/gnome/gtranslator/etspecs/messages-table.etspec
+share/gnome/gtranslator/scripts/build-gtranslator-learn-buffer.sh
 share/gnome/gtranslator/scripts/cleanup-gtranslator-settings.sh
 share/gnome/gtranslator/scripts/my-update.sh
 share/gnome/help/gtranslator/C/authors.html
@@ -43,7 +44,6 @@ share/gnome/help/gtranslator/C/topic.dat
 share/gnome/help/gtranslator/C/usage.html
 share/gnome/help/gtranslator/ja/authors.html
 share/gnome/help/gtranslator/ja/commandlinearguments.html
-share/gnome/help/gtranslator/ja/docbook.css
 share/gnome/help/gtranslator/ja/features.html
 share/gnome/help/gtranslator/ja/index.html
 share/gnome/help/gtranslator/ja/thanks.html
@@ -66,6 +66,7 @@ share/locale/de/LC_MESSAGES/gtranslator.mo
 share/locale/el/LC_MESSAGES/gtranslator.mo
 share/locale/en_GB/LC_MESSAGES/gtranslator.mo
 share/locale/es/LC_MESSAGES/gtranslator.mo
+share/locale/et/LC_MESSAGES/gtranslator.mo
 share/locale/eu/LC_MESSAGES/gtranslator.mo
 share/locale/fi/LC_MESSAGES/gtranslator.mo
 share/locale/fr/LC_MESSAGES/gtranslator.mo
@@ -76,10 +77,12 @@ share/locale/ja/LC_MESSAGES/gtranslator.mo
 share/locale/ko/LC_MESSAGES/gtranslator.mo
 share/locale/lt/LC_MESSAGES/gtranslator.mo
 share/locale/nl/LC_MESSAGES/gtranslator.mo
+share/locale/nn/LC_MESSAGES/gtranslator.mo
 share/locale/no/LC_MESSAGES/gtranslator.mo
 share/locale/pl/LC_MESSAGES/gtranslator.mo
 share/locale/pt_BR/LC_MESSAGES/gtranslator.mo
 share/locale/ru/LC_MESSAGES/gtranslator.mo
+share/locale/sk/LC_MESSAGES/gtranslator.mo
 share/locale/sv/LC_MESSAGES/gtranslator.mo
 share/locale/ta/LC_MESSAGES/gtranslator.mo
 share/locale/tr/LC_MESSAGES/gtranslator.mo
@@ -101,7 +104,3 @@ share/locale/zh_TW/LC_MESSAGES/gtranslator.mo
 @dirrm lib/gtranslator/backends/docbook
 @dirrm lib/gtranslator/backends
 @dirrm lib/gtranslator
-@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/gtranslator/history
-@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/gtranslator
-@dirrm etc/gconf/gconf.xml.defaults/apps/gtranslator/history
-@dirrm etc/gconf/gconf.xml.defaults/apps/gtranslator
