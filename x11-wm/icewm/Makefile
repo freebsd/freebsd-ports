@@ -34,17 +34,15 @@ CONFIGURE_ARGS=	--enable-i18n --enable-nls \
 USE_GNOME=	yes
 CONFIGURE_ARGS+=	--with-imlib --without-xpm --with-gnome-menus
 INSTALL_TARGET=		install install-gnome
-PLIST_SUB+=	GNOME=""
 .else
 USE_XPM=	yes
 CONFIGURE_ARGS+=	--without-imlib --with-xpm --without-gnome-menus
-PLIST_SUB+=	GNOME="@comment "
 .endif
 
 .if defined(NOPORTDOCS)
-PLIST_SUB+=	NODOCS="@comment "
+PLIST_SUB+=	NODOCS:="@comment "
 .else
-PLIST_SUB+=	NODOCS=""
+PLIST_SUB+=	NODOCS:=""
 .endif
 
 post-install:
