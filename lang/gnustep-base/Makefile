@@ -27,6 +27,7 @@ BROKEN=		"Sorry, this port does not work on FreeBSD-2.2.x"
 .endif
 
 PREFIX=		${LOCALBASE}/GNUstep
+PLIST_SUB+=	LOCALBASE=${LOCALBASE}
 USE_AUTOCONF=	yes
 USE_NEWGCC=	yes
 GNU_CONFIGURE=	yes
@@ -45,9 +46,13 @@ GNU_ARCH=	${MACHINE_ARCH}
 .endif
 PLIST_SUB+=	GNU_ARCH=${GNU_ARCH} OPSYS=${OPSYS:L} VERSION=${PORTVERSION} \
 		MAJORVERSION=${PORTVERSION:C/([0-9]).*/\1/1}
-ETCDIR=		${PREFIX}/../etc
+ETCDIR=		${LOCALBASE}/etc
 SYSTEMDIR=	${PREFIX}/System
 SYSLIBDIR=	${SYSTEMDIR}/Libraries/${GNU_ARCH}/${OPSYS:L}
+
+post-extract:
+	@${SED} -e "s=%%PREFIX%%=${LOCALBASE}=" ${FILESDIR}/GNUstep.sh \
+		> ${WRKSRC}/GNUstep.sh
 
 do-configure:
 	@(cd ${WRKSRC}; . ${SYSTEMDIR}/Makefiles/GNUstep.sh; \
@@ -73,8 +78,9 @@ do-install:
 		${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_FLAGS} ${MAKEFILE} ${INSTALL_TARGET})
 
 post-install:
-	@${MKDIR} ${ETCDIR}
+	-@${MKDIR} ${ETCDIR}/rc.d
 	${INSTALL_SCRIPT} ${FILESDIR}/GNUstep.sh ${ETCDIR}/rc.d
+	${INSTALL_SCRIPT} ${WRKSRC}/GNUstep.sh ${ETCDIR}/rc.d
 	${INSTALL_DATA} ${FILESDIR}/gdomap_if ${ETCDIR}
 
 .include <bsd.port.post.mk>

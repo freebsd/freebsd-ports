@@ -1,10 +1,6 @@
 #!/bin/sh
 
-if ! PREFIX=$(expr $0 : "\(/.*\)/etc/rc\.d/$(basename $0)\$"); then
-    echo "$0: Cannot determine the PREFIX" >&2
-    exit 1
-fi
-
+PREFIX=%%PREFIX%%
 IFFILE=${PREFIX}/etc/gdomap_if
 PIDFILE=/var/run/gdomap.pid
 GNUSTEP_SYSTEM_ROOT=${PREFIX}/GNUstep/System
