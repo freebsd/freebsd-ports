@@ -20,6 +20,7 @@ LIB_DEPENDS=	gpgme.9:${PORTSDIR}/security/gpgme \
 		glade-2.0.0:${PORTSDIR}/devel/libglade2
 
 USE_X_PREFIX=	yes
+USE_GMAKE=	yes
 USE_GNOMENG=	yes
 USE_GNOME=	gnomehack gnomeprefix
 GNU_CONFIGURE=	yes
