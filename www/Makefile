@@ -237,6 +237,7 @@
     SUBDIR += mod_macro
     SUBDIR += mod_mp3
     SUBDIR += mod_musicindex
+    SUBDIR += mod_mya
     SUBDIR += mod_mylo
     SUBDIR += mod_mysqluserdir
     SUBDIR += mod_pcgi2

@@ -1,0 +1,4 @@
+mod_mya is an Apache Web Server module allowing basic authentication data to be 
+stored in a MySQL database thus deprecating file based configuration.
+
+WWW: http://www.synthemesc.com/mod_mya/
