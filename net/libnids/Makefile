@@ -8,9 +8,7 @@
 PORTNAME=	libnids
 PORTVERSION=	1.16
 CATEGORIES=	net security
-#MASTER_SITES= http://www.packetfactory.net/Projects/Libnids/dist/
-# The newest version is temporarily available at..
-MASTER_SITES=  http://www.avet.com.pl/libnids/
+MASTER_SITES=	http://www.packetfactory.net/projects/libnids/dist/
 
 MAINTAINER=	roam@FreeBSD.org
 
