@@ -6,7 +6,4 @@ human readable format and totals the output.  Assumes user's
 home directory is /home/$USER and that user's mail directory is
 /var/mail/$USER
 
-WWW: http://www.maske.org/support/unix/apps/diskusage/
-
 - Douglas A. Maske
-  <maske@maske.org>
