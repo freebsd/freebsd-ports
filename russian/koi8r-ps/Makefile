@@ -23,10 +23,11 @@ DIST_SUBDIR=	koi8r-ps
 FONTMAP!=	if which gs > /dev/null 2>&1 ; then \
 			d=`gs -h  | awk '/^Search path:$$/ { nl=1; next } \
 					nl { print $$3; exit }'`; \
-			if [ -e $$d/Fontmap ] ; then \
-				${ECHO} $$d/Fontmap; \
+			if [ -e $$d/Fontmap.GS ] ; then \
+				${ECHO} $$d/Fontmap.GS; \
+			elif [ -e $$d/Fontmap ] ; then \
+				${ECHO} $$d/Fontmap \
 			else \
-				logger $$d/Fontmap; \
 				${ECHO} /nicht/ ; \
 			fi; \
 		else \
