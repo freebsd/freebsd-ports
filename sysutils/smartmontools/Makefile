@@ -7,6 +7,7 @@
 
 PORTNAME=	smartmontools
 PORTVERSION=	5.22
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -42,8 +43,10 @@ do-install:
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 500000
-IGNORE=		smartmontools currently support only FreeBSD 5.x
+.if ${OSVERSION} < 501112
+pre-everything:
+	@${ECHO} "WARNING: In order to support monitoring of ATA devices,"
+	@${ECHO} "${PORTNAME} requires 5.1-CURRENT (__FreeBSD_version 501112)."
 .endif
 
 post-install:
