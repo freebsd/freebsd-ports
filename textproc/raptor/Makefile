@@ -16,8 +16,7 @@ MASTER_SITE_SUBDIR=	librdf
 
 MAINTAINER=	ports@FreeBSD.org
 
-LIB_DEPENDS=	gnugetopt.1:${PORTSDIR}/devel/libgnugetopt \
-		xml2.5:${PORTSDIR}/textproc/libxml2 \
+LIB_DEPENDS=	xml2.5:${PORTSDIR}/textproc/libxml2 \
 		xmlparse.1:${PORTSDIR}/www/libwww
 
 LIBWWW_CONFIG=	${LOCALBASE}/bin/libwww-config
@@ -30,7 +29,12 @@ INSTALLS_SHLIB=	yes
 MAN1=		rdfdump.1
 MAN3=		libraptor.3
 
-CPPFLAGS=	-I${LOCALBASE}/include `${LIBWWW_CONFIG} --cflags`
-LDFLAGS=	-L${LOCALBASE}/lib -lgnugetopt `${LIBWWW_CONFIG} --libs`
+CPPFLAGS+=	-I${LOCALBASE}/include `${LIBWWW_CONFIG} --cflags`
+LDFLAGS+=	-L${LOCALBASE}/lib `${LIBWWW_CONFIG} --libs`
+
+.if !exists(/usr/include/getopt.h)
+LIB_DEPENDS+=	gnugetopt.1:${PORTSDIR}/devel/libgnugetopt
+LDFLAGS+=	-lgnugetopt
+.endif
 
 .include <bsd.port.mk>
