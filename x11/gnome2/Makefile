@@ -61,7 +61,7 @@ do-install:	# empty
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} == "i386" || ${OSVERSION} > 500035
+.if ${ARCH} != "amd64" && ( ${ARCH} == "i386" || ${OSVERSION} > 500035 )
 RUN_DEPENDS+=	epiphany:${PORTSDIR}/www/epiphany
 .endif
 
