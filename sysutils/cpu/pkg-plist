@@ -1,7 +1,12 @@
 bin/cpu
 etc/cpu.conf
+lib/libcpu_ldap.a
+lib/libcpu_ldap.la
+lib/libcpu_ldap.so
+lib/libcpu_ldap.so.0
 lib/libcputil.a
 lib/libcputil.la
+lib/libcputil.so
 lib/libcputil.so.0
 %%DATADIR%%/cpu.conf.doc
 %%DATADIR%%/test.ldif
