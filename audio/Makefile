@@ -78,6 +78,7 @@
     SUBDIR += gnapster
     SUBDIR += gnomeaudio
     SUBDIR += gnomemedia
+    SUBDIR += gnomemedia2
     SUBDIR += gnowavcut
     SUBDIR += gogo
     SUBDIR += gqmpeg

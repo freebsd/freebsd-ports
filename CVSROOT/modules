@@ -1947,6 +1947,7 @@ gnomekiss	ports/games/gnomekiss
 gnomelibs	ports/x11/gnomelibs
 gnomemc		ports/x11-fm/gnomemc
 gnomemedia	ports/audio/gnomemedia
+gnomemedia2	ports/audio/gnomemedia2
 gnomemeeting	ports/net/gnomemeeting
 gnomememoryblocks	ports/games/gnomememoryblocks
 gnomemimedata	ports/misc/gnomemimedata
