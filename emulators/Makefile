@@ -61,7 +61,8 @@
     SUBDIR += vmsbackup
     SUBDIR += vmware
     SUBDIR += vmware-guestd
-    SUBDIR += vmware-tools
+    SUBDIR += vmware-tools2
+    SUBDIR += vmware-tools3
     SUBDIR += vmware2
     SUBDIR += vmware_xf4mod
     SUBDIR += vpce
