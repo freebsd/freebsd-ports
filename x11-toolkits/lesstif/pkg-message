@@ -1,0 +1,3 @@
+
+Make sure to set HAVE_MOTIF=yes in /etc/make.conf
+

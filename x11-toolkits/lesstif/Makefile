@@ -3,7 +3,7 @@
 # Date created:		December 10, 1996
 # Whom:			1wardd@airmail.net
 #
-# $Id: Makefile,v 1.28 1998/12/01 09:35:13 obrien Exp $
+# $Id: Makefile,v 1.29 1999/01/16 10:17:27 dirk Exp $
 #
 
 DISTNAME=	lesstif-0.87.1
@@ -82,6 +82,7 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/clients/Motif-1.2/mwm/Mwm \
 		${PREFIX}/lib/X11/app-defaults/Mwm
 	${SETENV} OBJFORMAT=${PORTOBJFORMAT} ${LDCONFIG} -m ${PREFIX}/lib
+	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
 
