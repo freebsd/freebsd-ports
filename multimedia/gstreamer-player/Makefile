@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gstreamer
-PORTVERSION=	0.5.0
+PORTVERSION=	0.5.1
 CATEGORIES=	multimedia audio gnome
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -17,23 +17,18 @@ MAINTAINER=	lioux@FreeBSD.org
 COMMENT=	Simple yet functional mediaplayer written with GStreamer
 
 BUILD_DEPENDS=	pkg-config:${PORTSDIR}/devel/pkgconfig
-LIB_DEPENDS=	glib-2.0.200:${PORTSDIR}/devel/glib20 \
-		gconf-2.5:${PORTSDIR}/devel/gconf2 \
-		glade-2.0.0:${PORTSDIR}/devel/libglade2 \
-		gnomeui-2.200:${PORTSDIR}/x11-toolkits/libgnomeui \
-		gstreamer-0.6.0:${PORTSDIR}/multimedia/gstreamer \
+LIB_DEPENDS=	gstreamer-0.6.0:${PORTSDIR}/multimedia/gstreamer \
 		gstplay-0.6.0:${PORTSDIR}/multimedia/gstreamer-plugins \
-		gtk-x11-2.0.200:${PORTSDIR}/x11-toolkits/gtk20 \
-		pango-1.0.200:${PORTSDIR}/x11-toolkits/pango \
-		popt.0:${PORTSDIR}/devel/popt \
-		xml2.5:${PORTSDIR}/textproc/libxml2
+		popt.0:${PORTSDIR}/devel/popt
 
 USE_X_PREFIX=	yes
-USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gnomehack \
 		gnomehier \
-		gnomeprefix
+		gnomeprefix \
+		gconf2 \
+		libglade2 \
+		libgnomeui
 USE_LIBTOOL=	yes
 USE_REINPLACE=	yes
 CONFIGURE_ENV=	PKG_CONFIG=${PKG_CONFIG}
