@@ -1,0 +1,8 @@
+--- build.sh.orig	Mon Jan 12 11:18:12 1970
++++ build.sh	Sat Aug  5 21:45:24 2000
+@@ -29,4 +29,4 @@
+ echo
+ echo Starting Ant...
+ 
+-$JAVA_HOME/bin/java -Dant.home=$ANT_HOME -classpath $LOCALCLASSPATH org.apache.tools.ant.Main $*
++$JAVA_HOME/bin/java -Dant.home=$ANT_HOME -ss67108863 -oss67108863 -mx67108863 -classpath $LOCALCLASSPATH org.apache.tools.ant.Main $*

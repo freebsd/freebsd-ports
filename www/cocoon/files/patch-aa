@@ -1,0 +1,19 @@
+--- conf/cocoon.properties.orig	Mon Jan 12 11:18:12 1970
++++ conf/cocoon.properties	Fri Jul 28 18:09:27 2000
+@@ -138,7 +138,7 @@
+ # secret, we highly suggest that you protect the repository from untrusted
+ # access, even read-only. Only Cocoon and the system administrators should
+ # have access here.
+-processor.xsp.repository = ./repository
++processor.xsp.repository = /var/tmp/cocoon-repository
+ 
+ # Set the libraries associated with the given namespace.
+ # Use the syntax:
+@@ -208,6 +208,7 @@
+ #   formatter.[type].indent         = [numbers of spaces for tag indenting]
+ 
+ # HTML 4.0 (strict)
++formatter.text/html.encoding = UTF-8
+ formatter.text/html.doctype-public = -//W3C//DTD HTML 4.0//EN
+ formatter.text/html.doctype-system = http://www.w3.org/TR/REC-html40/strict.dtd
+ 
