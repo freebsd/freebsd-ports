@@ -22,7 +22,7 @@ diff -cr unroff-1.0.orig/src/Makefile unroff-1.0/src/Makefile
   
   ###  You need a C compiler that compiles ANSI C code.
 ! #CC      = gcc
-! #CFLAGS  = -Wall -pedantic -O
+! CFLAGS  += -DBSD
   
   ###  If you need additional linker flags add them here.
 ! LDFLAGS = -s

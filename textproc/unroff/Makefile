@@ -14,6 +14,7 @@ DISTNAME=	${PORTNAME}-1.0
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${PATCH1} ${PATCH2}
 
 MAINTAINER=	wosch@freebsd.org
+COMMENT=	A programmable troff translator with backend for HTML
 
 RUN_DEPENDS=	elk:${PORTSDIR}/lang/elk
 BUILD_DEPENDS=	elk:${PORTSDIR}/lang/elk
@@ -26,9 +27,10 @@ UNROFF_SITE=	http://www-rn.informatik.uni-bremen.de/software/unroff
 PATCH1=		me-misc-patch
 PATCH2=		misc-patch-2
 
+BUILD_WRKSRC=	${WRKSRC}/src
+
 MAN1=		unroff.1 unroff-html.1 unroff-html-man.1 \
 		unroff-html-me.1 unroff-html-ms.1
-MANCOMPRESSED=	yes
 
 pre-patch:
 	@${ECHO_MSG} "===>  Applying distribution patches for ${PKGNAME}"
@@ -41,5 +43,16 @@ pre-patch:
 			${ECHO_MSG} "===>   Applying distribution patch ${PATCH2}" ; \
 		fi; \
 		${PATCH} ${PATCH_DIST_ARGS} -p1 < ${PATCH2})
+
+do-install:
+	@${MKDIR} ${DATADIR}/misc
+	${INSTALL_PROGRAM} ${WRKSRC}/src/unroff ${PREFIX}/bin/unroff
+	${CP} -R ${WRKSRC}/scm ${DATADIR}
+	${INSTALL_DATA} ${WRKSRC}/doc/tmac.hyper ${WRKSRC}/misc/sample.unroff ${DATADIR}/misc
+	${INSTALL_MAN} ${WRKSRC}/doc/*.1 ${PREFIX}/man/man1
+.if !defined(NOPORTDOCS)
+	@${MKDIR} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/doc/manual.ms ${DOCSDIR}
+.endif
 
 .include <bsd.port.mk>

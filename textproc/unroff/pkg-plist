@@ -1,5 +1,4 @@
 bin/unroff
-share/unroff/doc/manual.ms
 share/unroff/misc/sample.unroff
 share/unroff/misc/tmac.hyper
 share/unroff/scm/troff.scm
@@ -14,7 +13,8 @@ share/unroff/scm/html/ms.scm
 share/unroff/scm/html/ms.scm.orig
 share/unroff/scm/misc/hyper.scm
 share/unroff/scm/misc/hyper.scm.orig
-@dirrm share/unroff/doc
+%%PORTDOCS%%share/doc/unroff/manual.ms
+%%PORTDOCS%%@dirrm share/doc/unroff
 @dirrm share/unroff/misc
 @dirrm share/unroff/scm/html
 @dirrm share/unroff/scm/misc
