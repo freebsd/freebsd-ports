@@ -7,7 +7,7 @@
 
 PORTNAME=	sgmltools-lite
 PORTVERSION=	3.0.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	textproc
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	sgmltools-lite
@@ -15,19 +15,15 @@ MASTER_SITE_SUBDIR=	sgmltools-lite
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Generates various output formats from DocBook SGML documents
 
-BUILD_DEPENDS+=	python:${PORTSDIR}/lang/python \
-		openjade:${PORTSDIR}/textproc/openjade \
+BUILD_DEPENDS+=	openjade:${PORTSDIR}/textproc/openjade \
 		${LOCALBASE}/share/texmf:${PORTSDIR}/print/teTeX
 RUN_DEPENDS+=	${LOCALBASE}/share/sgml/docbook:${PORTSDIR}/textproc/docbook \
 		${LOCALBASE}/share/sgml/docbook/dsssl:${PORTSDIR}/textproc/dsssl-docbook-modular
 
-BROKEN=		Broken pkg-plist
-EXPIRATION_DATE=2005-02-18
-DEPRECATED=	${BROKEN}
-
+USE_PYTHON_BUILD=	yes
 MAN1=		sgmltools-lite.1
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS+=--with-etcsgml=${PREFIX}/etc/sgml --datadir=${LOCALBASE}/share
+CONFIGURE_ARGS+=--with-etcsgml=${PREFIX}/etc/sgml --datadir=${PREFIX}/share
 
 pre-configure:
 	${RM} -f ${WRKSRC}/config.cache
@@ -36,6 +32,6 @@ pre-install:
 	${MKDIR} ${PREFIX}/etc/sgml
 
 post-install:
-	${ECHO_CMD} "3.0.3" > ${LOCALBASE}/share/sgml/misc/sgmltools/VERSION
+	${ECHO_CMD} "3.0.3" > ${PREFIX}/share/sgml/misc/sgmltools/VERSION
 
 .include <bsd.port.mk>
