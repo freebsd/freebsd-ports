@@ -1,740 +1,885 @@
-
-eclipse/plugins/org.eclipse.jem.workbench_0.5.0/plugin.xml
-eclipse/plugins/org.eclipse.jem.workbench_0.5.0/workbench.jar
-eclipse/plugins/org.eclipse.jem.workbench_0.5.0/about.html
-eclipse/plugins/org.eclipse.jem.workbench_0.5.0/plugin.properties
-eclipse/plugins/org.eclipse.jem.beaninfo_0.5.0/vm/beaninfovm.jar
-eclipse/plugins/org.eclipse.jem.beaninfo_0.5.0/plugin.properties
-eclipse/plugins/org.eclipse.jem.beaninfo_0.5.0/.options
-eclipse/plugins/org.eclipse.jem.beaninfo_0.5.0/plugin.xml
-eclipse/plugins/org.eclipse.jem.beaninfo_0.5.0/about.html
-eclipse/plugins/org.eclipse.jem.beaninfo_0.5.0/beaninfo.jar
-eclipse/plugins/org.eclipse.ve.doc_0.5.0/about.html
-eclipse/plugins/org.eclipse.ve.doc_0.5.0/ve_toc.xml
-eclipse/plugins/org.eclipse.ve.doc_0.5.0/plugin.properties
-eclipse/plugins/org.eclipse.ve.doc_0.5.0/plugin.xml
-eclipse/plugins/org.eclipse.ve.doc_0.5.0/doc.zip
-eclipse/plugins/org.eclipse.ve.source_0.5.0/src/org.eclipse.ve.cde_0.5.0/rose/cdmmodel.mdl
-eclipse/plugins/org.eclipse.ve.source_0.5.0/src/org.eclipse.ve.cde_0.5.0/rose/cdeModels.mdl
-eclipse/plugins/org.eclipse.ve.source_0.5.0/src/org.eclipse.ve.cde_0.5.0/rose/decr.cat
-eclipse/plugins/org.eclipse.ve.source_0.5.0/src/org.eclipse.ve.cde_0.5.0/rose/util.cat
-eclipse/plugins/org.eclipse.ve.source_0.5.0/src/org.eclipse.ve.cde_0.5.0/rose/cdm.cat
-eclipse/plugins/org.eclipse.ve.source_0.5.0/src/org.eclipse.ve.cde_0.5.0/rose/palette.cat
-eclipse/plugins/org.eclipse.ve.source_0.5.0/src/org.eclipse.ve.cde_0.5.0/model/palette.ecore
-eclipse/plugins/org.eclipse.ve.source_0.5.0/src/org.eclipse.ve.cde_0.5.0/model/decorators.ecore
-eclipse/plugins/org.eclipse.ve.source_0.5.0/src/org.eclipse.ve.cde_0.5.0/model/cdmmodel.genmodel
-eclipse/plugins/org.eclipse.ve.source_0.5.0/src/org.eclipse.ve.cde_0.5.0/model/cdemodel.genmodel
-eclipse/plugins/org.eclipse.ve.source_0.5.0/src/org.eclipse.ve.cde_0.5.0/model/utility.ecore
-eclipse/plugins/org.eclipse.ve.source_0.5.0/src/org.eclipse.ve.cde_0.5.0/model/cdm.ecore
-eclipse/plugins/org.eclipse.ve.source_0.5.0/src/org.eclipse.ve.cde_0.5.0/about.html
-eclipse/plugins/org.eclipse.ve.source_0.5.0/src/org.eclipse.ve.cde_0.5.0/cdesrc.zip
-eclipse/plugins/org.eclipse.ve.source_0.5.0/src/org.eclipse.ve.cde_0.5.0/cdmsrc.zip
-eclipse/plugins/org.eclipse.ve.source_0.5.0/src/org.eclipse.ve.java.core_0.5.0/model/jcm.genmodel
-eclipse/plugins/org.eclipse.ve.source_0.5.0/src/org.eclipse.ve.java.core_0.5.0/model/jcm.ecore
-eclipse/plugins/org.eclipse.ve.source_0.5.0/src/org.eclipse.ve.java.core_0.5.0/rose/jcmmodel.mdl
-eclipse/plugins/org.eclipse.ve.source_0.5.0/src/org.eclipse.ve.java.core_0.5.0/rose/jcm.cat
-eclipse/plugins/org.eclipse.ve.source_0.5.0/src/org.eclipse.ve.java.core_0.5.0/vm/vcelaunchersrc.zip
-eclipse/plugins/org.eclipse.ve.source_0.5.0/src/org.eclipse.ve.java.core_0.5.0/vm/javaremotevmsrc.zip
-eclipse/plugins/org.eclipse.ve.source_0.5.0/src/org.eclipse.ve.java.core_0.5.0/codegensrc.zip
-eclipse/plugins/org.eclipse.ve.source_0.5.0/src/org.eclipse.ve.java.core_0.5.0/commonsrc.zip
-eclipse/plugins/org.eclipse.ve.source_0.5.0/src/org.eclipse.ve.java.core_0.5.0/about.html
-eclipse/plugins/org.eclipse.ve.source_0.5.0/src/org.eclipse.ve.java.core_0.5.0/coresrc.zip
-eclipse/plugins/org.eclipse.ve.source_0.5.0/src/org.eclipse.ve.jfc_0.5.0/vm/jfcbeaninfosrc.zip
-eclipse/plugins/org.eclipse.ve.source_0.5.0/src/org.eclipse.ve.jfc_0.5.0/vm/jfcvmsrc.zip
-eclipse/plugins/org.eclipse.ve.source_0.5.0/src/org.eclipse.ve.jfc_0.5.0/jfcsrc.zip
-eclipse/plugins/org.eclipse.ve.source_0.5.0/src/org.eclipse.ve.jfc_0.5.0/about.html
-eclipse/plugins/org.eclipse.ve.source_0.5.0/src/org.eclipse.ve.jfc_0.5.0/jfccodegensrc.zip
-eclipse/plugins/org.eclipse.ve.source_0.5.0/src/org.eclipse.ve.jfc_0.5.0/jfccommonsrc.zip
-eclipse/plugins/org.eclipse.ve.source_0.5.0/src/org.eclipse.ve.propertysheet_0.5.0/about.html
-eclipse/plugins/org.eclipse.ve.source_0.5.0/src/org.eclipse.ve.propertysheet_0.5.0/propertysheetsrc.zip
-eclipse/plugins/org.eclipse.ve.source_0.5.0/about.ini
-eclipse/plugins/org.eclipse.ve.source_0.5.0/about.mappings
-eclipse/plugins/org.eclipse.ve.source_0.5.0/about.properties
-eclipse/plugins/org.eclipse.ve.source_0.5.0/plugin.properties
-eclipse/plugins/org.eclipse.ve.source_0.5.0/eclipse32.gif
-eclipse/plugins/org.eclipse.ve.source_0.5.0/plugin.xml
-eclipse/plugins/org.eclipse.ve.source_0.5.0/about.html
-eclipse/plugins/org.eclipse.jem.proxy_0.5.0/vm/remotevm.jar
-eclipse/plugins/org.eclipse.jem.proxy_0.5.0/initparser.jar
-eclipse/plugins/org.eclipse.jem.proxy_0.5.0/proxyide.jar
-eclipse/plugins/org.eclipse.jem.proxy_0.5.0/remotecommon.jar
-eclipse/plugins/org.eclipse.jem.proxy_0.5.0/proxy.jar
-eclipse/plugins/org.eclipse.jem.proxy_0.5.0/.options
-eclipse/plugins/org.eclipse.jem.proxy_0.5.0/proxycommon.jar
-eclipse/plugins/org.eclipse.jem.proxy_0.5.0/proxyremote.jar
-eclipse/plugins/org.eclipse.jem.proxy_0.5.0/plugin.xml
-eclipse/plugins/org.eclipse.jem.proxy_0.5.0/plugin.properties
-eclipse/plugins/org.eclipse.jem.proxy_0.5.0/about.html
-eclipse/plugins/org.eclipse.ve.jfc_0.5.0/palette/palette.properties
-eclipse/plugins/org.eclipse.ve.jfc_0.5.0/palette/JTableWithScrollPane.xmi
-eclipse/plugins/org.eclipse.ve.jfc_0.5.0/palette/javavisualbeanscats.xmi
-eclipse/plugins/org.eclipse.ve.jfc_0.5.0/vm/jfcvm.jar
-eclipse/plugins/org.eclipse.ve.jfc_0.5.0/vm/jfcbeaninfo.jar
-eclipse/plugins/org.eclipse.ve.jfc_0.5.0/Examples/EventTests/VCEStyle3.java
-eclipse/plugins/org.eclipse.ve.jfc_0.5.0/Examples/EventTests/VCEStyle2.java
-eclipse/plugins/org.eclipse.ve.jfc_0.5.0/Examples/EventTests/VCEStyle1.java
-eclipse/plugins/org.eclipse.ve.jfc_0.5.0/Examples/iclock.jar
-eclipse/plugins/org.eclipse.ve.jfc_0.5.0/Examples/DayTime.java
-eclipse/plugins/org.eclipse.ve.jfc_0.5.0/Examples/CardLayoutExample.java
-eclipse/plugins/org.eclipse.ve.jfc_0.5.0/Examples/calendar.jar
-eclipse/plugins/org.eclipse.ve.jfc_0.5.0/Examples/CannotApplyButtonLabel.java
-eclipse/plugins/org.eclipse.ve.jfc_0.5.0/Examples/Empty.java
-eclipse/plugins/org.eclipse.ve.jfc_0.5.0/Examples/BasicSwingComponentsBundled.java
-eclipse/plugins/org.eclipse.ve.jfc_0.5.0/Examples/JTable.java
-eclipse/plugins/org.eclipse.ve.jfc_0.5.0/Examples/SliderGame.java
-eclipse/plugins/org.eclipse.ve.jfc_0.5.0/Examples/TestAwtToDoList.java
-eclipse/plugins/org.eclipse.ve.jfc_0.5.0/Examples/CannotApplyName.java
-eclipse/plugins/org.eclipse.ve.jfc_0.5.0/Examples/CardLayout1.java
-eclipse/plugins/org.eclipse.ve.jfc_0.5.0/Examples/CannotInstantiateTableColumn.java
-eclipse/plugins/org.eclipse.ve.jfc_0.5.0/Examples/AwtComponents.java
-eclipse/plugins/org.eclipse.ve.jfc_0.5.0/Examples/test.properties
-eclipse/plugins/org.eclipse.ve.jfc_0.5.0/Examples/TestBorderLayout.java
-eclipse/plugins/org.eclipse.ve.jfc_0.5.0/Examples/ExtendsNonExistantClass.java
-eclipse/plugins/org.eclipse.ve.jfc_0.5.0/Examples/ExtendsClassThatCannotBeCreated.java
-eclipse/plugins/org.eclipse.ve.jfc_0.5.0/Examples/MoreSwingComponents.java
-eclipse/plugins/org.eclipse.ve.jfc_0.5.0/Examples/VAJJSplitPaneTest.java
-eclipse/plugins/org.eclipse.ve.jfc_0.5.0/Examples/AWTInheritanceTest1.java
-eclipse/plugins/org.eclipse.ve.jfc_0.5.0/Examples/GridLayoutExample.java
-eclipse/plugins/org.eclipse.ve.jfc_0.5.0/Examples/CannotInstantiate.java
-eclipse/plugins/org.eclipse.ve.jfc_0.5.0/Examples/NestedPanels.java
-eclipse/plugins/org.eclipse.ve.jfc_0.5.0/Examples/BasicSwingComponents.java
-eclipse/plugins/org.eclipse.ve.jfc_0.5.0/Examples/FlowBundleTest.java
-eclipse/plugins/org.eclipse.ve.jfc_0.5.0/Examples/SimpleTextEditor.java
-eclipse/plugins/org.eclipse.ve.jfc_0.5.0/Examples/BorderLayout.java
-eclipse/plugins/org.eclipse.ve.jfc_0.5.0/Examples/TestSwingAppletToDoList.java
-eclipse/plugins/org.eclipse.ve.jfc_0.5.0/Examples/AWTtest1.java
-eclipse/plugins/org.eclipse.ve.jfc_0.5.0/Examples/ContainsNonExistantClass.java
-eclipse/plugins/org.eclipse.ve.jfc_0.5.0/Examples/CheatSheetJTableExample1.java
-eclipse/plugins/org.eclipse.ve.jfc_0.5.0/Examples/FlowLayout.java
-eclipse/plugins/org.eclipse.ve.jfc_0.5.0/Examples/Messages.java
-eclipse/plugins/org.eclipse.ve.jfc_0.5.0/Examples/MenuExampleSwing.java
-eclipse/plugins/org.eclipse.ve.jfc_0.5.0/Examples/CannotInstantiateButton.java
-eclipse/plugins/org.eclipse.ve.jfc_0.5.0/Examples/ToDoListModel.java
-eclipse/plugins/org.eclipse.ve.jfc_0.5.0/Examples/CannotInstantiateJButton.java
-eclipse/plugins/org.eclipse.ve.jfc_0.5.0/Examples/ToDoList.java
-eclipse/plugins/org.eclipse.ve.jfc_0.5.0/Examples/TestAppletParms.java
-eclipse/plugins/org.eclipse.ve.jfc_0.5.0/Examples/MenuExampleAWT.java
-eclipse/plugins/org.eclipse.ve.jfc_0.5.0/Examples/MyApplet.java
-eclipse/plugins/org.eclipse.ve.jfc_0.5.0/overrides/javax/swing/table/TableColumn.override
-eclipse/plugins/org.eclipse.ve.jfc_0.5.0/overrides/javax/swing/plaf/basic/BasicInternalFrameUI$InternalFrameLayout.override
-eclipse/plugins/org.eclipse.ve.jfc_0.5.0/overrides/javax/swing/text/JTextComponent.override
-eclipse/plugins/org.eclipse.ve.jfc_0.5.0/overrides/javax/swing/border/Border.override
-eclipse/plugins/org.eclipse.ve.jfc_0.5.0/overrides/javax/swing/AbstractButton.override
-eclipse/plugins/org.eclipse.ve.jfc_0.5.0/overrides/javax/swing/JTextField.override
-eclipse/plugins/org.eclipse.ve.jfc_0.5.0/overrides/javax/swing/JFrame.override
-eclipse/plugins/org.eclipse.ve.jfc_0.5.0/overrides/javax/swing/JTabbedPaneVisuals.properties
-eclipse/plugins/org.eclipse.ve.jfc_0.5.0/overrides/javax/swing/JSlider.override
-eclipse/plugins/org.eclipse.ve.jfc_0.5.0/overrides/javax/swing/JDesktopPane.override
-eclipse/plugins/org.eclipse.ve.jfc_0.5.0/overrides/javax/swing/ImageIcon.override
-eclipse/plugins/org.eclipse.ve.jfc_0.5.0/overrides/javax/swing/JTable.override
-eclipse/plugins/org.eclipse.ve.jfc_0.5.0/overrides/javax/swing/JMenuBar.override
-eclipse/plugins/org.eclipse.ve.jfc_0.5.0/overrides/javax/swing/JTextArea.override
-eclipse/plugins/org.eclipse.ve.jfc_0.5.0/overrides/javax/swing/JRootPane.override
-eclipse/plugins/org.eclipse.ve.jfc_0.5.0/overrides/javax/swing/JSeparator.override
-eclipse/plugins/org.eclipse.ve.jfc_0.5.0/overrides/javax/swing/JPasswordField.override
-eclipse/plugins/org.eclipse.ve.jfc_0.5.0/overrides/javax/swing/KeyStroke.override
-eclipse/plugins/org.eclipse.ve.jfc_0.5.0/overrides/javax/swing/JList.override
-eclipse/plugins/org.eclipse.ve.jfc_0.5.0/overrides/javax/swing/JApplet.override
-eclipse/plugins/org.eclipse.ve.jfc_0.5.0/overrides/javax/swing/JRadioButtonMenuItem.override
-eclipse/plugins/org.eclipse.ve.jfc_0.5.0/overrides/javax/swing/JToolBar$DefaultToolBarLayout.override
-eclipse/plugins/org.eclipse.ve.jfc_0.5.0/overrides/javax/swing/JComponent.override
-eclipse/plugins/org.eclipse.ve.jfc_0.5.0/overrides/javax/swing/JPopupMenu.override
-eclipse/plugins/org.eclipse.ve.jfc_0.5.0/overrides/javax/swing/JRadioButton.override
-eclipse/plugins/org.eclipse.ve.jfc_0.5.0/overrides/javax/swing/JLayeredPane.override
-eclipse/plugins/org.eclipse.ve.jfc_0.5.0/overrides/javax/swing/JPanel.override
-eclipse/plugins/org.eclipse.ve.jfc_0.5.0/overrides/javax/swing/JEditorPane.override
-eclipse/plugins/org.eclipse.ve.jfc_0.5.0/overrides/javax/swing/JDialog.override
-eclipse/plugins/org.eclipse.ve.jfc_0.5.0/overrides/javax/swing/JFileChooser.override
-eclipse/plugins/org.eclipse.ve.jfc_0.5.0/overrides/javax/swing/Icon.override
-eclipse/plugins/org.eclipse.ve.jfc_0.5.0/overrides/javax/swing/JSplitPane.override
-eclipse/plugins/org.eclipse.ve.jfc_0.5.0/overrides/javax/swing/JTabbedPane.override
-eclipse/plugins/org.eclipse.ve.jfc_0.5.0/overrides/javax/swing/JWindow.override
-eclipse/plugins/org.eclipse.ve.jfc_0.5.0/overrides/javax/swing/JLabel.override
-eclipse/plugins/org.eclipse.ve.jfc_0.5.0/overrides/javax/swing/JToggleButton.override
-eclipse/plugins/org.eclipse.ve.jfc_0.5.0/overrides/javax/swing/BoxLayout.override
-eclipse/plugins/org.eclipse.ve.jfc_0.5.0/overrides/javax/swing/JButton.override
-eclipse/plugins/org.eclipse.ve.jfc_0.5.0/overrides/javax/swing/JTree.override
-eclipse/plugins/org.eclipse.ve.jfc_0.5.0/overrides/javax/swing/JMenu.override
-eclipse/plugins/org.eclipse.ve.jfc_0.5.0/overrides/javax/swing/JMenuItem.override
-eclipse/plugins/org.eclipse.ve.jfc_0.5.0/overrides/javax/swing/JTextPane.override
-eclipse/plugins/org.eclipse.ve.jfc_0.5.0/overrides/javax/swing/JInternalFrame.override
-eclipse/plugins/org.eclipse.ve.jfc_0.5.0/overrides/javax/swing/JCheckBoxMenuItem.override
-eclipse/plugins/org.eclipse.ve.jfc_0.5.0/overrides/javax/swing/JScrollBar.override
-eclipse/plugins/org.eclipse.ve.jfc_0.5.0/overrides/javax/swing/JComboBox.override
-eclipse/plugins/org.eclipse.ve.jfc_0.5.0/overrides/javax/swing/jtabbedPaneVisuals.ecore
-eclipse/plugins/org.eclipse.ve.jfc_0.5.0/overrides/javax/swing/JScrollPane.override
-eclipse/plugins/org.eclipse.ve.jfc_0.5.0/overrides/javax/swing/JProgressBar.override
-eclipse/plugins/org.eclipse.ve.jfc_0.5.0/overrides/javax/swing/JCheckBox.override
-eclipse/plugins/org.eclipse.ve.jfc_0.5.0/overrides/javax/swing/JToolBar.override
-eclipse/plugins/org.eclipse.ve.jfc_0.5.0/overrides/javax/swing/JOptionPane.override
-eclipse/plugins/org.eclipse.ve.jfc_0.5.0/overrides/java/awt/FileDialog.override
-eclipse/plugins/org.eclipse.ve.jfc_0.5.0/overrides/java/awt/CheckboxGroup.override
-eclipse/plugins/org.eclipse.ve.jfc_0.5.0/overrides/java/awt/Button.override
-eclipse/plugins/org.eclipse.ve.jfc_0.5.0/overrides/java/awt/Panel.override
-eclipse/plugins/org.eclipse.ve.jfc_0.5.0/overrides/java/awt/FlowLayout.override
-eclipse/plugins/org.eclipse.ve.jfc_0.5.0/overrides/java/awt/GridBagLayout.override
-eclipse/plugins/org.eclipse.ve.jfc_0.5.0/overrides/java/awt/CardLayout.override
-eclipse/plugins/org.eclipse.ve.jfc_0.5.0/overrides/java/awt/Component.override
-eclipse/plugins/org.eclipse.ve.jfc_0.5.0/overrides/java/awt/Checkbox.override
-eclipse/plugins/org.eclipse.ve.jfc_0.5.0/overrides/java/awt/Container.override
-eclipse/plugins/org.eclipse.ve.jfc_0.5.0/overrides/java/awt/Image.override
-eclipse/plugins/org.eclipse.ve.jfc_0.5.0/overrides/java/awt/Insets.override
-eclipse/plugins/org.eclipse.ve.jfc_0.5.0/overrides/java/awt/MenuItem.override
-eclipse/plugins/org.eclipse.ve.jfc_0.5.0/overrides/java/awt/MenuBar.override
-eclipse/plugins/org.eclipse.ve.jfc_0.5.0/overrides/java/awt/Window.override
-eclipse/plugins/org.eclipse.ve.jfc_0.5.0/overrides/java/awt/GridBagConstraints.override
-eclipse/plugins/org.eclipse.ve.jfc_0.5.0/overrides/java/awt/Label.override
-eclipse/plugins/org.eclipse.ve.jfc_0.5.0/overrides/java/awt/Color.override
-eclipse/plugins/org.eclipse.ve.jfc_0.5.0/overrides/java/awt/Scrollbar.override
-eclipse/plugins/org.eclipse.ve.jfc_0.5.0/overrides/java/awt/Menu.override
-eclipse/plugins/org.eclipse.ve.jfc_0.5.0/overrides/java/awt/Dimension.override
-eclipse/plugins/org.eclipse.ve.jfc_0.5.0/overrides/java/awt/Cursor.override
-eclipse/plugins/org.eclipse.ve.jfc_0.5.0/overrides/java/awt/Canvas.override
-eclipse/plugins/org.eclipse.ve.jfc_0.5.0/overrides/java/awt/Font.override
-eclipse/plugins/org.eclipse.ve.jfc_0.5.0/overrides/java/awt/Choice.override
-eclipse/plugins/org.eclipse.ve.jfc_0.5.0/overrides/java/awt/gridbagpreference.ecore
-eclipse/plugins/org.eclipse.ve.jfc_0.5.0/overrides/java/awt/ScrollPane.override
-eclipse/plugins/org.eclipse.ve.jfc_0.5.0/overrides/java/awt/TextField.override
-eclipse/plugins/org.eclipse.ve.jfc_0.5.0/overrides/java/awt/Point.override
-eclipse/plugins/org.eclipse.ve.jfc_0.5.0/overrides/java/awt/BorderLayout.override
-eclipse/plugins/org.eclipse.ve.jfc_0.5.0/overrides/java/awt/Rectangle.override
-eclipse/plugins/org.eclipse.ve.jfc_0.5.0/overrides/java/awt/TextArea.override
-eclipse/plugins/org.eclipse.ve.jfc_0.5.0/overrides/java/awt/containerVisuals.ecore
-eclipse/plugins/org.eclipse.ve.jfc_0.5.0/overrides/java/awt/Frame.override
-eclipse/plugins/org.eclipse.ve.jfc_0.5.0/overrides/java/awt/List.override
-eclipse/plugins/org.eclipse.ve.jfc_0.5.0/overrides/java/awt/Dialog.override
-eclipse/plugins/org.eclipse.ve.jfc_0.5.0/overrides/java/awt/GridLayout.override
-eclipse/plugins/org.eclipse.ve.jfc_0.5.0/overrides/java/applet/Applet.override
-eclipse/plugins/org.eclipse.ve.jfc_0.5.0/overrides/java/util/Locale.override
-eclipse/plugins/org.eclipse.ve.jfc_0.5.0/overrides/resourcebundle.properties
-eclipse/plugins/org.eclipse.ve.jfc_0.5.0/overrides/resourcebundle.xmi
-eclipse/plugins/org.eclipse.ve.jfc_0.5.0/icons/full/dtool16/vmwicon_wiz.gif
-eclipse/plugins/org.eclipse.ve.jfc_0.5.0/icons/full/eview16/customiz_view.gif
-eclipse/plugins/org.eclipse.ve.jfc_0.5.0/icons/full/cview16/javabean.gif
-eclipse/plugins/org.eclipse.ve.jfc_0.5.0/icons/full/cview16/customiz_view.gif
-eclipse/plugins/org.eclipse.ve.jfc_0.5.0/icons/full/clcl16/splitpane_obj.gif
-eclipse/plugins/org.eclipse.ve.jfc_0.5.0/icons/full/clcl16/checkbox_obj.gif
-eclipse/plugins/org.eclipse.ve.jfc_0.5.0/icons/full/clcl16/applet_obj.gif
-eclipse/plugins/org.eclipse.ve.jfc_0.5.0/icons/full/clcl16/checkmenuitem_obj.gif
-eclipse/plugins/org.eclipse.ve.jfc_0.5.0/icons/full/clcl16/table_obj.gif
-eclipse/plugins/org.eclipse.ve.jfc_0.5.0/icons/full/clcl16/menuseparator_obj.gif
-eclipse/plugins/org.eclipse.ve.jfc_0.5.0/icons/full/clcl16/progressbar_obj.gif
-eclipse/plugins/org.eclipse.ve.jfc_0.5.0/icons/full/clcl16/tableonscrollpane_obj.gif
-eclipse/plugins/org.eclipse.ve.jfc_0.5.0/icons/full/clcl16/dialog_obj.gif
-eclipse/plugins/org.eclipse.ve.jfc_0.5.0/icons/full/clcl16/textfield_obj.gif
-eclipse/plugins/org.eclipse.ve.jfc_0.5.0/icons/full/clcl16/panel_obj.gif
-eclipse/plugins/org.eclipse.ve.jfc_0.5.0/icons/full/clcl16/column_obj.gif
-eclipse/plugins/org.eclipse.ve.jfc_0.5.0/icons/full/clcl16/editorpane_obj.gif
-eclipse/plugins/org.eclipse.ve.jfc_0.5.0/icons/full/clcl16/menubar_obj.gif
-eclipse/plugins/org.eclipse.ve.jfc_0.5.0/icons/full/clcl16/menuitem_obj.gif
-eclipse/plugins/org.eclipse.ve.jfc_0.5.0/icons/full/clcl16/menu_obj.gif
-eclipse/plugins/org.eclipse.ve.jfc_0.5.0/icons/full/clcl16/popupmenu_obj.gif
-eclipse/plugins/org.eclipse.ve.jfc_0.5.0/icons/full/clcl16/tree_obj.gif
-eclipse/plugins/org.eclipse.ve.jfc_0.5.0/icons/full/clcl16/passwordfield_obj.gif
-eclipse/plugins/org.eclipse.ve.jfc_0.5.0/icons/full/clcl16/internalframe_obj.gif
-eclipse/plugins/org.eclipse.ve.jfc_0.5.0/icons/full/clcl16/radiomenuitem_obj.gif
-eclipse/plugins/org.eclipse.ve.jfc_0.5.0/icons/full/clcl16/textpane_obj.gif
-eclipse/plugins/org.eclipse.ve.jfc_0.5.0/icons/full/clcl16/combobox_obj.gif
-eclipse/plugins/org.eclipse.ve.jfc_0.5.0/icons/full/clcl16/toolbarseparator_obj.gif
-eclipse/plugins/org.eclipse.ve.jfc_0.5.0/icons/full/clcl16/tabbedpane_obj.gif
-eclipse/plugins/org.eclipse.ve.jfc_0.5.0/icons/full/clcl16/scrollpane_obj.gif
-eclipse/plugins/org.eclipse.ve.jfc_0.5.0/icons/full/clcl16/radiobutton_obj.gif
-eclipse/plugins/org.eclipse.ve.jfc_0.5.0/icons/full/clcl16/textarea_obj.gif
-eclipse/plugins/org.eclipse.ve.jfc_0.5.0/icons/full/clcl16/optionpane_obj.gif
-eclipse/plugins/org.eclipse.ve.jfc_0.5.0/icons/full/clcl16/window_obj.gif
-eclipse/plugins/org.eclipse.ve.jfc_0.5.0/icons/full/clcl16/desktoppane_obj.gif
-eclipse/plugins/org.eclipse.ve.jfc_0.5.0/icons/full/clcl16/toggledbutton_obj.gif
-eclipse/plugins/org.eclipse.ve.jfc_0.5.0/icons/full/clcl16/button_obj.gif
-eclipse/plugins/org.eclipse.ve.jfc_0.5.0/icons/full/clcl16/scrollbar_obj.gif
-eclipse/plugins/org.eclipse.ve.jfc_0.5.0/icons/full/clcl16/label_obj.gif
-eclipse/plugins/org.eclipse.ve.jfc_0.5.0/icons/full/clcl16/toolbar_obj.gif
-eclipse/plugins/org.eclipse.ve.jfc_0.5.0/icons/full/clcl16/frame_obj.gif
-eclipse/plugins/org.eclipse.ve.jfc_0.5.0/icons/full/clcl16/slider_obj.gif
-eclipse/plugins/org.eclipse.ve.jfc_0.5.0/icons/full/clcl16/choice_obj.gif
-eclipse/plugins/org.eclipse.ve.jfc_0.5.0/icons/full/clcl16/listbox_obj.gif
-eclipse/plugins/org.eclipse.ve.jfc_0.5.0/icons/full/etool16/vmwicon_wiz.gif
-eclipse/plugins/org.eclipse.ve.jfc_0.5.0/icons/full/ctool16/newpanel_wiz.gif
-eclipse/plugins/org.eclipse.ve.jfc_0.5.0/icons/full/ctool16/vmwicon_wiz.gif
-eclipse/plugins/org.eclipse.ve.jfc_0.5.0/icons/full/ctool16/newapplet_wiz.gif
-eclipse/plugins/org.eclipse.ve.jfc_0.5.0/icons/full/ctool16/newvisualclass_wiz.gif
-eclipse/plugins/org.eclipse.ve.jfc_0.5.0/icons/full/ctool16/newframe_wiz.gif
-eclipse/plugins/org.eclipse.ve.jfc_0.5.0/icons/full/obj16/method_return.gif
-eclipse/plugins/org.eclipse.ve.jfc_0.5.0/icons/jpbar16.gif
-eclipse/plugins/org.eclipse.ve.jfc_0.5.0/icons/fildia32.gif
-eclipse/plugins/org.eclipse.ve.jfc_0.5.0/icons/fildia16.gif
-eclipse/plugins/org.eclipse.ve.jfc_0.5.0/icons/choice32.gif
-eclipse/plugins/org.eclipse.ve.jfc_0.5.0/icons/choice16.gif
-eclipse/plugins/org.eclipse.ve.jfc_0.5.0/icons/jtabpn32.gif
-eclipse/plugins/org.eclipse.ve.jfc_0.5.0/icons/menubr32.gif
-eclipse/plugins/org.eclipse.ve.jfc_0.5.0/icons/jcolum32.gif
-eclipse/plugins/org.eclipse.ve.jfc_0.5.0/icons/jtabpn16.gif
-eclipse/plugins/org.eclipse.ve.jfc_0.5.0/icons/menubr16.gif
-eclipse/plugins/org.eclipse.ve.jfc_0.5.0/icons/jcolum16.gif
-eclipse/plugins/org.eclipse.ve.jfc_0.5.0/icons/menu32.gif
-eclipse/plugins/org.eclipse.ve.jfc_0.5.0/icons/joptpn32.gif
-eclipse/plugins/org.eclipse.ve.jfc_0.5.0/icons/menu16.gif
-eclipse/plugins/org.eclipse.ve.jfc_0.5.0/icons/joptpn16.gif
-eclipse/plugins/org.eclipse.ve.jfc_0.5.0/icons/jifram32.gif
-eclipse/plugins/org.eclipse.ve.jfc_0.5.0/icons/jifram16.gif
-eclipse/plugins/org.eclipse.ve.jfc_0.5.0/icons/list32.gif
-eclipse/plugins/org.eclipse.ve.jfc_0.5.0/icons/jsplpn16.gif
-eclipse/plugins/org.eclipse.ve.jfc_0.5.0/icons/list16.gif
-eclipse/plugins/org.eclipse.ve.jfc_0.5.0/icons/label32.gif
-eclipse/plugins/org.eclipse.ve.jfc_0.5.0/icons/jrmenu32.gif
-eclipse/plugins/org.eclipse.ve.jfc_0.5.0/icons/label16.gif
-eclipse/plugins/org.eclipse.ve.jfc_0.5.0/icons/jrmenu16.gif
-eclipse/plugins/org.eclipse.ve.jfc_0.5.0/icons/jcchos32.gif
-eclipse/plugins/org.eclipse.ve.jfc_0.5.0/icons/jcchos16.gif
-eclipse/plugins/org.eclipse.ve.jfc_0.5.0/icons/applet32.gif
-eclipse/plugins/org.eclipse.ve.jfc_0.5.0/icons/jfchos16.gif
-eclipse/plugins/org.eclipse.ve.jfc_0.5.0/icons/applet16.gif
-eclipse/plugins/org.eclipse.ve.jfc_0.5.0/icons/jradio32.gif
-eclipse/plugins/org.eclipse.ve.jfc_0.5.0/icons/jradio16.gif
-eclipse/plugins/org.eclipse.ve.jfc_0.5.0/icons/cfldr_obj.gif
-eclipse/plugins/org.eclipse.ve.jfc_0.5.0/icons/nomemory.gif
-eclipse/plugins/org.eclipse.ve.jfc_0.5.0/icons/popupm32.gif
-eclipse/plugins/org.eclipse.ve.jfc_0.5.0/icons/jtable16.gif
-eclipse/plugins/org.eclipse.ve.jfc_0.5.0/icons/popupm16.gif
-eclipse/plugins/org.eclipse.ve.jfc_0.5.0/icons/jsplpn32.gif
-eclipse/plugins/org.eclipse.ve.jfc_0.5.0/icons/jtlbtn32.gif
-eclipse/plugins/org.eclipse.ve.jfc_0.5.0/icons/jtlbtn16.gif
-eclipse/plugins/org.eclipse.ve.jfc_0.5.0/icons/cboxg32.gif
-eclipse/plugins/org.eclipse.ve.jfc_0.5.0/icons/cboxg16.gif
-eclipse/plugins/org.eclipse.ve.jfc_0.5.0/icons/jtree32.gif
-eclipse/plugins/org.eclipse.ve.jfc_0.5.0/icons/scrpne32.gif
-eclipse/plugins/org.eclipse.ve.jfc_0.5.0/icons/jtree16.gif
-eclipse/plugins/org.eclipse.ve.jfc_0.5.0/icons/jdtpn32.gif
-eclipse/plugins/org.eclipse.ve.jfc_0.5.0/icons/jedtpn32.gif
-eclipse/plugins/org.eclipse.ve.jfc_0.5.0/icons/scrpne16.gif
-eclipse/plugins/org.eclipse.ve.jfc_0.5.0/icons/jdtpn16.gif
-eclipse/plugins/org.eclipse.ve.jfc_0.5.0/icons/jedtpn16.gif
-eclipse/plugins/org.eclipse.ve.jfc_0.5.0/icons/jslide32.gif
-eclipse/plugins/org.eclipse.ve.jfc_0.5.0/icons/jslide16.gif
-eclipse/plugins/org.eclipse.ve.jfc_0.5.0/icons/cbox32.gif
-eclipse/plugins/org.eclipse.ve.jfc_0.5.0/icons/cbox16.gif
-eclipse/plugins/org.eclipse.ve.jfc_0.5.0/icons/cboxmi32.gif
-eclipse/plugins/org.eclipse.ve.jfc_0.5.0/icons/cboxmi16.gif
-eclipse/plugins/org.eclipse.ve.jfc_0.5.0/icons/jpwfld32.gif
-eclipse/plugins/org.eclipse.ve.jfc_0.5.0/icons/jpwfld16.gif
-eclipse/plugins/org.eclipse.ve.jfc_0.5.0/icons/jtable32.gif
-eclipse/plugins/org.eclipse.ve.jfc_0.5.0/icons/butt32.gif
-eclipse/plugins/org.eclipse.ve.jfc_0.5.0/icons/window32.gif
-eclipse/plugins/org.eclipse.ve.jfc_0.5.0/icons/scrb32.gif
-eclipse/plugins/org.eclipse.ve.jfc_0.5.0/icons/butt16.gif
-eclipse/plugins/org.eclipse.ve.jfc_0.5.0/icons/txtar32.gif
-eclipse/plugins/org.eclipse.ve.jfc_0.5.0/icons/window16.gif
-eclipse/plugins/org.eclipse.ve.jfc_0.5.0/icons/scrb16.gif
-eclipse/plugins/org.eclipse.ve.jfc_0.5.0/icons/txtar16.gif
-eclipse/plugins/org.eclipse.ve.jfc_0.5.0/icons/panel32.gif
-eclipse/plugins/org.eclipse.ve.jfc_0.5.0/icons/panel16.gif
-eclipse/plugins/org.eclipse.ve.jfc_0.5.0/icons/menuit32.gif
-eclipse/plugins/org.eclipse.ve.jfc_0.5.0/icons/menuit16.gif
-eclipse/plugins/org.eclipse.ve.jfc_0.5.0/icons/msepar32.gif
-eclipse/plugins/org.eclipse.ve.jfc_0.5.0/icons/msepar16.gif
-eclipse/plugins/org.eclipse.ve.jfc_0.5.0/icons/fldr_obj.gif
-eclipse/plugins/org.eclipse.ve.jfc_0.5.0/icons/frame32.gif
-eclipse/plugins/org.eclipse.ve.jfc_0.5.0/icons/frame16.gif
-eclipse/plugins/org.eclipse.ve.jfc_0.5.0/icons/canvas32.gif
-eclipse/plugins/org.eclipse.ve.jfc_0.5.0/icons/canvas16.gif
-eclipse/plugins/org.eclipse.ve.jfc_0.5.0/icons/bean16.gif
-eclipse/plugins/org.eclipse.ve.jfc_0.5.0/icons/dialog32.gif
-eclipse/plugins/org.eclipse.ve.jfc_0.5.0/icons/jtoolb32.gif
-eclipse/plugins/org.eclipse.ve.jfc_0.5.0/icons/dialog16.gif
-eclipse/plugins/org.eclipse.ve.jfc_0.5.0/icons/jtbutn32.gif
-eclipse/plugins/org.eclipse.ve.jfc_0.5.0/icons/jtxtpn32.gif
-eclipse/plugins/org.eclipse.ve.jfc_0.5.0/icons/jtsepa32.gif
-eclipse/plugins/org.eclipse.ve.jfc_0.5.0/icons/jtoolb16.gif
-eclipse/plugins/org.eclipse.ve.jfc_0.5.0/icons/jtbutn16.gif
-eclipse/plugins/org.eclipse.ve.jfc_0.5.0/icons/jtxtpn16.gif
-eclipse/plugins/org.eclipse.ve.jfc_0.5.0/icons/txtfld32.gif
-eclipse/plugins/org.eclipse.ve.jfc_0.5.0/icons/jcombo32.gif
-eclipse/plugins/org.eclipse.ve.jfc_0.5.0/icons/jtsepa16.gif
-eclipse/plugins/org.eclipse.ve.jfc_0.5.0/icons/jpbar32.gif
-eclipse/plugins/org.eclipse.ve.jfc_0.5.0/icons/jcombo16.gif
-eclipse/plugins/org.eclipse.ve.jfc_0.5.0/icons/txtfld16.gif
-eclipse/plugins/org.eclipse.ve.jfc_0.5.0/plugin.xml
-eclipse/plugins/org.eclipse.ve.jfc_0.5.0/jfccommon.jar
-eclipse/plugins/org.eclipse.ve.jfc_0.5.0/plugin.properties
-eclipse/plugins/org.eclipse.ve.jfc_0.5.0/about.html
-eclipse/plugins/org.eclipse.ve.jfc_0.5.0/jfc.jar
-eclipse/plugins/org.eclipse.ve.jfc_0.5.0/jfccodegen.jar
-eclipse/plugins/org.eclipse.ve.cde_0.5.0/properties/cde_palette.properties
-eclipse/plugins/org.eclipse.ve.cde_0.5.0/images/bean16.gif
-eclipse/plugins/org.eclipse.ve.cde_0.5.0/images/somepart.gif
-eclipse/plugins/org.eclipse.ve.cde_0.5.0/images/connection16.gif
-eclipse/plugins/org.eclipse.ve.cde_0.5.0/images/arrow16.gif
-eclipse/plugins/org.eclipse.ve.cde_0.5.0/images/graph.gif
-eclipse/plugins/org.eclipse.ve.cde_0.5.0/images/marquee16.gif
-eclipse/plugins/org.eclipse.ve.cde_0.5.0/images/unknownbean16.gif
-eclipse/plugins/org.eclipse.ve.cde_0.5.0/icons/full/dlcl16/aligncenter_obj.gif
-eclipse/plugins/org.eclipse.ve.cde_0.5.0/icons/full/dlcl16/alignleft_obj.gif
-eclipse/plugins/org.eclipse.ve.cde_0.5.0/icons/full/dlcl16/aligndialog_obj.gif
-eclipse/plugins/org.eclipse.ve.cde_0.5.0/icons/full/dlcl16/alignbottom_obj.gif
-eclipse/plugins/org.eclipse.ve.cde_0.5.0/icons/full/dlcl16/aligntop_obj.gif
-eclipse/plugins/org.eclipse.ve.cde_0.5.0/icons/full/dlcl16/distributevert_obj.gif
-eclipse/plugins/org.eclipse.ve.cde_0.5.0/icons/full/dlcl16/alignwidth_obj.gif
-eclipse/plugins/org.eclipse.ve.cde_0.5.0/icons/full/dlcl16/alignmiddle_obj.gif
-eclipse/plugins/org.eclipse.ve.cde_0.5.0/icons/full/dlcl16/distributebox_obj.gif
-eclipse/plugins/org.eclipse.ve.cde_0.5.0/icons/full/dlcl16/alignheight_obj.gif
-eclipse/plugins/org.eclipse.ve.cde_0.5.0/icons/full/dlcl16/distributehorz_obj.gif
-eclipse/plugins/org.eclipse.ve.cde_0.5.0/icons/full/dlcl16/alignright_obj.gif
-eclipse/plugins/org.eclipse.ve.cde_0.5.0/icons/full/elcl16/aligncenter_obj.gif
-eclipse/plugins/org.eclipse.ve.cde_0.5.0/icons/full/elcl16/alignwidth_obj.gif
-eclipse/plugins/org.eclipse.ve.cde_0.5.0/icons/full/elcl16/aligndialog_obj.gif
-eclipse/plugins/org.eclipse.ve.cde_0.5.0/icons/full/elcl16/alignbottom_obj.gif
-eclipse/plugins/org.eclipse.ve.cde_0.5.0/icons/full/elcl16/distributevert_obj.gif
-eclipse/plugins/org.eclipse.ve.cde_0.5.0/icons/full/elcl16/alignmiddle_obj.gif
-eclipse/plugins/org.eclipse.ve.cde_0.5.0/icons/full/elcl16/alignheight_obj.gif
-eclipse/plugins/org.eclipse.ve.cde_0.5.0/icons/full/elcl16/alignright_obj.gif
-eclipse/plugins/org.eclipse.ve.cde_0.5.0/icons/full/elcl16/aligntop_obj.gif
-eclipse/plugins/org.eclipse.ve.cde_0.5.0/icons/full/elcl16/alignleft_obj.gif
-eclipse/plugins/org.eclipse.ve.cde_0.5.0/icons/full/elcl16/distributehorz_obj.gif
-eclipse/plugins/org.eclipse.ve.cde_0.5.0/icons/full/elcl16/distributebox_obj.gif
-eclipse/plugins/org.eclipse.ve.cde_0.5.0/icons/full/clcl16/distributevert_obj.gif
-eclipse/plugins/org.eclipse.ve.cde_0.5.0/icons/full/clcl16/alignleft_obj.gif
-eclipse/plugins/org.eclipse.ve.cde_0.5.0/icons/full/clcl16/alignwidth_obj.gif
-eclipse/plugins/org.eclipse.ve.cde_0.5.0/icons/full/clcl16/aligncenter_obj.gif
-eclipse/plugins/org.eclipse.ve.cde_0.5.0/icons/full/clcl16/distributehorz_obj.gif
-eclipse/plugins/org.eclipse.ve.cde_0.5.0/icons/full/clcl16/distributebox_obj.gif
-eclipse/plugins/org.eclipse.ve.cde_0.5.0/icons/full/clcl16/transp16.gif
-eclipse/plugins/org.eclipse.ve.cde_0.5.0/icons/full/clcl16/aligntop_obj.gif
-eclipse/plugins/org.eclipse.ve.cde_0.5.0/icons/full/clcl16/alignright_obj.gif
-eclipse/plugins/org.eclipse.ve.cde_0.5.0/icons/full/clcl16/aligndialog_obj.gif
-eclipse/plugins/org.eclipse.ve.cde_0.5.0/icons/full/clcl16/alignbottom_obj.gif
-eclipse/plugins/org.eclipse.ve.cde_0.5.0/icons/full/clcl16/alignmiddle_obj.gif
-eclipse/plugins/org.eclipse.ve.cde_0.5.0/icons/full/clcl16/alignheight_obj.gif
-eclipse/plugins/org.eclipse.ve.cde_0.5.0/cdm.jar
-eclipse/plugins/org.eclipse.ve.cde_0.5.0/cde.jar
-eclipse/plugins/org.eclipse.ve.cde_0.5.0/about.html
-eclipse/plugins/org.eclipse.ve.cde_0.5.0/cde_palette.xmi
-eclipse/plugins/org.eclipse.ve.cde_0.5.0/plugin.xml
-eclipse/plugins/org.eclipse.ve.cde_0.5.0/plugin.properties
-eclipse/plugins/org.eclipse.jem_0.5.0/overrides/java/lang/Object.override
-eclipse/plugins/org.eclipse.jem_0.5.0/overrides/..ROOT...override
-eclipse/plugins/org.eclipse.jem_0.5.0/about.ini
-eclipse/plugins/org.eclipse.jem_0.5.0/eclipse32.gif
-eclipse/plugins/org.eclipse.jem_0.5.0/javainst.jar
-eclipse/plugins/org.eclipse.jem_0.5.0/plugin.properties
-eclipse/plugins/org.eclipse.jem_0.5.0/.options
-eclipse/plugins/org.eclipse.jem_0.5.0/about.properties
-eclipse/plugins/org.eclipse.jem_0.5.0/plugin.xml
-eclipse/plugins/org.eclipse.jem_0.5.0/about.html
-eclipse/plugins/org.eclipse.jem_0.5.0/about.mappings
-eclipse/plugins/org.eclipse.jem_0.5.0/mofjava.jar
-eclipse/plugins/org.eclipse.ve_0.5.0/eclipse32.gif
-eclipse/plugins/org.eclipse.ve_0.5.0/about.ini
-eclipse/plugins/org.eclipse.ve_0.5.0/plugin.properties
-eclipse/plugins/org.eclipse.ve_0.5.0/about.properties
-eclipse/plugins/org.eclipse.ve_0.5.0/plugin.xml
-eclipse/plugins/org.eclipse.ve_0.5.0/about.mappings
-eclipse/plugins/org.eclipse.ve_0.5.0/about.html
-eclipse/plugins/com.ibm.etools.emf.ecore.utilities_5.1.1/runtime/ecore.utilities.jar
-eclipse/plugins/com.ibm.etools.emf.ecore.utilities_5.1.1/runtime/workbench.jar
-eclipse/plugins/com.ibm.etools.emf.ecore.utilities_5.1.1/plugin.xml
-eclipse/plugins/org.eclipse.ve.java.core_0.5.0/overrides/java/lang/Byte.override
-eclipse/plugins/org.eclipse.ve.java.core_0.5.0/overrides/java/lang/Character.override
-eclipse/plugins/org.eclipse.ve.java.core_0.5.0/overrides/java/lang/Double.override
-eclipse/plugins/org.eclipse.ve.java.core_0.5.0/overrides/java/lang/Long.override
-eclipse/plugins/org.eclipse.ve.java.core_0.5.0/overrides/java/lang/Short.override
-eclipse/plugins/org.eclipse.ve.java.core_0.5.0/overrides/java/lang/String.override
-eclipse/plugins/org.eclipse.ve.java.core_0.5.0/overrides/java/lang/Boolean.override
-eclipse/plugins/org.eclipse.ve.java.core_0.5.0/overrides/java/lang/Float.override
-eclipse/plugins/org.eclipse.ve.java.core_0.5.0/overrides/java/lang/Object.override
-eclipse/plugins/org.eclipse.ve.java.core_0.5.0/overrides/java/lang/Integer.override
-eclipse/plugins/org.eclipse.ve.java.core_0.5.0/overrides/..ROOT...override
-eclipse/plugins/org.eclipse.ve.java.core_0.5.0/overrides/codegenHelpers.ecore
-eclipse/plugins/org.eclipse.ve.java.core_0.5.0/icons/full/dtool16/customizebean_co.gif
-eclipse/plugins/org.eclipse.ve.java.core_0.5.0/icons/full/dtool16/testjavabean_co.gif
-eclipse/plugins/org.eclipse.ve.java.core_0.5.0/icons/full/ctool16/newvisualclass_wiz.gif
-eclipse/plugins/org.eclipse.ve.java.core_0.5.0/icons/full/ctool16/customizebean_co.gif
-eclipse/plugins/org.eclipse.ve.java.core_0.5.0/icons/full/ctool16/vmwicon_wiz.gif
-eclipse/plugins/org.eclipse.ve.java.core_0.5.0/icons/full/ctool16/testjavabean_co.gif
-eclipse/plugins/org.eclipse.ve.java.core_0.5.0/icons/full/ctool16/javavisualeditor_co.gif
-eclipse/plugins/org.eclipse.ve.java.core_0.5.0/icons/full/ctool16/java_bean_launcher.gif
-eclipse/plugins/org.eclipse.ve.java.core_0.5.0/icons/full/cview16/eventpresent_class_bw_obj.gif
-eclipse/plugins/org.eclipse.ve.java.core_0.5.0/icons/full/cview16/booleanfalse.gif
-eclipse/plugins/org.eclipse.ve.java.core_0.5.0/icons/full/cview16/javabean.gif
-eclipse/plugins/org.eclipse.ve.java.core_0.5.0/icons/full/cview16/src2gui1.gif
-eclipse/plugins/org.eclipse.ve.java.core_0.5.0/icons/full/cview16/gui2srcOn.gif
-eclipse/plugins/org.eclipse.ve.java.core_0.5.0/icons/full/cview16/eventpresent_anon_bw_obj.gif
-eclipse/plugins/org.eclipse.ve.java.core_0.5.0/icons/full/cview16/pause.gif
-eclipse/plugins/org.eclipse.ve.java.core_0.5.0/icons/full/cview16/src2gui.gif
-eclipse/plugins/org.eclipse.ve.java.core_0.5.0/icons/full/cview16/eventpresent_class_obj.gif
-eclipse/plugins/org.eclipse.ve.java.core_0.5.0/icons/full/cview16/event_arrow_obj.gif
-eclipse/plugins/org.eclipse.ve.java.core_0.5.0/icons/full/cview16/eventpresent_interface_obj.gif
-eclipse/plugins/org.eclipse.ve.java.core_0.5.0/icons/full/cview16/info_overlay.gif
-eclipse/plugins/org.eclipse.ve.java.core_0.5.0/icons/full/cview16/play.gif
-eclipse/plugins/org.eclipse.ve.java.core_0.5.0/icons/full/cview16/event_prop_arrow_obj.gif
-eclipse/plugins/org.eclipse.ve.java.core_0.5.0/icons/full/cview16/gui2src3.gif
-eclipse/plugins/org.eclipse.ve.java.core_0.5.0/icons/full/cview16/event_arrow_bw_obj.gif
-eclipse/plugins/org.eclipse.ve.java.core_0.5.0/icons/full/cview16/gui2src.gif
-eclipse/plugins/org.eclipse.ve.java.core_0.5.0/icons/full/cview16/error_overlay.gif
-eclipse/plugins/org.eclipse.ve.java.core_0.5.0/icons/full/cview16/gui2srcAminated.gif
-eclipse/plugins/org.eclipse.ve.java.core_0.5.0/icons/full/cview16/warning_overlay.gif
-eclipse/plugins/org.eclipse.ve.java.core_0.5.0/icons/full/cview16/warning_obj.gif
-eclipse/plugins/org.eclipse.ve.java.core_0.5.0/icons/full/cview16/booleantrue.gif
-eclipse/plugins/org.eclipse.ve.java.core_0.5.0/icons/full/cview16/gui2src2.gif
-eclipse/plugins/org.eclipse.ve.java.core_0.5.0/icons/full/cview16/error_obj.gif
-eclipse/plugins/org.eclipse.ve.java.core_0.5.0/icons/full/cview16/src2guiAminated.gif
-eclipse/plugins/org.eclipse.ve.java.core_0.5.0/icons/full/cview16/selectbean_view.gif
-eclipse/plugins/org.eclipse.ve.java.core_0.5.0/icons/full/cview16/src2gui3.gif
-eclipse/plugins/org.eclipse.ve.java.core_0.5.0/icons/full/cview16/eventpresent_shared_obj.gif
-eclipse/plugins/org.eclipse.ve.java.core_0.5.0/icons/full/cview16/gui2src1.gif
-eclipse/plugins/org.eclipse.ve.java.core_0.5.0/icons/full/cview16/javabeans.gif
-eclipse/plugins/org.eclipse.ve.java.core_0.5.0/icons/full/cview16/src2guiOn.gif
-eclipse/plugins/org.eclipse.ve.java.core_0.5.0/icons/full/cview16/applet.gif
-eclipse/plugins/org.eclipse.ve.java.core_0.5.0/icons/full/cview16/info_obj.gif
-eclipse/plugins/org.eclipse.ve.java.core_0.5.0/icons/full/cview16/eventpresent_anon_obj.gif
-eclipse/plugins/org.eclipse.ve.java.core_0.5.0/icons/full/cview16/src2gui2.gif
-eclipse/plugins/org.eclipse.ve.java.core_0.5.0/icons/full/dnd/stack_mask.bmp
-eclipse/plugins/org.eclipse.ve.java.core_0.5.0/icons/full/dnd/stack_source.bmp
-eclipse/plugins/org.eclipse.ve.java.core_0.5.0/icons/full/dlcl16/rembkmrk_tsk.gif
-eclipse/plugins/org.eclipse.ve.java.core_0.5.0/icons/full/obj16/unevent_obj.gif
-eclipse/plugins/org.eclipse.ve.java.core_0.5.0/icons/full/obj16/anon_class_obj.gif
-eclipse/plugins/org.eclipse.ve.java.core_0.5.0/icons/full/obj16/listenerclass_obj.gif
-eclipse/plugins/org.eclipse.ve.java.core_0.5.0/icons/full/obj16/p2pconn_obj.gif
-eclipse/plugins/org.eclipse.ve.java.core_0.5.0/icons/full/obj16/p2pconn_shrd_obj.gif
-eclipse/plugins/org.eclipse.ve.java.core_0.5.0/icons/full/obj16/javavisualeditor_obj.gif
-eclipse/plugins/org.eclipse.ve.java.core_0.5.0/icons/full/obj16/e2mconn_obj.gif
-eclipse/plugins/org.eclipse.ve.java.core_0.5.0/icons/full/obj16/anonclass_obj.gif
-eclipse/plugins/org.eclipse.ve.java.core_0.5.0/icons/full/obj16/anon_interface_obj.gif
-eclipse/plugins/org.eclipse.ve.java.core_0.5.0/icons/full/obj16/shrdinter_obj.gif
-eclipse/plugins/org.eclipse.ve.java.core_0.5.0/icons/full/obj16/listenerinterface_obj.gif
-eclipse/plugins/org.eclipse.ve.java.core_0.5.0/icons/full/obj16/anon_interface_available_obj.gif
-eclipse/plugins/org.eclipse.ve.java.core_0.5.0/icons/full/obj16/anon_class_available_obj.gif
-eclipse/plugins/org.eclipse.ve.java.core_0.5.0/icons/full/obj16/e2mconn_shrd_obj.gif
-eclipse/plugins/org.eclipse.ve.java.core_0.5.0/icons/full/obj16/unproperty_obj.gif
-eclipse/plugins/org.eclipse.ve.java.core_0.5.0/icons/full/obj16/gennonvis_obj.gif
-eclipse/plugins/org.eclipse.ve.java.core_0.5.0/icons/full/obj16/genlistener_obj.gif
-eclipse/plugins/org.eclipse.ve.java.core_0.5.0/icons/full/obj16/shrdclass_obj.gif
-eclipse/plugins/org.eclipse.ve.java.core_0.5.0/icons/full/obj16/anoninter_obj.gif
-eclipse/plugins/org.eclipse.ve.java.core_0.5.0/icons/full/obj16/paletteshowhide_co.gif
-eclipse/plugins/org.eclipse.ve.java.core_0.5.0/icons/full/wizban/javabean_wiz.gif
-eclipse/plugins/org.eclipse.ve.java.core_0.5.0/icons/full/wizban/javavisualeditor_wiz.gif
-eclipse/plugins/org.eclipse.ve.java.core_0.5.0/icons/full/etool16/customizebean_co.gif
-eclipse/plugins/org.eclipse.ve.java.core_0.5.0/icons/full/etool16/testjavabean_co.gif
-eclipse/plugins/org.eclipse.ve.java.core_0.5.0/icons/full/clcl16/javabean_obj.gif
-eclipse/plugins/org.eclipse.ve.java.core_0.5.0/icons/full/clcl16/rembkmrk_tsk.gif
-eclipse/plugins/org.eclipse.ve.java.core_0.5.0/icons/full/elcl16/rembkmrk_tsk.gif
-eclipse/plugins/org.eclipse.ve.java.core_0.5.0/icons/window16.gif
-eclipse/plugins/org.eclipse.ve.java.core_0.5.0/icons/vce.gif
-eclipse/plugins/org.eclipse.ve.java.core_0.5.0/icons/javabean.gif
-eclipse/plugins/org.eclipse.ve.java.core_0.5.0/templates/org/eclipse/ve/internal/java/codegen/jjet/util/AnonymousEventMethodTemplate.javajet
-eclipse/plugins/org.eclipse.ve.java.core_0.5.0/templates/org/eclipse/ve/internal/java/codegen/jjet/util/EventSkelaton.java
-eclipse/plugins/org.eclipse.ve.java.core_0.5.0/templates/org/eclipse/ve/internal/java/codegen/jjet/util/AnonymousEventTemplate.javajet
-eclipse/plugins/org.eclipse.ve.java.core_0.5.0/templates/org/eclipse/ve/internal/java/codegen/jjet/util/PropChangeAnonymousTemplate.javajet
-eclipse/plugins/org.eclipse.ve.java.core_0.5.0/templates/org/eclipse/ve/internal/java/codegen/jjet/util/PropChangeAnonymousPropertyTemplate.javajet
-eclipse/plugins/org.eclipse.ve.java.core_0.5.0/templates/org/eclipse/ve/internal/java/codegen/jjet/wizards/contributors/VisualClassSourceWizardSkeleton.java
-eclipse/plugins/org.eclipse.ve.java.core_0.5.0/templates/org/eclipse/ve/internal/java/codegen/jjet/wizards/contributors/JContentPaneSourceTemplate.javajet
-eclipse/plugins/org.eclipse.ve.java.core_0.5.0/templates/org/eclipse/ve/internal/java/codegen/jjet/wizards/contributors/WindowDialogSourceTemplate.javajet
-eclipse/plugins/org.eclipse.ve.java.core_0.5.0/templates/org/eclipse/ve/internal/java/codegen/jjet/wizards/contributors/ComponentSetSizeSourceTemplate.javajet
-eclipse/plugins/org.eclipse.ve.java.core_0.5.0/properties/java_palette.properties
-eclipse/plugins/org.eclipse.ve.java.core_0.5.0/vm/vcelauncher.jar
-eclipse/plugins/org.eclipse.ve.java.core_0.5.0/vm/javaremotevm.jar
-eclipse/plugins/org.eclipse.ve.java.core_0.5.0/plugin.properties
-eclipse/plugins/org.eclipse.ve.java.core_0.5.0/plugin.xml
-eclipse/plugins/org.eclipse.ve.java.core_0.5.0/java_palette.xmi
-eclipse/plugins/org.eclipse.ve.java.core_0.5.0/core.jar
-eclipse/plugins/org.eclipse.ve.java.core_0.5.0/about.html
-eclipse/plugins/org.eclipse.ve.java.core_0.5.0/common.jar
-eclipse/plugins/org.eclipse.ve.java.core_0.5.0/.options
-eclipse/plugins/org.eclipse.ve.java.core_0.5.0/codegen.jar
-eclipse/plugins/com.ibm.etools.emf.workbench_5.1.1/runtime/emfworkbench.jar
-eclipse/plugins/com.ibm.etools.emf.workbench_5.1.1/plugin.xml
-eclipse/plugins/org.eclipse.jem.source_0.5.0/src/org.eclipse.jem_0.5.0/model/instance.ecore
-eclipse/plugins/org.eclipse.jem.source_0.5.0/src/org.eclipse.jem_0.5.0/model/java.ecore
-eclipse/plugins/org.eclipse.jem.source_0.5.0/src/org.eclipse.jem_0.5.0/model/javaModel.genmodel
-eclipse/plugins/org.eclipse.jem.source_0.5.0/src/org.eclipse.jem_0.5.0/model/instance.genmodel
-eclipse/plugins/org.eclipse.jem.source_0.5.0/src/org.eclipse.jem_0.5.0/rose/edocjava2.cat
-eclipse/plugins/org.eclipse.jem.source_0.5.0/src/org.eclipse.jem_0.5.0/rose/instance.mdl
-eclipse/plugins/org.eclipse.jem.source_0.5.0/src/org.eclipse.jem_0.5.0/rose/javaModel.mdl
-eclipse/plugins/org.eclipse.jem.source_0.5.0/src/org.eclipse.jem_0.5.0/rose/instantiation.cat
-eclipse/plugins/org.eclipse.jem.source_0.5.0/src/org.eclipse.jem_0.5.0/about.html
-eclipse/plugins/org.eclipse.jem.source_0.5.0/src/org.eclipse.jem_0.5.0/javainstsrc.zip
-eclipse/plugins/org.eclipse.jem.source_0.5.0/src/org.eclipse.jem_0.5.0/mofjavasrc.zip
-eclipse/plugins/org.eclipse.jem.source_0.5.0/src/org.eclipse.jem.proxy_0.5.0/vm/remotevmsrc.zip
-eclipse/plugins/org.eclipse.jem.source_0.5.0/src/org.eclipse.jem.proxy_0.5.0/about.html
-eclipse/plugins/org.eclipse.jem.source_0.5.0/src/org.eclipse.jem.proxy_0.5.0/initparsersrc.zip
-eclipse/plugins/org.eclipse.jem.source_0.5.0/src/org.eclipse.jem.proxy_0.5.0/remotecommonsrc.zip
-eclipse/plugins/org.eclipse.jem.source_0.5.0/src/org.eclipse.jem.proxy_0.5.0/proxyidesrc.zip
-eclipse/plugins/org.eclipse.jem.source_0.5.0/src/org.eclipse.jem.proxy_0.5.0/proxysrc.zip
-eclipse/plugins/org.eclipse.jem.source_0.5.0/src/org.eclipse.jem.proxy_0.5.0/proxycommonsrc.zip
-eclipse/plugins/org.eclipse.jem.source_0.5.0/src/org.eclipse.jem.proxy_0.5.0/proxyremotesrc.zip
-eclipse/plugins/org.eclipse.jem.source_0.5.0/src/org.eclipse.jem.beaninfo.ui_0.5.0/about.html
-eclipse/plugins/org.eclipse.jem.source_0.5.0/src/org.eclipse.jem.beaninfo.ui_0.5.0/beaninfouisrc.zip
-eclipse/plugins/org.eclipse.jem.source_0.5.0/src/org.eclipse.jem.workbench_0.5.0/about.html
-eclipse/plugins/org.eclipse.jem.source_0.5.0/src/org.eclipse.jem.workbench_0.5.0/workbenchsrc.zip
-eclipse/plugins/org.eclipse.jem.source_0.5.0/src/org.eclipse.jem.beaninfo_0.5.0/vm/beaninfovmsrc.zip
-eclipse/plugins/org.eclipse.jem.source_0.5.0/src/org.eclipse.jem.beaninfo_0.5.0/model/introspect.genmodel
-eclipse/plugins/org.eclipse.jem.source_0.5.0/src/org.eclipse.jem.beaninfo_0.5.0/model/beaninfo.ecore
-eclipse/plugins/org.eclipse.jem.source_0.5.0/src/org.eclipse.jem.beaninfo_0.5.0/rose/introspect.mdl
-eclipse/plugins/org.eclipse.jem.source_0.5.0/src/org.eclipse.jem.beaninfo_0.5.0/rose/beaninfo.cat
-eclipse/plugins/org.eclipse.jem.source_0.5.0/src/org.eclipse.jem.beaninfo_0.5.0/about.html
-eclipse/plugins/org.eclipse.jem.source_0.5.0/src/org.eclipse.jem.beaninfo_0.5.0/beaninfosrc.zip
-eclipse/plugins/org.eclipse.jem.source_0.5.0/about.html
-eclipse/plugins/org.eclipse.jem.source_0.5.0/about.properties
-eclipse/plugins/org.eclipse.jem.source_0.5.0/about.ini
-eclipse/plugins/org.eclipse.jem.source_0.5.0/plugin.xml
-eclipse/plugins/org.eclipse.jem.source_0.5.0/about.mappings
-eclipse/plugins/org.eclipse.jem.source_0.5.0/eclipse32.gif
-eclipse/plugins/org.eclipse.jem.source_0.5.0/plugin.properties
-eclipse/plugins/org.eclipse.jem.beaninfo.ui_0.5.0/icons/blank.gif
-eclipse/plugins/org.eclipse.jem.beaninfo.ui_0.5.0/icons/javabean.gif
-eclipse/plugins/org.eclipse.jem.beaninfo.ui_0.5.0/icons/package_obj_missing.gif
-eclipse/plugins/org.eclipse.jem.beaninfo.ui_0.5.0/icons/plugin_obj.gif
-eclipse/plugins/org.eclipse.jem.beaninfo.ui_0.5.0/.options
-eclipse/plugins/org.eclipse.jem.beaninfo.ui_0.5.0/plugin.xml
-eclipse/plugins/org.eclipse.jem.beaninfo.ui_0.5.0/plugin.properties
-eclipse/plugins/org.eclipse.jem.beaninfo.ui_0.5.0/about.html
-eclipse/plugins/org.eclipse.jem.beaninfo.ui_0.5.0/beaninfoui.jar
-eclipse/plugins/org.eclipse.ve.propertysheet_0.5.0/images/nullreset16.gif
-eclipse/plugins/org.eclipse.ve.propertysheet_0.5.0/plugin.xml
-eclipse/plugins/org.eclipse.ve.propertysheet_0.5.0/plugin.properties
-eclipse/plugins/org.eclipse.ve.propertysheet_0.5.0/about.html
-eclipse/plugins/org.eclipse.ve.propertysheet_0.5.0/propertysheet.jar
-eclipse/plugins/com.ibm.etools.emf.event_2.0.0.1/runtime/event.jar
-eclipse/plugins/com.ibm.etools.emf.event_2.0.0.1/plugin.xml
-eclipse/features/org.eclipse.ve.source_0.5.0/license.html
-eclipse/features/org.eclipse.ve.source_0.5.0/eclipse_update_120.jpg
-eclipse/features/org.eclipse.ve.source_0.5.0/cpl-v10.html
-eclipse/features/org.eclipse.ve.source_0.5.0/feature.xml
-eclipse/features/org.eclipse.ve.source_0.5.0/feature.properties
-eclipse/features/org.eclipse.jem.source_0.5.0/feature.properties
-eclipse/features/org.eclipse.jem.source_0.5.0/license.html
-eclipse/features/org.eclipse.jem.source_0.5.0/feature.xml
-eclipse/features/org.eclipse.jem.source_0.5.0/eclipse_update_120.jpg
-eclipse/features/org.eclipse.jem.source_0.5.0/cpl-v10.html
-eclipse/features/org.eclipse.jem_0.5.0/eclipse_update_120.jpg
-eclipse/features/org.eclipse.jem_0.5.0/cpl-v10.html
-eclipse/features/org.eclipse.jem_0.5.0/feature.properties
-eclipse/features/org.eclipse.jem_0.5.0/feature.xml
-eclipse/features/org.eclipse.jem_0.5.0/license.html
-eclipse/features/org.eclipse.ve_0.5.0/cpl-v10.html
-eclipse/features/org.eclipse.ve_0.5.0/feature.xml
-eclipse/features/org.eclipse.ve_0.5.0/eclipse_update_120.jpg
-eclipse/features/org.eclipse.ve_0.5.0/license.html
-eclipse/features/org.eclipse.ve_0.5.0/feature.properties
-eclipse/features/org.eclipse.ve.sdk_2.1.2/cpl-v10.html
-eclipse/features/org.eclipse.ve.sdk_2.1.2/feature.xml
-eclipse/features/org.eclipse.ve.sdk_2.1.2/eclipse_update_120.jpg
-eclipse/features/org.eclipse.ve.sdk_2.1.2/license.html
-eclipse/features/org.eclipse.ve.sdk_2.1.2/feature.properties
-
-@dirrm eclipse/plugins/org.eclipse.ve_0.5.0
-@dirrm eclipse/plugins/org.eclipse.ve.source_0.5.0/src/org.eclipse.ve.propertysheet_0.5.0
-@dirrm eclipse/plugins/org.eclipse.ve.source_0.5.0/src/org.eclipse.ve.jfc_0.5.0/vm
-@dirrm eclipse/plugins/org.eclipse.ve.source_0.5.0/src/org.eclipse.ve.jfc_0.5.0
-@dirrm eclipse/plugins/org.eclipse.ve.source_0.5.0/src/org.eclipse.ve.java.core_0.5.0/vm
-@dirrm eclipse/plugins/org.eclipse.ve.source_0.5.0/src/org.eclipse.ve.java.core_0.5.0/rose
-@dirrm eclipse/plugins/org.eclipse.ve.source_0.5.0/src/org.eclipse.ve.java.core_0.5.0/model
-@dirrm eclipse/plugins/org.eclipse.ve.source_0.5.0/src/org.eclipse.ve.java.core_0.5.0
-@dirrm eclipse/plugins/org.eclipse.ve.source_0.5.0/src/org.eclipse.ve.cde_0.5.0/rose
-@dirrm eclipse/plugins/org.eclipse.ve.source_0.5.0/src/org.eclipse.ve.cde_0.5.0/model
-@dirrm eclipse/plugins/org.eclipse.ve.source_0.5.0/src/org.eclipse.ve.cde_0.5.0
-@dirrm eclipse/plugins/org.eclipse.ve.source_0.5.0/src
-@dirrm eclipse/plugins/org.eclipse.ve.source_0.5.0
-@dirrm eclipse/plugins/org.eclipse.ve.propertysheet_0.5.0/images
-@dirrm eclipse/plugins/org.eclipse.ve.propertysheet_0.5.0
-@dirrm eclipse/plugins/org.eclipse.ve.jfc_0.5.0/vm
-@dirrm eclipse/plugins/org.eclipse.ve.jfc_0.5.0/palette
-@dirrm eclipse/plugins/org.eclipse.ve.jfc_0.5.0/overrides/javax/swing/text
-@dirrm eclipse/plugins/org.eclipse.ve.jfc_0.5.0/overrides/javax/swing/table
-@dirrm eclipse/plugins/org.eclipse.ve.jfc_0.5.0/overrides/javax/swing/plaf/basic
-@dirrm eclipse/plugins/org.eclipse.ve.jfc_0.5.0/overrides/javax/swing/plaf
-@dirrm eclipse/plugins/org.eclipse.ve.jfc_0.5.0/overrides/javax/swing/border
-@dirrm eclipse/plugins/org.eclipse.ve.jfc_0.5.0/overrides/javax/swing
-@dirrm eclipse/plugins/org.eclipse.ve.jfc_0.5.0/overrides/javax
-@dirrm eclipse/plugins/org.eclipse.ve.jfc_0.5.0/overrides/java/util
-@dirrm eclipse/plugins/org.eclipse.ve.jfc_0.5.0/overrides/java/awt
-@dirrm eclipse/plugins/org.eclipse.ve.jfc_0.5.0/overrides/java/applet
-@dirrm eclipse/plugins/org.eclipse.ve.jfc_0.5.0/overrides/java
-@dirrm eclipse/plugins/org.eclipse.ve.jfc_0.5.0/overrides
-@dirrm eclipse/plugins/org.eclipse.ve.jfc_0.5.0/icons/full/obj16
-@dirrm eclipse/plugins/org.eclipse.ve.jfc_0.5.0/icons/full/eview16
-@dirrm eclipse/plugins/org.eclipse.ve.jfc_0.5.0/icons/full/etool16
-@dirrm eclipse/plugins/org.eclipse.ve.jfc_0.5.0/icons/full/dtool16
-@dirrm eclipse/plugins/org.eclipse.ve.jfc_0.5.0/icons/full/cview16
-@dirrm eclipse/plugins/org.eclipse.ve.jfc_0.5.0/icons/full/ctool16
-@dirrm eclipse/plugins/org.eclipse.ve.jfc_0.5.0/icons/full/clcl16
-@dirrm eclipse/plugins/org.eclipse.ve.jfc_0.5.0/icons/full
-@dirrm eclipse/plugins/org.eclipse.ve.jfc_0.5.0/icons
-@dirrm eclipse/plugins/org.eclipse.ve.jfc_0.5.0/Examples/EventTests
-@dirrm eclipse/plugins/org.eclipse.ve.jfc_0.5.0/Examples
-@dirrm eclipse/plugins/org.eclipse.ve.jfc_0.5.0
-@dirrm eclipse/plugins/org.eclipse.ve.java.core_0.5.0/vm
-@dirrm eclipse/plugins/org.eclipse.ve.java.core_0.5.0/templates/org/eclipse/ve/internal/java/codegen/jjet/wizards/contributors
-@dirrm eclipse/plugins/org.eclipse.ve.java.core_0.5.0/templates/org/eclipse/ve/internal/java/codegen/jjet/wizards
-@dirrm eclipse/plugins/org.eclipse.ve.java.core_0.5.0/templates/org/eclipse/ve/internal/java/codegen/jjet/util
-@dirrm eclipse/plugins/org.eclipse.ve.java.core_0.5.0/templates/org/eclipse/ve/internal/java/codegen/jjet
-@dirrm eclipse/plugins/org.eclipse.ve.java.core_0.5.0/templates/org/eclipse/ve/internal/java/codegen
-@dirrm eclipse/plugins/org.eclipse.ve.java.core_0.5.0/templates/org/eclipse/ve/internal/java
-@dirrm eclipse/plugins/org.eclipse.ve.java.core_0.5.0/templates/org/eclipse/ve/internal
-@dirrm eclipse/plugins/org.eclipse.ve.java.core_0.5.0/templates/org/eclipse/ve
-@dirrm eclipse/plugins/org.eclipse.ve.java.core_0.5.0/templates/org/eclipse
-@dirrm eclipse/plugins/org.eclipse.ve.java.core_0.5.0/templates/org
-@dirrm eclipse/plugins/org.eclipse.ve.java.core_0.5.0/templates
-@dirrm eclipse/plugins/org.eclipse.ve.java.core_0.5.0/properties
-@dirrm eclipse/plugins/org.eclipse.ve.java.core_0.5.0/overrides/java/lang
-@dirrm eclipse/plugins/org.eclipse.ve.java.core_0.5.0/overrides/java
-@dirrm eclipse/plugins/org.eclipse.ve.java.core_0.5.0/overrides
-@dirrm eclipse/plugins/org.eclipse.ve.java.core_0.5.0/icons/full/wizban
-@dirrm eclipse/plugins/org.eclipse.ve.java.core_0.5.0/icons/full/obj16
-@dirrm eclipse/plugins/org.eclipse.ve.java.core_0.5.0/icons/full/etool16
-@dirrm eclipse/plugins/org.eclipse.ve.java.core_0.5.0/icons/full/elcl16
-@dirrm eclipse/plugins/org.eclipse.ve.java.core_0.5.0/icons/full/dtool16
-@dirrm eclipse/plugins/org.eclipse.ve.java.core_0.5.0/icons/full/dnd
-@dirrm eclipse/plugins/org.eclipse.ve.java.core_0.5.0/icons/full/dlcl16
-@dirrm eclipse/plugins/org.eclipse.ve.java.core_0.5.0/icons/full/cview16
-@dirrm eclipse/plugins/org.eclipse.ve.java.core_0.5.0/icons/full/ctool16
-@dirrm eclipse/plugins/org.eclipse.ve.java.core_0.5.0/icons/full/clcl16
-@dirrm eclipse/plugins/org.eclipse.ve.java.core_0.5.0/icons/full
-@dirrm eclipse/plugins/org.eclipse.ve.java.core_0.5.0/icons
-@dirrm eclipse/plugins/org.eclipse.ve.java.core_0.5.0
-@dirrm eclipse/plugins/org.eclipse.ve.doc_0.5.0
-@dirrm eclipse/plugins/org.eclipse.ve.cde_0.5.0/properties
-@dirrm eclipse/plugins/org.eclipse.ve.cde_0.5.0/images
-@dirrm eclipse/plugins/org.eclipse.ve.cde_0.5.0/icons/full/elcl16
-@dirrm eclipse/plugins/org.eclipse.ve.cde_0.5.0/icons/full/dlcl16
-@dirrm eclipse/plugins/org.eclipse.ve.cde_0.5.0/icons/full/clcl16
-@dirrm eclipse/plugins/org.eclipse.ve.cde_0.5.0/icons/full
-@dirrm eclipse/plugins/org.eclipse.ve.cde_0.5.0/icons
-@dirrm eclipse/plugins/org.eclipse.ve.cde_0.5.0
-@dirrm eclipse/plugins/org.eclipse.jem_0.5.0/overrides/java/lang
-@dirrm eclipse/plugins/org.eclipse.jem_0.5.0/overrides/java
-@dirrm eclipse/plugins/org.eclipse.jem_0.5.0/overrides
-@dirrm eclipse/plugins/org.eclipse.jem_0.5.0
-@dirrm eclipse/plugins/org.eclipse.jem.workbench_0.5.0
-@dirrm eclipse/plugins/org.eclipse.jem.source_0.5.0/src/org.eclipse.jem_0.5.0/rose
-@dirrm eclipse/plugins/org.eclipse.jem.source_0.5.0/src/org.eclipse.jem_0.5.0/model
-@dirrm eclipse/plugins/org.eclipse.jem.source_0.5.0/src/org.eclipse.jem_0.5.0
-@dirrm eclipse/plugins/org.eclipse.jem.source_0.5.0/src/org.eclipse.jem.workbench_0.5.0
-@dirrm eclipse/plugins/org.eclipse.jem.source_0.5.0/src/org.eclipse.jem.proxy_0.5.0/vm
-@dirrm eclipse/plugins/org.eclipse.jem.source_0.5.0/src/org.eclipse.jem.proxy_0.5.0
-@dirrm eclipse/plugins/org.eclipse.jem.source_0.5.0/src/org.eclipse.jem.beaninfo_0.5.0/vm
-@dirrm eclipse/plugins/org.eclipse.jem.source_0.5.0/src/org.eclipse.jem.beaninfo_0.5.0/rose
-@dirrm eclipse/plugins/org.eclipse.jem.source_0.5.0/src/org.eclipse.jem.beaninfo_0.5.0/model
-@dirrm eclipse/plugins/org.eclipse.jem.source_0.5.0/src/org.eclipse.jem.beaninfo_0.5.0
-@dirrm eclipse/plugins/org.eclipse.jem.source_0.5.0/src/org.eclipse.jem.beaninfo.ui_0.5.0
-@dirrm eclipse/plugins/org.eclipse.jem.source_0.5.0/src
-@dirrm eclipse/plugins/org.eclipse.jem.source_0.5.0
-@dirrm eclipse/plugins/org.eclipse.jem.proxy_0.5.0/vm
-@dirrm eclipse/plugins/org.eclipse.jem.proxy_0.5.0
-@dirrm eclipse/plugins/org.eclipse.jem.beaninfo_0.5.0/vm
-@dirrm eclipse/plugins/org.eclipse.jem.beaninfo_0.5.0
-@dirrm eclipse/plugins/org.eclipse.jem.beaninfo.ui_0.5.0/icons
-@dirrm eclipse/plugins/org.eclipse.jem.beaninfo.ui_0.5.0
-@dirrm eclipse/plugins/com.ibm.etools.emf.workbench_5.1.1/runtime
-@dirrm eclipse/plugins/com.ibm.etools.emf.workbench_5.1.1
-@dirrm eclipse/plugins/com.ibm.etools.emf.event_2.0.0.1/runtime
-@dirrm eclipse/plugins/com.ibm.etools.emf.event_2.0.0.1
-@dirrm eclipse/plugins/com.ibm.etools.emf.ecore.utilities_5.1.1/runtime
-@dirrm eclipse/plugins/com.ibm.etools.emf.ecore.utilities_5.1.1
-@dirrm eclipse/features/org.eclipse.ve_0.5.0
-@dirrm eclipse/features/org.eclipse.ve.source_0.5.0
-@dirrm eclipse/features/org.eclipse.ve.sdk_2.1.2
-@dirrm eclipse/features/org.eclipse.jem_0.5.0
-@dirrm eclipse/features/org.eclipse.jem.source_0.5.0
-
+eclipse/plugins/com.ibm.wtp.emf.workbench_1.0.0/plugin.xml
+eclipse/plugins/com.ibm.wtp.emf.workbench_1.0.0/emfworkbench.jar
+eclipse/plugins/org.eclipse.jem.ui_1.0.0/ui.jar
+eclipse/plugins/org.eclipse.jem.ui_1.0.0/about.html
+eclipse/plugins/org.eclipse.jem.ui_1.0.0/plugin.xml
+eclipse/plugins/org.eclipse.jem.ui_1.0.0/plugin.properties
+eclipse/plugins/org.eclipse.jem.ui_1.0.0/icons/plugin_obj.gif
+eclipse/plugins/org.eclipse.jem.ui_1.0.0/icons/full/ctool16/run_exc.gif
+eclipse/plugins/org.eclipse.jem.ui_1.0.0/icons/full/wizban/run_wiz.gif
+eclipse/plugins/org.eclipse.jem.ui_1.0.0/icons/blank.gif
+eclipse/plugins/org.eclipse.jem.ui_1.0.0/icons/package_obj_missing.gif
+eclipse/plugins/org.eclipse.jem.ui_1.0.0/icons/javabean.gif
+eclipse/plugins/org.eclipse.jem.ui_1.0.0/.options
+eclipse/plugins/org.eclipse.ve.java.core_1.0.0/vm/vcelauncher.jar
+eclipse/plugins/org.eclipse.ve.java.core_1.0.0/vm/javaremotevm.jar
+eclipse/plugins/org.eclipse.ve.java.core_1.0.0/codegen.jar
+eclipse/plugins/org.eclipse.ve.java.core_1.0.0/core.jar
+eclipse/plugins/org.eclipse.ve.java.core_1.0.0/common.jar
+eclipse/plugins/org.eclipse.ve.java.core_1.0.0/overrides/java/lang/Integer.override
+eclipse/plugins/org.eclipse.ve.java.core_1.0.0/overrides/java/lang/Character.override
+eclipse/plugins/org.eclipse.ve.java.core_1.0.0/overrides/java/lang/Double.override
+eclipse/plugins/org.eclipse.ve.java.core_1.0.0/overrides/java/lang/Long.override
+eclipse/plugins/org.eclipse.ve.java.core_1.0.0/overrides/java/lang/Short.override
+eclipse/plugins/org.eclipse.ve.java.core_1.0.0/overrides/java/lang/String.override
+eclipse/plugins/org.eclipse.ve.java.core_1.0.0/overrides/java/lang/Boolean.override
+eclipse/plugins/org.eclipse.ve.java.core_1.0.0/overrides/java/lang/Float.override
+eclipse/plugins/org.eclipse.ve.java.core_1.0.0/overrides/java/lang/Object.override
+eclipse/plugins/org.eclipse.ve.java.core_1.0.0/overrides/java/lang/Byte.override
+eclipse/plugins/org.eclipse.ve.java.core_1.0.0/overrides/..ROOT...override
+eclipse/plugins/org.eclipse.ve.java.core_1.0.0/overrides/codegenHelpers.ecore
+eclipse/plugins/org.eclipse.ve.java.core_1.0.0/icons/full/obj16/paletteshowhide_co.gif
+eclipse/plugins/org.eclipse.ve.java.core_1.0.0/icons/full/obj16/anon_class_obj.gif
+eclipse/plugins/org.eclipse.ve.java.core_1.0.0/icons/full/obj16/p2pconn_obj.gif
+eclipse/plugins/org.eclipse.ve.java.core_1.0.0/icons/full/obj16/listenerclass_obj.gif
+eclipse/plugins/org.eclipse.ve.java.core_1.0.0/icons/full/obj16/p2pconn_shrd_obj.gif
+eclipse/plugins/org.eclipse.ve.java.core_1.0.0/icons/full/obj16/javavisualeditor_obj.gif
+eclipse/plugins/org.eclipse.ve.java.core_1.0.0/icons/full/obj16/e2mconn_obj.gif
+eclipse/plugins/org.eclipse.ve.java.core_1.0.0/icons/full/obj16/anonclass_obj.gif
+eclipse/plugins/org.eclipse.ve.java.core_1.0.0/icons/full/obj16/anon_interface_obj.gif
+eclipse/plugins/org.eclipse.ve.java.core_1.0.0/icons/full/obj16/shrdinter_obj.gif
+eclipse/plugins/org.eclipse.ve.java.core_1.0.0/icons/full/obj16/listenerinterface_obj.gif
+eclipse/plugins/org.eclipse.ve.java.core_1.0.0/icons/full/obj16/anon_interface_available_obj.gif
+eclipse/plugins/org.eclipse.ve.java.core_1.0.0/icons/full/obj16/anon_class_available_obj.gif
+eclipse/plugins/org.eclipse.ve.java.core_1.0.0/icons/full/obj16/e2mconn_shrd_obj.gif
+eclipse/plugins/org.eclipse.ve.java.core_1.0.0/icons/full/obj16/unproperty_obj.gif
+eclipse/plugins/org.eclipse.ve.java.core_1.0.0/icons/full/obj16/gennonvis_obj.gif
+eclipse/plugins/org.eclipse.ve.java.core_1.0.0/icons/full/obj16/genlistener_obj.gif
+eclipse/plugins/org.eclipse.ve.java.core_1.0.0/icons/full/obj16/shrdclass_obj.gif
+eclipse/plugins/org.eclipse.ve.java.core_1.0.0/icons/full/obj16/anoninter_obj.gif
+eclipse/plugins/org.eclipse.ve.java.core_1.0.0/icons/full/obj16/unevent_obj.gif
+eclipse/plugins/org.eclipse.ve.java.core_1.0.0/icons/full/ctool16/newvisualclass_wiz.gif
+eclipse/plugins/org.eclipse.ve.java.core_1.0.0/icons/full/ctool16/customizebean_co.gif
+eclipse/plugins/org.eclipse.ve.java.core_1.0.0/icons/full/ctool16/vmwicon_wiz.gif
+eclipse/plugins/org.eclipse.ve.java.core_1.0.0/icons/full/ctool16/testjavabean_co.gif
+eclipse/plugins/org.eclipse.ve.java.core_1.0.0/icons/full/ctool16/javavisualeditor_co.gif
+eclipse/plugins/org.eclipse.ve.java.core_1.0.0/icons/full/ctool16/java_bean_launcher.gif
+eclipse/plugins/org.eclipse.ve.java.core_1.0.0/icons/full/dnd/stack_mask.bmp
+eclipse/plugins/org.eclipse.ve.java.core_1.0.0/icons/full/dnd/stack_source.bmp
+eclipse/plugins/org.eclipse.ve.java.core_1.0.0/icons/full/cview16/booleanfalse.gif
+eclipse/plugins/org.eclipse.ve.java.core_1.0.0/icons/full/cview16/javabean.gif
+eclipse/plugins/org.eclipse.ve.java.core_1.0.0/icons/full/cview16/eventpresent_anon_bw_obj.gif
+eclipse/plugins/org.eclipse.ve.java.core_1.0.0/icons/full/cview16/pause.gif
+eclipse/plugins/org.eclipse.ve.java.core_1.0.0/icons/full/cview16/eventpresent_class_obj.gif
+eclipse/plugins/org.eclipse.ve.java.core_1.0.0/icons/full/cview16/event_arrow_obj.gif
+eclipse/plugins/org.eclipse.ve.java.core_1.0.0/icons/full/cview16/eventpresent_interface_obj.gif
+eclipse/plugins/org.eclipse.ve.java.core_1.0.0/icons/full/cview16/info_overlay.gif
+eclipse/plugins/org.eclipse.ve.java.core_1.0.0/icons/full/cview16/play.gif
+eclipse/plugins/org.eclipse.ve.java.core_1.0.0/icons/full/cview16/event_prop_arrow_obj.gif
+eclipse/plugins/org.eclipse.ve.java.core_1.0.0/icons/full/cview16/event_arrow_bw_obj.gif
+eclipse/plugins/org.eclipse.ve.java.core_1.0.0/icons/full/cview16/error_overlay.gif
+eclipse/plugins/org.eclipse.ve.java.core_1.0.0/icons/full/cview16/warning_overlay.gif
+eclipse/plugins/org.eclipse.ve.java.core_1.0.0/icons/full/cview16/warning_obj.gif
+eclipse/plugins/org.eclipse.ve.java.core_1.0.0/icons/full/cview16/booleantrue.gif
+eclipse/plugins/org.eclipse.ve.java.core_1.0.0/icons/full/cview16/error_obj.gif
+eclipse/plugins/org.eclipse.ve.java.core_1.0.0/icons/full/cview16/selectbean_view.gif
+eclipse/plugins/org.eclipse.ve.java.core_1.0.0/icons/full/cview16/eventpresent_shared_obj.gif
+eclipse/plugins/org.eclipse.ve.java.core_1.0.0/icons/full/cview16/javabeans.gif
+eclipse/plugins/org.eclipse.ve.java.core_1.0.0/icons/full/cview16/applet.gif
+eclipse/plugins/org.eclipse.ve.java.core_1.0.0/icons/full/cview16/info_obj.gif
+eclipse/plugins/org.eclipse.ve.java.core_1.0.0/icons/full/cview16/eventpresent_anon_obj.gif
+eclipse/plugins/org.eclipse.ve.java.core_1.0.0/icons/full/cview16/eventpresent_class_bw_obj.gif
+eclipse/plugins/org.eclipse.ve.java.core_1.0.0/icons/full/cnavpal/cmpNE_pal.gif
+eclipse/plugins/org.eclipse.ve.java.core_1.0.0/icons/full/cnavpal/verFill_pal.gif
+eclipse/plugins/org.eclipse.ve.java.core_1.0.0/icons/full/cnavpal/cmpSW_pal.gif
+eclipse/plugins/org.eclipse.ve.java.core_1.0.0/icons/full/cnavpal/cmpE_pal.gif
+eclipse/plugins/org.eclipse.ve.java.core_1.0.0/icons/full/cnavpal/horFill_pal.gif
+eclipse/plugins/org.eclipse.ve.java.core_1.0.0/icons/full/cnavpal/cmpC_pal.gif
+eclipse/plugins/org.eclipse.ve.java.core_1.0.0/icons/full/cnavpal/cmpN_pal.gif
+eclipse/plugins/org.eclipse.ve.java.core_1.0.0/icons/full/cnavpal/cmpNW_pal.gif
+eclipse/plugins/org.eclipse.ve.java.core_1.0.0/icons/full/cnavpal/cmpW_pal.gif
+eclipse/plugins/org.eclipse.ve.java.core_1.0.0/icons/full/cnavpal/cmpSE_pal.gif
+eclipse/plugins/org.eclipse.ve.java.core_1.0.0/icons/full/cnavpal/cmpS_pal.gif
+eclipse/plugins/org.eclipse.ve.java.core_1.0.0/icons/full/dlcl16/rembkmrk_tsk.gif
+eclipse/plugins/org.eclipse.ve.java.core_1.0.0/icons/full/dnavpal/cmpNW_pal.gif
+eclipse/plugins/org.eclipse.ve.java.core_1.0.0/icons/full/dnavpal/cmpE_pal.gif
+eclipse/plugins/org.eclipse.ve.java.core_1.0.0/icons/full/dnavpal/cmpC_pal.gif
+eclipse/plugins/org.eclipse.ve.java.core_1.0.0/icons/full/dnavpal/cmpN_pal.gif
+eclipse/plugins/org.eclipse.ve.java.core_1.0.0/icons/full/dnavpal/cmpSE_pal.gif
+eclipse/plugins/org.eclipse.ve.java.core_1.0.0/icons/full/dnavpal/verFill_pal.gif
+eclipse/plugins/org.eclipse.ve.java.core_1.0.0/icons/full/dnavpal/horFill_pal.gif
+eclipse/plugins/org.eclipse.ve.java.core_1.0.0/icons/full/dnavpal/cmpW_pal.gif
+eclipse/plugins/org.eclipse.ve.java.core_1.0.0/icons/full/dnavpal/cmpS_pal.gif
+eclipse/plugins/org.eclipse.ve.java.core_1.0.0/icons/full/dnavpal/cmpNE_pal.gif
+eclipse/plugins/org.eclipse.ve.java.core_1.0.0/icons/full/dnavpal/cmpSW_pal.gif
+eclipse/plugins/org.eclipse.ve.java.core_1.0.0/icons/full/dtool16/customizebean_co.gif
+eclipse/plugins/org.eclipse.ve.java.core_1.0.0/icons/full/dtool16/testjavabean_co.gif
+eclipse/plugins/org.eclipse.ve.java.core_1.0.0/icons/full/wizban/javabean_wiz.gif
+eclipse/plugins/org.eclipse.ve.java.core_1.0.0/icons/full/wizban/javavisualeditor_wiz.gif
+eclipse/plugins/org.eclipse.ve.java.core_1.0.0/icons/full/etool16/customizebean_co.gif
+eclipse/plugins/org.eclipse.ve.java.core_1.0.0/icons/full/etool16/testjavabean_co.gif
+eclipse/plugins/org.eclipse.ve.java.core_1.0.0/icons/full/elcl16/showbasic_ps.gif
+eclipse/plugins/org.eclipse.ve.java.core_1.0.0/icons/full/elcl16/rembkmrk_tsk.gif
+eclipse/plugins/org.eclipse.ve.java.core_1.0.0/icons/full/clcl16/javabean_obj.gif
+eclipse/plugins/org.eclipse.ve.java.core_1.0.0/icons/full/clcl16/rembkmrk_tsk.gif
+eclipse/plugins/org.eclipse.ve.java.core_1.0.0/icons/window16.gif
+eclipse/plugins/org.eclipse.ve.java.core_1.0.0/icons/vce.gif
+eclipse/plugins/org.eclipse.ve.java.core_1.0.0/icons/javabean.gif
+eclipse/plugins/org.eclipse.ve.java.core_1.0.0/templates/org/eclipse/ve/internal/java/codegen/jjet/util/AnonymousEventMethodTemplate.javajet
+eclipse/plugins/org.eclipse.ve.java.core_1.0.0/templates/org/eclipse/ve/internal/java/codegen/jjet/util/EventSkelaton.java
+eclipse/plugins/org.eclipse.ve.java.core_1.0.0/templates/org/eclipse/ve/internal/java/codegen/jjet/util/AnonymousEventTemplate.javajet
+eclipse/plugins/org.eclipse.ve.java.core_1.0.0/templates/org/eclipse/ve/internal/java/codegen/jjet/util/DefaultMethodTemplate.javajet
+eclipse/plugins/org.eclipse.ve.java.core_1.0.0/templates/org/eclipse/ve/internal/java/codegen/jjet/util/PropChangeAnonymousTemplate.javajet
+eclipse/plugins/org.eclipse.ve.java.core_1.0.0/templates/org/eclipse/ve/internal/java/codegen/jjet/util/MethodSkelaton.java
+eclipse/plugins/org.eclipse.ve.java.core_1.0.0/templates/org/eclipse/ve/internal/java/codegen/jjet/util/MethodInvocationSkelaton.java
+eclipse/plugins/org.eclipse.ve.java.core_1.0.0/templates/org/eclipse/ve/internal/java/codegen/jjet/util/PropChangeAnonymousPropertyTemplate.javajet
+eclipse/plugins/org.eclipse.ve.java.core_1.0.0/templates/org/eclipse/ve/internal/java/codegen/jjet/util/DefaultMethodInvocationTemplate.javajet
+eclipse/plugins/org.eclipse.ve.java.core_1.0.0/templates/org/eclipse/ve/internal/java/codegen/jjet/util/ExpressionSkelaton.java
+eclipse/plugins/org.eclipse.ve.java.core_1.0.0/templates/org/eclipse/ve/internal/java/codegen/jjet/util/TryCatchMethodTemplate.javajet
+eclipse/plugins/org.eclipse.ve.java.core_1.0.0/templates/org/eclipse/ve/internal/java/codegen/jjet/util/InitExpressionTemplate.javajet
+eclipse/plugins/org.eclipse.ve.java.core_1.0.0/templates/org/eclipse/ve/internal/java/codegen/jjet/wizards/contributors/VisualClassSourceWizardSkeleton.java
+eclipse/plugins/org.eclipse.ve.java.core_1.0.0/templates/org/eclipse/ve/internal/java/codegen/jjet/wizards/contributors/JContentPaneSourceTemplate.javajet
+eclipse/plugins/org.eclipse.ve.java.core_1.0.0/templates/org/eclipse/ve/internal/java/codegen/jjet/wizards/contributors/WindowDialogSourceTemplate.javajet
+eclipse/plugins/org.eclipse.ve.java.core_1.0.0/templates/org/eclipse/ve/internal/java/codegen/jjet/wizards/contributors/ComponentSetSizeSourceTemplate.javajet
+eclipse/plugins/org.eclipse.ve.java.core_1.0.0/plugin.xml
+eclipse/plugins/org.eclipse.ve.java.core_1.0.0/java_palette.xmi
+eclipse/plugins/org.eclipse.ve.java.core_1.0.0/about.html
+eclipse/plugins/org.eclipse.ve.java.core_1.0.0/properties/java_palette.properties
+eclipse/plugins/org.eclipse.ve.java.core_1.0.0/.options
+eclipse/plugins/org.eclipse.ve.java.core_1.0.0/plugin.properties
+eclipse/plugins/org.eclipse.ve.doc_1.0.0/doc.zip
+eclipse/plugins/org.eclipse.ve.doc_1.0.0/about.html
+eclipse/plugins/org.eclipse.ve.doc_1.0.0/swg_info_common.css
+eclipse/plugins/org.eclipse.ve.doc_1.0.0/ve_toc.xml
+eclipse/plugins/org.eclipse.ve.doc_1.0.0/ibmdita.css
+eclipse/plugins/org.eclipse.ve.doc_1.0.0/ve_isv_toc.xml
+eclipse/plugins/org.eclipse.ve.doc_1.0.0/plugin.properties
+eclipse/plugins/org.eclipse.ve.doc_1.0.0/plugin.xml
+eclipse/plugins/org.eclipse.jem.workbench_1.0.0/workbench.jar
+eclipse/plugins/org.eclipse.jem.workbench_1.0.0/plugin.xml
+eclipse/plugins/org.eclipse.jem.workbench_1.0.0/about.html
+eclipse/plugins/org.eclipse.jem.workbench_1.0.0/plugin.properties
+eclipse/plugins/com.ibm.wtp.common.util_1.0.0/plugin.xml
+eclipse/plugins/com.ibm.wtp.common.util_1.0.0/util.jar
+eclipse/plugins/com.ibm.wtp.common.util_1.0.0/.options
+eclipse/plugins/org.eclipse.ve.sdk_1.0.0/about.properties
+eclipse/plugins/org.eclipse.ve.sdk_1.0.0/plugin.properties
+eclipse/plugins/org.eclipse.ve.sdk_1.0.0/plugin.xml
+eclipse/plugins/org.eclipse.ve.sdk_1.0.0/about.mappings
+eclipse/plugins/org.eclipse.ve.sdk_1.0.0/about.html
+eclipse/plugins/org.eclipse.ve.sdk_1.0.0/eclipse32.gif
+eclipse/plugins/org.eclipse.ve.sdk_1.0.0/about.ini
+eclipse/plugins/org.eclipse.ve.swt_1.0.0/jbcfswtvm.jar
+eclipse/plugins/org.eclipse.ve.swt_1.0.0/swtcodegen.jar
+eclipse/plugins/org.eclipse.ve.swt_1.0.0/vm/swtbeaninfo.jar
+eclipse/plugins/org.eclipse.ve.swt_1.0.0/ve_swt.jar
+eclipse/plugins/org.eclipse.ve.swt_1.0.0/icons/full/clcl16/composite_obj.gif
+eclipse/plugins/org.eclipse.ve.swt_1.0.0/icons/full/clcl16/scrollbar_obj.gif
+eclipse/plugins/org.eclipse.ve.swt_1.0.0/icons/full/clcl16/shell_obj.gif
+eclipse/plugins/org.eclipse.ve.swt_1.0.0/icons/full/clcl16/textarea_obj.gif
+eclipse/plugins/org.eclipse.ve.swt_1.0.0/icons/full/clcl16/checkbox_obj.gif
+eclipse/plugins/org.eclipse.ve.swt_1.0.0/icons/full/clcl16/column_obj.gif
+eclipse/plugins/org.eclipse.ve.swt_1.0.0/icons/full/clcl16/text_obj.gif
+eclipse/plugins/org.eclipse.ve.swt_1.0.0/icons/full/clcl16/tabfolder_obj.gif
+eclipse/plugins/org.eclipse.ve.swt_1.0.0/icons/full/clcl16/radiobutton_obj.gif
+eclipse/plugins/org.eclipse.ve.swt_1.0.0/icons/full/clcl16/progressbar_obj.gif
+eclipse/plugins/org.eclipse.ve.swt_1.0.0/icons/full/clcl16/tree_obj.gif
+eclipse/plugins/org.eclipse.ve.swt_1.0.0/icons/full/clcl16/label_obj.gif
+eclipse/plugins/org.eclipse.ve.swt_1.0.0/icons/full/clcl16/table_obj.gif
+eclipse/plugins/org.eclipse.ve.swt_1.0.0/icons/full/clcl16/choice_obj.gif
+eclipse/plugins/org.eclipse.ve.swt_1.0.0/icons/full/clcl16/slider_obj.gif
+eclipse/plugins/org.eclipse.ve.swt_1.0.0/icons/full/clcl16/listbox_obj.gif
+eclipse/plugins/org.eclipse.ve.swt_1.0.0/icons/full/clcl16/eclipse_logo.gif
+eclipse/plugins/org.eclipse.ve.swt_1.0.0/icons/full/clcl16/button_obj.gif
+eclipse/plugins/org.eclipse.ve.swt_1.0.0/icons/nomemory.gif
+eclipse/plugins/org.eclipse.ve.swt_1.0.0/overrides/org/eclipse/swt/graphics/Rectangle.override
+eclipse/plugins/org.eclipse.ve.swt_1.0.0/overrides/org/eclipse/swt/graphics/Cursor.override
+eclipse/plugins/org.eclipse.ve.swt_1.0.0/overrides/org/eclipse/swt/graphics/Point.override
+eclipse/plugins/org.eclipse.ve.swt_1.0.0/overrides/org/eclipse/swt/graphics/Image.override
+eclipse/plugins/org.eclipse.ve.swt_1.0.0/overrides/org/eclipse/swt/graphics/Font.override
+eclipse/plugins/org.eclipse.ve.swt_1.0.0/overrides/org/eclipse/swt/graphics/Color.override
+eclipse/plugins/org.eclipse.ve.swt_1.0.0/overrides/org/eclipse/swt/widgets/Composite.override
+eclipse/plugins/org.eclipse.ve.swt_1.0.0/overrides/org/eclipse/swt/widgets/Table.override
+eclipse/plugins/org.eclipse.ve.swt_1.0.0/overrides/org/eclipse/swt/widgets/Combo.override
+eclipse/plugins/org.eclipse.ve.swt_1.0.0/overrides/org/eclipse/swt/widgets/List.override
+eclipse/plugins/org.eclipse.ve.swt_1.0.0/overrides/org/eclipse/swt/widgets/Slider.override
+eclipse/plugins/org.eclipse.ve.swt_1.0.0/overrides/org/eclipse/swt/widgets/Button.override
+eclipse/plugins/org.eclipse.ve.swt_1.0.0/overrides/org/eclipse/swt/widgets/Shell.override
+eclipse/plugins/org.eclipse.ve.swt_1.0.0/overrides/org/eclipse/swt/widgets/Tree.override
+eclipse/plugins/org.eclipse.ve.swt_1.0.0/overrides/org/eclipse/swt/widgets/Layout.override
+eclipse/plugins/org.eclipse.ve.swt_1.0.0/overrides/org/eclipse/swt/widgets/Label.override
+eclipse/plugins/org.eclipse.ve.swt_1.0.0/overrides/org/eclipse/swt/widgets/TableColumn.override
+eclipse/plugins/org.eclipse.ve.swt_1.0.0/overrides/org/eclipse/swt/widgets/Group.override
+eclipse/plugins/org.eclipse.ve.swt_1.0.0/overrides/org/eclipse/swt/widgets/TabFolder.override
+eclipse/plugins/org.eclipse.ve.swt_1.0.0/overrides/org/eclipse/swt/widgets/Text.override
+eclipse/plugins/org.eclipse.ve.swt_1.0.0/overrides/org/eclipse/swt/widgets/Control.override
+eclipse/plugins/org.eclipse.ve.swt_1.0.0/overrides/org/eclipse/swt/widgets/ProgressBar.override
+eclipse/plugins/org.eclipse.ve.swt_1.0.0/overrides/org/eclipse/swt/widgets/Widget.override
+eclipse/plugins/org.eclipse.ve.swt_1.0.0/overrides/org/eclipse/swt/layout/RowData.override
+eclipse/plugins/org.eclipse.ve.swt_1.0.0/overrides/org/eclipse/swt/layout/FormAttachment.override
+eclipse/plugins/org.eclipse.ve.swt_1.0.0/overrides/org/eclipse/swt/layout/FillLayout.override
+eclipse/plugins/org.eclipse.ve.swt_1.0.0/overrides/org/eclipse/swt/layout/GridData.override
+eclipse/plugins/org.eclipse.ve.swt_1.0.0/overrides/org/eclipse/swt/layout/FormLayout.override
+eclipse/plugins/org.eclipse.ve.swt_1.0.0/overrides/org/eclipse/swt/layout/RowLayout.override
+eclipse/plugins/org.eclipse.ve.swt_1.0.0/overrides/org/eclipse/swt/layout/FormData.override
+eclipse/plugins/org.eclipse.ve.swt_1.0.0/overrides/org/eclipse/swt/layout/GridLayout.override
+eclipse/plugins/org.eclipse.ve.swt_1.0.0/overrides/resourcebundle.xmi
+eclipse/plugins/org.eclipse.ve.swt_1.0.0/overrides/resourcebundle.properties
+eclipse/plugins/org.eclipse.ve.swt_1.0.0/swtpalette.xmi
+eclipse/plugins/org.eclipse.ve.swt_1.0.0/plugin.xml
+eclipse/plugins/org.eclipse.ve.swt_1.0.0/templates/org/eclipse/ve/internal/swt/codegen/jjet/util/NoReturnMethodTemplate.javajet
+eclipse/plugins/org.eclipse.ve.swt_1.0.0/templates/org/eclipse/ve/internal/swt/codegen/jjet/util/MethodSkelaton.java
+eclipse/plugins/org.eclipse.ve.swt_1.0.0/templates/org/eclipse/ve/internal/swt/codegen/jjet/util/SWTMainMethodTemplate.javajet
+eclipse/plugins/org.eclipse.ve.swt_1.0.0/RadioButton.xmi
+eclipse/plugins/org.eclipse.ve.swt_1.0.0/Shell.xmi
+eclipse/plugins/org.eclipse.ve.swt_1.0.0/TextArea.xmi
+eclipse/plugins/org.eclipse.ve.swt_1.0.0/CheckBox.xmi
+eclipse/plugins/org.eclipse.ve.swt_1.0.0/plugin.properties
+eclipse/plugins/org.eclipse.ve.swt_1.0.0/about.html
+eclipse/plugins/org.eclipse.ve.swt_1.0.0/palette.properties
+eclipse/plugins/org.eclipse.ve.cde_1.0.0/cde.jar
+eclipse/plugins/org.eclipse.ve.cde_1.0.0/cdm.jar
+eclipse/plugins/org.eclipse.ve.cde_1.0.0/icons/full/dlcl16/alignright_obj.gif
+eclipse/plugins/org.eclipse.ve.cde_1.0.0/icons/full/dlcl16/alignleft_obj.gif
+eclipse/plugins/org.eclipse.ve.cde_1.0.0/icons/full/dlcl16/aligndialog_obj.gif
+eclipse/plugins/org.eclipse.ve.cde_1.0.0/icons/full/dlcl16/alignbottom_obj.gif
+eclipse/plugins/org.eclipse.ve.cde_1.0.0/icons/full/dlcl16/aligntop_obj.gif
+eclipse/plugins/org.eclipse.ve.cde_1.0.0/icons/full/dlcl16/distributevert_obj.gif
+eclipse/plugins/org.eclipse.ve.cde_1.0.0/icons/full/dlcl16/alignwidth_obj.gif
+eclipse/plugins/org.eclipse.ve.cde_1.0.0/icons/full/dlcl16/alignmiddle_obj.gif
+eclipse/plugins/org.eclipse.ve.cde_1.0.0/icons/full/dlcl16/distributebox_obj.gif
+eclipse/plugins/org.eclipse.ve.cde_1.0.0/icons/full/dlcl16/alignheight_obj.gif
+eclipse/plugins/org.eclipse.ve.cde_1.0.0/icons/full/dlcl16/distributehorz_obj.gif
+eclipse/plugins/org.eclipse.ve.cde_1.0.0/icons/full/dlcl16/aligncenter_obj.gif
+eclipse/plugins/org.eclipse.ve.cde_1.0.0/icons/full/elcl16/distributebox_obj.gif
+eclipse/plugins/org.eclipse.ve.cde_1.0.0/icons/full/elcl16/alignwidth_obj.gif
+eclipse/plugins/org.eclipse.ve.cde_1.0.0/icons/full/elcl16/aligndialog_obj.gif
+eclipse/plugins/org.eclipse.ve.cde_1.0.0/icons/full/elcl16/alignbottom_obj.gif
+eclipse/plugins/org.eclipse.ve.cde_1.0.0/icons/full/elcl16/distributevert_obj.gif
+eclipse/plugins/org.eclipse.ve.cde_1.0.0/icons/full/elcl16/alignmiddle_obj.gif
+eclipse/plugins/org.eclipse.ve.cde_1.0.0/icons/full/elcl16/alignheight_obj.gif
+eclipse/plugins/org.eclipse.ve.cde_1.0.0/icons/full/elcl16/alignright_obj.gif
+eclipse/plugins/org.eclipse.ve.cde_1.0.0/icons/full/elcl16/aligntop_obj.gif
+eclipse/plugins/org.eclipse.ve.cde_1.0.0/icons/full/elcl16/alignleft_obj.gif
+eclipse/plugins/org.eclipse.ve.cde_1.0.0/icons/full/elcl16/distributehorz_obj.gif
+eclipse/plugins/org.eclipse.ve.cde_1.0.0/icons/full/elcl16/aligncenter_obj.gif
+eclipse/plugins/org.eclipse.ve.cde_1.0.0/icons/full/clcl16/alignheight_obj.gif
+eclipse/plugins/org.eclipse.ve.cde_1.0.0/icons/full/clcl16/alignleft_obj.gif
+eclipse/plugins/org.eclipse.ve.cde_1.0.0/icons/full/clcl16/alignwidth_obj.gif
+eclipse/plugins/org.eclipse.ve.cde_1.0.0/icons/full/clcl16/aligncenter_obj.gif
+eclipse/plugins/org.eclipse.ve.cde_1.0.0/icons/full/clcl16/distributehorz_obj.gif
+eclipse/plugins/org.eclipse.ve.cde_1.0.0/icons/full/clcl16/distributebox_obj.gif
+eclipse/plugins/org.eclipse.ve.cde_1.0.0/icons/full/clcl16/transp16.gif
+eclipse/plugins/org.eclipse.ve.cde_1.0.0/icons/full/clcl16/aligntop_obj.gif
+eclipse/plugins/org.eclipse.ve.cde_1.0.0/icons/full/clcl16/alignright_obj.gif
+eclipse/plugins/org.eclipse.ve.cde_1.0.0/icons/full/clcl16/aligndialog_obj.gif
+eclipse/plugins/org.eclipse.ve.cde_1.0.0/icons/full/clcl16/alignbottom_obj.gif
+eclipse/plugins/org.eclipse.ve.cde_1.0.0/icons/full/clcl16/alignmiddle_obj.gif
+eclipse/plugins/org.eclipse.ve.cde_1.0.0/icons/full/clcl16/distributevert_obj.gif
+eclipse/plugins/org.eclipse.ve.cde_1.0.0/images/arrow16.gif
+eclipse/plugins/org.eclipse.ve.cde_1.0.0/images/somepart.gif
+eclipse/plugins/org.eclipse.ve.cde_1.0.0/images/connection16.gif
+eclipse/plugins/org.eclipse.ve.cde_1.0.0/images/bean16.gif
+eclipse/plugins/org.eclipse.ve.cde_1.0.0/images/graph.gif
+eclipse/plugins/org.eclipse.ve.cde_1.0.0/images/marquee16.gif
+eclipse/plugins/org.eclipse.ve.cde_1.0.0/images/unknownbean16.gif
+eclipse/plugins/org.eclipse.ve.cde_1.0.0/plugin.xml
+eclipse/plugins/org.eclipse.ve.cde_1.0.0/plugin.properties
+eclipse/plugins/org.eclipse.ve.cde_1.0.0/properties/cde_palette.properties
+eclipse/plugins/org.eclipse.ve.cde_1.0.0/about.html
+eclipse/plugins/org.eclipse.ve.cde_1.0.0/cde_palette.xmi
+eclipse/plugins/org.eclipse.jem.source_1.0.0/src/org.eclipse.jem.beaninfo_1.0.0/rose/beaninfo.cat
+eclipse/plugins/org.eclipse.jem.source_1.0.0/src/org.eclipse.jem.beaninfo_1.0.0/rose/introspect.mdl
+eclipse/plugins/org.eclipse.jem.source_1.0.0/src/org.eclipse.jem.beaninfo_1.0.0/beaninfosrc.zip
+eclipse/plugins/org.eclipse.jem.source_1.0.0/src/org.eclipse.jem.beaninfo_1.0.0/proxy.jars
+eclipse/plugins/org.eclipse.jem.source_1.0.0/src/org.eclipse.jem.beaninfo_1.0.0/vm/beaninfovmsrc.zip
+eclipse/plugins/org.eclipse.jem.source_1.0.0/src/org.eclipse.jem.beaninfo_1.0.0/about.html
+eclipse/plugins/org.eclipse.jem.source_1.0.0/src/org.eclipse.jem.beaninfo_1.0.0/model/beaninfo.ecore
+eclipse/plugins/org.eclipse.jem.source_1.0.0/src/org.eclipse.jem.beaninfo_1.0.0/model/introspect.genmodel
+eclipse/plugins/org.eclipse.jem.source_1.0.0/src/org.eclipse.jem_1.0.0/mofjavasrc.zip
+eclipse/plugins/org.eclipse.jem.source_1.0.0/src/org.eclipse.jem_1.0.0/about.html
+eclipse/plugins/org.eclipse.jem.source_1.0.0/src/org.eclipse.jem_1.0.0/rose/edocjava2.cat
+eclipse/plugins/org.eclipse.jem.source_1.0.0/src/org.eclipse.jem_1.0.0/rose/instantiation.cat
+eclipse/plugins/org.eclipse.jem.source_1.0.0/src/org.eclipse.jem_1.0.0/rose/javaModel.mdl
+eclipse/plugins/org.eclipse.jem.source_1.0.0/src/org.eclipse.jem_1.0.0/rose/instance.mdl
+eclipse/plugins/org.eclipse.jem.source_1.0.0/src/org.eclipse.jem_1.0.0/javainstsrc.zip
+eclipse/plugins/org.eclipse.jem.source_1.0.0/src/org.eclipse.jem_1.0.0/model/instance.genmodel
+eclipse/plugins/org.eclipse.jem.source_1.0.0/src/org.eclipse.jem_1.0.0/model/javaModel.genmodel
+eclipse/plugins/org.eclipse.jem.source_1.0.0/src/org.eclipse.jem_1.0.0/model/instance.ecore
+eclipse/plugins/org.eclipse.jem.source_1.0.0/src/org.eclipse.jem_1.0.0/model/java.ecore
+eclipse/plugins/org.eclipse.jem.source_1.0.0/src/org.eclipse.jem.ui_1.0.0/about.html
+eclipse/plugins/org.eclipse.jem.source_1.0.0/src/org.eclipse.jem.ui_1.0.0/uisrc.zip
+eclipse/plugins/org.eclipse.jem.source_1.0.0/src/org.eclipse.jem.proxy_1.0.0/remotecommonsrc.zip
+eclipse/plugins/org.eclipse.jem.source_1.0.0/src/org.eclipse.jem.proxy_1.0.0/vm/remotevmsrc.zip
+eclipse/plugins/org.eclipse.jem.source_1.0.0/src/org.eclipse.jem.proxy_1.0.0/schema/contributors.exsd
+eclipse/plugins/org.eclipse.jem.source_1.0.0/src/org.eclipse.jem.proxy_1.0.0/proxy.jars
+eclipse/plugins/org.eclipse.jem.source_1.0.0/src/org.eclipse.jem.proxy_1.0.0/proxyidesrc.zip
+eclipse/plugins/org.eclipse.jem.source_1.0.0/src/org.eclipse.jem.proxy_1.0.0/about.html
+eclipse/plugins/org.eclipse.jem.source_1.0.0/src/org.eclipse.jem.proxy_1.0.0/proxysrc.zip
+eclipse/plugins/org.eclipse.jem.source_1.0.0/src/org.eclipse.jem.proxy_1.0.0/initparsersrc.zip
+eclipse/plugins/org.eclipse.jem.source_1.0.0/src/org.eclipse.jem.proxy_1.0.0/proxyremotesrc.zip
+eclipse/plugins/org.eclipse.jem.source_1.0.0/src/org.eclipse.jem.proxy_1.0.0/proxycommonsrc.zip
+eclipse/plugins/org.eclipse.jem.source_1.0.0/src/org.eclipse.jem.workbench_1.0.0/workbenchsrc.zip
+eclipse/plugins/org.eclipse.jem.source_1.0.0/src/org.eclipse.jem.workbench_1.0.0/about.html
+eclipse/plugins/org.eclipse.jem.source_1.0.0/about.html
+eclipse/plugins/org.eclipse.jem.source_1.0.0/about.properties
+eclipse/plugins/org.eclipse.jem.source_1.0.0/about.ini
+eclipse/plugins/org.eclipse.jem.source_1.0.0/plugin.xml
+eclipse/plugins/org.eclipse.jem.source_1.0.0/about.mappings
+eclipse/plugins/org.eclipse.jem.source_1.0.0/eclipse32.gif
+eclipse/plugins/org.eclipse.jem.source_1.0.0/plugin.properties
+eclipse/plugins/org.eclipse.ve.source_1.0.0/src/org.eclipse.ve.jfc_1.0.0/vm/jfcvmsrc.zip
+eclipse/plugins/org.eclipse.ve.source_1.0.0/src/org.eclipse.ve.jfc_1.0.0/vm/jfcbeaninfosrc.zip
+eclipse/plugins/org.eclipse.ve.source_1.0.0/src/org.eclipse.ve.jfc_1.0.0/about.html
+eclipse/plugins/org.eclipse.ve.source_1.0.0/src/org.eclipse.ve.jfc_1.0.0/jfccodegensrc.zip
+eclipse/plugins/org.eclipse.ve.source_1.0.0/src/org.eclipse.ve.jfc_1.0.0/jfccommonsrc.zip
+eclipse/plugins/org.eclipse.ve.source_1.0.0/src/org.eclipse.ve.jfc_1.0.0/proxy.jars
+eclipse/plugins/org.eclipse.ve.source_1.0.0/src/org.eclipse.ve.jfc_1.0.0/jfcsrc.zip
+eclipse/plugins/org.eclipse.ve.source_1.0.0/src/org.eclipse.ve.java.core_1.0.0/rose/jcm.cat
+eclipse/plugins/org.eclipse.ve.source_1.0.0/src/org.eclipse.ve.java.core_1.0.0/rose/jcmmodel.mdl
+eclipse/plugins/org.eclipse.ve.source_1.0.0/src/org.eclipse.ve.java.core_1.0.0/commonsrc.zip
+eclipse/plugins/org.eclipse.ve.source_1.0.0/src/org.eclipse.ve.java.core_1.0.0/schema/registrations.exsd
+eclipse/plugins/org.eclipse.ve.source_1.0.0/src/org.eclipse.ve.java.core_1.0.0/schema/contributors.exsd
+eclipse/plugins/org.eclipse.ve.source_1.0.0/src/org.eclipse.ve.java.core_1.0.0/model/jcm.ecore
+eclipse/plugins/org.eclipse.ve.source_1.0.0/src/org.eclipse.ve.java.core_1.0.0/model/jcm.genmodel
+eclipse/plugins/org.eclipse.ve.source_1.0.0/src/org.eclipse.ve.java.core_1.0.0/proxy.jars
+eclipse/plugins/org.eclipse.ve.source_1.0.0/src/org.eclipse.ve.java.core_1.0.0/coresrc.zip
+eclipse/plugins/org.eclipse.ve.source_1.0.0/src/org.eclipse.ve.java.core_1.0.0/about.html
+eclipse/plugins/org.eclipse.ve.source_1.0.0/src/org.eclipse.ve.java.core_1.0.0/vm/vcelaunchersrc.zip
+eclipse/plugins/org.eclipse.ve.source_1.0.0/src/org.eclipse.ve.java.core_1.0.0/vm/javaremotevmsrc.zip
+eclipse/plugins/org.eclipse.ve.source_1.0.0/src/org.eclipse.ve.java.core_1.0.0/codegensrc.zip
+eclipse/plugins/org.eclipse.ve.source_1.0.0/src/org.eclipse.ve.swt_1.0.0/ve_swtsrc.zip
+eclipse/plugins/org.eclipse.ve.source_1.0.0/src/org.eclipse.ve.swt_1.0.0/swtcodegensrc.zip
+eclipse/plugins/org.eclipse.ve.source_1.0.0/src/org.eclipse.ve.swt_1.0.0/proxy.jars
+eclipse/plugins/org.eclipse.ve.source_1.0.0/src/org.eclipse.ve.swt_1.0.0/about.html
+eclipse/plugins/org.eclipse.ve.source_1.0.0/src/org.eclipse.ve.swt_1.0.0/vm/swtbeaninfosrc.zip
+eclipse/plugins/org.eclipse.ve.source_1.0.0/src/org.eclipse.ve.swt_1.0.0/jbcfswtvmsrc.zip
+eclipse/plugins/org.eclipse.ve.source_1.0.0/src/org.eclipse.ve.cde_1.0.0/model/cdm.ecore
+eclipse/plugins/org.eclipse.ve.source_1.0.0/src/org.eclipse.ve.cde_1.0.0/model/palette.ecore
+eclipse/plugins/org.eclipse.ve.source_1.0.0/src/org.eclipse.ve.cde_1.0.0/model/cdmmodel.genmodel
+eclipse/plugins/org.eclipse.ve.source_1.0.0/src/org.eclipse.ve.cde_1.0.0/model/utility.ecore
+eclipse/plugins/org.eclipse.ve.source_1.0.0/src/org.eclipse.ve.cde_1.0.0/model/decorators.ecore
+eclipse/plugins/org.eclipse.ve.source_1.0.0/src/org.eclipse.ve.cde_1.0.0/model/cdemodel.genmodel
+eclipse/plugins/org.eclipse.ve.source_1.0.0/src/org.eclipse.ve.cde_1.0.0/cdesrc.zip
+eclipse/plugins/org.eclipse.ve.source_1.0.0/src/org.eclipse.ve.cde_1.0.0/rose/decr.cat
+eclipse/plugins/org.eclipse.ve.source_1.0.0/src/org.eclipse.ve.cde_1.0.0/rose/cdeModels.mdl
+eclipse/plugins/org.eclipse.ve.source_1.0.0/src/org.eclipse.ve.cde_1.0.0/rose/cdmmodel.mdl
+eclipse/plugins/org.eclipse.ve.source_1.0.0/src/org.eclipse.ve.cde_1.0.0/rose/util.cat
+eclipse/plugins/org.eclipse.ve.source_1.0.0/src/org.eclipse.ve.cde_1.0.0/rose/cdm.cat
+eclipse/plugins/org.eclipse.ve.source_1.0.0/src/org.eclipse.ve.cde_1.0.0/rose/palette.cat
+eclipse/plugins/org.eclipse.ve.source_1.0.0/src/org.eclipse.ve.cde_1.0.0/about.html
+eclipse/plugins/org.eclipse.ve.source_1.0.0/src/org.eclipse.ve.cde_1.0.0/cdmsrc.zip
+eclipse/plugins/org.eclipse.ve.source_1.0.0/src/org.eclipse.ve.propertysheet_1.0.0/about.html
+eclipse/plugins/org.eclipse.ve.source_1.0.0/src/org.eclipse.ve.propertysheet_1.0.0/propertysheetsrc.zip
+eclipse/plugins/org.eclipse.ve.source_1.0.0/plugin.xml
+eclipse/plugins/org.eclipse.ve.source_1.0.0/about.ini
+eclipse/plugins/org.eclipse.ve.source_1.0.0/about.mappings
+eclipse/plugins/org.eclipse.ve.source_1.0.0/about.properties
+eclipse/plugins/org.eclipse.ve.source_1.0.0/plugin.properties
+eclipse/plugins/org.eclipse.ve.source_1.0.0/eclipse32.gif
+eclipse/plugins/org.eclipse.ve.source_1.0.0/about.html
+eclipse/plugins/org.eclipse.ve_1.0.0/about.properties
+eclipse/plugins/org.eclipse.ve_1.0.0/about.ini
+eclipse/plugins/org.eclipse.ve_1.0.0/plugin.properties
+eclipse/plugins/org.eclipse.ve_1.0.0/eclipse32.gif
+eclipse/plugins/org.eclipse.ve_1.0.0/plugin.xml
+eclipse/plugins/org.eclipse.ve_1.0.0/about.mappings
+eclipse/plugins/org.eclipse.ve_1.0.0/about.html
+eclipse/plugins/org.eclipse.ve.jfc_1.0.0/jfccodegen.jar
+eclipse/plugins/org.eclipse.ve.jfc_1.0.0/jfc.jar
+eclipse/plugins/org.eclipse.ve.jfc_1.0.0/jfccommon.jar
+eclipse/plugins/org.eclipse.ve.jfc_1.0.0/vm/jfcvm.jar
+eclipse/plugins/org.eclipse.ve.jfc_1.0.0/vm/jfcbeaninfo.jar
+eclipse/plugins/org.eclipse.ve.jfc_1.0.0/icons/jcombo16.gif
+eclipse/plugins/org.eclipse.ve.jfc_1.0.0/icons/full/clcl16/listbox_obj.gif
+eclipse/plugins/org.eclipse.ve.jfc_1.0.0/icons/full/clcl16/checkbox_obj.gif
+eclipse/plugins/org.eclipse.ve.jfc_1.0.0/icons/full/clcl16/applet_obj.gif
+eclipse/plugins/org.eclipse.ve.jfc_1.0.0/icons/full/clcl16/checkmenuitem_obj.gif
+eclipse/plugins/org.eclipse.ve.jfc_1.0.0/icons/full/clcl16/table_obj.gif
+eclipse/plugins/org.eclipse.ve.jfc_1.0.0/icons/full/clcl16/menuseparator_obj.gif
+eclipse/plugins/org.eclipse.ve.jfc_1.0.0/icons/full/clcl16/progressbar_obj.gif
+eclipse/plugins/org.eclipse.ve.jfc_1.0.0/icons/full/clcl16/tableonscrollpane_obj.gif
+eclipse/plugins/org.eclipse.ve.jfc_1.0.0/icons/full/clcl16/dialog_obj.gif
+eclipse/plugins/org.eclipse.ve.jfc_1.0.0/icons/full/clcl16/textfield_obj.gif
+eclipse/plugins/org.eclipse.ve.jfc_1.0.0/icons/full/clcl16/panel_obj.gif
+eclipse/plugins/org.eclipse.ve.jfc_1.0.0/icons/full/clcl16/column_obj.gif
+eclipse/plugins/org.eclipse.ve.jfc_1.0.0/icons/full/clcl16/editorpane_obj.gif
+eclipse/plugins/org.eclipse.ve.jfc_1.0.0/icons/full/clcl16/menubar_obj.gif
+eclipse/plugins/org.eclipse.ve.jfc_1.0.0/icons/full/clcl16/menuitem_obj.gif
+eclipse/plugins/org.eclipse.ve.jfc_1.0.0/icons/full/clcl16/menu_obj.gif
+eclipse/plugins/org.eclipse.ve.jfc_1.0.0/icons/full/clcl16/popupmenu_obj.gif
+eclipse/plugins/org.eclipse.ve.jfc_1.0.0/icons/full/clcl16/tree_obj.gif
+eclipse/plugins/org.eclipse.ve.jfc_1.0.0/icons/full/clcl16/passwordfield_obj.gif
+eclipse/plugins/org.eclipse.ve.jfc_1.0.0/icons/full/clcl16/internalframe_obj.gif
+eclipse/plugins/org.eclipse.ve.jfc_1.0.0/icons/full/clcl16/radiomenuitem_obj.gif
+eclipse/plugins/org.eclipse.ve.jfc_1.0.0/icons/full/clcl16/textpane_obj.gif
+eclipse/plugins/org.eclipse.ve.jfc_1.0.0/icons/full/clcl16/combobox_obj.gif
+eclipse/plugins/org.eclipse.ve.jfc_1.0.0/icons/full/clcl16/toolbarseparator_obj.gif
+eclipse/plugins/org.eclipse.ve.jfc_1.0.0/icons/full/clcl16/tabbedpane_obj.gif
+eclipse/plugins/org.eclipse.ve.jfc_1.0.0/icons/full/clcl16/scrollpane_obj.gif
+eclipse/plugins/org.eclipse.ve.jfc_1.0.0/icons/full/clcl16/radiobutton_obj.gif
+eclipse/plugins/org.eclipse.ve.jfc_1.0.0/icons/full/clcl16/textarea_obj.gif
+eclipse/plugins/org.eclipse.ve.jfc_1.0.0/icons/full/clcl16/optionpane_obj.gif
+eclipse/plugins/org.eclipse.ve.jfc_1.0.0/icons/full/clcl16/window_obj.gif
+eclipse/plugins/org.eclipse.ve.jfc_1.0.0/icons/full/clcl16/desktoppane_obj.gif
+eclipse/plugins/org.eclipse.ve.jfc_1.0.0/icons/full/clcl16/toggledbutton_obj.gif
+eclipse/plugins/org.eclipse.ve.jfc_1.0.0/icons/full/clcl16/button_obj.gif
+eclipse/plugins/org.eclipse.ve.jfc_1.0.0/icons/full/clcl16/scrollbar_obj.gif
+eclipse/plugins/org.eclipse.ve.jfc_1.0.0/icons/full/clcl16/label_obj.gif
+eclipse/plugins/org.eclipse.ve.jfc_1.0.0/icons/full/clcl16/toolbar_obj.gif
+eclipse/plugins/org.eclipse.ve.jfc_1.0.0/icons/full/clcl16/frame_obj.gif
+eclipse/plugins/org.eclipse.ve.jfc_1.0.0/icons/full/clcl16/slider_obj.gif
+eclipse/plugins/org.eclipse.ve.jfc_1.0.0/icons/full/clcl16/choice_obj.gif
+eclipse/plugins/org.eclipse.ve.jfc_1.0.0/icons/full/clcl16/splitpane_obj.gif
+eclipse/plugins/org.eclipse.ve.jfc_1.0.0/icons/full/eview16/customiz_view.gif
+eclipse/plugins/org.eclipse.ve.jfc_1.0.0/icons/full/cview16/javabean.gif
+eclipse/plugins/org.eclipse.ve.jfc_1.0.0/icons/full/cview16/customiz_view.gif
+eclipse/plugins/org.eclipse.ve.jfc_1.0.0/icons/full/dtool16/vmwicon_wiz.gif
+eclipse/plugins/org.eclipse.ve.jfc_1.0.0/icons/full/etool16/vmwicon_wiz.gif
+eclipse/plugins/org.eclipse.ve.jfc_1.0.0/icons/full/ctool16/newpanel_wiz.gif
+eclipse/plugins/org.eclipse.ve.jfc_1.0.0/icons/full/ctool16/vmwicon_wiz.gif
+eclipse/plugins/org.eclipse.ve.jfc_1.0.0/icons/full/ctool16/newapplet_wiz.gif
+eclipse/plugins/org.eclipse.ve.jfc_1.0.0/icons/full/ctool16/newvisualclass_wiz.gif
+eclipse/plugins/org.eclipse.ve.jfc_1.0.0/icons/full/ctool16/newframe_wiz.gif
+eclipse/plugins/org.eclipse.ve.jfc_1.0.0/icons/full/obj16/method_return.gif
+eclipse/plugins/org.eclipse.ve.jfc_1.0.0/icons/jpbar16.gif
+eclipse/plugins/org.eclipse.ve.jfc_1.0.0/icons/fildia32.gif
+eclipse/plugins/org.eclipse.ve.jfc_1.0.0/icons/fildia16.gif
+eclipse/plugins/org.eclipse.ve.jfc_1.0.0/icons/choice32.gif
+eclipse/plugins/org.eclipse.ve.jfc_1.0.0/icons/choice16.gif
+eclipse/plugins/org.eclipse.ve.jfc_1.0.0/icons/jtabpn32.gif
+eclipse/plugins/org.eclipse.ve.jfc_1.0.0/icons/menubr32.gif
+eclipse/plugins/org.eclipse.ve.jfc_1.0.0/icons/jcolum32.gif
+eclipse/plugins/org.eclipse.ve.jfc_1.0.0/icons/jtabpn16.gif
+eclipse/plugins/org.eclipse.ve.jfc_1.0.0/icons/menubr16.gif
+eclipse/plugins/org.eclipse.ve.jfc_1.0.0/icons/jcolum16.gif
+eclipse/plugins/org.eclipse.ve.jfc_1.0.0/icons/menu32.gif
+eclipse/plugins/org.eclipse.ve.jfc_1.0.0/icons/joptpn32.gif
+eclipse/plugins/org.eclipse.ve.jfc_1.0.0/icons/menu16.gif
+eclipse/plugins/org.eclipse.ve.jfc_1.0.0/icons/joptpn16.gif
+eclipse/plugins/org.eclipse.ve.jfc_1.0.0/icons/jifram32.gif
+eclipse/plugins/org.eclipse.ve.jfc_1.0.0/icons/jifram16.gif
+eclipse/plugins/org.eclipse.ve.jfc_1.0.0/icons/list32.gif
+eclipse/plugins/org.eclipse.ve.jfc_1.0.0/icons/jsplpn16.gif
+eclipse/plugins/org.eclipse.ve.jfc_1.0.0/icons/list16.gif
+eclipse/plugins/org.eclipse.ve.jfc_1.0.0/icons/label32.gif
+eclipse/plugins/org.eclipse.ve.jfc_1.0.0/icons/jrmenu32.gif
+eclipse/plugins/org.eclipse.ve.jfc_1.0.0/icons/label16.gif
+eclipse/plugins/org.eclipse.ve.jfc_1.0.0/icons/jrmenu16.gif
+eclipse/plugins/org.eclipse.ve.jfc_1.0.0/icons/jcchos32.gif
+eclipse/plugins/org.eclipse.ve.jfc_1.0.0/icons/jcchos16.gif
+eclipse/plugins/org.eclipse.ve.jfc_1.0.0/icons/applet32.gif
+eclipse/plugins/org.eclipse.ve.jfc_1.0.0/icons/jfchos16.gif
+eclipse/plugins/org.eclipse.ve.jfc_1.0.0/icons/applet16.gif
+eclipse/plugins/org.eclipse.ve.jfc_1.0.0/icons/jradio32.gif
+eclipse/plugins/org.eclipse.ve.jfc_1.0.0/icons/jradio16.gif
+eclipse/plugins/org.eclipse.ve.jfc_1.0.0/icons/cfldr_obj.gif
+eclipse/plugins/org.eclipse.ve.jfc_1.0.0/icons/nomemory.gif
+eclipse/plugins/org.eclipse.ve.jfc_1.0.0/icons/popupm32.gif
+eclipse/plugins/org.eclipse.ve.jfc_1.0.0/icons/jtable16.gif
+eclipse/plugins/org.eclipse.ve.jfc_1.0.0/icons/popupm16.gif
+eclipse/plugins/org.eclipse.ve.jfc_1.0.0/icons/jsplpn32.gif
+eclipse/plugins/org.eclipse.ve.jfc_1.0.0/icons/jtlbtn32.gif
+eclipse/plugins/org.eclipse.ve.jfc_1.0.0/icons/jtlbtn16.gif
+eclipse/plugins/org.eclipse.ve.jfc_1.0.0/icons/cboxg32.gif
+eclipse/plugins/org.eclipse.ve.jfc_1.0.0/icons/cboxg16.gif
+eclipse/plugins/org.eclipse.ve.jfc_1.0.0/icons/jtree32.gif
+eclipse/plugins/org.eclipse.ve.jfc_1.0.0/icons/scrpne32.gif
+eclipse/plugins/org.eclipse.ve.jfc_1.0.0/icons/jtree16.gif
+eclipse/plugins/org.eclipse.ve.jfc_1.0.0/icons/jdtpn32.gif
+eclipse/plugins/org.eclipse.ve.jfc_1.0.0/icons/jedtpn32.gif
+eclipse/plugins/org.eclipse.ve.jfc_1.0.0/icons/scrpne16.gif
+eclipse/plugins/org.eclipse.ve.jfc_1.0.0/icons/jdtpn16.gif
+eclipse/plugins/org.eclipse.ve.jfc_1.0.0/icons/jedtpn16.gif
+eclipse/plugins/org.eclipse.ve.jfc_1.0.0/icons/jslide32.gif
+eclipse/plugins/org.eclipse.ve.jfc_1.0.0/icons/jslide16.gif
+eclipse/plugins/org.eclipse.ve.jfc_1.0.0/icons/cbox32.gif
+eclipse/plugins/org.eclipse.ve.jfc_1.0.0/icons/cbox16.gif
+eclipse/plugins/org.eclipse.ve.jfc_1.0.0/icons/cboxmi32.gif
+eclipse/plugins/org.eclipse.ve.jfc_1.0.0/icons/cboxmi16.gif
+eclipse/plugins/org.eclipse.ve.jfc_1.0.0/icons/jpwfld32.gif
+eclipse/plugins/org.eclipse.ve.jfc_1.0.0/icons/jpwfld16.gif
+eclipse/plugins/org.eclipse.ve.jfc_1.0.0/icons/jtable32.gif
+eclipse/plugins/org.eclipse.ve.jfc_1.0.0/icons/butt32.gif
+eclipse/plugins/org.eclipse.ve.jfc_1.0.0/icons/window32.gif
+eclipse/plugins/org.eclipse.ve.jfc_1.0.0/icons/scrb32.gif
+eclipse/plugins/org.eclipse.ve.jfc_1.0.0/icons/butt16.gif
+eclipse/plugins/org.eclipse.ve.jfc_1.0.0/icons/txtar32.gif
+eclipse/plugins/org.eclipse.ve.jfc_1.0.0/icons/window16.gif
+eclipse/plugins/org.eclipse.ve.jfc_1.0.0/icons/scrb16.gif
+eclipse/plugins/org.eclipse.ve.jfc_1.0.0/icons/txtar16.gif
+eclipse/plugins/org.eclipse.ve.jfc_1.0.0/icons/panel32.gif
+eclipse/plugins/org.eclipse.ve.jfc_1.0.0/icons/panel16.gif
+eclipse/plugins/org.eclipse.ve.jfc_1.0.0/icons/menuit32.gif
+eclipse/plugins/org.eclipse.ve.jfc_1.0.0/icons/menuit16.gif
+eclipse/plugins/org.eclipse.ve.jfc_1.0.0/icons/msepar32.gif
+eclipse/plugins/org.eclipse.ve.jfc_1.0.0/icons/msepar16.gif
+eclipse/plugins/org.eclipse.ve.jfc_1.0.0/icons/fldr_obj.gif
+eclipse/plugins/org.eclipse.ve.jfc_1.0.0/icons/frame32.gif
+eclipse/plugins/org.eclipse.ve.jfc_1.0.0/icons/frame16.gif
+eclipse/plugins/org.eclipse.ve.jfc_1.0.0/icons/canvas32.gif
+eclipse/plugins/org.eclipse.ve.jfc_1.0.0/icons/canvas16.gif
+eclipse/plugins/org.eclipse.ve.jfc_1.0.0/icons/bean16.gif
+eclipse/plugins/org.eclipse.ve.jfc_1.0.0/icons/dialog32.gif
+eclipse/plugins/org.eclipse.ve.jfc_1.0.0/icons/jtoolb32.gif
+eclipse/plugins/org.eclipse.ve.jfc_1.0.0/icons/dialog16.gif
+eclipse/plugins/org.eclipse.ve.jfc_1.0.0/icons/jtbutn32.gif
+eclipse/plugins/org.eclipse.ve.jfc_1.0.0/icons/jtxtpn32.gif
+eclipse/plugins/org.eclipse.ve.jfc_1.0.0/icons/jtsepa32.gif
+eclipse/plugins/org.eclipse.ve.jfc_1.0.0/icons/jtoolb16.gif
+eclipse/plugins/org.eclipse.ve.jfc_1.0.0/icons/jtbutn16.gif
+eclipse/plugins/org.eclipse.ve.jfc_1.0.0/icons/jtxtpn16.gif
+eclipse/plugins/org.eclipse.ve.jfc_1.0.0/icons/txtfld32.gif
+eclipse/plugins/org.eclipse.ve.jfc_1.0.0/icons/jcombo32.gif
+eclipse/plugins/org.eclipse.ve.jfc_1.0.0/icons/jtsepa16.gif
+eclipse/plugins/org.eclipse.ve.jfc_1.0.0/icons/jpbar32.gif
+eclipse/plugins/org.eclipse.ve.jfc_1.0.0/icons/txtfld16.gif
+eclipse/plugins/org.eclipse.ve.jfc_1.0.0/overrides/javax/swing/border/Border.override
+eclipse/plugins/org.eclipse.ve.jfc_1.0.0/overrides/javax/swing/border/TitledBorder.override
+eclipse/plugins/org.eclipse.ve.jfc_1.0.0/overrides/javax/swing/JCheckBox.override
+eclipse/plugins/org.eclipse.ve.jfc_1.0.0/overrides/javax/swing/JToolBar.override
+eclipse/plugins/org.eclipse.ve.jfc_1.0.0/overrides/javax/swing/JOptionPane.override
+eclipse/plugins/org.eclipse.ve.jfc_1.0.0/overrides/javax/swing/AbstractButton.override
+eclipse/plugins/org.eclipse.ve.jfc_1.0.0/overrides/javax/swing/JTextField.override
+eclipse/plugins/org.eclipse.ve.jfc_1.0.0/overrides/javax/swing/JFrame.override
+eclipse/plugins/org.eclipse.ve.jfc_1.0.0/overrides/javax/swing/JTabbedPaneVisuals.properties
+eclipse/plugins/org.eclipse.ve.jfc_1.0.0/overrides/javax/swing/JSlider.override
+eclipse/plugins/org.eclipse.ve.jfc_1.0.0/overrides/javax/swing/JDesktopPane.override
+eclipse/plugins/org.eclipse.ve.jfc_1.0.0/overrides/javax/swing/ImageIcon.override
+eclipse/plugins/org.eclipse.ve.jfc_1.0.0/overrides/javax/swing/JTable.override
+eclipse/plugins/org.eclipse.ve.jfc_1.0.0/overrides/javax/swing/JMenuBar.override
+eclipse/plugins/org.eclipse.ve.jfc_1.0.0/overrides/javax/swing/JTextArea.override
+eclipse/plugins/org.eclipse.ve.jfc_1.0.0/overrides/javax/swing/JRootPane.override
+eclipse/plugins/org.eclipse.ve.jfc_1.0.0/overrides/javax/swing/JSeparator.override
+eclipse/plugins/org.eclipse.ve.jfc_1.0.0/overrides/javax/swing/JPasswordField.override
+eclipse/plugins/org.eclipse.ve.jfc_1.0.0/overrides/javax/swing/KeyStroke.override
+eclipse/plugins/org.eclipse.ve.jfc_1.0.0/overrides/javax/swing/JList.override
+eclipse/plugins/org.eclipse.ve.jfc_1.0.0/overrides/javax/swing/JApplet.override
+eclipse/plugins/org.eclipse.ve.jfc_1.0.0/overrides/javax/swing/JRadioButtonMenuItem.override
+eclipse/plugins/org.eclipse.ve.jfc_1.0.0/overrides/javax/swing/JToolBar$DefaultToolBarLayout.override
+eclipse/plugins/org.eclipse.ve.jfc_1.0.0/overrides/javax/swing/JComponent.override
+eclipse/plugins/org.eclipse.ve.jfc_1.0.0/overrides/javax/swing/table/TableColumn.override
+eclipse/plugins/org.eclipse.ve.jfc_1.0.0/overrides/javax/swing/JPopupMenu.override
+eclipse/plugins/org.eclipse.ve.jfc_1.0.0/overrides/javax/swing/JRadioButton.override
+eclipse/plugins/org.eclipse.ve.jfc_1.0.0/overrides/javax/swing/JLayeredPane.override
+eclipse/plugins/org.eclipse.ve.jfc_1.0.0/overrides/javax/swing/JPanel.override
+eclipse/plugins/org.eclipse.ve.jfc_1.0.0/overrides/javax/swing/JEditorPane.override
+eclipse/plugins/org.eclipse.ve.jfc_1.0.0/overrides/javax/swing/text/JTextComponent.override
+eclipse/plugins/org.eclipse.ve.jfc_1.0.0/overrides/javax/swing/JDialog.override
+eclipse/plugins/org.eclipse.ve.jfc_1.0.0/overrides/javax/swing/plaf/basic/BasicInternalFrameUI$InternalFrameLayout.override
+eclipse/plugins/org.eclipse.ve.jfc_1.0.0/overrides/javax/swing/JFileChooser.override
+eclipse/plugins/org.eclipse.ve.jfc_1.0.0/overrides/javax/swing/Icon.override
+eclipse/plugins/org.eclipse.ve.jfc_1.0.0/overrides/javax/swing/JSplitPane.override
+eclipse/plugins/org.eclipse.ve.jfc_1.0.0/overrides/javax/swing/JTabbedPane.override
+eclipse/plugins/org.eclipse.ve.jfc_1.0.0/overrides/javax/swing/JWindow.override
+eclipse/plugins/org.eclipse.ve.jfc_1.0.0/overrides/javax/swing/JToggleButton.override
+eclipse/plugins/org.eclipse.ve.jfc_1.0.0/overrides/javax/swing/BoxLayout.override
+eclipse/plugins/org.eclipse.ve.jfc_1.0.0/overrides/javax/swing/JButton.override
+eclipse/plugins/org.eclipse.ve.jfc_1.0.0/overrides/javax/swing/JLabel.override
+eclipse/plugins/org.eclipse.ve.jfc_1.0.0/overrides/javax/swing/JTree.override
+eclipse/plugins/org.eclipse.ve.jfc_1.0.0/overrides/javax/swing/JMenu.override
+eclipse/plugins/org.eclipse.ve.jfc_1.0.0/overrides/javax/swing/JMenuItem.override
+eclipse/plugins/org.eclipse.ve.jfc_1.0.0/overrides/javax/swing/JTextPane.override
+eclipse/plugins/org.eclipse.ve.jfc_1.0.0/overrides/javax/swing/JInternalFrame.override
+eclipse/plugins/org.eclipse.ve.jfc_1.0.0/overrides/javax/swing/JCheckBoxMenuItem.override
+eclipse/plugins/org.eclipse.ve.jfc_1.0.0/overrides/javax/swing/JScrollBar.override
+eclipse/plugins/org.eclipse.ve.jfc_1.0.0/overrides/javax/swing/JComboBox.override
+eclipse/plugins/org.eclipse.ve.jfc_1.0.0/overrides/javax/swing/jtabbedPaneVisuals.ecore
+eclipse/plugins/org.eclipse.ve.jfc_1.0.0/overrides/javax/swing/JScrollPane.override
+eclipse/plugins/org.eclipse.ve.jfc_1.0.0/overrides/javax/swing/JProgressBar.override
+eclipse/plugins/org.eclipse.ve.jfc_1.0.0/overrides/java/awt/GridLayout.override
+eclipse/plugins/org.eclipse.ve.jfc_1.0.0/overrides/java/awt/CheckboxGroup.override
+eclipse/plugins/org.eclipse.ve.jfc_1.0.0/overrides/java/awt/Button.override
+eclipse/plugins/org.eclipse.ve.jfc_1.0.0/overrides/java/awt/Panel.override
+eclipse/plugins/org.eclipse.ve.jfc_1.0.0/overrides/java/awt/FlowLayout.override
+eclipse/plugins/org.eclipse.ve.jfc_1.0.0/overrides/java/awt/GridBagLayout.override
+eclipse/plugins/org.eclipse.ve.jfc_1.0.0/overrides/java/awt/CardLayout.override
+eclipse/plugins/org.eclipse.ve.jfc_1.0.0/overrides/java/awt/Component.override
+eclipse/plugins/org.eclipse.ve.jfc_1.0.0/overrides/java/awt/Checkbox.override
+eclipse/plugins/org.eclipse.ve.jfc_1.0.0/overrides/java/awt/Container.override
+eclipse/plugins/org.eclipse.ve.jfc_1.0.0/overrides/java/awt/Image.override
+eclipse/plugins/org.eclipse.ve.jfc_1.0.0/overrides/java/awt/Insets.override
+eclipse/plugins/org.eclipse.ve.jfc_1.0.0/overrides/java/awt/MenuItem.override
+eclipse/plugins/org.eclipse.ve.jfc_1.0.0/overrides/java/awt/MenuBar.override
+eclipse/plugins/org.eclipse.ve.jfc_1.0.0/overrides/java/awt/Window.override
+eclipse/plugins/org.eclipse.ve.jfc_1.0.0/overrides/java/awt/GridBagConstraints.override
+eclipse/plugins/org.eclipse.ve.jfc_1.0.0/overrides/java/awt/Label.override
+eclipse/plugins/org.eclipse.ve.jfc_1.0.0/overrides/java/awt/Color.override
+eclipse/plugins/org.eclipse.ve.jfc_1.0.0/overrides/java/awt/Scrollbar.override
+eclipse/plugins/org.eclipse.ve.jfc_1.0.0/overrides/java/awt/Menu.override
+eclipse/plugins/org.eclipse.ve.jfc_1.0.0/overrides/java/awt/Dimension.override
+eclipse/plugins/org.eclipse.ve.jfc_1.0.0/overrides/java/awt/Cursor.override
+eclipse/plugins/org.eclipse.ve.jfc_1.0.0/overrides/java/awt/Canvas.override
+eclipse/plugins/org.eclipse.ve.jfc_1.0.0/overrides/java/awt/Font.override
+eclipse/plugins/org.eclipse.ve.jfc_1.0.0/overrides/java/awt/Choice.override
+eclipse/plugins/org.eclipse.ve.jfc_1.0.0/overrides/java/awt/gridbagpreference.ecore
+eclipse/plugins/org.eclipse.ve.jfc_1.0.0/overrides/java/awt/ScrollPane.override
+eclipse/plugins/org.eclipse.ve.jfc_1.0.0/overrides/java/awt/TextField.override
+eclipse/plugins/org.eclipse.ve.jfc_1.0.0/overrides/java/awt/Point.override
+eclipse/plugins/org.eclipse.ve.jfc_1.0.0/overrides/java/awt/BorderLayout.override
+eclipse/plugins/org.eclipse.ve.jfc_1.0.0/overrides/java/awt/Rectangle.override
+eclipse/plugins/org.eclipse.ve.jfc_1.0.0/overrides/java/awt/LayoutManager.override
+eclipse/plugins/org.eclipse.ve.jfc_1.0.0/overrides/java/awt/TextArea.override
+eclipse/plugins/org.eclipse.ve.jfc_1.0.0/overrides/java/awt/containerVisuals.ecore
+eclipse/plugins/org.eclipse.ve.jfc_1.0.0/overrides/java/awt/Frame.override
+eclipse/plugins/org.eclipse.ve.jfc_1.0.0/overrides/java/awt/List.override
+eclipse/plugins/org.eclipse.ve.jfc_1.0.0/overrides/java/awt/Dialog.override
+eclipse/plugins/org.eclipse.ve.jfc_1.0.0/overrides/java/awt/FileDialog.override
+eclipse/plugins/org.eclipse.ve.jfc_1.0.0/overrides/java/applet/Applet.override
+eclipse/plugins/org.eclipse.ve.jfc_1.0.0/overrides/java/util/Locale.override
+eclipse/plugins/org.eclipse.ve.jfc_1.0.0/overrides/resourcebundle.properties
+eclipse/plugins/org.eclipse.ve.jfc_1.0.0/overrides/resourcebundle.xmi
+eclipse/plugins/org.eclipse.ve.jfc_1.0.0/Examples/MenuExampleAWT.java
+eclipse/plugins/org.eclipse.ve.jfc_1.0.0/Examples/iclock.jar
+eclipse/plugins/org.eclipse.ve.jfc_1.0.0/Examples/DayTime.java
+eclipse/plugins/org.eclipse.ve.jfc_1.0.0/Examples/CardLayoutExample.java
+eclipse/plugins/org.eclipse.ve.jfc_1.0.0/Examples/calendar.jar
+eclipse/plugins/org.eclipse.ve.jfc_1.0.0/Examples/CannotApplyButtonLabel.java
+eclipse/plugins/org.eclipse.ve.jfc_1.0.0/Examples/Empty.java
+eclipse/plugins/org.eclipse.ve.jfc_1.0.0/Examples/BasicSwingComponentsBundled.java
+eclipse/plugins/org.eclipse.ve.jfc_1.0.0/Examples/EventTests/VCEStyle3.java
+eclipse/plugins/org.eclipse.ve.jfc_1.0.0/Examples/EventTests/VCEStyle2.java
+eclipse/plugins/org.eclipse.ve.jfc_1.0.0/Examples/EventTests/VCEStyle1.java
+eclipse/plugins/org.eclipse.ve.jfc_1.0.0/Examples/JTable.java
+eclipse/plugins/org.eclipse.ve.jfc_1.0.0/Examples/SliderGame.java
+eclipse/plugins/org.eclipse.ve.jfc_1.0.0/Examples/TestAwtToDoList.java
+eclipse/plugins/org.eclipse.ve.jfc_1.0.0/Examples/CannotApplyName.java
+eclipse/plugins/org.eclipse.ve.jfc_1.0.0/Examples/CardLayout1.java
+eclipse/plugins/org.eclipse.ve.jfc_1.0.0/Examples/CannotInstantiateTableColumn.java
+eclipse/plugins/org.eclipse.ve.jfc_1.0.0/Examples/AwtComponents.java
+eclipse/plugins/org.eclipse.ve.jfc_1.0.0/Examples/test.properties
+eclipse/plugins/org.eclipse.ve.jfc_1.0.0/Examples/ExtendsNonExistantClass.java
+eclipse/plugins/org.eclipse.ve.jfc_1.0.0/Examples/TestBorderLayout.java
+eclipse/plugins/org.eclipse.ve.jfc_1.0.0/Examples/ExtendsClassThatCannotBeCreated.java
+eclipse/plugins/org.eclipse.ve.jfc_1.0.0/Examples/MoreSwingComponents.java
+eclipse/plugins/org.eclipse.ve.jfc_1.0.0/Examples/VAJJSplitPaneTest.java
+eclipse/plugins/org.eclipse.ve.jfc_1.0.0/Examples/AWTInheritanceTest1.java
+eclipse/plugins/org.eclipse.ve.jfc_1.0.0/Examples/GridLayoutExample.java
+eclipse/plugins/org.eclipse.ve.jfc_1.0.0/Examples/CannotInstantiate.java
+eclipse/plugins/org.eclipse.ve.jfc_1.0.0/Examples/NestedPanels.java
+eclipse/plugins/org.eclipse.ve.jfc_1.0.0/Examples/BasicSwingComponents.java
+eclipse/plugins/org.eclipse.ve.jfc_1.0.0/Examples/FlowBundleTest.java
+eclipse/plugins/org.eclipse.ve.jfc_1.0.0/Examples/SimpleTextEditor.java
+eclipse/plugins/org.eclipse.ve.jfc_1.0.0/Examples/BorderLayout.java
+eclipse/plugins/org.eclipse.ve.jfc_1.0.0/Examples/TestSwingAppletToDoList.java
+eclipse/plugins/org.eclipse.ve.jfc_1.0.0/Examples/AWTtest1.java
+eclipse/plugins/org.eclipse.ve.jfc_1.0.0/Examples/ContainsNonExistantClass.java
+eclipse/plugins/org.eclipse.ve.jfc_1.0.0/Examples/CheatSheetJTableExample1.java
+eclipse/plugins/org.eclipse.ve.jfc_1.0.0/Examples/FlowLayout.java
+eclipse/plugins/org.eclipse.ve.jfc_1.0.0/Examples/Messages.java
+eclipse/plugins/org.eclipse.ve.jfc_1.0.0/Examples/MenuExampleSwing.java
+eclipse/plugins/org.eclipse.ve.jfc_1.0.0/Examples/CannotInstantiateButton.java
+eclipse/plugins/org.eclipse.ve.jfc_1.0.0/Examples/ToDoListModel.java
+eclipse/plugins/org.eclipse.ve.jfc_1.0.0/Examples/CannotInstantiateJButton.java
+eclipse/plugins/org.eclipse.ve.jfc_1.0.0/Examples/ToDoList.java
+eclipse/plugins/org.eclipse.ve.jfc_1.0.0/Examples/TestAppletParms.java
+eclipse/plugins/org.eclipse.ve.jfc_1.0.0/Examples/MyApplet.java
+eclipse/plugins/org.eclipse.ve.jfc_1.0.0/plugin.properties
+eclipse/plugins/org.eclipse.ve.jfc_1.0.0/about.html
+eclipse/plugins/org.eclipse.ve.jfc_1.0.0/palette/palette.properties
+eclipse/plugins/org.eclipse.ve.jfc_1.0.0/palette/JTableWithScrollPane.xmi
+eclipse/plugins/org.eclipse.ve.jfc_1.0.0/palette/javavisualbeanscats.xmi
+eclipse/plugins/org.eclipse.ve.jfc_1.0.0/plugin.xml
+eclipse/plugins/org.eclipse.ve.propertysheet_1.0.0/propertysheet.jar
+eclipse/plugins/org.eclipse.ve.propertysheet_1.0.0/plugin.xml
+eclipse/plugins/org.eclipse.ve.propertysheet_1.0.0/plugin.properties
+eclipse/plugins/org.eclipse.ve.propertysheet_1.0.0/images/nullreset16.gif
+eclipse/plugins/org.eclipse.ve.propertysheet_1.0.0/about.html
+eclipse/plugins/org.eclipse.jem.beaninfo_1.0.0/vm/beaninfovm.jar
+eclipse/plugins/org.eclipse.jem.beaninfo_1.0.0/beaninfo.jar
+eclipse/plugins/org.eclipse.jem.beaninfo_1.0.0/plugin.properties
+eclipse/plugins/org.eclipse.jem.beaninfo_1.0.0/schema/registrations.exsd
+eclipse/plugins/org.eclipse.jem.beaninfo_1.0.0/.options
+eclipse/plugins/org.eclipse.jem.beaninfo_1.0.0/plugin.xml
+eclipse/plugins/org.eclipse.jem.beaninfo_1.0.0/about.html
+eclipse/plugins/org.eclipse.jem.proxy_1.0.0/remotecommon.jar
+eclipse/plugins/org.eclipse.jem.proxy_1.0.0/proxyremote.jar
+eclipse/plugins/org.eclipse.jem.proxy_1.0.0/proxycommon.jar
+eclipse/plugins/org.eclipse.jem.proxy_1.0.0/initparser.jar
+eclipse/plugins/org.eclipse.jem.proxy_1.0.0/vm/remotevm.jar
+eclipse/plugins/org.eclipse.jem.proxy_1.0.0/proxy.jar
+eclipse/plugins/org.eclipse.jem.proxy_1.0.0/proxyide.jar
+eclipse/plugins/org.eclipse.jem.proxy_1.0.0/plugin.properties
+eclipse/plugins/org.eclipse.jem.proxy_1.0.0/plugin.xml
+eclipse/plugins/org.eclipse.jem.proxy_1.0.0/about.html
+eclipse/plugins/org.eclipse.jem.proxy_1.0.0/.options
+eclipse/plugins/com.ibm.etools.emf.event_3.0.0.1/plugin.xml
+eclipse/plugins/com.ibm.etools.emf.event_3.0.0.1/runtime/event.jar
+eclipse/plugins/org.eclipse.jem_1.0.0/mofjava.jar
+eclipse/plugins/org.eclipse.jem_1.0.0/javainst.jar
+eclipse/plugins/org.eclipse.jem_1.0.0/about.mappings
+eclipse/plugins/org.eclipse.jem_1.0.0/overrides/java/lang/Object.override
+eclipse/plugins/org.eclipse.jem_1.0.0/overrides/..ROOT...override
+eclipse/plugins/org.eclipse.jem_1.0.0/about.ini
+eclipse/plugins/org.eclipse.jem_1.0.0/eclipse32.gif
+eclipse/plugins/org.eclipse.jem_1.0.0/plugin.properties
+eclipse/plugins/org.eclipse.jem_1.0.0/.options
+eclipse/plugins/org.eclipse.jem_1.0.0/about.properties
+eclipse/plugins/org.eclipse.jem_1.0.0/plugin.xml
+eclipse/plugins/org.eclipse.jem_1.0.0/about.html
+eclipse/features/org.eclipse.jem_1.0.0/eclipse_update_120.jpg
+eclipse/features/org.eclipse.jem_1.0.0/cpl-v10.html
+eclipse/features/org.eclipse.jem_1.0.0/feature.properties
+eclipse/features/org.eclipse.jem_1.0.0/feature.xml
+eclipse/features/org.eclipse.jem_1.0.0/license.html
+eclipse/features/com.ibm.wtp.emf.integration.core_1.0.0/feature.xml
+eclipse/features/org.eclipse.ve_1.0.0/cpl-v10.html
+eclipse/features/org.eclipse.ve_1.0.0/feature.xml
+eclipse/features/org.eclipse.ve_1.0.0/eclipse_update_120.jpg
+eclipse/features/org.eclipse.ve_1.0.0/license.html
+eclipse/features/org.eclipse.ve_1.0.0/feature.properties
+eclipse/features/org.eclipse.ve.sdk_1.0.0/cpl-v10.html
+eclipse/features/org.eclipse.ve.sdk_1.0.0/feature.xml
+eclipse/features/org.eclipse.ve.sdk_1.0.0/eclipse_update_120.jpg
+eclipse/features/org.eclipse.ve.sdk_1.0.0/license.html
+eclipse/features/org.eclipse.ve.sdk_1.0.0/feature.properties
+eclipse/features/com.ibm.wtp.common.utilities_1.0.0/feature.xml
+eclipse/features/org.eclipse.ve.source_1.0.0/license.html
+eclipse/features/org.eclipse.ve.source_1.0.0/eclipse_update_120.jpg
+eclipse/features/org.eclipse.ve.source_1.0.0/cpl-v10.html
+eclipse/features/org.eclipse.ve.source_1.0.0/feature.xml
+eclipse/features/org.eclipse.ve.source_1.0.0/feature.properties
+eclipse/features/org.eclipse.jem.source_1.0.0/feature.properties
+eclipse/features/org.eclipse.jem.source_1.0.0/license.html
+eclipse/features/org.eclipse.jem.source_1.0.0/feature.xml
+eclipse/features/org.eclipse.jem.source_1.0.0/eclipse_update_120.jpg
+eclipse/features/org.eclipse.jem.source_1.0.0/cpl-v10.html
+@dirrm eclipse/plugins/org.eclipse.ve_1.0.0
+@dirrm eclipse/plugins/org.eclipse.ve.swt_1.0.0/vm
+@dirrm eclipse/plugins/org.eclipse.ve.swt_1.0.0/templates/org/eclipse/ve/internal/swt/codegen/jjet/util
+@dirrm eclipse/plugins/org.eclipse.ve.swt_1.0.0/templates/org/eclipse/ve/internal/swt/codegen/jjet
+@dirrm eclipse/plugins/org.eclipse.ve.swt_1.0.0/templates/org/eclipse/ve/internal/swt/codegen
+@dirrm eclipse/plugins/org.eclipse.ve.swt_1.0.0/templates/org/eclipse/ve/internal/swt
+@dirrm eclipse/plugins/org.eclipse.ve.swt_1.0.0/templates/org/eclipse/ve/internal
+@dirrm eclipse/plugins/org.eclipse.ve.swt_1.0.0/templates/org/eclipse/ve
+@dirrm eclipse/plugins/org.eclipse.ve.swt_1.0.0/templates/org/eclipse
+@dirrm eclipse/plugins/org.eclipse.ve.swt_1.0.0/templates/org
+@dirrm eclipse/plugins/org.eclipse.ve.swt_1.0.0/templates
+@dirrm eclipse/plugins/org.eclipse.ve.swt_1.0.0/overrides/org/eclipse/swt/widgets
+@dirrm eclipse/plugins/org.eclipse.ve.swt_1.0.0/overrides/org/eclipse/swt/layout
+@dirrm eclipse/plugins/org.eclipse.ve.swt_1.0.0/overrides/org/eclipse/swt/graphics
+@dirrm eclipse/plugins/org.eclipse.ve.swt_1.0.0/overrides/org/eclipse/swt
+@dirrm eclipse/plugins/org.eclipse.ve.swt_1.0.0/overrides/org/eclipse
+@dirrm eclipse/plugins/org.eclipse.ve.swt_1.0.0/overrides/org
+@dirrm eclipse/plugins/org.eclipse.ve.swt_1.0.0/overrides
+@dirrm eclipse/plugins/org.eclipse.ve.swt_1.0.0/icons/full/clcl16
+@dirrm eclipse/plugins/org.eclipse.ve.swt_1.0.0/icons/full
+@dirrm eclipse/plugins/org.eclipse.ve.swt_1.0.0/icons
+@dirrm eclipse/plugins/org.eclipse.ve.swt_1.0.0
+@dirrm eclipse/plugins/org.eclipse.ve.source_1.0.0/src/org.eclipse.ve.swt_1.0.0/vm
+@dirrm eclipse/plugins/org.eclipse.ve.source_1.0.0/src/org.eclipse.ve.swt_1.0.0
+@dirrm eclipse/plugins/org.eclipse.ve.source_1.0.0/src/org.eclipse.ve.propertysheet_1.0.0
+@dirrm eclipse/plugins/org.eclipse.ve.source_1.0.0/src/org.eclipse.ve.jfc_1.0.0/vm
+@dirrm eclipse/plugins/org.eclipse.ve.source_1.0.0/src/org.eclipse.ve.jfc_1.0.0
+@dirrm eclipse/plugins/org.eclipse.ve.source_1.0.0/src/org.eclipse.ve.java.core_1.0.0/vm
+@dirrm eclipse/plugins/org.eclipse.ve.source_1.0.0/src/org.eclipse.ve.java.core_1.0.0/schema
+@dirrm eclipse/plugins/org.eclipse.ve.source_1.0.0/src/org.eclipse.ve.java.core_1.0.0/rose
+@dirrm eclipse/plugins/org.eclipse.ve.source_1.0.0/src/org.eclipse.ve.java.core_1.0.0/model
+@dirrm eclipse/plugins/org.eclipse.ve.source_1.0.0/src/org.eclipse.ve.java.core_1.0.0
+@dirrm eclipse/plugins/org.eclipse.ve.source_1.0.0/src/org.eclipse.ve.cde_1.0.0/rose
+@dirrm eclipse/plugins/org.eclipse.ve.source_1.0.0/src/org.eclipse.ve.cde_1.0.0/model
+@dirrm eclipse/plugins/org.eclipse.ve.source_1.0.0/src/org.eclipse.ve.cde_1.0.0
+@dirrm eclipse/plugins/org.eclipse.ve.source_1.0.0/src
+@dirrm eclipse/plugins/org.eclipse.ve.source_1.0.0
+@dirrm eclipse/plugins/org.eclipse.ve.sdk_1.0.0
+@dirrm eclipse/plugins/org.eclipse.ve.propertysheet_1.0.0/images
+@dirrm eclipse/plugins/org.eclipse.ve.propertysheet_1.0.0
+@dirrm eclipse/plugins/org.eclipse.ve.jfc_1.0.0/vm
+@dirrm eclipse/plugins/org.eclipse.ve.jfc_1.0.0/palette
+@dirrm eclipse/plugins/org.eclipse.ve.jfc_1.0.0/overrides/javax/swing/text
+@dirrm eclipse/plugins/org.eclipse.ve.jfc_1.0.0/overrides/javax/swing/table
+@dirrm eclipse/plugins/org.eclipse.ve.jfc_1.0.0/overrides/javax/swing/plaf/basic
+@dirrm eclipse/plugins/org.eclipse.ve.jfc_1.0.0/overrides/javax/swing/plaf
+@dirrm eclipse/plugins/org.eclipse.ve.jfc_1.0.0/overrides/javax/swing/border
+@dirrm eclipse/plugins/org.eclipse.ve.jfc_1.0.0/overrides/javax/swing
+@dirrm eclipse/plugins/org.eclipse.ve.jfc_1.0.0/overrides/javax
+@dirrm eclipse/plugins/org.eclipse.ve.jfc_1.0.0/overrides/java/util
+@dirrm eclipse/plugins/org.eclipse.ve.jfc_1.0.0/overrides/java/awt
+@dirrm eclipse/plugins/org.eclipse.ve.jfc_1.0.0/overrides/java/applet
+@dirrm eclipse/plugins/org.eclipse.ve.jfc_1.0.0/overrides/java
+@dirrm eclipse/plugins/org.eclipse.ve.jfc_1.0.0/overrides
+@dirrm eclipse/plugins/org.eclipse.ve.jfc_1.0.0/icons/full/obj16
+@dirrm eclipse/plugins/org.eclipse.ve.jfc_1.0.0/icons/full/eview16
+@dirrm eclipse/plugins/org.eclipse.ve.jfc_1.0.0/icons/full/etool16
+@dirrm eclipse/plugins/org.eclipse.ve.jfc_1.0.0/icons/full/dtool16
+@dirrm eclipse/plugins/org.eclipse.ve.jfc_1.0.0/icons/full/cview16
+@dirrm eclipse/plugins/org.eclipse.ve.jfc_1.0.0/icons/full/ctool16
+@dirrm eclipse/plugins/org.eclipse.ve.jfc_1.0.0/icons/full/clcl16
+@dirrm eclipse/plugins/org.eclipse.ve.jfc_1.0.0/icons/full
+@dirrm eclipse/plugins/org.eclipse.ve.jfc_1.0.0/icons
+@dirrm eclipse/plugins/org.eclipse.ve.jfc_1.0.0/Examples/EventTests
+@dirrm eclipse/plugins/org.eclipse.ve.jfc_1.0.0/Examples
+@dirrm eclipse/plugins/org.eclipse.ve.jfc_1.0.0
+@dirrm eclipse/plugins/org.eclipse.ve.java.core_1.0.0/vm
+@dirrm eclipse/plugins/org.eclipse.ve.java.core_1.0.0/templates/org/eclipse/ve/internal/java/codegen/jjet/wizards/contributors
+@dirrm eclipse/plugins/org.eclipse.ve.java.core_1.0.0/templates/org/eclipse/ve/internal/java/codegen/jjet/wizards
+@dirrm eclipse/plugins/org.eclipse.ve.java.core_1.0.0/templates/org/eclipse/ve/internal/java/codegen/jjet/util
+@dirrm eclipse/plugins/org.eclipse.ve.java.core_1.0.0/templates/org/eclipse/ve/internal/java/codegen/jjet
+@dirrm eclipse/plugins/org.eclipse.ve.java.core_1.0.0/templates/org/eclipse/ve/internal/java/codegen
+@dirrm eclipse/plugins/org.eclipse.ve.java.core_1.0.0/templates/org/eclipse/ve/internal/java
+@dirrm eclipse/plugins/org.eclipse.ve.java.core_1.0.0/templates/org/eclipse/ve/internal
+@dirrm eclipse/plugins/org.eclipse.ve.java.core_1.0.0/templates/org/eclipse/ve
+@dirrm eclipse/plugins/org.eclipse.ve.java.core_1.0.0/templates/org/eclipse
+@dirrm eclipse/plugins/org.eclipse.ve.java.core_1.0.0/templates/org
+@dirrm eclipse/plugins/org.eclipse.ve.java.core_1.0.0/templates
+@dirrm eclipse/plugins/org.eclipse.ve.java.core_1.0.0/properties
+@dirrm eclipse/plugins/org.eclipse.ve.java.core_1.0.0/overrides/java/lang
+@dirrm eclipse/plugins/org.eclipse.ve.java.core_1.0.0/overrides/java
+@dirrm eclipse/plugins/org.eclipse.ve.java.core_1.0.0/overrides
+@dirrm eclipse/plugins/org.eclipse.ve.java.core_1.0.0/icons/full/wizban
+@dirrm eclipse/plugins/org.eclipse.ve.java.core_1.0.0/icons/full/obj16
+@dirrm eclipse/plugins/org.eclipse.ve.java.core_1.0.0/icons/full/etool16
+@dirrm eclipse/plugins/org.eclipse.ve.java.core_1.0.0/icons/full/elcl16
+@dirrm eclipse/plugins/org.eclipse.ve.java.core_1.0.0/icons/full/dtool16
+@dirrm eclipse/plugins/org.eclipse.ve.java.core_1.0.0/icons/full/dnd
+@dirrm eclipse/plugins/org.eclipse.ve.java.core_1.0.0/icons/full/dnavpal
+@dirrm eclipse/plugins/org.eclipse.ve.java.core_1.0.0/icons/full/dlcl16
+@dirrm eclipse/plugins/org.eclipse.ve.java.core_1.0.0/icons/full/cview16
+@dirrm eclipse/plugins/org.eclipse.ve.java.core_1.0.0/icons/full/ctool16
+@dirrm eclipse/plugins/org.eclipse.ve.java.core_1.0.0/icons/full/cnavpal
+@dirrm eclipse/plugins/org.eclipse.ve.java.core_1.0.0/icons/full/clcl16
+@dirrm eclipse/plugins/org.eclipse.ve.java.core_1.0.0/icons/full
+@dirrm eclipse/plugins/org.eclipse.ve.java.core_1.0.0/icons
+@dirrm eclipse/plugins/org.eclipse.ve.java.core_1.0.0
+@dirrm eclipse/plugins/org.eclipse.ve.doc_1.0.0
+@dirrm eclipse/plugins/org.eclipse.ve.cde_1.0.0/properties
+@dirrm eclipse/plugins/org.eclipse.ve.cde_1.0.0/images
+@dirrm eclipse/plugins/org.eclipse.ve.cde_1.0.0/icons/full/elcl16
+@dirrm eclipse/plugins/org.eclipse.ve.cde_1.0.0/icons/full/dlcl16
+@dirrm eclipse/plugins/org.eclipse.ve.cde_1.0.0/icons/full/clcl16
+@dirrm eclipse/plugins/org.eclipse.ve.cde_1.0.0/icons/full
+@dirrm eclipse/plugins/org.eclipse.ve.cde_1.0.0/icons
+@dirrm eclipse/plugins/org.eclipse.ve.cde_1.0.0
+@dirrm eclipse/plugins/org.eclipse.jem_1.0.0/overrides/java/lang
+@dirrm eclipse/plugins/org.eclipse.jem_1.0.0/overrides/java
+@dirrm eclipse/plugins/org.eclipse.jem_1.0.0/overrides
+@dirrm eclipse/plugins/org.eclipse.jem_1.0.0
+@dirrm eclipse/plugins/org.eclipse.jem.workbench_1.0.0
+@dirrm eclipse/plugins/org.eclipse.jem.ui_1.0.0/icons/full/wizban
+@dirrm eclipse/plugins/org.eclipse.jem.ui_1.0.0/icons/full/ctool16
+@dirrm eclipse/plugins/org.eclipse.jem.ui_1.0.0/icons/full
+@dirrm eclipse/plugins/org.eclipse.jem.ui_1.0.0/icons
+@dirrm eclipse/plugins/org.eclipse.jem.ui_1.0.0
+@dirrm eclipse/plugins/org.eclipse.jem.source_1.0.0/src/org.eclipse.jem_1.0.0/rose
+@dirrm eclipse/plugins/org.eclipse.jem.source_1.0.0/src/org.eclipse.jem_1.0.0/model
+@dirrm eclipse/plugins/org.eclipse.jem.source_1.0.0/src/org.eclipse.jem_1.0.0
+@dirrm eclipse/plugins/org.eclipse.jem.source_1.0.0/src/org.eclipse.jem.workbench_1.0.0
+@dirrm eclipse/plugins/org.eclipse.jem.source_1.0.0/src/org.eclipse.jem.ui_1.0.0
+@dirrm eclipse/plugins/org.eclipse.jem.source_1.0.0/src/org.eclipse.jem.proxy_1.0.0/vm
+@dirrm eclipse/plugins/org.eclipse.jem.source_1.0.0/src/org.eclipse.jem.proxy_1.0.0/schema
+@dirrm eclipse/plugins/org.eclipse.jem.source_1.0.0/src/org.eclipse.jem.proxy_1.0.0
+@dirrm eclipse/plugins/org.eclipse.jem.source_1.0.0/src/org.eclipse.jem.beaninfo_1.0.0/vm
+@dirrm eclipse/plugins/org.eclipse.jem.source_1.0.0/src/org.eclipse.jem.beaninfo_1.0.0/rose
+@dirrm eclipse/plugins/org.eclipse.jem.source_1.0.0/src/org.eclipse.jem.beaninfo_1.0.0/model
+@dirrm eclipse/plugins/org.eclipse.jem.source_1.0.0/src/org.eclipse.jem.beaninfo_1.0.0
+@dirrm eclipse/plugins/org.eclipse.jem.source_1.0.0/src
+@dirrm eclipse/plugins/org.eclipse.jem.source_1.0.0
+@dirrm eclipse/plugins/org.eclipse.jem.proxy_1.0.0/vm
+@dirrm eclipse/plugins/org.eclipse.jem.proxy_1.0.0
+@dirrm eclipse/plugins/org.eclipse.jem.beaninfo_1.0.0/vm
+@dirrm eclipse/plugins/org.eclipse.jem.beaninfo_1.0.0/schema
+@dirrm eclipse/plugins/org.eclipse.jem.beaninfo_1.0.0
+@dirrm eclipse/plugins/com.ibm.wtp.emf.workbench_1.0.0
+@dirrm eclipse/plugins/com.ibm.wtp.common.util_1.0.0
+@dirrm eclipse/plugins/com.ibm.etools.emf.event_3.0.0.1/runtime
+@dirrm eclipse/plugins/com.ibm.etools.emf.event_3.0.0.1
+@dirrm eclipse/features/org.eclipse.ve_1.0.0
+@dirrm eclipse/features/org.eclipse.ve.source_1.0.0
+@dirrm eclipse/features/org.eclipse.ve.sdk_1.0.0
+@dirrm eclipse/features/org.eclipse.jem_1.0.0
+@dirrm eclipse/features/org.eclipse.jem.source_1.0.0
+@dirrm eclipse/features/com.ibm.wtp.emf.integration.core_1.0.0
+@dirrm eclipse/features/com.ibm.wtp.common.utilities_1.0.0
 @unexec rmdir %D/eclipse/plugins 2>/dev/null || true
 @unexec rmdir %D/eclipse/features 2>/dev/null || true
 @unexec rmdir %D/eclipse 2>/dev/null || true
