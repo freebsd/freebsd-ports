@@ -3,7 +3,7 @@
 # Date created:		22 November 1994
 # Whom:			Satoshi Asami (asami)
 #
-# $Id: Makefile,v 1.25 1996/11/11 10:12:30 max Exp $
+# $Id: Makefile,v 1.26 1996/11/13 12:41:01 asami Exp $
 #
 
 DISTNAME=	mule-2.3
@@ -32,11 +32,20 @@ pre-build:
 
 post-install:
 # note that rcs-checkn and any2ps are scripts
-	strip ${PREFIX}/bin/b2m
-	strip ${PREFIX}/bin/coco
-	strip ${PREFIX}/bin/ctags
-	strip ${PREFIX}/bin/etags
-	strip ${PREFIX}/bin/m2ps
-	strip ${PREFIX}/bin/mule-19.28
+.for file in b2m coco ctags etags m2ps mule-19.28
+	strip ${PREFIX}/bin/${file}
+.endfor
+	if [ ! -f ${PREFIX}/info/dir ]; then \
+	  sed -ne '1,/Menu:/p' /usr/share/info/dir > ${PREFIX}/info/dir; \
+	fi
+.for info in emacs vip forms gnus cl sc
+	install-info ${PREFIX}/info/${info} ${PREFIX}/info/dir
+.endfor
+# Our makeinfo can't handle files with Japanese characters. :<
+	install-info --section="The Emacs editor and associated tools" --entry="* Antenews-jp: (antenews-jp).	Version 19 Antenews. (Japanese)" ${PREFIX}/info/antenews-jp ${PREFIX}/info/dir
+	install-info --section="The Emacs editor and associated tools" --entry="* Mule: (mule).		Multilingual Enhancement to GNU Emacs." ${PREFIX}/info/mule ${PREFIX}/info/dir
+	install-info --section="The Emacs editor and associated tools" --entry="* Mule-jp: (mule-jp).		Multilingual Enhancement to GNU Emacs. (Japanese)" ${PREFIX}/info/mule-jp ${PREFIX}/info/dir
+	install-info --section="The Emacs editor and associated tools" --entry="* Egg-jp: (egg-jp).		Japanese/Chinese Inputting Method. (Japanese)" ${PREFIX}/info/egg-jp ${PREFIX}/info/dir
+	install-info --section="The Emacs editor and associated tools" --entry="* Canna-jp: (canna-jp).		Another Japanese Inputting Method. (Japanese)" ${PREFIX}/info/canna-jp ${PREFIX}/info/dir
 
 .include <bsd.port.mk>

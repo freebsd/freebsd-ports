@@ -1,0 +1,181 @@
+--- ./man/Makefile.org	Sat Jul  2 14:35:17 1994
++++ ./man/Makefile	Tue May 20 22:28:50 1997
+@@ -4,7 +4,7 @@
+ MAKEINFO = makeinfo
+ TEXINDEX_OBJS = texindex.o getopt.o
+ INFO_TARGETS = ../info/emacs ../info/cl ../info/forms ../info/vip \
+-	       ../info/gnus ../info/sc ../info/info ../info/dired-x
++	       ../info/gnus ../info/sc ../info/dired-x
+ DVI_TARGETS = emacs.dvi cl.dvi forms.dvi vip.dvi gnus.dvi sc.dvi dired-x.dvi
+ INFOSOURCES = info.texi info-stnd.texi
+ 
+@@ -54,6 +54,7 @@
+ 	gnu1.texi \
+ 	glossary.texi
+ 
++all: info
+ info: $(INFO_TARGETS)
+ 
+ dvi: $(DVI_TARGETS)
+--- ./man/vip.texi.org	Tue May 20 22:29:04 1997
++++ ./man/vip.texi	Tue May 20 22:30:32 1997
+@@ -24,6 +24,10 @@
+ 
+ @setfilename ../info/vip
+ @settitle VIP
++@dircategory The Emacs editor and associated tools
++@direntry
++* VIP: (vip).		A VI-emulation for Emacs.
++@end direntry
+ 
+ @iftex
+ @finalout
+--- ./man/emacs.texi.org	Fri Nov  4 03:08:52 1994
++++ ./man/emacs.texi	Tue May 20 22:30:32 1997
+@@ -49,6 +49,11 @@
+ @settitle GNU Emacs Manual
+ @setfilename ../info/emacs
+ @synindex pg cp
++@dircategory The Emacs editor and associated tools
++@direntry
++* Emacs: (emacs).	The extensible self-documenting text editor.
++@end direntry
++
+ @c
+ @c in general, keep the following line commented out, unless doing a
+ @c copy of this manual that will be published.  the manual should go
+--- ./man/forms.texi.org	Thu Jul 28 13:46:45 1994
++++ ./man/forms.texi	Tue May 20 22:30:32 1997
+@@ -9,6 +9,11 @@
+ @syncodeindex vr cp
+ @syncodeindex fn cp
+ @syncodeindex ky cp
++@dircategory The Emacs editor and associated tools
++@direntry
++* Forms: (forms).	Emacs package for editing data bases
++			by filling in forms.
++@end direntry
+ @iftex
+ @finalout
+ @setchapternewpage odd
+--- ./man/cl.texi.org	Sat Jan  8 00:42:47 1994
++++ ./man/cl.texi	Tue May 20 22:30:32 1997
+@@ -2,6 +2,12 @@
+ @setfilename ../info/cl
+ @settitle Common Lisp Extensions
+ 
++@dircategory The Emacs editor and associated tools
++@direntry
++* CL: (cl).		Partial Common Lisp support for Emacs Lisp.
++@end direntry
++
++
+ @iftex
+ @finalout
+ @end iftex
+--- ./man/sc.texi.org	Sat Jan  8 00:41:40 1994
++++ ./man/sc.texi	Tue May 20 22:30:32 1997
+@@ -3,6 +3,12 @@
+ @comment %**start of header (This is for running Texinfo on a region.)
+ @setfilename ../info/sc
+ @settitle Supercite Version 3.1 User's Manual
++@dircategory The Emacs editor and associated tools
++@direntry
++* SC: (sc).		Supercite lets you cite parts of messages you're 
++			replying to, in flexible ways.
++@end direntry
++
+ @iftex
+ @finalout
+ @end iftex
+--- ./man/dired-x.texi.org	Sat Aug 13 09:58:50 1994
++++ ./man/dired-x.texi	Tue May 20 22:48:19 1997
+@@ -18,6 +18,11 @@
+ @setfilename ../info/dired-x
+ @c dired-x.el REVISION NUMBER
+ @settitle Dired Extra Version 2 User's Manual
++@dircategory The Emacs editor and associated tools
++@direntry
++* Dired-X: (dired-x).	Dired Extra Features.
++@end direntry
++
+ @iftex
+ @finalout
+ @end iftex
+@@ -196,32 +201,32 @@
+ @enumerate
+ @item
+ Omitting of uninteresting files from dired listing. 
+-@itemize
++@itemize @bullet
+ @xref{Omitting Files in Dired}
+ @end itemize
+ @item
+ Local variables for dired directories.
+-@itemize
++@itemize @bullet
+ @xref{Local Variables}
+ @end itemize
+ @item
+ Guessing shell commands in dired buffers.
+-@itemize
++@itemize @bullet
+ @xref{Shell Command Guessing}
+ @end itemize
+ @item
+ Running dired command in non-dired buffers.
+-@itemize
++@itemize @bullet
+ @xref{Virtual Dired}
+ @end itemize
+ @item
+ Finding a file mentioned in a buffer
+-@itemize
++@itemize @bullet
+ @xref{Find File At Point}
+ @end itemize
+ @item
+ Commands using file marking.
+-@itemize
++@itemize @bullet
+ @xref{Advanced Mark Commands}
+ @end itemize
+ @end enumerate
+--- ./man/gnus.texi.org	Sun Sep 11 11:52:45 1994
++++ ./man/gnus.texi	Tue May 20 23:23:03 1997
+@@ -3,6 +3,12 @@
+ @comment %**start of header (This is for running Texinfo on a region.)
+ @setfilename ../info/gnus
+ @settitle GNUS 3.15 Manual
++
++@dircategory The Emacs editor and associated tools
++@direntry
++* GNUS: (gnus).		The news reader GNUS.
++@end direntry
++
+ @iftex
+ @finalout
+ @end iftex
+--- ./Makefile.in.org	Mon Dec 19 18:01:54 1994
++++ ./Makefile.in	Tue May 20 22:28:03 1997
+@@ -186,7 +186,7 @@
+ # Subdirectories to make recursively.  `lisp' is not included
+ # because the compiled lisp files are part of the distribution
+ # and you cannot remake them without installing Emacs first.
+-SUBDIR = lib-src src
++SUBDIR = lib-src src man
+ 
+ # The makefiles of the directories in $SUBDIR.
+ SUBDIR_MAKEFILES = lib-src/Makefile src/Makefile oldXMenu/Makefile lwlib/Makefile
+@@ -338,10 +338,7 @@
+ 	if [ `(cd ${srcdir}/info && /bin/pwd)` != `(cd ${infodir} && /bin/pwd)` ]; \
+ 	then \
+ 	  (cd ${srcdir}/info ; \
+-	   if [ ! -f ${infodir}/dir ] && [ -f dir ]; then \
+-	     (cd $${thisdir}; ${INSTALL_DATA} ${srcdir}/info/dir ${infodir}/dir); \
+-	   fi ; \
+-	   for f in cl* dired-x* emacs* forms* gnus* info* sc* vip* \
++	   for f in cl* dired-x* emacs* forms* gnus* sc* vip* \
+ 		antenews* canna* egg* languages* m2ps* mule* kbd-trans* \
+ 		quail* terminology* CCL* ISO2022* R2L* XFONT*; do \
+ 	     (cd $${thisdir}; ${INSTALL_DATA} ${srcdir}/info/$$f ${infodir}/$$f); \
