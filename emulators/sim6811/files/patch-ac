@@ -1,18 +1,20 @@
---- main.c.orig	Tue Mar 22 14:16:59 1994
-+++ main.c	Thu Oct 16 10:06:27 2003
-@@ -70,11 +70,8 @@
+--- main.c.orig	Tue Mar 22 17:16:59 1994
++++ main.c	Tue Aug 10 21:28:07 2004
+@@ -70,13 +70,6 @@
  #include <ctype.h>
  #include "sim.h"
  
 -extern int printf();
 -extern int fprintf();
- extern int fclose();
- extern int fscanf();
+-extern int fclose();
+-extern int fscanf();
 -extern int sscanf();
- extern int fflush();
- 
+-extern int fflush();
+-
  /* how to handle all other op codes */
-@@ -323,19 +320,7 @@
+ void bad_op(m6811 state)
+ {
+@@ -323,19 +316,7 @@
  
      case '?':			/* help */
  	(void) fgets(line, sizeof(line), stdin);
