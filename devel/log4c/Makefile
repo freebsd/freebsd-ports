@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	log4c
-PORTVERSION=	1.0.8
+PORTVERSION=	1.0.10
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		http://www.cimai.com/opensource/log4c/
@@ -18,7 +18,7 @@ MAINTAINER=	ports@FreeBSD.org
 LIB_DEPENDS=	expat.4:${PORTSDIR}/textproc/expat2
 
 USE_LIBTOOL=	yes
-CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
+CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 INSTALLS_SHLIB=	yes
