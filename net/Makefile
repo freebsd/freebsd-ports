@@ -605,7 +605,6 @@
     SUBDIR += rinetd
     SUBDIR += ripetools
     SUBDIR += rmsg
-    SUBDIR += roadrunner
     SUBDIR += rrdtool
     SUBDIR += rshell
     SUBDIR += rsync
