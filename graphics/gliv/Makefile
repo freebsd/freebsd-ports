@@ -13,6 +13,8 @@ MASTER_SITES=	http://gliv.tuxfamily.org/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An image viewer that uses Gdk-Pixbuf and OpenGL
 
+BROKEN=		"Does not fetch"
+
 LIB_DEPENDS=	gtkglext-x11-1.0:${PORTSDIR}/x11-toolkits/gtkglext
 RUN_DEPENDS=	${LOCALBASE}/bin/convert:${PORTSDIR}/graphics/ImageMagick
 
