@@ -172,6 +172,7 @@
     SUBDIR += mod_backhand
     SUBDIR += mod_bf
     SUBDIR += mod_blowchunks
+    SUBDIR += mod_bunzip2
     SUBDIR += mod_cgi_debug
     SUBDIR += mod_color
     SUBDIR += mod_csacek

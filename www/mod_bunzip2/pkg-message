@@ -1,0 +1,5 @@
+You might want to add the following lines to your httpd.conf:
+
+	LoadModule bunzip2_module libexec/apache/mod_bunzip2.so
+	AddModule mod_bunzip2.c
+	AddHandler send-gunzipped .html
