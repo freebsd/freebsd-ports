@@ -1,0 +1,11 @@
+--- ./include/youprop.h.orig	Tue Oct 28 22:32:04 1997
++++ ./include/youprop.h	Tue Oct 28 22:33:08 1997
+@@ -79,7 +79,7 @@
+ #define Protection		u.uprops[PROTECTION].p_flgs
+ #define Protection_from_shape_changers \
+ 				u.uprops[PROT_FROM_SHAPE_CHANGERS].p_flgs
+-#define Warning			u.uprops[WARNING].p_flgs
++#define HWarning		u.uprops[WARNING].p_flgs
+ 
+ #define HTelepat		u.uprops[TELEPAT].p_flgs
+ #define Telepat			(HTelepat || telepathic(uasmon))
