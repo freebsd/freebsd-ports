@@ -2585,8 +2585,11 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     <affects>
       <package>
 	<name>quake2forge</name>
-	<name>quake2lnx</name>
 	<range><ge>0</ge></range>
+      </package>
+      <package>
+	<name>quake2lnx</name>
+	<range><lt>0.16.2</lt></range>
       </package>
     </affects>
     <description>
@@ -2608,6 +2611,7 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     <dates>
       <discovery>2004-10-27</discovery>
       <entry>2005-01-21</entry>
+      <modified>2005-03-15</modified>
     </dates>
   </vuln>
 
