@@ -9,11 +9,10 @@ PORTNAME=	freesweep
 PORTVERSION=	0.87
 CATEGORIES=	games
 MASTER_SITES=	http://www.upl.cs.wisc.edu/~hartmann/sweep/
-DISTNAME=	${PORTNAME}
+DISTFILES=	${PORTNAME}.tar.gz
 
 MAINTAINER=	ports@FreeBSD.org
 
-WRKSRC=		${WRKDIR}/${PKGNAME}
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-prefsdir=${PREFIX}/share/freesweep \

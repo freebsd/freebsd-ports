@@ -17,7 +17,6 @@ MAINTAINER=	gsutter@zer0.org
 
 RUN_DEPENDS=	procmail:${PORTSDIR}/mail/procmail
 
-WRKSRC=		${WRKDIR}/${PKGNAME}
 NO_BUILD=	yes
 BINDIR=		${PREFIX}/etc/${PORTNAME}
 

@@ -11,12 +11,10 @@ PORTVERSION=	1.0
 CATEGORIES=	security
 MASTER_SITES=	http://packetstorm.securify.com/distributed/  \
 		ftp://ftp.ntua.gr/pub/security/technotronic/denial/
-DISTNAME=	${PORTNAME}-1_0
-EXTRACT_SUFX=	.tgz
+DISTFILES=	${PORTNAME}-1_0.tgz
 
 MAINTAINER=	obrien@FreeBSD.org
 
-WRKSRC=		${WRKDIR}/${PKGNAME}
 ALL_TARGET=	rid
 
 pre-configure:

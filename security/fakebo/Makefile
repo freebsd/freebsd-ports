@@ -16,8 +16,6 @@ MASTER_SITES=	ftp://ftp.deva.net/pub/sources/networking/ids/ \
 
 MAINTAINER=	kris@FreeBSD.org
 
-WRKSRC=		${WRKDIR}/${PKGNAME}
-
 GNU_CONFIGURE=	yes
 
 MAN1=		fakebo.1

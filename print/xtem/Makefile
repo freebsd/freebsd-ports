@@ -9,7 +9,7 @@ PORTNAME=	xtem
 PORTVERSION=	7.00
 CATEGORIES=	print
 MASTER_SITES=	ftp://ftp.iwd.uni-bremen.de/pub/tex/xtem.v7/
-DISTNAME=	xtem_texmenu.7.00
+DISTFILES=	xtem_texmenu.${PORTVERSION}.tar.gz
 
 MAINTAINER=     ports@FreeBSD.org
 
@@ -19,7 +19,6 @@ RUN_DEPENDS+=	gv:${PORTSDIR}/print/gv \
 		tex:${PORTSDIR}/print/teTeX
 .endif
 
-WRKSRC=		${WRKDIR}/${PKGNAME}
 MAN1=		hyphen_show.1 xtem.1
 
 pre-extract:

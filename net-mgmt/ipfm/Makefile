@@ -13,7 +13,6 @@ EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	roman@xpert.com
 
-WRKSRC=		${WRKDIR}/${PKGNAME}
 PATCH_STRIP=	-p1
 
 GNU_CONFIGURE=	yes

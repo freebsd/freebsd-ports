@@ -24,7 +24,7 @@ DISTFILES=	# empty
 do-patch:
 .else
 GNU_CONFIGURE=	yes
-WRKSRC=		${WRKDIR}/${PKGNAME}
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 ALL_TARGET=	all catalogs
 INSTALL_TARGET=	install install.man
 MAN1=		tcsh.1

@@ -11,7 +11,7 @@ CATEGORIES=	x11-fm
 MASTER_SITES=	http://www.xnc.dubna.su/src/ \
 		${MASTER_SITE_SUNSITE}
 MASTER_SITE_SUBDIR=	X11/desktop
-DISTNAME=	${PKGNAME}.src
+DISTFILES=	${DISTNAME}.src.tar.gz
 
 MAINTAINER=	dima@Chg.RU
 
@@ -26,7 +26,6 @@ MAINTAINER=	dima@Chg.RU
 LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
 		png.4:${PORTSDIR}/graphics/png
 
-WRKSRC=		${WRKDIR}/${PKGNAME}
 USE_X_PREFIX=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \

@@ -9,11 +9,9 @@ PORTNAME=	nsping
 PORTVERSION=	0.8
 CATEGORIES=	net
 MASTER_SITES=	http://www.enteract.com/~tqbf/
-DISTNAME=	nsping
+DISTFILES=	nsping.tar.gz
 
 MAINTAINER=	kris@FreeBSD.org
-
-WRKSRC=		${WRKDIR}/${PKGNAME}
 
 MAN8=		nsping.8
 

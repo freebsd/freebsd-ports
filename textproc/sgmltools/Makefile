@@ -10,7 +10,7 @@ PORTVERSION=	2.0.2
 CATEGORIES=	textproc
 MASTER_SITES=	ftp://ftp.us.sgmltools.org/pub/SGMLtools/v2.0/source/ \
 		ftp://ftp.nllgg.nl/pub/SGMLtools/v2.0/source/
-DISTNAME=	${PORTNAME}-${PORTVERSION}.base
+DISTFILES=	${DISTNAME}.base.tar.bz2
 
 MAINTAINER=	benno@netizen.com.au
 
@@ -22,7 +22,6 @@ RUN_DEPENDS+=	${LOCALBASE}/share/sgml/docbook:${PORTSDIR}/textproc/docbook \
 
 USE_BZIP2=	yes
 USE_PERL5=	yes
-WRKSRC=		${WRKDIR}/${PKGNAME}
 MAN1=		sgmltools.1
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=--with-etcsgml=${PREFIX}/etc/sgml

@@ -13,7 +13,6 @@ MASTER_SITES=	ftp://ftp.blackened.com/pub/irc/blackened/
 MAINTAINER=	toast@blackened.com
 
 GNU_CONFIGURE=	yes
-WRKSRC=		${WRKDIR}/${PKGNAME}
 PLIST_SUB=	VERSION=${PORTVERSION}
 MAKE_ENV=	prefix=${PREFIX}
 

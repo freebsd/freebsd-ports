@@ -9,14 +9,12 @@ PORTNAME=	yabasic
 PORTVERSION=	2.64
 CATEGORIES=	lang
 MASTER_SITES=	http://www.yabasic.de/download/
-DISTNAME=	yab
-EXTRACT_SUFX=	.tar.Z
+DISTFILES=	yab.tar.Z
 
 MAINTAINER=	elwood@mc5sys.in-berlin.de
 
 USE_BISON=	yes
 USE_XLIB=	yes
 GNU_CONFIGURE=	yes
-WRKSRC=		${WRKDIR}/${PKGNAME}
 
 .include <bsd.port.mk>

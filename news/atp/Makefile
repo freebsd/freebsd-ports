@@ -10,14 +10,12 @@ PORTVERSION=		1.50
 CATEGORIES=		news
 MASTER_SITES=		${MASTER_SITE_SUNSITE}
 MASTER_SITE_SUBDIR=	system/bbs/mail
-DISTNAME=		atp-1.50-src
+DISTFILES=		${DISTNAME}-src.tar.gz
 
 MAINTAINER=		dburr@FreeBSD.org
 
 RUN_DEPENDS=		zip:${PORTSDIR}/archivers/zip \
 			unzip:${PORTSDIR}/archivers/unzip
-
-WRKSRC=			${WRKDIR}/${PKGNAME}
 
 USE_GMAKE=		YES
 GNU_CONFIGURE=		YES

@@ -11,14 +11,13 @@ CATEGORIES=	net
 MASTER_SITES=	ftp://ftp.unipi.it/pub/local/ntop/source/ \
 		http://www.freenix.no/~anders/ \
 		ftp://totem.fix.no/pub/mirrors/misc/
-DISTNAME=	ntop-1.1-src
+DISTFILES=	${DISTNAME}-src.tar.gz
 
 MAINTAINER=	billf@FreeBSD.org
 
 HAS_CONFIGURE=	yes
 ALL_TARGET=
 INSTALL_TARGET=	install install-man
-WRKSRC=		${WRKDIR}/${PKGNAME}
 
 MAN8=		ntop.8
 
