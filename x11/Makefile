@@ -161,6 +161,7 @@
     SUBDIR += xmsg
     SUBDIR += xmx
     SUBDIR += xnee
+    SUBDIR += xnodecor
     SUBDIR += xprompt
     SUBDIR += xrootconsole
     SUBDIR += xscreensaver
