@@ -6,11 +6,10 @@
 #
 
 PORTNAME=	lesstif
-PORTVERSION=	0.93.95
+PORTVERSION=	0.93.94
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	lesstif
-DISTNAME=	${PORTNAME}-${PORTVERSION}b
 
 MAINTAINER=	dinoex@freebsd.org
 COMMENT=	API compatible clone of the Motif toolkit
