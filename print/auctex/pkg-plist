@@ -105,6 +105,16 @@ share/doc/auctex/README
 %%LISPDIR%%/auctex/style/psfig.elc
 %%LISPDIR%%/auctex/style/report.el
 %%LISPDIR%%/auctex/style/report.elc
+%%LISPDIR%%/auctex/style/scrartcl.el
+%%LISPDIR%%/auctex/style/scrartcl.elc
+%%LISPDIR%%/auctex/style/scrbase.el
+%%LISPDIR%%/auctex/style/scrbase.elc
+%%LISPDIR%%/auctex/style/scrbook.el
+%%LISPDIR%%/auctex/style/scrbook.elc
+%%LISPDIR%%/auctex/style/scrlttr2.el
+%%LISPDIR%%/auctex/style/scrlttr2.elc
+%%LISPDIR%%/auctex/style/scrreprt.el
+%%LISPDIR%%/auctex/style/scrreprt.elc
 %%LISPDIR%%/auctex/style/slides.el
 %%LISPDIR%%/auctex/style/slides.elc
 %%LISPDIR%%/auctex/style/slovak.el
