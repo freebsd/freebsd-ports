@@ -106,9 +106,9 @@ pref("font.name.serif.he", "misc-fixed-iso8859-8");
 pref("font.name.sans-serif.he", "misc-fixed-iso8859-8");
 pref("font.name.monospace.he", "misc-fixed-iso8859-8");
 
-pref("font.name.serif.ja", "ms-pgothic-jisx0208.1983-0");
-pref("font.name.sans-serif.ja", "ms-pgothic-jisx0208.1983-0");
-pref("font.name.monospace.ja", "ms-gothic-jisx0208.1983-0");
+pref("font.name.serif.ja", "netscape-fixed-jisx0208.1983-0");
+pref("font.name.sans-serif.ja", "netscape-fixed-jisx0208.1983-0");
+pref("font.name.monospace.ja", "netscape-fixed-jisx0208.1983-0");
 
 pref("font.name.serif.ko", "daewoo-mincho-ksc5601.1987-0");
 pref("font.name.sans-serif.ko", "daewoo-mincho-ksc5601.1987-0");
