@@ -1,0 +1,5 @@
+Plugin for IRC client X-Chat which adds an icon in your systray that flashes
+when you got highlighted message. Configurable events and actions.
+Integrates with KDE, GNOME and Xfce4.
+
+WWW: http://blight.altervista.org/index.php?act=Systray
