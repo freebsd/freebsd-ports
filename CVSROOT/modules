@@ -5397,6 +5397,7 @@ p5-Bit-ShiftReg	ports/math/p5-Bit-ShiftReg
 p5-Bit-Vector	ports/math/p5-Bit-Vector
 p5-Boulder	ports/converters/p5-Boulder
 p5-Bundle-Slash	ports/www/p5-Bundle-Slash
+p5-Bundle-Sledge	ports/www/p5-Bundle-Sledge
 p5-Business-CreditCard	ports/misc/p5-Business-CreditCard
 p5-Business-ISBN	ports/misc/p5-Business-ISBN
 p5-Business-ISIN	ports/misc/p5-Business-ISIN
