@@ -1,6 +1,8 @@
---- sysdep/freebsd/Makefile.sysdep.orig	Fri Feb 21 10:14:47 2003
-+++ sysdep/freebsd/Makefile.sysdep	Thu Aug 29 01:39:36 2002
-@@ -42,7 +42,7 @@
+$FreeBSD$
+
+--- sysdep/freebsd/Makefile.sysdep.orig	Thu Aug 29 02:39:36 2002
++++ sysdep/freebsd/Makefile.sysdep	Sun Aug 24 18:30:45 2003
+@@ -42,10 +42,10 @@
  LIBSYSDEPDIR=	${.CURDIR}/sysdep/common/libsysdep
  .endif
  
@@ -8,4 +10,8 @@
 +LDADD+=		${LIBSYSDEPDIR}/libsysdep.a -lipsec -L/usr/local/lib
  DPADD+=		${LIBGMP} ${LIBSYSDEPDIR}/libsysdep.a
  
- CFLAGS+=	-DHAVE_GETNAMEINFO -DHAVE_GETIFADDRS \
+-CFLAGS+=	-DHAVE_GETNAMEINFO -DHAVE_GETIFADDRS \
++CFLAGS+=	-DHAVE_GETNAMEINFO -DHAVE_GETIFADDRS -DHAVE_PCAP \
+ 		-I${.CURDIR}/sysdep/common -I/usr/include \
+ 		-I/usr/local/include -I/usr/local/include/openssl
+ 
