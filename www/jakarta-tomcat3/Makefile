@@ -7,7 +7,7 @@
 
 PORTNAME=	jakarta-tomcat
 PORTVERSION=	3.3.1
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	www java
 MASTER_SITES=	http://jakarta.apache.org/builds/jakarta-tomcat/release/v${PORTVERSION}/bin/ \
 		http://www.metaverse.nl/~ernst/ \
@@ -38,13 +38,11 @@ STDOUT_LOG=	${LOG_DIR}/stdout.log
 STDERR_LOG=	${LOG_DIR}/stderr.log
 AUTO_START?=	NO
 PID_FILE=	/var/run/${APP_SHORTNAME}.pid
-REPLACE_FILES=	${FILESDIR}/daemonctl.c \
+REPLACE_FILES=	${PORTSDIR}/www/jakarta-tomcat/files/daemonctl.c \
 		${FILESDIR}/${CONTROL_SCRIPT_NAME}.1 \
 		${FILESDIR}/${STARTUP_SCRIPT_NAME} \
 		${WRKSRC}/conf/server.xml
 JAR_FILE=	lib/${APP_SHORTNAME}.jar
-JAVA_ARGS=	'"-Dtomcat.install=${APP_HOME}"'
-JAR_ARGS=	'"run"'
 CONTROL_SCRIPT_MANPAGE_TITLE=	TOMCATCTL
 WRKDIR?=	work
 
@@ -52,16 +50,16 @@ WRKDIR?=	work
 
 pre-install:
 	@${ECHO_CMD} "Installation settings:"
-	@${ECHO_CMD} "   Destination directory:   ${APP_HOME}"
-	@${ECHO_CMD} "   Control script location: ${CONTROL_SCRIPT}"
-	@${ECHO_CMD} "   Startup script location: ${STARTUP_SCRIPT}"
-	@${ECHO_CMD} "   Location of JDK:         ${JAVA_HOME}"
-	@${ECHO_CMD} "   Location of Java port:   ${JAVA_PORT}"
-	@${ECHO_CMD} "   Running as (user/group): ${USER}/${GROUP}"
-	@${ECHO_CMD} "   HTTP port:               ${HTTP_PORT}"
-	@${ECHO_CMD} "   Logfile stdout:          ${STDOUT_LOG}"
-	@${ECHO_CMD} "   Logfile stderr:          ${STDERR_LOG}"
-	@${ECHO_CMD} "   Starting after install:  ${AUTO_START}"
+	@${ECHO_CMD} "   Destination directory:    ${APP_HOME}"
+	@${ECHO_CMD} "   Control program location: ${CONTROL_SCRIPT}"
+	@${ECHO_CMD} "   Startup script location:  ${STARTUP_SCRIPT}"
+	@${ECHO_CMD} "   Location of JDK:          ${JAVA_HOME}"
+	@${ECHO_CMD} "   Location of Java port:    ${JAVA_PORT}"
+	@${ECHO_CMD} "   Running as (user/group):  ${USER}/${GROUP}"
+	@${ECHO_CMD} "   HTTP port:                ${HTTP_PORT}"
+	@${ECHO_CMD} "   Logfile stdout:           ${STDOUT_LOG}"
+	@${ECHO_CMD} "   Logfile stderr:           ${STDERR_LOG}"
+	@${ECHO_CMD} "   Starting after install:   ${AUTO_START}"
 	@PKG_PREFIX=${PREFIX} ${SH} pkg-install ${PKGNAME} PRE-INSTALL
 
 do-install:
@@ -107,8 +105,12 @@ do-install:
 	@${CP} ${WRKDIR}/server.xml ${APP_HOME}/conf/
 	@${ECHO_CMD} " [ DONE ]"
 
-	@${ECHO_CMD} -n ">> Compiling and installing control script..."
-	@cd ${WRKDIR} && ${CC} -DJAR_ARGS=${JAR_ARGS} -DJAVA_ARGS=${JAVA_ARGS} -ansi -o ${CONTROL_SCRIPT_NAME} daemonctl.c
+	@${ECHO_CMD} -n ">> Compiling and installing control program..."
+	@${SED} \
+	-e "/%%JAVA_ARGS%%/s//\"-Dtomcat.install=${APP_HOME:S/\//\\\//g}\",/g" \
+	-e "/%%JAR_ARGS%%/s//\"run\",/g" \
+	${WRKDIR}/daemonctl.c > ${WRKDIR}/daemonctl_.c
+	@cd ${WRKDIR} && ${CC} -ansi -o ${CONTROL_SCRIPT_NAME} daemonctl_.c
 	@${CP} ${WRKDIR}/${CONTROL_SCRIPT_NAME} ${CONTROL_SCRIPT}
 	@${CHOWN} ${USER}:${GROUP} ${CONTROL_SCRIPT}
 	@${CHMOD} 6754 ${CONTROL_SCRIPT}
