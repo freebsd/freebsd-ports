@@ -1,11 +1,11 @@
-VMware 1.1 for Linux on FreeBSD.
-$Date: 1999/12/17 00:36:01 $
+VMware 2.0 for Linux on FreeBSD.
+$Date: 2000/01/23 22:28:10 $
 $FreeBSD$
 
 Introduction.
 
 This piece of software provides some basic support for running
-the VMware 1.1 for Linux on FreeBSD.
+the VMware 2.0 for Linux on FreeBSD.
 
 I'm using FreeBSD 4.0 -current system and don't know whether
 this software will work on the 3.X branch.
@@ -64,8 +64,6 @@ Caveats.
       have enabled both IDE and floppy drives in the same VMware session, you
       _must_ select the right booting order in the Phoenix BIOS Setup.
       
-    - Doesn't work on a SMP kernel.
-    
     - Support only for Host networking. Doesn't have a bridgink networking
       But really this mean, that you are need to enable gateway on
       our FreeBSD box. And after that virtual machine can communicate 

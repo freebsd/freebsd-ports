@@ -1,0 +1,20 @@
+Here lists some useful hints on using VMware on FreeBSD.
+
+- Raw disk may not work.  Use virtual disk instead.
+
+- Under FreeBSD, floppy device should be configured as follows:
+
+	Type: file
+	Path: /dev/rfd0
+
+(Obtain the write permission on /dev/rfd0 if you write floppy disks)
+
+- Consider making a link /compat/linux/tmp if your /tmp doesn't have
+sufficient free space or is slow.  VMware uses /tmp to back the VM's
+memory.
+
+e.g.
+	ln -s /usr/tmp /compat/linux/tmp
+
+-- 
+Akinori -Aki- MUSHA <knu@idaemons.org>

@@ -1,0 +1,9 @@
+# $FreeBSD$
+
+all:	
+	make -f Makefile.FreeBSD SMP=YES clean all
+	make -f Makefile.FreeBSD SMP=NO clean all
+
+install:	
+	make -f Makefile.FreeBSD SMP=YES install
+	make -f Makefile.FreeBSD SMP=NO install
