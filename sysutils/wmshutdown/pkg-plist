@@ -1,0 +1,5 @@
+bin/wmShutdown
+bin/Shutdown
+share/wmShutdown/pixmaps/wmShutdown.xpm
+@dirrm share/wmShutdown/pixmaps
+@dirrm share/wmShutdown
