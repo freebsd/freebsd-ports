@@ -1,0 +1,12 @@
+--- ./kdm/backend/Makefile.am.orig	Sun Sep 23 09:29:27 2001
++++ ./kdm/backend/Makefile.am	Thu Apr 18 20:53:44 2002
+@@ -1,6 +1,7 @@
+-INCLUDES = $(all_includes) $(KERBEROS_INCS)
++INCLUDES = $(X_INCLUDES) $(USER_INCLUDES) $(KERBEROS_INCS)
++CPPFLAGS =
+ AM_CFLAGS = $(XDM_CFLAGS)
+-LDFLAGS = $(all_libraries) $(KDE_RPATH) $(KRB_RPATH)
++LDFLAGS = $(X_LDFLAGS) $(USER_LDFLAGS) $(KDE_RPATH) $(KRB_RPATH)
+ LDADD = $(LIB_X11) -lXau $(LIBXDMCP) $(PASSWDLIBS) \
+     $(LIB_LIBS) $(KERBEROS_LIBS) $(LIBSOCKET) $(LIBRESOLV) \
+     $(LIBUCB) $(LIBUTIL)

@@ -7,54 +7,36 @@
 
 PORTNAME=	koffice
 PORTVERSION=	1.1.1
-PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	editors kde
 MASTER_SITES=	${MASTER_SITE_KDE}
-MASTER_SITE_SUBDIR=	stable/koffice-${PORTVERSION}/src
+MASTER_SITE_SUBDIR=	stable/src
+DISTNAME=	${PORTNAME}-${PORTVERSION}-kde3
 DIST_SUBDIR=	KDE
 
 MAINTAINER=	kde@FreeBSD.org
 
-BUILD_DEPENDS=	autoconf213:${PORTSDIR}/devel/autoconf213 \
-		automake14:${PORTSDIR}/devel/automake14
+BUILD_DEPENDS=	autoconf:${PORTSDIR}/devel/autoconf \
+		automake:${PORTSDIR}/devel/automake
 LIB_DEPENDS=	iconv.3:${PORTSDIR}/converters/libiconv
 
-USE_KDELIBS_VER=2
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
+USE_KDELIBS_VER=3
+GNU_CONFIGURE=	yes
+CONFIGURE_TARGET=
+CONFIGURE_ARGS+=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 USE_PYTHON=	yes
 USE_BZIP2=	yes
 INSTALLS_SHLIB=	yes
-GNU_CONFIGURE=	yes
+.if defined(PARALLEL_PACKAGE_BUILD) || defined(WANT_KDE_FINAL)
+CONFIGURE_ARGS+=--enable-final
+.endif
+.if defined(PARALLEL_PACKAGE_BUILD) || defined(WANT_KDE_NDEBUG)
+CONFIGURE_ARGS+=--disable-debug
+.endif
 USE_GMAKE=	yes
 
-_NO_KDE_OBJPRELINK=	yes
-.include "${.CURDIR}/../../x11/kde2/Makefile.kde"
-
-post-patch:
-	@${PERL} -pi -e "s@Icon=killustrator@Icon=kontour@g" \
-		${WRKSRC}/templates/Illustration.desktop
-	@${PERL} -pi -e "s@KIllustrator@Kontour@g" \
-		${WRKSRC}/templates/Illustration.desktop
-
 pre-configure:
-	${MKDIR} ${WRKSRC}/auto-bin
-.for AC in autoconf autoheader
-	${LN} -sf ${LOCALBASE}/bin/${AC}213 ${WRKSRC}/auto-bin/${AC}
-.endfor
-.for AM in automake aclocal
-	${LN} -sf ${LOCALBASE}/bin/${AM}14 ${WRKSRC}/auto-bin/${AM}
-.endfor
-	cd ${WRKSRC} && env PATH=${WRKSRC}/auto-bin:$$PATH \
-		${GMAKE} -f Makefile.cvs
-	find ${WRKSRC} -name Makefile.in | xargs ${PERL} -pi -e \
-		"s@LIBPYTHON =@LIBPYTHON= ${PTHREAD_LIBS}@g"
-	${PERL} -pi -e "s@la_LIBADD =@la_LIBADD= ${PTHREAD_LIBS}@g" \
-		${WRKSRC}/kivio/plugins/*/Makefile.in
-	${PERL} -pi -e "s@Exec=kivio@Exec=env LD_PRELOAD=/usr/lib/libc_r.so kivio@g" \
-		${WRKSRC}/kivio/kiviopart/kivio.desktop
-
-post-install:
-	${MV} ${PREFIX}/bin/kivio ${PREFIX}/bin/kivio.real
-	${INSTALL_SCRIPT} ${FILESDIR}/kivio.sh ${PREFIX}/bin/kivio
+	cd ${WRKSRC} && ${GMAKE} -f Makefile.cvs
 
 .include <bsd.port.mk>

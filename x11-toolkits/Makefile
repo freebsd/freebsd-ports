@@ -108,6 +108,7 @@
     SUBDIR += py-xlib
     SUBDIR += qt2-static
     SUBDIR += qt23
+    SUBDIR += qt30
     SUBDIR += qwt
     SUBDIR += rep-gtk
     SUBDIR += ruby-fltk

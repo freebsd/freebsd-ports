@@ -6,8 +6,8 @@
 #
 
 PORTNAME=	kdebase
-PORTVERSION=	2.2.2
-PORTREVISION=	4
+PORTVERSION=	3.0
+PORTREVISION=	1
 CATEGORIES?=	x11 kde
 MASTER_SITES=	${MASTER_SITE_KDE}
 MASTER_SITE_SUBDIR=	stable/${PORTVERSION}/src
@@ -15,30 +15,27 @@ DIST_SUBDIR=	KDE
 
 MAINTAINER?=	kde@FreeBSD.org
 
-BUILD_DEPENDS=	autoconf213:${PORTSDIR}/devel/autoconf213 \
-		automake14:${PORTSDIR}/devel/automake14
 LIB_DEPENDS=	intl.2:${PORTSDIR}/devel/gettext
 
-USE_KDELIBS_VER=2
-SOMAJOR=	4
-SOMINOR=	0
+USE_KDELIBS_VER=3
 USE_XPM=	yes
 USE_BZIP2=	yes
 INSTALLS_SHLIB=	yes
 GNU_CONFIGURE=	yes
+CONFIGURE_TARGET=
+CONFIGURE_ARGS+=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV+=	RUN_KAPPFINDER=no
 CONFIGURE_ARGS+=--with-xdmdir=${X11BASE}/lib/X11/xdm \
-		--with-qt-dir=${X11BASE} \
 		--without-ldap --disable-closure
+.if defined(PARALLEL_PACKAGE_BUILD) || defined(WANT_KDE_FINAL)
+CONFIGURE_ARGS+=--enable-final
+.endif
+.if defined(PARALLEL_PACKAGE_BUILD) || defined(WANT_KDE_NDEBUG)
+CONFIGURE_ARGS+=--disable-debug
+.endif
 USE_GMAKE=	yes
 
 .include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 500029
-_NO_KDE_OBJPRELINK=yes
-.endif
-
-.include "${.CURDIR}/../../x11/kde2/Makefile.kde"
 
 .if exists(${X11BASE}/include/Xm/Xm.h)
 WITH_MOTIF=	yes
@@ -59,40 +56,15 @@ pre-everything::
 .endif
 
 post-extract:
-	@${ECHO_CMD} "#!/bin/sh" > ${WRKSRC}/mkpamserv
-	@${ECHO_CMD} "exit 0" >> ${WRKSRC}/mkpamserv
-
-post-patch:
-.if !defined(WITH_MOTIF)
-	@${PERL} -pi -e 's/nsplugin//' \
-		${WRKSRC}/konqueror/konqueror_config.desktop
-.endif
-
-pre-configure:
-	${MKDIR} ${WRKSRC}/auto-bin
-.for AC in autoconf autoheader
-	${LN} -sf ${LOCALBASE}/bin/${AC}213 ${WRKSRC}/auto-bin/${AC}
-.endfor
-.for AM in automake aclocal
-	${LN} -sf ${LOCALBASE}/bin/${AM}14 ${WRKSRC}/auto-bin/${AM}
-.endfor
-	cd ${WRKSRC} && env PATH=${WRKSRC}/auto-bin:$$PATH \
-		${GMAKE} -f Makefile.cvs
-	${PERL} -pi -e "s@version-info 3:0@version-info ${SOMAJOR}:${SOMINOR}@g" ${WRKSRC}/libkonq/Makefile.in
-	${PERL} -pi -e "s@version-info 1:0:0@version-info ${SOMAJOR}:${SOMINOR}@g" ${WRKSRC}/khelpcenter/Makefile.in
-	${PERL} -pi -e "s@version-info 1:1:0@version-info ${SOMAJOR}:${SOMINOR}@g" ${WRKSRC}/nsplugins/Makefile.in
-	${PERL} -pi -e "s@TIME_WITH_SYS_TIME@INVALID_FOO@g" ${WRKSRC}/kioslave/ldap/kldap.h
+	@${ECHO} "#!/bin/sh" > ${WRKSRC}/mkpamserv
+	@${ECHO} "exit 0" >> ${WRKSRC}/mkpamserv
 
 post-configure:
 	${PERL} -pi -e "s@444@644@g" ${WRKSRC}/kdesktop/init/Templates/Makefile
 
 post-install:
 	${CHMOD} u+s ${PREFIX}/bin/kcheckpass
-.for file in kdmrc
-.if !exists(${PREFIX}/share/config/kdm/${file})
-	@${CP} ${PREFIX}/share/config/kdm/${file}.dist \
-		${PREFIX}/share/config/kdm/${file}
-.endif
-.endfor
+	${CHGRP} kmem ${PREFIX}/bin/ksysguardd && \
+		${CHMOD} g+s ${PREFIX}/bin/ksysguardd
 
 .include <bsd.port.post.mk>

@@ -9,6 +9,7 @@
     SUBDIR += agsatellite
     SUBDIR += amp
     SUBDIR += ample
+    SUBDIR += arts
     SUBDIR += ascd
     SUBDIR += aumix
     SUBDIR += aureal-kmod
@@ -94,6 +95,7 @@
     SUBDIR += id3v2
     SUBDIR += juke
     SUBDIR += kdemultimedia2
+    SUBDIR += kdemultimedia3
     SUBDIR += khordpro
     SUBDIR += knapster
     SUBDIR += koog

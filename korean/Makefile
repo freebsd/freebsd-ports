@@ -45,6 +45,7 @@
     SUBDIR += johabfonts
     SUBDIR += kaistfonts
     SUBDIR += kde2-i18n
+    SUBDIR += kde3-i18n
     SUBDIR += linux-netscape47-communicator
     SUBDIR += linux-netscape47-navigator
     SUBDIR += linux_locale

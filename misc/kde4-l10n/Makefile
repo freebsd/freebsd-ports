@@ -6,40 +6,34 @@
 #
 
 PORTNAME=	kde-i18n
-PORTVERSION=	2.2.2
-PORTREVISION=	1
-CATEGORIES?=	misc kde
-MASTER_SITES=	${MASTER_SITE_KDE}
-MASTER_SITE_SUBDIR=	stable/${PORTVERSION}/src
-DIST_SUBDIR=	KDE
+PORTVERSION=	3.0
+CATEGORIES=	misc kde
+MASTER_SITES=	# none
+DISTFILES=	# none
+EXTRACT_ONLY=	# none
 
-MAINTAINER?=	kde@FreeBSD.org
+MAINTAINER=	kde@FreeBSD.org
 
-BUILD_DEPENDS=	autoconf213:${PORTSDIR}/devel/autoconf213 \
-		automake14:${PORTSDIR}/devel/automake14
-LIB_DEPENDS=	intl.2:${PORTSDIR}/devel/gettext
+RUN_DEPENDS+=\
+	${PREFIX}/share/locale/ja/entry.desktop:${PORTSDIR}/japanese/kde3-i18n \
+	${PREFIX}/share/locale/fr/entry.desktop:${PORTSDIR}/french/kde3-i18n \
+	${PREFIX}/share/locale/de/entry.desktop:${PORTSDIR}/german/kde3-i18n \
+	${PREFIX}/share/locale/ko/entry.desktop:${PORTSDIR}/korean/kde3-i18n \
+	${PREFIX}/share/locale/ru/entry.desktop:${PORTSDIR}/russian/kde3-i18n \
+	${PREFIX}/share/locale/uk/entry.desktop:${PORTSDIR}/ukrainian/kde3-i18n
 
-USE_KDELIBS_VER=2
-USE_BZIP2=	yes
-USE_GMAKE=	yes
-
-GNU_CONFIGURE=	yes
-
-PLIST=		${WRKDIR}/PLIST
-SCRIPTS_ENV+=	PLIST=${PLIST}
-
-.include <bsd.port.pre.mk>
-
-pre-configure:
-	${MKDIR} ${WRKSRC}/auto-bin
-.for AC in autoconf autoheader
-	${LN} -sf ${LOCALBASE}/bin/${AC}213 ${WRKSRC}/auto-bin/${AC}
+.for LANG in af ar az bg bs ca cs da el en_GB eo es et fi he hr hu id is it \
+	lt lv mt nb nl nn pl pt pt_BR ro sk sl sr sv ta th tr ven vi xh zu
+RUN_DEPENDS+=\
+${PREFIX}/share/locale/${LANG}/entry.desktop:${PORTSDIR}/misc/kde3-i18n-${LANG}
 .endfor
-.for AM in automake aclocal
-	${LN} -sf ${LOCALBASE}/bin/${AM}14 ${WRKSRC}/auto-bin/${AM}
+.for ZH in zh_CN zh_TW
+RUN_DEPENDS+=\
+${PREFIX}/share/locale/${ZH}/entry.desktop:${PORTSDIR}/chinese/kde3-i18n-${ZH}
 .endfor
-	cd ${WRKSRC} && env PATH=${WRKSRC}/auto-bin:$$PATH \
-		${GMAKE} -f Makefile.cvs
-	@${SETENV} ${SCRIPTS_ENV} ${SH} ${SCRIPTDIR}/Configure
 
-.include <bsd.port.post.mk>
+NO_BUILD=	yes
+
+do-install:	# none
+
+.include <bsd.port.mk>

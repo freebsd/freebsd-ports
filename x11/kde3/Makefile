@@ -6,7 +6,8 @@
 #
 
 PORTNAME=	kde
-PORTVERSION=	2.2.2
+PORTVERSION=	3.0
+PORTREVISION=	1
 CATEGORIES=	x11 kde
 MASTER_SITES=	# empty
 DISTFILES=	# none
@@ -14,14 +15,14 @@ EXTRACT_ONLY=	# empty
 
 MAINTAINER=	kde@FreeBSD.org
 
-RUN_DEPENDS=	kjumpingcube:${PORTSDIR}/games/kdegames2 \
-		kdessh:${PORTSDIR}/misc/kdeutils2 \
-		kword:${PORTSDIR}/editors/koffice \
-		kppp:${PORTSDIR}/net/kdenetwork2 \
-		kview:${PORTSDIR}/graphics/kdegraphics2 \
-		kmidi:${PORTSDIR}/audio/kdemultimedia2
+RUN_DEPENDS=	kjumpingcube:${PORTSDIR}/games/kdegames3 \
+		kdessh:${PORTSDIR}/misc/kdeutils3 \
+		kword:${PORTSDIR}/editors/koffice-kde3 \
+		kppp:${PORTSDIR}/net/kdenetwork3 \
+		kview:${PORTSDIR}/graphics/kdegraphics3 \
+		kmidi:${PORTSDIR}/audio/kdemultimedia3
 
-USE_KDEBASE_VER=2
+USE_KDEBASE_VER=3
 NO_BUILD=	yes
 
 do-install:	# empty

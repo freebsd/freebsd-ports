@@ -153,6 +153,7 @@
     SUBDIR += jetpack
     SUBDIR += jzip
     SUBDIR += kdegames2
+    SUBDIR += kdegames3
     SUBDIR += klondike
     SUBDIR += kpuzzle
     SUBDIR += kxl

@@ -69,6 +69,7 @@
     SUBDIR += joe-devel
     SUBDIR += jove
     SUBDIR += koffice
+    SUBDIR += koffice-kde3
     SUBDIR += kxmleditor
     SUBDIR += le
     SUBDIR += led
