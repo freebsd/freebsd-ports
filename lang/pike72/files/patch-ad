@@ -1,0 +1,16 @@
+--- modules/_Image_TTF/image_ttf.c.orig	Tue Jun 12 15:21:10 2001
++++ modules/_Image_TTF/image_ttf.c	Fri Mar 19 01:05:52 2004
+@@ -9,10 +9,10 @@
+ RCSID("$Id: image_ttf.c,v 1.40 2001/06/12 13:21:10 grubba Exp $");
+ 
+ #ifdef HAVE_LIBTTF
+-#if defined(HAVE_FREETYPE_FREETYPE_H) && defined(HAVE_FREETYPE_FTXKERN_H)
++#if defined(HAVE_FREETYPE1_FREETYPE_FREETYPE_H) && defined(HAVE_FREETYPE1_FREETYPE_FTXKERN_H)
+ 
+-#include <freetype/freetype.h>
+-#include <freetype/ftxkern.h>
++#include <freetype1/freetype/freetype.h>
++#include <freetype1/freetype/ftxkern.h>
+ 
+ #else /* !HAVE_FREETYPE_FREETYPE_H || !HAVE_FREETYPE_FTXKERN_H */
+ 

@@ -6,16 +6,11 @@
 #
 
 PORTNAME=	pike72
-PORTVERSION=	7.2.492
-PORTREVISION=	2
+PORTVERSION=	7.2.570
 CATEGORIES=	lang
 MASTER_SITES=	ftp://ftp.oav.net/pkg_freebsd/distfiles/ \
-		http://ftp.oav.net/pkg_freebsd/distfiles/ \
 		ftp://ftp.oav.net/pike/7.2/unofficial/ \
-		http://ftp.oav.net/pike/7.2/unofficial/ \
-		http://grendel.firewall.com/caudium-pkg/ \
-		ftp://ftp.caudium.net/caudium/snapshots/pike/7.2/unofficial/ \
-		http://ftp.caudium.net/caudium/snapshots/pike/7.2/unofficial/
+		http://grendel.firewall.com/caudium-pkg/
 DISTNAME=	pike-${PORTVERSION}
 
 MAINTAINER=	kiwi@oav.net
@@ -28,9 +23,8 @@ LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/src/
 
-WANT_MESA=	yes
-WANT_GTK=	yes
 USE_BISON=	yes
+USE_GETTEXT=	yes
 
 GNU_CONFIGURE=	yes
 
@@ -49,6 +43,7 @@ CONFIGURE_ARGS+= --without-debug \
 		 --without-relocatable-dumped-modules \
 		 --without-libpanda \
 		 --without-perl \
+		 --without-GTK \
 		 --with-gmp \
 		 --with-zlib \
 		 --with-threads \
@@ -93,10 +88,6 @@ WITH_IODBC=	yes
 
 .if exists(${LOCALBASE}/lib/libsane.so.1)
 WITH_SANE=	yes
-.endif
-
-.if exists(${LOCALBASE}/lib/libgtkgl.so.5)
-WITH_MESA=	yes
 .endif
 
 .if exists(${LOCALBASE}/lib/libpdf.so.5)
@@ -179,14 +170,6 @@ CONFIGURE_ARGS+= --with-libpdf
 CONFIGURE_ARGS+= --without-libpdf
 .endif
 
-.if defined(HAVE_MESA) || defined(WITH_MESA)
-USE_MESA=	yes
-LIB_DEPENDS+=	gtkgl.5:${PORTSDIR}/x11-toolkits/gtkglarea
-CONFIGURE_ARGS+= --with-GL --with-GLUT
-.else
-CONFIGURE_ARGS+= --without-GL --without-GLUT
-.endif
-
 USE_GMAKE=	yes
 MAN1=		hilfe.1 pike.1
 MAN1PREFIX=	${PREFIX}/pike/${PORTVERSION}
@@ -215,9 +198,6 @@ pre-everything::
 .endif
 .if !defined(WITH_SANE)
 	@${ECHO_MSG} "You can enable Sane support by defining WITH_SANE."
-.endif
-.if !defined(WITH_SANE) || !defined(HAVE_MESA)
-	@${ECHO_MSG} "You can enable MesaGL support by defining WITH_MESA."
 .endif
 .if !defined(WITH_PDF)
 	@${ECHO_MSG} "You can enable PDF support by defining WITH_PDF."
