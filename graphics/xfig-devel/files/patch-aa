@@ -38,7 +38,7 @@
  #endif
  
  XCOMM Uncomment the following definiton if you want to use the small icons
-@@ -105,10 +105,10 @@
+@@ -105,17 +105,17 @@
  XCOMM Then be sure to change the XAW3DINC to point to the directory where your
  XCOMM 3D Athena widget headers are located
  
@@ -51,6 +51,14 @@
  DUSEXAW3D = -DXAW3D
  XAWLIB = -lXaw3d
  #endif
+ 
+ XCOMM Uncomment the following if you have a wheel mouse.  See docs for description.
+ 
+-XCOMM #define WHEELMOUSE
++#define WHEELMOUSE
+ 
+ #ifdef WHEELMOUSE
+ DUSEWHEELMOUSE = -DWHEELMOUSE
 @@ -154,7 +154,7 @@
  XCOMM inline functions. With the "INLINE" keyword, you should notice that
  XCOMM the display will be a bit faster in complex figures
