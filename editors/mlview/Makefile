@@ -24,7 +24,13 @@ USE_GMAKE=	yes
 USE_LIBTOOL_VER=15
 INSTALLS_SHLIB=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" LIBS="-L${LOCALBASE}/lib"
+USE_REINPLACE=yes
 
 GCONF_SCHEMAS=	mlview.schemas
+
+post-patch:
+	@${REINPLACE_CMD} -e \
+		"s,mlview-app-icon.xpm,${PREFIX}/share/gnome/${PORTNAME}/mlview-app-icon.xpm," \
+		${WRKSRC}/mlview.desktop.in
 
 .include <bsd.port.mk>
