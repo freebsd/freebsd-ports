@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	libpqxx
-PORTVERSION=	2.1.1
-PORTREVISION=	1
+PORTVERSION=	2.2.3
 CATEGORIES=	databases
 MASTER_SITES=	ftp://gborg.postgresql.org/pub/libpqxx/stable/
 PKGNAMEPREFIX=	postgresql-
@@ -16,14 +15,23 @@ DIST_SUBDIR=	postgresql
 MAINTAINER=	girgen@pingpong.net
 COMMENT=	A new C++ interface for  PostgreSQL
 
-POSTGRESQL_PORT?=	databases/postgresql7
 LIB_DEPENDS=	pq.3:${PORTSDIR}/${POSTGRESQL_PORT}
 
+USE_LIBTOOL_VER=15
 USE_GMAKE=	YES
 GNU_CONFIGURE=	YES
 INSTALLS_SHLIB=	YES
 
 CONFIGURE_ARGS=	--with-postgres=${LOCALBASE} \
+		--enable-shared \
 		--with-postgres-include=${LOCALBASE}/include/postgresql
 
-.include <bsd.port.mk>
+POSTGRESQL_PORT?=	databases/postgresql7
+
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 500000
+BROKEN=		"<ios> header missing on this platform"
+.endif
+
+.include <bsd.port.post.mk>
