@@ -6,23 +6,22 @@
 #
 
 PORTNAME=	geda
-PORTVERSION=	1999.05.16
+PORTVERSION=	20010304
 CATEGORIES=	cad
-MASTER_SITES=	ftp://ftp.cc.gatech.edu/ac121/linux/X11/gtkbuffet/apps/geda/ \
-		ftp://ftp.geda.seul.org/pub/geda/dist/ \
-		ftp://ftp.infodrom.north.de/pub/unix/gtk-etc/apps/geda/
-DISTNAME=	gEDA-19990516
+MASTER_SITES=	# empty
+DISTFILES=	# none
+EXTRACT_ONLY=	# empty
 
-MAINTAINER=	vanilla@FreeBSD.org
+MAINTAINER=	bruno@tinkerbox.org
 
-LIB_DEPENDS=	guile.9:${PORTSDIR}/lang/guile
+BUILD_DEPENDS=	gesym-config:${PORTSDIR}/cad/geda-symbols \
+		gschem:${PORTSDIR}/cad/gschem \
+		gnetlist:${PORTSDIR}/cad/gnetlist
+LIB_DEPENDS=	guile.9:${PORTSDIR}/lang/guile \
+		geda.12:${PORTSDIR}/cad/libgeda
 
-USE_X_PREFIX=	yes
-USE_GTK=	yes
-USE_LIBTOOL=	yes
-INSTALLS_SHLIB=	yes
-CONFIGURE_ARGS=	--with-gtk-config=${GTK_CONFIG}
+NO_BUILD=	yes
 
-MAN1=		gschem.1 gnetlist.1
+do-install:	# empty
 
 .include <bsd.port.mk>
