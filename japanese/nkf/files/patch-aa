@@ -1,33 +1,41 @@
---- Makefile.orig	Sun Oct 28 07:30:22 2001
-+++ Makefile	Sun Oct 28 07:34:31 2001
-@@ -1,13 +1,21 @@
+--- Makefile.orig	Sat Jan 25 09:09:12 2003
++++ Makefile	Mon Feb  3 17:03:15 2003
+@@ -1,18 +1,26 @@
 -CC = cc
 -CFLAGS = -O
 +PREFIX?= /usr/local
 +CC?= cc
 +CFLAGS?= -O
- SHAR = shar -T
- # SHAR = shar 
--PERL = perl5
+ # CFLAGS = -O3
+ SHAR = shar 
+ # SHAR = shar -T
+-PERL = perl
 -RM = rm -rf
 +PERL?= perl5
 +RM?= rm -rf
 +INSTALL?= /usr/bin/install
- VERSION = 19
+ VERSION = 202
  
- nkf : nkf.c
- 	$(CC) $(CFLAGS) -o nkf nkf.c
+ nkf : nkf.c config.h utf8tbl.o
+ 	$(CC) $(CFLAGS) -o nkf nkf.c utf8tbl.o
 +	./nkf -e nkf.1j > nkf.1j.euc
-+
+ 
+ utf8tbl.o : utf8tbl.c config.h
+ 	$(CC) $(CFLAGS) -c utf8tbl.c
+ 
 +install:
 +	${INSTALL} -c -o root -g wheel -m 555 nkf ${PREFIX}/bin
 +	${INSTALL} -c -o root -g wheel -m 444 nkf.1 ${PREFIX}/man/man1/nkf.1
 +	${INSTALL} -c -o root -g wheel -m 444 nkf.1j.euc ${PREFIX}/man/ja/man1/nkf.1
- 
- clean:
- 	-$(RM) nkf.o nkf nkf.in nkf.out nkf$(VERSION) *~ *.bad
-@@ -30,3 +38,4 @@
- 	done 
- 	( cd nkf$(VERSION) ; $(SHAR)  `cat ../MANIFEST` ) > nkf$(VERSION).shar
- 	-$(RM) nkf$(VERSION)
 +
+ clean:
+ 	-$(RM) nkf.o nkf nkf.in nkf.out nkf$(VERSION) *~ *.bad utf8tbl.o
+ 	cd NKF.mod; make clean
+@@ -30,6 +38,7 @@
+ 	-mkdir nkf$(VERSION)/NKF.mod
+ 	for file in  `cat MANIFEST`;  \
+ 	do  \
++
+ 	    nkf -j -m0 $$file > nkf$(VERSION)/$$file ; \
+ 	done 
+ 	echo "#!/bin/sh" >nkf$(VERSION).shar
