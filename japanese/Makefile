@@ -208,6 +208,7 @@
     SUBDIR += migemo-emacs21
     SUBDIR += migemo-xemacs-devel-mule
     SUBDIR += migemo-xemacs21-mule
+    SUBDIR += mikachan-ttfonts
     SUBDIR += mimekit
     SUBDIR += ming
     SUBDIR += mnews
