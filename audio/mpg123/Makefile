@@ -1,12 +1,12 @@
 # New ports collection makefile for:	mpg123
-# Version required:		0.59k
+# Version required:		0.59n
 # Date created:			25 June 1997
 # Whom:				Carey Jones <mcj@acquiesce.org>
 #
-# $Id: Makefile,v 1.1.1.1 1997/07/10 09:41:23 max Exp $
+# $Id: Makefile,v 1.2 1997/07/14 10:26:51 max Exp $
 #
 
-DISTNAME=	mpg123-0.59k
+DISTNAME=	mpg123-0.59n
 CATEGORIES=	audio
 MASTER_SITES=	ftp://ftp.tu-clausthal.de/pub/unix/audio/mpg123/
 
