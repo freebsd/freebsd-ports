@@ -1,0 +1,30 @@
+--- Makefile.orig	Wed Apr 28 08:51:42 2004
++++ Makefile	Wed Apr 28 09:15:38 2004
+@@ -11,15 +11,15 @@
+ USER_INSTALL_PATH ?= $(HOME)/.gkrellm2/plugins
+ 
+ ## executables
+-CC = gcc
++CC ?= gcc
+ RM = rm -f
+ INSTALL ?= install -m 755
+ 
+ ## Compiler and Linker flags
+ ## Theoretically, you should not need to change these
+ ## but if the make does not work look into it
+-CFLAGS = -fPIC -Wall -I. $(shell pkg-config gtk+-2.0 --cflags)
+-LIBFLAGS = -shared $(shell pkg-config gtk+-2.0 --libs)
++CFLAGS += -fPIC -Wall -I. `pkg-config gtk+-2.0 --cflags`
++LIBFLAGS = -shared `pkg-config gtk+-2.0 --libs`
+ 
+ ## Set all the locale converstion stuff
+ ## if necessary
+@@ -29,7 +29,7 @@
+     CFLAGS += -DENABLE_NLS -DLOCALEDIR=\"$(LOCALEDIR)\"
+     export enable_nls
+ endif
+-CFLAGS += -DPACKAGE="\"$(PACKAGE)\""
++#CFLAGS += -DPACKAGE="\"$(PACKAGE)\""
+ export PACKAGE LOCALEDIR
+ 
+ ## File name and target definitions

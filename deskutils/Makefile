@@ -35,6 +35,7 @@
     SUBDIR += gdesklets-starterbar
     SUBDIR += gemcal
     SUBDIR += genius
+    SUBDIR += gkrellm-gtodo
     SUBDIR += glabels
     SUBDIR += gmcal
     SUBDIR += gnomeblog
