@@ -46,7 +46,7 @@ post-install:
 	@${RM} ${WRKSRC}/lib/*.orig \
 	  ${WRKSRC}/lib/fonts/*.orig ${WRKSRC}/lib/fontsk/*.orig
 	@( cd ${WRKSRC} ; ${MAKE} PREFIX=${PREFIX} install-lib )
-	@${MKDIR} -m 777 ${PREFIX}/share/fonts/vf-rot
+	@${MKDIR} -m 1777 ${PREFIX}/share/fonts/vf-rot
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${PREFIX}/share/doc/dvi2dvi
 	@${INSTALL_DATA} ${WRKSRC}/doc/*.doc ${PREFIX}/share/doc/dvi2dvi

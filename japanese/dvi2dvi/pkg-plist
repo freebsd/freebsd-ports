@@ -1,3 +1,4 @@
+@comment $FreeBSD$
 bin/dvi2dvi
 lib/dvi2dvi/a2n
 lib/dvi2dvi/config
@@ -17,12 +18,14 @@ lib/dvi2dvi/n2w
 lib/dvi2dvi/p2n
 lib/dvi2dvi/p2pn
 lib/dvi2dvi/w2n
-share/doc/dvi2dvi/bugs.doc
-share/doc/dvi2dvi/changes.doc
-share/doc/dvi2dvi/dvi2dvi.doc
-share/doc/dvi2dvi/install.doc
-share/doc/dvi2dvi/lib.doc
+@exec mkdir -m 1777 %D/share/fonts/vf-rot
+@unexec rmdir %D/share/fonts/vf-rot 2>/dev/null || true
+%%PORTDOCS%%%%DOCSDIR%%/bugs.doc
+%%PORTDOCS%%%%DOCSDIR%%/changes.doc
+%%PORTDOCS%%%%DOCSDIR%%/dvi2dvi.doc
+%%PORTDOCS%%%%DOCSDIR%%/install.doc
+%%PORTDOCS%%%%DOCSDIR%%/lib.doc
 @dirrm lib/dvi2dvi/fonts
 @dirrm lib/dvi2dvi/fontsk
 @dirrm lib/dvi2dvi
-@dirrm share/doc/dvi2dvi
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
