@@ -1,0 +1,7 @@
+List::Compare is a Perl module which allows you to compare lists.
+
+More than two lists can be compared, in either full or accelerated way,
+via both array/list and hash references, and, finally, via both
+object-oriented and functional call style.
+
+WWW: http://search.cpan.org/dist/List-Compare/

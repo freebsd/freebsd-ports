@@ -1,0 +1,10 @@
+%%SITE_PERL%%/List/Compare.pm
+%%SITE_PERL%%/List/Compare/Base/_Auxiliary.pm
+%%SITE_PERL%%/List/Compare/Base/_Engine.pm
+%%SITE_PERL%%/List/Compare/Functional.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/List/Compare/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/List/Compare
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/List 2>/dev/null || true
+@dirrm %%SITE_PERL%%/List/Compare/Base
+@dirrm %%SITE_PERL%%/List/Compare
+@unexec rmdir %D/%%SITE_PERL%%/List 2>/dev/null || true
