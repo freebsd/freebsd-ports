@@ -59,6 +59,10 @@ CONFIGURE_ARGS+=--with-dummy-values
 
 .include <bsd.port.pre.mk>
 
+.if ${OSVERSION} < 500000
+BROKEN=	plist is incorrect for 4.x.  Please wait to be fixed.
+.endif
+
 .if defined(WITHOUT_PERL)
 PLIST_SUB+=	WITH_PERL="@comment "
 .else
