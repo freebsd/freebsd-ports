@@ -132,8 +132,8 @@ diablo-jre%%JRE_VERSION%%/man/man1/tnameserv.1
 @unexec rmdir %D/diablo-jre%%JRE_VERSION%%/lib/ext 2>/dev/null || true
 @exec   mkdir -p %D/share/doc/java
 @unexec rmdir %D/share/doc/java 2>/dev/null || true
-@exec   %D/bin/registervm "%D/diablo-jre%%JRE_VERSION%%/bin/java # DiabloLatte%%JRE_VERSION%%"
-@unexec %D/bin/unregistervm "DiabloLatte%%JRE_VERSION%%"
+@exec   %%LOCALBASE%%/bin/registervm "%D/diablo-jre%%JRE_VERSION%%/bin/java # DiabloLatte%%JRE_VERSION%%"
+@unexec %%LOCALBASE%%/bin/unregistervm "%D/diablo-jre%%JRE_VERSION%%/bin/java"
 %%PLUGIN:%%@dirrm diablo-jre%%JRE_VERSION%%/plugin/i386/ns600
 %%PLUGIN:%%@dirrm diablo-jre%%JRE_VERSION%%/plugin/i386/ns4
 %%PLUGIN:%%@dirrm diablo-jre%%JRE_VERSION%%/plugin/i386
