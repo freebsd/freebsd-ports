@@ -1,0 +1,5 @@
+KOnCD is a program that allows you to master CDs with mkisofs and
+cdrecord programs.  It can create multisession CD, bootable CD,
+supports blanking on CD-RW.  It also copy CDs on-the-fly.
+
+WWW: http://www.koncd.de/

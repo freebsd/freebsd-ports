@@ -1,0 +1,11 @@
+--- koncd/Makefile.in.orig	Mon Apr  2 22:53:11 2001
++++ koncd/Makefile.in	Mon Apr  2 22:53:40 2001
+@@ -288,8 +288,6 @@
+ $(srcdir)/Makefile.in: Makefile.am $(top_srcdir)/configure.in $(ACLOCAL_M4) 
+ #>- 	cd $(top_srcdir) && $(AUTOMAKE) --gnu --include-deps koncd/Makefile
+ #>+ 2
+-	cd $(top_srcdir) && $(AUTOMAKE) --gnu --include-deps koncd/Makefile
+-	cd $(top_srcdir) && perl admin/am_edit koncd/Makefile.in
+ 
+ Makefile: $(srcdir)/Makefile.in  $(top_builddir)/config.status
+ 	cd $(top_builddir) \
