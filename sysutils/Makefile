@@ -131,6 +131,7 @@
     SUBDIR += gpart
     SUBDIR += gpkgdep
     SUBDIR += grub
+    SUBDIR += gstopd
     SUBDIR += gtk-imonc
     SUBDIR += gtk-send-pr
     SUBDIR += gtoaster

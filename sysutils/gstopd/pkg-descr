@@ -1,0 +1,7 @@
+gstopd(8) stops disks after an amount of inactivity.
+The inactivity is measured using GEOM(4) statistics.
+
+Limitations & features:
+  - stops only da(4) disks currently.
+  - uses camcontrol(8)
+  - logs disk-stops through logger(1)
