@@ -3,7 +3,7 @@
 # Date created:		7 July 1997
 # Whom:			Satoshi Taoka <taoka@FreeBSD.org>
 #
-# $Id: Makefile,v 1.39 1999/03/29 07:50:59 asami Exp $
+# $Id: Makefile,v 1.40 1999/05/01 04:00:14 taoka Exp $
 #
 
 DISTNAME=	mule-2.3
@@ -126,9 +126,6 @@ post-install:
 .for file in b2m coco ctags emacsclient etags m2ps
 	strip ${PREFIX}/bin/${file}
 .endfor
-	if [ ! -f ${PREFIX}/info/dir ]; then \
-	  ${SED} -ne '1,/Menu:/p' /usr/share/info/dir > ${PREFIX}/info/dir; \
-	fi
 	if [ ! -f ${PREFIX}/share/mule/19.34/info/dir ]; then \
 	  ${MKDIR} ${PREFIX}/share/mule/19.34/info; \
 	  ${SED} -ne '1,/Menu:/p' /usr/share/info/dir > ${PREFIX}/share/mule/19.34/info/dir; \

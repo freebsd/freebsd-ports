@@ -14,7 +14,6 @@ info/gnats.info-2
 info/gnats.info-3
 info/gnats.info-4
 info/send-pr.info
-@exec [ -f %D/info/dir ] || sed -ne '1,/Menu://' /usr/share/info/dir > %D/info/dir
 @exec install-info %D/info/gnats.info %D/info/dir
 @exec install-info %D/info/send-pr.info %D/info/dir
 libexec/gnats/at-pr

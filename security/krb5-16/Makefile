@@ -3,7 +3,7 @@
 # Date created:				6/5/1998
 # Whom:					nectar@FreeBSD.ORG
 #
-# $Id: Makefile,v 1.8 1998/11/14 09:43:28 asami Exp $
+# $Id: Makefile,v 1.9 1999/05/27 02:08:13 nectar Exp $
 #
 
 DISTNAME=		krb5-1.0.6
@@ -183,10 +183,6 @@ post-install:
 	${CHOWN} ${SUPERUSER} ${PREFIX}/${setuid}
 .endfor
 # handle info files
-	if [ ! -f ${PREFIX}/info/dir ]; then \
-		${SED} -ne '1,/Menu:/p' /usr/share/info/dir > \
-			${PREFIX}/info/dir; \
-	fi
 .for info in ${INFO_FILES}
 	${INSTALL_MAN} ${WRKSRC}/../doc/${info} ${PREFIX}/info/${info}
 .endfor

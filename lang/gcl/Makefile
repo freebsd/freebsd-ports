@@ -3,7 +3,7 @@
 # Date created:         Wed Feb  8 01:49:11  1995
 # Whom:                 hsu
 #
-# $Id: Makefile,v 1.11 1998/10/14 01:17:50 jseger Exp $
+# $Id: Makefile,v 1.12 1999/01/27 07:41:20 fenner Exp $
 #
 
 DISTNAME=       gcl-2.2.2
@@ -23,9 +23,6 @@ pre-build:
 
 post-install:
 	${INSTALL_DATA} ${WRKSRC}/info/gcl-si.info ${PREFIX}/info
-	@if [ ! -f ${PREFIX}/info/dir ]; then \
-	  ${SED} -ne '1,/Menu:/p' /usr/share/info/dir > ${PREFIX}/info/dir; \
-	 fi
 	@install-info ${PREFIX}/info/gcl-si.info ${PREFIX}/info/dir
 
 .include <bsd.port.mk>

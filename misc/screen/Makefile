@@ -3,7 +3,7 @@
 # Date created:         25 Nov 1994
 # Whom:                 ache
 #
-# $Id: Makefile,v 1.19 1998/12/30 00:16:37 ache Exp $
+# $Id: Makefile,v 1.20 1999/01/27 07:41:23 fenner Exp $
 #
 
 DISTNAME=       screen-3.7.6
@@ -18,9 +18,6 @@ GNU_CONFIGURE=	yes
 MAN1=		screen.1
 
 post-install:
-	@if [ ! -f ${PREFIX}/info/dir ]; then \
-	  ${SED} -ne '1,/Menu:/p' /usr/share/info/dir > ${PREFIX}/info/dir; \
-	 fi
 	@install-info ${PREFIX}/info/screen.info ${PREFIX}/info/dir
 
 .include <bsd.port.mk>

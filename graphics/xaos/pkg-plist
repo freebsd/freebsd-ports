@@ -115,7 +115,6 @@ share/XaoS/doc/PROBLEMS
 share/XaoS/doc/tutorial.txt
 @unexec install-info --delete %D/info/xaos.info %D/info/dir
 info/xaos.info
-@exec [ -f %D/info/dir ] || sed -ne '1,/Menu/p' /usr/share/info/dir > %D/info/dir
 @exec install-info %D/info/xaos.info %D/info/dir
 @dirrm share/XaoS/catalogs
 @dirrm share/XaoS/examples

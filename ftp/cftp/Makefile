@@ -3,7 +3,7 @@
 # Date created:				14 October 1997
 # Whom:					Andrey Zakhvatov
 #
-# $Id: Makefile,v 1.1.1.1 1998/05/14 07:27:51 tg Exp $
+# $Id: Makefile,v 1.2 1999/04/05 23:44:25 jseger Exp $
 #
 
 DISTNAME=	cftp-0.9.3
@@ -13,11 +13,6 @@ MASTER_SITES=	ftp://ftp.giga.or.at/pub/nih/cftp/
 MAINTAINER=	andy@icc.surw.chel.su
 
 GNU_CONFIGURE=	yes
-
-pre-install:
-	@if [ -f /usr/share/info/dir ] && [ ! -f ${PREFIX}/info/dir ]; then \
-	    ${SED} -ne '1,/Menu:/p' /usr/share/info/dir > ${PREFIX}/info/dir; \
-	fi
 
 post-install:
 .if !defined(NOPORTDOCS)

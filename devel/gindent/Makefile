@@ -3,7 +3,7 @@
 # Date created:        28 August 1997
 # Whom:                Kapil Chowksey <kchowksey@hss.hns.com>
 #
-# $Id: Makefile,v 1.1.1.1 1997/08/29 09:20:00 obrien Exp $
+# $Id: Makefile,v 1.2 1999/01/27 07:41:06 fenner Exp $
 #
         
 DISTNAME=      indent-1.9.1
@@ -20,13 +20,6 @@ post-install:
 	@strip ${PREFIX}/bin/indent
 	@test -d ${PREFIX}/info || ${MKDIR} ${PREFIX}/info  \
 		&& chmod a+rx ${PREFIX}/info
-	@if [ ! -f ${PREFIX}/info/dir ]; then \
-	  if [ -f /usr/share/info/dir ]; then \
-	    ${SED} -ne '1,/Menu:/p' /usr/share/info/dir > ${PREFIX}/info/dir; \
-	  else \
-	    touch ${PREFIX}/info/dir ; \
-	  fi ; \
-	fi
 	@install-info ${PREFIX}/info/indent.info ${PREFIX}/info/dir
 
 .include <bsd.port.mk>

@@ -3,7 +3,7 @@
 # Date created:			31 October 1998
 # Whom:				shige
 #
-# $Id: Makefile,v 1.29 1998/12/24 08:01:22 steve Exp $
+# $Id: Makefile,v 1.30 1999/03/01 09:38:19 shige Exp $
 #
 
 DISTNAME=	zsh-3.1.5
@@ -29,9 +29,6 @@ MAN1=		zsh.1 zshbuiltins.1 zshcompctl.1 zshexpn.1 zshmisc.1 \
 #LDFLAGS+=-static
 
 post-install:
-	@if [ ! -f ${PREFIX}/info/dir ]; then \
-	  ${SED} -ne '1,/Menu:/p' /usr/share/info/dir > ${PREFIX}/info/dir; \
-	 fi
 	@install-info ${PREFIX}/info/zsh.info ${PREFIX}/info/dir
 	@${ECHO} "Updating /etc/shells"
 	@${CP} /etc/shells /etc/shells.bak

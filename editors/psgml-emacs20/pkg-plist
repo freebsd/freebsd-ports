@@ -20,6 +20,5 @@
 @unexec install-info --delete %D/info/psgml-api.info %D/info/dir
 info/psgml.info
 info/psgml-api.info
-@exec [ -f %D/info/dir ] || sed -ne '1,/Menu:/p' /usr/share/info/dir > %D/info/dir
 @exec install-info %D/info/psgml.info %D/info/dir
 @exec install-info %D/info/psgml-api.info %D/info/dir

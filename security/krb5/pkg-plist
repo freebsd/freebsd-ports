@@ -112,7 +112,6 @@ info/krb5-install.info
 info/krb5-install.info-1
 info/krb5-install.info-2
 info/krb5-user.info
-@exec [ -f %D/info/dir ] || sed -ne '1,/Menu:/p' /usr/share/info/dir > %D/info/dir
 @exec install-info %D/info/krb425.info %D/info/dir
 @exec install-info %D/info/krb5-admin.info %D/info/dir
 @exec install-info %D/info/krb5-install.info %D/info/dir

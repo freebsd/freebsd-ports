@@ -8,7 +8,6 @@ bin/ifnames
 @unexec install-info --delete %D/info/standards.info %D/info/dir
 info/autoconf.info
 info/standards.info
-@exec [ -f %D/info/dir ] || sed -ne '1,/Menu:/p' /usr/share/info/dir > %D/info/dir
 @exec install-info %D/info/autoconf.info %D/info/dir
 @exec install-info %D/info/standards.info %D/info/dir
 share/autoconf/acconfig.h

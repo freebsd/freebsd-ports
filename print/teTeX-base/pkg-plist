@@ -111,7 +111,6 @@ info/dvips.info-1
 info/fontname.info-4
 info/kpathsea.info-1
 info/texinfo-12
-@exec [ -f %D/info/dir ] || sed -ne '1,/Menu:/p' /usr/share/info/dir > %D/info/dir
 @exec install-info %D/info/latex %D/info/dir
 @exec install-info %D/info/kpathsea.info %D/info/dir
 @exec install-info %D/info/dvips.info %D/info/dir

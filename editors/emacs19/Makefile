@@ -3,7 +3,7 @@
 # Date created:		29 October 1994
 # Whom:			jkh
 #
-# $Id: Makefile,v 1.37 1999/03/08 07:28:22 asami Exp $
+# $Id: Makefile,v 1.38 1999/03/11 21:47:10 scrappy Exp $
 #
 
 DISTNAME=	emacs-19.34b
@@ -32,9 +32,6 @@ post-install:
 .for file in emacs-19.34 emacsclient etags ctags b2m
 	strip ${PREFIX}/bin/${file}
 .endfor
-	if [ ! -f ${PREFIX}/info/dir ]; then \
-	  ${SED} -ne '1,/Menu:/p' /usr/share/info/dir > ${PREFIX}/info/dir; \
-	fi
 .for info in emacs vip viper forms gnus mh-e cl sc dired-x ediff ccmode message
 	install-info ${PREFIX}/info/${info} ${PREFIX}/info/dir
 .endfor

@@ -6,7 +6,6 @@ info/jed.1in
 info/jed.2in
 info/jed.3in
 info/jed.info
-@exec [ -f %D/info/dir ] || sed -ne '1,/Menu:/p' /usr/share/info/dir > %D/info/dir
 @exec install-info --section="Miscellaneous" --entry="* JED: (jed).			JED editor documentation." %D/info/jed.info %D/info/dir
 lib/jed/bin/getmail
 lib/jed/lib/abbrev.sl

@@ -12,5 +12,4 @@ lib/libcim.so.3
 @unexec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -R
 @unexec install-info --delete %D/info/cim.info %D/info/dir
 info/cim.info
-@exec [ -f %D/info/dir ] || sed -ne '1,/Menu:/p' /usr/share/info/dir > %D/info/dir
 @exec install-info %D/info/cim.info %D/info/dir

@@ -3,7 +3,7 @@
 # Date created:		25 October 1994
 # Whom:			mr
 #
-# $Id: Makefile,v 1.9 1999/01/27 07:41:08 fenner Exp $
+# $Id: Makefile,v 1.10 1999/03/11 21:47:09 scrappy Exp $
 #
 
 DISTNAME=       m4-1.4
@@ -21,9 +21,6 @@ CONFIGURE_ARGS= --program-prefix=g
 post-install:
 	@${MKDIR} ${PREFIX}/share/examples/gm4
 	${INSTALL_DATA} ${WRKSRC}/examples/*.m4 ${PREFIX}/share/examples/gm4
-	@if [ ! -f ${PREFIX}/info/dir ]; then \
-	  ${SED} -ne '1,/Menu:/p' /usr/share/info/dir > ${PREFIX}/info/dir; \
-	 fi
 	@install-info ${PREFIX}/info/m4.info ${PREFIX}/info/dir
 
 .include <bsd.port.mk>

@@ -3,7 +3,7 @@
 # Date created:        16 March 1998
 # Whom:                Yukihiro Nakai <Nakai@technologist.com>
 #
-# $Id: Makefile,v 1.9 1999/03/09 09:11:26 asami Exp $
+# $Id: Makefile,v 1.10 1999/06/05 18:59:40 mharo Exp $
 #
 
 DISTNAME=	gettext-0.10.35
@@ -21,9 +21,6 @@ pre-configure:
 	${RM} ${WRKSRC}/doc/gettext.info*
 
 post-install:
-	@if [ ! -f ${PREFIX}/info/dir ]; then \
-	  ${SED} -ne '1,/Menu:/p' /usr/share/info/dir > ${PREFIX}/info/dir; \
-	 fi
 	@install-info ${PREFIX}/info/gettext.info ${PREFIX}/info/dir
 	${INSTALL_DATA} ${WRKSRC}/misc/po-mode.el \
 		${PREFIX}/share/gettext/po-mode.el

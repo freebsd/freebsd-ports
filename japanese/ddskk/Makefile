@@ -3,7 +3,7 @@
 # Date created:		31 Oct 1998
 # Whom:			Shigeyuki FUKUSHIMA <shige@kuis.kyoto-u.ac.jp>
 #
-# $Id: Makefile,v 1.2 1998/12/23 08:50:12 kuriyama Exp $
+# $Id: Makefile,v 1.3 1998/12/23 12:02:16 asami Exp $
 #
 
 DISTNAME=	skk9.6
@@ -38,9 +38,6 @@ post-install:
 	(cd ${WRKSRC}; make SUBDIRS='doc' install)
 	(cd ${WRKSRC}; make SUBDIRS='etc' install)
 
-	@if [ ! -f ${PREFIX}/info/dir ]; then \
-		${SED} -ne '1,/Menu:/p' /usr/share/info/dir > ${PREFIX}/info/dir; \
-	fi
 	install-info ${PREFIX}/info/skk.info ${PREFIX}/info/dir
 
 .include <bsd.port.mk>

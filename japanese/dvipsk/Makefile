@@ -3,7 +3,7 @@
 # Date created:         25 Aug 1997
 # Whom:                 Makoto WATANABE <watanabe@zlab.phys.nagoya-u.ac.jp>
 #
-# $Id: Makefile,v 1.1.1.1 1998/05/02 22:35:08 max Exp $
+# $Id: Makefile,v 1.2 1998/07/20 02:55:30 steve Exp $
 #
 
 DISTNAME=	dvipsk-5.78a
@@ -53,9 +53,6 @@ post-build:
 	)
 
 pre-install:
-	@if [ ! -f ${PREFIX}/info/dir ] ; then \
-	  ${SED} -ne '1,/Menu:/p' /usr/share/info/dir > ${PREFIX}/info/dir ; \
-	fi
 	@for i in ${BACKUP_FILES} ; do \
 	  if [ -f ${DVIPSDIR}/$$i ] ; then \
 	    ${MV} ${DVIPSDIR}/$$i ${DVIPSDIR}/$$i.bak ; \

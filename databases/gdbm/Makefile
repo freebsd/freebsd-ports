@@ -3,7 +3,7 @@
 # Date created:		8 Apr 1996
 # Whom:			Brent J. Nordquist <bjn@visi.com>
 #
-# $Id: Makefile,v 1.5 1998/02/15 17:00:57 steve Exp $
+# $Id: Makefile,v 1.6 1999/01/17 04:01:49 fenner Exp $
 #
 
 DISTNAME=          gdbm-1.7.3
@@ -18,9 +18,6 @@ MAKE_FLAGS=        CFLAGS="${CFLAGS}" LDFLAGS=-s -f
 MAN3=		   gdbm.3
 
 post-install:
-	@if [ ! -f ${PREFIX}/info/dir ]; then \
-	  ${SED} -ne '1,/Menu:/p' /usr/share/info/dir > ${PREFIX}/info/dir; \
-	 fi
 	@install-info ${PREFIX}/info/gdbm.info ${PREFIX}/info/dir
 
 .include <bsd.port.mk>

@@ -7,7 +7,6 @@ bin/gunshar
 @unexec install-info --delete %D/info/remsync.info %D/info/dir
 info/sharutils.info
 info/remsync.info
-@exec [ -f %D/info/dir ] || sed -ne '1,/Menu:/p' /usr/share/info/dir > %D/info/dir
 @exec install-info %D/info/sharutils.info %D/info/dir
 @exec install-info %D/info/remsync.info %D/info/dir
 lib/locale/de/LC_MESSAGES/sharutils.cat

@@ -82,7 +82,6 @@ include/libguile/weaks.h
 include/libguile.h
 @unexec install-info --delete %D/info/data-rep.info %D/info/dir
 info/data-rep.info
-@exec [ -f %D/info/dir ] || sed -ne '1,/Menu:/p' /usr/share/info/dir > %D/info/dir
 @exec install-info %D/info/data-rep.info %D/info/dir
 lib/libguile.a
 lib/libguile.la

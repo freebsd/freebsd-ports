@@ -3,7 +3,7 @@
 # Date created:		31 December 1996
 # Whom:			Thomas Gellekum <tg@FreeBSD.ORG>
 #
-# $Id: Makefile,v 1.12 1999/03/20 17:18:04 nectar Exp $
+# $Id: Makefile,v 1.13 1999/05/01 02:31:46 steve Exp $
 #
 
 DISTNAME=	wget-1.5.3
@@ -24,9 +24,6 @@ GNU_CONFIGURE=	yes
 INFOFILES=	wget.info
 
 post-install:
-	if [ ! -f ${PREFIX}/info/dir ]; then \
-		${SED} -ne '1,/Menu:/p' /usr/share/info/dir > ${PREFIX}/info/dir; \
-	fi
 .for i in ${INFOFILES}
 	install-info ${PREFIX}/info/${i} ${PREFIX}/info/dir
 .endfor

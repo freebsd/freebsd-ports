@@ -20,5 +20,4 @@ info/tar.info-4
 info/tar.info-5
 info/tar.info-6
 info/tar.info-7
-@exec [ -f %D/info/dir ] || sed -ne '1,/Menu:/p' /usr/share/info/dir > %D/info/dir
 @exec install-info %D/info/tar.info %D/info/dir

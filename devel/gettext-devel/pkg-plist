@@ -8,7 +8,6 @@ bin/msgunfmt
 bin/xgettext
 @unexec install-info --delete %D/info/gettext.info %D/info/dir
 info/gettext.info
-@exec [ -f %D/info/dir ] || sed -ne '1,/Menu:/p' /usr/share/info/dir > %D/info/dir
 @exec install-info %D/info/gettext.info %D/info/dir
 include/libintl.h
 lib/libintl.a

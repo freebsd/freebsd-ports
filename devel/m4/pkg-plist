@@ -1,7 +1,6 @@
 bin/gm4
 @unexec install-info --delete %D/info/m4.info %D/info/dir
 info/m4.info
-@exec [ -f %D/info/dir ] || sed -ne '1,/Menu:/p' /usr/share/info/dir > %D/info/dir
 @exec install-info %D/info/m4.info %D/info/dir
 share/examples/gm4/capitalize.m4
 share/examples/gm4/comments.m4

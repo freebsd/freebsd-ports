@@ -3,7 +3,7 @@
 # Date created:		21 August 1994
 # Whom:			jkh
 #
-# $Id: Makefile,v 1.33 1999/04/19 08:42:20 cracauer Exp $
+# $Id: Makefile,v 1.35 1999/05/28 05:16:08 ache Exp $
 #
 
 DISTNAME=       bash-2.03
@@ -20,11 +20,6 @@ MAINTAINER=	ache@FreeBSD.ORG
 GNU_CONFIGURE=	Yes
 CONFIGURE_ARGS= --with-installed-readline
 MAN1=		bash.1 bashbug.1
-
-pre-install:
-	if [ ! -s ${PREFIX}/info/dir -a -f /usr/share/info/dir ]; then \
-	  ${SED} -ne '1,/Menu:/p' /usr/share/info/dir > ${PREFIX}/info/dir; \
-	fi
 
 post-install:
 	${CP} /etc/shells /etc/shells.bak

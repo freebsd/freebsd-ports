@@ -3,7 +3,7 @@
 # Date created:		05 Oct 1997
 # Whom:			max
 #
-# $Id: Makefile,v 1.24 1998/06/24 01:14:27 max Exp $
+# $Id: Makefile,v 1.25 1999/02/03 11:11:49 asami Exp $
 #
 
 DISTNAME=	web2c-7.2
@@ -47,9 +47,6 @@ pre-install:
 	@${TAR} --exclude 'texmf/tex/latex/base/*' -C ${PREFIX}/share \
 	  -zxf ${DISTDIR}/${DIST_SUBDIR}/texmflib-7.3.tar.gz
 	#@${RMDIR} ${PREFIX}/share/texmf/tex/generic/images ${PREFIX}/share/texmf/bibtex/bib/misc
-	@if [ ! -f ${PREFIX}/info/dir ]; then \
-	  ${SED} -ne '1,/Menu:/p' /usr/share/info/dir > ${PREFIX}/info/dir; \
-	 fi
 
 post-install:
 	@${LDCONFIG} -m ${PREFIX}/lib

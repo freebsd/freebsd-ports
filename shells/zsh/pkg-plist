@@ -4,6 +4,5 @@ bin/zsh
 bin/zsh-3.0.5
 @unexec install-info --delete %D/info/zsh.info %D/info/dir
 info/zsh.info
-@exec [ -f %D/info/dir ] || sed -ne '1,/Menu:/p' /usr/share/info/dir > %D/info/dir
 @exec install-info %D/info/zsh.info %D/info/dir
 info/dir

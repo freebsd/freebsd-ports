@@ -4,7 +4,6 @@ bin/scwmrepl
 include/scwmexec.h
 @unexec install-info --delete %D/info/scwm.info %D/info/dir
 info/scwm.info
-@exec [ -f %D/info/dir ] || sed -ne '1,/Menu:/p' /usr/share/info/dir > %D/info/dir
 @exec install-info %D/info/scwm.info %D/info/dir
 lib/X11/scwm/decor.scwmrc
 lib/X11/scwm/gjb.scwmrc

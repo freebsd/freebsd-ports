@@ -7,7 +7,6 @@ info/fftw.info-2
 info/fftw.info-3
 info/fftw.info-4
 info/fftw.info-5
-@exec [ -f %D/info/dir ] || sed -ne '1,/Menu:/p' /usr/share/info/dir > %D/info/dir
 @exec install-info %D/info/fftw.info %D/info/dir
 lib/libfftw.a
 lib/libfftw.la

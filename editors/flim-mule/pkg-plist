@@ -31,7 +31,6 @@
 %%FLIMDOCDIR%%/ChangeLog
 %%FLIMDOCDIR%%/README.en
 @dirrm %%FLIMDOCDIR%%
-@exec [ -f %D/info/dir ] || sed -ne '1,/Menu:/p' /usr/share/info/dir > %D/info/dir
 @unexec install-info --delete %D/info/mime-en.info %D/info/dir
 @unexec install-info --delete %D/info/mime-ja.info %D/info/dir
 info/mime-en.info

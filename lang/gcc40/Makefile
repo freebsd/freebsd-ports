@@ -4,7 +4,7 @@
 # Date created:				9 Jan 1998
 # Whom:					John Polstra <jdp@polstra.com>
 #
-# $Id: Makefile,v 1.59 1999/05/24 17:13:47 obrien Exp $
+# $Id: Makefile,v 1.60 1999/05/26 10:26:19 obrien Exp $
 #
 
 SNAPDATE=	1999-05-24
@@ -108,9 +108,6 @@ post-install:
 	${MV} -f ${PREFIX}/lib/libstdc++.so*  \
 		${PREFIX}/lib/gcc-lib/${CONFIGURE_TARGET}/${EGCS_REV}
 .endif
-	if [ ! -f ${PREFIX}/info/dir ]; then \
-	    ${SED} -ne '1,/Menu:/p' /usr/share/info/dir > ${PREFIX}/info/dir; \
-	fi
 .for info in cpp g77 gcc
 	install-info ${PREFIX}/info/${info}.info ${PREFIX}/info/dir
 .endfor

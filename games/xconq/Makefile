@@ -3,7 +3,7 @@
 # Date created:         2 Jun 1998
 # Whom:                 Don Croyle <croyle@gelemna.ft-wayne.in.us>
 #
-# $Id: Makefile,v 1.6 1998/09/28 02:17:56 steve Exp $
+# $Id: Makefile,v 1.7 1998/10/01 06:09:56 steve Exp $
 #
 
 DISTNAME=	xconq-7.2.2
@@ -29,9 +29,6 @@ post-install:
 	strip ${PREFIX}/bin/${file}
 .endfor
 	cd ${WRKSRC}/doc && make install-info
-	if [ ! -f ${PREFIX}/info/dir ]; then \
-		${SED} -ne '1,/Menu:/p' /usr/share/info/dir > ${PREFIX}/info/dir; \
-	fi
 .for info in xconq xcdesign
 	install-info ${PREFIX}/info/${info}.info ${PREFIX}/info/dir
 .endfor

@@ -3,7 +3,7 @@
 # Date created:         17 Jan 1999
 # Whom:                 Lars Koeller
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1999/01/26 03:30:26 steve Exp $
 #
 
 DISTNAME=	hp2xx-3.20-png
@@ -22,9 +22,6 @@ MAKEFILE=	makefile
 MAN1=		hp2xx.1
 
 post-install:
-	if [ ! -f ${PREFIX}/info/dir ]; then \
-		${SED} -ne '1,/Menu:/p' /usr/share/info/dir > ${PREFIX}/info/dir; \
-	fi
 .for info in hp2xx.info
 	install-info ${PREFIX}/info/${info} ${PREFIX}/info/dir
 .endfor

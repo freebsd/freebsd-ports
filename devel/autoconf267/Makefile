@@ -3,7 +3,7 @@
 # Date created:		7 October 1995
 # Whom:			torstenb@FreeBSD.ORG
 #
-# $Id: Makefile,v 1.16 1999/01/26 01:54:49 steve Exp $
+# $Id: Makefile,v 1.17 1999/02/11 12:04:27 obrien Exp $
 #
 
 DISTNAME=       autoconf-2.13
@@ -20,9 +20,6 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	M4=${PREFIX}/bin/gm4
 
 post-install:
-	@if [ ! -f ${PREFIX}/info/dir ]; then \
-	  ${SED} -ne '1,/Menu:/p' /usr/share/info/dir > ${PREFIX}/info/dir; \
-	 fi
 	@install-info ${PREFIX}/info/autoconf.info ${PREFIX}/info/dir
 	@install-info ${PREFIX}/info/standards.info ${PREFIX}/info/dir
 

@@ -3,7 +3,7 @@
 # Date created:		2 November 1997
 # Whom:			jseger@FreeBSD.org
 #
-# $Id: Makefile,v 1.14 1998/10/26 13:09:35 vanilla Exp $
+# $Id: Makefile,v 1.15 1999/01/27 07:41:21 fenner Exp $
 #
 
 DISTNAME=	guile-1.3
@@ -17,9 +17,6 @@ GNU_CONFIGURE=	YES
 MAKE_ENV+=	INSTALL_SCRIPT="${INSTALL_SCRIPT}"
 
 post-install:
-	@if [ ! -f ${PREFIX}/info/dir ]; then \
-	  ${SED} -ne '1,/Menu:/p' /usr/share/info/dir > ${PREFIX}/info/dir; \
-	 fi
 	@${SETENV} OBJFORMAT=${PORTOBJFORMAT} ${LDCONFIG} -m ${PREFIX}/lib
 
 .include <bsd.port.mk>

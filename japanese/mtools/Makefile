@@ -3,7 +3,7 @@
 # Date created:		6 October 1997
 # Whom:			WATANABE junya <junya-w@remus.dti.ne.jp>
 #
-# $Id: Makefile,v 1.1.1.1 1998/04/28 15:19:54 kuriyama Exp $
+# $Id: Makefile,v 1.2 1999/03/08 07:28:27 asami Exp $
 #
 
 DISTNAME=	mtools-3.6
@@ -40,9 +40,6 @@ post-patch:
 
 post-install:
 	@install -c ${WRKSRC}/mtools.conf ${PREFIX}/etc
-	@if [ ! -f ${PREFIX}/info/dir ]; then \
-	  ${SED} -ne '1,/Menu:/p' /usr/share/info/dir > ${PREFIX}/info/dir; \
-	 fi
 	@install-info ${PREFIX}/info/mtools.info ${PREFIX}/info/dir
 
 .include <bsd.port.mk>

@@ -2,7 +2,6 @@ bin/gcl
 bin/gcl.exe
 @unexec install-info --delete %D/info/gcl-si.info %D/info/dir
 info/gcl-si.info
-@exec [ -f %D/info/dir ] || sed -ne '1,/Menu:/p' /usr/share/info/dir > %D/info/dir
 @exec install-info %D/info/gcl-si.info %D/info/dir
 lib/gcl-2.2.2/cmpnew/collectfn.o
 lib/gcl-2.2.2/lsp/gprof.lsp
