@@ -1,0 +1,46 @@
+--- libdib/Makefile.in.orig	Tue Jul 13 10:14:28 1999
++++ libdib/Makefile.in	Fri May 26 01:36:43 2000
+@@ -28,25 +28,32 @@
+ 
+ SHELL = /bin/sh
+ 
+-.SUFFIXES: .C .o
++.SUFFIXES: .c .o .so
+ 
+ MYOBJECTS = \
+     bytelevel.o \
+     bintree.o \
+     dibtoxpm.o
+ 
+-all: libdib.a test_dibtoxpm
++all: libdib.a libdib.so.0 test_dibtoxpm
+ 
+ libdib.a:  $(MYOBJECTS)
+ 	$(AR) rc libdib.a $(MYOBJECTS)
+ 	$(RANLIB) libdib.a 
+ 
++libdib.so.0:  $(MYOBJECTS:S/o$/so/g)
++	$(CC) -shared -Wl,-x -Wl,-assert -Wl,pure-text -Wl,-soname,$@ -o $@ $(MYOBJECTS:S/o$/so/g) $(LIBS)
++	ln -sf libdib.so.0 libdib.so
++
+ test_dibtoxpm:  libdib.a test_dibtoxpm.o
+ 	$(CC) $(LDFLAGS) -o test_dibtoxpm test_dibtoxpm.o -ldib
+ 
+ %.o: %.c
+ 	$(CC) $(CFLAGS) -c $*.c
+ 
++.c.so:
++	$(CC) -fpic -DPIC $(CFLAGS) -c $(.IMPSRC) -o $(.TARGET)
++       
+ clean:
+ 	rm -rf *.o *.a test_dibtoxpm a.out core
+ 
+@@ -60,6 +67,8 @@
+ install: all installdirs
+ 	$(INSTALL_DATA) dibtoxpm.h $(INCLUDEDIR)/dibtoxpm.h
+ 	$(INSTALL_DATA) libdib.a @libdir@/libdib.a
++	$(INSTALL_DATA) libdib.so.0 @libdir@/libdib.so.0
++	ln -sf libdib.so.0 @libdir@/libdib.so
+ 
+ 
+ #  DO  NOT  DELETE THIS LINE -- make depend depends on it.
