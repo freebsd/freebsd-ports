@@ -3,12 +3,12 @@
 # Date created:		7 Oct 1996
 # Whom:			pst
 #
-# $Id: Makefile,v 1.7 1997/07/07 06:30:30 pst Exp $
+# $Id: Makefile,v 1.9 1997/11/14 17:51:01 pst Exp $
 #
 
 DISTNAME=	tkgoodstuff8.0-final
 PKGNAME=	tkgoodstuff-8.0
-CATEGORIES=	x11
+CATEGORIES=	x11 tk80
 MASTER_SITES=	http://www-personal.umich.edu/~markcrim/tkgoodstuff/dists/
 
 MAINTAINER=	pst@FreeBSD.org

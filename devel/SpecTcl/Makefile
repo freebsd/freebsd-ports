@@ -3,12 +3,12 @@
 # Date created:		Fri Oct  3 18:50:53 CEST 1997
 # Whom:			Andreas Klemm <andreas@klemm.gtn.com>
 #
-# $Id: Makefile,v 1.1.1.1 1997/10/03 22:16:34 andreas Exp $
+# $Id: Makefile,v 1.2 1997/10/13 20:33:00 andreas Exp $
 #
 
 DISTNAME=	SpecTcl1.1
 PKGNAME=	SpecTcl-1.1
-CATEGORIES=	devel
+CATEGORIES=	devel tk80
 MASTER_SITES=	ftp://ftp.sunlabs.com/pub/tcl/SpecTcl/
 
 MAINTAINER=	andreas@FreeBSD.ORG

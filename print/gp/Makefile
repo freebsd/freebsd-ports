@@ -3,12 +3,12 @@
 # Date created:		15 April 1997
 # Whom:			Kiriyama Kazuhiko<kiri@kiri.toba-cmt.ac.jp>
 #
-# $Id: Makefile,v 1.2 1998/02/16 12:13:04 asami Exp $
+# $Id: Makefile,v 1.3 1998/02/18 06:59:36 asami Exp $
 #
 
 DISTNAME=	GP-2.5
 PKGNAME=	gp-2.5
-CATEGORIES=	print
+CATEGORIES=	print tk42
 MASTER_SITES=	http://www.kamome.or.jp/hueda/GP/ \
 		ftp://www.neosoft.com/pub/tcl/sorted/print/GP-2.5/
 

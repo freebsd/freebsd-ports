@@ -3,11 +3,11 @@
 # Date created:		29 Oct 1997
 # Whom:			Kensaku Masuda <greg@greg.rim.or.jp>
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1998/02/09 08:09:35 tg Exp $
 #
 
 DISTNAME=	cqcam-0.45a
-CATEGORIES=	graphics
+CATEGORIES=	graphics tk80
 MASTER_SITES=	http://www.cs.virginia.edu/~patrick/cqcam/
 EXTRACT_SUFX=	.tgz
 

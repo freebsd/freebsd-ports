@@ -3,11 +3,11 @@
 # Date created:         18 November 1997
 # Whom:                 Jun-ichiro itojun Itoh <itojun@itojun.org>
 #
-# $Id: Makefile,v 1.2 1997/11/21 17:50:07 asami Exp $
+# $Id: Makefile,v 1.3 1997/11/22 11:57:46 itojun Exp $
 #
 
 DISTNAME=       ttt-0.4.1
-CATEGORIES=	net
+CATEGORIES=	net tk41
 MASTER_SITES=   ftp://ftp.csl.sony.co.jp/pub/kjc/
 
 MAINTAINER=     itojun@itojun.org
