@@ -7,6 +7,7 @@
 
 PORTNAME=	spambayes
 PORTVERSION=	1.0.rc.1
+PORTREVISION=	1
 CATEGORIES=	mail python
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -15,6 +16,8 @@ DISTNAME=	${PORTNAME}-${PORTVERSION:C/(.)\.(..)\.(.)$/\1\2\3/}
 
 MAINTAINER=	lioux@FreeBSD.org
 COMMENT=	A Bayesian anti-spam filter written in Python
+
+RUN_DEPENDS=	${PYTHON_SITELIBDIR}/_bsddb.so:${PORTSDIR}/databases/py-bsddb
 
 USE_PYTHON=		yes
 USE_PYDISTUTILS=	yes
