@@ -689,6 +689,7 @@ blackened	ports/irc/blackened
 blackjack	ports/games/blackjack
 blacs		ports/math/blacs
 bladeenc	ports/audio/bladeenc
+blam		ports/net/blam
 blas		ports/math/blas
 blast		ports/x11/blast
 bld		ports/net/bld
