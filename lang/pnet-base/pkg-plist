@@ -1,15 +1,14 @@
 bin/al
-bin/ilgac
-bin/cli-unknown-cpp
 bin/cli-unknown-ar
+bin/cli-unknown-cpp
 bin/cli-unknown-gcc
 bin/cli-unknown-ranlib
 bin/cli-unknown-size
 bin/cli-unknown-strip
 bin/clrwrap
-bin/cscc-cpp
 bin/csant
 bin/cscc
+bin/cscc-cpp
 bin/csdoc
 bin/csdoc2hier
 bin/csdoc2html
@@ -20,6 +19,7 @@ bin/ilasm
 bin/ildasm
 bin/ildd
 bin/ilfind
+bin/ilgac
 bin/ilheader
 bin/ilnative
 bin/ilranlib
@@ -32,7 +32,26 @@ include/pnet/ffi.h
 include/pnet/ffi_mips.h
 include/pnet/fficonfig.h
 include/pnet/gc.h
+include/pnet/gc/gc.h
+include/pnet/gc/gc_alloc.h
+include/pnet/gc/gc_allocator.h
+include/pnet/gc/gc_amiga_redirects.h
+include/pnet/gc/gc_backptr.h
+include/pnet/gc/gc_config_macros.h
+include/pnet/gc/gc_cpp.h
+include/pnet/gc/gc_gcj.h
+include/pnet/gc/gc_inl.h
+include/pnet/gc/gc_inline.h
+include/pnet/gc/gc_local_alloc.h
+include/pnet/gc/gc_mark.h
+include/pnet/gc/gc_pthread_redirects.h
+include/pnet/gc/gc_typed.h
+include/pnet/gc/leak_detector.h
+include/pnet/gc/new_gc_alloc.h
+include/pnet/gc/weakpointer.h
+include/pnet/gc_config_macros.h
 include/pnet/gc_local_alloc.h
+include/pnet/gc_pthread_redirects.h
 include/pnet/gc_typed.h
 include/pnet/il_align.h
 include/pnet/il_bignum.h
@@ -85,8 +104,42 @@ lib/pnet/libgc.a
 lib/pnet/libgc.la
 lib/pnet/libgc.so
 lib/pnet/libgc.so.1
-@dirrm include/pnet
-@dirrm lib/cscc/plugins
-@unexec rmdir %D/lib/cscc 2> /dev/null || true
+share/gc/README
+share/gc/README.DGUX386
+share/gc/README.Mac
+share/gc/README.MacOSX
+share/gc/README.OS2
+share/gc/README.amiga
+share/gc/README.arm.cross
+share/gc/README.autoconf
+share/gc/README.changes
+share/gc/README.contributors
+share/gc/README.cords
+share/gc/README.darwin
+share/gc/README.dj
+share/gc/README.environment
+share/gc/README.ews4800
+share/gc/README.hp
+share/gc/README.linux
+share/gc/README.macros
+share/gc/README.rs6000
+share/gc/README.sgi
+share/gc/README.solaris2
+share/gc/README.uts
+share/gc/README.win32
+share/gc/barrett_diagram
+share/gc/debugging.html
+share/gc/gc.man
+share/gc/gcdescr.html
+share/gc/gcinterface.html
+share/gc/leak.html
+share/gc/scale.html
+share/gc/simple_example.html
+share/gc/tree.html
+@dirrm share/gc
 @dirrm lib/pnet/elf
 @dirrm lib/pnet
+@dirrm lib/cscc/plugins
+@unexec rmdir %D/lib/cscc 2> /dev/null || true
+@dirrm include/pnet/gc
+@dirrm include/pnet

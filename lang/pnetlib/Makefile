@@ -24,7 +24,6 @@ USE_XLIB=	yes
 
 USE_LIBTOOL_VER=13
 USE_GMAKE=	yes
-STRIP=		# Nothing to be stripped.
 
 PORTDOCS=	ChangeLog-1 ChangeLog-2 ChangeLog-3 ChangeLog-4 \
 	JScript-embed.txt JScript-internals.txt csunit_howto.html \

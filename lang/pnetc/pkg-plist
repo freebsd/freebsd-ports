@@ -4,6 +4,9 @@ lib/cscc/lib/1.2.3400.0/libpthread.dll
 lib/cscc/lib/libc.dll
 lib/cscc/lib/libm.dll
 lib/cscc/lib/libpthread.dll
+share/cscc/include/alloca.h
+share/cscc/include/arpa/inet.h
+share/cscc/include/arpa/nameser.h
 share/cscc/include/assembly/Accessibility.h
 share/cscc/include/assembly/Commons.Xml.Relaxng.h
 share/cscc/include/assembly/Custommarshalers.h
@@ -46,16 +49,20 @@ share/cscc/include/assembly/System.h
 share/cscc/include/assembly/Xsharp.h
 share/cscc/include/assembly/cscompmgd.h
 share/cscc/include/assembly/mscorlib.h
-share/cscc/include/alloca.h
 share/cscc/include/assert.h
+share/cscc/include/bits/in.h
 share/cscc/include/bits/libc-lock.h
 share/cscc/include/bits/local_lim.h
 share/cscc/include/bits/mman.h
+share/cscc/include/bits/netdb.h
 share/cscc/include/bits/posix1_lim.h
 share/cscc/include/bits/posix2_lim.h
+share/cscc/include/bits/sockaddr.h
+share/cscc/include/bits/socket.h
 share/cscc/include/bits/stat.h
 share/cscc/include/bits/stdio_lim.h
 share/cscc/include/bits/types.h
+share/cscc/include/bits/uio.h
 share/cscc/include/bits/waitflags.h
 share/cscc/include/bits/waitstatus.h
 share/cscc/include/bits/wchar.h
@@ -78,6 +85,8 @@ share/cscc/include/limits.h
 share/cscc/include/locale.h
 share/cscc/include/malloc.h
 share/cscc/include/math.h
+share/cscc/include/netdb.h
+share/cscc/include/netinet/in.h
 share/cscc/include/pthread.h
 share/cscc/include/pwd.h
 share/cscc/include/semaphore.h
@@ -97,22 +106,26 @@ share/cscc/include/sys/errno.h
 share/cscc/include/sys/mman.h
 share/cscc/include/sys/param.h
 share/cscc/include/sys/select.h
+share/cscc/include/sys/socket.h
 share/cscc/include/sys/stat.h
 share/cscc/include/sys/sysmacros.h
-share/cscc/include/sys/types.h
 share/cscc/include/sys/time.h
+share/cscc/include/sys/types.h
+share/cscc/include/sys/uio.h
 share/cscc/include/time.h
 share/cscc/include/unistd.h
 share/cscc/include/varargs.h
 share/cscc/include/wchar.h
 share/cscc/include/wctype.h
 share/cscc/include/xlocale.h
+@dirrm share/cscc/include/sys
+@dirrm share/cscc/include/netinet
+@dirrm share/cscc/include/gnu
+@dirrm share/cscc/include/bits
+@dirrm share/cscc/include/assembly
+@dirrm share/cscc/include/arpa
+@dirrm share/cscc/include
+@unexec rmdir %D/share/cscc 2> /dev/null || true
 @unexec rmdir %D/lib/cscc/lib/1.2.3400.0 2> /dev/null || true
 @unexec rmdir %D/lib/cscc/lib 2> /dev/null || true
 @unexec rmdir %D/lib/cscc 2> /dev/null || true
-@dirrm share/cscc/include/assembly
-@dirrm share/cscc/include/bits
-@dirrm share/cscc/include/gnu
-@dirrm share/cscc/include/sys
-@dirrm share/cscc/include
-@unexec rmdir %D/share/cscc 2> /dev/null || true
