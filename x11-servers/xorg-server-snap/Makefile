@@ -7,7 +7,7 @@
 
 PORTNAME=	server
 PORTVERSION=	6.7.0
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	x11-servers
 MASTER_SITES=	http://freedesktop.org/~xorg/X11R6.7.0/src/
 PKGNAMEPREFIX=	xorg-
@@ -40,20 +40,30 @@ MAN1=		Xorg.1 \
 		xorgcfg.1 \
 		xorgconfig.1
 MAN4=		citron.4 \
+		dmc.4 \
 		dynapro.4 \
 		elographics.4 \
 		fbdevhw.4 \
+		fpit.4 \
+		glint.4 \
+		js_x.4 \
 		kbd.4 \
 		keyboard.4 \
+		mga.4 \
 		microtouch.4 \
 		mouse.4 \
 		mutouch.4 \
-		nv.4 \
+		palmax.4 \
+		penmount.4 \
 		r128.4 \
 		radeon.4 \
+		tdfx.4 \
+		tek4957.4 \
+		vga.4 \
 		void.4 \
 		wacom.4
-MAN5=		xorg.conf.5
+MAN5=		getconfig.5 \
+		xorg.conf.5
 
 XBUILD_DIRS=	lib/font programs/Xserver
 XINCLUDE_DIRS=	lib/xtrans
@@ -67,6 +77,13 @@ NOT_FOR_ARCHS=	ia64
 IGNORE= is part of X.Org. For switching to X.Org, read UPDATING entry 20040723
 .endif
 
+.if ${ARCH} == alpha
+PLIST_SUB+=	ALPHA_NA="@comment "
+.else
+PLIST_SUB+=	ALPHA_NA=""
+MAN4+=		vesa.4
+.endif
+		
 .if ${ARCH} == ia64
 PLIST_SUB+=	IA64_NA="@comment "
 .else
@@ -76,39 +93,48 @@ PLIST_SUB+=	IA64_NA=""
 .if ${ARCH} == sparc64
 PLIST_SUB+=	SPARC64=""
 PLIST_SUB+=	SPARC64_NA="@comment "
-MAN4+=		sunffb.4
+MAN4+=		sunbw2.4 \
+		suncg14.4 \
+		suncg3.4 \
+		suncg6.4 \
+		sunffb.4 \
+		sunleo.4 \
+		suntcx.4
 .else
 PLIST_SUB+=	SPARC64="@comment "
 PLIST_SUB+=	SPARC64_NA=""
-MAN4+=		glint.4 \
-		mga.4 \
+MAN4+=		cirrus.4 \
+		nv.4 \
 		rendition.4 \
 		s3virge.4 \
 		savage.4 \
-		siliconmotion.4 \
-		sis.4 \
-		tdfx.4 \
-		vga.4
+		siliconmotion.4
 .endif
 
 .if ${ARCH} == i386
 PLIST_SUB+=	I386=""
 MAN1+=		scanpci.1
-MAN4+=		apm.4 \
-		chips.4 \
-		cirrus.4 \
-		cyrix.4 \
-		i128.4 \
-		i740.4 \
+MAN4+=		i740.4 \
 		i810.4 \
-		neomagic.4 \
 		nsc.4 \
-		trident.4 \
-		tseng.4 \
-		vesa.4 \
+		via.4 \
 		vmware.4
 .else
 PLIST_SUB+=	I386="@comment "
+.endif
+
+.if ${ARCH} == amd64 || ${ARCH} == i386
+PLIST_SUB+=	AMD64_I386=""
+MAN4+=		apm.4 \
+		chips.4 \
+		cyrix.4 \
+		i128.4 \
+		neomagic.4 \
+		sis.4 \
+		trident.4 \
+		tseng.4
+.else
+PLIST_SUB+=	AMD64_I386="@comment "
 .endif
 
 .if !defined(NO_SUID_XSERVER) || ${NO_SUID_XSERVER} == NO
