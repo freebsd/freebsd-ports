@@ -325,6 +325,7 @@
     SUBDIR += tuxtype
     SUBDIR += tvp
     SUBDIR += twitch
+    SUBDIR += uhexen
     SUBDIR += uox3
     SUBDIR += utserver
     SUBDIR += utserver-asu
