@@ -38,6 +38,7 @@
     SUBDIR += bsdproxy
     SUBDIR += cap
     SUBDIR += cdpd
+    SUBDIR += cdpr
     SUBDIR += centericq
     SUBDIR += cfgstoragemk
     SUBDIR += cflowd
