@@ -1,0 +1,28 @@
+--- pptHtml/Makefile.in.orig	Tue Mar 28 09:52:11 2000
++++ pptHtml/Makefile.in	Tue Mar 28 09:54:17 2000
+@@ -84,8 +84,8 @@
+ 
+ EXTRA_DIST = README ChangeLog TODO THANKS test.ppt
+ 
+-INCLUDES = -I$(top_srcdir)
+-LDADD = $(top_builddir)/libcole.la
++INCLUDES = -I$(LOCALBASE)/include
++LDADD = -L$(LOCALBASE)/lib -lcole
+ 
+ noinst_PROGRAMS = pptdump 
+ bin_SCRIPTS = nspptview
+@@ -103,12 +103,12 @@
+ pptHtml_SOURCES = pptHtml.c
+ pptHtml_OBJECTS =  pptHtml.o
+ pptHtml_LDADD = $(LDADD)
+-pptHtml_DEPENDENCIES =  $(top_builddir)/libcole.la
++pptHtml_DEPENDENCIES =
+ pptHtml_LDFLAGS = 
+ pptdump_SOURCES = pptdump.c
+ pptdump_OBJECTS =  pptdump.o
+ pptdump_LDADD = $(LDADD)
+-pptdump_DEPENDENCIES =  $(top_builddir)/libcole.la
++pptdump_DEPENDENCIES =
+ pptdump_LDFLAGS = 
+ SCRIPTS =  $(bin_SCRIPTS)
+ 
