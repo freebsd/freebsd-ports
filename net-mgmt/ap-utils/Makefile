@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ap-utils
-PORTVERSION=	1.4
+PORTVERSION=	1.4.1
 CATEGORIES=	net-mgmt
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -17,10 +17,17 @@ COMMENT=	A set of utilities to configure and monitor wireless access points
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 USE_BZIP2=	yes
-USE_GETTEXT=	yes
 USE_REINPLACE=	yes
 CONFIGURE_ENV=	LDFLAGS="-lintl -L${LOCALBASE}/lib"
 MAN8=		ap-trapd.8 ap-mrtg.8 ap-config.8
+
+.if !defined(WITHOUT_NLS)
+USE_GETTEXT=	yes
+PLIST_SUB+=	NLS=""
+.else
+CONFIGURE_ARGS+=--disable-nls
+PLIST_SUB+=	NLS="@comment "
+.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|_nl_domain_bindings|libintl_nl_domain_bindings|' ${WRKSRC}/configure
