@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.40 1997/11/16 22:49:20 fenner Exp $
+# $Id: Makefile,v 1.41 1997/12/27 03:10:24 asami Exp $
 #
 
     SUBDIR += amp
@@ -23,6 +23,7 @@
     SUBDIR += s3mod
     SUBDIR += sox
     SUBDIR += splay
+    SUBDIR += splaytk
     SUBDIR += timidity
     SUBDIR += tosha
     SUBDIR += tracker
