@@ -1,24 +1,23 @@
 # New ports collection makefile for:	openam
 # Date created:		Tue May  2 15:43:02 BST 2000
-# Whom:			Roger Hardiman <roger@freebsd.org>
+# Whom:			Roger Hardiman <roger@FreeBSD.org>
 #
 # $FreeBSD$
 #
 
 PORTNAME=	openam
-PORTVERSION=	0.2.alpha1
+PORTVERSION=	0.2a1
 CATEGORIES=	net
 MASTER_SITES=	http://www.openh323.org/bin/ \
 		http://www.de.openh323.org/bin/ \
 		http://www.ru.openh323.org/bin/
-
 DISTNAME=	openam_0.2alpha1
 
-MAINTAINER=	roger@freebsd.org
+MAINTAINER=	roger@FreeBSD.org
 
 BUILD_DEPENDS=	/nonexistent:${PORTSDIR}/net/openh323:build
 
-WRKSRC=		${WRKDIR}/openam
+WRKSRC=		${WRKDIR}/${PORTNAME}
 
 NOCLEANDEPENDS=	yes
 
