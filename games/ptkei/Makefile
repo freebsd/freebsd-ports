@@ -6,9 +6,10 @@
 #
 
 PORTNAME=	ptkei
-PORTVERSION=	1.12
+PORTVERSION=	000906
 CATEGORIES=	games
-MASTER_SITES=	ftp://www.empire.cx/pub/empire/clients/
+MASTER_SITES=	ftp://www.empire.cx/pub/empire/clients/ \
+		http://empire.idlpaper.com/~kevin/ptkei/download/
 
 MAINTAINER=	darius@dons.net.au
 
