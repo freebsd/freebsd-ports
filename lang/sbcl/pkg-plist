@@ -1,29 +1,29 @@
 bin/sbcl
 lib/sbcl/sbcl.core
-share/doc/sbcl/BUGS
-share/doc/sbcl/COPYING
-share/doc/sbcl/CREDITS
-%%PORTDOCS%%share/doc/sbcl/html/beyond-ansi.html
-%%PORTDOCS%%share/doc/sbcl/html/compiler-policy.html
-%%PORTDOCS%%share/doc/sbcl/html/compiler.html
-%%PORTDOCS%%share/doc/sbcl/html/efficiency.html
-%%PORTDOCS%%share/doc/sbcl/html/extensions.html
-%%PORTDOCS%%share/doc/sbcl/html/ffi.html
-%%PORTDOCS%%share/doc/sbcl/html/idiosyncrasies.html
-%%PORTDOCS%%share/doc/sbcl/html/implementation.html
-%%PORTDOCS%%share/doc/sbcl/html/index.html
-%%PORTDOCS%%share/doc/sbcl/html/intro.html
-%%PORTDOCS%%share/doc/sbcl/html/x1072.html
-%%PORTDOCS%%share/doc/sbcl/html/x1131.html
-%%PORTDOCS%%share/doc/sbcl/html/x1143.html
-%%PORTDOCS%%share/doc/sbcl/html/x1166.html
-%%PORTDOCS%%share/doc/sbcl/html/x1270.html
-%%PORTDOCS%%share/doc/sbcl/html/x282.html
-%%PORTDOCS%%share/doc/sbcl/html/x42.html
-%%PORTDOCS%%share/doc/sbcl/html/x452.html
-%%PORTDOCS%%share/doc/sbcl/html/x801.html
-%%PORTDOCS%%share/doc/sbcl/html/x967.html
-%%PORTDOCS%%share/doc/sbcl/html/z1296.html
-%%PORTDOCS%%@dirrm share/doc/sbcl/html
-@dirrm share/doc/sbcl
+%%DOCSDIR%%/BUGS
+%%DOCSDIR%%/COPYING
+%%DOCSDIR%%/CREDITS
+%%PORTDOCS%%%%DOCSDIR%%/html/beyond-ansi.html
+%%PORTDOCS%%%%DOCSDIR%%/html/compiler-policy.html
+%%PORTDOCS%%%%DOCSDIR%%/html/compiler.html
+%%PORTDOCS%%%%DOCSDIR%%/html/efficiency.html
+%%PORTDOCS%%%%DOCSDIR%%/html/extensions.html
+%%PORTDOCS%%%%DOCSDIR%%/html/ffi.html
+%%PORTDOCS%%%%DOCSDIR%%/html/idiosyncrasies.html
+%%PORTDOCS%%%%DOCSDIR%%/html/implementation.html
+%%PORTDOCS%%%%DOCSDIR%%/html/index.html
+%%PORTDOCS%%%%DOCSDIR%%/html/intro.html
+%%PORTDOCS%%%%DOCSDIR%%/html/x1072.html
+%%PORTDOCS%%%%DOCSDIR%%/html/x1131.html
+%%PORTDOCS%%%%DOCSDIR%%/html/x1143.html
+%%PORTDOCS%%%%DOCSDIR%%/html/x1166.html
+%%PORTDOCS%%%%DOCSDIR%%/html/x1270.html
+%%PORTDOCS%%%%DOCSDIR%%/html/x282.html
+%%PORTDOCS%%%%DOCSDIR%%/html/x42.html
+%%PORTDOCS%%%%DOCSDIR%%/html/x452.html
+%%PORTDOCS%%%%DOCSDIR%%/html/x801.html
+%%PORTDOCS%%%%DOCSDIR%%/html/x967.html
+%%PORTDOCS%%%%DOCSDIR%%/html/z1296.html
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/html
+@dirrm %%DOCSDIR%%
 @dirrm lib/sbcl
