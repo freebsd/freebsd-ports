@@ -7,7 +7,7 @@
 
 PORTNAME=	dico
 PORTVERSION= 	1.1
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	textproc
 MASTER_SITES=	http://homepages.starnet.fr/dtrystram/
 #	http://www.montefiore.ulg.ac.be/~geuzaine/BRONNE/WWW/ftp/ le_dico.tgz
@@ -26,23 +26,34 @@ BROKEN_WWW=	http://www.montefiore.ulg.ac.be/cgi-bin-ulg/DICO.html
 
 USE_REINPLACE=	true
 USE_ZIP=	true
+EXTRACT_CMD=	UNZIP= unzip
 WRKSRC=		${WRKDIR}/${PORTNAME}
 USE_AUTOMAKE=	true
 USE_GMAKE=	true
 AUTOMAKE_ARGS=	--add-missing --foreign --include-deps
 MAKE_ARGS=	prefix=${PREFIX}
 MAN1=		dico.1
+REINPLACE_SUB=	PREFIX=${PREFIX}
 
 # Post-patch
 #
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|g' ${WRKSRC}/sources/dico.c
+	@${REINPLACE_CMD} ${REINPLACE_SUB:S/$/!g/:S/^/ -e s!%%/:S/=/%%!/} \
+		${WRKSRC}/sources/dico.c
 
 # Pre-configure
 #
 
 pre-configure:
 	@cd ${WRKSRC} && ${ACLOCAL}
+
+# Post-install
+#
+
+post-install:
+.if defined(NOPORTDOCS)
+	@${RM} -rf ${DOCSDIR}
+.endif
 
 .include <bsd.port.mk>
