@@ -1,7 +1,0 @@
-RubyUnit (RUnit) is a unit testing framework for Ruby based on JUnit.
-
-The unit testing framework is known as part of Kent Beck's "eXtreme
-Programming" (XP).  For details, see http://www.xprogramming.com/.
-
-Author:	Masaki Suketa <CQN02273@nifty.ne.jp>
-WWW:	http://homepage1.nifty.com/markey/ruby/rubyunit/rubyunit_e.html
