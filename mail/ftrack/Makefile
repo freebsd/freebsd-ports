@@ -7,6 +7,7 @@
 
 PORTNAME=	ftrack
 PORTVERSION=	3.01
+PORTREVISION=	1
 CATEGORIES=	mail
 MASTER_SITES=	http://gonza.bizhost.ru/ports/
 DISTNAME=	ftr${PORTVERSION:S/.//g}s
@@ -14,7 +15,7 @@ DISTNAME=	ftr${PORTVERSION:S/.//g}s
 MAINTAINER=	gonza@techline.ru
 COMMENT=	FTN Messages tracker
 
-BUILD_DEPENDS=	${LOCALBASE}/lib/libsmapi.a:${PORTSDIR}/mail/smapi
+LIB_DEPENDS=	smapi.2:${PORTSDIR}/news/husky-smapi
 
 USE_ZIP=	yes
 USE_REINPLACE=	yes
@@ -22,12 +23,6 @@ USE_GMAKE=	yes
 ALL_TARGET=	ftrack
 MAKEFILE=	${WRKSRC}/MakeFiles/FreeBSD/Makefile
 EXTRACT_AFTER_ARGS=	-d ${WRKSRC}
-
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 500113
-BROKEN=         "Does not compile (bad C++ code)"
-.endif
 
 pre-patch:
 	${REINPLACE_CMD} -e "s@-I../../hpp -I../../.. -O3@-Ihpp -I${LOCALBASE}/include ${CFLAGS}@g; \
@@ -54,4 +49,4 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/samples/${FILE} ${PREFIX}/etc/ftrack
 .endfor
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

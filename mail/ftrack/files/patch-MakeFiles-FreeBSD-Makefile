@@ -1,0 +1,25 @@
+--- MakeFiles/FreeBSD/Makefile.orig	Tue Oct 28 04:05:28 2003
++++ MakeFiles/FreeBSD/Makefile	Tue Oct 28 04:05:55 2003
+@@ -1,5 +1,4 @@
+-CC=	cc
+-CFLAGS=	-Wall -W -fno-rtti
++CFLAGS+=-Wall -W -fno-rtti
+ CDEFS=	-DUNIX
+ COPT=	-Ihpp -I/usr/local/include -O -pipe -mcpu=pentiumpro
+ LFLAGS= -s
+@@ -39,13 +38,13 @@
+ 	$(CC) $(CFLAGS) $(CDEFS) $(COPT) -c $<
+ 
+ %.o: $(SRCDIR)%.cpp
+-	$(CC) $(CFLAGS) $(CDEFS) $(COPT) -c $<
++	$(CXX) $(CFLAGS) $(CDEFS) $(COPT) -c $<
+ 
+ # Thunderbirds are go!
+ 
+ 
+ ftrack: $(OBJS)
+-	$(CC) $(LFLAGS) -o ftrack $(OBJS) -L/usr/local/lib -lsmapi
++	$(CXX) $(LFLAGS) -o ftrack $(OBJS) -L/usr/local/lib -lsmapi
+ 
+ clean:
+ 	-rm -f *.o
