@@ -137,6 +137,8 @@ l0phtcrack		ports/security/l0phtcrack	Parts are under GPL, so
 						binaries should not be
 						distributed.  Contains crypto
 						from OpenSSL.
+libudbc			ports/databases/libudbc		Downloading and redistribution
+						terms are unclear.
 lsh*			ports/security/lsh	Crypto; export-controlled
 mew-*.tar.gz		ports/mail/mew		ITAR export-controlled
 						(hooks to pgp)
