@@ -1,0 +1,4 @@
+This is Business::OnlinePayment::LinkPoint, an Business::OnlinePayment
+backend module for LinkPoint.  It is only useful if you have a merchant account
+with LinkPoint: http://www.linkpoint.com/ and the "LinkPoint Perl Wrapper":
+http://www.linkpoint.com/product_solutions/internet/lperl/lperl_main.html
