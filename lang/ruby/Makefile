@@ -92,12 +92,12 @@ OBSOLETED_MODULES=	sha1 \
 			uri
 
 post-patch:
-	${FIND} ${WRKSRC} -name '*.orig' -delete
+	${FIND} ${PATCH_WRKSRC} -name '*.orig' -delete
 .for d in Win32API
-	${RM} -rf ${WRKSRC}/ext/${d}
+	${RM} -rf ${BUILD_WRKSRC}/ext/${d}
 .endfor
 .for d in gdbm tcltklib tk
-	${MV} ${WRKSRC}/ext/${d} ${WRKDIR}/
+	${MV} ${BUILD_WRKSRC}/ext/${d} ${WRKDIR}/
 .endfor
 
 pre-configure:
@@ -106,6 +106,7 @@ pre-configure:
 	./configure; \
 	${MAKE} -f Makefile ${RUBY_VER:S/.//} RUBYDIR=${WRKSRC}
 .endif
+	${TOUCH} ${CONFIGURE_WRKSRC}/${CONFIGURE_SCRIPT}
 
 post-install:
 .if defined(STRIP) && ${STRIP} == -s
