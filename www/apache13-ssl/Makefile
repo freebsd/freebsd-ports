@@ -1,80 +1,65 @@
 # New ports collection makefile for:    apache-ssl HTTPSD
-# Version required:     apache 1.3.3 and ssl 1.28
+# Version required:     1.2.x+
 # Date created:     	8th November, 1998
 # Whom:			Adam Laurie <adam@algroup.co.uk>
 #			based on apache port by ache@nagual.pp.ru
 #			and apache-ssl port by Mark Murray <mark@grondar.za>.
 #			Oh, and with a little bit of help from Ben :)
 #
-# $Id: Makefile,v 1.54 1999/03/13 17:11:04 billf Exp $
+# $Id: Makefile,v 1.4 1999/04/05 19:19:45 addy Exp $
 
-APACHE= 	1.3.3
-APACHE-SSL=	1.28
+APACHE= 	1.3.6
+APACHE-SSL=	1.32
 
 DISTNAME=       apache_${APACHE}
 PKGNAME=        apache-${APACHE}+ssl_${APACHE-SSL}
 CATEGORIES=	www security
-MASTER_SITES=   http://www.apache.org/dist/ \
+MASTER_SITES=   ftp://www.apache.org/dist/ \
 		ftp://ftp.ox.ac.uk/pub/crypto/SSL/Apache-SSL/ \
+		ftp://ftp.gbnet.net/pub/apache/dist/ \
 		ftp://ftp.MASTER.pgp.net/pub/crypto/SSL/Apache-SSL/ \
+		ftp://ftp.flirble.org/pub/web/apache/dist/ \
 		ftp://ftp.replay.com/pub/crypto/apache/Apache-SSL/ \
-		ftp://ftp.ccs.neu.edu/net/mirrors/ftp.apache.org/apache/dist/ \
-		ftp://ftp.rge.com/pub/infosystems/apache/dist/ \
+		ftp://ukug.uk.freebsd.org/pub/mirrors/apache/dist/ \
 		ftp://ftp.win.or.jp/pub/network/security/apache-ssl/Apache-SSL/ \
 		ftp://ftp.sage-au.org.au/pub/network/security/apache-ssl/Apache-SSL/ \
-		ftp://apache.compuex.com/pub/apache/dist/ \
-		ftp://apache.arctic.org/pub/apache/dist/ \
 		ftp://ftp.vwv.com/pub/crypto/SSL/Apache-SSL/ \
 		ftp://mirror.aarnet.edu.au/www/servers/apache-ssl/ \
-		ftp://ftp.epix.net/pub/apache/dist/ \
-		ftp://ftp.ameth.org/pub/mirrors/ftp.apache.org/apache/dist/ \
 		ftp://ftp.it.net.au/mirrors/crypto/SSL/Apache-SSL/ \
 		ftp://ftp.infoscience.co.jp/pub/Crypto/SSL/Apache-SSL/Apache-SSL/ \
-		ftp://ftp.connectnet.com/pub/www/apache/ \
-		ftp://apache.technomancer.com/mirrors/apache/dist/ \
 		ftp://ftp.funet.fi/pub/crypt/mirrors/ftp.ox.ac.uk/SSL/Apache-SSL/ \
 		ftp://apache-ssl.raver.net/pub/ftp.apache-ssl.org/Apache-SSL/ \
-		ftp://ftp.raver.net/pub/ftp.apache.org/ \
-		ftp://www3.service.digital.com/apache/dist/ \
 		http://mirror.aarnet.edu.au/www/servers/apache-ssl/ \
 		http://ftp.it.net.au/mirrors/crypto/SSL/Apache-SSL/ \
-		ftp://galileo.galilei.com/pub/apache/ \
-		ftp://ftp.mtnranch.net/pub/apache/dist/ \
-		ftp://ftp.iodynamics.com/pub/mirror/apache/dist/ \
-		ftp://apache.nextpath.com/pub/apache/dist/ \
 		http://www.asap.cs.nott.ac.uk/SSL/
+
+Y2K=		http://www.apache-ssl.org/#Y2K
 
 DISTFILES=      ${DISTNAME}${EXTRACT_SUFX} \
 		apache_${APACHE}+ssl_${APACHE-SSL}${EXTRACT_SUFX}
 
 MAINTAINER=     adam@algroup.co.uk
 
-
+BUILD_DEPENDS=	${PREFIX}/lib/libcrypto.a:${PORTSDIR}/security/openssl \
+		${PREFIX}/lib/libssl.a:${PORTSDIR}/security/openssl
 RUN_DEPENDS=	openssl:${PORTSDIR}/security/openssl
 
-EXTRACT_ONLY=   ${DISTNAME}${EXTRACT_SUFX}
-
-RESTRICTED=     "Contains cryptography"
-
-#
-# Set APACHE_PERF_TUNING env. variable to YES to get maximum performance
-#
-
-HAS_CONFIGURE=  yes
-CONFIGURE_ARGS= \
+HAS_CONFIGURE=	yes
+CONFIGURE_ARGS=	\
 		--prefix=${PREFIX} \
+		--with-layout=GNU \
 		--sysconfdir=${PREFIX}/etc/apache \
 		--includedir=${PREFIX}/include/apache \
-		--logfiledir=/var/log \
-		--runtimedir=/var/run \
+		--localstatedir=/var \
 		--datadir=${PREFIX}/www \
+		--suexec-docroot=${PREFIX}/www/data \
 		--proxycachedir=${PREFIX}/www/proxy \
 		--libexecdir=${PREFIX}/libexec/apache \
 		--without-confadjust \
 		--enable-shared=remain \
 		--enable-module=most \
 		--enable-module=auth_db \
-		--disable-module=auth_dbm \
+		--disable-module=auth_dbm
 
 OPTIM=-DHARD_SERVER_LIMIT=512 \
 -DDOCUMENT_LOCATION=\\"${PREFIX}/www/data/\\" \
@@ -85,12 +70,17 @@ OPTIM+= -DBUFFERED_LOGS
 CFLAGS+= -O6 -fomit-frame-pointer
 .endif
 
-CONFIGURE_ENV+= OPTIM='${OPTIM}'
+CONFIGURE_ENV= OPTIM='${OPTIM}'
 
-MAN1=   ab.1 apachectl.1 dbmmanage.1 htdigest.1 htpasswd.1
+EXTRACT_ONLY=   ${DISTNAME}${EXTRACT_SUFX}
 
-.if !defined(USA_RESIDENT) || ${USA_RESIDENT} != YES
+RESTRICTED=     "Contains cryptography"
+
+MAN1= 		dbmmanage.1 htdigest.1 htpasswd.1
+MAN8= 		ab.8 httpsdctl.8 apxs.8 httpsd.8 logresolve.8 rotatelogs.8
+
 pre-fetch:
+.if !defined(USA_RESIDENT) || ${USA_RESIDENT} != YES
 	@${ECHO}
 	@${ECHO} "*** Warning!"
 	@${ECHO} You must set variable USA_RESIDENT to YES if you are USA
@@ -107,7 +97,7 @@ post-extract:
 	@cd ${WRKSRC} && tar xzf ${DISTDIR}/apache_${APACHE}+ssl_${APACHE-SSL}${EXTRACT_SUFX}
 
 post-patch:
-	@cd ${WRKSRC} && ./FixPatch ${PREFIX}
+	@cd ${WRKSRC} && ${SETENV} PREFIX=${PREFIX} ./FixPatch
 
 certificate:
 	@if [ -f ${PREFIX}/lib/openssl.cnf ]; then \
@@ -115,6 +105,5 @@ certificate:
 		${CP} ${WRKSRC}/SSLconf/conf/httpsd.pem ${PREFIX}/certs/cert.pem; \
 	else \
 		${ECHO} "You must create the file ${PREFIX}/lib/openssl.cnf first."; \
-	fi
 
 .include <bsd.port.mk>

@@ -1,0 +1,26 @@
+--- FixPatch.orig	Mon Jan 18 17:22:23 1999
++++ FixPatch	Wed Apr  7 21:50:59 1999
+@@ -15,7 +15,7 @@
+ SSL_ABS_PATHS="/usr/local/*/SSLeay-* /usr/local/*/*/SSLeay-* /opt/*/SSLeay-*
+ /opt/*/*/SSLeay-* /usr/local/*/openssl-* /usr/local/*/*/openssl-*
+ /opt/*/openssl-* /opt/*/*/openssl-*";
+-SSL_INST_DIR=/usr/local/ssl
++SSL_INST_DIR="/usr/local/ssl $PREFIX"
+ 
+ # Sort the paths
+ RELDIRS=`echo $SSL_REL_PATHS | xargs -n 1 echo | sort -r`
+@@ -111,13 +111,6 @@
+ 	echo "Your version of patch is out-of-date. You need patch 2.1 or 2.5."
+ fi
+ 
+-echo -n "Do you want me to apply the fixed-up Apache-SSL patch for you? [n] "
+-read ans
+-echo $ans | grep -i "^[ \t]*y" >/dev/null
+-if [ $? = 0 ]; then
+-    patch -p1 <SSLpatch.fixed-up
+-else
+-    echo "OK, I won't apply the fixed-up patch.  I've left it in SSLpatch.fixed-up";
+-fi
++patch -p1 <SSLpatch.fixed-up
+ 
+ exit
