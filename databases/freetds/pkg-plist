@@ -1,3 +1,6 @@
+@unexec if cmp -s %D/etc/freetds.conf.dist %D/etc/freetds.conf; then rm -f %D/etc/freetds.conf; fi
+etc/freetds.conf.dist
+@exec if [ ! -f %D/etc/freetds.conf ]; then cp %D/etc/%f %D/etc/freetds.conf; fi
 etc/freetds/interfaces
 include/bkpublic.h
 include/cspublic.h
@@ -11,7 +14,9 @@ include/sybdb.h
 include/syberror.h
 include/sybfront.h
 include/tds.h
+include/tds_configs.h
 include/tdsconvert.h
+include/tdsodbc.h
 include/tdsutil.h
 include/tdsver.h
 lib/libct.a
@@ -23,4 +28,7 @@ lib/libsybdb.so.0
 lib/libtds.a
 lib/libtds.so
 lib/libtds.so.0
+lib/libtdssrv.a
+lib/libtdssrv.so
+lib/libtdssrv.so.0
 @dirrm etc/freetds

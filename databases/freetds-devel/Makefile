@@ -22,5 +22,12 @@ INSTALLS_SHLIB=	yes
 post-patch:
 	@find ${WRKSRC}/src -name Makefile.in | xargs ${PERL} -pi -e \
 		's| install-includeHEADERS||g'
+	@${PERL} -pi -e 's!/freetds.conf!/freetds.conf.dist!g' \
+		${WRKSRC}/Makefile.in
+
+post-install:
+.if !exists(${PREFIX}/etc/freetds.conf)
+	@${CP} ${PREFIX}/etc/freetds.conf.dist ${PREFIX}/etc/freetds.conf
+.endif
 
 .include <bsd.port.mk>
