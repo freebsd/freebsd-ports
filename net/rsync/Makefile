@@ -7,7 +7,7 @@
 # $FreeBSD$
 #
 
-DISTNAME=	rsync-2.3.1
+DISTNAME=	rsync-2.3.2
 CATEGORIES=	net
 MASTER_SITES=	ftp://samba.anu.edu.au/pub/rsync/  \
 		ftp://sunsite.auc.dk/pub/unix/rsync/  \
@@ -16,7 +16,7 @@ MASTER_SITES=	ftp://samba.anu.edu.au/pub/rsync/  \
 
 PATCH_SITES=	ftp://ftp.kame.net/pub/kame/misc/ \
 		ftp://ftp.pasta.cs.uit.no/pub/IPv6/misc/
-PATCHFILES=	rsync-231-v6-19990723.diff.gz
+#PATCHFILES=	rsync-231-v6-19990723.diff.gz
 PATCH_DIST_STRIP=	-p1
 
 MAINTAINER=     obrien@FreeBSD.org
@@ -33,6 +33,7 @@ MAN1=		rsync.1
 MAN5=		rsyncd.conf.5
 
 pre-configure:
+	@${PERL} -pi.orig -e 's:/etc/:${PREFIX}/etc/:g' ${WRKSRC}/rsync.h
 	@${PERL} -pi.orig -e 's:/etc/:${PREFIX}/etc/:g' ${WRKSRC}/rsync.1
 	@${PERL} -pi.orig -e 's:/etc/:${PREFIX}/etc/:g' ${WRKSRC}/rsyncd.conf.5
 
