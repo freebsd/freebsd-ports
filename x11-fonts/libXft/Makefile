@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	libXft
-PORTVERSION=	2.1.5
-PORTREVISION=	1
+PORTVERSION=	2.1.6
 CATEGORIES=	x11-fonts
 MASTER_SITES=	http://pdx.freedesktop.org/~xlibs/release/
 
