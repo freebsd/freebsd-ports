@@ -7,6 +7,8 @@
 %%EMACS_PACKAGESDIR%%/lisp/apel/alist.elc
 %%EMACS_PACKAGESDIR%%/lisp/apel/auto-autoloads.el
 %%EMACS_PACKAGESDIR%%/lisp/apel/auto-autoloads.elc
+%%EMACS_PACKAGESDIR%%/lisp/apel/apel-ver.el
+%%EMACS_PACKAGESDIR%%/lisp/apel/apel-ver.elc
 %%EMACS_PACKAGESDIR%%/lisp/apel/broken.el
 %%EMACS_PACKAGESDIR%%/lisp/apel/broken.elc
 %%EMACS_PACKAGESDIR%%/lisp/apel/calist.el
@@ -57,6 +59,10 @@
 %%EMACS_PACKAGESDIR%%/lisp/apel/poem.elc
 %%EMACS_PACKAGESDIR%%/lisp/apel/poem-xm.el
 %%EMACS_PACKAGESDIR%%/lisp/apel/poem-xm.elc
+%%EMACS_PACKAGESDIR%%/lisp/apel/product.el
+%%EMACS_PACKAGESDIR%%/lisp/apel/product.elc
+%%EMACS_PACKAGESDIR%%/lisp/apel/pym.el
+%%EMACS_PACKAGESDIR%%/lisp/apel/pym.elc
 %%EMACS_PACKAGESDIR%%/lisp/apel/richtext.el
 %%EMACS_PACKAGESDIR%%/lisp/apel/richtext.elc
 %%EMACS_PACKAGESDIR%%/lisp/apel/static.el

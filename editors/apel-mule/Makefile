@@ -13,14 +13,8 @@ PORTCLASS=	slave
 MASTERDIR=	${.CURDIR}/../../editors/apel-emacs
 
 # emacs port setup
-EMACS_NAME=	mule
-EMACS_PORT=	mule
-EMACS_VER=	19.34
-EMACS_LIBDIR=		share/${EMACS_NAME}
-EMACS_LIBDIR_WITH_VER=	${EMACS_LIBDIR}/${EMACS_VER}
+EMACS_PORT_NAME=	mule
 
-# RUN_DEPENDS port name's suffix is '-common'.
-HAVE_COMMON_PORT=	YES
 # emacs requires *-setupel.el
 REQUIRE_SETUPEL=	YES
 

@@ -5,7 +5,7 @@
 # $FreeBSD$
 #
 
-PORTNAME=	apel-${EMACS_PORT}
+PORTNAME=	apel-${EMACS_PORT_NAME}
 PORTVERSION=	${APEL_VER}
 CATEGORIES=	editors elisp
 MASTER_SITES=	ftp://ftp.etl.go.jp/pub/mule/apel/ \
@@ -15,7 +15,7 @@ DISTNAME=	apel-${APEL_VER}
 MAINTAINER?=	shige@FreeBSD.org
 
 # distfile version
-APEL_VER=	9.23
+APEL_VER=	10.2
 # setupel filename
 APEL_SETUPEL=	apel-setupel.el
 # document install directory by install-doc target
@@ -26,26 +26,15 @@ PORTCLASS?=	master
 
 # emacs port setup
 .if (${PORTCLASS} == "master")
-EMACS_NAME=	emacs
-EMACS_PORT=	emacs
-EMACS_VER=	19.34
-EMACS_LIBDIR=		share/${EMACS_NAME}
-EMACS_LIBDIR_WITH_VER=	${EMACS_LIBDIR}/${EMACS_VER}
+EMACS_PORT_NAME=	emacs
 # emacs requires *-setupel.el
 REQUIRE_SETUPEL=  YES
 .endif
 
+.include <bsd.port.pre.mk>
+
 # target name for make build
 ALL_TARGET?=	elc
-
-.if defined(EMACS_PORT)
-EMACS_CMD?=	${PREFIX}/bin/${EMACS_NAME}-${EMACS_VER}
-BUILD_DEPENDS=	${EMACS_CMD}:${PORTSDIR}/editors/${EMACS_PORT}
-.if defined(HAVE_COMMON_PORT) && (${HAVE_COMMON_PORT} == "YES")
-RUN_DEPENDS=	${EMACS_CMD}:${PORTSDIR}/editors/${EMACS_PORT}-common
-.else
-RUN_DEPENDS=	${EMACS_CMD}:${PORTSDIR}/editors/${EMACS_PORT}
-.endif
 
 # depends on custom: emacs-19.34 or mule-19.34
 .if (${EMACS_VER} == "19.34")
@@ -66,12 +55,6 @@ PLIST_SUB+=	EMACS_LIBDIR=${EMACS_LIBDIR} EMACS_VER=${EMACS_VER} \
 		EMACS_PACKAGESDIR=${EMACS_PACKAGESDIR} \
 		APELDOCDIR=${APELDOCDIR} APEL_SETUPEL=${APEL_SETUPEL}
 MAKE_FLAGS+=	EMACS=${EMACS_CMD} XEMACS=${EMACS_CMD}
-.else
-.BEGIN:
-	@${ECHO} "Error: Bad port."
-	@${ECHO} "You must define EMACS_NAME, EMACS_PORT, EMACS_VER, EMACS_LIBDIR, EMACS_LIBDIR_WITH_VER."
-	@${FALSE}
-.endif
 
 pre-configure:
 .if defined(REQUIRE_SETUPEL) && (${REQUIRE_SETUPEL} == "YES")
@@ -132,4 +115,4 @@ manifest-install:
 	@${INSTALL_DATA} ${WRKDIR}/${MANIFEST} \
 		${PREFIX}/${EMACS_PACKAGESDIR}/pkginfo/
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
