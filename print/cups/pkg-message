@@ -1,0 +1,15 @@
+======================================================================
+
+CUPS is now installed.
+
+Please read the documentation in %%PREFIX%%/share/doc/cups/ for information
+on how to set up your printer to use CUPS. Basic template configuration files
+have been installed in %%PREFIX%%/etc/cups/
+
+To install the BSD and system V compatibility binaries look to the port
+print/cups-lpr. These are no longer installed as part of the base cups port
+because they have conflicting names with the native print binaries, and with
+other ports, such as lprNG.
+
+======================================================================
+
