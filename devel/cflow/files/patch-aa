@@ -109,7 +109,7 @@
 ! 
 ! $(MANDIR)/cflow.1.gz:	cflow.1
 ! 	$(INSTALL_CMD) -m 0644 $^ $(MANDIR)
-! 	gzip --best $(MANDIR)/cflow.1
+! 	gzip -9nf $(MANDIR)/cflow.1
   
   cflow:	cflow.sh
   	sed -e "s;@CFLOW_SHELL@;$(CFLOW_SHELL);g" \
