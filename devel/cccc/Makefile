@@ -6,38 +6,43 @@
 # $FreeBSD$
 #
 
-PORTNAME=		cccc
-PORTVERSION=		2.1.1
+PORTNAME=	cccc
+PORTVERSION=	2.1.1
 PORTREVISION=	1
-CATEGORIES=		devel textproc www
-MASTER_SITES=		${MASTER_SITE_SUNSITE}
+CATEGORIES=	devel textproc www
+MASTER_SITES=	${MASTER_SITE_SUNSITE}
 MASTER_SITE_SUBDIR=	devel/lang/c++
-DISTNAME=		${PORTNAME}-${PORTVERSION}.src
+DISTNAME=	${PORTNAME}-${PORTVERSION}.src
 
-MAINTAINER=		ports@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	C and C++ Code Counter
 
-BUILD_DEPENDS=		antlr:${PORTSDIR}/devel/pccts \
-			dlg:${PORTSDIR}/devel/pccts
+BUILD_DEPENDS=	antlr:${PORTSDIR}/devel/pccts \
+		dlg:${PORTSDIR}/devel/pccts
 
-WRKSRC=			${WRKDIR}/usr/local/src/cccc-2.1.1
-USE_GMAKE=		yes
-MAKEFILE=		makefile
-MAKE_ENV=		OSTYPE=FreeBSD
+WRKSRC=		${WRKDIR}/usr/local/src/${PORTNAME}-${PORTVERSION}
+USE_GMAKE=	yes
+MAKEFILE=	makefile
+MAKE_ENV=	OSTYPE=FreeBSD
+USE_GCC=	2.95
+USE_REINPLACE=	yes
 
-.include <bsd.port.pre.mk>
+PORTDOCS=	readme.txt
 
-.if ${OSVERSION} >= 502000
-BROKEN=			"Does not compile"
-.endif
+post-patch:
+	${REINPLACE_CMD} -e 's,=g++,=${CXX},g' ${WRKSRC}/${MAKEFILE}
 
 do-install:
-	@ ${INSTALL_PROGRAM} ${WRKSRC}/cccc ${PREFIX}/bin
-	@ ${MKDIR} ${PREFIX}/share/cccc
-.for file in cccc_inf.dat cccc_met.dat cccc_tmt.dat cccc_ug.htm
-	@ ${INSTALL_DATA} ${WRKSRC}/${file} ${PREFIX}/share/cccc
+	@${INSTALL_PROGRAM} ${WRKSRC}/cccc ${PREFIX}/bin
+	@${MKDIR} ${DATADIR}
+.for f in cccc_inf.dat cccc_met.dat cccc_tmt.dat cccc_ug.htm
+	@${INSTALL_DATA} ${WRKSRC}/${f} ${DATADIR}
 .endfor
-	@ ${MKDIR} ${PREFIX}/share/doc/cccc
-	@ ${INSTALL_DATA} ${WRKSRC}/readme.txt ${PREFIX}/share/doc/cccc
+.if !defined(NOPORTDOCS)
+	@${MKDIR} ${DOCSDIR}
+.for f in ${PORTDOCS}
+	@${INSTALL_DATA} ${WRKSRC}/${f} ${DOCSDIR}
+.endfor
+.endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
