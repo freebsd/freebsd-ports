@@ -14,7 +14,7 @@ PATCH_SITES=	ftp://noth.ceid.upatras.gr/pub/FreeBSD/patches/
 PATCHFILES=	${PORTNAME}-${PORTVERSION}.patch1.gz
 PATCH_DIST_STRIP=	-p1
 
-MAINTAINER=	ntarmos@ceid.upatras.gr
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A Flux/Black-box applet displaying system information a la GNU uname
 
 GNU_CONFIGURE=	yes
