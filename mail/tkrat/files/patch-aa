@@ -1,0 +1,27 @@
+*** Makefile.in.orig	Tue Oct 21 16:00:48 1997
+--- Makefile.in	Sun Nov  9 00:44:42 1997
+***************
+*** 15,26 ****
+  all: build
+  
+  build:
+- 	-cd imap-4.1; \
+- 	if test "`cat OSTYPE 2>/dev/null`" = "${OSTYPE}" ; then \
+- 	    ${MAKE}; \
+- 	else \
+- 	    ${MAKE} ${OSTYPE}; \
+- 	fi
+  	cd lib; ${MAKE}
+  	cd script; ${MAKE}
+  	cd tkrat; ${MAKE}
+--- 15,20 ----
+***************
+*** 32,38 ****
+  	cd misc; ${MAKE} install
+  
+  clean:
+- 	cd imap-4.1; ${MAKE} clean
+  	cd lib; ${MAKE} clean
+  	cd script; ${MAKE} clean
+  	cd tkrat; ${MAKE} clean
+--- 26,31 ----
