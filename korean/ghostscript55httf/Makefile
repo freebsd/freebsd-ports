@@ -3,7 +3,7 @@
 # Date created:		Fri Mar 27 10:32:46 KST 1998
 # Whom:			CHOI Junho <junker@jazz.snu.ac.kr>
 #
-# $Id: Makefile,v 1.3 1998/10/16 01:03:23 jseger Exp $
+# $Id: Makefile,v 1.4 1998/12/12 21:03:35 jseger Exp $
 #
 # based on print/ghostscript5 and japanese/vfghostscript5
 # use Adobe's CID-keyed font sameple(korean) because there are no
@@ -101,8 +101,8 @@ post-extract:
 	${TOUCH} ${WRKSRC}/adler32.o
 	${TOUCH} ${WRKSRC}/deflate.o
 	${TOUCH} ${WRKSRC}/trees.o
-	ln -s ${PORTSDIR}/graphics/jpeg/work/jpeg-6* ${WRKSRC}/jpeg-6a
-	ln -s ${PORTSDIR}/graphics/png/work/libpng-1.* ${WRKSRC}/libpng
+	ln -s ${WRKDIRPREFIX}${PORTSDIR}/graphics/jpeg/work/jpeg-6* ${WRKSRC}/jpeg-6a
+	ln -s ${WRKDIRPREFIX}${PORTSDIR}/graphics/png/work/libpng-1.* ${WRKSRC}/libpng
 	cd ${WRKSRC} && unzip -La ${DISTDIR}/${HP850_DRV}
 	cd ${WRKSRC} && tar -xzf ${DISTDIR}/${CID_CMAP_KO}
 
