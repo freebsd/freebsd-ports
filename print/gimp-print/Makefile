@@ -5,8 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	gimp-print
-PORTVERSION=	4.2.5
-PORTREVISION=	1
+PORTVERSION=	4.2.6
 CATEGORIES=	print
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -16,12 +15,11 @@ COMMENT=	GIMP Print Printer Driver
 
 LIB_DEPENDS=	intl.5:${PORTSDIR}/devel/gettext
 
+USE_GETOPT_LONG=	yes
 USE_REINPLACE=	yes
 USE_GMAKE=	yes
 USE_LIBTOOL=	yes
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib" \
-		MAKEINFO="makeinfo --no-split"
+CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 CONFIGURE_ARGS=	--with-gimp=no
 INSTALLS_SHLIB=	yes
 
@@ -31,6 +29,10 @@ MAN7=	gimpprint-color.7 gimpprint-dithers.7 gimpprint-imagetypes.7 \
 	gimpprint-inktypes.7 gimpprint-mediasizes.7 gimpprint-mediasources.7 \
 	gimpprint-mediatypes.7 gimpprint-models.7 gimpprint-resolutions.7
 MAN8=	cups-calibrate.8
+INFO=	gimpprint
+
+CPPFLAGS=	-I${LOCALBASE}/include
+LDFLAGS=	-L${LOCALBASE}/lib
 
 .if defined(WITHOUT_CUPS)
 PLIST_SUB+=	CUPS="@comment "
@@ -45,7 +47,7 @@ PLIST_SUB+=	CUPS=""
 PLIST_SUB+=	IJS="@comment "
 .else
 LIB_DEPENDS+=	ijs.1:${PORTSDIR}/print/libijs
-CONFIGURE_ARGS+=	--with-ijs=yes 
+CONFIGURE_ARGS+=	--with-ijs=yes
 PLIST_SUB+=	IJS=""
 .endif
 
@@ -57,8 +59,8 @@ pre-everything::
 	@${ECHO_MSG}
 	@${ECHO_MSG} "You may use the following build options:"
 	@${ECHO_MSG}
-	@${ECHO_MSG} "WITHOUT_CUPS=yes	build without CUPS driver"
-	@${ECHO_MSG} "WITHOUT_IJS=yes 	build without IJS-based Ghostscript driver"
+	@${ECHO_MSG} "	WITHOUT_CUPS=yes	build without CUPS driver"
+	@${ECHO_MSG} "	WITHOUT_IJS=yes 	build without IJS-based Ghostscript driver"
 	@${ECHO_MSG}
 
 post-extract:
@@ -66,9 +68,9 @@ post-extract:
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|=makeinfo|="makeinfo --no-split"|g ; \
-		 s|\$${CFLAGS:=} -O|$${CFLAGS}|g' ${WRKSRC}/configure
+		 s|$${CFLAGS:=} -O|$${CFLAGS}|g' ${WRKSRC}/configure
 	@${FIND} ${WRKSRC} -name "Makefile.in" | ${XARGS} ${REINPLACE_CMD} -e \
-		's|\$$(PACKAGE)/doc|doc/$$(PACKAGE)|g ; \
-		 s|\$$(RM) -r|$$(RM) -f -r|g'
+		's|$$(PACKAGE)/doc|doc/$$(PACKAGE)|g ; \
+		 s|$$(RM) -r|$$(RM) -f -r|g'
 
 .include <bsd.port.mk>
