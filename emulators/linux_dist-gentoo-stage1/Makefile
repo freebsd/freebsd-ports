@@ -45,7 +45,7 @@ DISTNAME=		stage1-x86-2004.3
 
 do-extract:
 	@${MKDIR} ${WRKSRC}
-	@${TAR} --exclude=./dev -xp -C ${WRKSRC} \
+	@${TAR} --exclude=./dev -xpy -C ${WRKSRC} \
 		-f ${DISTDIR}/${DIST_SUBDIR}/${DISTFILES}
 	@${ECHO_CMD} etc/resolv.conf > ${PLIST}
 	@cd ${WRKSRC} && ${FIND} * -type f -o -type l >> ${PLIST} \
