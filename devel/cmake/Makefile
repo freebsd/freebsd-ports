@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	cmake
-PORTVERSION=	1.4.5
+PORTVERSION=	1.4.7
 CATEGORIES=	devel
 MASTER_SITES=	http://www.cmake.org/
 DISTNAME=	CMake${PORTVERSION}-src-unix
