@@ -1,15 +1,13 @@
 # New ports collection makefile for:	xonix
-# Version required:	1.2
+# Version required:	1.4
 # Date created:		3 May 1995
 # Whom:			joerg
 #
-# $Id: Makefile,v 1.1.1.1 1995/05/03 23:33:08 joerg Exp $
+# $Id: Makefile,v 1.2 1995/05/04 12:02:55 asami Exp $
 #
 
-WRKSRC=		${WRKDIR}/xonix
-DISTNAME=	xonix-1.2
-# this game has not yet been published elsewhere
-MASTER_SITES=	ftp://freefall.cdrom.com/pub/FreeBSD/LOCAL_PORTS/
+DISTNAME=	xonix-1.4
+MASTER_SITES=	ftp://ftp.inf.tu-dresden.de/pub/people/wunsch/xonix/
 CATEGORIES+=	games
 
 MAINTAINER=	joerg@FreeBSD.org
