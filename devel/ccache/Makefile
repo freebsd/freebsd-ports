@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ccache
-PORTVERSION=	1.4
+PORTVERSION=	1.6
 CATEGORIES=	devel
 MASTER_SITES=	http://ccache.samba.org/ftp/ccache/
 
