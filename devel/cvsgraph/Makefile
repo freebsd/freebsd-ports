@@ -27,6 +27,7 @@ ALL_TARGET=	cvsgraph
 DOCDIR=		share/doc/${PORTNAME}
 DOCS=		ChangeLog LICENSE README
 EXAMPLES=	cvsgraphwrapper.php3 mkimage.php3
+NOT_FOR_ARCHS=	alpha amd64
 PLIST=		${WRKDIR}/pkg-plist
 USE_AUTOCONF=	yes
 GNU_CONFIGURE=	yes
