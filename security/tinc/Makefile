@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	tinc
-PORTVERSION=	1.0.1
+PORTVERSION=	1.0.2
 CATEGORIES=	security
 MASTER_SITES=	http://tinc.nl.linux.org/packages/ \
 		ftp://ftp.wiretapped.net/pub/security/network-security/tinc/ \
