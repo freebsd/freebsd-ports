@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	xchat2-plugins
 DISTNAME=	xchat-systray-integration-${PORTVERSION}-src
 
-MAINTAINER=	pav@oook.cz
+MAINTAINER=	pav@FreeBSD.org
 COMMENT=	Systray icon plugin for X-Chat
 
 RUN_DEPENDS=	xchat:${PORTSDIR}/irc/xchat2

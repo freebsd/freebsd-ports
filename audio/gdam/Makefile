@@ -11,7 +11,7 @@ CATEGORIES=	audio
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	pav@oook.cz
+MAINTAINER=	pav@FreeBSD.org
 COMMENT=	DJ mixing software suitable for live performances
 
 BUILD_DEPENDS=	${X11BASE}/include/xmms/plugin.h:${PORTSDIR}/multimedia/xmms

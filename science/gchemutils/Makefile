@@ -11,7 +11,7 @@ MASTER_SITES=	${MASTER_SITE_SAVANNAH}
 MASTER_SITE_SUBDIR=	${PORTNAME}/stable.pkg/${PORTVERSION}
 DISTNAME=	gnome-chemistry-utils-${PORTVERSION}
 
-MAINTAINER=	pav@oook.cz
+MAINTAINER=	pav@FreeBSD.org
 COMMENT=	C++ classes and Gtk2 widgets related to chemistry
 
 LIB_DEPENDS=	gtkglext-x11-1.0.2:${PORTSDIR}/x11-toolkits/gtkglext \

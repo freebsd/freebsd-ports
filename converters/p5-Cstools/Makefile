@@ -13,7 +13,7 @@ MASTER_SITES=	http://www.fi.muni.cz/~adelton/perl/ \
 MASTER_SITE_SUBDIR=	Cz
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	pav@oook.cz
+MAINTAINER=	pav@FreeBSD.org
 COMMENT=	Tools for dealing with Czech encodings in Perl
 
 PERL_CONFIGURE=	yes

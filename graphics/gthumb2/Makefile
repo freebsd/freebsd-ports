@@ -13,7 +13,7 @@ MASTER_SITE_SUBDIR=	sources/${PORTNAME:S/2$//}/2.1
 DISTNAME=	${PORTNAME:S/2$//}-${PORTVERSION}
 DIST_SUBDIR=	gnome2
 
-MAINTAINER=	pav@oook.cz
+MAINTAINER=	pav@FreeBSD.org
 COMMENT=	An image viewer and browser for the GNOME 2 environment
 
 CONFLICTS=	gthumb-*
