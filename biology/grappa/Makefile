@@ -1,0 +1,25 @@
+# New ports collection makefile for:	grappa
+# Date created:		30 June 2001
+# Whom:                 dbader@eece.unm.edu
+#
+# $FreeBSD$
+#
+
+PORTNAME=	grappa
+PORTVERSION=	1.0.2
+CATEGORIES=	biology
+MASTER_SITES=	http://www.cs.unm.edu/~moret/
+DISTNAME=	GRAPPA-1.02
+
+MAINTAINER=	dbader@eece.unm.edu
+
+BUILD_DEPENDS=	${LOCALBASE}/lib/libconcorde.a:${PORTSDIR}/math/concorde
+
+USE_GMAKE=	yes
+
+do-install:
+	${INSTALL_PROGRAM} ${WRKSRC}/grappa ${PREFIX}/bin
+	${LN} -sf ${PREFIX}/bin/grappa ${PREFIX}/bin/invdist
+	${LN} -sf ${PREFIX}/bin/grappa ${PREFIX}/bin/distmat
+
+.include <bsd.port.mk>

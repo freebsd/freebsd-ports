@@ -13,6 +13,7 @@
     SUBDIR += gaussian98
     SUBDIR += genpak
     SUBDIR += gperiodic
+    SUBDIR += grappa
     SUBDIR += hmmer
     SUBDIR += kinemage
     SUBDIR += molden
