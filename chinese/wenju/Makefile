@@ -12,7 +12,7 @@ CATEGORIES=	chinese
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	wenju
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	statue@freebsd.netlab.cse.yzu.edu.tw
 COMMENT=	Collection of writing tools in Chinese
 
 USE_GNOME=	gtk20

@@ -7,7 +7,7 @@
 
 CATEGORIES=	chinese
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	statue@freebsd.netlab.cse.yzu.edu.tw
 
 MASTERDIR=	${.CURDIR}/../../archivers/unrar
 

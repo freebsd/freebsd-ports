@@ -10,7 +10,7 @@ PORTVERSION=	1.4
 CATEGORIES=	chinese
 MASTER_SITES=	ftp://freebsd.sinica.edu.tw/pub/statue/gbfs/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	statue@freebsd.netlab.cse.yzu.edu.tw
 COMMENT=	Reads GB2312 filenames on Joliet and VFAT filesystems
 
 NO_PACKAGE=	"Different versions definitely cause crash"

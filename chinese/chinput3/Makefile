@@ -11,7 +11,7 @@ PORTREVISION=	1
 CATEGORIES=	chinese x11
 MASTER_SITES=	ftp://freebsd.sinica.edu.tw/pub/statue/chinput3/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	statue@freebsd.netlab.cse.yzu.edu.tw
 COMMENT=	Chinese GB2312,BIG5 code input server
 
 LATEST_LINK=	zh-chinput3

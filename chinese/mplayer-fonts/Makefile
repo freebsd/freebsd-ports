@@ -12,7 +12,7 @@ DISTFILES=	${SUBFONT_DISTNAME}.tar.bz2 \
 		mplayer-fontmap-chinese.tar.bz2
 EXTRACT_ONLY=	${SUBFONT_DISTNAME}.tar.bz2 mplayer-fontmap-chinese.tar.bz2
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	statue@freebsd.netlab.cse.yzu.edu.tw
 COMMENT=	A chinese font pack for the mplayer OSD and SUB
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/libiconv.so.3:${PORTSDIR}/converters/libiconv \
