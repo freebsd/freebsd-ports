@@ -26,7 +26,8 @@ MAN1=		make+.1
 .include <bsd.port.pre.mk>
 
 do-build:
-	cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} ./make+
+	cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} ./make+ \
+		prefix=${PREFIX} manprefix=${PREFIX}
 
 do-install:
 	cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} \
