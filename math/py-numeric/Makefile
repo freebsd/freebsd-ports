@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	numeric
-PORTVERSION=	20.3
+PORTVERSION=	21.0
 CATEGORIES=	math python
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	numpy
@@ -17,7 +17,6 @@ MAINTAINER=	tg@FreeBSD.org
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=yes
-PYSETUP=	setup_all.py
 
 DOCDIR=		${PREFIX}/share/doc/py-numeric
 EXAMPLEDIR=	${PREFIX}/share/examples/py-numeric

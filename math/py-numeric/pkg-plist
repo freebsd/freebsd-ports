@@ -1,83 +1,83 @@
-include/%%PYTHON_VERSION%%/Numeric/arrayobject.h
-include/%%PYTHON_VERSION%%/Numeric/f2c.h
-include/%%PYTHON_VERSION%%/Numeric/ranlib.h
-include/%%PYTHON_VERSION%%/Numeric/ufuncobject.h
-lib/%%PYTHON_VERSION%%/site-packages/FFT/FFT.py
-lib/%%PYTHON_VERSION%%/site-packages/FFT/FFT.pyc
-lib/%%PYTHON_VERSION%%/site-packages/FFT/FFT.pyo
-lib/%%PYTHON_VERSION%%/site-packages/FFT/__init__.py
-lib/%%PYTHON_VERSION%%/site-packages/FFT/__init__.pyc
-lib/%%PYTHON_VERSION%%/site-packages/FFT/__init__.pyo
-lib/%%PYTHON_VERSION%%/site-packages/FFT/fftpack.so
-lib/%%PYTHON_VERSION%%/site-packages/MA/MA.py
-lib/%%PYTHON_VERSION%%/site-packages/MA/MA.pyc
-lib/%%PYTHON_VERSION%%/site-packages/MA/MA.pyo
-lib/%%PYTHON_VERSION%%/site-packages/MA/MA_version.py
-lib/%%PYTHON_VERSION%%/site-packages/MA/MA_version.pyc
-lib/%%PYTHON_VERSION%%/site-packages/MA/MA_version.pyo
-lib/%%PYTHON_VERSION%%/site-packages/MA/__init__.py
-lib/%%PYTHON_VERSION%%/site-packages/MA/__init__.pyc
-lib/%%PYTHON_VERSION%%/site-packages/MA/__init__.pyo
-lib/%%PYTHON_VERSION%%/site-packages/Numeric.pth
-lib/%%PYTHON_VERSION%%/site-packages/Numeric/ArrayPrinter.py
-lib/%%PYTHON_VERSION%%/site-packages/Numeric/ArrayPrinter.pyc
-lib/%%PYTHON_VERSION%%/site-packages/Numeric/ArrayPrinter.pyo
-lib/%%PYTHON_VERSION%%/site-packages/Numeric/LinearAlgebra.py
-lib/%%PYTHON_VERSION%%/site-packages/Numeric/LinearAlgebra.pyc
-lib/%%PYTHON_VERSION%%/site-packages/Numeric/LinearAlgebra.pyo
-lib/%%PYTHON_VERSION%%/site-packages/Numeric/MLab.py
-lib/%%PYTHON_VERSION%%/site-packages/Numeric/MLab.pyc
-lib/%%PYTHON_VERSION%%/site-packages/Numeric/MLab.pyo
-lib/%%PYTHON_VERSION%%/site-packages/Numeric/Matrix.py
-lib/%%PYTHON_VERSION%%/site-packages/Numeric/Matrix.pyc
-lib/%%PYTHON_VERSION%%/site-packages/Numeric/Matrix.pyo
-lib/%%PYTHON_VERSION%%/site-packages/Numeric/Numeric.py
-lib/%%PYTHON_VERSION%%/site-packages/Numeric/Numeric.pyc
-lib/%%PYTHON_VERSION%%/site-packages/Numeric/Numeric.pyo
-lib/%%PYTHON_VERSION%%/site-packages/Numeric/Precision.py
-lib/%%PYTHON_VERSION%%/site-packages/Numeric/Precision.pyc
-lib/%%PYTHON_VERSION%%/site-packages/Numeric/Precision.pyo
-lib/%%PYTHON_VERSION%%/site-packages/Numeric/RandomArray.py
-lib/%%PYTHON_VERSION%%/site-packages/Numeric/RandomArray.pyc
-lib/%%PYTHON_VERSION%%/site-packages/Numeric/RandomArray.pyo
-lib/%%PYTHON_VERSION%%/site-packages/Numeric/UserArray.py
-lib/%%PYTHON_VERSION%%/site-packages/Numeric/UserArray.pyc
-lib/%%PYTHON_VERSION%%/site-packages/Numeric/UserArray.pyo
-lib/%%PYTHON_VERSION%%/site-packages/Numeric/_numpy.so
-lib/%%PYTHON_VERSION%%/site-packages/Numeric/arrayfns.so
-lib/%%PYTHON_VERSION%%/site-packages/Numeric/lapack_lite.so
-lib/%%PYTHON_VERSION%%/site-packages/Numeric/multiarray.so
-lib/%%PYTHON_VERSION%%/site-packages/Numeric/ranlib.so
-lib/%%PYTHON_VERSION%%/site-packages/Numeric/umath.so
-lib/%%PYTHON_VERSION%%/site-packages/Numeric/numeric_version.py
-lib/%%PYTHON_VERSION%%/site-packages/Numeric/numeric_version.pyc
-lib/%%PYTHON_VERSION%%/site-packages/Numeric/numeric_version.pyo
-lib/%%PYTHON_VERSION%%/site-packages/PropertiedClasses/Properties.py
-lib/%%PYTHON_VERSION%%/site-packages/PropertiedClasses/Properties.pyc
-lib/%%PYTHON_VERSION%%/site-packages/PropertiedClasses/Properties.pyo
-lib/%%PYTHON_VERSION%%/site-packages/PropertiedClasses/Properties_version.py
-lib/%%PYTHON_VERSION%%/site-packages/PropertiedClasses/Properties_version.pyc
-lib/%%PYTHON_VERSION%%/site-packages/PropertiedClasses/Properties_version.pyo
-lib/%%PYTHON_VERSION%%/site-packages/PropertiedClasses/__init__.py
-lib/%%PYTHON_VERSION%%/site-packages/PropertiedClasses/__init__.pyc
-lib/%%PYTHON_VERSION%%/site-packages/PropertiedClasses/__init__.pyo
-lib/%%PYTHON_VERSION%%/site-packages/RNG/RNG.so
-lib/%%PYTHON_VERSION%%/site-packages/RNG/Statistics.py
-lib/%%PYTHON_VERSION%%/site-packages/RNG/Statistics.pyc
-lib/%%PYTHON_VERSION%%/site-packages/RNG/Statistics.pyo
-lib/%%PYTHON_VERSION%%/site-packages/RNG/__init__.py
-lib/%%PYTHON_VERSION%%/site-packages/RNG/__init__.pyc
-lib/%%PYTHON_VERSION%%/site-packages/RNG/__init__.pyo
-lib/%%PYTHON_VERSION%%/site-packages/kinds/__init__.py
-lib/%%PYTHON_VERSION%%/site-packages/kinds/__init__.pyc
-lib/%%PYTHON_VERSION%%/site-packages/kinds/__init__.pyo
-lib/%%PYTHON_VERSION%%/site-packages/kinds/_kinds.so
-lib/%%PYTHON_VERSION%%/site-packages/kinds/kinds.py
-lib/%%PYTHON_VERSION%%/site-packages/kinds/kinds.pyc
-lib/%%PYTHON_VERSION%%/site-packages/kinds/kinds.pyo
-lib/%%PYTHON_VERSION%%/site-packages/kinds/kinds_version.py
-lib/%%PYTHON_VERSION%%/site-packages/kinds/kinds_version.pyc
-lib/%%PYTHON_VERSION%%/site-packages/kinds/kinds_version.pyo
+%%PYTHON_INCLUDEDIR%%/Numeric/arrayobject.h
+%%PYTHON_INCLUDEDIR%%/Numeric/f2c.h
+%%PYTHON_INCLUDEDIR%%/Numeric/ranlib.h
+%%PYTHON_INCLUDEDIR%%/Numeric/ufuncobject.h
+%%PYTHON_SITELIBDIR%%/Numeric/FFT/FFT.py
+%%PYTHON_SITELIBDIR%%/Numeric/FFT/FFT.pyc
+%%PYTHON_SITELIBDIR%%/Numeric/FFT/FFT.pyo
+%%PYTHON_SITELIBDIR%%/Numeric/FFT/__init__.py
+%%PYTHON_SITELIBDIR%%/Numeric/FFT/__init__.pyc
+%%PYTHON_SITELIBDIR%%/Numeric/FFT/__init__.pyo
+%%PYTHON_SITELIBDIR%%/Numeric/FFT/fftpack.so
+%%PYTHON_SITELIBDIR%%/Numeric/MA/MA.py
+%%PYTHON_SITELIBDIR%%/Numeric/MA/MA.pyc
+%%PYTHON_SITELIBDIR%%/Numeric/MA/MA.pyo
+%%PYTHON_SITELIBDIR%%/Numeric/MA/MA_version.py
+%%PYTHON_SITELIBDIR%%/Numeric/MA/MA_version.pyc
+%%PYTHON_SITELIBDIR%%/Numeric/MA/MA_version.pyo
+%%PYTHON_SITELIBDIR%%/Numeric/MA/__init__.py
+%%PYTHON_SITELIBDIR%%/Numeric/MA/__init__.pyc
+%%PYTHON_SITELIBDIR%%/Numeric/MA/__init__.pyo
+%%PYTHON_SITELIBDIR%%/Numeric.pth
+%%PYTHON_SITELIBDIR%%/Numeric/ArrayPrinter.py
+%%PYTHON_SITELIBDIR%%/Numeric/ArrayPrinter.pyc
+%%PYTHON_SITELIBDIR%%/Numeric/ArrayPrinter.pyo
+%%PYTHON_SITELIBDIR%%/Numeric/LinearAlgebra.py
+%%PYTHON_SITELIBDIR%%/Numeric/LinearAlgebra.pyc
+%%PYTHON_SITELIBDIR%%/Numeric/LinearAlgebra.pyo
+%%PYTHON_SITELIBDIR%%/Numeric/MLab.py
+%%PYTHON_SITELIBDIR%%/Numeric/MLab.pyc
+%%PYTHON_SITELIBDIR%%/Numeric/MLab.pyo
+%%PYTHON_SITELIBDIR%%/Numeric/Matrix.py
+%%PYTHON_SITELIBDIR%%/Numeric/Matrix.pyc
+%%PYTHON_SITELIBDIR%%/Numeric/Matrix.pyo
+%%PYTHON_SITELIBDIR%%/Numeric/Numeric.py
+%%PYTHON_SITELIBDIR%%/Numeric/Numeric.pyc
+%%PYTHON_SITELIBDIR%%/Numeric/Numeric.pyo
+%%PYTHON_SITELIBDIR%%/Numeric/Precision.py
+%%PYTHON_SITELIBDIR%%/Numeric/Precision.pyc
+%%PYTHON_SITELIBDIR%%/Numeric/Precision.pyo
+%%PYTHON_SITELIBDIR%%/Numeric/RandomArray.py
+%%PYTHON_SITELIBDIR%%/Numeric/RandomArray.pyc
+%%PYTHON_SITELIBDIR%%/Numeric/RandomArray.pyo
+%%PYTHON_SITELIBDIR%%/Numeric/UserArray.py
+%%PYTHON_SITELIBDIR%%/Numeric/UserArray.pyc
+%%PYTHON_SITELIBDIR%%/Numeric/UserArray.pyo
+%%PYTHON_SITELIBDIR%%/Numeric/_numpy.so
+%%PYTHON_SITELIBDIR%%/Numeric/arrayfns.so
+%%PYTHON_SITELIBDIR%%/Numeric/lapack_lite.so
+%%PYTHON_SITELIBDIR%%/Numeric/multiarray.so
+%%PYTHON_SITELIBDIR%%/Numeric/ranlib.so
+%%PYTHON_SITELIBDIR%%/Numeric/umath.so
+%%PYTHON_SITELIBDIR%%/Numeric/numeric_version.py
+%%PYTHON_SITELIBDIR%%/Numeric/numeric_version.pyc
+%%PYTHON_SITELIBDIR%%/Numeric/numeric_version.pyo
+%%PYTHON_SITELIBDIR%%/Numeric/PropertiedClasses/Properties.py
+%%PYTHON_SITELIBDIR%%/Numeric/PropertiedClasses/Properties.pyc
+%%PYTHON_SITELIBDIR%%/Numeric/PropertiedClasses/Properties.pyo
+%%PYTHON_SITELIBDIR%%/Numeric/PropertiedClasses/Properties_version.py
+%%PYTHON_SITELIBDIR%%/Numeric/PropertiedClasses/Properties_version.pyc
+%%PYTHON_SITELIBDIR%%/Numeric/PropertiedClasses/Properties_version.pyo
+%%PYTHON_SITELIBDIR%%/Numeric/PropertiedClasses/__init__.py
+%%PYTHON_SITELIBDIR%%/Numeric/PropertiedClasses/__init__.pyc
+%%PYTHON_SITELIBDIR%%/Numeric/PropertiedClasses/__init__.pyo
+%%PYTHON_SITELIBDIR%%/Numeric/RNG/RNG.so
+%%PYTHON_SITELIBDIR%%/Numeric/RNG/Statistics.py
+%%PYTHON_SITELIBDIR%%/Numeric/RNG/Statistics.pyc
+%%PYTHON_SITELIBDIR%%/Numeric/RNG/Statistics.pyo
+%%PYTHON_SITELIBDIR%%/Numeric/RNG/__init__.py
+%%PYTHON_SITELIBDIR%%/Numeric/RNG/__init__.pyc
+%%PYTHON_SITELIBDIR%%/Numeric/RNG/__init__.pyo
+%%PYTHON_SITELIBDIR%%/Numeric/kinds/__init__.py
+%%PYTHON_SITELIBDIR%%/Numeric/kinds/__init__.pyc
+%%PYTHON_SITELIBDIR%%/Numeric/kinds/__init__.pyo
+%%PYTHON_SITELIBDIR%%/Numeric/kinds/_kinds.so
+%%PYTHON_SITELIBDIR%%/Numeric/kinds/kinds.py
+%%PYTHON_SITELIBDIR%%/Numeric/kinds/kinds.pyc
+%%PYTHON_SITELIBDIR%%/Numeric/kinds/kinds.pyo
+%%PYTHON_SITELIBDIR%%/Numeric/kinds/kinds_version.py
+%%PYTHON_SITELIBDIR%%/Numeric/kinds/kinds_version.pyc
+%%PYTHON_SITELIBDIR%%/Numeric/kinds/kinds_version.pyo
 @comment share/doc/py-numeric/numpy.pdf
 share/examples/py-numeric/NumTut/__init__.py
 share/examples/py-numeric/NumTut/greece.pik
@@ -90,10 +90,10 @@ share/examples/py-numeric/sieve.py
 @dirrm share/examples/py-numeric/NumTut
 @dirrm share/examples/py-numeric
 @comment @dirrm share/doc/py-numeric
-@dirrm lib/%%PYTHON_VERSION%%/site-packages/kinds
-@dirrm lib/%%PYTHON_VERSION%%/site-packages/RNG
-@dirrm lib/%%PYTHON_VERSION%%/site-packages/PropertiedClasses
-@dirrm lib/%%PYTHON_VERSION%%/site-packages/Numeric
-@dirrm lib/%%PYTHON_VERSION%%/site-packages/MA
-@dirrm lib/%%PYTHON_VERSION%%/site-packages/FFT
-@dirrm include/%%PYTHON_VERSION%%/Numeric
+@dirrm %%PYTHON_SITELIBDIR%%/Numeric/kinds
+@dirrm %%PYTHON_SITELIBDIR%%/Numeric/RNG
+@dirrm %%PYTHON_SITELIBDIR%%/Numeric/PropertiedClasses
+@dirrm %%PYTHON_SITELIBDIR%%/Numeric/MA
+@dirrm %%PYTHON_SITELIBDIR%%/Numeric/FFT
+@dirrm %%PYTHON_SITELIBDIR%%/Numeric
+@dirrm %%PYTHON_INCLUDEDIR%%/Numeric
