@@ -1,19 +1,20 @@
 # New ports collection makefile for:	tidy
-# Version required:	0.1.98.9
+# Version required:	0.7.99.1
 # Date created:		27 Oct 1998
 # Whom:			Abel Chow <achow@transoft.net>
 #
-# $Id: Makefile,v 1.6 1999/02/22 04:37:23 steve Exp $
+# $Id: Makefile,v 1.7 1999/04/26 07:24:09 mharo Exp $
 #
 
-DISTNAME=	tidy15apr99
-PKGNAME=	tidy-0.4.99.2
+DISTNAME=	tidy2jul99
+PKGNAME=	tidy-0.7.99.1
 CATEGORIES=	www
 MASTER_SITES=	http://www.w3.org/People/Raggett/
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	saken@hotel.rmta.org
 
+WRKSRC=		${WRKDIR}/tidy
 ALL_TARGET=	tidy
 
 DOCFILES=	Overview.html tidy.gif release-notes.html grid.gif config.txt
