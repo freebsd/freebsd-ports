@@ -10,9 +10,7 @@ PORTNAME=	gkrellmfmonitor
 PORTVERSION=	0.3
 PORTREVISION=	1
 CATEGORIES=	misc
-# the orignal master site is down
-# MASTER_SITES=	http://alice.nc.huji.ac.il/~arsen/
-MASTER_SITES=	http://www.comimpex.cz/support/LINUX/Programs/monitor/gkrellm/
+MASTER_SITES=	# none
 DISTNAME=	fmonitor-${PORTVERSION}
 EXTRACT_SUFX=	.tgz
 
