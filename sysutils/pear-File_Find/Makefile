@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	File_Find
-PORTVERSION=	0.3.0
+PORTVERSION=	0.3.1
 CATEGORIES=	sysutils www pear
 
 MAINTAINER=	antonio@php.net
@@ -18,7 +18,7 @@ RUN_DEPENDS=	${BUILD_DEPENDS}
 CATEGORY=	File
 FILES=		Find.php
 TESTS=		setup.php 01glob.phpt 02maptree.phpt 03maptreemultiple.phpt \
-		04search.phpt bug2773.phpt
+		04search.phpt 05search_inside.phpt bug2773.phpt
 
 .include <bsd.port.pre.mk>
 .include "${PORTSDIR}/devel/pear-PEAR/Makefile.common"
