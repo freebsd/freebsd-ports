@@ -44,8 +44,8 @@ pre-install:
 .else
 	@${SETENV} PKG_PREFIX=${PREFIX} ${SH} ${PKGDIR}/REQ ${PKGNAME} INSTALL
 .endif
-	@${TAR} --exclude 'texmf/tex/latex/base/*' -C ${PREFIX}/share \
-	  -zxf ${DISTDIR}/${DIST_SUBDIR}/texmflib-7.3.tar.gz
+	@${TAR} --exclude 'texmf/tex/latex/base/*' --exclude 'texmf/dvips/*' \
+	  -C ${PREFIX}/share -zxf ${DISTDIR}/${DIST_SUBDIR}/texmflib-7.3.tar.gz
 	#@${RMDIR} ${PREFIX}/share/texmf/tex/generic/images ${PREFIX}/share/texmf/bibtex/bib/misc
 
 post-install:
