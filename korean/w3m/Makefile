@@ -11,6 +11,8 @@ CATEGORIES=	korean www
 
 MAINTAINER=     cjh@FreeBSD.org
 
+BROKEN=		"Does not patch"
+
 EXTRA_PATCHES=	${.CURDIR}/files/w3m-0.1.11-hangul.patch \
 		${.CURDIR}/files/patch-*
 
