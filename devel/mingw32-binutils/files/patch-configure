@@ -1,6 +1,6 @@
---- configure.orig	Mon Dec 23 09:17:24 2002
-+++ configure	Mon Dec 23 09:17:42 2002
-@@ -848,7 +848,7 @@
+--- configure.orig	Wed Mar  3 17:17:27 2004
++++ configure	Wed Mar  3 17:17:50 2004
+@@ -2070,7 +2070,7 @@
  # Generate a default definition for YACC.  This is used if the makefile can't
  # locate bison or byacc in objdir.
  
