@@ -1,0 +1,11 @@
+--- src/mozilla/Makefile.in.orig	Mon Apr  7 23:35:27 2003
++++ src/mozilla/Makefile.in	Mon Apr  7 23:35:37 2003
+@@ -277,7 +277,7 @@
+ 	$(GALEON_DEPENDENCY_CFLAGS) \
+ 	-DLIB_DIR=\"$(pkglibdir)\" \
+ 	-DSHARE_DIR=\"$(pkgdatadir)\" \
+-	-DNEW_H=\<new\>
++	-include $(MOZILLA_INCLUDE_ROOT)/mozilla-config.h
+ 
+ 
+ libgaleon_xpcom_la_LIBADD = $(GALEON_XPCOM_DEPENDENCY_LIBS)	\

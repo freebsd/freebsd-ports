@@ -1,13 +1,19 @@
-
-$FreeBSD$
-
---- configure.orig	Thu Apr 25 21:02:26 2002
-+++ configure	Thu Apr 25 21:03:14 2002
-@@ -5434,6 +5434,7 @@
+--- configure.orig	Mon Mar 17 15:31:41 2003
++++ configure	Mon Apr  7 23:32:37 2003
+@@ -7950,6 +7950,7 @@
  
  # This can be used to rebuild libtool when needed
  LIBTOOL_DEPS="$ac_aux_dir/ltmain.sh"
 +$ac_aux_dir/ltconfig $LIBTOOL_DEPS
  
  # Always use our own libtool.
- LIBTOOL='$(SHELL) $(top_builddir)/libtool' 
+ LIBTOOL='$(SHELL) $(top_builddir)/libtool'
+@@ -12535,7 +12536,7 @@
+ 		    elif test "$_moz_snap" = "1.3b" ; then
+ 			MOZILLA_SNAPSHOT=5
+ 		    elif test "$_moz_snap" = "trunk" ; then
+-			MOZILLA_SNAPSHOT=6
++			MOZILLA_SNAPSHOT=7
+ 		    else
+ 			MOZILLA_SNAPSHOT=3
+ 		    fi
