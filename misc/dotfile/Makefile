@@ -3,7 +3,7 @@
 # Date created:      11/12/96
 # Whom:              oly@world.std.com
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1997/01/05 22:54:44 obrien Exp $
 #
 
 DISTNAME=	dotfile-2.0b5
@@ -20,5 +20,8 @@ MAN1=		dotfile.1
 
 do-build:
 	@${DO_NADA}
+
+post-install:
+	@${CAT} ${PKGDIR}/MESSAGE
 	
 .include <bsd.port.mk>
