@@ -1,0 +1,18 @@
+$ cargo cbuild
+Error: CliError { error: Some(failed to load manifest for workspace member `generic/threadshare`
+
+Caused by:
+    0: failed to parse manifest at `generic/threadshare/Cargo.toml`
+    1: key `tag` is ignored for dependency (tokio).), exit_code: 101 }
+
+--- generic/threadshare/Cargo.toml.orig	2021-08-31 05:49:18 UTC
++++ generic/threadshare/Cargo.toml
+@@ -15,7 +15,7 @@ gst-net = { package = "gstreamer-net", version = "0.17
+ gst-rtp = { package = "gstreamer-rtp", version = "0.17" }
+ pin-project = "1"
+ once_cell = "1"
+-tokio = { git = "https://github.com/fengalin/tokio", tag = "tokio-0.2.13-throttling", features = ["io-util", "macros", "rt-core", "sync", "stream", "time", "tcp", "udp", "rt-util"] }
++tokio = { git = "https://github.com/fengalin/tokio", features = ["io-util", "macros", "rt-core", "sync", "stream", "time", "tcp", "udp", "rt-util"] }
+ futures = { version = "0.3", features = ["thread-pool"] }
+ rand = "0.8"
+ socket2 = {features = ["all"], version = "0.4"}
