@@ -3,7 +3,7 @@
 # Date created:         November, 1997
 # Whom:                 Paul Traina <pst@freebsd.org>
 #
-# $Id: Makefile,v 1.11 1999/02/02 16:24:38 dirk Exp $
+# $Id: Makefile,v 1.12 1999/04/24 03:07:36 nectar Exp $
 #
 # *WARNING* write access to ${PREFIX} is required DURING build because the
 # make "all" target actually installs the gnu tools before building the
@@ -20,6 +20,8 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 		binutils-2.7.tar.gz gdb-4.16.tar.gz gcc-2.7.2.2.tar.gz
 
 MAINTAINER=     ports@freebsd.org
+
+BROKEN=		"build touches stuff outside of build directory"
 
 # install things in ${LOCALBASE}/pilot to avoid conflicts
 PREFIX=		${LOCALBASE}/pilot
