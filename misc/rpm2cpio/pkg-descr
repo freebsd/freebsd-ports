@@ -1,0 +1,10 @@
+Convert .rpm files for extraction with /usr/bin/cpio
+
+Quoting the author:
+
+why does the world need another rpm2cpio?  because the existing one
+won't build unless you have half a ton of things that aren't really
+required for it, since it uses the same library used to extract RPM's.
+in particular, it won't build on the HPsUX box i'm on.
+
+(this one needs just perl)
