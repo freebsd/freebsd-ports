@@ -6,7 +6,8 @@
 # $FreeBSD$
 #
 
-DISTNAME=	postfix-19990601
+DISTNAME=	postfix-19990906-pl02
+PKGNAME=	postfix-19990906.02
 CATEGORIES=	mail
 MASTER_SITES=	ftp://ftp.merit.edu/postfix/official/ \
 		ftp://ftp.snoopy.net/pub/mirrors/postfix/official/ \
@@ -53,7 +54,7 @@ do-install:
 	@${INSTALL} -C -o root -g wheel -m 755 ${WRKSRC}/conf/postfix-script-sgid \
 		${PREFIX}/etc/postfix/postfix-script
 	@${MKDIR} -m 0755 ${PREFIX}/libexec/postfix
-	@for f in bounce cleanup error fsstone local master pickup pipe qmgr \
+	@for f in bounce cleanup error local master pickup pipe qmgr \
 		 showq smtp smtpd trivial-rewrite ; do \
 		${INSTALL} -C -o root -g wheel -m 0755 ${WRKSRC}/libexec/$$f \
 			${PREFIX}/libexec/postfix/$$f ;\
