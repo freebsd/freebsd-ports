@@ -19,5 +19,12 @@ USE_KDELIBS_VER=	3
 USE_GMAKE=		yes
 CONFIGURE_TARGET=
 CONFIGURE_ARGS+=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
+USE_REINPLACE=		yes
+
+post-patch:
+	${REINPLACE_CMD} -e "s,-O0,${CFLAGS},g;s,NOOPT_,,g; \
+		s,-pedantic ,,g;s,-pedantic-errors,,g" ${WRKSRC}/configure
+	${FIND} ${WRKSRC} -name Makefile.in | ${XARGS} \
+		${REINPLACE_CMD} -e "s,NOOPT_,,g;s,FLAGS@,FLAGS@ -fPIC,"
 
 .include <bsd.port.mk>
