@@ -3,7 +3,7 @@
 # Date created:		21 January 1998
 # Whom:			giffunip@asme.org
 #
-# $Id: Makefile,v 1.1.1.1 1998/05/26 04:04:11 mph Exp $
+# $Id: Makefile,v 1.2 1998/10/12 04:05:33 jseger Exp $
 #
 
 DISTNAME=	rayshade.4.0
@@ -18,6 +18,7 @@ MAINTAINER=     ports@FreeBSD.ORG
 BUILD_DEPENDS=	$(LOCALBASE)/lib/librle.a:${PORTSDIR}/graphics/urt
 
 BROKEN_ELF=	yes
+BROKEN=		build
 
 HAS_CONFIGURE=	yes
 CONFIGURE_SCRIPT=	Configure
