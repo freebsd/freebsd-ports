@@ -4,7 +4,7 @@
 # Date created:         Sat June 29, 1996
 # Whom:                 David O'Brien (obrien@cs.ucdavis.edu)
 #
-# $Id: Makefile,v 1.28 1998/09/06 06:19:01 obrien Exp $
+# $Id: Makefile,v 1.29 1998/09/25 10:07:45 asami Exp $
 #
 
 DISTNAME=	vim-5.3
@@ -38,7 +38,7 @@ MAN1=		vim.1 xxd.1 ectags.1
 REQUIRES_MOTIF=	yes
 MAKE_FLAGS:=	CONF_OPT_GUI="--enable-gui=motif" MOTIFHOME=${X11BASE} ${MAKE_FLAGS}
 .else
-MAKE_FLAGS:=	CONF_OPT_GUI="--enable-gui=yes" ${MAKE_FLAGS}
+MAKE_FLAGS:=	CONF_OPT_GUI="--enable-gui=athena" ${MAKE_FLAGS}
 .endif
 
 .if defined(BATCH)
