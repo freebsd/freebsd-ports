@@ -1952,6 +1952,7 @@ gdrdao		ports/audio/gdrdao
 gdtclft		ports/graphics/gdtclft
 geda		ports/cad/geda
 geda-symbols	ports/cad/geda-symbols
+geda-symcheck	ports/cad/geda-symcheck
 gedit		ports/editors/gedit
 gedit2		ports/editors/gedit2
 geekcode	ports/misc/geekcode
