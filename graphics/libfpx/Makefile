@@ -7,6 +7,7 @@
 
 PORTNAME=	libfpx
 PORTVERSION=	1.2.0.4
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	http://imagemagick.sourceforge.net/http/delegates/ \
 		ftp://ftp.yggdrasil.com/mirrors/site/ftp.simplesystems.org/pub/%SUBDIR%/ \
@@ -31,7 +32,6 @@ MAINTAINER=	mi@aldan.algebra.com
 
 LIB_DEPENDS=	jpeg:${PORTSDIR}/graphics/jpeg
 MAKE_ARGS+=	-j2
-#CFLAGS+=	-DHAVE_WCHAR_H=1 -DHAVE_DLFCN_H=1
 USE_REINPLACE=	yes
 REINPLACE_ARGS=	-i ""
 

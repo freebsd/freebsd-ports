@@ -24,8 +24,8 @@ CPPS	+=	${OLESS:S/^/${.CURDIR}\/oless\//} ${JPGS}
 
 SRCS	=	${CPPS:T}
 
-CXXFLAGS+=	-fno-rtti -fno-exceptions
-LDADD	+=	-L${LOCALBASE}/lib -ljpeg
+CXXFLAGS+=	-fno-rtti -fno-exceptions -DHAVE_WCHAR_H=1 -DHAVE_DLFCN_H=1
+LDADD	+=	-L${LOCALBASE}/lib -ljpeg -lstdc++
 
 .PATH: ${CPPS:H}
 
