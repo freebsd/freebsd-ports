@@ -8,8 +8,7 @@
 PORTNAME=	gtkportscan
 PORTVERSION=	1.2
 CATEGORIES=	security
-#MASTER_SITES=	http://armageddon.splorg.org/gtkportscan/
-MASTER_SITES=	http://people.FreeBSD.org/~cpiazza/distfiles/
+MASTER_SITES=	ftp://ftp.FreeBSD.org/pub/FreeBSD/local-distfiles/cpiazza/	
 
 MAINTAINER=	cpiazza@FreeBSD.org
 
