@@ -18,7 +18,7 @@ EXTRACT_ONLY=	xmcd-3.3.0.tar.gz
 MAINTAINER=	eischen@vigrid.com
 COMMENT=	Motif CD player
 
-BUILD_DEPENDS+= flac:${PORTSDIR}/audio/flac
+BUILD_DEPENDS+=	flac:${PORTSDIR}/audio/flac
 LIB_DEPENDS+=	vorbis.3:${PORTSDIR}/audio/libvorbis
 RUN_DEPENDS+=	lame:${PORTSDIR}/audio/lame
 
