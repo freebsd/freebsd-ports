@@ -7,8 +7,7 @@
 #
 
 PORTNAME=	gretl
-PORTVERSION=	1.2.9
-PORTREVISION=	1
+PORTVERSION=	1.3.0
 CATEGORIES=	misc
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -25,7 +24,6 @@ USE_BZIP2=	yes
 USE_X_PREFIX=	yes
 WANT_GNOME=	yes
 USE_GNOME=	gnometarget gtk20 libxml2
-USE_REINPLACE=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
@@ -34,7 +32,7 @@ CONFIGURE_ARGS=	--enable-static --enable-shared --with-gmake
 ALL_TARGET=	# empty
 INSTALLS_SHLIB=	yes
 
-MAN1=	gretl.1 gretl-config.1
+MAN1=		gretl.1 gretl-config.1
 
 .include <bsd.port.pre.mk>
 
@@ -45,12 +43,11 @@ BROKEN=		"math/lapack appears to be broken on alpha"
 .if ${HAVE_GNOME:Mlibgnomeui}!=""
 PKGNAMESUFFIX=	-gnome
 USE_GNOME+=	gnomeprefix gtksourceview libgnomeui
+INSTALLS_OMF=	yes
+GCONF_SCHEMAS=	gretl.schemas
 DATADIR=	${PREFIX}/share/gnome/${PORTNAME}
 .else
 CONFIGURE_ARGS+=	--without-gnome --without-gtksourceview
 .endif
-
-post-patch:
-	@${REINPLACE_CMD} -e 's|libpng"|libpng12"|g' ${WRKSRC}/configure
 
 .include <bsd.port.post.mk>

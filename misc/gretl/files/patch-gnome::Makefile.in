@@ -1,7 +1,7 @@
---- gnome/Makefile.in.orig	Tue Aug 27 03:11:56 2002
-+++ gnome/Makefile.in	Mon Oct 21 08:27:48 2002
-@@ -2,10 +2,10 @@
- docdir = ../doc
+--- gnome/Makefile.in.orig	Fri Nov  5 05:16:18 2004
++++ gnome/Makefile.in	Thu Nov 18 20:14:05 2004
+@@ -4,10 +4,10 @@
+ docdir = $(topsrc)/doc
  
  INSTALL = @INSTALL@
 -gnome_prefix = @gnome_prefix@
@@ -13,7 +13,7 @@
  
  GCONFTOOL = @GCONFTOOL@
  GCONF_SCHEMA_CONFIG_SOURCE = @GCONF_SCHEMA_CONFIG_SOURCE@
-@@ -24,11 +24,11 @@
+@@ -26,11 +26,11 @@
    install_help = install-help-1
  endif
  
@@ -30,12 +30,12 @@
  
  install: install-images install-misc install-help-dirs $(install_help) $(install_schemas)
  
-@@ -58,7 +58,7 @@
- 	  cat $$f | sed s+fileref=\"figures/[^\"]*+\&.png+g > \
- 	  $(ghelpdir)/C/chapters/`basename $$f` ; done
- 	$(INSTALL_DATA) $(docdir)/figures/*.png $(ghelpdir)/C/figures
+@@ -73,7 +73,7 @@
+ 	  $(ghelpdir)/it/chapters/`basename $$f` ; done
+ 	$(INSTALL_DATA) $(docdir)/figures/*.png $(ghelpdir)/it/figures
+ 	$(INSTALL_DATA) $(docdir)/figures_it/*.png $(ghelpdir)/it/figures
 -	make -C $(omfdir) install
 +	$(MAKE) -C $(omfdir) install
  
  install-help-1:
- 	$(INSTALL_DATA) topic.dat $(ghelpdir)/C
+ 	-$(INSTALL_DATA) $(topsrc)/gnome/topic.dat $(ghelpdir)/C

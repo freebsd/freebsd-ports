@@ -1,5 +1,5 @@
---- plugin/Makefile.in.orig	Sun Oct 19 23:15:51 2003
-+++ plugin/Makefile.in	Sun Oct 26 10:24:36 2003
+--- plugin/Makefile.in.orig	Wed Oct 20 00:55:16 2004
++++ plugin/Makefile.in	Thu Nov 18 20:24:54 2004
 @@ -8,6 +8,10 @@
  INSTALL = @INSTALL@
  LN = @LN_S@
@@ -11,24 +11,23 @@
  have_gtk = @have_gtk@
  have_gmp = @have_gmp@
  
-@@ -35,8 +39,8 @@
- override CFLAGS += -I.. -DHAVE_CONFIG_H
+@@ -96,7 +100,7 @@
+ URCDATA = $(topsrc)/plugin/data/urcdata.gz
  
- LIBTOOL = ../libtool
--COMPILE = $(LIBTOOL) --mode=compile $(CC) -c $(CFLAGS) 
--LINK = $(LIBTOOL) --mode=link $(CC) -module -avoid-version -rpath $(plugindir)
-+COMPILE = $(LIBTOOL) --mode=compile $(CC) -c $(CFLAGS) $(CPPFLAGS)
-+LINK = $(LIBTOOL) --mode=link $(CC) -module -avoid-version -rpath $(plugindir) $(LDFLAGS)
+ override CFLAGS += $(GRETLINC) $(GTK_CFLAGS) $(GMP_CFLAGS) $(XML_CFLAGS) \
+-	$(LIBOLE2_CFLAGS) $(AUDIO_CFLAGS) -I. $(GMPDEF)
++	$(LIBOLE2_CFLAGS) $(AUDIO_CFLAGS) -I. $(GMPDEF) $(CPPFLAGS)
  
- GRETLINC = -I$(topsrc)/lib/src
- GRETLLIB = ../lib/libgretl-1.0.la
-@@ -136,11 +140,11 @@
+ %.lo: %.c
+ 	$(COMPILE) $< 
+@@ -181,12 +185,12 @@
  .PHONY: 
  
- install: $(GRETLLIB) $(PLUGINS) installdirs
+ install: $(GRETLLIB) $(PLUGINS) $(URCDATA) installdirs 
 -	$(LIBTOOL) --mode=install $(INSTALL_PROGRAM) \
 +	$(LIBTOOL) --mode=install $(INSTALL_DATA) \
  	$(PLUGINS) $(plugindir)
+ 	$(INSTALL_DATA) $(URCDATA) $(plugindir)/data
  
  install-strip: $(GRETLLIB) $(PLUGINS) installdirs
 -	$(LIBTOOL) --mode=install $(INSTALL_PROGRAM) -s \
