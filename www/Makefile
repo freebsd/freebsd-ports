@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.92 1998/08/24 02:11:57 steve Exp $
+# $Id: Makefile,v 1.93 1998/08/27 16:02:03 rse Exp $
 #
 
     SUBDIR += Mosaic         # requires Motif
@@ -54,6 +54,7 @@
     SUBDIR += p5-HTML-QuickCheck
     SUBDIR += p5-HTML-Stream
     SUBDIR += p5-HTTPD-Tools
+    SUBDIR += p5-ParallelUA
     SUBDIR += p5-WWW-Search
     SUBDIR += p5-libwww
     SUBDIR += squid11
