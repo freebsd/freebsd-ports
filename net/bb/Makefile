@@ -3,7 +3,7 @@
 # Date created:         So  17 Nov 1996 16:59:23 MET
 # Whom:                 Andreas Klemm <andreas@klemm.gtn.com>
 #
-# $Id: Makefile,v 1.10 1997/01/20 11:46:00 andreas Exp $
+# $Id: Makefile,v 1.11 1997/01/23 22:05:43 andreas Exp $
 #
 
 DISTNAME=	bb
@@ -126,9 +126,9 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/www/logs/later \
 				${PREFIX}/${DISTNAME}/www/logs/later
 	@${RM} -f ${PREFIX}/www/data/bb
-	@ln -s ${PREFIX}/${DISTNAME}/www ${PREFIX}/www/data/bb
-	@ln -s bb.html ${PREFIX}/${DISTNAME}/www/index.html
-	@ln -s ${PREFIX}/${DISTNAME}/bin/bb-page.sh ${PREFIX}/www/cgi-bin
+	@ln -sf ${PREFIX}/${DISTNAME}/www ${PREFIX}/www/data/bb
+	@ln -sf bb.html ${PREFIX}/${DISTNAME}/www/index.html
+	@ln -sf ${PREFIX}/${DISTNAME}/bin/bb-page.sh ${PREFIX}/www/cgi-bin
 	@echo ""
 	@echo "================================================================"
 	@echo "==== Configuration Notes:                                    ==="
