@@ -1,18 +1,17 @@
 # New ports collection makefile for:	uwatch
 # Date created:		3 November 1999
-# Whom:			James Howard <howardjp@wam.umd.edu>
+# Whom:			James Howard <ports@vocito.com>
 #
 # $FreeBSD$
 #
 
 PORTNAME=	uwatch
-PORTVERSION=	1.2
+PORTVERSION=	1.3
 CATEGORIES=	sysutils
-MASTER_SITES=	ftp://ftp.wam.umd.edu/pub/howardjp/software/uwatch/ \
-		http://www.wam.umd.edu/~howardjp/software/uwatch/ \
-		ftp://dragon.ham.muohio.edu/pub/howardjp/software/uwatch/
+MASTER_SITES=	http://www.vocito.com/downloads/software/uwatch/ \
+		ftp://ftp.vocito.com/pub/vocito.com/software/uwatch/
 
-MAINTAINER=	howardjp@wam.umd.edu
+MAINTAINER=	ports@vocito.com
 
 MAN1=		uwatch.1
 MANCOMPRESSED=	yes
