@@ -101,10 +101,10 @@ do-install:
 	@${ECHO_MSG} "Fixing file permissions"
 	@cd ${PREFIX}; \
 	    ${SED} -e "/^@/d" -e "s/\.gz$$//" ${PLIST}.real |\
-		xargs ${CHOWN} ${BINOWN}.${BINGRP}; \
+		xargs ${CHOWN} ${BINOWN}:${BINGRP}; \
 	    ${SED} -e "/^@/d" -e "s/\.gz$$//" ${PLIST}.real |\
 		xargs ${CHMOD} go=u-w; \
-	    find -X lib/m3 -type d | xargs ${CHOWN} ${BINOWN}.${BINGRP}; \
+	    find -X lib/m3 -type d | xargs ${CHOWN} ${BINOWN}:${BINGRP}; \
 	    find -X lib/m3 -type d | xargs ${CHMOD} 755
 	@${ECHO_MSG} "Running ldconfig"
 	@${SETENV} OBJFORMAT=${PORTOBJFORMAT} ${LDCONFIG} -m ${PREFIX}/lib/m3/FreeBSD2

@@ -48,7 +48,7 @@ post-install:
 			${INSTALL_DATA} ${WRKSRC}/$$file ${PREFIX}/share/doc/msql; \
 		done
 		@${CHMOD} 751 ${PREFIX}/etc/msql2/
-		@${CHOWN} -R msql.msql ${PREFIX}/etc/msql2/
+		@${CHOWN} -R msql:msql ${PREFIX}/etc/msql2/
 		@${MKDIR} ${PREFIX}/etc/rc.d
 		@if [ ! -f ${PREFIX}/etc/rc.d/msql2.sh ]; then \
 			${ECHO} "Installing ${PREFIX}/etc/rc.d/msql2.sh startup file."; \

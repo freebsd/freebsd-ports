@@ -47,7 +47,7 @@ do-configure:
 
 pre-install:
 	${MKDIR} /var/run/canna
-	${CHOWN} bin.bin /var/run/canna
+	${CHOWN} bin:bin /var/run/canna
 
 post-install:
 .if ${PORTOBJFORMAT} == "aout"

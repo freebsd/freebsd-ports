@@ -24,7 +24,7 @@ post-configure:
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/xrot ${PREFIX}/bin
-	${CHOWN} root.games ${PREFIX}/bin/xrot
+	${CHOWN} root:games ${PREFIX}/bin/xrot
 	${CHMOD} g+s ${PREFIX}/bin/xrot
 	${SH} pkg-install ${PKGNAME} POST-INSTALL
 

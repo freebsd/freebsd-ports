@@ -67,7 +67,7 @@ do-install:
 	${RM} -rf ${NDIR}/netscape-dynMotif
 	${RM} -rf ${NDIR}/libnullplugin-dynMotif.so
 	${RM} -rf ${NDIR}/movemail-src
-	${CHOWN} -R ${BINOWN}.${BINGRP} ${NDIR}
+	${CHOWN} -R ${BINOWN}:${BINGRP} ${NDIR}
 
 post-install:
 	@${CAT} ${DESCR}

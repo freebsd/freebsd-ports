@@ -19,6 +19,6 @@ MAN1=		xgas.1
 
 post-install:
 	@${CHMOD} 755 ${PREFIX}/bin/xgas
-	@${CHOWN} bin.bin ${PREFIX}/bin/xgas
+	@${CHOWN} bin:bin ${PREFIX}/bin/xgas
 
 .include <bsd.port.mk>

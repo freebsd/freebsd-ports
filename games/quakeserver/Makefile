@@ -51,7 +51,7 @@ do-install:
 		/usr/bin/mkfifo ${PREFIX}/quakeserver/quakeserver.in
 		${TOUCH} ${PREFIX}/quakeserver/quakeserver.log
 		@ ${CHMOD} 700 ${PREFIX}/quakeserver/quakeserver.in ${PREFIX}/quakeserver/quakeserver.log
-		@ ${CHOWN} -R nobody.nobody ${PREFIX}/quakeserver
+		@ ${CHOWN} -R nobody:nobody ${PREFIX}/quakeserver
 .if !defined(BATCH)
 		@ /usr/bin/more -e ${PREFIX}/quakeserver/readme.port
 .endif

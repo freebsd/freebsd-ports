@@ -57,11 +57,11 @@ post-configure:
 	make config.lisp
 
 post-install:
-	${CHOWN} -R ${BINOWN}.${BINGRP} ${PROG_PATHS}
+	${CHOWN} -R ${BINOWN}:${BINGRP} ${PROG_PATHS}
 	${CHMOD} -R ugo+rX,ugo-w ${PROG_PATHS}
-	${CHOWN} -R ${SHAREOWN}.${SHAREGRP} ${DATA_PATHS}
+	${CHOWN} -R ${SHAREOWN}:${SHAREGRP} ${DATA_PATHS}
 	${CHMOD} -R ugo+rX,ugo-w ${DATA_PATHS}
-	${CHOWN} -R ${MANOWN}.${MANGRP} ${MAN_PATHS}
+	${CHOWN} -R ${MANOWN}:${MANGRP} ${MAN_PATHS}
 	${CHMOD} -R ugo+rX,ugo-w ${MAN_PATHS}
 
 MAN1=	clisp.1

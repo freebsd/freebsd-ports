@@ -42,7 +42,7 @@ pre-install:
 	@cd ${PREFIX}/lib; \
 	    test -d m3/FreeBSD2 || { \
 		${MKDIR} m3/FreeBSD2; \
-		${CHOWN} ${BINOWN}.${BINGRP} m3 m3/FreeBSD2; \
+		${CHOWN} ${BINOWN}:${BINGRP} m3 m3/FreeBSD2; \
 	    }
 
 post-install:

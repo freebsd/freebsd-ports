@@ -30,7 +30,7 @@ do-install:
 	cd ${WRKSRC}/../lib && pax -rw * ${MALIB}
 	${CHMOD} 750 ${MALIB}/*
 	${CHMOD} 755 ${MALIB}/user
-	${CHOWN} -R root.games ${MALIB}/*
+	${CHOWN} -R root:games ${MALIB}/*
 	${CHOWN} ${SHAREOWN}:${SHAREGRP} ${MALIB}
 
 .include <bsd.port.mk>

@@ -23,7 +23,7 @@ CONFIGURE_ARGS+=	--localstatedir=/var/games
 MAN6=	lexter.6
 
 post-install:
-	@${CHOWN} root.games ${PREFIX}/bin/lexter
+	@${CHOWN} root:games ${PREFIX}/bin/lexter
 	@${CHMOD} g+s ${PREFIX}/bin/lexter
 	@${SH} pkg-install ${PKGNAME} POST-INSTALL
 
