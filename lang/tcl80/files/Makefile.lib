@@ -1,0 +1,49 @@
+NOPROFILE=	yes
+LIB=		tcl80
+TCL_LIBRARY=	${PREFIX}/lib/tcl8.0
+CFLAGS+=	-I. -I./../generic \
+		-DHAVE_GETCWD=1 -DNO_VALUES_H=1 -DHAVE_UNISTD_H=1 -DUSE_TERMIOS=1\
+		-DHAVE_SYS_TIME_H=1 -DTIME_WITH_SYS_TIME=1 -DHAVE_TM_ZONE=1\
+		-DHAVE_TM_GMTOFF=1 -DHAVE_ST_BLKSIZE=1 -DSTDC_HEADERS=1\
+		-DNEED_MATHERR=1 -DHAVE_SIGNED_CHAR=1 -DHAVE_SYS_IOCTL_H=1\
+		-DHAVE_SYS_FILIO_H=1 \
+		-DTCL_LIBRARY=\"${TCL_LIBRARY}\" \
+		-DTCL_PACKAGE_PATH="\"${PREFIX}/lib\""
+
+
+
+GENERIC_DIR=	../generic
+UNIX_DIR=	.
+
+SRCS=	\
+		$(GENERIC_DIR)/panic.c $(GENERIC_DIR)/regexp.c\
+		$(GENERIC_DIR)/tclAsync.c $(GENERIC_DIR)/tclBasic.c \
+		$(GENERIC_DIR)/tclCkalloc.c $(GENERIC_DIR)/tclClock.c \
+		$(GENERIC_DIR)/tclCmdAH.c $(GENERIC_DIR)/tclCmdIL.c \
+		$(GENERIC_DIR)/tclCmdMZ.c $(GENERIC_DIR)/tclDate.c \
+		$(GENERIC_DIR)/tclEnv.c $(GENERIC_DIR)/tclEvent.c \
+		$(GENERIC_DIR)/tclFCmd.c \
+		$(GENERIC_DIR)/tclFileName.c \
+		$(GENERIC_DIR)/tclGet.c $(GENERIC_DIR)/tclHash.c \
+		$(GENERIC_DIR)/tclHistory.c $(GENERIC_DIR)/tclInterp.c \
+		$(GENERIC_DIR)/tclIO.c 	$(GENERIC_DIR)/tclIOCmd.c \
+		$(GENERIC_DIR)/tclIOSock.c $(GENERIC_DIR)/tclIOUtil.c \
+		$(GENERIC_DIR)/tclLink.c $(GENERIC_DIR)/tclLoad.c \
+		$(GENERIC_DIR)/tclMain.c $(GENERIC_DIR)/tclNotify.c \
+		$(GENERIC_DIR)/tclParse.c $(GENERIC_DIR)/tclPkg.c \
+		$(GENERIC_DIR)/tclPosixStr.c $(GENERIC_DIR)/tclPreserve.c \
+		$(GENERIC_DIR)/tclProc.c $(GENERIC_DIR)/tclUtil.c \
+		$(GENERIC_DIR)/tclVar.c $(UNIX_DIR)/tclMtherr.c \
+		$(GENERIC_DIR)/tclCompile.c $(GENERIC_DIR)/tclExecute.c\
+		$(GENERIC_DIR)/tclBinary.c $(GENERIC_DIR)/tclCompExpr.c\
+		$(GENERIC_DIR)/tclIndexObj.c $(GENERIC_DIR)/tclListObj.c\
+		$(GENERIC_DIR)/tclNamesp.c\
+		$(GENERIC_DIR)/tclObj.c $(GENERIC_DIR)/tclPipe.c\
+		$(GENERIC_DIR)/tclStringObj.c $(GENERIC_DIR)/tclTimer.c\
+		$(UNIX_DIR)/tclUnixChan.c $(UNIX_DIR)/tclUnixFCmd.c \
+		$(UNIX_DIR)/tclUnixFile.c $(UNIX_DIR)/tclUnixNotfy.c \
+		$(UNIX_DIR)/tclUnixPipe.c $(UNIX_DIR)/tclUnixSock.c \
+		$(UNIX_DIR)/tclUnixTime.c $(UNIX_DIR)/tclUnixInit.c \
+		$(UNIX_DIR)/tclLoadDl.c $(UNIX_DIR)/tclUnixEvent.c
+
+.include <bsd.lib.mk>

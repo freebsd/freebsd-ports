@@ -1,0 +1,58 @@
+NOPROFILE=	yes
+LIB=		tk80
+TK_LIBRARY=	${PREFIX}/lib/tk80
+CFLAGS+=	-I. -I./../generic -I../bitmaps -I/usr/X11R6/include \
+		-I${PREFIX}/include/tcl8.0/generic \
+		-DHAVE_UNISTD_H=1 -DHAVE_LIMITS_H=1 -DSTDC_HEADERS=1 \
+		 -DHAVE_SYS_TIME_H=1 -DTIME_WITH_SYS_TIME=1 \
+		 -DTK_LIBRARY=\"${TK_LIBRARY}\" 
+GENERIC_DIR=	../generic
+UNIX_DIR=	.
+
+SRCS=	\
+	$(GENERIC_DIR)/tk3d.c $(GENERIC_DIR)/tkArgv.c \
+	$(GENERIC_DIR)/tkAtom.c $(GENERIC_DIR)/tkBind.c	\
+	$(GENERIC_DIR)/tkBitmap.c $(GENERIC_DIR)/tkClipboard.c \
+	$(GENERIC_DIR)/tkCmds.c $(GENERIC_DIR)/tkColor.c \
+	$(GENERIC_DIR)/tkConfig.c $(GENERIC_DIR)/tkCursor.c \
+	$(GENERIC_DIR)/tkError.c $(GENERIC_DIR)/tkEvent.c \
+	$(GENERIC_DIR)/tkFocus.c $(GENERIC_DIR)/tkFont.c \
+	$(GENERIC_DIR)/tkGet.c $(GENERIC_DIR)/tkGC.c \
+	$(GENERIC_DIR)/tkGeometry.c $(GENERIC_DIR)/tkGrab.c \
+	$(GENERIC_DIR)/tkGrid.c \
+	$(GENERIC_DIR)/tkMain.c $(GENERIC_DIR)/tkOption.c \
+	$(GENERIC_DIR)/tkPack.c $(GENERIC_DIR)/tkPlace.c \
+	$(GENERIC_DIR)/tkSelect.c \
+	$(GENERIC_DIR)/tkUtil.c \
+	$(GENERIC_DIR)/tkVisual.c $(GENERIC_DIR)/tkWindow.c \
+	$(GENERIC_DIR)/tkButton.c \
+	$(GENERIC_DIR)/tkEntry.c $(GENERIC_DIR)/tkFrame.c \
+	$(GENERIC_DIR)/tkListbox.c $(GENERIC_DIR)/tkMenu.c \
+	$(GENERIC_DIR)/tkMenubutton.c $(GENERIC_DIR)/tkMessage.c \
+	$(GENERIC_DIR)/tkScale.c $(GENERIC_DIR)/tkScrollbar.c \
+	$(GENERIC_DIR)/tkCanvas.c $(GENERIC_DIR)/tkCanvArc.c \
+	$(GENERIC_DIR)/tkCanvBmap.c $(GENERIC_DIR)/tkCanvImg.c \
+	$(GENERIC_DIR)/tkCanvLine.c $(GENERIC_DIR)/tkCanvPoly.c \
+	$(GENERIC_DIR)/tkCanvPs.c $(GENERIC_DIR)/tkCanvText.c \
+	$(GENERIC_DIR)/tkCanvUtil.c \
+	$(GENERIC_DIR)/tkCanvWind.c $(GENERIC_DIR)/tkRectOval.c \
+	$(GENERIC_DIR)/tkTrig.c $(GENERIC_DIR)/tkImage.c \
+	$(GENERIC_DIR)/tkImgBmap.c $(GENERIC_DIR)/tkImgGIF.c \
+	$(GENERIC_DIR)/tkImgPPM.c \
+	$(GENERIC_DIR)/tkImgPhoto.c $(GENERIC_DIR)/tkText.c \
+	$(GENERIC_DIR)/tkTextBTree.c $(GENERIC_DIR)/tkTextDisp.c \
+	$(GENERIC_DIR)/tkTextIndex.c $(GENERIC_DIR)/tkTextMark.c \
+	$(GENERIC_DIR)/tkTextTag.c $(GENERIC_DIR)/tkTextWind.c \
+	$(GENERIC_DIR)/tkMenuDraw.c $(GENERIC_DIR)/tkTextImage.c \
+	$(UNIX_DIR)/tkUnix.c $(UNIX_DIR)/tkUnixCursor.c $(UNIX_DIR)/tkUnixDraw.c \
+	$(UNIX_DIR)/tkUnixEvent.c $(UNIX_DIR)/tkUnixInit.c \
+	$(UNIX_DIR)/tkUnixSelect.c $(UNIX_DIR)/tkUnixWm.c \
+	$(UNIX_DIR)/tkUnixXId.c $(UNIX_DIR)/tkUnix3d.c\
+	$(UNIX_DIR)/tkUnixButton.c $(UNIX_DIR)/tkUnixColor.c \
+	$(UNIX_DIR)/tkUnixEmbed.c \
+	$(UNIX_DIR)/tkUnixFocus.c $(UNIX_DIR)/tkUnixFont.c\
+	$(UNIX_DIR)/tkUnixMenu.c $(UNIX_DIR)/tkUnixDialog.c\
+	$(UNIX_DIR)/tkUnixMenubu.c $(UNIX_DIR)/tkUnixScale.c\
+	$(UNIX_DIR)/tkUnixScrlbr.c  $(UNIX_DIR)/tkUnixSend.c
+
+.include <bsd.lib.mk>

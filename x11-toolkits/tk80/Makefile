@@ -3,7 +3,7 @@
 # Date created:		19 August 1997
 # Whom:			jkh
 #
-# $Id: Makefile,v 1.6 1997/11/26 22:49:14 pst Exp $
+# $Id: Makefile,v 1.7 1997/12/01 16:50:58 pst Exp $
 #
 
 DISTNAME=	tk8.0p2
@@ -19,6 +19,18 @@ WRKSRC=		${WRKDIR}/tk8.0/unix
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-shared
 CONFIGURE_ENV=  PORTSDIR=${PORTSDIR}
+
+SHLIB_MAJOR=    1
+SHLIB_MINOR=    2
+MAKEFILE=       makefile
+
+post-configure:
+	@${CP} ${FILESDIR}/Makefile.lib ${WRKSRC}
+	@${CP} ${FILESDIR}/makefile     ${WRKSRC}
+
+pre-build:
+	@cd ${WRKSRC} && ${MAKE} -f Makefile.lib PREFIX=${PREFIX} \
+	    SHLIB_MAJOR=${SHLIB_MAJOR} SHLIB_MINOR=${SHLIB_MINOR}
 
 post-install:
 	${LDCONFIG} -m ${PREFIX}/lib
