@@ -6,13 +6,13 @@
 #
 
 PORTNAME=	Device-Modem
-PORTVERSION=	1.28
+PORTVERSION=	1.36
 CATEGORIES=	comms perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Device
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	skv@FreeBSD.org
 COMMENT=	Perl class to interface generic modems (AT-compliant)
 
 BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Device/SerialPort.pm:${PORTSDIR}/comms/p5-Device-SerialPort
@@ -20,14 +20,14 @@ RUN_DEPENDS=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
 
-MAN3=		Device::Modem::Log::File.3 Device::Modem::Log::Syslog.3 Device::Modem.3
+MAN3=		Device::Modem.3 Device::Modem::Log::File.3 \
+		Device::Modem::Log::Syslog.3 Device::Modem::Protocol::Xmodem.3
 
 post-install:
-.if !defined(NOPORTDOCS)
-	@${INSTALL} -d -m 0755 ${DOCSDIR}/examples
-	${INSTALL_DATA} ${WRKSRC}/examples/active.pl ${DOCSDIR}/examples/
-	${INSTALL_DATA} ${WRKSRC}/examples/dial.pl ${DOCSDIR}/examples/
-	${INSTALL_DATA} ${WRKSRC}/examples/shell.pl ${DOCSDIR}/examples/
+.ifndef(NOPORTDOCS)
+	@${ECHO_MSG} "===>   Installing examples for ${PKGNAME}"
+	@${MKDIR} ${EXAMPLESDIR}
+	${INSTALL_SCRIPT} ${WRKSRC}/examples/*.pl ${EXAMPLESDIR}
 .endif
 
 .include <bsd.port.mk>

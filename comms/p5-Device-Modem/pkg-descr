@@ -1,1 +1,4 @@
-This is a perl extension to talk to AT compliant devices via serial ports.
+Device::Modem is a perl extension to talk to AT compliant devices via
+serial ports.
+
+WWW: http://search.cpan.org/dist/Device-Modem/
