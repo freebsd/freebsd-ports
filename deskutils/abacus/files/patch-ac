@@ -5,7 +5,7 @@
  SOURCES = $(CSOURCES) $(OTHERSOURCES)
  XXL_LIBS = $(LIBDIR)/libcalc.a $(LIBDIR)/libio.a $(LIBDIR)/libcanvas.a
 -LIBS =  -ltk8.0 -ltcl8.0 -lX11 -ldl -lm 
-+LIBS =  -ltk80 -ltcl80 -lX11 -lm 
++LIBS =  -ltk82 -ltcl82 -lX11 -lm 
  
  include ../Makefile.options
  

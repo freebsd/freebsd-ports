@@ -1,0 +1,20 @@
+--- calc/rpn.hh.orig	Sun Nov 28 21:28:00 1999
++++ calc/rpn.hh	Sun Nov 28 21:28:25 1999
+@@ -108,7 +108,7 @@
+     Ref start;
+     Ref end;
+     
+-    normalize();
++    void normalize();
+ };
+ 
+ 
+@@ -145,7 +145,7 @@
+                   contents.string_val[0] = 0;
+                   contents.error_code = NO_ERROR;}
+     ~Stack_elem() {delete [] contents.string_val;}
+-    operator=(const Stack_elem &right) {
++    void operator=(const Stack_elem &right) {
+       type = right.type;
+       contents.fp_val = right.contents.fp_val;
+       contents.ref_val = right.contents.ref_val;

@@ -1,0 +1,11 @@
+--- tcl_interf/format.hh.orig	Sun Nov 28 21:24:27 1999
++++ tcl_interf/format.hh	Sun Nov 28 21:25:22 1999
+@@ -51,7 +51,7 @@
+     char top_item_double, bottom_item_double;
+     char left_item_double, right_item_double;
+     Border() ;
+-    operator=(const Border &rig) ;
++    void operator=(const Border &rig) ;
+     Border(const Border &rig) ;
+ 
+     int isdefault() {

@@ -1,0 +1,11 @@
+--- tcl_interf/format.cc.orig	Sun Nov 28 21:31:39 1999
++++ tcl_interf/format.cc	Sun Nov 28 21:32:08 1999
+@@ -65,7 +65,7 @@
+     right_item_double = FALSE;
+ }
+ 
+-Border::operator=(const Border &rig) 
++void Border::operator=(const Border &rig) 
+ {
+   top = rig.top;
+   bottom = rig.bottom;
