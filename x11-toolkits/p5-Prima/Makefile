@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	Prima
-PORTVERSION=	1.14
-PORTREVISION=	1
+PORTVERSION=	1.16
 PORTREPOCH=	1
 CATEGORIES=	x11-toolkits perl5 graphics
 MASTER_SITES=	http://www.prima.eu.org/download/
