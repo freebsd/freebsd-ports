@@ -3,7 +3,7 @@
 # Date created:         Dec 5 1997
 # Whom:                 frankch@waru.life.nthu.edu.tw
 #
-# $Id: Makefile,v 1.9 1998/09/26 23:18:03 steve Exp $
+# $Id: Makefile,v 1.10 1998/10/08 10:08:33 jkoshy Exp $
 #
 
 DISTNAME=       seaview
@@ -13,8 +13,6 @@ MASTER_SITES=   ftp://pbil.univ-lyon1.fr/pub/mol_phylogeny/seaview/
 EXTRACT_SUFX=	.tar
 
 MAINTAINER=     frankch@waru.life.nthu.edu.tw
-
-BROKEN_ELF=	xforms is a.out only
 
 LIB_DEPENDS=	xforms.0:${PORTSDIR}/x11-toolkits/xforms
 
