@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	haproxy
-PORTVERSION=	1.1.29
+PORTVERSION=	1.1.30
 CATEGORIES=	net www
 MASTER_SITES=	http://w.ods.org/tools/haproxy/src/ \
 		http://w.ods.org/tools/haproxy/src/old/
