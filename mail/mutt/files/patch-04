@@ -1,0 +1,43 @@
+--- curs_main.c.orig	Sat Dec 21 04:08:13 1996
++++ curs_main.c	Sat Dec 28 04:10:54 1996
+@@ -55,6 +55,8 @@
+ 
+ /* The folder the user last saved to.  Used by ci_save_message() */
+ static char LastFolder[_POSIX_PATH_MAX] = "";
++/* Last selected directory */
++static char LastDir[_POSIX_PATH_MAX] = "";
+ 
+ /*
+  * force_subj is used to force printing of the subject in threading mode
+@@ -341,9 +343,13 @@
+   if (i == '?')
+   {    
+     *redraw = REDRAW_FULL;
+-    folder_select (Maildir, buffer);
++    if (!LastDir[0])
++      strfcpy (LastDir, Maildir, sizeof (LastDir));
++    folder_select (LastDir, buffer);
+     if (!buffer[0])
+       return (-1);
++    strfcpy (LastDir, buffer, sizeof (LastDir));
++    *(strrchr (LastDir, '/')) = 0;
+   }
+   else if (!CI_is_return (i))
+   {
+@@ -1190,10 +1196,14 @@
+       else
+       {
+ 	refresh ();
+-	folder_select (Maildir, buffer);
++	if (!LastDir[0])
++	  strfcpy (LastDir, Maildir, sizeof (LastDir));
++	folder_select (LastDir, buffer);
+ 	redraw = REDRAW_FULL;
+ 	if (!buffer[0])
+ 	  break;
++	strfcpy (LastDir, buffer, sizeof (LastDir));
++	*(strrchr (LastDir, '/')) = 0;
+       }
+       mutt_expand_path (buffer, sizeof (buffer));
+       if (!mutt_is_valid_mailbox (buffer))
+
