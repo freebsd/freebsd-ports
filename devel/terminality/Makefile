@@ -9,7 +9,7 @@
 PORTNAME=	terminality
 PORTVERSION=	1.9
 CATEGORIES=	devel
-MASTER_SITES= 	http://members.optushome.com.au/darkmoon7/
+MASTER_SITES= 	http://members.optushome.com.au/darkmoon7/code/tn/
 DISTNAME=	tn-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
