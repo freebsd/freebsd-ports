@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	jumpgis
-PORTVERSION=	1.1.1
+PORTVERSION=	1.1.2
 CATEGORIES=	graphics java
 MASTER_SITES=	http://www.jump-project.org/downloads/jump/:main \
 		http://sam.stral.net/freebsd/:extra
@@ -42,7 +42,7 @@ PLIST_SUB+=	GNOMELINKS="@comment "
 
 post-patch:
 	@${REINPLACE_CMD} -e "s,#!sh,#!/bin/sh,g" \
-		-e "s,^set LIB=../lib,LIB=${TARGET_DIR}/lib,g"	\
+		-e "s,^LIB=../lib,LIB=${TARGET_DIR}/lib,g"	\
 		-e "s,workbench-properties.xml,~/.jump-workbench-properties.xml,g" \
 		${WRKSRC}/bin/JUMPWorkbench-unix.sh
 
