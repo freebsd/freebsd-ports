@@ -3,7 +3,7 @@
 # Date created:         29 September 1994
 # Whom:                 jmz
 #
-# $Id: Makefile,v 1.14 1995/04/17 00:16:14 jmz Exp $
+# $Id: Makefile,v 1.15 1995/04/17 20:31:35 asami Exp $
 #
 
 DISTNAME=	web2c-6.1
@@ -16,11 +16,11 @@ MAINTAINER=	jmz@FreeBSD.org
 
 EXTRACT_ONLY=	web2c.tar.gz web.tar.gz tex_base.tar.gz cm_tfm.tar.gz \
 		mf_lib.tar.gz cm_mf.tar.gz
-WRKDIR=		${.CURDIR}/work
+
 FTPGET=		${FILESDIR}/ftpget
 
 #other equivalent sites: ftp.shsu.edu ftp.dante.de
-CTAN=		ftp.tex.ac.uk
+CTAN?=		ftp.tex.ac.uk
 
 
 BASES=		mf.base cmmf.base 
@@ -28,7 +28,6 @@ FORMATS=	tex.fmt
 
 CFLAGS=		-O2 -L${X11BASE}/lib
 
-BUILD_COOKIE=		${WRKDIR}/.build_done
 
 web2c.tar.gz: 
 	@${FTPGET} ${CTAN} /tex-archive/systems/web2c web2c.tar.gz ${DISTDIR}/$@
@@ -45,10 +44,7 @@ modes.mf:
 tex_base.tar.gz:
 	@${FTPGET} ${CTAN} /tex-archive/macros plain/base.tar.gz ${DISTDIR}/$@
 
-build: configure ${BUILD_COOKIE}
-
-${BUILD_COOKIE}:
-	@echo "===>  Building for ${DISTNAME}"
+do-build: 
 	@(cd ${WRKSRC}/web2c; make triptrap)
 	@(cd ${WRKSRC}/web2c; make run-triptrap)
 	@(cd ${WRKSRC}/web2c; make clean-triptrap)
@@ -58,10 +54,8 @@ ${BUILD_COOKIE}:
 	@(cd ${WRKSRC}/web2c; TEXINPUTS=${WRKDIR}/lib:${WRKSRC}; export TEXINPUTS;\
 	  TEXFONTS=${WRKDIR}/cm/tfm:${WRKDIR}/latex/tfm; export TEXFONTS; \
 		make fmts="${FORMATS}" fmts)
-	@touch -f ${BUILD_COOKIE}
 
-install: build
-	@echo "===>  Installing for ${DISTNAME}"
+do-install: 
 	@(cd ${WRKSRC}/web2c; make install-exec INSTALL_PROGRAM="/usr/bin/install -c -s")
 	@(cd ${WRKSRC}/web2c; make install-manpages)
 	@(cd ${WRKSRC}/web2c; make install-data bases="${BASES}" fmts="${FORMATS}")
@@ -72,7 +66,7 @@ install: build
 	@mkdir -p ${PREFIX}/lib/texmf/tex
 	@(cd ${WRKDIR}/lib; install -c -m 644 *.tex ${PREFIX}/lib/texmf/tex)
 	@(cd ${WRKDIR}/plain/base; install -c -m 644 *.tex ${PREFIX}/lib/texmf/tex)
-	@(rm -f ${PREFIX}/bin/latex ${PREFIX}/bin/slitex)
+	@(rm -f ${PREFIX}/bin/latex)
 
 .include "Makefile.inc"
 
