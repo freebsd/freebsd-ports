@@ -1,14 +1,12 @@
---- qterm/qtermtelnet.h.orig	Sat Apr 12 21:10:39 2003
-+++ qterm/qtermtelnet.h	Sat Apr 12 21:11:19 2003
-@@ -8,9 +8,9 @@
- 	#include <winsock2.h>
- #else
+--- qterm/qtermtelnet.h.orig	Tue Mar 16 12:17:41 2004
++++ qterm/qtermtelnet.h	Tue Mar 16 12:18:02 2004
+@@ -9,8 +9,8 @@
+ #elif defined(Q_OS_BSD4) || defined(_OS_FREEBSD_) \
+ 	|| defined(Q_OS_MACX) || defined(Q_OS_DARWIN)
  	#include <netdb.h>
 -	#include <sys/socket.h>
  	#include <sys/types.h>
--	#include <arpa/inet.h>
 +	#include <sys/socket.h>
-+	#include <netinet/in.h>
- #endif
- 
- #include <qobject.h>
+ 	#include <netinet/in.h>
+ #else
+ 	#include <netdb.h>

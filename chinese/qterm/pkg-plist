@@ -1,6 +1,9 @@
 bin/qterm
-share/qterm/address.cfg
-share/qterm/credits
+@exec /sbin/ldconfig -m
+@unexec /sbin/ldconfig -R
+lib/libssh.so.0
+lib/libssh.so
+lib/libssh.la
 share/qterm/cursor/end.xpm
 share/qterm/cursor/enter.xpm
 share/qterm/cursor/exit.xpm
@@ -14,18 +17,19 @@ share/qterm/pic/addr.png
 share/qterm/pic/anti-idle.png
 share/qterm/pic/article.png
 share/qterm/pic/auto-reply.png
-share/qterm/pic/color.png
 share/qterm/pic/color-copy.png
+share/qterm/pic/color.png
 share/qterm/pic/connect.png
 share/qterm/pic/copy.png
 share/qterm/pic/disconnect.png
-share/qterm/pic/font.png
+share/qterm/pic/fonts.png
 share/qterm/pic/keys.png
 share/qterm/pic/message.png
 share/qterm/pic/mouse.png
 share/qterm/pic/paste.png
 share/qterm/pic/popwidget.png
 share/qterm/pic/pref.png
+share/qterm/pic/qterm_tray.png
 share/qterm/pic/qterm_32x32.png
 share/qterm/pic/qterm_48x48.png
 share/qterm/pic/quick.png
@@ -34,11 +38,21 @@ share/qterm/pic/rect.png
 share/qterm/pic/refresh.png
 share/qterm/pic/sound.png
 share/qterm/pic/tabpad.png
-share/qterm/qterm.cfg
 share/qterm/script/continuous.py
 share/qterm/script/download.py
 share/qterm/script/system.py
-@dirrm share/qterm/script
+share/qterm/schema/Softness.schema
+share/qterm/schema/Linux.schema
+share/qterm/schema/VIM.schema
+share/qterm/schema/XTerm.schema
+share/qterm/schema/default.schema
+share/qterm/qterm.cfg
+share/qterm/address.cfg
+share/qterm/credits
+share/applications/qterm.desktop
+share/icons/qterm.png
 @dirrm share/qterm/cursor
 @dirrm share/qterm/pic
+@dirrm share/qterm/script
+@dirrm share/qterm/schema
 @dirrm share/qterm
