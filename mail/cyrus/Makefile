@@ -1,13 +1,13 @@
 # New ports collection makefile for:		cyrus
-# Version required:				1.5.14
+# Version required:				1.5.19
 # Date created:					May 4th 1997
 # Whom:						jfitz@FreeBSD.ORG
 #
-# $Id: Makefile,v 1.16 1999/04/20 22:54:02 stb Exp $
+# $Id: Makefile,v 1.17 1999/04/21 00:29:36 stb Exp $
 #
 
-DISTNAME=	cyrus-imapd-v1.5.14
-PKGNAME=	cyrus-1.5.14
+DISTNAME=	cyrus-imapd-v1.5.19
+PKGNAME=	cyrus-1.5.19
 CATEGORIES=	mail tcl80
 MASTER_SITES=	ftp://ftp.andrew.cmu.edu/pub/cyrus-mail/ \
 		http://www.freebsd.org/~stb/mirror/ftp.andrew.cmu.edu/pub/cyrus-mail/ \
@@ -41,16 +41,31 @@ pre-install:
 		@ ${CP} ${WRKSRC}/man/quota.8 ${WRKSRC}/man/cyrquota.8
 		@${PKGDIR}/INSTALL ${PKGNAME} PRE-INSTALL
 
+DOCS=	README acl-extension anoncvs bugs changes copyrights install \
+	mailing-list overview quota-extension server-design
+HTDOCS=	anoncvs bugs changes index install mailing-list overview \
+	readme unpack
 post-install:
 		@ ${MV} ${PREFIX}/cyrus/bin/quota ${PREFIX}/cyrus/bin/cyrquota
 .if !defined(NOPORTDOCS)
 		${MKDIR} ${PREFIX}/share/doc/cyrus/html
-.for file in acl-extension bugs changes copyrights install overview quota-extension server-design
-		${INSTALL_DATA} ${WRKSRC}/doc/${file} ${PREFIX}/share/doc/cyrus
+.for file in ${DOCS}
+		${INSTALL_DATA} ${WRKSRC}/doc/${file} \
+			${PREFIX}/share/doc/cyrus
+		@${ECHO} share/doc/cyrus/${file} >>${TMPPLIST}
 .endfor
-		${INSTALL_DATA} ${WRKSRC}/doc/html/* ${PREFIX}/share/doc/cyrus/html
+.for file in ${HTDOCS}
+		${INSTALL_DATA} ${WRKSRC}/doc/html/${file}.html \
+			${PREFIX}/share/doc/cyrus/html
+		@${ECHO} share/doc/cyrus/html/${file}.html >>${TMPPLIST}
+.endfor
+		@${ECHO} "@dirrm share/doc/cyrus/html"
+		@${ECHO} "@dirrm share/doc/cyrus"
 .endif
-		${INSTALL_DATA} ${FILESDIR}/imapd.conf ${PREFIX}/etc
+		${INSTALL_DATA} ${FILESDIR}/imapd.conf \
+			${PREFIX}/etc/imapd.conf.dist
+		${INSTALL_DATA} ${FILESDIR}/inetd.conf.cyrus \
+			${PREFIX}/etc/
 		${INSTALL} -d -m 750 -o cyrus -g cyrus /var/spool/imap \
 			${PREFIX}/etc/imap \
 			${PREFIX}/etc/imap/user \
@@ -64,5 +79,6 @@ post-install:
 		@sed -e "/%%PREFIX%%/s##${PREFIX}#g" ${FILESDIR}/cyrus.sh \
 			>${PREFIX}/etc/rc.d/cyrus.sh
 		@chmod 0755 ${PREFIX}/etc/rc.d/cyrus.sh
+		@PKG_PREFIX=${PREFIX} ${PKGDIR}/INSTALL ${PKGNAME} POST-INSTALL
 
 .include <bsd.port.mk>

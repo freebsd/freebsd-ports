@@ -13,7 +13,8 @@ cyrus/bin/pop3d
 cyrus/bin/reconstruct
 cyrus/bin/syncnews
 cyrus/bin/updateimsp
-etc/imapd.conf
+etc/imapd.conf.dist
+etc/inetd.conf.cyrus
 etc/rc.d/cyrus.sh
 include/cyrus/acl.h
 include/cyrus/assert.h
@@ -36,24 +37,6 @@ include/cyrus/sysexits.h
 include/cyrus/util.h
 include/cyrus/xmalloc.h
 lib/libcyrus.a
-share/doc/cyrus/html/bugs.html
-share/doc/cyrus/html/changes.html
-share/doc/cyrus/html/htmlstrip.c
-share/doc/cyrus/html/index.html
-share/doc/cyrus/html/install.html
-share/doc/cyrus/html/overview.html
-share/doc/cyrus/html/readme.html
-share/doc/cyrus/html/unpack.html
-share/doc/cyrus/acl-extension
-share/doc/cyrus/bugs
-share/doc/cyrus/changes
-share/doc/cyrus/copyrights
-share/doc/cyrus/install
-share/doc/cyrus/overview
-share/doc/cyrus/quota-extension
-share/doc/cyrus/server-design
 @dirrm include/cyrus
 @dirrm cyrus/bin
 @dirrm cyrus
-@dirrm share/doc/cyrus/html
-@dirrm share/doc/cyrus

@@ -27,13 +27,18 @@ create() {
 		gid=`pw show group cyrus 2>/dev/null | cut -d: -f3`
 	fi
 
+	if [ -x /sbin/nologin ]; then
+		shell=/sbin/nologin
+	else
+		shell=/nonexistent
+	fi
 	if ! pw show user cyrus -q >/dev/null; then
 		uid=60
 		while pw show user -u ${uid} -q >/dev/null; do
 			uid=`expr ${uid} + 1`
 		done
 		if ! pw add user cyrus -u ${uid} -g ${gid} -d "/nonexistent" \
-				-c "the cyrus mail server" -s "/nonexistent" -p "*" \
+				-c "the cyrus mail server" -s "${shell}" -p "*" \
 				; then
 			e=$?
 			echo "*** Failed to add user \`cyrus'. Please add it manually."
@@ -42,7 +47,7 @@ create() {
 		echo "*** Added user \`cyrus' (id ${uid})"
 	else
 		if ! pw mod user cyrus -g ${gid} -d "/nonexistent" \
-				-c "the cyrus mail server" -s "/nonexistent" -p "*" \
+				-c "the cyrus mail server" -s "${shell}" -p "*" \
 				; then
 			e=$?
 			echo "*** Failed to update user \`cyrus'."
@@ -55,8 +60,37 @@ create() {
 	fi
 }
 
+
+checkfile() {
+	diff -bBqw $1 $1.dist >/dev/null 2>&1
+	case $? in
+		0)	# config file exists, but is the same
+			;;
+		1)	# config file exists and differs
+			echo "** Make sure $1 is in sync with this version"; 
+			echo "   of the port.  See $1.dist for details."; 
+			;;
+		*)	# no config file exists, copy it
+			install -c -m 644 $1.dist $1
+			;;
+	esac
+}
+
+
 case $2 in
 	PRE-INSTALL)
 		create
+		;;
+
+	POST-INSTALL)
+		cd ${PKG_PREFIX}
+		checkfile ${PKG_PREFIX}/etc/imapd.conf
+		if grep '^imap4' /etc/inetd.conf; then
+			echo "** Please check that your /etc/inetd.conf entry for \`imap4'"
+			echo "   is suitable for the Cyrus IMAP server."
+		else
+			echo "** Please add an entry for the imap4 protocol to /etc/inetd.conf."
+		fi
+		echo "   An example can be found in ${PKG_PREFIX}/etc/inetd.conf.cyrus."
 		;;
 esac
