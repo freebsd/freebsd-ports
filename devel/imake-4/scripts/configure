@@ -26,11 +26,23 @@ if [ X${BuildXIE} != "X" ]; then
 fi
 
 cat >> $F <<EOF
+#ifndef XF86CardDrivers
+#ifdef i386Architecture
 #define XF86CardDrivers         mga glint nv tga s3virge sis rendition \
                                 neomagic i740 tdfx \
                                 cirrus tseng trident chips apm \
                                 GlideDriver fbdev \
-                                ati r128 vga XF86ExtraCardDrivers
+                                ati r128 AgpGartDrivers cyrix \
+				vga XF86OSCardDrivers XF86ExtraCardDrivers
+#else
+#define XF86CardDrivers         mga glint nv tga s3virge sis rendition \
+                                neomagic i740 tdfx \
+                                cirrus tseng trident chips apm \
+                                GlideDriver fbdev \
+                                ati r128 cyrix \
+				vga XF86OSCardDrivers XF86ExtraCardDrivers
+#endif
+#endif
 EOF
 echo "#define XInputDrivers mouse dynapro elo2300 elographics magellan \
 	microtouch mutouch spaceorb wacom"  >> $F
