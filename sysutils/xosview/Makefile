@@ -3,13 +3,13 @@
 # Date created:		19 Nov 1997
 # Whom:			Brian Handy <handy@physics.montana.edu>
 #
-# $Id: Makefile,v 1.5 1998/06/04 20:33:16 steve Exp $
+# $Id: Makefile,v 1.6 1998/08/05 09:31:38 asami Exp $
 #
 
 DISTNAME=	xosview-1.6.1.a
 CATEGORIES=	sysutils x11
 MASTER_SITES=	http://lore.ece.utexas.edu/~bgrayson/xosview/ \
-		http://lambic.lmsal.com/xosview/
+		http://lambic.physics.montana.edu/xosview/
 
 MAINTAINER=	handy@physics.montana.edu
 
