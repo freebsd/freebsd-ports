@@ -9,9 +9,9 @@ MASTERDIR=	${.CURDIR}/../mpqc/
 
 PKGNAMESUFFIX=	-mpich
 
-BUILD_DEPENDS=	${LOCALBASE}/mpich/lib/libmpich.a:${PORTSDIR}/net/mpich
-
 .include "${.CURDIR}/../mpqc/Makefile"
+
+BUILD_DEPENDS+=	${LOCALBASE}/mpich/lib/libmpich.a:${PORTSDIR}/net/mpich
 
 # MPICH implimentation is not thread safe
 CONFIGURE_ARGS+=	--with-libdirs="-L${LOCALBASE}/lib -L${LOCALBASE}/mpich/lib" \
