@@ -7,6 +7,7 @@
 
 PORTNAME=	mysql++
 PORTVERSION=	1.7.9
+PORTREVISION=	1
 CATEGORIES=	databases devel
 MASTER_SITES=	ftp://ftp.free.fr/pub/MySQL/Downloads/mysql++/ \
 		ftp://gd.tuwien.ac.at/db/mysql/Downloads/mysql++/ \
@@ -15,8 +16,7 @@ MASTER_SITES=	ftp://ftp.free.fr/pub/MySQL/Downloads/mysql++/ \
 MAINTAINER=	mico@bsd.hu
 COMMENT=	Complex C++ API for MySQL
 
-LIB_DEPENDS=	mysqlclient.10:${PORTSDIR}/databases/mysql323-client
-
+USE_MYSQL=	yes
 USE_GMAKE=	yes
 HAS_CONFIGURE=	yes
 CONFIGURE_ENV=	CXXFLAGS="${CXXFLAGS} -D_FIX_FOR_BSD_ -Wno-deprecated"
@@ -27,8 +27,7 @@ INSTALLS_SHLIB=	yes
 
 .include <bsd.port.pre.mk>
 .if ${OSVERSION} >= 500035
-PATCHFILES=	mysql++-gcc-3.0.patch.gz \
-	        mysql++-gcc-3.2.patch.gz
+PATCHFILES=	patch_gcc_3.3.gz
 PATCH_SITES=	${MASTER_SITES}
 PATCH_DIST_STRIP=-p1
 .endif
@@ -39,17 +38,19 @@ pre-configure:
 	@${ECHO} "install:" >>${WRKSRC}/examples/Makefile.in
 
 do-install:
-	@${INSTALL_PROGRAM} ${WRKDIR}/${DISTNAME}/sqlplusint/.libs/libsqlplus.so.1 ${PREFIX}/lib
-	@${INSTALL_DATA} ${WRKDIR}/${DISTNAME}/sqlplusint/.libs/libsqlplus.a ${PREFIX}/lib
+	@${INSTALL_PROGRAM} ${WRKSRC}/sqlplusint/.libs/libsqlplus.so.1 ${PREFIX}/lib
+	@${INSTALL_DATA} ${WRKSRC}/sqlplusint/.libs/libsqlplus.a ${PREFIX}/lib
 	@(cd ${PREFIX}/lib && ${RM} -f libsqlplus.so && ${LN} -s libsqlplus.so.1 libsqlplus.so)
 	@ranlib ${PREFIX}/lib/libsqlplus.a
-	@mkdir -p ${PREFIX}/share/examples/mysql++
-	@mkdir -p ${PREFIX}/share/doc/mysql++
-	@${INSTALL_DATA} ${WRKDIR}/${DISTNAME}/examples/*.cc ${PREFIX}/share/examples/mysql++
-	@${INSTALL_DATA} ${WRKDIR}/${DISTNAME}/doc/man-text/* ${PREFIX}/share/doc/mysql++
 	@mkdir -p ${PREFIX}/include/mysql
-	@(cd ${WRKDIR}/${DISTNAME}/sqlplusint/; \
-	 ${INSTALL_DATA} mysql++ defs undef_short define_short *.hh ${PREFIX}/include/mysql)
-	@${INSTALL_DATA} ${FILESDIR}/README ${PREFIX}/share/examples/mysql++
+	@(cd ${WRKSRC}/sqlplusint/; \
+	${INSTALL_DATA} mysql++ defs undef_short define_short *.hh ${PREFIX}/include/mysql)
+.if !defined(NOPORTDOCS)
+	@mkdir -p ${DOCSDIR}
+	@${INSTALL_DATA} ${WRKSRC}/doc/man-text/* ${DOCSDIR}
+	@mkdir -p ${EXAMPLESDIR}
+	@${INSTALL_DATA} ${WRKSRC}/examples/*.cc ${EXAMPLESDIR}
+	@${INSTALL_DATA} ${FILESDIR}/README ${EXAMPLESDIR}
+.endif
 
 .include <bsd.port.post.mk>
