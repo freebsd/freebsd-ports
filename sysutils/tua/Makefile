@@ -3,7 +3,7 @@
 # Date created:		11 Feb. 1995
 # Whom:			torstenb
 #
-# $Id: Makefile,v 1.6 1995/05/06 11:37:59 torstenb Exp $
+# $Id: Makefile,v 1.7 1995/07/13 01:21:29 asami Exp $
 #
 
 DISTNAME=       tua-4.0
@@ -15,6 +15,8 @@ MAINTAINER=	torstenb@FreeBSD.ORG
 GNU_CONFIGURE=	yes
 
 post-install:
+.if !defined(NOMANCOMPRESS)
 	gzip -9nf ${PREFIX}/man/man1/tua.1
+.endif
 
 .include <bsd.port.mk>
