@@ -1,0 +1,29 @@
+--- src/command_mode.c.orig	Sat Jun 17 15:24:19 2000
++++ src/command_mode.c	Sat Jun 17 15:57:34 2000
+@@ -201,7 +201,7 @@
+ 	buf[4] = '\0';
+ 	if(!strcmp(buf, "grep"))
+ 	{
+-		g_snprintf(buf, sizeof(buf), "vim \"+ grep %s\"", command);
++		g_snprintf(buf, sizeof(buf), "vi \"+ grep %s\"", command);
+ 		exec_in_xterm(buf);
+ 	}
+ 
+@@ -280,7 +280,7 @@
+ 
+ 	if(!strcmp(command, "h"))
+ 	{
+-		g_snprintf(buf, sizeof(buf), "%s -e vim %s/vide%s.txt",
++		g_snprintf(buf, sizeof(buf), "%s -e vi %s/vide%s.txt",
+ 				cfg.xterm_command, cfg.config_dir, VERSION);
+ 		file_exec(buf);
+ 	}
+@@ -363,7 +363,7 @@
+ 	/* load file into vi */
+ 	if(!strcmp(command, "e"))
+ 	{
+-		g_snprintf(buf, sizeof(buf), "%s -e vim \"%s\"", cfg.xterm_command, file);
++		g_snprintf(buf, sizeof(buf), "%s -e vi \"%s\"", cfg.xterm_command, file);
+ 		file_exec(buf);  
+ 		
+ /*		g_snprintf(buf, sizeof(buf), ":e %s/%s\r", curr_view->dir, file);
