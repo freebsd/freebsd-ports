@@ -1,0 +1,25 @@
+#!/bin/sh
+JAVA_HOME=${JAVA_HOME:-@JAVA_HOME@}
+if [ ! -d ${JAVA_HOME} ]; then
+	echo "Sorry, please set JAVA_HOME to the appropriate JDK!"
+	echo "Current value: " ${JAVA_HOME:-unset}
+	exit 1
+fi
+
+cmd=`basename $0`
+case ${cmd} in
+gcjr)
+	BOOTCLASSPATH="-bootclasspath @PREFIX@/lib/gj/@JDKSUBDIR@;${JAVA_HOME}/jre/lib/rt.jar;${JAVA_HOME}/jre/lib/i18n.jar"
+	;;
+esac
+
+CLASSPATH=@PREFIX@/lib/gj/@JDKSUBDIR@:${CLASSPATH}; export CLASSPATH
+
+case ${cmd} in
+gjc*)
+	${JAVA_HOME}/bin/java -ms12m gjc.Main ${BOOTCLASSPATH} $*
+	;;
+gj)
+	${JAVA_HOME}/bin/java $*
+	;;
+esac

@@ -1,0 +1,9 @@
+GJ is an extension of the Java programming language that supports
+generic types.
+
+* Support for generics
+* Superset of the Java programming language
+* Compiles into the Java Virtual Machine
+* Compatible with existing libraries
+
+WWW: http://www.cis.unisa.edu.au/~pizza/gj/
