@@ -9,11 +9,11 @@ PORTNAME=	sarg
 PORTVERSION=	1.4.1
 PORTREVISION=	1
 CATEGORIES=	www
-MASTER_SITES=	http://web.onda.com.br/orso/
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	${PORTNAME}
 
-PATCH_SITES=	${MASTER_SITES:S/$/%SUBDIR%\//}
-PATCH_SITE_SUBDIR=	patches
-PATCHFILES=	sarg-1.4.1-index.sort.patch
+PATCH_SITES=	http://sarg.sourceforge.net/
+PATCHFILES=	sarg-1.4.1-index.sort.patch.gz
 
 MAINTAINER=	mt@primats.org.ua
 COMMENT=	Squid log analyzer and HTML report generator
