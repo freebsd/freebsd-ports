@@ -1,0 +1,8 @@
+bin/cless
+bin/clesskey
+man/man1/cless.1
+man/man1/clesskey.1
+share/cless.hlp
+share/cless.bg5
+share/cless.gb
+share/doc/cless/README.CLESS
