@@ -8,8 +8,7 @@
 PORTNAME=	xkbctrl
 PORTVERSION=	1.0
 CATEGORIES=	x11
-MASTER_SITES=	ftp://core.ring.gr.jp/pub/X/opengroup/unsupported/test/Xkb/programs/ \
-		ftp://ring.nacsis.ac.jp/pub/X/opengroup/unsupported/test/Xkb/programs/
+MASTER_SITES=	ftp://ftp.x.org/pub/unsupported/test/Xkb/programs/
 DISTFILES=	Imakefile xkbctrl.c
 
 MAINTAINER=	sanpei@FreeBSD.org
