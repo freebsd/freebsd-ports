@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	tramp
-PORTVERSION=	0.0.20020130
+PORTVERSION=	0.0.20020218
 CATEGORIES=	net elisp
 MASTER_SITES=	http://tramp.sourceforge.net/download/
 PKGNAMESUFFIX=	-${EMACS_PORT_NAME}
@@ -43,11 +43,11 @@ PLIST_SUB+=	EMACS20_ONLY="@comment "
 pre-build:
 .if ${EMACS_PORT_NAME} == emacs20
 	(cd ${WRKSRC}/contrib; ${GMAKE} EMACS=${EMACS_CMD} format-spec.elc)
-	(${CP} ${WRKSRC}/contrib/format-spec.el ${WRKSRC}/contrib/format-spec.elc ${BUILD_WRKSRC})
+	(${CP} -p ${WRKSRC}/contrib/format-spec.el ${WRKSRC}/contrib/format-spec.elc ${BUILD_WRKSRC})
 .endif
 post-build:
 .if !defined(NOPORTDOCS)
-#	(cd ${WRKSRC}/texi; ${GMAKE} EMACS=${EMACS_CMD} MAKEINFO=makeinfo tramp.info)
+	(cd ${WRKSRC}/texi; ${GMAKE} EMACS=${EMACS_CMD} MAKEINFO=makeinfo tramp.info)
 .if defined(JAPANESE_INFO)
 	(cd ${WRKSRC}/texi; ${GMAKE} EMACS=${EMACS_CMD} MAKEINFO=jmakeinfo tramp_ja.info)
 .endif
