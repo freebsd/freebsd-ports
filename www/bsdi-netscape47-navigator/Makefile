@@ -1,26 +1,14 @@
-# New ports collection makefile for: netscape (navigator only)
-# Date created:		20 Sept 1998
-# Whom:			brett@peloton.physics.montana.edu
+# New ports collection makefile for: Netscape Navigator for BSDI BSD/OS
+# Date created:		10 May 2000
+# Whom:			Trevor Johnson <trevor@jpj.net>
+# based on work by Dirk Froemberg <dirk@FreeBSD.org> and girgen@partitur.se
 #
 # $FreeBSD$
 #
 
-PORTNAME?=	netscape-${BROWSER_ARC}
-PORTVERSION?=	${BROWSER_VER}
-
-.if !defined(_PREMKINCLUDED)
-.include <bsd.port.pre.mk>
-.endif
-
-.if ${ARCH} == "i386"
-MASTER_SITES=	ftp://ftp.netscape.com./pub/communicator/english/4.73/unix/unsupported/freebsd/navigator_standalone/
-DISTFILES=	navigator-v473-export.x86-unknown-freebsd.tar.gz
-.elif ${ARCH} == "alpha"
-MASTER_SITES=	ftp://ftp.netscape.com./pub/communicator/english/4.73/unix/supported/dec_unix40/navigator_standalone/
-DISTFILES=	navigator-v473-export.alpha-dec-osf4.0.tar.gz
-.endif
-
 BROWSER=	navigator
-INFILE_HEAD=	'Navigator,4.73.0.20000502'
 
-.include "${.CURDIR}/../netscape47-communicator/Makefile"
+MASTER_SITES=	ftp://ftp.netscape.com/pub/communicator/english/4.73/unix/unsupported/bsdi21/navigator_standalone/ \
+		ftp://ftp.sunet.se/pub/www/Netscape/communicator/english/4.73/unix/unsupported/bsdi21/navigator_standalone/
+
+.include "../bsdi-netscape47-communicator/Makefile"

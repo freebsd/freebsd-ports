@@ -1,13 +1,14 @@
-bin/navigator-%%BROWSER_VER%%
-@exec ln -sf %f %B/navigator-4
-@exec ln -sf navigator-4 %B/netscape.run
+bin/%%BROWSER%%-%%BROWSER_VER%%
+@exec ln -sf %f %B/%%BROWSER%%-4
+@exec ln -sf %%BROWSER%%-4 %B/netscape.run
 @unexec rm -f %B/netscape.run
-@unexec rm -f %B/navigator-4
+@unexec rm -f %B/%%BROWSER%%-4
 %%NSUBDIR%%/LICENSE
 %%NSUBDIR%%/Netscape.ad
 %%NSUBDIR%%/README
 %%NSUBDIR%%/XKeysymDB
 %%NSUBDIR%%/bookmark.htm
+%%NSUBDIR%%/%%BROWSER%%-%%BROWSER_VER%%.bin
 %%NSUBDIR%%/java/classes/aix/font.properties
 %%NSUBDIR%%/java/classes/aix/font.properties.cs
 %%NSUBDIR%%/java/classes/aix/font.properties.hu
@@ -53,6 +54,14 @@ bin/navigator-%%BROWSER_VER%%
 %%NSUBDIR%%/java/classes/hpux/font.properties.zh_TW_CNS11643
 %%NSUBDIR%%/java/classes/ifc11.jar
 %%NSUBDIR%%/java/classes/iiop10.jar
+%%NSUBDIR%%/java/classes/jae40.jar
+%%NSUBDIR%%/java/classes/java40.jar
+%%NSUBDIR%%/java/classes/jio40.jar
+%%NSUBDIR%%/java/classes/joptio40.jar
+%%NSUBDIR%%/java/classes/jsd10.jar
+%%NSUBDIR%%/java/classes/ldap40.jar
+%%NSUBDIR%%/java/classes/resource.jar
+%%NSUBDIR%%/java/classes/scd10.jar
 %%NSUBDIR%%/java/classes/irix/font.properties
 %%NSUBDIR%%/java/classes/irix/font.properties.cs
 %%NSUBDIR%%/java/classes/irix/font.properties.el
@@ -62,16 +71,7 @@ bin/navigator-%%BROWSER_VER%%
 %%NSUBDIR%%/java/classes/irix/font.properties.zh_GB2312
 %%NSUBDIR%%/java/classes/irix/font.properties.zh_TW_Big5
 %%NSUBDIR%%/java/classes/irix/font.properties.zh_TW_CNS11643
-%%NSUBDIR%%/java/classes/jae40.jar
-%%NSUBDIR%%/java/classes/java40.jar
-%%NSUBDIR%%/java/classes/jio40.jar
-%%NSUBDIR%%/java/classes/joptio40.jar
-%%NSUBDIR%%/java/classes/jsd10.jar
-%%NSUBDIR%%/java/classes/ldap40.jar
-%%NSUBDIR%%/java/classes/resource.jar
-%%NSUBDIR%%/java/classes/scd10.jar
 %%NSUBDIR%%/mailcap
-%%NSUBDIR%%/navigator-%%BROWSER_VER%%.bin
 %%NSUBDIR%%/nethelp/Back_dep.gif
 %%NSUBDIR%%/nethelp/Back_dis.gif
 %%NSUBDIR%%/nethelp/Back_sel.gif
@@ -137,10 +137,8 @@ bin/navigator-%%BROWSER_VER%%
 %%NSUBDIR%%/nethelp/picsfail.htm
 %%NSUBDIR%%/nethelp/picsfail.jar
 %%NSUBDIR%%/plugins/cpPack1.jar
-%%NSUBDIR%%/plugins/libnullplugin.so
 %%NSUBDIR%%/registry
 %%NSUBDIR%%/vreg
-@dirrm %%NSUBDIR%%/plugins
 @dirrm %%NSUBDIR%%/nethelp/netscape/shared
 @dirrm %%NSUBDIR%%/nethelp/netscape/navigatr
 @dirrm %%NSUBDIR%%/nethelp/netscape/home
@@ -151,4 +149,3 @@ bin/navigator-%%BROWSER_VER%%
 @dirrm %%NSUBDIR%%/java/classes/aix
 @dirrm %%NSUBDIR%%/java/classes
 @dirrm %%NSUBDIR%%/java
-@unexec rmdir %D/%%NSUBDIR%% 2>/dev/null || true
