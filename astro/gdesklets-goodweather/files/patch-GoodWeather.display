@@ -1,0 +1,11 @@
+--- GoodWeather.display.orig	Sun Nov 23 18:16:12 2003
++++ GoodWeather.display	Sun Dec  5 00:41:31 2004
+@@ -1,7 +1,7 @@
+ <?xml version="1.0" encoding="UTF-8"?>
+ 
+ <display window-flags="below, sticky" anchor="ne">
+-  <metha author="Konrad Rieck"
++  <meta author="Konrad Rieck"
+          name="GoodWeather display"
+          version="0.3"
+          description="Themable weather condition and forecast display (needs FontSelector)"/>
