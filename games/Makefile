@@ -69,6 +69,7 @@
     SUBDIR += drm
     SUBDIR += dungeon
     SUBDIR += eboard
+    SUBDIR += editss
     SUBDIR += empire
     SUBDIR += falconseye
     SUBDIR += farblazer
