@@ -12,30 +12,31 @@ PORTVERSION=	${APACHE_VERSION}.${APACHE_SSL_VERSION}
 PORTREVISION=	1
 CATEGORIES=	www security
 MASTER_SITES=	http://www.apache.org/dist/httpd/ \
-		ftp://ftp.ox.ac.uk/pub/crypto/SSL/Apache-SSL/ \
 		ftp://src.doc.ic.ac.uk/packages/apache/dist/ \
 		ftp://ftp.gbnet.net/pub/apache/dist/ \
-		ftp://ftp.MASTER.pgp.net/pub/crypto/SSL/Apache-SSL/ \
 		ftp://ftp.flirble.org/pub/web/apache/dist/ \
-		ftp://ftp.replay.com/pub/crypto/apache/Apache-SSL/ \
 		ftp://ukug.uk.freebsd.org/pub/mirrors/apache/dist/ \
-		ftp://ftp.win.ne.jp/pub/network/security/apache-ssl/ \
-		ftp://ftp.sage-au.org.au/pub/network/security/apache-ssl/Apache-SSL/ \
-		ftp://ftp.vwv.com/pub/crypto/SSL/Apache-SSL/ \
-		ftp://mirror.aarnet.edu.au/www/servers/apache-ssl/ \
-		ftp://ftp.it.net.au/mirrors/crypto/SSL/Apache-SSL/ \
-		ftp://ftp.infoscience.co.jp/pub/Crypto/SSL/Apache-SSL/Apache-SSL/ \
-		ftp://ftp.funet.fi/pub/crypt/mirrors/ftp.ox.ac.uk/SSL/Apache-SSL/ \
-		ftp://apache-ssl.raver.net/pub/ftp.apache-ssl.org/Apache-SSL/ \
-		ftp://ftp.pca.dfn.de/pub/tools/net/sslapache/Apache-SSL/ \
-		ftp://ftp.sekure.net/pub/apache-ssl/ \
-		ftp://ftp.clinet.fi/mirrors/ftp.apache-ssl.org/pub/ \
-		ftp://opensores.thebunker.net/pub/mirrors/apache-ssl/ \
-		ftp://ftp.gin.cz/pub/MIRRORS/ftp.ox.ac.uk/pub/crypto/SSL/Apache-SSL/ \
-		ftp://ftp.cordef.com.pl/pub/apache-ssl/Apache-SSL/
+		${MASTER_SITE_RINGSERVER:S,%SUBDIR%,net/apache/dist/httpd,} \
+		ftp://ftp.ox.ac.uk/pub/crypto/SSL/Apache-SSL/:ssl \
+		ftp://ftp.MASTER.pgp.net/pub/crypto/SSL/Apache-SSL/:ssl \
+		ftp://ftp.replay.com/pub/crypto/apache/Apache-SSL/:ssl \
+		ftp://ftp.win.ne.jp/pub/network/security/apache-ssl/:ssl \
+		ftp://ftp.sage-au.org.au/pub/network/security/apache-ssl/Apache-SSL/:ssl \
+		ftp://ftp.vwv.com/pub/crypto/SSL/Apache-SSL/:ssl \
+		ftp://mirror.aarnet.edu.au/www/servers/apache-ssl/:ssl \
+		ftp://ftp.it.net.au/mirrors/crypto/SSL/Apache-SSL/:ssl \
+		ftp://ftp.infoscience.co.jp/pub/Crypto/SSL/Apache-SSL/Apache-SSL/:ssl \
+		ftp://ftp.funet.fi/pub/crypt/mirrors/ftp.ox.ac.uk/SSL/Apache-SSL/:ssl \
+		ftp://apache-ssl.raver.net/pub/ftp.apache-ssl.org/Apache-SSL/:ssl \
+		ftp://ftp.pca.dfn.de/pub/tools/net/sslapache/Apache-SSL/:ssl \
+		ftp://ftp.sekure.net/pub/apache-ssl/:ssl \
+		ftp://ftp.clinet.fi/mirrors/ftp.apache-ssl.org/pub/:ssl \
+		ftp://opensores.thebunker.net/pub/mirrors/apache-ssl/:ssl \
+		ftp://ftp.gin.cz/pub/MIRRORS/ftp.ox.ac.uk/pub/crypto/SSL/Apache-SSL/:ssl \
+		ftp://ftp.cordef.com.pl/pub/apache-ssl/Apache-SSL/:ssl
 DISTNAME=	apache_${APACHE_VERSION}
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
-		apache_${APACHE_VERSION}+ssl_${APACHE_SSL_VERSION}${EXTRACT_SUFX}
+		apache_${APACHE_VERSION}+ssl_${APACHE_SSL_VERSION}${EXTRACT_SUFX}:ssl
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	ports@freebsd.org
