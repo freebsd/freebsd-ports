@@ -1,0 +1,10 @@
+--- gdb/config/i386/fbsd64.mh.orig	Sun Feb 22 08:20:22 2004
++++ gdb/config/i386/fbsd64.mh	Fri Apr 23 12:28:40 2004
+@@ -3,3 +3,7 @@
+ 	amd64-nat.o amd64bsd-nat.o amd64fbsd-nat.o gcore.o fbsd-proc.o
+ NAT_FILE= nm-fbsd64.h
+ XM_FILE= xm-i386.h
++
++#	kgdb support
++NATDEPFILES+= kvm-fbsd.o freebsd-uthread.o
++NAT_CLIBS= -lkvm
