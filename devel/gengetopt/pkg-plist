@@ -1,0 +1,26 @@
+bin/gengetopt
+share/doc/gengetopt/examples/sample1.ggo
+share/doc/gengetopt/examples/sample2.ggo
+share/doc/gengetopt/examples/main1.cc
+share/doc/gengetopt/examples/main2.c
+share/doc/gengetopt/examples/cmdline1.c
+share/doc/gengetopt/examples/cmdline1.h
+share/doc/gengetopt/examples/cmdline2.c
+share/doc/gengetopt/examples/cmdline2.h
+share/doc/gengetopt/gengetopt.html
+share/doc/gengetopt/cmdline1.c.html
+share/doc/gengetopt/man_getopt.html
+share/doc/gengetopt/no_getopt_long.txt
+share/doc/gengetopt/ChangeLog
+share/doc/gengetopt/COPYING
+share/doc/gengetopt/NEWS
+share/doc/gengetopt/THANKS
+share/doc/gengetopt/INSTALL
+share/doc/gengetopt/README
+share/doc/gengetopt/LICENSE
+share/gengetopt/getopt.h
+share/gengetopt/getopt.c
+share/gengetopt/getopt1.c
+@dirrm share/doc/gengetopt/examples
+@dirrm share/doc/gengetopt
+@dirrm share/gengetopt

@@ -79,6 +79,7 @@
     SUBDIR += gcc-m68k
     SUBDIR += gconf
     SUBDIR += gdb-m68k
+    SUBDIR += gengetopt
     SUBDIR += gettext
     SUBDIR += gide
     SUBDIR += gindent
