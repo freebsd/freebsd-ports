@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	saint
-PORTVERSION=	3.3.7
+PORTVERSION=	3.4.9
 CATEGORIES=	security
 MASTER_SITES=	ftp://ftp.wwdsi.com/pub/saint/			\
 		http://www.wwdsi.com/saint/downloads/
 
-MAINTAINER=	carl_johan@gmx.net
+MAINTAINER=	ports@FreeBSD.org
 
 BUILD_DEPENDS=	nmap:${PORTSDIR}/security/nmap
 
