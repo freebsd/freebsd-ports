@@ -6,19 +6,12 @@
 #
 
 PORTNAME?=	cdrtools
-PORTVERSION?=	2.01a20
+PORTVERSION?=	2.01a21
 PORTREVISION?=	0
 CATEGORIES?=	sysutils audio
 MASTER_SITES=	ftp://ftp.berlios.de/pub/cdrecord/alpha/ \
 		ftp://ftp.cs.tu-berlin.de/pub/misc/cdrecord/alpha/
-DISTNAME=	cdrtools-2.01a20
-
-.if defined(WITH_DVDHACK) && !defined(MKISOFS)
-#PATCH_SITES=	http://people.mandrakesoft.com/~warly/files/cdrtools/archives/
-PATCH_SITES=	ftp://ftp.zeist.de/pub/distfiles/
-PATCHFILES=	cdrtools-2.01a20-dvd.patch.bz2
-PATCH_DIST_STRIP=	-p1
-.endif
+DISTNAME=	cdrtools-2.01a21
 
 MAINTAINER=	marius@alchemy.franken.de
 COMMENT?=	Cdrecord and other programs to extract and record CDs/CD-R[W]s
@@ -47,6 +40,7 @@ USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_REINPLACE=	yes
 MAKE_ENV=	CCOM=${CC}
+CFLAGS+=	-DSOURCE_MODIFIED
 WRKSRC=		${WRKDIR}/${DISTNAME:C/a(.+)$//}
 
 .if defined(MKISOFS)
@@ -55,18 +49,15 @@ PKGMESSAGE=	""
 .else
 DOCSSRC=	${WRKSRC}
 PKGMESSAGE=	${WRKDIR}/pkg-message
-.if defined(WITH_DVDHACK)
-_DVDSUFFIX=	-dvd
-.endif
 .if defined(WITH_RSCSI)
 PKGINSTALL=	${PKGDIR}/pkg-install.rscsi
 PLIST_SUB=	RSCSI=""
-_RSCSISUFFIX=	-rscsi
+PKGNAMESUFFIX=	-rscsi-devel
 .else
 PLIST_SUB=	RSCSI="@comment "
 .endif
 .endif
-PKGNAMESUFFIX=	${_DVDSUFFIX}${_RSCSISUFFIX}-devel
+PKGNAMESUFFIX?=	-devel
 
 .include <bsd.port.pre.mk>
 
@@ -75,8 +66,6 @@ pre-everything::
 	@${ECHO_MSG} ""
 	@${ECHO_MSG} "You may use the following build option(s):"
 	@${ECHO_MSG} ""
-	@${ECHO_MSG} "WITH_DVDHACK=yes	builds with a third-party patch that enables recording"
-	@${ECHO_MSG} "			of DVD-R[W]s."
 	@${ECHO_MSG} "WITH_RSCSI=yes		builds with rscsi which allows using SCSI-devices over"
 	@${ECHO_MSG} "			the network."
 	@${ECHO_MSG} "			BEWARE:	The rscsi binary gets installed suid root as"
@@ -114,6 +103,9 @@ post-patch:
 		s|\/usr\/local|${PREFIX}|g; s|\/etc\/default|${PREFIX}\/etc|g; \
 		s|\/var\/adm\/messages|\/var\/run\/dmesg.boot|g' ${WRKSRC}/${i}
 .endfor
+	@${REINPLACE_CMD} -E -e \
+		's|#define.+INSERT_YOUR_EMAIL_ADDRESS_HERE|& "${MAINTAINER}"|' \
+		${WRKSRC}/cdrecord/cdrecord.c
 	@${SED} 's|%%PREFIX%%|${PREFIX}|g' ${PKGDIR}/pkg-message > \
 		${WRKDIR}/pkg-message
 .endif
