@@ -17,8 +17,10 @@ RUN_DEPENDS=	${LOCALBASE}/${TARGET_PLATFORM}/include/stdio.h:${PORTSDIR}/devel/a
 USE_BZIP2=	yes
 
 TARGET_PLATFORM=mipsel-linux
+NO_BUILD=	yes
 
 do-install:
 	(cd ${WRKSRC} && tar --exclude '*.orig' -cf - *) \
 		| (cd ${PREFIX}/${TARGET_PLATFORM} && tar xf -)
+
 .include <bsd.port.mk>
