@@ -13,6 +13,7 @@ MAINTAINER=	alex@FreeBSD.org
 
 ISPELL_DENEU=	yes
 MASTERDIR=	${.CURDIR}/../../textproc/ispell
+USE_PERL5=	yes
 
 .if exists(${.CURDIR}/Makefile.local)
 .include "${.CURDIR}/Makefile.local"

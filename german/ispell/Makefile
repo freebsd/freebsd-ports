@@ -11,6 +11,8 @@ PKGNAMESUFFIX=	-20001109
 
 MAINTAINER=	alex@FreeBSD.org
 
+USE_PERL5=	yes
+
 ISPELL_DEALT=	yes
 ISPELL_DENEU=	yes
 MASTERDIR=	${.CURDIR}/../../textproc/ispell
