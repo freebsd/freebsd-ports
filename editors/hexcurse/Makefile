@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	hexcurse
-PORTVERSION=	1.2
+PORTVERSION=	1.21
 CATEGORIES=	editors
 MASTER_SITES=	http://jewfish.net/downloads/
 
