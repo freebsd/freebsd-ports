@@ -9,7 +9,7 @@
 PORTNAME=	cpp2latex
 PORTVERSION=	2.3
 CATEGORIES=	print
-MASTER_SITES=	http://www.arnoldarts.de/
+MASTER_SITES=	http://roederberg.dyndns.org/~arnold/file_share/cpp2latex/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Convert C++ source to a file you can input in an LaTeX-document
