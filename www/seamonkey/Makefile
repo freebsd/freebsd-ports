@@ -32,6 +32,7 @@ WRKSRC=		${WRKDIR}/${PORTNAME}
 MOZILLA?=	mozilla-devel
 
 .if defined(WITH_GTK2)
+PKGNAMESUFFIX=	-gtk2
 USE_GNOME=	gtk20 libidl
 .else
 USE_GNOME=	gtk12 orbit
