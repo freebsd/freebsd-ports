@@ -1,0 +1,30 @@
+Sweep is an editor for sound samples. It operates on files of various formats
+such as .wav, .aiff and .au, and has multiple undo/redo levels and filters.
+
+Sweep features: 
+ o Loading and saving of PCM encoded sound formats including AIFF, Sun/NeXT AU
+   and WAV. 
+ o Multiple views of each sound: you can view different parts of the same sound
+   in different windows simultaneously, with variable zooming in each view. You
+   can view the entire sound at once, or zoom right down to the individual
+   sample values. 
+ o Discontinuous selections: you can select regions of a sound with the mouse.
+   By holding down the <Shift> key whilst selecting more regions, each region
+   is added to the total selection. Also, selection boundaries can be moved,
+   and selection regions merged, at any time.
+ o Cut, copy and paste: conventional cut or copy selected regions of a sound,
+   and paste into the same or other sounds.
+ o Multiple undo and redo: all operations are reversible and can be re-applied.
+ o Simple effects filters: normalisation (maximal amplification without
+   degradation) and time reversing of selected regions. 
+ o Playback: playback of entire sound, or of selected regions only. Looped
+   playback of entire sound or selected regions. Editing and effects are not
+   disabled during playback, giving you instantaneous feedback of the result of
+   each action. 
+ o Piano-style playback: the computer keyboard keys behave like musical keys
+   for playback of instrument samples, so you can hear how the sample will
+   sound when used in a sequencer or tracker. 
+ o Separate volume levels per view, which can be adjusted with the mouse wheel
+   if available. 
+
+WWW: http://sweep.sourceforge.net/
