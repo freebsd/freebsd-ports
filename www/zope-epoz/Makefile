@@ -19,6 +19,7 @@ USE_PYTHON=	yes
 USE_ZOPE=	yes
 DIST_SUBDIR=	zope
 
+PLIST=		${WRKDIR}/pkg-plist
 WRKSRC=		${WRKDIR}/Epoz
 
 RUN_DEPENDS+=	${ZOPEBASEDIR}/${ZOPEPRODUCTDIR}/CMFCore/__init__.py:${PORTSDIR}/www/zope-cmf

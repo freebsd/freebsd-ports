@@ -23,6 +23,7 @@ DIST_SUBDIR=	zope
 EXTRACT_CMD=	tar
 EXTRACT_BEFORE_ARGS=	-zxvf
 EXTRACT_AFTER_ARGS=	--exclude debian
+PLIST=		${WRKDIR}/pkg-plist
 WRKSRC=		${WRKDIR}/GroupUserFolder
 
 PRODUCTNAME=	GroupUserFolder
