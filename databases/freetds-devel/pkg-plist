@@ -24,10 +24,13 @@ lib/libct.so
 lib/libct.so.0
 lib/libsybdb.a
 lib/libsybdb.so
-lib/libsybdb.so.0
+lib/libsybdb.so.1
 lib/libtds.a
 lib/libtds.so
 lib/libtds.so.0
+%%ODBC%%lib/libtdsodbc.a
+%%ODBC%%lib/libtdsodbc.so
+%%ODBC%%lib/libtdsodbc.so.0
 lib/libtdssrv.a
 lib/libtdssrv.so
 lib/libtdssrv.so.0
