@@ -13,22 +13,21 @@ libexec/autoconf213/autoreconf
 libexec/autoconf213/autoscan
 libexec/autoconf213/autoupdate
 libexec/autoconf213/ifnames
-share/autoconf213/autoconf/acconfig.h
-share/autoconf213/autoconf/acfunctions
-share/autoconf213/autoconf/acgeneral.m4
-share/autoconf213/autoconf/acheaders
-share/autoconf213/autoconf/acidentifiers
-share/autoconf213/autoconf/acmakevars
-share/autoconf213/autoconf/acoldnames.m4
-share/autoconf213/autoconf/acprograms
-share/autoconf213/autoconf/acspecific.m4
-share/autoconf213/autoconf/autoconf.m4
-share/autoconf213/autoconf/autoconf.m4f
-share/autoconf213/autoconf/autoheader.m4
-share/autoconf213/autoconf/autoheader.m4f
-share/autoconf213/autoconf/config.guess
-share/autoconf213/autoconf/config.sub
-share/autoconf213/autoconf/install-sh
+share/autoconf213/acconfig.h
+share/autoconf213/acfunctions
+share/autoconf213/acgeneral.m4
+share/autoconf213/acheaders
+share/autoconf213/acidentifiers
+share/autoconf213/acmakevars
+share/autoconf213/acoldnames.m4
+share/autoconf213/acprograms
+share/autoconf213/acspecific.m4
+share/autoconf213/autoconf.m4
+share/autoconf213/autoconf.m4f
+share/autoconf213/autoheader.m4
+share/autoconf213/autoheader.m4f
+share/autoconf213/config.guess
+share/autoconf213/config.sub
+share/autoconf213/install-sh
 @dirrm libexec/autoconf213
-@dirrm share/autoconf213/autoconf
 @dirrm share/autoconf213
