@@ -1,7 +1,7 @@
 #!/bin/sh -
 #
 #	pre-configure script for Elm port to FreeBSD 2.0
-#	$Id: pre-configure,v 1.16 1996/12/23 06:08:21 ache Exp $
+#	$Id: pre-configure,v 1.17 1999/04/07 18:28:40 ache Exp $
 
 PortsDir=$PORTSDIR
   CurDir=$CURDIR
@@ -162,7 +162,7 @@ d_domname='define'
 d_usegetdom='undef'
 d_errlst='define'
 d_flock='define'
-d_dotlock='define'
+d_dotlock='undef'
 d_fcntlock='undef'
 has_flock='define'
 has_fcntl='define'
