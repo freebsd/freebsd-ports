@@ -12,6 +12,7 @@ MASTER_SITES=	http://www.breuninger.org/files/distfiles/
 EXTRACT_SUFX=	.c.gz
 
 MAINTAINER=	ob@breuninger.org
+COMMENT=	Simple command-line pseudo terminal manager
 
 NO_WRKSUBDIR=	yes
 EXTRACT_CMD=	${GZCAT}
