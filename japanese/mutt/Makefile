@@ -13,7 +13,7 @@ MASTER_SITES=	ftp://ftp.guug.de/pub/mutt/ \
 		ftp://ftp.guug.de/pub/mutt/historic/ \
 		ftp://ftp.gbnet.net/pub/mutt-international/ \
 		http://www.hiei.kit.ac.jp/~hitomi/mutt/
-DISTFILES=	mutt-1.0i.tar.gz manual_ja.tar.gz
+DISTFILES=	mutt-1.0i.tar.gz manual_ja-1.0i-2.tar.gz
 
 PATCH_SITES=	http://kondara.sdri.co.jp/~kikutani/slang/
 PATCHFILES=	mutt-1.0i-jp0.patch
