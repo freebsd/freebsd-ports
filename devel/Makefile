@@ -213,6 +213,7 @@
     SUBDIR += mm
     SUBDIR += mob
     SUBDIR += moonshine
+    SUBDIR += motor
     SUBDIR += mprof
     SUBDIR += msrc0
     SUBDIR += nana

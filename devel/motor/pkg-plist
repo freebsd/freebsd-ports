@@ -1,0 +1,34 @@
+bin/motor
+share/locale/pl/LC_MESSAGES/motor.mo
+share/locale/ru/LC_MESSAGES/motor.mo
+share/motor/COPYING
+share/motor/external
+share/motor/syntax
+share/motor/templates/library/static/Browser
+share/motor/templates/library/static/Buildrules
+share/motor/templates/library/static/Folders
+share/motor/templates/library/static/Makefile
+share/motor/templates/library/static/rpm.Dist
+share/motor/templates/library/static/tar.gz.Dist
+share/motor/templates/terminal program/C++/Browser
+share/motor/templates/terminal program/C++/Buildrules
+share/motor/templates/terminal program/C++/Folders
+share/motor/templates/terminal program/C++/Makefile
+share/motor/templates/terminal program/C++/[value name].cc.tmpl
+share/motor/templates/terminal program/C++/rpm.Dist
+share/motor/templates/terminal program/C++/tar.gz.Dist
+share/motor/templates/terminal program/C/Browser
+share/motor/templates/terminal program/C/Buildrules
+share/motor/templates/terminal program/C/Folders
+share/motor/templates/terminal program/C/Makefile
+share/motor/templates/terminal program/C/[value name].c.tmpl
+share/motor/templates/terminal program/C/rpm.Dist
+share/motor/templates/terminal program/C/tar.gz.Dist
+share/motor/themes
+@dirrm share/motor/templates/terminal program/C++
+@dirrm share/motor/templates/terminal program/C
+@dirrm share/motor/templates/terminal program
+@dirrm share/motor/templates/library/static
+@dirrm share/motor/templates/library
+@dirrm share/motor/templates
+@dirrm share/motor
