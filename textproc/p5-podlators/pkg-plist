@@ -1,0 +1,12 @@
+bin/pod2man
+bin/pod2text
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Pod/.packlist
+lib/perl5/site_perl/%%PERL_VER%%/Pod/Man.pm
+lib/perl5/site_perl/%%PERL_VER%%/Pod/ParseLink.pm
+lib/perl5/site_perl/%%PERL_VER%%/Pod/Text.pm
+lib/perl5/site_perl/%%PERL_VER%%/Pod/Text/Color.pm
+lib/perl5/site_perl/%%PERL_VER%%/Pod/Text/Overstrike.pm
+lib/perl5/site_perl/%%PERL_VER%%/Pod/Text/Termcap.pm
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/Pod/Text 2>/dev/null || true
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/Pod 2>/dev/null || true
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Pod 2>/dev/null || true
