@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	numarray
-PORTVERSION=	0.9
+PORTVERSION=	1.2.3
 CATEGORIES=	math python
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	numpy
@@ -17,13 +17,12 @@ COMMENT=	Numeric array manipulation extension module for Python
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=yes
-NO_BUILD=	yes # setup.py doesn't work as expected for 'build' target.
 PLIST_SUB=	DOCSDIR=${DOCSDIR:S,${PREFIX}/,,} \
 		EXAMPLESDIR=${EXAMPLESDIR:S,${PREFIX}/,,}
 
 post-configure:
 	cd ${WRKSRC} && \
-	${PYTHON_CMD} Lib/codegenerator.py && \
+	${PYTHON_CMD} generate.py && \
 	${PYTHON_CMD} Include/numarray/genapis.py
 
 post-install:

@@ -1,7 +1,9 @@
+%%PYTHON_INCLUDEDIR%%/numarray/arraybase.h
 %%PYTHON_INCLUDEDIR%%/numarray/arrayobject.h
 %%PYTHON_INCLUDEDIR%%/numarray/cfunc.h
 %%PYTHON_INCLUDEDIR%%/numarray/ieeespecial.h
 %%PYTHON_INCLUDEDIR%%/numarray/libnumarray.h
+%%PYTHON_INCLUDEDIR%%/numarray/libnumeric.h
 %%PYTHON_INCLUDEDIR%%/numarray/libteacup.h
 %%PYTHON_INCLUDEDIR%%/numarray/numarray.h
 %%PYTHON_INCLUDEDIR%%/numarray/numcomplex.h
@@ -44,9 +46,27 @@
 %%PYTHON_SITELIBDIR%%/numarray/arrayprint.py
 %%PYTHON_SITELIBDIR%%/numarray/arrayprint.pyc
 %%PYTHON_SITELIBDIR%%/numarray/arrayprint.pyo
-%%PYTHON_SITELIBDIR%%/numarray/codegenerator.py
-%%PYTHON_SITELIBDIR%%/numarray/codegenerator.pyc
-%%PYTHON_SITELIBDIR%%/numarray/codegenerator.pyo
+%%PYTHON_SITELIBDIR%%/numarray/codegenerator/__init__.py
+%%PYTHON_SITELIBDIR%%/numarray/codegenerator/__init__.pyc
+%%PYTHON_SITELIBDIR%%/numarray/codegenerator/__init__.pyo
+%%PYTHON_SITELIBDIR%%/numarray/codegenerator/basecode.py
+%%PYTHON_SITELIBDIR%%/numarray/codegenerator/basecode.pyc
+%%PYTHON_SITELIBDIR%%/numarray/codegenerator/basecode.pyo
+%%PYTHON_SITELIBDIR%%/numarray/codegenerator/bytescode.py
+%%PYTHON_SITELIBDIR%%/numarray/codegenerator/bytescode.pyc
+%%PYTHON_SITELIBDIR%%/numarray/codegenerator/bytescode.pyo
+%%PYTHON_SITELIBDIR%%/numarray/codegenerator/convcode.py
+%%PYTHON_SITELIBDIR%%/numarray/codegenerator/convcode.pyc
+%%PYTHON_SITELIBDIR%%/numarray/codegenerator/convcode.pyo
+%%PYTHON_SITELIBDIR%%/numarray/codegenerator/sortcode.py
+%%PYTHON_SITELIBDIR%%/numarray/codegenerator/sortcode.pyc
+%%PYTHON_SITELIBDIR%%/numarray/codegenerator/sortcode.pyo
+%%PYTHON_SITELIBDIR%%/numarray/codegenerator/template.py
+%%PYTHON_SITELIBDIR%%/numarray/codegenerator/template.pyc
+%%PYTHON_SITELIBDIR%%/numarray/codegenerator/template.pyo
+%%PYTHON_SITELIBDIR%%/numarray/codegenerator/ufunccode.py
+%%PYTHON_SITELIBDIR%%/numarray/codegenerator/ufunccode.pyc
+%%PYTHON_SITELIBDIR%%/numarray/codegenerator/ufunccode.pyo
 %%PYTHON_SITELIBDIR%%/numarray/convolve/Convolve.py
 %%PYTHON_SITELIBDIR%%/numarray/convolve/Convolve.pyc
 %%PYTHON_SITELIBDIR%%/numarray/convolve/Convolve.pyo
@@ -61,6 +81,9 @@
 %%PYTHON_SITELIBDIR%%/numarray/convolve/lineshape.py
 %%PYTHON_SITELIBDIR%%/numarray/convolve/lineshape.pyc
 %%PYTHON_SITELIBDIR%%/numarray/convolve/lineshape.pyo
+%%PYTHON_SITELIBDIR%%/numarray/dotblas.py
+%%PYTHON_SITELIBDIR%%/numarray/dotblas.pyc
+%%PYTHON_SITELIBDIR%%/numarray/dotblas.pyo
 %%PYTHON_SITELIBDIR%%/numarray/examples/Matrix.py
 %%PYTHON_SITELIBDIR%%/numarray/examples/Matrix.pyc
 %%PYTHON_SITELIBDIR%%/numarray/examples/Matrix.pyo
@@ -126,6 +149,7 @@
 %%PYTHON_SITELIBDIR%%/numarray/image/combine.pyc
 %%PYTHON_SITELIBDIR%%/numarray/image/combine.pyo
 %%PYTHON_SITELIBDIR%%/numarray/libnumarray.so
+%%PYTHON_SITELIBDIR%%/numarray/libnumeric.so
 %%PYTHON_SITELIBDIR%%/numarray/linear_algebra/LinearAlgebra2.py
 %%PYTHON_SITELIBDIR%%/numarray/linear_algebra/LinearAlgebra2.pyc
 %%PYTHON_SITELIBDIR%%/numarray/linear_algebra/LinearAlgebra2.pyo
@@ -155,6 +179,9 @@
 %%PYTHON_SITELIBDIR%%/numarray/ma/dtest.py
 %%PYTHON_SITELIBDIR%%/numarray/ma/dtest.pyc
 %%PYTHON_SITELIBDIR%%/numarray/ma/dtest.pyo
+%%PYTHON_SITELIBDIR%%/numarray/matrix/__init__.py
+%%PYTHON_SITELIBDIR%%/numarray/matrix/__init__.pyc
+%%PYTHON_SITELIBDIR%%/numarray/matrix/__init__.pyo
 %%PYTHON_SITELIBDIR%%/numarray/memmap.py
 %%PYTHON_SITELIBDIR%%/numarray/memmap.pyc
 %%PYTHON_SITELIBDIR%%/numarray/memmap.pyo
@@ -162,6 +189,9 @@
 %%PYTHON_SITELIBDIR%%/numarray/memorytest.py
 %%PYTHON_SITELIBDIR%%/numarray/memorytest.pyc
 %%PYTHON_SITELIBDIR%%/numarray/memorytest.pyo
+%%PYTHON_SITELIBDIR%%/numarray/mlab/__init__.py
+%%PYTHON_SITELIBDIR%%/numarray/mlab/__init__.pyc
+%%PYTHON_SITELIBDIR%%/numarray/mlab/__init__.pyo
 %%PYTHON_SITELIBDIR%%/numarray/nd_image/__init__.py
 %%PYTHON_SITELIBDIR%%/numarray/nd_image/__init__.pyc
 %%PYTHON_SITELIBDIR%%/numarray/nd_image/__init__.pyo
@@ -221,6 +251,9 @@
 %%PYTHON_SITELIBDIR%%/numarray/random_array/dtest.pyc
 %%PYTHON_SITELIBDIR%%/numarray/random_array/dtest.pyo
 %%PYTHON_SITELIBDIR%%/numarray/random_array/ranlib2.so
+%%PYTHON_SITELIBDIR%%/numarray/readonly.py
+%%PYTHON_SITELIBDIR%%/numarray/readonly.pyc
+%%PYTHON_SITELIBDIR%%/numarray/readonly.pyo
 %%PYTHON_SITELIBDIR%%/numarray/records.py
 %%PYTHON_SITELIBDIR%%/numarray/records.pyc
 %%PYTHON_SITELIBDIR%%/numarray/records.pyo
@@ -233,9 +266,6 @@
 %%PYTHON_SITELIBDIR%%/numarray/teacup.py
 %%PYTHON_SITELIBDIR%%/numarray/teacup.pyc
 %%PYTHON_SITELIBDIR%%/numarray/teacup.pyo
-%%PYTHON_SITELIBDIR%%/numarray/template.py
-%%PYTHON_SITELIBDIR%%/numarray/template.pyc
-%%PYTHON_SITELIBDIR%%/numarray/template.pyo
 %%PYTHON_SITELIBDIR%%/numarray/testall.py
 %%PYTHON_SITELIBDIR%%/numarray/testall.pyc
 %%PYTHON_SITELIBDIR%%/numarray/testall.pyo
@@ -250,7 +280,6 @@
 %%PYTHON_SITELIBDIR%%/numarray/ufunc.pyc
 %%PYTHON_SITELIBDIR%%/numarray/ufunc.pyo
 %%PORTDOCS%%%%DOCSDIR%%/Announce.txt
-%%PORTDOCS%%%%DOCSDIR%%/CHANGES
 %%PORTDOCS%%%%DOCSDIR%%/CVS-files
 %%PORTDOCS%%%%DOCSDIR%%/ChangeLog
 %%PORTDOCS%%%%DOCSDIR%%/Design.txt
@@ -258,6 +287,7 @@
 %%PORTDOCS%%%%DOCSDIR%%/Repackaging.txt
 %%PORTDOCS%%%%DOCSDIR%%/UsersGuide.txt
 %%PORTDOCS%%%%DOCSDIR%%/doctest.py
+%%PORTDOCS%%%%DOCSDIR%%/header_pep.txt
 %%PORTDOCS%%%%DOCSDIR%%/manual/ChangeLog
 %%PORTDOCS%%%%DOCSDIR%%/manual/Makefile
 %%PORTDOCS%%%%DOCSDIR%%/manual/README
@@ -277,9 +307,12 @@
 %%PORTDOCS%%%%DOCSDIR%%/manual/introduction.tex
 %%PORTDOCS%%%%DOCSDIR%%/manual/linearalgebra.tex
 %%PORTDOCS%%%%DOCSDIR%%/manual/ma.tex
+%%PORTDOCS%%%%DOCSDIR%%/manual/memmap.tex
 %%PORTDOCS%%%%DOCSDIR%%/manual/mklinks
+%%PORTDOCS%%%%DOCSDIR%%/manual/mlab.tex
 %%PORTDOCS%%%%DOCSDIR%%/manual/ndimage.tex
 %%PORTDOCS%%%%DOCSDIR%%/manual/numarray.tex
+%%PORTDOCS%%%%DOCSDIR%%/manual/objectarray.tex
 %%PORTDOCS%%%%DOCSDIR%%/manual/overview.tex
 %%PORTDOCS%%%%DOCSDIR%%/manual/pseudoindices.tex
 %%PORTDOCS%%%%DOCSDIR%%/manual/randomarray.tex
@@ -287,6 +320,23 @@
 %%PORTDOCS%%%%DOCSDIR%%/manual/table.py
 %%PORTDOCS%%%%DOCSDIR%%/manual/ufuncs.tex
 %%PORTDOCS%%%%DOCSDIR%%/manual/webpage/update.py
+%%PORTDOCS%%%%DOCSDIR%%/release_notes/ANNOUNCE-0.3
+%%PORTDOCS%%%%DOCSDIR%%/release_notes/ANNOUNCE-0.3.1
+%%PORTDOCS%%%%DOCSDIR%%/release_notes/ANNOUNCE-0.3.3
+%%PORTDOCS%%%%DOCSDIR%%/release_notes/ANNOUNCE-0.3.4
+%%PORTDOCS%%%%DOCSDIR%%/release_notes/ANNOUNCE-0.3.5
+%%PORTDOCS%%%%DOCSDIR%%/release_notes/ANNOUNCE-0.3.6
+%%PORTDOCS%%%%DOCSDIR%%/release_notes/ANNOUNCE-0.4
+%%PORTDOCS%%%%DOCSDIR%%/release_notes/ANNOUNCE-0.5
+%%PORTDOCS%%%%DOCSDIR%%/release_notes/ANNOUNCE-0.6
+%%PORTDOCS%%%%DOCSDIR%%/release_notes/ANNOUNCE-0.6.1
+%%PORTDOCS%%%%DOCSDIR%%/release_notes/ANNOUNCE-0.6b
+%%PORTDOCS%%%%DOCSDIR%%/release_notes/ANNOUNCE-0.7
+%%PORTDOCS%%%%DOCSDIR%%/release_notes/ANNOUNCE-0.8
+%%PORTDOCS%%%%DOCSDIR%%/release_notes/ANNOUNCE-0.9
+%%PORTDOCS%%%%DOCSDIR%%/release_notes/ANNOUNCE-1.0
+%%PORTDOCS%%%%DOCSDIR%%/release_notes/ANNOUNCE-1.1
+%%PORTDOCS%%%%DOCSDIR%%/release_notes/ANNOUNCE-1.2.2.txt
 %%PORTDOCS%%%%DOCSDIR%%/sitecustomize.py
 %%PORTDOCS%%%%DOCSDIR%%/unittest.py
 %%PORTDOCS%%%%EXAMPLESDIR%%/ChangeLog
@@ -306,20 +356,34 @@
 %%PORTDOCS%%%%EXAMPLESDIR%%/convolve/numpy_compatmodule.c
 %%PORTDOCS%%%%EXAMPLESDIR%%/convolve/one_dimensionalmodule.c
 %%PORTDOCS%%%%EXAMPLESDIR%%/convolve/testlite.c
-%%PORTDOCS%%%%EXAMPLESDIR%%/f2py/f2py_numeric.py
 %%PORTDOCS%%%%EXAMPLESDIR%%/f2py/f2py_tests.py
+%%PORTDOCS%%%%EXAMPLESDIR%%/f2py/master_test.py
 %%PORTDOCS%%%%EXAMPLESDIR%%/obench.py
 %%PORTDOCS%%%%EXAMPLESDIR%%/pstats.py
 %%PORTDOCS%%%%EXAMPLESDIR%%/sortperf.py
 %%PORTDOCS%%%%EXAMPLESDIR%%/testthread.py
+%%PORTDOCS%%%%EXAMPLESDIR%%/ufunc/Lib/__init__.py
+%%PORTDOCS%%%%EXAMPLESDIR%%/ufunc/Src/_foo.c
+%%PORTDOCS%%%%EXAMPLESDIR%%/ufunc/Src/_na_specialmodule.c
+%%PORTDOCS%%%%EXAMPLESDIR%%/ufunc/Src/airy.c
+%%PORTDOCS%%%%EXAMPLESDIR%%/ufunc/Src/const.c
+%%PORTDOCS%%%%EXAMPLESDIR%%/ufunc/Src/polevl.c
+%%PORTDOCS%%%%EXAMPLESDIR%%/ufunc/setup.py
+%%PORTDOCS%%%%EXAMPLESDIR%%/ufunc/setup_special.py
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/ufunc/Src
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/ufunc/Lib
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/ufunc
 %%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/f2py
 %%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/convolve
 %%PORTDOCS%%@dirrm %%EXAMPLESDIR%%
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/release_notes
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/manual/webpage
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/manual
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm %%PYTHON_SITELIBDIR%%/numarray/random_array
 @dirrm %%PYTHON_SITELIBDIR%%/numarray/nd_image
+@dirrm %%PYTHON_SITELIBDIR%%/numarray/mlab
+@dirrm %%PYTHON_SITELIBDIR%%/numarray/matrix
 @dirrm %%PYTHON_SITELIBDIR%%/numarray/ma
 @dirrm %%PYTHON_SITELIBDIR%%/numarray/linear_algebra
 @dirrm %%PYTHON_SITELIBDIR%%/numarray/image
@@ -327,5 +391,6 @@
 @dirrm %%PYTHON_SITELIBDIR%%/numarray/examples/convolve
 @dirrm %%PYTHON_SITELIBDIR%%/numarray/examples
 @dirrm %%PYTHON_SITELIBDIR%%/numarray/convolve
+@dirrm %%PYTHON_SITELIBDIR%%/numarray/codegenerator
 @dirrm %%PYTHON_SITELIBDIR%%/numarray
 @dirrm %%PYTHON_INCLUDEDIR%%/numarray
