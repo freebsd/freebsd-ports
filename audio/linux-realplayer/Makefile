@@ -3,7 +3,7 @@
 # Date created:        31 January 1999
 # Whom:                Kris Kennaway <kkennawa@physics.adelaide.edu.au>
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1999/02/12 15:42:21 kuriyama Exp $
 #
 
 DISTNAME=	rv50_linux20
@@ -54,7 +54,7 @@ do-install:
 .endif
 
 .for i in ${LIBFILES}
-	${INSTALL_PROGRAM} ${WRKSRC}/${i} ${PREFIX}/lib/rvplayer5.0/
+	${INSTALL_DATA} ${WRKSRC}/${i} ${PREFIX}/lib/rvplayer5.0/
 .endfor
 
 	${INSTALL_PROGRAM} ${WRKSRC}/rvplayer ${PREFIX}/bin/
