@@ -18,7 +18,7 @@ BUILD_DEPENDS+=	${LOCALBASE}/lib/libcnews.a:${PORTSDIR}/news/cnews \
 
 WRKSRC=		${WRKDIR}/c-nocem
 CNEWSSRC?=	${.CURDIR}/../cnews/work
-NEWSBIN?=	${PREFIX}/news/cnewsbin
+NEWSBIN?=	${PREFIX}/libexec/cnews
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=	--with-cnews=${WRKDIRPREFIX}${CNEWSSRC}

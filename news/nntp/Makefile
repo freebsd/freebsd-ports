@@ -30,7 +30,7 @@ MODIFY=		conf.h Makefile
 DOCSFILES1=	AUTHORIZE CHANGES README README-conf.h SYSLOG doc/rfc977
 DOCSFILES2=	server support xfer xmit
 
-NEWSBIN?=	${PREFIX}/news/cnewsbin
+NEWSBIN?=	${PREFIX}/libexec/cnews
 NEWSCTL?=	${PREFIX}/news/lib
 NEWSARTS?=	/var/news
 NEWSOV?=	/var/news/over.view

@@ -7,7 +7,7 @@
 
 MASTERDIR=	${.CURDIR}/../suck
 
-NEWSBIN?=	${PREFIX}/news/cnewsbin
+NEWSBIN?=	${PREFIX}/libexec/cnews
 NEWSCTL?=	${PREFIX}/news/lib
 
 .include "${MASTERDIR}/Makefile"
