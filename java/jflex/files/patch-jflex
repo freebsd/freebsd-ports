@@ -1,13 +1,14 @@
-$FreeBSD$
-
---- bin/jflex.orig	Mon Oct  1 04:18:48 2001
-+++ bin/jflex	Wed Feb 18 12:19:00 2004
+--- bin/jflex.orig	Mon May  3 23:06:29 2004
++++ bin/jflex	Mon May  3 23:11:12 2004
 @@ -1,51 +1,19 @@
 -#! /bin/bash 
 +#!/bin/sh 
  #
--#     JFlex start script $Revision: 1.16 $
--#
+-#     JFlex start script $Revision: 2.0 $
++# Replacement for the script that came with JFlex
++# because bash is not necessarily on a FreeBSD
++# machine. Also, we know where the jar is.
+ #
 -# if Java is not in your binary path, you need to supply its
 -# location in this script. The script automatically finds 
 -# JFLEX_HOME when called directly, via binary path, or symbolic
@@ -47,22 +48,16 @@ $FreeBSD$
 -JFLEX_HOME=${PRG}/.. 
 -
 -# --------------------------------------------------------------------
--
++# Conor McDermottroe <ports@mcdermottroe.com>
+ 
 -export CLASSPATH
 -CLASSPATH=$JFLEX_HOME/lib/JFlex.jar
--
--$JAVA JFlex.Main $@
-+# Replacement for the script that came with JFlex
-+# because bash is not necessarily on a FreeBSD
-+# machine. Also, we know where the jar is.
-+# 
-+# Conor McDermottroe <ports@mcdermottroe.com>
-+
 +# Allow the user to override where JFlex.jar lives
 +if [ -z "$JAVAJARDIR" ]; then
 +	JAVAJARDIR=%%JAVAJARDIR%%
 +fi
-+
+ 
+-$JAVA JFlex.Main $@
 +# Allow the user to specify which java interpreter to use
 +if [ -z "$JAVA" ]; then
 +	JAVA="`which javavm`"

@@ -1,23 +1,7 @@
-$FreeBSD$
-
---- src/Makefile.orig	Mon Oct  8 03:57:06 2001
-+++ src/Makefile	Thu Feb 19 11:11:04 2004
-@@ -1,16 +1,14 @@
- # you need JFlex 1.2.2 and CUP 0.10j or later for this Makefile to work
- 
- JFLEX     = jflex -skel skeleton.nested
--CUP       = java java_cup.Main 
-+CUP       = java -classpath ${JAVAJARDIR}/java_cup.jar java_cup.Main 
- 
--JAVAC     = javac -target 1.1 -bootclasspath /usr/lib/jdk1.1/lib/classes.zip
- #JAVAC     = jikes   
--JAR       = jar
- 
- DEST      = ../lib
- 
- # jdk 1.2 
--CLPATH    = -classpath /usr/lib/java/jre/lib/rt.jar:.
-+CLPATH    = -classpath ${JAVA_CLASSES}:.
- 
- # jdk 1.1
- #CLPATH    = -classpath /usr/lib/java/lib/classes.zip:.
+--- src/Makefile.orig	Mon May  3 23:23:09 2004
++++ src/Makefile	Mon May  3 23:20:03 2004
+@@ -0,0 +1,4 @@
++# Makefile to wrap a call to ant
++
++all:
++	${SETENV} CLASSPATH=${DISTDIR}/JFlex.jar:${DISTDIR}/java_cup.jar:${JAVAJARDIR}/junit.jar:. ${LOCALBASE}/bin/ant jar

@@ -39,6 +39,7 @@ bin/jflex
 %%EXAMPLESDIR%%/interpreter/Tparlist.java
 %%EXAMPLESDIR%%/interpreter/Tprogram.java
 %%EXAMPLESDIR%%/interpreter/Tuminus.java
+%%EXAMPLESDIR%%/interpreter/build.xml
 %%EXAMPLESDIR%%/interpreter/example.as
 %%EXAMPLESDIR%%/interpreter/parser.cup
 %%EXAMPLESDIR%%/interpreter/scanner.flex
@@ -47,17 +48,23 @@ bin/jflex
 %%EXAMPLESDIR%%/java/JavaSymbol.java
 %%EXAMPLESDIR%%/java/Makefile
 %%EXAMPLESDIR%%/java/README
+%%EXAMPLESDIR%%/java/TestLexer.java
 %%EXAMPLESDIR%%/java/java.flex
 %%EXAMPLESDIR%%/java/java12.cup
+%%EXAMPLESDIR%%/java/lexer-output.good
 %%EXAMPLESDIR%%/java/unicode.flex
 @dirrm %%EXAMPLESDIR%%/java
+%%EXAMPLESDIR%%/simple/Makefile
 %%EXAMPLESDIR%%/simple/README
 %%EXAMPLESDIR%%/simple/Utility.java
 %%EXAMPLESDIR%%/simple/Yytoken.java
+%%EXAMPLESDIR%%/simple/output.good
 %%EXAMPLESDIR%%/simple/simple.flex
+%%EXAMPLESDIR%%/simple/test.txt
 @dirrm %%EXAMPLESDIR%%/simple
 %%EXAMPLESDIR%%/standalone/Makefile
 %%EXAMPLESDIR%%/standalone/README
+%%EXAMPLESDIR%%/standalone/build.xml
 %%EXAMPLESDIR%%/standalone/sample.inp
 %%EXAMPLESDIR%%/standalone/standalone.flex
 @dirrm %%EXAMPLESDIR%%/standalone

@@ -6,9 +6,14 @@
 #
 
 PORTNAME=	jflex
-PORTVERSION=	1.3.5
+PORTVERSION=	1.4
 CATEGORIES=	java devel
-MASTER_SITES=	http://www.jflex.de/
+MASTER_SITES=	http://www.jflex.de/:jflexde \
+		http://jflex.sourceforge.net/jar/devel/:jflexsf
+DISTFILES=	jflex-1.4.tar.gz:jflexde \
+		JFlex.jar:jflexsf \
+		java_cup.jar:jflexsf
+EXTRACT_ONLY=	jflex-1.4.tar.gz
 
 MAINTAINER=	ports@mcdermottroe.com
 COMMENT=	The Fast Lexical Analyser Generator for Java[tm]
@@ -16,10 +21,11 @@ COMMENT=	The Fast Lexical Analyser Generator for Java[tm]
 USE_JAVA=	1.1+
 NEED_JAVAC=	yes
 USE_REINPLACE=	yes
-WRKSRC=		${WRKDIR}/JFlex
 BUILD_WRKSRC=	${WRKSRC}/src
-MAKE_ENV+=	JAVAC="${JAVAC}" JAR="${JAR}" JAVAJARDIR="${JAVAJARDIR}" \
-		JAVA_CLASSES="${JAVA_CLASSES}"
+BUILD_DEPENDS=	${LOCALBASE}/bin/ant:${PORTSDIR}/devel/apache-ant \
+		${JAVAJARDIR}/junit.jar:${PORTSDIR}/java/junit
+MAKE_ENV+=	DISTDIR="${DISTDIR}" JAVAJARDIR="${JAVAJARDIR}" \
+		LOCALBASE="${LOCALBASE}" SETENV="${SETENV}"
 
 PLIST_SUB=	JAVAJARDIR=${JAVAJARDIR:S|^${PREFIX}/||}
 .if !defined(NOPORTDOCS)
