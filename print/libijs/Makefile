@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	libijs
-PORTVERSION=	0.34
-PORTREVISION=	1
+PORTVERSION=	0.35
 CATEGORIES=	print
 MASTER_SITES=	http://www.linuxprinting.org/ijs/download/
 DISTNAME=	ijs-${PORTVERSION}
@@ -16,14 +15,12 @@ DIST_SUBDIR=	ghostscript
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	C library that supports plugin printer driver for Ghostscript
 
+USE_BZIP2=	yes
+USE_GNOME=	gnometarget lthack pkgconfig
 USE_GMAKE=	yes
-GNU_CONFIGURE=	yes
-CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
+USE_LIBTOOL=	yes
 INSTALLS_SHLIB=	yes
 
-MAKE_ENV=	SHLIB_VER=${SHLIB_VER}
-PLIST_SUB=	SHLIB_VER=${SHLIB_VER}
-
-SHLIB_VER=	1
+MAN1=		ijs-config.1
 
 .include <bsd.port.mk>
