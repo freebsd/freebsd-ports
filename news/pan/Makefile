@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	pan
-PORTVERSION=	0.11.1.93
+PORTVERSION=	0.11.1.94
 CATEGORIES=	news gnome
 MASTER_SITES=	http://pan.rebelbase.com/download/${PORTVERSION}/SOURCE/ \
 		http://pan.rebelbase.com/download/obsolete/${PORTVERSION}/SOURCE/
