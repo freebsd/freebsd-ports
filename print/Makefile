@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.48 1997/09/12 08:14:34 tg Exp $
+# $Id: Makefile,v 1.49 1997/11/04 13:45:22 tg Exp $
 #
 
     SUBDIR += a2ps
@@ -40,6 +40,7 @@
     SUBDIR += transfig
     SUBDIR += virtualpaper
     SUBDIR += xdvi
+    SUBDIR += xmbibtex
     SUBDIR += xmgr
 
 .include <bsd.port.subdir.mk>
