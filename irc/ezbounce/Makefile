@@ -37,8 +37,10 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/mdidentd/mdidentd ${PREFIX}/sbin
 .endif
 
-@if [ ! -f ${PREFIX}/etc/ezb.conf ] ${INSTALL_SCRIPT} \
-	${WRKSRC}/ezb.conf.default ${PREFIX}/etc/ezb.conf
+	@if [ ! -f ${PREFIX}/etc/ezb.conf ]; then \
+		${INSTALL_DATA} \
+		${WRKSRC}/ezb.conf.default ${PREFIX}/etc/ezb.conf; \
+	fi
 
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${PREFIX}/share/doc/ezbounce
