@@ -89,6 +89,7 @@
     SUBDIR += py-PyGreSQL
     SUBDIR += py-SQLDict
     SUBDIR += py-bsddb3
+    SUBDIR += py-cdb
     SUBDIR += py-gdbm
     SUBDIR += py-pyPgSQL
     SUBDIR += py-sqlrelay
