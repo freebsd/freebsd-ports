@@ -1,0 +1,21 @@
+--- Makefile.orig	Fri Aug 13 20:42:49 1999
++++ Makefile	Fri Aug 13 20:43:18 1999
+@@ -1,4 +1,4 @@
+-CC = gcc -Wall -O6 -g 
++#CC = gcc -Wall -O6 -g 
+ 
+ SRCS = main.c levels.c grid.c player.c touching.c gtkstuff.c plot.c graphics.c 
+ OBJS = $(SRCS:.c=.o)
+@@ -7,10 +7,10 @@
+ all: hex
+ 
+ .c.o:
+-	$(CC) `gtk-config --cflags` -c $*.c -o $*.o
++	$(CC) $(CFLAGS) `gtk12-config --cflags` -c $*.c -o $*.o
+ 
+ hex: $(OBJS)
+-	$(CC) $(LIBS) `gtk-config --libs` $(OBJS)  -o $@
++	$(CC) $(LIBS) `gtk12-config --libs` $(OBJS)  -o $@
+ 
+ clean: 
+ 	rm -f *~ *.o hex

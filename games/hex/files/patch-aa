@@ -1,0 +1,11 @@
+--- hex.c	Wed Aug  4 19:36:00 1999
++++ hex.c.new	Mon Aug  9 23:02:44 1999
+@@ -17,7 +17,7 @@
+ #include <string.h>
+ #include <ctype.h>
+ 
+-#define LEVELPATH "./levels/"
++#define LEVELPATH "/usr/X11R6/share/hex/levels/"
+ 
+ #define XSIZE 8 
+ #define YSIZE 12

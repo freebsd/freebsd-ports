@@ -1,0 +1,10 @@
+--- hex.h	Fri Aug  6 17:27:05 1999
++++ hex.h.new	Mon Aug  9 23:10:17 1999
+@@ -1,5 +1,5 @@
+-#define GRAPHICPATH "./graphics/"
+-#define LEVELPATH "./levels/"
++#define GRAPHICPATH "/usr/X11R6/share/hex/graphics/"
++#define LEVELPATH "/usr/X11R6/share/hex/levels/"
+ 
+ #define XSIZE 8
+ #define YSIZE 12 // add 1 for the ceiling line
