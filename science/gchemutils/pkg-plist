@@ -1,3 +1,5 @@
+bin/gchem3d
+include/gcu/chem3d/gtkchem3dviewer.h
 include/gcu/chemistry/atom.h
 include/gcu/chemistry/bond.h
 include/gcu/chemistry/object.h
@@ -15,6 +17,9 @@ include/gcu/crystalviewer/crystalcleavage.h
 include/gcu/gtkperiodic/gtkperiodic.h
 lib/libgcu.a
 lib/libgcu.so
+lib/libgtkchem3dviewer.a
+lib/libgtkchem3dviewer.so
+lib/libgtkchem3dviewer.so.1
 lib/libgcu.so.1
 lib/libgtkcrystalviewer.a
 lib/libgtkcrystalviewer.so
@@ -22,9 +27,16 @@ lib/libgtkcrystalviewer.so.1
 lib/libgtkperiodic.a
 lib/libgtkperiodic.so
 lib/libgtkperiodic.so.1
+libdata/bonobo/servers/gchem3d.server
 libdata/pkgconfig/gcu.pc
 share/gnome/gchemutils/elements.xml
 share/gnome/gchemutils/glade/gtkperiodic.glade
+share/gnome/mime-info/gchemutils.keys
+share/gnome/mime-info/gchemutils.mime
+share/locale/fr/LC_MESSAGES/gnome-chemistry-utils.mo
+share/locale/it/LC_MESSAGES/gnome-chemistry-utils.mo
+share/locale/pl/LC_MESSAGES/gnome-chemistry-utils.mo
+@dirrm include/gcu/chem3d
 @dirrm include/gcu/chemistry
 @dirrm include/gcu/crystalviewer
 @dirrm include/gcu/gtkperiodic
