@@ -1,16 +1,14 @@
-# $Id: Makefile,v 1.26 1996/08/19 10:32:53 asami Exp $
+# $Id: Makefile,v 1.27 1996/08/23 06:49:39 tg Exp $
 #
 
     SUBDIR += SWIG
     SUBDIR += autoconf
     SUBDIR += bcc
-    SUBDIR += bison
     SUBDIR += cflow
     SUBDIR += dmake
     SUBDIR += flex
     SUBDIR += gcc11
     SUBDIR += gmake
-    SUBDIR += gperf
     SUBDIR += libdlmalloc
     SUBDIR += libmalloc
     SUBDIR += libslang
