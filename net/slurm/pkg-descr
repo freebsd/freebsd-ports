@@ -1,6 +1,7 @@
 slurm started as a port of pppstatus to FreeBSD and now is a generic 
-network load monitor. It shows ASCII graphs for all kinds of 
-network interfaces.
+network load monitor. It features three different modes with real-time 
+ASCII graphs and interface statistics for all kinds of network 
+interfaces on FreeBSD, NetBSD, OpenBSD, and Linux
 
 WWW: http://www.raisdorf.net/slurm/
 

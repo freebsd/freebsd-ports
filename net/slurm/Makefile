@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	slurm
-PORTVERSION=	0.0.6
+PORTVERSION=	0.0.7
 CATEGORIES=	net
 MASTER_SITES=	http://www.raisdorf.net/files/code/ \
 		http://www.fachschaft.fh-kiel.de/~hscholz/slurm/ \
@@ -26,6 +26,7 @@ do-install:
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/KEYS ${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>
