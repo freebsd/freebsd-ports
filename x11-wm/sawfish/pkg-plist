@@ -10,7 +10,7 @@ info/sawfish.info-2
 info/sawfish.info-3
 info/sawfish.info-4
 info/sawfish.info-5
-@exec install-info --section="X11 window manager" --entry="* sawfish: (sawfish).
+@exec install-info --section="X11 window manager" --entry="* sawfish: (sawfish).           sawfish programming manual" %D/info/sawfish.info %D/info/dir
 libexec/rep/%%GNUHOST%%/sawfish/client.so
 libexec/rep/%%GNUHOST%%/sawfish/client.la
 libexec/sawfish/%%VERSION%%/%%GNUHOST%%/DOC
