@@ -1,6 +1,6 @@
 sbin/sentinel
 etc/sentinel.cf.dist
-etc/rc.d/000.sentinel.sh
+etc/rc.d/000.sentinel.sh-dist
 @exec mkdir %D/var/sentinel
 @exec chown smmsp:smmsp %D/var/sentinel
 @unexec rmdir %D/var/sentinel 2>/dev/null || true
