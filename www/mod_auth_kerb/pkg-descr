@@ -1,0 +1,14 @@
+mod_auth_kerb is an Apache module for authenticating Web clients
+in a Kerberos v5 realm.  Because the Kerberos password is transmitted
+in plain text, this module MUST be used in conjunction with an
+encryption-capable Web server (by default, apache13-modssl).  There is
+no documentation provided; see the Web site for more details.  This
+package is built with the KRB5_VERIFY_TICKET and KRB5_SAVE_CREDENTIALS
+options, and *without* Kerberos v4 support.  In order to successfully
+authenticate users, the Web server will need a keytab file containing
+a key for the principal `www/my.host.name.example@MY.REALM.EXAMPLE'
+which is readable by the user Apache runs as; the location of this
+keytab defaults to ${LOCALBASE}/etc/apache/keytab but can be modified
+in the server configuration.
+
+WWW: http://stonecold.unity.ncsu.edu/software/mod_auth_kerb/
