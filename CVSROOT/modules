@@ -1913,6 +1913,7 @@ ggsd		ports/net/ggsd
 ggv		ports/print/ggv
 ggv2		ports/print/ggv2
 ghc		ports/lang/ghc
+ghc-doc		ports/lang/ghc-doc
 ghex		ports/editors/ghex
 ghfaxviewer	ports/comms/ghfaxviewer
 ghostscript-afpl	ports/print/ghostscript-afpl
