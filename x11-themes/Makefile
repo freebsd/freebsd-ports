@@ -72,6 +72,7 @@
     SUBDIR += kdeartwork3
     SUBDIR += kwin_flatcurve
     SUBDIR += lila-xfce4-panel
+    SUBDIR += lila-xffm
     SUBDIR += lila-xfwm4
     SUBDIR += metacity-theme-6nome
     SUBDIR += metacity-theme-aero
