@@ -1,0 +1,7 @@
+rlcompleter2 is an interactive readline completion handler, featuring:
+    * completion on any python expression/statement
+    * interactive introspection into function signatures and docstrings
+    * convenient completions on module, instance and function objects
+    * ultra simple user interface: <tab> (try hit it multiple times!)
+
+WWW: http://codespeak.net/rlcompleter2/

@@ -957,6 +957,7 @@
     SUBDIR += py-px
     SUBDIR += py-repl
     SUBDIR += py-reverse
+    SUBDIR += py-rlcompleter2
     SUBDIR += py-ro
     SUBDIR += py-roxlib
     SUBDIR += py-sip
