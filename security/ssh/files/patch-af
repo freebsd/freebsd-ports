@@ -113,7 +113,7 @@
 + #ifdef __FreeBSD__
 +       if (command == NULL && !quiet_login)
 + 	{
-+ #ifdef HAVE_LOGIN_CAP_H
++ #ifdef broken_HAVE_LOGIN_CAP_H
 + 	  char *mp = getenv("MAIL");
 + 
 + 	  if (mp != NULL)
