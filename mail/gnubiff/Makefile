@@ -18,7 +18,7 @@ LIB_DEPENDS=	popt.0:${PORTSDIR}/devel/popt
 
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes
-USE_GNOME=	libglade2 esound
+USE_GNOME=	intlhack libglade2 esound
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
