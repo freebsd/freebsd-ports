@@ -57,6 +57,7 @@ COMMENT=	GNU Postscript interpreter
 LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
 		png.5:${PORTSDIR}/graphics/png
 
+CONFLICTS=	ghostscript-afpl*
 USE_BZIP2=	yes
 USE_REINPLACE=	yes
 USE_GMAKE=	yes
