@@ -12,7 +12,7 @@ PORTVERSION=	3.50.9
 CATEGORIES=		net
 MASTER_SITES=	http://ftp.gnqs.org/pub/gnqs/source/by-version-number/v3.50/
 
-MAINTAINER=		tony.maher@ebioinformatics.com
+MAINTAINER=		tonym@angis.org.au
 
 USE_BZIP2=	yes
 IS_INTERACTIVE=	yes
