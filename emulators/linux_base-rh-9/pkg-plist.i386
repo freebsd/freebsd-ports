@@ -4451,46 +4451,46 @@ var/lib/rpm/conflictsindex.rpm
 var/lib/rpm/groupindex.rpm
 var/lib/rpm/triggerindex.rpm
 var/log/lastlog
-@exec mkdir %D/var/spool
-@exec mkdir %D/var/spool/mail
-@exec mkdir %D/var/run
-@exec mkdir %D/var/preserve
-@exec mkdir %D/var/nis
-@exec mkdir %D/var/lock
-@exec mkdir %D/var/lock/subsys
-@exec mkdir %D/var/local
-@exec mkdir %D/var/lib/games
-@exec mkdir %D/var/db
-@exec mkdir %D/usr/src
-@exec mkdir %D/usr/src/redhat
-@exec mkdir %D/usr/src/redhat/SRPMS
-@exec mkdir %D/usr/src/redhat/SPECS
-@exec mkdir %D/usr/src/redhat/SOURCES
-@exec mkdir %D/usr/src/redhat/RPMS
-@exec mkdir %D/usr/src/redhat/RPMS/noarch
-@exec mkdir %D/usr/src/redhat/RPMS/i386
-@exec mkdir %D/usr/src/redhat/BUILD
-@exec mkdir %D/usr/man/mann
-@exec mkdir %D/usr/man/man9
-@exec mkdir %D/usr/man/man6
-@exec mkdir %D/usr/man/man4
-@exec mkdir %D/usr/man/man2
-@exec mkdir %D/usr/lib/gcc-lib
-@exec mkdir %D/usr/lib/games
-@exec mkdir %D/usr/games
-@exec mkdir %D/usr/etc
-@exec mkdir %D/usr/dict
-@exec mkdir %D/usr/X11R6/man
-@exec mkdir %D/usr/X11R6/include
-@exec mkdir %D/usr/X11R6/doc
-@exec mkdir %D/usr/X11R6/bin
-@exec mkdir %D/proc
-@exec mkdir %D/mnt
-@exec mkdir %D/mnt/floppy
-@exec mkdir %D/mnt/cdrom
-@exec mkdir %D/lib/modules
-@exec mkdir %D/etc/profile.d
-@exec mkdir %D/boot
+@exec mkdir -p %D/var/spool
+@exec mkdir -p %D/var/spool/mail
+@exec mkdir -p %D/var/run
+@exec mkdir -p %D/var/preserve
+@exec mkdir -p %D/var/nis
+@exec mkdir -p %D/var/lock
+@exec mkdir -p %D/var/lock/subsys
+@exec mkdir -p %D/var/local
+@exec mkdir -p %D/var/lib/games
+@exec mkdir -p %D/var/db
+@exec mkdir -p %D/usr/src
+@exec mkdir -p %D/usr/src/redhat
+@exec mkdir -p %D/usr/src/redhat/SRPMS
+@exec mkdir -p %D/usr/src/redhat/SPECS
+@exec mkdir -p %D/usr/src/redhat/SOURCES
+@exec mkdir -p %D/usr/src/redhat/RPMS
+@exec mkdir -p %D/usr/src/redhat/RPMS/noarch
+@exec mkdir -p %D/usr/src/redhat/RPMS/i386
+@exec mkdir -p %D/usr/src/redhat/BUILD
+@exec mkdir -p %D/usr/man/mann
+@exec mkdir -p %D/usr/man/man9
+@exec mkdir -p %D/usr/man/man6
+@exec mkdir -p %D/usr/man/man4
+@exec mkdir -p %D/usr/man/man2
+@exec mkdir -p %D/usr/lib/gcc-lib
+@exec mkdir -p %D/usr/lib/games
+@exec mkdir -p %D/usr/games
+@exec mkdir -p %D/usr/etc
+@exec mkdir -p %D/usr/dict
+@exec mkdir -p %D/usr/X11R6/man
+@exec mkdir -p %D/usr/X11R6/include
+@exec mkdir -p %D/usr/X11R6/doc
+@exec mkdir -p %D/usr/X11R6/bin
+@exec mkdir -p %D/proc
+@exec mkdir -p %D/mnt
+@exec mkdir -p %D/mnt/floppy
+@exec mkdir -p %D/mnt/cdrom
+@exec mkdir -p %D/lib/modules
+@exec mkdir -p %D/etc/profile.d
+@exec mkdir -p %D/boot
 @dirrm var/spool/mail
 @dirrm var/spool
 @dirrm var/run
