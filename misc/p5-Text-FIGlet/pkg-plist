@@ -1,0 +1,9 @@
+lib/perl5/site_perl/%%PERL_VER%%/Text/FIGlet.pm
+lib/perl5/site_perl/%%PERL_VER%%/Text/charmap.pl
+lib/perl5/site_perl/%%PERL_VER%%/Text/figlet.pl
+lib/perl5/site_perl/%%PERL_VER%%/Text/minifig.pl
+lib/perl5/site_perl/%%PERL_VER%%/Text/showfigfonts.pl
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Text/FIGlet/.packlist
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Text/FIGlet
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Text 2>/dev/null || true
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/Text 2>/dev/null || true
