@@ -5,9 +5,25 @@ This will ultimately allow execution of Java code at the same speed as
 standard compiled code but while maintaining the advantages and flexibility
 of code independence.
 
-Please note, this is version 0.2 and many feature are not yet implemented
+Please note, this is version 0.3 and many feature are not yet implemented
 (notable there is no graphics support at the moment) and there are likely
 to be various odd bugs.  All comments to the mail address below.
 
 Tim
 tim@sarc.city.ac.uk
+
+Major changes in Kaffe v0.3
+===========================
+
+ * Split off Kaffe translator into a shared library.  This makes it
+   simpler to encorporate into other programs and is essential to
+   getting Kaffe running on some OS's.
+
+ * Added array bounds checks.  This is very slow but the people want it
+   slow rather than not at all.
+
+ * Additional ports have been added.
+
+ * Extensive bug fixes for both particular ports as well as the general
+   system.
+
