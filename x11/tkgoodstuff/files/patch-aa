@@ -55,7 +55,7 @@
  
  CFLAGS =		-O @TCL_DEFS@ @TK_DEFS@ -I$(SRCDIR) \
 -			-I$(TK_PREFIX)/include -I$(TK_PREFIX)/include/tcl \
-+			-I$(TCL_PREFIX)/include/tcl8.0 \
++			-I$(TK_PREFIX)/include/tcl8.0 \
 +			-I$(TK_PREFIX)/include/tk8.0 \
  			$(XINCLUDES)
  
