@@ -43,7 +43,7 @@ lib/sablevm/classes-%%PORTVERSION%%/gnu/java/awt/peer/gtk/GtkCheckboxMenuItemPee
 lib/sablevm/classes-%%PORTVERSION%%/gnu/java/awt/peer/gtk/GtkCheckboxPeer.class
 lib/sablevm/classes-%%PORTVERSION%%/gnu/java/awt/peer/gtk/GtkChoicePeer.class
 lib/sablevm/classes-%%PORTVERSION%%/gnu/java/awt/peer/gtk/GtkClipboard.class
-lib/sablevm/classes-%%PORTVERSION%%/gnu/java/awt/peer/gtk/GtkComponentPeer$1$PrepareImage.class
+lib/sablevm/classes-%%PORTVERSION%%/gnu/java/awt/peer/gtk/GtkComponentPeer$1PrepareImage.class
 lib/sablevm/classes-%%PORTVERSION%%/gnu/java/awt/peer/gtk/GtkComponentPeer.class
 lib/sablevm/classes-%%PORTVERSION%%/gnu/java/awt/peer/gtk/GtkContainerPeer.class
 lib/sablevm/classes-%%PORTVERSION%%/gnu/java/awt/peer/gtk/GtkDialogPeer.class
@@ -268,8 +268,8 @@ lib/sablevm/classes-%%PORTVERSION%%/gnu/java/locale/iso639_ga.properties
 lib/sablevm/classes-%%PORTVERSION%%/gnu/java/math/MPN.class
 lib/sablevm/classes-%%PORTVERSION%%/gnu/java/net/HeaderFieldHelper.class
 lib/sablevm/classes-%%PORTVERSION%%/gnu/java/net/content/text/plain.class
+lib/sablevm/classes-%%PORTVERSION%%/gnu/java/net/protocol/file/FileURLConnection$1$1.class
 lib/sablevm/classes-%%PORTVERSION%%/gnu/java/net/protocol/file/FileURLConnection$1.class
-lib/sablevm/classes-%%PORTVERSION%%/gnu/java/net/protocol/file/FileURLConnection$2.class
 lib/sablevm/classes-%%PORTVERSION%%/gnu/java/net/protocol/file/FileURLConnection.class
 lib/sablevm/classes-%%PORTVERSION%%/gnu/java/net/protocol/file/Handler.class
 lib/sablevm/classes-%%PORTVERSION%%/gnu/java/net/protocol/http/Handler.class
@@ -358,6 +358,7 @@ lib/sablevm/classes-%%PORTVERSION%%/gnu/java/util/prefs/MemoryBasedFactory.class
 lib/sablevm/classes-%%PORTVERSION%%/gnu/java/util/prefs/MemoryBasedPreferences.class
 lib/sablevm/classes-%%PORTVERSION%%/gnu/java/util/prefs/NodeReader.class
 lib/sablevm/classes-%%PORTVERSION%%/gnu/java/util/prefs/NodeWriter.class
+lib/sablevm/classes-%%PORTVERSION%%/gnu/javax/swing/plaf/gtk/GtkIconFactory$1.class
 lib/sablevm/classes-%%PORTVERSION%%/gnu/javax/swing/plaf/gtk/GtkIconFactory$RadioButtonIcon.class
 lib/sablevm/classes-%%PORTVERSION%%/gnu/javax/swing/plaf/gtk/GtkIconFactory.class
 lib/sablevm/classes-%%PORTVERSION%%/gnu/javax/swing/plaf/gtk/GtkLookAndFeel.class
@@ -892,6 +893,7 @@ lib/sablevm/classes-%%PORTVERSION%%/java/lang/Object.class
 lib/sablevm/classes-%%PORTVERSION%%/java/lang/OutOfMemoryError.class
 lib/sablevm/classes-%%PORTVERSION%%/java/lang/Package.class
 lib/sablevm/classes-%%PORTVERSION%%/java/lang/Process.class
+lib/sablevm/classes-%%PORTVERSION%%/java/lang/ProcessImpl.class
 lib/sablevm/classes-%%PORTVERSION%%/java/lang/Runnable.class
 lib/sablevm/classes-%%PORTVERSION%%/java/lang/Runtime.class
 lib/sablevm/classes-%%PORTVERSION%%/java/lang/RuntimeException.class
@@ -946,6 +948,7 @@ lib/sablevm/classes-%%PORTVERSION%%/java/lang/reflect/Proxy$ProxySignature.class
 lib/sablevm/classes-%%PORTVERSION%%/java/lang/reflect/Proxy$ProxyType.class
 lib/sablevm/classes-%%PORTVERSION%%/java/lang/reflect/Proxy.class
 lib/sablevm/classes-%%PORTVERSION%%/java/lang/reflect/ReflectPermission.class
+lib/sablevm/classes-%%PORTVERSION%%/java/lang/reflect/ReflectUtil.class
 lib/sablevm/classes-%%PORTVERSION%%/java/lang/reflect/UndeclaredThrowableException.class
 lib/sablevm/classes-%%PORTVERSION%%/java/math/BigDecimal.class
 lib/sablevm/classes-%%PORTVERSION%%/java/math/BigInteger.class
@@ -1293,10 +1296,10 @@ lib/sablevm/classes-%%PORTVERSION%%/java/util/AbstractCollection.class
 lib/sablevm/classes-%%PORTVERSION%%/java/util/AbstractList$1.class
 lib/sablevm/classes-%%PORTVERSION%%/java/util/AbstractList$2.class
 lib/sablevm/classes-%%PORTVERSION%%/java/util/AbstractList.class
+lib/sablevm/classes-%%PORTVERSION%%/java/util/AbstractMap$1$1.class
 lib/sablevm/classes-%%PORTVERSION%%/java/util/AbstractMap$1.class
+lib/sablevm/classes-%%PORTVERSION%%/java/util/AbstractMap$2$1.class
 lib/sablevm/classes-%%PORTVERSION%%/java/util/AbstractMap$2.class
-lib/sablevm/classes-%%PORTVERSION%%/java/util/AbstractMap$3.class
-lib/sablevm/classes-%%PORTVERSION%%/java/util/AbstractMap$4.class
 lib/sablevm/classes-%%PORTVERSION%%/java/util/AbstractMap$BasicMapEntry.class
 lib/sablevm/classes-%%PORTVERSION%%/java/util/AbstractMap.class
 lib/sablevm/classes-%%PORTVERSION%%/java/util/AbstractSequentialList.class
@@ -1307,26 +1310,24 @@ lib/sablevm/classes-%%PORTVERSION%%/java/util/Arrays.class
 lib/sablevm/classes-%%PORTVERSION%%/java/util/BitSet.class
 lib/sablevm/classes-%%PORTVERSION%%/java/util/Calendar.class
 lib/sablevm/classes-%%PORTVERSION%%/java/util/Collection.class
-lib/sablevm/classes-%%PORTVERSION%%/java/util/Collections$1$SynchronizedMapEntry.class
 lib/sablevm/classes-%%PORTVERSION%%/java/util/Collections$1.class
-lib/sablevm/classes-%%PORTVERSION%%/java/util/Collections$2.class
-lib/sablevm/classes-%%PORTVERSION%%/java/util/Collections$3.class
-lib/sablevm/classes-%%PORTVERSION%%/java/util/Collections$4.class
-lib/sablevm/classes-%%PORTVERSION%%/java/util/Collections$5.class
-lib/sablevm/classes-%%PORTVERSION%%/java/util/Collections$6.class
-lib/sablevm/classes-%%PORTVERSION%%/java/util/Collections$7.class
 lib/sablevm/classes-%%PORTVERSION%%/java/util/Collections$CopiesList.class
 lib/sablevm/classes-%%PORTVERSION%%/java/util/Collections$EmptyList.class
 lib/sablevm/classes-%%PORTVERSION%%/java/util/Collections$EmptyMap.class
 lib/sablevm/classes-%%PORTVERSION%%/java/util/Collections$EmptySet.class
 lib/sablevm/classes-%%PORTVERSION%%/java/util/Collections$ReverseComparator.class
 lib/sablevm/classes-%%PORTVERSION%%/java/util/Collections$SingletonList.class
+lib/sablevm/classes-%%PORTVERSION%%/java/util/Collections$SingletonMap$1.class
 lib/sablevm/classes-%%PORTVERSION%%/java/util/Collections$SingletonMap.class
+lib/sablevm/classes-%%PORTVERSION%%/java/util/Collections$SingletonSet$1.class
 lib/sablevm/classes-%%PORTVERSION%%/java/util/Collections$SingletonSet.class
 lib/sablevm/classes-%%PORTVERSION%%/java/util/Collections$SynchronizedCollection.class
 lib/sablevm/classes-%%PORTVERSION%%/java/util/Collections$SynchronizedIterator.class
 lib/sablevm/classes-%%PORTVERSION%%/java/util/Collections$SynchronizedList.class
 lib/sablevm/classes-%%PORTVERSION%%/java/util/Collections$SynchronizedListIterator.class
+lib/sablevm/classes-%%PORTVERSION%%/java/util/Collections$SynchronizedMap$1SynchronizedMapEntry.class
+lib/sablevm/classes-%%PORTVERSION%%/java/util/Collections$SynchronizedMap$2$1.class
+lib/sablevm/classes-%%PORTVERSION%%/java/util/Collections$SynchronizedMap$2.class
 lib/sablevm/classes-%%PORTVERSION%%/java/util/Collections$SynchronizedMap.class
 lib/sablevm/classes-%%PORTVERSION%%/java/util/Collections$SynchronizedRandomAccessList.class
 lib/sablevm/classes-%%PORTVERSION%%/java/util/Collections$SynchronizedSet.class
@@ -1336,6 +1337,8 @@ lib/sablevm/classes-%%PORTVERSION%%/java/util/Collections$UnmodifiableCollection
 lib/sablevm/classes-%%PORTVERSION%%/java/util/Collections$UnmodifiableIterator.class
 lib/sablevm/classes-%%PORTVERSION%%/java/util/Collections$UnmodifiableList.class
 lib/sablevm/classes-%%PORTVERSION%%/java/util/Collections$UnmodifiableListIterator.class
+lib/sablevm/classes-%%PORTVERSION%%/java/util/Collections$UnmodifiableMap$UnmodifiableEntrySet$1$1.class
+lib/sablevm/classes-%%PORTVERSION%%/java/util/Collections$UnmodifiableMap$UnmodifiableEntrySet$1.class
 lib/sablevm/classes-%%PORTVERSION%%/java/util/Collections$UnmodifiableMap$UnmodifiableEntrySet.class
 lib/sablevm/classes-%%PORTVERSION%%/java/util/Collections$UnmodifiableMap.class
 lib/sablevm/classes-%%PORTVERSION%%/java/util/Collections$UnmodifiableRandomAccessList.class
@@ -1418,10 +1421,10 @@ lib/sablevm/classes-%%PORTVERSION%%/java/util/TooManyListenersException.class
 lib/sablevm/classes-%%PORTVERSION%%/java/util/TreeMap$1.class
 lib/sablevm/classes-%%PORTVERSION%%/java/util/TreeMap$2.class
 lib/sablevm/classes-%%PORTVERSION%%/java/util/TreeMap$3.class
-lib/sablevm/classes-%%PORTVERSION%%/java/util/TreeMap$4.class
-lib/sablevm/classes-%%PORTVERSION%%/java/util/TreeMap$5.class
-lib/sablevm/classes-%%PORTVERSION%%/java/util/TreeMap$6.class
 lib/sablevm/classes-%%PORTVERSION%%/java/util/TreeMap$Node.class
+lib/sablevm/classes-%%PORTVERSION%%/java/util/TreeMap$SubMap$1.class
+lib/sablevm/classes-%%PORTVERSION%%/java/util/TreeMap$SubMap$2.class
+lib/sablevm/classes-%%PORTVERSION%%/java/util/TreeMap$SubMap$3.class
 lib/sablevm/classes-%%PORTVERSION%%/java/util/TreeMap$SubMap.class
 lib/sablevm/classes-%%PORTVERSION%%/java/util/TreeMap$TreeIterator.class
 lib/sablevm/classes-%%PORTVERSION%%/java/util/TreeMap.class
@@ -1429,9 +1432,9 @@ lib/sablevm/classes-%%PORTVERSION%%/java/util/TreeSet.class
 lib/sablevm/classes-%%PORTVERSION%%/java/util/Vector$1.class
 lib/sablevm/classes-%%PORTVERSION%%/java/util/Vector.class
 lib/sablevm/classes-%%PORTVERSION%%/java/util/WeakHashMap$1.class
-lib/sablevm/classes-%%PORTVERSION%%/java/util/WeakHashMap$2.class
 lib/sablevm/classes-%%PORTVERSION%%/java/util/WeakHashMap$WeakBucket$WeakEntry.class
 lib/sablevm/classes-%%PORTVERSION%%/java/util/WeakHashMap$WeakBucket.class
+lib/sablevm/classes-%%PORTVERSION%%/java/util/WeakHashMap$WeakEntrySet$1.class
 lib/sablevm/classes-%%PORTVERSION%%/java/util/WeakHashMap$WeakEntrySet.class
 lib/sablevm/classes-%%PORTVERSION%%/java/util/WeakHashMap.class
 lib/sablevm/classes-%%PORTVERSION%%/java/util/iso3166-a3.properties
@@ -1625,9 +1628,9 @@ lib/sablevm/classes-%%PORTVERSION%%/javax/swing/JFrame.class
 lib/sablevm/classes-%%PORTVERSION%%/javax/swing/JInternalFrame.class
 lib/sablevm/classes-%%PORTVERSION%%/javax/swing/JLabel.class
 lib/sablevm/classes-%%PORTVERSION%%/javax/swing/JLayeredPane.class
-lib/sablevm/classes-%%PORTVERSION%%/javax/swing/JList$1$AL.class
-lib/sablevm/classes-%%PORTVERSION%%/javax/swing/JList$1$ALData.class
-lib/sablevm/classes-%%PORTVERSION%%/javax/swing/JList$1.class
+lib/sablevm/classes-%%PORTVERSION%%/javax/swing/JList$1AL.class
+lib/sablevm/classes-%%PORTVERSION%%/javax/swing/JList$2ALData.class
+lib/sablevm/classes-%%PORTVERSION%%/javax/swing/JList$3.class
 lib/sablevm/classes-%%PORTVERSION%%/javax/swing/JList.class
 lib/sablevm/classes-%%PORTVERSION%%/javax/swing/JMenu$AccessibleJMenu.class
 lib/sablevm/classes-%%PORTVERSION%%/javax/swing/JMenu$WinListener.class
@@ -1949,6 +1952,27 @@ lib/sablevm/classes-%%PORTVERSION%%/javax/transaction/TransactionRolledbackExcep
 lib/sablevm/classes-%%PORTVERSION%%/javax/transaction/xa/XAException.class
 lib/sablevm/classes-%%PORTVERSION%%/javax/transaction/xa/XAResource.class
 lib/sablevm/classes-%%PORTVERSION%%/javax/transaction/xa/Xid.class
+lib/sablevm/classes-%%PORTVERSION%%/resource/gnu/java/awt/peer/gtk/font.properties
+lib/sablevm/classes-%%PORTVERSION%%/resource/gnu/java/locale/iso3166-a3.properties
+lib/sablevm/classes-%%PORTVERSION%%/resource/gnu/java/locale/iso3166.properties
+lib/sablevm/classes-%%PORTVERSION%%/resource/gnu/java/locale/iso3166_de.properties
+lib/sablevm/classes-%%PORTVERSION%%/resource/gnu/java/locale/iso639-a2-old.properties
+lib/sablevm/classes-%%PORTVERSION%%/resource/gnu/java/locale/iso639-a3.properties
+lib/sablevm/classes-%%PORTVERSION%%/resource/gnu/java/locale/iso639.properties
+lib/sablevm/classes-%%PORTVERSION%%/resource/gnu/java/locale/iso639_de.properties
+lib/sablevm/classes-%%PORTVERSION%%/resource/gnu/java/locale/iso639_fr.properties
+lib/sablevm/classes-%%PORTVERSION%%/resource/gnu/java/locale/iso639_ga.properties
+lib/sablevm/classes-%%PORTVERSION%%/resource/java/security/classpath.security
+lib/sablevm/classes-%%PORTVERSION%%/resource/java/util/iso3166-a3.properties
+lib/sablevm/classes-%%PORTVERSION%%/resource/java/util/iso3166.properties
+lib/sablevm/classes-%%PORTVERSION%%/resource/java/util/iso3166_de.properties
+lib/sablevm/classes-%%PORTVERSION%%/resource/java/util/iso639-a2-old.properties
+lib/sablevm/classes-%%PORTVERSION%%/resource/java/util/iso639-a3.properties
+lib/sablevm/classes-%%PORTVERSION%%/resource/java/util/iso639.properties
+lib/sablevm/classes-%%PORTVERSION%%/resource/java/util/iso639_de.properties
+lib/sablevm/classes-%%PORTVERSION%%/resource/java/util/iso639_fr.properties
+lib/sablevm/classes-%%PORTVERSION%%/resource/java/util/iso639_ga.properties
+lib/sablevm/lib/security/classpath.security
 lib/sablevm/libclasspath-%%PORTVERSION%%.so
 lib/sablevm/libclasspath.la
 lib/sablevm/libclasspath.so
@@ -1971,6 +1995,18 @@ share/sablevm/AUTHORS
 share/sablevm/COPYING.LIB
 share/sablevm/LICENSE
 @dirrm share/sablevm
+@dirrm lib/sablevm/lib/security
+@dirrm lib/sablevm/lib
+@dirrm lib/sablevm/classes-%%PORTVERSION%%/resource/java/util
+@dirrm lib/sablevm/classes-%%PORTVERSION%%/resource/java/security
+@dirrm lib/sablevm/classes-%%PORTVERSION%%/resource/java
+@dirrm lib/sablevm/classes-%%PORTVERSION%%/resource/gnu/java/locale
+@dirrm lib/sablevm/classes-%%PORTVERSION%%/resource/gnu/java/awt/peer/gtk
+@dirrm lib/sablevm/classes-%%PORTVERSION%%/resource/gnu/java/awt/peer
+@dirrm lib/sablevm/classes-%%PORTVERSION%%/resource/gnu/java/awt
+@dirrm lib/sablevm/classes-%%PORTVERSION%%/resource/gnu/java
+@dirrm lib/sablevm/classes-%%PORTVERSION%%/resource/gnu
+@dirrm lib/sablevm/classes-%%PORTVERSION%%/resource
 @dirrm lib/sablevm/classes-%%PORTVERSION%%/javax/transaction/xa
 @dirrm lib/sablevm/classes-%%PORTVERSION%%/javax/transaction
 @dirrm lib/sablevm/classes-%%PORTVERSION%%/javax/swing/undo
