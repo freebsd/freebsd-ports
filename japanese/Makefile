@@ -1,7 +1,8 @@
-# $Id: Makefile,v 1.147 1998/09/18 22:47:56 kuriyama Exp $
+# $Id: Makefile,v 1.148 1998/09/24 22:04:26 kuriyama Exp $
 #
 
     SUBDIR += Canna
+    SUBDIR += FAQ
     SUBDIR += Wnn
     SUBDIR += Wnn6
     SUBDIR += Wnn6-lib
