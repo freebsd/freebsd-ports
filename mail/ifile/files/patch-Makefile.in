@@ -1,0 +1,11 @@
+--- Makefile.in.orig	Tue Jun 10 23:09:27 2003
++++ Makefile.in	Mon Jul  7 06:50:51 2003
+@@ -46,7 +46,7 @@
+ CFLAGS = @CFLAGS@
+ CPPFLAGS = @CPPFLAGS@
+ INCLUDEFLAGS =
+-LDFLAGS =
++LDFLAGS = @LDFLAGS@
+ 
+ prefix = @prefix@
+ exec_prefix = @exec_prefix@
