@@ -22,7 +22,8 @@ USE_X_PREFIX=	yes
 USE_MESA=	yes
 GNU_CONFIGURE=	yes
 # Force configure to look in /usr/local/{include,lib}
-CONFIGURE_ENV+=	CFLAGS="-I${LOCALBASE}/include" \
+CONFIGURE_ENV+=	CC="${CC}" CFLAGS="${CFLAGS}" \
+		CXX="${CXX}" CXXFLAGS="${CXXFLAGS}" \
 		CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
