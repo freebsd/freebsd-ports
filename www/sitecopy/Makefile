@@ -3,27 +3,23 @@
 # Date created:		15 January 1999
 # Whom:			nik
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1999/01/16 00:25:54 nik Exp $
 #
 
 DISTNAME=	sitecopy-0.3.2
 CATEGORIES=	www
+MASTER_SITES=   http://www.lyra.org/sitecopy/
 DISTFILES=	sitecopy-0.3.0.tar.gz
 
-MASTER_SITES=   http://www.lyra.org/sitecopy/
+PATCH_SITES=	http://www.lyra.org/sitecopy/
+PATCHFILES=	sitecopy-0.3.0-0.3.2.patch.gz
+PATCH_DIST_STRIP=
 
 MAINTAINER=     nik@FreeBSD.ORG
 
-DIST_SUBDIR=	sitecopy
-
-PATCHFILES=	sitecopy-0.3.0-0.3.2.patch.gz
-PATCH_SITES=	http://www.lyra.org/sitecopy/
-
 USE_GMAKE=	yes
-
+DIST_SUBDIR=	sitecopy
 WRKSRC=		${WRKDIR}/sitecopy-0.3.0
-PATCH_DIST_STRIP=
-
 FETCH_BEFORE_ARGS=	-b
 
 MAN1=		sitecopy.1
