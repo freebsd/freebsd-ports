@@ -1,6 +1,6 @@
 --- utils/Makefile.orig	Thu Jan  6 20:50:10 2000
 +++ utils/Makefile	Thu Jan  6 20:52:17 2000
-@@ -0,0 +1,52 @@
+@@ -0,0 +1,49 @@
 +CC = /usr/bin/cc
 +CFLAGS = -Wall -O
 +
@@ -28,7 +28,6 @@
 +	$(MAKE) -C SJISconv $@
 +	$(MAKE) -C extconv $@
 +	$(MAKE) -C pyhyphen $@
-+	$(MAKE) -C thaiconv $@
 +
 +hbf2gf_install:
 +	$(CHMOD) +x hbf2gf/mkinstalldirs
@@ -43,7 +42,6 @@
 +	$(MAKE) -C extconv $@
 +	$(MAKE) -C lisp $@
 +	$(MAKE) -C pyhyphen $@
-+	$(MAKE) -C thaiconv $@
 +
 +clean:
 +	$(MAKE) -C Bg5conv $@
@@ -52,7 +50,6 @@
 +	$(MAKE) -C extconv $@
 +	$(MAKE) -C hbf2gf distclean
 +	$(MAKE) -C pyhyphen $@
-+	$(MAKE) -C thaiconv $@
 --- utils/Bg5conv/Makefile.orig	Thu Jan  1 08:00:00 1970
 +++ utils/Bg5conv/Makefile	Sat Feb 20 07:17:29 1999
 @@ -0,0 +1,14 @@
@@ -162,20 +159,3 @@
 +
 +clean:
 +	$(RM) pinyin
---- utils/thaiconv/Makefile.orig	Sun Dec 13 12:00:00 1998
-+++ utils/thaiconv/Makefile	Sat Feb 20 07:39:03 1999
-@@ -14,3 +14,14 @@
- 	c2cweb -b "The thaiconv program" -l -v thaiconv.c
- 	$(CWEAVE) +ai thaiconv.cw
- 	$(TEX) thaiconv
-+
-+build: thaiconv
-+
-+all: build
-+
-+install: all
-+	$(INSTALL_PROGRAM) thaiconv $(PREFIX)/bin
-+	$(INSTALL_MAN) thaiconv.1 $(PREFIX)/man/man1
-+
-+clean:
-+	$(RM) thaiconv
