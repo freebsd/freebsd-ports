@@ -6,11 +6,9 @@
 #
 
 PORTNAME=	obnc
-PORTVERSION=	20010703
-PORTREVISION=	1
+PORTVERSION=	20020222
 CATEGORIES=	net ipv6
-MASTER_SITES=	${MASTER_SITE_LOCAL} \
-		http://www.unixfreak.org/~dima/distfiles/
+MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	dd
 
 MAINTAINER=	dd@FreeBSD.org
@@ -42,7 +40,7 @@ do-install:
 #
 .include <bsd.port.pre.mk>
 CVS_CMD?=	cvs -z3
-CVS_DATE=	Tue Jul  3 17:56:05 PDT 2001
+CVS_DATE=	Fri Feb 22 00:09:41 UTC 2002
 CVS_SITES?=	anoncvs@anoncvs3.usa.openbsd.org:/cvs \
 		anoncvs@anoncvs1.ca.openbsd.org:/cvs
 CVS_MODULE=	src/usr.bin/nc
