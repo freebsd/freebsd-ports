@@ -48,6 +48,7 @@
     SUBDIR += jboss2
     SUBDIR += jboss3
     SUBDIR += jce-aba
+    SUBDIR += jcommon
     SUBDIR += jdbcpool
     SUBDIR += jde
     SUBDIR += jde-emacs20

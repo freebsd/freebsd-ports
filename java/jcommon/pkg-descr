@@ -1,0 +1,9 @@
+JCommon is a collection of useful classes used by JFreeChart, JFreeReport and
+other projects. The library includes:
+    * user interface classes for displaying information about applications
+    * custom layout managers
+    * a date chooser panel
+    * serialization utilities
+    * XML parser support classes
+
+WWW: http://www.jfree.org/jcommon/
