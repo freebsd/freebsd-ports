@@ -30,6 +30,6 @@ MAN3=		libexpect.3
 .endif
 
 post-install:
-	${LN} -sf libexpect532.so.2 ${PREFIX}/lib/libexpect532.so
+	${LN} -sf libexpect532.so.1 ${PREFIX}/lib/libexpect532.so
 
 .include <bsd.port.mk>
