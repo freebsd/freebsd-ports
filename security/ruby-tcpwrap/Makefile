@@ -7,6 +7,7 @@
 
 PORTNAME=	tcpwrap
 PORTVERSION=	0.6
+PORTREVISION=	1
 CATEGORIES=	security ruby
 MASTER_SITES=	http://www.shugo.net/archive/ruby-tcpwrap/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
@@ -16,7 +17,7 @@ DIST_SUBDIR=	ruby
 MAINTAINER=	knu@FreeBSD.org
 COMMENT=	TCP wrappers library for Ruby
 
-BUILD_DEPENDS=	${LOCALBASE}/lib/libident.a:${PORTSDIR}/security/libident
+LIB_DEPENDS=	ident.0:${PORTSDIR}/security/libident
 
 USE_RUBY=	yes
 USE_RUBY_EXTCONF=	yes
