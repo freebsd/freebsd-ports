@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.126 1998/06/29 22:10:12 kuriyama Exp $
+# $Id: Makefile,v 1.127 1998/07/04 19:58:03 steve Exp $
 #
 
     SUBDIR += Canna
@@ -37,6 +37,12 @@
     SUBDIR += jtex209-ascii
     SUBDIR += jtex209-both
     SUBDIR += jtex209-ntt
+    SUBDIR += jvim
+    SUBDIR += jvim-canna
+    SUBDIR += jvim-canna+wnn4
+    SUBDIR += jvim-canna+wnn6
+    SUBDIR += jvim-wnn4
+    SUBDIR += jvim-wnn6
     SUBDIR += k10
     SUBDIR += k12
     SUBDIR += k8
@@ -92,6 +98,11 @@
     SUBDIR += nvi-sjis
     SUBDIR += okphone
     SUBDIR += oleo
+    SUBDIR += onew-canna
+    SUBDIR += onew-canna+wnn4
+    SUBDIR += onew-canna+wnn6
+    SUBDIR += onew-wnn4
+    SUBDIR += onew-wnn6
     SUBDIR += perl5
     SUBDIR += pgp.language
     SUBDIR += pine
