@@ -7,6 +7,7 @@ lib/exmh-2.0gamma/SeditSelSpell.tcl
 lib/exmh-2.0gamma/addr.tcl
 lib/exmh-2.0gamma/aliases.tcl
 lib/exmh-2.0gamma/app-defaults
+lib/exmh-2.0gamma/app-defaults.orig
 lib/exmh-2.0gamma/app-defaults-color
 lib/exmh-2.0gamma/app-defaults-mono
 lib/exmh-2.0gamma/audit.tcl
@@ -127,6 +128,7 @@ lib/exmh-2.0gamma/post.tcl
 lib/exmh-2.0gamma/preferences.tcl
 lib/exmh-2.0gamma/print.tcl
 lib/exmh-2.0gamma/ps.tcl
+lib/exmh-2.0gamma/quote.tcl
 lib/exmh-2.0gamma/receipt.tcl
 lib/exmh-2.0gamma/report.tcl
 lib/exmh-2.0gamma/rich2tk.tcl
@@ -158,6 +160,6 @@ lib/exmh-2.0gamma/widgetText.tcl
 lib/exmh-2.0gamma/widgets.tcl
 lib/exmh-2.0gamma/xns.tcl
 lib/exmh-2.0gamma/xnsgetmail.exp
+man/man1/exmh.1.gz
 @dirrm lib/exmh-2.0gamma/html
 @dirrm lib/exmh-2.0gamma
-man/man1/exmh.1.gz
