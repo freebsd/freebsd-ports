@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	XML-Twig
-PORTVERSION=	3.15
+PORTVERSION=	3.16
 CATEGORIES=	textproc perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	XML
@@ -30,15 +30,13 @@ RUN_DEPENDS=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	YES
 
-MAN1=		xml_grep.1 xml_pp.1 xml_spellcheck.1
+MAN1=		xml_grep.1 xml_merge.1 xml_pp.1 xml_spellcheck.1 xml_split.1
 MAN3=		XML::Twig.3
 
 .include <bsd.port.pre.mk>
 
 .if ${PERL_LEVEL} < 500601
-post-patch:
-	@${PERL} -pi -e '$$_ = "" if /warnings/' \
-		${WRKSRC}/Twig/XPath.pm
+IGNORE=		Needs 5.6.1 or newer, try installing lang/perl5.8 and try again
 .endif
 
 .include <bsd.port.post.mk>
