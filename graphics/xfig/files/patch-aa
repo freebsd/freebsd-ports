@@ -1,11 +1,11 @@
---- Imakefile.orig	Fri Aug 22 16:59:16 1997
-+++ Imakefile	Tue Aug 26 13:14:52 1997
-@@ -46,12 +46,12 @@
- XCOMM set JPEGLIBDIR after the #else to the directory where you have the source
- XCOMM for jpeg.
+--- Imakefile.orig	Fri Jul  3 03:37:09 1998
++++ Imakefile	Mon Jul  6 17:27:55 1998
+@@ -49,12 +49,12 @@
+ XCOMM Uncomment the following definiton if you want to use the small icons
+ XCOMM for the panel buttons.  Use this if you have a 800x600 or smaller screen.
  
--XCOMM #define USEINSTALLEDJPEG
-+#define USEINSTALLEDJPEG
+-XCOMM #define USESMALLICONS
++#define USESMALLICONS
  
  XCOMM Uncomment the following definition for XAWLIB if you want to use
  XCOMM the 3d Athena Widget Set (highly recommended!)
@@ -13,10 +13,10 @@
 -XCOMM XAWLIB = -lXaw3d
 +XAWLIB = -lXaw3d
  
- XCOMM Uncomment the following if needed for DECstations running older X11R4 
+ XCOMM Uncomment the following if needed for DECstations running older X11R4
  XCOMM INCROOT=/usr/include/mit
-@@ -66,12 +66,12 @@
- XCOMM Change XPMLIB if necessary to point to the xpm library (libXpm)
+@@ -70,12 +70,12 @@
+ XCOMM Change XPMLIBS if necessary to point to the xpm library (libXpm)
  XCOMM Change XPMINC if necessary to point to the include file for xpm (xpm.h)
  
 -XCOMM #define USEXPM
@@ -28,19 +28,10 @@
  XPMLIBDIR = $(USRLIBDIR)
 -XPMINC = -I$(INCDIR)
 +XPMINC = -I$(INCDIR)/X11 -I$(INCDIR)
- XPMLIB = -L$(XPMLIBDIR) -lXpm
+ XPMLIBS = -L$(XPMLIBDIR) -lXpm
  #endif
  
-@@ -79,7 +79,7 @@
- 
- #ifdef USEINSTALLEDJPEG
- JPEGLIBDIR = /usr/local/lib
--JPEGINCDIR = -I/usr/include/X11
-+JPEGINCDIR = -I/usr/local/include
- JPEGLIB = -L$(JPEGLIBDIR) -ljpeg
- #else
- JPEGLIBDIR = ../jpeg
-@@ -112,7 +112,7 @@
+@@ -101,7 +101,7 @@
  XCOMM inline functions. With the "INLINE" keyword, you should notice that
  XCOMM the display will be a bit faster in complex figures
  
@@ -49,7 +40,16 @@
  
  XCOMM use (and change) the following if you want the multi-key data base file
  XCOMM somewhere other than the standard X11 library directory
-@@ -213,7 +213,7 @@
+@@ -169,7 +169,7 @@
+ 
+ #ifdef USEJPEG
+ #ifdef USEINSTALLEDJPEG
+-JPEGINCDIR = -I/usr/include/X11
++JPEGINCDIR = -I/usr/local/include
+ JPEGLIB = -L$(JPEGLIBDIR) -ljpeg
+ #else
+ JPEGCONF = configure
+@@ -226,7 +226,7 @@
  #endif
  #endif
  
