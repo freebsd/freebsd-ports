@@ -3,7 +3,7 @@
 # Date created:		11 January 1995
 # Whom:			jkh
 #
-# $Id: Makefile,v 1.7 1996/11/18 11:22:52 asami Exp $
+# $Id: Makefile,v 1.8 1997/01/10 10:57:08 asami Exp $
 #
 
 DISTNAME=	malloc-1.18
@@ -13,5 +13,10 @@ MASTER_SITES=	ftp://ftp.cs.toronto.edu/pub/moraes/
 
 post-install:
 	/sbin/ldconfig -m ${PREFIX}/lib
+.if !defined(NOPORTDOCS)
+	@${MKDIR} ${PREFIX}/share/doc/libmalloc
+	${INSTALL_DATA} ${WRKSRC}/malloc.doc ${PREFIX}/share/doc/libmalloc
+	${INSTALL_DATA} ${WRKSRC}/NOTE ${PREFIX}/share/doc/libmalloc
+.endif
 
 .include <bsd.port.mk>
