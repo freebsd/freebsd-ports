@@ -8,7 +8,7 @@
 PORTNAME=	kssh
 PORTVERSION=	0.2
 CATEGORIES=	security
-MASTER_SITES=	http://people.FreeBSD.org/~will/distfiles/
+MASTER_SITES=	ftp://ftp.FreeBSD.org/pub/FreeBSD/ports/local-distfiles/will/
 
 MAINTAINER=	will@FreeBSD.org
 
