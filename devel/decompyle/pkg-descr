@@ -1,0 +1,8 @@
+'decompyle' converts Python byte-code back into equivalent Python source.
+It accepts byte-code from any Python version starting with 1.5 up to 2.2
+The generated source is very readable: docstrings, lists, tuples and
+hashes get pretty-printed.
+'decompyle' may also verify the equivalence of the generated source by
+compiling it and comparing both byte-codes.
+
+WWW: http://www.goebel-consult.de/decompyle/
