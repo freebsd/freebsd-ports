@@ -8613,6 +8613,7 @@ rox-session	ports/x11-fm/rox-session
 rox-wallpaper	ports/x11/rox-wallpaper
 roxen		ports/www/roxen
 roxirc		ports/irc/roxirc
+rp-pppoe	ports/net/rp-pppoe
 rpc		ports/math/rpc
 rpc2		ports/devel/rpc2
 rpl		ports/misc/rpl
