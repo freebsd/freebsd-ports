@@ -18,6 +18,8 @@ bin/next
 bin/prev
 bin/packf
 bin/pick
+bin/popauth
+bin/popi
 bin/prompter
 bin/refile
 bin/repl
@@ -34,6 +36,9 @@ lib/mh/ap
 lib/mh/conflict
 lib/mh/dp
 lib/mh/packmbox
+lib/mh/popaka
+lib/mh/popwrd
+lib/mh/spop
 lib/mh/viamail
 lib/mh/mhl
 lib/mh/install-mh
@@ -67,6 +72,7 @@ lib/mh/scan.time
 lib/mh/scan.timely
 lib/mh/mhn_defaults
 lib/mh/tmac.h
+libexec/popd
 man/man1/ali.1.gz
 man/man1/anno.1.gz
 man/man1/burst.1.gz
@@ -89,6 +95,7 @@ man/man1/msh.1.gz
 man/man1/next.1.gz
 man/man1/packf.1.gz
 man/man1/pick.1.gz
+man/man1/popi.1.gz
 man/man1/prev.1.gz
 man/man1/prompter.1.gz
 man/man1/rcvstore.1.gz
@@ -116,3 +123,4 @@ man/man8/dp.8.gz
 man/man8/install-mh.8.gz
 man/man8/post.8.gz
 man/man8/fmtdump.8.gz
+man/man8/popauth.8.gz
