@@ -3,7 +3,7 @@
 # Date created:         08 August 1995
 # Whom:                 jkh
 #
-# $Id: Makefile,v 1.38 1998/08/07 23:56:28 asami Exp $
+# $Id: Makefile,v 1.39 1998/09/25 10:05:08 asami Exp $
 #
 
 DISTNAME=       pyth151
@@ -24,7 +24,7 @@ PATCHFILES=	_tkinter.1.txt SocketServer.1.txt bltinmodule.1.txt \
 		string.1.txt stringobject.1.txt stropmodule.1.txt \
 		timemodule.1.txt urllib.1.txt urllib.2.txt zlibmodule.1.txt
 
-MAINTAINER=	tg@FreeBSD.org
+MAINTAINER=	tg@FreeBSD.ORG
 
 LIB_DEPENDS=	${TK_DEPENDS}
 
@@ -98,3 +98,9 @@ post-install:
 	strip ${PREFIX}/bin/python
 
 .include <bsd.port.mk>
+
+# need <bsd.port.mk> to get ${PORTOBJFORMAT}
+.if ${PORTOBJFORMAT} == elf
+LDFLAGS+=	-rdynamic
+CONFIGURE_ENV?=	LDFLAGS="${LDFLAGS}"
+.endif
