@@ -654,3 +654,5 @@ print/pktrace|print/mftrace|2003-11-05|program renamed
 databases/mysql-jdbc-mm|databases/mysql-connector-java|2003-11-05|renamed
 sysutils/prune|sysutils/fileprune|2003-11-06|renamed because of conflict with graphviz
 graphics/Mesa3|graphics/libglut|2003-11-06|split into graphics/mesagl and graphics/libglut
+japanese/openoffice|japanese/openoffice-1.0|2003-01-07|renamed 
+japanese/openoffice-devel|japanese/openoffice-1.1|2003-01-07|renamed 
