@@ -3,7 +3,7 @@
 # Date created:		20 April 1997
 # Whom:			doconnor@ist.flinders.edu.au
 #
-# $Id$
+# $Id: Makefile,v 1.2 1997/09/05 17:40:54 max Exp $
 #
 
 DISTNAME=	mikmod-2.14-unix
@@ -11,7 +11,7 @@ PKGNAME=	mikmod-2.14
 CATEGORIES=	audio
 MASTER_SITES=	http://www.chiark.greenend.org.uk/~stevem/mikmod/
 
-MAINTAINER=	doconnor@ist.flinders.edu.au
+#MAINTAINER=	doconnor@ist.flinders.edu.au
 
 RESTRICTED=	"Registration required for redistribution and commercial use."
 
