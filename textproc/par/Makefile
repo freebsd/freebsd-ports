@@ -8,7 +8,7 @@
 PORTNAME=	par
 PORTVERSION=	1.52
 CATEGORIES=	textproc
-MASTER_SITES=	http://www.cs.berkeley.edu/~amc/Par/
+MASTER_SITES=	http://www.nicemice.net/par/
 DISTNAME=	Par${PORTVERSION:S|.||}
 
 MAINTAINER=	mark@grondar.za
