@@ -1,5 +1,5 @@
 # Creator:  Jordan Hubbard
-# $Id: LEGAL,v 1.73 1997/05/25 17:32:46 max Exp $
+# $Id: LEGAL,v 1.74 1997/06/04 02:33:35 asami Exp $
 
 Some of the ports in this directory have restrictive copyrights prohibiting
 their actual redistribution on mass media.  When creating compilations
@@ -15,6 +15,7 @@ Such ports are listed below:
 
 Dist			Port			Why
 ------------------------------------------------------------------------------
+timidity-*		ports/audio/timidity	Uses copyrighted patches.
 JDK-*			ports/lang/jdk		Put copyright on packaging!
 bzip-*			ports/archivers/bzip	Some algorithms used may
 						infringe certain US patents.
