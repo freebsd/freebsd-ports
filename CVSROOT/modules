@@ -2258,6 +2258,7 @@ gdesklets-countdown	ports/x11-clocks/gdesklets-countdown
 gdesklets-ebichuclock	ports/x11-clocks/gdesklets-ebichuclock
 gdesklets-gnomebar	ports/deskutils/gdesklets-gnomebar
 gdesklets-goodweather	ports/astro/gdesklets-goodweather
+gdesklets-goodweather-psi	ports/astro/gdesklets-goodweather-psi
 gdesklets-imapmail	ports/mail/gdesklets-imapmail
 gdesklets-irc	ports/irc/gdesklets-irc
 gdesklets-lt-network	ports/net/gdesklets-lt-network
