@@ -1,0 +1,23 @@
+--- togl_setup.py.orig	Fri Nov  3 16:19:44 2000
++++ togl_setup.py	Mon Dec  4 17:35:23 2000
+@@ -60,16 +60,16 @@
+         tk_include_dir = string.replace(tk.getvar('tk_library'),"/lib/","/include/")
+         tcl_lib_dir = os.path.normpath(os.path.join(tk.getvar('tcl_library'),".."))
+         tk_lib_dir = os.path.normpath(os.path.join(tk.getvar('tk_library'),".."))
+-        tcl_lib = "tcl" + tk.getvar('tcl_version')
+-        tk_lib = "tk" + tk.getvar('tk_version')
++        tcl_lib = "tcl" + string.replace(tk.getvar('tcl_version'),".","")
++        tk_lib = "tk" + string.replace(tk.getvar('tk_version'),".","")
+ 
+         # Where to find tcl.h, tk.h, OpenGL/Mesa headers, etc:
+-        include_dirs = ["src/"+Togl, "/usr/local/include", "/usr/X11/include",
++        include_dirs = ["src/"+Togl, "%%LOCALBASE%%/include", "%%X11BASE%%/include",
+                         tcl_include_dir, tk_include_dir]
+         # Libraries to link with (-ldl for Linux only?):
+         libraries = [tk_lib,tcl_lib,"GLU","GL","X11","Xmu","Xext","Xt","m"]
+         # Where to find libtcl.a, libtk.a, OpenGL/Mesa libraries:
+-        library_dirs = ["/usr/local/lib","/usr/X11/lib", 
++        library_dirs = ["%%LOCALBASE%%/lib","%%X11BASE%%/lib", 
+                         tcl_lib_dir, tk_lib_dir]
+         runtime_library_dirs = None
+ 

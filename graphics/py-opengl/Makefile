@@ -6,62 +6,41 @@
 #
 
 PORTNAME=	opengl
-PORTVERSION=	1.5.5
+PORTVERSION=	1.5.6.a2
 CATEGORIES=	graphics python
-MASTER_SITES=	http://www.ipass.net/~dbhopper/aa8vb/TMP/ \
-		http://starship.python.net/crew/da/
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	py${PORTNAME}
 PKGNAMEPREFIX=	py-
-DISTNAME=	PyOpenGL-${PORTVERSION}
+DISTNAME=	PyOpenGL-${PORTVERSION:S/.a/a/}
 
-MAINTAINER=	aa8vb@ipass.net
+MAINTAINER=	sobomax@FreeBSD.org
 
-BUILD_DEPENDS=	python1.5:${PORTSDIR}/lang/python15 \
-		${NUMPYDIR}/Numeric.py:${PORTSDIR}/math/numpy
-RUN_DEPENDS=	python1.5:${PORTSDIR}/lang/python15 \
-		${NUMPYDIR}/Numeric.py:${PORTSDIR}/math/numpy
+BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/Numeric/Numeric.py:${PORTSDIR}/math/numpy \
+		${PYTHON_SITELIBDIR}/_tkinter.so:${PORTSDIR}/x11-toolkits/py-tkinter \
+		${PYTHON_SITELIBDIR}/PIL.pth:${PORTSDIR}/graphics/py-imaging
+RUN_DEPENDS=	${PYTHON_SITELIBDIR}/Numeric/Numeric.py:${PORTSDIR}/math/numpy \
+		${PYTHON_SITELIBDIR}/_tkinter.so:${PORTSDIR}/x11-toolkits/py-tkinter \
+		${PYTHON_SITELIBDIR}/PIL.pth:${PORTSDIR}/graphics/py-imaging
 
+USE_PYTHON=	yes
 USE_MESA=	yes
-ALL_TARGET=	default
-WRKSRC=		${WRKDIR}/${DISTNAME}/src
 
 OSMAJOR!=	/usr/bin/uname -r | sed -e 's/\..*//'
 PLIST_SUB+=	OSMAJOR=${OSMAJOR}
 
-#
-# Support for Numeric is compiled in by default.
-#
-NUMPYDIR=	${LOCALBASE}/lib/python1.5/site-packages/Numeric
-
-#
-# The standard setup file
-#
-SETUP_FILES=	${FILESDIR}/Setup.base
-
-#
-# Support for Togl is compiled in by default.
-#
-.if !defined(WITHOUT_TOGL)
-SETUP_FILES+=	${FILESDIR}/Setup.add.togl
-LIB_DEPENDS+=	tk82.1:${PORTSDIR}/x11-toolkits/tk82
-.endif
-
-.include <bsd.port.pre.mk>
+SETUP_CMD=	cd ${WRKSRC} && ${PYTHON_CMD} setup.py
 
 do-configure:
-	${CAT} ${SETUP_FILES} \
-	  | ${SED} -e 's|X11BASE|${X11BASE}|g' \
-	        -e 's|LOCALBASE|${LOCALBASE}|g' \
-	  > ${WRKSRC}/Setup.proto
+	@${PERL} -pi -e 's|%%LOCALBASE%%|${LOCALBASE}|g ; s|%%X11BASE%%|${X11BASE}|g' \
+		${WRKSRC}/setup.py ${WRKSRC}/togl_setup.py ${WRKSRC}/Tkinter.py
 
 do-build:
-	@(cd ${WRKSRC} && ${CONFIGURE_ENV} python BUILD.py)
+	${SETUP_CMD} build
 
-pre-install:
-	@# Remove togl.so so we don't install it; that's the Togl pkg's job
-	${RM} -f ${WRKSRC}/togl.so
-	find ${WRKDIR} -name '*.so*' | xargs strip
+do-install:        
+	${SETUP_CMD} install
 
-do-install:
-	@(cd ${WRKSRC} && ${CONFIGURE_ENV} python INSTALL.py)
+post-install:
+	${LOCALBASE}/bin/tclsh8.3 ${WRKSRC}/register.tcl
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
