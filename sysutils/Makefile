@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.63 1999/02/28 21:49:09 asami Exp $
+# $Id: Makefile,v 1.64 1999/03/31 11:24:40 dirk Exp $
 #
 
     SUBDIR += LPRng
@@ -14,6 +14,7 @@
     SUBDIR += comconsole
     SUBDIR += contool
     SUBDIR += copytape
+    SUBDIR += cpbk
     SUBDIR += daemontools
     SUBDIR += doconfig
     SUBDIR += gnomeadmin
