@@ -107,6 +107,7 @@
     SUBDIR += jvim3-direct_canna
     SUBDIR += jvim3-freewnn
     SUBDIR += jvim3-wnn6
+    SUBDIR += jyuroku
     SUBDIR += k10
     SUBDIR += k12
     SUBDIR += kakasi
