@@ -1,6 +1,6 @@
---- Makefile.orig	Thu May 28 22:54:11 1998
-+++ Makefile	Sun Apr 11 20:09:52 1999
-@@ -20,18 +20,19 @@
+--- Makefile.orig	Sun May 16 21:55:26 1999
++++ Makefile	Sun May 16 21:55:46 1999
+@@ -13,12 +13,13 @@
  #
  
  # Generic compiler
@@ -10,45 +10,9 @@
  #CC = gcc 
  
  # Normal systems flags
--CFLAGS = -O  
-+CFLAGS ?= -O
+-CFLAGS = -O -Wall
++CFLAGS ?= -O -Wall
 +CFLAGS += -DPREFIX=\"${PREFIX}\"
  
- # Debug mode for sentry
- #CFLAGS = -Wall -g -DDEBUG
- 
- 
--INSTALLDIR = /usr/local/abacus
-+INSTALLDIR = ${PREFIX}
- 
- 
- all:
-@@ -54,21 +55,16 @@
- 		/bin/rmdir $(INSTALLDIR)
- 
- install:	
--		@echo "Creating abacus directory $(INSTALLDIR)"
--		@if [ ! -d $(INSTALLDIR) ]; then /bin/mkdir $(INSTALLDIR); fi
--		@echo "Setting directory permissions"
--		chmod 700 $(INSTALLDIR)
--		@echo "Copying files"
--		cp ./sentry.conf $(INSTALLDIR)
--		cp ./sentry.ignore $(INSTALLDIR)
--		cp ./sentry $(INSTALLDIR)
-+		cp ./sentry.conf $(INSTALLDIR)/etc
-+		cp ./sentry.ignore $(INSTALLDIR)/etc
-+		cp ./sentry $(INSTALLDIR)/bin
- 		@echo "Setting permissions"
--		chmod 600 $(INSTALLDIR)/sentry.ignore
--		chmod 600 $(INSTALLDIR)/sentry.conf
--		chmod 700 $(INSTALLDIR)/sentry
-+		chmod 600 $(INSTALLDIR)/etc/sentry.ignore
-+		chmod 600 $(INSTALLDIR)/etc/sentry.conf
-+		chmod 700 $(INSTALLDIR)/bin/sentry
- 		@echo ""
- 		@echo ""
--		@echo "Edit $(INSTALLDIR)/sentry.conf and change"
-+		@echo "Edit $(INSTALLDIR)/etc/sentry.conf and change"
- 		@echo "your settings if you haven't already. (route, etc)" 
- 		@echo ""
- 		@echo ""
+ # Debug mode for portsentry
+ #CFLAGS = -Wall -g -DNODAEMON -DDEBUG

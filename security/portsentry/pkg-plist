@@ -1,6 +1,7 @@
-bin/sentry
-etc/sentry.conf
-etc/sentry.ignore
-share/doc/sentry/README.install
-share/doc/sentry/README.methods
-@dirrm share/doc/sentry
+bin/portsentry
+etc/portsentry.conf.default
+@exec if [ ! -f %D/etc/portsentry.conf ] ; then cp -p %D/%F %B/portsentry.conf; fi
+etc/portsentry.ignore
+share/doc/portsentry/README.install
+share/doc/portsentry/README.methods
+@dirrm share/doc/portsentry
