@@ -61,6 +61,7 @@ avr/include/pgmspace.h
 avr/include/progmem.h
 avr/include/setjmp.h
 avr/include/sig-avr.h
+avr/include/stdint.h
 avr/include/stdio.h
 avr/include/stdlib.h
 avr/include/string.h
@@ -164,6 +165,7 @@ share/doc/avr-libc/avr-libc-user-manual/group__avr__pgmspace.html
 share/doc/avr-libc/avr-libc-user-manual/group__avr__sfr.html
 share/doc/avr-libc/avr-libc-user-manual/group__avr__sfr__notes.html
 share/doc/avr-libc/avr-libc-user-manual/group__avr__sleep.html
+share/doc/avr-libc/avr-libc-user-manual/group__avr__stdint.html
 share/doc/avr-libc/avr-libc-user-manual/group__avr__stdio.html
 share/doc/avr-libc/avr-libc-user-manual/group__avr__stdlib.html
 share/doc/avr-libc/avr-libc-user-manual/group__avr__string.html
