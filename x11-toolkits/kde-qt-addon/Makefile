@@ -16,6 +16,9 @@ MAINTAINER=	will@FreeBSD.org
 LIB_DEPENDS=	qt2.4:${PORTSDIR}/x11-toolkits/qt22
 
 BROKEN=		"Not needed with the current KDE2 snapshots"
+NO_PACKAGE=	${BROKEN}
+NO_CDROM=	${BROKEN}
+RESTRICTED=	${BROKEN}
 WRKSRC=		${WRKDIR}/${PORTNAME}
 MOC?=		${X11BASE}/bin/moc2
 SOMAJOR=	4
