@@ -3,7 +3,7 @@
 # Date created:		4 Mar 1998
 # Whom:			handy@physics.montana.edu
 #
-# $Id: Makefile,v 1.8 1998/09/16 06:38:57 asami Exp $
+# $Id: Makefile,v 1.9 1998/09/17 00:32:52 asami Exp $
 #
 
 DISTNAME=	mgv-3.1.2
@@ -13,6 +13,8 @@ MASTER_SITES=	http://www.trends.net/~mu/srcs/
 MAINTAINER=	handy@physics.montana.edu
 
 LIB_DEPENDS=	Xpm.4:${PORTSDIR}/graphics/xpm
+
+BROKEN_ELF=	yes
 
 USE_X_PREFIX=	yes
 REQUIRES_MOTIF=	yes
