@@ -14,7 +14,7 @@ DISTNAME=	${PORTNAME}-.30
 MAINTAINER=	ade@FreeBSD.org
 
 LIB_DEPENDS=	gnome.4:${PORTSDIR}/x11/gnomelibs \
-		aspell.7:${PORTSDIR}/textproc/aspell
+		aspell.8:${PORTSDIR}/textproc/aspell
 RUN_DEPENDS=	aspell:${PORTSDIR}/textproc/aspell
 
 USE_NEWGCC=	yes
