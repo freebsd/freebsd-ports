@@ -37,20 +37,19 @@
 ***************
 *** 387,394 ****
   
-  install: in.identd
+  install: in.identd idecrypt
 	cp identd.man  $(MANDIR)/identd.$(MANSECT)
 	echo ".so man$(MANSECT)/identd.$(MANSECT)" > $(MANDIR)/in.identd.$(MANSECT)
 ! 	cp in.identd $(DESTDIR)/in.identd
+  	cp idecrypt.man  $(MANDIR)/idecrypt.$(MANSECT)
+  	cp idecrypt $(DESTDIR)/idecrypt
   
-  tests:
-  	(cd testdir ; make)
 --- 387,394 ----
   
-  install: in.identd
+  install: in.identd idecrypt
 	cp identd.man  $(MANDIR)/identd.$(MANSECT)
 	echo ".so man$(MANSECT)/identd.$(MANSECT)" > $(MANDIR)/in.identd.$(MANSECT)
 ! 	cp in.identd $(DESTDIR)/identd
+  	cp idecrypt.man  $(MANDIR)/idecrypt.$(MANSECT)
+  	cp idecrypt $(DESTDIR)/idecrypt
   
-  tests:
-  	(cd testdir ; make)
-	cp in.identd $(DESTDIR)/in.identd
