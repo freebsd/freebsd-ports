@@ -134,6 +134,7 @@ share/gnome/sgml/docbook/yelp/yelp-custom.xsl
 share/gnome/sgml/docbook/yelp/yelp-customization.xsl
 share/gnome/yelp/catalog
 share/gnome/yelp/important_docs.xml
+share/locale/ar/LC_MESSAGES/yelp.mo
 share/locale/az/LC_MESSAGES/yelp.mo
 share/locale/bg/LC_MESSAGES/yelp.mo
 share/locale/ca/LC_MESSAGES/yelp.mo
