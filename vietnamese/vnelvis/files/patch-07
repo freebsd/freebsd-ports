@@ -1,0 +1,51 @@
+--- curses.c.orig	Thu May 14 22:55:48 1992
++++ curses.c	Wed Dec  4 23:55:33 1996
+@@ -40,6 +40,13 @@
+ 
+ #include <signal.h>
+ 
++#if TURBOC || (BSD >= 199306)
++void 
++#else
++int 
++#endif
++getsize();
++
+ extern char	*getenv();
+ static void	 starttcap();
+ 
+@@ -338,7 +345,7 @@
+ 	}	
+ 	exwrote = FALSE;
+ 
+-#if TURBOC
++#if TURBOC || (BSD >= 199306)
+ 	signal(SIGINT, (void(*)()) trapint);
+ #else
+ 	signal(SIGINT, trapint);
+@@ -482,7 +489,12 @@
+  * This function is called once during initialization, and thereafter it is
+  * called whenever the SIGWINCH signal is sent to this process.
+  */
+-int getsize(signo)
++#if TURBOC || (BSD >= 199306)
++void 
++#else
++int 
++#endif
++getsize(signo)
+ 	int	signo;
+ {
+ 	int	lines;
+@@ -535,7 +547,11 @@
+ 		*o_lines = LINES;
+ 	}
+ 
++#if TURBOC || (BSD >= 199306)
++	return;
++#else
+ 	return 0;
++#endif
+ }
+ 
+ 

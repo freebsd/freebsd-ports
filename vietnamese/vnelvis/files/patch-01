@@ -1,0 +1,26 @@
+--- Makefile.orig	Tue May 19 11:57:57 1992
++++ Makefile	Thu Dec  5 00:36:53 1996
+@@ -115,7 +115,7 @@
+ EXTRA=
+ EXTRA2=
+ LIBS=  $(VNLIBDIR)/libviqr.a $(VNLIBDIR)/libvntype.a -ltermcap
+-BIN=	/usr/local/bin
++BIN=	${PREFIX}
+ CFLAGS=	-Dbsd -I$(VNINCDIR)
+ OF=	-s -o 
+ RF=	-c
+@@ -357,10 +357,10 @@
+ 	cp $(PROGS) $(BIN)
+ 	(cd $(BIN); chmod 755 $(PROGS))
+ 	(cd $(BIN); chown bin $(PROGS))
+-	-ln $(BIN)/vnelvis $(BIN)/vi
+-	-ln $(BIN)/vnelvis $(BIN)/ex
+-	-ln $(BIN)/vnelvis $(BIN)/view
+-	-ln $(BIN)/vnelvis $(BIN)/input
++	-ln $(BIN)/vnelvis $(BIN)/vnvi
++	-ln $(BIN)/vnelvis $(BIN)/vnex
++	-ln $(BIN)/vnelvis $(BIN)/vnview
++	-ln $(BIN)/vnelvis $(BIN)/vninput
+ 
+ inst.dos: $(DUMMY)
+ 	copy $(PROGS) $(BIN)

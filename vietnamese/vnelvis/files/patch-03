@@ -1,0 +1,26 @@
+--- config.h.orig	Wed Dec  5 08:50:51 1990
++++ config.h	Wed Dec  4 23:34:15 1996
+@@ -18,7 +18,9 @@
+ 
+ /* BSD UNIX? */
+ #ifdef bsd
+-# define BSD		1
++/* # define BSD		1 */
++/* BSD is defined in <sys/param.h> so just get it from there */
++# include <sys/param.h>
+ #endif
+ 
+ /* Microsoft C: sorry, Watcom does the same thing */
+@@ -127,6 +129,12 @@
+ 
+ #if COHERENT
+ # define CREDIT	"Ported to Coherent by Esa Ahola"
++#endif
++
++#if BSD 
++# if (BSD >= 199306)
++#  define CREDIT	"Ported to 4.4BSD by David O'Brien"
++# endif
+ #endif
+ 
+ /*************************** functions depending on OS *********************/

@@ -1,0 +1,12 @@
+--- cmd1.c.orig	Wed Dec  5 08:50:48 1990
++++ cmd1.c	Thu Dec  5 00:21:11 1996
+@@ -908,6 +908,9 @@
+ #else
+ 	msg("%s  (%s)", VERSION, DATE);
+ #endif
++#ifdef VNVERSION
++	msg("%s", VNVERSION);
++#endif
+ #ifdef COMPILED_BY
+ 	msg("Compiled by %s", COMPILED_BY);
+ #endif

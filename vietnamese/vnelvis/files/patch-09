@@ -1,0 +1,24 @@
+--- tio.c.orig	Mon Apr  6 15:30:53 1992
++++ tio.c	Wed Dec  4 23:59:12 1996
+@@ -369,10 +369,20 @@
+ #if !MSDOS && !TOS
+ # if BSD || COHERENT
+ static jmp_buf env_timeout;
+-static int dummy()
++static 
++#  if (BSD >= 199306)
++void
++#  else
++int 
++#  endif
++dummy()
+ {
+ 	longjmp(env_timeout, 1);
++#  if (BSD >= 199306)
++	return;
++#  else
+ 	return 0;
++#  endif
+ }
+ # else 
+ static int dummy()

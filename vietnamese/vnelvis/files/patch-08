@@ -1,0 +1,15 @@
+--- recycle.c.orig	Wed Dec  5 08:51:08 1990
++++ recycle.c	Wed Dec  4 23:42:53 1996
+@@ -18,7 +18,11 @@
+ #ifndef NO_RECYCLE
+ /* this whole file would have be skipped if NO_RECYCLE is defined */
+ 
+-extern long	lseek();
++#if BSD && (BSD >= 199306)
++# include <unistd.h>
++#else
++ extern long	lseek();
++#endif
+ 
+ #define BTST(bitno, byte)	((byte) & (1 << (bitno)))
+ #define BSET(bitno, byte)	((byte) |= (1 << (bitno)))

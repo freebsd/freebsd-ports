@@ -1,0 +1,16 @@
+Tha^n cha`o ca'c ba.n,
+
+VNElvis is a clone of vi/ex (the standard UNIX editor) that allows the
+displaying and editing of documents in the Vietnamese 8-bit VISCII (VIetnamese
+Standard Code for Information Interchange) data format using the 7-bit VIQR
+(VIetnamese Quoted Readable) input method.
+
+It is expected that you will run vnelvis w/in a vnterm.  Because of the way
+vi utilizes various key strokes, it may be better to turn off vnterm's VIQR
+processing and allow vnelvis to handle the VIQR input itself.  You do this
+by "set vnkeys".
+Because "dd" --> "-d" in VIQR, "qq" has been added as a means of
+deleting a line.  Otherwise vnelvis behaives as expected.
+
+David O'Brien
+obrien@cs.ucdavis.edu

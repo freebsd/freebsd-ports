@@ -1,0 +1,12 @@
+--- tmp.c.orig	Wed Dec  5 08:51:19 1990
++++ tmp.c	Wed Dec  4 23:31:22 1996
+@@ -161,7 +161,8 @@
+ 	}
+ 	else
+ 	{
+-		setflag(file, NOFILE);
++		/* setflag(file, NOFILE); */ /* NOFILE conflicts w/4.4BSD's param.h */
++		setflag(file, NONAME);
+ 		origfd = -1;
+ 		origtime = 0L;
+ 		stat(".", &statb);
