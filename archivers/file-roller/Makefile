@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	fileroller
-PORTVERSION=	1.0.1
+PORTVERSION=	1.0.2
 CATEGORIES=	archivers
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -19,6 +19,7 @@ RUN_DEPENDS=	bzip:${PORTSDIR}/archivers/bzip \
 		rar:${PORTSDIR}/archivers/rar \
 		lzop:${PORTSDIR}/archivers/lzop
 
+USE_REINPLACE=	yes
 USE_X_PREFIX=	yes
 USE_GNOME=	yes
 GNU_CONFIGURE=	yes
@@ -26,9 +27,9 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
 post-patch:
-	@${FIND} ${WRKSRC} -name "Makefile.in*" | ${XARGS} ${PERL} -pi -e \
-		's|\$$\(datadir\)/gnome/apps|\$$\(datadir\)/apps|g ; \
-		 s|\$$\(datadir\)/locale|\$$\(prefix\)/share/locale|g'
+	@${FIND} ${WRKSRC} -name "Makefile.in*" | ${XARGS} ${REINPLACE_CMD} -e \
+		's|\$$(datadir)/gnome/apps|\$$(datadir)/apps|g ; \
+		 s|\$$(datadir)/locale|\$$(prefix)/share/locale|g'
 
 post-install:
 .if !defined(NOPORTDOCS)
