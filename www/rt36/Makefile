@@ -5,14 +5,13 @@
 # $FreeBSD$
 #
 
-PORTNAME=	rt3
-PORTVERSION?=	3.0.11.rc1
+PORTNAME=	rt
+PORTVERSION?=	3.0.11
 CATEGORIES=	www
 MASTER_SITES?=	http://download.bestpractical.com/pub/rt/release/ \
 		http://download.bestpractical.com/pub/rt/devel/ \
 		ftp://ftp.eu.uu.net/pub/unix/ticketing/rt/release/ \
 		ftp://ftp.eu.uu.net/pub/unix/ticketing/rt/devel/
-DISTNAME?=	rt-${PORTVERSION:S/.rc/rc/g}
 
 MAINTAINER=	autrijus@autrijus.org
 COMMENT?=	RT is an industrial-grade ticketing system written in Perl
@@ -53,7 +52,6 @@ BUILD_DEPENDS+=	${APXS}:${PORTSDIR}/${APACHE_PORT} \
 		${SITE_PERL}/WWW/Mechanize.pm:${PORTSDIR}/www/p5-WWW-Mechanize
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
-WRKSRC?=	${WRKDIR}/rt-${PORTVERSION:S/.rc/rc/g}
 HAS_CONFIGURE=	yes
 NO_BUILD=	yes
 NO_PACKAGE=	Executes scripts in post-install phase
