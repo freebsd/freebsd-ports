@@ -13,7 +13,8 @@ MASTER_SITES=	http://pdx.freedesktop.org/~xlibs/release/
 MAINTAINER=	x11@FreeBSD.org
 COMMENT=	X11 Xinerama library
 
-LIB_PC_DEPENDS=	${X11BASE}/libdata/pkgconfig/xext.pc:${PORTSDIR}/x11/libXext
+LIB_PC_DEPENDS=	${X11BASE}/libdata/pkgconfig/xext.pc:${PORTSDIR}/x11/libXext \
+		${X11BASE}/libdata/pkgconfig/panoramixext.pc:${PORTSDIR}/x11/panoramixext
 BUILD_DEPENDS=	${LIB_PC_DEPENDS}
 RUN_DEPENDS=	${LIB_PC_DEPENDS}
 
