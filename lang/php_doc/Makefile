@@ -6,23 +6,14 @@
 #
 
 PORTNAME=	php_doc
-PORTVERSION=	1.0
-PORTREVISION=	1
+PORTVERSION=	1.1
 CATEGORIES?=	lang
-MASTER_SITES=	http://www.php.net/${PHP_DISTDIR}/ \
-		http://php.he.net/${PHP_DISTDIR}/ \
-		http://www.php3.de/${PHP_DISTDIR}/ \
-		http://au.php.net:81/${PHP_DISTDIR}/ \
-		http://at.php.net/${PHP_DISTDIR}/ \
-		http://br.php.net/${PHP_DISTDIR}/ \
-		http://php.easydns.com/${PHP_DISTDIR}/ \
-		http://www.php.cz/${PHP_DISTDIR}/ \
-		http://php3.globe.de/${PHP_DISTDIR}/
+MASTER_SITES=	${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	dirk/php/${PHP_LANG}
 DISTNAME=	manual
 
 MAINTAINER=	dirk@FreeBSD.org
 
-PHP_DISTDIR=	manual/${PHP_LANG}
 DIST_SUBDIR=	php/${PHP_LANG}
 NO_BUILD=	YES
 NO_WRKSUBDIR=	YES
@@ -55,5 +46,28 @@ do-install:
 	@for i in ${WRKSRC}/*; do \
 		${INSTALL_DATA} $$i ${PHPDOCDIR}; \
 	done
+
+# this is for the maintainer only
+.if defined(MAINTAINER_MODE)
+LOCAL_DISTDIR?=	/var/tmp/php_doc/php
+LOCAL_TMPDIR?=	/var/tmp/php_doc/tmp
+DISTSITE?=	http://php.he.net/manual/
+
+localfetch:
+.for lang in de en es fr
+	${MKDIR} ${LOCAL_DISTDIR}/${lang}
+	${FETCH_CMD} -o ${LOCAL_DISTDIR}/${lang}/manual.tar.gz ${DISTSITE}/${lang}/manual.tar.gz
+
+	${MKDIR} ${LOCAL_TMPDIR}/${lang}
+	${TAR} -C ${LOCAL_TMPDIR}/${lang} -xzf ${LOCAL_DISTDIR}/${lang}/manual.tar.gz
+
+	(cd ${LOCAL_TMPDIR}/${lang} && /bin/ls -1) | ${PERL} -pe 'print "%%PHPDOCDIR%%/$_";' > ${.CURDIR}/pkg-plist.${lang}
+	${ECHO} "@dirrm %%PHPDOCDIR%%" >> ${.CURDIR}/pkg-plist.${lang}
+	${RM} -rf ${LOCAL_TMPDIR}/${lang}
+.endfor
+
+	${MV} ${.CURDIR}/pkg-plist.en ${.CURDIR}/pkg-plist
+	cd ${LOCAL_DISTDIR}/.. && ${MD5} php/*/* > ${.CURDIR}/distinfo
+.endif
 
 .include <bsd.port.mk>
