@@ -43,6 +43,6 @@ POST-INSTALL)
 		fi
 	fi
 
-	chown -R ${USER}.${GROUP} ${DB_DIR}
+	chown -R ${USER}:${GROUP} ${DB_DIR}
 	;;
 esac
