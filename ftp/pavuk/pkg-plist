@@ -1,21 +1,14 @@
 bin/pavuk
 etc/pavuk_authinfo.sample
 etc/pavukrc.sample
-%%PORTDOCS%%share/doc/pavuk/AUTHORS
-%%PORTDOCS%%share/doc/pavuk/BUGS
-%%PORTDOCS%%share/doc/pavuk/CREDITS
-%%PORTDOCS%%share/doc/pavuk/ChangeLog
-%%PORTDOCS%%share/doc/pavuk/FAQ
-%%PORTDOCS%%share/doc/pavuk/MAILINGLIST
-%%PORTDOCS%%share/doc/pavuk/NEWS
-%%PORTDOCS%%share/doc/pavuk/README
-share/locale/cs/LC_MESSAGES/pavuk.mo
-share/locale/de/LC_MESSAGES/pavuk.mo
-share/locale/es/LC_MESSAGES/pavuk.mo
-share/locale/fr/LC_MESSAGES/pavuk.mo
-share/locale/it/LC_MESSAGES/pavuk.mo
-share/locale/ja/LC_MESSAGES/pavuk.mo
-share/locale/sk/LC_MESSAGES/pavuk.mo
+%%PORTDOCS%%%%DOCSDIR%%/AUTHORS
+%%PORTDOCS%%%%DOCSDIR%%/BUGS
+%%PORTDOCS%%%%DOCSDIR%%/CREDITS
+%%PORTDOCS%%%%DOCSDIR%%/ChangeLog
+%%PORTDOCS%%%%DOCSDIR%%/FAQ
+%%PORTDOCS%%%%DOCSDIR%%/MAILINGLIST
+%%PORTDOCS%%%%DOCSDIR%%/NEWS
+%%PORTDOCS%%%%DOCSDIR%%/README
 share/pavuk/icons/pavuk_16x16.xpm
 share/pavuk/icons/pavuk_32x32.xpm
 share/pavuk/icons/pavuk_64x64.xpm
@@ -23,4 +16,4 @@ share/pavuk/icons/pavuk_as_icon.xpm
 share/pavuk/icons/pavuk_prg_icon.xpm
 @dirrm share/pavuk/icons
 @dirrm share/pavuk
-%%PORTDOCS%%@dirrm share/doc/pavuk
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
