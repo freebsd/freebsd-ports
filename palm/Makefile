@@ -9,6 +9,7 @@
     SUBDIR += jpilot
     SUBDIR += kpilot
     SUBDIR += malsync
+    SUBDIR += palmos-sdk
     SUBDIR += pilot-link
     SUBDIR += pilot_makedoc
     SUBDIR += syncal
