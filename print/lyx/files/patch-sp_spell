@@ -1,7 +1,0 @@
---- src/sp_spell.C	Thu Mar 21 12:25:20 2002
-+++ src/sp_spell.C	Wed Jul 31 18:49:57 2002
-@@ -371,3 +371,3 @@
- 		retval = select(SELECT_TYPE_ARG1 (pipeout[0]+1),
--				SELECT_TYPE_ARG234 (&infds),
-+				&infds,
- 				0,
