@@ -1,5 +1,5 @@
 --- relaydb.c.orig	Sun Dec 14 15:59:30 2003
-+++ relaydb.c	Sun Dec 14 17:22:40 2003
++++ relaydb.c	Tue Dec 16 18:58:52 2003
 @@ -47,6 +47,11 @@
  	time_t	 mtime;
  };
@@ -12,34 +12,56 @@
  extern char	*__progname;
  const int	 bufsiz = 1024;
  const int	 factor = 3;
-@@ -318,7 +323,7 @@
+@@ -318,7 +323,8 @@
  			if (d.mtime >= mtime)
  				continue;
  			if (debug)
 -				printf("touching %u %s\n", mtime, address);
-+				printf("touching %lu %s\n", mtime, address);
++				printf("touching %lu %s\n", 
++					(unsigned long)mtime, address);
  			d.mtime = mtime;
  			memset(&dbk, 0, sizeof(dbk));
  			dbk.size = strlen(address);
-@@ -364,7 +369,7 @@
+@@ -349,6 +355,7 @@
+ 	int		 pos = 0, r;
+ 	struct data	 d;
+ 	unsigned	 count = 0;
++	unsigned long	 time_read;
+ 
+ 	if (debug)
+ 		printf("importing %s\n", filename);
+@@ -364,8 +371,8 @@
  			buf[pos] = 0;
  			pos = 0;
  
 -			r = sscanf(buf, "%127s %d %d %u", address,
+-			    &d.white, &d.black, &d.mtime);
 +			r = sscanf(buf, "%127s %d %d %lu", address,
- 			    &d.white, &d.black, &d.mtime);
++			    &d.white, &d.black, &time_read);
  			if (r == 3)
  				d.mtime = time(NULL);
-@@ -379,7 +384,7 @@
+ 			else if (r != 4) {
+@@ -373,14 +380,16 @@
+ 				    buf);
+ 				fclose(f);
+ 				return;
+-			}
++			} else
++				d.mtime = time_read;
+ 			if (!((use_v4 && address_valid_v4(address)) ||
+ 			    (use_v6 && address_valid_v6(address))) ||
  			    address_private(address))
  				continue;
  			if (debug)
 -				printf("adding %s %d %d %u\n",
+-				    address, d.white, d.black, d.mtime);
 +				printf("adding %s %d %d %lu\n",
- 				    address, d.white, d.black, d.mtime);
++				    address, d.white, d.black, 
++				    (unsigned long)d.mtime);
  			memset(&dbk, 0, sizeof(dbk));
  			dbk.size = strlen(address);
-@@ -405,7 +410,7 @@
+ 			dbk.data = address;
+@@ -405,7 +414,7 @@
  void
  usage()
  {
@@ -48,7 +70,7 @@
  	    "[-BW [+-]num] [-m [+-]days]\n\t[-f filename] "
  	    "[-i filename] [-t filename]\n", __progname);
  	exit(1);
-@@ -414,7 +419,7 @@
+@@ -414,7 +423,7 @@
  int
  main(int argc, char *argv[])
  {
@@ -57,7 +79,7 @@
  	const char	*filename = NULL, *import = NULL, *syslog = NULL;
  	time_t		 mtime = 0;
  	int		 mtime_op = 0;
-@@ -423,7 +428,7 @@
+@@ -423,7 +432,7 @@
  	int		 ch;
  	unsigned	 count = 0;
  
@@ -66,7 +88,7 @@
  		switch (ch) {
  		case '4':
  			use_v4 = 1;
-@@ -482,6 +487,9 @@
+@@ -482,6 +491,9 @@
  		case 'n':
  			traverse = 0;
  			break;
@@ -76,7 +98,7 @@
  		case 'r':
  			reverse = 1;
  			break;
-@@ -496,7 +504,7 @@
+@@ -496,9 +508,14 @@
  		}
  	}
  
@@ -84,17 +106,27 @@
 +	if (!old_list && !list && !delete && !action && import == NULL && syslog == NULL)
  		usage();
  
++	if (old_list && (list || delete)) {
++		fprintf(stderr, "-O is incompatible with -l and -d\n");
++		return (1);
++	}
++
  	if (delete && !action && !mtime && black == -1 && white == -1) {
-@@ -583,7 +591,7 @@
+ 		fprintf(stderr, "to delete all entries, delete the file\n");
+ 		return (1);
+@@ -583,8 +600,9 @@
  				continue;
  			if (list) {
  				if (debug)
 -					printf("%s %d %d %u\n",
+-					    a, d.white, d.black, d.mtime);
 +					printf("%s %d %d %lu\n",
- 					    a, d.white, d.black, d.mtime);
++					    a, d.white, d.black, 
++						(unsigned long)d.mtime);
  				else
  					printf("%s\n", a);
-@@ -600,6 +608,40 @@
+ 			} else {
+@@ -600,6 +618,40 @@
  				count++;
  			}
  		}
@@ -135,12 +167,12 @@
  	} else {
  		if (debug)
  			printf("reading mail headers, considering the mail "
-@@ -609,7 +651,7 @@
+@@ -609,7 +661,7 @@
  	if (delete && !list)
  		printf("%u entries deleted\n", count);
  
 -	if (!list && db->sync(db, 0))
-+	if (!list && !old_list && db->sync(db, 0))
++	if (!old_list && !list && db->sync(db, 0))
  		fprintf(stderr, "db->sync() %s\n", strerror(errno));
  	if (db->close(db))
  		fprintf(stderr, "db->close() %s\n", strerror(errno));
