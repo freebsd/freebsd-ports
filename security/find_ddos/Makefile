@@ -14,7 +14,7 @@ MASTER_SITES=	http://ftp.cert.org.tw/tools/Security_Scanner/DDOS/  \
 DISTNAME=	find_ddos_v42_linux
 EXTRACT_SUFX=	.tar.Z
 
-MAINTAINER=	obrien@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 
 ONLY_FOR_ARCHS=	i386
 WRKSRC=		${WRKDIR}/${PORTNAME}

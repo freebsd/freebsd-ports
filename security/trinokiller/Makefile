@@ -13,7 +13,7 @@ MASTER_SITES=	http://www.afro-productions.com/
 DISTNAME=	trinokiller
 EXTRACT_SUFX=	.c
 
-MAINTAINER=	obrien@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 
 NO_WRKSUBDIR=	yes
 

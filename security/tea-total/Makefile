@@ -11,7 +11,7 @@ CATEGORIES=	security
 MASTER_SITES=	ftp://ftp.linuxhacker.org/pub/tea-total/  \
 		http://www.linuxhacker.org/tea-total/
 
-MAINTAINER=	obrien@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 
 #	code is not 64-bit clean...
 ONLY_FOR_ARCHS=	i386
