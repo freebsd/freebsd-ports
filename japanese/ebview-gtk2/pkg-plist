@@ -1,8 +1,8 @@
 bin/ebdump
 bin/ebview
 bin/ebview-client
-%%PORTDOCS%%share/doc/ebview/ChangeLog
-%%PORTDOCS%%share/doc/ebview/README
+%%PORTDOCS%%%%DOCSDIR%%/ChangeLog
+%%PORTDOCS%%%%DOCSDIR%%/README
 share/ebview/about.en
 share/ebview/about.jp
 share/ebview/endinglist-ja.xml
@@ -16,4 +16,4 @@ share/locale/ja/LC_MESSAGES/ebview.mo
 @dirrm share/ebview/help/en
 @dirrm share/ebview/help
 @dirrm share/ebview
-%%PORTDOCS%%@dirrm share/doc/ebview
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
