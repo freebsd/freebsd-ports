@@ -1,4 +1,4 @@
-# Makefile for:		gated
+# Ports collection makefile for:	gated
 # Version required:     3.5.11
 # Date created:		29 October 1994
 # Whom:			pst
