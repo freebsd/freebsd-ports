@@ -1,5 +1,14 @@
---- dw_filter.c.bak	Mon Jul 30 05:12:02 2001
-+++ dw_filter.c	Sat Aug 25 15:27:15 2001
+--- dw_filter.c.orig	Mon Jul 30 05:12:02 2001
++++ dw_filter.c	Thu Aug 30 00:23:31 2001
+@@ -549,7 +549,7 @@
+             syslog( LOG_MAIL | LOG_DEBUG, "can not replace message" );
+             FAIL_EXIT( context, priv );
+         }
+-        if( bSenderNotify && priv->from && (strlen(priv->from) > 0) )
++	if( bSenderNotify && priv->from && *(priv->from) && strcmp(priv->from, "<>") != 0)
+         {
+             if( smfi_addrcpt( context, priv->from ) != MI_SUCCESS )
+             {
 @@ -585,7 +585,7 @@
          syslog( LOG_MAIL | LOG_ERR, "daemon return error (%s) - possible problem with daemon", getDaemonCode( status ) );
          FAIL_EXIT( context, priv );
