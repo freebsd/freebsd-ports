@@ -1,6 +1,6 @@
 # New ports collection makefile for:	interchange
 # Date created:		2 July 2002
-# Whom:			Seth Kingsley <sethk@meowfishies.com
+# Whom:			Seth Kingsley <sethk@meowfishies.com>
 #
 # $FreeBSD$
 #
@@ -45,6 +45,9 @@ MAKE_ARGS+=	NOCPANINSTALL=1 \
 
 CONFIGURE_ARGS+=	force=1
 
+post-patch:
+	@${REINPLACE_CMD} -e "s:You are now ready to cd to \$$realdir:You are now ready to cd to ${PREFIX}:g" ${WRKSRC}/Makefile.PL
+
 pre-configure:
 .if !defined(USE_THIS_PERL) && !defined(BATCH)
 	@[ ! "${PERL_VER}" \< "5.6.1" ] || ( ${ECHO_CMD} -e "You use perl ${PERL_VER}, interchange should be used with 5.6.1 or better,\njust install the newer perl from ports and run 'use.perl port', this will\nmake the new perl the default perl. If you already have some perl modules\ninstalled for your old perl, you have to reinstall them for the new perl.\n\nIf you absolutely want to try to run interchange with perl ${PERL_VER},\nyou have to add '-DUSE_THIS_PERL' as an option for 'make'.\n" ; exit 1 )
@@ -60,5 +63,6 @@ post-install:
 	    ${PREFIX}/etc/rc.d/interchange.sh.sample
 	@${REINPLACE_CMD} -i "" -e 's:%%PREFIX%%:${PREFIX}:' \
 	    ${PREFIX}/etc/rc.d/interchange.sh.sample
+	@${REINPLACE_CMD} -i "" -e "s:${PREFIX}:${PREFIX}/interchange:g; s:${PREFIX}/interchange/lib:${PREFIX}/interchange/lib/perl5/site_perl/${PERL_VER}:g; s:${PREFIX}/interchange/bin: ${PREFIX}/bin:g" ${PREFIX}/bin/interchange
 
 .include <bsd.port.mk>
