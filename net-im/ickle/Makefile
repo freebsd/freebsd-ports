@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	ickle
-PORTVERSION=	0.2.0
+PORTVERSION=	0.2.2
 CATEGORIES=	net devel
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -30,7 +30,7 @@ USE_GNOME=	yes
 
 PLIST_SUB+=	ICKLEDATADIR="share/gnome/" GNOME="" NOGNOME="@comment "
 .else
-CONFIGURE_ARGS+=	--disable-gnome
+CONFIGURE_ARGS+=	--with-gnome=no
 
 PLIST_SUB+=	ICKLEDATADIR="share/" GNOME="@comment " NOGNOME=""
 .endif
