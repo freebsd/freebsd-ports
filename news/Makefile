@@ -1,5 +1,6 @@
 # $FreeBSD$
 #
+    SUBDIR += yencode
 
     SUBDIR += PicMonger
     SUBDIR += atp
