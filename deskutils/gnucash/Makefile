@@ -7,6 +7,7 @@
 
 PORTNAME=	gnucash
 PORTVERSION=	1.6.2
+PORTREVISION=	1
 CATEGORIES=	deskutils gnome
 MASTER_SITES=	http://www.gnucash.org/pub/gnucash/sources/stable/ \
 		ftp://ftp.gnucash.org/pub/gnucash/sources/stable/ \
@@ -23,9 +24,10 @@ LIB_DEPENDS=	guile.9:${PORTSDIR}/lang/guile \
 		guppidata.11:${PORTSDIR}/math/guppi \
 		popt.0:${PORTSDIR}/devel/popt
 RUN_DEPENDS=	${LOCALBASE}/share/slib/Template.scm:${PORTSDIR}/lang/slib \
-		gnuplot:${PORTSDIR}/math/gnuplot \
 		${site_perl}/HTML/Base.pm:${PORTSDIR}/www/p5-HTML \
-		${site_perl}/LWP.pm:${PORTSDIR}/www/p5-libwww
+		${site_perl}/LWP.pm:${PORTSDIR}/www/p5-libwww \
+		${site_perl}/Date/Manip.pm:${PORTSDIR}/devel/p5-Date-Manip \
+		${site_perl}/Finance/Quote.pm:${PORTSDIR}/misc/p5-Finance-Quote
 
 site_perl=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}
 
