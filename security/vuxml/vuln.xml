@@ -30,6 +30,49 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="446dbecb-9edc-11d8-9366-0020ed76ef5a">
+    <topic>heimdal kadmind remote heap buffer overflow</topic>
+    <affects>
+      <package>
+	<name>heimdal</name>
+	<range><lt>0.6.1_1</lt></range>
+      </package>
+      <system>
+	<name>FreeBSD</name>
+	<range><ge>4.9</ge><lt>4.9_7</lt></range>
+	<range><ge>4.0</ge><lt>4.8_20</lt></range>
+      </system>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+        <p>An input validation error was discovered in the kadmind
+          code that handles the framing of Kerberos 4 compatibility
+          administration requests.  The code assumed that the length
+          given in the framing was always two or more bytes.  Smaller
+          lengths will cause kadmind to read an arbitrary amount of
+          data into a minimally-sized buffer on the heap.</p>
+        <p>A remote attacker may send a specially formatted message
+          to kadmind, causing it to crash or possibly resulting in
+          arbitrary code execution.</p>
+        <p>The kadmind daemon is part of Kerberos 5 support.  However,
+          this bug will only be present if kadmind was built with
+	  additional Kerberos 4 support.  Thus, only systems that have
+	  *both* Heimdal Kerberos 5 and Kerberos 4 installed might
+	  be affected.</p>
+        <p><em>NOTE:</em> On FreeBSD 4 systems, `kadmind' may be
+          installed as `k5admind'.</p>
+      </body>
+    </description>
+    <references>
+      <cvename>CAN-2004-0434</cvename>
+      <freebsdsa>SA-04:09.kadmind</freebsdsa>
+    </references>
+    <dates>
+      <discovery>2004-05-05</discovery>
+      <entry>2005-05-05</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="0792e7a7-8e37-11d8-90d1-0020ed76ef5a">
     <topic>CVS path validation errors</topic>
     <affects>
@@ -1047,7 +1090,9 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
       </package>
       <system>
 	<name>FreeBSD</name>
-	<range><ge>4.0</ge></range>
+	<range><ge>5.0</ge><lt>5.2_6</lt></range>
+	<range><ge>4.9</ge><lt>4.9_6</lt></range>
+	<range><ge>4.0</ge><lt>4.8_19</lt></range>
       </system>
     </affects>
     <description>
@@ -1061,11 +1106,13 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     </description>
     <references>
       <cvename>CAN-2004-0371</cvename>
+      <freebsdsa>SA-04:08.heimdal</freebsdsa>
       <url>http://www.pdc.kth.se/heimdal/advisory/2004-04-01/</url>
     </references>
     <dates>
       <discovery>2004-04-01</discovery>
       <entry>2004-04-02</entry>
+      <modified>2004-05-05</modified>
     </dates>
   </vuln>
 
