@@ -39,6 +39,7 @@
     SUBDIR += x48
     SUBDIR += xgs
     SUBDIR += xmame
+    SUBDIR += xmess
     SUBDIR += xsystem35
     SUBDIR += xzx
 
