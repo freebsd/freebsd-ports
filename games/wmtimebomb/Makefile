@@ -14,6 +14,8 @@ DISTNAME=	wmtimebomb.20
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A minesweeper for WindowMaker
 
+BROKEN=		"Does not build with new version of windowmaker"
+
 LIB_DEPENDS=	PropList.2:${PORTSDIR}/devel/libPropList \
 		wraster.4:${PORTSDIR}/x11-wm/windowmaker
 
