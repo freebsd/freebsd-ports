@@ -28,6 +28,7 @@ PLIST_SUB=	GDBM_COMPAT="@comment "
 .endif
 
 MAN3=		gdbm.3
+INFO=		gdbm
 
 INSTALL_INFO?=	install-info
 
