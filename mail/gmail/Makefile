@@ -19,13 +19,9 @@ LIB_DEPENDS=	mysqlclient.10:${PORTSDIR}/databases/mysql323-client \
 
 USE_X_PREFIX=	YES
 USE_GMAKE=	YES
-USE_GNOME=	YES
+#USE_GNOME=	YES
 USE_LIBTOOL=	YES
 
-.include <bsd.port.pre.mk>
+BROKEN=		project is dead and port unmaintained
 
-.if ${OSVERSION} > 500000
-BROKEN=		"Does not compile"
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
