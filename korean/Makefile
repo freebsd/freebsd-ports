@@ -33,6 +33,8 @@
     SUBDIR += hpscat
     SUBDIR += johabfonts
     SUBDIR += kaistfonts
+    SUBDIR += linux-netscape47-communicator
+    SUBDIR += linux-netscape47-navigator
     SUBDIR += linuxdoc-sgml
     SUBDIR += linux_locale
     SUBDIR += mizifont
