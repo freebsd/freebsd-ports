@@ -108,6 +108,7 @@ include/wine/windows/d3d9caps.h
 include/wine/windows/d3d9types.h
 include/wine/windows/d3dcaps.h
 include/wine/windows/d3dhal.h
+include/wine/windows/d3drm.h
 include/wine/windows/d3dtypes.h
 include/wine/windows/d3dvec.inl
 include/wine/windows/d3dx8core.h
@@ -183,6 +184,7 @@ include/wine/windows/lmapibuf.h
 include/wine/windows/lmbrowsr.h
 include/wine/windows/lmcons.h
 include/wine/windows/lmerr.h
+include/wine/windows/lmjoin.h
 include/wine/windows/lmserver.h
 include/wine/windows/lmshare.h
 include/wine/windows/lmstats.h
@@ -217,11 +219,11 @@ include/wine/windows/mshtmdid.h
 include/wine/windows/mshtml.h
 include/wine/windows/mshtml.idl
 include/wine/windows/msi.h
+include/wine/windows/msidefs.h
 include/wine/windows/msiquery.h
 include/wine/windows/mssip.h
 include/wine/windows/mswsock.h
 include/wine/windows/nb30.h
-include/wine/windows/netspi.h
 include/wine/windows/npapi.h
 include/wine/windows/nspapi.h
 include/wine/windows/ntddcdrm.h
@@ -270,6 +272,9 @@ include/wine/windows/rpcproxy.h
 include/wine/windows/schemadef.h
 include/wine/windows/sddl.h
 include/wine/windows/secext.h
+include/wine/windows/sensapi.h
+include/wine/windows/sensevts.h
+include/wine/windows/sensevts.idl
 include/wine/windows/servprov.h
 include/wine/windows/servprov.idl
 include/wine/windows/setupapi.h
@@ -338,6 +343,7 @@ include/wine/windows/ws2tcpip.h
 include/wine/windows/wshisotp.h
 include/wine/windows/wsipx.h
 include/wine/windows/wsnwlink.h
+include/wine/windows/wtsapi32.h
 include/wine/windows/wtypes.h
 include/wine/windows/wtypes.idl
 include/wine/windows/xcmc.h
@@ -370,6 +376,7 @@ lib/wine/compobj.dll.so
 lib/wine/control.exe.so
 lib/wine/crtdll.dll.so
 lib/wine/crypt32.dll.so
+lib/wine/cryptdll.dll.so
 lib/wine/ctl3d.dll.so
 lib/wine/ctl3d32.dll.so
 lib/wine/ctl3dv2.dll.so
@@ -439,6 +446,7 @@ lib/wine/libcomctl32.def
 lib/wine/libcomdlg32.def
 lib/wine/libcrtdll.def
 lib/wine/libcrypt32.def
+lib/wine/libcryptdll.def
 lib/wine/libctl3d32.def
 lib/wine/libd3d8.def
 lib/wine/libd3d9.def
@@ -521,6 +529,7 @@ lib/wine/libriched32.def
 lib/wine/librpcrt4.def
 lib/wine/librsabase.def
 lib/wine/libsecur32.def
+lib/wine/libsensapi.def
 lib/wine/libserialui.def
 lib/wine/libsetupapi.def
 lib/wine/libshdocvw.def
@@ -555,6 +564,7 @@ lib/wine/libwnaspi32.def
 lib/wine/libwow32.def
 lib/wine/libws2_32.def
 lib/wine/libwsock32.def
+lib/wine/libwtsapi32.def
 lib/wine/libx11drv.def
 lib/wine/lz32.dll.so
 lib/wine/lzexpand.dll.so
@@ -629,6 +639,7 @@ lib/wine/rsabase.dll.so
 lib/wine/rsaenh.dll.so
 lib/wine/rundll32.exe.so
 lib/wine/secur32.dll.so
+lib/wine/sensapi.dll.so
 lib/wine/serialui.dll.so
 lib/wine/setupapi.dll.so
 lib/wine/setupx.dll.so
@@ -640,6 +651,7 @@ lib/wine/shlwapi.dll.so
 lib/wine/snmpapi.dll.so
 lib/wine/sound.dll.so
 lib/wine/start.exe.so
+lib/wine/stdole32.tlb.so
 lib/wine/sti.dll.so
 lib/wine/storage.dll.so
 lib/wine/stress.dll.so
@@ -712,6 +724,7 @@ lib/wine/wow32.dll.so
 lib/wine/wprocs.dll.so
 lib/wine/ws2_32.dll.so
 lib/wine/wsock32.dll.so
+lib/wine/wtsapi32.dll.so
 lib/wine/x11drv.dll.so
 share/aclocal/wine.m4
 share/applications/wine.desktop
