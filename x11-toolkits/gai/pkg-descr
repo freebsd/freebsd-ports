@@ -1,0 +1,10 @@
+GAI, The General Applet Interface library is a library that will help applet
+programmers alot. The goal of this library is to give programmers a simple yet
+powerful applet interface. This library supports both Dockapps and Gnome 2
+Panel Applets. The applet program doesn't have to care about if the applet
+will be used on the Gnome panel or in the dock. The library handles that.
+Over 50% of the code in a Dockapp and a Gnome 2 Panel applet does actully
+only one thing, setting up the applet window. With GAI, this can be reduced
+to just a few lines of code.
+
+WWW: http://gai.sourceforge.net/
