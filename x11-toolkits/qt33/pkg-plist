@@ -275,6 +275,7 @@ include/qt2/qworkspace.h
 include/qt2/qxt.h
 lib/libqgl.a
 lib/libqt2.so.4
+lib/libqt2.so
 lib/libqxt.a
 share/doc/qt2/ANNOUNCE
 share/doc/qt2/FAQ
