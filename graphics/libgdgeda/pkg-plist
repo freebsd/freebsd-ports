@@ -12,7 +12,6 @@ include/gdgeda/jisx0208.h
 include/gdgeda/wbmp.h
 lib/libgdgeda.so.5
 lib/libgdgeda.so
-lib/libgdgeda.la
 lib/libgdgeda.a
 @dirrm include/gdgeda
 
