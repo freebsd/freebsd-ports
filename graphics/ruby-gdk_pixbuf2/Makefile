@@ -7,7 +7,6 @@
 
 PORTNAME=	gdk_pixbuf2
 PORTVERSION=	${RUBY_GNOME_PORTVERSION}
-PORTREVISION=	1
 CATEGORIES=	graphics ruby gnome
 MASTER_SITES=	${RUBY_GNOME_MASTER_SITES}
 MASTER_SITE_SUBDIR=	${RUBY_GNOME_MASTER_SITE_SUBDIR}
@@ -20,8 +19,6 @@ COMMENT=	Ruby binding for GdkPixbuf2
 
 LIB_DEPENDS=    gdk_pixbuf-2.0.200:${PORTSDIR}/x11-toolkits/gtk20
 RUN_DEPENDS=	${RUBY_SITEARCHLIBDIR}/glib2.so:${PORTSDIR}/devel/ruby-glib2
-
-BROKEN=		"Broken pkg-plist; will be removed after Feb 2"
 
 USE_RUBY=	yes
 USE_RUBY_EXTCONF=	yes

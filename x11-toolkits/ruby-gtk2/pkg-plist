@@ -1,8 +1,11 @@
 %%RUBY_SITEARCHLIBDIR%%/gtk2.so
+%%RUBY_SITEARCHLIBDIR%%/gtk20.so
+%%RUBY_SITEARCHLIBDIR%%/gtk22.so
 %%RUBY_SITELIBDIR%%/gtk2.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/gtk-demo/alphatest.png
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/gtk-demo/appwindow.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/gtk-demo/button_box.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/gtk-demo/changedisplay.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/gtk-demo/colorsel.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/gtk-demo/common.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/gtk-demo/dialog.rb
@@ -16,6 +19,7 @@
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/gtk-demo/main.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/gtk-demo/menus.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/gtk-demo/panes.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/gtk-demo/pixbufs.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/gtk-demo/sizegroup.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/gtk-demo/stock_browser.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/gtk-demo/textview.rb
