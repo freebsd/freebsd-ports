@@ -16,11 +16,18 @@ sbin/imaplogin
 sbin/makeuserdb
 sbin/mkimapdcert
 sbin/pw2userdb
+sbin/userdb
 sbin/userdbpw
 sbin/vchkpw2userdb
+share/courier-imap/makeuserdb
+share/courier-imap/mkimapdcert
+share/courier-imap/pw2userdb
+share/courier-imap/userdb
+share/courier-imap/vchkpw2userdb
 share/doc/courier-imap/AUTHORS
 share/doc/courier-imap/ChangeLog
 share/doc/courier-imap/INSTALL
 share/doc/courier-imap/README
 @unexec rmdir %D/libexec/authlib
+@unexec rmdir %D/share/courier-imap
 @unexec rmdir %D/share/doc/courier-imap
