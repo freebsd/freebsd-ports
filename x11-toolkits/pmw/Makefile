@@ -3,7 +3,7 @@
 # Date created:		03 June 1998
 # Whom:			Thomas Gellekum <tg@FreeBSD.ORG>
 #
-# $Id: Makefile,v 1.2 1998/06/27 05:19:52 asami Exp $
+# $Id: Makefile,v 1.3 1998/08/07 22:56:38 asami Exp $
 
 DISTNAME=	Pmw.0.7
 PKGNAME=	pmw-0.7
@@ -24,6 +24,7 @@ do-build:
 	@${ECHO_MSG} "Do a \`make install' as root."
 
 do-install:
+	@${MKDIR} ${SITEPYDIR}
 	@(cd ${WRKDIR}; tar cf - Pmw/__init__.py Pmw/Pmw_0_7/__init__.py Pmw/Pmw_0_7/lib) | \
 	    (cd ${SITEPYDIR}; tar xf -)
 	@${PREFIX}/bin/python ${PYTHONSCRIPTDIR}/compileall.py ${SITEPYDIR}/Pmw
