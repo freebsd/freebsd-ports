@@ -40,7 +40,7 @@ USE_GNOME=	orbit gtk12
 
 BUILD_NR=		645
 RELEASE_NR=		1.1
-FRELEASE_NR=		1.1.0
+FRELEASE_NR=		1.1.1
 INSTALLATION_BASEDIR=	OpenOffice.org${FRELEASE_NR}
 DIST_SUBDIR=		openoffice1.1
 DICT_DIR=               ${PREFIX}/${INSTALLATION_BASEDIR}/share/dict/ooo/
@@ -51,15 +51,6 @@ DICT_DIR=               ${PREFIX}/${INSTALLATION_BASEDIR}/share/dict/ooo/
 .if !defined(LANG_EXT)
 LANG_EXT=01
 .else
-#
-# Add pkg-descr and pkg-message if available
-#
-.if exists(${.CURDIR}/pkg-descr)
-DESCR=	${.CURDIR}/pkg-descr
-.endif
-.if exists(${.CURDIR}/pkg-message)
-PKGMESSAGE=	${.CURDIR}/pkg-message
-.endif
 #
 # Set prefix and suffix
 #
@@ -88,13 +79,11 @@ USE_LANG=	${LANG}
 
 LANG_SORTED=`${ECHO} ${LANG_LIST} | ${TR} " " "\n" | ${PASTE} -d " " - -`
 
-.if ${OSVERSION} < 500000
-# OOo requires gcc 3.3 (not systems's gcc)
-BUILD_DEPENDS+= gcc33:${PORTSDIR}/lang/gcc33
-USE_GCC=3.3 # make no sense yet
-CC=  gcc33
-CXX= g++33
-.endif
+# OOo requires gcc 3.2 (currently 3.3 is not supported)
+BUILD_DEPENDS+= gcc32:${PORTSDIR}/lang/gcc32
+USE_GCC=3.2
+CC=  gcc32
+CXX= g++32
 
 EXTRACT_ONLY=	OOo_${PORTVERSION}rc_source.tar.bz2
 
@@ -159,7 +148,7 @@ DISPLAYHACK=localhost:1001
 
 CONFIGURE_ENV=		PTHREAD_CFLAGS=${PTHREAD_CFLAGS} \
 			PTHREAD_LIBS=${PTHREAD_LIBS}
-CONFIGURE_ARGS+=	--with-jdk-home=${JDKDIR}
+CONFIGURE_ARGS+=	--with-gnu-cp=${LOCALBASE}/bin/gcp --enable-mozilla=no
 
 .if defined(WITH_DEBUG)
 .if ${WITH_DEBUG} == 2
@@ -547,11 +536,11 @@ post-install:
 package-rename:
 	@${ECHO_MSG} "===>   Rename package for OO.org mirror upload";
 .if defined(LANG_SUFFIX)
-	@${MV} ${WRKDIR}/../${PKGNAMEPREFIX}openoffice-${LANG_SUFFIX}-${PORTVERSION}_${PORTREVISION}.tbz2 \
-	    ${WRKDIR}/../OOo_${PORTVERSION}_${OPSYS}Intel_install_${LANG_PKGNAME}-${LANG_SUFFIX}.tbz2
+	@${MV} ${WRKDIR}/../${PKGNAMEPREFIX}openoffice-${LANG_SUFFIX}-${PORTVERSION}_${PORTREVISION}.tbz \
+	    ${WRKDIR}/../OOo_${PORTVERSION}_${OPSYS}Intel_install_${LANG_PKGNAME}-${LANG_SUFFIX}.tbz
 .else
-	@${MV} ${WRKDIR}/../${PKGNAMEPREFIX}openoffice-${PORTVERSION}_${PORTREVISION}.tbz2 \
-	    ${WRKDIR}/../OOo_${PORTVERSION}_${OPSYS}Intel_install_${LANG_PKGNAME}.tbz2
+	@${MV} ${WRKDIR}/../${PKGNAMEPREFIX}openoffice-${PORTVERSION}_${PORTREVISION}.tbz \
+	    ${WRKDIR}/../OOo_${PORTVERSION}_${OPSYS}Intel_install_${LANG_PKGNAME}.tbz
 .endif
 
 update:
