@@ -1,0 +1,9 @@
+`VCS' is an API for abstracting access to all version control systems
+from Perl code. This is achieved in a similar fashion to the `DBI'
+suite of modules. It comes with example CVS and RCS wrappers.
+
+WWW: http://www.astray.com/VCS/
+WWW: http://search.cpan.org/search?dist=VCS
+
+- Kimura Fuyuki
+fuyuki@mj.0038.net
