@@ -6,9 +6,10 @@
 #
 
 PORTNAME=	sopwith
-PORTVERSION=	1.5.0
+PORTVERSION=	1.6.0
 CATEGORIES=	games
-MASTER_SITES=	http://fraggle.despayre.org:81/stuffage/sopwith/
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	sdl-sopwith
 DISTNAME=	sdl_${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	edwin@mavetju.org
