@@ -1,0 +1,13 @@
+--- Makefile.in.orig	Mon Oct 14 22:37:59 2002
++++ Makefile.in	Mon Oct 28 07:23:38 2002
+@@ -290,8 +290,8 @@
+ 	    dst=$(DESTDIR)$(SWIG_LIB)/$$lang;			\
+ 	    $(MKINSTDIRS) $$dst;				\
+ 	    ( cd $(srcdir)/Lib/$$lang;				\
+-	      doti="`ls *.i 2>/dev/null`";			\
+-	      dotswg="`ls *.swg 2>/dev/null`";			\
++	      doti="`ls *.i 2>/dev/null || true`";		\
++	      dotswg="`ls *.swg 2>/dev/null || true`";		\
+ 	      if [ -f extra-install.list ]; then		\
+ 		  extra="`sed '/^#/d' extra-install.list`";	\
+ 	      fi;						\
