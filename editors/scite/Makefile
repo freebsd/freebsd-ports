@@ -39,8 +39,8 @@ MAN1=		scite.1
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} == "alpha"
-BROKEN=		"Does not compile on alpha"
+.if ${OSVERSION} >= 502102
+BROKEN=		"Does not compile on 5.x"
 .endif
 
 pre-everything::
