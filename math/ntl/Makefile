@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ntl
-PORTVERSION=	4.1a
+PORTVERSION=	4.2a
 CATEGORIES=	math
 MASTER_SITES=	http://www.shoup.net/ntl/
 
@@ -14,16 +14,18 @@ MAINTAINER=	matthiasb@acm.org
 
 USE_GMAKE=	yes
 WRKSRC=		${WRKDIR}/${DISTNAME}/src
-NO_BUILD=	yes
 MAKEFILE=	makefile
+HAS_CONFIGURE=	yes
+CONFIGURE_ARGS=	'GMP=on'
+MAKE_ARGS=	"DOCDIR=${LOCALBASE}/share/doc"
 
-post-install:
+do-install:
 	${MKDIR} ${PREFIX}/include/NTL
 	${INSTALL_DATA} ${WRKSRC}/../include/NTL/*  ${PREFIX}/include/NTL/.
 	${INSTALL_DATA} ${WRKSRC}/ntl.a ${PREFIX}/lib/libntl.a
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${PREFIX}/share/doc/ntl
-	${INSTALL_DATA} ${WRKSRC}/../doc/* ${PREFIX}/share/doc/ntl/.
+	${MKDIR} ${PREFIX}/share/doc/NTL
+	${INSTALL_DATA} ${WRKSRC}/../doc/* ${PREFIX}/share/doc/NTL/.
 .endif
 
 .include <bsd.port.mk>
