@@ -16,23 +16,31 @@ DIST_SUBDIR=	ruby
 MAINTAINER=	knu@FreeBSD.org
 COMMENT=	Ruby interface to Sleepycat's Berkeley DB revision 2 or later
 
-LIB_DEPENDS=	db${WITH_BDB_VER}:${PORTSDIR}/databases/db${WITH_BDB_VER}
+LIB_DEPENDS=	db${LIB_SUFFIX}:${PORTSDIR}/databases/db${WITH_BDB_VER}
 
-.if defined(WITH_BDB3) || defined(WITH_DB3)
+CONFLICTS=	${PKGNAMEPREFIX}${PORTNAME}[2-4]*
+
+.if defined(WITH_BDB2) || defined(WITH_DB2)
+WITH_BDB_VER=	2
+.elif defined(WITH_BDB3) || defined(WITH_DB3)
 WITH_BDB_VER=	3
 .elif defined(WITH_BDB4) || defined(WITH_DB4)
 WITH_BDB_VER=	4
 .elif defined(WITH_BDB41) || defined(WITH_DB41)
 WITH_BDB_VER=	41
+.elif defined(WITH_BDB42) || defined(WITH_DB42)
+WITH_BDB_VER=	42
+LIB_SUFFIX=	-4.2
 .endif
 WITH_BDB_VER?=	4
+LIB_SUFFIX?=	${WITH_BDB_VER}
 
 USE_RUBY=	yes
 USE_RUBY_EXTCONF=	yes
 USE_RUBY_RDOC=		yes
 
 CONFIGURE_ARGS=	--with-db-include="${PREFIX}/include/db${WITH_BDB_VER}" \
-		--with-db-version=${WITH_BDB_VER}
+		--with-db-version=${LIB_SUFFIX}
 INSTALL_TARGET=	site-install
 
 DOCS=		Changes \
