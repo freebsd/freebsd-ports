@@ -7,5 +7,5 @@ share/locale/ja/LC_MESSAGES/nscache.mo
 share/locale/pt_BR/LC_MESSAGES/nscache.mo
 share/locale/sk/LC_MESSAGES/nscache.mo
 share/locale/tr/LC_MESSAGES/nscache.mo
-%%GNOME:%%share/gnome/apps/Internet/nscache.desktop
-%%GNOME:%%share/gnome/pixmaps/nscache.xpm
+share/gnome/apps/Internet/nscache.desktop
+share/gnome/pixmaps/nscache.xpm

@@ -6,8 +6,8 @@
 #
 
 PORTNAME=	nscache
-PORTVERSION= 	0.6
-PORTREVISION=	1
+PORTVERSION=	0.6
+PORTREVISION=	2
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		http://www.idata.sk/~ondrej/sw/
@@ -18,20 +18,22 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Netscape cache browser
 
 USE_X_PREFIX=	yes
-WANT_GNOME=	yes
-USE_AUTOMAKE_VER=	14
-AUTOMAKE_ARGS=	--include-deps
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LIBS="-L${LOCALBASE}/lib"
-CONFIGURE_ARGS=	--with-gtk-config=${GTK_CONFIG}
+USE_GNOME=	gnomehier gtk12
+USE_GETOPT_LONG=	yes
+USE_GMAKE=	yes
+GNU_CONFIGURE=	yes
+CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
+CONFIGURE_ARGS=	--with-gtk-config=${GTK_CONFIG} --disable-gnome
+MAKE_ARGS=	ACLOCAL="${TRUE}" AUTOCONF="${TRUE}" AUTOMAKE="${TRUE}" \
+		AUTOHEADER="${TRUE}"
 
-.include <bsd.port.pre.mk>
+CPPFLAGS=	-I${LOCALBASE}/include
+LDFLAGS=	-L${LOCALBASE}/lib
 
-.if defined(HAVE_GNOME)
-USE_GNOME+=	gtk12
-PKGNAMESUFFIX=	-gtk
-.else
-CONFIGURE_ARGS+=	--disable-gnome
-.endif
+post-install:
+	${INSTALL_DATA} ${WRKSRC}/nscache.desktop \
+		${PREFIX}/share/gnome/apps/Internet
+	${INSTALL_DATA} ${WRKSRC}/nscache.xpm \
+		${PREFIX}/share/gnome/pixmaps
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
