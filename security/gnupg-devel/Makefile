@@ -12,6 +12,7 @@ MASTER_SITES=	${MASTER_SITE_GNUPG}
 MASTER_SITE_SUBDIR=	alpha/aegypten
 
 MAINTAINER=	michaelnottebrock@gmx.net
+COMMENT=	Prerelease package of GnuPG extensions for GnuPG 2.0
 
 BUILD_DEPENDS=	autoconf:${PORTSDIR}/devel/autoconf
 LIB_DEPENDS=	gcrypt.6:${PORTSDIR}/security/libgcrypt \

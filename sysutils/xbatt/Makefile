@@ -11,6 +11,7 @@ CATEGORIES=	sysutils
 MASTER_SITES=	http://www.clave.gr.jp/~eto/xbatt/
 
 MAINTAINER=	nobu@psrc.isac.co.jp
+COMMENT=	Laptop battery status display for X11
 
 ONLY_FOR_ARCHS=	i386
 

@@ -13,6 +13,7 @@ DISTNAME=	${PORTNAME}
 EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=	ob@breuninger.org
+COMMENT=	A PostScript to Text converter
 
 RUN_DEPENDS=	gs:${PORTSDIR}/print/ghostscript-gnu
 

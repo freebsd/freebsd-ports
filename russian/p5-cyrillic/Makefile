@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	Unicode/AMICHAUER
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	tolid@plab.ku.dk
+COMMENT=	Library for fast and easy cyrillic text manipulation
 
 PERL_CONFIGURE=	yes
 

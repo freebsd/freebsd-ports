@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	../by-authors/id/J/JM/JMAY
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	joshua@roughtrade.net
+COMMENT=	Perl OO wrapper for Spread messaging toolkit
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/${PERL_ARCH}/Spread.pm:${PORTSDIR}/net/spread
 RUN_DEPENDS=	${BUILD_DEPENDS}

@@ -12,6 +12,7 @@ MASTER_SITES=	http://hopf.math.nwu.edu/syncal/ \
 		ftp://ftp.Uni-Bielefeld.DE/pub/systems/FreeBSD/lkoeller/
 
 MAINTAINER=	Lars.Koeller@Uni-Bielefeld.DE
+COMMENT=	Synchronize your PalmPilot with ical
 
 LIB_DEPENDS=	pisock.8:${PORTSDIR}/palm/pilot-link
 RUN_DEPENDS=	ical:${PORTSDIR}/deskutils/ical

@@ -12,6 +12,7 @@ CATEGORIES=	net
 MASTER_SITES=	http://www.netplex-tech.com/software/nocol/downloads/
 
 MAINTAINER=	bradh@uunet.co.za
+COMMENT=	Network/Service monitoring software
 
 MANPREFIX=	${PREFIX}/nocol/
 MAN1=		netconsole.1

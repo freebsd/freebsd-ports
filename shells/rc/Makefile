@@ -12,6 +12,7 @@ MASTER_SITES=	http://www.star.le.ac.uk/~tjg/rc/release/ \
 		ftp://ftp.sys.utoronto.ca/pub/rc/
 
 MAINTAINER=	saken@hotel.rmta.org
+COMMENT=	A unix incarnation of the plan9 shell
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-history

@@ -20,6 +20,7 @@ MASTER_SITES=	ftp://ftp.no.pgpi.org/pub/pgp/${PORTVERSION:R}/${PORTVERSION}/ \
 DISTNAME=	pgpsrc658unix
 
 MAINTAINER=	mike@fate.com
+COMMENT=	Public-Key encryption for the masses
 
 WRKSRC=		${WRKDIR}/pgpsrc
 USE_GMAKE=	yes

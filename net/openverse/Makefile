@@ -10,6 +10,7 @@ CATEGORIES=	net tk82
 MASTER_SITES=	http://sisko.se.wp.cc.nc.us/~ahze/
 
 MAINTAINER=	ahze@rgv.net
+COMMENT=	A visual chat program written in Tcl/Tk
 
 RUN_DEPENDS=	tclsh8.2:${PORTSDIR}/lang/tcl82 \
 		wish8.2:${PORTSDIR}/x11-toolkits/tk82

@@ -12,6 +12,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	hmendes@brturbo.com
+COMMENT=	A front-end for ssh which can open multiple xterms
 
 RUN_DEPENDS=	ssh:${PORTSDIR}/security/openssh
 

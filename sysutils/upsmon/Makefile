@@ -11,6 +11,7 @@ CATEGORIES=	sysutils
 MASTER_SITES=	ftp://newcorridor.com/pub/upsmon/
 
 MAINTAINER=	erwin@lansing.dk
+COMMENT=	Basic UPS monitor for the APC SmartUPS devices
 
 MAKEFILE=	makefile.bsdi
 NO_PACKAGE=	"must provide without modifications"

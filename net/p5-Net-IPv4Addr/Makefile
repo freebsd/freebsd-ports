@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	Net
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	bradh@uunet.co.za
+COMMENT=	Perl extension for manipulating IPv4 addresses
 
 PERL_CONFIGURE=	yes
 

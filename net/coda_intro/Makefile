@@ -13,6 +13,7 @@ DISTNAME=	coda-intro-4.6.6
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	rvb@cs.cmu.edu
+COMMENT=	An experimental, replicated, high-performance network file system
 
 do-build:
 	@${ECHO} "These are simple text files.

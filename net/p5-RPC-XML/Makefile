@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	RPC
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	dom@happygiraffe.net
+COMMENT=	XML-RPC client and server library for Perl
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/${PERL_ARCH}/XML/Parser.pm:${PORTSDIR}/textproc/p5-XML-Parser \
 		${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/LWP/UserAgent.pm:${PORTSDIR}/www/p5-libwww

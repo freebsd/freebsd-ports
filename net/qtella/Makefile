@@ -12,6 +12,7 @@ MASTER_SITES=		${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	qtella
 
 MAINTAINER=		jon@witchspace.com
+COMMENT=	A Gnutella client using Qt
 
 HAS_CONFIGURE=		yes
 USE_GMAKE=		yes

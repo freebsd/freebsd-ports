@@ -12,6 +12,7 @@ MASTER_SITES=	http://download.ofb.net/gale/
 DISTNAME=	${PORTNAME}-${PORTVERSION}gg
 
 MAINTAINER=	peterh@sapros.com
+COMMENT=	A secure instant messaging system
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/libgc.a:${PORTSDIR}/devel/boehm-gc
 LIB_DEPENDS=	wwwcore.1:${PORTSDIR}/www/libwww \

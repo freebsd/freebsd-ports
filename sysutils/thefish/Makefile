@@ -12,6 +12,7 @@ CATEGORIES=	sysutils
 MASTER_SITES=	http://energyhq.homeip.net/files/
 
 MAINTAINER=	flynn@energyhq.homeip.net
+COMMENT=	Gtk+/ncurses rc.conf editor/management tool
 
 .if defined(WITHOUT_X11) || defined(NO_GUI)
 NO_GUI=		yes

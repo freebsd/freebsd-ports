@@ -14,6 +14,7 @@ MASTER_SITES=	http://www.laurentconstantin.com/common/lcrzo/download/v4/ \
 EXTRACT_SUFX=	-src.tgz
 
 MAINTAINER=	king@v2project.com
+COMMENT=	Lcrzo is a network library (used by Lcrzoex, network testing toolbox)
 
 WRKSRC=		${WRKDIR}/${PKGNAME}-src/src
 ONLY_FOR_ARCHS=	i386 alpha

@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR= ${PORTNAME}
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/.1/-1/}
 
 MAINTAINER=	stefan.jahn@nemesis-sektor.de
+COMMENT=	KDE instant messaging system (ICQ, AIM, MSN, Jabber)
 
 USE_KDELIBS_VER=3
 GNU_CONFIGURE=	yes

@@ -14,6 +14,7 @@ MASTER_SITES=	http://www.hping.org/
 DISTNAME=	hping2.0.0-rc2
 
 MAINTAINER=	ecu@ipv42.net
+COMMENT=	Network auditing tool
 
 WRKSRC=		${WRKDIR}/hping2-rc2
 GNU_CONFIGURE=	yes

@@ -14,6 +14,7 @@ MASTER_SITES=	http://www.tux.org/pub/security/secnet/tools/nat20beta/ \
 DISTNAME=	${PORTNAME}${PORTVERSION}.freebsd
 
 MAINTAINER=	roman@xpert.com
+COMMENT=	NetBIOS auditing tool
 
 NO_PACKAGE=	"Redistribution prohibited by the license"
 

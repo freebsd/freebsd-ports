@@ -12,6 +12,7 @@ MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	Lars.Koeller@Uni-Bielefeld.DE
+COMMENT=	A HPGL to vector- and raster formats converter and previewer for X11
 
 LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png \
 		tiff.4:${PORTSDIR}/graphics/tiff

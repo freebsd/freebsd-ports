@@ -14,6 +14,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 MASTER_SITE_SUBDIR=	ojnk
 
 MAINTAINER=	udo.schweigert@siemens.com
+COMMENT=	TCP/IP traffic logging tool
 
 USE_GMAKE=	yes
 USE_REINPLACE=	yes

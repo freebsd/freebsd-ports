@@ -11,6 +11,7 @@ CATEGORIES=	palm
 MASTER_SITES=	http://sitescooper.org/released/
 
 MAINTAINER=	dom@happygiraffe.net
+COMMENT=	News site downloader for Palm computing devices
 
 RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/HTML/Parser.pm:${PORTSDIR}/www/p5-HTML-Parser \
 		${SITE_PERL}/${PERL_ARCH}/MIME/Base64.pm:${PORTSDIR}/converters/p5-MIME-Base64 \

@@ -13,6 +13,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	michaelnottebrock@gmx.net
+COMMENT=	KDE frontend for cdrecord and mkisofs/mkhybrid
 
 RUN_DEPENDS=	cdrecord:${PORTSDIR}/sysutils/cdrtools \
 		mkisofs:${PORTSDIR}/sysutils/mkisofs \

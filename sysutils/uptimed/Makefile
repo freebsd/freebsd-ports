@@ -12,6 +12,7 @@ MASTER_SITE_SUBDIR=	uptimed
 DISTNAME=	${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	andy@athame.co.uk
+COMMENT=	Rob Kaper's uptime daemon
 
 PREFIX=		${LOCALBASE}
 

@@ -12,6 +12,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=		cedric@cedric.trix.net
+COMMENT=	An IM (Instant Messenger) KDE client for the Microsoft MSN Network
 
 USE_KDELIBS_VER=3
 GNU_CONFIGURE=	yes

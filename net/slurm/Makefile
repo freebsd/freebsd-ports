@@ -14,6 +14,7 @@ MASTER_SITES=	http://www.raisdorf.net/files/code/ \
 		http://www.toppoint.de/~hscholz/slurm/
 
 MAINTAINER=	mich@freebsdcluster.org
+COMMENT=	Slurm is a generic network load monitor
 
 LDFLAGS+=	-lncurses
 

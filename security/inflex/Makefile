@@ -12,6 +12,7 @@ MASTER_SITES=	http://www.inflex.co.za/
 DISTNAME=	inflex-0.1.5c
 
 MAINTAINER=	jus@security.za.net
+COMMENT=	Inbound/outbound antivirus e-mail scanner for sendmail servers
 
 RUN_DEPENDS=	${LOCALBASE}/bin/metamail:${PORTSDIR}/mail/metamail \
 		${LOCALBASE}/bin/formail:${PORTSDIR}/mail/procmail

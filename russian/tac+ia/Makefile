@@ -12,6 +12,7 @@ MASTER_SITES=	ftp://ftp.vsu.ru/pub/hardware/cisco/tacacs/
 DISTNAME=	tac+ia-0.96pre9.3
 
 MAINTAINER=	anton@chelcom.ru
+COMMENT=	The Cisco remote aaa server (inet-admins edition)
 
 WRKSRC=		${WRKDIR}/tac+ia-0.96pre9.3
 

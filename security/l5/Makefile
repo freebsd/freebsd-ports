@@ -13,6 +13,7 @@ DISTNAME=	L5
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	andrew@scoop.co.nz
+COMMENT=	File Integrity Assessment Tool
 
 NO_WRKSUBDIR=	true
 ALL_TARGET=	freebsd

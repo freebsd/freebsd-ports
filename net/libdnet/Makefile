@@ -12,6 +12,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	d.marks@student.umist.ac.uk
+COMMENT=	A simple interface to level networking routines
 
 GNU_CONFIGURE=	yes
 

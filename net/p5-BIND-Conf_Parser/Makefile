@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	../by-authors/id/P/PG/PGUEN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	andrew@ugh.net.au
+COMMENT=	Perl5 module to parse BIND 8 configuration files
 
 PERL_CONFIGURE=	yes
 

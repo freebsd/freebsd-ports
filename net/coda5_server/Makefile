@@ -13,7 +13,8 @@ MASTER_SITES=	ftp://ftp.coda.cs.cmu.edu/pub/coda/src/
 PKGNAMESUFFIX=	-${CODA_SUITE}
 DISTNAME=	coda-${PORTVERSION}
 
-MAINTAINER=	coda@cs.cmu.edu
+MAINTAINER?=	coda@cs.cmu.edu
+COMMENT?=	Server programs for a replicated high-performance network file system
 
 LIB_DEPENDS=	gdbm.3:${PORTSDIR}/databases/gdbm \
 		lwp.2:${PORTSDIR}/devel/lwp \

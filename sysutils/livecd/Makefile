@@ -13,6 +13,7 @@ MASTER_SITES=	http://www.primeirospassos.org/ \
 		http://www2.fugspbr.org/
 
 MAINTAINER=	ebrandi.home@uol.com.br
+COMMENT=	Tool Set to create custom FreeBSD LiveCD
 
 RUN_DEPENDS=	mkisofs:${PORTSDIR}/sysutils/mkisofs
 

@@ -11,6 +11,7 @@ MASTER_SITES=	http://www.hsc.fr/ressources/outils/rawsock/download/
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	ecu@ipv42.net
+COMMENT=	Net::RawSock provides a base function to send raw IP packets from Perl
 
 PERL_CONFIGURE=	yes
 

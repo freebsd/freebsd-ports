@@ -12,6 +12,7 @@ MASTER_SITES=	http://www.csie.nctu.edu.tw/~yinjieh/
 DISTNAME=	icqnix-beta1
 
 MAINTAINER=	yinjieh@csie.nctu.edu.tw
+COMMENT=	ICQ client for the X Window System for UNIX based PCs
 
 RUN_DEPENDS=	esdplay:${PORTSDIR}/audio/esound
 

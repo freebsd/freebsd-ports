@@ -46,6 +46,7 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 		patches_${VERSION_APACHE}rusPL${VERSION_RA}.tar.gz:rapatches
 
 MAINTAINER=	lev@serebryakov.spb.ru
+COMMENT=	The Russian Apache webserver with SSL/TLS functionality
 
 USE_OPENSSL=	YES
 USE_PERL5=	yes

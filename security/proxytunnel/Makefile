@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	hmendes@brturbo.com
+COMMENT=	Connects stdin and stdout to an origin server through an HTTPS proxy
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 ALL_TARGET=	${PORTNAME}

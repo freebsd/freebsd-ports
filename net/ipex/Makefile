@@ -12,6 +12,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	ipex
 
 MAINTAINER=	maneo@bsdpro.com
+COMMENT=	Packet examination / sniffer utility
 
 BUILD_DEPENDS+=	autoconf:${PORTSDIR}/devel/autoconf
 BUILD_DEPENDS+=	automake:${PORTSDIR}/devel/automake

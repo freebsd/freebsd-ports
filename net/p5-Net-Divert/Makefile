@@ -13,6 +13,7 @@ PKGNAMEPREFIX=	p5-
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ecu@ipv42.net
+COMMENT=	A module to deal with divert(4) sockets
 
 PERL_CONFIGURE=	yes
 

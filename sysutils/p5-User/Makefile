@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	User
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	erwin@lansing.dk
+COMMENT=	User - API for locating user information regardless of OS
 
 PERL_CONFIGURE=	yes
 

@@ -20,6 +20,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}.rel
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:sourceforge,sunsite,DEFAULT
 
 MAINTAINER=	matthias.andree@web.de
+COMMENT=	USENET software package designed for small sites
 
 LIB_DEPENDS=	pcre.0:${PORTSDIR}/devel/pcre
 

@@ -18,6 +18,7 @@ CATEGORIES=	sysutils
 MASTER_SITES=	http://logreport.org/pub/archive/
 
 MAINTAINER=	edwin@mavetju.org
+COMMENT=	Logfile analyse toolkit for multiple applications
 
 LIB_DEPENDS=	\
 	expat.4:${PORTSDIR}/textproc/expat2 \

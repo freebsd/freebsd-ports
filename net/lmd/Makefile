@@ -11,6 +11,7 @@ CATEGORIES=	net sysutils
 MASTER_SITES=	http://www.bsdshell.net/download/
 
 MAINTAINER=	sysadmin@alexdupre.com
+COMMENT=	A Load Monitor Daemon
 
 USE_REINPLACE=	YES
 REINPLACE_ARGS=	#empty

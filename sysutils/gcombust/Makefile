@@ -11,6 +11,7 @@ CATEGORIES=	sysutils
 MASTER_SITES=	http://www.abo.fi/~jmunsin/gcombust/
 
 MAINTAINER=	mcdouga9@msu.edu
+COMMENT=	A GTK+ frontend for mkisofs and cdrecord
 
 LIB_DEPENDS=	intl.4:${PORTSDIR}/devel/gettext
 RUN_DEPENDS=	cdrecord:${PORTSDIR}/sysutils/cdrtools \

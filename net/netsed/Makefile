@@ -15,6 +15,7 @@ DISTNAME=	${PORTNAME}
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	roman@xpert.com
+COMMENT=	Alters the contents of packets in real-time
 
 WRKSRC=		${WRKDIR}
 

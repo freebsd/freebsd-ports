@@ -11,6 +11,7 @@ CATEGORIES=	news
 MASTER_SITES=	http://dave.willfork.com/slrnface/
 
 MAINTAINER=	stolz@i2.informatik.rwth-aachen.de
+COMMENT=	Shows X-Faces from slrn in X11 terminal emulator
 
 LIB_DEPENDS=	compface:${PORTSDIR}/mail/faces
 

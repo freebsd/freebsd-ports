@@ -12,6 +12,7 @@ MASTER_SITES=	ftp://ftp.habets.pp.se/pub/synscan/ \
 		ftp://ftp.cerias.purdue.edu/pub/tools/unix/netutils/arping/
 
 MAINTAINER=	roman@xpert.com
+COMMENT=	ARP level "ping" utility
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/libnet.a:${PORTSDIR}/net/libnet
 

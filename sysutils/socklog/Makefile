@@ -11,6 +11,7 @@ CATEGORIES=	sysutils net
 MASTER_SITES=	http://smarden.org/socklog/
 
 MAINTAINER=	sergei@kolobov.com
+COMMENT=	Small and secure replacement for syslogd
 
 WRKSRC=		${WRKDIR}/admin/${DISTNAME}/src
 ALL_TARGET=	default

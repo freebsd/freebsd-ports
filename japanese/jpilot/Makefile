@@ -11,6 +11,7 @@ COMMENTFILE=	${.CURDIR}/pkg-comment
 CATEGORIES=	japanese
 
 MAINTAINER=	sumikawa@FreeBSD.org
+COMMENT=	Desktop Organizer Software for the Palm Pilot (Japanized)
 
 CONFIGURE_ARGS=	--with-japanese
 

@@ -11,6 +11,7 @@ CATEGORIES=	news graphics
 MASTER_SITES=	http://ubh.sourceforge.net/download/
 
 MAINTAINER=	john@zoner.org
+COMMENT=	Perl script to download and decode binaries posted to Usenet
 
 RUN_DEPENDS=	\
 	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/News/Newsrc.pm:${PORTSDIR}/news/p5-News-Newsrc \

@@ -12,6 +12,7 @@ MASTER_SITES=   ftp://ftp.drweb.ru/pub/unix/
 DISTFILES=      ${MAIN_NAME}.tar.gz
 
 MAINTAINER=	anton@chelcom.ru
+COMMENT=	DrWeb antivirus suite
 
 ONLY_FOR_ARCHS=	i386
 NO_BUILD=       yes

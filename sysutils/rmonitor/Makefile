@@ -12,6 +12,7 @@ MASTER_SITES=	ftp://gwdu111.gwdg.de/pub/FreeBSD/misc/ \
 		ftp://gwdu112.gwdg.de/pub/FreeBSD/misc/
 
 MAINTAINER=	kheuer@gwdu60.gwdg.de
+COMMENT=	Remote system monitoring utility
 
 MAN1=		rmonitor.1
 MANCOMPRESSED=	yes

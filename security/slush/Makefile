@@ -13,6 +13,7 @@ MASTER_SITES=	ftp://ftp.freebsd.org/pub/FreeBSD/ports/local-distfiles/kris/ \
 		ftp://www.dis.org/pub/Security/
 
 MAINTAINER=	shipley@dis.org
+COMMENT=	A telnet-like application which uses a secure SSL channel
 
 GNU_CONFIGURE=	yes
 

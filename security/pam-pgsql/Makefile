@@ -19,6 +19,7 @@ PATCH_SITES=	${MASTER_SITES}
 PATCH_SITE_SUBDIR=	${MASTER_SITE_SUBDIR}
 
 MAINTAINER=	m@absolight.fr
+COMMENT=	A pam module for authenticating with PostgreSQL
 
 LIB_DEPENDS=	pq.3:${PORTSDIR}/${POSTGRESQL_PORT}
 

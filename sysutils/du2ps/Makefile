@@ -12,6 +12,7 @@ MASTER_SITES=	http://www.shobi-u.ac.jp/~tnagae/src/ps-c/du2ps/du2ps-2.1/
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	mistral@imasy.or.jp
+COMMENT=	Filter for converting output of du to PostScript file
 
 # Nkf is required for just converting character code of japanese manual
 BUILD_DEPENDS=	nkf:${PORTSDIR}/japanese/nkf

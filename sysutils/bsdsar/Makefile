@@ -11,6 +11,7 @@ CATEGORIES=	sysutils
 MASTER_SITES=	http://www.googlebit.com/bsdsar/
 
 MAINTAINER=	eric@trinitel.com
+COMMENT=	System Activity Reporter for FreeBSD
 
 NO_BUILD=	yes
 

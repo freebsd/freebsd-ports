@@ -22,6 +22,7 @@ DISTFILES+=	tx_patch1.zip
 EXTRACT_ONLY=	tx_patch1.zip
 
 MAINTAINER=	mori@tri.asanuma.co.jp
+COMMENT=	Fontsets includes Adobe Times Roman for TeX users
 
 DIST_SUBDIR=	txfonts
 USE_ZIP=	yes

@@ -19,6 +19,7 @@ EXTRACT_ONLY=	${PORTNAME}_full-${DIST_VER}.tgz cidmaps.tgz \
 		libuninameslist_src-${LIBUNINAMESLIST_VER}.tgz
 
 MAINTAINER=	kanou@mil.allnet.ne.jp
+COMMENT=	Type 1/TrueType/OpenType/bitmap font editor
 
 LIB_DEPENDS=	tiff.4:${PORTSDIR}/graphics/tiff \
 		jpeg.9:${PORTSDIR}/graphics/jpeg \

@@ -11,6 +11,7 @@ CATEGORIES=	security
 MASTER_SITES=	http://clamav.elektrapro.com/stable/
 
 MAINTAINER=	markun@onohara.to
+COMMENT=	Command line virus scanner using database from OpenAntiVirus
 
 RUN_DEPENDS=	lha:${PORTSDIR}/archivers/lha \
 		unarj:${PORTSDIR}/archivers/unarj \

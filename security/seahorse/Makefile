@@ -12,6 +12,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=${PORTNAME}
 
 MAINTAINER=	asa@gascom.ru
+COMMENT=	A front end for GnuPG
 
 RUN_DEPENDS=	gpg:${PORTSDIR}/security/gnupg
 LIB_DEPENDS=	gpgme.9:${PORTSDIR}/security/gpgme \

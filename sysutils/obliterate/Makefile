@@ -14,5 +14,6 @@ MASTER_SITE_SUBDIR= wes
 
 
 MAINTAINER=	wes@softweyr.com
+COMMENT=	Securely delete file[s]
 
 .include <bsd.port.mk>

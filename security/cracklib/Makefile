@@ -14,6 +14,7 @@ DISTNAME=	${PORTNAME},${PORTVERSION}
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ajk@iu.edu
+COMMENT=	Password-checking library
 
 MAN3=		cracklib.3
 MLINKS=		cracklib.3 FascistCheck.3

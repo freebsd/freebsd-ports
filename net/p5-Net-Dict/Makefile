@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	Net
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	fuyuki@hadaly.org
+COMMENT=	A simple client API for the DICT protocol
 
 RUN_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/Net/Cmd.pm:${PORTSDIR}/net/p5-Net
 # if you want to run dict(1):

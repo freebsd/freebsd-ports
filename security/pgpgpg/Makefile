@@ -13,6 +13,7 @@ MASTER_SITES=	${MASTER_SITE_GNUPG} \
 MASTER_SITE_SUBDIR=	pgpgpg
 
 MAINTAINER=	matt@zigg.com
+COMMENT=	Wrapper for GnuPG to simulate PGP 2.6.x
 
 # BUILD_DEPENDS is necessary because the configure script will bomb out
 # if it can't find gpg.  RUN_DEPENDS is necessary to make the package

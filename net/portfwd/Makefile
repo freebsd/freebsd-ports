@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/.r/rc/}
 
 MAINTAINER=	sysadmin@alexdupre.com
+COMMENT=	A Port Forwarding Daemon
 
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes

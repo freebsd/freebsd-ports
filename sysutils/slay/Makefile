@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	system/admin/idle
 DISTNAME=	${PORTNAME}.${PORTVERSION}
 
 MAINTAINER=	scorpio@drkshdw.org
+COMMENT=	Kills a login shell and process(es) of a user
 
 NO_BUILD=	"binary distribution"
 

@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	7.0/en/os/i386/SRPMS
 EXTRACT_SUFX=	-1.src.rpm
 
 MAINTAINER=	ycheng@sinica.edu.tw
+COMMENT=	Daemon to rotate, compress, remove and mail system log files
 
 BUILD_DEPENDS=	${LOCALBASE}/bin/rpm2cpio:${PORTSDIR}/archivers/rpm
 LIB_DEPENDS=	popt.0:${PORTSDIR}/devel/popt

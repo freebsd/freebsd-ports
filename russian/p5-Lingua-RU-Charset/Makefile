@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	Lingua
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	kapr@crosswinds.net
+COMMENT=	Perl extension for detecting and converting various russian character sets
 
 PERL_CONFIGURE=	YES
 

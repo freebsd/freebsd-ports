@@ -15,6 +15,7 @@ DISTNAME=	makedoc7
 EXTRACT_SUFX=	.cpp
 
 MAINTAINER=	simond@irrelevant.org
+COMMENT=	Converts text into the Doc format used by PalmPilots
 
 NO_WRKSUBDIR=	YES
 ALL_TARGET=	pilot_makedoc

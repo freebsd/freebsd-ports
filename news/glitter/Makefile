@@ -14,6 +14,7 @@ MASTER_SITES=	http://mews.org.uk/glitter/\
 DISTNAME=	${PORTNAME}-1.0beta1
 
 MAINTAINER=	greg@gregnet.net
+COMMENT=	A free GTK based binary downloader
 
 USE_X_PREFIX=	yes
 USE_GNOMENG=	yes

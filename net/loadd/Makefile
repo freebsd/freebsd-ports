@@ -11,6 +11,7 @@ CATEGORIES=	net sysutils
 MASTER_SITES=	http://www.bsdshell.net/download/
 
 MAINTAINER=	sysadmin@alexdupre.com
+COMMENT=	A Load Balancing Daemon
 
 LIB_DEPENDS=	glib12.3:${PORTSDIR}/devel/glib12
 

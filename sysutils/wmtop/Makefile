@@ -12,6 +12,7 @@ MASTER_SITES=	http://wmtop.sourceforge.net/ \
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	wmtop@tanelorn.demon.co.uk
+COMMENT=	Windowmaker dock app to display top 3 CPU consuming processes
 
 USE_X_PREFIX=	yes
 USE_XPM=	yes

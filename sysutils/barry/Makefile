@@ -12,6 +12,7 @@ MASTER_SITES=	http://www.student.uni-oldenburg.de/frerich.raabe/barry/ \
 		http://freebsd.so14k.com/barry/
 
 MAINTAINER=	so14k@so14k.com
+COMMENT=	A nice KDE frontend to the ports system
 
 USE_BZIP2=	yes
 USE_KDELIBS_VER=3

@@ -16,6 +16,7 @@ DISTFILES=	${PORTNAME}-${PORTVERSION}.tar.gz \
 		jnlib.tar.gz:lofi
 
 MAINTAINER=	michaelnottebrock@gmx.net
+COMMENT=	A collection of simple PIN or passphrase entry dialogs
 
 BUILD_DEPENDS=	autoconf:${PORTSDIR}/devel/autoconf \
 		automake:${PORTSDIR}/devel/automake

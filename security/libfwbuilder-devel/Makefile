@@ -11,6 +11,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	fwbuilder
 
 MAINTAINER=	devnull@uptsoft.com
+COMMENT=	Firewall Builder API
 
 LIB_DEPENDS=	xml2.5:${PORTSDIR}/textproc/libxml2 \
 		xslt.1:${PORTSDIR}/textproc/libxslt \

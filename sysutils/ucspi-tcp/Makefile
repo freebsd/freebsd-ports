@@ -21,6 +21,7 @@ MAN1=		addcr.1 argv0.1 date@.1 delcr.1 finger@.1 fixcrio.1 \
 .endif
 
 MAINTAINER=	dom@happygiraffe.net
+COMMENT=	Command-line tools for building TCP client-server applications
 
 NO_PACKAGE=	"Unsure of djb\'s license"
 

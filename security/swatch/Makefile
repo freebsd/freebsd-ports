@@ -12,6 +12,7 @@ MASTER_SITES=	ftp://ftp.stanford.edu/general/security-tools/swatch/ \
 		http://www.oit.ucsb.edu/~eta/swatch/
 
 MAINTAINER=	joseph@randomnetworks.com
+COMMENT=	The Simple WATCHer and filter
 
 BUILD_DEPENDS=	${site_perl}/Date/Format.pm:${PORTSDIR}/devel/p5-TimeDate \
 	${site_perl}/File/Tail.pm:${PORTSDIR}/devel/p5-File-Tail \

@@ -11,6 +11,7 @@ CATEGORIES=    net
 MASTER_SITES=  http://www.mavetju.org/download/
 
 MAINTAINER=    edwin@mavetju.org
+COMMENT=	Control your DHCP daemon a la apachectl
 
 MAN8=		ddc.8
 

@@ -14,6 +14,7 @@ MASTER_SITE_SUBDIR=	xcdroast
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/.a./alpha/}
 
 MAINTAINER=	lehmann@ans-netz.de
+COMMENT=	Another X11 frontend to mkisofs/cdrecord
 
 RUN_DEPENDS=	cdrecord:${PORTSDIR}/sysutils/cdrtools \
 		mkisofs:${PORTSDIR}/sysutils/mkisofs

@@ -11,6 +11,7 @@ MASTER_SITES=	http://hallon.fruitsalad.org/people/mdouhan/krdesktop/
 DISTNAME=	${PORTNAME:S/kr/KR/}-${PORTVERSION}
 
 MAINTAINER=	matt@fruitsalad.org
+COMMENT=	KDE GUI for rdesktop and VNC
 
 RUN_DEPENDS=	rdesktop:${PORTSDIR}/net/rdesktop-devel \
 		vncviewer:${PORTSDIR}/net/vnc

@@ -16,6 +16,7 @@ DISTFILES=	${PORTNAME}-${PORTVERSION}.tar.gz \
 		${PORTNAME}-1.6.tar.gz
 
 MAINTAINER=	d.marks@student.umist.ac.uk
+COMMENT=	Featureful Unix password cracker
 
 USE_REINPLACE=	yes
 

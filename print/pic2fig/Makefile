@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	utilities
 EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=	papowell@astart.com
+COMMENT=	Pic format to fig format converter
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 MAN1=		pic2fig.1

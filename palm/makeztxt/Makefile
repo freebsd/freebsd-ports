@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	gutenpalm
 DISTNAME=	${PORTNAME}-${PORTVERSION}-src
 
 MAINTAINER=	roman@xpert.com
+COMMENT=	Command line utility to create GutenPalm's zTXT format databases
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 USE_GMAKE=	yes

@@ -11,6 +11,7 @@ CATEGORIES=	net
 MASTER_SITES=	http://www.hydra.ubiest.com/wmnd/releases/
 
 MAINTAINER=	flag@gufi.org
+COMMENT=	Improved network monitoring dock app (with tons of features)
 
 USE_X_PREFIX=	yes
 USE_XPM=	yes

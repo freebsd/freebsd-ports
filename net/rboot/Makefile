@@ -11,6 +11,7 @@ CATEGORIES=	net
 MASTER_SITES=	http://www.bs.ni.schule.de/support/rboot/download/
 
 MAINTAINER=	m.butkus@tu-bs.de
+COMMENT=	A remote-boot solution for M$$ operating systems
 
 NO_PACKAGE=	"this port creates devices"
 

@@ -11,6 +11,7 @@ CATEGORIES=	net
 MASTER_SITES=	http://network.terramail.pl/
 
 MAINTAINER=	gslin@ccca.nctu.edu.tw
+COMMENT=	A console chat application written with ncurse
 
 do-build:
 	cd ${WRKSRC}; \

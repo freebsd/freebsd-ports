@@ -14,6 +14,7 @@ DISTNAME=	SpreadModule-${PORTVERSION}
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	joshua@roughtrade.net
+COMMENT=	A python extension module for the Spread group communcations package
 
 LIB_DEPENDS=	spread.1:${PORTSDIR}/net/spread
 

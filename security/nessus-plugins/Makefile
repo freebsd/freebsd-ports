@@ -17,6 +17,7 @@ MASTER_SITES=	ftp://ftp.nessus.org/pub/nessus/nessus-${PORTVERSION}/src/ \
 DISTNAME=	nessus-plugins-${PORTVERSION}
 
 MAINTAINER=	udo.schweigert@siemens.com
+COMMENT=	Plugins for Nessus, the security scanner
 
 BUILD_DEPENDS=	${LOCALBASE}/include/nessus/nessus-devel.h:${PORTSDIR}/security/nessus \
 		libnet-config:${PORTSDIR}/net/libnet

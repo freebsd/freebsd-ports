@@ -14,6 +14,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 EXTRACT_SUFX=	.src.tar.gz
 
 MAINTAINER=	marius@alchemy.franken.de
+COMMENT=	Record CD-R[W]s in disk-at-once mode
 
 USE_REINPLACE=	yes
 USE_GMAKE=	yes

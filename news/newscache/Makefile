@@ -13,6 +13,7 @@ MASTER_SITES=	http://members.aon.at/hstraub/linux/newscache/ \
 DISTNAME=	NewsCache-${PORTVERSION}
 
 MAINTAINER=	freebsdports@arved.de
+COMMENT=	NewsCache is a free cache server for USENET News
 
 WRKSRC=		${WRKDIR}/NewsCache
 

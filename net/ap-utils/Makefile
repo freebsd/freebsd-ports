@@ -12,6 +12,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	daniel+aputils@pelleg.org
+COMMENT=	A set of utilities to configure and monitor wireless access points
 
 LIB_DEPENDS=	intl.4:${PORTSDIR}/devel/gettext
 

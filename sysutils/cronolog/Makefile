@@ -11,6 +11,7 @@ CATEGORIES=	sysutils
 MASTER_SITES=	http://www.cronolog.org/download/
 
 MAINTAINER=	freebsd-ports@blackmans.org
+COMMENT=	A web log rotation utility that provides datestamp filenames
 
 MAN1=		cronolog.1m cronosplit.1m
 

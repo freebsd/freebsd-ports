@@ -13,6 +13,7 @@ MASTER_SITES=	ftp://aladdin.cblink.net/pub/FreeBSD/X11/cyrillic/ \
 DISTNAME=	${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	vess@btc.net
+COMMENT=	The bulgarian cyrillic keyboard layout manager for X11
 
 USE_XPM=	yes
 NO_INSTALL_MANPAGES=	yes

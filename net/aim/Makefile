@@ -13,6 +13,7 @@ DISTNAME=	aim-${PORTVERSION}-1
 EXTRACT_SUFX=	.i386.tgz
 
 MAINTAINER=	p9711422@mmu.edu.my
+COMMENT=	AOL's Instant Messenger (AIM) client
 
 RUN_DEPENDS=	/compat/linux/lib/libc.so.6:${PORTSDIR}/emulators/linux_base \
 		/compat/linux/usr/lib/libgtk-1.2.so.0:${PORTSDIR}/x11-toolkits/linux-gtk

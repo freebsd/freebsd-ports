@@ -12,6 +12,7 @@ MASTER_SITES=	http://download.sourceforge.net/newsfish/ \
 		ftp://ftp.philosophysw.com/pub/software/
 
 MAINTAINER=	asaddi@philosophysw.com
+COMMENT=	Batch USENET news reader with filter capabilities
 
 USE_AUTOMAKE=	yes
 USE_GMAKE=	yes

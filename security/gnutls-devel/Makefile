@@ -16,6 +16,7 @@ MASTER_SITES=	${MASTER_SITE_GNUPG} \
 MASTER_SITE_SUBDIR=	alpha/gnutls
 
 MAINTAINER=	sergei@kolobov.com
+COMMENT=	GNU Transport Layer Security library
 
 LIB_DEPENDS=	gcrypt.6:${PORTSDIR}/security/libgcrypt \
 		tasn1.0:${PORTSDIR}/security/libtasn1

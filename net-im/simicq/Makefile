@@ -12,6 +12,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME:S/mi/m-i/}
 DISTNAME=	${PORTNAME:S/icq//}-${PORTVERSION}
 
 MAINTAINER=	j.el-rayes@daemon.li
+COMMENT=	ICQ client which supports Version 8 of the ICQ protocol (ICQ 2001)
 
 USE_GMAKE=	yes
 USE_QT_VER=	3

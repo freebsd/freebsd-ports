@@ -10,6 +10,7 @@ CATEGORIES=	net
 MASTER_SITES=	ftp://ftp.lexa.ru/pub/domestic/snar/
 
 MAINTAINER=	snar@paranoia.ru
+COMMENT=	Bgpq - lightweight access-list generator for cisco routers
 
 MAN8=		bgpq.8
 

@@ -12,6 +12,7 @@ MASTER_SITES=	http://krazykiwi.homeip.net/FreeBSD/ports/rc5pipe/
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	frerich.raabe@gmx.de
+COMMENT=	RC5 en-/decryption via UNIX pipes
 
 WRKSRC=		${WRKDIR}/rc5pipe
 

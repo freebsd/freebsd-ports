@@ -13,6 +13,7 @@ DISTNAME=	icmpquery
 EXTRACT_SUFX=	.c
 
 MAINTAINER=	dom@happygiraffe.net
+COMMENT=	Small utility for finding out time & netmask through ICMP
 
 NO_WRKSUBDIR=	YES
 ALL_TARGET=	icmpquery

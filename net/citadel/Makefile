@@ -14,6 +14,7 @@ MASTER_SITES=	http://uncensored.citadel.org/pub/citadel/ \
 DISTNAME=	${PORTNAME}-ux-${PORTVERSION}
 
 MAINTAINER=	brian@shadowcom.net
+COMMENT=	Citadel/UX Communications Server
 
 BROKEN=		"Does not install/package"
 NO_PACKAGE=	"Infinite loop"

@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	Net
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	muir@idiom.com
+COMMENT=	Perl module to parse, manipulate and lookup IP network blocks
 
 PERL_CONFIGURE=	yes
 

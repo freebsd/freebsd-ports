@@ -11,6 +11,7 @@ CATEGORIES=	net
 MASTER_SITES=	http://www.rfc1149.net/download/adasockets/
 
 MAINTAINER=	sam@inf.enst.fr
+COMMENT=	Sockets library for Ada
 
 BUILD_DEPENDS=	adagcc:${PORTSDIR}/lang/gnat \
 		texi2dvi:${PORTSDIR}/print/teTeX

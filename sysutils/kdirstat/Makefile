@@ -12,6 +12,7 @@ MASTER_SITES=	http://kdirstat.sourceforge.net/download/
 EXTRACT_SUFX=   .tgz
 
 MAINTAINER=	stefan.jahn@nemesis-sektor.de
+COMMENT=	A small KDE utility that sums up disk usage for direcory trees
 
 USE_KDELIBS_VER=3
 GNU_CONFIGURE=	yes

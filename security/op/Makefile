@@ -15,6 +15,7 @@ MASTER_SITES=	ftp://ftp.cerias.purdue.edu/pub/tools/%SUBDIR%/ \
 MASTER_SITE_SUBDIR=	unix/sysutils/${PORTNAME}
 
 MAINTAINER=	cyrille.lefevre@laposte.net
+COMMENT=	Allow others to run commands as root (like sudo but different)
 
 # Global variables
 #

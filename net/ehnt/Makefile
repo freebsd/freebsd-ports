@@ -17,6 +17,7 @@ DISTFILES+=	${PORTNAME}_data-${PORTVERSION}${EXTRACT_SUFX}
 .endif
 
 MAINTAINER=	marck@rinet.ru
+COMMENT=	A simple Cisco NetFlow data collector
 
 USE_PERL5=	yes
 

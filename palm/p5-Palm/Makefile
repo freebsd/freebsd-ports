@@ -11,6 +11,7 @@ CATEGORIES=	palm perl5
 MASTER_SITES=	http://www.coldsync.org/download/
 
 MAINTAINER=	arensb@ooblick.com
+COMMENT=	Perl 5 modules for reading and writing Palm database files
 
 PERL_CONFIGURE=	YES
 

@@ -11,6 +11,7 @@ CATEGORIES=	sysutils
 MASTER_SITES=	ftp://edu1.tokyo-med.ac.jp/pub/contrib/bkpupsd/
 
 MAINTAINER=	mwatts@edu1.tokyo-med.ac.jp
+COMMENT=	A simple UPS daemon for APC BK Pro(TM)
 
 MAN8=		bkpupsd.8
 

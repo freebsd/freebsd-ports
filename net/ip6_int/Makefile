@@ -14,6 +14,7 @@ EXTRACT_SUFX=	# empty
 EXTRACT_ONLY=	# empty
 
 MAINTAINER=	jylefort@brutele.be
+COMMENT=	Convert an IPv4/IPv6 address to an in-addr.arpa/ip6.int PTR value
 
 NO_BUILD=	yes
 USE_PERL5=	yes

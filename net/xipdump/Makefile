@@ -12,6 +12,7 @@ MASTER_SITES=	http://etud.epita.fr:8000/~lse/recherche/xipdump/
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	umeno@rr.iij4u.or.jp
+COMMENT=	Displays ip packets using X window
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/libnet.a:${PORTSDIR}/net/libnet
 

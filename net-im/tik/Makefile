@@ -12,6 +12,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	tik
 
 MAINTAINER=	dionysos@anti-aol.org
+COMMENT=	A Tcl/Tk based AOL Instant Messenger (AIM) Chat Client
 
 RUN_DEPENDS=	tclsh8.2:${PORTSDIR}/lang/tcl82 \
 		wish8.2:${PORTSDIR}/x11-toolkits/tk82

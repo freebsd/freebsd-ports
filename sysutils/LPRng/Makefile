@@ -19,6 +19,7 @@ MASTER_SITE_SUBDIR=	LPRng/LPRng
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	papowell@astart.com
+COMMENT=	An Enhanced Printer Spooler
 
 LIB_DEPENDS=	gdbm.3:${PORTSDIR}/databases/gdbm
 

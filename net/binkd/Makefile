@@ -12,6 +12,7 @@ MASTER_SITES=	http://2f.ru/binkd/
 DISTNAME=	binkd094
 
 MAINTAINER=	dsh@vlink.ru
+COMMENT=	Fidonet TCP/IP mailer
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 USE_ZIP=	yes

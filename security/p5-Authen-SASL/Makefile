@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	Authen
 DISTNAME=	Authen-SASL-${PORTVERSION}
 
 MAINTAINER=	blaz@si.FreeBSD.org
+COMMENT=	Perl5 module for SASL authentication
 
 PERL_CONFIGURE=	yes
 

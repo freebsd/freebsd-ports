@@ -11,6 +11,7 @@ CATEGORIES=	net python
 MASTER_SITES=	http://fugu.gale.org/dist/
 
 MAINTAINER=	peterh@sapros.com
+COMMENT=	A graphical client for the Gale instant messaging system
 
 RUN_DEPENDS+= 	${PYTHON_SITELIBDIR}/Pmw:${PORTSDIR}/x11-toolkits/pmw
 

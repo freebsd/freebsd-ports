@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	Quota
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	erwin@lansing.dk
+COMMENT=	Perl module that provides access to filesystem quotas
 
 PERL_CONFIGURE=	yes
 

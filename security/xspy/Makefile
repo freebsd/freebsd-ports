@@ -11,6 +11,7 @@ CATEGORIES=	security
 MASTER_SITES=	http://www.acm.vt.edu/~jmaxwell/programs/xspy/
 
 MAINTAINER=	Yonatan@xpert.com
+COMMENT=	A utility for monitoring keystrokes on remote X servers
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 USE_XLIB=	yes

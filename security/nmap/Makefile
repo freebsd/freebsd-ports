@@ -15,6 +15,7 @@ DISTNAME=	nmap-${PORTVERSION:S/.b/BETA/}
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	d.marks@student.umist.ac.uk
+COMMENT=	Port scanning utility for large networks
 
 .include <bsd.port.pre.mk>
 

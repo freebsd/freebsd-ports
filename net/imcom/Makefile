@@ -10,6 +10,7 @@ CATEGORIES=	net
 MASTER_SITES=	http://imcom.floobin.cx/files/
 
 MAINTAINER=	martijn@pacno.net
+COMMENT=	IMCom is a command-line Jabber client written in Python
 
 USE_PYTHON=	yes
 

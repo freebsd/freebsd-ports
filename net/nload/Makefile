@@ -12,6 +12,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	olive@oban.frmug.org
+COMMENT=	Console application which monitors network traffic in real time
 
 HAS_CONFIGURE=	yes
 

@@ -13,6 +13,7 @@ DISTNAME=	dump9660
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	dump9660-port@eecs.harvard.edu
+COMMENT=	Create an ISO 9660 image, possibly incrementally
 
 MAN8=		mk9660.8
 MAN5=		proto.5

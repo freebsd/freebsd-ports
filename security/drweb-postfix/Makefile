@@ -12,6 +12,7 @@ MASTER_SITES=	ftp://ftp.drweb.ru/pub/unix/
 DISTNAME=	drweb-clients-${PORTVERSION}-sources
 
 MAINTAINER=	zaa@ulstu.ru
+COMMENT=	Postfix message filter for virus processing through DrWeb daemon
 
 RUN_DEPENDS=	${LOCALBASE}/etc/rc.d/drweb-0.sh:${PORTSDIR}/security/drwebd
 

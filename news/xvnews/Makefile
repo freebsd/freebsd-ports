@@ -12,6 +12,7 @@ MASTER_SITES=	${MASTER_SITE_XCONTRIB}
 MASTER_SITE_SUBDIR=	applications
 
 MAINTAINER=	shanee@augusta.de
+COMMENT=	An OPEN LOOK news reader
 
 BROKEN=		"Does not compile on -current; manpage does not build on -stable"
 

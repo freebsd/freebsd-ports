@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	Crypt
 PKGNAMEPREFIX=		p5-
 
 MAINTAINER=		svenasse@polaris.ca
+COMMENT=	Solitaire encryption
 
 PERL_CONFIGURE=		yes
 

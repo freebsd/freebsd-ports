@@ -12,6 +12,7 @@ MASTER_SITES=	ftp://ftp.butya.kz/pub/nwlib/ \
 		http://rbp.chat.ru/pub/nwlib/
 
 MAINTAINER=	bp@butya.kz
+COMMENT=	Client for Novell NetWare servers
 
 .if !exists(/usr/src/sys/kern/vnode_if.src)
 BROKEN=		requires kernel source

@@ -12,6 +12,7 @@ CATEGORIES=	net
 MASTER_SITES=	http://www.bnet.pl/~jajcus/apinger/ 
 
 MAINTAINER=	mich@freebsdcluster.org
+COMMENT=	An IP device monitoring tool
 
 GNU_CONFIGURE=	yes
 

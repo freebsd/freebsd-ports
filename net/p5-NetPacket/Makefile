@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	NetPacket
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	tolid@plab.ku.dk
+COMMENT=	Modules to assemble/disassemble network packets at the protocol level
 
 PERL_CONFIGURE=	yes
 

@@ -14,6 +14,7 @@ DISTNAME=	nnap
 EXTRACT_SUFX=	.c
 
 MAINTAINER=	lasse@freebsdcluster.org
+COMMENT=	Nnap is a lightweight NNTP authentication proxy
 
 NO_WRKSUBDIR=	yes
 

@@ -12,6 +12,7 @@ MASTER_SITES=	ftp://ftp.fu-berlin.de/unix/security/tripwire/old/
 EXTRACT_SUFX=	.tar.gz
 
 MAINTAINER=	jgreco@ns.sol.net
+COMMENT=	File system security and verification program
 
 MAN5=		tw.config.5
 MAN8=		siggen.8 tripwire.8

@@ -11,6 +11,7 @@ CATEGORIES=	net
 MASTER_SITES=	http://www.mavetju.org/download/
 
 MAINTAINER=	edwin@mavetju.org
+COMMENT=	Easy packet filtering library based on ngrep
 
 MAN3=		ngrep-lib.3
 HAS_CONFIGURE=	yes

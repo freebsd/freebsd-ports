@@ -11,6 +11,7 @@ CATEGORIES=	sysutils
 MASTER_SITES=	http://www.tricknology.org/ports/
 
 MAINTAINER=	oddbjorn@tricknology.org
+COMMENT=	A simple password generator
 
 LIB_DEPENDS=	gnugetopt.1:${PORTSDIR}/devel/libgnugetopt
 

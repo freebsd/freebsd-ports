@@ -12,6 +12,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	balance
 
 MAINTAINER=	joseph@randomnetworks.com
+COMMENT=	Simple but powerful generic tcp proxy with round robin features
 
 ALL_TARGET=	balance
 

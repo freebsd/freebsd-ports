@@ -13,6 +13,7 @@ MASTER_SITES=	ftp://ftp.physics.purdue.edu/pub/pundits/ \
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	csg@fedex.com
+COMMENT=	Parallel Execution tool ala xargs/apply
 
 BUILD_DEPENDS=	makeme:${PORTSDIR}/devel/msrc0 \
 		mkcmd:${PORTSDIR}/devel/mkcmd

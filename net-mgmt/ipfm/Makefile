@@ -12,6 +12,7 @@ MASTER_SITES=	http://robert.cheramy.net/ipfm/archive/
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	roman@xpert.com
+COMMENT=	A bandwidth analysis tool
 
 GNU_CONFIGURE=	yes
 

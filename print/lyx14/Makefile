@@ -13,6 +13,7 @@ MASTER_SITES=	ftp://ftp.lyx.org/pub/lyx/stable/ \
 		ftp://gd.tuwien.ac.at/publishing/tex/lyx/stable/
 
 MAINTAINER=	flynn@energyhq.homeip.net
+COMMENT=	Document processor interfaced with LaTeX (nearly WYSIWYG)
 
 BUILD_DEPENDS=	gm4:${PORTSDIR}/devel/m4 \
 		latex:${PORTSDIR}/print/teTeX

@@ -11,6 +11,7 @@ CATEGORIES=	sysutils
 MASTER_SITES=	http://www.spatula.net/muse/
 
 MAINTAINER=	freebsd@spatula.net
+COMMENT=	Shows memory usage data
 
 MAN1=		muse.1
 MANCOMPRESSED=	yes

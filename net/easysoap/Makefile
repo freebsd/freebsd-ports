@@ -14,6 +14,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 DISTNAME=	EasySoap++-${PORTVERSION}
 
 MAINTAINER=	gabriel_ambuehl@buz.ch
+COMMENT=	C++ SOAP Library based on expat
 
 LIB_DEPENDS=	expat.4:${PORTSDIR}/textproc/expat2
 

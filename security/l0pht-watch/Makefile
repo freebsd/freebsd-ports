@@ -12,6 +12,7 @@ MASTER_SITES=	http://www.atstake.com/research/tools/
 DISTNAME=	${PORTNAME}
 
 MAINTAINER=	dom@happygiraffe.net
+COMMENT=	A program to report on what goes on in /tmp
 
 WRKSRC=		${WRKDIR}/temp-watch
 

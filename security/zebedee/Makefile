@@ -12,6 +12,7 @@ MASTER_SITES=	http://www.winton.org.uk/zebedee/ \
 		http://www.hewgill.com/zebedee/
 
 MAINTAINER=	greg@hewgill.com
+COMMENT=	Encrypted, secure compressed TCP tunnel
 
 .if defined(${BATCH}) || !exists(/usr/bin/bzip2)
 LIB_DEPENDS=	bz2.1:${PORTSDIR}/archivers/bzip2

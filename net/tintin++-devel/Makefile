@@ -13,6 +13,7 @@ MASTER_SITES=	http://mail.newclear.net/tintin/download/ \
 DISTNAME=	tintin++v1.84
 
 MAINTAINER=	jhp@cocoja.holywar.net
+COMMENT=	A client program to help playing muds
 
 NO_LATEST_LINK=	yes
 WRKSRC=		${WRKDIR}/tintin++/src

@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	../../authors/id/C/CH/CHROMATIC
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	jim@corebsd.or.id
+COMMENT=	Perl module providing an OO interface to CipherSaber encryption
 
 PERL_CONFIGURE=	yes
 

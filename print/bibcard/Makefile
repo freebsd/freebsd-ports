@@ -14,6 +14,7 @@ DISTNAME=	bibcard.6.4
 EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=	ports@NUXI.com
+COMMENT=	X11 interface for ediing BibTeX files
 
 LIB_DEPENDS=	xview.3:${PORTSDIR}/x11-toolkits/xview
 

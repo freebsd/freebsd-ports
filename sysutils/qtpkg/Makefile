@@ -12,6 +12,7 @@ MASTER_SITES=	http://gauss.cord.edu/homepages/twschulz/demo/
 DISTNAME=	qtpkg
 
 MAINTAINER=	twschulz@gloria.cord.edu
+COMMENT=	A Qt based package removal tool
 
 USE_QT_VER=	2
 

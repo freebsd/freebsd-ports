@@ -13,6 +13,7 @@ MASTER_SITES=	ftp://ftp.sys.toronto.edu/pub/es/
 DISTNAME=	es-0.9-beta1
 
 MAINTAINER=	ljrittle@acm.org
+COMMENT=	An extensible shell, derived from plan9's rc
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS= --with-readline

@@ -13,6 +13,7 @@ MASTER_SITES=	http://www.roughtrade.net/distfiles/
 DISTNAME=	${PORTNAME}-src-${PORTVERSION}
 
 MAINTAINER=	joshua@roughtrade.net
+COMMENT=	The Spread Group Communication System, a network toolkit
 
 GNU_CONFIGURE=	yes
 

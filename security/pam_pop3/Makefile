@@ -12,6 +12,7 @@ CATEGORIES=	security
 MASTER_SITES=	http://shum.huji.ac.il/~schapiro/linux/pam_pop3/
 
 MAINTAINER=	gslin@ccca.nctu.edu.tw
+COMMENT=	This module authenticates a user against a POP3 server
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 

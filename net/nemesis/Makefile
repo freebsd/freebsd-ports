@@ -11,6 +11,7 @@ CATEGORIES=	net security
 MASTER_SITES=	http://jeff.wwti.com/nemesis/
 
 MAINTAINER=	molter@tin.it
+COMMENT=	Command-line UNIX network packet creation and injection suite
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/libnet.a:${PORTSDIR}/net/libnet
 

@@ -15,6 +15,7 @@ MASTER_SITES=	${MASTER_SITE_GNUPG} \
 MASTER_SITE_SUBDIR=	alpha/gnutls/opencdk
 
 MAINTAINER=	sergei@kolobov.com
+COMMENT=	Open Crypto Development Kit
 
 LIB_DEPENDS=	gcrypt.6:${PORTSDIR}/security/libgcrypt
 

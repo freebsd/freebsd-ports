@@ -13,6 +13,7 @@ MASTER_SITES=	ftp://ftp.ugh.net.au/pub/unix/wait_on/ \
 		http://ftp.megamirror.com/pub/ugh/unix/wait_on/
 
 MAINTAINER=	andrew@ugh.net.au
+COMMENT=	Enable shell scripts to monitor directories for new files
 
 WRKSRC=		${WRKDIR}/wait_on
 

@@ -10,6 +10,7 @@ CATEGORIES=	net
 MASTER_SITES=	http://www.netsaint.org/download/contrib/addons/
 
 MAINTAINER=	jon@netcraft.com
+COMMENT=	A netsaint addon for running plugins on remote hosts
 
 # Note that this port depends on neither netsaint-plugins OR netsaint, because it
 # installs both a client and a server, and so could need EITHER. Bummer.

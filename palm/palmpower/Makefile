@@ -17,6 +17,7 @@ CATEGORIES=	palm
 #
 
 MAINTAINER=	roman@xpert.com
+COMMENT=	Disassembler and other tools for PalmOS binaries
 
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes

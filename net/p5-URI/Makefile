@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	URI
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	erwin@lansing.dk
+COMMENT=	Perl5 interface to Uniform Resource Identifier (URI) references
 
 PERL_CONFIGURE=	yes
 

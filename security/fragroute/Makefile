@@ -12,6 +12,7 @@ CATEGORIES=	security net
 MASTER_SITES=	http://monkey.org/~dugsong/fragroute/
 
 MAINTAINER=	d.marks@student.umist.ac.uk
+COMMENT=	A tool for intercepting, modifying and rewriting egress traffic
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/libdnet.a:${PORTSDIR}/net/libdnet \
 		${LOCALBASE}/lib/libevent.a:${PORTSDIR}/devel/libevent

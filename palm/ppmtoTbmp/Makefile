@@ -11,6 +11,7 @@ CATEGORIES=	palm graphics
 MASTER_SITES=	http://www.isaac.cs.berkeley.edu/pilot/
 
 MAINTAINER=	noway@nohow.demon.co.uk
+COMMENT=	PPM to Pilot bitmap converter
 
 LIB_DEPENDS=	netpbm.1:${PORTSDIR}/graphics/netpbm
 

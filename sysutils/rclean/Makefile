@@ -11,6 +11,7 @@ CATEGORIES=	sysutils
 MASTER_SITES=	http://www.lapo.it/rclean/
 
 MAINTAINER=	lapo@lapo.it
+COMMENT=	Command-line rc.conf ordering and cleaning tool
 
 USE_BZIP2=	yes
 

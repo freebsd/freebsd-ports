@@ -14,6 +14,7 @@ PKGNAMEPREFIX=	p5-
 DISTNAME=	Mon-${PORTVERSION}
 
 MAINTAINER=	nick@netdot.net
+COMMENT=	A perl module that supports mon, a network and system monitoring daemon
 
 PERL_CONFIGURE=	YES
 

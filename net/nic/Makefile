@@ -11,6 +11,7 @@ CATEGORIES=	net www
 MASTER_SITES=	http://pompo.net/horde/nic/
 
 MAINTAINER=	thierry@pompo.net
+COMMENT=	Nic is a set of small web-based network applications
 
 RUN_DEPENDS=	${LOCALBASE}/www/horde/index.php:${PORTSDIR}/www/horde2
 

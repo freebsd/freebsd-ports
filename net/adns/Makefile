@@ -13,6 +13,7 @@ MASTER_SITES=	${MASTER_SITE_GNU} \
 MASTER_SITE_SUBDIR=	adns
 
 MAINTAINER=	lukin@okbmei.msk.su
+COMMENT=	Easy to use, asynchronous-capable DNS client library and utilities
 
 GNU_CONFIGURE=	yes
 INSTALLS_SHLIB=	yes

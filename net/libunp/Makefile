@@ -13,6 +13,7 @@ MASTER_SITES=	ftp://ftp.kohala.com/pub/rstevens/ \
 DISTNAME=	unpv12e
 
 MAINTAINER=	james@targetnet.com
+COMMENT=	The networking library used in UNIX Network Programming Volume 1 2e
 
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes

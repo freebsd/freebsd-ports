@@ -13,6 +13,7 @@ DISTNAME=	LogMon-${PORTVERSION}
 EXTRACT_SUFX=	.src.tgz
 
 MAINTAINER=	gslin@ccca.nctu.edu.tw
+COMMENT=	An ncurses-based split window log monitoring program
 
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes

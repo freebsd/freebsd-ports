@@ -11,6 +11,7 @@ CATEGORIES=	sysutils
 MASTER_SITES=	ftp://ftp.maske.org/pub/FreeBSD/distfiles/
 
 MAINTAINER=	maske@maske.org
+COMMENT=	Shows current user diskusage and sum in human-readable format
 
 MAN1=		diskusage.1
 MANCOMPRESSED=	yes

@@ -11,6 +11,7 @@ CATEGORIES=	news
 MASTER_SITES=	ftp://ftp.isc.org/isc/inn/unoff-contrib/
 
 MAINTAINER=	dsh@vlink.ru
+COMMENT=	Allows remote sites to change their newsgroup subscriptions
 
 WRKSRC=		${WRKDIR}/gup
 

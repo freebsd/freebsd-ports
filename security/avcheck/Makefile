@@ -11,6 +11,7 @@ CATEGORIES=	security
 MASTER_SITES=	http://www.corpit.ru/ftp/avcheck/
 
 MAINTAINER=	dsh@vlink.ru
+COMMENT=	A simple antivirus solution for a mail system
 
 USE_REINPLACE=	yes
 

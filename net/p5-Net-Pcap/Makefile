@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	Net
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	skv@protey.ru
+COMMENT=	Interface to pcap(3) LBL packet capture library
 
 PERL_CONFIGURE=	yes
 

@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	Net
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	fuyuki@hadaly.org
+COMMENT=	A Perl implementation of a finger client
 
 PERL_CONFIGURE=	yes
 

@@ -12,6 +12,7 @@ MASTER_SITES=	http://www.quiltaholic.com/rickk/sslwrap/
 DISTNAME=	${PORTNAME}
 
 MAINTAINER=	ZGabor@CoDe.HU
+COMMENT=	Another SSL Wrapper application, which uses SSLEay/OpenSSL
 
 USE_OPENSSL=	YES
 

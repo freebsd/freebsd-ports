@@ -12,6 +12,7 @@ MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	alex
 
 MAINTAINER=	roman@xpert.com
+COMMENT=	Ext2fs filesystem consistency check and interactive repair
 
 MAN8=		fsck_ext2fs.8
 

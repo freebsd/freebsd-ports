@@ -12,6 +12,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	sgt@outline.ru
+COMMENT=	A dockapp that monitors your friends list at LiveJournal.com
 
 LIB_DEPENDS=	curl.2:${PORTSDIR}/ftp/curl
 

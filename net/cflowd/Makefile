@@ -18,6 +18,7 @@ PATCHFILES=	cflowd-2-1-b1-djp.patch
 .endif
 
 MAINTAINER=	lyngbol@wheel.dk
+COMMENT=	Flow analysis tool used for analyzing Cisco's NetFlow switching
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/libArts.a:${PORTSDIR}/net/arts++
 

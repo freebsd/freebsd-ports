@@ -12,6 +12,7 @@ MASTER_SITES=	http://gopher.quux.org:70/give-me-gopher/ \
 		http://dl.droso.net/ports/
 
 MAINTAINER=	erwin@lansing.dk
+COMMENT=	Client and server for access to a distributed document service
 
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes

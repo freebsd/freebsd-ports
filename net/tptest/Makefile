@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=${PORTNAME}
 DISTNAME=	${PORTNAME}${PORTVERSION}
 
 MAINTAINER=	girgen@pingpong.net
+COMMENT=	Software suite for testing network throughput and Internet services
 
 pre-build:
 	@ cd ${WRKSRC}/apps/unix/client ;\

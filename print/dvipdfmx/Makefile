@@ -14,6 +14,7 @@ PKGNAMESUFFIX=	-cjk
 DISTNAME=	${PORTNAME}${PKGNAMESUFFIX}-${PORTVERSION}
 
 MAINTAINER=	statue@freebsd.sinica.edu.tw
+COMMENT=	Dvipdfm with Asian languages by CID-keyed font technology support
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/libkpathsea.a:${PORTSDIR}/print/teTeX
 LIB_DEPENDS=	png:${PORTSDIR}/graphics/png

@@ -11,6 +11,7 @@ CATEGORIES=	net
 MASTER_SITES=	http://www.enforcer.cc/vchat/filez/
 
 MAINTAINER=	vchat@enforcer.cc
+COMMENT=	Client software for taking part in VChat conferences
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 GNU_CONFIGURE=	yes

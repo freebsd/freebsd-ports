@@ -12,6 +12,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	prc-tools
 
 MAINTAINER=	linimon@lonesome.com
+COMMENT=	PRC-tools for Palm OS (main part)
 
 BUILD_DEPENDS=	${PREFIX}/bin/m68k-palmos-gcc:${PORTSDIR}/palm/prc-tools-gcc \
 		${LOCALBASE}/palmdev/sdk-3.5/include/Core/System/NetMgr.h:${PORTSDIR}/palm/palmos-sdk

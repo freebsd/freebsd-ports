@@ -12,6 +12,7 @@ MASTER_SITES=	http://hp.vector.co.jp/authors/VA004959/xipmsg/
 DISTNAME=	xipmsg-8087
 
 MAINTAINER=	candy@kgc.co.jp
+COMMENT=	A popup style message communication tool for X11
 
 USE_IMAKE=	yes
 MAN1=		xipmsg.1

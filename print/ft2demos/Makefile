@@ -17,6 +17,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:S,%SUBDIR%,freetype,} \
 MASTER_SITE_SUBDIR=	freetype2
 
 MAINTAINER=	kanou@mil.allnet.ne.jp
+COMMENT=	Demo programs for FreeType2
 
 BUILD_DEPENDS+=	libtool:${PORTSDIR}/devel/libtool
 BUILD_DEPENDS+=	${FREETYPE_WRKSRC}/config.mk:${PORTSDIR}/print/freetype2:build

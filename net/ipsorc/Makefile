@@ -12,6 +12,7 @@ MASTER_SITES=	http://www.informony.com/ipsorc/
 #MASTER_SITE_SUBDIR=     ${PORTNAME}
 
 MAINTAINER=	ecu@ipv42.net
+COMMENT=	A tool to create and send IP packets with a graphical GTK front-end
 
 USE_GNOMENG=	yes
 USE_GNOME=	gtk12

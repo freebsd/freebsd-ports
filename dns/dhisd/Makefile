@@ -13,6 +13,7 @@ MASTER_SITES=	http://bsltwr.dhis.org/ftp/pub/dhis/ \
 		ftp://ftp.dhis.org/pub/dhis/
 
 MAINTAINER=	baskruit@bsltwr.dnsalias.org
+COMMENT=	DHIS server for dynamic updates on the server using specific engines
 
 LIB_DEPENDS=	gmp.3:${PORTSDIR}/math/libgmp-freebsd
 

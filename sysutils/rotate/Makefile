@@ -11,6 +11,7 @@ CATEGORIES=	sysutils
 MASTER_SITES=	ftp://ftp.intec.co.jp/pub/utils/
 
 MAINTAINER=	kaz@kobe1995.net
+COMMENT=	log rotate
 
 MAN1=	rotate.1
 MANCOMPRESSED=	yes

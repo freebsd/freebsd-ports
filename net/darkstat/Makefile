@@ -12,6 +12,7 @@ MASTER_SITES=	http://members.optushome.com.au/emikulic/net/darkstat/ \
 		http://yallara.cs.rmit.edu.au/~emikulic/_/
 
 MAINTAINER=	emikulic@optushome.com.au
+COMMENT=	Network statistics gatherer, similar to but smaller than ntop
 
 LIB_DEPENDS=	intl.4:${PORTSDIR}/devel/gettext
 

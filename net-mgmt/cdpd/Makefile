@@ -10,6 +10,7 @@ CATEGORIES=	net
 MASTER_SITES=	ftp://ftp.lexa.ru/pub/domestic/snar/
 
 MAINTAINER=	snar@paranoia.ru
+COMMENT=	CDPdaemon - sends Cisco Discovery Protocol announces over ethernet
 
 BUILD_DEPENDS=  ${LOCALBASE}/lib/libnet.a:${PORTSDIR}/net/libnet
 

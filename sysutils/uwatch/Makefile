@@ -12,6 +12,7 @@ MASTER_SITES=	http://www.vocito.com/downloads/software/uwatch/ \
 		ftp://ftp.vocito.com/pub/vocito.com/software/uwatch/
 
 MAINTAINER=	ports@vocito.com
+COMMENT=	Monitor user logins and logouts
 
 MAN1=		uwatch.1
 MANCOMPRESSED=	yes

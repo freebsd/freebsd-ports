@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	smm
 DISTNAME=	smm
 
 MAINTAINER=	edwin@mavetju.org
+COMMENT=	Graphical mudclient with mapper
 
 RUN_DEPENDS=	${LOCALBASE}/lib/iwidgets3.0.0/iwidgets.tcl:${PORTSDIR}/x11-toolkits/iwidgets
 BUILD_DEPENDS=	${LOCALBASE}/lib/libitk32.so:${PORTSDIR}/x11-toolkits/itk \

@@ -15,6 +15,7 @@ DISTFILES=	6to4\?rev=1.9\&content-type=text%2fplain \
 DIST_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	fuyuki@hadaly.org
+COMMENT=	Enables 6to4 IPv6 automatic tunnels
 
 USE_REINPLACE=	yes
 USE_PERL5=	yes

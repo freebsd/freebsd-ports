@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	Net
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	svenasse@polaris.ca
+COMMENT=	Perl OO interface to the AOL Instant Messenger TOC client protocol
 
 PERL_CONFIGURE=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}

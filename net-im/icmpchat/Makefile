@@ -11,6 +11,7 @@ CATEGORIES=	net
 MASTER_SITES=	http://www.codito.de/prog/
 
 MAINTAINER=	mwest@uct.ac.za
+COMMENT=	Simple chat program based on the ICMP protocol
 
 USE_REINPLACE=	yes
 

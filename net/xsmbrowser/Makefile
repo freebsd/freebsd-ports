@@ -12,6 +12,7 @@ MASTER_SITES=	http://www2.iastate.edu/~chadspen/ \
 		http://www.ibiblio.org/pub/Linux/system/network/samba/
 
 MAINTAINER=	roman@xpert.com
+COMMENT=	Tcl/Tk port of Windows' Network Neighborhood
 
 RUN_DEPENDS=	${LOCALBASE}/bin/smbclient:${PORTSDIR}/net/samba \
 		${LOCALBASE}/bin/expectk:${PORTSDIR}/lang/expect

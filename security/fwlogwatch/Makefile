@@ -12,6 +12,7 @@ CATEGORIES=	security
 MASTER_SITES=	http://www.kybs.de/boris/sw/
 
 MAINTAINER=	jim@corebsd.or.id
+COMMENT=	A packet filter and firewall log analyzer
 
 LIB_DEPENDS=	intl.4:${PORTSDIR}/devel/gettext
 

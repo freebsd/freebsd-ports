@@ -12,6 +12,7 @@ MASTER_SITES=	ftp://wedgie.org/pub/ \
 		ftp://ftp.apexds.com/pub/
 
 MAINTAINER=	bjohnson@wedgie.org
+COMMENT=	Watches the output from a command at specified intervals
 
 MAN1=		cmdwatch.1
 

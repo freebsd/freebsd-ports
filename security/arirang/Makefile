@@ -14,6 +14,7 @@ MASTER_SITES=	${MASTER_SITE_PACKETSTORM} \
 MASTER_SITE_SUBDIR=	UNIX/cgi-scanners
 
 MAINTAINER=	roman@xpert.com
+COMMENT=	Powerful webserver security scanner
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/arirang ${PREFIX}/sbin

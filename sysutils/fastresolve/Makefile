@@ -12,6 +12,7 @@ CATEGORIES=	sysutils
 MASTER_SITES=	http://www.pix.net/staff/djm/sw/dist/
 
 MAINTAINER=	verm@drunkmonk.net
+COMMENT=	Programs that process web logs to get DNS and domain ownership info
 
 LIB_DEPENDS=	db3.3:${PORTSDIR}/databases/db3 \
 		adns.1:${PORTSDIR}/net/adns

@@ -12,6 +12,7 @@ MASTER_SITES=	ftp://ftp.kiarchive.ru/pub/unix/mail/ \
 		http://www.links.ru/soft/messarge/
 
 MAINTAINER=	.@babolo.ru
+COMMENT=	Tools to mantain UNIX mailboxes
 
 MAN1=		messarge.1 mesraw.1 mesdbc.1 mesarc.1 mestun.1
 MANLANG=	ru_RU.KOI8-R

@@ -11,6 +11,7 @@ MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	radius
 
 MAINTAINER=	lance@evitel.net
+COMMENT=	GNU RADIUS server
 
 #MAKEFILE=	Makefile
 

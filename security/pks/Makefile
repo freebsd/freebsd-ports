@@ -19,6 +19,7 @@ PATCHFILES=	pks094-patch2 \
 PATCH_DIST_STRIP=-p1
 
 MAINTAINER=	jharris@widomaker.com
+COMMENT=	PGP Public Key Server
 
 LIB_DEPENDS=	db2.0:${PORTSDIR}/databases/db2
 

@@ -12,6 +12,7 @@ CATEGORIES=	print
 MASTER_SITES=	ftp://ftp.cs.uni-magdeburg.de/pub/ipe/
 
 MAINTAINER=	witr@rwwa.com
+COMMENT=	Produce HTML and printed documents from LaTeX source
 
 BUILD_DEPENDS=	emacs:${PORTSDIR}/editors/emacs20
 RUN_DEPENDS=	emacs:${PORTSDIR}/editors/emacs20 \

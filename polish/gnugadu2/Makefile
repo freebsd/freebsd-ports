@@ -12,6 +12,7 @@ MASTER_SITES=	ftp://ftp.slackware.pl/gg/
 DISTNAME=	gg-${PORTVERSION}
 
 MAINTAINER=	doc@lublin.t1.pl
+COMMENT=	A GaduGadu client for X11/GTK
 
 WRKSRC=	${WRKDIR}/gg-${PORTVERSION}
 

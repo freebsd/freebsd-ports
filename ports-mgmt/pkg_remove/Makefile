@@ -12,6 +12,7 @@ MASTER_SITES=	# none
 DISTFILES=	# none
 
 MAINTAINER=	nakaji@jp.freebsd.org
+COMMENT=	Utility to uninstall packages
 
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes

@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	News
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	croyle@gelemna.org
+COMMENT=	Robomoderation and mail to news gatewaying toolkit
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/News/Article.pm:${PORTSDIR}/news/p5-News-Article
 RUN_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/News/Article.pm:${PORTSDIR}/news/p5-News-Article

@@ -11,6 +11,7 @@ CATEGORIES=	print
 MASTER_SITES=	http://www.red-bean.com/fitz/software/cdlabelgen/
 
 MAINTAINER=	nox@jelal.kn-bremen.de
+COMMENT=	Generate postscript for frontcards and traycards for CDs
 
 USE_PERL5=	yes
 MAKE_ENV=	BASE_DIR=${PREFIX}

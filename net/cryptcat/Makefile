@@ -13,6 +13,7 @@ DISTNAME=	cryptcat_linux
 EXTRACT_SUFX=	.tar
 
 MAINTAINER=	roman@xpert.com
+COMMENT=	Standard netcat enhanced with twofish encryption
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 ALL_TARGET=	freebsd

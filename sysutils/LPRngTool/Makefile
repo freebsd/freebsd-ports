@@ -17,6 +17,7 @@ MASTER_SITE_SUBDIR=	LPRng/LPRngTool
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	papowell@astart.com
+COMMENT=	Configuration Tool for LPRng
 
 BUILD_DEPENDS=	\
 	gs:${PORTSDIR}/print/ghostscript-afpl \

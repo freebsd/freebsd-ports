@@ -11,6 +11,7 @@ CATEGORIES=	net www
 MASTER_SITES=	http://people.ee.ethz.ch/~oetiker/webtools/smokeping/pub/
 
 MAINTAINER=	lars@thegler.dk
+COMMENT=	Latency logging and graphing system
 
 RUN_DEPENDS=	rrdtool:${PORTSDIR}/net/rrdtool \
 		${SITE_PERL}/CGI/SpeedyCGI.pm:${PORTSDIR}/www/p5-CGI-SpeedyCGI \

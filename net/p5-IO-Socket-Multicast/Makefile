@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR= IO
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	janos.mohacsi@dante.org.uk
+COMMENT=	Perl module to send and receive multicast messages
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/${PERL_ARCH}/IO/Interface.pm:${PORTSDIR}/net/p5-IO-Interface
 RUN_DEPENDS=	${BUILD_DEPENDS}

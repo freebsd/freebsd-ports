@@ -12,6 +12,7 @@ MASTER_SITES=	http://www.jamiesdomain.org.uk/userlist/${PORTVERSION}/
 MASTER_SITE_SUBDIR=	${PORTVERSION}
 
 MAINTAINER=	jamie@jamiesdomain.org.uk
+COMMENT=	Prints a list of all usernames in /etc/passwd
 
 NO_BUILD=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}

@@ -15,6 +15,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	erik@smluc.org
+COMMENT=	Utility to display information about the systems x86 processor(s)
 
 ONLY_FOR_ARCHS=	i386
 USE_REINPLACE=	yes

@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	Crypt
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	erwin@lansing.dk
+COMMENT=	Perl module that provides interoperable MD5-based crypt() function
 
 USE_REINPLACE=	yes
 PERL_CONFIGURE=	yes

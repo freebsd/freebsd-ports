@@ -12,6 +12,7 @@ MASTER_SITES=	http://www.panchoproject.org/archives/pancho/
 DISTNAME=	pancho-v${PORTVERSION}
 
 MAINTAINER=	ecu@ipv42.net
+COMMENT=	Perl script useful to configure Cisco routers via TFTP
 
 RUN_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/Net/SNMP.pm:${PORTSDIR}/net/p5-Net-SNMP \
 		${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/Config/IniFiles.pm:${PORTSDIR}/devel/p5-Config-IniFiles \

@@ -12,6 +12,7 @@ MASTER_SITES=	ftp://gwdu111.gwdg.de/pub/FreeBSD/misc/ \
 		ftp://gwdu112.gwdg.de/pub/FreeBSD/misc/
 
 MAINTAINER=	kheuer@gwdu60.gwdg.de
+COMMENT=	Remote printing utility using a raw bidirectional tcp connection
 
 USE_REINPLACE=	yes
 

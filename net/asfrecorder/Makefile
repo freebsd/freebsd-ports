@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	asfrecorder
 DISTNAME=	ASFRecorder
 
 MAINTAINER=	roman@xpert.com
+COMMENT=	Tool for downloading streaming media from the Internet
 
 USE_ZIP=	yes
 

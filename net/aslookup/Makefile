@@ -12,6 +12,7 @@ MASTER_SITES=	http://www.kk.iij4u.or.jp/~kuniaki/aslookup/
 DISTNAME=	aslookup-alpha${PORTVERSION}
 
 MAINTAINER=	janos.mohacsi@bsd.hu
+COMMENT=	Tool that searches the sequence of AS numbers
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/aslookup ${PREFIX}/bin

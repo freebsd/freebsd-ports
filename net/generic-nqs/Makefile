@@ -15,6 +15,7 @@ MASTER_SITES=		${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	fenner
 
 MAINTAINER=		tonym@biolateral.com.au
+COMMENT=	Generic Network Queuing System
 
 USE_BZIP2=		yes
 IS_INTERACTIVE=	yes

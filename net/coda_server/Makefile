@@ -15,6 +15,7 @@ DISTNAME=	coda-4.6.6
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	rvb@cs.cmu.edu
+COMMENT=	An experimental, replicated, high-performance network file system
 
 BROKEN=		"Does not build"
 
