@@ -2,20 +2,6 @@ bin/silc
 etc/silc/config
 etc/silc/default.theme
 etc/silc/silc.conf.sample
-%%PORTDOCS%%share/doc/silc/CHANGES
-%%PORTDOCS%%share/doc/silc/COPYING
-%%PORTDOCS%%share/doc/silc/CREDITS
-%%PORTDOCS%%share/doc/silc/CodingStyle
-%%PORTDOCS%%share/doc/silc/FAQ
-%%PORTDOCS%%share/doc/silc/INSTALL
-%%PORTDOCS%%share/doc/silc/README
-%%PORTDOCS%%share/doc/silc/TODO
-%%PORTDOCS%%share/doc/silc/draft-riikonen-silc-commands-02.txt
-%%PORTDOCS%%share/doc/silc/draft-riikonen-silc-ke-auth-04.txt
-%%PORTDOCS%%share/doc/silc/draft-riikonen-silc-pp-04.txt
-%%PORTDOCS%%share/doc/silc/draft-riikonen-silc-spec-04.txt
-%%PORTDOCS%%share/doc/silc/example_silc.conf
-%%PORTDOCS%%share/doc/silc/example_silcd.conf
 share/silc/help/action
 share/silc/help/admin
 share/silc/help/alias
@@ -94,5 +80,4 @@ share/silc/help/whowas
 share/silc/help/window
 @dirrm share/silc/help
 @dirrm share/silc
-%%PORTDOCS%%@dirrm share/doc/silc
 @unexec rmdir %D/etc/silc 2>/dev/null || true

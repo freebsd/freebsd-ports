@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	silc
-PORTVERSION=	0.6.4
+PORTVERSION=	0.6.6
 CATEGORIES=	net security
 MASTER_SITES=	http://www.silcnet.org/download/ \
 		ftp://ftp.silcnet.org/pub/silc/ \
@@ -25,21 +25,19 @@ DISTNAME=	${PORTNAME}${PKGNAMESUFFIX}-${PORTVERSION}
 
 MAINTAINER=	lioux@FreeBSD.org
 
+.ifndef(NOPORTDOCS)
+RUN_DEPENDS=	${LOCALBASE}/share/doc/silc/CREDITS:${.CURDIR}/../silc-doc
+.endif
+
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 USE_GLIB=	yes
-CONFIGURE_ARGS=	--with-docdir=share/doc/${PORTNAME} \
-		--with-etcdir=${PREFIX}/etc/${PORTNAME} \
-		--with-helpdir=share/${PORTNAME}/help \
-		--with-simdir=libexec/${PORTNAME}/modules
+CONFIGURE_ARGS=	--with-etcdir=${PREFIX}/etc/${PORTNAME} \
+		--with-helpdir=${PREFIX}/share/${PORTNAME}/help
 PLIST_SUB=	INSTALL_DIR="${INSTALL_DIR}"
 PKGDEINSTALL=	${PKGINSTALL}
 
 INSTALL_DIR?=	${INSTALL} -d -o ${BINOWN} -g ${BINGRP} -m 755
-
-.ifdef(NOPORTDOCS)
-EXTRA_PATCHES+=	${FILESDIR}/extra-patch-Makefile.in-noportdocs
-.endif
 
 .ifdef(WITHOUT_OPTIMIZED_ASM)
 CONFIGURE_ARGS+=	--disable-asm

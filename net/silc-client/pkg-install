@@ -35,7 +35,6 @@ POST-INSTALL)
 			${CONF_DIR}/${CONF_FILE}${SAMP_SUFX} \
 			${CONF_DIR}/${CONF_FILE}
 	fi
-	${INSTALL_DIR} ${PKG_PREFIX}/libexec/silc/modules
 	;;
 
 DEINSTALL)
@@ -46,12 +45,6 @@ DEINSTALL)
 		echo "$PKGNAME: Will not remove existing ${CONF_DIR}/${CONF_FILE} configuration file."
 		echo "$PKGNAME: However, if you are permanently removing this port, you should do a 'rm -f ${CONF_DIR}/${CONF_FILE}' to remove the configuration file left."
 		echo "$PKGNAME: Also, do not forget to 'rmdir ${CONF_DIR} 2>/dev/null'"
-	fi
-
-	${RMDIR} ${PKG_PREFIX}/libexec/silc/modules 2>/dev/null
-	if [ -d ${PKG_PREFIX}/libexec/silc ]
-	then
-		${RMDIR} ${PKG_PREFIX}/libexec/silc 2>/dev/null || echo "$PKGNAME: Will not remove silc modules. If permanently removing the port, 'rm -Rf ${PKG_PREFIX}/libexec/silc'"
 	fi
 	;;
 

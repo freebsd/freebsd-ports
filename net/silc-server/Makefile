@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	silc
-PORTVERSION=	0.6.2
-PORTREVISION=	1
+PORTVERSION=	0.6.4
 CATEGORIES=	net security
 MASTER_SITES=	http://www.silcnet.org/download/ \
 		ftp://ftp.silcnet.org/pub/silc/ \
@@ -26,15 +25,17 @@ DISTNAME=	${PORTNAME}${PKGNAMESUFFIX}-${PORTVERSION}
 
 MAINTAINER=	lioux@FreeBSD.org
 
+.ifndef(NOPORTDOCS)
+RUN_DEPENDS=	${LOCALBASE}/share/doc/silc/CREDITS:${.CURDIR}/../silc-doc
+.endif
+
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-silcd-config-file=${PREFIX}/etc/${PORTNAME}/silcd.conf \
-		--with-docdir=share/doc/${PORTNAME} \
 		--with-etcdir=${PREFIX}/etc/${PORTNAME} \
 		--with-helpdir=share/${PORTNAME}/help \
 		--with-logsdir=${PORTNAME}/logs \
-		--with-silcd-pid-file=/var/run/silcd.pid \
-		--with-simdir=libexec/${PORTNAME}/modules
+		--with-silcd-pid-file=/var/run/silcd.pid
 INSTALLS_SHLIB=	yes
 PLIST_SUB=	INSTALL_DIR="${INSTALL_DIR}"
 PKGDEINSTALL=	${PKGINSTALL}
