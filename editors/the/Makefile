@@ -19,7 +19,9 @@ BUILD_DEPENDS=	rexx:${PORTSDIR}/lang/rexx-imc
 RUN_DEPENDS=	rexx:${PORTSDIR}/lang/rexx-imc
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--with-rexximc --with-ncurses
+CONFIGURE_ARGS=	--with-ncurses --with-rexximc \
+		--with-rexxincdir=${LOCALBASE}/include \
+		--with-rexxlibdir=${LOCALBASE}/lib
 
 post-install:
 .if !defined(NOPORTDOCS)
