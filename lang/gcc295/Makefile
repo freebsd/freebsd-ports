@@ -51,13 +51,14 @@ CONFIGURE_ARGS=	--with-gnu-as --with-gnu-ld \
 #CONFIGURE_ARGS+=	--program-suffix=-295
 CONFIGURE_ENV=	MAKEINFO="makeinfo --no-split"
 .if defined(WANT_SHAREDLIBS)
-CONFIGURE_ARGS+= --enable-shared
+CONFIGURE_ARGS+=	--enable-shared
 .endif
 .if defined(WANT_THREADS)
 #	?is this an ObjC only thing?
-CONFIGURE_ARGS+= --enable-threads=posix
+CONFIGURE_ARGS+=	--enable-threads=posix
 .endif
 ALL_TARGET=	bootstrap
+INFO=		gcc cpp
 MAN1=		cccp.1 g++295.1 gcc295.1
 
 pre-patch:
@@ -76,8 +77,8 @@ pre-configure:
 	@${CP} ${FILESDIR}/alpha-freebsd.h ${WRKSRC}/gcc/config/alpha/freebsd.h
 	@# Keep from running `autoconf' and `autoheader' since we modified
 	@# configure.in by patching it.
-	@touch ${WRKSRC}/gcc/configure
-	@touch ${WRKSRC}/gcc/cstamp-h.in
+	@${TOUCH} ${WRKSRC}/gcc/configure
+	@${TOUCH} ${WRKSRC}/gcc/cstamp-h.in
 
 pre-install:
 	${MKDIR} ${PREFIX}/info
@@ -109,7 +110,7 @@ post-install:
 .if defined(WANT_SHAREDLIBS)
 	${MV} -f ${PREFIX}/lib/libstdc++.so* ${TARGLIB}
 .endif
-.for info in cpp gcc
+.for info in ${INFO}
 	install-info ${PREFIX}/info/${info}.info ${PREFIX}/info/dir
 .endfor
 	cd ${PREFIX} ;\

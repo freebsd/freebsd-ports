@@ -10,12 +10,6 @@ bin/unprotoize295
 @comment Insert PLIST.gcc-lib here
 @comment -=[ begin PLIST.gcc-lib ]=-
 @comment -=[ end PLIST.gcc-lib ]=-
-@unexec install-info --delete %D/info/gcc.info %D/info/dir
-@unexec install-info --delete %D/info/cpp.info %D/info/dir
-info/cpp.info
-info/gcc.info
-@exec install-info %D/info/cpp.info %D/info/dir
-@exec install-info %D/info/gcc.info %D/info/dir
 @dirrm %%GNU_HOST%%/include
 @dirrm %%GNU_HOST%%
 @dirrm lib/gcc-lib/%%GNU_HOST%%/%%EGCS_REV%%/include/g++/std
