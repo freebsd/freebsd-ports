@@ -1,13 +1,29 @@
 #!/bin/sh
+#
+# $FreeBSD$
 
 if ! PREFIX=$(expr $0 : "\(/.*\)/etc/rc\.d/$(basename $0)\$"); then
     echo "$0: Cannot determine the PREFIX" >&2
     exit 1
 fi
 
+if [ -z "${source_rc_confs_defined}" ]; then
+	if [ -r /etc/defaults/rc.conf ]; then
+		. /etc/defaults/rc.conf
+		source_rc_confs
+	elif [ -r /etc/rc.conf ]; then
+		. /etc/rc.conf
+	fi
+fi
+
 case "$1" in
 start)
-	[ -x ${PREFIX}/sbin/snmpd ] && ${PREFIX}/sbin/snmpd && echo -n ' snmpd'
+	case "${net_snmpd_enable}" in
+	    [Yy][Ee][Ss])
+	    echo -n ' snmpd'
+	    ${net_snmpd_program:-${PREFIX}/sbin/snmpd} ${net_snmpd_flags}
+	    ;;
+	esac
 	;;
 stop)
 	killall snmpd && echo -n ' snmpd'
