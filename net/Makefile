@@ -98,6 +98,7 @@
     SUBDIR += nocol
     SUBDIR += ns
     SUBDIR += nslint
+    SUBDIR += nstreams
     SUBDIR += ntimelord
     SUBDIR += ntop
     SUBDIR += ntp
