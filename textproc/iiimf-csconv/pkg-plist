@@ -32,7 +32,6 @@ csconv/ctex_wcs.so
 csconv/encoding.norm
 csconv/euc_ct.so
 csconv/eucw_ct.so
-csconv/iconv.so
 csconv/iconv_relay.so
 csconv/iconv_relay_mb_wc.so
 csconv/iconv_relay_wc_mb.so
