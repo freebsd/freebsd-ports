@@ -1,0 +1,169 @@
+bin/ams
+bin/amshandler
+bin/amx
+%%RUBY_SITELIBDIR%%/amrita/ams.rb
+%%RUBY_SITELIBDIR%%/amrita/amx.rb
+%%RUBY_SITELIBDIR%%/amrita/cgikit.rb
+%%RUBY_SITELIBDIR%%/amrita/compiler.rb
+%%RUBY_SITELIBDIR%%/amrita/format.rb
+%%RUBY_SITELIBDIR%%/amrita/handlers.rb
+%%RUBY_SITELIBDIR%%/amrita/merge.rb
+%%RUBY_SITELIBDIR%%/amrita/node.rb
+%%RUBY_SITELIBDIR%%/amrita/node_expand.rb
+%%RUBY_SITELIBDIR%%/amrita/parser.rb
+%%RUBY_SITELIBDIR%%/amrita/parts.rb
+%%RUBY_SITELIBDIR%%/amrita/tag.rb
+%%RUBY_SITELIBDIR%%/amrita/template.rb
+%%RUBY_SITELIBDIR%%/amrita/xml.rb
+@dirrm %%RUBY_SITELIBDIR%%/amrita
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/ChangeLog
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/README
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/Cgi
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/Expand
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/QuickStart
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/QuickStart_ja
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/Tour
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/Tour2
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/Tour_ja
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/XML
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/amritadoc.rb
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/index.amx
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/index.rd
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/index.xml
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/index_ja.rd
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/index_ja.xml
+%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/bbs/README
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/bbs/advertize_sample.html
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/bbs/bbs.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/bbs/bbsmain.cgi
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/bbs/bbsmain.cgi.conf.sample
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/bbs/model.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/bbs/template/2ch_en/board.html
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/bbs/template/2ch_en/parts.html
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/bbs/template/2ch_en/thread.html
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/bbs/template/2ch_en/top.html
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/bbs/template/2ch_en/view.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/bbs/template/2ch_ja/board.html
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/bbs/template/2ch_ja/parts.html
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/bbs/template/2ch_ja/thread.html
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/bbs/template/2ch_ja/top.html
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/bbs/template/2ch_ja/view.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/bbs/template/2ch_ja/whatsnew.html
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/bbs/template/kari_ja/board.html
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/bbs/template/kari_ja/parts.html
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/bbs/template/kari_ja/thread.html
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/bbs/template/kari_ja/view.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/bbs/template/simple/board.html
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/bbs/template/simple/thread.html
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/bbs/template/simple/top.html
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/bbs/template/simple/view.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/bbs/template/simple/whatsnew.html
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/bbs/template/slash_en/board.html
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/bbs/template/slash_en/parts.html
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/bbs/template/slash_en/thread.html
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/bbs/template/slash_en/view.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/bbs/test/bbs.conf
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/bbs/test/testbbs.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/bbs/view.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/cgi/.cvsignore
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/cgi/.htaccess
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/cgi/amshandler
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/cgi/bmmodel.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/cgi/bookmark.ams
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/cgi/bookmark.cgi
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/cgi/bookmark.dat.sample
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/cgi/bookmark.html
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/cgi/bookmark.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/cgikit/Examples/.cvsignore
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/cgikit/Examples/CheckboxPage/CheckboxPage.ckd
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/cgikit/Examples/CheckboxPage/CheckboxPage.html
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/cgikit/Examples/CheckboxPage/CheckboxPage.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/cgikit/Examples/ConditionalPage/ConditionalPage.ckd
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/cgikit/Examples/ConditionalPage/ConditionalPage.html
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/cgikit/Examples/ConditionalPage/ConditionalPage.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/cgikit/Examples/Examples.cgi
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/cgikit/Examples/HeaderFooter/HeaderFooter.ckd
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/cgikit/Examples/HeaderFooter/HeaderFooter.html
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/cgikit/Examples/HeaderFooter/HeaderFooter.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/cgikit/Examples/HeaderFooter/HeaderFooter_ja.html
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/cgikit/Examples/IndexPage/IndexPage.ckd
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/cgikit/Examples/IndexPage/IndexPage.html
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/cgikit/Examples/IndexPage/IndexPage.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/cgikit/Examples/IntroductionPage/IntroductionPage.ckd
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/cgikit/Examples/IntroductionPage/IntroductionPage.html
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/cgikit/Examples/IntroductionPage/IntroductionPage.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/cgikit/Examples/MainPage/MainPage.ckd
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/cgikit/Examples/MainPage/MainPage.html
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/cgikit/Examples/MainPage/MainPage.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/cgikit/Examples/RepetitionPage/RepetitionPage.ckd
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/cgikit/Examples/RepetitionPage/RepetitionPage.html
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/cgikit/Examples/RepetitionPage/RepetitionPage.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/cgikit/Examples/SourcePage/SourcePage.ckd
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/cgikit/Examples/SourcePage/SourcePage.html
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/cgikit/Examples/SourcePage/SourcePage.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/cgikit/Examples/SourcePage/SourcePage_ja.html
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/cgikit/Examples/StringPage/StringPage.ckd
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/cgikit/Examples/StringPage/StringPage.html
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/cgikit/Examples/StringPage/StringPage.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/cgikit/Examples/TextFieldPage/TextFieldPage.ckd
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/cgikit/Examples/TextFieldPage/TextFieldPage.html
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/cgikit/Examples/TextFieldPage/TextFieldPage.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/cgikit/Examples/readme.txt
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/cgikit/HelloWorld/HelloWorld.cgi
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/cgikit/HelloWorld/MainPage/MainPage.ckd
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/cgikit/HelloWorld/MainPage/MainPage.html
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/cgikit/HelloWorld/MainPage/MainPage.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/hello/conditional.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/hello/hello.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/hello/list.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/hello/table.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/hello/template.html
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/tour/amstest.ams
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/tour/amsyaml.ams
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/tour/amxtest.amx
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/tour/amxtest.xml
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/tour/filelist.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/tour/filelist2.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/tour/index.html
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/tour/makeurl.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/tour/makeurl2.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/tour/merge_template.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/tour/merge_template2.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/tour/parts1.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/tour/parts2.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/tour/precompile.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/tour/proc.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/tour/rexml_doc.xml
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/tour/sanitizer.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/tour/time.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/tour/xhtml.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/tour/xml1.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/tour/xml2.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/tour/xml3.rb
+%%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/tour
+%%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/hello
+%%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/cgikit/HelloWorld/MainPage
+%%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/cgikit/HelloWorld
+%%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/cgikit/Examples/TextFieldPage
+%%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/cgikit/Examples/StringPage
+%%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/cgikit/Examples/SourcePage
+%%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/cgikit/Examples/RepetitionPage
+%%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/cgikit/Examples/MainPage
+%%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/cgikit/Examples/IntroductionPage
+%%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/cgikit/Examples/IndexPage
+%%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/cgikit/Examples/HeaderFooter
+%%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/cgikit/Examples/ConditionalPage
+%%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/cgikit/Examples/CheckboxPage
+%%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/cgikit/Examples
+%%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/cgikit
+%%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/cgi
+%%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/bbs/test
+%%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/bbs/template/slash_en
+%%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/bbs/template/simple
+%%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/bbs/template/kari_ja
+%%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/bbs/template/2ch_ja
+%%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/bbs/template/2ch_en
+%%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/bbs/template
+%%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/bbs
+%%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%
