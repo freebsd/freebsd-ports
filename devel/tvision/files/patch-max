@@ -1,0 +1,3761 @@
+Index: demo/ascii.cc
+===================================================================
+RCS file: /usr/home/cvs/repository/libh/lib/tvision/work/tvision-0.8/demo/ascii.cc,v
+retrieving revision 1.1
+retrieving revision 1.4
+diff -u -r1.1 -r1.4
+--- demo/ascii.cc	20 Dec 2002 12:06:16 -0000	1.1
++++ demo/ascii.cc	25 Dec 2002 14:10:14 -0000	1.4
+@@ -12,11 +12,12 @@
+  *      Copyright (c) 1994 by Borland International
+  *      All Rights Reserved.
+  *
+- */
+-/*
+  * Modified by Sergio Sigala <sergio@sigala.it>
++ * Modified by Max Okumoto <okumoto@ucsd.edu>
+  */
+ 
++#include "ascii.h"
++
+ #define Uses_TRect
+ #define Uses_TEvent
+ #define Uses_TKeys
+@@ -32,11 +33,15 @@
+ #include <string.h>
+ #include <stdlib.h>
+ #include <ctype.h>
+-#include <strstream.h>
+-#include <iomanip.h>
+-
+-#include "ascii.h"
+ 
++#include <iomanip>
++#include <ios>
++#include <sstream>
++#include <string>
++
++using std::ios;
++using std::ostringstream;
++using std::string;
+ 
+ //
+ // TTable functions
+@@ -207,16 +212,16 @@
+ {
+     TDrawBuffer buf;
+     char        color = getColor(6);
+-    char        str[80];
+-    ostrstream  statusStr( str, sizeof str );
++    string		str;
++    ostringstream	statusStr(str);
+ 
+     statusStr
+       << "  Char: " << (char ) ((asciiChar == 0) ? 0x20 : asciiChar)
+-      << " Decimal: " << setw(3) << (int) asciiChar
+-      << " Hex " << hex << setiosflags(ios::uppercase)
+-      << setw(2) << (int) asciiChar << "     " << ends;
++      << " Decimal: " << std::setw(3) << (int) asciiChar
++      << " Hex " << std::hex << std::setiosflags(ios::uppercase)
++      << std::setw(2) << (int) asciiChar << "     " << std::ends;
+ 
+-    buf.moveStr(0, str, color);
++    buf.moveStr(0, str.c_str(), color);
+     writeLine(0, 0, 32, 1, buf);
+ }
+ 
+Index: demo/ascii.h
+===================================================================
+RCS file: /usr/home/cvs/repository/libh/lib/tvision/work/tvision-0.8/demo/ascii.h,v
+retrieving revision 1.1
+retrieving revision 1.3
+diff -u -r1.1 -r1.3
+--- demo/ascii.h	20 Dec 2002 12:06:16 -0000	1.1
++++ demo/ascii.h	25 Dec 2002 14:10:14 -0000	1.3
+@@ -9,10 +9,16 @@
+  *      Copyright (c) 1994 by Borland International
+  *      All Rights Reserved.
+  *
++ * Modified by Max Okumoto <okumoto@ucsd.edu>
+  */
+ 
+ #if !defined( __ASCII_H )
+ #define __ASCII_H
++
++#define Uses_TEvent
++#define Uses_TWindow
++#define Uses_TView
++#include <tvision/tv.h>
+ 
+ const int cmAsciiTableCmdBase = 910;
+ const int cmCharFocused       =   0;
+Index: demo/calc.cc
+===================================================================
+RCS file: /usr/home/cvs/repository/libh/lib/tvision/work/tvision-0.8/demo/calc.cc,v
+retrieving revision 1.1
+retrieving revision 1.5
+diff -u -r1.1 -r1.5
+--- demo/calc.cc	20 Dec 2002 12:06:16 -0000	1.1
++++ demo/calc.cc	25 Dec 2002 14:10:15 -0000	1.5
+@@ -10,9 +10,8 @@
+  *      Copyright (c) 1994 by Borland International
+  *      All Rights Reserved.
+  *
+- */
+-/*
+  * Modified by Sergio Sigala <sergio@sigala.it>
++ * Modified by Max Okumoto <okumoto@ucsd.edu>
+  */
+ 
+ #define Uses_TRect
+@@ -29,14 +28,17 @@
+ __link( RDialog )
+ __link( RButton )
+ 
++#include "calc.h"
++
+ #include <string.h>
+ #include <stdlib.h>
+ #include <ctype.h>
+-#include <strstream.h>
+-#include <iomanip.h>
+ 
+-#include "calc.h"
++#include <sstream>
++#include <iomanip>
+ 
++using std::string;
++using std::ostringstream;
+ 
+ #define cpCalcPalette   "\x13"
+ 
+@@ -158,27 +160,25 @@
+ 
+ void TCalcDisplay::setDisplay(double r)
+ {
+-    int  len;
+-    char str[64];
+-    ostrstream displayStr( str, sizeof str );
++    string str;
++    ostringstream displayStr(str);
+ 
+     if(r < 0.0)
+         {
+         sign = '-';
+-        displayStr << -r << ends;
++        displayStr << -r << std::ends;
+         }
+     else
+         {
+-        displayStr << r << ends;
++        displayStr << r << std::ends;
+         sign = ' ';
+         }
+ 
+-    len = strlen(str) - 1;          // Minus one so we can use as an index.
+-
+-    if(len > DISPLAYLEN)
++    int len = str.length();
++    if (len > DISPLAYLEN)
+         error();
+     else
+-        strcpy(number, str);
++        strcpy(number, str.c_str());
+ }
+ 
+ 
+Index: demo/calendar.cc
+===================================================================
+RCS file: /usr/home/cvs/repository/libh/lib/tvision/work/tvision-0.8/demo/calendar.cc,v
+retrieving revision 1.1
+retrieving revision 1.3
+diff -u -r1.1 -r1.3
+--- demo/calendar.cc	20 Dec 2002 12:06:16 -0000	1.1
++++ demo/calendar.cc	25 Dec 2002 14:10:15 -0000	1.3
+@@ -9,9 +9,8 @@
+  *      Copyright (c) 1994 by Borland International
+  *      All Rights Reserved.
+  *
+- */
+-/*
+  * Modified by Sergio Sigala <sergio@sigala.it>
++ * Modified by Max Okumoto <okumoto@ucsd.edu>
+  */
+ 
+ #define Uses_TRect
+@@ -26,15 +25,19 @@
+ __link( RView )
+ __link( RWindow )
+ 
++#include "calendar.h"
++
+ #include <string.h>
+ #include <stdlib.h>
+ #include <ctype.h>
+-#include <strstream.h>
+-#include <iomanip.h>
+ #include <time.h>
+ 
+-#include "calendar.h"
++#include <iomanip>
++#include <sstream>
++#include <string>
+ 
++using std::string;
++using std::ostringstream;
+ 
+ static char *monthNames[] = {
+     "",
+@@ -131,9 +134,9 @@
+ }
+ 
+ 
+-void TCalendarView::draw()
++void
++TCalendarView::draw()
+ {
+-    char str[23];
+     char current = (char)(1 - dayOfWeek(1, month, year));
+     char days = (char)( daysInMonth[month] +
+                         ((year % 4 == 0 && month == 2) ? 1 : 0) );
+@@ -146,38 +149,40 @@
+ 
+     buf.moveChar(0, ' ', color, 22);
+ 
+-    ostrstream s1( str, sizeof str);
+-    s1 << setw(9) << monthNames[month] << " " << setw(4) << year
+-      << " " << (char) 30 << "  " << (char) 31 << " " << ends;
++    ostringstream s1;
++    s1  << std::setw(9) << monthNames[month]
++	<< " " << std::setw(4) << year
++	<< " " << (char) 30
++	<< "  " << (char) 31 <<
++	" " << std::ends;
+ 
+-    buf.moveStr(0, str, color);
++    buf.moveStr(0, s1.str().c_str(), color);
+     writeLine(0, 0, 22, 1, buf);
+ 
+     buf.moveChar(0, ' ', color, 22);
+     buf.moveStr(0, "Su Mo Tu We Th Fr Sa", color);
+     writeLine(0, 1, 22, 1, buf);
+ 
+-    for(i = 1; i <= 6; i++)
+-        {
++    for (i = 1; i <= 6; i++) {
+         buf.moveChar(0, ' ', color, 22);
+-        for(j = 0; j <= 6; j++)
+-            {
+-            if(current < 1 || current > days)
++        for(j = 0; j <= 6; j++) {
++            if (current < 1 || current > days) {
+                 buf.moveStr((short)(j*3), "   ", color);
+-            else
+-                {
+-                ostrstream s2( str, sizeof str );
+-		s2 << setw(2) << (int) current << ends;
+-                if(year == curYear && month == curMonth && current ==
+-			(int)curDay)
+-                    buf.moveStr((short)(j*3), str, boldColor);
+-                else
+-                    buf.moveStr((short)(j*3), str, color);
+-                }
++            } else {
++                ostringstream s2;
++		s2 << std::setw(2) << (int) current << std::ends;
++                if (year == curYear &&
++		    month == curMonth &&
++		    current == (int)curDay) {
++                    buf.moveStr((short)(j*3), s2.str().c_str(), boldColor);
++                } else {
++                    buf.moveStr((short)(j*3), s2.str().c_str(), color);
++		}
++	    }
+             current++;
+-            }
++	}
+         writeLine(0, (short)(i+1), 22, 1, buf);
+-        }
++    }
+ }
+ 
+ 
+Index: demo/fileview.cc
+===================================================================
+RCS file: /usr/home/cvs/repository/libh/lib/tvision/work/tvision-0.8/demo/fileview.cc,v
+retrieving revision 1.1
+retrieving revision 1.4
+diff -u -r1.1 -r1.4
+--- demo/fileview.cc	20 Dec 2002 12:06:16 -0000	1.1
++++ demo/fileview.cc	27 Dec 2002 23:16:40 -0000	1.4
+@@ -9,9 +9,8 @@
+  *      Copyright (c) 1994 by Borland International
+  *      All Rights Reserved.
+  *
+- */
+-/*
+  * Modified by Sergio Sigala <sergio@sigala.it>
++ * Modified by Max Okumoto <okumoto@ucsd.edu>
+  */
+  
+ #define Uses_MsgBox
+@@ -26,16 +25,17 @@
+ __link(RScroller)
+ __link(RScrollBar)
+ 
++#include "tvcmds.h"
++#include "fileview.h"
++
+ #include <stdio.h>
+ #include <string.h>
+ #include <stdlib.h>
+ #include <ctype.h>
+ 
+-#include <fstream.h>
+-
+-#include "tvcmds.h"
+-#include "fileview.h"
++#include <fstream>
+ 
++using std::ifstream;
+ 
+ const char * const TFileViewer::name = "TFileViewer";
+ 
+@@ -107,10 +107,7 @@
+     else
+         {
+         char line[maxLineLength+1];
+-        while( !lowMemory() &&
+-               !fileToView.eof() && 
+-               fileToView.get( line, sizeof line ) != 0 
+-             )
++        while(!fileToView.eof() && fileToView.get( line, sizeof line ) != 0)
+             {
+             char c;
+             fileToView.get(c);      // grab trailing newline
+Index: demo/gadgets.cc
+===================================================================
+RCS file: /usr/home/cvs/repository/libh/lib/tvision/work/tvision-0.8/demo/gadgets.cc,v
+retrieving revision 1.1
+retrieving revision 1.3
+diff -u -r1.1 -r1.3
+--- demo/gadgets.cc	20 Dec 2002 12:06:16 -0000	1.1
++++ demo/gadgets.cc	25 Dec 2002 14:10:15 -0000	1.3
+@@ -14,9 +14,8 @@
+  *      Copyright (c) 1994 by Borland International
+  *      All Rights Reserved.
+  *
+- */
+-/*
+  * Modified by Sergio Sigala <sergio@sigala.it>
++ * Modified by Max Okumoto <okumoto@ucsd.edu>
+  */
+ 
+ #define Uses_TRect
+@@ -24,14 +23,15 @@
+ #define Uses_TDrawBuffer
+ #include <tvision/tv.h>
+ 
++#include "gadgets.h"
++
+ #include <string.h>
+ #include <stdlib.h>
+ #include <ctype.h>
+-#include <strstream.h>
+-#include <iomanip.h>
+ #include <time.h>
+ 
+-#include "gadgets.h"
++#include <sstream>
++#include <iomanip>
+ 
+ //extern "C" unsigned long farcoreleft( void );
+ 
+@@ -84,7 +84,7 @@
+     struct farheapinfo heap;
+ #endif
+ 
+-    ostrstream totalStr( heapStr, sizeof heapStr);
++    ostringstream totalStr( heapStr, sizeof heapStr);
+ 
+ //#if defined( __DPMI32__ )
+ //    switch( _HEAPEMPTY )
+Index: demo/mousedlg.cc
+===================================================================
+RCS file: /usr/home/cvs/repository/libh/lib/tvision/work/tvision-0.8/demo/mousedlg.cc,v
+retrieving revision 1.1
+retrieving revision 1.3
+diff -u -r1.1 -r1.3
+--- demo/mousedlg.cc	20 Dec 2002 12:06:16 -0000	1.1
++++ demo/mousedlg.cc	25 Dec 2002 14:10:15 -0000	1.3
+@@ -11,9 +11,8 @@
+  *      Copyright (c) 1994 by Borland International
+  *      All Rights Reserved.
+  *
+- */
+-/*
+  * Modified by Sergio Sigala <sergio@sigala.it>
++ * Modified by Max Okumoto <okumoto@ucsd.edu>
+  */
+ 
+ #define Uses_TRect
+@@ -29,14 +28,11 @@
+ #define Uses_TEventQueue
+ #include <tvision/tv.h>
+ 
++#include "mousedlg.h"
++
+ #include <string.h>
+ #include <stdlib.h>
+ #include <ctype.h>
+-#include <strstream.h>
+-#include <iomanip.h>
+-
+-#include "mousedlg.h"
+-
+ 
+ #define cpMousePalette "\x07\x08"
+ 
+Index: demo/puzzle.cc
+===================================================================
+RCS file: /usr/home/cvs/repository/libh/lib/tvision/work/tvision-0.8/demo/puzzle.cc,v
+retrieving revision 1.1
+retrieving revision 1.3
+diff -u -r1.1 -r1.3
+--- demo/puzzle.cc	20 Dec 2002 12:06:16 -0000	1.1
++++ demo/puzzle.cc	25 Dec 2002 14:10:15 -0000	1.3
+@@ -9,9 +9,8 @@
+  *      Copyright (c) 1994 by Borland International
+  *      All Rights Reserved.
+  *
+- */
+-/*
+  * Modified by Sergio Sigala <sergio@sigala.it>
++ * Modified by Max Okumoto <okumoto@ucsd.edu>
+  */
+ 
+ #define Uses_TRect
+@@ -26,20 +25,16 @@
+ __link( RView )
+ __link( RWindow )
+ 
++#include "puzzle.h"
++
+ #include <string.h>
+ #include <stdio.h>	/* SS: for sprintf(...) */
+ #include <stdlib.h>
+ #include <ctype.h>
+-#include <strstream.h>
+-#include <iomanip.h>
+ #include <time.h>
+ #include <unistd.h>
+ 
+-#include "puzzle.h"
+-
+-
+ #define cpPuzzlePalette "\x06\x07"
+-
+ 
+ //
+ // TPuzzleView functions & static variables
+Index: demo/tvdemo1.cc
+===================================================================
+RCS file: /usr/home/cvs/repository/libh/lib/tvision/work/tvision-0.8/demo/tvdemo1.cc,v
+retrieving revision 1.1
+retrieving revision 1.4
+diff -u -r1.1 -r1.4
+--- demo/tvdemo1.cc	20 Dec 2002 12:06:16 -0000	1.1
++++ demo/tvdemo1.cc	25 Dec 2002 14:10:15 -0000	1.4
+@@ -9,9 +9,8 @@
+  *      Copyright (c) 1994 by Borland International
+  *      All Rights Reserved.
+  *
+- */
+-/*
+  * Modified by Sergio Sigala <sergio@sigala.it>
++ * Modified by Max Okumoto <okumoto@ucsd.edu>
+  */
+ 
+ #define Uses_TView
+@@ -40,6 +39,8 @@
+ #include <stdio.h>
+ #include <string.h>
+ 
++using std::ios;
++
+ /* SS: changed */
+ 
+ //#ifdef __DPMI32__
+@@ -135,7 +136,7 @@
+             if ((event.message.command == cmHelp) && ( helpInUse == False)) 
+                 {
+                 helpInUse = True;
+-                helpStrm = new fpstream(HELP_FILENAME, ios::in|ios::bin);
++                helpStrm = new fpstream(HELP_FILENAME, ios::in|ios::binary);
+                 hFile = new THelpFile(*helpStrm);
+                 if (!helpStrm)
+                     {
+@@ -219,7 +220,7 @@
+         else
+         {
+ 	fclose(fp);
+-        fpstream *f = new fpstream("TVDEMO.DST", ios::in|ios::bin);
++        fpstream *f = new fpstream("TVDEMO.DST", ios::in|ios::binary);
+         if( !f )
+             messageBox("Could not open desktop file", mfOKButton | mfError);
+         else
+@@ -238,7 +239,7 @@
+ 
+ void TVDemo::saveDesktop()
+ {
+-    fpstream *f = new fpstream("TVDEMO.DST", ios::out|ios::bin);
++    fpstream *f = new fpstream("TVDEMO.DST", ios::out|ios::binary);
+ 
+     if( f )
+         {
+Index: lib/Makefile.am
+===================================================================
+RCS file: /usr/home/cvs/repository/libh/lib/tvision/work/tvision-0.8/lib/Makefile.am,v
+retrieving revision 1.1
+retrieving revision 1.2
+diff -u -r1.1 -r1.2
+--- lib/Makefile.am	20 Dec 2002 12:06:20 -0000	1.1
++++ lib/Makefile.am	27 Dec 2002 23:16:43 -0000	1.2
+@@ -13,7 +13,7 @@
+ CLEANFILES = tvision
+ 
+ pkginclude_HEADERS = \
+-app.h buffers.h colorsel.h dialogs.h drawbuf.h editors.h \
++app.h colorsel.h dialogs.h drawbuf.h editors.h \
+ help.h helpbase.h menus.h msgbox.h objects.h outline.h resource.h \
+ stddlg.h system.h textview.h tkeys.h tobjstrm.h ttypes.h tv.h \
+ tvconfig.h tvobjs.h util.h validate.h views.h
+@@ -37,7 +37,7 @@
+ TSortedCollection.cc TStaticText.cc TStatusLine.cc TStrListMaker.cc \
+ TStringCollection.cc TValidator.cc TView.cc TWindow.cc allnames.cc asm.cc \
+ colorsel.cc drivers.cc editstat.cc help.cc helpbase.cc histlist.cc menu.cc \
+-misc.cc msgbox.cc new.cc palette.cc sall.cc stddlg.cc system.cc textview.cc \
++misc.cc msgbox.cc palette.cc sall.cc stddlg.cc system.cc textview.cc \
+ tobjstrm.cc tvtext.cc
+ 
+ libtvision_la_SOURCES = tvision TApplication.cc TBackground.cc TButton.cc \
+@@ -53,5 +53,5 @@
+ TSortedCollection.cc TStaticText.cc TStatusLine.cc TStrListMaker.cc \
+ TStringCollection.cc TValidator.cc TView.cc TWindow.cc allnames.cc asm.cc \
+ colorsel.cc drivers.cc editstat.cc help.cc helpbase.cc histlist.cc menu.cc \
+-misc.cc msgbox.cc new.cc palette.cc sall.cc stddlg.cc system.cc textview.cc \
++misc.cc msgbox.cc palette.cc sall.cc stddlg.cc system.cc textview.cc \
+ tobjstrm.cc tvtext.cc
+Index: lib/TApplication.cc
+===================================================================
+RCS file: /usr/home/cvs/repository/libh/lib/tvision/work/tvision-0.8/lib/TApplication.cc,v
+retrieving revision 1.1
+retrieving revision 1.2
+diff -u -r1.1 -r1.2
+--- lib/TApplication.cc	20 Dec 2002 12:06:20 -0000	1.1
++++ lib/TApplication.cc	27 Dec 2002 23:16:43 -0000	1.2
+@@ -14,9 +14,6 @@
+ #define Uses_TObject
+ #define Uses_TMouse
+ #define Uses_TApplication
+-#ifndef __UNPATCHED
+-#define Uses_TVMemMgr
+-#endif
+ #include <tvision/tv.h>
+ 
+ void initHistory();
+@@ -41,9 +38,6 @@
+     /* SS: changed */
+ 
+     TScreen::suspend();
+-#ifndef __UNPATCHED
+-    TVMemMgr::suspend();       // Release discardable memory.
+-#endif
+ }
+ 
+ void TApplication::resume()
+Index: lib/TFileEditor.cc
+===================================================================
+RCS file: /usr/home/cvs/repository/libh/lib/tvision/work/tvision-0.8/lib/TFileEditor.cc,v
+retrieving revision 1.1
+retrieving revision 1.5
+diff -u -r1.1 -r1.5
+--- lib/TFileEditor.cc	20 Dec 2002 12:06:20 -0000	1.1
++++ lib/TFileEditor.cc	25 Dec 2002 14:10:17 -0000	1.5
+@@ -7,6 +7,7 @@
+  * All Rights Reserved.
+  *
+  * Modified by Sergio Sigala <sergio@sigala.it>
++ * Modified by Max Okumoto <okumoto@ucsd.edu>
+  */
+ 
+ #define Uses_TProgram
+@@ -18,12 +19,18 @@
+ #define Uses_ipstream
+ #include <tvision/tv.h>
+ 
+-#include <fstream.h>
++#include <fstream>
++
+ #include <limits.h>
+ #include <stdio.h>
+ #include <stdlib.h>
+ #include <string.h>
+ 
++using std::ifstream;
++using std::ios;
++using std::ofstream;
++using std::streampos;
++
+ inline ushort min( ushort u1, ushort u2 )
+ {
+     return u1 < u2 ? u1 : u2;
+@@ -89,7 +96,7 @@
+ 
+ Boolean TFileEditor::loadFile()
+ {
+-    ifstream f( fileName, ios::in | ios::bin );
++    ifstream f( fileName, ios::in | ios::binary );
+     if( !f )
+         {
+         setBufLen( 0 );
+@@ -97,7 +104,7 @@
+         }
+     else
+         {
+-        uint fSize = filelength( f.rdbuf()->fd() );
++        streampos fSize = filelength(f);
+         if( setBufSize(fSize) == False )
+             {
+             editorDialog( edOutOfMemory );
+@@ -161,7 +168,7 @@
+         rename( fileName, backupName );
+         }
+ 
+-    ofstream f( fileName, ios::out | ios::bin );
++    ofstream f( fileName, ios::out | ios::binary );
+ 
+     if( !f )
+         {
+Index: lib/TFileList.cc
+===================================================================
+RCS file: /usr/home/cvs/repository/libh/lib/tvision/work/tvision-0.8/lib/TFileList.cc,v
+retrieving revision 1.1
+retrieving revision 1.2
+diff -u -r1.1 -r1.2
+--- lib/TFileList.cc	20 Dec 2002 12:06:20 -0000	1.1
++++ lib/TFileList.cc	27 Dec 2002 23:16:43 -0000	1.2
+@@ -9,7 +9,6 @@
+  * Modified by Sergio Sigala <sergio@sigala.it>
+  */
+ 
+-#define Uses_TVMemMgr
+ #define Uses_MsgBox
+ #define Uses_TFileList
+ #define Uses_TRect
+@@ -130,21 +129,7 @@
+ 		t.ft_year = broken->tm_year - 80;
+ 		time = *(long *) &t;
+ 	}
+-
+-    void *operator new( size_t );
+-
+ };
+-
+-void *DirSearchRec::operator new( size_t sz )
+-{
+-    void *temp = ::operator new( sz );
+-    if( TVMemMgr::safetyPoolExhausted() )
+-        {
+-        delete temp;
+-        temp = 0;
+-        }
+-    return temp;
+-}
+ 
+ void TFileList::readDirectory( const char *aWildCard )
+ {
+Index: lib/TGroup.cc
+===================================================================
+RCS file: /usr/home/cvs/repository/libh/lib/tvision/work/tvision-0.8/lib/TGroup.cc,v
+retrieving revision 1.1
+retrieving revision 1.2
+diff -u -r1.1 -r1.2
+--- lib/TGroup.cc	20 Dec 2002 12:06:20 -0000	1.1
++++ lib/TGroup.cc	27 Dec 2002 23:16:43 -0000	1.2
+@@ -16,7 +16,6 @@
+ #define Uses_TEvent
+ #define Uses_opstream
+ #define Uses_ipstream
+-#define Uses_TVMemMgr
+ #include <tvision/tv.h>
+ 
+ TView *TheTopView = 0;
+Index: lib/TIndicator.cc
+===================================================================
+RCS file: /usr/home/cvs/repository/libh/lib/tvision/work/tvision-0.8/lib/TIndicator.cc,v
+retrieving revision 1.1
+retrieving revision 1.5
+diff -u -r1.1 -r1.5
+--- lib/TIndicator.cc	20 Dec 2002 12:06:20 -0000	1.1
++++ lib/TIndicator.cc	25 Dec 2002 14:10:17 -0000	1.5
+@@ -7,6 +7,7 @@
+  * All Rights Reserved.
+  *
+  * Modified by Sergio Sigala <sergio@sigala.it>
++ * Modified by Max Okumoto <okumoto@ucsd.edu>
+  */
+ 
+ #define Uses_TIndicator
+@@ -18,7 +19,13 @@
+ #include <tvision/tv.h>
+ 
+ #include <string.h>
+-#include <strstream.h>
++
++#include <sstream>
++#include <string>
++
++using std::ends;
++using std::ostringstream;
++using std::string;
+ 
+ #define cpIndicator "\x02\x03"
+ 
+@@ -32,7 +39,6 @@
+ {
+     uchar color, frame;
+     TDrawBuffer b;
+-    char s[15];
+ 
+     if( (state & sfDragging) == 0 )
+         {
+@@ -48,12 +54,14 @@
+     b.moveChar( 0, frame, color, size.x );
+     if( modified )
+         b.putChar( 0, 15 );
+-    ostrstream os( s, 15 );
+-
+-    os << ' ' << (location.y+1)
+-       << ':' << (location.x+1) << ' ' << ends;
+ 
+-    b.moveCStr( 8-int(strchr(s, ':')-s), s, color);
++    string s;
++    ostringstream os(s);
++    os << ' ' << (location.y+1) << ':' << (location.x+1) << ' ' << ends;
++
++    b.moveCStr(8 - int(strchr(s.c_str(), ':') - s.c_str()),
++		s.c_str(),
++		color);
+     writeBuf(0, 0, size.x, 1, b);
+ }
+ 
+Index: lib/TMemo.cc
+===================================================================
+RCS file: /usr/home/cvs/repository/libh/lib/tvision/work/tvision-0.8/lib/TMemo.cc,v
+retrieving revision 1.1
+retrieving revision 1.4
+diff -u -r1.1 -r1.4
+--- lib/TMemo.cc	20 Dec 2002 12:06:20 -0000	1.1
++++ lib/TMemo.cc	25 Dec 2002 14:10:17 -0000	1.4
+@@ -7,6 +7,7 @@
+  * All Rights Reserved.
+  *
+  * Modified by Sergio Sigala <sergio@sigala.it>
++ * Modified by Max Okumoto <okumoto@ucsd.edu>
+  */
+ 
+ #define Uses_TKeys
+@@ -19,6 +20,8 @@
+ 
+ #include <string.h>
+ 
++using std::ios;
++
+ #define cpMemo      "\x1A\x1B"
+ 
+ TMemo::TMemo( const TRect& bounds,
+@@ -86,7 +89,7 @@
+         setBufLen( length );
+         }
+     else
+-        is.seekg( is.tellg() + length );
++        is.seekg( length, ios::cur );
+     return this;
+ }
+ 
+Index: lib/TProgram.cc
+===================================================================
+RCS file: /usr/home/cvs/repository/libh/lib/tvision/work/tvision-0.8/lib/TProgram.cc,v
+retrieving revision 1.1
+retrieving revision 1.2
+diff -u -r1.1 -r1.2
+--- lib/TProgram.cc	20 Dec 2002 12:06:20 -0000	1.1
++++ lib/TProgram.cc	27 Dec 2002 23:16:43 -0000	1.2
+@@ -22,9 +22,6 @@
+ #define Uses_TStatusDef
+ #define Uses_TStatusItem
+ #define Uses_TDialog
+-#ifndef __UNPATCHED
+-#define Uses_TVMemMgr
+-#endif
+ #include <tvision/tv.h>
+ 
+ // Public variables
+@@ -90,9 +87,6 @@
+     menuBar = 0;
+     deskTop = 0;
+     TGroup::shutDown();
+-#ifndef __UNPATCHED
+-    TVMemMgr::clearSafetyPool();    // Release the safety pool buffer.
+-#endif
+ }
+ 
+ Boolean TProgram::canMoveFocus()
+@@ -309,11 +303,6 @@
+    return NULL;
+ }
+ 
+-
+-void TProgram::outOfMemory()
+-{
+-}
+-
+ void TProgram::putEvent( TEvent & event )
+ {
+     pending = event;
+@@ -339,12 +328,6 @@
+ {
+     if( p == 0 )
+         return 0;
+-    if( lowMemory() )
+-        {
+-        destroy( p );
+-        outOfMemory();
+-        return 0;
+-        }
+     if( !p->valid( cmValid ) )
+         {
+         destroy( p );
+Index: lib/TResourceFile.cc
+===================================================================
+RCS file: /usr/home/cvs/repository/libh/lib/tvision/work/tvision-0.8/lib/TResourceFile.cc,v
+retrieving revision 1.1
+retrieving revision 1.7
+diff -u -r1.1 -r1.7
+--- lib/TResourceFile.cc	20 Dec 2002 12:06:20 -0000	1.1
++++ lib/TResourceFile.cc	25 Dec 2002 14:10:17 -0000	1.7
+@@ -7,6 +7,7 @@
+  * All Rights Reserved.
+  *
+  * Modified by Sergio Sigala <sergio@sigala.it>
++ * Modified by Max Okumoto <okumoto@ucsd.edu>
+  */
+ 
+ #define Uses_TResourceFile
+@@ -17,88 +18,80 @@
+ #define Uses_TResourceCollection
+ #include <tvision/tv.h>
+ 
++#include <ios>
++
++using std::ios;
++using std::streampos;
++
+ /*
+  * SS: Warning, this file is non-portable.  It is not used by any of the
+  * classes in the library.
+  */
+ const long rStreamMagic = 0x52504246uL; // 'FBPR'
+ 
+-struct Count_type
+-{
+-    ushort lastCount;
+-    ushort pageCount;
+-};
+ 
+-struct Info_type
+-{
+-    ushort infoType;
+-    long infoSize;
+-};
+-
+-struct THeader
+-{
+-    ushort signature;
+-    union
+-        {
+-        Count_type count;
+-        Info_type info;
+-        };
+-};
++TResourceFile::TResourceFile( fpstream *aStream )
++    : TObject(),
++      stream(aStream),
++      basePos(stream->tellp())
++{
++    struct Count_type {
++	ushort lastCount;
++	ushort pageCount;
++    };
++
++    struct Info_type {
++	ushort infoType;
++	long infoSize;
++    };
++
++    struct THeader {
++	ushort signature;
++	union {
++	    Count_type count;
++	    Info_type info;
++	};
++    };
++
++    streampos streamSize = filelength(*stream);
++    THeader header;
++    int found = 0;
+ 
+-
+-TResourceFile::TResourceFile( fpstream *aStream ) : TObject()
+-{
+-    THeader *header;
+-    int handle;
+-    int found;
+     int repeat;
+-    long streamSize;
+-
+-    stream = aStream;
+-    basePos = stream->tellp();
+-    handle = stream->rdbuf()->fd();
+-    streamSize = filelength(handle);
+-    header = new THeader;
+-    found = 0;
+     do {
+        repeat = 0;
+        if (basePos <= (streamSize - (long)sizeof(THeader)))
+            {
+            stream->seekg(basePos, ios::beg);
+-           stream->readBytes(header, sizeof(THeader));
+-           if (header->signature == 0x5a4d)
++           stream->readBytes(&header, sizeof(THeader));
++           if (header.signature == 0x5a4d)
+                {
+-               basePos += ((header->count.pageCount * 512L) -
+-                          (-header->count.lastCount & 511));
++               basePos += ((header.count.pageCount * 512L) -
++                          (-header.count.lastCount & 511));
+                repeat = 1;
+                }
+-           else if (header->signature == 0x4246)
++           else if (header.signature == 0x4246)
+                {
+-               if (header->info.infoType == 0x5250)
++               if (header.info.infoType == 0x5250)
+                    found = 1;
+                else
+                    {
+                    basePos +=
+-                      header->info.infoSize + 16 - (header->info.infoSize)%16;
++                      header.info.infoSize + 16 - (header.info.infoSize)%16;
+                    repeat = 1;
+                    }
+                }
+            }
+-        } while (repeat);
++    } while (repeat);
+ 
+-    delete header;
+-
+-    if (found)
+-    {
+-        stream->seekg(basePos + sizeof(long) * 2, ios::beg);
+-        *stream >> indexPos;
+-        stream->seekg(basePos + indexPos, ios::beg);
+-        *stream >> index;
+-    }
+-    else
+-    {
+-        indexPos =  sizeof(long) * 3;
+-        index = new TResourceCollection(0, 8);
++    if (found) {
++	stream->seekg(basePos + sizeof(long) * 2, ios::beg);
++	*stream >> indexPos;
++	stream->seekg(basePos + indexPos, ios::beg);
++	*stream >> index;
++    } else {
++	indexPos =  sizeof(long) * 3;
++	index = new TResourceCollection(0, 8);
+     }
+ }
+ 
+@@ -127,16 +120,17 @@
+ 
+ void TResourceFile::flush()
+ {
+-    long lenRez;
+-
+-    if (modified == True)
+-    {
++    if (modified == True) {
+         stream->seekp(basePos + indexPos, ios::beg);
+         *stream << index;
+-        lenRez =  stream->tellp() - basePos -  sizeof(long) * 2;
++#if 1
++	assert(0);	/* XXX */
++#else
++	long lenRez =  stream->tellp() - basePos -  sizeof(long) * 2;
+         stream->seekp(basePos, ios::beg);
+         *stream << rStreamMagic;
+         *stream << lenRez;
++#endif
+         *stream << indexPos;
+         stream->flush();
+         modified = False;
+Index: lib/TStrListMaker.cc
+===================================================================
+RCS file: /usr/home/cvs/repository/libh/lib/tvision/work/tvision-0.8/lib/TStrListMaker.cc,v
+retrieving revision 1.1
+retrieving revision 1.4
+diff -u -r1.1 -r1.4
+--- lib/TStrListMaker.cc	20 Dec 2002 12:06:20 -0000	1.1
++++ lib/TStrListMaker.cc	25 Dec 2002 14:10:17 -0000	1.4
+@@ -7,6 +7,7 @@
+  * All Rights Reserved.
+  *
+  * Modified by Sergio Sigala <sergio@sigala.it>
++ * Modified by Max Okumoto <okumoto@ucsd.edu>
+  */
+ 
+ #define Uses_TStringList
+Index: lib/app.h
+===================================================================
+RCS file: /usr/home/cvs/repository/libh/lib/tvision/work/tvision-0.8/lib/app.h,v
+retrieving revision 1.1
+retrieving revision 1.2
+diff -u -r1.1 -r1.2
+--- lib/app.h	20 Dec 2002 12:06:20 -0000	1.1
++++ lib/app.h	27 Dec 2002 23:16:43 -0000	1.2
+@@ -666,18 +666,6 @@
+      */
+     virtual void initScreen();
+     /**
+-     * Called on out of memory condition.
+-     *
+-     * It is called from @ref validView() whenever @ref lowMemory() returns
+-     * True.
+-     *
+-     * This happens when there is few free memory. Of course this should
+-     * rarely happen. This method may be redefined to tell the user (by
+-     * calling @ref messageBox() for example) that there is not free memory
+-     * to end the current task.
+-     */
+-    virtual void outOfMemory();
+-    /**
+      * Sets a pending event.
+      *
+      * Puts an event in the pending state, by storing a copy of the `event'
+@@ -726,10 +714,6 @@
+      *
+      * First, if `p' is 0 the call returns 0.
+      *
+-     * Next, if @ref lowMemory() returns True the view pointed by `p' is
+-     * released by calling @ref TObject::destroy() followed by
+-     * @ref outOfMemory() and the function returns 0.
+-     *
+      * Last if a call to `p->valid(cmValid)' returns False the view pointed by
+      * `p' is released and the function returns 0.
+      * @see TView::valid
+@@ -746,7 +730,7 @@
+      *
+      * This method releases all the resources allocated by TProgram. It sets
+      * pointers @ref statusLine, @ref menuBar and @ref deskTop to 0 and then
+-     * calls @ref TGroup::shutDown() and @ref TVMemMgr::clearSafetyPool().
++     * calls @ref TGroup::shutDown().
+      */
+     virtual void shutDown();
+     /**
+Index: lib/helpbase.cc
+===================================================================
+RCS file: /usr/home/cvs/repository/libh/lib/tvision/work/tvision-0.8/lib/helpbase.cc,v
+retrieving revision 1.1
+retrieving revision 1.5
+diff -u -r1.1 -r1.5
+--- lib/helpbase.cc	20 Dec 2002 12:06:20 -0000	1.1
++++ lib/helpbase.cc	25 Dec 2002 14:10:17 -0000	1.5
+@@ -7,6 +7,7 @@
+  * All Rights Reserved.
+  *
+  * Modified by Sergio Sigala <sergio@sigala.it>
++ * Modified by Max Okumoto <okumoto@ucsd.edu>
+  */
+ 
+ #define Uses_TStreamableClass
+@@ -31,6 +32,8 @@
+ #include <string.h>
+ #include <sys/stat.h>
+ 
++using std::streampos;
++
+ TCrossRefHandler crossRefHandler = notAssigned;
+ 
+ // THelpTopic
+@@ -549,15 +552,10 @@
+ 
+ THelpFile::THelpFile( fpstream&  s )
+ {
+-    long magic;
+-    int handle;
+-    long size;
++    long magic = 0;
+ 
+-    magic = 0;
+-    s.seekg(0);
+-    handle = s.rdbuf()->fd();
+-    size = filelength(handle);
+     s.seekg(0);
++    streampos size = filelength(s);
+     if (size > (long)sizeof(magic))
+         s >> magic;
+     if (magic != magicHeader)
+@@ -580,24 +578,15 @@
+ 
+ THelpFile::~THelpFile(void)
+ {
+-    long magic, size;
+-    int handle;
+ 
+     if (modified == True)
+         {
+         stream->seekp(indexPos);
+         *stream << index;
++	long magic = magicHeader;
+         stream->seekp(0);
+-        magic = magicHeader;
+-        handle = stream->rdbuf()->fd();
+-//
+-// note: at this time, a bug in filelength leaves the seek pointer at
+-//       the end of file, so we must save and restore the seek pointer
+-//       around the call; this can be removed when filelength is fixed.
+-//
+-  streampos sp=stream->tellp();
+-        size = filelength(handle) - 8;
+-  stream->seekp(sp);
++        streampos size = filelength(*stream);
++	size =- 8;
+         *stream << magic;
+         *stream << size;
+         *stream << indexPos;
+Index: lib/histlist.cc
+===================================================================
+RCS file: /usr/home/cvs/repository/libh/lib/tvision/work/tvision-0.8/lib/histlist.cc,v
+retrieving revision 1.1
+retrieving revision 1.2
+diff -u -r1.1 -r1.2
+--- lib/histlist.cc	20 Dec 2002 12:06:20 -0000	1.1
++++ lib/histlist.cc	27 Dec 2002 23:16:43 -0000	1.2
+@@ -21,25 +21,11 @@
+ 
+     HistRec( uchar nId, const char *nStr );
+ 
+-    void *operator new( size_t );
+-    void *operator new( size_t, HistRec * );
+-
+     uchar id;
+     uchar len;
+     char str[1];
+ 
+ };
+-
+-void *HistRec::operator new( size_t, HistRec *hr )
+-{
+-    return hr;
+-}
+-
+-void *HistRec::operator new( size_t )
+-{
+-    abort();
+-    return 0;
+-}
+ 
+ inline HistRec::HistRec( uchar nId, const char *nStr ) :
+     id( nId ),
+Index: lib/misc.cc
+===================================================================
+RCS file: /usr/home/cvs/repository/libh/lib/tvision/work/tvision-0.8/lib/misc.cc,v
+retrieving revision 1.1
+retrieving revision 1.2
+diff -u -r1.1 -r1.2
+--- lib/misc.cc	20 Dec 2002 12:06:20 -0000	1.1
++++ lib/misc.cc	27 Dec 2002 23:16:44 -0000	1.2
+@@ -14,7 +14,6 @@
+ #define Uses_TGroup
+ #define Uses_TEvent
+ #define Uses_TObject
+-#define Uses_TVMemMgr
+ #define Uses_TView
+ #define Uses_pstream
+ #include <tvision/tv.h>
+@@ -37,11 +36,6 @@
+         return event.message.infoPtr;
+     else
+         return 0;
+-}
+-
+-Boolean lowMemory()
+-{
+-    return Boolean(TVMemMgr::safetyPoolExhausted());
+ }
+ 
+ /* from NEWSTR.CPP */
+Index: lib/system.cc
+===================================================================
+RCS file: /usr/home/cvs/repository/libh/lib/tvision/work/tvision-0.8/lib/system.cc,v
+retrieving revision 1.2
+retrieving revision 1.8
+diff -u -r1.2 -r1.8
+--- lib/system.cc	20 Dec 2002 12:19:01 -0000	1.2
++++ lib/system.cc	25 Dec 2002 14:10:17 -0000	1.8
+@@ -23,11 +23,12 @@
+  * THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+  * (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF
+  * THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
++ *
++ * Modified by Sergey Clushin <serg@lamport.ru>, <Clushin@deol.ru>
++ * Modified by Dmitrij Korovkin <tkf@glasnet.ru>
++ * Modified by Max Okumoto <okumoto@ucsd.edu>
+  */
+ 
+-/* Modified by Sergey Clushin <serg@lamport.ru>, <Clushin@deol.ru> */
+-/* Modified by Dmitrij Korovkin <tkf@glasnet.ru> */
+-
+ #define Uses_TButton
+ #define Uses_TColorSelector
+ #define Uses_TDeskTop
+@@ -47,10 +48,11 @@
+ #define Uses_TStatusLine
+ #include <tvision/tv.h>
+ 
++#include <fstream>
++#include <iostream>
++
+ #include <ctype.h>
+ #include <fcntl.h>
+-#include <fstream.h>
+-#include <iostream.h>
+ #include <signal.h>
+ #include <stdio.h>
+ #include <stdlib.h>
+@@ -62,6 +64,13 @@
+ 
+ #include <config.h>		/* configuration file */
+ 
++using std::endl;
++using std::ios;
++using std::istream;
++using std::ofstream;
++using std::streambuf;
++using std::streampos;
++
+ #ifdef ENABLE_FBSDM
+ 	/* #include <machine/console.h> */
+ 	#define CONS_MOUSECTL	_IOWR('c', 10, mouse_info_t)
+@@ -2300,36 +2309,24 @@
+ 	}
+ }
+ 
+-/*
+- * Returns the length of a file.
++/**
++ * Returns the length of the file associated with the stream.
+  */
+-
+-long int filelength(int fd)
++streampos
++filelength(istream &s)
+ {
+-	struct stat s;
+-
+ 	/*
+-	 * This should handle any regular file.
++	 * First get curent position, then get position after seeking
++	 * from begining to the end, finally seek back to original
++	 * position.
+ 	 */
+-	if (fstat(fd, &s) == 0 && s.st_size > 0) return s.st_size;
+-	else
+-	{
+-		char buf[1024];
+-		int len, size = 0;
++	streampos curpos = s.tellg();
+ 
+-		/*
+-		 * This works with special files which are not empty, even if
+-		 * their size is zero, like those in the `/proc' directory.
+-		 */
+-		off_t old = lseek(fd, 0, SEEK_CUR);	/* save position */
+-		lseek(fd, 0, SEEK_SET);		/* go to the beginning */
+-		while ((len = read(fd, buf, sizeof(buf))) > 0)
+-		{
+-			size += len;
+-		}
+-		lseek(fd, old, SEEK_SET);	/* restore old position */
+-		return size;
+-	}
++	s.seekg(0, ios::end);
++	streampos size = s.tellg();
++
++	s.seekg(curpos);
++	return size;
+ }
+ 
+ /*
+Index: lib/textview.cc
+===================================================================
+RCS file: /usr/home/cvs/repository/libh/lib/tvision/work/tvision-0.8/lib/textview.cc,v
+retrieving revision 1.1
+retrieving revision 1.4
+diff -u -r1.1 -r1.4
+--- lib/textview.cc	20 Dec 2002 12:06:20 -0000	1.1
++++ lib/textview.cc	25 Dec 2002 14:10:17 -0000	1.4
+@@ -7,6 +7,7 @@
+  * All Rights Reserved.
+  *
+  * Modified by Sergio Sigala <sergio@sigala.it>
++ * Modified by Max Okumoto <okumoto@ucsd.edu>
+  */
+ 
+ #define Uses_TTextDevice
+@@ -15,6 +16,9 @@
+ #include <tvision/tv.h>
+ 
+ #include <string.h>
++
++using std::ostream;
++using std::streamsize;
+ 
+ TTextDevice::TTextDevice( const TRect& bounds,
+                           TScrollBar *aHScrollBar,
+Index: lib/textview.h
+===================================================================
+RCS file: /usr/home/cvs/repository/libh/lib/tvision/work/tvision-0.8/lib/textview.h,v
+retrieving revision 1.1
+retrieving revision 1.3
+diff -u -r1.1 -r1.3
+--- lib/textview.h	20 Dec 2002 12:06:20 -0000	1.1
++++ lib/textview.h	25 Dec 2002 14:10:17 -0000	1.3
+@@ -7,6 +7,7 @@
+  * All Rights Reserved.
+  *
+  * Modified by Sergio Sigala <sergio@sigala.it>
++ * Modified by Max Okumoto <okumoto@ucsd.edu>
+  */
+ 
+ #if defined( Uses_TTextDevice ) && !defined( __TTextDevice )
+@@ -16,7 +17,7 @@
+  * textview.h
+  */
+ 
+-#include <iostream.h>
++#include <iostream>
+ 
+ class TRect;
+ class TScrollBar;
+@@ -168,14 +169,12 @@
+ #if defined( Uses_otstream ) && !defined( __otstream )
+ #define __otstream
+ 
+-class ostream;
+-
+-#include <iostream.h>
++#include <iostream>
+ 
+ /**
+  * Undocumented.
+  */
+-class TerminalBuf: public streambuf
++class TerminalBuf: public std::streambuf
+ {
+ protected:
+     /**
+@@ -208,7 +207,7 @@
+ /**
+  * Undocumented.
+  */
+-class otstream : public ostream
++class otstream : public std::ostream
+ {
+ protected:
+     /**
+Index: lib/tobjstrm.h
+===================================================================
+RCS file: /usr/home/cvs/repository/libh/lib/tvision/work/tvision-0.8/lib/tobjstrm.h,v
+retrieving revision 1.1
+retrieving revision 1.9
+diff -u -r1.1 -r1.9
+--- lib/tobjstrm.h	20 Dec 2002 12:06:20 -0000	1.1
++++ lib/tobjstrm.h	27 Dec 2002 23:16:44 -0000	1.9
+@@ -1,5 +1,5 @@
+-/*
+- * tobjstrm.h
++/**
++ * @file tobjstrm.h
+  *
+  * Turbo Vision - Version 2.0
+  *
+@@ -7,11 +7,14 @@
+  * All Rights Reserved.
+  *
+  * Modified by Sergio Sigala <sergio@sigala.it>
++ * Modified by Max Okumoto <okumoto@ucsd.edu>
+  */
+ 
+-/** \file tobjstrm.h
+- * tobjstrm.h
+- */
++#include <ios>
++#include <iostream>
++#include <fstream>
++
++#include <limits.h>
+ 
+ /**
+  * Undocumented.
+@@ -19,13 +22,11 @@
+ typedef unsigned P_id_type;
+ 
+ /* ------------------------------------------------------------------------*/
+-/*                                                                         */
+ /*   class TStreamable                                                     */
+ /*                                                                         */
+ /*   This is the base class for all storable objects.  It provides         */
+ /*   three member functions, streamableName(), read(), and write(), which  */
+ /*   must be overridden in every derived class.                            */
+-/*                                                                         */
+ /* ------------------------------------------------------------------------*/
+ 
+ #if !defined( __fLink_def )
+@@ -117,18 +118,12 @@
+ #endif  // Uses_TStreamable
+ 
+ /* ------------------------------------------------------------------------*/
+-/*                                                                         */
+ /*   class TStreamableClass                                                */
+-/*                                                                         */
+-/*   Used internally by TStreamableTypes and pstream.                      */
+-/*                                                                         */
+ /* ------------------------------------------------------------------------*/
+ 
+ #if defined( Uses_TStreamableClass ) && !defined( __TStreamableClass )
+ #define __TStreamableClass
+ 
+-#include <limits.h>
+-
+ /**
+  * Undocumented.
+  */
+@@ -154,9 +149,9 @@
+  */
+ class TStreamableClass
+ {
+-    friend TStreamableTypes;
+-    friend opstream;
+-    friend ipstream;
++    friend class TStreamableTypes;
++    friend class opstream;
++    friend class ipstream;
+ public:
+     /**
+      * Creates a TStreamable object with the given name and the given builder
+@@ -184,7 +179,7 @@
+      * typedef TStreamable *(*BUILDER)();
+      * </pre>
+      */
+-    TStreamableClass( const char *aName, BUILDER aBuild, int aDelta );
++    TStreamableClass(const char *aName, BUILDER aBuild, int aDelta );
+ private:
+     const char *name;
+     BUILDER build;
+@@ -194,13 +189,7 @@
+ #endif  // Uses_TStreamableClass
+ 
+ /* ------------------------------------------------------------------------*/
+-/*                                                                         */
+ /*   class TStreamableTypes                                                */
+-/*                                                                         */
+-/*   Maintains a database of all registered types in the application.      */
+-/*   Used by opstream and ipstream to find the functions to read and       */
+-/*   write objects.                                                        */
+-/*                                                                         */
+ /* ------------------------------------------------------------------------*/
+ 
+ #if defined( Uses_TStreamableTypes ) && !defined( __TStreamableTypes )
+@@ -235,20 +224,12 @@
+     /**
+      * Registers the argument class by inserting `d' in the collection.
+      */
+-    void registerType( const TStreamableClass *d );
++    void registerType(const TStreamableClass *d );
+     /**
+      * Returns a pointer to the class in the collection corresponding to the
+      * argument `name', or returns 0 if no match.
+      */
+-    const TStreamableClass *lookup( const char *name );
+-    /**
+-     * Undocumented.
+-     */
+-    void *operator new( size_t sz ) { return ::operator new( sz ); }
+-    /**
+-     * Undocumented.
+-     */
+-    void *operator new( size_t, void * );
++    const TStreamableClass *lookup(const char name[]);
+ private:
+     /**
+      * Undocumented.
+@@ -263,15 +244,7 @@
+ #endif  // Uses_TStreamableTypes
+ 
+ /* ------------------------------------------------------------------------*/
+-/*                                                                         */
+ /*   class TPWrittenObjects                                                */
+-/*                                                                         */
+-/*   Maintains a database of all objects that have been written to the     */
+-/*   current object stream.                                                */
+-/*                                                                         */
+-/*   Used by opstream when it writes a pointer onto a stream to determine  */
+-/*   whether the object pointed to has already been written to the stream. */
+-/*                                                                         */
+ /* ------------------------------------------------------------------------*/
+ 
+ #if defined( Uses_TPWrittenObjects ) && !defined( __TPWrittenObjects )
+@@ -286,7 +259,7 @@
+  */
+ class TPWrittenObjects : public TNSSortedCollection
+ {
+-    friend opstream;
++    friend class opstream;
+ public:
+     /**
+      * Undocumented.
+@@ -306,11 +279,11 @@
+     /**
+      * Undocumented.
+      */
+-    void registerObject( const void *adr );
++    void registerObject(const void *adr );
+     /**
+      * Undocumented.
+      */
+-    P_id_type find( const void *adr );
++    P_id_type find(const void *adr );
+     /**
+      * Undocumented.
+      */
+@@ -326,11 +299,7 @@
+ };
+ 
+ /* ------------------------------------------------------------------------*/
+-/*                                                                         */
+ /*   class TPWObj                                                          */
+-/*                                                                         */
+-/*   Used internally by TPWrittenObjects.                                  */
+-/*                                                                         */
+ /* ------------------------------------------------------------------------*/
+ 
+ /**
+@@ -341,9 +310,9 @@
+  */
+ class TPWObj
+ {
+-    friend TPWrittenObjects;
++    friend class TPWrittenObjects;
+ private:
+-    TPWObj( const void *adr, P_id_type id );
++    TPWObj(const void *adr, P_id_type id );
+     const void *address;
+     P_id_type ident;
+ };
+@@ -351,15 +320,7 @@
+ #endif  // Uses_TPWrittenObjects
+ 
+ /* ------------------------------------------------------------------------*/
+-/*                                                                         */
+ /*   class TPReadObjects                                                   */
+-/*                                                                         */
+-/*   Maintains a database of all objects that have been read from the      */
+-/*   current persistent stream.                                            */
+-/*                                                                         */
+-/*   Used by ipstream when it reads a pointer from a stream to determine   */
+-/*   the address of the object being referred to.                          */
+-/*                                                                         */
+ /* ------------------------------------------------------------------------*/
+ 
+ #if defined( Uses_TPReadObjects ) && !defined( __TPReadObjects )
+@@ -375,7 +336,7 @@
+  */
+ class TPReadObjects : public TNSCollection
+ {
+-    friend ipstream;
++    friend class ipstream;
+ public:
+     /**
+      * Undocumented.
+@@ -393,7 +354,7 @@
+      * Sets the collection @ref limit to 0 without destroying the collection.
+      */
+     ~TPReadObjects();
+-    void registerObject( const void *adr );
++    void registerObject(const void *adr );
+     const void *find( P_id_type id );
+     P_id_type curId;
+ };
+@@ -401,164 +362,62 @@
+ #endif  // Uses_TPReadObjects
+ 
+ /* ------------------------------------------------------------------------*/
+-/*                                                                         */
+ /*   class pstream                                                         */
+-/*                                                                         */
+-/*   Base class for handling streamable objects.                           */
+-/*                                                                         */
+ /* ------------------------------------------------------------------------*/
+ 
+ #if defined( Uses_pstream ) && !defined( __pstream )
+ #define __pstream
+ 
+-class streambuf;
+-
+-#include <iostream.h>
+-
+ class TStreamableTypes;
+ 
+ /**
+  * pstream is the base class for handling streamable objects.
+  * @short The base class for handling streamable objects
+  */
+-class pstream
+-{
+-    friend TStreamableTypes;
++class pstream {
++protected:
++    /**
++     * Pointer to the @ref TStreamableTypes data base of all registered types
++     * in this application.
++     */
++    static TStreamableTypes *types;
++
+ public:
++    pstream();
++    virtual ~pstream();
++
+     /**
+      * Undocumented.
+      */
+     enum StreamableError { peNotRegistered, peInvalidType };
++
+     /**
+      * Undocumented.
+      */
+     enum PointerTypes { ptNull, ptIndexed, ptObject };
+-    /**
+-     * This form creates a buffered pstream with the given buffer and sets the
+-     * @ref bp data member to `buf'. The @ref state data member is set to 0.
+-     */
+-    pstream( streambuf *buf );
+-    /**
+-     * Destroys the pstream object.
+-     */
+-    virtual ~pstream();
+-    /**
+-     * Returns the current @ref state value.
+-     */
+-    int rdstate() const;
+-    /**
+-     * Returns nonzero on end of stream.
+-     */
+-    int eof() const;
+-    /**
+-     * Returns nonzero if a stream operation fails.
+-     */
+-    int fail() const;
+-    /**
+-     * Returns nonzero if an error occurs.
+-     */
+-    int bad() const;
+-    /**
+-     * Returns nonzero if no state bits are set (that is, no errors occurred).
+-     */
+-    int good() const;
+-    /**
+-     * Set the stream @ref state data member to the given value (defaults
+-     * to 0).
+-     */
+-    void clear( int sState = 0 );
+-    /**
+-     * Overloads the pointer-to-void cast operator.
+-     *
+-     * Returns 0 if operation has failed (that is, @ref fail() returned
+-     * nonzero); otherwise returns nonzero.
+-     */
+-    operator void *() const;
+-    /**
+-     * Overloads the NOT operator. Returns the value returned by @ref fail().
+-     */
+-    int operator ! () const;
+-    /**
+-     * Returns the @ref bp pointer to this stream's assigned buffer.
+-     */
+-    streambuf * rdbuf() const;
+-    /**
+-     * Creates the associated @ref TStreamableTypes object types. Called by the
+-     * @ref TStreamableClass constructor.
+-     */
++
++    void error(StreamableError);
++    void error(StreamableError, const TStreamable &);
++
+     static void initTypes();
+-    /**
+-     * Sets the given error condition, where StreamableError is defined as
+-     * follows:
+-     *
+-     * <pre>
+-     * enum StreamableError { peNotRegistered, peInvalidType };
+-     * </pre>
+-     */
+-    void error( StreamableError );
+-    /**
+-     * Sets the given error condition, where StreamableError is defined as
+-     * follows:
+-     *
+-     * <pre>
+-     * enum StreamableError { peNotRegistered, peInvalidType };
+-     * </pre>
+-     */
+-    void error( StreamableError, const TStreamable& );
+-    /**
+-     * Undocumented.
+-     */
+-    static void registerType( TStreamableClass *ts );
+-protected:
+-    /**
+-     * This form allocates a default buffer.
+-     */
+-    pstream();
+-    /**
+-     * Pointer to the stream buffer.
+-     */
+-    streambuf *bp;
+-    /**
+-     * The format state flags, as enumerated in ios. Use @ref rdstate() to
+-     * access the current state.
+-     */
+-    int state;
+-    /**
+-     * Initializes the stream: sets @ref state to 0 and @ref bp to `sbp'.
+-     */
+-    void init( streambuf *sbp );
+-    /**
+-     * Updates the @ref state data member with state |= (b & 0 xFF).
+-     */
+-    void setstate( int b );
+-    /**
+-     * Pointer to the @ref TStreamableTypes data base of all registered types
+-     * in this application.
+-     */
+-    static TStreamableTypes * types;
++    static void registerType(TStreamableClass *ts);
+ };
+ 
+ #endif  // Uses_pstream
+ 
+ /* ------------------------------------------------------------------------*/
+-/*                                                                         */
+ /*   class ipstream                                                        */
+-/*                                                                         */
+-/*   Base class for reading streamable objects                             */
+-/*                                                                         */
+ /* ------------------------------------------------------------------------*/
+ 
+ #if defined( Uses_ipstream ) && !defined( __ipstream )
+ #define __ipstream
+ 
+-#include <iostream.h>
+-
+ class TStreamableClass;
+ 
+ /**
+  * ipstream, a specialized input stream derivative of @ref pstream, is the
+  * base class for reading (extracting) streamable objects. ipstream is
+- * analogous to istream, defined in `iostream.h' for the standard C++ stream
++ * analogous to istream, defined in `iostream' for the standard C++ stream
+  * library. ipstream is a friend class of @ref TPReadObjects.
+  *
+  * The overloaded operators >> extract (read) from the given ipstream object
+@@ -566,176 +425,69 @@
+  * to chain >> operations in the usual way. The data type of the argument
+  * determines how the read is performed. For example, reading a signed char
+  * is implemented using @ref readByte().
++ *
+  * @see opstream
++ *
+  * @short The base class for reading (extracting) streamable objects from
+  * streams
+  */
+-class ipstream : virtual public pstream
+-{
+-public:
+-    /**
+-     * This form creates a buffered ipstream with the given buffer and sets
+-     * the @ref bp data member to `buf'. The @ref state data member is set
+-     * to 0.
+-     */
+-    ipstream( streambuf *buf );
+-    /**
+-     * Destroys the ipstream object.
+-     */
+-    ~ipstream();
+-    /**
+-     * Returns the (absolute) current stream position.
+-     */
+-    streampos tellg();
+-    /**
+-     * This form moves the stream position to the absolute position given by
+-     * `pos'.
+-     */
+-    ipstream& seekg( streampos pos );
+-    /**
+-     * This form moves to a position relative to the current position by an
+-     * offset `off' (+ or -) starting at `dir'. Parameter `dir' can be set to:
+-     *
+-     * <pre>
+-     * beg (start of stream)
+-     *
+-     * cur (current stream position)
+-     *
+-     * end (end of stream)
+-     * </pre>
+-     */
+-    ipstream& seekg( streamoff off, ios::seek_dir dir );
+-    /**
+-     * Returns the character at the current stream position.
+-     */
+-    uchar readByte();
+-    /**
+-     * Reads `sz' bytes from current stream position, and writes them to
+-     * the address given in `data'.
+-     */
+-    void readBytes( void *data, size_t sz );
+-    /**
+-     * Returns the word at the current stream position.
+-     */
+-    ushort readWord();
+-    /**
+-     * Returns a string read from the current stream position.
+-     */
+-    char * readString();
+-    /**
+-     * Returns a string read from the current stream position.
+-     */
+-    char * readString( char *buf, unsigned maxLen );
+-    /**
+-     * Undocumented.
+-     */
+-    friend ipstream& operator >> ( ipstream&, char& );
+-    /**
+-     * Undocumented.
+-     */
+-    friend ipstream& operator >> ( ipstream&, signed char& );
+-    /**
+-     * Undocumented.
+-     */
+-    friend ipstream& operator >> ( ipstream&, unsigned char& );
+-    /**
+-     * Undocumented.
+-     */
+-    friend ipstream& operator >> ( ipstream&, signed short& );
+-    /**
+-     * Undocumented.
+-     */
+-    friend ipstream& operator >> ( ipstream&, unsigned short& );
+-    /**
+-     * Undocumented.
+-     */
+-    friend ipstream& operator >> ( ipstream&, signed int& );
+-    /**
+-     * Undocumented.
+-     */
+-    friend ipstream& operator >> ( ipstream&, unsigned int& );
+-    /**
+-     * Undocumented.
+-     */
+-    friend ipstream& operator >> ( ipstream&, signed long& );
+-    /**
+-     * Undocumented.
+-     */
+-    friend ipstream& operator >> ( ipstream&, unsigned long& );
+-    /**
+-     * Undocumented.
+-     */
+-    friend ipstream& operator >> ( ipstream&, float& );
+-    /**
+-     * Undocumented.
+-     */
+-    friend ipstream& operator >> ( ipstream&, double& );
+-    /**
+-     * Undocumented.
+-     */
+-    friend ipstream& operator >> ( ipstream&, long double& );
+-    /**
+-     * Undocumented.
+-     */
+-    friend ipstream& operator >> ( ipstream&, TStreamable& );
+-    /**
+-     * Undocumented.
+-     */
+-    friend ipstream& operator >> ( ipstream&, void *& );
+-protected:
+-    /**
+-     * This form does nothing.
+-     */
+-    ipstream();
+-    /**
+-     * Returns the @ref TStreamableClass object corresponding to the class
+-     * name stored at the current position.
+-     */
+-    const TStreamableClass * readPrefix();
+-    /**
+-     * Invokes the appropriate read function to read from the stream to the
+-     * object `mem'. If `mem' is 0, the appropriate build function is called
+-     * first.
+-     */
+-    void * readData( const TStreamableClass *c, TStreamable *mem );
+-    /**
+-     * Reads and checks the final byte of an object's name field.
+-     */
+-    void readSuffix();
+-    /**
+-     * Returns a pointer to the object corresponding to `id'.
+-     */
+-    const void * find( P_id_type id );
+-    /**
+-     * Registers the class of the object pointed by `adr'.
+-     */
+-    void registerObject( const void *adr );
++class ipstream : virtual public pstream, public std::istream {
+ private:
+     TPReadObjects objs;
+ 
++protected:
++    const TStreamableClass *readPrefix();
++    void *readData(const TStreamableClass *c, TStreamable *mem);
++    void readSuffix();
++    const void	*find(P_id_type id);
++    void registerObject(const void *adr);
++
++    ushort readWord();
++    ulong readLong();
++
++public:
++    ipstream(std::streambuf *buf);
++    ~ipstream();
++
++    ipstream &seekg(std::streampos pos);
++    ipstream &seekg(std::streamoff off, std::ios::seekdir dir);
++
++    uchar readByte();
++    void readBytes(void *data, std::streamsize sz);
++    char *readString();
++    char *readString(char *buf, unsigned maxLen);
++
++    ipstream &operator>>(char &);
++    ipstream &operator>>(signed char &);
++    ipstream &operator>>(unsigned char &);
++    ipstream &operator>>(signed short &);
++    ipstream &operator>>(unsigned short &);
++    ipstream &operator>>(signed int &);
++    ipstream &operator>>(unsigned int &);
++    ipstream &operator>>(signed long &);
++    ipstream &operator>>(unsigned long &);
++    ipstream &operator>>(float &);
++    ipstream &operator>>(double &);
++    ipstream &operator>>(long double &);
++    ipstream &operator>>(TStreamable &);
++    ipstream &operator>>(void *&);
+ };
+ 
+ #endif  // Uses_ipstream
+ 
+ /* ------------------------------------------------------------------------*/
+-/*                                                                         */
+ /*   class opstream                                                        */
+-/*                                                                         */
+-/*   Base class for writing streamable objects                             */
+-/*                                                                         */
+ /* ------------------------------------------------------------------------*/
+ 
+ #if defined( Uses_opstream ) && !defined( __opstream )
+ #define __opstream
+ 
+-#include <iostream.h>
+-
+ class TStreamableClass;
+ 
+ /**
+  * opstream, a specialized output stream derivative of @ref pstream, is the
+  * base class for writing (inserting) streamable objects. opstream is
+- * analogous to ostream, defined in `iostream.h' for the standard C++ stream
++ * analogous to ostream, defined in `iostream' for the standard C++ stream
+  * library. opstream is a friend class of @ref TPWrittenObjects.
+  *
+  * The overloaded operators << insert (write) the given argument to the given
+@@ -743,469 +495,146 @@
+  * to chain << operations in the usual way. The data type of the argument
+  * determines the form of write operation employed. For example, writing a
+  * signed char is implemented using @ref writeByte().
++ *
+  * @see ipstream
++ *
+  * @short The base class for writing (inserting) streamable objects into
+  * streams
+  */
+-class opstream : virtual public pstream
+-{
++class opstream : virtual public pstream, public std::ostream {
++    TPWrittenObjects objs;
++
++protected:
++    void writePrefix(const TStreamable &);
++    void writeData(TStreamable &);
++    void writeSuffix(const TStreamable &);
++    P_id_type find(const void *adr);
++    void registerObject(const void *adr);
++
+ public:
+-    /**
+-     * This form creates a buffered opstream with the given buffer and sets
+-     * the @ref bp data member to `buf'. The @ref state data member is set
+-     * to 0.
+-     */
+-    opstream( streambuf *buf );
+-    /**
+-     * Destroys the opstream object.
+-     */
++    opstream(std::streambuf *buf);
+     ~opstream();
+-    /**
+-     * Returns the (absolute) current stream position.
+-     */
+-    streampos tellp();
+-    /**
+-     * This form moves the stream's current position to the absolute position
+-     * given by `pos'.
+-     */
+-    opstream& seekp( streampos pos );
+-    /**
+-     * This form moves to a position relative to the current position by an
+-     * offset `off' (+ or -) starting at `dir'. Parameter `dir' can be set to:
+-     *
+-     * <pre>
+-     * beg (start of stream)
+-     *
+-     * cur (current stream position)
+-     *
+-     * end (end of stream)
+-     * </pre>
+-     */
+-    opstream& seekp( streamoff off, ios::seek_dir dir );
+-    /**
+-     * Flushes the stream.
+-     */
++    opstream& seekp(std::streampos pos);
++    opstream& seekp(std::streamoff off, std::ios::seekdir dir);
+     opstream& flush();
+-    /**
+-     * Writes character `ch' to the stream.
+-     */
+-    void writeByte( uchar ch );
+-    /**
+-     * Writes `sz' bytes from `data' buffer to the stream.
+-     */
+-    void writeBytes( const void *data, size_t sz );
+-    /**
+-     * Writes the word `us' to the stream.
+-     */
+-    void writeWord( ushort us );
+-    /**
+-     * Writes `str' to the stream (together with a leading length byte).
+-     */
+-    void writeString( const char *str );
+-    /**
+-     * Undocumented.
+-     */
+-    friend opstream& operator << ( opstream&, char );
+-    /**
+-     * Undocumented.
+-     */
+-    friend opstream& operator << ( opstream&, signed char );
+-    /**
+-     * Undocumented.
+-     */
+-    friend opstream& operator << ( opstream&, unsigned char );
+-    /**
+-     * Undocumented.
+-     */
+-    friend opstream& operator << ( opstream&, signed short );
+-    /**
+-     * Undocumented.
+-     */
+-    friend opstream& operator << ( opstream&, unsigned short );
+-    /**
+-     * Undocumented.
+-     */
+-    friend opstream& operator << ( opstream&, signed int );
+-    /**
+-     * Undocumented.
+-     */
+-    friend opstream& operator << ( opstream&, unsigned int );
+-    /**
+-     * Undocumented.
+-     */
+-    friend opstream& operator << ( opstream&, signed long );
+-    /**
+-     * Undocumented.
+-     */
+-    friend opstream& operator << ( opstream&, unsigned long );
+-    /**
+-     * Undocumented.
+-     */
+-    friend opstream& operator << ( opstream&, float );
+-    /**
+-     * Undocumented.
+-     */
+-    friend opstream& operator << ( opstream&, double );
+-    /**
+-     * Undocumented.
+-     */
+-    friend opstream& operator << ( opstream&, long double );
+-    /**
+-     * Undocumented.
+-     */
+-    friend opstream& operator << ( opstream&, TStreamable& );
+-    /**
+-     * Undocumented.
+-     */
+-    friend opstream& operator << ( opstream&, TStreamable * );
+-protected:
+-    /**
+-     * This form allocates a default buffer.
+-     */
+-    opstream();
+-    /**
+-     * Writes the class name prefix to the stream.
+-     *
+-     * The << operator uses this function to write a prefix and suffix around
+-     * the data written with @ref writeData(). The prefix/suffix is used to
+-     * ensure type-safe stream I/O.
+-     */
+-    void writePrefix( const TStreamable& );
+-    /**
+-     * Writes data to the stream by calling the appropriate class's write
+-     * member function for the object being written.
+-     */
+-    void writeData( TStreamable& );
+-    /**
+-     * Writes the class name suffix to the stream.
+-     *
+-     * The << operator uses this function to write a prefix and suffix around
+-     * the data written with @ref writeData(). The prefix/suffix is used to
+-     * ensure type-safe stream I/O.
+-     */
+-    void writeSuffix( const TStreamable& );
+-    /**
+-     * Returns the type ID for the object ad address `adr'.
+-     */
+-    P_id_type find( const void *adr );
+-    /**
+-     * Registers the class of the object ad address `adr'.
+-     */
+-    void registerObject( const void *adr );
+-private:
+-    TPWrittenObjects *objs;
++
++    void writeByte(uchar ch);
++    void writeBytes(const void *data, std::streamsize sz);
++    void writeWord(ushort us);
++    void writeString(const char *str);
++
++    opstream &operator<<(char);
++    opstream &operator<<(signed char);
++    opstream &operator<<(unsigned char);
++    opstream &operator<<(signed short);
++    opstream &operator<<(unsigned short);
++    opstream &operator<<(signed int);
++    opstream &operator<<(unsigned int);
++    opstream &operator<<(signed long);
++    opstream &operator<<(unsigned long);
++    opstream &operator<<(float);
++    opstream &operator<<(double);
++    opstream &operator<<(long double);
++    opstream &operator<<(TStreamable &);
++    opstream &operator<<(TStreamable *);
+ };
+ 
+ #endif  // Uses_opstream
+ 
+ /* ------------------------------------------------------------------------*/
+-/*                                                                         */
+ /*   class iopstream                                                       */
+-/*                                                                         */
+-/*   Base class for reading and writing streamable objects                 */
+-/*                                                                         */
+ /* ------------------------------------------------------------------------*/
+ 
+ #if defined( Uses_iopstream ) && !defined( __iopstream )
+ #define __iopstream
+ 
+-#include <iostream.h>
+-
+ /**
+  * Class iopstream is a simple "mix" of its bases, @ref opstream and
+  * @ref ipstream. It provides the base class for simultaneous writing and
+  * reading streamable objects.
++ *
+  * @short The base class for simultaneous writing and reading streamable
+  * objects to and from streams
+  */
+-class iopstream : public ipstream, public opstream
+-{
++class iopstream : public ipstream, public opstream {
+ public:
+-    /**
+-     * Creates a buffered iopstream with the given buffer and sets the @ref bp
+-     * data member to `buf'. The @ref state data member is set to 0.
+-     */
+-    iopstream( streambuf *buf );
+-    /**
+-     * Destroys the iopstream object.
+-     */
++    iopstream(std::streambuf *buf);
+     ~iopstream();
+-protected:
+-    /**
+-     * Undocumented.
+-     */
+-    iopstream();
+ };
+ 
+ #endif  // Uses_iopstream
+ 
+ /* ------------------------------------------------------------------------*/
+-/*                                                                         */
+-/*   class fpbase                                                          */
+-/*                                                                         */
+-/*   Base class for handling streamable objects on file streams            */
+-/*                                                                         */
+-/* ------------------------------------------------------------------------*/
+-
+-#if defined( Uses_fpbase ) && !defined( __fpbase )
+-#define __fpbase
+-
+-#include <fstream.h>
+-
+-/**
+- * fpbase provides the basic operations common to all object file stream I/O.
+- * @short Base class for handling streamable objects on file streams
+- */
+-class fpbase : virtual public pstream
+-{
+-public:
+-    /**
+-     * Creates a buffered fpbase object.
+-     */
+-    fpbase();
+-    /**
+-     * Creates a buffered fpbase object. You can open a file and attach it to
+-     * the stream by specifying the `name', `omode', and `prot' (protection)
+-     * arguments.
+-     */
+-    fpbase( const char *name, int omode, int prot = filebuf::openprot );
+-    /**
+-     * Creates a buffered fpbase object. You can open a file and attach it to
+-     * the stream by specifying the file descriptor, `f'.
+-     */
+-    fpbase( int f );
+-    /**
+-     * Creates a buffered fpbase object. You can set the size and initial
+-     * contents of the buffer with the `len' and `b' arguments. You can open
+-     * a file and attach it to the stream by specifying the file descriptor,
+-     * `f'.
+-     */
+-    fpbase( int f, char *b, int len);
+-    /**
+-     * Destroys the fpbase object.
+-     */
+-    ~fpbase();
+-    /**
+-     * Opens the named file in the given mode (app, ate, in, out, binary,
+-     * trunc, nocreate, noreplace) and protection. The opened file is
+-     * attached to this stream.
+-     */
+-    void open( const char *name, int omode, int prot = filebuf::openprot );
+-    /**
+-     * Attaches the file with descriptor `f' to this stream if possible.
+-     */
+-    void attach( int f );
+-    /**
+-     * Closes the stream and associated file.
+-     */
+-    void close();
+-    /**
+-     * Allocates a buffer of size `len'.
+-     */
+-    void setbuf( char *buf, int len );
+-    /**
+-     * Returns a pointer to the current file buffer.
+-     */
+-    filebuf * rdbuf();
+-private:
+-    filebuf buf;
+-};
+-
+-#endif  // Uses_fpbase
+-
+-/* ------------------------------------------------------------------------*/
+-/*                                                                         */
+ /*   class ifpstream                                                       */
+-/*                                                                         */
+-/*   Base class for reading streamable objects from file streams           */
+-/*                                                                         */
+ /* ------------------------------------------------------------------------*/
+ 
+ #if defined( Uses_ifpstream ) && !defined( __ifpstream )
+ #define __ifpstream
+ 
+-#include <iostream.h>
+-
+ /**
+- * ifpstream is a simple "mix" of its bases, @ref fpbase and @ref ipstream.
+- * It provides the base class for reading (extracting) streamable objects
+- * from file streams.
+- * @short Provides the base class for reading (extracting) streamable objects
++ * ifpstream provides the base class for reading (extracting)
++ * streamable objects from file streams.
++ *
++ * @short The base class for reading (extracting) streamable objects
+  * from file streams.
+  */
+-class ifpstream : public fpbase, public ipstream
+-{
++class ifpstream : public ipstream {
++    std::filebuf	buf;
+ public:
+-    /**
+-     * Creates a buffered ifpstream object.
+-     */
+     ifpstream();
+-    /**
+-     * Creates a buffered ifpstream object. You can open a file and attach it
+-     * to the stream by specifying the `name', `omode', and `prot'
+-     * (protection) arguments.
+-     */
+-    ifpstream(const char *name, int omode = ios::in,
+-        int prot = filebuf::openprot );
+-    /**
+-     * Creates a buffered ifpstream object. You can open a file and attach it
+-     * to the stream by specifying the file descriptor, `f'.
+-     */
+-    ifpstream( int f );
+-    /**
+-     * Creates a buffered ifpstream object. You can set the size and initial
+-     * contents of the buffer with the `len' and `b' arguments. You can open
+-     * a file and attach it to the stream by specifying the file descriptor,
+-     * `f'.
+-     */
+-    ifpstream( int f, char *b, int len );
+-    /**
+-     * Destroys the ifpstream object.
+-     */
++    ifpstream(const char name[], std::ios::openmode omode = std::ios::in);
+     ~ifpstream();
+-    /**
+-     * Returns a pointer to the current file buffer.
+-     */
+-    filebuf * rdbuf();
+-    /**
+-     * Opens the the named file in the given mode (app, ate, in, out, binary,
+-     * trunc, nocreate, or noreplace) and protection. The default mode is in
+-     * (input) with openprot protection. The opened file is attached to this
+-     * stream.
+-     */
+-    void open( const char *name, int omode = ios::in,
+-        int prot = filebuf::openprot );
++    void open(const char name[], std::ios::openmode omode = std::ios::in);
+ };
+ 
+ #endif  // Uses_ifpstream
+ 
+ /* ------------------------------------------------------------------------*/
+-/*                                                                         */
+ /*   class ofpstream                                                       */
+-/*                                                                         */
+-/*   Base class for writing streamable objects to file streams             */
+-/*                                                                         */
+ /* ------------------------------------------------------------------------*/
+ 
+ #if defined( Uses_ofpstream ) && !defined( __ofpstream )
+ #define __ofpstream
+ 
+-#include <iostream.h>
+-
+ /**
+- * Class ofpstream is a simple "mix" of its bases, @ref fpbase and
+- * @ref opstream. It provides the base class for writing (inserting)
++ * ofpstream provides the base class for writing (inserting)
+  * streamable objects to file streams.
+- * @short Provides the base class for writing (inserting) streamable objects
+- * to file streams
++ *
++ * @short The base class for writing (inserting) streamable objects
++ * to file streams.
+  */
+-class ofpstream : public fpbase, public opstream
+-{
++class ofpstream : public opstream {
++    std::filebuf	buf;
+ public:
+-    /**
+-     * Creates a buffered ofpstream object.
+-     */
+     ofpstream();
+-    /**
+-     * Creates a buffered ofpstream object. You can open a file and attach it
+-     * to the stream by specifying the `name', `omode', and `prot'
+-     * (protection) arguments.
+-     */
+-    ofpstream( const char *name, int omode = ios::out, int prot =
+-        filebuf::openprot );
+-    /**
+-     * Creates a buffered ofpstream object. You can open a file and attach it
+-     * to the stream by specifying the file descriptor, `f'.
+-     */
+-    ofpstream( int f );
+-    /**
+-     * Creates a buffered ofpstream object. You can set the size and initial
+-     * contents of the buffer using the `len' and `b' arguments. You can open
+-     * a file and attach it to the stream by specifying the file descriptor,
+-     * `f'.
+-     */
+-    ofpstream( int f, char *b, int len );
+-    /**
+-     * Destroys the ofpstream object.
+-     */
++    ofpstream(const char name[], std::ios::openmode omode = std::ios::out);
+     ~ofpstream();
+-    /**
+-     * Returns the current file buffer.
+-     */
+-    filebuf * rdbuf();
+-    /**
+-     * Opens the the named file in the given mode (app, ate, in, out, binary,
+-     * trunc, nocreate, or noreplace) and protection. The default mode is out
+-     * (output) with openprot protection. The opened file is attached to this
+-     * stream.
+-     */
+-    void open( const char *name, int omode = ios::out,
+-        int prot = filebuf::openprot );
++    void open(const char name[], std::ios::openmode omode = std::ios::out);
+ };
+ 
+ #endif  // Uses_ofpstream
+ 
+ /* ------------------------------------------------------------------------*/
+-/*                                                                         */
+ /*   class fpstream                                                        */
+-/*                                                                         */
+-/*   Base class for reading and writing streamable objects to              */
+-/*   bidirectional file streams                                            */
+-/*                                                                         */
+ /* ------------------------------------------------------------------------*/
+ 
+ #if defined( Uses_fpstream ) && !defined( __fpstream )
+ #define __fpstream
+ 
+-#include <iostream.h>
+-
+ /**
+- * fpstream is a simple "mix" of its bases, @ref fpbase and @ref iopstream.
+- * It provides the base class for simultaneous writing and reading streamable
+- * objects to bidirectional file streams. It is analogous to class fstream,
+- * defined in `fstream.h' for the standard C++ stream library.
+- * @short Provides the base class for simultaneous writing and reading
+- * streamable objects to bidirectional file streams
++ * fpstream provides the base class for simultaneous writing and
++ * reading streamable objects to bidirectional file streams.
++ *
++ * @short The base class for simultaneous writing and reading
++ * streamable objects to bidirectional file streams.
+  */
+-class fpstream : public fpbase, public iopstream
+-{
++class fpstream : public iopstream {
++    std::filebuf	buf;
+ public:
+-    /**
+-     * Creates a buffered fpstream object.
+-     */
+     fpstream();
+-    /**
+-     * Creates a buffered fpstream object. You can open a file and attach it
+-     * to the stream by specifying the `name', `omode', and `prot'
+-     * (protection) arguments.
+-     */
+-    fpstream( const char *name, int omode, int prot = filebuf::openprot );
+-    /**
+-     * Creates a buffered fpstream object. You can open a file and attach it
+-     * to the stream by specifying the file descriptor, `f'.
+-     */
+-    fpstream( int f );
+-    /**
+-     * Creates a buffered fpstream object. You can set the size and initial
+-     * contents of the buffer using the `len' and `b' arguments. You can open
+-     * a file and attach it to the stream by specifying the file descriptor,
+-     * `f'.
+-     */
+-    fpstream( int f, char *b, int len );
+-    /**
+-     * Destroys the fpstream object.
+-     */
++    fpstream(const char name[], std::ios::openmode omode);
+     ~fpstream();
+-    /**
+-     * Returns the data member bp.
+-     */
+-    filebuf * rdbuf();
+-    /**
+-     * Opens the named file in the given mode (app, ate, in, out, binary,
+-     * trunc, nocreate, noreplace) and protection. The opened file is
+-     * attatched to this stream.
+-     */
+-    void open( const char *name, int omode, int prot = filebuf::openprot );
++    void open(const char name[], std::ios::openmode omode);
+ };
+ 
+ #endif  // Uses_fpstream
+Index: lib/tv.h
+===================================================================
+RCS file: /usr/home/cvs/repository/libh/lib/tvision/work/tvision-0.8/lib/tv.h,v
+retrieving revision 1.1
+retrieving revision 1.4
+diff -u -r1.1 -r1.4
+--- lib/tv.h	20 Dec 2002 12:06:20 -0000	1.1
++++ lib/tv.h	27 Dec 2002 23:16:44 -0000	1.4
+@@ -1,5 +1,5 @@
+-/*
+- * tv.h
++/**
++ * @file tv.h
+  *
+  * Turbo Vision - Version 2.0
+  *
+@@ -36,11 +36,9 @@
+ 
+  *
+  * Modified by Sergio Sigala <sergio@sigala.it>
++ * Modified by Max Okumoto <okumoto@ucsd.edu>
+  */
+ 
+-/** \file tv.h
+- * tv.h
+- */
+ 
+ #define _TV_VERSION 0x0200
+ 
+@@ -375,10 +373,6 @@
+ #if defined( Uses_TDialog )
+ #define Uses_TWindow
+ #define __INC_DIALOGS_H
+-#endif
+-
+-#if defined( Uses_TVMemMgr )
+-#define __INC_BUFFERS_H
+ #endif
+ 
+ #if defined( Uses_TWindow )
+Index: lib/tvobjs.h
+===================================================================
+RCS file: /usr/home/cvs/repository/libh/lib/tvision/work/tvision-0.8/lib/tvobjs.h,v
+retrieving revision 1.1
+retrieving revision 1.2
+diff -u -r1.1 -r1.2
+--- lib/tvobjs.h	20 Dec 2002 12:06:20 -0000	1.1
++++ lib/tvobjs.h	27 Dec 2002 23:16:44 -0000	1.2
+@@ -42,7 +42,7 @@
+      * Destroys the object pointed by `o'.
+      *
+      * destroy() deletes an object `o' of a type derived from TObject; that
+-     * is, any object created with operator new(). destroy() terminates the
++     * is, any object created with new. destroy() terminates the
+      * object, correctly freeing the memory that it occupies.
+      *
+      * It calls `o->shutDown()' and after does `delete o'.
+Index: lib/util.h
+===================================================================
+RCS file: /usr/home/cvs/repository/libh/lib/tvision/work/tvision-0.8/lib/util.h,v
+retrieving revision 1.1
+retrieving revision 1.5
+diff -u -r1.1 -r1.5
+--- lib/util.h	20 Dec 2002 12:06:20 -0000	1.1
++++ lib/util.h	27 Dec 2002 23:16:44 -0000	1.5
+@@ -1,5 +1,5 @@
+ /*
+- * util.h
++ * @file util.h
+  *
+  * Turbo Vision - Version 2.0
+  *
+@@ -7,14 +7,13 @@
+  * All Rights Reserved.
+  *
+  * Modified by Sergio Sigala <sergio@sigala.it>
++ * Modified by Max Okumoto <okumoto@ucsd.edu>
+  */
+ 
+ #if !defined( __UTIL_H )
+ #define __UTIL_H
+ 
+-/** \file util.h
+- * util.h
+- */
++#include <streambuf>
+ 
+ /**
+  * Undocumented.
+@@ -166,13 +165,6 @@
+  */
+ void *message( TView *receiver, ushort what, ushort command, void *infoPtr );
+ 
+-/** \fn lowMemory()
+- * Calls TVMemMgr::safetyPoolExhausted() to check the state of the safety
+- * pool.
+- * @see TVMemMgr::safetyPoolExhausted
+- */
+-Boolean lowMemory();
+-
+ /** \fn newStr( const char *s )
+  * Dynamic string creation. If `s' is a null pointer, newStr() returns a 0
+  * pointer; otherwise, strlen(s)+ 1 bytes are allocated, containing a copy of
+@@ -209,9 +201,7 @@
+  * Undocumented.
+  */
+ void expandPath(const char *path, char *dir, char *file);
+-/**
+- * Undocumented.
+- */
+-long int filelength(int fd);
++
++std::streampos filelength(std::istream &s);
+ 
+ #endif  // __UTIL_H
+Index: tutorial/background.cc
+===================================================================
+RCS file: /usr/home/cvs/repository/libh/lib/tvision/work/tvision-0.8/tutorial/background.cc,v
+retrieving revision 1.1
+retrieving revision 1.4
+diff -u -r1.1 -r1.4
+--- tutorial/background.cc	20 Dec 2002 12:06:23 -0000	1.1
++++ tutorial/background.cc	25 Dec 2002 14:10:19 -0000	1.4
+@@ -2,6 +2,7 @@
+  * TVision example: how to change the background pattern
+  *
+  * Written by Sergio Sigala <sergio@sigala.it>
++ * Modified by Max Okumoto <okumoto@ucsd.edu>
+  */
+ 
+ #define Uses_TApplication
+@@ -20,7 +21,7 @@
+ {
+ }
+ 
+-void main()
++int main()
+ {
+ 	TDeskTop::defaultBkgrnd = '?';
+ 	Demo a;
+Index: tutorial/load.cc
+===================================================================
+RCS file: /usr/home/cvs/repository/libh/lib/tvision/work/tvision-0.8/tutorial/load.cc,v
+retrieving revision 1.1
+retrieving revision 1.3
+diff -u -r1.1 -r1.3
+--- tutorial/load.cc	20 Dec 2002 12:06:23 -0000	1.1
++++ tutorial/load.cc	25 Dec 2002 14:10:19 -0000	1.3
+@@ -2,6 +2,7 @@
+  * TVision example: how to create custom views
+  *
+  * Written by Sergio Sigala <sergio@sigala.it>
++ * Modified by Max Okumoto <okumoto@ucsd.edu>
+  */
+ 
+ #define Uses_TApplication
+@@ -18,10 +19,13 @@
+ 
+ #include <tvision/tv.h>
+ 
+-#include <fstream.h>
+ #include <stdio.h>
+ #include <stdlib.h>
+ #include <time.h>
++
++#include <fstream>
++
++using std::ifstream;
+ 
+ enum
+ {
+Index: tutorial/nomenus.cc
+===================================================================
+RCS file: /usr/home/cvs/repository/libh/lib/tvision/work/tvision-0.8/tutorial/nomenus.cc,v
+retrieving revision 1.1
+retrieving revision 1.3
+diff -u -r1.1 -r1.3
+--- tutorial/nomenus.cc	20 Dec 2002 12:06:23 -0000	1.1
++++ tutorial/nomenus.cc	25 Dec 2002 14:10:19 -0000	1.3
+@@ -2,6 +2,7 @@
+  * TVision example: how to handle dialogs without menu bar and status line
+  *
+  * Written by Sergio Sigala <sergio@sigala.it>
++ * Modified by Max Okumoto <okumoto@ucsd.edu>
+  */
+ 
+ #define Uses_MsgBox
+@@ -80,7 +81,7 @@
+ {
+ public:
+     TMyApp();
+-    ushort doWork();
++    void doWork();
+     ushort newDialog(DialogData &data);
+     static TDeskTop *initDeskTop(TRect r);
+ };
+@@ -163,7 +164,7 @@
+ 
+ //open dialogs here
+ 
+-ushort TMyApp::doWork()
++void TMyApp::doWork()
+ {
+     messageBox("\003Welcome to the cheese ordering system",
+ 	mfInformation + mfOKButton);
+Index: tutorial/splash.cc
+===================================================================
+RCS file: /usr/home/cvs/repository/libh/lib/tvision/work/tvision-0.8/tutorial/splash.cc,v
+retrieving revision 1.1
+retrieving revision 1.4
+diff -u -r1.1 -r1.4
+--- tutorial/splash.cc	20 Dec 2002 12:06:23 -0000	1.1
++++ tutorial/splash.cc	25 Dec 2002 14:10:19 -0000	1.4
+@@ -2,6 +2,7 @@
+  * TVision example: how to show a dialog box at startup
+  *
+  * Written by Sergio Sigala <sergio@sigala.it>
++ * Modified by Max Okumoto <okumoto@ucsd.edu>
+  */
+ 
+ #define Uses_TApplication
+@@ -84,7 +85,7 @@
+     executeDialog(aboutBox);
+ }
+ 
+-void main()
++int main()
+ {
+ 	Demo a;
+ 	a.run();
+Index: tutorial/tvedit.cc
+===================================================================
+RCS file: /usr/home/cvs/repository/libh/lib/tvision/work/tvision-0.8/tutorial/tvedit.cc,v
+retrieving revision 1.1
+retrieving revision 1.4
+diff -u -r1.1 -r1.4
+--- tutorial/tvedit.cc	20 Dec 2002 12:06:23 -0000	1.1
++++ tutorial/tvedit.cc	25 Dec 2002 14:10:19 -0000	1.4
+@@ -2,6 +2,7 @@
+  * TVision example: a simple text editor
+  *
+  * Written by Sergio Sigala <sergio@sigala.it>
++ * Modified by Max Okumoto <okumoto@ucsd.edu>
+  */
+ 
+ #define Uses_MsgBox
+@@ -27,13 +28,12 @@
+ #define Uses_TStatusItem
+ #define Uses_TStatusLine
+ #define Uses_TSubMenu
+-
+-#include <fstream.h>
+-#include <signal.h>
+-#include <stdarg.h>
+-#include <stdio.h>
+ #include <tvision/tv.h>
+ 
++extern "C" {
++    #include <signal.h>
++}
++
+ //new command codes; standard commands are defined in views.h
+ 
+ enum
+@@ -235,6 +235,8 @@
+ 	va_end(ap);
+ 	return doReplacePrompt(*cursor);
+     }
++    assert(0); /* what should the return value be if we fall through? */
++    return 0;
+ }
+ 
+ //executes a dialog in modal state; similar to TProgram::execute(), but this
+Index: tutorial/tvguid04.cc
+===================================================================
+RCS file: /usr/home/cvs/repository/libh/lib/tvision/work/tvision-0.8/tutorial/tvguid04.cc,v
+retrieving revision 1.1
+retrieving revision 1.3
+diff -u -r1.1 -r1.3
+--- tutorial/tvguid04.cc	20 Dec 2002 12:06:23 -0000	1.1
++++ tutorial/tvguid04.cc	25 Dec 2002 14:10:19 -0000	1.3
+@@ -7,10 +7,9 @@
+ /*---------------------------------------------------------*/
+ /*
+  * Modified by Sergio Sigala <sergio@sigala.it>
++ * Modified by Max Okumoto <okumoto@ucsd.edu>
+  */
+ 
+-#include <stdlib.h>               // for random()
+-
+ #define Uses_TEvent
+ #define Uses_TApplication
+ #define Uses_TKeys
+@@ -24,6 +23,8 @@
+ #define Uses_TDeskTop
+ #define Uses_TWindow
+ #include <tvision/tv.h>
++
++#include <stdlib.h>               // for random()
+ 
+ const int cmMyFileOpen = 200; // assign new command values
+ const int cmMyNewWin   = 201;
+Index: tutorial/tvguid05.cc
+===================================================================
+RCS file: /usr/home/cvs/repository/libh/lib/tvision/work/tvision-0.8/tutorial/tvguid05.cc,v
+retrieving revision 1.1
+retrieving revision 1.3
+diff -u -r1.1 -r1.3
+--- tutorial/tvguid05.cc	20 Dec 2002 12:06:23 -0000	1.1
++++ tutorial/tvguid05.cc	25 Dec 2002 14:10:19 -0000	1.3
+@@ -7,10 +7,9 @@
+ /*---------------------------------------------------------*/
+ /*
+  * Modified by Sergio Sigala <sergio@sigala.it>
++ * Modified by Max Okumoto <okumoto@ucsd.edu>
+  */
+ 
+-#include <stdlib.h>               // for random()
+-
+ #define Uses_TEventQueue
+ #define Uses_TEvent
+ #define Uses_TApplication
+@@ -26,6 +25,8 @@
+ #define Uses_TView
+ #define Uses_TWindow
+ #include <tvision/tv.h>
++
++#include <stdlib.h>               // for random()
+ 
+ const int cmMyFileOpen = 200; // assign new command values
+ const int cmMyNewWin   = 201;
+Index: tutorial/tvguid06.cc
+===================================================================
+RCS file: /usr/home/cvs/repository/libh/lib/tvision/work/tvision-0.8/tutorial/tvguid06.cc,v
+retrieving revision 1.1
+retrieving revision 1.3
+diff -u -r1.1 -r1.3
+--- tutorial/tvguid06.cc	20 Dec 2002 12:06:23 -0000	1.1
++++ tutorial/tvguid06.cc	25 Dec 2002 14:10:20 -0000	1.3
+@@ -7,17 +7,11 @@
+ /*---------------------------------------------------------*/
+ /*
+  * Modified by Sergio Sigala <sergio@sigala.it>
++ * Modified by Max Okumoto <okumoto@ucsd.edu>
+  */
+ 
+ /****** imperfect draw method--see tvguid07 for improvement *****/
+ 
+-#include <stdlib.h>             // for exit(), random()
+-#include <iostream.h>
+-#include <fstream.h>            // for ifstream
+-#include <stdio.h>              // for puts() etc
+-#include <string.h>             // for strlen etc
+-#include <ctype.h>
+-
+ #define Uses_TEventQueue
+ #define Uses_TEvent
+ #define Uses_TProgram
+@@ -34,6 +28,18 @@
+ #define Uses_TView
+ #define Uses_TWindow
+ #include <tvision/tv.h>
++
++#include <iostream>
++#include <fstream>
++
++#include <stdlib.h>             // for exit(), random()
++#include <stdio.h>              // for puts() etc
++#include <string.h>             // for strlen etc
++#include <ctype.h>
++
++using std::ifstream;
++using std::cout;
++using std::endl;
+ 
+ const int cmMyFileOpen = 200; // assign new command values
+ const int cmMyNewWin   = 201;
+Index: tutorial/tvguid07.cc
+===================================================================
+RCS file: /usr/home/cvs/repository/libh/lib/tvision/work/tvision-0.8/tutorial/tvguid07.cc,v
+retrieving revision 1.1
+retrieving revision 1.3
+diff -u -r1.1 -r1.3
+--- tutorial/tvguid07.cc	20 Dec 2002 12:06:23 -0000	1.1
++++ tutorial/tvguid07.cc	25 Dec 2002 14:10:20 -0000	1.3
+@@ -7,17 +7,11 @@
+ /*---------------------------------------------------------*/
+ /*
+  * Modified by Sergio Sigala <sergio@sigala.it>
++ * Modified by Max Okumoto <okumoto@ucsd.edu>
+  */
+ 
+ // same as tvguid06 except for improved draw method
+ 
+-#include <stdlib.h>             // for exit(), random()
+-#include <iostream.h>
+-#include <fstream.h>            // for ifstream
+-#include <stdio.h>              // for puts() etc
+-#include <string.h>             // for strlen etc
+-#include <ctype.h>
+-
+ #define Uses_TEventQueue
+ #define Uses_TEvent
+ #define Uses_TProgram
+@@ -34,6 +28,18 @@
+ #define Uses_TView
+ #define Uses_TWindow
+ #include <tvision/tv.h>
++
++#include <iostream>
++#include <fstream>            // for ifstream
++
++#include <stdlib.h>             // for exit(), random()
++#include <stdio.h>              // for puts() etc
++#include <string.h>             // for strlen etc
++#include <ctype.h>
++
++using std::cout;
++using std::endl;
++using std::ifstream;
+ 
+ const int cmMyFileOpen = 200; // assign new command values
+ const int cmMyNewWin   = 201;
+Index: tutorial/tvguid08.cc
+===================================================================
+RCS file: /usr/home/cvs/repository/libh/lib/tvision/work/tvision-0.8/tutorial/tvguid08.cc,v
+retrieving revision 1.1
+retrieving revision 1.3
+diff -u -r1.1 -r1.3
+--- tutorial/tvguid08.cc	20 Dec 2002 12:06:23 -0000	1.1
++++ tutorial/tvguid08.cc	25 Dec 2002 14:10:20 -0000	1.3
+@@ -7,18 +7,12 @@
+ /*---------------------------------------------------------*/
+ /*
+  * Modified by Sergio Sigala <sergio@sigala.it>
++ * Modified by Max Okumoto <okumoto@ucsd.edu>
+  */
+ 
+ // same as tvguid07 except for scrolling interior
+ // add TDemoWindow::makeInterior
+ 
+-#include <stdlib.h>             // for exit(), random()
+-#include <iostream.h>
+-#include <fstream.h>            // for ifstream
+-#include <stdio.h>              // for puts() etc
+-#include <string.h>             // for strlen etc
+-#include <ctype.h>
+-
+ #define Uses_TEventQueue
+ #define Uses_TEvent
+ #define Uses_TProgram
+@@ -37,6 +31,18 @@
+ #define Uses_TScroller
+ #define Uses_TScrollBar
+ #include <tvision/tv.h>
++
++#include <iostream>
++#include <fstream>
++
++#include <stdlib.h>             // for exit(), random()
++#include <stdio.h>              // for puts() etc
++#include <string.h>             // for strlen etc
++#include <ctype.h>
++
++using std::ifstream;
++using std::cout;
++using std::endl;
+ 
+ const int cmMyFileOpen = 200; // assign new command values
+ const int cmMyNewWin   = 201;
+Index: tutorial/tvguid09.cc
+===================================================================
+RCS file: /usr/home/cvs/repository/libh/lib/tvision/work/tvision-0.8/tutorial/tvguid09.cc,v
+retrieving revision 1.1
+retrieving revision 1.3
+diff -u -r1.1 -r1.3
+--- tutorial/tvguid09.cc	20 Dec 2002 12:06:23 -0000	1.1
++++ tutorial/tvguid09.cc	25 Dec 2002 14:10:20 -0000	1.3
+@@ -7,18 +7,12 @@
+ /*---------------------------------------------------------*/
+ /*
+  * Modified by Sergio Sigala <sergio@sigala.it>
++ * Modified by Max Okumoto <okumoto@ucsd.edu>
+  */
+ 
+ // same as tvguid08 except for multiple panes
+ // modify TDemoWindow::makeInterior and constructor
+ 
+-#include <stdlib.h>             // for exit(), random()
+-#include <iostream.h>
+-#include <fstream.h>            // for ifstream
+-#include <stdio.h>              // for puts() etc
+-#include <string.h>             // for strlen etc
+-#include <ctype.h>
+-
+ #define Uses_TEventQueue
+ #define Uses_TEvent
+ #define Uses_TProgram
+@@ -38,6 +32,18 @@
+ #define Uses_TScroller
+ #define Uses_TScrollBar
+ #include <tvision/tv.h>
++
++#include <iostream>
++#include <fstream>
++
++#include <stdlib.h>             // for exit(), random()
++#include <stdio.h>              // for puts() etc
++#include <string.h>             // for strlen etc
++#include <ctype.h>
++
++using std::ifstream;
++using std::cout;
++using std::endl;
+ 
+ const int cmMyFileOpen = 200;   // assign new command values
+ const int cmMyNewWin   = 201;
+Index: tutorial/tvguid10.cc
+===================================================================
+RCS file: /usr/home/cvs/repository/libh/lib/tvision/work/tvision-0.8/tutorial/tvguid10.cc,v
+retrieving revision 1.1
+retrieving revision 1.3
+diff -u -r1.1 -r1.3
+--- tutorial/tvguid10.cc	20 Dec 2002 12:06:23 -0000	1.1
++++ tutorial/tvguid10.cc	25 Dec 2002 14:10:20 -0000	1.3
+@@ -7,18 +7,12 @@
+ /*---------------------------------------------------------*/
+ /*
+  * Modified by Sergio Sigala <sergio@sigala.it>
++ * Modified by Max Okumoto <okumoto@ucsd.edu>
+  */
+ 
+ // same as tvguid09 except for better handling of resizing
+ // add TDemoWindow::sizeLimits
+ 
+-#include <stdlib.h>             // for exit(), random()
+-#include <iostream.h>
+-#include <fstream.h>            // for ifstream
+-#include <stdio.h>              // for puts() etc
+-#include <string.h>             // for strlen etc
+-#include <ctype.h>
+-
+ #define Uses_TEventQueue
+ #define Uses_TEvent
+ #define Uses_TProgram
+@@ -38,6 +32,18 @@
+ #define Uses_TScroller
+ #define Uses_TScrollBar
+ #include <tvision/tv.h>
++
++#include <iostream>
++#include <fstream>
++
++#include <stdlib.h>             // for exit(), random()
++#include <stdio.h>              // for puts() etc
++#include <string.h>             // for strlen etc
++#include <ctype.h>
++
++using std::cout;
++using std::endl;
++using std::ifstream;
+ 
+ const int cmMyFileOpen = 200;   // assign new command values
+ const int cmMyNewWin   = 201;
+Index: tutorial/tvguid11.cc
+===================================================================
+RCS file: /usr/home/cvs/repository/libh/lib/tvision/work/tvision-0.8/tutorial/tvguid11.cc,v
+retrieving revision 1.1
+retrieving revision 1.3
+diff -u -r1.1 -r1.3
+--- tutorial/tvguid11.cc	20 Dec 2002 12:06:23 -0000	1.1
++++ tutorial/tvguid11.cc	25 Dec 2002 14:10:20 -0000	1.3
+@@ -7,18 +7,12 @@
+ /*---------------------------------------------------------*/
+ /*
+  * Modified by Sergio Sigala <sergio@sigala.it>
++ * Modified by Max Okumoto <okumoto@ucsd.edu>
+  */
+ 
+ // same as tvguid10 except for added dialog box
+ // modify TMyApp
+ 
+-#include <stdlib.h>             // for exit(), random()
+-#include <iostream.h>
+-#include <fstream.h>            // for ifstream
+-#include <stdio.h>              // for puts() etc
+-#include <string.h>             // for strlen etc
+-#include <ctype.h>
+-
+ #define Uses_TEventQueue
+ #define Uses_TEvent
+ #define Uses_TProgram
+@@ -38,6 +32,18 @@
+ #define Uses_TScrollBar
+ #define Uses_TDialog
+ #include <tvision/tv.h>
++
++#include <iostream>
++#include <fstream>
++
++#include <stdlib.h>             // for exit(), random()
++#include <stdio.h>              // for puts() etc
++#include <string.h>             // for strlen etc
++#include <ctype.h>
++
++using std::cout;
++using std::endl;
++using std::ifstream;
+ 
+ // note the extra #define above
+ 
+Index: tutorial/tvguid12.cc
+===================================================================
+RCS file: /usr/home/cvs/repository/libh/lib/tvision/work/tvision-0.8/tutorial/tvguid12.cc,v
+retrieving revision 1.1
+retrieving revision 1.3
+diff -u -r1.1 -r1.3
+--- tutorial/tvguid12.cc	20 Dec 2002 12:06:23 -0000	1.1
++++ tutorial/tvguid12.cc	25 Dec 2002 14:10:20 -0000	1.3
+@@ -7,18 +7,12 @@
+ /*---------------------------------------------------------*/
+ /*
+  * Modified by Sergio Sigala <sergio@sigala.it>
++ * Modified by Max Okumoto <okumoto@ucsd.edu>
+  */
+ 
+ // same as tvguid11 except for making the dialog modal
+ // modify TMyApp::newDialog
+ 
+-#include <stdlib.h>             // for exit(), random()
+-#include <iostream.h>
+-#include <fstream.h>            // for ifstream
+-#include <stdio.h>              // for puts() etc
+-#include <string.h>             // for strlen etc
+-#include <ctype.h>
+-
+ #define Uses_TEventQueue
+ #define Uses_TEvent
+ #define Uses_TProgram
+@@ -38,6 +32,18 @@
+ #define Uses_TScrollBar
+ #define Uses_TDialog
+ #include <tvision/tv.h>
++
++#include <iostream>
++#include <fstream>
++
++#include <stdlib.h>             // for exit(), random()
++#include <stdio.h>              // for puts() etc
++#include <string.h>             // for strlen etc
++#include <ctype.h>
++
++using std::cout;
++using std::endl;
++using std::ifstream;
+ 
+ const int cmMyFileOpen = 200;   // assign new command values
+ const int cmMyNewWin   = 201;
+Index: tutorial/tvguid13.cc
+===================================================================
+RCS file: /usr/home/cvs/repository/libh/lib/tvision/work/tvision-0.8/tutorial/tvguid13.cc,v
+retrieving revision 1.1
+retrieving revision 1.3
+diff -u -r1.1 -r1.3
+--- tutorial/tvguid13.cc	20 Dec 2002 12:06:23 -0000	1.1
++++ tutorial/tvguid13.cc	25 Dec 2002 14:10:20 -0000	1.3
+@@ -7,18 +7,12 @@
+ /*---------------------------------------------------------*/
+ /*
+  * Modified by Sergio Sigala <sergio@sigala.it>
++ * Modified by Max Okumoto <okumoto@ucsd.edu>
+  */
+ 
+ // same as tvguid12 except for extra buttons in dialog
+ // modify TMyApp::newDialog
+ 
+-#include <stdlib.h>             // for exit(), random()
+-#include <iostream.h>
+-#include <fstream.h>            // for ifstream
+-#include <stdio.h>              // for puts() etc
+-#include <string.h>             // for strlen etc
+-#include <ctype.h>
+-
+ #define Uses_TEventQueue
+ #define Uses_TEvent
+ #define Uses_TProgram
+@@ -39,6 +33,18 @@
+ #define Uses_TDialog
+ #define Uses_TButton
+ #include <tvision/tv.h>
++
++#include <iostream>
++#include <fstream>
++
++#include <stdlib.h>             // for exit(), random()
++#include <stdio.h>              // for puts() etc
++#include <string.h>             // for strlen etc
++#include <ctype.h>
++
++using std::cout;
++using std::endl;
++using std::ifstream;
+ 
+ // note the extra #define above
+ 
+Index: tutorial/tvguid14.cc
+===================================================================
+RCS file: /usr/home/cvs/repository/libh/lib/tvision/work/tvision-0.8/tutorial/tvguid14.cc,v
+retrieving revision 1.1
+retrieving revision 1.3
+diff -u -r1.1 -r1.3
+--- tutorial/tvguid14.cc	20 Dec 2002 12:06:23 -0000	1.1
++++ tutorial/tvguid14.cc	25 Dec 2002 14:10:20 -0000	1.3
+@@ -7,18 +7,12 @@
+ /*---------------------------------------------------------*/
+ /*
+  * Modified by Sergio Sigala <sergio@sigala.it>
++ * Modified by Max Okumoto <okumoto@ucsd.edu>
+  */
+ 
+ // same as tvguid13 except for extra checkboxes, radiobuttons, and labels
+ // modify TMyApp::newDialog
+ 
+-#include <stdlib.h>             // for exit(), random()
+-#include <iostream.h>
+-#include <fstream.h>            // for ifstream
+-#include <stdio.h>              // for puts() etc
+-#include <string.h>             // for strlen etc
+-#include <ctype.h>
+-
+ #define Uses_TEventQueue
+ #define Uses_TEvent
+ #define Uses_TProgram
+@@ -43,6 +37,18 @@
+ #define Uses_TRadioButtons
+ #define Uses_TLabel
+ #include <tvision/tv.h>
++
++#include <iostream>
++#include <fstream>
++
++#include <stdlib.h>             // for exit(), random()
++#include <stdio.h>              // for puts() etc
++#include <string.h>             // for strlen etc
++#include <ctype.h>
++
++using std::cout;
++using std::endl;
++using std::ifstream;
+ 
+ // note the extra #defines above
+ 
+Index: tutorial/tvguid15.cc
+===================================================================
+RCS file: /usr/home/cvs/repository/libh/lib/tvision/work/tvision-0.8/tutorial/tvguid15.cc,v
+retrieving revision 1.1
+retrieving revision 1.3
+diff -u -r1.1 -r1.3
+--- tutorial/tvguid15.cc	20 Dec 2002 12:06:23 -0000	1.1
++++ tutorial/tvguid15.cc	25 Dec 2002 14:10:20 -0000	1.3
+@@ -7,18 +7,12 @@
+ /*---------------------------------------------------------*/
+ /*
+  * Modified by Sergio Sigala <sergio@sigala.it>
++ * Modified by Max Okumoto <okumoto@ucsd.edu>
+  */
+ 
+ // same as tvguid14 except for extra input line in dialog
+ // modify TMyApp::newDialog
+ 
+-#include <stdlib.h>             // for exit(), random()
+-#include <iostream.h>
+-#include <fstream.h>            // for ifstream
+-#include <stdio.h>              // for puts() etc
+-#include <string.h>             // for strlen etc
+-#include <ctype.h>
+-
+ #define Uses_TEventQueue
+ #define Uses_TEvent
+ #define Uses_TProgram
+@@ -45,6 +39,17 @@
+ #define Uses_TLabel
+ #define Uses_TInputLine
+ #include <tvision/tv.h>
++
++#include <fstream>		// for ifstream
++
++#include <stdlib.h>             // for exit(), random()
++#include <stdio.h>              // for puts() etc
++#include <string.h>             // for strlen etc
++#include <ctype.h>
++
++using std::cout;
++using std::endl;
++using std::ifstream;
+ 
+ // note the extra #define above
+ 
+Index: tutorial/tvguid16.cc
+===================================================================
+RCS file: /usr/home/cvs/repository/libh/lib/tvision/work/tvision-0.8/tutorial/tvguid16.cc,v
+retrieving revision 1.1
+retrieving revision 1.4
+diff -u -r1.1 -r1.4
+--- tutorial/tvguid16.cc	20 Dec 2002 12:06:23 -0000	1.1
++++ tutorial/tvguid16.cc	25 Dec 2002 14:10:20 -0000	1.4
+@@ -7,18 +7,12 @@
+ /*---------------------------------------------------------*/
+ /*
+  * Modified by Sergio Sigala <sergio@sigala.it>
++ * Modified by Max Okumoto <okumoto@ucsd.edu>
+  */
+ 
+ // same as tvguid15 except for saving and restoring dialog contents
+ // modify TMyApp::newDialog
+ 
+-#include <stdlib.h>             // for exit(), random()
+-#include <iostream.h>
+-#include <fstream.h>            // for ifstream
+-#include <stdio.h>              // for puts() etc
+-#include <string.h>             // for strlen etc
+-#include <ctype.h>
+-
+ #define Uses_TEventQueue
+ #define Uses_TEvent
+ #define Uses_TProgram
+@@ -45,6 +39,17 @@
+ #define Uses_TLabel
+ #define Uses_TInputLine
+ #include <tvision/tv.h>
++
++#include <fstream>            // for ifstream
++
++#include <stdlib.h>             // for exit(), random()
++#include <stdio.h>              // for puts() etc
++#include <string.h>             // for strlen etc
++#include <ctype.h>
++
++using std::cout;
++using std::endl;
++using std::ifstream;
+ 
+ const int cmMyFileOpen = 200;   // assign new command values
+ const int cmMyNewWin   = 201;
+Index: tutorial/tvlife.cc
+===================================================================
+RCS file: /usr/home/cvs/repository/libh/lib/tvision/work/tvision-0.8/tutorial/tvlife.cc,v
+retrieving revision 1.1
+retrieving revision 1.3
+diff -u -r1.1 -r1.3
+--- tutorial/tvlife.cc	20 Dec 2002 12:06:23 -0000	1.1
++++ tutorial/tvlife.cc	25 Dec 2002 14:10:20 -0000	1.3
+@@ -7,6 +7,8 @@
+  * Clicking with the left button inside the life window will cause a dot to
+  * appear at the cursor location.  Clicking with the right mouse button will
+  * remove the dot.  This allows the user to create his/her own patterns.
++ *
++ * Modified by Max Okumoto <okumoto@ucsd.edu>
+  */
+ 
+ #define Uses_TApplication
+@@ -22,9 +24,9 @@
+ #define Uses_TStatusLine
+ #define Uses_TSubMenu
+ #define Uses_TWindow
++#include <tvision/tv.h>
+ 
+ #include <stdlib.h>
+-#include <tvision/tv.h>
+ 
+ enum
+ {
+@@ -463,8 +465,8 @@
+ 
+ #define NPATS (sizeof patterns / sizeof patterns[0])
+ 
+-TLifeInterior::TLifeInterior(TRect& bounds): TView(bounds), board(0),
+-	running(0)
++TLifeInterior::TLifeInterior(TRect& bounds)
++    : TView(bounds), running(0), board(NULL)
+ {
+ 	eventMask = evMouseDown | evKeyDown | evCommand | evBroadcast;
+ 	growMode = gfGrowHiX | gfGrowHiY;
+@@ -528,16 +530,17 @@
+ 
+ #if 1
+ 	int i = size.x * size.y;
+-	ushort buf[size.x * size.y];
++	ushort *buf = new ushort[i];
+ 	ushort *to = buf;
+ 
+ 	while (i-- > 0)
+ 	{
+-		if (*from++ != 0) *to = (color << 8) | '*';
+-		else *to = (color << 8) | ' ';
++		*to = (*from++ != 0) ? '*' : ' ';
++		*to |= (color << 8);
+ 		to++;
+ 	}
+ 	writeBuf(0, 0, size.x, size.y, buf);
++	delete[] buf;
+ #else
+ 	TDrawBuffer b;
+ 	b.moveChar(0, ' ', color, size.x);
+@@ -806,7 +809,7 @@
+ 	wc += cmRandom;
+ 	wc += cmStartStop;
+ 	wc += cmTile;
+-	for (int i = 0; i < NPATS; i++)	//scan pattern commands
++	for (uint i = 0; i < NPATS; i++)	//scan pattern commands
+ 	{
+ 		wc += cmPat01 + i;	//add pattern commands
+ 	}
+Index: tutorial/validator.cc
+===================================================================
+RCS file: /usr/home/cvs/repository/libh/lib/tvision/work/tvision-0.8/tutorial/validator.cc,v
+retrieving revision 1.1
+retrieving revision 1.5
+diff -u -r1.1 -r1.5
+--- tutorial/validator.cc	20 Dec 2002 12:06:23 -0000	1.1
++++ tutorial/validator.cc	25 Dec 2002 14:10:21 -0000	1.5
+@@ -2,6 +2,7 @@
+  * TVision example: how to use range validators in input lines
+  *
+  * Written by Sergio Sigala <sergio@sigala.it>
++ * Modified by Max Okumoto <okumoto@ucsd.edu>
+  */
+ 
+ #define Uses_TApplication
+@@ -82,7 +83,6 @@
+ 	TWindowInit( &TDialog::initFrame )
+ {
+ 	TInputLine *line;
+-	TScrollBar *bar;
+ 	TView *obj;
+ 
+ 	options |= ofCentered;
+@@ -130,7 +130,7 @@
+ 	selectNext(False);
+ }
+ 
+-void main()
++int main()
+ {
+ 	Demo a;
+ 	a.run();
+Index: tvhc/tvhc.cc
+===================================================================
+RCS file: /usr/home/cvs/repository/libh/lib/tvision/work/tvision-0.8/tvhc/tvhc.cc,v
+retrieving revision 1.1
+retrieving revision 1.5
+diff -u -r1.1 -r1.5
+--- tvhc/tvhc.cc	20 Dec 2002 12:06:25 -0000	1.1
++++ tvhc/tvhc.cc	25 Dec 2002 14:10:22 -0000	1.5
+@@ -9,6 +9,7 @@
+ /*
+  * Modified by Sergey Clushin <serg@lamport.ru>, <Clushin@deol.ru>
+  * Modified by Sergio Sigala <sergio@sigala.it>
++ * Modified by Max Okumoto <okumoto@ucsd.edu>
+  */
+ 
+ /*===== TVHC ============================================================*/
+@@ -88,26 +89,51 @@
+ #include <tv.h>
+ 
+ #include "tvhc.h"
++
+ #include <string.h>
+ #include <limits.h>
+ #include <unistd.h>
+ #include <ctype.h>
+ #include <stdlib.h>
+-#include <fstream.h>
+-#include <strstream.h>
+ #include <errno.h>
+ 
++#include <fstream>
++#include <sstream>
++#include <string>
++
++using std::cerr;
++using std::cin;
++using std::cout;
++using std::ends;
++using std::fstream;
++using std::ios;
++using std::ostringstream;
++using std::string;
++
++static const int	MAXSTRSIZE=256;
++static const char	commandChar[] = ".";
++static const int	bufferSize = 4096;
++
++typedef enum State { undefined, wrapping, notWrapping };
++
++static char		*helpName;
++static uchar		buffer[bufferSize];   
++static int		ofs;
++static TRefTable	*refTable = 0;
++static TCrossRefNode	*xRefs;
++static char		line[MAXSTRSIZE] = "";
++static Boolean		lineInBuffer = False;
++static int		lineCount = 0;
++
+ //======================= File Management ===============================//
+ 
+-TProtectedStream::TProtectedStream( char *aFileName, ushort aMode ) :
++TProtectedStream::TProtectedStream( char *aFileName, ios::openmode aMode) :
+     fstream( aFileName, aMode )
+ {
+     strcpy(fileName, aFileName);
+     mode = aMode;
+ }
+ 
+-void error(char *text);
+-
+ //----- replaceExt(fileName, nExt, force) -------------------------------//
+ //  Replace the extension of the given file with the given extension.    //
+ //  If an extension already exists Force indicates if it should be       //
+@@ -121,8 +147,8 @@
+     char name[MAXFILE];
+     char ext[MAXEXT];
+     char drive[MAXDRIVE];
+-    char buffer[MAXPATH];
+-    ostrstream os(buffer, MAXPATH);
++    string buffer;
++    ostringstream os(buffer);
+ 
+     fnsplit(fileName, drive, dir, name, ext);
+     if (force || (strlen(ext) == 0))
+@@ -139,12 +165,10 @@
+ //  Returns true if the file exists false otherwise.                     /
+ //-----------------------------------------------------------------------/
+ 
+-Boolean fExists(char *fileName)
++static bool
++fExists(const string &fileName)
+ {
+-    if (access(fileName, R_OK) != 0)
+-        return(False);
+-    else
+-        return(True);
++    return (access(fileName.c_str(), R_OK) == 0) ? true : false;
+ }
+ 
+ //======================== Line Management ==============================//
+@@ -194,7 +218,8 @@
+ //  Used by Error and Warning to print the message.                      //
+ //-----------------------------------------------------------------------//
+ 
+-void prntMsg( char *pref, char *text )
++void
++prntMsg(const string &pref, char *text)
+ {
+     if (lineCount > 0)
+         cout << pref << ": " << helpName << "("
+@@ -208,7 +233,8 @@
+ //  Used to indicate an error.  Terminates the program                   //
+ //-----------------------------------------------------------------------//
+ 
+-void error( char *text )
++void
++error(char *text)
+ {
+     prntMsg("Error", text);
+     exit(1);
+@@ -852,7 +878,7 @@
+ void doWriteSymbol(void *p, void *p1)
+ {
+     int numBlanks, i;
+-    ostrstream os(line, MAXSTRSIZE);
++    ostringstream os(line);
+ 
+     TProtectedStream *symbFile = (TProtectedStream *)p1;
+     if (((TReference *)p)->resolved )
+@@ -868,7 +894,7 @@
+         {
+         os << "Unresolved forward reference \""
+            << ((TReference *)p)->topic << "\"" << ends;
+-        warning(os.str());
++        warning(const_cast<char *>(os.str().c_str()));
+         }
+ }
+ 
+@@ -910,25 +936,25 @@
+ // it's ok to overwrite it.                                             //
+ //----------------------------------------------------------------------//
+ 
+-void checkOverwrite( char *fName )
++static void
++checkOverwrite(const string &fName)
+ {
+-    if (fExists(fName))
+-        {
++    if (fExists(fName)) {
+         cerr << "File already exists: " << fName << ".  Overwrite? (y/n) ";
+-        char ch = ({ char s[MAXSTRSIZE]; cin >> s; s[0]; });
+-        if( toupper(ch) != 'Y' )
++
++	char ch;
++	cin >> ch;
++        if (toupper(ch) != 'Y') {
+             exit(1);
+-        }
++	}
++    }
+ }
+ 
+ //========================== Program Block ==========================//
+ 
+-int main(int argc, char **argv)
++int
++main(int argc, char **argv)
+ {
+-    char* textName;
+-    char* symbName;
+-    fpstream* helpStrm;
+-
+     // Banner messages
+     char initialText[] = "Help Compiler  Version 1.0  Copyright (c) 1991"
+                          " Borland International.\n";
+@@ -949,25 +975,25 @@
+         }
+ 
+     //  Calculate file names
+-    textName = argv[1];
++    char *textName = argv[1];
+     if (!fExists(textName))
+         {
+         strcpy(bufStr,"File ");
+-        strcat(bufStr,textName);
+-        strcat(bufStr," not found.");
++        strcat(bufStr, textName);
++        strcat(bufStr, " not found.");
+         error(bufStr);
+         }
+ 
+     helpName = argv[2];
+-    checkOverwrite( helpName );
++    checkOverwrite(helpName);
+ 
+-    symbName = argv[3];
+-    checkOverwrite( symbName );
++    char *symbName = argv[3];
++    checkOverwrite(symbName);
+ 
+     TProtectedStream textStrm(textName, ios::in);
+     TProtectedStream symbStrm(symbName, ios::out | ios::trunc);
+ 
+-    helpStrm =  new fpstream(helpName, ios::out | ios::trunc);
+-    processText(textStrm, *helpStrm, symbStrm);
++    fpstream helpStrm(helpName, ios::out | ios::trunc);
++    processText(textStrm, helpStrm, symbStrm);
+     return 0;
+ }
+Index: tvhc/tvhc.h
+===================================================================
+RCS file: /usr/home/cvs/repository/libh/lib/tvision/work/tvision-0.8/tvhc/tvhc.h,v
+retrieving revision 1.1
+retrieving revision 1.5
+diff -u -r1.1 -r1.5
+--- tvhc/tvhc.h	20 Dec 2002 12:06:25 -0000	1.1
++++ tvhc/tvhc.h	25 Dec 2002 14:10:22 -0000	1.5
+@@ -8,6 +8,7 @@
+ 
+ /*
+  * Modified by Sergey Clushin <serg@lamport.ru>, <Clushin@deol.ru>
++ * Modified by Max Okumoto <okumoto@ucsd.edu>
+  */
+ 
+ #if !defined( __TVHC_H )
+@@ -21,25 +22,20 @@
+ 
+ #include "helpbase.h"
+ 
++#include <fstream>
+ 
+ const int MAXSIZE = 80;
+-const int MAXSTRSIZE=256;
+-const char commandChar[] = ".";
+-const int bufferSize = 4096;
+ 
+-typedef enum State { undefined, wrapping, notWrapping };
+-
+-class TProtectedStream : public fstream
++class TProtectedStream : public std::fstream
+ {
+ 
+ public:
+-
+-    TProtectedStream( char *aFileName, ushort  aMode );
++    TProtectedStream( char *aFileName, std::ios::openmode aMode );
+ 
+ private:
+ 
+     char  fileName[MAXSIZE];
+-    ushort mode;
++    std::ios::openmode	mode;
+ 
+ };
+ 
+@@ -113,14 +109,5 @@
+     TTopicDefinition *next;
+ 
+ };
+-
+-char* helpName;
+-uchar buffer[bufferSize];
+-int ofs;
+-TRefTable *refTable = 0;
+-TCrossRefNode  *xRefs;
+-char line[MAXSTRSIZE] = "";
+-Boolean lineInBuffer = False;
+-int lineCount = 0;
+ 
+ #endif  // __TVHC_H
