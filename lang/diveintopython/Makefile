@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	diveintopython
-PORTVERSION=	3.1.1
+PORTVERSION=	3.2.1
 CATEGORIES=	lang python
 MASTER_SITES=	http://diveintopython.org/download/
 DISTNAME=	${PORTNAME}
@@ -14,7 +14,8 @@ DISTFILES=	${DISTNAME}-html-${VERSIONSTR}.tgz \
 		${DISTNAME}-html-flat-${VERSIONSTR}.tgz \
 		${DISTNAME}-pdf-${VERSIONSTR}.tgz \
 		${DISTNAME}-text-${VERSIONSTR}.tgz \
-		${DISTNAME}-xml-${VERSIONSTR}.tgz
+		${DISTNAME}-xml-${VERSIONSTR}.tgz \
+		${DISTNAME}-examples-${VERSIONSTR}.tgz
 DIST_SUBDIR=	${PORTNAME}
 EXTRACT_ONLY=	${DISTNAME}-html-${VERSIONSTR}.tgz \
 		${DISTNAME}-html-flat-${VERSIONSTR}.tgz \
@@ -38,6 +39,9 @@ post-patch:
 	   s#<tr>(.(?!<tr>))*(Microsoft Word|Windows Help)(.(?!</tr>))*.</tr>##g; \
 	   s#<td>(.(?!<td>))*cn/(.(?!</td>))*.</td>##g' \
 	  ${WRKSRC}/index.html
+	@ ${PERL} -pi.orig -e \
+	  's#http[^>]*(download/${PORTNAME}-examples-${VERSIONSTR}.tgz)#$$1#' \
+	  ${WRKSRC}/odbchelper_divein.html
 
 do-install:
 	@ ${MKDIR} ${DIPDLDIR}
@@ -47,11 +51,10 @@ do-install:
 	@ ${INSTALL_DATA} ${WRKSRC}/${format}/${PORTNAME}.${format} \
 	  ${DIPDLDIR}
 .endfor
-.for format in html html-flat pdf text xml
+.for format in html html-flat pdf text xml examples
 	@ ${INSTALL_DATA} \
 	  ${DISTDIR}/${DIST_SUBDIR}/${PORTNAME}-${format}-${VERSIONSTR}.tgz \
 	  ${DIPDLDIR}
 .endfor
-	@ cd ${WRKDIR} && ${TAR} czf ${DIPDLDIR}/examples.tgz py/*
 
 .include <bsd.port.mk>
