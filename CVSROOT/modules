@@ -1114,6 +1114,7 @@ dmake		ports/devel/dmake
 dmalloc		ports/devel/dmalloc
 dmenu		src/usr.bin/dmenu
 dmesg		src/sbin/dmesg
+dna-qc		ports/biology/dna-qc
 dnetc		ports/misc/dnetc/
 dnews		ports/news/dnews
 dnrd		ports/net/dnrd
