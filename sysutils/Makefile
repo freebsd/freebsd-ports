@@ -47,6 +47,7 @@
     SUBDIR += dvdtape
     SUBDIR += e2fsprogs
     SUBDIR += eject
+    SUBDIR += enteruser
     SUBDIR += extipl
     SUBDIR += fcron
     SUBDIR += ffsrecov
