@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	aap
-PORTVERSION=	0.900
-PORTREVISION=	1
+PORTVERSION=	1.000
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	a-a-p
@@ -41,7 +40,7 @@ do-install:
 .if !defined(NOPORTDOCS)
 	cd ${WRKSRC} && \
 		${MKDIR} -m 755 ${INSTALLDIR}/doc ${INSTALLDIR}/doc/html && \
-		${INSTALL_DATA} filetype.txt doc/exec.pdf ${INSTALLDIR}/doc && \
+		${INSTALL_DATA} doc/exec.pdf ${INSTALLDIR}/doc && \
 		${INSTALL_DATA} doc/*.html ${INSTALLDIR}/doc/html && \
 		${LN} -fhs ${INSTALLDIR}/doc ${PREFIX}/share/doc/aap
 .endif
