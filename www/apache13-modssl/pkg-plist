@@ -160,7 +160,7 @@ www/data-dist/index.html.ru.ucs2
 www/data-dist/index.html.ru.ucs4
 www/data-dist/index.html.ru.utf8
 www/data-dist/index.html.se
-www/data-dist/index.html.zh
+www/data-dist/index.html.zh-tw.big5
 share/doc/apache/LICENSE
 share/doc/apache/bind.html.en
 share/doc/apache/bind.html.fr
@@ -173,7 +173,9 @@ share/doc/apache/cgi_path.html.ja.jis
 share/doc/apache/configuring.html.fr
 share/doc/apache/configuring.html.en
 share/doc/apache/configuring.html.ja.jis
-share/doc/apache/content-negotiation.html
+share/doc/apache/content-negotiation.html.en
+share/doc/apache/content-negotiation.html.html
+share/doc/apache/content-negotiation.html.ja.jis
 share/doc/apache/custom-error.html.en
 share/doc/apache/custom-error.html.ja.jis
 share/doc/apache/cygwin.html
@@ -250,6 +252,7 @@ share/doc/apache/misc/windoz_keepalive.html
 share/doc/apache/mod/core.html.en
 share/doc/apache/mod/core.html.fr
 share/doc/apache/mod/core.html.html
+share/doc/apache/mod/core.html.ja.jis
 share/doc/apache/mod/directive-dict.html.en
 share/doc/apache/mod/directive-dict.html.fr
 share/doc/apache/mod/directive-dict.html.ja.jis
@@ -275,11 +278,13 @@ share/doc/apache/mod/mod_actions.html.en
 share/doc/apache/mod/mod_actions.html.html
 share/doc/apache/mod/mod_actions.html.ja.jis
 share/doc/apache/mod/mod_alias.html.en
+share/doc/apache/mod/mod_alias.html.html
 share/doc/apache/mod/mod_alias.html.ja.jis
 share/doc/apache/mod/mod_asis.html.en
 share/doc/apache/mod/mod_asis.html.html
 share/doc/apache/mod/mod_asis.html.ja.jis
 share/doc/apache/mod/mod_auth.html.en
+share/doc/apache/mod/mod_auth.html.html
 share/doc/apache/mod/mod_auth.html.ja.jis
 share/doc/apache/mod/mod_auth_anon.html
 share/doc/apache/mod/mod_auth_db.html
@@ -312,7 +317,9 @@ share/doc/apache/mod/mod_info.html.ja.jis
 share/doc/apache/mod/mod_isapi.html
 share/doc/apache/mod/mod_log_agent.html
 share/doc/apache/mod/mod_log_common.html
-share/doc/apache/mod/mod_log_config.html
+share/doc/apache/mod/mod_log_config.html.en
+share/doc/apache/mod/mod_log_config.html.html
+share/doc/apache/mod/mod_log_config.html.ja.jis
 share/doc/apache/mod/mod_log_referer.html
 share/doc/apache/mod/mod_mime.html.en
 share/doc/apache/mod/mod_mime.html.html
