@@ -8,7 +8,8 @@
 PORTNAME=	cpbk
 PORTVERSION=	2.0
 CATEGORIES=	sysutils
-MASTER_SITES=	http://pep.netnation.com/cpbk/ \
+MASTER_SITES=	http://www.netsw.org/system/tools/fileutils/install/cpbk/ \
+		http://pep.netnation.com/cpbk/ \
 		ftp://mocha.mkintraweb.com/pub/linux/cpbk/
 
 MAINTAINER=	ports@FreeBSD.org
