@@ -1,0 +1,20 @@
+--- Makefile.in.orig	Tue Aug  4 12:55:19 1998
++++ Makefile.in	Tue Aug  4 12:55:52 1998
+@@ -29,14 +29,14 @@
+ 		sed -e s+/usr/share+$(SHAREDIR)+ diction.1.in >$@
+ 
+ install:	all
+-		$(INSTALL) -m 755 -d $(BINDIR)
++		$(MKDIR) $(BINDIR)
+ 		$(INSTALL_PROGRAM) -s diction $(BINDIR)/diction
+ 		$(INSTALL_PROGRAM) -s style $(BINDIR)/style
+-		$(INSTALL) -m 755 -d $(SHAREDIR)/diction
++		$(MKDIR) $(SHAREDIR)/diction
+ 		$(INSTALL_DATA) de $(SHAREDIR)/diction/de
+ 		$(INSTALL_DATA) en $(SHAREDIR)/diction/en
+ 		(cd $(SHAREDIR)/diction; rm -f C; ln en C)
+-		$(INSTALL) -m 755 -d $(MANDIR)/man1
++		$(MKDIR) $(MANDIR)/man1
+ 		$(INSTALL_DATA) diction.1 $(MANDIR)/man1/diction.1
+ 		$(INSTALL_DATA) style.1 $(MANDIR)/man1/style.1
+ 
