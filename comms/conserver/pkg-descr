@@ -8,3 +8,5 @@ to the entire cluster.
 
 This is very handy for remote unattended FreeBSD servers.  It can send
 serial break signals which is useful for breaking into DDB on hung machines.
+
+WWW: http://www.conserver.com/
