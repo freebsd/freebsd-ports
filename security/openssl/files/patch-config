@@ -1,18 +1,20 @@
---- config.orig	Thu Nov 14 08:30:29 2002
-+++ config	Wed Dec 11 23:10:05 2002
-@@ -180,6 +180,7 @@
+--- config.orig	Fri Dec  6 08:45:11 2002
++++ config	Sat Jan 11 01:37:40 2003
+@@ -206,6 +206,8 @@
             Pentium\ II*) MACH="i686"     ;;
             Pentium*    ) MACH="i586"     ;;
             Alpha*      ) MACH="alpha"    ;;
 +           UltraSparc* ) MACH="sparc64"  ;;
++           Itanium*    ) MACH="ia64"     ;;
             *           ) MACH="$MACHINE" ;;
          esac
          case ${MACH} in
-@@ -585,6 +586,7 @@
+@@ -640,6 +642,8 @@
    *86*-*-solaris2) OUT="solaris-x86-$CC" ;;
    *-*-sunos4) OUT="sunos-$CC" ;;
    alpha*-*-freebsd*) OUT="FreeBSD-alpha" ;;
 +  sparc64*-*-freebsd*) OUT="FreeBSD-sparc64" ;;
++  ia64*-*-freebsd*) OUT="FreeBSD-ia64" ;;
    *-freebsd[3-9]*) OUT="FreeBSD-elf" ;;
    *-freebsd[1-2]*) OUT="FreeBSD" ;;
    *86*-*-netbsd) OUT="NetBSD-x86" ;;
