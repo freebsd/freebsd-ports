@@ -549,10 +549,10 @@ usr/lib/librpmio.so.0
 usr/lib/librpmio.so.0.0.0
 usr/lib/libslang.so.1
 usr/lib/libslang.so.1.4.2
-usr/lib/libstdc++-3-libc6.2-2-2.10.0.so
-usr/lib/libstdc++-libc6.2-2.so.3
 usr/lib/libstdc++-2-libc6.1-1-2.9.0.so
+usr/lib/libstdc++-3-libc6.2-2-2.10.0.so
 usr/lib/libstdc++-libc6.1-1.so.2
+usr/lib/libstdc++-libc6.2-2.so.3
 usr/lib/libstdc++.so.2.7.2
 usr/lib/libstdc++.so.2.7.2.8
 usr/lib/libstdc++.so.2.8
@@ -9250,10 +9250,10 @@ var/log/lastlog
 @dirrm usr/lib/locale/kl_GL
 @dirrm usr/lib/locale/ka_GE/LC_MESSAGES
 @dirrm usr/lib/locale/ka_GE
-@dirrm usr/lib/locale/ja_JP.eucjp/LC_MESSAGES
-@dirrm usr/lib/locale/ja_JP.eucjp
 @dirrm usr/lib/locale/ja_JP.utf8/LC_MESSAGES
 @dirrm usr/lib/locale/ja_JP.utf8
+@dirrm usr/lib/locale/ja_JP.eucjp/LC_MESSAGES
+@dirrm usr/lib/locale/ja_JP.eucjp
 @dirrm usr/lib/locale/iw_IL/LC_MESSAGES
 @dirrm usr/lib/locale/iw_IL.utf8/LC_MESSAGES
 @dirrm usr/lib/locale/iw_IL.utf8
