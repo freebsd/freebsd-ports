@@ -23,51 +23,12 @@ bin/testprns
 %%WINBIND%%bin/wbinfo
 @unexec %D/etc/rc.d/samba.sh forcestop 2>/dev/null || true
 etc/rc.d/samba.sh
-@unexec if cmp -s %D/etc/smb.conf %D/etc/smb.conf.default; then rm -f %D/etc/smb.conf; fi
-etc/smb.conf.default
+@unexec if cmp -s %%SAMBA_CONFIG%% %%SAMBA_CONFIG%%.default; then rm -f %%SAMBA_CONFIG%%; fi
+@unexec rm -f %%SAMBA_CONFIG%%.default
 sbin/smbd
 sbin/nmbd
 sbin/swat
 %%WINBIND%%sbin/winbindd
-lib/samba/lowcase.dat
-lib/samba/upcase.dat
-lib/samba/valid.dat
-lib/samba/de.msg
-lib/samba/en.msg
-lib/samba/fr.msg
-lib/samba/it.msg
-lib/samba/ja.msg
-lib/samba/nl.msg
-lib/samba/pl.msg
-lib/samba/tr.msg
-lib/samba/vfs/audit.so
-lib/samba/vfs/cap.so
-lib/samba/vfs/default_quota.so
-lib/samba/vfs/expand_msdfs.so
-lib/samba/vfs/extd_audit.so
-lib/samba/vfs/fake_perms.so
-lib/samba/vfs/full_audit.so
-lib/samba/vfs/netatalk.so
-lib/samba/vfs/readonly.so
-lib/samba/vfs/recycle.so
-lib/samba/vfs/shadow_copy.so
-%%MULTIBYTE%%lib/samba/vfs/hex.so
-lib/samba/charset/CP437.so
-lib/samba/charset/CP850.so
-%%SAMMYSQL%%lib/samba/pdb/mysql.so
-%%SAMPGSQL%%lib/samba/pdb/pgsql.so
-%%SAMXML%%lib/samba/pdb/xml.so
-%%WINBIND_NSS%%lib/nss_winbind.so.1
-%%WINBIND_NSS%%lib/nss_wins.so.1
-%%WINBIND%%lib/pam_winbind.so
-%%SMBPASS%%lib/pam_smbpass.so
-@dirrm lib/samba/rpc
-@dirrm lib/samba/pdb
-@dirrm lib/samba/idmap
-@dirrm lib/samba/charset
-@dirrm lib/samba/auth
-@unexec rmdir %D/lib/samba/vfs 2>/dev/null || true
-@unexec rmdir %D/lib/samba 2>/dev/null || true
 %%SMBPASS%%%%EXAMPLESDIR%%/pam_smbpass/README
 %%SMBPASS%%%%EXAMPLESDIR%%/pam_smbpass/kdc-pdc
 %%SMBPASS%%%%EXAMPLESDIR%%/pam_smbpass/password-mature
@@ -434,6 +395,7 @@ share/swat/help/net.8.html
 share/swat/help/nmbd.8.html
 share/swat/help/nmblookup.1.html
 share/swat/help/ntlm_auth.1.html
+share/swat/help/pam_winbind.8.html
 share/swat/help/pdbedit.8.html
 share/swat/help/profiles.1.html
 share/swat/help/rpcclient.1.html
@@ -476,16 +438,6 @@ share/swat/images/viewconfig.gif
 share/swat/images/wizard.gif
 share/swat/include/footer.html
 share/swat/include/header.html
-share/swat/lang/ja/help/welcome.html
-share/swat/lang/tr/help/welcome.html
-share/swat/lang/tr/images/globals.gif
-share/swat/lang/tr/images/home.gif
-share/swat/lang/tr/images/passwd.gif
-share/swat/lang/tr/images/printers.gif
-share/swat/lang/tr/images/samba.gif
-share/swat/lang/tr/images/shares.gif
-share/swat/lang/tr/images/status.gif
-share/swat/lang/tr/images/viewconfig.gif
 share/swat/using_samba/appa.html
 share/swat/using_samba/appb.html
 share/swat/using_samba/appc.html
@@ -651,15 +603,6 @@ share/swat/using_samba/samba2_xs.gif
 share/swat/using_samba/toc.html
 @dirrm share/swat/using_samba/figs
 @dirrm share/swat/using_samba
-@dirrm share/swat/lang/tr/include
-@dirrm share/swat/lang/tr/images
-@dirrm share/swat/lang/tr/help
-@dirrm share/swat/lang/tr
-@dirrm share/swat/lang/ja/include
-@dirrm share/swat/lang/ja/images
-@dirrm share/swat/lang/ja/help
-@dirrm share/swat/lang/ja
-@dirrm share/swat/lang
 @dirrm share/swat/include
 @dirrm share/swat/images
 @dirrm share/swat/help/images

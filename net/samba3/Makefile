@@ -6,7 +6,7 @@
 #
 
 PORTNAME=		samba
-PORTVERSION=		3.0.9
+PORTVERSION=		3.0.10
 PORTREVISION?=		0
 PORTEPOCH?=		1
 CATEGORIES?=		net
@@ -20,6 +20,7 @@ COMMENT?=		A free SMB and CIFS client and server for UNIX
 CONFLICTS?=		ja-samba-2.* ja-samba-3.* samba-2.* sharity-light-1.*
 
 USE_ICONV=		yes
+USE_AUTOHEADER_VER=	259
 USE_AUTOCONF_VER=	259
 
 LATEST_LINK?=		${PKGNAMEPREFIX}${PORTNAME}3${PKGNAMESUFFIX}
@@ -33,10 +34,10 @@ SAMBA_LOGDIR=		${VARDIR}/log/samba
 SAMBA_RUNDIR=		${VARDIR}/run
 SAMBA_LOCKDIR?=		${VARDIR}/db/samba
 SAMBA_PRIVATE?=		${PREFIX}/private
-SAMBA_CONFDIR=		${PREFIX}/etc
+SAMBA_CONFDIR?=		${PREFIX}/etc
 SAMBA_SWATDIR=		${PREFIX}/share/swat
 SAMBA_LIBDIR=		${PREFIX}/lib
-RC_DIR=			${SAMBA_CONFDIR}/rc.d
+RC_DIR=			${PREFIX}/etc/rc.d
 SAMBA_CONFIG=		${SAMBA_CONFDIR}/smb.conf
 
 CONFIGURE_ENV+=		CPPFLAGS=-I${LOCALBASE}/include \
@@ -72,6 +73,7 @@ OPTIONS=	LDAP		"With LDAP support" on \
 		SAM_PGSQL	"With PostgreSQL smbpasswd backend" off \
 		SAM_OLD_LDAP	"With Samba2.x LDAP smbpasswd backend" off \
 		PAM_SMBPASS	"With SMB PAM module" off \
+		EXP_MODULES	"With experimental module(s)" off \
 		POPT		"With installed POPT library" on
 .endif
 
@@ -173,6 +175,14 @@ WANT_EXPSAM_MODULES!=	${ECHO_CMD} ${WANT_EXPSAM_MODULES} | ${SED} -e 's/ /,/g'
 CONFIGURE_ARGS+=	--with-expsam=${WANT_EXPSAM_MODULES}
 .endif
 # SAM
+.if defined(WITH_EXP_MODULES)
+.if !defined(WANT_EXP_MODULES) || empty(WANT_EXP_MODULES)
+WANT_EXP_MODULES=	rpc_echo idmap_rid charset_weird
+.endif
+WANT_EXP_MODULES!=	${ECHO_CMD} ${WANT_EXP_MODULES} | ${SED} -e 's/ /,/g'
+CONFIGURE_ARGS+=	--with-shared-modules=${WANT_EXP_MODULES}
+.endif
+
 .if defined(WITH_PAM_SMBPASS)
 CONFIGURE_ARGS+=	--with-pam_smbpass
 PLIST_SUB+=		SMBPASS=""
@@ -219,7 +229,7 @@ CONFIGURE_ARGS+=	--without-ads
 CONFIGURE_ARGS+=	--with-krb5=${KRB5_HOME}
 .elif defined(HEIMDAL_HOME) && exists(${HEIMDAL_HOME}/lib/libgssapi.a)
 CONFIGURE_ARGS+=	--with-krb5=${HEIMDAL_HOME}
-.elif ( defined(MAKE_KERBEROS5) || ${OSVERSION} > 500105 ) && exists(${DESTDIR}/usr/lib/libkrb5.a)
+.elif exists(${DESTDIR}/usr/lib/libkrb5.a) && exists(${DESTDIR}/usr/bin/krb5-config)
 CONFIGURE_ARGS+=	--with-krb5=${DESTDIR}/usr
 .else
 LIB_DEPENDS+=		krb5:${PORTSDIR}/security/heimdal
@@ -237,7 +247,6 @@ CONFIGURE_ARGS+=	--without-ldap
 .endif
 
 .if !defined(SAMBA_SUBPORT)
-
 MAN1=		findsmb.1 nmblookup.1 log2pcap.1 rpcclient.1 \
 		smbget.1 smbcacls.1 smbclient.1 smbcontrol.1 smbsh.1 \
 		smbstatus.1 smbtar.1 testparm.1 testprns.1 vfstest.1 \
@@ -248,7 +257,7 @@ MAN8=		nmbd.8 smbd.8 net.8 pdbedit.8 smbpasswd.8 smbspool.8 \
 		swat.8 tdbdump.8 tdbbackup.8
 .if !defined(WITHOUT_WINBIND)
 MAN1+=		wbinfo.1
-MAN8+=		winbindd.8
+MAN8+=		pam_winbind.8 winbindd.8
 .endif
 
 .if !defined(WITHOUT_WINBIND)
@@ -259,7 +268,8 @@ WINBIND_FILTER=		${GREP} -v '^%%WINBIND%%'
 
 PLIST_SUB+=		RC_DIR=${RC_DIR} \
 			SAMBA_LOGDIR=${SAMBA_LOGDIR} \
-			SAMBA_LOCKDIR=${SAMBA_LOCKDIR}
+			SAMBA_LOCKDIR=${SAMBA_LOCKDIR} \
+			SAMBA_CONFIG=${SAMBA_CONFIG}
 
 RC_SCRIPTS_SUB=		PREFIX=${PREFIX} \
 			CUPS=${CUPS} \
@@ -288,6 +298,10 @@ pre-fetch:
 post-patch:
 	@${FIND} ${WRKSRC} -name CVS -o -name .cvsignore | ${XARGS} ${RM}
 	@${RM} -rf ${WRKDIR}/${DISTNAME}/examples/libsmbclient
+	@${RM} -rf ${WRKDIR}/${DISTNAME}/swat/lang
+
+pre-install:
+	@${FIND} ${SAMBA_LIBDIR} -type f | ${SORT} | ${SED} -e 's|^${PREFIX}||; s|^/||' >> ${WRKDIR}/.PLIST.exclude
 
 post-install:
 .for sect in 1 5 7 8
@@ -309,6 +323,21 @@ post-install:
 		${FILESDIR}/smb.conf.default > ${WRKDIR}/smb.conf.default
 	${INSTALL_DATA} ${WRKDIR}/smb.conf.default ${SAMBA_CONFIG}.default
 	${INSTALL_SCRIPT} ${WRKSRC}/script/mksmbpasswd.sh ${PREFIX}/bin/make_smbpasswd
+.if !defined(WITHOUT_WINBIND)
+.if defined(WITH_WINBIND_NSS)
+	${INSTALL_PROGRAM} ${WRKSRC}/nsswitch/nss_winbind.so ${SAMBA_LIBDIR}/nss_winbind.so.1
+	${INSTALL_PROGRAM} ${WRKSRC}/nsswitch/nss_wins.so ${SAMBA_LIBDIR}/nss_wins.so.1
+.endif
+	${INSTALL_PROGRAM} ${WRKSRC}/nsswitch/pam_winbind.so ${SAMBA_LIBDIR}
+.endif
+.if defined(WITH_PAM_SMBPASS)
+	@${INSTALL_PROGRAM} ${WRKSRC}/bin/pam_smbpass.so ${SAMBA_LIBDIR}
+.endif
+# Lib
+	@${FIND} ${SAMBA_LIBDIR} -type f | ${SED} -e 's|^${PREFIX}||; s|^/||' | ${EGREP} -F -v -f ${WRKDIR}/.PLIST.exclude | ${SORT} >> ${TMPPLIST}
+	@for d in `${FIND} ${SAMBA_LIBDIR}/samba -type d | ${SORT} -r`; do \
+	    ${ECHO_CMD} "@unexec ${RMDIR} $$d 2>/dev/null || true" >> ${TMPPLIST}; \
+	done
 # Spool
 	@test -d ${SAMBA_SPOOL} || ${MKDIR} ${SAMBA_SPOOL} &&		\
 	    ${CHMOD} 1777 ${SAMBA_SPOOL} && ${CHOWN} root:wheel ${SAMBA_SPOOL}
@@ -342,16 +371,6 @@ post-install:
 	@${ECHO_CMD} "@exec ${CHOWN} root:wheel ${SAMBA_PRIVATE}" >> ${TMPPLIST}
 	@${ECHO_CMD} "@unexec ${RMDIR} ${SAMBA_PRIVATE} 2>/dev/null || true" >> ${TMPPLIST}
 	@${ECHO_CMD} "@unexec ${ECHO_CMD} \"Warning: If you will *NOT* use this package anymore, please remove ${SAMBA_PRIVATE}/* manually.\"" >> ${TMPPLIST}
-.if !defined(WITHOUT_WINBIND)
-.if defined(WITH_WINBIND_NSS)
-	${INSTALL_PROGRAM} ${WRKSRC}/nsswitch/nss_winbind.so ${SAMBA_LIBDIR}/nss_winbind.so.1
-	${INSTALL_PROGRAM} ${WRKSRC}/nsswitch/nss_wins.so ${SAMBA_LIBDIR}/nss_wins.so.1
-.endif
-	${INSTALL_PROGRAM} ${WRKSRC}/nsswitch/pam_winbind.so ${SAMBA_LIBDIR}
-.endif
-.if defined(WITH_PAM_SMBPASS)
-	@${INSTALL_PROGRAM} ${WRKSRC}/bin/pam_smbpass.so ${SAMBA_LIBDIR}
-.endif
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 	@${CP} -Rp ${WRKDIR}/${DISTNAME}/docs/registry ${DOCSDIR}
