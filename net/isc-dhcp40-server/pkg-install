@@ -1,0 +1,23 @@
+#!/bin/sh
+#
+# $FreeBSD$
+#
+
+[ $# != 2 ] && exit 1
+[ -z "${PKG_PREFIX}" ] && exit 1
+[ -n "${BATCH}" ] && exit 0
+
+case $2 in
+POST-INSTALL)
+	${PKG_PREFIX}/etc/rc.d/isc-dhcpd.sh forceinstall
+	;;
+DEINSTALL)
+	${PKG_PREFIX}/etc/rc.d/isc-dhcpd.sh forceuninstall
+	;;
+POST-DEINSTALL|PRE-INSTALL)
+	;;
+*)
+	echo "usage: $0 <PKG_NAME> {PRE-INSTALL|POST-INSTALL|DEINSTALL|POST-DEINSTALL}" >&2
+	exit 1
+	;;
+esac
