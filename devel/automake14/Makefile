@@ -42,14 +42,14 @@ pre-configure:
 		${WRKSRC}/aclocal.in
 
 post-install:
-	@-${RM} -fr ${DESTDIR}${PREFIX}/libexec/automake14
-	@${MKDIR} ${DESTDIR}${PREFIX}/libexec/automake14
+	@-${RM} -fr ${PREFIX}/libexec/automake14 \
+	@${MKDIR} ${PREFIX}/libexec/automake14
 .for i in aclocal automake
 	@${LN} -s ../../bin/${i}14 \
-		${DESTDIR}${PREFIX}/libexec/automake14/${i}
+		${PREFIX}/libexec/automake14/${i}
 .endfor
-	@install-info ${DESTDIR}${PREFIX}/info/automake14.info \
-		${DESTDIR}${PREFIX}/info/dir
+	@install-info ${PREFIX}/info/automake14.info \
+		${PREFIX}/info/dir
 	# temporary
 	${LN} -s . ${PREFIX}/share/automake14/automake
 	${LN} -s ../aclocal14 ${PREFIX}/share/automake14/aclocal

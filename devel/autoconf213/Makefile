@@ -43,17 +43,17 @@ post-patch:
 	@${RM} ${WRKSRC}/*.info* >/dev/null 2>&1 || true
 
 post-install:
-	@${CHMOD} +x ${DESTDIR}${PREFIX}/share/autoconf213/config.*
+	@${CHMOD} +x ${PREFIX}/share/autoconf213/config.*
 	@${INSTALL_SCRIPT} ${WRKSRC}/install-sh \
-		${DESTDIR}${PREFIX}/share/autoconf213
-	@-${RM} -fr ${DESTDIR}${PREFIX}/libexec/autoconf213
-	${MKDIR} ${DESTDIR}${PREFIX}/libexec/autoconf213
+		${PREFIX}/share/autoconf213
+	@-${RM} -fr ${PREFIX}/libexec/autoconf213
+	${MKDIR} ${PREFIX}/libexec/autoconf213
 .for i in autoconf autoheader autoreconf autoscan autoupdate ifnames
 	${LN} -s ../../bin/${i}213 \
-		${DESTDIR}${PREFIX}/libexec/autoconf213/${i}
+		${PREFIX}/libexec/autoconf213/${i}
 .endfor
-	install-info ${DESTDIR}${PREFIX}/info/autoconf213.info \
-		${DESTDIR}${PREFIX}/info/dir
+	install-info ${PREFIX}/info/autoconf213.info \
+		${PREFIX}/info/dir
 	# temporary
 	${LN} -s . ${PREFIX}/share/autoconf213/autoconf
 
