@@ -326,6 +326,7 @@
     SUBDIR += portdowngrade
     SUBDIR += portmanager
     SUBDIR += portsman
+    SUBDIR += portsnap
     SUBDIR += portupgrade
     SUBDIR += powerman
     SUBDIR += prips
