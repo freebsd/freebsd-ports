@@ -8,6 +8,7 @@
 
 PORTNAME=	XML-Catalog
 PORTVERSION=	0.02
+PORTREVISION=	1
 CATEGORIES=	textproc perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	XML
@@ -25,5 +26,8 @@ PERL_CONFIGURE=	yes
 
 MAN3=		XML::Catalog.3
 MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
+
+post-patch:
+	${PERL} -pi -e 's/\r//' ${WRKSRC}/Catalog.pm
 
 .include <bsd.port.mk>
