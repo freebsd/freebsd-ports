@@ -7,12 +7,20 @@
 #
 
 PORTNAME=	bsdi-netscape-${BROWSER}
+PORTVERSION=	4.75
 
 MAINTAINER=	trevor@FreeBSD.org
 
-FORBIDDEN= 	"buffer overflow when processing HTML forms, reported by Michal Zalewski--example at http://people.freebsd.org/~trevor/hostile-page.htm" 
+FORBIDDEN= 	"buffer overflow in password field of HTML forms,\
+		reported by Michal Zalewski and fixed in 4.76--example at \
+		http://people.freebsd.org/~trevor/hostile-page.html"
 
 ONLY_FOR_ARCHS=	i386
+
+DISTFILES=	${BROWSER}-v475-us.${NETSCAPE_DIST_TAG}.tar.gz
+INFILE_HEAD=	'Communicator,4.75.0.20000814'
+BROWSER_VER=	4.75
+WRKSRC=		${WRKDIR}/${BROWSER}-v475.${NETSCAPE_DIST_TAG}
 
 NETSCAPE_DIST_ARCH=	unsupported/bsdi21
 NETSCAPE_DIST_TAG=	x86-bsdi-bsd2
@@ -27,19 +35,6 @@ NSUBDIR=	lib/netscape-bsdi
 WITHOUT_AOUT=		yes
 
 pre-fetch:
-	@${ECHO} "************************************************************"
-	@${ECHO} "None of the Software or underlying information or technology"
-	@${ECHO} "may be downloaded or otherwise exported or re-exported (i)"
-	@${ECHO} "into (or to a national or resident of) Cuba, Iraq, Libya,"
-	@${ECHO} "Sudan, North Korea, Iran, Syria or any other country to"
-	@${ECHO} "which the U.S.  has embargoed goods; or (ii) to anyone on"
-	@${ECHO} "the U.S.  Treasury Department's list of Specially Designated"
-	@${ECHO} "Nationals or the U.S.  Commerce Department's Table of Denial"
-	@${ECHO} "Orders.  By downloading or using the Software, you are"
-	@${ECHO} "agreeing to the foregoing and you are representing and"
-	@${ECHO} "warranting that you are not located in, under the control"
-	@${ECHO} "of, or a national or resident of any such country or on"
-	@${ECHO} "any such list."
-	@${ECHO} "************************************************************"
+	@${CAT} ${PKGMESSAGE}
 
 .include "../netscape47-communicator/Makefile"
