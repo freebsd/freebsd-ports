@@ -1,0 +1,23 @@
+bin/kinput2
+lib/X11/app-defaults/Kinput2
+lib/X11/ccdef/ccdef.kinput2
+lib/X11/ccdef/rule.eggfunc
+lib/X11/ccdef/rule.func
+lib/X11/ccdef/rule.greek
+lib/X11/ccdef/rule.kana
+lib/X11/ccdef/rule.kana2
+lib/X11/ccdef/rule.roma
+lib/X11/ccdef/rule.wnnroma
+lib/X11/ccdef/rule.zascii
+lib/X11/ccdef/ccdef.kinput2.egg
+lib/X11/ccdef/rule.hiragana.egg
+lib/X11/ccdef/rule.katakana.egg
+lib/X11/ccdef/rule.kigou.egg
+@dirrm lib/X11/ccdef
+lib/X11/sj3def/sjhk
+lib/X11/sj3def/sjrc
+lib/X11/sj3def/sjrk
+lib/X11/sj3def/sjsb
+lib/X11/sj3def/sjzh
+@dirrm lib/X11/sj3def
+man/man1/kinput2.1.gz
