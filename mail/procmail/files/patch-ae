@@ -1,0 +1,15 @@
+--- Makefile.1.orig	Tue Dec 28 10:33:26 1999
++++ Makefile.1	Tue Dec 28 10:33:55 1999
+@@ -60,12 +60,7 @@
+  sed -n 's/.*\(Mlocal.*procmail.*F=[a-zA-Z]*\)u/\1/p' `if test -f \
+  /etc/sendmail.cf; then echo /etc/sendmail.cf; else \
+  echo /usr/lib/sendmail.cf; fi`; fi
+-	@echo
+-	@echo \
+- "Also, HIGHLY RECOMMENDED (type 'make install-suid' to execute it):"
+-	@echo
+ 	@src/$@ $(BINDIR)/procmail $(BINDIR)/lockfile >suid.sh
+-	@src/$@ $(BINDIR)/procmail $(BINDIR)/lockfile
+ 	@echo ================================================================\
+ ===============
+ 
