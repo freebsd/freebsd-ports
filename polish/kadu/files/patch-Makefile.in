@@ -1,10 +1,10 @@
---- kadu/Makefile.in.orig	Tue Apr 27 22:47:40 2004
-+++ kadu/Makefile.in	Tue Apr 27 22:46:31 2004
-@@ -533,33 +533,19 @@
+--- kadu/Makefile.in	Mon Jun 28 23:49:06 2004
++++ kadu/Makefile.in	Thu Jul  1 23:41:16 2004
+@@ -524,33 +524,19 @@
  install-data-local:
  	$(mkinstalldirs) "$(DESTDIR)/$(includedir)/kadu/"
  	$(INSTALL_DATA) *.h "$(DESTDIR)/$(includedir)/kadu/"
--	@if test -w "/usr/share"; then \
+-	@if test -w "$(DESTDIR)/usr/share"; then \
 -		$(mkinstalldirs) "$(DESTDIR)/usr/share/applnk/Internet/"; \
 -		echo "[Desktop Entry]" > "$(DESTDIR)/usr/share/applnk/Internet/kadu.desktop"; \
 -		echo "Type=Application" >> "$(DESTDIR)/usr/share/applnk/Internet/kadu.desktop"; \

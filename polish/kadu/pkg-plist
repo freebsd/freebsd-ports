@@ -66,22 +66,36 @@ share/kadu/modules/sound.desc
 share/kadu/modules/translations/autoaway_de.qm
 share/kadu/modules/translations/autoaway_it.qm
 share/kadu/modules/translations/autoaway_pl.qm
+share/kadu/modules/translations/autoresponder_de.qm
 share/kadu/modules/translations/autoresponder_it.qm
 share/kadu/modules/translations/autoresponder_pl.qm
 share/kadu/modules/translations/default_sms_de.qm
 share/kadu/modules/translations/default_sms_it.qm
 share/kadu/modules/translations/default_sms_pl.qm
+share/kadu/modules/translations/docking_de.qm
+share/kadu/modules/translations/docking_it.qm
+share/kadu/modules/translations/docking_pl.qm
+share/kadu/modules/translations/dsp_sound_de.qm
 share/kadu/modules/translations/dsp_sound_it.qm
 share/kadu/modules/translations/dsp_sound_pl.qm
+share/kadu/modules/translations/encryption_de.qm
 share/kadu/modules/translations/encryption_it.qm
 share/kadu/modules/translations/encryption_pl.qm
+share/kadu/modules/translations/ext_sound_de.qm
 share/kadu/modules/translations/ext_sound_it.qm
 share/kadu/modules/translations/ext_sound_pl.qm
 share/kadu/modules/translations/sms_de.qm
 share/kadu/modules/translations/sms_it.qm
 share/kadu/modules/translations/sms_pl.qm
+share/kadu/modules/translations/sound_de.qm
 share/kadu/modules/translations/sound_it.qm
 share/kadu/modules/translations/sound_pl.qm
+share/kadu/modules/translations/voice_de.qm
+share/kadu/modules/translations/voice_it.qm
+share/kadu/modules/translations/voice_pl.qm
+share/kadu/modules/translations/x11_docking_de.qm
+share/kadu/modules/translations/x11_docking_it.qm
+share/kadu/modules/translations/x11_docking_pl.qm
 share/kadu/modules/voice.desc
 share/kadu/modules/x11_docking.desc
 share/kadu/themes/emoticons/gadu-gadu/1/8P.gif
@@ -353,6 +367,7 @@ share/kadu/themes/emoticons/gadu-gadu/2/zly.gif
 share/kadu/themes/emoticons/gadu-gadu/2/zly_na.gif
 share/kadu/themes/emoticons/gadu-gadu/2/zygi.gif
 share/kadu/themes/emoticons/gadu-gadu/2/zygi_na.gif
+share/kadu/themes/icons/default/abouticon.png
 share/kadu/themes/icons/default/back.png
 share/kadu/themes/icons/default/blocking.png
 share/kadu/themes/icons/default/busy.png
@@ -362,6 +377,7 @@ share/kadu/themes/icons/default/busy_m.png
 share/kadu/themes/icons/default/configure.png
 share/kadu/themes/icons/default/connect_creating.png
 share/kadu/themes/icons/default/decrypted.png
+share/kadu/themes/icons/default/emoticon.png
 share/kadu/themes/icons/default/encrypted.png
 share/kadu/themes/icons/default/eraser.png
 share/kadu/themes/icons/default/exit.png
@@ -372,6 +388,7 @@ share/kadu/themes/icons/default/history.png
 share/kadu/themes/icons/default/icons.conf
 share/kadu/themes/icons/default/icons.png
 share/kadu/themes/icons/default/identity.png
+share/kadu/themes/icons/default/impexpicon.png
 share/kadu/themes/icons/default/invisible.png
 share/kadu/themes/icons/default/invisible_d.png
 share/kadu/themes/icons/default/invisible_d_m.png
@@ -379,6 +396,8 @@ share/kadu/themes/icons/default/invisible_m.png
 share/kadu/themes/icons/default/key_enter.png
 share/kadu/themes/icons/default/loading.png
 share/kadu/themes/icons/default/mail_generic.png
+share/kadu/themes/icons/default/manageignored.png
+share/kadu/themes/icons/default/manusricon.png
 share/kadu/themes/icons/default/message.png
 share/kadu/themes/icons/default/mobile.png
 share/kadu/themes/icons/default/msgbox_warning.png
@@ -392,11 +411,16 @@ share/kadu/themes/icons/default/online.png
 share/kadu/themes/icons/default/online_d.png
 share/kadu/themes/icons/default/online_d_m.png
 share/kadu/themes/icons/default/online_m.png
+share/kadu/themes/icons/default/password.png
+share/kadu/themes/icons/default/personalinfo.png
+share/kadu/themes/icons/default/registeraccount.png
 share/kadu/themes/icons/default/reload.png
 share/kadu/themes/icons/default/remove.png
 share/kadu/themes/icons/default/scroll_lock.png
+share/kadu/themes/icons/default/share.png
 share/kadu/themes/icons/default/stop.png
 share/kadu/themes/icons/default/unmute.png
+share/kadu/themes/icons/default/unregisteraccount.png
 share/kadu/themes/icons/default/viewmag.png
 share/kadu/themes/sounds/default/msg.wav
 share/kadu/themes/sounds/default/sound.conf
@@ -422,6 +446,7 @@ share/icons/hicolor/48x48/apps/kadu.png
 @dirrm share/kadu/themes/emoticons
 @dirrm share/kadu/themes
 @dirrm share/kadu/modules/translations
+@dirrm share/kadu/modules/data
 @dirrm share/kadu/modules
 @dirrm share/kadu
 @dirrm include/kadu/modules

@@ -6,11 +6,11 @@
 #
 
 PORTNAME=		kadu
-PORTVERSION=		0.3.8.20040502
+PORTVERSION=		0.3.9
 PORTEPOCH=		1
 CATEGORIES=		polish net
-MASTER_SITES=		http://www.kadu.net/download/snapshots/
-DISTNAME=		${PORTNAME}-20040502
+MASTER_SITES=		http://www.kadu.net/download/stable/
+DISTNAME=		${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=		jacek@combit.com.pl
 COMMENT=		QT Gadu-Gadu client
@@ -28,7 +28,7 @@ CONFIGURE_ENV=		LDFLAGS="-L${LOCALBASE}/lib"\
 			GADU_INCLUDES="-I${LOCALBASE}/include"\
 			GSM_LIB="-L${LOCALBASE}/lib"\
 			GSM_INCLUDES="-I${LOCALBASE}/include"
-			
+
 USE_QT_VER=		3
 
 WRKSRC=			${WRKDIR}/${PORTNAME}
