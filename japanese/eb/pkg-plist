@@ -190,6 +190,22 @@ share/eb/appendix/readers2-2.0/catalogs
 share/eb/appendix/readers2-2.0/catalogs.app
 share/eb/appendix/readers2-2.0/readers.app
 share/eb/appendix/readers2-2.0/readers/data/furoku
+share/eb/appendix/superdic98-1.0/catalogs
+share/eb/appendix/superdic98-1.0/catalogs.app
+share/eb/appendix/superdic98-1.0/chujiten.app
+share/eb/appendix/superdic98-1.0/chujiten/data/furoku
+share/eb/appendix/superdic98-1.0/furoku.app
+share/eb/appendix/superdic98-1.0/furoku/data/furoku
+share/eb/appendix/superdic98-1.0/gn98ep01.app
+share/eb/appendix/superdic98-1.0/gn98ep01/data/furoku
+share/eb/appendix/superdic98-1.0/gn98ep02.app
+share/eb/appendix/superdic98-1.0/gn98ep02/data/furoku
+share/eb/appendix/superdic98-1.0/gn98ep03.app
+share/eb/appendix/superdic98-1.0/gn98ep03/data/furoku
+share/eb/appendix/superdic98-1.0/kanjigen.app
+share/eb/appendix/superdic98-1.0/kanjigen/data/furoku
+share/eb/appendix/superdic98-1.0/koujien.app
+share/eb/appendix/superdic98-1.0/koujien/data/furoku
 @dirrm share/eb/appendix/cencro-1.0/cencro
 @dirrm share/eb/appendix/cencro-1.0
 @dirrm share/eb/appendix/genius-1.0/genius
@@ -278,5 +294,20 @@ share/eb/appendix/readers2-2.0/readers/data/furoku
 @dirrm share/eb/appendix/readers2-2.0/readers/data
 @dirrm share/eb/appendix/readers2-2.0/readers
 @dirrm share/eb/appendix/readers2-2.0
+@dirrm share/eb/appendix/superdic98-1.0/koujien/data
+@dirrm share/eb/appendix/superdic98-1.0/koujien
+@dirrm share/eb/appendix/superdic98-1.0/kanjigen/data
+@dirrm share/eb/appendix/superdic98-1.0/kanjigen
+@dirrm share/eb/appendix/superdic98-1.0/gn98ep03/data
+@dirrm share/eb/appendix/superdic98-1.0/gn98ep03
+@dirrm share/eb/appendix/superdic98-1.0/gn98ep02/data
+@dirrm share/eb/appendix/superdic98-1.0/gn98ep02
+@dirrm share/eb/appendix/superdic98-1.0/gn98ep01/data
+@dirrm share/eb/appendix/superdic98-1.0/gn98ep01
+@dirrm share/eb/appendix/superdic98-1.0/furoku/data
+@dirrm share/eb/appendix/superdic98-1.0/furoku
+@dirrm share/eb/appendix/superdic98-1.0/chujiten/data
+@dirrm share/eb/appendix/superdic98-1.0/chujiten
+@dirrm share/eb/appendix/superdic98-1.0
 @dirrm share/eb/appendix
 @dirrm share/eb

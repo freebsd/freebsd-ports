@@ -10,6 +10,7 @@ PORTVERSION=	2.3.7
 CATEGORIES=	japanese
 MASTER_SITES=	ftp://ftp.sra.co.jp/pub/misc/eb/
 DISTFILES=	${EBFILES} \
+		${LISTFILES} \
 		${APPENDIXFILES}
 EXTRACT_ONLY=	${EBFILES}
 
@@ -19,6 +20,8 @@ PATCHFILES=	${DISTNAME}+.diff
 MAINTAINER=	takamune@avrl.mei.co.jp
 
 EBFILES=	${DISTNAME}${EXTRACT_SUFX}
+LISTFILES=	appendix/LIST \
+		appendix/LIST-ja
 APPENDIXFILES=	appendix/cencro-1.0.tar.gz \
 		appendix/chujiten-2.3.tar.gz \
 		appendix/chujiten2-2.0.tar.gz \
@@ -42,8 +45,8 @@ APPENDIXFILES=	appendix/cencro-1.0.tar.gz \
 		appendix/oxford-2.0.tar.gz \
 		appendix/plus-2.0.tar.gz \
 		appendix/readers-2.2.tar.gz \
-		appendix/readers2-2.0.tar.gz
-LISTFILES=	LIST LIST-ja
+		appendix/readers2-2.0.tar.gz \
+		appendix/superdic98-1.0.tar.gz
 
 DIST_SUBDIR=	eb
 USE_LIBTOOL=	yes
@@ -55,11 +58,11 @@ post-extract:
 	cd ${WRKSRC} && ${RM} -rf zlib
 
 post-install:
+.for file in ${LISTFILES}
+	${INSTALL_DATA} ${DISTDIR}/${DIST_SUBDIR}/${file} ${APPENDIXDIR}
+.endfor
 .for file in ${APPENDIXFILES}
 	${TAR} -C ${APPENDIXDIR} -zxmf ${DISTDIR}/${DIST_SUBDIR}/${file}
-.endfor
-.for file in ${LISTFILES}
-	${INSTALL_DATA} ${FILESDIR}/${file} ${APPENDIXDIR}
 .endfor
 
 .include <bsd.port.mk>
