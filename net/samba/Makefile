@@ -6,13 +6,14 @@
 #
 
 PORTNAME=	samba
-PORTVERSION=	2.2.7a
+PORTVERSION=	2.2.7a.20030314
 CATEGORIES=	net
 MASTER_SITES=	http://us3.samba.org/samba/ftp/%SUBDIR%/ \
 		http://us4.samba.org/samba/ftp/%SUBDIR%/ \
 		http://us5.samba.org/samba/ftp/%SUBDIR%/
 MASTER_SITE_SUBDIR=	. old-versions
-DISTNAME=	${PORTNAME}-${PORTVERSION:S/.r/rc/}
+DISTNAME=	${PORTNAME}-2.2.7a
+PATCHFILES=	samba-2.2.7a-vs-2.2-20030314.diff.bz2
 
 MAINTAINER=	dwcjr@FreeBSD.org
 COMMENT=	A free SMB and CIFS client and server for UNIX
@@ -120,6 +121,10 @@ CONFIGURE_ARGS+=	--with-winbind-auth-challenge
 
 pre-fetch:
 	@${SETENV} ${SCRIPTS_ENV} ${SH} ${SCRIPTDIR}/configure.samba
+
+post-patch:
+	${FIND} ${PATCH_WRKSRC} -type f -name '*.orig' -exec ${RM} {} \;
+	${FIND} ${PATCH_WRKSRC} -type f -empty -exec ${RM} {} \;
 
 post-clean:
 	@${RM} -f ${WRKDIRPREFIX}${.CURDIR}/Makefile.inc
@@ -246,7 +251,6 @@ post-install:
 	for i in ${WRKDIR}/${DISTNAME}/README				\
 			${WRKDIR}/${DISTNAME}/COPYING			\
 			${WRKDIR}/${DISTNAME}/Manifest			\
-			${WRKDIR}/${DISTNAME}/Read-Manifest-Now		\
 			${WRKDIR}/${DISTNAME}/Roadmap			\
 			${WRKDIR}/${DISTNAME}/WHATSNEW.txt		\
 			${WRKDIR}/${DISTNAME}/docs/THANKS		\
