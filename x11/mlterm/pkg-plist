@@ -13,7 +13,7 @@ lib/libkik.so.3
 lib/libmkf.a
 lib/libmkf.la
 lib/libmkf.so
-lib/libmkf.so.9
+lib/libmkf.so.12
 lib/mlterm/libsample.a
 lib/mlterm/libsample.la
 lib/mlterm/libsample.so
