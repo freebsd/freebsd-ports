@@ -12,7 +12,9 @@ lib/X11/wdm/Xservers.ws
 lib/X11/wdm/Xsession
 lib/X11/wdm/Xsession.XFree86
 lib/X11/wdm/Xsession.in
-lib/X11/wdm/Xsetup_0
+@unexec if cmp -s %D/lib/X11/wdm/Xsetup_0.dist %D/lib/X11/wdm/Xsetup_0; then rm -f %D/lib/X11/wdm/Xsetup_0; fi
+lib/X11/wdm/Xsetup_0.dist
+@exec [ -f %D/lib/X11/wdm/Xsetup_0 ] || (cp %D/lib/X11/wdm/Xsetup_0.dist %D/lib/X11/wdm/Xsetup_0)
 lib/X11/wdm/pixmaps/Eagle.xpm
 lib/X11/wdm/pixmaps/Earth.jpg
 lib/X11/wdm/pixmaps/Earth200x130.xpm
@@ -30,5 +32,5 @@ lib/X11/wdm/wdmReconfig
 @unexec rmdir %D/lib/X11/wdm/pixmaps 2>/dev/null || true
 @exec mkdir -p %D/lib/X11/wdm/authdir
 @unexec rmdir %D/lib/X11/wdm/authdir/authfiles 2>/dev/null || true
-@dirrm lib/X11/wdm/authdir
+@unexec rmdir %D/lib/X11/wdm/authdir 2>/dev/null || true
 @unexec rmdir %D/lib/X11/wdm 2>/dev/null || true
