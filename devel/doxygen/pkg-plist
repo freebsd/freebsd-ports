@@ -1,5 +1,4 @@
 bin/doxygen
-bin/doxysearch
 bin/doxytag
 %%HAVE_DOXYWIZARD%%bin/doxywizard
 %%PORTDOCS%%%%HAVE_LATEX%%%%DOCSDIR%%/archoverview.eps
@@ -357,7 +356,6 @@ bin/doxytag
 %%PORTDOCS%%%%DOCSDIR%%/html/doxygen_logo.gif
 %%PORTDOCS%%%%DOCSDIR%%/html/doxygen_logo_low.gif
 %%PORTDOCS%%%%DOCSDIR%%/html/doxygen_usage.html
-%%PORTDOCS%%%%DOCSDIR%%/html/doxysearch_usage.html
 %%PORTDOCS%%%%DOCSDIR%%/html/doxytag_usage.html
 %%PORTDOCS%%%%DOCSDIR%%/html/doxywizard.gif
 %%PORTDOCS%%%%DOCSDIR%%/html/doxywizard_usage.html

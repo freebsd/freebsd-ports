@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	doxygen
-PORTVERSION=	1.3.3
+PORTVERSION=	1.3.5
 CATEGORIES=	devel
 MASTER_SITES=	ftp://ftp.stack.nl/pub/users/dimitri/
 EXTRACT_SUFX=	.src.tar.gz
@@ -83,12 +83,13 @@ post-build:
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/bin/doxygen ${PREFIX}/bin
 	${INSTALL_PROGRAM} ${WRKSRC}/bin/doxytag ${PREFIX}/bin
-	${INSTALL_PROGRAM} ${WRKSRC}/bin/doxysearch ${PREFIX}/bin
 .ifndef WITHOUT_DOXYWIZARD
 	${INSTALL_PROGRAM} ${WRKSRC}/bin/doxywizard ${PREFIX}/bin
 .endif
 .ifndef NOPORTDOCS
 	${MKDIR} ${PREFIX}/share/doc/doxygen/html
+	${RM} -f ${WRKSRC}/examples/diagrams/html/*.md5 \
+		 ${WRKSRC}/examples/diagrams/html/*.map
 	${TAR} -C ${WRKSRC} --exclude '*/_*' -cf - html \
 		| ${TAR} -C ${PREFIX}/share/doc/doxygen --unlink -xf -
 	${TAR} -C ${WRKSRC} --exclude '*/Makefile*' --exclude '*.dot' \
