@@ -19,16 +19,6 @@ lib/%%PYTHON_VERSION%%/site-packages/Martel/__init__.pyo
 lib/%%PYTHON_VERSION%%/site-packages/Martel/convert_re.py
 lib/%%PYTHON_VERSION%%/site-packages/Martel/convert_re.pyc
 lib/%%PYTHON_VERSION%%/site-packages/Martel/convert_re.pyo
-lib/%%PYTHON_VERSION%%/site-packages/Martel/examples/README
-lib/%%PYTHON_VERSION%%/site-packages/Martel/examples/pdb1plm.ent
-lib/%%PYTHON_VERSION%%/site-packages/Martel/examples/sample.swissprot
-lib/%%PYTHON_VERSION%%/site-packages/Martel/examples/swissprot2html.py
-lib/%%PYTHON_VERSION%%/site-packages/Martel/examples/swissprot2html.pyc
-lib/%%PYTHON_VERSION%%/site-packages/Martel/examples/swissprot2html.pyo
-lib/%%PYTHON_VERSION%%/site-packages/Martel/examples/test.mol
-lib/%%PYTHON_VERSION%%/site-packages/Martel/examples/toxml.py
-lib/%%PYTHON_VERSION%%/site-packages/Martel/examples/toxml.pyc
-lib/%%PYTHON_VERSION%%/site-packages/Martel/examples/toxml.pyo
 lib/%%PYTHON_VERSION%%/site-packages/Martel/formats/MDL_10_1996.py
 lib/%%PYTHON_VERSION%%/site-packages/Martel/formats/MDL_10_1996.pyc
 lib/%%PYTHON_VERSION%%/site-packages/Martel/formats/MDL_10_1996.pyo
@@ -92,6 +82,9 @@ lib/%%PYTHON_VERSION%%/site-packages/Martel/test/test_Parser.pyo
 lib/%%PYTHON_VERSION%%/site-packages/Martel/test/test_RecordReader.py
 lib/%%PYTHON_VERSION%%/site-packages/Martel/test/test_RecordReader.pyc
 lib/%%PYTHON_VERSION%%/site-packages/Martel/test/test_RecordReader.pyo
+lib/%%PYTHON_VERSION%%/site-packages/Martel/test/test_RecordReader2.py
+lib/%%PYTHON_VERSION%%/site-packages/Martel/test/test_RecordReader2.pyc
+lib/%%PYTHON_VERSION%%/site-packages/Martel/test/test_RecordReader2.pyo
 lib/%%PYTHON_VERSION%%/site-packages/Martel/test/test_blastall_2_0_10.py
 lib/%%PYTHON_VERSION%%/site-packages/Martel/test/test_blastall_2_0_10.pyc
 lib/%%PYTHON_VERSION%%/site-packages/Martel/test/test_blastall_2_0_10.pyo
@@ -108,14 +101,21 @@ lib/%%PYTHON_VERSION%%/site-packages/Martel/test/test_swissprot38.py
 lib/%%PYTHON_VERSION%%/site-packages/Martel/test/test_swissprot38.pyc
 lib/%%PYTHON_VERSION%%/site-packages/Martel/test/test_swissprot38.pyo
 share/examples/martel/README
+share/examples/martel/builders/SwissProtBuilder.py
+share/examples/martel/builders/SwissProtBuilder.pyc
+share/examples/martel/builders/SwissProtBuilder.pyo
 share/examples/martel/pdb1plm.ent
 share/examples/martel/sample.swissprot
 share/examples/martel/swissprot2html.py
+share/examples/martel/swissprot2html.pyc
+share/examples/martel/swissprot2html.pyo
 share/examples/martel/test.mol
 share/examples/martel/toxml.py
+share/examples/martel/toxml.pyc
+share/examples/martel/toxml.pyo
+@dirrm share/examples/martel/builders
 @dirrm share/examples/martel
 @dirrm lib/%%PYTHON_VERSION%%/site-packages/Martel/test
 @dirrm lib/%%PYTHON_VERSION%%/site-packages/Martel/formats
-@dirrm lib/%%PYTHON_VERSION%%/site-packages/Martel/examples
 @dirrm lib/%%PYTHON_VERSION%%/site-packages/Martel
 @unexec rm -rf %D/share/doc/martel 2>/dev/null || true
