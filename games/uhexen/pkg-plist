@@ -1,4 +1,0 @@
-bin/uhexen
-%%DATADIR%%/.keep_me
-%%WAD%%%%DATADIR%%/hexen.wad
-@dirrm %%DATADIR%%
