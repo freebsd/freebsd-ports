@@ -11,7 +11,7 @@ CATEGORIES=	math
 MASTER_SITES=	ftp://alpha.gnu.org/gnu/pspp/ \
 		ftp://pspp.stat.wisc.edu/pub/PSPP/
 
-MAINTAINER=	ports@freebsd.org
+MAINTAINER=	john@coastalgeology.org
 
 GNU_CONFIGURE=	yes
 
