@@ -256,10 +256,10 @@
     SUBDIR += ipv6socket_scrub
     SUBDIR += ipw
     SUBDIR += irrtoolset
-    SUBDIR += isc-dhcp3
     SUBDIR += isc-dhcp3-client
     SUBDIR += isc-dhcp3-devel
     SUBDIR += isc-dhcp3-relay
+    SUBDIR += isc-dhcp3-server
     SUBDIR += isic
     SUBDIR += jabber
     SUBDIR += jabber-aim
