@@ -7,7 +7,8 @@
 PORTNAME=	cybercalendar
 PORTVERSION=	1.8.2
 CATEGORIES=	www
-MASTER_SITES=	http://www.cyberweavers.com/download/
+MASTER_SITES=	http://www.cyberweavers.com/download/ \
+		http://6net.iif.hu/~mohacsi/downloads/
 DISTNAME=	CyberCalendar_${PORTVERSION}
 
 MAINTAINER=	janos.mohacsi@bsd.hu
@@ -17,8 +18,6 @@ RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/DBD/mysql.pm:${PORTSDIR}/databases/p5-DBD
 		${SITE_PERL}/CGI.pm:${PORTSDIR}/www/p5-CGI.pm \
 		${SITE_PERL}/${PERL_ARCH}/Date/Calc.pm:${PORTSDIR}/devel/p5-Date-Calc \
 		${SITE_PERL}/MIME/Lite.pm:${PORTSDIR}/mail/p5-MIME-Lite
-
-BROKEN=		"Unfetchable"
 
 WRKSRC=		${WRKDIR}/CyberCalendar
 
