@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	xmms
-PORTVERSION=	2.00
+PORTVERSION=	2.02
 CATEGORIES=	audio python
 MASTER_SITES=	http://people.via.ecp.fr/~flo/2002/PyXMMS/dist/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -24,8 +24,5 @@ USE_BZIP2=	yes
 USE_GNOME=	glib12
 XMMS_CONFIG?=	${X11BASE}/bin/xmms-config
 MAKE_ENV=	GLIB_CONFIG="${GLIB_CONFIG}" XMMS_CONFIG="${XMMS_CONFIG}"
-
-post-patch:
-	@cd ${WRKSRC} && ${PYTHON_CMD} ${PYSETUP} patch
 
 .include <bsd.port.mk>
