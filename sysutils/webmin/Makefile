@@ -62,6 +62,11 @@ post-patch:
 		${WRKSRC}/postgresql/config.sed > ${WRKSRC}/postgresql/config
 	${RM} ${WRKSRC}/postgresql/config.sed
 
+	${CP} ${WRKSRC}/dhcpd/config-freebsd ${WRKSRC}/dhcpd/config-freebsd.sed
+	${SED}	-e "s@^dhcpd_conf=.*@dhcpd_conf=${LOCALBASE}/etc/dhcpd.conf@" \
+		${WRKSRC}/dhcpd/config-freebsd.sed > ${WRKSRC}/dhcpd/config-freebsd
+	${RM} ${WRKSRC}/dhcpd/config-freebsd.sed
+
 do-install:
 	@${MKDIR} ${PREFIX}/lib/webmin
 	@${CP} -r ${WRKSRC}/* ${PREFIX}/lib/webmin
