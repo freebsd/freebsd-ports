@@ -1,5 +1,5 @@
 --- input.cc.orig	Sun Aug  1 13:28:22 1993
-+++ input.cc	Sat Aug  3 17:04:16 1996
++++ input.cc	Sat Jan 29 17:59:31 2000
 @@ -134,6 +134,8 @@
  
        else if (!argcmp(argv[i], "-from", 4))     // Print originators name.
@@ -9,3 +9,19 @@
  
        else if (!argcmp(argv[i], "-help", 2))     // Print usage message.
          usage() ;
+@@ -273,11 +275,11 @@
+       case DO_TEXT : prt.message_for = "Listing for ";
+                      digest = 0 ;
+                      break ;
+-      case DO_MAIL : prt.message_for = digest ? "Mail digest for "
+-                                              : "Mail for " ;
++      case DO_MAIL : prt.message_for = digest ? (char *) "Mail digest for "
++                                              : (char *) "Mail for " ;
+                      break ;
+-      case DO_NEWS : prt.message_for = digest ? "News digest for "
+-                                              : "News for " ;
++      case DO_NEWS : prt.message_for = digest ? (char *) "News digest for "
++                                              : (char *) "News for " ;
+                      break ;
+     }
+ }
