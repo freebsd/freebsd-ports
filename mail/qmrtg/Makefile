@@ -13,6 +13,8 @@ MASTER_SITES=	http://dev.publicshout.org/qmrtg/download/
 MAINTAINER=	mij@bitchx.it
 COMMENT=	A simple tool for monitoring and graphing qmail activity through MRTG
 
+BROKEN=		"Creates the /nonexistent directory"
+
 RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash2     \
 		mrtg:${PORTSDIR}/net-mgmt/mrtg
 
