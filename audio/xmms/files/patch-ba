@@ -1,0 +1,81 @@
+*** /usr/local/src/CVS/MM/xmms/xmms/Input/cdaudio/cdaudio.c	Wed Aug  2 02:15:13 2000
+--- Input/cdaudio/cdaudio.c	Tue Sep  5 12:46:29 2000
+***************
+*** 183,194 ****
+  
+  static gboolean is_mounted(gchar * device_name)
+  {
+! #ifdef HAVE_MNTENT_H
+! 	FILE *mounts;
+! 	struct mntent *mnt;
+  	char devname[256];
+  	struct stat st;
+! 
+  	if (lstat(device_name, &st) < 0)
+  		return -1;
+  
+--- 183,199 ----
+  
+  static gboolean is_mounted(gchar * device_name)
+  {
+! #if defined (HAVE_MNTENT_H) || defined (__FreeBSD__)
+  	char devname[256];
+  	struct stat st;
+! #if defined (HAVE_MNTENT_H)
+! 	FILE *mounts;
+! 	struct mntent *mnt;
+! #elif defined (__FreeBSD__)
+! 	struct statfs *fsp;
+! 	int entries;
+! #endif
+! 	
+  	if (lstat(device_name, &st) < 0)
+  		return -1;
+  
+***************
+*** 197,202 ****
+--- 202,208 ----
+  	else
+  		strncpy(devname, device_name, 256);
+  
++ #if defined (HAVE_MNTENT_H)		
+  	if ((mounts = setmntent(MOUNTED, "r")) == NULL)
+  		return TRUE;
+  
+***************
+*** 209,214 ****
+--- 215,231 ----
+  		}
+  	}
+  	endmntent(mounts);
++ #elif defined (__FreeBSD__)
++ 	entries = getmntinfo (&fsp, MNT_NOWAIT);
++ 	if (entries < 0)
++ 		return NULL;
++ 
++         while (entries-- > 0) {
++                 if (!strcmp(fsp->f_mntfromname, devname))
++ 		return TRUE;
++         fsp++;
++         }
++ #endif                            
+  #endif
+  	return FALSE;
+  }
+*** /usr/local/src/CVS/MM/xmms/xmms/Input/cdaudio/cdaudio.h	Thu Jun 15 00:51:44 2000
+--- Input/cdaudio/cdaudio.h	Tue Sep  5 13:49:37 2000
+***************
+*** 46,51 ****
+--- 46,57 ----
+  #include <mntent.h>
+  #endif
+  
++ #ifdef __FreeBSD__
++ #include <sys/param.h>
++ #include <sys/ucred.h>
++ #include <sys/mount.h>
++ #endif
++ 
+  #ifndef CD_FRAMES
+  #define CD_FRAMES 75
+  #endif
