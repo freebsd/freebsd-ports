@@ -17,19 +17,7 @@ lib/emirror/process.pyc
 lib/emirror/tools.py
 lib/emirror/tools.pyc
 @dirrm lib/emirror
-etc/emirror/eclipt-index-blue.template
-etc/emirror/eclipt-index-php.template
-etc/emirror/eclipt-index-zope.template
-etc/emirror/eclipt-index.template
-etc/emirror/eclipt-logfile-blue.template
-etc/emirror/eclipt-logfile-php.template
-etc/emirror/eclipt-logfile-zope.template
-etc/emirror/eclipt-logfile.template
-etc/emirror/eclipt-summary-php.template
 etc/emirror/email-addresses
-etc/emirror/emirror-information.gif
-etc/emirror/fm-index.template
-etc/emirror/fm-logfile.template
 etc/emirror/general.cfg
 etc/emirror/index.template
 etc/emirror/logfile.template

@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	emirror
-PORTVERSION=	2.1.19
+PORTVERSION=	2.1.20
 CATEGORIES=	ftp python
 MASTER_SITES=	ftp://eclipt.uni-klu.ac.at/projects/emirror/ \
 		ftp://emirror.sourceforge.net/pub/emirror/ \
