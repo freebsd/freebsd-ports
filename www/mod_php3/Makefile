@@ -7,7 +7,7 @@
 
 PORTNAME?=	mod_php3
 PORTVERSION=	3.0.18
-PORTREVISION?=	2
+PORTREVISION?=	3
 CATEGORIES?=	www
 MASTER_SITES=	ftp://ftp.php.net/pub/${PHP_DISTDIR}/ \
 		http://us.php.net/${PHP_DISTDIR}/ \
@@ -21,7 +21,8 @@ MASTER_SITES=	ftp://ftp.php.net/pub/${PHP_DISTDIR}/ \
 		http://php3.globe.de/${PHP_DISTDIR}/
 DISTNAME=	php-${PORTVERSION}
 
-FORBIDDEN=	"Remotely exploitable."
+PATCH_SITES=	http://www.php.net/distributions/
+PATCHFILES=	mime.c.diff-3.0.gz
 
 MAINTAINER=	dirk@FreeBSD.org
 
@@ -29,6 +30,8 @@ MAINTAINER=	dirk@FreeBSD.org
 BUILD_DEPENDS=	${LOCALBASE}/sbin/apxs:${PORTSDIR}/www/apache13
 RUN_DEPENDS=	${LOCALBASE}/sbin/apxs:${PORTSDIR}/www/apache13
 .endif
+
+PATCH_DIST_ARGS=	-d ${WRKSRC}/functions
 
 PHP_DISTDIR=	distributions
 
