@@ -1,0 +1,11 @@
+--- configure.orig	Tue Feb  8 14:47:22 2005
++++ configure	Tue Feb  8 14:47:33 2005
+@@ -5538,7 +5538,7 @@
+       if test "x$withval" != "xno" ; then
+          echo "$as_me:$LINENO: result: yes" >&5
+ echo "${ECHO_T}yes" >&6
+-         for ssldir in $withval /usr/local/ssl /usr/lib/ssl /usr/ssl /usr/pkg /usr/local /usr; do
++         for ssldir in $withval $prefix /usr/local/ssl /usr/lib/ssl /usr/ssl /usr/pkg /usr/local /usr; do
+             if test -f "${ssldir}/include/openssl/ssl.h"; then
+                found_openssl="yes"
+                CPPFLAGS="-I${ssldir}/include ${CPPFLAGS}"

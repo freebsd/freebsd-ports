@@ -1,7 +1,9 @@
 @comment $FreeBSD$
 bin/ike-scan
-share/ike-scan/ike-backoff-patterns
-share/ike-scan/ike-vendor-ids
+bin/psk-crack
+%%DATADIR%%/ike-backoff-patterns
+%%DATADIR%%/ike-vendor-ids
+%%DATADIR%%/psk-crack-dictionary
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS
 %%PORTDOCS%%%%DOCSDIR%%/COPYING
 %%PORTDOCS%%%%DOCSDIR%%/NEWS
