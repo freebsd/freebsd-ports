@@ -1,0 +1,11 @@
+--- configure.bak	Tue May 28 23:41:42 2002
++++ configure	Wed Jun  5 17:03:30 2002
+@@ -5483,7 +5483,7 @@
+ *)
+   if test -d $cf_cv_use_libssl ; then
+     if test -d $cf_cv_use_libssl/include ; then
+-      CPPFLAGS="$CPPFLAGS -I$cf_cv_use_libssl/include"
++#      CPPFLAGS="$CPPFLAGS -I$cf_cv_use_libssl/include"
+       cf_ssl_library="-L$cf_cv_use_libssl/lib $cf_ssl_library"
+     else
+       cf_ssl_library="-L$cf_cv_use_libssl $cf_ssl_library"
