@@ -45,6 +45,7 @@ share/examples/xcircuit/diffamp_test.ps
 share/examples/xcircuit/logic8.ps
 share/examples/xcircuit/prelude.ps
 share/examples/xcircuit/systemd1.lgf
+share/examples/xcircuit/test.py
 share/examples/xcircuit/threestage.ps
 share/examples/xcircuit/vcoblock.ps
 @dirrm share/examples/xcircuit

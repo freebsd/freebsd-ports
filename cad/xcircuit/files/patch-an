@@ -1,14 +1,13 @@
-*** rcfile.c.orig	Sat Jan  8 01:24:10 2000
---- rcfile.c	Fri Jan 21 12:00:00 2000
+*** rcfile.c.orig	Wed Feb 14 04:52:28 2001
+--- rcfile.c	Wed Feb 14 04:54:12 2001
 ***************
-*** 10,16 ****
---- 10,18 ----
-  #include <stdio.h>
-  #include <stdlib.h>
-  #include <string.h>
-+ #ifndef __STDC__
-  #include <malloc.h>
-+ #endif
+*** 38,43 ****
+--- 38,45 ----
+  /*----------------------------------------------------------------------*/
   
-  #include <X11/Intrinsic.h>
-  #include <X11/StringDefs.h>
+  extern char _STR2[250], _STR[150];
++ extern Display *dpy;
++ extern Window win;
+  extern fontinfo *fonts;
+  extern short fontcount;
+  extern Clientdata areastruct;
