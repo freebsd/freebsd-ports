@@ -17,6 +17,10 @@ MAINTAINER=	ports@FreeBSD.org
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--program-prefix=g
 
+.if defined(WITH_CHANGEWORD)
+CONFIGURE_ARGS+= --enable-changeword
+.endif
+
 post-install:
 	@${MKDIR} ${PREFIX}/share/examples/gm4
 	${INSTALL_DATA} ${WRKSRC}/examples/*.m4 ${PREFIX}/share/examples/gm4
