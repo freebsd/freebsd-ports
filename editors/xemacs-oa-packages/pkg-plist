@@ -1,3 +1,15 @@
+lib/xemacs/xemacs-packages/etc//sb-dir-minus.xpm
+lib/xemacs/xemacs-packages/etc//sb-dir-plus.xpm
+lib/xemacs/xemacs-packages/etc//sb-dir.xpm
+lib/xemacs/xemacs-packages/etc//sb-mail.xpm
+lib/xemacs/xemacs-packages/etc//sb-pg-minus.xpm
+lib/xemacs/xemacs-packages/etc//sb-pg-plus.xpm
+lib/xemacs/xemacs-packages/etc//sb-pg.xpm
+lib/xemacs/xemacs-packages/etc//sb-tag-gt.xpm
+lib/xemacs/xemacs-packages/etc//sb-tag-minus.xpm
+lib/xemacs/xemacs-packages/etc//sb-tag-plus.xpm
+lib/xemacs/xemacs-packages/etc//sb-tag-v.xpm
+lib/xemacs/xemacs-packages/etc//sb-tag.xpm
 lib/xemacs/xemacs-packages/etc/calccard.tex
 lib/xemacs/xemacs-packages/etc/forms-d2.dat
 lib/xemacs/xemacs-packages/etc/frame-icon/RIP.xbm
@@ -112,6 +124,7 @@ lib/xemacs/xemacs-packages/info/calc.info-7
 lib/xemacs/xemacs-packages/info/calc.info-8
 lib/xemacs/xemacs-packages/info/calc.info-9
 lib/xemacs/xemacs-packages/info/forms.info
+lib/xemacs/xemacs-packages/info/speedbar.info
 lib/xemacs/xemacs-packages/lisp/calc/ChangeLog
 lib/xemacs/xemacs-packages/lisp/calc/_pkg.el
 lib/xemacs/xemacs-packages/lisp/calc/auto-autoloads.el
@@ -296,6 +309,8 @@ lib/xemacs/xemacs-packages/lisp/speedbar/auto-autoloads.el
 lib/xemacs/xemacs-packages/lisp/speedbar/auto-autoloads.elc
 lib/xemacs/xemacs-packages/lisp/speedbar/custom-load.el
 lib/xemacs/xemacs-packages/lisp/speedbar/custom-load.elc
+lib/xemacs/xemacs-packages/lisp/speedbar/rpm.el
+lib/xemacs/xemacs-packages/lisp/speedbar/rpm.elc
 lib/xemacs/xemacs-packages/lisp/speedbar/sb-gud.el
 lib/xemacs/xemacs-packages/lisp/speedbar/sb-gud.elc
 lib/xemacs/xemacs-packages/lisp/speedbar/sb-info.el
@@ -318,6 +333,7 @@ lib/xemacs/xemacs-packages/lisp/strokes/strokes.el
 lib/xemacs/xemacs-packages/lisp/strokes/strokes.elc
 lib/xemacs/xemacs-packages/man/calc/calc.texinfo
 lib/xemacs/xemacs-packages/man/forms/forms.texi
+lib/xemacs/xemacs-packages/man/speedbar/speedbar.texi
 lib/xemacs/xemacs-packages/pkginfo/MANIFEST.calc
 lib/xemacs/xemacs-packages/pkginfo/MANIFEST.calendar
 lib/xemacs/xemacs-packages/pkginfo/MANIFEST.forms
@@ -326,6 +342,7 @@ lib/xemacs/xemacs-packages/pkginfo/MANIFEST.pc
 lib/xemacs/xemacs-packages/pkginfo/MANIFEST.slider
 lib/xemacs/xemacs-packages/pkginfo/MANIFEST.speedbar
 lib/xemacs/xemacs-packages/pkginfo/MANIFEST.strokes
+@dirrm lib/xemacs/xemacs-packages/man/speedbar
 @dirrm lib/xemacs/xemacs-packages/man/forms
 @dirrm lib/xemacs/xemacs-packages/man/calc
 @dirrm lib/xemacs/xemacs-packages/lisp/strokes
@@ -338,6 +355,7 @@ lib/xemacs/xemacs-packages/pkginfo/MANIFEST.strokes
 @dirrm lib/xemacs/xemacs-packages/lisp/calc
 @dirrm lib/xemacs/xemacs-packages/etc/slider
 @dirrm lib/xemacs/xemacs-packages/etc/frame-icon
+@dirrm lib/xemacs/xemacs-packages/etc/
 @unexec rmdir %D/lib/xemacs/xemacs-packages/* 2>/dev/null || true
 @unexec rmdir %D/lib/xemacs/xemacs-packages 2>/dev/null || true
 @unexec rmdir %D/lib/xemacs 2>/dev/null || true
