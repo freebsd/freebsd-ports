@@ -25,11 +25,9 @@ CONFIGURE_ARGS=	--with-ldap-lib=openldap \
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-unknown-freebsd${OSREL}
 
 .if !defined(WITHOUT_LDAP_V3)
-LIB_DEPENDS=	ldap.2:${PORTSDIR}/net/openldap20 \
-		lber.2:${PORTSDIR}/net/openldap20
+LIB_DEPENDS=	ldap.2:${PORTSDIR}/net/openldap21-client
 .else
-LIB_DEPENDS=	ldap.1:${PORTSDIR}/net/openldap12 \
-		lber.1:${PORTSDIR}/net/openldap12
+LIB_DEPENDS=	ldap.1:${PORTSDIR}/net/openldap12
 .endif
 
 post-extract:
