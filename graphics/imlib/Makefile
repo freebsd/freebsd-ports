@@ -3,7 +3,7 @@
 # Date created:        10 June 1997
 # Whom:                Yukihiro Nakai <Nakai@Mlab.t.u-tokyo.ac.jp>
 #
-# $Id: Makefile,v 1.10 1997/11/26 22:38:57 vanilla Exp $
+# $Id: Makefile,v 1.11 1997/12/01 16:29:43 vanilla Exp $
 #
 
 DISTNAME=	imlib_DR-0.11
@@ -12,7 +12,7 @@ CATEGORIES=	graphics
 MASTER_SITES=	ftp://ftp.mandrake.net/pub/imlib/ \
 		http://www.rasterman.com/ftp/
 
-MAINTAINER=	vanilla@MinJe.com.TW
+MAINTAINER=	vanilla@FreeBSD.ORG
 
 LIB_DEPENDS=	png\\.0\\.:${PORTSDIR}/graphics/png \
 		jpeg\\.7\\.:${PORTSDIR}/graphics/jpeg \
