@@ -351,10 +351,6 @@
     SUBDIR += netrik
     SUBDIR += netscape-remote
     SUBDIR += netscape-wrapper
-    SUBDIR += netscape47-communicator
-    SUBDIR += netscape47-navigator
-    SUBDIR += netscape48-communicator
-    SUBDIR += netscape48-navigator
     SUBDIR += netscape7
     SUBDIR += nginx
     SUBDIR += notftp
