@@ -2568,6 +2568,7 @@ greed		ports/ftp/greed
 greed_game	ports/games/greed
 grepmail	ports/mail/grepmail
 gretl		ports/misc/gretl
+gretools	ports/games/gretools
 grhino		ports/games/grhino
 gri		ports/math/gri
 gribouy		ports/print/gribouy
