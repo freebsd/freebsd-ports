@@ -1,0 +1,8 @@
+bin/savelogs
+etc/savelogs.conf.sample
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/savelogs/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/savelogs
+%%PORTDOCS%%%%DOCSDIR%%/FAQ
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
+%%PORTDOCS%%%%EXAMPLESDIR%%/savelogs.conf.lint
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%
