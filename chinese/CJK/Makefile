@@ -9,7 +9,7 @@
 DISTNAME=	zh-CJK-4.3.0
 CATEGORIES=	chinese
 MASTER_SITES=	ftp://freebsd.sinica.edu.tw/pub/keith/
-DISTFILES=	cjk-current.tar.gz
+DISTFILES=	cjk-20000127.tar.gz
 
 MAINTAINER=	keith@freebsd.sinica.edu.tw
 

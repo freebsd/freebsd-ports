@@ -467,6 +467,10 @@ share/texmf/ttf2pk/ttfonts.map
 @dirrm share/doc/CJK/chinese
 @dirrm share/doc/CJK/japanese
 @dirrm share/doc/CJK
+@dirrm share/emacs/site-lisp/CJK/emacs-20
+@dirrm share/emacs/site-lisp/CJK/emacs-20.3
+@dirrm share/emacs/site-lisp/CJK/mule-2.3
+@dirrm share/emacs/site-lisp/CJK
 @dirrm share/examples/CJK
 @dirrm share/texmf/fonts/tfm/arphic/arb5kai
 @dirrm share/texmf/fonts/tfm/arphic/arb5sung
