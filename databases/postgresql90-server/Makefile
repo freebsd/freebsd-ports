@@ -3,7 +3,7 @@
 # Date created:				Oct 9 1996
 # Whom:	      				Matthew Stein <matt@bdd.net>
 #
-#   $Id: Makefile,v 1.4 1996/11/17 03:18:45 obrien Exp $
+#   $Id: Makefile,v 1.5 1996/11/19 14:16:51 asami Exp $
 
 PKGNAME=	postgres95-1.08
 CATEGORIES=	databases
@@ -17,7 +17,7 @@ DISTFILES=	postgres95-1.08.tar.gz \
 		
 MAINTAINER=	matt@bdd.net
 
-NO_PACKAGE=	yes
+NO_PACKAGE=	"Requires postgres uid"
 WRKSRC=		${WRKDIR}/postgres95/src/
 MAKE_ENV+=	WRKSRC=${WRKSRC} WRKDIR=${WRKDIR}
 USE_GMAKE=	yes
