@@ -16,6 +16,14 @@ MASTER_SITES=	http://sb.123.org/ \
 
 MAINTAINER=	shipley@dis.org
 
+.include <bsd.port.pre.mk>
+
+pre-configure:
+	${PERL} -pi.dist -e 's/trdetect/tdetect/g' ${WRKSRC}/config.h
+.if ${OSVERSION} > 330002
+	${PERL} -pi.orig -e 's/LOG_AUTHPRIV/LOG_SECURITY/g' ${WRKSRC}/config.h
+.endif
+
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/tdetect ${PREFIX}/sbin/tdetect
 
@@ -33,4 +41,4 @@ post-install:
 		${ECHO} ''; \
 	fi
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
