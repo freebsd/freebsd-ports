@@ -1,0 +1,11 @@
+--- sequence.c-orig	Thu Mar 21 10:22:35 2002
++++ sequence.c	Thu Mar 21 10:22:53 2002
+@@ -922,7 +922,7 @@
+ 	static Boolean dnaflag1;
+ 	
+ 	if(usemenu)
+-		getstr("Enter the name of the sequence file",line);
++		getstr("Enter the name of the sequence file",line,FILENAMELEN+1);
+ 	else
+ 		strcpy(line,seqname);
+ 	if(*line == EOS) return -1;

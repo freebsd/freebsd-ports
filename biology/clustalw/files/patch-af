@@ -1,0 +1,11 @@
+--- clustalw.h-orig	Thu Mar 21 10:15:28 2002
++++ clustalw.h	Thu Mar 21 10:15:43 2002
+@@ -234,7 +234,7 @@
+ char *blank_to_(char *str);
+ char *upstr(char *str);
+ char *lowstr(char *str);
+-void getstr(char *instr, char *outstr);
++void getstr(char *instr, char *outstr, int len);
+ double getreal(char *instr, double minx, double maxx, double def);
+ int getint(char *instr, int minx, int maxx, int def);
+ void do_system(void);
