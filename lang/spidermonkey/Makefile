@@ -20,6 +20,12 @@ CONFLICTS=	njs-*
 PLIST_FILES=	bin/js
 USE_GMAKE=	YES
 
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == "amd64" || ${ARCH} == "ia64"
+BROKEN=		"Does not compile on amd64 or ia64 (missing -fPIC)"
+.endif
+
 post-extract:
 	${MV} ${WRKDIR}/js/src ${WRKSRC} && \
 	${RM} -rf js && \
@@ -31,4 +37,4 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/`uname -s``uname -r`_DBG.OBJ/js \
 		${PREFIX}/bin
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

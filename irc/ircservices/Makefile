@@ -29,6 +29,12 @@ DIST_SUBDIR=	${PORTNAME}
 
 CONFIGURE_ARGS=	-prefix ${PREFIX} -cflags "${CFLAGS}" -cc "${CC}"
 
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == "amd64" || ${ARCH} == "ia64"
+BROKEN=		"Does not compile on amd64 or ia64 (missing -fPIC)"
+.endif
+
 post-install:
 	@${ECHO_CMD} "Installing ${PREFIX}/etc/rc.d/ircservices.sh.sample startup file."
 	@${INSTALL_SCRIPT} ${FILESDIR}/ircservices.sh \
@@ -38,4 +44,4 @@ post-install:
 	@${INSTALL_DATA} ${WRKSRC}/docs/*.html ${DOCSDIR}
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
