@@ -43,9 +43,9 @@ lib/transcode/export_ppm.so
 lib/transcode/export_raw.so
 lib/transcode/export_toolame.so
 lib/transcode/export_wav.so
-lib/transcode/export_xvid.so
-lib/transcode/export_xvidcvs.so
-lib/transcode/export_xvidraw.so
+%%WITH_XVID%%lib/transcode/export_xvid.so
+%%WITH_XVID%%lib/transcode/export_xvidcvs.so
+%%WITH_XVID%%lib/transcode/export_xvidraw.so
 %%WITH_MJPEG%%lib/transcode/export_yuv4mpeg.so
 lib/transcode/filter_29to23.so
 lib/transcode/filter_32detect.so
