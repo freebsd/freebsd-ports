@@ -4,9 +4,12 @@
 #
 # $FreeBSD$
 #
+# Most of plist can be created with:
+# # /usr/ports/Tools/scripts/plist -d -m /etc/mtree/BSD.local.dist $PWD/INSTALL|sed -E 's,1.057,%%PORTVERSION%%,g;s,^(lib/aap/Exec-%%PORTVERSION%%/doc/),%%PORTDOCS%%\1,g;s,^share/doc/.*,,g' | tr -s '\n'> pkg-plist.new
+#
 
 PORTNAME=	aap
-PORTVERSION=	1.049
+PORTVERSION=	1.057
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	a-a-p
