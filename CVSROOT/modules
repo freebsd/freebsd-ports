@@ -5120,6 +5120,7 @@ linux-openmotif	ports/x11-toolkits/linux-openmotif
 linux-opera	ports/www/linux-opera
 linux-pam-docs	ports/security/linux-pam-docs
 linux-pango	ports/x11-toolkits/linux-pango
+linux-panorama-tools	ports/graphics/linux-panorama-tools
 linux-peops-softgpu	ports/emulators/linux-peops-softgpu
 linux-peops-spu	ports/emulators/linux-peops-spu
 linux-pete-mesagpu	ports/emulators/linux-pete-mesagpu
