@@ -274,6 +274,7 @@
     SUBDIR += mudix
     SUBDIR += mutella
     SUBDIR += nagios
+    SUBDIR += nagios-plugins
     SUBDIR += naim
     SUBDIR += nam
     SUBDIR += napshare

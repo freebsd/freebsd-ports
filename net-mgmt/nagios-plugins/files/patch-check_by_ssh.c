@@ -1,29 +1,20 @@
---- plugins/check_by_ssh.c.orig	Fri Jun 21 11:19:56 2002
-+++ plugins/check_by_ssh.c	Fri Jun 21 11:54:25 2002
-@@ -191,7 +191,7 @@
- 	if (commands>1)
- 		remotecmd=strscat(remotecmd,";echo STATUS CODE: $?;");
- 
--	if (strlen (remotecmd) <= 1)
-+	if (remotecmd==NULL)
- 		usage ("No remotecmd\n");
- 
- 	comm = ssprintf(comm,"%s %s '%s'",comm,hostname,remotecmd);
-@@ -369,6 +369,8 @@
- 		 "   list of netsaint service names, separated by ':' [optional]\n"
+--- plugins/check_by_ssh.c.orig	Thu Feb 28 07:42:57 2002
++++ plugins/check_by_ssh.c	Sun Jul 14 09:50:43 2002
+@@ -382,6 +382,8 @@
+ 		 "   list of nagios service names, separated by ':' [optional]\n"
  		 "-n, --name=NAME\n"
- 		 "   short name of host in netsaint configuration [optional]\n"
+ 		 "   short name of host in nagios configuration [optional]\n"
 +		 "-v, --verbose\n"
-+		 "   short name of host in netsaint configuration [optional]\n"
++		 "   display command being executed\n"
  		 "\n"
  		 "The most common mode of use is to refer to a local identity file with\n"
  		 "the '-i' option. In this mode, the identity pair should have a null\n"
-@@ -388,7 +390,7 @@
- 
- 
- #define OPTIONS "\
---H <host> [-P port] [-f] [-y] [-t timeout] [-i identity]\n
-+-H <host> -C <command> [-fyv] [-P port] [-t timeout] [-i identity]\n
-              [-l user] [-n name] [-s servicelist] [-O outputfile]"
- 
- void print_usage(void)
+@@ -405,7 +407,7 @@
+ {
+ 	printf
+ 		("Usage:\n"
+-		 "check_by_ssh [-f] [-t timeout] [-i identity] [-l user] -H <host> <command>\n"
++		 "check_by_ssh [-fv] [-t timeout] [-i identity] [-l user] -H <host> <command>\n"
+ 		 "             [-n name] [-s servicelist] [-O outputfile] [-P port]\n"
+ 		 "check_by_ssh  -V prints version info\n"
+ 		 "check_by_ssh  -h prints more detailed help\n");
