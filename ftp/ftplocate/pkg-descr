@@ -1,0 +1,15 @@
+FtpLocate is a fast FTP search engine written with Perl. It supports 
+indexing on multiple FTP servers and generates summaries for them. 
+
+FtpLocate provides the user two methods for searching: filename search and 
+description search. Filename search groups the results by FTP servers, 
+displaying the server nearest to the client first. With description search, 
+a user can find the files he wants without knowing the filename. Files with 
+same description will be grouped together.
+
+See the following URL for more information.
+
+WWW: http://turtle.ee.ncku.edu.tw/ftplocate.html
+
+Chung-Kie Tung
+tung@turtle.ee.ncku.edu.tw
