@@ -1,5 +1,5 @@
 --- configure.orig	Thu Oct 10 12:17:48 2002
-+++ configure	Mon Oct 21 10:29:54 2002
++++ configure	Sun Nov 10 23:07:01 2002
 @@ -4222,7 +4222,7 @@
    ;;
  esac
@@ -54,7 +54,15 @@
  
  echo "$as_me:4438: result: \"$FIND_PROC\"" >&5
  echo "${ECHO_T}\"$FIND_PROC\"" >&6
-@@ -8090,7 +8054,6 @@
+@@ -7420,6 +7384,7 @@
+     ;;
+   *freebsd*)
+     echo "Adding fix for interrupted reads"
++    CFLAGS="$CFLAGS -DHAVE_BROKEN_REALPATH"
+     CXXFLAGS="$CXXFLAGS -DMYSQLD_NET_RETRY_COUNT=1000000"
+     ;;
+   *netbsd*)
+@@ -8090,7 +8055,6 @@
    echo $ECHO_N "(cached) $ECHO_C" >&6
  else
    ac_check_lib_save_LIBS=$LIBS
@@ -62,7 +70,7 @@
  cat >conftest.$ac_ext <<_ACEOF
  #line 8095 "configure"
  #include "confdefs.h"
-@@ -8138,7 +8101,6 @@
+@@ -8138,7 +8102,6 @@
  #define HAVE_LIBC_R 1
  EOF
  
@@ -70,7 +78,7 @@
  
  fi
  
-@@ -8495,29 +8457,6 @@
+@@ -8495,29 +8458,6 @@
  
  fi
  
@@ -100,7 +108,7 @@
  # Check whether --with-debug or --without-debug was given.
  if test "${with_debug+set}" = set; then
    withval="$with_debug"
-@@ -10249,10 +10188,6 @@
+@@ -10249,10 +10189,6 @@
  ac_link='$CXX -o conftest$ac_exeext $CXXFLAGS $CPPFLAGS $LDFLAGS conftest.$ac_ext $LIBS >&5'
  ac_compiler_gnu=$ac_cv_cxx_compiler_gnu
  
@@ -111,7 +119,7 @@
  mysql_cv_btype_last_arg_accept=none
  cat >conftest.$ac_ext <<_ACEOF
  #line 10258 "configure"
-@@ -12922,14 +12857,6 @@
+@@ -12922,14 +12858,6 @@
  ac_link='$CXX -o conftest$ac_exeext $CXXFLAGS $CPPFLAGS $LDFLAGS conftest.$ac_ext $LIBS >&5'
  ac_compiler_gnu=$ac_cv_cxx_compiler_gnu
  
@@ -126,7 +134,7 @@
  cat >conftest.$ac_ext <<_ACEOF
  #line 12934 "configure"
  #include "confdefs.h"
-@@ -13006,10 +12933,6 @@
+@@ -13006,10 +12934,6 @@
  ac_link='$CXX -o conftest$ac_exeext $CXXFLAGS $CPPFLAGS $LDFLAGS conftest.$ac_ext $LIBS >&5'
  ac_compiler_gnu=$ac_cv_cxx_compiler_gnu
  
@@ -137,7 +145,7 @@
  cat >conftest.$ac_ext <<_ACEOF
  #line 13014 "configure"
  #include "confdefs.h"
-@@ -13085,10 +13008,6 @@
+@@ -13085,10 +13009,6 @@
  ac_link='$CXX -o conftest$ac_exeext $CXXFLAGS $CPPFLAGS $LDFLAGS conftest.$ac_ext $LIBS >&5'
  ac_compiler_gnu=$ac_cv_cxx_compiler_gnu
  
