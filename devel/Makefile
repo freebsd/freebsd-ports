@@ -719,6 +719,7 @@
     SUBDIR += ruby-textbuf
     SUBDIR += ruby-tzfile
     SUBDIR += ruby-unit
+    SUBDIR += ruby-yaml
     SUBDIR += rudiments
     SUBDIR += rvi
     SUBDIR += rvm
