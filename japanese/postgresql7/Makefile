@@ -12,7 +12,7 @@ MASTER_SITES=	ftp://ftp.jaist.ac.jp/pub/dbms/PostgreSQL/ \
 		ftp://ftp.sra.co.jp/pub/cmd/postgres/${PORTVERSION}/ \
 		ftp://ftp.postgresql.org/pub/
 
-MAINTAINER=	ichiro@ichiro.org
+MAINTAINER=	kuriyama@FreeBSD.org
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/src
 PLISTS=
