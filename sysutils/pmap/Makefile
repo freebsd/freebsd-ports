@@ -26,7 +26,7 @@ BROKEN=		"Currently does not support -CURRENT"
 .endif
 
 .if ${OSVERSION} <  450000
-BROKEN=		"Not supported on systems prior to 4.5"
+IGNORE=		"Not supported on systems prior to 4.5"
 .endif
 
 .include <bsd.port.post.mk>
