@@ -5067,6 +5067,7 @@ p5-Sort-ArrayOfArrays	ports/devel/p5-Sort-ArrayOfArrays
 p5-Sort-Fields	ports/textproc/p5-Sort-Fields
 p5-Sort-PolySort	ports/textproc/p5-Sort-PolySort
 p5-Sort-Versions	ports/devel/p5-Sort-Versions
+p5-Spread-Session	ports/net/p5-Spread-Session
 p5-Spreadsheet-ParseExcel	ports/textproc/p5-Spreadsheet-ParseExcel
 p5-Spreadsheet-WriteExcel	ports/textproc/p5-Spreadsheet-WriteExcel
 p5-Stat-lsMode	ports/sysutils/p5-Stat-lsMode
