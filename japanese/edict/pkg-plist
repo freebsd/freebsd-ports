@@ -50,7 +50,7 @@ share/dict/edict/vconj
 share/dict/edict/.xjdicrc
 @dirrm share/dict/edict
 share/doc/xjdic/4jwords.doc
-share/doc/xjdic/aviation.doc
+share/doc/xjdic/aviation.txt
 share/doc/xjdic/compverb.doc
 share/doc/xjdic/concrete.doc
 share/doc/xjdic/ediclsd3.rme
