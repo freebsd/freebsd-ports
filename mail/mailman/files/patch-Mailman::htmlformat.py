@@ -1,5 +1,5 @@
---- Mailman/htmlformat.py.orig	Tue Sep 12 06:02:36 2000
-+++ Mailman/htmlformat.py	Tue Feb 19 17:12:53 2002
+--- Mailman/htmlformat.py.orig	Wed Apr  3 00:28:59 2002
++++ Mailman/htmlformat.py	Thu Apr  4 11:28:51 2002
 @@ -503,15 +503,17 @@
  # These are the URLs which the image logos link to.  The Mailman home page now
  # points at the gnu.org site instead of the www.list.org mirror.
@@ -19,36 +19,17 @@
  
  
  def MailmanLogo():
-@@ -529,18 +531,34 @@
-         gnulink = Link(GNU_URL,
-                        '<img src="%s" alt="GNU\'s Not Unix" border=0>' %
-                        logo(GNU_HEAD))
--        text = Container(Link(MAILMAN_URL, 'Mailman home page'),
--                         '<br>',
--                         Link(PYTHON_URL, 'Python home page'),
--                         '<br>',
--                         Link(GNU_URL, 'GNU home page'),
--                         )
--        t.AddRow([mmlink, pylink, gnulink, text])
-+        freebsdlink = Link(FREEBSD_URL,
-+                           '<img src="%s" alt="Powered by FreeBSD" border=0>' %
-+                           logo(FREEBSD_POWERED))
+@@ -525,12 +527,21 @@
+                  logo(PYTHON_POWERED)
+         gnulink = '<img src="%s" alt="GNU\'s Not Unix" border=0>' % \
+                   logo(GNU_HEAD)
+-        t.AddRow([mmlink, pylink, gnulink])
++        freebsdlink = '<img src="%s" alt="Powered by FreeBSD" border=0>' % \
++                      logo(FREEBSD_POWERED)
 +        if LOGO_OS == 'FreeBSD':
-+            text = Container(Link(MAILMAN_URL, 'Mailman home page'),
-+                             '<br>',
-+                             Link(PYTHON_URL, 'Python home page'),
-+                             '<br>',
-+                             Link(FREEBSD_URL, 'FreeBSD home page'),
-+                             )
-+            t.AddRow([mmlink, pylink, freebsdlink, text])
++	    t.AddRow([mmlink, pylink, freebsdlink])
 +        else:
-+            text = Container(Link(MAILMAN_URL, 'Mailman home page'),
-+                             '<br>',
-+                             Link(PYTHON_URL, 'Python home page'),
-+                             '<br>',
-+                             Link(GNU_URL, 'GNU home page'),
-+                             )
-+            t.AddRow([mmlink, pylink, gnulink, text])
++	    t.AddRow([mmlink, pylink, gnulink])
      else:
          # use only textual links
          mmlink = Link(MAILMAN_URL,
