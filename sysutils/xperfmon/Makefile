@@ -3,7 +3,7 @@
 # Date created:		14 March 97
 # Whom:			Lars Koeller <Lars.Koeller@Uni-Bielefeld.DE>
 #
-# $Id: Makefile,v 1.12 1997/03/15 12:32:52 asami Exp $
+# $Id: Makefile,v 1.17 1998/09/30 19:32:35 gj Exp $
 #
 
 DISTNAME=	xperfmon++
@@ -20,7 +20,7 @@ MAINTAINER=	Lars.Koeller@Uni-Bielefeld.DE
 USE_IMAKE=	yes
 
 pre-configure:
-	if [ -e /usr/lib/libdevstat.a ]; then \
+	if [ -e /usr/lib/libdevstat.a -o -e /usr/lib/aout/libdevstat.a ]; then \
 		cd ${WRKSRC} ; \
 		${MV} Imakefile Imakefile.in ; \
 		${SED} -e "s:EXTRA_DEFINES=:EXTRA_DEFINES= -DHAVE_DEVSTAT:" Imakefile.in > Imakefile.i1 ; \

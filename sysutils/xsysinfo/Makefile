@@ -3,7 +3,7 @@
 # Date created:		4 April 1996
 # Whom:			jdli
 #
-# $Id: Makefile,v 1.7 1998/09/30 19:24:49 gj Exp $
+# $Id: Makefile,v 1.8 1998/10/06 23:56:13 gj Exp $
 #
 
 DISTNAME=	xsysinfo-1.4a
@@ -17,7 +17,7 @@ MANCOMPRESSED=	yes
 MAN1=		xsysinfo.1
 
 pre-configure:
-	if [ -e /usr/lib/libdevstat.a ]; then \
+	if [ -e /usr/lib/libdevstat.a -o -e /usr/lib/aout/libdevstat.a ]; then \
 		cd ${WRKSRC} ; \
 		${MV} Imakefile Imakefile.in ; \
 		${SED} -e "s:DEFINES =:DEFINES = -DHAVE_DEVSTAT:" Imakefile.in > Imakefile.i1 ; \
