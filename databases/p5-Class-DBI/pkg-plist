@@ -1,7 +1,9 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Class/DBI/.packlist
 %%SITE_PERL%%/Class/DBI.pm
+%%SITE_PERL%%/Class/DBI/ColumnGrouper.pm
 %%SITE_PERL%%/Class/DBI/Iterator.pm
-@dirrm %%SITE_PERL%%/Class/DBI
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Class/DBI
+%%SITE_PERL%%/Class/DBI/Query.pm
+@unexec rmdir %D/%%SITE_PERL%%/Class/DBI 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Class/DBI 2>/dev/null || true
 @unexec rmdir %D/%%SITE_PERL%%/Class 2>/dev/null || true
 @unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Class 2>/dev/null || true

@@ -10,7 +10,7 @@ these (such as MySQL), or when you would like your code to be portable
 across multiple databases which might implement these things in
 different ways.
 
-WWW: http://search.cpan.org/search?dist=Class-DBI
+WWW: http://search.cpan.org/dist/Class-DBI
 
 -- Sergey Skvortsov
 skv@FreeBSD.org
