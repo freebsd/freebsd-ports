@@ -1,8 +1,0 @@
---- src/Makefile.am.orig	Mon May 13 22:19:10 2002
-+++ src/Makefile.am	Mon May 13 22:19:41 2002
-@@ -1,4 +1,4 @@
--LIBS=@GTK_LIBS@ -lXi -lXxf86dga -lpthread
-+LIBS=@GTK_LIBS@ -lXi -lXxf86dga -pthread
- 
- SUBDIRS = gui_icons smallknob
- 

@@ -1,1 +1,6 @@
 bin/terminatorX
+share/gnome/pixmaps/terminatorX-mime.png
+share/gnome/pixmaps/terminatorX-app.png
+share/gnome/mime-info/terminatorX.mime
+share/gnome/mime-info/terminatorX.keys
+share/gnome/apps/Multimedia/terminatorX.desktop
