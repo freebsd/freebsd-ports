@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	skadns
-PORTVERSION=	0.23
+PORTVERSION=	0.24
 CATEGORIES=	dns devel
 MASTER_SITES=	http://www.skarnet.org/software/${PORTNAME}/
 
@@ -18,6 +18,7 @@ BUILD_DEPENDS=	${LOCALBASE}/lib/skalibs/libstddjb.a:${PORTSDIR}/devel/skalibs
 USE_REINPLACE=	yes
 
 LDFLAGS?=	-s
+STRIPFLAGS?=	-x
 
 WRKSRC=		${WRKDIR}/web/${DISTNAME}
 
@@ -25,14 +26,17 @@ DOCS=		package/CHANGES package/README package/THANKS package/TODO \
 		doc/*.html
 
 do-configure:
-	${ECHO_CMD} "${CC} ${CFLAGS}"	> ${WRKSRC}/src/sys/conf-cc
-	${ECHO_CMD} "${CC} ${LDFLAGS}"	> ${WRKSRC}/src/sys/conf-ld
+	${ECHO_CMD} "${CC} ${CFLAGS}"	> ${WRKSRC}/conf-compile/conf-cc
+	${ECHO_CMD} "${CC} ${LDFLAGS}"	> ${WRKSRC}/conf-compile/conf-ld
+	${ECHO_CMD} "${STRIP_CMD}"	> ${WRKSRC}/conf-compile/conf-stripbins
+	${ECHO_CMD} "${STRIP_CMD} ${STRIPFLAGS}" > ${WRKSRC}/conf-compile/conf-striplibs
 	${ECHO_CMD} "FreeBSD"		> ${WRKSRC}/src/sys/systype
-	${ECHO_CMD} "${LOCALBASE}/include/skalibs" > ${WRKSRC}/package/import
-	${ECHO_CMD} "${LOCALBASE}/lib/skalibs"    >> ${WRKSRC}/package/import
+	${TOUCH} ${WRKSRC}/src/skadns/socket.lib
+	${ECHO_CMD} "${LOCALBASE}/include/skalibs" > ${WRKSRC}/conf-compile/import
+	${ECHO_CMD} "${LOCALBASE}/lib/skalibs"    >> ${WRKSRC}/conf-compile/import
 	${REINPLACE_CMD} -e 's,/service/skadnsd/.,/var/run/,' \
-		-e 's,/package/web/skadns/command,${PREFIX}/bin,' \
-		${WRKSRC}/src/skadns/skadns.h
+		-e 's,\$PACKAGE_HOME/skadns/command,${PREFIX}/bin,' \
+		${WRKSRC}/src/skadns/skadns.h.stupid
 
 do-build:
 	cd ${WRKSRC} && package/compile
@@ -42,9 +46,9 @@ do-install:
 	@${MKDIR} ${PREFIX}/include/${PORTNAME}
 	${INSTALL_DATA} ${WRKSRC}/include/* ${PREFIX}/include/${PORTNAME}
 	${INSTALL_DATA} ${WRKSRC}/library/* ${PREFIX}/lib
-	@${MKDIR} ${EXAMPLESDIR}/service
-	cd ${WRKSRC}/service/skadnsd && ${TAR} cf - * | \
-		(cd ${EXAMPLESDIR}/service && ${TAR} xf -)
+	@${MKDIR} ${EXAMPLESDIR}/service/log
+	${INSTALL_SCRIPT} ${WRKSRC}/service/skadnsd/run ${EXAMPLESDIR}/service
+	${INSTALL_SCRIPT} ${WRKSRC}/service/skadnsd/log/run ${EXAMPLESDIR}/service/log
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 	cd ${WRKSRC} && ${INSTALL_DATA} ${DOCS} ${DOCSDIR}
