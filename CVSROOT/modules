@@ -700,6 +700,7 @@ cadaver		ports/www/cadaver
 cadubi		ports/graphics/cadubi
 caesar		src/games/caesar
 cal		src/usr.bin/cal
+cal.rb		ports/japanese/cal.rb
 calamaris	ports/www/calamaris
 calc		ports/math/calc
 calcoo		ports/math/calcoo
