@@ -4,7 +4,7 @@
 # Date created:				17 Jan 1998
 # Whom:					David O'Brien <obrien@NUXI.com>
 #
-# $Id: Makefile,v 1.8 1998/04/12 13:16:25 obrien Exp $
+# $Id: Makefile,v 1.9 1998/06/06 04:42:31 asami Exp $
 #
 
 DISTNAME=	gcc-2.8.1
@@ -12,8 +12,6 @@ CATEGORIES=	lang
 MASTER_SITES=	${MASTER_SITE_GNU}
 
 MAINTAINER=	obrien@FreeBSD.org
-
-BROKEN=		build
 
 GNUOSREL!=	uname -r | sed -e 's/[-(].*//'
 
