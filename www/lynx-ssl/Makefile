@@ -3,7 +3,7 @@
 # Date created:         15 Dec 1994
 # Whom:                 Stefan `Sec` Zehl <sec@42.org>
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1999/05/03 03:08:36 steve Exp $
 #
 
 DISTNAME=       lynx2.8.1rel.1
@@ -27,6 +27,7 @@ BUILD_DEPENDS=	openssl:${PORTSDIR}/security/openssl
 RESTRICTED=     "Contains cryptography"
 
 GNU_CONFIGURE=  YES
+CFLAGS+=	I${PREFIX}/include/openssl
 CONFIGURE_ARGS= --with-screen=ncurses --with-zlib --libdir="${PREFIX}/etc" \
 		--enable-nsl-fork
 MAKEFILE=       makefile
