@@ -72,7 +72,7 @@ EXTRA_PATCHES+=		${FILESDIR}/batch.patch
 .endif
 
 .if defined(KRB5_HOME) && exists(${KRB5_HOME})
-GSSAPI_PATCH=	${PORTNAME}-${PORTVERSION}-gssapi-20020527.diff
+GSSAPI_PATCH=	${PORTNAME}-${PORTVERSION}-gssapi-20020627.diff
 GSSAPI_SITE=	http://www.sxw.org.uk/computing/patches/
 MASTER_SITES+=	${GSSAPI_SITE}
 DISTFILES=	${EXTRACT_ONLY} ${GSSAPI_PATCH}
