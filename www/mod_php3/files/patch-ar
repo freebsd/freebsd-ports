@@ -1,5 +1,5 @@
---- ../php/functions/sybase.c.orig	Tue Feb  8 00:54:51 2000
-+++ ../php/functions/sybase.c	Tue Feb 29 22:01:07 2000
+--- functions/sybase.c.orig	Tue Feb  8 00:54:51 2000
++++ functions/sybase.c	Tue Feb 29 22:01:07 2000
 @@ -366,7 +366,7 @@
  				RETURN_FALSE;
  			}

@@ -1,33 +1,5 @@
---- ../php/configure.orig	Fri Feb 25 21:49:48 2000
-+++ ../php/configure	Tue Feb 29 22:29:05 2000
-@@ -5214,26 +5214,10 @@
-   if test -n "$unique" && test "`eval $cmd`" = "" ; then
-     eval "LIBPATH$unique=set"
-     
--      EXTRA_LIBS="$EXTRA_LIBS -L$ai_p"
--      if test -n "$APXS" ; then
--        RPATHS="$RPATHS ${apxs_runpath_switch}$ai_p'"
--      else
--        RPATHS="$RPATHS ${ld_runpath_switch}$ai_p"
--      fi
--    
--  fi
-+    EXTRA_LIBS="$EXTRA_LIBS $ai_p/libc-client4.a"
- 
-   fi
- 
--  
--  
--  unique=`echo $ac_n "c-client4$ac_c" | tr -c -d a-zA-Z0-9`
--  cmd="echo $ac_n \"\$LIBRARY$unique$ac_c\""
--  if test -n "$unique" && test "`eval $cmd`" = "" ; then
--    eval "LIBRARY$unique=set"
--    
--    EXTRA_LIBS="$EXTRA_LIBS -lc-client4"
--  
-   fi
- 
- 
+--- configure.orig	Fri Feb 25 21:49:48 2000
++++ configure	Tue Feb 29 22:29:05 2000
 @@ -8961,7 +8945,7 @@
     	fi
      SYBASE_CT_INCLUDE=-I$SYBASE_CT_INCDIR
