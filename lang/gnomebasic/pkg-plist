@@ -25,14 +25,13 @@ include/gbrun/gbrun.h
 include/gbrun/libgbrun.h
 include/gbrun/objects/gbrun-form.h
 include/gbrun/objects/libgbobj.h
-lib/libgb.a
-lib/libgb.so
-lib/libgb.so.0
 lib/libgbrun.a
 lib/libgbrun.so
 lib/libgbrun.so.0
 share/locale/az/LC_MESSAGES/gb.mo
+share/locale/ca/LC_MESSAGES/gb.mo
 share/locale/da/LC_MESSAGES/gb.mo
+share/locale/de/LC_MESSAGES/gb.mo
 share/locale/el/LC_MESSAGES/gb.mo
 share/locale/fr/LC_MESSAGES/gb.mo
 share/locale/no/LC_MESSAGES/gb.mo
