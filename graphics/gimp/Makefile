@@ -96,7 +96,7 @@ CONFIGURE_ARGS+=	--without-libjpeg
 PLIST_SUB+=		JPEG="@comment "
 .else
 LIB_DEPENDS+=		jpeg.9:${PORTSDIR}/graphics/jpeg
-PLIST_SUB+=		JPEG:=""
+PLIST_SUB+=		JPEG=""
 .endif
 
 .if defined(WITHOUT_TIFF)
