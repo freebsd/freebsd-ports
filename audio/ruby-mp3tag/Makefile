@@ -1,0 +1,34 @@
+# New ports collection makefile for:	Ruby/Mp3Tag
+# Date created:		30 July 2001
+# Whom:			Akinori MUSHA aka knu <knu@idaemons.org>
+#
+# $FreeBSD$
+#
+
+PORTNAME=	mp3tag
+PORTVERSION=	1.0
+CATEGORIES=	audio ruby
+MASTER_SITES=	http://www.cs.auc.dk/~larsch/ruby/
+PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
+DIST_SUBDIR=	ruby
+
+MAINTAINER=	knu@FreeBSD.org
+
+USE_RUBY=	yes
+
+NO_BUILD=	yes
+
+DOCS=		README	mp3tag.html
+
+do-install:
+	${INSTALL_DATA} ${WRKSRC}/mp3tag.rb ${RUBY_SITELIBDIR}/
+.if !defined(NOPORTDOCS)
+	${MKDIR} ${RUBY_EXAMPLESDIR}/${PORTNAME}
+	${INSTALL_DATA} ${WRKSRC}/mp3tag_test.rb ${RUBY_EXAMPLESDIR}/${PORTNAME}/
+	${MKDIR} ${RUBY_DOCDIR}/${PORTNAME}
+.for f in ${DOCS}
+	${INSTALL_DATA} ${WRKSRC}/${f} ${RUBY_DOCDIR}/${PORTNAME}/
+.endfor
+.endif
+
+.include <bsd.port.mk>
