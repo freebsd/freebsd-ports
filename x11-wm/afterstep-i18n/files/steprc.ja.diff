@@ -5,13 +5,13 @@
  
  # Menu Font
 -Font                    -adobe-helvetica-medium-r-*-*-12-*-*-*-*-*-*-*
-+Font                    -*-fixed-medium-r-*-*-14-*-*-*-*-*-jisx0208.1983,-adobe-helvetica-medium-r-*-*-14-*-*-*-*-*-iso8859-*
++Font                    -adobe-helvetica-medium-r-*-*-14-*-*-*-*-*-iso8859-*,-*-fixed-medium-r-*-*-14-*-*-*-*-*-jisx0208.1983
  # Window TitleBar Font
 -WindowFont              -adobe-helvetica-bold-r-*-*-12-*-*-*-*-*-*-*
-+WindowFont              -*-fixed-medium-r-*-*-14-*-*-*-*-*-jisx0208.1983,-adobe-helvetica-medium-r-*-*-14-*-*-*-*-*-iso8859-*
++WindowFont              -adobe-helvetica-medium-r-*-*-14-*-*-*-*-*-iso8859-*,-*-fixed-medium-r-*-*-14-*-*-*-*-*-jisx0208.1983
  # Icon Font
 -IconFont                -adobe-helvetica-medium-r-*-*-8-*-*-*-*-*-*-*
-+IconFont                -*-fixed-medium-r-*-*-14-*-*-*-*-*-jisx0208.1983,-adobe-helvetica-medium-r-*-*-14-*-*-*-*-*-iso8859-*
++IconFont                -adobe-helvetica-medium-r-*-*-14-*-*-*-*-*-iso8859-*,-*-fixed-medium-r-*-*-14-*-*-*-*-*-jisx0208.1983
  # Area where icons should show up (RightX, RightY, LeftX, LeftY)
  IconBox 0 -64 -1 -1
  
