@@ -7,6 +7,7 @@
 
 PORTNAME=	websvcs
 PORTVERSION=	0.9.7
+PORTREVISION=	1
 CATEGORIES=	www python
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	py${PORTNAME}
@@ -20,24 +21,25 @@ COMMENT=	Web service libraries includes SOAP, WSDL, UDDI, etc
 USE_PYTHON=	yes
 EXAMPLESDIR=	${PREFIX}/share/examples/${PKGNAMEPREFIX}${PORTNAME}
 DOCSDIR=	${PREFIX}/share/doc/${PKGNAMEPREFIX}${PORTNAME}
-PLIST_SUB+=	PYTHON_SITELIBDIR=${PYTHON_SITELIBDIR:S,^${LOCALBASE}/,,g} \
-		EXAMPLESDIR=${EXAMPLESDIR:S,^${PREFIX}/,,g} \
+PLIST_SUB+=	EXAMPLESDIR=${EXAMPLESDIR:S,^${PREFIX}/,,g} \
 		DOCSDIR=${DOCSDIR:S,^${PREFIX}/,,g}
+NO_BUILD=	yes
 TOOLS=		interop2html
+PY_FILES=	SOAP
 
 do-patch:
 .for i in ${TOOLS}
 	@${MV} ${WRKSRC}/tools/$i.py ${WRKSRC}/tools/$i
 .endfor
 
-do-build:
-	@${PYTHON_CMD} ${PYTHON_LIBDIR}/compileall.py ${WRKSRC}
-	@${PYTHON_CMD} -O ${PYTHON_LIBDIR}/compileall.py ${WRKSRC}
-
 do-install:
 	${MKDIR} ${EXAMPLESDIR}
 	${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/SOAP.py* ${PYTHON_SITELIBDIR}
+.for f in ${PY_FILES}
+	${INSTALL_DATA} ${WRKSRC}/${f}.py ${PYTHON_SITELIBDIR}
+	@${PYTHON_CMD} -c "import py_compile; py_compile.compile('${PYTHON_SITELIBDIR}/${f}.py')"
+	@${PYTHON_CMD} -O -c "import py_compile; py_compile.compile('${PYTHON_SITELIBDIR}/${f}.py')"
+.endfor
 .for i in ${TOOLS}
 	${INSTALL_SCRIPT} ${WRKSRC}/tools/$i ${PREFIX}/bin
 .endfor
