@@ -101,6 +101,7 @@
     SUBDIR += rdb
     SUBDIR += ruby-bdb
     SUBDIR += ruby-cdb
+    SUBDIR += ruby-dbd_interbase
     SUBDIR += ruby-dbd_msql
     SUBDIR += ruby-dbd_mysql
     SUBDIR += ruby-dbd_odbc
