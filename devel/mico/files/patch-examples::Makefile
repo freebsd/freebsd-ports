@@ -1,5 +1,5 @@
---- demo/Makefile.orig	Mon Jun 30 05:51:13 2003
-+++ demo/Makefile	Mon Jun 30 05:51:23 2003
+--- demo/Makefile.orig	Fri Feb 14 13:55:57 2003
++++ demo/Makefile	Sun Jul  6 00:26:03 2003
 @@ -27,7 +27,7 @@
  
  RUNDIRS = bench dynany interceptor codesets poa obv mcast generic pi
@@ -9,3 +9,12 @@
  
  ifeq ($(HAVE_DYNAMIC), yes)
  DIRS := $(DIRS) shlib
+@@ -62,7 +62,7 @@
+ endif
+ 
+ ifeq ($(USE_EXTERN), yes)
+-DIRS := $(DIRS) externalize 
++DIRS := $(DIRS) externalization
+ endif
+ 
+ 

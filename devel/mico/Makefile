@@ -7,7 +7,7 @@
 
 PORTNAME=	mico
 PORTVERSION=	2.3.10
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel
 MASTER_SITES=	http://www.mico.org/
 
@@ -25,8 +25,15 @@ USE_GMAKE=		yes
 .if defined(WITH_GCC32)
 USE_GCC=		3.2
 .endif
-CONFIGURE_ARGS+=	--enable-cd --disable-mini-stl --enable-threads \
-			--enable-ccm
+
+CONFIGURE_ARGS=		--enable-cd --disable-mini-stl --enable-threads
+.if !defined(WITHOUT_SERVICES)
+CONFIGURE_ARGS+=	--enable-ccm --enable-life --enable-externalize
+.else
+CONFIGURE_ARGS+=	--disable-coss
+MICO_SERVICE=		"@comment "
+.endif
+
 CONFIGURE_ENV+=		CXXFLAGS=${CPPFLAGS}
 
 .if defined(WITH_X11)
@@ -60,19 +67,23 @@ MICO_TCL=		"@comment "
 
 .include <bsd.port.pre.mk>
 
-.if defined(WITHOUT_SSL)
+.if defined(WITHOUT_SSL) || defined(WITHOUT_SERVICES)
 MICO_SSL=		"@comment "
 .else
 USE_OPENSSL=		yes
-CONFIGURE_ARGS+=	--enable-ssl=${OPENSSLBASE} --enable-csiv2
+CONFIGURE_ARGS+=	--enable-ssl=${OPENSSLBASE}
+CONFIGURE_ARGS+=	--enable-csiv2
+#
 # CORBASecV2 doesn't build with gcc32 port because FlexLexer.h absent
+#
 .if !( ${OSVERSION} < 500035 && defined(WITH_GCC32) )
 CONFIGURE_ARGS+=	--enable-csl2
 .endif
 .endif
 
 PLIST_SUB+=	MICO_X11=${MICO_X11} MICO_QT=${MICO_QT} MICO_GTK=${MICO_GTK} \
-		MICO_TCL=${MICO_TCL} MICO_SSL=${MICO_SSL}
+		MICO_TCL=${MICO_TCL} MICO_SSL=${MICO_SSL} \
+		MICO_SERVICE=${MICO_SERVICE}
 
 MAN1=		idl.1 imr.1 nsadmin.1
 MAN5=		micorc.5
@@ -85,7 +96,10 @@ pre-fetch:
 	@${ECHO}
 .endif
 	@${ECHO} "Following options are allowed:"
-	@${ECHO} "WITHOUT_SSL=yes, WITH_X11=yes, WITH_QT=yes, WITH_GTK=yes, WITH_TCL=yes"
+	@${ECHO}
+	@${ECHO} "WITHOUT_SERVICES=yes  - build without services, only ORB"
+	@${ECHO} "WITHOUT_SSL=yes       - build without SSL and security services"
+	@${ECHO} "WITH_X11=yes, WITH_QT=yes, WITH_GTK=yes, WITH_TCL=yes"
 	@${ECHO} "============================================================================"
 
 post-extract:
@@ -99,7 +113,7 @@ post-configure:
 		${REINPLACE_CMD} -e "s#/doc/mico/examples#/share/examples/mico#"
 	${REINPLACE_CMD} -e "s#/doc/mico/examples#/share/examples/mico#" ${WRKSRC}/demo/MakeVars
 	${REINPLACE_CMD} -e "s#ministl##" ${WRKSRC}/include/Makefile
-	${RM} ${WRKSRC}/include/mico/*.orig
+	${RM} -f ${WRKSRC}/include/mico/*.orig ${WRKSRC}/include/coss/*.orig
 
 post-install:
 	@for i in `${GREP} '^lib/lib.*so$$' ${TMPPLIST}`; do \

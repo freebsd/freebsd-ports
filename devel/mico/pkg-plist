@@ -1,66 +1,81 @@
-bin/ccmload
-bin/componentserver
-bin/containmentd
-bin/eventd
+%%MICO_SERVICE%%bin/extcontainmentd
+%%MICO_SERVICE%%bin/extnoded
+%%MICO_SERVICE%%bin/extreferenced
+%%MICO_SERVICE%%bin/streamd
+%%MICO_SERVICE%%bin/ccmload
+%%MICO_SERVICE%%bin/componentserver
+%%MICO_SERVICE%%bin/containmentd
+%%MICO_SERVICE%%bin/eventd
 bin/idl
 bin/imr
 bin/iordump
 bin/ird
+%%MICO_SERVICE%%bin/lifecontainmentd
+%%MICO_SERVICE%%bin/lifenoded
+%%MICO_SERVICE%%bin/lifereferenced
 bin/mico-ar
 bin/mico-c++
-bin/mico-ccm
-bin/mico-ccmd
+%%MICO_SERVICE%%bin/mico-ccm
+%%MICO_SERVICE%%bin/mico-ccmd
 bin/mico-cpp
 bin/mico-ld
 bin/mico-shc++
 bin/mico-shld
 bin/micod
-bin/noded
-bin/nsadmin
-bin/nsd
-bin/propertyd
-bin/proxyd
-bin/randomd
-bin/referenced
-bin/timed
-bin/traderd
-bin/traversald
+%%MICO_SERVICE%%bin/noded
+%%MICO_SERVICE%%bin/nsadmin
+%%MICO_SERVICE%%bin/nsd
+%%MICO_SERVICE%%bin/operationd
+%%MICO_SERVICE%%bin/propertyd
+%%MICO_SERVICE%%bin/proxyd
+%%MICO_SERVICE%%bin/randomd
+%%MICO_SERVICE%%bin/referenced
+%%MICO_SERVICE%%bin/timed
+%%MICO_SERVICE%%bin/traderd
+%%MICO_SERVICE%%bin/traversald
 include/CORBA-SMALL.h
 include/CORBA.h
 include/coss/CompoundExternalization_impl.h
+%%MICO_SERVICE%%include/coss/CosCompoundLifeCycle.h
 include/coss/CosCompoundLifeCycle.idl
-include/coss/CosContainment.h
+%%MICO_SERVICE%%include/coss/CosContainment.h
 include/coss/CosContainment.idl
 include/coss/CosContainment_impl.h
-include/coss/CosEventChannelAdmin.h
+%%MICO_SERVICE%%include/coss/CosEventChannelAdmin.h
 include/coss/CosEventChannelAdmin.idl
-include/coss/CosEventComm.h
+%%MICO_SERVICE%%include/coss/CosEventComm.h
 include/coss/CosEventComm.idl
+%%MICO_SERVICE%%include/coss/CosExternalization.h
 include/coss/CosExternalization.idl
+%%MICO_SERVICE%%include/coss/CosExternalizationContainment.h
 include/coss/CosExternalizationContainment.idl
+%%MICO_SERVICE%%include/coss/CosExternalizationReference.h
 include/coss/CosExternalizationReference.idl
-include/coss/CosGraphs.h
+%%MICO_SERVICE%%include/coss/CosGraphs.h
 include/coss/CosGraphs.idl
-include/coss/CosGraphsExtension.h
+%%MICO_SERVICE%%include/coss/CosGraphsExtension.h
 include/coss/CosGraphsExtension.idl
+%%MICO_SERVICE%%include/coss/CosLifeCycle.h
 include/coss/CosLifeCycle.idl
+%%MICO_SERVICE%%include/coss/CosLifeCycleContainment.h
 include/coss/CosLifeCycleContainment.idl
+%%MICO_SERVICE%%include/coss/CosLifeCycleReference.h
 include/coss/CosLifeCycleReference.idl
-include/coss/CosNaming.h
+%%MICO_SERVICE%%include/coss/CosNaming.h
 include/coss/CosNaming.idl
-include/coss/CosObjectIdentity.h
+%%MICO_SERVICE%%include/coss/CosObjectIdentity.h
 include/coss/CosObjectIdentity.idl
-include/coss/CosReference.h
+%%MICO_SERVICE%%include/coss/CosReference.h
 include/coss/CosReference.idl
 include/coss/CosReference_impl.h
-include/coss/CosRelationships.h
+%%MICO_SERVICE%%include/coss/CosRelationships.h
 include/coss/CosRelationships.idl
 include/coss/CosStream_impl.h
-include/coss/CosTime.h
+%%MICO_SERVICE%%include/coss/CosTime.h
 include/coss/CosTime.idl
-include/coss/CosTrading.h
+%%MICO_SERVICE%%include/coss/CosTrading.h
 include/coss/CosTrading.idl
-include/coss/CosTradingRepos.h
+%%MICO_SERVICE%%include/coss/CosTradingRepos.h
 include/coss/CosTradingRepos.idl
 include/coss/EdgeIterator_impl.h
 include/coss/ExternalizationContainment_impl.h
@@ -87,10 +102,10 @@ include/coss/NodeStreamableFactory_impl.h
 include/coss/Node_impl.h
 include/coss/OperationsFactory_impl.h
 include/coss/Operations_impl.h
-include/coss/PropertyService.h
+%%MICO_SERVICE%%include/coss/PropertyService.h
 include/coss/PropertyService.idl
 include/coss/PropertyService_impl.h
-include/coss/RandomGenerator.h
+%%MICO_SERVICE%%include/coss/RandomGenerator.h
 include/coss/RandomGenerator.idl
 include/coss/RandomGenerator_impl.h
 include/coss/RegisterHelper.h
@@ -102,9 +117,9 @@ include/coss/Role_impl.h
 include/coss/TraversalCriteria_impl.h
 include/coss/TraversalFactory_impl.h
 include/coss/Traversal_impl.h
-include/coss/random.h
+%%MICO_SERVICE%%include/coss/random.h
 include/coss/random.idl
-include/coss/stream.h
+%%MICO_SERVICE%%include/coss/stream.h
 include/coss/stream.idl
 include/coss/stream_impl.h
 include/mico/CCM.h
@@ -288,12 +303,12 @@ lib/libmico2.3.10.so.1
 lib/libmicoaux2.3.10.a
 lib/libmicoaux2.3.10.so
 lib/libmicoaux2.3.10.so.1
-lib/libmicoccm2.3.10.a
-lib/libmicoccm2.3.10.so
-lib/libmicoccm2.3.10.so.1
-lib/libmicocoss2.3.10.a
-lib/libmicocoss2.3.10.so
-lib/libmicocoss2.3.10.so.1
+%%MICO_SERVICE%%lib/libmicoccm2.3.10.a
+%%MICO_SERVICE%%lib/libmicoccm2.3.10.so
+%%MICO_SERVICE%%lib/libmicoccm2.3.10.so.1
+%%MICO_SERVICE%%lib/libmicocoss2.3.10.a
+%%MICO_SERVICE%%lib/libmicocoss2.3.10.so
+%%MICO_SERVICE%%lib/libmicocoss2.3.10.so.1
 %%MICO_GTK%%lib/libmicogtk2.3.10.a
 %%MICO_GTK%%lib/libmicogtk2.3.10.so
 %%MICO_GTK%%lib/libmicogtk2.3.10.so.1
@@ -427,39 +442,39 @@ lib/mico-setup.sh
 %%PORTDOCS%%share/examples/mico/boa/activate/hello-unshared
 %%PORTDOCS%%share/examples/mico/boa/activate/hello.idl
 %%PORTDOCS%%share/examples/mico/boa/activate/server.cc
-%%PORTDOCS%%share/examples/mico/ccm/Makefile
-%%PORTDOCS%%share/examples/mico/ccm/events/Makefile
-%%PORTDOCS%%share/examples/mico/ccm/events/README
-%%PORTDOCS%%share/examples/mico/ccm/events/channel.idl
-%%PORTDOCS%%share/examples/mico/ccm/events/channel_impl.cc
-%%PORTDOCS%%share/examples/mico/ccm/events/client.cc
-%%PORTDOCS%%share/examples/mico/ccm/events/consumer.idl
-%%PORTDOCS%%share/examples/mico/ccm/events/consumer_impl.cc
-%%PORTDOCS%%share/examples/mico/ccm/events/events
-%%PORTDOCS%%share/examples/mico/ccm/events/message.idl
-%%PORTDOCS%%share/examples/mico/ccm/events/message_impl.cc
-%%PORTDOCS%%share/examples/mico/ccm/events/message_impl.h
-%%PORTDOCS%%share/examples/mico/ccm/events/producer.idl
-%%PORTDOCS%%share/examples/mico/ccm/events/producer_impl.cc
-%%PORTDOCS%%share/examples/mico/ccm/hello/Makefile
-%%PORTDOCS%%share/examples/mico/ccm/hello/README
-%%PORTDOCS%%share/examples/mico/ccm/hello/client.cc
-%%PORTDOCS%%share/examples/mico/ccm/hello/hello
-%%PORTDOCS%%share/examples/mico/ccm/hello/hello.idl
-%%PORTDOCS%%share/examples/mico/ccm/hello/hello_impl.cc
-%%PORTDOCS%%share/examples/mico/ccm/hello2/Makefile
-%%PORTDOCS%%share/examples/mico/ccm/hello2/README
-%%PORTDOCS%%share/examples/mico/ccm/hello2/client.cc
-%%PORTDOCS%%share/examples/mico/ccm/hello2/hello
-%%PORTDOCS%%share/examples/mico/ccm/hello2/hello.idl
-%%PORTDOCS%%share/examples/mico/ccm/hello2/hello_impl.cc
-%%PORTDOCS%%share/examples/mico/ccm/philo/Makefile
-%%PORTDOCS%%share/examples/mico/ccm/philo/README
-%%PORTDOCS%%share/examples/mico/ccm/philo/client.cc
-%%PORTDOCS%%share/examples/mico/ccm/philo/philo
-%%PORTDOCS%%share/examples/mico/ccm/philo/philo.idl
-%%PORTDOCS%%share/examples/mico/ccm/philo/philo_impl.cc
-%%PORTDOCS%%share/examples/mico/ccm/philo/tkobserver.cc
+%%PORTDOCS%%%%MICO_SERVICE%%share/examples/mico/ccm/Makefile
+%%PORTDOCS%%%%MICO_SERVICE%%share/examples/mico/ccm/events/Makefile
+%%PORTDOCS%%%%MICO_SERVICE%%share/examples/mico/ccm/events/README
+%%PORTDOCS%%%%MICO_SERVICE%%share/examples/mico/ccm/events/channel.idl
+%%PORTDOCS%%%%MICO_SERVICE%%share/examples/mico/ccm/events/channel_impl.cc
+%%PORTDOCS%%%%MICO_SERVICE%%share/examples/mico/ccm/events/client.cc
+%%PORTDOCS%%%%MICO_SERVICE%%share/examples/mico/ccm/events/consumer.idl
+%%PORTDOCS%%%%MICO_SERVICE%%share/examples/mico/ccm/events/consumer_impl.cc
+%%PORTDOCS%%%%MICO_SERVICE%%share/examples/mico/ccm/events/events
+%%PORTDOCS%%%%MICO_SERVICE%%share/examples/mico/ccm/events/message.idl
+%%PORTDOCS%%%%MICO_SERVICE%%share/examples/mico/ccm/events/message_impl.cc
+%%PORTDOCS%%%%MICO_SERVICE%%share/examples/mico/ccm/events/message_impl.h
+%%PORTDOCS%%%%MICO_SERVICE%%share/examples/mico/ccm/events/producer.idl
+%%PORTDOCS%%%%MICO_SERVICE%%share/examples/mico/ccm/events/producer_impl.cc
+%%PORTDOCS%%%%MICO_SERVICE%%share/examples/mico/ccm/hello/Makefile
+%%PORTDOCS%%%%MICO_SERVICE%%share/examples/mico/ccm/hello/README
+%%PORTDOCS%%%%MICO_SERVICE%%share/examples/mico/ccm/hello/client.cc
+%%PORTDOCS%%%%MICO_SERVICE%%share/examples/mico/ccm/hello/hello
+%%PORTDOCS%%%%MICO_SERVICE%%share/examples/mico/ccm/hello/hello.idl
+%%PORTDOCS%%%%MICO_SERVICE%%share/examples/mico/ccm/hello/hello_impl.cc
+%%PORTDOCS%%%%MICO_SERVICE%%share/examples/mico/ccm/hello2/Makefile
+%%PORTDOCS%%%%MICO_SERVICE%%share/examples/mico/ccm/hello2/README
+%%PORTDOCS%%%%MICO_SERVICE%%share/examples/mico/ccm/hello2/client.cc
+%%PORTDOCS%%%%MICO_SERVICE%%share/examples/mico/ccm/hello2/hello
+%%PORTDOCS%%%%MICO_SERVICE%%share/examples/mico/ccm/hello2/hello.idl
+%%PORTDOCS%%%%MICO_SERVICE%%share/examples/mico/ccm/hello2/hello_impl.cc
+%%PORTDOCS%%%%MICO_SERVICE%%share/examples/mico/ccm/philo/Makefile
+%%PORTDOCS%%%%MICO_SERVICE%%share/examples/mico/ccm/philo/README
+%%PORTDOCS%%%%MICO_SERVICE%%share/examples/mico/ccm/philo/client.cc
+%%PORTDOCS%%%%MICO_SERVICE%%share/examples/mico/ccm/philo/philo
+%%PORTDOCS%%%%MICO_SERVICE%%share/examples/mico/ccm/philo/philo.idl
+%%PORTDOCS%%%%MICO_SERVICE%%share/examples/mico/ccm/philo/philo_impl.cc
+%%PORTDOCS%%%%MICO_SERVICE%%share/examples/mico/ccm/philo/tkobserver.cc
 %%PORTDOCS%%share/examples/mico/codesets/Makefile
 %%PORTDOCS%%share/examples/mico/codesets/client.cc
 %%PORTDOCS%%share/examples/mico/codesets/hello.idl
@@ -551,6 +566,11 @@ lib/mico-setup.sh
 %%PORTDOCS%%share/examples/mico/dynany/dynany.cc
 %%PORTDOCS%%share/examples/mico/dynany/dynanytest.cc
 %%PORTDOCS%%share/examples/mico/dynany/test.idl
+%%PORTDOCS%%%%MICO_SERVICE%%share/examples/mico/externalization/Makefile
+%%PORTDOCS%%%%MICO_SERVICE%%share/examples/mico/externalization/client.cc
+%%PORTDOCS%%%%MICO_SERVICE%%share/examples/mico/externalization/hello.idl
+%%PORTDOCS%%%%MICO_SERVICE%%share/examples/mico/externalization/runit
+%%PORTDOCS%%%%MICO_SERVICE%%share/examples/mico/externalization/server.cc
 %%PORTDOCS%%share/examples/mico/generic/Makefile
 %%PORTDOCS%%share/examples/mico/generic/client.cc
 %%PORTDOCS%%share/examples/mico/generic/run_test
@@ -670,6 +690,11 @@ lib/mico-setup.sh
 %%PORTDOCS%%share/examples/mico/interop/visibroker/account
 %%PORTDOCS%%share/examples/mico/interop/visibroker/main.cc
 %%PORTDOCS%%share/examples/mico/interop/visibroker/run_applet
+%%PORTDOCS%%%%MICO_SERVICE%%share/examples/mico/lifecycle/Makefile
+%%PORTDOCS%%%%MICO_SERVICE%%share/examples/mico/lifecycle/client.cc
+%%PORTDOCS%%%%MICO_SERVICE%%share/examples/mico/lifecycle/hello.idl
+%%PORTDOCS%%%%MICO_SERVICE%%share/examples/mico/lifecycle/runit
+%%PORTDOCS%%%%MICO_SERVICE%%share/examples/mico/lifecycle/server.cc
 %%PORTDOCS%%share/examples/mico/mcast/Makefile
 %%PORTDOCS%%share/examples/mico/mcast/client.cc
 %%PORTDOCS%%share/examples/mico/mcast/hello.idl
@@ -975,63 +1000,97 @@ lib/mico-setup.sh
 %%PORTDOCS%%%%MICO_SSL%%share/examples/mico/security/tutorial/ssl
 %%PORTDOCS%%share/examples/mico/services/Makefile
 %%PORTDOCS%%share/examples/mico/services/README
-%%PORTDOCS%%share/examples/mico/services/events/Makefile
-%%PORTDOCS%%share/examples/mico/services/events/client.cc
-%%PORTDOCS%%share/examples/mico/services/events/client2.cc
-%%PORTDOCS%%share/examples/mico/services/events/runit
-%%PORTDOCS%%share/examples/mico/services/events/server.cc
-%%PORTDOCS%%share/examples/mico/services/events/server2.cc
-%%PORTDOCS%%share/examples/mico/services/events/server3.cc
-%%PORTDOCS%%share/examples/mico/services/naming-lb/Client.cc
-%%PORTDOCS%%share/examples/mico/services/naming-lb/Makefile
-%%PORTDOCS%%share/examples/mico/services/naming-lb/Printer.idl
-%%PORTDOCS%%share/examples/mico/services/naming-lb/Printer_impl.cc
-%%PORTDOCS%%share/examples/mico/services/naming-lb/Printer_impl.h
-%%PORTDOCS%%share/examples/mico/services/naming-lb/Server.cc
-%%PORTDOCS%%share/examples/mico/services/naming-lb/printer_test
-%%PORTDOCS%%share/examples/mico/services/naming/Makefile
-%%PORTDOCS%%share/examples/mico/services/naming/account.idl
-%%PORTDOCS%%share/examples/mico/services/naming/account_test
-%%PORTDOCS%%share/examples/mico/services/naming/client.cc
-%%PORTDOCS%%share/examples/mico/services/naming/server.cc
-%%PORTDOCS%%share/examples/mico/services/property-daemon/Makefile
-%%PORTDOCS%%share/examples/mico/services/property-daemon/README
-%%PORTDOCS%%share/examples/mico/services/property-daemon/bank.idl
-%%PORTDOCS%%share/examples/mico/services/property-daemon/get_properties.cc
-%%PORTDOCS%%share/examples/mico/services/property-daemon/set_properties.cc
-%%PORTDOCS%%share/examples/mico/services/property-daemon/start_demo
-%%PORTDOCS%%share/examples/mico/services/relship/Documents.idl
-%%PORTDOCS%%share/examples/mico/services/relship/DocumentsServer.cc
-%%PORTDOCS%%share/examples/mico/services/relship/Documents_impl.cc
-%%PORTDOCS%%share/examples/mico/services/relship/Documents_impl.h
-%%PORTDOCS%%share/examples/mico/services/relship/Makefile
-%%PORTDOCS%%share/examples/mico/services/relship/README
-%%PORTDOCS%%share/examples/mico/services/relship/Test.idl
-%%PORTDOCS%%share/examples/mico/services/relship/TestServer.cc
-%%PORTDOCS%%share/examples/mico/services/relship/Test_impl.cc
-%%PORTDOCS%%share/examples/mico/services/relship/Test_impl.h
-%%PORTDOCS%%share/examples/mico/services/relship/daemons-start
-%%PORTDOCS%%share/examples/mico/services/relship/daemons-stop
-%%PORTDOCS%%share/examples/mico/services/relship/rundemo
-%%PORTDOCS%%share/examples/mico/services/relship/servers-start
-%%PORTDOCS%%share/examples/mico/services/relship/simple-test.cc
-%%PORTDOCS%%share/examples/mico/services/relship/stop-servers
-%%PORTDOCS%%share/examples/mico/services/relship/test
-%%PORTDOCS%%share/examples/mico/services/stream-bench/Makefile
-%%PORTDOCS%%share/examples/mico/services/stream-bench/bench
-%%PORTDOCS%%share/examples/mico/services/stream-bench/req.idl
-%%PORTDOCS%%share/examples/mico/services/stream-bench/req_client.cc
-%%PORTDOCS%%share/examples/mico/services/stream-bench/req_server.cc
-%%PORTDOCS%%share/examples/mico/services/stream-bench/stream_client.cc
-%%PORTDOCS%%share/examples/mico/services/stream-bench/stream_server.cc
+%%PORTDOCS%%%%MICO_SERVICE%%share/examples/mico/services/externalize/Documents.idl
+%%PORTDOCS%%%%MICO_SERVICE%%share/examples/mico/services/externalize/DocumentsServer.cc
+%%PORTDOCS%%%%MICO_SERVICE%%share/examples/mico/services/externalize/Documents_impl.cc
+%%PORTDOCS%%%%MICO_SERVICE%%share/examples/mico/services/externalize/Documents_impl.h
+%%PORTDOCS%%%%MICO_SERVICE%%share/examples/mico/services/externalize/Makefile
+%%PORTDOCS%%%%MICO_SERVICE%%share/examples/mico/services/externalize/README
+%%PORTDOCS%%%%MICO_SERVICE%%share/examples/mico/services/externalize/Test.idl
+%%PORTDOCS%%%%MICO_SERVICE%%share/examples/mico/services/externalize/TestServer.cc
+%%PORTDOCS%%%%MICO_SERVICE%%share/examples/mico/services/externalize/Test_impl.cc
+%%PORTDOCS%%%%MICO_SERVICE%%share/examples/mico/services/externalize/Test_impl.h
+%%PORTDOCS%%%%MICO_SERVICE%%share/examples/mico/services/externalize/daemons-start
+%%PORTDOCS%%%%MICO_SERVICE%%share/examples/mico/services/externalize/daemons-stop
+%%PORTDOCS%%%%MICO_SERVICE%%share/examples/mico/services/externalize/rundemo
+%%PORTDOCS%%%%MICO_SERVICE%%share/examples/mico/services/externalize/servers-start
+%%PORTDOCS%%%%MICO_SERVICE%%share/examples/mico/services/externalize/simple-test.cc
+%%PORTDOCS%%%%MICO_SERVICE%%share/examples/mico/services/externalize/stop-servers
+%%PORTDOCS%%%%MICO_SERVICE%%share/examples/mico/services/externalize/test
+%%PORTDOCS%%%%MICO_SERVICE%%share/examples/mico/services/events/Makefile
+%%PORTDOCS%%%%MICO_SERVICE%%share/examples/mico/services/events/client.cc
+%%PORTDOCS%%%%MICO_SERVICE%%share/examples/mico/services/events/client2.cc
+%%PORTDOCS%%%%MICO_SERVICE%%share/examples/mico/services/events/runit
+%%PORTDOCS%%%%MICO_SERVICE%%share/examples/mico/services/events/server.cc
+%%PORTDOCS%%%%MICO_SERVICE%%share/examples/mico/services/events/server2.cc
+%%PORTDOCS%%%%MICO_SERVICE%%share/examples/mico/services/events/server3.cc
+%%PORTDOCS%%%%MICO_SERVICE%%share/examples/mico/services/lifecycle/Documents.idl
+%%PORTDOCS%%%%MICO_SERVICE%%share/examples/mico/services/lifecycle/DocumentsServer.cc
+%%PORTDOCS%%%%MICO_SERVICE%%share/examples/mico/services/lifecycle/Documents_impl.cc
+%%PORTDOCS%%%%MICO_SERVICE%%share/examples/mico/services/lifecycle/Documents_impl.h
+%%PORTDOCS%%%%MICO_SERVICE%%share/examples/mico/services/lifecycle/Makefile
+%%PORTDOCS%%%%MICO_SERVICE%%share/examples/mico/services/lifecycle/README
+%%PORTDOCS%%%%MICO_SERVICE%%share/examples/mico/services/lifecycle/Test.idl
+%%PORTDOCS%%%%MICO_SERVICE%%share/examples/mico/services/lifecycle/TestServer.cc
+%%PORTDOCS%%%%MICO_SERVICE%%share/examples/mico/services/lifecycle/Test_impl.cc
+%%PORTDOCS%%%%MICO_SERVICE%%share/examples/mico/services/lifecycle/Test_impl.h
+%%PORTDOCS%%%%MICO_SERVICE%%share/examples/mico/services/lifecycle/daemons-start
+%%PORTDOCS%%%%MICO_SERVICE%%share/examples/mico/services/lifecycle/daemons-stop
+%%PORTDOCS%%%%MICO_SERVICE%%share/examples/mico/services/lifecycle/rundemo
+%%PORTDOCS%%%%MICO_SERVICE%%share/examples/mico/services/lifecycle/servers-start
+%%PORTDOCS%%%%MICO_SERVICE%%share/examples/mico/services/lifecycle/simple-test.cc
+%%PORTDOCS%%%%MICO_SERVICE%%share/examples/mico/services/lifecycle/stop-servers
+%%PORTDOCS%%%%MICO_SERVICE%%share/examples/mico/services/lifecycle/test
+%%PORTDOCS%%%%MICO_SERVICE%%share/examples/mico/services/naming-lb/Client.cc
+%%PORTDOCS%%%%MICO_SERVICE%%share/examples/mico/services/naming-lb/Makefile
+%%PORTDOCS%%%%MICO_SERVICE%%share/examples/mico/services/naming-lb/Printer.idl
+%%PORTDOCS%%%%MICO_SERVICE%%share/examples/mico/services/naming-lb/Printer_impl.cc
+%%PORTDOCS%%%%MICO_SERVICE%%share/examples/mico/services/naming-lb/Printer_impl.h
+%%PORTDOCS%%%%MICO_SERVICE%%share/examples/mico/services/naming-lb/Server.cc
+%%PORTDOCS%%%%MICO_SERVICE%%share/examples/mico/services/naming-lb/printer_test
+%%PORTDOCS%%%%MICO_SERVICE%%share/examples/mico/services/naming/Makefile
+%%PORTDOCS%%%%MICO_SERVICE%%share/examples/mico/services/naming/account.idl
+%%PORTDOCS%%%%MICO_SERVICE%%share/examples/mico/services/naming/account_test
+%%PORTDOCS%%%%MICO_SERVICE%%share/examples/mico/services/naming/client.cc
+%%PORTDOCS%%%%MICO_SERVICE%%share/examples/mico/services/naming/server.cc
+%%PORTDOCS%%%%MICO_SERVICE%%share/examples/mico/services/property-daemon/Makefile
+%%PORTDOCS%%%%MICO_SERVICE%%share/examples/mico/services/property-daemon/README
+%%PORTDOCS%%%%MICO_SERVICE%%share/examples/mico/services/property-daemon/bank.idl
+%%PORTDOCS%%%%MICO_SERVICE%%share/examples/mico/services/property-daemon/get_properties.cc
+%%PORTDOCS%%%%MICO_SERVICE%%share/examples/mico/services/property-daemon/set_properties.cc
+%%PORTDOCS%%%%MICO_SERVICE%%share/examples/mico/services/property-daemon/start_demo
+%%PORTDOCS%%%%MICO_SERVICE%%share/examples/mico/services/relship/Documents.idl
+%%PORTDOCS%%%%MICO_SERVICE%%share/examples/mico/services/relship/DocumentsServer.cc
+%%PORTDOCS%%%%MICO_SERVICE%%share/examples/mico/services/relship/Documents_impl.cc
+%%PORTDOCS%%%%MICO_SERVICE%%share/examples/mico/services/relship/Documents_impl.h
+%%PORTDOCS%%%%MICO_SERVICE%%share/examples/mico/services/relship/Makefile
+%%PORTDOCS%%%%MICO_SERVICE%%share/examples/mico/services/relship/README
+%%PORTDOCS%%%%MICO_SERVICE%%share/examples/mico/services/relship/Test.idl
+%%PORTDOCS%%%%MICO_SERVICE%%share/examples/mico/services/relship/TestServer.cc
+%%PORTDOCS%%%%MICO_SERVICE%%share/examples/mico/services/relship/Test_impl.cc
+%%PORTDOCS%%%%MICO_SERVICE%%share/examples/mico/services/relship/Test_impl.h
+%%PORTDOCS%%%%MICO_SERVICE%%share/examples/mico/services/relship/daemons-start
+%%PORTDOCS%%%%MICO_SERVICE%%share/examples/mico/services/relship/daemons-stop
+%%PORTDOCS%%%%MICO_SERVICE%%share/examples/mico/services/relship/rundemo
+%%PORTDOCS%%%%MICO_SERVICE%%share/examples/mico/services/relship/servers-start
+%%PORTDOCS%%%%MICO_SERVICE%%share/examples/mico/services/relship/simple-test.cc
+%%PORTDOCS%%%%MICO_SERVICE%%share/examples/mico/services/relship/stop-servers
+%%PORTDOCS%%%%MICO_SERVICE%%share/examples/mico/services/relship/test
+%%PORTDOCS%%%%MICO_SERVICE%%share/examples/mico/services/stream-bench/Makefile
+%%PORTDOCS%%%%MICO_SERVICE%%share/examples/mico/services/stream-bench/bench
+%%PORTDOCS%%%%MICO_SERVICE%%share/examples/mico/services/stream-bench/req.idl
+%%PORTDOCS%%%%MICO_SERVICE%%share/examples/mico/services/stream-bench/req_client.cc
+%%PORTDOCS%%%%MICO_SERVICE%%share/examples/mico/services/stream-bench/req_server.cc
+%%PORTDOCS%%%%MICO_SERVICE%%share/examples/mico/services/stream-bench/stream_client.cc
+%%PORTDOCS%%%%MICO_SERVICE%%share/examples/mico/services/stream-bench/stream_server.cc
 %%PORTDOCS%%share/examples/mico/services/stream-sound/Makefile
 %%PORTDOCS%%share/examples/mico/services/stream-sound/client.cc
 %%PORTDOCS%%share/examples/mico/services/stream-sound/server.cc
 %%PORTDOCS%%share/examples/mico/services/stream-sound/sound.h
-%%PORTDOCS%%share/examples/mico/services/trader/Makefile
-%%PORTDOCS%%share/examples/mico/services/trader/demo.idl
-%%PORTDOCS%%share/examples/mico/services/trader/main.cc
-%%PORTDOCS%%share/examples/mico/services/trader/run
+%%PORTDOCS%%%%MICO_SERVICE%%share/examples/mico/services/trader/Makefile
+%%PORTDOCS%%%%MICO_SERVICE%%share/examples/mico/services/trader/demo.idl
+%%PORTDOCS%%%%MICO_SERVICE%%share/examples/mico/services/trader/main.cc
+%%PORTDOCS%%%%MICO_SERVICE%%share/examples/mico/services/trader/run
 %%PORTDOCS%%share/examples/mico/shlib/Makefile
 %%PORTDOCS%%share/examples/mico/shlib/client.cc
 %%PORTDOCS%%share/examples/mico/shlib/hello
@@ -1088,14 +1147,16 @@ lib/mico-setup.sh
 %%PORTDOCS%%@dirrm share/examples/mico/siegel/central
 %%PORTDOCS%%@dirrm share/examples/mico/siegel
 %%PORTDOCS%%@dirrm share/examples/mico/shlib
-%%PORTDOCS%%@dirrm share/examples/mico/services/trader
+%%PORTDOCS%%%%MICO_SERVICE%%@dirrm share/examples/mico/services/trader
 %%PORTDOCS%%@dirrm share/examples/mico/services/stream-sound
-%%PORTDOCS%%@dirrm share/examples/mico/services/stream-bench
-%%PORTDOCS%%@dirrm share/examples/mico/services/relship
-%%PORTDOCS%%@dirrm share/examples/mico/services/property-daemon
-%%PORTDOCS%%@dirrm share/examples/mico/services/naming-lb
-%%PORTDOCS%%@dirrm share/examples/mico/services/naming
-%%PORTDOCS%%@dirrm share/examples/mico/services/events
+%%PORTDOCS%%%%MICO_SERVICE%%@dirrm share/examples/mico/services/stream-bench
+%%PORTDOCS%%%%MICO_SERVICE%%@dirrm share/examples/mico/services/relship
+%%PORTDOCS%%%%MICO_SERVICE%%@dirrm share/examples/mico/services/property-daemon
+%%PORTDOCS%%%%MICO_SERVICE%%@dirrm share/examples/mico/services/naming-lb
+%%PORTDOCS%%%%MICO_SERVICE%%@dirrm share/examples/mico/services/naming
+%%PORTDOCS%%%%MICO_SERVICE%%@dirrm share/examples/mico/services/lifecycle
+%%PORTDOCS%%%%MICO_SERVICE%%@dirrm share/examples/mico/services/events
+%%PORTDOCS%%%%MICO_SERVICE%%@dirrm share/examples/mico/services/externalize
 %%PORTDOCS%%@dirrm share/examples/mico/services
 %%PORTDOCS%%%%MICO_SSL%%@dirrm share/examples/mico/security/tutorial
 %%PORTDOCS%%%%MICO_SSL%%@dirrm share/examples/mico/security/l2
@@ -1139,6 +1200,7 @@ lib/mico-setup.sh
 %%PORTDOCS%%@dirrm share/examples/mico/mt/callback
 %%PORTDOCS%%@dirrm share/examples/mico/mt
 %%PORTDOCS%%@dirrm share/examples/mico/mcast
+%%PORTDOCS%%%%MICO_SERVICE%%@dirrm share/examples/mico/lifecycle
 %%PORTDOCS%%@dirrm share/examples/mico/interop/visibroker
 %%PORTDOCS%%@dirrm share/examples/mico/interop/orbix
 %%PORTDOCS%%@dirrm share/examples/mico/interop/jdk
@@ -1173,6 +1235,7 @@ lib/mico-setup.sh
 %%PORTDOCS%%@dirrm share/examples/mico/interceptor
 %%PORTDOCS%%@dirrm share/examples/mico/henning
 %%PORTDOCS%%@dirrm share/examples/mico/generic
+%%PORTDOCS%%%%MICO_SERVICE%%@dirrm share/examples/mico/externalization
 %%PORTDOCS%%@dirrm share/examples/mico/dynany
 %%PORTDOCS%%%%MICO_X11%%@dirrm share/examples/mico/dispatcher/x11
 %%PORTDOCS%%%%MICO_QT%%@dirrm share/examples/mico/dispatcher/qtmico
@@ -1187,11 +1250,11 @@ lib/mico-setup.sh
 %%PORTDOCS%%%%MICO_SSL%%@dirrm share/examples/mico/csiv2/hello-1
 %%PORTDOCS%%%%MICO_SSL%%@dirrm share/examples/mico/csiv2
 %%PORTDOCS%%@dirrm share/examples/mico/codesets
-%%PORTDOCS%%@dirrm share/examples/mico/ccm/philo
-%%PORTDOCS%%@dirrm share/examples/mico/ccm/hello2
-%%PORTDOCS%%@dirrm share/examples/mico/ccm/hello
-%%PORTDOCS%%@dirrm share/examples/mico/ccm/events
-%%PORTDOCS%%@dirrm share/examples/mico/ccm
+%%PORTDOCS%%%%MICO_SERVICE%%@dirrm share/examples/mico/ccm/philo
+%%PORTDOCS%%%%MICO_SERVICE%%@dirrm share/examples/mico/ccm/hello2
+%%PORTDOCS%%%%MICO_SERVICE%%@dirrm share/examples/mico/ccm/hello
+%%PORTDOCS%%%%MICO_SERVICE%%@dirrm share/examples/mico/ccm/events
+%%PORTDOCS%%%%MICO_SERVICE%%@dirrm share/examples/mico/ccm
 %%PORTDOCS%%@dirrm share/examples/mico/boa/activate
 %%PORTDOCS%%@dirrm share/examples/mico/boa/account4
 %%PORTDOCS%%@dirrm share/examples/mico/boa/account3
