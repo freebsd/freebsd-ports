@@ -5336,7 +5336,7 @@ nte		ports/mbone/nte
 ntl		ports/math/ntl
 ntop		ports/net/ntop
 ntp-devel	ports/net/ntp-devel
-nttcp		ports/net/nttcp
+nttcp		ports/benchmarks/nttcp
 nucleus		ports/x11-fonts/nucleus
 nulib		ports/archivers/nulib
 nullmailer	ports/mail/nullmailer
@@ -9030,7 +9030,7 @@ truevision	ports/graphics/truevision
 tsclient	ports/net/tsclient
 tsocks		ports/net/tsocks
 tt		ports/games/tt
-ttcp		ports/net/ttcp
+ttcp		ports/benchmarks/ttcp
 ttf2pt1		ports/print/ttf2pt1
 ttfquery	ports/print/ttfquery
 ttftot42	ports/print/ttftot42
