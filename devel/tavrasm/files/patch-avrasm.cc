@@ -1,6 +1,6 @@
---- src/avrasm.cc.orig	Fri Dec 12 13:50:49 2003
-+++ src/avrasm.cc	Fri Dec 12 13:56:40 2003
-@@ -861,6 +861,11 @@
+--- src/avrasm.cc.orig	Mon Jan 19 17:11:30 2004
++++ src/avrasm.cc	Thu Jan 29 05:26:31 2004
+@@ -862,6 +862,11 @@
        strcpy(type_start,".");
    }
  
