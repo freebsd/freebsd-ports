@@ -6,10 +6,14 @@ bin/ssh-add
 bin/ssh-agent
 bin/ssh-keygen
 bin/ssh-keyscan
-etc/rc.d/sshd.sh
-etc/ssh_config
-etc/sshd_config
+etc/rc.d/sshd.sh.sample
 etc/moduli
+@unexec if cmp -s %D/etc/ssh_config %D/etc/ssh_config-dist; then rm -f %D/etc/ssh_config; fi
+@unexec if cmp -s %D/etc/sshd_config %D/etc/sshd_config-dist; then rm -f %D/etc/sshd_config; fi
+etc/ssh_config-dist
+etc/sshd_config-dist
+@exec [ ! -f %D/etc/ssh_config ] && cp %D/etc/ssh_config-dist %D/etc/ssh_config
+@exec [ ! -f %D/etc/sshd_config ] && cp %D/etc/sshd_config-dist %D/etc/sshd_config
 sbin/sshd
 libexec/sftp-server
 libdata/ssh/Ssh.bin
