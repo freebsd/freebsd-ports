@@ -50,17 +50,6 @@ MULEPKG?=	${dir:S,editors/,,:S,chinese/,zh-,:S,japanese/,ja-,:S,korean/,ko-,}-${
 WRKSRC=		${WRKDIR}/mule-${MULE_VERSION}-${EMACS_VERSION}
 STARTUP_SCRIPT=	${PREFIX}/etc/rc.d/mule.sh
 
-.if !defined(WRKDIR)
-.if defined(PACKAGE_BUILDING)
-# XXX
-WRKDIR=	${WRKDIRBASE}/editors/mule/work
-pre-build:
-	@cd ${.CURDIR}/../mule; make
-.else
-BROKEN=		First you should build install a port for mule except mule-common
-.endif
-.endif
-
 EXTRACT_COOKIE=		${WRKDIR}/.extract_done.${MULEPKG}
 CONFIGURE_COOKIE=	${WRKDIR}/.configure_done.${MULEPKG}
 BUILD_COOKIE=		${WRKDIR}/.build_done.${MULEPKG}
@@ -116,7 +105,18 @@ post-patch:
 .endif
 .endif
 
-pre-build:
+.if !defined(WRKDIR)
+.if defined(PACKAGE_BUILDING)
+# XXX
+WRKDIR=	${WRKDIRBASE}/editors/mule/work
+pre-build::
+	@cd ${.CURDIR}/../mule; make
+.else
+BROKEN=		First you should build install a port for mule except mule-common
+.endif
+.endif
+
+pre-build::
 	find ${WRKSRC} \( -name \*.orig -o -name \*~ \) -exec ${RM} -f \{} \;
 	${RM} -f ${WRKSRC}/etc/DOC* ${WRKSRC}/src/emacs ${WRKSRC}/src/emacs-${EMACS_VERSION}.*
 
