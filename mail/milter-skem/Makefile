@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	skem
-PORTVERSION=	1.0
+PORTVERSION=	1.0.1
 CATEGORIES=	mail
 MASTER_SITES=	http://virtual-estates.net/skem/
 
