@@ -1,0 +1,23 @@
+--- Makefile.FreeBSD.orig	Thu Jan 30 10:29:44 1997
++++ Makefile.FreeBSD	Fri Apr 11 20:51:39 1997
+@@ -16,7 +16,6 @@
+ 	@echo \#define	VERSION	\"ver.$(VERSION).`cat .VERSION` \(`date +%m/%d`\)\" > include/version.h
+ 
+ config:
+-	@sh tools/Configure.FreeBSD < config.in.FreeBSD
+ 	-for i in $(SUBDIR); do \
+ 		(cd ${.CURDIR}/$$i && test -f Makefile.FreeBSD && cp Makefile.FreeBSD Makefile) ; \
+ 	done
+@@ -25,6 +24,11 @@
+ install:
+ 	(cd ${.CURDIR}/src ; make install)
+ 	(cd ${.CURDIR}/font ; make install)
+-	install -g wheel -o root -m 0644  -c kon.cfg.FreeBSD /usr/local/etc/kon.cfg
++	install -g wheel -o root -m 0644  -c kon.cfg.FreeBSD ${LIBDIR}/kon.cfg
++	@sh tools/makedir ${FONTDIR}
++	@for i in k14.bdf 7x14rk.bdf; do\
++	install -c $(DISTDIR)/$$i ${FONTDIR};\
++	gzip -f -9 ${FONTDIR}/$$i;\
++	done
+ 
+ .include <bsd.prog.mk>

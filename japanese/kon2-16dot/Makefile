@@ -1,30 +1,39 @@
-# New ports collection makefile for:	kon
-# Version required:	0.01
-# Date created:		7 June 1995
-# Whom:			Takashi Ogura <ogura@st.rim.or.jp>
+# New ports collection makefile for:	kon2
+# Version required:     0.3
+# Date created:         11 Apr 1997
+# Whom:                 Makoto Matsushita <matusita@jp.freebsd.org>
 #
-# $Id: Makefile,v 1.8 1996/11/13 12:41:00 asami Exp $
+# $Id: Makefile,v 1.1.1.1 1997/06/04 09:29:13 asami Exp $
 #
 
-DISTNAME=	kon
-PKGNAME=	jp-kon-0994e
+DISTNAME=	kon2-0.3
+PKGNAME=	jp-kon2-0.3
 CATEGORIES=	japanese
 # note kon is only in first directory and fonts are only in second directory
-MASTER_SITES=	ftp://ftp.iij.ad.jp/pub/linux-j/JE-sources/JE/ \
+MASTER_SITES=	ftp://ftp.tut.ac.jp/Linux/Packages/Utils/ \
 		ftp://ftp.iij.ad.jp/pub/X/XFree86/XFree86/3.1.1/untarred/xc/fonts/bdf/misc/
-DISTFILES=	kon-0.99.4e.tgz k14.bdf 7x14rk.bdf
-EXTRACT_ONLY=	kon-0.99.4e.tgz
+DISTFILES=	kon2-0.3.tar.gz k14.bdf 7x14rk.bdf
 
-MAINTAINER=	asami@FreeBSD.ORG
+MAINTAINER=	hideyuki@sat.t.u-tokyo.ac.jp
 
-USE_GMAKE=	yes
 MAN1=		kon.1
 MANLANG=	ja_JP.EUC
+EXTRACT_ONLY=	kon2-0.3.tar.gz
 
-post-configure:
-	sed -e 's%%CURDIR%%${.CURDIR}' \
-	  -e 's%%PREFIX%%${PREFIX}' \
-	  -e 's%%DISTDIR%%${DISTDIR}' \
+DOCDIR=		${PREFIX}/share/doc/kon2
+
+pre-build:
+	sed -e 's,%%PREFIX%%,${PREFIX},' \
+	  -e 's,%%DISTDIR%%,${DISTDIR},' \
 	  files/dotconfig > ${WRKSRC}/.config
+	@(cd ${WRKSRC}; ${MAKE} -f Makefile.FreeBSD config)
+
+post-install:
+	@${INSTALL_MAN} ${WRKSRC}/doc/kon.1 ${PREFIX}/man/ja_JP.EUC/man1
+.if !defined(NOPORTDOCS)
+	@${MKDIR} ${DOCDIR}
+	@${INSTALL_DATA} ${WRKSRC}/doc/README ${WRKSRC}/doc/README.FreeBSD \
+		${DOCDIR}
+.endif
 
 .include <bsd.port.mk>

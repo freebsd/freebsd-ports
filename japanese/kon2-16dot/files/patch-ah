@@ -1,0 +1,11 @@
+--- src/display/vga.c	Sun Jan 26 18:05:00 1997
++++ src/display/vga.c	Mon Apr  7 10:37:35 1997
+@@ -382,7 +382,7 @@
+ /*    if (!code) return;*/
+     VgaSetColor(fc);
+     if (bc & 0x8) *(vcls - dInfo.glineByte) = 0;
+-    for (x = 0;x < sbFReg->high;x ++, code ++, fm >>= 1) {
++    if (code) for (x = 0;x < sbFReg->high;x ++, code ++, fm >>= 1) {
+ 	if (*code) {
+ 	    VgaOutByte(*code);
+ 	    *gram = *gram;
