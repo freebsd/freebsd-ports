@@ -21,3 +21,5 @@ lib/mpegaudio/tables/alloc_2
 lib/mpegaudio/tables/alloc_3
 lib/mpegaudio/tables/dewindow
 lib/mpegaudio/tables/enwindow
+@dirrm lib/mpegaudio/tables
+@dirrm lib/mpegaudio
