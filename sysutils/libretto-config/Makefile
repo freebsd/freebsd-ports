@@ -16,16 +16,14 @@ MAINTAINER=	shige@FreeBSD.org
 ONLY_FOR_ARCHS=	i386
 
 WRKSRC=		${WRKDIR}/libapm
-DOCDIR=		${PREFIX}/share/doc/${PORT_NAME}
+DOCDIR=		${PREFIX}/share/doc/${PORTNAME}
 
-MAN8=		${PORT_NAME}.8
+MAN8=		${PORTNAME}.8
 MANLANG=	. ja
-
-BROKEN=		"PLIST is incorrect"
 
 post-install:
 # install japanese manpage also :-)
-	@${INSTALL_MAN} ${WRKSRC}/libapm-j.man ${PREFIX}/man/ja/man8/${PORT_NAME}.8
+	@${INSTALL_MAN} ${WRKSRC}/libapm-j.man ${PREFIX}/man/ja/man8/${PORTNAME}.8
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCDIR}
 	@${INSTALL_DATA} ${WRKSRC}/README-e.1st ${DOCDIR}/README.1st
