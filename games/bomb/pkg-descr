@@ -4,3 +4,5 @@ It responds to keyboard input.
 GUILE support is not implemented in this port.
 
 To exit the program, press Esc.
+
+WWW:  http://www.draves.org/bomb/
