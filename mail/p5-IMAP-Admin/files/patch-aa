@@ -1,0 +1,22 @@
+--- Admin.pm.orig	Wed Nov 29 07:06:44 2000
++++ Admin.pm	Tue Aug 14 16:17:12 2001
+@@ -6,7 +6,7 @@
+ use Carp;
+ use IO::Select;
+ use IO::Socket;
+-use IO::Socket::INET;
++#use IO::Socket::INET;
+ use Text::ParseWords qw(parse_line);
+ use Cwd;
+ 
+@@ -463,7 +463,9 @@
+     print $fh qq{try GETACL "$mailbox"\n};
+     delete $self->{'acl'};
+     my $try = $self->_read;
+-    while ($try =~ /^\* ACL\s+(?:\".*?\"|.*?)\s+((\".*?\"|.*?)(?:\s)(?{ push @{$self->{'acl'}}, $2; }))+(\w+)(?{ push @{$self->{'acl'}}, $3; })$/) {
++    while ($try =~ /^\* ACL\s+(?:\".*?\"|.*?)\s+((\".*?\"|.*?)(?:\s))+(\w+)$/) {
++	push (@{$self->{'acl'}}, $2);
++	push (@{$self->{'acl'}}, $3);
+ 	$try = $self->_read;
+     }
+     if ($try =~ /^try OK/) {
