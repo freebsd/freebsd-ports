@@ -7,6 +7,7 @@
 
 PORTNAME=	xmms
 PORTVERSION=	1.2.10
+PORTREVISION=	1
 CATEGORIES+=	multimedia audio ipv6
 MASTER_SITES=	http://www.xmms.org/files/1.2.x/ \
 		ftp://ftp.sunet.se/pub/multimedia/xmms/1.2.x/
@@ -17,7 +18,7 @@ COMMENT?=	X Multimedia System --- An audio player with a Winamp GUI
 
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes
-USE_GNOME=	gtk12 gnomehack libxml
+USE_GNOME=	gtk12 gnomehack
 USE_REINPLACE=	yes
 WANT_GNOME=	yes
 USE_GMAKE=	yes
@@ -43,11 +44,17 @@ PLIST_SUB=	DATADIR="share"
 
 CONFIGURE_ARGS+=	--enable-ipv6
 
-.if defined(WITH_ENCODING_PATCH)
-ENC_PATCHLEVEL=	27.3
+.if defined(WITH_ENCODING_PATCH) || defined(WITH_ID3V2_PATCH)
+ENC_PATCHLEVEL=	27.4
 DISTFILES+=	${PORTNAME}-${PORTVERSION}-recode-csa${ENC_PATCHLEVEL}${EXTRACT_SUFX}:enc
 MASTER_SITES+=	${MASTER_SITE_SOURCEFORGE:S/$/:enc/}
 MASTER_SITE_SUBDIR+=	rusxmms/:enc
+.endif
+
+.if defined(WITH_ENCODING_PATCH)
+PLIST_SUB+=	ENCODING=""
+.else
+PLIST_SUB+=	ENCODING="@comment "
 .endif
 
 .if !defined(WITHOUT_MIKMOD)
@@ -119,7 +126,12 @@ pre-extract:
 .endif
 
 post-patch:
-.if defined(WITH_ENCODING_PATCH)
+.if defined(WITH_ID3V2_PATCH)
+	@${PATCH} -s -p1 -d ${WRKSRC} < ${WRKDIR}/recode.3rdparty/id3v2.patch
+.endif
+.if defined(WITH_ENCODING_PATCH) && defined(WITH_ID3V2_PATCH)
+	@${PATCH} -s -p1 -d ${WRKSRC} < ${WRKDIR}/xmms_id3v2-ds-recode.patch
+.elif defined(WITH_ENCODING_PATCH)
 	@${PATCH} -s -p1 -d ${WRKSRC} < ${WRKDIR}/xmms-ds-recode.patch
 .endif
 	@${FIND} ${WRKSRC} -name "Makefile.in*" | ${XARGS} ${REINPLACE_CMD} -e \

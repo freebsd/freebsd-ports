@@ -1,11 +1,15 @@
 bin/wmxmms
 bin/xmms
 bin/xmms-config
+%%ENCODING%%include/xmms/charset.h
+%%ENCODING%%include/xmms/charset_auto_russian.h
+%%ENCODING%%include/xmms/charset_config.h
 include/xmms/configfile.h
 include/xmms/dirbrowser.h
 include/xmms/formatter.h
 include/xmms/fullscreen.h
 include/xmms/plugin.h
+%%ENCODING%%include/xmms/russian_table.h
 include/xmms/titlestring.h
 include/xmms/util.h
 include/xmms/xmmsctrl.h
