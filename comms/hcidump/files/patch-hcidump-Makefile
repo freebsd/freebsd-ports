@@ -1,0 +1,19 @@
+--- hcidump/Makefile.orig	Fri Mar 12 23:16:58 2004
++++ hcidump/Makefile	Fri Dec 10 21:06:23 2004
+@@ -2,13 +2,12 @@
+ # $FreeBSD$
+ 
+ PROG=		hcidump
+-BINDIR=		/usr/local/bin
+-MANDIR=		/usr/local/man/man
++BINDIR=		${PREFIX}/bin
++MANDIR=		${PREFIX}/man/man
+ MAN1=		hcidump.1
+ SRCS=		hcidump.c
+ WARNS?=		2
+-DEBUG_FLAGS=	-g
+-CFLAGS=		-O2 -I../parser
++CFLAGS+=	-I../parser
+ 
+ DPADD+=		../parser/libparser.a
+ LDADD+=		-L../parser -lparser

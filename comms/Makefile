@@ -33,6 +33,7 @@
     SUBDIR += gsmlib
     SUBDIR += hamfax
     SUBDIR += hamlib
+    SUBDIR += hcidump
     SUBDIR += hylafax
     SUBDIR += ixj
     SUBDIR += java-commapi
