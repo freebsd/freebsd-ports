@@ -209,6 +209,7 @@
     SUBDIR += tkcon
     SUBDIR += tkcvs
     SUBDIR += tkref
+    SUBDIR += tmake
     SUBDIR += tvision
     SUBDIR += uclmmbase
     SUBDIR += ups-debug
