@@ -31,6 +31,8 @@ MAKE_ARGS=	CC="${CC}" \
 MAN1=	rawrec.1
 MLINKS=	rawrec.1 rawplay.1
 
+PLIST_FILES=	bin/rawplay bin/rawrec
+
 post-patch:
 	@${FIND} ${WRKSRC} -name '*.[ch]' | ${XARGS} ${REINPLACE_CMD} -e \
 		's|<linux/soundcard.h>|<sys/soundcard.h>|g'

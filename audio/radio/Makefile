@@ -19,4 +19,6 @@ NO_WRKSUBDIR=	yes
 ALL_TARGET=	${OPSYS}
 MAN1=		radio.1 broadcast.1
 
+PLIST_FILES=	bin/broadcast bin/radio
+
 .include <bsd.port.mk>
