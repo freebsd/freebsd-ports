@@ -4,6 +4,7 @@ bin/bash
 bin/bashbug
 @unexec install-info --delete %D/info/bash.info %D/info/dir
 info/bash.info
+@exec install-info %D/info/bash.info %D/info/dir
 share/doc/bash/article.ps.gz
 share/doc/bash/bashref.ps.gz
 share/doc/bash/article.txt
