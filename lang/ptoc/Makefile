@@ -3,7 +3,7 @@
 # Date created:				10 December 1997
 # Whom:					Andrey Zakhvatov
 #
-# $Id: Makefile,v 1.2 1998/03/28 19:37:51 asami Exp $
+# $Id: Makefile,v 1.3 1998/07/25 09:41:11 asami Exp $
 #
 
 DISTNAME=		ptoc
@@ -16,6 +16,8 @@ EXTRACT_SUFX=		.tgz
 MAINTAINER=		andy@icc.surw.chel.su
 
 MAKEFILE=		makefile
+
+BROKEN_ELF=	libXbgi.a
 
 pre-build:
 	@ ${RM} ${WRKSRC}/libXbgi.a
