@@ -14,6 +14,8 @@ MASTER_SITES=	http://www.iceb.vinnitsa.com/download/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Ukrainian accounting system
 
+BROKEN=		Incomplete pkg-plist
+
 USE_MYSQL=	yes
 WANT_MYSQL_VER=	323
 USE_GMAKE=	yes
