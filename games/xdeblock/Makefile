@@ -12,7 +12,7 @@ CATEGORIES=	games
 MASTER_SITES=	ftp://www.vector.co.jp/pack/unix/game/action/block/
 DISTFILES=	xdeblock.tgz
 
-MAINTAINER=	nacai@iname.com
+MAINTAINER=	nakai@FreeBSD.org
 
 LIB_DEPENDS=	Xpm.4:${PORTSDIR}/graphics/xpm
 

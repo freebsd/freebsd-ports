@@ -11,7 +11,7 @@ PKGNAME=	ja-xshodo-2.0
 CATEGORIES=	japanese
 MASTER_SITES=	ftp://cclub.tutcc.tut.ac.jp/pub/xwin/
 
-MAINTAINER=	nacai@iname.com
+MAINTAINER=	nakai@FreeBSD.org
 
 USE_IMAKE=	yes
 MAN1=		xshodo.1

@@ -10,7 +10,7 @@ DISTNAME=	giftool-1.0
 CATEGORIES=	graphics
 MASTER_SITES=	ftp://ftp.sbs.de/pub/www/tools/giftool/
 
-MAINTAINER=	nacai@iname.com
+MAINTAINER=	nakai@FreeBSD.org
 
 NO_CDROM=	"Shareware"
 

@@ -11,7 +11,7 @@ PKGNAME=	xgolgo-1.0
 CATEGORIES=	games
 MASTER_SITES=	ftp://ftp.netlab.is.tsukuba.ac.jp/pub/X/our_collections/misc/
 
-MAINTAINER=	nacai@iname.com
+MAINTAINER=	nakai@FreeBSD.org
 
 WRKSRC=		${WRKDIR}/xeyes
 USE_IMAKE=	yes

@@ -12,7 +12,7 @@ CATEGORIES+=	japanese
 MASTER_SITES=	ftp://ftp.leo.chubu.ac.jp/pub/tools/
 DISTFILES=	recjis.tar.gz
 
-MAINTAINER=	nacai@iname.com
+MAINTAINER=	nakai@FreeBSD.org
 
 NO_WRKSUBDIR=	yes
 ALL_TARGET=	prog

@@ -10,7 +10,7 @@ DISTNAME=	guileobjc-0.3.8
 CATEGORIES=	lang
 MASTER_SITES=	ftp://ftp.aist-nara.ac.jp/pub/personal/masata-y/gyve/fullkit/gyve-0.1.2.4/
 
-MAINTAINER=	nacai@iname.com
+MAINTAINER=	nakai@FreeBSD.org
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/libobjects.a:${PORTSDIR}/lang/libobjects
 LIB_DEPENDS=	guile.6:${PORTSDIR}/lang/guile

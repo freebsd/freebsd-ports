@@ -10,7 +10,7 @@ DISTNAME=	xsokoban-3.3c
 CATEGORIES=	games
 MASTER_SITES=	ftp://ftp.pmg.lcs.mit.edu/pub/xsokoban/
 
-MAINTAINER=	nacai@iname.com
+MAINTAINER=	nakai@FreeBSD.org
 
 LIB_DEPENDS=	Xpm.4:${PORTSDIR}/graphics/xpm
 

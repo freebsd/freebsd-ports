@@ -11,7 +11,7 @@ PKGNAME=	xbat-1.11
 CATEGORIES=	games
 MASTER_SITES=	http://www.nemoto.ecei.tohoku.ac.jp/~wai/Xbat/
 
-MAINTAINER=	nacai@iname.com
+MAINTAINER=	nakai@FreeBSD.org
 
 NO_CDROM=	Possible copyright infringement
 
