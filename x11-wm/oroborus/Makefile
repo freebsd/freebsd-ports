@@ -6,14 +6,12 @@
 #
 
 PORTNAME=	oroborus
-PORTVERSION=	1.11.1
+PORTVERSION=	1.13.0
 CATEGORIES=	x11-wm
 MASTER_SITES=	http://www.kensden.pwp.blueyonder.co.uk/Oroborus/
-DISTNAME=	${PORTNAME}-src-v${PORTVERSION}
+#DISTNAME=	${PORTNAME}-src-v${PORTVERSION}
 
 MAINTAINER=	sobomax@FreeBSD.org
-
-WRKSRC=		${WRKDIR}/${PORTNAME}
 
 USE_XPM=	yes
 USE_X_PREFIX=	yes
