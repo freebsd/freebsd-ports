@@ -1,0 +1,32 @@
+--- webalizer.c	2002-04-16 18:11:31.000000000 -0400
++++ webalizer.c.new	2003-07-07 12:35:45.000000000 -0400
+@@ -688,6 +688,14 @@
+          /* un-escape URL */
+          unescape(log_rec.url);
+ 
++         /* strip query portion of cgi scripts */
++         cp1 = log_rec.url;
++         while (*cp1 != '\0')
++           if (!isurlchar(*cp1)) { *cp1 = '\0'; break; }
++           else cp1++;
++         if (log_rec.url[0]=='\0')
++           { log_rec.url[0]='/'; log_rec.url[1]='\0'; }
++
+          /* check for service (ie: http://) and lowercase if found */
+          if ( (cp2=strstr(log_rec.url,"://")) != NULL)
+          {
+@@ -699,14 +707,6 @@
+             }
+          }
+ 
+-         /* strip query portion of cgi scripts */
+-         cp1 = log_rec.url;
+-         while (*cp1 != '\0')
+-           if (!isurlchar(*cp1)) { *cp1 = '\0'; break; }
+-           else cp1++;
+-         if (log_rec.url[0]=='\0')
+-           { log_rec.url[0]='/'; log_rec.url[1]='\0'; }
+-
+          /* strip off index.html (or any aliases) */
+          lptr=index_alias;
+          while (lptr!=NULL)
