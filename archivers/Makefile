@@ -37,6 +37,7 @@
     SUBDIR += rar
     SUBDIR += rpm
     SUBDIR += rpm2cpio
+    SUBDIR += ruby-zip
     SUBDIR += ruby-zlib
     SUBDIR += sectar
     SUBDIR += stuffit
