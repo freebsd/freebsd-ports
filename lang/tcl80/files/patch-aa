@@ -1,5 +1,5 @@
---- Makefile.in.orig	Tue Nov 25 10:31:41 1997
-+++ Makefile.in		Mon Nov 30 16:28:20 1998
+--- Makefile.in.orig	Thu Apr 29 10:26:03 1999
++++ Makefile.in	Thu Apr 29 10:33:07 1999
 @@ -55,7 +55,9 @@
  BIN_INSTALL_DIR =	$(INSTALL_ROOT)$(exec_prefix)/bin
  
@@ -11,7 +11,7 @@
  
  # Top-level directory in which to install manual entries:
  MAN_INSTALL_DIR =	$(INSTALL_ROOT)$(prefix)/man
-@@ -133,7 +135,7 @@
+@@ -146,7 +148,7 @@
  # "install" around;  better to use the install-sh script that comes
  # with the distribution, which is slower but guaranteed to work.
  
@@ -20,7 +20,7 @@
  INSTALL_PROGRAM =	${INSTALL}
  INSTALL_DATA =		${INSTALL} -m 644
  
-@@ -310,15 +312,21 @@
+@@ -331,15 +333,21 @@
  
  SRCS = $(GENERIC_SRCS) $(UNIX_SRCS)
  
@@ -43,7 +43,7 @@
  # Make target which outputs the list of the .o contained in the Tcl lib
  # usefull to build a single big shared library containing Tcl and other
  # extensions.  used for the Tcl Plugin.  -- dl
-@@ -410,7 +418,7 @@
+@@ -433,7 +441,7 @@
  # some ranlibs write to current directory, and this might not always be
  # possible (e.g. if installing as root).
  
@@ -52,7 +52,7 @@
  	@for i in $(LIB_INSTALL_DIR) $(BIN_INSTALL_DIR) ; \
  	    do \
  	    if [ ! -d $$i ] ; then \
-@@ -424,18 +432,23 @@
+@@ -447,14 +455,19 @@
  	@$(INSTALL_DATA) $(TCL_LIB_FILE) $(LIB_INSTALL_DIR)/$(TCL_LIB_FILE)
  	@(cd $(LIB_INSTALL_DIR); $(RANLIB) $(TCL_LIB_FILE))
  	@chmod 555 $(LIB_INSTALL_DIR)/$(TCL_LIB_FILE)
@@ -75,12 +75,7 @@
  	    do \
  	    if [ ! -d $$i ] ; then \
  		echo "Making directory $$i"; \
--		mkdir $$i; \
-+		mkdir -p $$i; \
- 		chmod 755 $$i; \
- 		else true; \
- 		fi; \
-@@ -449,8 +462,15 @@
+@@ -472,8 +485,15 @@
  		else true; \
  		fi; \
  	    done;
@@ -98,7 +93,7 @@
  	@for i in $(TOP_DIR)/library/*.tcl $(TOP_DIR)/library/tclIndex $(UNIX_DIR)/tclAppInit.c $(UNIX_DIR)/ldAix; \
  	    do \
  	    echo "Installing $$i"; \
-@@ -478,30 +498,37 @@
+@@ -501,30 +521,37 @@
  	@cd $(TOP_DIR)/doc; for i in *.1; \
  	    do \
  	    echo "Installing doc/$$i"; \
