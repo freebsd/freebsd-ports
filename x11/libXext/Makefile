@@ -7,17 +7,16 @@
 
 PORTNAME=	libXext
 PORTVERSION=	6.4.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11
 MASTER_SITES=	http://pdx.freedesktop.org/~xlibs/release/
 
 MAINTAINER=	x11@FreeBSD.org
 COMMENT=	X11 Extension library
 
-LIB_PC_DEPENDS=	${X11BASE}/libdata/pkgconfig/x11.pc:${PORTSDIR}/x11/libX11
-BUILD_DEPENDS=	${X11BASE}/libdata/pkgconfig/xproto.pc:${PORTSDIR}/x11/xproto \
-		${X11BASE}/libdata/pkgconfig/xextensions.pc:${PORTSDIR}/x11/xextensions \
-		${LIB_PC_DEPENDS}
+LIB_PC_DEPENDS=	${X11BASE}/libdata/pkgconfig/xextensions.pc:${PORTSDIR}/x11/xextensions \
+		${X11BASE}/libdata/pkgconfig/x11.pc:${PORTSDIR}/x11/libX11
+BUILD_DEPENDS=	${LIB_PC_DEPENDS}
 RUN_DEPENDS=	${LIB_PC_DEPENDS}
 
 CONFLICTS=	XFree86-libraries-*
