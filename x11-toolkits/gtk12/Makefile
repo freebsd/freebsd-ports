@@ -3,21 +3,22 @@
 # Date Created:			28 Sep 1997
 # Whom:				Vanilla I. Shu <vanilla@MinJe.com.TW>
 #
-# $Id: Makefile,v 1.17 1998/05/16 21:13:16 vanilla Exp $
+# $Id: Makefile,v 1.18 1998/05/27 18:12:00 vanilla Exp $
 #
 
-DISTNAME=      gtk+-1.0.3
-PKGNAME=       gtk-1.0.3
-CATEGORIES=    x11
-MASTER_SITES=  ftp://ftp.gimp.org/pub/gtk/v1.0/
+DISTNAME=	gtk+-1.0.3
+PKGNAME=	gtk-1.0.3
+CATEGORIES=	x11
+MASTER_SITES=	ftp://ftp.gimp.org/pub/gtk/v1.0/ \
+		ftp://ftp.cs.umn.edu/pub/gimp/gtk/v1.0/
 
-MAINTAINER=    vanilla@FreeBSD.ORG
+MAINTAINER=	vanilla@FreeBSD.ORG
 
-GNU_CONFIGURE= yes
-USE_GMAKE=     yes
-USE_X11=       yes
+GNU_CONFIGURE=	yes
+USE_GMAKE=	yes
+USE_X11=	yes
 
-CONFIGURE_ENV= INSTALL='/usr/bin/install -c'
+CONFIGURE_ENV=	INSTALL='/usr/bin/install -c'
 
 MAN1=		gtk-config.1
 
