@@ -15,7 +15,7 @@ DIST_SUBDIR=	jakarta/tomcat/${PORTVERSION}
 MAINTAINER=	des@FreeBSD.org
 
 BUILD_DEPENDS=	pinstall:${PORTSDIR}/devel/pinstall
-RUN_DEPENDS=	javac:${PORTSDIR}/java/jdk
+RUN_DEPENDS=	${LOCALBASE}/jdk1.1.8/bin/javac:${PORTSDIR}/java/jdk
 
 NO_BUILD=	yes
 
