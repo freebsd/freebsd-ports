@@ -1,0 +1,30 @@
+--- configure.orig	Sun Oct 10 23:12:40 1999
++++ configure	Sat Oct 16 20:02:52 1999
+@@ -73,6 +73,11 @@
+ 
+   case "$ac_option" in
+ 
++  -lispdir | --lispdir | --lispdi | --lispd | --lisp)
++    ac_prev=lispdir ;;
++  -lispdir=* | --lispdir=* | --lispdi=* | --lispd=* | --lisp=*)
++    lispdir="$ac_optarg" ;;
++
+   -bindir | --bindir | --bindi | --bind | --bin | --bi)
+     ac_prev=bindir ;;
+   -bindir=* | --bindir=* | --bindi=* | --bind=* | --bin=* | --bi=*)
+@@ -687,6 +692,7 @@
+ done
+ test -n "$EMACS" || EMACS="no"
+ 
++if test -z "$lispdir" ; then
+   if test $EMACS != "no"; then
+     echo $ac_n "checking where .elc files should go""... $ac_c" 1>&6
+ echo "configure:693: checking where .elc files should go" >&5
+@@ -710,6 +716,7 @@
+     fi
+     echo "$ac_t""$lispdir" 1>&6
+   fi
++fi
+   
+ # Extract the first word of "makeinfo", so it can be a program name with args.
+ set dummy makeinfo; ac_word=$2

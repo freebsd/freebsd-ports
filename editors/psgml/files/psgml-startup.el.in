@@ -1,0 +1,53 @@
+;;
+;; @(#)psgml-startup.el -- psgml startup elisp file.
+;;                                            --  by shige@FreeBSD.ORG
+
+;; setup load-path
+(if (fboundp 'normal-top-level-add-subdirs-to-load-path)
+    (setq load-path (append '(
+	"@@PREFIX@@/@@EMACS_LIBDIR@@/site-lisp/psgml"
+    ) load-path)))
+
+(autoload 'sgml-mode "psgml" "Major mode to edit SGML files." t)
+(autoload 'xml-mode "psgml" "Major mode to edit XML files." t)
+
+(setq sgml-custom-dtd
+  '(("HTML" "<!DOCTYPE HTML PUBLIC \"-//IETF//DTD HTML//EN\">")
+    ("HTML 2.0" "<!DOCTYPE HTML PUBLIC \"-//IETF//DTD HTML 2.0//EN\">")
+    ("HTML 2.0 Level 1"
+     "<!DOCTYPE HTML PUBLIC \"-//IETF//DTD HTML 2.0 Level 1//EN\">")
+    ("HTML 2.0 Level 2"
+     "<!DOCTYPE HTML PUBLIC \"-//IETF//DTD HTML 2.0 Level 2//EN\">")
+    ("HTML 2.0 Strict Level 1"
+     "<!DOCTYPE HTML PUBLIC \"-//IETF//DTD HTML 2.0 Strict Level 1//EN\">")
+    ("HTML 2.0 Strict Level 2"
+     "<!DOCTYPE HTML PUBLIC \"-//IETF//DTD HTML 2.0 Strict Level 2//EN\">")
+    ("HTML 3.2" "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 3.2//EN\">")
+    ("HTML 4.0" "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\">")
+    ("HTML 4.0 Transitional"
+     "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0 Transitioal//EN\">")
+    ("HTML 4.0 Frameset"
+     "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0 Frameset//EN\">")
+    ("DocBook V2.4.1"
+     "<!DOCTYPE DOCBOOK PUBLIC \"-//Davenport//DTD DocBook V2.4.1//EN\">")
+    ("DocBook V3.0"
+     "<!DOCTYPE DOCBOOK PUBLIC \"-//Davenport//DTD DocBook V3.0//EN\">")
+    ("DocBook V3.1"
+     "<!DOCTYPE DOCBOOK PUBLIC \"-//OASYS//DTD DocBook V3.1//EN\">")
+    ("LINUXDOC"
+     "<!DOCTYPE LINUXDOC PUBLIC \"-//FreeBSD//DTD linuxdoc//EN\">")
+    ("LINUXDOC 1.0"
+     "<!DOCTYPE LINUXDOC PUBLIC \"-//FreeBSD//DTD linuxdoc 1.0//EN\">")
+    ("LINUXDOC 1.1"
+     "<!DOCTYPE LINUXDOC PUBLIC \"-//FreeBSD//DTD linuxdoc 1.1//EN\">")
+    ("Article"
+     "<!DOCTYPE Article PUBLIC \"ISO 12083:1993//DTD Article//EN\">")
+    ("Book"
+     "<!DOCTYPE Book PUBLIC \"ISO 12083:1993//DTD Book//EN\">")
+    ("Mathematics"
+     "<!DOCTYPE Mathematics PUBLIC \"ISO 12083:1993//DTD Mathematics//EN\">")
+    ("Serial"
+     "<!DOCTYPE Serial PUBLIC \"ISO 12083:1993//DTD Serial//EN\">")
+    ))
+
+(provide 'psgml-startup)

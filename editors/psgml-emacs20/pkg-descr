@@ -13,4 +13,8 @@ types and defaults, and structure based editing.
   PSGML is installed the following directory tree:
 	${PREFIX}/share/emacs/site-lisp/psgml/
 
+To use psgml, put the following setup into your ~/.emacs:
+
+	(require 'psgml-startup)
+
 --- Porting by shige <shige@FreeBSD.ORG>.

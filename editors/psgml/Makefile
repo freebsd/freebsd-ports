@@ -1,21 +1,21 @@
 # New ports collection makefile for:	psgml for emacs
-# Version required:	1.1.6
+# Version required:	1.2.0
 # Date created:		23 January 1999
 # Whom:			shige
 #
 # $FreeBSD$
 #
 
-DISTNAME=	psgml-1.1.6
+DISTNAME=	psgml-${PSGML_VER}
 CATEGORIES=	editors elisp
-MASTER_SITES=	ftp://ftp.lysator.liu.se/pub/sgml/ALPHA/
+MASTER_SITES=	ftp://ftp.lysator.liu.se/pub/sgml/
 
 MAINTAINER=	shige@FreeBSD.org
 
 # distfile version
-PSGML_VER=	1.1.6
-PSGML_SETUPEL=  psgml-setupel.el
-CATALOG=	${PREFIX}/share/sgml/catalog
+PSGML_VER=		1.2.0
+PSGML_STARTUPEL=	psgml-startup.el
+CATALOG=		${PREFIX}/share/sgml/catalog
 
 # This is a master port.
 PORTCLASS?=	master
@@ -25,16 +25,11 @@ EMACS_NAME=	emacs
 EMACS_PORT=	emacs
 EMACS_VER=	19.34
 EMACS_LIBDIR=	share/${EMACS_NAME}
-REQUIRE_SETUPEL=  YES
 .endif
 
 # if RUN_DEPENDS emacs port name has the suffix `-common'
-.if !defined(HAVE_COMMON_PORT)
-HAVE_COMMON_PORT=	NO
-.endif
-# if RUN_DEPENDS emacs needs setup elisp
-.if !defined(REQUIRE_SETUPEL)
-REQUIRE_SETUPEL=	NO
+.if !defined(HAS_COMMON_PORT)
+HAS_COMMON_PORT=	NO
 .endif
 
 #
@@ -44,17 +39,20 @@ REQUIRE_SETUPEL=	NO
 PKGNAME=	psgml-${EMACS_PORT}-${PSGML_VER}
 EMACS_CMD=	${PREFIX}/bin/${EMACS_NAME}-${EMACS_VER}
 BUILD_DEPENDS=	${EMACS_CMD}:${PORTSDIR}/editors/${EMACS_PORT}
-.if defined(HAVE_COMMON_PORT) && (${HAVE_COMMON_PORT} == "YES")
+.if defined(HAS_COMMON_PORT) && (${HAS_COMMON_PORT} == "YES")
 RUN_DEPENDS=	${EMACS_CMD}:${PORTSDIR}/editors/${EMACS_PORT}-common
 .else
 RUN_DEPENDS=	${EMACS_CMD}:${PORTSDIR}/editors/${EMACS_PORT}
 .endif
+GNU_CONFIGURE=	YES
+CONFIGURE_ARGS=	--lispdir=${PREFIX}/${EMACS_LIBDIR}/site-lisp/psgml \
+		--infodir=${PREFIX}/info
 CONFIGURE_ENV=	EMACS=${EMACS_CMD}
 MAKE_FLAGS=	EMACS=${EMACS_CMD}
-SCRIPTS_ENV=	TARGETS="${PSGML_SETUPEL}" \
+SCRIPTS_ENV=	TARGETS="${PSGML_STARTUPEL}" \
 		EMACS_LIBDIR=${EMACS_LIBDIR} EMACS_VER=${EMACS_VER}
 PLIST_SUB=	EMACS_LIBDIR=${EMACS_LIBDIR} EMACS_VER=${EMACS_VER} \
-		PSGML_SETUPEL=${PSGML_SETUPEL}
+		PSGML_STARTUPEL=${PSGML_STARTUPEL}
 .else
 .BEGIN:
 	@${ECHO} "Error: Bad port."
@@ -63,9 +61,8 @@ PLIST_SUB=	EMACS_LIBDIR=${EMACS_LIBDIR} EMACS_VER=${EMACS_VER} \
 .endif
 
 #
-# main configurations
+# DTD catalogs
 #
-USE_AUTOCONF=	yes
 RUN_DEPENDS+=	${CATALOG}:${PORTSDIR}/textproc/dtd-catalogs
 
 pre-configure:
@@ -73,18 +70,15 @@ pre-configure:
 	  for i in psgml.el psgml.texi ; do \
 	      ${RM} -f $${i}.in ; \
 	      ${MV} $${i} $${i}.in ; \
+	      ${CAT} $${i}.in | ${SED} -e "s;@prefix@;${PREFIX};g" > $${i} ; \
 	  done)
-.if (${REQUIRE_SETUPEL} == "YES")
-	${CP} ${FILESDIR}/${PSGML_SETUPEL}.in ${WRKDIR}
-.endif
-
-pre-build:
-	@${RM} -f ${WRKSRC}/psgml.info ${WRKSRC}/psgml-api.info
+	${CP} ${FILESDIR}/${PSGML_STARTUPEL}.in ${WRKDIR}
 
 post-install:
-.if (${REQUIRE_SETUPEL} == "YES")
-	@${INSTALL_DATA} ${WRKDIR}/${PSGML_SETUPEL} \
+	@(cd ${WRKSRC} ; \
+		${MAKE} install-info ; \
+	)
+	@${INSTALL_DATA} ${WRKDIR}/${PSGML_STARTUPEL} \
 			${PREFIX}/${EMACS_LIBDIR}/site-lisp
-.endif
 
 .include <bsd.port.mk>
