@@ -1,0 +1,15 @@
+gqlplus is a drop-in replacement for sqlplus, an Oracle SQL client, for
+UNIX platforms. The difference between gqlplus and sqlplus is command-line
+editing and history, plus tablename completion. As you know if you have
+used sqlplus, it is notoriously difficult to correct typing errors and
+other mistakes in your SQL statements. sqlplus does give you ability to
+use external editor to edit a statement, but only the last statement you
+typed. gqlplus solves this problem by providing the familiar command-line
+editing and history as in tcsh or bash shells, and tablename completion,
+while otherwise retaining compatibility with sqlplus. Thus, no user training
+is needed - simply use gqlplus instead of sqlplus. In addition,
+configuration/installation is trivial: gqlplus is a single binary compiled
+executable (written in C), so all you need is download it and put it anywhere
+in your PATH. After that, you'll be ready to use it. 
+
+WWW: http://gqlplus.sourceforge.net/
