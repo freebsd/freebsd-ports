@@ -34,6 +34,7 @@
     SUBDIR += emil
     SUBDIR += evolution
     SUBDIR += exim
+    SUBDIR += exim-devel
     SUBDIR += exim-doc-html
     SUBDIR += exim-doc-pdf
     SUBDIR += exim-doc-postscript
