@@ -216,14 +216,11 @@ MASTER_SITE_GNU+=	\
 MASTER_SITE_GNUPG+= 	\
 	ftp://gd.tuwien.ac.at/privacy/gnupg/%SUBDIR%/ \
 	ftp://ftp.gnupg.org/gcrypt/%SUBDIR%/ \
-	http://ftp.planetmirror.com/pub/gnupg/%SUBDIR%/ \
 	http://sunsite.dk/pub/security/gcrypt/%SUBDIR%/ \
 	http://www.mirrors.wiretapped.net/security/cryptography/apps/pgp/GnuPG/%SUBDIR%/ \
-	http://public.ftp.planetmirror.com/pub/gnupg/ \
+	http://public.ftp.planetmirror.com/pub/gnupg/%SUBDIR%/ \
 	http://ftp.linux.it/pub/mirrors/gnupg/%SUBDIR%/ \
 	ftp://ftp.gnupg.org/gcrypt/%SUBDIR%/ \
-	http://ftp.hi.is/pub/mirrors/gnupg/%SUBDIR%/ \
-	ftp://pgp.iijlab.net/pub/%SUBDIR%/ \
 	ftp://ftp.demon.nl/pub/mirrors/gnupg/%SUBDIR%/ \
 	ftp://ftp.ayamura.org/pub/gnupg/%SUBDIR%/ \
 	ftp://ftp.planetmirror.com/pub/gnupg/%SUBDIR%/ \
@@ -233,7 +230,6 @@ MASTER_SITE_GNUPG+= 	\
 	ftp://ftp.jyu.fi/pub/crypt/gcrypt/%SUBDIR%/ \
 	ftp://ftp.freenet.de/pub/ftp.gnupg.org/gcrypt/%SUBDIR%/ \
 	ftp://igloo.linux.gr/pub/crypto/gnupg/%SUBDIR%/ \
-	ftp://ftp.hi.is/pub/mirrors/gnupg/%SUBDIR%/ \
 	ftp://hal.csd.auth.gr/mirrors/gnupg/%SUBDIR%/ \
 	ftp://ftp.demon.nl/pub/mirrors/gnupg/%SUBDIR%/ \
 	ftp://ftp.surfnet.nl/pub/security/gnupg/%SUBDIR%/ \
