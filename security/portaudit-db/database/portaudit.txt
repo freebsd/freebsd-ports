@@ -68,3 +68,7 @@ apache>=2.*<2.0.50_2|http://www.cve.mitre.org/cgi-bin/cvename.cgi?name=CAN-2004-
 a2ps-{a4,letter,letterdj}<4.13b_2|http://www.freebsd.org/cgi/query-pr.cgi?pr=70618|a2ps: Possible execution of shell commands as local user|8091fcea-f35e-11d8-81b0-000347a4fa7d
 {ja-,}xv<=3.10a_3|http://secunia.com/advisories/12352 http://www.securityfocus.com/archive/1/372345 http://www.osvdb.org/9115 http://www.osvdb.org/9118 http://www.osvdb.org/9119 http://www.osvdb.org/9120|multiple buffer overflows in xv|34c453ba-f686-11d8-81b0-000347a4fa7d
 nss<3.9|http://cve.mitre.org/cgi-bin/cvename.cgi?name=CAN-2003-0564 http://secunia.com/advisories/11096 http://www.osvdb.org/4197|Mozilla / NSS S/MIME DoS vulnerability|65532ad9-f69b-11d8-81b0-000347a4fa7d
+cdrtools<2.0.3_4|ftp://ftp.berlios.de/pub/cdrecord/alpha/AN-2.01a38|security bug in rscsi client code|fdbbed57-f933-11d8-a776-00e081220a76
+cdrtools-cjk<2.0.3.20030714_4|ftp://ftp.berlios.de/pub/cdrecord/alpha/AN-2.01a38|security bug in rscsi client code|fdbbed57-f933-11d8-a776-00e081220a76
+cdrtools-devel<2.01a38|ftp://ftp.berlios.de/pub/cdrecord/alpha/AN-2.01a38|security bug in rscsi client code|fdbbed57-f933-11d8-a776-00e081220a76
+
