@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	DBD-InterBase
-PORTVERSION=	0.40
+PORTVERSION=	0.41
 CATEGORIES=	databases perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	DBD
@@ -15,7 +15,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	skv@FreeBSD.org
 COMMENT=	DBI driver for InterBase RDBMS server
 
-BUILD_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/${PERL_ARCH}/DBI.pm:${PORTSDIR}/databases/p5-DBI
+BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/DBI.pm:${PORTSDIR}/databases/p5-DBI
 LIB_DEPENDS=	gds:${PORTSDIR}/databases/firebird
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
@@ -26,6 +26,5 @@ post-patch:
 			${WRKSRC}/Makefile.PL
 
 MAN3=		Bundle::DBD::InterBase.3 DBD::InterBase.3 DBD::InterBase::FAQ.3
-MAN3PREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 
 .include <bsd.port.mk>
