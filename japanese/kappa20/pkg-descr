@@ -5,7 +5,7 @@ You can use
 	"k20b"  	bold mincho
 	"10x20m" 	ascii
 	"10x20b" 	bold ascii
-	"10x20rk" 	kana
+	"10x20rkm" 	kana
 	"10x20rkb" 	bold kana
 
 A simple usage:
