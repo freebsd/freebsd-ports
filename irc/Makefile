@@ -98,6 +98,7 @@
     SUBDIR += xaric
     SUBDIR += xchat
     SUBDIR += xchat-gnome
+    SUBDIR += xchat-micryption
     SUBDIR += xchat-systray-plugin
     SUBDIR += xchat2
     SUBDIR += zircon
