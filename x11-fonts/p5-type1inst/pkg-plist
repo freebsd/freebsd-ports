@@ -1,3 +1,4 @@
 bin/t1embed
 bin/type1inst
-%%PORTDOCS%%share/doc/README.type1inst
+%%PORTDOCS%%%%DOCSDIR%%/README.type1inst
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
