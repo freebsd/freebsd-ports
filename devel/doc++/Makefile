@@ -14,8 +14,14 @@ MASTER_SITE_SUBDIR=	docpp
 MAINTAINER=	Ruslan@Shevchenko.Kiev.UA
 COMMENT=	Javadoc style C++ documentatation system
 
+.if defined(WITH_GHOSTSCRIPT_AFPL) && ${WITH_GHOSTSCRIPT_AFPL} == yes
+GSPORT?=	print/ghostscript-afpl
+.else
+GSPORT?=	print/ghostscript-gnu
+.endif
+
 RUN_DEPENDS=	tex:${PORTSDIR}/print/teTeX \
-		gs:${PORTSDIR}/print/ghostscript-gnu \
+		gs:${PORTSDIR}/${GSPORT} \
 		anytopnm:${PORTSDIR}/graphics/netpbm
 
 GNU_CONFIGURE=	yes
