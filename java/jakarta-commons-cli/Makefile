@@ -43,8 +43,8 @@ do-install:
 
 .if !defined(NOPORTDOCS)
 	@${ECHO} -n ">> Installing documentation in ${DOCSDIR}..."
-	${MKDIR} ${DOCSDIR}
-	${CP} -r ${WRKSRC}/target/docs/apidocs/* ${DOCSDIR}
+	@${MKDIR} ${DOCSDIR}
+	@${CP} -r ${WRKSRC}/target/docs/apidocs/* ${DOCSDIR}
 	@${ECHO} " [ DONE ]"
 .endif
 

@@ -32,8 +32,9 @@ JARDIR=		${JAVASHAREDIR}/classes
 JARFILE=	${PORTNAME}.jar
 DESTJARFILE=	${PORTNAME}.jar
 
-post-patch:
+post-extract:
 	@${CP} ${FILESDIR}/LICENSE ${WRKDIR}/${PORTNAME}-${PORTVERSION}-src/
+
 do-build:
 	@cd ${WRKSRC} && ${ANT} ${ANT_TARGET}
 
@@ -44,8 +45,8 @@ do-install:
 
 .if !defined(NOPORTDOCS)
 	@${ECHO} -n ">> Installing documentation in ${DOCSDIR}..."
-	${MKDIR} ${DOCSDIR}
-	${CP} -r ${WRKSRC}/dist/docs/api/* ${DOCSDIR}
+	@${MKDIR} ${DOCSDIR}
+	@${CP} -r ${WRKSRC}/dist/docs/api/* ${DOCSDIR}
 	@${ECHO} " [ DONE ]"
 .endif
 
