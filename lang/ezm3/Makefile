@@ -29,7 +29,6 @@ PROGS=		bin/m3build \
 		bin/m3bundle \
 		bin/m3ship \
 		lib/m3/${TARGET}/m3cgc1
-BOOTSTRAP=	ezm3-${PORTVERSION}-${TARGET}-boot.tar.bz2
 
 .include <bsd.port.pre.mk>
 
@@ -42,12 +41,15 @@ BROKEN=		Not supported on versions earlier than 4.1-RELEASE
 .if ${ARCH} == "alpha"
 TARGET=		FBSD_ALPHA
 WORDSIZE=	64
+BOOTSTRAP=	ezm3-${PORTVERSION}a-${TARGET}-boot.tar.bz2
 .elif ${ARCH} == "i386"
 TARGET=		FreeBSD4
 WORDSIZE=	32
+BOOTSTRAP=	ezm3-${PORTVERSION}-${TARGET}-boot.tar.bz2
 .elif ${ARCH} == "sparc64"
 TARGET=		FBSD_SPARC64
 WORDSIZE=	64
+BOOTSTRAP=	ezm3-${PORTVERSION}-${TARGET}-boot.tar.bz2
 .endif
 
 do-build:
