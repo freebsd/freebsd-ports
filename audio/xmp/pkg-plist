@@ -1,0 +1,4 @@
+bin/xmp
+bin/xxmp
+etc/xmp.conf
+etc/xmp-modules.conf

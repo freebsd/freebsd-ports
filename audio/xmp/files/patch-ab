@@ -1,0 +1,19 @@
+*** etc/Makefile.orig	Sat Sep 18 14:29:28 1999
+--- etc/Makefile	Sat Sep 18 14:29:39 1999
+***************
+*** 21,27 ****
+  	@if [ -f /etc/xmp-modules.conf]; then \
+  	    mv -f /etc/xmp-modules.conf /etc/xmp-modules.conf.old; \
+  	fi
+! 	$(INSTALL) -m644 xmp.conf xmp-modules.conf /etc
+  
+  xmp.spec: xmp.spec.in ../Makefile.rules
+  	cat $@.in | sed 's/@VERSION@/$(VERSION)/g' > $@
+--- 21,27 ----
+  	@if [ -f /etc/xmp-modules.conf]; then \
+  	    mv -f /etc/xmp-modules.conf /etc/xmp-modules.conf.old; \
+  	fi
+! 	$(INSTALL) -m644 xmp.conf xmp-modules.conf $(PREFIX)/etc
+  
+  xmp.spec: xmp.spec.in ../Makefile.rules
+  	cat $@.in | sed 's/@VERSION@/$(VERSION)/g' > $@
