@@ -17,6 +17,7 @@
     SUBDIR += kdesupport2
     SUBDIR += libiconv
     SUBDIR += libutf-8
+    SUBDIR += mimelib
     SUBDIR += mimepp
     SUBDIR += mmencode
     SUBDIR += mpack
