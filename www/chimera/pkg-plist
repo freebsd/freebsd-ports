@@ -2,8 +2,8 @@
 @owner bin
 @mode 755
 bin/chimera
-bin/giftrans
 @mode 444
+lib/cacheinfo
 lib/convert
 lib/help.html
 lib/home.html
@@ -12,12 +12,9 @@ lib/mime.types
 lib/protocol
 lib/chimera/Chimera
 @mode 755
-lib/chimera/chimera-giftoppm
 lib/chimera/do3270
 lib/chimera/dotelnet
 lib/chimera/playaudio
 lib/chimera/pstopxm
-lib/chimera/textencode
-lib/chimera/wrapencode
 @mode 644
-man/man1/chimera.1
+man/man1/chimera.1.gz
