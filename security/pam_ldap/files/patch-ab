@@ -1,0 +1,97 @@
+$FreeBSD$
+
+--- pam_ldap.c.orig	Mon Mar 25 15:54:28 2002
++++ pam_ldap.c	Mon Mar 25 15:54:29 2002
+@@ -126,12 +126,7 @@
+ #include "pam_ldap.h"
+ #include "md5.h"
+ 
+-#ifdef HAVE_SECURITY_PAM_MISC_H
+- /* FIXME: is there something better to check? */
+ #define CONST_ARG const
+-#else
+-#define CONST_ARG
+-#endif
+ 
+ #ifndef HAVE_LDAP_MEMFREE
+ #define ldap_memfree(x)	free(x)
+@@ -2843,11 +2838,11 @@
+ 		    {
+ 		      _conv_sendmsg (appconv, "Password change aborted",
+ 				     PAM_ERROR_MSG, no_warn);
+-#ifdef PAM_AUTHTOK_RECOVERY_ERR
+-		      return PAM_AUTHTOK_RECOVERY_ERR;
+-#else
++#ifdef PAM_AUTHTOK_RECOVER_ERR
+ 		      return PAM_AUTHTOK_RECOVER_ERR;
+-#endif /* PAM_AUTHTOK_RECOVERY_ERR */
++#else
++		      return PAM_AUTHTOK_RECOVERY_ERR;
++#endif /* PAM_AUTHTOK_RECOVER_ERR */
+ 		    }
+ 		  else
+ 		    {
+@@ -2887,11 +2882,11 @@
+       syslog (LOG_ERR,
+ 	      "pam_ldap: error getting old authentication token (%s)",
+ 	      pam_strerror (pamh, rc));
+-#ifdef PAM_AUTHTOK_RECOVERY_ERR
+-      return PAM_AUTHTOK_RECOVERY_ERR;
+-#else
++#ifdef PAM_AUTHTOK_RECOVER_ERR
+       return PAM_AUTHTOK_RECOVER_ERR;
+-#endif /* PAM_AUTHTOK_RECOVERY_ERR */
++#else
++      return PAM_AUTHTOK_RECOVERY_ERR;
++#endif /* PAM_AUTHTOK_RECOVER_ERR */
+     }
+ 
+   if (try_first_pass || use_first_pass)
+@@ -2901,11 +2896,11 @@
+ 	newpass = NULL;
+ 
+       if (use_first_pass && newpass == NULL)
+-#ifdef PAM_AUTHTOK_RECOVERY_ERR
+-	return PAM_AUTHTOK_RECOVERY_ERR;
+-#else
++#ifdef PAM_AUTHTOK_RECOVER_ERR
+ 	return PAM_AUTHTOK_RECOVER_ERR;
+-#endif /* PAM_AUTHTOK_RECOVERY_ERR */
++#else
++	return PAM_AUTHTOK_RECOVERY_ERR;
++#endif /* PAM_AUTHTOK_RECOVER_ERR */
+     }
+ 
+   tries = 0;
+@@ -2955,11 +2950,11 @@
+ 	}
+       else
+ 	{
+-#ifdef PAM_AUTHTOK_RECOVERY_ERR
+-	  return PAM_AUTHTOK_RECOVERY_ERR;
+-#else
++#ifdef PAM_AUTHTOK_RECOVER_ERR
+ 	  return PAM_AUTHTOK_RECOVER_ERR;
+-#endif /* PAM_AUTHTOK_RECOVERY_ERR */
++#else
++	  return PAM_AUTHTOK_RECOVERY_ERR;
++#endif /* PAM_AUTHTOK_RECOVER_ERR */
+ 	}
+ 
+       if (cmiscptr == NULL)
+@@ -2991,11 +2986,11 @@
+ 		{
+ 		  _conv_sendmsg (appconv, "Password change aborted",
+ 				 PAM_ERROR_MSG, no_warn);
+-#ifdef PAM_AUTHTOK_RECOVERY_ERR
+-		  return PAM_AUTHTOK_RECOVERY_ERR;
+-#else
++#ifdef PAM_AUTHTOK_RECOVER_ERR
+ 		  return PAM_AUTHTOK_RECOVER_ERR;
+-#endif /* PAM_AUTHTOK_RECOVERY_ERR */
++#else
++		  return PAM_AUTHTOK_RECOVERY_ERR;
++#endif /* PAM_AUTHTOK_RECOVER_ERR */
+ 		}
+ 	    }
+ 	  else if (!strcmp (newpass, miscptr))

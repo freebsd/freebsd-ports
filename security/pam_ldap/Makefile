@@ -14,6 +14,12 @@ DISTNAME=	pam_ldap-${PORTVERSION:S/.//g}
 
 MAINTAINER=	marcus@marcuscom.com
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} > 500030
+BROKEN=	"Does not work correctly with OpenPAM"
+.endif
+
 .if defined(WITH_LDAP_V3)
 LIB_DEPENDS=	ldap.2:${PORTSDIR}/net/openldap2 \
 		lber.2:${PORTSDIR}/net/openldap2
@@ -34,7 +40,7 @@ USE_GMAKE=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:S/.//g}
 
 post-extract:
-	@find ${WRKSRC} -type f | xargs touch -f
+	@find ${WRKSRC} -type f | xargs ${TOUCH} -f
 
 post-install:
 	@${ECHO} "================================================================================"
@@ -46,4 +52,4 @@ post-install:
 	@${ECHO} "login    auth    sufficient    ${PREFIX}/lib/pam_ldap.so"
 	@${ECHO} "================================================================================"
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
