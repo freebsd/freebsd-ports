@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	maradns
-PORTVERSION=	0.9.01
+PORTVERSION=	0.9.09
 CATEGORIES=	net
 MASTER_SITES=	http://www.maradns.org/download/ \
 		ftp://ftp.nuug.no/pub/anders/distfiles/
@@ -17,17 +17,8 @@ USE_BZIP2=	yes
 MAKE_ENV=	FLAGS="${CFLAGS} ${PTHREAD_CFLAGS}"
 
 MAN1=	askmara.1 getzone.1
+MAN5=	mararc.5
 MAN8=	maradns.8 zoneserver.8
-
-DOCS=	../TODO.0.9.00 ../TODO.done ../TODO.first ../TODO.second \
-	../changelog.html ../old.changelog example_csv1 example_mararc \
-	faq.txt es/00Quickstart.es detailed/0QuickStart \
-	doc-fr/0QuickStart.fr doc-fr/faq-fr.txt
-DDOCS=	RFC1035.compliance cache.poison.protection csv1.format \
-	example_full_mararc faq.html firewall.configuration \
-	handling.compression how.to.support.sql mararc.format \
-	multiple.qdcount recursive-case-insensitive recursive.algorithm \
-	resolution.algorithm rtest.output www.monty.de
 
 post-patch:
 	@find ${WRKSRC} -type f | xargs ${PERL} -pi -e \
@@ -38,34 +29,47 @@ post-patch:
 		 s|-lpthread|${PTHREAD_LIBS}|g'
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/tools/askmara ${PREFIX}/bin
-	${INSTALL_PROGRAM} ${WRKSRC}/server/maradns ${PREFIX}/sbin
-	${INSTALL_PROGRAM} ${WRKSRC}/tuzona/getzone ${PREFIX}/sbin
-	${INSTALL_PROGRAM} ${WRKSRC}/tuzona/zoneserver ${PREFIX}/sbin
-	${INSTALL_DATA} ${WRKSRC}/doc/example_mararc ${PREFIX}/etc/mararc.sample
-	${INSTALL_MAN} ${WRKSRC}/doc/man/askmara.1 ${PREFIX}/man/man1
-	${INSTALL_MAN} ${WRKSRC}/doc/man/getzone.1 ${PREFIX}/man/man1
-	${INSTALL_MAN} ${WRKSRC}/doc/man/maradns.8 ${PREFIX}/man/man8
-	${INSTALL_MAN} ${WRKSRC}/doc/man/zoneserver.8 ${PREFIX}/man/man8
-.if !defined(NOPORTDOCS)
+	@${INSTALL_PROGRAM} ${WRKSRC}/tools/askmara ${PREFIX}/bin
+	@${INSTALL_PROGRAM} ${WRKSRC}/server/maradns ${PREFIX}/sbin
+	@${INSTALL_PROGRAM} ${WRKSRC}/tuzona/getzone ${PREFIX}/sbin
+	@${INSTALL_PROGRAM} ${WRKSRC}/tuzona/zoneserver ${PREFIX}/sbin
+	@${INSTALL_DATA} ${WRKSRC}/doc/en/examples/example_mararc \
+		${PREFIX}/etc/mararc.sample
+	@${INSTALL_MAN} ${WRKSRC}/doc/en/man/askmara.1 ${MANPREFIX}/man/man1
+	@${INSTALL_MAN} ${WRKSRC}/doc/en/man/getzone.1 ${MANPREFIX}/man/man1
+	@${INSTALL_MAN} ${WRKSRC}/doc/en/man/mararc.5 ${MANPREFIX}/man/man5
+	@${INSTALL_MAN} ${WRKSRC}/doc/en/man/maradns.8 ${MANPREFIX}/man/man8
+	@${INSTALL_MAN} ${WRKSRC}/doc/en/man/zoneserver.8 ${MANPREFIX}/man/man8
+.ifndef(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
-.for file in ${DOCS}
-	${INSTALL_DATA} ${WRKSRC}/doc/${file} ${DOCSDIR}
-.endfor
-	@${MKDIR} ${DOCSDIR}/detailed
-.for file in ${DDOCS}
-	${INSTALL_DATA} ${WRKSRC}/doc/detailed/${file} ${DOCSDIR}/detailed
-.endfor
-	@${MKDIR} ${DOCSDIR}/detailed/spammers
-	${INSTALL_DATA} ${WRKSRC}/doc/detailed/spammers/*.* \
-		${DOCSDIR}/detailed/spammers
-	@${MKDIR} ${DOCSDIR}/detailed/spammers/hiddenonline
-	${INSTALL_DATA} ${WRKSRC}/doc/detailed/spammers/hiddenonline/*.* \
-		${DOCSDIR}/detailed/spammers/hiddenonline
-	@${MKDIR} ${DOCSDIR}/examples
-	${INSTALL_DATA} ${WRKSRC}/doc/examples/*.* ${DOCSDIR}/examples
-	@${MKDIR} ${DOCSDIR}/tutorial
-	${INSTALL_DATA} ${WRKSRC}/doc/tutorial/*.* ${DOCSDIR}/tutorial
+	@${INSTALL_DATA} ${WRKSRC}/00README.FIRST ${DOCSDIR}
+	@${INSTALL_DATA} ${WRKSRC}/TODO.* ${DOCSDIR}
+	@${INSTALL_DATA} ${WRKSRC}/old.changelog ${DOCSDIR}
+	@${MKDIR} ${DOCSDIR}/en
+	@${INSTALL_DATA} ${WRKSRC}/doc/en/QuickStart ${DOCSDIR}/en
+	@${INSTALL_DATA} ${WRKSRC}/doc/en/README ${DOCSDIR}/en
+	@${INSTALL_DATA} ${WRKSRC}/doc/en/faq.* ${DOCSDIR}/en
+	@${MKDIR} ${DOCSDIR}/en/examples
+	@${INSTALL_DATA} ${WRKSRC}/doc/en/examples/example_* \
+		${DOCSDIR}/en/examples
+	@${MKDIR} ${DOCSDIR}/en/misc
+	@${INSTALL_DATA} ${WRKSRC}/doc/en/misc/0README ${DOCSDIR}/en/misc
+	@${INSTALL_DATA} ${WRKSRC}/doc/en/misc/recursive-case-insensitive \
+		${DOCSDIR}/en/misc
+	@${INSTALL_DATA} ${WRKSRC}/doc/en/*.* ${DOCSDIR}/en/misc
+	@${MKDIR} ${DOCSDIR}/en/misc/spammers
+	@${INSTALL_DATA} ${WRKSRC}/doc/en/misc/spammers/*.* \
+		${DOCSDIR}/en/misc/spammers
+	@${MKDIR} ${DOCSDIR}/en/misc/spammers/hiddenonline
+	@${INSTALL_DATA} ${WRKSRC}/doc/en/misc/spammers/hiddenonline/*.* \
+		${DOCSDIR}/en/misc/spammers/hiddenonline
+	@${MKDIR} ${DOCSDIR}/en/tutorial
+	@${INSTALL_DATA} ${WRKSRC}/doc/en/tutorial/*.* ${DOCSDIR}/en/tutorial
+	@${MKDIR} ${DOCSDIR}/fr
+	@${INSTALL_DATA} ${WRKSRC}/doc/fr/QuickStart ${DOCSDIR}/fr
+	@${INSTALL_DATA} ${WRKSRC}/doc/fr/faq.* ${DOCSDIR}/fr
+	@${MKDIR} ${DOCSDIR}/fr/tutorial
+	@${INSTALL_DATA} ${WRKSRC}/doc/fr/tutorial/*.* ${DOCSDIR}/fr/tutorial
 .endif
 
 .include <bsd.port.mk>

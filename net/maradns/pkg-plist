@@ -3,55 +3,64 @@ etc/mararc.sample
 sbin/getzone
 sbin/maradns
 sbin/zoneserver
-%%PORTDOCS%%share/doc/maradns/00Quickstart.es
-%%PORTDOCS%%share/doc/maradns/0QuickStart
-%%PORTDOCS%%share/doc/maradns/0QuickStart.fr
-%%PORTDOCS%%share/doc/maradns/TODO.0.9.00
+%%PORTDOCS%%share/doc/maradns/00README.FIRST
 %%PORTDOCS%%share/doc/maradns/TODO.done
 %%PORTDOCS%%share/doc/maradns/TODO.first
 %%PORTDOCS%%share/doc/maradns/TODO.second
-%%PORTDOCS%%share/doc/maradns/changelog.html
-%%PORTDOCS%%share/doc/maradns/detailed/RFC1035.compliance
-%%PORTDOCS%%share/doc/maradns/detailed/cache.poison.protection
-%%PORTDOCS%%share/doc/maradns/detailed/csv1.format
-%%PORTDOCS%%share/doc/maradns/detailed/example_full_mararc
-%%PORTDOCS%%share/doc/maradns/detailed/faq.html
-%%PORTDOCS%%share/doc/maradns/detailed/firewall.configuration
-%%PORTDOCS%%share/doc/maradns/detailed/handling.compression
-%%PORTDOCS%%share/doc/maradns/detailed/how.to.support.sql
-%%PORTDOCS%%share/doc/maradns/detailed/mararc.format
-%%PORTDOCS%%share/doc/maradns/detailed/multiple.qdcount
-%%PORTDOCS%%share/doc/maradns/detailed/recursive-case-insensitive
-%%PORTDOCS%%share/doc/maradns/detailed/recursive.algorithm
-%%PORTDOCS%%share/doc/maradns/detailed/resolution.algorithm
-%%PORTDOCS%%share/doc/maradns/detailed/rtest.output
-%%PORTDOCS%%share/doc/maradns/detailed/spammers/azmalink.net
-%%PORTDOCS%%share/doc/maradns/detailed/spammers/hiddenonline/google.search
-%%PORTDOCS%%share/doc/maradns/detailed/spammers/hiddenonline/hiddenonline.spam
-%%PORTDOCS%%share/doc/maradns/detailed/spammers/hiddenonline/whois.dimeit.com
-%%PORTDOCS%%share/doc/maradns/detailed/spammers/hiddenonline/whois.hiddenonline.net
-%%PORTDOCS%%share/doc/maradns/detailed/www.monty.de
-%%PORTDOCS%%share/doc/maradns/example_csv1
-%%PORTDOCS%%share/doc/maradns/example_mararc
-%%PORTDOCS%%share/doc/maradns/examples/example_authoritative_mararc.txt
-%%PORTDOCS%%share/doc/maradns/examples/example_csv1.txt
-%%PORTDOCS%%share/doc/maradns/examples/example_recursive_mararc.txt
-%%PORTDOCS%%share/doc/maradns/faq.txt
-%%PORTDOCS%%share/doc/maradns/faq-fr.txt
+%%PORTDOCS%%share/doc/maradns/en/QuickStart
+%%PORTDOCS%%share/doc/maradns/en/README
+%%PORTDOCS%%share/doc/maradns/en/examples/example_authoritative_mararc.txt
+%%PORTDOCS%%share/doc/maradns/en/examples/example_csv1
+%%PORTDOCS%%share/doc/maradns/en/examples/example_csv1.txt
+%%PORTDOCS%%share/doc/maradns/en/examples/example_full_mararc
+%%PORTDOCS%%share/doc/maradns/en/examples/example_mararc
+%%PORTDOCS%%share/doc/maradns/en/examples/example_mararc.orig
+%%PORTDOCS%%share/doc/maradns/en/examples/example_recursive_mararc.txt
+%%PORTDOCS%%share/doc/maradns/en/faq.html
+%%PORTDOCS%%share/doc/maradns/en/faq.txt
+%%PORTDOCS%%share/doc/maradns/en/misc/0README
+%%PORTDOCS%%share/doc/maradns/en/misc/changelog.txt
+%%PORTDOCS%%share/doc/maradns/en/misc/credits.txt
+%%PORTDOCS%%share/doc/maradns/en/misc/faq.html
+%%PORTDOCS%%share/doc/maradns/en/misc/faq.txt
+%%PORTDOCS%%share/doc/maradns/en/misc/recursive-case-insensitive
+%%PORTDOCS%%share/doc/maradns/en/misc/spammers/azmalink.net
+%%PORTDOCS%%share/doc/maradns/en/misc/spammers/hiddenonline/google.search
+%%PORTDOCS%%share/doc/maradns/en/misc/spammers/hiddenonline/hiddenonline.spam
+%%PORTDOCS%%share/doc/maradns/en/misc/spammers/hiddenonline/whois.dimeit.com
+%%PORTDOCS%%share/doc/maradns/en/misc/spammers/hiddenonline/whois.hiddenonline.net
+%%PORTDOCS%%share/doc/maradns/en/tutorial/authoritative.html
+%%PORTDOCS%%share/doc/maradns/en/tutorial/compile.html
+%%PORTDOCS%%share/doc/maradns/en/tutorial/convert.html
+%%PORTDOCS%%share/doc/maradns/en/tutorial/glossary.html
+%%PORTDOCS%%share/doc/maradns/en/tutorial/man.csv1.html
+%%PORTDOCS%%share/doc/maradns/en/tutorial/man.maradns.html
+%%PORTDOCS%%share/doc/maradns/en/tutorial/man.mararc.html
+%%PORTDOCS%%share/doc/maradns/en/tutorial/recordtypes.html
+%%PORTDOCS%%share/doc/maradns/en/tutorial/recursive.html
+%%PORTDOCS%%share/doc/maradns/en/tutorial/tutorial.html
+%%PORTDOCS%%share/doc/maradns/fr/QuickStart
+%%PORTDOCS%%share/doc/maradns/fr/faq.html
+%%PORTDOCS%%share/doc/maradns/fr/faq.txt
+%%PORTDOCS%%share/doc/maradns/fr/tutorial/authoritative.html
+%%PORTDOCS%%share/doc/maradns/fr/tutorial/compile.html
+%%PORTDOCS%%share/doc/maradns/fr/tutorial/convert.html
+%%PORTDOCS%%share/doc/maradns/fr/tutorial/glossary.html
+%%PORTDOCS%%share/doc/maradns/fr/tutorial/man.askmara.html
+%%PORTDOCS%%share/doc/maradns/fr/tutorial/man.csv1.html
+%%PORTDOCS%%share/doc/maradns/fr/tutorial/man.getzone.html
+%%PORTDOCS%%share/doc/maradns/fr/tutorial/man.maradns.html
+%%PORTDOCS%%share/doc/maradns/fr/tutorial/man.mararc.html
+%%PORTDOCS%%share/doc/maradns/fr/tutorial/man.zoneserver.html
+%%PORTDOCS%%share/doc/maradns/fr/tutorial/recursive.html
+%%PORTDOCS%%share/doc/maradns/fr/tutorial/tutorial.html
 %%PORTDOCS%%share/doc/maradns/old.changelog
-%%PORTDOCS%%share/doc/maradns/tutorial/authoritative.html
-%%PORTDOCS%%share/doc/maradns/tutorial/compile.html
-%%PORTDOCS%%share/doc/maradns/tutorial/convert.html
-%%PORTDOCS%%share/doc/maradns/tutorial/glossary.html
-%%PORTDOCS%%share/doc/maradns/tutorial/man.csv1.html
-%%PORTDOCS%%share/doc/maradns/tutorial/man.maradns.html
-%%PORTDOCS%%share/doc/maradns/tutorial/man.mararc.html
-%%PORTDOCS%%share/doc/maradns/tutorial/recordtypes.html
-%%PORTDOCS%%share/doc/maradns/tutorial/recursive.html
-%%PORTDOCS%%share/doc/maradns/tutorial/tutorial.html
-%%PORTDOCS%%@dirrm share/doc/maradns/tutorial
-%%PORTDOCS%%@dirrm share/doc/maradns/examples
-%%PORTDOCS%%@dirrm share/doc/maradns/detailed/spammers/hiddenonline
-%%PORTDOCS%%@dirrm share/doc/maradns/detailed/spammers
-%%PORTDOCS%%@dirrm share/doc/maradns/detailed
+%%PORTDOCS%%@dirrm share/doc/maradns/fr/tutorial
+%%PORTDOCS%%@dirrm share/doc/maradns/fr
+%%PORTDOCS%%@dirrm share/doc/maradns/en/tutorial
+%%PORTDOCS%%@dirrm share/doc/maradns/en/misc/spammers/hiddenonline
+%%PORTDOCS%%@dirrm share/doc/maradns/en/misc/spammers
+%%PORTDOCS%%@dirrm share/doc/maradns/en/misc
+%%PORTDOCS%%@dirrm share/doc/maradns/en/examples
+%%PORTDOCS%%@dirrm share/doc/maradns/en
 %%PORTDOCS%%@dirrm share/doc/maradns
