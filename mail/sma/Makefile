@@ -8,7 +8,8 @@
 PORTNAME=	sma
 PORTVERSION=	1.1
 CATEGORIES=	mail
-MASTER_SITES=	http://www.klake.org/sma/dl/
+MASTER_SITES=	http://www.klake.org/sma/dl/ \
+		http://www.saunalahti.fi/~jt2/sma/
 
 MAINTAINER=	dinoex@FreeBSD.org
 
