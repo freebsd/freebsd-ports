@@ -1,24 +1,23 @@
 # New ports collection makefile for:	ruby-libxml
 # Date created:		09 July 2002
-# Whom:	      		Sean Chittenden <sean@chittenden.org>
+# Whom:	      		Sean Chittenden <seanc@FreeBSD.org>
 #
 # $FreeBSD$
 #
 
 PORTNAME=	libxml
-PORTVERSION=	0.01
+PORTVERSION=	0.3.0
 CATEGORIES=	textproc ruby
-MASTER_SITES=	http://www.rubynet.org/modules/xml/ruby-libxml/
+MASTER_SITES=	http://www.rubynet.org/modules/xml/libxml/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
-DISTNAME=	ruby-${PORTNAME}-20020709
 DIST_SUBDIR=	ruby
 
-MAINTAINER=	sean@chittenden.org
+MAINTAINER=	seanc@FreeBSD.org
 
 BUILD_DEPENDS=	${LOCALBASE}/bin/xml2-config:${PORTSDIR}/textproc/libxml2
-RUN_DEPENDS=	${BUILD_DEPENDS}
-#LIB_DEPENDS=	xml2.5:${PORTSDIR}/textproc/libxml2
+LIB_DEPENDS=	xml2.5:${PORTSDIR}/textproc/libxml2
 
+USE_BZIP2=	yes
 USE_RUBY=	yes
 USE_RUBY_EXTCONF=	yes
 
