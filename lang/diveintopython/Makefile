@@ -6,8 +6,8 @@
 #
 
 PORTNAME=	diveintopython
-PORTVERSION=	4.1
-PORTREVISION=	1
+PORTVERSION=	4.9
+#PORTREVISION=	1
 CATEGORIES=	lang python
 MASTER_SITES=	http://diveintopython.org/download/
 DISTNAME=	${PORTNAME}
@@ -16,7 +16,6 @@ DISTFILES=	${DISTNAME}-html-${VERSIONSTR}${EXTRACT_SUFX} \
 		${DISTNAME}-pdf-${VERSIONSTR}${EXTRACT_SUFX} \
 		${DISTNAME}-text-${VERSIONSTR}${EXTRACT_SUFX} \
 		${DISTNAME}-word-${VERSIONSTR}${EXTRACT_SUFX} \
-		${DISTNAME}-help-${VERSIONSTR}${EXTRACT_SUFX} \
 		${DISTNAME}-xml-${VERSIONSTR}${EXTRACT_SUFX} \
 		${DISTNAME}-common-${VERSIONSTR}${EXTRACT_SUFX} \
 		${DISTNAME}-examples-${VERSIONSTR}${EXTRACT_SUFX}
@@ -36,17 +35,17 @@ VERSIONSTR=	${PORTVERSION:C|(\.[^.]*)\.([^.]*)$|\1-\2|}
 PLIST_SUB+=	VERSION=${VERSIONSTR}
 
 post-patch:
-	@ ${REINPLACE_CMD} \
-	  "s#http[^>]*\(download/${PORTNAME}-examples-${VERSIONSTR}.zip\)#\1#" \
-	  ${WRKSRC}/*.html
+	@ ${FIND} ${WRKSRC} -name \*.html | xargs ${REINPLACE_CMD} \
+	  "s#http[^>]*\(download/${PORTNAME}-examples-${VERSIONSTR}.zip\)#\1#"
 
 do-install:
 	@ ${MKDIR} ${DIPDLDIR}
-	@ cd ${WRKSRC} && ${FIND} *.html *.css images \
+	@ cd ${WRKSRC} && \
+	  ${FIND} . -name \*.html -o -name \*.css -o -name \*.png \
 	  | ${CPIO} ${SHAREOWN}:${SHAREGRP} ${DOCSDIR}
 	@ cd ${WRKDIR}/py && ${FIND} * \
 	  | ${CPIO} ${SHAREOWN}:${SHAREGRP} ${EXAMPLESDIR}
-.for format in html html-flat pdf text word help xml common examples
+.for format in html html-flat pdf text word xml common examples
 	@ ${INSTALL_DATA} \
 	  ${DISTDIR}/${DIST_SUBDIR}/${PORTNAME}-${format}-${VERSIONSTR}.zip \
 	  ${DIPDLDIR}
