@@ -7,6 +7,7 @@
 
 PORTNAME=	compat4x
 PORTVERSION=	${COMPAT4X_PORTVERSION}
+PORTREVISION=	1
 CATEGORIES=	misc
 MASTER_SITES=	${COMPAT4X_MASTER_SITES}
 PKGNAMESUFFIX=	-${ARCH}
@@ -15,20 +16,13 @@ DIST_SUBDIR=	${ARCH}/${PORTVERSION}
 
 MAINTAINER=	hetzels@westbend.net
 
-PREFIX?=	/usr
-
 WRKSRC=		${WRKDIR}/usr/lib/compat
 NO_MTREE=	yes
-NO_BUILD=	yes
 
 TARGET_DIR=	${PREFIX}/lib/compat
 
 INSTALLS_SHLIB=	yes
 LDCONFIG_DIRS=	%%PREFIX%%/lib/compat
-
-.if defined(BATCH) || defined(PACKAGE_BUILDING)
-IGNORE=		"does damage to bento cluster"
-.endif
 
 .include <bsd.port.pre.mk>
 
@@ -66,10 +60,16 @@ do-extract:
 	${MV} ${WRKSRC}/libc_r.so.4 ${WRKSRC}/libc_r.so.4.compat4x
 .endif
 
+do-build:
+	@( ${ECHO} '#!/bin/sh'; ${ECHO} '${LDCONFIG} -m ${LDCONFIG_RUNLIST}'; \
+	) > ${WRKDIR}/000.${PORTNAME}.sh
+
 do-install:
+	${MKDIR} ${TARGET_DIR}
 	${INSTALL_DATA} ${WRKSRC}/* ${TARGET_DIR}/
 .if ${OSVERSION} >= 500000
 	${LN} -sf ${TARGET_DIR}/libc_r.so.4.compat4x ${TARGET_DIR}/libc_r.so.4
 .endif
+	${INSTALL_SCRIPT} ${WRKDIR}/000.${PORTNAME}.sh ${PREFIX}/etc/rc.d/
 
 .include <bsd.port.post.mk>

@@ -7,6 +7,7 @@
 
 PORTNAME=	compat22
 PORTVERSION=	4.3
+PORTREVISION=	1
 CATEGORIES=	misc
 MASTER_SITES=	${MASTER_SITE_FREEBSD_ORG}
 MASTER_SITE_SUBDIR=	releases/${ARCH}/${PORTVERSION}-RELEASE/${PORTNAME}
@@ -23,11 +24,8 @@ MAINTAINER=	hetzels@westbend.net
 ONLY_FOR_ARCHS=	i386
 PORTOBJFORMAT=	aout
 
-PREFIX?=	/usr
-
 WRKSRC=		${WRKDIR}/usr/lib/compat/aout
 NO_MTREE=	yes
-NO_BUILD=	yes
 
 TARGET_DIR=	${PREFIX}/lib/compat/aout
 
@@ -35,16 +33,20 @@ INSTALLS_SHLIB=	yes
 LDCONFIG=	/sbin/ldconfig -aout
 LDCONFIG_DIRS=	%%PREFIX%%/lib/compat/aout
 
-.if defined(BATCH) || defined(PACKAGE_BUILDING)
-IGNORE=		"does damage to bento cluster"
-.endif
+.include <bsd.port.pre.mk>
 
 do-extract:
 	${MKDIR} ${WRKDIR}
 	cd ${_DISTDIR} && ${CAT} ${DISTFILES} | ${TAR} -xzf - -C ${WRKDIR}
 
+do-build:
+	@( ${ECHO} '#!/bin/sh'; ${ECHO} '${LDCONFIG} -m ${LDCONFIG_RUNLIST}'; \
+	) > ${WRKDIR}/000.${PORTNAME}.sh
+
 do-install:
+	${MKDIR} ${TARGET_DIR}
 	${INSTALL_DATA} ${WRKSRC}/* ${TARGET_DIR}/
 	${INSTALL_DATA} ${WRKDIR}/usr/libexec/ld.so ${PREFIX}/libexec/
+	${INSTALL_SCRIPT} ${WRKDIR}/000.${PORTNAME}.sh ${PREFIX}/etc/rc.d/
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
