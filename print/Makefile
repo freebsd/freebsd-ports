@@ -119,6 +119,7 @@
     SUBDIR += py-freetype
     SUBDIR += py-reportlab
     SUBDIR += rlpr
+    SUBDIR += rprint
     SUBDIR += rtf2latex
     SUBDIR += ruby-clibpdf
     SUBDIR += ruby-panda
