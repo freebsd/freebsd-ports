@@ -32,13 +32,11 @@ MAKE_ENV=	QTDIR="${QTDIR}" MAKE="${GMAKE}" \
 CFLAGS+=	-O0
 .endif
 
-#post-patch:
-#	@${REINPLACE_CMD} -e 's|warn_on|warn_on thread|g' ${WRKSRC}/qcad.pro
-#	@${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|g' ${WRKSRC}/rprgdef.h
-
-#do-configure:
-#	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} qmake \
-#		-spec ${X11BASE}/share/qt/mkspecs/freebsd-g++ qcad.pro
+post-patch:
+.if ${OSVERSION} < 500000
+	@${REINPLACE_CMD} -e 's|streambuf<|streambuf\.h<|g' \
+		${WRKSRC}/qcadguiqt/src/ui/qg_commandwidget.ui
+.endif
 
 do-build:
 	cd ${WRKSRC}/scripts && ${SETENV} ${MAKE_ENV} ${SH} ./build_qcad.sh
