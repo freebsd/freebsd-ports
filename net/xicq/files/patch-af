@@ -1,8 +1,8 @@
---- Makefile.o  Sun Aug 23 01:05:29 1998
-+++ Makefile    Sun Aug 23 01:05:34 1998
+--- Makefile.orig	Tue Dec 15 18:33:35 1998
++++ Makefile	Tue Dec 15 18:33:42 1998
 @@ -1,4 +1,4 @@
 -all: lib xicq kxicq
 +all: lib xicq
+ 
  lib:
-	@${MAKE} -C src/libXicq all
-
+ 	@${MAKE} -C src/libXicq all

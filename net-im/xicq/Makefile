@@ -3,7 +3,7 @@
 # Date created:				29 June 1998
 # Whom:					scrappy
 #
-# $Id: Makefile,v 1.3 1998/08/23 04:18:46 scrappy Exp $
+# $Id: Makefile,v 1.4 1998/08/25 05:03:18 asami Exp $
 #
 
 DISTNAME=	xicq-071298-snapshot.src
@@ -15,9 +15,8 @@ MAINTAINER=	scrappy@freebsd.org
 
 WRKSRC=		${WRKDIR}/xicq-071298
 
-BROKEN=		build
-
 USE_GMAKE=	yes
+MAKE_ENV=	OPT="${CFLAGS}"
 
 do-install:
 		${INSTALL_PROGRAM} ${WRKSRC}/src/xicq/main ${PREFIX}/bin/xicq
