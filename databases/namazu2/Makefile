@@ -6,12 +6,10 @@
 #
 
 PORTNAME=	namazu
-PORTVERSION=	2.0.13
-PORTREVISION=	1
+PORTVERSION=	2.0.14
 CATEGORIES+=	databases www textproc
 MASTER_SITES=	http://www.namazu.org/stable/
 PKGNAMESUFFIX=	2
-DISTFILES=	${DISTNAME}-1${EXTRACT_SUFX}
 
 MAINTAINER=	knu@FreeBSD.org
 COMMENT=	Full-text search system intended for easy use
