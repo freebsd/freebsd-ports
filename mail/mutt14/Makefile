@@ -39,7 +39,9 @@ RUN_DEPENDS=	ispell:${PORTSDIR}/textproc/ispell \
 WITH_SGML_DOCS?=yes
 .endif
 
+.if !defined(WITHOUT_NLS)
 LIB_DEPENDS=	intl.5:${PORTSDIR}/devel/gettext
+.endif
 .if defined(WITH_SLANG)
 LIB_DEPENDS+=	slang.1:${PORTSDIR}/devel/libslang
 .elif defined(WITH_NCURSES_PORT)
@@ -76,6 +78,12 @@ CONFIGURE_ARGS+=	${MUTT_CONFIGURE_ARGS}
 .endif
 .if defined(WITH_LOCALES_FIX)
 CONFIGURE_ARGS+=	--enable-locales-fix
+.endif                                                                         
+.if defined(WITHOUT_NLS)                                                       
+CONFIGURE_ARGS+=	--disable-nls                                           
+PLIST_SUB+=	NLS="@comment "                                         
+.else
+PLIST_SUB+=	NLS="" 
 .endif
 .if defined(WITH_SLANG)
 CONFIGURE_ARGS+=	--with-slang=${PREFIX}
