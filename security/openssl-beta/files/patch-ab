@@ -9,15 +9,6 @@
  MAN1=1
  MAN3=3
  SHELL=/bin/sh
-@@ -178,7 +178,7 @@
- ONEDIRS=out tmp
- EDIRS=  times doc bugs util include certs ms shlib mt demos perl sf dep VMS
- WDIRS=  windows
--LIBS=   libcrypto.a libssl.a
-+LIBS=   libcrypto.a libssl.a libRSAglue.a
- SHARED_CRYPTO=libcrypto$(SHLIB_EXT)
- SHARED_SSL=libssl$(SHLIB_EXT)
- SHARED_LIBS=
 @@ -250,6 +250,21 @@
  	done
  
