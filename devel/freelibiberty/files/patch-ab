@@ -1,0 +1,17 @@
+--- strsignal.c.orig	Thu Sep  5 00:36:12 2002
++++ strsignal.c	Thu Sep  5 00:38:57 2002
+@@ -208,14 +208,6 @@
+    same name, it differs from other implementations in that it is dynamically
+    initialized rather than statically initialized. */
+ 
+-#ifdef NSIG
+-static int sys_nsig = NSIG;
+-#else
+-#ifdef _NSIG
+-static int sys_nsig = _NSIG;
+-#endif
+-#endif
+-extern const char * const sys_siglist[];
+ 
+ 
+ /*

@@ -1,0 +1,10 @@
+--- xstrdup.c.orig	Thu Sep  5 00:40:27 2002
++++ xstrdup.c	Thu Sep  5 00:40:35 2002
+@@ -2,6 +2,7 @@
+    This trivial function is in the public domain.
+    Ian Lance Taylor, Cygnus Support, December 1995.  */
+ 
++#include <string.h>
+ #include "libiberty.h"
+ 
+ char *
