@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.79 1999/04/12 00:35:31 jseger Exp $
+# $Id: Makefile,v 1.80 1999/04/13 23:37:35 mharo Exp $
 #
 
     SUBDIR += amp
@@ -59,6 +59,7 @@
     SUBDIR += xamp
     SUBDIR += xcd
     SUBDIR += xcdplayer
+    SUBDIR += xhippo
     SUBDIR += xmcd
     SUBDIR += xmix
     SUBDIR += xmmix
