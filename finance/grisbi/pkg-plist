@@ -6,6 +6,13 @@ bin/grisbi
 %%PORTDOCS%%%%DOCSDIR%%/help/C/quickstart.html
 %%PORTDOCS%%%%DOCSDIR%%/help/C/translation.html
 %%PORTDOCS%%%%DOCSDIR%%/help/C/topic.dat
+%%PORTDOCS%%%%DOCSDIR%%/help/de/contents_motif.gif
+%%PORTDOCS%%%%DOCSDIR%%/help/de/grisbi-manuel.html
+%%PORTDOCS%%%%DOCSDIR%%/help/de/next_motif.gif
+%%PORTDOCS%%%%DOCSDIR%%/help/de/previous_motif.gif
+%%PORTDOCS%%%%DOCSDIR%%/help/de/quickstart.html
+%%PORTDOCS%%%%DOCSDIR%%/help/de/topic.dat
+%%PORTDOCS%%%%DOCSDIR%%/help/de/translation.html
 %%PORTDOCS%%%%DOCSDIR%%/help/fr/contents_motif.gif
 %%PORTDOCS%%%%DOCSDIR%%/help/fr/grisbi-manuel.html
 %%PORTDOCS%%%%DOCSDIR%%/help/fr/next_motif.gif
@@ -15,7 +22,6 @@ bin/grisbi
 %%PORTDOCS%%%%DOCSDIR%%/help/fr/translation.html
 %%NLS%%share/locale/de/LC_MESSAGES/grisbi.mo
 %%NLS%%share/locale/fr/LC_MESSAGES/grisbi.mo
-%%NLS%%share/locale/it/LC_MESSAGES/grisbi.mo
 %%DATADIR%%/pixmaps/addresses.png
 %%DATADIR%%/pixmaps/banks.png
 %%DATADIR%%/pixmaps/currencies.png
@@ -34,6 +40,7 @@ bin/grisbi
 %%DATADIR%%/pixmaps/transaction-list.png
 %%DATADIR%%/pixmaps/warnings.png
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/help/C
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/help/de
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/help/fr
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/help
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
@@ -43,6 +50,4 @@ bin/grisbi
 %%NLS%%@unexec rmdir %D/share/locale/de 2>/dev/null || true
 %%NLS%%@unexec rmdir %D/share/locale/fr/LC_MESSAGES 2>/dev/null || true
 %%NLS%%@unexec rmdir %D/share/locale/fr 2>/dev/null || true
-%%NLS%%@unexec rmdir %D/share/locale/it/LC_MESSAGES 2>/dev/null || true
-%%NLS%%@unexec rmdir %D/share/locale/it 2>/dev/null || true
 %%NLS%%@unexec rmdir %D/share/locale 2>/dev/null || true
