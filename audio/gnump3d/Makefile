@@ -7,56 +7,53 @@
 #
 
 PORTNAME=	gnump3d
-PORTVERSION=	1.0
-PORTREVISION=	2
+PORTVERSION=	2.2
 CATEGORIES=	audio
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
 
+RUN_DEPENDS=	lame:${PORTSDIR}/audio/lame \
+		oggenc:${PORTSDIR}/audio/mp32ogg
+
 USE_BZIP2=	yes
 USE_PERL5=	yes
-USE_REINPLACE=	yes
-USE_GMAKE=	yes
-USE_AUTOCONF_VER=	253
-USE_LIBTOOL=	yes
-LIBTOOLFLAGS=	# none
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
-CONFIGURE_ENV=	CONFIG_SHELL="${SH}" \
-		CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib"
-CONFIGURE_ARGS=	--libdir=${PREFIX}/lib/gnump3d
-# Avoid triggering automake
-MAKE_ARGS=	ACLOCAL="${TRUE}" AUTOCONF="${TRUE}" AUTOHEADER="${TRUE}" \
-		AUTOMAKE="${TRUE}"
+NO_BUILD=	yes
 
-MAN1=	gnump3d.1 gnump3d.conf.1 gnump3d-top.1
+MAN1=		gnump3d.1 gnump3d-top.1 gnump3d.conf.1
 
-.if !defined(WITHOUT_VORBIS)
-LIB_DEPENDS=	vorbis.2:${PORTSDIR}/audio/libvorbis
-CONFIGURE_ARGS+=	--with-vorbis
-.endif
-
-pre-everything::
-.if !defined(WITHOUT_VORBIS)
-	@${ECHO_MSG}
-	@${ECHO_MSG} "If you want to compile without Ogg/Vorbis support,"
-	@${ECHO_MSG} "hit Ctrl-C right now and use \"make WITHOUT_VORBIS=yes\""
-	@${ECHO_MSG}
-.endif
+CONFDIR=	${PREFIX}/etc/${PORTNAME}
+PERL_SITELIBDIR=	${PREFIX}/lib/perl5/site_perl/${PERL_VER}
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|-D_THREAD_SAFE|${PTHREAD_CFLAGS}|g ; \
-		 s|-pthread|${PTHREAD_LIBS}|g' ${WRKSRC}/aclocal.m4
-
-pre-configure:
-.for dir in libltdl mplib
-	@(cd ${WRKSRC}/${dir} && ${SETENV} ${AUTOCONF_ENV} ${AUTOCONF} \
-		${AUTOCONF_ARGS})
+.for file in bin/gnump3d-top bin/gnump3d2 etc/gnump3d.conf man/gnump3d.conf.1
+	@${PERL} -pi -e 's|%%PREFIX%%|${PREFIX}|g ; \
+		 s|%%LOCALBASE%%|${LOCALBASE}|g ; \
+		 s|%%PERL_SITELIBDIR%%|${PERL_SITELIBDIR}|g' ${WRKSRC}/${file}
 .endfor
 
-post-install:
-	@${MKDIR} /var/log/gnump3d
+do-install:
+.for file in gnump3d-top gnump3d2
+	${INSTALL_SCRIPT} ${WRKSRC}/bin/${file} ${PREFIX}/bin
+.endfor
+	${LN} -sf gnump3d2 ${PREFIX}/bin/gnump3d
+.for file in gnump3d.1 gnump3d-top.1 gnump3d.conf.1
+	${INSTALL_MAN} ${WRKSRC}/man/${file} ${MANPREFIX}/man/man1
+.endfor
+	${MKDIR} ${PERL_SITELIBDIR}
+	cd ${WRKSRC}/lib && ${FIND} . | \
+		cpio -pdm -L -R ${LIBOWN}:${LIBGRP} ${PERL_SITELIBDIR}
+	${MKDIR} ${DATADIR}
+	cd ${WRKSRC}/templates && ${FIND} . | \
+		cpio -pdm -L -R ${SHAREOWN}:${SHAREGRP} ${DATADIR}
+	${MKDIR} ${CONFDIR}
+	${INSTALL_DATA} ${WRKSRC}/etc/mime.types ${CONFDIR}
+	${INSTALL_DATA} ${WRKSRC}/etc/gnump3d.conf \
+		${CONFDIR}/gnump3d.conf-default
+.if !exists(${PREFIX}/etc/${PORTNAME}/gnump3d.conf)
+	cd ${CONFDIR} && ${CP} gnump3d.conf-default gnump3d.conf
+.endif
+	${MKDIR} /var/log/${PORTNAME}
 
 .include <bsd.port.mk>

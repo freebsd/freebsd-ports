@@ -1,74 +1,107 @@
 @comment $FreeBSD$
 bin/gnump3d
 bin/gnump3d-top
-etc/gnump3d/LaFrere/config.ini
-etc/gnump3d/LaFrere/error.html
-etc/gnump3d/LaFrere/index.html
-etc/gnump3d/LaFrere/logo.png
-etc/gnump3d/LaFrere/plugin.html
-etc/gnump3d/LaFrere/results.html
-etc/gnump3d/LaFrere/search.html
-etc/gnump3d/LaFrere/stats.html
-etc/gnump3d/default/error.html
-etc/gnump3d/default/index.html
-etc/gnump3d/default/plugin.html
-etc/gnump3d/default/results.html
-etc/gnump3d/default/search.html
-etc/gnump3d/default/stats.html
-etc/gnump3d/default/style.css
+bin/gnump3d2
 @unexec if cmp -s %D/etc/gnump3d/gnump3d.conf %D/etc/gnump3d/gnump3d.conf-default; then rm -f %D/etc/gnump3d/gnump3d.conf; fi
 etc/gnump3d/gnump3d.conf-default
 @exec [ -f %B/gnump3d.conf ] || cp %B/%f %B/gnump3d.conf
-etc/gnump3d/nausicaa/error.html
-etc/gnump3d/nausicaa/index.html
-etc/gnump3d/nausicaa/plugin.html
-etc/gnump3d/nausicaa/results.html
-etc/gnump3d/nausicaa/search.html
-etc/gnump3d/nausicaa/stats.html
-etc/gnump3d/nausicaa/style.css
-etc/gnump3d/redgrey/error.html
-etc/gnump3d/redgrey/index.html
-etc/gnump3d/redgrey/plugin.html
-etc/gnump3d/redgrey/results.html
-etc/gnump3d/redgrey/search.html
-etc/gnump3d/redgrey/stats.html
-etc/gnump3d/simple/config.ini
-etc/gnump3d/simple/error.html
-etc/gnump3d/simple/index.html
-etc/gnump3d/simple/plugin.html
-etc/gnump3d/simple/results.html
-etc/gnump3d/simple/search.html
-etc/gnump3d/simple/stats.html
-etc/gnump3d/split/config.ini
-etc/gnump3d/split/error.html
-etc/gnump3d/split/index.html
-etc/gnump3d/split/plugin.html
-etc/gnump3d/split/results.html
-etc/gnump3d/split/search.html
-etc/gnump3d/split/stats.html
-lib/gnump3d/bug.la
-lib/gnump3d/bug.so
-lib/gnump3d/last20.la
-lib/gnump3d/last20.so
-lib/gnump3d/now.la
-lib/gnump3d/now.so
-lib/gnump3d/playlist.la
-lib/gnump3d/playlist.so
-lib/gnump3d/search.la
-lib/gnump3d/search.so
-lib/gnump3d/stats.la
-lib/gnump3d/stats.so
-lib/gnump3d/theme.la
-lib/gnump3d/theme.so
-lib/gnump3d/version.la
-lib/gnump3d/version.so
-@dirrm lib/gnump3d
-@exec mkdir -p /var/log/gnump3d
+etc/gnump3d/mime.types
+lib/perl5/site_perl/%%PERL_VER%%/gnump3d/IP.pm
+lib/perl5/site_perl/%%PERL_VER%%/gnump3d/base64.pm
+lib/perl5/site_perl/%%PERL_VER%%/gnump3d/config.pm
+lib/perl5/site_perl/%%PERL_VER%%/gnump3d/files.pm
+lib/perl5/site_perl/%%PERL_VER%%/gnump3d/mp3info.pm
+lib/perl5/site_perl/%%PERL_VER%%/gnump3d/oggtagreader.pm
+lib/perl5/site_perl/%%PERL_VER%%/gnump3d/playlist.pm
+lib/perl5/site_perl/%%PERL_VER%%/gnump3d/plugins/COPYING.pm
+lib/perl5/site_perl/%%PERL_VER%%/gnump3d/plugins/bug.pm
+lib/perl5/site_perl/%%PERL_VER%%/gnump3d/plugins/last.pm
+lib/perl5/site_perl/%%PERL_VER%%/gnump3d/plugins/playlist.pm
+lib/perl5/site_perl/%%PERL_VER%%/gnump3d/plugins/prefs.pm
+lib/perl5/site_perl/%%PERL_VER%%/gnump3d/plugins/search.pm
+lib/perl5/site_perl/%%PERL_VER%%/gnump3d/plugins/stats.pm
+share/gnump3d/LaFrere/AUTHOR
+share/gnump3d/LaFrere/config.ini
+share/gnump3d/LaFrere/error.html
+share/gnump3d/LaFrere/index.html
+share/gnump3d/LaFrere/logo.png
+share/gnump3d/LaFrere/plugin.html
+share/gnump3d/LaFrere/results.html
+share/gnump3d/LaFrere/search.html
+share/gnump3d/LaFrere/stats.html
+share/gnump3d/Thexder/AUTHOR
+share/gnump3d/Thexder/config.ini
+share/gnump3d/Thexder/dig_temp2_01.jpg
+share/gnump3d/Thexder/dig_temp2_02.jpg
+share/gnump3d/Thexder/dig_temp2_03.gif
+share/gnump3d/Thexder/dig_temp2_04.jpg
+share/gnump3d/Thexder/dig_temp2_06.jpg
+share/gnump3d/Thexder/dig_temp2_08.jpg
+share/gnump3d/Thexder/dig_temp2_10.jpg
+share/gnump3d/Thexder/dig_temp2_12.jpg
+share/gnump3d/Thexder/dig_temp2_14.jpg
+share/gnump3d/Thexder/error.html
+share/gnump3d/Thexder/hr.gif
+share/gnump3d/Thexder/index.html
+share/gnump3d/Thexder/link_1.jpg
+share/gnump3d/Thexder/link_2.jpg
+share/gnump3d/Thexder/link_3.jpg
+share/gnump3d/Thexder/link_4.jpg
+share/gnump3d/Thexder/link_5.jpg
+share/gnump3d/Thexder/logo7.jpg
+share/gnump3d/Thexder/plugin.html
+share/gnump3d/Thexder/results.html
+share/gnump3d/Thexder/search.html
+share/gnump3d/Thexder/spacer.gif
+share/gnump3d/Thexder/stats.html
+share/gnump3d/default/AUTHOR
+share/gnump3d/default/error.html
+share/gnump3d/default/index.html
+share/gnump3d/default/plugin.html
+share/gnump3d/default/results.html
+share/gnump3d/default/search.html
+share/gnump3d/default/stats.html
+share/gnump3d/default/style.css
+share/gnump3d/nausicaa/AUTHOR
+share/gnump3d/nausicaa/error.html
+share/gnump3d/nausicaa/index.html
+share/gnump3d/nausicaa/plugin.html
+share/gnump3d/nausicaa/results.html
+share/gnump3d/nausicaa/search.html
+share/gnump3d/nausicaa/stats.html
+share/gnump3d/nausicaa/style.css
+share/gnump3d/redgrey/AUTHOR
+share/gnump3d/redgrey/error.html
+share/gnump3d/redgrey/index.html
+share/gnump3d/redgrey/plugin.html
+share/gnump3d/redgrey/results.html
+share/gnump3d/redgrey/search.html
+share/gnump3d/redgrey/stats.html
+share/gnump3d/simple/AUTHOR
+share/gnump3d/simple/config.ini
+share/gnump3d/simple/error.html
+share/gnump3d/simple/index.html
+share/gnump3d/simple/plugin.html
+share/gnump3d/simple/results.html
+share/gnump3d/simple/search.html
+share/gnump3d/simple/stats.html
+share/gnump3d/split/AUTHOR
+share/gnump3d/split/config.ini
+share/gnump3d/split/error.html
+share/gnump3d/split/index.html
+share/gnump3d/split/plugin.html
+share/gnump3d/split/results.html
+share/gnump3d/split/search.html
+share/gnump3d/split/stats.html
+@dirrm share/gnump3d/split
+@dirrm share/gnump3d/simple
+@dirrm share/gnump3d/redgrey
+@dirrm share/gnump3d/nausicaa
+@dirrm share/gnump3d/default
+@dirrm share/gnump3d/Thexder
+@dirrm share/gnump3d/LaFrere
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/gnump3d/plugins
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/gnump3d
+@unexec rmdir %D/etc/gnump3d 2>/dev/null || true
 @unexec rmdir /var/log/gnump3d 2>/dev/null || true
-@dirrm etc/gnump3d/split
-@dirrm etc/gnump3d/simple
-@dirrm etc/gnump3d/redgrey
-@dirrm etc/gnump3d/nausicaa
-@dirrm etc/gnump3d/default
-@dirrm etc/gnump3d/LaFrere
-@dirrm etc/gnump3d
+@exec mkdir -p /var/log/gnump3d

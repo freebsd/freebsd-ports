@@ -1,0 +1,17 @@
+--- bin/gnump3d-top.orig	Tue Feb  4 18:25:13 2003
++++ bin/gnump3d-top	Mon Feb 10 09:24:01 2003
+@@ -63,12 +63,12 @@
+ {
+     $DEFAULT_CONFIG = $ENV{"HOME"} . "/.gnump3drc";
+ }
+-elsif ( -e "/etc/gnump3d/gnump3d.conf" )
++elsif ( -e "%%PREFIX%%/etc/gnump3d/gnump3d.conf" )
+ {
+     #
+     # Otherwise the system wide one.
+     #
+-    $DEFAULT_CONFIG = "/etc/gnump3d/gnump3d.conf";
++    $DEFAULT_CONFIG = "%%PREFIX%%/etc/gnump3d/gnump3d.conf";
+ }
+ elsif ( -e "gnump3d.conf" )
+ {
