@@ -280,7 +280,7 @@ lib/libecal-%%VERSION%%.so
 lib/libecal-%%VERSION%%.so.2
 lib/libedata-book-%%VERSION%%.a
 lib/libedata-book-%%VERSION%%.so
-lib/libedata-book-%%VERSION%%.so.2
+lib/libedata-book-%%VERSION%%.so.3
 lib/libedata-cal-%%VERSION%%.a
 lib/libedata-cal-%%VERSION%%.so
 lib/libedata-cal-%%VERSION%%.so.3
