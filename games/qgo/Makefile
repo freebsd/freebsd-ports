@@ -14,6 +14,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
 
+USE_REINPLACE=	yes
 USE_QT_VER=	2
 GNU_CONFIGURE=	yes
 QTCPPFLAGS+=	-DDONT_USE_GETOPT
@@ -21,8 +22,8 @@ CONFIGURE_ENV=	QTDIR=${X11BASE}
 USE_GMAKE=	yes
 
 post-patch:
-	@${PERL} -pi -e "s,qt.so,qt2.so,g ; \
+	@${REINPLACE_CMD} -e "s,qt.so,qt2.so,g ; \
 		s,/moc,/moc2,g" ${WRKSRC}/configure
-	@${PERL} -pi -e "s,-lqt,-lqt2,g" ${WRKSRC}/src/Makefile.in
+	@${REINPLACE_CMD} -e "s,-lqt,-lqt2,g" ${WRKSRC}/src/Makefile.in
 
 .include <bsd.port.mk>

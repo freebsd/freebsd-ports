@@ -14,6 +14,8 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
 
+USE_REINPLACE=  yes
+
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 400010
@@ -23,7 +25,7 @@ CFLAGS+=	-nostdinc -I${LOCALBASE}/include/ncurses \
 .endif
 
 post-patch:
-	@${PERL} -pi -e "s,^CFLAGS,#CFLAGS,g" ${WRKSRC}/Makefile
+	@${REINPLACE_CMD} -e "s,^CFLAGS,#CFLAGS,g" ${WRKSRC}/Makefile
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/cryptoslam ${PREFIX}/bin

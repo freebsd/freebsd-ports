@@ -14,11 +14,12 @@ EXTRACT_SUFX=	.tar.Z
 MAINTAINER=	ports@FreeBSD.org
 
 NO_WRKSUBDIR=	yes
+USE_REINPLACE=	yes
 MAKEFILE=	makefile
 ALL_TARGET=	wordplay
 
 post-patch:
-	@${PERL} -pi -e \
+	@${REINPLACE_CMD} -e \
 	  "s#words721.txt#${PREFIX}/share/wordplay/words721.txt#" \
 	  ${WRKSRC}/wordplay.c
 

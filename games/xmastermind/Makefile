@@ -15,10 +15,11 @@ MAINTAINER=		ports@FreeBSD.org
 
 LIB_DEPENDS=		xforms.0:${PORTSDIR}/x11-toolkits/xforms
 
+USE_REINPLACE=		yes
 USE_X_PREFIX=		yes
 
 pre-patch:
-	@${PERL} -pi.orig -e 's|malloc.h|stdlib.h|' \
+	@${REINPLACE_CMD} -e 's|malloc.h|stdlib.h|' \
 		${WRKSRC}/list.h
 
 do-install:

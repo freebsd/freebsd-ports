@@ -14,6 +14,7 @@ MAINTAINER=	ports@FreeBSD.org
 
 BUILD_DEPENDS=	${X11BASE}/lib/libplibsl.a:${PORTSDIR}/x11-toolkits/plib
 
+USE_REINPLACE=	yes
 USE_X_PREFIX=	yes
 USE_NEWGCC=	yes
 USE_MESA=	yes
@@ -24,11 +25,11 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
 CONFIGURE_ARGS=	--with-plib=${X11BASE}
 
 post-patch:
-	@${PERL} -pi -e 's|-O6|${PTHREAD_CFLAGS}|g ; \
+	@${REINPLACE_CMD} -e 's|-O6|${PTHREAD_CFLAGS}|g ; \
 		 s|-lpthread|${PTHREAD_LIBS}|g ; \
 		 s|datadir/games|datadir|g' ${WRKSRC}/configure
-	@find ${WRKSRC} -name "Makefile.in" | xargs ${PERL} -pi -e \
-		's|\$$\(prefix\)/games|\@bindir\@|g ; \
-		 s|\$$\(datadir\)/games|\$$\(datadir\)|g'
+	@${FIND} ${WRKSRC} -name "Makefile.in" | ${XARGS} ${REINPLACE_CMD} -e \
+		's|\$$(prefix)/games|\@bindir\@|g ; \
+		 s|\$$(datadir)/games|\$$(datadir)|g'
 
 .include <bsd.port.mk>
