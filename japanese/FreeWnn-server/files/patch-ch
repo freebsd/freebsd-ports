@@ -1,0 +1,122 @@
+--- Wnn/jserver/do_filecom.c~	Thu May 27 13:42:53 1993
++++ Wnn/jserver/do_filecom.c	Fri Mar 10 00:29:09 2000
+@@ -92,7 +92,7 @@
+ {char path[FILENAME]; int x;
+  int err = 0;
+  err = envhandle();
+- get_file_name(path);
++ get_file_name(path, FILENAME);
+ 
+  if(err == -1){ error_ret(); return;}
+  x=mkdir(path , MODE );
+@@ -117,7 +117,7 @@
+  int eid;
+ 
+  eid = envhandle();
+- get_file_name(path);
++ get_file_name(path, FILENAME);
+  if(eid == -1) {error_ret(); return;}
+      
+  if((fd = open(path , O_RDONLY)) >= 0){
+@@ -142,7 +142,7 @@
+  int amode;
+  envhandle();
+  amode=get4_cur();
+- get_file_name(path);
++ get_file_name(path, FILENAME);
+ 
+ #ifdef WRITE_CHECK
+  check_backup(path);
+@@ -222,7 +222,7 @@
+  char n[FILENAME];
+ 
+  get4_cur();	/* env_id */
+- get_file_name(n);
++ get_file_name(n, FILENAME);
+ 
+  put4_cur(file_stat(n));
+  putc_purge();
+@@ -349,9 +349,9 @@
+ 
+  env_id=get4_cur();	/* env_id */
+  fid=get4_cur();
+- get_file_name(fn);
++ get_file_name(fn, FILE_NAME_L);
+  getws_cur(com);
+- gets_cur(hpasswd);
++ gets_cur(hpasswd, WNN_PASSWD_LEN);
+  if(find_fid_in_env(env_id,fid)==-1){ /* valid */
+      wnn_errorno=WNN_FID_ERROR;
+      error_ret(); putc_purge(); return;
+@@ -410,10 +410,10 @@
+     w_char com[1024];
+     char passwd[WNN_PASSWD_LEN], hpasswd[WNN_PASSWD_LEN];
+     get4_cur();	/* env_id */
+-    get_file_name(fn);
++    get_file_name(fn, FILE_NAME_L);
+     getws_cur(com);
+-    gets_cur(passwd);
+-    gets_cur(hpasswd);
++    gets_cur(passwd, WNN_PASSWD_LEN);
++    gets_cur(hpasswd, WNN_PASSWD_LEN);
+     type = get4_cur();
+ 
+     if(type != WNN_REV_DICT && 
+@@ -546,7 +546,7 @@
+  int x;
+ 
+ /*  get4_cur();	env_id */
+- get_file_name(n);
++ get_file_name(n, FILE_NAME_L);
+ 
+  if((x=file_loaded(n)) < 0) put4_cur(-1);
+  else put4_cur(x);
+@@ -650,7 +650,7 @@
+ 
+  put4_cur(1); putc_purge();
+ 
+- gets_cur(n);
++ gets_cur(n, FILE_NAME_L);
+ 
+  /*	read file	*/
+  files[fid].localf= REMOTE;
+@@ -674,7 +674,7 @@
+  int env_id,fid;
+ 
+  env_id=get4_cur();	/* env_id */
+- get_file_name(n);
++ get_file_name(n, FILE_NAME_L);
+ 
+  fid = file_loaded(n);
+  if(fid == -1){
+@@ -742,7 +742,7 @@
+  char n[FILE_NAME_L];
+  env_id=get4_cur();	/* env_id */
+  fid=get4_cur();
+- get_file_name(n);
++ get_file_name(n, FILE_NAME_L);
+ 
+  if(find_fid_in_env(env_id,fid)==-1){ /* valid */
+ 	wnn_errorno=WNN_FID_ERROR;
+@@ -895,8 +895,8 @@
+     char passwd[WNN_PASSWD_LEN];
+     int x;
+     
+-    get_file_name(n);
+-    gets_cur(passwd);
++    get_file_name(n, FILE_NAME_L);
++    gets_cur(passwd, WNN_PASSWD_LEN);
+     
+     x = file_remove(n, passwd);
+     if(x == -1){
+@@ -958,8 +958,8 @@
+     envi = get4_cur();	/* env_id */
+     fid = get4_cur();
+     which = get4_cur();
+-    gets_cur(old);
+-    gets_cur(new);
++    gets_cur(old, WNN_PASSWD_LEN);
++    gets_cur(new, WNN_PASSWD_LEN);
+ 
+     if(find_fid_in_env(envi,fid) == -1){
+ 	wnn_errorno=WNN_FID_ERROR;

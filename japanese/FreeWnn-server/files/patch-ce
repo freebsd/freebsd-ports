@@ -1,0 +1,33 @@
+--- Wnn/jserver/do_env.c~	Wed Apr 28 09:25:54 1993
++++ Wnn/jserver/do_env.c	Fri Mar 10 00:25:57 2000
+@@ -79,10 +79,10 @@
+  char tmp_buf[256];
+ 
+  	version = get4_cur();
+-	gets_cur(tmp_buf);
++	gets_cur(tmp_buf, 256);
+ 	tmp_buf[WNN_HOSTLEN-1] = '\0'; /* truncate by WNN_HOSTLEN */
+ 	strcpy(c_c->host_name, tmp_buf);
+-	gets_cur(tmp_buf);
++	gets_cur(tmp_buf, 256);
+ 	tmp_buf[WNN_ENVNAME_LEN-1] = '\0'; /* truncate by WNN_ENVNAME_LEN */
+ 	strcpy(c_c->user_name, tmp_buf);
+ 	error1("Inet user=%s@%s\n",c_c -> user_name,c_c->host_name);
+@@ -125,7 +125,7 @@
+ js_connect()
+ {char n[256];
+  register int x;
+- gets_cur(n);
++ gets_cur(n, 256);
+  x=conn1(n);
+  if(x==-1){error_ret(); return;}
+  put4_cur(x);
+@@ -184,7 +184,7 @@
+ {
+     char n[256];
+ 
+-    gets_cur(n);
++    gets_cur(n, 256);
+     if(find_env_by_name(n) != -1){ /* exist */
+ 	put4_cur(1);
+     }else{

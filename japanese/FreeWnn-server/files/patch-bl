@@ -25,23 +25,3 @@ By KATAYAMA Yoshio <kate@pfu.co.jp>
      put4_cur(jtl->syurui);
      put4_cur(jtl->gosuu);
      put4_cur(files[fid].localf);
---- Wnn/jserver/de.c.98-10-12	Mon Oct 12 01:01:28 1998
-+++ Wnn/jserver/de.c	Sun Jan 24 14:50:14 1999
-@@ -665,6 +665,17 @@
- 
- /**	**/
- void
-+puts_n_cur(p,n)
-+char *p;
-+int n;
-+{
-+    register int c;
-+    while((c = *p++) && --n >= 0) putc_cur(c);
-+    putc_cur(0);
-+}
-+
-+/**	**/
-+void
- putws_cur(p)
- w_char *p;
- {
