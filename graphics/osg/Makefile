@@ -10,7 +10,7 @@ PORTVERSION=	0.8.45
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.openscenegraph.org/download/snapshots/
 
-MAINTAINER=	aa8vb@nc.rr.com
+MAINTAINER=	ports@FreeBSD.org
 
 LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png \
 		jpeg.9:${PORTSDIR}/graphics/jpeg \

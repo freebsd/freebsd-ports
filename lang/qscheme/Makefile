@@ -10,7 +10,7 @@ PORTVERSION=	0.5.1
 CATEGORIES=	lang
 MASTER_SITES=	http://www.sof.ch/dan/qscheme/files/
 
-MAINTAINER=	erik@smluc.org
+MAINTAINER=	ports@FreeBSD.org
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/libavcall.a:${PORTSDIR}/devel/ffcall\
 		${LOCALBASE}/lib/libpcre.a:${PORTSDIR}/devel/pcre

@@ -12,7 +12,7 @@ MASTER_SITES=	http://edc.usgs.gov/pub/software/gctpc/
 DISTNAME=	gctpc
 EXTRACT_SUFX=	.tar.Z
 
-MAINTAINER=	aa8vb@nc.rr.com
+MAINTAINER=	ports@FreeBSD.org
 
 WRKSRC=		${WRKDIR}/${PORTNAME}/source
 

@@ -10,7 +10,7 @@ PORTVERSION=	0.9.0
 CATEGORIES=	graphics
 MASTER_SITES=	http://gdal.velocet.ca/projects/grass/
 
-MAINTAINER=	john@coastalgeology.org
+MAINTAINER=	ports@FreeBSD.org
 
 INSTALLS_SHLIB=	yes
 LDCONFIG_DIRS=	${PREFIX}/lib

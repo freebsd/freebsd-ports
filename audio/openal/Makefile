@@ -12,8 +12,7 @@ MASTER_SITES=	http://math.smsu.edu/~erik/files/fbsd/\
 		http://smluc.org/~erik/\
 		http://csc.smsu.edu/~greenwald/
 
-
-MAINTAINER=	erik@smluc.org
+MAINTAINER=	ports@FreeBSD.org
 
 WRKSRC=		${WRKDIR}/${PORTNAME}/linux
 GNU_CONFIGURE=  yes

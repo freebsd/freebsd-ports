@@ -24,7 +24,7 @@ DISTFILES=	appendices.htm blank.gif blurb-works-1.2.gif concepts.htm \
 		remote-light.gif software-license.htm tools-reference.htm \
 		tutorial.htm writing-your-own-file-decoder.htm
 
-MAINTAINER=	john@coastalgeology.org
+MAINTAINER=	ports@FreeBSD.org
 
 DIST_SUBDIR=	pil
 EXTRACT_ONLY=

@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_LOCAL} \
 		ftp://ftpmcmc.er.usgs.gov/release/viewers/dlgv32/source/
 DISTNAME=	Dlgv32v37
 
-MAINTAINER=	aa8vb@nc.rr.com
+MAINTAINER=	ports@FreeBSD.org
 
 LIB_DEPENDS=	gctpc.1:${PORTSDIR}/misc/gctpc
 

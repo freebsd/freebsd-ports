@@ -12,7 +12,7 @@ MASTER_SITES=	# none
 PKGNAMEPREFIX=	gauche-
 DISTFILES=	# none
 
-MAINTAINER=	erik@smluc.org
+MAINTAINER=	ports@FreeBSD.org
 
 BUILD_DEPENDS=	gosh:${PORTSDIR}/${GAUCHE_PORT} \
 		${NONEXISTENT}:${PORTSDIR}/${GAUCHE_PORT}:configure
