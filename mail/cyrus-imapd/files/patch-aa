@@ -1,0 +1,11 @@
+--- man/Makefile.in.orig	Sun May  4 22:14:52 1997
++++ man/Makefile.in	Sun May  4 22:15:02 1997
+@@ -52,7 +52,7 @@
+ MAN3 = $(srcdir)/imclient.3
+ MAN5 = $(srcdir)/imapd.conf.5 $(srcdir)/krb.equiv.5
+ MAN8 = $(srcdir)/arbitron.8 $(srcdir)/collectnews.8 $(srcdir)/deliver.8 \
+-	$(srcdir)/imapd.8 $(srcdir)/pop3d.8 $(srcdir)/quota.8 \
++	$(srcdir)/imapd.8 $(srcdir)/pop3d.8 $(srcdir)/cyrquota.8 \
+ 	$(srcdir)/reconstruct.8 $(srcdir)/rmnews.8 $(srcdir)/syncnews.8 
+ 
+ 
