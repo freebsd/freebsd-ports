@@ -95,7 +95,7 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
       <package>
 	<name>cups-base</name>
 	<name>fr-cups-base</name>
-	<range><lt>1.1.23</lt></range>
+	<range><lt>1.1.22.0_2</lt></range>
       </package>
     </affects>
     <description>
