@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	firewalk
-PORTVERSION=	0.99.1
+PORTVERSION=	1.0
 CATEGORIES=	security
 MASTER_SITES=	http://www.packetfactory.net/firewalk/
 
