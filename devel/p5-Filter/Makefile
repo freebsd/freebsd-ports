@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Filter
-PORTVERSION=	1.14
+PORTVERSION=	1.18
 CATEGORIES=	devel perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Filter
@@ -18,7 +18,8 @@ USE_PERL5=	YES
 
 MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 MAN3=		Filter::Util::Call.3 Filter::Util::Exec.3 Filter::cpp.3 \
-		Filter::decrypt.3 Filter::exec.3 Filter::sh.3 Filter::tee.3
+		Filter::decrypt.3 Filter::exec.3 Filter::sh.3 Filter::tee.3 \
+		perlfilter.3
 
 do-configure:
 		@cd ${WRKSRC}; ${SETENV} ${CONFIGURE_ENV} ${PERL5} Makefile.PL
