@@ -15,7 +15,7 @@ MASTER_SITE_SUBDIR=	sources/${PORTNAME}/0.3
 MAINTAINER=	jylefort@brutele.be
 COMMENT=	A simple GNOME music player
 
-LIB_DEPENDS+=	id3tag:${PORTSDIR}/audio/mad \
+LIB_DEPENDS+=	id3tag:${PORTSDIR}/audio/libid3tag \
 		vorbis.3:${PORTSDIR}/audio/libvorbis \
 		gstplay-0.6:${PORTSDIR}/multimedia/gstreamer-plugins \
 		gdbm.3:${PORTSDIR}/databases/gdbm
