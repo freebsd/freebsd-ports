@@ -1,0 +1,71 @@
+--- pib.tcl	Sat Oct 28 13:01:12 2000
++++ pib.tcl	Sat Apr 28 04:05:37 2001
+@@ -309,22 +309,11 @@
+ #
+ proc init_options {} {
+ 
+-    # listboxes
+-    option add *Listbox.background white;
+-    option add *Listbox.selectForeground white;
+-    option add *Listbox.selectBackground darkblue;
+-
+     # scrollbars
+     option add *Scrollbar.width 11;
+ 
+     # textboxes
+-    option add *Text.background white;
+-    option add *Text.selectForeground white;
+-    option add *Text.selectBackground darkblue;
+     option add *Text.font fixed;
+-
+-    # entries
+-    option add *Entry.background white;
+     
+ }
+ 
+@@ -1931,36 +1920,19 @@
+ 	update_pwin df_getdinfo [format "%d/%d ports, %dK/sec" $pports $Status(nports) $rate];
+ 
+ 	# Find the md5 file.
+-	if {[catch {set fh [open "$path/files/md5" "r"]}]} {
++	if {[catch {set fh [open "$path/distinfo" "r"]}]} {
+ 
+-	    # Nope.  Perhaps we're dealing with US ITAR braindamage
+-	    if {[op_elookup USA_RESIDENT]} {
+-		set aname "$path/files.usa/md5";
++	    # Can't find an distinfo file; give up
++	    if {[file isdirectory "$path"]} {
++		if {$Options(warn_no_md5)} {
++		    lappend errs "$pname: '$path/distinfo' not found";
++		}
+ 	    } else {
+-		set aname "$path/files.non_usa/md5";
+-	    }
+-
+-	    # try again with a new name
+-	    if {[catch {set fh [open $aname "r"]}]} {
+-
+-		# Can't find an md5 file; give up
+-		if {[file isdirectory "$path/files"]} {
+-		    if {$Options(warn_no_md5)} {
+-			lappend errs "$pname: '$path/files/md5' not found";
+-		    }
+-		} else {
+-		    if {[file isdirectory $path]} {
+-			if {$Options(warn_no_fdir)} {
+-			    lappend errs "$pname: '$path/files' not found";
+-			}
+-		    } else {
+-			if {$Options(warn_no_port)} {
+-			    lappend errs "$pname: directory missing.";
+-			}
+-		    }
++		if {$Options(warn_no_port)} {
++		    lappend errs "$pname: directory missing.";
+ 		}
+-		continue ;			# if no port info, assume it's not wanted
+ 	    }
++	    continue ;				# if no port info, assume it's not wanted
+ 	}
+ 
+ 	# initialise state for this port

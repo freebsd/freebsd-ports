@@ -1,0 +1,10 @@
+--- Makefile	Sat Oct 28 12:55:08 2000
++++ Makefile	Mon Oct 21 04:40:15 2002
+@@ -8,7 +8,6 @@
+ X11BASE?=	/usr/X11R6
+ 
+ LIB=		TkSteal
+-INTERNALLIB=	YES		# inhibits unuseful static library
+ SHLIB_MAJOR=	2
+ SHLIB_MINOR=	0
+ NOPROFILE=	yes

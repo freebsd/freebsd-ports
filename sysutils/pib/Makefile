@@ -11,9 +11,7 @@ CATEGORIES=	sysutils tk82
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	msmith
 
-MAINTAINER=	msmith@freebsd.org
-
-BROKEN=	"This needs to be updated to work with the newer ports layout"
+MAINTAINER=	.@babolo.ru
 
 BUILD_DEPENDS=	wish8.2:${PORTSDIR}/x11-toolkits/tk82
 RUN_DEPENDS=	wish8.2:${PORTSDIR}/x11-toolkits/tk82
