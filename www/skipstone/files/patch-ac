@@ -22,8 +22,8 @@
 -echo "Please set your MOZILLA_FIVE_HOME and LD_LIBRARY_PATH manually as I could not find them"
 -     exit
 -fi
-+export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:X11BASE/lib/mozilla
-+export MOZILLA_FIVE_HOME=X11BASE/lib/mozilla
++export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:X11BASE/lib/mozilla-embedded
++export MOZILLA_FIVE_HOME=X11BASE/lib/mozilla-embedded
  
 -if [ -f ./skipstone-bin ]; then
 -	exec ./skipstone-bin $@

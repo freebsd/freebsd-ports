@@ -1,27 +1,26 @@
---- src/Makefile.orig	Tue Apr 17 00:31:55 2001
-+++ src/Makefile	Tue Apr 17 00:30:46 2001
-@@ -1,22 +1,22 @@
+--- src/Makefile.orig	Thu Jun 21 06:55:00 2001
++++ src/Makefile	Thu Jun 21 06:59:30 2001
+@@ -1,21 +1,21 @@
 -PREFIX=/usr/local
 +PREFIX=${X11BASE}
- VERSION = 0.7.2
- MILESTONE = M18
+ VERSION = 0.7.3
  
--MOZILLA_INCLUDES = -I/usr/include/mozilla -I/usr/local/include/mozilla
+-MOZILLA_INCLUDES = -I/usr/include/mozilla -I/usr/local/include/mozilla -I/usr/include/nspr -I/usr/local/include/mozilla/nspr -I/usr/include/mozilla/nspr -I/usr/local/include/mozilla/nspr
 -MOZILLA_LIBS = -L/usr/lib/mozilla -L/usr/local/lib/mozilla -lgtkembedmoz -lplds4 -lplc4 -lnspr4 -lgtksuperwin -lxpcom
-+MOZILLA_INCLUDES = -I${X11BASE}/include/mozilla
-+MOZILLA_LIBS = -L${X11BASE}/lib/mozilla -lgtkembedmoz -lplds4 -lplc4 -lnspr4 -lgtksuperwin -lxpcom
++MOZILLA_INCLUDES = -I${X11BASE}/include/mozilla -I${X11BASE}/include/mozilla/nspr
++MOZILLA_LIBS = -L${X11BASE}/lib/mozilla-embedded -lgtkembedmoz -lplds4 -lplc4 -lnspr4 -lgtksuperwin -lxpcom
  
  #my stuff
- #MOZILLA_INCLUDES = -I/usr/moz/mozilla/package/include
- #MOZILLA_LIBS = -L/usr/moz/mozilla/package/bin/ -lgtkembedmoz -lplds4 -lplc4 -lnspr4 -lgtksuperwin -lxpcom 
+ #MOZILLA_INCLUDES = -I/usr/moz/mozilla/dist/include
+ #MOZILLA_LIBS = -L/usr/moz/mozilla/dist/bin/ -lgtkembedmoz -lplds4 -lplc4 -lnspr4 -lgtksuperwin -lxpcom
  
 -GTK_LIBS = $(shell gtk-config --libs)
 -GTK_INCLUDES = $(shell gtk-config --cflags)
 +GTK_LIBS = $(shell $(GTK_CONFIG) --libs)
 +GTK_INCLUDES = $(shell $(GTK_CONFIG) --cflags)
  
- SOURCES = main.c go.c callbacks.c moz_callbacks.c support.c ipc.c bookmarks.c interface.c interface-notebook.c history.c crash.c skipstone_config.c context.c mozilla.cpp
- OBJS = main.o go.o callbacks.o moz_callbacks.o support.o ipc.o bookmarks.o interface.o interface-notebook.o history.o crash.o skipstone-config.o context.o mozilla.o
+ SOURCES = main.c go.c callbacks.c moz_callbacks.c support.c ipc.c bookmarks.c interface.c interface-notebook.c history.c crash.c skipstone_config.c context.c skipstone-plugin.c skipstone-print.c mozilla.cpp SkipStonePrompter.cpp PromptService.cpp 
+ OBJS = main.o go.o callbacks.o moz_callbacks.o support.o ipc.o bookmarks.o interface.o interface-notebook.o history.o crash.o skipstone-config.o context.o skipstone-plugin.o skipstone-print.o mozilla.o SkipStonePrompter.o PromptService.o 
  DOWNLOADOBJS = skipdownload.o
 -FLAGS = -g -O2 -Wall -I.. $(GTK_INCLUDES) $(MOZILLA_INCLUDES) 
 -LIBS = -g $(GTK_LIBS) $(MOZILLA_LIBS) -lpthread
