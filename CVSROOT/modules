@@ -3259,6 +3259,7 @@ jetty		ports/www/jetty
 jewel		ports/x11-wm/jewel
 jext		ports/editors/jext
 jfc		ports/java/jfc
+jfk		ports/games/jrk
 jftpgw		ports/ftp/jftpgw
 jgnat		ports/lang/jgnat
 jgnat-doc-html	ports/lang/jgnat-doc-html
