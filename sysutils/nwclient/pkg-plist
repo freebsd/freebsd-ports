@@ -30,6 +30,7 @@ nsr/bin/savefs
 nsr/bin/savegrp
 nsr/bin/savepnpc
 nsr/bin/uasm
+nsr/gls/cm/registry
 man/man8/EMASS_silo.8
 man/man8/IBM_silo.8
 man/man8/STK_silo.8
@@ -163,4 +164,11 @@ man/man8/tapeexercise.8
 man/man8/tur.8
 man/man8/uasm.8
 man/man8/writebuf.8
+nsr/gls/lc/os/portable/C
 @dirrm nsr/bin
+@dirrm nsr/gls/cm
+@dirrm nsr/gls/lc/os/portable
+@dirrm nsr/gls/lc/os
+@dirrm nsr/gls/lc
+@dirrm nsr/gls
+@dirrm nsr
