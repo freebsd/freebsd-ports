@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	iview
-PORTVERSION=	1.3
+PORTVERSION=	1.4
 CATEGORIES=	graphics
 MASTER_SITES=	http://math.smsu.edu/~erik/files/
 
