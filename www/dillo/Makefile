@@ -8,7 +8,7 @@
 PORTNAME=       dillo
 PORTVERSION=	0.6.6
 CATEGORIES=     www
-MASTER_SITES=   http://dillo.cipsga.org.br/download/ \
+MASTER_SITES=	http://dillo.auriga.wearlab.de/download/ \
 		ftp://ftp.nuug.no/pub/anders/distfiles/
 
 MAINTAINER=	ports@FreeBSD.org
