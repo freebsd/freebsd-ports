@@ -1,6 +1,6 @@
 #!/usr/local/bin/perl
 #
-# $Id: log_accum.pl,v 1.25 1997/05/23 04:29:24 peter Exp $
+# $Id: log_accum.pl,v 1.26 1997/06/08 16:46:17 peter Exp $
 #
 # Perl filter to handle the log messages from the checkin of files in
 # a directory.  This script will group the lists of files by log
@@ -356,6 +356,7 @@ sub mail_notification {
     foreach $line (@mailaddrs) {
 	next if ($unique{$line});
 	$unique{$line} = 1;
+	next if /^cvs-/;
 	print(MAIL ", " . $line . $dom);
     }
     print(MAIL "\n");
