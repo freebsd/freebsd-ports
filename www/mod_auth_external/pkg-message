@@ -1,0 +1,16 @@
+************************************************************
+You've installed mod_auth_external, an Apache authentication
+module enabling the use of external mechanisms for user
+authentication.
+
+Edit your apache.conf or httpd.conf to enable and setup this
+module. Have a look at the files in
+${PREFIX}/share/doc/mod_auth_external for information on how
+to configure it, example authentication programs, etc.
+
+Then do this to make it work effective:
+
+# apachectl configtest (see if there are any config errors)
+# apachectl restart
+
+************************************************************
