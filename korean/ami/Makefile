@@ -32,7 +32,7 @@ CONFIGURE_ARGS+= --with-english-keyboard=dvorak
 .if defined(WITH_GNOME_APPLET)
 PKGNAMESUFFIX=	-gnome
 RUN_DEPENDS+=	panel:${PORTSDIR}/x11/gnomecore
-LIB_DEPENDS+=	gnome.3:${PORTSDIR}/x11/gnomelibs
+LIB_DEPENDS+=	gnome.4:${PORTSDIR}/x11/gnomelibs
 CONFIGURE_ARGS+= --enable-gnome-applet
 .endif
 

@@ -12,7 +12,7 @@ MASTER_SITES=	http://www.faradic.net/~jasta/files/
 
 MAINTAINER=	cpiazza@FreeBSD.org
 
-LIB_DEPENDS=	gnome.3:${PORTSDIR}/x11/gnomelibs \
+LIB_DEPENDS=	gnome.4:${PORTSDIR}/x11/gnomelibs \
 		Xpm.4:${PORTSDIR}/graphics/xpm \
 		ungif.5:${PORTSDIR}/graphics/libungif
 

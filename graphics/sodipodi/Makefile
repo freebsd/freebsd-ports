@@ -12,7 +12,7 @@ MASTER_SITES=	http://download.sourceforge.net/sodipodi/
 
 MAINTAINER=	nakai@FreeBSD.org
 
-LIB_DEPENDS=	gnome.3:${PORTSDIR}/x11/gnomelibs \
+LIB_DEPENDS=	gnome.4:${PORTSDIR}/x11/gnomelibs \
 		glade.3:${PORTSDIR}/devel/libglade \
 		gnomeprint.9:${PORTSDIR}/print/gnomeprint \
 		gdk_pixbuf.2:${PORTSDIR}/graphics/gdk-pixbuf
@@ -25,8 +25,7 @@ USE_GMAKE=	yes
 USE_X_PREFIX=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--localstatedir=${PREFIX}/share/gnome \
-		--datadir=${PREFIX}/share/gnome \
-		--with-gnome=${PREFIX}
+		--datadir=${PREFIX}/share/gnome
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		GTK_CONFIG="${GTK_CONFIG}" \
 		LIBS="-L${LOCALBASE}/lib"

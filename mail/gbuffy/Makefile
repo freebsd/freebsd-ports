@@ -7,7 +7,7 @@
 
 PORTNAME=	gbuffy
 PORTVERSION= 	0.2.2
-CATEGORIES=	mail gnome
+CATEGORIES=	mail
 MASTER_SITES=	http://www.fiction.net/blong/programs/gbuffy/
 
 MAINTAINER=	kaj@Raditex.se

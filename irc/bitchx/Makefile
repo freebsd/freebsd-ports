@@ -7,14 +7,14 @@
 
 PORTNAME=	BitchX
 PORTVERSION=	1.0c16
-CATEGORIES=	irc
+CATEGORIES=	irc gnome
 MASTER_SITES=	ftp://ftp.bitchx.com/pub/BitchX/source/ \
 		ftp://ukug.uk.freebsd.org/pub/lord_cj/
 
 MAINTAINER=	calle.madestrand@norrgarden.se
 
 .if defined(WITH_GNOME)
-LIB_DEPENDS=	gnome.3:${PORTSDIR}/x11/gnomelibs
+LIB_DEPENDS=	gnome.4:${PORTSDIR}/x11/gnomelibs
 .endif
 
 GLIB_CONFIG?=	${LOCALBASE}/bin/glib12-config

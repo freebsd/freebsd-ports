@@ -13,7 +13,7 @@ MASTER_SITE_SUBDIR=	unstable/sources/bonobo
 
 MAINTAINER=	ade@FreeBSD.org
 
-LIB_DEPENDS=	gnome.3:${PORTSDIR}/x11/gnomelibs \
+LIB_DEPENDS=	gnome.4:${PORTSDIR}/x11/gnomelibs \
 		gnomeprint.9:${PORTSDIR}/print/gnomeprint \
 		gdk_pixbuf.2:${PORTSDIR}/graphics/gdk-pixbuf
 

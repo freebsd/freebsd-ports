@@ -12,7 +12,7 @@ MASTER_SITES=	http://download.sourceforge.net/gedit/
 
 MAINTAINER=	ade@FreeBSD.org
 
-LIB_DEPENDS=	gnomeui.3:${PORTSDIR}/x11/gnomelibs \
+LIB_DEPENDS=	gnome.4:${PORTSDIR}/x11/gnomelibs \
 		gnomeprint.9:${PORTSDIR}/print/gnomeprint
 
 GTK_CONFIG?=	${X11BASE}/bin/gtk12-config

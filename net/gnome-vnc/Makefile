@@ -7,12 +7,12 @@
 
 PORTNAME=	gnome-vnc
 PORTVERSION=	0.1
-CATEGORIES= 	net
+CATEGORIES= 	net gnome
 MASTER_SITES=	ftp://ftp.daa.com.au/pub/james/gnome/
 
 MAINTAINER=	domi@saargate.de
 
-LIB_DEPENDS=	gnome.3:${PORTSDIR}/x11/gnomelibs
+LIB_DEPENDS=	gnome.4:${PORTSDIR}/x11/gnomelibs
 
 USE_X_PREFIX=	yes
 GNU_CONFIGURE=	yes

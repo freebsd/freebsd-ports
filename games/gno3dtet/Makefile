@@ -7,13 +7,13 @@
 
 PORTNAME=	gno3dtet
 PORTVERSION=	1.6.0
-CATEGORIES=	games
+CATEGORIES=	games gnome
 MASTER_SITES=	ftp://webdat.com/pub/seb/gno3dtet/
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	will@FreeBSD.org
 
-LIB_DEPENDS=	gnomeui.3:${PORTSDIR}/x11/gnomelibs
+LIB_DEPENDS=	gnome.4:${PORTSDIR}/x11/gnomelibs
 
 GNOME_CONFIG?=	${X11BASE}/bin/gnome-config
 GTK_CONFIG?=	${X11BASE}/bin/gtk12-config

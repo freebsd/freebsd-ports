@@ -25,7 +25,7 @@ CONFIGURE_ENV=  GTK_CONFIG="${GTK_CONFIG}"
 .if defined(NO_GNOME)
 CONFIGURE_ARGS	+=	--disable-gnome
 .else
-LIB_DEPENDS=	gnome.3:${PORTSDIR}/x11/gnomelibs
+LIB_DEPENDS=	gnome.4:${PORTSDIR}/x11/gnomelibs
 .endif
 
 do-install:

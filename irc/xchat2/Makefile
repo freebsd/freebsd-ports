@@ -7,7 +7,7 @@
 
 PORTNAME=		xchat
 PORTVERSION=		1.5.2
-CATEGORIES=		irc
+CATEGORIES=		irc gnome
 MASTER_SITES=		http://xchat.org/files/source/1.5/ \
 			http://xchat.linuxpower.org/files/source/1.5/
 
@@ -19,7 +19,7 @@ BUILD_DEPENDS+=		${LOCALBASE}/lib/libsocks5.a:${PORTSDIR}/net/socks5
 LIB_DEPENDS=		gtk12.2:${PORTSDIR}/x11-toolkits/gtk12 \
 			Imlib.5:${PORTSDIR}/graphics/imlib
 .if defined(WITH_GNOME)
-LIB_DEPENDS+=		gnome.3:${PORTSDIR}/x11/gnomelibs
+LIB_DEPENDS+=		gnome.4:${PORTSDIR}/x11/gnomelibs
 .endif
 
 GTK_CONFIG?=		${X11BASE}/bin/gtk12-config

@@ -14,7 +14,7 @@ MASTER_SITES=	ftp://ftp.newton.cx/pub/balsa/ \
 MAINTAINER=	ports@FreeBSD.org
 
 RUN_DEPENDS=	panel:${PORTSDIR}/x11/gnomecore
-LIB_DEPENDS=	gnome.3:${PORTSDIR}/x11/gnomelibs \
+LIB_DEPENDS=	gnome.4:${PORTSDIR}/x11/gnomelibs \
 		PropList.2:${PORTSDIR}/devel/libPropList
 
 GTK_CONFIG?=	${X11BASE}/bin/gtk12-config

@@ -15,7 +15,7 @@ MASTER_SITES=		ftp://gnomeicu.gdev.net/pub/gnomeicu/ \
 
 MAINTAINER=		nectar@FreeBSD.org
 
-LIB_DEPENDS=		panel_applet.2:${PORTSDIR}/x11/gnomecore
+LIB_DEPENDS=		panel_applet.4:${PORTSDIR}/x11/gnomecore
 
 GTK_CONFIG?=		${X11BASE}/bin/gtk12-config
 

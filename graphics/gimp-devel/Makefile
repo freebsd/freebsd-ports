@@ -7,7 +7,7 @@
 
 PORTNAME=	gimp
 PORTVERSION=	1.1.23
-CATEGORIES=	graphics
+CATEGORIES=	graphics gnome
 MASTER_SITES=	ftp://ftp.gimp.org/pub/gimp/unstable/v${PORTVERSION}/ \
 		ftp://ftp.insync.net/pub/mirrors/ftp.gimp.org/gimp/unstable/v${PORTVERSION}/ \
 		ftp://ftp.ameth.org/pub/mirrors/ftp.gimp.org/gimp/unstable/v${PORTVERSION}/ \
@@ -66,7 +66,7 @@ pre-fetch:
 
 .if defined(WITH_GNOME) || (exists(${X11BASE}/bin/gnome-config) \
     && !defined(WITHOUT_GNOME))
-LIB_DEPENDS+=	gtkxmhtml.3:${PORTSDIR}/x11/gnomelibs
+LIB_DEPENDS+=	gtkxmhtml.4:${PORTSDIR}/x11/gnomelibs
 pre-install:
 	@${CAT} ${PLISTORIG} > ${PLIST}
 .else

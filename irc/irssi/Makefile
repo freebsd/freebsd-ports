@@ -7,7 +7,7 @@
 
 PORTNAME=	irssi
 PORTVERSION=	0.7.28-3
-CATEGORIES=	irc ipv6
+CATEGORIES=	irc ipv6 gnome
 MASTER_SITES=	http://xlife.dhs.org/irssi/files/
 
 MAINTAINER=	jim@FreeBSD.org
@@ -15,7 +15,7 @@ MAINTAINER=	jim@FreeBSD.org
 LIB_DEPENDS=	gtk12.2:${PORTSDIR}/x11-toolkits/gtk12 \
 		PropList.2:${PORTSDIR}/devel/libPropList
 .if defined(WITH_GNOME)
-LIB_DEPENDS+=	gnome.3:${PORTSDIR}/x11/gnomelibs
+LIB_DEPENDS+=	gnome.4:${PORTSDIR}/x11/gnomelibs
 .endif
 
 GTK_CONFIG?=	${X11BASE}/bin/gtk12-config

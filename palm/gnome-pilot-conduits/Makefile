@@ -14,7 +14,7 @@ DISTNAME=	gnome-pilot-conduits-${PORTVERSION}
 MAINTAINER=	ade@FreeBSD.org
 
 LIB_DEPENDS=	pisock.3:${PORTSDIR}/palm/pilot-link \
-		capplet.1:${PORTSDIR}/sysutils/gnomecontrolcenter \
+		capplet.4:${PORTSDIR}/sysutils/gnomecontrolcenter \
 		gpilotd.0:${PORTSDIR}/palm/gnomepilot
 
 GTK_CONFIG?=	${X11BASE}/bin/gtk12-config
