@@ -238,6 +238,9 @@ do-install:
 	  ${CP} ${CONFDIR}/${FILE}.dist ${CONFDIR}/${FILE} ; \
 	fi
 .endfor
+	@${CP} -p ${HCONFDIR}/mime_drivers.php ${HCONFDIR}/mime_drivers.php.beforeIMP
+	@${CP} -p ${HCONFDIR}/registry.php ${HCONFDIR}/registry.php.beforeIMP
+	@${CP} -p ${TURBADIR}/config/conf.php ${TURBADIR}/config/conf.php.beforeIMP
 	@${PERL} -pi -e "s:example.com:${HOSTNAME}:g" ${CONFDIR}/servers.php
 	@${PERL} -pi -e "s:%%LOCALBASE%%:${LOCALBASE}:g" ${CONFDIR}/mime_drivers.php
 	@${PERL} -pi -e "s:IMP_VERSION:IMP_VERSION . ' / ${SERVOS}':" \
@@ -300,6 +303,10 @@ do-install:
 .endfor
 	@${ECHO_MSG} "===> Documentation installed in ${DOCSDIR}."
 .endif
+# Prepare deinstallation
+	@${CP} -p ${HCONFDIR}/mime_drivers.php ${HCONFDIR}/mime_drivers.php.afterIMP
+	@${CP} -p ${HCONFDIR}/registry.php ${HCONFDIR}/registry.php.afterIMP
+	@${CP} -p ${TURBADIR}/config/conf.php ${TURBADIR}/config/conf.php.afterIMP
 
 post-install:
 	@${ECHO_MSG}
