@@ -25,11 +25,10 @@ STRIP=
 .endif
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/ines ${PREFIX}/bin
-	${INSTALL_PROGRAM} ${WRKSRC}/ines-debug ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/NES/ines ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/NES/ines-debug ${PREFIX}/bin
 	@${MKDIR} ${PREFIX}/share/ines
-	@${INSTALL_DATA} ${WRKSRC}/iNES.html ${PREFIX}/share/ines
-	@${INSTALL_DATA} ${WRKSRC}/headers.tgz ${PREFIX}/share/ines
-	@${INSTALL_DATA} ${WRKSRC}/CART.* ${PREFIX}/share/ines
+	@${INSTALL_DATA} ${WRKSRC}/NES/iNES.html ${PREFIX}/share/ines
+	@${INSTALL_DATA} ${WRKSRC}/NES/CART.NES ${PREFIX}/share/ines
 
 .include <bsd.port.post.mk>
