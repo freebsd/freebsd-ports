@@ -11,7 +11,7 @@ PORTREVISION=	2
 CATEGORIES=	astro
 MASTER_SITES=	http://www-personal.engin.umich.edu/~agorski/fooseti/
 
-MAINTAINER=	petef@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 
 LIB_DEPENDS=	intl.2:${PORTSDIR}/devel/gettext
 
