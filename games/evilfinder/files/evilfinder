@@ -1,0 +1,8 @@
+#!/bin/sh
+
+if [ "x$#" = "x0" ]; then
+	echo "Usage: $0 POTENTIALLY_EVIL_WORD"; exit
+else 
+QUERY_STRING_UNESCAPED="_=$*" %%PREFIX%%/bin/ef| \
+	%%LOCALBASE%%/bin/lynx -dump -force_html /dev/stdin
+fi
