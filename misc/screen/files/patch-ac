@@ -1,9 +1,9 @@
---- doc/screen.texinfo.orig	Tue Nov 21 03:03:15 1995
-+++ doc/screen.texinfo	Mon Jun 16 15:16:36 1997
-@@ -3,6 +3,9 @@
- @c vi:set wm=5
+--- doc/screen.texinfo.orig	Wed Feb 13 19:37:42 2002
++++ doc/screen.texinfo	Tue Feb 19 13:20:28 2002
+@@ -4,6 +4,9 @@
  @setfilename screen.info
  @settitle Screen User's Manual
+ @dircategory General Commands
 +@direntry
 +* Screen: (screen).             Full-screen window manager.
 +@end direntry

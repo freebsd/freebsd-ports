@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	screen
-PORTVERSION=    3.9.10
+PORTVERSION=    3.9.11
 CATEGORIES=	misc
 MASTER_SITES=	ftp://ftp.uni-erlangen.de/pub/utilities/screen/ \
 		${MASTER_SITE_GNU}
