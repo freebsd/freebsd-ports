@@ -1,0 +1,20 @@
+--- src/audio/Makefile.in.orig	Thu Oct  9 22:19:10 2003
++++ src/audio/Makefile.in	Thu Oct  9 22:19:24 2003
+@@ -148,7 +148,7 @@
+ 
+ lib_LTLIBRARIES = libgstaudio.la
+ 
+-bin_PROGRAMS = gsttest
++bin_PROGRAMS =
+ 
+ gsttest_SOURCES =  	gst-audio.h gst-audio.c 	test.c
+ 
+@@ -176,7 +176,7 @@
+ LIBS = @LIBS@
+ libgstaudio_la_DEPENDENCIES = 
+ libgstaudio_la_OBJECTS =  gst-audio.lo
+-bin_PROGRAMS =  gsttest$(EXEEXT)
++bin_PROGRAMS =
+ PROGRAMS =  $(bin_PROGRAMS)
+ 
+ gsttest_OBJECTS =  gst-audio.$(OBJEXT) test.$(OBJEXT)
