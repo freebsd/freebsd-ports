@@ -20,7 +20,7 @@ PKGMESSAGE=	${WRKDIR}/pkg-message
 PLIST_SUB+=	WEBFRONTDIR="${WEBFRONTDIR}"
 NO_BUILD=	yes
 USE_REINPLACE=	yes
-USE_PHP=	gd
+USE_PHP=	gd pcre xml
 WANT_PHP_MOD=	yes
 
 # The Ganglia Web Frontend port supports a number of options that may be
