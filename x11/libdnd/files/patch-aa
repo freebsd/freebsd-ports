@@ -1,17 +1,3 @@
---- Makefile.in.orig	Fri May 23 06:18:22 1997
-+++ Makefile.in	Fri Aug  8 20:11:37 1997
-@@ -29,9 +29,9 @@
- 
- install: libCpp libC
- 	install -d $(INC_DIR)
--	install DragAndDrop.h DragAndDropTypes.h $(INC_DIR)
-+	install -m 644 DragAndDrop.h DragAndDropTypes.h $(INC_DIR)
- 	install -d $(LIB_DIR)
--	install libDnd.a libDnd++.a $(LIB_DIR)
-+	install -m 644 libDnd.a libDnd++.a $(LIB_DIR)
- 
- libC: libDnd.a
- 
 --- DragAndDrop.c.orig	Mon Sep 15 21:02:20 1997
 +++ DragAndDrop.c	Mon Sep 15 21:03:53 1997
 @@ -22,7 +22,12 @@
