@@ -9,7 +9,7 @@
 DISTNAME=	icewm-0.9.49
 CATEGORIES=	x11-wm
 MASTER_SITES=	http://www.kiss.uni-lj.si/~k4fr0235/icewm/devel/ \
-		http://www.physik.TU-Berlin.DE/~ibex/ports/distfiles/icewm/
+		http://www.physik.TU-Berlin.DE/~ibex/ports/distfiles/
 EXTRACT_SUFX=	.src.tar.gz
 
 MAINTAINER=	nacai@iname.com
