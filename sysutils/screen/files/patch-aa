@@ -27,22 +27,3 @@
   # Better do this by hand. E.g. under RCS...
   #	cat ${srcdir}/terminfo/screencap >> /etc/termcap
   	@echo "termcap entry (${srcdir}/terminfo/screencap) should be installed manually."
-*** doc/Makefile.in.ORIG	Mon Jan 16 15:59:12 1995
---- doc/Makefile.in	Fri Feb 10 16:15:24 1995
-***************
-*** 32,38 ****
-  	  install-info --infodir=$(infodir) $$d/screen.info; \
-  	else true; fi; \
-  	fi
-! 	
-  uninstall:
-  	rm -f $(mandir)/man1/screen.1
-  	rm -f $(infodir)/screen.info*
---- 32,38 ----
-  	  install-info --infodir=$(infodir) $$d/screen.info; \
-  	else true; fi; \
-  	fi
-! 
-  uninstall:
-  	rm -f $(mandir)/man1/screen.1
-  	rm -f $(infodir)/screen.info*

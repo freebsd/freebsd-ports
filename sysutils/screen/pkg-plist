@@ -1,6 +1,6 @@
 @cwd /usr/local
 bin/screen
-bin/screen-3.6.2
+bin/screen-3.7.1
 man/man1/screen.1
 info/screen.info
 info/screen.info-1
