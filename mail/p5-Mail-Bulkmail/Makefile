@@ -6,17 +6,28 @@
 #
 
 PORTNAME=	Mail-Bulkmail
-PORTVERSION=	2.05
+PORTVERSION=	3.05
 CATEGORIES=	mail perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Mail
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Perl module for mailing lists
 
 PERL_CONFIGURE=	yes
 
 MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
-MAN3=		Mail::Bulkmail.3
+MAN3=		Mail::Bulkmail.3 Mail::Bulkmail::Dynamic.3 \
+		Mail::Bulkmail::Server.3 Mail::Bulkmail::Object.3 \
+		Mail::Bulkmail::DummyServer.3
+
+post-patch:
+	${PERL} -pi -e '$$_="" if /^use 5/;' \
+		-e '$$_="" if /use warnings/;' \
+		${WRKSRC}/Bulkmail.pm ${WRKSRC}/Bulkmail/Object.pm \
+		${WRKSRC}/Bulkmail/Dynamic.pm \
+		${WRKSRC}/Bulkmail/Server.pm \
+		${WRKSRC}/Bulkmail/DummyServer.pm
 
 .include <bsd.port.mk>
