@@ -1,0 +1,11 @@
+--- configure	Thu Nov 20 03:13:44 1997
++++ configure.n	Tue Dec  9 09:55:11 1997
+@@ -9706,7 +9706,7 @@
+ 
+     fi
+   if test "$with_database_berkdb" = "yes"; then
+-    for path in "db/db.h" "db.h"; do
++    for path in "/usr/include/db.h" "db/db.h" "db.h"; do
+ cat > conftest.$ac_ext <<EOF
+ #line 9712 "configure"
+ #include "confdefs.h"

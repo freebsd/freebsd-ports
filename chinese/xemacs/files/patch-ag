@@ -1,0 +1,21 @@
+This patch eliminates a harmless warning which began to be emitted
+under FreeBSD-current when the dynamic linker was revamped to allocate
+its memory out of the application's arena.
+
+--- src/unexfreebsd.c.orig	Wed Dec 18 14:44:07 1996
++++ src/unexfreebsd.c	Thu Dec 11 18:06:31 1997
+@@ -680,13 +680,7 @@
+ {
+       unsigned long current_sbrk = (unsigned long) sbrk (0);
+ 
+-      if (sbrk_of_0_at_unexec < current_sbrk)
+-	{
+-	  if (sbrk_of_0_at_unexec != 0)
+-	    fprintf (stderr, "Absurd new brk addr = 0x%x (current = 0x%x)\n", 
+-		     sbrk_of_0_at_unexec, current_sbrk);
+-	}
+-      else
++      if (sbrk_of_0_at_unexec > current_sbrk)
+         {
+           errno = 0;
+           if (brk ((caddr_t) sbrk_of_0_at_unexec))

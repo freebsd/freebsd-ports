@@ -1,0 +1,12 @@
+--- lisp/mule/mule-init.el.orig	Sun Oct 31 04:21:40 1999
++++ lisp/mule/mule-init.el	Sun Oct 31 04:22:28 1999
+@@ -85,7 +85,8 @@
+ 
+ (defvar auto-language-alist
+   '(("^ja" . "Japanese")
+-    ("^zh" . "Chinese")
++    ("^zh.*5$" . "Chinese-BIG5")
++    ("^zh" . "Chinese-GB")
+     ("^ko" . "Korean"))
+   "Alist of LANG patterns vs. corresponding language environment.
+ Each element looks like (REGEXP . LANGUAGE-ENVIRONMENT).

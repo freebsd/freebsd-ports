@@ -1,0 +1,8 @@
+---
+Now you have installed zh-XEmacs, do the following:
+cp /usr/local/lib/xemacs-20.4/etc/app-defaults/zh_TW.Big5/Emacs ~/Emacs
+cp /usr/local/lib/xemacs-20.4/etc/app-defaults/zh_TW.Big5/sample.emacs ~/.emacs
+
+To use XIM, execute xcin2.5 first, set BOTH LANG and LC_CTYPE to zh_TW.Big5,
+then execute xemacs. You should be able to input Chinese now.
+---
