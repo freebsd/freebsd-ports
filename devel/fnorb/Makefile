@@ -12,7 +12,7 @@ CATEGORIES=	devel python
 MASTER_SITES=	http://www.fnorb.org/download/ \
 		ftp://ftp.dstc.edu.au/DSTC/fnorb/
 
-MAINTAINER=	johann@egenetics.com
+MAINTAINER=	wjv@FreeBSD.org
 
 NO_CDROM=	Free for academic, research and non-commercial purposes only
 WRKSRC=		${WRKDIR}/Fnorb-${PORTVERSION}

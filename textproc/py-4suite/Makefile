@@ -12,7 +12,7 @@ MASTER_SITES=	ftp://ftp.4suite.org/pub/4Suite/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	4Suite-${PORTVERSION}
 
-MAINTAINER=	johann@egenetics.com
+MAINTAINER=	wjv@FreeBSD.org
 
 BUILD_DEPENDS=	${PYDISTUTILS} \
 		${PYXML}

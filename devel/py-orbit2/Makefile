@@ -13,7 +13,7 @@ MASTER_SITE_SUBDIR=	orbit-python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	orbit-python-${PORTVERSION}
 
-MAINTAINER=	johann@egenetics.com
+MAINTAINER=	wjv@FreeBSD.org
 
 LIB_DEPENDS=	ORBit.2:${PORTSDIR}/devel/ORBit
 
