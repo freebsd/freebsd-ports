@@ -6,7 +6,8 @@
 #
 
 PORTNAME=	criticalmass
-PORTVERSION=	0.99
+PORTVERSION=	0.9.10
+PORTEPOCH=	1
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -22,11 +23,15 @@ USE_SDL=	image mixer sdl
 USE_GL=		yes
 USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CPPFLAGS="-I${X11BASE}/include" \
-		LDFLAGS="-L${X11BASE}/lib"
+CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS=	--disable-optimize
 
 MAN6=		critter.6
+PLIST_FILES=	bin/Packer \
+		bin/critter \
+		share/Critical_Mass/lg-criti.xm \
+		share/Critical_Mass/resource.dat
+PLIST_DIRS=	share/Critical_Mass
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|sdl-config|${SDL_CONFIG:T}|g ; \
