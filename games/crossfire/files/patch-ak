@@ -1,0 +1,31 @@
+Date: Sun, 3 Nov 96 08:03:51 EST
+From: "Brian Thomas" <thomas@astro.psu.edu>
+Message-Id: <9611031303.AA04680@zaphod.astro.psu.edu>
+Subject: CF: skill status upon login
+
+	It is possible right now for a player to log 
+	back into a game and have 2 skills readied
+	(applied!). This can confuse the code, and
+	cause problems for a while. This patch 
+	fixes that.
+
+					-b.t.
+
+*** server/skill_util.c.orig	Tue Oct 29 05:57:46 1996
+--- server/skill_util.c	Sun Nov  3 07:57:20 1996
+***************
+*** 877,886 ****
+--- 880,891 ----
+  	      return 0;
+  	   } 
+    }
+    /* Ok, create linked list and link the associated skills to exp objects */
+     for(i=0;i<sk_index;i++) {
++         /* for startup, lets unapply all skills */
++         if(QUERY_FLAG(sk_ob[i],FLAG_APPLIED)) CLEAR_FLAG(sk_ob[i],FLAG_APPLIED);
+  #ifdef LINKED_SKILL_LIST
+    	objectlink *obl;
+  	obl = (objectlink *) malloc(sizeof(objectlink));
+  	obl->ob=sk_ob[i];
+  	obl->id=sk_ob[i]->stats.sp; 
+
