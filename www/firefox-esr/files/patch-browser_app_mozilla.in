@@ -1,5 +1,5 @@
 --- browser/app/mozilla.in.orig	Tue Oct 26 11:26:11 2004
-+++ browser/app/mozilla.in	Mon Feb 28 23:32:14 2005
++++ browser/app/mozilla.in	Wed Mar 23 20:43:07 2005
 @@ -29,51 +29,83 @@
  ## the mozilla-bin binary to work.
  ##
@@ -123,7 +123,7 @@
  
  # Use run-mozilla.sh in the current dir if it exists
  # If not, then start resolving symlinks until we find run-mozilla.sh
-@@ -82,149 +114,217 @@
+@@ -82,149 +114,221 @@
  curdir=`dirname "$progname"`
  progbase=`basename "$progname"`
  run_moz="$curdir/run-mozilla.sh"
@@ -421,8 +421,12 @@
 +    # FIXME problems with freedesktop StartupNotify
 +    if [ -n "${debugging}" ]; then
 +	echo "${run_moz} ${script_args} ${MOZ_CLIENT_PROGRAM} ${_remote_cmd}"
++	${run_moz} ${script_args} ${MOZ_CLIENT_PROGRAM} ${_remote_cmd} &&
++       	    exit 0
++    else
++	${run_moz} ${script_args} ${MOZ_CLIENT_PROGRAM} ${_remote_cmd} \
++	    >/dev/null 2>&1 && exit 0
 +    fi
-+    ${run_moz} ${script_args} ${MOZ_CLIENT_PROGRAM} ${_remote_cmd} && exit 0
 +fi
 +
 +# fallback to direct invocation

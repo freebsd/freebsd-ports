@@ -6,13 +6,12 @@
 #
 
 PORTNAME=	firefox
-PORTVERSION=	1.0.1
-PORTREVISION=	3
+PORTVERSION=	1.0.2
 PORTEPOCH=	1
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_MOZILLA}
-MASTER_SITE_SUBDIR=	${PORTNAME}/releases/1.0.1/source
-DISTNAME=	${PORTNAME}-1.0.1-source
+MASTER_SITE_SUBDIR=	${PORTNAME}/releases/1.0.2/source
+DISTNAME=	${PORTNAME}-${PORTVERSION}-source
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Web browser based on the browser portion of Mozilla
@@ -227,8 +226,8 @@ pre-install:
 	${ECHO_CMD} @dirrm include/${FIREFOX} >> ${PLIST}
 	${ECHO_CMD} lib/browser_plugins/.${PORTNAME}.keep >> ${PLIST}
 	${ECHO_CMD} "@unexec ${RMDIR} %D/lib/browser_plugins 2>/dev/null || ${TRUE}" >> ${PLIST}
-	${ECHO_CMD} "@exec update-desktop-database > /dev/null || ${TRUE}" >> ${PLIST}
-	${ECHO_CMD} "@unexec update-desktop-database > /dev/null || ${TRUE}" >> ${PLIST}
+	${ECHO_CMD} "@exec ${LOCALBASE}/bin/update-desktop-database > /dev/null || ${TRUE}" >> ${PLIST}
+	${ECHO_CMD} "@unexec ${LOCALBASE}/bin/update-desktop-database > /dev/null || ${TRUE}" >> ${PLIST}
 
 do-install:
 	${MKDIR} ${PREFIX}/lib/${FIREFOX}
