@@ -92,7 +92,9 @@ include/efs_error.h
 lib/bonobo/monikers/libmoniker_std.a
 lib/bonobo/monikers/libmoniker_std.so
 lib/bonobo/monikers/libmoniker_std.so.0
+lib/bonobo/plugin/libstorage_efs.a
 lib/bonobo/plugin/libstorage_efs.so
+lib/bonobo/plugin/libstorage_fs.a
 lib/bonobo/plugin/libstorage_fs.so
 lib/libbonobo-print.a
 lib/libbonobo-print.so
