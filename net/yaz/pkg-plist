@@ -50,6 +50,7 @@ include/yaz/z-estask.h
 include/yaz/z-exp.h
 include/yaz/z-grs.h
 include/yaz/z-mterm2.h
+include/yaz/z-oclcui.h
 include/yaz/z-opac.h
 include/yaz/z-rrf1.h
 include/yaz/z-rrf2.h
@@ -150,6 +151,7 @@ share/yaz/z39.50/datetime.asn
 share/yaz/z39.50/esadmin.asn
 share/yaz/z39.50/esupdate.asn
 share/yaz/z39.50/mterm2.asn
+share/yaz/z39.50/oclcui.asn
 share/yaz/z39.50/univres.asn
 share/yaz/z39.50/z.tcl
 share/yaz/z39.50/z3950v3.asn
