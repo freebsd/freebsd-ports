@@ -5,7 +5,7 @@
 # configure - zebra compile time option configurator
 # by Andreas Klemm <andreas@FreeBSD.org>
 
-if [ "$BATCH" != "yes" -o "$BATCH" != "YES" ]; then
+if [ "$BATCH" != "yes" -a "$BATCH" != "YES" ]; then
 
 #
 # configure - zebra compile time options
