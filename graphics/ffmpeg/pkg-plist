@@ -1,6 +1,10 @@
 bin/ffmpeg
 bin/ffserver
 etc/ffserver.conf.sample
+include/libavcodec/avcodec.h
+include/libavcodec/dsputil.h
+lib/libav.a
+lib/libavcodec.a
 %%PORTDOCS%%share/doc/ffmpeg/FAQ
 %%PORTDOCS%%share/doc/ffmpeg/README
 %%PORTDOCS%%share/doc/ffmpeg/README.dev
