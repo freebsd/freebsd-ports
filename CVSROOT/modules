@@ -5332,6 +5332,7 @@ py-xlib		ports/x11-toolkits/py-xlib
 py-xml		ports/textproc/py-xml
 py-xmlrpc	ports/net/py-xmlrpc
 py-xmlrpclib	ports/net/py-xmlrpclib
+py-xmltools	ports/textproc/py-xmltools
 py-xoltar-toolkit	ports/devel/py-xoltar-toolkit
 py-zsi		ports/net/py-zsi
 py2html		ports/textproc/py2html
