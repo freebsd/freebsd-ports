@@ -3,10 +3,11 @@
 # Date created:		4 December 1996
 # Whom:			Kiriyama Kazuhiko <kiri@kiri.toba-cmt.ac.jp>
 #
-# $Id: Makefile,v 1.11 1997/08/24 10:54:23 max Exp $
+# $Id: Makefile,v 1.12 1997/09/09 08:38:50 asami Exp $
 #
 
 DISTNAME=	jp-man-1.1c
+PKGNAME=	ja-man-1.1c
 CATEGORIES=	japanese
 MASTER_SITES=	ftp://jaz.jp.freebsd.org/pub/FreeBSD-jp/man-jp/ \
 		ftp://ports.jp.freebsd.org/pub/FreeBSD-jp/ports-jp/LOCAL_PORTS/
