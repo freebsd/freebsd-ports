@@ -1,20 +1,11 @@
---- Makefile.in.orig	Tue Feb  2 08:05:00 1999
-+++ Makefile.in	Thu Feb 18 17:14:57 1999
-@@ -161,7 +161,7 @@
+--- Makefile.in.orig	Fri Jul  9 00:54:02 1999
++++ Makefile.in	Mon Jul 12 13:21:25 1999
+@@ -163,7 +163,7 @@
+ EXTRA_DIST =  	printConf.sh.in 		gnome-print.spec	
  
- EXTRA_DIST = printConf.sh.in gnome-font-install.in
  
 -confexecdir = $(libdir)
 +confexecdir = $(sysconfdir)
  confexec_DATA = printConf.sh
- ACLOCAL_M4 = $(top_srcdir)/aclocal.m4
- mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs
-@@ -562,7 +562,7 @@
- uninstall-am: uninstall-libLTLIBRARIES uninstall-confexecDATA \
- 		uninstall-libgnomeprintincHEADERS
- uninstall: uninstall-recursive
--all-am: Makefile $(LTLIBRARIES) $(PROGRAMS) $(SCRIPTS) $(DATA) \
-+all-am: Makefile $(LTLIBRARIES) $(SCRIPTS) $(DATA) \
- 		$(HEADERS) config.h
- all-redirect: all-recursive-am
- install-strip:
+ 
+ gnome_font_install_SOURCES = gnome-font-install.c
