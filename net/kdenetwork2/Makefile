@@ -17,7 +17,6 @@ MAINTAINER?=	kde@FreeBSD.org
 
 BUILD_DEPENDS=	autoconf213:${PORTSDIR}/devel/autoconf213 \
 		automake14:${PORTSDIR}/devel/automake14
-LIB_DEPENDS=	uu.2:${PORTSDIR}/converters/uulib
 
 USE_KDELIBS_VER=2
 USE_BZIP2=	yes
