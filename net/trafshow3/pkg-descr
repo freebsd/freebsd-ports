@@ -8,5 +8,8 @@ added to your kernel config file (/sys/i386/conf/<YourMachine>):
 
 pseudo-device   bpfilter        4       # Berkeley packet filter
 
-The number of devices determines the maximum number of simultaneous
-BPF clients programs runnable. See /sys/i386/conf/LINT for details.
+The number after bpfilter is the number of interfaces that can be
+examined simultaneously. See section 5.8.3 of Handbook for details.
+
+- Igor
+igor@zynaps.ru
