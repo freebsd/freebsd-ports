@@ -6,13 +6,12 @@
 #
 
 PORTNAME=	gogo
-PORTVERSION=	3.11
-PORTREVISION=	1
+PORTVERSION=	3.13
 CATEGORIES=	audio
-MASTER_SITES=	http://homepage1.nifty.com/herumi/soft/petit/ \
+MASTER_SITES=	http://homepage2.nifty.com/kei-i/petit/ \
 		ftp://rusunix.org/pub/FreeBSD/distfiles/
 PKGNAMESUFFIX=	petit
-DISTNAME=	petit311p1
+DISTNAME=	petit313
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	aquatique-ports@rambler.ru
@@ -20,14 +19,16 @@ COMMENT=	New variant of well-known GOGO-no-coda mp3 encoder
 
 BUILD_DEPENDS=	nasm:${PORTSDIR}/devel/nasm
 
-WRKSRC=		${WRKDIR}/petit
+WRKSRC=		${WRKDIR}/${DISTNAME}/FreeBSD
 
-USE_GMAKE=	yes
-GNU_CONFIGURE=	yes
+USE_REINPLACE=	yes
 CFLAGS+=	${PTHREAD_CFLAGS}
-CONFIGURE_ENV+=	LIBS="${PTHREAD_LIBS}"
 
 ONLY_FOR_ARCHS=	i386
 PLIST_FILES=	bin/gogo-petit
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|-lc_r|${PTHREAD_LIBS}| ; \
+	s|/usr/local/bin|${PREFIX}/bin|g' ${WRKSRC}/Makefile || @${ECHO} yo
 
 .include <bsd.port.mk>

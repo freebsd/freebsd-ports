@@ -1,0 +1,21 @@
+--- Makefile.orig	Tue Jul  6 15:16:18 2004
++++ Makefile	Tue Jul  6 15:25:20 2004
+@@ -7,7 +7,7 @@
+ #
+ #######################################################
+ 
+-TARGET = gogo
++TARGET = gogo-petit
+ 
+ #######################################################
+ 
+@@ -150,7 +150,8 @@
+ #global.h : common.h gogo.h l3side.h
+ #l3side.h: encoder.h machine.h
+ 
+-../engine/i386/global.cfg : $(MAKECFG) global.h
++global.cfg : $(MAKECFG) global.h
++	gcc -pipe -I../engine ../engine/i386/makecfg.c -o $(MAKECFG)
+ 	./$(MAKECFG) > ../engine/i386/global.cfg
+ 
+ thread.o :	thread.c       config.h global.h common.h gogo.h l3side.h encoder.h machine.h thread.h ../pthread/thread.c
