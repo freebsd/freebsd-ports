@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	freepwing
-PORTVERSION=	1.4.2
+PORTVERSION=	1.4.3
 CATEGORIES=	japanese textproc
 MASTER_SITES=	ftp://ftp.sra.co.jp/pub/misc/freepwing/ \
 		ftp://ftp.sra.co.jp/pub/misc/freepwing/old/
