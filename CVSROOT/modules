@@ -5072,6 +5072,7 @@ procmap		ports/sysutils/procmap
 prodosemu	ports/emulators/prodosemu
 proftpd		ports/ftp/proftpd
 profxp		ports/ftp/profxp
+proj		ports/graphics/proj
 projectcenter.app	ports/devel/projectcenter.app
 projectionlib	ports/misc/projectionlib
 prom-mew	ports/mail/prom-mew
