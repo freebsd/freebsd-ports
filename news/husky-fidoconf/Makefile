@@ -16,6 +16,7 @@ MAINTAINER=	fjoe@FreeBSD.org
 LIB_DEPENDS=	smapi.2:${PORTSDIR}/news/husky-smapi
 
 INSTALLS_SHLIB=	yes
+NO_FILTER_SHLIBS=	yes
 INSTALL_TARGET=	install install-man
 
 MAN1=		dumpfcfg.1 fconf2.1 linkedto.1 tparser.1
