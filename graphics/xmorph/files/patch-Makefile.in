@@ -1,0 +1,15 @@
+--- Makefile.in.orig	Tue Jan 13 00:29:21 2004
++++ Makefile.in	Sun Mar 14 02:13:28 2004
+@@ -763,12 +763,6 @@
+ 	    fi \
+ 	  done \
+ 	fi 
+-	cd example; for i in * ;\
+-	 	do $(INSTALL) -d $(DESTDIR)$(pkgdatadir)/example/$$i ;\
+-		for j in $$i/* ;\
+-		do  $(INSTALL_DATA) $$j $(DESTDIR)$(pkgdatadir)/example/$$i;\
+-		done;\
+-	done
+ 
+ dist-hook:
+ 	if test -d pixmaps; then \
