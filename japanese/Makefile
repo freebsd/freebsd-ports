@@ -232,6 +232,7 @@
     SUBDIR += pips780
     SUBDIR += pips800
     SUBDIR += pips820_3300
+    SUBDIR += pips880
     SUBDIR += pips900
     SUBDIR += plain2
     SUBDIR += plan
