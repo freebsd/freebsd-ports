@@ -1,0 +1,15 @@
+a package management framework for the Ruby programming language
+An application or library is packaged into a gem, which is 
+a single installation unit. 
+RubyGems entirely manages its own filesystem space, rather 
+than installing files into the "usual" places. This enables 
+greater functionality and reliability. 
+
+Using RubyGems, you can: 
+- download and install Ruby libraries easily 
+- not worry about libraries A and B depending on 
+  different versions of library C 
+- easily remove libraries you no longer use 
+- have power and control over your Ruby platform! 
+
+WWW: http://rubygems.rubyforge.org/wiki/wiki.pl
