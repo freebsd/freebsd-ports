@@ -31,8 +31,6 @@ CONFIGURE_ARGS=	--enable-nls \
 
 CONFLICTS=	xchat-*
 
-.include <bsd.port.pre.mk>
-
 .if defined(WITH_SOCKS)
 BUILD_DEPENDS+=	${LOCALBASE}/lib/libsocks5.a:${PORTSDIR}/net/socks5
 CONFIGURE_ARGS+=	--enable-socks
@@ -50,7 +48,7 @@ PLIST_SUB+=		PYTHON="@comment "
 .endif
 
 .if defined(WITH_TCL)
-LIB_DEPENDS=	tcl83.1:${PORTSDIR}/lang/tcl83
+LIB_DEPENDS+=	tcl83.1:${PORTSDIR}/lang/tcl83
 CONFIGURE_ARGS+=--enable-tcl=${LOCALBASE}/lib/tcl8.3
 CONFIGURE_ENV=  CPPFLAGS="-I${LOCALBASE}/include ${PTHREAD_CFLAGS} \
 		-I${LOCALBASE}/include/tcl8.3" \
@@ -81,4 +79,4 @@ post-patch:
 	@${REINPLACE_CMD} -E -e 's|PY_LIBS=.*|PY_LIBS="-L\$$PY_EXEC_PREFIX/lib/python\$$PY_VER/config -lpython\$$PY_VER ${PTHREAD_LIBS} -lutil"|' \
 		${WRKSRC}/configure
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
