@@ -1,0 +1,6 @@
+bin/par2
+bin/par2verify
+bin/par2create
+bin/par2repair
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
