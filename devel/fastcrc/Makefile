@@ -3,7 +3,7 @@
 # Date created:				27 April 1999
 # Whom:					G. Adam Stanislav <adam@whizkidtech.net>
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1999/05/01 03:35:55 steve Exp $
 #
 
 DISTNAME=	fastcrc-1.0
@@ -13,6 +13,8 @@ MASTER_SITES=	http://www.whizkidtech.net/fports/
 MAINTAINER=	adam@whizkidtech.net
 
 BUILD_DEPENDS=	nasm:${PORTSDIR}/devel/nasm:install
+
+ONLY_FOR_ARCHS=	i386
 
 do-install:
 	${INSTALL_DATA} ${WRKSRC}/libfcrc.so.1 ${PREFIX}/lib
