@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	openmcu
-PORTVERSION=	1.0.19
+PORTVERSION=	1.1.5
 CATEGORIES=	net
 MASTER_SITES=	http://www.openh323.org/bin/ \
 		http://www.de.openh323.org/bin/ \
