@@ -72,7 +72,9 @@ libexec/sawfish/%%VERSION%%/%%GNUHOST%%/x.so
 %%GNOME:%%share/gnome/pixmaps/sawfish-tooltips.png
 %%GNOME:%%share/gnome/pixmaps/sawfish-workspaces.png
 %%GNOME:%%share/gnome/wm-properties/Sawfish.desktop
+share/locale/az/LC_MESSAGES/sawfish.mo
 share/locale/ca/LC_MESSAGES/sawfish.mo
+share/locale/cs/LC_MESSAGES/sawfish.mo
 share/locale/da/LC_MESSAGES/sawfish.mo
 share/locale/de/LC_MESSAGES/sawfish.mo
 share/locale/el/LC_MESSAGES/sawfish.mo
@@ -435,6 +437,7 @@ share/sawfish/%%VERSION%%/sounds/slide.wav
 share/sawfish/%%VERSION%%/sounds/toggled.wav
 %%GNOME:%%share/sawfish/%%VERSION%%/themer.glade
 share/sawfish/%%VERSION%%/themes/Crux/README
+share/sawfish/%%VERSION%%/themes/Crux/README.gl
 share/sawfish/%%VERSION%%/themes/Crux/active:bottom-left-border.png
 share/sawfish/%%VERSION%%/themes/Crux/active:bottom-left-corner.png
 share/sawfish/%%VERSION%%/themes/Crux/active:bottom-right-border.png
