@@ -32,10 +32,7 @@ USE_GCC=3.4
 
 # only affects for lapack sub project
 .if defined(WITH_OPTIMIZED_FLAGS)
-FFLAGS+=-pipe -O3 -ffast-math -finline-functions -fstrength-reduce -funroll-loops -fexpensive-optimizations
-.if (${MACHINE_ARCH} == "i386" && !${MACHINE_ARCH} == "amd64" )
-FFLAGS+=	-mfancy-math-387 -mpreferred-stack-boundary=3 -malign-double
-.endif # i386
+FFLAGS+=-pipe -O3 -ffast-math
 .endif
 
 post-patch:
