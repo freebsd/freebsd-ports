@@ -12,7 +12,7 @@ MASTER_SITES=	http://www.padl.com/download/ \
 		ftp://ftp.padl.com/pub/
 DISTNAME=	pam_ldap-${PORTVERSION:S/.//g}
 
-MAINTAINER=	marcus@marcuscom.com
+MAINTAINER=	marcus@FreeBSD.org
 
 .include <bsd.port.pre.mk>
 

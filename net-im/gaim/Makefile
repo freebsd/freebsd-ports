@@ -12,7 +12,7 @@ MASTER_SITES=	ftp://ftp.marko.net/pub/gaim/ \
 		${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER?=	marcus@marcuscom.com
+MAINTAINER?=	marcus@FreeBSD.org
 
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes
