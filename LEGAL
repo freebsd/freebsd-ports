@@ -123,6 +123,7 @@ fasta2*			ports/biology/fasta	May not be sold or incorporated
 						into a commercial product
 fasta3*			ports/biology/fasta3	May not be sold or incorporated
 						into a commercial product
+flash_linux*		ports/www/linux-flashplugin	License forbids redistribution
 fmsx-*			ports/emulators/fmsx	Unclear legal status of
 						distributed ROMs.
 FreeFem++*		ports/math/freefem++	No resale, not for commercial usage
@@ -161,6 +162,7 @@ homard-*		ports/french/homard	Only free for use in conjunction with
 						french/aster. For any other purpose,
 						you have to acquire a license
 hptools*		ports/devel/hptools	Not made or distributed for resale
+install_flash_player_6_linux*	ports/www/linux-flashplugin6	License forbids redistribution
 invitation-to-ruby	ports/devel/invitation_to_ruby	no commercial use
 j2sdkee-*		ports/java/j2sdkee	For development and testing use
 						only; redistribution prohibited
@@ -191,8 +193,6 @@ linux_devtools		ports/devel/linux_devtools	GPL binaries
 linux-divx4linux	ports/multimedia/linux-divx4linux	Restrictive copyright
 linux-eagle		ports/cad/linux-eagle		Non-commercial usage only &
 			ports/german/linux-eagle	Sale for profit not permitted
-linux-flashplugin*	ports/www/linux-flashplugin	License forbids redistribution
-			ports/www/linux-flashplugin6
 linux-gtk2		ports/x11-toolkits/linux-gtk2	LGPL binary, no source
 linux-ibm-*		ports/java/linux-ibm-jdk13	Redistribution of repackaged
 							binaries not permitted
