@@ -1,0 +1,91 @@
+--- Demo/Makefile	Fri Aug 18 20:08:14 2000
++++ Demo/Makefile.new	Fri Oct 27 20:46:41 2000
+@@ -32,19 +32,14 @@
+ 
+ # DO NOT DELETE THIS LINE -- make depend depends on it.
+ 
+-unadf.o: /usr/include/stdlib.h
+ # /usr/include/stdlib.h includes:
+ #	features.h
+ #	stddef.h
+ #	sys/types.h
+ #	alloca.h
+-unadf.o: /usr/include/features.h
+ # /usr/include/features.h includes:
+ #	sys/cdefs.h
+ #	gnu/stubs.h
+-unadf.o: /usr/include/sys/cdefs.h /usr/include/gnu/stubs.h
+-unadf.o: /usr/lib/gcc-lib/i386-redhat-linux/egcs-2.91.66/include/stddef.h
+-unadf.o: /usr/include/sys/types.h
+ # /usr/include/sys/types.h includes:
+ #	features.h
+ #	bits/types.h
+@@ -53,54 +48,41 @@
+ #	endian.h
+ #	sys/select.h
+ #	sys/sysmacros.h
+-unadf.o: /usr/include/bits/types.h
+ # /usr/include/bits/types.h includes:
+ #	features.h
+ #	stddef.h
+-unadf.o: /usr/include/time.h
+ # /usr/include/time.h includes:
+ #	bits/types.h
+-unadf.o: /usr/include/endian.h
+ # /usr/include/endian.h includes:
+ #	features.h
+ #	bits/endian.h
+-unadf.o: /usr/include/bits/endian.h /usr/include/sys/select.h
+ # /usr/include/sys/select.h includes:
+ #	features.h
+ #	bits/types.h
+ #	bits/select.h
+ #	bits/sigset.h
+ #	time.h
+-unadf.o: /usr/include/bits/select.h /usr/include/bits/sigset.h
+-unadf.o: /usr/include/sys/sysmacros.h /usr/include/alloca.h
+ # /usr/include/alloca.h includes:
+ #	features.h
+ #	stddef.h
+-unadf.o: /usr/include/errno.h
+ # /usr/include/errno.h includes:
+ #	features.h
+ #	bits/errno.h
+-unadf.o: /usr/include/bits/errno.h
+ # /usr/include/bits/errno.h includes:
+ #	linux/errno.h
+-unadf.o: /usr/include/linux/errno.h
+ # /usr/include/linux/errno.h includes:
+ #	asm/errno.h
+-unadf.o: /usr/include/asm/errno.h /usr/include/string.h
+ # /usr/include/string.h includes:
+ #	features.h
+ #	stddef.h
+-unadf.o: ../Lib/adflib.h
+ # ../Lib/adflib.h includes:
+ #	adf_defs.h
+ #	adf_str.h
+-unadf.o: ../Lib/adf_defs.h ../Lib/adf_str.h
+ # ../Lib/adf_str.h includes:
+ #	stdio.h
+ #	adf_defs.h
+ #	adf_blk.h
+ #	adf_err.h
+-unadf.o: /usr/include/stdio.h
+ # /usr/include/stdio.h includes:
+ #	features.h
+ #	stddef.h
+@@ -108,13 +90,9 @@
+ #	bits/types.h
+ #	libio.h
+ #	bits/stdio_lim.h
+-unadf.o: /usr/lib/gcc-lib/i386-redhat-linux/egcs-2.91.66/include/stdarg.h
+-unadf.o: /usr/include/libio.h
+ # /usr/include/libio.h includes:
+ #	_G_config.h
+ #	stdarg.h
+-unadf.o: /usr/include/_G_config.h
+ # /usr/include/_G_config.h includes:
+ #	bits/types.h
+ #	stddef.h
+-unadf.o: /usr/include/bits/stdio_lim.h ../Lib/adf_blk.h ../Lib/adf_err.h

@@ -26,6 +26,7 @@
     SUBDIR += rar
     SUBDIR += ruby-zlib
     SUBDIR += unace
+    SUBDIR += unadf
     SUBDIR += unarj
     SUBDIR += undms
     SUBDIR += unlzx
