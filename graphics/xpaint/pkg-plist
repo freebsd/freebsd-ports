@@ -1,6 +1,7 @@
 @comment $FreeBSD$
 bin/xpaint
 lib/X11/app-defaults/XPaint
+lib/X11/app-defaults/XPaint_fr
 lib/X11/xpaint/filters/leftright.c
 lib/X11/xpaint/filters/mapping.c
 lib/X11/xpaint/filters/merge.c
