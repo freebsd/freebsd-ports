@@ -7,7 +7,7 @@
 
 PORTNAME=	xp
 PORTVERSION=	0.5
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	textproc java
 MASTER_SITES=	ftp://ftp.jclark.com/pub/xml/
 DISTNAME=	${PORTNAME}
@@ -26,13 +26,12 @@ USE_ZIP=	yes
 PORTDOCS=	api copying.txt index.html
 .endif
 JARFILE=	${PORTNAME}.jar
-DESTJARFILE=	${PKGNAME}.jar
-PLIST_FILES+=	${JAVAJARDIR:S,^${PREFIX}/,,}/${DESTJARFILE}
+PLIST_FILES+=	%%JAVAJARDIR%%/${JARFILE}
 
 do-install:
-	@${ECHO_CMD} -n ">> Installing JAR as ${JAVAJARDIR}/${DESTJARFILE}..."
+	@${ECHO_CMD} -n ">> Installing JAR as ${JAVAJARDIR}/${JARFILE}..."
 	@${MKDIR} ${JAVAJARDIR}
-	@${INSTALL_DATA} ${WRKDIR}/xp.jar ${JAVAJARDIR}/${DESTJARFILE}
+	@${INSTALL_DATA} ${WRKDIR}/${JARFILE} ${JAVAJARDIR}/
 	@${ECHO_CMD} " [ DONE ]"
 .if !defined(NOPORTDOCS)
 	@${ECHO_CMD} -n ">> Installing documentation in ${DOCSDIR}..."
