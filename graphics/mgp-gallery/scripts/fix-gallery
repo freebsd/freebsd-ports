@@ -1,0 +1,11 @@
+#!/bin/sh
+INSTALL="$1"
+TARGETDIR="$2"
+shift 2
+while test $# -gt 0; do
+    input=$1
+    shift
+    sed -e "1d" -e "/^%nodefault/q" <$input >.$input
+    $INSTALL .$input $TARGETDIR/$input
+    rm -f .$input
+done
