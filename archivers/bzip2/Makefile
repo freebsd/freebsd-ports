@@ -1,5 +1,6 @@
 # ex:ts=8
 # Ports collection makefile for:  bzip2
+# Version required: 0.0
 # Date created:			  19 Nov 1997
 # Whom:				  Thomas Gellekum <tg@FreeBSD.org>
 #

@@ -1,5 +1,6 @@
 # ex:ts=8
 # Ports collection makefile for:  netscape (full communicator version)
+# Version required: 0.0
 # Date created:			  14 Feb 1998
 # Whom:				  obrien@cs.ucdavis.edu
 #

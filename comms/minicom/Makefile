@@ -1,5 +1,6 @@
 # ex:ts=8
 # Ports collection makefile for:  minicom
+# Version required: 0.0
 # Date created:			  Fri Dec 01, 1995
 # Whom:				  obrien@cs.ucdavis.edu
 #

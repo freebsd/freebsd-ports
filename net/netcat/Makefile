@@ -1,5 +1,6 @@
 # ex:ts=8
 # Ports collection makefile for:  netcat
+# Version required: 0.0
 # Date created:			  Thur Nov 21, 1996
 # Whom:				  David O'Brien (obrien@cs.ucdavis.edu)
 #

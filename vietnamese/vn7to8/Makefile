@@ -1,5 +1,6 @@
 # ex:ts=8
 # Ports collection makefile for:    vn7to8
+# Version required: 0.0
 # Date created:         Tue Dec 3, 1996
 # Whom:                 David O'Brien (obrien@cs.ucdavis.edu)
 #

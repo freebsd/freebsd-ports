@@ -1,5 +1,6 @@
 # ex:ts=8
 # Ports collection makefile for:  mawk
+# Version required: 0.0
 # Date created:			  24 Dec 1998
 # Whom:				  Pedro F. Giffuni <giffunip@asme.org>
 #

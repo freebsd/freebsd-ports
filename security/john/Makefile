@@ -1,5 +1,6 @@
 # ex:ts=8
 # Ports collection makefile for:  ufcjohn
+# Version required: 0.0
 # Date created:			  Sun Mar 09, 1997
 # Whom:				  David O'Brien (obrien@FreeBSD.org)
 #

@@ -1,5 +1,6 @@
 # ex:ts=8
 # Ports collection makefile for:  cwish
+# Version required: 0.0
 # Date created:			  Thur Sept 25, 1998
 # Whom:				  David O'Brien (obrien@NUXI.com)
 #

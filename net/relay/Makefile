@@ -1,5 +1,6 @@
 # ex:ts=8
 # Ports collection makefile for:  relay
+# Version required: 0.0
 # Date created:			  Mon Dec 23, 1998
 # Whom:				  David O'Brien (obrien@NUXI.com)
 #

@@ -1,5 +1,6 @@
 # ex:ts=8
 # Ports collection makefile for:  xosview
+# Version required: 0.0
 # Date created:			  19 Nov 1997
 # Whom:				  Brian Handy <handy@physics.montana.edu>
 #
