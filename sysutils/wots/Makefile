@@ -1,6 +1,6 @@
 # New ports collection makefile for:	wots
 # Date created: 		26-Nov-2001
-# Whom:				Bruce M. Simpson <bruce.m.simpson@hushmail.com>
+# Whom:				Bruce M Simpson <bms@spc.org>
 #
 # $FreeBSD$
 #
@@ -10,7 +10,7 @@ PORTVERSION=	1.22
 CATEGORIES=	sysutils security
 MASTER_SITES=	http://www.hpcc.uh.edu/~tonyc/tools/
 
-MAINTAINER=	bruce.m.simpson@hushmail.com
+MAINTAINER=	bms@spc.org
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/Mail/Send.pm:${PORTSDIR}/mail/p5-Mail-Tools \
 		${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/Term/ANSIColor.pm:${PORTSDIR}/devel/p5-Term-ANSIColor
