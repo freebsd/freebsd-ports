@@ -80,3 +80,12 @@ lib/libdf.so.1
 lib/libmfhdf.a
 lib/libmfhdf.so
 lib/libmfhdf.so.2
+%%PORTDOCS%%%%DOCSDIR%%/HDF41r5_SpecDG.pdf
+%%PORTDOCS%%%%DOCSDIR%%/HDF42r0_RefMan.pdf
+%%PORTDOCS%%%%DOCSDIR%%/HDF42r0_UserGd.pdf
+%%PORTDOCS%%%%DOCSDIR%%/HISTORY.txt
+%%PORTDOCS%%%%DOCSDIR%%/RELEASE.txt
+%%PORTDOCS%%%%DOCSDIR%%/SZIP_HDF4_2r1.pdf
+%%PORTDOCS%%%%DOCSDIR%%/bugs_fixed.txt
+%%PORTDOCS%%%%DOCSDIR%%/misc_docs.txt
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
