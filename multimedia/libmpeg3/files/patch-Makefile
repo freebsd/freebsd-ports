@@ -1,0 +1,40 @@
+--- Makefile.orig	Wed Oct 29 10:53:02 2003
++++ Makefile	Tue Feb  8 23:57:49 2005
+@@ -1,7 +1,7 @@
+-CC = gcc
+-NASM = nasm
++#CC = gcc
++#NASM = nasm
+ USE_MMX = 0
+-USE_CSS = 1
++USE_CSS = 0
+ A52DIR := $(shell expr a52dec* )
+ 
+ 
+@@ -13,7 +13,7 @@
+ endif
+ 
+ 
+-OBJDIR := $(shell uname --machine)
++OBJDIR := $(shell uname -p)
+ 
+ 
+ 
+@@ -33,7 +33,7 @@
+   CFLAGS += -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE
+ endif
+ 
+-ifeq ($(OBJDIR), x86_64)
++ifeq ($(OBJDIR), amd64)
+   ifneq ($(HAVE_CFLAGS), y)
+     CFLAGS := -O2 -fomit-frame-pointer -I/usr/local/include
+   endif
+@@ -138,7 +138,7 @@
+ #$(OBJDIR)/mpeg3split
+ 
+ 
+-LIBS = -lm -lpthread
++LIBS = -lm %%PTHREAD_LIBS%%
+ 
+ $(shell if ! test -d $(OBJDIR) \; then mkdir -p $(OBJDIR) \; fi )
+ 

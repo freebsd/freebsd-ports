@@ -1,0 +1,8 @@
+bin/mpeg3cat
+bin/mpeg3dump
+bin/mpeg3toc
+include/libmpeg3.h
+include/mpeg3private.h
+lib/libmpeg3.a
+%%PORTDOCS%%%%DOCSDIR%%/index.html
+%%PORTDOCS%%@dirrm %%DOCSDIR%%

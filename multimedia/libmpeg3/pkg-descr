@@ -1,0 +1,20 @@
+Libmpeg3 supports advanced editing and manipulation of MPEG streams.
+Libmpeg3 provides a uniform front end for a large number of the MPEG
+formats used in HDTV broadcasting.
+It decodes:
+	* MPEG-1 Layer II Audio
+	* MPEG-1 Layer III Audio
+	* MPEG-2 Layer III Audio
+	* MPEG-1 program streams
+	* MPEG-2 program streams
+	* MPEG-2 transport streams
+	* AC3 Audio
+	* MPEG-2 Video
+	* MPEG-1 Video
+	* IFO files
+	* VOB files
+
+WWW:	http://heroinewarrior.com/libmpeg3.php3
+
+- Igor Pokrovsky
+ip@doom.homeunix.org

@@ -69,6 +69,7 @@
     SUBDIR += libmatroska
     SUBDIR += libmovtar
     SUBDIR += libmpeg2
+    SUBDIR += libmpeg3
     SUBDIR += libquicktime
     SUBDIR += libtheora
     SUBDIR += libxine
