@@ -1,10 +1,17 @@
-FlightGear is a free, multi-platform civil aviation flight simulator
-package.  It features detailed, texture-mapped scenery, keyboard and
-joystick controls, a heads-up display, and optional realistic instrument
-panel.  A 3-D accelerator card supported by Mesa is highly recommended (3DFX
-Voodoo/Voodoo2 and nVIDIA Riva TNT are known to work.)
+The FlightGear flight simulator project is an open-source,
+multi-platform, cooperative flight simulator development project.
+Source code for the entire project is available and licensed under the
+GNU General Public License.
+
+The goal of the FlightGear project is to create a sophisticated flight
+simulator framework for use in research or academic environments, for
+the development and pursuit of other interesting flight simulation
+ideas, and as an end-user application.  We are developing a
+sophisticated, open simulation framework that can be expanded and
+improved upon by anyone interested in contributing.
+
+There are many exciting possibilities for an open, free flight sim.
+We hope that this project will be interesting and useful to many
+people in many areas.
 
 WWW: http://www.flightgear.org/
-
-- Brian Buchanan
-brian@CSUA.Berkeley.EDU

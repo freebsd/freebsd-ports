@@ -5,72 +5,34 @@
 # $FreeBSD$
 #
 
-PORTNAME=		FlightGear
-PORTVERSION=		0.6.1
-CATEGORIES=		games
-MASTER_SITES=		ftp://ftp.flightgear.org/pub/fgfs/Source/ \
-			ftp://ftp.flightgear.org/pub/fgfs/Shared/
-DISTFILES=		${DISTNAME}.tar.gz \
-			fgfs-base-${PORTVERSION}.tar.gz
+PORTNAME=	FlightGear
+PORTVERSION=	0.9.1
+BASEVERSION=	0.9.1a
+CATEGORIES=	games
+MASTER_SITES=	ftp://ftp.flightgear.org/pub/fgfs/Source/ \
+		ftp://ftp.flightgear.org/pub/fgfs/Shared/
+BASEFILE=	fgfs-base-${BASEVERSION}${EXTRACT_SUFX}
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${BASEFILE}
+EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
-MAINTAINER=		brian@CSUA.Berkeley.EDU
+MAINTAINER=	des@FreeBSD.org
 
-BROKEN=			"Does not link correctly"
+BUILD_DEPENDS=	${X11BASE}/lib/libplibsl.a:${PORTSDIR}/x11-toolkits/plib \
+		${X11BASE}/lib/libsgmisc.a:${PORTSDIR}/devel/simgear
 
-BUILD_DEPENDS=		${X11BASE}/lib/libplibsl.a:${PORTSDIR}/x11-toolkits/plib
-RUN_DEPENDS=		mpg123:${PORTSDIR}/audio/mpg123
-
-EXTRACT_ONLY=		${DISTNAME}.tar.gz
-
-.if defined(BUILD_SCENERY_TOOLS)
-MASTER_SITES+=		ftp://ftp.cs.man.ac.uk/pub/amurta/
-DISTFILES+=		gfc-0.8.8.1b.tar.gz gpc231.tar.Z
-EXTRACT_ONLY+=		gfc-0.8.8.1b.tar.gz gpc231.tar.Z
-NO_PACKAGE=		"gpc's license conflicts with the GPL"
-CONFIGURE_ENV+=		CPPFLAGS=-I${WRKSRC}/gfcgpc/include \
-			LDFLAGS=-L${WRKSRC}/gfcgpc/lib
-ADDPATCHES=		${MASTERDIR}/patches.tools/gfc-patch-aa
-
-pre-configure:
-	@(cd ${WRKDIR}/gfc-0.8.8.1b; ./configure --prefix=${WRKSRC}/gfcgpc; \
-	  ${GMAKE}; ${GMAKE} install; \
-	  ${CP} ${MASTERDIR}/patches.tools/Makefile.gpc \
-	        ${WRKDIR}/gpc231/Makefile; \
-	  cd ${WRKDIR}/gpc231; ${GMAKE}; \
-	  ${GMAKE} PREFIX=${WRKSRC}/gfcgpc install)
-.else
-PLIST=		${MASTERDIR}/pkg-plist.notools
-ADDPATCHES=	${MASTERDIR}/patches.tools/disable-tools
-USE_AUTOCONF_VER=213
-.endif
-
+USE_X_PREFIX=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	\
-	LDFLAGS="${LDFLAGS} -L${X11BASE}/lib -lGLU -lGL -lglut ${PTHREAD_LIBS}"
-CONFIGURE_ARGS+=--bindir=${PREFIX}/FlightGear/bin
-USE_GMAKE=	yes
+# Force configure to look in /usr/local/{include,lib}
+CONFIGURE_ENV+=	CC="${CC}" CFLAGS="${CFLAGS}" \
+		CXX="${CXX}" CXXFLAGS="${CXXFLAGS}" \
+		CPPFLAGS="-I${LOCALBASE}/include" \
+		LDFLAGS="-L${LOCALBASE}/lib"
 
-pre-patch:
-	@( cd ${WRKDIR}; \
-	   for i in ${ADDPATCHES} ; do \
-		${PATCH} -s < $${i}; \
-	   done )
-	@${PERL} -pi -e 's,<malloc.h>,<stdlib.h>,' \
-		${WRKSRC}/Lib/XGL/xglUtils.c \
-		${WRKSRC}/Lib/zlib/zutil.h
-
-post-configure:
-	@find ${WRKSRC} -type f | xargs ${PERL} -pi -e \
-		"s@#include.*<malloc.h>@#include <stdlib.h>@g"
-	@(cd ${WRKSRC};touch Makefile.in */Makefile.in */*/Makefile.in \
-	                     */*/*/Makefile.in; \
-	  ./config.status)
+MAN1=		est-epsilon.1 fgfs.1 fgjs.1 gl-info.1 js_demo.1 pstest.1
 
 pre-install:
-	cd ${PREFIX}; \
-	${TAR} xzf ${DISTDIR}/fgfs-base-${PORTVERSION}.tar.gz
-
-post-install:
-	${MV} ${PREFIX}/FlightGear/bin/runfgfs ${PREFIX}/bin
+	(cd ${PREFIX}/share && ${EXTRACT_CMD} ${EXTRACT_BEFORE_ARGS} \
+	    ${DISTDIR}/${BASEFILE} ${EXTRACT_AFTER_ARGS})
+	(cd ${PREFIX}/share/${PORTNAME} && ${MV} data/* . && ${RMDIR} data)
 
 .include <bsd.port.mk>

@@ -1,12 +1,10 @@
---- Simulator/Main/splash.cxx.orig	Wed May 12 19:16:17 1999
-+++ Simulator/Main/splash.cxx	Sat Jun 26 22:31:54 1999
-@@ -123,7 +123,8 @@
-     xglMatrixMode(GL_PROJECTION);
-     xglPushMatrix();
-     xglLoadIdentity();
--    gluOrtho2D(0, current_view.get_winWidth(), 0, current_view.get_winHeight());
-+    if (current_view.get_winWidth() && current_view.get_winHeight())
-+      gluOrtho2D(0, current_view.get_winWidth(), 0, current_view.get_winHeight());
-     xglMatrixMode(GL_MODELVIEW);
-     xglPushMatrix();
-     xglLoadIdentity();
+--- configure.orig	Thu Dec  5 16:31:39 2002
++++ configure	Wed Jan 22 11:11:26 2003
+@@ -4206,6 +4206,7 @@
+ if test -r /usr/include/soundcard.h \
+ 	-o -r /usr/include/linux/soundcard.h \
+ 	-o -r /usr/include/machine/soundcard.h \
++	-o -r /usr/include/sys/soundcard.h \
+ 	-o -r /usr/include/audio.h \
+ 	-o "x$ac_cv_header_windows_h" = "xyes" \
+         -o "$HOSTTYPE" = "macintosh"; then
