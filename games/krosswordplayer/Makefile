@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	KrossWordPlayer
-PORTVERSION=	1.3
+PORTVERSION=	1.4
 CATEGORIES=	games
 MASTER_SITES=	http://home.houston.rr.com/epasveer/
 EXTRACT_SUFX=	.tgz
