@@ -1,0 +1,32 @@
+--- win/jtp/gamedata/config/jtp_keys.txt.orig	Sun Jun 24 18:57:26 2001
++++ win/jtp/gamedata/config/jtp_keys.txt	Thu Jul  5 15:25:21 2001
+@@ -42,25 +42,25 @@
+ 
+ [up]=[<]
+ [down]=[>]
+-[jump]=[j]
++[jump]=[META+j]
+ [sit down]=[META+s]
+ [teleport]=[CTRL+t]
+ 
+ %----------------------------------------------------------------
+ % Exploring
+ %----------------------------------------------------------------
+-[kick]=[k]
++[kick]=[CTRL+k]
+ [close door]=[c]
+ [open door]=[o]
+ [look here]=[:]
+ [search]=[s]
+-[untrap]=[u]
++[untrap]=[META+u]
+ 
+ %----------------------------------------------------------------
+ % Getting items
+ %----------------------------------------------------------------
+ [force lock]=[META+f]
+-[loot chest]=[l]
++[loot chest]=[META+l]
+ [pick up]=[,]
+ [toggle autopickup]=[@]
+ 

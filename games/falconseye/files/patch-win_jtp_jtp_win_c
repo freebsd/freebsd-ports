@@ -1,0 +1,47 @@
+--- win/jtp/jtp_win.c.orig	Mon Jul  2 08:59:00 2001
++++ win/jtp/jtp_win.c	Thu Jul  5 16:21:59 2001
+@@ -7811,6 +7811,7 @@ jtp_init_filenames()
+ {
+   int gplength;
+   int i;
++  char *configdir;
+ 
+   /* Get starting directory, and save it for reference */
+   getcwd(jtp_game_path, JTP_MAX_FILENAME_LENGTH);
+@@ -7835,16 +7836,26 @@ jtp_init_filenames()
+   }
+ 
+   /* Data filenames */
+-  strcat(jtp_filenames[JTP_FILE_INTRO_SCRIPT], JTP_CONFIG_DIRECTORY);
+-  strcat(jtp_filenames[JTP_FILE_INTRO_SCRIPT], "jtp_intr.txt");
+-  strcat(jtp_filenames[JTP_FILE_OPTIONS], JTP_CONFIG_DIRECTORY);
+-  strcat(jtp_filenames[JTP_FILE_OPTIONS], "jtp_opts.txt");
+-  strcat(jtp_filenames[JTP_FILE_SOUNDS_CONFIG], JTP_CONFIG_DIRECTORY);
+-  strcat(jtp_filenames[JTP_FILE_SOUNDS_CONFIG], "jtp_snds.txt");
+-  strcat(jtp_filenames[JTP_FILE_KEYS_CONFIG], JTP_CONFIG_DIRECTORY);
+-  strcat(jtp_filenames[JTP_FILE_KEYS_CONFIG], "jtp_keys.txt");
+-  strcat(jtp_filenames[JTP_FILE_SHADING_TABLE], JTP_CONFIG_DIRECTORY);
+-  strcat(jtp_filenames[JTP_FILE_SHADING_TABLE], "jtp_lit1.dat");
++  configdir=getenv("FALCONCONFIG");
++  if (configdir != NULL) {
++  	strcpy(jtp_filenames[JTP_FILE_INTRO_SCRIPT], configdir);
++  	strcpy(jtp_filenames[JTP_FILE_OPTIONS], configdir);
++  	strcpy(jtp_filenames[JTP_FILE_SOUNDS_CONFIG], configdir);
++  	strcpy(jtp_filenames[JTP_FILE_KEYS_CONFIG], configdir);
++ 	strcpy(jtp_filenames[JTP_FILE_SHADING_TABLE], configdir);
++  } else {
++      strcat(jtp_filenames[JTP_FILE_INTRO_SCRIPT], JTP_CONFIG_DIRECTORY);
++      strcat(jtp_filenames[JTP_FILE_OPTIONS], JTP_CONFIG_DIRECTORY);
++      strcat(jtp_filenames[JTP_FILE_SOUNDS_CONFIG], JTP_CONFIG_DIRECTORY);
++      strcat(jtp_filenames[JTP_FILE_KEYS_CONFIG], JTP_CONFIG_DIRECTORY);
++      strcat(jtp_filenames[JTP_FILE_SHADING_TABLE], JTP_CONFIG_DIRECTORY);
++  }
++
++  strcat(jtp_filenames[JTP_FILE_INTRO_SCRIPT], "/jtp_intr.txt");
++  strcat(jtp_filenames[JTP_FILE_OPTIONS], "/jtp_opts.txt");
++  strcat(jtp_filenames[JTP_FILE_SOUNDS_CONFIG], "/jtp_snds.txt");
++  strcat(jtp_filenames[JTP_FILE_KEYS_CONFIG], "/jtp_keys.txt");
++  strcat(jtp_filenames[JTP_FILE_SHADING_TABLE], "/jtp_lit1.dat");
+ 
+   /* Graphics filenames */
+   strcat(jtp_filenames[JTP_FILE_CMAP_TILES], JTP_GRAPHICS_DIRECTORY);

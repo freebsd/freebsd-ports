@@ -1,0 +1,27 @@
+--- include/system.h.orig	Sun Jun 24 18:57:16 2001
++++ include/system.h	Fri Aug 24 01:19:07 2001
+@@ -78,7 +78,7 @@
+ E  long NDECL(random);
+ # endif
+ # if !defined(SUNOS4) || defined(RANDOM)
+-E void FDECL(srandom, (unsigned int));
++E void FDECL(srandom, (unsigned long));
+ # else
+ #  if !defined(bsdi) && !defined(__FreeBSD__)
+ E int FDECL(srandom, (unsigned int));
+@@ -513,11 +513,15 @@
+ #  endif
+ # endif
+ 
++# if defined(BSD)
++/* no declaration needed; it's in time.h */
++#else
+ # if defined(ULTRIX) || defined(SYSV) || defined(MICRO) || defined(VMS) || defined(MAC) || (defined(HPUX) && defined(_POSIX_SOURCE))
+ E time_t FDECL(time, (time_t *));
+ # else
+ E long FDECL(time, (time_t *));
+ # endif /* ULTRIX */
++#endif
+ 
+ #ifdef VMS
+ 	/* used in makedefs.c, but missing from gcc-vms's <time.h> */

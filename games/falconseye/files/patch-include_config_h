@@ -1,0 +1,44 @@
+--- include/config.h.orig	Tue Jul  3 18:56:52 2001
++++ include/config.h	Wed Jul  4 11:23:29 2001
+@@ -146,7 +146,7 @@
+  * would allow:
+  *  xpmtoppm <x11tiles.xpm | pnmscale 1.25 | ppmquant 90 >x11tiles_big.xpm
+  */
+-/* # define USE_XPM */		/* Disable if you do not have the XPM library */
++# define USE_XPM 		/* Disable if you do not have the XPM library */
+ # ifdef USE_XPM
+ #  define GRAPHIC_TOMBSTONE	/* Use graphical tombstone (rip.xpm) */
+ # endif
+@@ -160,6 +160,7 @@
+  *		LOGFILE and NEWS refer to files in the playground.
+  */
+ 
++#define WIZARD "games"
+ #ifndef WIZARD		/* allow for compile-time or Makefile changes */
+ # ifndef KR1ED
+ #  define WIZARD  "wizard" /* the person allowed to use the -D option */
+@@ -187,11 +188,13 @@
+ 
+ #ifdef UNIX
+ /* path and file name extension for compression program */
+-#define COMPRESS "/usr/bin/compress"	/* Lempel-Ziv compression */
+-#define COMPRESS_EXTENSION ".Z"		/* compress's extension */
++/* #define COMPRESS "/usr/bin/compress"	/* Lempel-Ziv compression */
++/* #define COMPRESS_EXTENSION ".Z"		/* compress's extension */
+ /* An example of one alternative you might want to use: */
+ /* #define COMPRESS "/usr/local/bin/gzip" */	/* FSF gzip compression */
+ /* #define COMPRESS_EXTENSION ".gz" */		/* normal gzip extension */
++#define COMPRESS "/usr/bin/gzip"
++#define COMPRESS_EXTENSION ".gz"
+ #endif
+ 
+ #ifndef COMPRESS
+@@ -318,7 +321,7 @@ typedef unsigned char	uchar;
+  * functions that have been macroized.
+  */
+ 
+-/* #define VISION_TABLES */ /* use vision tables generated at compile time */
++#define VISION_TABLES /* use vision tables generated at compile time */
+ #ifndef VISION_TABLES
+ # ifndef NO_MACRO_CPATH
+ #  define MACRO_CPATH	/* use clear_path macros instead of functions */
