@@ -33,6 +33,7 @@
     SUBDIR += pavuk
     SUBDIR += proftpd
     SUBDIR += puf
+    SUBDIR += ruby-curl
     SUBDIR += sftp
     SUBDIR += spegla
     SUBDIR += vsftpd
