@@ -42,6 +42,9 @@ DESCR=		${PORTSDIR}/audio/faad/pkg-descr
 MD5_FILE=	${PORTSDIR}/audio/faad/distinfo
 PLIST_FILES=	lib/xmms/Input/libmp4.so
 
+BUILD_WRKSRC=	${WRKSRC}/plugins/xmms/src
+INSTALL_WRKSRC=	${WRKSRC}/plugins/xmms/src
+
 pre-patch: build-depends
 
 post-patch:
@@ -57,13 +60,5 @@ post-patch:
 		${XARGS} -n 5 -x \
 			${REINPLACE_CMD} -e \
 				's|-O2|${CFLAGS}|'
-
-do-build:
-	@cd ${WRKSRC}/libfaad && ${MAKE}
-	@cd ${WRKSRC}/common/mp4v2 && ${MAKE}
-	@cd ${WRKSRC}/plugins/xmms/src && ${MAKE}
-
-do-install:
-	@cd ${WRKSRC}/plugins/xmms/src && ${MAKE} install
 
 .include <bsd.port.mk>
