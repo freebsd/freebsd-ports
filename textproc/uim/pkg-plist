@@ -1,14 +1,11 @@
-bin/screen-tick
-bin/screen-uim
+bin/uim-fep
+bin/uim-fep-tick
 bin/uim-helper-server
 bin/uim-sh
 %%GTK%%bin/uim-helper-candwin-gtk
 %%GTK%%bin/uim-helper-toolbar-gtk
 %%GTK%%bin/uim-helper-toolbar-gtk-systray
 bin/uim-xim
-etc/backtick-setup
-etc/newscreen-bind
-etc/screenrc-uim
 include/uim/uim-helper.h
 include/uim/uim-scm.h
 include/uim/uim.h
