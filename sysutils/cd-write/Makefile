@@ -7,6 +7,7 @@
 
 PORTNAME=	cd-write
 PORTVERSION=	1.4.1
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	jmz
@@ -23,10 +24,6 @@ WRKSRC=		${WRKDIR}/cd-write
 
 .if ${OSVERSION} < 300000
 BROKEN=		CAM
-.endif
-
-.if ${OSVERSION} >= 501000
-BROKEN=         "Does not compile"
 .endif
 
 pre-build:

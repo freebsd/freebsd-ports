@@ -1,5 +1,16 @@
---- copy.cc.orig	Sun Nov 28 19:29:05 1999
-+++ copy.cc	Sun Nov 28 19:29:25 1999
+--- copy.cc.orig	Thu Jan 21 14:19:42 1999
++++ copy.cc	Wed Oct 15 15:47:58 2003
+@@ -40,8 +40,8 @@
+ #include "cd-write.h"
+ #include "copy.h"
+ 
+-static char *help_copy = "{
+-
++static char *help_copy = "{\n\
++\n\
+ }";
+ 
+ static struct dev_struct dev[] = {
 @@ -397,7 +397,7 @@
      hlist.subwidget ("hlist", "delete all");
      for (i = 0; t[i].track != 0xaa; i++) {
@@ -9,3 +20,51 @@
  	sprintf (s, "add %d -itemtype imagetext -image %s -state %s", i, 
  		 t[i].type & T_AUDIO ? (t[i].type & T_PREEMP ? "note_p" : "note") : "data",
  		 state);
+@@ -467,12 +467,12 @@
+     label = TkLabel (".copy.label -text { } -bd 2 -width 25 -height 1 -relief sunken");
+     TkPack (".copy.label", "-side top -pady 8 -fill x -expand 1");
+     
+-    hlist = tixScrolledHList (".copy.f", "-relief flat -bd 2 -options {
+-                    hlist.columns 3
+-                    hlist.gap 0
+-                    hlist.selectMode extended
+-                    hlist.header false
+-                    hlist.width 40 hlist.height 15
++    hlist = tixScrolledHList (".copy.f", "-relief flat -bd 2 -options {\n\
++                    hlist.columns 3\n\
++                    hlist.gap 0\n\
++                    hlist.selectMode extended\n\
++                    hlist.header false\n\
++                    hlist.width 40 hlist.height 15\n\
+              }");
+     TkPack (".copy.f" , "-side top -pady 10");
+     hlist.subwidget ("hlist")->command (dbclick);
+@@ -498,8 +498,8 @@
+ 
+     TkFrame (".copy.d");
+     E_out = tixLabelEntry (".copy.d.e", "-label {Destination directory:} \
+-            -labelside top -options {
+-	    entry.width 35
++            -labelside top -options {\n\
++	    entry.width 35\n\
+ 	    label.anchor w }");
+     if (!*dir)
+ 	getcwd (dir, 1024);
+@@ -511,12 +511,12 @@
+     TkPack (".copy.d", "-side top -pady 2m -fill x");
+ 
+     E_prefix = tixLabelEntry (".copy.p", "-label {file prefix: } \
+-            -labelside left -options {
+-	    entry.width 20
++            -labelside left -options {\n\
++	    entry.width 20\n\
+ 	    label.anchor w }");
+-    balloon.bind (".copy.p -balloonmsg", "{File names will be 
+-   <file prefix>_NN.data,
+-   <file prefix>_NN.audio,
++    balloon.bind (".copy.p -balloonmsg", "{File names will be \n\
++   <file prefix>_NN.data,\n\
++   <file prefix>_NN.audio,\n\
+ or <file prefix>_NN.audio+}");
+     E_prefix.subwidget ("entry insert 0", prefix);
+     TkPack (".copy.p", "-side top -pady 2m ");
