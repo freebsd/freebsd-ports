@@ -1,4 +1,5 @@
 bin/kprof
+share/applnk/Applications/kprof.desktop
 share/applnk/Development/kprof.desktop
 share/apps/kprof/kprofui.rc
 share/doc/HTML/en/kprof/common
@@ -6,5 +7,17 @@ share/doc/HTML/en/kprof/index.docbook
 share/doc/HTML/en/kprof/redo.png
 share/icons/locolor/16x16/apps/kprof.png
 share/icons/locolor/32x32/apps/kprof.png
+@unexec rmdir %D/share/icons/locolor/32x32/apps 2>/dev/null || true
+@unexec rmdir %D/share/icons/locolor/32x32 2>/dev/null || true
+@unexec rmdir %D/share/icons/locolor/16x16/apps 2>/dev/null || true
+@unexec rmdir %D/share/icons/locolor/16x16 2>/dev/null || true
+@unexec rmdir %D/share/icons/locolor 2>/dev/null || true
+@unexec rmdir %D/share/icons 2>/dev/null || true
 @dirrm share/doc/HTML/en/kprof
+@unexec rmdir %D/share/doc/HTML/en 2>/dev/null || true
+@unexec rmdir %D/share/doc/HTML 2>/dev/null || true
 @dirrm share/apps/kprof
+@unexec rmdir %D/share/apps 2>/dev/null || true
+@unexec rmdir %D/share/applnk/Development 2>/dev/null || true
+@unexec rmdir %D/share/applnk/Applications 2>/dev/null || true
+@unexec rmdir %D/share/applnk 2>/dev/null || true

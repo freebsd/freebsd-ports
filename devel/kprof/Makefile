@@ -7,20 +7,18 @@
 #
 
 PORTNAME=	kprof
-PORTVERSION=	1.3
+PORTVERSION=	1.3.1
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	pmarquis@pobox.com
 
-USE_KDELIBS_VER=	2
+USE_KDELIBS_VER=	3
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	KDEDIR=${PREFIX} MOC=moc2 LIBQT=-lqt2
+CONFIGURE_ENV=	KDEDIR=${PREFIX} KDB2HTML=${PREFIX}/bin/kdb2html
 CONFIGURE_ARGS=	--prefix=${PREFIX} \
-		--with-extra-includes=${PREFIX}/include \
-		--with-extra-libs=${PREFIX}/lib \
-		--with-qt-includes=${X11BASE}/include/qt2 \
+		--with-qt-includes=${X11BASE}/include \
 		--with-qt-libraries=${X11BASE}/lib
 USE_GMAKE=	yes
 MAKE_ENV=	${CONFIGURE_ENV}
