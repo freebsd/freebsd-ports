@@ -7,7 +7,7 @@
 
 PORTNAME=	evolution
 PORTVERSION=	1.4.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	mail gnome
 MASTER_SITES=	${MASTER_SITE_GNOME} \
 		http://people.FreeBSD.org/~sobomax/:local
@@ -20,8 +20,7 @@ DIST_SUBDIR=	gnome2
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	An integrated mail, calendar and address book distributed suite
 
-LIB_DEPENDS=	soup-2.0.0:${PORTSDIR}/devel/libsoup \
-		gtkhtml-3.0.2:${PORTSDIR}/www/gtkhtml3
+LIB_DEPENDS=	gtkhtml-3.0.3:${PORTSDIR}/www/gtkhtml3
 
 .if defined(WITH_LDAP)
 LIB_DEPENDS+=	ldap.2:${PORTSDIR}/net/openldap20
