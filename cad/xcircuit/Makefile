@@ -60,24 +60,24 @@ PLIST_SUB+=	PYTHON="@comment " NOPYTHON="" TCLTK="@comment " NOTCLTK=""
 .endif
 .endif
 
-pre-fetch:
+pre-everything::
 .if !defined(WITH_GHOSTSCRIPT_AFPL) || ${WITH_GHOSTSCRIPT_AFPL} != yes
-	@${ECHO} ""
-	@${ECHO} "      Define WITH_GHOSTSCRIPT_AFPL=yes to use"
-	@${ECHO} "      AFPL Postscript interpreter instead of GNU one"
-	@${ECHO} ""
+	@${ECHO_MSG} ""
+	@${ECHO_MSG} "      Define WITH_GHOSTSCRIPT_AFPL=yes to use"
+	@${ECHO_MSG} "      AFPL Postscript interpreter instead of GNU one"
+	@${ECHO_MSG} ""
 .endif
 .if !defined(WITH_TCLTK)
-	@${ECHO} ""
-	@${ECHO} "      Define WITH_TCLTK for Tcl/Tk support"
-	@${ECHO} "      (prevents python support)"
-	@${ECHO} ""
+	@${ECHO_MSG} ""
+	@${ECHO_MSG} "      Define WITH_TCLTK for Tcl/Tk support"
+	@${ECHO_MSG} "      (prevents python support)"
+	@${ECHO_MSG} ""
 .endif
 .if !defined(WITH_PYTHON)
-	@${ECHO} ""
-	@${ECHO} "      Or define WITH_PYTHON for Python support"
-	@${ECHO} "      (only available without WITH_TCLTK defined)"
-	@${ECHO} ""
+	@${ECHO_MSG} ""
+	@${ECHO_MSG} "      Or define WITH_PYTHON for Python support"
+	@${ECHO_MSG} "      (only available without WITH_TCLTK defined)"
+	@${ECHO_MSG} ""
 .endif
 
 post-patch:
