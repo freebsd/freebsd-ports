@@ -1,0 +1,6 @@
+The tetris command runs a display-based game.  The object is to fit
+shapes together to form complete rows, which then vanish.  When the
+shapes fill up to the top, the game ends.  You can optionally select a
+level of play or custom-select control keys.
+
+This port is made of OpenBSD's tetris games. It got there from NetBSD...

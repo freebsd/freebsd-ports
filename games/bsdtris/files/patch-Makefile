@@ -1,0 +1,29 @@
+--- Makefile.orig	Tue Apr  1 23:23:08 2003
++++ Makefile	Tue Apr  1 23:23:43 2003
+@@ -0,0 +1,26 @@
++# Makefile for Tetris
++# $FreeBSD: /tmp/pcvs/ports/games/bsdtris/files/patch-Makefile,v 1.1 2003-04-02 13:02:40 edwin Exp $
++
++TMPLDFLAGS+= -lcurses -ltermcap
++SRCS= screen.c shapes.c input.c tetris.c scores.c
++
++PREFIX?=/usr/local
++MKDIR?=mkdir -p
++
++all: 
++.	for files in ${SRCS}
++		${CC} ${CFLAGS} ${LDFLAGS} -c ${files}
++.	endfor
++	${CC} ${CFLAGS} ${LDFLAGS} ${TMPLDFLAGS} -o tetris input.o scores.o \
++            screen.o shapes.o tetris.o
++
++install:
++	${INSTALL} -g games -m 2555 tetris ${PREFIX}/bin/bsdtris
++.	if !exists(${PREFIX}/var/games/bsdtris.scores)
++		${MKDIR} ${PREFIX}/var/games
++		${INSTALL} -g games -m 664 /dev/null \
++			${PREFIX}/var/games/bsdtris.scores
++.endif
++
++clean:
++	rm -f *.o *.core
