@@ -17,8 +17,7 @@ LIB_DEPENDS=	dvdread.2:${PORTSDIR}/graphics/libdvdread
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	THREAD_CFLAGS="${PTHREAD_CFLAGS}" \
-		THREAD_LIBS="${PTHREAD_LIBS}" \
-		LIBS="-lcrypt"
+		THREAD_LIBS="${PTHREAD_LIBS}"
 INSTALLS_SHLIB=	yes
 
 post-patch:
