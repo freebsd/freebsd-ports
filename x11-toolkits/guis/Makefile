@@ -16,11 +16,12 @@ COMMENT=	A GUI widget server
 
 USE_PYTHON=	2.3
 USE_RUBY=	yes
+USE_GCC=	3.3
 USE_GNOME=	pkgconfig gtk20 pango libglade2 pygtk2
 USE_GMAKE=	yes
 MAKEFILE=	Makefile_guis
-MAKE_ENV=	PYTHONCFLAGS="-I${LOCALBASE}/include/python${USE_PYTHON}" \
-		PYTHONLDFLAGS="-L${LOCALBASE}/lib -lpython${USE_PYTHON}" \
+MAKE_ENV=	PYTHONCFLAGS="-I${LOCALBASE}/include/python${USE_PYTHON} ${PTHREAD_CFLAGS}" \
+		PYTHONLDFLAGS="-L${LOCALBASE}/lib -lpython${USE_PYTHON} ${PTHREAD_LIBS}" \
 		RUBY="ruby18"
 ALL_TARGET=	prog
 
