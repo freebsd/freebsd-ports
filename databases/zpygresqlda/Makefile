@@ -14,8 +14,6 @@ DISTNAME=	ZPyGreSQLDA-0.3-rjr2
 
 MAINTAINER=	nbm@FreeBSD.org
 
-BROKEN=		"Cannot find python"
-
 RUN_DEPENDS=	${LOCALBASE}/${SZOPEBASEDIR}/z2.py:${PORTSDIR}/www/zope
 LIB_DEPENDS=	pq.2:${PORTSDIR}/databases/postgresql7
 
@@ -37,7 +35,7 @@ do-build:
 	@${ECHO_CMD} '*shared*' > ${WRKSRC}/src/Setup
 	@${ECHO_CMD} '' >> ${WRKSRC}/src/Setup
 	@${ECHO_CMD} '_pg   pgmodule.c ' \
-		'-I${LOCALBASE}/include/pgsql ' \
+		'-I${LOCALBASE}/include ' \
 		'-L${LOCALBASE}/lib ' \
 		'-lpq -lcrypt' >> ${WRKSRC}/src/Setup
 	@(cd ${WRKSRC}/src && \
