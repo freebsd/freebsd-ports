@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	xenomorph
-PORTVERSION=	0.5.1
+PORTVERSION=	0.6
 CATEGORIES=	graphics
 MASTER_SITES=	http://xenomorph.sourceforge.net/
 DISTNAME=	${PORTNAME}${PORTVERSION:S/.//g}
@@ -17,12 +17,11 @@ COMMENT=	An image filter system based on volterra and morphologic filters
 
 BUILD_DEPENDS=	qmake:${PORTSDIR}/devel/qmake
 
-PLIST_FILES=	bin/xenomorph
 USE_BZIP2=	yes
 USE_QT_VER=	3
-HAS_CONFIGURE=	yes
-CONFIGURE_ENV=	QTDIR=${X11BASE}
-MAKE_ENV=	QTDIR=${X11BASE}
+MAKE_ENV=	QTDIR="${QT_PREFIX}"
+
+PLIST_FILES=	bin/xenomorph
 
 do-configure:
 	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} qmake \
