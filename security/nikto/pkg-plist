@@ -1,0 +1,23 @@
+bin/nikto
+etc/nikto/config.txt
+share/nikto/nikto_mutate.plugin
+share/nikto/nikto_outdated.plugin
+share/nikto/nikto_apacheusers.plugin        
+share/nikto/nikto_passfiles.plugin
+share/nikto/nikto_httpoptions.plugin
+share/nikto/nikto_msgs.plugin
+share/nikto/server_msgs.db
+share/nikto/outdated.db
+share/nikto/scan_database.db
+share/nikto/nikto_core.plugin
+share/nikto/nikto_headers.plugin
+share/nikto/nikto_plugin_order.txt
+share/nikto/nikto_realms.plugin
+share/nikto/nikto_robots.plugin
+share/nikto/nikto_user_enum_apache.plugin
+share/nikto/nikto_user_enum_cgiwrap.plugin
+share/nikto/realms.db
+share/nikto/servers.db
+share/nikto/LW.pm
+@dirrm share/nikto
+@dirrm etc/nikto
