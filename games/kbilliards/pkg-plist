@@ -1,5 +1,5 @@
 bin/kbilliards
-share/applnk/Games/kbilliards.desktop
+share/applnk/Utilities/kbilliards.desktop
 share/apps/kbilliards/background.xpm
 share/apps/kbilliards/ball.png
 share/apps/kbilliards/balls/ball01.png
@@ -50,6 +50,12 @@ share/apps/kbilliards/holebr.png
 share/apps/kbilliards/holetc.png
 share/apps/kbilliards/holetl.png
 share/apps/kbilliards/holetr.png
+share/apps/kbilliards/icona-16.png
+share/apps/kbilliards/icona-32.png
+share/apps/kbilliards/icona-48.png
+share/apps/kbilliards/icona-64.png
+share/apps/kbilliards/kbilliards.png
+share/apps/kbilliards/kbilliardsui.rc
 share/apps/kbilliards/left_edge.png
 share/apps/kbilliards/leftarrow.png
 share/apps/kbilliards/right_edge.png
@@ -72,6 +78,9 @@ share/apps/kbilliards/top_right_corner.png
 share/apps/kbilliards/top_right_edge.png
 share/apps/kbilliards/trcl.png
 share/apps/kbilliards/trcr.png
+share/doc/HTML/en/kbilliards/common
+share/doc/HTML/en/kbilliards/index.cache.bz2
+share/doc/HTML/en/kbilliards/index.docbook
 share/icons/hicolor/16x16/apps/kbilliards.png
 share/icons/hicolor/32x32/apps/kbilliards.png
 share/icons/hicolor/48x48/apps/kbilliards.png
@@ -79,10 +88,11 @@ share/icons/locolor/16x16/apps/kbilliards.png
 share/icons/locolor/32x32/apps/kbilliards.png
 share/locale/cs/LC_MESSAGES/kbilliards.mo
 share/locale/it/LC_MESSAGES/kbilliards.mo
-@dirrm share/apps/kbilliards/balls
-@dirrm share/apps/kbilliards/sound
-@dirrm share/apps/kbilliards
-@unexec rmdir %D/share/apps 2>/dev/null || true
+@unexec rmdir %D/share/icons/locolor/32x32/apps 2>/dev/null || true
+@unexec rmdir %D/share/icons/locolor/32x32 2>/dev/null || true
+@unexec rmdir %D/share/icons/locolor/16x16/apps 2>/dev/null || true
+@unexec rmdir %D/share/icons/locolor/16x16 2>/dev/null || true
+@unexec rmdir %D/share/icons/locolor 2>/dev/null || true
 @unexec rmdir %D/share/icons/hicolor/48x48/apps 2>/dev/null || true
 @unexec rmdir %D/share/icons/hicolor/48x48 2>/dev/null || true
 @unexec rmdir %D/share/icons/hicolor/32x32/apps 2>/dev/null || true
@@ -90,11 +100,13 @@ share/locale/it/LC_MESSAGES/kbilliards.mo
 @unexec rmdir %D/share/icons/hicolor/16x16/apps 2>/dev/null || true
 @unexec rmdir %D/share/icons/hicolor/16x16 2>/dev/null || true
 @unexec rmdir %D/share/icons/hicolor 2>/dev/null || true
-@unexec rmdir %D/share/icons/locolor/32x32/apps 2>/dev/null || true
-@unexec rmdir %D/share/icons/locolor/32x32 2>/dev/null || true
-@unexec rmdir %D/share/icons/locolor/16x16/apps 2>/dev/null || true
-@unexec rmdir %D/share/icons/locolor/16x16 2>/dev/null || true
-@unexec rmdir %D/share/icons/locolor 2>/dev/null || true
 @unexec rmdir %D/share/icons 2>/dev/null || true
-@unexec rmdir %D/share/applnk/Games 2>/dev/null || true
+@dirrm share/doc/HTML/en/kbilliards
+@unexec rmdir %D/share/doc/HTML/en 2>/dev/null || true
+@unexec rmdir %D/share/doc/HTML 2>/dev/null || true
+@dirrm share/apps/kbilliards/sound
+@dirrm share/apps/kbilliards/balls
+@dirrm share/apps/kbilliards
+@unexec rmdir %D/share/apps 2>/dev/null || true
+@unexec rmdir %D/share/applnk/Utilities 2>/dev/null || true
 @unexec rmdir %D/share/applnk 2>/dev/null || true
