@@ -61,6 +61,7 @@
     SUBDIR += elm
     SUBDIR += elm+ME
     SUBDIR += elmo
+    SUBDIR += elmo-devel
     SUBDIR += emh
     SUBDIR += emh-emacs20
     SUBDIR += emh-xemacs21-mule
