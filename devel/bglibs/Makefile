@@ -7,19 +7,21 @@
 
 PORTNAME=	bglibs
 PORTVERSION=	1.011
+PORTREVISION=	1
 CATEGORIES=	devel
-MASTER_SITES=	http://untroubled.org/bglibs/
+MASTER_SITES=	http://untroubled.org/${PORTNAME}/
 
 MAINTAINER=	sergei@FreeBSD.org
 COMMENT=	One stop library package by Bruce Guenter
 
-NOT_FOR_ARCHS=	alpha ia64
+LDFLAGS?=	-s
 
-DOCS=		NEWS README TODO
+DOCS=		NEWS README TODO doc/html/*
 
-pre-build:
-	${ECHO_CMD} ${PREFIX}        > ${WRKSRC}/conf-home
-	${ECHO_CMD} ${CC} ${CFLAGS}  > ${WRKSRC}/conf-cc
+do-configure:
+	${ECHO_CMD} "${PREFIX}"		> ${WRKSRC}/conf-home
+	${ECHO_CMD} "${CC} ${CFLAGS}"	> ${WRKSRC}/conf-cc
+	${ECHO_CMD} "${CC} ${LDFLAGS}"	> ${WRKSRC}/conf-ld
 
 do-install:
 	cd ${WRKSRC} && ./installer

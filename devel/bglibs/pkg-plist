@@ -3,48 +3,34 @@ include/bglibs/adt/common.h
 include/bglibs/adt/ghash.h
 include/bglibs/adt/gqueue.h
 include/bglibs/adt/gstack.h
-@dirrm include/bglibs/adt
 include/bglibs/base64/base64.h
-@dirrm include/bglibs/base64
 include/bglibs/cdb/cdb.h
 include/bglibs/cdb/make.h
 include/bglibs/cdb/str.h
-@dirrm include/bglibs/cdb
 include/bglibs/cli/cli.h
-@dirrm include/bglibs/cli
 include/bglibs/crc/crc32.h
 include/bglibs/crc/crc64.h
-@dirrm include/bglibs/crc
 include/bglibs/crypto/md5.h
 include/bglibs/crypto/sha1.h
 include/bglibs/crypto/sha256.h
 include/bglibs/crypto/sha384.h
 include/bglibs/crypto/sha512.h
-@dirrm include/bglibs/crypto
 include/bglibs/dict/dict.h
 include/bglibs/dict/load.h
-@dirrm include/bglibs/dict
 include/bglibs/installer.h
 include/bglibs/iobuf/iobuf.h
-@dirrm include/bglibs/iobuf
 include/bglibs/misc/misc.h
-@dirrm include/bglibs/misc
 include/bglibs/msg/msg.h
 include/bglibs/msg/wrap.h
-@dirrm include/bglibs/msg
 include/bglibs/net/ipv4.h
 include/bglibs/net/resolve.h
 include/bglibs/net/socket.h
-@dirrm include/bglibs/net
 include/bglibs/path/path.h
-@dirrm include/bglibs/path
 include/bglibs/pwcmp/client.h
 include/bglibs/pwcmp/hex.h
 include/bglibs/pwcmp/module.h
-@dirrm include/bglibs/pwcmp
 include/bglibs/str/iter.h
 include/bglibs/str/str.h
-@dirrm include/bglibs/str
 include/bglibs/sysdeps.h
 include/bglibs/systime.h
 include/bglibs/uint16.h
@@ -53,13 +39,9 @@ include/bglibs/uint64.h
 include/bglibs/uintnn.h
 include/bglibs/unix/nonblock.h
 include/bglibs/unix/sig.h
-@dirrm include/bglibs/unix
 include/bglibs/vmailmgr/client.h
 include/bglibs/vmailmgr/vpwentry.h
-@dirrm include/bglibs/vmailmgr
-@dirrm include/bglibs
 lib/libbase64/base64.a
-@dirrm lib/libbase64
 lib/libbg-adt.a
 lib/libbg-base64.a
 lib/libbg-cdb.a
@@ -81,52 +63,106 @@ lib/libbg-unix.a
 lib/libcdb/cdb.a
 lib/libcdb/make.a
 lib/libcdb/str.a
-@dirrm lib/libcdb
 lib/libcli/cli.a
-@dirrm lib/libcli
 lib/libcrypto/md5.a
 lib/libcrypto/sha1.a
 lib/libcrypto/sha256.a
 lib/libcrypto/sha512a.a
-@dirrm lib/libcrypto
 lib/libdict/dict.a
 lib/libdict/load.a
-@dirrm lib/libdict
 lib/libinstaller.a
 lib/libinstcheck.a
 lib/libinstshow.a
 lib/libiobuf/iobuf.a
 lib/libiobuf/str.a
-@dirrm lib/libiobuf
 lib/libmisc/misc.a
-@dirrm lib/libmisc
 lib/libmsg/msg.a
 lib/libmsg/wrap.a
-@dirrm lib/libmsg
 lib/libnet/ipv4.a
 lib/libnet/resolve.a
 lib/libnet/socket.a
-@dirrm lib/libnet
 lib/libpath/path.a
-@dirrm lib/libpath
 lib/libpwcmp-module.a
 lib/libpwcmp.a
 lib/libpwcmp/client.a
 lib/libpwcmp/hex.a
 lib/libpwcmp/module.a
-@dirrm lib/libpwcmp
 lib/libstr/iter.a
 lib/libstr/str.a
-@dirrm lib/libstr
 lib/libsysdeps.a
 lib/libunix/nonblock.a
 lib/libunix/sig.a
-@dirrm lib/libunix
 lib/libvmailmgr.a
 lib/libvmailmgr/client.a
 lib/libvmailmgr/vpwentry.a
-@dirrm lib/libvmailmgr
 %%PORTDOCS%%%%DOCSDIR%%/NEWS
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%%%DOCSDIR%%/TODO
+%%PORTDOCS%%%%DOCSDIR%%/annotated.html
+%%PORTDOCS%%%%DOCSDIR%%/classes.html
+%%PORTDOCS%%%%DOCSDIR%%/cmsg_8h-source.html
+%%PORTDOCS%%%%DOCSDIR%%/deprecated.html
+%%PORTDOCS%%%%DOCSDIR%%/djb_2sig_8h-source.html
+%%PORTDOCS%%%%DOCSDIR%%/doxygen.css
+%%PORTDOCS%%%%DOCSDIR%%/doxygen.png
+%%PORTDOCS%%%%DOCSDIR%%/files.html
+%%PORTDOCS%%%%DOCSDIR%%/functions.html
+%%PORTDOCS%%%%DOCSDIR%%/functions_vars.html
+%%PORTDOCS%%%%DOCSDIR%%/group__iobuf.html
+%%PORTDOCS%%%%DOCSDIR%%/group__ipv4.html
+%%PORTDOCS%%%%DOCSDIR%%/group__resolve.html
+%%PORTDOCS%%%%DOCSDIR%%/group__selfpipe.html
+%%PORTDOCS%%%%DOCSDIR%%/group__socket.html
+%%PORTDOCS%%%%DOCSDIR%%/group__str.html
+%%PORTDOCS%%%%DOCSDIR%%/group__striter.html
+%%PORTDOCS%%%%DOCSDIR%%/index.html
+%%PORTDOCS%%%%DOCSDIR%%/iobuf_8h-source.html
+%%PORTDOCS%%%%DOCSDIR%%/ipv4_8h-source.html
+%%PORTDOCS%%%%DOCSDIR%%/iter_8h-source.html
+%%PORTDOCS%%%%DOCSDIR%%/modules.html
+%%PORTDOCS%%%%DOCSDIR%%/nonblock_8h-source.html
+%%PORTDOCS%%%%DOCSDIR%%/pages.html
+%%PORTDOCS%%%%DOCSDIR%%/resolve_8h-source.html
+%%PORTDOCS%%%%DOCSDIR%%/selfpipe_8h-source.html
+%%PORTDOCS%%%%DOCSDIR%%/sig_8h-source.html
+%%PORTDOCS%%%%DOCSDIR%%/socket_8h-source.html
+%%PORTDOCS%%%%DOCSDIR%%/str_8h-source.html
+%%PORTDOCS%%%%DOCSDIR%%/structibuf.html
+%%PORTDOCS%%%%DOCSDIR%%/structiobuf.html
+%%PORTDOCS%%%%DOCSDIR%%/structipv4addr.html
+%%PORTDOCS%%%%DOCSDIR%%/structobuf.html
+%%PORTDOCS%%%%DOCSDIR%%/structstr.html
+%%PORTDOCS%%%%DOCSDIR%%/structstr__sortentry.html
+%%PORTDOCS%%%%DOCSDIR%%/structstriter.html
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
+@dirrm include/bglibs/adt
+@dirrm include/bglibs/base64
+@dirrm include/bglibs/cdb
+@dirrm include/bglibs/cli
+@dirrm include/bglibs/crc
+@dirrm include/bglibs/crypto
+@dirrm include/bglibs/dict
+@dirrm include/bglibs/iobuf
+@dirrm include/bglibs/misc
+@dirrm include/bglibs/msg
+@dirrm include/bglibs/net
+@dirrm include/bglibs/path
+@dirrm include/bglibs/pwcmp
+@dirrm include/bglibs/str
+@dirrm include/bglibs/unix
+@dirrm include/bglibs/vmailmgr
+@dirrm include/bglibs
+@dirrm lib/libbase64
+@dirrm lib/libcdb
+@dirrm lib/libcli
+@dirrm lib/libcrypto
+@dirrm lib/libdict
+@dirrm lib/libiobuf
+@dirrm lib/libmisc
+@dirrm lib/libmsg
+@dirrm lib/libnet
+@dirrm lib/libpath
+@dirrm lib/libpwcmp
+@dirrm lib/libstr
+@dirrm lib/libunix
+@dirrm lib/libvmailmgr
