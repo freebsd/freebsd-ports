@@ -1,0 +1,10 @@
+#!/bin/sh
+
+case $2 in
+    POST-INSTALL)
+	dic="${PKG_PREFIX}/lib/sj3/dict/user"
+	mkdir -p $dic
+	chown bin.bin $dic
+	;;
+esac
+
