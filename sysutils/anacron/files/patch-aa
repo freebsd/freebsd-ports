@@ -1,6 +1,6 @@
 diff -uN ../anacron-2.3/Makefile ./Makefile
 --- ../anacron-2.3/Makefile	Fri Jun 23 00:26:11 2000
-+++ ./Makefile	Fri May  2 22:16:51 2003
++++ ./Makefile	Thu Aug 26 11:52:13 2004
 @@ -19,16 +19,16 @@
  #   `COPYING' that comes with the Anacron source distribution.
  
@@ -41,7 +41,7 @@ diff -uN ../anacron-2.3/Makefile ./Makefile
  clean:
 diff -uN ../anacron-2.3/anacron.8 ./anacron.8
 --- ../anacron-2.3/anacron.8	Fri Jun 23 00:42:05 2000
-+++ ./anacron.8	Fri May  2 21:57:56 2003
++++ ./anacron.8	Thu Aug 26 11:52:13 2004
 @@ -18,7 +18,7 @@
  usually controlled by \fBcron\fR.
  .PP
@@ -71,7 +71,7 @@ diff -uN ../anacron-2.3/anacron.8 ./anacron.8
  .TP
 diff -uN ../anacron-2.3/anacrontab.5 ./anacrontab.5
 --- ../anacron-2.3/anacrontab.5	Wed Jun 21 01:12:18 2000
-+++ ./anacrontab.5	Fri May  2 21:58:31 2003
++++ ./anacrontab.5	Thu Aug 26 11:52:13 2004
 @@ -1,9 +1,9 @@
  .TH ANACRONTAB 5 1998-02-02 "Itai Tzur" "Anacron Users' Manual"
  .SH NAME
@@ -86,7 +86,7 @@ diff -uN ../anacron-2.3/anacrontab.5 ./anacrontab.5
  assignments, or empty lines.
 diff -uN ../anacron-2.3/anacrontab.sample ./anacrontab.sample
 --- ../anacron-2.3/anacrontab.sample	Thu Jan  1 01:00:00 1970
-+++ ./anacrontab.sample	Sat May  3 20:14:43 2003
++++ ./anacrontab.sample	Thu Aug 26 11:52:13 2004
 @@ -0,0 +1,12 @@
 +
 +PATH=/bin:/sbin:/usr/bin:/usr/sbin
@@ -100,9 +100,21 @@ diff -uN ../anacron-2.3/anacrontab.sample ./anacrontab.sample
 +7	15	weekly		periodic weekly
 +30	60	monthly		periodic monthly
 +
+diff -uN ../anacron-2.3/gregor.c ./gregor.c
+--- ../anacron-2.3/gregor.c	Fri Jun 23 00:50:40 2000
++++ ./gregor.c	Thu Aug 26 12:00:36 2004
+@@ -65,7 +65,7 @@
+ {
+     int dn;
+     int i;
+-    const int isleap; /* save three calls to leap() */
++    int isleap; /* save three calls to leap() */
+ 
+     /* Some validity checks */
+ 
 diff -uN ../anacron-2.3/matchrx.c ./matchrx.c
 --- ../anacron-2.3/matchrx.c	Wed Jun 21 01:12:18 2000
-+++ ./matchrx.c	Thu May  1 14:46:35 2003
++++ ./matchrx.c	Thu Aug 26 11:52:13 2004
 @@ -23,6 +23,7 @@
  
  
@@ -113,7 +125,7 @@ diff -uN ../anacron-2.3/matchrx.c ./matchrx.c
  #include <stdlib.h>
 diff -uN ../anacron-2.3/readtab.c ./readtab.c
 --- ../anacron-2.3/readtab.c	Fri Jun 23 00:13:12 2000
-+++ ./readtab.c	Mon Aug 25 16:46:18 2003
++++ ./readtab.c	Thu Aug 26 11:52:13 2004
 @@ -19,6 +19,11 @@
   
      The GNU General Public License can also be found in the file
