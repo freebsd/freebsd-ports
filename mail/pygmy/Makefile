@@ -7,6 +7,7 @@
 
 PORTNAME=	pygmy
 PORTVERSION=	0.5.5
+PORTREVISION=	1
 CATEGORIES=	mail python gnome
 MASTER_SITES=	http://pygmy.sourceforge.net/
 
@@ -25,7 +26,9 @@ do-configure:
 
 do-install:
 	${MKDIR} ${PREFIX}/share/pygmy/icons
-	${INSTALL_DATA} ${WRKSRC}/*.pyo ${WRKSRC}/*.pyc ${PREFIX}/share/pygmy
+.for ext in py pyc pyo
+	${INSTALL_DATA} ${WRKSRC}/*.${ext} ${PREFIX}/share/pygmy
+.endfor
 	${INSTALL_DATA} ${WRKSRC}/icons/* ${PREFIX}/share/pygmy/icons
 	${INSTALL_DATA} ${WRKSRC}/pygmy ${PREFIX}/share/pygmy
 	@printf "#!/bin/sh\n${PYTHON_CMD} ${PREFIX}/share/pygmy/pygmy" > \
