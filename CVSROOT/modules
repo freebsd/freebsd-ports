@@ -1589,6 +1589,7 @@ dvorak7min	ports/misc/dvorak7min
 dvorakng	ports/misc/dvorakng
 dvts		ports/multimedia/dvts
 dwatch		ports/sysutils/dwatch
+dxf2fig		ports/cad/dxf2fig
 dxpc		ports/x11/dxpc
 dylan		ports/lang/dylan
 dynamag		ports/x11/dynamag
