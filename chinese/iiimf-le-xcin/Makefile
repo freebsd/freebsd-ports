@@ -1,0 +1,51 @@
+# New ports collection makefile for:	iiimf-le-xcin
+# Date created:		2004-09-09
+# Whom:			Kuang-che Wu <kcwu@csie.org>
+#
+# $FreeBSD$
+#
+
+PORTNAME=	iiimf-le-xcin
+PORTVERSION=	0.1.7
+CATEGORIES=	chinese textproc
+MASTER_SITES=	http://people.redhat.com/llch/iiimf-xcin/
+EXTRACT_SUFX=	-2.src.rpm
+
+MAINTAINER=	kcwu@csie.org
+COMMENT=	IIIMF xcin language engine, a traditional Chinese input method
+
+EXTRACT_DEPENDS=	rpm2cpio.pl:${PORTSDIR}/archivers/rpm2cpio
+RUN_DEPENDS=	${LOCALBASE}/lib/im/htt:${PORTSDIR}/textproc/iiimf-server
+
+WRKSRC=		${WRKDIR}/iiimf-xcin
+USE_BZIP2=	yes
+USE_XLIB=	yes
+USE_GNOME=	libxml2
+USE_REINPLACE=	yes
+USE_AUTOCONF_VER=	259
+USE_AUTOHEADER_VER=	259
+AUTOMAKE_ARGS=	--add-missing
+USE_AUTOMAKE_VER=	19
+USE_LIBTOOL_VER=	15
+CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
+
+do-extract:
+	${MKDIR} ${WRKDIR}
+	cd ${WRKDIR} && \
+	${LOCALBASE}/bin/rpm2cpio.pl ${DISTDIR}/${DISTFILES} | \
+	${CPIO} -iud
+	cd ${WRKDIR} && ${EXTRACT_CMD} ${EXTRACT_BEFORE_ARGS} \
+	${WRKDIR}/${DISTNAME}.tar.bz2 ${EXTRACT_AFTER_ARGS}
+
+post-patch:
+	${REINPLACE_CMD} -e "s,/usr/lib/im,${PREFIX}/lib/im,g" \
+		${WRKSRC}/acfiles/im_common.m4 \
+		${WRKSRC}/src/cin2tab/constant.h \
+		${WRKSRC}/src/xcin.c \
+		${WRKSRC}/src/xmlconf.c \
+		${WRKSRC}/xcin.xml.conf
+
+pre-configure:
+	cd ${WRKSRC} && ${ACLOCAL} -I ${LOCALBASE}/share/aclocal -I acfiles
+
+.include <bsd.port.mk>
