@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	ftpproxy
-PORTVERSION=	1.0.1
+PORTVERSION=	1.0.7
 CATEGORIES=	ftp
-MASTER_SITES=	http://www.quietsche-entchen.de/download/
+MASTER_SITES=	http://ftp.daemons.de/download/
 DISTNAME=	ftpproxy-${PORTVERSION}
 
 MAINTAINER=	philippe@le-berre.com

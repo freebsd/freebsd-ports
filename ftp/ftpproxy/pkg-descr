@@ -6,7 +6,7 @@ Beside this basic function which makes the program useful on firewall
 or masqueraders it offers fixing the FTP server (e.g. for connections
 into a protected LAN) and proxy authentication. 
 
-WWW: http://www.quietsche-entchen.de/software/ftp.proxy.html
+WWW: http://ftp.daemons.de/
 
 -Philippe
 philippe@le-berre.com
