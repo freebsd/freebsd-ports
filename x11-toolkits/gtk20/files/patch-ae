@@ -1,6 +1,6 @@
---- configure.orig	Wed Dec 11 18:31:51 2002
-+++ configure	Thu Dec 12 12:07:17 2002
-@@ -7414,6 +7414,7 @@
+--- configure.orig	Thu Sep  4 13:17:19 2003
++++ configure	Tue Mar 16 17:14:34 2004
+@@ -18367,6 +18367,7 @@
  
  # This can be used to rebuild libtool when needed
  LIBTOOL_DEPS="$ac_aux_dir/ltmain.sh"
@@ -8,3 +8,13 @@
  
  # Always use our own libtool.
  LIBTOOL='$(SHELL) $(top_builddir)/libtool'
+@@ -24746,7 +24747,8 @@
+ cat >>conftest.$ac_ext <<_ACEOF
+ /* end confdefs.h.  */
+ 
+-#include <freetype/freetype.h>
++#include <ft2build.h>
++#include FT_FREETYPE_H
+ #include FT_ERRORS_H
+ 
+ int
