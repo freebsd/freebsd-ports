@@ -1,9 +1,9 @@
 # New ports collection makefile for: Netscape browser with Japanese resources
-# Version required:	4.06
+# Version required:	4.07
 # Date created:		13 Mar 1998
 # Whom:			sada
 #
-# $Id: Makefile,v 1.4 1998/04/01 01:49:24 asami Exp $
+# $Id: Makefile,v 1.5 1998/10/09 04:22:20 asami Exp $
 #
 
 MAINTAINER=	sada@e-mail.ne.jp
