@@ -7,6 +7,7 @@
 
 PORTNAME=	evolution
 PORTVERSION=	1.0.4
+PORTREVISION=	1
 CATEGORIES=	mail gnome
 MASTER_SITES=	http://people.FreeBSD.org/~sobomax/ \
 		${MASTER_SITE_GNOME} \
