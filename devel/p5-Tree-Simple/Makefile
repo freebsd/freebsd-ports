@@ -15,6 +15,9 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A simple tree object
 
+BUILD_DEPENDS=	${SITE_PERL}/Test/Exception.pm:${PORTSDIR}/devel/p5-Test-Exception
+RUN_DEPENDS=	${BUILD_DEPENDS}
+
 PERL_CONFIGURE=	yes
 
 MAN3=		Tree::Simple.3 Tree::Simple::Visitor.3
@@ -24,6 +27,9 @@ MAN3=		Tree::Simple.3 Tree::Simple::Visitor.3
 .if ${PERL_LEVEL} < 500800
 BUILD_DEPENDS+=	${SITE_PERL}/Test/More.pm:${PORTSDIR}/devel/p5-Test-Simple
 RUN_DEPENDS+=	${BUILD_DEPENDS}
+.endif
+.if ${PERL_LEVEL} < 500601
+IGNORE=		This port requires perl 5.6.x or later. Install lang/perl5 then try again
 .endif
 
 .include <bsd.port.post.mk>
