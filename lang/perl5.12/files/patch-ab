@@ -1,0 +1,72 @@
+*** hints/freebsd.sh	Mon Feb 12 11:52:51 1996
+--- hints/freebsd.sh	Sat Jun  1 19:08:28 1996
+***************
+*** 47,54 ****
+  # It does not covert all 2.1-current versions as the output of uname
+  # changed a few times.
+  #
+! 2.0.5*|2.0-built*|2.1*)
+   	usevfork='true'
+  	;;
+  #
+  # Guesses at what will be needed after 2.1
+--- 47,64 ----
+  # It does not covert all 2.1-current versions as the output of uname
+  # changed a few times.
+  #
+! # Even though seteuid/setegid are available, they've been turned off
+! # because perl isn't coded with saved set[ug]id variables in mind.
+! # In addition, a small patch is requried to suidperl to avoid a security
+! # problem with FreeBSD.
+! #
+! 2.0.5*|2.0-built*|2.1*|2.2*)
+   	usevfork='true'
++ 	d_dosuid='define'
++ 	d_setregid='define'
++ 	d_setreuid='define'
++ 	d_setegid='undef'
++ 	d_seteuid='undef'
+  	;;
+  #
+  # Guesses at what will be needed after 2.1
+--- perl.c.orig	Tue Feb 27 13:30:44 1996
++++ perl.c	Sun Jun  2 09:22:34 1996
+@@ -1606,10 +1606,10 @@
+ 	    (void)setegid(statbuf.st_gid);
+ #else
+ #ifdef HAS_SETREGID
+-           (void)setregid((Gid_t)-1,statbuf.st_gid);
++           (void)setregid((Gid_t)gid,statbuf.st_gid);
+ #else
+ #ifdef HAS_SETRESGID
+-           (void)setresgid((Gid_t)-1,statbuf.st_gid,(Gid_t)-1);
++           (void)setresgid((Gid_t)gid,statbuf.st_gid,(Gid_t)gid);
+ #else
+ 	    setgid(statbuf.st_gid);
+ #endif
+@@ -1624,10 +1624,10 @@
+ 		(void)seteuid(statbuf.st_uid);	/* all that for this */
+ #else
+ #ifdef HAS_SETREUID
+-                (void)setreuid((Uid_t)-1,statbuf.st_uid);
++                (void)setreuid((Uid_t)uid,statbuf.st_uid);
+ #else
+ #ifdef HAS_SETRESUID
+-                (void)setresuid((Uid_t)-1,statbuf.st_uid,(Uid_t)-1);
++                (void)setresuid((Uid_t)uid,statbuf.st_uid,(Uid_t)uid);
+ #else
+ 		setuid(statbuf.st_uid);
+ #endif
+@@ -1641,10 +1641,10 @@
+           (void)seteuid((Uid_t)uid);
+ #else
+ #ifdef HAS_SETREUID
+-          (void)setreuid((Uid_t)-1,(Uid_t)uid);
++          (void)setreuid((Uid_t)uid,(Uid_t)uid);
+ #else
+ #ifdef HAS_SETRESUID
+-          (void)setresuid((Uid_t)-1,(Uid_t)uid,(Uid_t)-1);
++          (void)setresuid((Uid_t)uid,(Uid_t)uid,(Uid_t)uid);
+ #else
+           setuid((Uid_t)uid);
+ #endif
