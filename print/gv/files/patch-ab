@@ -1,0 +1,135 @@
+diff -cr gv.orig/source/FileSel.c gv/source/FileSel.c
+*** gv.orig/source/FileSel.c	Mon Mar  4 00:00:00 1996
+--- gv/source/FileSel.c	Tue Apr 16 19:00:11 1996
+***************
+*** 39,46 ****
+  #ifdef VMS
+  #   include <unixio.h> /* for chdir etc. */
+  #else
+- #   include <sys/stat.h>
+  #   include <sys/types.h>
+  #   include <dirent.h>
+  #   include <unistd.h>
+      /* Damn it, don't ever use getwd with stupid linux ###jp### */
+--- 39,46 ----
+  #ifdef VMS
+  #   include <unixio.h> /* for chdir etc. */
+  #else
+  #   include <sys/types.h>
++ #   include <sys/stat.h>
+  #   include <dirent.h>
+  #   include <unistd.h>
+      /* Damn it, don't ever use getwd with stupid linux ###jp### */
+diff -cr gv.orig/source/callbacks.c gv/source/callbacks.c
+*** gv.orig/source/callbacks.c	Tue Mar  5 00:00:00 1996
+--- gv/source/callbacks.c	Tue Apr 16 19:04:46 1996
+***************
+*** 88,94 ****
+  #include "note.h"
+  #include "misc_private.h"
+  
+! #ifdef linux
+  #   include <sys/stat.h>
+  #   include <unistd.h>
+  #endif
+--- 88,95 ----
+  #include "note.h"
+  #include "misc_private.h"
+  
+! #ifndef VMS
+! #   include <sys/types.h>
+  #   include <sys/stat.h>
+  #   include <unistd.h>
+  #endif
+diff -cr gv.orig/source/error.c gv/source/error.c
+*** gv.orig/source/error.c	Tue Mar  5 00:00:00 1996
+--- gv/source/error.c	Tue Apr 16 19:11:16 1996
+***************
+*** 41,66 ****
+  #include INC_X11(Intrinsic.h)
+  
+  #include "gv.h"
+! 
+! #ifdef VMS
+! #   ifdef __DECC
+! #      include <errno.h>
+! #      include <string.h>
+! #      ifndef __ERRNO_MAX
+! #         define __ERRNO_MAX 85
+! #      endif
+! #   else
+! #      include <errno.h>
+! #      include <perror.h>
+! #      include <string.h>
+! #   endif
+! #else
+!     extern int sys_nerr;
+!     extern char *sys_errlist[];
+! #   include <errno.h>
+!     /* BSD 4.3 errno.h does not declare errno */
+!     extern int errno;
+! #endif
+  
+  char* 
+  open_fail_error(errornumber,error_str,file_name,show)
+--- 41,47 ----
+  #include INC_X11(Intrinsic.h)
+  
+  #include "gv.h"
+! #include "error.h"
+  
+  char* 
+  open_fail_error(errornumber,error_str,file_name,show)
+diff -cr gv.orig/source/error.h gv/source/error.h
+*** gv.orig/source/error.h	Tue Mar  5 00:00:00 1996
+--- gv/source/error.h	Tue Apr 16 19:10:25 1996
+***************
+*** 39,46 ****
+--- 39,48 ----
+  #      include <perror.h>
+  #   endif
+  #else
++ #ifndef CSRG_BASED
+      extern int sys_nerr;
+      extern char *sys_errlist[];
++ #endif
+  #   include <errno.h>
+      /* BSD 4.3 errno.h does not declare errno */
+      extern int errno;
+diff -cr gv.orig/source/paths.h gv/source/paths.h
+*** gv.orig/source/paths.h	Thu Mar  7 00:00:00 1996
+--- gv/source/paths.h	Tue Apr 16 18:57:01 1996
+***************
+*** 34,42 ****
+  #   define INC_XMU(aaa) <XMU_DIRECTORY/aaa>
+  #   define INC_XAW(aaa) <XAW_DIRECTORY/aaa>
+  #else
+! #   define INC_X11(aaa) <X11/aaa>
+! #   define INC_XMU(aaa) <X11/Xmu/aaa>
+! #   define INC_XAW(aaa) <X11/Xaw3d/aaa>
+  #endif
+  
+  #endif /* _PATHS_H_ */
+--- 34,42 ----
+  #   define INC_XMU(aaa) <XMU_DIRECTORY/aaa>
+  #   define INC_XAW(aaa) <XAW_DIRECTORY/aaa>
+  #else
+! #   define INC_X11(aaa) <X11/       ## aaa ## >
+! #   define INC_XMU(aaa) <X11/Xmu/   ## aaa ## >
+! #   define INC_XAW(aaa) <X11/Xaw3d/ ## aaa ## >
+  #endif
+  
+  #endif /* _PATHS_H_ */
+diff -cr gv.orig/source/zoom.c gv/source/zoom.c
+*** gv.orig/source/zoom.c	Tue Mar  5 00:00:00 1996
+--- gv/source/zoom.c	Tue Apr 16 19:13:32 1996
+***************
+*** 34,39 ****
+--- 34,40 ----
+  #ifdef VMS
+  #   include <stat.h>
+  #else
++ #   include <sys/types.h>
+  #   include <sys/stat.h>
+  #endif
+  
