@@ -1,0 +1,11 @@
+--- diacanvas/testcanvas.c.orig	Fri Feb  4 21:18:46 2000
++++ diacanvas/testcanvas.c	Fri Feb  4 21:19:13 2000
+@@ -140,7 +140,7 @@
+ static void
+ cb_active_display_change (DiaDisplay *display, gpointer data)
+ {
+-  g_message ("active_display_change: %x", (uint)display);
++  g_message ("active_display_change: %x", (unsigned int)display);
+ }
+ 
+ /* void main (int argc, char **argv)
