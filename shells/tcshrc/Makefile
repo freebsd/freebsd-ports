@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	tcshrc
-PORTVERSION=	1.2.0
-PORTREVISION=	1
+PORTVERSION=	1.6.0
 CATEGORIES=	shells
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	tcshrc
@@ -20,9 +19,9 @@ USE_REINPLACE=	YES
 INSTALL_TARGET=	systeminstall
 MAKE_ARGS=	BIN=${LOCALBASE}/bin SHARETCSHRC=${DATADIR}
 
-WRKSRC=	${WRKDIR}/${PORTNAME}
+WRKSRC=	${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 do-build:
-	${REINPLACE_CMD} -e 's#/usr/share#${PREFIX}/share#g' ${WRKSRC}/tcsh_config
+	${REINPLACE_CMD} -e 's#/usr/share#${PREFIX}/share#g' ${WRKSRC}/tcshrc_config
 
 .include <bsd.port.mk>
