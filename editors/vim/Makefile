@@ -7,7 +7,7 @@
 #
 
 PORTNAME?=	vim
-PORTVERSION=	6.0o
+PORTVERSION=	6.0q
 PORTREVISION=	0
 CATEGORIES?=	editors
 MASTER_SITES=	ftp://nuxi.ucdavis.edu/pub/vim/unreleased/unix/ \
@@ -56,6 +56,10 @@ MAKE_ARGS+=	X_LIBS=-lxpg4 CONF_OPT_MAX="--enable-max-features"
 .if defined(WITH_ATHENA)
 MAKE_ARGS+=	CONF_OPT_GUI="--enable-gui=athena --enable-multibyte --enable-fontset --enable-multibyte --enable-xim"
 #MAKE_ARGS+=	CONF_OPT_GUI="--enable-gui=yes" ${I18N}
+.elif defined(WITH_GTK)
+MAKE_ARGS+=	CONF_OPT_GUI="--enable-gui=gtk --enable-multibyte --enable-fontset --enable-xim"
+MAKE_ARGS+=	CONF_OPT_PERL="--enable-pythoninterp"
+MAKE_ARGS+=	X_LIBS="$(X_LIBS) -lXt"
 .else
 USE_MOTIF=	yes
 MAKE_ARGS+=	CONF_OPT_GUI="--enable-gui=motif --with-motif-lib=\"${MOTIFLIB}\" --enable-multibyte --enable-fontset --enable-multibyte --enable-xim" MOTIFHOME=${X11BASE}
