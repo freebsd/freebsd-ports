@@ -26,6 +26,4 @@ lib/perl5/site_perl/i386-freebsd/auto/Filter/.packlist
 @dirrm lib/perl5/site_perl/i386-freebsd/auto/Filter/Util
 @dirrm lib/perl5/site_perl/i386-freebsd/auto/Filter/decrypt
 @dirrm lib/perl5/site_perl/i386-freebsd/auto/Filter/tee
-@dirrm lib/perl5/site_perl/i386-freebsd/auto/Filter
 @dirrm lib/perl5/site_perl/Filter/Util
-@dirrm lib/perl5/site_perl/Filter

@@ -1,13 +1,13 @@
 # New ports collection makefile for:    p5-Filter
-# Version required:			1.12
+# Version required:			1.14
 # Date created:				June 26th 1997
 # Whom:	      				James FitzGibbon <jfitz@FreeBSD.ORG>
 #
-#   $Id$
+# $Id: Makefile,v 1.1.1.1 1997/06/27 01:37:45 jfitz Exp $
 #
 
-DISTNAME=	Filter-1.12
-PKGNAME=	p5-Filter-1.12
+DISTNAME=	Filter-1.14
+PKGNAME=	p5-Filter-1.14
 CATEGORIES=	devel perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Filter
