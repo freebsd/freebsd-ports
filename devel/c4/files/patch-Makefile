@@ -1,0 +1,9 @@
+--- Makefile.orig	Fri Feb 11 17:11:52 2000
++++ Makefile	Sun Sep  2 06:45:15 2001
+@@ -4,4 +4,4 @@
+ 
+-CC =		gcc
+-CFLAGS =	-O
++CC ?=		gcc
++CFLAGS ?=	-O
+ # CFLAGS =	-g
