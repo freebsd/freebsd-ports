@@ -1,0 +1,11 @@
+--- dll/Makefile.in.orig	Sun Oct  1 22:05:20 2000
++++ dll/Makefile.in	Sun Oct  1 22:05:47 2000
+@@ -31,7 +32,7 @@
+ 	'SHLIB_CFLAGS=$(SHLIB_CFLAGS)'		\
+ 	'IRCLIB=$(IRCLIB)'			\
+         'TCLINC=$(TCLINC)'			\
+-	'INCLUDES=$(INCLUDES)'			\
++	'INCLUDES=$(DEFS) $(INCLUDES)'		\
+ 	'DEFS=$(DEFS)'				\
+ 	'local_dir=$(local_dir)'		\
+ 	'LIBS=$(LIBS)'

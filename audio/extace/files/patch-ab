@@ -1,0 +1,29 @@
+--- extace/Makefile.in.orig	Fri Jun  2 23:30:29 2000
++++ extace/Makefile.in	Fri Jun  2 23:32:26 2000
+@@ -108,7 +108,9 @@
+ 
+ EXTRA_DIST = extace.desktop README NEWS TODO
+ 
++.ifdef HAVE_GNOME
+ Multimedia_DATA = extace.desktop
++.endif
+ mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs
+ CONFIG_HEADER = ../config.h
+ CONFIG_CLEAN_FILES = 
+@@ -237,7 +239,6 @@
+ 
+ install-MultimediaDATA: $(Multimedia_DATA)
+ 	@$(NORMAL_INSTALL)
+-	$(mkinstalldirs) $(DESTDIR)$(Multimediadir)
+ 	@list='$(Multimedia_DATA)'; for p in $$list; do \
+ 	  if test -f $(srcdir)/$$p; then \
+ 	    echo " $(INSTALL_DATA) $(srcdir)/$$p $(DESTDIR)$(Multimediadir)/$$p"; \
+@@ -340,7 +341,7 @@
+ install-strip:
+ 	$(MAKE) $(AM_MAKEFLAGS) AM_INSTALL_PROGRAM_FLAGS=-s install
+ installdirs:
+-	$(mkinstalldirs)  $(DESTDIR)$(bindir) $(DESTDIR)$(Multimediadir)
++	$(mkinstalldirs)  $(DESTDIR)$(bindir)
+ 
+ 
+ mostlyclean-generic:

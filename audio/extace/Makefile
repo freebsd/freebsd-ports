@@ -13,22 +13,24 @@ MASTER_SITE_SUBDIR=	eXtace
 
 MAINTAINER=	sobomax@FreeBSD.org
 
-LIB_DEPENDS=	gtk12.2:${PORTSDIR}/x11-toolkits/gtk12 \
-		gdk_imlib.5:${PORTSDIR}/graphics/imlib \
-		esd.2:${PORTSDIR}/audio/esound \
-		fftw.2:${PORTSDIR}/math/fftw
+LIB_DEPENDS=	fftw.2:${PORTSDIR}/math/fftw
 
 USE_X_PREFIX=	yes
+USE_IMLIB=	yes
+USE_ESOUND=	yes
+WANT_GNOME=	yes
 USE_LIBTOOL=	yes
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -DHAVE_LIBFFTW" \
+		LIBS="-L${LOCALBASE}/lib"
 
-GTK_CONFIG?=	${X11BASE}/bin/gtk12-config
-GLIB_CONFIG?=	${LOCALBASE}/bin/glib12-config
-ESD_CONFIG?=	${LOCALBASE}/bin/esd-config
+.include <bsd.port.pre.mk>
 
-CONFIGURE_ENV=	GTK_CONFIG="${GTK_CONFIG}" \
-		GLIB_CONFIG="${GLIB_CONFIG}" \
-		ESD_CONFIG="${ESD_CONFIG}" \
-		LIBS="-L${LOCALBASE}/lib" \
-		CPPFLAGS="-I${LOCALBASE}/include -DHAVE_LIBFFTW"
+.if defined(HAVE_GNOME)
+USE_GNOME=	yes
+.endif
 
-.include <bsd.port.mk>
+pre-patch:
+	@find ${WRKSRC} -name "Makefile.in" | xargs ${PERL} -pi -e \
+		's|\$$\(datadir\)/gnome/|\$$\(datadir\)/|g'
+
+.include <bsd.port.post.mk>

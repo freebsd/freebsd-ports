@@ -14,34 +14,27 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	sobomax@FreeBSD.org
 
-LIB_DEPENDS=	gtk12.2:${PORTSDIR}/x11-toolkits/gtk12 \
-		rep.10:${PORTSDIR}/lang/librep
-.if !defined(WITHOUT_GNOME)
-LIB_DEPENDS+=	glade.4:${PORTSDIR}/devel/libglade \
-		gnome.4:${PORTSDIR}/x11/gnomelibs \
-		gdk_pixbuf.2:${PORTSDIR}/graphics/gdk-pixbuf
-.endif
-
-GTK_CONFIG?=	${X11BASE}/bin/gtk12-config
-GLIB_CONFIG?=	${LOCALBASE}/bin/glib12-config
+LIB_DEPENDS=	rep.10:${PORTSDIR}/lang/librep
 
 PLIST_SUB=	GNUHOST=${ARCH}--freebsd${OSREL}
 
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
+USE_GTK=	yes
+WANT_GNOME=	yes
 GNU_CONFIGURE=	yes
-.if defined(WITHOUT_GNOME)
-CONFIGURE_ARGS=	--without-libglade --without-gnome --without-gdk-pixbuf \
-		--without-gnome-canvas-pixbuf
-PLIST_SUB+=	GNOME:="@comment "
-.else
-CONFIGURE_ARGS=	--with-gnome --with-libglade --with-gdk-pixbuf \
-		--with-gnome-canvas-pixbuf
-PLIST_SUB+=	GNOME:=""
-.endif
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		GTK_CONFIG="${GTK_CONFIG}" \
-		GLIB_CONFIG="${GLIB_CONFIG}" \
 		LIBS="-L${LOCALBASE}/lib"
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if defined(HAVE_GNOME)
+LIB_DEPENDS+=	glade.4:${PORTSDIR}/devel/libglade
+CONFIGURE_ARGS=	--with-gnome --with-libglade --with-gdk-pixbuf \
+		--with-gnome-canvas-pixbuf
+.else
+CONFIGURE_ARGS=	--without-libglade --without-gnome --without-gdk-pixbuf \
+		--without-gnome-canvas-pixbuf
+.endif
+
+.include <bsd.port.post.mk>

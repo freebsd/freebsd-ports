@@ -32,6 +32,7 @@ lib/xmms/Output/libdisk_writer.so
 lib/xmms/Visualization/libbscope.so
 lib/xmms/Visualization/libsanalyzer.so
 share/aclocal/xmms.m4
+%%DATADIR%%/xmms/wmxmms.xpm
 share/locale/af/LC_MESSAGES/xmms.mo
 share/locale/bg/LC_MESSAGES/xmms.mo
 share/locale/ca/LC_MESSAGES/xmms.mo
@@ -61,8 +62,7 @@ share/locale/uk/LC_MESSAGES/xmms.mo
 share/locale/wa/LC_MESSAGES/xmms.mo
 share/locale/zh_CN.GB2312/LC_MESSAGES/xmms.mo
 share/locale/zh_TW.Big5/LC_MESSAGES/xmms.mo
-share/xmms/wmxmms.xpm
-@dirrm share/xmms
+@dirrm %%DATADIR%%/xmms
 @dirrm lib/xmms/Visualization
 @dirrm lib/xmms/Output
 @dirrm lib/xmms/Input

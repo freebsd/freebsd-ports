@@ -1,0 +1,11 @@
+--- Makefile.in.orig	Sun Feb 27 20:55:41 2000
++++ Makefile.in	Sun Feb 27 20:55:56 2000
+@@ -129,7 +129,7 @@
+ EXTRA_DIST =  	    autogen.sh 	    configure 	    aclocal.m4 	    BUGS
+ 
+ 
+-m4datadir = $(datadir)/aclocal
++m4datadir = $(prefix)/share/aclocal
+ m4data_DATA = vdk.m4
+ ACLOCAL_M4 = $(top_srcdir)/aclocal.m4
+ mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs

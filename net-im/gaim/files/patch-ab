@@ -1,0 +1,22 @@
+--- pixmaps/Makefile.in.orig	Tue Oct  3 02:42:15 2000
++++ pixmaps/Makefile.in	Tue Oct  3 02:48:38 2000
+@@ -128,8 +128,8 @@
+ EXTRA_DIST = about_small.xpm					add.xpm						add_small.xpm					admin_icon.xpm					aimicon.xpm					aimicon2.xpm					angel.xpm					aol_icon.xpm					away.xpm					away_icon.xpm					away_small.xpm					bgcolor.xpm					big.xpm						bigsmile.xpm					block.xpm					bold.xpm					bsmile.xpm					buddyadd.xpm					buddychat.xpm					buddydel.xpm					burp.xpm					cancel.xpm					close.xpm					close_small.xpm					crossedlips.xpm					cry.xpm						daemon-buddyadd.xpm				daemon-buddychat.xpm				daemon-buddydel.xpm				daemon-im.xpm					daemon-info.xpm					daemon-permadd.xpm				daemon-permdel.xpm				daemon.xpm					dt_icon.xpm					embarrassed.xpm					exit_small.xpm					export_small.xpm				fgcolor.xpm					fontface.xpm					fontface2.xpm					free_icon.xpm					gaim.xpm					gnome_add.xpm					gnome_close.xpm					gnome_preferences.xpm				gnome_remove.xpm 				gnome/devil-connect.png				gnome/devil-offline.png				gnome/devil-online.png				gnome/penguin-connect.png			gnome/penguin-offline.png			gnome/penguin-online.png			group.xpm					im.xpm						import_small.xpm				info.xpm					italic.xpm					join.xpm					kiss.xpm					link.xpm					login_icon.xpm					logo.xpm					logout_icon.xpm					luke03.xpm					moneymouth.xpm					msg_pending.xpm					no_icon.xpm					normal.xpm					offline.xpm					ok.xpm						oneeye.xpm					online.xpm					palette.xpm					peng_frown.xpm					peng_smile.xpm					peng_wink.xpm					permadd.xpm					permdel.xpm					plugins_small.xpm				pounce_small.xpm				prefs_small.xpm					refresh.xpm					sad.xpm						save.xpm					scream.xpm					search_small.xpm				signing_on.xpm					small.xpm					smile.xpm					smile8.xpm					smile_happy.xpm					smile_icon.xpm					smile_sad.xpm					smile_wink.xpm					speaker.xpm					strike.xpm					tb_forward.xpm					tb_search.xpm					think.xpm					tmp_send.xpm					tongue.xpm					underline.xpm					warn.xpm					wink.xpm					wood.xpm					yell.xpm			
+ 
+ 
+-pixmapdir = $(datadir)/pixmaps
+-pixmap_DATA = gaim.xpm
++pixmapdir = $(datadir)/pixmaps/gaim
++pixmap_DATA = $(EXTRA_DIST)
+ 
+ #gnomesysconf = `@GNOME_CONFIG@ --sysconfdir`
+ @GNOMEAPPLET_TRUE@gnomedata = `@GNOME_CONFIG@ --datadir`
+@@ -187,7 +187,7 @@
+ 
+ install-pixmapDATA: $(pixmap_DATA)
+ 	@$(NORMAL_INSTALL)
+-	$(mkinstalldirs) $(DESTDIR)$(pixmapdir)
++	$(mkinstalldirs) $(DESTDIR)$(pixmapdir) $(DESTDIR)$(pixmapdir)/gnome
+ 	@list='$(pixmap_DATA)'; for p in $$list; do \
+ 	  if test -f $(srcdir)/$$p; then \
+ 	    echo " $(INSTALL_DATA) $(srcdir)/$$p $(DESTDIR)$(pixmapdir)/$$p"; \

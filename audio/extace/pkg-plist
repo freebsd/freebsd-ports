@@ -1,5 +1,2 @@
 bin/extace
-share/gnome/apps/Multimedia/extace.desktop
-@unexec rmdir %D/share/gnome/apps/Multimedia 2>/dev/null || true
-@unexec rmdir %D/share/gnome/apps 2>/dev/null || true
-@unexec rmdir %D/share/gnome 2>/dev/null || true
+%%GNOME:%%share/gnome/apps/Multimedia/extace.desktop

@@ -1,0 +1,14 @@
+--- Output/Makefile.in.orig	Mon Jan 31 10:44:32 2000
++++ Output/Makefile.in	Sun Feb 27 01:37:39 2000
+@@ -125,7 +125,10 @@
+ sidplay_library = @sidplay_library@
+ xmmsdir = @xmmsdir@
+ 
+-SUBDIRS = OSS esd disk_writer
++SUBDIRS = OSS disk_writer
++.if defined(HAVE_ESOUND) || defined(HAVE_GNOME)
++SUBDIRS += esd
++.endif 
+ mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs
+ CONFIG_HEADER = ../config.h
+ CONFIG_CLEAN_FILES = 

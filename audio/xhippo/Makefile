@@ -14,13 +14,17 @@ MASTER_SITES=	http://zenchaos.netpedia.net/software/ \
 MAINTAINER=	rod@zort.on.ca
 
 RUN_DEPENDS=	mpg123:${PORTSDIR}/audio/mpg123
-LIB_DEPENDS=	gtk12.2:${PORTSDIR}/x11-toolkits/gtk12
-
-GTK_CONFIG?=	${X11BASE}/bin/gtk12-config
 
 USE_XLIB=	yes
+USE_GTK=	yes
+WANT_GNOME=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	GTK_CONFIG="${GTK_CONFIG}"
+
+.include <bsd.port.pre.mk>
+
+.if defined(HAVE_GNOME)
+USE_GNOME=	yes
+.endif
 
 post-install:
 	${INSTALL_DATA} ${WRKSRC}/xhippo.config ${PREFIX}/etc/xhippo.config.default
@@ -29,4 +33,4 @@ post-install:
 .endif
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

@@ -1,11 +1,11 @@
---- configure.orig	Thu Jun 29 10:44:12 2000
-+++ configure	Thu Jun 29 10:44:16 2000
-@@ -964,7 +964,7 @@
- 	echo $ac_n "checking for GNOME apps directory""... $ac_c" 1>&6
- echo "configure:966: checking for GNOME apps directory" >&5
- 	GNOMEAPPS=`$gnomecfg --datadir`
--	GNOMEAPPS="$GNOMEAPPS/gnome/apps/Settings"
-+	GNOMEAPPS="$GNOMEAPPS/apps/Settings"
- 	GNOMEAPP="wmakerconf.desktop"
-         echo "$ac_t""$GNOMEAPPS" 1>&6
- fi
+--- configure.orig	Sun Jan 23 06:43:09 2000
++++ configure	Mon Jan 31 01:07:06 2000
+@@ -2807,7 +2807,7 @@
+                 www_support="yes"
+         else
+                 echo "$ac_t"""no"" 1>&6
+-                for ac_prog in lynx wget
++                for ac_prog in lynx fetch
+ do
+ # Extract the first word of "$ac_prog", so it can be a program name with args.
+ set dummy $ac_prog; ac_word=$2

@@ -17,60 +17,52 @@ MAINTAINER=	vanilla@FreeBSD.org
 
 LIB_DEPENDS=	aa.1:${PORTSDIR}/graphics/aalib \
 		jpeg.9:${PORTSDIR}/graphics/jpeg \
-		gtk12.2:${PORTSDIR}/x11-toolkits/gtk12 \
 		mpeg.1:${PORTSDIR}/graphics/mpeg-lib \
 		png.4:${PORTSDIR}/graphics/png \
 		tiff.4:${PORTSDIR}/graphics/tiff
 
-GLIB_CONFIG?=	${LOCALBASE}/bin/glib12-config
-GTK_CONFIG?=	${X11BASE}/bin/gtk12-config
 SHLIBVER?=	${PORTVERSION:S/1.//g}
 
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes
 USE_XPM=	yes
 USE_GMAKE=	yes
+USE_GTK=	yes
+WANT_GNOME=	yes
 USE_LIBTOOL=	yes
 INSTALLS_SHLIB=	yes
 LIBTOOLFLAGS=	--disable-ltlibs --release-ignore
 PLIST_SUB=	SHLIBVER="${SHLIBVER}"
 
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		GLIB_CONFIG="${GLIB_CONFIG}" \
-		GTK_CONFIG="${GTK_CONFIG}" \
 		LIBS="-L${LOCALBASE}/lib"
 
 MAN1=		gimp.1 gimptool.1 gimp-remote.1
 MAN5=		gimprc.5
 
-.if !defined(WITH_PERL)
-CONFIGURE_ARGS=	--disable-perl
-PLIST_SUB+=	PERL:="@comment "
-.else
+.if defined(WITH_PERL)
 PERL_DEPENDS=	perldl:${PORTSDIR}/math/PDL \
 		${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/${PERL_ARCH}/Gtk.pm:${PORTSDIR}/x11-toolkits/p5-Gtk \
 		${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/Parse/RecDescent.pm:${PORTSDIR}/devel/p5-Parse-RecDescent
 BUILD_DEPENDS+=	${PERL_DEPENDS}
 RUN_DEPENDS+=	${PERL_DEPENDS}
 PLIST_SUB+=	PERL:=""
-.endif
-
-.if defined(WITH_GNOME) || (exists(${X11BASE}/bin/gnome-config) \
-    && !defined(WITHOUT_GNOME))
-LIB_DEPENDS+=	gtkxmhtml.4:${PORTSDIR}/x11/gnomelibs
-PLIST_SUB+=	GNOME:=""
 .else
-PLIST_SUB+=	GNOME:="@comment "
-.endif
-
-.if !defined(WITH_PERL)
+CONFIGURE_ARGS=	--disable-perl
+PLIST_SUB+=	PERL:="@comment "
 pre-fetch:
 	@${ECHO} -n "If you want to compile with perl support use "
 	@${ECHO} "'make -DWITH_PERL' instead"
+.endif
+
+.include <bsd.port.pre.mk>
+
+.if defined(HAVE_GNOME)
+USE_GNOME=	yes
 .endif
 
 post-install:
 	${INSTALL_SCRIPT} ${FILESDIR}/gimp.setfont ${PREFIX}/bin
 	@${CAT} ${PKGDIR}/MESSAGE
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

@@ -13,23 +13,22 @@ MASTER_SITES=	http://disq.bir.net.tr/guitar/ \
 
 MAINTAINER=	domi@saargate.de
 
-LIB_DEPENDS=	gtk12.3:${PORTSDIR}/x11-toolkits/gtk12
-
 USE_GMAKE=	yes
 USE_X_PREFIX=	yes
+USE_GTK=	yes
+WANT_GNOME=	yes
 GNU_CONFIGURE=	yes
 
-GTK_CONFIG?=    ${X11BASE}/bin/gtk12-config
-CONFIGURE_ENV=  GTK_CONFIG="${GTK_CONFIG}"
+.include <bsd.port.pre.mk>
 
-.if defined(NO_GNOME)
-CONFIGURE_ARGS	+=	--disable-gnome
+.if defined(HAVE_GNOME)
+USE_GNOME=	yes
 .else
-LIB_DEPENDS=	gnome.4:${PORTSDIR}/x11/gnomelibs
+CONFIGURE_ARGS+=--disable-gnome
 .endif
 
 do-install:
-	@ ${INSTALL_PROGRAM} ${WRKSRC}/src/guitar ${PREFIX}/bin
-	@ ${INSTALL_SCRIPT} ${SCRIPTDIR}/bsdtar2gnutar ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/src/guitar ${PREFIX}/bin
+	${INSTALL_SCRIPT} ${SCRIPTDIR}/bsdtar2gnutar ${PREFIX}/bin
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

@@ -23,14 +23,16 @@ LIB_DEPENDS=	ungif.5:${PORTSDIR}/graphics/libungif \
 		PropList.2:${PORTSDIR}/devel/libPropList
 
 USE_BZIP2=	yes
+USE_PERL5=	yes
 USE_X_PREFIX=	yes
 USE_XPM=	yes
+WANT_GNOME=	yes
 USE_LIBTOOL=	yes
 INSTALLS_SHLIB=	yes
 CONFIGURE_ENV=	X11BASE=${X11BASE} LIBS=-L${LOCALBASE}/lib \
 		CPPFLAGS=-I${LOCALBASE}/include
 CONFIGURE_ARGS=	--with-pixmapdir=${PREFIX}/include/X11/pixmaps \
-	--with-nlsdir=${LOCALBASE}/lib/locale \
+	--with-nlsdir=${PREFIX}/share/locale \
 	--with-libs-from="-L${LOCALBASE}/lib" \
 	--with-incs-from="-I${LOCALBASE}/include" \
 	--with-appspath="${PREFIX}/GNUstep/Apps" \
@@ -41,23 +43,22 @@ MAN1=	geticonset.1x getstyle.1x seticons.1x setstyle.1x \
 
 DATAFILES=	WindowMaker-extra-0.1.tar.bz2
 
-.if defined(WITH_GNOME)
+.include <bsd.port.pre.mk>
+
+.if defined(HAVE_GNOME)
 CONFIGURE_ARGS+=	--enable-gnome
 .endif
 
 .if defined(WITH_KDE)
 CONFIGURE_ARGS+=	--enable-kde
+.else
+.SILENT:
+pre-extract:
+	@${ECHO} "You can add hooks for KDE by defining WITH_KDE"
 .endif
 
 .if defined(WITH_SINGLE_ICON)
 CONFIGURE_ARGS+=	--enable-single-icon
-.endif
-
-.SILENT:
-
-.if !defined(WITH_KDE) && !defined(WITH_GNOME)
-pre-extract:
-	${ECHO} "You can add hooks for Gnome and KDE by defining WITH_GNOME and/or WITH_KDE"
 .endif
 
 post-extract:
@@ -77,4 +78,4 @@ post-install:
 		${MAKE} ${MAKE_ARGS} ${INSTALL_TARGET}
 	${MKDIR} ${PREFIX}/share/WindowMaker/Sounds
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

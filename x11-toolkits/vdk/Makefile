@@ -12,18 +12,22 @@ MASTER_SITES=	http://download.sourceforge.net/vdkbuilder/
 
 MAINTAINER=	nakai@FreeBSD.org
 
-LIB_DEPENDS=	gtk12.2:${PORTSDIR}/x11-toolkits/gtk12
-
-GTK_CONFIG?=	${X11BASE}/bin/gtk12-config
-
 USE_NEWGCC=	yes
 USE_X_PREFIX=	yes
+USE_GTK=	yes
+WANT_GNOME=	yes
+USE_LIBTOOL=	yes
 INSTALLS_SHLIB=	yes
-GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		GTK_CONFIG="${GTK_CONFIG}" \
 		LIBS="-L${LOCALBASE}/lib"
 
 MAN1=		vdk-config.1
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if defined(HAVE_GNOME)
+USE_GNOME=	yes
+CONFIGURE_ARGS+=	--enable-gnome
+.endif
+
+.include <bsd.port.post.mk>

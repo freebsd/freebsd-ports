@@ -13,41 +13,44 @@ MASTER_SITE_SUBDIR=	sawmill
 
 MAINTAINER=	sobomax@FreeBSD.org
 
-LIB_DEPENDS=	gtk12.2:${PORTSDIR}/x11-toolkits/gtk12 \
-		Imlib.5:${PORTSDIR}/graphics/imlib \
-		rep.10:${PORTSDIR}/lang/librep
-.if !defined(WITHOUT_GNOME)
-LIB_DEPENDS+=	capplet.4:${PORTSDIR}/sysutils/gnomecontrolcenter
-.endif
+LIB_DEPENDS=	rep.10:${PORTSDIR}/lang/librep
 BUILD_DEPENDS=	${X11BASE}/libexec/rep/${ARCH}--freebsd${OSREL}/gtk.so:${PORTSDIR}/x11-toolkits/rep-gtk
 RUN_DEPENDS=	${X11BASE}/libexec/rep/${ARCH}--freebsd${OSREL}/gtk.so:${PORTSDIR}/x11-toolkits/rep-gtk
-
-GTK_CONFIG?=	${X11BASE}/bin/gtk12-config
-GLIB_CONFIG?=	${LOCALBASE}/bin/glib12-config
 
 PLIST_SUB=	GNUHOST=${ARCH}--freebsd${OSREL} VERSION=${PORTVERSION}
 
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
+USE_IMLIB=	yes
+WANT_GNOME=	yes
 USE_AUTOCONF=	yes
-CONFIGURE_ARGS=	--localstatedir=${PREFIX}/share \
-		--datadir=${PREFIX}/share --with-readline
-.if !defined(WITHOUT_GNOME)
-CONFIGURE_ARGS+=	--enable-capplet
+CONFIGURE_ARGS=	--with-readline
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
+		LIBS="-L${LOCALBASE}/lib"
+
+.include <bsd.port.pre.mk>
+
+.if defined(HAVE_GNOME)
+USE_GNOME=	yes
+CONFIGURE_ARGS+=--enable-capplet
 PLIST_SUB+=	GNOME:=""
 .else
-CONFIGURE_ARGS+=	--disable-capplet \
-			--disable-gnome-widgets \
-			--without-gdk-pixbuf
+CONFIGURE_ARGS+=--disable-capplet \
+		--disable-gnome-widgets \
+		--without-gdk-pixbuf
 PLIST_SUB+=	GNOME:="@comment "
 .endif
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
-		GTK_CONFIG="${GTK_CONFIG}" \
-		GLIB_CONFIG="${GLIB_CONFIG}" \
-		LIBS="-L${LOCALBASE}/lib -lxpg4"
 
 pre-patch:
-	find ${WRKSRC} \( -name "*.jl" -or -name "*.jl.in" \) | \
+	@${PERL} -pi -e 's^-l(pthread|c_r)^-pthread^g ; \
+		 s|DATADIRNAME=lib|DATADIRNAME=share|g ; \
+		 s|USE_INCLUDED_LIBINTL=yes|#USE_INCLUDED_LIBINTL=yes|g ; \
+		 s|\$$\(top_builddir\)/intl/libintl.a|-lintl|g' ${WRKSRC}/configure
+	@find ${WRKSRC} -name "Makefile.in" | xargs ${PERL} -pi -e \
+		's|\$$\(datadir\)/gnome/|\$$\(datadir\)/|g ; \
+		 s|\$$\(datadir\)/aclocal|\$$\(prefix\)/share/aclocal|g ; \
+		 s|\$$\(datadir\)/locale|\$$\(prefix\)/share/locale|g'
+	@find ${WRKSRC} \( -name "*.jl" -or -name "*.jl.in" \) | \
 		xargs ${GREP} -l "../locale" | \
 		xargs ${PERL} -pi -e "s|\.\./locale|../../../locale|g"
 
@@ -56,4 +59,4 @@ post-install:
 	--entry="* sawfish: (sawfish).           sawfish programming manual" \
 	${PREFIX}/info/sawfish.info ${PREFIX}/info/dir
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

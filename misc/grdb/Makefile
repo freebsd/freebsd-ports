@@ -12,46 +12,35 @@ MASTER_SITES=   http://bucket.pp.ualr.edu/~bit/download/
 
 MAINTAINER=	stijn@win.tue.nl
 
-LIB_DEPENDS=	popt.0:${PORTSDIR}/devel/popt \
-		gtk12.2:${PORTSDIR}/x11-toolkits/gtk12 \
-		${GNOME_DEPENDS}
-
-.if !defined(WITHOUT_GNOME)
-GNOME_DEPENDS=	gnome.4:${PORTSDIR}/x11/gnomelibs \
-		capplet.4:${PORTSDIR}/sysutils/gnomecontrolcenter
-.endif
+LIB_DEPENDS=	popt.0:${PORTSDIR}/devel/popt
 
 USE_X_PREFIX=	yes
-
+USE_GTK=	yes
+WANT_GNOME=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-GTK_CONFIG?=	${X11BASE}/bin/gtk12-config
-CONFIGURE_ENV=	GTK_CONFIG="${GTK_CONFIG}" \
-		CPPFLAGS="-I${LOCALBASE}/include" \
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
-.if defined(WITHOUT_GNOME)
+.include <bsd.port.pre.mk>
+
+.if defined(HAVE_GNOME)
+USE_GNOME=	yes
+.else
 CONFIGURE_ARGS=	--disable-gnome
 .endif
 
-.if !defined(WITHOUT_GNOME)
-pre-extract:
-	@${ECHO} "===>  NOTE: You can remove support for the Gnome control panel"
-	@${ECHO} "===>        by defining WITHOUT_GNOME"
-.endif
+pre-patch:
+	@${PERL} -pi -e 's|-lpthread|-pthread|g ; \
+		 s|DATADIRNAME=lib|DATADIRNAME=share|g' ${WRKSRC}/configure
+	@find ${WRKSRC} -name "Makefile.in" | xargs ${PERL} -pi -e \
+		's|\$$\(datadir\)/gnome/|\$$\(datadir\)/|g ; \
+		 s|\$$\(datadir\)/locale|\$$\(prefix\)/share/locale|g'
 
 post-install:
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${PREFIX}/share/doc/grdb
-	${INSTALL_MAN} ${WRKSRC}/README ${PREFIX}/share/doc/grdb
-	@${ECHO} "share/doc/grdb/README" >> ${TMPPLIST}
-	@${ECHO} "@dirrm share/doc/grdb" >> ${TMPPLIST}
-.endif
-.if !defined(WITHOUT_GNOME)
-	@${ECHO} "bin/grdb-capplet" >> ${TMPPLIST}
-	@${ECHO} "share/gnome/control-center/Desktop/grdb-capplet.desktop" >> ${TMPPLIST}
-	@${ECHO} "share/gnome/apps/Settings/Desktop/grdb-capplet.desktop" >> ${TMPPLIST}
-	@${ECHO} "share/gnome/pixmaps/grdb-capplet.png" >> ${TMPPLIST}
+	@${MKDIR} ${PREFIX}/share/doc/grdb
+	${INSTALL_DATA} ${WRKSRC}/README ${PREFIX}/share/doc/grdb
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

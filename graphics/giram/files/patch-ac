@@ -1,0 +1,11 @@
+--- docs/Makefile.in.orig	Mon Mar  6 00:33:01 2000
++++ docs/Makefile.in	Mon Mar  6 00:35:17 2000
+@@ -88,7 +88,7 @@
+ helpfilepath = @helpfilepath@
+ l = @l@
+ 
+-docsdir = @helpfilepath@
++docsdir = @prefix@/share/doc/giram
+ 
+ docs_DATA = Tutorial
+ mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs

@@ -1,0 +1,13 @@
+--- Makefile.in.orig	Tue Oct  3 03:12:14 2000
++++ Makefile.in	Tue Oct  3 03:13:14 2000
+@@ -156,8 +156,8 @@
+ @GNOMEBITS_TRUE@bitssounddir = $(bitssysconf)/sound/events
+ @GNOMEBITS_TRUE@bitssound_DATA = gaim.soundlist
+ 
+-pixmapdir = $(datadir)/apps/Internet
+-pixmap_DATA = gaim.desktop
++@GNOMEAPPLET_TRUE@pixmapdir = $(datadir)/apps/Internet
++@GNOMEAPPLET_TRUE@pixmap_DATA = gaim.desktop
+ 
+ SUBDIRS = m4 libfaim sounds plugins pixmaps doc po intl src
+ ACLOCAL_AMFLAGS = -I m4

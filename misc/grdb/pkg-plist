@@ -1,17 +1,23 @@
+%%GNOME:%%bin/grdb-capplet
 bin/grdb
-share/grdb/AAAAAAGeneral.ad
-share/grdb/AAAMotif.ad
-share/grdb/AAATk.ad
-share/grdb/AAAXaw.ad
-share/grdb/Ddd.ad
-share/grdb/Editres.ad
-share/grdb/Emacs.ad
-share/grdb/ML.ad
-share/grdb/Nedit.ad
-share/grdb/Netscape.ad
-share/grdb/RVPlayer.ad
-share/grdb/XCalc.ad
-share/grdb/XTerm.ad
-share/grdb/XV.ad
-share/grdb/XWp.ad
-@dirrm share/grdb
+share/doc/grdb/README
+%%GNOME:%%share/gnome/apps/Settings/Desktop/grdb-capplet.desktop
+%%GNOME:%%share/gnome/control-center/Desktop/grdb-capplet.desktop
+%%DATADIR%%/grdb/AAAAAAGeneral.ad
+%%DATADIR%%/grdb/AAAMotif.ad
+%%DATADIR%%/grdb/AAATk.ad
+%%DATADIR%%/grdb/AAAXaw.ad
+%%DATADIR%%/grdb/Ddd.ad
+%%DATADIR%%/grdb/Editres.ad
+%%DATADIR%%/grdb/Emacs.ad
+%%DATADIR%%/grdb/ML.ad
+%%DATADIR%%/grdb/Nedit.ad
+%%DATADIR%%/grdb/Netscape.ad
+%%DATADIR%%/grdb/RVPlayer.ad
+%%DATADIR%%/grdb/XCalc.ad
+%%DATADIR%%/grdb/XTerm.ad
+%%DATADIR%%/grdb/XV.ad
+%%DATADIR%%/grdb/XWp.ad
+%%GNOME:%%share/gnome/pixmaps/grdb-capplet.png
+@dirrm %%DATADIR%%/grdb
+@dirrm share/doc/grdb

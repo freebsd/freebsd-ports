@@ -17,24 +17,22 @@ MAINTAINER=	cjh@kr.freebsd.org
 
 LIB_DEPENDS=    gdk_pixbuf.2:${PORTSDIR}/graphics/gdk-pixbuf
 
-GLIB_CONFIG?=	${LOCALBASE}/bin/glib12-config
-GTK_CONFIG?=	${X11BASE}/bin/gtk12-config
-
-USE_X_PREFIX=	YES
-USE_GMAKE=	YES
-GNU_CONFIGURE=	YES
-CONFIGURE_ENV=	GTK_CONFIG="${GTK_CONFIG}"
+USE_X_PREFIX=	yes
+USE_GMAKE=	yes
+USE_GTK=	yes
+WANT_GNOME=	yes
+GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-hangul-keyboard=2
-MAKE_ENV=	GLIB_CONFIG="${GLIB_CONFIG}"
 
-# gnome panel applet support
-.if defined(WITH_GNOME_APPLET)
-PKGNAMESUFFIX=	-gnome
-RUN_DEPENDS+=	panel:${PORTSDIR}/x11/gnomecore
-CONFIGURE_ARGS+= --enable-gnome-applet
+.include <bsd.port.pre.mk>
+
+# gnome support
+.if defined(HAVE_GNOME)
+USE_GNOME=	yes
+CONFIGURE_ARGS+=--enable-gnome-applet
+DATADIR=	share/gnome
 .else
-pre-fetch:
-	@${ECHO_MSG} "Type \"make WITH_GNOME_APPLET=YES\" if you want GNOME panel applet support."
+DATADIR=	share
 .endif
 
 post-build:
@@ -43,7 +41,6 @@ post-build:
 
 post-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/hanjadic/hanja-hwp2ami ${PREFIX}/bin
-
 	# patch XLC_LOCALE for ko_KR.EUC(harmless)
 	if [ -f ${PREFIX}/lib/X11/locale/ko/XLC_LOCALE; then \
 	${MV} -f ${PREFIX}/lib/X11/locale/ko/XLC_LOCALE \
@@ -51,19 +48,15 @@ post-install:
 	fi
 	${INSTALL_DATA} ${FILESDIR}/XLC_LOCALE \
 		${PREFIX}/lib/X11/locale/ko/
-
 	${MKDIR} ${PREFIX}/share/doc/ami
 	${INSTALL_DATA} ${FILESDIR}/XLC_LOCALE \
 		${PREFIX}/share/doc/ami
-
 .for NAME in AUTHORS README NEWS ChangeLog
 	${INSTALL_DATA} ${WRKSRC}/${NAME} \
 		${PREFIX}/share/doc/ami
 .endfor
+	${GUNZIP_CMD} -cd ${DISTDIR}/hanja.dic.gz > \
+			${PREFIX}/${DATADIR}/ami/hanja.dic
+	${CAT} ${DISTDIR}/ami.dic >> ${PREFIX}/${DATADIR}/ami/hanja.dic
 
-	# dic
-	${GUNZIP_CMD} -cd ${_DISTDIR}/hanja.dic.gz > \
-			${PREFIX}/share/ami/hanja.dic
-	${CAT} ${_DISTDIR}/ami.dic >> ${PREFIX}/share/ami/hanja.dic
-
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

@@ -27,6 +27,7 @@ USE_BZIP2=	yes
 USE_PERL5=	yes
 USE_X_PREFIX=	yes
 USE_XPM=	yes
+WANT_GNOME=	yes
 USE_LIBTOOL=	yes
 INSTALLS_SHLIB=	yes
 CONFIGURE_ENV=	X11BASE=${X11BASE}  LOCALBASE=${LOCALBASE} \
@@ -49,24 +50,23 @@ MASTER_SITES+=	ftp://muse.brain.riken.go.jp/pub/ja.po/
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${JA_CATALOGFILE}${EXTRACT_SUFX}
 .endif
 
-.if defined(WITH_GNOME)
+.include <bsd.port.pre.mk>
+
+.if defined(HAVE_GNOME)
 CONFIGURE_ARGS+=	--enable-gnome
 .endif
+
 .if defined(WITH_KDE)
 CONFIGURE_ARGS+=	--enable-kde
-.endif
-
+.else
 .SILENT:
-.if !defined(WITH_KDE) && !defined(WITH_GNOME)
 pre-extract:
-	${ECHO} "You can add hooks for Gnome and KDE by defining WITH_GNOME and/or WITH_KDE"
+	@${ECHO} "You can add hooks for KDE by defining WITH_KDE"
 .endif
 
 post-extract:
 	@cd ${WRKSRC} && \
 	${TAR} xfz libwmfun-0.0.3.tar.gz
-
-.include <bsd.port.pre.mk>
 
 post-patch:
 	@${PERL} -pi -e "s|%%PREFIX%%|${PREFIX}|g" ${WRKSRC}/WPrefs.app/Paths.c
