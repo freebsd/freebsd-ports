@@ -180,6 +180,7 @@
     SUBDIR += seejpeg
     SUBDIR += sketch
     SUBDIR += smpeg
+    SUBDIR += smpeg-xmms
     SUBDIR += sodipodi
     SUBDIR += spigot
     SUBDIR += splitmpg
