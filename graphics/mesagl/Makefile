@@ -3,7 +3,7 @@
 # Date created:         Tue Feb  7 12:02:49  1995
 # Whom:                 hsu
 #
-# $Id: Makefile,v 1.7 1995/04/04 06:09:38 jkh Exp $
+# $Id: Makefile,v 1.8 1995/04/09 07:09:32 asami Exp $
 #
 
 DISTNAME=       Mesa-1.1.3beta
@@ -11,8 +11,7 @@ PKGNAME=	Mesa-1.1.3b
 CATEGORIES+=	graphics
 MASTER_SITES=   ftp://iris.ssec.wisc.edu/pub/misc/
 
-# won't install until I convert the Makefiles to Imakefiles
-NO_INSTALL=	yes
+BROKEN=		yes # won't install until I convert the Makefiles to Imakefiles
 WRKSRC=		${WRKDIR}/Mesa
 USE_GMAKE=	yes
 USE_X11=	yes
