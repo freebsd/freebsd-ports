@@ -1,13 +1,58 @@
 bin/tpg
-lib/%%PYTHON_VERSION%%/site-packages/tpg.py
-%%PORTDOCS%%share/examples/tpg/calc/calc.g
-%%PORTDOCS%%share/examples/tpg/calc/calc.py
-%%PORTDOCS%%share/examples/tpg/calc/calc2.py
-%%PORTDOCS%%share/examples/tpg/calc/calc3.g
-%%PORTDOCS%%share/examples/tpg/calc/calc3.py
-%%PORTDOCS%%share/examples/tpg/notation/notation.py
-%%PORTDOCS%%share/examples/tpg/readme.txt
-%%PORTDOCS%%share/examples/tpg/tpg_grammar.g
-%%PORTDOCS%%@dirrm share/examples/tpg/calc
-%%PORTDOCS%%@dirrm share/examples/tpg/notation
-%%PORTDOCS%%@dirrm share/examples/tpg
+%%PYTHON_SITELIBDIR%%/tpg/Release.py
+%%PYTHON_SITELIBDIR%%/tpg/Release.pyc
+%%PYTHON_SITELIBDIR%%/tpg/Release.pyo
+%%PYTHON_SITELIBDIR%%/tpg/__init__.py
+%%PYTHON_SITELIBDIR%%/tpg/__init__.pyc
+%%PYTHON_SITELIBDIR%%/tpg/__init__.pyo
+%%PYTHON_SITELIBDIR%%/tpg/base.py
+%%PYTHON_SITELIBDIR%%/tpg/base.pyc
+%%PYTHON_SITELIBDIR%%/tpg/base.pyo
+%%PYTHON_SITELIBDIR%%/tpg/codegen.py
+%%PYTHON_SITELIBDIR%%/tpg/codegen.pyc
+%%PYTHON_SITELIBDIR%%/tpg/codegen.pyo
+%%PYTHON_SITELIBDIR%%/tpg/parser.py
+%%PYTHON_SITELIBDIR%%/tpg/parser.pyc
+%%PYTHON_SITELIBDIR%%/tpg/parser.pyo
+@dirrm %%PYTHON_SITELIBDIR%%/tpg
+%%PORTDOCS%%share/doc/tpg/cmmi10-19.gif
+%%PORTDOCS%%share/doc/tpg/cmsy10-21.gif
+%%PORTDOCS%%share/doc/tpg/cmtt10-20.gif
+%%PORTDOCS%%share/doc/tpg/tpg.html
+%%PORTDOCS%%share/doc/tpg/tpg.pdf
+%%PORTDOCS%%share/doc/tpg/tpg11.html
+%%PORTDOCS%%share/doc/tpg/tpg13.html
+%%PORTDOCS%%share/doc/tpg/tpg14.html
+%%PORTDOCS%%share/doc/tpg/tpg17.html
+%%PORTDOCS%%share/doc/tpg/tpg20.html
+%%PORTDOCS%%share/doc/tpg/tpg23.html
+%%PORTDOCS%%share/doc/tpg/tpg6.html
+%%PORTDOCS%%share/doc/tpg/tpg7.html
+%%PORTDOCS%%share/doc/tpg/tpg8.html
+%%PORTDOCS%%share/doc/tpg/tpg9.html
+%%PORTDOCS%%share/doc/tpg/tpgch1.html
+%%PORTDOCS%%share/doc/tpg/tpgch10.html
+%%PORTDOCS%%share/doc/tpg/tpgch11.html
+%%PORTDOCS%%share/doc/tpg/tpgch12.html
+%%PORTDOCS%%share/doc/tpg/tpgch13.html
+%%PORTDOCS%%share/doc/tpg/tpgch14.html
+%%PORTDOCS%%share/doc/tpg/tpgch2.html
+%%PORTDOCS%%share/doc/tpg/tpgch3.html
+%%PORTDOCS%%share/doc/tpg/tpgch4.html
+%%PORTDOCS%%share/doc/tpg/tpgch5.html
+%%PORTDOCS%%share/doc/tpg/tpgch6.html
+%%PORTDOCS%%share/doc/tpg/tpgch7.html
+%%PORTDOCS%%share/doc/tpg/tpgch8.html
+%%PORTDOCS%%share/doc/tpg/tpgch9.html
+%%PORTDOCS%%share/doc/tpg/tpgli1.html
+%%PORTDOCS%%share/doc/tpg/tpgli2.html
+%%PORTDOCS%%share/doc/tpg/tpgpa1.html
+%%PORTDOCS%%share/doc/tpg/tpgpa2.html
+%%PORTDOCS%%share/doc/tpg/tpgpa3.html
+%%PORTDOCS%%share/doc/tpg/tpgpa4.html
+%%PORTDOCS%%@dirrm share/doc/tpg
+share/examples/tpg/calc.g
+share/examples/tpg/calc.py
+share/examples/tpg/calc2.py
+share/examples/tpg/notation.py
+@dirrm share/examples/tpg
