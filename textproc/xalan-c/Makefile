@@ -10,7 +10,7 @@ PORTNAME=	xalan-c
 PORTVERSION=	1.6.0
 CATEGORIES=	textproc
 MASTER_SITES=	${MASTER_SITE_APACHE_XML}
-MASTER_SITE_SUBDIR=	xalan-c
+MASTER_SITE_SUBDIR=	xalan-c/source xalan-c/binaries
 .if defined(DEBUG)
 PKGNAMESUFFIX+=		-debug
 .endif
