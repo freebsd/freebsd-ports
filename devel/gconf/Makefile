@@ -37,11 +37,7 @@ pre-patch:
 		 s|\$\(datadir\)/locale|\$\(prefix\)/share/locale|g'
 
 post-install:
-	@if [ ! -f ${PREFIX}/etc/gconf/1/path ]; then \
-		${CP} -p ${PREFIX}/etc/gconf/1/path.example ${PREFIX}/etc/gconf/1/path ; \
-	fi
 	@${MKDIR} ${PREFIX}/etc/gconf/gconf.xml.defaults/apps
 	@${MKDIR} ${PREFIX}/etc/gconf/gconf.xml.defaults/schemas/apps
-
 
 .include <bsd.port.mk>
