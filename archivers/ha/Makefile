@@ -3,7 +3,7 @@
 # Date created:         24 Jan 1995
 # Whom:                 ache
 #
-# $Id: Makefile,v 1.3 1995/04/01 12:43:23 jkh Exp $
+# $Id: Makefile,v 1.4 1995/04/12 04:53:54 asami Exp $
 #
 
 DISTNAME=       ha0999
@@ -20,7 +20,7 @@ MAKE_FLAGS=     CC=cc -f
 ALL_TARGET=     ha
 USE_GMAKE=      yes
 
-install:
+install: build
 	cd ${WRKSRC}; ${INSTALL} ${COPY} ${STRIP} -o ${BINOWN} -g ${BINGRP} -m ${BINMODE} ha ${PREFIX}/bin
 	@${TOUCH} ${TOUCH_FLAGS} ${INSTALL_COOKIE}
 
