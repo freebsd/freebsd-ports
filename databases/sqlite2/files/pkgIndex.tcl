@@ -1,1 +1,1 @@
-package ifneeded sqlite 1.0 [list load $dir/../libsqlite.so]
+package ifneeded sqlite 0.0 [list load [file join $dir libtclsqlite.so.0] sqlite]
