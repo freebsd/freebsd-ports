@@ -7,7 +7,7 @@
 
 PORTNAME=	waeijiro-fpw
 PORTVERSION=	1.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	japanese
 #MASTER_SITES=	http://openlab.ring.gr.jp/edict/fpw/dist/eijiro/
 MASTER_SITES=	http://www.dsl.gr.jp/~tf/pool/
@@ -28,8 +28,10 @@ SRCFILE?=	waeiji52.txt
 
 # For eijiro included in a book sold by ALC Inc.
 # (http://www.alc.co.jp/alcshop/eng/eijiro/)
-.if exists(${DICT_PATH}/eijiro-original)
-BUILD_DEPENDS+=	lha:${PORTSDIR}/archivers/lha
+.include <bsd.port.pre.mk>
+DICT_ARCHIVE!=	${ECHO_CMD} ${DICT_PATH}/eijiro-original/*.exe || ${TRUE}
+.if exists(${DICT_ARCHIVE})
+EXTRACT_DEPENDS+=	lha:${PORTSDIR}/archivers/lha
 
 CDROM_PATH:=	${DICT_PATH}
 DICT_PATH:=	${WRKDIR}
@@ -69,4 +71,4 @@ do-install:
 .endfor
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
