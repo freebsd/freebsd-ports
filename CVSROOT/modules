@@ -3436,6 +3436,7 @@ konwert		ports/converters/konwert
 kopete		ports/net/kopete
 korelib		ports/devel/korelib
 kp		ports/misc/kp
+kpacman		ports/games/kpacman
 kplayer		ports/multimedia/kplayer
 kpopup		ports/net/kpopup
 kpovmodeler	ports/graphics/kpovmodeler
