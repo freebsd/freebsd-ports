@@ -81,6 +81,7 @@ share/sgml/docbook/dsssl/modular/print/dbblock.dsl
 share/sgml/docbook/dsssl/modular/print/dbcallou.dsl
 share/sgml/docbook/dsssl/modular/print/dbcompon.dsl
 share/sgml/docbook/dsssl/modular/print/dbdivis.dsl
+share/sgml/docbook/dsssl/modular/print/dbefsyn.dsl
 share/sgml/docbook/dsssl/modular/print/dbgloss.dsl
 share/sgml/docbook/dsssl/modular/print/dbgraph.dsl
 share/sgml/docbook/dsssl/modular/print/dbindex.dsl
@@ -119,6 +120,7 @@ share/sgml/docbook/dsssl/modular/html/dbcallou.dsl
 share/sgml/docbook/dsssl/modular/html/dbchunk.dsl
 share/sgml/docbook/dsssl/modular/html/dbcompon.dsl
 share/sgml/docbook/dsssl/modular/html/dbdivis.dsl
+share/sgml/docbook/dsssl/modular/html/dbefsyn.dsl
 share/sgml/docbook/dsssl/modular/html/dbfootn.dsl
 share/sgml/docbook/dsssl/modular/html/dbgloss.dsl
 share/sgml/docbook/dsssl/modular/html/dbgraph.dsl
@@ -405,7 +407,7 @@ share/sgml/docbook/dsssl/modular/doc/lib/url-encode-char.html
 share/sgml/docbook/dsssl/modular/doc/lib/url-encode-string.html
 share/sgml/docbook/dsssl/modular/doc/lib/version.html
 share/sgml/docbook/dsssl/modular/doc/lib.html
-share/sgml/docbook/dsssl/modular/doc/ln12.htm
+share/sgml/docbook/dsssl/modular/doc/ln13.htm
 share/sgml/docbook/dsssl/modular/doc/print/ChangeLog
 share/sgml/docbook/dsssl/modular/doc/print/admon-font-family.html
 share/sgml/docbook/dsssl/modular/doc/print/admon-graphic-width.html
@@ -587,6 +589,7 @@ share/sgml/docbook/dsssl/modular/olink/olink.dsl
 share/sgml/docbook/dsssl/modular/test/ChangeLog
 share/sgml/docbook/dsssl/modular/test/db31.sgm
 share/sgml/docbook/dsssl/modular/test/docbook.css
+share/sgml/docbook/dsssl/modular/test/docbook40.xml
 share/sgml/docbook/dsssl/modular/test/docinfo.sgm
 share/sgml/docbook/dsssl/modular/test/emc2.gif
 share/sgml/docbook/dsssl/modular/test/emc2i.gif
@@ -660,6 +663,9 @@ share/sgml/docbook/dsssl/modular/contrib/subdoc/subdoc.dtd
 share/sgml/docbook/dsssl/modular/contrib/subdoc/subdoc1.sgm
 share/sgml/docbook/dsssl/modular/contrib/subdoc/subdoc2.sgm
 share/sgml/docbook/dsssl/modular/contrib/subdoc/subdocbc.mod
+share/sgml/docbook/dsssl/modular/contrib/renumberinpart/ChangeLog
+share/sgml/docbook/dsssl/modular/contrib/renumberinpart/renumberinpart.dsl
+share/sgml/docbook/dsssl/modular/contrib/renumberinpart/test.sgm
 share/sgml/docbook/dsssl/modular/contrib/print/ChangeLog
 share/sgml/docbook/dsssl/modular/contrib/print/short-biblioentry.dsl
 share/sgml/docbook/dsssl/modular/contrib/imagemap/ChangeLog
@@ -710,6 +716,7 @@ share/sgml/docbook/dsssl/modular/frames/navbar.htm
 @dirrm share/sgml/docbook/dsssl/modular/doc/print
 @dirrm share/sgml/docbook/dsssl/modular/doc
 @dirrm share/sgml/docbook/dsssl/modular/contrib/subdoc
+@dirrm share/sgml/docbook/dsssl/modular/contrib/renumberinpart
 @dirrm share/sgml/docbook/dsssl/modular/contrib/print
 @dirrm share/sgml/docbook/dsssl/modular/contrib/imagemap
 @dirrm share/sgml/docbook/dsssl/modular/contrib/html
