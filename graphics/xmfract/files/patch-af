@@ -1,0 +1,22 @@
+--- src/init_data.c.orig	Wed Jun 21 00:47:04 1995
++++ src/init_data.c	Thu Aug 10 22:13:02 2000
+@@ -332,7 +332,9 @@
+     {
+     char *tempstr = getenv("XMFRACTDIR");
+ 
+-    if (tempstr == NULL) tempstr = getenv("FRACTDIR");
++    if (tempstr == NULL) {
++      tempstr = getenv("FRACTDIR");
++    }
+ 
+     if(tempstr != NULL)
+       {
+@@ -346,7 +348,7 @@
+     }
+ 
+   if(fractdir == NULL)
+-    fractdir = getcwd(NULL, 64);
++    fractdir = XMFLACT_LIBDIR;
+ 
+   if(fractdir == NULL)
+     {
