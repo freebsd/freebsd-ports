@@ -1,4 +1,4 @@
-Icecast provides nearly all the functionality of the Shoutcast Linux
+Icecast provides nearly all the functionality of the Shoutcast
 server.  It will accept encoding streams from either iceplay or WinAmp.
 It can also add itself to a directory server such as our own
 icecast.linuxpower.org or Nullsoft's yp.shoutcast.com.  It does not yet 
