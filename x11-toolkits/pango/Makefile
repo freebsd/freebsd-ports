@@ -6,15 +6,15 @@
 #
 
 PORTNAME=	pango
-PORTVERSION=	0.12
+PORTVERSION=	0.13
 CATEGORIES=	x11-toolkits
-MASTER_SITES=	http://people.redhat.com/otaylor/pango-mirror/download/
+MASTER_SITES=	ftp://ftp.gtk.org/pub/gtk/v1.3/ \
+		ftp://ftp.cs.umn.edu/pub/gimp/gtk/v1.3/ \
+		http://www.ameth.org/gimp/gtk/v1.3/
 
 MAINTAINER=	sobomax@FreeBSD.org
 
-LIB_DEPENDS=	glib-1.3.1:${PORTSDIR}/devel/glib13 \
-		giconv.2:${PORTSDIR}/converters/libiconv \
-		fribidi.0:${PORTSDIR}/textproc/fribidi
+LIB_DEPENDS=	glib-1.3.2:${PORTSDIR}/devel/glib13
 
 USE_X_PREFIX=	yes
 USE_LIBTOOL=	yes
@@ -22,9 +22,5 @@ INSTALLS_SHLIB=	yes
 CONFIGURE_ARGS=	--with-qt=no
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib"
-
-pre-patch:
-	@find ${WRKSRC} -type f | xargs ${GREP} -l iconv.h | \
-		xargs ${PERL} -pi -e "s|iconv\.h|giconv.h|g"
 
 .include <bsd.port.mk>

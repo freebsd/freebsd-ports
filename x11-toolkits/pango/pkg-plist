@@ -9,9 +9,11 @@ include/pango/pango-engine.h
 include/pango/pango-font.h
 include/pango/pango-fontmap.h
 include/pango/pango-glyph.h
+include/pango/pango-indic.h
 include/pango/pango-item.h
 include/pango/pango-layout.h
 include/pango/pango-modules.h
+include/pango/pango-tabs.h
 include/pango/pango-types.h
 include/pango/pango-utils.h
 include/pango/pango.h
@@ -24,8 +26,12 @@ lib/libpangox.so
 lib/libpangox.so.0
 lib/pango/modules/pango-arabic.so
 lib/pango/modules/pango-basic.so
+lib/pango/modules/pango-bengali.so
 lib/pango/modules/pango-devanagari.so
+lib/pango/modules/pango-gujarati.so
+lib/pango/modules/pango-gurmukhi.so
 lib/pango/modules/pango-hangul.so
+lib/pango/modules/pango-myanmar.so
 lib/pango/modules/pango-tamil.so
 lib/pango/modules/pango-thai.so
 @dirrm lib/pango/modules
