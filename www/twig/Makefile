@@ -19,7 +19,6 @@ RUN_DEPENDS+=	${LOCALBASE}/libexec/apache/libphp4.so:${PORTSDIR}/${PHP4_PORT}
 RUN_DEPENDS+=	${LOCALBASE}/libexec/apache/libphp3.so:${PORTSDIR}/${PHP3_PORT}
 .endif
 .if !defined(WITH_MYSQL)
-POSTGRESQL_PORT?=	databases/postgresql-client
 LIB_DEPENDS+=	pq.3:${PORTSDIR}/${POSTGRESQL_PORT}
 .else
 .endif
@@ -28,6 +27,7 @@ NO_BUILD=	YES
 PHP4_PORT?=	www/mod_php4-twig
 PHP3_PORT?=	www/mod_php3
 TWIG?=		www/data-dist/twig
+POSTGRESQL_PORT?=	databases/postgresql-client
 PLIST_SUB+=	TWIG=${TWIG}
 ROOTFILES=	index.php3 test.php3 goto.php3
 CONFFILES=	.htaccess mailfooter.inc.php3.sample
