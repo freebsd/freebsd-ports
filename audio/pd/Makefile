@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	pd
-PORTVERSION=	0.35.23
+PORTVERSION=	0.36.0
 CATEGORIES=	audio
 MASTER_SITES=	http://www-crca.ucsd.edu/~msp/Software/
-DISTNAME=	pd-0.35-test23.linux
+DISTNAME=	pd-0.36-0.linux
 
 MAINTAINER=	trevor@FreeBSD.org
 COMMENT=	Pure Data, a MIDI-capable real-time audio processor/synthesizer
@@ -26,7 +26,7 @@ PATCH_WRKSRC=	${WRKSRC}/..
 PLIST=		${WRKDIR}/pkg-plist
 USE_GMAKE=	yes
 USE_X_PREFIX=	yes
-WRKSRC=		${WRKDIR}/pd-0.35-test23/src
+WRKSRC=		${WRKDIR}/pd-0.36-0/src
 
 pre-patch:
 	${CP} ${WRKSRC}/s_linux.c ${WRKSRC}/s_freebsd.c
