@@ -5,4 +5,10 @@
 bin/transfig
 bin/fig2dev
 bin/fig2ps2tex
+bin/fig2ps2tex.sh
 bin/pic2tpic
+@mode 644
+man/man1/transfig.1.gz
+man/man1/fig2ps2tex.1.gz
+man/man1/pic2tpic.1.gz
+man/man1/fig2dev.1.gz
