@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gtkballs
-PORTVERSION=	2.0.1
+PORTVERSION=	2.1
 CATEGORIES=	games
 MASTER_SITES=	http://gtkballs.antex.ru/dist/
 
@@ -15,6 +15,8 @@ MAINTAINER=	ports@FreeBSD.org
 USE_GTK=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
+		LDFLAGS="-L${LOCALBASE}/lib"
 CONFIGURE_ARGS=	--localstatedir=${DATADIR}
 
 MAN6=		gtkballs.6x
