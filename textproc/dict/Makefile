@@ -8,8 +8,6 @@
 
 PORTNAME=	dict
 PORTVERSION= 	1.4.9
-DISTNAME=	dictd-1.4.9
-PKGNAME=	dict-1.4.9
 CATEGORIES=	textproc
 MASTER_SITES=	ftp://ftp.cs.unc.edu/pub/users/faith/dict/ \
 		ftp://ftp.dict.org/pub/dict/
