@@ -6,51 +6,45 @@
 #
 
 PORTNAME=	wmakerconf
-PORTVERSION=	2.9.2
+PORTVERSION=	2.11
 CATEGORIES=	x11-wm
 MASTER_SITES=	http://www.starplot.org/wmakerconf/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A configuration tool for Window Maker
 
+LIB_DEPENDS=	wraster.4:${PORTSDIR}/x11-wm/windowmaker
 RUN_DEPENDS=	rpm:${PORTSDIR}/archivers/rpm
 .if !exists(/usr/bin/bzip2)
 RUN_DEPENDS+=	bunzip2:${PORTSDIR}/archivers/bzip2
 .endif
-LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
-		tiff.4:${PORTSDIR}/graphics/tiff \
-		png.5:${PORTSDIR}/graphics/png \
-		wraster.4:${PORTSDIR}/x11-wm/windowmaker
 
 USE_X_PREFIX=	yes
-USE_GNOME=	gnomehier gnometarget imlib
+USE_GNOME=	gnomehier gnometarget gtk20
 USE_PERL5=	yes
-USE_XPM=	yes
-USE_REINPLACE=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-wmakerdir="${X11BASE}/share/WindowMaker"
 
 MAN1=		mkpreview.1 wmakerconf.1
 
-.if defined(WITHOUT_NLS)
-CONFIGURE_ARGS+=	--disable-nls
-PLIST_SUB+=	NLS="@comment "
-.else
-USE_GETTEXT=	yes
-PLIST_SUB+=	NLS=""
-.endif
+post-extract:
+	@${FIND} ${WRKSRC} -name "*.gmo" -delete
 
 pre-configure:
 	@${PERL} -pi -e 's|lynx wget|lynx fetch|g' ${WRKSRC}/configure
 	@${PERL} -pi -e 's|: install-data-local|:|g' ${WRKSRC}/Makefile.in
-.for file in WMWmakerconf.gettext WMWmakerconf
-	@${PERL} -pi -e 's|%%LOCALBASE%%|${LOCALBASE}|g ; \
-		 s|%%X11BASE%%|${X11BASE}|g' ${WRKSRC}/data/${file}
+.for file in data/WMWmakerconf data/WMWmakerconf.gettext
+	@${PERL} -pi -e 's|/usr/local/share|${LOCALBASE}|g ; \
+		 s|/usr/share|${X11BASE}|g' ${WRKSRC}/${file}
+.endfor
+.for file in data/po/ja.po po/ja.po
+	@${PERL} -pi -e 's|JISX-0208-1983-0|euc-jp|g' ${WRKSRC}/${file}
 .endfor
 
 post-install:
+	@${MKDIR} ${PREFIX}/share/gnome/applications
 	${INSTALL_DATA} ${WRKSRC}/wmakerconf.desktop \
-		${PREFIX}/share/gnome/apps/Settings
+		${PREFIX}/share/gnome/applications
 
 .include <bsd.port.mk>
