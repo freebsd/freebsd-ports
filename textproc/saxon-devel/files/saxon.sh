@@ -1,6 +1,6 @@
 #!/bin/sh
 #
-# $FreeBSD: /tmp/pcvs/ports/textproc/saxon-devel/files/Attic/saxon.sh,v 1.1 2004-07-07 20:36:36 glewis Exp $
+# $FreeBSD: /tmp/pcvs/ports/textproc/saxon-devel/files/Attic/saxon.sh,v 1.2 2004-07-17 08:19:44 glewis Exp $
 
 export CLASSPATH=`%%PREFIX%%/bin/classpath`
-javavm -jar %%JAVAJARDIR%%/saxon8.jar $@
+JAVAVM=%%JAVAVM%% javavm -jar %%JAVAJARDIR%%/saxon8.jar $@
