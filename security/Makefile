@@ -7,6 +7,7 @@
     SUBDIR += aide
     SUBDIR += altivore
     SUBDIR += amavis-perl
+    SUBDIR += amavisd
     SUBDIR += apg
     SUBDIR += arirang
     SUBDIR += audit
