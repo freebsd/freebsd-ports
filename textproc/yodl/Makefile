@@ -1,12 +1,12 @@
 # New ports collection makefile for:    yodl
-# Version required:     1.22
 # Date created:         22 Oct 1997
 # Whom:                 Donald Burr <dburr@FreeBSD.org>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	yodl-1.22
+PORTNAME=	yodl
+PORTVERSION= 	1.22
 CATEGORIES=	textproc
 MASTER_SITES=	ftp://ftp.icce.rug.nl/pub/unix/
 

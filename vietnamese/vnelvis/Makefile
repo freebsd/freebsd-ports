@@ -1,17 +1,17 @@
 # ex:ts=8
 # Ports collection makefile for:    vnelvis
-# Version required: 0.0
 # Date created:         Tue Dec 3, 1996
 # Whom:                 David O'Brien (obrien@cs.ucdavis.edu)
 #
 # $FreeBSD$
 #
 
-DISTNAME=	vnelvis
-PKGNAME=	vi-vnelvis-1.4
+PORTNAME=	vi-vnelvis
+PORTVERSION= 	1.4
 CATEGORIES=	vietnamese editors
 MASTER_SITES=	ftp://ftp.media.mit.edu/pub/Vietnet/Viscii/Unix/  \
 		ftp://ftp.monash.edu.au/pub/vietnam/unix/
+DISTNAME=	vnelvis
 EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=	obrien@FreeBSD.org

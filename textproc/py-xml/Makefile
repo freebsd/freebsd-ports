@@ -1,19 +1,19 @@
 # Ports collection Makefile for:	PyXML
-# Version required:			0.5.1
 # Date created:				04/17/1999
 # Whom:					nectar@FreeBSD.org
 #
 # $FreeBSD$
 #
 
-DISTNAME=		xml-0.5.1
-PKGNAME=		py-xml-0.5.1
+PORTNAME=		py-xml
+PORTVERSION= 		0.5.1
 CATEGORIES=		textproc python
 MASTER_SITES=		http://www.python.org/sigs/xml-sig/files/      \
 			ftp://ftp.cdrom.com/pub/python/www.python.org/sigs/xml-sig/files/ \
 			ftp://ftp.kddlabs.co.jp/pub/lang/python/www.python.org/sigs/xml-sig/files/ \
 			ftp://unix.hensa.ac.uk/mirrors/ftp.python.org/pub/www.python.org/sigs/xml-sig/files/ \
 			http://www.nectar.cc/distfiles/
+DISTNAME=		xml-0.5.1
 EXTRACT_SUFX=		.tgz
 
 MAINTAINER=		nectar@FreeBSD.org

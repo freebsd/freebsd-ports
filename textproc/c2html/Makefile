@@ -1,12 +1,12 @@
 # New ports collection makefile for:	c2html
-# Version required:			0.7.2
 # Date created:				28 October 1997
 # Whom:					Andrey Zakhvatov
 #
 # $FreeBSD$
 #
 
-DISTNAME=		c2html-0.7.2
+PORTNAME=		c2html
+PORTVERSION= 		0.7.2
 CATEGORIES=		textproc www
 MASTER_SITES=		${MASTER_SITE_SUNSITE}
 MASTER_SITE_SUBDIR=	apps/www/converters

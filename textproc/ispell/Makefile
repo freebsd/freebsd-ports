@@ -1,13 +1,12 @@
 # New ports collection makefile for:	ispell
-# Version required:			3.1.20
 # Date created:				6 November 1994
 # Whom:					jmz
 #
 # $FreeBSD$
 #
 
-DISTNAME=	ispell-3.1
-PKGNAME?=	ispell-3.1.20c
+PORTNAME?=	ispell
+PORTVERSION?= 	3.1.20c
 CATEGORIES=	textproc elisp
 MASTER_SITES=	ftp://ftp.cs.ucla.edu/pub/ispell-3.1/ \
 		ftp://ftp.kiarchive.ru/pub/unix/text/ispell/

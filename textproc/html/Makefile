@@ -1,12 +1,12 @@
 # New ports collection makefile for:	html
-# Version required:	4.0
 # Date created:		Sept 19, 1997
 # Whom:			jfieber
 #
 # $FreeBSD$
 #
 
-DISTNAME=	html-4.0b
+PORTNAME=	html
+PORTVERSION= 	4.0b
 CATEGORIES=	textproc
 MASTER_SITES=	http://fallout.campusview.indiana.edu/ports/distfiles/
 

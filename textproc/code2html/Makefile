@@ -1,12 +1,12 @@
 # New ports collection makefile for:	code2html
-# Version required:			0.8.9a
 # Date created:				01 October 1999
 # Whom:					Chris D. Faulhaber <jedgar@fxp.org>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	code2html-0.8.9a
+PORTNAME=	code2html
+PORTVERSION= 	0.8.9a
 CATEGORIES=	textproc
 MASTER_SITES=	ftp://code2html.sourceforge.net/pub/code2html/all/ \
 		http://www.cosy.sbg.ac.at/~ppalfrad/code2html/all/

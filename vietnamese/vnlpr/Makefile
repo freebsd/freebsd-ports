@@ -1,17 +1,17 @@
 # ex:ts=8
 # Ports collection makefile for:  vnlpr
-# Version required: 0.0
 # Date created:		Sat Dec 7, 1996
 # Whom:			David O'Brien (obrien@cs.ucdavis.edu)
 #
 # $FreeBSD$
 #
 
-DISTNAME=	vnlpr
-PKGNAME=	vi-vnlpr-2.0
+PORTNAME=	vi-vnlpr
+PORTVERSION= 	2.0
 CATEGORIES=	vietnamese print
 MASTER_SITES=	ftp://ftp.media.mit.edu/pub/Vietnet/Viscii/Unix/  \
 		ftp://ftp.monash.edu.au/pub/vietnam/unix/
+DISTNAME=	vnlpr
 EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=	obrien@FreeBSD.org

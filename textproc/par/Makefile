@@ -1,15 +1,15 @@
 # New ports collection makefile for:	Par
-# Version required:     1.50
 # Date created:         6 Aug 1997
 # Whom:                 mark@grondar.za
 #
 # $FreeBSD$
 #
 
-DISTNAME=       Par150
-PKGNAME=        par-1.50
+PORTNAME=	par
+PORTVERSION= 	1.50
 CATEGORIES=	textproc
 MASTER_SITES=   http://www.cs.berkeley.edu/~amc/Par/
+DISTNAME=	Par150
 
 MAINTAINER=	mark@grondar.za
 

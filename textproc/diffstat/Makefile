@@ -1,12 +1,12 @@
 # New ports collection makefile for:	diffstat
-# Version required:	1.27
 # Date created:		Oct 23, 1999
 # Whom:			Trevor Johnson <trevor@jpj.net>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	diffstat-1.27
+PORTNAME=	diffstat
+PORTVERSION= 	1.27
 CATEGORIES=	textproc devel
 MASTER_SITES=	ftp://ftp.clark.net/pub/dickey/diffstat/ \
 		http://www.clark.net/pub/dickey/diffstat/

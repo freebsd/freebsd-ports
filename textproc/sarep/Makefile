@@ -1,13 +1,12 @@
 # Ports collection makefile for:  sarep
-# http://tarp.worldserve.net/software/
-# Version required:               1.*
 # Date created:                   Feb 18, 1999
 # Whom:                           ache
 #
 # $FreeBSD$
 #
 
-DISTNAME=       sarep-1.1
+PORTNAME=	sarep
+PORTVERSION= 	1.1
 CATEGORIES=	textproc
 MASTER_SITES=   http://tarp.worldserve.net/software/
 EXTRACT_SUFX=

@@ -1,16 +1,16 @@
 # New ports collection makefile for:	unroff
-# Version required:	1.0
 # Date created:		18 Feb 1996
 # Whom:			Thomas Gellekum <tg@freebsd.org>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	unroff-1.0
-PKGNAME=	unroff-1.0.2
+PORTNAME=	unroff
+PORTVERSION= 	1.0.2
 CATEGORIES=	textproc
 MASTER_SITES=	${UNROFF_SITE}/dist/ \
 		${UNROFF_SITE}/contrib/
+DISTNAME=	${PORTNAME}-1.0
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${PATCH1} ${PATCH2}
 
 MAINTAINER=	wosch@freebsd.org

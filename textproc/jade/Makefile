@@ -1,12 +1,12 @@
 # New ports collection makefile for:	jade
-# Version required:	1.2
 # Date created:		June 19, 1997
 # Whom:			jfieber
 #
 # $FreeBSD$
 #
 
-DISTNAME=	jade-1.2.1
+PORTNAME=	jade
+PORTVERSION= 	1.2.1
 CATEGORIES=	textproc
 MASTER_SITES=	ftp://ftp.jclark.com/pub/jade/
 

@@ -1,13 +1,13 @@
 # ex:ts=8
 # Ports collection makefile for:  agrep
-# Version required: 0.0
 # Date created:			  Fri May 23, 1997
 # Whom:				  David O'Brien (obrien@FreeBSD.org)
 #
 # $FreeBSD$
 #
 
-DISTNAME=	agrep-2.04
+PORTNAME=	agrep
+PORTVERSION= 	2.0.4
 CATEGORIES=	textproc
 MASTER_SITES=	ftp://ftp.cs.arizona.edu/agrep/
 EXTRACT_SUFX=	.tar.Z

@@ -1,13 +1,12 @@
 # New ports collection makefile for:   docproj
-# Version required:    around June 1998
 # Date created:        27 June 1998
 # Whom:                Nik Clayton <nik@freebsd.org>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	docproj
-PKGNAME=	docproj-1.1
+PORTNAME=	docproj
+PORTVERSION= 	1.1
 CATEGORIES=	textproc
 MASTER_SITES=	# empty
 DISTFILES=	# empty

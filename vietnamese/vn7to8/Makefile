@@ -1,6 +1,5 @@
 # ex:ts=8
 # Ports collection makefile for:    vn7to8
-# Version required: 0.0
 # Date created:         Tue Dec 3, 1996
 # Whom:                 David O'Brien (obrien@cs.ucdavis.edu)
 #
@@ -8,11 +7,12 @@
 #
 #	version # is VISCII version supported + .<edit_revision>
 
-DISTNAME=	vn7to8
-PKGNAME=	vi-vn7to8-1.1.1
+PORTNAME=	vi-vn7to8
+PORTVERSION=	1.1.1
 CATEGORIES=	vietnamese
 MASTER_SITES=	ftp://ftp.media.mit.edu/pub/Vietnet/Viscii/Unix/  \
 		ftp://ftp.monash.edu.au/pub/vietnam/unix/
+DISTNAME=	vn7to8
 EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=	obrien@FreeBSD.org

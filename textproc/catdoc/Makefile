@@ -1,12 +1,12 @@
 # New ports collection makefile for:   catdoc
-# Version required:    0.90.1
 # Date created:        11 November 1997
 # Whom:                Brion Moss <brion@queeg.com>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	catdoc-0.90.3
+PORTNAME=	catdoc
+PORTVERSION= 	0.90.3
 CATEGORIES=	textproc
 MASTER_SITES=	${MASTER_SITE_TEX_CTAN} \
 		ftp://ftp.ice.ru/pub/vitus/

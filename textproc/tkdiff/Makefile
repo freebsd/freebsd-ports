@@ -1,12 +1,12 @@
 # New ports collection makefile for:	tkdiff
-# Version required:	3.04
 # Date created:		4 Oct. 1999
 # Whom:			Kevin Lo <kevlo@FreeBSD.org>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	tkdiff-3.04
+PORTNAME=	tkdiff
+PORTVERSION= 	3.04
 CATEGORIES=	textproc tk82
 MASTER_SITES=	http://people.FreeBSD.org/~kevlo/
 

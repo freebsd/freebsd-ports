@@ -1,12 +1,12 @@
 # New ports collection makefile for: 	sgrep
-# Version required: 			0.99
 # Date created:    			Apr 29 1998
 # Whom: 				<koshy@india.hp.com>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	sgrep-0.99
+PORTNAME=	sgrep
+PORTVERSION= 	0.99
 CATEGORIES=	textproc
 MASTER_SITES=	ftp://ftp.cs.helsinki.fi/pub/Software/Local/Sgrep/
 

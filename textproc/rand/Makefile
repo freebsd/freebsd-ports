@@ -1,12 +1,12 @@
 # New ports collection makefile for:	rand
-# Version required:		1.7
 # Date created:			Mon Jul 26 1999
 # Whom:				domi@saargate.de
 #
 # $FreeBSD$
 #
 
-DISTNAME=	rand-1.7
+PORTNAME=	rand
+PORTVERSION= 	1.7
 CATEGORIES=	textproc
 MASTER_SITES=	http://math.smsu.edu/~br0ke/files/
 
