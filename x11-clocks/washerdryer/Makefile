@@ -1,0 +1,37 @@
+# New ports collection makefile for:	washerdryer
+# Date Created:				Thu Nov  8 00:07:24 EST 2001
+# Whom:					Patrick Li <pat@databits.net>
+#
+# $FreeBSD$
+#
+
+PORTNAME=	washerdryer
+PORTVERSION=	1.0
+CATEGORIES=	x11-clocks windowmaker
+MASTER_SITES=	http://ieng9.ucsd.edu/~m1foley/
+DISTNAME=	washerDryer-${PORTVERSION}
+
+MAINTAINER=	pat@databits.net
+
+WRKSRC=		${WRKDIR}/${DISTNAME}/washerDryer
+USE_X_PREFIX=	yes
+USE_GMAKE=	yes
+USE_BZIP2=	yes
+USE_GTK=	yes
+USE_XPM=	yes
+
+MANCOMPRESSED=	yes
+MAN1=		washerDryer.1
+
+do-install:
+	@${INSTALL_PROGRAM} ${WRKSRC}/washerDryer ${PREFIX}/bin
+	@${INSTALL_MAN} ${WRKSRC}/man/washerDryer.1.gz ${PREFIX}/man/man1
+.if !defined(NOPORTDOCS)
+	@${MKDIR} ${DOCSDIR}
+	@${INSTALL_DATA} ${WRKSRC}/wdryerrc ${DOCSDIR}/wdryerrc.example
+.endif
+
+post-install:
+	@${SED} 's|%%EXAMPLE%%|${DOCSDIR}/wdryerrc.example|' ${PKGMESSAGE}
+
+.include <bsd.port.mk>

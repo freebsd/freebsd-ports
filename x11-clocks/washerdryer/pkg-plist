@@ -1,0 +1,3 @@
+bin/washerDryer
+%%PORTDOCS%%share/doc/washerdryer/wdryerrc.example
+%%PORTDOCS%%@dirrm share/doc/washerdryer

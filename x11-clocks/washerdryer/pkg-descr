@@ -1,0 +1,19 @@
+[from README]
+washerDryer keeps track of the loads in your washer and
+dryer, and alerts you when they are ready.
+
+I'm bad at remembering when to take my clothes out, so I wrote
+this program to help me. Hopefully other people will find it
+useful as well.
+
+Some features are:
+
+    * Keeps track of up to 10 loads at once
+    * Alerts you with system beep, or any command you specify
+    * Fully compatible with WindowMaker as a dockapp
+    * Command line options (-h for help)            
+    * Customize the program through config file, command line
+      options, or on the fly
+
+WWW: http://ieng9.ucsd.edu/~m1foley/washerDryer.html
+Author: Michael A. Foley <foley@ucsd.edu>
