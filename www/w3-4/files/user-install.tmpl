@@ -1,0 +1,11 @@
+#!/bin/sh
+
+SAMPLEDIR=%SAMPLEDIR%
+
+if [ ! -f ${HOME}/.mosaic-hotlist-default ]; then
+	cp ${SAMPLEDIR}/dot.mosaic-hotlist-default ${HOME}/.mosaic-hotlist-default
+fi
+
+mv ${HOME}/.emacs ${HOME}/.emacs.org.$$
+sed -e '/^;;* Emacs-w3 ;*$/,/^;; *Emacs-w3 end$/d' < ${HOME}/.emacs.org.$$ > ${HOME}/.emacs
+cat ${SAMPLEDIR}/dot.emacs >> ${HOME}/.emacs
