@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.38 1998/04/13 00:51:58 jseger Exp $
+# $Id: Makefile,v 1.39 1998/04/26 03:25:27 mph Exp $
 #
 
     SUBDIR += Scilab
@@ -17,6 +17,7 @@
     SUBDIR += lapack
     SUBDIR += libranlib
     SUBDIR += linpack
+    SUBDIR += metis
     SUBDIR += numpy
     SUBDIR += octave
     SUBDIR += oleo
