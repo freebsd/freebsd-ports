@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	bsh
-PORTVERSION=	1.2.b6
+PORTVERSION=	1.2.b7
 CATEGORIES=	java
-MASTER_SITES=	http://www.metaverse.nl/~ernst/
+MASTER_SITES=	http://www.beanshell.org/
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/.b/b/}
 EXTRACT_SUFX=	.jar
 EXTRACT_ONLY=
