@@ -37,6 +37,10 @@ WRKSRC=			${WRKDIR}/mozilla
 
 .include <bsd.port.pre.mk>
 
+.if ${OSVERSION} > 500038
+BROKEN= "on -CURRENT, can only be used with local files"
+.endif
+
 .if !defined(PERL_VER) || ${PERL_VER} != "5.8.0"
 .undef NO_IGNORE
 BROKEN=	This port requires Perl 5.8.0 because of File::Spec issues. \
