@@ -7453,6 +7453,7 @@ zh-emacs20	ports/chinese/emacs20
 zh-enscript	ports/chinese/enscript
 zh-eterm	ports/chinese/eterm
 zh-firebird	ports/chinese/firebird
+zh-gb2jis	ports/chinese/gb2jis
 zh-gb2ps	ports/chinese/gb2ps
 zh-gbscript	ports/chinese/gbscript
 zh-ghostscript6	ports/chinese/ghostscript6
