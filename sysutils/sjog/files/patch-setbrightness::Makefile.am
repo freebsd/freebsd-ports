@@ -4,8 +4,7 @@
  
  bin_PROGRAMS = setbrightness
   
--setbrightness_SOURCES = setbrightness.c
-+setbrightness_SOURCES = setbrightness.c 
+ setbrightness_SOURCES = setbrightness.c
 +
 +LDADD = ../src/sonypi.o ../src/pci_freebsd.o
  
