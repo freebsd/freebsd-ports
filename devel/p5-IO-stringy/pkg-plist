@@ -2,29 +2,11 @@
 %%SITE_PERL%%/IO/InnerFile.pm
 %%SITE_PERL%%/IO/Lines.pm
 %%SITE_PERL%%/IO/Scalar.pm
-%%SITE_PERL%%/IO/Scalar.pm.html
 %%SITE_PERL%%/IO/ScalarArray.pm
 %%SITE_PERL%%/IO/Stringy.pm
 %%SITE_PERL%%/IO/Wrap.pm
 %%SITE_PERL%%/IO/WrapTie.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/IO/Stringy/.packlist
 @unexec rmdir %D/%%SITE_PERL%%/IO 2>/dev/null || true
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/IO-stringy/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/IO-stringy
-%%PORTDOCS%%share/doc/p5-IO-stringy/IO/AtomicFile.pm.html
-%%PORTDOCS%%share/doc/p5-IO-stringy/IO/InnerFile.pm.html
-%%PORTDOCS%%share/doc/p5-IO-stringy/IO/Lines.pm.html
-%%PORTDOCS%%share/doc/p5-IO-stringy/IO/Scalar.pm.html
-%%PORTDOCS%%share/doc/p5-IO-stringy/IO/ScalarArray.pm.html
-%%PORTDOCS%%share/doc/p5-IO-stringy/IO/Stringy.pm.html
-%%PORTDOCS%%share/doc/p5-IO-stringy/IO/Wrap.pm.html
-%%PORTDOCS%%share/doc/p5-IO-stringy/IO/WrapTie.pm.html
-%%PORTDOCS%%share/doc/p5-IO-stringy/IO/icons/h1bullet.gif
-%%PORTDOCS%%share/doc/p5-IO-stringy/IO/icons/h2bullet.gif
-%%PORTDOCS%%share/doc/p5-IO-stringy/IO/icons/itembullet.gif
-%%PORTDOCS%%share/doc/p5-IO-stringy/IO/icons/zeegee.gif
-%%PORTDOCS%%share/doc/p5-IO-stringy/index-menu.html
-%%PORTDOCS%%share/doc/p5-IO-stringy/index.html
-%%PORTDOCS%%share/doc/p5-IO-stringy/index.menu
-%%PORTDOCS%%@dirrm share/doc/p5-IO-stringy/IO/icons
-%%PORTDOCS%%@dirrm share/doc/p5-IO-stringy/IO
-%%PORTDOCS%%@dirrm share/doc/p5-IO-stringy
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/IO/Stringy
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/IO 2>/dev/null || true

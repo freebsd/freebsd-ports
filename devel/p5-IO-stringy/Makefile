@@ -6,31 +6,18 @@
 #
 
 PORTNAME=	IO-stringy
-PORTVERSION=	2.109
+PORTVERSION=	2.110
 CATEGORIES=	devel perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	IO
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl5 module for using IO handles with non-file objects
 
 PERL_CONFIGURE=	YES
 
 MAN3=		IO::AtomicFile.3 IO::InnerFile.3 IO::Lines.3 IO::Scalar.3 \
-		IO::ScalarArray.3 IO::Stringy.3 \
-		IO::Wrap.3 IO::WrapTie.3
-
-# Install documentation
-EG_DIR=		${WRKSRC}/docs
-EG_LOC=		${PREFIX}/share/doc/${PKGNAMEPREFIX}${PORTNAME}
-
-.if !defined(NOPORTDOCS)
-post-install:
-	@${MKDIR} ${EG_LOC}/IO/icons
-	${INSTALL_DATA} ${EG_DIR}/IO/icons/*.gif ${EG_LOC}/IO/icons/
-	${INSTALL_DATA} ${EG_DIR}/IO/*.pm.html ${EG_LOC}/IO/
-	${INSTALL_DATA} ${EG_DIR}/index* ${EG_LOC}/
-.endif
+		IO::ScalarArray.3 IO::Stringy.3 IO::Wrap.3 IO::WrapTie.3
 
 .include <bsd.port.mk>
