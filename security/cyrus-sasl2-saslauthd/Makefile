@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	saslauthd
-PORTVERSION=	2.1.19
+PORTVERSION=	2.1.20
 #PORTREVISION=	0
 CATEGORIES=	security ipv6
 MASTER_SITES=	ftp://ftp.andrew.cmu.edu/pub/cyrus-mail/%SUBDIR%/ \
@@ -130,6 +130,7 @@ RC_SCRIPTS_SUB=	PREFIX=${PREFIX} \
 
 do-build:
 	@${RM} -f ${WRKSRC}/saslauthd/saslauthd.8
+	cd ${WRKSRC}/include && ${MAKE}
 	cd ${WRKSRC}/sasldb && ${MAKE}
 	cd ${WRKSRC}/saslauthd && ${MAKE}
 
