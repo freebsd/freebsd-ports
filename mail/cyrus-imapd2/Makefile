@@ -27,7 +27,7 @@ BUILD_DEPENDS=	makedepend:${PORTSDIR}/devel/makedepend
 
 LATEST_LINK=	${PORTNAME}2
 
-USE_RC_SUBR=	YES
+USE_RC_SUBR=	imapd.sh
 
 USE_OPENSSL=	yes
 USE_PERL5=	yes
@@ -122,9 +122,6 @@ RUN_DEPENDS+=	${SITE_PERL}/File/Temp.pm:${PORTSDIR}/devel/p5-File-Temp
 RUN_DEPENDS+=	${SITE_PERL}/Pod/Parser.pm:${PORTSDIR}/textproc/p5-PodParser
 .endif
 
-RC_SCRIPTS_SUB=	PREFIX=${PREFIX} \
-		RC_SUBR=${RC_SUBR}
-
 pre-everything::
 .if !defined(WITH_BDB_VER)
 	@if ${LDCONFIG} -r | ${GREP} -qwE -e "-ldb(41|4)"; then \
@@ -189,9 +186,6 @@ post-install:
 		@${ECHO_CMD} "@dirrm share/doc/${PORTNAME}/man" >>${TMPPLIST}
 		@${ECHO_CMD} "@dirrm share/doc/${PORTNAME}" >>${TMPPLIST}
 .endif
-		@${SED} ${RC_SCRIPTS_SUB:S/$/!g/:S/^/ -e s!%%/:S/=/%%!/} \
-			${FILESDIR}/imapd.sh > ${PREFIX}/etc/rc.d/imapd.sh
-		@${CHMOD} 755 ${PREFIX}/etc/rc.d/imapd.sh
 		@${INSTALL_DATA} ${FILESDIR}/imapd.conf \
 			${PREFIX}/etc/imapd.conf.dist
 		@${INSTALL_DATA} ${WRKSRC}/master/conf/normal.conf \

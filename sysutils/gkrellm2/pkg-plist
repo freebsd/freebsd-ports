@@ -6,7 +6,6 @@ sbin/gkrellmd
 %%EXAMPLESDIR%%/gkrellmd.conf
 @exec [ -f %D/etc/gkrellmd.conf ] || cp %B/%f %D/etc/gkrellmd.conf
 @dirrm %%EXAMPLESDIR%%
-etc/rc.d/gkrellmd.sh
 @cwd %%X11BASE%%
 %%CLIENT%%include/gkrellm2/gkrellm.h
 %%CLIENT%%include/gkrellm2/gkrellm-public-proto.h

@@ -23,7 +23,7 @@ CONFLICTS=	cyrus-1.* cyrus-imapd-2.[^2].*
 
 LATEST_LINK=	${PORTNAME}22
 
-USE_RC_SUBR=	yes
+USE_RC_SUBR=	imapd.sh
 USE_OPENSSL=	yes
 USE_PERL5=	yes
 USE_REINPLACE=	yes
@@ -240,9 +240,6 @@ RUN_DEPENDS+=	${SITE_PERL}/File/Temp.pm:${PORTSDIR}/devel/p5-File-Temp
 RUN_DEPENDS+=	${SITE_PERL}/Pod/Parser.pm:${PORTSDIR}/textproc/p5-PodParser
 .endif
 
-RC_SCRIPTS_SUB=	PREFIX=${PREFIX} \
-		RC_SUBR=${RC_SUBR}
-
 post-patch:
 		@${SED} -e "s|%%CYRUS_USER%%|${CYRUS_USER}|g" \
 			-e "s|%%PREFIX%%|${PREFIX}|g" \
@@ -307,9 +304,6 @@ post-install:
 		@${ECHO_CMD} "@dirrm share/doc/${PORTNAME}/man" >>${TMPPLIST}
 		@${ECHO_CMD} "@dirrm share/doc/${PORTNAME}" >>${TMPPLIST}
 .endif
-		@${SED} ${RC_SCRIPTS_SUB:S/$/!g/:S/^/ -e s!%%/:S/=/%%!/} \
-			${FILESDIR}/imapd.sh > ${PREFIX}/etc/rc.d/imapd.sh
-		@${CHMOD} 755 ${PREFIX}/etc/rc.d/imapd.sh
 		@${MKDIR} ${EXAMPLESDIR}
 		@${INSTALL_DATA} ${FILESDIR}/imapd.conf ${EXAMPLESDIR}
 .for f in ${CONFS}
