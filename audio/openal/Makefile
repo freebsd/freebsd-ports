@@ -20,6 +20,10 @@ WRKSRC=		${WRKDIR}/${DISTNAME}/linux
 GNU_CONFIGURE=  yes
 USE_GMAKE=	yes
 INSTALLS_SHLIB=	yes
+USE_REINPLACE=	yes
+
+post-patch:
+	@${REINPLACE_CMD} -e "s/-pthread/${PTHREAD_LIBS}/" ${WRKSRC}/configure
 
 pre-install:
 	@${INSTALL_DATA} ${WRKSRC}/doc/openal.info ${PREFIX}/info
