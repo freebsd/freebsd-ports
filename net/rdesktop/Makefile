@@ -49,7 +49,7 @@ do-patch:
 	@${REINPLACE_CMD} -e 's:^PREFIX.*:PREFIX=${PREFIX}:g' ${WRKSRC}/Makefile
 	@${REINPLACE_CMD} -e 's:^install.*:install\: rdesktop:g' \
 		${WRKSRC}/Makefile
-	@${REINPLACE_CMD} -e 's:^.*\(INSTALL\) rdp-srvr.*::g' ${WRKSRC}/Makefile
+	@${REINPLACE_CMD} -e 's:^.*(INSTALL) rdp-srvr.*::g' ${WRKSRC}/Makefile
 	@${REINPLACE_CMD} -e 's:<endian.h>:<machine/endian.h>:g' \
 		${WRKSRC}/rdesktop.h
 
