@@ -3,7 +3,7 @@
 # Date created:                      6 Apr 1996
 # Whom:                              Brent J. Nordquist <nordquist@platinum.com>
 #
-# $Id: Makefile,v 1.3 1996/10/31 11:22:02 asami Exp $
+# $Id: Makefile,v 1.4 1996/11/15 22:34:53 obrien Exp $
 #
 
 DISTNAME=          sattrack-3.1.4
@@ -12,10 +12,7 @@ MASTER_SITES=      http://ssl.berkeley.edu/isi_www/
 
 MAINTAINER=        nordquist@platinum.com
 
-# restrictive copyright: distribution via ftp is OK,
-# bundling with commercial products (CDROM) is forbidden
-# without author's consent
-NO_CDROM=	   yes
+NO_CDROM=	   "No bundling with commercial product without author's concent"
 
 WRKSRC=            ${WRKDIR}/SatTrack/src
 MAKE_FLAGS=        PREFIX=${PREFIX} -f

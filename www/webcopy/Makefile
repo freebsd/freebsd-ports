@@ -3,7 +3,7 @@
 # Date created:         14 Sep 1996
 # Whom:                 ache
 #
-# $Id: Makefile,v 1.4 1996/11/06 13:12:38 asami Exp $
+# $Id: Makefile,v 1.5 1996/11/18 11:42:14 asami Exp $
 #
 
 # WWW site: http://www.inf.utfsm.cl/~vparada/webcopy.html
@@ -15,9 +15,9 @@ DISTFILES=      webcopy.tgz
 
 MAINTAINER=     ache@FreeBSD.ORG
 
+NO_PACKAGE= "This program cannot be distributed if modified in any way"
+NO_CDROM= "Don't sell for profit without written permission"
 ALL_TARGET=
-NO_PACKAGE= yes # This program cannot be distributed if modified in any way
-NO_CDROM= yes   # Don't sell for profit without written permission
 
 do-install:
 	cd ${WRKSRC}; ${INSTALL_SCRIPT} webcopy ${PREFIX}/bin
