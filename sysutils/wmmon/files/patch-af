@@ -1,0 +1,76 @@
+--- wmmon.c.orig	Tue Apr 27 11:22:29 2004
++++ wmmon.c	Tue Apr 27 11:22:03 2004
+@@ -186,8 +186,8 @@
+ /* functions */
+ void usage(void);
+ void printversion(void);
+-void DrawStats(int *, int, int, int, int);
+-void DrawStats_io(int *, int, int, int, int);
++void DrawStats(long *, int, int, int, int);
++void DrawStats_io(long *, int, int, int, int);
+ 
+ #if defined(__FreeBSD__) || defined(__NetBSD__)
+ int swapmode( long *retavail, long *retfree);
+@@ -255,7 +255,7 @@
+ typedef struct {
+ 
+ 	char	name[5];			/* "cpu0..cpuz", eventually.. :) */
+-	int		his[55];
++	long		his[55];
+ 	int		hisaddcnt;
+ 	long	rt_stat;
+ 	long	statlast;
+@@ -900,7 +900,11 @@
+ void get_statistics(char *devname, long *is, long *ds, long *idle) {
+ 
+ 	int	i;
++#if defined(__FreeBSD__)
++	double	averun[1];
++#else
+ 	long	averun[3];
++#endif
+ 	long	cp_time[CPUSTATES];
+ 	long	maxdiskio=0;
+ 
+@@ -915,8 +919,13 @@
+ 			if (kvm_nlist(kvmd, nl) >= 0) {
+ 				if (nl[0].n_type != 0) {
+ 					if ((kvm_read(kvmd, nl[N_CP_TIME].n_value, (char *)&cp_time, sizeof(cp_time))==sizeof(cp_time)) &&
++#if defined(__FreeBSD__)
++					    (kvm_getloadavg(kvmd, averun, 1)==1)) {
++						*is = (long) (100 * averun[0]);
++#else
+ 					    (kvm_read(kvmd, nl[N_AVERUN].n_value, (char *)&averun, sizeof(averun))==sizeof(averun))) {
+ 						*is = (long) (100 * ((double)averun[0] / FSCALE));
++#endif
+ 
+ 						for (i = 0; i < CPUSTATES; i++) {
+ 							if (i != CP_IDLE) *ds += cp_time[i];
+@@ -1188,11 +1197,11 @@
+ |* DrawStats                                                                   *|
+ \*******************************************************************************/
+ 
+-void DrawStats(int *his, int num, int size, int x_left, int y_bottom) {
++void DrawStats(long *his, int num, int size, int x_left, int y_bottom) {
+ 
+ 	int     pixels_per_byte;
+ 	int     j,k;
+-	int     *p;
++	long     *p;
+ 	int		d;
+ 
+ /*	printf ("size = %d, num = %d\n", size, num); */
+@@ -1235,11 +1244,11 @@
+ |* DrawStats_io                                                                *|
+ \*******************************************************************************/
+ 
+-void DrawStats_io(int *his, int num, int size, int x_left, int y_bottom) {
++void DrawStats_io(long *his, int num, int size, int x_left, int y_bottom) {
+ 
+ 	float	pixels_per_byte;
+ 	int     j,k;
+-	int     *p;
++	long    *p;
+ 	int		d;
+ 
+ 	static int	global_io_scale = 1;
