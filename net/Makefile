@@ -447,7 +447,6 @@
     SUBDIR += tvark
     SUBDIR += unison
     SUBDIR += urlendec
-    SUBDIR += uucp
     SUBDIR += vchat
     SUBDIR += vnc
     SUBDIR += vomit
