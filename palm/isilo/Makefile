@@ -7,14 +7,13 @@
 #
 
 DISTNAME=	iSilo386
-USE_ZIP=	yes
 PKGNAME=	isilo-2.51
-
 CATEGORIES=	palm textproc
 MASTER_SITES=	ftp://ftp.iSilo.com/pub/
 
-MAINTAINER=	nik
+MAINTAINER=	nik@FreeBSD.org
 
+USE_ZIP=	yes
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
 
@@ -22,9 +21,9 @@ MAN1=		iSilo386.1
 MANCOMPRESSED=	no
 
 post-extract:
-	${CP} files/Makefile files/iSilo386.1 ${WRKDIR}
+	${CP} ${FILESDIR}/Makefile ${FILESDIR}/iSilo386.1 ${WRKDIR}
 
 post-install:
-	@${CAT} pkg/MESSAGE
+	@${CAT} ${PKGDIR}/MESSAGE
 
 .include <bsd.port.mk>
