@@ -1,12 +1,23 @@
---- 4_1.3/contrib/Makefile.orig	Fri Oct  2 17:33:22 1998
-+++ 4_1.3/contrib/Makefile	Fri Oct  2 18:25:46 1998
-@@ -0,0 +1,9 @@
-+#
-+# This directory contains some DOS and NTU fonts specific utils, so
-+# I don't plan to compilethem, for now.
-+#
+--- utils/CEFconv/Makefile.orig	Thu Jan  1 08:00:00 1970
++++ utils/CEFconv/Makefile	Sat Feb 20 07:26:46 1999
+@@ -0,0 +1,20 @@
++cef5conv:
++	$(CC) $(CFLAGS) -o $@ cef5conv.c
 +
-+all:
-+install:
++cefconv:
++	$(CC) $(CFLAGS) -o $@ cefconv.c
++
++cefsconv:
++	$(CC) $(CFLAGS) -o $@ cefsconv.c
++
++build: cef5conv cefconv cefsconv
++
++all: build
++
++install: all
++	$(INSTALL_PROGRAM) *conv $(PREFIX)/bin
++	$(INSTALL_SCRIPT) *latex $(PREFIX)/bin
++	$(INSTALL_MAN) *.1 $(PREFIX)/man/man1
++
 +clean:
-+
++	$(RM) *conv
