@@ -9,6 +9,8 @@ PORTNAME=	jext
 PORTVERSION=	2.8.1.2
 CATEGORIES=	editors java
 MASTER_SITES=	http://www.jext.org/ \
+		ftp://jext.sourceforge.net/pub/jext/archives/ \
+		http://members.nbci.com/romainguy/ \
 		http://members.xoom.com/romainguy/
 DISTFILES=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX} swingall.jar
 
