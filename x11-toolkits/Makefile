@@ -109,6 +109,7 @@
     SUBDIR += linux-gtk
     SUBDIR += linux-gtk2
     SUBDIR += linux-openmotif
+    SUBDIR += linux-pango
     SUBDIR += mesgui
     SUBDIR += movingmotif
     SUBDIR += mowitz
