@@ -7,7 +7,7 @@
 
 PORTNAME=	xawtv
 PORTVERSION=	3.91
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	multimedia
 MASTER_SITES=	http://bytesex.org/xawtv/
 DISTNAME=	${PORTNAME}_${PORTVERSION}
@@ -50,7 +50,7 @@ ONLY_FOR_ARCHS=	alpha i386
 .endif
 
 .if defined(WITH_LIBZVBI)
-LIB_DEPENDS+=	zvbi.2:${PORTSDIR}/devel/libzvbi
+LIB_DEPENDS+=	zvbi.3:${PORTSDIR}/devel/libzvbi
 CONFIGURE_ARGS+=--enable-zvbi
 .if ${OSVERSION} > 500000
 PLIST_SUB+=	ZVBI="" ZVBI5=""
