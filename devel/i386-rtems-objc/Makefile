@@ -9,8 +9,8 @@ PORTNAME=	objc
 PORTVERSION=	2.95.2
 PORTREVISION=	22
 CATEGORIES=	devel
-MASTER_SITES=	ftp://ftp.oarcorp.com/pub/rtems/snapshots/c_tools/source/ \
-		http://rtems.thehousleys.net/
+MASTER_SITES=	${MASTER_SITE_SOURCEWARE}
+MASTER_SITE_SUBDIR=	newlib
 DISTFILES=	${OBJCNAME}.tar.gz ${NEWLIBNAME}.tar.gz
 PATCHFILES=	${OBJCNAME}-rtems-20010221.diff \
 		${NEWLIBNAME}-rtems-20010221.diff
@@ -19,8 +19,6 @@ PATCH_SITES=	ftp://ftp.oarcorp.com/pub/rtems/snapshots/c_tools/source/ \
 
 MAINTAINER=	jeh@FreeBSD.org
 
-DIST_SUBDIR=	rtems
-
 LCLTARGET?=	i386-rtems
 
 OBJCNAME=	gcc-2.95.2
@@ -28,6 +26,7 @@ NEWLIBNAME=	newlib-1.9.0
 MASTERDIR=	${.CURDIR}/../i386-rtems-objc
 PLIST=		${PKGDIR}/pkg-plist.${LCLTARGET}
 
+FETCH_DEPENDS=	/nonexistent:${PORTSDIR}/devel/rtems-gcc:extract
 BUILD_DEPENDS=	autoheader:${PORTSDIR}/devel/autoconf \
 		${LCLTARGET}-gcc:${PORTSDIR}/devel/${LCLTARGET}-gcc
 RUN_DEPENDS=	${LCLTARGET}-gcc:${PORTSDIR}/devel/${LCLTARGET}-gcc
