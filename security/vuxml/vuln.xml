@@ -438,11 +438,12 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     <references>
       <url>http://www.time-travellers.org/oftpd/oftpd-dos.html</url>
       <bid>9980</bid>
+      <cvename>CAN-2004-0376</cvename>
     </references>
     <dates>
       <discovery>2004-03-04</discovery>
       <entry>2004-03-28</entry>
-      <modified>2004-03-29</modified>
+      <modified>2004-04-05</modified>
     </dates>
   </vuln>
 
