@@ -1,0 +1,11 @@
+The DTD of the Text Encoding Initiative allows encoding of a wide range
+of document types in the domain of humanities. If focuses on, but is not 
+restricted to, the needs of the scholarly research and education community.
+
+This port contains the TEI P3 DTD. It can be used to create documents that
+conform to either SGML or XML.
+
+WWW: http://www.tei-c.org/
+
+-- Henrik Motakef
+   <henrik.motakef@web.de>

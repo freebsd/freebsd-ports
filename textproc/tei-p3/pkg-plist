@@ -1,0 +1,53 @@
+@unexec %%MKCATALOG%% -q deinstall %%DTD_NAME%%/%%DTD_VERSION%%
+share/sgml/tei/p3/p2ents.dtd
+share/sgml/tei/p3/tei2.dtd
+share/sgml/tei/p3/teiana2.dtd
+share/sgml/tei/p3/teiback2.dtd
+share/sgml/tei/p3/teicert2.dtd
+share/sgml/tei/p3/teicore2.dtd
+share/sgml/tei/p3/teicorp2.dtd
+share/sgml/tei/p3/teidict2.dtd
+share/sgml/tei/p3/teidram2.dtd
+share/sgml/tei/p3/teifig2.dtd
+share/sgml/tei/p3/teifron2.dtd
+share/sgml/tei/p3/teifs2.dtd
+share/sgml/tei/p3/teifsd2.dtd
+share/sgml/tei/p3/teigen2.dtd
+share/sgml/tei/p3/teihdr2.dtd
+share/sgml/tei/p3/teilink2.dtd
+share/sgml/tei/p3/teimix2.dtd
+share/sgml/tei/p3/teind2.dtd
+share/sgml/tei/p3/teinet2.dtd
+share/sgml/tei/p3/teipl2.dtd
+share/sgml/tei/p3/teipros2.dtd
+share/sgml/tei/p3/teishd2.dtd
+share/sgml/tei/p3/teispok2.dtd
+share/sgml/tei/p3/teistr2.dtd
+share/sgml/tei/p3/teitc2.dtd
+share/sgml/tei/p3/teite2f.dtd
+share/sgml/tei/p3/teite2n.dtd
+share/sgml/tei/p3/teiterm2.dtd
+share/sgml/tei/p3/teitran2.dtd
+share/sgml/tei/p3/teitsd2.dtd
+share/sgml/tei/p3/teitsd2b.dtd
+share/sgml/tei/p3/teivers2.dtd
+share/sgml/tei/p3/teiwsd2.dtd
+share/sgml/tei/p3/teiana2.ent
+share/sgml/tei/p3/teiclas2.ent
+share/sgml/tei/p3/teidict2.ent
+share/sgml/tei/p3/teidram2.ent
+share/sgml/tei/p3/teifig2.ent
+share/sgml/tei/p3/teigis2.ent
+share/sgml/tei/p3/teikey2.ent
+share/sgml/tei/p3/teilink2.ent
+share/sgml/tei/p3/teind2.ent
+share/sgml/tei/p3/teispok2.ent
+share/sgml/tei/p3/teitc2.ent
+share/sgml/tei/p3/teiterm2.ent
+share/sgml/tei/p3/teitran2.ent
+share/sgml/tei/p3/teivers2.ent
+share/sgml/tei/p3/catalog
+@exec %%MKCATALOG%% -q install %%DTD_NAME%%/%%DTD_VERSION%%
+@dirrm share/sgml/tei/p3
+@unexec rmdir %D/share/sgml/tei 2>/dev/null || true
+@unexec rmdir %D/share/sgml 2>/dev/null || true
