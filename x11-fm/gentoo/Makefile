@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gentoo
-PORTVERSION=	0.11.49
+PORTVERSION=	0.11.51
 CATEGORIES=	x11-fm
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -19,7 +19,6 @@ USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
-CONFIGURE_ARGS=	--disable-fam
 
 MAN1=		gentoo.1
 
@@ -32,6 +31,12 @@ PLIST_SUB+=	NLS="@comment "
 .else
 USE_GETTEXT=	yes
 PLIST_SUB+=	NLS=""
+.endif
+
+.if defined(WITH_FAM)
+LIB_DEPENDS+=	fam.0:${PORTSDIR}/devel/fam
+.else
+CONFIGURE_ARGS+=	--disable-fam
 .endif
 
 post-patch:

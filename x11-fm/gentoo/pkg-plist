@@ -214,14 +214,15 @@ etc/gentoorc
 %%DATADIR%%/icons/xpm2.xpm
 %%NLS%%share/locale/de/LC_MESSAGES/gentoo.mo
 %%NLS%%share/locale/fr/LC_MESSAGES/gentoo.mo
+%%NLS%%share/locale/it/LC_MESSAGES/gentoo.mo
 %%NLS%%share/locale/pl/LC_MESSAGES/gentoo.mo
-%%NLS%%share/locale/sv/LC_MESSAGES/gentoo.mo
 %%NLS%%share/locale/ru_RU.CP1251/LC_MESSAGES/gentoo.mo
 %%NLS%%share/locale/ru_RU.KOI8-R/LC_MESSAGES/gentoo.mo
 %%NLS%%share/locale/ru_RU.UTF-8/LC_MESSAGES/gentoo.mo
 %%NLS%%share/locale/ru_RU.cp1251/LC_MESSAGES/gentoo.mo
 %%NLS%%share/locale/ru_RU.koi8r/LC_MESSAGES/gentoo.mo
 %%NLS%%share/locale/ru_RU.utf8/LC_MESSAGES/gentoo.mo
+%%NLS%%share/locale/sv/LC_MESSAGES/gentoo.mo
 @dirrm %%DATADIR%%/icons
 @dirrm %%DATADIR%%
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/scratch
