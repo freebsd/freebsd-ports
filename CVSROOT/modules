@@ -1237,6 +1237,7 @@ edonkey-core	ports/net/edonkey-core
 edonkey-gui-gtk	ports/net/edonkey-gui-gtk
 edonkey-gui-java	ports/net/edonkey-gui-java
 edonkey-tool-hash	ports/misc/edonkey-tool-hash
+edonkey-tool-list	ports/misc/edonkey-tool-list
 edquota		src/usr.sbin/edquota
 ee		src/usr.bin/ee
 eel		ports/x11-toolkits/eel
