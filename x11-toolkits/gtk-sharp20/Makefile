@@ -6,17 +6,16 @@
 #
 
 PORTNAME=	gtk-sharp
-PORTVERSION=	0.6.0.1
+PORTVERSION=	0.7
 CATEGORIES=	x11-toolkits
-MASTER_SITES=	${MASTER_SITE_LOCAL}
-MASTER_SITE_SUBDIR=	jmallett
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	gtk-sharp
 
 MAINTAINER=	gnome@FreeBSD.org
 
 BUILD_DEPENDS=	mono:${PORTSDIR}/lang/mono
 LIB_DEPENDS=	gnomedb-2:${PORTSDIR}/databases/libgnomedb \
-		gnomeui-2:${PORTSDIR}/x11-toolkits/libgnomeui \
-		gphoto2.2:${PORTSDIR}/graphics/gphoto2
+		gnomeui-2:${PORTSDIR}/x11-toolkits/libgnomeui
 
 # XXX Should conditionalise all the different parts of gtk# maybe.
 
