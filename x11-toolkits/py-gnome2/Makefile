@@ -3,7 +3,7 @@
 # Date created:				12/26/1998
 # Whom:					nectar@FreeBSD.ORG
 #
-# $Id: Makefile,v 1.16 1999/01/07 00:19:55 asami Exp $
+# $Id: Makefile,v 1.17 1999/01/07 00:29:39 nectar Exp $
 #
 
 DISTNAME=	pygtk-0.5.9
@@ -18,7 +18,7 @@ MASTER_SITES=	ftp://ftp.daa.com.au/pub/james/python/ \
 MAINTAINER=	nectar@FreeBSD.ORG
 
 BUILD_DEPENDS=	python:${PORTSDIR}/lang/python
-LIB_DEPENDS=	Imlib.1:${PORTSDIR}/graphics/imlib
+LIB_DEPENDS=	Imlib.2:${PORTSDIR}/graphics/imlib
 RUN_DEPENDS=	python:${PORTSDIR}/lang/python
 
 GNU_CONFIGURE=	yes
