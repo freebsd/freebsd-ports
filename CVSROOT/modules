@@ -1841,6 +1841,7 @@ esound		ports/audio/esound
 est		ports/sysutils/est
 estctrl		ports/sysutils/estctrl
 estic		ports/misc/estic
+estraier	ports/textproc/estraier
 esvn		ports/devel/esvn
 et-aspell	ports/textproc/et-aspell
 etcmerge	ports/sysutils/etcmerge
@@ -3630,7 +3631,6 @@ ja-esecanna	ports/japanese/esecanna
 ja-esecanna-module-vje25	ports/japanese/esecanna-module-vje25
 ja-esecanna-module-vje30	ports/japanese/esecanna-module-vje30
 ja-esecanna-module-wnn6	ports/japanese/esecanna-module-wnn6
-ja-estraier	ports/japanese/estraier
 ja-eterm	ports/japanese/eterm
 ja-ewipe	ports/japanese/ewipe
 ja-exmh2	ports/japanese/exmh2
