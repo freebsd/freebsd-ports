@@ -1,12 +1,13 @@
-*** src/Makefile.in.orig	Tue Sep  3 09:19:09 1996
---- src/Makefile.in	Tue Sep  3 13:50:25 1996
+*** src/Makefile.in.orig	Mon Oct 21 09:59:29 1996
+--- src/Makefile.in	Tue Oct 22 06:22:51 1996
 ***************
-*** 2,15 ****
+*** 2,16 ****
   #---------------------------------------------------------------------------
   # ANSI C compiler
   #---------------------------------------------------------------------------
 ! CC              = @CC@
 ! CFLAGS 		= @CFLAGS@
+  LDFLAGS		= @LDFLAGS@
   #---------------------------------------------------------------------------
   # ELF specific (Linux)
   #---------------------------------------------------------------------------
@@ -16,12 +17,13 @@
   #---------------------------------------------------------------------------
   # Set these values to ABSOLUTE path names
   #---------------------------------------------------------------------------
---- 2,15 ----
+--- 2,16 ----
   #---------------------------------------------------------------------------
   # ANSI C compiler
   #---------------------------------------------------------------------------
 ! #CC              = @CC@
 ! #CFLAGS          = @CFLAGS@
+  LDFLAGS		= @LDFLAGS@
   #---------------------------------------------------------------------------
   # ELF specific (Linux)
   #---------------------------------------------------------------------------
@@ -32,29 +34,11 @@
   # Set these values to ABSOLUTE path names
   #---------------------------------------------------------------------------
 ***************
-*** 63,69 ****
-  
-  ELFLIB = lib$(THIS_LIB).so#
-  ELFLIB_MAJOR = $(ELFLIB).$(ELF_MAJOR_VERSION)#
-! ELFLIB_MAJOR_MINOR = $(ELFLIB_MAJOR).$(ELF_MINOR_VERSION)#
-  ELFDIR_ELF_LIB = $(ELFDIR)/$(ELFLIB_MAJOR_MINOR)#
-  
-  EXECLIBS = -L$(OBJDIR) -lslang -lm $(TCAPLIB)
---- 63,69 ----
-  
-  ELFLIB = lib$(THIS_LIB).so#
-  ELFLIB_MAJOR = $(ELFLIB).$(ELF_MAJOR_VERSION)#
-! ELFLIB_MAJOR_MINOR = $(ELFLIB).$(ELF_MINOR_VERSION)#
-  ELFDIR_ELF_LIB = $(ELFDIR)/$(ELFLIB_MAJOR_MINOR)#
-  
-  EXECLIBS = -L$(OBJDIR) -lslang -lm $(TCAPLIB)
-***************
-*** 88,99 ****
-  	@echo $(NORMAL_LIB) created in $(OBJDIR)
+*** 93,103 ****
+  #	cd $(ELFDIR); $(RM) $(ELFLIB_MAJOR); $(LN) $(ELFLIB_MAJOR_MINOR) $(ELFLIB_MAJOR)
   $(ELFDIR_ELF_LIB): $(ELFDIR) $(ELFOBJS)
   	-$(RM) $(ELFDIR_ELF_LIB)
 ! 	cd $(ELFDIR); $(ELF_LINK),$(ELFLIB_MAJOR) -o $(ELFLIB_MAJOR_MINOR) $(OFILES)
-! 	cd $(ELFDIR); $(RM) $(ELFLIB_MAJOR); $(LN) $(ELFLIB_MAJOR_MINOR) $(ELFLIB_MAJOR)
 ! 	cd $(ELFDIR); $(RM) $(ELFLIB); $(LN) $(ELFLIB_MAJOR) $(ELFLIB)
   	@echo
 ! 	@echo $(ELFLIB_MAJOR_MINOR) created in $(ELFDIR).  Be sure to add 
@@ -62,8 +46,8 @@
   $(OBJDIR) :
   	-$(MKDIR) $(OBJDIR)
   $(ELFDIR) :
---- 88,96 ----
-  	@echo $(NORMAL_LIB) created in $(OBJDIR)
+--- 93,101 ----
+  #	cd $(ELFDIR); $(RM) $(ELFLIB_MAJOR); $(LN) $(ELFLIB_MAJOR_MINOR) $(ELFLIB_MAJOR)
   $(ELFDIR_ELF_LIB): $(ELFDIR) $(ELFOBJS)
   	-$(RM) $(ELFDIR_ELF_LIB)
 ! 	cd $(ELFDIR); $(ELF_LINK) -o $(ELFLIB_MAJOR_MINOR) $(OFILES)
@@ -73,17 +57,18 @@
   	-$(MKDIR) $(OBJDIR)
   $(ELFDIR) :
 ***************
-*** 121,132 ****
+*** 123,135 ****
+  install-elf: $(install_lib_dir) $(install_include_dir) $(ELFDIR_ELF_LIB)
+  	$(INSTALL_DATA) $(SRCDIR)/slang.h $(install_include_dir)
   	$(INSTALL_DATA) $(SRCDIR)/slcurses.h $(install_include_dir)
+- 	-$(RM) $(install_lib_dir)/$(ELFLIB_MAJOR)
+- 	-$(RM) $(install_lib_dir)/$(ELFLIB)
   	@echo installing $(ELFLIB_MAJOR_MINOR) in $(install_lib_dir)
   	$(INSTALL_DATA) $(ELFDIR_ELF_LIB) $(install_lib_dir)
 - 	@echo creating symbolic links to $(ELFLIB_MAJOR_MINOR)
-- 	-$(RM) $(install_lib_dir)/$(ELFLIB_MAJOR)
-- 	-cd $(install_lib_dir); $(LN) $(ELFLIB_MAJOR_MINOR) $(ELFLIB_MAJOR)
-- 	-$(RM) $(install_lib_dir)/$(ELFLIB)
 - 	-cd $(install_lib_dir); $(LN) $(ELFLIB_MAJOR) $(ELFLIB)
 - 	@echo You will have to run ldconfig yourself.
+  #	-cd $(install_lib_dir); $(LN) $(ELFLIB_MAJOR_MINOR) $(ELFLIB_MAJOR)
   #---------------------------------------------------------------------------
   # Housekeeping
-  #---------------------------------------------------------------------------
---- 118,123 ----
+--- 121,128 ----
