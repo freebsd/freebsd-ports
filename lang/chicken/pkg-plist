@@ -34,7 +34,6 @@ lib/libustuffed-chicken.so.0
 %%DATADIR%%/chicken-highlevel-macros.scm
 %%DATADIR%%/chicken-match-macros.scm
 %%DATADIR%%/chicken-more-macros.scm
-%%DATADIR%%/srfi-13-syntax.scm
 %%DATADIR%%/test-infrastructure-hygienic-local.scm
 %%DATADIR%%/test-infrastructure-hygienic.scm
 %%DATADIR%%/test-infrastructure-lowlevel-local.scm

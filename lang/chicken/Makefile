@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	chicken
-PORTVERSION=	1.66
+PORTVERSION=	1.89
 CATEGORIES=	lang scheme
 MASTER_SITES=	http://www.call-with-current-continuation.org/
 
@@ -15,6 +15,7 @@ COMMENT=	A Scheme-to-C compiler
 
 USE_REINPLACE=	yes
 USE_LIBTOOL_VER=	15
+USE_GMAKE=	yes
 INSTALLS_SHLIB=	yes
 
 MAN1=		chicken-config.1 chicken-profile.1 chicken-setup.1 chicken.1 \
