@@ -8,7 +8,7 @@
 PORTNAME=	dungeoncrawl
 PORTVERSION=	4.0.0.b24
 CATEGORIES=	games
-MASTER_SITES=	ftp://anonymous:dposix@ftp.dungeoncrawl.org/dev/4.0.x/src/
+MASTER_SITES=	ftp://ftp.dungeoncrawl.org/dev/4.0.x/src/
 DISTNAME=	dc${PORTVERSION:S/.//g}-src
 EXTRACT_SUFX=	.tbz2
 
