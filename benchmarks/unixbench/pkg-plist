@@ -1,0 +1,10 @@
+@mode 755
+bin/bytebench
+lib/bytebench/Run
+lib/bytebench/pgms
+@mode 644
+lib/bytebench/Makefile
+lib/bytebench/README
+lib/bytebench/doc
+lib/bytebench/results
+lib/bytebench/testdir
