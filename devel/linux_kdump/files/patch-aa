@@ -1,0 +1,13 @@
+--- kdump.c.orig	Sat Oct  9 19:57:45 1999
++++ kdump.c	Sun Jan  9 11:19:14 2000
+@@ -46,8 +46,10 @@
+ #endif /* not lint */
+ 
+ #define KERNEL
++#define _KERNEL
+ extern int errno;
+ #include <sys/errno.h>
++#undef _KERNEL
+ #undef KERNEL
+ #include <sys/param.h>
+ #include <sys/errno.h>
