@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	id3ed
-PORTVERSION=	1.10
+PORTVERSION=	1.10.2
 CATEGORIES=	audio
 MASTER_SITES=	http://www.azstarnet.com/~donut/id3ed/ \
 		http://www.treefort.org/~donut/id3ed/ \
