@@ -3,7 +3,7 @@
 # Date created:         25 September 1996
 # Whom:                 igor@zynaps.ru
 #
-# $Id: Makefile,v 1.7 1997/08/10 22:31:31 fenner Exp $
+# $Id: Makefile,v 1.8 1997/08/13 12:21:09 tg Exp $
 #
 
 DISTNAME=	trafshow-2.0
@@ -14,13 +14,5 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=     igor@zynaps.ru
 
 MAN1=		trafshow.1
-
-EXTRA_PATCH=    patch-ae
-
-OSVERSION!=	sysctl -n kern.osreldate
-.if ${OSVERSION} >= 300000
-post-patch:
-	@${PATCH} ${PATCH_ARGS} < ${FILESDIR}/${EXTRA_PATCH}
-.endif
 
 .include <bsd.port.mk>
