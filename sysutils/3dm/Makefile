@@ -22,6 +22,7 @@ MAINTAINER=	dbaker@FreeBSD.org
 BROKEN=		"3ware 3ware ATA RAID (twe) is not supported in versions earlier than 4.5-RELEASE"
 .endif
 
+ONLY_FOR_ARCHS=	i386
 NO_WRKSUBDIR=	yes
 NO_BUILD=	yes
 
