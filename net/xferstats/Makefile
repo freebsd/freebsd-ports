@@ -3,7 +3,7 @@
 # Date created:         19 February 1999
 # Whom:                 Dima Sivachenko
 #
-# $Id: $
+# $Id: Makefile,v 1.1.1.1 1999/02/22 22:45:12 billf Exp $
 #
 
 DISTNAME=	xferstats-2.13
@@ -14,7 +14,7 @@ MASTER_SITES=	http://xferstats.off.net/download/xferstats-2.00/ \
 
 MAINTAINER=	dima@Chg.RU
 
-LIB_DEPENDS=	glib11.0:${PORTSDIR}/devel/glib
+LIB_DEPENDS=	glib11.0:${PORTSDIR}/devel/glib11
 
 WRKSRC=		${WRKDIR}/xferstats
 GNU_CONFIGURE=	yes
