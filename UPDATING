@@ -7,6 +7,13 @@ time you update your ports collection, before attempting any port
 upgrades.
 
 20041104:
+  AFFECTS: users of security/clamav-devel
+  AUTHOR: rob@debank.tv
+
+  The configuration file was renamed from clamav.conf to clamd.conf,
+  make sure to move your configuration before restarting the server.
+
+20041104:
   AFFECTS: users of japanese/rskkserv
   AUTHOR: rushani@FreeBSD.org
 
