@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	gail
-PORTVERSION=	0.6
+PORTVERSION=	0.8
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	${MASTER_SITE_GNOME}
-MASTER_SITE_SUBDIR=	pre-gnome2/releases/gnome-2.0-desktop-alpha2
+MASTER_SITE_SUBDIR=	pre-gnome2/releases/gnome-2.0-desktop-beta
 DIST_SUBDIR=	gnome2
 
 MAINTAINER=	gnome@FreeBSD.org

@@ -1,20 +1,20 @@
 
 $FreeBSD$
 
---- configure	2002/02/16 13:00:43	1.1
-+++ configure	2002/02/16 13:03:25
-@@ -12056,8 +12056,8 @@
+--- configure.orig	Wed Feb 27 12:00:58 2002
++++ configure	Wed Feb 27 12:02:16 2002
+@@ -11963,8 +11963,8 @@
    done
  fi
  
--echo "$as_me:12059: checking for bzCompressInit in -lbz2" >&5
+-echo "$as_me:11966: checking for bzCompressInit in -lbz2" >&5
 -echo $ECHO_N "checking for bzCompressInit in -lbz2... $ECHO_C" >&6
-+echo "$as_me:12059: checking for BZ2_bzCompressInit in -lbz2" >&5
++echo "$as_me:11966: checking for BZ2_bzCompressInit in -lbz2" >&5
 +echo $ECHO_N "checking for BZ2_bzCompressInit in -lbz2... $ECHO_C" >&6
  if test "${ac_cv_lib_bz2_bzCompressInit+set}" = set; then
    echo $ECHO_N "(cached) $ECHO_C" >&6
  else
-@@ -12073,11 +12073,11 @@
+@@ -11980,11 +11980,11 @@
  #endif
  /* We use char because int might match the return type of a gcc2
     builtin and then its argument prototype would still apply.  */
@@ -28,25 +28,28 @@ $FreeBSD$
    ;
    return 0;
  }
-@@ -12336,7 +12336,7 @@
+@@ -12296,7 +12296,7 @@
    echo $ECHO_N "(cached) $ECHO_C" >&6
  else
  
 -		LDFLAGS="$LDFLAGS -L$with_openssl_libs -lssl -lcrypto -ldl"
 +		LDFLAGS="$LDFLAGS -L$with_openssl_libs -lssl -lcryptofoo -ldl"
  		cat >conftest.$ac_ext <<_ACEOF
- #line 12341 "configure"
+ #line 12301 "configure"
  #include "confdefs.h"
-@@ -12386,7 +12386,7 @@
- EOF
+@@ -12347,9 +12347,9 @@
  
  		msg_openssl="yes"
--		OPENSSL_LDFLAGS="-L$with_openssl_libs -lssl -lcrypto"
-+		OPENSSL_LDFLAGS="-L$with_openssl_libs -lssl -lcryptofoo"
+                 if test x$with_openssl_libs != x/usr/lib; then
+-                        OPENSSL_LIBS="-L$with_openssl_libs -lssl -lcrypto"
++                        OPENSSL_LIBS="-L$with_openssl_libs -lssl -lcryptofoo"
+                 else
+-                	OPENSSL_LIBS="-lssl -lcrypto"
++                	OPENSSL_LIBS="-lssl -lcryptofoo"
+                 fi
  
  if true; then
-   HAVE_SSL_TRUE=
-@@ -13170,7 +13170,7 @@
+@@ -13227,7 +13227,7 @@
  s,@ORBIT_IDL@,$ORBIT_IDL,;t t
  s,@BONOBO_IDLDIR@,$BONOBO_IDLDIR,;t t
  s,@WARN_CFLAGS@,$WARN_CFLAGS,;t t

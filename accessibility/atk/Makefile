@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	atk
-PORTVERSION=	0.10
+PORTVERSION=	0.12
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_GNOME}
-MASTER_SITE_SUBDIR=	pre-gnome2/releases/gnome-2.0-desktop-alpha2
+MASTER_SITE_SUBDIR=	pre-gnome2/releases/gnome-2.0-desktop-beta
 #MASTER_SITES=	ftp://ftp.gimp.org/pub/%SUBDIR%/ \
 #		ftp://ftp.cs.umn.edu/pub/gimp/%SUBDIR%/ \
 #		http://www.ameth.org/gimp/%SUBDIR%/ \
@@ -19,10 +19,7 @@ DIST_SUBDIR=	gnome2
 
 MAINTAINER=	gnome@FreeBSD.org
 
-BUILD_DEPENDS=	pkg-config:${PORTSDIR}/devel/pkgconfig
-LIB_DEPENDS=	pango.0:${PORTSDIR}/x11-toolkits/pango \
-		glib-1.3.13:${PORTSDIR}/devel/glib13
-RUN_DEPENDS=	pkg-config:${PORTSDIR}/devel/pkgconfig
+LIB_DEPENDS=	glib-1.3.14:${PORTSDIR}/devel/glib13
 
 USE_BZIP2=	yes
 INSTALLS_SHLIB=	yes

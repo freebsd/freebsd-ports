@@ -6,16 +6,15 @@
 #
 
 PORTNAME=	linc
-PORTVERSION=	0.1.16
-PORTREVISION=	1
+PORTVERSION=	0.1.18
 CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_GNOME}
-MASTER_SITE_SUBDIR=	pre-gnome2/releases/gnome-2.0-desktop-alpha2
+MASTER_SITE_SUBDIR=	pre-gnome2/releases/gnome-2.0-desktop-beta
 DIST_SUBDIR=	gnome2
 
 MAINTAINER=	gnome@FreeBSD.org
 
-LIB_DEPENDS=	glib-1.3.13:${PORTSDIR}/devel/glib13
+LIB_DEPENDS=	glib-1.3.14:${PORTSDIR}/devel/glib13
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes

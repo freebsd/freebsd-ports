@@ -6,7 +6,7 @@ lib/libferret.so.0
 lib/libgail.so
 lib/libgail.so.0
 lib/libgailutil.so
-lib/libgailutil.so.6
+lib/libgailutil.so.8
 lib/libtestaction.so
 lib/libtestaction.so.0
 lib/libtestbutton.so

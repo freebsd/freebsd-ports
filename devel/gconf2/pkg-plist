@@ -1,10 +1,11 @@
+bin/gconf-sanity-check-2
 bin/gconfd-2
-bin/gconftool
 bin/gconftool-2
 etc/gconf/2/path
 include/gconf/2/gconf/gconf-changeset.h
 include/gconf/2/gconf/gconf-client.h
 include/gconf/2/gconf/gconf-engine.h
+include/gconf/2/gconf/gconf-enum-types.h
 include/gconf/2/gconf/gconf-error.h
 include/gconf/2/gconf/gconf-listeners.h
 include/gconf/2/gconf/gconf-schema.h
@@ -14,7 +15,7 @@ lib/GConf/2/libgconfbackend-bdb.so
 lib/GConf/2/libgconfbackend-xml.so
 lib/libgconf-2.a
 lib/libgconf-2.so
-lib/libgconf-2.so.3
+lib/libgconf-2.so.5
 libdata/pkgconfig/gconf-2.0.pc
 share/aclocal/gconf-2.m4
 share/doc/gconf/c120.html
@@ -65,6 +66,7 @@ share/locale/ko/LC_MESSAGES/GConf2.mo
 share/locale/nl/LC_MESSAGES/GConf2.mo
 share/locale/nn/LC_MESSAGES/GConf2.mo
 share/locale/no/LC_MESSAGES/GConf2.mo
+share/locale/pl/LC_MESSAGES/GConf2.mo
 share/locale/pt/LC_MESSAGES/GConf2.mo
 share/locale/pt_BR/LC_MESSAGES/GConf2.mo
 share/locale/ro/LC_MESSAGES/GConf2.mo

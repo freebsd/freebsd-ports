@@ -25,6 +25,7 @@ include/gnome-vfs-2.0/libgnomevfs/gnome-vfs-uri.h
 include/gnome-vfs-2.0/libgnomevfs/gnome-vfs-utils.h
 include/gnome-vfs-2.0/libgnomevfs/gnome-vfs-xfer.h
 include/gnome-vfs-2.0/libgnomevfs/gnome-vfs.h
+include/gnome-vfs-module-2.0/libgnomevfs/gnome-vfs-cancellable-ops.h
 include/gnome-vfs-module-2.0/libgnomevfs/gnome-vfs-inet-connection.h
 include/gnome-vfs-module-2.0/libgnomevfs/gnome-vfs-iobuf.h
 include/gnome-vfs-module-2.0/libgnomevfs/gnome-vfs-method.h

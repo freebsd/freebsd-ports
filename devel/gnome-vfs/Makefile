@@ -6,22 +6,20 @@
 #
 
 PORTNAME=	gnomevfs2
-PORTVERSION=	1.9.5
+PORTVERSION=	1.9.7
 CATEGORIES=	devel gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
-MASTER_SITE_SUBDIR=	pre-gnome2/releases/gnome-2.0-desktop-alpha2
+MASTER_SITE_SUBDIR=	pre-gnome2/releases/gnome-2.0-desktop-beta
 DISTNAME=	gnome-vfs-${PORTVERSION}
 DIST_SUBDIR=	gnome2
 
 MAINTAINER=	gnome@FreeBSD.org
 
 BUILD_DEPENDS=	msgfmt-new:${PORTSDIR}/devel/gettext-devel \
-		${X11BASE}/libdata/pkgconfig/gnome-mime-data-2.0.pc:${PORTSDIR}/misc/gnomemimedata \
-		pkg-config:${PORTSDIR}/devel/pkgconfig
-LIB_DEPENDS=	gconf-2.3:${PORTSDIR}/devel/gconf2 \
+		${X11BASE}/libdata/pkgconfig/gnome-mime-data-2.0.pc:${PORTSDIR}/misc/gnomemimedata
+LIB_DEPENDS=	gconf-2.5:${PORTSDIR}/devel/gconf2 \
 		bonobo-2.0:${PORTSDIR}/devel/libbonobo
-RUN_DEPENDS=	${X11BASE}/libdata/pkgconfig/gnome-mime-data-2.0.pc:${PORTSDIR}/misc/gnomemimedata \
-		pkg-config:${PORTSDIR}/devel/pkgconfig
+RUN_DEPENDS=	${X11BASE}/libdata/pkgconfig/gnome-mime-data-2.0.pc:${PORTSDIR}/misc/gnomemimedata
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes
