@@ -6,8 +6,8 @@
 #
 
 PORTNAME=	rubytk
-PORTVERSION=	1.4.4
-CATEGORIES+=	x11-toolkits
+PORTVERSION=	1.4.5
+CATEGORIES+=	x11-toolkits	# ruby
 MASTER_SITES=	ftp://ftp.netlab.co.jp/pub/lang/ruby/${BRANCH_NAME}/ \
 		ftp://ftp.TokyoNet.AD.JP/pub/misc/ruby/${BRANCH_NAME}/ \
 		ftp://ftp.iij.ad.jp/pub/lang/ruby/${BRANCH_NAME}/ \
