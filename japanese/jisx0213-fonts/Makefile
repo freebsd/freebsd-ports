@@ -7,7 +7,7 @@
 
 PORTNAME=	jisx0213-fonts
 PORTVERSION=	1.03
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	japanese x11-fonts
 MASTER_SITES=	http://www.mars.sphere.ne.jp/imamura/
 DISTFILES=	jiskan16-2000-1.bdf.gz jiskan16-2000-2.bdf.gz \
