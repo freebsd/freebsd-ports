@@ -1,20 +1,18 @@
---- mkconfig.h.orig	Sun Feb  4 18:49:19 2001
-+++ mkconfig.h	Sun Feb  4 18:51:40 2001
-@@ -10,7 +10,7 @@
+--- Imakefile.orig	Thu Jun  6 10:45:33 2002
++++ Imakefile	Sun Jun 30 21:18:25 2002
+@@ -3,13 +3,13 @@
+ /* Fairly important stuff */
  
- # where the library should be installed
+ #define DoOptimize YES
+-#define OptimizationLevel -O4
++#define OptimizationLevel -O
+ #define DoWall NO
  
--LIB_TOPDIR=/usr
-+LIB_TOPDIR=${PREFIX}
+ #define BuildShared YES
+ #define StaticLink NO
  
- LIB_DIR=$(LIB_TOPDIR)/lib
- LIBMODE=644
-@@ -18,7 +18,7 @@
- HEADER_DIR=$(LIB_TOPDIR)/include
- HEADERMODE=644
+-#define BuildGL YES
++#define BuildGL NO
  
--BIN_DIR=/usr/local/bin
-+BIN_DIR=${PREFIX}/bin
- BINMODE=711
+ /* Less Important or System Specific */
  
- MAN5_DIR=$(LIB_TOPDIR)/man/man5
