@@ -1,6 +1,14 @@
 --- bzip.c.orig	Sat Sep 28 03:32:05 1996
 +++ bzip.c	Sat Sep 28 03:37:53 1996
-@@ -3132,11 +3132,6 @@
+@@ -114,6 +114,7 @@
+ --*/
+ 
+ #if BZ_UNIX_32
++   #include <sys/types.h>
+    #include <utime.h>
+    #include <unistd.h>
+ #if !defined(__FreeBSD__) && !defined(__OpenBSD__) && !defined(__NetBSD__)	/* stdlib already included above */
+@@ -3132,11 +3133,6 @@
     signal (SIGBUS,  mySIGSEGVorSIGBUScatcher);
     #endif
  
@@ -12,7 +20,7 @@
     #if DEBUG
        if ( ! (argc > 1 && strcmp ( "-Q", argv[1] ) == 0) )
           fprintf ( stderr, "BZIP: *** compiled with debugging ON ***\n" );
-@@ -3206,6 +3201,12 @@
+@@ -3206,6 +3202,12 @@
                           exit ( 1 );
                           break;
           }
