@@ -19,8 +19,11 @@ COMMENT=	Analyse des structures et thermo-mécanique
 # You may define these options:
 #
 # - F77: don't use the default fortran compiler;
+# - FFLAGS: fortan compiler's flags (-O2 by default);
 # - WITH_ZSH or WITH_BASH or WITH_KSH: select a shell among
 #			zsh (default), bash or ksh;
+# - WITH_BLAS: don't link with atlas, but with blas;
+#			(blas is slower, but lighter)
 # - WITHOUT_ASTK: don't use the GUI;
 # - WITHOUT_ASTK_CLI: won't use the GUI from this machine;
 # - WITHOUT_EFICAS: don't install ASter Command FIle Editor;
@@ -36,7 +39,6 @@ COMMENT=	Analyse des structures et thermo-mécanique
 
 PATCH_DEPENDS=	tclsh${TCL_VER}:${PORTSDIR}/lang/tcl${SHORT_TCL_VER} \
 		wish${TK_VER}:${PORTSDIR}/x11-toolkits/tk${SHORT_TK_VER}
-LIB_DEPENDS=	blas.1:${PORTSDIR}/math/blas
 BUILD_DEPENDS=	${opt_hdf}:${PORTSDIR}/graphics/hdf5 \
 		${opt_med}:${PORTSDIR}/french/med \
 		${SHELL_INSTALL_ASTER}:${PORTSDIR}/shells/${SHIADEP}
@@ -59,9 +61,14 @@ PKGMESSAGE=	${PKGDIR}/pkg-message.sans-astk
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 500000
-BROKEN=		Does not build on systems prior 5.x - work in progress...
+#BROKEN=		Does not build on systems prior 5.x - work in progress...
 .endif
 
+.if defined(WITH_BLAS)
+LIB_DEPENDS=	blas.1:${PORTSDIR}/math/blas
+.else
+LIB_DEPENDS=	f77blas.1:${PORTSDIR}/math/atlas
+.endif
 .if !defined(WITHOUT_ASTK)
 RUN_DEPENDS+=	${LOCALBASE}/ASTK/ASTK_SERV:${PORTSDIR}/cad/astk-serveur
 .if !defined(WITHOUT_ASTK_CLI)
@@ -100,6 +107,7 @@ RUN_DEPENDS+=	${PYNUMERIC}
 .endif
 
 F77?=		f77
+FFLAGS?=	-O2
 
 TK_VER?=	8.3
 SHORT_TK_VER=	${TK_VER:S/.//}
@@ -135,8 +143,6 @@ MK_FILES=	make_aster make_cata make_etude make_exec make_lib make_test
 INST_DAT=	astest bibpyt cata_ele.pickled catalo catapy commande	\
 		config.txt elements etude materiau tcl
 python_path=	${PYTHON_LIBDIR}:${PYTHON_LIBDIR}/lib-dynload:${PYTHON_SITELIBDIR}:${PYTHON_SITELIBDIR}/Numeric
-#nm!=		${WHICH} nm
-#nmD=		${nm} -D
 inst_dir=	${PREFIX}/${PORTNAME}/${vaster}
 tools_dir=	${inst_dir}/outils
 unames!=	${UNAME} -s
@@ -147,10 +153,12 @@ tcl_bin=	tclsh${TK_VER}
 python_dir=	${PYTHONBASE}/bin
 opt_hdf=	${LOCALBASE}/lib/libhdf5.a
 opt_med=	${LOCALBASE}/lib/libmed.a
+.if defined(WITH_BLAS)
 lib_blas=	-lblas
+.else
+lib_blas=	-lf77blas -latlas
+.endif
 home_ar!=	dirname `${WHICH} ${AR}`
-#home_f77!=	dirname `${WHICH} ${F77}`
-#home_cc!=	dirname `${WHICH} ${CC}`
 gzip!=		dirname `${WHICH} ${GZIP_CMD}`
 LASTKDIR?=	ASTK/ASTK_CLIENT
 ASTKDIR=	${LOCALBASE}/${LASTKDIR}
@@ -188,20 +196,20 @@ post-patch:
 		${SED} -e "s#TK_LIB_SPEC='##;s#'##" > ${WRKDIR}/tk_lib_spec
 	@${REINPLACE_CMD} -e "s#OPT_HDF#${opt_hdf}#"				\
 	-e "s#OPT_MED#${opt_med}#"						\
-	-e "s#OPT_TCL#`${CAT} ${WRKDIR}/tcl_lib_spec`#g"			\
-	-e "s#OPT_TK#`${CAT} ${WRKDIR}/tk_lib_spec`#g"				\
+	-e "s#OPT_TCL#`${CAT} ${WRKDIR}/tcl_lib_spec`#"				\
+	-e "s#OPT_TK#`${CAT} ${WRKDIR}/tk_lib_spec`#"				\
 	-e "s#OPT_X11#-L${X11BASE}/lib -lX11#"					\
 	-e "s#OPT_BLAS#${lib_blas}#"						\
-	-e "s#HOME_AR#${home_ar}#g"						\
-	-e "s#%%F77%%#${F77}#g"							\
-	-e "s#HOME_F90#${home_f77}#g"						\
-	-e "s#%%CC%%#${CC}#g"							\
-	-e "s#CFLAGS#${CFLAGS} ${PTHREAD_CFLAGS}#g"				\
-	-e "s#HOME_GZIP#${gzip}#g"						\
-	-e "s#HOME_PYTHON#${PYTHONBASE}#g"					\
-	-e "s#PYTHON_BIN#${PYTHON_VERSION}#g"					\
+	-e "s#HOME_AR#${home_ar}#"						\
+	-e "s#%%F77%%#${F77}#"							\
+	-e "s#%%CC%%#${CC}#"							\
+	-e "s#CFLAGS#${CFLAGS} ${PTHREAD_CFLAGS}#"				\
+	-e "s#FFLAGS#${FFLAGS}#"						\
+	-e "s#HOME_GZIP#${gzip}#"						\
+	-e "s#HOME_PYTHON#${PYTHONBASE}#"					\
+	-e "s#PYTHON_BIN#${PYTHON_VERSION}#"					\
 	-e "s#PYTHON_VERSION#${_PYTHON_VERSION}#g"				\
-	-e "s#PTHREAD#${PTHREAD_LIBS}#g"					\
+	-e "s#PTHREAD#${PTHREAD_LIBS}#"						\
 		${WRKSRC}/tcl/conf/${v_ifdef}/config.txt
 	@${MV} ${WRKSRC}/tcl/conf/${v_ifdef}/config.txt ${WRKSRC}
 	@${RM} ${WRKSRC}/tcl/run_aster.orig
@@ -209,6 +217,8 @@ post-patch:
 	@${RM} -rf ${WRKSRC}/bibpyt/Utilitai
 	@${REINPLACE_CMD} -e "s#\$$(HOME)#${LOCALBASE}/apps#"			\
 		${WRKSRC}/bibpyt/Execution/E_SUPERV.py
+	@${REINPLACE_CMD} -e "s#%%inst_dir%%#${inst_dir}#"			\
+		${WRKSRC}/bibc/utilitai/asterm.c
 
 do-build:
 	${PYTHON_CMD} ${PYTHON_LIBDIR}/compileall.py ${WRKSRC}/bibpyt
