@@ -1,3 +1,4 @@
+**********************************************************************
 If LPRng is not activated at installation time,
 to activate the LPRng printing system do the following:
 
@@ -10,12 +11,12 @@ On FreeBSD:
 - run 'checkpc -f' to make sure that necessary files have been created
 
 - reboot or kill the old lpd using 'killall lpd' and
-  start the new one using '/usr/local/etc/rc.d/lprng.sh start'.
+  start the new one using '%%PREFIX%%/etc/rc.d/lprng.sh start'.
 
 LPRng uses the printcap, lpd.conf, and lpd.perms configuration files
 
 For further information, see the LPRng Documentation:
-  DOCSDIR
+  %%DOCSDIR%%
 
 The LPRng Web Site is http://www.lprng.com
 
@@ -26,3 +27,4 @@ papowell@astart.com            6741 Convoy Court
 Network and System             San Diego, CA 92111
   Consulting                   858-874-6543 FAX 858-751-2435
 LPRng - Print Spooler (http://www.lprng.com)
+**********************************************************************

@@ -4,14 +4,7 @@ bin/lpq
 bin/lpr
 bin/lprm
 bin/lpstat
-etc/lpd.conf
-etc/lpd.conf.sample
-etc/lpd.perms
-etc/lpd.perms.sample
-etc/lpd/lpd.conf.sample
-etc/lpd/lpd.perms.sample
-etc/lpd/lprng.sh.sample
-etc/lpd/printcap.sample
+etc/rc.d/lprng.sh
 lib/liblpr.a
 libexec/filters/lpbanner
 libexec/filters/lpf
@@ -61,8 +54,13 @@ sbin/lprng_index_certs
 %%PORTDOCS%%%%DOCSDIR%%/license.txt
 %%PORTDOCS%%%%DOCSDIR%%/rfc1179.txt
 %%PORTDOCS%%%%DOCSDIR%%/y2k.txt
-@dirrm %%PORTDOCS%%%%DOCSDIR%%/Reference
-@dirrm %%PORTDOCS%%%%DOCSDIR%%/PrintingCookbook
-@dirrm %%PORTDOCS%%%%DOCSDIR%%
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/Reference
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/PrintingCookbook
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm libexec/filters
-@dirrm etc/lpd
+%%CWD%%@cwd /
+%%SYSCONFDIR%%/lpd.conf.sample
+%%SYSCONFDIR%%/lpd.perms.sample
+%%SYSCONFDIR%%/printcap.sample
+%%CWD%%@unexec rmdir %D/etc/rc.d 2> /dev/null || true
+%%CWD%%@unexec rmdir %D/etc 2> /dev/null || true
