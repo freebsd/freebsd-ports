@@ -1,5 +1,5 @@
 This is MQ3, a simple .mp3 and .ogg player using Qt.  It uses the
-decoding engine from FreeAMP (http://www.freeamp.org/).
+decoding engine from Zinf (http://www.zinf.org/).
          
 WWW: http://www.mq3.org/
 
