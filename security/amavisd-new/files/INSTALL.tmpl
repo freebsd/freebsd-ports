@@ -1,6 +1,6 @@
 #!/bin/sh
 #
-#	$FreeBSD: /tmp/pcvs/ports/security/amavisd-new/files/Attic/INSTALL.tmpl,v 1.2 2003-01-04 10:59:25 demon Exp $
+#	$FreeBSD: /tmp/pcvs/ports/security/amavisd-new/files/Attic/INSTALL.tmpl,v 1.3 2004-07-18 10:05:50 vanilla Exp $
 #
 
 USER=%%AMAVISUSER%%
@@ -41,6 +41,8 @@ if [ "$2" = "PRE-INSTALL" ]; then
 
     /usr/bin/install -o ${USER} -g ${GROUP} -m 750 -d ${DIR}
     echo "Created \"${DIR}\" directory."
+    /usr/bin/install -o ${USER} -g ${GROUP} -m 750 -d ${DIR}/db
+    echo "Created \"${DIR}/db\" directory."
     /usr/bin/install -o ${USER} -g ${GROUP} -m 750 -d ${QUARANTINE}
     echo "Created \"${QUARANTINE}\" directory."    
 fi
