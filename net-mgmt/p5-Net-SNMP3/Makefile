@@ -16,7 +16,7 @@ PKGNAMESUFFIX=	-365
 MAINTAINER=	lars@thegler.dk
 COMMENT=	Net::SNMP for pre-5.6 perl
 
-CONFLICTS=	p5-Net-SNMP-*
+CONFLICTS=	p5-Net-SNMP
 PERL_CONFIGURE=	yes
 
 MAN3=		Net::SNMP.3
