@@ -28,7 +28,7 @@ RUN_DEPENDS=	\
 NO_BUILD=	yes
 NO_FILTER_SHLIBS=yes
 ONLY_FOR_ARCHS=	i386
-PATCH_FILES=	linux-beonex-generated-files-${PORTVERSION}.tar.bz2
+PATCHFILES=	linux-beonex-generated-files-${PORTVERSION}.tar.bz2
 PKGMESSAGE=	${WRKDIR}/pkg-message
 PLIST=		${WRKDIR}/pkg-plist
 USE_BZIP2=	yes
@@ -42,7 +42,7 @@ post-extract:
 		${WRKSRC}/components/chatzilla-service.js
 
 do-patch:
-	${BZIP2_CMD} -dc ${DISTDIR}/${DIST_SUBDIR}/${PATCH_FILES} | \
+	${BZIP2_CMD} -dc ${DISTDIR}/${DIST_SUBDIR}/${PATCHFILES} | \
 		${TAR} -C ${WRKSRC} -xf -
 	${ECHO_CMD} "#!/bin/sh"			>${WRKDIR}/linkfarm
 	${ECHO_CMD} "# Run this after installing Mozilla or Netscape plugins." \
