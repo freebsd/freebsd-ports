@@ -203,6 +203,7 @@
     SUBDIR += service-config
     SUBDIR += setcdboot
     SUBDIR += setquota
+    SUBDIR += sformat
     SUBDIR += shlock
     SUBDIR += sjog
     SUBDIR += skill

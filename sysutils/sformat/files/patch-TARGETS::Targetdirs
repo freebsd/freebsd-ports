@@ -1,0 +1,9 @@
+--- TARGETS/Targetdirs.orig	Mon Dec 16 15:33:41 2002
++++ TARGETS/Targetdirs	Mon Dec 16 15:34:30 2002
+@@ -1,5 +1,4 @@
+ #ident %W% %E% %Q%
+ ###########################################################################
+-DIRS=		patches conf inc lib libdeflt libscg librscg \
+-		sformat rscsi man
++DIRS=		conf inc lib libscg sformat
+ ###########################################################################
