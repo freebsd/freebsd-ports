@@ -1,5 +1,6 @@
 bin/dcl2inc
 bin/ftnchek
+bin/ftnpp
 lib/ftnchek/dcl2inc.awk
 share/emacs/site-lisp/ftnchek.el
 @dirrm lib/ftnchek
