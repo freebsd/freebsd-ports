@@ -3,7 +3,7 @@
 # Date created:		21 October 1994
 # Whom:			smace
 #
-# $Id: Makefile,v 1.13 1998/08/24 01:28:42 steve Exp $
+# $Id: Makefile,v 1.14 1998/09/21 22:15:59 steve Exp $
 #
 
 DISTNAME=	olvwm4
@@ -25,5 +25,6 @@ LIB_DEPENDS=	xview.3:${PORTSDIR}/x11-toolkits/xview-lib
 
 NO_WRKSUBDIR=	yes
 USE_IMAKE=	yes
+MAN1=		olvwm.1 olvwmrc.1
 
 .include <bsd.port.mk>
