@@ -1,6 +1,6 @@
---- src/main.c.orig	Wed Feb  9 11:57:04 2000
-+++ src/main.c	Wed Feb  9 12:02:43 2000
-@@ -460,6 +460,16 @@
+--- src/init.c.orig	Mon Mar 27 19:50:56 2000
++++ src/init.c	Mon Mar 27 19:51:44 2000
+@@ -866,6 +866,16 @@
  			       GCForeground | GCBackground |
  			       GCFont | GCGraphicsExposures,
  			       &gcvalue);
@@ -9,15 +9,17 @@
 +#ifdef MULTICHAR_SET
 +	gcvalue.font = TermWin.mfont->fid;
 +	TermWin.mgc = XCreateGC(Xdisplay, TermWin.vt,
-+			       GCForeground | GCBackground |
-+			       GCFont | GCGraphicsExposures,
-+			       &gcvalue);
++					GCForeground | GCBackground |
++					GCFont | GCGraphicsExposures,
++					&gcvalue);
 +#endif
 +#endif
      }
  }
- /* window resizing - assuming the parent window is the correct size */
-@@ -969,7 +979,11 @@
+ /*----------------------------------------------------------------------*/
+--- src/main.c.orig	Mon Mar 27 19:53:37 2000
++++ src/main.c	Mon Mar 27 19:54:04 2000
+@@ -546,7 +546,11 @@
  
  /* alter existing GC */
      if (!init) {
@@ -29,18 +31,9 @@
  	menubar_expose();
      }
  
---- src/rxvt.h.orig	Wed Feb  9 12:01:07 2000
-+++ src/rxvt.h	Wed Feb  9 12:04:17 2000
-@@ -7,6 +7,8 @@
- 
- #include "feature.h"
- 
-+#define FIX_ALIGNMENT
-+
- /*
-  *****************************************************************************
-  * SYSTEM HACKS
-@@ -170,12 +172,19 @@
+--- src/rxvt.h.orig	Mon Mar 27 19:54:20 2000
++++ src/rxvt.h	Mon Mar 27 19:55:36 2000
+@@ -172,12 +172,19 @@
      Window          parent[KNOW_PARENTS], /* parent[0] is our window        */
  		    vt;		/* vt100 window                             */
      GC              gc;		/* GC for drawing text                      */
@@ -56,66 +49,67 @@
      XFontStruct    *mfont;	/* Multichar font structure                 */
 +#endif
 +#ifdef FIX_ALIGNMENT
-+    GC              mgc;
++	GC              mgc;
  #endif
      XFontSet        fontset;
  #ifdef XPM_BACKGROUND
---- src/screen.c.orig	Wed Feb  9 12:04:29 2000
-+++ src/screen.c	Wed Feb  9 12:23:07 2000
-@@ -2169,7 +2169,12 @@
+--- src/screen.c.orig	Mon Mar 27 19:56:10 2000
++++ src/screen.c	Mon Mar 27 20:00:03 2000
+@@ -2162,7 +2162,12 @@
   * always go back to the base font - it's much safer
   */
      wbyte = 0;
+-    XSetFont(Xdisplay, TermWin.gc, TermWin.font->fid);
 +#ifdef FIX_ALIGNMENT
-+    TermWin.gc = TermWin.ngc;
-+    TermWin.vascent = TermWin.font->ascent;
++	TermWin.gc = TermWin.ngc;
++	TermWin.vascent = TermWin.font->ascent;
 +#else
-     XSetFont(Xdisplay, TermWin.gc, TermWin.font->fid);
++	XSetFont(Xdisplay, TermWin.gc, TermWin.font->fid);
 +#endif
      draw_string = XDrawString;
      draw_image_string = XDrawImageString;
      clearfirst = clearlast = 0;
-@@ -2378,7 +2383,11 @@
+@@ -2371,7 +2376,11 @@
  	    len = 0;
  	    buffer[len++] = stp[col];
  	    ypixelc = Row2Pixel(row);
 +#ifdef FIX_ALIGNMENT
-+	    ypixel = ypixelc + TermWin.vascent;
++		ypixel = ypixelc + TermWin.vascent;
 +#else
  	    ypixel = ypixelc + TermWin.font->ascent;
 +#endif
  	    xpixel = Col2Pixel(col);
  	    fontdiff = 0;
  	    wlen = 1;
-@@ -2399,7 +2408,13 @@
+@@ -2392,7 +2401,13 @@
  		fprop = TermWin.mprop;
  		if (!wbyte && TermWin.mfont) {
  		    wbyte = 1;
 +#ifdef FIX_ALIGNMENT
-+		    TermWin.gc = TermWin.mgc;
-+		    ypixel += TermWin.mfont->ascent - TermWin.vascent;
-+		    TermWin.vascent = TermWin.mfont->ascent;
++			TermWin.gc = TermWin.mgc;
++			ypixel += TermWin.mfont->ascent - TermWin.vascent;
++			TermWin.vascent = TermWin.mfont->ascent;
 +#else
  		    XSetFont(Xdisplay, TermWin.gc, TermWin.mfont->fid);
 +#endif
  		    fontdiff = TermWin.mprop;
  		    draw_string = XDrawString16;
  		    draw_image_string = XDrawImageString16;
-@@ -2446,7 +2461,13 @@
+@@ -2439,7 +2454,13 @@
  		}
  		if (wbyte) {
  		    wbyte = 0;
 +#ifdef FIX_ALIGNMENT
-+		    TermWin.gc = TermWin.ngc;
-+		    ypixel += TermWin.font->ascent - TermWin.vascent;
-+		    TermWin.vascent = TermWin.font->ascent;
++			TermWin.gc = TermWin.ngc;
++			ypixel += TermWin.font->ascent - TermWin.vascent;
++			TermWin.vascent = TermWin.font->ascent;
 +#else
  		    XSetFont(Xdisplay, TermWin.gc, TermWin.font->fid);
 +#endif
  		    draw_string = XDrawString;
  		    draw_image_string = XDrawImageString;
  		}
-@@ -2544,7 +2565,11 @@
+@@ -2537,7 +2558,11 @@
  		rend &= ~RS_Bold;	/* we've taken care of it */
  	    } else if (bfont) {
  		bfont = 0;
@@ -127,7 +121,7 @@
  	    }
  #endif
  /*
-@@ -2679,6 +2704,9 @@
+@@ -2672,6 +2697,9 @@
      end_row = TermWin.saveLines - TermWin.view_start;
      if (selection.op && current_screen == selection.screen) {
  	i = selection.beg.row + TermWin.saveLines;
@@ -137,3 +131,27 @@
  	row = selection.end.row + TermWin.saveLines;
  	if (i >= end_row)
  	    col = selection.beg.col;
+--- src/feature.h.orig	Mon Mar 27 20:06:40 2000
++++ src/feature.h	Mon Mar 27 20:07:27 2000
+@@ -55,18 +55,18 @@
+  * overstrike just for multi char fonts
+  * Note: NO_BOLDOVERSTRIKE implies NO_BOLDOVERSTRIKE_MULTI
+  */
+-/* #define NO_BOLDOVERSTRIKE */
++#define NO_BOLDOVERSTRIKE
+ /* #define NO_BOLDOVERSTRIKE_MULTI */
+ 
+ /*
+  * Also use bold font or overstrike even if we use colour for bold
+  */
+-#define VERYBOLD
++/* #define VERYBOLD */
+ 
+ /*
+  * Compile without support for real bold fonts
+  */
+-/* #define NO_BOLDFONT */
++#define NO_BOLDFONT
+ 
+ /*
+  * If the screen has 24 bit mode, use that even if the default is 8 bit.
