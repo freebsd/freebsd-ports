@@ -1,0 +1,132 @@
+*** tclock.c	Sun Feb  7 20:24:51 1999
+--- work/tclock.c	Sun Feb  7 20:34:52 1999
+***************
+*** 22,28 ****
+--- 22,31 ----
+   */
+  
+  #include <stdio.h>
++ #include <stdlib.h>
++ #include <unistd.h>
+  #include <math.h>
++ #include <time.h>
+  #include <X11/Xlib.h>
+  #include <X11/Xutil.h>
+  #include <X11/Xos.h>
+***************
+*** 51,57 ****
+  int     screen_number;
+  Window  rootWindow, mainWindow;
+  int     ShapeEventNumber, ShapeErrorNumber;
+! long    clock;
+  struct tm lastTimes, times;
+  Pixmap  border, clip;
+  GC      clearGC, drawGC;
+--- 54,60 ----
+  int     screen_number;
+  Window  rootWindow, mainWindow;
+  int     ShapeEventNumber, ShapeErrorNumber;
+! time_t  lclock;
+  struct tm lastTimes, times;
+  Pixmap  border, clip;
+  GC      clearGC, drawGC;
+***************
+*** 212,218 ****
+    XShapeCombineMask(display, mainWindow, ShapeBounding, 0, 0, border, ShapeSet);
+    XShapeCombineMask(display, mainWindow, ShapeClip, 0, 0, clip, ShapeSet);
+  
+!   XFlush(display, 1);
+  
+    /* This call to XPending ensures that if the window gets closed, we die */
+    XPending(display);
+--- 215,221 ----
+    XShapeCombineMask(display, mainWindow, ShapeBounding, 0, 0, border, ShapeSet);
+    XShapeCombineMask(display, mainWindow, ShapeClip, 0, 0, clip, ShapeSet);
+  
+!   XFlush(display);
+  
+    /* This call to XPending ensures that if the window gets closed, we die */
+    XPending(display);
+***************
+*** 233,243 ****
+  int
+  sigalrm()
+  {
+!   clock = time(0);
+!   times = *localtime(&clock);
+    times.tm_hour = times.tm_hour * 5 + times.tm_min / 12;
+    reshape();
+!   signal(SIGALRM, sigalrm);		/* For SysV lusers */
+  }
+  
+  unsigned long
+--- 236,246 ----
+  int
+  sigalrm()
+  {
+!   lclock = time(0);
+!   times = *localtime(&lclock);
+    times.tm_hour = times.tm_hour * 5 + times.tm_min / 12;
+    reshape();
+!   signal(SIGALRM, (void *)sigalrm);		/* For SysV lusers */
+  }
+  
+  unsigned long
+***************
+*** 330,336 ****
+    display = XOpenDisplay(displayName);
+    if(display == 0)
+    {
+!     fprintf("Couldn't open display %s\n", displayName);
+      exit(-1);
+    }
+  
+--- 333,339 ----
+    display = XOpenDisplay(displayName);
+    if(display == 0)
+    {
+!     fprintf(stderr, "Couldn't open display %s\n", displayName);
+      exit(-1);
+    }
+  
+***************
+*** 347,353 ****
+    if(access(fn, R_OK) == 0)
+      XrmMergeDatabases(XrmGetFileDatabase(fn), &db);
+  
+!   if(getenv("XENVIRONMENT") && access(getenv("XENVIRONMENT")) == 0)
+      XrmMergeDatabases(XrmGetFileDatabase(getenv("XENVIRONMENT")), &db);
+  
+    XrmMergeDatabases(cmdDB, &db);
+--- 350,356 ----
+    if(access(fn, R_OK) == 0)
+      XrmMergeDatabases(XrmGetFileDatabase(fn), &db);
+  
+!   if(getenv("XENVIRONMENT") && access(getenv("XENVIRONMENT"), R_OK) == 0)
+      XrmMergeDatabases(XrmGetFileDatabase(getenv("XENVIRONMENT")), &db);
+  
+    XrmMergeDatabases(cmdDB, &db);
+***************
+*** 410,416 ****
+    XMapRaised(display, mainWindow);
+    XFlush(display);
+  
+!   signal(SIGALRM, sigalrm);
+    new.it_interval.tv_sec = 1;
+    new.it_value.tv_sec = 1;
+    new.it_interval.tv_usec = 0;
+--- 413,419 ----
+    XMapRaised(display, mainWindow);
+    XFlush(display);
+  
+!   signal(SIGALRM, (void *)sigalrm);
+    new.it_interval.tv_sec = 1;
+    new.it_value.tv_sec = 1;
+    new.it_interval.tv_usec = 0;
+***************
+*** 420,423 ****
+    for(;;)
+      sigpause(0);
+  }
+- 
+--- 423,425 ----
