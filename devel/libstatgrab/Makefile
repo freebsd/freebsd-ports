@@ -6,12 +6,14 @@
 #
 
 PORTNAME=	libstatgrab
-PORTVERSION=	0.10.2
+PORTVERSION=	0.10.3
 CATEGORIES=	devel
-MASTER_SITES=	ftp://ftp.mirrorservice.org/sites/ftp.i-scream.org/pub/i-scream/%SUBDIR%/ \
-		http://www.mirrorservice.org/sites/ftp.i-scream.org/pub/i-scream/%SUBDIR%/ \
+MASTER_SITES=	ftp://ftp.uk.i-scream.org/pub/i-scream/%SUBDIR%/ \
+		http://ftp.uk.i-scream.org/pub/i-scream/%SUBDIR%/ \
+		ftp://ftp2.uk.i-scream.org/sites/ftp.i-scream.org/pub/i-scream/%SUBDIR%/ \
+		http://ftp2.uk.i-scream.org/sites/ftp.i-scream.org/pub/i-scream/%SUBDIR%/ \
 		ftp://ftp.i-scream.org/pub/i-scream/%SUBDIR%/ \
-		http://www.i-scream.org/pub/i-scream/%SUBDIR%/
+		http://ftp.i-scream.org/pub/i-scream/%SUBDIR%/
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	tim@bishnet.net
