@@ -39,3 +39,7 @@
       variables are still read there but should be moved /etc/rc.conf or
       /etc/rc.conf.d/dhcpd instead.  Also, the dhcpd_options variable must
       be renamed dhcpd_flags if any.
+%%LDAP%%
+%%LDAP%%****  You have requested support for the LDAP configuration backend.
+%%LDAP%%      The OpenLDAP schema file is installed as %%SCHEMA_DIR%%/dhcp.schema.
+%%LDAP%%      See %%DOCSDIR%%/README.ldap for further LDAP configuration details.
