@@ -3,7 +3,7 @@
 # Date created:         Fri Aug 25 16:42:36 CDT 1995
 # Whom:                 erich@rrnet.com
 #
-# $Id: Makefile,v 1.13 1996/06/15 17:51:08 jkh Exp $
+# $Id: Makefile,v 1.14 1996/07/11 11:03:17 ache Exp $
 #
 
 DISTNAME=       apache_1.1.1
@@ -12,7 +12,7 @@ CATEGORIES+=	www
 MASTER_SITES=   ftp://www.apache.org/apache/dist/
 DISTFILES=      ${DISTNAME}.tar.gz
 
-MAINTAINER=	pst@freebsd.org
+MAINTAINER=	ache@freebsd.org,pst@freebsd.org
 
 EXTRACT_ONLY=   ${DISTNAME}.tar.gz
 
