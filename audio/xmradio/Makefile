@@ -8,9 +8,9 @@
 PORTNAME=	xmradio
 PORTVERSION=	1.0
 CATEGORIES=	audio
-MASTER_SITES=	http://www.rostock.zgdv.de/~runge/radio/
+MASTER_SITES=	http://core.de/~coto/radio/
 
-MAINTAINER=	runge@rostock.zgdv.de
+MAINTAINER=	runge@core.de	
 
 # This program does not actually depend on the below, but they are pretty
 # useful if you are into digital audio recording and playback.
