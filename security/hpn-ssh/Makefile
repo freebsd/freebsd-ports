@@ -141,7 +141,7 @@ test:
 
 .include <bsd.port.pre.mk>
 
-.include "${PORTSDIR}/security/openssl/Makefile.ssl"
+.include "${PORTSDIR}/security/openssl/bsd.openssl.mk"
 CONFIGURE_ARGS+=	--with-ssl-dir=${OPENSSLBASE}
 
 .include <bsd.port.post.mk>

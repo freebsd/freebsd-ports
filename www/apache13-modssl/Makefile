@@ -102,7 +102,7 @@ CFLAGS+=	-O6 -funroll-loops -fstrength-reduce -fomit-frame-pointer \
 		-fexpensive-optimizations -ffast-math
 .endif
 
-.include "${PORTSDIR}/security/openssl/Makefile.ssl"
+.include "${PORTSDIR}/security/openssl/bsd.openssl.mk"
 
 CONFIGURE_ENV=	CFLAGS='${CFLAGS}' \
 		OPTIM='${OPTIM}' \

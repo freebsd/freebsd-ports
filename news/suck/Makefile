@@ -39,7 +39,7 @@ BUILD_DEPENDS+=	${LOCALBASE}/news/lib/libinn.a:${PORTSDIR}/news/inn
 .include <bsd.port.pre.mk>
 
 .if !defined(SUCK_WITHOUT_SSL) && !defined(WITHOUT_SSL)
-.include "${PORTSDIR}/security/openssl/Makefile.ssl"
+.include "${PORTSDIR}/security/openssl/bsd.openssl.mk"
 MAKE_ENV+=	SSL_LIB="-lssl -lcrypto"
 MAKE_ENV+=	SSL_DEFS="-I${OPENSSLINC} -DHAVE_LIBSSL"
 MAKE_ENV+=	SSL_LIB_LOC="-L${OPENSSLLIB}"

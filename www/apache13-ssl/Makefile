@@ -47,7 +47,7 @@ USE_PERL5=	YES
 #
 # Set APACHE_PERF_TUNING env. variable to YES to get maximum performance
 #
-.include "${PORTSDIR}/security/openssl/Makefile.ssl"
+.include "${PORTSDIR}/security/openssl/bsd.openssl.mk"
 
 CFLAGS+=	-I${OPENSSLINC}/openssl
 
