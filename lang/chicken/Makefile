@@ -23,6 +23,12 @@ INSTALLS_SHLIB=	yes
 
 MAN1=		chicken-config.1 chicken-setup.1 chicken.1 csc.1 csi.1
 
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == "amd64" || ${ARCH} == "ia64"
+BROKEN=		"Coredump during build on amd64 and ia64"
+.endif
+
 post-patch:
 	${REINPLACE_CMD} -e 's/\(install-data-am: \)install-data-local/\1/' \
 		${WRKSRC}/Makefile.in
@@ -36,4 +42,4 @@ post-install:
 	${CP} -R ${WRKSRC}/doc/* ${DOCSDIR}
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
