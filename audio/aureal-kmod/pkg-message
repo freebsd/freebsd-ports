@@ -3,19 +3,19 @@ You can load the module by typing (as root of course):
 
 # kldload %%PREFIX%%/lib/au88x0/snd_au88X0.ko
 
-where X is 1, 2 or 3 depending on which Auread chipset do you have - au8810,
-au8820 or au8830 correspondingly.
+where X is 1, 2 or 3 depending on which Aureal chipset do you have - au8810
+(Vortex Advantage), au8820 (Vortex 1) or au8830 (Vortex 2) correspondingly.
 
-Please note that you are also need to have a `snd_pcm.ko' module either already
+Please note that you also need to have a `snd_pcm.ko' module either already
 loaded or placed into appropriate location for modules on your system (default
 is /modules/ on 4-STABLE and /boot/kernel/ on 5-CURRENT). You can compile and
 install snd_pcm by doing:
 
 # cd /sys/modules/sound/pcm/ && make all install
 
-Please also note that module for 4-STABLE system is untested, so please use it
-with caution and if possible please report if it work for you or not to
-Maxim Sobolev <sobomax@FreeBSD.org>.
+Please also note that module for 4.1-STABLE system is untested, so please use it
+with caution and if possible please report if it works for you to
+Alexander Matey <matey@cis.ohio-state.edu>.
 
 Thanks and enjoy!
 

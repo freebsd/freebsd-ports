@@ -7,7 +7,7 @@ $FreeBSD$
 +.PATH:	 /sys/dev/sound/pci ${WRKSRC}
 +
 +KMODDIR	 = ${PREFIX}/lib/au88x0
-+SRCS	 = device_if.h bus_if.h isa_if.h pci_if.h
++SRCS	+= device_if.h bus_if.h isa_if.h pci_if.h
 +SRCS	+= au88x0.c
 +.if ${OSVERSION} > 500000
 +SRCS	+= ac97_if.h channel_if.h feeder_if.h mixer_if.h

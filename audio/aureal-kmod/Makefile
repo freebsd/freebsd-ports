@@ -7,11 +7,12 @@
 
 PORTNAME=	aureal-kmod
 PORTVERSION=	1.5
-CATEGORIES=	misc
+PORTREVISION=	1
+CATEGORIES=	audio
 MASTER_SITES=	http://www.cis.ohio-state.edu/~matey/au88x0/
 DISTNAME=	au88x0-${PORTVERSION}
 
-MAINTAINER=	sobomax@FreeBSD.org
+MAINTAINER=	matey@cis.ohio-state.edu
 
 NO_PACKAGE=	package doesn't make any sense, because kld's should be in sync with running kernel to work correctly
 
@@ -25,8 +26,14 @@ MAKE_ENV=	WRKSRC="${WRKSRC}"
 
 .if ${OSVERSION} < 400000
 BROKEN=		"FreeBSD 3.* isn't supported"
+.elif ${OSVERSION} < 410002
+BROKEN=		"Your FreeBSD 4.1 system is too old. Please update it before installing this port"
+.elif ${OSVERSION} < 420000
+PORTVERSION=	1.1
+DISTNAME=	au88x0-${PORTVERSION}_1
 .elif ${OSVERSION} < 500000
 PORTVERSION=	1.3
+DISTNAME=	au88x0-${PORTVERSION}_1
 .endif
 
 pre-build:
