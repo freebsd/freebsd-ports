@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	libfame
-PORTVERSION=	0.9.0
+PORTVERSION=	0.9.1
 CATEGORIES=	multimedia
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	fame
@@ -17,6 +17,8 @@ COMMENT=	A video encoding library
 
 USE_LIBTOOL=	yes
 INSTALLS_SHLIB=	yes
+
+CONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 
 MAN3=	fame_close.3 fame_encode_frame.3 fame_get_object.3 fame_init.3 \
 	fame_open.3 fame_register.3 fame_unregister.3 fame_encode_slice.3 \
