@@ -7,12 +7,12 @@
 #
 
 DISTNAME=	ctwm-3.5
-PKGNAME=	ctwm-3.5.1
+PKGNAME=	ctwm-3.5.2
 CATEGORIES=	x11-wm
 MASTER_SITES=	ftp://slhp1.epfl.ch/pub/
 
 PATCH_SITES=	${MASTER_SITES}
-PATCHFILES=	ctwm-3.5-3.5.1.diffs.gz
+PATCHFILES=	ctwm-3.5-3.5.1.diffs.gz ctwm-3.5.1-3.5.2.diffs.gz
 PATCH_DIST_STRIP=	-p1
 
 MAINTAINER=	torstenb@FreeBSD.org
