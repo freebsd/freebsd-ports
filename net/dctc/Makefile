@@ -27,14 +27,14 @@ LDFLAGS+=	${PTHREAD_LIBS:S/"//g}
 CPPFLAGS+=	${PTHREAD_CFLAGS}
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" \
 		LDFLAGS="${LDFLAGS}"
-CONFIGURE_ARGS=	--enable-manual-db-detect
+CONFIGURE_ARGS=	--enable-manual-db-detect --with-db=${LOCALBASE}
 MANCOMPRESSED=	no
 
 MAN1=	dctc.1
 
 DCTC_BINS=	dctc dctc_cmd
 DOC_DIRS=	Documentation Documentation/DCextensions
-DOC_FILES=      COPYING ChangeLog INSTALL README \
+DOC_FILES=	COPYING ChangeLog INSTALL README \
 		KNOWN_BUGS TODO \
 		Documentation/BerkeleyDB \
 		Documentation/BerkeleyDB.nl \
@@ -57,10 +57,6 @@ DOC_FILES=      COPYING ChangeLog INSTALL README \
 		Documentation/output Documentation/programs
 
 .include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 500113
-BROKEN=         "Configure fails"
-.endif
 
 post-extract:
 	@${CP} ${FILESDIR}/lp_mutex.c ${WRKSRC}/src
