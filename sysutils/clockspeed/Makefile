@@ -10,7 +10,7 @@ PORTVERSION=	0.62
 CATEGORIES=	sysutils
 MASTER_SITES=	http://cr.yp.to/clockspeed/
 
-MAINTAINER=	lioux@linf.unb.br
+MAINTAINER=	lioux@FreeBSD.org
 
 LIB_DEPENDS=	tai.1:${PORTSDIR}/devel/libtai
 

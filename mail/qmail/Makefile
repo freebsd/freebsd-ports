@@ -23,7 +23,7 @@ PATCH_SITES?=	http://www.ckdhr.com/ckd/
 PATCHFILES?=	qmail-103.patch
 PATCH_DIST_STRIP+=	-p1
 
-MAINTAINER=	lioux@linf.unb.br
+MAINTAINER=	lioux@FreeBSD.org
 
 # A normal qmail installation puts everything into /var/qmail/.
 # If you want to install to /usr/local/, then "/usr/local/qmail" is

@@ -11,7 +11,7 @@ CATEGORIES=	mail
 MASTER_SITES=	ftp://ftp.newplanetsoftware.com/pub/arrow/source/
 DISTNAME=	Arrow_source-${PORTVERSION}
 
-MAINTAINER=	lioux@linf.unb.br
+MAINTAINER=	lioux@FreeBSD.org
 
 BUILD_DEPENDS=	${NONEXISTENT}:${JXPORT}:configure \
 		makemake:${JXPORT}
