@@ -8,8 +8,7 @@ PORTNAME=	alex
 PORTVERSION=	2.0
 PORTREVISION=	2
 CATEGORIES=	devel haskell
-MASTER_SITES=	http://www.haskell.org/alex/dist/ \
-		http://www.mirror.ac.uk/sites/www.haskell.org/alex/dist/
+MASTER_SITES=	http://www.haskell.org/alex/dist/
 PKGNAMEPREFIX=	hs-
 DISTNAME=	${PORTNAME}-${PORTVERSION}-src
 

@@ -8,8 +8,7 @@ PORTNAME=	haxml
 PORTVERSION=	1.12
 CATEGORIES=	textproc haskell
 MASTER_SITES=	http://www.haskell.org/HaXml/ \
-		ftp://ftp.cs.york.ac.uk/pub/haskell/HaXml/ \
-		http://www.mirror.ac.uk/sites/www.haskell.org/HaXml/ \
+		ftp://ftp.cs.york.ac.uk/pub/haskell/HaXml/
 PKGNAMEPREFIX=	hs-
 DISTNAME=	HaXml-${PORTVERSION}
 

@@ -9,9 +9,7 @@ PORTNAME=	ghc6-doc
 PORTVERSION=	6.2.1
 CATEGORIES=	lang haskell
 MASTER_SITES=	http://www.haskell.org/ghc/docs/${PORTVERSION}/ \
-		http://www.haskell.org/ghc/docs/${PORTVERSION}/html/ \
-		http://www.mirror.ac.uk/sites/www.haskell.org/ghc/docs/${PORTVERSION}/ \
-		http://www.mirror.ac.uk/sites/www.haskell.org/ghc/docs/${PORTVERSION}/html/
+		http://www.haskell.org/ghc/docs/${PORTVERSION}/html/
 DISTFILES=      building.html.tar.gz building.ps.gz hslibs.html.tar.gz \
 		hslibs.ps.gz libraries.html.tar.gz users_guide.html.tar.gz \
 		users_guide.ps.gz index.html

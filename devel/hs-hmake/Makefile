@@ -11,8 +11,7 @@ PORTREVISION=	1
 CATEGORIES=	devel haskell
 MASTER_SITES=	http://www.haskell.org/hmake/ \
 		ftp://ftp.cs.york.ac.uk/pub/haskell/hmake/ \
-		http://www.cs.york.ac.uk/fp/hmake/ \
-		http://www.mirror.ac.uk/sites/www.haskell.org/hmake/ \
+		http://www.cs.york.ac.uk/fp/hmake/
 PKGNAMEPREFIX=	hs-
 
 MAINTAINER=	haskell@FreeBSD.org
