@@ -1,6 +1,6 @@
 #!/usr/bin/perl
 #
-# $Id: log_accum.pl,v 1.18 1996/02/16 18:53:12 peter Exp $
+# $Id: log_accum.pl,v 1.19 1996/03/11 19:43:10 peter Exp $
 #
 # Perl filter to handle the log messages from the checkin of files in
 # a directory.  This script will group the lists of files by log
@@ -423,7 +423,8 @@ if ($ARGV[0] =~ /New directory/) {
     push(@text, "");
     push(@text, "  ".$ARGV[0]);
     &do_changes_file(@text);
-    &mail_notification(@text);
+    #&mail_notification(@text);
+    &cleanup_tmpfiles(1);
     exit 0;
 }
 
