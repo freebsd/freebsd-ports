@@ -1,0 +1,19 @@
+--- capplet/barque-capplet.c.orig	Thu Mar 29 18:19:20 2001
++++ capplet/barque-capplet.c	Thu Mar 29 18:19:32 2001
+@@ -91,14 +91,14 @@
+ int main(int argc, char *argv[]) {
+   GladeXML *xml;	
+   GtkWidget *prefs;
+-  static GError *error  = NULL;
++  static GConfError *error  = NULL;
+   
+   if (gnome_capplet_init ("barque-capplet", VERSION, argc, argv, NULL, 0, NULL) < 0)
+     return 1;
+   
+   if (!gconf_init(argc, argv, &error)) {
+     g_assert(error != NULL);
+-    g_warning("GConf init failed:\n  %s", error->message);
++    g_warning("GConf init failed:\n  %s", error->str);
+     return 1;
+   }
+   

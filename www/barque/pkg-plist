@@ -1,0 +1,8 @@
+bin/barque
+bin/barque-capplet
+share/gnome/apps/Settings/barque.desktop
+share/gnome/barque/authpopup.glade
+share/gnome/barque/barque-capplet.glade
+share/gnome/barque/barque.glade
+share/gnome/control-center/barque.desktop
+@dirrm share/gnome/barque

@@ -1,0 +1,20 @@
+--- src/barque.c.orig	Thu Mar 29 18:04:32 2001
++++ src/barque.c	Thu Mar 29 18:04:43 2001
+@@ -263,7 +263,7 @@
+ {
+ 	int i;
+ 	char *filename = NULL, *rootnode = NULL;
+-	GError* error = NULL;
++	GConfError* error = NULL;
+ 	GladeXML *xml;
+ 
+ 	
+@@ -274,7 +274,7 @@
+ 	/* initialize gconf */
+ 	if (!gconf_init(argc, argv, &error)) {
+ 		g_assert(error != NULL);
+-	  g_warning("GConf init failed:\n  %s", error->message);
++	  g_warning("GConf init failed:\n  %s", error->str);
+ 	  g_error_free(error);
+ 	  error = NULL;
+ 	  return 1;
