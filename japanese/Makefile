@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.202 1999/05/19 13:28:51 taoka Exp $
+# $Id: Makefile,v 1.203 1999/05/21 01:13:27 sada Exp $
 #
 
     SUBDIR += Canna
@@ -238,6 +238,7 @@
     SUBDIR += weblint97
     SUBDIR += wine
     SUBDIR += x0212fonts
+    SUBDIR += xdvik-vflib
     SUBDIR += xemacs
     SUBDIR += xemacs-canna
     SUBDIR += xemacs-canna+wnn4
