@@ -1,0 +1,2 @@
+share/ispell/norsk.aff
+share/ispell/norsk.hash
