@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	es
-PORTVERSION=	0.9b1
+PORTVERSION=	0.9.b1
 CATEGORIES=	shells
 MASTER_SITES=	ftp://ftp.sys.toronto.edu/pub/es/
 DISTNAME=	es-0.9-beta1
