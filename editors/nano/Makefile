@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	nano
-PORTVERSION=	1.0.0
+PORTVERSION=	1.0.1
 CATEGORIES=	editors
 MASTER_SITES=	http://www.nano-editor.org/dist/ \
 		http://www.asty.org/nano/dist/ \
