@@ -6,22 +6,14 @@
 #
 
 PORTNAME=	dbf2mysql
-PORTVERSION=	1.13
+PORTVERSION=	1.14
 CATEGORIES=	databases
-MASTER_SITES=	http://www.mysql.net/Downloads/Contrib/
-EXTRACT_SUFX=	.tgz
+MASTER_SITES=	http://download.sourceforge.net/pub/mirrors/mysql/Downloads/Contrib/
 
 MAINTAINER=	jedgar@FreeBSD.org
 
 LIB_DEPENDS=	mysqlclient.10:${PORTSDIR}/databases/mysql323-client
 
-NO_WRKSUBDIR=	yes
-
-do-configure:
-	@${MV} ${WRKDIR}/Makefile ${WRKDIR}/Makefile.orig
-	@${SED} -e 's|/usr/local/mysql/include|${PREFIX}/include/mysql|' \
-		-e 's|/usr/local/mysql/lib|${PREFIX}/lib/mysql|' \
-		< ${WRKDIR}/Makefile.orig > ${WRKDIR}/Makefile
 do-install:
 	${INSTALL_SCRIPT} ${WRKDIR}/dbf2mysql ${PREFIX}/bin
 	${INSTALL_SCRIPT} ${WRKDIR}/mysql2dbf ${PREFIX}/bin
