@@ -1,0 +1,11 @@
+--- server/init.c.orig	Sun Jan  5 19:59:27 1997
++++ server/init.c	Wed Sep 17 12:27:59 1997
+@@ -450,7 +450,7 @@
+   printf("New improve weapon:\t<false>\n");
+ #endif
+   printf("Max_time:\t%d\n",MAX_TIME);
+-  execl("/bin/uname", "uname", "-a", NULL);
++  execl("/usr/bin/uname", "uname", "-a", NULL);
+   LOG(llevError, "Opps, should't have gotten here.");
+   perror("execl");
+   exit(-1);

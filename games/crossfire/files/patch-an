@@ -1,0 +1,12 @@
+--- server/daemon.c.orig	Sun Jan  5 19:59:27 1997
++++ server/daemon.c	Wed Sep 17 14:39:21 1997
+@@ -50,6 +50,9 @@
+     printf("Couldn't create logfile.\n");
+     exit(0);
+   } 
++#if defined(__FreeBSD__)
++  setlinebuf (logfile);
++#endif
+   fputs("\n========================\n",logfile);    
+   fputs("Begin New Server Session\n",logfile);    
+   fputs("========================\n\n",logfile);    

@@ -1,15 +1,18 @@
---- config/crosssite.def.orig	Sat Jan 25 12:16:24 1997
-+++ config/crosssite.def	Sat Jan 25 12:20:45 1997
-@@ -38,7 +38,7 @@
+--- config/crosssite.def.orig	Sun Jan  5 19:59:48 1997
++++ config/crosssite.def	Wed Sep 17 15:55:13 1997
+@@ -36,10 +36,8 @@
+  * (mwedel@pyramid.com)
+  */
  
- /*
+-/*
  #define XPM_PIX
 -#define Xpm_LibDir /usr/local/lib/
+-*/
 +#define Xpm_LibDir /usr/X11R6/lib/
- */
  /* If your include files are someplace odd */
  /*#define Xpm_Include	/usr/local/include*/
-@@ -70,13 +70,13 @@
+ 
+@@ -70,13 +68,13 @@
   * This is a top root directory of all game staff as in UNIX-style
   * overall. 
   */
@@ -25,7 +28,7 @@
  
  /* Libraries location If this is undefined it defaults to the
    standard location for X lib files/crossfire on your machine */
-@@ -95,7 +95,8 @@
+@@ -95,7 +93,8 @@
  /* Crossfire manual location If this is undefined it defaults to the
     standard location for manual pages on your machine.*/
  /* #define CManPath Concat(CTop,/man) */
@@ -35,16 +38,16 @@
  
  
  /* Force CC to use the specified options instead of the default
-@@ -104,7 +105,7 @@
+@@ -104,7 +103,7 @@
   * any of the default compiler options for your machine.
   */
  /*define ForceCCOPTIONS -O -g -Wall */
 -#undef ForceCCOPTIONS
-+#define ForceCCOPTIONS -pipe -O2
++#define ForceCCOPTIONS -O -pipe -Wall -Werror
  
  /* Extra_Flags are added onto the compilers default options.  Can be
   * quite useful if you just want to add another flag or two, and not
-@@ -165,11 +166,9 @@
+@@ -165,11 +164,9 @@
   * Default: Sound support off.
   */
  
@@ -56,7 +59,7 @@
  
  /* define this if using OpenWindows as your enviroment. This only
   * needs to be set if the openwindows server you use is
-@@ -207,7 +206,7 @@
+@@ -207,7 +204,7 @@
   * awk on most other systems will be OK.
   */
  
