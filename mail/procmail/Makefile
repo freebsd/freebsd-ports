@@ -28,7 +28,7 @@ MASTER_SITES=	ftp://ftp.procmail.org/pub/procmail/ \
 		ftp://ftp.gigabell.net/pub/procmail/ \
 		ftp://ftp.linja.net/pub/mirrors/procmail/ \
 		ftp://ftp.stealth.net/pub/mirrors/ftp.procmail.org/pub/procmail/ \
-		ftp://ftp.mirror.ac.uk/sites/ftp.procmail.org/pub/procmail/
+		ftp://ftp.mirrorservice.org/sites/ftp.procmail.org/pub/procmail/
 
 MAINTAINER=	ache@FreeBSD.org
 COMMENT=	A local mail delivery agent
