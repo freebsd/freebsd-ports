@@ -16,12 +16,7 @@ MAINTAINER=	perky@FreeBSD.org
 COMMENT=	The Z - Object Database for python
 
 CONFLICTS=	zodb-1.*
-USE_PYTHON=	yes
+USE_PYTHON=	2.1+
 USE_PYDISTUTILS=	yes
-
-post-install:
-	@ ${SH} ${PKGREQ} INSTALL
-
-eNU_CONFIGURE=	yes
 
 .include <bsd.port.mk>
