@@ -1,0 +1,18 @@
+This is a preview version of kproject, a simple project planner.
+
+At the moment this is not more than a Q&D hack, but it does some
+basic functions, e. g.
+
+- read a project list in the form 
+	<Start node>:<End node>:<Duration>:<Text>
+	
+   where <Start node> and <End node> represents the dependencies of each
+   process. You can edit this in the programm, but I think, it is
+   much easier to edit a file with your favourite editor and load it.
+   
+   Two sample files are included in this package (see /samples).
+
+- calculate buffer times. A "C" indicates, that this process is critical
+  (total buffer time is zero)
+
+- show the project as a GANTT diagram
