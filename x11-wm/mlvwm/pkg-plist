@@ -1,0 +1,8 @@
+bin/mlvwm
+lib/X11/mlvwm/system.mlvwmrc
+lib/X11/mlvwm/pixmap/MailEmpty.xpm
+lib/X11/mlvwm/pixmap/MailFull.xpm
+lib/X11/mlvwm/pixmap/disk.xpm
+lib/X11/mlvwm/pixmap/label1.xpm
+lib/X11/mlvwm/pixmap/label2.xpm
+@dirrm lib/X11/mlvwm
