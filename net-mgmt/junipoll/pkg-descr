@@ -1,0 +1,10 @@
+junipoll is an mrtg-like utility which polls the counter values from the
+firewall filters configured on Juniper routers.  It creates ".rrd" files
+with names matching the router and its filter counter names, each
+containing a bytes and a pkts data source suitable for graphing using
+RRGrapher or RRDTOOL.
+
+WWW: http://dave.plonka.us/junipoll/
+
+- Bill Fumerola
+billf@FreeBSD.org
