@@ -5,21 +5,20 @@
 # $FreeBSD$
 #
 
-PORTNAME=		display
-PORTVERSION=		1.1
-PORTREVISION=		1
-CATEGORIES=		misc
-MASTER_SITES=		http://www.ipsmart.com/src/
-EXTRACT_SUFX=		.tgz
+PORTNAME=	display
+PORTVERSION=	1.2
+CATEGORIES=	misc
+MASTER_SITES=	http://www.ipsmart.com/src/
+EXTRACT_SUFX=	.tgz
 
-MAINTAINER=		ports@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 
-GNU_CONFIGURE=		yes
+GNU_CONFIGURE=	yes
 
-MAN1=			display.1
+MAN1=		display.1
 
 do-install:
-	@${INSTALL_PROGRAM} ${WRKSRC}/display ${PREFIX}/bin/display
-	@${INSTALL_MAN} ${WRKSRC}/display.man ${PREFIX}/man/man1/display.1
+	${INSTALL_PROGRAM} ${WRKSRC}/display ${PREFIX}/bin/display
+	${INSTALL_MAN} ${WRKSRC}/display.man ${PREFIX}/man/man1/display.1
 
 .include <bsd.port.mk>
