@@ -1,26 +1,28 @@
 Index: Makefile
 diff -u Makefile.orig Makefile
---- Makefile.orig	Sun Jan 21 05:28:38 2001
-+++ Makefile	Mon Feb  5 19:01:26 2001
-@@ -3,29 +3,29 @@
+--- Makefile.orig	Mon Aug 26 18:11:28 2002
++++ Makefile	Sat Aug 31 00:06:01 2002
+@@ -3,25 +3,24 @@
  # You may want to rename the binary-file.
  BIN_FILENAME = gkrellmms
  
--GTK_INCLUDE = `gtk-config --cflags`
--GTK_LIB = `gtk-config --libs`
-+GTK_INCLUDE = `$(GTK_CONFIG) --cflags gthread`
-+GTK_LIB = `$(GTK_CONFIG) --libs gthread`
- IMLIB_INCLUDE = `imlib-config --cflags-gdk`
- IMLIB_LIB = `imlib-config --libs-gdk`
- XMMS_INCLUDE = `xmms-config --cflags`
- XMMS_LIB = `xmms-config --libs`
+-GTK_INCLUDE ?= `pkg-config gtk+-2.0 --cflags`
+-GTK_LIB ?= `pkg-config gtk+-2.0 --libs`
++GTK_INCLUDE ?= `pkg-config gtk+-2.0 gthread-2.0 --cflags`
++GTK_LIB ?= `pkg-config gtk+-2.0 gthread-2.0 --libs`
+ IMLIB_INCLUDE ?= 
+ IMLIB_LIB ?= 
+ XMMS_INCLUDE ?= `xmms-config --cflags`
+ XMMS_LIB ?= `xmms-config --libs`
+ PLUGIN_DIR ?= /usr/local/lib/gkrellm2/plugins
  
 -FLAGS = -O2 -Wall -fPIC $(GTK_INCLUDE) $(IMLIB_INCLUDE) $(XMMS_INCLUDE)
-+CFLAGS += -fPIC $(GTK_INCLUDE) $(IMLIB_INCLUDE) $(XMMS_INCLUDE)
++CFLAGS = -fPIC $(GTK_INCLUDE) $(IMLIB_INCLUDE) $(XMMS_INCLUDE)
  LIBS = $(GTK_LIB) $(IMLIB_LIB) $(XMMS_LIB)
 -LFLAGS = -shared -lpthread
 -
--CC = gcc $(CFLAGS) $(FLAGS)
+-CC ?= gcc 
+-CC += $(CFLAGS) $(FLAGS)
 +LFLAGS = -shared
  
  OBJS = gkrellmms.o options.o playlist.o
@@ -33,10 +35,3 @@ diff -u Makefile.orig Makefile
  
  clean:
  	rm -f *.o core *.so* *.bak *~
- 
- install: 
--	install -c -s -m 755 $(BIN_FILENAME).so /usr/share/gkrellm/plugins
-+	install -c -s -m 755 $(BIN_FILENAME).so $(PREFIX)/libexec/gkrellm/plugins
- 
- gkrellmms.c.o: gkrellmms.c
- options.c.o: options.c
