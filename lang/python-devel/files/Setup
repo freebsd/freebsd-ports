@@ -116,7 +116,7 @@ signal signalmodule.c		# signal(2)
 # it, depending on your system -- see the GNU readline instructions.
 # It's okay for this to be a shared library, too.
 
-readline readline.c -lreadline -ltermcap
+readline readline.c -lmytinfo -lreadline -ltermcap
 
 
 # Modules that should always be present (non UNIX dependent):
@@ -307,7 +307,7 @@ syslog syslogmodule.c		# syslog daemon interface
 # -lncurses instead of -lcurses; on SunOS 4.1.3, insert -I/usr/5include
 # -L/usr/5lib before -lcurses).
 
-curses cursesmodule.c -lncurses -ltermcap
+curses cursesmodule.c -lmytinfo -lncurses -ltermcap
 
 
 
