@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.82 1998/07/12 23:36:34 steve Exp $
+# $Id: Makefile,v 1.83 1998/07/13 02:26:45 steve Exp $
 #
 
     SUBDIR += EZWGL
@@ -63,6 +63,7 @@
     SUBDIR += pnmtopng
     SUBDIR += povray
     SUBDIR += ppm2fli
+    SUBDIR += pstoedit
     SUBDIR += qgl
     SUBDIR += qvplay
     SUBDIR += rayshade
