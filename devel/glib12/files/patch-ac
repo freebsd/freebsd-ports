@@ -1,5 +1,5 @@
 --- glib-config.in.orig	Wed Dec 16 09:30:46 1998
-+++ glib-config.in	Sat Dec 26 22:24:07 1998
++++ glib-config.in	Tue Jan 19 23:20:59 1999
 @@ -7,7 +7,7 @@
  usage()
  {
@@ -25,7 +25,7 @@
  	fi
  	if test "$lib_gthread" = "yes"; then
 -		libsp="-lgthread $libsp"
-+		libsp="-lgthread11d $libsp"
++		libsp="-rdynamic -lgthread11d $libsp"
  		libsa="$libsa @G_THREAD_LIBS@"
  	fi
  	if test "$lib_gmodule" = "yes"; then
