@@ -22,10 +22,6 @@ WRKSRC=		${WRKDIR}/wmmon.app/wmmon
 
 .include <bsd.port.pre.mk>
 
-.if $(OSVERSION) < 400000
-#BROKEN=		'cannot compile with 3-stable'
-.endif
-
 .if !defined(NOPORTDOCS)
 post-install:
 	${MKDIR} ${PREFIX}/share/doc/wmmon

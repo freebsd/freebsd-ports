@@ -42,7 +42,7 @@
 + #endif
 + #include <sys/sysctl.h>
 + #include <sys/time.h>
-+ #if __FreeBSD_version >= 400000 && __FreeBSD_version < 400005
++ #if __FreeBSD_version < 400005
 + #include <sys/rlist.h>
 + #endif
 + #include <sys/vmmeter.h>
