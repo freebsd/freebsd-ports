@@ -13,10 +13,16 @@ EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	luigi@iet.unipi.it
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} > 400000
+BROKEN=		pre-CAM SCSI layer
+.endif
+
 post-extract:
 	${CP} ${FILESDIR}/cdd_atapicmds.[ch] ${WRKSRC}
 
 do-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/cdd ${PREFIX}/bin
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
