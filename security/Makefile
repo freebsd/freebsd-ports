@@ -248,6 +248,7 @@
     SUBDIR += pear-Auth
     SUBDIR += pear-Auth_SASL
     SUBDIR += pear-Crypt_CBC
+    SUBDIR += pf
     SUBDIR += pgp
     SUBDIR += pgp5
     SUBDIR += pgp6
