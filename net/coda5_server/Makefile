@@ -24,6 +24,7 @@ LIB_DEPENDS=	gdbm.3:${PORTSDIR}/databases/gdbm \
 ALL_TARGET=	coda
 INSTALL_TARGET=	${CODA_SUITE}-install
 
+LATEST_LINK?=	coda5-server
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 CONFIGURE_ARGS?=	--sysconfdir=${PREFIX}/etc/rc.d
