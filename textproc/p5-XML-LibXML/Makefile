@@ -37,4 +37,8 @@ MAN3=		XML::LibXML.3 XML::LibXML::Attr.3 XML::LibXML::Boolean.3 \
 
 .include <bsd.port.pre.mk>
 
+.if ${PERL_LEVEL} < 500600
+EXTRA_PATCHES=	${FILESDIR}/500503-*
+.endif
+
 .include <bsd.port.post.mk>
