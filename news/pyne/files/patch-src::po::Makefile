@@ -1,0 +1,46 @@
+--- src/po/Makefile.orig	Mon Aug 30 22:23:03 2004
++++ src/po/Makefile	Thu Sep  2 22:42:12 2004
+@@ -1,7 +1,7 @@
+ 
+ DATADIR = $(shell gnome-config --datadir)
+ LOCALEDIR = $(DATADIR)/share/locale
+-MAINDIR = 
++MAINDIR =
+ BOXTYPE = boxtypes
+ BOXFORMATS = boxformats
+ PTK = ptk
+@@ -12,8 +12,8 @@
+ all:pot update-po mo
+ 
+ 
+-	
+-POTFILES: 
++
++POTFILES:
+ 
+ 	grep -l "_(['|\"]" ../$(MAINDIR)/*.py > POTFILES.in
+ 	grep -l "_(['|\"]" ../$(BOXTYPE)/*.py >> POTFILES.in
+@@ -23,11 +23,11 @@
+ 
+ 
+ 	# add more directories here, which need to be added in POTFILES.in ****
+-	
++
+ #create pot file
+ pot: POTFILES
+ 	./pygettext.py -o $(DOMAIN).pot `cat POTFILES.in`
+-	
++
+ 
+ #update all po fles
+ update-po:
+@@ -55,7 +55,8 @@
+ install:
+ 	for mo in *.mo; do\
+ 		lingua=`basename $$mo .mo`; \
+-		install -D --mode=644 $$lingua.mo $(PREFIX)$(LOCALEDIR)/$$lingua/LC_MESSAGES/$(DOMAIN).mo ; \
++		mkdir -p $(PREFIX)$(LOCALEDIR)/$$lingua/LC_MESSAGES ; \
++		install -m 644 $$lingua.mo $(PREFIX)$(LOCALEDIR)/$$lingua/LC_MESSAGES/$(DOMAIN).mo ; \
+ 	done
+ 
+ clean:

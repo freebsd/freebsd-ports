@@ -7,34 +7,30 @@
 #
 
 PORTNAME=	pyne
-PORTVERSION=	0.6.9
-PORTREVISION=	2
+PORTVERSION=	1.0.1
 CATEGORIES=	news python mail
 MASTER_SITES=	http://www.soul-less.pwp.blueyonder.co.uk/pyne/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An X11 offline Newsreader/Emailer
 
-BROKEN=		Configure fails
-
-BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/gtk-1.2/GTK.py:${PORTSDIR}/x11-toolkits/py-gtk \
-		${PYTHON_SITELIBDIR}/gtkextra/__init__.py:${PORTSDIR}/x11-toolkits/py-gtkextra
-RUN_DEPENDS=	${PYTHON_SITELIBDIR}/gtk-1.2/GTK.py:${PORTSDIR}/x11-toolkits/py-gtk \
-		${PYTHON_SITELIBDIR}/gtkextra/__init__.py:${PORTSDIR}/x11-toolkits/py-gtkextra
+BUILD_DEPENDS=	pygtk-codegen-2.0:${PORTSDIR}/x11-toolkits/py-gtk2
+RUN_DEPENDS=	${BUILD_DEPENDS}
 
 # ugly hack imported from openoffice.
 .if !defined(DISPLAY)
-BUILD_DEPENDS=	Xvfb:${X_VFBSERVER_PORT}
-DISPLAYHACK=localhost:1001
+BUILD_DEPENDS+=	Xvfb:${X_VFBSERVER_PORT}
+DISPLAYHACK=	localhost:1001
 .endif
 
-USE_REINPLACE=	yes
-USE_PYTHON=	yes
-GNU_CONFIGURE=	yes
-NO_BUILD=	yes
-MAKE_ENV=	PYTHON_SITELIBDIR="${PYTHON_SITELIBDIR}"
+USE_REINPLACE=		yes
+USE_PYTHON=		yes
+GNU_CONFIGURE=		yes
+CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
+MAKE_ENV=		PYTHON_SITELIBDIR="${PYTHON_SITELIBDIR}"
+ALL_TARGET=		default
 
-post-patch:
+pre-configure:
 	@${REINPLACE_CMD} -e "s@[(]PREFIX[)]\/lib@(PYTHON_SITELIBDIR)@g" ${WRKSRC}/Makefile.in
 	@${REINPLACE_CMD} -e "s@pybins=\(.*\)@pybins=\${PYTHON_VERSION}@" ${WRKSRC}/configure
 
@@ -56,5 +52,6 @@ post-install:
 	@${CAT} ${WRKDIR}/.Xvfb.pid | ${XARGS} kill
 	@${RM} ${WRKDIR}/.Xvfb.pid
 .endif
+	@${STRIP_CMD} ${PREFIX}/bin/yencdec
 
 .include <bsd.port.mk>
