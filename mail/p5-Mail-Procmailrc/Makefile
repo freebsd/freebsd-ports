@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	Mail-Procmailrc
-PORTVERSION=	1.04
+PORTVERSION=	1.06
 CATEGORIES=	mail perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN} \
 		http://scott.wiersdorf.org/perl/
