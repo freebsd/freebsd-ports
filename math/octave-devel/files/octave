@@ -1,0 +1,8 @@
+#!/bin/sh
+#
+# $FreeBSD$
+
+OCTAVE_EXEC=%%PREFIX%%/bin/octave-%%OCTAVE_VERSION%%
+LD_LIBRARY_PATH=%%PREFIX%%/lib/octave-%%OCTAVE_VERSION%%; export LD_LIBRARY_PATH
+
+exec $OCTAVE_EXEC "$@"
