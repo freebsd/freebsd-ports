@@ -3734,6 +3734,7 @@ libmusicbrainz	ports/audio/libmusicbrainz
 libnet		ports/net/libnet
 libnet-devel	ports/net/libnet-devel
 libneural	ports/math/libneural
+libnewmail	ports/mail/libnewmail
 libnids		ports/net/libnids
 libnova		ports/astro/libnova
 libobjects	ports/lang/libobjects
