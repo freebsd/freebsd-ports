@@ -1,42 +1,42 @@
 # New ports collection makefile for:    trans
-# Version required:     1.12
+# Version required:     1.20
 # Date created:         6 May 1996
 # Whom:                 ache
 #
-# $Id: Makefile,v 1.5 1997/04/26 23:55:24 asami Exp $
+# $Id: Makefile,v 1.6 1997/05/05 16:53:57 ache Exp $
 #
 
-DISTNAME=       trans112
-PKGNAME=        trans-1.12
+DISTNAME=       trans120
+PKGNAME=        trans-1.20
 CATEGORIES=     converters russian
 MASTER_SITES=   http://www.kostis.net/freeware/
 
 MAINTAINER=     ache@FreeBSD.org
 
 LIBDIR= ${PREFIX}/lib/trans
-ALL= transtab transiso checkiso transce8
-
-post-build:
-	cd ${WRKSRC} && ${MAKE} bintab
+ALL= transhtm transiso transce8 transtab checkiso checkuni
 
 do-install:
-	cd ${WRKSRC} && $(INSTALL_PROGRAM) $(ALL) ${PREFIX}/bin
-	cd ${WRKSRC} && \
+	cd ${WRKSRC}/src && $(INSTALL_PROGRAM) $(ALL) ${PREFIX}/bin
+	cd ${WRKSRC}/src && \
 	for i in $(ALL); do \
 		$(INSTALL_MAN) $$i.man ${PREFIX}/man/cat1/$$i.1; \
 	done
 	install -d -o ${BINOWN} -g ${BINGRP} -m 755 \
-		${LIBDIR}/tables ${LIBDIR}/xlt ${LIBDIR}/doc ${LIBDIR}/bin
+		${LIBDIR}/cedf ${LIBDIR}/xlt ${LIBDIR}/doc ${LIBDIR}/bin \
+		${LIBDIR}/src
+	cd ${WRKSRC}/src && \
+		$(INSTALL_SCRIPT) checkall chkuni mkhtml mklist mkxlt \
+		${LIBDIR}/src
 	cd ${WRKSRC} && \
-		$(INSTALL_SCRIPT) checkall mkbintab mklist one iso ${LIBDIR}
-	cd ${WRKSRC} && \
-		$(INSTALL_DATA) iso10646 encoding.lis datatype.h ${LIBDIR}
+		$(INSTALL_DATA) README encoding.lis ${LIBDIR}
+	cd ${WRKSRC}/src && \
+		$(INSTALL_DATA) datatype.h ${LIBDIR}/src
 	cd ${WRKSRC}/bin && \
-		$(INSTALL_DATA) trans.[ch] trans.man utimbuf.h utf.[ch] \
+		$(INSTALL_DATA) one trans.[ch] trans.man utimbuf.h utf.[ch] \
 		${LIBDIR}/bin
-	cd ${WRKSRC}/tables && $(INSTALL_DATA) * ${LIBDIR}/tables
+	cd ${WRKSRC}/cedf && $(INSTALL_DATA) * ${LIBDIR}/cedf
 	cd ${WRKSRC}/doc && $(INSTALL_DATA) * ${LIBDIR}/doc
 	cd ${WRKSRC}/xlt && $(INSTALL_DATA) * ${LIBDIR}/xlt
-
 
 .include <bsd.port.mk>
