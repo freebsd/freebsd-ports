@@ -2,6 +2,9 @@
 bin/zsh
 @exec echo "Updating /etc/shells"; cp /etc/shells /etc/shells.bak; (grep -v %D/%F /etc/shells.bak; echo %D/%F) >/etc/shells; rm -f /etc/shells.bak
 @unexec echo "Updating /etc/shells"; cp /etc/shells /etc/shells.bak; (grep -v %D/%F /etc/shells.bak) >/etc/shells; rm -f /etc/shells.bak
+bin/rzsh
+@exec cp /etc/shells /etc/shells.bak; (grep -v %D/%F /etc/shells.bak; echo %D/%F) >/etc/shells; rm -f /etc/shells.bak
+@unexec cp /etc/shells /etc/shells.bak; (grep -v %D/%F /etc/shells.bak) >/etc/shells; rm -f /etc/shells.bak
 bin/zsh-%%ZSH_VER%%
 @exec   mkdir %%ZSH_ETCDIR%% 2> /dev/null || true
 @unexec rmdir %%ZSH_ETCDIR%% 2> /dev/null || true
@@ -39,19 +42,15 @@ bin/zsh-%%ZSH_VER%%
 %%NO_STATIC%%@dirrm lib/zsh/%%ZSH_VER%%
 %%NO_STATIC%%lib/zsh/libzsh-%%ZSH_VER%%.so
 %%NO_STATIC%%@dirrm lib/zsh
-%%PORTDOCS%%@unexec install-info --delete %D/info/zsh.info %D/info/dir
-%%PORTDOCS%%info/zsh.info
-%%PORTDOCS%%@exec install-info %D/info/zsh.info %D/info/dir
 %%PORTDOCS%%%%DOCSDIR%%/BUGS
 %%PORTDOCS%%%%DOCSDIR%%/CONTRIBUTORS
 %%PORTDOCS%%%%DOCSDIR%%/FAQ
-%%PORTDOCS%%%%DOCSDIR%%/FEATURES
 %%PORTDOCS%%%%DOCSDIR%%/LICENCE
 %%PORTDOCS%%%%DOCSDIR%%/META-FAQ
-%%PORTDOCS%%%%DOCSDIR%%/NEWS
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%%%DOCSDIR%%/completion-style-guide
 %%PORTDOCS%%%%DOCSDIR%%/zsh.dvi
+%%PORTDOCS%%%%DOCSDIR%%/zsh.html
 %%PORTDOCS%%%%DOCSDIR%%/zsh_1.html
 %%PORTDOCS%%%%DOCSDIR%%/zsh_10.html
 %%PORTDOCS%%%%DOCSDIR%%/zsh_11.html
@@ -188,6 +187,7 @@ bin/zsh-%%ZSH_VER%%
 %%ZSH_FNDIR%%/Completion/Cygwin/_pscp
 %%ZSH_FNDIR%%/Completion/Cygwin/_putclip
 %%ZSH_FNDIR%%/Completion/Debian/_apt
+%%ZSH_FNDIR%%/Completion/Debian/_apt-move
 %%ZSH_FNDIR%%/Completion/Debian/_apt-show-versions
 %%ZSH_FNDIR%%/Completion/Debian/_aptitude
 %%ZSH_FNDIR%%/Completion/Debian/_auto-apt
@@ -224,6 +224,7 @@ bin/zsh-%%ZSH_VER%%
 %%ZSH_FNDIR%%/Completion/Unix/_arping
 %%ZSH_FNDIR%%/Completion/Unix/_attr
 %%ZSH_FNDIR%%/Completion/Unix/_bison
+%%ZSH_FNDIR%%/Completion/Unix/_bogofilter
 %%ZSH_FNDIR%%/Completion/Unix/_bzip2
 %%ZSH_FNDIR%%/Completion/Unix/_cdcd
 %%ZSH_FNDIR%%/Completion/Unix/_cdrecord
@@ -300,6 +301,7 @@ bin/zsh-%%ZSH_VER%%
 %%ZSH_FNDIR%%/Completion/Unix/_make
 %%ZSH_FNDIR%%/Completion/Unix/_man
 %%ZSH_FNDIR%%/Completion/Unix/_mh
+%%ZSH_FNDIR%%/Completion/Unix/_mime_types
 %%ZSH_FNDIR%%/Completion/Unix/_mount
 %%ZSH_FNDIR%%/Completion/Unix/_mt
 %%ZSH_FNDIR%%/Completion/Unix/_mtools
@@ -326,6 +328,7 @@ bin/zsh-%%ZSH_VER%%
 %%ZSH_FNDIR%%/Completion/Unix/_perl_basepods
 %%ZSH_FNDIR%%/Completion/Unix/_perl_modules
 %%ZSH_FNDIR%%/Completion/Unix/_perldoc
+%%ZSH_FNDIR%%/Completion/Unix/_php
 %%ZSH_FNDIR%%/Completion/Unix/_pids
 %%ZSH_FNDIR%%/Completion/Unix/_pine
 %%ZSH_FNDIR%%/Completion/Unix/_ports
@@ -399,6 +402,7 @@ bin/zsh-%%ZSH_VER%%
 %%ZSH_FNDIR%%/Completion/X/_dcop
 %%ZSH_FNDIR%%/Completion/X/_gqview
 %%ZSH_FNDIR%%/Completion/X/_gv
+%%ZSH_FNDIR%%/Completion/X/_kfmclient
 %%ZSH_FNDIR%%/Completion/X/_mozilla
 %%ZSH_FNDIR%%/Completion/X/_mplayer
 %%ZSH_FNDIR%%/Completion/X/_nedit
@@ -439,7 +443,6 @@ bin/zsh-%%ZSH_VER%%
 %%ZSH_FNDIR%%/Completion/Zsh/_arrays
 %%ZSH_FNDIR%%/Completion/Zsh/_assign
 %%ZSH_FNDIR%%/Completion/Zsh/_autocd
-%%ZSH_FNDIR%%/Completion/Zsh/_autoload
 %%ZSH_FNDIR%%/Completion/Zsh/_bindkey
 %%ZSH_FNDIR%%/Completion/Zsh/_brace_parameter
 %%ZSH_FNDIR%%/Completion/Zsh/_builtin
@@ -552,24 +555,24 @@ bin/zsh-%%ZSH_VER%%
 %%ZSH_FNDIR%%/Prompts/prompt_walters_setup
 %%ZSH_FNDIR%%/Prompts/prompt_zefram_setup
 %%ZSH_FNDIR%%/Prompts/promptinit
-%%NO_STATIC%%%%ZSH_FNDIR%%/TCP/tcp_alias
-%%NO_STATIC%%%%ZSH_FNDIR%%/TCP/tcp_close
-%%NO_STATIC%%%%ZSH_FNDIR%%/TCP/tcp_command
-%%NO_STATIC%%%%ZSH_FNDIR%%/TCP/tcp_expect
-%%NO_STATIC%%%%ZSH_FNDIR%%/TCP/tcp_fd_handler
-%%NO_STATIC%%%%ZSH_FNDIR%%/TCP/tcp_log
-%%NO_STATIC%%%%ZSH_FNDIR%%/TCP/tcp_open
-%%NO_STATIC%%%%ZSH_FNDIR%%/TCP/tcp_output
-%%NO_STATIC%%%%ZSH_FNDIR%%/TCP/tcp_point
-%%NO_STATIC%%%%ZSH_FNDIR%%/TCP/tcp_proxy
-%%NO_STATIC%%%%ZSH_FNDIR%%/TCP/tcp_read
-%%NO_STATIC%%%%ZSH_FNDIR%%/TCP/tcp_rename
-%%NO_STATIC%%%%ZSH_FNDIR%%/TCP/tcp_send
-%%NO_STATIC%%%%ZSH_FNDIR%%/TCP/tcp_sess
-%%NO_STATIC%%%%ZSH_FNDIR%%/TCP/tcp_shoot
-%%NO_STATIC%%%%ZSH_FNDIR%%/TCP/tcp_spam
-%%NO_STATIC%%%%ZSH_FNDIR%%/TCP/tcp_talk
-%%NO_STATIC%%%%ZSH_FNDIR%%/TCP/tcp_wait
+%%ZSH_FNDIR%%/TCP/tcp_alias
+%%ZSH_FNDIR%%/TCP/tcp_close
+%%ZSH_FNDIR%%/TCP/tcp_command
+%%ZSH_FNDIR%%/TCP/tcp_expect
+%%ZSH_FNDIR%%/TCP/tcp_fd_handler
+%%ZSH_FNDIR%%/TCP/tcp_log
+%%ZSH_FNDIR%%/TCP/tcp_open
+%%ZSH_FNDIR%%/TCP/tcp_output
+%%ZSH_FNDIR%%/TCP/tcp_point
+%%ZSH_FNDIR%%/TCP/tcp_proxy
+%%ZSH_FNDIR%%/TCP/tcp_read
+%%ZSH_FNDIR%%/TCP/tcp_rename
+%%ZSH_FNDIR%%/TCP/tcp_send
+%%ZSH_FNDIR%%/TCP/tcp_sess
+%%ZSH_FNDIR%%/TCP/tcp_shoot
+%%ZSH_FNDIR%%/TCP/tcp_spam
+%%ZSH_FNDIR%%/TCP/tcp_talk
+%%ZSH_FNDIR%%/TCP/tcp_wait
 %%ZSH_FNDIR%%/Zle/backward-kill-word-match
 %%ZSH_FNDIR%%/Zle/backward-word-match
 %%ZSH_FNDIR%%/Zle/capitalize-word-match
@@ -578,6 +581,7 @@ bin/zsh-%%ZSH_VER%%
 %%ZSH_FNDIR%%/Zle/down-case-word-match
 %%ZSH_FNDIR%%/Zle/down-line-or-beginning-search
 %%ZSH_FNDIR%%/Zle/forward-word-match
+%%ZSH_FNDIR%%/Zle/history-pattern-search
 %%ZSH_FNDIR%%/Zle/kill-word-match
 %%ZSH_FNDIR%%/Zle/match-words-by-style
 %%ZSH_FNDIR%%/Zle/narrow-to-region
@@ -590,38 +594,39 @@ bin/zsh-%%ZSH_VER%%
 %%ZSH_FNDIR%%/Zle/up-case-word-match
 %%ZSH_FNDIR%%/Zle/up-line-or-beginning-search
 %%ZSH_FNDIR%%/Zle/url-quote-magic
-%%NO_STATIC%%%%ZSH_FNDIR%%/Zftp/zfanon
-%%NO_STATIC%%%%ZSH_FNDIR%%/Zftp/zfautocheck
-%%NO_STATIC%%%%ZSH_FNDIR%%/Zftp/zfcd
-%%NO_STATIC%%%%ZSH_FNDIR%%/Zftp/zfcd_match
-%%NO_STATIC%%%%ZSH_FNDIR%%/Zftp/zfcget
-%%NO_STATIC%%%%ZSH_FNDIR%%/Zftp/zfclose
-%%NO_STATIC%%%%ZSH_FNDIR%%/Zftp/zfcput
-%%NO_STATIC%%%%ZSH_FNDIR%%/Zftp/zfdir
-%%NO_STATIC%%%%ZSH_FNDIR%%/Zftp/zffcache
-%%NO_STATIC%%%%ZSH_FNDIR%%/Zftp/zfgcp
-%%NO_STATIC%%%%ZSH_FNDIR%%/Zftp/zfget
-%%NO_STATIC%%%%ZSH_FNDIR%%/Zftp/zfget_match
-%%NO_STATIC%%%%ZSH_FNDIR%%/Zftp/zfgoto
-%%NO_STATIC%%%%ZSH_FNDIR%%/Zftp/zfhere
-%%NO_STATIC%%%%ZSH_FNDIR%%/Zftp/zfinit
-%%NO_STATIC%%%%ZSH_FNDIR%%/Zftp/zfls
-%%NO_STATIC%%%%ZSH_FNDIR%%/Zftp/zfmark
-%%NO_STATIC%%%%ZSH_FNDIR%%/Zftp/zfopen
-%%NO_STATIC%%%%ZSH_FNDIR%%/Zftp/zfparams
-%%NO_STATIC%%%%ZSH_FNDIR%%/Zftp/zfpcp
-%%NO_STATIC%%%%ZSH_FNDIR%%/Zftp/zfput
-%%NO_STATIC%%%%ZSH_FNDIR%%/Zftp/zfrglob
-%%NO_STATIC%%%%ZSH_FNDIR%%/Zftp/zfrtime
-%%NO_STATIC%%%%ZSH_FNDIR%%/Zftp/zfsession
-%%NO_STATIC%%%%ZSH_FNDIR%%/Zftp/zfstat
-%%NO_STATIC%%%%ZSH_FNDIR%%/Zftp/zftp_chpwd
-%%NO_STATIC%%%%ZSH_FNDIR%%/Zftp/zftp_progress
-%%NO_STATIC%%%%ZSH_FNDIR%%/Zftp/zftransfer
-%%NO_STATIC%%%%ZSH_FNDIR%%/Zftp/zftype
-%%NO_STATIC%%%%ZSH_FNDIR%%/Zftp/zfuget
-%%NO_STATIC%%%%ZSH_FNDIR%%/Zftp/zfuput
-%%NO_STATIC%%@dirrm %%ZSH_FNDIR%%/Zftp
+%%ZSH_FNDIR%%/Zle/zed-set-file-name
+%%ZSH_FNDIR%%/Zftp/zfanon
+%%ZSH_FNDIR%%/Zftp/zfautocheck
+%%ZSH_FNDIR%%/Zftp/zfcd
+%%ZSH_FNDIR%%/Zftp/zfcd_match
+%%ZSH_FNDIR%%/Zftp/zfcget
+%%ZSH_FNDIR%%/Zftp/zfclose
+%%ZSH_FNDIR%%/Zftp/zfcput
+%%ZSH_FNDIR%%/Zftp/zfdir
+%%ZSH_FNDIR%%/Zftp/zffcache
+%%ZSH_FNDIR%%/Zftp/zfgcp
+%%ZSH_FNDIR%%/Zftp/zfget
+%%ZSH_FNDIR%%/Zftp/zfget_match
+%%ZSH_FNDIR%%/Zftp/zfgoto
+%%ZSH_FNDIR%%/Zftp/zfhere
+%%ZSH_FNDIR%%/Zftp/zfinit
+%%ZSH_FNDIR%%/Zftp/zfls
+%%ZSH_FNDIR%%/Zftp/zfmark
+%%ZSH_FNDIR%%/Zftp/zfopen
+%%ZSH_FNDIR%%/Zftp/zfparams
+%%ZSH_FNDIR%%/Zftp/zfpcp
+%%ZSH_FNDIR%%/Zftp/zfput
+%%ZSH_FNDIR%%/Zftp/zfrglob
+%%ZSH_FNDIR%%/Zftp/zfrtime
+%%ZSH_FNDIR%%/Zftp/zfsession
+%%ZSH_FNDIR%%/Zftp/zfstat
+%%ZSH_FNDIR%%/Zftp/zftp_chpwd
+%%ZSH_FNDIR%%/Zftp/zftp_progress
+%%ZSH_FNDIR%%/Zftp/zftransfer
+%%ZSH_FNDIR%%/Zftp/zftype
+%%ZSH_FNDIR%%/Zftp/zfuget
+%%ZSH_FNDIR%%/Zftp/zfuput
+@dirrm %%ZSH_FNDIR%%/Zftp
 %%ZSH_FNDIR%%/Zle/cycle-completion-positions
 %%ZSH_FNDIR%%/Zle/edit-command-line
 %%ZSH_FNDIR%%/Zle/history-search-end
@@ -645,7 +650,7 @@ bin/zsh-%%ZSH_VER%%
 @dirrm %%ZSH_FNDIR%%/MIME
 @dirrm %%ZSH_FNDIR%%/Misc
 @dirrm %%ZSH_FNDIR%%/Prompts
-%%NO_STATIC%%@dirrm %%ZSH_FNDIR%%/TCP
+@dirrm %%ZSH_FNDIR%%/TCP
 @dirrm %%ZSH_FNDIR%%/Zle
 @dirrm %%ZSH_FNDIR%%
 @dirrm %%DATADIR%%/%%ZSH_VER%%

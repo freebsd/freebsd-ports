@@ -25,7 +25,7 @@
 #			NOTE: does NOT have to be inside ${PREFIX} tree
 
 PORTNAME=	zsh
-PORTVERSION=	4.2.0
+PORTVERSION=	4.2.1
 CATEGORIES=	shells
 MASTER_SITES=	http://www.zsh.org/zsh/ \
 		ftp://ftp.zsh.org/zsh/ \
@@ -52,10 +52,11 @@ COMMENT?=	The Z shell
 
 ZSH_VER=	${PORTVERSION}
 # Conflicts with shells/zsh-devel as it installs files into the same locations
-CONFLICTS=	zsh-devel-* zsh-4.1.*
+CONFLICTS=	zsh-devel-[0-9]* zsh-4.1.*
 
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
+USE_REINPLACE=	yes
 
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS=	--enable-etcdir=${ZSH_ETCDIR} --with-curses-terminfo \
@@ -92,9 +93,12 @@ MAN1=		zsh.1 zshbuiltins.1 zshcompctl.1 zshcompwid.1 zshcompsys.1 \
 		zshcontrib.1 zshexpn.1 zshmisc.1 zshmodules.1 zshoptions.1 \
 		zshparam.1 zshtcpsys.1 zshzftpsys.1 zshzle.1 zshall.1
 DOCS=		LICENCE META-FAQ README Etc/BUGS Etc/CONTRIBUTORS Etc/FAQ \
-		Etc/FEATURES Etc/NEWS Etc/completion-style-guide \
+		Etc/completion-style-guide \
 		Doc/zsh*.html Doc/zsh.dvi Doc/zsh_a4.ps Doc/zsh_us.ps
 EXAMPLES=	zlogin zshenv zshrc
+
+post-patch:
+	${REINPLACE_CMD} -e 's/link=dynamic/link=either/' ${WRKSRC}/Src/Modules/*.mdd
 
 post-build:
 	# Fix ".so" macro problem by using "soelim" command.
@@ -102,11 +106,19 @@ post-build:
 	${MV} ${WRKSRC}/Doc/zshall.1 ${WRKSRC}/Doc/zshall.1.source
 	cd ${WRKSRC} && /usr/bin/soelim ${WRKSRC}/Doc/zshall.1.source > \
 		${WRKSRC}/Doc/zshall.1
+
 .if !defined(NOPORTDOCS)
-	cd ${WRKSRC}/Doc && makeinfo --no-split zsh.texi
+INFO=	zsh
+
+pre-install:
+	@${MKDIR} ${PREFIX}/info
+	makeinfo --no-split --output=${PREFIX}/info/zsh.info \
+		${WRKSRC}/Doc/zsh.texi
+	install-info ${PREFIX}/info/zsh.info ${PREFIX}/info/dir
 .endif
 
 post-install:
+	${LN} ${PREFIX}/bin/zsh ${PREFIX}/bin/rzsh
 	${TEST} -d ${ZSH_ETCDIR} || ${MKDIR} ${ZSH_ETCDIR}
 	${TEST} -d ${ZSH_SITEFNDIR} || ${MKDIR} ${ZSH_SITEFNDIR}
 	@${MKDIR} ${EXAMPLESDIR}
@@ -114,13 +126,13 @@ post-install:
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 	cd ${WRKSRC} && ${INSTALL_DATA} ${DOCS} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/Doc/zsh.info ${PREFIX}/info
-	@install-info ${PREFIX}/info/zsh.info ${PREFIX}/info/dir
 .endif
 	@${ECHO_MSG} "Updating /etc/shells"
 	@${CP} /etc/shells /etc/shells.bak
-	@(${GREP} -v ${PREFIX}/bin/zsh /etc/shells.bak; \
-	  ${ECHO_CMD} ${PREFIX}/bin/zsh) > /etc/shells
+	@(${GREP} -v ${PREFIX}/bin/zsh /etc/shells.bak \
+	  | ${GREP} -v ${PREFIX}/bin/rzsh; \
+	  ${ECHO_CMD} ${PREFIX}/bin/zsh; \
+	  ${ECHO_CMD} ${PREFIX}/bin/rzsh) > /etc/shells
 	@${RM} /etc/shells.bak
 
 .include <bsd.port.mk>
