@@ -23,7 +23,7 @@
  * OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
  * SUCH DAMAGE.
  *
- *	$Id$
+ *	$Id: cvswrap.c,v 1.1 1999/08/08 10:52:18 peter Exp $
  */
 
 /*
@@ -55,8 +55,11 @@ main(int ac, char **av)
 
 	karma = 0;
 
+#if 0
+	/* not such a good idea if cvs is called from the commitlog scripts */
 	if (getgid() == getegid())
 		errx(1, "fatal: not installed setgid correctly!");
+#endif
 
 	fp = fopen(ACCESS, "r");
 	if (fp == NULL)
