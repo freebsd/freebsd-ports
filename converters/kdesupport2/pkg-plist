@@ -36,7 +36,10 @@ include/mimelib/text.h
 include/mimelib/token.h
 include/mimelib/utility.h
 include/mimelib/uuencode.h
+lib/libQwSpriteField.la
 lib/libQwSpriteField.so.8
+lib/libmimelib.la
+lib/libmimelib.so.3
 @exec ln -sf libQwSpriteField.so.7 %D/lib/libQwSpriteField.so
 @exec ln -sf libmimelib.so.3 %D/lib/libmimelib.so
 @exec /sbin/ldconfig -m %B
