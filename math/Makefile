@@ -63,6 +63,7 @@
     SUBDIR += spin
     SUBDIR += ss
     SUBDIR += superlu
+    SUBDIR += thx_1138
     SUBDIR += topaz
     SUBDIR += umatrix
     SUBDIR += umfpack

@@ -1,0 +1,29 @@
+--- programs/thx-1138/Make.header.orig	Thu Jun 15 00:07:41 2000
++++ programs/thx-1138/Make.header	Thu Jun 15 00:08:06 2000
+@@ -47,17 +47,6 @@
+ 
+ # library dependencies
+ 
+-ifdef J_BUILD_SHARED_LIB
+-  LIB_DEPS := ${JLIBDIR}/libjcore-${JX_LIB_VERSION}.so \
+-              ${JLIBDIR}/libjx-${JX_LIB_VERSION}.so \
+-              ${JLIBDIR}/libjparser-${JPARSER_LIB_VERSION}.so \
+-              ${JLIBDIR}/libj2dplot-${J2DPLOT_LIB_VERSION}.so
+-else
+-  LIB_DEPS := ${JLIBDIR}/libjcore-${JX_LIB_VERSION}.a \
+-              ${JLIBDIR}/libjx-${JX_LIB_VERSION}.a \
+-              ${JLIBDIR}/libjparser-${JPARSER_LIB_VERSION}.a \
+-              ${JLIBDIR}/libj2dplot-${J2DPLOT_LIB_VERSION}.a
+-endif
+ 
+ # make variables
+ 
+@@ -68,7 +57,7 @@
+ #####
+ 
+ .PHONY : default
+-default: libs thx-1138
++default: thx-1138
+ 
+ .PHONY : Makefiles
+ Makefiles:
