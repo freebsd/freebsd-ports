@@ -1,0 +1,22 @@
+
+=======================================================================
+
+You can put custom configuration file in the same directory where you
+run cake binary from, named `config.ini'.  Some default values are:
+
+	v_fullscreen 0
+	v_width 640
+	v_height 480
+	v_colorBits 32
+	v_hz 60
+	r_path baseq3
+	r_mapsubdir maps
+
+Cake also logs its actions to <directory-run-from>/cake_log.html
+
+NOTE: cake requires a gfx card that supports following extensions:
+
+    * GL_EXT_compiled_vertex_array
+    * GL_ARB_multitexture
+
+=======================================================================

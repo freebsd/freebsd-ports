@@ -62,6 +62,7 @@
     SUBDIR += burgerspace
     SUBDIR += bygfoot
     SUBDIR += bzflag
+    SUBDIR += cake
     SUBDIR += cardpics
     SUBDIR += cgoban
     SUBDIR += cgoban2
