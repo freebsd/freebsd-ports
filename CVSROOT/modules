@@ -458,6 +458,7 @@ awka		ports/lang/awka
 awstats		ports/www/awstats
 axe		ports/editors/axe
 axel		ports/ftp/axel
+axelq		ports/ftp/axelq
 axpoint		ports/print/axpoint
 axyftp		ports/ftp/axyftp
 babel		ports/biology/babel
