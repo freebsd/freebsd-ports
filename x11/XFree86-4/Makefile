@@ -37,6 +37,13 @@ FONTCYR=	${X11BASE}/lib/X11/fonts/cyrillic/crox1c.pcf.gz
 FONTDEFAULT=	${X11BASE}/lib/X11/fonts/misc/cursor.pcf.gz
 FONTSCALE=	${X11BASE}/lib/X11/fonts/TTF/luximb.ttf
 
+pre-everything:
+	@${ECHO_MSG} "This is a meta-port, meaning that it just depends on its subparts of the port."
+	@${ECHO_MSG} "It won't build and install all the parts until you have typed make install"
+	@${ECHO_MSG} "This port does not ensure things are upgraded; use portupgrade if you want to"
+	@${ECHO_MSG} "upgrade XFree86.  If you simply type 'make install' it may use over 2GB to build"
+	@${ECHO_MSG} "all of the subports.  You can install the ports singly if you are low on space."
+
 .if make(package)
 DEPENDS_TARGET="package"
 .endif
