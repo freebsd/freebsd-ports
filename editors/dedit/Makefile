@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	dedit
-PORTVERSION=	0.5.8
+PORTVERSION=	0.5.10
 CATEGORIES=	editors gnome
 MASTER_SITES=	ftp://ftp.debian.org/debian/dists/unstable/main/source/editors/
 DISTNAME=	${PORTNAME}_${PORTVERSION}
@@ -20,9 +20,8 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 GTK_CONFIG?=	${X11BASE}/bin/gtk12-config
 
-USE_GMAKE=	yes
 USE_X_PREFIX=	yes
-USE_AUTOMAKE=	yes
+GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--localstatedir=${PREFIX}/share/gnome \
 		--datadir=${PREFIX}/share/gnome
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASSE}/include" \
