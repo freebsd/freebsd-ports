@@ -1,0 +1,32 @@
+--- logevent.c.orig	Thu Aug 27 15:50:54 1998
++++ logevent.c	Fri Jul 18 00:04:31 2003
+@@ -28,7 +28,7 @@
+ #include <sys/locking.h>
+ #endif
+ 
+-#include <varargs.h>
++#include <stdarg.h>
+ 
+ /* This must be a typedef not a #define! */
+ typedef char *pointer;
+@@ -74,10 +74,7 @@
+ 	vlogevent(pid,format,va_alist)
+ --------------------------------------------------------------------------*/
+ void
+-vlogevent(pid, format, va_alist)
+-int pid;
+-char *format;
+-va_dcl
++vlogevent(int pid, char *format, ...)
+ {
+ 	va_list args;
+ 	char c;
+@@ -86,7 +83,7 @@
+ 	char accum_string[256];
+ 	char *dp = accum_string;
+ 
+-	va_start(args);
++	va_start(args, format);
+ 
+ 	tempfmt[0] = '%';
+ 	while (c = *format++)
