@@ -1,7 +1,11 @@
 bin/ifm
 bin/tkifm
 bin/scr2ifm
+share/ifm/ifm-init.ifm
 share/ifm/ifm-pro.ps
+share/ifm/ifm-rgb.txt
+share/ifm/puzzle.ifm
+share/ifm/special.ifm
 @unexec install-info --delete %D/info/ifm.info %D/info/dir
 @unexec install-info --delete %D/info/tkifm.info %D/info/dir
 @unexec install-info --delete %D/info/scr2ifm.info %D/info/dir
@@ -11,3 +15,4 @@ info/scr2ifm.info
 @exec install-info %D/info/ifm.info %D/info/dir
 @exec install-info %D/info/tkifm.info %D/info/dir
 @exec install-info %D/info/scr2ifm.info %D/info/dir
+@dirrm share/ifm
