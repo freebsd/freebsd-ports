@@ -33,6 +33,7 @@ include/gtk/gtkeditable.h
 include/gtk/gtkentry.h
 include/gtk/gtkenums.h
 include/gtk/gtkeventbox.h
+include/gtk/gtkfeatures.h
 include/gtk/gtkfilesel.h
 include/gtk/gtkfixed.h
 include/gtk/gtkframe.h
@@ -114,17 +115,19 @@ info/gtk.info
 lib/libgdk.a
 lib/libgdk.la
 lib/libgdk.so
-lib/libgdk.so.1.1
+lib/libgdk.so.1.2
 lib/libglib.a
 lib/libglib.la
 lib/libglib.so
-lib/libglib.so.1.1
+lib/libglib.so.1.2
 lib/libgtk.a
 lib/libgtk.la
 lib/libgtk.so
-lib/libgtk.so.1.1
+lib/libgtk.so.1.2
+man/man1/gtk-config.1.gz
 @unexec /sbin/ldconfig -R
 @exec /sbin/ldconfig -m %D/lib
-share/aclocal/gtk.m4
 @dirrm include/gdk
 @dirrm include/gtk
+@cwd /usr/local
+share/aclocal/gtk.m4
