@@ -25,4 +25,10 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	LDFLAGS=-lcipher
 CONFIGURE_ARGS=	--enable-mt --program-prefix=""
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 502102
+BROKEN=		"Configure fails"
+.endif
+
+.include <bsd.port.post.mk>
