@@ -15,6 +15,7 @@ MASTER_SITES=	ftp://samba.anu.edu.au/pub/rsync/  \
 		ftp://ftp.fu-berlin.de/pub/unix/network/rsync/
 
 MAINTAINER=	obraun@FreeBSD.org
+COMMENT=	A network file distribution/synchronization utility
 
 .if defined(WITH_POPT_PORT)
 LIB_DEPENDS=	popt.0:${PORTSDIR}/devel/popt

@@ -9,10 +9,11 @@ PORTNAME=	green-card
 PORTVERSION=	2.05
 CATEGORIES=	devel haskell
 MASTER_SITES=	http://www.galois.com/~sof/
-DISTNAME=	gc-${PORTVERSION}-src
 PKGNAMEPREFIX=	hs-
+DISTNAME=	gc-${PORTVERSION}-src
 
 MAINTAINER=	obraun@FreeBSD.org
+COMMENT=	A foreign function interface preprocessor for Haskell
 
 BUILD_DEPENDS=	ghc:${PORTSDIR}/lang/ghc
 

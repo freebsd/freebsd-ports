@@ -12,6 +12,7 @@ MASTER_SITES=	http://www.cse.unsw.edu.au/~chak/haskell/c2hs/
 PKGNAMEPREFIX=	hs-
 
 MAINTAINER=	obraun@FreeBSD.org
+COMMENT=	C->Haskell, an Interface Generator for Haskell
 
 BUILD_DEPENDS=	ghc:${PORTSDIR}/lang/ghc
 RUN_DEPENDS=	ghc:${PORTSDIR}/lang/ghc

@@ -12,6 +12,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	checkrdf
 
 MAINTAINER=	obraun@FreeBSD.org
+COMMENT=	A tool for RDF site summaries based news-check
 
 BUILD_DEPENDS=	Xtract:${PORTSDIR}/textproc/hs-haxml
 

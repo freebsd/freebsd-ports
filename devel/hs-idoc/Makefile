@@ -11,6 +11,7 @@ MASTER_SITES=	http://www.cse.unsw.edu.au/~chak/haskell/idoc/
 PKGNAMEPREFIX=	hs-
 
 MAINTAINER=	obraun@FreeBSD.org
+COMMENT=	A No Frills Haskell Interface Documentation System
 
 BUILD_DEPENDS=	ghc:${PORTSDIR}/lang/ghc
 

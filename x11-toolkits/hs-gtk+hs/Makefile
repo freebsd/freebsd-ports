@@ -12,6 +12,7 @@ MASTER_SITES=	http://www.cse.unsw.edu.au/~chak/haskell/gtk/
 PKGNAMEPREFIX=	hs-
 
 MAINTAINER=	obraun@FreeBSD.org
+COMMENT=	A GTK+ Binding for Haskell
 
 BUILD_DEPENDS=	ghc:${PORTSDIR}/lang/ghc \
 		c2hs:${PORTSDIR}/devel/hs-c2hs
