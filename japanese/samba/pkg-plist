@@ -307,35 +307,6 @@ share/swat/images/viewconfig.gif
 share/swat/include/footer.html
 share/swat/include/header.html
 share/swat/include/header_css.html
-share/swat/ja/help/HowToUseSamba/1-18.html
-share/swat/ja/help/HowToUseSamba/1-19.html
-share/swat/ja/help/HowToUseSamba/1-6.html
-share/swat/ja/help/HowToUseSamba/MSNET1.GIF
-share/swat/ja/help/HowToUseSamba/MSNETW2.GIF
-share/swat/ja/help/HowToUseSamba/PRTCL95.GIF
-share/swat/ja/help/HowToUseSamba/SAMBA1.GIF
-share/swat/ja/help/HowToUseSamba/WGRPNT1.GIF
-share/swat/ja/help/HowToUseSamba/globals.gif
-share/swat/ja/help/HowToUseSamba/home.gif
-share/swat/ja/help/HowToUseSamba/index.html
-share/swat/ja/help/HowToUseSamba/passwd.gif
-share/swat/ja/help/HowToUseSamba/printers.gif
-share/swat/ja/help/HowToUseSamba/printtool1.gif
-share/swat/ja/help/HowToUseSamba/printtool2.gif
-share/swat/ja/help/HowToUseSamba/printtool3.gif
-share/swat/ja/help/HowToUseSamba/printtool4.gif
-share/swat/ja/help/HowToUseSamba/printtool5.gif
-share/swat/ja/help/HowToUseSamba/printtool6.gif
-share/swat/ja/help/HowToUseSamba/samba.gif
-share/swat/ja/help/HowToUseSamba/shares.gif
-share/swat/ja/help/HowToUseSamba/status.gif
-share/swat/ja/help/HowToUseSamba/swat1.gif
-share/swat/ja/help/HowToUseSamba/userhome.gif
-share/swat/ja/help/HowToUseSamba/userprofile.gif
-share/swat/ja/help/HowToUseSamba/viewconfig.gif
-share/swat/ja/help/HowToUseSamba/x-1-256.gif
-share/swat/ja/help/HowToUseSamba/x-2-256.gif
-share/swat/ja/help/HowToUseSamba/x-3-256.gif
 share/swat/ja/help/Application_Serving.txt.html
 share/swat/ja/help/BROWSING-Config.txt.html
 share/swat/ja/help/BROWSING.txt.html
@@ -369,6 +340,7 @@ share/swat/ja/help/nmbd.8.html
 share/swat/ja/help/nmblookup.1.html
 share/swat/ja/help/samba-func.html
 share/swat/ja/help/samba-j.html
+share/swat/ja/help/samba_begin.html
 share/swat/ja/help/samba.7.html
 share/swat/ja/help/samba2.html
 share/swat/ja/help/sambafaq-1.html
@@ -413,7 +385,6 @@ share/swat/ja/include/header.nocss.html
 share/swat/ja/include/header.org.html
 share/swat/ja/include/header.sjis.html
 share/swat/ja/include/header_css.html
-@dirrm share/swat/ja/help/HowToUseSamba
 @dirrm share/swat/ja/help
 @dirrm share/swat/ja/images
 @dirrm share/swat/ja/include
