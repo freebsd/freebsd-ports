@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.76 1998/05/19 23:18:07 ache Exp $
+# $Id: Makefile,v 1.77 1998/05/29 04:45:51 mph Exp $
 #
 
     SUBDIR += Mosaic         # requires Motif
@@ -43,6 +43,7 @@
     SUBDIR += p5-CGI
     SUBDIR += p5-CGI_Lite
     SUBDIR += p5-HTML
+    SUBDIR += p5-HTML-Parser
     SUBDIR += p5-HTML-QuickCheck
     SUBDIR += p5-HTML-Stream
     SUBDIR += p5-HTTPD-Tools
