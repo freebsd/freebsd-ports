@@ -1,0 +1,37 @@
+*** Makefile.orig	Wed Jan  5 02:47:50 1994
+--- Makefile	Mon Jul  1 23:16:53 1996
+***************
+*** 1,10 ****
+  ALL : musicin musicout
+  
+! CFLAGS =  -O2
+! LDFLAGS= 
+  
+  musicin: musicin.o common.o encode.o subs.o psy.o tonal.o
+! 	cc $(LDFLAGS) -o musicin musicin.o common.o encode.o subs.o psy.o tonal.o -lm
+  
+  musicout: musicout.o common.o decode.o subs.o
+! 	cc $(LDFLAGS)  musicout.o common.o decode.o subs.o -o musicout -lm
+--- 1,22 ----
+  ALL : musicin musicout
+  
+! CFLAGS += -DPREFIX=\"${PREFIX}\"
+! 
+! all: musicin musicout
+  
+  musicin: musicin.o common.o encode.o subs.o psy.o tonal.o
+! 	cc -o musicin musicin.o common.o encode.o subs.o psy.o tonal.o -lm
+  
+  musicout: musicout.o common.o decode.o subs.o
+! 	cc musicout.o common.o decode.o subs.o -o musicout -lm
+! 
+! clean:
+! 	rm -f *.core *.o musicin musicout
+! 
+! install:
+! 	install -c -m 0755 -o bin -g bin musicin ${PREFIX}/bin/mpeg_musicin
+! 	install -c -m 0755 -o bin -g bin musicout ${PREFIX}/bin/mpeg_musicout
+! 	mkdir -m 0755 -p ${PREFIX}/lib/mpegaudio/tables
+! 	install -c -m 0644 -o bin -g bin tables/* \
+! 		${PREFIX}/lib/mpegaudio/tables/
+! 	
