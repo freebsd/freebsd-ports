@@ -1,4 +1,5 @@
 bin/gaim
+share/gaim/pixmaps/add.xpm
 share/gaim/pixmaps/admin_icon.xpm
 share/gaim/pixmaps/aimicon.xpm
 share/gaim/pixmaps/aimicon2.xpm
@@ -10,6 +11,7 @@ share/gaim/pixmaps/bold.xpm
 share/gaim/pixmaps/buddyadd.xpm
 share/gaim/pixmaps/buddychat.xpm
 share/gaim/pixmaps/buddydel.xpm
+share/gaim/pixmaps/cancel.xpm
 share/gaim/pixmaps/daemon-buddyadd.xpm
 share/gaim/pixmaps/daemon-buddychat.xpm
 share/gaim/pixmaps/daemon-buddydel.xpm
@@ -25,6 +27,7 @@ share/gaim/pixmaps/gaim.xpm
 share/gaim/pixmaps/im.xpm
 share/gaim/pixmaps/info.xpm
 share/gaim/pixmaps/italic.xpm
+share/gaim/pixmaps/join.xpm
 share/gaim/pixmaps/link.xpm
 share/gaim/pixmaps/login_icon.xpm
 share/gaim/pixmaps/logo.xpm
@@ -33,6 +36,7 @@ share/gaim/pixmaps/msg_pending.xpm
 share/gaim/pixmaps/no_icon.xpm
 share/gaim/pixmaps/normal.xpm
 share/gaim/pixmaps/offline.xpm
+share/gaim/pixmaps/ok.xpm
 share/gaim/pixmaps/online.xpm
 share/gaim/pixmaps/palette.xpm
 share/gaim/pixmaps/peng_frown.xpm
@@ -40,6 +44,7 @@ share/gaim/pixmaps/peng_smile.xpm
 share/gaim/pixmaps/peng_wink.xpm
 share/gaim/pixmaps/permadd.xpm
 share/gaim/pixmaps/permdel.xpm
+share/gaim/pixmaps/save.xpm
 share/gaim/pixmaps/signing_on.xpm
 share/gaim/pixmaps/small.xpm
 share/gaim/pixmaps/smile_happy.xpm
@@ -48,6 +53,7 @@ share/gaim/pixmaps/smile_wink.xpm
 share/gaim/pixmaps/speaker.xpm
 share/gaim/pixmaps/strike.xpm
 share/gaim/pixmaps/underline.xpm
+share/gaim/pixmaps/warn.xpm
 share/gaim/pixmaps/wood.xpm
 @dirrm share/gaim/pixmaps
 @dirrm share/gaim
