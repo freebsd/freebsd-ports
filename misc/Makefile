@@ -111,6 +111,7 @@
     SUBDIR += qclock
     SUBDIR += qhacc
     SUBDIR += quotes
+    SUBDIR += quranref
     SUBDIR += rfc
     SUBDIR += rpm
     SUBDIR += rpm2cpio
