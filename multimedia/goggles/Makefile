@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	goggles
-PORTVERSION=	0.7.4.1
-PORTREVISION=	3
+PORTVERSION=	0.7.7
 CATEGORIES=	multimedia
 MASTER_SITES=	http://www.fifthplanet.net/files/
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/.1//}
@@ -33,9 +32,9 @@ pre-everything::
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} == "alpha" && ${OSVERSION} >= 502102
-BROKEN=		"Does not compile on alpha 5.x"
-.endif
+#.if ${ARCH} == "alpha" && ${OSVERSION} >= 502102
+#BROKEN=		"Does not compile on alpha 5.x"
+#.endif
 
 .ifdef(WITH_DVD_DEVICE)
 DEFAULT_DVD_DEVICE=${WITH_DVD_DEVICE}
@@ -47,8 +46,20 @@ DEFAULT_DVD_DEVICE=/dev/acd0
 .endif
 .endif
 
+PLIST_BIN=	\
+		bin/goggles \
+		bin/ogle_gui_goggles
+#
+.ifndef(NOPORTDOCS)
+PLIST_DOCS=	\
+		goggles_manual.pdf
+.endif
+
 post-patch:
-	@${REINPLACE_CMD} -e 's|make|${GMAKE}|g' ${WRKSRC}/gb
+	@${REINPLACE_CMD} -E \
+		-e 's|make|${GMAKE}|g' \
+		-e 's|function print_help|print_help|' \
+		${WRKSRC}/gb
 
 do-configure:
 	@${REINPLACE_CMD} -e 's|%%DVDDEVICE%%|${DEFAULT_DVD_DEVICE}|g' \
@@ -61,9 +72,11 @@ do-build:
 	@cd ${WRKSRC} && ./gb
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/src/ogle_gui_goggles ${PREFIX}/bin
-	${INSTALL_SCRIPT} ${WRKSRC}/scripts/goggles ${PREFIX}/bin
-	${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/desktop/goggles_manual.pdf ${DOCSDIR}
+.ifndef(NOPORTDOCS)
+	@${MKDIR} ${DOCSDIR}
+	@${INSTALL_DATA} ${WRKSRC}/desktop/goggles_manual.pdf ${DOCSDIR}
+.endif
+	@${INSTALL_SCRIPT} ${WRKSRC}/scripts/goggles ${PREFIX}/bin
+	@${INSTALL_PROGRAM} ${WRKSRC}/src/ogle_gui_goggles ${PREFIX}/bin
 
 .include <bsd.port.post.mk>
