@@ -1,14 +1,38 @@
-
-$FreeBSD$
-
---- python/Makefile.in.orig	Mon Apr 15 21:07:35 2002
-+++ python/Makefile.in	Thu Apr 18 14:23:11 2002
-@@ -129,7 +129,7 @@
- 	-I$(top_srcdir)
- 
+--- python/Makefile.in.orig	Fri Jul  2 13:29:57 2004
++++ python/Makefile.in	Fri Jul  2 13:34:44 2004
+@@ -49,9 +49,7 @@
+ am__installdirs = $(DESTDIR)$(pythondir)
+ pythonLTLIBRARIES_INSTALL = $(INSTALL)
+ LTLIBRARIES = $(python_LTLIBRARIES)
+-@WITH_PYTHON_TRUE@am__DEPENDENCIES_1 =  \
+-@WITH_PYTHON_TRUE@	$(top_builddir)/libxslt/libxslt.la \
+-@WITH_PYTHON_TRUE@	$(top_builddir)/libexslt/libexslt.la
++@WITH_PYTHON_TRUE@am__DEPENDENCIES_1 = 
+ @WITH_PYTHON_TRUE@libxsltmod_la_DEPENDENCIES = $(am__DEPENDENCIES_1)
+ am__libxsltmod_la_SOURCES_DIST = libxslt.c types.c libxslt-py.c
+ @WITH_PYTHON_TRUE@am_libxsltmod_la_OBJECTS = libxslt.lo types.lo \
+@@ -237,7 +235,7 @@
+ 	-I$(top_srcdir) \
+ 	-I../libexslt
  
 -DOCS_DIR = $(datadir)/doc/libxslt-python-$(LIBXSLT_VERSION)
-+DOCS_DIR = $(datadir)/doc/libxslt-python
++DOCS_DIR = $(datadir)/doc/py-libxslt
  # libxsltclass.txt is generated
  DOCS = TODO
+ EXTRA_DIST = \
+@@ -250,12 +248,11 @@
+ 	libxslt-python-api.xml	\
+ 	$(DOCS)
  
+-libxsltmod_la_LDFLAGS = -module -avoid-version -L$(top_builddir)/libxslt/.libs \
+-                        -L$(top_builddir)/libexslt/.libs
++libxsltmod_la_LDFLAGS = -module -avoid-version
+ 
+ @WITH_PYTHON_TRUE@mylibs = \
+-@WITH_PYTHON_TRUE@	$(top_builddir)/libxslt/libxslt.la \
+-@WITH_PYTHON_TRUE@	$(top_builddir)/libexslt/libexslt.la
++@WITH_PYTHON_TRUE@	-lxslt \
++@WITH_PYTHON_TRUE@	-lexslt
+ 
+ @WITH_PYTHON_TRUE@python_LTLIBRARIES = libxsltmod.la
+ @WITH_PYTHON_TRUE@libxsltmod_la_SOURCES = libxslt.c types.c libxslt-py.c

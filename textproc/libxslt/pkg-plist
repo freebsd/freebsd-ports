@@ -30,21 +30,9 @@ lib/libexslt.so.8
 lib/libxslt.a
 lib/libxslt.so
 lib/libxslt.so.2
-%%PYTHON:%%lib/%%PYTHON_VERSION%%/site-packages/libxslt.py
-%%PYTHON:%%lib/%%PYTHON_VERSION%%/site-packages/libxslt.pyc
-%%PYTHON:%%lib/%%PYTHON_VERSION%%/site-packages/libxslt.pyo
-%%PYTHON:%%lib/%%PYTHON_VERSION%%/site-packages/libxsltmod.so
 libdata/pkgconfig/libexslt.pc
 libdata/pkgconfig/libxslt.pc
 share/aclocal/libxslt.m4
-%%PYTHON:%%%%DOCSDIR%%-python/TODO
-%%PYTHON:%%%%DOCSDIR%%-python/examples/basic.py
-%%PYTHON:%%%%DOCSDIR%%-python/examples/exslt.py
-%%PYTHON:%%%%DOCSDIR%%-python/examples/extelem.py
-%%PYTHON:%%%%DOCSDIR%%-python/examples/extfunc.py
-%%PYTHON:%%%%DOCSDIR%%-python/examples/pyxsltproc.py
-%%PYTHON:%%%%DOCSDIR%%-python/examples/test.xml
-%%PYTHON:%%%%DOCSDIR%%-python/examples/test.xsl
 %%DOCSDIR%%/html/API.html
 %%DOCSDIR%%/html/APIchunk0.html
 %%DOCSDIR%%/html/APIchunk1.html
@@ -124,8 +112,6 @@ share/aclocal/libxslt.m4
 @dirrm %%DOCSDIR%%/html/tutorial
 @dirrm %%DOCSDIR%%/html/EXSLT
 @dirrm %%DOCSDIR%%/html
-%%PYTHON:%%@dirrm %%DOCSDIR%%-python/examples
-%%PYTHON:%%@dirrm %%DOCSDIR%%-python
 @dirrm %%DOCSDIR%%
 @dirrm include/libxslt
 @dirrm include/libexslt
