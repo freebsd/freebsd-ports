@@ -32,6 +32,36 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="be543d74-539a-11d9-a9e7-0001020eed82">
+    <topic>ecartis -- unauthorised access to admin interface</topic>
+    <affects>
+      <package>
+	<name>ecartis</name>
+	<range><lt>1.0.0.s20031228_2,1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>A Debian security advisory reports:</p>
+	<blockquote cite="http://www.debian.org/security/2004/dsa-572">
+	  <p>A problem has been discovered in ecartis, a mailing-list
+	    manager, which allows an attacker in the same domain as
+	    the list admin to gain administrator privileges and alter
+	    list settings.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CAN-2004-0913</cvename>
+      <url>http://www.debian.org/security/2004/dsa-572</url>
+      <url>http://secunia.com/advisories/12918/</url>
+    </references>
+    <dates>
+      <discovery>2004-10-12</discovery>
+      <entry>2004-12-21</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="85d76f02-5380-11d9-a9e7-0001020eed82">
     <topic>mplayer -- multiple vulnerabilities</topic>
     <affects>
