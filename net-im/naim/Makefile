@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	naim
-PORTVERSION=	0.10.3
+PORTVERSION=	0.11.2
 CATEGORIES=	net
 MASTER_SITES=	http://dev.n.ml.org/ \
 		ftp://ftp.netmug.org/pub/FreeBSD/distfiles/
