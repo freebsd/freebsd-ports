@@ -1,0 +1,16 @@
+mpgtx was designed with the good old Unix philosophy in mind : do few but
+do it well and provide end user an austary yet powerfull command line
+interface.
+
+   - mpgtx can currently split and join MPEG 1 video files and most MPEG
+     audio files.
+   - mpgtx can fetch detailed informations from MPEG 1 and MPEG 2.
+   - mpgtx can demultiplex MPEG 1 and MPEG 2 files (System layer, Program
+     layer and Transport Layer).
+   - mpgtx can add, remove and edit ID3 tags from mp3 files and rename mp3
+     files according to their ID3 tags.
+   - DivX ;) is not yet supported, neither is MPEG 4
+   - splitting and joining of MPEG 2 video files is experimental. (read "will
+     work only in your wildest dreams")
+
+WWW: http://mpgtx.sourceforge.net/

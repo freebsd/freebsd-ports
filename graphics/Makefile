@@ -145,6 +145,7 @@
     SUBDIR += mpeg_play
     SUBDIR += mpeg_stat
     SUBDIR += mpegedit
+    SUBDIR += mpgtx
     SUBDIR += mplex
     SUBDIR += mtv
     SUBDIR += netpbm
