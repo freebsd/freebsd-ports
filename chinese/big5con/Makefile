@@ -13,7 +13,7 @@ MASTER_SITES=	ftp://freebsd.csie.nctu.edu.tw/pub/taiwan/NTU/woju/source/ \
 		ftp://freebsd.csie.nctu.edu.tw/pub/taiwan/NTU/woju/binary/
 DISTFILES=	big5con-0.92e.tgz b5cbin-pa.tgz
 
-MAINTAINER=	woju@freebsd.ee.ntu.edu.tw
+MAINTAINER=	ports@FreeBSD.org
 
 ONLY_FOR_ARCHS=	i386
 

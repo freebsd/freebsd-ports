@@ -12,7 +12,7 @@ MASTER_SITES=	ftp://bel-marduk.unh.edu/xtide/
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} harmonics.txt.gz
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
-MAINTAINER=	patseal@hyperhost.net
+MAINTAINER=	ports@FreeBSD.org
 
 LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png
 

@@ -20,7 +20,7 @@ DISTFILES+=	mhc.tar.gz
 DISTFILES+=	easton.tar.gz strongs.tar.gz torrey.tar.gz
 .endif
 
-MAINTAINER=	patseal@hyperhost.net
+MAINTAINER=	ports@FreeBSD.org
 
 USE_X_PREFIX=	yes
 USE_GNOMENG=	yes

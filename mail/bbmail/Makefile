@@ -10,7 +10,7 @@ PORTVERSION=	0.6.9
 CATEGORIES=	mail
 MASTER_SITES=	http://bbtools.thelinuxcommunity.org/sources/
 
-MAINTAINER=	patseal@hyperhost.net
+MAINTAINER=	ports@FreeBSD.org
 
 USE_X_PREFIX=	yes
 GNU_CONFIGURE=	yes

@@ -10,7 +10,7 @@ PORTVERSION=	0.4.6
 CATEGORIES=	x11-wm
 MASTER_SITES=	http://www2.bc.edu/~kelleyry/toolbox/
 
-MAINTAINER=	patseal@hyperhost.net
+MAINTAINER=	ports@FreeBSD.org
 
 USE_QT_VER=	2
 USE_X_PREFIX=	yes

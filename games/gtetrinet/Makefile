@@ -10,7 +10,7 @@ CATEGORIES=	games gnome
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	gtetrinet
 
-MAINTAINER=	bugg@bugg.strangled.net
+MAINTAINER=	ports@FreeBSD.org
 
 FORBIDDEN=	"Remotely exploitable buffer overflows.  See GTetrinet web site."
 
