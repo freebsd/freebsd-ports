@@ -3,13 +3,15 @@
 # Date created:		23.sept.1994
 # Whom:			adam
 #
-# $Id: Makefile,v 1.15 1997/03/02 14:47:31 asami Exp $
+# $Id: Makefile,v 1.16 1998/08/07 22:56:38 asami Exp $
 #
 
 DISTNAME=	iv-3.1
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	ftp://interviews.stanford.edu/pub/
 DISTFILES=	3.1.tar.Z
+
+BROKEN_ELF=	yes
 
 DIST_SUBDIR=	iv
 WRKSRC=		${WRKDIR}/iv
