@@ -1,0 +1,26 @@
+%%PYTHON_SITELIBDIR%%/gst/__init__.py
+%%PYTHON_SITELIBDIR%%/gst/__init__.pyc
+%%PYTHON_SITELIBDIR%%/gst/__init__.pyo
+%%PYTHON_SITELIBDIR%%/gst/_gst.so
+%%PYTHON_SITELIBDIR%%/gst/interfaces.so
+%%PYTHON_SITELIBDIR%%/gst/play.so
+libdata/pkgconfig/gst-python-0.8.pc
+%%PORTDOCS%%%%DOCSDIR%%/README.html
+%%PORTDOCS%%%%DOCSDIR%%/README.txt
+%%PORTDOCS%%%%DOCSDIR%%/bps.py
+%%PORTDOCS%%%%DOCSDIR%%/cp.py
+%%PORTDOCS%%%%DOCSDIR%%/dvdplay.py
+%%PORTDOCS%%%%DOCSDIR%%/f2f.py
+%%PORTDOCS%%%%DOCSDIR%%/identity.py
+%%PORTDOCS%%%%DOCSDIR%%/ilat.py
+%%PORTDOCS%%%%DOCSDIR%%/lat.py
+%%PORTDOCS%%%%DOCSDIR%%/player.py
+%%PORTDOCS%%%%DOCSDIR%%/rot13.py
+%%PORTDOCS%%%%DOCSDIR%%/vorbisplay.py
+%%PORTDOCS%%%%DOCSDIR%%/wavenc.py
+share/gst-python/2.0/defs/gst-types.defs
+@dirrm share/gst-python/2.0/defs
+@dirrm share/gst-python/2.0
+@dirrm share/gst-python
+@dirrm %%DOCSDIR%%
+@dirrm %%PYTHON_SITELIBDIR%%/gst
