@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	pmake
-PORTVERSION=	2.1.33
+PORTVERSION=	2.1.36
 CATEGORIES=	devel parallel
 MASTER_SITES=	ftp://ftp.icsi.berkeley.edu/pub/ai/stolcke/software/ \
 		${MASTER_SITE_LOCAL}
