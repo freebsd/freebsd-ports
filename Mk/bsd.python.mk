@@ -338,7 +338,7 @@ Python_Post_Include=			bsd.python.mk
 
 # py-distutils support
 .if defined(USE_PYDISTUTILS)
-.if !target(do-configure)
+.if !target(do-configure) && !defined(HAS_CONFIGURE) && !defined(GNU_CONFIGURE)
 do-configure:
 	@(cd ${BUILD_WRKSRC}; ${SETENV} ${MAKE_ENV} ${PYTHON_CMD} ${PYSETUP} config ${PYDISTUTILS_CONFIGUREARGS})
 .endif
