@@ -24,4 +24,8 @@ CONFIGURE_ARGS=	</dev/null
 
 MAN3=		POE::Component::RRDTool.3
 
+post-patch:
+	@${PERL} -pi -e 's/(\(\$$maj, \$$min, \$$sub\))/$$1; $$1/' \
+		${WRKSRC}/Makefile.PL
+
 .include <bsd.port.mk>
