@@ -19,5 +19,6 @@ RUN_DEPENDS=	${PYTHON_SITELIBDIR}/Numeric/Numeric.py:${PORTSDIR}/math/py-numeric
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
+PLIST_SUB=	_PYTHON_VERSION=${_PYTHON_VERSION}
 
 .include <bsd.port.mk>
