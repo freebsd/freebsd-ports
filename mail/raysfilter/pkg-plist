@@ -11,12 +11,12 @@ etc/mail-filter/header-list.conf-dist
 etc/mail-filter/mail-filter.conf-dist
 etc/mail-filter/string-list.conf-dist
 @dirrm etc/mail-filter
-%%PORTDOCS%%share/doc/raysfilter/rays-filter.html
-%%PORTDOCS%%share/doc/raysfilter/install.html
-%%PORTDOCS%%share/doc/raysfilter/configure.html
-%%PORTDOCS%%share/doc/raysfilter/operate.html
-%%PORTDOCS%%share/doc/raysfilter/utilities.html
-%%PORTDOCS%%share/doc/raysfilter/GNU-public-licence.txt
-%%PORTDOCS%%share/doc/raysfilter/copyright.txt
-%%PORTDOCS%%share/doc/raysfilter/README
-%%PORTDOCS%%@dirrm share/doc/raysfilter
+%%PORTDOCS%%%%DOCSDIR%%/rays-filter.html
+%%PORTDOCS%%%%DOCSDIR%%/install.html
+%%PORTDOCS%%%%DOCSDIR%%/configure.html
+%%PORTDOCS%%%%DOCSDIR%%/operate.html
+%%PORTDOCS%%%%DOCSDIR%%/utilities.html
+%%PORTDOCS%%%%DOCSDIR%%/GNU-public-licence.txt
+%%PORTDOCS%%%%DOCSDIR%%/copyright.txt
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
