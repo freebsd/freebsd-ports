@@ -1,0 +1,12 @@
+This code provides a function, `i18n-man', with which you can browse
+UNIX manual pages.  Formatting is done in background so that you
+can continue to use your Emacs while processing is going on.
+The mode also supports hypertext-like following of manual page SEE
+ALSO references, and other features.  See below or do `?' in a
+manual page buffer for details.
+
+For working with Japanese, put your dot.emacs file to 
+
+(load "i18n-man-ja")
+
+Then M-x jman in minibuffer, and specify man page name.
