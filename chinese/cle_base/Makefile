@@ -19,6 +19,8 @@ EXTRACT_ONLY=
 MAINTAINER=		ports@FreeBSD.org
 COMMENT=		The base set of CLE packages needed in Linux mode, support both GB & Big5
 
+BROKEN=			"Install fails when linprocfs is mounted"
+
 RUN_DEPENDS=		rpm:${PORTSDIR}/archivers/rpm
 
 CONFLICTS=		linux_base-*
