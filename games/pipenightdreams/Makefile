@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	pipenightdreams
-PORTVERSION=	0.8.0
+PORTVERSION=	0.9.0
 CATEGORIES=	games
 MASTER_SITES=	http://www.libsdl.org/projects/pipenightdreams/packages/
 
@@ -20,8 +20,12 @@ USE_BZIP2=	yes
 USE_GMAKE=	yes
 CONFIGURE_ENV=	SDL_CONFIG="${SDL_CONFIG}" CPPFLAGS="-I${LOCALBASE}/include"
 
+MAN6=		pipenightdreams.6
+
 pre-patch:
-	@${PERL} -pi -e 's|"SDL/SDL|"SDL|g ; s|<SDL/SDL|<SDL|g; s|SDL_LIBSS|SDL_LIBS|g;' ${WRKSRC}/configure
+	@${PERL} -pi -e 's|"SDL/SDL|"SDL|g ; s|<SDL/SDL|<SDL|g; \
+		s|SDL_LIBSS|SDL_LIBS|g; s|datadir/games|datadir|;' \
+		${WRKSRC}/configure
 	@find ${WRKSRC} -name Makefile.in | \
 		xargs ${PERL} -pi -e 's|/games/|/|g; \
 			s/^pipenightdreams_LDADD.+//g;'
