@@ -1,0 +1,218 @@
+--- src/rules.mak.orig	Sun Mar  7 04:43:25 1999
++++ src/rules.mak	Fri Jun 23 05:46:38 2000
+@@ -50,6 +50,7 @@ main.$O: main.c config.h port.h dstring.
+ 	variable.h tty.h $(BUILDERS)
+ makehelp.$O: makehelp.c config.h port.h $(BUILDERS)
+ malloc.$O: malloc.c config.h port.h signals.h malloc.h $(BUILDERS)
++mccp.$O: mccp.c mccp.h
+ output.$O: output.c config.h port.h dstring.h $(TF_H) util.h tfio.h socket.h \
+ 	output.h macro.h search.h tty.h variable.h expr.h $(BUILDERS)
+ process.$O: process.c config.h port.h dstring.h $(TF_H) util.h tfio.h \
+@@ -59,7 +60,7 @@ signals.$O: signals.c config.h port.h ds
+ 	process.h tty.h output.h signals.h variable.h $(BUILDERS)
+ socket.$O: socket.c config.h port.h dstring.h $(TF_H) util.h tfio.h tfselect.h \
+ 	history.h world.h socket.h output.h process.h macro.h keyboard.h \
+-	commands.h command.h signals.h search.h $(BUILDERS)
++	commands.h command.h signals.h search.h mccp.h $(BUILDERS)
+ tfio.$O: tfio.c config.h port.h dstring.h $(TF_H) util.h tfio.h tfselect.h \
+ 	output.h macro.h history.h search.h signals.h variable.h $(BUILDERS)
+ tty.$O: tty.c config.h port.h $(TF_H) dstring.h util.h tty.h output.h macro.h \
+--- src/socket.c.orig	Sun Mar  7 04:43:25 1999
++++ src/socket.c	Sat Jul  1 06:22:52 2000
+@@ -67,6 +67,10 @@ struct sockaddr_in {
+ #include "search.h"
+ #include "variable.h"	/* set_var_by_*() */
+ 
++#ifdef MUDCOMPRESS
++#  include "mccp.h"
++#endif
++
+ #ifdef _POSIX_VERSION
+ # include <sys/wait.h>
+ #endif
+@@ -206,6 +210,9 @@ typedef struct Sock {		/* an open connec
+     TIME_T time[2];		/* time of last receive/send */
+     char state;			/* state of parser finite state automaton */
+     long pid;			/* pid of name resolution process */
++#ifdef MUDCOMPRESS
++    mc_state *mccp;		/* mud compression struct */
++#endif
+ } Sock;
+ 
+ 
+@@ -806,6 +813,9 @@ int opensock(world, autologin, quietlogi
+         tsock = *(tsock ? &tsock->next : &hsock) = xsock;
+         xsock->activity = 0;
+         Stringinit(xsock->buffer);
++#ifdef MUDCOMPRESS
++	xsock->mccp = mudcompress_new();
++#endif
+         xsock->prompt = NULL;
+         init_queue(xsock->queue = (Queue *)XMALLOC(sizeof(Queue)));
+         xsock->next = NULL;
+@@ -1297,6 +1307,9 @@ static void nukesock(sock)
+ #endif /* NONBLOCKING_GETHOST */
+     }
+     Stringfree(sock->buffer);
++#ifdef MUDCOMPRESS
++    mudcompress_delete(sock->mccp);
++#endif
+     if (sock->prompt) free_aline(sock->prompt);
+     while(sock->queue->head)
+         free_aline((Aline*)unlist(sock->queue->head, sock->queue));
+@@ -1728,8 +1741,25 @@ static int handle_socket_input()
+     }
+ 
+     do {  /* while (n > 0 && !interrupted() && (received += count) < SPAM) */
+-        do count = recv(xsock->fd, buffer, sizeof(buffer), 0);
+-            while (count < 0 && errno == EINTR);
++#ifdef MUDCOMPRESS
++	if (!mudcompress_pending(xsock->mccp))
++	{
++	    do count = recv(xsock->fd, buffer, sizeof(buffer), 0);
++                while (count < 0 && errno == EINTR);
++
++	    if (count > 0) {
++		mudcompress_receive(xsock->mccp, buffer, count);
++		if (mudcompress_error(xsock->mccp)) {
++		    count = -1;
++		    errno = EIO;
++		}
++	    }
++	}
++#else
++	do count = recv(xsock->fd, buffer, sizeof(buffer), 0);
++	    while (count < 0 && errno == EINTR);
++#endif
++
+         if (count <= 0) {
+             int err = errno;
+ #ifdef SUNOS_5_4
+@@ -1761,6 +1791,25 @@ static int handle_socket_input()
+             return received;
+         }
+ 
++	received += count;
++	
++#ifdef MUDCOMPRESS
++	{
++	    const char *resp;
++	    
++	    count = 0;
++	    while (count < sizeof(buffer)
++		   && mudcompress_pending(xsock->mccp)) {
++		count += mudcompress_get(xsock->mccp, buffer + count,
++					 sizeof(buffer) - count);
++	    }
++	    
++	    resp = mudcompress_response(xsock->mccp);
++	    if (resp)
++		transmit(resp,strlen(resp));
++	} 
++#endif
++	
+         for (place = buffer; place - buffer < count; place++) {
+ 
+             /* We always accept 8-bit data, even though RFCs 854 and 1123
+@@ -1958,7 +2007,6 @@ static int handle_socket_input()
+         }
+ 
+         /* See if anything arrived while we were parsing */
+-
+         FD_ZERO(&readfds);
+         FD_SET(xsock->fd, &readfds);
+         tv.tv_sec = tv.tv_usec = 0;
+@@ -1976,7 +2024,13 @@ static int handle_socket_input()
+             if (errno != EINTR) die("handle_socket_input: select", errno);
+         }
+ 
+-    } while (n > 0 && !interrupted() && (received += count) < SPAM);
++#ifdef MUDCOMPRESS
++	if (mudcompress_pending(xsock->mccp)) {
++	    n = 1;
++	}
++#endif
++
++    } while (n > 0 && !interrupted() && received < SPAM);
+ 
+     /* If lpflag is on and we got a partial line from the fg world,
+      * assume the line is a prompt.
+--- src/tf.1.catman.orig	Sun Mar  7 04:43:25 1999
++++ src/tf.1.catman	Sat Jun 24 01:25:46 2000
+@@ -152,6 +152,8 @@ TF(1)                                   
+ 
+        Recall previously received text.
+ 
++       Support for the Mud Client Compression Protocol version 1 and 2.
++
+ 
+ CCOONNFFIIGGUURRAATTIIOONN FFIILLEESS
+        _T_F will attempt to read  two  files  when  starting.   The
+--- src/tf.1.nroffman.orig	Sun Mar  7 04:43:25 1999
++++ src/tf.1.nroffman	Sat Jun 24 01:25:04 2000
+@@ -112,6 +112,8 @@ Separate LP and Diku style prompts from 
+ Page output using a --More-- prompt.
+ .sp
+ Recall previously received text.
++.sp
++Support for Mud Client Compression Protocol versions 1 and 2.
+ 
+ .SH "CONFIGURATION FILES"
+ .PP
+--- src/vars.mak.orig	Sun Mar  7 04:43:25 1999
++++ src/vars.mak	Fri Jun 23 06:07:44 2000
+@@ -15,14 +15,14 @@
+ # Predefined variables:
+ #   O - object file suffix (e.g., "o" or "obj")
+ 
+-TFVER=40s1
++TFVER=40s1-mccp
+ 
+ SOURCE = command.c dstring.c expand.c help.c history.c keyboard.c \
+   macro.c main.c malloc.c output.c process.c search.c signals.c \
+   socket.c tfio.c tty.c util.c variable.c world.c
+ 
+ OBJS = command.$O dstring.$O expand.$O expr.$O help.$O history.$O keyboard.$O \
+-  macro.$O main.$O malloc.$O output.$O process.$O search.$O signals.$O \
++  macro.$O main.$O malloc.$O mccp.$O output.$O process.$O search.$O signals.$O \
+   socket.$O tfio.$O tty.$O util.$O variable.$O world.$O \
+   regexp.$O $(OTHER_OBJS)
+ 
+--- unix/tfconfig.orig	Sun Mar  7 04:43:28 1999
++++ unix/tfconfig	Wed Jul  5 05:56:02 2000
+@@ -482,6 +482,14 @@ else
+     echo "I can't find <pwd.h>.  Filename '~user' expansion won't be supported."
+ fi
+ 
++### Find zlib.h
++if echo '#include <zlib.h>' >test.c; ${CPP} test.c >/dev/null 2>&1; then
++    echo "#define MUDCOMPRESS" >&4
++    echo "Found <zlib.h>."
++else
++    echo "I can't find <zlib.h>.  The Mud Client Compression Protocol will not be supported."
++fi
++
+ ### Figure out how to do varadic args.
+ if [ "$STD_C" = "1" ] || [ "$GNU_C" = "1" ]; then
+     if echo '#include <stdarg.h>' >test.c; ${CPP} test.c >/dev/null 2>&1; then
+@@ -756,6 +764,12 @@ elif eval "${LIBTEST} -lsocket ${LIBS} >
+ else
+     echo "Warning: can't find connect() or a library that might have it."
+     echo "/* warning: tfconfig couldn't find connect() */" >&4
++fi
++
++### Test for zlib for mud compression
++if eval "${LIBTEST} -lz ${LIBS} >/dev/null 2>&1" && test -f ${AOUT}; then
++    echo "Will link with -lz."
++    LIBS="-lz $LIBS"
+ fi
+ 
+ ### Test for SOCKS firewall proxy server.
+--- unixmake.orig	Sun Mar  7 04:43:24 1999
++++ unixmake	Sat Jul  1 06:27:28 2000
+@@ -20,4 +20,4 @@ export PATH
+ 
+ MAKE=${MAKE-make}
+ export MAKE
+-${MAKE} -f unix/Makefile `egrep '^TFVER=' src/vars.mak` MAKE="${MAKE}" $*
++${MAKE} -j 1 -f unix/Makefile `egrep '^TFVER=' src/vars.mak` MAKE="${MAKE}" $*

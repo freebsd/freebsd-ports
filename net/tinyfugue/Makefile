@@ -13,7 +13,7 @@ MASTER_SITES=	ftp://tf.tcp.com/pub/tinyfugue/ \
 		ftp://ftp.ci.uminho.pt/pub/mirrors/tinyfugue/
 DISTNAME=	tf-40s1
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	fjoe@FreeBSD.org
 
 .if defined(PARALLEL_PACKAGE_BUILD)
 BROKEN=		tries to cd to directory that do not exist yet
@@ -26,4 +26,19 @@ MAKE_ENV=	TFVER=${DISTNAME:S/^tf-//}
 
 MAN1=		tf.1
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if defined(WITH_MCCP)
+EXTRA_PATCHES=	${FILESDIR}/mccp-patch
+PKGNAMESUFFIX=	-mccp
+
+post-extract:
+	@${CP} ${FILESDIR}/mccp.[ch] ${WRKSRC}/src
+.else
+pre-extract:
+	@${ECHO_MSG}
+	@${ECHO_MSG} "You can enable MCCP v1/v2 support by defining WITH_MCCP"
+	@${ECHO_MSG}
+.endif
+
+.include <bsd.port.post.mk>
