@@ -1,0 +1,7 @@
+This package contains PostScript and text documentation of the X11 protocol and
+libraries.
+
+WWW: http://www.x.org/
+
+- Eric Anholt
+anholt@FreeBSD.org

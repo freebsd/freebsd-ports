@@ -228,6 +228,7 @@
     SUBDIR += xnodecor
     SUBDIR += xorg
     SUBDIR += xorg-clients
+    SUBDIR += xorg-documents
     SUBDIR += xorg-libraries
     SUBDIR += xorg-manpages
     SUBDIR += xprompt
