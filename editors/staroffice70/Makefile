@@ -7,13 +7,16 @@
 
 PORTNAME=	staroffice
 PORTVERSION=	6.0
+PORTREVISION=	1
 CATEGORIES=	editors linux
 MASTER_SITES=
 DISTNAME=	so-6_0-ga-bin-linux-en.bin
-DISTFILES=      so-6_0-ga-bin-linux-en.bin
+DISTFILES=      so-6_0-ga-bin-linux-en.bin 112887-02.tar.Z
 .if defined(WITH_ADABAS)
 DISTFILES+=     soa-6_0-ga-bin-linux-en.bin
 .endif
+
+EXTRACT_ONLY=	112887-02.tar.Z
 
 MAINTAINER=	mbr@FreeBSD.org
 
@@ -28,6 +31,7 @@ WRKSRC=		${WRKDIR}/${SOVERSION}
 TMPDIR=		${WRKDIR}/tmp
 LD_PATH=	${TMPDIR}:${WRKSRC}:${LINUXBASE}/lib:${LINUXBASE}/usr/lib
 INSTDB.INS=	${PREFIX}/${SOVERSION}/program/instdb.ins
+SUNSOLVE=	${WRKDIR}/112887-02
 ADABAS_DIST=	soa-6_0-ga-bin-linux-en.bin
 
 .include <bsd.port.pre.mk>
@@ -99,7 +103,7 @@ pre-fetch:
 IGNORE="Please manually download ${DISTNAME} from http://www.sun.com/staroffice.  Put ${DISTNAME} into the directory ${DISTDIR} and run make again."
 .endif
 
-do-extract:
+post-extract:
 .if !defined(DISPLAY) || ${DISPLAY} == ""
 	@ ${ECHO}
 	@ ${ECHO} Can\'t open display:
@@ -140,7 +144,9 @@ do-install:
 	@${LN} -fs ${LINUXBASE}/usr/X11R6/lib/libXrender.so.1.0 \
 		${WRKDIR}/tmp/libXrender.so
 .endif
-	@${CAT} ${PKGMESSAGE}
+	@${ECHO} ;
+	@${ECHO_MSG} "===>   STEP 1: Main Setup ${PKGNAME}"
+	@${ECHO} ;
 	@-SAL_IGNOREXERRORS=1 PATH="/bin:${PATH}" LD_LIBRARY_PATH=${LD_PATH} \
 		TEMP=${TMPDIR} ${LINUXBASE}/bin/sh -c '${WRKSRC}/setup /net'
 	@if [ -f ${PREFIX}/${SOVERSION}/program/setup ]; then \
@@ -155,22 +161,35 @@ do-install:
 		${ECHO} ; \
 		${FALSE} ; \
 	fi
+	@${ECHO} ;
+	@${ECHO_MSG} "===>   STEP 2: Choosing now a workstation installation for user root"
+	@${ECHO} ;
+	@${ECHO} This step is needed to be able to install the service pack. ;
+	@${ECHO} ;
+.if !exists(${LINUXBASE}/usr/X11R6/lib/libXrender.so)
+	@${LN} -fs ${LINUXBASE}/usr/X11R6/lib/libXrender.so.1.0 ${PREFIX}/${SOVERSION}/program/libXrender.so
+.endif
+	@${MV} ${INSTDB.INS} ${INSTDB.INS}.orig
+	@${SED} -e 's%DefaultDestPath = "${PREFIX}/staroffice%DefaultDestPath = "staroffice%' \
+	    ${INSTDB.INS}.orig > ${INSTDB.INS}
+	@make install-user
 .endif
 .if defined(WITH_ADABAS)
 	@-SAL_IGNOREXERRORS=1 PATH="/bin:${PATH}" LD_LIBRARY_PATH=${LD_PATH} \
 		TEMP=${TMPDIR} ${LINUXBASE}/bin/sh -c '${WRKSRC}/${ADABAS_DIST}'
 .endif
-
-post-install:
-	@${MV} ${INSTDB.INS} ${INSTDB.INS}.orig
-	@${SED} -e 's%DefaultDestPath = "${PREFIX}/staroffice%DefaultDestPath = "staroffice%' \
-	    ${INSTDB.INS}.orig > ${INSTDB.INS}
-.if !exists(${LINUXBASE}/usr/X11R6/lib/libXrender.so)
-	@${LN} -fs ${LINUXBASE}/usr/X11R6/lib/libXrender.so.1.0 ${PREFIX}/${SOVERSION}/program/libXrender.so
-.endif
+	@${ECHO} ;
+	@${ECHO_MSG} "===>   STEP 3: Applying sunsolve patches for ${PKGNAME}"
+	@${ECHO} ;
+	@make install-patch
+	@${CAT} ${PKGMESSAGE}
 
 install-user:
 	@-SAL_IGNOREXERRORS=1 PATH="/bin:${PATH}" ${LINUXBASE}/bin/sh -c \
 		${PREFIX}/${SOVERSION}/program/setup
+
+install-patch:
+	@-SAL_IGNOREXERRORS=1 PATH="/bin:${PATH}" LD_LIBRARY_PATH=${LD_PATH} \
+		TEMP=${TMPDIR} ${LINUXBASE}/bin/sh -c '${WRKSRC}/../112887-02/so-6_0-pp1-bin-linux.bin'
 
 .include <bsd.port.post.mk>
