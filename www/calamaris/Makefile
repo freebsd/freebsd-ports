@@ -11,7 +11,7 @@ CATEGORIES=	www textproc
 MASTER_SITES=	http://cord.de/tools/squid/calamaris/ \
 		ftp://ftp.gpad.ac.ru/pub/FreeBSD/distfiles/
 
-MAINTAINER=	dima@Chg.RU
+MAINTAINER=	demon@FreeBSD.org
 
 USE_PERL5=	yes
 NO_BUILD=	yes

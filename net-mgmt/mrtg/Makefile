@@ -12,7 +12,7 @@ MASTER_SITES=	http://ee-staff.ethz.ch/~oetiker/webtools/mrtg/pub/ \
 		${MASTER_SITE_RINGSERVER}
 MASTER_SITE_SUBDIR=	net/mrtg
 
-MAINTAINER=	dima@Chg.RU
+MAINTAINER=	demon@FreeBSD.org
 
 LIB_DEPENDS=	gd.1:${PORTSDIR}/graphics/gd
 

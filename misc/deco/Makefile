@@ -12,7 +12,7 @@ MASTER_SITES=		ftp://ftp.cronyx.ru/cronyx/deco/
 DISTNAME=		deco383
 EXTRACT_SUFX=		.tgz
 
-MAINTAINER=		dima@Chg.RU
+MAINTAINER=	demon@FreeBSD.org
 
 WRKSRC=			${WRKDIR}/deco383
 GNU_CONFIGURE=		yes

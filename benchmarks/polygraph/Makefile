@@ -12,7 +12,7 @@ MASTER_SITES=	http://polygraph.ircache.net/sources/tars/ \
 		http://www.chg.ru/~dima/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-src
 
-MAINTAINER=	dima@Chg.RU
+MAINTAINER=	demon@FreeBSD.org
 
 WRKSRC=		${WRKDIR}/polygraph
 

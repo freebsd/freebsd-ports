@@ -12,7 +12,7 @@ MASTER_SITES=	http://ftp.indexdata.dk/pub/yaz/ \
 		${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	jeh
 
-MAINTAINER=	dima@Chg.RU
+MAINTAINER=	demon@FreeBSD.org
 
 GNU_CONFIGURE=	yes
 

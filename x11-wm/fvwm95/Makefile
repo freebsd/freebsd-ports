@@ -12,7 +12,7 @@ MASTER_SITES=	ftp://mitac11.uia.ac.be/pub/fvwm95/
 DISTNAME=	${PKGNAME}-Autoconf
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	dima@Chg.RU
+MAINTAINER=	demon@FreeBSD.org
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/librplay.a:${PORTSDIR}/audio/rplay
 RUN_DEPENDS=	${X11BASE}/icons/chuck.xpm:${PORTSDIR}/x11/fbsd-icons

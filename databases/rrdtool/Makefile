@@ -10,7 +10,7 @@ PORTVERSION=	1.0.28
 CATEGORIES=	net
 MASTER_SITES=	http://ee-staff.ethz.ch/~oetiker/webtools/rrdtool/pub/
 
-MAINTAINER=	dima@Chg.RU
+MAINTAINER=	demon@FreeBSD.org
 
 USE_PERL5=	yes
 MAKE_ENV+=	PERL=${PERL}

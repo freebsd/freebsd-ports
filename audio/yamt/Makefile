@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		ftp://ftp.gpad.ac.ru/pub/FreeBSD/distfiles/
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	dima@Chg.RU
+MAINTAINER=	demon@FreeBSD.org
 
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes

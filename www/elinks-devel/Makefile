@@ -12,7 +12,7 @@ MASTER_SITES=	http://artax.karlin.mff.cuni.cz/~mikulas/vyplody/links/download/ \
 		http://www.add.com.pl/links/download/ \
 		http://ice.dammit.lt/links/download/
 
-MAINTAINER=	dima@Chg.RU
+MAINTAINER=	demon@FreeBSD.org
 
 GNU_CONFIGURE=	yes
 

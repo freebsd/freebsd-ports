@@ -12,7 +12,7 @@ MASTER_SITES=	ftp://ftp.uni-klu.ac.at/pub/projects/evg/	\
 		http://www.chg.ru/~dima/
 DISTNAME=	evg-1.01
 
-MAINTAINER=	dima@Chg.RU
+MAINTAINER=	demon@FreeBSD.org
 
 RUN_DEPENDS=	python1.5:${PORTSDIR}/lang/python15
 RUN_DEPENDS+=	convert:${PORTSDIR}/graphics/ImageMagick

@@ -13,7 +13,7 @@ MASTER_SITES=	http://www.xnc.dubna.su/src/ \
 MASTER_SITE_SUBDIR=	X11/desktop
 DISTFILES=	${DISTNAME}.src.tar.gz
 
-MAINTAINER=	dima@Chg.RU
+MAINTAINER=	demon@FreeBSD.org
 
 # xnc will use the following programs if you have them installed.
 #RUN_DEPENDS=	zip:${PORTSDIR}/archivers/zip		\

@@ -13,7 +13,7 @@ MASTER_SITES=	http://flwm.sourceforge.net/ \
 		ftp://ftp.sai.msu.su/pub/X11/win_man/
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	dima@chg.ru
+MAINTAINER=	demon@FreeBSD.org
 
 LIB_DEPENDS=	fltk.1:${PORTSDIR}/x11-toolkits/fltk
 

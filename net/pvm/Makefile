@@ -13,7 +13,7 @@ MASTER_SITES=	http://www.netlib.org/pvm3/	\
 DISTNAME=	pvm3.4.3
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	dima@Chg.RU
+MAINTAINER=	demon@FreeBSD.org
 
 USE_XLIB=	yes
 

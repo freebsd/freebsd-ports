@@ -12,7 +12,7 @@ MASTER_SITES=	http://www.cineca.it/~nico/binaries/
 DISTNAME=	squidclients-1.6-freebsd.bin
 EXTRACT_SUFX=
 
-MAINTAINER=	dima@chg.ru
+MAINTAINER=	demon@FreeBSD.org
 
 NO_BUILD=	YES
 NO_WRKSUBDIR=	YES
