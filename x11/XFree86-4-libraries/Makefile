@@ -79,12 +79,12 @@ PLIST_SUB+=	AMD64:="@comment "
 post-extract:
 	${GUNZIP_CMD} -c ${DISTDIR}/${DIST_SUBDIR}/Wraphelp2.gz > \
 		${WRKSRC}/lib/Xdmcp/Wraphelp.c
-	@${REINPLACE_CMD} -e 's|%%PTHREAD_CFLAGS%%|${PTHREAD_CFLAGS}|g ; \
-		s|%%PTHREAD_LIBS%%|${PTHREAD_LIBS}|g' \
-		${WRKSRC}/config/cf/FreeBSD.cf
 
 post-patch:
 	${CP} ${MASTERDIR}/files/nls::Compose::microsoft-cp1251 ${WRKSRC}/nls/Compose/microsoft-cp1251
+	@${REINPLACE_CMD} -e 's|%%PTHREAD_CFLAGS%%|${PTHREAD_CFLAGS}|g ; \
+		s|%%PTHREAD_LIBS%%|${PTHREAD_LIBS}|g' \
+		${WRKSRC}/config/cf/FreeBSD.cf
 
 post-install:
 	${INSTALL_DATA} ${WRKSRC}/programs/proxymngr/PM.h \
