@@ -1,0 +1,5 @@
+***************************************************
+lookupd ldap module uses nss_ldap.conf configuration file, as
+it is based on nss_ldap from PADL.com. For information on
+nss_ldap.conf file, see corresponding documentation for nss_ldap.
+***************************************************

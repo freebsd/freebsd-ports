@@ -1,0 +1,11 @@
+***************************************************
+Configuration file for lookupd should be named lookupd.conf
+and must be placed in %%PREFIX%%/etc.
+To make lookupd working, you should plug it into the nsswitch.
+You must tune %%PREFIX%%/etc/nsswitch.conf, by adding lookupd
+keyword to the appropriate lines.
+
+Startup script lookupd.sh was placed in %%PREFIX%%/etc/rc.d.
+
+Examples of both of these files were installed into the examples folder.
+***************************************************

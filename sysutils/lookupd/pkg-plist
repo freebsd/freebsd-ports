@@ -1,0 +1,14 @@
+sbin/lookupd
+etc/rc.d/lookupd.sh
+lib/lkpd_files.so
+lib/lkpd_files.so.1
+lib/lkpd_dns.so
+lib/lkpd_dns.so.1
+include/lookupd/passwd_defs.h
+include/lookupd/group_defs.h
+include/lookupd/host_defs.h
+include/lookupd/lookupd_defs.h
+@dirrm include/lookupd
+%%EXAMPLESDIR%%/nsswitch.conf.sample
+%%EXAMPLESDIR%%/lookupd.conf.sample
+@dirrm %%EXAMPLESDIR%%
