@@ -7,6 +7,7 @@
 
 PORTNAME=	icc
 PORTVERSION=	8.1.026
+PORTREVISION=	1
 CATEGORIES=	lang linux devel
 MASTER_SITES=
 DISTNAME=	l_cc_pc_${PORTVERSION:C/p.+$//}
@@ -169,6 +170,10 @@ post-patch:
 	@${MKDIR} ${WRKSRC}/opt/${COMPILERDIR}/include/machine
 	@${CP} ${FILESDIR}/_types.h ${WRKSRC}/opt/${COMPILERDIR}/include/machine
 .endif
+# Work around a bug in stdbool.h
+	@${SED} -e 's:__STDC_VERSION__ < 199901L.*:__STDC_VERSION__ < 199901L \&\& defined(__GNUC__) \&\& __GNUC__ < 3 \&\& !defined(__INTEL_COMPILER):g' \
+		</usr/include/stdbool.h \
+		>${WRKSRC}/opt/${COMPILERDIR}/include/stdbool.h
 
 .if ( ${OSVERSION} >= 470101 && ${OSVERSION} < 500000 ) || \
 	( ${OSVERSION} >= 500042 )
@@ -224,7 +229,7 @@ post-install:
 	@${ECHO}
 	@${ECHO} "On FreeBSD 5 with __FreeBSD_version >= 502108 icpc is set up to use the GNU libstdc++ from the base as STL by default. Alternatively you can use the \"-cxxlib-icc\" option with icpc to use devel/stlport-icc as STL instead. In order to be able to compile C++ source with icpc on FreeBSD 4 or FreeBSD 5 with __FreeBSD_version < 502108 you have to install devel/stlport-icc. No further options to icpc to use devel/stlport-icc are required there." | fmt
 	@${ECHO}
-	@${ECHO} "If you use icc on a Pentium 4 you may have to use 'options CPU_ENABLE_SSE' (depending on the OS version, if in doubt try if it works) in your kernel config (have a look at http://www.FreeBSD.org/handbook/ if you do not know how to do this), else icc will hang forever." | fmt
+	@${ECHO} "If you use icc on a Pentium 4 you may have to use 'options CPU_ENABLE_SSE' (depending on the OS version, if in doubt try if it works) in your kernel config (have a look at http://www.FreeBSD.org/handbook/ if you do not know how to do this), else icc will hang forever or crashes with an 'Illegal instruction'." | fmt
 	@${ECHO}
 	@${ECHO} "WARNING: If you use icc while having linux_devtools installed, icc will use the wrong includes and therefore will generate bogus (not working) binaries!" | fmt
 	@${ECHO}

@@ -922,6 +922,7 @@
 %%COMPILERDIR%%/include/proto.h
 %%COMPILERDIR%%/include/sse2mmx.h
 %%STDARG_H%%%%COMPILERDIR%%/include/stdarg.h
+%%COMPILERDIR%%/include/stdbool.h
 %%SYS_CDEFS_H%%%%COMPILERDIR%%/include/sys/cdefs.h
 %%SYS_CDEFS_H%%@dirrm %%COMPILERDIR%%/include/sys
 %%COMPILERDIR%%/include/xmm_func.h
