@@ -5,7 +5,7 @@
 -CFLAGS = @CFLAGS@
 -CPPFLAGS = @CPPFLAGS@
 +#CC = @CC@
-+CFLAGS = -I@x_includes@
++CFLAGS = @CFLAGS@ -I@x_includes@
 +#CPPFLAGS = @CPPFLAGS@
  LIBS = @LIBS@
  LDFLAGS = @LDFLAGS@
