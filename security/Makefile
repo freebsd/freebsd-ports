@@ -149,6 +149,7 @@
     SUBDIR += labrea
     SUBDIR += lcrzo
     SUBDIR += lcrzoex
+    SUBDIR += libassuan
     SUBDIR += libbf
     SUBDIR += libecc
     SUBDIR += libfwbuilder
