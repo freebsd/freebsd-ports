@@ -20,9 +20,16 @@ USE_SDL=	yes
 USE_REINPLACE=	yes
 USE_GMAKE=	yes
 USE_LIBTOOL=	yes
+CONFIGURE_ARGS=	--disable-mmx
 MAKE_ARGS=	ACLOCAL="${TRUE}" AUTOCONF="${TRUE}" AUTOMAKE="${TRUE}" \
 		AUTOHEADER="${TRUE}"
 INSTALLS_SHLIB=	yes
+
+.include <bsd.port.pre.mk>
+
+.if defined(WITH_MMX) && (${ARCH} == "i386")
+CFLAGS+=	-DUSE_MMX
+.endif
 
 post-patch:
 	@${REINPLACE_CMD} 's|^libSDL_gfxincludedir.*|&/SDL11|' \
@@ -31,4 +38,4 @@ post-patch:
 	@${REINPLACE_CMD} 's|<SDL/SDL|<SDL|g' ${WRKSRC}/${file}
 .endfor
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
