@@ -33,7 +33,7 @@
 -            /usr/contrib/include \
 -            $prefix/include \
 -            $x_includes"
-+    places="/usr/local/include/tcl8.2"
++    places="/usr/local/include/tcl8.3"
  
      for place in $places ; do
          if test -r $place/tcl.h ; then
@@ -74,11 +74,11 @@
 -                libtcl="-ltcl7.5"
 -            elif test -r $place/libtcl.a ; then
 -                AC_MSG_RESULT($place/libtcl.a)
-+            if test -r $place/libtcl82.a ; then
-+                AC_MSG_RESULT($place/libtcl82.a)
++            if test -r $place/libtcl83.a ; then
++                AC_MSG_RESULT($place/libtcl83.a)
                  LDFLAGS="$LDFLAGS -L$place"
 -                libtcl="-ltcl"
-+                libtcl="-ltcl82"
++                libtcl="-ltcl83"
              fi
          fi
  
@@ -120,7 +120,7 @@
 -        $prefix/lib/tcl7.5 \
 -        $prefix/share/lib/tcl7.5 \
 -        $x_libraries/tcl7.5"
-+places="/usr/local/lib/tcl8.2"
++places="/usr/local/lib/tcl8.3"
  
  for place in $places; do
      if test -r $place/init.tcl ; then
@@ -161,7 +161,7 @@
 -            /usr/contrib/include \
 -            $prefix/include \
 -            $x_includes"
-+    places="/usr/local/include/tk8.2"
++    places="/usr/local/include/tk8.3"
  
      for place in $places; do
          if test -r $place/tk.h ; then
@@ -206,8 +206,8 @@
 -        if test "$libtk" = "no" ; then
 -            if test -r $place/libtk4.2.a ; then
 -                AC_MSG_RESULT($place/libtk4.2.a)
-+            if test -r $place/libtk82.a ; then
-+                AC_MSG_RESULT($place/libtk82.a)
++            if test -r $place/libtk83.a ; then
++                AC_MSG_RESULT($place/libtk83.a)
                  LDFLAGS="$LDFLAGS -L$place"
 -                libtk="-ltk4.2"
 -            elif test -r $place/libtk4.1.a ; then
@@ -218,7 +218,7 @@
 -                AC_MSG_RESULT($place/libtk.a)
 -                LDFLAGS="$LDFLAGS -L$place"
 -                libtk="-ltk"
-+                libtk="-ltk82"
++                libtk="-ltk83"
              fi
 -        fi
  
@@ -262,7 +262,7 @@
 -        $prefix/lib/tk4.1 \
 -        $prefix/share/lib/tk4.1 \
 -        $x_libraries/tk4.1"
-+places="/usr/local/lib/tk8.2"
++places="/usr/local/lib/tk8.3"
  
  for place in $places; do
      if test -r $place/tk.tcl ; then

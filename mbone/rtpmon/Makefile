@@ -8,12 +8,12 @@
 PORTNAME=	rtpmon
 PORTVERSION=	1.0a7
 PORTREVISION=	1
-CATEGORIES=	mbone tk82
+CATEGORIES=	mbone tk83
 MASTER_SITES=	ftp://mm-ftp.cs.berkeley.edu/pub/rtpmon/
 
 MAINTAINER=	fenner@FreeBSD.org
 
-LIB_DEPENDS=	tk82.1:${PORTSDIR}/x11-toolkits/tk82
+LIB_DEPENDS=	tk83.1:${PORTSDIR}/x11-toolkits/tk83
 BUILD_DEPENDS=	autoconf:${PORTSDIR}/devel/autoconf
 
 GNU_CONFIGURE=	yes
