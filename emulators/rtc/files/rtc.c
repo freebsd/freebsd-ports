@@ -33,6 +33,7 @@
 #include <sys/kernel.h>
 #include <sys/malloc.h>
 #include <sys/mbuf.h>
+#include <sys/module.h>
 #include <sys/sockio.h>
 #include <sys/socket.h>
 #include <sys/filio.h>
@@ -67,7 +68,11 @@ enum rtc_log_level {Lenter=0, Lexit=1, Linfo, Lwarning, Lfail};
 #endif /* DEBUG */
 
 struct rtc_softc {
+#if __FreeBSD_version >= 502117
+	struct cdev	*dev; /* Back reference to device */
+#else
 	dev_t		dev; /* Back reference to device */
+#endif
 	struct {
 	 int	freq;
 	 struct {
@@ -138,7 +143,11 @@ DEV_MODULE(rtc, rtc_modeevent, 0);
 /* -=-=-=-=-=-=-=-=-= attach/detach device stuff -=-=-=-=-=-=-=-=-= */
 
 static struct rtc_softc *
+#if __FreeBSD_version >= 502017
+rtc_attach(struct cdev *dev)
+#else
 rtc_attach(dev_t dev)
+#endif
 {
 	struct rtc_softc *sc;
 	int unit;
@@ -174,7 +183,11 @@ rtc_attach(dev_t dev)
 }
 
 static int
+#if __FreeBSD_version >= 502017
+rtc_detach(struct cdev *dev, struct rtc_softc *sc)
+#else
 rtc_detach(dev_t dev, struct rtc_softc *sc) 
+#endif
 {
 	int error=0;
 
@@ -190,8 +203,10 @@ rtc_detach(dev_t dev, struct rtc_softc *sc)
 
 /* -=-=-=-=-=-=-=-=-= character device stuff -=-=-=-=-=-=-=-=-= */
 
-int 
-#if __FreeBSD_version >= 500023
+static int 
+#if __FreeBSD_version >= 502017
+rtc_open(struct cdev *dev, int oflag, int otyp, struct thread *p)
+#elif __FreeBSD_version >= 500023
 rtc_open(dev_t dev, int oflag, int otyp, struct thread *p)
 #else
 rtc_open(dev_t dev, int oflag, int otyp, struct proc *p)
@@ -213,7 +228,9 @@ rtc_open(dev_t dev, int oflag, int otyp, struct proc *p)
 }
 
 int 
-#if __FreeBSD_version >= 500023
+#if __FreeBSD_version >= 502017
+rtc_close(struct cdev *dev, int fflag, int otyp, struct thread *p)
+#elif __FreeBSD_version >= 500023
 rtc_close(dev_t dev, int fflag, int otyp, struct thread *p)
 #else
 rtc_close(dev_t dev, int fflag, int otyp, struct proc *p)
@@ -227,7 +244,9 @@ rtc_close(dev_t dev, int fflag, int otyp, struct proc *p)
 }
 
 int 
-#if __FreeBSD_version >= 500023
+#if __FreeBSD_version >= 502017
+rtc_ioctl(struct cdev *dev, u_long cmd, caddr_t arg, int mode, struct thread *p)
+#elif __FreeBSD_version >= 500023
 rtc_ioctl(dev_t dev, u_long cmd, caddr_t arg, int mode, struct thread *p)
 #else
 rtc_ioctl(dev_t dev, u_long cmd, caddr_t arg, int mode, struct proc *p)
@@ -273,7 +292,9 @@ rtc_ioctl(dev_t dev, u_long cmd, caddr_t arg, int mode, struct proc *p)
 }
 
 int 
-#if __FreeBSD_version >= 500023
+#if __FreeBSD_version >= 502017
+rtc_poll(struct cdev *dev, int events, struct thread *p)
+#elif __FreeBSD_version >= 500023
 rtc_poll(dev_t dev, int events, struct thread *p)
 #else
 rtc_poll(dev_t dev, int events, struct proc *p)
@@ -297,7 +318,11 @@ rtc_poll(dev_t dev, int events, struct proc *p)
 }
 
 int 
+#if __FreeBSD_version >= 502017
+rtc_read(struct cdev *dev, struct uio *uio, int flags __unused)
+#else
 rtc_read(dev_t dev, struct uio *uio, int flags __unused)
+#endif
 {
 	struct rtc_softc *sc = (struct rtc_softc *) dev->si_drv1;
 	int error = 0;
@@ -324,7 +349,11 @@ rtc_read(dev_t dev, struct uio *uio, int flags __unused)
 }
 
 /* -=-=-=-=-=-=-=-=-= module load/unload stuff -=-=-=-=-=-=-=-=-= */
+#if __FreeBSD_version >= 502017
+static struct cdev *rtc_dev = NULL;
+#else
 static dev_t rtc_dev = NULL;
+#endif
 
 static int
 init_module(void)
