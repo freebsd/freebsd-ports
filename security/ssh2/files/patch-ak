@@ -1,0 +1,13 @@
+--- apps/ssh/sshd2_config.orig	Sun Aug 27 02:30:53 2000
++++ apps/ssh/sshd2_config	Sun Aug 27 02:31:08 2000
+@@ -90,8 +90,8 @@
+ 
+ ## SSH1 compatibility
+ 
+-#	Ssh1Compatibility		<set by	configure by default>
+-#	Sshd1Path			<set by	configure by default>
++	Ssh1Compatibility		yes
++	Sshd1Path			/usr/sbin/sshd
+ 
+ 
+ ## Chrooted environment settings
