@@ -12,6 +12,6 @@ CATEGORIES=	print elisp
 MULE=		yes
 
 MASTERDIR=	${.CURDIR}/../yatex
-PLIST=		${.CURDIR}/pkg/PLIST
+COMMENT=	${.CURDIR}/pkg/COMMENT
 
 .include	"${MASTERDIR}/Makefile"
