@@ -1,0 +1,17 @@
+etc/radiusclient/issue
+etc/radiusclient/port-id-map
+etc/radiusclient/radiusclient.conf
+etc/radiusclient/dictionary
+etc/radiusclient/dictionary.ascend
+etc/radiusclient/dictionary.compat
+etc/radiusclient/dictionary.merit
+etc/radiusclient/servers
+include/radiusclient.h
+lib/libradiusclient.la
+lib/libradiusclient.a
+sbin/radlogin
+sbin/radstatus
+sbin/radacct
+sbin/radexample
+sbin/login.radius
+@dirrm etc/radiusclient
