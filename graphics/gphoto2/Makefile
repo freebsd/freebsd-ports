@@ -7,6 +7,7 @@
 
 PORTNAME=	gphoto2
 PORTVERSION=	2.1.0
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		http://www.gphoto.net/dist/
@@ -19,7 +20,7 @@ LIB_DEPENDS=	intl.4:${PORTSDIR}/devel/gettext \
 		usb-0.1.5:${PORTSDIR}/devel/libusb \
 		aa.1:${PORTSDIR}/graphics/aalib \
 		jpeg.9:${PORTSDIR}/graphics/jpeg \
-		exif.5:${PORTSDIR}/graphics/libexif
+		exif.7:${PORTSDIR}/graphics/libexif
 RUN_DEPENDS=	pkg-config:${PORTSDIR}/devel/pkgconfig
 
 USE_BZIP2=	yes
