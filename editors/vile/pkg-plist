@@ -40,6 +40,7 @@ lib/vile/vile-vile-filt
 lib/vile/vile-xres-filt
 lib/vile/vile-xs-filt
 lib/vile/vile-yacc-filt
+@dirrm lib/vile
 share/doc/vile/Vileserv.doc
 share/doc/vile/config.doc
 share/doc/vile/dir.doc
@@ -51,6 +52,7 @@ share/doc/vile/oleauto.doc
 share/doc/vile/perl.doc
 share/doc/vile/visvile.doc
 share/doc/vile/w32modes.doc
+@dirrm share/doc/vile
 share/vile/digraphs.rc
 share/vile/manpage.rc
 share/vile/palettes.rc
@@ -107,3 +109,5 @@ share/vile/macros/vileinit.rc
 share/vile/macros/vilemenu.rc
 share/vile/macros/vileperl.rc
 share/vile/macros/vile-pager
+@dirrm share/vile/macros
+@dirrm share/vile
