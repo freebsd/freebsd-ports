@@ -16,6 +16,7 @@ COMMENT=	This is a plugin that adds K-Joefol-Skinsupport to xmms
 
 BUILD_DEPENDS=	xmms-config:${PORTSDIR}/multimedia/xmms
 RUN_DEPENDS=	xmms:${PORTSDIR}/multimedia/xmms
+LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
