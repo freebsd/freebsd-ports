@@ -13,8 +13,6 @@ MASTER_SITES=	http://perso.wanadoo.fr/christophe.cressend/tarballs/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A snake-like game written for Gnome desktop
 
-BROKEN=		Does not configure
-
 BUILD_DEPENDS=	xbmtopbm:${PORTSDIR}/graphics/netpbm
 
 WRKSRC=		${WRKDIR}/${PORTNAME}

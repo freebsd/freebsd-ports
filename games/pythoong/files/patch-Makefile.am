@@ -1,0 +1,17 @@
+--- Makefile.am.orig	Fri Aug  8 05:22:01 2003
++++ Makefile.am	Fri Aug  8 05:22:45 2003
+@@ -22,10 +22,10 @@
+ 
+ install-data-local:
+ 	-$(mkinstalldirs) $(DESTDIR)$(scoredir)
+-	touch $(DESTDIR)$(scoredir)/pythoong.scores
+-	-chown games.games $(DESTDIR)$(scoredir)/pythoong.scores
+-	-chmod 664 $(DESTDIR)$(scoredir)/pythoong.scores
+-	-chgrp games $(DESTDIR)$(bindir)/pythoong && chmod 2111 $(DESTDIR)$(bindir)/pythoong
++	touch $(DESTDIR)$(scoredir)/Pythoong.scores
++	-chown games:games $(DESTDIR)$(scoredir)/Pythoong.scores
++	-chmod 664 $(DESTDIR)$(scoredir)/Pythoong.scores
++	-chgrp games $(DESTDIR)$(bindir)/Pythoong
+ 
+ ## to automatically rebuild aclocal.m4 if any of the macros in
+ ## `macros/' change

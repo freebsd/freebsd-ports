@@ -1,0 +1,11 @@
+--- configure.orig      Mon Aug 11 15:36:11 2003
++++ configure   Mon Aug 11 15:36:19 2003
+@@ -2248,7 +2248,7 @@
+ LN_S="$LN_S" NM="$NM" RANLIB="$RANLIB" \
+ DLLTOOL="$DLLTOOL" AS="$AS" OBJDUMP="$OBJDUMP" \
+ ${CONFIG_SHELL-/bin/sh} $ac_aux_dir/ltconfig --no-reexec \
+-$libtool_flags --no-verify $ac_aux_dir/ltmain.sh $host \
++$libtool_flags --no-verify $host \
+ || { echo "configure: error: libtool configure failed" 1>&2; exit 1; }
+  
+ # Reload cache, that may have been modified by ltconfig
