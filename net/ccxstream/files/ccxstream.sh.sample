@@ -1,0 +1,53 @@
+#!/bin/sh
+#
+# $FreeBSD$
+#
+
+# PROVIDE: ccxstream
+# REQUIRE: DAEMON
+# KEYWORD: FreeBSD
+
+# Define these ccxstream_* variables in one of these files:
+#       /etc/rc.conf
+#       /etc/rc.conf.local
+#       /etc/rc.conf.d/ccxstream
+#
+# DO NOT CHANGE THESE DEFAULT VALUES HERE!
+# 
+# The port will refuse to start unless ccxstream_flags is initalized,
+# in addition to ccxstream_enable. For information on the arguments
+# to ccxstream, look at %%PREFIX%%/share/doc/ccxstream/README (if you
+# installed the port documentation by not specifying NOPORTDOCS) or the
+# output of "ccxstream -h". At bare minimum, you'll want to add the
+# "-u <user>" argument to specify the userid the server will run under
+# (unless you WANT to run this code as root), and the "-r <directory>"
+# argument to configure the directory root that the server will share
+# from.
+# 
+# Don't worry about the "-f" (background) and "-F <pidfile>" arguments;
+# this script takes care of them for you.
+
+. %%RC_SUBR%%
+
+name="ccxstream"
+rcvar=`set_rcvar`
+
+command="%%PREFIX%%/bin/ccxstream"
+
+load_rc_config "$name"
+: ${ccxstream_enable="NO"}
+: ${ccxstream_flags="DEFAULT"}
+
+pidfile=${ccxstream_pidfile="/var/run/${name}.pid"}
+
+command_args="-f -F ${pidfile}"
+
+ccxstream_precmd () {
+	if [ x"${ccxstream_flags}" = xDEFAULT ]; then
+		warn must set ccxstream_flags first, no acceptable defaults
+		return 1
+	fi
+	return 0
+}
+
+run_rc_command "$1"
