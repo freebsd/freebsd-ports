@@ -1,0 +1,19 @@
+*** murgil/getrname.c.orig	Wed May  6 18:43:56 1998
+--- murgil/getrname.c	Wed May  6 18:45:17 1998
+***************
+*** 14,20 ****
+  {
+  	static char rname[24];
+  	struct hostent *host;
+! #if defined(linux)
+  #define PEER_CAST (struct sockaddr *)
+  #define HOST_CAST (char *)
+  #else
+--- 14,20 ----
+  {
+  	static char rname[24];
+  	struct hostent *host;
+! #if defined(linux) || defined(__OpenBSD__)
+  #define PEER_CAST (struct sockaddr *)
+  #define HOST_CAST (char *)
+  #else

@@ -1,0 +1,36 @@
+*** tcl/tclCmdAH.c.orig	Sat Feb 25 03:19:53 1995
+--- tcl/tclCmdAH.c	Wed May  6 18:54:07 1998
+***************
+*** 38,45 ****
+--- 38,51 ----
+  #include <sys/wait.h>
+  #include "tclInt.h"
+  
++ #if (defined(__unix__) || defined(unix)) && !defined(USG)
++ #include <sys/param.h>
++ #endif
++ 
+  extern int errno;
++ #if !(defined(BSD) && BSD >= 199306)
+  extern long lseek();
++ #endif
+  extern char *mktemp();
+  
+  /*
+***************
+*** 627,633 ****
+  	while (1) {
+  	    int child;
+  
+! 	    child = wait(&status);
+  	    if (child == -1) {
+  		sprintf(interp->result,
+  			"child process disappeared mysteriously");
+--- 633,639 ----
+  	while (1) {
+  	    int child;
+  
+! 	    child = wait((int *)&status);
+  	    if (child == -1) {
+  		sprintf(interp->result,
+  			"child process disappeared mysteriously");

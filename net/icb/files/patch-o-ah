@@ -1,0 +1,31 @@
+*** icb/c_shell.c.orig	Wed May  6 18:54:38 1998
+--- icb/c_shell.c	Wed May  6 18:55:02 1998
+***************
+*** 60,72 ****
+  	signal(SIGQUIT, SIG_IGN);
+  
+  	/* wait for the child(ren) to die */
+! 	while ((w = wait(&status)) != pid && w != -1);
+  
+  	/* restore the terminal */
+  	icbterm();
+  
+  	/* restore signal processing */
+! 	signal(SIGINT, askquit);
+  	signal(SIGQUIT, SIG_DFL);
+  
+  	/* clean up a little */
+--- 60,72 ----
+  	signal(SIGQUIT, SIG_IGN);
+  
+  	/* wait for the child(ren) to die */
+! 	while ((w = wait((int *)&status)) != pid && w != -1);
+  
+  	/* restore the terminal */
+  	icbterm();
+  
+  	/* restore signal processing */
+! 	signal(SIGINT, (void *)askquit);
+  	signal(SIGQUIT, SIG_DFL);
+  
+  	/* clean up a little */

@@ -1,0 +1,30 @@
+--- tcl/Make.orig	Fri Feb 24 13:19:48 1995
++++ tcl/Make	Mon May 25 14:58:35 1998
+@@ -11,13 +11,6 @@
+ 
+ SRC = \
+ 	panic.c \
+-	strchr.c \
+-	strerror.c \
+-	strpbrk.c \
+-	strspn.c \
+-	strstr.c \
+-	strtol.c \
+-	strtoul.c \
+ 	tclAssem.c \
+ 	tclBasic.c \
+ 	tclCmdAH.c \
+@@ -30,13 +23,6 @@
+ 
+ OBJ = \
+ 	panic.o \
+-	strchr.o \
+-	strerror.o \
+-	strpbrk.o \
+-	strspn.o \
+-	strstr.o \
+-	strtol.o \
+-	strtoul.o \
+ 	tclAssem.o \
+ 	tclBasic.o \
+ 	tclCmdAH.o \

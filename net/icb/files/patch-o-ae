@@ -1,0 +1,104 @@
+*** readline/readline.c.orig	Wed May  6 18:49:08 1998
+--- readline/readline.c	Wed May  6 18:51:35 1998
+***************
+*** 610,631 ****
+  
+  rl_set_signals ()
+  {
+!   old_int = (SigHandler *)signal (SIGINT, rl_signal_handler);
+    if (old_int == (SigHandler *)SIG_IGN)
+      signal (SIGINT, SIG_IGN);
+  
+!   old_alrm = (SigHandler *)signal (SIGALRM, rl_signal_handler);
+    if (old_alrm == (SigHandler *)SIG_IGN)
+      signal (SIGALRM, SIG_IGN);
+  
+  #if defined (SIGTSTP)
+!   old_tstp = (SigHandler *)signal (SIGTSTP, rl_signal_handler);
+    if (old_tstp == (SigHandler *)SIG_IGN)
+      signal (SIGTSTP, SIG_IGN);
+  #endif
+  #if defined (SIGTTOU)
+!   old_ttou = (SigHandler *)signal (SIGTTOU, rl_signal_handler);
+!   old_ttin = (SigHandler *)signal (SIGTTIN, rl_signal_handler);
+  
+    if (old_tstp == (SigHandler *)SIG_IGN)
+      {
+--- 610,631 ----
+  
+  rl_set_signals ()
+  {
+!   old_int = (SigHandler *)signal (SIGINT, (void *)rl_signal_handler);
+    if (old_int == (SigHandler *)SIG_IGN)
+      signal (SIGINT, SIG_IGN);
+  
+!   old_alrm = (SigHandler *)signal (SIGALRM, (void *)rl_signal_handler);
+    if (old_alrm == (SigHandler *)SIG_IGN)
+      signal (SIGALRM, SIG_IGN);
+  
+  #if defined (SIGTSTP)
+!   old_tstp = (SigHandler *)signal (SIGTSTP, (void *)rl_signal_handler);
+    if (old_tstp == (SigHandler *)SIG_IGN)
+      signal (SIGTSTP, SIG_IGN);
+  #endif
+  #if defined (SIGTTOU)
+!   old_ttou = (SigHandler *)signal (SIGTTOU, (void *)rl_signal_handler);
+!   old_ttin = (SigHandler *)signal (SIGTTIN, (void *)rl_signal_handler);
+  
+    if (old_tstp == (SigHandler *)SIG_IGN)
+      {
+***************
+*** 635,660 ****
+  #endif
+  
+  #if defined (SIGWINCH)
+!   old_sigwinch = (SigHandler *)signal (SIGWINCH, rl_handle_sigwinch);
+  #endif
+  }
+  
+  rl_clear_signals ()
+  {
+!   signal (SIGINT, old_int);
+!   signal (SIGALRM, old_alrm);
+  
+  #if defined (SIGTSTP)
+!   signal (SIGTSTP, old_tstp);
+  #endif
+  
+  #if defined (SIGTTOU)
+!   signal (SIGTTOU, old_ttou);
+!   signal (SIGTTIN, old_ttin);
+  #endif
+  
+  #if defined (SIGWINCH)
+!       signal (SIGWINCH, old_sigwinch);
+  #endif
+  }
+  #endif  /* HANDLE_SIGNALS */
+--- 635,660 ----
+  #endif
+  
+  #if defined (SIGWINCH)
+!   old_sigwinch = (SigHandler *)signal (SIGWINCH, (void *)rl_handle_sigwinch);
+  #endif
+  }
+  
+  rl_clear_signals ()
+  {
+!   signal (SIGINT, (void *)old_int);
+!   signal (SIGALRM, (void *)old_alrm);
+  
+  #if defined (SIGTSTP)
+!   signal (SIGTSTP, (void *)old_tstp);
+  #endif
+  
+  #if defined (SIGTTOU)
+!   signal (SIGTTOU, (void *)old_ttou);
+!   signal (SIGTTIN, (void *)old_ttin);
+  #endif
+  
+  #if defined (SIGWINCH)
+!       signal (SIGWINCH, (void *)old_sigwinch);
+  #endif
+  }
+  #endif  /* HANDLE_SIGNALS */

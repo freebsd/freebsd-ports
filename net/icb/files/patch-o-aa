@@ -1,0 +1,19 @@
+*** murgil/clientserve.c.orig	Wed May  6 18:40:46 1998
+--- murgil/clientserve.c	Wed May  6 18:43:34 1998
+***************
+*** 41,47 ****
+  	/* look at tty fd */
+  	FD_SET(0,&fdset); /**/
+  
+! 	signal(SIGALRM, gotalarm);
+  	timeisup = 0;
+  
+  	for (;;) {
+--- 41,47 ----
+  	/* look at tty fd */
+  	FD_SET(0,&fdset); /**/
+  
+! 	signal(SIGALRM, (void *)gotalarm);
+  	timeisup = 0;
+  
+  	for (;;) {
