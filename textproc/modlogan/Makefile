@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	modlogan
-PORTVERSION=	0.7.18
+PORTVERSION=	0.8.1
 CATEGORIES=	textproc www
 MASTER_SITES=	http://jan.kneschke.de/projects/modlogan/download/ \
 		${MASTER_SITE_SOURCEFORGE}
@@ -17,8 +17,7 @@ LIB_DEPENDS=	adns.1:${PORTSDIR}/net/adns \
 		gd.2:${PORTSDIR}/graphics/gd \
 		intl.4:${PORTSDIR}/devel/gettext \
 		pcre.0:${PORTSDIR}/devel/pcre \
-		xml2.5:${PORTSDIR}/textproc/libxml2 \
-		ltdl.1:${PORTSDIR}/devel/libtool
+		expat.4:${PORTSDIR}/textproc/expat2
 
 .if defined(WITH_MYSQL)
 # To quote the author:
@@ -31,7 +30,7 @@ LIB_DEPENDS+=	mysqlclient.10:${PORTSDIR}/databases/mysql323-client
 # Please don't remove the comments, as soon as autoconf/libtool get's
 # updated in the ports collection the comments may be removed.
 # They serve as a reminder.
-#USE_LIBTOOL=	yes
+USE_LIBTOOL=	yes
 INSTALLS_SHLIB=	yes
 #LIBTOOLFLAGS=	--disable-ltlibs --release-suffix
 USE_REINPLACE=	yes
@@ -40,17 +39,17 @@ CONFIGURE_ARGS+=--enable-ltdl-install=no --with-gd=${LOCALBASE}/include
 .if defined(WITH_MYSQL)
 CONFIGURE_ARGS+=--with-mysql
 .endif
-CONFIGURE_ENV+=	LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib" CFLAGS="${CFLAGS}" CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include -I${LOCALBASE}/include/libxml2/libxml"
+CONFIGURE_ENV+=	LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib" CFLAGS="${CFLAGS}" CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include"
 
 MAN1=		modlogan.1
 DOC1=		faq.txt glosar manual.txt translations.txt \
-		using-plugins.txt writing-plugins.txt
+		using-plugins.txt writing-plugins.txt Changes-0.8.0.txt
 
 post-patch:
 	@${REINPLACE_CMD} -e 's:\@config_path\@:${PREFIX}/etc/modlogan:g' ${WRKSRC}/doc/modlogan.conf-dist.in
 
-post-configure:
-	${TOUCH} ${WRKSRC}/libltdl/config.status
+#post-configure:
+#	${TOUCH} ${WRKSRC}/libltdl/config.status
 
 post-install:
 .if !defined(NOPORTDOCS)
@@ -63,9 +62,8 @@ post-install:
 .for i in footer.ihtml header.ihtml output.tmpl convert_history_to_07x.pl convert_to_055.pl convert_to_060.pl
 	@${INSTALL_DATA} ${WRKSRC}/doc/${i} ${PREFIX}/share/examples/modlogan/${i}
 .endfor
-	@# remove .la (can't use USE_LIBTOOL)
-	@# don't do that yet, it breaks modlogan since 0.7.16
-	-#${RM} ${PREFIX}/lib/libmla_*.la
+	@# remove .la
+	-${RM} ${PREFIX}/lib/libmla_*.la
 	${MV} ${PREFIX}/bin/${CONFIGURE_TARGET}-modlogan ${PREFIX}/bin/modlogan
 	${MV} ${PREFIX}/man/man1/${CONFIGURE_TARGET}-modlogan.1 ${PREFIX}/man/man1/modlogan.1
 .for i in css conf def.conf
