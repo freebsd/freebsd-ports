@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	root-doc
-PORTVERSION=	4.00
+PORTVERSION=	4.02
 CATEGORIES=	devel science math
 MASTER_SITES=	ftp://root.cern.ch/root/
 DISTNAME=	html${PORTVERSION:S/.//}
