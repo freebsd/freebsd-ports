@@ -8,7 +8,7 @@
 PORTNAME=	pimp3
 PORTVERSION=	0.5.7
 CATEGORIES=	audio
-MASTER_SITES=	http://pimp3.sourceforge.net/files/
+MASTER_SITES=	ftp://pimp3.sourceforge.net/pub/pimp3/
 
 MAINTAINER=	rbt@zort.on.ca
 
