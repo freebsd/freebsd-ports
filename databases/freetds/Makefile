@@ -6,7 +6,7 @@
 
 PORTNAME=	freetds
 PORTVERSION=	0.51
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	databases
 MASTER_SITES=	${MASTER_SITE_SUNSITE}
 MASTER_SITE_SUBDIR=	ALPHA/freetds
@@ -16,7 +16,7 @@ MAINTAINER=	ports@FreeBSD.org
 
 USE_GMAKE=	yes
 USE_LIBTOOL=	yes
-CONFIGURE_ARGS=	--with-tdsver=7.0 \
+CONFIGURE_ARGS=	--with-tdsver=4.2 \
 		--enable-dbmfix
 INSTALLS_SHLIB=	yes
 
