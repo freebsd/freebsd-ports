@@ -43,9 +43,9 @@ Index: m3/m3core/src/runtime/FreeBSD2/m3makefile
  %% s_source (RTStackASM)
  
 Index: m3/m3core/src/runtime/FreeBSD2/malloc.c
---- malloc.c.orig	Fri Jul  4 08:51:34 1997
-+++ malloc.c	Fri Jul  4 08:53:21 1997
-@@ -0,0 +1,1142 @@
+--- malloc.c.orig	Fri Jul 11 07:48:55 1997
++++ malloc.c	Fri Jul 25 18:03:33 1997
+@@ -0,0 +1,1139 @@
 +/*
 + * ----------------------------------------------------------------------------
 + * "THE BEER-WARE LICENSE" (Revision 42):
@@ -54,7 +54,7 @@ Index: m3/m3core/src/runtime/FreeBSD2/malloc.c
 + * this stuff is worth it, you can buy me a beer in return.   Poul-Henning Kamp
 + * ----------------------------------------------------------------------------
 + *
-+ * From FreeBSD: malloc.c,v 1.26 1997/06/22 17:54:27 phk Exp
++ * From FreeBSD: malloc.c,v 1.28 1997/07/02 19:33:23 phk Exp
 + * Modified for Modula-3 thread safety by jdp@polstra.com (John Polstra).
 + *
 + */
@@ -93,19 +93,14 @@ Index: m3/m3core/src/runtime/FreeBSD2/malloc.c
 + *
 + */
 +
-+#if defined(__FreeBSD__)
++#if defined(__FreeBSD__) || defined(__linux__)
 +#   if defined(__i386__)
 +#       define malloc_pageshift		12U
 +#       define malloc_minsize		16U
 +#   endif
-+#   if defined(_THREAD_SAFE)
-+	extern int RT0u__inCritical;  /* Flag set when in a critical region */
-+#       define THREAD_LOCK()		(++RT0u__inCritical)
-+#       define THREAD_UNLOCK()		(--RT0u__inCritical)
-+#   endif
-+#endif /* __FreeBSD__ */
++#endif /* __FreeBSD__ || __linux__ */
 +
-+#if defined(__sparc__) || defined(sun)
++#if defined(__sparc__) && defined(sun)
 +#   define malloc_pageshirt		12U
 +#   define malloc_minsize		16U
 +#   define MAP_ANON			(0)
@@ -121,7 +116,7 @@ Index: m3/m3core/src/runtime/FreeBSD2/malloc.c
 +#if defined(__FOOCPU__) && defined(__BAROS__)
 +#   define malloc_pageshift		12U
 +#   define malloc_minsize		16U
-+#endif /* __FOORCPU__ && __BAROS__ */
++#endif /* __FOOCPU__ && __BAROS__ */
 +
 +
 +/*
@@ -203,6 +198,12 @@ Index: m3/m3core/src/runtime/FreeBSD2/malloc.c
 +#define pageround(foo) (((foo) + (malloc_pagemask))&(~(malloc_pagemask)))
 +#define ptr2index(foo) (((u_long)(foo) >> malloc_pageshift)-malloc_origo)
 +
++#ifdef _THREAD_SAFE
++extern int RT0u__inCritical;  /* Flag set when in a critical region */
++#define THREAD_LOCK()		(++RT0u__inCritical)
++#define THREAD_UNLOCK()		(--RT0u__inCritical)
++#endif
++
 +#ifndef THREAD_LOCK
 +#define THREAD_LOCK()
 +#endif
@@ -267,10 +268,11 @@ Index: m3/m3core/src/runtime/FreeBSD2/malloc.c
 +/* junk fill ?  */
 +static int malloc_junk;
 +
++#ifdef HAS_UTRACE
++
 +/* utrace ?  */
 +static int malloc_utrace;
 +
-+#ifdef HAS_UTRACE
 +struct ut { void *p; size_t s; void *r; };
 +
 +void utrace __P((struct ut *, int));
@@ -280,7 +282,7 @@ Index: m3/m3core/src/runtime/FreeBSD2/malloc.c
 +		{struct ut u; u.p=a; u.s = b; u.r=c; utrace(&u, sizeof u);}
 +#else /* !HAS_UTRACE */
 +#define UTRACE(a,b,c)
-+#endif
++#endif /* HAS_UTRACE */
 +
 +/* my last break. */
 +static void *malloc_brk;
@@ -453,8 +455,10 @@ Index: m3/m3core/src/runtime/FreeBSD2/malloc.c
 +		case 'R': malloc_realloc = 1; break;
 +		case 'j': malloc_junk    = 0; break;
 +		case 'J': malloc_junk    = 1; break;
++#ifdef HAS_UTRACE
 +		case 'u': malloc_utrace  = 0; break;
 +		case 'U': malloc_utrace  = 1; break;
++#endif
 +		case 'v': malloc_sysv    = 0; break;
 +		case 'V': malloc_sysv    = 1; break;
 +		case 'x': malloc_xmalloc = 0; break;
@@ -480,6 +484,13 @@ Index: m3/m3core/src/runtime/FreeBSD2/malloc.c
 +    if (malloc_zero)
 +	malloc_junk=1;
 +
++    /*
++     * If we run with junk (or implicitly from above: zero), we want to
++     * force realloc() to get new storage, so we can DTRT with it.
++     */
++    if (malloc_junk)
++	malloc_realloc=1;
++
 +    /* Allocate one page for the page directory */
 +    page_dir = (struct pginfo **) MMAP(malloc_pagesize);
 +
@@ -495,9 +506,6 @@ Index: m3/m3core/src/runtime/FreeBSD2/malloc.c
 +
 +    malloc_ninfo = malloc_pagesize / sizeof *page_dir;
 +
-+    /* Been here, done that */
-+    malloc_started++;
-+
 +    /* Recalculate the cache size in bytes, and make sure it's nonzero */
 +
 +    if (!malloc_cache)
@@ -511,6 +519,8 @@ Index: m3/m3core/src/runtime/FreeBSD2/malloc.c
 +     */
 +    px = (struct pgfree *) imalloc (sizeof *px);
 +
++    /* Been here, done that */
++    malloc_started++;
 +}
 +
 +/*
@@ -733,9 +743,6 @@ Index: m3/m3core/src/runtime/FreeBSD2/malloc.c
 +{
 +    void *result;
 +
-+    if (!malloc_started)
-+	malloc_init();
-+
 +    if (suicide)
 +	abort();
 +
@@ -768,11 +775,6 @@ Index: m3/m3core/src/runtime/FreeBSD2/malloc.c
 +
 +    if (suicide)
 +	abort();
-+
-+    if (!malloc_started) {
-+	wrtwarning("malloc() has never been called.\n");
-+	return 0;
-+    }
 +
 +    index = ptr2index(ptr);
 +
@@ -1100,8 +1102,6 @@ Index: m3/m3core/src/runtime/FreeBSD2/malloc.c
 +{
 +    register void *r;
 +
-+    if (malloc_sysv && !size)
-+	return (0);
 +    malloc_func = " in malloc():";
 +    THREAD_LOCK();
 +    if (malloc_active++) {
@@ -1109,7 +1109,12 @@ Index: m3/m3core/src/runtime/FreeBSD2/malloc.c
 +        malloc_active--;
 +	return (0);
 +    }
-+    r = imalloc(size);
++    if (!malloc_started)
++	malloc_init();
++    if (malloc_sysv && !size)
++	r = 0;
++    else
++	r = imalloc(size);
 +    UTRACE(0, size, r);
 +    malloc_active--;
 +    THREAD_UNLOCK();
@@ -1147,6 +1152,12 @@ Index: m3/m3core/src/runtime/FreeBSD2/malloc.c
 +        malloc_active--;
 +	return (0);
 +    }
++    if (ptr && !malloc_started) {
++	wrtwarning("malloc() has never been called.\n");
++	ptr = 0;
++    }		
++    if (!malloc_started)
++	malloc_init();
 +    if (malloc_sysv && !size) {
 +	ifree(ptr);
 +	r = 0;
@@ -1169,21 +1180,7 @@ Index: m3/m3core/src/runtime/FreeBSD2/malloc.c
 +    register void *r;
 +
 +    size *= num;
-+    if (malloc_sysv && !size)
-+	return (0);
-+    malloc_func = " in calloc():";
-+    THREAD_LOCK();
-+    if (malloc_active++) {
-+	wrtwarning("recursive call.\n");
-+        malloc_active--;
-+	return (0);
-+    }
-+    r = imalloc(size);
-+    UTRACE(0, size, r);
-+    malloc_active--;
-+    THREAD_UNLOCK();
-+    if (malloc_xmalloc && !r)
-+	wrterror("out of memory.\n");
++    r = malloc(size);
 +    if (r)
 +	memset(r, 0, size);
 +    return (r);
