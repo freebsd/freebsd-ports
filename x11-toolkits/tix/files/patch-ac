@@ -1,5 +1,5 @@
 --- Makefile.in.orig	Tue Sep 23 16:57:18 1997
-+++ Makefile.in	Wed Apr  7 03:04:59 1999
++++ Makefile.in	Wed Apr  7 03:20:49 1999
 @@ -29,7 +29,7 @@
  # Directory in which to install the library of Tix scripts and demos
  # (note: you can set the TIX_LIBRARY environment variable at run-time to
@@ -32,16 +32,6 @@
  
  
  #----------------------------------------------------------------
-@@ -117,6 +117,9 @@
- TK_SAMEXE_FILE	 = @TK_SAMEXE_FILE@
- TIX_SAMEXE_FILE	 = @TIX_SAMEXE_FILE@
- 
-+FBSD_TIX_LIB_PREFIX!= echo $(TIX_LIB_FILE) | sed -e 's/\.//g' -e 's/[so]*[0-9]*$$//'
-+FBSD_TIX_SAM_PREFIX!= echo $(TIX_SAM_FILE) | sed -e 's/\.//g' -e 's/[so]*[0-9]*$$//'
-+
- INST_EXE         = $(TIX_EXE_FILE)$(TIX_VERSION).8.0$(ITCL_EXT)
- INST_TIX_SAMEXE  = $(TIX_SAMEXE_FILE)$(TIX_VERSION).8.0$(ITCL_EXT)
- INST_TK_SAMEXE   = $(TK_SAMEXE_FILE)8.0
 @@ -210,29 +213,29 @@
  # scripts of TK must be included in the fixed order.
  #----------------------------------------------------------------------
@@ -93,43 +83,3 @@
      $(SRC_DIR)/generic/tk8.0/console.tcl
  
  TIX_SCRIPTS = \
-@@ -246,6 +249,9 @@
- 	rm -f $(TIX_LIB_FILE)
- 	@TIX_MAKE_LIB@
- 	$(RANLIB) $(TIX_LIB_FILE)
-+	ln -fs $(TIX_LIB_FILE) `echo $(TIX_LIB_FILE) | sed -e 's/[\.0-9]*$$//'`
-+	ln $(TIX_LIB_FILE) $(FBSD_TIX_LIB_PREFIX)$(SHLIB_SUFFIX).1
-+	ln `echo $(TIX_LIB_FILE) | sed -e 's/[\.0-9]*$$//'` $(FBSD_TIX_LIB_PREFIX)$(SHLIB_SUFFIX)
- 
- $(TCL_SAM_FILE): $(TCL_SAM_OBJS)
- 	rm -f $(TCL_SAM_FILE)
-@@ -261,6 +267,7 @@
- 	rm -f $(TIX_SAM_FILE)
- 	@TIX_MAKE_SAM@
- 	$(RANLIB) $(TIX_SAM_FILE)
-+	ln $(TIX_SAM_FILE) $(FBSD_TIX_SAM_PREFIX)$(SHLIB_SUFFIX).1
- 
- $(TIX_EXE_FILE): tixAppInit.o $(TIX_LIB_FILE)
- 	$(CC) @LD_FLAGS@ tixAppInit.o @TIX_BUILD_LIB_SPEC@ $(LIBS) \
-@@ -471,8 +478,8 @@
- 		else true; \
- 		fi; \
- 	    done;
--	@echo "Installing $(TIX_LIB_FILE) as $(LIB_DIR)/$(TIX_LIB_FILE)"
--	@$(INSTALL_PROGRAM) $(TIX_LIB_FILE) $(LIB_DIR)/$(TIX_LIB_FILE)
-+	@echo "Installing $(TIX_LIB_FILE) as $(LIB_DIR)/$(FBSD_TIX_LIB_PREFIX)$(SHLIB_SUFFIX).1"
-+	@$(INSTALL_PROGRAM) $(TIX_LIB_FILE) $(LIB_DIR)/$(FBSD_TIX_LIB_PREFIX)$(SHLIB_SUFFIX).1
- 	@echo "Installing $(TIX_EXE_FILE) as $(BIN_DIR)/$(INST_EXE)"
- 	@$(INSTALL_PROGRAM) $(TIX_EXE_FILE) $(BIN_DIR)/$(INST_EXE)
- 
-@@ -508,8 +515,8 @@
- 		else true; \
- 		fi; \
- 	    done;
--	@echo "Installing $(TIX_SAM_FILE) as $(LIB_DIR)/$(TIX_SAM_FILE)"
--	@$(INSTALL_PROGRAM) $(TIX_SAM_FILE) $(LIB_DIR)/$(TIX_SAM_FILE)
-+	@echo "Installing $(TIX_SAM_FILE) as $(LIB_DIR)/$(FBSD_TIX_SAM_PREFIX)$(SHLIB_SUFFIX).1"
-+	@$(INSTALL_PROGRAM) $(TIX_SAM_FILE) $(LIB_DIR)/$(FBSD_TIX_SAM_PREFIX)$(SHLIB_SUFFIX).1
- 
- 
- install: _install_
