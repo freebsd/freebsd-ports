@@ -19,36 +19,25 @@ DISTFILES+=	php_templates-doc-eng-1.1${EXTRACT_SUFX}
 MAINTAINER=	sysadmin@alexdupre.com
 COMMENT=	A template framework for PHP
 
-BUILD_DEPENDS=	phpize:${PORTSDIR}/www/mod_php4
-RUN_DEPENDS=	${LOCALBASE}/sbin/httpd:${PORTSDIR}/www/apache13 \
-		${LOCALBASE}/bin/php:${PORTSDIR}/www/mod_php4
-
-USE_LIBTOOL=	yes
-WANT_AUTOMAKE_VER=	15
-WANT_AUTOCONF_VER=	253
-
 WRKSRC=		${WRKDIR}/templates
 
-CONFIGURE_ARGS=	--enable-templates=shared \
-		--with-php-config=${PREFIX}/bin/php-config
+USE_PHPIZE=	yes
 
-EXT_DIR=	20020429
-PLIST_SUB=	EXT_DIR=${EXT_DIR}
+CONFIGURE_ARGS=	--enable-templates=shared
 
 PKGMESSAGE=	${WRKDIR}/pkg-message
 
-post-extract:
-	@${ECHO_MSG} "===>  PHPizing for ${DISTNAME}"
-	@cd ${WRKSRC} && ${LOCALBASE}/bin/phpize
+.include <bsd.port.pre.mk>
+.include "${.CURDIR}/../../lang/php4/bsd.php.mk"
 
 post-build:
-	@${SED} "s|%%LOCALBASE%%|${LOCALBASE}|g;s|%%PREFIX%%|${PREFIX}|g;s|%%EXT_DIR%%|${EXT_DIR}|g" \
+	@${SED} "s|%%LOCALBASE%%|${LOCALBASE}|g;s|%%PREFIX%%|${PREFIX}|g;s|%%PHP_EXT_DIR%%|${PHP_EXT_DIR}|g" \
 		${.CURDIR}/pkg-message > ${PKGMESSAGE}
 
 do-install:
-	@${MKDIR} ${PREFIX}/lib/php/${EXT_DIR}
+	@${MKDIR} ${PREFIX}/lib/php/${PHP_EXT_DIR}
 	@${INSTALL_DATA} ${WRKSRC}/modules/templates.so \
-		${PREFIX}/lib/php/${EXT_DIR}
+		${PREFIX}/lib/php/${PHP_EXT_DIR}
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 	@${INSTALL_DATA} ${WRKSRC}-doc/* ${DOCSDIR}
@@ -57,4 +46,4 @@ do-install:
 post-install:
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
