@@ -1,5 +1,5 @@
---- include/config.h.old	Sun Jun  7 07:08:17 1998
-+++ include/config.h	Sun Jun  7 07:12:38 1998
+--- include/config.h.orig	Tue Jul  7 17:40:42 1998
++++ include/config.h	Sat Jul 11 23:52:40 1998
 @@ -27,8 +27,8 @@
  /***************** MAKE SURE THIS IS CORRECT!!!!!!!!! **************/
  /* ONLY EDIT "HARD_FDLIMIT_" and "INIT_MAXCLIENTS" */
@@ -28,8 +28,8 @@
   */
 -#define FNAME_USERLOG "/usr/local/ircd/users" /* */
 -#define FNAME_OPERLOG "/usr/local/ircd/opers" /* */
-+#define FNAME_USERLOG "/usr/local/etc/ircd/users" /* */
-+#define FNAME_OPERLOG "/usr/local/etc/ircd/opers" /* */
++#define FNAME_USERLOG "/var/log/ircd.users" /* */
++#define FNAME_OPERLOG "/var/log/ircd.opers" /* */
  
  /* FOLLOW_IDENT_RFC
   * 
