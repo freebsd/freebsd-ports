@@ -27,13 +27,7 @@ MANN=		midiconf.n midievnt.n midifree.n midiget.n midigrep.n \
 		midiwrit.n midivers.n midimove.n midicopy.n mididel.n \
 		miditrck.n mididev.n miditime.n midifeat.n
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 500035
-BROKEN=		"Does not compile on 5.0"
-.endif
-
 post-install:
 	@${CAT} ${PKGMESSAGE} | ${SED} s#/usr/local#${PREFIX}#g
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

@@ -1,0 +1,12 @@
+--- smf/SMFTrack.cxx.orig	Wed Dec 11 04:11:04 2002
++++ smf/SMFTrack.cxx	Wed Dec 11 04:11:22 2002
+@@ -355,7 +355,8 @@
+ ostream &
+ operator<<(ostream &os, const SMFTrack &t)
+ {
+-	long i, prev_flags;
++  std::_Ios_Fmtflags prev_flags;
++	long i;
+ 	int prev_width;
+ 	unsigned char *ptr;
+ 
