@@ -1,0 +1,5 @@
+The dwarfdump tool prints the various elements of DWARF debugging
+information found in ELF object files.
+
+WWW:		http://reality.sgi.com/davea/
+Author:		David Anderson of SGI

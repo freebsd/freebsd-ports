@@ -210,6 +210,7 @@
     SUBDIR += doxygen
     SUBDIR += dparser
     SUBDIR += dprog
+    SUBDIR += dwarfdump
     SUBDIR += e4graph
     SUBDIR += ebnf2yacc
     SUBDIR += eboxy
