@@ -1,0 +1,11 @@
+--- tools/Makefile.in.orig	Tue Mar  2 16:00:14 1999
++++ tools/Makefile.in	Tue Mar  2 16:01:04 1999
+@@ -22,7 +22,7 @@
+ 	$(CC) -o chkconf $(chkconf_OBJECTS) ${IRCDLIBS}
+ 
+ mkpasswd: $(mkpasswd_OBJECTS)
+-	$(CC) -o mkpasswd $(mkpasswd_OBJECTS) $(IRCDLIBS)
++	$(CC) -o ircd-mkpasswd $(mkpasswd_OBJECTS) $(IRCDLIBS)
+ 
+ viconf: viconf.o
+ 	$(CC) -o viconf viconf.o ${IRCDLIBS}
