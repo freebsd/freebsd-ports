@@ -30,7 +30,7 @@ LIB_DEPENDS=	freetype.9:${PORTSDIR}/print/freetype2 \
 
 CONFLICTS=	libICE-* libSM-* libX11-* libXau-* libXcursor-* libXdmcp-* \
 		libXext-* libXfont-* libXi-* libXpm-* libXrandr-* \
-		libXrender-* libXres-* libXv-* randrext-* renderext-* \
+		libXrender-* libXres-* libXt-* libXv-* randrext-* renderext-* \
 		resourceext-* xextensions-* xproto-*
 
 USE_X_PREFIX=		no
