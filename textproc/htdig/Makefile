@@ -19,7 +19,7 @@ COMMENT=	A www indexing and searching system
 
 RUN_DEPENDS=	${LOCALBASE}/sbin/httpd:${PORTSDIR}/${APACHE_PORT}
 
-USE_LIBTOOL=	yes
+USE_LIBTOOL_VER=13
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-config-dir=${PREFIX}/etc/htdig \

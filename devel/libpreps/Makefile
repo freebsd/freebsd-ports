@@ -21,7 +21,7 @@ CONFLICTS=	libpreps-devel-1.9.*
 USE_GMAKE=	yes
 USE_REINPLACE=	yes
 USE_GNOME=	glib12
-USE_LIBTOOL=	yes
+USE_LIBTOOL_VER=13
 
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
