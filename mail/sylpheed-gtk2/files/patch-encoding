@@ -1,0 +1,22 @@
+--- src/procmime.c.orig	Thu Oct 21 17:25:19 2004
++++ src/procmime.c	Thu Oct 21 18:12:24 2004
+@@ -694,7 +694,7 @@
+ 	if (mimeinfo->mime_type == MIME_TEXT) {
+ 		while (fgets(buf, sizeof(buf), tmpfp) != NULL) {
+ #warning FIXME_GTK2
+-			str = conv_codeset_strdup(buf, src_codeset, NULL);
++			str = conv_codeset_strdup(buf, src_codeset, CS_UTF_8);
+ 			if (str) {
+ 				fputs(str, outfp);
+ 				g_free(str);
+--- src/unmime.c.orig	Thu Oct 21 17:25:20 2004
++++ src/unmime.c	Thu Oct 21 17:37:45 2004
+@@ -113,7 +113,7 @@
+ 		}
+ 
+ 		/* convert to locale encoding */
+-		conv_str = conv_codeset_strdup(decoded_text, charset, NULL);
++		conv_str = conv_codeset_strdup(decoded_text, charset, CS_UTF_8);
+ 		if (conv_str) {
+ 			len = strlen(conv_str);
+ 			memcpy(outp, conv_str, len);
