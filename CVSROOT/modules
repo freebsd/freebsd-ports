@@ -7426,6 +7426,7 @@ ytree		ports/misc/ytree
 yudit		ports/editors/yudit
 yuzu		ports/mail/yuzu
 zangband	ports/games/zangband
+zclock		ports/x11/zclock
 zebedee		ports/security/zebedee
 zebra		ports/net/zebra
 zebra-server	ports/net/zebra-server
