@@ -1,0 +1,13 @@
+bin/xcalendar
+lib/X11/app-defaults/XCalendar
+lib/X11/ja_JP.EUC/app-defaults/XCalendar
+lib/X11/ja_JP.EUC/xcalendar/xcalendar.hol
+lib/X11/ja_JP.EUC/xcalendar/xcalendar.hlp
+lib/X11/xcalendar/larrow.xbm
+lib/X11/xcalendar/qmark.xbm
+lib/X11/xcalendar/quit.xbm
+lib/X11/xcalendar/rarrow.xbm
+lib/X11/xcalendar/xcalendar.hlp
+@dirrm lib/X11/xcalendar
+@dirrm lib/X11/ja_JP.EUC/xcalendar
+@unexec rmdir %D/lib/X11/ja_JP.EUC/app-defaults 2>/dev/null || true
