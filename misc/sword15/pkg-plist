@@ -188,5 +188,4 @@ share/sword/locales.d/uk_UA-koi8-u.conf
 @dirrm share/sword/mods.d
 @dirrm share/sword
 @dirrm lib/sword
-@dirrm libdata/pkgconfig
 @dirrm include/sword

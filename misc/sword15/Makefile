@@ -19,6 +19,7 @@ DISTFILES=	${DISTNAME}a${EXTRACT_SUFX}
 MAINTAINER=	wvengen@stack.nl
 COMMENT=	A project framework for manipulating Bible texts
 
+USE_GNOME=	pkgconfig
 USE_GMAKE=	yes
 USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
