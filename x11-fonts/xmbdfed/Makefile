@@ -6,20 +6,21 @@
 #
 
 PORTNAME=	xmbdfed
-PORTVERSION=	4.5.1
+PORTVERSION=	4.7.1
 CATEGORIES=	x11-fonts
-MASTER_SITES=	http://crl.nmsu.edu/~mleisher/ \
-		ftp://crl.nmsu.edu/CLR/multiling/General/
+MASTER_SITES=	http://crl.nmsu.edu/~mleisher/
 DISTNAME=	${PORTNAME}-${PORTVERSION:R}
 
 PATCH_SITES=	${MASTER_SITES}
-PATCHFILES=	${PORTNAME}-${PORTVERSION:R}-patch1
+PATCHFILES=	${DISTNAME}-patch1
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A Motif tool for editing X11 bitmap fonts
 
+LIB_DEPENDS=	freetype.9:${PORTSDIR}/print/freetype2
+
+USE_BZIP2=	yes
 USE_X_PREFIX=	yes
-USE_FREETYPE=	yes
 USE_MOTIF=	yes
 
 MAN1=		xmbdfed.1
