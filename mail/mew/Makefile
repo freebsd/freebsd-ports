@@ -3,7 +3,7 @@
 # Date created:		30 December 1996
 # Whom:			Kiriyama Kazuhiko <kiri@kiri.toba-cmt.ac.jp>
 #
-# $Id: Makefile,v 1.1.1.1 1996/12/18 05:09:26 asami Exp $
+# $Id: Makefile,v 1.2 1997/01/03 16:48:34 max Exp $
 #
 
 DISTNAME=	mew-1.54
@@ -16,7 +16,7 @@ BUILD_DEPENDS=	emacs:${PORTSDIR}/editors/emacs
 RUN_DEPENDS=	emacs:${PORTSDIR}/editors/emacs \
 		mhmail:${PORTSDIR}/mail/mh
 
-RESTRICTED=	"Includes non destrubuted encrypted codes(PGP)."
+RESTRICTED=	"USA ITAR export restrictions (has PGP hooks)"
 
 DOCDIR=		${PREFIX}/share/doc/mew
 SAMPLEDIR=	${PREFIX}/share/examples/mew
