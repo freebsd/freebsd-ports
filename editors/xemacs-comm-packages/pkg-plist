@@ -299,6 +299,7 @@ lib/xemacs/xemacs-packages/info/bbdb.info-1
 lib/xemacs/xemacs-packages/info/bbdb.info-2
 lib/xemacs/xemacs-packages/info/bbdb.info-3
 lib/xemacs/xemacs-packages/info/eicq.info
+lib/xemacs/xemacs-packages/info/emacs-mime.info
 lib/xemacs/xemacs-packages/info/eudc.info
 lib/xemacs/xemacs-packages/info/gnats.info
 lib/xemacs/xemacs-packages/info/gnats.info-1
@@ -481,7 +482,6 @@ lib/xemacs/xemacs-packages/lisp/gnats/send-pr.el
 lib/xemacs/xemacs-packages/lisp/gnats/send-pr.elc
 lib/xemacs/xemacs-packages/lisp/gnus/ChangeLog
 lib/xemacs/xemacs-packages/lisp/gnus/_pkg.el
-lib/xemacs/xemacs-packages/lisp/gnus/_pkg.elc
 lib/xemacs/xemacs-packages/lisp/gnus/auto-autoloads.el
 lib/xemacs/xemacs-packages/lisp/gnus/auto-autoloads.elc
 lib/xemacs/xemacs-packages/lisp/gnus/binhex.el
@@ -1115,8 +1115,10 @@ lib/xemacs/xemacs-packages/man/gnats/s-usage.texi
 lib/xemacs/xemacs-packages/man/gnats/send-pr.texi
 lib/xemacs/xemacs-packages/man/gnats/states.texi
 lib/xemacs/xemacs-packages/man/gnats/version.texi
+lib/xemacs/xemacs-packages/man/gnus/emacs-mime.texi
 lib/xemacs/xemacs-packages/man/gnus/gnus-faq.texi
 lib/xemacs/xemacs-packages/man/gnus/gnus.texi
+lib/xemacs/xemacs-packages/man/gnus/gnusmail.texi
 lib/xemacs/xemacs-packages/man/gnus/message.texi
 lib/xemacs/xemacs-packages/man/mew/00readme
 lib/xemacs/xemacs-packages/man/mew/hack-mew-jis.texi.el
