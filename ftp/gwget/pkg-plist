@@ -13,6 +13,7 @@ libdata/bonobo/servers/GNOME_Gwget.server
 %%EPIPHANY:%%lib/epiphany-%%VERSION%%/extensions/libgwgetextension.so
 %%EPIPHANY:%%lib/epiphany-%%VERSION%%/extensions/libgwgetextension.so.0
 share/gnome/applications/gwget.desktop
+@exec update-desktop-database > /dev/null || /usr/bin/true
 share/gnome/gwget/about.glade
 share/gnome/gwget/gwget-large.png
 share/gnome/gwget/gwget-off.png
@@ -25,6 +26,7 @@ share/gnome/idl/GNOME_Gwget.idl
 share/gnome/pixmaps/gwget.png
 share/locale/bg/LC_MESSAGES/gwget.mo
 share/locale/cs/LC_MESSAGES/gwget.mo
+share/locale/de/LC_MESSAGES/gwget.mo
 share/locale/en_CA/LC_MESSAGES/gwget.mo
 share/locale/es/LC_MESSAGES/gwget.mo
 share/locale/eu/LC_MESSAGES/gwget.mo
@@ -32,6 +34,7 @@ share/locale/fi/LC_MESSAGES/gwget.mo
 share/locale/fr/LC_MESSAGES/gwget.mo
 share/locale/hu/LC_MESSAGES/gwget.mo
 share/locale/ja/LC_MESSAGES/gwget.mo
+share/locale/lt/LC_MESSAGES/gwget.mo
 share/locale/mk/LC_MESSAGES/gwget.mo
 share/locale/nl/LC_MESSAGES/gwget.mo
 share/locale/pa/LC_MESSAGES/gwget.mo
@@ -46,3 +49,4 @@ share/locale/zh_TW/LC_MESSAGES/gwget.mo
 %%EPIPHANY:%%@unexec rmdir %D/lib/epiphany-%%VERSION%%/extensions 2>/dev/null || true
 %%EPIPHANY:%%@unexec rmdir %D/lib/epiphany-%%VERSION%% 2>/dev/null || true
 @dirrm share/gnome/gwget
+@unexec update-desktop-database > /dev/null || /usr/bin/true
