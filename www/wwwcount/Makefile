@@ -7,7 +7,7 @@
 # Date created:         16 May 1996
 # Whom:                 ache
 #
-# $Id: Makefile,v 1.4 1996/04/27 12:51:27 ache Exp $
+# $Id: Makefile,v 1.1.1.1 1996/05/16 20:43:58 ache Exp $
 #
 
 DISTNAME=       wwwcount2.3
@@ -23,9 +23,14 @@ pre-configure:
 	cd ${WRKSRC}; yes "" | PREFIX=${PREFIX} ./Count-config
 
 post-build:
+	cd ${WRKSRC}/utils; ${MAKE}
 	cd ${WRKSRC}; ./Gen-conf
 
 do-install:
 	cd ${WRKSRC}; yes "" | ./Count-install
+	cd ${WRKSRC}/utils; \
+		${INSTALL} -s -c -m ${BINMODE} -o ${BINOWN} -g ${BINGRP} mkstrip ${PREFIX}/bin; \
+		${INSTALL} -c -m ${MANMODE} -o ${MANOWN} -g ${MANGRP} mkstrip.1 ${PREFIX}/man/man1; \
+		${INSTALL} -c -m ${BINMODE} -o ${BINOWN} -g ${BINGRP} mkstrip.sh ${PREFIX}/etc/Counter/digits
 
 .include <bsd.port.mk>
