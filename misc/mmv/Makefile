@@ -4,7 +4,7 @@
 # Whom:			Michael Elbel (me)
 # Responsible:		me@FreeBSD.org
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1995/03/27 20:55:27 jkh Exp $
 #
 
 # MASTER_SITES=	ftp://gatekeeper.dec.com/archive/.b/usenet/comp.sources.unix/volume21/mmv
@@ -20,7 +20,7 @@ MASTER_SITES=ftp://gatekeeper.dec.com/archive/.b/usenet/comp.sources.unix/
 
 DISTFILES= part01.Z part02.Z mmv.pch.Z
 SITE_DISTFILES= volume21/mmv/part01.Z volume21/mmv/part02.Z volume22/mmv.pch.Z
-
+MAINTAINER=	me@FreeBSD.org
 NO_WRKSUBDIR=true
 
 # targets shamelessly hacked from the bsd.ports.mk file
