@@ -3,7 +3,7 @@
 # Date created:		03 May 1997
 # Whom:			Thomas Gellekum <tg@FreeBSD.ORG>
 #
-# $Id: Makefile,v 1.4 1998/11/11 05:37:18 asami Exp $
+# $Id: Makefile,v 1.5 1998/11/20 08:50:51 tg Exp $
 #
 
 DISTNAME=	giflib-3.0
@@ -11,6 +11,8 @@ CATEGORIES=	graphics
 MASTER_SITES=	http://earthspace.net/~esr/giflib/
 
 MAINTAINER=	tg@FreeBSD.ORG
+
+USE_XLIB=	yes
 
 .include <bsd.port.pre.mk>
 
