@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Image
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	shell@shellhung.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Perl module for getting image information
 
 BUILD_DEPENDS=	${SITE_PERL}/IO/String.pm:${PORTSDIR}/devel/p5-IO-String \

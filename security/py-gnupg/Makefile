@@ -14,7 +14,7 @@ MASTER_SITE_SUBDIR=	py-gnupg
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	GnuPGInterface-${PORTVERSION}
 
-MAINTAINER=	shell@shellhung.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Python module for GnuPG interface
 
 USE_PYTHON=	yes

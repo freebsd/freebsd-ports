@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	../by-authors/id/R/RB/RBOW
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	shell@shellhung.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Perl module to calculate dates in the Chinese calendar
 
 BUILD_DEPENDS=	${SITE_PERL}/Test/More.pm:${PORTSDIR}/devel/p5-Test-Simple
