@@ -2782,7 +2782,7 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     <affects>
       <package>
 	<name>linux-gdk-pixbuf</name>
-	<range><ge>0</ge></range>
+	<range><lt>0.22.0.11.3.5</lt></range>
       </package>
       <package>
 	<name>gtk</name>
@@ -2814,7 +2814,7 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     <dates>
       <discovery>2004-09-15</discovery>
       <entry>2004-09-15</entry>
-      <modified>2004-10-12</modified>
+      <modified>2004-11-09</modified>
     </dates>
   </vuln>
 
