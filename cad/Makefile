@@ -36,7 +36,6 @@
     SUBDIR += oregano
     SUBDIR += pcb
     SUBDIR += pdnmesh
-    SUBDIR += pisces
     SUBDIR += qcad
     SUBDIR += qfsm
     SUBDIR += qmls
