@@ -31,14 +31,14 @@ diff -u -r1.1.1.2 -r1.4
 +++ README.FREEBSD	1999/03/07 14:42:06	1.4
 @@ -5,60 +5,49 @@
  	Notes given below related only to FreeBSD. For full description
- of Mars_nwe, please read README file.
+  of Mars_nwe, please read README file.
  
 -	Additional info available at http://www.dixi.ml.org/bp/
 +	Additional info about IPX on FreeBSD available at 
 +http://www.butya.kz/~bp/
  
- 	1. Kernel configuration
- 	
+  	1. Kernel configuration
+  	
  	To enable kernel support for IPX protocol you must include
 - keyword "options  IPX" and rebuild kernel.
 +"options  IPX" keyword and rebuild kernel. If you are running FreeBSD
