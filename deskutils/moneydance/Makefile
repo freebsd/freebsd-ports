@@ -12,7 +12,7 @@ MASTER_SITES=	ftp://ftp.moneydance.net/pub/packages/
 
 MAINTAINER=	sreilly@seanreilly.com
 
-RUN_DEPENDS=	${LOCALBASE}/jdk1.1.8/bin/java:${PORTSDIR}/java/jdk
+RUN_DEPENDS=	${LOCALBASE}/jdk1.1.8/bin/java:${PORTSDIR}/java/jdk11
 
 WRKSRC=		${WRKDIR}/moneydance
 NO_BUILD=	YES
