@@ -13,7 +13,7 @@ MASTER_SITE_SUBDIR=	sntop
 
 MAINTAINER=	matt@gsicomp.on.ca
 
-RUN_DEPENDS=	fping:${PORTSDIR}/net/fping
+RUN_DEPENDS=	${LOCALBASE}/sbin/fping:${PORTSDIR}/net/fping
 
 GNU_CONFIGURE=	yes
 
