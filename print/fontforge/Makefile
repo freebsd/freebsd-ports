@@ -1,6 +1,6 @@
 # New ports collection makefile for:	pfaedit
 # Date created:		25 March 2001
-# Whom:			KANOU Hiroki <kanou@mil.allnet.ne.jp>
+# Whom:			KANOU Hiroki <kanou@khdd.net>
 #
 # $FreeBSD$
 #
@@ -18,7 +18,7 @@ DISTFILES+=	${DOCFILE}
 EXTRACT_ONLY=	${PORTNAME}_full-${DIST_VER}.tgz cidmaps.tgz \
 		libuninameslist_src-${LIBUNINAMESLIST_VER}.tgz
 
-MAINTAINER=	kanou@mil.allnet.ne.jp
+MAINTAINER=	kanou@khdd.net
 COMMENT=	Type 1/TrueType/OpenType/bitmap font editor
 
 LIB_DEPENDS=	tiff.4:${PORTSDIR}/graphics/tiff \
@@ -39,7 +39,7 @@ INSTALLS_SHLIB=	yes
 
 MAN1=		pfaedit.1 sfddiff.1
 
-DIST_VER=	030211
+DIST_VER=	030313
 LIBUNINAMESLIST_VER=	030116
 
 .if !defined(NOPORTDOCS)
