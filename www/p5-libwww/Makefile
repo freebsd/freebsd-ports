@@ -7,6 +7,7 @@
 
 PORTNAME=	p5-libwww
 PORTVERSION=	5.79
+PORTREVISION=	1
 CATEGORIES=	www perl5 devel
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	LWP
@@ -35,7 +36,7 @@ MAN3=	Bundle::LWP.3 File::Listing.3 HTML::Form.3 HTTP::Cookies.3 \
 
 .include <bsd.port.pre.mk>
 
-.if ${PERL_LEVEL} < 500800
+.if ${PERL_LEVEL} < 500804
 BUILD_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/Digest/MD5.pm:${PORTSDIR}/security/p5-Digest-MD5 \
 		${SITE_PERL}/Net/FTP.pm:${PORTSDIR}/net/p5-Net \
 		${SITE_PERL}/${PERL_ARCH}/MIME/Base64.pm:${PORTSDIR}/converters/p5-MIME-Base64
