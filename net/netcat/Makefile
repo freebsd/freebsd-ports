@@ -9,9 +9,9 @@
 PORTNAME=	netcat
 PORTVERSION=	1.10
 CATEGORIES=	net
-MASTER_SITES=	ftp://avian.org/src/hacks/  \
-		http://www.l0pht.com/users/10pht/  \
-		ftp://ftp.rge.com/pub/security/coast/mirrors/avian.org/netcat/
+MASTER_SITES=	ftp://coast.cs.purdue.edu/pub/tools/unix/netutils/netcat/  \
+		ftp://ftp.cuhk.edu.hk/pub/packages/security/purdue/netutils/netcat/  \
+		http://www.planetmirror.com/pub/lprng/TOOLS/
 DISTNAME=	nc110
 EXTRACT_SUFX=	.tgz
 
