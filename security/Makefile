@@ -289,7 +289,6 @@
     SUBDIR += pear-Crypt_CBC
     SUBDIR += pf
     SUBDIR += pgp
-    SUBDIR += pgp5
     SUBDIR += pgp6
     SUBDIR += pgpdump
     SUBDIR += pgpgpg
