@@ -8,9 +8,9 @@
 PORTNAME=	xkoules
 PORTVERSION=	1.4
 CATEGORIES=	games
-MASTER_SITES=	http://www.paru.cas.cz/~hubicka/koules/packages/ \
-		${MASTER_SITE_SUNSITE}
-DISTNAME=	koules${PORTVERSION}
+MASTER_SITES=	${MASTER_SITE_SUNSITE}
+MASTER_SITE_SUBDIR=	games/arcade/koules
+DISTNAME=	${PORTNAME:S/^x//}${PORTVERSION}
 EXTRACT_SUFX=	-src.tar.gz
 
 MAINTAINER=	ports@FreeBSD.org
