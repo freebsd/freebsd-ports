@@ -1,0 +1,11 @@
+--- configure.in	Wed Aug 27 20:54:02 2003
++++ configure.in.new	Sat Feb 21 13:37:18 2004
+@@ -171,7 +171,7 @@
+ 
+ SU_SSL_CFLAGS=""
+ if test "$ssl" = "true"; then
+-  AC_CHECK_LIB(ssl,SSL_library_init,SU_SSL_LIB="-lssl")
++  AC_CHECK_LIB(ssl,SSL_library_init,SU_SSL_LIB="-lssl", ,"-lcrypto")
+   if test ! "$SU_SSL_LIB"; then
+     AC_MSG_WARN("Cannot find libssl... ssl code in skyweb will be disabled")
+   else
