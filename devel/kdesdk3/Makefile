@@ -9,7 +9,7 @@ PORTNAME=	kdesdk
 PORTVERSION=	${KDE_VERSION}
 CATEGORIES=	devel kde
 MASTER_SITES=	${MASTER_SITE_KDE}
-MASTER_SITE_SUBDIR=	stable/${PORTVERSION}/src
+MASTER_SITE_SUBDIR=	stable/${PORTVERSION:S/.0//}/src
 DIST_SUBDIR=	KDE
 
 MAINTAINER=	kde@FreeBSD.org
@@ -31,6 +31,11 @@ GNU_CONFIGURE=	yes
 INSTALLS_SHLIB=	yes
 LDCONFIG_DIRS=	%%PREFIX%%/lib %%PREFIX%%/lib/kde3
 
+CONFIGURE_ARGS+=--with-db-include-dir=/usr/local/include/db4 \
+		--with-db-lib-dir=/usr/local/lib --with-db-name=db4
+
+MAN1=		cervisia.1 cvsversion.1 noncvslist.1 kde-build.1 cvsblame.1 cvscheck.1
+
 .include "${.CURDIR}/../../x11/kde3/Makefile.kde"
 .include <bsd.port.pre.mk>
 
@@ -46,9 +51,5 @@ pre-everything::
 .if defined(WITH_OPTIONAL_DEPENDS) && ${ARCH} == "i386"
 RUN_DEPENDS+=	calltree:${PORTSDIR}/devel/calltree
 .endif
-
-pre-configure:
-	@${REINPLACE_CMD} -e 's|-I$$ac_db_includes|-I${LOCALBASE}/include/db4|g' \
-			-e 's|ac_db_name="db"|ac_db_name="db4"|g' ${WRKSRC}/configure
 
 .include <bsd.port.post.mk>

@@ -8,10 +8,9 @@
 
 PORTNAME=	kdemultimedia
 PORTVERSION=	${KDE_VERSION}
-PORTREVISION=	1
 CATEGORIES=	multimedia kde
 MASTER_SITES=	${MASTER_SITE_KDE}
-MASTER_SITE_SUBDIR=	stable/${PORTVERSION}/src
+MASTER_SITE_SUBDIR=	stable/${PORTVERSION:S/.0//}/src
 DIST_SUBDIR=	KDE
 
 MAINTAINER=	kde@FreeBSD.org
@@ -22,21 +21,23 @@ CONFLICTS=	juk-*
 LIB_DEPENDS+=	audiofile:${PORTSDIR}/audio/libaudiofile \
 		FLAC:${PORTSDIR}/audio/flac \
 		cdda_paranoia:${PORTSDIR}/audio/cdparanoia \
+		mad:${PORTSDIR}/audio/libmad \
 		musicbrainz:${PORTSDIR}/audio/libmusicbrainz \
 		ogg:${PORTSDIR}/audio/libogg \
+		speex:${PORTSDIR}/audio/speex \
 		tag:${PORTSDIR}/audio/taglib \
-		vorbis.3:${PORTSDIR}/audio/libvorbis
-BUILD_DEPENDS+=	trm:${PORTSDIR}/audio/trm
-RUN_DEPENDS+=	trm:${PORTSDIR}/audio/trm
+		tunepimp:${PORTSDIR}/audio/libtunepimp \
+		vorbis:${PORTSDIR}/audio/libvorbis
 
 USE_KDELIBS_VER=3
 PREFIX=		${KDE_PREFIX}
-KDE_BUILD_PLIST=yes
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
+_NO_KDE_FINAL=	yes
+_NO_KDE_CLOSURE=yes
 
 MAKE_ENV=	${CONFIGURE_ENV}
 
@@ -45,19 +46,11 @@ INSTALLS_SHLIB=	yes
 LDCONFIG_DIRS+=	%%PREFIX%%/lib %%PREFIX%%/lib/kde3
 DO_NOT_COMPILE+=mpeglib mpeglib_artsplug xine_artsplugin
 
-OPTIONS=	LAME "Enable support for mp3 encoding using LAME" off \
-		MPEGLIB "Use mpeglib for audio playback" on \
+OPTIONS=	MPEGLIB "Use mpeglib for audio playback" on \
 		XINE "Enable support for video playback using libxine" off
 
 .include "${.CURDIR}/../../x11/kde3/Makefile.kde"
 .include <bsd.port.pre.mk>
-
-.if defined(WITH_LAME)
-PLIST_APPEND+=	plist.lame
-LIB_DEPENDS+=	mp3lame:${PORTSDIR}/audio/lame
-.elseif defined(WITHOUT_LAME)
-CONFIGURE_ARGS+=	--without-lame --disable-lametest
-.endif
 
 .if defined(WITH_XINE)
 RUN_DEPENDS=	${LOCALBASE}/lib/libarts_xine.la:${PORTSDIR}/multimedia/xine_artsplugin

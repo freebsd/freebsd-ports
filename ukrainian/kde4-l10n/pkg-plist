@@ -272,6 +272,7 @@ share/locale/uk/LC_MESSAGES/kdesktop.mo
 share/locale/uk/LC_MESSAGES/kdessh.mo
 share/locale/uk/LC_MESSAGES/kdesu.mo
 share/locale/uk/LC_MESSAGES/kdesud.mo
+share/locale/uk/LC_MESSAGES/kdevelop.mo
 share/locale/uk/LC_MESSAGES/kdevtipofday.mo
 share/locale/uk/LC_MESSAGES/kdf.mo
 share/locale/uk/LC_MESSAGES/kdialog.mo
@@ -416,6 +417,8 @@ share/locale/uk/LC_MESSAGES/kpat.mo
 share/locale/uk/LC_MESSAGES/kpdf.mo
 share/locale/uk/LC_MESSAGES/kpersonalizer.mo
 share/locale/uk/LC_MESSAGES/kpf.mo
+share/locale/uk/LC_MESSAGES/kpilot.mo
+share/locale/uk/LC_MESSAGES/kpovmodeler.mo
 share/locale/uk/LC_MESSAGES/kppp.mo
 share/locale/uk/LC_MESSAGES/kppplogview.mo
 share/locale/uk/LC_MESSAGES/kprinter.mo
@@ -499,6 +502,7 @@ share/locale/uk/LC_MESSAGES/kworldclock.mo
 share/locale/uk/LC_MESSAGES/kwriteconfig.mo
 share/locale/uk/LC_MESSAGES/kxkb.mo
 share/locale/uk/LC_MESSAGES/kxmlrpcd.mo
+share/locale/uk/LC_MESSAGES/kxsconfig.mo
 share/locale/uk/LC_MESSAGES/libcalendarresources.mo
 share/locale/uk/LC_MESSAGES/libkaddrbk_geo_xxport.mo
 share/locale/uk/LC_MESSAGES/libkcal.mo

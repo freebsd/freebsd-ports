@@ -39,11 +39,11 @@ MASTER_SITE_KDE_kde=	${kmaster:S@%SUBDIR%/@${ksub}/@g}
 # USE_KDEBASE_VER section
 .if defined(USE_KDEBASE_VER)
 .if ${USE_KDEBASE_VER} == CVS
-LIB_DEPENDS+=	konq:${PORTSDIR}/x11/kdebase
+LIB_DEPENDS+=	kfontinst:${PORTSDIR}/x11/kdebase
 USE_KDELIBS_VER=CVS
 .elif ${USE_KDEBASE_VER} == 3
 # kdebase 3.x common stuff
-LIB_DEPENDS+=	konq:${PORTSDIR}/x11/kdebase3
+LIB_DEPENDS+=	kfontinst:${PORTSDIR}/x11/kdebase3
 USE_KDELIBS_VER=3
 .else
 # kdebase 2.x common stuff -- DEFAULT
@@ -66,12 +66,12 @@ CONFIGURE_ARGS+=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 .endif
 
 .if ${USE_KDELIBS_VER} == CVS
-LIB_DEPENDS+=	kwalletbackend:${PORTSDIR}/x11/kdelibs
+LIB_DEPENDS+=	kimproxy:${PORTSDIR}/x11/kdelibs
 USE_QT_VER=		CVS
 PREFIX=			${KDE_CVS_PREFIX}
 .elif ${USE_KDELIBS_VER} == 3
 # kdelibs 3.x common stuff
-LIB_DEPENDS+=	kwalletbackend:${PORTSDIR}/x11/kdelibs3
+LIB_DEPENDS+=	kimproxy:${PORTSDIR}/x11/kdelibs3
 USE_QT_VER=		3
 PREFIX=			${KDE_PREFIX}
 .else
@@ -115,7 +115,7 @@ CONFIGURE_ENV+=	MOC="${MOC}" CPPFLAGS="${CPPFLAGS} ${QTCPPFLAGS}" LIBS="${QTCFGL
 
 # Yeah, it's namespace pollution, but this is really the best place for this
 # stuff. Arts does NOT use it anymore.
-KDE_VERSION=		3.2.3
+KDE_VERSION=		3.3.0
 KDE_ORIGVER=	${KDE_VERSION}
 KDE_PREFIX?=	${LOCALBASE}
 

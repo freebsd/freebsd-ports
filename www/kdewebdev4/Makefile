@@ -5,18 +5,19 @@
 # $FreeBSD$
 #
 
-PORTNAME=	quanta
-PORTVERSION= 	${KDE_VERSION}
+PORTNAME=	kdewebdev
+PORTVERSION=	${KDE_VERSION}
 PORTEPOCH=	2
 CATEGORIES=	www kde
 MASTER_SITES=	${MASTER_SITE_KDE}
-MASTER_SITE_SUBDIR=	stable/${PORTVERSION}/src
+MASTER_SITE_SUBDIR=	stable/${PORTVERSION:S/.0//}/src
 DIST_SUBDIR=	KDE
 
 MAINTAINER=	kde@freebsd.org
 COMMENT=	Comprehensive html/website development environment
 
 BUILD_DEPENDS=	xgettext:${PORTSDIR}/devel/gettext
+RUN_DEPENDS=	tidy:${PORTSDIR}/www/tidy
 
 USE_KDELIBS_VER=3
 PREFIX=		${KDE_PREFIX}
@@ -26,11 +27,10 @@ USE_XPM=	yes
 USE_GMAKE=	yes
 USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
+_NO_KDE_CLOSURE=yes
 
-CONFIGURE_ARGS+= --with-extra-includes=${LOCALBASE}/include \
-		--disable-closure --enable-threads --disable-debug
+pre-configure:
+	@${REINPLACE_CMD} -e 's|grep 3.2|grep 3.3|g' ${WRKSRC}/configure
 
 .include <${.CURDIR}/../../x11/kde3/Makefile.kde>
-.include <bsd.port.pre.mk>
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

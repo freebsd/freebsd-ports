@@ -22,11 +22,11 @@ RUN_DEPENDS=	${ATLANTIKDESIGNER_DEP}:${PORTSDIR}/games/atlantikdesigner \
 		${KICKERAPPLETS_DEP}:${PORTSDIR}/misc/kicker-applets \
 		${KNEWSTICKERAPP_DEP}:${PORTSDIR}/misc/knewsticker-scripts \
 		${KONQPLUGINS_DEP}:${PORTSDIR}/misc/konq-plugins \
-		${KONTACTPLUG_DEP}:${PORTSDIR}/net/kontact-plugins \
 		${KSIG_DEP}:${PORTSDIR}/misc/ksig \
 		${NOATUNPLUG_DEP}:${PORTSDIR}/multimedia/noatun-plugins \
 		${RENAMEDLGPLUG_DEP}:${PORTSDIR}/misc/renamedlgplugins \
 		${VIMPART_DEP}:${PORTSDIR}/editors/vimpart
+#		${KONTACTPLUG_DEP}:${PORTSDIR}/net/kontact-plugins
 
 NO_BUILD=	yes
 USE_KDELIBS_VER=3

@@ -2,7 +2,6 @@ bin/ark
 bin/irkick
 bin/kcalc
 bin/kcharselect
-bin/kdepasswd
 bin/kdessh
 bin/kdf
 bin/kedit
@@ -43,8 +42,6 @@ lib/kde3/kcm_kdf.la
 lib/kde3/kcm_kdf.so
 lib/kde3/kcm_kwallet.la
 lib/kde3/kcm_kwallet.so
-lib/kde3/kcm_userinfo.la
-lib/kde3/kcm_userinfo.so
 lib/kde3/kedit.la
 lib/kde3/kedit.so
 lib/kde3/ksim_cpu.la
@@ -90,7 +87,6 @@ share/applications/kde/irkick.desktop
 share/applications/kde/kcalc.desktop
 share/applications/kde/kcmdf.desktop
 share/applications/kde/kcmlirc.desktop
-share/applications/kde/kdepasswd.desktop
 share/applications/kde/kdf.desktop
 share/applications/kde/kgpg.desktop
 share/applications/kde/khexedit.desktop
@@ -100,7 +96,6 @@ share/applications/kde/ktimer.desktop
 share/applications/kde/kwalletconfig.desktop
 share/applications/kde/kwalletmanager.desktop
 share/applications/kde/kwikdisk.desktop
-share/applications/kde/userinfo.desktop
 share/apps/ark/ark_part.rc
 share/apps/ark/ark_part_readonly.rc
 share/apps/ark/arkui.rc
@@ -114,6 +109,11 @@ share/apps/ark/icons/crystalsvg/22x22/actions/ark_open.png
 share/apps/ark/icons/crystalsvg/22x22/actions/ark_options.png
 share/apps/ark/icons/crystalsvg/22x22/actions/ark_selectall.png
 share/apps/ark/icons/crystalsvg/22x22/actions/ark_view.png
+share/apps/ark/icons/crystalsvg/32x32/actions/ark_adddir.png
+share/apps/ark/icons/crystalsvg/32x32/actions/ark_addfile.png
+share/apps/ark/icons/crystalsvg/32x32/actions/ark_delete.png
+share/apps/ark/icons/crystalsvg/32x32/actions/ark_extract.png
+share/apps/ark/icons/crystalsvg/32x32/actions/ark_view.png
 share/apps/irkick/icons/hicolor/16x16/actions/irkick.png
 share/apps/irkick/icons/hicolor/16x16/actions/irkickflash.png
 share/apps/irkick/icons/hicolor/16x16/actions/irkickoff.png
@@ -135,76 +135,15 @@ share/apps/irkick/icons/hicolor/32x32/actions/ledred.png
 share/apps/irkick/icons/hicolor/32x32/actions/ledyellow.png
 share/apps/kcalc/kcalcui.rc
 share/apps/kconf_update/kcalcrc.upd
+share/apps/kconf_update/kcharselect.upd
 share/apps/kdf/kdfui.rc
 share/apps/kdf/pics/delete.png
 share/apps/kdf/pics/tick.png
-share/apps/kdm/pics/users/Apple.png
-share/apps/kdm/pics/users/Arch.png
-share/apps/kdm/pics/users/Astronaut.png
-share/apps/kdm/pics/users/BeachBall.png
-share/apps/kdm/pics/users/BeachBall2.png
-share/apps/kdm/pics/users/Blowfish.png
-share/apps/kdm/pics/users/BlueMarble1.png
-share/apps/kdm/pics/users/Bug.png
-share/apps/kdm/pics/users/Burger.png
-share/apps/kdm/pics/users/Butterfly.png
-share/apps/kdm/pics/users/Butterfly2.png
-share/apps/kdm/pics/users/Cactus.png
-share/apps/kdm/pics/users/Car.png
-share/apps/kdm/pics/users/Car2.png
-share/apps/kdm/pics/users/Cheese.png
-share/apps/kdm/pics/users/Clock.png
-share/apps/kdm/pics/users/Cow.png
-share/apps/kdm/pics/users/Daemon.png
-share/apps/kdm/pics/users/Dice.png
-share/apps/kdm/pics/users/Dog.png
-share/apps/kdm/pics/users/Dog2.png
-share/apps/kdm/pics/users/Dragon.png
-share/apps/kdm/pics/users/Elephant.png
-share/apps/kdm/pics/users/Fish.png
-share/apps/kdm/pics/users/Flower.png
-share/apps/kdm/pics/users/Flower2.png
-share/apps/kdm/pics/users/Flower3.png
-share/apps/kdm/pics/users/Frog.png
-share/apps/kdm/pics/users/Ghost.png
-share/apps/kdm/pics/users/Guitar.png
-share/apps/kdm/pics/users/Heart.png
-share/apps/kdm/pics/users/Kiwi.png
-share/apps/kdm/pics/users/Konqui.png
-share/apps/kdm/pics/users/Lava.png
-share/apps/kdm/pics/users/Lion.png
-share/apps/kdm/pics/users/Man.png
-share/apps/kdm/pics/users/Monkey.png
-share/apps/kdm/pics/users/Night.png
-share/apps/kdm/pics/users/Pearl.png
-share/apps/kdm/pics/users/Penguin.png
-share/apps/kdm/pics/users/Pig.png
-share/apps/kdm/pics/users/Pineapple.png
-share/apps/kdm/pics/users/Rabbit.png
-share/apps/kdm/pics/users/Ring.png
-share/apps/kdm/pics/users/Scream.png
-share/apps/kdm/pics/users/Shark.png
-share/apps/kdm/pics/users/Skull.png
-share/apps/kdm/pics/users/Smiley.png
-share/apps/kdm/pics/users/Speakers.png
-share/apps/kdm/pics/users/Splash.png
-share/apps/kdm/pics/users/Star.png
-share/apps/kdm/pics/users/Star2.png
-share/apps/kdm/pics/users/Star3.png
-share/apps/kdm/pics/users/Star4.png
-share/apps/kdm/pics/users/Stars.png
-share/apps/kdm/pics/users/Stars2.png
-share/apps/kdm/pics/users/Teddybear.png
-share/apps/kdm/pics/users/Tiger.png
-share/apps/kdm/pics/users/Tukan.png
-share/apps/kdm/pics/users/Turtle.png
-share/apps/kdm/pics/users/UFO.png
-share/apps/kdm/pics/users/Watch.png
-share/apps/kdm/pics/users/Wind.png
 share/apps/kedit/keditui.rc
 share/apps/kgpg/icons/crystalsvg/16x16/actions/kgpg_key1.png
 share/apps/kgpg/icons/crystalsvg/16x16/actions/kgpg_key2.png
 share/apps/kgpg/icons/crystalsvg/16x16/actions/kgpg_key3.png
+share/apps/kgpg/icons/crystalsvg/16x16/actions/kgpg_key4.png
 share/apps/kgpg/icons/crystalsvg/22x22/actions/kgpg_edit.png
 share/apps/kgpg/icons/crystalsvg/22x22/actions/kgpg_export.png
 share/apps/kgpg/icons/crystalsvg/22x22/actions/kgpg_gen.png
@@ -218,21 +157,19 @@ share/apps/kgpg/icons/crystalsvg/22x22/actions/kgpg_term.png
 share/apps/kgpg/kgpg.rc
 share/apps/kgpg/listkeys.rc
 share/apps/kgpg/pics/kgpg_anim.gif
-share/apps/kgpg/pics/kgpg_bad.png
-share/apps/kgpg/pics/kgpg_good.png
-share/apps/kgpg/pics/kgpg_marginal.png
-share/apps/kgpg/pics/kgpg_unknown.png
+share/apps/kgpg/pics/kgpg_blank.png
+share/apps/kgpg/pics/kgpg_docked.gif
+share/apps/kgpg/pics/kgpg_docked.png
+share/apps/kgpg/pics/kgpg_fill.png
 share/apps/kgpg/tips
 share/apps/khexedit/khexeditui.rc
-share/apps/khexedit/toolbar/hexdrag.png
-share/apps/khexedit/toolbar/hexmask.png
-share/apps/khexedit/toolbar/hexwrite.png
+share/apps/khexedit/pics/hexdrag.png
+share/apps/khexedit/pics/hexmask.png
+share/apps/khexedit/pics/hexwrite.png
 share/apps/kicker/applets/kcharselectapplet.desktop
 share/apps/kicker/extensions/ksim.desktop
 share/apps/kjots/kjotsui.rc
 share/apps/kjots/pics/filedel.png
-share/apps/konqueror/servicemenus/ark_directory_service.desktop
-share/apps/konqueror/servicemenus/arkservicemenu.desktop
 share/apps/konqueror/servicemenus/encryptfile.desktop
 share/apps/konqueror/servicemenus/encryptfolder.desktop
 share/apps/kregexpeditor/pics/altn.png
@@ -294,8 +231,10 @@ share/apps/remotes/cimr100.remote.xml
 share/apps/remotes/hauppauge.remote.xml
 share/apps/remotes/remote.dtd
 share/apps/remotes/sherwood.remote.xml
+share/apps/remotes/sonytv.remote.xml
 share/autostart/irkick.desktop
 share/autostart/kgpg.desktop
+share/config.kcfg/ark.kcfg
 share/config.kcfg/kcalc.kcfg
 share/config.kcfg/kedit.kcfg
 share/config.kcfg/kgpg.kcfg
@@ -398,6 +337,7 @@ share/doc/HTML/en/kwallet/index.docbook
 share/icons/crystalsvg/128x128/apps/ark.png
 share/icons/crystalsvg/128x128/apps/kdf.png
 share/icons/crystalsvg/128x128/apps/kfloppy.png
+share/icons/crystalsvg/128x128/apps/kregexpeditor.png
 share/icons/crystalsvg/128x128/apps/ktimer.png
 share/icons/crystalsvg/128x128/apps/kwalletmanager.png
 share/icons/crystalsvg/128x128/apps/kwikdisk.png
@@ -411,6 +351,7 @@ share/icons/crystalsvg/16x16/apps/kfloppy.png
 share/icons/crystalsvg/16x16/apps/kgpg.png
 share/icons/crystalsvg/16x16/apps/khexedit.png
 share/icons/crystalsvg/16x16/apps/kjots.png
+share/icons/crystalsvg/16x16/apps/kregexpeditor.png
 share/icons/crystalsvg/16x16/apps/ksim.png
 share/icons/crystalsvg/16x16/apps/ktimer.png
 share/icons/crystalsvg/16x16/apps/kwalletmanager.png
@@ -427,6 +368,7 @@ share/icons/crystalsvg/32x32/apps/kfloppy.png
 share/icons/crystalsvg/32x32/apps/kgpg.png
 share/icons/crystalsvg/32x32/apps/khexedit.png
 share/icons/crystalsvg/32x32/apps/kjots.png
+share/icons/crystalsvg/32x32/apps/kregexpeditor.png
 share/icons/crystalsvg/32x32/apps/ksim.png
 share/icons/crystalsvg/32x32/apps/ktimer.png
 share/icons/crystalsvg/32x32/apps/kwalletmanager.png
@@ -440,6 +382,7 @@ share/icons/crystalsvg/48x48/apps/kfloppy.png
 share/icons/crystalsvg/48x48/apps/kgpg.png
 share/icons/crystalsvg/48x48/apps/khexedit.png
 share/icons/crystalsvg/48x48/apps/kjots.png
+share/icons/crystalsvg/48x48/apps/kregexpeditor.png
 share/icons/crystalsvg/48x48/apps/ksim.png
 share/icons/crystalsvg/48x48/apps/ktimer.png
 share/icons/crystalsvg/48x48/apps/kwalletmanager.png
@@ -450,6 +393,7 @@ share/icons/crystalsvg/64x64/apps/kdf.png
 share/icons/crystalsvg/64x64/apps/kedit.png
 share/icons/crystalsvg/64x64/apps/kfloppy.png
 share/icons/crystalsvg/64x64/apps/kjots.png
+share/icons/crystalsvg/64x64/apps/kregexpeditor.png
 share/icons/crystalsvg/64x64/apps/kwalletmanager.png
 share/icons/crystalsvg/64x64/apps/kwikdisk.png
 share/icons/hicolor/16x16/apps/irkick.png
@@ -484,7 +428,6 @@ share/services/kwalletmanager_show.desktop
 @dirrm share/doc/HTML/en/irkick
 @dirrm share/doc/HTML/en/ark
 @dirrm share/doc/HTML/en/KRegExpEditor
-@dirrm share/config.kcfg
 @dirrm share/apps/remotes
 @dirrm share/apps/profiles
 @dirrm share/apps/kwalletmanager/icons/crystalsvg/22x22/actions
@@ -506,7 +449,7 @@ share/services/kwalletmanager_show.desktop
 @dirrm share/apps/kregexpeditor
 @dirrm share/apps/kjots/pics
 @dirrm share/apps/kjots
-@dirrm share/apps/khexedit/toolbar
+@dirrm share/apps/khexedit/pics
 @dirrm share/apps/khexedit
 @dirrm share/apps/kgpg/pics
 @dirrm share/apps/kgpg/icons/crystalsvg/22x22/actions
@@ -527,6 +470,8 @@ share/services/kwalletmanager_show.desktop
 @dirrm share/apps/irkick/icons/hicolor
 @dirrm share/apps/irkick/icons
 @dirrm share/apps/irkick
+@dirrm share/apps/ark/icons/crystalsvg/32x32/actions
+@dirrm share/apps/ark/icons/crystalsvg/32x32
 @dirrm share/apps/ark/icons/crystalsvg/22x22/actions
 @dirrm share/apps/ark/icons/crystalsvg/22x22
 @dirrm share/apps/ark/icons/crystalsvg

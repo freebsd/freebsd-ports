@@ -74,7 +74,6 @@ share/locale/hi/LC_MESSAGES/katexmlcheck.mo
 share/locale/hi/LC_MESSAGES/katexmltools.mo
 share/locale/hi/LC_MESSAGES/katomic.mo
 share/locale/hi/LC_MESSAGES/kaudiocreator.mo
-share/locale/hi/LC_MESSAGES/kbabel.mo
 share/locale/hi/LC_MESSAGES/kbackgammon.mo
 share/locale/hi/LC_MESSAGES/kbattleship.mo
 share/locale/hi/LC_MESSAGES/kbinaryclock.mo
@@ -227,7 +226,6 @@ share/locale/hi/LC_MESSAGES/kfile_txt.mo
 share/locale/hi/LC_MESSAGES/kfile_vcf.mo
 share/locale/hi/LC_MESSAGES/kfile_wav.mo
 share/locale/hi/LC_MESSAGES/kfile_xbm.mo
-share/locale/hi/LC_MESSAGES/kfilereplace.mo
 share/locale/hi/LC_MESSAGES/kfindpart.mo
 share/locale/hi/LC_MESSAGES/kfloppy.mo
 share/locale/hi/LC_MESSAGES/kfmclient.mo
@@ -239,7 +237,6 @@ share/locale/hi/LC_MESSAGES/kget.mo
 share/locale/hi/LC_MESSAGES/kghostview.mo
 share/locale/hi/LC_MESSAGES/kgoldrunner.mo
 share/locale/hi/LC_MESSAGES/kgpg.mo
-share/locale/hi/LC_MESSAGES/kgpgcertmanager.mo
 share/locale/hi/LC_MESSAGES/khangman.mo
 share/locale/hi/LC_MESSAGES/khelpcenter.mo
 share/locale/hi/LC_MESSAGES/khexedit.mo
@@ -291,7 +288,6 @@ share/locale/hi/LC_MESSAGES/kmenuapplet.mo
 share/locale/hi/LC_MESSAGES/kmenuedit.mo
 share/locale/hi/LC_MESSAGES/kmessedwords.mo
 share/locale/hi/LC_MESSAGES/kmid.mo
-share/locale/hi/LC_MESSAGES/kmidi.mo
 share/locale/hi/LC_MESSAGES/kmines.mo
 share/locale/hi/LC_MESSAGES/kminipagerapplet.mo
 share/locale/hi/LC_MESSAGES/kmix.mo
@@ -421,7 +417,6 @@ share/locale/hi/LC_MESSAGES/kwriteconfig.mo
 share/locale/hi/LC_MESSAGES/kxkb.mo
 share/locale/hi/LC_MESSAGES/kxmlrpcd.mo
 share/locale/hi/LC_MESSAGES/kxsconfig.mo
-share/locale/hi/LC_MESSAGES/kxsldbg.mo
 share/locale/hi/LC_MESSAGES/libcalendarresources.mo
 share/locale/hi/LC_MESSAGES/libkaddrbk_geo_xxport.mo
 share/locale/hi/LC_MESSAGES/libkcal.mo
@@ -459,7 +454,6 @@ share/locale/hi/LC_MESSAGES/pitchablespeed.mo
 share/locale/hi/LC_MESSAGES/ppdtranslations.mo
 share/locale/hi/LC_MESSAGES/privacy.mo
 share/locale/hi/LC_MESSAGES/qeditor.mo
-share/locale/hi/LC_MESSAGES/quanta.mo
 share/locale/hi/LC_MESSAGES/quicklauncher.mo
 share/locale/hi/LC_MESSAGES/secpolicy.mo
 share/locale/hi/LC_MESSAGES/spy.mo

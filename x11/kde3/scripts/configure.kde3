@@ -81,7 +81,7 @@ Please select what additional KDE modules you would like to install.\n\n" \
 "KDESDK"        "KDE software development kit" "$status_kdesdk" \
 "KDETOYS"       "Miscellaneous small applications" "$status_kdetoys" \
 "KDEUTILS"      "Utilities like kcalc, kcharselect, ark, kedit, etc" "$status_kdeutils" \
-"QUANTA"        "Comprehensive website development environment" "$status_quanta" \
+"KDEWEBDEV"     "Comprehensive website development environment" "$status_kdewebdev" \
 2> $tempselection
 
 	## Save the return value from dialog.

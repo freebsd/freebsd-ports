@@ -9,11 +9,13 @@ PORTNAME=	kdeedu
 PORTVERSION=	${KDE_VERSION}
 CATEGORIES?=	misc kde
 MASTER_SITES=		${MASTER_SITE_KDE}
-MASTER_SITE_SUBDIR=	stable/${PORTVERSION}/src
+MASTER_SITE_SUBDIR=	stable/${PORTVERSION:S/.0//}/src
 DIST_SUBDIR=	KDE
 
 MAINTAINER?=	kde@FreeBSD.org
 COMMENT=	Collection of entertaining, educational programs for KDE
+
+CONFLICTS=	kwordquiz-[0-9]*
 
 USE_KDELIBS_VER=3
 PREFIX=		${KDE_PREFIX}

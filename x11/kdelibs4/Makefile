@@ -8,19 +8,19 @@
 
 PORTNAME=	kdelibs
 PORTVERSION=	${KDE_VERSION}
-PORTREVISION=	5
 CATEGORIES=	x11 kde
 MASTER_SITES=	${MASTER_SITE_KDE}
-MASTER_SITE_SUBDIR=	stable/${PORTVERSION}/src
+MASTER_SITE_SUBDIR=	stable/${PORTVERSION:S/.0//}/src
 DIST_SUBDIR=	KDE
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Base set of libraries needed by KDE programs
 
-CONFLICTS=	kdebase-3.[0-1] kdebase-3.0.* kdebase-3.1.*
+CONFLICTS=	kdebase-3.[0-1] kdebase-3.0.* kdebase-3.1.* kdepim-3.2.*
 
 BUILD_DEPENDS=	mkfontdir:${X_CLIENTS_PORT}
-LIB_DEPENDS=	art_lgpl_2.5:${PORTSDIR}/graphics/libart_lgpl2 \
+LIB_DEPENDS=	IlmImf:${PORTSDIR}/graphics/OpenEXR \
+		art_lgpl_2.5:${PORTSDIR}/graphics/libart_lgpl2 \
 		artsc.0:${PORTSDIR}/audio/arts \
 		cups.2:${PORTSDIR}/print/cups-base \
 		fam.0:${PORTSDIR}/devel/fam \
@@ -42,6 +42,7 @@ USE_OPENLDAP=	yes
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_REINPLACE=	yes
+_NO_KDE_CLOSURE=yes
 
 INSTALLS_SHLIB=	yes
 LDCONFIG_DIRS+=	%%PREFIX%%/lib %%PREFIX%%/lib/kde3

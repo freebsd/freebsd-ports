@@ -8,10 +8,9 @@
 
 PORTNAME=	kdegraphics
 PORTVERSION=	${KDE_VERSION}
-PORTREVISION=	1
 CATEGORIES=	graphics kde
 MASTER_SITES=	${MASTER_SITE_KDE}
-MASTER_SITE_SUBDIR=	stable/${PORTVERSION}/src
+MASTER_SITE_SUBDIR=	stable/${PORTVERSION:S/.0//}/src
 DIST_SUBDIR=	KDE
 
 MAINTAINER=	kde@FreeBSD.org
@@ -24,6 +23,8 @@ LIB_DEPENDS=	art_lgpl_2:${PORTSDIR}/graphics/libart_lgpl2 \
 		glut:${PORTSDIR}/graphics/libglut \
 		lcms:${PORTSDIR}/graphics/lcms
 RUN_DEPENDS=	pdfinfo:${PORTSDIR}/graphics/xpdf
+
+CONFLICTS=	kolourpaint-[0-9]*
 
 USE_KDELIBS_VER=3
 PREFIX=		${KDE_PREFIX}
