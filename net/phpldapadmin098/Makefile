@@ -7,7 +7,7 @@
 
 PORTNAME=	phpldapadmin
 PORTVERSION=	0.9.4b
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net www
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	phpldapadmin
@@ -16,11 +16,15 @@ MAINTAINER=	m.seaman@infracaninophile.co.uk
 COMMENT=	A set of PHP-scripts to administer LDAP servers over the web
 
 NO_BUILD=	yes
+USE_PHP=	ldap openssl session
+
+BROKEN_WITH_PHP=	5
 
 .if defined(WITH_SUPHP)
 
-RUN_DEPENDS+=	${LOCALBASE}/sbin/suphp:${PORTSDIR}/www/suphp
 PKGNAMESUFFIX=	-suphp
+RUN_DEPENDS+=	${LOCALBASE}/sbin/suphp:${PORTSDIR}/www/suphp
+WANT_PHP_CGI=	yes
 PKGINST_SKEL=	${PKGDIR}/pkg-install${PKGNAMESUFFIX}
 PKGINSTALL=	${WRKDIR}/pkg-install${PKGNAMESUFFIX}
 PKGDEINST_SKEL=	${PKGDIR}/pkg-deinstall${PKGNAMESUFFIX}
@@ -35,7 +39,6 @@ SED_SCRIPT=	-e 's,%%PREFIX%%,${PREFIX},g' \
 
 .else
 
-USE_PHP=	yes
 WANT_PHP_WEB=	yes
 
 .endif
