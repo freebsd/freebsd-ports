@@ -6,10 +6,11 @@
 #
 
 PORTNAME=	fox
-PORTVERSION=	1.0.47
+PORTVERSION=	1.0.48
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	http://www.fox-toolkit.org/ftp/ \
 		ftp://ftp.fox-toolkit.org/pub/ \
+		ftp://ftp.uni-koeln.de/windows/xcontrib/ \
 		ftp://ftp.cfdrc.com/pub/FOX/ \
 		ftp://SunSITE.Informatik.RWTH-Aachen.DE/pub/Linux/fox/
 
@@ -19,6 +20,8 @@ COMMENT=	Fast and extensive C++ GUI toolkit
 LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
 		png.5:${PORTSDIR}/graphics/png \
 		tiff.4:${PORTSDIR}/graphics/tiff
+
+CONFLICTS=	fox-1.1.*
 
 USE_GL=		yes
 INSTALLS_SHLIB=	yes
@@ -142,13 +145,4 @@ pre-everything::
 .endif
 	@${ECHO_MSG}
 
-.include <bsd.port.pre.mk>
-
-##
-## Port conflict management
-##
-.if exists(${LOCALBASE}/lib/libFOX-1.1.so)
-IGNORE=	Conflict: this port is mutually exclusive with x11-toolkits/fox-devel
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
