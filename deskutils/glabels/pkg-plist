@@ -43,8 +43,8 @@ share/gnome/pixmaps/glabels/ex-cd-size.png
 share/gnome/pixmaps/glabels/ex-rect-size.png
 share/gnome/pixmaps/glabels/ex-round-size.png
 share/gnome/pixmaps/glabels/glabels-about-logo.png
-share/gnome/pixmaps/glabels/glabels-icon.png
-share/gnome/pixmaps/glabels/glabels-logo.png
+share/gnome/pixmaps/glabels/glabels-splash.png
+share/gnome/pixmaps/glabels-application-x-glabels.png
 share/gnome/pixmaps/glabels.png
 share/locale/cs/LC_MESSAGES/glabels.mo
 share/locale/de/LC_MESSAGES/glabels.mo
