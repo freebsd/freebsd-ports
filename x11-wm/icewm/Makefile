@@ -7,6 +7,7 @@
 
 PORTNAME=	icewm
 PORTVERSION=	1.0.4
+PORTREVISION=	1
 CATEGORIES=	x11-wm
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		http://www.physik.TU-Berlin.DE/~ibex/ports/distfiles/
@@ -22,8 +23,8 @@ LIB_DEPENDS=	gnome.4:${PORTSDIR}/x11/gnomelibs
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_X_PREFIX=	yes
-USE_XPM=	yes
-CONFIGURE_ARGS=	--enable-i18n
+USE_IMLIB=	yes
+CONFIGURE_ARGS=	--enable-i18n --with-imlib
 
 post-install:
 	${INSTALL_DATA} ${FILESDIR}/bsd-daemon.xpm ${PREFIX}/share/icewm/taskbar
