@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	portupgrade
-PORTVERSION=	20010611
+PORTVERSION=	20010615
 CATEGORIES=	sysutils
 MASTER_SITES=	${MASTER_SITE_LOCAL} \
 		http://www.iDaemons.org/distfiles/
@@ -22,6 +22,12 @@ RUN_DEPENDS=	${RUBY_SITELIBDIR}/optparse.rb:${PORTSDIR}/devel/ruby-optparse \
 USE_RUBY=	yes
 
 NO_BUILD=	yes
+
+MAN1=		pkgdepfix.1 \
+		portsdb.1 \
+		portupgrade.1 \
+		portversion.1
+MANCOMPRESSED=	no
 
 do-install:
 	cd ${WRKSRC} && ${RUBY} install.rb
