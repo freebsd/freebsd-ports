@@ -5,8 +5,8 @@ $ xset fp+ PREFIX/lib/X11/fonts/culmus
 $ xset fp rehash
 
 or by adding a FontPath line for it in the X-server configuration file
-(usually /etc/XF86Config or /etc/Xaccel.ini) and restarting the =
--server.
+(usually /etc/XF86Config or /etc/Xaccel.ini) and restarting the
+X-server.
 
 If you're using XFS it is also a good idea to add this directory to
 your "catalogue" line in the XFS configuration file:
