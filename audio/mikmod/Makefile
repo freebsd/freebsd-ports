@@ -8,8 +8,8 @@
 PORTNAME=	mikmod
 PORTVERSION=	3.1.6
 CATEGORIES=	audio
-MASTER_SITES=	http://www.multimania.com/miodrag/mikmod/mikmod/ \
-				http://mikmod.darkorb.net/mikmod/
+MASTER_SITES=	${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	sada
 
 MAINTAINER=	yoshiaki@kt.rim.or.jp
 
