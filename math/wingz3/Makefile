@@ -5,24 +5,36 @@
 # $FreeBSD$
 #
 
-PORTNAME=	Wingz
-PORTVERSION=	142
+PORTNAME=	wingzpro
+PORTVERSION=	311
 CATEGORIES=	math linux
-MASTER_SITES=	${MASTER_SITE_SUNSITE}
-MASTER_SITE_SUBDIR=	apps/financial/spreadsheet
-EXTRACT_SUFX=	.tgz
+MASTER_SITES=	netu
+EXTRACT_ONLY=
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	mi@aldan.algebra.com
 
 RUN_DEPENDS=    /compat/linux/usr/i486-linux-libc5/lib/libc.so.5:${PORTSDIR}/emulators/linux_base
 
 ONLY_FOR_ARCHS=	i386
 
-NO_WRKSUBDIR=	yes
-
 USE_X_PREFIX=	yes
+NO_BUILD=	yes
+NO_PACKAGE=	"nothing to build. commercial software"
 
-post-install:
-	@${SH} ${PKGDIR}/INSTALL ${PKGNAME} POST-INSTALL
+do-fetch:
+	#
+	# this is another one of those commercial pieces of software,
+	# that require you to download manually after "registering".
+	# Please, proceeed to
+	#	http://www.wingz-us.com/iisg_main/downloads.html
+	# download the ${DISTFILES} and save it to ${DISTDIR}.
+	#
+
+do-install:
+	${TAR} -xzp -C ${X11BASE} -f ${DISTDIR}/${DISTFILES}
+	${SED} 's%_X11BASE_%${X11BASE}%' \
+		< ${FILESDIR}/Wingz3 \
+		> ${X11BASE}/bin/Wingz3
+	${CHMOD} 755 ${X11BASE}/bin/Wingz3
 
 .include <bsd.port.mk>
