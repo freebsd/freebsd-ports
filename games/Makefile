@@ -156,6 +156,7 @@
     SUBDIR += oneko
     SUBDIR += oneko-sakura
     SUBDIR += oonsoo
+    SUBDIR += penguin-command
     SUBDIR += pentix
     SUBDIR += phalanx
     SUBDIR += pmars

@@ -1,0 +1,11 @@
+--- configure.orig	Sun Apr  8 16:20:06 2001
++++ configure	Sun Apr  8 16:20:09 2001
+@@ -1834,7 +1834,7 @@
+ 
+ ######## Set compiler flags and libraries
+ CFLAGS="$CFLAGS $SDL_CFLAGS -DDATADIR=\"\\\"$datadir/penguin-command\\\"\""
+-LIBS="$SDL_LIBS -lpng -Lmixer $SOUND -lz -lSDL -lm $GL"
++LIBS="$SDL_LIBS -lpng -Lmixer $SOUND -lz -lm $GL"
+ 
+ ######## Finally create all the generated files
+ trap '' 1 2 15
