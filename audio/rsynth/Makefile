@@ -10,7 +10,7 @@ DISTNAME=	rsynth-2.0
 CATEGORIES=	audio
 MASTER_SITES=	ftp://svr-ftp.eng.cam.ac.uk/pub/comp.speech/synthesis/
 
-BUILD_DEPENDS=	gdbm:$(PORTSDIR}/databases/gdbm
+BUILD_DEPENDS=	${PREFIX}/lib/libgdbm.a:$(PORTSDIR}/databases/gdbm
 EXEC_DEPENDS=	auvoxware:${PORTSDIR}/audio/nas
 
 GNU_CONFIGURE=	YES
