@@ -6,13 +6,13 @@
 #
 
 PORTNAME=	jaf
-PORTVERSION=	1.0.1
+PORTVERSION=	1.0.2
 PORTREVISION=	1
 CATEGORIES=	java
 MASTER_SITES=	#
-DISTNAME=	${PORTNAME}1_0_1
+DISTNAME=	${PORTNAME}-1_0_2
 
-MAINTAINER=	noway@nohow.demon.co.uk
+MAINTAINER=	java@freebsd.org
 
 USE_ZIP=	YES
 USE_JAVA=	1.1+
@@ -22,7 +22,7 @@ NO_BUILD=	yes
 NO_CDROM=	"See the license"
 TARGET_DIR=	${PREFIX}/share/java/${PKGNAME}
 PLIST_SUB+=	T=${TARGET_DIR:S/^${PREFIX}\///}
-DOWNLOAD_URL=	"http://java.sun.com/cgi-bin/download3.cgi?config-file=jaf1_0_1.config&platform=zip&button=continue"
+DOWNLOAD_URL=	"http://java.sun.com/products/javabeans/glasgow/jaf.html"
 
 .include <bsd.port.pre.mk>
 .if !exists(${DISTDIR}/${DISTNAME}${EXTRACT_SUFX})
