@@ -16,18 +16,19 @@ MAINTAINER=	ports@FreeBSD.org
 
 LIB_DEPENDS=	intl.2:${PORTSDIR}/devel/gettext
 
+USE_REINPLACE=	yes
 INSTALL_TARGET=	install install-config install-i18n
 MANCOMPRESSES=	no
 MAN8=	fwlogwatch.8
 MAKE_ENV=	MKDIR="${MKDIR}"
 
 post-patch:
-	@${PERL} -pi -e 's,/etc,${PREFIX}/etc,g; \
+	@${REINPLACE_CMD} -e 's,/etc,${PREFIX}/etc,g; \
 		s,/usr/local,${PREFIX},g; \
 		s,/usr/share,${PREFIX}/share,g; \
 		s,%%LOCALBASE%%,${LOCALBASE},g' \
 		${WRKSRC}/Makefile ${WRKSRC}/main.h
-	@${PERL} -pi -e "s,/etc,${PREFIX}/etc,g" ${WRKSRC}/${MAN8}
+	@${REINPLACE_CMD} -e "s,/etc,${PREFIX}/etc,g" ${WRKSRC}/${MAN8}
 
 post-install:
 	@${INSTALL_SCRIPT} ${FILESDIR}/fwlogwatch.sh.sample ${PREFIX}/etc/rc.d

@@ -17,6 +17,7 @@ MAINTAINER=	ports@FreeBSD.org
 
 LIB_DEPENDS=	gnugetopt:${PORTSDIR}/devel/libgnugetopt
 
+USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="${CXXFLAGS} -I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib -lgnugetopt"
@@ -27,6 +28,6 @@ MLINKS=	ccrypt.1 ccencrypt.1 \
 	ccrypt.1 ccat.1
 
 post-patch:
-	@${PERL} -pi -e "s,gtar,tar,g" ${WRKSRC}/configure
+	@${REINPLACE_CMD} -e "s,gtar,tar,g" ${WRKSRC}/configure
 
 .include <bsd.port.mk>

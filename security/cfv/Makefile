@@ -16,6 +16,7 @@ MAINTAINER=	ports@FreeBSD.org
 
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/fchksum.so:${PORTSDIR}/security/py-fchksum
 
+USE_REINPLACE=	yes
 USE_PYTHON=	yes
 ALL_TARGET=	cfv.wrapper
 INSTALL_TARGET=	install-wrapper
@@ -23,6 +24,6 @@ INSTALL_TARGET=	install-wrapper
 MAN1=	cfv.1
 
 post-patch:
-	@${PERL} -pi -e "s,%%PREFIX%%,${PREFIX},g" ${WRKSRC}/Makefile
+	@${REINPLACE_CMD} -e "s,%%PREFIX%%,${PREFIX},g" ${WRKSRC}/Makefile
 
 .include <bsd.port.mk>
