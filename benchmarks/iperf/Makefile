@@ -12,7 +12,7 @@ CATEGORIES=	net
 MASTER_SITES=	http://dast.nlanr.net/Projects/Iperf/
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
-MAINTAINER=	petef@FreeBSD.org
+MAINTAINER=	smace@FreeBSD.org
 
 NO_CDROM=	"can't charge a fee for the software"
 
