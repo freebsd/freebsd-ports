@@ -248,6 +248,7 @@
     SUBDIR += manck
     SUBDIR += mcron
     SUBDIR += memdump
+    SUBDIR += memfetch
     SUBDIR += memgrep
     SUBDIR += memtest
     SUBDIR += memtest86
