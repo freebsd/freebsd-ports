@@ -1,0 +1,7 @@
+This module provides an RFC 2138/2139-compliant interface to RADIUS
+using Ruby.  Its API is based somewhat on the Net::Radius module for
+Perl, but with some changes made to reflect Ruby's features (such as
+iterators).
+
+Author:	Rafael R. Sevilla <dido@imperium.ph>
+WWW:	http://savannah.gnu.org/projects/ruby-radius/
