@@ -13,6 +13,8 @@ DISTNAME=	${PORTNAME}-pub
 
 MAINTAINER=	dec@FreeBSD.org
 
+BROKEN=		"Does not fetch (authors withdrew distfiles)"
+
 WRKSRC=		${WRKDIR}/${PORTNAME}-public-3_6
 
 GNU_CONFIGURE=	yes
