@@ -14,6 +14,7 @@
     SUBDIR += interbase4
     SUBDIR += metakit
     SUBDIR += msql
+    SUBDIR += mysql-editor
     SUBDIR += mysql-jdbc-mm
     SUBDIR += mysql322-client
     SUBDIR += mysql322-server

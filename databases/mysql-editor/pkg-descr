@@ -1,0 +1,6 @@
+These cgi scripts in Perl enable you to edit the contents of Mysql databases.
+They don't support editing of the entire database structure.
+
+The software's web-page:
+
+WWW: http://www.binaryevolution.com/~tdarugar/
