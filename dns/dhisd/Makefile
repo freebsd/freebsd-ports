@@ -8,7 +8,6 @@
 PORTNAME=	dhisd
 PORTVERSION=	5.1
 PORTREVISION=	1
-
 CATEGORIES=	net
 MASTER_SITES=	http://bsltwr.dhis.org/ftp/pub/dhis/ \
 		ftp://ftp.dhis.org/pub/dhis/
@@ -18,10 +17,11 @@ MAINTAINER=	baskruit@bsltwr.dnsalias.org
 LIB_DEPENDS=	gmp.3:${PORTSDIR}/math/libgmp-freebsd
 
 DOCFILES=	CONTRIBUTORS COPYRIGHT INSTALL MODULES README
+USE_REINPLACE=	yes
 
 post-patch:
 	${CP} ${FILESDIR}/dhisd.sh ${WRKSRC}/dhisd.sh
-	cd ${WRKSRC} && ${PERL} -i -p -e "s^__PREFIX__^${PREFIX}^g" \
+	cd ${WRKSRC} && ${REINPLACE_CMD} -p e "s^__PREFIX__^${PREFIX}^g" \
 		Makefile dhisd.h dhisd.sh ${DOCFILES}
 
 do-install:

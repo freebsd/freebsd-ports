@@ -14,11 +14,12 @@ MAINTAINER=	bugg@bugg.strangled.net
 
 LIB_DEPENDS=	gnugetopt.1:${PORTSDIR}/devel/libgnugetopt
 
+USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 
 pre-patch:
-	@${PERL} -pi.orig -e "s@malloc.h@stdlib.h@g" \
-        ${WRKSRC}/CfgFileParser.cc
+	@${REINPLACE_CMD} -e "s@malloc.h@stdlib.h@g" \
+		${WRKSRC}/CfgFileParser.cc
 
 post-install:
 	@ ${MKDIR} ${PREFIX}/share/colortail

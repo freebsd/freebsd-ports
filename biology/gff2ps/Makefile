@@ -19,11 +19,12 @@ RUN_DEPENDS=	gawk:${PORTSDIR}/lang/gawk \
 
 GFF2PS_MAN=	MANUAL_GFF2PS_v0.96.ps
 PATCH_WRKSRC=	${WRKDIR}
+USE_REINPLACE=	yes
 
 NO_BUILD=	yes
 
 post-patch:
-	@${PERL} -pi -e 's,^#!/bin/bash,#!${LOCALBASE}/bin/bash,; \
+	@${REINPLACE_CMD} -e 's,^#!/bin/bash,#!${LOCALBASE}/bin/bash,; \
 		s,/usr/local/bin/gawk,${LOCALBASE}/bin/gawk,' ${WRKDIR}/gff2ps
 
 do-extract:

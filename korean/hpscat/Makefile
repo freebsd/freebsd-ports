@@ -20,8 +20,10 @@ MAINTAINER=	cjh@FreeBSD.org
 
 RUN_DEPENDS=    hcode:${PORTSDIR}/korean/hcode
 
+USE_REINPLACE=	yes
+
 pre-patch:
-	@${PERL} -pi -e 's,<malloc.h>,<stdlib.h>,' \
+	@${REINPLACE_CMD} -e 's,<malloc.h>,<stdlib.h>,' \
 		${WRKSRC}/hpscat.h
 
 pre-configure:
