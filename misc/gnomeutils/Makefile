@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gnomeutils
-PORTVERSION=	1.4.1
+PORTVERSION=	1.4.1.1
 CATEGORIES=	misc gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	stable/sources/gnome-utils
@@ -39,8 +39,5 @@ pre-patch:
 	@find ${WRKSRC} -name "Makefile.in*" | xargs ${PERL} -pi -e \
 		's|\$\(datadir\)/gnome/|\$\(datadir\)/|g ; \
 		 s|\$\(datadir\)/locale|\$\(prefix\)/share/locale|g'
-.for file in log_repaint.c logrtns.h
-	@${PERL} -pi -e "s/malloc.h/stdlib.h/g" ${WRKSRC}/logview/${file}
-.endfor
 
 .include <bsd.port.mk>
