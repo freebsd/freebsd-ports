@@ -6,7 +6,7 @@
 #
 
 PORTNAME=       ldapdiff
-PORTVERSION=    0.8.2
+PORTVERSION=    0.8.3
 CATEGORIES=     net
 MASTER_SITES=   http://webtomware.rhoen.de/ \
 		http://unixpages.org/distfiles/
@@ -42,6 +42,5 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/${i} ${DOCSDIR}
 .endfor
 .endif
-	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
