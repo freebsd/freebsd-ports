@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	dnsmasq
-PORTVERSION=	2.5
+PORTVERSION=	2.6
 CATEGORIES=	dns
 MASTER_SITES=	http://www.thekelleys.org.uk/dnsmasq/
 
@@ -16,7 +16,7 @@ COMMENT=	A caching DNS forwarder
 USE_REINPLACE=	yes
 
 MAN8=		dnsmasq.8
-PLIST_FILES=	sbin/dnsmasq
+PLIST_FILES=	sbin/dnsmasq etc/dnsmasq.conf.example
 
 post-patch:
 	@${REINPLACE_CMD} -e \
