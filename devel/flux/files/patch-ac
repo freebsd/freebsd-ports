@@ -1,0 +1,15 @@
+--- Makefile.am.orig	Thu Feb 10 07:02:05 2000
++++ Makefile.am	Sat Jul 22 14:38:33 2000
+@@ -1,10 +1,9 @@
+-SUBDIRS = include src util examples
++SUBDIRS = include src util 
+ 
+ EXTRA_DIST = acconfig.h
+ 
+ all: all-recursive
+-	if which bash >/dev/null 2>&1; then bash ./test.sh; \
+-else ./test.sh; fi
++	util/test/test
+ 
+ dist-hook:
+ 	sed "s/\[CVS\]/$(VERSION)/" <test.sh >$(distdir)/test.sh
