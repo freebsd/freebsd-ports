@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	epstool
-PORTVERSION=	3.0
+PORTVERSION=	3.03
 CATEGORIES=	graphics
 MASTER_SITES=	ftp://mirror.cs.wisc.edu/pub/mirrors/ghost/ghostgum/
 
@@ -21,10 +21,14 @@ GSPORT?=	print/ghostscript-gnu
 
 RUN_DEPENDS=	gs:${PORTSDIR}/${GSPORT}
 
+USE_REINPLACE=	yes
 USE_GMAKE=	yes
 MAKEFILE=	makefile
-MAKE_ARGS=	CC="${CC}" CDEBUG="${CFLAGS}" LINK="${CC}" EPSLIB=""
+MAKE_ARGS=	MAKE="${GMAKE}" CC="${CC}" CCAUX="${CC}" CDEBUG="${CFLAGS}" \
+		CLINK="${CC} ${LDFLAGS}" LINK="${CC} ${LDFLAGS}" EPSLIB=""
 ALL_TARGET=	${PORTNAME}
+
+MAN1=		epstool.1
 
 pre-everything::
 .if !defined(WITH_GHOSTSCRIPT_AFPL) || ${WITH_GHOSTSCRIPT_AFPL} != yes
@@ -37,8 +41,12 @@ pre-everything::
 post-extract:
 	@${RM} -f ${WRKSRC}/epstool
 
+post-patch:
+	@${REINPLACE_CMD} -e 's|make -f|$$(MAKE) -f|g' ${WRKSRC}/src/unix.mak
+
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/bin/epstool ${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/doc/epstool.1 ${MANPREFIX}/man/man1
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/doc/epstool.htm ${DOCSDIR}
