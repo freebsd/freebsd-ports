@@ -323,6 +323,7 @@
     SUBDIR += perdition
     SUBDIR += pflogstats
     SUBDIR += pflogsumm
+    SUBDIR += pfqueue
     SUBDIR += pgen
     SUBDIR += pgp4pine
     SUBDIR += pgpsendmail
