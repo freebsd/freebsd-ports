@@ -1,0 +1,14 @@
+--- ../src/uucplock.c.orig	Thu Dec  2 12:12:46 1999
++++ ../src/uucplock.c	Thu Jan 18 02:57:30 2001
+@@ -38,7 +38,11 @@
+ #include "config.h"
+ 
+ #include <sys/file.h>
++#ifdef HAVE_DIRENT_H
++#include <dirent.h>
++#else
+ #include <sys/dir.h>
++#endif
+ #include <errno.h>
+ 
+ #include "pathnames.h"
