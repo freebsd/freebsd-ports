@@ -3,7 +3,7 @@
 # Date created:		24 November 1994
 # Whom:			asami
 #
-# $Id: Makefile,v 1.7 1996/11/18 09:53:56 asami Exp $
+# $Id: Makefile,v 1.8 1998/10/05 03:13:39 steve Exp $
 #
 
 DISTNAME=	xli.1.16
@@ -12,10 +12,11 @@ CATEGORIES=	graphics x11
 MASTER_SITES=	${MASTER_SITE_XCONTRIB}
 MASTER_SITE_SUBDIR=	applications
 
-MAINTAINER=	ports@FreeBSD.ORG
+MAINTAINER=	jkoshy@FreeBSD.ORG
 
 USE_IMAKE=	yes
-MAN1=		xli.1 xlito.1
+MANN=		xli.n xlito.n
+MANCOMPRESSED=	no
 
 NO_WRKSUBDIR=	yes
 
