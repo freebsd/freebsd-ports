@@ -3068,6 +3068,7 @@ gtk-aluminumalloy-cryogenic-theme	ports/x11-themes/gtk-aluminumalloy-cryogenic-t
 gtk-aluminumalloy-smog-theme	ports/x11-themes/gtk-aluminumalloy-smog-theme
 gtk-aluminumalloy-toxic-theme	ports/x11-themes/gtk-aluminumalloy-toxic-theme
 gtk-aluminumalloy-volcanic-theme	ports/x11-themes/gtk-aluminumalloy-volcanic-theme
+gtk-ana-theme	ports/x11-themes/gtk-ana-theme
 gtk-aqualightblue-theme	ports/x11-themes/gtk-aqualightblue-theme
 gtk-bluecurve-theme	ports/x11-themes/gtk-bluecurve-theme
 gtk-cleanice-engine	ports/x11-themes/gtk-cleanice-engine
