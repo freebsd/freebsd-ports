@@ -26,19 +26,24 @@ include/rpm/rpmurl.h
 include/rpm/stringbuf.h
 include/rpm/ugid.h
 lib/libbeecrypt.a
+lib/libbeecrypt.la
 lib/libbeecrypt.so
 lib/libbeecrypt.so.4
 lib/librpm-4.0.4.so
 lib/librpm.a
+lib/librpm.la
 lib/librpm.so
 lib/librpmbuild-4.0.4.so
 lib/librpmbuild.a
+lib/librpmbuild.la
 lib/librpmbuild.so
 lib/librpmdb-4.0.4.so
 lib/librpmdb.a
+lib/librpmdb.la
 lib/librpmdb.so
 lib/librpmio-4.0.4.so
 lib/librpmio.a
+lib/librpmio.la
 lib/librpmio.so
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/poptmodule.so
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/rpmmodule.so
@@ -147,6 +152,7 @@ share/locale/zh_CN.GB2312/LC_MESSAGES/rpm.mo
 @unexec rmdir %D/src/portbld/RPMS/i586 2>/dev/null || true
 @unexec rmdir %D/src/portbld/RPMS/i486 2>/dev/null || true
 @unexec rmdir %D/src/portbld/RPMS/i386 2>/dev/null || true
+@unexec rmdir %D/src/portbld/RPMS/athlon 2>/dev/null || true
 @unexec rmdir %D/src/portbld/RPMS/amd64 2>/dev/null || true
 @unexec rmdir %D/src/portbld/RPMS/alphaev6 2>/dev/null || true
 @unexec rmdir %D/src/portbld/RPMS/alpha 2>/dev/null || true
