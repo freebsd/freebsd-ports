@@ -31,6 +31,12 @@ PLIST=		${WRKDIR}/pkg-plist
 USE_X_PREFIX=	yes
 USE_REINPLACE=	yes
 
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == "alpha" && ${OSVERSION} >= 502102
+BROKEN=		"Does not compile on alpha 5.x"
+.endif
+
 pre-build:
 	@${FIND} ${WRKDIR} -type f -exec ${CHMOD} 644 \{\} \;
 
@@ -56,4 +62,4 @@ do-install:
 	${FIND} ${WRKDIR} -type f -perm 755 \
 		-exec ${INSTALL_PROGRAM} {} ${PREFIX}/bin \;
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
