@@ -4,18 +4,18 @@ mozilla/directory/etc/ldapfriendly
 mozilla/directory/etc/ldaptemplates.conf
 @dirrm mozilla/directory/etc
 mozilla/directory/include/disptmpl.h
-mozilla/directory/include/lber.h
-mozilla/directory/include/ldap.h
+mozilla/directory/include/mozlber.h
+mozilla/directory/include/mozldap.h
 mozilla/directory/include/srchpref.h
 @dirrm mozilla/directory/include
-mozilla/directory/lib/liblber.so.1
-mozilla/directory/lib/liblber.so
-mozilla/directory/lib/libldap.so.1
-mozilla/directory/lib/libldap.so
-mozilla/directory/lib/liblber.a
-mozilla/directory/lib/libldap.a
-@exec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -m %D/mozilla/directory/lib
-@unexec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -R
 @dirrm mozilla/directory/lib
 @dirrm mozilla/directory
 @dirrm mozilla
+lib/libmozlber.so.1
+lib/libmozlber.so
+lib/libmozldap.so.1
+lib/libmozldap.so
+lib/libmozlber.a
+lib/libmozldap.a
+@exec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -m /usr/local/lib
+@unexec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -R
