@@ -1,27 +1,26 @@
-bin/latex-mk
 bin/ieee-copyout
-@unexec install-info --delete %D/info/latex-mk.info %D/info/dir
-info/latex-mk.info
-@exec install-info %D/info/latex-mk.info %D/info/dir
-%%DATADIR%%/xfig.mk
-%%DATADIR%%/xfig.gmk
-%%DATADIR%%/tgif.mk
-%%DATADIR%%/tgif.gmk
-%%DATADIR%%/latex.mk
-%%DATADIR%%/latex.gmk
-%%DATADIR%%/latex-mk.ps
-%%DATADIR%%/latex-mk.pdf
-%%DATADIR%%/latex-mk.html
-%%DATADIR%%/example/tgif/myfig.obj
-%%DATADIR%%/example/refs.bib
-%%DATADIR%%/example/makefile.mk
-%%DATADIR%%/example/makefile.gmk
-%%DATADIR%%/example/example.tex
-%%DATADIR%%/example/ex3.tex
-%%DATADIR%%/example/ex2.tex
-%%DATADIR%%/example/biblio.tex
-%%DATADIR%%/example/README-example.txt
+bin/latex-mk
 %%DATADIR%%/dated_draft.ps
+%%DATADIR%%/example/README-example.txt
+%%DATADIR%%/example/biblio.tex
+%%DATADIR%%/example/ex2.tex
+%%DATADIR%%/example/ex3.tex
+%%DATADIR%%/example/ex4.bib
+%%DATADIR%%/example/ex4.tex
+%%DATADIR%%/example/example.tex
+%%DATADIR%%/example/mkfile.gmk
+%%DATADIR%%/example/mkfile.mk
+%%DATADIR%%/example/refs.bib
+%%DATADIR%%/example/tgif/myfig.obj
+%%DATADIR%%/latex-mk.html
+%%DATADIR%%/latex-mk.pdf
+%%DATADIR%%/latex-mk.ps
+%%DATADIR%%/latex.gmk
+%%DATADIR%%/latex.mk
+%%DATADIR%%/tgif.gmk
+%%DATADIR%%/tgif.mk
+%%DATADIR%%/xfig.gmk
+%%DATADIR%%/xfig.mk
 @dirrm %%DATADIR%%/example/tgif
 @dirrm %%DATADIR%%/example
 @dirrm %%DATADIR%%
