@@ -3,7 +3,7 @@
 # Date created:					May 4th 1997
 # Whom:						jfitz@FreeBSD.ORG
 #
-# $Id: Makefile,v 1.17 1999/04/21 00:29:36 stb Exp $
+# $Id: Makefile,v 1.18 1999/05/10 02:22:46 stb Exp $
 #
 
 DISTNAME=	cyrus-imapd-v1.5.19
@@ -20,7 +20,7 @@ Y2K=		http://andrew2.andrew.cmu.edu/cyrus/imapd/y2k.html
 LIB_DEPENDS=	tcl80.1:${PORTSDIR}/lang/tcl80
 BUILD_DEPENDS=	makedepend:${PORTSDIR}/devel/makedepend
 
-HAS_CONFIGURE=	YES
+GNU_CONFIGURE=	YES
 CONFIGURE_ARGS=	--with-cyrus-prefix=${PREFIX}/cyrus \
 		--with-cyrus-group=cyrus \
 		--with-login=unix_pwcheck \
