@@ -6,13 +6,13 @@
 #
 
 PORTNAME=	cyrus-imapd
-PORTVERSION= 	2.2.1.b
-PORTREVISION=	2
+PORTVERSION= 	2.2.2.b
+#PORTREVISION=	0
 CATEGORIES=	mail ipv6
 MASTER_SITES=	ftp://ftp.andrew.cmu.edu/pub/cyrus-mail/ \
 		ftp://ftp.hanse.de/sites/transit/mirror/ftp.andrew.cmu.edu/pub/cyrus-mail/ \
 		${MASTER_SITE_RINGSERVER:S,%SUBDIR%,net/mail/cyrus-mail/&,}
-DISTNAME=	${PORTNAME}-2.2.1-BETA
+DISTNAME=	${PORTNAME}-2.2.2-BETA
 
 MAINTAINER=	ume@FreeBSD.org
 COMMENT=	The cyrus mail server, supporting POP3 and IMAP4 protocols
@@ -88,8 +88,11 @@ CONFIGURE_ARGS+=--enable-netscapehack
 .endif
 
 .if defined(WITH_DRAC)
-EXTRA_PATCHES+=	${WRKSRC}/contrib/drac_auth.patch \
-	${FILESDIR}/extra-patch-acconfig.h ${FILESDIR}/extra-patch-aclocal.m4
+BROKEN=	currently not supported due to lack of acconfig.h
+EXTRA_PATCHES+=	${WRKSRC}/contrib/drac_auth.patch
+#EXTRA_PATCHES+=	${FILESDIR}/drac_auth.patch
+EXTRA_PATCHES+=	${FILESDIR}/extra-patch-acconfig.h \
+		${FILESDIR}/extra-patch-aclocal.m4
 USE_AUTOHEADER=	YES
 CONFIGURE_ARGS+=--with-drac=${LOCALBASE}
 BUILD_DEPENDS+=	${LOCALBASE}/lib/libdrac.a:${PORTSDIR}/mail/drac
