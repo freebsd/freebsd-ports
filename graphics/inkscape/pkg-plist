@@ -217,6 +217,7 @@ share/locale/sv/LC_MESSAGES/inkscape.mo
 share/locale/tr/LC_MESSAGES/inkscape.mo
 share/locale/uk/LC_MESSAGES/inkscape.mo
 share/locale/zh_CN/LC_MESSAGES/inkscape.mo
+@dirrm share/gnome/inkscape/modules
 @dirrm share/gnome/inkscape/extensions
 @dirrm share/gnome/inkscape
 @dirrm lib/inkscape/extensions
