@@ -7,7 +7,7 @@
 
 PORTNAME=	povray
 PORTVERSION=	3.5
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics
 MASTER_SITES=	ftp://ftp.povray.org/pub/povray/%SUBDIR%/ \
 		ftp://ftp.gigabell.net/pub/unix/apps/graphics/povray/%SUBDIR%/ \
