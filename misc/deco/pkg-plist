@@ -1,0 +1,27 @@
+bin/deco
+man/man1/deco.1.gz
+man/man1/deco-r.1.gz
+share/deco/help/d.edit
+share/deco/help/d.general
+share/deco/help/d.hexview
+share/deco/help/d.view
+share/deco/help/e.edit
+share/deco/help/e.general
+share/deco/help/e.hexview
+share/deco/help/e.view
+share/deco/help/f.edit
+share/deco/help/f.general
+share/deco/help/f.hexview
+share/deco/help/f.view
+share/deco/help/r.edit
+share/deco/help/r.general
+share/deco/help/r.hexview
+share/deco/help/r.view
+share/deco/help/u.edit
+share/deco/help/u.general
+share/deco/help/u.hexview
+share/deco/help/u.view
+share/deco/menu
+share/deco/profile
+@dirrm share/deco/help
+@dirrm share/deco
