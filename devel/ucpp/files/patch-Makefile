@@ -1,0 +1,21 @@
+--- Makefile.orig	Fri Feb 16 01:30:03 2001
++++ Makefile	Fri Feb 16 01:35:14 2001
+@@ -52,14 +52,14 @@
+ #FLAGS = -O -m -DMEM_CHECK
+ 
+ # for gcc
+-#CC = gcc
++CC = gcc
+ #FLAGS = -g -Wall -ansi -pedantic -DAUDIT
+-#FLAGS = -O3 -Wall -ansi -pedantic -DMEM_CHECK
++FLAGS = %%CFLAGS%% -DMEM_CHECK
+ 
+ # for the Compaq C compiler on Alpha/Linux
+-CC = ccc
++#CC = ccc
+ #FLAGS = -w0 -g -DAUDIT
+-FLAGS = -w0 -fast -DMEM_CHECK
++#FLAGS = -w0 -fast -DMEM_CHECK
+ 
+ # for the Sun Workshop C Compiler
+ #CC = cc
