@@ -31,6 +31,8 @@ BUILD_DEPENDS+=	ezmlm-idx:${PORTSDIR}/mail/ezmlm-idx
 RUN_DEPENDS+=	ezmlm-idx:${PORTSDIR}/mail/ezmlm-idx
 .endif
 
+CONFLICTS=	qmailadmin-devel-1.*
+
 GNU_CONFIGURE=	YES
 USE_GMAKE=	YES
 

@@ -19,6 +19,8 @@ BUILD_DEPENDS=	${QMAIL_DIR}/bin/qmail-send:${PORTSDIR}/mail/qmail \
 RUN_DEPENDS=	${QMAIL_DIR}/bin/qmail-send:${PORTSDIR}/mail/qmail \
 		${LOCALBASE}/bin/tcprules:${PORTSDIR}/sysutils/ucspi-tcp
 
+CONFLICTS=	vpopmail-devel-5.*
+
 GNU_CONFIGURE=	YES
 USE_GMAKE=	YES
 USE_REINPLACE=	YES
