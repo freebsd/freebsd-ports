@@ -18,4 +18,9 @@ MAN1=		beep.1
 MANCOMPRESSED=	maybe
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == "alpha"
+IGNORE=		"missing machine/speaker.h, sorry"
+.endif
+.include <bsd.port.post.mk>
