@@ -3,12 +3,12 @@
 # Date created:		05 June 1999
 # Whom:			Chris Piazza <cpiazza@FreeBSD.org>
 #
-# $Id: Makefile,v 1.2 1999/06/14 03:09:47 jseger Exp $
+# $Id: Makefile,v 1.3 1999/06/19 08:25:28 cpiazza Exp $
 #
 
 DISTNAME=	toolbox-0.4.3
 CATEGORIES=	misc
-MASTER_SITES=	http://cs.bc.edu/~kelleyry/blackbox/utils/
+MASTER_SITES=	http://rfk.masslinux.com/blackbox/utils/
 
 MAINTAINER=	cpiazza@FreeBSD.org
 
