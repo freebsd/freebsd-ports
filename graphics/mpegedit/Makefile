@@ -8,7 +8,7 @@
 PORTNAME=	mpegedit
 PORTVERSION=	2.2
 CATEGORIES=	graphics
-MASTER_SITES=	ftp://ftp.demon.co.uk/pub/unix/tools/
+MASTER_SITES=	ftp://ftp.netsw.org/netsw/Graphic/Movie/MPEG/mpegedit/
 DISTNAME=	${PORTNAME}_v${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
