@@ -7,6 +7,7 @@
 
 PORTNAME=	popa3d
 PORTVERSION=	0.5
+PORTREVISION=	1
 CATEGORIES=	mail
 MASTER_SITES=	http://www.openwall.com/popa3d/ \
 		ftp://ftp.openwall.com/popa3d/ \
@@ -19,6 +20,7 @@ PKGNAMESUFFIX?=	-before-sendmail
 MAINTAINER=	dinoex@FreeBSD.org
 
 ALL_TARGET=	popa3d
+CFLAGS+=	-DPREFIX=${PREFIX}
 
 .if defined(SMTP_AFTER_POP3)
 EXTRA_PATCHES+=	${FILESDIR}/pop-before-sendmail.patch
@@ -33,8 +35,12 @@ post-patch:
 	@${PERL5} -pi -e "s=db1/db.h=db.h=" ${WRKSRC}/pop_root.c
 .endif
 
+pre-patch:
+	@${PERL5} -pi -e "s=/var/empty=${PREFIX}/empty=" ${WRKSRC}/params.h
+
 pre-install:
-	@ ${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
+	@${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
+	@${MKDIR} ${PREFIX}/empty
 
 do-install:
 	${INSTALL} ${COPY} -o root -g wheel -m 500 \

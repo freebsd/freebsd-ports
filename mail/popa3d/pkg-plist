@@ -3,3 +3,4 @@ libexec/popa3d
 %%PORTDOCS%%share/doc/popa3d/DESIGN
 %%PORTDOCS%%share/doc/popa3d/LICENSE
 %%PORTDOCS%%@dirrm share/doc/popa3d
+%%PORTDOCS%%@dirrm empty
