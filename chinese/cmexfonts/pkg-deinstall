@@ -1,0 +1,22 @@
+#!/bin/sh
+set -e
+
+fontdir="/usr/X11R6/lib/X11/fonts/local"
+
+# $fontdir no longer exists;
+# remove the FontPath from /etc/X11/XF86Config
+
+if [ -f /etc/X11/XF86Config ]
+then
+    echo "Removing FontPath \"$fontdir\" from /etc/X11/XF86Config ..."
+    tmpfile="/tmp/tempfile"
+    sed -e '/Section  *"Files"/,/EndSection/{' \
+	-e "\\%^	*FontPath *[\"']$fontdir%d" \
+	-e '}' /etc/X11/XF86Config >> $tmpfile
+    mv -f $tmpfile /etc/X11/XF86Config
+else
+    echo "/etc/X11/XF86Config not found!"
+    echo "You need to remove the line"
+    echo "    FontPath   \"$fontdir/:unscaled\""
+    echo "from /etc/X11/XF86Config yourself, otherwise X may fail to work."
+fi

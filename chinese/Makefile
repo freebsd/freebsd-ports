@@ -19,6 +19,7 @@
     SUBDIR += chinput2
     SUBDIR += cle_base
     SUBDIR += cless
+    SUBDIR += cmexfonts
     SUBDIR += cxterm
     SUBDIR += dia
     SUBDIR += emacs20
