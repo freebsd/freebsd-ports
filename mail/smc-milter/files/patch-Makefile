@@ -1,0 +1,62 @@
+*** Makefile.orig	Mon Mar 14 08:27:09 2005
+--- Makefile	Sun Apr  3 17:28:21 2005
+***************
+*** 10,20 ****
+  # CFLAGS	= -g -O2 -Wall -D_GNU_SOURCE -D_REENTRANT -I/usr/lib/bind/include
+  # LIBS		= /usr/lib/bind/lib/libbind_r.a -lmilter -pthread -lssl -ldb
+  # if glibc >= 2.2
+! CFLAGS		= -g -O2 -Wall -D_GNU_SOURCE -D_REENTRANT 
+! LIBS		= -lmilter -pthread -lssl -ldb -lresolv
+  MILTER		= smc-milter
+! INSDIR		= /opt/SMC
+! CC		= gcc
+  
+  all: milter
+  
+--- 10,24 ----
+  # CFLAGS	= -g -O2 -Wall -D_GNU_SOURCE -D_REENTRANT -I/usr/lib/bind/include
+  # LIBS		= /usr/lib/bind/lib/libbind_r.a -lmilter -pthread -lssl -ldb
+  # if glibc >= 2.2
+! CFLAGS		+= -g -O2 -Wall -D_GNU_SOURCE -D_REENTRANT \
+! -I/usr/local/include/bind -I/usr/local/include/db42
+! LIBS		= -lmilter -pthread -lssl -L/usr/local/lib/db42 -ldb \
+! -L/usr/local/lib -lbind_r -lcrypto
+  MILTER		= smc-milter
+! BASEINSDIR	= /usr/local
+! CONFINSDIR	= $(BASEINSDIR)/etc/smc
+! BININSDIR	= $(BASEINSDIR)/bin
+! CC		?= gcc
+  
+  all: milter
+  
+***************
+*** 29,42 ****
+  
+  
+  install:
+! 	[ -d "$(INSDIR)" ] || mkdir $(INSDIR)
+  	if [ -n "$(MILTER)" ]; then \
+  		strip $(MILTER) ; \
+! 		install -m 755 $(MILTER) $(INSDIR) ; \
+  	fi
+! 	install -m 644 $(MILTER).conf $(INSDIR)
+! 	install -m 644 $(MILTER).policy $(INSDIR)
+! 	install -m 644 $(MILTER).users $(INSDIR)
+  
+  remove:
+  	rm -f $(INSDIR)/$(MILTER)*
+--- 33,46 ----
+  
+  
+  install:
+! 	[ -d "$(CONFINSDIR)" ] || mkdir $(CONFINSDIR)
+  	if [ -n "$(MILTER)" ]; then \
+  		strip $(MILTER) ; \
+! 		install -m 755 $(MILTER) $(BININSDIR) ; \
+  	fi
+! 	install -m 644 $(MILTER).conf $(CONFINSDIR)
+! 	install -m 644 $(MILTER).policy $(CONFINSDIR)
+! 	install -m 644 $(MILTER).users $(CONFINSDIR)
+  
+  remove:
+  	rm -f $(INSDIR)/$(MILTER)*

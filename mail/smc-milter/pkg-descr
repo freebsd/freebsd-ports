@@ -1,0 +1,10 @@
+Sendmail Confirmation System (SMC) is an Sendmail milter plugin that is
+designed to significantly reduce the amount of junk email you receive. It
+uses dynamic local and DNS-based remote whitelists, blacklists, and an
+original auto-confirmation system for unknown but legitimate senders. It
+includes features for protecting recipients from dangerous attachments and
+HTML includes. It uses a set of original algorithms, including "Check relay
+by NS", which simulates a dynamic whitelisting technique, and "Check delays",
+also known as "Greylisting".
+
+WWW: http://milter.sourceforge.net/

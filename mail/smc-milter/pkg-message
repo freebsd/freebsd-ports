@@ -1,0 +1,11 @@
+The start/stop script has been placed in $PREFIX/etc/rc.d/smc-milter.sh
+Configuration files has been placed in $PREFIX/etc/smc/
+
+Add this lines to your sendmail's .mc file:
+
+define(`confMILTER_MACROS_CONNECT', `{client_addr}')dnl
+INPUT_MAIL_FILTER(`SMC-milter', `S=local:/var/run/smc-milter.sock, F=T, T=C:30m;S:10m;R:10m;E:30m')dnl
+
+Then generate new sendmail.cf, install it, start smc-milter and finally
+restart sendmail.
+
