@@ -10,8 +10,6 @@ If use first, execute "wmaker.inst" and "wsetfont you_choosed_language".
 you_choosed_language is example "japanese", "korean", etc. More info about 
 wsetfont, see help of wsetfont.
 
-More Icons? Install wmicons package in graphics !!
-
 If you use with xdm, set your LANG enviroment variable in your .xsession. 
 
 Japanese notation: <URL:http://www.st.rim.or.jp/~mac/FreeBSD/wmaker/>.
