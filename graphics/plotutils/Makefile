@@ -18,6 +18,8 @@ GNU_CONFIGURE=	yes
 
 .ifdef HAVE_MOTIF
 CONFIGURE_ARGS=	--with-motif
+# to ensure dependency info is generated properly
+REQUIRES_MOTIF=	yes
 .endif
 
 post-install:
