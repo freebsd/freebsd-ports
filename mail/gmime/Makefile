@@ -6,22 +6,23 @@
 #
 
 PORTNAME=	gmime
-PORTVERSION=	0.6.0
+PORTVERSION=	1.0.7
 CATEGORIES=	mail
-MASTER_SITES=	http://bsltwr.dnsalias.org/ftp/pub/gmime/ \
-		http://spruce.sourceforge.net/gmime/sources/
+MASTER_SITES=	http://spruce.sourceforge.net/gmime/sources/
 
-MAINTAINER=	baskruit@bsltwr.dnsalias.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Library (written in C) for parsing and creating messages using MIME
 
+LIB_DEPENDS=	iconv.3:${PORTSDIR}/converters/libiconv
+
 USE_X_PREFIX=	YES
-GNU_CONFIGURE=  YES
+GNU_CONFIGURE=	YES
 USE_GMAKE=	YES
-USE_GTK=	YES
+USE_GNOME=	glib12
 USE_LIBTOOL=	YES
-CONFIGURE_ARGS+=--with-libiconv=${LOCALBASE}
+CONFIGURE_ARGS+=--with-libiconv-prefix=${LOCALBASE}
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LIBS="-L${LOCALBASE}/lib"
+		LDFLAGS="-L${LOCALBASE}/lib"
 CONFIGURE_TARGET=	--target=${MACHINE_ARCH}-unknown-freebsd${OSREL}
 
 INSTALLS_SHLIB=	YES
