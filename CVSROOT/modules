@@ -4967,6 +4967,7 @@ libvanessa_adt	ports/devel/libvanessa_adt
 libvanessa_logger	ports/devel/libvanessa_logger
 libvanessa_socket	ports/devel/libvanessa_socket
 libvc		ports/devel/libvc
+libvisual	ports/graphics/libvisual
 libvm68k	ports/emulators/libvm68k
 libvncserver	ports/net/libvncserver
 libvorbis	ports/audio/libvorbis
