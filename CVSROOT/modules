@@ -5593,6 +5593,7 @@ ocaml-yaxpo	ports/textproc/ocaml-yaxpo
 ocamlweb	ports/devel/ocamlweb
 ocrad		ports/graphics/ocrad
 octave		ports/math/octave
+ode		ports/devel/ode
 odsclient	ports/dns/odsclient
 offix-clipboard	ports/x11/offix-clipboard
 offix-editor	ports/editors/offix-editor
