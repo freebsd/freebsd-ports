@@ -8,8 +8,7 @@
 PORTNAME=	elfsh
 PORTVERSION=	0.51b2
 CATEGORIES=	devel
-MASTER_SITES=	http://elfsh.segfault.net/files/	\
-		http://www.kerneled.com/projects/elfsh/
+MASTER_SITES=	http://www.kerneled.com/freebsd/ports/
 DISTNAME=	elfsh-0.51b2-portable
 EXTRACT_SUFX=	.tgz
 
