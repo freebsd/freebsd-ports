@@ -26,10 +26,13 @@ lib/libmav_lwo.so
 lib/libmav_navigation.so
 lib/libmav_objects.so
 lib/libmav_sms.so
+lib/libmav_sr.so
+lib/libmav_sr-dummy.so
 lib/libmav_tdm.so
 lib/libmav_tr.so
 lib/libmav_vrad.so
 lib/libmav_vrml97.so
+lib/libmav_vrml97-dummy.so
 lib/libmav_windows.so
 lib/libmaverik.so
 lib/libmaverikNone.so
