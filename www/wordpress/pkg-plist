@@ -144,6 +144,7 @@
 %%WORDPRESS%%/wp-settings.php
 %%WORDPRESS%%/wp-trackback.php
 %%WORDPRESS%%/print.css
+%%WORDPRESS%%/xmlrpc.php
 %%WORDPRESS%%/license.txt
 %%WORDPRESS%%/readme.html
 @dirrm %%WORDPRESS%%/wp-admin

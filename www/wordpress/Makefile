@@ -6,9 +6,10 @@
 #
 
 PORTNAME=	wordpress
-PORTVERSION=	1.2.1
+PORTVERSION=	1.2.2
 CATEGORIES=	www
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
+		http://www.tobez.org/download/port-mirrors/www/wordpress/
 MASTER_SITE_SUBDIR=	cafelog
 
 MAINTAINER=	ports@FreeBSD.org
