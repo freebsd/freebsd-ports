@@ -1,1 +1,8 @@
 bin/gnomemeeting
+share/gnome/sounds/gnomemeeting/gnomemeeting.wav
+share/gnome/apps/Internet/gnomemeeting.desktop
+lib/locale/fr/LC_MESSAGES/gnomemeeting.mo
+pixmaps/gnomemeeting-logo-icon.png
+pixmaps/gnomemeeting-logo.png
+#humm, what do with /etc/sound/events/GnomeMeeting.soundlist
+
