@@ -1,0 +1,4 @@
+bin/ipa
+bin/ipastat
+etc/ipa.conf.default
+etc/rc.d/ipa.sh.sample
