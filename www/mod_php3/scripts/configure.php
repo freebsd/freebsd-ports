@@ -1,4 +1,5 @@
 #!/bin/sh
+# $FreeBSD$
 
 if [ "${BATCH}" ]; then
 	${MKDIR} ${WRKDIRPREFIX}${CURDIR}
@@ -76,6 +77,9 @@ while [ "$1" ]; do
 			echo "PHP_CONF_ARGS+=	--with-mcrypt=\${PREFIX}"
 			;;
 		\"mhash\")
+			echo "mhash is DISABLED for now. Ignoring." > /dev/stderr
+			;;
+		\"nothing\")
 			echo "LIB_DEPENDS+=	mhash.1:\${PORTSDIR}/security/mhash"
 			echo "PHP_CONF_ARGS+=	--with-mhash=\${PREFIX}"
 			;;
