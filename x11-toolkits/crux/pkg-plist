@@ -74,8 +74,32 @@ share/eazel-engine/tab_usel-bottom-left.png
 share/eazel-engine/tab_usel-bottom.png
 share/eazel-engine/tab_usel-left.png
 share/eazel-engine/tab_usel.png
+share/icons/Crux/12x12/filesystems/gnome-fs-directory.png
+share/icons/Crux/12x12/filesystems/gnome-fs-regular.png
+share/icons/Crux/192x192/filesystems/gnome-fs-directory.png
+share/icons/Crux/192x192/filesystems/gnome-fs-regular.png
+share/icons/Crux/20x20/filesystems/gnome-fs-directory.png
+share/icons/Crux/20x20/filesystems/gnome-fs-regular.png
+share/icons/Crux/24x24/filesystems/gnome-fs-directory.png
+share/icons/Crux/24x24/filesystems/gnome-fs-regular.png
+share/icons/Crux/36x36/filesystems/gnome-fs-directory.png
+share/icons/Crux/36x36/filesystems/gnome-fs-regular.png
+share/icons/Crux/48x48/emblems/emblem-nowrite.png
+share/icons/Crux/48x48/filesystems/gnome-fs-directory.icon
+share/icons/Crux/48x48/filesystems/gnome-fs-directory.png
+share/icons/Crux/48x48/filesystems/gnome-fs-regular.icon
+share/icons/Crux/48x48/filesystems/gnome-fs-regular.png
+share/icons/Crux/72x72/emblems/emblem-nowrite.png
+share/icons/Crux/72x72/filesystems/gnome-fs-directory.png
+share/icons/Crux/72x72/filesystems/gnome-fs-regular.png
+share/icons/Crux/96x96/emblems/emblem-nowrite.png
+share/icons/Crux/96x96/filesystems/gnome-fs-directory.png
+share/icons/Crux/96x96/filesystems/gnome-fs-regular.png
+share/icons/Crux/index.theme
 share/themes/Crux/README
 share/themes/Crux/gtk-2.0/gtkrc
+share/themes/Crux/index.theme
 @dirrm share/themes/Crux/gtk-2.0
+@dirrm share/icons/Crux
 @unexec /bin/rmdir %D/share/themes/Crux 2>/dev/null || /usr/bin/true
 @unexec /bin/rmdir %D/share/eazel-engine 2>/dev/null || /usr/bin/true
