@@ -12,6 +12,7 @@
     SUBDIR += OpenEXR
     SUBDIR += aalib
     SUBDIR += acidwarp
+    SUBDIR += ale
     SUBDIR += animabob
     SUBDIR += aoi
     SUBDIR += aqsis
