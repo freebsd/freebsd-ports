@@ -8,12 +8,16 @@
 PORTNAME=	mirror
 PORTVERSION=	2.9
 CATEGORIES=	ftp
-MASTER_SITES=	ftp://src.doc.ic.ac.uk/computing/archiving/mirror/
 
-PATCH_SITES=	http://sunsite.org.uk/packages/mirror/
+MASTER_SITES=	ftp://sunsite.org.uk/packages/mirror/ \
+		ftp://src.doc.ic.ac.uk/computing/archiving/mirror/ \
+		ftp://ftp.cs.columbia.edu/archives/perl/mirror/ \
+		ftp://giswitch.sggw.waw.pl/pub/unix/mirror/ \
+		ftp://SunSITE.sut.ac.jp/pub/archives/packages/mirror/
+PATCH_SITES=	${MASTER_SITES}
 PATCHFILES=	ftp.pl_wupatch
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	ryan@sasknow.com
 
 USE_PERL5=	yes
 NO_WRKSUBDIR=	yes
@@ -21,6 +25,6 @@ MAKEFILE=	makefile
 MAN1=		mirror.1 mirror-master.1
 
 pre-install:
-	${MKDIR} ${PREFIX}/lib/mirror
+	@${MKDIR} ${PREFIX}/lib/mirror
 
 .include <bsd.port.mk>
