@@ -1,0 +1,15 @@
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/SWF/File/.packlist
+bin/dumpswf.plx
+%%SITE_PERL%%/SWF/BinStream.pm
+%%SITE_PERL%%/SWF/BinStream/Codec.pod
+%%SITE_PERL%%/SWF/BinStream/Codec/Zlib.pm
+%%SITE_PERL%%/SWF/BinStream/File.pm
+%%SITE_PERL%%/SWF/Element.pm
+%%SITE_PERL%%/SWF/Element.pod
+%%SITE_PERL%%/SWF/File.pm
+%%SITE_PERL%%/SWF/Parser.pm
+@dirrm %%SITE_PERL%%/SWF/BinStream/Codec
+@dirrm %%SITE_PERL%%/SWF/BinStream
+@unexec rmdir %D/%%SITE_PERL%%/SWF 2>/dev/null || true
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/SWF/File
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/SWF 2>/dev/null || true
