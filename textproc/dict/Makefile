@@ -14,8 +14,8 @@ DISTNAME=	${PORTNAME}d-${PORTVERSION}
 
 MAINTAINER=	dd@FreeBSD.org
 
-USE_PERL5=	yes
 USE_BISON=	yes
+USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--without-local-zlib --with-cflags="${CFLAGS}" \
 		--with-etcdir=${PREFIX}/etc
@@ -25,6 +25,6 @@ INSTALL_TARGET=	install.dict
 MAN1=		dict.1
 
 post-patch:
-	${PERL} -pi.orig -e 's|/etc/|${PREFIX}/etc/|g' ${WRKSRC}/dict.1
+	${REINPLACE_CMD} -e 's|/etc/|${PREFIX}/etc/|g' ${WRKSRC}/dict.1
 
 .include <bsd.port.mk>
