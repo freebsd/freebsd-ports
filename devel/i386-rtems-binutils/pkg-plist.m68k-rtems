@@ -87,6 +87,8 @@ share/locale/sv/LC_MESSAGES/bfd.mo
 share/locale/sv/LC_MESSAGES/opcodes.mo
 share/locale/sv/LC_MESSAGES/binutils.mo
 share/locale/sv/LC_MESSAGES/ld.mo
+share/locale/da/LC_MESSAGES/bfd.mo
+share/locale/da/LC_MESSAGES/binutils.mo
 share/locale/da/LC_MESSAGES/opcodes.mo
 share/locale/de/LC_MESSAGES/opcodes.mo
 share/locale/id/LC_MESSAGES/opcodes.mo

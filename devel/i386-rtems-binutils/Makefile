@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	binutils
-PORTVERSION=	2.13
+PORTVERSION=	2.13.2.1
 PORTREVISION=	0
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_SOURCEWARE}
@@ -19,7 +19,7 @@ MAINTAINER=	jeh@FreeBSD.org
 
 LCLTARGET?=	i386-rtems
 
-BINNAME=	binutils-2.13
+BINNAME=	binutils-2.13.2.1
 MASTERDIR=	${.CURDIR}/../i386-rtems-binutils
 PLIST=		${PKGDIR}/pkg-plist.${LCLTARGET}
 
