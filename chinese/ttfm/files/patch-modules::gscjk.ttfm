@@ -1,0 +1,763 @@
+--- modules/gscjk.ttfm.orig	Sun Jun  2 03:40:13 2002
++++ modules/gscjk.ttfm	Sun Jun  2 03:39:59 2002
+@@ -0,0 +1,760 @@
++#!/bin/sh
++#
++# TTFM module for Ghostscript 6.51 with GS-CJK
++#
++# This script is distributed under the revised BSD license.
++#
++# For any problem reports or suggestions, please contact
++# Chung-Yen Chang <candyz@linux.org.tw>,
++# Anthony Fok <anthony@thizlinux.org>
++# or the original author Jing-Tang Keith Jang <keith@FreeBSD.org>.
++#
++
++# This script can handle both CID and TrueType fonts.
++
++# Name & version
++export NAME; NAME="Ghostscript 7.05 TTF Font Manager"
++export VERSION; VERSION=1.0
++
++# Global constants
++
++export PREFIX; PREFIX=/usr/local
++export TTFINFOPath; TTFINFOPath="${PREFIX}/bin/ttfinfo"
++export GS6Path; GS6Path="${PREFIX}/share/ghostscript"
++export GS6CJKPath; GS6CJKPath="${GS6Path}/Resource"
++export CJKCMapPath; CJKCMapPath="${GS6CJKPath}/CMap"
++export CJKFontPath; CJKFontPath="${GS6CJKPath}/Font"
++export CJKCIDPath; CJKCIDPath="${GS6CJKPath}/CIDFont"
++# Not used
++# export CJKTTFPath; CJKTTFPath="${GS6CJKPath}/TrueType"
++export GS6LibPath; GS6LibPath="${GS6Path}/7.05/lib"
++export DefaultMing_Name; DefaultMing_Name="DEFAULT-MING"
++export DefaultKai_Name; DefaultKai_Name="DEFAULT-KAI"
++export TEMPFILE; TEMPFILE="`mktemp /tmp/ttfm.tmpXXXXXX`"
++
++# Encoding/Ordering table, used to convert the output of ttfinfo(encoding)
++# to CID font's ordering property, and vice versa.  See guess_ttf_info()
++# below.
++#
++export eo_table; eo_table=\
++"Adobe CNS1,big5-0\n
++Adobe GB1,gb2312.1980-0\n
++Adobe Korea1,ksc5601.1987-0\n
++Adobe Japan1,jisx0208.1983-0\n
++Adobe Japan2,jisx0212.1990-0\n"
++
++# Postscript command to open TTFs, defined in gs_ttf.ps.
++# It needs gs_ttf.ps-cjkv-*.patch of http://www.aihara.co.jp/~taiji/tops/.
++export OpenTTFont; OpenTTFont=.openttcidfont
++
++# Who am I?
++print_name()
++{
++    echo "$NAME $VERSION"
++}
++
++
++# Usage
++Usage()
++{
++    echo
++    echo "$NAME $VERSION"
++    echo
++    echo "Usage: $NAME [option]"
++    echo
++    echo "       --check            check Ghostscript 7.05 settings"
++    echo "       --add <file>...                install CID font"
++    echo "       --add [alias=]<file>...        install TTF font"
++    echo "       --remove <file>... remove font from the system"
++    echo "       --list             list all fonts on the system"
++    echo "       --setdefault <file>"
++    echo "                          set default font to file"
++    echo "       --setdefault_kai <file>"
++    echo "                          set default \kai font to file"
++    echo "       --setdefault_ming <file>"
++    echo "                          set default \ming font to file"
++    echo "       --help             show this info"
++    echo
++}
++
++
++#
++# Check if CJK CMap files are correctly installed with Ghostscript 6.
++# Give a warning if Adobe CNS1/GB1/Identity/Japan1/Japan2/Korea1 is not found.
++#
++# We'll also check gs_res.ps & gs_ttf.ps.
++#
++check_gs6()
++{
++    if [ ! -x $TTFINFOPath ]; then
++        echo "ttfinfo not installed!"
++        exit 1
++    fi
++
++    if [ ! -d "${CJKCMapPath}" ]; then
++        echo "Error: You have no CMap files installed!"
++        exit 1
++    fi
++
++    # ac1
++    if [ -z "`grep -l "Adobe CNS1" ${CJKCMapPath}/*`" ]; then
++        echo "Warning: Adobe-CNS1-3 CMap files not installed!"
++    # ag1
++    elif [ -z "`grep -l "Adobe GB1" ${CJKCMapPath}/*`" ]; then
++        echo "Warning: Adobe-GB1-3 CMap files not installed!"
++    # aj1
++    elif [ -z "`grep -l "Adobe Japan1" ${CJKCMapPath}/*`" ]; then
++        echo "Warning: Adobe-Japan1-4 CMap files not installed!"
++    # aj2
++    elif [ -z "`grep -l "Adobe Japan2" ${CJKCMapPath}/*`" ]; then
++        echo "Warning: Adobe-Japan2-0 CMap files not installed!"
++    # ak1
++    elif [ -z "`grep -l "Adobe Korea1" ${CJKCMapPath}/*`" ]; then
++        echo "Warning: Adobe-Korea1-2 CMap files not installed!"
++    # I'm not sure if it's needed, so just a warning if not found.
++    elif [ -z "`grep -l "Adobe Identity" ${CJKCMapPath}/*`" ]; then
++        echo "Warning: Adobe Identity CMap files not installed!"
++    fi
++
++    # These two conditions are pretty weak. :-)
++    if [ -z "`grep -l "Taiji Yamada" ${GS6LibPath}/gs_ttf.ps`" ]; then
++        echo "Error: Your gs_ttf.ps is not patched."
++        echo "See http://www.aihara.co.jp/~taiji/tops/ for details."
++        exit 1
++    elif [ -n "`grep -l -e "/FontResourceDir (/Resource/Font/)\|/FontResourceDir (/Resource/Font/)" ${GS6LibPath}/gs_res.ps`" ]; then
++        echo "Error: Please modify FontResourceDir or FontResourceDir in gs_res.ps."
++        echo "See http://www.aihara.co.jp/~taiji/tops/ for details."
++        exit 1
++    fi
++
++    echo "No errors found."
++}
++
++
++# List all fonts installed in ${CJKFontPath}, cross-referenced with those
++# fonts installed in ${CJKCIDPath}.
++list_fonts()
++{
++    echo "Installed TTF fonts:"
++    for CIDFont in `ls ${CJKCIDPath}`; do
++        echo "${CIDFont}:"
++        cd ${CJKFontPath}; ls ${CIDFont}* 2>/dev/null
++        echo
++    done
++}
++
++
++# Remove fonts
++remove_fonts()
++{
++    for f in "$@"; do
++        targetname=`basename $f`
++
++        rm -f ${CJKCIDPath}/${targetname} ${CJKFontPath}/${targetname}*
++    done
++}
++
++
++#
++# guess_ttf_info <fontfile>, eg. guess_ttf_info bsmi00lp.ttf.
++#
++# Guess the alias of a ttf, and put it in $TTF_ALIAS.
++# Guess which index to use, and put it in $TTF_INDEX.
++# Guess which ordering a ttf should use, eg. "Adobe CNS1" for bsmi00lp.ttf.
++#    Then put the ordering in $TTF_ORDERING.
++#
++# Simply put, we guess everything. :-)
++#
++guess_ttf_info()
++{
++    targetname=$1
++
++    eval `$TTFINFOPath -c ${targetname}`
++    # Set fontname from the filename if it's unknown.
++    # I assume there's no ttf filename like "-----.ttf".
++    unset HKSCS
++    ( echo $TTFINFO_FONT_NAME | grep -qi HKSCS ) && export HKSCS=1
++    if [ "$TTFINFO_FONT_NAME" = "unknown" ]; then
++        TTFINFO_FONT_NAME=`basename $targetname |cut -d "." -f 1 |sed -e "s/-//g"`
++    fi
++
++    # Extract slant/property/encoding, then install.
++    MAPNUM=1
++    while [ $MAPNUM -le $TTFINFO_MAPNUM ]; do
++        eval TTFINFO_FONTMAP=\$TTFINFO_FONTMAP${MAPNUM}
++        fontweight=`echo $TTFINFO_FONTMAP |cut -d "-" -f 4`
++        fontslant=`echo $TTFINFO_FONTMAP |cut -d "-" -f 5`
++        encoding1=`echo $TTFINFO_FONTMAP |cut -d "-" -f 14`
++        encoding2=`echo $TTFINFO_FONTMAP |cut -d "-" -f 15`
++        fontencoding=${encoding1}-${encoding2}
++
++        if [ -n "`echo ${fontencoding} |grep -i -e "big5\|cns\|gb\|ksc\|jis"`" ]; then
++            break
++        fi
++
++        MAPNUM=`expr $MAPNUM + 1`
++    done
++
++    if [ -z "`echo ${fontencoding} |grep -i -e "big5\|cns\|gb\|ksc\|jis"`" ]; then
++        echo "${targetname}" is not a CJK TTF!
++        exit 1
++    fi
++
++    # The first characters of foundry & font names should be uppercase.
++    i=`echo "$TTFINFO_FOUNDRY_NAME" |cut -b 1`
++    j=`echo $i |tr [:lower:] [:upper:]`
++    TTFINFO_FOUNDRY_NAME=`echo $TTFINFO_FOUNDRY_NAME |sed -e "s/^$i/$j/"`
++    i=`echo "$TTFINFO_FONT_NAME" |cut -b 1`
++    j=`echo $i |tr [:lower:] [:upper:]`
++    TTFINFO_FONT_NAME=`echo $TTFINFO_FONT_NAME |sed -e "s/^$i/$j/"`
++
++    # Alias property.  The first two are in favor of Chinese TTFs.
++    # We'll also strip any spaces in foundry and font names.
++    TTFINFO_FOUNDRY_NAME="`echo $TTFINFO_FOUNDRY_NAME |sed -e "s/ //g"`"
++#    if [ -n "`echo ${fontencoding} |grep -i "big5"`" ]; then
++#        if [ -z "`echo $TTFINFO_FONT_NAME |grep " "`" ]; then
++#            TTF_ALIAS="${TTFINFO_FOUNDRY_NAME}${TTFINFO_FONT_NAME}B5"
++#        # The following two are hacks, in favor of Arphic TTF.
++#        elif [ -n "`echo $TTFINFO_FONT_NAME |grep -i -e "kai"`" ]; then
++#            TTF_ALIAS="${TTFINFO_FOUNDRY_NAME}KaiB5"
++#        elif [ -n "`echo $TTFINFO_FONT_NAME |grep -i -e "ming"`" ]; then
++#            TTF_ALIAS="${TTFINFO_FOUNDRY_NAME}MingB5"
++#        else
++#            TTF_ALIAS="${TTFINFO_FOUNDRY_NAME}`echo $TTFINFO_FONT_NAME |sed -e "s/ //g"`B5"
++#        fi
++#    elif [ -n "`echo ${fontencoding} |grep -i "gb"`" ]; then
++#        if [ -z "`echo $TTFINFO_FONT_NAME |grep " "`" ]; then
++#            TTF_ALIAS="${TTFINFO_FOUNDRY_NAME}${TTFINFO_FONT_NAME}GB"
++#        # The following two are hacks, in favor of Arphic TTF.
++#        elif [ -n "`echo $TTFINFO_FONT_NAME |grep -i -e "kai"`" ]; then
++#            TTF_ALIAS="${TTFINFO_FOUNDRY_NAME}KaiGB"
++#        elif [ -n "`echo $TTFINFO_FONT_NAME |grep -i -e "ming"`" ]; then
++#            TTF_ALIAS="${TTFINFO_FOUNDRY_NAME}MingGB"
++#        else
++#            TTF_ALIAS="${TTFINFO_FOUNDRY_NAME}`echo $TTFINFO_FONT_NAME |sed -e "s/ //g"`GB"
++#        fi
++#    else
++#        TTF_ALIAS=${TTFINFO_FOUNDRY_NAME}"`echo $TTFINFO_FONT_NAME |sed -e "s/ //g"`"
++#    fi
++    TTF_ALIAS=$TTFINFO_FONT_PSNAME
++
++#    case "$fontweight" in
++#    'bold')
++#        TTF_ALIAS="${TTF_ALIAS}-Bold"
++#    ;;
++#    *)
++#        TTF_ALIAS="${TTF_ALIAS}-Regular"
++#    ;;
++#    esac
++
++    # Index
++    TTF_INDEX=$MAPNUM
++    # Ordering property
++    TTF_ORDERING="`printf "$eo_table" |awk -F "," -v i=$fontencoding '{encoding[$2]=$1} END {print encoding[i]}'`"
++}
++
++
++#
++# install_ttf <alias> <filename>[,ttf_index] eg.
++# install_ttf Arphic-MingB5 /usr/share/fonts/ttf/bsmi00lp.ttf,1.
++#
++# Write CID info file of a TTF, so it can be used as a CID font afterwards.
++# Currently we'll always call install_ttf() with ttf_index.
++#
++install_ttf()
++{
++    alias=$1
++    filename=$2
++
++    TTE=""
++    case "$alias" in
++    *-Adobe-*[0-9])
++        TTE=' /'`echo "$alias" |sed -n -e "s/^.*-\(Adobe-.*[0-9]\)$/\1/p"`"-Unicode"
++    ;;
++    *,Adobe-*[0-9]-*)
++        TTE=' /'`echo "$alias" |sed -n -e "s/^\(.*\),\(Adobe-.*[0-9]-.*\)$/\2/p"`
++        alias=`echo "$alias" |sed -n -e "s/^\(.*\),\(Adobe-.*[0-9]-.*\)$/\1/p"`
++    ;;
++    esac
++
++    case "$filename" in
++    *.[Tt][Tt][CcFf],[0-9])
++        TTF=`echo "$filename" |sed -n -e "s/^\(.*\),\([0-9]\)$/\1/p"`
++        TTI=`echo "$filename" |sed -n -e "s/^\(.*\),\([0-9]\)$/\2/p"`
++	# Regular font
++        [ "$HKSCS" = "1" -o ! -f "$CJKCIDPath/$alias" ] && cat <<EOF > "$CJKCIDPath/$alias" && echo "+$alias=$TTF"
++%!PS-Adobe-3.0 Resource-CIDFont
++%%BeginResource: CIDFont ($FNN)
++/$alias
++($TTF) $TTI$TTE $OpenTTFont
++dup length dict begin {def} forall currentdict end
++/CIDFont defineresource pop
++%%EndResource
++%%EOF
++EOF
++	# Bold font
++        [ "$HKSCS" = "1" -o ! -f "$CJKCIDPath/$alias-Bold" ] && cat <<EOF > "$CJKCIDPath/$alias-Bold" && echo "+$alias=$TTF-Bold"
++%!PS-Adobe-3.0 Resource-CIDFont
++%%BeginResource: CIDFont ($FNN-Bold)
++/$alias-Bold
++/$alias /CIDFont findresource
++16 dict begin
++  /basecidfont exch def
++  /basefont-H /.basefont-H /Identity-H [ basecidfont ] composefont def
++  /basefont-V /.basefont-V /Identity-V [ basecidfont ] composefont def
++  /CIDFontName dup basecidfont exch get def
++  /CIDFontType 1 def
++  /CIDSystemInfo dup basecidfont exch get def
++  /FontInfo dup basecidfont exch get def
++  /FontMatrix [ 1 0 0 1 0 0 ] def
++  /FontBBox [
++    basecidfont /FontBBox get cvx exec
++    4 2 roll basecidfont /FontMatrix get transform
++    4 2 roll basecidfont /FontMatrix get transform
++  ] def
++  /cid 2 string def
++  /BuildGlyph {
++    gsave
++    exch begin
++      dup 256 idiv cid exch 0 exch put
++      256 mod cid exch 1 exch put
++      rootfont /WMode known { rootfont /WMode get 1 eq } { false } ifelse
++      { basefont-V } { basefont-H } ifelse setfont
++      .03 setlinewidth 1 setlinejoin
++      newpath
++      0 0 moveto cid false charpath stroke
++      0 0 moveto cid show
++      currentpoint setcharwidth
++    end
++    grestore
++  } bind def
++  currentdict
++end
++/CIDFont defineresource pop
++%%EndResource
++%%EOF
++EOF
++	# Italic font
++        [ "$HKSCS" = "1" -o ! -f "$CJKCIDPath/$alias-Italic" ] && cat <<EOF > "$CJKCIDPath/$alias-Italic" && echo "+$alias=$TTF-Italic"
++%!PS-Adobe-3.0 Resource-CIDFont
++%%BeginResource: CIDFont ($FNN-Italic)
++/$alias-Italic
++/$alias /CIDFont findresource
++dup length dict begin { 1 index /FontMatrix eq { [1 0 .3 1 0 0] matrix concatmatrix def } { def } ifelse } forall currentdict end
++/CIDFont defineresource pop
++%%EndResource
++%%EOF
++EOF
++	# BoldItalic font
++        [ "$HKSCS" = "1" -o ! -f "$CJKCIDPath/$alias-BoldItalic" ] && cat <<EOF > "$CJKCIDPath/$alias-BoldItalic" && echo "+$alias=$TTF-BoldItalic"
++%!PS-Adobe-3.0 Resource-CIDFont
++%%BeginResource: CIDFont ($FNN-BoldItalic)
++/$alias-BoldItalic
++/$alias /CIDFont findresource
++16 dict begin
++  /basecidfont exch def
++  /basefont-H /.basefont-H /Identity-H [ basecidfont ] composefont def
++  /basefont-V /.basefont-V /Identity-V [ basecidfont ] composefont def
++  /CIDFontName dup basecidfont exch get def
++  /CIDFontType 1 def
++  /CIDSystemInfo dup basecidfont exch get def
++  /FontInfo dup basecidfont exch get def
++  /FontMatrix [ 1 0 0 1 0 0 ] def
++  /FontBBox [
++    basecidfont /FontBBox get cvx exec
++    4 2 roll basecidfont /FontMatrix get transform
++    4 2 roll basecidfont /FontMatrix get transform
++  ] def
++  /cid 2 string def
++  /BuildGlyph {
++    gsave
++    exch begin
++      dup 256 idiv cid exch 0 exch put
++      256 mod cid exch 1 exch put
++      rootfont /WMode known { rootfont /WMode get 1 eq } { false } ifelse
++      { basefont-V } { basefont-H } ifelse setfont
++      .03 setlinewidth 1 setlinejoin
++      newpath
++      0 0 moveto cid false charpath stroke
++      0 0 moveto cid show
++      currentpoint setcharwidth
++    end
++    grestore
++  } bind def
++  currentdict
++end
++dup length dict begin { 1 index /FontMatrix eq { [1 0 .3 1 0 0] matrix concatmatrix def } { def } ifelse } forall currentdict end
++/CIDFont defineresource pop
++%%EndResource
++%%EOF
++EOF
++    ;;
++    *.[Tt][Tt][CcFf])
++        TTF="$filename"
++	# Regular Font
++        [ "$HKSCS" = "1" -o ! -f "$CJKCIDPath/$alias" ] && cat <<EOF > "$CJKCIDPath/$alias" && echo "+$alias=$TTF"
++%!PS-Adobe-3.0 Resource-CIDFont
++%%BeginResource: CIDFont ($FNN)
++/$alias
++($TTF)$TTE $OpenTTFont
++dup length dict begin {def} forall currentdict end
++/CIDFont defineresource pop
++%%EndResource
++%%EOF
++EOF
++	# Bold Font
++        [ "$HKSCS" = "1" -o ! -f "$CJKCIDPath/$alias-Bold" ] && cat <<EOF > "$CJKCIDPath/$alias-Bold" && echo "+$alias=$TTF-Bold"
++%!PS-Adobe-3.0 Resource-CIDFont
++%%BeginResource: CIDFont ($FNN-Bold)
++/$alias-Bold
++/$alias /CIDFont findresource
++16 dict begin
++  /basecidfont exch def
++  /basefont-H /.basefont-H /Identity-H [ basecidfont ] composefont def
++  /basefont-V /.basefont-V /Identity-V [ basecidfont ] composefont def
++  /CIDFontName dup basecidfont exch get def
++  /CIDFontType 1 def
++  /CIDSystemInfo dup basecidfont exch get def
++  /FontInfo dup basecidfont exch get def
++  /FontMatrix [ 1 0 0 1 0 0 ] def
++  /FontBBox [
++    basecidfont /FontBBox get cvx exec
++    4 2 roll basecidfont /FontMatrix get transform
++    4 2 roll basecidfont /FontMatrix get transform
++  ] def
++  /cid 2 string def
++  /BuildGlyph {
++    gsave
++    exch begin
++      dup 256 idiv cid exch 0 exch put
++      256 mod cid exch 1 exch put
++      rootfont /WMode known { rootfont /WMode get 1 eq } { false } ifelse
++      { basefont-V } { basefont-H } ifelse setfont
++      .03 setlinewidth 1 setlinejoin
++      newpath
++      0 0 moveto cid false charpath stroke
++      0 0 moveto cid show
++      currentpoint setcharwidth
++    end
++    grestore
++  } bind def
++  currentdict
++end
++/CIDFont defineresource pop
++%%EndResource
++%%EOF
++EOF
++	# Italic Font
++        [ "$HKSCS" = "1" -o ! -f "$CJKCIDPath/$alias-Italic" ] && cat <<EOF > "$CJKCIDPath/$alias-Italic" && echo "+$alias=$TTF-Italic"
++%!PS-Adobe-3.0 Resource-CIDFont
++%%BeginResource: CIDFont ($FNN-Italic)
++/$alias-Italic
++/$alias /CIDFont findresource
++dup length dict begin { 1 index /FontMatrix eq { [1 0 .3 1 0 0] matrix concatmat
++rix def } { def } ifelse } forall currentdict end
++/CIDFont defineresource pop
++%%EndResource
++%%EOF
++EOF
++	# BoldItalic Font
++        [ "$HKSCS" = "1" -o ! -f "$CJKCIDPath/$alias-BoldItalic" ] && cat <<EOF > "$CJKCIDPath/$alias-BoldItalic" && echo "+$alias=$TTF-BoldItalic"
++%!PS-Adobe-3.0 Resource-CIDFont
++%%BeginResource: CIDFont ($FNN-BoldItalic)
++/$alias-BoldItalic
++/$alias /CIDFont findresource
++16 dict begin
++  /basecidfont exch def
++  /basefont-H /.basefont-H /Identity-H [ basecidfont ] composefont def
++  /basefont-V /.basefont-V /Identity-V [ basecidfont ] composefont def
++  /CIDFontName dup basecidfont exch get def
++  /CIDFontType 1 def
++  /CIDSystemInfo dup basecidfont exch get def
++  /FontInfo dup basecidfont exch get def
++  /FontMatrix [ 1 0 0 1 0 0 ] def
++  /FontBBox [
++    basecidfont /FontBBox get cvx exec
++    4 2 roll basecidfont /FontMatrix get transform
++    4 2 roll basecidfont /FontMatrix get transform
++  ] def
++  /cid 2 string def
++  /BuildGlyph {
++    gsave
++    exch begin
++      dup 256 idiv cid exch 0 exch put
++      256 mod cid exch 1 exch put
++      rootfont /WMode known { rootfont /WMode get 1 eq } { false } ifelse
++      { basefont-V } { basefont-H } ifelse setfont
++      .03 setlinewidth 1 setlinejoin
++      newpath
++      0 0 moveto cid false charpath stroke
++      0 0 moveto cid show
++      currentpoint setcharwidth
++    end
++    grestore
++  } bind def
++  currentdict
++end
++dup length dict begin { 1 index /FontMatrix eq { [1 0 .3 1 0 0] matrix concatmat
++rix def } { def } ifelse } forall currentdict end
++/CIDFont defineresource pop
++%%EndResource
++%%EOF
++EOF
++    ;;
++    *)
++        [ "$HKSCS" = "1" -o ! -f "$CJKCIDPath/$alias" ] && cat <<EOF > "$CJKCIDPath/$alias" && echo "+$alias=$filename"
++%!PS-Adobe-3.0 Resource-CIDFont
++%%BeginResource: CIDFont ($FNN)
++/$alias
++/$filename /CIDFont findresource
++dup length dict begin {def} forall currentdict end
++/CIDFont defineresource pop
++%%EndResource
++%%EOF
++EOF
++    ;;
++    esac
++}
++
++
++#
++# install_cid <ordering> <fontname>, eg.
++# install_cid "Adobe CNS1" MOESung-Regular.
++#
++# Write all CID-related font files.  It can be used to install TTF once
++# the CID info file of TTF is available.
++#
++install_cid()
++{
++    CID_ordering=$1
++    fontname=$2
++    CMaps=`cd $CJKCMapPath; grep -l -e "$CID_ordering\|Adobe Identity" *`
++
++    for cmap in $CMaps; do
++        if [ $cmap = 'Roman' -o $cmap = 'Katakana' -o $cmap = 'Hiragana' -o $cmap = 'Hankaku' ]; then
++            to='.'
++        else
++            to='-'
++        fi
++	for style in '' '-Bold' '-Italic' '-BoldItalic'; do
++	  [ "$HKSCS" = "1" -o ! -f "$CJKFontPath/$fontname$style$to$cmap" ] && cat <<EOF > "$CJKFontPath/$fontname$style$to$cmap" && echo "+$fontname$style$to$cmap"
++%!PS-Adobe-3.0 Resource-Font
++%%DocumentNeededResources: $cmap (CMap)
++%%IncludeResource: $cmap (CMap)
++%%BeginResource: Font ($fontname$style$to$cmap)
++/$fontname$style$to$cmap
++/$cmap /CMap findresource
++[/$fontname$style /CIDFont findresource]
++composefont pop
++%%EndResource
++%%EOF
++EOF
++	done
++    done
++}
++
++
++#
++# Add fonts
++#
++add_fonts()
++{
++    ALIASES=$*
++    for alias in $ALIASES; do
++        case "$alias" in
++        ?*=?*)    # We have alias & font filename.
++            FNN="`echo "$alias" |sed -n -e 's/^\(.*\)=\(.*\)$/\1/p'`"
++            fnn="`echo "$alias" |sed -n -e 's/^\(.*\)=\(.*\)$/\2/p'`"
++            if [ ! -f "$fnn" ]; then
++                echo "$fnn not found!"
++            fi
++            guess_ttf_info "$fnn"
++            TTF_ALIAS="$FNN"
++            install_ttf "$FNN" "$fnn",$TTF_INDEX
++            install_cid "$TTF_ORDERING" "$fnn"
++        ;;
++        ?*.[Tt][Tt][CcFf])    # We have to make up an alias.
++            if [ ! -f "$alias" ]; then
++                echo "$alias not found!"
++            fi
++            guess_ttf_info "$alias"
++	    FNN=$TTF_ALIAS
++            install_ttf $TTF_ALIAS "$alias",$TTF_INDEX
++            install_cid "$TTF_ORDERING" $TTF_ALIAS
++        ;;
++        *)    # CID font
++            if [ ! -f "$alias" ]; then
++                echo "$alias not found!"
++            fi
++            if [ ! -f "$CJKCIDPath/`basename $alias`" ]; then
++                ln -s "$alias" "$CJKCIDPath"
++            fi
++            cid_registry=`head -10 "$alias" |grep ^%%Title |cut -d " " -f 3`
++            cid_ordering=`head -10 "$alias" |grep ^%%Title |cut -d " " -f 4`
++            install_cid "$cid_registry $cid_ordering" "`basename "$alias"`"
++        ;;
++        esac
++    done
++}
++
++
++#
++# setdefault <face> <fontfile>, eg.
++# setdefault ming /usr/share/fonts/ttf/bsmi00lp.ttf.
++#
++# Set default font, accept kai or ming(default) only, all others will be
++# treated as ming.
++#
++# All aliases will be set to "Default<face><encoding>-<weight>", like
++# DefaultMingB5-Regular, or DefaultKaiGB-Regular.
++#
++# Currently we can't assign a CID font as default Kai/Ming.  This is
++# because CID font has "/FontName" hard-coded.  I'm not sure if there
++# are any safe ways to substitute this.
++#
++setdefault()
++{
++    face=$1
++    if [ "$face" != "Ming" -a "$face" != "Kai" ]; then
++        face="Ming"
++    fi
++    fontfile=$2
++    if [ -n "`echo "$fontfile" |grep '='`" ]; then    # Ignore alias
++        fontfile="`echo "$fontfile" |sed -n -e 's/^\(.*\)=\(.*\)$/\2/p'`"
++    fi
++    if [ ! -f "$fontfile" ]; then
++        echo "$fontfile not found!"
++    fi
++
++    case "$fontfile" in
++    *.[Tt][Tt][CcFf])
++        guess_ttf_info "$fontfile"
++
++        case "$TTF_ORDERING" in
++        "Adobe CNS1")
++            TTF_ALIAS="Default${face}B5-`echo $TTF_ALIAS |cut -d '-' -f 2`"
++        ;;
++        "Adobe GB1")
++            TTF_ALIAS="Default${face}GB-`echo $TTF_ALIAS |cut -d '-' -f 2`"
++        ;;
++        *)
++            TTF_ALIAS="Default${face}-`echo $TTF_ALIAS |cut -d '-' -f 2`"
++        ;;
++        esac
++
++        install_ttf "$TTF_ALIAS" "$fontfile",$TTF_INDEX
++        install_cid "$TTF_ORDERING" "$TTF_ALIAS"
++    ;;
++    *)    # CID font.  Give a message and exit.
++        echo "CID fonts can't be used as default fonts."
++        echo "Please use TTF instead."
++        exit 1
++    ;;
++    esac
++}
++
++
++#
++# main program
++#
++
++if [ $# -lt 1 ]; then
++    Usage
++    exit 1
++fi
++
++ARG=$1
++shift 1
++
++case $ARG in
++--help)
++    Usage
++    ;;
++--name)
++    echo
++    echo "$NAME $VERSION"
++    echo
++    ;;
++--list)
++    list_fonts
++    ;;
++--check)
++    check_gs6
++    ;;
++--add)
++    if [ $# -lt 1 ]; then
++        echo "Missing font filename argument!"
++        Usage
++        exit 1
++    fi
++    add_fonts $@
++    echo "Done!"
++    ;;
++--remove)
++    if [ $# -lt 1 ]; then
++        echo "Missing font filename argument!"
++        Usage
++        exit 1
++    fi
++    remove_fonts $@
++    echo "Done!"
++    ;;
++--setdefault|--setdefault_ming)
++    if [ $# -lt 1 ]; then
++        echo "Missing font filename arguments!"
++        Usage
++        exit 1
++    elif [ $# -gt 1 ]; then
++        echo "Only need one font filename!"
++        Usage
++        exit 1
++    fi
++    setdefault "Ming" $1
++    echo "Done!"
++    ;;
++--setdefault_kai)
++    if [ $# -lt 1 ]; then
++        echo "Missing font filename arguments!"
++        Usage
++        exit 1
++    elif [ $# -gt 1 ]; then
++        echo "Only need one font filename!"
++        Usage
++        exit 1
++    fi
++    setdefault "Kai" $1
++    echo "Done!"
++    ;;
++*)
++    Usage
++    exit 1
++    ;;
++esac
++
++rm -f $TEMPFILE
++exit 0
++
++
++# ChangeLog
++#
++# * Sat Oct 18 2001 Chung-Yen Chang <candyz@linux.org.tw>
++# - add Italic fonts support
++#
++# * Tue Sep  4 2001 Anthony Fok <anthony@thizlinux.com>
++# - Use original PostScript font names instead of making them up  :-)
++# - Added poorman's Bold font.  Still needs to work on Italic.
++# - Gives HKSCS priority, e.g. kai00m.ttf (Big5&HKSCS) and bkai00mp.ttf
++#   are both ZenKai-Medium; kai00m.ttf takes precedence.
++#
++# * Sat Dec 9 2000 Chung-Yen Chang <candyz@cle.linux.org.tw>
++# - Modified for Red Hat Linux 
++#
++# $Log: gscjk.ttfm,v $
++# Revision 1.1  2001/12/14 15:21:26  candyz
++# add ttfm.sh.1 gscjk.ttfm
++#
++# Revision 1.1  2000/11/23 04:32:57  Keith
++# Log entry was added.
++#
++# * Thu Nov 23 2000 Jing-Tang Keith Jang <keith@FreeBSD.org>
++# - Initial version.

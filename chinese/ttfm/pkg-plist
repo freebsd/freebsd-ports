@@ -4,7 +4,8 @@ share/doc/ttfm/README
 share/doc/ttfm/USAGE
 share/ttfm/abiword.ttfm
 share/ttfm/chitex.ttfm.nop
-share/ttfm/ghostscript6.ttfm
+share/ttfm/ghostscript6.ttfm.nop
+share/ttfm/gscjk.ttfm
 share/ttfm/ttf2pk.ttfm.nop
 share/ttfm/xttfm-tcl.ttfm.nop
 share/ttfm/xfreetype.ttfm
