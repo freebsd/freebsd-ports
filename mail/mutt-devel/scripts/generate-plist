@@ -21,7 +21,9 @@ echo_signal() {
 PATH=/bin:/usr/bin
 
 cat > $tmp_first <<EOF
+bin/flea
 bin/mutt
+bin/muttbug
 bin/mutt_dotlock
 bin/pgpewrap
 bin/pgpring
@@ -131,7 +133,7 @@ EOF
   fi
 
   if [ "$MUTT_HTML" = "yes" ]; then
-    html=372
+    html=380
     if [ "$MUTT_COMPRESSED_FOLDERS" = "yes" ]; then
       html=$(($html + 5))
     fi
@@ -144,8 +146,11 @@ EOF
     if [ "$MUTT_EDIT_THREADS" = "yes" ]; then
       html=$(($html + 3))
     fi
+    if [ "$MUTT_IMAP_HEADER_CACHE" = "yes" ]; then
+      html=$(($html + 2))
+    fi
     if [ "$MUTT_MAILDIR_HEADER_CACHE" = "yes" ]; then
-      html=$(($html + 3))
+      html=$(($html + 1))
     fi
     if [ "$MUTT_SIDEBAR_PATCH" = "yes" ]; then
       html=$(($html + 2))
@@ -155,9 +160,6 @@ EOF
     fi
     if [ "$MUTT_IFDEF_PATCH" = "yes" ]; then
       html=$(($html + 1))
-    fi
-    if [ "$MUTT_PGP_PATCH" = "yes" ]; then
-      html=$(($html + 3))
     fi
     if [ "$MUTT_SLAVE_HTML_PAGES" != "" ]; then
       html=$(($html + $MUTT_SLAVE_HTML_PAGES))

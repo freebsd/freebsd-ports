@@ -1,0 +1,10 @@
+--- Makefile.am.orig	Fri Feb  4 18:12:14 2005
++++ Makefile.am	Fri Feb  4 18:17:17 2005
+@@ -195,6 +195,7 @@
+ 		$(srcdir)/init.h | ./makedoc -c | cat Muttrc.head - > Muttrc
+ 	touch stamp-doc-rc
+ 
++mutt_SOURCES += sidebar.c
+ 
+ .PHONY: commit pclean check-security commit-real commit-changelog
+ .PHONY: changelog ChangeLog

@@ -1,10 +1,10 @@
---- muttlib.c.orig	Thu Apr 22 14:43:58 2004
-+++ muttlib.c	Thu Apr 22 14:51:01 2004
-@@ -657,7 +657,11 @@
+--- muttlib.c.orig	Fri Feb  4 08:09:25 2005
++++ muttlib.c	Fri Feb  4 08:13:37 2005
+@@ -664,7 +664,11 @@
  
  void _mutt_mktemp (char *s, const char *src, int line)
  {
--  snprintf (s, _POSIX_PATH_MAX, "%s/mutt-%s-%d-%d", NONULL (Tempdir), NONULL(Hostname), (int) getpid (), Counter++);
+-  snprintf (s, _POSIX_PATH_MAX, "%s/mutt-%s-%d-%d-%d", NONULL (Tempdir), NONULL(Hostname), (int) getuid(), (int) getpid (), Counter++);
 +  char t[7];
 +  snprintf (t, 7, "-%05d", Counter++);
 +  snprintf (s, _POSIX_PATH_MAX-6, "%s/mutt-%s-XXXXXXXX", NONULL(Tempdir), NONULL(Hostname));

@@ -1,0 +1,11 @@
+--- configure.old	Fri Jan 28 11:01:06 2005
++++ configure	Fri Feb  4 09:18:42 2005
+@@ -12642,7 +12642,7 @@
+                 bdbpfx="$bdbpfx $d/$v"
+             done
+         done
+-        BDB_VERSIONS="db-4 db4 db-4.3 db4.3 db43 db-4.2 db4.2 db42 db-4.1 db4.1 db41 db ''"
++        BDB_VERSIONS="db-4.2 db4.2 db42 ''"
+         echo "$as_me:$LINENO: checking for BerkeleyDB > 4.0" >&5
+ echo $ECHO_N "checking for BerkeleyDB > 4.0... $ECHO_C" >&6
+         for d in $bdbpfx; do

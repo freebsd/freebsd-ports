@@ -1,5 +1,5 @@
---- doc/manual.sgml.head.orig	Sun Feb  1 18:49:53 2004
-+++ doc/manual.sgml.head	Wed Aug 25 14:02:33 2004
+--- doc/manual.sgml.head.orig	Sat Jan 15 10:42:44 2005
++++ doc/manual.sgml.head	Fri Feb  4 08:05:59 2005
 @@ -125,24 +125,24 @@
  <tscreen><verb>
  ^A or <Home>    bol             move to the start of the line
@@ -60,16 +60,16 @@
  i       ispell                  check spelling (if available on your system)
  ^F      forget-passphrase       wipe passphrase(s) from memory
  </verb></tscreen>
-@@ -1760,7 +1760,7 @@
- ~g              cryptographically signed messages
+@@ -1876,7 +1876,7 @@
  ~G              cryptographically encrypted messages
+ ~H EXPR         messages with a spam attribute matching EXPR
  ~h EXPR         messages which contain EXPR in the message header
 -~k		message contains PGP key material
 +~k              message contains PGP key material
  ~i ID           message which match ID in the ``Message-ID'' field
  ~L EXPR         message is either originated or received by EXPR
  ~l              message is addressed to a known mailing list
-@@ -1778,12 +1778,12 @@
+@@ -1894,13 +1894,13 @@
  ~T              tagged messages
  ~t USER         messages addressed to USER
  ~U              unread messages
@@ -81,11 +81,13 @@
  ~y EXPR         messages which contain EXPR in the `X-Label' field
  ~z [MIN]-[MAX]  messages with a size in the range MIN to MAX *)
 -~=		duplicated messages (see $duplicate_threads)
+-~$		unreferenced messages (requires threaded view)
 +~=              duplicated messages (see $duplicate_threads)
++~$              unreferenced messages (requires threaded view)
  </verb></tscreen>
  
  Where EXPR, USER, ID, and SUBJECT are 
-@@ -1885,10 +1885,10 @@
+@@ -2003,10 +2003,10 @@
  An error margin is a sign (+ or -), followed by a digit, followed by
  one of the following units:
  <verb>
@@ -100,7 +102,7 @@
  </verb>
  As a special case, you can replace the sign by a ``*'' character,
  which is equivalent to giving identical plus and minus error margins.
-@@ -2919,7 +2919,7 @@
+@@ -3044,7 +3044,7 @@
  to send messages from the command line as well.
  
  <tscreen><verb>

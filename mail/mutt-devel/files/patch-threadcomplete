@@ -4,12 +4,12 @@ diff -Nru a/PATCHES b/PATCHES
 @@ -0,0 +1 @@
 +patch-1.5.6+20040904.tg.mutt-thread.3
 diff -Nru a/doc/manual.sgml.head b/doc/manual.sgml.head
---- doc/manual.sgml.head	2004-07-24 12:27:29 +02:00
-+++ doc/manual.sgml.head	2004-09-04 12:40:02 +02:00
-@@ -1809,6 +1809,8 @@
- ~y EXPR         messages which contain EXPR in the `X-Label' field
+--- doc/manual.sgml.head.orig	Fri Feb  4 08:15:50 2005
++++ doc/manual.sgml.head	Fri Feb  4 08:19:51 2005
+@@ -1903,6 +1903,8 @@
  ~z [MIN]-[MAX]  messages with a size in the range MIN to MAX *)
  ~=              duplicated messages (see $duplicate_threads)
+ ~$              unreferenced messages (requires threaded view)
 +~(PATTERN)      messages in threads containing messages matching a certain
 +                pattern, e.g. all threads containing messages from you: ~(~P)
  </verb></tscreen>

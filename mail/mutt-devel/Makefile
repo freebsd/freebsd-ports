@@ -47,17 +47,16 @@
 #  WITH_MUTT_QUOTE_PATCH
 #  This is a default knob and can be disabled by WITHOUT_MUTT_QUOTE_PATCH
 #
-# If you want to have the Maildir/IMAP header cache define:
+# If you want to have the IMAP header cache define:
+#  WITH_MUTT_IMAP_HEADER_CACHE
+#
+# If you want to have the Maildir and the IMAP header cache define:
 #  WITH_MUTT_MAILDIR_HEADER_CACHE
 #
 # If you want to make SMIME outlook compatible define:
 #  WITH_MUTT_SMIME_OUTLOOK_COMPAT
 #  This is a default knob and can be disabled by
 #    WITHOUT_MUTT_SMIME_OUTLOOK_COMPAT
-#
-# If you want to use enhanced pgp features define:
-#  WITH_MUTT_PGP_PATCH
-#  This is a default knob and can be disabled by WITHOUT_MUTT_PGP_PATCH
 #
 # If you want to read and post news with mutt define:
 #  WITH_MUTT_NNTP
@@ -93,8 +92,8 @@
 #
 
 PORTNAME=	mutt-devel
-PORTVERSION=	1.5.6
-PORTREVISION=	11
+PORTVERSION=	1.5.7
+PORTREVISION=	0
 CATEGORIES+=	mail ipv6
 .if defined(WITH_MUTT_NNTP)
 CATEGORIES+=	news
@@ -102,8 +101,13 @@ CATEGORIES+=	news
 MASTER_SITES=	ftp://ftp.mutt.org/mutt/devel/ \
 		ftp://ftp.fu-berlin.de/pub/unix/mail/mutt/devel/ \
 		ftp://ftp.demon.co.uk/pub/mirrors/mutt/devel/ \
-		ftp://ftp.parodius.com/pub/mutt/devel/
-DISTNAME=	mutt-${PORTVERSION}i
+		ftp://ftp.parodius.com/pub/mutt/devel/ \
+		http://www.mutt.org.ua/download/mutt-${VVV_PATCH_VERSION}/:vvv \
+		http://www2.mutt.org.ua/download/mutt-${VVV_PATCH_VERSION}/:vvv \
+		http://www3.mutt.org.ua/download/mutt-${VVV_PATCH_VERSION}/:vvv \
+		ftp://ftp.mutt.org.ua/pub/mutt/mutt-${VVV_PATCH_VERSION}/:vvv \
+		ftp://ftp3.mutt.org.ua/pub/mutt/mutt-${VVV_PATCH_VERSION}/:vvv \
+		http://www.spinnaker.de/mutt/compressed/:rr
 
 PATCH_SITES+=	http://www.mutt.org.ua/download/mutt-${VVV_PATCH_VERSION}/:vvv \
 		http://www2.mutt.org.ua/download/mutt-${VVV_PATCH_VERSION}/:vvv \
@@ -112,6 +116,7 @@ PATCH_SITES+=	http://www.mutt.org.ua/download/mutt-${VVV_PATCH_VERSION}/:vvv \
 		ftp://ftp3.mutt.org.ua/pub/mutt/mutt-${VVV_PATCH_VERSION}/:vvv \
 		http://cedricduval.free.fr/mutt/patches/download/:cd \
 		http://home.woolridge.ca/mutt/patches/:dw \
+		http://www.spinnaker.de/mutt/compressed/:rr \
 		http://thomer.com/mutt/:thomer
 
 MAINTAINER?=	udo.schweigert@siemens.com
@@ -145,13 +150,21 @@ SCRIPTS_ENV=	WRKDIR="${WRKDIR}"
 
 .include <bsd.port.pre.mk>
 
+DISTNAME=	mutt-${PORTVERSION}i
+EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
+
 CD_PATCH_VERSION=	1.5.5.1
 CD_IFDEF_PATCH_VERSION=	1.5.4
+DW_PATCH_VERSION=	1.5.6
 .if !defined(VVV_PATCH_VERSION)
 VVV_PATCH_VERSION=	${PORTVERSION}
 .endif
 .if !defined(CD_PATCH_VERSION)
 CD_PATCH_VERSION=	${PORTVERSION}
+.endif
+.if !defined(RR_PATCH_VERSION)
+RR_PATCH_VERSION=	${PORTVERSION}
 .endif
 .if !defined(CD_IFDEF_PATCH_VERSION)
 CD_IFDEF_PATCH_VERSION=	${CD_PATCH_VERSION}
@@ -162,15 +175,15 @@ DW_PATCH_VERSION=	${PORTVERSION}
 .if !defined(DW_MBOX_PATCH_VERSION)
 DW_MBOX_PATCH_VERSION=	${DW_PATCH_VERSION}
 .endif
-.if defined(WITH_MUTT_IMAP_HEADER_CACHE)
-WITH_MUTT_MAILDIR_HEADER_CACHE=	yes
+.if defined(WITH_MUTT_MAILDIR_HEADER_CACHE)
+WITH_MUTT_IMAP_HEADER_CACHE=	yes
+.endif
+.if defined(WITH_MUTT_SIGNATURE_MENU)
+.error The WITH_MUTT_SIGNATURE_MENU does not work at the moment
 .endif
 .if defined(WITH_MUTT_SIDEBAR_PATCH)
 .if defined(WITH_MUTT_NNTP)
 .error The WITH_MUTT_SIDEBAR_PATCH and WITH_MUTT_NNTP are not compatible
-.endif
-.if defined(WITH_MUTT_MAILDIR_MTIME_PATCH)
-.error The WITH_MUTT_SIDEBAR_PATCH and WITH_MUTT_MAILDIR_MTIME_PATCH are not compatible
 .endif
 .if defined(WITH_MUTT_SIGNATURE_MENU)
 .error The WITH_MUTT_SIDEBAR_PATCH and WITH_MUTT_SIGNATURE_MENU are not compatible
@@ -243,7 +256,7 @@ LIB_DEPENDS+=	slang.1:${PORTSDIR}/devel/libslang
 .if defined(WITH_MUTT_CYRUS_SASL2)
 LIB_DEPENDS+=	sasl2.2:${PORTSDIR}/security/cyrus-sasl2
 .endif
-.if defined(WITH_MUTT_MAILDIR_HEADER_CACHE)
+.if defined(WITH_MUTT_IMAP_HEADER_CACHE)
 LIB_DEPENDS+=	db-4.2.2:${PORTSDIR}/databases/db42
 CFLAGS+=	-I${LOCALBASE}/include/db42
 .endif
@@ -269,20 +282,15 @@ pre-configure::
 	@${PATCH} ${PATCH_ARGS} < ${PATCHDIR}/extra-patch-maildir-mtime
 .endif
 .endif
-.if defined(WITH_MUTT_NNTP)
-pre-configure::
-	@${PATCH} ${PATCH_ARGS} < ${PATCHDIR}/extra-patch-nntp.c
-.endif
-
-.if ! defined(WITHOUT_MUTT_PGP_PATCH)
-SGML_NEEDED=	yes
-pre-configure::
-	@${PATCH} ${PATCH_ARGS} < ${PATCHDIR}/extra-patch-pgp-dw
-.endif
 
 .if defined(WITH_MUTT_EDIT_THREADS)
 pre-configure::
 	@${PATCH} ${PATCH_ARGS} < ${PATCHDIR}/extra-patch-edit-threads
+.endif
+
+.if defined(WITH_MUTT_SIDEBAR_PATCH)
+pre-configure::
+	@${PATCH} ${PATCH_ARGS} < ${PATCHDIR}/extra-patch-sidebar
 .endif
 
 .if defined(WITH_MUTT_ASPELL)
@@ -297,7 +305,6 @@ CONFIGURE_ARGS+=	--enable-locales-fix
 CONFIGURE_ARGS+=	--with-curses=${LOCALBASE}
 .elif defined(MUTT_USES_SLANG)
 CONFIGURE_ARGS+=	--with-slang=${LOCALBASE}
-PATCHFILES+=	patch-${VVV_PATCH_VERSION}.vvv.slang.gz:vvv
 .endif
 .if defined(WITH_MUTT_CYRUS_SASL2)
 CONFIGURE_ARGS+=	--with-sasl2=${LOCALBASE}
@@ -319,14 +326,24 @@ CONFIGURE_ARGS+=	--without-idn
 PATCH_DIST_STRIP=	-p1
 
 .if ! defined (WITHOUT_MUTT_COMPRESSED_FOLDERS)
-PATCHFILES+=	patch-${VVV_PATCH_VERSION}.rr.compressed.gz:vvv
+DISTFILES+=	patch-${RR_PATCH_VERSION}.rr.compressed.1.gz:rr
 CONFIGURE_ARGS+=	--enable-compressed
 SGML_NEEDED=	yes
+pre-patch::
+	@${GUNZIP_CMD} -c ${DISTDIR}/${DIST_SUBDIR}/patch-${RR_PATCH_VERSION}.rr.compressed.1.gz > ${WRKDIR}/patch-compressed
+	@${REINPLACE_CMD} -E '/^diff.*\/doc\/manual.txt$$/,/^diff/d' \
+		 ${WRKDIR}/patch-compressed
+	@${PATCH} ${PATCH_ARGS} -p1 < ${WRKDIR}/patch-compressed
 .endif
 .if defined(WITH_MUTT_NNTP)
-PATCHFILES+=	patch-${VVV_PATCH_VERSION}.vvv.nntp.gz:vvv
+DISTFILES+=	patch-${VVV_PATCH_VERSION}.vvv.nntp.gz:vvv
 CONFIGURE_ARGS+=	--enable-nntp
 SGML_NEEDED=	yes
+pre-patch::
+	@${GUNZIP_CMD} -c ${DISTDIR}/${DIST_SUBDIR}/patch-${VVV_PATCH_VERSION}.vvv.nntp.gz > ${WRKDIR}/patch-nntp
+	@${REINPLACE_CMD} -E '/^diff.*\/doc\/manual.txt$$/,/^diff/d' \
+		 ${WRKDIR}/patch-nntp
+	@${PATCH} ${PATCH_ARGS} -p1 < ${WRKDIR}/patch-nntp
 .endif
 .if ! defined(WITHOUT_MUTT_QUOTE_PATCH)
 PATCHFILES+=	patch-${VVV_PATCH_VERSION}.vvv.initials.gz:vvv \
@@ -349,12 +366,12 @@ SGML_NEEDED=	yes
 PATCHFILES+=	p0-patch-${DW_MBOX_PATCH_VERSION}.dw.mbox-hook.1:dw
 .endif
 .if defined(WITH_MUTT_SIDEBAR_PATCH)
-PATCHFILES+=	patch-1.5.6i.sidebar.20041122.txt:thomer
+PATCHFILES+=	patch-1.5.7i.sidebar.20050203.txt:thomer
 .endif
 
 WRKSRC=		${WRKDIR}/${DISTNAME:S/i$//}
 MAN1=		mutt.1 mutt_dotlock.1
-MAN5=		muttrc.5 mbox.5
+MAN5=		muttrc.5 mbox.5 mmdf.5
 
 post-patch::
 	@${REINPLACE_CMD} -e 's,/usr/bin/gpg,${LOCALBASE}/bin/gpg,g' \
@@ -377,9 +394,12 @@ SCRIPTS_ENV+=	MUTT_COMPRESSED_FOLDERS="yes"
 .if ! defined(WITHOUT_MUTT_QUOTE_PATCH)
 SCRIPTS_ENV+=	MUTT_QUOTE_PATCH="yes"
 .endif
+.if defined(WITH_MUTT_IMAP_HEADER_CACHE)
+SCRIPTS_ENV+=	MUTT_IMAP_HEADER_CACHE="yes"
+CONFIGURE_ARGS+=	--enable-hcache --without-gdbm --with-bdb
+.endif
 .if defined(WITH_MUTT_MAILDIR_HEADER_CACHE)
 SCRIPTS_ENV+=	MUTT_MAILDIR_HEADER_CACHE="yes"
-CONFIGURE_ARGS+=	--enable-hcache --without-gdbm --with-bdb
 .endif
 .if defined(WITH_MUTT_SIDEBAR_PATCH)
 SCRIPTS_ENV+=	MUTT_SIDEBAR_PATCH="yes"
@@ -392,9 +412,6 @@ SCRIPTS_ENV+=	MUTT_SIGNATURE_MENU="yes"
 .endif
 .if defined(WITH_MUTT_IFDEF_PATCH)
 SCRIPTS_ENV+=	MUTT_IFDEF_PATCH="yes"
-.endif
-.if ! defined(WITHOUT_MUTT_PGP_PATCH)
-SCRIPTS_ENV+=	MUTT_PGP_PATCH="yes"
 .endif
 .if ! defined(WITHOUT_MUTT_HTML)
 SCRIPTS_ENV+=	MUTT_HTML="yes"
