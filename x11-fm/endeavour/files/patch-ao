@@ -1,0 +1,10 @@
+--- fio.c.orig	Tue Feb  1 19:02:34 2000
++++ fio.c	Wed Jun 21 21:17:15 2000
+@@ -16,7 +16,6 @@
+ */
+ 
+ #include <stdio.h>
+-#include <malloc.h>
+ #include <string.h>
+ 
+ #include "../include/fio.h"

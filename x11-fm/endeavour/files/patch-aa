@@ -1,41 +1,57 @@
---- Makefile.orig	Thu Oct  7 01:19:46 1999
-+++ Makefile	Thu Oct  7 13:52:49 1999
-@@ -15,9 +15,9 @@
- # ########################################################################
- # Libraries:
+--- Makefile.orig	Tue Feb  1 19:02:33 2000
++++ Makefile	Wed Jun 21 21:09:33 2000
+@@ -18,7 +18,7 @@
+ #   You may modify any value as needed. Change only the ones you are
+ #   absolutly sure that requires modification.
  #
--INC     = -I/usr/include
--LIB     = -lImlib -lpng -ltiff -lgif -ljpeg -lXpm -lXext -lX11 -lz -lm
--LIB_DIR = -L/usr/X11/lib
-+INC     = -I/usr/local/include -I/usr/X11R6/include
-+LIB     = `imlib-config --libs` -lXpm
-+LIB_DIR = -L/usr/X11R6/lib -L/usr/local/lib
+-PREFIX = /usr
++PREFIX ?= /usr
  
  
  # ########################################################################
-@@ -37,14 +37,14 @@
- #				internal viewing of many graphics
- #				formats.
+@@ -57,8 +57,7 @@
+ #                               this option unless you are attempting
+ #                               to debug the program.
  #
--CFLAGS  = -O2 -DUSE_XSHM -DUSE_IMLIB -D__USE_BSD -funroll-loops
-+CFLAGS  += -DUSE_XSHM -DUSE_IMLIB -D__USE_BSD -funroll-loops
+-CFLAGS = -D__USE_BSD -DUSE_XSHM -DUSE_IMLIB \
+-         -O2
++CFLAGS += -D__USE_BSD -DUSE_XSHM -DUSE_IMLIB
  
  
  # ########################################################################
- # Program source and header files:
+@@ -72,7 +71,7 @@
+ #   to the LIB line depending on what you have set in the CFLAGS line
+ #   farther above.
  #
+-LIB = -lm -lImlib -lpng -ltiff -lgif -ljpeg -lX11 -lXpm -lXext -lz
++LIB = `imlib-config --libs` -lXpm
+ # If you do not have Imlib, comment the above line and uncomment this line.
+ #LIB = -lm -lX11 -lXpm -lXext
+ 
+@@ -83,7 +82,7 @@
+ #   Each argument is of the format -L<dir> where <dir> is the full
+ #   path to the directory.
+ #
+-LIB_DIR = -L/usr/X11R6/lib
++LIB_DIR =
+ 
+ # Header File Directories:
+ #
+@@ -93,7 +92,7 @@
+ #   Each argument is of the format -I<dir> where <dir> is the full
+ #   path to the directory.
+ #
+-INC = -I/usr/include
++INC = `imlib-config --cflags`
+ 
+ 
+ # ########################################################################
+@@ -101,7 +100,7 @@
+ #
+ include Makefile.srclist
  
 -CC  = gcc
 +CC  ?= gcc
  BIN = endeavour
- SRC = comfdialog.c cursor.c devrec.c dither.c disk.c drag.c edwalloc.c \
-       edwcb.c edwevent.c edwlist.c edwmacros.c edwselect.c fass.c \
-@@ -79,7 +79,7 @@
- INSTMANFLAGS = -m 0444
- INSTDATFLAGS = -m 0444
- 
--DIR_XBIN     = /usr/X11/bin
-+DIR_XBIN     = /usr/X11R6/bin
- 
- 
- # ########################################################################
+ OBJ = $(SRC:.c=.o)
+ .c.o:
