@@ -7,6 +7,7 @@
     SUBDIR += eficas
     SUBDIR += facturier
     SUBDIR += gfaim
+    SUBDIR += homard
     SUBDIR += ispell
     SUBDIR += jdictionary-fre-hun
     SUBDIR += kde3-i18n
