@@ -169,7 +169,7 @@
   # Protection against weird shells or weird make programs.
   
   SHELL	= /bin/sh
-! PREFIX  = /usr/local
+! PREFIX ?= /usr/local
 ! 
 ! .SUFFIXES: .c .so .o
 !   
