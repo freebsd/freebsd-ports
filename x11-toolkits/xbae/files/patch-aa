@@ -1,6 +1,14 @@
---- Xbae.tmpl.orig	Thu Jul 10 01:15:47 1997
-+++ Xbae.tmpl	Tue Apr 27 12:47:02 1999
-@@ -11,7 +11,7 @@
+--- Xbae.tmpl.orig	Thu Jul 10 03:15:47 1997
++++ Xbae.tmpl	Sat May 29 16:49:32 1999
+@@ -4,6 +4,7 @@
+ XCOMM $Date: 1997/07/10 08:15:47 $
+ XCOMM $Id: Xbae.tmpl,v 1.17 1997/07/10 08:15:47 lister Exp $
+ 
++#include <Motif.tmpl>
+ #include "Xbae.rules"
+ 
+ XCOMM Specify which libraries need to be built.  NOTE: If you want to try out
+@@ -11,7 +12,7 @@
  XCOMM yes as the demos may have trouble finding the shared library.
  
  #define DoNormalLib		YES
@@ -9,19 +17,19 @@
  #define DoDebugLib		NO
  
  XCOMM Some of the examples use Wcl.  If you haven't got Wcl, it doesn't
-@@ -93,9 +93,9 @@
+@@ -93,9 +94,9 @@
     LOCAL_LDFLAGS = -L../../src $(EXTRA_LDOPTIONS)
  
  #if HaveXpm
 - LOCAL_LIBRARIES = -lXbae -lXm -lXpm $(X11R6_LIBS) $(EDITRES_LIBS) -lXt -lX11 $(SVR4_LIBS)
-+ LOCAL_LIBRARIES = -lXbae -lXm -lXpm $(X11R6_LIBS) $(EDITRES_LIBS) -lXt -lX11 $(SVR4_LIBS) ${MOTIFLIB}
++ LOCAL_LIBRARIES = -lXbae XmClientLibs -lXpm $(X11R6_LIBS) $(EDITRES_LIBS) -lXt -lX11 $(SVR4_LIBS)
  #else
 - LOCAL_LIBRARIES = -lXbae -lXm $(X11R6_LIBS) $(EDITRES_LIBS) -lXt -lX11 $(SVR4_LIBS)
-+ LOCAL_LIBRARIES = -lXbae -lXm $(X11R6_LIBS) $(EDITRES_LIBS) -lXt -lX11 $(SVR4_LIBS) ${MOTIFLIB}
++ LOCAL_LIBRARIES = -lXbae XmClientLibs $(X11R6_LIBS) $(EDITRES_LIBS) -lXt -lX11 $(SVR4_LIBS)
  #endif
           DEPLIBS =
          INCLUDES = -I../../src
-@@ -172,4 +172,3 @@
+@@ -172,4 +173,3 @@
  osaber:
          XCOMM load $(ALLDEFINES) $(OBJS)
  #endif
