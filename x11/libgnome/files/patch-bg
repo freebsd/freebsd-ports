@@ -4,7 +4,7 @@
  libzvt_la_SOURCES =  	gnome-login-support.h		gnome-login-support.c		lists.c				subshell.h			subshell.c			subshell-includes.h		update.c			vt.c				zvtterm.c
  
  
--libzvt_la_LDFLAGS = -version-info 4:2:2 -rpath $(libdir)
+-libzvt_la_LDFLAGS = -version-info 4:3:2 -rpath $(libdir)
 +libzvt_la_LDFLAGS = -version-info 1:0:0 -rpath $(libdir)
  
  libzvtinclude_HEADERS =  	lists.h				vt.h				vtx.h				zvtterm.h
