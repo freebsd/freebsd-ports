@@ -1,6 +1,6 @@
 # New ports collection makefile for: tclcl
 # Date created:		23 April 1999
-# Whom:			obonilla
+# Whom:			obonilla@fisicc-ufm.edu
 #
 # $FreeBSD$
 #
@@ -11,7 +11,7 @@ CATEGORIES=	devel tcl83 tk83
 MASTER_SITES=	http://www.isi.edu/nsnam/dist/
 DISTFILES=	tclcl-src-${PORTVERSION}.tar.gz
 
-MAINTAINER=	obonilla@fisicc-ufm.edu
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Tcl/C++ interface used by ns and nam
 
 LIB_DEPENDS=	tk83.1:${PORTSDIR}/x11-toolkits/tk83 \
