@@ -1,5 +1,5 @@
---- aclocal.m4.orig	Fri Jan  5 00:08:12 2001
-+++ aclocal.m4	Sat Jan  6 06:48:33 2001
+--- aclocal.m4~	Sat Jan 20 23:50:41 2001
++++ aclocal.m4	Sat Jan 20 23:51:55 2001
 @@ -518,7 +518,7 @@
  
  CXXFLAGS="$CXXFLAGS -I$qt_includes"
@@ -32,7 +32,7 @@
  AC_DEFUN(KDE_CHECK_LIBPTHREAD,
  [
 -AC_CHECK_LIB(pthread, pthread_create, [LIBPTHREAD="-lpthread"], LIBPTHREAD= )
-+AC_CHECK_FUNC(c_r, pthread_create, [LIBPTHREAD="-pthread"], LIBPTHREAD= )
++AC_CHECK_LIB(pthread, pthread_create, [LIBPTHREAD="-pthread"], LIBPTHREAD= )
  AC_SUBST(LIBPTHREAD)
  ])
  
