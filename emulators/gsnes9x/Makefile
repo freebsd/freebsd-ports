@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	gsnes9x
-PORTVERSION=	3.0
+PORTVERSION=	3.10
 CATEGORIES=	emulators
 MASTER_SITES=	http://abulafia.fciencias.unam.mx/~canek/gsnes9x/source/
-DISTNAME=	GSnes9x-3.0
+DISTNAME=	GSnes9x-3.10
 
 MAINTAINER=	kbyanc@posi.net
 
