@@ -1,5 +1,5 @@
---- Makefile	Thu May 23 10:01:27 2002
-+++ Makefile	Thu May 23 10:29:51 2002
+--- Makefile.orig	Fri Jan 25 01:50:33 2002
++++ Makefile	Mon Oct 21 22:29:49 2002
 @@ -4,6 +4,7 @@
  # Written by: Henrik Schmidt
  # Modified by: Peter Daly
@@ -13,40 +13,40 @@
  # Binary and Library paths
  #
 -OASES_ROOT=${HOME}/Oases
-+OASES_ROOT=${WRKDIRPREFIX}${.CURDIR}
++#OASES_ROOT=${HOME/Oases
  BIN = $(OASES_ROOT)/bin/${HOSTTYPE}-${OSTYPE}
  LIB = $(OASES_ROOT)/lib/${HOSTTYPE}-${OSTYPE}
  OBJ = ${HOSTTYPE}-${OSTYPE} 
-@@ -32,7 +33,7 @@
+@@ -109,6 +110,23 @@
  #
- FC.-       = f77
- FFLAGS.-   = -O 
--CFLAGS.-   = 
-+CFLAGS.-   = -I/usr/X11R6/include
- LFLAGS.-   = 
- RANLIB.-   = ranlib
- LIB_MISC.- = 	
-@@ -105,6 +106,23 @@
- RANLIB.unknown-unknown   = ranlib
- LIB_MISC.unknown-unknown = 	
- MISC.unknown-unknown     = 
-+#
-+##############################################################################
-+#
+ ##############################################################################
+ #
 +# Intel x86 RUNNING FreeBSD 4.1 (or higher)
 +#
 +##############################################################################
 +#
 +# Compiler flags
 +#
-+FC.FreeBSD-FreeBSD	= f77
-+CC.FreeBSD-FreeBSD	= cc
-+FFLAGS.FreeBSD-FreeBSD	= -O 
-+CFLAGS.FreeBSD-FreeBSD	= -I/usr/X11R6/include
-+LFLAGS.FreeBSD-FreeBSD	= -L/usr/X11R6/lib
++FC.FreeBSD-FreeBSD	= %%FC%%
++CC.FreeBSD-FreeBSD	= %%CC%%
++FFLAGS.FreeBSD-FreeBSD	= %%FFLAGS%% 
++CFLAGS.FreeBSD-FreeBSD	= %%CFLAGS%% -I%%X11BASE%%/include
++LFLAGS.FreeBSD-FreeBSD	= %%LDFLAGS%% -L%%X11BASE%%/lib
 +RANLIB.FreeBSD-FreeBSD	= ranlib
 +LIB_MISC.FreeBSD-FreeBSD	= 	
 +MISC.FreeBSD-FreeBSD	= 
++#
++##############################################################################
++#
+ # DIGITAL MIPS-based WORKSTATIONS RUNNING ULTRIX 4.4 (or higher)
  #
  ##############################################################################
+@@ -223,7 +241,7 @@
+ #          'OSTYPE = ${OSTYPE}' 'HOSTTYPE = ${HOSTTYPE}'
  #
+ all: objdir oases.done mplot.done cplot.done pp.done \
+-		mindis.done mail.send
++		mindis.done
+ 	rm -f *.done
+ 
+ new: clean_mail clean objdir all
