@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.50 1998/07/26 08:17:15 dburr Exp $
+# $Id: Makefile,v 1.51 1998/08/11 05:20:04 mph Exp $
 #
 
     SUBDIR += 8hz-mp3
@@ -36,6 +36,7 @@
     SUBDIR += wmmixer
     SUBDIR += workman
     SUBDIR += x11amp
+    SUBDIR += xamp
     SUBDIR += xcd
     SUBDIR += xcdplayer
     SUBDIR += xmcd
