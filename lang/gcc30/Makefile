@@ -6,30 +6,28 @@
 # $FreeBSD$
 #
 
-SNAPDATE=	2001-04-30
-SNAPVER=	${SNAPDATE:S/-//g}
-
-PORTNAME=	gcc-30snap
-PORTVERSION=	${SNAPVER}
+PORTNAME=	gcc30
+PORTVERSION=	3.0.0
 CATEGORIES=	lang java
-MASTER_SITES=	ftp://egcs.cygnus.com/pub/egcs/snapshots/${SNAPDATE}/  \
+MASTER_SITES=	ftp://egcs.cygnus.com/pub/egcs/releases/gcc-${GCC_REV}/  \
 		${MASTER_SITE_SOURCEWARE}
-MASTER_SITE_SUBDIR=	gcc/snapshots/${SNAPDATE}
-DISTFILES=	gcc-core-${SNAPVER}${EXTRACT_SUFX} \
-		gcc-g++-${SNAPVER}${EXTRACT_SUFX} \
-		gcc-g77-${SNAPVER}${EXTRACT_SUFX} \
-		gcc-java-${SNAPVER}${EXTRACT_SUFX} \
-		gcc-objc-${SNAPVER}${EXTRACT_SUFX}
+MASTER_SITE_SUBDIR=	gcc/releases/gcc-${GCC_REV}
+DISTFILES=	gcc-core-${GCC_REV}${EXTRACT_SUFX} \
+		gcc-g++-${GCC_REV}${EXTRACT_SUFX} \
+		gcc-g77-${GCC_REV}${EXTRACT_SUFX} \
+		gcc-java-${GCC_REV}${EXTRACT_SUFX} \
+		gcc-objc-${GCC_REV}${EXTRACT_SUFX}
 
 MAINTAINER=	obrien@FreeBSD.org
 
-NO_CDROM=	'dated material'
+USE_BZIP2=	yes
 
 PATCH_ARGS=	-d ${SRCDIR} -E ${PATCH_STRIP}
 .if !defined(PATCH_DEBUG)
 PATCH_ARGS+=	--forward --quiet
 .endif
-CONFIGURE_SCRIPT=	../gcc-${SNAPVER}/configure
+GCC_REV=	${PORTVERSION:C/\.0$//}
+CONFIGURE_SCRIPT=	../gcc-${GCC_REV}/configure
 
 .include <bsd.port.pre.mk>
 
@@ -39,12 +37,10 @@ CONFIGURE_TARGET=	${ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_TARGET=	${ARCH}-portbld-freebsdaout${OSREL}
 .endif
 
-EGCS_REV=	3.0
-SRCDIR=		${WRKDIR}/gcc-${SNAPVER}
+SRCDIR=		${WRKDIR}/gcc-${GCC_REV}
 WRKSRC=		${WRKDIR}/build
-TARGLIB=	${PREFIX}/lib/gcc-lib/${CONFIGURE_TARGET}/${EGCS_REV}
-PLIST_SUB=	EGCS_REV=${EGCS_REV} GNU_HOST=${CONFIGURE_TARGET}  \
-		SNAPVER=${SNAPVER}
+TARGLIB=	${PREFIX}/lib/gcc-lib/${CONFIGURE_TARGET}/${GCC_REV}
+PLIST_SUB=	GCC_REV=${GCC_REV} GNU_HOST=${CONFIGURE_TARGET}
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_BISON=	yes
@@ -85,12 +81,12 @@ post-install:
 	@(for prog in ${PREFIX}/bin/gcc ${PREFIX}/bin/g++ \
 		${PREFIX}/bin/g++filt ${PREFIX}/bin/g77 ${PREFIX}/bin/gcov \
 		${PREFIX}/bin/${CONFIGURE_TARGET}-gcc \
-		${PREFIX}/lib/gcc-lib/${CONFIGURE_TARGET}/${EGCS_REV}/cc1 \
-		${PREFIX}/lib/gcc-lib/${CONFIGURE_TARGET}/${EGCS_REV}/cc1obj \
-		${PREFIX}/lib/gcc-lib/${CONFIGURE_TARGET}/${EGCS_REV}/cc1plus \
-		${PREFIX}/lib/gcc-lib/${CONFIGURE_TARGET}/${EGCS_REV}/cpp0 \
-		${PREFIX}/lib/gcc-lib/${CONFIGURE_TARGET}/${EGCS_REV}/collect2 \
-		${PREFIX}/lib/gcc-lib/${CONFIGURE_TARGET}/${EGCS_REV}/f771 ; \
+		${PREFIX}/lib/gcc-lib/${CONFIGURE_TARGET}/${GCC_REV}/cc1 \
+		${PREFIX}/lib/gcc-lib/${CONFIGURE_TARGET}/${GCC_REV}/cc1obj \
+		${PREFIX}/lib/gcc-lib/${CONFIGURE_TARGET}/${GCC_REV}/cc1plus \
+		${PREFIX}/lib/gcc-lib/${CONFIGURE_TARGET}/${GCC_REV}/cpp0 \
+		${PREFIX}/lib/gcc-lib/${CONFIGURE_TARGET}/${GCC_REV}/collect2 \
+		${PREFIX}/lib/gcc-lib/${CONFIGURE_TARGET}/${GCC_REV}/f771 ; \
 	do \
 		strip $$prog ; \
 	done )
@@ -104,7 +100,7 @@ post-install:
 	${MV} -f ${PREFIX}/bin/${file} ${PREFIX}/bin/${file}-30
 	${MV} -f ${PREFIX}/man/man1/${file}.1 ${PREFIX}/man/man1/${file}-30.1
 .endfor
-	${MV} -f ${PREFIX}/bin/gccbug ${PREFIX}/bin/gccbug-${SNAPVER}
+	${MV} -f ${PREFIX}/bin/gccbug ${PREFIX}/bin/gccbug-${PORTVERSION:C/\.0$//}
 	# These 3 libraries are moved from PREFIX/lib to avoid conflicts
 	# 	with the stock compiler.
 	${MV} -f ${PREFIX}/lib/libiberty.a ${TARGLIB}
