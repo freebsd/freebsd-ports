@@ -9,8 +9,8 @@ PORTNAME=	dcc
 PORTVERSION=	2.5.6
 PORTREVISION=	1
 CATEGORIES=	irc
-MASTER_SITES=	ftp://ftp.fan.gr.jp/pub/elisp/irchat-pj/2.5/%SUBDIR%/
-MASTER_SITE_SUBDIR=	. OLD
+MASTER_SITES=	ftp://ftp.fan.gr.jp/pub/elisp/irchat-pj/2.5/ \
+		ftp://ftp.fan.gr.jp/pub/elisp/irchat-pj/2.5/OLD/
 DISTNAME=	irchat-pj-${PORTVERSION}p
 
 PATCH_SITES=	${MASTER_SITES}
