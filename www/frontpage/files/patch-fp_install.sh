@@ -1,5 +1,5 @@
---- frontpage/version5.0/fp_install.sh.orig	Mon Apr 16 07:39:25 2001
-+++ frontpage/version5.0/fp_install.sh	Wed Oct 24 12:15:07 2001
+--- frontpage/version5.0/fp_install.sh.orig	Mon Apr 16 14:39:25 2001
++++ frontpage/version5.0/fp_install.sh		Mon Jan 21 11:45:36 2002
 @@ -12,7 +12,7 @@
  main() {
      initialize
@@ -18,12 +18,13 @@
      upgradeexistingservers  || error   # Check to see if servers need upgrading
      upgrade="yes"
      chownexistingservers    || error   # Now chown the webs
-@@ -132,10 +132,11 @@
+@@ -132,10 +132,12 @@
  {
      VERSION="5.0"
      PATH=".:/bin:/usr/bin:/sbin:/usr/sbin:/usr/ucb:/etc:/usr/bsd"
 -    INSTALLDIRDEFAULT="/usr/local/frontpage"
 +    AP_TARGET=`PREFIX/sbin/apxs -q TARGET`
++    AP_CONFDIR=`PREFIX/sbin/apxs -q SYSCONFDIR`
 +    INSTALLDIRDEFAULT="PREFIX/frontpage"
      NEWHTTPDNEW="/usr/local/frontpage/version${VERSION}/apache-fp/httpd"
      DEFAULTHTTPD="/usr/local/apache/sbin/httpd"
@@ -32,7 +33,7 @@
  
      case "`echo 'x\c'`" in
         'x\c')   echo="echo -n"    nnl= ;;      #BSD
-@@ -390,29 +391,9 @@
+@@ -390,29 +392,9 @@
  {
      retval=0
      
@@ -62,7 +63,7 @@
              if chmod "$prot" "$installdir"
              then
                  echo "Directory $installdir chmoded to $prot." 
-@@ -420,22 +401,6 @@
+@@ -420,22 +402,6 @@
                  echo "ERROR:  Unable to chmod $installdir to $prot." 
                  retval=1
              fi
@@ -85,11 +86,11 @@
      
      if [ "$installdir" != "/usr/local/frontpage" ]
      then
-@@ -1290,20 +1255,30 @@
+@@ -1290,20 +1256,30 @@
      echo " " 
      
      webname="/"
-+    defconfigfile="PREFIX/etc/apache/${AP_TARGET}.conf"
++    defconfigfile="${AP_CONFDIR}/${AP_TARGET}.conf"
      
      configfile=""
      while ( [ "$configfile" = "" ] || [ ! -f $configfile ] )
@@ -118,7 +119,7 @@
      done
      
      getHttpRootDirective $configfile Port
-@@ -1316,9 +1291,23 @@
+@@ -1316,9 +1292,23 @@
      done
      weconfigfile="${installdir}/we${port}.cnf"
      
@@ -142,7 +143,7 @@
      webowner=""
      until [ "$webowner" != "" ]
      do
-@@ -1333,6 +1322,12 @@
+@@ -1333,6 +1323,12 @@
      echo 
      getparam Group $configfile $port "Getting Group from "
      defgroup=$param
@@ -154,4 +155,13 @@
 +
      webgroup=""
      until [ "$webgroup" != "" ]
+     do
+@@ -1464,7 +1460,7 @@
+         return $retval
+     fi
+     
+-    defaultconfigfile=$configfile
++    defaultconfigfile="${AP_CONFDIR}/${AP_TARGET}.conf"
+     configfile=""
+     while ( [ "$configfile" = "" ] || [ ! -f $configfile ] )
      do
