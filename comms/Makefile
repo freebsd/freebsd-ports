@@ -6,6 +6,7 @@
     SUBDIR += bpl+
     SUBDIR += comserv
     SUBDIR += conserver
+    SUBDIR += conserver-com
     SUBDIR += ecu
     SUBDIR += ghfaxviewer
     SUBDIR += gkermit

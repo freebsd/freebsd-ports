@@ -1,0 +1,20 @@
+--- conserver/conserver.rc.orig	Sun Jul  8 04:54:09 2001
++++ conserver/conserver.rc	Sun Dec  9 16:32:01 2001
+@@ -3,7 +3,7 @@
+ # Startup for conserver
+ #
+ 
+-PATH=/usr/bin:/usr/local/bin
++PATH=/bin:/usr/bin:/usr/local/bin
+ 
+ case "$1" in
+ 	'start')
+@@ -12,7 +12,7 @@
+ 		;;
+ 
+ 	'stop')
+-		master=`ps -ef | grep conserver | awk '$3 == "1"{print $2}'`
++		master=`ps ax | grep conserver | awk '$3~/s/ {print $1}'`
+ 		[ "$master" ] && kill -TERM $master
+ 		;;
+ 

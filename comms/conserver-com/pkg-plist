@@ -1,0 +1,5 @@
+sbin/conserver
+etc/conserver.rc
+bin/console
+@exec ln -s ../conserver.rc %D/etc/rc.d/conserver.sh-
+@unexec rm %D/etc/rc.d/conserver.sh-
