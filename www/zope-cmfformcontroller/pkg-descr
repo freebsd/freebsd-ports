@@ -1,0 +1,9 @@
+CMFFormController is a product for Zope/CMF
+
+CMFFormController replaces the portal_form form validation mechanism from
+Plone.  It should work just fine in plain CMF as well.
+
+WWW: http://plone.org/collective
+
+- Khairil Yusof
+kaeru@inigo-tech.com
