@@ -1134,3 +1134,4 @@ x11-toolkits/gtkstep|x11-themes/gtkstep|2004-06-02|new category
 x11-toolkits/gtkstep-pastel|x11-themes/gtkstep-pastel|2004-06-02|new category
 sysutils/mkisofs|sysutils/cdrtools|2004-06-02|merged
 sysutils/mkisofs-devel|sysutils/cdrtools-devel|2004-06-02|merged
+lang/squeak3|lang/squeak|2004-06-03|New stable version

@@ -1,0 +1,10 @@
+--- platforms/unix/config/configure.orig	Mon May 10 10:54:48 2004
++++ platforms/unix/config/configure	Mon May 10 10:54:15 2004
+@@ -23526,6 +23526,7 @@
+ cat >>conftest.$ac_ext <<_ACEOF
+ /* end confdefs.h.  */
+ #include <sys/soundcard.h>
++#define OPEN_SOUND_SYSTEM
+ int
+ main ()
+ {
