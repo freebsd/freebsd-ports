@@ -84,9 +84,9 @@
  
 +$(SHLIBNAME): $(SOFILES)
 +.if $(PORTOBJFORMAT) == "elf"
-+	ld -shared -x -soname $(SHLIBNAME) -o $(SHLIBNAME) $(SOFILES)
++	ld -shared -x -soname $(SHLIBNAME) -o $(SHLIBNAME) $(SOFILES) `cat LDFLAGS`
 +.else
-+	ld -Bshareable -x -o $(SHLIBNAME) $(SOFILES)
++	ld -Bshareable -x -o $(SHLIBNAME) $(SOFILES) `cat LDFLAGS`
 +.endif
 +	ln -s $(SHLIBNAME) lib$(SHLIBBASE).so
 +
