@@ -6,14 +6,13 @@
 #
 
 PORTNAME=	wfa
-PORTVERSION=	2.9
-MASTER_SITES=	http://www2.qlabo.com/q3a/uac/mods/wfa/ \
-		http://www.q3wfa.com/ \
-		http://www.leftunsaid.com/ \
+PORTVERSION=	3.0a
+MASTER_SITES=	ftp://fileplanet.ngi.it/fileplanet2/captured/weaponsfactory/quake3/ \
 		ftp://ftp.planet-multiplayer.de/pub/gamesmania/pm/q3a/win32/mods/weapon_factory/
-DISTNAME=	WFA-Setup-v${PORTVERSION:S/.//}
+DISTFILES=	WFA-fSetup-v30.zip \
+		WFA-v30a-patch.zip
 
-NO_WRKSUBDIR=	yes
+EXTRACT_BEFORE_ARGS=	-o -qq
 
 Q3_MOD_MASTER=	${.CURDIR}/../q3server-ra3
 
