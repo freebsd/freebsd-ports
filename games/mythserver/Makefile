@@ -15,6 +15,7 @@ MAINTAINER=	adamw@FreeBSD.org
 
 USE_ZIP=	yes
 USE_GMAKE=	yes
+USE_REINPLACE=	yes
 WRKSRC=		${WRKDIR}/metaserver2open/spaghetti
 
 pre-everything::
@@ -27,7 +28,7 @@ pre-everything::
 		@${ECHO_CMD} "#############################################"
 
 post-patch:
-		@${PERL} -pi -e 's@\r@@g' ${WRKSRC}/users_new/main.c
+		@${REINPLACE_CMD} -e 's@\r@@g' ${WRKSRC}/users_new/main.c
 
 do-install:
 		@${INSTALL_PROGRAM} ${WRKSRC}/bin/game_search_server_new ${PREFIX}/bin
