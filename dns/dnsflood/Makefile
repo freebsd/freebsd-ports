@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	dnsflood
-PORTVERSION=	1.08
+PORTVERSION=	1.10
 CATEGORIES=	dns
 MASTER_SITES=	http://www.adotout.com/
 EXTRACT_SUFX=	.tgz
