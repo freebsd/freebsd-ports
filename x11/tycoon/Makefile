@@ -3,7 +3,7 @@
 # Date created:		19 September 1997
 # Whom:			steve@farrell.org
 #
-# $Id: Makefile,v 1.3 1998/09/26 23:18:08 steve Exp $
+# $Id: Makefile,v 1.4 1998/12/07 20:46:38 billf Exp $
 #
 
 DISTNAME=	tycoon-1.07o
@@ -13,7 +13,8 @@ MASTER_SITE_SUBDIR=	X11/desktop
 
 MAINTAINER=	steve@farrell.org
 
-LIB_DEPENDS=	xforms:${PORTSDIR}/x11-toolkits/xforms
+LIB_DEPENDS=	xforms:${PORTSDIR}/x11-toolkits/xforms \
+		Xpm.4:${PORTSDIR}/graphics/xpm
 
 USE_IMAKE=	yes
 NO_INSTALL_MANPAGES=	yes

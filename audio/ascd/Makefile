@@ -3,7 +3,7 @@
 # Date created:                29 November 1998
 # Whom:                        Jim Mock <jim@phrantic.phear.net>
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1998/12/05 10:02:02 flathill Exp $
 #
 
 DISTNAME=	ascd-0.7
@@ -11,6 +11,8 @@ CATEGORIES=	audio
 MASTER_SITES=	http://slashdot.org/linux/dl/
 
 MAINTAINER=	jim@phrantic.phear.net
+
+LIB_DEPENDS=	Xpm.4:${PORTSDIR}/graphics/xpm
 
 USE_IMAKE=	yes
 MAN1=		ascd.1
