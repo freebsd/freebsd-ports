@@ -1,8 +1,9 @@
-# $Id: Makefile,v 1.5 1996/03/07 03:54:24 asami Exp $
+# $Id: Makefile,v 1.6 1996/03/09 12:55:06 asami Exp $
 #
 
 RESTRICTED += Mosaic         # requires Motif
     SUBDIR += apache
+    SUBDIR += arena
 RESTRICTED += ashe           # requires Motif
     SUBDIR += cached
     SUBDIR += chimera
