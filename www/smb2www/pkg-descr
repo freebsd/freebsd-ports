@@ -1,0 +1,8 @@
+SMB2WWW, the gateway to Windows networking
+
+SMB2WWW is a Windows Network client that is accessible through a web browser.
+It is based on the samba package.
+
+WWW: http://www.samba.org/samba/smb2www/
+
+Roman Shterenzon <roman@xpert.com>
