@@ -1,0 +1,22 @@
+wmGrabImage is a WindowMaker DockApp that maintains a small thumbnail copy of
+your favorite image from the WWW.  The image to monitor is specified via the
+"-url <Image URL>" command-line option and it gets updated approximately every
+5 minutes.  The update interval can be overridden via the "-delay <Time>"
+command-line option (Time is in seconds).
+ 
+Each of the three mouse buttons can be double clicked with the
+following effects:
+
+Left Mouse:
+Brings up the full-sized image in xv.
+ 
+Middle Mouse:
+Sends a URL (specified via the -http <URL> command-line option) to an already
+running netscape process or in a new netscape process if there arent any
+running.
+ 
+Right Mouse: 
+Updates the image immediately.
+
+Author: Michael G. Henderson <mghenderson@lanl.gov>
+Ported: Osokin Sergey aka oZZ <ozz@FreeBSD.org.ru>

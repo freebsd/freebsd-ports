@@ -140,6 +140,7 @@
     SUBDIR += urt
     SUBDIR += vcg
     SUBDIR += whirlgif
+    SUBDIR += wmgrabimage
     SUBDIR += wmicons
     SUBDIR += xanim
     SUBDIR += xaos
