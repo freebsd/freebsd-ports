@@ -6,12 +6,9 @@
 #
 
 PORTNAME=	gkrellmms
-PORTVERSION=	0.5.5
+PORTVERSION=	0.5.8
 CATEGORIES=	audio
 MASTER_SITES=	http://gkrellm.luon.net/files/
-
-PATCH_SITES=	http://web.wt.net/~billw/gkrellm/Plugins/
-PATCHFILES=	gkrellmms-patch-0.5.5
 
 MAINTAINER=	ume@FreeBSD.org
 
