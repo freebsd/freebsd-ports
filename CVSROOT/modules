@@ -4129,6 +4129,7 @@ kobodeluxe	ports/games/kobodeluxe
 koctave		ports/math/koctave
 koffice-i18n	ports/misc/koffice-i18n
 koffice-i18n-af	ports/misc/koffice-i18n-af
+koffice-i18n-bg	ports/misc/koffice-i18n-bg
 koffice-i18n-bs	ports/misc/koffice-i18n-bs
 koffice-i18n-ca	ports/misc/koffice-i18n-ca
 koffice-i18n-cs	ports/misc/koffice-i18n-cs
