@@ -7,6 +7,7 @@
 
 PORTNAME=	xblackjack
 PORTVERSION=	2.2
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_XCONTRIB}
 MASTER_SITE_SUBDIR=	games
@@ -15,10 +16,8 @@ EXTRACT_SUFX=	.tar.Z
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An X11/Motif blackjack game
 
-BROKEN=		"Broken by open-motif upgrade"
-
-USE_MOTIF=	yes
 USE_IMAKE=	yes
+LIB_DEPENDS+=	Xm.1:${PORTSDIR}/x11-toolkits/lesstif
 MAN1=		xblackjack.1
 
 .include <bsd.port.mk>
