@@ -4,8 +4,8 @@
  #define IHaveSubdirs
  #define PassCDebugFlags CDEBUGFLAGS="$(CDEBUGFLAGS)"
  
--PREFIX = /usr/local
-+XCOMM PREFIX = /usr/local
+-PREFIX = /usr/X11R6
++XCOMM PREFIX = /usr/X11R6
  
  XCOMM CDEBUGFLAGS = -Wall -ggdb -DDEBUG
 -CDEBUGFLAGS = -O6 -m486 
