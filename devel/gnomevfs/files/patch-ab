@@ -1,0 +1,11 @@
+--- Makefile.in.orig	Tue Feb 22 01:45:45 2000
++++ Makefile.in	Wed Jun 28 14:08:43 2000
+@@ -143,7 +143,7 @@
+ EXTRA_DIST =  	HACKING						TODO						autogen.sh					vfsConf.sh.in					vfscorbaConf.sh.in				vfspthreadConf.sh.in
+ 
+ 
+-confexecdir = $(libdir)
++confexecdir = $(sysconfdir)
+ confexec_DATA =  	vfsConf.sh					vfscorbaConf.sh					vfspthreadConf.sh
+ 
+ ACLOCAL_M4 = $(top_srcdir)/aclocal.m4

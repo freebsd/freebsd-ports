@@ -1,0 +1,18 @@
+--- modules/Makefile.in.orig	Tue Feb 22 01:45:51 2000
++++ modules/Makefile.in	Wed Jun 28 16:20:34 2000
+@@ -191,6 +191,7 @@
+ 
+ libftp_la_SOURCES =  	ftp-method.c					ftp-method.h					module-shared.c					module-shared.h
+ 
++libftp_la_LDFLAGS = $(module_flags)
+ 
+ ### `gconf' method
+ 
+@@ -238,7 +239,6 @@
+ libbzip2_la_OBJECTS =  bzip2-method.lo
+ libgzip_la_DEPENDENCIES = 
+ libgzip_la_OBJECTS =  gzip-method.lo
+-libftp_la_LDFLAGS = 
+ libftp_la_LIBADD = 
+ libftp_la_OBJECTS =  ftp-method.lo module-shared.lo
+ libvfs_pipe_la_DEPENDENCIES = 
