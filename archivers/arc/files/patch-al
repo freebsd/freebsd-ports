@@ -1,0 +1,38 @@
+--- ./arcrun.c.orig	Tue Aug 10 23:03:25 1999
++++ ./arcrun.c	Tue Aug 10 23:01:57 1999
+@@ -94,7 +94,7 @@
+ 		strcpy(sys, buf);
+ 
+ 	else {
+-		if (warn) {
++		if (arcwarn) {
+ 			printf("File %s is not a .BAS, .BAT, .COM, or .EXE\n",
+ 			       hdr->name);
+ 			nerrs++;
+@@ -108,7 +108,7 @@
+               && strcmp(i, ".TTP")
+               && strcmp(i, ".TOS"))
+       {
+-              if (warn) {
++              if (arcwarn) {
+                       printf("File %s is not a .PRG, .TOS, or .TTP\n",
+                               hdr->name);
+                       nerrs++;
+@@ -118,7 +118,7 @@
+       }
+ #endif
+ 
+-	if (warn)
++	if (arcwarn)
+ 		if (tmp = fopen(buf, "r"))
+ 			arcdie("Temporary file %s already exists", buf);
+ 	if (!(tmp = fopen(buf, OPEN_W)))
+@@ -142,7 +142,7 @@
+ #endif
+ 	chdir(dir);
+ 	free(dir);		/* return to whence we started */
+-	if (unlink(buf) && warn) {
++	if (unlink(buf) && arcwarn) {
+ 		printf("Cannot unsave temporary file %s\n", buf);
+ 		nerrs++;
+ 	}
