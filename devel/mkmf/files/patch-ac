@@ -1,0 +1,13 @@
+--- src/stringx.h~	Tue Jun  4 12:58:03 2002
++++ src/stringx.h	Tue Jun  4 12:58:33 2002
+@@ -47,9 +47,8 @@
+ 
+ #ifdef _HasIncludeStrings
+ #  include <strings.h>
+-#else
+-#  include <string.h>
+ #endif
++#  include <string.h>
+ 
+ #ifndef _HasStrDcl
+   int  strcmp();
