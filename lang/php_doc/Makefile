@@ -7,7 +7,7 @@
 
 PORTNAME=	php_doc
 PORTVERSION=	1.0
-CATEGORIES=	lang
+CATEGORIES?=	lang
 MASTER_SITES=	http://www.php.net/${PHP_DISTDIR}/ \
 		http://php.he.net/${PHP_DISTDIR}/ \
 		http://www.php3.de/${PHP_DISTDIR}/ \
@@ -25,6 +25,7 @@ PHP_DISTDIR=	manual/${PHP_LANG}
 DIST_SUBDIR=	php/${PHP_LANG}
 NO_BUILD=	YES
 NO_WRKSUBDIR=	YES
+SLAVEDIRS=	french/php_doc german/php_doc
 
 PHP_LANG?=	en
 PHPDOCDIR=	${PREFIX}/share/doc/php
