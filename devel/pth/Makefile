@@ -1,12 +1,12 @@
 # New ports collection makefile for:   nps
-# Version required:		0.9.13
+# Version required:		0.9.14
 # Date Created:			23 May 1999
 # Whom:				Ralf S. Engelschall
 #
-# $Id: Makefile,v 1.6 1999/05/30 13:20:05 rse Exp $
+# $Id: Makefile,v 1.7 1999/06/01 11:48:19 rse Exp $
 #
 
-DISTNAME=	nps-0.9.13
+DISTNAME=	nps-0.9.14
 CATEGORIES=	devel
 MASTER_SITES=	http://www.engelschall.com/sw/nps/ \
 		ftp://ftp.engelschall.com/sw/nps/
