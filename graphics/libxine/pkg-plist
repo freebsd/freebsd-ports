@@ -19,6 +19,7 @@ include/xine/video_out_x11.h
 include/xine/xine_internal.h
 include/xine.h
 lib/libxine.la
+lib/libxine.so
 lib/libxine.so.0
 %%HAVE_ARTS%%lib/xine/plugins/xineplug_ao_out_arts.la
 %%HAVE_ARTS%%lib/xine/plugins/xineplug_ao_out_arts.so
