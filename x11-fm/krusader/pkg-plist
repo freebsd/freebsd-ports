@@ -105,10 +105,6 @@ share/doc/HTML/en/krusader/index.cache.bz2
 share/doc/HTML/en/krusader/index.docbook
 share/doc/HTML/en/krusader/installation.docbook
 share/doc/HTML/en/krusader/introduction.docbook
-share/doc/HTML/en/krusader/kgadvanced.png
-share/doc/HTML/en/krusader/kgarchives.png
-share/doc/HTML/en/krusader/kggeneral.png
-share/doc/HTML/en/krusader/kglookfeel.png
 share/doc/HTML/en/krusader/kgstartup.png
 share/doc/HTML/en/krusader/konfigurator.docbook
 share/doc/HTML/en/krusader/krusader-tools.docbook
@@ -120,6 +116,7 @@ share/doc/HTML/en/krusader/mountman.png
 share/doc/HTML/en/krusader/remoteman.png
 share/doc/HTML/en/krusader/search_advanced.png
 share/doc/HTML/en/krusader/search_general.png
+share/doc/HTML/en/krusader/syncdir.png
 share/doc/HTML/en/krusader/tabbed_browsing.png
 share/doc/HTML/en/krusader/terminalEmu.png
 share/doc/HTML/en/krusader/toolbar.png
@@ -147,9 +144,11 @@ share/locale/it/LC_MESSAGES/krusader.mo
 share/locale/ja/LC_MESSAGES/krusader.mo
 share/locale/nl/LC_MESSAGES/krusader.mo
 share/locale/pl/LC_MESSAGES/krusader.mo
+share/locale/pt/LC_MESSAGES/krusader.mo
 share/locale/ru/LC_MESSAGES/krusader.mo
 share/locale/sk/LC_MESSAGES/krusader.mo
 share/locale/sv/LC_MESSAGES/krusader.mo
+share/locale/uk/LC_MESSAGES/krusader.mo
 share/locale/zh_CN/LC_MESSAGES/krusader.mo
 share/services/iso.protocol
 share/services/krarc.protocol

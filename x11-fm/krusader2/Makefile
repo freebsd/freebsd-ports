@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	krusader
-PORTVERSION=	1.50
+PORTVERSION=	1.51
 CATEGORIES=	x11-fm kde
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=krusader
@@ -32,7 +32,7 @@ pre-everything::
 	@${ECHO_MSG} "The following settings are assumed:"
 	@${ECHO_MSG} "Installation directory of qt3: QTDIR=${QTDIR}"
 	@${ECHO_MSG} "Installation directory of KDE3: KDEDIR=${KDEDIR}"
-	@${ECHO_MSG} "If these assumptions are wrong, stop the build NOW and set the variables correpondingly!"
+	@${ECHO_MSG} "If these assumptions are wrong, stop the build NOW and set the variables correspondingly!"
 	@${ECHO_MSG}
 	@sleep 3
 
