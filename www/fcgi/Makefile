@@ -5,31 +5,35 @@
 # $FreeBSD$
 #
 
-PORTNAME=	fcgi-devkit
-PORTVERSION=	2.2.0
+PORTNAME=	fcgi
+PORTVERSION=	2.2.2
 CATEGORIES=	www
 MASTER_SITES=	http://www.fastcgi.com/dist/
-DISTNAME=	devkit_2.2.0
+PKGNAMESUFFIX=	-devkit
 
 MAINTAINER=	kbyanc@posi.net
+
+USE_PERL5=	yes
+GNU_CONFIGURE=	yes
 
 MAN1=		cgi-fcgi.1
 MAN3=		FCGI_Accept.3 FCGI_Finish.3 FCGI_SetExitStatus.3 \
 		FCGI_StartFilterData.3
 
-USE_PERL5=	yes
-GNU_CONFIGURE=	yes
-
-.if !defined(NOPORTDOCS)
 post-install:
-	${MKDIR} ${PREFIX}/share/doc/${PORTNAME}
+.for y in ${MAN1}
+	@${INSTALL_MAN} ${WRKSRC}/doc/${y} ${MANPREFIX}/man/man1
+.endfor
+.for x in ${MAN3}
+	@${INSTALL_MAN} ${WRKSRC}/doc/${x} ${MANPREFIX}/man/man3
+.endfor
+.if !defined(NOPORTDOCS)
+	@${MKDIR} ${DOCSDIR}
+	@${INSTALL_DATA} ${WRKSRC}/doc/*.htm* ${WRKSRC}/doc/*.gif \
+		${DOCSDIR}
 .for i in fastcgi-prog-guide fastcgi-whitepaper
-	    ${MKDIR} ${PREFIX}/share/doc/${PORTNAME}/$i
-	    cd ${WRKSRC}/doc/$i && \
-		${INSTALL_DATA} * ${PREFIX}/share/doc/${PORTNAME}/$i
-	    @if [ -f ${PREFIX}/share/doc/${PORTNAME}/$i/Makefile ]; then \
-		${RM} ${PREFIX}/share/doc/${PORTNAME}/$i/Makefile; \
-	    fi
+	@${MKDIR} ${DOCSDIR}/${i}
+	@${INSTALL_DATA} ${WRKSRC}/doc/${i}/* ${DOCSDIR}/$i
 .endfor
 .endif
 
