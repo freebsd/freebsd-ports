@@ -3716,7 +3716,7 @@ misc.c:
     <affects>
       <package>
         <name>gnats</name>
-        <range><le>3.113.1_7</le></range>
+        <range><le>3.113.1_9</le></range>
       </package>
     </affects>
     <description>
