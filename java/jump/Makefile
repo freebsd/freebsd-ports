@@ -16,6 +16,8 @@ MASTER_SITE_SUBDIR=	jump-math
 MAINTAINER=	znerd@FreeBSD.org
 COMMENT=	Java library for arbitrary precision computations
 
+BROKEN=		Checksum mismatch
+
 BUILD_DEPENDS=	${ANT}:${PORTSDIR}/devel/apache-ant
 
 USE_JAVA=	1.2+

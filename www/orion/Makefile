@@ -16,6 +16,8 @@ DISTNAME=	${PORTNAME}${PORTVERSION}
 MAINTAINER=	znerd@FreeBSD.org
 COMMENT=	Orion Application Server
 
+BROKEN=		"Checksum mismatch"
+
 USE_JAVA=	1.2+
 USE_ZIP=	YES
 NO_BUILD=	YES
