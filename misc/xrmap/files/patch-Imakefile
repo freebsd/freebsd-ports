@@ -1,12 +1,9 @@
-$FreeBSD$
-
---- Imakefile.orig	Thu Feb 28 08:36:28 2002
-+++ Imakefile	Fri Jun  7 21:25:06 2002
-@@ -1,14 +1,16 @@
+--- Imakefile.orig	Wed Feb 12 10:25:02 2003
++++ Imakefile	Mon Mar 17 23:18:07 2003
+@@ -1,14 +1,15 @@
  XCOMM Should install to /usr or /usr/local ??
 -DESTDIR=/usr
 +DESTDIR=
-+
 +PREFIX=/usr/X11R6
  
  XCOMM Name of man subdirectory of DESTDIR:
@@ -21,39 +18,68 @@ $FreeBSD$
 -SHAREDIR=/share/rmap
 +SHAREDIR=$(PREFIX)/share/rmap
  
- XCOMM Name of PostScript viewer, image viewer and default print command
- PS_VIEWER=gv
-@@ -24,7 +26,7 @@
- #ifdef HPArchitecture
+ XCOMM Default external utilities :
+ XCOMM PostScript viewer, image viewer, HTML viewer, Print command
+@@ -33,18 +34,18 @@
+ XCOMM HP-UX
+ 
  ZLIBDIR=
+-CCOPTIONS = -Ae -DZLIB -DSHAREDIR=\"$(DESTDIR)$(SHAREDIR)\" -DPS_VIEWER=\"$(PS_VIEWER)\" -DIM_VIEWER=\"$(IM_VIEWER)\" -DHTML_VIEWER=\"$(HTML_VIEWER)\" -DPRINT_CMD=\"$(PRINT_CMD)\" -DEDITOR=\"$(EDITOR)\" -DMUSICPLAYER=\"$(MUSICPLAYER)\"
++CCOPTIONS = -Ae -DZLIB -DSHAREDIR=\"$(SHAREDIR)\" -DPS_VIEWER=\"$(PS_VIEWER)\" -DIM_VIEWER=\"$(IM_VIEWER)\" -DHTML_VIEWER=\"$(HTML_VIEWER)\" -DPRINT_CMD=\"$(PRINT_CMD)\" -DEDITOR=\"$(EDITOR)\" -DMUSICPLAYER=\"$(MUSICPLAYER)\"
  
--CCOPTIONS = -Ae -DZLIB -DSHAREDIR=\"$(DESTDIR)$(SHAREDIR)\" -DPS_VIEWER=\"$(PS_VIEWER)\" -DIM_VIEWER=\"$(IM_VIEWER)\" -DPRINT_CMD=\"$(PRINT_CMD)\" -DEDITOR=\"$(EDITOR)\"
-+CCOPTIONS = -Ae -DZLIB -DSHAREDIR=\"$(SHAREDIR)\" -DPS_VIEWER=\"$(PS_VIEWER)\" -DIM_VIEWER=\"$(IM_VIEWER)\" -DPRINT_CMD=\"$(PRINT_CMD)\" -DEDITOR=\"$(EDITOR)\"
  #else
- # SunOS
  
-@@ -34,7 +36,7 @@
- # Solaris, Linux
- #ZLIBDIR=-L/usr/lib
+ XCOMM SunOS
+ ZLIBDIR=-L/usr/lib
+-CCOPTIONS=-O -DZLIB -DSHAREDIR=\"$(DESTDIR)$(SHAREDIR)\" -DPS_VIEWER=\"$(PS_VIEWER)\" -DIM_VIEWER=\"$(IM_VIEWER)\" -DPRINT_CMD=\"$(PRINT_CMD)\" -DEDITOR=\"$(EDITOR)\" -DMUSICPLAYER=\"$(MUSICPLAYER)\"
++CCOPTIONS=-O -DZLIB -DSHAREDIR=\"$(SHAREDIR)\" -DPS_VIEWER=\"$(PS_VIEWER)\" -DIM_VIEWER=\"$(IM_VIEWER)\" -DPRINT_CMD=\"$(PRINT_CMD)\" -DEDITOR=\"$(EDITOR)\" -DMUSICPLAYER=\"$(MUSICPLAYER)\"
  
--CCOPTIONS=-O -DZLIB -DSHAREDIR=\"$(DESTDIR)$(SHAREDIR)\" -DPS_VIEWER=\"$(PS_VIEWER)\" -DIM_VIEWER=\"$(IM_VIEWER)\" -DPRINT_CMD=\"$(PRINT_CMD)\" -DEDITOR=\"$(EDITOR)\"
-+CCOPTIONS=-O -DZLIB -DSHAREDIR=\"$(SHAREDIR)\" -DPS_VIEWER=\"$(PS_VIEWER)\" -DIM_VIEWER=\"$(IM_VIEWER)\" -DPRINT_CMD=\"$(PRINT_CMD)\" -DEDITOR=\"$(EDITOR)\"
+ XCOMM Solaris, Linux
+ 
+ ZLIBDIR=-L/usr/lib
+-CCOPTIONS=-O -DZLIB -DSHAREDIR=\"$(DESTDIR)$(SHAREDIR)\" -DPS_VIEWER=\"$(PS_VIEWER)\" -DIM_VIEWER=\"$(IM_VIEWER)\" -DHTML_VIEWER=\"$(HTML_VIEWER)\" -DPRINT_CMD=\"$(PRINT_CMD)\" -DEDITOR=\"$(EDITOR)\" -DMUSICPLAYER=\"$(MUSICPLAYER)\"
++CCOPTIONS=-O -DZLIB -DSHAREDIR=\"$(SHAREDIR)\" -DPS_VIEWER=\"$(PS_VIEWER)\" -DIM_VIEWER=\"$(IM_VIEWER)\" -DHTML_VIEWER=\"$(HTML_VIEWER)\" -DPRINT_CMD=\"$(PRINT_CMD)\" -DEDITOR=\"$(EDITOR)\" -DMUSICPLAYER=\"$(MUSICPLAYER)\"
+ 
  #endif
  
- SRCS=xrmap.c
-@@ -51,7 +53,7 @@
+@@ -62,26 +63,30 @@
  ComplexProgramTarget(xrmap)
  
  install.man::
 -	if [ -r $(DESTDIR)$(MANDIR)/xrmap.1x.gz ] ; \
+-	   then gzip -f $(DESTDIR)$(MANDIR)/xrmap.1x ; fi
 +	if [ -r $(MANDIR)/xrmap.1x.gz ] ; \
- 	   then gzip -f $(DESTDIR)$(MANDIR)/xrmap.1x ; fi
++	   then gzip -f $(MANDIR)/xrmap.1x ; fi
+ 
+ all::
+ 	cd editkit ; make emx
  
  install:: install.man
-@@ -65,7 +67,6 @@
- 	if [ -d factbook ] ; then cp -fR factbook $(DESTDIR)$(SHAREDIR) ; fi
- 	if [ -d anthems ] ; then cp -fR anthems $(DESTDIR)$(SHAREDIR) ; fi
- 	if [ -d hymns ] ; then cp -fR hymns $(DESTDIR)$(SHAREDIR) ; fi
+-	$(MKDIRHIER) $(DESTDIR)$(SHAREDIR)
+-	cp -f Xrmaprc Locations $(DESTDIR)$(SHAREDIR)
++	$(MKDIRHIER) $(SHAREDIR)
++	cp -f Xrmaprc Locations CIA_WDB2.jpd $(SHAREDIR)
+ 	cd postscript ; rm -f *~
+-	cp -fR postscript  $(DESTDIR)$(SHAREDIR)
++	cp -fR postscript  $(SHAREDIR)
+ 	if [ -d i18n ] ; then cd i18n ; rm -f *~ ; fi
+-	if [ -d i18n ] ; then cp -fR i18n $(DESTDIR)$(SHAREDIR) ; fi
+-	$(MKDIRHIER) $(DESTDIR)$(SHAREDIR)/flags
+-	if [ -d picons ] ; then cp -fR picons $(DESTDIR)$(SHAREDIR) ; fi
+-	$(MKDIRHIER) $(DESTDIR)$(SHAREDIR)/doc
++	if [ -d i18n ] ; then cp -fR i18n $(SHAREDIR) ; fi
++	$(MKDIRHIER) $(SHAREDIR)/flags
++	if [ -d flags ] ; then cp -fR flags $(SHAREDIR); fi
++	if [ -d anthems ] ; then cp -fR anthems $(SHAREDIR); fi
++	if [ -d hymns ] ; then cp -fR hymns $(SHAREDIR); fi
++	if [ -d picons ] ; then cp -fR picons $(SHAREDIR) ; fi
++	if [ -d pdfmaps ] ; then cp -fR pdfmaps $(SHAREDIR) ; fi
++	if [ -d factbook ] ; then cp -fR factbook $(SHAREDIR) ; fi
++	$(MKDIRHIER) $(SHAREDIR)/doc
+ 	cp -f CHANGES EXAMPLE.rc INSTALL LICENSE MAPEDIT README \
+-		midi_cfg/README.midi TODO WARNING $(DESTDIR)$(SHAREDIR)/doc
++		midi_cfg/README.midi TODO WARNING $(SHAREDIR)/doc
+ 	cd editkit ; make install
 -	cat WARNING
  
  clean::
