@@ -1,5 +1,5 @@
---- Makefile.orig	Sat May  6 22:55:15 2000
-+++ Makefile	Mon Jul 31 18:08:14 2000
+--- Makefile.orig	Sat May  6 18:55:15 2000
++++ Makefile	Sat Aug 12 18:13:52 2000
 @@ -11,27 +11,27 @@
  #-----------------------------------------------------------------------
  
@@ -17,11 +17,11 @@
  #MACHINE     = -DSYSTIME_HAS_NO_TM -DFTIME -DEUC
  #MACHINE     = -DSYSTIME_HAS_NO_TM -DEUC -DHAVE_TM_ZONE -DSYSV_SYSTEM_DIR
 -MACHINE     = -DSYSTIME_HAS_NO_TM -DEUC -DSYSV_SYSTEM_DIR -DMKTIME
-+MACHINE     = -DSYSTIME_HAS_NO_TM -DSYSV_SYSTEM_DIR -DMKTIME -DUSESTRCASECMP
++MACHINE     = -DSYSTIME_HAS_NO_TM -DEUC -DSYSV_SYSTEM_DIR -DTIMELOCAL -DUSESTRCASECMP
  
  #OPTIMIZE	= -O2 -fstrength-reduce -fomit-frame-pointer
 -OPTIMIZE	= -O2 -DSUPPORT_LH7
-+OPTIMIZE       	= ${CFLAGS}
++OPTIMIZE       	= ${CFLAGS} -DSUPPORT_LH7
  
 -BINDIR = /usr/local/bin
 -MANDIR = /usr/local/man
