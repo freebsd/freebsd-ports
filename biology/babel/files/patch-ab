@@ -1,5 +1,5 @@
---- menus.c.orig	Thu Dec  4 20:20:28 1997
-+++ menus.c	Thu Dec  4 20:21:46 1997
+--- menus.c.orig	Tue Jan 21 23:52:36 1997
++++ menus.c	Mon Dec 22 14:29:37 1997
 @@ -63,9 +63,9 @@
      }
    }
@@ -26,12 +26,14 @@
      if (strlen(OutputKeywords) < 1)
        strcpy(OutputKeywords,"KEYWORDS GO HERE");
    }
-@@ -167,7 +167,7 @@
+@@ -167,8 +167,8 @@
    while (done == FALSE)
    {
      printf("Choice : ");
 -    gets(choice_string);
+-    for (i = 0; i < (int) strlen(choice_string); i++)
 +    fgets(choice_string, 99, stdin);
-     for (i = 0; i < (int) strlen(choice_string); i++)
++    for (i = 0; i < ((int) strlen(choice_string) - 1) ; i++)
      {
        if (!isdigit(choice_string[i]))
+ 	choice = 0;
