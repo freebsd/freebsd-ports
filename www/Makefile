@@ -43,6 +43,7 @@
     SUBDIR += decss
     SUBDIR += demoroniser
     SUBDIR += djvuplugin
+    SUBDIR += eddie
     SUBDIR += encompass
     SUBDIR += erwn
     SUBDIR += evg

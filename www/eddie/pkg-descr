@@ -1,0 +1,15 @@
+Eddie is a high availability clustering tool. It is an open source, 100%
+software solution written primarily in the functional programming language
+Erlang (www.erlang.org) and is available for Solaris, Linux and *BSD. 
+
+Eddie provides advanced automatic traffic management and configuration of
+geographically distributed server sites, consisting of one or more Local
+Area Networks. 
+
+At each site, certain servers are designated as Front End Servers. These
+servers are responsible for controlling and distributing incoming traffic
+across designated Back End Servers, and tracking the availability of Back
+End Web Servers within the site. Back End Servers may support a range of
+Web servers, including Apache. 
+
+WWW: http://eddie.sourceforge.net/
