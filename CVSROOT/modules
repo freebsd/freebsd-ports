@@ -3733,7 +3733,6 @@ ja-linux-JM	ports/japanese/linux-JM
 ja-linux-mozillafirebird-gtk1	ports/japanese/linux-mozillafirebird-gtk1
 ja-linux-mozillafirebird-gtk2	ports/japanese/linux-mozillafirebird-gtk2
 ja-linux-ttfonts	ports/japanese/linux-ttfonts
-ja-linux_locale	ports/japanese/linux_locale
 ja-lipsf	ports/japanese/lipsf
 ja-lookup	ports/japanese/lookup
 ja-lookup-emacs20	ports/japanese/lookup-emacs20
