@@ -170,7 +170,7 @@ CONFIGURE_ARGS+=	--disable-so
 WITH_ALL_STATIC_MODULES=	YES
 .endif
 
-.if defined(WITH_SUEXEC)
+.if defined(WITH_SUEXEC) || defined(WITH_SUEXEC_MODULES)
 .if ${WANT_APACHE} == common13
 SUEXEC_CONFARGS=	suexec
 CONFIGURE_ARGS+=	--enable-suexec
