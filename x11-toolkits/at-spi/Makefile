@@ -20,21 +20,14 @@ LIB_DEPENDS=	gailutil.17:${PORTSDIR}/x11-toolkits/gail \
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes
+USE_GNOMENG=	yes
+USE_GNOME=	gnomeprefix gnomehack gnomehier
 USE_X_PREFIX=	yes
 INSTALLS_SHLIB=	yes
 USE_LIBTOOL=	yes
-CONFIGURE_ARGS=	--localstatedir=${PREFIX}/share/gnome \
-		--datadir=${PREFIX}/share/gnome \
-		--with-html-dir=${PREFIX}/share/doc \
-		--disable-gtk-doc \
-		--enable-static
+CONFIGURE_ARGS=	--enable-static
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 CONFIGURE_TARGET=	--target=${MACHINE_ARCH}-unknown-freebsd${OSREL}
-
-pre-patch:
-	@find ${WRKSRC} -name Makefile.in | xargs ${PERL} -pi -e \
-		's|\$\(libdir\)/pkgconfig|\$\(prefix\)/libdata/pkgconfig|g ; \
-		 s|\$\(libdir\)/bonobo/servers|\$\(prefix\)/libdata/bonobo/servers|g'
 
 .include <bsd.port.mk>

@@ -61,7 +61,6 @@ share/doc/at-spi-cspi/spi-accessible.html
 share/doc/at-spi-cspi/spi-application.html
 share/doc/at-spi-cspi/spi-component.html
 share/doc/at-spi-cspi/spi-main.html
-share/gnome/idl/Magnifier.idl
 share/gnome/idl/at-spi-1.0/Accessibility.idl
 share/gnome/idl/at-spi-1.0/Accessibility_Accessible.idl
 share/gnome/idl/at-spi-1.0/Accessibility_Action.idl
@@ -83,7 +82,6 @@ share/gnome/idl/at-spi-1.0/Accessibility_Table.idl
 share/gnome/idl/at-spi-1.0/Accessibility_Text.idl
 share/gnome/idl/at-spi-1.0/Accessibility_Value.idl
 @dirrm share/gnome/idl/at-spi-1.0
-@dirrm share/gnome/idl
 @dirrm share/doc/at-spi-cspi
 @dirrm lib/orbit-2.0
 @dirrm include/at-spi-1.0/libspi
