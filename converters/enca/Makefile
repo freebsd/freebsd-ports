@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	enca
-PORTVERSION=	0.10.6
+PORTVERSION=	0.10.7
 CATEGORIES=	converters textproc
-MASTER_SITES=	http://web.dkm.cz/yeti/enca/
+MASTER_SITES=	http://physics.muni.cz/~yeti/Ftp/enca/
 
 MAINTAINER=	never@nevermind.kiev.ua
 
