@@ -3,11 +3,11 @@
 # Date created:         12 May 1999
 # Whom:                 Thomas Gellekum <tg@FreeBSD.ORG>
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1999/06/02 10:13:22 tg Exp $
 #
 
 DISTNAME=	${DOCFORMAT}-${VERSION}
-PKGNAME=        python-doc-${DOCFORMAT}
+PKGNAME=        python-doc-${DOCFORMAT}-${VERSION}
 CATEGORIES=	lang python
 MASTER_SITES=	ftp://www.python.org/pub/python/doc/1.5.2/ \
 		ftp://ftp.cwi.nl/pub/python/doc/1.5.2/
