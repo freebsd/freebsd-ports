@@ -32,10 +32,10 @@ do-build:
 do-install:
 	cd ${WRKSRC} && ${LOCALBASE}/sbin/apxs -A -i ${PORTNAME}.so
 
-post-install:
 .if !defined(NOPORTDOCS)
+post-install:
 	@${MKDIR} ${PREFIX}/share/doc/${PORTNAME}
-	@${INSTALL_DATA} ${_DISTDIR}/${DISTFILES:N*gz} \
+	@cd ${_DISTDIR} && ${INSTALL_DATA} ${DISTFILES:N*gz} \
 		${PREFIX}/share/doc/${PORTNAME}
 .endif
 
