@@ -281,7 +281,6 @@
     SUBDIR += sudo
     SUBDIR += super
     SUBDIR += swatch
-    SUBDIR += tcp_wrapper
     SUBDIR += tea-total
     SUBDIR += termlog
     SUBDIR += tinc
