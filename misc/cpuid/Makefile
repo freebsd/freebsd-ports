@@ -9,7 +9,7 @@
 PORTNAME=	cpuid
 PORTVERSION=	3.3
 CATEGORIES=	misc
-MASTER_SITES=	http://people.qualcomm.com/karn/code/cpuid/
+MASTER_SITES=	http://www.ka9q.net/code/cpuid/
 
 MAINTAINER=	ports@FreeBSD.org
 
