@@ -4805,6 +4805,7 @@ ocaml-findlib	ports/devel/ocaml-findlib
 ocaml-lablgl	ports/graphics/ocaml-lablgl
 ocaml-lablgtk	ports/x11-toolkits/ocaml-lablgtk
 ocaml-mode.el	ports/lang/ocaml-mode.el
+ocaml-pcre	ports/devel/ocaml-pcre
 ocamlweb	ports/devel/ocamlweb
 octave		ports/math/octave
 odsclient	ports/net/odsclient
