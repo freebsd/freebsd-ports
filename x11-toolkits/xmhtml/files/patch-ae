@@ -1,0 +1,11 @@
+--- ./tools/Imakefile.org	Wed May 12 01:31:49 1999
++++ ./tools/Imakefile	Wed May 12 02:04:11 1999
+@@ -35,7 +35,7 @@
+ DEFAULT_LIBS =
+ 
+ XCOMM X libraries, required for reptype
+-LOCAL_LIBRARIES = $(XMLIB) $(XTOOLLIB) $(XLIB) $(DMALLOCLIB) $(DEFAULT_LIBS)
++LOCAL_LIBRARIES = $(MOTIFLIB) $(XTOOLLIB) $(XLIB) $(DMALLOCLIB) $(DEFAULT_LIBS)
+ 
+ #if (IHaveZLIB)
+ SRCS = GetRepTypes.c WidgetSize.c gifinfo.c ImBuffer.c parse.c gif2gzf.c \
