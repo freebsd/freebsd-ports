@@ -328,6 +328,7 @@
     SUBDIR += phpbb
     SUBDIR += phpnuke
     SUBDIR += plugger
+    SUBDIR += pound
     SUBDIR += pruby
     SUBDIR += publicfile
     SUBDIR += py-HTMLgen
