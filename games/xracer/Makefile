@@ -19,9 +19,12 @@ USE_XLIB=	yes
 USE_MESA=	yes
 USE_GMAKE=	yes
 USE_AUTOMAKE=	yes
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
-		LIBS="-L${LOCALBASE}/lib -L${X11BASE}/lib"
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include ${PTHREAD_CFLAGS}" \
+		LIBS="-L${LOCALBASE}/lib -L${X11BASE}/lib ${PTHREAD_LIBS}"
 CONFIGURE_ARGS=	--disable-esd
+
+post-patch:
+	@${TOUCH} ${WRKSRC}/stamp-h.in
 
 post-install:
 	@${ECHO} "===>   Installing Tracks and Sound"
