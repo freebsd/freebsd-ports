@@ -1,5 +1,6 @@
 %%RUBY_SITELIBDIR%%/application.rb
 %%RUBY_SITELIBDIR%%/soap/XMLSchemaDatatypes.rb
+%%RUBY_SITELIBDIR%%/soap/XMLSchemaDatatypes1999.rb
 %%RUBY_SITELIBDIR%%/soap/baseData.rb
 %%RUBY_SITELIBDIR%%/soap/cgistub.rb
 %%RUBY_SITELIBDIR%%/soap/driver.rb
@@ -21,6 +22,7 @@
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/soap/apacheServer.cgi
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/soap/hippoClient.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/soap/RAA/SOAP::Lite.pl
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/soap/RAA/iRAA.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/soap/RAA/pocketSOAP.js
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/soap/RAA/soap4r.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/soap/RAA/soap4rApp.rb
