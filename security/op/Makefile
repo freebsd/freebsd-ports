@@ -7,7 +7,7 @@
 
 PORTNAME=	op
 PORTVERSION=	1.11
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	security
 MASTER_SITES=	ftp://ftp.cerias.purdue.edu/pub/tools/%SUBDIR%/ \
 		ftp://ftp.rge.com/pub/security/cerias/tools/%SUBDIR%/ \
@@ -49,10 +49,6 @@ SAMP_SUFX=	.sample
 DOC_FILES=	README op.paper
 
 .include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 501000
-BROKEN=		"Does not compile"
-.endif
 
 # Post-extract
 #
