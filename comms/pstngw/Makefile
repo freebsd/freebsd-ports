@@ -28,6 +28,10 @@ PLIST_FILES=	bin/pstngw
 
 .include <bsd.port.pre.mk>
 
+.if ${OSVERSION} >= 502126
+BROKEN=		"Does not compile on FreeBSD >= 5.x"
+.endif
+
 .if ${ARCH} == "amd64"
 BROKEN=		"Does not build on amd64 (shared libraries must be compiled with -fPIC)"
 .endif

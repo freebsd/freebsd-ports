@@ -25,6 +25,10 @@ PLIST_FILES=	bin/prcs
 
 .include <bsd.port.pre.mk>
 
+.if ${OSVERSION} >= 502126
+BROKEN=		"Does not compile on FreeBSD >= 5.x"
+.endif
+
 .if exists(${LOCALBASE}/bin/emacs)
 MAN1+=		prcs-callback.1 prcs-ediff.1 prcs-emerge.1
 PLIST_FILES+=	bin/prcs-callback bin/prcs-ediff bin/prcs-emerge \

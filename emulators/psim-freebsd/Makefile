@@ -23,6 +23,12 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-psim --target=powerpc-freebsd-elf \
 		--program-suffix=psim
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 502126
+BROKEN=		"Does not compile on FreeBSD >= 5.x"
+.endif
+
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/gdb/gdb ${PREFIX}/bin/${PORTNAME}
 	${MKDIR} ${PREFIX}/share/examples/${PORTNAME}
@@ -38,4 +44,4 @@ cklatest:
 	    ftp://mirrors.rcn.net/mirrors/sources.redhat.com/${MASTER_SITE_SUBDIR}/  \
 	    | ${GREP} gdb+dejagnu-
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
