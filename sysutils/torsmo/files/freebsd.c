@@ -22,6 +22,8 @@
 #include <sys/socket.h>
 #include <net/if.h>
 #include <net/if_mib.h>
+#include <sys/socket.h>
+#include <ifaddrs.h>
 
 void net_init();
 
@@ -138,111 +140,60 @@ void update_meminfo() {
 	}
 }
 
-void net_init()
-{
-/* XXX */
-#if 0	
-	struct ifmibdata tempndata;
-  	int numifaces;
-  	size_t len2;
-  	int mib[5], datamib[6];
-  	int i;
-
-  	mib[0] = CTL_NET;
-  	mib[1] = PF_LINK;
-  	mib[2] = NETLINK_GENERIC;
-  	mib[3] = IFMIB_SYSTEM;
-  	mib[4] = IFMIB_IFCOUNT;
-         
-  	datamib[0] = CTL_NET;
-  	datamib[1] = PF_LINK;
-  	datamib[2] = NETLINK_GENERIC;
-  	datamib[3] = IFMIB_IFDATA;
-  	datamib[4] = 1; 
-  	datamib[5] = IFDATA_GENERAL;
-
-  	len = sizeof(struct ifmibdata); 
-  	len2 = sizeof(numifaces);
-
-  	if(sysctl(mib, 5, &numifaces, &len2, NULL, 0) < 0)
-    		fprintf( stderr, "wmnet: failed to perform sysctl" );
-
-  	for(i = 1; i <= numifaces; i++)
-  	{
-    		datamib[4] = i;
-    		if(sysctl(datamib, 6, &tempndata, &len, NULL, 0) < 0)
-    		{
-      			fprintf( stderr, "wmnet: failed to get device(%d) data", i );
-		      break;
-		    }
-
-  }
-  
-
-  /* calculate and allocate mem for ifmibdata containing the if stats */ 
-  data = malloc(len);
-
-#endif
-}	
-
 void update_net_stats() {
-#if 0
-	static int rep;
-  	unsigned int i;
-  	char buf[256];
+	struct net_stat *ns;
   	double delta;
+	long long r, t, last_recv, last_trans;
 	
 	/* get delta */
 	delta = current_update_time - last_update_time;
   	if (delta <= 0.0001) 
 		return;
 
-	net_init();
-	
-  	/* read each interface */
-  	for (i=0; i<16; i++) {
-    		struct net_stat *ns;
-    		char *s, *p;
-    		long long r, t, last_recv, last_trans;
-		int datamib[6];
-		
-    		ns = get_net_stat(s);
-    		last_recv = ns->recv;
-    		last_trans = ns->trans;
+	struct ifaddrs          *ifap, *ifa;
+	        struct if_data          *ifd;
 
-		datamib[0] = CTL_NET;
- 		datamib[1] = PF_LINK;
-		datamib[2] = NETLINK_GENERIC;
-		datamib[3] = IFMIB_IFDATA;
-		datamib[4] = i;
-		datamib[5] = IFDATA_GENERAL;
-		
-		if (sysctl(datamib, 6, data, &len, NULL, 0) < 0 ) {
-			perror("sysctl");
-		}
-		
-		r = data->ifmd_data.ifi_ipackets;
-		t = data->ifmd_data.ifi_opackets;
-		
-    		if (r < ns->last_read_recv)
-      			ns->recv += ((long long) 4294967295U - ns->last_read_recv) + r;
-    		else
-      			ns->recv += (r - ns->last_read_recv);
-    			ns->last_read_recv = r;
+	if (getifaddrs(&ifap) < 0)
+		return;
 
-    		if (t < ns->last_read_trans)
-      			ns->trans += ((long long) 4294967295U - ns->last_read_trans) + t;
-    		else
-      			ns->trans += (t - ns->last_read_trans);
-    			ns->last_read_trans = t;
+	for (ifa = ifap; ifa; ifa = ifa->ifa_next) {
+		ns = get_net_stat((const char *)ifa->ifa_name);
 
-    		/* calculate speeds */
-		ns->recv_speed = (ns->recv - last_recv) / delta;
-    		ns->trans_speed = (ns->trans - last_trans) / delta;
-  }
+		if (ifa->ifa_flags & IFF_UP) {
+			last_recv = ns->recv;
+			last_trans = ns->trans;
+			
+			if (ifa->ifa_addr->sa_family != AF_LINK)
+				continue;
+			
+			ifd = (struct if_data *)ifa->ifa_data;
+			r = ifd->ifi_ibytes;
+			t = ifd->ifi_obytes;
+			
+			if (r < ns->last_read_recv)
+      				ns->recv += ((long long) 4294967295U - ns->last_read_recv) + r;
+    			else
+      				ns->recv += (r - ns->last_read_recv);
+    
+			ns->last_read_recv = r;
 
-#endif
+		    	if (t < ns->last_read_trans)
+			      ns->trans += ((long long) 4294967295U - ns->last_read_trans) + t;
+    			else
+      				ns->trans += (t - ns->last_read_trans);
+			
+		    	ns->last_read_trans = t;
+
+
+		    	/* calculate speeds */
+		    	ns->recv_speed = (ns->recv - last_recv) / delta;
+		    	ns->trans_speed = (ns->trans - last_trans) / delta;
+	        }
+	}
+
+	freeifaddrs(ifap);
 }
+
 
 int get_total_processes() {
 	/* It's easier to use kvm here than sysctl */
