@@ -48,7 +48,7 @@ MASTER_SITE_SUBDIR=	${PRTYPE}_21
 #.elif ${PRTYPE} == 740 || ${PRTYPE} == 870
 .elif ${DIST_TYPE} == cups
 MASTER_SITE_SUBDIR=	${PRTYPE}Ccups
-.elif ${DIST_TYPE} == lpr
+.elif ${PIPS_MAJOR} >= 2 && ${DIST_TYPE} == lpr
 MASTER_SITE_SUBDIR=	${PRTYPE}Clpr
 .else
 MASTER_SITE_SUBDIR=	pm${PRTYPE}clpr
