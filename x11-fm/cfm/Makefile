@@ -7,6 +7,7 @@
 
 PORTNAME=	cfm
 PORTVERSION=	0.5
+PORTREVISION=	1
 CATEGORIES=	x11-fm
 MASTER_SITES=	http://www.rpi.edu/~mullr/cfm/dist/
 
