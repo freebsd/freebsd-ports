@@ -17,6 +17,8 @@ COMMENT=	XInclude task for Jakarta Ant
 BUILD_DEPENDS=	${ANT}:${PORTSDIR}/devel/apache-ant \
 		${JAVASHAREDIR}/classes/xincluder.jar:${PORTSDIR}/textproc/xincluder
 
+BROKEN=		Install fails
+
 USE_JAVA=	1.1+
 
 ANT?=		${LOCALBASE}/bin/ant
