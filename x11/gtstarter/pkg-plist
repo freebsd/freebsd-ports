@@ -1,7 +1,9 @@
 bin/gtstarter
+libexec/gtstarter/gtstarter_applet.py
+libexec/gtstarter/gtstarter_applet.pyc
 libexec/gtstarter/gtstarter_lib.py
 libexec/gtstarter/gtstarter_lib.pyc
-libexec/gtstarter/gtstarter_lib.pyo
 libexec/gtstarter/gtstarter
+libdata/bonobo/servers/GTStarterApplet.server
 share/gnome/applications/gtstarter.desktop
 @dirrm libexec/gtstarter

@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	gtstarter
-PORTVERSION=	0.4.4
+PORTVERSION=	0.4.6
 CATEGORIES=	x11 gnome
 MASTER_SITES=	http://webonaut.com/distfiles/${PORTNAME}/
 
 MAINTAINER=	klammer@webonaut.com
-COMMENT=	Start the gnome-terminal from a list of configured profiles
+COMMENT=	Start gnome-terminal from a list of configured profiles (incl. Applet)
 
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes
@@ -25,16 +25,17 @@ do-build:
 	@${FIND} ${WRKSRC} -name '*.bak' -delete
 	@${FIND} ${WRKSRC} -name '*.orig' -delete
 	@${PYTHON_CMD} ${PYTHON_LIBDIR}/compileall.py ${WRKSRC}
-	@${PYTHON_CMD} -O ${PYTHON_LIBDIR}/compileall.py ${WRKSRC}
 
 do-install:
 	${MKDIR} ${X11BASE}/libexec/${PORTNAME}
 	@${INSTALL_SCRIPT} ${WRKSRC}/${PORTNAME} \
 		${X11BASE}/libexec/${PORTNAME}/
-	@${INSTALL_DATA} ${WRKSRC}/*.py* \
+	@${INSTALL_SCRIPT} ${WRKSRC}/*.py* \
 		${X11BASE}/libexec/${PORTNAME}/
 	@${INSTALL_DATA} ${WRKSRC}/${PORTNAME}.desktop \
 		${X11BASE}/share/gnome/applications/
+	@${INSTALL_DATA} ${WRKSRC}/*.server \
+		${X11BASE}/libdata/bonobo/servers/
 	@${LN} -sf ${X11BASE}/libexec/${PORTNAME}/${PORTNAME} \
 		${X11BASE}/bin/${PORTNAME}
 
