@@ -1,4 +1,5 @@
 %%INSTALLDIR%%/config.php
+%%INSTALLDIR%%/CONTRIB
 %%INSTALLDIR%%/ftp.php
 %%INSTALLDIR%%/functions.php
 %%INSTALLDIR%%/HISTORY
@@ -9,6 +10,7 @@
 %%INSTALLDIR%%/lib/header.php
 %%INSTALLDIR%%/lib/lang/en.php
 %%INSTALLDIR%%/lib/lang/es.php
+%%INSTALLDIR%%/lib/lang/fr.php
 %%INSTALLDIR%%/styles/beveled.css
 %%INSTALLDIR%%/styles/simple.css
 %%INSTALLDIR%%/styles/tooblue.css
