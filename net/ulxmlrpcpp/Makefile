@@ -17,6 +17,8 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A ultra lightweight xml-rpc library written in C++
 
+BROKEN=		Does not compile
+
 LIB_DEPENDS=	expat.5:${PORTSDIR}/textproc/expat2
 
 USE_BZIP2=	yes
