@@ -87,8 +87,6 @@ pre-extract:
 .endif
 
 pre-configure:
-# Regenerate erts configuration script
-	cd ${WRKSRC}/erts && ${AUTOCONF}
 # Check if javac is really in ${JAVABINDIR}.
 .if !defined(WITHOUT_JAVA)
 	@if [ ! -x ${JAVABINDIR}/javac ]; then \
