@@ -1,0 +1,14 @@
+bin/4va
+bin/4vdmake
+bin/ctorus
+bin/cutctorus
+share/4va-1.21/16cell.4vd
+share/4va-1.21/24cell.4vd
+share/4va-1.21/5cell.4vd
+share/4va-1.21/600cell.4vd
+share/4va-1.21/ctor.4vd
+share/4va-1.21/ctor2.4vd
+share/4va-1.21/hcube.4vd
+share/4va-1.21/hsph.4vd
+share/4va-1.21/sin.4vd
+share/4va-1.21/tripris.4vd
