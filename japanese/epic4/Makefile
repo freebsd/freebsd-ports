@@ -8,10 +8,10 @@
 CATEGORIES=	japanese irc
 
 MAINTAINER=	knu@FreeBSD.org
+COMMENT=	The (E)nhanced (P)rogrammable (I)RC-II (C)lient with Japanese support
 
 MASTERDIR=	${.CURDIR}/../../irc/epic4
 
-COMMENTFILE=	${.CURDIR}/pkg-comment
 DESCR=		${.CURDIR}/pkg-descr
 EXTRA_PATCHES=	${.CURDIR}/files/patch-*
 
