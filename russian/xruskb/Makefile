@@ -6,14 +6,15 @@
 #
 
 PORTNAME=	xruskb
-PORTVERSION=	1.15.2
+PORTVERSION=	1.15.3
 CATEGORIES=	russian x11
 MASTER_SITES=	ftp://ftp.yars.free.net/pub/software/unix/X11/
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	A keyboard layout switcher and indicator
 
 USE_X_PREFIX=	YES
-
+USE_BZIP2=	YES
 GNU_CONFIGURE=	YES
 CONFIGURE_ARGS=	--datadir=${PREFIX}/share
 
