@@ -38,6 +38,7 @@
     SUBDIR += eterm
     SUBDIR += eweather
     SUBDIR += fbsd-icons
+    SUBDIR += fixesext
     SUBDIR += fluxbg
     SUBDIR += fspanel
     SUBDIR += gdkxft
