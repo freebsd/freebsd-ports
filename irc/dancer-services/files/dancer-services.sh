@@ -4,8 +4,8 @@
 
 case "$1" in
 start)
-  if [ -x %PREFIX%/bin/dancer-services ]; then
-    su -fm ircservices -c %PREFIX%/bin/dancer-services && echo ' dancer-services'
+  if [ -x %PREFIX%/sbin/dancer-services ]; then
+    su -fm ircservices -c %PREFIX%/sbin/dancer-services && echo ' dancer-services'
   fi
   ;;
 
