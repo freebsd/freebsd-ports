@@ -31,6 +31,7 @@ lib/libuim.so.0
 lib/uim/plugin/libuim-anthy.so
 %%CANNA%%lib/uim/plugin/libuim-canna.so
 lib/uim/plugin/libuim-custom-enabler.so
+lib/uim/plugin/libuim-m17nlib.so
 %%SCIM%%lib/uim/plugin/libuim-scim.so
 lib/uim/plugin/libuim-skk.so
 libdata/pkgconfig/uim.pc
