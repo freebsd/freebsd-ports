@@ -7,6 +7,7 @@
 
 PORTNAME=	xine
 PORTVERSION=	1.0.b9
+PORTREVISION=	1
 CATEGORIES=	multimedia
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -25,7 +26,8 @@ LIB_DEPENDS=	a52.0:${PORTSDIR}/audio/liba52 \
 		SDL-1.1.5:${PORTSDIR}/devel/sdl12 \
 		vorbis.2:${PORTSDIR}/audio/libvorbis \
 		ogg.4:${PORTSDIR}/audio/libogg \
-		mng.1:${PORTSDIR}/graphics/libmng
+		mng.1:${PORTSDIR}/graphics/libmng \
+		dvdread.3:${PORTSDIR}/multimedia/libdvdread
 
 USE_X_PREFIX=	yes
 GNU_CONFIGURE=	yes
@@ -35,7 +37,7 @@ USE_GNOME=	gnomehack
 USE_GMAKE=	yes
 USE_MESA=	yes
 USE_REINPLACE=	yes
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${LOCALBASE}/include/dvdread -I${X11BASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib" \
 		SDL_CONFIG="${LOCALBASE}/bin/sdl11-config" \
 		THREAD_CFLAGS="${PTHREAD_CFLAGS}" \
