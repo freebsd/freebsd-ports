@@ -1,0 +1,20 @@
+--- lib/rpmrc.c.orig	Thu Sep 14 02:29:18 2000
++++ lib/rpmrc.c	Wed Oct  4 23:03:36 2000
+@@ -13,7 +13,7 @@
+ 
+ #include "misc.h"
+ 
+-static const char *defrcfiles = LIBRPMRC_FILENAME ":/etc/rpmrc:~/.rpmrc";
++static const char *defrcfiles = LIBRPMRC_FILENAME ":%%PREFIX%%/etc/rpmrc:~/.rpmrc";
+ 
+ struct machCacheEntry {
+     const char * name;
+@@ -858,7 +858,7 @@
+ 	    /* we are on ncr-sysv4 */
+ 	    char *prelid = NULL;
+ 	    FD_t fd;
+-	    fd = Fopen("/etc/.relid", "r.fdio");
++	    fd = Fopen("%%PREFIX%%/etc/.relid", "r.fdio");
+ 	    if (!Ferror(fd)) {
+ 		chptr = (char *) xcalloc(1, 256);
+ 		if (chptr != NULL) {

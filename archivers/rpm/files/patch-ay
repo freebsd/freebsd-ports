@@ -1,0 +1,49 @@
+--- doc/rpm.8.orig	Wed Aug 30 05:27:18 2000
++++ doc/rpm.8	Wed Oct  4 22:46:12 2000
+@@ -86,7 +86,7 @@
+ .IP "\fB\-\-rcfile \fI<filelist>\fP"
+ Each of the files in the colon separated \fI<filelist>\fP is read
+ sequentially by \fBrpm\fP for configuration information.
+-The default \fI<filelist>\fP is \fB/usr/lib/rpm/rpmrc:/etc/rpmrc:~/.rpmrc\fP.
++The default \fI<filelist>\fP is \fB%%PREFIX%%/lib/rpm/rpmrc:%%PREFIX%%/etc/rpmrc:~/.rpmrc\fP.
+ Only the first file in the list must exist, and tildes will be expanded to
+ the value of \fB$HOME\fP.
+ .IP "\fB\-\-root \fI<dir>\fP"
+@@ -493,17 +493,17 @@
+ 
+ For example, to be able to use PGP to sign packages as the user
+ \fB"John Doe <jdoe@foo.com>"\fP from the key rings located in
+-\fB/etc/rpm/.pgp\fP using the executable \fB/usr/bin/pgp\fP you would include
++\fB%%PREFIX%%/etc/rpm/.pgp\fP using the executable \fB%%PREFIX%%/bin/pgp\fP you would include
+ 
+ .I "\fB%_signature pgp\fP"
+ 
+-.I "\fB%_pgp_path /etc/rpm/.pgp\fP"
++.I "\fB%_pgp_path %%PREFIX%%/etc/rpm/.pgp\fP"
+ 
+ .I "\fB%_pgp_name John Doe <jdoe@foo.com>\fP"
+ 
+-.I "\fB%_pgpbin /usr/bin/pgp\fP"
++.I "\fB%_pgpbin %%PREFIX%%/bin/pgp\fP"
+ 
+-in a macro configuration file. Use \fB/etc/rpm/macros\fP for per-system
++in a macro configuration file. Use \fB%%PREIFX%%/etc/rpm/macros\fP for per-system
+ configuration and \fB~/.rpmmacros\fP for per-user configuration.
+ 
+ .SH REBUILD DATABASE OPTIONS
+@@ -575,11 +575,11 @@
+ 
+ .SH FILES
+ .nf
+-/usr/lib/rpm/rpmrc
+-/etc/rpmrc
++%%PREFIX%%/lib/rpm/rpmrc
++%%PREIFX%%/etc/rpmrc
+ ~/.rpmrc
+-/usr/lib/rpm/macros
+-/etc/rpm/macros
++%%PREFIX%%/lib/rpm/macros
++%%PREFIX%%/etc/rpm/macros
+ ~/.rpmmacros
+ /var/lib/rpm/conflictsindex.rpm
+ /var/lib/rpm/fileindex.rpm

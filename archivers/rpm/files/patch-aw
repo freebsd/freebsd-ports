@@ -1,0 +1,11 @@
+--- rpm.c.orig	Thu Sep 14 02:15:44 2000
++++ rpm.c	Thu Oct  5 00:37:37 2000
+@@ -313,7 +313,7 @@
+ 		  _("print the version of rpm being used"));
+     puts(         _("   all modes support the following arguments:"));
+     printHelpLine(_("      --rcfile <file>     "),
+-		  _("use <file> instead of /etc/rpmrc and $HOME/.rpmrc"));
++		  _("use <file> instead of %%PREFIX%%/etc/rpmrc and $HOME/.rpmrc"));
+     printHelpLine(  "     -v                   ",
+ 		  _("be a little more verbose"));
+     printHelpLine(  "     -vv                  ",
