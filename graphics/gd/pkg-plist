@@ -17,4 +17,6 @@ include/gd/gdfontt.h
 lib/libgd.a
 lib/libgd.so
 lib/libgd.so.2
+%%PORTDOCS%%share/doc/gd/index.html
+%%PORTDOCS%%@dirrm share/doc/gd
 @dirrm include/gd
