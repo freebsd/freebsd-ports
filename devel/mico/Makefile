@@ -22,7 +22,7 @@ INSTALLS_SHLIB=		yes
 GNU_CONFIGURE=		yes
 USE_REINPLACE=		yes
 USE_GMAKE=		yes
-USE_AUTOCONF_VER=	253
+USE_AUTOCONF_VER=	259
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 
 OPTIONS=	SERVICES "Build with all services, not only ORB" on \
@@ -61,7 +61,7 @@ CONFIGURE_ARGS+=	--disable-coss
 MICO_SERVICE=		"@comment "
 .endif
 
-CONFIGURE_ENV+=		CXXFLAGS=${CPPFLAGS}
+CONFIGURE_ENV+=		CXXFLAGS="${CPPFLAGS} -Wno-unused"
 
 .if defined(WITH_X11)
 USE_XLIB=		yes
@@ -109,10 +109,6 @@ MAN5=		micorc.5
 MAN8=		ird.8 micod.8 nsd.8
 
 .include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 502125
-BROKEN=	Does not build with gcc 3.4
-.endif
 
 post-extract:
 	@${TAR} xzf ${DISTDIR}/doc-html.tar.gz -C ${WRKDIR}
