@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gnuplot
-PORTVERSION=	0.3
+PORTVERSION=	0.4
 CATEGORIES=	math ruby
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	r${PORTNAME}
@@ -25,21 +25,24 @@ RUBY_SHEBANG_FILES=	${WRKSRC}/*.rb
 
 NO_BUILD=	yes
 
-WRKSRC=		${WRKDIR}/r${PORTNAME}
+WRKSRC=		${WRKDIR}/gplot
 
 post-patch:
 	${RUBY} -i.orig -p \
-		-e 'gsub %r:/usr/bin/gnuplot:, "${LOCALBASE}/bin/gnuplot"' \
-			${WRKSRC}/*.rb
+		-e 'gsub %r:#!/bin/env:, "#!/usr/bin/env"' \
+			${WRKSRC}/Gnuplot.rb
+	${RUBY} -i.orig -p \
+		-e 'gsub %r:gplot/Gnuplot:, "Gnuplot"' \
+			${WRKSRC}/demo.rb
 
 do-install:
 	${MKDIR} ${RUBY_SITELIBDIR}/gplot
-	${INSTALL_DATA} ${WRKSRC}/[A-Z]*.rb ${RUBY_SITELIBDIR}/gplot/
+	${INSTALL_DATA} ${WRKSRC}/Gnuplot.rb ${RUBY_SITELIBDIR}/gplot/
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${RUBY_MODEXAMPLESDIR}
 	${INSTALL_DATA} ${WRKSRC}/demo.rb ${RUBY_MODEXAMPLESDIR}/
 	${MKDIR} ${RUBY_MODDOCDIR}
-.for f in README TODO
+.for f in README
 	${INSTALL_DATA} ${WRKSRC}/${f} ${RUBY_MODDOCDIR}/
 .endfor
 .endif
