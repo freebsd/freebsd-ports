@@ -13,7 +13,7 @@ MASTER_SITES=	http://www.pingx.net/secpanel/
 MAINTAINER=	petef@FreeBSD.org
 COMMENT=	GUI for managing and running ssh and related utilities
 
-RUN_DEPENDS=	wish8.3:${PORTSDIR}/x11-toolkits/tk83 \
+RUN_DEPENDS=	wish8.4:${PORTSDIR}/x11-toolkits/tk84 \
 		ssh-askpass:${PORTSDIR}/security/openssh-askpass
 
 USE_X_PREFIX=	yes
@@ -21,7 +21,7 @@ USE_X_PREFIX=	yes
 NO_BUILD=	yes
 
 post-patch:
-	@${PERL} -pi -e 's!^exec wish!exec wish8.3!; \
+	@${PERL} -pi -e 's!^exec wish!exec wish8.4!; \
 	s!\[file dirname \[info script\]\]/../lib/secpanel!${PREFIX}/share/secpanel! ; \
 	s!askpassbin askpass!askpassbin ssh-askpass!' ${WRKSRC}/src/bin/secpanel
 
