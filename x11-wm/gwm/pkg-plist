@@ -1,6 +1,5 @@
 @cwd /usr/X11R6
 bin/gwm
-man/man1/gwm.1.gz
 @cwd /usr/local
 lib/gwm/Imakefile
 lib/gwm/ImakeB
@@ -211,3 +210,4 @@ lib/gwm/Zircon-icon.yes
 lib/gwm/Zircon-icon.no
 lib/gwm/wallpaper.gwm
 lib/gwm/timeout-win.gwm
+@dirrm lib/gwm

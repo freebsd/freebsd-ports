@@ -1,6 +1,5 @@
 bin/ctwm
 lib/X11/twm/system.ctwmrc
-man/man1/ctwm.1.gz
 lib/X11/twm/images/3D_Expand15.xpm
 lib/X11/twm/images/3D_Iconify15.xpm
 lib/X11/twm/images/3D_Lightning15.xpm
@@ -90,3 +89,5 @@ lib/X11/twm/images/xrn.goodnews.xpm
 lib/X11/twm/images/xrn.nonews.xpm
 lib/X11/twm/images/xrn.xpm
 lib/X11/twm/images/xterm.xpm
+@dirrm lib/X11/twm/images
+@dirrm lib/X11/twm

@@ -3,7 +3,7 @@
 # Date created:		1 May 1998
 # Whom:			Brett Taylor
 #
-# $Id: Makefile,v 1.25 1998/09/15 11:13:34 asami Exp $
+# $Id: Makefile,v 1.26 1998/09/17 00:32:56 asami Exp $
 #
 
 DISTNAME=	AfterStep-1.4.5.0
@@ -30,6 +30,11 @@ MANCOMPRESSED=	yes
 HAS_CONFIGURE=	yes
 
 XMKMF=		$(X11BASE)/bin/xmkmf
+MAN1=		ASSound.1 Animate.1 Audio.1 Auto.1 Banner.1 Clean.1 Form.1 \
+		Ident.1 Pager-noxpm.1 Pager.1 Save.1 Scroll.1 Wharf.1 \
+		WinList.1 Zharf.1 afterstep.1 ascd.1 asclock.1 asmail.1 \
+		asmodem.1 xiterm.1
+
 pre-configure:
 	@${ECHO_MSG} "The interactive portion is asking you about languages"
 	@${ECHO_MSG} "and color use by asclock."

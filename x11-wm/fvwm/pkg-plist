@@ -15,22 +15,6 @@ lib/X11/fvwm/FvwmAuto
 lib/X11/fvwm/FvwmWinList
 lib/X11/fvwm/FvwmBanner
 lib/X11/fvwm/system.fvwmrc
-man/man1/fvwm.1.gz
-man/man1/GoodStuff.1.gz
-man/man1/FvwmIdent.1.gz
-man/man1/FvwmDebug.1.gz
-man/man1/FvwmBacker.1.gz
-man/man1/FvwmClean.1.gz
-man/man1/FvwmPager.1.gz
-man/man1/FvwmAudio.1.gz
-man/man1/FvwmScroll.1.gz
-man/man1/FvwmIconBox.1.gz
-man/man1/FvwmSave.1.gz
-man/man1/FvwmSaveDesk.1.gz
-man/man1/FvwmAuto.1.gz
-man/man1/FvwmWinList.1.gz
-man/man1/xpmroot.1.gz
-man/man1/FvwmBanner.1.gz
 include/X11/pixmaps/arrdown2.xpm
 include/X11/pixmaps/arrows2.xpm
 include/X11/pixmaps/arrup2.xpm
@@ -74,3 +58,4 @@ include/X11/pixmaps/xterm-sgi.xpm
 include/X11/pixmaps/xterm-sol.xpm
 include/X11/pixmaps/xterm-sun.xpm
 include/X11/pixmaps/xterm.xpm
+@dirrm lib/X11/fvwm

@@ -3,7 +3,7 @@
 # Date created:		24 November 1994
 # Whom:			asami
 #
-# $Id: Makefile,v 1.13 1998/09/15 11:13:36 asami Exp $
+# $Id: Makefile,v 1.14 1998/09/17 00:32:58 asami Exp $
 #
 
 DISTNAME=	piewm
@@ -17,6 +17,7 @@ MAINTAINER=	ports@FreeBSD.ORG
 LIB_DEPENDS=    Xpm.4:${PORTSDIR}/graphics/xpm
 
 USE_IMAKE=	yes
+MAN1=		piewm.1
 
 # piewm.tar.Z includes and old version of xpm, and also a bunch of .o
 #  files plus an executable
