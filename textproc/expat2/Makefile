@@ -19,7 +19,7 @@ CONFIGURE_ARGS=	--enable-shared --enable-static
 USE_LIBTOOL=	yes
 USE_GMAKE=	yes
 
-INSTALLS_SHLIBS=	yes
+INSTALLS_SHLIB=	yes
 
 SHLIB_MAJOR=	2
 
