@@ -1,13 +1,13 @@
---- src/Makefile.in.orig	Sat Jan 26 10:59:12 2002
-+++ src/Makefile.in	Sat Jan 26 11:28:32 2002
+--- src/Makefile.in.orig	Wed May  1 08:10:58 2002
++++ src/Makefile.in	Wed Nov  6 04:06:28 2002
 @@ -75,8 +75,8 @@
  
  SUBDIRS = fonts
  
 -LDFLAGS = -L/usr/X11R6/lib
 -INCLUDES = -g -O3 -Wall -I/usr/X11R6/include $(X_CFLAGS) -I$(prefix)/include -I$(includedir) -I. -DPREFIX=\""$(prefix)"\" @GIBLIB_CFLAGS@
-+LDFLAGS =
-+INCLUDES = -Wall -I/usr/X11R6/include $(X_CFLAGS) -I$(prefix)/include -I$(includedir) -I. -DPREFIX=\""$(prefix)"\" @GIBLIB_CFLAGS@
++LDFLAGS = @LDFLAGS@
++INCLUDES = $(X_CFLAGS) -I$(includedir) -I. -DPREFIX=\""$(prefix)"\" @GIBLIB_CFLAGS@
  
  LIBOBJS = @LIBOBJS@
  
