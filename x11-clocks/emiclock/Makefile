@@ -14,6 +14,8 @@ MASTER_SITES=	ftp://ftp.noge.com/pub/EmiClock/X11/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Hyper-animated face analog clock for X11
 
+BROKEN=		Incomplete pkg-plist
+
 .if ${MACHINE_ARCH} != "i386"
 PLIST=		${PKGDIR}/pkg-plist.nosound
 .endif
