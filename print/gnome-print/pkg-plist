@@ -5,6 +5,7 @@ include/libgnomeprint/gnome-canvas-bpath.h
 include/libgnomeprint/gnome-canvas-hacktext.h
 include/libgnomeprint/gnome-font-dialog.h
 include/libgnomeprint/gnome-font.h
+include/libgnomeprint/gnome-print-compress.h
 include/libgnomeprint/gnome-print-copies.h
 include/libgnomeprint/gnome-print-dialog.h
 include/libgnomeprint/gnome-print-i18n.h
@@ -78,6 +79,7 @@ share/locale/et/LC_MESSAGES/gnome-print.mo
 share/locale/fi/LC_MESSAGES/gnome-print.mo
 share/locale/fr/LC_MESSAGES/gnome-print.mo
 share/locale/gl/LC_MESSAGES/gnome-print.mo
+share/locale/hr/LC_MESSAGES/gnome-print.mo
 share/locale/hu/LC_MESSAGES/gnome-print.mo
 share/locale/it/LC_MESSAGES/gnome-print.mo
 share/locale/ja/LC_MESSAGES/gnome-print.mo
