@@ -6,13 +6,12 @@
 #
 
 PORTNAME?=	ispell
-PORTVERSION?=	3.2.04
-PORTREVISION=	1
+PORTVERSION?=	3.2.05
 CATEGORIES+=	textproc
 MASTER_SITES=	http://fmg-www.cs.ucla.edu/geoff/tars/
 
 MAINTAINER?=	jmz@FreeBSD.org
-ISPELL_FILES= 	ispell-3.2.04.tar.gz
+ISPELL_FILES= 	ispell-3.2.05.tar.gz
 
 MAN1=		ispell.1
 MAN4=		ispell.4 english.4
