@@ -1,0 +1,13 @@
+share/gnome/gdesklets/Displays/networkinfo/networkin.display
+share/gnome/gdesklets/Displays/networkinfo/networkout.display
+share/gnome/gdesklets/Displays/networkinfo/screenshot.png
+share/gnome/gdesklets/Displays/networkinfo/gfx/bg.png
+share/gnome/gdesklets/Displays/networkinfo/gfx/border-left.png
+share/gnome/gdesklets/Displays/networkinfo/gfx/gauge-bg.png
+share/gnome/gdesklets/Displays/networkinfo/gfx/gauge.png
+share/gnome/gdesklets/Displays/networkinfo/gfx/memory.png
+share/gnome/gdesklets/Displays/networkinfo/gfx/network.png
+share/gnome/gdesklets/Displays/networkinfo/gfx/networkin.png
+share/gnome/gdesklets/Displays/networkinfo/gfx/networkout.png
+@dirrm share/gnome/gdesklets/Displays/networkinfo/gfx
+@dirrm share/gnome/gdesklets/Displays/networkinfo
