@@ -3420,6 +3420,7 @@ ko-hmconv	ports/korean/hmconv
 ko-hpscat	ports/korean/hpscat
 ko-htexp	ports/korean/htexp
 ko-imhangul	ports/korean/imhangul
+ko-imhangul_status_applet	ports/korean/imhangul_status_applet
 ko-johabfonts	ports/korean/johabfonts
 ko-kaistfonts	ports/korean/kaistfonts
 ko-kde3-i18n	ports/korean/kde3-i18n
