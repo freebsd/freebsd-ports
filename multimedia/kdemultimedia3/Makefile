@@ -34,9 +34,9 @@ WITH_OGGVORBIS=	yes
 .if defined(WITH_OGGVORBIS) && ${WITH_OGGVORBIS} == yes
 LIB_DEPENDS+=	ogg.2:${PORTSDIR}/audio/libogg \
 		vorbis.0:${PORTSDIR}/audio/libvorbis
-PLIST_SUB+=	OGGVORBIS:=""
+PLIST_SUB+=	OGGVORBIS=""
 .else
-PLIST_SUB+=	OGGVORBIS:="@comment "
+PLIST_SUB+=	OGGVORBIS="@comment "
 pre-everything::
 	@${ECHO_MSG}
 	@${ECHO_MSG} "If you want to compile with ogg/vorbis support,"
