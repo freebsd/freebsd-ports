@@ -1,4 +1,7 @@
 @comment $FreeBSD$
+@unexec if [ -f %D/etc/drweb/addresses.conf ] && cmp -s %D/etc/drweb/addresses.conf %D/etc/drweb/addresses.conf-dist; then rm -f %D/etc/drweb/addresses.conf; fi
+etc/drweb/addresses.conf-dist
+@exec [ -f %B/addresses.conf ] || cp %B/%f %B/addresses.conf
 @unexec if [ -f %D/etc/drweb/drweb_smf.conf ] && cmp -s %D/etc/drweb/drweb_smf.conf %D/etc/drweb/drweb_smf.conf-dist; then rm -f %D/etc/drweb/drweb_smf.conf; fi
 etc/drweb/drweb_smf.conf-dist
 @exec [ -f %B/drweb_smf.conf ] || cp %B/%f %B/drweb_smf.conf
@@ -8,12 +11,12 @@ etc/drweb/templates/en-ru/sendmail/error-admin.msg-dist
 @unexec if [ -f %D/etc/drweb/templates/en-ru/sendmail/error-sender.msg ] && cmp -s %D/etc/drweb/templates/en-ru/sendmail/error-sender.msg %D/etc/drweb/templates/en-ru/sendmail/error-sender.msg-dist; then rm -f %D/etc/drweb/templates/en-ru/sendmail/error-sender.msg; fi
 etc/drweb/templates/en-ru/sendmail/error-sender.msg-dist
 @exec [ -f %B/error-sender.msg ] || cp %B/%f %B/error-sender.msg
-@unexec if [ -f %D/etc/drweb/templates/en-ru/sendmail/mailbomb-admin.msg ] && cmp -s %D/etc/drweb/templates/en-ru/sendmail/mailbomb-admin.msg %D/etc/drweb/templates/en-ru/sendmail/mailbomb-admin.msg-dist; then rm -f %D/etc/drweb/templates/en-ru/sendmail/mailbomb-admin.msg; fi
-etc/drweb/templates/en-ru/sendmail/mailbomb-admin.msg-dist
-@exec [ -f %B/mailbomb-admin.msg ] || cp %B/%f %B/mailbomb-admin.msg
-@unexec if [ -f %D/etc/drweb/templates/en-ru/sendmail/mailbomb-sender.msg ] && cmp -s %D/etc/drweb/templates/en-ru/sendmail/mailbomb-sender.msg %D/etc/drweb/templates/en-ru/sendmail/mailbomb-sender.msg-dist; then rm -f %D/etc/drweb/templates/en-ru/sendmail/mailbomb-sender.msg; fi
-etc/drweb/templates/en-ru/sendmail/mailbomb-sender.msg-dist
-@exec [ -f %B/mailbomb-sender.msg ] || cp %B/%f %B/mailbomb-sender.msg
+@unexec if [ -f %D/etc/drweb/templates/en-ru/sendmail/archive-admin.msg ] && cmp -s %D/etc/drweb/templates/en-ru/sendmail/archive-admin.msg %D/etc/drweb/templates/en-ru/sendmail/archive-admin.msg-dist; then rm -f %D/etc/drweb/templates/en-ru/sendmail/archive-admin.msg; fi
+etc/drweb/templates/en-ru/sendmail/archive-admin.msg-dist
+@exec [ -f %B/archive-admin.msg ] || cp %B/%f %B/archive-admin.msg
+@unexec if [ -f %D/etc/drweb/templates/en-ru/sendmail/archive-sender.msg ] && cmp -s %D/etc/drweb/templates/en-ru/sendmail/archive-sender.msg %D/etc/drweb/templates/en-ru/sendmail/archive-sender.msg-dist; then rm -f %D/etc/drweb/templates/en-ru/sendmail/archive-sender.msg; fi
+etc/drweb/templates/en-ru/sendmail/archive-sender.msg-dist
+@exec [ -f %B/archive-sender.msg ] || cp %B/%f %B/archive-sender.msg
 @unexec if [ -f %D/etc/drweb/templates/en-ru/sendmail/skip-sender.msg ] && cmp -s %D/etc/drweb/templates/en-ru/sendmail/skip-sender.msg %D/etc/drweb/templates/en-ru/sendmail/skip-sender.msg-dist; then rm -f %D/etc/drweb/templates/en-ru/sendmail/skip-sender.msg; fi
 etc/drweb/templates/en-ru/sendmail/skip-sender.msg-dist
 @exec [ -f %B/skip-sender.msg ] || cp %B/%f %B/skip-sender.msg
@@ -26,38 +29,19 @@ etc/drweb/templates/en-ru/sendmail/virus-rcpts.msg-dist
 @unexec if [ -f %D/etc/drweb/templates/en-ru/sendmail/virus-sender.msg ] && cmp -s %D/etc/drweb/templates/en-ru/sendmail/virus-sender.msg %D/etc/drweb/templates/en-ru/sendmail/virus-sender.msg-dist; then rm -f %D/etc/drweb/templates/en-ru/sendmail/virus-sender.msg; fi
 etc/drweb/templates/en-ru/sendmail/virus-sender.msg-dist
 @exec [ -f %B/virus-sender.msg ] || cp %B/%f %B/virus-sender.msg
-@unexec if [ -f %D/etc/drweb/templates/en-es/sendmail/error-admin.msg ] && cmp -s %D/etc/drweb/templates/en-es/sendmail/error-admin.msg %D/etc/drweb/templates/en-es/sendmail/error-admin.msg-dist; then rm -f %D/etc/drweb/templates/en-es/sendmail/error-admin.msg; fi
-etc/drweb/templates/en-es/sendmail/error-admin.msg-dist
-@exec [ -f %B/error-admin.msg ] || cp %B/%f %B/error-admin.msg
-@unexec if [ -f %D/etc/drweb/templates/en-es/sendmail/error-sender.msg ] && cmp -s %D/etc/drweb/templates/en-es/sendmail/error-sender.msg %D/etc/drweb/templates/en-es/sendmail/error-sender.msg-dist; then rm -f %D/etc/drweb/templates/en-es/sendmail/error-sender.msg; fi
-etc/drweb/templates/en-es/sendmail/error-sender.msg-dist
-@exec [ -f %B/error-sender.msg ] || cp %B/%f %B/error-sender.msg
-@unexec if [ -f %D/etc/drweb/templates/en-es/sendmail/mailbomb-admin.msg ] && cmp -s %D/etc/drweb/templates/en-es/sendmail/mailbomb-admin.msg %D/etc/drweb/templates/en-es/sendmail/mailbomb-admin.msg-dist; then rm -f %D/etc/drweb/templates/en-es/sendmail/mailbomb-admin.msg; fi
-etc/drweb/templates/en-es/sendmail/mailbomb-admin.msg-dist
-@exec [ -f %B/mailbomb-admin.msg ] || cp %B/%f %B/mailbomb-admin.msg
-@unexec if [ -f %D/etc/drweb/templates/en-es/sendmail/mailbomb-sender.msg ] && cmp -s %D/etc/drweb/templates/en-es/sendmail/mailbomb-sender.msg %D/etc/drweb/templates/en-es/sendmail/mailbomb-sender.msg-dist; then rm -f %D/etc/drweb/templates/en-es/sendmail/mailbomb-sender.msg; fi
-etc/drweb/templates/en-es/sendmail/mailbomb-sender.msg-dist
-@exec [ -f %B/mailbomb-sender.msg ] || cp %B/%f %B/mailbomb-sender.msg
-@unexec if [ -f %D/etc/drweb/templates/en-es/sendmail/skip-sender.msg ] && cmp -s %D/etc/drweb/templates/en-es/sendmail/skip-sender.msg %D/etc/drweb/templates/en-es/sendmail/skip-sender.msg-dist; then rm -f %D/etc/drweb/templates/en-es/sendmail/skip-sender.msg; fi
-etc/drweb/templates/en-es/sendmail/skip-sender.msg-dist
-@exec [ -f %B/skip-sender.msg ] || cp %B/%f %B/skip-sender.msg
-@unexec if [ -f %D/etc/drweb/templates/en-es/sendmail/virus-admin.msg ] && cmp -s %D/etc/drweb/templates/en-es/sendmail/virus-admin.msg %D/etc/drweb/templates/en-es/sendmail/virus-admin.msg-dist; then rm -f %D/etc/drweb/templates/en-es/sendmail/virus-admin.msg; fi
-etc/drweb/templates/en-es/sendmail/virus-admin.msg-dist
-@exec [ -f %B/virus-admin.msg ] || cp %B/%f %B/virus-admin.msg
-@unexec if [ -f %D/etc/drweb/templates/en-es/sendmail/virus-rcpts.msg ] && cmp -s %D/etc/drweb/templates/en-es/sendmail/virus-rcpts.msg %D/etc/drweb/templates/en-es/sendmail/virus-rcpts.msg-dist; then rm -f %D/etc/drweb/templates/en-es/sendmail/virus-rcpts.msg; fi
-etc/drweb/templates/en-es/sendmail/virus-rcpts.msg-dist
-@exec [ -f %B/virus-rcpts.msg ] || cp %B/%f %B/virus-rcpts.msg
-@unexec if [ -f %D/etc/drweb/templates/en-es/sendmail/virus-sender.msg ] && cmp -s %D/etc/drweb/templates/en-es/sendmail/virus-sender.msg %D/etc/drweb/templates/en-es/sendmail/virus-sender.msg-dist; then rm -f %D/etc/drweb/templates/en-es/sendmail/virus-sender.msg; fi
-etc/drweb/templates/en-es/sendmail/virus-sender.msg-dist
-@exec [ -f %B/virus-sender.msg ] || cp %B/%f %B/virus-sender.msg
 @unexec if [ -f %D/etc/drweb/users.conf ] && cmp -s %D/etc/drweb/users.conf %D/etc/drweb/users.conf-dist; then rm -f %D/etc/drweb/users.conf; fi
 etc/drweb/users.conf-dist
 @exec [ -f %B/users.conf ] || cp %B/%f %B/users.conf
+@unexec if [ -f %D/etc/drweb/viruses.conf ] && cmp -s %D/etc/drweb/viruses.conf %D/etc/drweb/viruses.conf-dist; then rm -f %D/etc/drweb/viruses.conf; fi
+etc/drweb/viruses.conf-dist
+@exec [ -f %B/viruses.conf ] || cp %B/%f %B/viruses.conf
 @unexec if [ -f %D/etc/rc.d/drweb-sendmail.sh ] && cmp -s %D/etc/rc.d/drweb-sendmail.sh %D/etc/rc.d/drweb-sendmail.sh-dist; then rm -f %D/etc/rc.d/drweb-sendmail.sh; fi
 etc/rc.d/drweb-sendmail.sh-dist
 @exec if [ ! -f %D/etc/rc.d/drweb-sendmail.sh ] ; then cp -p %D/%F %B/drweb-sendmail.sh; chmod 555 %B/drweb-sendmail.sh; fi
 sbin/drweb-smf
 sbin/drwebdc
+share/doc/drweb-sendmail/addresses_list.rus.txt
+share/doc/drweb-sendmail/addresses_list.txt
 share/doc/drweb-sendmail/conf_file.rus.txt
 share/doc/drweb-sendmail/conf_file.txt
 share/doc/drweb-sendmail/notify.rus.txt
@@ -68,8 +52,8 @@ share/doc/drweb-sendmail/sendmail.cf.addon
 share/doc/drweb-sendmail/sendmail.mc.addon
 share/doc/drweb-sendmail/users_list.rus.txt
 share/doc/drweb-sendmail/users_list.txt
-@dirrm etc/drweb/templates/en-es/sendmail
-@dirrm etc/drweb/templates/en-es
+share/doc/drweb-sendmail/viruses_list.rus.txt
+share/doc/drweb-sendmail/viruses_list.txt
 @dirrm etc/drweb/templates/en-ru/sendmail
 @dirrm etc/drweb/templates/en-ru
 @dirrm etc/drweb/templates

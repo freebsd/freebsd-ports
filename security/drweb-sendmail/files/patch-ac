@@ -1,6 +1,25 @@
---- doc/sendmail/configure.orig	Fri Sep 20 19:29:05 2002
-+++ doc/sendmail/configure	Mon Oct  7 03:28:04 2002
-@@ -110,7 +110,7 @@
+--- doc/sendmail/configure.orig	Wed Feb  5 19:04:53 2003
++++ doc/sendmail/configure	Tue Feb 18 07:10:13 2003
+@@ -34,18 +34,6 @@
+ FILTER_CFG_NOSTD="-- ERROR ---"
+ FILTER_TIMEOUT="-- ERROR ---"
+ 
+-# Test bash version
+-
+-if [ "x$BASH_VERSION" = "x" ] ; then
+-    echo "You should use bash (version 2.04 at least) as shell to use this script"
+-    exit
+-fi
+-echo "You current shell - bash $BASH_VERSION"
+-if [ ${BASH_VERSINFO[0]} -lt 2 -o ${BASH_VERSINFO[1]} -lt 4 ] ; then
+-    echo "You should use version 2.04 at least to use this script"
+-    exit
+-fi
+-
+ # Test echo properties
+ 
+ (echo "12345\c" ; echo " ") > echotmp
+@@ -124,7 +112,7 @@
  # Read transport
  
  POS=`$GREP -i PidFile $DAEMON_INI | $GREP -v ";"`
@@ -9,7 +28,16 @@
      echo
      echo -n "Daemon pidfile not defined in ini-file ..."
      POS=`$GREP -i SocketMode $DAEMON_INI | $GREP -v ";" | $AWK '{ print match( $0, /[Tt][Cc][Pp]/ ) }'`
-@@ -266,8 +266,13 @@
+@@ -191,7 +179,7 @@
+ 
+ # Read transport
+ 
+-TMP=`$GREP -i Address $FILTER_CFG | $GREP -v "#"`
++TMP=`$GREP -i Address[^a-z] $FILTER_CFG | $GREP -v "#"`
+ DADR=`echo $TMP | $AWK '{ gsub( /["[:blank:]]/, "", $0 ); str = substr( $0, match( $0, /^Address=/ ), match( substr( $0, 2 ), /MilterAddress=/ ) ); print str; }'`
+ FADR=`echo $TMP | $AWK '{ gsub( /["[:blank:]]/, "", $0 ); str = substr( $0, 1+match( substr( $0, 2 ), /MilterAddress=/ ) ); print str; }'`
+ DMODE=`echo $DADR | $AWK '{ str = substr( $0, 1+index( $0, "=" ), index( $0, ":" ) - index( $0, "=" ) - 1 ); print str; }'`
+@@ -297,8 +285,13 @@
              echo "Edit one of configuration files and try again."
              exit 1
          fi 

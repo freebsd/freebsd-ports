@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	drweb_sendmail
-PORTVERSION=    4.29
+PORTVERSION=    4.29.10
 CATEGORIES=	security mail
 MASTER_SITES=   ftp://ftp.drweb.ru/pub/unix/
 DISTNAME=       drweb-clients-${PORTVERSION}-sources
@@ -38,9 +38,9 @@ RANDOM_NUMBER=!!!___EDIT_THIS___!!!
 RANDOM_NUMBER!=dd if=/dev/random count=1 2> /dev/null | /sbin/md5
 .endif
 
-LANGS=en-ru en-es
-CONFS=drweb_smf users
-TMPLS=error-admin error-sender mailbomb-admin mailbomb-sender skip-sender \
+LANGS=en-ru #en-es
+CONFS=drweb_smf users viruses addresses
+TMPLS=error-admin error-sender archive-admin archive-sender skip-sender \
       virus-admin virus-rcpts virus-sender
 
 post-patch:
@@ -58,6 +58,7 @@ post-patch:
 
 post-configure:
 	cd ${WRKSRC} && { \
+		${ECHO_CMD} ${PORTVERSION}; \
 		${ECHO_CMD} y; \
 		${ECHO_CMD} n; \
 		${ECHO_CMD} y; \
@@ -67,7 +68,6 @@ post-configure:
 		${ECHO_CMD} n; \
 		${ECHO_CMD} n; \
 		${ECHO_CMD} y; \
-		${ECHO_CMD} n; \
 		${ECHO_CMD} ${CFLAGS} ; \
 		${ECHO_CMD} y; \
 	} | ./configure
