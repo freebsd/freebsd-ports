@@ -1,0 +1,59 @@
+*** config.guess	Tue Nov 16 12:43:37 1993
+--- config.guess	Fri Oct 27 23:22:19 1995
+***************
+*** 174,179 ****
+--- 174,183 ----
+      i[34]86:NetBSD:*:*)
+  	echo ${UNAME_MACHINE}-unknown-netbsd${UNAME_RELEASE}
+  	exit 0 ;;
++     i[34]86:FreeBSD:*:*)
++ 	foo=`echo ${UNAME_RELEASE}|sed -e 's/-.*//'`
++ 	echo ${UNAME_MACHINE}-unknown-freebsd${foo}
++ 	exit 0 ;;
+      i[34]86:Linux:*:*)
+  	echo ${UNAME_MACHINE}-unknown-linux
+  	exit 0 ;;
+*** config.sub	Fri Dec 10 12:01:41 1993
+--- config.sub	Fri Oct 27 23:20:27 1995
+***************
+*** 228,233 ****
+--- 223,232 ----
+  		basic_machine=i386-unknown		# CYGNUS LOCAL
+  		os=-netbsd
+  		;;
++ 	freebsd386)
++ 		basic_machine=i386-unknown		# CYGNUS LOCAL
++ 		os=-freebsd
++ 		;;
+  	spur)
+  		basic_machine=spur-unknown
+  		;;
+***************
+*** 694,700 ****
+  	      | -amigados* | -msdos* | -newsos* | -unicos* | -aos* \
+  	      | -nindy* | -vxworks* | -ebmon* | -hms* | -mvs* | -clix* \
+  	      | -riscos* | -linux* | -uniplus* | -iris* | -rtu* | -xenix* \
+! 	      | -hiux* | -386bsd* | -netbsd* | -riscix* | -lynxos* \
+  	      | -go32 | -sim | -es1800* | -udi | -hms* | -xray | -hds* \
+  	      | -os68k* | -none* | -v88r* | -aout* | -coff | -elf* | -bosx* \
+  	      | -abug | -ecoff* | -netware* )
+--- 693,699 ----
+  	      | -amigados* | -msdos* | -newsos* | -unicos* | -aos* \
+  	      | -nindy* | -vxworks* | -ebmon* | -hms* | -mvs* | -clix* \
+  	      | -riscos* | -linux* | -uniplus* | -iris* | -rtu* | -xenix* \
+! 	      | -hiux* | -386bsd* | -netbsd* | -freebsd* | -riscix* | -lynxos* \
+  	      | -go32 | -sim | -es1800* | -udi | -hms* | -xray | -hds* \
+  	      | -os68k* | -none* | -v88r* | -aout* | -coff | -elf* | -bosx* \
+  	      | -abug | -ecoff* | -netware* )
+***************
+*** 724,729 ****
+--- 723,731 ----
+  	-386bsd)					# CYGNUS LOCAL
+  		os=-bsd
+  		;;
++ 	-freebsd*)
++ 		os=-bsd
++ 		;;
+  	-ctix* | -uts*)
+  		os=-sysv
+  		;;

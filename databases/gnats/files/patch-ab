@@ -1,0 +1,59 @@
+*** Makefile.in	Sat Oct 28 00:37:25 1995
+--- Makefile.in	Sat Oct 28 00:37:33 1995
+***************
+*** 854,861 ****
+  
+  MAKEDIRS= \
+  	$(prefix) \
+! 	$(exec_prefix) \
+! 	$(tooldir)
+  
+  .PHONY: install-dirs
+  install-dirs:
+--- 854,860 ----
+  
+  MAKEDIRS= \
+  	$(prefix) \
+! 	$(exec_prefix)
+  
+  .PHONY: install-dirs
+  install-dirs:
+*** gnats/Makefile.in	Fri Dec 10 14:29:14 1993
+--- gnats/Makefile.in	Sat Oct 28 00:13:56 1995
+***************
+*** 402,408 ****
+  	  echo "*** Warning: Must make pr-edit suid gnats" ; \
+  	fi
+  
+! EXTRA_INSTALL =
+  
+  install-gnats: install-gnats-bin install-gnats-man $(EXTRA_INSTALL)
+  
+--- 402,408 ----
+  	  echo "*** Warning: Must make pr-edit suid gnats" ; \
+  	fi
+  
+! EXTRA_INSTALL = install-info
+  
+  install-gnats: install-gnats-bin install-gnats-man $(EXTRA_INSTALL)
+
+
+*** send-pr/Makefile.in	Sat Oct 28 00:33:59 1995
+--- send-pr/Makefile.in	Sat Oct 28 00:34:01 1995
+***************
+*** 146,152 ****
+  
+  install: $(SEND_PR_INSTALL)
+  install-tools: install-norm install-categories
+! install-gnats: install-norm install-gnats-dist install-categories
+  
+  install-norm all-gnats:
+  	$(INSTALL_PROGRAM) send-pr $(bindir)/send-pr
+--- 146,152 ----
+  
+  install: $(SEND_PR_INSTALL)
+  install-tools: install-norm install-categories
+! install-gnats: install-norm install-gnats-dist install-categories install-info
+  
+  install-norm all-gnats:
+  	$(INSTALL_PROGRAM) send-pr $(bindir)/send-pr

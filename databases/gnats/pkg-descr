@@ -1,0 +1,31 @@
+	GNATS - GNU Problem Report Management System
+
+This directory contains GNATS, a problem tracking system written to
+help report on, and track, problem reports or bugs. GNATS is currently
+in use at Cygnus to help track all incoming bug reports.  There are
+many concepts or approaches to GNATS which are only useful to
+organizations which track bugs related by customers as well as by bug
+type.
+
+The file gnats.texi contains a Texinfo version of the main
+documentation for GNATS, including installation notes and configuration
+strategies.  gnats.info is a version of the same text as gnats.texi in a
+form readable by GNU Info.
+
+The file INSTALL contains a brief discussion of the installation
+process; refer to gnats.texi for details on configuration, installation,
+and usage.
+
+Please report all GNATS bugs to bug-gnats@prep.ai.mit.edu.
+
+
+Copyright (c) 1993, Free Software Foundation, Inc.  
+See the file COPYING for copyright information concerning this
+distribution and all its components.
+
+
+*** FreeBSD note:
+*** You will want to add a user entry to your /etc/passwd file for the
+*** user-id that owns gnats-related databases on your server.
+*** Something of the form: "gnats:*:70:70:GNATS Owner:/:/usr/bin/false"
+*** should do just fine.
