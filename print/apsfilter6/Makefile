@@ -6,7 +6,7 @@
 # $FreeBSD$
 #
 
-DISTNAME=	apsfilter-5.2.0
+DISTNAME=	apsfilter-${VERSION}
 CATEGORIES=	print
 MASTER_SITES=	http://people.FreeBSD.org/~andreas/apsfilter/download/
 
@@ -25,6 +25,7 @@ RUN_DEPENDS+=	psnup:${PORTSDIR}/print/psutils-letter
 RUN_DEPENDS+=	smbclient:${PORTSDIR}/net/samba
 .endif
 
+VERSION=	5.2.0
 USE_BZIP2=	yes
 WRKSRC=		${WRKDIR}/apsfilter
 
