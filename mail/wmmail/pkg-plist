@@ -50,3 +50,5 @@ GNUstep/Apps/WMMail.app/Sounds/monkey.au
 @dirrm GNUstep/Apps/WMMail.app/Defaults
 @dirrm GNUstep/Apps/WMMail.app/Sounds
 @dirrm GNUstep/Apps/WMMail.app
+@unexec rmdir %D/GNUstep/Apps 2>/dev/null || true
+@unexec rmdir %D/GNUstep 2>/dev/null || true
