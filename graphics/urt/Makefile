@@ -3,7 +3,7 @@
 # Date created:		Jan 5 1997
 # Whom:			cfs@ing.puc.cl (original)
 #
-# $Id: Makefile,v 1.1.1.1 1997/06/03 23:41:07 asami Exp $
+# $Id: Makefile,v 1.2 1997/06/04 01:14:25 asami Exp $
 #
 
 DISTNAME=	urt
@@ -12,7 +12,7 @@ CATEGORIES=	graphics
 MASTER_SITES=	ftp://ftp.cs.utah.edu/pub/
 DISTFILES=	urt-3.1b.tar.Z urt-doc.tar urt-img.tar
 
-MAINTAINER=	Pedro Giffuni <pgiffuni@fps.biblos.unal.edu.co>
+MAINTAINER=	pgiffuni@fps.biblos.unal.edu.co
 
 LIB_DEPENDS=	tiff\\.3\\.:${PORTSDIR}/graphics/tiff
 BUILD_DEPENDS=	${X11BASE}/lib/libpbm.a:${PORTSDIR}/graphics/netpbm
