@@ -364,6 +364,7 @@
     SUBDIR += pvm++
     SUBDIR += py-ipy
     SUBDIR += py-jabber
+    SUBDIR += py-libnet
     SUBDIR += py-pcap
     SUBDIR += py-smb
     SUBDIR += py-soap

@@ -1,0 +1,2 @@
+lib/%%PYTHON_VERSION%%/site-packages/libnet.py
+lib/%%PYTHON_VERSION%%/site-packages/libnetcmodule.so

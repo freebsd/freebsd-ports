@@ -1,0 +1,16 @@
+--- Makefile.orig	Wed Jan 30 11:16:34 2002
++++ Makefile	Wed Jan 30 11:20:32 2002
+@@ -1,10 +1,10 @@
+ 
+ SWIG=/usr/local/bin/swig
+ CC=gcc -g
+-PYTHON_INCLUDES=-I/usr/include/python1.5
+-LIBNET_INCLUDES=-I/usr/include/libnet
++PYTHON_INCLUDES=-I%%PYTHON_INCLUDEDIR%%
++LIBNET_INCLUDES=-I%%LOCALBASE%%/include
+ CFLAGS=`libnet-config --defines`
+-LIBNET_LIB=/usr/lib/libnet.a
++LIBNET_LIB=%%LOCALBASE%%/lib/libnet.a
+ 
+ OBJS= libnet.o exception.o error.o interface.o
+ 
