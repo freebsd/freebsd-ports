@@ -32,6 +32,63 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="bc4a7efa-7d9a-11d9-a9e7-0001020eed82">
+    <topic>ngircd -- format string vulnerability</topic>
+    <affects>
+      <package>
+	<name>ngircd</name>
+	<range><lt>0.8.3</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>A No System Group security advisory reports that ngircd is
+	  vulnerable to a format string vulnerability in the
+	  <code>Log_Resolver()</code> function of log.c, if IDENT
+	  support is enabled.  This could allow a remote attacker to
+	  execute arbitrary code with the permissions of the ngircd
+	  daemon, which is <q>root</q> by default.</p>
+	<p><strong>Note:</strong> By default the FreeBSD ngircd port
+	  does not enable IDENT support.</p>
+      </body>
+    </description>
+    <references>
+      <cvename>CAN-2005-0226</cvename>
+      <bid>12434</bid>
+      <mlist msgid="20050203020909.21785.qmail@www.securityfocus.com">http://marc.theaimsgroup.com/?l=bugtraq&amp;m=110746413108183</mlist>
+    </references>
+    <dates>
+      <discovery>2005-02-03</discovery>
+      <entry>2005-02-13</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="7f6dd1bd-7d99-11d9-a9e7-0001020eed82">
+    <topic>ngircd -- buffer overflow vulnerability</topic>
+    <affects>
+      <package>
+	<name>ngircd</name>
+	<range><lt>0.8.2</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Florian Westphal discovered a buffer overflow in ngircd
+	  which can be used remotely crash the server and possibly
+	  execute arbitrary code.</p>
+      </body>
+    </description>
+    <references>
+      <cvename>CAN-2005-0199</cvename>
+      <bid>12397</bid>
+      <mlist>http://arthur.ath.cx/pipermail/ngircd-ml/2005-January/000228.html</mlist>
+    </references>
+    <dates>
+      <discovery>2005-01-26</discovery>
+      <entry>2005-02-13</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="5192e7ca-7d4f-11d9-a9e7-0001020eed82">
     <topic>mod_python -- information leakage vulnerability</topic>
     <affects>
