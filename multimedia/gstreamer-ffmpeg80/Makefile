@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gstreamer
-PORTVERSION=	0.8.2
+PORTVERSION=	0.8.3
 CATEGORIES=	multimedia
 MASTER_SITES=	http://gstreamer.freedesktop.org/src/gst-ffmpeg/
 PKGNAMESUFFIX=	-ffmpeg
@@ -22,6 +22,7 @@ USE_BZIP2=	yes
 USE_REINPLACE=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gnomehack \
+		gnometarget \
 		gnomeprefix
 USE_LIBTOOL_VER=15
 CONFIGURE_ENV=	PKG_CONFIG=${PKG_CONFIG} \
@@ -40,7 +41,7 @@ EXTRA_PATCHES=	${PATCHDIR}/extra-patch-gst-libs_ext_ffmpeg_libavformat_nut.c
 .endif
 
 post-patch:
-	@${REINPLACE_CMD} -E -e \
+	@${REINPLACE_CMD} -e \
 		's|make|${GMAKE}|' \
 		${WRKSRC}/gst-libs/ext/Makefile.in
 
