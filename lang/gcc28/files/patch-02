@@ -1,6 +1,6 @@
 --- config/i386/freebsd.h.orig	Fri Dec  5 04:15:34 1997
-+++ config/i386/freebsd.h	Mon Feb  8 12:03:09 1999
-@@ -26,8 +26,13 @@
++++ config/i386/freebsd.h	Sun Mar 21 17:59:06 1999
+@@ -26,8 +26,18 @@
  
  /* The svr4 ABI for the i386 says that records and unions are returned
     in memory.  */
@@ -12,10 +12,15 @@
 +/* This gets defined in tm.h->linux.h->svr4.h, and keeps us from using
 +   libraries compiled with the native cc, so undef it. */
 +#undef NO_DOLLAR_IN_LABEL
++
++/* FreeBSD using ELF does not support DWARF2 unwinding mechanisms.
++   Thus, need the equivalent of "-fsjlj-exceptions" (use setjmp/longjmp
++   for exceptions).  */
++#define DWARF2_UNWIND_INFO 0
  
  /* This is how to output an element of a case-vector that is relative.
     This is only used for PIC code.  See comments by the `casesi' insn in
-@@ -140,7 +145,7 @@
+@@ -140,7 +150,7 @@
  #define WCHAR_TYPE_SIZE BITS_PER_WORD
      
  #undef CPP_PREDEFINES
