@@ -6890,6 +6890,7 @@ p5-Mail-SpamAssassin	ports/mail/p5-Mail-SpamAssassin
 p5-Mail-Spool	ports/mail/p5-Mail-Spool
 p5-Mail-Tools	ports/mail/p5-Mail-Tools
 p5-Mail-Verify	ports/mail/p5-Mail-Verify
+p5-Mail-Webmail-Gmail	ports/mail/p5-Mail-Webmail-Gmail
 p5-Make		ports/devel/p5-Make
 p5-MasonX-Apache2Handler	ports/www/p5-MasonX-Apache2Handler
 p5-MasonX-Interp-WithCallbacks	ports/www/p5-MasonX-Interp-WithCallbacks
@@ -6978,6 +6979,7 @@ p5-Net-Radius	ports/net/p5-Net-Radius
 p5-Net-RawIP	ports/net/p5-Net-RawIP
 p5-Net-RawSock	ports/net/p5-Net-RawSock
 p5-Net-Rendezvous	ports/net/p5-Net-Rendezvous
+p5-Net-SAP	ports/net/p5-Net-SAP
 p5-Net-SCP	ports/net/p5-Net-SCP
 p5-Net-SFTP	ports/net/p5-Net-SFTP
 p5-Net-SMPP	ports/net/p5-Net-SMPP
@@ -7080,6 +7082,7 @@ p5-Parse-RecDescent	ports/devel/p5-Parse-RecDescent
 p5-Parse-Syslog	ports/textproc/p5-Parse-Syslog
 p5-Parse-Yapp	ports/devel/p5-Parse-Yapp
 p5-PatchReader	ports/devel/p5-PatchReader
+p5-Path-Class	ports/devel/p5-Path-Class
 p5-Penguin	ports/devel/p5-Penguin
 p5-Penguin-Easy	ports/devel/p5-Penguin-Easy
 p5-PerlIO-via-dynamic	ports/devel/p5-PerlIO-via-dynamic
