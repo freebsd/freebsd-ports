@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	plone
-PORTVERSION=	2.0.4
+PORTVERSION=	2.0.5
 CATEGORIES=	www zope
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	plone
@@ -114,11 +114,6 @@ do-install:
 			${CP} -R $${m} ${ZOPEBASEDIR}/${ZOPEPRODUCTDIR}; \
 		fi; \
 	done
-#fix permissions when bundled CMFFormController
-#is installed
-.if !defined(WITH_CMFFORMCONTROLLER)
-	@${CHMOD} -R a+rX ${ZOPEBASEDIR}/${ZOPEPRODUCTDIR}/CMFFormController/
-.endif
 
 post-install:
 .if !defined(BATCH)
