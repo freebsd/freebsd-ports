@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	epstool
-PORTVERSION=	3.03
+PORTVERSION=	3.04
 CATEGORIES=	graphics
 MASTER_SITES=	ftp://mirror.cs.wisc.edu/pub/mirrors/ghost/ghostgum/
 
@@ -37,9 +37,6 @@ pre-everything::
 	@${ECHO_MSG} "      AFPL Postscript interpreter instead of GNU one"
 	@${ECHO_MSG} ""
 .endif
-
-post-extract:
-	@${RM} -f ${WRKSRC}/epstool
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|make -f|$$(MAKE) -f|g' ${WRKSRC}/src/unix.mak
