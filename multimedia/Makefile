@@ -3,6 +3,7 @@
     SUBDIR += WMxmms
     SUBDIR += acme
     SUBDIR += avidemux
+    SUBDIR += avidemux2
     SUBDIR += avifile
     SUBDIR += avinfo
     SUBDIR += beep-media-player
