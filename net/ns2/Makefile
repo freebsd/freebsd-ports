@@ -33,6 +33,10 @@ ALL_TARGET=
 BROKEN=		"Does not compile on alpha 4.x"
 .endif
 
+.if ${ARCH} == "sparc64"
+BROKEN=		"Does not compile on sparc64"
+.endif
+
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/ns ${PREFIX}/bin
 	${INSTALL_MAN} ${WRKSRC}/ns.1 ${PREFIX}/man/man1
