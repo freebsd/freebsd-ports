@@ -1,21 +1,24 @@
-bin/cyradm
 bin/imtest
-cyrus/bin/pwcheck
-cyrus/bin/arbitron
+bin/cyradm
+bin/installsieve
 cyrus/bin/collectnews
-cyrus/bin/cyrquota
-cyrus/bin/deliver
-cyrus/bin/dump_deliverdb
-cyrus/bin/feedcyrus
-cyrus/bin/fud
+cyrus/bin/syncnews
 cyrus/bin/imapd
 cyrus/bin/pop3d
+cyrus/bin/arbitron
+cyrus/bin/fud
 cyrus/bin/reconstruct
-cyrus/bin/syncnews
-cyrus/bin/updateimsp
+cyrus/bin/dump_deliverdb
+cyrus/bin/mbpath
+cyrus/bin/deliver
+cyrus/bin/feedcyrus
+cyrus/bin/timsieved
+cyrus/bin/cyrquota
+etc/rc.d/cyrus.sh
 etc/imapd.conf.dist
 etc/inetd.conf.cyrus
-etc/rc.d/cyrus.sh
+etc/imap/mailboxes
+etc/imapd.conf
 include/cyrus/acl.h
 include/cyrus/assert.h
 include/cyrus/auth.h
@@ -32,11 +35,11 @@ include/cyrus/nonblock.h
 include/cyrus/parseaddr.h
 include/cyrus/prot.h
 include/cyrus/retry.h
-include/cyrus/sasl.h
 include/cyrus/sysexits.h
 include/cyrus/util.h
 include/cyrus/xmalloc.h
 lib/libcyrus.a
-@dirrm include/cyrus
 @dirrm cyrus/bin
 @dirrm cyrus
+@dirrm etc/imap
+@dirrm include/cyrus
