@@ -72,6 +72,5 @@ buildenv () {
     if [ "X${FETCH_ORIGINAL}" = "X" ]; then
 	export MASTER_SITE_OVERRIDE='ftp://ftp-master.freebsd.org/pub/FreeBSD/ports/distfiles/${DIST_SUBDIR}/'
     fi
-    export MASTER_SITE_OVERRIDE="${MASTER_SITE_OVERRIDE} ftp://bento.freebsd.org/pub/FreeBSD/distfiles/"
-
+    export MASTER_SITE_OVERRIDE="${MASTER_SITE_OVERRIDE} ftp://bento.freebsd.org/pub/FreeBSD/distfiles/\${DIST_SUBDIR}/"
 }
