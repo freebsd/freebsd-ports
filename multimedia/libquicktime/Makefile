@@ -7,8 +7,7 @@
 #
 
 PORTNAME=	libquicktime
-PORTVERSION=	0.9.1
-PORTREVISION=	2
+PORTVERSION=	0.9.2
 CATEGORIES=	multimedia
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -18,23 +17,25 @@ COMMENT=	A library for reading and writing quicktime files
 
 LIB_DEPENDS=	vorbis.2:${PORTSDIR}/audio/libvorbis \
 		jpeg.9:${PORTSDIR}/graphics/jpeg \
-		dv.3:${PORTSDIR}/multimedia/libdv \
-		png.5:${PORTSDIR}/graphics/png
+		png.5:${PORTSDIR}/graphics/png \
+		dv.3:${PORTSDIR}/multimedia/libdv
 
-USE_MESA=	yes
-USE_GNOME=	gtk12
-USE_REINPLACE=	yes
+USE_GL=		yes
+USE_GNOME=	gnometarget gtk12
+USE_GMAKE=	yes
 USE_LIBTOOL=	yes
-CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include ${PTHREAD_CFLAGS}" \
 		LDFLAGS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}"
+CONFIGURE_ARGS=	--disable-firewire
 
 MAN1=	lqtplay.1
 
-CFLAGS+=	-O0
+.include <bsd.port.pre.mk>
 
-post-patch:
-	@${REINPLACE_CMD} -e 's|$$OPTIMIZE_CFLAGS $$COMMON_CFLAGS|$$CFLAGS|g' \
-		${WRKSRC}/configure
+.if defined(WITH_MMX) && (${ARCH} == "i386")
+CONFIGURE_ARGS+=	--enable-mmx
+.else
+CONFIGURE_ARGS+=	--disable-mmx
+.endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
