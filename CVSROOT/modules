@@ -35,6 +35,7 @@ workrave	ports/x11/workrave
 world		-a .
 
 # CVSROOT support
+ADMsmb		ports/security/ADMsmb
 ADMsnmp		ports/security/ADMsnmp
 CVSROOT		CVSROOT
 access		CVSROOT access
