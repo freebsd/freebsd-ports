@@ -7,7 +7,7 @@
 
 PORTNAME=	geekcode
 PORTVERSION=	1.7
-CATEGORIES= 	misc
+CATEGORIES=	misc
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		http://seymour.lazygenes.net/ \
 		http://www.zort.on.ca/software/

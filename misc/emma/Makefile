@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	emma
-PORTVERSION= 	0.8.1
+PORTVERSION=	0.8.1
 CATEGORIES=	misc gnome python
 MASTER_SITES=	http://rainbow.mimuw.edu.pl/~la181249/emma/packages/
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/.1/-1/}
