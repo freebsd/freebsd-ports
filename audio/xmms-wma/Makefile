@@ -7,6 +7,7 @@
 
 PORTNAME=	xmms-wma
 PORTVERSION=	1.0.4
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	http://mcmcc.bat.ru/xmms-wma/
 
@@ -23,6 +24,11 @@ USE_X_PREFIX=	yes
 ONLY_FOR_ARCHS=	i386
 
 PLIST_FILES=	lib/xmms/Input/libwma.so
+
+.if defined(ICONV)
+CFLAGS+=	-DICONV
+USE_ICONV=	yes
+.endif
 
 post-extract:
 	@${REINPLACE_CMD} -e 's|gcc|${CC}|g' ${WRKSRC}/Makefile.inc
