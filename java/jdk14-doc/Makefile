@@ -16,7 +16,6 @@ MAINTAINER=	znerd@FreeBSD.org
 NO_CDROM=	"License does not allow distribution with fee."
 RESTRICTED=	"This documentation is under license and export control."
 
-PLIST_SUB+=	T=${TARGET_DIR:S/^${PREFIX}\///}
 TARGET_DIR?=	${PREFIX}/share/doc/jdk${JDK_MAJOR_VER}
 
 WRKSRC=		${WRKDIR}/docs
