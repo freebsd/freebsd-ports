@@ -1,0 +1,59 @@
+*** nettestd.c.orig	Thu Nov  5 15:52:58 1992
+--- nettestd.c	Mon Oct 20 13:28:06 1997
+***************
+*** 416,422 ****
+  			    )
+  			error("setsockopt (IP_OPTIONS)");
+  #endif
+! 		if (bind(s, (char *)&name, namesize) < 0) {
+  			error("bind");
+  			exit(1);
+  		}
+--- 416,422 ----
+  			    )
+  			error("setsockopt (IP_OPTIONS)");
+  #endif
+! 		if (bind(s, (struct sockaddr *)&name, namesize) < 0) {
+  			error("bind");
+  			exit(1);
+  		}
+***************
+*** 447,456 ****
+  #endif
+  	listen(s, 5);
+  
+! 	signal(SIGCHLD, dochild);
+  	for (;;) {
+  		namesize = sizeof(name);
+! 		s2 = accept(s, (char *)&name, &namesize);
+  		if (s2 < 0) {
+  			extern int errno;
+  			if (errno == EINTR)
+--- 447,456 ----
+  #endif
+  	listen(s, 5);
+  
+! 	signal(SIGCHLD, (void *)dochild);
+  	for (;;) {
+  		namesize = sizeof(name);
+! 		s2 = accept(s, (struct sockaddr *)&name, &namesize);
+  		if (s2 < 0) {
+  			extern int errno;
+  			if (errno == EINTR)
+***************
+*** 723,729 ****
+  #endif
+  		{
+  			namesize = sizeof(name.d_inet);
+! 			t = recvfrom(s, data, MAXSIZE, 0, (char *)&name.d_inet,
+  				 &namesize);
+  		}
+  		if (t < 0) {
+--- 723,729 ----
+  #endif
+  		{
+  			namesize = sizeof(name.d_inet);
+! 			t = recvfrom(s, data, MAXSIZE, 0, (struct sockaddr *)&name.d_inet,
+  				 &namesize);
+  		}
+  		if (t < 0) {
