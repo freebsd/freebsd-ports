@@ -6,19 +6,19 @@
 #
 
 PORTNAME=	gallery
-PORTVERSION=	1.3.4.1
+PORTVERSION=	1.4
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
-DISTNAME=	${PORTNAME}-${PORTVERSION:S/.1/-pl1/}
 
 MAINTAINER=	jamie@hermans.ca
 COMMENT=	Gallery is a slick web based photo album written using PHP
 
 RUN_DEPENDS=	giftopnm:${PORTSDIR}/graphics/netpbm \
 		jhead:${PORTSDIR}/graphics/jhead \
-		unzip:${PORTSDIR}/archivers/unzip \
-		${LOCALBASE}/share/pear/System.php:${PORTSDIR}/devel/pear-PEAR
+		unzip:${PORTSDIR}/archivers/unzip
+
+WANT_PHP_WEB=	yes
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 NO_BUILD=	yes
@@ -27,6 +27,9 @@ DOCFILES=	AUTHORS ChangeLog README UPGRADING
 EXCEPTFILES=	${DOCFILES} LICENSE.txt
 CPIO=		cpio --quiet -pdum -R
 PLIST_SUB=	GALLERYDIR=${GALLERYDIR}
+
+.include <bsd.port.pre.mk>
+.include "${.CURDIR}/../../lang/php4/bsd.php.mk"
 
 pre-fetch:
 .if !defined(GALLERYDIR)
@@ -57,4 +60,4 @@ post-install:
 	@ ${CAT} ${PKGMESSAGE}
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
