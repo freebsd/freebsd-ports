@@ -1,0 +1,6 @@
+This module is intended to make the common uses of Net::FTP a
+one-line, no-argument affair. In other words, you have 100%
+programming with Net::FTP. With Net::FTP::Common you will have 95%
+configuration and 5% programming.
+
+WWW: http://search.cpan.org/dist/Net-FTP-Common/
