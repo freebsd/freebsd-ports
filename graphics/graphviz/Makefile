@@ -7,7 +7,7 @@
 
 PORTNAME=	graphviz
 PORTVERSION=	1.9
-CATEGORIES=	graphics tk83
+CATEGORIES=	graphics tk84
 MASTER_SITES=	http://www.graphviz.org/pub/graphviz/ARCHIVE/
 
 MAINTAINER=	perky@FreeBSD.org
@@ -16,17 +16,17 @@ COMMENT=	Graph Visualization Software from AT&T and Bell Labs
 LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
 		png.5:${PORTSDIR}/graphics/png \
 		freetype.9:${PORTSDIR}/print/freetype2 \
-		tk83.1:${PORTSDIR}/x11-toolkits/tk83
+		tk84.1:${PORTSDIR}/x11-toolkits/tk84
 
 USE_XPM=	yes
 USE_GMAKE=	yes
 USE_AUTOMAKE=	yes
 AUTOMAKE_ARGS=	--add-missing
 USE_LIBTOOL=	yes
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${LOCALBASE}/include/tcl8.3 -I${LOCALBASE}/include/tk8.3" \
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${LOCALBASE}/include/tcl8.4 -I${LOCALBASE}/include/tk8.4" \
 		LDFLAGS="-L${LOCALBASE}/lib" \
-		TCLCONFIG=${LOCALBASE}/lib/tcl8.3/tclConfig.sh \
-		TKCONFIG=${LOCALBASE}/lib/tk8.3/tkConfig.sh \
+		TCLCONFIG=${LOCALBASE}/lib/tcl8.4/tclConfig.sh \
+		TKCONFIG=${LOCALBASE}/lib/tk8.4/tkConfig.sh \
 		AUTOHEADER=${LOCALBASE}/bin/autoheader213 \
 		AUTOCONF=${LOCALBASE}/bin/autoconf213 \
 		AUTOMAKE=${LOCALBASE}/bin/automake14 \
