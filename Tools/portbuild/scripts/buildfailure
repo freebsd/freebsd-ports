@@ -30,17 +30,17 @@ if grep -q "^${portloc}|" failure; then
     count=$(grep "^${portloc}|" failure | cut -f 5 -d \|)
     grep -v "^${portloc}|" failure > failure.new
 
-    echo "${portloc}|${pkgbase}|${pkgname}|$(date | tr ' ' '_')|$((${count}+1))" >> failure.new
+    echo "${portloc}|${pkgbase}|${pkgname}|$(date +%s| tr ' ' '_')|$((${count}+1))" >> failure.new
     mv failure.new failure
 else
     # Want newfailure to be in reverse chronological order
     mv newfailure newfailure.new
-    echo "${portloc}|${pkgbase}|${pkgname}|$(date | tr ' ' '_')" > newfailure
+    echo "${portloc}|${pkgbase}|${pkgname}|$(date +%s| tr ' ' '_')" > newfailure
     cat newfailure newfailure.new > newfailure.new2
     mv newfailure.new2 newfailure
     rm newfailure.new
 
-    echo "${portloc}|${pkgbase}|${pkgname}|$(date)|1" >> failure
+    echo "${portloc}|${pkgbase}|${pkgname}|$(date +%s)|1" >> failure
 fi
 
 
