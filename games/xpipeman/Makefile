@@ -15,7 +15,8 @@ EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=	ports@FreeBSD.org
 
-BROKEN=		"Does not build"
+# LP64 issues
+ONLY_FOR_ARCHS=	i386
 
 USE_IMAKE=	yes
 MAN6=		xpipeman.6
