@@ -1,0 +1,24 @@
+If you have postfix configured in your /etc/mail/mailer.conf (answered yes to
+the previous question) and would like to enable postfix to start at boot time,
+please set these variables in your /etc/rc.conf file:
+
+sendmail_enable="YES"
+sendmail_flags="-bd"
+sendmail_outbound_enable="NO"
+sendmail_submit_enable="NO"
+sendmail_msp_queue_enable="NO"
+
+This will disable Sendmail completely.
+
+
+Also, you may wish to disable some Sendmail-specific daily maintenance
+routines in your /etc/periodic.conf file:
+
+daily_status_mail_rejects_enable="NO"                                      
+daily_status_include_submit_mailq="NO"
+daily_submit_queuerun="NO"
+
+
+If you are using SASL, you need to make sure that postfix has access to read
+the sasldb file.  This is accomplished by adding postfix to group cyrus and
+making the /usr/local/etc/sasldb* file(s) owned by group cyrus.
