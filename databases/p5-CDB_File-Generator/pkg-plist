@@ -1,0 +1,5 @@
+lib/perl5/site_perl/%%PERL_VER%%/CDB_File/Generator.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/CDB_File/Generator/.packlist
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/CDB_File/Generator
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/CDB_File 2>/dev/null || true
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/CDB_File 2>/dev/null || true

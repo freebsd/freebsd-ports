@@ -1,0 +1,7 @@
+CDB::Generator is a designed for generating very large sorted CDB
+files.  This makes it easy to generate files in which cdbmultiget can
+return more than one key.
+
+WWW: http://search.cpan.org/search?dist=CDB_File-Generator
+
+Seamus Venasse <svenasse@polaris.ca>
