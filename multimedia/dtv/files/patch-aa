@@ -1,0 +1,11 @@
+--- defs.h.orig	Sat Sep  7 16:44:57 2002
++++ defs.h	Sat Sep  7 16:45:03 2002
+@@ -12,7 +12,7 @@
+ #include <sys/shm.h>
+ #include <machine/ioctl_bt848.h>
+ #include <machine/ioctl_meteor.h>
+-#include <machine/soundcard.h>
++#include <sys/soundcard.h>
+ #include <stdio.h>
+ #include <stdlib.h>
+ #include <stdarg.h>
