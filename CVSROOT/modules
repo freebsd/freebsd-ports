@@ -5164,6 +5164,7 @@ linux_base-6	ports/emulators/linux_base-6
 linux_base-8	ports/emulators/linux_base-8
 linux_base-debian	ports/emulators/linux_base-debian
 linux_base-gentoo-stage1	ports/emulators/linux_base-gentoo-stage1
+linux_base-rh-9	ports/emulators/linux_base-rh-9
 linux_devtools	ports/devel/linux_devtools
 linux_devtools-6	ports/devel/linux_devtools-6
 linux_devtools-7	ports/devel/linux_devtools-7
