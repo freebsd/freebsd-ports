@@ -1,3 +1,4 @@
-lib/xmms/Output/libarts.a
-lib/xmms/Output/libarts.la
-lib/xmms/Output/libarts.so
+lib/xmms/Output/libartsout.a
+lib/xmms/Output/libartsout.la
+lib/xmms/Output/libartsout.so
+lib/xmms/Output/libartsout.so.0
