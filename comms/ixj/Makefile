@@ -30,7 +30,6 @@ post-patch:
 	${CP} ${FILESDIR}/ixj.sh ${WRKSRC}
 	${REINPLACE_CMD} -e "s@%%PREFIX%%@${PREFIX}@g" ${WRKSRC}/ixj.sh
 
-
 pre-build:
 .if !exists(${SRC_BASE}/sys/Makefile)
 	@${ECHO} "*************************************************"; \
