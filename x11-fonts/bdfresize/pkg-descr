@@ -1,0 +1,19 @@
+bdfresize - a tool for resizing BDF format font
+
+Bdfresize is a command to magnify or reduce fonts which are described
+with the standard BDF format.  If bdf-file is not specified, it reads
+from stdin.  Bdfresize outputs the result to stdout in BDF format.  Some
+COMMENT lines are inserted to the result font.  FONT name is modified
+depending on the resize factor if the name is described in XLFD format.
+SIZE, FONTBOUNDINGBIX, SWIDTH, DWIDTH, BBX and some property lines are
+also modified.  Other lines are copied from source.  If a syntax error
+occurs in a source font, bdfresize notices it and stops the whole
+process.
+
+Bdfresize is a free software under the terms of the GNU Lesser General
+Public License version 2. See the COPYING file for details.
+
+Hiroto Kagotani <kagotani@cs.titech.ac.jp> made the original version
+(1.4).
+
+WWW: http://openlab.ring.gr.jp/efont/dist/tools/bdfresize/
