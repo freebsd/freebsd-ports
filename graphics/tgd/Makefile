@@ -3,7 +3,7 @@
 # Date created:				22 February 1999
 # Whom:	      				mharo@area51.fremont.ca.us
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1999/04/03 01:42:08 steve Exp $
 #
 
 DISTNAME=	tgd1.2c
@@ -22,6 +22,9 @@ DOCS=		README arc.gif cap.gif char.gif fill.gif fontdemo \
 		helloworld.pl keygifcap.gif keypad.gif keypad.html \
 		keypad.inp keypad.map keypad.pl poly.gif polydemo \
 		rainbow.gif rainbow.pl tgd.gif tgd.html
+pre-build:
+	${CP} ${FILESDIR}/tgdcommand.h ${WRKSRC}/
+	${CP} ${FILESDIR}/tgdgd.h ${WRKSRC}/
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/tgd ${PREFIX}/bin
 .if !defined(NOPORTDOCS)
