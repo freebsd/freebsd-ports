@@ -35,7 +35,7 @@ ALL_TARGET+=	clanPNG clanGL
 
 .if !defined(WITHOUT_GL)
 pre-install:
-	@cat ${PKGDIR}/PLIST.glx ${PKGDIR}/PLIST > ${PLIST}
+	@cat ${PKGDIR}/pkg-plist.glx ${PKGDIR}/pkg-plist > ${PLIST}
 .endif
 
 .include <bsd.port.mk>
