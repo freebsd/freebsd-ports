@@ -1,0 +1,30 @@
+--- Makefile.orig	Fri Dec 28 21:16:12 2001
++++ Makefile	Fri Dec 28 21:17:01 2001
+@@ -6,14 +6,9 @@
+ 
+ # Configuration defaults
+ 
+-CC       = gcc
+-CFLAGS   = -O2 -Wall
+-INCLUDES = -I$(shell pwd)
+-LDLIBS   =
++INCLUDES = -I.
+ 
+-PREFIX   = /usr/local
+-EPREFIX  = $(PREFIX)
+-BINDIR   = $(EPREFIX)/bin
++BINDIR   = $(PREFIX)/bin
+ MANDIR   = $(PREFIX)/man
+ 
+ RDPOBJ   = rdesktop.o tcp.o iso.o mcs.o secure.o licence.o rdp.o orders.o bitmap.o cache.o
+@@ -30,8 +25,8 @@
+ GMP_INCLUDES =
+ 
+ #default to X11
+-GUI_INCLUDES = -I/usr/X11R6/include
+-GUI_LIBS = -L/usr/X11R6/lib -lX11
++GUI_INCLUDES = -I${X11BASE}/include
++GUI_LIBS = -L${X11BASE}/lib -lX11
+ GUI_OBJ = gl/xwin.o
+ 
+ #the nt xlib emul layer
