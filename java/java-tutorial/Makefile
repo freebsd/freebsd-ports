@@ -9,30 +9,30 @@
 
 PORTNAME=	jdk-tutorial
 PORTVERSION=	2004.03.11
+PORTREVISION=	1
 CATEGORIES=	java
 MASTER_SITES=	http://java.sun.com/docs/books/tutorial/download/
 DISTNAME=	tutorial
 
-MAINTAINER=	reso3w83@verizon.net
+MAINTAINER=	ringworm01@gmail.com
 COMMENT=	Official Java 2 SDK tutorial
 
 NO_WRKSUBDIR=	yes
 RESTRICTED=	"This software is under license and export control."
 NO_BUILD=	yes
 USE_ZIP=	yes
-TARGET_DIR=	${PREFIX}/share/doc/java-tutorial/
-PLIST_SUB+=	T=${TARGET_DIR:S/^${PREFIX}\///}
+PORTDOCS=	*
 
 .include <bsd.port.pre.mk>
 
 do-install:
-	@${ECHO} -n ">> Creating directory ${TARGET_DIR}..."
-	@${MKDIR} ${TARGET_DIR}
-	@${ECHO} " [ DONE ]"
+	@${ECHO_MSG} -n ">> Creating directory ${DOCSDIR}..."
+	@${MKDIR} ${DOCSDIR}
+	@${ECHO_MSG} " [ DONE ]"
 
-	@${ECHO} -n ">> Copying files..."
-	@${CP} -R ${WRKSRC}/* ${TARGET_DIR}
-	@${CHOWN} -h -R ${DOCOWN}:${DOCGRP} ${TARGET_DIR}
-	@${ECHO} " [ DONE ]"
+	@${ECHO_MSG} -n ">> Copying files..."
+	@${CP} -R ${WRKSRC}/* ${DOCSDIR}
+	@${CHOWN} -h -R ${DOCOWN}:${DOCGRP} ${DOCSDIR}
+	@${ECHO_MSG} " [ DONE ]"
 
 .include <bsd.port.post.mk>
