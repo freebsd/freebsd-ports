@@ -6,29 +6,22 @@
 #
 
 PORTNAME=	manued.el
-PORTVERSION=	0.9.4
+PORTVERSION=	0.9.5
 CATEGORIES=	textproc elisp
 MASTER_SITES=	http://www.mpi-sb.mpg.de/~hitoshi/otherprojects/manued/arcs/ \
 		http://www.archi.is.tohoku.ac.jp/~yamauchi/otherprojects/manued/arcs/
-DISTFILES=	${EL}
-EXTRACT_ONLY=	# empty
-.if !defined(NOPORTDOCS)
-DISTFILES+=	${EXTRACT_ONLY}
-EXTRACT_ONLY+=	manued-0.9.3${EXTRACT_SUFX}
-.endif
+DISTNAME=	manued-${PORTVERSION}
 
 MAINTAINER=	fuyuki@hadaly.org
 
 NO_BUILD=	yes
-WRKSRC=		${WRKDIR}/manued-0.9.3
 
-EL=		manued-${PORTVERSION}-cur.el
 EMACSLISPDIR=	${PREFIX}/share/emacs/site-lisp
 XEMACSLISPDIR=	${PREFIX}/lib/xemacs/site-lisp
 
 do-install:
 	${MKDIR} ${EMACSLISPDIR}
-	${INSTALL_DATA} ${DISTDIR}/${EL} ${EMACSLISPDIR}/manued.el
+	${INSTALL_DATA} ${WRKSRC}/manued.el ${EMACSLISPDIR}
 	${MKDIR} ${XEMACSLISPDIR}
 	${LN} -sf ${EMACSLISPDIR}/manued.el ${XEMACSLISPDIR}
 
