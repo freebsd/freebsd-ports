@@ -48,7 +48,6 @@ share/locale/ru/LC_MESSAGES/kdbg.mo
 share/locale/sk/LC_MESSAGES/kdbg.mo
 share/locale/sv/LC_MESSAGES/kdbg.mo
 share/locale/zh_CN.GB2312/LC_MESSAGES/kdbg.mo
-@dirrm share/applnk/Development
 @dirrm share/apps/kdbg/pics
 @dirrm share/apps/kdbg/types
 @dirrm share/apps/kdbg

@@ -2432,20 +2432,7 @@ share/wallpapers/whiplash_vines.jpg
 share/wallpapers/whirling_spirit.jpg
 share/wallpapers/wind_chill.jpg
 share/wallpapers/wood1.jpg
-@dirrm share/wallpapers
-@dirrm share/sounds
-@dirrm share/mimelnk/video
-@dirrm share/mimelnk/text
-@dirrm share/mimelnk/inode
-@dirrm share/mimelnk/image
-@dirrm share/mimelnk/audio
-@dirrm share/mimelnk/application
-@dirrm share/mimelnk
-@dirrm share/icons/mini
-@dirrm share/icons/large
-@dirrm share/icons
 @dirrm share/doc/HTML/ru/kikbd
-@dirrm share/doc/HTML/ru
 @dirrm share/doc/HTML/en/kwm
 @dirrm share/doc/HTML/en/kvt
 @dirrm share/doc/HTML/en/kthememgr
@@ -2524,8 +2511,6 @@ share/wallpapers/wood1.jpg
 @dirrm share/apps/kappfinder/apps/Development
 @dirrm share/apps/kappfinder/apps
 @dirrm share/apps/kappfinder
-@dirrm share/applnk/Utilities
-@dirrm share/applnk/System
 @dirrm share/applnk/Settings/Windows
 @dirrm share/applnk/Settings/Sound
 @dirrm share/applnk/Settings/Network
@@ -2534,12 +2519,4 @@ share/wallpapers/wood1.jpg
 @dirrm share/applnk/Settings/Information
 @dirrm share/applnk/Settings/Desktop
 @dirrm share/applnk/Settings/Applications
-@dirrm share/applnk/Settings
-@dirrm share/applnk/Multimedia
-@dirrm share/applnk/Internet
-@dirrm share/applnk/Graphics
-@dirrm share/applnk/Games
-@dirrm share/applnk/Applications
-@unexec rm -rf %D/share/applnk/apps
-@dirrm share/applnk
 @dirrm cgi-bin
