@@ -11,7 +11,6 @@ PORTREVISION=	2
 CATEGORIES=	graphics perl5
 MASTER_SITES=	ftp://ftp.imagemagick.org/pub/%SUBDIR%/ \
 		ftp://gd.tuwien.ac.at/pub/graphics/%SUBDIR%/ \
-		${MASTER_SITE_RINGSERVER:S,%SUBDIR%,graphics/ImageMagick,} \
 		ftp://ftp.crc.ca/pub/packages/graphics/imagemagick/ \
 		ftp://ftp.planetmirror.com/pub/%SUBDIR%/ \
 		ftp://ftp.fu-berlin.de/unix/X11/graphics/%SUBDIR%/ \
@@ -21,8 +20,9 @@ MASTER_SITES=	ftp://ftp.imagemagick.org/pub/%SUBDIR%/ \
 		ftp://ftp.icm.edu.pl/pub/graphics/%SUBDIR%/ \
 		ftp://giswitch.sggw.waw.pl/pub/graphics/%SUBDIR%/ \
 		ftp://ftp.fifi.org/pub/%SUBDIR%/ \
-		ftp://ftp.simplesystems.org/pub/%SUBDIR%/
-MASTER_SITE_SUBDIR=	${PORTNAME:L} ${PORTNAME}
+		ftp://ftp.simplesystems.org/pub/%SUBDIR%/ \
+		${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	pav
 DISTNAME=	${PORTNAME}-${PORTVERSION:R}-${PORTVERSION:E}
 
 MAINTAINER=	avleeuwen@piwebs.com
