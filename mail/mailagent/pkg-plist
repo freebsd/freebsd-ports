@@ -37,5 +37,15 @@ man/man1/edusers.1.gz
 man/man1/mailagent.1.gz
 man/man1/maildist.1.gz
 man/man1/maillist.1.gz
+share/examples/mailagent/README
+share/examples/mailagent/daemon
+share/examples/mailagent/mailfolders
+share/examples/mailagent/mchk
+share/examples/mailagent/mhinc
+share/examples/mailagent/nocmds
+share/examples/mailagent/profile
+share/examples/mailagent/rules
+share/examples/mailagent/vacation
+@dirrm share/examples/mailagent
 @dirrm lib/mailagent/help
 @dirrm lib/mailagent
