@@ -1,0 +1,53 @@
+*** doc/Makefile.SH.orig	Fri Mar 11 02:20:29 1994
+--- doc/Makefile.SH	Sun Apr 27 05:54:24 1997
+***************
+*** 207,213 ****
+  
+  install: $(LIB_LIST)
+  	@if $(TEST) '$(MAN)' != none; then $(MAKE) install_man ; else true ;  fi
+! 	@if $(TEST) '$(CATMAN)' != none; then $(MAKE) install_catman ; else true ;  fi
+  
+  install_man: $(MAN_LIST) $(MAN)/wnewmail$(MANEXT)
+  
+--- 207,213 ----
+  
+  install: $(LIB_LIST)
+  	@if $(TEST) '$(MAN)' != none; then $(MAKE) install_man ; else true ;  fi
+! #	@if $(TEST) '$(CATMAN)' != none; then $(MAKE) install_catman ; else true ;  fi
+  
+  install_man: $(MAN_LIST) $(MAN)/wnewmail$(MANEXT)
+  
+***************
+*** 234,240 ****
+  		$(RM) $(MAN)/newmail$(MANEXT) $(MAN)/wnewmail$(MANEXT)
+  		$(CP) $(REMOTE_MAN_LIST) $(MAN)
+  		$(CHMOD) u=rw,go=r $(MAN_LIST)
+! 		$(LN) $(MAN)/newmail$(MANEXT) $(MAN)/wnewmail$(MANEXT)
+  		$(CP) $(REMOTE_LIB_LIST) $(LIB)
+  		$(CHMOD) u=rw,go=r $(LIB_LIST)
+  
+--- 234,240 ----
+  		$(RM) $(MAN)/newmail$(MANEXT) $(MAN)/wnewmail$(MANEXT)
+  		$(CP) $(REMOTE_MAN_LIST) $(MAN)
+  		$(CHMOD) u=rw,go=r $(MAN_LIST)
+! #		$(LN) $(MAN)/newmail$(MANEXT) $(MAN)/wnewmail$(MANEXT)
+  		$(CP) $(REMOTE_LIB_LIST) $(LIB)
+  		$(CHMOD) u=rw,go=r $(LIB_LIST)
+  
+***************
+*** 304,310 ****
+  
+  $(MAN)/wnewmail$(MANEXT):	$(MAN)/newmail$(MANEXT)
+  				$(RM) $@
+! 				$(LN) $? $@
+  
+  $(LIB)/elm-help.0:		elm-help.0
+  				$(CP) $? $@
+--- 304,310 ----
+  
+  $(MAN)/wnewmail$(MANEXT):	$(MAN)/newmail$(MANEXT)
+  				$(RM) $@
+! #				$(LN) $? $@
+  
+  $(LIB)/elm-help.0:		elm-help.0
+  				$(CP) $? $@
