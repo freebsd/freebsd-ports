@@ -8,8 +8,7 @@
 PORTNAME=	swig
 PORTVERSION=	1.1p5
 CATEGORIES=	devel python tcl82
-MASTER_SITES=	ftp://ftp.cs.utah.edu/pub/beazley/SWIG/ \
-		ftp://ftp.rge.com/pub/languages/swig/ \
+MASTER_SITES=	ftp://ftp.rge.com/pub/languages/swig/1.1/ \
 		ftp://ftp.mcc.ac.uk/pub/mvc/swig/
 DISTNAME=	${PORTNAME}${PORTVERSION}
 
