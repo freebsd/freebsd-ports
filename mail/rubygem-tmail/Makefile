@@ -9,7 +9,7 @@ PORTNAME=	tmail
 PORTVERSION=	0.9.10
 CATEGORIES=	mail ruby
 MASTER_SITES=	http://www.loveruby.net/archive/%SUBDIR%/ \
-		http://www.ruby-lang.org/~knu/loveruby.net/
+		http://www.ruby-lang.org/~knu/backup/
 MASTER_SITE_SUBDIR=	${PORTNAME}
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
 DISTNAME=	${PORTNAME}-${PORTVERSION}-all

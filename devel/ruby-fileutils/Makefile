@@ -9,7 +9,7 @@ PORTNAME=	fileutils
 PORTVERSION=	2
 CATEGORIES=	devel ruby
 MASTER_SITES=	http://www.loveruby.net/archive/ \
-		http://www.ruby-lang.org/~knu/loveruby.net/
+		http://www.ruby-lang.org/~knu/backup/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
 DIST_SUBDIR=	ruby
 

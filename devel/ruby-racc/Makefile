@@ -9,7 +9,7 @@ PORTNAME=	racc
 PORTVERSION=	1.4.2
 CATEGORIES=	devel ruby
 MASTER_SITES=	http://www.loveruby.net/archive/%SUBDIR%/ \
-		http://www.ruby-lang.org/~knu/loveruby.net/
+		http://www.ruby-lang.org/~knu/backup/
 MASTER_SITE_SUBDIR=	${PORTNAME}
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
 DISTNAME=	${PORTNAME}-${PORTVERSION}-all

@@ -9,7 +9,7 @@ PORTNAME=	strscan
 PORTVERSION=	0.6.5
 CATEGORIES=	devel ruby
 MASTER_SITES=	http://www.loveruby.net/archive/%SUBDIR%/ \
-		http://www.ruby-lang.org/~knu/loveruby.net/
+		http://www.ruby-lang.org/~knu/backup/
 MASTER_SITE_SUBDIR=	${PORTNAME}
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
 DIST_SUBDIR=	ruby

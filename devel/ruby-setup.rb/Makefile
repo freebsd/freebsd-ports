@@ -9,7 +9,7 @@ PORTNAME=	setup.rb
 PORTVERSION=	2.2.1
 CATEGORIES=	devel ruby
 MASTER_SITES=	http://www.loveruby.net/archive/%SUBDIR%/ \
-		http://www.ruby-lang.org/~knu/loveruby.net/
+		http://www.ruby-lang.org/~knu/backup/
 MASTER_SITE_SUBDIR=	${PORTNAME:R}
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
 DISTNAME=	${PORTNAME:R}-${PORTVERSION}
