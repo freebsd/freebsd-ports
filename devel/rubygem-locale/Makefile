@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gettext
-PORTVERSION=	0.6.1
+PORTVERSION=	0.7.0
 CATEGORIES=	devel ruby
 MASTER_SITES=	ftp://ftp.iDaemons.org/pub/distfiles/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
@@ -23,8 +23,10 @@ USE_RUBY=	yes
 USE_RUBY_FEATURES=	racc-runtime
 USE_RUBY_SETUP=	yes
 
-RUBY_RD_FILES=	# defined
 RUBY_SHEBANG_FILES=	${WRKSRC}/samples/*.rb
+
+DOCS_EN=	ChangeLog README
+DOCS_JA=	README.ja
 
 post-install: doc-install
 
@@ -32,12 +34,14 @@ post-install: doc-install
 
 doc-install:
 .if !defined(NOPORTDOCS)
-.if !defined(RUBY_NO_RD_HTML)
-	cd ${WRKSRC}/docs; ${RUBY} makehtml.rb
-.endif
 	cd ${WRKSRC}/samples; ${RUBY} makemo.rb
 	${MKDIR} ${RUBY_MODEXAMPLESDIR}
 	${CP} -R ${WRKSRC}/samples/* ${RUBY_MODEXAMPLESDIR}/
-	${MKDIR} ${RUBY_MODDOCDIR}
-	${CP} -R ${WRKSRC}/docs/* ${RUBY_MODDOCDIR}/
+	${MKDIR} ${RUBY_MODDOCDIR}/ja
+.for f in ${DOCS_EN}
+	${INSTALL_DATA} ${WRKSRC}/${f} ${RUBY_MODDOCDIR}/
+.endfor
+.for f in ${DOCS_JA}
+	${INSTALL_DATA} ${WRKSRC}/${f} ${RUBY_MODDOCDIR}/ja/
+.endfor
 .endif
