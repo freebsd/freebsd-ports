@@ -9,8 +9,9 @@ PORTNAME=	lynx
 PORTVERSION=	${VERSION}.${MINOR_VERSION:S/.//}
 CATEGORIES=	japanese www
 MASTER_SITES=	${MASTER_SITE_PORTS_JP} \
-		http://people.FreeBSD.org/~shige/ports/distfiles/ \
+		${MASTER_SITE_LOCAL} \
 		http://sol.slcc.edu/lynx/current/
+MASTER_SITE_SUBDIR=	shige
 DISTNAME=	${PORTNAME}${VERSION}${MINOR_VERSION}
 
 

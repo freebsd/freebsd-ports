@@ -9,8 +9,9 @@ PORTNAME=	netatalk
 PORTVERSION=	1.4b2+asun2.1.3
 CATEGORIES=	net print
 MASTER_SITES=   ftp://ftp.u.washington.edu/public/asun/ \
-		http://people.FreeBSD.org/~stb/mirror/ftp.u.washington.edu/public/asun/ \
+		${MASTER_SITE_LOCAL} \
 		ftp://ftp.hanse.de/sites/transit/mirror/ftp.u.washington.edu/public/asun/
+MASTER_SITE_SUBDIR=	stb/mirror/ftp.u.washington.edu/public/asun
 
 MAINTAINER=	stb@freebsd.org
 

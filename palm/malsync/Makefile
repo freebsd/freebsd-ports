@@ -9,7 +9,8 @@ PORTNAME=	malsync
 PORTVERSION=	1.8
 CATEGORIES=	palm
 MASTER_SITES=	http://www.tomw.org/ \
-		http://people.FreeBSD.org/~dirk/ports/distfiles/
+		${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	dirk
 DISTNAME=	malsync_src_1_8
 
 MAINTAINER=	dirk@FreeBSD.org

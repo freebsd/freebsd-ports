@@ -8,7 +8,8 @@
 PORTNAME=       kp
 PORTVERSION=	1.00
 CATEGORIES=	misc
-MASTER_SITES=   http://people.FreeBSD.org/~asami/distfiles/kp/
+MASTER_SITES=	${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	asami
 
 MAINTAINER=	asami@FreeBSD.org
 

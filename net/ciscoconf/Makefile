@@ -9,7 +9,8 @@ PORTNAME=	ciscoconf
 PORTVERSION=	1.0.b1
 CATEGORIES=	net
 MASTER_SITES=	ftp://ftp.patho.gen.nz/pub/users/jabley/ \
-		http://people.FreeBSD.org/~billf/
+		${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	billf
 DISTNAME=	ciscoconf-1.0beta1
 
 MAINTAINER=	jabley@clear.co.nz

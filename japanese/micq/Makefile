@@ -9,10 +9,12 @@ PORTNAME=	micq
 PORTVERSION=	0.4.3
 CATEGORIES=	japanese net
 MASTER_SITES=	ftp://micq.chatzone.org/pub/micq/V0.4.3/ \
-		http://people.FreeBSD.org/~flathill/distfiles/
+		${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	flathill
 EXTRACT_SUFX=	.tgz
 
-PATCH_SITES=	http://people.FreeBSD.org/~flathill/distfiles/
+PATCH_SITES=	${MASTER_SITE_LOCAL}
+PATCH_SITE_SUBDIR=	flathill
 PATCHFILES=	${DISTNAME}-jp.patch
 PATCH_DIST_STRIP= -p1
 

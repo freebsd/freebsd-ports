@@ -50,7 +50,8 @@ PORTNAME=	nmh
 PORTVERSION=	1.0.4
 CATEGORIES=	mail
 MASTER_SITES=	ftp://ftp.mhost.com/pub/nmh/ \
-		http://people.FreeBSD.org/~jkoshy/PORTS/
+		${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	jkoshy
 
 MAINTAINER=	Scott.Blachowicz@seaslug.org
 

@@ -10,8 +10,8 @@ PORTVERSION=	6.2.0
 CATEGORIES=	japanese x11
 MASTER_SITES=	${MASTER_SITE_XCONTRIB} \
 		${MASTER_SITE_PORTS_JP} \
-		http://people.FreeBSD.org/~shige/ports/kterm/
-MASTER_SITE_SUBDIR=	applications kterm
+		${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	applications kterm shige/kterm
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 		README.wallpaper.ja
 

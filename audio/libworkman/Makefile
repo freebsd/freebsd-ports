@@ -9,7 +9,8 @@ PORTNAME=	libworkman
 PORTVERSION=	1.4
 CATEGORIES=	audio
 MASTER_SITES=	ftp://ftp.midwinter.com/WorkMan/SNAPSHOTS/ \
-		http://people.FreeBSD.org/~jim/distfiles/
+		${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	jim
 DISTNAME=	${PORTNAME}-1999-06-20
 
 MAINTAINER=	jim@FreeBSD.org

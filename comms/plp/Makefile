@@ -9,7 +9,8 @@ PORTNAME=	plp
 PORTVERSION=	1.8
 CATEGORIES=	comms
 MASTER_SITES=	http://www.proudman51.freeserve.co.uk/psion/ \
-		http://people.FreeBSD.org/~kris/distfiles/
+		${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	kris
 DISTNAME=	${PORTNAME}_1_8
 
 MAINTAINER=	maurice@serc.rmit.edu.au

@@ -10,7 +10,8 @@ PORTVERSION=	0.3.6
 CATEGORIES=	chinese
 MASTER_SITES=	http://members.xoom.com/sashav/aterm/ \
 		http://www.tigr.net/afterstep/as-apps/download/aterm/	\
-		http://people.FreeBSD.org/~foxfair/
+		${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	foxfair
 
 MAINTAINER=	davidyu@ken.csie.ntu.edu.tw
 

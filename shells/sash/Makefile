@@ -9,7 +9,8 @@ PORTNAME=	sash
 PORTVERSION=	3.4
 CATEGORIES=	shells
 MASTER_SITES=	http://www.pcug.org.au/~dbell/programs/ \
-		http://people.FreeBSD.org/~patrick/
+		${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	patrick
 
 MAINTAINER=	patrick@freebsd.org
 

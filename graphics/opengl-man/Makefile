@@ -8,9 +8,9 @@
 PORTNAME=	opengl-man
 PORTVERSION=	657
 CATEGORIES=	graphics
-MASTER_SITES=	http://people.FreeBSD.org/~cracauer/freebsd-distfiles/ \
+MASTER_SITES=	${MASTER_SITE_LOCAL} \
 		http://www2.cons.org:8000/freebsd-distfiles/
-
+MASTER_SITE_SUBDIR=	cracauer
 MAINTAINER=	cracauer@cons.org
 
 USE_BZIP2=	yes

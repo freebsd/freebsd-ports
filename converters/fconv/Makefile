@@ -8,7 +8,8 @@
 PORTNAME=	fconv
 PORTVERSION=	0.1
 CATEGORIES=	converters
-MASTER_SITES=	http://people.FreeBSD.org/~chris/distfiles/
+MASTER_SITES=	${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	chris
 
 MAINTAINER=	chris@FreeBSD.org
 

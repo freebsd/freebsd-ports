@@ -12,7 +12,8 @@ CATEGORIES=	lang
 MASTER_SITES=	http://www2.cons.org:8000/freebsd-distfiles/ \
 		ftp://ftp2.cons.org/pub/languages/lisp/cmucl/release/ \
 		http://www2.cons.org:8000/ftp-area/cmucl/release/ \
-		http://people.FreeBSD.org/~cracauer/freebsd-distfiles/
+		${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	cracauer
 DISTNAME=	cmucl-18b.x86.freebsd22
 EXTRACT_SUFX=	.tgz
 

@@ -9,7 +9,8 @@ PORTNAME=	squidtimes
 PORTVERSION= 	1.12
 CATEGORIES=	www
 MASTER_SITES=	http://www.cineca.it/~nico/binaries/ \
-		http://people.FreeBSD.org/~billf/
+		${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	billf
 DISTNAME=	squidtimes-1.12-freebsd.bin
 EXTRACT_SUFX=
 

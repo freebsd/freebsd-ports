@@ -9,8 +9,9 @@ PORTNAME=	checkpassword
 PORTVERSION=	0.81
 CATEGORIES=	security
 MASTER_SITES=	http://cr.yp.to/software/ \
-		http://people.FreeBSD.org/~sada/distfiles/ \
+		${MASTER_SITE_LOCAL} \
 		${MASTER_SITE_PORTS_JP}
+MASTER_SITE_SUBDIR=	sada
 
 MAINTAINER=	sada@FreeBSD.org
 

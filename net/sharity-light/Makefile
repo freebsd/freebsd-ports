@@ -10,7 +10,8 @@ PORTVERSION=	1.2
 CATEGORIES=	net
 MASTER_SITES=	ftp://ftp.obdev.at/pub/Products/Sharity-Light/	\
 		ftp://ftp.warpnet.ro/mirrors/ftp.obdev.at/pub/Products/Sharity-Light/ \
-		http://people.FreeBSD.org/~dt/distfiles/
+		${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	dt
 DISTNAME=	Sharity-Light.1.2
 
 MAINTAINER=	dt@FreeBSD.org

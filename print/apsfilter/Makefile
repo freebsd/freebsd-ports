@@ -8,7 +8,8 @@
 PORTNAME=	apsfilter
 PORTVERSION=	5.4.2
 CATEGORIES=	print
-MASTER_SITES=	http://people.FreeBSD.org/~andreas/apsfilter/download/
+MASTER_SITES=	${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	andreas/apsfilter
 
 MAINTAINER=	andreas@FreeBSD.org
 

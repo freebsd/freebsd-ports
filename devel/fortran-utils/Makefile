@@ -8,7 +8,8 @@
 PORTNAME=	fortran-utils
 PORTVERSION=	1.1
 CATEGORIES=	devel
-MASTER_SITES=	http://people.FreeBSD.org/~kris/distfiles/
+MASTER_SITES=	${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	kris
 
 MAINTAINER=	kris@FreeBSD.org
 

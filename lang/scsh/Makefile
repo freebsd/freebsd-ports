@@ -10,7 +10,8 @@ PORTVERSION=	0.5.1
 CATEGORIES=	shells lang
 MASTER_SITES=	ftp://ftp-swiss.ai.mit.edu/pub/su/scsh/ \
 		http://www2.cons.org:8000/freebsd-distfiles/ \
-		http://people.FreeBSD.org/~cracauer/freebsd-distfiles/
+		${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	cracauer
 
 MAINTAINER=	cracauer@cons.org
 

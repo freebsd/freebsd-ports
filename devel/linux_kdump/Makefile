@@ -8,8 +8,9 @@
 PORTNAME=	linux_kdump
 PORTVERSION=	1.4
 CATEGORIES=	devel linux
-MASTER_SITES=	http://people.FreeBSD.org/~marcel/			\
+MASTER_SITES=	${MASTER_SITE_LOCAL}  \
 		ftp://ftp.scc.nl/pub/FreeBSD/distfiles/
+MASTER_SITE_SUBDIR=	marcel
 
 MAINTAINER=	marcel@FreeBSD.org
 

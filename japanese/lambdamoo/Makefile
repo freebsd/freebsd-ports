@@ -14,7 +14,8 @@ DISTNAME=	LambdaMOO-${PORTVERSION}
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 		mnews122.tar.gz
 
-PATCH_SITES=	http://people.FreeBSD.org/~flathill/distfiles/
+PATCH_SITES=	${MASTER_SITE_LOCAL}
+PATCH_SITE_SUBDIR=	flathill
 PATCHFILES=	ja-lambdamoo-19990704.patch.gz
 
 MAINTAINER=	flathill@FreeBSD.ORG

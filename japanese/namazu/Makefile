@@ -9,7 +9,8 @@ PORTNAME=	namazu
 PORTVERSION=	1.3.0.11
 CATEGORIES=	japanese textproc
 MASTER_SITES=	http://www.namazu.org/stable/ \
-		http://people.FreeBSD.org/~flathill/distfiles/
+		${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	flathill
 
 MAINTAINER=	flathill@FreeBSD.org
 

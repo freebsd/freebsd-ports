@@ -8,7 +8,8 @@
 PORTNAME=	44bsd-more
 PORTVERSION=	${RELDATE}
 CATEGORIES=	misc
-MASTER_SITES=	http://people.FreeBSD.org/~hoek/dists/
+MASTER_SITES=	${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	hoek
 
 MAINTAINER=	hoek@FreeBSD.org
 

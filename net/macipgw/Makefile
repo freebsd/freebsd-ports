@@ -9,7 +9,8 @@ PORTNAME=	macipgw
 PORTVERSION=	1.0
 CATEGORIES=	net
 MASTER_SITES=	ftp://ftp.hanse.de/sites/transit/netatalk/ \
-		http://people.FreeBSD.org/~stb/netatalk/
+		${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	stb/netatalk
 
 MAINTAINER=	stb@freebsd.org
 

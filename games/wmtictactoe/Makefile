@@ -9,7 +9,8 @@ PORTNAME=	wmtictactoe
 PORTVERSION=	1.1
 CATEGORIES=	games windowmaker afterstep
 MASTER_SITES=	http://atlas.ucpel.tche.br/~acamargo/ \
-		http://people.FreeBSD.org/~jim/distfiles/
+		${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	jim
 DISTNAME=	wmtictactoe-1.1-1
 
 MAINTAINER=	jim@FreeBSD.org
