@@ -19,23 +19,15 @@ COMMENT=	A Qt GUI for the Direct Connect (TM) dctc text client
 BUILD_DEPENDS=	qmake:${PORTSDIR}/devel/qmake
 RUN_DEPENDS=	dctc:${PORTSDIR}/net/dctc
 
-BROKEN=		"Build fails"
-EXPIRATION_DATE=2005-02-18
-DEPRECATED=	${BROKEN}
-
 USE_QT_VER=	3
 USE_REINPLACE=	yes
 MAKE_ENV=	QTDIR="${QTDIR}"
 PLIST_FILES=	bin/dc-qt
 
 QTDIR?=	${X11BASE}
-QMAKE?=	${X11BASE}/bin/qmake
+QMAKE?=	${LOCALBASE}/bin/qmake
 
 .include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 500000
-BROKEN=		"Does not compile"
-.endif
 
 post-patch:
 	@${REINPLACE_CMD} -E -e 's|"hublist|"dc_hublist|' \
@@ -43,7 +35,7 @@ post-patch:
 
 do-configure:
 	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${QMAKE} \
-		-spec ${X11BASE}/share/qt/mkspecs/freebsd-g++ dc-qt.pro
+		-spec ${LOCALBASE}/share/qt/mkspecs/freebsd-g++ dc-qt.pro
 
 post-configure:
 # uphold CC/CXX/CFLAGS
