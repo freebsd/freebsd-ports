@@ -6,15 +6,14 @@
 #
 
 PORTNAME=	scgi
-PORTVERSION=	0.2
+PORTVERSION=	1.2.a2
 CATEGORIES=	www
 MASTER_SITES=	http://www.mems-exchange.org/software/files/scgi/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
+DISTNAME=	scgi-${PORTVERSION:S/.a/a/}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	dryice@liu.com.cn
 COMMENT=	Python server implementation of the Simple Common Gateway Protocol
-
-PLIST_SUB+=	PYTHON_SITELIBDIR=${PYTHON_SITELIBDIR:S/^${LOCALBASE}\///g}
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=yes
