@@ -11,7 +11,7 @@ CATEGORIES=	databases
 MASTER_SITES=	http://www.equi4.com/pub/mk/
 DISTNAME=	${PORTNAME}-${PORTVERSION}
 
-MAINTAINER=	dinoex@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	C++ embedded database engine, supports Python and Tcl
 
 .if defined(METAKIT_WITH_TCL83)
