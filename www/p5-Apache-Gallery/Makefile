@@ -25,8 +25,6 @@ BUILD_DEPENDS=	${APXS}:${PORTSDIR}/${APACHE_PORT} \
 		${SITE_PERL}/CGI.pm:${PORTSDIR}/www/p5-CGI.pm
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
-BROKEN=		Installation fails
-
 .if defined(WITH_APACHE2)
 BUILD_DEPENDS+=	${LOCALBASE}/libexec/apache2/mod_perl.so:${PORTSDIR}/www/mod_perl2
 DEPENDS_ARGS+=	WITHOUT_MODPERL=yes
@@ -47,9 +45,9 @@ TEMPLATEFILES=	dircomment.tpl directory.tpl error.tpl file.tpl index.tpl \
 		orig.tpl picture.tpl scale.tpl pictureinfo.tpl refresh.tpl \
 		scale.tpl scaleactive.tpl showpicture.tpl \
 		slideshowisoff.tpl slideshowoff.tpl
-ICONS=		application-doc.png application-mp3.png application-ogg.png \
-		application-pdf.png application-rtf.png application-wav.png \
-		video-asf.png video-avi.png c.png \
+ICONS=		application-doc.png application-pdf.png application-rtf.png \
+		sound-mp3.png sound-ogg.png sound-wav.png \
+		video-asf.png video-avi.png \
 		video-mov.png video-mpeg.png video-mpg.png video-wmv.png \
 		video-asf.png agfolder.png
 
