@@ -44,12 +44,9 @@ lib/perl5/site_perl/%%PERL_VER%%/WWW/RobotRules.pm
 lib/perl5/site_perl/%%PERL_VER%%/WWW/RobotRules/AnyDBM_File.pm
 lib/perl5/site_perl/%%PERL_VER%%/lwpcook.pod
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/libwww-perl/.packlist
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/Bundle
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/File
 @dirrm lib/perl5/site_perl/%%PERL_VER%%/HTTP/Headers
 @dirrm lib/perl5/site_perl/%%PERL_VER%%/HTTP/Request
 @dirrm lib/perl5/site_perl/%%PERL_VER%%/HTTP
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/HTML
 @dirrm lib/perl5/site_perl/%%PERL_VER%%/LWP/Authen
 @dirrm lib/perl5/site_perl/%%PERL_VER%%/LWP/Protocol
 @dirrm lib/perl5/site_perl/%%PERL_VER%%/LWP

@@ -1,12 +1,12 @@
---- Configure.orig	Sat Sep 18 19:28:55 1999
-+++ Configure	Sat Jan  8 02:43:46 2000
+--- Configure.orig	Tue Jan 18 00:44:18 2000
++++ Configure	Sun Apr 23 05:00:59 2000
 @@ -1,4 +1,4 @@
 -#!/usr/local/bin/perl
 +#!/usr/bin/perl
  #
  # $Id: Configure,v 1.8 1997/03/04 09:22:32 gbarr Exp $
  
-@@ -241,18 +241,19 @@
+@@ -258,18 +258,19 @@
  
  #---------------------------------------------------------------------------
  
@@ -32,13 +32,13 @@
 +#EDQ
 +#
 +# $opt_d = 1
-+#        unless get_bool($msg,0);
++#	unless get_bool($msg,0);
 +# }
 +$opt_d = 0;
  
  #---------------------------------------------------------------------------
  
-@@ -269,7 +270,8 @@
+@@ -286,7 +287,8 @@
  Do you want me to perform hostname lookups (y|n) ?
  EDQ
  
@@ -48,7 +48,7 @@
  
  print <<EDQ unless $cfg{'test_exist'};
  
-@@ -284,71 +286,78 @@
+@@ -301,139 +303,144 @@
  
  #---------------------------------------------------------------------------
  
@@ -78,7 +78,7 @@
  
 -$cfg{'nntp_hosts'} = get_host_list($msg,$def);
 +#$cfg{'nntp_hosts'} = get_host_list($msg,$def);
-+$cfg{'nntp_hosts'} = [ default_hostname($ENV{NNTPSERVER}, $ENV{NEWSHOST}, 'news') ];
++$cfg{'nntp_hosts'} = [default_hostname($ENV{NNTPSERVER}, $ENV{NEWSHOST}, 'news') ];
  
  #---------------------------------------------------------------------------
  
@@ -152,20 +152,137 @@
  
  #---------------------------------------------------------------------------
  
-@@ -364,9 +373,10 @@
- FTP proxy hostname :
- EDQ
+-$msg = <<EDQ;
+-
+-Do you have a firewall/ftp proxy  between your machine and the internet 
+-
+-If you use a SOCKS firewall answer no
+-
+-(y|n) ?
+-EDQ
+-
+-if(get_bool($msg,0)) {
+-
+-  $msg = <<'EDQ';
+-What series of FTP commands do you need to send to your
+-firewall to connect to an external host.
+-
+-user/pass     => external user & password
+-fwuser/fwpass => firewall user & password
+-
+-0) None
+-1) -----------------------
+-     USER user@remote.host
+-     PASS pass
+-2) -----------------------
+-     USER fwuser
+-     PASS fwpass
+-     USER user@remote.host
+-     PASS pass
+-3) -----------------------
+-     USER fwuser
+-     PASS fwpass
+-     SITE remote.site
+-     USER user
+-     PASS pass
+-4) -----------------------
+-     USER fwuser
+-     PASS fwpass
+-     OPEN remote.site
+-     USER user
+-     PASS pass
+-5) -----------------------
+-     USER user@fwuser@remote.site
+-     PASS pass@fwpass
+-6) -----------------------
+-     USER fwuser@remote.site
+-     PASS fwpass
+-     USER user
+-     PASS pass
+-7) -----------------------
+-     USER user@remote.host
+-     PASS pass
+-     AUTH fwuser
+-     RESP fwpass
+-
+-Choice:
+-EDQ
+- $def = exists $oldcfg{'ftp_firewall_type'}  ? $oldcfg{'ftp_firewall_type'} : 1;
+- $ans = Prompt($msg,$def);
+- $cfg{'ftp_firewall_type'} = 0+$ans;
+- $def = $oldcfg{'ftp_firewall'} || $ENV{FTP_FIREWALL};
++#$msg = <<EDQ;
++#
++#Do you have a firewall/ftp proxy  between your machine and the internet 
++#
++#If you use a SOCKS firewall answer no
++#
++#(y|n) ?
++#EDQ
++#
++#if(get_bool($msg,0)) {
++#
++#  $msg = <<'EDQ';
++#What series of FTP commands do you need to send to your
++#firewall to connect to an external host.
++#
++#user/pass     => external user & password
++#fwuser/fwpass => firewall user & password
++#
++#0) None
++#1) -----------------------
++#     USER user@remote.host
++#     PASS pass
++#2) -----------------------
++#     USER fwuser
++#     PASS fwpass
++#     USER user@remote.host
++#     PASS pass
++#3) -----------------------
++#     USER fwuser
++#     PASS fwpass
++#     SITE remote.site
++#     USER user
++#     PASS pass
++#4) -----------------------
++#     USER fwuser
++#     PASS fwpass
++#     OPEN remote.site
++#     USER user
++#     PASS pass
++#5) -----------------------
++#     USER user@fwuser@remote.site
++#     PASS pass@fwpass
++#6) -----------------------
++#     USER fwuser@remote.site
++#     PASS fwpass
++#     USER user
++#     PASS pass
++#7) -----------------------
++#     USER user@remote.host
++#     PASS pass
++#     AUTH fwuser
++#     RESP fwpass
++
++#Choice:
++#EDQ
++# $def = exists $oldcfg{'ftp_firewall_type'}  ? $oldcfg{'ftp_firewall_type'} : 1;
++# $ans = Prompt($msg,$def);
++# $cfg{'ftp_firewall_type'} = 0+$ans;
++ $cfg{'ftp_firewall_type'} = 0;
++# $def = $oldcfg{'ftp_firewall'} || $ENV{FTP_FIREWALL};
  
--$def = $oldcfg{'ftp_firewall'} || $ENV{FTP_FIREWALL};
-+#$def = $oldcfg{'ftp_firewall'} || $ENV{FTP_FIREWALL};
- 
--$cfg{'ftp_firewall'} = get_hostname($msg,$def);
-+#$cfg{'ftp_firewall'} = get_hostname($msg,$def);
+- $cfg{'ftp_firewall'} = get_hostname("FTP proxy hostname :", $def);
+-}
+-else {
+- delete $cfg{'ftp_firewall'};
+-}
++# $cfg{'ftp_firewall'} = get_hostname("FTP proxy hostname :", $def);
 +$cfg{'ftp_firewall'} = $ENV{FTP_FIREWALL};
  
- #---------------------------------------------------------------------------
  
-@@ -414,37 +424,40 @@
+ #---------------------------------------------------------------------------
+@@ -489,22 +496,23 @@
  
  #---------------------------------------------------------------------------
  
@@ -188,20 +305,24 @@
 +#server, this is called a passive transfer.
 +#EDQ
  
- $msg = "\nShould all FTP connections via a firewall/proxy be passive (y|n) ?";
+ if (defined $cfg{'ftp_firewall'}) {
+   $msg = "\nShould all FTP connections via a firewall/proxy be passive (y|n) ?";
  
--$def = $oldcfg{'ftp_ext_passive'} || 0;
-+#$def = $oldcfg{'ftp_ext_passive'} || 0;
+-  $def = $oldcfg{'ftp_ext_passive'} || 0;
++#  $def = $oldcfg{'ftp_ext_passive'} || 0;
  
--$cfg{'ftp_ext_passive'} = get_bool($msg,$def);
-+#$cfg{'ftp_ext_passive'} = get_bool($msg,$def);
-+$cfg{'ftp_ext_passive'} = 0;
+-  $cfg{'ftp_ext_passive'} = get_bool($msg,$def);
++#  $cfg{'ftp_ext_passive'} = get_bool($msg,$def);
++   $cfg{'ftp_ext_passive'} = 0;
  
+   $msg = "\nShould all other FTP connections be passive (y|n) ?";
+ 
+@@ -513,18 +521,20 @@
+   $msg = "\nShould all FTP connections be passive (y|n) ?";
+ }
  
 -$def = $oldcfg{'ftp_int_passive'} || 0;
 +#$def = $oldcfg{'ftp_int_passive'} || 0;
- 
- $msg = "\nShould all other FTP connections be passive (y|n) ?";
  
 -$cfg{'ftp_int_passive'} = get_bool($msg,$def);
 +#$cfg{'ftp_int_passive'} = get_bool($msg,$def);
@@ -222,7 +343,7 @@
  
  #---------------------------------------------------------------------------
  
-@@ -460,7 +473,8 @@
+@@ -540,7 +550,8 @@
  Do you want me to run these tests (y|n) ?
  EDQ
  

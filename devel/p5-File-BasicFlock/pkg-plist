@@ -1,1 +1,3 @@
 lib/perl5/site_perl/%%PERL_VER%%/File/BasicFlock.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH/File/BasicFlock/.packlist
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH/File/BasicFlock

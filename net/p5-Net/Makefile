@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	p5-Net
-PORTVERSION=	1.0607
+PORTVERSION=	1.0703
 CATEGORIES=	net perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Net
@@ -28,7 +28,8 @@ MAN3=           \
 		Net::POP3.3 \
 		Net::SMTP.3 \
 		Net::SNPP.3 \
-		Net::Time.3
+		Net::Time.3 \
+		Net::libnetFAQ.3
 
 do-configure:
 		@ cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} ${PERL5} Makefile.PL
