@@ -183,6 +183,7 @@
     SUBDIR += linux_mesa3
     SUBDIR += maverik
     SUBDIR += ming
+    SUBDIR += miniscrib
     SUBDIR += mmsclient
     SUBDIR += morpheus
     SUBDIR += mpeg
