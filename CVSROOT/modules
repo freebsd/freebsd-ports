@@ -3559,6 +3559,7 @@ libelf		ports/devel/libelf
 libelysium	ports/misc/libelysium
 libepplet	ports/x11-wm/libepplet
 libesmtp	ports/mail/libesmtp
+libetpan	ports/mail/libetpan
 libevent	ports/devel/libevent
 libexec		src/libexec
 libexif		ports/graphics/libexif
