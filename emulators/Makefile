@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.22 1997/12/18 03:48:38 alex Exp $
+# $Id: Makefile,v 1.23 1998/02/10 03:07:37 jkh Exp $
 #
 
     SUBDIR += aftp
@@ -8,6 +8,7 @@
     SUBDIR += cpmemu
     SUBDIR += cpmtools
     SUBDIR += fmsx
+    SUBDIR += frodo
     SUBDIR += hfs
     SUBDIR += hfsutils
     SUBDIR += ines
