@@ -35,9 +35,9 @@ RESTRICTED=	"Cryptography"
 INSTALL_TARGET=		install certificate
 .endif
 
-HAS_CONFIGURE=	yes
+USE_AUTOCONF=	yes
 CFLAGS+=	-I${PREFIX}/include/openssl
-CONFIGURE_ARGS=	--with-ssltop=${PREFIX}
+CONFIGURE_ARGS=	--with-ssltop=${PREFIX} --with-ssllib=${PREFIX}/lib
 WRKSRC=		${WRKDIR}/${DISTNAME}/src
 DOCSRC=		${WRKDIR}/${DISTNAME}
 DOCS=		ChangeLog \

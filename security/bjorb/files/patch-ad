@@ -1,0 +1,11 @@
+--- Config.cc.orig	Sun Dec 26 11:25:39 1999
++++ Config.cc	Sun Dec 26 11:25:57 1999
+@@ -334,7 +334,7 @@
+   int retval = 1;
+ 
+   SOCKADDR_IN sa_client;
+-  int addr_len = sizeof(SOCKADDR_IN);
++  unsigned int addr_len = sizeof(SOCKADDR_IN);
+ 
+ #ifndef NO_DEBUG
+   PUTERR(2, ("::accept() begin\n"));

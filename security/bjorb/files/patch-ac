@@ -1,0 +1,45 @@
+--- configure.in.orig	Sun Feb 21 20:40:47 1999
++++ configure.in	Sun Dec 26 12:02:27 1999
+@@ -16,6 +16,7 @@
+ 	prefix=$ac_default_prefix
+ fi
+ ssltop=$prefix/ssl
++ssllib=$prefix/ssl
+ 
+ dnl Checks for programs.
+ AC_PROG_AWK
+@@ -86,6 +87,13 @@
+ 
+ AC_SUBST(ssltop)
+ 
++# with SSL lib
++AC_ARG_WITH(ssllib,
++[  --with-ssllib=DIR specifies directory to put SSL libbary.],
++ssllib=$with_ssllib)
++
++AC_SUBST(ssllib)
++
+ dnl Checks for libraries.
+ 
+ # shared option
+@@ -100,12 +108,16 @@
+ 
+ # for USA_RESIDENT on FreeBSD
+ if test X$disable_ssl = X; then
+-  LD_LIBRARY_PATH="$LD_LIBRARY_PATH:$ssltop/lib"
++  LD_LIBRARY_PATH="$LD_LIBRARY_PATH:$ssllib"
+   export LD_LIBRARY_PATH
+ 
+-  AC_CHECK_LIB(RSAglue, ERR_load_RSAREF_strings,,,-lcrypto -lssl)
+-  AC_CHECK_LIB(rsaref, DES3_CBCInit)
+-  ssllibs="-lssl -lcrypto"
++  AC_MSG_CHECKING([for RSAref library])
++  saved_LIBS="-L$ssllib -lcrypto -lssl"
++  LIBS="$saved_LIBS -lRSAglue -lrsaref"
++  AC_TRY_LINK([], [],
++    [AC_MSG_RESULT(yes); ],
++    [AC_MSG_RESULT(no)]; LIBS="$saved_LIBS")
++  ssllibs="$LIBS"
+ fi
+ 
+ deflib()
