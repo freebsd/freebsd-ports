@@ -1,6 +1,15 @@
---- makefile.orig	Tue Aug  3 11:25:05 1999
-+++ makefile	Sat Aug  7 20:04:01 1999
-@@ -195,7 +195,7 @@
+--- makefile.orig	Sat Mar  2 20:14:12 2002
++++ makefile	Mon Mar  4 23:34:48 2002
+@@ -222,7 +222,7 @@
+ 	gcc  -O -Dunix -DHAVE_ANSIC_C -DASYNC_IO \
+ 		-Dsolaris iozone_solaris7gcc.o libasync7.o libbif7.o \
+ 		-D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE -lthread 
+-                -lpthread -lposix4 -lnsl -laio -lsocket -o iozone
++		-lpthread -lposix4 -lnsl -laio -lsocket -o iozone
+ 
+ #
+ # Solaris 2.6 (32 bit) build with no threads, no largefiles, and no async I/O
+@@ -253,7 +253,7 @@
  #
  
  freebsd: iozone_freebsd.o libbif.o
@@ -8,10 +17,10 @@
 +	cc ${CFLAGS} -Dunix -DHAVE_ANSIC_C -DNO_THREADS -DSHARED_MEM \
  		iozone_freebsd.o libbif.o -o iozone
  #
- #
-@@ -411,8 +411,8 @@
+ # GNU C compiler OpenBSD build with no threads, no largefiles, no async I/O
+@@ -601,9 +601,9 @@
  	@echo ""
- 	@echo "Build Iozone for FreeBSD"
+ 	@echo "Build iozone for FreeBSD"
  	@echo ""
 -	cc -c -O -Dunix -Dbsd4_2 -DHAVE_ANSIC_C -DNO_THREADS \
 +	cc -c ${CFLAGS} -Dunix -Dbsd4_2 -DHAVE_ANSIC_C -DNO_THREADS \
@@ -20,3 +29,4 @@
 +	cc -c ${CFLAGS} -Dunix -Dbsd4_2 -DHAVE_ANSIC_C -DNO_THREADS \
  		-DSHARED_MEM libbif.c -o libbif.o
  
+ iozone_openbsd.o: iozone.c libbif.c
