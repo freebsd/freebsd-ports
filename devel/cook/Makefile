@@ -38,8 +38,8 @@ pre-install:
 	${MKDIR} ${PREFIX}/share/cook/en/man1
 	${MKDIR} ${PREFIX}/lib/cook/en/LC_MESSAGES
 
-# cook installs extra copies in a directory that MANLANG can't cope with, so
-# shuffle things around a bit.
+# cook installs extra copies of the manpages in a directory that MANLANG can't
+# cope with, so shuffle things around a bit.
 post-install:
 	@${MKDIR} ${PREFIX}/share/cook/en/man1
 	@${MKDIR} ${PREFIX}/share/cook/man/en/man1
@@ -56,7 +56,7 @@ post-install:
 	@strip ${PREFIX}/bin/${bin}
 .endfor
 	@echo
-	@echo "Add ${PREFIX}/share/cook/man to your MANPATH in order to " \
+	@echo "Add ${PREFIX}/share/cook/man to your MANPATH in order to" \
 	"access the manual"
 	@echo "pages included with this port."
 	@echo
