@@ -67,6 +67,7 @@
     SUBDIR += gensig
     SUBDIR += getmail
     SUBDIR += gkrellmmailwatch
+    SUBDIR += gkrellmmailwatch2
     SUBDIR += glacier
     SUBDIR += glbiff
     SUBDIR += gmail
