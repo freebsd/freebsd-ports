@@ -1,5 +1,14 @@
---- src/lib/fte/device.c.orig	Thu Jul 29 21:09:59 1993
-+++ src/lib/fte/device.c	Thu Jul 17 00:47:50 2003
+--- src/lib/fte/device.c.orig	Thu Jul 29 19:09:59 1993
++++ src/lib/fte/device.c	Thu Sep 30 13:16:51 2004
+@@ -619,7 +619,7 @@
+ 	n2 = names;
+     }
+ 
+-    if (!n2 || !eq(n2->pn_op->op_name, "=")) {
++    if (!n2 || !n2->pn_op || !eq(n2->pn_op->op_name, "=")) {
+ 	fprintf(cp_err, "alter: don't understand \"%s\"\n", names->pn_name);
+ 	fprintf(cp_err, "usage: alter dev param = expression\n");
+ 	fprintf(cp_err, "  or   alter @dev[param] = expression\n");
 @@ -661,7 +661,9 @@
      }
  
