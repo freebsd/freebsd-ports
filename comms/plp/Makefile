@@ -19,12 +19,9 @@ COMMENT=	Transfer data between a Psion Series 5(mx) and Unix
 
 USE_GMAKE=	yes
 USE_REINPLACE=	yes
+USE_GCC=	2.95
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 500113
-BROKEN=         "Does not compile (bad C++ code)"
-.endif
+PLIST_FILES=	bin/ncp bin/rfsv
 
 pre-patch:
 .for files in packet.cc socketchan.cc
@@ -32,7 +29,6 @@ pre-patch:
 .endfor
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/bin/ncp ${PREFIX}/bin
-	${INSTALL_PROGRAM} ${WRKSRC}/bin/rfsv ${PREFIX}/bin
+	cd ${WRKSRC} && ${INSTALL_PROGRAM} ${PLIST_FILES} ${PREFIX}/bin
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
