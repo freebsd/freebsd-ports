@@ -1,0 +1,8 @@
+--- runme.sh.orig	Tue Aug 13 17:08:25 2002
++++ runme.sh	Tue Aug 27 11:48:18 2002
+@@ -55,4 +55,4 @@
+ export OPERA_DIR OPERA_PLUGIN_PATH
+ 
+ # Running Opera
+-$OPERA "$@"
++exec $OPERA "$@"
