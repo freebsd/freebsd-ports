@@ -6,21 +6,18 @@
 #
 
 PORTNAME=	ecasound
-PORTVERSION=	2.2.2
+PORTVERSION=	2.2.3
 CATEGORIES=	audio
 MASTER_SITES=	http://ecasound.seul.org/download/
 
 MAINTAINER=	anarcat@anarcat.ath.cx
 COMMENT=	Multitrack audio processing software
 
-BROKEN=		"Does not compile"
-
 USE_GMAKE=	yes
 USE_AUTOMAKE_VER=14
 USE_LIBTOOL=	yes
 INSTALLS_SHLIB=	yes
 
-CONFIGURE_ARGS+=	--enable-sys-readline
 MAKE_ENV+=	${CONFIGURE_ENV}
 
 .if defined(WITH_MPG123)
