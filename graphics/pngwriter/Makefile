@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	pngwriter
-PORTVERSION=	0.4.4
+PORTVERSION=	0.4.8
 CATEGORIES=	graphics devel
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -21,7 +21,8 @@ LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png \
 
 BUILD_WRKSRC=	${WRKDIR}/${DISTNAME}/src
 
-CXXFLAGS+=	`freetype-config --cflags` -I${LOCALBASE}/include/libpng
+USE_GNOME=	pkgconfig
+CXXFLAGS+=	`pkg-config --cflags freetype2 libpng12` -I${LOCALBASE}/include
 
 do-build:
 	cd ${BUILD_WRKSRC} \
