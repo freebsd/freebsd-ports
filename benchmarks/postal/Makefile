@@ -18,16 +18,13 @@ COMMENT=	Benchmark SMTP/POP servers
 USE_REINPLACE=	yes
 USE_OPENSSL=	yes
 GNU_CONFIGURE=	yes
+USE_GMAKE=	yes
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 501000
-BROKEN=		"Does not compile on FreeBSD ${OSVERSION}"
-.endif
+PLIST_FILES=	sbin/postal sbin/postal-list sbin/rabid
 
 MAN8=	postal.8 postal-list.8 rabid.8
 
 post-patch:
 	@${REINPLACE_CMD} -e "s,-pthread,${PTHREAD_LIBS},g" ${WRKSRC}/configure
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
