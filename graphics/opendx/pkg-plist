@@ -42,10 +42,10 @@ dx/fonts/roman_tser.dx
 dx/fonts/script_d.dx
 dx/fonts/script_s.dx
 dx/fonts/variable.dx
-dx/help/BMHelpDir
 dx/help/GarHelpDir
 dx/help/HelpDir
 dx/help/HelpNotAvailable
+dx/help/MBHelpDir
 dx/help/dxall1
 dx/help/dxall10
 dx/help/dxall100
@@ -2215,6 +2215,7 @@ dx/lib/dxrc
 dx/lib/mdf2c.awk
 dx/lib/messages
 dx/lib/outboard.c
+dx/lib_%%ARCH%%/arch.mak
 dx/lib_%%ARCH%%/libDX.a
 dx/lib_%%ARCH%%/libDXL.a
 dx/lib_%%ARCH%%/libDXcallm.a
