@@ -1903,6 +1903,7 @@ fileschanged	ports/sysutils/fileschanged
 filtermail	ports/mail/filtermail
 find-zlib	ports/security/find-zlib
 find_ddos	ports/security/find_ddos
+findmtu		ports/net/findmtu
 findutils	ports/misc/findutils
 finfo		ports/sysutils/finfo
 finger_mysql	ports/security/finger_mysql
