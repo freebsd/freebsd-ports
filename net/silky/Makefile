@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	silky
-PORTVERSION=	0.5.2
-PORTREVISION=	1
+PORTVERSION=	0.5.3
 CATEGORIES=	net security
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		ftp://rusunix.org/pub/FreeBSD/distfiles/
@@ -21,11 +20,12 @@ RUN_DEPENDS=	${LOCALBASE}/etc/mime.types:${PORTSDIR}/misc/mime-support
 
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
-CONFIGURE_ARGS=	--with-silc-includes=${LOCALBASE}/include/silc \
+CONFIGURE_ARGS=	--with-silc-include=${LOCALBASE}/include/silc \
 		--with-silc-libs=${LOCALBASE}/lib \
 		--with-docdir=${DOCSDIR} \
 		--with-libintl-prefix=${LOCALBASE}
-CONFIGURE_ENV+=	PKG_CONFIG_PATH=${FILESDIR}
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}" \
+		LIBS="-L${LOCALBASE}/lib -L${X11BASE}"
 
 USE_GNOME=	gtk20 libglade2 gnomelibs
 USE_GMAKE=	yes
