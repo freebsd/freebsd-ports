@@ -1,21 +1,21 @@
 # New ports collection Makefile for:    exmh2
-# Version required:		2.0.1
+# Version required:		2.0.2
 # Date released:		1 Jan 97
 # Whom:				Peter Wemm <peter@freebsd.org>
 #
-# $Id: Makefile,v 1.24 1997/12/27 02:32:45 peter Exp $
+# $Id: Makefile,v 1.25 1998/02/15 05:36:54 peter Exp $
 #
 
-DISTNAME=	exmh-2.0.1
+DISTNAME=	exmh-2.0.2
 CATEGORIES=	mail tk80
 MASTER_SITES=	ftp://ftp.sunlabs.com/pub/tcl/exmh/
 EXTRACT_SUFX=	.tar.Z
 
 PATCH_SITES=	http://sunscript.sun.com/exmh/patches/2.0.1/
-PATCHFILES=	utils.patch folderNew.patch extrasInit.patch exec.patch \
-		app-defaults.patch pgpMisc.patch seditMime.patch mime.patch \
-		bindings.patch html_bindings.patch find.patch mh.patch \
-		pgp.patch
+#PATCHFILES=	utils.patch folderNew.patch extrasInit.patch exec.patch \
+#		app-defaults.patch pgpMisc.patch seditMime.patch mime.patch \
+#		bindings.patch html_bindings.patch find.patch mh.patch \
+#		pgp.patch
 
 # User contributed and "new features".  Some not useable as-is.
 PATCHFILES+=	seditpost.patch inc.patch next.patch
