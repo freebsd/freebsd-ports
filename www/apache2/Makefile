@@ -6,26 +6,25 @@
 #
 
 PORTNAME=	apache
-PORTVERSION=	2.0.32
+PORTVERSION=	2.0.35
 CATEGORIES=	www ipv6
 MASTER_SITES=	http://www.apache.org/dist/httpd/ \
-		http://www.freebsd.org/gifs/ \
 		http://apache.mirrorcentral.com/dist/httpd/ \
-		http://www2.freebsd.org/gifs/ \
 		http://apache.missouri.edu/dist/httpd/ \
 		http://ftp.epix.net/apache/dist/httpd/ \
 		ftp://ftp.digex.net/pub/packages/network/apache/httpd/ \
-		ftp://ftp.cuckoo.com/pub/mirrors/apache/dist/httpd/
+		ftp://ftp.cuckoo.com/pub/mirrors/apache/dist/httpd/ \
+		http://www.freebsd.org/gifs/:freebsd \
+		http://www2.freebsd.org/gifs/:freebsd
 DISTNAME=	httpd-${PORTVERSION}
-DISTFILES=	${DISTNAME}.tar.gz powerlogo.gif
+DISTFILES=	${DISTNAME}.tar.gz powerlogo.gif:freebsd
 EXTRACT_ONLY=	${DISTNAME}.tar.gz
 
 MAINTAINER?=	perky@fallin.lv
 
 LATEST_LINK=	apache2
 
-WRKSRC=		${WRKDIR}/httpd-${PORTVERSION}
-WITH_MPM?=	prefork # or worker, perchild (neither of them is working yet)
+WITH_MPM?=	prefork # or worker, perchild (neither of them still has a problem on FreeBSD)
 HTTP_PORT?=	80
 
 GNU_CONFIGURE=	yes
@@ -33,34 +32,66 @@ CONFIGURE_ARGS=	--prefix=${PREFIX} \
 		--enable-layout=FreeBSD \
 		--with-perl=${PERL} \
 		--enable-so \
-		--with-suexec-docroot=${PREFIX}/www/data \
 		--with-mpm=${WITH_MPM} \
 		--with-port=${HTTP_PORT} \
-		--libdir=${PREFIX}/lib/apache \
-		--includedir=${PREFIX}/include/apache
+		--libdir=${PREFIX}/lib/apache2 \
+		--includedir=${PREFIX}/include/apache2
 CONFIGURE_ENV=	CC="${CC}" CPPFLAGS="${CPPFLAGS}" CFLAGS="${CFLAGS}" \
 		LDFLAGS="${LDFLAGS}"
-SHARED_MODULES=	all cgid cache file-cache disk-cache proxy proxy-connect \
-		proxy-ftp proxy-http
+SHARED_MODULES= all cgid charset_lite ext_filter case_filter case_filter_in \
+		deflate bucketeer
+RC_SUB=		-e 's,@@PREFIX@@,${PREFIX},g'
 
 .if defined(NOPORTDOCS)
 MAKE_ENV+=	NOPORTDOCS=YES
 .endif
 
+.if !defined(WITHOUT_THREADS)
+CONFIGURE_ARGS+= --enable-threads
+.endif
+
 .if !defined(WITHOUT_SSL) && exists(/usr/lib/libcrypto.so)
 SHARED_MODULES+= ssl
-PLIST_SUB+=	SSLOPT=""
+PLIST_SUB+=	MODSSL=""
+RC_SUB+=	-e 's,@@SSL@@,ssl,g'
 .else
-PLIST_SUB+=	SSLOPT="@comment "
+PLIST_SUB+=	MODSSL="@comment "
+RC_SUB+=	-e 's,@@SSL@@,,g'
+.endif
+
+.if defined(WITH_SUEXEC)
+SUEXEC_USERDIR?= public_html
+CONFIGURE_ARGS+= --enable-suexec \
+		--with-suexec-caller=www \
+		--with-suexec-userdir="${SUEXEC_USERDIR}" \
+		--with-suexec-uidmim=1000 --with-suexec-gidmin=1000 \
+		--with-suexec-docroot="${PREFIX}/www/data" \
+		--with-suexec-safepath="${PREFIX}/bin:${LOCALBASE}/bin:/usr/bin:/bin" \
+		--with-suexec-logfile="/var/log/httpd-suexec.log"
+PLIST_SUB+=	SUEXEC=""
+.else
+PLIST_SUB+=	SUEXEC="@comment "
+.endif
+
+.if !defined(WITHOUT_CACHE) && !defined(WITHOUT_THREADS)
+SHARED_MODULES+= cache file-cache disk-cache mem_cache
+PLIST_SUB+=	MODCACHE=""
+.else
+PLIST_SUB+=	MODCACHE="@comment "
+.endif
+
+.if !defined(WITHOUT_PROXY)
+SHARED_MODULES+= proxy proxy-connect proxy-ftp proxy-http
+PLIST_SUB+=	MODPROXY=""
+.else
+PLIST_SUB+=	MODPROXY="@comment "
 .endif
 
 .if ${WITH_MPM} != "prefork"
-CONFIGURE_ARGS+= --enable-threads
-SHARED_MODULES+= mem-cache
-PLIST_SUB+=	THREADONLY=""
 PKGNAMESUFFIX=	-${WITH_MPM}
-.else
-PLIST_SUB+=	THREADONLY="@comment "
+.if defined(WITHOUT_THREADS)
+IGNORE=		"requires threads for ${WITH_MPM} mpm"
+.endif
 .endif
 
 CONFIGURE_ARGS+= --enable-mods-shared="${SHARED_MODULES}"
@@ -68,10 +99,7 @@ CONFIGURE_ARGS+= --enable-mods-shared="${SHARED_MODULES}"
 MAN1=		dbmmanage.1 htdigest.1 htpasswd.1
 MAN8=		ab.8 apachectl.8 apxs.8 httpd.8 logresolve.8 rotatelogs.8 suexec.8
 
-pre-extract:
-.if !defined(WITHOUT_SSL)
-	@${ECHO_MSG} "You can disable support for SSL by defining WITHOUT_SSL."
-.endif
+.include <bsd.port.pre.mk>
 
 post-extract:
 	@${CP} ${DISTDIR}/powerlogo.gif ${WRKSRC}/docs/icons/freebsd.gif
@@ -82,14 +110,19 @@ post-patch:
 	  ${PERL} -pi -e 's,apache_pb,icons/freebsd.gif" ALT="[Powered by FreeBSD]"><IMG SRC="apache_pb2_ani,g' $$f \
 	 ); done
 	@${FIND} ${WRKSRC} -name "*.orig" -exec ${RM} -f {} \;
+	@${SED} ${RC_SUB} ${FILESDIR}/apache.sh >${WRKDIR}/apache2.sh
+.if ${OSVERSION} >= 500032
+	@${PERL} -pi.orig -e 's|expr|expr --|' \
+		${WRKSRC}/srclib/apr/build/ltmain.sh
+.endif
 
 pre-install:
 	PKG_PREFIX=${PREFIX} ${SH} pkg-install ${PKGNAME} PRE-INSTALL
 
 post-install:
-	@if [ ! -f ${PREFIX}/etc/rc.d/apache.sh ]; then \
-		${ECHO} "Installing ${PREFIX}/etc/rc.d/apache.sh startup file."; \
-		${INSTALL_SCRIPT} -m 751 ${FILESDIR}/apache.sh ${PREFIX}/etc/rc.d/apache.sh; \
+	@if [ ! -f ${PREFIX}/etc/rc.d/apache2.sh ]; then \
+		${ECHO} "Installing ${PREFIX}/etc/rc.d/apache2.sh startup file."; \
+		${INSTALL_SCRIPT} -m 751 ${WRKDIR}/apache2.sh ${PREFIX}/etc/rc.d/apache2.sh; \
 	fi
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

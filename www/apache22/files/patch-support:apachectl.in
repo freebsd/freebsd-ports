@@ -1,18 +1,14 @@
---- support/apachectl.in.orig	Sat Dec 15 22:56:36 2001
-+++ support/apachectl.in	Fri Feb 22 02:40:03 2002
-@@ -26,10 +26,10 @@
- # --------------------                              --------------------
- # 
- # the path to your PID file
--PIDFILE=@prefix@/logs/@progname@.pid
-+PIDFILE=/var/run/@progname@.pid
+--- support/apachectl.in.orig	Thu Apr  4 18:15:44 2002
++++ support/apachectl.in	Sun Apr  7 08:49:25 2002
+@@ -29,7 +29,7 @@
+ PIDFILE=@exp_runtimedir@/@progname@.pid
  #
  # the path to your httpd binary, including options if necessary
--HTTPD='@prefix@/bin/@progname@'
-+HTTPD='@prefix@/sbin/@progname@'
+-HTTPD='@exp_bindir@/@progname@'
++HTTPD='@exp_sbindir@/@progname@'
  #
  # pick up any necessary environment variables
- if test -f @prefix@/bin/envvars; then
+ if test -f @exp_bindir@/envvars; then
 @@ -47,6 +47,7 @@
  #
  # --------------------                              --------------------

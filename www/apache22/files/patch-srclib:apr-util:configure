@@ -1,6 +1,6 @@
---- srclib/apr-util/configure.orig	Fri Feb 22 02:55:35 2002
-+++ srclib/apr-util/configure	Fri Feb 22 02:56:03 2002
-@@ -5770,7 +5770,7 @@
+--- srclib/apr-util/configure.orig	Sat Apr  6 15:19:28 2002
++++ srclib/apr-util/configure	Sun Apr  7 06:35:09 2002
+@@ -5790,7 +5790,7 @@
  
  
  if test -z "$expat_include_dir"; then
@@ -8,4 +8,4 @@
 +  for d in xml/expat-cvs xml/expat $srcdir/xml/expat ; do
      
    echo $ac_n "checking for Expat in $d""... $ac_c" 1>&6
- echo "configure:5777: checking for Expat in $d" >&5
+ echo "configure:5797: checking for Expat in $d" >&5
