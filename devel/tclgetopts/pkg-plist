@@ -1,0 +1,4 @@
+lib/foxGetOpt/pkgIndex.tcl
+lib/foxGetOpt/foxTypedOpts.tcl
+lib/foxGetOpt/foxGetOpt.tcl
+@dirrm lib/foxGetOpt
