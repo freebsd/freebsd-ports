@@ -7,8 +7,7 @@
 #
 
 PORTNAME=	dparser
-PORTVERSION=	1.8
-PORTREVISION=	1
+PORTVERSION=	1.10
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -22,7 +21,10 @@ WRKSRC=		${WRKDIR}/d
 USE_GMAKE=	yes
 MAKE_ARGS=	CC="${CC}" D_OPTIMIZE=
 
-MAN1=	make_dparser.1
+MAN1=		make_dparser.1
+PORTDOCS=	faq.html index.html manual.html
+PLIST_FILES=	bin/make_dparser include/dparse.h include/dparse_tables.h \
+		include/dsymtab.h lib/libdparse.a
 
 .include <bsd.port.pre.mk>
 
@@ -30,7 +32,13 @@ MAN1=	make_dparser.1
 BROKEN=		"Does not compile on !i386"
 .endif
 
-post-install:
+do-install:
+	${INSTALL_PROGRAM} ${WRKSRC}/make_dparser ${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/make_dparser.1 ${MANPREFIX}/man/man1
+	${INSTALL_DATA} ${WRKSRC}/libdparse.a ${PREFIX}/lib
+	${INSTALL_DATA} ${WRKSRC}/dparse.h ${PREFIX}/include
+	${INSTALL_DATA} ${WRKSRC}/dparse_tables.h ${PREFIX}/include
+	${INSTALL_DATA} ${WRKSRC}/dsymtab.h ${PREFIX}/include
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/*.html ${DOCSDIR}
