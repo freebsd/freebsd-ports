@@ -1,0 +1,53 @@
+%%ZOPEPRODUCTDIR%%/mysqlUserFolder/__init__.py
+%%ZOPEPRODUCTDIR%%/mysqlUserFolder/__init__.pyc
+%%ZOPEPRODUCTDIR%%/mysqlUserFolder/c_classes.py
+%%ZOPEPRODUCTDIR%%/mysqlUserFolder/c_classes.pyc
+%%ZOPEPRODUCTDIR%%/mysqlUserFolder/cache.py
+%%ZOPEPRODUCTDIR%%/mysqlUserFolder/cache.pyc
+%%ZOPEPRODUCTDIR%%/mysqlUserFolder/cfg.py
+%%ZOPEPRODUCTDIR%%/mysqlUserFolder/cfg.pyc
+%%ZOPEPRODUCTDIR%%/mysqlUserFolder/db.py
+%%ZOPEPRODUCTDIR%%/mysqlUserFolder/db.pyc
+%%ZOPEPRODUCTDIR%%/mysqlUserFolder/docs/API/DB-API.txt
+%%ZOPEPRODUCTDIR%%/mysqlUserFolder/docs/CHANGELOG
+%%ZOPEPRODUCTDIR%%/mysqlUserFolder/docs/INSTALL
+%%ZOPEPRODUCTDIR%%/mysqlUserFolder/docs/NOTES
+%%ZOPEPRODUCTDIR%%/mysqlUserFolder/docs/NOTES.GRUF
+%%ZOPEPRODUCTDIR%%/mysqlUserFolder/docs/README
+%%ZOPEPRODUCTDIR%%/mysqlUserFolder/docs/UPGRADE
+%%ZOPEPRODUCTDIR%%/mysqlUserFolder/dtml.user/a_ChangeOther.dtml
+%%ZOPEPRODUCTDIR%%/mysqlUserFolder/dtml.user/a_ChangePassword.dtml
+%%ZOPEPRODUCTDIR%%/mysqlUserFolder/dtml.user/a_CreateUser.dtml
+%%ZOPEPRODUCTDIR%%/mysqlUserFolder/dtml.user/u_Login.dtml
+%%ZOPEPRODUCTDIR%%/mysqlUserFolder/dtml.user/u_UserNew.dtml
+%%ZOPEPRODUCTDIR%%/mysqlUserFolder/dtml.user/u_UserPage.dtml
+%%ZOPEPRODUCTDIR%%/mysqlUserFolder/dtml/m_Advanced.dtml
+%%ZOPEPRODUCTDIR%%/mysqlUserFolder/dtml/m_Dialog.dtml
+%%ZOPEPRODUCTDIR%%/mysqlUserFolder/dtml/m_Info.dtml
+%%ZOPEPRODUCTDIR%%/mysqlUserFolder/dtml/m_Parameters.dtml
+%%ZOPEPRODUCTDIR%%/mysqlUserFolder/dtml/m_Properties.dtml
+%%ZOPEPRODUCTDIR%%/mysqlUserFolder/dtml/m_UserEdit.dtml
+%%ZOPEPRODUCTDIR%%/mysqlUserFolder/dtml/m_UserNew.dtml
+%%ZOPEPRODUCTDIR%%/mysqlUserFolder/dtml/m_Users.dtml
+%%ZOPEPRODUCTDIR%%/mysqlUserFolder/icons/folder_icon.gif
+%%ZOPEPRODUCTDIR%%/mysqlUserFolder/icons/user_icon.gif
+%%ZOPEPRODUCTDIR%%/mysqlUserFolder/log.py
+%%ZOPEPRODUCTDIR%%/mysqlUserFolder/log.pyc
+%%ZOPEPRODUCTDIR%%/mysqlUserFolder/mysqlUserFolder.py
+%%ZOPEPRODUCTDIR%%/mysqlUserFolder/mysqlUserFolder.pyc
+%%ZOPEPRODUCTDIR%%/mysqlUserFolder/passwords.py
+%%ZOPEPRODUCTDIR%%/mysqlUserFolder/passwords.pyc
+%%ZOPEPRODUCTDIR%%/mysqlUserFolder/sql/create_tables.sql
+%%ZOPEPRODUCTDIR%%/mysqlUserFolder/sql/setup_manager.sql
+%%ZOPEPRODUCTDIR%%/mysqlUserFolder/util.py
+%%ZOPEPRODUCTDIR%%/mysqlUserFolder/util.pyc
+%%ZOPEPRODUCTDIR%%/mysqlUserFolder/vdb.py
+%%ZOPEPRODUCTDIR%%/mysqlUserFolder/vdb.pyc
+%%ZOPEPRODUCTDIR%%/mysqlUserFolder/version.txt
+@dirrm %%ZOPEPRODUCTDIR%%/mysqlUserFolder/docs/API
+@dirrm %%ZOPEPRODUCTDIR%%/mysqlUserFolder/docs
+@dirrm %%ZOPEPRODUCTDIR%%/mysqlUserFolder/dtml
+@dirrm %%ZOPEPRODUCTDIR%%/mysqlUserFolder/dtml.user
+@dirrm %%ZOPEPRODUCTDIR%%/mysqlUserFolder/icons
+@dirrm %%ZOPEPRODUCTDIR%%/mysqlUserFolder/sql
+@dirrm %%ZOPEPRODUCTDIR%%/mysqlUserFolder
