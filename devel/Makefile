@@ -1395,6 +1395,7 @@
     SUBDIR += simpletest
     SUBDIR += simulavr
     SUBDIR += skalibs
+    SUBDIR += smake
     SUBDIR += smc
     SUBDIR += smv
     SUBDIR += soup

@@ -1,0 +1,5 @@
+bin/smake
+include/align.h
+include/avoffset.h
+lib/libschily.a
+lib/defaults.smk
