@@ -11,7 +11,7 @@ CATEGORIES=	net devel python
 MASTER_SITES=	http://www.amk.ca/files/python/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	perky@fallin.lv
+MAINTAINER=	perky@FreeBSD.org
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes

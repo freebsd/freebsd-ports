@@ -13,7 +13,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	ReportLab_${PORTVERSION:S/./_/}
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	perky@fallin.lv
+MAINTAINER=	perky@FreeBSD.org
 
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/_imaging.so:${PORTSDIR}/graphics/py-imaging
 

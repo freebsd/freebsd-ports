@@ -12,7 +12,7 @@ MASTER_SITES=	http://dustman.net/andy/python/adns-python/${PORTVERSION}/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	adns-python-${PORTVERSION}
 
-MAINTAINER=	perky@fallin.lv
+MAINTAINER=	perky@FreeBSD.org
 
 LIB_DEPENDS=	adns.1:${PORTSDIR}/net/adns
 

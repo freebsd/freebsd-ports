@@ -12,7 +12,7 @@ MASTER_SITES=	http://www.gustaebel.de/lars/tarfile/ \
 		http://www3.kr.freebsd.org/~perky/distfiles/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	perky@fallin.lv
+MAINTAINER=	perky@FreeBSD.org
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes

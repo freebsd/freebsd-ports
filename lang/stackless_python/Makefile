@@ -16,7 +16,7 @@ PATCH_SITES=	http://www3.kr.freebsd.org/~perky/distfiles/ \
 PATCHFILES=	stackless-010514.diff.gz
 PATCH_DIST_STRIP=	-p1
 
-MAINTAINER=	perky@fallin.lv
+MAINTAINER=	perky@FreeBSD.org
 
 MASTERDIR=	${.CURDIR}/../../lang/python20
 

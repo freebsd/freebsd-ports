@@ -10,7 +10,7 @@ PORTVERSION=	1.2.1
 CATEGORIES=	lang
 MASTER_SITES=	http://shakespearelang.sourceforge.net/download/
 
-MAINTAINER=	perky@fallin.lv
+MAINTAINER=	perky@FreeBSD.org
 
 USE_BISON=	yes
 USE_GMAKE=	yes

@@ -13,7 +13,7 @@ MASTER_SITES=	http://www.python.jp/Zope/download/JapaneseCodecs/ \
 		http://www3.kr.freebsd.org/~perky/distfiles/
 DISTNAME=	JapaneseCodecs-${PORTVERSION}
 
-MAINTAINER=	perky@fallin.lv
+MAINTAINER=	perky@FreeBSD.org
 
 BUILD_DEPENDS=	${PYDISTUTILS}
 

@@ -11,7 +11,7 @@ CATEGORIES=	devel python
 MASTER_SITES=	http://www.goebel-consult.de/decompyle/
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/.b/beta/g}
 
-MAINTAINER=	perky@fallin.lv
+MAINTAINER=	perky@FreeBSD.org
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes

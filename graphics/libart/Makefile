@@ -10,7 +10,7 @@ PORTVERSION=	2.3.3
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.artofcode.com/${PORTNAME}/
 
-MAINTAINER=	perky@fallin.lv
+MAINTAINER=	perky@FreeBSD.org
 
 WRKSRC=		${WRKDIR}/${PORTNAME}_lgpl-${PORTVERSION}
 GNU_CONFIGURE=	yes

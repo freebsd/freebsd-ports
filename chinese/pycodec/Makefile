@@ -13,7 +13,7 @@ MASTER_SITES=	http://www3.kr.freebsd.org/~perky/distfiles/ \
 		#ftp://python-codecs.sourceforge.net/pub/python-codecs/
 DISTNAME=	ChineseCodecs${PORTVERSION}
 
-MAINTAINER=	perky@fallin.lv
+MAINTAINER=	perky@FreeBSD.org
 
 BUILD_DEPENDS=	${PYDISTUTILS}
 
