@@ -50,6 +50,7 @@
     SUBDIR += filedupe
     SUBDIR += fileutils
     SUBDIR += flexbackup
+    SUBDIR += flog
     SUBDIR += fontedit
     SUBDIR += fortunelock
     SUBDIR += fsck_ext2fs

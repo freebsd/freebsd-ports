@@ -1,0 +1,10 @@
+flog (file logger) is a small C program that reads input from STDIN and writes
+to a file, optionally adding timestamps. If SIGHUP is received, the file will
+be reopened, allowing for log rotation (see newsyslog(8)). The log file will
+only be reopened if flog detects that rotation has occurred (i.e., the old file
+is gone or the inode has changed). flog is extremely small (a memory footprint
+of less than 500 bytes). It also protects you from running out of disk space;
+if that happens, the logfile will be truncated and a warning generated. This
+could save you from waking up to pager beeps in the middle of the night.
+
+WWW: http://oss.ezic.com/
