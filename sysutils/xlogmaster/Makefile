@@ -1,12 +1,12 @@
 # New ports collection makefile for:	xlogmaster
-# Version required:	1.4.4
+# Version required:	1.6.0
 # Date created:		1 August 1998
 # Whom:			Adrian Wontroba <aw1@stade.co.uk>
 #
-# $Id: Makefile,v 1.8 1998/09/22 22:55:55 asami Exp $
+# $Id: Makefile,v 1.9 1999/01/27 07:41:28 fenner Exp $
 #
 
-DISTNAME=	xlogmaster-1.4.4
+DISTNAME=	xlogmaster-1.6.0
 CATEGORIES=	sysutils
 MASTER_SITES=	ftp://sunsite.doc.ic.ac.uk/packages/gnu/\
 		${MASTER_SITE_GNU}\
@@ -16,23 +16,21 @@ MASTER_SITE_SUBDIR=	xlogmaster
 
 MAINTAINER=	aw1@stade.co.uk
 
-LIB_DEPENDS=	gtk11.1:${PORTSDIR}/x11-toolkits/gtk11
+LIB_DEPENDS=	gtk12.1:${PORTSDIR}/x11-toolkits/gtk12
 
+NO_PACKAGE=	ignores CFLAGS
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CXXFLAGS="${CFLAGS}" GTK_CONFIG="${PREFIX}/bin/gtk11-config"
-USE_X_PREFIX=	yes
+CONFIGURE_ENV=	CFLAGS="${CFLAGS}" CXXFLAGS="${CFLAGS}" GTK_CONFIG="${X11BASE}/bin/gtk12-config"
+USE_XLIB=	yes
 USE_GMAKE=	yes
 
 MAN1=		xlogmaster.1
-
-post-patch:
-	cd ${WRKSRC}/doc && ln -s tutorial.texinfo xlogmaster.texinfo
 
 post-install:
 	@if [ ! -f ${PREFIX}/info/dir ]; then \
 	  ${SED} -ne '1,/Menu:/p' /usr/share/info/dir > ${PREFIX}/info/dir; \
 	 fi
 	@install-info ${PREFIX}/info/xlogmaster.info ${PREFIX}/info/dir
-	@install-info ${PREFIX}/info/xlogmaster_faq.info ${PREFIX}/info/dir
+	${INSTALL_DATA} ${FILESDIR}/xlogmasterrc ${PREFIX}/etc/xlogmaster
 
 .include <bsd.port.mk>

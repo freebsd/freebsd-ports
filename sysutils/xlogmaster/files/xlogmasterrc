@@ -1,0 +1,14 @@
+TAIL{/var/log/messages,3,System Messages,Display /var/log/messages file...}
+RAISE{link(up)|(down)}
+TAIL{/home/aw1/Mail/Log,3,procmail log,mprocmail log}
+RUN{/bin/df -k,3/10000,df,disk space}
+TAIL{/var/log/maillog,3,Mail messages,View mail messages}
+RAISE{logfile turned}
+TAIL{/var/run/dmesg.boot,3,Bootup Messages,Display /var/run/dmesg.boot file...}
+TAIL{/var/log/samba.log,3,samba log,View /var/log/samba.log}
+TAIL{/var/log/ppp.log,3,PPP log,View /var/log/ppp.log}
+TAIL{/var/log/xferlog,3,FTP transfers,View /var/log/xferlog}
+TAIL{/var/log/httpd-error.log,3,WWW errors,View /var/log/httpd-error.log}
+TAIL{/var/log/httpd-access.log,3,WWW access,View /var/log/httpd-access.log}
+TAIL{/var/log/news/news.notice,3,news notices,/var/log/news/news.notice}
+CAT{/dev/sndstat,10000,Audio driver,Audio driver status}
