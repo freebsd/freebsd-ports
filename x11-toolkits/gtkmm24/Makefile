@@ -3,7 +3,7 @@
 # Date created:        11 May 1998
 # Whom:                Yukihiro Nakai <Nakai@technologist.com>
 #
-# $Id: Makefile,v 1.10 1999/06/08 23:54:19 steve Exp $
+# $Id: Makefile,v 1.11 1999/06/09 11:35:31 steve Exp $
 #
 
 DISTNAME=	Gtk---1.0.0
@@ -18,6 +18,8 @@ BUILD_DEPENDS=	gm4:${PORTSDIR}/devel/m4
 
 GTK_CONFIG?=	${X11BASE}/bin/gtk12-config
 
+USE_X_PREFIX=	yes
+
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 400004
@@ -26,7 +28,6 @@ CC=		egcc
 CXX=		eg++
 .endif
 
-USE_X_PREFIX=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-static=yes \
