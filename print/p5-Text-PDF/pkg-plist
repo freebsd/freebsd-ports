@@ -1,37 +1,37 @@
 bin/pdfbklt.plx
-bin/pdfstamp.plx
 bin/pdfrevert.plx
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Text/PDF/.packlist
-lib/perl5/site_perl/%%PERL_VER%%/Text/PDF/Array.pm
-lib/perl5/site_perl/%%PERL_VER%%/Text/PDF/Bool.pm
-lib/perl5/site_perl/%%PERL_VER%%/Text/PDF/Dict.pm
-lib/perl5/site_perl/%%PERL_VER%%/Text/PDF/File.pm
-lib/perl5/site_perl/%%PERL_VER%%/Text/PDF/Filter.pm
-lib/perl5/site_perl/%%PERL_VER%%/Text/PDF/Name.pm
-lib/perl5/site_perl/%%PERL_VER%%/Text/PDF/Null.pm
-lib/perl5/site_perl/%%PERL_VER%%/Text/PDF/Number.pm
-lib/perl5/site_perl/%%PERL_VER%%/Text/PDF/Objind.pm
-lib/perl5/site_perl/%%PERL_VER%%/Text/PDF/Page.pm
-lib/perl5/site_perl/%%PERL_VER%%/Text/PDF/Pages.pm
-lib/perl5/site_perl/%%PERL_VER%%/Text/PDF/SFont.pm
-lib/perl5/site_perl/%%PERL_VER%%/Text/PDF/String.pm
-lib/perl5/site_perl/%%PERL_VER%%/Text/PDF/TTFont.pm
-lib/perl5/site_perl/%%PERL_VER%%/Text/PDF/TTFont0.pm
-lib/perl5/site_perl/%%PERL_VER%%/Text/PDF/Utils.pm
-lib/perl5/site_perl/%%PERL_VER%%/Text/PDF/changes
-lib/perl5/site_perl/%%PERL_VER%%/Text/PDF/examples/CD.CFG
-lib/perl5/site_perl/%%PERL_VER%%/Text/PDF/examples/call_conf.txt
-lib/perl5/site_perl/%%PERL_VER%%/Text/PDF/examples/graph.pl
-lib/perl5/site_perl/%%PERL_VER%%/Text/PDF/examples/hello.pl
-lib/perl5/site_perl/%%PERL_VER%%/Text/PDF/examples/pdfaddobj.pl
-lib/perl5/site_perl/%%PERL_VER%%/Text/PDF/examples/pdfaddpg.pl
-lib/perl5/site_perl/%%PERL_VER%%/Text/PDF/examples/pdfcrop.pl
-lib/perl5/site_perl/%%PERL_VER%%/Text/PDF/examples/pdfgetobj.pl
-lib/perl5/site_perl/%%PERL_VER%%/Text/PDF/examples/pdflines.pl
-lib/perl5/site_perl/%%PERL_VER%%/Text/PDF/examples/squares.pdf
-lib/perl5/site_perl/%%PERL_VER%%/Text/PDF/examples/test.pdf
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Text/PDF
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/Text/PDF/examples
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/Text/PDF
-@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Text 2>/dev/null || true
-@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/Text 2>/dev/null || true
+bin/pdfstamp.plx
+%%SITE_PERL%%/Text/PDF/Array.pm
+%%SITE_PERL%%/Text/PDF/Bool.pm
+%%SITE_PERL%%/Text/PDF/Dict.pm
+%%SITE_PERL%%/Text/PDF/File.pm
+%%SITE_PERL%%/Text/PDF/Filter.pm
+%%SITE_PERL%%/Text/PDF/Name.pm
+%%SITE_PERL%%/Text/PDF/Null.pm
+%%SITE_PERL%%/Text/PDF/Number.pm
+%%SITE_PERL%%/Text/PDF/Objind.pm
+%%SITE_PERL%%/Text/PDF/Page.pm
+%%SITE_PERL%%/Text/PDF/Pages.pm
+%%SITE_PERL%%/Text/PDF/SFont.pm
+%%SITE_PERL%%/Text/PDF/String.pm
+%%SITE_PERL%%/Text/PDF/TTFont.pm
+%%SITE_PERL%%/Text/PDF/TTFont0.pm
+%%SITE_PERL%%/Text/PDF/Utils.pm
+%%SITE_PERL%%/Text/PDF/changes
+%%SITE_PERL%%/Text/PDF/examples/CD.CFG
+%%SITE_PERL%%/Text/PDF/examples/call_conf.txt
+%%SITE_PERL%%/Text/PDF/examples/graph.pl
+%%SITE_PERL%%/Text/PDF/examples/hello.pl
+%%SITE_PERL%%/Text/PDF/examples/pdfaddobj.pl
+%%SITE_PERL%%/Text/PDF/examples/pdfaddpg.pl
+%%SITE_PERL%%/Text/PDF/examples/pdfcrop.pl
+%%SITE_PERL%%/Text/PDF/examples/pdfgetobj.pl
+%%SITE_PERL%%/Text/PDF/examples/pdflines.pl
+%%SITE_PERL%%/Text/PDF/examples/squares.pdf
+%%SITE_PERL%%/Text/PDF/examples/test.pdf
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Text/PDF/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Text/PDF
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Text 2>/dev/null || true
+@dirrm %%SITE_PERL%%/Text/PDF/examples
+@dirrm %%SITE_PERL%%/Text/PDF
+@unexec rmdir %D/%%SITE_PERL%%/Text 2>/dev/null || true

@@ -7,7 +7,7 @@ from very simple PDF creation programs and working up. More extensive
 samples are included as scripts.
 
 Author: Martin Hosken <martin_hosken@sil.org>
-WWW: http://search.cpan.org/search?dist=Text-PDF
+WWW: http://search.cpan.org/dist/Text-PDF/
 
 -Anton
 <tobez@FreeBSD.org>
