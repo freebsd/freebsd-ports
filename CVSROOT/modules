@@ -9102,6 +9102,7 @@ ytree		ports/misc/ytree
 yudit		ports/editors/yudit
 yuzu		ports/mail/yuzu
 z80-asm		ports/devel/z80-asm
+zabbix		ports/net/zabbix
 zabbix-agent	ports/net/zabbix-agent
 zangband	ports/games/zangband
 zebedee		ports/security/zebedee
