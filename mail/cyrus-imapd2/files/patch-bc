@@ -1,19 +1,19 @@
-*** imap/Makefile.in	Wed Aug 26 11:40:10 1998
---- imap/Makefile.in.orig	Wed Aug 26 11:37:56 1998
+*** imap/Makefile.in.orig	Fri Nov  5 01:00:34 1999
+--- imap/Makefile.in	Thu Mar  9 18:59:14 2000
 ***************
-*** 47,53 ****
+*** 45,51 ****
   CYRUS_USER=@cyrus_user@
   CYRUS_GROUP=@cyrus_group@
   
 ! DEFS = @DEFS@ @LOCALDEFS@
-  CPPFLAGS = -I. -I$(srcdir) -I$(srcdir)/../lib @COM_ERR_CPPFLAGS@ @CPPFLAGS@
-  LIBS = @LIBS@ @COM_ERR_LIBS@
-  DEPLIBS = ../lib/libcyrus.a @DEPLIBS@
---- 47,53 ----
+  CPPFLAGS = -I. -I$(srcdir) -I$(srcdir)/../lib @COM_ERR_CPPFLAGS@ @SIEVE_CPPFLAGS@ @CPPFLAGS@ @SASLFLAGS@
+  IMAP_LIBS = @IMAP_LIBS@
+  SIEVE_LIBS = @SIEVE_LIBS@
+--- 45,51 ----
   CYRUS_USER=@cyrus_user@
   CYRUS_GROUP=@cyrus_group@
   
-! DEFS = @DEFS@ @LOCALDEFS@  -DCONFIG_FILENAME=\"$(prefix)/etc/imapd.conf\"
-  CPPFLAGS = -I. -I$(srcdir) -I$(srcdir)/../lib @COM_ERR_CPPFLAGS@ @CPPFLAGS@
-  LIBS = @LIBS@ @COM_ERR_LIBS@
-  DEPLIBS = ../lib/libcyrus.a @DEPLIBS@
+! DEFS = @DEFS@ @LOCALDEFS@ -DCONFIG_FILENAME=\"$(prefix)/etc/imapd.conf\"
+  CPPFLAGS = -I. -I$(srcdir) -I$(srcdir)/../lib @COM_ERR_CPPFLAGS@ @SIEVE_CPPFLAGS@ @CPPFLAGS@ @SASLFLAGS@
+  IMAP_LIBS = @IMAP_LIBS@
+  SIEVE_LIBS = @SIEVE_LIBS@

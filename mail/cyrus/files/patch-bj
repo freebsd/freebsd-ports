@@ -1,0 +1,11 @@
+--- timsieved/config.c	Sun Apr  9 07:58:37 2000
++++ config.c	Sun Apr  9 07:58:47 2000
+@@ -41,7 +41,7 @@
+ 
+ extern int errno;
+ 
+-#define CONFIG_FILENAME "/etc/imapd.conf"
++#define CONFIG_FILENAME "/usr/local/etc/imapd.conf"
+ 
+ struct configlist {
+     char *key;

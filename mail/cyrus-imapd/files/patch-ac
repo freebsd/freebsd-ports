@@ -1,0 +1,11 @@
+--- configure	Thu Jan  6 22:28:51 2000
++++ /tmp/configure.new	Sat Apr  8 20:55:29 2000
+@@ -4951,7 +4951,7 @@
+     # try the user-specified path --- too lazy to test for it right now
+     LIB_SASL="-L$sasldir/lib -lsasl"
+     
+-    SASLFLAGS="-I$sasldir/include"
++    SASLFLAGS="-I$sasldir/include/sasl"
+         
+   fi
+ 
