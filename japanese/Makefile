@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.38 1996/11/09 13:00:37 asami Exp $
+# $Id: Makefile,v 1.39 1996/11/11 08:52:24 asami Exp $
 #
 
     SUBDIR += Canna
@@ -13,6 +13,7 @@
     SUBDIR += grep
     SUBDIR += groff
     SUBDIR += gxditview
+    SUBDIR += hex
     SUBDIR += ircII
     SUBDIR += jtex209-ascii
     SUBDIR += jtex209-both
