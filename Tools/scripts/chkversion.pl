@@ -45,12 +45,20 @@
 #
 # To use the script as intended, do the following (assuming you want to
 # run the script as user `ports'):
+#
 # install port sysutils/pkg_install-devel (optional)
 #  mkdir -p /var/db/chkversion
 #  touch /var/db/chkversion/VERSIONS
 #  chown -R ports /var/db/chkversion
-# and enter chkversions.pl into the crontab of ports, or run it by hand
-# if you can spare the time.
+# and enter something like
+#
+#  CVSBLAME=yes
+#  ALLPORTS=yes
+#  RCPT_ORIGIN=you@domain.example
+#  RCPT_VERSION=you@domain.example
+#  0	*/2	*	*	*	/usr/ports/Tools/scripts/chkversion.pl
+#
+# into `crontab -u ports -e', or run the script by hand if you can spare the time.
 #
 # If the environment variable CVSBLAME is set and the ports tree is checked
 # out by CVS, every entry is listed with a record of the last CVS commit.
@@ -61,10 +69,18 @@ use strict;
 use File::Find;
 use Cwd 'abs_path';
 
-my $portsdir   = $ENV{PORTSDIR}   ? $ENV{PORTSDIR}   : '/usr/ports';
-my $versiondir = $ENV{VERSIONDIR} ? $ENV{VERSIONDIR} : '/var/db/chkversion';
-my $cvsblame   = $ENV{CVSBLAME}   ? 1                : 0;
-my $allports   = $ENV{ALLPORTS}   ? 1                : 0;
+my $portsdir   = $ENV{PORTSDIR}         ? $ENV{PORTSDIR}         : '/usr/ports';
+my $versiondir = $ENV{VERSIONDIR}       ? $ENV{VERSIONDIR}       : '/var/db/chkversion';
+my $cvsblame   = $ENV{CVSBLAME}         ? 1                      : 0;
+my $allports   = $ENV{ALLPORTS}         ? 1                      : 0;
+
+my $watchre    = $ENV{WATCH_REGEX}      ? $ENV{WATCH_REGEX}      : '';
+my $returnpath = $ENV{RETURNPATH}       ? $ENV{RETURNPATH}       : '';
+my $h_from     = $ENV{HEADER_FROM}      ? $ENV{HEADER_FROM}      : "$ENV{USER}\@$ENV{HOST}";
+my $h_replyto  = $ENV{HEADER_REPLYTO}   ? $ENV{HEADER_REPLYTO}   : $h_from;
+my $rcpt_watch = $ENV{RCPT_WATCH}       ? $ENV{RCPT_WATCH}       : '';
+my $rcpt_orig  = $ENV{RCPT_ORIGIN}      ? $ENV{RCPT_ORIGIN}      : '';
+my $rcpt_vers  = $ENV{RCPT_VERSION}     ? $ENV{RCPT_VERSION}     : '';
 
 my $make        = '/usr/bin/make';
 my $cvs         = '/usr/bin/cvs';
@@ -72,6 +88,9 @@ my $pkg_version =
     $ENV{PKG_VERSION} && -x $ENV{PKG_VERSION} ? $ENV{PKG_VERSION}
   : -x '/usr/local/sbin/pkg_version' ? '/usr/local/sbin/pkg_version'
   : '/usr/sbin/pkg_version';
+my $sendmail    = '/usr/sbin/sendmail';
+
+my $watch_re = join "|", split " ", $watchre;
 
 -d $portsdir or die "Can't find ports tree at $portsdir.\n";
 $portsdir = abs_path($portsdir);
@@ -104,6 +123,7 @@ $ENV{WITH_OPENSSL_BASE} = 'yes';
 
 my %pkgname;
 my %pkgorigin;
+my %maintainer;
 
 sub wanted {
     return
@@ -117,6 +137,7 @@ sub wanted {
         $File::Find::prune = 1;
     }
     elsif ($File::Find::name =~ m"^$portsdir/([^/]+/[^/]+)$"os) {
+        $File::Find::prune = 1;
         my @makevar = readfrom $File::Find::name,
           $make, '-VPKGORIGIN', '-VPKGNAME';
 
@@ -124,8 +145,8 @@ sub wanted {
           if $makevar[0] && $1 ne $makevar[0];
         $pkgname{$1} = $makevar[1]
           if $makevar[1];
-
-        $File::Find::prune = 1;
+        $maintainer{$_} = $makevar[2]
+          if $makevar[2];
     }
 }
 
@@ -142,16 +163,20 @@ else {
         foreach (map "$category/$_", @ports) {
             -f "$portsdir/$_/Makefile" || next;
             my @makevar = readfrom "$portsdir/$_",
-              $make, '-VPKGORIGIN', '-VPKGNAME';
+              $make, '-VPKGORIGIN', '-VPKGNAME', '-VMAINTAINER';
+
             $pkgorigin{$_} = $makevar[0]
               if $makevar[0] && $_ ne $makevar[0];
             $pkgname{$_} = $makevar[1]
               if $makevar[1];
+            $maintainer{$_} = $makevar[2]
+              if $makevar[2];
         }
     }
 }
 
 my %backwards;
+my %watched;
 
 if ($useindex) {
     my $indexname = readfrom $portsdir, $make, '-VINDEXFILE';
@@ -180,6 +205,10 @@ while (<VERSIONS>) {
 
         my $result = $newversion eq $oldversion ? '=' : readfrom '',
           $pkg_version, '-t', $newversion, $oldversion;
+
+        $watched{$origin} = "$version -> $pkgname{$origin}"
+          if ($result ne '=' && $watch_re && $pkgname{$origin} =~ /^(?:$watch_re)$/o);
+
         if ($result eq '<') {
             $backwards{$origin} = "$pkgname{$origin} < $version";
             $pkgname{$origin}   = $version;
@@ -195,43 +224,117 @@ if (!$useindex) {
     system 'mv', '-f', $versionfile, "$versionfile.bak";
 
     open VERSIONS, ">$versionfile";
-    print VERSIONS join("\n", map("$_\t$pkgname{$_}", sort keys %pkgname)),
-      "\n";
+    foreach (sort keys %pkgname) {
+        print VERSIONS "$_\t$pkgname{$_}\n";
+    }
     close VERSIONS;
 }
 
 sub blame {
-    my ($msg, $ports) = @_;
+    my ($fh, $ports) = @_;
 
     if (%{$ports}) {
-        print "$msg\n";
-        foreach (sort keys %{$ports}) {
-            print "- $_: $ports->{$_}\n";
-            if ($cvsblame && -d "$portsdir/$_/CVS") {
-                my @cvslog = readfrom "$portsdir/$_",
+        foreach my $origin (sort keys %{$ports}) {
+            my $maint = $maintainer{$origin} ? " <$maintainer{$origin}>" : '';
+            print $fh "- *$origin*$maint: $ports->{$origin}\n";
+            if ($cvsblame && -d "$portsdir/$origin/CVS") {
+                my @cvslog = readfrom "$portsdir/$origin",
                   $cvs, '-R', 'log', '-N', '-r.', 'Makefile';
-                print "  ", join("\n  " , grep(/^-/ .. /^=/, @cvslog)), "\n\n";
+                foreach (@cvslog) {
+                    my $in_log = /^-/ ... /^=/;
+                    print $fh "   | $_\n"
+                      if ($in_log && $in_log != 1 && $in_log !~ /E0$/);
+                }
+                print $fh "\n";
             }
         }
-        print "\n";
+        print $fh "\n";
     }
 }
 
-blame
-  "** The following ports have a wrong PKGORIGIN **\n\n"
-  . " PKGORIGIN connects packaged or installed ports to the directory they\n"
-  . " originated from. This is essential for tools like pkg_version or\n"
-  . " portupgrade to work correctly. Wrong PKGORIGINs are often caused by a\n"
-  . " wrong order of CATEGORIES after a repocopy.\n",
-  \%pkgorigin;
+sub template {
+    my ($from, $rcpt, $replyto) = @_;
 
-blame
-  "** The following ports have a version number that sorts before a previous one **\n\n"
-  . " For many package tools to work correctly, it is of utmost importance that\n"
-  . " version numbers of a port form a monotonic increasing sequence over time.\n"
-  . " Refer to the FreeBSD Porter's Handbook, 'Package Naming Conventions' for\n"
-  . " more information. Tools that won't work include pkg_version, portupgrade\n"
-  . " and portaudit. A common problem is an accidental deletion of PORTEPOCH.\n",
-  \%backwards;
+    my $header = '';
+    while (<main::DATA>) {
+        last if /^\.\n?$/;
+        $_ =~ s/%%FROM%%/$from/og;
+        $_ =~ s/%%RCPT%%/$rcpt/og;
+        $_ =~ s/%%REPLYTO%%/$replyto/og;
+        $header .= $_;
+    }
+    return $header;
+}
+
+sub mail {
+    my ($template, $rcpt, $ports) = @_;
+
+    if (%{$ports}) {
+        if ($rcpt) {
+            if (!open MAIL, '|-') {
+                exec $sendmail, '-oi', '-t', '-f', $returnpath;
+                die;
+            }
+            print MAIL $template;
+            blame *MAIL, $ports;
+            close MAIL;
+        } else {
+            $template =~ s/^.*?\n\n//os;
+            print $template;
+            blame *STDOUT, $ports;
+        }
+    }
+}
+
+my $tmpl;
+
+$tmpl = template $h_from, $rcpt_orig, $h_replyto;
+mail $tmpl, $rcpt_orig, \%pkgorigin;
+
+$tmpl = template $h_from, $rcpt_vers, $h_replyto;
+mail $tmpl, $rcpt_vers, \%backwards;
+
+$tmpl = template $h_from, $rcpt_watch, $h_replyto;
+mail $tmpl, $rcpt_watch, \%watched;
 
 exit((%pkgorigin || %backwards) ? 1 : 0);
+
+__END__
+From: %%FROM%%
+To: %%RCPT%%
+Reply-To: %%REPLYTO%%
+Subject: Ports with a wrong PKGORIGIN
+
+** The following ports have a wrong PKGORIGIN **
+
+ PKGORIGIN connects packaged or installed ports to the directory they
+ originated from. This is essential for tools like pkg_version or
+ portupgrade to work correctly. Wrong PKGORIGINs are often caused by a
+ wrong order of CATEGORIES after a repocopy.
+
+.
+From: %%FROM%%
+To: %%RCPT%%
+Reply-To: %%REPLYTO%%
+Subject: Ports with version numbers going backwards
+
+** The following ports have a version number that sorts before a previous one **
+
+ For many package tools to work correctly, it is of utmost importance that
+ version numbers of a port form a monotonic increasing sequence over time.
+ Refer to the FreeBSD Porter's Handbook, 'Package Naming Conventions' for
+ more information. Tools that won't work include pkg_version, portupgrade
+ and portaudit. A common problem is an accidental deletion of PORTEPOCH.
+
+.
+From: %%FROM%%
+To: %%RCPT%%
+Reply-To: %%REPLYTO%%
+Subject: Version changes in watched ports
+
+** The following ports have changed version numbers **
+
+ You have requested to be notified of version changes in the following
+ ports:
+
+.
