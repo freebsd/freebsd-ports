@@ -310,6 +310,7 @@ share/gnome/evolution/views/tasks/galview.xml
 %%PILOT:%%share/gnome/gnome-pilot/conduits/e-address.conduit
 %%PILOT:%%share/gnome/gnome-pilot/conduits/e-calendar.conduit
 %%PILOT:%%share/gnome/gnome-pilot/conduits/e-todo.conduit
+share/gnome/help/evolution/C/access.html
 share/gnome/help/evolution/C/apx-gloss.html
 share/gnome/help/evolution/C/authors.html
 share/gnome/help/evolution/C/bugs.html
@@ -318,6 +319,7 @@ share/gnome/help/evolution/C/config-prefs-contact.html
 share/gnome/help/evolution/C/config-prefs.html
 share/gnome/help/evolution/C/config-sync.html
 share/gnome/help/evolution/C/config.html
+share/gnome/help/evolution/C/configure.html
 share/gnome/help/evolution/C/contact-automation-basic.html
 share/gnome/help/evolution/C/contact-search.html
 share/gnome/help/evolution/C/customizing-summary.html
@@ -328,6 +330,9 @@ share/gnome/help/evolution/C/figures/config-cal.png
 share/gnome/help/evolution/C/figures/config-mail.png
 share/gnome/help/evolution/C/figures/contact-editor.png
 share/gnome/help/evolution/C/figures/contact.png
+share/gnome/help/evolution/C/figures/exchange-identity.png
+share/gnome/help/evolution/C/figures/exchange-receive-options.png
+share/gnome/help/evolution/C/figures/exchange-receive.png
 share/gnome/help/evolution/C/figures/filter-assist-fig.png
 share/gnome/help/evolution/C/figures/filter-new-fig.png
 share/gnome/help/evolution/C/figures/full-1.png
@@ -340,13 +345,21 @@ share/gnome/help/evolution/C/figures/full-7.png
 share/gnome/help/evolution/C/figures/mail-composer.png
 share/gnome/help/evolution/C/figures/mail-druid-pic.png
 share/gnome/help/evolution/C/figures/mail-inbox.png
+share/gnome/help/evolution/C/figures/mail-threaded.png
 share/gnome/help/evolution/C/figures/mainwindow-pic.png
 share/gnome/help/evolution/C/figures/newmsg.png
+share/gnome/help/evolution/C/figures/outline.png
 share/gnome/help/evolution/C/figures/print-dest.png
 share/gnome/help/evolution/C/figures/print-preview.png
 share/gnome/help/evolution/C/figures/replymsg.png
+share/gnome/help/evolution/C/figures/schedule.png
+share/gnome/help/evolution/C/figures/small_desktop.png
+share/gnome/help/evolution/C/figures/summary.png
 share/gnome/help/evolution/C/figures/vfolder-createrule-fig.png
+share/gnome/help/evolution/C/full-advantage.html
+share/gnome/help/evolution/C/importing-mail-from-clients.html
 share/gnome/help/evolution/C/index.html
+share/gnome/help/evolution/C/install.html
 share/gnome/help/evolution/C/introduction.html
 share/gnome/help/evolution/C/ln20.html
 share/gnome/help/evolution/C/menuref.html
@@ -394,6 +407,7 @@ share/gnome/help/evolution/C/usage-calendar.html
 share/gnome/help/evolution/C/usage-contact-organize.html
 share/gnome/help/evolution/C/usage-contact-sharing.html
 share/gnome/help/evolution/C/usage-contact.html
+share/gnome/help/evolution/C/usage-exchange.html
 share/gnome/help/evolution/C/usage-mail-getnsend-get.html
 share/gnome/help/evolution/C/usage-mail-getnsend-send.html
 share/gnome/help/evolution/C/usage-mail-organize-columns.html
