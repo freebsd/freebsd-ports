@@ -8,7 +8,9 @@
 PORTNAME=	dviselect
 PORTVERSION=	1.3
 CATEGORIES=	print
-MASTER_SITES=	ftp://ftp.kobe-u.ac.jp/pub/TeX/dvi-tools/
+MASTER_SITES=	${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	jmz
+
 DISTNAME=	${PORTNAME}
 
 MAINTAINER=	jmz@FreeBSD.org
