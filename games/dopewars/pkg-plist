@@ -21,9 +21,9 @@ share/locale/fr/LC_MESSAGES/dopewars.mo
 share/locale/pl/LC_MESSAGES/dopewars.mo
 share/locale/pt_BR/LC_MESSAGES/dopewars.mo
 share/gnome/apps/Games/dopewars.desktop
-@unexec rmdir share/gnome/apps/Games 2>/dev/null || true
-@unexec rmdir share/gnome/apps 2>/dev/null || true
-@unexec rmdir share/gnome 2>/dev/null || true
+@unexec rmdir %D/share/gnome/apps/Games 2>/dev/null || true
+@unexec rmdir %D/share/gnome/apps 2>/dev/null || true
+@unexec rmdir %D/share/gnome 2>/dev/null || true
 @dirrm share/dopewars/pixmaps
 @dirrm share/dopewars
 %%PORTDOCS%%@dirrm share/doc/%%DOPEWARS%%
