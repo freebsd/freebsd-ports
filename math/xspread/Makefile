@@ -8,8 +8,7 @@
 PORTNAME=	xspread
 PORTVERSION=	3.1.1c
 CATEGORIES=	math
-MASTER_SITES=	${MASTER_SITE_DEBIAN}
-MASTER_SITE_SUBDIR=	dists/potato/main/source/math
+MASTER_SITES=	# disappeared
 DISTNAME=	${PORTNAME}_${PORTVERSION}.orig
 
 MAINTAINER=	ports@FreeBSD.org
