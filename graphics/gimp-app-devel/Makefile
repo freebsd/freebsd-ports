@@ -1,12 +1,12 @@
 # New ports collection makefile for:    GIMP
-# Version required:     0.99.3
+# Version required:     0.99.6
 # Date created:         Mon Nov 18 21:28:43 CST 1996
 # Whom:                 erich@FreeBSD.org
 #
-# $Id: Makefile,v 1.4 1997/02/28 19:19:31 erich Exp $
+# $Id: Makefile,v 1.5 1997/03/02 19:44:41 erich Exp $
 #
 
-DISTNAME=       gimp-0.99.3
+DISTNAME=       gimp-0.99.6
 CATEGORIES=     graphics
 MASTER_SITES=   ftp://ftp.xcf.berkeley.edu/pub/gimp/developers/
 
@@ -19,6 +19,7 @@ LIB_DEPENDS+=	Xpm\\.4\\.:${PORTSDIR}/graphics/xpm
 
 USE_X11=	yes
 GNU_CONFIGURE=	yes
+
 USE_GMAKE=	yes
 
 .include <bsd.port.mk>
