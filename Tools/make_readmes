@@ -1,6 +1,6 @@
 #!/usr/bin/perl
 
-$README=`cat ${PORTSDIR}/README.port`;
+$README="cat ${PORTSDIR}/README.port";
 
 while(<>) {
 	split '\|';
