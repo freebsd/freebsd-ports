@@ -50,6 +50,7 @@
     SUBDIR += ruby-bz2
     SUBDIR += ruby-zip
     SUBDIR += sectar
+    SUBDIR += squsq
     SUBDIR += star
     SUBDIR += stuffit
     SUBDIR += szip
