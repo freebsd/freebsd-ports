@@ -9,14 +9,15 @@ PORTNAME=	marumoji-fonts
 PORTVERSION=	1.0
 CATEGORIES=	japanese x11-fonts
 MASTER_SITES=	http://mlnews.com/marumoji/src/ \
-		http://www.eken.phys.nagoya-u.ac.jp/~yoichi/FreeBSD/distfiles/ \
+		${MASTER_SITE_LOCAL} \
 		ftp://ftp.lavender.org/pub/x11/fonts/
+MASTER_SITE_SUBDIR=	yoichi
 DISTFILES=	maru14.pcf.gz maru16.pcf.gz maru18.pcf.gz \
 		7x14maru.bdf.gz 7x14rkmaru.bdf.gz \
 		8x16maru.bdf.gz 8x16rkmr.bdf.gz \
 		9x18maru.bdf.gz 9x18rkmr.bdf.gz
 
-MAINTAINER=	yoichi@eken.phys.nagoya-u.ac.jp
+MAINTAINER=	yoichi@FreeBSD.org
 
 NO_WRKSUBDIR=	yes
 USE_X_PREFIX=	yes
