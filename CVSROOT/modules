@@ -2015,6 +2015,7 @@ gkrellmmailwatch	ports/mail/gkrellmmailwatch
 gkrellmmailwatch2	ports/mail/gkrellmmailwatch2
 gkrellmms	ports/audio/gkrellmms
 gkrellmms2	ports/audio/gkrellmms2
+gkrellmmultiping2	ports/net/gkrellmmultiping2
 gkrellmoon	ports/astro/gkrellmoon
 gkrellmouse	ports/sysutils/gkrellmouse
 gkrellmqst	ports/net/gkrellmqst
