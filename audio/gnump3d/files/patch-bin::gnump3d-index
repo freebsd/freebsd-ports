@@ -1,0 +1,14 @@
+--- bin/gnump3d-index.orig	Thu Jul  3 05:44:16 2003
++++ bin/gnump3d-index	Fri Jul  4 23:36:00 2003
+@@ -54,9 +54,9 @@
+ {
+     $CONFIG_FILE = $ENV{"HOME"} . "/.gnump3drc";
+ }
+-elsif ( -e "/etc/gnump3d/gnump3d.conf" )
++elsif ( -e "%%PREFIX%%/etc/gnump3d/gnump3d.conf" )
+ {
+-    $CONFIG_FILE = "/etc/gnump3d/gnump3d.conf";
++    $CONFIG_FILE = "%%PREFIX%%/etc/gnump3d/gnump3d.conf";
+ }
+ elsif ( -e "gnump3d.conf" )
+ {
