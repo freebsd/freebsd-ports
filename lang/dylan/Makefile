@@ -40,7 +40,8 @@ USE_GMAKE=	yes
 USE_LIBTOOL=	yes
 MAKEFILE=	GNUmakefile
 ALL_TARGET=	default
-WANT_GTK=	yes
+USE_GNOMENG=	yes
+WANT_GNOME=	yes
 
 MAN1=		d2c.1 make-dylan-app.1 melange.1 mindy.1 mindycomp.1
 MAN5=		platforms.descr.5
@@ -48,8 +49,8 @@ MAN7=		dylan.7 gwydion.7
 
 .include <bsd.port.pre.mk>
 
-.if defined(HAVE_GTK)
-USE_GTK=	yes
+.if ${HAVE_GNOME:Mgtk12}!=""
+USE_GNOME+=	gtk12
 PLIST_SUB+=	GTK_ONLY=""
 .else
 PLIST_SUB+=	GTK_ONLY="@comment "
