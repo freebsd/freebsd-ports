@@ -158,7 +158,6 @@ linux-agsatellite	ports/net/linux-agsatellite	Unsure of licensing issues
 linux-divx4linux	ports/multimedia/linux-divx4linux	Restrictive copyright
 linux-eagle		ports/cad/linux-eagle		Non-commercial usage only &
 			ports/german/linux-eagle	Sale for profit not permitted
-linux-netscape6		ports/www/linux-netscape6	Java plugin is from Sun.
 linux-ibm-*		ports/java/linux-ibm-jdk13	Redistribution of repackaged
 							binaries not permitted
 linuxq3ademo-*		ports/games/linux-q3ademo	Restrictive license by Loki Software
@@ -195,6 +194,8 @@ myth2_demo		ports/games/myth2_demo	Has no license.
 netbeans		ports/java/netbeans	Restrictive copyright.
 netpbm			ports/graphics/netpbm	Not allowed to sell.
 netscape-*-us-*		ports/www/netscape*	Crypto; export-controlled
+netscape7		ports/{french|german|japanese|portuguese|www}/netscape7
+						Redistribution is not allowed.
 netshow-*		ports/multimedia/netshow	Commercial software
 newkind*		ports/games/newkind	Reverse-engineered version of
 						ancient 8-bit abandonware

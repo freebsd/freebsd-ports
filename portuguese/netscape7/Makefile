@@ -7,14 +7,13 @@
 #
 
 PKGNAMEPREFIX=	pt_BR-
-PORTVERSION=	7.0
+PORTVERSION=	7.02
 CATEGORIES?=	portuguese www linux
-MASTER_SITE_SUBDIR?=${DIST_SUBDIR}/unix/linux22/ewc9e
+MASTER_SITE_SUBDIR=	${DIST_SUBDIR}/unix/linux22/eehxkt
 DISTFILES=	AIM.xpi \
 		browser.xpi \
 		deflptbr.xpi \
 		flash.xpi \
-		jre.xpi \
 		langptbr.xpi \
 		mail.xpi \
 		psm.xpi \

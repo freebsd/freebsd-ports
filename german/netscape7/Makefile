@@ -7,13 +7,13 @@
 #
 
 PKGNAMEPREFIX?=	de-
+PORTVERSION=	7.02
 CATEGORIES=	german www linux
-
+MASTER_SITE_SUBDIR=	${DIST_SUBDIR}/unix/linux22/eehxkt
 DISTFILES=	AIM.xpi \
 		browser.xpi \
 		defldede.xpi \
 		flash.xpi \
-		jre.xpi \
 		langdede.xpi \
 		mail.xpi \
 		psm.xpi \
@@ -24,7 +24,7 @@ DISTFILES=	AIM.xpi \
 		xpcom.xpi
 
 MAINTAINER=	riggs@rrr.de
-COMMENT=	Linux Netscape 6 suite (German)
+COMMENT=	Linux Netscape 7 suite (German)
 
 NETSCAPE_LANG=	german
 
