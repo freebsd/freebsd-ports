@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	Lingua-ZH-Numbers
-PORTVERSION=	0.03
+PORTVERSION=	0.04
 CATEGORIES=	chinese perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Lingua
@@ -18,7 +18,6 @@ COMMENT=	Converts numeric values into their Chinese string equivalents
 
 PERL_CONFIGURE=	yes
 
-MAN3PREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 MAN3=	Lingua::ZH::Numbers.3 Lingua::ZH::Numbers::Currency.3
 
 .include <bsd.port.mk>
