@@ -8,7 +8,13 @@
 PORTNAME=	zebra
 PORTVERSION=	0.92a
 CATEGORIES=	net ipv6
-MASTER_SITES=	ftp://ftp.zebra.org/pub/zebra/
+MASTER_SITES=	ftp://ftp.zebra.org/pub/zebra/ \
+		ftp://ftp.ripe.net/mirrors/sites/ftp.zebra.org/pub/zebra/ \
+		ftp://ftp.sunet.se/pub/network/zebra/ \
+		ftp://ftp.knowledge.com/pub/mirrors/zebra/ \
+		ftp://6bone.informatik.uni-leipzig.de/pub/ftp.zebra.org/pub/zebra/ \
+		ftp://ftp.crc.ca/pub/packages/network/zebra/ \
+		ftp://ftp.pop-pr.rnp.br/pub/GNU/ftp.zebra.org/zebra/
 
 MAINTAINER=	andreas_and_joe@tao.org.uk
 
