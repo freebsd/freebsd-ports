@@ -8,22 +8,23 @@
 PORTNAME=	FreeWnn
 PORTVERSION=	${WMMVERSION:S/-/./}
 CATEGORIES?=	japanese
-MASTER_SITES=	ftp://ftp.freewnn.org/pub/FreeWnn/ \
-		ftp://ftp.etl.go.jp/pub/FreeWnn/alpha/
+MASTER_SITES=	ftp://ftp.freewnn.org/pub/FreeWnn/alpha/
 PKGNAMESUFFIX?=	-lib
 DISTNAME=	${PORTNAME}-${WMMVERSION}
 
 MAINTAINER=	taoka@FreeBSD.org
 
-WRKSRC=	${WRKDIR}/${DISTNAME}/Xsi
+#WRKSRC=	${WRKDIR}/${DISTNAME}/Xsi
+WRKSRC=	${WRKDIR}/FreeWnn-1.1.1-a017-pl4/Xsi
 ALL_TARGET=	includes all
 INSTALL_TARGET=	install install.man
 GNU_CONFIGURE=	yes
 USE_AUTOCONF=	yes
 USE_LIBTOOL=	yes
 INSTALLS_SHLIB=	yes
+USE_BZIP2=	yes
 
-WMMVERSION=	1.1.1-a017
+WMMVERSION=	1.1.1-a018
 
 WNN?=		Wnn
 .if (${PKGNAMESUFFIX} == -lib)
