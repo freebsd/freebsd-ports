@@ -2,6 +2,8 @@ lib/perl5/man/man3/Mail::Address.3.gz
 lib/perl5/man/man3/Mail::Alias.3.gz
 lib/perl5/man/man3/Mail::Cap.3.gz
 lib/perl5/man/man3/Mail::Field.3.gz
+lib/perl5/man/man3/Mail::Field::AddrList.3.gz
+lib/perl5/man/man3/Mail::Filter.3.gz
 lib/perl5/man/man3/Mail::Header.3.gz
 lib/perl5/man/man3/Mail::Internet.3.gz
 lib/perl5/man/man3/Mail::Mailer.3.gz
@@ -11,7 +13,9 @@ lib/perl5/site_perl/Mail/Address.pm
 lib/perl5/site_perl/Mail/Alias.pm
 lib/perl5/site_perl/Mail/Cap.pm
 lib/perl5/site_perl/Mail/Field.pm
+lib/perl5/site_perl/Mail/Field/AddrList.pm
 lib/perl5/site_perl/Mail/Field/Date.pm
+lib/perl5/site_perl/Mail/Filter.pm
 lib/perl5/site_perl/Mail/Header.pm
 lib/perl5/site_perl/Mail/Internet.pm
 lib/perl5/site_perl/Mail/Mailer.pm
