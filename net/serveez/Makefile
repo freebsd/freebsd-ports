@@ -16,8 +16,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
 
-LIB_DEPENDS=	gnugetopt.1:${PORTSDIR}/devel/libgnugetopt \
-		guile.10:${PORTSDIR}/lang/guile
+LIB_DEPENDS=	guile.10:${PORTSDIR}/lang/guile
 .if !exists(/usr/bin/bzip2)
 LIB_DEPENDS+=	bz2.1:${PORTSDIR}/archivers/bzip2
 .endif
@@ -27,10 +26,18 @@ GUILE_CONFIG?=	${LOCALBASE}/bin/guile-config
 USE_GMAKE=	yes
 USE_LIBTOOL=	yes
 LIBTOOLFLAGS=	--disable-ltlibs --release-ignore
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include `${GUILE_CONFIG} compile`" \
-		LDFLAGS="-L${LOCALBASE}/lib -lgnugetopt `${GUILE_CONFIG} link`"
+CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 INSTALLS_SHLIB=	yes
 
 MAN1=	serveez.1
+
+CPPFLAGS+=	`${GUILE_CONFIG} compile`
+LDFLAGS+=	`${GUILE_CONFIG} link`
+
+.if !exists(/usr/include/getopt.h)
+LIB_DEPENDS+=	gnugetopt.1:${PORTSDIR}/devel/libgnugetopt
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib -lgnugetopt
+.endif
 
 .include <bsd.port.mk>
