@@ -3,7 +3,7 @@
 # Date created:         03 Oct 1997
 # Whom:                 Thomas Gellekum <tg@FreeBSD.ORG>
 #
-# $Id: Makefile,v 1.3 1997/11/30 21:12:15 jseger Exp $
+# $Id: Makefile,v 1.4 1997/12/24 01:21:31 alex Exp $
 #
 
 DISTNAME=       plplot4p99j
@@ -19,5 +19,12 @@ CONFIGURE_ARGS= --with-gcc=yes --with-double=yes
 post-patch:
 	@perl -pi.bak -e "s|/usr/local/plplot/lib|${PREFIX}/lib/plplot|g;" \
 		${WRKSRC}/src/plctrl.c
+
+post-install:
+	if [ "${PORTOBJFORMAT}" = "elf" ]; then \
+		${LN} -sf libplplotdX.so.4 ${PREFIX}/lib/libplplotdX.so; \
+	else \
+		${LN} -sf libplplotdX.so.4.99 ${PREFIX}/lib/libplplotdX.so; \
+	fi
 
 .include <bsd.port.mk>

@@ -1,4 +1,5 @@
 lib/libeispack.a
-lib/libeispack.so.1.0
-@exec /sbin/ldconfig -m %B
-@unexec /sbin/ldconfig -R
+lib/libeispack.so
+lib/libeispack.so.1
+@exec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -m %B
+@unexec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -R

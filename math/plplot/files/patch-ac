@@ -1,0 +1,13 @@
+--- drivers/tek.c.orig	Sat Sep 26 23:07:07 1998
++++ drivers/tek.c	Sat Sep 26 23:07:28 1998
+@@ -79,8 +79,8 @@
+ static void tty_atexit	(void);
+ #else
+ static void tty_setup	(void) {};
+-static int  tty_cbreak	(void) {return 0};
+-static int  tty_reset	(void) {return 0};
++static int  tty_cbreak	(void) {return 0;};
++static int  tty_reset	(void) {return 0;};
+ static void tty_atexit	(void) {};
+ #endif
+ 

@@ -3,7 +3,7 @@
 # Date created:         2 July 1994
 # Whom:                 jmz
 #
-# $Id: Makefile,v 1.7 1998/08/24 19:48:10 jmz Exp $
+# $Id: Makefile,v 1.8 1998/08/25 02:26:19 asami Exp $
 #
 
 DISTNAME=	LAPACK
@@ -184,7 +184,14 @@ MANL=	cgbmv.l cgemm.l cgemv.l cgerc.l cgeru.l chbmv.l chemm.l chemv.l \
 do-install:
 	${INSTALL_DATA} ${WRKSRC}/BLAS/SRC/libblas.* ${PREFIX}/lib
 	${INSTALL_DATA} ${WRKSRC}/SRC/liblapack.* ${PREFIX}/lib
-	${LDCONFIG} -m ${PREFIX}/lib
+	if [ "${PORTOBJFORMAT}" = "elf" ]; then \
+		${LN} -sf libblas.so.2 ${PREFIX}/lib/libblas.so; \
+		${LN} -sf liblapack.so.2 ${PREFIX}/lib/liblapack.so; \
+	else \
+		${LN} -sf libblas.so.2.0 ${PREFIX}/lib/libblas.so; \
+		${LN} -sf liblapack.so.2.0 ${PREFIX}/lib/liblapack.so; \
+	fi
+	${SETENV} OBJFORMAT=${PORTOBJFORMAT} ${LDCONFIG} -m ${PREFIX}/lib
 	${INSTALL_MAN} ${WRKDIR}/blas/man/manl/*.l ${PREFIX}/man/manl
 	${INSTALL_MAN} ${WRKDIR}/man/manl/*.l ${PREFIX}/man/manl
 

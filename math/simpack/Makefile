@@ -3,7 +3,7 @@
 # Date created:        5 June 1997
 # Whom:                Ruslan Shevchenko <rssh@cki.ipri.kiev.ua>
 #
-# $Id: Makefile,v 1.1.1.1 1997/06/10 08:50:17 asami Exp $
+# $Id: Makefile,v 1.2 1997/07/13 18:49:24 max Exp $
 #
 
 DISTNAME=	simpack-3.0
@@ -52,11 +52,11 @@ do-install-lib:
 	  ${INSTALL_DATA} ${WRKSRC}/$$i ${PREFIX}/lib/SimPack/$$i ; \
 	done
 	@${INSTALL_DATA} ${WRKDIR}/temp/libsim++.a ${PREFIX}/lib/libsim++.a
-	@${INSTALL_DATA} ${WRKDIR}/temp/libsim++.so.1.0  \
-					${PREFIX}/lib/libsim++.so.1.0
+	@${INSTALL_DATA} ${WRKDIR}/temp/libsim++.so.${VERSION} ${PREFIX}/lib
+	@${LN} -sf libsim++.so.${VERSION} ${PREFIX}/lib/libsim++.so
 	@${INSTALL_DATA} ${WRKDIR}/temp/libqueuing.a ${PREFIX}/lib/libqueuing.a;
-	@${INSTALL_DATA} ${WRKDIR}/temp/libqueuing.so.1.0 \
-					${PREFIX}/lib/libqueuing.so.1.0 
+	@${INSTALL_DATA} ${WRKDIR}/temp/libqueuing.so.${VERSION} ${PREFIX}/lib
+	@${LN} -sf libqueuing.so.${VERSION} ${PREFIX}/lib/libqueuing.so
 
 do-install-doc:
 	@for i in `${CAT} ${FILESDIR}/DIRS-SHARE` ; do \
@@ -78,15 +78,20 @@ create-lib-sim++:
 	done;                                           \
 	${AR} cq libsim++.a `lorder *.o | tsort -q `;   \
 	${RM} *.o )
-	@${ECHO} libsim++.so.1.0
+	@${ECHO} libsim++.so.${VERSION}
 	@(cd ${WRKDIR}/temp;                                   \
 	for i in `${CAT} ${FILESDIR}/FILES-SRC-SIMPP` ; do        \
 	  gcc -fpic -DPIC -I${WRKSRC}/func/event/include -c -O \
 		 -o `basename $$i cpp`.so                      \
                  ${WRKSRC}/func/event/src/$$i ;                \
 	done;                                   \
-	${LD} -Bshareable -x -o libsim++.so.1.0 \
-	  `lorder *.so | tsort -q ` ;           \
+	if [ "${PORTOBJFORMAT}" = "elf" ]; then \
+		${LD} -shared -x -soname libsim++.so.${VERSION} -o \
+		  libsim++.so.${VERSION} `lorder *.so | tsort -q ` ; \
+	else \
+		${LD} -Bshareable -x -o libsim++.so.${VERSION} \
+		  `lorder *.so | tsort -q ` ;           \
+	fi; \
 	${RM} *.so )
 
 create-lib-queuing:
@@ -96,13 +101,18 @@ create-lib-queuing:
 	      ${WRKSRC}/func/queuing/queuing.c;         \
 	${AR} cq libqueuing.a `lorder *.o | tsort -q `; \
 	${RM} *.o )
-	@${ECHO} libqueuing.so.1.0
+	@${ECHO} libqueuing.so.${VERSION}
 	@(cd ${WRKDIR}/temp;                           \
 	gcc -fpic -DPIC -I${WRKSRC}/func/queuing -c -O \
 		 -o queuing.so                         \
                  ${WRKSRC}/func/queuing/queuing.c ;    \
-	${LD} -Bshareable -x -o libqueuing.so.1.0      \
-	         `lorder *.so | tsort -q ` ;           \
+	if [ "${PORTOBJFORMAT}" = "elf" ]; then \
+		${LD} -shared -x -soname libqueuing.so.${VERSION} -o \
+		  libqueuing.so.${VERSION} `lorder *.so | tsort -q ` ; \
+	else \
+		${LD} -Bshareable -x -o libqueuing.so.${VERSION} \
+		  `lorder *.so | tsort -q ` ;           \
+	fi; \
 	${RM} *.so )
 
 create-scripts: create-sdsmt-alias create-deq-alias
@@ -122,3 +132,9 @@ create-deq-alias:
 			   >> ${WRKDIR}/temp/deq.alias
 
 .include <bsd.port.mk>
+
+.if ${PORTOBJFORMAT} == "elf"
+VERSION=	1
+.else
+VERSION=	1.0
+.endif
