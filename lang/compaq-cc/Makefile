@@ -46,10 +46,6 @@ USE_LINUX=		yes
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} == "alpha" && ${OSVERSION} >= 502102
-BROKEN=		"Broken pkg-plist on alpha 5.x"
-.endif
-
 do-install:
 	@if [ -z "`kldstat -v | ${GREP} -E 'linux'`" ]; then \
 		${ECHO_MSG} 'AlphaLinux  mode is not enabled.\
@@ -131,7 +127,9 @@ post-install:
 	    ${FIND} ${CCC_DIR}/alpha-linux -type f -o -type l \
 	    					>${WRKDIR}/PLIST.alphalinux
 	${ECHO_CMD} "lib/ld-linux.so.2"		>>${WRKDIR}/PLIST.alphalinux
+.if ${OSVERSION} < 501114
 	${ECHO_CMD} "@dirrm lib"		>>${WRKDIR}/PLIST.alphalinux
+.endif
 	cd ${PREFIX} ;\
 	    ${FIND} ${CCC_DIR}/alpha-linux -type d \
 	    | ${SED} -e 's/^/@dirrm /g' \

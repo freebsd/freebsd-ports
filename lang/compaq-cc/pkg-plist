@@ -4,14 +4,11 @@ usr/bin/ccc
 @comment Insert PLIST.docs here
 @comment -=[ begin PLIST.docs ]=-
 @comment -=[ end PLIST.docs ]=-
-@dirrm usr/doc
 @comment Insert PLIST.alphalinux here
 @comment -=[ begin PLIST.alphalinux ]=-
 @comment -=[ end PLIST.alphalinux ]=-
 usr/man/man1/ccc.1
 usr/man/man8/protect_headers_setup.8
-usr/man/rsml
-usr/man/sml
 @comment Insert PLIST.alpha-freebsd here
 @comment -=[ begin PLIST.alpha-freebsd ]=-
 @comment -=[ end PLIST.alpha-freebsd ]=-
@@ -33,5 +30,6 @@ usr/lib/compaq/%%CPML_REV%%/libcpml_ev5.so
 usr/lib/libcpml.a
 @comment usr/lib/libcpml.so
 @dirrm usr/doc/%%CPML_REV%%
+@dirrm usr/doc
 @dirrm usr/lib/compaq/%%CPML_REV%%
 @dirrm usr/lib/compaq
