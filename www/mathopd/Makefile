@@ -6,13 +6,13 @@
 #
 
 PORTNAME=	mathopd
-PORTVERSION= 	1.3p4
+PORTVERSION= 	1.3p5
 CATEGORIES=	www
 MASTER_SITES=	http://mathop.diva.nl/dist/ \
 		ftp://ftp.prima.eu.org/pub/mirrored_files/mathop.diva.nl/
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/p/pl/}
 
-MAINTAINER=	tobez@plab.ku.dk
+MAINTAINER=	tobez@tobez.org
 
 post-install:
 	@${INSTALL_DATA} ${FILESDIR}/mathopd.conf.sample ${PREFIX}/etc
