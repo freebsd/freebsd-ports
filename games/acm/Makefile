@@ -3,7 +3,7 @@
 # Date created:		5 March 1995
 # Whom:			joerg
 #
-# $Id: Makefile,v 1.14 1999/02/01 00:56:38 obrien Exp $
+# $Id: Makefile,v 1.15 1999/02/01 23:32:44 se Exp $
 #
 
 DISTNAME=	acm-5.0
@@ -15,9 +15,7 @@ MAINTAINER=	se@FreeBSD.org
 GNU_CONFIGURE=	yes
 MAN6=		acm.6
 
-.include <bsd.port.mk>
-
-# Following stuff must be after <bsd.port.mk> to expand exists() properly
+.include <bsd.port.pre.mk>
 
 # Include sound support (Use network audio server (nas))
 .if defined(USE_SOUND) && ${USE_SOUND} == YES || \
@@ -26,3 +24,4 @@ MAN6=		acm.6
 LIB_DEPENDS+=   audio.7:${PORTSDIR}/audio/nas
 .endif
 
+.include <bsd.port.post.mk>
