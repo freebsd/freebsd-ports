@@ -103,6 +103,10 @@ post-patch:
 	@${REINPLACE_CMD} -E -e "s:^(#ifdef.*)__OpenBSD__:\1__FreeBSD__:" \
 		${WRKSRC}/${f}
 .endfor
+.if ${OSVERSION} <= 500027
+	@${FIND} ${WRKSRC}/src -type f | ${XARGS} ${REINPLACE_CMD} \
+		-e 's|<stdint.h>|<inttypes.h>|'
+.endif
 
 post-build:
 .if defined(WITH_SMSD)
