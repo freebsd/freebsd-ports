@@ -90,15 +90,15 @@ diff -urN src/recoder.h src/recoder.h
 +
 +char *recodepage(char * source, char * dest, int codenum)
 +{
++int j=0;
++int i=0;
 +
 +if((codenum == 1)){table=kw;}
 +if((codenum == 2)){table=wk;}
 +
-+int j=0;
 +
 +strcpy(dest,source);
 +
-+int i=0;
 +for(i=0;i<strlen(source);i++)
 +{
 +	j = source[i];
