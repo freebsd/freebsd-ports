@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	smokeping
-PORTVERSION=	1.16
-PORTREVISION=	2
+PORTVERSION=	1.18
 CATEGORIES=	net www
 MASTER_SITES=	http://people.ee.ethz.ch/~oetiker/webtools/smokeping/pub/
 
@@ -48,7 +47,7 @@ pre-patch:
 	@${PERL} -pi -e ' \
 		s|/usr/sepp/bin/perl|${PERL}|; \
 		s|/usr/sepp/bin/speedy|${PREFIX}/bin/speedy|; \
-		s|use lib qw\(/usr/pack/rrdtool-1.0.33-to/lib/perl\);\n||; \
+		s|use lib qw\(/usr/pack/rrdtool-1.0.40-to/lib/perl\);\n||; \
 		s|/home/oetiker/data/projects/AADJ-smokeping/dist/etc|${PREFIX}/etc/smokeping|; \
 		s|/home/oetiker/data/projects/AADJ-smokeping/dist|${PREFIX}/smokeping|; \
 		s|/home/oetiker/.smokeping/config|${PREFIX}/etc/smokeping/config|; \
