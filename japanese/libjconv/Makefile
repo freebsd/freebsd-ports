@@ -17,9 +17,10 @@ LIB_DEPENDS=	iconv.3:${PORTSDIR}/converters/libiconv
 
 MAKE_ARGS=	NOPROFILE=true PREFIX=${PREFIX} LOCALBASE=${LOCALBASE}
 INSTALLS_SHLIB=	yes
+USE_REINPLACE=	yes
 
 post-patch:
-	${PERL} -i -pe 's,!!PREFIX!!,${PREFIX},' ${WRKSRC}/info.c
+	@${REINPLACE_CMD} -e 's,!!PREFIX!!,${PREFIX},' ${WRKSRC}/info.c
 
 post-extract:
 	${CP} ${FILESDIR}/Makefile* ${WRKSRC}/
