@@ -22,5 +22,9 @@ USE_GMAKE=	yes
 USE_GNOMENG=	yes
 USE_GNOME=	gtk12
 INSTALLS_SHLIB=	yes
+USE_REINPLACE=	yes
+
+post-patch:
+	${REINPLACE_CMD} -e "s,/usr/lib,${X11BASE}/lib," ${WRKSRC}/mailnotify.c
 
 .include <bsd.port.mk>
