@@ -1,0 +1,32 @@
+--- Makefile.orig	Mon Mar  9 17:00:00 1998
++++ Makefile	Tue Mar 28 15:23:34 2000
+@@ -16,8 +16,8 @@
+ #
+ ##############################################################################
+ 
+-CPP = g++
+-CC = gcc
++CPP = c++
++CC = cc
+ 
+ # -c: don't link yet
+ # -g: produce debugging-information, don't use together with link_flag -s
+@@ -29,14 +29,14 @@
+ #COMPILE_FLAGS = -O3 -m486 -c
+ 
+ # -O: normal optimization level  -c: don't link yet
+-COMPILE_FLAGS = -O -c
++COMPILE_FLAGS = ${CFLAGS} -I${PREFIX}/include -I${X11BASE}/include -c
+ 
+ # -s: DESTROYS symbol-table
+-LINK_FLAGS = -s
++#LINK_FLAGS = -s
+ 
+ 
+-SYSLIB = -L/usr/X11R6/lib -lX11 -lm
+-LIBS = -L/usr/lib -ltiff -ljpeg -lgz -lforms -lXpm $(SYSLIB)
++SYSLIB = -L${X11BASE}/lib -lX11 -lm
++LIBS = -L${PREFIX}/lib -ltiff -ljpeg -lz -lxforms -lXpm $(SYSLIB)
+ 
+ OBJECTS = xmrm.o xmrm_cb.o io.o morphvec.o init.o wavemorph.o wave_rts.o wave.o\
+           areas.o xmrm_main.o

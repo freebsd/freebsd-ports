@@ -1,0 +1,20 @@
+--- xmrm_mpeg_main.cc.orig	Mon Mar  9 17:00:00 1998
++++ xmrm_mpeg_main.cc	Tue Mar 28 15:37:11 2000
+@@ -68,7 +68,7 @@
+ {
+   int count = 0;
+ 
+-  backup_class->number_str = ".000.";
++  strcpy(backup_class->number_str, ".000.");
+ 
+   while ( !(*ext = strstr(fname_only,backup_class->number_str)) && (count <= MAX_PIC_NUM) )
+   {
+@@ -417,7 +417,7 @@
+       // Check for even picture size
+       if ( (tif_w % 2) || (tif_h % 2) )
+       {
+-        work_class->even = ".even";
++        strcpy(work_class->even,".even");
+         if ( Even_Size( tif, tif_w, tif_h) )
+           return 1;
+       }
