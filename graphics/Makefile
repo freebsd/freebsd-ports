@@ -127,6 +127,7 @@
     SUBDIR += gts
     SUBDIR += guilib
     SUBDIR += gview
+    SUBDIR += gwenview
     SUBDIR += gxanim
     SUBDIR += hdf
     SUBDIR += hdf5
