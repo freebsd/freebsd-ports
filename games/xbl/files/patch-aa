@@ -29,7 +29,7 @@
  # The default value if overrided by configure if xmkmf or imake exists.
  #
 -SCOREDIR=/usr/local/lib/xbl
-+SCOREDIR=$(PREFIX)/lib/xbl
++SCOREDIR=$(PREFIX)/lib/X11/xbl
  @SCOREDIR@
  
  # Directory where put man pages.
@@ -54,7 +54,7 @@
  	 -DXBLVERSION=\"$(XBLVERSION)\" \
  	 -DGROUP_GID=$(GROUP_GID) \
 -	  $(USE_SETGID) @DEFS@ -g
-+	  $(USE_SETGID) @DEFS@ @CFLAGS@
++	  $(USE_SETGID) @DEFS@ @CPPFLAGS@ @CFLAGS@
  # For link edit options
  LDOPTIONS=$(CFLAGS)
  LDOPTIONS=@LDOPTIONS@
