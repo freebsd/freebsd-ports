@@ -47,6 +47,7 @@ COMMENT=	The base set of packages needed in Linux mode
 
 BUILD_DEPENDS=		rpm:${PORTSDIR}/archivers/rpm
 
+CONFLICTS=		linux_base-*
 ONLY_FOR_ARCHS=		alpha i386
 DIST_SUBDIR=		rpm
 PREFIX=			${LINUXBASE}
