@@ -1,8 +1,7 @@
 XChat is a graphical IRC client.  It requires a computer running a
-UNIX-like OS and the X Window System (X11), and the GTK library.  It can
-also (optionally) take advantage of GNOME and use Perl and Python
-scripts.
+UNIX-like OS and the X Window System (X11), and the GTK 2 library.  It can
+also use Perl and (optionally) Python scripts.
+
+This is still a very early development version!
 
 WWW:	http://xchat.org/
-
-- Jim <jim@FreeBSD.org>
