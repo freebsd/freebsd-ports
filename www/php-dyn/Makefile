@@ -16,42 +16,24 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	sysadmin@alexdupre.com
 COMMENT=	A PHP Extension to help debugging a PHP script
 
-BUILD_DEPENDS=	phpize:${PORTSDIR}/www/mod_php4
-RUN_DEPENDS=	${LOCALBASE}/sbin/httpd:${APACHE_PORT} \
-		${LOCALBASE}/bin/php:${PORTSDIR}/www/mod_php4
+USE_PHPIZE=	yes
+WITH_PHP_MOD=	yes
 
-USE_LIBTOOL=	yes
-WANT_AUTOMAKE_VER=	15
-WANT_AUTOCONF_VER=	253
-
-CONFIGURE_ARGS=	--enable-php_dyn=shared \
-		--with-php-config=${LOCALBASE}/bin/php-config
-
-EXT_DIR=	20020429
-PLIST_SUB=	EXT_DIR=${EXT_DIR}
+CONFIGURE_ARGS=	--enable-php_dyn=shared
 
 PKGMESSAGE=	${WRKDIR}/pkg-message
 
 .include <bsd.port.pre.mk>
-
-.if defined(WITH_APACHE2) || exists(${LOCALBASE}/include/apache2/apr.h)
-APACHE_PORT?=	${PORTSDIR}/www/apache2
-.else
-APACHE_PORT?=	${PORTSDIR}/www/apache13
-.endif
-
-post-extract:
-	@${ECHO_MSG} "===>    PHPizing for ${PORTNAME}-${PORTVERSION}"
-	@(cd ${WRKSRC}; ${LOCALBASE}/bin/phpize)
+.include "${.CURDIR}/../../lang/php4/bsd.php.mk"
 
 post-build:
-	@${SED} "s|%%LOCALBASE%%|${LOCALBASE}|g;s|%%PREFIX%%|${PREFIX}|g;s|%%EXT_DIR%%|${EXT_DIR}|g" \
+	@${SED} "s|%%LOCALBASE%%|${LOCALBASE}|g;s|%%PREFIX%%|${PREFIX}|g;s|%%PHP_EXT_DIR%%|${PHP_EXT_DIR}|g" \
 		${FILESDIR}/pkg-message.in > ${PKGMESSAGE}
 
 do-install:
-	@${MKDIR} ${PREFIX}/lib/php/${EXT_DIR}
+	@${MKDIR} ${PREFIX}/lib/php/${PHP_EXT_DIR}
 	@${INSTALL_DATA} ${WRKSRC}/modules/php_dyn.so \
-		${PREFIX}/lib/php/${EXT_DIR}
+		${PREFIX}/lib/php/${PHP_EXT_DIR}
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 	@${INSTALL_DATA} ${WRKSRC}/README.en ${DOCSDIR}/README
