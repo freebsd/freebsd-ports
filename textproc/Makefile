@@ -100,6 +100,7 @@
     SUBDIR += eruby
     SUBDIR += es-aspell
     SUBDIR += et-aspell
+    SUBDIR += estraier
     SUBDIR += expat2
     SUBDIR += exslt
     SUBDIR += fa-aspell

@@ -7,7 +7,7 @@
 
 PORTNAME=	kazehakase
 PORTVERSION=	0.2.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE_JP}
 MASTER_SITE_SUBDIR=	${PORTNAME}/12370/
@@ -78,7 +78,7 @@ CONFIUGURE_ARGS+=	--enable-migemo
 .endif
 
 .if !defined(WITHOUT_ESTRAIER)
-RUN_DEPENDS+=	estxview:${PORTSDIR}/japanese/estraier
+RUN_DEPENDS+=	estxview:${PORTSDIR}/textproc/estraier
 .endif
 
 pre-everything::
