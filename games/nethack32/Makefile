@@ -16,6 +16,7 @@ PATCH_SITES=	ftp://ftp.nethack.org/pub/nethack/nh323/src/
 PATCHFILES=	nh-3.2.2-3.2.3.diff
 
 MAINTAINER=	glewis@FreeBSD.org
+COMMENT=	A dungeon explorin', slashin', hackin' game
 
 NO_LATEST_LINK=	yes
 
