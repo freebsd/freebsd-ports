@@ -1,0 +1,9 @@
+libirman is a library for accessing the IRMAN hardware from Linux
+and other Unix systems.
+
+Currently the package is mainly for advanced users and developers; this
+does not mean that less experienced users will not be able to use it, but
+that there are not a lot of applications for libirman at the moment, and
+that if you run into problems you may have difficulty fixing things.
+
+WWW: http://www.evation.com/libirman/

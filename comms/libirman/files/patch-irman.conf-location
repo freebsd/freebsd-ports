@@ -1,0 +1,11 @@
+--- irman.h-orig	Sat Mar 29 20:42:50 2003
++++ irman.h	Sat Mar 29 20:43:00 2003
+@@ -48,7 +48,7 @@
+ 
+ /* filename for system irmanrc */
+ #ifndef IR_SYSCONF_DIR
+-# define IR_SYSCONF_DIR			"/etc"
++# define IR_SYSCONF_DIR			"/usr/local/etc"
+ #endif
+ #define IR_SYSTEM_IRMANRC		IR_SYSCONF_DIR "/irman.conf"
+ /* filename for users irmanrc */

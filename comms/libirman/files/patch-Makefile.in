@@ -1,0 +1,19 @@
+--- Makefile.in-orig	Sat Mar 29 20:56:03 2003
++++ Makefile.in	Sat Mar 29 21:38:07 2003
+@@ -103,7 +103,6 @@
+ 
+ 
+ install: @NORMAL@ install-dirs install-normal @INSTALL_SWTEST@
+-	@echo notice: the test programs are only installed in the current directory \(`pwd`\)
+ 
+ install-dirs:
+ 	$(top_srcdir)/mkinstalldirs $(libdir)
+@@ -114,7 +113,7 @@
+ install-normal:
+ 	$(INSTALL) -m 755 workmanir $(bindir)/workmanir
+ 	$(INSTALL) -m 755 libirman.a $(libdir)/libirman.a
+-	$(INSTALL) -m 644 irman.conf $(sysconfdir)/irman.conf
++	$(INSTALL) -m 644 irman.conf $(sysconfdir)/irman.conf.sample
+ 	$(INSTALL) -m 644 irman.h $(includedir)/irman.h
+ 
+ install-swtest:
