@@ -1,5 +1,5 @@
---- Doc/zsh.texi.orig	Sun Aug  1 21:13:14 1999
-+++ Doc/zsh.texi	Sat Feb  5 01:23:02 2000
+--- Doc/zsh.texi.orig	Thu Apr 20 04:04:38 2000
++++ Doc/zsh.texi	Sat Apr 29 00:05:57 2000
 @@ -7,6 +7,10 @@
  @end iftex
  @setfilename zsh.info
@@ -11,7 +11,7 @@
  @c %**end of header
  
  @ifinfo
-@@ -972,14 +976,14 @@
+@@ -1025,14 +1029,14 @@
  string by using the `@t{\'}' escape.
  
  @noindent
@@ -28,7 +28,7 @@
  @end example
  
  @noindent
-@@ -2340,7 +2344,7 @@
+@@ -2555,7 +2559,7 @@
  @t{histchars} parameter which is `@t{!}'
  by default and may occur anywhere on the command line; history
  expansions do not nest.  The `@t{!}' can be escaped with `@t{\}'
@@ -37,7 +37,7 @@
  its special meaning. Double quotes will @emph{not} work for this.
  
  @noindent
-@@ -5545,7 +5549,7 @@
+@@ -6092,7 +6096,7 @@
  @example
  unsetopt localtraps
  trap - INT
@@ -46,7 +46,7 @@
  @end example
  
  @noindent
-@@ -5767,7 +5771,7 @@
+@@ -6313,7 +6317,7 @@
  @cindex rc, quoting style
  @cindex quoting style, rc
  @item @t{RC_QUOTES}
@@ -55,7 +55,7 @@
  within singly quoted strings.
  
  @pindex RCS
-@@ -8456,7 +8460,7 @@
+@@ -9328,7 +9332,7 @@
  @item @t{quote-line} (ESC-') (unbound) (unbound)
  Quote the current line; that is, put a `@t{'}' character at the
  beginning and the end, and convert all `@t{'}' characters
@@ -64,7 +64,7 @@
  
  @tindex quote-region
  @item @t{quote-region} (ESC-") (unbound) (unbound)
-@@ -9226,7 +9230,7 @@
+@@ -10112,7 +10116,7 @@
  
  @noindent
  @example
@@ -73,7 +73,7 @@
  @end example
  
  @noindent
-@@ -9314,7 +9318,7 @@
+@@ -10200,7 +10204,7 @@
  
  @noindent
  @example
@@ -82,16 +82,7 @@
  @end example
  
  @noindent
-@@ -10636,7 +10640,7 @@
- 
- @noindent
- @example
--complete-history () @{ compgen -H 0 @value{dsq} @}
-+complete-history () @{ compgen -H 0 '' @}
- @end example
- 
- @noindent
-@@ -11117,7 +11121,7 @@
+@@ -16239,7 +16243,7 @@
  paranoid behaviour, intended to avoid common security problems involving
  a root-run @t{rm} being tricked into removing files other than the ones
  intended.  It will refuse to follow symbolic links, so that (for example)
@@ -100,7 +91,7 @@
  if @t{/tmp/foo} happens to be a link to @t{/etc}.  It will also check
  where it is after leaving directories, so that a recursive removal of
  a deep directory tree can't end up recursively removing @t{/usr} as
-@@ -11340,7 +11344,7 @@
+@@ -16638,7 +16642,7 @@
  @item @t{link}
  If the file is a link and the @t{-L} option is in
  effect, this contains the name of the file linked to, otherwise
