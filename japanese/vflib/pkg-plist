@@ -1,3 +1,4 @@
+include/VF.h
 lib/VFlib.a
 lib/libVFlib.a
 lib/libVFlib.so.2.22
