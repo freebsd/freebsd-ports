@@ -36,4 +36,7 @@ pre-patch:
 		's|\$\(datadir\)/gnome/|\$\(datadir\)/|g ; \
 		 s|\$\(datadir\)/locale|\$\(prefix\)/share/locale|g'
 
+post-install:
+	@${TOUCH} ${PREFIX}/etc/gnome/fonts/gnome-print-x11.fontmap
+
 .include <bsd.port.mk>
