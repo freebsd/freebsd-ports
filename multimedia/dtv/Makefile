@@ -10,7 +10,7 @@ PORTVERSION=	0.50
 CATEGORIES=	multimedia
 MASTER_SITES=   http://apollo.backplane.com/FreeBSDPorts/
 
-MAINTAINER=	dillon@backplane.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A client/server based TV capture/display program
 
 RUN_DEPENDS=    wish8.4:${PORTSDIR}/x11-toolkits/tk84

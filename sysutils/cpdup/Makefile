@@ -11,7 +11,7 @@ CATEGORIES=	sysutils
 MASTER_SITES=	http://apollo.backplane.com/FreeBSDPorts/
 #MASTER_SITE_SUBDIR=	cp
 
-MAINTAINER=	dillon@FreeBSD.ORG
+MAINTAINER=	ports@FreeBSD.ORG
 COMMENT=	A comprehensive filesystem mirroring program
 
 MAN1=		cpdup.1
