@@ -1,6 +1,8 @@
 lib/perl5/site_perl/%%PERL_VER%%/GD/Graph3d.pm
 lib/perl5/site_perl/%%PERL_VER%%/GD/Graph/axestype3d.pm
 lib/perl5/site_perl/%%PERL_VER%%/GD/Graph/bars3d.pm
+lib/perl5/site_perl/%%PERL_VER%%/GD/Graph/cylinder3d.pm
+lib/perl5/site_perl/%%PERL_VER%%/GD/Graph/cylinder.pm
 lib/perl5/site_perl/%%PERL_VER%%/GD/Graph/lines3d.pm
 lib/perl5/site_perl/%%PERL_VER%%/GD/Graph/pie3d.pm
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/GD/Graph3d/.packlist
