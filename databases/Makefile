@@ -30,7 +30,6 @@
     SUBDIR += gmysql
     SUBDIR += gnats
     SUBDIR += gnomedb
-    SUBDIR += gnomedb2
     SUBDIR += grass
     SUBDIR += gtksql
     SUBDIR += java-sqlrelay
