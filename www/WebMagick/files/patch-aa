@@ -1,5 +1,5 @@
 --- webmagick.in.orig	Sun Dec 20 01:03:12 1998
-+++ webmagick.in	Thu Mar 25 05:12:58 1999
++++ webmagick.in	Sat Jun 12 20:01:35 1999
 @@ -128,6 +128,7 @@
      $opt_dircolorlink,
      $opt_dircolorvlink,
@@ -48,12 +48,21 @@
  		'mapnetscape!'		=> \$opt_mapnetscape,
  		'maptype=s'		=> \$opt_maptype,
  		'maxgif=i'		=> \$opt_maxgif,
+@@ -872,7 +878,7 @@
+     # for each directory ignoring hidden directories
+     use File::Find;
+     print( "Processing directory tree $opt_srcdir ...\n" ) if $opt_debug;
+-    finddepth( \&wanted, $opt_srcdir );
++    find( \&wanted, $opt_srcdir );
+ } else {
+     print( "Processing directory $opt_srcdir ...\n" ) if $opt_debug;
+     $sourceDirectory = $opt_srcdir;
 @@ -936,7 +942,7 @@
  sub wanted {
      my($dev,$ino,$mode,$nlink,$uid,$gid);
      ($dev,$ino,$mode,$nlink,$uid,$gid) = lstat($_);
 -    if ( -d $_ && !/^\..+/ ) {
-+    if ( -d $_ && -w $_ && !/^\..+/ ) {
++    if ( -d _ && -w _ && !/^\..+/ ) {
          if( $_ ne '.' && get_rc_var('.', 'opt_prune', 0) ) {
              $File::Find::prune=1;
  	    # following funny logic is to avoid warnings about $prune
