@@ -1,0 +1,34 @@
+--- Makefile.orig	Sun Feb 27 02:29:47 2000
++++ Makefile	Sun Feb 27 02:30:56 2000
+@@ -16,16 +16,16 @@
+ 
+ 
+ make_xcin:
+-	(cd src; make all)
++	(cd src; gmake all)
+ 
+ make_inptab:
+-	(cd input_tab; make all)
++	(cd input_tab; gmake all)
+ 
+ install_xcin: make_xcin
+-	(cd src; make install)
++	(cd src; gmake install)
+ 
+ install_inptab: make_inptab
+-	(cd input_tab; make install)
++	(cd input_tab; gmake install)
+ 
+ install_doc:
+ 	(cd doc; make install)
+--- input_tab/Makefile.in.orig	Sun Feb 27 02:31:40 2000
++++ input_tab/Makefile.in	Sun Feb 27 02:31:55 2000
+@@ -12,7 +12,7 @@
+ 
+ 
+ cin2tab:
+-	(cd ../src; make cin2tab)
++	(cd ../src; gmake cin2tab)
+ 	ln -s ../src/cin2tab .
+ 
+ %.tab: %.cin cin2tab

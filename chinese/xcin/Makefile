@@ -6,8 +6,8 @@
 # $FreeBSD$
 #
 
-DISTNAME=	xcin-2.3.03
-PKGNAME=	zh-xcin-2.3.03
+DISTNAME=	xcin-2.3.04-3
+PKGNAME=	zh-xcin-2.3.04-3
 CATEGORIES=	chinese
 MASTER_SITES=	ftp://xcin.linux.org.tw/pub/xcin/xcin/old/ \
 		ftp://ftp.ncu.edu.tw/OS/Linux/Chinese/xcin/xcin/ \
@@ -18,6 +18,7 @@ MAINTAINER=	yssu@CCCA.NCTU.edu.tw
 RUN_DEPENDS=	${X11BASE}/lib/X11/fonts/local/kc15f.pcf.gz:${PORTSDIR}/chinese/kcfonts
 
 USE_X_PREFIX=	yes
+USE_GMAKE=	yes
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	--prefix="${X11BASE}" --os=FreeBSD --no-menu
 
