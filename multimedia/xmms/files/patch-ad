@@ -1,17 +1,9 @@
 
 $FreeBSD$
 
---- configure.orig	Mon Jun 18 22:53:50 2001
-+++ configure	Thu Jun 21 18:24:01 2001
-@@ -8062,7 +8062,6 @@
- ARCH_DEFINES=""
- case "$host" in 
- 	i386-*-* | i486-*-* | i586-*-* | i686-*-* | i86pc-*-*)
--		CFLAGS="$CFLAGS -m486"
- 		ARCH_DEFINES="-DI386_ASSEM"
- 		arch_type=ix86
- 	;;
-@@ -8858,10 +8857,6 @@
+--- configure	2002/01/14 11:54:47	1.1
++++ configure	2002/01/14 11:54:16
+@@ -12577,10 +12577,6 @@
        *) # Relative path.
          ac_sub_cache_file="$ac_dots$cache_file" ;;
        esac
