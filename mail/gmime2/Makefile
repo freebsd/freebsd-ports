@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gmime
-PORTVERSION=	2.0.8
+PORTVERSION=	2.0.9
 CATEGORIES=	mail
 MASTER_SITES=	http://spruce.sourceforge.net/gmime/sources/
 
@@ -14,6 +14,7 @@ MAINTAINER=	krion@FreeBSD.org
 COMMENT=	Library (written in C) for parsing and creating messages using MIME
 
 LIB_DEPENDS=	iconv.3:${PORTSDIR}/converters/libiconv
+
 CONFLICTS=	gmime-0.*
 
 USE_X_PREFIX=	YES
