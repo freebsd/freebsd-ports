@@ -34,13 +34,13 @@ bb/etc/sms.scr
 bb/tmp/.keep_me
 bb/web/mkbb.bkg
 bb/web/mkbb.cols
+bb/web/mkbb.comp
 bb/web/mkbb.sh
 bb/web/mkbb2.sh
 bb/www/bb-faq.html
 bb/www/bb-help.html
 bb/www/bb-info.html
 bb/www/bb-page.html
-bb/www/bb-pager.sh
 bb/www/gifs/bb-diag.gif
 bb/www/gifs/bb.gif
 bb/www/gifs/bb2.gif
@@ -62,7 +62,8 @@ bb/www/gifs/nb-yellow.gif
 bb/www/gifs/purple.gif
 bb/www/gifs/red.gif
 bb/www/gifs/yellow.gif
-bb/www/index.html
+@exec ln -fs bb.html %D/bb/www/index.html
+@unexec rm %D/bb/www/index.html
 bb/www/logs/later
 bb/www/notes/README
 bb/www/notes/footer
@@ -78,7 +79,8 @@ share/doc/bb/STRUCTURE
 share/doc/bb/bbclient
 share/doc/bb/bbconfig
 www/cgi-bin/bb-pager.sh
-www/data/bb
+@exec ln -fs %D/bb/www %D/www/data/bb
+@unexec rm %D/www/data/bb
 @dirrm bb/bin
 @dirrm bb/etc
 @dirrm bb/web

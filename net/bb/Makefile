@@ -3,7 +3,7 @@
 # Date created:         So  17 Nov 1996 16:59:23 MET
 # Whom:                 Andreas Klemm <andreas@klemm.gtn.com>
 #
-# $Id: Makefile,v 1.28 1998/09/19 22:19:47 andreas Exp $
+# $Id: Makefile,v 1.29 1998/09/22 17:22:12 asami Exp $
 #
 
 DISTNAME=	bb-1.08a
@@ -67,7 +67,7 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/etc/$(file) \
 		${PREFIX}/bb/etc
 .endfor
-.for file in	mkbb.bkg mkbb.cols mkbb.sh mkbb2.sh
+.for file in	mkbb.bkg mkbb.cols mkbb.comp mkbb.sh mkbb2.sh
 	${INSTALL_SCRIPT} ${WRKSRC}/web/$(file) \
 		${PREFIX}/bb/web
 .endfor
@@ -77,8 +77,6 @@ do-install:
 .endfor
 	${INSTALL_SCRIPT} ${WRKSRC}/www/bb-pager.sh \
 				${PREFIX}/www/cgi-bin/bb-pager.sh
-	@ln -sf ${PREFIX}/www/cgi-bin/bb-pager.sh \
-				${PREFIX}/bb/www/bb-pager.sh
 .for file in	bb-diag.gif bb.gif bb2.gif bbbut.gif bkg-green.gif \
 		bkg-purple.gif bkg-red.gif bkg-yellow.gif blue.gif \
 		buthelp.gif butinfo.gif butpage.gif butview.gif clear.gif \
@@ -94,9 +92,8 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/www/notes/$(file) \
 		${PREFIX}/bb/www/notes
 .endfor
-	@${RM} -f ${PREFIX}/www/data/bb
-	@ln -sf ${PREFIX}/bb/www ${PREFIX}/www/data/bb
-	@ln -sf bb.html ${PREFIX}/bb/www/index.html
+	@${LN} -fs ${PREFIX}/bb/www ${PREFIX}/www/data/bb
+	@${LN} -fs bb.html ${PREFIX}/bb/www/index.html
 	@echo ""
 	@echo "================================================================"
 	@echo "==== Configuration Notes:                                    ==="
