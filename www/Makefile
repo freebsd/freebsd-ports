@@ -677,6 +677,7 @@
     SUBDIR += winhelpcgi
     SUBDIR += wml
     SUBDIR += wmnetselect
+    SUBDIR += wordpress
     SUBDIR += wsmake
     SUBDIR += www6to4
     SUBDIR += wwwcount
