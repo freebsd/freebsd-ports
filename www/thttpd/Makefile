@@ -12,11 +12,11 @@ MASTER_SITES=	http://www.acme.com/software/thttpd/ \
 		http://www.freenix.no/~anders/
 DISTNAME=	${PORTNAME}-${PORTVERSION}beta4
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} notes.html
+DIST_SUBDIR=	${PORTNAME}
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	anders@FreeBSD.org
 
-DIST_SUBDIR=	${PORTNAME}
 IGNOREFILES=	notes.html
 
 GNU_CONFIGURE=	yes
@@ -64,7 +64,7 @@ do-install:
 	fi
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${PREFIX}/share/doc/thttpd
-	@${INSTALL_DATA} ${DISTDIR}/notes.html ${PREFIX}/share/doc/thttpd
+	@${INSTALL_DATA} ${DISTDIR}/${DIST_SUBDIR}/notes.html ${PREFIX}/share/doc/thttpd
 .endif
 
 post-install:
