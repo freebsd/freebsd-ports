@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	pancho
-PORTVERSION=	5.0
+PORTVERSION=	5.4
 CATEGORIES=	net
 MASTER_SITES=	ftp://pancho.lunarmedia.net/pancho/ \
 		http://pancho.lunarmedia.net/
@@ -40,7 +40,7 @@ do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/pancho ${PREFIX}/bin
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${PREFIX}/share/doc/pancho
-.for i in README LOGGING AUTHOR CREDITS COPYRIGHT
+.for i in README LOGGING CREDITS COPYRIGHT
 	${INSTALL_DATA} ${WRKSRC}/${i} ${PREFIX}/share/doc/pancho
 .endfor
 .endif
