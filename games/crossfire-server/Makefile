@@ -3,7 +3,7 @@
 # Date created:         So  27 Okt 1996 12:25:55 MET
 # Whom:                 Andreas Klemm <andreas@klemm.gtn.com>
 #
-# $Id: Makefile,v 1.20 1998/05/08 13:51:26 andreas Exp $
+# $Id: Makefile,v 1.21 1998/05/08 13:59:14 andreas Exp $
 #
 
 DISTNAME=	crossfire-${MAJ}.${MIN}.${PL}
@@ -36,7 +36,7 @@ WANT_CF_ARCH=	NO
 
 MAJ=		0
 MIN=		94
-PL=		1
+PL=		3
 CF_SOURCES=	crossfire-${MAJ}.${MIN}.${PL}.tar.gz
 CF_MAPS=	crossfire-${MAJ}.${MIN}.${PL}.maps.tar.gz
 # crossfire doc ready for use
