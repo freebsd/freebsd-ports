@@ -9,7 +9,7 @@ PORTNAME=	fcitx
 PORTVERSION=	1.8.4
 CATEGORIES=	chinese
 MASTER_SITES=	http://www.fcitx.org/ \
-		http://www.linuxsir.com.cn/fcitx/
+		ftp://freebsd.sinica.edu.tw/pub/statue/fcitx/
 EXTRACT_SUFX=	.tar.bz2
 
 MAINTAINER=	statue@freebsd.sinica.edu.tw
