@@ -16,8 +16,7 @@ DISTNAME=	fonttools-${PORTVERSION}
 
 MAINTAINER=	jkoshy@freebsd.org
 
-BUILD_DEPENDS=	${PYDISTUTILS} \
-		xmlproc_val:${PORTSDIR}/textproc/py-xml \
+BUILD_DEPENDS=	xmlproc_val:${PORTSDIR}/textproc/py-xml \
 		${PYTHON_SITELIBDIR}/Numeric/Numeric.py:${PORTSDIR}/math/py-numeric
 RUN_DEPENDS=	xmlproc_val:${PORTSDIR}/textproc/py-xml \
 		${PYTHON_SITELIBDIR}/Numeric/Numeric.py:${PORTSDIR}/math/py-numeric
@@ -25,14 +24,11 @@ RUN_DEPENDS=	xmlproc_val:${PORTSDIR}/textproc/py-xml \
 WRKSRC=		${WRKDIR}/fonttools
 
 USE_PYTHON=	yes
+USE_PYDISTUTILS=	yes
 
 DOCDIR=		${PREFIX}/share/doc/py-fonttools
 
-do-build:
-	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${PYTHON_CMD} setup.py build
-
-do-install:
-	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${PYTHON_CMD} setup.py install
+post-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/ttDump.py ${PREFIX}/bin/
 	${INSTALL_SCRIPT} ${WRKSRC}/ttCompile.py ${PREFIX}/bin/
 .if !defined(NOPORTDOCS)

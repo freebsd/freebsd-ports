@@ -17,18 +17,12 @@ MAINTAINER=	perky@fallin.lv
 LIB_DEPENDS=	adns.1:${PORTSDIR}/net/adns
 
 USE_PYTHON=	yes
+USE_PYDISTUTILS=	yes
 PLIST_SUB+=	PYTHON_SITELIBDIR=${PYTHON_SITELIBDIR:S/^${LOCALBASE}\///g}
-SETUP_CMD=	cd ${WRKSRC} && ${PYTHON_CMD} setup.py
 
 post-patch:
 	@${PERL} -pi -e 's|^(include_dirs = ).*$$|\1\["${LOCALBASE}/include"\]|g; \
 		s|^(library_dirs = ).*$$|\1\["${LOCALBASE}/lib"\]|g' \
 		${WRKSRC}/setup.py
-
-do-build:
-	@${SETUP_CMD} build
-
-do-install:
-	@${SETUP_CMD} install
 
 .include <bsd.port.mk>

@@ -18,18 +18,11 @@ MAINTAINER=	wjv@FreeBSD.org
 RUN_DEPENDS=	${PYXML}
 
 USE_PYTHON=	yes
+USE_PYDISTUTILS=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME:U}-${PORTVERSION}
-
-do-build:
-	@ cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${PYTHON_CMD} \
-	  setup.py build
 
 pre-install:
 	@ ${SH} ${PKGREQ} INSTALL
-
-do-install:
-	@ cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${PYTHON_CMD} \
-	  setup.py install -c -O1 --prefix=${PREFIX}
 
 post-install:
 .if !defined(NOPORTDOCS)

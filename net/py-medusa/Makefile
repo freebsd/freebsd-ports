@@ -14,19 +14,15 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 MAINTAINER=	perky@fallin.lv
 
 USE_PYTHON=	yes
+USE_PYDISTUTILS=	yes
 
 DOCFILES=	CHANGES.txt INSTALL.txt LICENSE.txt README.txt TODO.txt
 EXAMPLEDIRS=	demo test thread
 DOCSDIR=	${PREFIX}/share/doc/py-medusa
 EXAMPLESDIR=	${PREFIX}/share/examples/py-medusa
-SETUP_CMD=	cd ${WRKSRC} && ${PYTHON_CMD} setup.py
 
-do-build:
-	${SETUP_CMD} build
-
-do-install:
-	@${SETUP_CMD} install -c -O1 --prefix=${PREFIX}
 .if !defined(NOPORTDOCS)
+post-install:
 	@${MKDIR} ${DOCSDIR}/docs
 	@cd ${WRKSRC} && ${INSTALL_DATA} ${DOCFILES} ${DOCSDIR}
 	@${INSTALL_DATA} ${WRKSRC}/docs/* ${DOCSDIR}/docs

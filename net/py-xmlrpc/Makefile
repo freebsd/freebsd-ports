@@ -15,18 +15,12 @@ DISTNAME=	py-${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	perky@fallin.lv
 
-BUILD_DEPENDS=	${PYDISTUTILS}
-
 USE_PYTHON=	yes
-SETUP_CMD=	cd ${WRKSRC} && ${PYTHON_CMD} setup.py
+USE_PYDISTUTILS=	yes
 EXAMPLESDIR=	${PREFIX}/share/examples/py-xmlrpc
 
-do-build:
-	${SETUP_CMD} build
-
-do-install:
-	${SETUP_CMD} install -c -O1 --prefix=${PREFIX}
 .if !defined(NOPORTDOCS)
+post-install:
 	${MKDIR} ${EXAMPLESDIR}
 	${TAR} -C ${WRKSRC}/examples -cf- . | ${TAR} -C ${EXAMPLESDIR} -xpf-
 .endif

@@ -15,10 +15,10 @@ EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	perky@fallin.lv
 
-BUILD_DEPENDS=	${PYDISTUTILS}
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/_imaging.so:${PORTSDIR}/graphics/py-imaging
 
 USE_PYTHON=	yes
+USE_PYDISTUTILS=	yes
 WRKSRC=		${WRKDIR}/reportlab
 CONFIGURE_ENV=	PYTHON=${PYTHON_CMD}
 ALL_TARGET=	sharedmods
@@ -31,14 +31,7 @@ EXAMPLEDIR=	${PREFIX}/share/examples/reportlab
 post-patch:
 	${MV} ${WRKSRC}/lib/setup.py ${WRKDIR}
 
-do-build:
-	@(cd ${WRKDIR}; \
-		${PYTHON_CMD} setup.py build)
-
-do-install:
-	@(cd ${WRKDIR}; \
-		${PYTHON_CMD} setup.py install -c -O1 --prefix="${PREFIX}")
-
+post-install:
 	${MKDIR} ${REPORTLABDIR}/fonts
 .for fontfile in LeERC___.AFM LeERC___.PFB
 	(cd ${WRKDIR}/reportlab/fonts; \
