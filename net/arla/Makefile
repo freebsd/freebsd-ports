@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	arla
-PORTVERSION=	0.31
+PORTVERSION=	0.32
 CATEGORIES=	net
 MASTER_SITES=	ftp://ftp.stacken.kth.se/pub/arla/
 
