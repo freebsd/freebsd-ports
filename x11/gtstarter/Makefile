@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	gtstarter
-PORTVERSION=	0.4
+PORTVERSION=	0.4.4
 CATEGORIES=	x11 gnome
 MASTER_SITES=	http://webonaut.com/distfiles/${PORTNAME}/
 
 MAINTAINER=	klammer@webonaut.com
-COMMENT=	Start gnome-terminal with a specified profile
+COMMENT=	Start the gnome-terminal from a list of configured profiles
 
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes
