@@ -15,9 +15,6 @@ CATEGORIES=	networking languages
 
 MAINTAINER=	adam@veda.is
 
-DGD_USER?=	dgd
-DGD_GROUP?=	dgd
-
 .if ${PATCHFILES} != ""
 PATCH_PRFX=	${DISTNAME}/
 PATCHLEVEL!=	echo ${PATCHFILES} | sed 's/^.*\.\(.*\)\.gz$$/\1/'
@@ -40,7 +37,6 @@ post-build:
 	@sed '/^@srcdir/s|\.|${WRKDIR}/\.|' <${PKGDIR}/PLIST >${WRKDIR}/PLIST
 
 do-install:
-	@chown -R ${DGD_USER}.${DGD_GROUP} ${WRKDIR}/dgd
 	@tar -C ${WRKDIR} -cf - `grep '^dgd/' pkg/PLIST` \
 		| tar -C ${PREFIX} -xpf -
 

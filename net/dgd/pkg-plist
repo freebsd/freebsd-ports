@@ -1,6 +1,4 @@
 @srcdir .
-@owner mud
-@group mud
 @cwd /usr/local
 dgd/Copyright
 dgd/Credits
