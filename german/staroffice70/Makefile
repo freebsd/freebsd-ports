@@ -169,8 +169,10 @@ do-install:
 	@${LN} -fs ${LINUXBASE}/${PREFIX}/${SOVERSION} ${PREFIX}/${SOVERSION}
 .endif
 .if !exists(${LINUXBASE}/usr/X11R6/lib/libXrender.so)
+.if exists(${LINUXBASE}/usr/X11R6/lib/libXrender.so.1.0)
 	@${LN} -fs ${LINUXBASE}/usr/X11R6/lib/libXrender.so.1.0 \
 		${WRKDIR}/tmp/libXrender.so
+.endif
 .endif
 	@${ECHO} ;
 	@${ECHO_MSG} "===>   STEP 1: Main Setup ${PKGNAME}"
