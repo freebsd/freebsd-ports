@@ -1,0 +1,20 @@
+--- Makefile.in.orig	Fri Nov 17 23:44:38 2000
++++ Makefile.in	Mon Nov 20 12:55:05 2000
+@@ -88,7 +88,7 @@
+ VERSION = @VERSION@
+ X_LIBS = @X_LIBS@
+ 
+-SUBDIRS = modules pango examples docs tools fonts
++SUBDIRS = modules pango examples tools fonts
+ 
+ bin_SCRIPTS = pango-config
+ 
+@@ -369,7 +369,7 @@
+ install-exec-am: install-binSCRIPTS
+ install-exec: install-exec-recursive
+ 
+-install-data-am: install-pkgconfigDATA
++install-data-am: 
+ install-data: install-data-recursive
+ 
+ install-am: all-am
