@@ -1,5 +1,6 @@
 bin/longplayer
-bin/lplayer-bin
+bin/lplayer
+%%DATADIR%%/images/genre-disabled.png
 %%DATADIR%%/images/genre.png
 %%DATADIR%%/images/go.png
 %%DATADIR%%/images/go32.png

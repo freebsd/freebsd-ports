@@ -8,7 +8,7 @@
 #
 
 PORTNAME=	lplayer
-PORTVERSION=	0.99.2
+PORTVERSION=	0.99.3
 CATEGORIES=	audio
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -36,5 +36,8 @@ post-patch:
 		 s|-lpthread|${PTHREAD_LIBS}|g' ${WRKSRC}/configure
 	@${REINPLACE_CMD} -e \
 		's|#include "queue.h"||g' ${WRKSRC}/src/lpapp.cpp
+
+post-install:
+	@${LN} -sf lplayer ${PREFIX}/bin/longplayer
 
 .include <bsd.port.mk>
