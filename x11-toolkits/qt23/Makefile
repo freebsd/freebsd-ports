@@ -43,11 +43,11 @@ CONFIG=		${WRKSRC}/configs/freebsd-g++-${STATIC}
 .if defined(WANT_STATIC)
 STATIC=static
 CONFIGURE_ARGS+=-static
-PLIST_SUB+=	STATIC="@comment " SHARED=""
+PLIST_SUB+=	SHARED="@comment " STATIC=""
 .else
 STATIC=shared
 INSTALLS_SHLIB=yes
-PLIST_SUB+=	STATIC="" STATIC="@comment "
+PLIST_SUB+=	SHARED="" STATIC="@comment "
 .endif
 
 .include <bsd.port.pre.mk>
