@@ -4,6 +4,7 @@ bin/dehtmldiff
 bin/editdiff
 bin/filterdiff
 bin/fixcvsdiff
+bin/flipdiff
 bin/grepdiff
 bin/interdiff
 bin/lsdiff
