@@ -423,7 +423,6 @@
     SUBDIR += lincvs
     SUBDIR += linguist
     SUBDIR += linux-allegro
-    SUBDIR += linux-atk
     SUBDIR += linux-glib2
     SUBDIR += linux-libglade
     SUBDIR += linux-p4v
