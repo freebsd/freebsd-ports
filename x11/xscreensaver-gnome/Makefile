@@ -37,7 +37,7 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 CONFIGURE_ARGS+=	--with-fortune="/usr/games/fortune -sa"
 .endif
 
-MAN1=   anemone.1 ant.1 apollonian.1 atlantis.1 attraction.1 blaster.1 \
+MAN1=	anemone.1 ant.1 apollonian.1 atlantis.1 attraction.1 blaster.1 \
 	blitspin.1 bouboule.1 boxed.1 braid.1 bsod.1 bubble3d.1 bubbles.1 \
 	bumps.1 cage.1 ccurve.1 circuit.1 compass.1 coral.1 critical.1 \
 	crystal.1 cubenetic.1 cynosure.1 dangerball.1 decayscreen.1 deco.1 \
@@ -69,10 +69,16 @@ MAN1=   anemone.1 ant.1 apollonian.1 atlantis.1 attraction.1 blaster.1 \
 	xscreensaver-getimage-file.1 xscreensaver-getimage-video.1 \
 	xscreensaver-getimage.1 xscreensaver-gl-helper.1 xscreensaver.1
 
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == "amd64"
+CFLAGS+=	-O0
+.endif
+
 post-patch:
 	@${REINPLACE_CMD}  -e 's|malloc[.]h|stdlib.h|g' \
 		${WRKSRC}/hacks/glx/extrusion.c
 	@${REINPLACE_CMD} -e 's|||' \
 		${WRKSRC}/hacks/glx/klein.c
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
