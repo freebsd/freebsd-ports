@@ -137,6 +137,8 @@ molden			ports/biology/molden	free for academic,
 						non profit usage
 						do not re-distribute source and
 						 executable
+Mmsaic			ports/www/Mosaic	Do not sell.  Do not distribute
+						binaries.
 mmosaic			ports/www/mmosaic	Do not sell (per NCSA).  Do not
 						distribute binary (GPL/BSD
 						conflict).
