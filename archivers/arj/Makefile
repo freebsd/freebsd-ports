@@ -8,9 +8,8 @@
 PORTNAME=	arj
 PORTVERSION=	3.10g
 CATEGORIES=	archivers
-MASTER_SITES=	${MASTER_SITE_LOCAL} \
-		http://testcase.newmail.ru/files/
-MASTER_SITE_SUBDIR=	osa
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	kot@premierbank.dp.ua
 COMMENT=	Open-source ARJ
@@ -24,6 +23,8 @@ MAKEFILE=	GNUmakefile
 STRIP=
 LANGUAGE?=	en
 MAKE_ENV+=	"LOCALE=${LANGUAGE}"
+INSTALLS_SHLIB=	yes
+LDCONFIG_DIRS=	%%PREFIX%%/lib/arj
 
 MAN1=		arj-register.1 arj.1 arjdisp.1 rearj.1
 
