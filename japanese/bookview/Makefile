@@ -1,32 +1,32 @@
 # New ports collection makefile for:	bookview
-# Version required:		2.2
+# Version required:		2.4.1
 # Date created:			2 Oct 1997
 # Whom:				Motoyuki Kasahara <m-kasahr@sra.co.jp>
 #
-# $Id: Makefile,v 1.2 1999/01/26 02:33:01 steve Exp $
+# $Id: Makefile,v 1.3 1999/03/13 07:30:16 taoka Exp $
 #
 
-DISTNAME=	bookview-2.2.1
-PKGNAME=	ja-bookview-2.2.1
+DISTNAME=	bookview-2.4.1
+PKGNAME=	ja-bookview-2.4.1
 CATEGORIES=	japanese
 MASTER_SITES=	ftp://ftp.sra.co.jp/pub/net/ndtp/bookview/ \
-		ftp://ftp.sra.co.jp/pub/net/ndtp/bookview/old/
+		ftp://ftp.sra.co.jp/pub/net/ndtp/bookview/old/ \
+		ftp://ftp.mei.co.jp/free/others/Dictionary/ndtp/bookview/
 
 MAINTAINER=	takamune@avrl.mei.co.jp
 
-RUN_DEPENDS=	${PREFIX}/bin/wish8.0jp:${PORTSDIR}/japanese/tk80
+RUN_DEPENDS=	wish8.0jp:${PORTSDIR}/japanese/tk80
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	WISH=${PREFIX}/bin/wish8.0jp \
 		INSTALL_SCRIPT="${INSTALL_SCRIPT}" \
 		INSTALL_DATA="${INSTALL_DATA}"
 
-post-install:
-	if [ ! -f ${PREFIX}/info/dir ]; then \
-	  ${SED} -ne '1,/Menu:/p' /usr/share/info/dir > ${PREFIX}/info/dir; \
-	fi
-.for info in bookview bookview-ja
-	install-info ${PREFIX}/info/${info}.info ${PREFIX}/info/dir
-.endfor
+.include <bsd.port.pre.mk>
 
-.include <bsd.port.mk>
+pre-install:
+.if !exists(${PREFIX}/info/dir)
+	${CP} -p ${INFODIR}/dir-tmpl ${PREFIX}/info/dir
+.endif
+
+.include <bsd.port.post.mk>
