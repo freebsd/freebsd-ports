@@ -100,6 +100,7 @@
     SUBDIR += lyx
     SUBDIR += magicfilter
     SUBDIR += makeindex
+    SUBDIR += mapagi
     SUBDIR += mgv
     SUBDIR += mp-a4
     SUBDIR += mp-letter

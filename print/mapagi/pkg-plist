@@ -1,0 +1,7 @@
+bin/mapagi
+%%DOCSDIR%%/COPYING
+%%DOCSDIR%%/ChangeLog
+%%DOCSDIR%%/INSTALL
+%%DOCSDIR%%/README
+%%DOCSDIR%%/TODO
+@dirrm %%DOCSDIR%%
