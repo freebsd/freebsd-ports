@@ -7,16 +7,17 @@
 
 PORTNAME=		streamtuner
 PORTVERSION=		0.10.0
+PORTREVISION=		1
 CATEGORIES=		audio www
 MASTER_SITES=		http://savannah.nongnu.org/download/streamtuner/streamtuner.pkg/${PORTVERSION}/
 
 MAINTAINER=		jylefort@brutele.be
 COMMENT=		A GTK+ stream directory browser
 
-USE_GNOME=		gtk20
 LIB_DEPENDS=		curl:${PORTSDIR}/ftp/curl
 
 USE_X_PREFIX=		yes
+USE_GNOME=		gtk20
 GNU_CONFIGURE=		yes
 
 MAN1=			streamtuner.1 streamtuner-theme-convert.1

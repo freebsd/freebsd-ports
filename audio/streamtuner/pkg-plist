@@ -16,6 +16,7 @@ include/streamtuner/streamtuner.h
 lib/streamtuner/plugins/shoutcast.a
 lib/streamtuner/plugins/shoutcast.la
 lib/streamtuner/plugins/shoutcast.so
+libdata/pkgconfig/streamtuner.pc
 share/applications/streamtuner.desktop
 share/pixmaps/streamtuner.png
 @dirrm include/streamtuner
