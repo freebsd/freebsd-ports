@@ -48,6 +48,8 @@ DAILY_SCRIPTS=	150.exim-tidydb 460.exim-mail-rejects
 
 EXISCAN_VERSION=	${PORTVERSION}-14
 
+PKGINSTALL=	${WRKDIR}/pkg-install
+
 PLIST_SUB+=	EXIM_VERSION="${PORTVERSION}-${PORTREVISION}"
 
 .if defined(NOPORTDOCS)
@@ -59,6 +61,9 @@ PKGMESSAGE=	${WRKDIR}/pkg-message
 MAKE_ENV+=	OSTYPE=${OPSYS} ARCHTYPE=${MACHINE_ARCH} LOCALBASE=${LOCALBASE}
 
 POSTGRESQL_PORT?=	databases/postgresql7
+
+EXIM_USER?=	mailnull
+EXIM_GROUP?=	mail
 
 # If WITH_EXIMON is defined, the eximon monitor, which requires X,
 # will be made a dependency.  Note that using WITH_EXIMON will cause
@@ -174,6 +179,8 @@ PLIST_SUB+=	EXISCAN_ACL="@comment "
 .endif
 
 SEDLIST=	-e 's,XX_PREFIX_XX,${PREFIX},' \
+		-e 's,XX_EXIM_USER_XX,${EXIM_USER},' \
+		-e 's,XX_EXIM_GROUP_XX,${EXIM_GROUP},' \
 		-e 's,XX_LOCALBASE_XX,${LOCALBASE},' \
 		-e 's,XX_DEFAULT_CHARSET_XX,${WITH_DEFAULT_CHARSET},'
 
@@ -340,7 +347,7 @@ SEDLIST+=	-e 's,^\# TRANSPORT_LMTP=,TRANSPORT_LMTP=,'
 .endif
 
 .if defined(WITHOUT_ALT_CONFIG_PREFIX)
-SEDLIST+=	-e 's,^\ALT_CONFIG_PREFIX=,# ALT_CONFIG_PREFIX=,'
+SEDLIST+=	-e 's,^ALT_CONFIG_PREFIX=,\# ALT_CONFIG_PREFIX=,'
 .endif
 
 .include <bsd.port.pre.mk>
@@ -385,6 +392,12 @@ pre-everything::
 do-configure:
 	@${MKDIR} ${WRKSRC}/Local
 	@${SED} ${SEDLIST} ${WRKSRC}/src/EDITME > ${WRKSRC}/Local/Makefile
+	@${SED} -e 's/XX_EXIM_USER_XX/${EXIM_USER}/' \
+		-e 's/XX_EXIM_GROUP_XX/${EXIM_GROUP}/' \
+		< ${PKGDIR}/pkg-install > ${PKGINSTALL}
+	@${REINPLACE_CMD} -e 's/XX_EXIM_USER_XX/${EXIM_USER}/' \
+			  -e 's/XX_EXIM_GROUP_XX/${EXIM_GROUP}/' \
+		${WRKSRC}/src/configure.default
 	@${REINPLACE_CMD} -e 's/"(Exim $$version_number)\\n\\t"/"(Exim $$version_number; ${OPSYS})\\n\\t"/' \
 		${WRKSRC}/src/globals.c
 	@${REINPLACE_CMD} -e 's/^#include "cnumber\.h"$$/${PORTREVISION}/' ${WRKSRC}/src/version.c

@@ -1,5 +1,5 @@
 --- src/EDITME.orig	Mon Dec  1 12:15:41 2003
-+++ src/EDITME	Tue Jan  6 12:04:13 2004
++++ src/EDITME	Mon Jan 12 12:36:43 2004
 @@ -98,7 +98,7 @@
  # /usr/local/sbin. The installation script will try to create this directory,
  # and any superior directories, if they do not exist.
@@ -23,7 +23,7 @@
  # discouraged.
  
 -EXIM_USER=
-+EXIM_USER=ref:mailnull
++EXIM_USER=ref:XX_EXIM_USER_XX
  
  # If you specify EXIM_USER as a name, this is looked up at build time, and the
  # uid number is built into the binary. However, you can specify that this
@@ -32,7 +32,7 @@
  # you want to use a group other than the default group for the given user.
  
 -# EXIM_GROUP=
-+EXIM_GROUP=mail
++EXIM_GROUP=XX_EXIM_GROUP_XX
  
  # Many sites define a user called "exim", with an appropriate default group,
  # and use

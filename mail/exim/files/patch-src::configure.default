@@ -13,8 +13,8 @@
  # were a normal user. This isn't usually a problem, as most sites have an alias
  # for root that redirects such mail to a human administrator.
  
-+exim_user = mailnull
-+exim_group = mail
++exim_user = XX_EXIM_USER_XX
++exim_group = XX_EXIM_GROUP_XX
  never_users = root
  
  
@@ -23,8 +23,8 @@
    allow_defer
    data = ${lookup{$local_part}lsearch{SYSTEM_ALIASES_FILE}}
 -# user = exim
-+  user = mailnull
-+  group = mail
++  user = XX_EXIM_USER_XX
++  group = XX_EXIM_GROUP_XX
    file_transport = address_file
    pipe_transport = address_pipe
  
@@ -42,7 +42,7 @@
    return_path_add
 -# group = mail
 -# mode = 0660
-+  group = mail
++  group = XX_EXIM_GROUP_XX
 +  user = $local_part
 +  mode = 0660
 +  no_mode_fail_narrower
