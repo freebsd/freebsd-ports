@@ -360,6 +360,7 @@
     SUBDIR += userlist
     SUBDIR += usermin
     SUBDIR += userneu
+    SUBDIR += userneu-devel
     SUBDIR += utcount
     SUBDIR += uwatch
     SUBDIR += vcp
