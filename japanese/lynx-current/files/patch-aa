@@ -1,6 +1,6 @@
---- makefile.in.orig	Fri Nov  6 23:29:41 1998
-+++ makefile.in	Tue Nov 10 23:38:26 1998
-@@ -41,10 +41,10 @@
+--- makefile.in.orig	Wed Feb 17 23:29:33 1999
++++ makefile.in	Mon Feb 22 15:42:17 1999
+@@ -43,10 +43,10 @@
  libdir= @libdir@
  
  ## Where you want the doc-files installed
@@ -11,13 +11,5 @@
 -helpdir= @libdir@/lynx_help
 +helpdir= $(prefix)/lib/lynx_help
  
- ##set the relative location of the WWW library Implementation directory,
- ##from this directory
-@@ -262,6 +262,7 @@
- 	(cd $(srcdir) && tar cf - C[HO]* PROBLEMS README samples test ) | \
- 			       ( cd $(docdir) && tar xf - )
- 	-rm -f $(libdir)/lynx.tmp
-+	cp $(srcdir)/lynx.cfg $(docdir)/samples/lynx.cfg
- 
- # HPUX 'sed' does not seem to like '=' as pattern delimiter.
- FIX_SED = tr '=' '%'
+ ## Where your locale data is
+ # datadir = @datadir@
