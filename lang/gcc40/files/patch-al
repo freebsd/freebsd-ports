@@ -1,5 +1,5 @@
 --- gcc/configure.in.orig	Sun Mar  7 16:22:22 1999
-+++ gcc/configure.in	Sat Mar 13 19:23:23 1999
++++ gcc/configure.in	Sat Mar 20 00:40:58 1999
 @@ -416,6 +416,15 @@
   			thread_file='posix'
   		fi
@@ -27,18 +27,20 @@
  		# On FreeBSD, the headers are already ok, except for math.h.
  		fixincludes=fixinc.wrap
 -		extra_parts="crtbegin.o crtbeginS.o crtend.o crtendS.o"
- 		tmake_file=i386/t-freebsd
+-		tmake_file=i386/t-freebsd
 -		gas=yes
 -		gnu_ld=yes
 -		stabs=yes
++		tmake_file=t-freebsd
  		;;
  	i[[34567]]86-*-freebsd*)
 -		tm_file=i386/freebsd.h
 +		tm_file="i386/i386.h i386/att.h linux.h i386/freebsd.h i386/perform.h"
  		# On FreeBSD, the headers are already ok, except for math.h.
  		fixincludes=fixinc.wrap
+-		tmake_file=i386/t-freebsd
 +		extra_parts="crtbegin.o crtbeginS.o crtend.o crtendS.o"
- 		tmake_file=i386/t-freebsd
++		tmake_file=t-freebsd
 +		gas=yes
 +		gnu_ld=yes
 +		stabs=yes

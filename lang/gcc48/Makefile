@@ -4,7 +4,7 @@
 # Date created:				9 Jan 1998
 # Whom:					John Polstra <jdp@polstra.com>
 #
-# $Id: Makefile,v 1.48 1999/03/08 07:28:27 asami Exp $
+# $Id: Makefile,v 1.50 1999/03/17 00:40:25 obrien Exp $
 #
 
 DISTNAME=	egcs-1.1.2
@@ -55,21 +55,20 @@ ALL_TARGET=	bootstrap
 MAN1=		cccp.1 g++.1 g77.1 gcc.1
 
 pre-patch:
+	@${MV} ${WRKSRC}/gcc/config/i386/t-freebsd ${WRKSRC}/gcc/config/
 	@${MV} ${WRKSRC}/gcc/config/i386/freebsd.h ${WRKSRC}/gcc/config/i386/freebsd-aout.h
 	@${MV} ${WRKSRC}/gcc/config/i386/freebsd-elf.h ${WRKSRC}/gcc/config/i386/freebsd.h
+	@${CP} ${FILESDIR}/alpha-freebsd-elf.h ${WRKSRC}/gcc/config/alpha/freebsd-elf.h
+	@${CP} ${FILESDIR}/alpha-freebsd.h ${WRKSRC}/gcc/config/alpha/freebsd.h
 
 pre-configure:
 	@# Keep from running `autoconf' and `autoheader' since we modified
 	@# configure.in by patching it.
 	@touch ${WRKSRC}/gcc/configure
 	@touch ${WRKSRC}/gcc/cstamp-h.in
-	@(cd ${WRKSRC}/gcc/config/${ARCH}/ ; \
-	MAJ=`sysctl -n kern.osreldate | ${SED} -e '/.....$$/s///'` ; \
-	${MV} freebsd-aout.h freebsd-aout.h.in ; \
-	${SED} -e "s:__FreeBSD__:__FreeBSD__=$${MAJ}:" freebsd-aout.h.in \
-		>freebsd-aout.h ; \
-	${MV} freebsd.h freebsd.h.in ; \
-	${SED} -e "s:__FreeBSD__:__FreeBSD__=$${MAJ}:" freebsd.h.in >freebsd.h )
+	@(MAJ=`sysctl -n kern.osreldate | ${SED} -e '/.....$$/s///'` ; \
+	${SED} -e "s:__FreeBSD__:__FreeBSD__=$${MAJ}:" ${FILESDIR}/freebsd.h \
+		>${WRKSRC}/gcc/config/freebsd.h )
 .if ${PORTOBJFORMAT} == "elf" && ${MACHINE_ARCH} == "i386"
 	@${SED} -e 's/^@comment ELF-only://' ${PKGDIR}/PLIST >${PLIST}
 .endif
