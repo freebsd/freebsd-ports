@@ -151,6 +151,7 @@
     SUBDIR += labrea
     SUBDIR += lcrzo
     SUBDIR += lcrzoex
+    SUBDIR += lep
     SUBDIR += libassuan
     SUBDIR += libbf
     SUBDIR += libecc
