@@ -6,11 +6,9 @@
 #
 
 PORTNAME=	frozenbubble
-PORTVERSION=	0.9.3
-PORTREVISION=	5
+PORTVERSION=	1.0.0
 CATEGORIES=	games
-MASTER_SITES=	http://people.mandrakesoft.com/~gc/fb/ \
-		http://frozenbubble.free.fr/fb/
+MASTER_SITES=	http://zarb.org/~gc/fb//
 DISTNAME=	frozen-bubble-${PORTVERSION}
 EXTRACT_SUFX=	.tar.bz2
 
@@ -35,19 +33,19 @@ PERL_CONFIGURE=	yes
 post-patch:
 .for file in fb_c_stuff.xs Makefile.PL
 	@${REINPLACE_CMD} -e 's|SDL/|SDL11/|g'  ${WRKSRC}/${file}
-	@${REINPLACE_CMD} -e 's|sdl-config|\${SDL_CONFIG}|g' ${WRKSRC}/Makefile.PL
 .endfor
+	@${REINPLACE_CMD} -e 's|sdl-config|\${SDL_CONFIG}|g' ${WRKSRC}/Makefile.PL
+	@${RM} ${WRKSRC}/lib/FBLE.pm.orig
 
 do-install:
 	cd ${WRKSRC}; ${GMAKE} install
-	@${INSTALL_SCRIPT} ${BUILD_WRKSRC}/binaries_installpathok/frozen-bubble ${PREFIX}/bin/frozen-bubble.pl
+	@${INSTALL_SCRIPT} ${BUILD_WRKSRC}/frozen-bubble ${PREFIX}/bin/frozen-bubble.pl
 
 	@${MKDIR} ${PREFIX}/share/frozen-bubble/
 	@${MKDIR} ${PREFIX}/share/frozen-bubble/data
 	@${MKDIR} ${PREFIX}/share/frozen-bubble/snd
 	@${MKDIR} ${PREFIX}/share/frozen-bubble/gfx
 	@${MKDIR} ${PREFIX}/share/frozen-bubble/gfx/balls
-	@${MKDIR} ${PREFIX}/share/frozen-bubble/gfx/intro
 	@${MKDIR} ${PREFIX}/share/frozen-bubble/gfx/pinguins
 	@${MKDIR} ${PREFIX}/share/frozen-bubble/gfx/shoot
 	@${MKDIR} ${PREFIX}/share/frozen-bubble/gfx/menu
@@ -55,16 +53,15 @@ do-install:
 	@${INSTALL_DATA} ${BUILD_WRKSRC}/data/levels  ${PREFIX}/share/frozen-bubble/data/
 	@${INSTALL_DATA} ${BUILD_WRKSRC}/data/plasma.raw  ${PREFIX}/share/frozen-bubble/data/
 	@${INSTALL_DATA} ${BUILD_WRKSRC}/gfx/*.png  ${PREFIX}/share/frozen-bubble/gfx/
+	@${INSTALL_DATA} ${BUILD_WRKSRC}/gfx/*.gif  ${PREFIX}/share/frozen-bubble/gfx/
 	@${INSTALL_DATA} ${BUILD_WRKSRC}/gfx/balls/*.png  ${PREFIX}/share/frozen-bubble/gfx/balls/
 	@${INSTALL_DATA} ${BUILD_WRKSRC}/gfx/balls/*.gif  ${PREFIX}/share/frozen-bubble/gfx/balls/
-	@${INSTALL_DATA} ${BUILD_WRKSRC}/gfx/intro/*.png  ${PREFIX}/share/frozen-bubble/gfx/intro/
 	@${INSTALL_DATA} ${BUILD_WRKSRC}/gfx/pinguins/*.png  ${PREFIX}/share/frozen-bubble/gfx/pinguins/
 	@${INSTALL_DATA} ${BUILD_WRKSRC}/gfx/shoot/data ${PREFIX}/share/frozen-bubble/gfx/shoot/
 	@${INSTALL_DATA} ${BUILD_WRKSRC}/gfx/shoot/*.png  ${PREFIX}/share/frozen-bubble/gfx/shoot/
 	@${INSTALL_DATA} ${BUILD_WRKSRC}/gfx/menu/*.png  ${PREFIX}/share/frozen-bubble/gfx/menu/
 	@${INSTALL_DATA} ${BUILD_WRKSRC}/snd/*.wav  ${PREFIX}/share/frozen-bubble/snd/
 	@${INSTALL_DATA} ${BUILD_WRKSRC}/snd/*.xm  ${PREFIX}/share/frozen-bubble/snd/
-	@${INSTALL_DATA} ${BUILD_WRKSRC}/highscores.default  ${PREFIX}/share/frozen-bubble/
 
 	@printf '#!/bin/sh\nLD_PRELOAD=/usr/lib/libc_r.so perl ${PREFIX}/bin/frozen-bubble.pl $@' > ${WRKSRC}/frozen-bubble
 	@${INSTALL_SCRIPT} ${WRKSRC}/frozen-bubble ${PREFIX}/bin

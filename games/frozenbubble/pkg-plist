@@ -4,9 +4,10 @@ bin/frozen-bubble
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/fb_c_stuff/fb_c_stuff.bs
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/fb_c_stuff/.packlist
 %%SITE_PERL%%/%%PERL_ARCH%%/build_fbsyms
+%%SITE_PERL%%/%%PERL_ARCH%%/FBLE.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/fb_c_stuff.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/fb_stuff.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/fbsyms.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/fbmdkcommon.pm
 share/frozen-bubble/data/levels
 share/frozen-bubble/data/plasma.raw
 share/frozen-bubble/snd/applause.wav
@@ -55,28 +56,6 @@ share/frozen-bubble/gfx/balls/bubble-colourblind-5.gif
 share/frozen-bubble/gfx/balls/bubble-colourblind-6.gif
 share/frozen-bubble/gfx/balls/bubble-colourblind-7.gif
 share/frozen-bubble/gfx/balls/bubble-colourblind-8.gif
-share/frozen-bubble/gfx/intro/back_intro.png
-share/frozen-bubble/gfx/intro/intro_1.png
-share/frozen-bubble/gfx/intro/intro_10.png
-share/frozen-bubble/gfx/intro/intro_11.png
-share/frozen-bubble/gfx/intro/intro_12.png
-share/frozen-bubble/gfx/intro/intro_13.png
-share/frozen-bubble/gfx/intro/intro_14.png
-share/frozen-bubble/gfx/intro/intro_15.png
-share/frozen-bubble/gfx/intro/intro_16.png
-share/frozen-bubble/gfx/intro/intro_17.png
-share/frozen-bubble/gfx/intro/intro_18.png
-share/frozen-bubble/gfx/intro/intro_19.png
-share/frozen-bubble/gfx/intro/intro_2.png
-share/frozen-bubble/gfx/intro/intro_3.png
-share/frozen-bubble/gfx/intro/intro_4.png
-share/frozen-bubble/gfx/intro/intro_5.png
-share/frozen-bubble/gfx/intro/intro_6.png
-share/frozen-bubble/gfx/intro/intro_7.png
-share/frozen-bubble/gfx/intro/intro_8.png
-share/frozen-bubble/gfx/intro/intro_9.png
-share/frozen-bubble/gfx/intro/txt_bubble.png
-share/frozen-bubble/gfx/intro/txt_frozen.png
 share/frozen-bubble/gfx/pinguins/action_p1.png
 share/frozen-bubble/gfx/pinguins/action_p2.png
 share/frozen-bubble/gfx/pinguins/base_p1.png
@@ -230,6 +209,7 @@ share/frozen-bubble/gfx/shoot/shooter.png
 share/frozen-bubble/gfx/menu/back_start.png
 share/frozen-bubble/gfx/menu/banner_artwork.png
 share/frozen-bubble/gfx/menu/banner_cpucontrol.png
+share/frozen-bubble/gfx/menu/banner_leveleditor.png
 share/frozen-bubble/gfx/menu/banner_soundtrack.png
 share/frozen-bubble/gfx/menu/small_ping.png
 share/frozen-bubble/gfx/menu/txt_1pgame_off.png
@@ -240,6 +220,8 @@ share/frozen-bubble/gfx/menu/txt_box_checked.png
 share/frozen-bubble/gfx/menu/txt_box_unchecked.png
 share/frozen-bubble/gfx/menu/txt_circle_full.png
 share/frozen-bubble/gfx/menu/txt_circle_void.png
+share/frozen-bubble/gfx/menu/txt_editor_off.png
+share/frozen-bubble/gfx/menu/txt_editor_over.png
 share/frozen-bubble/gfx/menu/txt_fullscreen_act_off.png
 share/frozen-bubble/gfx/menu/txt_fullscreen_act_over.png
 share/frozen-bubble/gfx/menu/txt_fullscreen_off.png
@@ -261,6 +243,7 @@ share/frozen-bubble/gfx/menu/txt_sound_act_off.png
 share/frozen-bubble/gfx/menu/txt_sound_act_over.png
 share/frozen-bubble/gfx/menu/txt_sound_off.png
 share/frozen-bubble/gfx/menu/txt_sound_over.png
+share/frozen-bubble/gfx/menu/version.png
 share/frozen-bubble/gfx/menu/void_panel.png
 share/frozen-bubble/gfx/back_hiscores.png
 share/frozen-bubble/gfx/back_one_player.png
@@ -269,27 +252,36 @@ share/frozen-bubble/gfx/backgrnd.png
 share/frozen-bubble/gfx/banane.png
 share/frozen-bubble/gfx/compressor_ext.png
 share/frozen-bubble/gfx/compressor_main.png
+share/frozen-bubble/gfx/file_list_background.png
+share/frozen-bubble/gfx/font-hi.png
 share/frozen-bubble/gfx/font.png
 share/frozen-bubble/gfx/hiscore_frame.png
+share/frozen-bubble/gfx/hover.gif
 share/frozen-bubble/gfx/hurry_p1.png
 share/frozen-bubble/gfx/hurry_p2.png
+share/frozen-bubble/gfx/level_editor.png
+share/frozen-bubble/gfx/list_arrow_down.png
+share/frozen-bubble/gfx/list_arrow_up.png
 share/frozen-bubble/gfx/loading.png
 share/frozen-bubble/gfx/loading_step.png
+share/frozen-bubble/gfx/loadingpreviews.png
 share/frozen-bubble/gfx/lose_panel.png
 share/frozen-bubble/gfx/on_top_next.png
+share/frozen-bubble/gfx/pause_1.png
 share/frozen-bubble/gfx/pause_2.png
 share/frozen-bubble/gfx/pause_3.png
 share/frozen-bubble/gfx/pause_4.png
 share/frozen-bubble/gfx/pause_5.png
+share/frozen-bubble/gfx/purple_hover.gif
+share/frozen-bubble/gfx/scroll_list_background.png
 share/frozen-bubble/gfx/tomate.png
+share/frozen-bubble/gfx/win_panel_1player.png
 share/frozen-bubble/gfx/win_panel_p1.png
 share/frozen-bubble/gfx/win_panel_p2.png
-share/frozen-bubble/highscores.default
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/fb_c_stuff
 @dirrm share/frozen-bubble/data
 @dirrm share/frozen-bubble/snd
 @dirrm share/frozen-bubble/gfx/balls
-@dirrm share/frozen-bubble/gfx/intro
 @dirrm share/frozen-bubble/gfx/pinguins
 @dirrm share/frozen-bubble/gfx/shoot
 @dirrm share/frozen-bubble/gfx/menu
