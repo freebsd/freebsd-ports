@@ -5,18 +5,13 @@
 # $FreeBSD$
 #
 
-PORTNAME=	skk-jisyo-cdb
-
-MAINTAINER=	toru@tkd.ne.jp
+MAINTAINER=	matusita@FreeBSD.org
 COMMENT=	CDB jisyo (dictionary) files for the SKK Japanese-input software
 
-SKK_JISYO_SUFFIX=	.cdb
-
-BROKEN=		Broken distinfo
+WITH_SKKJISYO_CDB=	yes
 
 MASTERDIR=	${.CURDIR}/../skk-jisyo
 
-MD5_FILE=	${.CURDIR}/distinfo
 DESCR=		${.CURDIR}/pkg-descr
 
 .include "${MASTERDIR}/Makefile"
