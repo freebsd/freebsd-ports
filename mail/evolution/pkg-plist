@@ -123,6 +123,7 @@ include/evolution-%%VERSION%%/camel/camel-imap-utils.h
 include/evolution-%%VERSION%%/camel/camel-imap-wrapper.h
 include/evolution-%%VERSION%%/camel/camel-index.h
 include/evolution-%%VERSION%%/camel/camel-internet-address.h
+include/evolution-%%VERSION%%/camel/camel-io.h
 include/evolution-%%VERSION%%/camel/camel-local-folder.h
 include/evolution-%%VERSION%%/camel/camel-local-store.h
 include/evolution-%%VERSION%%/camel/camel-local-summary.h
@@ -425,7 +426,6 @@ libexec/evolution/%%VERSION%%/csv2vcard
 libexec/evolution/%%VERSION%%/evolution-addressbook-clean
 libexec/evolution/%%VERSION%%/evolution-addressbook-import
 libexec/evolution/%%VERSION%%/evolution-alarm-notify
-libexec/evolution/%%VERSION%%/evolution-launch-composer
 libexec/evolution/%%VERSION%%/evolution-ldif-importer
 libexec/evolution/%%VERSION%%/evolution-vcard-importer
 libexec/evolution/%%VERSION%%/evolution-wombat
@@ -1248,6 +1248,8 @@ share/locale/ro/LC_MESSAGES/evolution-1.4.mo
 share/locale/ru/LC_MESSAGES/evolution-1.4.mo
 share/locale/sk/LC_MESSAGES/evolution-1.4.mo
 share/locale/sl/LC_MESSAGES/evolution-1.4.mo
+share/locale/sr/LC_MESSAGES/evolution-1.4.mo
+share/locale/sr@Latn/LC_MESSAGES/evolution-1.4.mo
 share/locale/sv/LC_MESSAGES/evolution-1.4.mo
 share/locale/tr/LC_MESSAGES/evolution-1.4.mo
 share/locale/uk/LC_MESSAGES/evolution-1.4.mo
@@ -1302,6 +1304,7 @@ share/locale/zh_TW/LC_MESSAGES/evolution-1.4.mo
 @dirrm share/gnome/evolution/%%VERSION%%/default_user
 @dirrm share/gnome/evolution/%%VERSION%%
 @dirrm share/gnome/evolution
+@dirrm libexec/evolution/%%VERSION%%/camel
 @dirrm libexec/evolution/%%VERSION%%
 @dirrm libexec/evolution
 @dirrm lib/evolution/%%VERSION%%/evolution-mail-importers
