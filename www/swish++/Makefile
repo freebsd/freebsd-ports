@@ -7,11 +7,11 @@
 #
 
 PORTNAME=	swish++
-PORTVERSION=	5.9.4
+PORTVERSION=	5.9.5
 CATEGORIES=	www textproc
 MASTER_SITES=	http://homepage.mac.com/pauljlucas/software/
 
-MAINTAINER=	obraun@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 
 RUN_DEPENDS=	wget:${PORTSDIR}/ftp/wget
 
