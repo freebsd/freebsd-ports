@@ -221,6 +221,7 @@
     SUBDIR += kbilliards
     SUBDIR += kcheckers
     SUBDIR += kdegames3
+    SUBDIR += kfreerings
     SUBDIR += klondike
     SUBDIR += knights
     SUBDIR += kobodeluxe
