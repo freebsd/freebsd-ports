@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	neon
-PORTVERSION=	0.22.0
+PORTVERSION=	0.23.5
 CATEGORIES=	www
 MASTER_SITES=	http://www.webdav.org/neon/
 
-MAINTAINER=	rooneg@electricjellyfish.net
+MAINTAINER=	rodrigc@attbi.com
 
 LIB_DEPENDS=	expat.4:${PORTSDIR}/textproc/expat2
 
@@ -26,7 +26,9 @@ CONFIGURE_ARGS=	--with-ssl \
 CONFIGURE_TARGET=	--target=${MACHINE_ARCH}-unknown-freebsd${OSREL}
 
 MAN1=	neon-config.1
-MAN3=	ne_add_request_header.3 ne_buffer.3 ne_buffer_altered.3 \
+MAN3=	ne_add_request_header.3 ne_addr_destroy.3 ne_addr_error.3 \
+	ne_addr_first.3 ne_addr_next.3 ne_addr_print.3 ne_addr_resolve.3 \
+	ne_addr_result.3 ne_buffer.3 ne_buffer_altered.3 \
 	ne_buffer_append.3 ne_buffer_clear.3 ne_buffer_concat.3 \
 	ne_buffer_create.3 ne_buffer_destroy.3 ne_buffer_finish.3 \
 	ne_buffer_grow.3 ne_buffer_ncreate.3 ne_buffer_zappend.3 \
@@ -38,18 +40,20 @@ MAN3=	ne_add_request_header.3 ne_buffer.3 ne_buffer_altered.3 \
 	ne_set_error.3 ne_set_expect100.3 ne_set_persist.3 \
 	ne_set_proxy_auth.3 ne_set_read_timeout.3 \
 	ne_set_request_body_buffer.3 ne_set_request_body_fd.3 \
-	ne_set_server_auth.3 ne_set_useragent.3 ne_shave.3 \
+	ne_set_server_auth.3 ne_set_useragent.3 ne_shave.3 ne_sock_init.3 \
 	ne_ssl_certificate.3 ne_ssl_dname.3 ne_ssl_load_ca.3 \
 	ne_ssl_load_default_ca.3 ne_ssl_readable_dname.3 \
 	ne_ssl_set_verify.3 ne_status.3 ne_strdup.3 ne_strndup.3 \
-	ne_token.3
+	ne_token.3 ne_version_match.3 ne_version_string.3 neon.3
+
+PLIST_SUB+=	PORTVERSION=${PORTVERSION} 
 
 post-install:
-	${INSTALL_MAN} ${WRKSRC}/doc/man/*.1 ${PREFIX}/man/man1
-	${INSTALL_MAN} ${WRKSRC}/doc/man/*.3 ${PREFIX}/man/man3
+	${INSTALL_MAN} ${WRKSRC}/doc/man/*.1 ${MANPREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/doc/man/*.3 ${MANPREFIX}/man/man3
 .ifndef NOPORTDOCS
-	${MKDIR} ${PREFIX}/share/doc/neon
-	${INSTALL_DATA} ${WRKSRC}/doc/using-neon.txt ${PREFIX}/share/doc/neon
+	(cd ${WRKSRC} ; ${MAKE} install-html)
+	${INSTALL_DATA} ${WRKSRC}/doc/using-neon.txt ${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>
