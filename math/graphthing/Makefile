@@ -11,7 +11,7 @@ PORTVERSION=	0.7
 CATEGORIES=	math
 MASTER_SITES=	http://members.optushome.com.au/davidsymonds/gt/
 
-MAINTAINER=	freebsdports@arved.de
+MAINTAINER=	arved@FreeBSD.org
 
 LIB_DEPENDS=	intl.4:${PORTSDIR}/devel/gettext \
 		gtkmm.2:${PORTSDIR}/x11-toolkits/gtk--
