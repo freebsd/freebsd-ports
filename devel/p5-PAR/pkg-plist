@@ -1,0 +1,12 @@
+bin/parl
+bin/pp
+bin/par.pl
+%%SITE_PERL%%/App/Packer/PAR.pm
+%%SITE_PERL%%/PAR.pm
+%%SITE_PERL%%/PAR/Heavy.pm
+%%SITE_PERL%%/PAR/Intro.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/PAR/.packlist
+@dirrm %%SITE_PERL%%/App/Packer
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/PAR
+@unexec rmdir %D/%%SITE_PERL%%/App 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/PAR 2>/dev/null || true
