@@ -1,0 +1,11 @@
+--- interpreter.c.orig	Tue Aug 21 06:48:06 2001
++++ interpreter.c	Tue Aug 21 06:48:30 2001
+@@ -83,7 +83,7 @@
+ #include <sys/stat.h>
+ #include <sys/time.h>
+ #include <fcntl.h>
+-#include <getopt.h>
++/*#include <getopt.h>*/
+ 
+ #include "version.h"
+ #include "psystem.h"

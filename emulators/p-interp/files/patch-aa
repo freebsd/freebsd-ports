@@ -1,0 +1,31 @@
+--- Makefile.orig	Sun Jun 10 13:40:04 2001
++++ Makefile	Tue Aug 21 07:07:13 2001
+@@ -61,13 +61,13 @@
+ #
+ #
+ 
+-PREFIX=/usr/local
++#PREFIX=/usr/local
+ 
+ SRCS=interpreter.c Memory.c Stack.c Sets.c Array.c native6502.c Longint.c \
+ 	UnitIo.c Term.c Diskio.c Printer.c Search.c turtlegr.c ptrace.c
+ OBJS=$(SRCS:%.c=%.o)
+ 
+-X11=/opt/X11
++X11=${X11BASE}
+ 
+ X11_INCLUDE=$(X11)/include
+ X11_LIB=$(X11)/lib
+@@ -105,10 +105,10 @@
+ 	$(CC) -o $@ -g xturtleserver.c -I$(X11_INCLUDE) -L$(X11_LIB) -R$(X11_LIB) -lXt -lX11 -lm
+ 
+ ucsd: $(OBJS)
+-	$(CC) -o $@ $(OBJS) -lncurses_g -lm
++	$(CC) -o $@ $(OBJS) -lncurses -lm
+ 
+ svolio: svolio.o Diskio.o Memory.o
+-	$(CC) -o $@ $+ -lcurses
++	$(CC) -o $@ $> -lcurses
+ 
+ depend: 
+ 	$(MAKEDEPEND) -DMAKEDEPEND $(INCLUDES) $(DEFINES) $(SRCS) svolio.c svolcvt.c xturtleserver.c

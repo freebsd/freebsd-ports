@@ -33,6 +33,7 @@
     SUBDIR += mastergear
     SUBDIR += mtools
     SUBDIR += osf1_base
+    SUBDIR += p-interp
     SUBDIR += pcemu
     SUBDIR += prodosemu
     SUBDIR += qcl

@@ -1,0 +1,9 @@
+From the man page:
+
+DESCRIPTION
+     This is the second public release of my P-code interpreter. It does allow
+     to run Apple Pascal (an ancient programming environment) on todays com-
+     puter systems. Although I did many improvements to this code after my
+     first release, it still is experimental code.
+
+WWW: http://www.klebsch.de/
