@@ -2180,6 +2180,7 @@ gctpc		ports/misc/gctpc
 gcursor		ports/x11/gcursor
 gcvs		ports/devel/gcvs
 gd		ports/graphics/gd
+gd-aspell	ports/textproc/gd-aspell
 gd1		ports/graphics/gd1
 gdal		ports/graphics/gdal
 gdam		ports/audio/gdam
