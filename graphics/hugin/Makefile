@@ -28,6 +28,7 @@ RUN_DEPENDS=	PTOptimizer:${PORTSDIR}/graphics/libpano12 \
 WRKSRC=		${WRKDIR}/hugin
 HAS_CONFIGURE=	yes
 USE_GMAKE=	yes
+USE_IMAKE=	yes
 
 DOCSDIR=        ${PREFIX}/share/hugin/xrc/data
 
