@@ -1,11 +1,11 @@
---- src/Makefile.orig	Thu Nov  8 14:34:21 2001
-+++ src/Makefile	Thu Nov  8 14:34:51 2001
-@@ -7,7 +7,7 @@
- DOWNLOADOBJS = skipdownload.o
- PROG = skipstone
- BINARY = skipstone-bin
+--- src/Makefile.orig	Thu Apr 18 00:49:56 2002
++++ src/Makefile	Thu Apr 18 00:50:25 2002
+@@ -12,7 +12,7 @@
+ ifeq ($(freebsd),1)
+ LIBS = $(GTK_LIBS) $(MOZILLA_LIBS) -lc_r
+ else
 -LIBS = $(GTK_LIBS) $(MOZILLA_LIBS) -lpthread
 +LIBS = $(GTK_LIBS) $(MOZILLA_LIBS) -pthread
+ endif
  
  LOCALEDIR ?= /usr/share/locale
- export LOCALEDIR
