@@ -20,6 +20,10 @@ DISTFILES=	OOo_${PORTVERSION}_source.tar.bz2 gpc231.tar.Z \
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} > 500000
+#
+# OO is still broken with the system gcc on CURRENT.
+#
+USE_GCC=3.1
 .if defined(USE_GCC) && ${USE_GCC} == 3.1
 #
 # We depend on the port. System g++ is broken at the moment.
