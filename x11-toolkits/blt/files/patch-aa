@@ -1,5 +1,5 @@
 --- configure.orig	Tue Aug 18 21:10:09 1998
-+++ configure	Wed Oct 14 00:04:15 1998
++++ configure	Tue Oct 20 22:42:43 1998
 @@ -2298,6 +2298,9 @@
   $blt_ckcmd_tcl_home \
   $blt_ckcmd_tcl_home/lib \
@@ -47,7 +47,7 @@
      if test "$test_ok" = yes; then
        SHLIB_CFLAGS="-fpic"
        SHLIB_LD="ld"
--      SHLIB_LD_FLAGS="-Bshared -x"
+-      SHLIB_LD_FLAGS="-Bshareable -x"
 -      SHLIB_SUFFIX=".so"
 +      if test `objformat` = "elf"; then
 +        SHLIB_LD_FLAGS="-Bshareable -x -soname \$@"
