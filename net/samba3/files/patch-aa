@@ -1,5 +1,5 @@
---- Makefile.in.orig	Fri Jan 15 05:07:20 1999
-+++ Makefile.in	Fri Jan 15 22:47:59 1999
+--- Makefile.in.orig	Sun Feb  7 07:51:43 1999
++++ Makefile.in	Sun Feb  7 22:09:39 1999
 @@ -23,9 +23,7 @@
  
  BASEDIR= @prefix@
@@ -23,24 +23,22 @@
  CONFIGFILE = $(LIBDIR)/smb.conf
  LMHOSTSFILE = $(LIBDIR)/lmhosts
  DRIVERFILE = $(LIBDIR)/printers.def
-@@ -52,7 +51,10 @@
- SWATDIR = @swatdir@
- 
+@@ -53,6 +52,9 @@
  # the directory where lock files go
--LOCKDIR = $(VARDIR)/locks
-+LOCKDIR = $(VARDIR)/spool/lock
-+
+ LOCKDIR = @lockdir@
+ 
 +# the directory where pid files go
 +PIDFILEDIR = $(VARDIR)/run
- 
++
  # The directory where code page definition files go
  CODEPAGEDIR = $(LIBDIR)/codepages
-@@ -71,7 +73,7 @@
- PASSWD_FLAGS = -DPASSWD_PROGRAM=\"$(PASSWD_PROGRAM)\" -DSMB_PASSWD_FILE=\"$(SMB_PASSWD_FILE)\" -DSMB_PASSWD_PROGRAM=\"$(SMB_PASSWD_PROGRAM)\"
+ 
+@@ -70,7 +72,7 @@
+ PASSWD_FLAGS = -DPASSWD_PROGRAM=\"$(PASSWD_PROGRAM)\" -DSMB_PASSWD_FILE=\"$(SMB_PASSWD_FILE)\"
  FLAGS1 = $(CFLAGS) -Iinclude -I$(srcdir)/include -I$(srcdir)/ubiqx -I$(srcdir)/smbwrapper $(CPPFLAGS) -DSMBLOGFILE=\"$(SMBLOGFILE)\" -DNMBLOGFILE=\"$(NMBLOGFILE)\"
  FLAGS2 = -DCONFIGFILE=\"$(CONFIGFILE)\" -DLMHOSTSFILE=\"$(LMHOSTSFILE)\"  
 -FLAGS3 = -DSWATDIR=\"$(SWATDIR)\" -DSBINDIR=\"$(SBINDIR)\" -DLOCKDIR=\"$(LOCKDIR)\" -DSMBRUN=\"$(SMBRUN)\" -DCODEPAGEDIR=\"$(CODEPAGEDIR)\"
 +FLAGS3 = -DSWATDIR=\"$(SWATDIR)\" -DSBINDIR=\"$(SBINDIR)\" -DLOCKDIR=\"$(LOCKDIR)\" -DPIDFILEDIR=\"$(PIDFILEDIR)\" -DSMBRUN=\"$(SMBRUN)\" -DCODEPAGEDIR=\"$(CODEPAGEDIR)\"
  FLAGS4 = -DDRIVERFILE=\"$(DRIVERFILE)\" -DBINDIR=\"$(BINDIR)\"
  FLAGS5 = $(FLAGS1) $(FLAGS2) $(FLAGS3) $(FLAGS4) -DHAVE_INCLUDES_H
- FLAGS  = $(FLAGS5) $(PASSWD_FLAGS)
+ FLAGS  = $(ISA) $(FLAGS5) $(PASSWD_FLAGS)
