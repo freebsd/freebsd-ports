@@ -9,6 +9,8 @@
     SUBDIR += collections
     SUBDIR += cos
     SUBDIR += cryptix-jce
+    SUBDIR += diablo-jdk13
+    SUBDIR += diablo-jre13
     SUBDIR += eclipse
     SUBDIR += eclipse-examples
     SUBDIR += eclipse-gef
