@@ -1,86 +1,50 @@
-# New ports collection makefile for:	pLaTeX
-# Version required:	?
-# Date created:		5 Nov 1995
-# Whom:			Hideaki Ohmon <ohmon@sfc.keio.ac.jp>
+# New ports collection makefile for:	platex2e-common
+# Version required:		<1997/07/02>+2
+# Date created:			05 Oct 1997
+# Whom:				Masafumi NAKANE <max@FreeBSD.ORG>
 #
-# $Id: Makefile,v 1.16 1997/09/14 21:35:44 max Exp $
+# $Id: porting.sgml,v 1.16 1996/03/21 14:15:01 asami Exp $
 #
 
-DISTNAME=	platex2e
-PKGNAME=	ja-platex2e-97.02.01
+DISTNAME=	base-9706
+PKGNAME=	ja-platex2e-common-97.07.02.2
 CATEGORIES=	japanese print
-MASTER_SITES=	ftp://ftp.ascii.co.jp/pub/TeX/ascii-ptex/platex2e/1997-02-01/ \
+MASTER_SITES=	ftp://ftp.ascii.co.jp/pub/TeX/ascii-ptex/platex/1997-07-02/ \
+		ftp://ftp.ams.org/pub/tex/ \
 		${MASTER_SITE_LOCAL}
-DISTFILES=	base-9612.tar.gz ecfonts-1.0.tar.gz
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ecfonts-1.0.tar.gz tfm.tar \
+		amsfonts-sources.tar.Z
 
 MAINTAINER=	max@FreeBSD.ORG
 
-BROKEN=		"This port is out of date and must be modified to use the latest pTeX"
-BUILD_DEPENDS=  ptex:${PORTSDIR}/japanese/ptex2
-RUN_DEPENDS=    ptex:${PORTSDIR}/japanese/ptex2
+BUILD_DEPENDS=	ptex-common:${PORTSDIR}/japanese/ptex-common
 
-WRKSRC=		${WRKDIR}/9702
+WRKSRC=		${WRKDIR}/base
+EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX} ecfonts-1.0.tar.gz  \
+		amsfonts-sources.tar.Z
 DIST_SUBDIR=	platex2e
-NO_BUILD=	yes
 
-pre-fetch:
-.if !defined(KANJI-CODE)
-	@echo "You can set KANJI-CODE value to JIS, SJIS or EUC."
-	@echo "Now JIS is used as default."
-.if !defined(BATCH) && !defined(FOR_CDROM)
-	@echo -n "Is JIS OK? (y/n) ==> "
-	@(read ans; \
-	  case x"$$ans" in \
-	    xy*|xY*) \
-	        return 0; \
-	        ;; \
-	    *) \
-		echo "Ok, please rerun make with preferred KANJI-CODE specification"; \
-		echo " like following example."; \
-		echo "	make KANJI-CODE=EUC"; \
-	        return 1; \
-	        ;; \
-	  esac)
-.endif
-KANJI-CODE=	JIS
-.endif
-.if ${KANJI-CODE} == JIS
-PLIB_FILE=	pl9702j.tar.gz
-.elif ${KANJI-CODE} == SJIS
-PLIB_FILE=	pl9702s.tar.gz
-.elif ${KANJI-CODE} == EUC
-PLIB_FILE=	pl9702e.tar.gz
-.elifdef KANJI-CODE
-	@echo "Error: invalid value for KANJI-CODE: \"${KANJI-CODE}\""
-	@echo "Possible values are: JIS (default), SJIS, EUC."
-	@false
-.endif
-.if !defined(FOR_CDROM)
-DISTFILES+=	${PLIB_FILE}
-.else
-DISTFILES+=	pl9702j.tar.gz pl9702s.tar.gz pl9702e.tar.gz
-.endif
-EXTRACT_ONLY=	${PLIB_FILE}
+TEXMF=		${PREFIX}/share/texmf
+
+post-extract:
+	@tar -C ${WRKDIR} -xf ${DISTDIR}/${DIST_SUBDIR}/tfm.tar
+
+do-build:
+	@(cd ${WRKSRC}; tex -ini unpack.ins ; tex -ini latex.ltx)
 
 do-install:
-	@${RM} -f ${PREFIX}/lib/texmf/tex/latex2e/base/*
-	@${RM} -f ${PREFIX}/lib/texmf/tex/platex2e/base/*
-	@tar -C ${PREFIX}/lib/texmf/fonts/public -zx \
-	  -f ${DISTDIR}/${DIST_SUBDIR}/ecfonts-1.0.tar.gz
-	@tar -C ${PREFIX}/lib/texmf/tex/latex2e -zx \
-	  -f ${DISTDIR}/${DIST_SUBDIR}/base-9612.tar.gz
-	(cd ${PREFIX}/lib/texmf/tex/latex2e/base; \
-	  initex unpack.ins; \
-	  yes | initex ec.ins; \
-	  initex latex.ltx; \
-	  mv -f latex.fmt ${PREFIX}/lib/texmf/ini)
-	ln -fs ${PREFIX}/bin/virtex ${PREFIX}/bin/latex
-	@${MKDIR} ${PREFIX}/lib/texmf/tex/platex2e/base
-	@${CP} -R ${WRKSRC}/* ${PREFIX}/lib/texmf/tex/platex2e/base
-	(cd ${PREFIX}/lib/texmf/tex/platex2e/base; \
-	  iniptex plcore.ins; \
-	  iniptex platex.ltx; \
-	  mv -f platex.fmt ${PREFIX}/lib/texmf/ini)
-	ln -fs ${PREFIX}/bin/virptex ${PREFIX}/bin/platex
+	@${RM} -rf ${TEXMF}/tex/latex/base
+	@${MKDIR} ${TEXMF}/tex/latex/base
+	${CP} ${WRKSRC}/* ${TEXMF}/tex/latex/base
+	${MV} -f ${TEXMF}/tex/latex/base/latex.fmt ${TEXMF}/web2c
+	${MKDIR} ${TEXMF}/fonts/tfm/public/ams
+	${CP} ${WRKDIR}/tfm/* ${TEXMF}/fonts/tfm/public/ams
+	${MKDIR} ${TEXMF}/fonts/source/public/ams
+	${CP} -R ${WRKDIR}/amsfonts/sources/* ${TEXMF}/fonts/source/public/ams
+	${MKDIR} ${TEXMF}/fonts/tfm/public/ec
+	${CP} ${WRKDIR}/ec/tfm/* ${TEXMF}/fonts/tfm/public/ec
+	${MKDIR} ${TEXMF}/fonts/source/public/ec
+	${CP} ${WRKDIR}/ec/src/* ${TEXMF}/fonts/source/public/ec
+	@/bin/ln -s latex ${PREFIX}/bin/platex-common
 
 .include <bsd.port.mk>
