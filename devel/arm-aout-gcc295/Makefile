@@ -9,14 +9,15 @@
 PORTNAME=	arm-aout-gcc295
 PORTVERSION=	2.95.2
 CATEGORIES=	devel
-MASTER_SITES=	${MASTER_SITE_GNU}
-MASTER_SITE_SUBDIR=	gcc
+MASTER_SITES=	${MASTER_SITE_SOURCEWARE}
+MASTER_SITE_SUBDIR=	gcc/releases/${DISTNAME}
 DISTNAME=	gcc-2.95.2
 
 MAINTAINER=	pbecke@javagear.com
 
 EXTRACT_AFTER_ARGS=	| ${TAR} -xf - -T ${FILESDIR}/tlist -X ${FILESDIR}/xlist
 
+USE_BZIP2=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--target=arm-aout --with-gnu-as --with-gnu-ld --with-newlib
