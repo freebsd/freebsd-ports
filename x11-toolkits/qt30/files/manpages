@@ -47,7 +47,6 @@ qcolordrag.3qt \
 qcolorgroup.3qt \
 qcombobox.3qt \
 qcommonstyle.3qt \
-qcondition.3qt \
 qconststring.3qt \
 qcstring.3qt \
 qcursor.3qt \
@@ -289,6 +288,7 @@ qtranslator.3qt \
 qtsciicodec.3qt \
 quridrag.3qt \
 qurl.3qt \
+qtranslatormessage.3qt \
 qurloperator.3qt \
 qvalidator.3qt \
 qvaluelist.3qt \
@@ -303,6 +303,7 @@ qvector.3qt \
 qvgroupbox.3qt \
 qwhatsthis.3qt \
 qwheelevent.3qt \
+qwaitcondition.3qt \
 qwidget.3qt \
 qwidgetitem.3qt \
 qwidgetstack.3qt \
