@@ -16,6 +16,8 @@ COMMENT=	Additional SNMP plugins for Nagios
 
 LIB_DEPENDS=    netsnmp.7:${PORTSDIR}/net-mgmt/net-snmp
 
+BROKEN=		Incorrect pkg-plist
+
 GNU_CONFIGURE=		yes
 USE_AUTOMAKE_VER=	14
 USE_AUTOCONF_VER=	213

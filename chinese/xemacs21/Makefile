@@ -13,6 +13,8 @@ COMMENT=	XEmacs text editor version 21, with XIM support and Big5 settings
 PLIST=		${.CURDIR}/pkg-plist
 PKGMESSAGE=	${.CURDIR}/pkg-message
 
+BROKEN=		Incorrect pkg-plist
+
 XEMACS_MAJOR_VER=	21
 WITH_XIM=	--with-xim=xlib
 BUILD_INPUT_METHOD=	xcin2.5:${PORTSDIR}/chinese/xcin25
