@@ -18,7 +18,7 @@ DISTFILES=	stardict-cdict-big5-${PORTVERSION}.tar.bz2 \
 		stardict-xdict-ec-big5-${PORTVERSION}.tar.bz2
 DIST_SUBDIR=	stardict
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	ld@FreeBSD.org.cn
 COMMENT=	English-Chinese(T)/Chinese(T)-English dictionaries for StarDict
 
 RUN_DEPENDS=	stardict:${PORTSDIR}/textproc/stardict2
