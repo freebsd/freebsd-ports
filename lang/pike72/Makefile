@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	pike72
-PORTVERSION=	7.2.440
+PORTVERSION=	7.2.492
 PORTREVISION=	0
 CATEGORIES=	lang
 MASTER_SITES=	ftp://ftp.oav.net/pkg_freebsd/distfiles/ \
@@ -25,8 +25,7 @@ COMMENT=	A dynamic programming language with a syntax similar to C++
 BUILD_DEPENDS+=	nasm:${PORTSDIR}/devel/nasm/
 .endif
 
-LIB_DEPENDS=	gmp.6:${PORTSDIR}/math/libgmp4 \
-		jpeg.9:${PORTSDIR}/graphics/jpeg \
+LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
 		tiff.4:${PORTSDIR}/graphics/tiff \
 		gdbm.3:${PORTSDIR}/databases/gdbm \
 		mird.1:${PORTSDIR}/databases/mird
@@ -35,9 +34,7 @@ WRKSRC=		${WRKDIR}/${DISTNAME}/src/
 
 WANT_MESA=	yes
 WANT_GTK=	yes
-WANT_GNOME=	yes
-#USE_AUTOCONF_VER=213
-#USE_AUTOMAKE=	yes
+#WANT_GNOME=	yes
 USE_BISON=	yes
 
 GNU_CONFIGURE=  yes
@@ -67,9 +64,15 @@ CONFIGURE_ARGS+= --without-debug \
 		 --without-ssleay
 #		 --with-gdbm=${PREFIX} \
 #		 --without-relocatable-dumped-modules \
-PLIST_SUB+=	PORTVERSION=${PORTVERSION}
 
 .include <bsd.port.pre.mk>
+
+PLIST_SUB+=	PORTVERSION=${PORTVERSION}
+
+# FreeBSD 5.0 Needs to have libgmp port to support gmp.
+.if ${OSVERSION} >= 500000
+LIB_DEPENDS+=   gmp.6:${PORTSDIR}/math/libgmp4
+.endif
 
 .if exists(${LOCALBASE}/lib/libttf.so.4)
 WITH_TTF=	yes
@@ -177,7 +180,7 @@ CONFIGURE_ARGS+= --without-sane
 .endif
 
 .if defined(WITH_PDF)
-LIB_DEPENDS+=	pdf.4:${PORTSDIR}/print/pdflib4
+LIB_DEPENDS+=	pdf.5:${PORTSDIR}/print/pdflib4
 CONFIGURE_ARGS+= --with-libpdf
 .else
 CONFIGURE_ARGS+= --without-libpdf
@@ -191,14 +194,14 @@ CONFIGURE_ARGS+= --with-GL --with-GLUT
 CONFIGURE_ARGS+= --without-GL --without-GLUT
 .endif
 
-.if defined(HAVE_GNOME)
-USE_GNOME=	yes
-USE_GTK=	yes
-USE_GLI=	yes
-CONFIGURE_ARGS+= --with-GTK --with-gnome --with-glade
-.else
+#.if defined(HAVE_GNOME)
+#USE_GNOME=	yes
+#USE_GTK=	yes
+#USE_GLI=	yes
+#CONFIGURE_ARGS+= --with-GTK --with-gnome --with-glade
+#.else
 CONFIGURE_ARGS+= --without-GTK --without-gnome --without-glade
-.endif
+#.endif
 
 .if (${MACHINE} == "i386")
 CONFIGURE_ARGS+= --with-poll
@@ -208,6 +211,8 @@ CONFIGURE_ARGS+= --without-poll
 .endif
 
 USE_GMAKE=	yes
+MAN1=		hilfe.1 pike.1
+MAN1PREFIX=	${PREFIX}/pike/${PORTVERSION}
 
 pre-everything::
 .if !defined(WITH_OPTIMIZED_CFLAGS)
@@ -244,7 +249,6 @@ pre-everything::
 	@${ECHO_MSG} "You can enable most of the features here except Sane,"
 	@${ECHO_MSG} "MesaGLi, GNOME and SQL support by defining WITH_MOST."
 .endif
-
 
 pre-configure:
 #	@cd ${WRKSRC}; \
