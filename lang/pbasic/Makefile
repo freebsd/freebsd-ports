@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	asami/LOCAL_PORTS
 DISTNAME=	${PORTNAME}-${PORTVERSION}-950813
 
-MAINTAINER=	asami@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Phil Cockroft's Basic Interpreter (previously Rabbit Basic)
 # Ask jhs@freebsd.org if you want newer sources or author's latest e-mail
 #  (which is currently "phil@gmrs.isar.de" but changes a lot)
