@@ -13,6 +13,7 @@ DISTNAME=	avon-1996
 EXTRACT_SUFX=	.gz
 
 MAINTAINER=	wosch@FreeBSD.org
+COMMENT=	German phone code / Deutsche Telefonvorwahl (AVON)
 
 NO_WRKSUBDIR=	YES
 EXTRACT_CMD=	${GZCAT}

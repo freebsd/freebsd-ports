@@ -11,6 +11,7 @@ CATEGORIES=	mail
 MASTER_SITES=	http://www.de.freebsd.org/~wosch/src/
 
 MAINTAINER=	wosch@FreeBSD.org
+COMMENT=	Move your mail box to annother location
 
 MAN1=		movemail.1
 MANCOMPRESSED=	maybe

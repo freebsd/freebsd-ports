@@ -11,6 +11,7 @@ CATEGORIES=	sysutils net
 MASTER_SITES=	http://www.de.freebsd.org/~wosch/src/
 
 MAINTAINER=	wosch@FreeBSD.org
+COMMENT=	Create tcp socket and connect to stdin/out
 
 MAN1=		socket.1
 

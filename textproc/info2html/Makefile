@@ -11,6 +11,7 @@ CATEGORIES=	textproc
 MASTER_SITES=	http://www.de.freebsd.org/~wosch/src/
 
 MAINTAINER=	wosch@FreeBSD.org
+COMMENT=	Translate GNU info files into HTML pages
 
 MAN1=		info2html.1
 MANCOMPRESSED=	yes

@@ -13,6 +13,7 @@ MASTER_SITES=   http://www.de.freebsd.org/~wosch/src/ \
 DISTFILES=	${manpages}.tgz
 
 MAINTAINER=	wosch@FreeBSD.org
+COMMENT=	German GNU and Linux manual pages
 
 LANG=		de.ISO8859-1
 NO_WRKSUBDIR=	YES
