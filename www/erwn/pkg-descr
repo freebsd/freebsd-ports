@@ -2,6 +2,6 @@ erwin is a simple (right now) html editor based on GTK+.  The current
 version of erwin allows for editing of more than one file at a time,
 and also is capable of some simple syntax highlighting.
 
-WWW:	http://www-stud.fht-esslingen.de/erwin/
+WWW:	http://lisas.de/erwin/index.php3
 
 - Jim <jim@FreeBSD.org>
