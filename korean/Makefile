@@ -43,6 +43,8 @@
     SUBDIR += netscape4-navigator
     SUBDIR += netscape46-communicator
     SUBDIR += netscape46-navigator
+    SUBDIR += netscape47-communicator
+    SUBDIR += netscape47-navigator
     SUBDIR += nh2ps
     SUBDIR += nhpf
     SUBDIR += nhppf
