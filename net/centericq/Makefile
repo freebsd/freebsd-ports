@@ -32,6 +32,12 @@ USE_GETTEXT=	yes
 PLIST_SUB+=	NLS=""
 .endif
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 502124
+BROKEN=		"Does not build with gcc-3.4.2"
+.endif
+
 .if defined(WITH_MULTIBYTE)
 CONFIGURE_ARGS+=	--enable-locales-fix
 .else
@@ -94,4 +100,4 @@ post-install:
 	@(cd ${WRKSRC} ; ${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR})
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
