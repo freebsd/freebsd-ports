@@ -74,7 +74,8 @@ makeduds () {
   echo "================================================"
   echo "duds generation started at $(date)"
   if ! ${scripts}/makeduds ${branch}; then
-    echo "error(s) detected, exiting script at $(date)"
+    echo "error(s) detected, exiting script at $(date).  Failed duds list was:"
+    cat ${pb}/${branch}/duds
     errorexit 1
   fi
   echo "duds generation ended at $(date)"
