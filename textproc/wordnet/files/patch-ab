@@ -1,0 +1,7 @@
+--- src/lib/wnutil.c	Thu Feb 19 12:15:09 1998
++++ src/lib/wnutil.c	Sat Feb 26 16:14:08 2000
+@@ -10,3 +10,3 @@
+ #ifdef UNIX
+-#include <malloc.h>
++#include <stdlib.h>
+ #endif

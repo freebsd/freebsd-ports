@@ -1,0 +1,10 @@
+WordNet is a powerful lexical  reference system that combines aspects of
+dictionaries  and thesauri  with  current  psycholinguistic theories  of
+human lexical memory. It is produced by the Cognitive Science Laboratory
+at Princeton University, under the direction of Professor George Miller.
+
+In WordNet, words  are defined and grouped into various  related sets of
+synonyms.  Not only  is the  system  valuable to  the casual  user as  a
+powerful thesaurus and dictionary, but also  to the researcher as one of
+the few freely available, lexical databases. WordNet is available via an
+on-line interface and also as easy-to-compile C source code for Unix.

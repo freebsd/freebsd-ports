@@ -1,0 +1,11 @@
+--- include/wnconsts.h	Fri Feb 27 13:54:53 1998
++++ include/wnconsts.h	Sat Feb 26 16:11:51 2000
+@@ -16,2 +16,6 @@
+-#define DEFAULTPATH	"/usr/local/wordnet1.6/dict"
+-#define DEFAULTBIN      "/usr/local/wordnet1.6/bin"
++#ifndef DEFAULTPATH
++#define DEFAULTPATH	"/usr/local/share/wordnet-1.6"
++#endif
++#ifndef DEFAULTBIN
++#define DEFAULTBIN      "/usr/local/bin"
++#endif
