@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	wavbreaker
-PORTVERSION=	0.3
+PORTVERSION=	0.4
 CATEGORIES=	audio
 MASTER_SITES=	http://huli.org/wavbreaker/
 
@@ -15,7 +15,5 @@ COMMENT=	Tool to split wav files
 USE_GNOME=	gtk20 libxml2 gnomehack
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_TARGET=
-CONFIGURE_ARGS+=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 
 .include <bsd.port.mk>

@@ -1,4 +1,5 @@
 bin/wavbreaker
+bin/wavinfo
 bin/wavmerge
 share/wavbreaker/images/break.png
 share/wavbreaker/images/break2.png
