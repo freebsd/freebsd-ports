@@ -7,7 +7,7 @@
 
 PORTNAME=	autoconf
 PORTVERSION=	2.52
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	autoconf
@@ -25,6 +25,8 @@ MAN1=		autoconf.1 autoheader.1 autoreconf.1 \
 		config.sub.1 ifnames.1
 
 post-install:
-	${INSTALL_SCRIPT} ${WRKSRC}/config/install-sh ${PREFIX}/share/autoconf
+.for FILE in install-sh config.sub config.guess missing mkinstalldirs
+	${INSTALL_SCRIPT} ${WRKSRC}/config/${FILE} ${PREFIX}/share/autoconf
+.endfor
 
 .include <bsd.port.mk>
