@@ -6,14 +6,20 @@ bin/iso-read
 include/cdio/bytesex.h
 include/cdio/bytesex_asm.h
 include/cdio/cd_types.h
+include/cdio/cdda.h
 include/cdio/cdio.h
 include/cdio/cdtext.h
+include/cdio/device.h
+include/cdio/disc.h
 include/cdio/ds.h
 include/cdio/dvd.h
 include/cdio/iso9660.h
 include/cdio/logging.h
+include/cdio/paranoia.h
+include/cdio/read.h
 include/cdio/sector.h
 include/cdio/scsi_mmc.h
+include/cdio/track.h
 include/cdio/types.h
 include/cdio/util.h
 include/cdio/version.h
@@ -21,12 +27,17 @@ include/cdio/xa.h
 lib/libcdio.a
 lib/libcdio.la
 lib/libcdio.so
-lib/libcdio.so.3
+lib/libcdio.so.4
+lib/libcdio_paranoia.a
+lib/libcdio_paranoia.la
+lib/libcdio_paranoia.so
+lib/libcdio_paranoia.so.0
 lib/libiso9660.a
 lib/libiso9660.la
 lib/libiso9660.so
 lib/libiso9660.so.3
 libdata/pkgconfig/libcdio.pc
+libdata/pkgconfig/libcdio_paranoia.pc
 libdata/pkgconfig/libiso9660.pc
 @unexec rmdir %D/libdata/pkgconfig 2>/dev/null || true
 @dirrm include/cdio
