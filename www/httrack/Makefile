@@ -17,6 +17,8 @@ COMMENT=	Easy-to-use offline browser utility and website copier
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}.0
 
+BROKEN=		Size mismatch
+
 USE_GCC=	3.3
 USE_GNOME=	gnometarget
 USE_REINPLACE=	yes
