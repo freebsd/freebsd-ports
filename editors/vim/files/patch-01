@@ -103,5 +103,5 @@
  	-@echo 'char_u *default_vimruntime_dir = (char_u *)"$(VIMRUNTIMEDIR)";' >> $@
 -	-@echo 'char_u *all_cflags = (char_u *)"$(CC) -c -I$(srcdir) $(ALL_CFLAGS)";' >>  $@
 +	-@echo 'char_u *all_cflags = (char_u *)' >> $@
-+	-@perl -le '$$_ = q|$(CC) -c -I$(srcdir) $(ALL_CFLAGS)|; s/"/\\"/g; print qq|\t"$$_";|' >> $@
++	-@echo '$(CC) -c -I$(srcdir) $(ALL_CFLAGS)' | sed -e 's/\"/\\"/g' -e 's/\(^.*\)/	"\1";/' >> $@
  	-@echo 'char_u *all_lflags = (char_u *)"$(CC) $(ALL_LIB_DIRS) $(LDFLAGS) -o $(VIMTARGET) $(ALL_LIBS) ";' >>  $@

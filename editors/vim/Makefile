@@ -30,8 +30,6 @@ PATCHFILES:=	${PATCHFILES:N6.1.${p}}
 
 MAINTAINER?=	obrien@FreeBSD.org
 
-BUILD_DEPENDS=	perl:${PORTSDIR}/lang/perl5
-
 SLAVEDIRS=	editors/vim-lite
 
 .if defined(PACKAGE_BUILDING) && !defined(LITE)
@@ -42,6 +40,7 @@ WITH_CSCOPE=	yes
 .endif
 
 USE_BZIP2=	yes
+USE_REINPLACE=	yes
 DIST_SUBDIR=	vim
 WRKSRC=		${WRKDIR}/vim${PORTVERSION:C/\.[0-9]*$//:S/.//g}/src
 PATCH_DIST_ARGS=	-d ${WRKSRC:S/src$//} --forward --quiet -E ${PATCH_DIST_STRIP}
@@ -134,9 +133,12 @@ LIB_DEPENDS+=	iconv.3:${PORTSDIR}/converters/libiconv
 USE_XLIB=	yes
 .endif
 
-pre-build:
+post-patch:
 	@(cd ${WRKSRC}; ${MAKE} distclean)
-	@${PERL} -pi -e 's,8\.2,8.3,' ${WRKSRC}/auto/configure
+	@${REINPLACE_CMD} -e 's|8\.2|8.3|; \
+		s|\$$gtk_config_prefix/bin/gtk-config|\$${GTK_CONFIG}|; \
+		s|\$$gtk_config_exec_prefix/bin/gtk-config|\$${GTK_CONFIG}|' \
+		${WRKSRC}/auto/configure
 
 post-install:
 	[ -e ${PREFIX}/bin/gvim ] || (cd ${PREFIX}/bin ; ${LN} -sf vim gvim)
