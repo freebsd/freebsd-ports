@@ -2849,6 +2849,7 @@ gtkstep		ports/x11-themes/gtkstep
 gtkstep-pastel	ports/x11-themes/gtkstep-pastel
 gtksubtitler	ports/multimedia/gtksubtitler
 gtktalog	ports/misc/gtktalog
+gtkterm2	ports/x11/gtkterm2
 gtktetcolor	ports/games/gtktetcolor
 gtkwave		ports/cad/gtkwave
 gtkyahoo	ports/net/gtkyahoo
