@@ -1,0 +1,11 @@
+--- getopt.c.orig	Thu Jun  6 17:43:00 2002
++++ getopt.c	Thu Jun  6 17:43:12 2002
+@@ -270,7 +270,7 @@
+     MUCHelp20,MUCHelp21,"\n"};
+   int I;
+   for (I=0;I<sizeof(Help)/sizeof(Help[0]);I++)
+-    mprintf(Help[I]);
++    mprintf("%s", Help[I]);
+ }
+ 
+ 
