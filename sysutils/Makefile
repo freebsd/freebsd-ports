@@ -185,6 +185,7 @@
     SUBDIR += mksunbootcd
     SUBDIR += mktool
     SUBDIR += monitord
+    SUBDIR += mount.app
     SUBDIR += msyslog
     SUBDIR += multitail
     SUBDIR += muse
