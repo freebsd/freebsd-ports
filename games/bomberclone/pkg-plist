@@ -17,7 +17,6 @@ share/bomberclone/gfx/logo1.bmp
 share/bomberclone/gfx/menuselect.bmp
 @dirrm share/bomberclone/gfx
 
-share/bomberclone/maps/clean.map
 share/bomberclone/maps/first.map
 share/bomberclone/maps/firstmap.map
 share/bomberclone/maps/fourth.map
@@ -36,6 +35,8 @@ share/bomberclone/player/player2.bmp
 share/bomberclone/player/player3.bmp
 share/bomberclone/player/player4.bmp
 share/bomberclone/player/player5.bmp
+share/bomberclone/player/player6.bmp
+share/bomberclone/player/player7.bmp
 share/bomberclone/player/playersick.bmp
 @dirrm share/bomberclone/player
 
@@ -59,6 +60,17 @@ share/bomberclone/tileset/default/fire.bmp
 share/bomberclone/tileset/default/powersp.bmp
 @dirrm share/bomberclone/tileset/default
 
+share/bomberclone/tileset/cucumber/background.bmp
+share/bomberclone/tileset/cucumber/block.bmp
+share/bomberclone/tileset/cucumber/dead.wav
+share/bomberclone/tileset/cucumber/drop.wav
+share/bomberclone/tileset/cucumber/fire.bmp
+share/bomberclone/tileset/cucumber/powerbad.bmp
+share/bomberclone/tileset/cucumber/powersp.bmp
+share/bomberclone/tileset/cucumber/powerup.bmp
+share/bomberclone/tileset/cucumber/stone.bmp
+@dirrm share/bomberclone/tileset/cucumber
+
 share/bomberclone/tileset/classic/background.bmp
 share/bomberclone/tileset/classic/block.bmp
 share/bomberclone/tileset/classic/stone.bmp
@@ -73,6 +85,36 @@ share/bomberclone/tileset/radioactive/background.bmp
 share/bomberclone/tileset/radioactive/block.bmp
 share/bomberclone/tileset/radioactive/stone.bmp
 @dirrm share/bomberclone/tileset/radioactive
+
+share/bomberclone/tileset/cemetery/background.bmp
+share/bomberclone/tileset/cemetery/block96.bmp
+share/bomberclone/tileset/cemetery/stone96.bmp
+share/bomberclone/tileset/cemetery/map.nfo
+@dirrm share/bomberclone/tileset/cemetery
+
+share/bomberclone/tileset/sheep/background.bmp
+share/bomberclone/tileset/sheep/block.bmp
+share/bomberclone/tileset/sheep/stone.bmp
+share/bomberclone/tileset/sheep/map.nfo
+@dirrm share/bomberclone/tileset/sheep
+
+share/bomberclone/tileset/farm/background.bmp
+share/bomberclone/tileset/farm/block96.bmp
+share/bomberclone/tileset/farm/stone.bmp
+share/bomberclone/tileset/farm/map.nfo
+@dirrm share/bomberclone/tileset/farm
+
+share/bomberclone/tileset/hell/background.bmp
+share/bomberclone/tileset/hell/block.bmp
+share/bomberclone/tileset/hell/stone.bmp
+share/bomberclone/tileset/hell/map.nfo
+@dirrm share/bomberclone/tileset/hell
+
+share/bomberclone/tileset/supermario/background.bmp
+share/bomberclone/tileset/supermario/block.bmp
+share/bomberclone/tileset/supermario/stone.bmp
+share/bomberclone/tileset/supermario/stonebackup.bmp
+@dirrm share/bomberclone/tileset/supermario
 
 @dirrm share/bomberclone/tileset
 @dirrm share/bomberclone

@@ -1,0 +1,17 @@
+--- data/Makefile.in.orig	Tue Jul 29 09:49:15 2003
++++ data/Makefile.in	Tue Jul 29 09:49:33 2003
+@@ -196,10 +196,10 @@
+ 	@if test ! -d ${prefix}/@NO_PREFIX_PACKAGE_DATA_DIR@; then \
+ 		mkdir ${prefix}/@NO_PREFIX_PACKAGE_DATA_DIR@; \
+ 	fi;
+-	cp player ${prefix}/@NO_PREFIX_PACKAGE_DATA_DIR@ -rf
+-	cp maps ${prefix}/@NO_PREFIX_PACKAGE_DATA_DIR@ -rf
+-	cp gfx ${prefix}/@NO_PREFIX_PACKAGE_DATA_DIR@ -rf
+-	cp tileset ${prefix}/@NO_PREFIX_PACKAGE_DATA_DIR@ -rf
++	cp -r player ${prefix}/@NO_PREFIX_PACKAGE_DATA_DIR@
++	cp -r maps ${prefix}/@NO_PREFIX_PACKAGE_DATA_DIR@
++	cp -r gfx ${prefix}/@NO_PREFIX_PACKAGE_DATA_DIR@
++	cp -r tileset ${prefix}/@NO_PREFIX_PACKAGE_DATA_DIR@
+ 
+ uninstall:
+ 	rm -rf ${prefix}/@NO_PREFIX_PACKAGE_DATA_DIR@
