@@ -12,17 +12,14 @@ MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Math
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	mat@FreeBSD.org
 COMMENT=	Perl module that provides decimal math without floating point errors
+
+BUILD_DEPENDS=	${SITE_PERL}/Math/BigFloat.pm:${PORTSDIR}/math/p5-Math-BigInt
+RUN_DEPENDS=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 500600
-BROKEN=		"Needs Perl 5.6.0 for Math::BigFloat"
-.endif
-
 MAN3=		Math::FixedPrecision.3
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
