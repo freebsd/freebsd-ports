@@ -6,30 +6,32 @@
 #
 
 PORTNAME=	gtkballs
-PORTVERSION=	1.04
+PORTVERSION=	2.0.1
 CATEGORIES=	games
-MASTER_SITES=	http://gtkballs.antex.ru/dist/ \
-		${MASTER_SITE_SUNSITE}
-MASTER_SITE_SUBDIR=	games/strategy
+MASTER_SITES=	http://gtkballs.antex.ru/dist/
 
 MAINTAINER=	ports@FreeBSD.org
 
 USE_GTK=	yes
+USE_GMAKE=	yes
+GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	--localstatedir=${DATADIR}
 
-MAN6=		gtkballs.6
+MAN6=		gtkballs.6x
 
-do-install:
-	${INSTALL_PROGRAM} -m 2755 -o root -g games ${WRKSRC}/gtkballs ${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/gtkballs.6 ${PREFIX}/man/man6
-	@${MKDIR} ${PREFIX}/share/gtkballs
-	${INSTALL_DATA} ${WRKSRC}/gtkballs-data/*.xpm ${PREFIX}/share/gtkballs
-	${INSTALL_DATA} ${WRKSRC}/score ${PREFIX}/share/gtkballs/score
-	@${CHMOD} g+rw ${PREFIX}/share/gtkballs/score
-	@${CHOWN} root:games ${PREFIX}/share/gtkballs/score
+post-patch:
+	@${PERL} -pi -e 's|^install-data-local|#install-data-local|g' \
+		${WRKSRC}/Makefile.in
+
+post-install:
+	${CHMOD} 2755 ${PREFIX}/bin/gtkballs
+	${CHOWN} root:games ${PREFIX}/bin/gtkballs
+	${CHMOD} 0666 ${DATADIR}/gtkballs-scores
+	${CHOWN} root:games ${DATADIR}/gtkballs-scores
 .if !defined(NOPORTDOCS)
-	@${MKDIR} ${PREFIX}/share/doc/gtkballs
+	@${MKDIR} ${DOCSDIR}
 .for file in README README.russian TODO
-	${INSTALL_DATA} ${WRKSRC}/${file} ${PREFIX}/share/doc/gtkballs
+	${INSTALL_DATA} ${WRKSRC}/${file} ${DOCSDIR}
 .endfor
 .endif
 
