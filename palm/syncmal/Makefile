@@ -17,12 +17,10 @@ BUILD_DEPENDS=	${NONEXISTENT}:${PORTSDIR}/palm/jpilot:patch \
 		${NONEXISTENT}:${PORTSDIR}/palm/malsync:patch
 RUN_DEPENDS=	${PREFIX}/bin/jpilot:${PORTSDIR}/palm/jpilot
 
-PREFIX=		${LOCALBASE}/pilot
 USE_GMAKE=	YES
 GNU_CONFIGURE=	YES
 CONFIGURE_ENV=	GTK_CONFIG=${X11BASE}/bin/gtk12-config
-CONFIGURE_ARGS=	--with-pilot-prefix=${PREFIX} \
-		--with-plugin-prefix=${WRKDIR}/../../jpilot/work/jpilot-0.99.2 \
+CONFIGURE_ARGS=	--with-plugin-prefix=${WRKDIR}/../../jpilot/work/jpilot-0.99.2 \
 		--with-mal-source=${WRKDIR}/../../malsync/work/malsync
 
 .include <bsd.port.mk>
