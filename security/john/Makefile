@@ -15,6 +15,7 @@ MASTER_SITES=	ftp://ftp.ca.openwall.com/pub/projects/john/ \
 		ftp://ftp.false.com/pub/security/projects/ \
 		http://www.false.com/security/john/
 
+USE_REINPLACE=	yes
 MAINTAINER=	d.marks@student.umist.ac.uk
 
 .include <bsd.port.pre.mk>
@@ -30,8 +31,11 @@ ALL_TARGET=	${OSNAME}-${ARCHNAME}-mmx-elf
 . else
 ALL_TARGET=	${OSNAME}-${ARCHNAME}-any-elf
 . endif
+.elif ${MACHINE_ARCH} == "alpha"
+ARCHNAME=	alpha
+ALL_TARGET=	${OSNAME}-${ARCHNAME}-any-elf
 .else
-ARCHNAME=	${MACHINE_ARCH}
+ALL_TARGET=	generic
 .endif
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/src
@@ -40,12 +44,12 @@ pre-fetch:
 	@${ECHO} "Building for ${ALL_TARGET}"
 
 do-configure:
-	@${MV} ${WRKDIR}/${DISTNAME}/run/john.ini ${WRKDIR}/${DISTNAME}/run/john.ini.in
-	@${SED} -e "s:~/all.chr:${PREFIX}/share/john/all.chr:" \
-		-e "s:~/alpha.chr:${PREFIX}/share/john/alpha.chr:" \
-		-e "s:~/digits.chr:${PREFIX}/share/john/digits.chr:" \
-		-e "s:~/lanman.chr:${PREFIX}/share/john/lanman.chr:" \
-		${WRKDIR}/${DISTNAME}/run/john.ini.in > ${WRKDIR}/${DISTNAME}/run/john.ini
+	@${REINPLACE_CMD} \
+		-e 's,~/all.chr,${PREFIX}/share/john/all.chr,' \
+		-e 's,~/alpha.chr,${PREFIX}/share/john/alpha.chr,' \
+		-e 's,~/digits.chr,${PREFIX}/share/john/digits.chr,' \
+		-e 's,~/lanman.chr,${PREFIX}/share/john/lanman.chr,' \
+	${WRKDIR}/${DISTNAME}/run/john.ini
 
 do-install:
 	@${MKDIR} ${DATADIR}
