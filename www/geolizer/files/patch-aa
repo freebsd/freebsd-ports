@@ -1,0 +1,17 @@
+--- linklist.c.bak	Fri Sep 29 07:51:02 2000
++++ linklist.c	Sat Oct 14 17:22:16 2000
+@@ -197,12 +197,12 @@
+    strncpy(temp_buf,str,79);
+    temp_buf[79]=0;
+ 
+-   while (!isspace((int)*name)&&*name!=0) name++;
++   while (!isspace((unsigned char)*name)&&*name!=0) name++;
+    if (*name==0) name=temp_buf;
+    else
+    {
+       *name++=0;
+-      while (isspace((int)*name)&&*name!=0) name++;
++      while (isspace((unsigned char)*name)&&*name!=0) name++;
+       if (*name==0) name=temp_buf;
+    }
+ 

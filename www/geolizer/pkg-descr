@@ -1,0 +1,7 @@
+Patch for Webalizer to generate faster and more reliable geographic 
+statistics than using default DNS suffix method. It uses GeoIP library to 
+do that. In fact, if you disable DNS reversal on your HTTP server, it will 
+work faster and your stats get more accuracy when processed by patched 
+Webalizer.
+
+WWW: http://sysd.org/proj/log.php#glzr

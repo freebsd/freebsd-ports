@@ -129,6 +129,7 @@
     SUBDIR += gallery
     SUBDIR += gatling
     SUBDIR += geeklog
+    SUBDIR += geolizer
     SUBDIR += gforge
     SUBDIR += glibwww
     SUBDIR += gnuinfo

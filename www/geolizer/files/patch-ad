@@ -1,0 +1,42 @@
+--- output.c.orig	Fri Jul 23 23:13:47 2004
++++ output.c	Sat Jul 24 00:26:37 2004
+@@ -1543,10 +1543,17 @@
+       rptr=*pointer++;
+       if (rptr->flag == OBJ_REG)
+       {
+-         fprintf(out_fp,"%-8lu %6.02f%%  %s\n",
+-            rptr->count,
+-            (t_hit==0)?0:((float)rptr->count/t_hit)*100.0,
+-            rptr->string);
++	 if (strstr(rptr->string,"://")!=NULL)
++	    fprintf(out_fp,"%-8lu %6.02f%%  <A HREF=\"%s\">%s</A>\n",
++	       rptr->count,
++	       (t_hit==0)?0:((float)rptr->count/t_hit)*100.0,
++	       rptr->string,
++	       rptr->string);
++	 else
++	    fprintf(out_fp,"%-8lu %6.02f%%  %s\n",
++	       rptr->count,
++	       (t_hit==0)?0:((float)rptr->count/t_hit)*100.0,
++	       rptr->string);
+          r_reg--;
+       }
+    }
+@@ -2033,7 +2040,7 @@
+             while ( (*domain!='.')&&(domain!=hptr->string)) domain--;
+             if (domain==hptr->string)
+ 	       country=NULL;
+-            else if (isdigit((int)*++domain))
++	    else if (isdigit((unsigned char)*++domain))
+             {
+ #ifdef USE_GEOIP
+                if (use_geoip)
+@@ -2918,7 +2925,7 @@
+    static char warpbuf[32][32];
+    static int index = -1;
+ 
+-   if (index<0 || index>32)
++   if (index<0 || index>=32)
+       index=0;
+ 
+    while (n>=base && usesuf<=10)
