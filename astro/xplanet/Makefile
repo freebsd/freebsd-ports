@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	xplanet
-PORTVERSION=	0.70
+PORTVERSION=	0.73
 CATEGORIES=	astro x11
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		http://www.radcyberzine.com/xglobe/
@@ -30,7 +30,7 @@ CONFIGURE_ENV=	CFLAGS="${CFLAGS} -I${LOCALBASE}/include -I${X11BASE}/include" \
 MAKE_ENV=	CFLAGS="${CFLAGS} -I${LOCALBASE}/include -I${X11BASE}/include" \
 		CPPFLAGS="${CFLAGS} -I${LOCALBASE}/include -I${X11BASE}/include" \
 		LIBS="-L${LOCALBASE}/lib -L${X11BASE}/lib -lm"
-MAN1=		xplanet.1 xplanetbg.1
+MAN1=		xplanet.1 xplanetbg.1 tkxplanet.1 tzcoord.pl.1
 
 .include <bsd.port.pre.mk>
 
