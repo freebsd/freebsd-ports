@@ -23,7 +23,7 @@ post-patch:
 
 do-install:
 	${INSTALL_DATA} ${WRKSRC}/portsentry.conf ${PREFIX}/etc/portsentry.conf.default
-	${INSTALL_DATA} ${WRKSRC}/portsentry.ignore ${PREFIX}/etc
+	${INSTALL_DATA} ${WRKSRC}/portsentry.ignore ${PREFIX}/etc/portsentry.ignore.default
 	${INSTALL_PROGRAM} ${WRKSRC}/portsentry ${PREFIX}/bin
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
