@@ -1,8 +1,9 @@
---- Makefile.orig	Wed Jan 30 11:16:34 2002
-+++ Makefile	Wed Jan 30 11:20:32 2002
+--- Makefile.orig	Mon Oct 15 15:54:55 2001
++++ Makefile	Wed Oct 30 22:24:31 2002
 @@ -1,10 +1,10 @@
  
- SWIG=/usr/local/bin/swig
+-SWIG=/usr/local/bin/swig
++SWIG=%%LOCALBASE%%/bin/swig1.1
  CC=gcc -g
 -PYTHON_INCLUDES=-I/usr/include/python1.5
 -LIBNET_INCLUDES=-I/usr/include/libnet
