@@ -1,6 +1,6 @@
---- configure.orig	Wed May  5 14:46:40 2004
-+++ configure	Wed May  5 14:47:23 2004
-@@ -2540,7 +2540,7 @@
+--- configure.orig	Wed Apr 28 09:36:01 2004
++++ configure	Thu May  6 10:56:21 2004
+@@ -2543,7 +2543,7 @@
  $extendedecho "SYSVLOCATION = \${PREFIX}$sysvdir" >>Makefile
  $extendedecho "CGIBINLOCATION = \${PREFIX}$cgidir" >>Makefile
  $extendedecho "MANUALFILES = \${PREFIX}$mandir" >>Makefile
@@ -9,3 +9,12 @@
  $extendedecho "LOGROTATELOCATION = \${PREFIX}$logrotatedir" >>Makefile
  echo "PROXYUSER = $runas_usr" >>Makefile
  echo "PROXYGROUP = $runas_grp" >>Makefile
+@@ -2896,7 +2896,7 @@
+ echo "# Log file location" >>dansguardian.conf
+ echo "# " >>dansguardian.conf
+ echo "# Defines the log directory and filename." >>dansguardian.conf
+-echo "#loglocation = '/var/log/dansguardian/access.log'" >>dansguardian.conf
++echo "loglocation = '/var/log/dansguardian.log'" >>dansguardian.conf
+ echo "" >>dansguardian.conf
+ echo "" >>dansguardian.conf
+ echo "# Network Settings" >>dansguardian.conf

@@ -1,12 +1,32 @@
 @exec mkdir -p etc/dansguardian
+@exec mkdir -p etc/dansguardian/languages
+@exec mkdir -p etc/dansguardian/languages/arspanish
+@exec mkdir -p etc/dansguardian/languages/bulgarian
+@exec mkdir -p etc/dansguardian/languages/chinesebig5
+@exec mkdir -p etc/dansguardian/languages/chineseb2312
+@exec mkdir -p etc/dansguardian/languages/czech
+@exec mkdir -p etc/dansguardian/languages/danish
+@exec mkdir -p etc/dansguardian/languages/french
+@exec mkdir -p etc/dansguardian/languages/german
+@exec mkdir -p etc/dansguardian/languages/german2
+@exec mkdir -p etc/dansguardian/languages/indonesian
+@exec mkdir -p etc/dansguardian/languages/italian
+@exec mkdir -p etc/dansguardian/languages/lithuanian
+@exec mkdir -p etc/dansguardian/languages/mxspanish
+@exec mkdir -p etc/dansguardian/languages/polish
+@exec mkdir -p etc/dansguardian/languages/portuguese
+@exec mkdir -p etc/dansguardian/languages/turkish
+@exec mkdir -p etc/dansguardian/languages/ukenglish
 %%PHRASELISTS%%@exec mkdir -p etc/dansguardian/phraselists
 %%PHRASELISTS%%@exec mkdir -p etc/dansguardian/phraselists/chat
 %%PHRASELISTS%%@exec mkdir -p etc/dansguardian/phraselists/drugadvocacy
 %%PHRASELISTS%%@exec mkdir -p etc/dansguardian/phraselists/dutchbadwords
 %%PHRASELISTS%%@exec mkdir -p etc/dansguardian/phraselists/frenchbadwords
+%%PHRASELISTS%%@exec mkdir -p etc/dansguardian/phraselists/frenchpornography
 %%PHRASELISTS%%@exec mkdir -p etc/dansguardian/phraselists/gambling
 %%PHRASELISTS%%@exec mkdir -p etc/dansguardian/phraselists/germanpornography
 %%PHRASELISTS%%@exec mkdir -p etc/dansguardian/phraselists/goodphrases
+%%PHRASELISTS%%@exec mkdir -p etc/dansguardian/phraselists/googlesearches
 %%PHRASELISTS%%@exec mkdir -p etc/dansguardian/phraselists/gore
 %%PHRASELISTS%%@exec mkdir -p etc/dansguardian/phraselists/illegaldrugs
 %%PHRASELISTS%%@exec mkdir -p etc/dansguardian/phraselists/intolerance
@@ -27,21 +47,66 @@ etc/dansguardian/bannedurllist.dist
 etc/dansguardian/banneduserlist.dist
 etc/dansguardian/contentregexplist.dist
 etc/dansguardian/dansguardian.conf.dist
+etc/dansguardian/dansguardianf1.conf.dist
 etc/dansguardian/exceptioniplist.dist
 etc/dansguardian/exceptionphraselist.dist
 etc/dansguardian/exceptionsitelist.dist
 etc/dansguardian/exceptionurllist.dist
 etc/dansguardian/exceptionuserlist.dist
-etc/dansguardian/messages.dist
+etc/dansguardian/filtergroupslist.dist
+etc/dansguardian/greysitelist.dist
+etc/dansguardian/greyurllist.dist
+etc/dansguardian/pics.dist
+etc/dansguardian/transparent1x1.gif
+etc/dansguardian/weightedphraselist.dist
+etc/dansguardian/languages/ReadMe
+etc/dansguardian/languages/arspanish/messages
+etc/dansguardian/languages/arspanish/template.html
+etc/dansguardian/languages/bulgarian/messages
+etc/dansguardian/languages/bulgarian/template.html
+etc/dansguardian/languages/chinesebig5/messages
+etc/dansguardian/languages/chinesebig5/template.html
+etc/dansguardian/languages/chinesegb2312/messages
+etc/dansguardian/languages/chinesegb2312/template.html
+etc/dansguardian/languages/czech/messages
+etc/dansguardian/languages/czech/template.html
+etc/dansguardian/languages/danish/messages
+etc/dansguardian/languages/danish/template.html
+etc/dansguardian/languages/dutch/messages
+etc/dansguardian/languages/dutch/template.html
+etc/dansguardian/languages/french/messages
+etc/dansguardian/languages/french/template.html
+etc/dansguardian/languages/german/messages
+etc/dansguardian/languages/german/template.html
+etc/dansguardian/languages/german2/messages
+etc/dansguardian/languages/german2/template.html
+etc/dansguardian/languages/indonesian/messages
+etc/dansguardian/languages/indonesian/template.html
+etc/dansguardian/languages/italian/messages
+etc/dansguardian/languages/italian/template.html
+etc/dansguardian/languages/lithuanian/messages
+etc/dansguardian/languages/lithuanian/template.html
+etc/dansguardian/languages/mxspanish/messages
+etc/dansguardian/languages/mxspanish/template.html
+etc/dansguardian/languages/polish/messages
+etc/dansguardian/languages/polish/template.html
+etc/dansguardian/languages/portuguese/messages
+etc/dansguardian/languages/portuguese/template.html
+etc/dansguardian/languages/turkish/messages
+etc/dansguardian/languages/turkish/template.html
+etc/dansguardian/languages/ukenglish/messages
+etc/dansguardian/languages/ukenglish/template.html
 %%PHRASELISTS%%etc/dansguardian/phraselists/chat/weighted
 %%PHRASELISTS%%etc/dansguardian/phraselists/drugadvocacy/weighted
 %%PHRASELISTS%%etc/dansguardian/phraselists/dutchbadwords/weighted
 %%PHRASELISTS%%etc/dansguardian/phraselists/frenchbadwords/weighted
+%%PHRASELISTS%%etc/dansguardian/phraselists/frenchpornography/weighted
 %%PHRASELISTS%%etc/dansguardian/phraselists/gambling/banned
 %%PHRASELISTS%%etc/dansguardian/phraselists/gambling/weighted
 %%PHRASELISTS%%etc/dansguardian/phraselists/germanpornography/weighted
 %%PHRASELISTS%%etc/dansguardian/phraselists/goodphrases/exception
 %%PHRASELISTS%%etc/dansguardian/phraselists/goodphrases/weighted
+%%PHRASELISTS%%etc/dansguardian/phraselists/googlesearches/banned
 %%PHRASELISTS%%etc/dansguardian/phraselists/gore/weighted
 %%PHRASELISTS%%etc/dansguardian/phraselists/illegaldrugs/banned
 %%PHRASELISTS%%etc/dansguardian/phraselists/illegaldrugs/weighted
@@ -54,19 +119,37 @@ etc/dansguardian/messages.dist
 %%PHRASELISTS%%etc/dansguardian/phraselists/violence/weighted
 %%PHRASELISTS%%etc/dansguardian/phraselists/warezhacking/weighted
 %%PHRASELISTS%%etc/dansguardian/phraselists/weapons/weighted
-etc/dansguardian/pics.dist
-etc/dansguardian/template.html.dist
-etc/dansguardian/weightedphraselist.dist
 etc/rc.d/start-dg.sh
 sbin/dansguardian
 www/cgi-bin/dansguardian.pl.dist
+@dirrm etc/dansguardian/languages/arspanish
+@dirrm etc/dansguardian/languages/bulgarian
+@dirrm etc/dansguardian/languages/chinesebig5
+@dirrm etc/dansguardian/languages/chinesegb2312
+@dirrm etc/dansguardian/languages/czech
+@dirrm etc/dansguardian/languages/danish
+@dirrm etc/dansguardian/languages/dutch
+@dirrm etc/dansguardian/languages/french
+@dirrm etc/dansguardian/languages/german
+@dirrm etc/dansguardian/languages/german2
+@dirrm etc/dansguardian/languages/indonesian
+@dirrm etc/dansguardian/languages/italian
+@dirrm etc/dansguardian/languages/lithuanian
+@dirrm etc/dansguardian/languages/mxspanish
+@dirrm etc/dansguardian/languages/polish
+@dirrm etc/dansguardian/languages/portuguese
+@dirrm etc/dansguardian/languages/turkish
+@dirrm etc/dansguardian/languages/ukenglish
+@dirrm etc/dansguardian/languages
 %%PHRASELISTS%%@dirrm etc/dansguardian/phraselists/chat
 %%PHRASELISTS%%@dirrm etc/dansguardian/phraselists/drugadvocacy
 %%PHRASELISTS%%@dirrm etc/dansguardian/phraselists/dutchbadwords
 %%PHRASELISTS%%@dirrm etc/dansguardian/phraselists/frenchbadwords
+%%PHRASELISTS%%@dirrm etc/dansguardian/phraselists/frenchpornography
 %%PHRASELISTS%%@dirrm etc/dansguardian/phraselists/gambling
 %%PHRASELISTS%%@dirrm etc/dansguardian/phraselists/germanpornography
 %%PHRASELISTS%%@dirrm etc/dansguardian/phraselists/goodphrases
+%%PHRASELISTS%%@dirrm etc/dansguardian/phraselists/googlesearches
 %%PHRASELISTS%%@dirrm etc/dansguardian/phraselists/gore
 %%PHRASELISTS%%@dirrm etc/dansguardian/phraselists/illegaldrugs
 %%PHRASELISTS%%@dirrm etc/dansguardian/phraselists/intolerance
@@ -79,5 +162,5 @@ www/cgi-bin/dansguardian.pl.dist
 %%PHRASELISTS%%@dirrm etc/dansguardian/phraselists/weapons
 %%PHRASELISTS%%@dirrm etc/dansguardian/phraselists
 @dirrm etc/dansguardian
-@unexec echo If permanently deleting this package, /var/log/dansguardian.log must be removed manually
+@unexec echo If permanently deleting this package, /var/log/dansguardian.log  must be removed manually
 @unexec echo If permanently deleting this package, custom configuration files must be removed manually
