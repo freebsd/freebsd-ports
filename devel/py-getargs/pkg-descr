@@ -1,0 +1,7 @@
+This module implements a Command Line Parser class (CLParser) that 
+applications can use to parse command line arguments in sys.argv.
+
+getargs is designed as a considerably more powerful and flexible alternative
+to the standard getopt module.
+
+WWW: http://iamroot.beigetower.org/getargs.html
