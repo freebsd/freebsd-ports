@@ -1,0 +1,45 @@
+--- epstool.c.orig	Sun Sep 13 09:52:52 1998
++++ epstool.c	Sat Oct 23 17:59:46 1999
+@@ -25,7 +25,7 @@
+ char upname[MAXSTR];
+ char gsname[MAXSTR] = GSCOMMAND;
+ char bmpname[MAXSTR];
+-char devname[MAXSTR];
++char gsdevname[MAXSTR];
+ char szScratch[] = "ep";
+ char szAppName[] = "epstool";
+ int resolution = 72;
+@@ -87,9 +87,9 @@
+ main(int argc, char *argv[])
+ {
+ #ifdef UNIX
+-	strcpy(devname, "pbmraw");
++	strcpy(gsdevname, "pbmraw");
+ #else
+-	strcpy(devname, "bmpmono");
++	strcpy(gsdevname, "bmpmono");
+ #endif
+ 	if (scan_args(argc, argv))
+ 	   return 1;
+@@ -252,10 +252,10 @@
+ 	fclose(tempfile);
+ #ifdef UNIX
+ 	sprintf(gscommand, "%s -dNOPAUSE -dQUIET -sDEVICE=%s -sOutputFile=\042%s\042 -r%d -g%dx%d %s",
+-	   gsname, devname, bmpname, resolution, width, height, tempname);
++	   gsname, gsdevname, bmpname, resolution, width, height, tempname);
+ #else
+ 	sprintf(gscommand, "-dNOPAUSE\n-dQUIET\n-sDEVICE=%s\n-sOutputFile=\042%s\042\n-r%d\n-g%dx%d\n\042%s\042",
+-	   devname, bmpname, resolution, width, height, tempname);
++	   gsdevname, bmpname, resolution, width, height, tempname);
+ 	if (!quiet) {
+ 	    fputs(gscommand, stderr);
+ 	    fputs("\n", stderr);
+@@ -409,7 +409,7 @@
+ 		  break;
+ 		case 'z':
+ 		  if (argp[2])
+-		      strcpy(devname, argp+2);
++		      strcpy(gsdevname, argp+2);
+ 		  break;
+ 		case 'c':
+ 		  if (got_op) {
