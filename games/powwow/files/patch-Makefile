@@ -1,0 +1,12 @@
+--- Makefile.orig	Sat Dec  5 00:17:38 1998
++++ Makefile	Wed Feb 13 15:56:45 2002
+@@ -61,8 +61,7 @@
+ 	@echo "WARNING: if you are coming from a 1.0.x version,"
+ 	@echo "re-read Changelog and powwow.doc as many things have changed."
+ 	@echo "In particular, syntax and effects of #prompt and #isprompt changed in 1.1.7"
+-	@echo "Press ENTER to continue..."
+-	@read dummy
++	@echo
+ 
+ strip: $(NAME)
+ 	strip $(NAME)

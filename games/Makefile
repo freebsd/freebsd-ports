@@ -354,6 +354,7 @@
     SUBDIR += polypuzzle
     SUBDIR += powermanga
     SUBDIR += powerpak
+    SUBDIR += powwow
     SUBDIR += pp
     SUBDIR += prboom
     SUBDIR += ptkei
