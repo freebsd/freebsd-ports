@@ -7,11 +7,10 @@
 #
 
 PORTNAME=	pdftohtml
-PORTVERSION=	0.35
+PORTVERSION=	0.36
 CATEGORIES=	textproc
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
-DISTNAME=	${PORTNAME}_${PORTVERSION:S/./_/}
 
 MAINTAINER=	erwin@FreeBSD.org
 COMMENT=	A command-line tool for converting pdf-files into html
