@@ -22,9 +22,15 @@ lib/ethereal/plugins/%%PORTVERSION%%/docsis.so
 lib/ethereal/plugins/%%PORTVERSION%%/gryphon.a
 lib/ethereal/plugins/%%PORTVERSION%%/gryphon.la
 lib/ethereal/plugins/%%PORTVERSION%%/gryphon.so
+lib/ethereal/plugins/%%PORTVERSION%%/megaco.a
+lib/ethereal/plugins/%%PORTVERSION%%/megaco.la
+lib/ethereal/plugins/%%PORTVERSION%%/megaco.so
 lib/ethereal/plugins/%%PORTVERSION%%/mgcp.a
 lib/ethereal/plugins/%%PORTVERSION%%/mgcp.la
 lib/ethereal/plugins/%%PORTVERSION%%/mgcp.so
+lib/ethereal/plugins/%%PORTVERSION%%/pcli.a
+lib/ethereal/plugins/%%PORTVERSION%%/pcli.la
+lib/ethereal/plugins/%%PORTVERSION%%/pcli.so
 @dirrm etc/diameter
 @dirrm lib/ethereal/plugins/%%PORTVERSION%%
 @dirrm lib/ethereal/plugins

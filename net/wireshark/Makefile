@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ethereal
-PORTVERSION=	0.9.7
+PORTVERSION=	0.9.9
 CATEGORIES=	net ipv6
 MASTER_SITES=	ftp://ftp.ethereal.com/pub/ethereal/%SUBDIR%/ \
 		ftp://gd.tuwien.ac.at/infosys/security/ethereal/%SUBDIR%/ \
@@ -16,12 +16,15 @@ MASTER_SITES=	ftp://ftp.ethereal.com/pub/ethereal/%SUBDIR%/ \
 MASTER_SITE_SUBDIR=	. old-versions
 
 MAINTAINER=	billf@FreeBSD.org
+COMMENT=	An X11/GTK network analyzer/capture tool
 
 .if !defined(WITHOUT_SNMP)
-LIB_DEPENDS=	snmp.4:${PORTSDIR}/net/net-snmp4
+LIB_DEPENDS=	netsnmp.5:${PORTSDIR}/net/net-snmp
 .endif
 
 USE_GNOMENG=	yes
+CONFIGURE_ARGS=	--program-transform-name=""
+CONFIGURE_TARGET=	--target=${MACHINE_ARCH}-unknown-freebsd${OSREL}
 .if !defined(WITHOUT_X11)
 USE_X_PREFIX=	yes
 USE_GNOME=	gtk12
@@ -40,7 +43,7 @@ PLIST_SUB+=	PORTVERSION=${PORTVERSION}
 
 .if !defined(WITHOUT_SNMP)
 CONFIGURE_ARGS+=	--enable-snmp=yes \
-			--with-ucdsnmp=${LOCALBASE}/lib
+			--with-net-snmp=${LOCALBASE}/lib
 .if exists(/usr/include/openssl/crypto.h)
 CONFIGURE_ARGS+=	--with-ssl=/usr
 .endif
