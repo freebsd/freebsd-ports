@@ -8,7 +8,7 @@
 PORTNAME=	yape
 PORTVERSION=	0.32.3
 CATEGORIES=	emulators
-MASTER_SITES=	http://www.cbm264.com/yape/download/
+MASTER_SITES=	http://yape.homeserver.hu/download/
 DISTNAME=	yapeSDL-${PORTVERSION}
 
 MAINTAINER=	janos.mohacsi@bsd.hu
