@@ -1,4 +1,0 @@
-bin/makeself
-bin/makeself-header.sh
-%%PORTDOCS%%%%DOCSDIR%%/README
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
