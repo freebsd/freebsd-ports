@@ -6,18 +6,18 @@ dependency chains up and down to upgrade packages recursively.
 
 This package also includes the following utilities:
 portinstall:	Helps you install new ports in a handy way.
-		Equivalent to `portupgrade -N'.
 portcvsweb:	Instantly browses a history via CVSweb.
-portversion:	Replaces pkg_version(1).  This runs much faster and is
+portversion:	Replaces pkg_version(1), runs much faster and is
 		cooperative with portupgrade(1).
 portsclean:	Cleans ports workdir's, unreferenced distfiles and
 		old and orphan shared libraries.
-portsdb:	Creates binary database from the ports INDEX, and
-		expands ports globs.
-pkg_deinstall:	Wraps pkg_delete(1) and provides wildcards and
-		dependency recursion support, plus some more.
+portsdb:	Creates binary database from the ports INDEX.
+ports_glob:	Expands ports globs.
+pkg_deinstall:	Wraps pkg_delete(1) and provides extra features.
 pkg_fetch:	Fetches packages from a remote site.
 pkg_glob:	Expands package globs.
+pkg_which:	Checks which package a file came from quickly.
+pkgdb:		Creates packages database from /var/db/pkg.
 pkgdepfix:	Fixes the /var/db/pkg registry interactively.
 
 Author: Akinori MUSHA <knu@FreeBSD.org>

@@ -4,11 +4,13 @@ etc/rc.d/000.pkgtools.sh
 sbin/pkg_deinstall
 sbin/pkg_fetch
 sbin/pkg_glob
+sbin/pkgdb
 sbin/pkgdepfix
 sbin/portcvsweb
+sbin/portinstall
+sbin/ports_glob
 sbin/portsclean
 sbin/portsdb
-sbin/portinstall
 sbin/portupgrade
 sbin/portversion
 %%RUBY_SITELIBDIR%%/pkg.rb
@@ -23,6 +25,7 @@ sbin/portversion
 share/zsh/site-functions/_pkg_deinstall
 share/zsh/site-functions/_pkg_fetch
 share/zsh/site-functions/_pkg_glob
+share/zsh/site-functions/_pkgdb
 share/zsh/site-functions/_pkgdepfix
 share/zsh/site-functions/_portsclean
 share/zsh/site-functions/_portsdb
