@@ -8,7 +8,7 @@
 PORTNAME=	xinvest
 PORTVERSION=	2.6
 CATEGORIES=	finance deskutils
-MASTER_SITES=	http://sunsite.dk/xinvest/
+MASTER_SITES=	http://xinvest.sunsite.dk/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A personal finance tracking and performance tool
