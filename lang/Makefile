@@ -179,7 +179,7 @@
     SUBDIR += pike70
     SUBDIR += pike72
     SUBDIR += pike74
-    SUBDIR += pike75
+    SUBDIR += pike76
     SUBDIR += pm3-base
     SUBDIR += pm3-forms
     SUBDIR += pm3-gui
