@@ -10,7 +10,8 @@ PORTVERSION=	2.05d
 PORTREVISION=	1
 DISTNAME=	muh-2.05d-fixed
 CATEGORIES=	irc
-MASTER_SITES=	http://prdownloads.sourceforge.net/muh/
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=muh
 
 MAINTAINER=	billf@FreeBSD.org
 
