@@ -1,0 +1,49 @@
+diff -u --new-file pppload-1.0/README.freebsd ./README.freebsd
+--- pppload-1.0/README.freebsd	Wed Dec 31 16:00:00 1969
++++ ./README.freebsd	Fri Jan 30 20:14:36 1998
+@@ -0,0 +1,45 @@
++PPPLoad is designed to display the current throughput of a particular
++PPP link in a format that is similar to xload. Written by Sean Vyain. 
++
++This is a FreeBSD port of the linux program called pppload, available at
++http://sunsite.unc.edu/pub/Linux/system/network/serial/ppp/pppload-1.0.tar.gz
++
++Original program homepage at:
++http://www.geocities.com/SiliconValley/Pines/1029/pppload.html
++
++I have modified the FreeBSD port to be able to show the throughput of
++any network device that will work with netstat, e.g. tun, ppp, ed,
++etc.  I just wanted a program to nicely display throughput
++statistics for the tun device.
++
++ Examples of usage:
++For tun0 (tun is the default device,0 is the default link number):
++% pppload &
++
++For first ne2000 clone:
++% pppload -device ed -link 0 &
++
++for ppp2:
++% pppload -device ppp -link 2 &
++
++BUGS
++Command line is awkward with -device and -link.
++
++Can't detect whether the network device is up or not, so any command
++line options like -cmd -percmd -retry probably don't work.  This is
++different that the original linux version.
++
++Keeps track of all packets network device has ever used, even if it
++has gone down then up again.  This is also different than the linux
++version. 
++
++Requires awk, grep, and netstat to get the data.  Very short polling
++time are definitely not recommended.
++
++Network interface names are limited to a total of 4 characters or less
++at the moment, e.g. ppp0 ed3 ze1.
++
++
++Documentation of this FreeBSD port is not complete.
++
++

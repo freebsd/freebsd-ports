@@ -1,0 +1,124 @@
+diff -u --new-file pppload-1.0/PPPStats.C.ppp ./PPPStats.C.ppp
+--- pppload-1.0/PPPStats.C.ppp	Wed Dec 31 16:00:00 1969
++++ ./PPPStats.C.ppp	Wed Jan 28 18:27:30 1998
+@@ -0,0 +1,120 @@
++// pppload - A PPP Load Monitor
++// Copyright (C) 1996  Sean Vyain
++// svyain@mail.tds.net
++// smvyain@softart.com
++//
++// This program is free software; you can redistribute it and/or modify
++// it under the terms of the GNU General Public License as published by
++// the Free Software Foundation; either version 2 of the License, or
++// (at your option) any later version.
++//
++// This program is distributed in the hope that it will be useful,
++// but WITHOUT ANY WARRANTY; without even the implied warranty of
++// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
++// GNU General Public License for more details.
++//
++// You should have received a copy of the GNU General Public License
++// along with this program; if not, write to the Free Software
++// Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
++
++extern "C" {
++#include <stdlib.h>
++#include <stdio.h>
++#include <sys/types.h>
++#include <sys/select.h>
++#include <sys/ioctl.h>
++#include <sys/socket.h>
++#include <sys/time.h>
++#include <net/if.h> 
++#include <net/if_ppp.h> 
++#include <net/if_var.h>
++#include <net/if_tun.h>
++}
++
++#include "PPPStats.H"
++#include "Options.H"
++#include <iostream.h>
++
++
++typedef struct
++{
++  struct ppp_stats  stats;
++} DclPPPInfo;
++
++PPPStats::PPPStats()
++: _rxTotal( 0 ), _txTotal( 0 ), _isUp( true ), _retryId( -1 )
++{
++	if ((_s = socket(AF_INET, SOCK_DGRAM, 0)) < 0) {
++        perror("couldn't create IP socket");
++        exit(1);
++    }
++
++	startTimer( options->interval() * 1000 );
++}
++
++void PPPStats::timerEvent( QTimerEvent* e )
++{
++	if ( e->timerId() == _retryId )
++	{
++		system( (const char*)options->cmd() );
++	}
++	
++	DclPPPInfo        PPPInfo[1];           // what is this var for?
++	struct ifpppstatsreq ifreq;             // ifreq      ifreq; 
++	struct ppp_stats* PPPStat;
++	struct ppp_stats  LastPPPStat[1];       // what is this var for?
++	
++	memset (&ifreq, 0, sizeof (ifreq));
++//	sprintf (ifreq.ifr_ifrn.ifrn_name, "ppp%d", options->link());
++	sprintf (ifreq.ifr_name, "tun%d", options->link());
++
++//	ifreq.ifr_ifru.ifru_data = (caddr_t) PPPInfo;
++
++	PPPStat = & PPPInfo->stats;
++	memset (LastPPPStat, 0, sizeof (LastPPPStat));
++
++
++
++//	if ( (ioctl (_s, SIOCDEVPRIVATE, (caddr_t) & ifreq) < 0) ||
++//	     ( _isUp && ( PPPStat->p.ppp_ibytes < _rxTotal ) ) ||
++//	     ( !_isUp && ( PPPStat->p.ppp_ibytes == 0 ) )
++	if ( (ioctl (_s, SIOCGPPPSTATS ,  &ifreq) < 0) ||
++	     ( _isUp && ( ifreq.stats.p.ppp_ibytes < _rxTotal ) ) ||
++	     ( !_isUp && ( ifreq.stats.p.ppp_ibytes == 0 ))
++	     ) {
++	  if ( _isUp ) {
++			_isUp = false;
++			emit linkDown();
++			if ( options->cmd().length() ) {
++			  _retryId = startTimer( options->retry() * 1000 );
++			  system( (const char*)options->cmd() );
++			}
++	  }
++	  PPPStat->p.ppp_ibytes = 0;
++          PPPStat->p.ppp_obytes = 0;
++	} else if ( !_isUp ) {
++	  _isUp = true;
++	  killTimer( _retryId );
++	  _retryId = -1;
++	}
++
++ PPPStat->p.ppp_ibytes=ifreq.stats.p.ppp_ibytes;	
++ PPPStat->p.ppp_obytes=ifreq.stats.p.ppp_obytes;
++	
++
++cout<<ifreq.stats.p.ppp_ibytes<<" "<<ifreq.stats.p.ppp_ipackets<<" "
++    <<ifreq.stats.p.ppp_ierrors<<" "<<ifreq.stats.p.ppp_obytes <<" "
++    <<ifreq.stats.p.ppp_opackets<<" "<<ifreq.stats.p.ppp_oerrors<<endl
++    <<PPPStat->p.ppp_ibytes<<" "<<PPPStat->p.ppp_ipackets<<" "
++    <<PPPStat->p.ppp_ierrors<<" "<<PPPStat->p.ppp_obytes <<" "
++    <<PPPStat->p.ppp_opackets<<" "<<PPPStat->p.ppp_oerrors<<endl;
++	unsigned int rxDelta = PPPStat->p.ppp_ibytes - _rxTotal;
++	unsigned int txDelta = PPPStat->p.ppp_obytes - _txTotal;
++	_rxTotal = PPPStat->p.ppp_ibytes;
++	_txTotal = PPPStat->p.ppp_obytes;
++	if ( rxDelta == _rxTotal ) rxDelta = 0;
++	if ( txDelta == _txTotal ) txDelta = 0;
++	emit changeStats( rxDelta, txDelta, _rxTotal, _txTotal );
++
++}
++

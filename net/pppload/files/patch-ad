@@ -1,0 +1,115 @@
+diff -u --new-file pppload-1.0/PPPStats.C ./PPPStats.C
+--- pppload-1.0/PPPStats.C	Wed Sep 11 19:50:13 1996
++++ ./PPPStats.C	Fri Jan 30 20:16:04 1998
+@@ -19,16 +19,22 @@
+ 
+ extern "C" {
+ #include <stdlib.h>
+-#include <errno.h>
+ #include <stdio.h>
++#include <sys/types.h>
++#include <sys/select.h>
+ #include <sys/ioctl.h>
+ #include <sys/socket.h>
+-#include <net/if.h>
+-#include <linux/ppp_defs.h>
++#include <sys/time.h>
++#include <net/if.h> 
++#include <net/if_ppp.h> 
+ }
+ 
+ #include "PPPStats.H"
+ #include "Options.H"
++#include <iostream.h>
++
++void get_command(char *);
++char command[200];
+ 
+ typedef struct
+ {
+@@ -53,38 +59,42 @@
+ 		system( (const char*)options->cmd() );
+ 	}
+ 	
+-	DclPPPInfo        PPPInfo[1];
+-	struct ifreq      ifreq;
++	DclPPPInfo        PPPInfo[1];           
++	struct ifpppstatsreq ifreq;            
+ 	struct ppp_stats* PPPStat;
+-	struct ppp_stats  LastPPPStat[1];
+-	
+-	memset (& ifreq, 0, sizeof (ifreq));
+-	sprintf (ifreq.ifr_ifrn.ifrn_name, "ppp%d", options->link());
++	struct ppp_stats  LastPPPStat[1];       
+ 	
+-	ifreq.ifr_ifru.ifru_data = (caddr_t) PPPInfo;
++	memset (&ifreq, 0, sizeof (ifreq));
++	sprintf (ifreq.ifr_name, "%s%d",(const char*)options->device(),options->link());
++
+ 	PPPStat = & PPPInfo->stats;
+ 	memset (LastPPPStat, 0, sizeof (LastPPPStat));
+ 	
+-	if ( (ioctl (_s, SIOCDEVPRIVATE, (caddr_t) & ifreq) < 0) ||
+-		( _isUp && ( PPPStat->p.ppp_ibytes < _rxTotal ) ) ||
+-		( !_isUp && ( PPPStat->p.ppp_ibytes == 0 ) )
+-		) {
+-		if ( _isUp ) {
+-			_isUp = false;
+-			emit linkDown();
+-			if ( options->cmd().length() ) {
+-				_retryId = startTimer( options->retry() * 1000 );
+-				system( (const char*)options->cmd() );
+-			}
+-		}
+-		PPPStat->p.ppp_ibytes = 0;
+-		PPPStat->p.ppp_obytes = 0;
++	get_command(ifreq.ifr_name);
++	FILE * fptr;
++	fptr=popen(command,"r+");
++	fscanf(fptr,"%u%u",&PPPStat->p.ppp_ibytes,&PPPStat->p.ppp_obytes);
++	pclose(fptr);
++
++	if ( ( _isUp && ( PPPStat->p.ppp_ibytes < _rxTotal ) ) ||
++	     ( !_isUp && ( PPPStat->p.ppp_ibytes == 0 ))
++	     ) {
++	  if ( _isUp ) {
++	    _isUp = false;
++	    emit linkDown();
++	    if ( options->cmd().length() ) {
++			  _retryId = startTimer( options->retry() * 1000 );
++			  system( (const char*)options->cmd() );
++	    }
++	  }
++	  PPPStat->p.ppp_ibytes = 0;
++          PPPStat->p.ppp_obytes = 0;
+ 	} else if ( !_isUp ) {
+-		_isUp = true;
+-		killTimer( _retryId );
+-		_retryId = -1;
++	  _isUp = true;
++	  killTimer( _retryId );
++	  _retryId = -1;
+ 	}
+-
++	
+ 	unsigned int rxDelta = PPPStat->p.ppp_ibytes - _rxTotal;
+ 	unsigned int txDelta = PPPStat->p.ppp_obytes - _txTotal;
+ 	_rxTotal = PPPStat->p.ppp_ibytes;
+@@ -92,4 +102,17 @@
+ 	if ( rxDelta == _rxTotal ) rxDelta = 0;
+ 	if ( txDelta == _txTotal ) txDelta = 0;
+ 	emit changeStats( rxDelta, txDelta, _rxTotal, _txTotal );
++	
++}
++
++void get_command(char * interface) {
++  /*"/usr/bin/netstat -b -I tun0 | /usr/bin/grep Link | awk '{print $(NF-4),$(NF-1)}' */
++  const char * netstat_command ="/usr/bin/netstat -n -b -I ";
++  const char * grep_command =" | /usr/bin/grep Link | /usr/bin/awk '{print $(NF-4),$(NF-1)}'";
++  command[0]='\0';
++  strcat(command,netstat_command);
++  strcat(command,interface);
++  strcat(command,grep_command);
+ }
++
++
