@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mozilla
-PORTVERSION=	0.9.3.r2
+PORTVERSION=	0.9.3
 PORTEPOCH=	1
 CATEGORIES=	japanese www
 MASTER_SITES=	http://www.mozilla.gr.jp/jlp/ \
@@ -33,8 +33,8 @@ MOZILLA_PORT=	${PORTSDIR}/www/mozilla+ipv6
 .else
 MOZILLA_PORT=	${PORTSDIR}/www/mozilla
 .endif
-JLP_SRC=	${PORTNAME}${PORTVERSION:S/.r2$//}-langjajp-RC2.xpi \
-		${PORTNAME}${PORTVERSION:S/.r2$//}-regjp-RC2.xpi
+JLP_SRC=	${PORTNAME}${PORTVERSION}-langjajp.xpi \
+		${PORTNAME}${PORTVERSION}-regjp.xpi
 
 .include <bsd.port.pre.mk>
 
