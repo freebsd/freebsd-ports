@@ -2,11 +2,37 @@ bin/gcalctool
 etc/gconf/gconf.xml.defaults/apps/gcalctool/%gconf.xml
 etc/gconf/gconf.xml.defaults/schemas/apps/gcalctool/%gconf.xml
 etc/gconf/schemas/gcalctool.schemas
-share/gnome/gcalctool/calctool.gif
+share/gnome/applications/gcalctool.desktop
+share/gnome/help/gcalctool/C/figures/gcalctool_basic_window.png
+share/gnome/help/gcalctool/C/figures/gcalctool_edit_const_window.png
+share/gnome/help/gcalctool/C/figures/gcalctool_edit_func_window.png
+share/gnome/help/gcalctool/C/figures/gcalctool_financial_window.png
+share/gnome/help/gcalctool/C/figures/gcalctool_ins_ascii_window.png
+share/gnome/help/gcalctool/C/figures/gcalctool_mem_reg_window.png
+share/gnome/help/gcalctool/C/figures/gcalctool_menu_symbol.png
+share/gnome/help/gcalctool/C/figures/gcalctool_scientific_window.png
+share/gnome/help/gcalctool/C/gcalctool.xml
+share/gnome/help/gcalctool/C/legal.xml
+share/gnome/omf/gcalctool/gcalctool-C.omf
+@exec scrollkeeper-install -q %D/share/gnome/omf/gcalctool/gcalctool-C.omf 2>/dev/null || /usr/bin/true
+share/gnome/pixmaps/gcalctool.png
+share/locale/am/LC_MESSAGES/gcalctool.mo
+share/locale/ca/LC_MESSAGES/gcalctool.mo
+share/locale/cs/LC_MESSAGES/gcalctool.mo
 share/locale/es/LC_MESSAGES/gcalctool.mo
 share/locale/fr/LC_MESSAGES/gcalctool.mo
+share/locale/ja/LC_MESSAGES/gcalctool.mo
+share/locale/nl/LC_MESSAGES/gcalctool.mo
 share/locale/no/LC_MESSAGES/gcalctool.mo
+share/locale/pt/LC_MESSAGES/gcalctool.mo
+share/locale/pt_BR/LC_MESSAGES/gcalctool.mo
 share/locale/sv/LC_MESSAGES/gcalctool.mo
-@dirrm share/gnome/gcalctool
+share/locale/uk/LC_MESSAGES/gcalctool.mo
+share/locale/zh_TW/LC_MESSAGES/gcalctool.mo
+@dirrm share/gnome/omf/gcalctool
+@dirrm share/gnome/help/gcalctool/C/figures
+@dirrm share/gnome/help/gcalctool/C
+@dirrm share/gnome/help/gcalctool
 @dirrm etc/gconf/gconf.xml.defaults/schemas/apps/gcalctool
 @dirrm etc/gconf/gconf.xml.defaults/apps/gcalctool
+@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gcalctool/gcalctool-C.omf 2>/dev/null || /usr/bin/true

@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	gcalctool
-PORTVERSION=	4.2.43
+PORTVERSION=	4.2.77
 CATEGORIES=	math gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
-MASTER_SITE_SUBDIR=	fifth-toe/2.1/2.1.99/sources
+MASTER_SITE_SUBDIR=	sources/${PORTNAME}/4.2
 DIST_SUBDIR=	gnome2
 
 MAINTAINER=	gnome@FreeBSD.org
@@ -27,8 +27,6 @@ USE_GNOME=	gnomeprefix gnomehack
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LIBS="-L${LOCALBASE}/lib"
 CONFIGURE_TARGET=	--target=${MACHINE_ARCH}-unknown-freebsd${OSREL}
-
-MAN1=	gcalctool.1
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|g ; \
