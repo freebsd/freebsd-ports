@@ -7,9 +7,10 @@
 #
 
 PORTNAME=	hypersrc
-PORTVERSION=	5.3.2
+PORTVERSION=	5.3.3
 CATEGORIES=	devel
-MASTER_SITES=	ftp://ftp.jimbrooks.org/hypersrc/%SUBDIR%/
+MASTER_SITES=	ftp://ftp.jimbrooks.org/hypersrc/%SUBDIR%/ \
+		http://www.home.earthlink.net/~jebrooks1/ftp/hypersrc/%SUBDIR%/
 MASTER_SITE_SUBDIR=	latest old
 
 MAINTAINER=	ports@FreeBSD.org
