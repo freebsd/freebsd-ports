@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	virtualmin
-PORTVERSION=	1.81
+PORTVERSION=	1.91
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.webmin.com/download/virtualmin/
 DISTNAME=	virtual-server-${PORTVERSION}
@@ -25,6 +25,7 @@ post-extract:
 	@${FIND} ${WRKSRC} -name .xvpics | ${XARGS} ${RM} -r
 	@${FIND} ${WRKSRC} -name *.swp | ${XARGS} ${RM}
 	@${FIND} ${WRKSRC} -name *.cgi | ${XARGS} ${REINPLACE_CMD} -e "s@/usr/local/bin/perl@${PERL}@"
+	@${FIND} ${WRKSRC} -name *.cgi | ${XARGS} ${CHMOD} 755
 	@${FIND} ${WRKSRC} -name *.bak | ${XARGS} ${RM}
 
 do-install:
