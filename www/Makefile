@@ -135,6 +135,7 @@
     SUBDIR += p5-Apache-AuthCookie
     SUBDIR += p5-Apache-AuthTicket
     SUBDIR += p5-Apache-AuthenCache
+    SUBDIR += p5-Apache-AuthenURL
     SUBDIR += p5-Apache-AutoIndex
     SUBDIR += p5-Apache-DBI
     SUBDIR += p5-Apache-Icon
