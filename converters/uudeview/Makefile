@@ -3,7 +3,7 @@
 # Date Created:		04 Aug 1996
 # Whom:			Tim Vanderhoek <ac199@freenet.hamilton.on.ca>
 #
-# $Id: Makefile,v 1.11 1997/04/27 00:23:50 asami Exp $
+# $Id: Makefile,v 1.12 1997/11/08 13:44:25 hoek Exp $
 #
 
 DISTNAME=       uudeview-0.5.13
@@ -17,8 +17,10 @@ MAINTAINER=	hoek@FreeBSD.ORG
 LIB_DEPENDS=	uu\\.1\\.:${PORTSDIR}/converters/uulib
 
 GNU_CONFIGURE=	Yes
-CONFIGURE_ARGS+=        --enable-inews=${PREFIX}/news/lib/inews \
+CONFIGURE_ARGS=        --enable-inews=${PREFIX}/news/lib/inews \
 			--disable-tcl
+FETCH_BEFORE_ARGS=	-t
+
 MAN1=		uudeview.1 uuenview.1
 
 PORTDOCDIR?=	share/doc/uudeview
