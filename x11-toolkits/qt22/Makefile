@@ -48,7 +48,7 @@ INSTALLS_SHLIB=yes
 .endif
 
 pre-fetch:
-.if !defined(QT_GIF_AVAILABLE) || !defined(HAVE_UNISYS_LICENSE)
+.if !defined(QT_GIF_AVAILABLE) && !defined(HAVE_UNISYS_LICENSE)
 	@${ECHO}
 	@${ECHO} "GIF support is disabled in QT by default due to the"
 	@${ECHO} "restrictive license on LZW compression owned by Unisys."
