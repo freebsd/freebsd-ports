@@ -1,0 +1,11 @@
+This is an extension to Class::DBI that currently implements: 
+
+* A sequence fix for Oracle databases.
+* Automatic column name discovery.
+* Automatic primary key detection.
+* Sequence name guessing.
+* Proper aliasing of reserved words.
+
+Instead of setting Class::DBI as your base class, use this. 
+
+WWW: http://search.cpan.org/dist/Class-DBI-Oracle/
