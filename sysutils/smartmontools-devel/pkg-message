@@ -10,5 +10,5 @@ A sample configuration file has been installed as ${PREFIX}/etc/smartd.conf.samp
 Copy this file to ${PREFIX}/etc/smartd.conf and edit appropriately
 
 To have smartd start at boot
-	cp ${PREFIX}/etc/rc.d/smartd.sample ${PREFIX}/etc/rc.d/smartd.sh
+	cp ${PREFIX}/etc/rc.d/smartd.sh.sample ${PREFIX}/etc/rc.d/smartd.sh
 	chmod 555 ${PREFIX}/etc/rc.d/smartd.sh
