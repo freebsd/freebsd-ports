@@ -1,0 +1,28 @@
+--- configure	Tue Jul  9 23:16:00 2002
++++ configure	Mon Aug  5 11:03:52 2002
+@@ -5366,13 +5366,13 @@
+ 
+ 
+ 
+-echo "$as_me:$LINENO: checking for u_getVersion in -licu-uc" >&5
+-echo $ECHO_N "checking for u_getVersion in -licu-uc... $ECHO_C" >&6
++echo "$as_me:$LINENO: checking for u_getVersion in -licuuc" >&5
++echo $ECHO_N "checking for u_getVersion in -licuuc... $ECHO_C" >&6
+ if test "${ac_cv_lib_icu_uc_u_getVersion+set}" = set; then
+   echo $ECHO_N "(cached) $ECHO_C" >&6
+ else
+   ac_check_lib_save_LIBS=$LIBS
+-LIBS="-licu-uc  $LIBS"
++LIBS="-licuuc  $LIBS"
+ cat >conftest.$ac_ext <<_ACEOF
+ #line $LINENO "configure"
+ #include "confdefs.h"
+@@ -5426,7 +5426,7 @@
+ #define HAVE_LIBICU_UC 1
+ _ACEOF
+ 
+-  LIBS="-licu-uc $LIBS"
++  LIBS="-licuuc $LIBS"
+ 
+ fi
+ 
