@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	vpopmail
-PORTVERSION=	5.3.27
-PORTREVISION=	1
+PORTVERSION=	5.3.28
 CATEGORIES=	mail
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -292,8 +291,6 @@ pre-configure:
 	${MKDIR} ${VCFGDIR}
 
 post-install:
-	${CHOWN} -R vpopmail:vchkpw ${PREFIX}/vpopmail
-	${CHMOD} o-rwx ${PREFIX}/vpopmail/bin ${PREFIX}/vpopmail/lib
 	${MKDIR} ${PREFIX}/vpopmail/etc
 	if [ ! -f "${PREFIX}/vpopmail/etc/tcp.smtp" ]; then \
 		if [ -f "${VCFGDIR}/tcp.smtp" ]; then \
@@ -302,7 +299,6 @@ post-install:
 			${TOUCH} ${PREFIX}/vpopmail/etc/tcp.smtp; \
 		fi; \
 	fi
-#	${INSTALL_DATA} ${VCFGDIR}/inc_deps ${VCFGDIR}/lib_deps ${PREFIX}/vpopmail/etc/
 .if defined(DEFAULT_DOMAIN)
 	${ECHO_CMD} ${DEFAULT_DOMAIN} > ${PREFIX}/vpopmail/etc/defaultdomain
 .endif
@@ -312,5 +308,6 @@ post-install:
 	${ECHO_CMD} "${WITH_MYSQL_UPDATE_SERVER}|0|${WITH_MYSQL_UPDATE_USER}|${WITH_MYSQL_UPDATE_PASSWD}|${WITH_MYSQL_DB}" \
 		>> ${PREFIX}/vpopmail/etc/vpopmail.mysql
 .endif
+	${CHOWN} -R vpopmail:vchkpw ${PREFIX}/vpopmail/bin/ ${PREFIX}/vpopmail/etc/
 
 .include <bsd.port.post.mk>
