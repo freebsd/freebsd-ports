@@ -18,4 +18,3 @@ archives.
      does not support empty directories or volume labels.  UNARJ is much
      slower than ARJ because ARJ is highly optimized using assembly
      language.
-

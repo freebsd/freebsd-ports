@@ -6,4 +6,3 @@ unpacking shell archives after reception.  The core of both programs
 is initially derived from public domain.  Some modules and other
 code sections are freely borrowed from other GNU distributions,
 bringing `shar' under the terms of the GNU General Public License.
-
