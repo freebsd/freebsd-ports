@@ -17,7 +17,7 @@ COMMENT=	Graphical GTK mud client with plugin support
 
 BUILD_DEPENDS=	${LOCALBASE}/include/pygtk-2.0/pygtk/pygtk.h:${PORTSDIR}/x11-toolkits/py-gtk2
 
-BROKEN=		"Broken pkg-plist"
+BROKEN=		"Does not install properly"
 DEPRECATED=	${BROKEN}
 EXPIRATION_DATE=2004-04-17
 
