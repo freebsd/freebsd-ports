@@ -6,6 +6,13 @@ You should get into the habit of checking this file for changes each
 time you update your ports collection, before attempting any port
 upgrades.
 
+20041213:
+  AFFECTS: users of databases/postgresql-relay
+  AUTHOR: edwin@FreeBSD.org
+
+  The PostgreSQL Relay must now be enabled / disabled in rc.conf:
+    postgresqlrelay_enable="YES"
+
 20041212:
   AFFECTS: users of sysutils/bacula
   AUTHOR: lkoeller@FreeBSD.org
