@@ -1,4 +1,13 @@
 bin/qfsm
+bin/qfsm.exec
 %%PORTDOCS%%%%EXAMPLESDIR%%/ascii_example.fsm
 %%PORTDOCS%%%%EXAMPLESDIR%%/bin_example.fsm
+%%DATADIR%%/po/English.qm
+%%DATADIR%%/po/English.ts
+%%DATADIR%%/po/French.qm
+%%DATADIR%%/po/French.ts
+%%DATADIR%%/po/German.qm
+%%DATADIR%%/po/German.ts
+@dirrm %%DATADIR%%/po
+@dirrm %%DATADIR%%
 %%PORTDOCS%%@dirrm %%EXAMPLESDIR%%
