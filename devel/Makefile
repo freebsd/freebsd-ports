@@ -543,6 +543,7 @@
     SUBDIR += tcllib
     SUBDIR += tclreadline
     SUBDIR += tcltls
+    SUBDIR += tdl
     SUBDIR += templ
     SUBDIR += terminality
     SUBDIR += tide
