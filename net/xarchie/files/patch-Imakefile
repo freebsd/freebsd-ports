@@ -1,0 +1,182 @@
+--- Imakefile.orig	Wed Jul 28 16:34:34 1993
++++ Imakefile	Wed Oct 15 15:46:32 2003
+@@ -1,88 +1,53 @@
+-/**/#
+-/**/# Imakefile for xarchie : X11 Browser interface to Archie
+-/**/#
+-/**/# George Ferguson, ferguson@cs.rochester.edu, 12 Sep 1991.
+-/**/# Version 2.0: 23 Apr 1993.
+-/**/#
+-/**/# Unless otherwise indicated, you have to delete both `/**/' and the
+-/**/# leading `#' sign to uncomment something. To comment something out,
+-/**/# you need to add both the `/**/' (for cpp via imake) and `#' (for
+-/**/# make). Just for completeness, if you're reading this in a Makefile,
+-/**/# there will be some empty `' things above -- see the Imakefile.
+-/**/#
++#
++# Imakefile for xarchie : X11 Browser interface to Archie
++#
++# George Ferguson, ferguson@cs.rochester.edu, 12 Sep 1991.
++# Version 2.0: 23 Apr 1993.
++#
++# Unless otherwise indicated, you have to delete both `/**/' and the
++# leading `#' sign to uncomment something. To comment something out,
++# you need to add both the `/**/' (for cpp via imake) and `#' (for
++# make). Just for completeness, if you're reading this in a Makefile,
++# there will be some empty `' things above -- see the Imakefile.
++#
+ 
+ #include "config.h"
+ 
+-/**/# Where do you want this stuff? Uncomment and adjust these to change the
+-/**/# destinations of "make install" and "make install.man" if the defaults
+-/**/# are not satisfactory.
+-/**/#BINDIR = bin
+-/**/#MANDIR = man/man1
+-/**/# Use this for R5
+-/**/#MANSUFFIX = 1
+-/**/# Use this for R4 (leave one # sign since these are cpp commands for imake)
+-/**/##undef ManSuffix
+-/**/##define ManSuffix 1
+-
+-/**/# Where is the app-defaults to C converter?
+-/**/# Only needed if you change the app-defaults file Xarchie.ad and want the
+-/**/# changes compiled into the program. If you don't have ad2c you should
+-/**/# remove the extra clean target for Xarchie.ad.h below. If you lose
+-/**/# Xarchie.ad.h and can't remake it, create it to be an empty file. Of
+-/**/# course then you'll have to be able to find the resource file at run time.
+-/**/# If your ad2c came from this xarchie distribution, then use the following
+-/**/# target, otherwise change it to reflect where you put ad2c.
++#BINDIR = bin
++#MANDIR = man/man1
++# Use this for R5
++#MANSUFFIX = 1
++# Use this for R4 (leave one # sign since these are cpp commands for imake)
++
+ AD2C = Ad2c/ad2c.script
+ 
+-/**/# How excited are you about debugging? This can be -g, -O, or nothing.
+-/**/#CDEBUGFLAGS = -g
++#CDEBUGFLAGS = -g
+ 
+-/**/# If the help strings make your executable too large, disable the
+-/**/# online help by commenting out the following lines.
+ HELP = -DHELP
+ HELPC = help.c
+ HELPO = help.o
+ 
+-/**/# To enable Prospero tracing (controlled by the -debug option),
+-/**/# uncomment this.
+-/**/#PDEBUG = -DDEBUG
++#PDEBUG = -DDEBUG
+ 
+-/**/# Does your system have re_comp() and re_exec(), or regcmp() and regex()
+-/**/# [in the case of A/UX]? If not, adjust the following definitions.
+ #if !defined(HAVE_RE_COMP) || !defined(HAVE_REGCMP)
+ REGEXC = regex.c
+ REGEXO = regex.o
+ #endif
+ 
+-/**/# If you don't have <sys/param.h> to define MAXPATHLEN, then adjust
+-/**/# the following definition.
+ #ifndef HAVE_SYS_PARAM_H
+ MAXPATHLEN = -DMAXPATHLEN=256
+ #endif
+ 
+-/**/# If you don't have strcasecmp() and strncasecmp(), adjust the
+-/**/# following definitions:
+ #ifndef HAVE_STRCASECMP
+ STRCASECMP = -DSTRCASECMP
+ STRCASECMPC = strcasecmp.c
+ STRCASECMPO = strcasecmp.o
+ #endif
+ 
+-/**/# If your system does not use DNS hostname lookup by default, you
+-/**/# need to uncomment the following definition. This will be apparent
+-/**/# if the program builds but gives the error: "Can't resolve hostname".
+-/**/# You can test this by building and running resolv.c.
+ #ifdef NEED_LRESOLV
+ RESOLV_LIB = -lresolv
+ #endif
+ 
+-/**/# You can enable the use of a FileChooser widget for dialogs that
+-/**/# require a filename (Save, Load, Write, etc). If your system has
+-/**/# trouble with the subclassing of widgets for the FileChooser
+-/**/# class or with the device-independent directory routines in FWF/Dir,
+-/**/# you should remove the #define of UseFileChooser.
+-/**/# NOTE: If you are reading this in the Makefile and nothing follows,
+-/**/#       then use of the FileChooser widget was disabled in the Imakefile.
+ #define UseFileChooser
+ #ifdef UseFileChooser
+ FCHOOSER_DEF = -DFILECHOOSER
+@@ -100,12 +65,6 @@
+ FCHOOSER_DEPS = $(FCHOOSER_DEP) $(DIR_DEP)
+ #endif
+ 
+-/**/# You want to use the MultiList widget if possible. If you have problems
+-/**/# with the subclassing in your version of X, you can use the regular
+-/**/# Athena List widget by removing the #define of UseMultiList. Of course
+-/**/# then you will not be able to make multiple selections.
+-/**/# NOTE: If you are reading this in the Makefile and nothing follows,
+-/**/#       then use of the MultiList widget was disabled in the Imakefile.
+ #define UseMultiList
+ #ifdef UseMultiList
+ MULTILIST_DEF =	-DMULTILIST
+@@ -115,8 +74,8 @@
+ MULTILIST_DEP =	$(MULTILIST_DIR)/libMultiList.a
+ #endif
+ 
+-/**/#########################################################################
+-/**/# Nothing to change below here...
++#########################################################################
++# Nothing to change below here...
+ 
+ PSRCS = atalloc.c dirsend.c get_pauth.c get_vdir.c perrmesg.c ptalloc.c \
+ 	$(REGEXC) stcopy.c support.c vl_comp.c vlalloc.c
+@@ -180,24 +139,24 @@
+ 	(cd $(DIR_DIR); $(MAKE) PassCDebugFlags)
+ #endif
+ 
+-/**/#
+-/**/# Make C code for fallback resources from application resource file
+-/**/#
++#
++# Make C code for fallback resources from application resource file
++#
+ Xarchie.ad.h: Xarchie.ad
+ 	$(AD2C) Xarchie.ad >Xarchie.ad.h
+ 
+-/**/#
+-/**/# Make Help text from manpage
+-/**/#
++#
++# Make Help text from manpage
++#
+ help-text1.h: xarchie.man
+ 	./help-text1.sh >help-text1.h
+ 
+ help-text2.h: help-text1.h
+ 	./help-text2.sh <help-text1.h >help-text2.h
+ 
+-/**/#
+-/**/# What to do when there's nothing to do...
+-/**/#
++#
++# What to do when there's nothing to do...
++#
+ World:
+ 	make Makefile
+ 	make Makefiles
+@@ -205,9 +164,9 @@
+ 	make clean
+ 	make
+ 
+-/**/#
+-/**/# For debugging with Saber
+-/**/#
++#
++# For debugging with Saber
++#
+ saberload:
+ 	# setopt ansi
+ 	# source xsaber.suppress
