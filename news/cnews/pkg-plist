@@ -42,6 +42,7 @@ news/cnewsbin/ctl/version
 news/cnewsbin/dbz
 news/cnewsbin/dbzinfo
 news/cnewsbin/decompressors/bdecode
+news/cnewsbin/decompressors/bunzip2
 news/cnewsbin/decompressors/c7decode
 news/cnewsbin/decompressors/gunzip
 news/cnewsbin/dospacefor
@@ -62,6 +63,7 @@ news/cnewsbin/inject/pnews
 news/cnewsbin/inject/postnews
 news/cnewsbin/inject/tear
 news/cnewsbin/input/bdecode
+news/cnewsbin/input/bunzip2
 news/cnewsbin/input/c7decode
 news/cnewsbin/input/cunbatch
 news/cnewsbin/input/newsrun
@@ -118,6 +120,7 @@ news/cnewsbin/spacefor
 news/cnewsbin/staleness
 news/cnewsbin/touchlock
 news/cnewsbin/unlock
+news/cnewsbin/pgpverify
 news/lib/active
 news/lib/active.times
 news/lib/batchparms
@@ -148,3 +151,4 @@ news/lib/whoami
 @dirrm news/cnewsbin/nov
 @dirrm news/cnewsbin/relay
 @dirrm news/lib/bin
+@dirrm news/cnewsbin
