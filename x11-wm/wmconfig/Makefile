@@ -14,7 +14,7 @@ MAINTAINER=	net@arrishq.org
 COMMENT=	Menu generation tool for X window managers
 
 WRKSRC=		${WRKDIR}/${DISTNAME}
-HAS_CONFIGURE=	yes
+GNU_CONFIGURE=	yes
 
 CONFIGURE_ARGS=	--prefix=${LOCALBASE} --sysconfdir=${LOCALBASE}/etc --mandir=${LOCALBASE}/man
 
