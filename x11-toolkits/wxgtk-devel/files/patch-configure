@@ -1,5 +1,14 @@
---- configure.orig	Sat Oct  4 02:17:08 2003
-+++ configure	Sat Oct  4 02:37:10 2003
+--- configure.orig	Mon Oct  6 15:01:07 2003
++++ configure	Mon Oct  6 15:04:11 2003
+@@ -11731,7 +11731,7 @@
+ 
+ 
+     if test "$wxUSE_ZLIB" = "sys" -o "$wxUSE_ZLIB" = "yes" ; then
+-                                                if test "$USE_DARWIN" = 1; then
++                                                if test "$USE_DARWIN" = 1 -o "$USE_FREEBSD" = 1; then
+             system_zlib_h_ok="yes"
+         else
+                                                                                     echo $ac_n "checking for zlib.h >= 1.1.4""... $ac_c" 1>&6
 @@ -16048,8 +16048,8 @@
  
  WX_VERSION_TAG=`echo WX${TOOLKIT_DIR}${TOOLKIT_VERSION}${WIDGET_SET}${lib_unicode_suffix}${lib_debug_suffix}_${WX_RELEASE} | tr "[a-z]" "[A-Z]"`
@@ -29,16 +38,35 @@
  
  case "${host}" in
      *-*-cygwin* | *-*-mingw32* )
-@@ -18669,7 +18667,7 @@
-                 fi
+@@ -18679,7 +18677,7 @@
                  ;;
-           *-*-freebsd*)
--                                                THREAD_OPTS="-kthread lthread $THREAD_OPTS c_r"
-+                                                THREAD_OPTS="$THREAD_OPTS pthread c_r"
+         esac
+ 
+-                                THREAD_OPTS="$THREAD_OPTS pthread none"
++                                THREAD_OPTS=
+ 
+                 THREADS_OK=no
+         for flag in $THREAD_OPTS; do
+@@ -18736,6 +18734,9 @@
+               THREADS_CFLAGS=""
+       done
+ 
++      THREADS_OK=yes
++      THREADS_LINK="$PTHREAD_LIBS"
++
+       if test "x$THREADS_OK" != "xyes"; then
+           wxUSE_THREADS=no
+           echo "configure: warning: No thread support on this system... disabled" 1>&2
+@@ -18752,7 +18753,7 @@
+                 flag="-D_THREAD_SAFE"
                  ;;
-           *-*-darwin* | *-*-cygwin* )
-                                                 THREAD_OPTS=""
-@@ -19531,21 +19530,6 @@
+             *-freebsd*)
+-                flag="-D_THREAD_SAFE"
++                flag="${PTHREAD_CFLAGS}"
+                 ;;
+             *-hp-hpux* )
+                 flag="-D_REENTRANT"
+@@ -19531,21 +19532,6 @@
      esac
  fi
  
@@ -60,7 +88,7 @@
  if test "$WXWIN_COMPATIBILITY_2" = "yes"; then
      cat >> confdefs.h <<\EOF
  #define WXWIN_COMPATIBILITY_2 1
-@@ -22780,13 +22764,11 @@
+@@ -22780,13 +22766,11 @@
  s%@WX_LIBRARY_IMPORTLIB@%$WX_LIBRARY_IMPORTLIB%g
  s%@WX_TARGET_LIBRARY@%$WX_TARGET_LIBRARY%g
  s%@WX_LIBRARY_LINK1@%$WX_LIBRARY_LINK1%g
