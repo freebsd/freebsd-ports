@@ -1,0 +1,7 @@
+Mk is a replacement for Make originally written for
+Research Unix by Andrew Hume and later ported to
+Plan 9 and Inferno.  The present version uses sh
+instead of rc and is a slightly modified version of
+that distributed by Vitanuova.  A version supporting
+rc is available from the ports maintainer; the sh
+version is that used by Quick C--.

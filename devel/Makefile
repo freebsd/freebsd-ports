@@ -335,6 +335,7 @@
     SUBDIR += mipsel-linux-binutils
     SUBDIR += mipsel-linux-gcc
     SUBDIR += mipsel-linux-kernel-headers
+    SUBDIR += mk
     SUBDIR += mkcmd
     SUBDIR += mkmf
     SUBDIR += mm
