@@ -1,8 +1,8 @@
 --- Makefile.orig	Mon May  3 19:17:50 1999
-+++ Makefile	Thu Jul 29 20:44:35 1999
++++ Makefile	Mon Nov  1 13:41:33 1999
 @@ -23,8 +23,8 @@
  #
- # $FreeBSD$
+ # $Id: Makefile,v 1.8 1999/05/03 17:17:50 mleisher Exp $
  #
 -CC = gcc
 -CFLAGS = -g -Wall
