@@ -1,26 +1,11 @@
---- Makefile.orig	Sun Feb 15 11:54:27 2004
-+++ Makefile	Sun Feb 22 17:11:53 2004
-@@ -138,12 +138,12 @@
- 
- docs : $(HS_PPS)
- 	mkdir -p $(DOCDIR)
--	$(HADDOCK) -h -o $(DOCDIR) $(HS_PPS) -ihttp://www.haskell.org/ghc/docs/latest/html/libraries/base,/usr/share/ghc-6.2/html/libraries/base/base.haddock 
-+	$(HADDOCK) -h -o $(DOCDIR) $(HS_PPS)
- 
- 
- install: $(patsubst %, install-%, $(COMPILERS))
- 
--install-ghc: $(HSQLLib) $(HI_SRC) docs
-+install-ghc: $(HSQLLib) $(HI_SRC)
- 	$(INSTALL) $(HSQLLib) $(GHC_DIR)/libHSsql.a
- 	$(INSTALL) -d $(GHC_DIR)/imports/Database
- 	for i in $(patsubst $(BUILDDIR)/%,%,$(HI_SRC)); do \
-@@ -153,8 +153,8 @@
+--- Makefile.orig	Sun Apr 11 17:38:33 2004
++++ Makefile	Fri Apr 23 14:19:17 2004
+@@ -154,8 +154,8 @@
  	rm -f $(GHC_DIR)/HSsql.o
  	$(GHC_PKG) -u -g -i hsql.pkg
  	if test -f $(DOCDIR)/index.html; then  \
--	   $(INSTALL) -d $(GHC_DIR)/doc/html/libraries/hsql; \
--	   $(INSTALL) -c $(DOCDIR)/* $(GHC_DIR)/doc/html/libraries/hsql; \
+-	   $(INSTALL) -d $(DOC_DIR); \
+-	   $(INSTALL) -c $(DOCDIR)/* $(DOC_DIR); \
 +	   $(INSTALL) -d ${DOCSDIR}; \
 +	   $(INSTALL) -c $(DOCDIR)/* ${DOCSDIR}; \
  	fi
