@@ -1,0 +1,4 @@
+RReadline is a pure Ruby implementation of the Readline library.
+
+WWW:	http://www.ruby-lang.org/en/raa-list.rhtml?name=Ruby+Readline
+Author:	KUBO Hiroya <hiroya@netcom.mag.keio.ac.jp>
