@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	jdk-tutorial
-PORTVERSION=	1.1.8
-PORTREVISION=	6
+PORTVERSION=	2002.03.04
 CATEGORIES=	java
 MASTER_SITES=	ftp://ftp.javasoft.com/docs/ \
 		http://java.sun.com/docs/books/tutorial/download/
@@ -18,18 +17,18 @@ MAINTAINER=	znerd@FreeBSD.org
 NO_WRKSUBDIR=	yes
 RESTRICTED=	"This software is under license and export control."
 NO_BUILD=	yes
-PLIST_SUB+=	VERSION=${PORTVERSION}
-PKGMESSAGE=	${WRKDIR}/MESSAGE
+TARGET_DIR=	${PREFIX}/share/doc/java-tutorial/
+PLIST_SUB+=	T=${TARGET_DIR:S/^${PREFIX}\///}
 
 .include <bsd.port.pre.mk>
 
 do-install:
-	${MKDIR} ${PREFIX}/jdk${PORTVERSION}/docs/books/tutorial
-	(cd ${WRKSRC} && ${TAR} -cf - * ) \
-	    | (cd ${PREFIX}/jdk${PORTVERSION}/docs/books/tutorial \
-	        && ${TAR} -xf -)
-	@${SED} s+!!PREFIX!!+${PREFIX}+g < ${PKGDIR}/pkg-message > ${PKGMESSAGE}
-	@${CAT} ${PKGMESSAGE}
-	@${RM} ${PKGMESSAGE}
+	@${ECHO} -n ">> Creating directory ${TARGET_DIR}..."
+	@${MKDIR} ${TARGET_DIR}
+	@${ECHO} " [ DONE ]"
+
+	@${ECHO} -n ">> Copying files..."
+	@${CP} -R ${WRKSRC}/* ${TARGET_DIR}
+	@${ECHO} " [ DONE ]"
 
 .include <bsd.port.post.mk>
