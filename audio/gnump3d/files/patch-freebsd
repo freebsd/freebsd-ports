@@ -1,15 +1,75 @@
---- mkfiles/freebsd.orig	Mon May 27 21:23:17 2002
-+++ mkfiles/freebsd	Mon May 27 21:23:31 2002
-@@ -116,10 +116,10 @@
- 	install ../mp3d.conf $(CONFIGDIR)
+--- mkfiles/freebsd.orig	Thu May 16 18:08:35 2002
++++ mkfiles/freebsd	Tue May 28 02:00:05 2002
+@@ -6,8 +6,8 @@
+ # if you wish you may change PREFIX to be /usr/local,
+ # for example
+ #
+-PREFIX = 
+-#PREFIX = /usr/local
++#PREFIX = 
++PREFIX ?= /usr/local
+ 
+ #
+ #  Binary installation directory.
+@@ -24,7 +24,7 @@
+ #
+ # Where we install the manpages.
+ #
+-MANDIR = /usr/local/man/man1
++MANDIR = $(PREFIX)/man/man1
+ 
+ 
+ 
+@@ -32,12 +32,12 @@
+ O      = o
+ RM     = rm -f
+ RMDIR  = rm -rf
+-CC     = g++
+-LIBS   = -pthread
++CC     ?= g++
++LIBS   = ${PTHREAD_LIBS}
+ 
+ 
+-DEFAULT_CFLAGS = -I.  -D_THREAD_SAFE -D_REENTRANT -DBINARY_DIR="\"$(BINARYDIR)\"" -DSYSCONFDIR="\"$(CONFIGDIR)\"" -DVERSION="\"0.9.9.7\""
+-CFLAGS  = $(DEFAULT_CFLAGS) -Wall -DFREEBSD=1 -DOS_TYPE="\"FreeBSD\""
++DEFAULT_CFLAGS = -I.  ${PTHREAD_CFLAGS} -D_REENTRANT -DBINARY_DIR="\"$(BINARYDIR)\"" -DSYSCONFDIR="\"$(CONFIGDIR)\"" -DVERSION="\"0.9.9.7\""
++CFLAGS  += $(DEFAULT_CFLAGS) -Wall -DFREEBSD=1 -DOS_TYPE="\"FreeBSD\""
+ 
+ 
+ #
+@@ -110,22 +110,22 @@
+ #  Install the software.
+ #
+ install: $(PROG)
+-	install -d $(BINARYDIR) -d $(CONFIGDIR) -d $(TEMPLATEDIR)
+-	install ../mp3d $(BINARYDIR)
+-	install ../contrib/stats/mp3d-top $(BINARYDIR)
+-	install ../mp3d.conf $(CONFIGDIR)
++	mkdir -p $(BINARYDIR) $(CONFIGDIR) $(TEMPLATEDIR)
++	${BSD_INSTALL_PROGRAM} ../mp3d $(BINARYDIR)
++	${BSD_INSTALL_SCRIPT} ../contrib/stats/mp3d-top $(BINARYDIR)
++	${BSD_INSTALL_DATA} ../mp3d.conf $(CONFIGDIR)
  	# Default template.
- 	install -d $(TEMPLATEDIR)/default
+-	install -d $(TEMPLATEDIR)/default
 -	cp -R ../templates/default/ $(TEMPLATEDIR)
-+	cp -R ../templates/default $(TEMPLATEDIR)
++	mkdir -p $(TEMPLATEDIR)/default
++	${BSD_INSTALL_DATA} ../templates/default/* $(TEMPLATEDIR)/default
  	# Simple template
- 	install -d $(TEMPLATEDIR)/simple 
+-	install -d $(TEMPLATEDIR)/simple 
 -	cp -R ../templates/simple/ $(TEMPLATEDIR)
-+	cp -R ../templates/simple $(TEMPLATEDIR)
- 	install ../templates/README $(TEMPLATEDIR)
+-	install ../templates/README $(TEMPLATEDIR)
++	mkdir -p $(TEMPLATEDIR)/simple 
++	${BSD_INSTALL_DATA} ../templates/simple/* $(TEMPLATEDIR)/simple
++	${BSD_INSTALL_DATA} ../templates/README $(TEMPLATEDIR)
  	# Man pages.
- 	install -d $(MANDIR)
+-	install -d $(MANDIR)
+-	install ../doc/mp3d.1 $(MANDIR)
+-	install ../doc/mp3d.conf.1 $(MANDIR)
+-	install ../doc/mp3d-top.1 $(MANDIR)
++	mkdir -p $(MANDIR)
++	${BSD_INSTALL_DATA} ../doc/mp3d.1 $(MANDIR)
++	${BSD_INSTALL_DATA} ../doc/mp3d.conf.1 $(MANDIR)
++	${BSD_INSTALL_DATA} ../doc/mp3d-top.1 $(MANDIR)
+ 
+ 
+ #
