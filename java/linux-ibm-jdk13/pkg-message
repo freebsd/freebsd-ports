@@ -5,4 +5,6 @@ emulation procfs filesystem. You may do so by adding the following
 line to your /etc/fstab file:
 
  linprocfs   /compat/linux/proc   linprocfs   rw   0  0
+
+Also, enable 'options USER_LDT' in your kernel configuration.
 ======================================================================

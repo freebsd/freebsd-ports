@@ -285,23 +285,23 @@
 %%T%%/include/jawt.h
 %%T%%/include/ras.h
 %%T%%/docs/COPYRIGHT
-%%T%%/docs/LICENSE_da.html
-%%T%%/docs/LICENSE_de.html
-%%T%%/docs/LICENSE_en.html
-%%T%%/docs/LICENSE_es.html
-%%T%%/docs/LICENSE_fi.html
-%%T%%/docs/LICENSE_fr.html
-%%T%%/docs/LICENSE_it.html
-%%T%%/docs/LICENSE_ja.html
-%%T%%/docs/LICENSE_ko.html
-%%T%%/docs/LICENSE_nl.html
-%%T%%/docs/LICENSE_no.html
-%%T%%/docs/LICENSE_pl.html
-%%T%%/docs/LICENSE_pt.html
-%%T%%/docs/LICENSE_ru.html
-%%T%%/docs/LICENSE_sv.html
-%%T%%/docs/LICENSE_tc.html
-%%T%%/docs/LICENSE_zh.html
+%%T%%/docs/sdk/LICENSE_da.html
+%%T%%/docs/sdk/LICENSE_de.html
+%%T%%/docs/sdk/LICENSE_en.html
+%%T%%/docs/sdk/LICENSE_es.html
+%%T%%/docs/sdk/LICENSE_fi.html
+%%T%%/docs/sdk/LICENSE_fr.html
+%%T%%/docs/sdk/LICENSE_it.html
+%%T%%/docs/sdk/LICENSE_ja.html
+%%T%%/docs/sdk/LICENSE_ko.html
+%%T%%/docs/sdk/LICENSE_nl.html
+%%T%%/docs/sdk/LICENSE_no.html
+%%T%%/docs/sdk/LICENSE_pl.html
+%%T%%/docs/sdk/LICENSE_pt.html
+%%T%%/docs/sdk/LICENSE_ru.html
+%%T%%/docs/sdk/LICENSE_sv.html
+%%T%%/docs/sdk/LICENSE_tc.html
+%%T%%/docs/sdk/LICENSE_zh.html
 %%T%%/docs/README-BR.JRE.HTML
 %%T%%/docs/README-CN.JRE.HTML
 %%T%%/docs/README-DE.JRE.HTML
@@ -886,6 +886,7 @@
 @dirrm %%T%%/jre/bin
 @dirrm %%T%%/jre
 @dirrm %%T%%/include
+@dirrm %%T%%/docs/sdk
 @dirrm %%T%%/docs
 @dirrm %%T%%/demo/sound/media
 @dirrm %%T%%/demo/sound/src
