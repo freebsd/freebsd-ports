@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	libglade2
-PORTVERSION=	1.99.7
+PORTVERSION=	1.99.8
 CATEGORIES=	devel gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
-MASTER_SITE_SUBDIR=	pre-gnome2/releases/gnome-2.0-desktop-beta
+MASTER_SITE_SUBDIR=	pre-gnome2/releases/gnome-2.0-desktop-beta2
 DISTNAME=	${PORTNAME:S/2$//}-${PORTVERSION}
 DIST_SUBDIR=	gnome2
 
@@ -17,7 +17,7 @@ MAINTAINER=	gnome@FreeBSD.org
 
 BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/pyexpat.so:${PORTSDIR}/textproc/py-expat
 LIB_DEPENDS=	xml2.5:${PORTSDIR}/textproc/libxml2 \
-		gtk-x11-1.3.14:${PORTSDIR}/x11-toolkits/gtk13
+		gtk-x11-2.0.0:${PORTSDIR}/x11-toolkits/gtk20
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/pyexpat.so:${PORTSDIR}/textproc/py-expat
 
 USE_BZIP2=	yes
