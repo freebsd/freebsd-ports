@@ -3,7 +3,7 @@
 # Date created:         17 July 1995
 # Whom:                 asami
 #
-# $Id: Makefile,v 1.6 1998/08/05 09:31:15 asami Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	xdl-2.1

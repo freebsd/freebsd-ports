@@ -3,7 +3,7 @@
 # Date created:		24 November 1994
 # Whom:			asami
 #
-# $Id: Makefile,v 1.10 1998/10/26 07:26:18 asami Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	xli.1.16

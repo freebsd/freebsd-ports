@@ -3,7 +3,7 @@
 # Date created:		Sat Jul 24 03:04:46 MET DST 1999
 # Whom:			Juergen Lock <nox@jelal.kn-bremen.de>
 #
-# $Id: $
+# $FreeBSD$
 #
 
 DISTNAME=	olirc-0.0.35

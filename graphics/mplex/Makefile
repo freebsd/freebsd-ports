@@ -3,7 +3,7 @@
 # Date created:         Wed Jul 31 20:54:54 CDT 1996
 # Whom:                 erich@FreeBSD.org
 #
-# $Id: Makefile,v 1.3 1998/08/23 07:34:43 hoek Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	mplex-1.1

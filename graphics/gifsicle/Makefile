@@ -3,7 +3,7 @@
 # Date created:                19 December 1998
 # Whom:                        Brad Hendrickse <bradh@iafrica.com>
 #
-# $Id: Makefile,v 1.3 1999/02/12 02:22:10 flathill Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	gifsicle-1.11.1

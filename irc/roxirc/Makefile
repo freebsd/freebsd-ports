@@ -3,7 +3,7 @@
 # Date created:         Mar 15 1999
 # Whom:                 rox@fearme.com
 #
-# $Id: Makefile,v 1.5 1999/06/28 02:20:59 billf Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	roxirc-1.4

@@ -3,7 +3,7 @@
 # Date created:         26 Dec 97
 # Whom:                 Pedro Giffuni <giffunip@asme.org>
 #
-# $Id: Makefile,v 1.1.1.1 1998/02/18 20:53:42 steve Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	gplot

@@ -3,7 +3,7 @@
 # Date created:                      4 May 1998
 # Whom:                              Studded <Studded@dal.net>
 #
-# $Id: Makefile,v 1.3 1998/09/16 06:55:15 asami Exp $
+# $FreeBSD$
 #
 # If you need SOCKS support, define SOCKS_SERVER with
 # the name of your SOCKS proxy and remove the '#'.

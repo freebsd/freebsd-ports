@@ -3,7 +3,7 @@
 # Date created:         30 December 1997
 # Whom:                 Juergen Unger <j.unger@choin.net>
 #
-# $Id$
+# $FreeBSD$
 #
 
 DISTNAME=       fly-1.6.4

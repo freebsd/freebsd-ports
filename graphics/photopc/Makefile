@@ -3,7 +3,7 @@
 # Date created:		11 October 1997
 # Whom:			Douglas Carmichael <dcarmich@mcs.com>
 #
-# $Id$
+# $FreeBSD$
 #
 
 DISTNAME=	photopc-1.6

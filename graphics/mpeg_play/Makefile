@@ -3,7 +3,7 @@
 # Date created:		17 December 1994
 # Whom:			asami
 #
-# $Id: Makefile,v 1.12 1998/11/14 23:48:08 obrien Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	mpeg_play-2.4

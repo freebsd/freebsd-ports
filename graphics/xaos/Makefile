@@ -3,7 +3,7 @@
 # Date created:				24 February 1996
 # Whom:					Joseph Koshy <koshy@india.hp.com>
 #
-# $Id: Makefile,v 1.10 1999/01/23 07:05:31 vanilla Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	XaoS-3.0

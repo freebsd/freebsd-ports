@@ -3,7 +3,7 @@
 # Date created:        20 Oct 1996
 # Whom:                Yukihiro Nakai <nakai@mlab.t.u-tokyo.ac.jp>
 #
-# $Id: Makefile,v 1.3 1999/01/12 16:50:29 vanilla Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	gifmerge

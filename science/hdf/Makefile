@@ -3,7 +3,7 @@
 # Date created:		17 November 1996
 # Whom:			mi
 #
-# $Id: Makefile,v 1.9 1998/10/05 03:20:28 steve Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	HDF4.1r2

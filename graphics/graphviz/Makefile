@@ -3,7 +3,7 @@
 # Date created:         03 Feb 1998
 # Whom:                 Thomas Gellekum <tg@FreeBSD.ORG>
 #
-# $Id: Makefile,v 1.7 1999/06/28 13:22:46 tg Exp $
+# $FreeBSD$
 #
 
 DISTNAME=       graphviz_1_4.src.unix

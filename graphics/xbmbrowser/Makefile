@@ -3,7 +3,7 @@
 # Date created:		06 September 1995
 # Whom:			Thomas Gellekum <tg@FreeBSD.org>
 #
-# $Id: Makefile,v 1.5 1998/09/17 00:32:42 asami Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	xbmbrowser5.1

@@ -3,7 +3,7 @@
 # Date created:				9 Dec 1997
 # Whom:					Andrey Zakhvatov
 #
-# $Id: Makefile,v 1.6 1998/09/22 15:30:37 vanilla Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	aalib-1.2

@@ -3,7 +3,7 @@
 # Date created:		17 Feb 1998
 # Whom:			Ugo Paternostro <paterno@dsi.unifi.it>
 #
-# $Id: Makefile,v 1.1.1.1 1998/12/22 02:19:18 jseger Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	dc20ctrl-0.4

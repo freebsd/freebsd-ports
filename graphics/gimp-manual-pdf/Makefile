@@ -3,7 +3,7 @@
 # Date created:		5 June 1998
 # Whom:			Brett Taylor
 #
-# $Id$
+# $FreeBSD$
 #
 
 DOCFORMAT=	PDF

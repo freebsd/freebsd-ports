@@ -3,7 +3,7 @@
 # Date created:		2 May 1997
 # Whom:			Jun-ichiro itojun Itoh <itojun@itojun.org>
 #
-# $Id: Makefile,v 1.9 1998/01/16 17:37:11 jkh Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	camediaplay-980118

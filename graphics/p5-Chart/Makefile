@@ -3,7 +3,7 @@
 # Date Created:		8 April 1998
 # Whom:			Vanilla I. Shu <vanilla@FreeBSD.ORG>
 #
-# $Id: Makefile,v 1.5 1999/06/22 22:51:00 cpiazza Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	Chart-0.99b

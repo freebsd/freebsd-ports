@@ -3,7 +3,7 @@
 # Date created:		19 November 1996
 # Whom:			mi
 #
-# $Id: Makefile,v 1.4 1998/06/25 07:07:12 vanilla Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	jbigkit-1.0

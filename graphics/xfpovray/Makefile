@@ -3,7 +3,7 @@
 # Date created:         20 Sep 1997
 # Whom:                 Thomas Gellekum <tg@FreeBSD.ORG>
 #
-# $Id: Makefile,v 1.12 1999/04/15 16:05:56 mharo Exp $
+# $FreeBSD$
 #
 
 DISTNAME=       xfpovray-1.3.1

@@ -3,7 +3,7 @@
 # Date created:         Tue Feb  7 12:02:49  1995
 # Whom:                 hsu
 #
-# $Id: Makefile,v 1.31 1999/03/11 21:47:11 scrappy Exp $
+# $FreeBSD$
 #
 
 DISTNAME=       MesaLib-3.0

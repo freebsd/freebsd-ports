@@ -3,7 +3,7 @@
 # Date created:		26 July 1998
 # Whom:			Malte Lance <malte.lance@gmx.net>
 #
-# $Id: Makefile,v 1.2 1998/11/29 03:17:22 asami Exp $
+# $FreeBSD$
 #
 
 DISTNAME=		4va-1.21

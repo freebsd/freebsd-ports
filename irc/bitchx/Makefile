@@ -3,7 +3,7 @@
 # Date created:		26 Jan 1998
 # Whom:			griffin
 #
-# $Id: Makefile,v 1.5 1999/06/27 16:16:16 cpiazza Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	ircii-pana-75p3

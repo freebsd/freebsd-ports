@@ -3,7 +3,7 @@
 # Date created:		24 February 1999
 # Whom:			Yuu Yashiki
 #
-# $Id$
+# $FreeBSD$
 #
 
 DISTNAME=	lfview11beta2

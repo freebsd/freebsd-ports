@@ -3,7 +3,7 @@
 # Date created:		Tue Mar 23 10:18:20 EET 1999
 # Whom:			Martti Kuparinen <martti.kuparinen@ericsson.com>
 #
-# $Id: Makefile,v 1.6 1999/06/28 23:25:49 cpiazza Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	tutorial

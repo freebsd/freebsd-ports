@@ -3,7 +3,7 @@
 # Date created:		11 Jun 1999
 # Whom:			Will Andrews <andrews@technologist.com>
 #
-# $Id: Makefile,v 1.4 1999/08/01 00:46:36 cpiazza Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	blackened-${VERSION}

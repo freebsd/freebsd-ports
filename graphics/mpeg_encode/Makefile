@@ -3,7 +3,7 @@
 # Date created:         
 # Whom:                 erich@FreeBSD.org
 #
-# $Id: Makefile,v 1.6 1998/10/12 01:05:06 jseger Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	mpeg_encode-1.5b-src

@@ -3,7 +3,7 @@
 # Date created:				29 April 1999
 # Whom:					Andrey Zakhvatov
 #
-# $Id: Makefile,v 1.2 1999/06/05 19:00:28 mharo Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	Hermes-1.2.5

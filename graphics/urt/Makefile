@@ -3,7 +3,7 @@
 # Date created:		Jan 5 1997
 # Whom:			cfs@ing.puc.cl (original)
 #
-# $Id: Makefile,v 1.13 1999/02/03 11:11:47 asami Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	urt

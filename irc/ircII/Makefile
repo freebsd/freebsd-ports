@@ -3,7 +3,7 @@
 # Date created:		18 Oct 1994
 # Whom:			torstenb
 #
-# $Id: Makefile,v 1.16 1999/04/19 05:55:09 mharo Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	ircii-4.4

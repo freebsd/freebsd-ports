@@ -3,7 +3,7 @@
 # Date created:		6 November 1994
 # Whom:			smace
 #
-# $Id: Makefile,v 1.16 1998/09/14 19:36:37 markm Exp $
+# $FreeBSD$
 #
 
 DISTNAME=       jpegsrc.v6b

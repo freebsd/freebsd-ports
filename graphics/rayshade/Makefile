@@ -3,7 +3,7 @@
 # Date created:		21 January 1998
 # Whom:			giffunip@asme.org
 #
-# $Id: Makefile,v 1.2 1998/10/12 04:05:33 jseger Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	rayshade.4.0

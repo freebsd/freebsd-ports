@@ -3,7 +3,7 @@
 # Date created:        23 August 1998
 # Whom:                Bill Fumerola <billf@chc-chimes.com>
 #
-# $Id: Makefile,v 1.1.1.1 1998/11/16 20:38:21 billf Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	qcread-0.3

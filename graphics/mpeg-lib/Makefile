@@ -3,7 +3,7 @@
 # Date created:		16 November 1994
 # Whom:			torstenb
 #
-# $Id: Makefile,v 1.9 1998/09/19 19:04:26 smace Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	mpeg_lib-1.2.1

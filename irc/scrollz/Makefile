@@ -3,7 +3,7 @@
 # Date created:		10 Aug 1999
 # Whom:			Will Andrews <andrews@technologist.com>
 #
-# $Id$
+# $FreeBSD$
 #
 
 DISTNAME=	ScrollZ-1.8i5-FreeBSD-3.2

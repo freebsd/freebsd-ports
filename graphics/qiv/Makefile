@@ -3,7 +3,7 @@
 # Date created:        25 December 1998
 # Whom:                Bill Fumerola <billf@chc-chimes.com>
 #
-# $Id: Makefile,v 1.4 1999/05/29 04:10:49 steve Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	qiv-1.1

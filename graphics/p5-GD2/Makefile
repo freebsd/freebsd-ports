@@ -3,7 +3,7 @@
 # Date created:				June 26th 1997
 # Whom:	      				James FitzGibbon <jfitz@FreeBSD.ORG>
 #
-# $Id: Makefile,v 1.4 1998/08/22 19:37:33 jseger Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	GD-1.18

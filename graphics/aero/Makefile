@@ -3,7 +3,7 @@
 # Date created:         Mon Aug 28 13:35:31 CDT 1995
 # Whom:                 erich@rrnet.com
 #
-# $Id: Makefile,v 1.13 1998/11/15 07:59:15 jseger Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	aero_1.7.0_src

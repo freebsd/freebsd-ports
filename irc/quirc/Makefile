@@ -3,7 +3,7 @@
 # Date created:		21 May 1999
 # Whom:			Chris Piazza <cpiazza@FreeBSD.org>
 #
-# $Id: Makefile,v 1.3 1999/06/28 02:20:53 billf Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	quirc-0.9.79

@@ -3,7 +3,7 @@
 # Date created:        17 June 1999
 # Whom:                Brandon Fosdick <bfoz@glue.umd.edu>
 #
-# $Id$
+# $FreeBSD$
 #
 
 DISTNAME=	Giram-0.0.18

@@ -3,7 +3,7 @@
 # Date created:		17 May 1999
 # Whom:			Jun Kuriyama <kuriyama@FreeBSD.ORG>
 #
-# $Id: Makefile,v 1.4 1999/06/28 18:33:58 billf Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	swing11

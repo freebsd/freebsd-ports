@@ -3,7 +3,7 @@
 # Date created:		04 November 1998
 # Whom:			Thomas Gellekum <tg@FreeBSD.ORG>
 #
-# $Id: Makefile,v 1.5 1999/08/06 08:45:21 tg Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	sketch-0.6.1

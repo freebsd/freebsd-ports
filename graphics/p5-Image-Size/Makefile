@@ -3,7 +3,7 @@
 # Date created:				October 20th 1996
 # Whom:	      				James FitzGibbon <jfitz@FreeBSD.org>
 #
-# $Id: Makefile,v 1.16 1998/11/11 05:37:19 asami Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	Image-Size-2.9

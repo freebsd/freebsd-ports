@@ -3,7 +3,7 @@
 # Date created:         7 Sept 1995
 # Whom:                 cacho@mexicano.gdl.iteso.mx
 #
-# $Id: Makefile,v 1.3 1997/10/07 11:48:30 tg Exp $
+# $FreeBSD$
 #
 
 DISTNAME=       xfrac304

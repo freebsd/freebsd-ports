@@ -3,7 +3,7 @@
 # Date created:				22 February 1999
 # Whom:	      				mharo@area51.fremont.ca.us
 #
-# $Id: Makefile,v 1.2 1999/04/13 07:06:29 mharo Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	tgd1.2c

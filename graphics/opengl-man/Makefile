@@ -3,7 +3,7 @@
 # Date created:         19990120
 # Whom:                 cracauer@cons.org "Martin Cracauer"
 #
-# $Id: Makefile,v 1.2 1999/02/03 11:11:47 asami Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	opengl-man-657

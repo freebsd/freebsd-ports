@@ -3,7 +3,7 @@
 # Date created:		25 Oct 1998
 # Whom:			Seiichirou Hiraoka
 #
-# $Id: Makefile,v 1.3 1998/11/22 03:40:19 flathill Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	xpx141

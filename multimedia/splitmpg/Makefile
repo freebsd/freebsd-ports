@@ -3,7 +3,7 @@
 # Date created:         Wed Jul 31 21:59:42 CDT 1996
 # Whom:                 erich@FreeBSD.org
 #
-# $Id: Makefile,v 1.3 1996/11/18 11:29:16 asami Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	splitmpg

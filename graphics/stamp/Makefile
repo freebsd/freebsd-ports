@@ -3,7 +3,7 @@
 # Date created:	11 August 1998
 # Whom:		Bill Fumerola <billf@chc-chimes.com>
 #
-# $Id: Makefile,v 1.3 1998/12/29 18:22:57 billf Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	stamp

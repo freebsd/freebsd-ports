@@ -3,7 +3,7 @@
 # Date Created:		Fri Sep 15 10:04:46 CDT 1995
 # Whom:			james@cs.uwm.edu
 #
-# $Id: Makefile,v 1.5 1998/01/27 17:10:05 fenner Exp $
+# $FreeBSD$
 #
 
 DISTNAME= 	spigot-1.7

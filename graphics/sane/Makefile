@@ -3,7 +3,7 @@
 # Date created:			Sat Jul 19 16:23:10 MET DST 1997
 # Whom:				gary@hotlava.com
 #
-# $Id: Makefile,v 1.16 1999/05/22 04:36:03 obrien Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	sane-1.0.1

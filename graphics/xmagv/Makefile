@@ -3,7 +3,7 @@
 # Date created:		25 Oct 1998
 # Whom:			Seiichirou Hiraoka
 #
-# $Id: Makefile,v 1.1.1.1 1998/11/18 09:48:01 flathill Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	xmagv111

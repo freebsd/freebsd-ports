@@ -3,7 +3,7 @@
 # Date created:         16 November 1996
 # Whom:                 proff
 #
-# $Id: Makefile,v 1.2 1998/01/22 17:51:33 fenner Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	xmountains-2.4

@@ -3,7 +3,7 @@
 # Date created:		10 February 1995
 # Whom:			jkh
 #
-# $Id: Makefile,v 1.8 1999/02/03 11:11:46 asami Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	pdore-6.0

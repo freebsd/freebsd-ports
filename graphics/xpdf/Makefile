@@ -3,7 +3,7 @@
 # Date created:         02 Feb 1996
 # Whom:                 chuckr@glue.umd.edu
 #
-# $Id: Makefile,v 1.20 1998/12/23 01:11:52 steve Exp $
+# $FreeBSD$
 #
 
 DISTNAME=       xpdf-0.80

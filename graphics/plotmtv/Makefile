@@ -3,7 +3,7 @@
 # Date created:		19 October 1996
 # Whom:			pgs
 #
-# $Id: Makefile,v 1.4 1997/06/19 12:35:44 tg Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	Plotmtv1.4.1

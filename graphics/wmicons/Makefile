@@ -3,7 +3,7 @@
 # Date created:         26 Japnuary 1999
 # Whom:                 KIRIYAMA Kazuhiko
 #
-# $Id: Makefile,v 1.1.1.1 1999/03/18 04:48:18 taoka Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	wmicons-1.0

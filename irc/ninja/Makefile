@@ -3,7 +3,7 @@
 # Date created:	 	10 April 1999
 # Whom:			Chris Piazza <cpiazza@FreeBSD.org>
 #
-# $Id: Makefile,v 1.6 1999/06/28 02:20:50 billf Exp $
+# $FreeBSD$
 #
 
 DISTNAME= 	ninja-1.1-src

@@ -3,7 +3,7 @@
 # Date created:		25 March 1999
 # Whom:			KIRIYAMA Kazuhiko <kiri@pis.toba-cmt.ac.jp>
 #
-# $Id: Makefile,v 1.1.1.1 1999/05/06 13:57:55 taoka Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	JGV-0.2a

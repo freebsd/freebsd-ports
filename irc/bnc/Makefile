@@ -3,7 +3,7 @@
 # Date created:        06 July 1998
 # Whom:                Bill Fumerola <billf@chc-chimes.com>
 #
-# $Id: Makefile,v 1.4 1999/06/28 02:20:11 billf Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	bnc2.6.2

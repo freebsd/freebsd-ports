@@ -3,7 +3,7 @@
 # Date created:		22 December 1996
 # Whom:			jmz
 #
-# $Id: Makefile,v 1.13 1998/12/05 03:05:26 jmz Exp $
+# $FreeBSD$
 #
 
 DISTNAME=       PGPLOT-2.08

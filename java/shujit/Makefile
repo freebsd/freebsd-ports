@@ -3,7 +3,7 @@
 # Date created:		30 April 1999
 # Whom:			jake@checker.org
 #
-# $Id: Makefile,v 1.6 1999/08/01 03:00:30 steve Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	shujit-0.3.1b

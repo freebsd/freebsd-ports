@@ -3,7 +3,7 @@
 # Date created:		15 November 1994
 # Whom:			torstenb
 #
-# $Id: Makefile,v 1.69 1999/06/14 00:55:48 jseger Exp $
+# $FreeBSD$
 #
 
 DISTNAME=       ImageMagick-4.2.7

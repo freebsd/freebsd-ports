@@ -3,7 +3,7 @@
 # Date created:		23 August 1994
 # Whom:			torstenb
 #
-# $Id: Makefile,v 1.19 1998/12/09 20:15:29 billf Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	irc2.10.1

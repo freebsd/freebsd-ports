@@ -3,7 +3,7 @@
 # Date created:        07 May 1998
 # Whom:                Yukihiro Nakai <Nakai@technologist.com>
 #
-# $Id: Makefile,v 1.5 1999/01/12 16:50:56 vanilla Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	killustrator-0.2.1

@@ -3,7 +3,7 @@
 # Date created:         		18 October 1996
 # Whom:                 		andreas@marvin.robin.de
 #
-# $Id: Makefile,v 1.2 1998/08/25 20:21:17 asami Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	xmandel

@@ -3,7 +3,7 @@
 # Date created:         Thu Aug  1 09:10:22 CDT 1996
 # Whom:                 erich@FreeBSD.org
 #
-# $Id: Makefile,v 1.8 1998/08/05 09:31:17 asami Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	xmorph-11sep97

@@ -3,7 +3,7 @@
 # Date created:		21 December 1996
 # Whom:			jmz
 #
-# $Id: Makefile,v 1.9 1998/12/22 08:22:54 asami Exp $
+# $FreeBSD$
 #
 
 DISTNAME=       pgplot5.2

@@ -3,7 +3,7 @@
 # Date created:         Sat Nov 5 11:43:03 PST 1994
 # Whom:                 piero
 #
-# $Id: Makefile,v 1.18 1999/03/31 13:32:24 flathill Exp $
+# $FreeBSD$
 #
 
 DISTNAME=       xanim2801

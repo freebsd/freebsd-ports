@@ -3,7 +3,7 @@
 # Date created:         Mon Nov 18 21:28:43 CST 1996
 # Whom:                 erich@FreeBSD.org
 #
-# $Id: Makefile,v 1.55 1999/04/22 19:15:39 mharo Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	gimp-1.1.5

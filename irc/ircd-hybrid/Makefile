@@ -3,7 +3,7 @@
 # Date created:		9 January 1998
 # Whom:			desmo@bandwidth.org
 #
-# $Id: Makefile,v 1.10 1999/03/15 01:29:23 steve Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	ircd-hybrid-5.3p6
