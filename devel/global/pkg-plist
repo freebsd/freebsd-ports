@@ -16,3 +16,4 @@ share/doc/global/NEWS
 share/doc/global/README
 share/doc/global/THANKS
 share/doc/global/VERSION
+@dirrm share/doc/global

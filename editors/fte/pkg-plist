@@ -1,5 +1,6 @@
 bin/fte
 bin/cfte
+bin/xfte
 etc/fte/system.fterc
 etc/fte/ab_c.fte
 etc/fte/ab_c_os2.fte
