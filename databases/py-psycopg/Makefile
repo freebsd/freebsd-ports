@@ -6,23 +6,24 @@
 #
 
 PORTNAME=	psycopg
-PORTVERSION=	1.0.13
+PORTVERSION=	1.1.7
 CATEGORIES=	databases python
 MASTER_SITES=	http://initd.org/pub/software/psycopg/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	psycopg-${PORTVERSION}
 
 MAINTAINER=	simuran@shaw.ca
-COMMENT=	The high perfomance Python adapter for PostgreSQL
+COMMENT=	The high performance Python adapter for PostgreSQL
 
 RUN_DEPENDS=	${DATETIME_DEP}:${PORTSDIR}/lang/py-mx-base
 BUILD_DEPENDS=	${DATETIME_DEP}:${PORTSDIR}/lang/py-mx-base
 LIB_DEPENDS=	pq.3:${PORTSDIR}/${POSTGRESQL_PORT}
 
-POSTGRESQL_PORT?=	databases/postgresql7
 USE_GMAKE=	yes
 USE_PYTHON=	yes
 GNU_CONFIGURE=	yes
+
+POSTGRESQL_PORT?=	databases/postgresql7
 
 ALL_TARGET=	sharedmods
 
@@ -37,14 +38,13 @@ DATETIME_INC=	${PYTHON_SITELIBDIR}/mx/DateTime/mxDateTime/
 DOCSDIR=	${PREFIX}/share/doc/py-psycopg
 EXAMPLESDIR=	${PREFIX}/share/examples/py-psycopg
 
-EXAMPLES=	binary.py commit.py dictfetch.py dt.py first.py oid.py \
-		somehackers.jpg threads.py usercast.py whereareyou.jpg \
-		work.py
+EXAMPLES=	binary.py bool.py commit.py copy_from.py copy_from2.py \
+		copy_to.py dictfetch.py dt.py first.py integrity.py \
+		oid.py notify.py somehackers.jpg threads.py usercast.py \
+		whereareyou.jpg work.py
 
-DOCS=		AUTHORS COPYING CREDITS ChangeLog FAQ NEWS README \
-		RELEASE-1.0 SUCCESS TODO
-
-TEXDOCS=	dbapi20programming.tex dbapiext.tex psycopg-guide.tex
+DOCS=		AUTHORS COPYING CREDITS ChangeLog FAQ INSTALL NEWS \
+		README RELEASE-1.0 SUCCESS TODO
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/psycopgmodule.so \
@@ -53,15 +53,12 @@ do-install:
 .if !defined(NOPORTDOCS)
 post-install:
 	${MKDIR} ${EXAMPLESDIR}
-.for file in ${EXAMPLES}
-	${INSTALL_DATA} ${WRKSRC}/doc/examples/${file} ${EXAMPLESDIR}
+.for f in ${EXAMPLES}
+	${INSTALL_DATA} ${WRKSRC}/doc/examples/${f} ${EXAMPLESDIR}
 .endfor
 	${MKDIR} ${DOCSDIR}
-.for file in ${DOCS}
-	${INSTALL_MAN} ${WRKSRC}/${file} ${DOCSDIR}
-.endfor
-.for file in ${TEXDOCS}
-	${INSTALL_MAN} ${WRKSRC}/doc/${file} ${DOCSDIR}
+.for f in ${DOCS}
+	${INSTALL_MAN} ${WRKSRC}/${f} ${DOCSDIR}
 .endfor
 .else
 PLIST=	${WRKDIR}/PLIST.nodocs
