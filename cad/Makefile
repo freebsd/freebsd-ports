@@ -7,6 +7,7 @@
     SUBDIR += electric
     SUBDIR += felt
     SUBDIR += geda
+    SUBDIR += geda-symbols
     SUBDIR += irsim
     SUBDIR += iverilog
     SUBDIR += kaskade
