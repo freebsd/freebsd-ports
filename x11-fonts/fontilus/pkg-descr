@@ -1,0 +1,16 @@
+Fontilus is a set of extensions for Nautilus to help manage fonts on
+your system.  It consists of a number of components:
+                                                                                
+  - libfont-method: a gnome-vfs method implementing the fonts:/// URI
+    scheme.
+                                                                                
+  - gnome-thumbnail-font: a program to render a small preview of a
+    font.  Uses a custom stream implementation, so can render fonts
+    from arbitrary gnome-vfs URIs (provided the file can be openned in
+    random access mode).  For example, it can render files in
+    fonts:///
+                                                                                
+  - gnome-font-viewer: a simple program to display info about a font
+    and render some of the glyphs.
+
+-- Fontilus README

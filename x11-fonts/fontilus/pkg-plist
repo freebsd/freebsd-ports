@@ -1,0 +1,27 @@
+bin/gnome-font-viewer
+bin/gnome-thumbnail-font
+etc/gconf/gconf.xml.defaults/desktop/gnome/thumbnailers/application@x-font-otf/%gconf.xml
+etc/gconf/gconf.xml.defaults/desktop/gnome/thumbnailers/application@x-font-pcf/%gconf.xml
+etc/gconf/gconf.xml.defaults/desktop/gnome/thumbnailers/application@x-font-ttf/%gconf.xml
+etc/gconf/gconf.xml.defaults/desktop/gnome/thumbnailers/application@x-font-type1/%gconf.xml
+etc/gconf/gconf.xml.defaults/schemas/desktop/gnome/thumbnailers/application@x-font-otf/%gconf.xml
+etc/gconf/gconf.xml.defaults/schemas/desktop/gnome/thumbnailers/application@x-font-pcf/%gconf.xml
+etc/gconf/gconf.xml.defaults/schemas/desktop/gnome/thumbnailers/application@x-font-ttf/%gconf.xml
+etc/gconf/gconf.xml.defaults/schemas/desktop/gnome/thumbnailers/application@x-font-type1/%gconf.xml
+etc/gconf/schemas/fontilus.schemas
+etc/gnome-vfs-2.0/modules/font-method.conf
+lib/gnome-vfs-2.0/modules/libfont-method.so
+libdata/bonobo/servers/fontilus.server
+libexec/fontilus-context-menu
+share/gnome/application-registry/fontilus.applications
+share/gnome/mime-info/fontilus.keys
+share/gnome/mime-info/fontilus.mime
+share/gnome/vfolders/font-method.directory
+@dirrm etc/gconf/gconf.xml.defaults/schemas/desktop/gnome/thumbnailers/application@x-font-type1
+@dirrm etc/gconf/gconf.xml.defaults/schemas/desktop/gnome/thumbnailers/application@x-font-ttf
+@dirrm etc/gconf/gconf.xml.defaults/schemas/desktop/gnome/thumbnailers/application@x-font-pcf
+@dirrm etc/gconf/gconf.xml.defaults/schemas/desktop/gnome/thumbnailers/application@x-font-otf
+@dirrm etc/gconf/gconf.xml.defaults/desktop/gnome/thumbnailers/application@x-font-type1
+@dirrm etc/gconf/gconf.xml.defaults/desktop/gnome/thumbnailers/application@x-font-ttf
+@dirrm etc/gconf/gconf.xml.defaults/desktop/gnome/thumbnailers/application@x-font-pcf
+@dirrm etc/gconf/gconf.xml.defaults/desktop/gnome/thumbnailers/application@x-font-otf
