@@ -627,3 +627,4 @@ math/drgenius|math/drgeo|2003-10-06|Move drgenius to drgeo
 devel/asm2html||2003-10-07|Dupe port, see textproc/asm2html
 www/chimera2||2003-10-18|Development discontinued, port no longer useful
 net/silc-doc||2003-10-25|Documentation is installed by silc-client now
+astro/x3arth||2003-10-26|FTP layout changed, port no longer works
