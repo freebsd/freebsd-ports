@@ -10,7 +10,7 @@ PORTVERSION=	0.3.3
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.energyhq.es.eu.org/files/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	flynn@energyhq.es.eu.org
 COMMENT=	GTK2 send-pr tool
 
 LIB_DEPENDS=	esmtp.6:${PORTSDIR}/mail/libesmtp
