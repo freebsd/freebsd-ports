@@ -16,11 +16,10 @@ MASTER_SITE_SUBDIR=	sylpheed-claws
 MAINTAINER=	oliver@FreeBSD.org
 COMMENT=	A lightweight, featureful, and fast GTK+ based e-mail client
 
-LIB_DEPENDS=	iconv.3:${PORTSDIR}/converters/libiconv
-
 USE_BZIP2=	yes
 USE_GETTEXT=	yes
 USE_GMAKE=	yes
+USE_ICONV=	yes
 USE_X_PREFIX=	yes
 USE_GNOME=	gtk12
 USE_LIBTOOL_VER=13
