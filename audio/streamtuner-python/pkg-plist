@@ -1,0 +1,15 @@
+lib/streamtuner/plugins/python.a
+lib/streamtuner/plugins/python.la
+lib/streamtuner/plugins/python.so
+share/streamtuner-python/icons/google-stations.png
+share/streamtuner-python/modules/G.py
+share/streamtuner-python/modules/G.pyc
+share/streamtuner-python/modules/G.pyo
+share/streamtuner-python/modules/ST.py
+share/streamtuner-python/modules/ST.pyc
+share/streamtuner-python/modules/ST.pyo
+share/streamtuner-python/scripts/google-stations.py
+@dirrm share/streamtuner-python/icons
+@dirrm share/streamtuner-python/modules
+@dirrm share/streamtuner-python/scripts
+@dirrm share/streamtuner-python
