@@ -28,4 +28,3 @@
 +	gzip -d -c < $(srcdir)/BlueSteel.etheme.zh_TW.Big5 | (cd $(DESTDIR)$(ethemedir)/BlueSteel; tar -xmf -)
  
  	if [ -n "$(USER)" ]; then chown -R $(USER) $(DESTDIR)$(ethemedir); else chown -R root $(DESTDIR)$(ethemedir); fi
- 
