@@ -1,0 +1,13 @@
+Its possible to accidentally inherit an AUTOLOAD method.  Often this
+will happen if a class somewhere in the chain uses AutoLoader or defines
+one of their own.  This can lead to confusing error messages when method
+lookups fail.
+
+Sometimes you want to avoid this accidental inheritance.  In that case,
+inherit from Class::WhiteHole.  All unhandled methods will produce
+normal Perl error messages.
+
+WWW: http://search.cpan.org/search?dist=Class-WhiteHole
+
+-- Sergey Skvortsov
+skv@FreeBSD.org
