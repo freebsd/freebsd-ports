@@ -1,0 +1,4 @@
+A new ncurses binding for Python, generated with the help of SWIG. Includes
+bindings for libncurses, libpanel, libmenu, and libform.
+
+WWW: http://pyncurses.sourceforge.net/
