@@ -13,7 +13,7 @@ MASTER_SITES=	ftp://ftp.lysator.liu.se/pub/lpmud/drivers/dgd/lpc/ \
 		ftp://ftp.dreamlabs.com/pub/mud/dgd/mudlibs/
 DISTFILES=	2.4.5-for-1.1.tgz
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	glewis@FreeBSD.org
 
 NO_PACKAGE=	"depends on DGD, which is NO_CDROM"
 RESTRICTED=	"no monetary gain, tarball OK for CDROM"
@@ -22,15 +22,22 @@ RUN_DEPENDS=	${PREFIX}/dgd/bin/driver:${PORTSDIR}/net/dgd
 
 DIST_SUBDIR=	dgd
 WRKSRC=		${WRKDIR}/mud
-PKG_ARGS=	-v -c ${COMMENT} -d ${DESCR} -f ${PLIST} \
-		-p ${PREFIX}/dgd
-#		-r ${PKGREQ}
+PLIST_SUB+=	EXTRA:=""
 
 do-build:
 	@cd ${WRKDIR}/mud/bin; make
 
 do-install:
-	@tar -C ${WRKSRC} -cf - `${GREP} '^[a-z]' ${PLIST}` \
-		| tar -C ${PREFIX}/dgd -xpf -
+	@${TAR} -C ${WRKSRC} -cf - `${GREP} '^[a-z]' ${PLIST} | ${CUT} -f2- -d'/'` \
+		| ${TAR} -C ${PREFIX}/dgd -xpf -
+	@${INSTALL_DATA} ${WRKSRC}/lpmud-2.4.5/ACCESS.ALLOW \
+		${PREFIX}/dgd/lpmud-2.4.5/ACCESS.ALLOW.example
+	@${INSTALL_DATA} ${WRKSRC}/lpmud-2.4.5/ACCESS.DENY \
+		${PREFIX}/dgd/lpmud-2.4.5/ACCESS.DENY.example
+	@${MKDIR} ${PREFIX}/dgd/lpmud-2.4.5/log
+	@${MKDIR} ${PREFIX}/dgd/lpmud-2.4.5/open
+	@${MKDIR} ${PREFIX}/dgd/lpmud-2.4.5/players/lars/lars
+	@${MKDIR} ${PREFIX}/dgd/lpmud-2.4.5/room/post_dir
+	@${MKDIR} ${PREFIX}/dgd/tmp
 
 .include <bsd.port.mk>
