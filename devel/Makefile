@@ -164,6 +164,7 @@
     SUBDIR += gvd
     SUBDIR += happy
     SUBDIR += happydoc
+    SUBDIR += hp48cc
     SUBDIR += hypersrc
     SUBDIR += i386-rtems-binutils
     SUBDIR += i386-rtems-chill
