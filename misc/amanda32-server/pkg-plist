@@ -1,6 +1,3 @@
-lib/amanda/amanda-2.4.0/examples/amanda.conf
-lib/amanda/amanda-2.4.0/examples/chg-multi.conf
-lib/amanda/amanda-2.4.0/examples/disklist
 lib/libamanda.a
 lib/libamanda.la
 lib/libamanda.so
@@ -82,7 +79,8 @@ sbin/amrmtape
 sbin/amtape
 sbin/amtoc
 sbin/amverify
-@dirrm lib/amanda/amanda-2.4.0/examples
-@dirrm lib/amanda/amanda-2.4.0
-@dirrm lib/amanda
+share/examples/amanda/amanda.conf
+share/examples/amanda/chg-multi.conf
+share/examples/amanda/disklist
+@dirrm share/examples/amanda
 @dirrm libexec/amanda
