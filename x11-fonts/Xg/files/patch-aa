@@ -1,5 +1,5 @@
-*** Makefile~	Sun Aug 13 13:55:37 1995
---- Makefile	Sun Aug 13 13:56:11 1995
+*** Makefile.orig      Thu Feb 10 04:33:27 2000
+--- Makefile   Thu Feb 10 04:34:15 2000
 ***************
 *** 0 ****
 --- 1,15 ----
@@ -15,6 +15,6 @@
 + 	for i in Xg/bdf/*.bdf; do b=$$(basename $$i .bdf); \
 + 	  rm -f $(DESTDIR)/$$b.pcf.Z; \
 + 	  bdftopcf -o $(DESTDIR)/$$b.pcf $$i; \
-+ 	  compress $(DESTDIR)/$$b.pcf; \
++         gzip -nf -9 $(DESTDIR)/$$b.pcf; \
 + 	  done; mkfontdir $(DESTDIR); \
-+ 	  cp Xg/matty/unicode.9.font $(DESTDIR)
++         ${BSD_INSTALL_DATA} Xg/matty/unicode.9.font $(DESTDIR)

@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	libXgFonts
-PORTVERSION= 	1.0
+PORTVERSION=	1.0
 CATEGORIES=	x11-fonts plan9
-MASTER_SITES=	ftp://ftp.ecf.toronto.edu/pub/plan9/matty/
+MASTER_SITES=	ftp://ftp.cs.usyd.edu.au/matty/unicode/
 DISTNAME=	libXg.utf.fonts
 
 MAINTAINER=	ports@FreeBSD.org
