@@ -280,6 +280,10 @@ do-install:
 	${MKDIR} ${PREFIX}/share/doc/java
 
 post-install:
+.if !defined(WITH_NATIVE_THREADS) && !defined(WITH_HOTSPOT)
+	${RM} -rf ${PREFIX}/jdk${JDK_VERSION}/bin/i386/native_threads
+	${RM} -rf ${PREFIX}/jdk${JDK_VERSION}/jre/bin/i386/native_threads
+.endif
 	@${LOCALBASE}/bin/registervm "${PREFIX}/jdk${JDK_VERSION}/bin/java # FREEBSD-JDK${JDK_VERSION}"
 .if !defined(WITHOUT_PLUGIN)
 	@${ECHO_MSG}

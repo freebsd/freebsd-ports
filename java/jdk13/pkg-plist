@@ -70,8 +70,8 @@ jdk%%JDK_VERSION%%/bin/i386/green_threads/tnameserv
 %%NATIVE:%%%%DEBUG:%%jdk%%JDK_VERSION%%/bin/i386/native_threads/jarsigner_g
 %%NATIVE:%%jdk%%JDK_VERSION%%/bin/i386/native_threads/java
 %%NATIVE:%%%%DEBUG:%%jdk%%JDK_VERSION%%/bin/i386/native_threads/java_g
-%%PLUGIN:%%jdk%%JDK_VERSION%%/bin/i386/native_threads/java_vm
-%%PLUGIN:%%%%DEBUG:%%jdk%%JDK_VERSION%%/bin/i386/native_threads/java_vm_g
+%%NATIVE:%%%%PLUGIN:%%jdk%%JDK_VERSION%%/bin/i386/native_threads/java_vm
+%%NATIVE:%%%%PLUGIN:%%%%DEBUG:%%jdk%%JDK_VERSION%%/bin/i386/native_threads/java_vm_g
 %%NATIVE:%%jdk%%JDK_VERSION%%/bin/i386/native_threads/javac
 %%NATIVE:%%%%DEBUG:%%jdk%%JDK_VERSION%%/bin/i386/native_threads/javac_g
 %%NATIVE:%%jdk%%JDK_VERSION%%/bin/i386/native_threads/javadoc
@@ -752,8 +752,8 @@ jdk%%JDK_VERSION%%/jre/bin/i386/green_threads/tnameserv
 %%NATIVE:%%%%DEBUG:%%jdk%%JDK_VERSION%%/jre/bin/i386/native_threads/jarsigner_g
 %%NATIVE:%%jdk%%JDK_VERSION%%/jre/bin/i386/native_threads/java
 %%NATIVE:%%%%DEBUG:%%jdk%%JDK_VERSION%%/jre/bin/i386/native_threads/java_g
-%%PLUGIN:%%jdk%%JDK_VERSION%%/jre/bin/i386/native_threads/java_vm
-%%PLUGIN:%%%%DEBUG:%%jdk%%JDK_VERSION%%/jre/bin/i386/native_threads/java_vm_g
+%%NATIVE:%%%%PLUGIN:%%jdk%%JDK_VERSION%%/jre/bin/i386/native_threads/java_vm
+%%NATIVE:%%%%PLUGIN:%%%%DEBUG:%%jdk%%JDK_VERSION%%/jre/bin/i386/native_threads/java_vm_g
 %%NATIVE:%%%%DEBUG:%%jdk%%JDK_VERSION%%/jre/bin/i386/native_threads/javac_g
 %%NATIVE:%%%%DEBUG:%%jdk%%JDK_VERSION%%/jre/bin/i386/native_threads/javadoc_g
 %%NATIVE:%%%%DEBUG:%%jdk%%JDK_VERSION%%/jre/bin/i386/native_threads/javah_g
