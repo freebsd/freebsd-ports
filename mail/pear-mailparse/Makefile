@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mailparse
-PORTVERSION=	0.9.2
+PORTVERSION=	0.9.3
 CATEGORIES=	mail www
 
 MAINTAINER=	ports@FreeBSD.org
@@ -57,7 +57,7 @@ post-install-script:
 .endfor
 	@${ECHO_MSG} "===> Documentation installed in ${DOCSDIR}."
 	@${MKDIR} ${TESTDIR}
-	@${CP} -Rp ${WRKSRC}/tests ${TESTDIR}
+	@${CP} -Rp ${WRKSRC}/tests/* ${TESTDIR}
 	@${CHOWN} -R ${SHAREOWN}:${SHAREGRP} ${TESTDIR}
 	@${ECHO_MSG} "===> Examples installed in ${TESTDIR}."
 .endif
