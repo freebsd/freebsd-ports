@@ -1,19 +1,17 @@
---- src/libffmpeg/libavcodec/msmpeg4.c.orig	Wed Aug  4 17:27:04 2004
-+++ src/libffmpeg/libavcodec/msmpeg4.c	Wed Aug  4 17:27:37 2004
-@@ -60,8 +60,8 @@
- static uint32_t v2_dc_chroma_table[512][2];
- 
- static inline void msmpeg4_encode_block(MpegEncContext * s, DCTELEM * block, int n);
--static inline int msmpeg4_decode_block(MpegEncContext * s, DCTELEM * block,
--                                       int n, int coded, const uint8_t *scantable);
-+static int msmpeg4_decode_block(MpegEncContext * s, DCTELEM * block,
-+				int n, int coded, const uint8_t *scantable);
- static int msmpeg4_decode_dc(MpegEncContext * s, int n, int *dir_ptr);
- static int msmpeg4_decode_motion(MpegEncContext * s, 
+--- src/libffmpeg/libavcodec/msmpeg4.c.orig	Sun Sep 12 21:17:14 2004
++++ src/libffmpeg/libavcodec/msmpeg4.c	Mon Nov 15 01:10:50 2004
+@@ -64,7 +64,7 @@
                                   int *mx_ptr, int *my_ptr);
-@@ -1656,8 +1656,8 @@
-     return 0;
+ static void msmpeg4v2_encode_motion(MpegEncContext * s, int val);
+ static void init_h263_dc_for_msmpeg4(void);
+-static inline void msmpeg4_memsetw(short *tab, int val, int n);
++static void msmpeg4_memsetw(short *tab, int val, int n);
+ #ifdef CONFIG_ENCODERS
+ static int get_size_of_code(MpegEncContext * s, RLTable *rl, int last, int run, int level, int intra);
+ static void msmpeg4_encode_dc(MpegEncContext * s, int level, int n, int *dir_ptr);
+@@ -1478,8 +1478,8 @@
  }
+ 
  //#define ERROR_DETAILS
 -static inline int msmpeg4_decode_block(MpegEncContext * s, DCTELEM * block,
 -                              int n, int coded, const uint8_t *scan_table)

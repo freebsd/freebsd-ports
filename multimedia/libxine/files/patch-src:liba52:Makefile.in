@@ -1,8 +1,18 @@
---- src/liba52/Makefile.in.orig	Sun May 16 11:30:04 2004
-+++ src/liba52/Makefile.in	Sun May 16 11:31:08 2004
-@@ -400,25 +400,13 @@
+--- src/liba52/Makefile.in.orig	Thu Dec 30 00:56:26 2004
++++ src/liba52/Makefile.in	Thu Dec 30 05:21:36 2004
+@@ -75,8 +75,7 @@
+ LTLIBRARIES = $(lib_LTLIBRARIES)
+ am__DEPENDENCIES_1 = $(top_builddir)/src/xine-engine/libxine.la
+ xineplug_decode_a52_la_DEPENDENCIES = $(am__DEPENDENCIES_1)
+-am_xineplug_decode_a52_la_OBJECTS = bitstream.lo bit_allocate.lo \
+-	crc.lo downmix.lo imdct.lo parse.lo xine_decoder.lo
++am_xineplug_decode_a52_la_OBJECTS = crc.lo xine_decoder.lo
+ xineplug_decode_a52_la_OBJECTS = $(am_xineplug_decode_a52_la_OBJECTS)
+ DEFAULT_INCLUDES = -I. -I$(srcdir) -I$(top_builddir)
+ depcomp = $(SHELL) $(top_srcdir)/depcomp
+@@ -510,15 +509,10 @@
+ XINE_LIB = $(top_builddir)/src/xine-engine/libxine.la
  lib_LTLIBRARIES = xineplug_decode_a52.la
- 
  xineplug_decode_a52_la_SOURCES = \
 -	bitstream.c \
 -	bit_allocate.c \
@@ -12,28 +22,21 @@
 -	parse.c \
  	xine_decoder.c
  
- 
 -xineplug_decode_a52_la_LIBADD = $(XINE_LIB)
 +xineplug_decode_a52_la_LIBADD = $(XINE_LIB) -la52 -ldjbfft
  xineplug_decode_a52_la_LDFLAGS = -avoid-version -module @XINE_PLUGIN_MIN_SYMS@
+ noinst_HEADERS = \
+ 	a52.h \
+@@ -595,12 +589,7 @@
+ distclean-compile:
+ 	-rm -f *.tab.c
  
--noinst_HEADERS = \
--	a52.h \
--	a52_internal.h \
--	bitstream.h \
--	tables.h
--
--subdir = src/liba52
- ACLOCAL_M4 = $(top_srcdir)/aclocal.m4
- mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs
- CONFIG_HEADER = $(top_builddir)/config.h
-@@ -427,8 +415,7 @@
+-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/bit_allocate.Plo@am__quote@
+-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/bitstream.Plo@am__quote@
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/crc.Plo@am__quote@
+-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/downmix.Plo@am__quote@
+-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/imdct.Plo@am__quote@
+-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/parse.Plo@am__quote@
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/xine_decoder.Plo@am__quote@
  
- xineplug_decode_a52_la_DEPENDENCIES = \
- 	$(top_builddir)/src/xine-engine/libxine.la
--am_xineplug_decode_a52_la_OBJECTS = bitstream.lo bit_allocate.lo crc.lo \
--	downmix.lo imdct.lo parse.lo xine_decoder.lo
-+am_xineplug_decode_a52_la_OBJECTS = crc.lo xine_decoder.lo
- xineplug_decode_a52_la_OBJECTS = $(am_xineplug_decode_a52_la_OBJECTS)
- 
- DEFAULT_INCLUDES =  -I. -I$(srcdir) -I$(top_builddir)
+ .c.o:

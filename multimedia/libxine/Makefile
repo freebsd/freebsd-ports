@@ -6,13 +6,12 @@
 #
 
 PORTNAME=	xine
-PORTVERSION=	1.0.r5
-PORTREVISION=	3
-CATEGORIES=	multimedia
+PORTVERSION=	1.0
+CATEGORIES=	multimedia ipv6
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 PKGNAMEPREFIX=	lib
-DISTNAME=	${PORTNAME}-lib-1-rc5
+DISTNAME=	${PORTNAME}-lib-1.0
 
 MAINTAINER=	nobutaka@FreeBSD.org
 COMMENT=	Libraries for xine multimedia player
@@ -26,7 +25,9 @@ LIB_DEPENDS=	FLAC.5:${PORTSDIR}/audio/flac \
 		aa.1:${PORTSDIR}/graphics/aalib \
 		mng.1:${PORTSDIR}/graphics/libmng \
 		png.5:${PORTSDIR}/graphics/png \
-		dvdread.3:${PORTSDIR}/multimedia/libdvdread
+		dvdread.3:${PORTSDIR}/multimedia/libdvdread \
+		freetype.9:${PORTSDIR}/print/freetype2 \
+		fame-0.9.1:${PORTSDIR}/multimedia/libfame
 
 USE_GETTEXT=	yes
 USE_ICONV=	yes
@@ -113,6 +114,13 @@ LIB_DEPENDS+=	theora.0:${PORTSDIR}/graphics/libtheora
 PLIST_SUB+=	WITH_LIBTHEORA=""
 .else
 PLIST_SUB+=	WITH_LIBTHEORA="@comment "
+.endif
+
+.if exists(${LOCALBASE}/lib/libsmbclient.so.0) || defined (WITH_SMB)
+LIB_DEPENDS+=	smbclient.0:${PORTSDIR}/net/samba-libsmbclient
+PLIST_SUB+=	WITH_SMB=""
+.else
+PLIST_SUB+=	WITH_SMB="@comment "
 .endif
 
 pre-everything::

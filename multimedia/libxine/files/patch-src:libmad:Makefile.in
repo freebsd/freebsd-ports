@@ -1,9 +1,20 @@
---- src/libmad/Makefile.in.orig	Sun May 16 11:32:08 2004
-+++ src/libmad/Makefile.in	Sun May 16 11:32:44 2004
-@@ -403,42 +403,12 @@
- 
+--- src/libmad/Makefile.in.orig	Thu Dec 30 00:47:20 2004
++++ src/libmad/Makefile.in	Thu Dec 30 00:53:06 2004
+@@ -75,9 +75,7 @@
+ LTLIBRARIES = $(lib_LTLIBRARIES)
+ am__DEPENDENCIES_1 = $(top_builddir)/src/xine-engine/libxine.la
+ xineplug_decode_mad_la_DEPENDENCIES = $(am__DEPENDENCIES_1)
+-am_xineplug_decode_mad_la_OBJECTS = bit.lo fixed.lo frame.lo \
+-	huffman.lo layer12.lo layer3.lo stream.lo synth.lo timer.lo \
+-	version.lo xine_decoder.lo
++am_xineplug_decode_mad_la_OBJECTS = xine_decoder.lo
+ xineplug_decode_mad_la_OBJECTS = $(am_xineplug_decode_mad_la_OBJECTS)
+ DEFAULT_INCLUDES = -I. -I$(srcdir) -I$(top_builddir)
+ depcomp = $(SHELL) $(top_srcdir)/depcomp
+@@ -512,20 +510,9 @@
+ AM_CFLAGS = -DOPT_SPEED
+ EXTRA_DIST = imdct_l_arm.S
  lib_LTLIBRARIES = xineplug_decode_mad.la
- 
 -xineplug_decode_mad_la_SOURCES = \
 -	bit.c \
 -	fixed.c \
@@ -18,30 +29,25 @@
 -	xine_decoder.c
 +xineplug_decode_mad_la_SOURCES = xine_decoder.c
  
- 
 -xineplug_decode_mad_la_LIBADD = $(XINE_LIB)
 +xineplug_decode_mad_la_LIBADD = $(XINE_LIB) -lmad
  xineplug_decode_mad_la_LDFLAGS = -avoid-version -module @XINE_PLUGIN_MIN_SYMS@
+ noinst_HEADERS = \
+ 	D.dat \
+@@ -614,16 +601,6 @@
+ distclean-compile:
+ 	-rm -f *.tab.c
  
--noinst_HEADERS = \
--	D.dat \
--	imdct_s.dat \
--	qc_table.dat \
--	rq_table.dat \
--	sf_table.dat \
--	bit.h \
--	fixed.h \
--	frame.h \
--	global.h \
--	huffman.h \
--	layer12.h \
--	layer3.h \
--	stream.h \
--	synth.h \
--	timer.h \
--	version.h
--
--subdir = src/libmad
- ACLOCAL_M4 = $(top_srcdir)/aclocal.m4
- mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs
- CONFIG_HEADER = $(top_builddir)/config.h
+-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/bit.Plo@am__quote@
+-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/fixed.Plo@am__quote@
+-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/frame.Plo@am__quote@
+-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/huffman.Plo@am__quote@
+-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/layer12.Plo@am__quote@
+-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/layer3.Plo@am__quote@
+-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/stream.Plo@am__quote@
+-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/synth.Plo@am__quote@
+-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/timer.Plo@am__quote@
+-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/version.Plo@am__quote@
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/xine_decoder.Plo@am__quote@
+ 
+ .c.o:

@@ -12,9 +12,11 @@ include/xine/info_helper.h
 include/xine/input_plugin.h
 include/xine/io_helper.h
 include/xine/metronom.h
+include/xine/os_types.h
 include/xine/osd.h
 include/xine/plugin_catalog.h
 include/xine/post.h
+include/xine/refcounter.h
 include/xine/resample.h
 include/xine/scratch.h
 include/xine/spu_decoder.h
@@ -30,8 +32,8 @@ include/xine/xineutils.h
 include/xine/xmllexer.h
 include/xine/xmlparser.h
 lib/libxine.so
-lib/libxine.so.9
-lib/xine/plugins/1.0.0/post/xineplug_post_audio_filter_upmix.so
+lib/libxine.so.12
+lib/xine/plugins/1.0.0/post/xineplug_post_audio_filters.so
 lib/xine/plugins/1.0.0/post/xineplug_post_goom.so
 lib/xine/plugins/1.0.0/post/xineplug_post_mosaico.so
 lib/xine/plugins/1.0.0/post/xineplug_post_planar.so
@@ -71,6 +73,8 @@ lib/xine/plugins/1.0.0/xineplug_decode_rgb.so
 lib/xine/plugins/1.0.0/xineplug_decode_speex.so
 lib/xine/plugins/1.0.0/xineplug_decode_spu.so
 lib/xine/plugins/1.0.0/xineplug_decode_spucc.so
+lib/xine/plugins/1.0.0/xineplug_decode_spucmml.so
+lib/xine/plugins/1.0.0/xineplug_decode_spudvb.so
 lib/xine/plugins/1.0.0/xineplug_decode_sputext.so
 %%WITH_LIBTHEORA%%lib/xine/plugins/1.0.0/xineplug_decode_theora.so
 %%WITH_LIBCACA%%lib/xine/plugins/1.0.0/xineplug_vo_out_caca.so
@@ -114,11 +118,13 @@ lib/xine/plugins/1.0.0/xineplug_inp_net.so
 lib/xine/plugins/1.0.0/xineplug_inp_pnm.so
 lib/xine/plugins/1.0.0/xineplug_inp_rtp.so
 lib/xine/plugins/1.0.0/xineplug_inp_rtsp.so
+%%WITH_SMB%%lib/xine/plugins/1.0.0/xineplug_inp_smb.so
 lib/xine/plugins/1.0.0/xineplug_inp_stdin_fifo.so
 lib/xine/plugins/1.0.0/xineplug_inp_vcd.so
 lib/xine/plugins/1.0.0/xineplug_inp_vcdo.so
 lib/xine/plugins/1.0.0/xineplug_vo_out_aa.so
 lib/xine/plugins/1.0.0/xineplug_vo_out_none.so
+lib/xine/plugins/1.0.0/xineplug_vo_out_opengl.so
 lib/xine/plugins/1.0.0/xineplug_vo_out_sdl.so
 %%WITH_VIDIX%%lib/xine/plugins/1.0.0/xineplug_vo_out_vidix.so
 lib/xine/plugins/1.0.0/xineplug_vo_out_xshm.so
@@ -135,6 +141,7 @@ share/aclocal/xine.m4
 %%DOCSDIR%%/README.opengl
 %%DOCSDIR%%/README.solaris
 %%DOCSDIR%%/README.syncfb
+%%DOCSDIR%%/README_xxmc.html
 %%DOCSDIR%%/faq/faq.html
 %%DOCSDIR%%/faq/faq.txt
 %%DOCSDIR%%/hackersguide/architecture.png

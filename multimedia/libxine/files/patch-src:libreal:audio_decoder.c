@@ -1,6 +1,6 @@
---- src/libreal/xine_decoder.c.orig	Thu Dec 16 22:59:10 2004
-+++ src/libreal/xine_decoder.c	Thu Dec 30 08:56:38 2004
-@@ -47,6 +47,14 @@
+--- src/libreal/audio_decoder.c.orig	Thu Dec 16 22:59:10 2004
++++ src/libreal/audio_decoder.c	Thu Dec 30 08:55:14 2004
+@@ -48,6 +48,14 @@
  #include "buffer.h"
  #include "xineutils.h"
  
@@ -13,9 +13,9 @@
 +#endif
 +
  typedef struct {
-   video_decoder_class_t   decoder_class;
+   audio_decoder_class_t   decoder_class;
  
-@@ -589,22 +597,12 @@
+@@ -709,22 +717,12 @@
  
    /* try some auto-detection */
  

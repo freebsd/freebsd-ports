@@ -1,0 +1,11 @@
+--- configure.orig	Mon Nov 15 02:57:21 2004
++++ configure	Mon Nov 15 02:57:39 2004
+@@ -25382,7 +25382,7 @@
+                  "ac_cv_lib_avcodec_pp_get_context" \
+                  "ac_cv_lib_postproc_pp_get_context" \
+                  "ac_cv_lib_avcodec_register_avcodec"; do
+-          $as_unset $i || test "${$i+set}" != set || { $i=; export $i; }
++          $as_unset $i
+         done
+ 
+                 if test "${ac_cv_header_avcodec_h+set}" = set; then
