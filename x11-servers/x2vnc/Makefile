@@ -6,15 +6,13 @@
 #
 
 PORTNAME=	x2vnc
-PORTVERSION=	1.1
+PORTVERSION=	1.2
 CATEGORIES=	x11-servers
 MASTER_SITES=	http://www.hubbe.net/~hubbe/
 
 MAINTAINER=	ade@FreeBSD.org
 
 USE_IMAKE=	yes
-
-do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/x2vnc ${PREFIX}/bin/x2vnc
+MAN1=		x2vnc.1
 
 .include <bsd.port.mk>
