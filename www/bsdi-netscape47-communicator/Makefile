@@ -31,6 +31,7 @@ BROWSER_VER=	4.72
 #	taken from ,${BLDVERS} in ns-install
 INFILE_HEAD?=	'Communicator,4.72.0.20000131'
 NO_AUTOADMIN=	yes
+NO_FORTIFY=	yes
 
 PRE_MK_INCLUDED=	yes
 .include "${MASTERDIR}/Makefile"
