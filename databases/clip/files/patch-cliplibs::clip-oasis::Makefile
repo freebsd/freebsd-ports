@@ -1,0 +1,20 @@
+--- cliplibs/clip-oasis/Makefile	Mon Jun 17 14:31:04 2002
++++ cliplibs/clip-oasis/Makefile	Mon Jun 17 14:31:45 2002
+@@ -1,11 +1,11 @@
+ 
+ all:
+-	cd netto; make
+-	cd nanfor; make
++	cd netto; $(MAKE)
++	cd nanfor; $(MAKE)
+ install:
+-	cd netto; make install
+-	cd nanfor; make install
++	cd netto; $(MAKE) install
++	cd nanfor; $(MAKE) install
+ clean:
+-	cd netto; make clean
+-	cd nanfor; make clean
++	cd netto; $(MAKE) clean
++	cd nanfor; $(MAKE) clean
+ 

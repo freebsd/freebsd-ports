@@ -1,10 +1,16 @@
+clip/bin/bdbf
 clip/bin/clip
 clip/bin/clip_bl
 clip/bin/clip_blank
 clip/bin/clip_bug
 clip/bin/clip_cld
+clip/bin/clip_conv
+clip/bin/clip_dbf2txt
 clip/bin/clip_dbg
+clip/bin/clip_fl
 clip/bin/clip_hashextract
+clip/bin/clip_hindex
+clip/bin/clip_hseek
 clip/bin/clip_hv
 clip/bin/clip_makeslib
 clip/bin/clip_msgfmt
@@ -15,8 +21,10 @@ clip/bin/clip_trans
 clip/bin/clip_we
 clip/bin/clipar
 clip/bin/cliphash
+clip/bin/gen_tbl
 clip/bin/joinlib.sh
 clip/bin/lowname
+clip/bin/pp_ron
 clip/bin/sqlrun
 clip/bin/wcl2prg
 clip/bin/www_clip
@@ -24,10 +32,13 @@ clip/charsets/7bit.uni
 clip/charsets/8859-1.uni
 clip/charsets/8859-2.uni
 clip/charsets/8859-5.uni
+clip/charsets/BIG5.TXT.gz
 clip/charsets/ECMA144.uni
 clip/charsets/Makefile
 clip/charsets/ReadMe-2.1.8.txt.gz
 clip/charsets/UnicodeData-2.1.8.txt.gz
+clip/charsets/big5.tbl
+clip/charsets/big5.uni
 clip/charsets/c.tbl
 clip/charsets/c.uni
 clip/charsets/cp1125.uni
@@ -38,11 +49,16 @@ clip/charsets/cp437.tbl
 clip/charsets/cp437.uni
 clip/charsets/cp850.tbl
 clip/charsets/cp850.uni
+clip/charsets/cp852.tbl
 clip/charsets/cp852.uni
 clip/charsets/cp866.tbl
 clip/charsets/cp866.uni
+clip/charsets/cp866u.tbl
+clip/charsets/cp866u.uni
 clip/charsets/def.uni
 clip/charsets/ethiopic.uni
+clip/charsets/gbk.tbl
+clip/charsets/gbk.uni
 clip/charsets/gen-uni.sh
 clip/charsets/gen_tbl.c
 clip/charsets/iso01.tbl
@@ -68,13 +84,21 @@ clip/charsets/iso10.uni
 clip/charsets/kamen.uni
 clip/charsets/koi8-r.tbl
 clip/charsets/koi8-r.uni
+clip/charsets/koi8-u.tbl
 clip/charsets/koi8-u.uni
 clip/charsets/koi8.uni
+clip/charsets/lat1.tbl
 clip/charsets/lat1.uni
 clip/charsets/lat1u.uni
+clip/charsets/lat2.tbl
+clip/charsets/lat2.uni
 clip/charsets/lat4.uni
 clip/charsets/lat4u.uni
 clip/charsets/mac_lat2.uni
+clip/charsets/pl-maz.tbl
+clip/charsets/pl-maz.uni
+clip/charsets/ruscii.tbl
+clip/charsets/ruscii.uni
 clip/charsets/utf_8.uni
 clip/cliprc/.notrm
 clip/cliprc/clipflags
@@ -82,12 +106,36 @@ clip/doc/Readme.cygwin
 clip/doc/Readme.en
 clip/doc/Readme.rus
 clip/doc/TODO
+clip/doc/bdbfs/bdbfs.hlp
+clip/doc/bdbfs/bdbfs_en.htm
+clip/doc/bdbfs/bdbfs_ru.htm
+clip/doc/charset/cp866.html
+clip/doc/charset/cp866u.html
+clip/doc/charset/koi8r.html
+clip/doc/charset/koi8u.html
+clip/doc/charset/ruscii.html
 clip/doc/clip-bzip2/bzip2.html
+clip/doc/clip-com/com_close.html
+clip/doc/clip-com/com_count.html
+clip/doc/clip-com/com_dtr.html
+clip/doc/clip-com/com_flush.html
+clip/doc/clip-com/com_hard.html
+clip/doc/clip-com/com_init.html
+clip/doc/clip-com/com_num.html
+clip/doc/clip-com/com_open.html
+clip/doc/clip-com/com_read.html
+clip/doc/clip-com/com_send.html
+clip/doc/clip-com/com_sflush.html
+clip/doc/clip-com/com_soft.html
+clip/doc/clip-com/com_timeout.html
+clip/doc/clip-com/index.html
 clip/doc/clip-crypto/crypto.html
 clip/doc/clip-gd/gd_lib.html
 clip/doc/clip-gd/gd_prg.html
 clip/doc/clip-gd/o_gdimage.html
 clip/doc/clip-gzip/gzip.html
+clip/doc/clip-oasis/netto/netto.ng
+clip/doc/clip-oasis/netto/readme.1st
 clip/doc/clip.html
 clip/doc/cygwin.reg
 clip/doc/eng/about.html
@@ -128,6 +176,8 @@ clip/doc/example/abox.ch
 clip/doc/example/box.ch
 clip/doc/example/clip-bzip2/Makefile
 clip/doc/example/clip-bzip2/bz2.prg
+clip/doc/example/clip-com/Makefile
+clip/doc/example/clip-com/com.prg
 clip/doc/example/clip-crypto/Makefile
 clip/doc/example/clip-crypto/crypto.prg
 clip/doc/example/clip-gd/Makefile
@@ -137,10 +187,15 @@ clip/doc/example/clip-gzip/gz.prg
 clip/doc/example/hello.prg
 clip/doc/example/mouse.prg
 clip/doc/example/pg.prg
+clip/doc/example/reclock.prg
 clip/doc/example/task.prg
 clip/doc/example/task_msg.prg
 clip/doc/example/test.dbf.orig
 clip/doc/example/test_dbf.prg
+clip/doc/example/testlock.prg
+clip/doc/ncpfs/Readme
+clip/doc/ncpfs/patch-2.2.18
+clip/doc/ncpfs/patch-2.4.18
 clip/doc/pcode.txt
 clip/doc/rus/about.html
 clip/doc/rus/about_lang.html
@@ -199,9 +254,11 @@ clip/doc/rus/o_dt.html
 clip/doc/rus/o_graphics.html
 clip/doc/rus/o_hparser.html
 clip/doc/rus/o_html.html
+clip/doc/rus/o_inifile.html
 clip/doc/rus/o_listitem.html
 clip/doc/rus/o_medit.html
 clip/doc/rus/o_rdd.html
+clip/doc/rus/o_sarray.html
 clip/doc/rus/o_smtp.html
 clip/doc/rus/o_textedit.html
 clip/doc/rus/o_url.html
@@ -214,6 +271,7 @@ clip/doc/rus/styl.css
 clip/doc/rus/why.html
 clip/doc/rus/www_sql.html
 clip/etc/environment
+clip/etc/printers.ini
 clip/etc/termcap
 clip/etc/terminfo/a/ansi
 clip/etc/terminfo/c/cons25
@@ -257,6 +315,7 @@ clip/etc/terminfo/v/vt52
 clip/etc/terminfo/x/xterm
 clip/etc/terminfo/x/xterm-color
 clip/etc/terminfo/x/xterm-debian
+clip/etc/terminfo/x/xterm-fssh
 clip/etc/terminfo/x/xterm-mono
 clip/etc/terminfo/x/xterm-xfree86
 clip/include/Makefile.inc
@@ -274,13 +333,10 @@ clip/include/clipbase.h
 clip/include/clipcfg.h
 clip/include/clipcfg.sh
 clip/include/clr_html.ch
-clip/include/codb.ch
-clip/include/codb_dbf.ch
 clip/include/color.ch
 clip/include/common.ch
 clip/include/config.ch
 clip/include/ct.ch
-clip/include/ctcom.ch
 clip/include/ctdisk.ch
 clip/include/ctdrv.ch
 clip/include/ctkbd.ch
@@ -324,11 +380,23 @@ clip/include/memdebug/malloc.h
 clip/include/memdebug/malloc_str.h
 clip/include/memoedit.ch
 clip/include/mset.ch
+clip/include/nanfor/dfkey.h
+clip/include/nanfor/ftint86.ch
+clip/include/nanfor/ftmenuto.ch
+clip/include/netto/dfkey.h
+clip/include/netto/ftint86.ch
+clip/include/netto/ftmenuto.ch
+clip/include/netto/netto.ch
 clip/include/ord.ch
 clip/include/ordinfo.ch
+clip/include/pgch.ch
+clip/include/pp_harb.ch
+clip/include/ppclass.ch
 clip/include/rdd.ch
 clip/include/rddsys.ch
 clip/include/reserved.ch
+clip/include/rp_dot.ch
+clip/include/rp_run.ch
 clip/include/set.ch
 clip/include/setcurs.ch
 clip/include/setnames.ch
@@ -343,6 +411,8 @@ clip/include/taskcfg.h
 clip/include/tbrowse.ch
 clip/include/ulimit.ch
 clip/keymaps/genmap.sh
+clip/keymaps/pl-maz
+clip/keymaps/pl-maz.kmap
 clip/keymaps/ru-cp1251
 clip/keymaps/ru-cp1251.kmap
 clip/keymaps/ru-cp866
@@ -355,29 +425,49 @@ clip/keymaps/ru-stelnet1.kmap
 clip/keymaps/ru1itk
 clip/keymaps/rustelnet
 clip/keymaps/rustelnet1
+clip/keymaps/ua-koi8-u
+clip/keymaps/ua.kmap
+clip/lang/pl_PL.MAZ
 clip/lang/ru_RU.CP1251
 clip/lang/ru_RU.CP866
 clip/lang/ru_RU.KOI8-R
+clip/lang/ru_RU.KOI8-U
 clip/lib/libclip-bzip2.so
+clip/lib/libclip-com.so
 clip/lib/libclip-crypto.so
+clip/lib/libclip-gd.a
 clip/lib/libclip-gd.so
 clip/lib/libclip-gzip.so
+clip/lib/libclip-nanfor.so
+clip/lib/libclip-netto.so
 clip/lib/libclip.a
 clip/lib/libclip.so
-clip/locale.mo/ru/brow.mo
-clip/locale.mo/ru/debug.mo
+clip/lib/libgd.a
 clip/locale.mo/ru_RU.KOI8-R/brow.mo
+clip/locale.mo/ru_RU.KOI8-R/ca_dbu.mo
+clip/locale.mo/ru_RU.KOI8-R/codb.mo
 clip/locale.mo/ru_RU.KOI8-R/debug.mo
 clip/locale.mo/ru_RU.KOI8-R/sys.mo
-clip/locale.po/ru/brow.po
-clip/locale.po/ru/ca_dbu.po
-clip/locale.po/ru/codb.po
-clip/locale.po/ru/debug.po
 clip/locale.po/ru_RU.KOI8-R/brow.po
 clip/locale.po/ru_RU.KOI8-R/ca_dbu.po
 clip/locale.po/ru_RU.KOI8-R/codb.po
 clip/locale.po/ru_RU.KOI8-R/debug.po
 clip/locale.po/ru_RU.KOI8-R/sys.po
+clip/locale.pot/bdbfs/aktions.pot
+clip/locale.pot/bdbfs/bdbf.pot
+clip/locale.pot/bdbfs/blinker.pot
+clip/locale.pot/bdbfs/cliplib.pot
+clip/locale.pot/bdbfs/common.pot
+clip/locale.pot/bdbfs/editor.pot
+clip/locale.pot/bdbfs/filer.pot
+clip/locale.pot/bdbfs/getsys.pot
+clip/locale.pot/bdbfs/help.pot
+clip/locale.pot/bdbfs/mainmenu.pot
+clip/locale.pot/bdbfs/mdbedit.pot
+clip/locale.pot/bdbfs/modistru.pot
+clip/locale.pot/bdbfs/print.pot
+clip/locale.pot/bdbfs/tb2html.pot
+clip/locale.pot/bdbfs/viewer.pot
 clip/locale.pot/debug/cld_obj.pot
 clip/locale.pot/debug/clip_cld.pot
 clip/locale.pot/debug/command.pot
@@ -387,6 +477,7 @@ clip/locale.pot/debug/source.pot
 clip/locale.pot/debug/values.pot
 clip/locale.pot/debug/viewali.pot
 clip/locale.pot/debug/viewset.pot
+clip/locale.pot/pp/pp.pot
 clip/term/cons25r
 clip/term/cygwin
 clip/term/linux-console
@@ -397,45 +488,55 @@ clip/term/linux-stelnet
 clip/term/linux-stelnet1
 clip/term/linux-trans
 clip/term/pcansi
-@dirrm clip/bin
-@dirrm clip/charsets
-@dirrm clip/cliprc
-@dirrm clip/doc/clip-bzip2
-@dirrm clip/doc/clip-crypto
-@dirrm clip/doc/clip-gd
-@dirrm clip/doc/clip-gzip
-@dirrm clip/doc/eng
-@dirrm clip/doc/example/clip-bzip2
-@dirrm clip/doc/example/clip-crypto
-@dirrm clip/doc/example/clip-gd
-@dirrm clip/doc/example/clip-gzip
-@dirrm clip/doc/example
-@dirrm clip/doc/rus
-@dirrm clip/doc
-@dirrm clip/etc/terminfo/a
-@dirrm clip/etc/terminfo/c
-@dirrm clip/etc/terminfo/d
-@dirrm clip/etc/terminfo/l
-@dirrm clip/etc/terminfo/m
-@dirrm clip/etc/terminfo/p
-@dirrm clip/etc/terminfo/r
-@dirrm clip/etc/terminfo/s
-@dirrm clip/etc/terminfo/v
-@dirrm clip/etc/terminfo/x
-@dirrm clip/etc/terminfo
-@dirrm clip/etc
-@dirrm clip/include/memdebug
-@dirrm clip/include
-@dirrm clip/keymaps
-@dirrm clip/lang
-@dirrm clip/lib
-@dirrm clip/locale.mo/ru
-@dirrm clip/locale.mo/ru_RU.KOI8-R
-@dirrm clip/locale.mo
-@dirrm clip/locale.po/ru
+@dirrm clip/term
+@dirrm clip/locale.pot/pp
+@dirrm clip/locale.pot/debug
+@dirrm clip/locale.pot/bdbfs
+@dirrm clip/locale.pot
 @dirrm clip/locale.po/ru_RU.KOI8-R
 @dirrm clip/locale.po
-@dirrm clip/locale.pot/debug
-@dirrm clip/locale.pot
-@dirrm clip/term
+@dirrm clip/locale.mo/ru_RU.KOI8-R
+@dirrm clip/locale.mo
+@dirrm clip/lib
+@dirrm clip/lang
+@dirrm clip/keymaps
+@dirrm clip/include/netto
+@dirrm clip/include/nanfor
+@dirrm clip/include/memdebug
+@dirrm clip/include
+@dirrm clip/etc/terminfo/x
+@dirrm clip/etc/terminfo/v
+@dirrm clip/etc/terminfo/s
+@dirrm clip/etc/terminfo/r
+@dirrm clip/etc/terminfo/p
+@dirrm clip/etc/terminfo/m
+@dirrm clip/etc/terminfo/l
+@dirrm clip/etc/terminfo/d
+@dirrm clip/etc/terminfo/c
+@dirrm clip/etc/terminfo/a
+@dirrm clip/etc/terminfo
+@dirrm clip/etc
+@dirrm clip/doc/rus
+@dirrm clip/doc/ncpfs
+@dirrm clip/doc/example/clip-gzip
+@dirrm clip/doc/example/clip-gd
+@dirrm clip/doc/example/clip-crypto
+@dirrm clip/doc/example/clip-com
+@dirrm clip/doc/example/clip-bzip2
+@dirrm clip/doc/example
+@dirrm clip/doc/eng
+@dirrm clip/doc/clip-oasis/netto
+@dirrm clip/doc/clip-oasis/nanfor
+@dirrm clip/doc/clip-oasis
+@dirrm clip/doc/clip-gzip
+@dirrm clip/doc/clip-gd
+@dirrm clip/doc/clip-crypto
+@dirrm clip/doc/clip-com
+@dirrm clip/doc/clip-bzip2
+@dirrm clip/doc/charset
+@dirrm clip/doc/bdbfs
+@dirrm clip/doc
+@dirrm clip/cliprc
+@dirrm clip/charsets
+@dirrm clip/bin
 @dirrm clip

@@ -1,0 +1,29 @@
+--- prg/udb/Makefile	Mon Jun 17 14:31:09 2002
++++ prg/udb/Makefile	Mon Jun 17 14:32:30 2002
+@@ -13,7 +13,7 @@
+ commit:
+ 	../_cvs commit
+ clean:
+-	cd dict; make clean
++	cd dict; $(MAKE) clean
+ 	cd include; rm -rf *.bak *.log
+ 	cd gbl01; rm -rf *.po *.bak *.log *.po *core core*
+ 	cd plugins; rm -rf *.po *.bak *.log *.po *core core*
+@@ -23,7 +23,7 @@
+ 	$(CLIP) $(CLIPFLAGS) -s -e -M test.prg $(CLIPLIBS) $(LIBS)
+ 
+ lib:
+-	cd dict; make lib
++	cd dict; $(MAKE) lib
+ 
+ codb_mk: $(LIBS) codb_mk.prg
+ 	$(CLIP) $(CLIPFLAGS) -s -e -M codb_mk.prg $(CLIPLIBS) $(LIBS)
+@@ -35,7 +35,7 @@
+ #	$(CLIP) $(CLIPFLAGS) codb_mk.prg
+ 
+ libclip-codb.a:
+-	cd dict; make
++	cd dict; $(MAKE)
+ 
+ libclip-codb.so: $(ALIBS)
+ 	clip_makeslib libclip-codb.so $(ALIBS)

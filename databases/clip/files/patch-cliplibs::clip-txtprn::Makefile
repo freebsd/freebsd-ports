@@ -1,0 +1,9 @@
+--- cliplibs/clip-txtprn/Makefile	Mon Jun 17 14:31:02 2002
++++ cliplibs/clip-txtprn/Makefile	Mon Jun 17 14:32:20 2002
+@@ -29,5 +29,5 @@
+ 	cp install/*.ini $(CLIPROOT)/print
+ 
+ clean:
+-	cd example; make clean
++	cd example; $(MAKE) clean
+ 	rm -rf *.o *.bak doc/*.bak install/*.bak *.a *.so *.dll *.exe

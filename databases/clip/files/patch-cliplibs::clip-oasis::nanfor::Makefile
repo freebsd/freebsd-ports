@@ -1,0 +1,16 @@
+--- cliplibs/clip-oasis/nanfor/Makefile	Mon Jun 17 14:31:02 2002
++++ cliplibs/clip-oasis/nanfor/Makefile	Mon Jun 17 14:31:49 2002
+@@ -10,11 +10,11 @@
+ all: $(TARGET)
+ 
+ $(TARGET):
+-	cd prg; make
++	cd prg; $(MAKE)
+ 	$(CLIPROOT)/bin/clip_makeslib $(TARGET) $(LIBS)
+ 
+ clean distclean:
+-	cd prg; make clean
++	cd prg; $(MAKE) clean
+ 	rm -f $(LIBS) $(TARGET) $(RTARGET)
+ 
+ install:  $(TARGET)

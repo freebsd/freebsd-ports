@@ -1,0 +1,19 @@
+--- cliplibs/clip-com/Makefile	Mon Jun 17 14:31:02 2002
++++ cliplibs/clip-com/Makefile	Mon Jun 17 14:31:30 2002
+@@ -24,7 +24,7 @@
+ 	$(CLIPROOT)/bin/clip_makeslib $(TARGET) $(OBJS) $(LIBEZ)
+ 
+ $(LIBEZ):
+-	cd libezV24 && make
++	cd libezV24 && $(MAKE)
+ 
+ com.o: com.c hashcode.h
+ 	$(CC) $(CFLAGS) $(CLIPINCLUDE) -c com.c
+@@ -42,5 +42,5 @@
+ 
+ clean distclean:
+ 	rm -rf *.o *.bak *.a *.so hashcode.h *.dll *.exe bzpref.h
+-	-cd libezV24; make clean; rm *.a *.so *.so.* *.exe
+-	-cd example; make clean
++	-cd libezV24; $(MAKE) clean; rm *.a *.so *.so.* *.exe
++	-cd example; $(MAKE) clean
