@@ -3,7 +3,7 @@
 # Date created:		14 June 1997
 # Whom:			Dmitrij Tejblum <dima@tejblum.dnttm.rssi.ru>
 #
-# $Id: Makefile,v 1.5 1998/07/06 19:32:04 dt Exp $
+# $Id: Makefile,v 1.6 1998/07/07 19:17:15 dt Exp $
 #
 
 DISTNAME=	Sharity-Light.1.0.s
@@ -14,6 +14,11 @@ MASTER_SITES=	ftp://ftp.obdev.at/pub/Products/Sharity-Light/	\
 		ftp://ftp.warpnet.ro/mirrors/ftp.obdev.at/pub/Products/Sharity-Light/
 
 MAINTAINER=	dt@FreeBSD.ORG
+
+OSVERSION!=     sysctl -n kern.osreldate
+.if ${OSVERSION} >= 300000
+BROKEN=         MOUNT_NFS undeclared
+.endif
 
 MAN8=		smbmount.8
 
