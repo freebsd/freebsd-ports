@@ -12,7 +12,7 @@ PORTVERSION=	2.0.1
 CATEGORIES=	print audio
 MASTER_SITES=	ftp://ftp.lilypond.org//pub/LilyPond/v2.0/
 
-MAINTAINER=	atamaniuk@frobs.net
+MAINTAINER=	atamaniuk-ports@frobs.net
 COMMENT=	The GNU music typesetter
 
 BUILD_DEPENDS=	${LOCALBASE}/bin/latex:${PORTSDIR}/print/teTeX
