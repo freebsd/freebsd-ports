@@ -11,7 +11,7 @@ CATEGORIES=	textproc
 MASTER_SITES=	ftp://ftp.gpad.ac.ru/pub/FreeBSD/distfiles/
 DISTNAME=	${PORTNAME}${PORTVERSION}
 
-MAINTAINER=	demon@gpad.ac.ru
+MAINTAINER=	dima@Chg.RU
 
 USE_PERL5=	yes
 NO_BUILD=	yes
@@ -20,13 +20,7 @@ CGIDIR=		${PREFIX}/www/cgi-bin
 MAN1=  		man2html.1
 
 post-patch:
-
-	@ if [ -f ${CGIDIR} ] ; then \
-		@ ${MV} ${WRKSRC}/man.cgi ${WRKSRC}/man.cgi.pre_sed ; \
-		@ ${CAT} ${WRKSRC}/man.cgi.pre_sed | \
-		@ ${GREP} -Ev -e "/opt/|/openwin/" \
-		> ${WRKSRC}/man.cgi ; \
-	fi
+	${PERL} -pi -e "s#/usr/local/bin/perl#${PERL5}#" ${WRKSRC}/man.cgi
 
 do-install:
 
