@@ -1,5 +1,5 @@
-# $Id: Makefile,v 1.3 1994/10/04 15:01:05 jkh Exp $
+# $Id: Makefile,v 1.4 1994/10/29 22:01:02 pst Exp $
 #
-SUBDIR=	kermit mgetty+sendfax seyon
+SUBDIR= kermit mgetty+sendfax rzsz seyon
 
 .include <bsd.port.subdir.mk>
