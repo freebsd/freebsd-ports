@@ -1,0 +1,19 @@
+ZODB, the Zope Object Database, is a fully-fledged object database system
+written in Python.  It forms part of the Zope application framework
+by Zope Corporation (previously Digital Creations).  (See port www/zope.)
+
+This port represents a third-party standalone packaging of ZODB by noted
+Python developer A.M. Kuchlin <akuchlin@mems-exchange.org> (AMK).  Official
+ZODB development is currently being managed by Pythonlabs, a division of Zope
+Corporation.  AMK's release of ZODB (and hence this port) will eventually be
+superseded by an official Pythonlabs release called StandaloneZODB.
+
+AMK's ZODB package also includes a standalone version of Zope Enterprise
+Objects (ZEO), a tool to distribute ZODB stores across a network.  This port
+does NOT install ZEO.  A separate port, databases/zeo, is currently under
+development.
+
+WWW:      http://amk.ca/zodb/
+See also: http://www.zope.org/Wikis/ZODB/StandaloneZODB
+
+-- Johann Visagie <wjv@FreeBSD.org>
