@@ -1,0 +1,26 @@
+# New ports collection makefile for:	mutt_vc_query
+# Date created:				14 May 2003
+# Whom:	      				Oliver Braun
+#
+# $FreeBSD$
+#
+
+PORTNAME=	mutt_vc_query
+PORTVERSION=	001
+CATEGORIES=	mail
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	rolo
+
+MAINTAINER=	obraun@FreeBSD.org
+COMMENT=	A vCard query utility for mutt
+
+BUILD_DEPENDS=	${LOCALBASE}/lib/libvc.a:${PORTSDIR}/devel/libvc
+
+USE_BZIP2=	yes
+GNU_CONFIGURE=	yes
+CFLAGS+=	-I${PREFIX}/include \
+		-L${PREFIX}/lib
+
+MAN1=		mutt_vc_query.1
+
+.include <bsd.port.mk>

@@ -1,0 +1,7 @@
+The mutt_vc_query program is a vCard query utility for mutt.
+It was originally written for `rolo'.
+
+WWW: http://rolo.sf.net/
+
+-- Oliver Braun
+obraun@FreeBSD.org
