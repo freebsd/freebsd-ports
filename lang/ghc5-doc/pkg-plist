@@ -194,7 +194,7 @@ share/doc/ghc/base/doc-index.html
 share/doc/ghc/base/haddock.css
 share/doc/ghc/base/haskell_icon.gif
 share/doc/ghc/base/index.html
-share/doc/ghc/building.ps
+share/doc/ghc/building.ps.gz
 share/doc/ghc/building/building-docs.html
 share/doc/ghc/building/building-guide.html
 share/doc/ghc/building/docbook.css
@@ -350,7 +350,7 @@ share/doc/ghc/haskell98/doc-index.html
 share/doc/ghc/haskell98/haddock.css
 share/doc/ghc/haskell98/haskell_icon.gif
 share/doc/ghc/haskell98/index.html
-share/doc/ghc/hslibs.ps
+share/doc/ghc/hslibs.ps.gz
 share/doc/ghc/hslibs/book-hslibs.html
 share/doc/ghc/hslibs/device-specific-functions.html
 share/doc/ghc/hslibs/docbook.css
@@ -492,7 +492,7 @@ share/doc/ghc/network/doc-index.html
 share/doc/ghc/network/haddock.css
 share/doc/ghc/network/haskell_icon.gif
 share/doc/ghc/network/index.html
-share/doc/ghc/users_guide.ps
+share/doc/ghc/users_guide.ps.gz
 share/doc/ghc/users_guide/bug-reporting.html
 share/doc/ghc/users_guide/bugs-and-infelicities.html
 share/doc/ghc/users_guide/bugs.html

@@ -10,9 +10,9 @@ PORTVERSION=	5.04.2
 CATEGORIES=	lang haskell
 MASTER_SITES=	http://www.haskell.org/ghc/docs/${PORTVERSION}/ \
 		http://www.haskell.org/ghc/docs/${PORTVERSION}/html/
-DISTFILES=      building.html.tar.gz building.ps hslibs.html.tar.gz \
-		hslibs.ps libraries.html.tar.gz users_guide.html.tar.gz \
-		users_guide.ps index.html
+DISTFILES=      building.html.tar.gz building.ps.gz hslibs.html.tar.gz \
+		hslibs.ps.gz libraries.html.tar.gz users_guide.html.tar.gz \
+		users_guide.ps.gz index.html
 DIST_SUBDIR=	ghc
 EXTRACT_ONLY=
 
@@ -23,7 +23,7 @@ NO_BUILD=	yes
 
 do-install:
 	@${MKDIR} ${LOCALBASE}/share/doc/ghc
-.for FILE in building.ps hslibs.ps users_guide.ps index.html
+.for FILE in building.ps.gz hslibs.ps.gz users_guide.ps.gz index.html
 	@${INSTALL_DATA} ${DISTDIR}/${DIST_SUBDIR}/${FILE} \
 		${LOCALBASE}/share/doc/ghc
 .endfor
