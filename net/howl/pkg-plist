@@ -35,7 +35,7 @@ lib/libhowl-%%VERSION%%.so
 lib/libhowl.so
 lib/libhowl.la
 lib/libhowl.a
-lib/pkgconfig/howl.pc
+libdata/pkgconfig/howl.pc
 share/howl/help/address.html
 share/howl/help/address-summary.html
 share/howl/help/index.html

@@ -1,0 +1,14 @@
+
+$FreeBSD$
+
+--- Makefile.in.orig	Mon May 31 14:11:12 2004
++++ Makefile.in	Mon May 31 14:12:11 2004
+@@ -95,7 +95,7 @@
+ install_sh = @install_sh@
+ SUBDIRS = include src samples test docs etc project
+ 
+-pkgconfigdir = $(prefix)/lib/pkgconfig
++pkgconfigdir = $(prefix)/libdata/pkgconfig
+ pkgconfig_DATA = howl.pc
+ subdir = .
+ ACLOCAL_M4 = $(top_srcdir)/aclocal.m4
