@@ -1,5 +1,5 @@
 # New ports collection makefile for:	enchant
-# Date created:				03 January 2003
+# Date created:				03 January 2004
 # Whom:					Adam Weinberger <adamw@FreeBSD.org>
 #
 # $FreeBSD$
