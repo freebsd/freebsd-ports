@@ -6,7 +6,7 @@
 #
 
 PORTNAME=		streamtuner
-PORTVERSION=		0.10.2
+PORTVERSION=		0.11.0
 CATEGORIES=		audio www
 MASTER_SITES=		http://streamtuner.sourceforge.net/streamtuner/
 
