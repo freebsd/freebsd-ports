@@ -8,6 +8,7 @@
 
 PORTNAME=	ngrep
 PORTVERSION=	1.40.1
+PORTREVISION=	1
 CATEGORIES=	net security
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -21,10 +22,12 @@ CONFIGURE_ARGS=	--with-pcre --with-restart
 ALL_TARGET=	ngrep
 MAN8=		ngrep.8
 
+PORTDOCS=	BUGS CHANGES README README.pcre USAGE
+
 post-install:
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
-.for file in BUGS CHANGES README README.pcre USAGE
+.for file in ${PORTDOCS}
 	${INSTALL_DATA} ${WRKSRC}/${file} ${DOCSDIR}
 .endfor
 .endif
