@@ -18,7 +18,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A C++ library that persistently stores graph like data
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/libmk4.so:${PORTSDIR}/databases/metakit
-LIB_DEPENDS=	tcl84.1:${PORTSDIR}/lang/tcl84 \
+LIB_DEPENDS=	tcl${TCLVND}:${PORTSDIR}/lang/tcl${TCLVND} \
 		expat.4:${PORTSDIR}/textproc/expat2
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
@@ -28,11 +28,15 @@ USE_REINPLACE=	yes
 USE_GMAKE=	yes
 USE_LIBTOOL=	yes
 CONFIGURE_ARGS=	--with-metakit=${LOCALBASE} \
-		--with-tcl=${LOCALBASE}/lib/tcl8.4 --enable-tcl \
+		--with-tcl=${LOCALBASE}/lib/tcl${TCL_VER} --enable-tcl \
 		--with-expat=${LOCALBASE} --enable-xml
-CFLAGS+=	-fpermissive -I${LOCALBASE}/include/tcl8.4
+CFLAGS+=	-fpermissive -I${LOCALBASE}/include/tcl${TCL_VER}
 MAKEFILE=	makefile
 INSTALLS_SHLIB=	yes
+PLIST_SUB=	TCL_VER="${TCL_VER}"
+
+TCL_VER?=	8.4
+TCLVND=		${TCL_VER:S/.//}
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|=-O$$|="$${CFLAGS}"|g' ${WRKSRC}/configure
