@@ -22,6 +22,8 @@ ${LINUXBASE}/usr/lib/libgtk-x11-2.0.so.0:${PORTSDIR}/x11-toolkits/linux-gtk2 \
 ${LINUXBASE}/usr/lib/libpango-1.0.so.0:${PORTSDIR}/x11-toolkits/linux-pango \
 ${LINUXBASE}/usr/share/fonts/default:${PORTSDIR}/x11-fonts/linux-urw-fonts
 
+BROKEN=		"Inconsistent dependencies (linux_base 7.x and 8.x)"
+
 USE_BZIP2=	yes
 
 .include "../../www/linux-mozillafirebird/Makefile"
