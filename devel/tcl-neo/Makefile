@@ -37,6 +37,12 @@ post-build:
 
 NEO_LIBRARY=	${PREFIX}/lib/neo8.2
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 502000
+BROKEN=		"Broken pkg-plist"
+.endif
+
 post-install:
 	${MKDIR} ${NEO_LIBRARY}
 	${CP} -Rp ${WRKSRC}/../neolibs/[a-z]* ${NEO_LIBRARY}
@@ -44,4 +50,4 @@ post-install:
 		-e 's,@NEO_VERSION@,8.2,' < ${WRKSRC}/pkgIndex.tcl.in > \
 		${NEO_LIBRARY}/pkgIndex.tcl
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
