@@ -1,0 +1,21 @@
+--- programs/Xserver/hw/xfree86/XF86Setup/mouse.tcl.orig	Mon Jan 17 00:34:06 2000
++++ programs/Xserver/hw/xfree86/XF86Setup/mouse.tcl	Wed Jan 19 02:51:43 2000
+@@ -15,7 +15,7 @@
+ # Mouse configuration routines
+ #
+ 
+-set mseTypeList [concat $SupportedMouseTypes { Xqueue OSMouse } ]
++set mseTypeList [concat $SupportedMouseTypes { Xqueue OSMouse SysMouse } ]
+ 
+ set msePatterns [list {tty[0-9A-Za-o]*} cua* *bm *mse* *mouse* \
+                       ps*x psm* m320 pms* com* gpmdata lms* kdmouse logi msm \
+@@ -586,6 +586,9 @@
+ 	set mseRes          $initres
+ 	if { $mseRes <= 0 } {
+ 		set mseRes 100
++	}
++	if { $mseRes > 200 } {
++		set mseRes 200
+ 	}
+ 	$w.mouse.resolution.$mseRes invoke
+ 	set mseButtons      $initbtn
