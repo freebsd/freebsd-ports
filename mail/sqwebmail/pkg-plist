@@ -1,4 +1,4 @@
-%%AUTHDFLAG%%etc/rc.d/authdaemond.sh
+%%AUTHDFLAG%%etc/rc.d/sqwebmail-authdaemond.sh
 libexec/sqwebmail/authlib/authcram
 libexec/sqwebmail/authlib/authcustom
 %%AUTHDFLAG%%libexec/sqwebmail/authlib/authdaemon
