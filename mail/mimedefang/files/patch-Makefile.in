@@ -1,28 +1,28 @@
---- Makefile.in.orig	Wed Aug 14 00:57:19 2002
-+++ Makefile.in	Wed Aug 14 01:22:31 2002
-@@ -107,9 +107,8 @@
+--- Makefile.in.orig	Thu Aug 22 10:50:20 2002
++++ Makefile.in	Thu Aug 22 11:24:27 2002
+@@ -112,9 +112,8 @@
  	-mkdir -p $(RPM_INSTALL_ROOT)@SPOOLDIR@ && chmod 700 $(RPM_INSTALL_ROOT)@SPOOLDIR@
  	-mkdir -p $(RPM_INSTALL_ROOT)@QDIR@ && chmod 700 $(RPM_INSTALL_ROOT)@QDIR@
  
--	if test -f $(RPM_INSTALL_ROOT)${sysconfdir}${CONFSUBDIR}/mimedefang-filter ; then \
--		@INSTALL@ -m 644 examples/suggested-minimum-filter-for-windows-clients $(RPM_INSTALL_ROOT)${sysconfdir}${CONFSUBDIR}/mimedefang-filter.example || exit 1; \
+-	if test -f $(RPM_INSTALL_ROOT)${CONFDIR}/mimedefang-filter ; then \
+-		@INSTALL@ -m 644 examples/suggested-minimum-filter-for-windows-clients $(RPM_INSTALL_ROOT)${CONFDIR}/mimedefang-filter.example || exit 1; \
 -	else \
-+	@INSTALL@ -m 644 examples/suggested-minimum-filter-for-windows-clients $(RPM_INSTALL_ROOT)${sysconfdir}${CONFSUBDIR}/mimedefang-filter.example || exit 1; \
-+	if !(test -f $(RPM_INSTALL_ROOT)${sysconfdir}${CONFSUBDIR}/mimedefang-filter) ; then \
- 		@INSTALL@ -m 644 examples/suggested-minimum-filter-for-windows-clients $(RPM_INSTALL_ROOT)${sysconfdir}${CONFSUBDIR}/mimedefang-filter || exit 1; \
++	@INSTALL@ -m 644 examples/suggested-minimum-filter-for-windows-clients $(RPM_INSTALL_ROOT)${CONFDIR}/mimedefang-filter.example || exit 1; \
++	if !(test -f $(RPM_INSTALL_ROOT)${CONFDIR}/mimedefang-filter) ; then \
+ 		@INSTALL@ -m 644 examples/suggested-minimum-filter-for-windows-clients $(RPM_INSTALL_ROOT)${CONFDIR}/mimedefang-filter || exit 1; \
  	fi
  
-@@ -122,10 +121,9 @@
+@@ -127,10 +126,9 @@
  	@INSTALL@ -m 644 mimedefang-filter.5      $(RPM_INSTALL_ROOT)$(MANDIR)/man5/mimedefang-filter.5
  	@INSTALL@ -m 644 mimedefang-protocol.7    $(RPM_INSTALL_ROOT)$(MANDIR)/man7/mimedefang-protocol.7
  	if test "$(HAVE_SPAM_ASSASSIN)" = "yes" ; then \
--		if test -f $(RPM_INSTALL_ROOT)${sysconfdir}${CONFSUBDIR}/spamassassin/sa-mimedefang.cf ; then \
--			mkdir -p $(RPM_INSTALL_ROOT)${sysconfdir}${CONFSUBDIR}/spamassassin > /dev/null 2>&1 ; \
--			@INSTALL@ -m 644 SpamAssassin/spamassassin.cf $(RPM_INSTALL_ROOT)${sysconfdir}${CONFSUBDIR}/spamassassin/sa-mimedefang.cf.example || exit 1; \
+-		if test -f $(RPM_INSTALL_ROOT)${CONFDIR}/spamassassin/sa-mimedefang.cf ; then \
+-			mkdir -p $(RPM_INSTALL_ROOT)${CONFDIR}/spamassassin > /dev/null 2>&1 ; \
+-			@INSTALL@ -m 644 SpamAssassin/spamassassin.cf $(RPM_INSTALL_ROOT)${CONFDIR}/spamassassin/sa-mimedefang.cf.example || exit 1; \
 -		else \
-+		mkdir -p $(RPM_INSTALL_ROOT)${sysconfdir}${CONFSUBDIR}/spamassassin > /dev/null 2>&1 ; \
-+		@INSTALL@ -m 644 SpamAssassin/spamassassin.cf $(RPM_INSTALL_ROOT)${sysconfdir}${CONFSUBDIR}/spamassassin/sa-mimedefang.cf.example || exit 1; \
-+		if !(test -f $(RPM_INSTALL_ROOT)${sysconfdir}${CONFSUBDIR}/spamassassin/sa-mimedefang.cf) ; then \
- 			@INSTALL@ -m 644 SpamAssassin/spamassassin.cf $(RPM_INSTALL_ROOT)${sysconfdir}${CONFSUBDIR}/spamassassin/sa-mimedefang.cf || exit 1; \
++		mkdir -p $(RPM_INSTALL_ROOT)${CONFDIR}/spamassassin > /dev/null 2>&1 ; \
++		@INSTALL@ -m 644 SpamAssassin/spamassassin.cf $(RPM_INSTALL_ROOT)${CONFDIR}/spamassassin/sa-mimedefang.cf.example || exit 1; \
++		if !(test -f $(RPM_INSTALL_ROOT)${CONFDIR}/spamassassin/sa-mimedefang.cf) ; then \
+ 			@INSTALL@ -m 644 SpamAssassin/spamassassin.cf $(RPM_INSTALL_ROOT)${CONFDIR}/spamassassin/sa-mimedefang.cf || exit 1; \
  		fi \
  	fi

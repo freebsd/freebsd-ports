@@ -6,6 +6,7 @@ etc/rc.d/mimedefang.sh-dist
 etc/mimedefang/mimedefang-filter.example
 @unexec if cmp -s %D/etc/mimedefang/spamassassin/sa-mimedefang.cf %D/etc/mimedefang/spamassassin/sa-mimedefang.cf.example; then rm -f %D/etc/mimedefang/spamassassin/sa-mimedefang.cf; fi
 etc/mimedefang/spamassassin/sa-mimedefang.cf.example
+etc/mimedefang/mimedefang-ip-key
 %%PORTDOCS%%share/doc/mimedefang/README
 %%PORTDOCS%%share/doc/mimedefang/README.ANOMY
 %%PORTDOCS%%share/doc/mimedefang/README.SPAMASSASSIN
