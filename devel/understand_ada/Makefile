@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	understand_ada
-PORTVERSION=	1.4.166
+PORTVERSION=	1.4.168
 CATEGORIES=	devel linux
 MASTER_SITES=	http://www.scitools.com/ftp/pub/download/${PORTNAME}/%SUBDIR%/
 MASTER_SITE_SUBDIR=	latest pastbuilds
