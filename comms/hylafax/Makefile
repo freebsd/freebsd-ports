@@ -1,6 +1,6 @@
 # ports collection makefile for:	hylafax
-# Date created:		19 Apr 1997
-# Whom:			ports@freebsd.org
+# Date created:		16 May 1995
+# Whom:			Julian Stacey <jhs@freebsd.org>
 #
 # $FreeBSD$
 #
