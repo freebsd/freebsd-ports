@@ -1,5 +1,15 @@
 --- configure.orig	Wed Jun 26 21:28:24 2002
 +++ configure	Wed Jun 26 21:35:16 2002
+@@ -337,7 +337,8 @@
+ libdir='${exec_prefix}/lib'
+ includedir='${prefix}/include'
+ oldincludedir='/usr/include'
+-docdir='${prefix}/doc'
++# docdir='${prefix}/doc'
++docdir='${prefix}/share/doc'
+ mandir='${prefix}/man'
+
+ ac_prev=
 @@ -2007,11 +2007,13 @@
  EOF
  

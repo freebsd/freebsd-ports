@@ -1,0 +1,20 @@
+--- contrib/pgcrypto/Makefile.orig	Thu May  8 16:09:28 2003
++++ contrib/pgcrypto/Makefile	Thu May  8 16:12:47 2003
+@@ -7,7 +7,7 @@
+ include $(top_builddir)/src/Makefile.global
+ 
+ # either 'builtin', 'mhash', 'openssl'
+-cryptolib = builtin
++cryptolib = openssl
+ 
+ # either 'builtin', 'system'
+ cryptsrc = builtin
+@@ -21,7 +21,7 @@
+ #              This works ofcouse only with cryptolib = openssl
+ #
+ # 'silly'    - use libc random() - very weak
+-random = silly
++random = dev
+ random_dev = \"/dev/urandom\"
+ 
+ ##########################

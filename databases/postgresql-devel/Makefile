@@ -6,7 +6,7 @@
 #
 
 PORTNAME?=	postgresql
-PORTVERSION?=	7.4.2003.05.06
+PORTVERSION?=	7.4.2003.05.08
 CATEGORIES?=	databases
 MASTER_SITES=	http://freebsd.sean.chittenden.org/ports/ \
 		http://people.freebsd.org/~seanc/ports/
@@ -34,7 +34,7 @@ INSTALLS_SHLIB=	YES
 BUILD_DEPENDS+=	bison:${PORTSDIR}/devel/bison1875
 CONFIGURE_ARGS=	--with-libraries=${LOCALBASE}/lib \
 		--with-includes=${LOCALBASE}/include \
-		--with-docdir=${LOCALBASE}/share/doc/$PORTNAME}${PKGNAMESUFFIX}
+		--with-docdir=${LOCALBASE}/share/doc/${PORTNAME}${PKGNAMESUFFIX}
 
 .if !defined(WITHOUT_GNUGETOPT)
 LIB_DEPENDS=	gnugetopt:${PORTSDIR}/devel/libgnugetopt
@@ -58,6 +58,12 @@ CONFIGURE_ARGS+=	--enable-debug
 INSTALL_TARGET=	install
 .else
 INSTALL_TARGET=	install-strip
+.endif
+
+.if !defined(WITHOUT_PGCRYPTO)
+PLIST_SUB+=	PGCRYPTO=""
+.else
+PLIST_SUB+=	PGCRYPTO="@comment "
 .endif
 
 .if !defined(WITHOUT_SSL)
@@ -110,7 +116,7 @@ pre-everything::
 	@${ECHO} "	WITH_MIT_KRB5		Builds with MIT's kerberos support"
 	@${ECHO} "	WITH_HEIMDAL_KRB5	Builds with Heimdal's kerberos support"
 	@${ECHO} "	WITH_OPTIMIZED_CFLAGS	Builds with compiler optimizations (-O3)"
-	@${ECHO} "	WITH_PGCRYPTO		Builds and installs pgcrypto"
+	@${ECHO} "	WITHOUT_PGCRYPTO	Builds without pgcrypto support"
 	@${ECHO} "	WITH_DEBUG		Builds with debugging symbols"
 	@${ECHO} ""
 .if defined(WITH_MIT_KRB5) && defined(WITH_HEIMDAL_KRB5)
@@ -130,7 +136,7 @@ pre-everything::
 	@exit 1
 .endif
 
-.if defined(WITH_PGCRYPTO)
+.if !defined(WITHOUT_PGCRYPTO)
 post-build:
 	${GMAKE} -C ${WRKSRC}/contrib/pgcrypto
 .endif
@@ -148,7 +154,7 @@ pre-install:
 .endif
 
 post-install:
-.if defined(WITH_PGCRYPTO)
+.if !defined(WITHOUT_PGCRYPTO)
 	${GMAKE} -C ${WRKSRC}/contrib/pgcrypto install
 .endif
 	@ ${MKDIR} ${PREFIX}/share/postgresql ;\
