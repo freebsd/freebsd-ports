@@ -1,0 +1,8 @@
+bin/glade
+share/doc/glade/README
+share/doc/glade/TODO
+share/doc/glade/developer.txt
+share/doc/glade/file_format.txt
+share/doc/glade/manual.txt
+share/doc/glade/notes.txt
+@dirrm share/doc/glade
