@@ -142,6 +142,8 @@ if [ x"$2" = xPOST-INSTALL -a -z "${PACKAGE_BUILDING}" ]; then
             echo "send-mail	${PKG_PREFIX}/sbin/sendmail"	>> /etc/mail/mailer.conf
             echo "mailq		${PKG_PREFIX}/sbin/sendmail"	>> /etc/mail/mailer.conf
             echo "newaliases	${PKG_PREFIX}/sbin/sendmail"	>> /etc/mail/mailer.conf
+	    echo "Be sure to set sendmail_flags=\"-bd\" in /etc/rc.conf to start"
+	    echo "postfix on next reboot."
             echo "Done."
         fi
     else
