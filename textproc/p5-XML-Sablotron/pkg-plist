@@ -1,13 +1,17 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/XML/Sablotron.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/XML/Sablotron/DOM.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/XML/Sablotron/DOM/DOMHandler.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/XML/Sablotron/Processor.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/XML/Sablotron/SAXBuilder.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/XML/Sablotron/SXP.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/XML/Sablotron/Situation.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/XML/Sablotron/Situation/DOMHandlerDispatcher.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/Sablotron/.packlist
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/Sablotron/DOM/DOM.bs
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/Sablotron/DOM/DOM.so
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/Sablotron/Sablotron.bs
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/Sablotron/Sablotron.so
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/Sablotron/DOM
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/Sablotron
 @unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/XML 2>/dev/null || true
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/XML/Sablotron/DOM
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/XML/Sablotron/Situation
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/XML/Sablotron
 @unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/XML 2>/dev/null || true

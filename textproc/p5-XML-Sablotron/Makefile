@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	XML-Sablotron
-PORTVERSION=	0.97
+PORTVERSION=	0.98
 CATEGORIES=	textproc perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	XML
@@ -27,8 +27,8 @@ CONFIGURE_ARGS=	LIBS='-L${LOCALBASE}/lib -lexpat -lsablot -liconv' \
 		SABLOTINCPATH='${LOCALBASE}/include'
 
 MAN3=		XML::Sablotron.3 XML::Sablotron::DOM.3 \
-		XML::Sablotron::SAXBuilder.3
-MAN3PREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
+		XML::Sablotron::DOM::DOMHandler.3 XML::Sablotron::SAXBuilder.3 \
+		XML::Sablotron::Situation::DOMHandlerDispatcher.3
 
 .include <bsd.port.pre.mk>
 
