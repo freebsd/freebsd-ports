@@ -2,6 +2,7 @@
 @exec mv %D/lib/mozilla/chrome/chrome.rdf %D/lib/mozilla/chrome/chrome.rdf.orig
 @exec mv %D/lib/mozilla/chrome/installed-chrome.txt %D/lib/mozilla/chrome/installed-chrome.txt.orig
 @exec mv %D/lib/mozilla/defaults/pref/unix.js %D/lib/mozilla/defaults/pref/unix.js.orig
+@exec mv %D/lib/mozilla/components/xpti.dat %D/lib/mozilla/xpti.dat.orig
 bin/mozilla
 lib/mozilla/chrome/JP.jar
 lib/mozilla/chrome/chrome.rdf
@@ -10,6 +11,7 @@ lib/mozilla/chrome/ja-JP.jar
 lib/mozilla/chrome/ja-mac.jar
 lib/mozilla/chrome/ja-unix.jar
 lib/mozilla/chrome/ja-win.jar
+lib/mozilla/components/xpti.dat
 lib/mozilla/defaults/pref/unix.js
 lib/mozilla/defaults/profile/JP/chrome/userChrome-example.css
 lib/mozilla/defaults/profile/JP/chrome/userContent-example.css
@@ -67,8 +69,6 @@ lib/mozilla/searchplugins/ascii_ghelp.png
 lib/mozilla/searchplugins/ascii_ghelp.src
 lib/mozilla/searchplugins/atmarkIT.png
 lib/mozilla/searchplugins/atmarkIT.src
-lib/mozilla/searchplugins/eijiro.png
-lib/mozilla/searchplugins/eijiro.src
 lib/mozilla/searchplugins/GoogleJapan.png
 lib/mozilla/searchplugins/GoogleJapan.src
 lib/mozilla/searchplugins/jpnic_rfc.png
@@ -85,5 +85,6 @@ lib/mozilla/searchplugins/w3c.src
 @unexec mv %D/lib/mozilla/chrome/chrome.rdf.orig %D/lib/mozilla/chrome/chrome.rdf
 @unexec mv %D/lib/mozilla/chrome/installed-chrome.txt.orig %D/lib/mozilla/chrome/installed-chrome.txt
 @unexec mv %D/lib/mozilla/defaults/pref/unix.js.orig %D/lib/mozilla/defaults/pref/unix.js
+@unexec mv %D/lib/mozilla/xpti.dat.orig %D/lib/mozilla/components/xpti.dat
 @dirrm lib/mozilla/defaults/profile/JP/chrome
 @dirrm lib/mozilla/defaults/profile/JP

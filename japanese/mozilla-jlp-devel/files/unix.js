@@ -46,8 +46,6 @@ pref("browser.display.screen_resolution", 0); // System setting
 pref("browser.startup.license_accepted", "");
 pref("browser.cache.memory.capacity", 4096);
 pref("browser.cache.disk.capacity", 50000);
-pref("browser.ncols", 0);
-pref("browser.installcmap", false);
 pref("browser.drag_out_of_frame_style", 1);
 pref("mail.signature_file", "~/.signature");
 pref("mail.default_fcc", "~/nsmail/Sent");
@@ -325,16 +323,24 @@ pref("font.min-size.fixed.zh-TW", 10);
 //     "fname=-urw.*;scalable=false;outline_scaled=false;xdisplay=.*;xdpy=.*;ydpy=.*;xdevice=.*");
 
 /* reject font if accept pattern does not match it... */
-//pref("print.xprint.font.acceptfontpattern", ".*");
-/* reject font if reject pattern matches it... */
-//pref("print.xprint.font.rejectfontpattern", 
-//     "fname=-urw.*;scalable=false;outline_scaled=false;xdisplay=.*;xdpy=.*;ydpy=.*;xdevice=.*");
+pref("print.xprint.font.acceptfontpattern", ".*");
+/* reject font if reject pattern matches it...
+ * Current bans:
+ * - bug 148470 ("Ban "-dt-*" (bitmap!!) fonts from Xprint")
+ *   pattern="fname=-dt-.*;scalable=.*;outline_scaled=false;xdisplay=.*;xdpy=.*;ydpy=.*;xdevice=.*"
+ */
+pref("print.xprint.font.rejectfontpattern", 
+     "fname=-dt-.*;scalable=.*;outline_scaled=false;xdisplay=.*;xdpy=.*;ydpy=.*;xdevice=.*");
+
+/* Xprint print module prefs */
+pref("print.xprint.font.force_outline_scaled_fonts", true);
+pref("print.xprint.font.scale_bitmap_fonts_with_devscale", true);
 
 /* PostScript print module prefs */
 pref("print.postscript.paper_size",    "letter");
 pref("print.postscript.orientation",   "portrait");
 pref("print.postscript.print_command", "lpr ${MOZ_PRINTER_NAME:+'-P'}${MOZ_PRINTER_NAME}");
-''
+
 /* PostScript print module font config
  * this list is used by the postscript font
  * to enumerate the list of langGroups
@@ -356,6 +362,9 @@ pref("print.postscript.nativefont.x-user-def",     "");
 pref("print.postscript.nativefont.x-western",      "");
 pref("print.postscript.nativefont.zh-CN",          "");
 pref("print.postscript.nativefont.zh-TW",          "");
+
+// For the download dialog
+pref("browser.download.progressDnldDialog.enable_launch_reveal_buttons", false);
 
 pref("mail.signature_date", 0);
 
