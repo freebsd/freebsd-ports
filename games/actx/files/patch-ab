@@ -1,19 +1,20 @@
---- install.actxrc.orig	Mon Jan 29 00:20:52 2001
-+++ install.actxrc	Mon Jan 29 00:19:34 2001
-@@ -8,7 +8,7 @@
+--- install.actxrc.orig	Sat Oct  6 13:44:43 2001
++++ install.actxrc	Sat Oct  6 14:00:02 2001
+@@ -10,7 +10,7 @@
+ Actx*titleOfMenuE: ONE - for Bright Season -
  
- Axtx*titleOfMenuE: ONE  - for Bright Season -
  
 -Actx*xpmDir: /usr/local/lib/actx
 +Actx*xpmDir: %%ACTXDIR%%
  
- Actx*balloon.font: -*-fixed-medium-r-normal--14-*
+ !Actx*balloon.font: -alias-fixed-bold-*-*-*-12-*-*-*-*-*-*-*
  
-@@ -23,7 +23,7 @@
- !Actx*balloon.style: standard
+@@ -24,7 +24,7 @@
+ 
  Actx*balloon.style: wmaker
  
--!Actx*sndDir: /usr/local/lib/actX/wav
+-!Actx*sndDir: /usr/local/lib/actx/wav
 +!Actx*sndDir: %%ACTXDIR%%/wav
  
  !Actx*sndCom: /usr/local/bin/wavplay -q %s
+ 
