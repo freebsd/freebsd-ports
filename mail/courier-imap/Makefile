@@ -25,6 +25,8 @@ USE_GMAKE=	YES
 # WITH_VPOPMAIL:		Build in vpopmail support
 # WITH_MYSQL:			Build in mysql support
 # WITH_POSTGRESQL:		Build in postgresql support
+# WITH_LDAP:			Build in ldap support with openldap 2.x
+# WITH_LDAP1:			Build in ldap support with openldap 1.x
 #
 
 .if !defined(WITHOUT_OPENSSL)
@@ -34,8 +36,7 @@ PLIST_SUB=	OPENSSLFLAG=
 PLIST_SUB=	OPENSSLFLAG="@comment "
 .endif
 
-CONFIGURE_ARGS=	--without-authldap --with-authldaprc=filename \
-		--without-authshadow \
+CONFIGURE_ARGS=	--without-authshadow \
 		--without-authcram \
 		--sysconfdir=${PREFIX}/etc/courier-imap \
 		--with-userdb=${PREFIX}/etc/userdb \
@@ -52,6 +53,24 @@ CONFIGURE_ARGS+=	\
 CONFIGURE_ARGS+=	\
 		--with-authvchkpw
 BUILD_DEPENDS+=	${VPOPMAILDIR}/lib/libvpopmail.a:${PORTSDIR}/mail/vpopmail
+.endif
+
+.if !defined(WITH_LDAP) && !defined(WITH_LDAP1)
+CONFIGURE_ARGS+=	\
+		--without-authldap
+PLIST_SUB+=	LDAPFLAG="@comment "
+.else
+CONFIGURE_ARGS+=	\
+		--with-authldap
+PLIST_SUB+=	LDAPFLAG=""
+
+.if defined(WITH_LDAP)
+LIB_DEPENDS=	ldap.2:${PORTSDIR}/net/openldap2 \
+		lber.2:${PORTSDIR}/net/openldap2
+.else
+LIB_DEPENDS=	ldap.1:${PORTSDIR}/net/openldap \
+		lber.1:${PORTSDIR}/net/openldap
+.endif
 .endif
 
 .if !defined(WITH_MYSQL)
