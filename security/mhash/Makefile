@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mhash
-PORTVERSION=	0.8.4
+PORTVERSION=	0.8.9
 CATEGORIES=	security
 MASTER_SITES=	http://mhash.sourceforge.net/dl/
 
