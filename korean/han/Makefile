@@ -16,6 +16,10 @@ ONLY_FOR_ARCHS=	i386
 
 USE_GMAKE=	YES
 
+pre-patch:
+	@${PERL} -pi -e 's,<malloc.h>,<stdlib.h>,' \
+		${WRKSRC}/src/vt.c ${WRKSRC}/lib/mem.c
+
 post-configure:
 	${SED} -e 's%%WRKSRC%%${WRKSRC}' \
 	  -e 's%%PREFIX%%${PREFIX}' \
