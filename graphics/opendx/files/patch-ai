@@ -1,0 +1,176 @@
+--- src/exec/libdx/Makefile.in.orig	Tue Sep 28 17:51:37 1999
++++ src/exec/libdx/Makefile.in	Tue Sep 28 17:51:55 1999
+@@ -87,7 +87,7 @@
+ YACC = @YACC@
+ yakker = @yakker@
+ 
+-INCLUDES = -I../../../include  -D@ARCH@
++INCLUDES = -I../../../include
+ 
+ dxlibdir = $(prefix)/dx/lib_@ARCH@
+ 
+--- src/exec/dxmods/Makefile.in.orig	Tue Sep 28 17:52:52 1999
++++ src/exec/dxmods/Makefile.in	Tue Sep 28 17:53:06 1999
+@@ -86,7 +86,7 @@
+ YACC = @YACC@
+ yakker = @yakker@
+ 
+-INCLUDES = -I../../../include -I../dpexec -I/usr/include -I/usr/local/include -D@ARCH@
++INCLUDES = -I../../../include -I../dpexec -I/usr/include -I/usr/local/include
+ 
+ dxmdfdir = $(prefix)/dx/lib
+ noinst_LIBRARIES = libDXMODS.a
+--- src/exec/hwrender/Makefile.in.orig	Tue Sep 28 17:56:08 1999
++++ src/exec/hwrender/Makefile.in	Tue Sep 28 17:56:18 1999
+@@ -88,7 +88,7 @@
+ 
+ SUBDIRS = opengl gl xgl starbase
+ 
+-INCLUDES = -I../../../include -I../libdx -I/usr/include -I/usr/local/include -D@ARCH@
++INCLUDES = -I../../../include -I../libdx -I/usr/include -I/usr/local/include
+ 
+ noinst_LIBRARIES = libHW.a
+ 
+--- src/exec/hwrender/opengl/Makefile.in.orig	Tue Sep 28 17:56:55 1999
++++ src/exec/hwrender/opengl/Makefile.in	Tue Sep 28 17:57:41 1999
+@@ -86,7 +86,7 @@
+ YACC = @YACC@
+ yakker = @yakker@
+ 
+-INCLUDES = -I../../../../include -I.. -I../../libdx -I/usr/include -I/usr/local/include -D@ARCH@
++INCLUDES = -I../../../../include -I.. -I../../libdx -I/usr/include -I/usr/local/include
+ 
+ noinst_LIBRARIES = libOPENGL.a
+ 
+--- src/exec/dpexec/Makefile.in.orig	Tue Sep 28 17:58:27 1999
++++ src/exec/dpexec/Makefile.in	Tue Sep 28 17:58:36 1999
+@@ -87,7 +87,7 @@
+ YACC = @YACC@
+ yakker = @yakker@
+ 
+-INCLUDES = -I../../../include -I../libdx -D@ARCH@
++INCLUDES = -I../../../include -I../libdx
+ 
+ noinst_LIBRARIES = libDPEXEC.a
+ 
+--- src/exec/dxexec/Makefile.in.orig	Tue Sep 28 17:59:10 1999
++++ src/exec/dxexec/Makefile.in	Tue Sep 28 17:59:17 1999
+@@ -86,7 +86,7 @@
+ YACC = @YACC@
+ yakker = @yakker@
+ 
+-INCLUDES = -I../dpexec -D@ARCH@
++INCLUDES = -I../dpexec
+ 
+ EXPARG = @EXPARG@
+ 
+--- src/uipp/dxuilib/Makefile.in.orig	Tue Sep 28 18:01:04 1999
++++ src/uipp/dxuilib/Makefile.in	Tue Sep 28 18:01:13 1999
+@@ -86,7 +86,7 @@
+ YACC = @YACC@
+ yakker = @yakker@
+ 
+-INCLUDES = -I../base -I../../../include -I../dxui -D@ARCH@
++INCLUDES = -I../base -I../../../include -I../dxui
+ 
+ noinst_LIBRARIES = libDXUI.a
+ 
+--- src/uipp/base/Makefile.in.orig	Tue Sep 28 18:01:51 1999
++++ src/uipp/base/Makefile.in	Tue Sep 28 18:02:01 1999
+@@ -86,7 +86,7 @@
+ YACC = @YACC@
+ yakker = @yakker@
+ 
+-INCLUDES = -I../widgets -I../../../include -D@ARCH@
++INCLUDES = -I../widgets -I../../../include
+ 
+ noinst_LIBRARIES = libBASE.a
+ 
+--- src/uipp/dxl/Makefile.in.orig	Tue Sep 28 18:02:57 1999
++++ src/uipp/dxl/Makefile.in	Tue Sep 28 18:03:11 1999
+@@ -86,7 +86,7 @@
+ YACC = @YACC@
+ yakker = @yakker@
+ 
+-INCLUDES = -I../../../include  -D@ARCH@
++INCLUDES = -I../../../include
+ 
+ dxlibdir = $(prefix)/dx/lib_@ARCH@
+ 
+--- src/uipp/widgets/Makefile.in.orig	Tue Sep 28 18:04:05 1999
++++ src/uipp/widgets/Makefile.in	Tue Sep 28 18:04:20 1999
+@@ -86,7 +86,7 @@
+ YACC = @YACC@
+ yakker = @yakker@
+ 
+-INCLUDES = -I../widgets -D@ARCH@
++INCLUDES = -I../widgets
+ 
+ noinst_LIBRARIES = libWIDGETS.a
+ 
+--- src/uipp/dxui/Makefile.in.orig	Tue Sep 28 18:05:20 1999
++++ src/uipp/dxui/Makefile.in	Tue Sep 28 18:05:30 1999
+@@ -86,7 +86,7 @@
+ YACC = @YACC@
+ yakker = @yakker@
+ 
+-INCLUDES = -I../base -I../../../include -I../dxuilib -D@ARCH@
++INCLUDES = -I../base -I../../../include -I../dxuilib
+ 
+ dxbindir = $(prefix)/dx/bin_@ARCH@
+ dxbin_PROGRAMS = dxui
+--- src/uipp/prompter/Makefile.in.orig	Tue Sep 28 18:06:39 1999
++++ src/uipp/prompter/Makefile.in	Tue Sep 28 18:06:56 1999
+@@ -86,7 +86,7 @@
+ YACC = @YACC@
+ yakker = @yakker@
+ 
+-INCLUDES = -I../base -I../../../include -D@ARCH@
++INCLUDES = -I../base -I../../../include
+ 
+ dxbindir = $(prefix)/dx/bin_@ARCH@
+ 
+--- src/uipp/tutor/Makefile.in.orig	Tue Sep 28 18:07:31 1999
++++ src/uipp/tutor/Makefile.in	Tue Sep 28 18:07:41 1999
+@@ -86,7 +86,7 @@
+ YACC = @YACC@
+ yakker = @yakker@
+ 
+-INCLUDES = -I../../../include -I../base -D@ARCH@
++INCLUDES = -I../../../include -I../base
+ 
+ dxbindir = $(prefix)/dx/bin_@ARCH@
+ 
+--- src/uipp/mb/Makefile.in.orig	Tue Sep 28 18:08:18 1999
++++ src/uipp/mb/Makefile.in	Tue Sep 28 18:08:29 1999
+@@ -86,7 +86,7 @@
+ YACC = @YACC@
+ yakker = @yakker@
+ 
+-INCLUDES = -I../../../include -I../base -I../widgets -D@ARCH@
++INCLUDES = -I../../../include -I../base -I../widgets
+ 
+ dxbindir = $(prefix)/dx/bin_@ARCH@
+ 
+--- src/uipp/startup/Makefile.in.orig	Tue Sep 28 18:09:07 1999
++++ src/uipp/startup/Makefile.in	Tue Sep 28 18:09:21 1999
+@@ -86,7 +86,7 @@
+ YACC = @YACC@
+ yakker = @yakker@
+ 
+-INCLUDES = -I../../../include -I../base -D@ARCH@
++INCLUDES = -I../../../include -I../base
+ 
+ dxbindir = $(prefix)/dx/bin_@ARCH@
+ 
+--- src/uipp/java/Makefile.in.orig	Tue Sep 28 18:10:10 1999
++++ src/uipp/java/Makefile.in	Tue Sep 28 18:10:57 1999
+@@ -422,7 +422,7 @@
+ 
+ DXLink.o:  server.jar
+ 	(CLASSPATH=aaaaa ; unset CLASSPATH ; cd dxsc; @JDKBIN@javah -jni -d ../server server.DXServer server.DXServerThread)
+-	(cd server; $(CC) -o ../DXLink.o -I../../../../include -c -D@ARCH@ $(CFLAGS) $(JINC) DXLink.c)
++	(cd server; $(CC) -o ../DXLink.o -I../../../../include -c $(CFLAGS) $(JINC) DXLink.c)
+ 
+ clean:
+ 	rm -rf classes dxsc
