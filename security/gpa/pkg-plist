@@ -1,9 +1,13 @@
 bin/gpa
-share/gpa/gpa_tips.en
-share/gpa/gpa_tips.de
-share/gpa/gtkrc
-share/gpa/gpa_logo.ppm
 share/locale/de/LC_MESSAGES/gpa.mo
+share/locale/es/LC_MESSAGES/gpa.mo
 share/locale/fr/LC_MESSAGES/gpa.mo
+share/locale/ja/LC_MESSAGES/gpa.mo
+share/locale/nl/LC_MESSAGES/gpa.mo
+share/locale/pt_BR/LC_MESSAGES/gpa.mo
+share/locale/sv/LC_MESSAGES/gpa.mo
 share/locale/zh_TW.Big5/LC_MESSAGES/gpa.mo
-@dirrm share/gpa
+%%DATADIR%%/gpa_tips.en
+%%DATADIR%%/gpa_tips.de
+%%DATADIR%%/gpa_logo.ppm
+@dirrm %%DATADIR%%

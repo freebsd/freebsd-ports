@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	gpa
-PORTVERSION=	0.4.3
-PORTREVISION=	2
+PORTVERSION=	0.7.0
 CATEGORIES=	security
 MASTER_SITES=	${MASTER_SITE_GNUPG}
 MASTER_SITE_SUBDIR=	alpha/gpa
@@ -15,14 +14,16 @@ MASTER_SITE_SUBDIR=	alpha/gpa
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A graphical frontend for the GNU Privacy Guard
 
-BUILD_DEPENDS=	gpg:${PORTSDIR}/security/gnupg
+BUILD_DEPENDS=	gpgme-config:${PORTSDIR}/security/gpgme
+RUN_DEPENDS=	gpg:${PORTSDIR}/security/gnupg
 
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
-USE_GNOME=	gtk12
+USE_GNOME=	gtk20
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LIBS="-L${LOCALBASE}/lib"
 CONFIGURE_ARGS=	--datadir=${PREFIX}/share
+USE_GETOPT_LONG=	yes
 
 .include <bsd.port.mk>
