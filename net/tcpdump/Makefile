@@ -18,7 +18,7 @@ COMMENT=	Ubiquitous network traffic analysis tool
 # TODO: Add strict sanity check that we're compiling against a
 # version of libpcap with which this tcpdump release is compatible.
 #
-.if defined(TCPDUMP_OVERWRITE_BASE) || defined(WITH_LIBPCAP_PORT)
+.if defined(TCPDUMP_OVERWRITE_BASE) || !defined(WITH_LIBPCAP_BASE)
 LIB_DEPENDS=	pcap.2:${PORTSDIR}/net/libpcap
 .endif
 
@@ -50,7 +50,7 @@ PLIST_SUB+=	NOTBASE=""
 # User-definable switches:
 # WITHOUT_CRYPTO	Build without IPSEC or TCPMD5 decryption.
 # WITHOUT_IPV6		Build without IPV6 support.
-# WITH_LIBPCAP_PORT	Use libpcap from ports instead of the base system.
+# WITH_LIBPCAP_BASE	Use libpcap from the base system instead of ports.
 # WITH_RADIOTAP		Build with support for BSD 802.11 Radiotap headers.
 # WITH_TCPMD5		Build with support for TCP-MD5 digest verification.
 #
@@ -95,7 +95,7 @@ EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-tcpmd5-print-tcp.c \
 # port to look for libpcap in ${LOCALPCAPBASE} first, for both
 # the configure and build steps.
 #
-.if defined(TCPDUMP_OVERWRITE_BASE) || defined(WITH_LIBPCAP_PORT)
+.if defined(TCPDUMP_OVERWRITE_BASE) || !defined(WITH_LIBPCAP_BASE)
 LOCALPCAPBASE=	${LOCALBASE}
 CONFIGURE_ENV+=	CFLAGS="-L${LOCALPCAPBASE}/lib"
 .else
@@ -105,12 +105,6 @@ LOCALPCAPBASE=	/usr
 LOCALPCAPFILES=	include/pcap.h include/pcap-namedb.h include/pcap-bpf.h \
 		lib/libpcap.a
 WRKPCAPDIR=	${WRKDIR}/libpcap-0.8.3
-
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 600000
-BROKEN=		"Build fails on FreeBSD >= 6.x"
-.endif
 
 # When building tcpdump against a particular pcap version, it expects to
 # find a built, untarred source tree in the parent of the work tree.
@@ -129,4 +123,4 @@ post-install:
 	${CAT} ${PKGMESSAGE}
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
