@@ -6,18 +6,19 @@
 #
 
 PORTNAME=	Mail_Mime
-PORTVERSION=	1.2.1
-PORTREVISION=	4
+PORTVERSION=	1.3.0
 CATEGORIES=	mail www pear
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	antonio@php.net
 COMMENT=	PEAR classes to create and decode MIME messages
 
-BUILD_DEPENDS=	${PEARDIR}/Mail/mail.php:${PORTSDIR}/mail/pear-Mail
+BUILD_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear-PEAR
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 CATEGORY=	Mail
-FILES=		mime.php mimeDecode.php mimePart.php xmail.dtd xmail.xsl
+FILES=		mime.php mimeDecode.php mimePart.php
+DATA=		xmail.dtd xmail.xsl
+_DATADIR=	.
 
 .include <bsd.port.pre.mk>
 .include "${PORTSDIR}/devel/pear-PEAR/Makefile.common"
