@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	bsdftpd-ssl
-PORTVERSION=	0.6.2
+PORTVERSION=	0.6.3
 CATEGORIES=	ftp
 MASTER_SITES=	http://bsdftpd-ssl.sc.ru/files/bsdftpd-ssl/archive/0.6/src/
 DISTNAME=	bsdftpd-6.0-ssl-${PORTVERSION}
