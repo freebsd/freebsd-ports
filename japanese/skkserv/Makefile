@@ -11,7 +11,7 @@ CATEGORIES=	japanese
 MASTER_SITES=	${MASTER_SITE_PORTS_JP}
 DISTNAME=	skk${PORTVERSION}
 
-MAINTAINER=	matusita@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=Dictionary server for the SKK Japanese-input software
 
 RUN_DEPENDS=	${LOCALBASE}/share/skk/${SKKJISYO}:${PORTSDIR}/japanese/skk-jisyo
