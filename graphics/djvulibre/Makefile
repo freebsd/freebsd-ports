@@ -47,7 +47,7 @@ pre-everything::
 .if defined(LOCALBASE) && ${LOCALBASE} != "/usr/local"
 pre-configure:
 	${PERL} -pi -e 's,/usr/local,${LOCALBASE},g' `find ${WRKSRC} \
-		-type f -print0 | ${xargs} -0 ${GREP} -Fl --mmap /usr/local`
+		-type f -print0 | ${XARGS} -0 ${GREP} -Fl --mmap /usr/local`
 .endif
 
 .if !defined(WITH_OPTIMIZED_CFLAGS)
