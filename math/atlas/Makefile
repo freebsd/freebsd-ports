@@ -47,7 +47,7 @@ post-patch:
 .endif
 
 .if ${MACHINE_ARCH} == "sparc64"
-PICFLAG?=	-fPIC 
+PICFLAG?=	-fPIC
 .else
 PICFLAG?=	-fpic
 .endif
@@ -72,6 +72,13 @@ do-configure:
 
 ATLAS_LIBS1=libalapack libatlas libcblas libf77blas libtstatlas
 ATLAS_LIBS2=libptcblas libptf77blas
+
+pre-build:
+	@${ECHO_MSG} "Warning:"
+	@${ECHO_MSG} "Building this port can take long time"
+	@${ECHO_MSG} "for slow computers (over 1 day)."
+	@${ECHO_MSG} "And sometimes stop building for Athlon."
+	@${ECHO_MSG} "In this case please retype make or rebuild whole atlas."
 
 do-build:
 # make lapack
