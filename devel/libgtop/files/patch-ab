@@ -1,50 +1,80 @@
---- lib/Makefile.in.orig	Fri Dec 25 22:09:27 1998
-+++ lib/Makefile.in	Fri Dec 25 22:50:30 1998
-@@ -128,7 +128,7 @@
+--- lib/Makefile.in.orig	Wed Jan  6 03:54:31 1999
++++ lib/Makefile.in	Thu Jan  7 21:47:02 1999
+@@ -129,7 +129,7 @@
  LT_CURRENT = @LT_CURRENT@
  LT_RELEASE = @LT_RELEASE@
  LT_REVISION = @LT_REVISION@
 -LT_VERSION_INFO = @LT_VERSION_INFO@
-+LT_VERSION_INFO = -version-info 0:99:0
++LT_VERSION_INFO = -version-info 1:0:0
  MAKEINFO = @MAKEINFO@
  MKINSTALLDIRS = @MKINSTALLDIRS@
  NM = @NM@
---- sysdeps/common/Makefile.in.orig	Fri Dec 25 22:51:31 1998
-+++ sysdeps/common/Makefile.in	Fri Dec 25 22:51:52 1998
-@@ -128,7 +128,7 @@
+--- sysdeps/common/Makefile.in.orig	Wed Jan  6 03:53:49 1999
++++ sysdeps/common/Makefile.in	Thu Jan  7 21:47:02 1999
+@@ -129,7 +129,7 @@
  LT_CURRENT = @LT_CURRENT@
  LT_RELEASE = @LT_RELEASE@
  LT_REVISION = @LT_REVISION@
 -LT_VERSION_INFO = @LT_VERSION_INFO@
-+LT_VERSION_INFO = -version-info 0:99:0
++LT_VERSION_INFO = -version-info 1:0:0
  MAKEINFO = @MAKEINFO@
  MKINSTALLDIRS = @MKINSTALLDIRS@
  NM = @NM@
---- sysdeps/freebsd/Makefile.in.orig	Fri Dec 25 22:51:58 1998
-+++ sysdeps/freebsd/Makefile.in	Fri Dec 25 22:52:15 1998
-@@ -128,7 +128,7 @@
+--- sysdeps/freebsd/Makefile.in.orig	Wed Jan  6 03:54:24 1999
++++ sysdeps/freebsd/Makefile.in	Thu Jan  7 21:47:02 1999
+@@ -129,7 +129,7 @@
  LT_CURRENT = @LT_CURRENT@
  LT_RELEASE = @LT_RELEASE@
  LT_REVISION = @LT_REVISION@
 -LT_VERSION_INFO = @LT_VERSION_INFO@
-+LT_VERSION_INFO = -version-info 0:99:0
++LT_VERSION_INFO = -version-info 1:0:0
  MAKEINFO = @MAKEINFO@
  MKINSTALLDIRS = @MKINSTALLDIRS@
  NM = @NM@
---- sysdeps/names/Makefile.in.orig	Fri Dec 25 22:52:24 1998
-+++ sysdeps/names/Makefile.in	Fri Dec 25 22:52:44 1998
-@@ -128,7 +128,7 @@
+--- sysdeps/names/Makefile.in.orig	Wed Jan  6 03:54:09 1999
++++ sysdeps/names/Makefile.in	Thu Jan  7 21:47:02 1999
+@@ -129,7 +129,7 @@
  LT_CURRENT = @LT_CURRENT@
  LT_RELEASE = @LT_RELEASE@
  LT_REVISION = @LT_REVISION@
 -LT_VERSION_INFO = @LT_VERSION_INFO@
-+LT_VERSION_INFO = -version-info 0:99:0
++LT_VERSION_INFO = -version-info 1:0:0
  MAKEINFO = @MAKEINFO@
  MKINSTALLDIRS = @MKINSTALLDIRS@
  NM = @NM@
---- Makefile.in.orig	Fri Dec 25 22:52:51 1998
-+++ Makefile.in	Fri Dec 25 22:54:19 1998
-@@ -170,8 +170,7 @@
+--- sysdeps/guile/Makefile.in.orig	Fri Jan  8 11:23:00 1999
++++ sysdeps/guile/Makefile.in	Fri Jan  8 11:26:57 1999
+@@ -126,9 +126,9 @@
+ LN_S = @LN_S@
+ LTLIBOBJS = @LTLIBOBJS@
+ LT_AGE = @LT_AGE@
+-LT_CURRENT = @LT_CURRENT@
+-LT_RELEASE = @LT_RELEASE@
+-LT_REVISION = @LT_REVISION@
++LT_CURRENT = 1
++LT_RELEASE = 0
++LT_REVISION = 0
+ LT_VERSION_INFO = @LT_VERSION_INFO@
+ MAKEINFO = @MAKEINFO@
+ MKINSTALLDIRS = @MKINSTALLDIRS@
+--- sysdeps/guile/names/Makefile.in.orig	Wed Jan  6 03:54:02 1999
++++ sysdeps/guile/names/Makefile.in	Fri Jan  8 11:27:22 1999
+@@ -126,9 +126,9 @@
+ LN_S = @LN_S@
+ LTLIBOBJS = @LTLIBOBJS@
+ LT_AGE = @LT_AGE@
+-LT_CURRENT = @LT_CURRENT@
+-LT_RELEASE = @LT_RELEASE@
+-LT_REVISION = @LT_REVISION@
++LT_CURRENT = 1
++LT_RELEASE = 0
++LT_REVISION = 0
+ LT_VERSION_INFO = @LT_VERSION_INFO@
+ MAKEINFO = @MAKEINFO@
+ MKINSTALLDIRS = @MKINSTALLDIRS@
+--- Makefile.in.orig	Wed Jan  6 03:53:28 1999
++++ Makefile.in	Thu Jan  7 21:47:02 1999
+@@ -172,8 +172,7 @@
  
  @BUILD_GNOME_SUPPORT_TRUE@support = support
  
@@ -54,12 +84,23 @@
  
  include_HEADERS = glibtop.h
  
-@@ -179,7 +178,7 @@
- 	LIBGTOP-VERSION features.def libgtop-config.in RELNOTES-0.25 \
- 	libgtop-sysdeps.m4
+@@ -182,7 +181,7 @@
+ 	libgtop-sysdeps.m4 ANNOUNCE ANNOUNCE-0.25 README.LATEST \
+ 	libgtop-mirror.sh
  
 -confexecdir	= $(libdir)
 +confexecdir	= $(sysconfdir)
  confexec_DATA	= $(top_builddir)/libgtopConf.sh \
  		  $(top_builddir)/libgtop-features.def
  
+--- po/Makefile.in.in.orig	Wed Jan  6 03:50:44 1999
++++ po/Makefile.in.in	Thu Jan  7 21:47:02 1999
+@@ -18,7 +18,7 @@
+ 
+ prefix = @prefix@
+ exec_prefix = @exec_prefix@
+-datadir = $(prefix)/@DATADIRNAME@
++datadir = $(prefix)/share
+ localedir = $(datadir)/locale
+ gnulocaledir = $(prefix)/share/locale
+ gettextsrcdir = $(prefix)/share/gettext/po
