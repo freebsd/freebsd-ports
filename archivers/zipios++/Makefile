@@ -34,4 +34,7 @@ pre-configure:
 	@${CP} ${AUTOMAKE_DIR}/${i} ${WRKSRC}
 .endfor
 
+post-install:
+	${INSTALL_DATA} ${WRKSRC}/zipios++/zipios-config.h ${PREFIX}/include/zipios++/
+
 .include <bsd.port.mk>
