@@ -14,6 +14,8 @@ MAINTAINER=	sobomax@FreeBSD.org
 
 LIB_DEPENDS=	gnet.0:${PORTSDIR}/net/gnet
 
+BROKEN=		"Out of sync with latest Gal"
+
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
 USE_GNOME=	yes
