@@ -157,5 +157,3 @@ then
 fi
  echo "	@\${ECHO} \"*** Printer installation ***               \""
  echo "	@\${ECHO} \"    cd ${PREFIX}/apsfilter; ./SETUP        \""
- echo "	@\${ECHO} \"*** Please note ***                        \""
- echo "	@\${ECHO} \"    This is an apsfilter 5.1.5 Prerelease. \""
