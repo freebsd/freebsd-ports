@@ -6,27 +6,29 @@
 #
 
 PORTNAME=	clanbomber
-PORTVERSION=	1.01a
-PORTREVISION=	1
+PORTVERSION=	1.02a
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	barner@gmx.de
 COMMENT=	A bomberman-like multiplayer game
 
-LIB_DEPENDS=	clanCore-0.7.0:${PORTSDIR}/devel/clanlib
+LIB_DEPENDS=	clanCore.2:${PORTSDIR}/devel/clanlib
 
 USE_XLIB=	yes
+USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
+USE_GMAKE=	yes
 CONFIGURE_ENV=	LIBS="${PTHREAD_LIBS} -L${LOCALBASE}/lib" \
 		CPPFLAGS="-I${LOCALBASE}/include"
 CFLAGS+=	-fpermissive
 
-.include <bsd.port.pre.mk>
+post-patch:
+	@${REINPLACE_CMD} -e 's|/usr/share|${PREFIX}/share|g' \
+		${WRKSRC}/clanbomber/Resources.cpp
 
-.if ${OSVERSION} >= 500113
-BROKEN=         "Does not compile (bad C++ code)"
-.endif
+	@${REINPLACE_CMD} -e 's|/usr/local/share|${PREFIX}/share|g' \
+		${WRKSRC}/clanbomber/ClanBomber.cpp
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
