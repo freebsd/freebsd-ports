@@ -1,0 +1,19 @@
+@unexec if cmp -s %D/etc/ggi/libggiwmh.conf %D/etc/ggi/libggiwmh.conf.dist; then rm -f %D/etc/ggi/libggiwmh.conf; fi
+etc/ggi/libggiwmh.conf.dist
+@exec [ -f %B/libggiwmh.conf ] || cp %B/%f %B/libggiwmh.conf
+include/ggi/internal/wmh.h
+include/ggi/wmh-defs.h
+include/ggi/wmh.h
+lib/ggi/wmh/display/pseudo_stubs_wmh.la
+lib/ggi/wmh/display/pseudo_stubs_wmh.so
+%%XWMH%%lib/ggi/wmh/display/X_wmh.la
+%%XWMH%%lib/ggi/wmh/display/X_wmh.so
+lib/libggiwmh.la
+lib/libggiwmh.so
+lib/libggiwmh.so.0
+@dirrm etc/ggi
+@dirrm include/ggi/internal
+@dirrm include/ggi
+@dirrm lib/ggi/wmh/display
+@dirrm lib/ggi/wmh
+@dirrm lib/ggi
