@@ -56,7 +56,7 @@ check_group() {
     #check
     # We need a command 'pw(8)'
     check_pw
-    if pw groupshow $name -q ; then
+    if pw groupshow -n $name > /dev/null ; then
 	return 0
     fi
     if pw groupadd -g $id -n $name -N -q ; then 
