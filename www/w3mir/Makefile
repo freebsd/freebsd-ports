@@ -1,10 +1,9 @@
 # New ports collection makefile for:    w3mir
-# http://www.math.uio.no/~janl/w3mir/
 # Version required:                     1.0.2
 # Date created:                         9 May 1998
 # Whom:                                 ache
 #
-# $Id: Makefile,v 1.17 1998/04/28 14:45:37 vanilla Exp $
+# $Id: Makefile,v 1.4 1998/05/09 13:28:00 ache Exp $
 #
 
 DISTNAME=       w3mir-1.0.2
@@ -15,7 +14,7 @@ MAINTAINER=     ache@freebsd.org
 
 BUILD_DEPENDS=	${PREFIX}/lib/perl5/site_perl/LWP.pm:${PORTSDIR}/www/p5-libwww
 
-USE_PERL5=	YES
+USE_PERL5=	Yes
 
 MAN1=           w3mir.1 w3mfix.1
 
