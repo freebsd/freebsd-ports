@@ -96,11 +96,7 @@ else
       mtree -f ${mtreefile} -p ${prefix} > /tmp/list3
       if [ -s /tmp/list3 ]; then
         if [ "x${NOPLISTCHECK}" = "x" ]; then
-	  for path in $(awk '/^extra:/ {print $2}' /tmp/list3); do
-	    if [ ! -d ${prefix}/${path} ]; then
-              echo "1" > /tmp/status
-	    fi
-	  done
+	  echo "1" > /tmp/status
 	fi
         echo "================================================================"
         echo "list of extra files and directories in ${prefix}"
