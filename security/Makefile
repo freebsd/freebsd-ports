@@ -426,6 +426,7 @@
     SUBDIR += seahorse
     SUBDIR += secpanel
     SUBDIR += sectok
+    SUBDIR += secure_delete
     SUBDIR += sfs
     SUBDIR += sha
     SUBDIR += shishi
