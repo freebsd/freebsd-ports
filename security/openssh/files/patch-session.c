@@ -1,5 +1,5 @@
---- session.c.orig	Mon Mar 31 16:16:15 2003
-+++ session.c	Mon Mar 31 16:18:09 2003
+--- session.c.orig	Wed Sep 17 10:53:49 2003
++++ session.c	Wed Sep 17 10:59:52 2003
 @@ -58,6 +58,13 @@
  #include "session.h"
  #include "monitor_wrap.h"
@@ -234,7 +234,35 @@
  	return 0;
  }
  
-@@ -818,12 +971,39 @@
+@@ -739,7 +892,7 @@
+ child_set_env(char ***envp, u_int *envsizep, const char *name,
+ 	const char *value)
+ {
+-	u_int i, namelen;
++	u_int i, namelen, envsize;
+ 	char **env;
+ 
+ 	/*
+@@ -757,12 +910,14 @@
+ 		xfree(env[i]);
+ 	} else {
+ 		/* New variable.  Expand if necessary. */
+-		if (i >= (*envsizep) - 1) {
+-			if (*envsizep >= 1000)
++		envsize = *envsizep;
++		if (i >= envsize - 1) {
++			if (envsize >= 1000)
+ 				fatal("child_set_env: too many env vars,"
+ 				    " skipping: %.100s", name);
+-			(*envsizep) += 50;
+-			env = (*envp) = xrealloc(env, (*envsizep) * sizeof(char *));
++			envsize += 50;
++			env = (*envp) = xrealloc(env, envsize * sizeof(char *));
++			*envsizep = envsize;
+ 		}
+ 		/* Need to set the NULL pointer at end of array beyond the new slot. */
+ 		env[i + 1] = NULL;
+@@ -818,12 +973,39 @@
  	fclose(f);
  }
  
@@ -274,7 +302,7 @@
  	struct passwd *pw = s->pw;
  
  	/* Initialize the environment. */
-@@ -831,6 +1011,11 @@
+@@ -831,6 +1013,11 @@
  	env = xmalloc(envsize * sizeof(char *));
  	env[0] = NULL;
  
@@ -286,7 +314,7 @@
  	if (!options.use_login) {
  		/* Set basic environment. */
  		child_set_env(&env, &envsize, "USER", pw->pw_name);
-@@ -851,9 +1036,21 @@
+@@ -851,9 +1038,21 @@
  
  		/* Normal systems set SHELL by default. */
  		child_set_env(&env, &envsize, "SHELL", shell);
@@ -310,7 +338,7 @@
  
  	/* Set custom environment options from RSA authentication. */
  	if (!options.use_login) {
-@@ -903,6 +1100,10 @@
+@@ -903,6 +1102,10 @@
  		child_set_env(&env, &envsize, "KRB5CCNAME",
  		    s->authctxt->krb5_ticket_file);
  #endif
@@ -321,7 +349,7 @@
  	if (auth_sock_name != NULL)
  		child_set_env(&env, &envsize, SSH_AUTHSOCKET_ENV_NAME,
  		    auth_sock_name);
-@@ -1025,7 +1226,7 @@
+@@ -1025,7 +1228,7 @@
  	if (getuid() == 0 || geteuid() == 0) {
  #ifdef HAVE_LOGIN_CAP
  		if (setusercontext(lc, pw, pw->pw_uid,
@@ -330,7 +358,7 @@
  			perror("unable to set user context");
  			exit(1);
  		}
-@@ -1065,6 +1266,36 @@
+@@ -1065,6 +1268,36 @@
  	exit(1);
  }
  
@@ -367,7 +395,7 @@
  /*
   * Performs common processing for the child, such as setting up the
   * environment, closing extra file descriptors, setting the user and group
-@@ -1148,7 +1379,7 @@
+@@ -1148,7 +1381,7 @@
  	 * initgroups, because at least on Solaris 2.3 it leaves file
  	 * descriptors open.
  	 */
@@ -376,7 +404,7 @@
  		close(i);
  
  	/*
-@@ -1178,6 +1409,31 @@
+@@ -1178,6 +1411,31 @@
  			exit(1);
  #endif
  	}
