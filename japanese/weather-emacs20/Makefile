@@ -6,23 +6,24 @@
 #
 
 PORTNAME=	weather
-PORTVERSION=	0.26
+PORTVERSION=	0.28
 CATEGORIES=	japanese elisp
 MASTER_SITES=	ftp://ftp.opaopa.org/pub/elisp/ \
 		ftp://ftp.ring.gr.jp/pub/text/elisp/jaist/ftp.opaopa.org/elisp/ \
 		ftp://ftp.jaist.ac.jp/pub/GNU/elisp/ftp.opaopa.org/elisp/
 PKGNAMESUFFIX=	-${EMACS_PORT_NAME}
 
-MAINTAINER=	yoichi@eken.phys.nagoya-u.ac.jp
+MAINTAINER=	yoichi@FreeBSD.org
 
-BUILD_DEPENDS=	${LOCALBASE}/${EMACS_LIBDIR_WITH_VER}/site-lisp/emu/emu.el:${PORTSDIR}/editors/apel-emacs20
-RUN_DEPENDS=	${LOCALBASE}/${EMACS_LIBDIR_WITH_VER}/site-lisp/emu/emu.el:${PORTSDIR}/editors/apel-emacs20
+BUILD_DEPENDS=	${LOCALBASE}/${EMACS_VERSION_SITE_LISPDIR}/emu/emu.el:${PORTSDIR}/editors/apel-emacs20
+RUN_DEPENDS=	${LOCALBASE}/${EMACS_VERSION_SITE_LISPDIR}/emu/emu.el:${PORTSDIR}/editors/apel-emacs20
 
-EMACS_PORT_NAME=emacs20
+EMACS_PORT_NAME?=	emacs20
 
 DOCS=		README
 
 DOCSDIR=	${PREFIX}/share/doc/${PORTNAME}
+MAKE_ARGS+=	LISPDIR=${PREFIX}/${EMACS_VERSION_SITE_LISPDIR}
 
 post-install:
 .if !defined(NOPORTDOCS)
