@@ -2,3 +2,4 @@ bin/ups
 share/doc/ups/FAQ
 share/doc/ups/README
 share/doc/ups/Ups
+@dirrm share/doc/ups
