@@ -43,6 +43,7 @@
     SUBDIR += vmware
     SUBDIR += vmware2
     SUBDIR += vpce
+    SUBDIR += vxtools
     SUBDIR += wine
     SUBDIR += x48
     SUBDIR += xgs
