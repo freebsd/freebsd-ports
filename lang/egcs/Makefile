@@ -10,14 +10,8 @@
 PORTNAME=	egcs
 PORTVERSION=	1.1.2
 CATEGORIES=	lang
-MASTER_SITES=	ftp://go.cygnus.com/pub/ftp.cygnus.com/egcs/releases/egcs-1.1.2/ \
-		ftp://ftp.crc.ca/pub/packages/egcs/egcs-1.1.2/ \
-		ftp://ftp.funet.fi/mirrors/ftp.cygnus.com/pub/egcs/releases/egcs-1.1.2/ \
-		ftp://egcs.cygnus.com/pub/egcs/releases/egcs-1.1.2/ \
-		ftp://ftp.nluug.nl/pub/languages/egcs/releases/egcs-1.1.2/ \
-		ftp://ftp.iij.ad.jp/pub/egcs/releases/egcs-1.1.2/ \
-		ftp://ftp.fu-berlin.de/unix/languages/egcs/releases/egcs-1.1.2/ \
-		ftp://cambridge.cygnus.com/pub/egcs/releases/egcs-1.1.2/
+MASTER_SITES=	${MASTER_SITE_GCC}
+MASTER_SITE_SUBDIR=	releases/${PORTNAME}-${PORTVERSION}
 DISTFILES=	egcs-core-1.1.2${EXTRACT_SUFX} egcs-g++-1.1.2${EXTRACT_SUFX} \
 		egcs-g77-1.1.2${EXTRACT_SUFX} egcs-objc-1.1.2${EXTRACT_SUFX}
 
