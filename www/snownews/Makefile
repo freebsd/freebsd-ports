@@ -9,7 +9,7 @@
 PORTNAME=	snownews
 PORTVERSION=	1.5.4
 CATEGORIES=	www
-MASTER_SITES=	http://home.kcore.de/~kiza/software/snownews/download/
+MASTER_SITES=	http://kiza.kcore.de/software/snownews/download/
 
 MAINTAINER=	clsung@FreeBSD.org
 COMMENT=	A text mode RSS newsreader
