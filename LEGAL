@@ -323,6 +323,7 @@ jdk1_2_2-src.tar.gz	ports/java/jdk12	Redistribution of pre-compiled
 jmf-*-alljava.zip	ports/java/jmf		Redistribution of pre-compiled
 						binaries is not permitted
 john-*			ports/security/john	crypt(); export-controlled
+jpgraph-*		ports/graphics/jpgraph	Not for commercial use
 jre*i_ELF.*.tar.gz	ports/java/jre		License doesn't allow distribution
 						with fee
 jre118_v3-glibc-*	ports/java/linux-blackdown-jre11 License doesn't allow
