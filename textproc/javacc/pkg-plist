@@ -140,7 +140,7 @@ bin/jjtree
 %%PORTDOCS%%%%EXAMPLESDIR%%/VTransformer/README
 %%PORTDOCS%%%%EXAMPLESDIR%%/VTransformer/SimpleNode.java
 %%PORTDOCS%%%%EXAMPLESDIR%%/VTransformer/UnparseVisitor.java
-share/java/classes/javacc.jar
+%%JAVAJARDIR%%/javacc.jar
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 %%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/VTransformer
 %%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/Transformer
