@@ -72,16 +72,6 @@ post-build:
 		done; \
 	fi; \
 	done|sort|uniq >>${PLIST}
-.for sec in ${MANSECS}
-	@${ECHO_CMD} '@unexec rmdir %D/man/ja/man'${sec}' 2>/dev/null || true' \
-	 >>${PLIST}
-.endfor
-	@${ECHO_CMD} '@unexec rmdir %D/man/ja 2>/dev/null || true' >>${PLIST}
-
-pre-install:
-.for sec in ${MANSECS}
-	@${MKDIR} ${PREFIX}/man/ja/man${sec}
-.endfor
 
 post-install:
 	@${CAT} ${PKGMESSAGE}
