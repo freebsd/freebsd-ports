@@ -1,2 +1,6 @@
 MD5 (exim/exim-4.24.tar.bz2) = 2d6c1a6d150c68330ba489246ac617ce
-MD5 (exim/exiscan-acl-4.24-12.patch.bz2) = 3cf8b7991a8b72d3accf7348068900a3
+SHA1 (exim/exim-4.24.tar.bz2) = 692e1339838755afd0ea107fcfc035b2fd164b46
+SIZE (exim/exim-4.24.tar.bz2) = 1266141
+MD5 (exim/exiscan-acl-4.24-13.patch.bz2) = dc4266a5f27859eb6574bf04db297d0d
+SHA1 (exim/exiscan-acl-4.24-13.patch.bz2) = b73121f6ec3d6d213f76fada9ce1d0365e395625
+SIZE (exim/exiscan-acl-4.24-13.patch.bz2) = 55476
