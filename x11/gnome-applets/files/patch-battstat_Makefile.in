@@ -1,21 +1,21 @@
---- battstat/Makefile.in.orig	Sun Jun 29 16:43:23 2003
-+++ battstat/Makefile.in	Sun Jun 29 16:45:10 2003
-@@ -146,11 +146,11 @@
+--- battstat/Makefile.in.orig	Tue Sep 23 00:11:20 2003
++++ battstat/Makefile.in	Tue Sep 23 00:14:03 2003
+@@ -154,11 +154,11 @@
  pixmapsdir = $(datadir)/pixmaps
  pixmaps_DATA = battstat.png
- @HAVE_LIBAPM_TRUE@APMLIB = -lapm
--@HAVE_LIBAPM_FALSE@APMLIB = apmlib/libapm.a
-+@HAVE_LIBAPM_FALSE@APMLIB =
+ @HAVE_LIBAPM_TRUE@APMLIB = @HAVE_LIBAPM_TRUE@-lapm
+-@HAVE_LIBAPM_FALSE@APMLIB = @HAVE_LIBAPM_FALSE@apmlib/libapm.a
++@HAVE_LIBAPM_FALSE@APMLIB = 
  @HAVE_LIBAPM_TRUE@APMDIR = 
--@HAVE_LIBAPM_FALSE@APMDIR = apmlib
+-@HAVE_LIBAPM_FALSE@APMDIR = @HAVE_LIBAPM_FALSE@apmlib
 +@HAVE_LIBAPM_FALSE@APMDIR =
  @HAVE_LIBAPM_TRUE@APMINC = 
--@HAVE_LIBAPM_FALSE@APMINC = -Iapmlib/
+-@HAVE_LIBAPM_FALSE@APMINC = @HAVE_LIBAPM_FALSE@-Iapmlib/
 +@HAVE_LIBAPM_FALSE@APMINC =
  
  SUBDIRS = docs sounds $(APMDIR)
  
-@@ -199,8 +199,7 @@
+@@ -230,8 +230,7 @@
  @HAVE_LIBAPM_TRUE@battstat_applet_2_DEPENDENCIES =  \
  @HAVE_LIBAPM_TRUE@$(top_builddir)/screen-exec/libscreen-exec.la
  @HAVE_LIBAPM_FALSE@battstat_applet_2_DEPENDENCIES =  \
