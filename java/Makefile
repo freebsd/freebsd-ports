@@ -4,6 +4,7 @@
     COMMENT = Java language support
 
     SUBDIR += avalon-logkit
+    SUBDIR += berkeley-db
     SUBDIR += bluej
     SUBDIR += bouncycastle
     SUBDIR += bsh

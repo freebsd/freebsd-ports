@@ -1,0 +1,23 @@
+This is a pure-Java implementation of Berkeley DB. From the
+
+WWW: http://www.sleepycat.com/products/je.shtml
+
+"Berkeley DB JE was designed from the ground up in Java. It takes full
+ advantage of the Java environment. The Berkeley DB JE API provides a
+ Java Collections-style interface, as well as a programmatic interface
+ similar to the Berkeley DB API.
+
+ Berkeley DB JE is different from all other Java databases available
+ today. Berkeley DB JE is not a relational engine built in Java. It
+ is a Berkeley DB-style embedded store, with an interface designed
+ for programmers, not DBAs. Berkeley DB JE's architecture employs a
+ log-based, no-overwrite storage system, enabling high concurrency and
+ speed while providing ACID transactions and record-level locking.
+ Berkeley DB JE efficiently caches most commonly used data in memory,
+ without exceeding application-specified limits. In this way Berkeley
+ DB JE works with an application to use available JVM resources while
+ providing access to very large data sets.
+
+ The Berkeley DB JE architecture provides an underlying storage layer
+ for any Java application requiring high performance, transactional
+ integrity and recoverability."
