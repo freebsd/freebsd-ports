@@ -1,19 +1,17 @@
-share/java/classes/gnujsp.jar
+share/java/classes/gnujsp10.jar
+share/java/classes/servlet-2.0-plus.jar
 @unexec rmdir %D/share/java/classes > /dev/null 2>&1 || true
 @unexec rmdir %D/share/java > /dev/null 2>&1 || true
 share/examples/gnujsp/date.jsp
-share/examples/gnujsp/mailform.html
-share/examples/gnujsp/org/gjt/vinny/beans/MailBean.class
-share/examples/gnujsp/org/gjt/vinny/beans/MailBean.java
-share/examples/gnujsp/sendmail.jsp
-share/examples/gnujsp/session.jsp
+share/examples/gnujsp/hello.jsp
 share/examples/gnujsp/snoop.jsp
-@dirrm share/examples/gnujsp/org/gjt/vinny/beans
-@dirrm share/examples/gnujsp/org/gjt/vinny
-@dirrm share/examples/gnujsp/org/gjt
-@dirrm share/examples/gnujsp/org
 @dirrm share/examples/gnujsp
 share/doc/gnujsp/CHANGES
-share/doc/gnujsp/INSTALL
+share/doc/gnujsp/FAQ
+share/doc/gnujsp/INSTALL.apache
+share/doc/gnujsp/INSTALL.jigsaw
+share/doc/gnujsp/INSTALL.vqserver
 share/doc/gnujsp/README
+share/doc/gnujsp/install.html
+share/doc/gnujsp/gnujsp.properties
 @dirrm share/doc/gnujsp
