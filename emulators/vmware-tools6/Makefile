@@ -84,11 +84,6 @@ do-install:
 	@${ECHO} "${PREFIX}/etc/XF86Config_VMware is a sample XF86Config file."
 	@${ECHO} "Copy this file to /etc/XF86Config before starting X."
 .endif
-	@${ECHO} ""
-	@${ECHO} "========================================================================"
-	@${ECHO} "Don't forget to choose \"Settings\" -> \"Cancel VMware Tools Install\","
-	@${ECHO} "to restore your CD-ROM setup.
-	@${ECHO} "========================================================================"
-	@${ECHO} ""
+	-${LOCALBASE}/sbin/vmware-guestd --cmd toolinstall.end
 
 .include <bsd.port.post.mk>
