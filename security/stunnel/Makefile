@@ -16,7 +16,6 @@ MASTER_SITES=	http://www.stunnel.org/download/stunnel/src/ \
 MAINTAINER=	martti.kuparinen@iki.fi
 
 USE_OPENSSL=	YES
-IS_INTERACTIVE=	YES	# prompts for information while generating certificate
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--localstatedir=/var/run --with-pem-dir=${PEM_DIR}
