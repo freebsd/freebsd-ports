@@ -11,6 +11,7 @@
 %%PEARDIR%%/PEAR/Command/Common.php
 %%PEARDIR%%/PEAR/Command/Config.php
 %%PEARDIR%%/PEAR/Command/Install.php
+%%PEARDIR%%/PEAR/Command/Mirror.php
 %%PEARDIR%%/PEAR/Command/Package.php
 %%PEARDIR%%/PEAR/Command/Registry.php
 %%PEARDIR%%/PEAR/Command/Remote.php
