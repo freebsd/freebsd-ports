@@ -1,0 +1,15 @@
+--- Iconfig.orig	Wed Mar  4 15:29:05 1998
++++ Iconfig	Sun Apr 19 17:23:41 1998
+@@ -34,9 +34,9 @@
+   recomended for linux*/
+ /*#define I386ASSEMBLY*/
+ /* directories*/
+-KOULESDIR		=/usr/bin/X11
+-SOUNDDIR		=/usr/local/lib/koules
+-MANDIR			=/usr/local/man/man6
++KOULESDIR		=$(PREFIX)/bin
++SOUNDDIR		=$(PREFIX)/share/xkoules
++MANDIR			=$(PREFIX)/man/man6
+ 
+ /*You need some extra libraryes for BSD sockets compatibility?*/
+ /* TOP_INCLUDES =                       /* Sun users with GCC need this */
