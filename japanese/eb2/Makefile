@@ -62,14 +62,16 @@ APPENDIXDIR=	${PREFIX}/share/eb/appendix
 
 post-extract:
 	cd ${WRKSRC} && ${RM} -rf zlib
+	${MKDIR} ${WRKDIR}/appendix
+.for file in ${APPENDIXFILES}
+	${TAR} --exclude CVS -C ${WRKDIR}/appendix -zxmf \
+	  ${DISTDIR}/${DIST_SUBDIR}/${file}
+.endfor
 
 post-install:
 .for file in ${LISTFILES}
 	${INSTALL_DATA} ${DISTDIR}/${DIST_SUBDIR}/${file} ${APPENDIXDIR}
 .endfor
-.for file in ${APPENDIXFILES}
-	${TAR} --no-same-owner --exclude CVS -C ${APPENDIXDIR} -zxmf\
-	  ${DISTDIR}/${DIST_SUBDIR}/${file}
-.endfor
+	${CP} -R ${WRKDIR}/appendix/ ${APPENDIXDIR}
 
 .include <bsd.port.mk>
