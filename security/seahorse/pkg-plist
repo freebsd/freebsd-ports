@@ -2,6 +2,8 @@ bin/seahorse
 share/gnome/apps/Applications/seahorse.desktop
 share/gnome/help/seahorse/C/seahorse.html
 share/gnome/help/seahorse/C/topic.dat
+share/gnome/help/seahorse/it/seahorse.html
+share/gnome/help/seahorse/it/topic.dat
 share/gnome/help/seahorse/ja/seahorse.html
 share/gnome/help/seahorse/ja/topic.dat
 share/gnome/pixmaps/seahorse/seahorse.png
@@ -14,5 +16,6 @@ share/locale/ja/LC_MESSAGES/seahorse.mo
 share/locale/sv/LC_MESSAGES/seahorse.mo
 @dirrm share/gnome/pixmaps/seahorse
 @dirrm share/gnome/help/seahorse/ja
+@dirrm share/gnome/help/seahorse/it
 @dirrm share/gnome/help/seahorse/C
 @dirrm share/gnome/help/seahorse
