@@ -4938,6 +4938,7 @@ musicpd		ports/audio/musicpd
 musixtex	ports/print/musixtex
 mussh		ports/security/mussh
 mute-net	ports/net/mute-net
+mute-net-gui	ports/net/mute-net-gui
 mutella		ports/net/mutella
 mutemix		ports/audio/mutemix
 mutt		ports/mail/mutt
