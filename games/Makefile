@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.188 1999/03/07 00:30:35 flathill Exp $
+# $Id: Makefile,v 1.189 1999/03/15 22:31:12 steve Exp $
 #
 
     SUBDIR += 3dc
@@ -66,6 +66,8 @@
     SUBDIR += mirrormagic
     SUBDIR += nethack
     SUBDIR += nethack-qt
+    SUBDIR += netrek-BRMH-bin
+    SUBDIR += netrek-COW3-bin
     SUBDIR += netris
     SUBDIR += oneko
     SUBDIR += oonsoo
