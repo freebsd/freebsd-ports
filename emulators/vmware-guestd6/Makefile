@@ -71,11 +71,6 @@ do-install:
 		${ECHO} "Installing ${PREFIX}/etc/rc.d/vmware-guestd.sh startup file."; \
 		${INSTALL_SCRIPT} -m 755 ${FILESDIR}/vmware-guestd.sh ${PREFIX}/etc/rc.d; \
 	fi
-	@${ECHO} ""
-	@${ECHO} "========================================================================"
-	@${ECHO} "Don't forget to choose \"Settings\" -> \"Cancel VMware Tools Install\","
-	@${ECHO} "to restore your CD-ROM setup.
-	@${ECHO} "========================================================================"
-	@${ECHO} ""
+	-${PREFIX}/sbin/vmware-guestd --cmd toolinstall.end
 
 .include <bsd.port.mk>
