@@ -1077,6 +1077,7 @@ coda6_server	ports/net/coda6_server
 code2000	ports/x11-fonts/code2000
 code2html	ports/textproc/code2html
 codecrusader	ports/devel/codecrusader
+codeville	ports/devel/codeville
 codeworker	ports/devel/codeworker
 cog		ports/sysutils/cog
 coldsync	ports/palm/coldsync
