@@ -37,9 +37,6 @@
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/range/test.out
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/range/test_mklang.sql
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/range/test_queries.sql
-%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/range/test_setup.sql
-%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/range/test_setup_new.sql
-%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/range/test_setup_new_trigger.sql
 %%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/range
 %%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/plt
 %%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/plp
