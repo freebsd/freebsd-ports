@@ -1,0 +1,7 @@
+bin/lua
+bin/luac
+share/doc/lua/idx.html
+share/doc/lua/index.html
+share/doc/lua/luac.html
+share/doc/lua/manual.html
+@dirrm share/doc/lua

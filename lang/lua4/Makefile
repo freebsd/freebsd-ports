@@ -1,0 +1,33 @@
+# New ports collection makefile for: 	lua
+# Version required: 			3.1
+# Date created:				27 June 1999
+# Whom:					Richard Kiss <richard@homemail.com>
+#
+# $Id$
+#
+
+DISTNAME=	lua-3.1
+CATEGORIES=	lang
+MASTER_SITES=	ftp://ftp.tecgraf.puc-rio.br/pub/lua/ \
+		ftp://csg.uwaterloo.ca/pub/lhf/lua/ \
+		ftp://ftp.cdrom.com/pub/languages/lua/ \
+		ftp://ftp.ntua.gr/pub/lang/lua/ \
+		ftp://ftp.uni-trier.de/pub/languages/lua/ \
+		ftp://ftp.gwdg.de/pub/languages/lua/
+
+MAINTAINER=	richard@homemail.com
+
+MAN1=		luac.1
+WRKSRC=         ${WRKDIR}/lua
+
+do-install:
+	@ ${MKDIR} ${PREFIX}/share/doc/lua
+	@ ${INSTALL_PROGRAM} ${WRKSRC}/bin/lua ${PREFIX}/bin
+	@ ${INSTALL_PROGRAM} ${WRKSRC}/bin/luac ${PREFIX}/bin
+	@ ${INSTALL_MAN} ${WRKSRC}/doc/luac.man ${PREFIX}/man/man1/luac.1
+	@ ${INSTALL_DATA} ${WRKSRC}/doc/idx.html ${PREFIX}/share/doc/lua
+	@ ${INSTALL_DATA} ${WRKSRC}/doc/index.html ${PREFIX}/share/doc/lua
+	@ ${INSTALL_DATA} ${WRKSRC}/doc/luac.html ${PREFIX}/share/doc/lua
+	@ ${INSTALL_DATA} ${WRKSRC}/doc/manual.html ${PREFIX}/share/doc/lua
+
+.include <bsd.port.mk>

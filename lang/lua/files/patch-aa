@@ -1,0 +1,17 @@
+--- config.orig	Tue Jul  6 18:17:42 1999
++++ config	Tue Jul  6 18:18:03 1999
+@@ -3,7 +3,7 @@
+ # == CHANGE THE SETTINGS BELOW TO SUIT YOUR ENVIRONMENT ======================
+ 
+ # you need an ANSI C compiler. gcc is a popular one.
+-CC= gcc
++CC?= gcc
+ WARN= -ansi -Wall
+ 
+ # on SGI's, cc is ANSI.
+@@ -51,4 +51,4 @@
+ INCS= -I$(INC) $(EXTRA_INCS)
+ DEFS= $(COMPAT) $(NUMBER) $(OLD_ANSI) $(EXTRA_DEFS)
+ 
+-CFLAGS= -O2 $(WARN) $(INCS) $(DEFS)
++CFLAGS+= $(WARN) $(INCS) $(DEFS)
