@@ -1,9 +1,10 @@
 bin/bltwish
-bin/bltwish2.4
+bin/bltwish24
 include/blt.h
 lib/libBLT.a
-lib/libBLT.so
-lib/libBLT.so.2.4
+lib/libBLT24.a
+lib/libBLT24.so
+lib/libBLT24.so.2.4
 @exec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -m %D/lib
 @unexec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -R
 lib/blt2.4/bltCanvEps.pro
@@ -19,48 +20,48 @@ lib/blt2.4/dd_protocols/dd-file.tcl
 lib/blt2.4/dd_protocols/dd-number.tcl
 lib/blt2.4/dd_protocols/dd-text.tcl
 lib/blt2.4/dd_protocols/tclIndex
-lib/blt2.4/demos/barchart
+lib/blt2.4/demos/_barchart2.tcl
+lib/blt2.4/demos/_bgtest.tcl
+lib/blt2.4/demos/_demo.tcl
+lib/blt2.4/demos/_graph1.tcl
+lib/blt2.4/demos/_graph2.tcl
+lib/blt2.4/demos/_graph3.tcl
+lib/blt2.4/demos/_graph5.tcl
+lib/blt2.4/demos/_patterns.tcl
+lib/blt2.4/demos/_ps.tcl
+lib/blt2.4/demos/barchart1
 lib/blt2.4/demos/barchart2
-lib/blt2.4/demos/barchart2.tcl
 lib/blt2.4/demos/barchart3
 lib/blt2.4/demos/barchart4
 lib/blt2.4/demos/barchart5
-lib/blt2.4/demos/bg-test3.tcl
-lib/blt2.4/demos/bgexec
+lib/blt2.4/demos/bgexec1
 lib/blt2.4/demos/bgexec2
 lib/blt2.4/demos/bgexec3
 lib/blt2.4/demos/bgexec4
 lib/blt2.4/demos/bitmap
-lib/blt2.4/demos/bltDemo.tcl
-lib/blt2.4/demos/bltGrPs.tcl
-lib/blt2.4/demos/busy
+lib/blt2.4/demos/busy1
 lib/blt2.4/demos/calendar
-lib/blt2.4/demos/dragdrop.tcl
-lib/blt2.4/demos/dragdrop2.tcl
+lib/blt2.4/demos/dragdrop1
+lib/blt2.4/demos/dragdrop2
 lib/blt2.4/demos/eps
 lib/blt2.4/demos/form
-lib/blt2.4/demos/graph
-lib/blt2.4/demos/graph1.tcl
+lib/blt2.4/demos/graph1
 lib/blt2.4/demos/graph2
-lib/blt2.4/demos/graph2.tcl
 lib/blt2.4/demos/graph3
-lib/blt2.4/demos/graph3.tcl
 lib/blt2.4/demos/graph4
 lib/blt2.4/demos/graph5
-lib/blt2.4/demos/graph5.tcl
 lib/blt2.4/demos/graph6
 lib/blt2.4/demos/graph7
-lib/blt2.4/demos/hier
+lib/blt2.4/demos/hier1
 lib/blt2.4/demos/hier2
 lib/blt2.4/demos/hier3
 lib/blt2.4/demos/hier4
-lib/blt2.4/demos/htext
 lib/blt2.4/demos/htext.txt
+lib/blt2.4/demos/htext1
 lib/blt2.4/demos/page.tcl
-lib/blt2.4/demos/patterns.tcl
 lib/blt2.4/demos/spline
-lib/blt2.4/demos/stripchart
-lib/blt2.4/demos/tabset
+lib/blt2.4/demos/stripchart1
+lib/blt2.4/demos/tabset1
 lib/blt2.4/demos/tabset2
 lib/blt2.4/demos/tabset3
 lib/blt2.4/demos/tabset4
@@ -94,6 +95,7 @@ lib/blt2.4/demos/images/mini-filemgr.gif
 lib/blt2.4/demos/images/mini-ofolder.gif
 lib/blt2.4/demos/images/mini-windows.gif
 lib/blt2.4/demos/images/ofolder.gif
+lib/blt2.4/demos/images/out.ps
 lib/blt2.4/demos/images/qv100.t.gif
 lib/blt2.4/demos/images/rain.gif
 lib/blt2.4/demos/images/smblue_rock.gif
@@ -101,7 +103,6 @@ lib/blt2.4/demos/images/stopsign.gif
 lib/blt2.4/demos/images/tan_paper.gif
 lib/blt2.4/demos/images/tan_paper2.gif
 lib/blt2.4/demos/images/txtrflag.gif
-lib/blt2.4/demos/images/out.ps
 @dirrm lib/blt2.4/demos/images
 @dirrm lib/blt2.4/demos/bitmaps
 @dirrm lib/blt2.4/demos

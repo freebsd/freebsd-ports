@@ -3,11 +3,11 @@
 # Date created:		22 September 1998
 # Whom:			Kenjiro Cho <kjc@csl.sony.co.jp>
 #
-# $Id: Makefile,v 1.23 1998/10/20 01:24:32 steve Exp $
+# $Id: Makefile,v 1.24 1998/11/14 09:43:29 asami Exp $
 #
 
-DISTNAME=	BLT2.4f
-PKGNAME=	blt-2.4f
+DISTNAME=	BLT2.4h
+PKGNAME=	blt-2.4h
 CATEGORIES=	x11-toolkits tk80
 MASTER_SITES=	ftp://ftp.tcltk.com/pub/blt/
 
@@ -15,7 +15,7 @@ MAINTAINER=	kjc@csl.sony.co.jp
 
 LIB_DEPENDS=	tk80.1:${PORTSDIR}/x11-toolkits/tk80
 
-WRKSRC=		${WRKDIR}/blt2.4f
+WRKSRC=		${WRKDIR}/blt2.4h
 GNU_CONFIGURE=	yes
 MANN=		BLT.n barchart.n bgexec.n bitmap.n bltdebug.n busy.n \
 		dragdrop.n eps.n graph.n htext.n hierbox.n spline.n \
@@ -31,7 +31,7 @@ SO_VERSION=	2.4
 .endif
 
 post-install:
-	${LN} -sf libBLT.so.${SO_VERSION} ${PREFIX}/lib/libBLT.so
+        ${LN} -sf libBLT24.so.${SO_VERSION} ${PREFIX}/lib/libBLT24.so
 	${SETENV} OBJFORMAT=${PORTOBJFORMAT} ${LDCONFIG} -m ${PREFIX}/lib
 
 .include <bsd.port.post.mk>
