@@ -13,8 +13,8 @@ MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/${PORTNAME}/2.6
 DIST_SUBDIR=	gnome2
 
-MAINTAINER=	gnome@FreeBSD.org
-COMMENT=	XML parser library for GNOME
+MAINTAINER?=	gnome@FreeBSD.org
+COMMENT?=	XML parser library for GNOME
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes
