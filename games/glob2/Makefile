@@ -22,7 +22,7 @@ GNU_CONFIGURE=		yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV=		CFLAGS="${CFLAGS} -I${LOCALBASE}/include"	\
 			LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib"
-USE_GCC=		3.3
+USE_GCC=		3.4
 
 PLIST_FILES=		bin/glob2
 

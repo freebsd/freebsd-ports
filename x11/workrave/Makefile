@@ -21,7 +21,7 @@ BUILD_DEPENDS=	intltool-extract:${PORTSDIR}/textproc/intltool
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gnomeprefix gnomehack intlhack gnomepanel gconf2
-USE_GCC=	3.3
+USE_GCC=	3.4
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib"

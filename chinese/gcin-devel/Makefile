@@ -21,7 +21,7 @@ USE_GMAKE=	YES
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 500041
-USE_GCC=	3.3
+USE_GCC=	3.4
 .endif
 
 .include <bsd.port.post.mk>

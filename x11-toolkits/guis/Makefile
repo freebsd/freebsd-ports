@@ -16,7 +16,7 @@ COMMENT=	A GUI widget server
 
 USE_PYTHON=	2.3
 USE_RUBY=	yes
-USE_GCC=	3.3
+USE_GCC=	3.4
 USE_GNOME=	pkgconfig gtk20 pango libglade2 pygtk2
 USE_GMAKE=	yes
 MAKEFILE=	Makefile_guis

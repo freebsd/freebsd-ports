@@ -27,7 +27,7 @@ USE_BZIP2=	yes
 USE_SDL=	sdl net mixer image ttf
 USE_GNOME=	libxml2
 USE_REINPLACE=	yes
-USE_GCC=	3.3
+USE_GCC=	3.4
 
 post-patch:
 	@for ff in `${FIND} ${WRKDIR} -type f -name '*.[ch]pp' -exec ${GREP} -q stdint.h {} \; -print`; do \

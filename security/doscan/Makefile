@@ -17,7 +17,7 @@ LIB_DEPENDS=	pcre.0:${PORTSDIR}/devel/pcre
 
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
-USE_GCC=	3.3
+USE_GCC=	3.4
 DOC_FILES=	README
 MAN1=		doscan.1
 

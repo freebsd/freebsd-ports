@@ -17,7 +17,7 @@ COMMENT=	Class Library for Numbers
 LIB_DEPENDS=	gmp.6:${PORTSDIR}/math/libgmp4
 
 USE_BZIP2=	yes
-USE_GCC=	3.3
+USE_GCC=	3.4
 USE_GNOME=	gnomehack gnometarget lthack pkgconfig
 USE_GMAKE=	yes
 USE_INC_LIBTOOL_VER=	13

@@ -19,7 +19,7 @@ BUILD_DEPENDS=	xsltproc:${PORTSDIR}/textproc/libxslt
 LIB_DEPENDS=	tiff.4:${PORTSDIR}/graphics/tiff \
 		fltk.1:${PORTSDIR}/x11-toolkits/fltk
 
-USE_GCC=	3.3
+USE_GCC=	3.4
 USE_GNOME=	gnometarget lthack
 USE_BISON=	yes
 USE_REINPLACE=	yes

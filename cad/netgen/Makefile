@@ -16,7 +16,7 @@ COMMENT=	An automatic 3D tetrahedral mesh generator
 
 LIB_DEPENDS=	tix8184:${PORTSDIR}/x11-toolkits/tix
 
-USE_GCC=	3.3
+USE_GCC=	3.4
 USE_GMAKE=	yes
 USE_GL=		yes
 USE_REINPLACE=	yes

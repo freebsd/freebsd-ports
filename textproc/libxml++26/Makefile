@@ -21,7 +21,7 @@ BUILD_DEPENDS=	gm4:${PORTSDIR}/devel/m4
 LATEST_LINK=	libxml++26
 
 USE_GMAKE=	yes
-USE_GCC=	3.3
+USE_GCC=	3.4
 USE_GNOME=	gnomehack lthack gnometarget libxml2 pkgconfig
 USE_INC_LIBTOOL_VER=13
 USE_REINPLACE=	yes

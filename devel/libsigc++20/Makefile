@@ -19,7 +19,7 @@ COMMENT=	Callback Framework for C++
 BUILD_DEPENDS=	gm4:${PORTSDIR}/devel/m4
 
 USE_BZIP2=	yes
-USE_GCC=	3.3
+USE_GCC=	3.4
 USE_GMAKE=	yes
 LATEST_LINK=	libsigc++20
 INSTALLS_SHLIB=	yes

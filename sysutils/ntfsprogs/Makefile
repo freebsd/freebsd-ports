@@ -15,7 +15,7 @@ MAINTAINER=	flz@xbsd.org
 COMMENT=	Utilities and library to manipulate NTFS partitions
 
 GNU_CONFIGURE=	yes
-USE_GCC=	3.3
+USE_GCC=	3.4
 USE_REINPLACE=	yes
 USE_GETOPT_LONG=	yes
 INSTALLS_SHLIB=	yes

@@ -23,7 +23,7 @@ PLIST_FILES=	bin/aldo
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 500000
-USE_GCC=	3.3
+USE_GCC=	3.4
 MAKE_ENV+=	CXX="${CXX}"
 .endif
 

@@ -61,7 +61,7 @@ BROKEN=		"Does not compile on FreeBSD >= 5.x"
 .endif
 
 .if ${OSVERSION} < 500000
-USE_GCC=	3.3
+USE_GCC=	3.4
 .endif
 
 SCRIPTS_ENV+=	PORTVERSION=${PORTVERSION}

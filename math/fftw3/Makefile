@@ -60,7 +60,7 @@ CONFIGURE_ENV+=	CFLAGS="${CFLAGS:N-O:N-O*} -O3 -fomit-frame-pointer -fno-schedul
 
 .if defined(WITH_SSE)
 .if ${OSVERSION} < 500000
-USE_GCC=	3.3
+USE_GCC=	3.4
 .endif
 CONFIGURE_ARGS+=--enable-sse2
 CONFIGURE_ARGS_FFTW3F+=--enable-sse

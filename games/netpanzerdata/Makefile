@@ -25,7 +25,7 @@ USE_X_PREFIX=	yes
 USE_BZIP2=	yes
 USE_SDL=	sdl net mixer image
 USE_GNOME=	libxml2
-USE_GCC=	3.3
+USE_GCC=	3.4
 
 do-build:
 	@(cd ${BUILD_WRKSRC}; ${SETENV} ${MAKE_ENV} jam)
