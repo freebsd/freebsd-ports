@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	fontforge
-PORTVERSION=	20041014
+PORTVERSION=	20050117
 PORTREVISION=	0
 CATEGORIES=	print
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
@@ -31,8 +31,11 @@ USE_GMAKE=	yes
 USE_XLIB=	yes
 USE_ICONV=	yes
 PATCH_STRIP=	-l
+CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 .if !defined(FONTFORGE_NO_MULTILAYER)
-CONFIGURE_ARGS=	--with-multilayer
+CONFIGURE_ARGS=	--with-multilayer --with-devicetables --without-freetype-src
+.else
+CONFIGURE_ARGS=	--with-devicetables --without-freetype-src
 .endif
 CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib" CFLAGS="${CFLAGS} \
 		-I${LOCALBASE}/include -I${LOCALBASE}/include/freetype2 \

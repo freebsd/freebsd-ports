@@ -9,6 +9,7 @@ lib/libgunicode.a
 lib/libgunicode.la
 lib/libgunicode.so
 lib/libgunicode.so.2
+libdata/pkgconfig/fontforge.pc
 %%PORTDOCS%%%%DOCSDIR%%/AA-Comparison.html
 %%PORTDOCS%%%%DOCSDIR%%/AmbrosiaFV-bm.png
 %%PORTDOCS%%%%DOCSDIR%%/AmbrosiaFV.png
@@ -105,6 +106,7 @@ lib/libgunicode.so.2
 %%PORTDOCS%%%%DOCSDIR%%/Sxiti3.png
 %%PORTDOCS%%%%DOCSDIR%%/TTCvt.png
 %%PORTDOCS%%%%DOCSDIR%%/TTPoints.png
+%%PORTDOCS%%%%DOCSDIR%%/TTRaster.png
 %%PORTDOCS%%%%DOCSDIR%%/TTRegisters.png
 %%PORTDOCS%%%%DOCSDIR%%/TTStack.png
 %%PORTDOCS%%%%DOCSDIR%%/TTStorage.png
@@ -124,6 +126,9 @@ lib/libgunicode.so.2
 %%PORTDOCS%%%%DOCSDIR%%/agetinfo.png
 %%PORTDOCS%%%%DOCSDIR%%/agrave_anchored.png
 %%PORTDOCS%%%%DOCSDIR%%/ahighest.png
+%%PORTDOCS%%%%DOCSDIR%%/anchorcontrol-base.png
+%%PORTDOCS%%%%DOCSDIR%%/anchorcontrol-mark.png
+%%PORTDOCS%%%%DOCSDIR%%/anchorcontrol.html
 %%PORTDOCS%%%%DOCSDIR%%/autokern.png
 %%PORTDOCS%%%%DOCSDIR%%/autotrace.html
 %%PORTDOCS%%%%DOCSDIR%%/autowidth.html
@@ -255,6 +260,7 @@ lib/libgunicode.so.2
 %%PORTDOCS%%%%DOCSDIR%%/fontinfo-panose.png
 %%PORTDOCS%%%%DOCSDIR%%/fontinfo-private.png
 %%PORTDOCS%%%%DOCSDIR%%/fontinfo-ps.png
+%%PORTDOCS%%%%DOCSDIR%%/fontinfo-size.png
 %%PORTDOCS%%%%DOCSDIR%%/fontinfo-statemach.png
 %%PORTDOCS%%%%DOCSDIR%%/fontinfo-tex.png
 %%PORTDOCS%%%%DOCSDIR%%/fontinfo-ttfname.png
@@ -300,9 +306,12 @@ lib/libgunicode.so.2
 %%PORTDOCS%%%%DOCSDIR%%/k6.png
 %%PORTDOCS%%%%DOCSDIR%%/kanjichar.png
 %%PORTDOCS%%%%DOCSDIR%%/kanjifont.png
+%%PORTDOCS%%%%DOCSDIR%%/kern-We-12.png
+%%PORTDOCS%%%%DOCSDIR%%/kern-We-150.png
 %%PORTDOCS%%%%DOCSDIR%%/kernbyclasses.png
 %%PORTDOCS%%%%DOCSDIR%%/kerningclass.png
 %%PORTDOCS%%%%DOCSDIR%%/kerningclass-kern.png
+%%PORTDOCS%%%%DOCSDIR%%/kernpairclose.png
 %%PORTDOCS%%%%DOCSDIR%%/kernpairs.html
 %%PORTDOCS%%%%DOCSDIR%%/l1.png
 %%PORTDOCS%%%%DOCSDIR%%/l10.png
@@ -350,6 +359,7 @@ lib/libgunicode.so.2
 %%PORTDOCS%%%%DOCSDIR%%/newfont.png
 %%PORTDOCS%%%%DOCSDIR%%/non-linear.png
 %%PORTDOCS%%%%DOCSDIR%%/non-standard.html
+%%PORTDOCS%%%%DOCSDIR%%/nvd.html
 %%PORTDOCS%%%%DOCSDIR%%/o-baddir.png
 %%PORTDOCS%%%%DOCSDIR%%/o1.png
 %%PORTDOCS%%%%DOCSDIR%%/o2.png
@@ -387,6 +397,7 @@ lib/libgunicode.so.2
 %%PORTDOCS%%%%DOCSDIR%%/problems.html
 %%PORTDOCS%%%%DOCSDIR%%/quadbezier.gif
 %%PORTDOCS%%%%DOCSDIR%%/quadbezier.png
+%%PORTDOCS%%%%DOCSDIR%%/quadraticspline.gif
 %%PORTDOCS%%%%DOCSDIR%%/quadraticspline.png
 %%PORTDOCS%%%%DOCSDIR%%/quotations.html
 %%PORTDOCS%%%%DOCSDIR%%/realindex.html
@@ -457,19 +468,19 @@ lib/libgunicode.so.2
 %%PORTDOCS%%%%DOCSDIR%%/xim.html
 %%PORTDOCS%%%%DOCSDIR%%/xres.html
 %%DOCSDIR%%/LICENSE
-share/fontforge/Adobe-CNS1-4.cidmap
-share/fontforge/Adobe-GB1-4.cidmap
-share/fontforge/Adobe-Identity-0.cidmap
-share/fontforge/Adobe-Japan1-5.cidmap
-share/fontforge/Adobe-Japan2-0.cidmap
-share/fontforge/Adobe-Korea1-2.cidmap
-share/fontforge/pfaedit-de.ui
-share/fontforge/pfaedit-en.ui
-share/fontforge/pfaedit-es.ui
-share/fontforge/pfaedit-fr.ui
-share/fontforge/pfaedit-gr.ui
-share/fontforge/pfaedit-it.ui
-share/fontforge/pfaedit-ja.ui
-share/fontforge/pfaedit-ru.ui
-@dirrm share/fontforge
+%%DATADIR%%/Adobe-CNS1-4.cidmap
+%%DATADIR%%/Adobe-GB1-4.cidmap
+%%DATADIR%%/Adobe-Identity-0.cidmap
+%%DATADIR%%/Adobe-Japan1-6.cidmap
+%%DATADIR%%/Adobe-Japan2-0.cidmap
+%%DATADIR%%/Adobe-Korea1-2.cidmap
+%%DATADIR%%/pfaedit-de.ui
+%%DATADIR%%/pfaedit-en.ui
+%%DATADIR%%/pfaedit-es.ui
+%%DATADIR%%/pfaedit-fr.ui
+%%DATADIR%%/pfaedit-gr.ui
+%%DATADIR%%/pfaedit-it.ui
+%%DATADIR%%/pfaedit-ja.ui
+%%DATADIR%%/pfaedit-ru.ui
+@dirrm %%DATADIR%%
 @dirrm %%DOCSDIR%%
