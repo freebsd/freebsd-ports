@@ -1,0 +1,8 @@
+--- ps2pdfwr		Sat Jan 10 21:11:14 2004
++++ ps2pdfwr.port	Tue Mar 15 13:48:43 2005
+@@ -1,4 +1,4 @@
+-#!/bin/bash
++#!%%LOCALBASE%%/bin/bash
+ # $Id: ps2pdfwr,v 1.6.2.1 2002/01/22 21:34:04 jackiem Exp $
+ # Convert PostScript to PDF without specifying CompatibilityLevel.
+ 

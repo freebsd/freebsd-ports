@@ -1,0 +1,35 @@
+--- merge_pdf	Thu Jan 29 17:14:44 2004
++++ merge_pdf.port	Tue Mar 15 19:13:06 2005
+@@ -1,5 +1,6 @@
+-#!/bin/bash
++#!%%LOCALBASE%%/bin/bash
+ 
++cd %%DATADIR%%
+ source bash_ui
+ source bash_f_dlg
+ source bash_sg_dlg
+@@ -48,12 +49,12 @@
+ #  The main procedure
+ #
+ ##################################################
+-root_path=${0%[/]*}
++root_path=%%DATADIR%%
+ export PATH=$PATH:/bin:$root_path
+ cd "$root_path"
+ recent_dir="`pwd`"
+-if [ -f .merge_pdf.cfg ]; then
+-    recent_dir="$(< .merge_pdf.cfg)"
++if [ -f ~/.merge_pdf.cfg ]; then
++    recent_dir="$(< ~/.merge_pdf.cfg)"
+ fi
+ tty_init
+ run_src_gather_dialog "[PDF Merge]" "Merge" "Merge pdf files" '*.[Pp][Dd][Ff]' '*.pdf'
+@@ -81,7 +82,7 @@
+     fi
+ fi
+ tty_restore
+-echo "$recent_dir" > .merge_pdf.cfg
++echo "$recent_dir" > ~/.merge_pdf.cfg
+ exit 0
+ 
+ 

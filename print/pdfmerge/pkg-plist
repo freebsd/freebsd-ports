@@ -1,0 +1,10 @@
+bin/pdfmerge
+%%DATADIR%%/bash_f_dlg
+%%DATADIR%%/bash_pr_dlg
+%%DATADIR%%/bash_sg_dlg
+%%DATADIR%%/bash_ui
+%%DATADIR%%/merge_pdf
+%%DATADIR%%/ps2pdf
+%%DATADIR%%/ps2pdf12
+%%DATADIR%%/ps2pdfwr
+@dirrm %%DATADIR%%
