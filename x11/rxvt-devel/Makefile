@@ -3,7 +3,7 @@
 # Date created:         5th December 1994
 # Whom:                 gpalmer@FreeBSD.org
 #
-# $Id: Makefile,v 1.21 1999/04/13 06:33:08 mharo Exp $
+# $Id: Makefile,v 1.22 1999/06/08 22:10:19 steve Exp $
 #
 
 DISTNAME=	rxvt-2.6.0
@@ -13,7 +13,7 @@ MASTER_SITES=	ftp://ftp.rxvt.org/pub/rxvt/ \
 		http://wm.current.nu/files/ \
 		ftp://ftp.nstu.ru/pub/sources/x/
 
-MAINTAINER=	ports@FreeBSD.ORG
+MAINTAINER=	andrews@technologist.com
 
 USE_X_PREFIX=	yes
 GNU_CONFIGURE=  yes
