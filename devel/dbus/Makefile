@@ -6,14 +6,14 @@
 #
 
 PORTNAME=	dbus
-PORTVERSION=	0.23.2
-PORTREVISION=	1
+PORTVERSION=	0.32
 CATEGORIES?=	devel gnome
 MASTER_SITES=	http://dbus.freedesktop.org/releases/
 
 MAINTAINER?=	gnome@FreeBSD.org
 COMMENT?=	A message bus system for inter-application communication
 
+BUILD_DEPENDS?=	bash:${PORTSDIR}/shells/bash
 LIB_DEPENDS?=	expat.5:${PORTSDIR}/textproc/expat2
 
 USE_GNOME?=	gnomehack gtk20 libxml2
@@ -21,6 +21,7 @@ USE_GMAKE=	yes
 USE_LIBTOOL_VER=15
 INSTALLS_SHLIB=	yes
 USE_RC_SUBR=	yes
+USE_REINPLACE=	yes
 CONFIGURE_ARGS?=--enable-gtk \
 		--disable-python \
 		--disable-gcj \
@@ -40,7 +41,7 @@ OPTIONS=	QT "Enable Qt client support" off
 PLIST_SUB=	VERSION="1.0"
 RC_SCRIPTS_SUB=	PREFIX=${PREFIX} RC_SUBR=${RC_SUBR}
 
-MAN1=		dbus-cleanup-sockets.1 dbus-daemon-1.1 dbus-launch.1 \
+MAN1=		dbus-cleanup-sockets.1 dbus-daemon.1 dbus-launch.1 \
 		dbus-monitor.1 dbus-send.1
 .endif
 
@@ -59,6 +60,8 @@ PLIST_SUB+=	QT="@comment "
 post-patch:
 	@${SED} ${RC_SCRIPTS_SUB:S/$/!g/:S/^/ -e s!%%/:S/=/%%!/} \
 		${FILESDIR}/dbus.sh > ${WRKSRC}/dbus.sh
+	@${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|' \
+		${WRKSRC}/tools/run-with-tmp-session-bus.sh
 
 post-install:
 .if !defined(PACKAGE_BUILDING)

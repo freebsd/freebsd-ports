@@ -1,11 +1,11 @@
---- tools/Makefile.in.orig	Mon Jan 24 19:22:29 2005
-+++ tools/Makefile.in	Mon Jan 24 19:22:47 2005
-@@ -314,7 +314,7 @@
+--- tools/Makefile.in.orig	Sat Apr  2 14:50:00 2005
++++ tools/Makefile.in	Sat Apr  2 14:50:40 2005
+@@ -335,7 +335,7 @@
  sharedstatedir = @sharedstatedir@
  sysconfdir = @sysconfdir@
  target_alias = @target_alias@
--INCLUDES = -I$(top_srcdir) $(DBUS_CLIENT_CFLAGS) $(DBUS_GLIB_CFLAGS) $(DBUS_X_CFLAGS) $(DBUS_GTK_CFLAGS) -DDBUS_LOCALEDIR=\"$(prefix)/@DATADIRNAME@/locale\"
-+INCLUDES = -I$(top_srcdir) $(DBUS_CLIENT_CFLAGS) $(DBUS_GLIB_CFLAGS) $(DBUS_X_CFLAGS) $(DBUS_GTK_CFLAGS) -DDBUS_LOCALEDIR=\"$(prefix)/share/locale\"
+-INCLUDES = -I$(top_srcdir) $(DBUS_CLIENT_CFLAGS) $(DBUS_GLIB_CFLAGS) $(DBUS_X_CFLAGS) $(DBUS_GTK_THREADS_CFLAGS) -DDBUS_LOCALEDIR=\"$(prefix)/@DATADIRNAME@/locale\"
++INCLUDES = -I$(top_srcdir) $(DBUS_CLIENT_CFLAGS) $(DBUS_GLIB_CFLAGS) $(DBUS_X_CFLAGS) $(DBUS_GTK_THREADS_CFLAGS) -DDBUS_LOCALEDIR=\"$(prefix)/share/locale\"
  @HAVE_GLIB_FALSE@GLIB_TOOLS = 
  @HAVE_GLIB_TRUE@GLIB_TOOLS = dbus-monitor
- @HAVE_GTK_FALSE@GTK_TOOLS = 
+ @HAVE_GLIB_TRUE@nodist_libdbus_glib_HEADERS = dbus-glib-bindings.h
