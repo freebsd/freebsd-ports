@@ -1,5 +1,5 @@
 --- sys/unix/Makefile.src.orig	Thu Mar 21 08:43:54 2002
-+++ sys/unix/Makefile.src	Sat Mar 23 04:08:06 2002
++++ sys/unix/Makefile.src	Tue Aug 13 05:44:28 2002
 @@ -139,19 +139,28 @@
  # directories.  The ones given below is the usual spot for linux systems.
  # The paths are for glibconfig.h and gnomesupport.h respectively.
@@ -99,6 +99,15 @@
  
  # any other strange libraries your system needs (for Sysunix only -- the more
  # specialized targets should already be right)
+@@ -274,7 +311,7 @@
+ LIBS =
+ 
+ # make NetHack
+-GAME     = nethack
++GAME     = %%HACKNAME%%
+ # GAME     = nethack.prg
+ 
+ # if you defined RANDOM in unixconf.h/tosconf.h since your system did not come
 @@ -450,13 +487,13 @@
  
  # Qt windowport meta-object-compiler output

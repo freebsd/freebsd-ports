@@ -16,10 +16,18 @@ MAINTAINER?=	dscheidt@enteract.com
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
+USE_REINPLACE=	yes
 USE_GMAKE=	yes
 MAKE_ENV=	CXX="${CXX}" GRAPHICS="${GRAPHICS}"
+PLIST_SUB=	HACKNAME="${HACKNAME}" \
+		HACKDIR="${HACKDIR}" \
+		HACKDOCSDIR="${HACKDOCSDIR}"
 
 MAN6=		dgn_comp.6 dlb.6 lev_comp.6 nethack.6 recover.6
+
+HACKNAME?=	nethack
+HACKDIR?=	lib/${HACKNAME}
+HACKDOCSDIR?=	share/doc/${HACKNAME}
 
 .if defined(WITH_GNOME_GRAPHICS)
 CATEGORIES=	games gnome
@@ -62,9 +70,11 @@ pre-everything::
 .endif
 
 post-patch:
-	@${PERL} -pi -e 's|%%PREFIX%%|${PREFIX}|g' ${WRKSRC}/include/config.h
-	@${PERL} -pi -e 's|<regex.h>|<gnuregex.h>|g' ${WRKSRC}/src/sounds.c
-	@${PERL} -pi -e 's|<malloc.h>|<stdlib.h>|g' ${WRKSRC}/win/Qt/qt_win.cpp
+.for f in include/config.h sys/unix/Makefile.src sys/unix/Makefile.top
+	${REINPLACE_CMD} -e 's|%%HACKNAME%%|${HACKNAME}|g;s|%%HACKDIR%%|${PREFIX}/${HACKDIR}|g' ${WRKSRC}/${f}
+.endfor
+	${REINPLACE_CMD} -e 's|<regex.h>|<gnuregex.h>|g' ${WRKSRC}/src/sounds.c
+	${REINPLACE_CMD} -e 's|<malloc.h>|<stdlib.h>|g' ${WRKSRC}/win/Qt/qt_win.cpp
 
 pre-configure:
 	@cd ${WRKSRC}/sys/unix; ${SH} setup.sh
@@ -72,8 +82,8 @@ pre-configure:
 post-install:
 	@cd ${WRKSRC}/doc; ${SETENV} ${MAKE_ENV} ${MAKE} manpages
 .if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/doc/Guidebook.txt ${DOCSDIR}
+	@${MKDIR} ${PREFIX}/${HACKDOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/doc/Guidebook.txt ${PREFIX}/${HACKDOCSDIR}
 .endif
 
 .include <bsd.port.mk>

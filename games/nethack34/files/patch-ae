@@ -1,11 +1,12 @@
---- sys/unix/Makefile.top.orig	Tue Jul  4 09:42:05 2000
-+++ sys/unix/Makefile.top	Tue Oct  9 22:21:45 2001
+--- sys/unix/Makefile.top.orig	Thu Mar 21 08:43:54 2002
++++ sys/unix/Makefile.top	Tue Aug 13 05:45:03 2002
 @@ -14,18 +14,17 @@
  # MAKE = make
  
  # make NetHack
 -PREFIX	 = /usr
- GAME     = nethack
+-GAME     = nethack
++GAME     = %%HACKNAME%%
  # GAME     = nethack.prg
  GAMEUID  = games
 -GAMEGRP  = bin
@@ -28,7 +29,7 @@
  # (if there is, you'll have to do the installation by hand or modify the
  # instructions)
 -GAMEDIR  = $(PREFIX)/games/lib/$(GAME)dir
-+GAMEDIR  = $(PREFIX)/lib/$(GAME)
++GAMEDIR  = %%HACKDIR%%
  VARDIR  = $(GAMEDIR)
 -SHELLDIR = $(PREFIX)/games
 +SHELLDIR = $(PREFIX)/bin
