@@ -1,0 +1,11 @@
+--- keyserver/Makefile.in.orig	Tue Apr 30 00:06:11 2002
++++ keyserver/Makefile.in	Tue Sep 10 16:47:18 2002
+@@ -141,7 +141,7 @@
+ bin_SCRIPTS = @GPGKEYS_MAILTO@
+ noinst_SCRIPTS = gpgkeys_test
+ 
+-gpgkeys_ldap_LDADD = -lldap -llber -lresolv
++gpgkeys_ldap_LDADD = -lldap -llber
+ subdir = keyserver
+ mkinstalldirs = $(SHELL) $(top_srcdir)/scripts/mkinstalldirs
+ CONFIG_HEADER = $(top_builddir)/config.h
