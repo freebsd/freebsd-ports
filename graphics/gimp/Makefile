@@ -6,21 +6,17 @@
 #
 
 PORTNAME=	gimp
-PORTVERSION=	1.3.11
-PORTREVISION=	1
+PORTVERSION=	1.3.12
 PORTEPOCH=	1
 CATEGORIES=	graphics gnome
 MASTER_SITES=	ftp://ftp.gimp.org/pub/%SUBDIR%/ \
 		ftp://ftp.insync.net/pub/mirrors/ftp.gimp.org/%SUBDIR%/ \
 		ftp://ftp.ameth.org/pub/mirrors/ftp.gimp.org/%SUBDIR%/ \
-		${MASTER_SITE_RINGSERVER:S,%SUBDIR%,graphics/gimp/%SUBDIR%,} \
-		ftp://ftp.bic.mni.mcgill.ca/pub/mpeg/:mpeg \
-		http://starship.python.net/~gward/mpeglib/:mpeg
+		${MASTER_SITE_RINGSERVER:S,%SUBDIR%,graphics/gimp/%SUBDIR%,}
 MASTER_SITE_SUBDIR=	gimp/v${PORTVERSION:R}/v${PORTVERSION}
-DISTFILES=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX} \
-		mpeg_lib-1.3.1.tar.gz:mpeg
 
 MAINTAINER=	gnome@FreeBSD.org
+COMMENT=	A GNU Image Manipulation Program (unstable development version)
 
 LIB_DEPENDS=	gtk-x11-2.0.200:${PORTSDIR}/x11-toolkits/gtk20 \
 		gimpprint.2:${PORTSDIR}/print/gimp-print \
