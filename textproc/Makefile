@@ -17,6 +17,7 @@
     SUBDIR += dealt-ispell
     SUBDIR += deneu-ispell
     SUBDIR += dict
+    SUBDIR += diff-mode.el
     SUBDIR += diffstat
     SUBDIR += docbook
     SUBDIR += docbook-241
