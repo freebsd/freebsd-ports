@@ -311,6 +311,7 @@ animabob	ports/graphics/animabob
 anjuta		ports/devel/anjuta
 anjuta-devel	ports/devel/anjuta-devel
 annextools	ports/net/annextools
+anomy-sanitizer	ports/mail/anomy-sanitizer
 ant-xinclude-task	ports/textproc/ant-xinclude-task
 anteater	ports/sysutils/anteater
 antipolix	ports/games/antipolix
