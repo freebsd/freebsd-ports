@@ -30,25 +30,6 @@
   	    strerror(errno));
   #define ER_NO_TRANS_DONE
   #endif
-*** WWW/Library/Implementation/CommonMakefile.orig	Sun May 29 06:11:42 1994
---- WWW/Library/Implementation/CommonMakefile	Thu Dec 15 06:43:22 1994
-***************
-*** 63,69 ****
-  # in which this makefile is, not the pwd.  This screws up the 
-  # recursive invocation
-  # include $(CMN)Version.make
-! include $(ABS)$(WWW)/Library/Implementation/Version.make
-  
-  # XMOsAIC hack is only for server to cope with xmosaic kludge for mmedia
-  #
---- 63,69 ----
-  # in which this makefile is, not the pwd.  This screws up the 
-  # recursive invocation
-  # include $(CMN)Version.make
-! .include "$(ABS)$(WWW)/Library/Implementation/Version.make"
-  
-  # XMOsAIC hack is only for server to cope with xmosaic kludge for mmedia
-  #
 *** WWW/Library/Implementation/HTFile.c.orig	Sat Dec  3 01:31:21 1994
 --- WWW/Library/Implementation/HTFile.c	Thu Dec 15 06:43:23 1994
 ***************
@@ -80,7 +61,7 @@
   ASIS_MACH = i386/FreeBSD
   
   
-! CFLAGS += -DDEBUG
+! CFLAGS = -O2 -DDEBUG
   LFLAGS =
   CC = cc
   
@@ -478,7 +459,7 @@
   WTMP = ../..
   
   
-! .include "$(WWW)/Library/Implementation/CommonMakefile"
+! include $(WWW)/Library/Implementation/CommonMakefile
   
 *** src/LYMain.c.orig	Sat Dec  3 01:31:17 1994
 --- src/LYMain.c	Thu Dec 15 06:43:24 1994
@@ -576,7 +557,7 @@
 *** 149,156 ****
   
   freebsd:
-  	cd WWW/Library/freebsd; make LYFLAGS="$(SITE_LYDEFS)"
+! 	cd WWW/Library/freebsd; make LYFLAGS="$(SITE_LYDEFS)"
 ! 	cd src; make all CC="cc" MCFLAGS="-O -DUNIX -DNO_KEYPAD -I../$(WWWINC) $(SITE_DEFS)"\
 ! 		LIBS="-lcurses -ltermcap $(WAISLIB)" \
   		WWWLIB="../WWW/Library/freebsd/libwww.a"
@@ -585,7 +566,7 @@
 --- 149,158 ----
   
   freebsd:
-  	cd WWW/Library/freebsd; make LYFLAGS="$(SITE_LYDEFS)"
+! 	cd WWW/Library/freebsd; gmake LYFLAGS="$(SITE_LYDEFS)"
 ! 	cd src; make all MCFLAGS="$(CFLAGS) -DNCURSES -DNO_TTYTYPE \
 ! 		-DFANCY_CURSES -DNO_CUSERID -DUNIX -I../$(WWWINC) \
 ! 		$(SITE_DEFS)" \
