@@ -1,0 +1,51 @@
+--- ./Imakefile.org	Mon Apr 17 20:23:20 1995
++++ ./Imakefile	Tue Sep 12 03:09:04 1995
+@@ -4,22 +4,22 @@
+ XCOMM installed setgid daemon to allow it to write to the scores file
+ XCOMM if a system score file is used.
+ 
+-SCORE_DEF = -DSCORE_FILE=\"/var/games/xbill/scores\"
++SCORE_DEF = -DSCORE_FILE=\"$(USRLIBDIR)/xbill/scores\"
+ XCOMM SCORE_DEF = -DSCORE_FILE=\"$(HOME)/.xbill-scores\"
+ 
+ XCOMM If you do not have libXpm installed in the standard place, 
+ XCOMM uncomment the second define below and insert the correct paths.
+ XCOMM Make sure xpm.h can be referenced as <X11/xpm.h>
+ 
+-XCOMM XPMINC = -I<xpm include dir>
+-XCOMM XPMLIBDIR = -L<xpm lib dir>
++XPMINC = -I$(INCROOT)
++XPMLIBDIR = -L$(USRLIBDIR)
+  XPMLIB = -lXpm
+ 
+ XCOMM Use one of the following two lines.  Motif looks a lot better,
+ XCOMM but Athena is free and may compile easier.
+ 
+-#define Use_Motif
+-XCOMM #define Use_Athena
++XCOMM #define Use_Motif
++#define Use_Athena
+ 
+ #ifdef Use_Motif
+ XMLIB = -lXm
+@@ -42,6 +42,6 @@
+ 
+ ComplexProgramTarget(xbill)
+ 
+-MakeDirectories(install,/var/games/xbill)
++MakeDirectories(install,$(USRLIBDIR)/xbill)
+ InstallMultipleFlags(xbill,$(BINDIR),-s -g daemon -m 2755)
+-InstallMultipleFlags(scores,/var/games/xbill,-g daemon -m 664)
++InstallMultipleFlags(scores,$(USRLIBDIR)/xbill,-g daemon -m 664)
+--- ./xbill.h.org	Sun Apr 16 12:47:02 1995
++++ ./xbill.h	Tue Sep 12 03:09:23 1995
+@@ -10,7 +10,9 @@
+ #include <unistd.h>
+ #include <stdlib.h>
+ #include <stdio.h>
++#ifndef __FreeBSD__
+ #include <malloc.h>
++#endif
+ 
+ #define INTERVAL 250		/*timer interval*/
+ #define MAX_COMPUTERS 25	/*maximum number of computers on screen*/
