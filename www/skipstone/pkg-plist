@@ -6,6 +6,8 @@ share/skipstone/pixmaps/default/config.xpm
 share/skipstone/pixmaps/default/forward.xpm
 share/skipstone/pixmaps/default/home.xpm
 share/skipstone/pixmaps/default/logo.xpm
+share/skipstone/pixmaps/default/mini_folder.xpm
+share/skipstone/pixmaps/default/mini_link.xpm
 share/skipstone/pixmaps/default/reload.xpm
 share/skipstone/pixmaps/default/stop.xpm
 @dirrm share/skipstone/pixmaps/default
