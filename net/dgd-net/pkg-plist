@@ -3,6 +3,7 @@ dgd/Copyright.NET
 dgd/Credits
 dgd/README
 dgd/README.FreeBSD
+dgd/README.rgx
 dgd/README.sites
 dgd/bin/driver.net
 dgd/bin/precomp.net
@@ -12,6 +13,8 @@ dgd/doc/LPC.html
 dgd/doc/Patching
 dgd/doc/Platforms
 dgd/doc/editor
+dgd/doc/regexps
+dgd/doc/rgx_example.c
 dgd/doc/kfun/allocate
 dgd/doc/kfun/call_other
 dgd/doc/kfun/call_out
@@ -49,6 +52,8 @@ dgd/doc/kfun/query_editor
 dgd/doc/kfun/query_ip_number
 dgd/doc/kfun/random
 dgd/doc/kfun/read_file
+dgd/doc/kfun/regexp_compile
+dgd/doc/kfun/regexp_match
 dgd/doc/kfun/remove_call_out
 dgd/doc/kfun/remove_dir
 dgd/doc/kfun/remove_file
