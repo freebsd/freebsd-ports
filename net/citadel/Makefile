@@ -7,7 +7,7 @@
 
 PORTNAME=	citadel
 PORTVERSION=	5.80
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net
 MASTER_SITES=	http://uncensored.citadel.org/pub/citadel/ \
 		ftp://ftp.tux.org/pub/net/citadel/ \
@@ -23,6 +23,7 @@ WRKSRC=		${WRKDIR}/citadel
 GNU_CONFIGURE=  yes
 USE_GMAKE=      yes
 CONFIGURE_ARGS=	--with-gdbm=${LOCALBASE}
+IS_INTERACTIVE=	yes
 
 post-install:
 	${STRIP} ${PREFIX}/bin/aidepost
