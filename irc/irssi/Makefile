@@ -37,6 +37,8 @@ PLIST_SUB+=	WITH_PROXY="@comment "
 CONFIGURE_ARGS+= --disable-ipv6
 #.endif
 
+MAN1=		irssi.1
+
 pre-configure:
 	@cd ${WRKSRC} && ${MV} irssi.conf irssi.conf.sample
 
