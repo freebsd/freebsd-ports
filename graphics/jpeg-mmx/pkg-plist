@@ -8,7 +8,6 @@ include/jerror.h
 include/jmorecfg.h
 include/jpeglib.h
 lib/libjpeg.a
-@exec ranlib %D/%F
 lib/libjpeg.la
 lib/libjpeg.so
 lib/libjpeg.so.9
