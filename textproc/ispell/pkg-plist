@@ -7,7 +7,6 @@ bin/munchlist
 bin/sq
 bin/tryaffix
 bin/unsq
-share/emacs/site-lisp/ispell.el
 lib/american.hash
 lib/americanmed+.hash
 lib/english.aff

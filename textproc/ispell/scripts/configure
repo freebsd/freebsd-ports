@@ -48,6 +48,6 @@ echo "#define ELISPDIR \"$PREFIX/share/emacs/site-lisp\"" >> local.h
 
 mv Makefile Makefile.orig
 sed -e 's/^[ 	]*$/\
-/' <Makefile.orig >Makefile
+/' -e 's/[ 	]*ELISPDIR//' <Makefile.orig >Makefile
 
 exit 0;

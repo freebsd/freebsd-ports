@@ -1,0 +1,116 @@
+*** correct.c	Thu Oct 12 12:04:06 1995
+--- correct.c.3.1.20b	Tue Oct  5 12:55:03 1999
+***************
+*** 1488,1500 ****
+  	 * all that likely).
+  	 */
+  	bufsize = strlen (contextbufs[0]);
+! 	if (contextbufs[0][bufsize - 1] == '\n')
+! 	    {
+! 	    hadnl = 1;
+! 	    contextbufs[0][--bufsize] = '\0';
+! 	    }
+! 	else
+! 	    hadnl = 0;
+  	if (bufsize == (sizeof contextbufs[0]) / 2 - 1)
+  	    {
+  	    ch = (unsigned char) contextbufs[0][bufsize - 1];
+--- 1488,1494 ----
+  	 * all that likely).
+  	 */
+  	bufsize = strlen (contextbufs[0]);
+! 	hadnl = (contextbufs[0][bufsize - 1] == '\n');
+  	if (bufsize == (sizeof contextbufs[0]) / 2 - 1)
+  	    {
+  	    ch = (unsigned char) contextbufs[0][bufsize - 1];
+***************
+*** 1556,1564 ****
+--- 1550,1562 ----
+  		}
+  	    else if (contextbufs[0][0] == '~')
+  		{
++ 		if (hadnl)
++ 		    contextbufs[0][bufsize - 1] = '\0';
+  		defdupchar = findfiletype (&contextbufs[0][1], 1, (int *) NULL);
+  		if (defdupchar < 0)
+  		    defdupchar = 0;
++ 		if (hadnl)
++ 		    contextbufs[0][bufsize - 1] = '\n';
+  		}
+  	    else
+  		{
+*** defmt.c	Thu Oct 12 12:04:06 1995
+--- defmt.c.3.1.20b	Tue Oct  5 12:54:41 1999
+***************
+*** 548,554 ****
+  	   (void) fprintf (ofile, "%s", ctoken);
+  	}
+  
+!     if (!lflag  &&  (aflag  ||  hadlf))
+         (void) putc ('\n', ofile);
+     }
+  
+--- 548,554 ----
+  	   (void) fprintf (ofile, "%s", ctoken);
+  	}
+  
+!     if (!lflag  && hadlf)
+         (void) putc ('\n', ofile);
+     }
+  
+***************
+*** 588,593 ****
+--- 588,595 ----
+  	return 0;
+      }
+  
++ /* Updates bufp to point to the next character to skip. */
++ /*  Should only be called on non-word characters. */
+  static int TeX_math_begin (bufp)
+      char **	bufp;
+      {
+***************
+*** 604,613 ****
+  	if (**bufp == TEXLEFTPAREN  ||  **bufp == TEXLEFTSQUARE)
+  	    return 1;
+  	else if (!isalpha(**bufp)  &&  **bufp != '@')
+! 	    {
+! 	    (*bufp)++;
+! 	    continue;
+! 	    }
+  	else if (TeX_strncmp (*bufp, "begin", 5) == 0)
+  	    {
+  	    if (TeX_math_check ('b', bufp))
+--- 606,612 ----
+  	if (**bufp == TEXLEFTPAREN  ||  **bufp == TEXLEFTSQUARE)
+  	    return 1;
+  	else if (!isalpha(**bufp)  &&  **bufp != '@')
+! 	    return 0;
+  	else if (TeX_strncmp (*bufp, "begin", 5) == 0)
+  	    {
+  	    if (TeX_math_check ('b', bufp))
+***************
+*** 637,648 ****
+  	    {
+  	    if (*(*bufp)++ == TEXDOT
+  	      &&  (**bufp == TEXRIGHTSQUARE  ||  **bufp == TEXRIGHTANGLE))
+! 		return TeX_math_begin (bufp);
+  	    }
+- 	return 0;
+  	}
+!     else
+! 	return 0;
+      }
+  
+  static int TeX_LR_begin (bufp)
+--- 636,645 ----
+  	    {
+  	    if (*(*bufp)++ == TEXDOT
+  	      &&  (**bufp == TEXRIGHTSQUARE  ||  **bufp == TEXRIGHTANGLE))
+! 		break;
+  	    }
+  	}
+!     return 0;
+      }
+  
+  static int TeX_LR_begin (bufp)
