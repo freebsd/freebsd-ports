@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	xmp
-PORTVERSION=	2.0.2
+PORTVERSION=	2.0.3
 CATEGORIES=	audio
 MASTER_SITES=	http://xmp.helllabs.org/pkg/%SUBDIR%/ \
 		http://xmp.linuxave.net/pkg/%SUBDIR%/
