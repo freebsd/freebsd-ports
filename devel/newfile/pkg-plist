@@ -36,12 +36,11 @@ share/newfile/licenses/no@license.inc
 share/newfile/newfile.rb
 share/newfile/projects/auto@Makefile.am
 share/newfile/projects/auto@Makefile.cvs
+share/newfile/projects/auto@Mk^alane.pod.mk
+share/newfile/projects/auto@Mk^alane.rd.mk
+share/newfile/projects/auto@Mk^alane.tex.mk
 share/newfile/projects/auto@acinclude.m4
 share/newfile/projects/auto@configure.ac
-share/newfile/projects/auto@doc-src^Makefile.am
-share/newfile/projects/auto@doc-src^alane.pod.mk
-share/newfile/projects/auto@doc-src^alane.rd.mk
-share/newfile/projects/auto@doc-src^alane.tex.mk
 share/newfile/projects/auto@doc^Makefile.am
 share/newfile/projects/auto@src^Makefile.am
 share/newfile/projects/port@Makefile
