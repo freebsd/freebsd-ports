@@ -1,0 +1,14 @@
+--- main.c.orig	Mon Feb  8 06:21:12 1988
++++ main.c	Tue Jan 16 08:26:39 2001
+@@ -1,10 +1,10 @@
+ #include	<stdio.h>
+ #include	<ctype.h>
++#include	<strings.h>
+ #include	"pic.h"
+ #include	"picy.h"
+ 
+ static reset();
+-extern char *sprintf(), *strcpy();
+ 
+ struct	obj	*objlist[MAXOBJ];	/* store the elements here */
+ int	nobj	= 0;

@@ -1,0 +1,23 @@
+# New ports collection makefile for:    pic2fig
+# Date created:         14 Jan 2001
+# Whom:                 Patrick Powell <papowell@astart.com>
+#
+# $FreeBSD$
+
+PORTNAME=	pic2fig
+PORTVERSION=	1.4
+CATEGORIES=	print
+MASTER_SITES=	${MASTER_SITE_XCONTRIB}
+MASTER_SITE_SUBDIR=	utilities
+EXTRACT_SUFX=	.tar.Z
+
+MAINTAINER=	Patrick Powell <papowell@astart.com>
+
+WRKSRC=		${WRKDIR}/${PORTNAME}
+MAN1=		pic2fig.1
+
+do-install:
+	${INSTALL_PROGRAM} -m 755 ${WRKSRC}/pic2fig ${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/pic2fig.1 ${PREFIX}/man/man1
+
+.include <bsd.port.mk>
