@@ -1,13 +1,13 @@
---- makefile.orig	Sat Oct  7 22:03:11 2000
-+++ makefile	Wed Feb 14 02:03:07 2001
-@@ -276,10 +276,10 @@
+--- makefile.orig	Fri Dec 20 00:12:05 2002
++++ makefile	Fri May  2 14:18:44 2003
+@@ -281,10 +281,10 @@
  # DEBUGGING = 1
  # TRACING = -g
  
--BINDIR	= /usr/staff/jeff/bin
--LIBDIR	= /usr/staff/jeff/lout.lib
--DOCDIR	= /usr/staff/jeff/lout.doc
--MANDIR	= /usr/staff/jeff/lout.man
+-BINDIR	= /home/jeff/bin
+-LIBDIR	= /home/jeff/lout.lib
+-DOCDIR	= /home/jeff/lout.doc
+-MANDIR	= /home/jeff/lout.man
 +BINDIR	= ${PREFIX}/bin
 +LIBDIR	= ${PREFIX}/share/lout
 +DOCDIR	= ${PREFIX}/share/doc/lout
@@ -15,7 +15,7 @@
  
  LIBFONT = font
  LIBMAPS = maps
-@@ -291,24 +291,24 @@
+@@ -296,23 +296,23 @@
  CHARIN	= 1
  CHAROUT	= 0
  
@@ -39,14 +39,13 @@
  
 -COPTS	= -ansi -pedantic -Wall -O3
 +#COPTS	= -ansi -pedantic -Wall -O3
- # COPTS	= -ansi -pedantic -Wall
  
 -CFLAGS	= -DOS_UNIX=$(OSUNIX)					\
 +CFLAGS	+= -DOS_UNIX=$(OSUNIX)					\
  	  -DOS_DOS=$(OSDOS)					\
  	  -DOS_MAC=$(OSMAC)					\
  	  -DDB_FIX=$(DBFIX)					\
-@@ -354,42 +354,41 @@
+@@ -358,42 +358,41 @@
  install: lout prg2lout
  	@echo ""
  	@echo "(a) Installing lout and prg2lout binaries into BINDIR $(BINDIR)"
@@ -99,7 +98,7 @@
  	@echo ""
  	@echo "(c) Initializing run (should be silent, no errors expected)"
  	$(BINDIR)/lout -x -s $(LIBDIR)/$(LIBINCL)/init
-@@ -397,6 +396,7 @@
+@@ -401,6 +400,7 @@
  	@echo "(d) Changing mode of files just created by initializing run"
  	chmod 644 $(LIBDIR)/$(LIBDATA)/*
  	chmod 644 $(LIBDIR)/$(LIBHYPH)/*
@@ -107,7 +106,7 @@
  
  installman:
  	@echo ""
-@@ -405,23 +405,27 @@
+@@ -409,23 +409,27 @@
  	    -e "s@<DOCDIR>@$(DOCDIR)@" -e "s@<MANDIR>@$(MANDIR)@"	\
  	man/lout.1 > $(MANDIR)/lout.1
  	chmod 644 $(MANDIR)/lout.1
@@ -138,7 +137,7 @@
  	chmod 755 $(LIBDIR)/$(LIBLOCA)/$(LOC_FR)/LC_MESSAGES
  	cp locale/msgs.fr $(LIBDIR)/$(LIBLOCA)/$(LOC_FR)/LC_MESSAGES/msgs.$(LOC_FR)
  	gencat $(LIBDIR)/$(LIBLOCA)/$(LOC_FR)/LC_MESSAGES/errors.$(LOC_FR)	\
-@@ -431,9 +435,9 @@
+@@ -435,9 +439,9 @@
  installde:
  	@echo ""
  	@echo "Putting German error messages into $(LIBDIR)/$(LIBLOCA)/$(LOC_DE)"
