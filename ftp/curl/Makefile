@@ -53,7 +53,7 @@ USE_BZIP2=	yes
 .include <bsd.port.pre.mk>
 
 .if !defined(WITHOUT_SSL)
-.include "${PORTSDIR}/security/openssl/Makefile.ssl"
+.include "${PORTSDIR}/security/openssl/bsd.openssl.mk"
 CONFIGURE_ARGS=	--with-ssl=${OPENSSLBASE}
 .else
 CONFIGURE_ARGS=	--without-ssl
