@@ -1263,3 +1263,4 @@ russian/gaim|net/gaim|2004-10-12|Functionality merged into original Gaim
 graphics/py-magick||2004-10-12|Broken without view for a fix
 net/netatalk-devel|net/netatalk|2004-10-12|Netatalk port upgraded to 2.0.0
 textproc/p5-XML-RSS-Parser|textproc/p5-XML-RAI|2004-10-13|Module was integrated into XML-RAI package
+misc/kwordquiz|misc/kdeedu3|2004-10-13|kwordquiz was integrated into the kdeedu3 port
