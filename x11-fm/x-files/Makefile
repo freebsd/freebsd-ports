@@ -6,8 +6,8 @@
 # $FreeBSD$
 #
 
-DISTNAME=       X-Files-1.43
-PKGNAME=	x-files-1.43
+DISTNAME=       X-Files-2.00b1
+PKGNAME=	x-files-2.00b1
 CATEGORIES=	x11-fm tk80
 MASTER_SITES=   http://www.hut.fi/~mkivinie/X-Files/data/
 
@@ -22,17 +22,17 @@ USE_X_PREFIX=	yes
 
 pre-install:
 	@tclsh8.0 ${SCRIPTDIR}/mktclIndex ${WRKSRC}
+	@${RM} -f ${WRKSRC}/xfinstall.tcl
 	@${SED} s#@X11BASE@#${X11BASE}# <${WRKSRC}/X-Files.tcl >${WRKSRC}/tmpfile
 	@${MV} ${WRKSRC}/tmpfile ${WRKSRC}/X-Files.tcl
 
 do-install:
 	@${MKDIR} ${PREFIX}/lib/X11/X-Files
-	@${INSTALL_SCRIPT} ${WRKSRC}/X-Files.tcl ${PREFIX}/bin/X-Files
-.for file in be.tcl ee.tcl re.tcl vfs.tcl xf_sel.tcl xfiles.buttons xfiles.extensions tclIndex \
-xfiles.faq xfiles.headers xfiles.main_pophelp xfiles.manual xfiles.user_pophelp \
-xfilesrc xflogo.gif
+.for file in *.tcl xfiles* xflogo.gif Registration.form
 	@${INSTALL_DATA} ${WRKSRC}/${file} ${PREFIX}/lib/X11/X-Files
 .endfor
+	@${CHMOD} 0555 ${PREFIX}/lib/X11/X-Files/X-Files.tcl
+	@${LN} -s ${PREFIX}/lib/X11/X-Files/X-Files.tcl ${PREFIX}/bin/X-Files
 	@${INSTALL_DATA} ${WRKSRC}/X-Files.xpm ${X11BASE}/include/X11/pixmaps
 	@${INSTALL_MAN} ${WRKSRC}/X-Files.1x ${X11BASE}/man/man1
 
