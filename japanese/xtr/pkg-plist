@@ -1,0 +1,19 @@
+bin/xtr
+%%PORTDOCS%%%%DOCSDIR%%/xtr.doc
+%%PORTDOCS%%%%DOCSDIR%%/README
+share/xtr/antinec.xtr
+share/xtr/cmt.xtr
+share/xtr/esc.xtr
+share/xtr/escp.xtr
+share/xtr/fmpr.xtr
+share/xtr/greek.xtr
+share/xtr/hint.xtr
+share/xtr/inutil.xtr
+share/xtr/kei98jis.xtr
+share/xtr/keicnv.xtr
+share/xtr/keijis98.xtr
+share/xtr/mode.xtr
+share/xtr/pcpr.xtr
+share/xtr/prev.xtr
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
+@dirrm share/xtr
