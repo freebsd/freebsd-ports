@@ -1,0 +1,7 @@
+bin/ehnt
+sbin/ehntserv
+etc/rc.d/ehntserv.sh.sample
+share/ehnt/asnc.txt
+@dirrm share/ehnt
+share/doc/ehnt/README
+@dirrm share/doc/ehnt
