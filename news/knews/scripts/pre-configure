@@ -1,0 +1,6 @@
+#! /bin/sh
+echo "You should tell knews the name of your NNTP server"
+echo "You can do this by setting the environment variable NNTPSERVER"
+echo "csh users: in .cshrc:   setenv NNTPSERVER host.domain"
+echo "sh  users: in .profile: NNTPSERVER=host.domain; export NNTPSERVER"
+exit 0
