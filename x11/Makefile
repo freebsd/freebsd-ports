@@ -29,6 +29,7 @@
     SUBDIR += eweather
     SUBDIR += fbsd-icons
     SUBDIR += finder
+    SUBDIR += fspanel
     SUBDIR += gbackground
     SUBDIR += gdkxft
     SUBDIR += gdm

@@ -1,0 +1,10 @@
+FSPanel is a panel for Linux/Unix that lists all your open windows.  It
+lets you iconify and bring windows to front. FSPanel is tiny, less than
+10k on i386-linux. It does require a gnome compliant window manager
+though (eg. Enlightenment, SawFish, WindowMaker, IceWM). Basically it's
+a tiny, lame, featureless panel.
+ 
+FSPanel does NOT and probably will never have any:
+  * program launchers
+  * menus
+  * applets
