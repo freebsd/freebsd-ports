@@ -35,7 +35,7 @@ PLIST_SUB=	GLVER="${GLVER}" GLUTVER="${GLUTVER}"
 .include <bsd.port.pre.mk>
 
 .if ${XFREE86_VERSION} == 3
-SUB_GL=		src
+SUB_GL=		src src-glu
 INCLUDE_GL=	include
 GLVER=		14
 PLIST_SUB+=	XFREE3:=""
@@ -48,7 +48,7 @@ MAKE_ENV=	INCLUDES="-I${X11BASE}/include -I${WRKSRC}/include -DGLCALLBACKPCAST=\
 MAKE_ARGS=	-e
 .endif
 
-MAKE_ENV+=	SUB_GL=${SUB_GL}		\
+MAKE_ENV+=	SUB_GL="${SUB_GL}"		\
 		INCLUDE_GL=${INCLUDE_GL}
 
 pre-patch:
@@ -62,9 +62,8 @@ post-install:
 	@${LN} -sf ${PREFIX}/lib/lib${lib}.so ${PREFIX}/lib/libMesa${lib}.so
 .endfor
 .if ${XFREE86_VERSION} > 3
-	@${MKDIR} ${PREFIX}/include/GL
-	@cd ${WRKSRC}/include/GL && \
-		${INSTALL_DATA} glu.h glut.h ${PREFIX}/include/GL
+	${MKDIR} ${PREFIX}/include/GL
+	${INSTALL_DATA} ${WRKSRC}/include/GL/glut.h ${PREFIX}/include/GL
 .endif
 
 .include <bsd.port.post.mk>
