@@ -6,14 +6,8 @@
 # $FreeBSD$
 #
 
-PKGNAME=	mew-emacs20-1.93
+EMACS_PORT_NAME=	emacs20
 
-EMACS_NAME=	Emacs-20.3
-DIRSECTION=	The Emacs editor and associated tools
-DIRENTRY=	"* Mew: (mew).	Messaging in the Emacs World."
-INFOFILE=	mew.info
+MASTERDIR=		${.CURDIR}/../../mail/mew
 
-MASTERDIR=	${.CURDIR}/../../mail/mew-common
-PKGDIR=		${.CURDIR}/pkg
-
-.include	"${MASTERDIR}/Makefile"
+.include "${MASTERDIR}/Makefile"

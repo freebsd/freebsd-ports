@@ -1,19 +1,211 @@
-# New ports collection makefile for: Mew (for emacs)
-# Version required:	1.93
-# Date created:		17 January 1998
+# New ports collection makefile for: Mew
+# Version required:	1.94
+# Date created:		21 November 1997
 # Whom:			Kiriyama Kazuhiko <kiri@kiri.toba-cmt.ac.jp>
 #
 # $FreeBSD$
 #
 
-PKGNAME=	mew-emacs-1.93
+DISTNAME=	mew-${VERSION}
+PKGNAME=	mew-${EMACS_PORT_NAME}-${VERSION}
+CATEGORIES=	mail elisp
+MASTER_SITES=	ftp://ftp.mew.org/pub/Mew/ \
+		ftp://ftp.kyushu-u.ac.jp/pub/Misc/mew/ \
+		ftp://ports.jp.freebsd.org/pub/FreeBSD-jp/ports-jp/LOCAL_PORTS/
 
-EMACS_NAME=	Emacs-19.34b
-DIRSECTION=	The Emacs editor and associated tools
-DIRENTRY=	"* Mew: (mew).	Messaging in the Emacs World."
-INFOFILE=	mew.info
+MAINTAINER=	kiri@kiri.toba-cmt.ac.jp
 
-MASTERDIR=	${.CURDIR}/../../mail/mew-common
-PKGDIR=		${.CURDIR}/pkg
+RESTRICTED=	"USA ITAR export restrictions (has PGP hooks)"
 
-.include	"${MASTERDIR}/Makefile"
+BUILD_DEPENDS=	${EMACS_CMD}:${PORTSDIR}/editors/${EMACS_PORT_NAME}
+RUN_DEPENDS=	imali:${PORTSDIR}/mail/im
+
+SCRIPTS_ENV=	AWK=${AWK} CAT=${CAT} CP=${CP} ECHO=${ECHO} \
+		MKDIR="${MKDIR}" RM=${RM} SED=${SED} TOUCH=${TOUCH} \
+		EMACSDIR=${EMACSDIR} ELISPDIR=${ELISPDIR} \
+		SAMPLEDIR=${SAMPLEDIR} WRKTMPDIR=${WRKTMPDIR} \
+		TMPL_FILES="${TMPL_FILES}" VERSION=${VERSION}
+MAKE_ARGS=	PREFIX=${PREFIX} EMACS=${EMACS_CMD} ELISPDIR=${ELISPDIR} \
+		INFODIR=${INFODIR} ETCDIR=${ETCDIR}
+MAKE_ENV=	EMACSPKGDIR=${EMACSPKGDIR} MANDIR=${PKGMANDIR} \
+		PKG_PKGINFODIR=${PKG_PKGINFODIR} XEMACS_VER_OVER20=${XEMACS_VER_OVER20} \
+		MKDIR="${MKDIR}" PERL=${PERL5} PERL_BADLANG=0
+INSTALL_TARGET=	${INST_TARGET_LST}
+PLIST=		${PKGDIR}/PLIST.${EMACS_PORT_NAME}
+PLIST_SUB=	EMACS_LISPDIR=${EMACS_LISPDIR} \
+		EMACS_ETCDIR=${EMACS_ETCDIR} \
+		EMACS_INFODIR=${EMACS_INFODIR} \
+		EMACS_PKGDIR=${EMACS_PKGDIR}
+
+VERSION=		1.94
+EMACS_PORT_NAME?=	emacs
+SAMPLEFILES=		Addrbook
+SAMPLEDOTEMACS=		dot.emacs.el
+TMPL_FILES=		user-install
+PORTDOCS=		00changes 00copyright 00copyright.jis 00diff 00readme
+EMACSDIR=		${PREFIX}/${EMACS_LIBDIR_WITH_VER}
+ELISPDIR=		${PREFIX}/${EMACS_LISPDIR}/mew
+INFODIR=		${PREFIX}/${EMACS_INFODIR}
+ETCDIR=			${PREFIX}/${EMACS_ETCDIR}/mew
+EMACSPKGDIR=		${PREFIX}/${EMACS_PKGDIR}
+PKGELISPDIR=		${PREFIX}/${EMACS_PKG_LISPDIR}/mew
+PKGINFODIR=		${PREFIX}/${EMACS_PKG_INFODIR}
+PKGMANDIR=		${PREFIX}/${EMACS_PKG_MANDIR}/mew
+PKGETCDIR=		${PREFIX}/${EMACS_PKG_ETCDIR}/mew
+PKG_PKGINFODIR=		${PREFIX}/${EMACS_PKG_PKGINFODIR}
+WRKTMPDIR=		${WRKDIR}/tmp
+SAMPLEDIR=		${PREFIX}/share/examples/mew
+PORTDOCDIR=		${PREFIX}/share/doc/mew
+.if (${EMACS_PORT_NAME} == "emacs")
+EMACS_NAME=		emacs
+EMACS_VER=		19.34
+EMACS_MAJOR_VER=	19
+EMACS_CMD=		${EMACS_NAME}-${EMACS_VER}
+EMACS_LIBDIR=		share/${EMACS_NAME}
+EMACS_LIBDIR_WITH_VER=	${EMACS_LIBDIR}/${EMACS_VER}
+EMACS_ETCDIR=		${EMACS_LIBDIR}/etc
+EMACS_LISPDIR=		${EMACS_LIBDIR}/site-lisp
+EMACS_INFODIR=		${EMACS_LIBDIR}/info
+.elif (${EMACS_PORT_NAME} == "emacs20")
+EMACS_NAME=		emacs
+EMACS_VER=		20.4
+EMACS_MAJOR_VER=	20
+EMACS_CMD=		${EMACS_NAME}-${EMACS_VER}
+EMACS_LIBDIR=		share/${EMACS_NAME}
+EMACS_LIBDIR_WITH_VER=	${EMACS_LIBDIR}/${EMACS_VER}
+EMACS_ETCDIR=		${EMACS_LIBDIR}/etc
+EMACS_LISPDIR=		${EMACS_LIBDIR}/site-lisp
+EMACS_INFODIR=		${EMACS_LIBDIR}/info
+.elif (${EMACS_PORT_NAME} == "mule")
+EMACS_NAME=		mule
+EMACS_VER=		19.34
+EMACS_MAJOR_VER=	19
+EMACS_CMD=		${EMACS_NAME}-${EMACS_VER}
+EMACS_LIBDIR=		share/${EMACS_NAME}
+EMACS_LIBDIR_WITH_VER=	${EMACS_LIBDIR}/${EMACS_VER}
+EMACS_ETCDIR=		${EMACS_LIBDIR}/etc
+EMACS_LISPDIR=		${EMACS_LIBDIR}/site-lisp
+EMACS_INFODIR=		${EMACS_LIBDIR}/info
+.elif (${EMACS_PORT_NAME} == "xemacs")
+EMACS_NAME=		xemacs
+EMACS_VER=		19.16
+EMACS_MAJOR_VER=	19
+EMACS_CMD=		${EMACS_NAME}-${EMACS_VER}
+EMACS_LIBDIR=		lib/${EMACS_NAME}
+EMACS_LIBDIR_WITH_VER=	lib/${EMACS_NAME}-${EMACS_VER}
+EMACS_ETCDIR=		${EMACS_LIBDIR}/etc
+EMACS_LISPDIR=		${EMACS_LIBDIR}/lisp
+EMACS_INFODIR=		${EMACS_LIBDIR}/info
+.elif (${EMACS_PORT_NAME} == "xemacs20")
+EMACS_NAME=		xemacs
+EMACS_VER=		20.4
+EMACS_MAJOR_VER=	20
+EMACS_CMD=		${EMACS_NAME}-${EMACS_VER}
+EMACS_LIBDIR=		lib/${EMACS_NAME}
+EMACS_LIBDIR_WITH_VER=	lib/${EMACS_NAME}-${EMACS_VER}
+EMACS_ETCDIR=		${EMACS_LIBDIR}/etc
+EMACS_LISPDIR=		${EMACS_LIBDIR}/lisp
+EMACS_INFODIR=		${EMACS_LIBDIR}/info
+.elif (${EMACS_PORT_NAME} == "xemacs21")
+EMACS_NAME=		xemacs
+EMACS_VER=		21.1-p2
+EMACS_MAJOR_VER=	21
+EMACS_CMD=		${EMACS_NAME}-${EMACS_VER}
+EMACS_LIBDIR=		lib/${EMACS_NAME}
+EMACS_LIBDIR_WITH_VER=	lib/${EMACS_NAME}-${EMACS_VER}
+EMACS_PKGDIR=		${EMACS_LIBDIR}/site-packages
+EMACS_PKG_LISPDIR=	${EMACS_PKGDIR}/lisp
+EMACS_PKG_INFODIR=	${EMACS_PKGDIR}/info
+EMACS_PKG_MANDIR=	${EMACS_PKGDIR}/man
+EMACS_PKG_ETCDIR=	${EMACS_PKGDIR}/etc
+EMACS_PKG_PKGINFODIR=	${EMACS_PKGDIR}/pkginfo
+EMACS_ETCDIR=		${EMACS_PKG_ETCDIR}
+EMACS_LISPDIR=		${EMACS_PKG_LISPDIR}
+EMACS_INFODIR=		${EMACS_PKG_INFODIR}
+.elif (${EMACS_PORT_NAME} == "xemacs-mule")
+EMACS_NAME=		xemacs
+EMACS_VER=		21.1.6
+EMACS_MAJOR_VER=	21
+EMACS_CMD=		${EMACS_NAME}-${EMACS_VER}
+EMACS_LIBDIR=		lib/${EMACS_NAME}
+EMACS_LIBDIR_WITH_VER=	lib/${EMACS_NAME}-${EMACS_VER}
+EMACS_PKGDIR=		${EMACS_LIBDIR}/site-packages
+EMACS_PKG_LISPDIR=	${EMACS_PKGDIR}/lisp
+EMACS_PKG_INFODIR=	${EMACS_PKGDIR}/info
+EMACS_PKG_MANDIR=	${EMACS_PKGDIR}/man
+EMACS_PKG_ETCDIR=	${EMACS_PKGDIR}/etc
+EMACS_PKG_PKGINFODIR=	${EMACS_PKGDIR}/pkginfo
+EMACS_ETCDIR=		${EMACS_PKG_ETCDIR}
+EMACS_LISPDIR=		${EMACS_PKG_LISPDIR}
+EMACS_INFODIR=		${EMACS_PKG_INFODIR}
+.else
+NO_BUILD=   yes
+NO_INSTALL= yes
+.endif
+.if (${EMACS_NAME} == "xemacs")
+.if ${EMACS_MAJOR_VER} <= 20
+INST_TARGET_LST=	install install-info
+.elif ${EMACS_MAJOR_VER} > 20
+INST_TARGET_LST=	install-package
+XEMACS_VER_OVER20=	yes
+.endif
+.else
+INST_TARGET_LST=	install install-info
+.endif
+.if (${EMACS_PORT_NAME} == "emacs20") || (${EMACS_PORT_NAME} == "mule") || \
+    (${EMACS_PORT_NAME} == "xemacs-mule")
+INST_TARGET_LST+=	install-jinfo
+.endif
+
+pre-configure:
+	${MKDIR} ${WRKTMPDIR}
+
+post-configure:
+	@cd ${FILESDIR}; \
+	${CP} ${SAMPLEFILES} ${SAMPLEDOTEMACS} ${WRKTMPDIR}
+
+pre-install:
+	@${MKDIR} ${ELISPDIR} ${INFODIR}
+.if (${EMACS_NAME} == "xemacs")
+	@${MKDIR} ${PREFIX}/${EMACS_ETCDIR}/mew/etc
+.endif
+
+post-install:
+.if !defined(NOPORTDOCS)
+	${MKDIR} ${PORTDOCDIR}/contrib
+	cd ${WRKSRC}; \
+	${INSTALL_DATA} ${PORTDOCS} ${PORTDOCDIR}; \
+	${INSTALL_DATA} contrib/* ${PORTDOCDIR}/contrib
+	${MKDIR} ${SAMPLEDIR}/dot.emacs
+	cd ${WRKTMPDIR}; \
+	${INSTALL_DATA} ${SAMPLEFILES} ${SAMPLEDIR}; \
+	${INSTALL_DATA} ${SAMPLEDOTEMACS} ${SAMPLEDIR}/dot.emacs; \
+	${INSTALL_SCRIPT} user-install ${SAMPLEDIR}
+.if (${EMACS_NAME} == "xemacs")
+.if ${EMACS_MAJOR_VER} <= 20
+	cd ${WRKSRC}/etc; \
+	${INSTALL_DATA} *.xpm Mew.* ${PREFIX}/${EMACS_ETCDIR}/mew; \
+	${INSTALL_DATA} etc/* ${PREFIX}/${EMACS_ETCDIR}/mew/etc
+	${INSTALL_DATA} ${WRKSRC}/info/*.texi ${PORTDOCDIR}
+.endif
+.else
+	${INSTALL_DATA} ${WRKSRC}/info/*.texi ${PORTDOCDIR}
+.endif
+.endif
+	@if [ ! -f ${INFODIR}/info/dir ]; then \
+		${SED} -ne '1,/Menu:/p' /usr/share/info/dir > ${INFODIR}/dir; \
+	fi
+.if (${EMACS_NAME} == "xemacs")
+.if ${EMACS_MAJOR_VER} > 20
+.else
+	install-info ${WRKSRC}/info/mew.info ${INFODIR}/dir
+.endif
+.else
+	install-info ${WRKSRC}/info/mew.info ${INFODIR}/dir
+.endif
+.if (${EMACS_PORT_NAME} == "emacs20") || (${EMACS_PORT_NAME} == "mule")
+	install-info ${WRKSRC}/info/mew.jis.info ${INFODIR}/dir
+.endif
+	@${CAT} ${PKGMESSAGE}
+
+.include <bsd.port.mk>
