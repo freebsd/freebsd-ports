@@ -1,0 +1,24 @@
+Index: Makefile.in
+===================================================================
+RCS file: /home/cvsroot/dcerpc/tng/source/Makefile.in,v
+retrieving revision 1.67
+diff -u -p -r1.67 Makefile.in
+--- Makefile.in	7 May 2002 22:18:50 -0000	1.67
++++ Makefile.in	14 May 2002 15:58:10 -0000
+@@ -43,6 +43,7 @@ RUNTESTDEFAULTFLAGS = --srcdir @srcdir@/
+ INSTALL = @INSTALL@
+ INSTALL_PROGRAM = @INSTALL_PROGRAM@
+ INSTALL_DATA = @INSTALL_DATA@
++INSTALL_SCRIPT = @INSTALL_SCRIPT@
+ 
+ VPATH=@srcdir@
+ srcdir=@srcdir@
+@@ -1189,7 +1190,7 @@ installscripts: installdirs
+ 	@set -e; for f in $(SCRIPTS); do \
+ 	  basename=`echo $$f | sed 's,.*/,,'`; \
+ 	  echo Installing $(BINDIR)/$$basename; \
+-	  $(INSTALL_PROGRAM) $$f $(DESTDIR)$(BINDIR)/$$basename; \
++	  $(INSTALL_SCRIPT) $$f $(DESTDIR)$(BINDIR)/$$basename; \
+ 	done
+ 
+ installcp: installdirs $(BUILDBINDIR)/make_smbcodepage $(BUILDBINDIR)/make_unicodemap
