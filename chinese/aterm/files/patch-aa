@@ -1,5 +1,5 @@
---- src/Makefile.in.orig	Mon May 10 13:05:37 1999
-+++ src/Makefile.in	Mon May 10 13:06:19 1999
+--- src/Makefile.in.orig	Fri May 14 05:30:49 1999
++++ src/Makefile.in	Fri May 14 05:31:10 1999
 @@ -19,13 +19,14 @@
  
  SRCS =	command.c graphics.c grkelot.c main.c menubar.c misc.c \

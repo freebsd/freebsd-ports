@@ -1,11 +1,11 @@
---- src/command.c.orig	Mon May 10 13:06:58 1999
-+++ src/command.c	Mon May 10 13:09:27 1999
-@@ -2069,11 +2069,17 @@
+--- src/command.c.orig	Fri May 14 05:31:24 1999
++++ src/command.c	Fri May 14 05:34:35 1999
+@@ -2128,11 +2128,17 @@
      static int      bypass_keystate = 0;
      int             reportmode;
      static int      csrO = 0;	/* Hops - csr offset in thumb/slider      */
-+    int k_status;
-+    char kbuf[256];
++    int             k_status;
++    char            kbuf[256];
  
  /*        to give proper Scroll behaviour */
      switch (ev->type) {
@@ -19,7 +19,7 @@
  	break;
  
      case ClientMessage:
-@@ -2138,6 +2144,7 @@
+@@ -2197,6 +2203,7 @@
  
      case FocusIn:
  	if (!TermWin.focus) {
