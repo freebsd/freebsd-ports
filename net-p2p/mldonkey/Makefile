@@ -6,20 +6,25 @@
 #
 
 PORTNAME=	mldonkey
-PORTVERSION=	2.5.21
+PORTVERSION=	2.5.23
 CATEGORIES+=	net
 MASTER_SITES=	${MASTER_SITE_SAVANNAH}
 MASTER_SITE_SUBDIR=	${PORTNAME}
-DISTNAME=	${PORTNAME}-${PORTVERSION}
+DISTNAME=	${PORTNAME}-${DOWNLOADVERSION}
+
+PATCH_SITES=	http://www.schraegerpunkt.de/
+PATCHFILES=	mldonkey-${DOWNLOADVERSION}-${PORTVERSION:C/.+\.//}.patch.gz
 
 MAINTAINER?=	holger@e-gitt.net
 COMMENT?=	A OCAML client for multiple peer-to-peer networks
 
 BUILD_DEPENDS=	ocamlc:${PORTSDIR}/lang/ocaml
 
+DOWNLOADVERSION=2.5.22
+
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-pthread --enable-ocamlver=3
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
+WRKSRC=		${WRKDIR}/${PORTNAME}-${DOWNLOADVERSION}
 USE_GMAKE=	yes
 ALL_TARGET=	depend opt
 
@@ -34,6 +39,7 @@ PKGNAMESUFFIX=	-core
 .else
 PLIST_SUB+=	GUI=""
 BUILD_DEPENDS+=	lablgtk:${PORTSDIR}/x11-toolkits/ocaml-lablgtk \
+		autoconf213:${PORTSDIR}/devel/autoconf213 \
 		${LOCALBASE}/lib/ocaml/jabbr.cma:${PORTSDIR}/net/ocaml-jabbr
 # we don't need lablgtk as RUN dependency, but we need gtk+glib
 USE_GNOME=	gtk12
@@ -50,15 +56,14 @@ DOCFILES=	Authors.txt Bugs.txt ChangeLog Developers.txt FAQ.html \
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} >= 502126
-BROKEN=		"Does not compile on FreeBSD >= 5.x"
-.endif
-
 pre-everything::
 .if !defined(WITHOUT_GUI) && !defined(WITHOUT_CORE)
 	@${ECHO_MSG} "You can disable the GUI by defining WITHOUT_GUI."
 	@${ECHO_MSG} "You can disable the CORE by defining WITHOUT_CORE."
 .endif
+
+pre-configure:
+	@cd ${WRKSRC}/config && ${AUTOCONF}
 
 post-patch:
 	@${SED} -e "s|%%PREFIX%%|${PREFIX}|" ${FILESDIR}/wrapper.sh > \
