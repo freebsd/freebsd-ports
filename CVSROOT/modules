@@ -11417,7 +11417,6 @@ zangband	ports/games/zangband
 zaptel		ports/misc/zaptel
 zebedee		ports/security/zebedee
 zebra		ports/net/zebra
-zebra-devel	ports/net/zebra-devel
 zebra-server	ports/net/zebra-server
 zed		ports/editors/zed
 zenity		ports/x11/zenity
