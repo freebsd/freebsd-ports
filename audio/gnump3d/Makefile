@@ -11,6 +11,8 @@ PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	${MASTER_SITE_SAVANNAH}
 MASTER_SITE_SUBDIR=	${PORTNAME}
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${DISTNAME}${EXTRACT_SUFX}.asc
+EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A streaming server for MP3, Ogg Vorbis, and other streamable audio files
@@ -19,6 +21,8 @@ RUN_DEPENDS=	lame:${PORTSDIR}/audio/lame \
 		sox:${PORTSDIR}/audio/sox \
 		oggenc:${PORTSDIR}/audio/vorbis-tools
 
+USE_GPG?=	yes
+SIG_FILES=	${DISTNAME}${EXTRACT_SUFX}.asc
 USE_BZIP2=	yes
 USE_PERL5=	yes
 NO_BUILD=	yes
