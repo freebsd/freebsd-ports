@@ -1,0 +1,11 @@
+--- linuxdoom-1.10/i_video.c~	Mon Dec 22 21:39:01 1997
++++ linuxdoom-1.10/i_video.c	Mon Dec 14 03:24:45 1998
+@@ -46,7 +46,7 @@
+ #include <sys/socket.h>
+ 
+ #include <netinet/in.h>
+-#include <errnos.h>
++#include <errno.h>
+ #include <signal.h>
+ 
+ #include "doomstat.h"

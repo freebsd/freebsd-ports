@@ -1,0 +1,14 @@
+--- linuxdoom-1.10/Makefile~	Mon Dec 22 20:55:36 1997
++++ linuxdoom-1.10/Makefile	Mon Dec 14 03:20:27 1998
+@@ -6,9 +6,9 @@
+ #
+ CC=  gcc  # gcc or g++
+ 
+-CFLAGS=-g -Wall -DNORMALUNIX -DLINUX # -DUSEASM 
++CFLAGS=-g -O -I/usr/X11R6/include -Wall -DNORMALUNIX -DSNDSERV -DSNDSRV # -DUSEASM 
+ LDFLAGS=-L/usr/X11R6/lib
+-LIBS=-lXext -lX11 -lnsl -lm
++LIBS=-lXext -lX11 -lm
+ 
+ # subdirectory for objects
+ O=linux

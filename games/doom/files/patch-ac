@@ -1,0 +1,11 @@
+--- linuxdoom-1.10/i_sound.c~	Mon Dec 22 20:57:15 1997
++++ linuxdoom-1.10/i_sound.c	Mon Dec 14 03:22:43 1998
+@@ -42,7 +42,7 @@
+ #include <sys/ioctl.h>
+ 
+ // Linux voxware output.
+-#include <linux/soundcard.h>
++#include <machine/soundcard.h>
+ 
+ // Timer stuff. Experimental.
+ #include <time.h>

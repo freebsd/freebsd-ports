@@ -1,0 +1,11 @@
+--- linuxdoom-1.10/w_wad.c~	Mon Dec 22 22:05:36 1997
++++ linuxdoom-1.10/w_wad.c	Mon Dec 14 03:29:18 1998
+@@ -34,7 +34,7 @@
+ #include <malloc.h>
+ #include <fcntl.h>
+ #include <sys/stat.h>
+-#include <alloca.h>
++//#include <alloca.h>
+ #define O_BINARY		0
+ #endif
+ 
