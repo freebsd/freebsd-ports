@@ -3,7 +3,7 @@
 # Date created:         Sat Oct 31 16:30:00 CDT 1997
 # Whom:                 hetzels@westbend.net
 #
-# $Id: Makefile,v 1.9 1999/03/13 17:11:03 billf Exp $
+# $Id: Makefile,v 1.10 1999/03/13 17:57:44 billf Exp $
 #
 
 DISTNAME=       apache_${AP_VERS}
@@ -62,7 +62,7 @@ Y2K=		http://www.apache.org/docs/misc/FAQ.html#year2000
 # Set APACHE_PERF_TUNING env. variable to YES to get maximum performance
 #
 
-GNU_CONFIGURE=  yes
+HAS_CONFIGURE=  yes
 CONFIGURE_ARGS= \
 		 --prefix=${PREFIX} \
 		 --with-layout=GNU \
