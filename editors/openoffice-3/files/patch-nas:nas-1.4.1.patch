@@ -1,0 +1,17 @@
+--- ../nas/nas-1.4.1.patch.orig	Wed Mar  6 02:24:32 2002
++++ ../nas/nas-1.4.1.patch	Wed Mar  6 02:27:00 2002
+@@ -143,3 +143,14 @@
+   InstallMultiple($(HEADERS),$(INCDIR))
+   #if ProjectX >= 5
+   InstallNonExecFile(AuErrorDB,$(LIBDIR))
++--- misc/nas-1.4.1/Imakefile.orig	Wed Mar  6 02:20:01 2002
+++++ misc/build/nas-1.4.1/Imakefile	Wed Mar  6 02:20:07 2002
++@@ -42,6 +42,8 @@
++ 	@echo ""
++ 	Date
++ 	@echo ""
+++	@find . -name '*.[ch]' | xargs \
+++                ${PERL} -pi -e "s|<malloc.h>|<stdlib.h>|g"
++ 	$(MAKE) $(MFLAGS) Makefiles
++ 	$(MAKE) $(MFLAGS) clean
++ 	$(MAKE) $(MFLAGS) includes
