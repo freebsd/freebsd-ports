@@ -13,21 +13,46 @@
 
 use strict;
 
+
+############################################################
+#
+# Configurable options
+#
+############################################################
+
+# These are the optional headers that can be filled at the end of
+# each commit message.  The associated value is a regular-expression
+# that is used to type-check the entered value.  If the match failed
+# then the commit is rejected.  (See rcstemplate).
+my %HEADERS = (
+	"Reviewed by"		=> "",
+	"Submitted by"		=> "",
+	"Obtained from"		=> "",
+	"Approved by"		=> "",
+	"PR"			=> "",
+	"MFC after"		=> '[\d]+( (days|weeks))?'
+);
+
+
+
+#############################################################
+#
+# Main Body
+#
+############################################################
+
 my $filename = shift;
 die "Usage: logcheck filename\n" unless $filename;
-my $tmpfile = $filename . "tmp";
 
-open(IN, "< $filename") ||
-	die "logcheck: Cannot open for reading: $filename: $!\n";
-
-open(OUT, "> $tmpfile") ||
-	die "logcheck: Cannot open for writing: $tmpfile: $!\n";
 
 
 
 # Read the log file in, stripping 'CVS:' lines and removing trailing
 # white spaces.
-my @log_in = map { s/^(.*?)\s*$/$1/; $_ } grep { !/^CVS:/ } <IN>;
+open IN, "< $filename" or
+    die "logcheck: Cannot open for reading: $filename: $!\n";
+my @log_in = map { s/^(.*?)\s*$/$1/; $1 } grep { !/^CVS:/ } <IN>;
+close IN;
 
 # Remove leading, trailing and duplicate blank lines.
 my $i = 0;
@@ -41,37 +66,54 @@ while ($i < scalar(@log_in)) {
 shift @log_in unless $log_in[0];
 
 # Filter out blank templated entries, and type check if necessary.
-foreach (@log_in) {
-	# Delete if they only have whitespace after them.
-	if (/^Reviewed by:$/i ||
-	    /^Submitted by:$/i ||
-	    /^Obtained from:$/i ||
-	    /^Approved by:$/i ||
-	    /^PR:$/i) {
-		next;
-	}
+# (looking from the end of the commit message backwards)
+my $j = scalar(@log_in) - 1;
+while ($j >= 0  and  my $header = $log_in[$j]) {
+	--$j;
 
-	# Special handling for type checking the 'MFC after' field.
-	if (/^MFC after:\s*(.*)$/) {
-		# Ignore it if no value was filled in.
-		next unless $1;
+	if ($header =~ /^(.*?):\s*(.*)$/) {
+		my $header = $1;
+		my $value = $2;
+		my $pattern = $HEADERS{$header};
 
-		unless ($1 =~ /[\d]+ (days?|weeks?)$/) {
-			print "Parse error in 'MFC after:'\n";
+		# Warn and ignore unrecognised headers.
+		unless (defined($pattern)) {
+			print "Warning: unrecognised header: $header\n";
+			next;
+		}
+
+		# Skip the header if it's blank.
+		unless ($value) {
+			splice(@log_in, $j + 1, 1);
+			next;
+		}
+
+		# Type check the header
+		unless ($value =~ /^$pattern$/) {
+			print "Parse error in header ($header)\n";
 			exit 1;
 		}
-	}
 
-	print OUT "$_\n";
+	} else {
+		print "Malformed line in with headers: $header\n";
+		exit 1;
+	}
 }
-close IN;
+
+
+# Write the modified log file back out.
+my $tmpfile = $filename . "tmp";
+open OUT, "> $tmpfile" or
+    die "logcheck: Cannot open for writing: $tmpfile: $!\n";
+print OUT map { "$_\n" } @log_in;
 close OUT;
+
 
 # Nuke likely editor backups.
 unlink "$filename.~";
 unlink "$filename.bak";
 
-rename("$tmpfile", "$filename") ||
-	die "logcheck: Could not rename $tmpfile to $filename: $!";
+rename($tmpfile, $filename) or
+    die "logcheck: Could not rename $tmpfile to $filename: $!";
 
 exit 0;
