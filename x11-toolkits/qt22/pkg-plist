@@ -43,9 +43,11 @@ include/qt2/qcombo.h
 include/qt2/qcombobox.h
 include/qt2/qcommonstyle.h
 include/qt2/qconfig-dist.h
-include/qt2/qconfig-embedded.h
+include/qt2/qconfig-large.h
+include/qt2/qconfig-medium.h
 include/qt2/qconfig-minimal.h
-include/qt2/qconfig-qpim.h
+include/qt2/qconfig-qpe.h
+include/qt2/qconfig-small.h
 include/qt2/qconfig.h
 include/qt2/qconnect.h
 include/qt2/qconnection.h
@@ -725,6 +727,8 @@ share/doc/qt2/html/qconnection-members.html
 share/doc/qt2/html/qconnection.html
 share/doc/qt2/html/qconststring-members.html
 share/doc/qt2/html/qconststring.html
+share/doc/qt2/html/qcopchannel-members.html
+share/doc/qt2/html/qcopchannel.html
 share/doc/qt2/html/qcstring-h.html
 share/doc/qt2/html/qcstring-members.html
 share/doc/qt2/html/qcstring.html

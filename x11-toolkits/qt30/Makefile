@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	qt
-PORTVERSION=	2.2.1
-PORTREVISION=	1
+PORTVERSION=	2.2.2
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	ftp://ftp.trolltech.com/qt/source/
 DISTNAME=	qt-x11-${PORTVERSION}
@@ -17,6 +16,7 @@ MAINTAINER=	will@FreeBSD.org
 LIB_DEPENDS=	png.4:${PORTSDIR}/graphics/png \
 		jpeg.9:${PORTSDIR}/graphics/jpeg
 
+YES?=		/usr/bin/yes
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 USE_MESA=	yes
 USE_GMAKE=	yes
@@ -25,7 +25,7 @@ USE_NEWGCC=	yes
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	-system-zlib -system-libpng -system-jpeg -sm -gif \
 		-I${LOCALBASE}/include -L${LOCALBASE}/lib
-CONFIGURE_ENV=	QTDIR=${WRKSRC}
+CONFIGURE_ENV=	${YES} yes | QTDIR=${WRKSRC}
 MAKE_ENV=	QTDIR=${WRKSRC} LD_LIBRARY_PATH=${WRKSRC}/lib
 
 CONFIG=		${WRKSRC}/configs/freebsd-g++-${STATIC}
@@ -43,17 +43,6 @@ INSTALLS_SHLIB=yes
 .endif
 
 pre-fetch:
-.if !defined(QT_GIF_AVAILABLE) && !defined(HAVE_UNISYS_LICENSE)
-	@${ECHO}
-	@${ECHO} "GIF support is disabled in QT by default due to the"
-	@${ECHO} "restrictive license on LZW compression owned by Unisys."
-	@${ECHO} "To build with GIF support, use"
-	@${ECHO}
-	@${ECHO} "	${MAKE} -DQT_GIF_AVAILABLE [other args]"
-	@${ECHO} "or"
-	@${ECHO} "	${MAKE} -DHAVE_UNISYS_LICENSE [other args]"
-	@${ECHO}
-.endif
 .if exists(${X11BASE}/lib/libqt2.so.3)
 .if !defined(WANT_STATIC)
 	@${ECHO} "An older version of QT2 is installed.  To avoid clobbering"
