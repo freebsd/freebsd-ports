@@ -60,6 +60,7 @@
     SUBDIR += jboss2
     SUBDIR += jboss3
     SUBDIR += jc
+    SUBDIR += jcalendar
     SUBDIR += jce-aba
     SUBDIR += jcommon
     SUBDIR += jdbcpool
