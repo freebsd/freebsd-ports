@@ -29,13 +29,14 @@ CONFIGURE_TARGET=	--target=${MACHINE_ARCH}-unknown-freebsd${OSREL}
 
 MAN1=		gaim.1
 
-.include <bsd.port.pre.mk>
-
 .if !defined(WITHOUT_GDK_PIXBUF)
 # Note, gdk-pixbuf is needed for buddy icon support.
 USE_GNOME+=	gdkpixbuf
 .endif
-.if ${HAVE_GNOME:Mlibpanel} != ""
+
+.include <bsd.port.pre.mk>
+
+.if ${HAVE_GNOME:Mlibpanel}!= ""
 USE_GNOME+=	libpanel
 RUN_DEPENDS=	ispell:${PORTSDIR}/textproc/ispell
 CONFIGURE_ARGS+=	--enable-panel
