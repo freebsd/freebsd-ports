@@ -1,12 +1,12 @@
 # New ports collection makefile for:	sarah
-# Version required:	0.1b
+# Version required:	0.3b
 # Date created:		10 Jan 2000
 # Whom:			Matthew Pounsett <mattp@conundrum.com>
 #
 # $FreeBSD$
 #
 
-DISTNAME=		sarah-0.1b
+DISTNAME=		sarah-0.3b
 CATEGORIES=		sysutils
 MASTER_SITES=		ftp://ftp.conundrum.com/pub/sarah/
 
@@ -16,6 +16,9 @@ MAN1=			sarah.1
 USE_PERL5=		yes
 NO_BUILD=		yes
 
+do-configure:
+	@${PERL} -pi.orig -e "s|/usr/local|${PREFIX}|" ${WRKSRC}/sarah
+
 do-install:
 	cd ${WRKSRC} && \
 		${INSTALL_SCRIPT} sarah ${PREFIX}/bin
@@ -23,5 +26,12 @@ do-install:
 		${INSTALL_DATA} sarah.conf.sample ${PREFIX}/etc
 	cd ${WRKSRC} && \
 		${INSTALL_MAN} ${MAN1} ${PREFIX}/man/man1
+
+post-install:
+.if !defined(NOPORTDOCS)
+	${MKDIR} ${PREFIX}/share/doc/sarah
+	${INSTALL_MAN} ${WRKSRC}/README ${PREFIX}/share/doc/sarah
+	${INSTALL_MAN} ${WRKSRC}/CHANGES ${PREFIX}/share/doc/sarah
+.endif
 
 .include <bsd.port.mk>
