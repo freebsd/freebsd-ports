@@ -1,5 +1,6 @@
 # $FreeBSD$
 #
+    SUBDIR += xalan-j
 
     SUBDIR += bugseeker
     SUBDIR += collections
