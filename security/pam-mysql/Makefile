@@ -13,7 +13,7 @@ MASTER_SITES=	http://download.sourceforge.net/pam-mysql/ \
 
 MAINTAINER=	anders@fix.no
 
-LIB_DEPENDS=	mysqlclient.6:${PORTSDIR}/databases/mysql322-client
+LIB_DEPENDS=	mysqlclient.10:${PORTSDIR}/databases/mysql323-client
 
 USE_GMAKE=	yes
 

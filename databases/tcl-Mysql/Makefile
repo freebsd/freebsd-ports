@@ -14,7 +14,7 @@ EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	mi@aldan.algebra.com
 
-LIB_DEPENDS=	mysqlclient.6:${PORTSDIR}/databases/mysql322-client
+LIB_DEPENDS=	mysqlclient.10:${PORTSDIR}/databases/mysql323-client
 RUN_DEPENDS=	${TCL_VERSION:S/tcl/tclsh/}:${PORTSDIR}/lang/${TCL_NODOT}
 
 TCL_VERSION?=	tcl8.3	# Only this needs changing to switch TCL-version

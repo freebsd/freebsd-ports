@@ -13,7 +13,7 @@ MASTER_SITES=	ftp://ftp.sunet.se/pub/unix/databases/relational/mysql/Downloads/M
 MAINTAINER=	ebakke@trolltech.com
 
 LIB_DEPENDS=	iodbc.2:${PORTSDIR}/databases/libiodbc \
-		mysqlclient.6:${PORTSDIR}/databases/mysql323-client
+		mysqlclient.10:${PORTSDIR}/databases/mysql323-client
 
 USE_LIBTOOL=	yes
 CONFIGURE_ARGS=	--with-mysql-libs=${PREFIX}/lib/mysql \

@@ -14,8 +14,8 @@ DISTNAME=	zh-chinput2-1.0
 
 MAINTAINER=	phj@cn.FreeBSD.org
 
-BUILD_DEPENDS=	mysql:${PORTSDIR}/databases/mysql322-client
-RUN_DEPENDS=	mysql:${PORTSDIR}/databases/mysql322-client
+BUILD_DEPENDS=	mysql:${PORTSDIR}/databases/mysql323-client
+RUN_DEPENDS=	mysql:${PORTSDIR}/databases/mysql323-client
 
 USE_XLIB=	yes
 

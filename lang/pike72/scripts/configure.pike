@@ -72,7 +72,7 @@ while [ "$1" ]; do
 			zlib=1
 			;;
 		\"MySQL\")
-			echo "LIB_DEPENDS+=	mysqlclient.6:\${PORTSDIR}/databases/mysql322-client" >> ${WRKDIRPREFIX}${CURDIR}/Makefile.inc
+			echo "LIB_DEPENDS+=	mysqlclient.10:\${PORTSDIR}/databases/mysql323-client" >> ${WRKDIRPREFIX}${CURDIR}/Makefile.inc
 			echo "CONFIGURE_ARGS+=	--with-mysql=\${PREFIX}" >> ${WRKDIRPREFIX}${CURDIR}/Makefile.inc
 			MySQL=1
 			;;

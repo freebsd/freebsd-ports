@@ -14,7 +14,7 @@ MASTER_SITES=	http://web.wt.net/~dblhack/ \
 MAINTAINER=	dirk@FreeBSD.org
 
 LIB_DEPENDS=	xforms.0:${PORTSDIR}/x11-toolkits/xforms \
-		mysqlclient.6:${PORTSDIR}/databases/mysql322-client
+		mysqlclient.10:${PORTSDIR}/databases/mysql323-client
 
 USE_X_PREFIX=	yes
 USE_XPM=	yes

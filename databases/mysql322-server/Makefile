@@ -17,6 +17,8 @@ DISTNAME=	mysql-${PORTVERSION}
 
 MAINTAINER=	dirk@FreeBSD.org
 
+FORBIDDEN=	'Use mysql323-{client,server} instead.'
+
 SLAVEDIRS=	databases/mysql322-client
 MASTERPORTNAME=	mysql-server
 DB_DIR?=	/var/db/mysql

@@ -62,7 +62,7 @@ MAKEFILEFLAGS+=	CC="${CC}"
 MAKEFILEFLAGS+=	OPT="${CFLAGS}"
 
 .if defined(WITH_MYSQL)
-BUILD_DEPENDS+=		${LOCALBASE}/lib/mysql/libmysqlclient.a:${PORTSDIR}/databases/mysql322-client
+BUILD_DEPENDS+=		${LOCALBASE}/lib/mysql/libmysqlclient.a:${PORTSDIR}/databases/mysql323-client
 POSTFIX_CCARGS+=	-DHAS_MYSQL -I${LOCALBASE}/include/mysql
 POSTFIX_AUXLIBS+=	${LOCALBASE}/lib/mysql/libmysqlclient.a -lm
 .endif

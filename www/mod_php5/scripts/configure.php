@@ -95,7 +95,7 @@ while [ "$1" ]; do
 			echo "CONFIGURE_ARGS+=--with-imap=\${PREFIX}"
 			;;
 		\"MySQL\")
-			echo "LIB_DEPENDS+=	mysqlclient.6:\${PORTSDIR}/databases/mysql322-client"
+			echo "LIB_DEPENDS+=	mysqlclient.10:\${PORTSDIR}/databases/mysql323-client"
 			echo "CONFIGURE_ARGS+=--with-mysql=\${PREFIX}"
 			;;
 		\"PostgreSQL\")

@@ -18,7 +18,7 @@ LIB_DEPENDS=	pq.2:${PORTSDIR}/databases/postgresql7
 .endif
 
 .if defined(WITH_MYSQL)
-LIB_DEPENDS=	mysqlclient.6:${PORTSDIR}/databases/mysql322-client
+LIB_DEPENDS=	mysqlclient.10:${PORTSDIR}/databases/mysql323-client
 .endif
 
 GNU_CONFIGURE=	yes

@@ -14,7 +14,7 @@ MASTER_SITES=	http://bourbon.netvision.net.il/mysql/mod_auth_mysql/ \
 MAINTAINER=	jeh@FreeBSD.org
 
 BUILD_DEPENDS=	${LOCALBASE}/sbin/apxs:${PORTSDIR}/www/${AP_PORT}
-LIB_DEPENDS=	mysqlclient.6:${PORTSDIR}/databases/mysql322-client
+LIB_DEPENDS=	mysqlclient.10:${PORTSDIR}/databases/mysql323-client
 RUN_DEPENDS=	${LOCALBASE}/sbin/${AP_TARGET}:${PORTSDIR}/www/${AP_PORT}
 
 .include <bsd.port.pre.mk>
