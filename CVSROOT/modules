@@ -7573,6 +7573,7 @@ p5-Spreadsheet-ParseExcel	ports/textproc/p5-Spreadsheet-ParseExcel
 p5-Spreadsheet-WriteExcel	ports/textproc/p5-Spreadsheet-WriteExcel
 p5-Spreadsheet-WriteExcel-FromXML	ports/textproc/p5-Spreadsheet-WriteExcel-FromXML
 p5-Spreadsheet-WriteExcelXML	ports/textproc/p5-Spreadsheet-WriteExcelXML
+p5-SpringGraph	ports/graphics/p5-SpringGraph
 p5-Stanford-DNSserver	ports/dns/p5-Stanford-DNSserver
 p5-Stat-lsMode	ports/sysutils/p5-Stat-lsMode
 p5-Statistics-ChiSquare	ports/math/p5-Statistics-ChiSquare
