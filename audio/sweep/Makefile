@@ -6,28 +6,39 @@
 #
 
 PORTNAME=	sweep
-PORTVERSION=	0.1.1
+PORTVERSION=	0.8.0
 CATEGORIES=	audio gnome
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	sobomax@FreeBSD.org
 
+LIB_DEPENDS=	sndfile.1:${PORTSDIR}/audio/libsndfile \
+		samplerate.0:${PORTSDIR}/audio/libsamplerate \
+		vorbis.2:${PORTSDIR}/audio/libvorbis \
+		speex.0:${PORTSDIR}/audio/speex \
+		mad.1:${PORTSDIR}/audio/mad \
+		tdb.1:${PORTSDIR}/databases/tdb
+
 USE_X_PREFIX=	yes
-USE_GNOME=	yes
 USE_GMAKE=	yes
 USE_LIBTOOL=	yes
-
+USE_REINPLACE=	yes
+USE_GNOMENG=	yes
+USE_GNOME=	gnomeprefix gnomehier gnomehack gtk12
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
+CONFIGURE_ARGS=	--with-extralibdir=${LOCALBASE}/lib \
+		--with-extraincdir=${LOCALBASE}/include \
+		--with-vorbis=${LOCALBASE}/lib \
+		--with-vorbis=${LOCALBASE}/include/vorbis \
+		--with-ogg=${LOCALBASE}/lib \
+		--with-ogg=${LOCALBASE}/include/ogg
 
 MAN1=		sweep.1
 
-pre-patch:
-	@${PERL} -pi -e 's|-lpthread|${PTHREAD_LIBS}|g ; \
+post-patch:
+	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|g ; \
 		s|DATADIRNAME=lib|DATADIRNAME=share|g' ${WRKSRC}/configure
-	@find ${WRKSRC} -name "Makefile.in" | xargs ${PERL} -pi -e \
-		's|\$\(datadir\)/gnome/|\$\(datadir\)/|g ; \
-		 s|\$\(datadir\)/locale|\$\(prefix\)/share/locale|g'
 
 .include <bsd.port.mk>
