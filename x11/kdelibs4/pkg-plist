@@ -1,440 +1,1469 @@
+bin/artsc-config
+bin/artscat
+bin/artsd
+bin/artsdsp
+bin/artsplay
+bin/artswrapper
+bin/db2ps
+bin/dcopidl
+bin/dcopidl2cpp
+bin/dcopserver
+bin/kbuildsycoca
+bin/kcookiejar
+bin/kdb2html
+bin/kded
+bin/kdeinit
+bin/kdeinit_wrapper
+bin/kdesu_stub
+bin/kio_http_cache_cleaner
+bin/kio_uiserver
+bin/klauncher
+bin/knotify
+bin/mcopidl
+bin/settheme
+include/MatrixDialog.h
 include/addressbook.h
-include/bison2cpp.h
+include/arts/artsflow.h
+include/arts/artsflow.idl
+include/arts/artsserver_impl.h
+include/arts/asyncstream.h
+include/arts/audiosubsys.h
+include/arts/buffer.h
+include/arts/cache.h
+include/arts/cachedwav.h
+include/arts/common.h
+include/arts/connect.h
+include/arts/connection.h
+include/arts/convert.h
+include/arts/core.h
+include/arts/datapacket.h
+include/arts/debug.h
+include/arts/dispatcher.h
+include/arts/execrequest.h
+include/arts/extensionloader.h
+include/arts/factory.h
+include/arts/fft.h
+include/arts/flowsystem.h
+include/arts/idlfilereg.h
+include/arts/ifacerepo_impl.h
+include/arts/iomanager.h
+include/arts/kmedia2.h
+include/arts/kmedia2.idl
+include/arts/mcopconfig.h
+include/arts/mcoputils.h
+include/arts/notification.h
+include/arts/object.h
+include/arts/objectmanager.h
+include/arts/objectwrapper.h
+include/arts/pipebuffer.h
+include/arts/pool.h
+include/arts/qiomanager.h
+include/arts/reference.h
+include/arts/referenceclean.h
+include/arts/socketconnection.h
+include/arts/soundserver.h
+include/arts/soundserver.idl
+include/arts/startupmanager.h
+include/arts/stdsynthmodule.h
+include/arts/synthschedule.h
+include/arts/tcpconnection.h
+include/arts/tcpserver.h
+include/arts/type.h
+include/arts/unixconnection.h
+include/arts/unixserver.h
+include/arts/utils.h
+include/artsc/artsc.h
 include/booktoken.h
-include/builtin.h
-include/ckey.h
-include/configDB.h
-include/dither.h
-include/drag.h
-include/html.h
-include/htmlclue.h
-include/htmldata.h
-include/htmlfont.h
-include/htmlform.h
-include/htmlframe.h
-include/htmliter.h
-include/htmlobj.h
-include/htmltable.h
-include/htmltoken.h
-include/htmlview.h
-include/jscript.h
-include/jserror.h
-include/jsexec.h
-include/jstree.h
-include/kab.h
+include/box.h
+include/dcopclient.h
+include/dcopobject.h
+include/dcopref.h
+include/dcopstub.h
+include/defaultprogress.h
+include/dom/css_rule.h
+include/dom/css_stylesheet.h
+include/dom/css_value.h
+include/dom/dom2_range.h
+include/dom/dom2_traversal.h
+include/dom/dom_core.h
+include/dom/dom_doc.h
+include/dom/dom_element.h
+include/dom/dom_exception.h
+include/dom/dom_html.h
+include/dom/dom_misc.h
+include/dom/dom_node.h
+include/dom/dom_string.h
+include/dom/dom_text.h
+include/dom/dom_xml.h
+include/dom/html_base.h
+include/dom/html_block.h
+include/dom/html_document.h
+include/dom/html_element.h
+include/dom/html_form.h
+include/dom/html_head.h
+include/dom/html_image.h
+include/dom/html_inline.h
+include/dom/html_list.h
+include/dom/html_misc.h
+include/dom/html_object.h
+include/dom/html_table.h
 include/kabapi.h
+include/kaboutdata.h
+include/kaboutdialog.h
+include/kaboutkde.h
 include/kaccel.h
+include/kaccelmenu.h
+include/kaction.h
+include/kallocator.h
+include/kanimwidget.h
 include/kapp.h
-include/kaudio.h
-include/kbutton.h
+include/kaudioplayer.h
+include/kauthicon.h
+include/kautomount.h
+include/kbugreport.h
 include/kbuttonbox.h
+include/kcharselect.h
 include/kcharsets.h
-include/kckey.h
-include/kclipboard.h
+include/kcmdlineargs.h
+include/kcmenumngr.h
+include/kcmodule.h
 include/kcolorbtn.h
 include/kcolordlg.h
-include/kcolorgroup.h
+include/kcolordrag.h
 include/kcombiview.h
-include/kcombo.h
+include/kcombobox.h
+include/kcompletion.h
+include/kcompletion_private.h
 include/kconfig.h
+include/kconfigbackend.h
 include/kconfigbase.h
 include/kconfigdata.h
 include/kcontainer.h
-include/kcontrol.h
+include/kcrash.h
 include/kcursor.h
 include/kdatepik.h
 include/kdatetbl.h
 include/kdbtn.h
 include/kde.pot
+include/kde_dmalloc.h
 include/kdebug.h
-include/kdir.h
-include/kdirlistbox.h
+include/kdesktopfile.h
+include/kdestyle.h
+include/kdesu/client.h
+include/kdesu/defaults.h
+include/kdesu/kcookie.h
+include/kdesu/process.h
+include/kdesu/pty.h
+include/kdesu/ssh.h
+include/kdesu/stub.h
+include/kdesu/su.h
+include/kdialog.h
+include/kdialogbase.h
+include/kdirlister.h
+include/kdiroperator.h
+include/kdirwatch.h
+include/kdocktabctl.h
+include/kdockwidget.h
+include/kdockwindow.h
+include/kdrawutil.h
+include/kdualcolorbtn.h
 include/keditcl.h
-include/keyvaluemap.h
+include/kedittoolbar.h
+include/kfile.h
 include/kfilebookmark.h
-include/kfiledetaillist.h
+include/kfiledetailview.h
 include/kfiledialog.h
 include/kfilefilter.h
-include/kfileinfo.h
-include/kfileinfocontents.h
+include/kfileiconview.h
+include/kfileitem.h
 include/kfilepreview.h
-include/kfilesimpleview.h
-include/kfm.h
-include/kfmclient_ipc.h
-include/kfmipc.h
+include/kfilereader.h
+include/kfileview.h
+include/kfileviewitem.h
 include/kfontdialog.h
+include/kformula.h
+include/kformulaedit.h
+include/kformulatoolbar.h
+include/kglobal.h
 include/kglobalaccel.h
+include/kglobalsettings.h
+include/khelpmenu.h
+include/khtml_part.h
+include/khtmlview.h
+include/kicondialog.h
+include/kiconeffect.h
 include/kiconloader.h
-include/kiconloaderdialog.h
-include/kimgio.h
-include/kintegerline.h
+include/kicontheme.h
+include/kiconview.h
+include/kimageeffect.h
+include/kimageio.h
+include/kinstance.h
+include/kio/connection.h
+include/kio/defaultprogress.h
+include/kio/filter.h
+include/kio/global.h
+include/kio/job.h
+include/kio/jobclasses.h
+include/kio/netaccess.h
+include/kio/passdlg.h
+include/kio/paste.h
+include/kio/progressbase.h
+include/kio/renamedlg.h
+include/kio/skipdlg.h
+include/kio/slavebase.h
+include/kio/slaveinterface.h
+include/kio/statusbarprogress.h
+include/kipc.h
+include/kjanuswidget.h
+include/kjavaapplet.h
+include/kjavaappletcontext.h
+include/kjavaappletserver.h
+include/kjavaappletwidget.h
+include/kjavaprocess.h
+include/kjs/function.h
+include/kjs/kjs.h
+include/kjs/lookup.h
+include/kjs/object.h
+include/kjs/operations.h
+include/kjs/types.h
+include/kjs/ustring.h
 include/kkeydialog.h
 include/kled.h
-include/kledlamp.h
-include/klined.h
+include/klibloader.h
+include/klineedit.h
+include/klineeditdlg.h
+include/klistbox.h
+include/klistview.h
 include/klocale.h
 include/kmenubar.h
-include/kmisc.h
-include/kmsgbox.h
-include/knewpanner.h
-include/knotebook.h
-include/kpanner.h
+include/kmessagebox.h
+include/kmimemagic.h
+include/kmimetype.h
+include/knotifyclient.h
+include/knuminput.h
+include/knumvalidator.h
+include/kopenwith.h
+include/kpalette.h
+include/kpanelapplet.h
+include/kpanelmenu.h
+include/kparts/browserextension.h
+include/kparts/event.h
+include/kparts/factory.h
+include/kparts/mainwindow.h
+include/kparts/part.h
+include/kparts/partmanager.h
+include/kparts/plugin.h
+include/kpassdlg.h
 include/kpixmap.h
-include/kpoint.h
-include/kpopmenu.h
-include/kpreview.h
+include/kpixmapeffect.h
+include/kpixmapio.h
+include/kpopupmenu.h
 include/kprocctrl.h
 include/kprocess.h
 include/kprocio.h
 include/kprogress.h
-include/kquickhelp.h
-include/krect.h
-include/kremotefile.h
+include/kpropsdlg.h
+include/kprotocolmanager.h
+include/krandomsequence.h
+include/krecentdocument.h
+include/kregexp.h
 include/krestrictedline.h
+include/krootpixmap.h
 include/krootprop.h
 include/kruler.h
+include/krun.h
+include/ksavefile.h
 include/ksconfig.h
 include/kselect.h
 include/kseparator.h
+include/kservice.h
+include/kservicegroup.h
+include/kservicetype.h
+include/ksharedpixmap.h
+include/ksharedptr.h
+include/kshellcompletion.h
+include/kshred.h
 include/ksimpleconfig.h
-include/ksize.h
-include/kslider.h
 include/ksock.h
 include/kspell.h
 include/kspelldlg.h
-include/kspinbox.h
 include/kstatusbar.h
 include/kstdaccel.h
-include/kstring.h
-include/ktabbar.h
+include/kstdaction.h
+include/kstddirs.h
+include/kstringhandler.h
+include/kstyle.h
+include/ksycoca.h
+include/ksycocaentry.h
+include/ksycocatype.h
 include/ktabctl.h
-include/ktablistbox.h
+include/ktar.h
+include/ktempfile.h
+include/ktextbrowser.h
+include/kthemebase.h
+include/kthemestyle.h
 include/ktmainwindow.h
+include/ktmlayout.h
 include/ktoolbar.h
+include/ktoolbarbutton.h
+include/ktoolbarradiogroup.h
 include/ktoolboxmgr.h
-include/ktopwidget.h
-include/ktreelist.h
+include/ktrader.h
+include/kuniqueapp.h
+include/kurifilter.h
 include/kurl.h
+include/kurlcombobox.h
+include/kurlcompletion.h
 include/kurllabel.h
+include/kurlrequester.h
+include/kurlrequesterdlg.h
+include/kuserprofile.h
+include/kwidgetid.h
+include/kwin.h
+include/kwinmodule.h
 include/kwizard.h
 include/kwm.h
-include/kwmmapp.h
-include/mediatool.h
-include/sections.h
-include/stl_headers.h
-include/xview.h
-lib/libjscript.so
-lib/libjscript.so.%%LIBVER%%
-lib/libjscript.la
-lib/libkab.so
-lib/libkab.so.%%LIBVER%%
+include/kwrite/highlight.h
+include/kwrite/kwrite.h
+include/kwrite/kwrite_doc.h
+include/kwrite/kwrite_factory.h
+include/kwrite/kwrite_misc.h
+include/kwrite/kwrite_part.h
+include/kwrite/kwrite_view.h
+include/kxmlgui.h
+include/kxmlguibuilder.h
+include/kxmlguiclient.h
+include/libkmid/alsaout.h
+include/libkmid/dattypes.h
+include/libkmid/deviceman.h
+include/libkmid/fmout.h
+include/libkmid/gusout.h
+include/libkmid/libkmid.h
+include/libkmid/midfile.h
+include/libkmid/midimapper.h
+include/libkmid/midiout.h
+include/libkmid/midispec.h
+include/libkmid/midistat.h
+include/libkmid/mt32togm.h
+include/libkmid/notearray.h
+include/libkmid/player.h
+include/libkmid/synthout.h
+include/libkmid/track.h
+include/libkmid/voiceman.h
+include/ltdl.h
+include/matrixbox.h
+include/progressbase.h
+include/qconfigDB.h
+include/qxembed.h
+include/statusbarprogress.h
+lib/X11GlobalComm.mcopclass
+lib/b3style.la
+lib/b3style.so
+lib/basicstyle.la
+lib/basicstyle.so
+lib/dcopserver.la
+lib/dcopserver.so
+lib/hcstyle.la
+lib/hcstyle.so
+lib/kbuildsycoca.la
+lib/kbuildsycoca.so
+lib/kcookiejar.la
+lib/kcookiejar.so
+lib/kded.la
+lib/kded.so
+lib/kimg_eps.la
+lib/kimg_eps.so
+lib/kimg_krl.la
+lib/kimg_krl.so
+lib/kimg_tiff.la
+lib/kimg_tiff.so
+lib/kimg_xview.la
+lib/kimg_xview.so
+lib/kio_file.la
+lib/kio_file.so
+lib/kio_ftp.la
+lib/kio_ftp.so
+lib/kio_http.la
+lib/kio_http.so
+lib/kio_http_cache_cleaner.la
+lib/kio_http_cache_cleaner.so
+lib/kio_https.la
+lib/kio_https.so
+lib/kio_uiserver.la
+lib/kio_uiserver.so
+lib/kjs_html.la
+lib/kjs_html.so
+lib/klauncher.la
+lib/klauncher.so
+lib/kstephighcolor.la
+lib/kstephighcolor.so
+lib/kstepstyle.la
+lib/kstepstyle.so
+lib/libDCOP.la
+lib/libDCOP.so.4
+lib/libartsc.la
+lib/libartsc.so.0
+lib/libartscbackend.la
+lib/libartscbackend.so.0
+lib/libartsdsp.la
+lib/libartsdsp.so.0
+lib/libartsflow.la
+lib/libartsflow.so.0
+lib/libartsflow_idl.la
+lib/libartsflow_idl.so.0
 lib/libkab.la
-lib/libkdecore.so
-lib/libkdecore.so.%%LIBVER%%
+lib/libkab.so.4
 lib/libkdecore.la
-lib/libkdeui.so
-lib/libkdeui.so.%%LIBVER%%
+lib/libkdecore.so.4
+lib/libkdesu.la
+lib/libkdesu.so.4
 lib/libkdeui.la
-lib/libkfile.so
-lib/libkfile.so.%%LIBVER%%
+lib/libkdeui.so.4
 lib/libkfile.la
-lib/libkfm.so
-lib/libkfm.so.%%LIBVER%%
-lib/libkfm.la
-lib/libkhtmlw.so
-lib/libkhtmlw.so.%%LIBVER%%
-lib/libkhtmlw.la
-lib/libkimgio.so
-lib/libkimgio.so.%%LIBVER%%
-lib/libkimgio.la
-lib/libkspell.so
-lib/libkspell.so.%%LIBVER%%
+lib/libkfile.so.4
+lib/libkformula.la
+lib/libkformula.so.4
+lib/libkhtml.la
+lib/libkhtml.so.4
+lib/libkio.la
+lib/libkio.so.4
+lib/libkjava.la
+lib/libkjava.so.1
+lib/libkjs.la
+lib/libkjs.so.4
+lib/libkmedia2_idl.la
+lib/libkmedia2_idl.so.0
+lib/libkmid.la
+lib/libkmid.so.4
+lib/libkparts.la
+lib/libkparts.so.4
 lib/libkspell.la
-lib/libmediatool.so
-lib/libmediatool.so.%%LIBVER%%
-lib/libmediatool.la
-share/apps/kab/pics/background_1.jpg
-share/apps/kab/pics/dialog_background.jpg
-share/apps/kde/pics/arrow_down.xbm
-share/apps/kde/pics/arrow_left.xbm
-share/apps/kde/pics/arrow_right.xbm
-share/apps/kde/pics/arrow_up.xbm
-share/apps/kde/pics/error.xpm
-share/apps/kde/pics/exclamation.xpm
-share/apps/kde/pics/info.xpm
-share/apps/kde/pics/question.xpm
-share/apps/kde/pics/stopsign.xpm
-share/apps/khtmlw/pics/khtmlw_dnd.xpm
+lib/libkspell.so.4
+lib/libksycoca.la
+lib/libksycoca.so.4
+lib/libkwrite.la
+lib/libkwrite.so.4
+lib/libmcop.la
+lib/libmcop.so.0
+lib/libqtmcop.la
+lib/libqtmcop.so.0
+lib/libsoundserver_idl.la
+lib/libsoundserver_idl.so.0
+lib/libx11globalcomm.la
+lib/libx11globalcomm.so.0
+share/apps/kdeui/pics/aboutkde.png
+share/apps/kdeui/pics/keys.png
+share/apps/khtml/css/html4.css
+share/apps/khtml/khtml.rc
+share/apps/khtml/khtml_popupmenu.rc
+share/apps/kjava/kjava-classes.zip
+share/apps/ksgmltools/kde-rdbhier2.elements
+share/apps/ksgmltools/kde-rdbpool.elements
+share/apps/ksgmltools/kde.cat
+share/apps/ksgmltools/kde.dtd
+share/apps/ksgmltools/stylesheets/kde-anchor.dsl
+share/apps/ksgmltools/stylesheets/kde-faq.dsl
+share/apps/ksgmltools/stylesheets/kde-img.dsl
+share/apps/ksgmltools/stylesheets/kde-l10n.dsl
+share/apps/ksgmltools/stylesheets/kde-l10n.entities
+share/apps/ksgmltools/stylesheets/kde-l1ca.dsl
+share/apps/ksgmltools/stylesheets/kde-l1ca.ent
+share/apps/ksgmltools/stylesheets/kde-l1cs.dsl
+share/apps/ksgmltools/stylesheets/kde-l1cs.ent
+share/apps/ksgmltools/stylesheets/kde-l1da.dsl
+share/apps/ksgmltools/stylesheets/kde-l1da.ent
+share/apps/ksgmltools/stylesheets/kde-l1de.dsl
+share/apps/ksgmltools/stylesheets/kde-l1de.ent
+share/apps/ksgmltools/stylesheets/kde-l1el.dsl
+share/apps/ksgmltools/stylesheets/kde-l1el.ent
+share/apps/ksgmltools/stylesheets/kde-l1en.dsl
+share/apps/ksgmltools/stylesheets/kde-l1en.ent
+share/apps/ksgmltools/stylesheets/kde-l1es.dsl
+share/apps/ksgmltools/stylesheets/kde-l1es.ent
+share/apps/ksgmltools/stylesheets/kde-l1et.dsl
+share/apps/ksgmltools/stylesheets/kde-l1et.ent
+share/apps/ksgmltools/stylesheets/kde-l1fi.dsl
+share/apps/ksgmltools/stylesheets/kde-l1fi.ent
+share/apps/ksgmltools/stylesheets/kde-l1fr.dsl
+share/apps/ksgmltools/stylesheets/kde-l1fr.ent
+share/apps/ksgmltools/stylesheets/kde-l1it.dsl
+share/apps/ksgmltools/stylesheets/kde-l1it.ent
+share/apps/ksgmltools/stylesheets/kde-l1ja.dsl
+share/apps/ksgmltools/stylesheets/kde-l1ja.ent
+share/apps/ksgmltools/stylesheets/kde-l1nl.dsl
+share/apps/ksgmltools/stylesheets/kde-l1nl.ent
+share/apps/ksgmltools/stylesheets/kde-l1no.dsl
+share/apps/ksgmltools/stylesheets/kde-l1no.ent
+share/apps/ksgmltools/stylesheets/kde-l1pl.dsl
+share/apps/ksgmltools/stylesheets/kde-l1pl.ent
+share/apps/ksgmltools/stylesheets/kde-l1pt-BR.dsl
+share/apps/ksgmltools/stylesheets/kde-l1pt-BR.ent
+share/apps/ksgmltools/stylesheets/kde-l1pt.dsl
+share/apps/ksgmltools/stylesheets/kde-l1pt.ent
+share/apps/ksgmltools/stylesheets/kde-l1ro.dsl
+share/apps/ksgmltools/stylesheets/kde-l1ro.ent
+share/apps/ksgmltools/stylesheets/kde-l1ru.dsl
+share/apps/ksgmltools/stylesheets/kde-l1ru.ent
+share/apps/ksgmltools/stylesheets/kde-l1sk.dsl
+share/apps/ksgmltools/stylesheets/kde-l1sk.ent
+share/apps/ksgmltools/stylesheets/kde-l1sl.dsl
+share/apps/ksgmltools/stylesheets/kde-l1sl.ent
+share/apps/ksgmltools/stylesheets/kde-l1sr.dsl
+share/apps/ksgmltools/stylesheets/kde-l1sr.ent
+share/apps/ksgmltools/stylesheets/kde-l1sv.dsl
+share/apps/ksgmltools/stylesheets/kde-l1sv.ent
+share/apps/ksgmltools/stylesheets/kde-l1zh-CN.dsl
+share/apps/ksgmltools/stylesheets/kde-l1zh-CN.ent
+share/apps/ksgmltools/stylesheets/kde-navig.dsl
+share/apps/ksgmltools/stylesheets/kde.css
+share/apps/ksgmltools/stylesheets/kde.dsl
+share/apps/kstyle/pixmaps/aquaice.png
+share/apps/kstyle/pixmaps/black_combo.png
+share/apps/kstyle/pixmaps/blkmarble.png
+share/apps/kstyle/pixmaps/darkgraytexture.png
+share/apps/kstyle/pixmaps/darkslider.png
+share/apps/kstyle/pixmaps/elec_combo.png
+share/apps/kstyle/pixmaps/elec_combodown.png
+share/apps/kstyle/pixmaps/elec_groove.png
+share/apps/kstyle/pixmaps/elec_hdl.png
+share/apps/kstyle/pixmaps/elec_horizhdl.png
+share/apps/kstyle/pixmaps/elec_off.png
+share/apps/kstyle/pixmaps/elec_on.png
+share/apps/kstyle/pixmaps/elec_slider.png
+share/apps/kstyle/pixmaps/gold_checked.png
+share/apps/kstyle/pixmaps/gold_unchecked.png
+share/apps/kstyle/pixmaps/graybutton.png
+share/apps/kstyle/pixmaps/grayice.png
+share/apps/kstyle/pixmaps/graymarble.png
+share/apps/kstyle/pixmaps/graymarble_dark.png
+share/apps/kstyle/pixmaps/graytexture.png
+share/apps/kstyle/pixmaps/ice.png
+share/apps/kstyle/pixmaps/marble2.png
+share/apps/kstyle/pixmaps/marble3.png
+share/apps/kstyle/pixmaps/marble_checked.png
+share/apps/kstyle/pixmaps/marble_combo.png
+share/apps/kstyle/pixmaps/marble_off.png
+share/apps/kstyle/pixmaps/marble_on.png
+share/apps/kstyle/pixmaps/marble_unchecked.png
+share/apps/kstyle/pixmaps/minigray.png
+share/apps/kstyle/pixmaps/pinkmarble.png
+share/apps/kstyle/pixmaps/red_checkmark.png
+share/apps/kstyle/pixmaps/sbdeco_brown.png
+share/apps/kstyle/pixmaps/sbdeco_elec.png
+share/apps/kstyle/pixmaps/sbdeco_elec_small.png
+share/apps/kstyle/pixmaps/sbdeco_elec_smalldown.png
+share/apps/kstyle/pixmaps/sbdeco_elecdown.png
+share/apps/kstyle/pixmaps/sbdeco_gray.png
+share/apps/kstyle/pixmaps/slate.png
+share/apps/kstyle/pixmaps/switch_off.png
+share/apps/kstyle/pixmaps/switch_on.png
+share/apps/kstyle/pixmaps/sysarrow_down.png
+share/apps/kstyle/pixmaps/sysarrow_idown.png
+share/apps/kstyle/pixmaps/sysarrow_ileft.png
+share/apps/kstyle/pixmaps/sysarrow_iright.png
+share/apps/kstyle/pixmaps/sysarrow_iup.png
+share/apps/kstyle/pixmaps/sysarrow_left.png
+share/apps/kstyle/pixmaps/sysarrow_right.png
+share/apps/kstyle/pixmaps/sysarrow_sdown.png
+share/apps/kstyle/pixmaps/sysarrow_sleft.png
+share/apps/kstyle/pixmaps/sysarrow_sright.png
+share/apps/kstyle/pixmaps/sysarrow_sup.png
+share/apps/kstyle/pixmaps/sysarrow_up.png
+share/apps/kstyle/pixmaps/sysborder.png
+share/apps/kstyle/pixmaps/sysborderdown.png
+share/apps/kstyle/pixmaps/whitemarble.png
+share/apps/kstyle/pixmaps/woodmenu.png
+share/apps/kstyle/pixmaps/yellow_off.png
+share/apps/kstyle/pixmaps/yellow_on.png
+share/apps/kstyle/themes/b3.themerc
+share/apps/kstyle/themes/coldions.themerc
+share/apps/kstyle/themes/default.themerc
+share/apps/kstyle/themes/highcolor.themerc
+share/apps/kstyle/themes/kstep.themerc
+share/apps/kstyle/themes/marble.themerc
+share/apps/kstyle/themes/qtcde.themerc
+share/apps/kstyle/themes/qtmotif.themerc
+share/apps/kstyle/themes/qtplatinum.themerc
+share/apps/kstyle/themes/qtwindows.themerc
+share/apps/kstyle/themes/system.themerc
+share/apps/kstyle/themes/systemalt.themerc
+share/apps/kstyle/themes/systemtest.themerc
+share/apps/kwrite/kwrite.rc
+share/apps/kwrite/kwrite_browser.rc
 share/config/charsets
+share/config/colors/40 Colors
+share/config/colors/Royal
+share/config/colors/Web
+share/config/eventsrc
 share/config/kdebug.areas
-share/doc/HTML/en/kdelibs/kdebug.html
-share/doc/HTML/en/kfiledialog/back.gif
-share/doc/HTML/en/kfiledialog/bottom.gif
-share/doc/HTML/en/kfiledialog/exec.gif
-share/doc/HTML/en/kfiledialog/flag.gif
-share/doc/HTML/en/kfiledialog/forward.gif
-share/doc/HTML/en/kfiledialog/home.gif
-share/doc/HTML/en/kfiledialog/idea.gif
-share/doc/HTML/en/kfiledialog/index.html
-share/doc/HTML/en/kfiledialog/reload.gif
-share/doc/HTML/en/kfiledialog/toolbar-h.gif
-share/doc/HTML/en/kfiledialog/toolbar.gif
-share/doc/HTML/en/kfiledialog/up.gif
-share/doc/HTML/en/kfiledialog/viewmag.gif
-share/doc/HTML/en/kspell/ksconfig.html
-share/doc/HTML/en/kspell/ksdialog.html
-share/doc/HTML/en/kspell/kspell.html
-share/locale/br/LC_MESSAGES/kde.mo
-share/locale/br/charset
-share/locale/ca/LC_MESSAGES/kde.mo
-share/locale/ca/charset
-share/locale/cs/LC_MESSAGES/kde.mo
-share/locale/cs/charset
-share/locale/da/LC_MESSAGES/kde.mo
-share/locale/da/charset
-share/locale/de/LC_MESSAGES/kde.mo
-share/locale/de/charset
-share/locale/el/LC_MESSAGES/kde.mo
-share/locale/en_UK/LC_MESSAGES/kde.mo
-share/locale/eo/LC_MESSAGES/kde.mo
-share/locale/eo/charset
-share/locale/es/LC_MESSAGES/kde.mo
-share/locale/es/charset
-share/locale/et/LC_MESSAGES/kde.mo
-share/locale/et/charset
-share/locale/fi/LC_MESSAGES/kde.mo
-share/locale/fi/charset
-share/locale/fr/LC_MESSAGES/kde.mo
-share/locale/fr/charset
-share/locale/he/LC_MESSAGES/kde.mo
-share/locale/he/charset
-share/locale/hr/LC_MESSAGES/kde.mo
-share/locale/hr/charset
-share/locale/hs/charset
-share/locale/hu/LC_MESSAGES/kde.mo
-share/locale/hu/charset
-share/locale/is/LC_MESSAGES/kde.mo
-share/locale/is/charset
-share/locale/it/LC_MESSAGES/kde.mo
-share/locale/it/charset
-share/locale/ja/LC_MESSAGES/kde.mo
-share/locale/ko/LC_MESSAGES/kde.mo
-share/locale/mk/LC_MESSAGES/kde.mo
-share/locale/nl/LC_MESSAGES/kde.mo
-share/locale/no/LC_MESSAGES/kde.mo
-share/locale/no/charset
-share/locale/pl/LC_MESSAGES/kde.mo
-share/locale/pl/charset
-share/locale/pt/LC_MESSAGES/kde.mo
-share/locale/pt/charset
-share/locale/pt_BR/LC_MESSAGES/kde.mo
-share/locale/pt_BR/charset
-share/locale/ro/LC_MESSAGES/kde.mo
-share/locale/ro/charset
-share/locale/ru/LC_MESSAGES/kde.mo
-share/locale/ru/charset
-share/locale/sk/LC_MESSAGES/kde.mo
-share/locale/sk/charset
-share/locale/sl/LC_MESSAGES/kde.mo
-share/locale/sl/charset
-share/locale/sv/LC_MESSAGES/kde.mo
-share/locale/sv/charset
-share/locale/th/LC_MESSAGES/kde.mo
-share/locale/tr/LC_MESSAGES/kde.mo
-share/locale/zh_CN.GB2312/LC_MESSAGES/kde.mo
-share/locale/zh_TW.Big5/LC_MESSAGES/kde.mo
-share/toolbar/add_point.xpm
-share/toolbar/airbrush.xpm
-share/toolbar/back.xpm
-share/toolbar/blend.xpm
-share/toolbar/bottom.xpm
-share/toolbar/centrejust.xpm
-share/toolbar/circle_select.xpm
-share/toolbar/configure.xpm
-share/toolbar/contents.xpm
-share/toolbar/context_help.xpm
-share/toolbar/delete.xpm
-share/toolbar/down.xpm
-share/toolbar/droplet.xpm
-share/toolbar/dropper.xpm
-share/toolbar/edit_point.xpm
-share/toolbar/editcopy.xpm
-share/toolbar/editcut.xpm
-share/toolbar/editpaste.xpm
-share/toolbar/eraser.xpm
-share/toolbar/exclamation.xpm
-share/toolbar/exit.xpm
-share/toolbar/filefloppy.xpm
-share/toolbar/filemail.xpm
-share/toolbar/filenew.xpm
-share/toolbar/filenew2.xpm
-share/toolbar/fileopen.xpm
-share/toolbar/fileprint.xpm
-share/toolbar/find.xpm
-share/toolbar/finish.xpm
-share/toolbar/flag.xpm
-share/toolbar/forward.xpm
-share/toolbar/help.xpm
-share/toolbar/home.xpm
-share/toolbar/idea.xpm
-share/toolbar/knife.xpm
-share/toolbar/lassoo.xpm
-share/toolbar/leftjust.xpm
-share/toolbar/lock.xpm
-share/toolbar/move.xpm
-share/toolbar/next.xpm
-share/toolbar/openbook.xpm
-share/toolbar/page.xpm
-share/toolbar/paintbrush.xpm
-share/toolbar/paintbucket.xpm
-share/toolbar/pencil.xpm
-share/toolbar/prev.xpm
-share/toolbar/print_preview.xpm
-share/toolbar/rectangle_select.xpm
-share/toolbar/redo.xpm
-share/toolbar/reload.xpm
-share/toolbar/rightjust.xpm
-share/toolbar/search.xpm
-share/toolbar/send.xpm
-share/toolbar/smart_select.xpm
-share/toolbar/spellcheck.xpm
-share/toolbar/stamp.xpm
-share/toolbar/start.xpm
-share/toolbar/stop.xpm
-share/toolbar/text.xpm
-share/toolbar/tick.xpm
-share/toolbar/top.xpm
-share/toolbar/transform.xpm
-share/toolbar/undo.xpm
-share/toolbar/up.xpm
-share/toolbar/viewmag+.xpm
-share/toolbar/viewmag-.xpm
-share/toolbar/viewmag.xpm
-share/toolbar/viewzoom.xpm
+share/config/kdebugrc
+share/config/protocols/file.desktop
+share/config/protocols/ftp.desktop
+share/config/protocols/http.desktop
+share/config/protocols/https.desktop
+share/config/ui/ui_standards.rc
+share/doc/HTML/en/common/caution.png
+share/doc/HTML/en/common/fdl-licence
+share/doc/HTML/en/common/fdl-licence.html
+share/doc/HTML/en/common/fdl-notice
+share/doc/HTML/en/common/fdl-notice.docbook
+share/doc/HTML/en/common/fdl-notice.entities
+share/doc/HTML/en/common/gpl-licence
+share/doc/HTML/en/common/gpl-licence.html
+share/doc/HTML/en/common/gpl-notice
+share/doc/HTML/en/common/gpl-notice.docbook
+share/doc/HTML/en/common/home.png
+share/doc/HTML/en/common/important.png
+share/doc/HTML/en/common/kde-common.css
+share/doc/HTML/en/common/kde-default.css
+share/doc/HTML/en/common/lgpl-licence
+share/doc/HTML/en/common/lgpl-licence.html
+share/doc/HTML/en/common/lgpl-notice
+share/doc/HTML/en/common/lgpl-notice.docbook
+share/doc/HTML/en/common/mieterra-artistic-license
+share/doc/HTML/en/common/next.png
+share/doc/HTML/en/common/note.png
+share/doc/HTML/en/common/prev.png
+share/doc/HTML/en/common/tip.png
+share/doc/HTML/en/common/toc-blank.png
+share/doc/HTML/en/common/toc-minus.png
+share/doc/HTML/en/common/toc-plus.png
+share/doc/HTML/en/common/up.png
+share/doc/HTML/en/common/warning.png
+share/doc/HTML/en/common/xml.dcl
+share/doc/HTML/en/kdelibs/index.html
+share/doc/HTML/en/kspell/.anchors
+share/doc/HTML/en/kspell/configuration-dialog-.html
+share/doc/HTML/en/kspell/contact-information.html
+share/doc/HTML/en/kspell/encodings.html
+share/doc/HTML/en/kspell/index.cvlog
+share/doc/HTML/en/kspell/index.docbook
+share/doc/HTML/en/kspell/index.html
+share/doc/HTML/en/kspell/misspelled-word-dialog.html
+share/doc/HTML/en/kspell/other-functions.html
+share/doc/HTML/en/kspell/other.html
+share/doc/HTML/en/kspell/spell-checking-client.html
+share/icons/hicolor/22x22/actions/1leftarrow.png
+share/icons/hicolor/22x22/actions/1rightarrow.png
+share/icons/hicolor/22x22/actions/2leftarrow.png
+share/icons/hicolor/22x22/actions/2rightarrow.png
+share/icons/hicolor/22x22/actions/abs.png
+share/icons/hicolor/22x22/actions/add_point.png
+share/icons/hicolor/22x22/actions/airbrush.png
+share/icons/hicolor/22x22/actions/back.png
+share/icons/hicolor/22x22/actions/blend.png
+share/icons/hicolor/22x22/actions/bottom.png
+share/icons/hicolor/22x22/actions/brace.png
+share/icons/hicolor/22x22/actions/brackets.png
+share/icons/hicolor/22x22/actions/centrejust.png
+share/icons/hicolor/22x22/actions/colorpicker.png
+share/icons/hicolor/22x22/actions/configure.png
+share/icons/hicolor/22x22/actions/contexthelp.png
+share/icons/hicolor/22x22/actions/contiguous.png
+share/icons/hicolor/22x22/actions/crop.png
+share/icons/hicolor/22x22/actions/down.png
+share/icons/hicolor/22x22/actions/editcopy.png
+share/icons/hicolor/22x22/actions/editcut.png
+share/icons/hicolor/22x22/actions/editpaste.png
+share/icons/hicolor/22x22/actions/edittrash.png
+share/icons/hicolor/22x22/actions/elliptical.png
+share/icons/hicolor/22x22/actions/eraser.png
+share/icons/hicolor/22x22/actions/filenew.png
+share/icons/hicolor/22x22/actions/fileopen.png
+share/icons/hicolor/22x22/actions/fileprint.png
+share/icons/hicolor/22x22/actions/filesave.png
+share/icons/hicolor/22x22/actions/fill.png
+share/icons/hicolor/22x22/actions/finish.png
+share/icons/hicolor/22x22/actions/forward.png
+share/icons/hicolor/22x22/actions/frac.png
+share/icons/hicolor/22x22/actions/gohome.png
+share/icons/hicolor/22x22/actions/handdrawn.png
+share/icons/hicolor/22x22/actions/int.png
+share/icons/hicolor/22x22/actions/kde/0001.png
+share/icons/hicolor/22x22/actions/kde/0002.png
+share/icons/hicolor/22x22/actions/kde/0003.png
+share/icons/hicolor/22x22/actions/kde/0004.png
+share/icons/hicolor/22x22/actions/kde/0005.png
+share/icons/hicolor/22x22/actions/kde/0006.png
+share/icons/hicolor/22x22/actions/kde/0007.png
+share/icons/hicolor/22x22/actions/kde/0008.png
+share/icons/hicolor/22x22/actions/kde/0009.png
+share/icons/hicolor/22x22/actions/kde/0010.png
+share/icons/hicolor/22x22/actions/kde/0011.png
+share/icons/hicolor/22x22/actions/kde/0012.png
+share/icons/hicolor/22x22/actions/kde/0013.png
+share/icons/hicolor/22x22/actions/kde/0014.png
+share/icons/hicolor/22x22/actions/kde/0015.png
+share/icons/hicolor/22x22/actions/kde/0016.png
+share/icons/hicolor/22x22/actions/kde/0017.png
+share/icons/hicolor/22x22/actions/kde/0018.png
+share/icons/hicolor/22x22/actions/kde/0019.png
+share/icons/hicolor/22x22/actions/kde/0020.png
+share/icons/hicolor/22x22/actions/kde/0021.png
+share/icons/hicolor/22x22/actions/kde/0022.png
+share/icons/hicolor/22x22/actions/kde/0023.png
+share/icons/hicolor/22x22/actions/kde/0024.png
+share/icons/hicolor/22x22/actions/kde/0025.png
+share/icons/hicolor/22x22/actions/kde/0026.png
+share/icons/hicolor/22x22/actions/kde/0027.png
+share/icons/hicolor/22x22/actions/kde/0028.png
+share/icons/hicolor/22x22/actions/kde/0029.png
+share/icons/hicolor/22x22/actions/kde/0030.png
+share/icons/hicolor/22x22/actions/kde/0031.png
+share/icons/hicolor/22x22/actions/kde/0032.png
+share/icons/hicolor/22x22/actions/kde/0033.png
+share/icons/hicolor/22x22/actions/kde/0034.png
+share/icons/hicolor/22x22/actions/kde/0035.png
+share/icons/hicolor/22x22/actions/kde/0036.png
+share/icons/hicolor/22x22/actions/kde/0037.png
+share/icons/hicolor/22x22/actions/kde/0038.png
+share/icons/hicolor/22x22/actions/kde/0039.png
+share/icons/hicolor/22x22/actions/kde/0040.png
+share/icons/hicolor/22x22/actions/kde/0041.png
+share/icons/hicolor/22x22/actions/kde/0042.png
+share/icons/hicolor/22x22/actions/kde/0043.png
+share/icons/hicolor/22x22/actions/kde/0044.png
+share/icons/hicolor/22x22/actions/kde/0045.png
+share/icons/hicolor/22x22/actions/kde/0046.png
+share/icons/hicolor/22x22/actions/kde/0047.png
+share/icons/hicolor/22x22/actions/kde/0048.png
+share/icons/hicolor/22x22/actions/kde/0049.png
+share/icons/hicolor/22x22/actions/kde/0050.png
+share/icons/hicolor/22x22/actions/lasso.png
+share/icons/hicolor/22x22/actions/leftjust.png
+share/icons/hicolor/22x22/actions/lsub.png
+share/icons/hicolor/22x22/actions/lsup.png
+share/icons/hicolor/22x22/actions/matrix.png
+share/icons/hicolor/22x22/actions/move.png
+share/icons/hicolor/22x22/actions/openterm.png
+share/icons/hicolor/22x22/actions/paintbrush.png
+share/icons/hicolor/22x22/actions/paren.png
+share/icons/hicolor/22x22/actions/pencil.png
+share/icons/hicolor/22x22/actions/previous.png
+share/icons/hicolor/22x22/actions/prod.png
+share/icons/hicolor/22x22/actions/rectangular.png
+share/icons/hicolor/22x22/actions/redo.png
+share/icons/hicolor/22x22/actions/reload.png
+share/icons/hicolor/22x22/actions/rightjust.png
+share/icons/hicolor/22x22/actions/rsub.png
+share/icons/hicolor/22x22/actions/rsup.png
+share/icons/hicolor/22x22/actions/run.png
+share/icons/hicolor/22x22/actions/smart_select.png
+share/icons/hicolor/22x22/actions/spellcheck.png
+share/icons/hicolor/22x22/actions/sqrt.png
+share/icons/hicolor/22x22/actions/start.png
+share/icons/hicolor/22x22/actions/stop.png
+share/icons/hicolor/22x22/actions/sum.png
+share/icons/hicolor/22x22/actions/text.png
+share/icons/hicolor/22x22/actions/top.png
+share/icons/hicolor/22x22/actions/undo.png
+share/icons/hicolor/22x22/actions/up.png
+share/icons/hicolor/22x22/actions/viewmag+.png
+share/icons/hicolor/22x22/actions/viewmag-.png
+share/icons/hicolor/22x22/actions/viewmag.png
+share/icons/hicolor/22x22/actions/window_nofullscreen.png
+share/icons/hicolor/32x32/actions/abs.png
+share/icons/hicolor/32x32/actions/back.png
+share/icons/hicolor/32x32/actions/blend.png
+share/icons/hicolor/32x32/actions/bottom.png
+share/icons/hicolor/32x32/actions/brace.png
+share/icons/hicolor/32x32/actions/brackets.png
+share/icons/hicolor/32x32/actions/centrejust.png
+share/icons/hicolor/32x32/actions/colors.png
+share/icons/hicolor/32x32/actions/contexthelp.png
+share/icons/hicolor/32x32/actions/down.png
+share/icons/hicolor/32x32/actions/editcopy.png
+share/icons/hicolor/32x32/actions/editcut.png
+share/icons/hicolor/32x32/actions/editdelete.png
+share/icons/hicolor/32x32/actions/editpaste.png
+share/icons/hicolor/32x32/actions/filenew.png
+share/icons/hicolor/32x32/actions/fileopen.png
+share/icons/hicolor/32x32/actions/fileprint.png
+share/icons/hicolor/32x32/actions/files.png
+share/icons/hicolor/32x32/actions/filesave.png
+share/icons/hicolor/32x32/actions/finish.png
+share/icons/hicolor/32x32/actions/fonts.png
+share/icons/hicolor/32x32/actions/forward.png
+share/icons/hicolor/32x32/actions/frac.png
+share/icons/hicolor/32x32/actions/gohome.png
+share/icons/hicolor/32x32/actions/goto.png
+share/icons/hicolor/32x32/actions/help.png
+share/icons/hicolor/32x32/actions/int.png
+share/icons/hicolor/32x32/actions/kde/0001.png
+share/icons/hicolor/32x32/actions/kde/0002.png
+share/icons/hicolor/32x32/actions/kde/0003.png
+share/icons/hicolor/32x32/actions/kde/0004.png
+share/icons/hicolor/32x32/actions/kde/0005.png
+share/icons/hicolor/32x32/actions/kde/0006.png
+share/icons/hicolor/32x32/actions/kde/0007.png
+share/icons/hicolor/32x32/actions/kde/0008.png
+share/icons/hicolor/32x32/actions/kde/0009.png
+share/icons/hicolor/32x32/actions/kde/0010.png
+share/icons/hicolor/32x32/actions/kde/0011.png
+share/icons/hicolor/32x32/actions/kde/0012.png
+share/icons/hicolor/32x32/actions/kde/0013.png
+share/icons/hicolor/32x32/actions/kde/0014.png
+share/icons/hicolor/32x32/actions/kde/0015.png
+share/icons/hicolor/32x32/actions/kde/0016.png
+share/icons/hicolor/32x32/actions/kde/0017.png
+share/icons/hicolor/32x32/actions/kde/0018.png
+share/icons/hicolor/32x32/actions/kde/0019.png
+share/icons/hicolor/32x32/actions/kde/0020.png
+share/icons/hicolor/32x32/actions/kde/0021.png
+share/icons/hicolor/32x32/actions/kde/0022.png
+share/icons/hicolor/32x32/actions/kde/0023.png
+share/icons/hicolor/32x32/actions/kde/0024.png
+share/icons/hicolor/32x32/actions/kde/0025.png
+share/icons/hicolor/32x32/actions/kde/0026.png
+share/icons/hicolor/32x32/actions/kde/0027.png
+share/icons/hicolor/32x32/actions/kde/0028.png
+share/icons/hicolor/32x32/actions/kde/0029.png
+share/icons/hicolor/32x32/actions/kde/0030.png
+share/icons/hicolor/32x32/actions/kde/0031.png
+share/icons/hicolor/32x32/actions/kde/0032.png
+share/icons/hicolor/32x32/actions/kde/0033.png
+share/icons/hicolor/32x32/actions/kde/0034.png
+share/icons/hicolor/32x32/actions/kde/0035.png
+share/icons/hicolor/32x32/actions/kde/0036.png
+share/icons/hicolor/32x32/actions/kde/0037.png
+share/icons/hicolor/32x32/actions/kde/0038.png
+share/icons/hicolor/32x32/actions/kde/0039.png
+share/icons/hicolor/32x32/actions/kde/0040.png
+share/icons/hicolor/32x32/actions/kde/0041.png
+share/icons/hicolor/32x32/actions/kde/0042.png
+share/icons/hicolor/32x32/actions/kde/0043.png
+share/icons/hicolor/32x32/actions/kde/0044.png
+share/icons/hicolor/32x32/actions/kde/0045.png
+share/icons/hicolor/32x32/actions/kde/0046.png
+share/icons/hicolor/32x32/actions/kde/0047.png
+share/icons/hicolor/32x32/actions/kde/0048.png
+share/icons/hicolor/32x32/actions/kde/0049.png
+share/icons/hicolor/32x32/actions/kde/0050.png
+share/icons/hicolor/32x32/actions/leftjust.png
+share/icons/hicolor/32x32/actions/lsub.png
+share/icons/hicolor/32x32/actions/lsup.png
+share/icons/hicolor/32x32/actions/matrix.png
+share/icons/hicolor/32x32/actions/misc.png
+share/icons/hicolor/32x32/actions/mouse.png
+share/icons/hicolor/32x32/actions/next.png
+share/icons/hicolor/32x32/actions/openterm.png
+share/icons/hicolor/32x32/actions/paren.png
+share/icons/hicolor/32x32/actions/previous.png
+share/icons/hicolor/32x32/actions/prod.png
+share/icons/hicolor/32x32/actions/redo.png
+share/icons/hicolor/32x32/actions/reload.png
+share/icons/hicolor/32x32/actions/rightjust.png
+share/icons/hicolor/32x32/actions/rotate.png
+share/icons/hicolor/32x32/actions/rsub.png
+share/icons/hicolor/32x32/actions/rsup.png
+share/icons/hicolor/32x32/actions/run.png
+share/icons/hicolor/32x32/actions/spellcheck.png
+share/icons/hicolor/32x32/actions/sqrt.png
+share/icons/hicolor/32x32/actions/start.png
+share/icons/hicolor/32x32/actions/stop.png
+share/icons/hicolor/32x32/actions/sum.png
+share/icons/hicolor/32x32/actions/top.png
+share/icons/hicolor/32x32/actions/undo.png
+share/icons/hicolor/32x32/actions/up.png
+share/icons/hicolor/32x32/actions/viewmag+.png
+share/icons/hicolor/32x32/actions/viewmag-.png
+share/icons/hicolor/32x32/actions/viewmag.png
+share/icons/hicolor/32x32/actions/window_nofullscreen.png
+share/icons/hicolor/32x32/filesystems/desktop.png
+share/icons/hicolor/32x32/filesystems/exec.png
+share/icons/hicolor/32x32/filesystems/file_locked.png
+share/icons/hicolor/32x32/filesystems/folder.png
+share/icons/hicolor/32x32/filesystems/folder_blue.png
+share/icons/hicolor/32x32/filesystems/folder_cyan.png
+share/icons/hicolor/32x32/filesystems/folder_green.png
+share/icons/hicolor/32x32/filesystems/folder_home.png
+share/icons/hicolor/32x32/filesystems/folder_locked.png
+share/icons/hicolor/32x32/filesystems/folder_open.png
+share/icons/hicolor/32x32/filesystems/folder_red.png
+share/icons/hicolor/32x32/filesystems/folder_yellow.png
+share/icons/hicolor/32x32/filesystems/ftp.png
+share/icons/hicolor/32x32/filesystems/link.png
+share/icons/hicolor/32x32/filesystems/pipe.png
+share/icons/hicolor/32x32/filesystems/shredder.png
+share/icons/hicolor/32x32/filesystems/socket.png
+share/icons/hicolor/32x32/filesystems/trashcan_empty.png
+share/icons/hicolor/32x32/filesystems/trashcan_full.png
+share/icons/hicolor/32x32/filesystems/www.png
+share/icons/hicolor/32x32/mimetypes/applix.png
+share/icons/hicolor/32x32/mimetypes/binary.png
+share/icons/hicolor/32x32/mimetypes/binary2.png
+share/icons/hicolor/32x32/mimetypes/blockdevice.png
+share/icons/hicolor/32x32/mimetypes/c_src.png
+share/icons/hicolor/32x32/mimetypes/chardevice.png
+share/icons/hicolor/32x32/mimetypes/core.png
+share/icons/hicolor/32x32/mimetypes/document.png
+share/icons/hicolor/32x32/mimetypes/dvi.png
+share/icons/hicolor/32x32/mimetypes/f_src.png
+share/icons/hicolor/32x32/mimetypes/font.png
+share/icons/hicolor/32x32/mimetypes/gf.png
+share/icons/hicolor/32x32/mimetypes/h_src.png
+share/icons/hicolor/32x32/mimetypes/html.png
+share/icons/hicolor/32x32/mimetypes/image.png
+share/icons/hicolor/32x32/mimetypes/info.png
+share/icons/hicolor/32x32/mimetypes/java_src.png
+share/icons/hicolor/32x32/mimetypes/kmultiple.png
+share/icons/hicolor/32x32/mimetypes/l_src.png
+share/icons/hicolor/32x32/mimetypes/log.png
+share/icons/hicolor/32x32/mimetypes/make.png
+share/icons/hicolor/32x32/mimetypes/man.png
+share/icons/hicolor/32x32/mimetypes/metafont.png
+share/icons/hicolor/32x32/mimetypes/midi.png
+share/icons/hicolor/32x32/mimetypes/mime_empty.png
+share/icons/hicolor/32x32/mimetypes/misc.png
+share/icons/hicolor/32x32/mimetypes/moc_src.png
+share/icons/hicolor/32x32/mimetypes/o_src.png
+share/icons/hicolor/32x32/mimetypes/p_src.png
+share/icons/hicolor/32x32/mimetypes/pdf.png
+share/icons/hicolor/32x32/mimetypes/pk.png
+share/icons/hicolor/32x32/mimetypes/postscript.png
+share/icons/hicolor/32x32/mimetypes/readme.png
+share/icons/hicolor/32x32/mimetypes/recycled.png
+share/icons/hicolor/32x32/mimetypes/resource.png
+share/icons/hicolor/32x32/mimetypes/s_src.png
+share/icons/hicolor/32x32/mimetypes/sound.png
+share/icons/hicolor/32x32/mimetypes/tex.png
+share/icons/hicolor/32x32/mimetypes/tgz.png
+share/icons/hicolor/32x32/mimetypes/txt.png
+share/icons/hicolor/32x32/mimetypes/unknown.png
+share/icons/hicolor/32x32/mimetypes/vcalendar.png
+share/icons/hicolor/32x32/mimetypes/vcard.png
+share/icons/hicolor/32x32/mimetypes/video.png
+share/icons/hicolor/32x32/mimetypes/y_src.png
+share/icons/hicolor/48x48/actions/kde/0001.png
+share/icons/hicolor/48x48/actions/kde/0002.png
+share/icons/hicolor/48x48/actions/kde/0003.png
+share/icons/hicolor/48x48/actions/kde/0004.png
+share/icons/hicolor/48x48/actions/kde/0005.png
+share/icons/hicolor/48x48/actions/kde/0006.png
+share/icons/hicolor/48x48/actions/kde/0007.png
+share/icons/hicolor/48x48/actions/kde/0008.png
+share/icons/hicolor/48x48/actions/kde/0009.png
+share/icons/hicolor/48x48/actions/kde/0010.png
+share/icons/hicolor/48x48/actions/kde/0011.png
+share/icons/hicolor/48x48/actions/kde/0012.png
+share/icons/hicolor/48x48/actions/kde/0013.png
+share/icons/hicolor/48x48/actions/kde/0014.png
+share/icons/hicolor/48x48/actions/kde/0015.png
+share/icons/hicolor/48x48/actions/kde/0016.png
+share/icons/hicolor/48x48/actions/kde/0017.png
+share/icons/hicolor/48x48/actions/kde/0018.png
+share/icons/hicolor/48x48/actions/kde/0019.png
+share/icons/hicolor/48x48/actions/kde/0020.png
+share/icons/hicolor/48x48/actions/kde/0021.png
+share/icons/hicolor/48x48/actions/kde/0022.png
+share/icons/hicolor/48x48/actions/kde/0023.png
+share/icons/hicolor/48x48/actions/kde/0024.png
+share/icons/hicolor/48x48/actions/kde/0025.png
+share/icons/hicolor/48x48/actions/kde/0026.png
+share/icons/hicolor/48x48/actions/kde/0027.png
+share/icons/hicolor/48x48/actions/kde/0028.png
+share/icons/hicolor/48x48/actions/kde/0029.png
+share/icons/hicolor/48x48/actions/kde/0030.png
+share/icons/hicolor/48x48/actions/kde/0031.png
+share/icons/hicolor/48x48/actions/kde/0032.png
+share/icons/hicolor/48x48/actions/kde/0033.png
+share/icons/hicolor/48x48/actions/kde/0034.png
+share/icons/hicolor/48x48/actions/kde/0035.png
+share/icons/hicolor/48x48/actions/kde/0036.png
+share/icons/hicolor/48x48/actions/kde/0037.png
+share/icons/hicolor/48x48/actions/kde/0038.png
+share/icons/hicolor/48x48/actions/kde/0039.png
+share/icons/hicolor/48x48/actions/kde/0040.png
+share/icons/hicolor/48x48/actions/kde/0041.png
+share/icons/hicolor/48x48/actions/kde/0042.png
+share/icons/hicolor/48x48/actions/kde/0043.png
+share/icons/hicolor/48x48/actions/kde/0044.png
+share/icons/hicolor/48x48/actions/kde/0045.png
+share/icons/hicolor/48x48/actions/kde/0046.png
+share/icons/hicolor/48x48/actions/kde/0047.png
+share/icons/hicolor/48x48/actions/kde/0048.png
+share/icons/hicolor/48x48/actions/kde/0049.png
+share/icons/hicolor/48x48/actions/kde/0050.png
+share/icons/hicolor/48x48/actions/misc.png
+share/icons/hicolor/48x48/filesystems/desktop.png
+share/icons/hicolor/48x48/filesystems/exec.png
+share/icons/hicolor/48x48/filesystems/file_locked.png
+share/icons/hicolor/48x48/filesystems/folder.png
+share/icons/hicolor/48x48/filesystems/folder_blue.png
+share/icons/hicolor/48x48/filesystems/folder_cyan.png
+share/icons/hicolor/48x48/filesystems/folder_green.png
+share/icons/hicolor/48x48/filesystems/folder_home.png
+share/icons/hicolor/48x48/filesystems/folder_locked.png
+share/icons/hicolor/48x48/filesystems/folder_open.png
+share/icons/hicolor/48x48/filesystems/folder_red.png
+share/icons/hicolor/48x48/filesystems/folder_yellow.png
+share/icons/hicolor/48x48/filesystems/ftp.png
+share/icons/hicolor/48x48/filesystems/link.png
+share/icons/hicolor/48x48/filesystems/shredder.png
+share/icons/hicolor/48x48/filesystems/socket.png
+share/icons/hicolor/48x48/filesystems/trashcan_empty.png
+share/icons/hicolor/48x48/filesystems/trashcan_full.png
+share/icons/hicolor/48x48/filesystems/www.png
+share/icons/hicolor/48x48/mimetypes/binary.png
+share/icons/hicolor/48x48/mimetypes/binary2.png
+share/icons/hicolor/48x48/mimetypes/blockdevice.png
+share/icons/hicolor/48x48/mimetypes/c_src.png
+share/icons/hicolor/48x48/mimetypes/chardevice.png
+share/icons/hicolor/48x48/mimetypes/core.png
+share/icons/hicolor/48x48/mimetypes/document.png
+share/icons/hicolor/48x48/mimetypes/dvi.png
+share/icons/hicolor/48x48/mimetypes/f_src.png
+share/icons/hicolor/48x48/mimetypes/font.png
+share/icons/hicolor/48x48/mimetypes/gf.png
+share/icons/hicolor/48x48/mimetypes/h_src.png
+share/icons/hicolor/48x48/mimetypes/html.png
+share/icons/hicolor/48x48/mimetypes/image.png
+share/icons/hicolor/48x48/mimetypes/info.png
+share/icons/hicolor/48x48/mimetypes/java_src.png
+share/icons/hicolor/48x48/mimetypes/kmultiple.png
+share/icons/hicolor/48x48/mimetypes/l_src.png
+share/icons/hicolor/48x48/mimetypes/log.png
+share/icons/hicolor/48x48/mimetypes/make.png
+share/icons/hicolor/48x48/mimetypes/man.png
+share/icons/hicolor/48x48/mimetypes/metafont.png
+share/icons/hicolor/48x48/mimetypes/midi.png
+share/icons/hicolor/48x48/mimetypes/mime_empty.png
+share/icons/hicolor/48x48/mimetypes/misc.png
+share/icons/hicolor/48x48/mimetypes/moc_src.png
+share/icons/hicolor/48x48/mimetypes/o_src.png
+share/icons/hicolor/48x48/mimetypes/p_src.png
+share/icons/hicolor/48x48/mimetypes/pdf.png
+share/icons/hicolor/48x48/mimetypes/pk.png
+share/icons/hicolor/48x48/mimetypes/postscript.png
+share/icons/hicolor/48x48/mimetypes/readme.png
+share/icons/hicolor/48x48/mimetypes/recycled.png
+share/icons/hicolor/48x48/mimetypes/resource.png
+share/icons/hicolor/48x48/mimetypes/s_src.png
+share/icons/hicolor/48x48/mimetypes/sound.png
+share/icons/hicolor/48x48/mimetypes/tar.png
+share/icons/hicolor/48x48/mimetypes/tex.png
+share/icons/hicolor/48x48/mimetypes/tgz.png
+share/icons/hicolor/48x48/mimetypes/txt.png
+share/icons/hicolor/48x48/mimetypes/unknown.png
+share/icons/hicolor/48x48/mimetypes/vcalendar.png
+share/icons/hicolor/48x48/mimetypes/vcard.png
+share/icons/hicolor/48x48/mimetypes/video.png
+share/icons/hicolor/48x48/mimetypes/y_src.png
+share/icons/hicolor/index.desktop
+share/icons/hicolor/scalable/filesystems/exec.png
+share/icons/locolor/16x16/actions/1leftarrow.png
+share/icons/locolor/16x16/actions/1rightarrow.png
+share/icons/locolor/16x16/actions/2leftarrow.png
+share/icons/locolor/16x16/actions/2rightarrow.png
+share/icons/locolor/16x16/actions/abs.png
+share/icons/locolor/16x16/actions/add_point.png
+share/icons/locolor/16x16/actions/airbrush.png
+share/icons/locolor/16x16/actions/back.png
+share/icons/locolor/16x16/actions/blend.png
+share/icons/locolor/16x16/actions/bookmark.png
+share/icons/locolor/16x16/actions/bookmark_add.png
+share/icons/locolor/16x16/actions/bottom.png
+share/icons/locolor/16x16/actions/brace.png
+share/icons/locolor/16x16/actions/brackets.png
+share/icons/locolor/16x16/actions/centrejust.png
+share/icons/locolor/16x16/actions/circle_select.png
+share/icons/locolor/16x16/actions/colorpicker.png
+share/icons/locolor/16x16/actions/configure.png
+share/icons/locolor/16x16/actions/contents.png
+share/icons/locolor/16x16/actions/contexthelp.png
+share/icons/locolor/16x16/actions/contiguous.png
+share/icons/locolor/16x16/actions/crop.png
+share/icons/locolor/16x16/actions/down.png
+share/icons/locolor/16x16/actions/editcopy.png
+share/icons/locolor/16x16/actions/editcut.png
+share/icons/locolor/16x16/actions/editdelete.png
+share/icons/locolor/16x16/actions/editpaste.png
+share/icons/locolor/16x16/actions/editshred.png
+share/icons/locolor/16x16/actions/edittrash.png
+share/icons/locolor/16x16/actions/elliptical.png
+share/icons/locolor/16x16/actions/eraser.png
+share/icons/locolor/16x16/actions/exit.png
+share/icons/locolor/16x16/actions/filemail.png
+share/icons/locolor/16x16/actions/filenew.png
+share/icons/locolor/16x16/actions/fileopen.png
+share/icons/locolor/16x16/actions/fileprint.png
+share/icons/locolor/16x16/actions/filequickprint.png
+share/icons/locolor/16x16/actions/filesave.png
+share/icons/locolor/16x16/actions/fill.png
+share/icons/locolor/16x16/actions/find.png
+share/icons/locolor/16x16/actions/finish.png
+share/icons/locolor/16x16/actions/flag.png
+share/icons/locolor/16x16/actions/forward.png
+share/icons/locolor/16x16/actions/frac.png
+share/icons/locolor/16x16/actions/gohome.png
+share/icons/locolor/16x16/actions/goto.png
+share/icons/locolor/16x16/actions/handdrawn.png
+share/icons/locolor/16x16/actions/help.png
+share/icons/locolor/16x16/actions/idea.png
+share/icons/locolor/16x16/actions/int.png
+share/icons/locolor/16x16/actions/key.png
+share/icons/locolor/16x16/actions/lasso.png
+share/icons/locolor/16x16/actions/leftjust.png
+share/icons/locolor/16x16/actions/lock.png
+share/icons/locolor/16x16/actions/lsub.png
+share/icons/locolor/16x16/actions/lsup.png
+share/icons/locolor/16x16/actions/matrix.png
+share/icons/locolor/16x16/actions/misc.png
+share/icons/locolor/16x16/actions/move.png
+share/icons/locolor/16x16/actions/next.png
+share/icons/locolor/16x16/actions/openterm.png
+share/icons/locolor/16x16/actions/paintbrush.png
+share/icons/locolor/16x16/actions/paren.png
+share/icons/locolor/16x16/actions/pencil.png
+share/icons/locolor/16x16/actions/previous.png
+share/icons/locolor/16x16/actions/prod.png
+share/icons/locolor/16x16/actions/quickprint.png
+share/icons/locolor/16x16/actions/rectangular.png
+share/icons/locolor/16x16/actions/redo.png
+share/icons/locolor/16x16/actions/reload.png
+share/icons/locolor/16x16/actions/rightjust.png
+share/icons/locolor/16x16/actions/rotate.png
+share/icons/locolor/16x16/actions/rsub.png
+share/icons/locolor/16x16/actions/rsup.png
+share/icons/locolor/16x16/actions/run.png
+share/icons/locolor/16x16/actions/send.png
+share/icons/locolor/16x16/actions/smart_select.png
+share/icons/locolor/16x16/actions/spellcheck.png
+share/icons/locolor/16x16/actions/sqrt.png
+share/icons/locolor/16x16/actions/stamp.png
+share/icons/locolor/16x16/actions/start.png
+share/icons/locolor/16x16/actions/stop.png
+share/icons/locolor/16x16/actions/sum.png
+share/icons/locolor/16x16/actions/text.png
+share/icons/locolor/16x16/actions/top.png
+share/icons/locolor/16x16/actions/transform.png
+share/icons/locolor/16x16/actions/trash.png
+share/icons/locolor/16x16/actions/undo.png
+share/icons/locolor/16x16/actions/up.png
+share/icons/locolor/16x16/actions/viewmag+.png
+share/icons/locolor/16x16/actions/viewmag-.png
+share/icons/locolor/16x16/actions/viewmag.png
+share/icons/locolor/16x16/actions/window_fullscreen.png
+share/icons/locolor/16x16/actions/window_new.png
+share/icons/locolor/16x16/actions/window_nofullscreen.png
+share/icons/locolor/16x16/filesystems/desktop.png
+share/icons/locolor/16x16/filesystems/exec.png
+share/icons/locolor/16x16/filesystems/file_locked.png
+share/icons/locolor/16x16/filesystems/folder.png
+share/icons/locolor/16x16/filesystems/folder_blue.png
+share/icons/locolor/16x16/filesystems/folder_cyan.png
+share/icons/locolor/16x16/filesystems/folder_green.png
+share/icons/locolor/16x16/filesystems/folder_home.png
+share/icons/locolor/16x16/filesystems/folder_locked.png
+share/icons/locolor/16x16/filesystems/folder_open.png
+share/icons/locolor/16x16/filesystems/folder_red.png
+share/icons/locolor/16x16/filesystems/folder_yellow.png
+share/icons/locolor/16x16/filesystems/ftp.png
+share/icons/locolor/16x16/filesystems/pipe.png
+share/icons/locolor/16x16/filesystems/socket.png
+share/icons/locolor/16x16/filesystems/trashcan_empty.png
+share/icons/locolor/16x16/filesystems/trashcan_full.png
+share/icons/locolor/16x16/filesystems/www.png
+share/icons/locolor/16x16/mimetypes/binary.png
+share/icons/locolor/16x16/mimetypes/binary2.png
+share/icons/locolor/16x16/mimetypes/blockdevice.png
+share/icons/locolor/16x16/mimetypes/c_src.png
+share/icons/locolor/16x16/mimetypes/chardevice.png
+share/icons/locolor/16x16/mimetypes/core.png
+share/icons/locolor/16x16/mimetypes/document.png
+share/icons/locolor/16x16/mimetypes/dvi.png
+share/icons/locolor/16x16/mimetypes/f_src.png
+share/icons/locolor/16x16/mimetypes/font.png
+share/icons/locolor/16x16/mimetypes/gf.png
+share/icons/locolor/16x16/mimetypes/h_src.png
+share/icons/locolor/16x16/mimetypes/html.png
+share/icons/locolor/16x16/mimetypes/image.png
+share/icons/locolor/16x16/mimetypes/info.png
+share/icons/locolor/16x16/mimetypes/java_src.png
+share/icons/locolor/16x16/mimetypes/l_src.png
+share/icons/locolor/16x16/mimetypes/log.png
+share/icons/locolor/16x16/mimetypes/make.png
+share/icons/locolor/16x16/mimetypes/man.png
+share/icons/locolor/16x16/mimetypes/metafont.png
+share/icons/locolor/16x16/mimetypes/midi.png
+share/icons/locolor/16x16/mimetypes/mime_empty.png
+share/icons/locolor/16x16/mimetypes/misc.png
+share/icons/locolor/16x16/mimetypes/moc_src.png
+share/icons/locolor/16x16/mimetypes/o_src.png
+share/icons/locolor/16x16/mimetypes/p_src.png
+share/icons/locolor/16x16/mimetypes/pdf.png
+share/icons/locolor/16x16/mimetypes/pk.png
+share/icons/locolor/16x16/mimetypes/postscript.png
+share/icons/locolor/16x16/mimetypes/readme.png
+share/icons/locolor/16x16/mimetypes/recycled.png
+share/icons/locolor/16x16/mimetypes/s_src.png
+share/icons/locolor/16x16/mimetypes/sound.png
+share/icons/locolor/16x16/mimetypes/source.png
+share/icons/locolor/16x16/mimetypes/tar.png
+share/icons/locolor/16x16/mimetypes/tex.png
+share/icons/locolor/16x16/mimetypes/tgz.png
+share/icons/locolor/16x16/mimetypes/txt.png
+share/icons/locolor/16x16/mimetypes/unknown.png
+share/icons/locolor/16x16/mimetypes/video.png
+share/icons/locolor/16x16/mimetypes/y_src.png
+share/icons/locolor/22x22/actions/1leftarrow.png
+share/icons/locolor/22x22/actions/1rightarrow.png
+share/icons/locolor/22x22/actions/2leftarrow.png
+share/icons/locolor/22x22/actions/2rightarrow.png
+share/icons/locolor/22x22/actions/kde1.png
+share/icons/locolor/22x22/actions/kde2.png
+share/icons/locolor/22x22/actions/kde3.png
+share/icons/locolor/22x22/actions/kde4.png
+share/icons/locolor/22x22/actions/kde5.png
+share/icons/locolor/22x22/actions/kde6.png
+share/icons/locolor/22x22/actions/kde7.png
+share/icons/locolor/22x22/actions/kde8.png
+share/icons/locolor/22x22/actions/kde9.png
+share/icons/locolor/32x32/actions/key.png
+share/icons/locolor/32x32/actions/misc.png
+share/icons/locolor/32x32/filesystems/desktop.png
+share/icons/locolor/32x32/filesystems/exec.png
+share/icons/locolor/32x32/filesystems/file_locked.png
+share/icons/locolor/32x32/filesystems/folder.png
+share/icons/locolor/32x32/filesystems/folder_blue.png
+share/icons/locolor/32x32/filesystems/folder_cyan.png
+share/icons/locolor/32x32/filesystems/folder_green.png
+share/icons/locolor/32x32/filesystems/folder_home.png
+share/icons/locolor/32x32/filesystems/folder_locked.png
+share/icons/locolor/32x32/filesystems/folder_open.png
+share/icons/locolor/32x32/filesystems/folder_red.png
+share/icons/locolor/32x32/filesystems/folder_yellow.png
+share/icons/locolor/32x32/filesystems/ftp.png
+share/icons/locolor/32x32/filesystems/pipe.png
+share/icons/locolor/32x32/filesystems/socket.png
+share/icons/locolor/32x32/filesystems/trashcan_empty.png
+share/icons/locolor/32x32/filesystems/trashcan_full.png
+share/icons/locolor/32x32/filesystems/www.png
+share/icons/locolor/32x32/mimetypes/applix.png
+share/icons/locolor/32x32/mimetypes/binary.png
+share/icons/locolor/32x32/mimetypes/blockdevice.png
+share/icons/locolor/32x32/mimetypes/c_src.png
+share/icons/locolor/32x32/mimetypes/chardevice.png
+share/icons/locolor/32x32/mimetypes/core.png
+share/icons/locolor/32x32/mimetypes/document.png
+share/icons/locolor/32x32/mimetypes/dvi.png
+share/icons/locolor/32x32/mimetypes/f_src.png
+share/icons/locolor/32x32/mimetypes/font.png
+share/icons/locolor/32x32/mimetypes/gf.png
+share/icons/locolor/32x32/mimetypes/h_src.png
+share/icons/locolor/32x32/mimetypes/html.png
+share/icons/locolor/32x32/mimetypes/image.png
+share/icons/locolor/32x32/mimetypes/info.png
+share/icons/locolor/32x32/mimetypes/java_src.png
+share/icons/locolor/32x32/mimetypes/l_src.png
+share/icons/locolor/32x32/mimetypes/log.png
+share/icons/locolor/32x32/mimetypes/make.png
+share/icons/locolor/32x32/mimetypes/man.png
+share/icons/locolor/32x32/mimetypes/metafont.png
+share/icons/locolor/32x32/mimetypes/midi.png
+share/icons/locolor/32x32/mimetypes/mime_empty.png
+share/icons/locolor/32x32/mimetypes/moc_src.png
+share/icons/locolor/32x32/mimetypes/o_src.png
+share/icons/locolor/32x32/mimetypes/p_src.png
+share/icons/locolor/32x32/mimetypes/pdf.png
+share/icons/locolor/32x32/mimetypes/pk.png
+share/icons/locolor/32x32/mimetypes/postscript.png
+share/icons/locolor/32x32/mimetypes/readme.png
+share/icons/locolor/32x32/mimetypes/recycled.png
+share/icons/locolor/32x32/mimetypes/resource.png
+share/icons/locolor/32x32/mimetypes/s_src.png
+share/icons/locolor/32x32/mimetypes/sound.png
+share/icons/locolor/32x32/mimetypes/tex.png
+share/icons/locolor/32x32/mimetypes/tgz.png
+share/icons/locolor/32x32/mimetypes/unknown.png
+share/icons/locolor/32x32/mimetypes/video.png
+share/icons/locolor/32x32/mimetypes/y_src.png
+share/icons/locolor/index.desktop
+share/mimelnk/application/gzip.desktop
+share/mimelnk/application/msexcel.desktop
+share/mimelnk/application/mspowerpoint.desktop
+share/mimelnk/application/msword.desktop
+share/mimelnk/application/octet-stream.desktop
+share/mimelnk/application/pdf.desktop
+share/mimelnk/application/postscript.desktop
+share/mimelnk/application/smil.desktop
+share/mimelnk/application/wordperfect.desktop
+share/mimelnk/application/x-applix.desktop
+share/mimelnk/application/x-ar.desktop
+share/mimelnk/application/x-arj.desktop
+share/mimelnk/application/x-awk.desktop
+share/mimelnk/application/x-bzip.desktop
+share/mimelnk/application/x-bzip2.desktop
+share/mimelnk/application/x-compress.desktop
+share/mimelnk/application/x-core.desktop
+share/mimelnk/application/x-cpio.desktop
+share/mimelnk/application/x-desktop.desktop
+share/mimelnk/application/x-dvi.desktop
+share/mimelnk/application/x-executable.desktop
+share/mimelnk/application/x-font.desktop
+share/mimelnk/application/x-jar.desktop
+share/mimelnk/application/x-java.desktop
+share/mimelnk/application/x-lha.desktop
+share/mimelnk/application/x-lzop.desktop
+share/mimelnk/application/x-object.desktop
+share/mimelnk/application/x-perl.desktop
+share/mimelnk/application/x-python-bytecode.desktop
+share/mimelnk/application/x-python.desktop
+share/mimelnk/application/x-rar.desktop
+share/mimelnk/application/x-rpm.desktop
+share/mimelnk/application/x-sharedlib.desktop
+share/mimelnk/application/x-shellscript.desktop
+share/mimelnk/application/x-tar.desktop
+share/mimelnk/application/x-tbz.desktop
+share/mimelnk/application/x-tex-gf.desktop
+share/mimelnk/application/x-tex-pk.desktop
+share/mimelnk/application/x-tgz.desktop
+share/mimelnk/application/x-trash.desktop
+share/mimelnk/application/x-troff-man.desktop
+share/mimelnk/application/x-troff.desktop
+share/mimelnk/application/x-truetype-font.desktop
+share/mimelnk/application/x-tzo.desktop
+share/mimelnk/application/x-zip.desktop
+share/mimelnk/application/x-zoo.desktop
+share/mimelnk/audio/basic.desktop
+share/mimelnk/audio/vnd.rn-realaudio.desktop
+share/mimelnk/audio/x-adpcm.desktop
+share/mimelnk/audio/x-aiff.desktop
+share/mimelnk/audio/x-midi.desktop
+share/mimelnk/audio/x-mod.desktop
+share/mimelnk/audio/x-mp3.desktop
+share/mimelnk/audio/x-mpegurl.desktop
+share/mimelnk/audio/x-pn-realaudio.desktop
+share/mimelnk/audio/x-scpls.desktop
+share/mimelnk/audio/x-wav.desktop
+share/mimelnk/image/cgm.desktop
+share/mimelnk/image/fax-g3.desktop
+share/mimelnk/image/gif.desktop
+share/mimelnk/image/jpeg.desktop
+share/mimelnk/image/png.desktop
+share/mimelnk/image/tiff.desktop
+share/mimelnk/image/x-bmp.desktop
+share/mimelnk/image/x-eps.desktop
+share/mimelnk/image/x-photo-cd.desktop
+share/mimelnk/image/x-xbm.desktop
+share/mimelnk/image/x-xpm.desktop
+share/mimelnk/inode/block.desktop
+share/mimelnk/inode/chardevice.desktop
+share/mimelnk/inode/directory-locked.desktop
+share/mimelnk/inode/directory.desktop
+share/mimelnk/inode/fifo.desktop
+share/mimelnk/inode/socket.desktop
+share/mimelnk/magic
+share/mimelnk/message/news.desktop
+share/mimelnk/message/rfc822.desktop
+share/mimelnk/text/css.desktop
+share/mimelnk/text/english.desktop
+share/mimelnk/text/html.desktop
+share/mimelnk/text/plain.desktop
+share/mimelnk/text/rtf.desktop
+share/mimelnk/text/sgml.desktop
+share/mimelnk/text/x-c++hdr.desktop
+share/mimelnk/text/x-c++src.desktop
+share/mimelnk/text/x-chdr.desktop
+share/mimelnk/text/x-csrc.desktop
+share/mimelnk/text/x-java.desktop
+share/mimelnk/text/x-makefile.desktop
+share/mimelnk/text/x-moc.desktop
+share/mimelnk/text/x-pascal.desktop
+share/mimelnk/text/x-tcl.desktop
+share/mimelnk/text/x-tex.desktop
+share/mimelnk/text/x-vcalendar.desktop
+share/mimelnk/text/x-vcard.desktop
+share/mimelnk/text/xml.desktop
+share/mimelnk/video/mpeg.desktop
+share/mimelnk/video/quicktime.desktop
+share/mimelnk/video/x-flic.desktop
+share/mimelnk/video/x-msvideo.desktop
+share/services/bmp.kimgio
+share/services/eps.kimgio
+share/services/gif.kimgio
+share/services/http_cache_cleaner.desktop
+share/services/jpeg.kimgio
+share/services/kcookiejar.desktop
+share/services/khtml.desktop
+share/services/kio_uiserver.desktop
+share/services/knotify.desktop
+share/services/krl.kimgio
+share/services/kwrite_part.desktop
+share/services/png.kimgio
+share/services/pnm.kimgio
+share/services/tiff.kimgio
+share/services/xbm.kimgio
+share/services/xpm.kimgio
+share/services/xv.kimgio
+share/servicetypes/browserview.desktop
+share/servicetypes/kpart.desktop
+share/servicetypes/kpropsdlgplugin.desktop
+share/servicetypes/krop.desktop
+share/servicetypes/krwp.desktop
+share/servicetypes/kurifilterplugin.desktop
+share/toolbar/configure.png
+@dirrm share/toolbar
+@dirrm share/skel
+@dirrm share/servicetypes
+@dirrm share/services
+@dirrm share/icons/locolor/32x32/mimetypes
+@dirrm share/icons/locolor/32x32/filesystems
+@dirrm share/icons/locolor/32x32/actions
+@dirrm share/icons/locolor/32x32
+@dirrm share/icons/locolor/22x22/actions
+@dirrm share/icons/locolor/22x22
+@dirrm share/icons/locolor/16x16/mimetypes
+@dirrm share/icons/locolor/16x16/filesystems
+@dirrm share/icons/locolor/16x16/actions
+@dirrm share/icons/locolor/16x16
+@dirrm share/icons/locolor
+@dirrm share/icons/hicolor/scalable/filesystems
+@dirrm share/icons/hicolor/scalable
+@dirrm share/icons/hicolor/48x48/mimetypes
+@dirrm share/icons/hicolor/48x48/filesystems
+@dirrm share/icons/hicolor/48x48/actions/kde
+@dirrm share/icons/hicolor/48x48/actions
+@dirrm share/icons/hicolor/48x48
+@dirrm share/icons/hicolor/32x32/mimetypes
+@dirrm share/icons/hicolor/32x32/filesystems
+@dirrm share/icons/hicolor/32x32/actions/kde
+@dirrm share/icons/hicolor/32x32/actions
+@dirrm share/icons/hicolor/32x32
+@dirrm share/icons/hicolor/22x22/actions/kde
+@dirrm share/icons/hicolor/22x22/actions
+@dirrm share/icons/hicolor/22x22
+@dirrm share/icons/hicolor
+@dirrm share/icons
+@dirrm share/examples
+@unexec rm -f %D/share/doc/HTML/en/kspell/common
+@dirrm share/doc/HTML/en/kspell
+@dirrm share/doc/HTML/en/kdelibs
+@dirrm share/doc/HTML/en/common
+@dirrm share/config/ui
+@dirrm share/config/protocols
+@dirrm share/config/colors
+@dirrm share/apps/kwrite
+@dirrm share/apps/kstyle/themes
+@dirrm share/apps/kstyle/pixmaps
+@dirrm share/apps/kstyle
+@dirrm share/apps/ksgmltools/stylesheets
+@dirrm share/apps/ksgmltools
+@dirrm share/apps/kjava
+@dirrm share/apps/khtml/css
+@dirrm share/apps/khtml
+@dirrm share/apps/kdeui/pics
+@dirrm share/apps/kdeui
+@dirrm share/apps/kab/pics
+@dirrm share/apps/kab
+@dirrm include/libkmid
+@dirrm include/kwrite
+@dirrm include/kparts
+@dirrm include/kjs
+@dirrm include/kio
+@dirrm include/kdesu
+@dirrm include/dom
+@dirrm include/artsc
+@dirrm include/arts
 @exec /sbin/ldconfig -m %D/lib
 @unexec /sbin/ldconfig -R
-@unexec rmdir %D/share/wallpapers 2>/dev/null || true
-@unexec rmdir %D/share/toolbar 2>/dev/null || true
-@unexec rmdir %D/share/sounds 2>/dev/null || true
-@unexec rmdir %D/share/mimelnk/video 2>/dev/null || true
-@unexec rmdir %D/share/mimelnk/text 2>/dev/null || true
-@unexec rmdir %D/share/mimelnk/inode 2>/dev/null || true
-@unexec rmdir %D/share/mimelnk/image 2>/dev/null || true
-@unexec rmdir %D/share/mimelnk/audio 2>/dev/null || true
-@unexec rmdir %D/share/mimelnk/application 2>/dev/null || true
-@unexec rmdir %D/share/mimelnk 2>/dev/null || true
-@unexec rmdir %D/share/locale/zh_TW.Big5/LC_MESSAGES 2>/dev/null || true
-@unexec rmdir %D/share/locale/zh_TW.Big5 2>/dev/null || true
-@unexec rmdir %D/share/locale/zh_CN.GB2312/LC_MESSAGES 2>/dev/null || true
-@unexec rmdir %D/share/locale/zh_CN.GB2312 2>/dev/null || true
-@unexec rmdir %D/share/locale/tr/LC_MESSAGES 2>/dev/null || true
-@unexec rmdir %D/share/locale/tr 2>/dev/null || true
-@unexec rmdir %D/share/locale/th/LC_MESSAGES 2>/dev/null || true
-@unexec rmdir %D/share/locale/th 2>/dev/null || true
-@unexec rmdir %D/share/locale/sv/LC_MESSAGES 2>/dev/null || true
-@unexec rmdir %D/share/locale/sv 2>/dev/null || true
-@unexec rmdir %D/share/locale/sl/LC_MESSAGES 2>/dev/null || true
-@unexec rmdir %D/share/locale/sl 2>/dev/null || true
-@unexec rmdir %D/share/locale/sk/LC_MESSAGES 2>/dev/null || true
-@unexec rmdir %D/share/locale/sk 2>/dev/null || true
-@unexec rmdir %D/share/locale/ru/LC_MESSAGES 2>/dev/null || true
-@unexec rmdir %D/share/locale/ru 2>/dev/null || true
-@unexec rmdir %D/share/locale/ro/LC_MESSAGES 2>/dev/null || true
-@unexec rmdir %D/share/locale/ro 2>/dev/null || true
-@unexec rmdir %D/share/locale/pt_BR/LC_MESSAGES 2>/dev/null || true
-@unexec rmdir %D/share/locale/pt_BR 2>/dev/null || true
-@unexec rmdir %D/share/locale/pt/LC_MESSAGES 2>/dev/null || true
-@unexec rmdir %D/share/locale/pt 2>/dev/null || true
-@unexec rmdir %D/share/locale/pl/LC_MESSAGES 2>/dev/null || true
-@unexec rmdir %D/share/locale/pl 2>/dev/null || true
-@unexec rmdir %D/share/locale/no/LC_MESSAGES 2>/dev/null || true
-@unexec rmdir %D/share/locale/no 2>/dev/null || true
-@unexec rmdir %D/share/locale/nl/LC_MESSAGES 2>/dev/null || true
-@unexec rmdir %D/share/locale/nl 2>/dev/null || true
-@unexec rmdir %D/share/locale/mk/LC_MESSAGES 2>/dev/null || true
-@unexec rmdir %D/share/locale/mk 2>/dev/null || true
-@unexec rmdir %D/share/locale/ko/LC_MESSAGES 2>/dev/null || true
-@unexec rmdir %D/share/locale/ko 2>/dev/null || true
-@unexec rmdir %D/share/locale/ja/LC_MESSAGES 2>/dev/null || true
-@unexec rmdir %D/share/locale/ja 2>/dev/null || true
-@unexec rmdir %D/share/locale/it/LC_MESSAGES 2>/dev/null || true
-@unexec rmdir %D/share/locale/it 2>/dev/null || true
-@unexec rmdir %D/share/locale/is/LC_MESSAGES 2>/dev/null || true
-@unexec rmdir %D/share/locale/is 2>/dev/null || true
-@unexec rmdir %D/share/locale/hu/LC_MESSAGES 2>/dev/null || true
-@unexec rmdir %D/share/locale/hu 2>/dev/null || true
-@unexec rmdir %D/share/locale/hs/LC_MESSAGES 2>/dev/null || true
-@unexec rmdir %D/share/locale/hs 2>/dev/null || true
-@unexec rmdir %D/share/locale/hr/LC_MESSAGES 2>/dev/null || true
-@unexec rmdir %D/share/locale/hr 2>/dev/null || true
-@unexec rmdir %D/share/locale/he/LC_MESSAGES 2>/dev/null || true
-@unexec rmdir %D/share/locale/he 2>/dev/null || true
-@unexec rmdir %D/share/locale/fr/LC_MESSAGES 2>/dev/null || true
-@unexec rmdir %D/share/locale/fr 2>/dev/null || true
-@unexec rmdir %D/share/locale/fi/LC_MESSAGES 2>/dev/null || true
-@unexec rmdir %D/share/locale/fi 2>/dev/null || true
-@unexec rmdir %D/share/locale/et/LC_MESSAGES 2>/dev/null || true
-@unexec rmdir %D/share/locale/et 2>/dev/null || true
-@unexec rmdir %D/share/locale/es/LC_MESSAGES 2>/dev/null || true
-@unexec rmdir %D/share/locale/es 2>/dev/null || true
-@unexec rmdir %D/share/locale/eo/LC_MESSAGES 2>/dev/null || true
-@unexec rmdir %D/share/locale/eo 2>/dev/null || true
-@unexec rmdir %D/share/locale/en_UK/LC_MESSAGES 2>/dev/null || true
-@unexec rmdir %D/share/locale/en_UK 2>/dev/null || true
-@unexec rmdir %D/share/locale/el/LC_MESSAGES 2>/dev/null || true
-@unexec rmdir %D/share/locale/el 2>/dev/null || true
-@unexec rmdir %D/share/locale/de/LC_MESSAGES 2>/dev/null || true
-@unexec rmdir %D/share/locale/de 2>/dev/null || true
-@unexec rmdir %D/share/locale/da/LC_MESSAGES 2>/dev/null || true
-@unexec rmdir %D/share/locale/da 2>/dev/null || true
-@unexec rmdir %D/share/locale/cs/LC_MESSAGES 2>/dev/null || true
-@unexec rmdir %D/share/locale/cs 2>/dev/null || true
-@unexec rmdir %D/share/locale/ca/LC_MESSAGES 2>/dev/null || true
-@unexec rmdir %D/share/locale/ca 2>/dev/null || true
-@unexec rmdir %D/share/locale/br/LC_MESSAGES 2>/dev/null || true
-@unexec rmdir %D/share/locale/br 2>/dev/null || true
-@unexec rmdir %D/share/locale 2>/dev/null || true
-@unexec rm -f %D/share/doc/HTML/default
-@unexec rmdir %D/share/icons/mini 2>/dev/null || true
-@unexec rmdir %D/share/icons/large 2>/dev/null || true
-@unexec rmdir %D/share/icons 2>/dev/null || true
-@unexec rmdir %D/share/doc/HTML/zh_CN.GB2312 2>/dev/null || true
-@unexec rmdir %Dshare/doc/HTML/sv 2>/dev/null || true
-@unexec rmdir %D/share/doc/HTML/ru 2>/dev/null || true
-@unexec rmdir %D/share/doc/HTML/pt 2>/dev/null || true
-@unexec rmdir %D/share/doc/HTML/pl 2>/dev/null || true
-@unexec rmdir %D/share/doc/HTML/nl 2>/dev/null || true
-@unexec rmdir %D/share/doc/HTML/ja 2>/dev/null || true
-@unexec rmdir %D/share/doc/HTML/it 2>/dev/null || true
-@unexec rmdir %D/share/doc/HTML/hu 2>/dev/null || true
-@unexec rmdir %D/share/doc/HTML/fr 2>/dev/null || true
-@unexec rmdir %D/share/doc/HTML/fi 2>/dev/null || true
-@unexec rmdir %D/share/doc/HTML/es 2>/dev/null || true
-@unexec rmdir %D/share/doc/HTML/en/kspell 2>/dev/null || true
-@unexec rmdir %D/share/doc/HTML/en/kfiledialog 2>/dev/null || true
-@unexec rmdir %D/share/doc/HTML/en/kdelibs 2>/dev/null || true
-@unexec rmdir %D/share/doc/HTML/en 2>/dev/null || true
-@unexec rmdir %D/share/doc/HTML/el 2>/dev/null || true
-@unexec rmdir %D/share/doc/HTML/de 2>/dev/null || true
-@unexec rmdir %D/share/doc/HTML/da 2>/dev/null || true
-@unexec rmdir %D/share/doc/HTML/cs 2>/dev/null || true
-@unexec rmdir %D/share/doc/HTML 2>/dev/null || true
-@unexec rmdir %D/share/config 2>/dev/null || true
-@unexec rmdir %D/share/apps/khtmlw/pics 2>/dev/null || true
-@unexec rmdir %D/share/apps/khtmlw 2>/dev/null || true
-@unexec rmdir %D/share/apps/kde/pics 2>/dev/null || true
-@unexec rmdir %D/share/apps/kde 2>/dev/null || true
-@unexec rmdir %D/share/apps/kab/pics 2>/dev/null || true
-@unexec rmdir %D/share/apps/kab 2>/dev/null || true
-@unexec rmdir %D/share/apps 2>/dev/null || true
-@unexec rmdir %D/share/applnk/Utilities 2>/dev/null || true
-@unexec rmdir %D/share/applnk/System 2>/dev/null || true
-@unexec rmdir %D/share/applnk/Settings 2>/dev/null || true
-@unexec rmdir %D/share/applnk/Network 2>/dev/null || true
-@unexec rmdir %D/share/applnk/Multimedia 2>/dev/null || true
-@unexec rmdir %D/share/applnk/Internet 2>/dev/null || true
-@unexec rmdir %D/share/applnk/Graphics 2>/dev/null || true
-@unexec rmdir %D/share/applnk/Games 2>/dev/null || true
-@unexec rmdir %D/share/applnk/Development 2>/dev/null || true
-@unexec rmdir %D/share/applnk/Applications 2>/dev/null || true
-@unexec rmdir %D/share/applnk 2>/dev/null || true
