@@ -20,6 +20,8 @@ RUN_DEPENDS=	konqueror:${PORTSDIR}/x11/kdebase2 \
 		kdf:${PORTSDIR}/misc/kdeutils2 \
 		kjumpingcube:${PORTSDIR}/games/kdegames2
 
+BROKEN=		"Does not compile/run properly"
+
 NO_BUILD=	yes
 
 do-install:	# empty

@@ -13,6 +13,8 @@ MASTER_SITE_SUBDIR=	unstable/distribution/tar/src
 
 MAINTAINER=	will@FreeBSD.org
 
+BROKEN=		"Does not compile/run properly"
+
 SOMAJOR=	4
 SOMINOR=	0
 USE_BZIP2=	yes

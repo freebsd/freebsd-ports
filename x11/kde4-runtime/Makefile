@@ -17,6 +17,8 @@ LIB_DEPENDS=	kdeui.4:${PORTSDIR}/x11/kdelibs2 \
 		Xpm.4:${PORTSDIR}/graphics/xpm \
 		intl.1:${PORTSDIR}/devel/gettext
 
+BROKEN=		"Does not compile/run properly"
+
 MOC?=		${X11BASE}/bin/moc2
 USE_BZIP2=	yes
 USE_QT2=	yes

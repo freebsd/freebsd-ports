@@ -13,6 +13,8 @@ MASTER_SITE_SUBDIR=	unstable/distribution/tar/src
 
 MAINTAINER=	will@FreeBSD.org
 
+BROKEN=		"Does not compile/run properly"
+
 MOC=		${X11BASE}/bin/moc2
 USE_BZIP2=	yes
 USE_QT2=	yes
