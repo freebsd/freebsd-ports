@@ -24,7 +24,7 @@ $FreeBSD$
 -my ($pidcmd) = 'pidof qmail-send';
 +#my ($pidcmd) = 'pidof qmail-send';
 +# This is for FreeBSD with a standard qmail installation:
-+my ($pidcmd) = 'ps -U qmails | grep qmail-send | cut -s -d " " -f 3';
++my ($pidcmd) = 'ps -U qmails | grep qmail-send | cut -s -d " " -f 1';
 +
  
  ####################  USER CONFIGURATION END  ####################
