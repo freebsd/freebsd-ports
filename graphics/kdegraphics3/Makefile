@@ -8,6 +8,7 @@
 
 PORTNAME=	kdegraphics
 PORTVERSION=	${KDE_VERSION}
+PORTREVISION=	1
 CATEGORIES=	graphics kde
 MASTER_SITES=	${MASTER_SITE_KDE}
 MASTER_SITE_SUBDIR=	stable/${PORTVERSION:S/.0//}/src
@@ -16,7 +17,9 @@ DIST_SUBDIR=	KDE
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Graphics utilities for the KDE3 integrated X11 desktop
 
-LIB_DEPENDS=	glut:${PORTSDIR}/graphics/libglut
+LIB_DEPENDS=	fribidi:${PORTSDIR}/converters/fribidi \
+		glut:${PORTSDIR}/graphics/libglut
+RUN_DEPENDS=	pdfinfo:${PORTSDIR}/graphics/xpdf
 
 USE_KDELIBS_VER=3
 PREFIX=		${KDE_PREFIX}
