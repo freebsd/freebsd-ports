@@ -19,8 +19,8 @@ LIB_DEPENDS=	tcl${TCLVERSION:S/.//}:${PORTSDIR}/lang/tcl${TCLVERSION:S/.//} \
 		pq:${PORTSDIR}/${POSTGRESQL_PORT}
 RUN_DEPENDS=	postgres:${PORTSDIR}/${POSTGRESQL_PORT}
 
-# you can use "make TCLVERSION=8.3" or similar for your favourite tcl version
-TCLVERSION?=	8.4
+# you can use "make TCLVERSION=8.4" or similar for your favourite tcl version
+TCLVERSION?=	8.3
 PLIST_SUB+=	TCLVERSION=${TCLVERSION}
 CONFIGURE_ARGS=	--with-tcl \
 		--with-tclconfig=${TCLCONFIG} \
