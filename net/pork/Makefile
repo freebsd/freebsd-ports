@@ -6,17 +6,18 @@
 #
 
 PORTNAME=		pork
-PORTVERSION=		0.99.1
+PORTVERSION=		0.99.2
 CATEGORIES=		net
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	ojnk
 
-MAINTAINER=		ports@FreeBSD.org
+MAINTAINER=		krion@FreeBSD.org
 COMMENT=		Console-based AIM client
 
-CONFIGURE_ARGS=		--prefix=${PREFIX}
-
 USE_PERL5=		yes
-HAS_CONFIGURE=		yes
+GNU_CONFIGURE=		yes
+CONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
+USE_GETOPT_LONG=	yes
+USE_OPENSSL=		yes
 
 .include <bsd.port.mk>
