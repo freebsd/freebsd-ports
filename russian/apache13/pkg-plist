@@ -1,14 +1,19 @@
 bin/dbmmanage
 bin/htdigest
 bin/htpasswd
+@unexec if cmp -s %D/etc/apache/access.conf %D/etc/apache/access.conf.default; then rm -f %D/etc/apache/access.conf; fi
 etc/apache/access.conf.default
 @exec [ ! -f %B/access.conf ] && cp %B/%f %B/access.conf
+@unexec if cmp -s %D/etc/apache/httpd.conf %D/etc/apache/httpd.conf.default; then rm -f %D/etc/apache/httpd.conf; fi
 etc/apache/httpd.conf.default
 @exec [ ! -f %B/httpd.conf ] && cp %B/%f %B/httpd.conf
+@unexec if cmp -s %D/etc/apache/magic %D/etc/apache/magic.default; then rm -f %D/etc/apache/magic; fi
 etc/apache/magic.default
 @exec [ ! -f %B/magic ] && cp %B/%f %B/magic
+@unexec if cmp -s %D/etc/apache/mime.types %D/etc/apache/mime.types.default; then rm -f %D/etc/apache/mime.types; fi
 etc/apache/mime.types.default
 @exec [ ! -f %B/mime.types ] && cp %B/%f %B/mime.types
+@unexec if cmp -s %D/etc/apache/srm.conf %D/etc/apache/srm.conf.default; then rm -f %D/etc/apache/srm.conf; fi
 etc/apache/srm.conf.default
 @exec [ ! -f %B/srm.conf ] && cp %B/%f %B/srm.conf
 etc/apache/tables/russian/alt-alt.tab
@@ -168,7 +173,7 @@ share/doc/apache/ra-powered.gif
 @unexec rm -f %D/www/data.default
 @exec [ ! -d %D/www/data ] && ln -fs %B %D/www/data
 @exec [ ! -d %D/www/cgi-bin ] && ln -fs %D/www/cgi-bin.default %D/www/cgi-bin
-share/doc/apache/index.html
+share/doc/apache/index.html.ru
 share/doc/apache/index.html.ca
 share/doc/apache/index.html.cz
 share/doc/apache/index.html.de
@@ -178,9 +183,12 @@ share/doc/apache/index.html.en
 share/doc/apache/index.html.es
 share/doc/apache/index.html.fr
 share/doc/apache/index.html.it
+share/doc/apache/index.html.ja.jis
 share/doc/apache/index.html.lu
 share/doc/apache/index.html.nl
+share/doc/apache/index.html.po.iso-pl
 share/doc/apache/index.html.pt
+share/doc/apache/index.html.pt-br
 share/doc/apache/index.html.se
 share/doc/apache/manual/LICENSE
 share/doc/apache/manual/bind.html
@@ -424,6 +432,8 @@ www/icons/uuencoded.gif
 www/icons/world1.gif
 www/icons/world2.gif
 @exec mkdir -p %D/www/proxy
+@unexec if [ -L %D/www/cgi-bin ]; then rm -f %D/www/cgi-bin; fi
+@unexec if [ -L %D/www/data ]; then rm -f %D/www/data; fi
 @dirrm etc/apache/tables/russian
 @dirrm etc/apache/tables/russian2
 @dirrm etc/apache/tables/czech
