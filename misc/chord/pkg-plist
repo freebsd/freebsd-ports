@@ -1,0 +1,7 @@
+@cwd /usr/local
+@mode 555
+bin/chord
+bin/a2crd
+@mode 444
+man/man1/chord.1.gz
+man/man1/a2crd.1.gz

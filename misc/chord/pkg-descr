@@ -1,0 +1,10 @@
+chord produces a postscript document from a lyrics file containing
+chord indications and chorus delimiters.  The document produced
+contains the lyrics of a song, with the guitar chords appearing above
+the right words. A representation of all chords used in the song is
+printed at the bottom of the last page.
+
+This is version 3.6.
+
+Satoshi Asami
+asami@cs.berkeley.edu
