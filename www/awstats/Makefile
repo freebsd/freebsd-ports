@@ -15,8 +15,7 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	mchopra@engmail.uwaterloo.ca
 
 NO_BUILD=	yes
-
-USE_PERL5=	yes
+USE_PERL5_RUN=	yes
 
 do-install:
 	@${MKDIR} ${PREFIX}/www/cgi-bin/lang
