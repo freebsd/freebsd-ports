@@ -1,4 +1,5 @@
 lib/perl5/site_perl/%%PERL_VER%%/PDF/API2.pm
+lib/perl5/site_perl/%%PERL_VER%%/PDF/API2/cFont.pm
 lib/perl5/site_perl/%%PERL_VER%%/PDF/API2/Color.pm
 lib/perl5/site_perl/%%PERL_VER%%/PDF/API2/Lite.pm
 lib/perl5/site_perl/%%PERL_VER%%/PDF/API2/UniMap.pm
