@@ -328,6 +328,7 @@
     SUBDIR += wmstock
     SUBDIR += wmtunlo
     SUBDIR += wmweather
+    SUBDIR += wmweather+
     SUBDIR += wmwork
     SUBDIR += wmx10
     SUBDIR += xd
