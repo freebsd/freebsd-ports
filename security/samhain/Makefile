@@ -36,9 +36,10 @@
 #
 
 PORTNAME=	samhain
-PORTVERSION=	1.7.8
+PORTVERSION=	1.7.9
 CATEGORIES=	security
-MASTER_SITES=	http://samhain.securecirt.org/
+MASTER_SITES=	http://samhain.securecirt.org/ \
+		http://cold.darkambient.net/
 DISTFILES=	samhain_signed-${PORTVERSION}.tar.gz
 
 MAINTAINER=	lx@redundancy.redundancy.org
