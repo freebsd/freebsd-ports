@@ -25,6 +25,7 @@ PORTDOCS=	README
 PLIST_FILES=	pcsc/drivers/libslb_rf60.so
 
 do-install:
+	test -f ${PREFIX}/pcsc/drivers/ || ${MKDIR} ${PREFIX}/pcsc/drivers/
 	${INSTALL_DATA} ${WRKSRC}/libslb_rf60.so \
 		${PREFIX}/pcsc/drivers/libslb_rf60.so
 
