@@ -10,7 +10,7 @@ PORTVERSION=	3.2
 CATEGORIES=	print
 MASTER_SITES=	ftp://match.stanford.edu/pub/
 
-MAINTAINER=	spcoltri@code.cs.unm.edu
+MAINTAINER=	spcoltri@omcl.org
 
 BUILD_DEPENDS=	tex:${PORTSDIR}/print/teTeX
 RUN_DEPENDS=	tex:${PORTSDIR}/print/teTeX
