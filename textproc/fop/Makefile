@@ -8,8 +8,7 @@
 PORTNAME=	fop
 PORTVERSION=	0.17.0
 CATEGORIES=	textproc java
-MASTER_SITES=	http://xml.apache.org/dist/fop/
-MASTER_SITE_SUBDIR=	recent
+MASTER_SITES=	http://xml.apache.org/dist/fop/recent/
 DISTNAME=	${PORTNAME:S/fop/Fop/}-${PORTVERSION}
 
 MAINTAINER=	kiri@FreeBSD.org
