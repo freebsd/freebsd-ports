@@ -1,0 +1,10 @@
+ImLib3D is an open source C++ library for 3D (volumetric) image processing. It
+contains most basic image processing algorithms, and some more sophisticated
+ones. It comes with an optional viewer that features multiplanar views,
+animations, vector field views and 3D (OpenGL) multiplanar. All image
+processing operators can be interactively called from the viewer as well as
+from the UNIX command-line. ImLib3D's goal is to provide a standard and easy
+to use platform for volumetric image processing research. Focus has been put
+on simplicity for the end-user or developer.
+
+WWW: http://imlib3d.sourceforge.net/
