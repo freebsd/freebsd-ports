@@ -182,6 +182,7 @@
     SUBDIR += ratfor
     SUBDIR += rexx-imc
     SUBDIR += rexx-regina
+    SUBDIR += rexx-wrapper
     SUBDIR += rscheme
     SUBDIR += ruby-js
     SUBDIR += ruby-lua

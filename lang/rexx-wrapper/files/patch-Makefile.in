@@ -1,0 +1,11 @@
+--- Makefile.in.orig	Mon Nov 10 01:14:00 2003
++++ Makefile.in	Mon Nov 10 01:14:12 2003
+@@ -213,7 +213,7 @@
+ 
+ install: all
+ 	$(INSTALL) -m 755 -d $(bindir)
+-	$(INSTALL) -m 755 -d $(prefix)/share/rexxwraper
++	$(INSTALL) -m 755 -d $(prefix)/share/rexxwrapper
+ 	$(INSTALL) -m 755 -c $(srcdir)/rexxwrapper-config $(bindir)/rexxwrapper-config
+ 	$(INSTALL) -m 755 -c rexxwrapper $(bindir)/rexxwrapper
+ 	@for distfile in $(BASEFILES) $(DESFILES) $(ZLIBFILES) $(COMMONFILES); do \
