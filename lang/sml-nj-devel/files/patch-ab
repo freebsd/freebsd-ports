@@ -1,0 +1,15 @@
+--- config/install.sh--	Wed Aug  5 13:43:43 1998
++++ config/install.sh	Mon Feb  1 15:57:31 1999
+@@ -193,6 +193,12 @@
+     exit 1
+   fi
+ fi
++# we need to patch just before build
++patch_file="${FILESDIR}/patch-global-names"
++if [ -f $patch_file ]; then
++	echo "applying source patches"
++	$PATCH $PATCH_ARGS < $patch_file
++fi
+ cd $SRCDIR
+ 
+ #
