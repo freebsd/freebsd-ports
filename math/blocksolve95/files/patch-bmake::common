@@ -1,0 +1,19 @@
+--- bmake/common.orig	Tue Jan  9 16:35:45 1996
++++ bmake/common	Sun Oct  3 23:03:55 2004
+@@ -161,13 +161,13 @@
+ #
+ # Builds library - fast version
+ libfast: chkpetsc_dir $(SOURCEC) $(SOURCEF)
+-	@-if [ "$(SOURCEC)" != "" ] ; then \
++	-if [ "$(SOURCEC)" != "" ] ; then \
+ 	     $(CC) -c $(CFLAGS) $(BASEOPT) $(SOURCEC) ;\
+ 	fi
+-	@-if [ "$(SOURCEF)" != "" ] ; then \
++	-if [ "$(SOURCEF)" != "" ] ; then \
+ 	     $(FC) -c $(FFLAGS) $(BASEOPTF) $(SOURCEF) ;\
+ 	fi
+-	@-if [ "$(OBJS)" != " " ] ; then \
++	-if [ "$(OBJS)" != " " ] ; then \
+ 	  $(AR) cr $(LIBNAME) $(OBJS); \
+ 	  $(RM) -f $(OBJS); \
+ 	fi

@@ -1,0 +1,15 @@
+BlockSolve95 is a scalable parallel software library primarily intended for the
+solution of sparse linear systems that arise from physical models, especially
+problems involving multiple degrees of freedom at each node. For example, when
+the finite element method is used to solve practical problems in structural
+engineering, each node typically has two to five degrees of freedom;
+BlockSolve95 is designed to take advantage of problems with this type of local
+structure. BlockSolve95 is also reasonably efficient for problems that have
+only one degree of freedom associated with each node, such as the three-
+dimensional Poisson problem.
+
+BlockSolve95 is general purpose; we do not require that the matrices have any
+particular structure other than being sparse and being symmetric in structure
+(but not necessarily in value).
+
+WWW: http://www-unix.mcs.anl.gov/sumaa3d/BlockSolve/

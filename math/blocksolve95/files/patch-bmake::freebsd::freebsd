@@ -1,0 +1,37 @@
+--- bmake/freebsd/freebsd.orig	Tue Jan  9 16:40:08 1996
++++ bmake/freebsd/freebsd	Sun Oct  3 18:12:06 2004
+@@ -1,13 +1,13 @@
+ 
+-CC       = gcc  -DPARCH_freebsd
+-FC       = f77
++CC      += -DPARCH_freebsd
++#FC       = f77
+ AR       = ar
+ RM       = rm -f *.c.*
+-OMAKE    = gnumake  --no-print-directory
++OMAKE    = $(GMAKE)
+ RANLIB   = ranlib
+ SHELL    = /bin/sh
+-CLINKER  = gcc $(BASEOPT)
+-FLINKER  = f77 $(BASEOPTF)
++CLINKER  = $(CC) $(BASEOPT)
++FLINKER  = $(FC) $(BASEOPTF)
+ CONF     = -DHAVE_PWD_H -DHAVE_MALLOC_H -DHAVE_STRING_H \
+            -DHAVE_SWAPPED_BYTES -DHAVE_X11
+ SYS_LIB  = 
+@@ -33,13 +33,13 @@
+ 	$(RM) $*.o
+ .F.o:
+ 	$(RM) $*.f
+-	cpp $(PETSC_INCLUDE) $*.F > $*.f 
++	$(CPP) $(PETSC_INCLUDE) $*.F > $*.f 
+ 	$(FC) -c $(FFLAGS) $(BASEOPTF) $*.f
+ 	$(RM) $*.f
+ 
+ .F.a: 
+ 	$(RM) $*.f
+-	cpp $(PETSC_INCLUDE) $*.F  > $*.f
++	$(CPP) $(PETSC_INCLUDE) $*.F  > $*.f
+ 	$(FC) -c $(FFLAGS) $(BASEOPTF) $*.f
+ 	$(RM) $*.f
+ 	$(AR) cr $(LIBNAME) $*.o
