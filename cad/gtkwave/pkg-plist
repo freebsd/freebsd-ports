@@ -1,20 +1,15 @@
+@comment $FreeBSD$
 bin/gtkwave
-bin/mvl2lxt
-bin/mvl2vcd
-bin/tex2vcd
 bin/vcd2lxt
-share/gtkwave/pixmaps/add_signals.xpm
-share/gtkwave/pixmaps/larrow.xpm
-share/gtkwave/pixmaps/rarrow.xpm
-share/gtkwave/pixmaps/zoom_begin.xpm
-share/gtkwave/pixmaps/zoom_end.xpm
-share/gtkwave/pixmaps/zoom_fit.xpm
-share/gtkwave/pixmaps/zoom_in.xpm
-share/gtkwave/pixmaps/zoom_out.xpm
-share/gtkwave/pixmaps/zoom_redo.xpm
-share/gtkwave/pixmaps/zoom_undo.xpm
-@dirrm share/gtkwave/pixmaps
-@dirrm share/gtkwave
+lib/gtkwave/reader_lxt.a
+lib/gtkwave/reader_lxt.so
+lib/gtkwave/reader_lxt.so.0
+lib/gtkwave/reader_out.a
+lib/gtkwave/reader_out.so
+lib/gtkwave/reader_out.so.0
+lib/gtkwave/reader_vcd.a
+lib/gtkwave/reader_vcd.so
+lib/gtkwave/reader_vcd.so.0
 %%PORTDOCS%%share/doc/gtkwave/data_format.png
 %%PORTDOCS%%share/doc/gtkwave/edit_menu.png
 %%PORTDOCS%%share/doc/gtkwave/file_menu.png
@@ -40,9 +35,33 @@ share/gtkwave/pixmaps/zoom_undo.xpm
 %%PORTDOCS%%share/doc/gtkwave/w9.png
 %%PORTDOCS%%share/doc/gtkwave/wps.png
 %%PORTDOCS%%share/doc/gtkwave/zoom_submenu.png
-%%PORTDOCS%%@dirrm share/doc/gtkwave
-%%PORTDOCS%%share/examples/gtkwave/agonynan_bccom.evcd.gz
+%%PORTDOCS%%share/examples/gtkwave/agonynan_bccom.vcd.gz
 %%PORTDOCS%%share/examples/gtkwave/pci.vcd.gz
 %%PORTDOCS%%share/examples/gtkwave/simple.vcd
 %%PORTDOCS%%share/examples/gtkwave/sram.vcd.gz
+share/gtkwave/pixmaps/add_signals.xpm
+share/gtkwave/pixmaps/insert_trace.xpm
+share/gtkwave/pixmaps/menu_16.xpm
+share/gtkwave/pixmaps/next_page.xpm
+share/gtkwave/pixmaps/prev_page.xpm
+share/gtkwave/pixmaps/stock_cut.xpm
+share/gtkwave/pixmaps/stock_first.xpm
+share/gtkwave/pixmaps/stock_last.xpm
+share/gtkwave/pixmaps/stock_left.xpm
+share/gtkwave/pixmaps/stock_open_16.xpm
+share/gtkwave/pixmaps/stock_paste.xpm
+share/gtkwave/pixmaps/stock_redo.xpm
+share/gtkwave/pixmaps/stock_redo_16.xpm
+share/gtkwave/pixmaps/stock_right.xpm
+share/gtkwave/pixmaps/stock_undo.xpm
+share/gtkwave/pixmaps/stock_zoom_1.xpm
+share/gtkwave/pixmaps/stock_zoom_fit.xpm
+share/gtkwave/pixmaps/stock_zoom_in.xpm
+share/gtkwave/pixmaps/stock_zoom_out.xpm
+share/gtkwave/pixmaps/time_16.xpm
+share/gtkwave/pixmaps/vcd_mime.xpm
+@dirrm share/gtkwave/pixmaps
+@dirrm share/gtkwave
 %%PORTDOCS%%@dirrm share/examples/gtkwave
+%%PORTDOCS%%@dirrm share/doc/gtkwave
+@dirrm lib/gtkwave
