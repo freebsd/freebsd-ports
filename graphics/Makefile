@@ -26,6 +26,7 @@
     SUBDIR += fli2gif
     SUBDIR += fly
     SUBDIR += fnlib
+    SUBDIR += fujiplay
     SUBDIR += fxtv
     SUBDIR += g2
     SUBDIR += gd
@@ -104,6 +105,7 @@
     SUBDIR += pstoedit
     SUBDIR += py-imaging
     SUBDIR += py-imaging-handbook
+    SUBDIR += pyopengl
     SUBDIR += qcread
     SUBDIR += qiv
     SUBDIR += qvplay
