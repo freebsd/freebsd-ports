@@ -15,7 +15,7 @@ MASTER_SITE_SUBDIR=	mahogany
 MAINTAINER=		ports@freebsd.org
 COMMENT=		An X11 mail and news client
 
-LIB_DEPENDS+=		wx_gtk-2.4.0:${PORTSDIR}/x11-toolkits/wxgtk
+LIB_DEPENDS+=		wx_gtk2-2.4.0:${PORTSDIR}/x11-toolkits/wxgtk2
 
 USE_X_PREFIX=		yes
 GNU_CONFIGURE=		yes
@@ -26,7 +26,8 @@ INSTALL_TARGET=		install_bin install_locale
 
 MAN1=			M.1 mahogany.1
 
-CONFIGURE_ARGS=		--with-python=none
+CONFIGURE_ARGS=		--with-python=none \
+			--with-wx-config=${X11BASE}/bin/wxgtk2-2.4-config
 CONFIGURE_ENV=		OSTYPE=${OPSYS} CFLAGS="${CFLAGS}"
 
 post-patch:
