@@ -1,0 +1,11 @@
+--- common/video/mpeg4-2000/idct/idct.hpp.orig	Fri Jul 23 01:57:47 2004
++++ common/video/mpeg4-2000/idct/idct.hpp	Fri Jul 23 02:02:41 2004
+@@ -22,7 +22,7 @@
+ #ifndef _INT_IDCT_
+ #define _INT_IDCT_ 1
+ 
+-
++#define BLOCK_SIZE 5 
+ #define IDCT_BLOCK_SIZE	8
+ class idct{
+ public:
