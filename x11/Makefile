@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.241 1998/12/11 16:06:00 flathill Exp $
+# $Id: Makefile,v 1.242 1998/12/24 06:37:13 steve Exp $
 #
 
     SUBDIR += XFree86
@@ -86,6 +86,7 @@
     SUBDIR += xscreensaver
     SUBDIR += xskyroot
     SUBDIR += xsnow
+    SUBDIR += xstarroll
     SUBDIR += xtacy
     SUBDIR += xtattr
     SUBDIR += xtestpicture
