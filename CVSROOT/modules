@@ -3959,7 +3959,7 @@ koffice-i18n-tr	ports/misc/koffice-i18n-tr
 koffice-i18n-ven	ports/misc/koffice-i18n-ven
 koffice-i18n-xh	ports/misc/koffice-i18n-xh
 koffice-i18n-zu	ports/misc/koffice-i18n-zu
-koffice-kde3	ports/editors/koffice-kde3	
+koffice-kde3	ports/editors/koffice-kde3
 konversation	ports/irc/konversation
 konverse	ports/net/konverse
 konwert		ports/converters/konwert
@@ -8353,7 +8353,7 @@ seabattle	ports/games/seabattle
 seahaven	ports/games/seahaven
 seahorse	ports/security/seahorse
 seaview		ports/biology/seaview
-sec		ports/sysutils/sec		
+sec		ports/sysutils/sec
 secpanel	ports/security/secpanel
 sectar		ports/archivers/sectar
 sectok		ports/security/sectok
