@@ -312,6 +312,12 @@ PYNUMERIC=		${PYTHON_SITELIBDIR}/Numeric/Numeric.py:${PORTSDIR}/math/py-numeric
 PYXML=			${PYTHON_SITELIBDIR}/_xmlplus/__init__.py:${PORTSDIR}/textproc/py-xml
 .endif
 
+.if defined(PYTHON_REL) && ${PYTHON_REL} < 232
+PYEXPAT=		${PYTHON_SITELIBDIR}/pyexpat.so:${PORTSDIR}/textproc/py-expat
+.else
+PYEXPAT=		${PYTHON_LIBDIR}/lib-dynload/pyexpat.so:${PYTHON_PORTSDIR}
+.endif
+
 # dependencies
 PYTHON_NO_DEPENDS?=		NO
 
