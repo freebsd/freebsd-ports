@@ -1,11 +1,14 @@
---- term/Makefile.in.orig	Sat Mar 14 16:31:20 1998
-+++ term/Makefile.in	Sun May  3 13:01:42 1998
-@@ -46,7 +46,7 @@
- GIT_TERMS	= .gitrc.thix .gitrc.linux .gitrc.vt100 .gitrc.vt102\
- 		  .gitrc.xterm .gitrc.hpterm .gitrc.ansi .gitrc.generic\
- 		  .gitrc.minix .gitrc.aixterm .gitrc.hft .gitrc.mach\
--		  .gitrc.xterm-color
-+		  .gitrc.xterm-color .gitrc.cons25
+--- term/Makefile.in.orig	Mon Jun 28 23:41:13 1999
++++ term/Makefile.in	Mon Nov 15 17:07:01 1999
+@@ -80,9 +80,9 @@
+ PRODUCT = @PRODUCT@
+ VERSION = @VERSION@
  
- GIT_GENERICS	= .gitrc.sun .gitrc.sun-cmd .gitrc.eterm .gitrc.pc3
+-EXTRA_DIST = .gitrc.aixterm .gitrc.ansi .gitrc.common.in 	     .gitrc.generic .gitrc.hft .gitrc.hpterm .gitrc.linux 	     .gitrc.mach .gitrc.minix .gitrc.thix .gitrc.vt100 	     .gitrc.vt102 .gitrc.xterm .gitrc.xterm-color
++EXTRA_DIST = .gitrc.aixterm .gitrc.ansi .gitrc.common.in 	     .gitrc.generic .gitrc.hft .gitrc.hpterm .gitrc.linux 	     .gitrc.mach .gitrc.minix .gitrc.thix .gitrc.vt100 	     .gitrc.vt102 .gitrc.xterm .gitrc.xterm-color .gitrc.cons25
  
+-pkgdata_DATA = .gitrc.aixterm .gitrc.ansi .gitrc.common 	       .gitrc.generic .gitrc.hft .gitrc.hpterm .gitrc.linux 	       .gitrc.mach .gitrc.minix .gitrc.thix .gitrc.vt100 	       .gitrc.vt102 .gitrc.xterm .gitrc.xterm-color
++pkgdata_DATA = .gitrc.aixterm .gitrc.ansi .gitrc.common 	       .gitrc.generic .gitrc.hft .gitrc.hpterm .gitrc.linux 	       .gitrc.mach .gitrc.minix .gitrc.thix .gitrc.vt100 	       .gitrc.vt102 .gitrc.xterm .gitrc.xterm-color .gitrc.cons25
+ 
+ 
+ GIT_GENERICS = .gitrc.sun .gitrc.sun-cmd .gitrc.eterm .gitrc.pc3
