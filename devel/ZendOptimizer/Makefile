@@ -23,11 +23,14 @@ NO_CDROM=	"Redistribution of pre-compiled binaries is not permitted"
 PKGMESSAGE=	${WRKDIR}/pkg-message
 
 .include <bsd.port.pre.mk>
-.include "${.CURDIR}/../../lang/php4/bsd.php.mk"
+.include "${PORTSDIR}/lang/php4/bsd.php.mk"
 
 # Check for FreeBSD version
-.if ${OSVERSION} < 400000 || ${OSVERSION} > 499999
-IGNORE=		"This port is for FreeBSD 4 only"
+.if ${OSVERSION} >= 500000
+LIB_DEPENDS=	c.4:${PORTSDIR}/misc/compat4x
+.endif
+.if ${OSVERSION} < 400000
+IGNORE=		"This port is for FreeBSD 4 or above"
 .else
 # Check for ZendOptimizer sources
 .if !exists(${DISTDIR}/${DISTNAME}${EXTRACT_SUFX})
