@@ -6,6 +6,14 @@ You should get into the habit of checking this file for changes each
 time you update your ports collection, before attempting any port
 upgrades.
 
+20040313:
+  AFFECTS: users of textproc/expat2
+
+  Users of expat2 (and its many dependencies) should do the following to
+  properly update expat2 and all of its dependencies:
+
+  portupgrade -rf textproc/expat2
+
 20040311:
   AFFECTS: users of databases/postgresql7
 
