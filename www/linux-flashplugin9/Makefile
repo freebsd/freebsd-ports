@@ -25,20 +25,14 @@ NO_BUILD=	yes
 WRKSRC=		${WRKDIR}/install_flash_player_7_linux
 LATEST_LINK=	flash7
 
-PLUGINSDIR=	lib/linux-mozilla/plugins
 LIBFILES=	libflashplayer.so flashplayer.xpt
 
 DOCSDIR?=	${PREFIX}/share/doc/${UNIQUENAME}
-
-PLIST_SUB=	PLUGINSDIR="${PLUGINSDIR}"
 
 do-install:
 	@${MKDIR} ${PREFIX}/lib/linux-flashplugin7
 .for f in ${LIBFILES}
 	@${INSTALL_DATA} ${WRKSRC}/${f} ${PREFIX}/lib/linux-flashplugin7
-.if exists(${PLUGINSDIR})
-	@${LN} -sf ${PREFIX}/lib/linux-flashplugin7/${f} ${PREFIX}/${PLUGINSDIR}
-.endif
 .endfor
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
