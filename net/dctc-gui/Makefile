@@ -67,6 +67,10 @@ post-patch:
 		s|^(dc_gui_OBJECTS[^\\]+)(\\*)$$|\1 ${file:S/.c$/.o/} \2|' \
 		${WRKSRC}/src/Makefile.in
 .endfor
+# disable GNU auto* tools
+	@${FIND} ${WRKSRC} -type f -name "Makefile.in" | ${XARGS} \
+		-x -n 10 ${REINPLACE_CMD} -E -e \
+		's!^(ACLOCAL|AUTOCONF|AUTOMAKE|AUTOHEADER).+$$!\1=${TRUE}!'
 
 post-configure:
 	@${ECHO_CMD} '#ifndef MSG_NOSIGNAL' >> ${CONFIGURE_WRKSRC}/config.h
@@ -76,10 +80,6 @@ post-configure:
 	@${ECHO_CMD} '#ifndef SEMVMX' >> ${WRKSRC}/config.h
 	@${ECHO_CMD} '#define SEMVMX 32767' >> ${WRKSRC}/config.h
 	@${ECHO_CMD} '#endif' >> ${WRKSRC}/config.h
-# disable GNU auto* tools
-	@${FIND} ${WRKSRC} -type f -name "Makefile" | ${XARGS} \
-		-n 10 ${REINPLACE_CMD} -E -e \
-		's! (autoconf|autoheader|automake|aclocal)$$! ${TRUE}!'
 
 post-install:
 .ifndef(NOPORTDOCS)
