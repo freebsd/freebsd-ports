@@ -138,6 +138,12 @@ liveMedia=		\
 		liveMedia/include/liveMedia_version.hh \
 		liveMedia/include/uLawAudioFilter.hh
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 502000
+BROKEN=		"Does not compile"
+.endif
+
 post-extract:
 	@${CP} ${FILESDIR}/config.fixed-${OPSYS:L} ${WRKSRC}/
 
@@ -197,4 +203,4 @@ do-install:
 	@${INSTALL_DATA} ${WRKSRC}/${file} ${PREFIX}/live/liveMedia/include/
 .endfor
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
