@@ -37,6 +37,7 @@ bin/mshsort
 %%PORTDOCS%%%%EXAMPLESDIR%%/demos/sphere-stl.stl
 %%PORTDOCS%%%%EXAMPLESDIR%%/demos/sphere.geo
 %%PORTDOCS%%%%EXAMPLESDIR%%/demos/splines.geo
+%%PORTDOCS%%%%EXAMPLESDIR%%/demos/title.script
 %%PORTDOCS%%%%EXAMPLESDIR%%/demos/tower.geo
 %%PORTDOCS%%%%EXAMPLESDIR%%/demos/tower.i1
 %%PORTDOCS%%%%EXAMPLESDIR%%/demos/tower.i2
