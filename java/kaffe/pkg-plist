@@ -1,5 +1,3 @@
-bin/Kaffe
-bin/kaffeh
 bin/appletviewer
 bin/install-jar
 bin/jar
@@ -10,6 +8,7 @@ bin/javakey
 bin/javap
 bin/jdb
 bin/kaffe
+bin/kaffeh
 bin/native2ascii
 bin/pizza
 bin/pizzadoc
@@ -20,34 +19,49 @@ bin/serialver
 include/kaffe/Arrays.h
 include/kaffe/java_lang_Object.h
 include/kaffe/java_lang_String.h
-include/kaffe/java_lang_Throwable.h
 include/kaffe/java_lang_Thread.h
 include/kaffe/java_lang_ThreadGroup.h
-include/kaffe/jtypes.h
+include/kaffe/java_lang_Throwable.h
 include/kaffe/jmalloc.h
 include/kaffe/jni.h
+include/kaffe/jni_cpp.h
 include/kaffe/jsyscall.h
+include/kaffe/jtypes.h
 include/kaffe/native.h
+lib/kaffe/libawt-1.0b4.so
+lib/kaffe/libawt.la
 lib/kaffe/libawt.so
-lib/kaffe/libawt.so.1
+lib/kaffe/libio-1.0b4.so
+lib/kaffe/libio.la
 lib/kaffe/libio.so
-lib/kaffe/libio.so.1
+lib/kaffe/libmanagement-1.0b4.so
+lib/kaffe/libmanagement.la
 lib/kaffe/libmanagement.so
-lib/kaffe/libmanagement.so.1
+lib/kaffe/libmath-1.0b4.so
+lib/kaffe/libmath.la
 lib/kaffe/libmath.so
-lib/kaffe/libmath.so.1
+lib/kaffe/libnative-1.0b4.so
+lib/kaffe/libnative.la
 lib/kaffe/libnative.so
-lib/kaffe/libnative.so.1
+lib/kaffe/libnet-1.0b4.so
+lib/kaffe/libnet.la
 lib/kaffe/libnet.so
-lib/kaffe/libnet.so.1
+lib/kaffe/libzip-1.0b4.so
+lib/kaffe/libzip.la
 lib/kaffe/libzip.so
-lib/kaffe/libzip.so.1
+lib/libkaffevm-1.0b4.so
+lib/libkaffevm.la
+lib/libkaffevm.so
 @exec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -m %B
 @unexec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -R
-share/kaffe/ENVIRONMENT
-share/kaffe/license.terms
+libexec/Kaffe
+share/kaffe/BUILD_ENVIRONMENT
 share/kaffe/Klasses.jar
+share/kaffe/comm.jar
+share/kaffe/license.terms
 share/kaffe/pizza.jar
+share/kaffe/pjava.jar
+share/kaffe/servlet.jar
 @dirrm include/kaffe
 @dirrm lib/kaffe
 @dirrm share/kaffe
