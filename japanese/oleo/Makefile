@@ -20,6 +20,9 @@ PATCH_DIST_STRIP=	-p1
 
 MAINTAINER=    sanpei@FreeBSD.org
 
+# xmkmf is for configure script, not for USE_IMAKE.
+BUILD_DEPENDS=	xmkmf:${PORTSDIR}/devel/imake-4
+
 CONFIGURE_ENV= CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
 		LIBS="-L${LOCALBASE}/lib -L${X11BASE}/lib"
 GNU_CONFIGURE=yes
