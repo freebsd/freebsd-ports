@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mnemo
-PORTVERSION=	1.1.2
+PORTVERSION=	2.0
 CATEGORIES=	deskutils www
 MASTER_SITES=	ftp://ftp.horde.org/pub/mnemo/				\
 		ftp://ftp.planetmirror.com/pub/horde/mnemo/		\
@@ -16,36 +16,35 @@ MASTER_SITES=	ftp://ftp.horde.org/pub/mnemo/				\
 		ftp://ftp.nl.horde.org/mirror/horde-ftp/pub/mnemo/	\
 		ftp://ftp.uk.horde.org/mirrors/ftp.horde.org/pub/mnemo/	\
 		http://ftp.horde.org/pub/mnemo/
+DISTNAME=	${PORTNAME}-h3-${PORTVERSION}
 
 MAINTAINER=	thierry@FreeBSD.org
 COMMENT=	Mnemo is the Horde notes and memos application
 
-RUN_DEPENDS=	${LOCALBASE}/www/horde/imp/index.php:${PORTSDIR}/mail/imp3
+RUN_DEPENDS=	${LOCALBASE}/www/horde/rpc.php:${PORTSDIR}/www/horde
 
 NO_BUILD=	yes
 USE_REINPLACE=	yes
 
-REINPLACE_ARGS=	-i.beforeMnemo
-
-PLIST_SUB=	HORDEDIR=${LHORDEDIR} MNEMODIR=${LMNEMODIR}
+PLIST_SUB=	MNEMODIR=${LMNEMODIR}
 PKGMESSAGE=	${WRKDIR}/pkg-message
 
 DOCS=		LICENSE README docs/CHANGES docs/CREDITS docs/INSTALL	\
-		docs/RELEASE_NOTES
-CONFFILE=	conf.php menu.php prefs.php
-SUB_DIRS=	config graphics lib locale po scripts templates util
+		docs/RELEASE_NOTES  docs/TODO docs/UPGRADING
+CONFFILE=	prefs.php
+SUB_DIRS=	config lib locale po scripts templates themes
 
 LHORDEDIR?=	www/horde
 LMNEMODIR?=	${LHORDEDIR}/mnemo
 
-HORDEDIR=	${PREFIX}/${LHORDEDIR}
 MNEMODIR=	${PREFIX}/${LMNEMODIR}
 CONFDIR=	${MNEMODIR}/config
 
 HORDE_INC=	${LOCALBASE}/etc/horde
 
-post-patch:
-	@${RM} ${WRKSRC}/config/conf.php.dist.orig
+pre-configure:
+	@${SED} -e "s:/home/httpd/html/horde/mnemo:${MNEMODIR}:g"	\
+		${FILESDIR}/httpd.conf.mnemo > ${WRKDIR}/httpd.conf.mnemo
 
 do-install:
 	@${MKDIR}  ${MNEMODIR}
@@ -58,18 +57,9 @@ do-install:
 	  ${CP} ${CONFDIR}/${FILE}.dist ${CONFDIR}/${FILE} ;	\
 	fi
 .endfor
-	@${CHOWN} -R www:www ${MNEMODIR}
+	@${CHOWN} -R ${WWWOWN}:${WWWGRP} ${MNEMODIR}
 	@${CHMOD} -R o-rwx ${CONFDIR}
-	@${CP} -p ${FILESDIR}/httpd.conf.mnemo ${HORDE_INC}
-	@${REINPLACE_CMD} -e "s:/home/httpd/html/horde/mnemo:${MNEMODIR}:g"	\
-		${HORDE_INC}/httpd.conf.mnemo
-	@${RM} ${HORDE_INC}/httpd.conf.mnemo.beforeMnemo
-	@${CP} -p ${HORDEDIR}/config/registry.php		\
-		${HORDEDIR}/config/registry.php.beforeMnemo
-	@${REINPLACE_CMD} -e "s://UNCOMMENTWHENINSTMNEMO::"	\
-		${HORDEDIR}/config/registry.php
-	@${CP} -p ${HORDEDIR}/config/registry.php		\
-		${HORDEDIR}/config/registry.php.afterMnemo
+	@${INSTALL_DATA} ${WRKDIR}/httpd.conf.mnemo ${HORDE_INC}
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 .for FILE in ${DOCS}
@@ -79,10 +69,9 @@ do-install:
 .endif
 
 post-install:
-	@${ECHO_MSG}
-	@${SED} -e "s:%%MNEMODIR%%:${MNEMODIR}:g;s:%%PORTSDIR%%:${PORTSDIR}:g"	\
-		-e "s:%%CONFDIR%%:${CONFDIR}:g;s:%%HORDEDIR%%:${HORDEDIR}:"	\
+	@${SED} -e "s:%%MNEMODIR%%:${MNEMODIR}:g;s:%%DOCSDIR%%:${DOCSDIR}:g"	\
 		< ${FILESDIR}/pkg-message.in > ${PKGMESSAGE}
+	@${ECHO_MSG}
 	@${CAT} ${PKGMESSAGE}
 	@${ECHO_MSG}
 
