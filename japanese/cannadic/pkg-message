@@ -1,0 +1,10 @@
+
+After the installation, lines like the following need to be added to
+your .canna.
+
+    (use-dictionary
+      "iroha"; and more....
+      "gcanna"  ; add this!
+      "gcannaf" ; add this!
+    )
+
