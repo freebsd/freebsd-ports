@@ -6,7 +6,7 @@
 #
 
 PORTNAME=		bash
-PORTVERSION=		3.0.13
+PORTVERSION=		3.0.${PATCHLEVEL}
 PORTREVISION=		0
 CATEGORIES=		shells
 MASTER_SITES=		${MASTER_SITE_GNU:S/$/:bash/} \
@@ -20,8 +20,9 @@ EXTRACT_ONLY=		${DISTNAME}${EXTRACT_SUFX}
 
 PATCH_SITES=		ftp://ftp.cwru.edu/pub/%SUBDIR%/:bash
 PATCH_SITE_SUBDIR=	${PORTNAME}/${DISTNAME}-patches/:bash
-.for patch in		01 02 03 04 05 06 07 08 09 10 11 12 13
+.for patch in		01 02 03 04 05 06 07 08 09 10 11 12 13 14 15
 PATCHFILES+=		${PORTNAME}${PORTVERSION:R:S/.//g}-0${patch}:bash
+PATCHLEVEL=		${patch}
 .endfor
 
 MAINTAINER=		eik@FreeBSD.org
