@@ -18,6 +18,7 @@
     SUBDIR += custom-emacs
     SUBDIR += custom-mule
     SUBDIR += e93
+    SUBDIR += elvis
     SUBDIR += emacs
     SUBDIR += emacs20
     SUBDIR += emacs20-dl
