@@ -23,14 +23,6 @@ DISTFILES=	gcc-core-${PORTVERSION}${EXTRACT_SUFX} \
 MAINTAINER?=	gerald@FreeBSD.org
 COMMENT?=	GNU Compiler Collection 3.2.3
 
-.if defined (WITH_BOUNDSCHECKING)
-# Fetch another file, but don't extract it.  Also add another patchfile.
-BCPATCH=	bounds-checking-gcc-3.2.3-1.01.patch.bz2
-DISTFILES+=	${BCPATCH}:bc
-EXTRACT_ONLY=	${DISTFILES:S/${BCPATCH}:bc//}
-EXTRA_PATCHES=	${FILESDIR}/opt.patch-bc
-.endif
-
 LATEST_LINK?=	gcc32${PKGNAMESUFFIX}
 
 USE_BZIP2=	yes
@@ -84,23 +76,6 @@ MAN1=		cpp32.1 g++32.1 g77-32.1 gcc32.1 gcov32.1 \
 		gcj32.1 gcjh32.1 gij.1 rmic.1 rmiregistry.1 \
 		jcf-dump32.1 jv-scan32.1 jv-convert.1
 MAN7=		fsf-funding.7 gfdl.7 gpl.7
-
-pre-fetch:
-	@${ECHO} "Making GCC ${DISTNAME:S/^gcc-//} for ${OPSYS} ${OSREL} ${PORTOBJFORMAT}	target ${CONFIGURE_TARGET}"
-.if !defined(WITH_BOUNDSCHECKING)
-	@${ECHO_MSG} "You can enable fine-grained bounds-checking support for compiled C programs"
-	@${ECHO_MSG} "by defining WITH_BOUNDSCHECKING.  Compile and link with \"-fbounds-checking\""
-	@${ECHO_MSG} "to use."
-.endif
-
-.if defined(WITH_BOUNDSCHECKING)
-# Extract bounds-checking patch, removing the ada parts of the patch with sed.
-pre-patch:
-	cd ${_DISTDIR} ; \
-	${BZCAT} ${BCPATCH} | \
-		${SED} -e '/^--- .*ada/,/^diff/d' | \
-		${PATCH} -d ${PATCH_WRKSRC} -E -p1 --quiet
-.endif
 
 pre-configure:
 	cd ${SRCDIR} ; contrib/gcc_update --touch
