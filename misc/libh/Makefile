@@ -6,11 +6,10 @@
 #
 
 PORTNAME=	libh
-PORTVERSION=	0.2
+PORTVERSION=	0.2.1
 CATEGORIES=	misc
 # ${MASTER_SITES} is unavailable for CVS only projects.
 # MASTER_SITES=	${MASTER_SITE_LOCAL}
-DISTNAME=	libh
 
 MAINTAINER=	nra@FreeBSD.org
 
@@ -24,17 +23,21 @@ INSTALLS_SHLIB=	yes
 
 .include <bsd.port.pre.mk>
 
+# we could also use the makedistfiles method here
 DISTFILES!=	${CAT} ${FILESDIR}/distfiles
 
 CVS_CMD?=	cvs -z3
 # arbitrary date for now.
-CVS_DATE=	Wed June 19 14:00:00 GMT 2001
+CVS_DATE=	Thu December 21 18:20:00 GMT 2001
 CVS_DATE_!=	${ECHO} -n "${CVS_DATE}" | ${SED} 's/[ \t:]/_/g'
 CVS_SITES?=	:pserver:anonymous@usw4.freebsd.org:/home/libh/cvs
-DIRNAME=	${PORTNAME}-${PORTVERSION}
-STAMPFILE=	${DISTDIR}/${DIRNAME}/.stamp
+STAMPFILE=	${DISTDIR}/${DISTNAME}/.stamp
 
-WRKSRC=		${WRKDIR}/libh-0.2
+WRKSRC=		${WRKDIR}/${PORTNAME}
+
+# until we find a way of including ${WRKSRC}/${PORTNAME}/Makefile.uitype
+# only after "extract"
+UITYPE=		text+graphics
 
 .if defined(BATCH)
 do-fetch: fetchsrctarball
@@ -43,9 +46,9 @@ do-fetch:
 	@if [ ! -f ${STAMPFILE} ] || \
 		[ "X${CVS_DATE}" != "X$$(${CAT} ${STAMPFILE})" ]; then \
 		${ECHO_MSG} "No stamp file (or out of date)"; \
-		if [ -f ${DISTDIR}/${DIRNAME}.${CVS_DATE_}.tar.gz ]; then \
+		if [ -f ${DISTDIR}/${DISTNAME}.${CVS_DATE_}.tar.gz ]; then \
 			cd ${DISTDIR}; \
-			${TAR} xfz ${DIRNAME}.${CVS_DATE_}.tar.gz \
+			${TAR} xfz ${DISTNAME}.${CVS_DATE_}.tar.gz \
 				${DISTFILES}; \
 			${ECHO} -n "${CVS_DATE}" > ${STAMPFILE}; \
 			exit; \
@@ -73,7 +76,7 @@ do-fetch:
 				${ECHO_MSG} ">> *** Please hit enter here for the password."; \
 				${CVS_CMD} -d $${CVS_SITE} login < /dev/null; \
 			fi ; \
-			if ${CVS_CMD} -d $${CVS_SITE} co -D '${CVS_DATE}' ${DISTNAME}; then \
+			if ${CVS_CMD} -d $${CVS_SITE} co -D '${CVS_DATE}' ${PORTNAME}; then \
 				if [ "X$${CVS_LOGIN}" = "Xyes" ]; then \
 					${CVS_CMD} -d $${CVS_SITE} logout < /dev/null; \
 				fi; \
@@ -85,7 +88,7 @@ do-fetch:
 				${CVS_CMD} -d $${CVS_SITE} logout < /dev/null; \
 			fi; \
 		done; \
-		${ECHO_MSG} ">> Couldn't CVS checkout ${DISTNAME}." ;\
+		${ECHO_MSG} ">> Couldn't CVS checkout ${PORTNAME}." ;\
 		exit 1; \
 	fi
 .endif
@@ -93,12 +96,12 @@ do-fetch:
 makesrctarball:	fetch
 	@cd ${DISTDIR}; \
 	${ECHO_MSG} ">> Creating source tarball in ${DISTDIR}"; \
-	${ECHO_MSG} ">> \"${DIRNAME}.${CVS_DATE_}.tar.gz\"."; \
-	${TAR} cfz ${DIRNAME}.${CVS_DATE_}.tar.gz ${DIRNAME}
+	${ECHO_MSG} ">> \"${DISTNAME}.${CVS_DATE_}.tar.gz\"."; \
+	${TAR} cfz ${DISTNAME}.${CVS_DATE_}.tar.gz ${DISTNAME}
 
 fetchsrctarball:
 	@cd ${DISTDIR}; \
-	file=${DIRNAME}.${CVS_DATE_}.tar.gz; \
+	file=${DISTNAME}.${CVS_DATE_}.tar.gz; \
 	if [ -e $$file ]; then \
 		exit; \
 	fi; \
@@ -115,36 +118,46 @@ fetchsrctarball:
 	${ECHO_MSG} ">> ${_DISTDIR} and try again."; \
 	exit 1
 
+makedistfiles: fetch
+	cd ${DISTDIR} && find ${DISTNAME} \! -type d | \
+		egrep -v CVS\|.stamp > ${FILESDIR}/distfiles
+
 do-extract:
 	@${MKDIR} ${WRKDIR}
-	@(cd ${DISTDIR}/${DIRNAME}/${DISTNAME} && \
-		find . ! -name CVS -print | \
+	@(cd ${DISTDIR}/${DISTNAME}/${PORTNAME} && \
+		find . ! -path *CVS* -print | \
 		cpio -pdmu ${WRKSRC} > /dev/null 2>&1)
 
 do-build:
 	@cd ${WRKSRC}; ${MAKE} ${ALL_TARGET}
 
 do-install:
-	${INSTALL_DATA} ${WRKSRC}/lib/common/libh.a ${PREFIX}/lib/libh.a
-	${INSTALL_DATA} ${WRKSRC}/lib/common/libh.so.0 ${PREFIX}/lib/libh.so.0
+	${INSTALL_DATA} ${WRKSRC}/compile/${UITYPE}/libh.a ${PREFIX}/lib/libh.a
+	${INSTALL_DATA} ${WRKSRC}/compile/${UITYPE}/libh.so.0 ${PREFIX}/lib/libh.so.0
 	${LN} -sf ${PREFIX}/lib/libh.so.0 ${PREFIX}/lib/libh.so
-	${INSTALL_DATA} ${WRKSRC}/lib/hui/libhui.a ${PREFIX}/lib/libhui.a
-	${INSTALL_DATA} ${WRKSRC}/lib/hui/libhui.so.0 ${PREFIX}/lib/libhui.so.0
+	${INSTALL_DATA} ${WRKSRC}/compile/${UITYPE}/libhui.a ${PREFIX}/lib/libhui.a
+	${INSTALL_DATA} ${WRKSRC}/compile/${UITYPE}/libhui.so.0 ${PREFIX}/lib/libhui.so.0
 	${LN} -sf ${PREFIX}/lib/libhui.so.0 ${PREFIX}/lib/libhui.so
 .for H_NAME in disk file database sysinstall
-	${INSTALL_DATA} ${WRKSRC}/lib/${H_NAME}/libh${H_NAME}.a ${PREFIX}/lib/libh${H_NAME}.a
-	${INSTALL_DATA} ${WRKSRC}/lib/${H_NAME}/libh${H_NAME}.so.0 ${PREFIX}/lib/libh${H_NAME}.so.0
+	${INSTALL_DATA} ${WRKSRC}/compile/${UITYPE}/libh${H_NAME}.a ${PREFIX}/lib/libh${H_NAME}.a
+	${INSTALL_DATA} ${WRKSRC}/compile/${UITYPE}/libh${H_NAME}.so.0 ${PREFIX}/lib/libh${H_NAME}.so.0
 	${LN} -sf ${PREFIX}/lib/libh${H_NAME}.so.0 ${PREFIX}/lib/libh${H_NAME}.so
 .endfor
 .for T_NAME in tclhui tcl tclfile tcldisk tclsysinstall
-	${INSTALL_DATA} ${WRKSRC}/lib/tcl/libh${T_NAME}.a ${PREFIX}/lib/libh${T_NAME}.a
-	${INSTALL_DATA} ${WRKSRC}/lib/tcl/libh${T_NAME}.so.0 ${PREFIX}/lib/libh${T_NAME}.so.0
+	${INSTALL_DATA} ${WRKSRC}/compile/${UITYPE}/libh${T_NAME}.a ${PREFIX}/lib/libh${T_NAME}.a
+	${INSTALL_DATA} ${WRKSRC}/compile/${UITYPE}/libh${T_NAME}.so.0 ${PREFIX}/lib/libh${T_NAME}.so.0
 	${LN} -sf ${PREFIX}/lib/libh${T_NAME}.so.0 ${PREFIX}/lib/libh${T_NAME}.so
 .endfor
+
 	${MKDIR} ${PREFIX}/share/libh
-.for TCL_FILES in bin/setup doc/examples lib/disk lib/sysinstall
-	${INSTALL_DATA} ${WRKSRC}/${TCL_FILES}/*.tcl ${PREFIX}/share/libh
+	${INSTALL_DATA} ${WRKSRC}/release/*.tcl ${PREFIX}/share/libh
+
+.for DIR in diskedit scripts pkgtools
+	${MKDIR} ${PREFIX}/share/libh/${DIR}
+	${INSTALL_DATA} ${WRKSRC}/release/${DIR}/*.tcl \
+		${PREFIX}/share/libh/${DIR} 
 .endfor
-	${INSTALL_PROGRAM} ${WRKSRC}/bin/tclh/tclh.static ${PREFIX}/bin/tclh
+
+	${INSTALL_PROGRAM} ${WRKSRC}/compile/${UITYPE}/tclh.static ${PREFIX}/bin/tclh
 
 .include <bsd.port.post.mk>
