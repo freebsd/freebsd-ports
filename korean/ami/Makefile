@@ -32,6 +32,9 @@ MAKE_ENV=	GLIB_CONFIG="${GLIB_CONFIG}"
 PKGNAMESUFFIX=	-gnome
 RUN_DEPENDS+=	panel:${PORTSDIR}/x11/gnomecore
 CONFIGURE_ARGS+= --enable-gnome-applet
+.else
+pre-fetch:
+	@${ECHO_MSG} "Type \"make WITH_GNOME_APPLET=YES\" if you want GNOME panel applet support."
 .endif
 
 post-build:
