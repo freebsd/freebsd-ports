@@ -5370,6 +5370,7 @@ p5-DateTime-Event-ICal	ports/devel/p5-DateTime-Event-ICal
 p5-DateTime-Event-NameDay	ports/devel/p5-DateTime-Event-NameDay
 p5-DateTime-Event-Recurrence	ports/devel/p5-DateTime-Event-Recurrence
 p5-DateTime-Event-Sunrise	ports/devel/p5-DateTime-Event-Sunrise
+p5-DateTime-Fiscal-Year	ports/devel/p5-DateTime-Fiscal-Year
 p5-DateTime-Format-Baby	ports/devel/p5-DateTime-Format-Baby
 p5-DateTime-Format-Bork	ports/devel/p5-DateTime-Format-Bork
 p5-DateTime-Format-Builder	ports/devel/p5-DateTime-Format-Builder
