@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	rmagick
-PORTVERSION=	1.3.0
+PORTVERSION=	1.3.1
 CATEGORIES=	graphics ruby
-MASTER_SITES=	http://rubyforge.org/download.php/35/
+MASTER_SITES=	http://rubyforge.org/download.php/124/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
 DISTNAME=	RMagick-${PORTVERSION}
 DIST_SUBDIR=	ruby
