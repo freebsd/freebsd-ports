@@ -8,7 +8,7 @@
 PORTNAME=	bzip
 PORTVERSION=	0.21
 CATEGORIES=	archivers
-MASTER_SITES=	http://thalia.ifh.de/nuastro/software/siegmund/download/contrib/
+MASTER_SITES=	ftp://ftp.fu-berlin.de/unix/tools/archivers/bzip/
 
 MAINTAINER=	ports@FreeBSD.org
 
