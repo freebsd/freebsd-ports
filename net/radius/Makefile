@@ -6,9 +6,8 @@
 #
 
 PORTNAME=	radius-basic
-PORTVERSION=	3.6B1
+PORTVERSION=	3.6B2
 CATEGORIES=	net
-MASTER_SITES=	ftp://ftp.merit.edu/radius/releases/
 DISTNAME=	radius.${PORTVERSION}.basic
 
 MAINTAINER=	ports@FreeBSD.org
@@ -27,4 +26,13 @@ MAN8=		builddbm.8 dnscheck.8 radcheck.8 radiusd.8 radpwtst.8
 pre-install:
 	@${MKDIR} ${PREFIX}/lib/radius/db ${PREFIX}/lib/radius/acct
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if !exists(${DISTDIR}/${DISTNAME}${EXTRACT_SUFX})
+IGNORE="Goto radius\' website: \
+	\"http://www.interlinknetworks.com/downloads/\#freeware\" \
+	to get more info on downloading the tarball, then place \
+	${DISTNAME}${EXTRACT_SUFX} into ${DISTDIR} and run make again"
+.endif
+
+.include <bsd.port.post.mk>
