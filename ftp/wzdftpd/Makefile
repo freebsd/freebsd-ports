@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	wzdftpd
-PORTVERSION=	0.4.4
+PORTVERSION=	0.5.0
 CATEGORIES=	ftp ipv6
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -20,15 +20,17 @@ USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 INSTALLS_SHLIB=	yes
 USE_INC_LIBTOOL_VER=13
-CONFIGURE_ARGS+=	--without-mysql --without-pam
+CONFIGURE_ARGS+=	--without-pam
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 PKGMESSAGE=	${WRKDIR}/pkg-message
 
 OPTIONS=	UTF8 "Enable UTF8 support" off \
 		TCL "Enable TCL support" off \
 		SSL "Enable OpenSSL support" on \
+		GNUTLS "Enable gnutls support" off \
 		IPV6 "Enable IPv6 support" on \
-		PERL "Enable PERL support" off
+		PERL "Enable PERL support" off \
+		MYSQL "Enable MYSQL backend" off
 
 MAN1=	siteconfig.1 \
 	siteuptime.1 \
@@ -55,7 +57,13 @@ PLIST_SUB+=	TCL="@comment "
 .if defined(WITH_SSL)
 USE_OPENSSL=	yes
 .else
-CONFIGURE_ARGS+=	--with-openssl=/dev/null
+CONFIGURE_ARGS+=	--disable-openssl
+.endif
+
+.if defined(WITH_GNUTLS)
+LIB_DEPENDS+=	gnutls.12:${PORTSDIR}/security/gnutls
+.else
+CONFIGURE_ARGS+=	--disable-gnutls
 .endif
 
 .if defined(WITH_IPV6)
@@ -70,24 +78,34 @@ USE_PERL5=	yes
 PLIST_SUB+=	PERL=""
 .endif
 
+.if defined(WITH_MYSQL)
+USE_MYSQL=	yes
+PLIST_SUB+=	MYSQL=""
+.else
+CONFIGURE_ARGS+=	--without-mysql
+PLIST_SUB+=	MYSQL="@comment "
+.endif
+
 PORTDOCS=	AUTHORS Permissions.ReadMeFirst README TLS.ReadMeFirst ChangeLog
 
 RC_SCRIPTS_SUB=	PREFIX=${PREFIX} \
 		RC_SUBR=${RC_SUBR}
 
 post-install:
-	${MV} ${PREFIX}/etc/wzd.cfg ${PREFIX}/etc/wzd.cfg.sample
-	${MV} ${PREFIX}/etc/users ${PREFIX}/etc/users.sample
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 .for i in ${PORTDOCS}
 	@${INSTALL_DATA} ${WRKSRC}/${i} ${DOCSDIR}
 .endfor
 .endif
-	@${SED} -e 's,PREFIX,${PREFIX},g' ${FILESDIR}/pkg-message.in > ${PKGMESSAGE}
-	@${CAT} ${PKGMESSAGE}
 	@${SED} ${RC_SCRIPTS_SUB:S/$/!g/:S/^/ -e s!%%/:S/=/%%!/} \
 		${FILESDIR}/wzdftpd.sh > ${PREFIX}/etc/rc.d/wzdftpd.sh
 	@${CHMOD} ${BINMODE} ${PREFIX}/etc/rc.d/wzdftpd.sh
+	@if test ! -f ${PREFIX}/etc/wzd.cfg; then \
+		${CP} ${PREFIX}/etc/wzd.cfg.sample ${PREFIX}/etc/wzd.cfg; \
+	fi
+	@if test ! -f ${PREFIX}/etc/users; then \
+		${CP} ${PREFIX}/etc/users.sample ${PREFIX}/etc/users; \
+	fi
 
 .include <bsd.port.post.mk>
