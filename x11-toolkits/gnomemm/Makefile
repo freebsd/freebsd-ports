@@ -7,6 +7,7 @@
 
 PORTNAME=	gnomemm
 PORTVERSION=	1.3.17
+PORTREVISION=	1
 CATEGORIES=	x11-toolkits gnome
 MASTER_SITES=   # empty
 DISTFILES=      # empty
@@ -23,7 +24,7 @@ LIB_DEPENDS=	gconfmm-2.0:${PORTSDIR}/devel/gconfmm \
 		glademm-2.0:${PORTSDIR}/devel/libglademm \
 		gnomecanvasmm-2.0:${PORTSDIR}/graphics/libgnomecanvasmm \
 		gnomemm-1.3:${PORTSDIR}/x11/libgnomemm \
-		gnomeuimm-1.3:${PORTSDIR}/x11-toolkits/libgnomeuimm
+		gnomeuimm-2.0:${PORTSDIR}/x11-toolkits/libgnomeuimm
 
 NO_BUILD=	yes
 LATEST_LINK=	gnomemm2

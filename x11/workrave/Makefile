@@ -7,6 +7,7 @@
 
 PORTNAME=	workrave
 PORTVERSION=	1.4.0
+PORTREVISION=	1
 CATEGORIES=	x11 gnome
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -15,7 +16,7 @@ MAINTAINER=	einekoai@chello.nl
 COMMENT=	A Gnome RSI prevention tool
 
 LIB_DEPENDS=	gtkmm-2.0.6:${PORTSDIR}/x11-toolkits/gtk--2 \
-		gnomeuimm-1.3:${PORTSDIR}/x11-toolkits/libgnomeuimm \
+		gnomeuimm-2.0:${PORTSDIR}/x11-toolkits/libgnomeuimm \
 		gnet-2.0.0:${PORTSDIR}/net/gnet2
 BUILD_DEPENDS=	intltool-extract:${PORTSDIR}/textproc/intltool
 
