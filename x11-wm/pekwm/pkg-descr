@@ -1,0 +1,15 @@
+A windowmanager based on aewm++.
+
+Here is a compact list of changes between the originial aewm++-1.1.16 code and 
+pekwm, pekwms code is also alot restructured and reformatted.
+
+    * Possibility to group windows in a single frame
+    * Configurable keygrabber
+    * Configurable rootmenu
+    * Configration file
+    * Xinerama support
+    * "Smart" window placement
+    * Basic pixmap theming, with configurable buttons
+    * Some nifty extra bugs! ;)
+
+WWW: http://pekwm.babblica.net/
