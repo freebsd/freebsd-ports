@@ -1,23 +1,24 @@
 
 $FreeBSD$
 
---- Makefile.in.orig	Fri Jul 27 17:45:27 2001
-+++ Makefile.in	Fri Jul 27 18:18:46 2001
-@@ -188,11 +188,11 @@
- appdir = $(datadir)/apps/Applications
- app_DATA = guppi.desktop
+--- Makefile.in.orig	Fri Nov 23 18:19:00 2001
++++ Makefile.in	Fri Nov 23 18:19:44 2001
+@@ -205,12 +205,12 @@
+ #appdir = $(datadir)/apps/Applications
+ #app_DATA = guppi.desktop
  
 -confexecdir = $(libdir)
 +confexecdir = $(prefix)/etc
  confexec_DATA = libguppiConf.sh
- CLEANFILES = libguppiConf.sh
+ CLEANFILES =  	libguppiConf.sh 	xml-i18n-extract xml-i18n-merge xml-i18n-update
+ 
  
 -aclocaldir = $(datadir)/aclocal
 +aclocaldir = $(prefix)/share/aclocal
  aclocal_DATA = libguppi.m4
  
- EXTRA_DIST =  	ChangeLog README AUTHORS NEWS BIBLIOGRAPHY 	Guppi.spec Guppi.spec.in libguppiConf.sh.in guppi.desktop libguppi.m4 	xml-i18n-extract.in xml-i18n-merge.in xml-i18n-update.in
-@@ -548,10 +548,10 @@
+ EXTRA_DIST =  	ChangeLog README AUTHORS NEWS BIBLIOGRAPHY 	libguppiConf.sh.in libguppi.m4 	xml-i18n-extract.in xml-i18n-merge.in xml-i18n-update.in
+@@ -545,10 +545,10 @@
  
  
  libguppiConf.sh: libguppiConf.sh.in Makefile
