@@ -1,22 +1,21 @@
---- config.h.orig	Mon Nov 23 04:58:50 1998
-+++ config.h	Tue Nov 24 00:54:58 1998
-@@ -1,7 +1,7 @@
+--- config.h.orig	Thu Dec 31 22:48:16 1998
++++ config.h	Mon Jan 18 02:18:32 1999
+@@ -1,6 +1,6 @@
  /* configuration file - precompile options */
+ #define USE_NET
+-#undef BG_ON_START
++#define BG_ON_START
+ #define GTK_1_1
+ #undef GTKEDITOR_PATCH
  
- #define USE_NET /* Use networking features */
--#undef BG_ON_START /* Background on startup */
-+#define BG_ON_START /* Background on startup */
- #define GTK_1_1 /* Use GTK 1.1.x */
- #undef GTKEDITOR_PATCH /* Use the GtkEditor patch */
- 
-@@ -44,9 +44,9 @@
+@@ -62,9 +62,9 @@
  /* paths */
  
  #define NETSCAPE "/usr/local/bin/netscape -remote"
--#define EMACS "/usr/bin/emcas"
+-#define EMACS "/usr/bin/emacs"
 -#define DES "/bin/des"
 -#define IDEA "/bin/idea"
-+#define EMACS "/usr/local/bin/emcas"
++#define EMACS "/usr/local/bin/emacs"
 +#define DES "/usr/local/bin/des"
 +#define IDEA "/usr/local/bin/idea"
  #define XTERM "/usr/X11R6/bin/xterm"
