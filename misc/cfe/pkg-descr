@@ -1,0 +1,7 @@
+cfe is a console font editor which works well both on the console and the
+terminal. It includes such abilities as various glyph transforming,
+multi-level undo, and comparing glyphs of two fonts. cfe automatically
+supports loading of .psf and raw binary fonts. Other types of fonts can be
+opened using the proper options.
+
+WWW: http://lrn.ru/~osgene/
