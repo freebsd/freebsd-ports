@@ -20,6 +20,6 @@ $0)
 	cd $oopath && ./soffice "$@"
 	;;
 	*)
-	cd $oopath && exec $program "$@"
+	cd $oopath && exec ./$program "$@"
 	;;
 esac
