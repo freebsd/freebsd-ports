@@ -10,8 +10,8 @@ share/xxkb/su15.xpm
 share/xxkb/su48.xpm
 share/xxkb/ua15.xpm
 share/xxkb/ua48.xpm
-share/doc/xxkb/LICENSE
-share/doc/xxkb/CHANGES.koi8
-share/doc/xxkb/README.koi8
-@dirrm share/doc/xxkb
+%%PORTDOCS%%%%DOCSDIR%%/LICENSE
+%%PORTDOCS%%%%DOCSDIR%%/CHANGES.koi8
+%%PORTDOCS%%%%DOCSDIR%%/README.koi8
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm share/xxkb
