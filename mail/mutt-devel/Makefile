@@ -67,15 +67,15 @@
 #  WITH_MUTT_IFDEF_PATCH
 
 PORTNAME=	mutt-devel
-PORTVERSION=	1.5.1
-PORTREVISION?=	4
+PORTVERSION=	1.5.3
+#PORTREVISION?=	0
 CATEGORIES+=	mail
 .if defined(WITH_MUTT_NNTP)
 CATEGORIES+=	news
 .endif
 MASTER_SITES=	ftp://ftp.demon.co.uk/pub/mirrors/mutt/devel/ \
 		ftp://ftp.parodius.com/pub/mutt/devel/ \
-		ftp://ftp.mutt.org/pub/mutt/devel/
+		ftp://ftp.mutt.org/mutt/devel/
 DISTNAME=	mutt-${PORTVERSION}i
 
 MAINTAINER=	udo.schweigert@siemens.com
@@ -178,9 +178,10 @@ USE_OPENSSL=	yes
 LIB_DEPENDS+=	sasl.8:${PORTSDIR}/security/cyrus-sasl
 .endif
 .if defined(WITH_MUTT_PGP_PATCH)
-SGML_NEEDED=	yes
-pre-configure::
-	${PATCH} ${PATCH_ARGS} < ${PATCHDIR}/extra-patch-pgp-dw
+.error The WITH_MUTT_PGP_PATCH option is currently not available
+#SGML_NEEDED=	yes
+#pre-configure::
+#	${PATCH} ${PATCH_ARGS} < ${PATCHDIR}/extra-patch-pgp-dw
 .endif
 .if defined(WITHOUT_MUTT_SMIME_OUTLOOK_COMPAT)
 pre-configure::
@@ -220,20 +221,24 @@ PATCHFILES+=	patch-${PATCH_VERSION}.vvv.initials.gz \
 SGML_NEEDED=	yes
 .endif
 .if defined(WITH_MUTT_EDIT_THREADS)
-PATCHFILES+=	patch-${PATCH_VERSION}.cd.edit_threads.9.2
+.error The WITH_MUTT_EDIT_THREADS option is currently not available
+#PATCHFILES+=	patch-${PATCH_VERSION}.cd.edit_threads.9.2
 CONFIGURE_ARGS+=	--enable-imap-edit-threads
 SGML_NEEDED=	yes
 .endif
 .if defined(WITH_MUTT_SIGNATURE_MENU)
-PATCHFILES+=	patch-${PATCH_VERSION}.cd.signatures_menu.2.1
+.error The WITH_MUTT_SIGNATURE_MENU option is currently not available
+#PATCHFILES+=	patch-${PATCH_VERSION}.cd.signatures_menu.2.1
 SGML_NEEDED=	yes
 .endif
 .if defined(WITH_MUTT_IFDEF_PATCH)
-PATCHFILES+=	patch-${PATCH_VERSION}.cd.ifdef.1
+.error The WITH_MUTT_IFDEF_PATCH option is currently not available
+#PATCHFILES+=	patch-${PATCH_VERSION}.cd.ifdef.1
 SGML_NEEDED=	yes
 .endif
 .if defined(WITH_MUTT_MBOX_HOOK_PATCH)
-PATCHFILES+=	patch-1.5.1.dw.mbox-hook.1
+.error The WITH_MUTT_MBOX_HOOK_PATCH option is currently not available
+#PATCHFILES+=	patch-${PATCH_VERSION}.dw.mbox-hook.1
 .endif
 
 WRKSRC=		${WRKDIR}/${DISTNAME:S/i$//}

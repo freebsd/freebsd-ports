@@ -63,6 +63,7 @@ cat >> $tmp_first <<EOF
 share/doc/mutt/ABOUT-NLS
 share/doc/mutt/COPYRIGHT
 share/doc/mutt/ChangeLog
+share/doc/mutt/ChangeLog.old
 share/doc/mutt/GPL
 share/doc/mutt/INSTALL
 share/doc/mutt/NEWS
@@ -121,7 +122,7 @@ echo "share/doc/mutt/manual.ps" >> $tmp_first
 fi
 
 if [ "$MUTT_HTML" = "yes" ]; then
-  html=361
+  html=363
   if [ "$MUTT_COMPRESSED_FOLDERS" = "yes" ]; then
     html=$(($html + 5))
   fi
