@@ -1,24 +1,24 @@
---- src/msql/msqldb.c	Fri Feb  7 10:06:42 1997
-+++ src/msql/msqldb.c	Fri Feb  7 10:15:22 1997
-@@ -126,7 +126,7 @@
+--- src/msql/msqldb.c.orig	Fri Aug 28 14:57:51 1998
++++ src/msql/msqldb.c	Fri Aug 28 15:04:11 1998
+@@ -136,7 +136,7 @@
  #endif
  
  	msqlTrace(TRACE_IN,"msqlListDBs()");
 -	(void)snprintf(path, MAXPATHLEN, "%s/msqldb",msqlHomeDir);
-+	(void)snprintf(path, MAXPATHLEN, "/var/db/msqldb");
++	(void)snprintf(path, MAXPATHLEN, "var/db/msqldb");
  	dirp = opendir(path);
  	if (!dirp)
  	{
-@@ -187,7 +187,7 @@
+@@ -199,7 +199,7 @@
  #endif
  
  	msqlTrace(TRACE_IN,"msqlListTables()");
 -	(void)snprintf(path,MAXPATHLEN,"%s/msqldb/%s",msqlHomeDir,db);
-+	(void)snprintf(path, MAXPATHLEN, "/var/db/msqldb/%s",db);
++	(void)snprintf(path,MAXPATHLEN,"/var/db/msqldb/%s");
  	dirp = opendir(path);
  	if (!dirp)
  	{
-@@ -1130,7 +1130,7 @@
+@@ -1441,7 +1441,7 @@
  	struct	stat buf;
  
  	msqlTrace(TRACE_IN,"msqlInit()");
@@ -26,149 +26,146 @@
 +	(void)snprintf(path, MAXPATHLEN, "/var/db/msqldb/%s",db);
  	if (stat(path,&buf) < 0)
  	{
- 		snprintf(errMsg,BAD_DB_ERROR,db);
-@@ -1165,8 +1165,7 @@
+ 		snprintf(errMsg, MAX_ERR_MSG, BAD_DB_ERROR,db);
+@@ -1479,8 +1479,8 @@
  	/*
  	** Write the catalog entry
  	*/
 -	(void)snprintf(defPath, MAXPATHLEN, "%s/msqldb/%s/%s.def",
 -		msqlHomeDir,db,table);
-+	(void)snprintf(defPath, MAXPATHLEN, "/var/db/msqldb/%s/%s.def",db,table);
- #ifdef OS2
- 	fd = _sopen(defPath,O_RDONLY,SH_DENYNO, S_IREAD | S_IWRITE);
- #else
-@@ -1239,8 +1239,7 @@
++	(void)snprintf(defPath, MAXPATHLEN, "/var/db/msqldb/%s/%s.def",
++		db,table);
+ 	if (stat(defPath, &sbuf) >= 0)
+ 	{
+ 		snprintf(errMsg,MAX_ERR_MSG,TABLE_EXISTS_ERROR,table);
+@@ -1531,8 +1531,8 @@
  	** Create an empty table
  	*/
  	
 -	(void)snprintf(datPath,MAXPATHLEN, "%s/msqldb/%s/%s.dat",
 -		msqlHomeDir,db,table);
-+	(void)snprintf(datPath, MAXPATHLEN, "/var/db/msqldb/%s/%s.dat",db,table);
- 	(void)unlink(datPath);
++	(void)snprintf(datPath,MAXPATHLEN, "/var/db/msqldb/%s/%s.dat",
++		db,table);
  #ifdef OS2
          fd = _sopen(datPath,O_CREAT | O_WRONLY | O_BINARY, SH_DENYNO, 
-@@ -1279,8 +1279,7 @@
- 	** Create an empty index def file
- 	*/
- 	
--	(void)snprintf(idxPath, MAXPATHLEN, "%s/msqldb/%s/%s.idx",
--		msqlHomeDir,db,table);
-+	(void)snprintf(idxPath, MAXPATHLEN, "/var/db/msqldb/%s/%s.idx",db,table);
- 	(void)unlink(idxPath);
- #ifdef OS2
-         fd = _sopen(idxPath,O_CREAT | O_WRONLY | O_BINARY, SH_DENYNO, 
-@@ -1302,8 +1302,7 @@
- 	/*
+ 		S_IREAD | S_IWRITE);
+@@ -1577,8 +1577,8 @@
+ 	** 
  	** Create an empty overflow file
  	*/
 -	(void)snprintf(oflPath,MAXPATHLEN,"%s/msqldb/%s/%s.ofl",
 -		msqlHomeDir,db,table);
-+	(void)snprintf(oflPath, MAXPATHLEN, "/var/db/msqldb/%s/%s.ofl",db,table);
- 	(void)unlink(oflPath);
++	(void)snprintf(oflPath,MAXPATHLEN,"/var/db/msqldb/%s/%s.ofl",
++		db,table);
  #ifdef OS2
          fd = _sopen(oflPath,O_CREAT | O_WRONLY | O_BINARY, SH_DENYNO, 
-@@ -1454,10 +1454,10 @@
+ 		S_IREAD | S_IWRITE);
+@@ -1745,11 +1745,11 @@
  	/*
  	** Can't clash with another index either
  	*/
 -	(void)snprintf(defPath,MAXPATHLEN,"%s/msqldb/%s/%s.idx",msqlHomeDir,
-+	(void)snprintf(defPath, MAXPATHLEN, "/var/db/msqldb/%s/%s.idx",
-		db, index->table);
++	(void)snprintf(defPath,MAXPATHLEN,"/var/db/msqldb/%s/%s.idx",
+ 		db, index->table);
  
 -	(void)snprintf(idxPath,MAXPATHLEN,"%s/msqldb/%s/%s.idx-%s",
 -		msqlHomeDir,db, index->table, index->name);
-+	(void)snprintf(idxPath, MAXPATHLEN, "/var/db/msqldb/%s/%s.idx-%s",
-+ 		db, index->table, index->name);
++	(void)snprintf(idxPath,MAXPATHLEN,"/var/db/msqldb/%s/%s.idx-%s",
++		db, index->table, index->name);
  
  #ifdef OS2
-@@ -1718,8 +1718,7 @@
+         fd = _sopen(defPath,O_RDWR | O_CREAT | O_BINARY, SH_DENYNO, 
+@@ -1989,7 +1989,7 @@
  	/*
  	** Now blow away the table files
  	*/
 -	(void)snprintf(path,MAXPATHLEN,"%s/msqldb/%s/%s.def",msqlHomeDir,
--		db,table);
-+	(void)snprintf(path, MAXPATHLEN, "/var/db/msqldb/%s/%s.def",db,table);
++	(void)snprintf(path,MAXPATHLEN,"/var/db/msqldb/%s/%s.def",
+ 		db,table);
+ 	cp = (char *)rindex(path,'.');
  #ifdef OS2
- 	fp = fopen(path, MAXPATHLEN, "rb");
- #else
-@@ -1733,18 +1733,15 @@
- 	}
- 	(void)fclose(fp);
- 	unlink(path);
--	(void)snprintf(path,MAXPATHLEN,"%s/msqldb/%s/%s.dat",msqlHomeDir,
--		db,table);
-+	(void)snprintf(path, MAXPATHLEN, "/var/db/msqldb/%s/%s.dat",db,table);
- 	unlink(path);
--	(void)snprintf(path,MAXPATHLEN,"%s/msqldb/%s/%s.ofl",msqlHomeDir,
--		db,table);
-+	(void)snprintf(path, MAXPATHLEN, "/var/db/msqldb/%s/%s.ofl",db,table);
- 	unlink(path);
- 
- 	/*
- 	** Take care of the index files.
- 	*/
--	(void)snprintf(defPath,MAXPATHLEN,"%s/msqldb/%s/%s.idx",msqlHomeDir,
--		db,table);
-+	(void)snprintf(defPath, MAXPATHLEN, "/var/db/msqldb/%s/%s.idx",db,table);
- #ifdef OS2
-         fd = _sopen(defPath,O_RDONLY | O_BINARY, SH_DENYNO, S_IREAD | S_IWRITE);
- #else
-@@ -1751,9 +1751,9 @@
- 	{
- 		while(read(fd,&tmp,sizeof(tmp)) == sizeof(tmp))
- 		{
--			(void)snprintf(path,MAXPATHLEN,
--				"%s/msqldb/%s/%s.idx-%s",
--				msqlHomeDir,db,table,tmp.name);
-+			(void)snprintf(path, MAXPATHLEN,
-+				"/var/db/msqldb/%s/%s.idx-%s",
-+				db,table,tmp.name);
- 			unlink(path);
- 		}
- 		close(fd);
-@@ -1791,7 +1791,7 @@
+@@ -2072,7 +2072,7 @@
  		return(-1);
  	}
  
 -	(void)snprintf(defPath,MAXPATHLEN,"%s/msqldb/%s/%s.idx",msqlHomeDir,
-+	(void)snprintf(defPath, MAXPATHLEN, "/var/db/msqldb/%s/%s.idx",
++	(void)snprintf(defPath,MAXPATHLEN,"/var/db/msqldb/%s/%s.idx",
  		db, index->table);
  #ifdef OS2
          in = _sopen(defPath,O_RDONLY | O_BINARY, SH_DENYNO, S_IREAD | S_IWRITE);
-@@ -1804,7 +1804,7 @@
+@@ -2086,8 +2086,8 @@
  		msqlTrace(TRACE_OUT,"msqlDropIndex()");
  		return(-1);
  	}
 -	(void)snprintf(tmpPath,MAXPATHLEN,"%s/msqldb/%s/%s.idx-tmp",
 -		msqlHomeDir,db, index->table);
-+	(void)snprintf(tmpPath, MAXPATHLEN, "/var/db/msqldb/%s/%s.idx-tmp",
-+ 		db, index->table);
++	(void)snprintf(tmpPath,MAXPATHLEN,"/var/db/msqldb/%s/%s.idx-tmp",
++		db, index->table);
  #ifdef OS2
          out = _sopen(tmpPath,O_RDWR | O_CREAT | O_BINARY, SH_DENYNO, 
-@@ -1855,7 +1855,7 @@
+ 		S_IREAD | S_IWRITE);
+@@ -2137,7 +2137,7 @@
  	*/
  	unlink(defPath);
  	rename(tmpPath,defPath);
 -	snprintf(tmpPath,MAXPATHLEN,"%s/msqldb/%s/%s.idx-%s",msqlHomeDir,db,
-+	snprintf(tmpPath, MAXPATHLEN, "/var/db/msqldb/%s/%s.idx-%s",db,
++	snprintf(tmpPath,MAXPATHLEN,"/var/db/msqldb/%s/%s.idx-%s",db,
                  index->table, index->name);
  	unlink(tmpPath);
  
-@@ -2412,7 +2412,7 @@
+@@ -2757,7 +2757,7 @@
  	** See if the directory exists
  	*/
  
 -	(void)snprintf(path,MAXPATHLEN,"%s/msqldb/%s", msqlHomeDir, db);
-+	(void)snprintf(path, MAXPATHLEN, "/var/db/msqldb/%s", db);
++	(void)snprintf(path,MAXPATHLEN,"/var/db/msqldb/%s", db);
  	dirp = opendir(path);
  	if (dirp)
  	{
-@@ -2459,7 +2459,7 @@
+@@ -2807,7 +2807,7 @@
+ 	** See if the "to" directory exists
+ 	*/
+ 
+-	(void)snprintf(toPath,MAXPATHLEN,"%s/msqldb/%s", msqlHomeDir, toDB);
++	(void)snprintf(toPath,MAXPATHLEN,"/var/db/msqldb/%s", toDB);
+ 	dirp = opendir(toPath);
+ 	if (dirp)
+ 	{
+@@ -2822,8 +2822,7 @@
+ 	** See if the "from" directory exists
+ 	*/
+ 
+-	(void)snprintf(fromPath,MAXPATHLEN, "%s/msqldb/%s", msqlHomeDir, 
+-		fromDB);
++	(void)snprintf(fromPath,MAXPATHLEN, "/var/db/msqldb/%s", fromDB);
+ 	dirp = opendir(fromPath);
+ 	if (!dirp)
+ 	{
+@@ -2886,7 +2885,7 @@
+ 	** See if the "to" directory exists
+ 	*/
+ 
+-	(void)snprintf(toPath,MAXPATHLEN,"%s/msqldb/%s", msqlHomeDir, toDB);
++	(void)snprintf(toPath,MAXPATHLEN,"/var/db/msqldb/%s", toDB);
+ 	dirp = opendir(toPath);
+ 	if (dirp)
+ 	{
+@@ -2901,8 +2900,7 @@
+ 	** See if the "from" directory exists
+ 	*/
+ 
+-	(void)snprintf(fromPath,MAXPATHLEN,"%s/msqldb/%s", msqlHomeDir, 
+-		fromDB);
++	(void)snprintf(fromPath,MAXPATHLEN,"/var/db/msqldb/%s", fromDB);
+ 	dirp = opendir(fromPath);
+ 	if (!dirp)
+ 	{
+@@ -2948,7 +2946,7 @@
  	** See if the directory exists
  	*/
  
 -	(void)snprintf(path,MAXPATHLEN,"%s/msqldb/%s", msqlHomeDir, db);
-+	(void)snprintf(path, MAXPATHLEN, "/var/db/msqldb/%s", db);
++	(void)snprintf(path,MAXPATHLEN,"/var/db/msqldb/%s", db);
  	dirp = opendir(path);
  	if (!dirp)
  	{

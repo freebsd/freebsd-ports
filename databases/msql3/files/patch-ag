@@ -1,6 +1,20 @@
---- src/msql/config.c.orig	Wed Jan 29 12:18:00 1997
-+++ src/msql/config.c	Tue Feb  4 17:30:15 1997
-@@ -284,7 +284,7 @@
+--- src/msql/config.c.orig	Fri May 29 19:21:56 1998
++++ src/msql/config.c	Fri Aug 28 17:14:21 1998
+@@ -306,11 +306,11 @@
+ 	msqlConfigLoaded = 1;
+ 	if (file)
+ 	{
+-		snprintf(buf,sizeof(buf),"%s/%s", INST_DIR, file);
++		snprintf(buf,sizeof(buf),"%s/etc/msql2/%s", INST_DIR, file);
+ 		fp = fopen(buf,"r");
+ 		if (!fp)
+ 		{
+-			snprintf(buf,sizeof(buf),"%s/%s.conf",INST_DIR,file);
++			snprintf(buf,sizeof(buf),"%s/etc/msql2/%s.conf",INST_DIR,file);
+ 			fp = fopen(buf,"r");
+ 		}
+ 		if (!fp)
+@@ -325,7 +325,7 @@
  	}
  	else
  	{

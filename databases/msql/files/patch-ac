@@ -1,15 +1,17 @@
---- src/conf/site.mm.in.orig	Mon Aug 25 21:56:13 1997
-+++ src/conf/site.mm.in	Mon Aug 25 21:56:30 1997
-@@ -4,7 +4,7 @@
+--- src/conf/site.mm.in.orig	Fri May 29 19:21:51 1998
++++ src/conf/site.mm.in	Fri Aug 28 16:24:37 1998
+@@ -3,8 +3,8 @@
+ #
  
  
- COMPILER= @CC@
+-COMPILER= @CC@
 -INST_DIR= /usr/local/Hughes
-+INST_DIR= /usr/local
++COMPILER:= $(CC)
++INST_DIR:= $(PREFIX)
  HAVE_DYNAMIC= -DHAVE_DYNAMIC
  CC_ONLY_FLAGS=
  LINK_ONLY_FLAGS=
-@@ -34,7 +34,7 @@
+@@ -34,10 +34,10 @@
  EXTRA_LIB= @LIBS@
  
  # Any other CFlags required
@@ -18,3 +20,7 @@
  
  # Directory for pid file
  PID_DIR= @PID_DIR@
+ 
+-CFLAGS= -O -I$(TOP)/ $(EXTRA_CFLAGS)
++CFLAGS+= -I$(TOP)/ $(EXTRA_CFLAGS)
+ LDLIBS= -L$(TOP)/lib $(EXTRA_LIB)

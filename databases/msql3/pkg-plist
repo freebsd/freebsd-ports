@@ -6,6 +6,7 @@ bin/msqldump
 bin/msqlexport
 bin/msqlimport
 bin/relshow
+bin/run_daemon
 bin/w3-auth
 bin/w3-msql
 etc/msql2/msql.acl.sample
@@ -43,37 +44,6 @@ share/doc/msql/manual-html/Image6.gif
 share/doc/msql/manual-html/deer.gif
 share/doc/msql/manual-html/manual.html
 share/doc/msql/manual.ps.gz
-share/doc/msql/manual/add.gif
-share/doc/msql/manual/api.htm
-share/doc/msql/manual/api.spec
-share/doc/msql/manual/area.gif
-share/doc/msql/manual/blank.gif
-share/doc/msql/manual/config.htm
-share/doc/msql/manual/create_manual
-share/doc/msql/manual/deer.gif
-share/doc/msql/manual/delete.gif
-share/doc/msql/manual/edit.gif
-share/doc/msql/manual/fast_bul.gif
-share/doc/msql/manual/group.gif
-share/doc/msql/manual/hughes.gif
-share/doc/msql/manual/info.htm
-share/doc/msql/manual/lite.htm
-share/doc/msql/manual/logout.gif
-share/doc/msql/manual/mod_msql.htm
-share/doc/msql/manual/mod_std.htm
-share/doc/msql/manual/modules.htm
-share/doc/msql/manual/new.gif
-share/doc/msql/manual/priv.gif
-share/doc/msql/manual/spec.htm
-share/doc/msql/manual/sysvar.htm
-share/doc/msql/manual/user.gif
-share/doc/msql/manual/utils.htm
-share/doc/msql/manual/view.gif
-share/doc/msql/manual/w3-auth.gif
-share/doc/msql/manual/w3-auth.htm
-share/doc/msql/manual/w3-msql.htm
-share/doc/msql/manual/w3-sec.htm
-share/doc/msql/manual/welcome.htm
 share/doc/msql/post-install-notes
 share/msql/makegen/directory.mm
 share/msql/makegen/install.mm
@@ -89,7 +59,6 @@ share/msql/makegen/site.mm
 share/msql/makegen/touch.mm
 share/msql/makegen/yacc.mm
 share/msql/misc/setup_w3auth
-share/msql/misc/setup_www
 share/msql/www/bookmarks/README
 share/msql/www/bookmarks/Welcome.html
 share/msql/www/bookmarks/add.html
@@ -124,7 +93,6 @@ share/msql/www/graphics/user.gif
 share/msql/www/graphics/view.gif
 @dirrm etc/msql2
 @dirrm include/common
-@dirrm share/doc/msql/manual
 @dirrm share/doc/msql/manual-html
 @dirrm share/doc/msql
 @dirrm share/msql/makegen

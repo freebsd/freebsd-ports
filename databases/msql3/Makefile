@@ -1,19 +1,16 @@
 # New ports collection makefile for:	msql2
-# Version required:	2.0.3
+# Version required:	2.0.4.1
 # Date created:		December 17th 1996
 # Whom:			jfitz
 #
-# $Id: Makefile,v 1.25 1998/02/27 11:42:55 obrien Exp $
+# $Id: Makefile,v 1.26 1998/02/27 11:50:28 obrien Exp $
 #
 
-DISTNAME=	msql-2.0.3
+DISTNAME=	msql-2.0.4.1
 CATEGORIES=	databases
-MASTER_SITES=	http://www2.nerosworld.com/msql/ \
-		http://hughes.com.au/software/msql2/
+MASTER_SITES=	http://www.hughes.com.au/software/msql2/
 
 MAINTAINER=	jfitz@FreeBSD.ORG
-
-BROKEN=	"PR 5868 : PLIST broken, not PREFIX clean"
 
 # Not free for commercial use.  Must create a user on the local system
 NO_PACKAGE=	YES
@@ -27,7 +24,7 @@ MAKE_ENV+=	WRKSRC=${WRKSRC}
 
 do-configure:
 		cd ${WRKSRC}; make target
-		cd ${WRKSRC}/targets/freebsd; sh setup
+		cd ${WRKSRC}/targets/freebsd; ${SETENV} ${MAKE_ENV} ./setup
 		@${SETENV} ${MAKE_ENV} /usr/bin/perl ${SCRIPTDIR}/customize_scripts
 
 pre-install:
