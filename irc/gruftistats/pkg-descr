@@ -1,0 +1,12 @@
+Gruftistats is a program which reads your IRC logs and turns them into
+a web page.  This has a mixture of statistics (like who talked most),
+and amusing facts (like who got kicked most).
+
+It supports a variety of log formats already, and can be extended to
+support other log formats by writing a spec file describing the
+format.
+
+WWW: http://gruftistats.sourceforge.net/
+
+--
+mwest@uct.ac.za

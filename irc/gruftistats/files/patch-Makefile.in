@@ -1,0 +1,20 @@
+$FreeBSD$
+
+--- Makefile.in.orig	Sun Sep 16 06:57:25 2001
++++ Makefile.in	Mon Dec 24 23:43:31 2001
+@@ -249,6 +249,7 @@
+ 	$(MAKE) $(AM_MAKEFLAGS) uninstall-man1
+ 
+ install-docDATA: $(doc_DATA)
++ifndef NOPORTDOCS
+ 	@$(NORMAL_INSTALL)
+ 	$(mkinstalldirs) $(DESTDIR)$(docdir)
+ 	@list='$(doc_DATA)'; for p in $$list; do \
+@@ -260,6 +261,7 @@
+ 	    $(INSTALL_DATA) $$p $(DESTDIR)$(docdir)/$$p; \
+ 	  fi; fi; \
+ 	done
++endif
+ 
+ uninstall-docDATA:
+ 	@$(NORMAL_UNINSTALL)

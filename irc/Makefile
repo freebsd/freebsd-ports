@@ -9,6 +9,7 @@
     SUBDIR += dircproxy
     SUBDIR += epic4
     SUBDIR += ezbounce
+    SUBDIR += gruftistats
     SUBDIR += infobot
     SUBDIR += irc
     SUBDIR += ircII

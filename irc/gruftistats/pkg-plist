@@ -1,0 +1,27 @@
+bin/gruftistats
+%%PORTDOCS%%share/doc/gruftistats/AUTHORS
+%%PORTDOCS%%share/doc/gruftistats/COPYING
+%%PORTDOCS%%share/doc/gruftistats/ChangeLog
+%%PORTDOCS%%share/doc/gruftistats/NEWS
+%%PORTDOCS%%share/doc/gruftistats/README
+%%PORTDOCS%%share/doc/gruftistats/README.log-formats
+%%PORTDOCS%%share/doc/gruftistats/sample.conf
+share/gruftistats/axur.lrx
+share/gruftistats/bitchx.lrx
+share/gruftistats/dancer.lrx
+share/gruftistats/eggdrop-1.4.x-mel.lrx
+share/gruftistats/eggdrop2.lrx
+share/gruftistats/grufti.lrx
+share/gruftistats/irssi-some-theme.lrx
+share/gruftistats/irssi.lrx
+share/gruftistats/pipe1h.png
+share/gruftistats/pipe1v.png
+share/gruftistats/pipe2h.png
+share/gruftistats/pipe2v.png
+share/gruftistats/pipe3h.png
+share/gruftistats/pipe3v.png
+share/gruftistats/pipe4h.png
+share/gruftistats/pipe4v.png
+share/gruftistats/xchat.lrx
+@dirrm share/gruftistats
+%%PORTDOCS%%@dirrm share/doc/gruftistats
