@@ -3,7 +3,7 @@
 # Date created:		23 Jan 1998
 # Whom:			taguchi@tohoku.iij.ad.jp
 #
-# $Id: Makefile,v 1.2 1998/07/03 23:06:33 steve Exp $
+# $Id: Makefile,v 1.3 1998/07/04 19:11:58 steve Exp $
 #
 
 DISTNAME=	tcl8.0p2
@@ -12,7 +12,7 @@ CATEGORIES=	japanese lang tcl80
 MASTER_SITES=	ftp://ftp.scriptics.com/pub/tcl/tcl8_0/
 
 PATCH_SITES=	ftp://ftp.sra.co.jp/pub/lang/tcl/jp/
-PATCHFILES=	tcl8.0p2jp1.0.patch.gz
+PATCHFILES=	tcl8.0p2jp1.1b0.patch.gz
 
 MAINTAINER=	taguchi@tohoku.iij.ad.jp
 
