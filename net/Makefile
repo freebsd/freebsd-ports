@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.236 1999/03/30 17:30:08 taoka Exp $
+# $Id: Makefile,v 1.237 1999/03/31 00:47:51 asami Exp $
 #
 
     SUBDIR += SSLtelnet
@@ -74,6 +74,7 @@
     SUBDIR += ircii-epic
     SUBDIR += isc-dhcp2
     SUBDIR += ivs
+    SUBDIR += jmirror
     SUBDIR += kdenetwork
     SUBDIR += kdenetwork11
     SUBDIR += kirc
