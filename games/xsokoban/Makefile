@@ -3,7 +3,7 @@
 # Date created:        16 November 1996
 # Whom:                Yukihiro Nakai <Nakai@Mlab.t.u-tokyo.ac.jp>
 #
-# $Id: Makefile,v 1.4 1998/09/15 11:13:19 asami Exp $
+# $Id: Makefile,v 1.5 1998/09/17 00:32:40 asami Exp $
 #
 
 DISTNAME=	xsokoban-3.3c
@@ -17,6 +17,7 @@ LIB_DEPENDS=	Xpm.4:${PORTSDIR}/graphics/xpm
 USE_IMAKE=	yes
 WRKSRC=		${WRKDIR}/xsokoban
 ALL_TARGET=	xsokoban	
+MAN1=		xsokoban.1
 
 post-install:
 	@${MKDIR} ${PREFIX}/lib/X11/xsokoban/scores \

@@ -581,7 +581,6 @@ lib/X11/xblast/image/sprite/skel_D.pbm
 lib/X11/xblast/image/sprite/skel_L.pbm
 lib/X11/xblast/image/sprite/skel_R.pbm
 lib/X11/xblast/image/sprite/skel_U.pbm
-man/man1/xblast.1.gz
 @dirrm lib/X11/xblast/image/sprite
 @dirrm lib/X11/xblast/image/score
 @dirrm lib/X11/xblast/image/misc

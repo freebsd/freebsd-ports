@@ -3,7 +3,7 @@
 # Date created:         19 Aug 1995
 # Whom:                 joerg
 #
-# $Id: Makefile,v 1.3 1995/09/23 20:10:42 joerg Exp $
+# $Id: Makefile,v 1.4 1996/11/18 11:26:27 asami Exp $
 #
 
 DISTNAME=       pacman10
@@ -20,5 +20,6 @@ NO_WRKSUBDIR=	Does not unpack into subdir.
 EXTRACT_CMD=	unzip
 EXTRACT_BEFORE_ARGS= -x
 USE_IMAKE=      yes
+MAN1=		pacman.1
 
 .include <bsd.port.mk>

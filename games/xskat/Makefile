@@ -3,7 +3,7 @@
 # Date created:		27 Apr 1996
 # Whom:			Thomas Gellekum <tg@FreeBSD.ORG>
 #
-# $Id: Makefile,v 1.6 1998/08/04 08:23:42 tg Exp $
+# $Id: Makefile,v 1.7 1998/09/21 08:33:06 tg Exp $
 #
 
 DISTNAME=	xskat-2.3.1
@@ -14,5 +14,6 @@ MAINTAINER=	tg@FreeBSD.ORG
 
 WRKSRC=		${WRKDIR}/xskat
 USE_IMAKE=	yes
+MAN1=		xskat.1
 
 .include <bsd.port.mk>

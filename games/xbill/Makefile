@@ -3,7 +3,7 @@
 # Date created:		12 September 1995
 # Whom:			asami
 #
-# $Id: Makefile,v 1.7 1998/09/15 11:13:11 asami Exp $
+# $Id: Makefile,v 1.8 1998/09/17 00:32:33 asami Exp $
 #
 
 DISTNAME=	xbill-2.0
@@ -17,6 +17,7 @@ MAINTAINER=	obrien@FreeBSD.ORG
 LIB_DEPENDS=	Xpm.4:${PORTSDIR}/graphics/xpm
 
 USE_IMAKE=	yes
+MAN1=		xbill.1
 
 post-install:
 	${CP} ${WRKSRC}/README ${PREFIX}/share/xbill

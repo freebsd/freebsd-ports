@@ -3,7 +3,7 @@
 # Date created:		16 Aug 1996
 # Whom:			joerg@freebsd.org
 #
-# $Id: Makefile,v 1.2 1996/11/18 11:25:52 asami Exp $
+# $Id: Makefile,v 1.3 1996/12/08 01:11:27 max Exp $
 #
 
 DISTNAME=	xmahjongg
@@ -17,6 +17,7 @@ MAINTAINER=	joerg@freebsd.org
 
 WRKSRC=		${WRKDIR}/xmahjongg
 USE_IMAKE=	yes
+MAN6=		xmahjongg.6
 
 NO_CDROM=	"Restrictive copyright"
 

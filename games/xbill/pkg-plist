@@ -1,5 +1,4 @@
 bin/xbill
-man/man1/xbill.1.gz
 share/xbill/scores
 share/xbill/README
 share/xbill/pixmaps/about.xpm

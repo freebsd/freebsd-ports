@@ -3,7 +3,7 @@
 # Date created:		3 May 1995
 # Whom:			joerg
 #
-# $Id: Makefile,v 1.5 1998/09/15 11:13:17 asami Exp $
+# $Id: Makefile,v 1.6 1998/09/17 00:32:38 asami Exp $
 #
 
 DISTNAME=	xonix-1.4
@@ -15,5 +15,6 @@ MAINTAINER=	joerg@FreeBSD.org
 LIB_DEPENDS=	Xpm.4:${PORTSDIR}/graphics/xpm
 
 USE_IMAKE=      yes
+MAN1=		xonix.1
 
 .include <bsd.port.mk>

@@ -3,7 +3,7 @@
 # Date created:         22 June 1995
 # Whom:                 asami
 #
-# $Id: Makefile,v 1.2 1996/11/18 09:53:26 asami Exp $
+# $Id: Makefile,v 1.3 1997/12/25 22:29:22 asami Exp $
 #
 
 DISTNAME=       xtic1.12
@@ -15,5 +15,6 @@ MASTER_SITE_SUBDIR=	games
 MAINTAINER=	ports@FreeBSD.ORG
 
 USE_IMAKE=      yes
+MAN1=		xtic.1
 
 .include <bsd.port.mk>

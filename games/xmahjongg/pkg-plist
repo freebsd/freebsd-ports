@@ -1,5 +1,4 @@
 bin/xmahjongg
-man/man6/xmahjongg.6.gz
 lib/X11/xmahjongg/bridge
 lib/X11/xmahjongg/default
 lib/X11/xmahjongg/wedges
