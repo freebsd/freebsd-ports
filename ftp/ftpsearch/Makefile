@@ -3,10 +3,10 @@
 # Date created:		07 Dec 1996
 # Whom:			tegge@idt.ntnu.no
 #
-# $Id: Makefile,v 1.1.1.1 1997/02/17 10:43:00 tg Exp $
+# $Id: Makefile,v 1.2 1997/02/18 10:08:23 obrien Exp $
 #
 
-DISTNAME=	ftpsearch-19961208
+DISTNAME=	ftpsearch-1.0
 CATEGORIES=	net
 MASTER_SITES=	ftp://ftpsearch.ntnu.no/pub/ftpsearch/
 
@@ -16,6 +16,6 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ENV+=	FTPSEARCHROOT=${PREFIX}/ftpsearch
 
 post-install:
-	${CP} ${PREFIX}/ftpsearch/bin/gateway ${PREFIX}/bin/ftpsearch
+	ln -sf ${PREFIX}/ftpsearch/bin/gateway ${PREFIX}/bin/ftpsearch
 
 .include <bsd.port.mk>
