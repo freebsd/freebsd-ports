@@ -1,0 +1,55 @@
+%%MYADMDIR%%/conf.php
+%%MYADMDIR%%/contrib/index.php
+%%MYADMDIR%%/contrib/ipfm_renamelogs.pl
+%%MYADMDIR%%/daily-graph.php
+%%MYADMDIR%%/daily.php
+%%MYADMDIR%%/dayinmonth-graph.php
+%%MYADMDIR%%/dayinmonth.php
+%%MYADMDIR%%/functions.php
+%%MYADMDIR%%/global-graph.php
+%%MYADMDIR%%/global.php
+%%MYADMDIR%%/host.php
+%%MYADMDIR%%/images/graph.png
+%%MYADMDIR%%/images/index.php
+%%MYADMDIR%%/images/wykres-pion-end.png
+%%MYADMDIR%%/images/wykres-pion-first.png
+%%MYADMDIR%%/images/wykres-pion.png
+%%MYADMDIR%%/images/wykres-poziom-end.png
+%%MYADMDIR%%/images/wykres-poziom-first.png
+%%MYADMDIR%%/images/wykres-poziom.png
+%%MYADMDIR%%/index.php
+%%MYADMDIR%%/ipfm.conf-sample
+%%MYADMDIR%%/monthinyear-graph.php
+%%MYADMDIR%%/monthinyear.php
+%%MYADMDIR%%/monthly-graph.php
+%%MYADMDIR%%/monthly.php
+%%MYADMDIR%%/themes/blue/index.php
+%%MYADMDIR%%/themes/blue/style.css
+%%MYADMDIR%%/themes/index.php
+%%MYADMDIR%%/themes/default/index.php
+%%MYADMDIR%%/themes/default/style.css
+%%MYADMDIR%%/themes/green/index.php
+%%MYADMDIR%%/themes/green/style.css
+%%MYADMDIR%%/themes/meat/index.php
+%%MYADMDIR%%/themes/meat/style.css
+%%MYADMDIR%%/themes/orange/index.php
+%%MYADMDIR%%/themes/orange/style.css
+%%MYADMDIR%%/themes/white/index.php
+%%MYADMDIR%%/themes/white/style.css
+%%MYADMDIR%%/themes/yellow/index.php
+%%MYADMDIR%%/themes/yellow/style.css
+%%MYADMDIR%%/yearinglobal-graph.php
+%%MYADMDIR%%/yearinglobal.php
+%%MYADMDIR%%/yearly-graph.php
+%%MYADMDIR%%/yearly.php
+@dirrm %%MYADMDIR%%/themes/yellow
+@dirrm %%MYADMDIR%%/themes/white
+@dirrm %%MYADMDIR%%/themes/orange
+@dirrm %%MYADMDIR%%/themes/meat
+@dirrm %%MYADMDIR%%/themes/green
+@dirrm %%MYADMDIR%%/themes/default
+@dirrm %%MYADMDIR%%/themes/blue
+@dirrm %%MYADMDIR%%/themes
+@dirrm %%MYADMDIR%%/images
+@dirrm %%MYADMDIR%%/contrib
+@dirrm %%MYADMDIR%%

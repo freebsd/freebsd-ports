@@ -651,6 +651,7 @@
     SUBDIR += scdp
     SUBDIR += scli
     SUBDIR += scotty3
+    SUBDIR += scr_ipfm
     SUBDIR += sdl_net
     SUBDIR += sendfile
     SUBDIR += sendip
