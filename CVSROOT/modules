@@ -7316,6 +7316,7 @@ seabattle	ports/games/seabattle
 seahaven	ports/games/seahaven
 seahorse	ports/security/seahorse
 seaview		ports/biology/seaview
+sec		ports/sysutils/sec		
 secpanel	ports/security/secpanel
 sectar		ports/archivers/sectar
 sed_inplace	ports/textproc/sed_inplace
