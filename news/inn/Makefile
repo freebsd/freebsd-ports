@@ -12,8 +12,6 @@ MASTER_SITES=	ftp://ftp.isc.org/isc/inn/
 
 MAINTAINER=	des@FreeBSD.org
 
-Y2K=		http://www.isc.org/inn-y2k.html
-
 USE_GMAKE=YES
 
 .if exists(/var/news)
