@@ -19,6 +19,7 @@ RUN_DEPENDS=	${PYTHON_SITELIBDIR}/_tkinter.so:${PORTSDIR}/x11-toolkits/py-tkinte
 		dvips:${PORTSDIR}/print/teTeX \
 		convert:${PORTSDIR}/graphics/ImageMagick
 
+USE_REINPLACE=	yes
 USE_PYTHON=	yes
 NO_BUILD=	yes
 
@@ -26,9 +27,9 @@ MANCOMPRESSED=	yes
 MAN1=	latex2slides.1
 
 post-patch:
-	@${PERL} -pi -e "s,/usr,${PREFIX},g ; \
+	@${REINPLACE_CMD} -e "s,/usr,${PREFIX},g ; \
 		s,share/man,man,g" ${WRKSRC}/install
-	@${PERL} -pi -e "s,/usr/share,${PREFIX}/share,g" ${WRKSRC}/latex2slides
+	@${REINPLACE_CMD} -e "s,/usr/share,${PREFIX}/share,g" ${WRKSRC}/latex2slides
 
 do-install:
 	@(cd ${WRKSRC} ; ${PYTHON_CMD} ./install)

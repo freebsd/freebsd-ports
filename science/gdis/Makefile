@@ -17,6 +17,7 @@ MAINTAINER=	ports@FreeBSD.org
 LIB_DEPENDS=	gtkextra:${PORTSDIR}/x11-toolkits/gtkextra \
 		gtkgl:${PORTSDIR}/x11-toolkits/gtkglarea
 
+USE_REINPLACE=	yes
 USE_GTK=	yes
 USE_MESA=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}
@@ -24,9 +25,9 @@ USE_GMAKE=	yes
 ALL_TARGET=	# empty
 
 post-patch:
-	@${PERL} -pi -e "s,^CC,#CC,g ; s,^CFLAGS,#CFLAGS,g ; \
+	@${REINPLACE_CMD} -e "s,^CC,#CC,g ; s,^CFLAGS,#CFLAGS,g ; \
 		s,gtk-config,${GTK_CONFIG},g" ${WRKSRC}/Makefile
-	@${PERL} -pi -e "s,%%DATADIR%%,${DATADIR},g" ${WRKSRC}/gdis.h
+	@${REINPLACE_CMD} -e "s,%%DATADIR%%,${DATADIR},g" ${WRKSRC}/gdis.h
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/gdis ${PREFIX}/bin
