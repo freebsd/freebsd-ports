@@ -3,7 +3,7 @@
 # Date created:		5 Nov 1995
 # Whom:			Hideaki Ohmon <ohmon@sfc.keio.ac.jp>
 #
-# $Id: Makefile,v 1.8 1996/08/24 23:55:42 asami Exp $
+# $Id: Makefile,v 1.9 1996/09/11 05:53:44 asami Exp $
 #
 
 DISTNAME=	ptex3.1415.p2.1.4
@@ -25,7 +25,7 @@ DISTFILES=	ptex-2.1.4.tar.gz web-6.1.tar.gz web2c-6.1.tar.gz \
 EXTRACT_ONLY=	ptex-2.1.4.tar.gz web-6.1.tar.gz web2c-6.1.tar.gz \
 		xdvik-18f.tar.gz
 
-MAINTAINER=	max@sfc.wide.ad.jp
+MAINTAINER=	max@FreeBSD.ORG
 
 GNU_CONFIGURE=	yes
 WRKSRC=		${WRKDIR}/kpathsea-2.6

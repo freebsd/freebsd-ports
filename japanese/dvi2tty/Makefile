@@ -1,9 +1,9 @@
 # New ports collection makefile for:	dvi2tty
 # Version required:		5.0
 # Date created:			30 Mar. 1996
-# Whom:				Masafumi NAKANE <max@sfc.wide.ad.jp>
+# Whom:				Masafumi NAKANE <max@FreeBSD.ORG>
 #
-# $Id: Makefile,v 1.1.1.1 1996/04/26 08:29:48 asami Exp $
+# $Id: Makefile,v 1.2 1996/04/30 05:11:52 asami Exp $
 #
 
 DISTNAME=	dvi2tty5.0
@@ -16,7 +16,7 @@ PATCH_SITES=	ftp://ftp.ipc.chiba-u.ac.jp/misc/tex/dviwares/dvi2tty/ \
 		ftp://ftp.web.ad.jp/pub/TeX/akiu/dviwares/dvi2tty/
 PATCHFILES=	dvi2tty-ascii-jtex-patch dvi2tty.c-patch
 
-MAINTAINER=	max@sfc.wide.ad.jp
+MAINTAINER=	max@FreeBSD.ORG
 
 RUN_DEPENDS=	jless:${PORTSDIR}/japanese/less
 PATCH_DIST_STRIP=	-p1

@@ -1,9 +1,9 @@
 # New ports collection makefile for:	mimekit
 # Version required:		1.1
 # Date created:			9 April 1996
-# Whom:				Masafumi NAKANE <max@sfc.wide.ad.jp>
+# Whom:				Masafumi NAKANE <max@FreeBSD.ORG>
 #
-# $Id: porting.sgml,v 1.16 1996/03/21 14:15:01 asami Exp $
+# $Id: Makefile,v 1.1.1.1 1996/04/30 05:13:45 asami Exp $
 #
 
 DISTNAME=	mimekit1.1
@@ -12,7 +12,7 @@ CATEGORIES+=	japanese mail
 MASTER_SITES=	ftp://etlport.etl.go.jp/pub/ccipr/DeleGate/ \
 		ftp://ftp.iij.ad.jp/pub/mail/mime/
 
-MAINTAINER=	max@sfc.wide.ad.jp
+MAINTAINER=	max@FreeBSD.ORG
 
 NO_WRKSUBDIR=	yes
 
