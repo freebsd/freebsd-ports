@@ -109,12 +109,12 @@ share/ghostscript/5.50vflib/doc/gdevdmpr.sj
 share/ghostscript/5.50vflib/doc/gdevnpdl.jis
 share/ghostscript/5.50vflib/doc/gs_statd.dif
 share/ghostscript/5.50vflib/doc/gslipsif.sh
-share/ghostscript/5.50vflib/doc/epag-3.07/FILES
-share/ghostscript/5.50vflib/doc/epag-3.07/gdevepag.txt
-share/ghostscript/5.50vflib/doc/epag-3.07/ert.txt
-share/ghostscript/5.50vflib/doc/epag-3.07/adjust.ps
-share/ghostscript/5.50vflib/doc/epag-3.07/gsepagif.sh
-share/ghostscript/5.50vflib/doc/epag-3.07/psprint
+share/ghostscript/5.50vflib/doc/epag-3.08/FILES
+share/ghostscript/5.50vflib/doc/epag-3.08/gdevepag.txt
+share/ghostscript/5.50vflib/doc/epag-3.08/ert.txt
+share/ghostscript/5.50vflib/doc/epag-3.08/adjust.ps
+share/ghostscript/5.50vflib/doc/epag-3.08/gsepagif.sh
+share/ghostscript/5.50vflib/doc/epag-3.08/psprint
 share/ghostscript/5.50vflib/gs_btokn.ps
 share/ghostscript/5.50vflib/gs_ccfnt.ps
 share/ghostscript/5.50vflib/gs_cff.ps
@@ -399,7 +399,7 @@ share/ghostscript/fonts/fcyri.afm
 share/ghostscript/fonts/u003043t.afm
 share/ghostscript/fonts/u004006t.afm
 @dirrm share/ghostscript/fonts
-@dirrm share/ghostscript/5.50vflib/doc/epag-3.07
+@dirrm share/ghostscript/5.50vflib/doc/epag-3.08
 @dirrm share/ghostscript/5.50vflib/doc
 @dirrm share/ghostscript/5.50vflib/examples
 @dirrm share/ghostscript/5.50vflib/vflib
