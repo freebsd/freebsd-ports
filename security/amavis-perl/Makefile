@@ -50,7 +50,18 @@ BUILD_DEPENDS+=	${QMAIL_DIR}/bin/qmail-send:${PORTSDIR}/mail/qmail
 RUN_DEPENDS=	${BUILD_DEPENDS}
 .endif
 
-.if !defined(MTA)
+.if defined(MTA)
+.if ${MTA} == "postfix"
+DIROWNER?=	vscan:daemon
+CONFIGURE_ARGS+=	--enable-postfix --enable-smtp
+BUILD_DEPENDS+=	${LOCALBASE}/sbin/postfix:${PORTSDIR}/mail/postfix
+.elif ${MTA} == "exim"
+DIROWNER?=	root:daemon
+CONFIGURE_ARGS+=	--enable-exim
+BUILD_DEPENDS+=	${LOCALBASE}/sbin/exim:${PORTSDIR}/mail/exim
+.endif
+RUN_DEPENDS=	${BUILD_DEPENDS}
+.else
 MTA?=	sendmail
 DIROWNER?=	root:daemon
 CONFIGURE_ARGS+=	--enable-relay
@@ -58,6 +69,7 @@ CONFIGURE_ARGS+=	--enable-relay
 
 PKGDEINSTALL=	${PKGDIR}/pkg-deinstall.${MTA}
 PKGINSTALL=	${PKGDIR}/pkg-install.${MTA}
+PKGMESSAGE=	${PKGDIR}/pkg-message.${MTA}
 
 do-install:
 	@${MKDIR} /var/log/amavis
@@ -71,9 +83,9 @@ do-install:
 .endif
 
 post-install:
+	@PKG_PREFIX=${PREFIX} ${PERL5} ${PKGINSTALL} _ POST-INSTALL
 	@${CHOWN} ${DIROWNER} /var/log/amavis /var/spool/quarantine
 	@${CHMOD} 0755 /var/log/amavis /var/spool/quarantine
-	@PKG_PREFIX=${PREFIX} ${PERL5} ${PKGINSTALL} _ POST-INSTALL
-	@${CAT} ${PKGMESSAGE}.${MTA}
+	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>

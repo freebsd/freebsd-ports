@@ -1,0 +1,31 @@
+#!/usr/bin/perl
+
+$user=vscan;
+$group=nogroup;
+
+if (`grep ^vscan: /etc/passwd` eq "") {
+    print "You need a user \"${user}\".\n";
+    if (yesno("Would you like me to create it", "y")) {
+        system ("/usr/sbin/pw useradd ${user} -g ${group} -h - -d /nonexistent -s /nonexistent -c \"AMaViS Virus Scanner\" || exit");
+        print "Done.\n";
+    } else {
+        print "Please create it, and try again.\n";
+        exit 1;
+    };
+} else {
+    print "You already have a user \"${user}\", so I will use it.\n";
+};
+
+sub yesno() {
+	my ($mes, $def) = @_;
+	print "$mes [$def]? ";
+	$answer = <STDIN>;
+	chomp($answer);
+	if ($answer eq "") {
+		$answer = "y";
+	};
+	if ($answer=~/^y/i) {
+		return 1;
+	};
+	return 0;
+};
