@@ -1,41 +1,28 @@
-# New ports collection makefile for:	cfengine
-# Date created:		March 16, 1998
-# Whom:			jseger@FreeBSD.org
+# New ports collection makefile for:	cfengine2
+# Date created:		2002-07-29
+# Whom:			fanf@FreeBSD.org
 #
 # $FreeBSD$
 #
 
-PORTNAME=	cfengine
-PORTVERSION=	1.6.3
-PORTREVISION=	3
+PORTNAME=	cfengine2
+PORTVERSION=	2.0.3
 CATEGORIES=	sysutils
 MASTER_SITES=	ftp://ftp.iu.hio.no/pub/cfengine/ \
-		ftp://ftp.sunsite.utk.edu/pub/cfengine/cfengine-ftp/ \
 		${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	${PORTNAME}
+DISTNAME=	cfengine-${PORTVERSION}
 
-MAINTAINER=	gordon@FreeBSD.org
+MAINTAINER=	fanf@FreeBSD.org
 
-.if defined(PACKAGE_BUILDING)
-BUILD_DEPENDS=	latex:${PORTSDIR}/print/teTeX
-.endif
+LIB_DEPENDS=	db4:${PORTSDIR}/databases/db4
 
-LIB_DEPENDS=	db3:${PORTSDIR}/databases/db3
-.if defined(PACKAGE_BUILDING) && !exists(/usr/include/tcpd.h)
-LIB_DEPENDS+=	wrap.7:${PORTSDIR}/security/tcp_wrapper
-.endif
+USE_OPENSSL=	yes
 
-USE_GMAKE=	yes
-USE_AUTOMAKE_VER=14
+# if we use GNU_CONFIGURE=yes then the binaries get installed with weird names
+HAS_CONFIGURE=	yes
+CONFIGURE_ARGS=	--prefix=${PREFIX}
 
 MAN8=		cfengine.8
-
-pre-configure:
-	@cd ${WRKSRC} && ${ACLOCAL} && ${AUTOHEADER}
-
-post-install:
-.if defined(NOPORTDOCS)
-	@${RM} -rf ${PREFIX}/share/doc/${PORTNAME}
-.endif
 
 .include <bsd.port.mk>

@@ -1,5 +1,7 @@
+@unexec install-info --delete %D/info/cfengine-Anomalies.info %D/info/dir
 @unexec install-info --delete %D/info/cfengine-Reference.info %D/info/dir
 @unexec install-info --delete %D/info/cfengine-Tutorial.info %D/info/dir
+info/cfengine-Anomalies.info
 info/cfengine-Reference.info
 info/cfengine-Reference.info-1
 info/cfengine-Reference.info-2
@@ -8,24 +10,27 @@ info/cfengine-Reference.info-4
 info/cfengine-Reference.info-5
 info/cfengine-Reference.info-6
 info/cfengine-Reference.info-7
+info/cfengine-Reference.info-8
 info/cfengine-Tutorial.info
 info/cfengine-Tutorial.info-1
 info/cfengine-Tutorial.info-2
 info/cfengine-Tutorial.info-3
 info/cfengine-Tutorial.info-4
 info/cfengine-Tutorial.info-5
+info/cfengine-Tutorial.info-6
+@exec install-info %D/info/cfengine-Anomalies.info %D/info/dir
 @exec install-info %D/info/cfengine-Reference.info %D/info/dir
 @exec install-info %D/info/cfengine-Tutorial.info %D/info/dir
-sbin/cfcron
-sbin/cfd
+sbin/cfagent
 sbin/cfdoc
-sbin/cfengine
+sbin/cfenvd
+sbin/cfenvgraph
+sbin/cfexecd
 sbin/cfkey
-sbin/cfmail
-sbin/cfmailfilter
 sbin/cfrun
-sbin/cfwrap
+sbin/cfservd
 sbin/vicf
+share/emacs/site-lisp/cfengine.el
 share/cfengine/cf.chflags.example
 share/cfengine/cf.freebsd.example
 share/cfengine/cf.ftp.example
@@ -39,18 +44,13 @@ share/cfengine/cf.site.example
 share/cfengine/cf.solaris.example
 share/cfengine/cf.sun4.example
 share/cfengine/cf.users.example
-share/cfengine/cfd.conf.example
-share/cfengine/cfdaily
-share/cfengine/cfengine.conf.example
-share/cfengine/cfengine.el
+share/cfengine/cfagent.conf-advanced.example
+share/cfengine/cfagent.conf.example
 share/cfengine/cfrc.example
 share/cfengine/cfrun.hosts.example
-share/cfengine/start-cfd
+share/cfengine/cfservd.conf.example
+share/cfengine/update.conf.example
+share/doc/cfengine/cfengine-Reference.html
+share/doc/cfengine/cfengine-Tutorial.html
 @dirrm share/cfengine
-%%PORTDOCS%%share/doc/cfengine/cf-security.html
-%%PORTDOCS%%share/doc/cfengine/cfengine-Reference.html
-%%PORTDOCS%%share/doc/cfengine/cfengine-Tutorial.html
-%%PORTDOCS%%share/doc/cfengine/locks.ps
-%%PORTDOCS%%share/doc/cfengine/paper1.ps
-%%PORTDOCS%%share/doc/cfengine/paper2.ps
-%%PORTDOCS%%@dirrm share/doc/cfengine
+@dirrm share/doc/cfengine

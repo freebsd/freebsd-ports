@@ -1,0 +1,11 @@
+--- doc/cfengine-Anomalies.info.orig	Mon Jul 29 18:15:38 2002
++++ doc/cfengine-Anomalies.info	Mon Jul 29 18:16:20 2002
+@@ -3,7 +3,7 @@
+ 
+ INFO-DIR-SECTION System Utilities
+ START-INFO-DIR-ENTRY
+-* cfengine Tutorial: (cfengine-Tutorial.info).
++* cfengine Anomalies: (cfengine-Anomalies.info).
+                         Cfengine is a language based tool specifically
+                         designed for configuring and maintaining BSD
+                         and System-5-like operating systems attached
