@@ -1,24 +1,25 @@
 # New ports collection makefile for:   xcubes
-# Version required:    V5.3
+# Version required:    V5.4.1
 # Date created:        12 October 1996
 # Whom:                Yukihiro Nakai <Nakai@Mlab.t.u-tokyo.ac.jp>
 #
-# $Id: Makefile,v 1.1.1.1 1996/11/17 10:53:01 asami Exp $
+# $Id: Makefile,v 1.2 1997/01/03 09:37:07 obrien Exp $
 #
 
-DISTNAME=	xcubes
-PKGNAME=        xcubes-5.3
+DISTNAME=	xcubes-5.4.1
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_XCONTRIB}
-MASTER_SITE_SUBDIR=	games/puzzles
+MASTER_SITE_SUBDIR=	games/xpuzzles
 
 MAINTAINER=	Nakai@Mlab.t.u-tokyo.ac.jp
 
+WRKSRC=		${WRKDIR}/xcubes
 USE_IMAKE=	yes
+MAN1=		xcubes.1
 
 post-install:
-	@chmod 755 ${PREFIX}/bin/xcubes
-	@/usr/sbin/chown ${BINOWN}.${BINGRP} ${PREFIX}/bin/xcubes
+	@${INSTALL_PROGRAM} ${WRKSRC}/xcubes ${PREFIX}/bin
 	@${INSTALL_DATA} ${WRKSRC}/Cubes.ad ${PREFIX}/lib/X11/app-defaults/Cubes
+	@${INSTALL_MAN} ${WRKSRC}/xcubes.man ${PREFIX}/man/man1/xcubes.1
 
 .include <bsd.port.mk>
