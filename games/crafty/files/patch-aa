@@ -1,20 +1,19 @@
---- Makefile.ORIG	Fri Aug 28 20:30:02 1998
-+++ Makefile	Mon Oct  5 22:15:55 1998
+--- Makefile.orig	Thu Nov  5 20:53:45 1998
++++ Makefile	Wed Dec 16 21:15:04 1998
 @@ -69,13 +69,13 @@
  #           -DUSE_ASSEMBLY_A -DUSE_ASSEMBLY_B
  # asm     = X86.o
  
 -# FreeBSD (gcc 2.6.3)
 -#target  = FreeBSD
--#CC      = gcc
++# FreeBSD (gcc 2.7.2.1)
++target  = FreeBSD
+ #CC      = gcc
 -#CFLAGS  = -fomit-frame-pointer -m486 -O3 -Wall
 -#LDFLAGS = 
 -#opt     = -DCOMPACT_ATTACKS -DUSE_SPLIT_SHIFTS -DUSE_ATTACK_FUNCTIONS \
 -#          -DUSE_ASSEMBLY_A -DUSE_ASSEMBLY_B -DFAST
-+# FreeBSD (gcc 2.7.2.1)
-+target  = FreeBSD
-+CC      = gcc
-+CFLAGS  = -pipe -O -Wall
++#CFLAGS  = -pipe -O -Wall
 +LDFLAGS = 
 +opt     = -DCOMPACT_ATTACKS -DUSE_SPLIT_SHIFTS -DUSE_ATTACK_FUNCTIONS \
 +          -DUSE_ASSEMBLY_A -DUSE_ASSEMBLY_B -DFAST
@@ -27,13 +26,13 @@
  # Note: You have to uncomment exactly ONE of the `asm' lines below.
 -target  = LINUX
 -CC      = gcc
--CFLAGS  = -pipe -D_REENTRANT -m486 -O -Wall
+-CFLAGS  = -pipe -D_REENTRANT -mpentium -O -Wall
 -LDFLAGS = -lpthread
 -opt     = -DCOMPACT_ATTACKS -DUSE_SPLIT_SHIFTS -DUSE_ATTACK_FUNCTIONS \
 -          -DUSE_ASSEMBLY_A -DUSE_ASSEMBLY_B -DFAST -DSMP -DCPUS=4
 +#target  = LINUX
 +#CC      = gcc
-+#CFLAGS  = -pipe -D_REENTRANT -m486 -O -Wall
++#CFLAGS  = -pipe -D_REENTRANT -mpentium -O -Wall
 +#LDFLAGS = -lpthread
 +#opt     = -DCOMPACT_ATTACKS -DUSE_SPLIT_SHIFTS -DUSE_ATTACK_FUNCTIONS \
 +#          -DUSE_ASSEMBLY_A -DUSE_ASSEMBLY_B -DFAST -DSMP -DCPUS=4
@@ -50,3 +49,12 @@
  
  # NEXT
  #target  = NEXT
+@@ -147,7 +150,7 @@
+ 
+ # Do not change anything below this line!
+ 
+-opts = $(opt) -D$(target)
++CFLAGS += $(opt) -D$(target)
+ 
+ objects = searchr.o search.o thread.o searchmp.o repeat.o next.o nexte.o      \
+         nextr.o history.o quiesce.o evaluate.o movgen.o make.o unmake.o       \

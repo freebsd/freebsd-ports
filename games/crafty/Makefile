@@ -1,23 +1,23 @@
 # New ports collection makefile for:	crafty
-# Version required:			15.20
+# Version required:			16.2
 # Date created:				31 May 1998
 # Whom:					Stefan Eggers <seggers@semyam.dinoco.de>
 #
-# $Id: Makefile,v 1.6 1998/09/19 20:22:58 steve Exp $
+# $Id: Makefile,v 1.7 1998/10/10 03:51:56 steve Exp $
 #
 
-DISTNAME=	crafty-15.20
+DISTNAME=	crafty-16.2
 CATEGORIES=	games
 MASTER_SITES=	ftp://ftp.cis.uab.edu/pub/hyatt/ \
 		ftp://ftp.cis.uab.edu/pub/hyatt/common/ \
-		ftp://ftp.cis.uab.edu/pub/hyatt/v15/
-DISTFILES=	crafty-15.20.tar.gz crafty.doc crafty.faq read.me start.zip
+		ftp://ftp.cis.uab.edu/pub/hyatt/v16/
+DISTFILES=	crafty-16.2.tar.gz crafty.doc crafty.faq read.me start.zip
 
 MAINTAINER=	seggers@semyam.dinoco.de
 
 ALL_TARGET=	crafty
 DIST_SUBDIR=	crafty
-EXTRACT_ONLY=	crafty-15.20.tar.gz
+EXTRACT_ONLY=	crafty-16.2.tar.gz
 
 MAN6=		crafty.6
 NO_WRKSUBDIR=	yes
