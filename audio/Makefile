@@ -1,6 +1,7 @@
-# $Id: Makefile,v 1.49 1998/07/25 21:36:33 steve Exp $
+# $Id: Makefile,v 1.50 1998/07/26 08:17:15 dburr Exp $
 #
 
+    SUBDIR += 8hz-mp3
     SUBDIR += amp
     SUBDIR += cam
     SUBDIR += cddbd
