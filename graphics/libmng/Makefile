@@ -29,8 +29,7 @@ MAN3=		libmng.3
 MAN5=		mng.5 jng.5
 
 post-patch:
-	test ! -e ${PREFIX}/include/lcms.h || ${REINPLACE_CMD} -e \
-		's%lcms/lcms.h%lcms.h%' ${WRKSRC}/libmng_types.h
+	${REINPLACE_CMD} -e 's%lcms/lcms.h%lcms.h%' ${WRKSRC}/libmng_types.h
 
 post-install:
 	cd ${WRKSRC}/doc/man && ${INSTALL_MAN} ${MAN3} ${PREFIX}/man/man3 \
