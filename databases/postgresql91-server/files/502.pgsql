@@ -53,10 +53,12 @@ echo "PostgreSQL maintenance"
 umask 077
 dbnames=`psql -q -t -A -d template1 -c "SELECT datname FROM pg_database WHERE datname != 'template0'"`
 rc=$?
+file=${PGBACKUPDIR}/pgglobals_`date "+%Y%m%d"`
+pg_dumpall -g | gzip -9 > ${file}.gz
 for db in ${dbnames}; do
     echo -n " $db"
     file=${PGBACKUPDIR}/pgdump_${db}_`date "+%Y%m%d"`
-    pg_dump ${PGDUMP_ARGS} -d $db -f ${file}
+    pg_dump ${PGDUMP_ARGS} -f ${file} ${db}
     [ $? -gt 0 ] && rc=3
 done
 
