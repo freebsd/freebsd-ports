@@ -1,0 +1,10 @@
+--- src/lhext.c.symlink	2000-10-04 10:57:38.000000000 -0400
++++ src/lhext.c	2003-05-19 22:55:57.000000000 -0400
+@@ -351,6 +351,7 @@ extract_one(afp, hdr)
+ 				}
+ 
+ 				unlink(bb1);
++				make_parent_path(bb1);
+ 				l_code = symlink(bb2, bb1);
+ 				if (l_code < 0) {
+ 					if (quiet != TRUE)
