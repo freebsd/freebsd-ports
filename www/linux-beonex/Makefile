@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	beonex
-PORTVERSION=	0.8.1
+PORTVERSION=	0.8.2
 CATEGORIES=	www linux
 MASTER_SITES=	\
 http://ftp.ibiblio.org/pub/packages/infosystems/WWW/clients/beonex/communicator/0.8/\
@@ -19,8 +19,6 @@ PATCH_SITE_SUBDIR=trevor
 
 MAINTAINER=	trevor@FreeBSD.org
 COMMENT=Browser, HTML editor, mail and news client for use with Linux plugins
-FORBIDDEN=	"based on Mozilla 1.0.1, which has some security bugs--see\
-		<URL:http://bugzilla.mozilla.org/buglist.cgi?keywords_type=anywords&keywords=fixed1.0.2+verified1.0.2&bug_status=RESOLVED&bug_status=VERIFIED&resolution=FIXED&field0-0-0=bug_group&type0-0-0=changedfrom&value0-0-0=security>"
 
 RUN_DEPENDS=	\
 	${LINUXBASE}/usr/lib/libgtk-1.2.so.0:${PORTSDIR}/x11-toolkits/linux-gtk
