@@ -1801,6 +1801,7 @@ gal		ports/x11-toolkits/gal
 gal2		ports/x11-toolkits/gal2
 galax		ports/textproc/galax
 galaxis		ports/games/galaxis
+galculator	ports/math/galculator
 gale		ports/net/gale
 galeon		ports/www/galeon
 galeon2		ports/www/galeon2
