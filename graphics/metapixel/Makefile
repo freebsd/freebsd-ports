@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	metapixel
-PORTVERSION=	0.8
+PORTVERSION=	0.9
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.complang.tuwien.ac.at/~schani/metapixel/ \
 		http://dragon.roe.ch/mirrors/distfiles/metapixel/
@@ -24,16 +24,16 @@ MAKE_ENV=	CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include -I." \
 
 post-patch:
 	@${RM} ${WRKSRC}/getopt.h
-	@${REINPLACE_CMD} -e 's,values.h,limits.h,'  ${WRKSRC}/libzoom/simple.h
-	@${REINPLACE_CMD} -e 's,MINSHORT,SHRT_MIN,; \
-			      s,MAXSHORT,SHRT_MAX,' ${WRKSRC}/libzoom/zoom.c
 	@${MV} ${WRKSRC}/sizesort ${WRKSRC}/metapixel-sizesort
+	@${REINPLACE_CMD} -e 's/imagesize/metapixel-imagesize/' \
+				  ${WRKSRC}/metapixel-sizesort
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/metapixel ${PREFIX}/bin
-	${INSTALL_SCRIPT} ${WRKSRC}/metapixel-prepare ${PREFIX}/bin
 	${INSTALL_PROGRAM} ${WRKSRC}/metapixel-convert ${PREFIX}/bin
 	${INSTALL_PROGRAM} ${WRKSRC}/metapixel-imagesize ${PREFIX}/bin
+	${INSTALL_SCRIPT} ${WRKSRC}/metapixel-prepare ${PREFIX}/bin
 	${INSTALL_SCRIPT} ${WRKSRC}/metapixel-sizesort ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/metapixel-zoom ${PREFIX}/bin
 
 .include <bsd.port.mk>
