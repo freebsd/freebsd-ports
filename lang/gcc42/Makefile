@@ -4,7 +4,7 @@
 # Date created:				9 Jan 1998
 # Whom:					John Polstra <jdp@polstra.com>
 #
-# $Id: Makefile,v 1.35 1998/10/01 21:40:03 obrien Exp $
+# $Id: Makefile,v 1.56 1999/04/21 07:48:57 obrien Exp $
 #
 
 SNAPDATE=	1999-04-18
@@ -27,8 +27,6 @@ DISTFILES=	egcs-chill-${SNAPVER}${EXTRACT_SUFX} \
 		egcs-objc-${SNAPVER}${EXTRACT_SUFX}
 
 MAINTAINER=	obrien@FreeBSD.org
-
-WWW_SITE=	http://egcs.cygnus.com
 
 NO_CDROM=	'dated material'
 

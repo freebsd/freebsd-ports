@@ -5,7 +5,7 @@
 # Date created:         10 Feb 1998
 # Whom:                 markm
 #
-# $Id: Makefile,v 1.27 1999/03/17 11:52:45 markm Exp $
+# $Id: Makefile,v 1.28 1999/04/08 19:05:45 billf Exp $
 #
 
 DISTNAME=	pgp50i
@@ -18,7 +18,6 @@ EXTRACT_SUFX=   -unix-src.tar.gz
 MAINTAINER=	markm@FreeBSD.ORG
 
 Y2K=		http://www.pgpi.com/faq/pgpi.shtml#Year2000
-WWW_SITE=	http://www.pgpi.com/
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/src
 HAS_CONFIGURE=	yes

@@ -13,3 +13,5 @@ so forth into the "${PREFIX}/bin" directory.  Mind your PATHs if you
 don't want to use this compiler by default.
 
 - John Polstra <jdp@polstra.com>
+
+WWW: http://egcs.cygnus.com

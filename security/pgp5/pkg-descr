@@ -16,3 +16,5 @@ PGP 5.0 contains support for new encryption methods (most notably
 DSS/Diffie-Hellman), and built-in keyserver support.  Also, the
 command line has been redesigned to be more Unix and scripting
 friendly.
+
+WWW: http://www.pgpi.com
