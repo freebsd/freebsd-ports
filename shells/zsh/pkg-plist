@@ -186,6 +186,13 @@ bin/zsh-%%ZSH_VER%%
 %%ZSH_FNDIR%%/Completion/Cygwin/_mkzsh
 %%ZSH_FNDIR%%/Completion/Cygwin/_pscp
 %%ZSH_FNDIR%%/Completion/Cygwin/_putclip
+%%ZSH_FNDIR%%/Completion/Darwin/_defaults
+%%ZSH_FNDIR%%/Completion/Darwin/_fink
+%%ZSH_FNDIR%%/Completion/Darwin/_hdiutil
+%%ZSH_FNDIR%%/Completion/Darwin/_mac_applications
+%%ZSH_FNDIR%%/Completion/Darwin/_mac_files_for_application
+%%ZSH_FNDIR%%/Completion/Darwin/_open
+%%ZSH_FNDIR%%/Completion/Darwin/_retrieve_mac_apps
 %%ZSH_FNDIR%%/Completion/Debian/_apt
 %%ZSH_FNDIR%%/Completion/Debian/_apt-move
 %%ZSH_FNDIR%%/Completion/Debian/_apt-show-versions
@@ -201,9 +208,11 @@ bin/zsh-%%ZSH_VER%%
 %%ZSH_FNDIR%%/Completion/Debian/_dpkg_source
 %%ZSH_FNDIR%%/Completion/Debian/_dput
 %%ZSH_FNDIR%%/Completion/Debian/_dupload
+%%ZSH_FNDIR%%/Completion/Debian/_lintian
 %%ZSH_FNDIR%%/Completion/Debian/_make-kpkg
 %%ZSH_FNDIR%%/Completion/Debian/_update-alternatives
 %%ZSH_FNDIR%%/Completion/Debian/_update-rc.d
+%%ZSH_FNDIR%%/Completion/Debian/_wajig
 %%ZSH_FNDIR%%/Completion/Linux/_iptables
 %%ZSH_FNDIR%%/Completion/Linux/_losetup
 %%ZSH_FNDIR%%/Completion/Linux/_modutils
@@ -223,9 +232,12 @@ bin/zsh-%%ZSH_VER%%
 %%ZSH_FNDIR%%/Completion/Unix/_arp
 %%ZSH_FNDIR%%/Completion/Unix/_arping
 %%ZSH_FNDIR%%/Completion/Unix/_attr
+%%ZSH_FNDIR%%/Completion/Unix/_baz
 %%ZSH_FNDIR%%/Completion/Unix/_bison
+%%ZSH_FNDIR%%/Completion/Unix/_bittorrent
 %%ZSH_FNDIR%%/Completion/Unix/_bogofilter
 %%ZSH_FNDIR%%/Completion/Unix/_bzip2
+%%ZSH_FNDIR%%/Completion/Unix/_cal
 %%ZSH_FNDIR%%/Completion/Unix/_cdcd
 %%ZSH_FNDIR%%/Completion/Unix/_cdrecord
 %%ZSH_FNDIR%%/Completion/Unix/_chkconfig
@@ -235,6 +247,7 @@ bin/zsh-%%ZSH_VER%%
 %%ZSH_FNDIR%%/Completion/Unix/_configure
 %%ZSH_FNDIR%%/Completion/Unix/_cpio
 %%ZSH_FNDIR%%/Completion/Unix/_cvs
+%%ZSH_FNDIR%%/Completion/Unix/_darcs
 %%ZSH_FNDIR%%/Completion/Unix/_dd
 %%ZSH_FNDIR%%/Completion/Unix/_dict
 %%ZSH_FNDIR%%/Completion/Unix/_dict_words
@@ -300,6 +313,7 @@ bin/zsh-%%ZSH_VER%%
 %%ZSH_FNDIR%%/Completion/Unix/_mailboxes
 %%ZSH_FNDIR%%/Completion/Unix/_make
 %%ZSH_FNDIR%%/Completion/Unix/_man
+%%ZSH_FNDIR%%/Completion/Unix/_mencal
 %%ZSH_FNDIR%%/Completion/Unix/_mh
 %%ZSH_FNDIR%%/Completion/Unix/_mime_types
 %%ZSH_FNDIR%%/Completion/Unix/_mount
@@ -332,6 +346,7 @@ bin/zsh-%%ZSH_VER%%
 %%ZSH_FNDIR%%/Completion/Unix/_pids
 %%ZSH_FNDIR%%/Completion/Unix/_pine
 %%ZSH_FNDIR%%/Completion/Unix/_ports
+%%ZSH_FNDIR%%/Completion/Unix/_postfix
 %%ZSH_FNDIR%%/Completion/Unix/_prcs
 %%ZSH_FNDIR%%/Completion/Unix/_printenv
 %%ZSH_FNDIR%%/Completion/Unix/_printers
@@ -400,6 +415,7 @@ bin/zsh-%%ZSH_VER%%
 %%ZSH_FNDIR%%/Completion/Unix/_zip
 %%ZSH_FNDIR%%/Completion/X/_acroread
 %%ZSH_FNDIR%%/Completion/X/_dcop
+%%ZSH_FNDIR%%/Completion/X/_gnome-gv
 %%ZSH_FNDIR%%/Completion/X/_gqview
 %%ZSH_FNDIR%%/Completion/X/_gv
 %%ZSH_FNDIR%%/Completion/X/_kfmclient
@@ -626,7 +642,6 @@ bin/zsh-%%ZSH_VER%%
 %%ZSH_FNDIR%%/Zftp/zftype
 %%ZSH_FNDIR%%/Zftp/zfuget
 %%ZSH_FNDIR%%/Zftp/zfuput
-@dirrm %%ZSH_FNDIR%%/Zftp
 %%ZSH_FNDIR%%/Zle/cycle-completion-positions
 %%ZSH_FNDIR%%/Zle/edit-command-line
 %%ZSH_FNDIR%%/Zle/history-search-end
@@ -639,6 +654,7 @@ bin/zsh-%%ZSH_VER%%
 @dirrm %%ZSH_FNDIR%%/Completion/BSD
 @dirrm %%ZSH_FNDIR%%/Completion/Base
 @dirrm %%ZSH_FNDIR%%/Completion/Cygwin
+@dirrm %%ZSH_FNDIR%%/Completion/Darwin
 @dirrm %%ZSH_FNDIR%%/Completion/Debian
 @dirrm %%ZSH_FNDIR%%/Completion/Linux
 @dirrm %%ZSH_FNDIR%%/Completion/Mandrake
@@ -651,6 +667,7 @@ bin/zsh-%%ZSH_VER%%
 @dirrm %%ZSH_FNDIR%%/Misc
 @dirrm %%ZSH_FNDIR%%/Prompts
 @dirrm %%ZSH_FNDIR%%/TCP
+@dirrm %%ZSH_FNDIR%%/Zftp
 @dirrm %%ZSH_FNDIR%%/Zle
 @dirrm %%ZSH_FNDIR%%
 @dirrm %%DATADIR%%/%%ZSH_VER%%
