@@ -32,7 +32,7 @@ INSTALLS_SHLIB=	yes
 
 post-extract:
 	cd ${WRKSRC}/vtdata && \
-		${UNZIP} -aj ${DISTDIR}/dir_it.zip boost/directory.h src/directory.cpp
+		unzip -aj ${DISTDIR}/dir_it.zip boost/directory.h src/directory.cpp
 
 do-install:
 	${INSTALL_DATA} ${WRKSRC}/vtdata/libvtdata.so ${PREFIX}/lib/libvtdata.so.1
