@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	saint
-PORTVERSION=	3.1.7
+PORTVERSION=	3.2.1
 CATEGORIES=	security
 MASTER_SITES=	ftp://ftp.wwdsi.com/pub/saint/			\
 		http://www.wwdsi.com/saint/downloads/
