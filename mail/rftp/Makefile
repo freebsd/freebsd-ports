@@ -3,12 +3,12 @@
 # Date created:			13 Dec, 1997
 # Whom:				kline
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1998/05/06 08:11:00 obrien Exp $
 #
 
 DISTNAME=       rftp-1.2
 CATEGORIES=	mail
-MASTER_SITES=   http://www2.fortunecity.com/skyscraper/siliconex/38/
+MASTER_SITES=   http://www.freebsd.org/~steve/
 
 MAINTAINER=	kline@thought.org
 
