@@ -15,6 +15,9 @@ MAINTAINER=	peter@FreeBSD.ORG
 
 ALL_TARGET=	tproxy
 
+# This has only been tested with -current, although it might work if you
+# can get the ipfilter package to build on a 2.2.x system. YMMV.
+# ftp://cheops.anu.edu.au/pub/net/firewall/ip-filter/
 OSVERSION!=	sysctl -n kern.osreldate
 .if ${OSVERSION} < 300000
 BROKEN=		"transproxy requires ipfilter, available in 3.0 or later"
