@@ -1,0 +1,11 @@
+diff -ur --new-file ./Makefile ../../A1/Makefile
+--- ../../A1/Makefile	Thu Jan  1 01:00:00 1970
++++ ./Makefile	Tue Jan  4 22:04:35 2000
+@@ -0,0 +1,7 @@
++
++all:
++	cd examples/freebsd ; make all
++
++install:
++	cd examples/freebsd ; make install
++

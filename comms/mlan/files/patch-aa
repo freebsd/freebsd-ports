@@ -1,0 +1,22 @@
+diff -u --new-file -r ../R1/source/apps/tstmlane/tstmlane.c ./source/apps/tstmlane/tstmlane.c
+--- ../R1/source/apps/tstmlane/tstmlane.c	Tue Jun  8 01:03:00 1999
++++ ./source/apps/tstmlane/tstmlane.c	Tue Jan  4 21:32:02 2000
+@@ -36,7 +36,6 @@
+ 
+ #include <stdio.h>
+ #include <stdlib.h>
+-#include <windows.h>
+ #include "mlan.h"
+ 
+ // external MLan functions to test
+diff -u --new-file -r ../R1/source/lib/userial/ds2480ut.c ./source/lib/userial/ds2480ut.c
+--- ../R1/source/lib/userial/ds2480ut.c	Tue Jun  8 01:03:00 1999
++++ ./source/lib/userial/ds2480ut.c	Tue Jan  4 21:23:04 2000
+@@ -92,6 +92,7 @@
+    if (WriteCOM(1,sendpacket) != 1) 
+       return FALSE;
+ 
++   sendpacket[sendlen++] = 0xC1;
+    // set the FLEX configuration parameters
+    // default PDSRC = 1.37Vus
+    sendpacket[sendlen++] = CMD_CONFIG | PARMSEL_SLEW | PARMSET_Slew1p37Vus;
