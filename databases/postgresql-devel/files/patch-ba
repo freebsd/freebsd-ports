@@ -1,0 +1,32 @@
+--- interfaces/jdbc/Makefile.orig	Tue May 18 09:01:41 1999
++++ interfaces/jdbc/Makefile	Mon Jun 28 19:16:12 1999
+@@ -10,10 +10,10 @@
+ 
+ FIND		= find
+ IDL2JAVA	= idltojava -fno-cpp -fno-tie
+-JAR		= jar
+-JAVA		= java
+-JAVAC		= javac
+-JAVADOC		= javadoc
++JAR		= !!JAVA_HOME!!/bin/jar
++JAVA		= !!JAVA_HOME!!/bin/java
++JAVAC		= !!JAVA_HOME!!/bin/javac
++JAVADOC		= !!JAVA_HOME!!/bin/javadoc
+ RM		= rm -f
+ TOUCH		= touch
+ 
+@@ -27,11 +27,11 @@
+ # In 6.5, the all rule builds the makeVersion class which then calls make using
+ # the jdbc1 or jdbc2 rules
+ all:	makeVersion.class
+-	make $$($(JAVA) makeVersion)
++	${MAKE} $$($(JAVA) makeVersion)
+ 	@echo ------------------------------------------------------------
+ 	@echo The JDBC driver has now been built. To make it available to
+-	@echo other applications, copy the postgresql.jar file to a public
+-	@echo "place (under unix this could be /usr/local/lib) and add it"
++	@echo other applications, add the path
++	@echo !!JAVA_HOME!!/share/java/postgresql.jar
+ 	@echo to the class path.
+ 	@echo
+ 	@echo Then either add -Djdbc.drivers=postgresql.Driver to the
