@@ -12,6 +12,8 @@ MASTER_SITES=	ftp://ftp.hpl.hp.com/pub/httperf/
 
 MAINTAINER=	ports@FreeBSD.org
 
+LIB_DEPENDS=	gnugetopt:${PORTSDIR}/devel/libgnugetopt
+
 USE_OPENSSL=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
@@ -19,12 +21,11 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 
 MAN1=		httperf.1
 
-post-install:
-	${CHMOD} 750 ${PREFIX}/bin/httperf
 .if !defined(NOPORTDOCS)
+post-install:
 	@${MKDIR} ${DOCSDIR}
 .for file in ChangeLog NEWS README TODO
-	@${INSTALL_MAN} ${WRKSRC}/${file} ${DOCSDIR}
+	${INSTALL_MAN} ${WRKSRC}/${file} ${DOCSDIR}
 .endfor
 .endif
 
