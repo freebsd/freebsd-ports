@@ -1,3 +1,4 @@
+# ex:ts=8
 # Ports collection makefile for:  mutt w/pgp hooks
 # Date created:			  Thur July 25, 1996
 # Whom:				  David O'Brien (obrien@NUXI.com)

@@ -1,3 +1,4 @@
+# ex:ts=8
 # New ports collection makefile for:	libgnugetopt
 # Date created:				2 May 1999
 # Whom:					Andrey Zakhvatov
