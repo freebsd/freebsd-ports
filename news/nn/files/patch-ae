@@ -1,6 +1,6 @@
---- config.h.unparsed.orig	Wed Jan 26 23:16:25 2000
-+++ config.h.unparsed	Thu Jan 27 01:23:30 2000
-@@ -51,10 +51,10 @@
+--- config.h.unparsed.orig	Fri Dec  7 06:33:23 2001
++++ config.h.unparsed	Fri Dec  7 06:37:30 2001
+@@ -46,10 +46,10 @@
  #define DO_NOV_DIGEST
  
  /* Optional */
@@ -13,35 +13,45 @@
  
  
  /*********************** NETWORK DEPENDENT DEFINITIONS **********************
-@@ -107,7 +107,8 @@
-  *	NOTE: If you plan to use the included inews, it MUST be a full pathname
+@@ -100,7 +100,9 @@
+  *	LIB_DIRECTORY defined below.
   */
  
 -#define NNTP_SERVER	"/usr/local/lib/nntp_server"
 +#define NNTP_SERVER	"SUB_PREFIX/etc/nntp_server"
 +#define NNTP_DOMAIN	"SUB_PREFIX/etc/nntp_domain"
++#define DOMAIN_FILE	NNTP_DOMAIN
  
  /*
-  *	Define NNTP_POST if you want nn to reject attempts to post via
-@@ -149,7 +150,7 @@
+  *	Define NNTP_PATH_HOSTNAME to force a specific hostname into the
+@@ -126,7 +128,7 @@
+  *  DOMAIN as defined above).  If you don't want this, comment it out.
+  */
+ 
+-#define HIDDENNET
++/* #define HIDDENNET */
+ 
+ 
+ /***************** OPERATING SYSTEM DEPENDENT DEFINITIONS *******************
+@@ -137,7 +139,7 @@
   *	conf/s-template.h as a starting point for writing you own.
   */
  
--#include "s-hpux9-0.h"
+-#include "s-sunos5.h"
 +#include "s-freebsd.h"
  
- /*
-  *	Define DEFAULT_PAGER as the initial value of the 'pager' variable.
-@@ -210,7 +211,7 @@
+ 
+ /********************** MACHINE DEPENDENT DEFINITIONS **********************
+@@ -148,7 +150,7 @@
   *	conf/m-template.h as a starting point for writing you own.
   */
  
--#include "m-hp9000.h"
+-#include "m-sparc.h"
 +#include "m-i80386.h"
  
  
- /***************************** OWNERSHIP ***************************
-@@ -261,9 +262,9 @@
+ /**************************** LOCALIZATION ****************************
+@@ -181,9 +183,9 @@
   *			   (= LIB_DIRECTORY/Log if undefined).
   */
  
@@ -52,31 +62,20 @@
 +#define LIB_DIRECTORY	"SUB_PREFIX/lib/nn"
 +#define TMP_DIRECTORY	"/var/tmp"
  
- /**************************** DATABASE LOCATION **************************
-  *
-@@ -294,7 +295,7 @@
-  *	     (The file system must support long file names!!)
-  */
- 
--/* #define DB_DIRECTORY	"/usr/spool/nn"	*/
-+#define DB_DIRECTORY	"/var/spool/nn"
- 
- 
  /*************************** NEWS TRANSPORT **************************
-@@ -316,9 +317,9 @@
+  *
+@@ -201,8 +203,8 @@
   *				  Default: NEWS_LIB_DIR/{rm,del}group
   */
  
 -/* #define NEWS_DIRECTORY	"/usr/spool/news"	*/
 -/* #define NEWS_LIB_DIRECTORY	"/usr/lib/news"		*/
--/* #define INEWS_PATH		"/usr/lib/news/inews"	*/
-+#define NEWS_DIRECTORY	"/var/news"
++#define NEWS_DIRECTORY		"/var/news"
 +#define NEWS_LIB_DIRECTORY	"SUB_PREFIX/news/lib"
-+#define INEWS_PATH		"SUB_PREFIX/bin/nn-inews"
  
  
- /*
-@@ -341,7 +342,7 @@
+ /**************************** DATABASE LOCATION **************************
+@@ -257,7 +259,7 @@
   */
  
  /* #define REC_MAIL	"/usr/lib/news/recmail"	*/	/* non-sendmail */
@@ -85,7 +84,7 @@
  
  
  /*
-@@ -403,13 +404,13 @@
+@@ -317,13 +319,13 @@
   *	DAEMON_MAN	- nnmaster
   */
  
@@ -102,21 +101,3 @@
  #define DAEMON_MAN_SECTION	"8"
  
  
-@@ -469,7 +470,7 @@
-  *	was accepted, whereas with INN, it only takes seconds.
-  */
- 
--#define INEWS_IS_FAST	/* comment out for C-News */
-+/* #define INEWS_IS_FAST	/* comment out for C-News */
- 
- /*
-  *	Synchronous posting: If set this will cause NN to wait until a
-@@ -481,7 +482,7 @@
-  *	via some sort of NNTP.
-  */
- 
--#define SYNCHRONOUS_POSTING	/* comment out for C-News */
-+/* #define SYNCHRONOUS_POSTING	/* comment out for C-News */
- 
- /*
-  *	PUT_TIMESTAMP_IN_SCRIPTS

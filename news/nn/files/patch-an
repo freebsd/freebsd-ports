@@ -1,20 +1,26 @@
---- inews/clientlib.c.orig	Wed Jan 26 10:17:34 2000
-+++ inews/clientlib.c	Wed Jan 26 10:37:27 2000
-@@ -76,7 +76,7 @@
- {
- 	register FILE	*fp;
- 	register char	*cp;
--	static char	buf[256];
-+	static char	buf[MAXHOSTNAMELEN];
- 	char		*index();
- 	char		*getenv();
- 	char		*strcpy();
-@@ -107,6 +107,48 @@
- 	return (NULL);			 /* No entry */
+--- nntp.c.orig	Tue Oct  9 11:39:11 2001
++++ nntp.c	Fri Dec  7 07:10:29 2001
+@@ -37,6 +37,7 @@
+ #include <errno.h>
+ #include <pwd.h>
+ #include <ctype.h>
++#include <sys/param.h>
+ 
+ #ifdef NOV
+ #include "hash.h"
+@@ -88,6 +89,7 @@
+ static void debug_msg __APROTO((char *prefix, char *str));
+ static void io_error __APROTO((void));
+ static void find_server __APROTO((void));
++char * find_domain(char *domainFile);
+ static int get_server_line __APROTO((char *string, int size));
+ static int get_server __APROTO((char *string, int size));
+ static int get_socket __APROTO((void));
+@@ -319,6 +321,49 @@
  }
  
-+/*
-+ * getdomainbyfile	Get the domain name for posting from a named file.
+ /*
++ * find_domain		Get the domain name for posting from a named file.
 + *			Handle blank lines and comments.
 + *
 + *	Parameters:	"file" is the name of the file to read.
@@ -27,18 +33,18 @@
 + */
 +
 +char *
-+getdomainbyfile(file)
-+char	*file;
++find_domain(domainFile)
++char	*domainFile;
 +{
 +	register FILE	*fp;
 +	register char	*cp;
 +	static char	buf[MAXHOSTNAMELEN];
 +	char		*index();
 +
-+	if (file == NULL)
++	if (domainFile == NULL)
 +		return (NULL);
 +
-+	fp = fopen(file, "r");
++	fp = fopen(domainFile, "r");
 +	if (fp == NULL)
 +		return (NULL);
 +
@@ -55,15 +61,44 @@
 +	(void) fclose(fp);
 +	return (NULL);
 +}
++
++/*
+  * get_server_line: get a line from the server.
+  *
+  *	Expects to be connected to the server.
+@@ -1726,7 +1771,7 @@
+  * Phil Lapsley <phil@ucbvax.berkeley.edu>
+  */
+ 
+-static char    host_name[256];
++static char    host_name[MAXHOSTNAMELEN];
  
  /*
-  * server_init  Get a connection to the remote news server.
-@@ -211,7 +253,7 @@
-                static struct hostent def;
-                static struct in_addr defaddr;
-                static char *alist[1];
--               static char namebuf[ 256 ];
-+               static char namebuf[MAXHOSTNAMELEN];
-                defaddr.s_addr = inet_addr( machine );
-                if( defaddr.s_addr != -1 ) {
-                        strcpy( namebuf, machine );
+  * gen_frompath -- generate From: and Path: lines, in the form
+@@ -1745,6 +1790,7 @@
+ #ifndef HIDDENNET
+ 	char	*cp;
+ #endif
++	char	*domain;
+ 
+ 	fprintf(nntp_out, "From: ");
+ 	passwd = getpwuid(getuid());
+@@ -1772,9 +1818,15 @@
+ 			DOMAIN);
+ #endif /* HIDDENNET */
+ #else
+-	fprintf(nntp_out, "<%s@%s>\r\n",
+-		passwd->pw_name,
+-		host_name);
++	domain = find_domain(DOMAIN_FILE);
++	if (domain == NULL)
++		fprintf(nntp_out, "From: <%s@%s>\r\n",
++			passwd->pw_name,
++			host_name);
++	else
++		fprintf(nntp_out, "From: <%s@%s>\r\n",
++			passwd->pw_name,
++			domain);
+ #endif
+ 
+ #ifdef HIDDENNET

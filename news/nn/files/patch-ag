@@ -1,11 +1,11 @@
---- Makefile.orig	Sat Jun  5 00:07:14 1999
-+++ Makefile	Sat Mar  4 08:43:28 2000
+--- Makefile.orig	Thu Dec  6 19:56:18 2001
++++ Makefile	Thu Dec  6 19:57:58 2001
 @@ -22,12 +22,12 @@
  CPP =		$(CC) -E
  #CPP =		/lib/cpp
  #CFLAGS =	-O2 # -g # -I/usr/local/lib/malloc-debug -DMALLOC_FUNC_CHECK
--CFLAGS =	-O
-+#CFLAGS =	-O
+-CFLAGS =	-O # -g -Wall -ansi -pedantic
++#CFLAGS =	-O # -g -Wall -ansi -pedantic
  #-Wall -Wcomment \
  #-Wtraditional -Wshadow \
  #-Wpointer-arith -Wcast-qual -Wcast-align -Wconversion \
@@ -15,16 +15,7 @@
  MAKE =		make
  
  
-@@ -36,6 +36,8 @@
- all: ymakefile
- 	$(MAKE) $(MFLAGS) -f ymakefile all
- 
-+inews: ymakefile
-+	$(MAKE) $(MFLAGS) -f ymakefile inews
- touch: ymakefile
- 	$(MAKE) -f ymakefile -t all
- 
-@@ -97,3 +99,5 @@
+@@ -97,3 +97,5 @@
  man/nn.1.D: man/nn.1
  	sh SPLITNN1
  

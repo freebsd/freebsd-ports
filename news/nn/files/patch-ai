@@ -1,8 +1,0 @@
---- inews/version.c.orig	Sat Apr 29 01:34:47 1995
-+++ inews/version.c	Fri Jan 28 15:53:13 2000
-@@ -2,4 +2,4 @@
-  * Provide the version number of this release.
-  */
- 
--char	nntp_version[] = "1.5.8 (11 March 90)";
-+char	nntp_version[] = "1.5.8.MINI (MINI-INEWS)";

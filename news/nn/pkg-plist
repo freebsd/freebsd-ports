@@ -1,16 +1,15 @@
 bin/nn
-bin/nnadmin
-bin/nnbatch
-bin/nncheck
-bin/nngoback
+bin/nnusage
 bin/nngrab
+bin/nnstats
+bin/nncheck
+bin/nnadmin
+bin/nntidy
+bin/nngoback
 bin/nngrep
 bin/nnpost
-bin/nnstats
-bin/nntidy
-bin/nnusage
+bin/nnbatch
 bin/nnview
-bin/nn-inews
 @unexec if cmp -s %D/etc/nntp_domain %D/etc/nntp_domain.dist; then rm -f %D/etc/nntp_domain; fi
 etc/nntp_domain.dist
 @exec [ -f %B/nntp_domain ] || cp %B/%f %B/nntp_domain
@@ -18,8 +17,8 @@ etc/nntp_domain.dist
 etc/nntp_server.dist
 @exec [ -f %B/nntp_server ] || cp %B/%f %B/nntp_server
 lib/nn/aux
+lib/nn/upgrade_rc
 lib/nn/conf
-lib/nn/help/Manual
 lib/nn/help/adm.upgrade1
 lib/nn/help/adm.upgrade2
 lib/nn/help/adm.upgrade3
@@ -37,6 +36,6 @@ lib/nn/help/help.set
 lib/nn/help/help.show
 lib/nn/help/help.sort
 lib/nn/help/help.variables
-lib/nn/upgrade_rc
+lib/nn/help/Manual
 @dirrm lib/nn/help
 @dirrm lib/nn
