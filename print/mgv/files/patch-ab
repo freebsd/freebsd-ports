@@ -1,0 +1,54 @@
+--- configure.orig	Tue Oct 20 15:42:09 1998
++++ configure	Tue Oct 20 15:42:47 1998
+@@ -2067,11 +2067,11 @@
+ ice_motif_save_LIBS="$LIBS"
+ ice_motif_save_CFLAGS="$CFLAGS"
+ ice_motif_save_CPPFLAGS="$CPPFLAGS"
+ ice_motif_save_LDFLAGS="$LDFLAGS"
+ #
+-LIBS="$X_PRE_LIBS -lXm -lXt -lX11 $X_EXTRA_LIBS $LIBS"
++LIBS="$X_PRE_LIBS -lXm -lXp -lXext -lXt -lX11 $X_EXTRA_LIBS $LIBS"
+ CFLAGS="$X_CFLAGS $CFLAGS"
+ CPPFLAGS="$X_CFLAGS $CPPFLAGS"
+ LDFLAGS="$X_LIBS $LDFLAGS"
+ #
+ cat > conftest.$ac_ext <<EOF
+@@ -2141,11 +2141,11 @@
+ ice_motif_save_LIBS="$LIBS"
+ ice_motif_save_CFLAGS="$CFLAGS"
+ ice_motif_save_CPPFLAGS="$CPPFLAGS"
+ ice_motif_save_LDFLAGS="$LDFLAGS"
+ #
+-LIBS="$X_PRE_LIBS -lXm -lXt -lX11 $X_EXTRA_LIBS $LIBS"
++LIBS="$X_PRE_LIBS -lXm -lXp -lXext -lXt -lX11 $X_EXTRA_LIBS $LIBS"
+ CFLAGS="$X_CFLAGS $CFLAGS"
+ CPPFLAGS="$X_CFLAGS $CPPFLAGS"
+ LDFLAGS="$X_LIBS $LDFLAGS"
+ #
+ # We use XtToolkitInitialize() here since it takes no arguments
+@@ -2697,11 +2697,11 @@
+ ac_lib_var=`echo Xm'_'XmRepTypeInstallTearOffModelConverter | sed 'y%./+-%__p_%'`
+ if eval "test \"`echo '$''{'ac_cv_lib_$ac_lib_var'+set}'`\" = set"; then
+   echo $ac_n "(cached) $ac_c" 1>&6
+ else
+   ac_save_LIBS="$LIBS"
+-LIBS="-lXm ${X_PRE_LIBS} ${XPM_LIBS} ${XEXT_LIBS} ${XT_LIBS} ${XEXT_LIBS} ${X11_LIBS} $LIBS"
++LIBS="-lXm -lXp -lXext ${X_PRE_LIBS} ${XPM_LIBS} ${XEXT_LIBS} ${XT_LIBS} ${XEXT_LIBS} ${X11_LIBS} $LIBS"
+ cat > conftest.$ac_ext <<EOF
+ #line 2705 "configure"
+ #include "confdefs.h"
+ /* Override any gcc2 internal prototype to avoid an error.  */
+ /* We use char because int might match the return type of a gcc2
+@@ -2725,11 +2725,11 @@
+ LIBS="$ac_save_LIBS"
+ 
+ fi
+ if eval "test \"`echo '$ac_cv_lib_'$ac_lib_var`\" = yes"; then
+   echo "$ac_t""yes" 1>&6
+-  XM_LIBS="-lXm"
++  XM_LIBS="-lXm -lXp -lXext"
+ 	cat >> confdefs.h <<\EOF
+ #define HAVE_MOTIF 1
+ EOF
+ 
+ else
