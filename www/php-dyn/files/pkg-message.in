@@ -1,0 +1,9 @@
+*****************************************************************************
+
+You have installed the php-dyn package.
+
+Edit %%LOCALBASE%%/etc/php.ini and add:
+
+zend_extension="%%PREFIX%%/lib/php/extensions/php_dyn.so"
+
+*****************************************************************************

@@ -1,0 +1,3 @@
+lib/php/extensions/php_dyn.so
+%%PORTDOCS%%share/doc/php-dyn/README
+%%PORTDOCS%%@dirrm share/doc/php-dyn
