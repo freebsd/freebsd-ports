@@ -7,7 +7,7 @@
 
 PORTNAME=	ircd
 PORTVERSION=	7.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	irc russian
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		ftp://rusunix.org/pub/FreeBSD/distfiles/
@@ -17,8 +17,6 @@ DISTNAME=	ircd-hybrid-ru-7.1rc2
 
 MAINTAINER=	aquatique-ports@rambler.ru
 COMMENT=	Russian version of well known hybrid IRC server
-
-BROKEN=		"Uses unregistered, out-of-range uid"
 
 CONFLICTS=	ircd*
 

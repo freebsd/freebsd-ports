@@ -6,6 +6,12 @@ You should get into the habit of checking this file for changes each
 time you update your ports collection, before attempting any port
 upgrades.
 
+20040521:
+  AFFECTS: users of irc/ircd-hybrid-ru
+
+  UID/GID were changed from 6667 to 555, please manually delete
+  old entries from /etc/passwd /etc/master.passwd and /etc/group
+
 20040514:
   AFFECTS: users of audio/faad
 

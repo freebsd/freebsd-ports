@@ -17,7 +17,7 @@ EOF
 	exit 1
 fi
 
-uid=6667
+uid=555
 user=ircdru
 gid=$uid
 group=$user
