@@ -2,7 +2,7 @@
 # Date created:		1 July 1996
 # Whom:			torstenb
 #
-# $Id: Makefile,v 1.1.1.1 1996/07/06 09:27:10 gpalmer Exp $
+# $Id: Makefile,v 1.2 1996/11/15 23:13:52 obrien Exp $
 #
 
 DISTNAME=	mpegaudio
@@ -12,5 +12,11 @@ MASTER_SITES=	ftp://ftp.iuma.com/audio_utils/converters/source/
 EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=	torstenb@FreeBSD.ORG
+
+MAN1=		mpeg_musicin.1 mpeg_musicout.1
+
+post-install:
+	${INSTALL_MAN} ${FILESDIR}/mpeg_musicin.1 ${PREFIX}/man/man1
+	${INSTALL_MAN} ${FILESDIR}/mpeg_musicout.1 ${PREFIX}/man/man1
 
 .include <bsd.port.mk>
