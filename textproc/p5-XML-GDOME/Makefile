@@ -7,6 +7,7 @@
 
 PORTNAME=	XML-GDOME
 PORTVERSION=	0.83
+PORTREVISION=	1
 CATEGORIES=	textproc perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	XML
@@ -15,7 +16,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	se@FreeBSD.org
 COMMENT=	Perl module that provides the DOM Level 2 Core API for XML documents
 
-LIB_DEPENDS=	gdome.7:${PORTSDIR}/textproc/gdome2
+LIB_DEPENDS=	gdome.8:${PORTSDIR}/textproc/gdome2
 RUN_DEPENDS=	${SITE_PERL}/XML/SAX/Base.pm:${PORTSDIR}/textproc/p5-XML-SAX \
 		${SITE_PERL}/${PERL_ARCH}/XML/LibXML/Common.pm:${PORTSDIR}/textproc/p5-XML-LibXML-Common
 BUILD_DEPENDS=	${RUN_DEPENDS}
@@ -47,5 +48,7 @@ MAN3=		XML::GDOME.3 \
 		XML::GDOME::XPath::Result.3 \
 		XML::GDOME::ProcessingInstruction.3
 
+post-patch:
+	${PERL} -i -ne '/die "VERSION"/ or print' ${WRKSRC}/Makefile.PL
 
 .include <bsd.port.mk>
