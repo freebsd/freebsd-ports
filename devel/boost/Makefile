@@ -17,6 +17,8 @@ DISTNAME=	${PORTNAME}_${PORTVERSION:S/./_/g}
 MAINTAINER=	pmarquis@pobox.com
 COMMENT=	Free peer-reviewed portable C++ source libraries
 
+BROKEN=		Does not build
+
 MAKE_ENV+=	BOOST_ROOT=${WRKSRC} BUILD="debug release"
 MAKE_ENV+=	BOOST_BUILD_PATH="${WRKDIR}/gcc-custom" TOOLS="gcc-custom"
 COMPILED_LIBS=	regex signals thread
