@@ -6,16 +6,17 @@
 #
 
 PORTNAME=	lynx
-PORTVERSION=	2.8.4.1c
+PORTVERSION=	2.8.4.1d
 PORTREVISION=	0
 CATEGORIES=	www ipv6
 MASTER_SITES=	http://lynx.isc.org/current/
 DISTNAME=	${PORTNAME}2.8.4rel.1
 
-PATCH_SITES=	ftp://lynx.isc.org/lynx/lynx2.8.4/patches/
+PATCH_SITES=	http://lynx.isc.org/release/patches/
 PATCHFILES=	lynx2.8.4rel.1a.patch \
 		lynx2.8.4rel.1b.patch \
-		lynx2.8.4rel.1c.patch
+		lynx2.8.4rel.1c.patch \
+		lynx2.8.4rel.1d.patch
 
 MAINTAINER?=	ports@FreeBSD.org
 COMMENT?=	A non-graphical, text-based World-Wide Web client
