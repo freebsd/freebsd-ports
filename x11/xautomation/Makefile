@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	xautomation
-PORTVERSION=	0.93
+PORTVERSION=	0.96
 CATEGORIES=	x11
 MASTER_SITES=	http://hoopajoo.net/static/projects/
 
@@ -21,5 +21,8 @@ GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib"
+
+PLIST_FILES=	bin/pat2ppm bin/patextract bin/png2pat bin/rgb2pat \
+		bin/visgrep bin/xte
 
 .include <bsd.port.mk>
