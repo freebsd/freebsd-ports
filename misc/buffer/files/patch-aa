@@ -1,0 +1,11 @@
+--- buffer.c.orig	Sun Jul  7 18:54:56 2002
++++ buffer.c	Sun Jul  7 18:55:06 2002
+@@ -117,8 +117,6 @@
+ static char *rcsid = "$Header: /a/swan/home/swan/staff/csg/lmjm/src/buffer/RCS/buffer.c,v 1.17 1993/06/04 10:26:39 lmjm Exp lmjm $";
+ #endif
+ 
+-extern char *shmat();
+-
+ /* General macros */
+ #define TRUE 1
+ #define FALSE 0
