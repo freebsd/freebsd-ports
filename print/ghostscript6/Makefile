@@ -3,7 +3,7 @@
 # Date created:		Tue Jun 10 21:58:54 CEST 1997
 # Whom:			Andreas Klemm <andreas@klemm.gtn.com>
 #
-# $Id: Makefile,v 1.21 1998/06/04 20:11:37 andreas Exp $
+# $Id: Makefile,v 1.22 1998/06/05 06:21:03 andreas Exp $
 #
 
 DISTNAME=	ghostscript-5.10
@@ -60,7 +60,7 @@ post-extract:
 	${TOUCH} ${WRKSRC}/deflate.o
 	${TOUCH} ${WRKSRC}/trees.o
 	ln -s ${PORTSDIR}/graphics/jpeg/work/jpeg-6b ${WRKSRC}/jpeg-6b
-	ln -s ${PORTSDIR}/graphics/png/work/libpng-1.0.1 ${WRKSRC}/libpng
+	ln -s ${PORTSDIR}/graphics/png/work/libpng-1.0.2 ${WRKSRC}/libpng
 	cd ${WRKSRC} && unzip -Lao ${DISTDIR}/${HP850_DRV}
 
 do-configure:
