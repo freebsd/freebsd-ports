@@ -51,6 +51,9 @@ share/locale/it/LC_MESSAGES/glade-2.0.mo
 share/locale/ja/LC_MESSAGES/glade-2.0.mo
 share/locale/ko/LC_MESSAGES/glade-2.0.mo
 share/locale/lv/LC_MESSAGES/glade-2.0.mo
+share/locale/mk/LC_MESSAGES/glade-2.0.mo
+share/locale/ml/LC_MESSAGES/glade-2.0.mo
+share/locale/ms/LC_MESSAGES/glade-2.0.mo
 share/locale/nl/LC_MESSAGES/glade-2.0.mo
 share/locale/nn/LC_MESSAGES/glade-2.0.mo
 share/locale/no/LC_MESSAGES/glade-2.0.mo
@@ -60,6 +63,8 @@ share/locale/pt_BR/LC_MESSAGES/glade-2.0.mo
 share/locale/ro/LC_MESSAGES/glade-2.0.mo
 share/locale/ru/LC_MESSAGES/glade-2.0.mo
 share/locale/sk/LC_MESSAGES/glade-2.0.mo
+share/locale/sr/LC_MESSAGES/glade-2.0.mo
+share/locale/sr@Latn/LC_MESSAGES/glade-2.0.mo
 share/locale/sv/LC_MESSAGES/glade-2.0.mo
 share/locale/tr/LC_MESSAGES/glade-2.0.mo
 share/locale/uk/LC_MESSAGES/glade-2.0.mo
