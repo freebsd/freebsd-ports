@@ -56,7 +56,6 @@ PLUGINSDIR=		${PREFIX}/lib/browser_plugins
 #.endif # ${PERL_LEVEL} < 500601
 
 SORT?=/usr/bin/sort
-PLIST=${WRKDIR}/plist
 
 .if defined(WITH_DEBUG)
 WITH_LOGGING=		yes
@@ -108,10 +107,6 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|g' \
 		${WRKSRC}/build/unix/run-mozilla.sh
 
-post-build:
-	${RM} -f ${PLIST}
-	${TOUCH} ${PLIST}
-
 pre-install:
 	${RM} -fr ${LOCAL_PREFIX}
 	-${MKDIR} ${PLUGINSDIR}
@@ -144,6 +139,7 @@ cleanup-install:
 
 cons-plist:
 	-${RM} -f ${PLIST}
+	${TOUCH} ${PLIST}
 	${ECHO_CMD} bin/firebird >>${PLIST}
 	${ECHO_CMD} bin/MozillaFirebird >>${PLIST}
 	${ECHO_CMD} bin/firebird-config >>${PLIST}
@@ -171,6 +167,6 @@ cons-plist:
 # dependency without trashing the actual code of the generate-plist
 # target. This is a limitation of the make(1) program itself.
 # </alane>
-generate-plist: install-extra link-bins link-java cleanup-install cons-plist
+generate-plist: install-extra link-bins link-java cleanup-install
 
 #EOF
