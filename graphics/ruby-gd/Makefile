@@ -17,18 +17,27 @@ DIST_SUBDIR=	ruby
 
 MAINTAINER=	knu@FreeBSD.org
 
-LIB_DEPENDS=	gd.2:${PORTSDIR}/graphics/gd \
-		freetype.9:${PORTSDIR}/print/freetype2
+LIB_DEPENDS=	freetype.9:${PORTSDIR}/print/freetype2
 
 USE_RUBY=	yes
 USE_RUBY_EXTCONF=	yes
 USE_RUBY_RDTOOL=	yes
 
-CONFIGURE_ARGS=	--with-gd-include="${LOCALBASE}/include/gd" \
-		--with-gd-lib="${LOCALBASE}/lib" \
+RUBY_MODNAME=	${PORTNAME:L}
+
+CONFIGURE_ARGS=	--with-gd-lib="${LOCALBASE}/lib" \
 		--with-jpeg \
 		--with-freetype
 INSTALL_TARGET=	site-install
+
+.if defined(WITH_GD2)
+CONFIGURE_ARGS+=	----enable-gd2_0 \
+			--with-gd-include="${LOCALBASE}/include"
+LIB_DEPENDS+=	gd.4:${PORTSDIR}/graphics/gd
+.else
+CONFIGURE_ARGS+=	--with-gd-include="${LOCALBASE}/include/gd"
+LIB_DEPENDS+=	gd.2:${PORTSDIR}/graphics/gd
+.endif
 
 .include <bsd.port.pre.mk>
 
@@ -64,16 +73,16 @@ post-patch:
 
 post-install:
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${RUBY_EXAMPLESDIR}/gd
+	${MKDIR} ${RUBY_MODEXAMPLESDIR}
 .for f in ${EXAMPLES_EN}
-	${INSTALL_DATA} ${WRKSRC}/sample/${f} ${RUBY_EXAMPLESDIR}/gd/
+	${INSTALL_DATA} ${WRKSRC}/sample/${f} ${RUBY_MODEXAMPLESDIR}/
 .endfor
-	${MKDIR} ${RUBY_DOCDIR}/gd/ja
+	${MKDIR} ${RUBY_MODDOCDIR}/ja
 .for f in ${DOCS_EN}
-	${INSTALL_DATA} ${WRKSRC}/${f} ${RUBY_DOCDIR}/gd/
+	${INSTALL_DATA} ${WRKSRC}/${f} ${RUBY_MODDOCDIR}/
 .endfor
 .for f in ${DOCS_JA}
-	${INSTALL_DATA} ${WRKSRC}/${f} ${RUBY_DOCDIR}/gd/ja/
+	${INSTALL_DATA} ${WRKSRC}/${f} ${RUBY_MODDOCDIR}/ja/
 .endfor
 .endif
 
