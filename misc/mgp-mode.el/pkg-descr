@@ -1,0 +1,10 @@
+mgp-mode.el is a mode of Emacs for editing MagicPoint files.
+
+Put the expression below into your ~/.emacs. (for example)
+
+    (setq auto-mode-alist
+          (cons '("\\.mgp?\\'" . mgp-mode) 
+             auto-mode-alist))
+    (autoload 'mgp-mode "mgp-mode")
+    (setq mgp-options "-g 800x600")
+    (setq mgp-window-height 6)
