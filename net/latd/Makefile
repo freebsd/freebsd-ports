@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	latd
-PORTVERSION=	1.19
+PORTVERSION=	1.20
 CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	linux-decnet
@@ -20,9 +20,5 @@ CONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 MAN1=		llogin.1
 MAN5=		latd.conf.5
 MAN8=		latd.8 latcp.8 moprc.8
-
-pre-configure:
-	@${CP} ${WRKSRC}/latd.conf ${WRKSRC}/latd.conf.sample
-	@${SED} -i .dist -e 's/sysconf_DATA = latd.conf/sysconf_DATA = latd.conf.sample/' ${WRKSRC}/Makefile.in
 
 .include <bsd.port.mk>
