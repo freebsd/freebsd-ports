@@ -22,6 +22,7 @@
     SUBDIR += bubblemon-dockapp
     SUBDIR += cd-write
     SUBDIR += cd9660_unicode
+    SUBDIR += cdroot
     SUBDIR += cdrtools
     SUBDIR += cfengine
     SUBDIR += cfengine2

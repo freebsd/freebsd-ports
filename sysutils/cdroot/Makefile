@@ -1,0 +1,16 @@
+# New ports collection makefile for:	cdroot
+# Date created:				8 August 2002
+# Whom:					Brian Dean <bsd@FreeBSD.org>
+#
+# $FreeBSD$
+#
+
+PORTNAME=	cdroot
+PORTVERSION=	1.2.2
+CATEGORIES=	sysutils
+MASTER_SITES=	${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	bsd
+
+MAINTAINER=	bsd@FreeBSD.org
+
+.include <bsd.port.mk>
