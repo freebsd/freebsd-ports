@@ -185,8 +185,7 @@ usr/X11R6/lib/X11/locale/mulelao-1/Compose
 usr/X11R6/lib/X11/locale/mulelao-1/XLC_LOCALE
 usr/X11R6/lib/X11/locale/nokhchi-1/XLC_LOCALE
 usr/X11R6/lib/X11/locale/tatar-cyr/XLC_LOCALE
-usr/X11R6/lib/X11/locale/th_TH.TACTIS/Compose
-usr/X11R6/lib/X11/locale/th_TH.TACTIS/XLC_LOCALE
+usr/X11R6/lib/X11/locale/th_TH/XLC_LOCALE
 usr/X11R6/lib/X11/locale/tscii-0/XLC_LOCALE
 usr/X11R6/lib/X11/locale/vi_VN.tcvn/Compose
 usr/X11R6/lib/X11/locale/vi_VN.tcvn/XLC_LOCALE
@@ -222,6 +221,8 @@ usr/X11R6/lib/libXi.so.6
 usr/X11R6/lib/libXi.so.6.0
 usr/X11R6/lib/libXmu.so.6
 usr/X11R6/lib/libXmu.so.6.2
+usr/X11R6/lib/libXmuu.so.1
+usr/X11R6/lib/libXmuu.so.1.0
 usr/X11R6/lib/libXp.so.6
 usr/X11R6/lib/libXp.so.6.2
 usr/X11R6/lib/libXpm.so.4
@@ -9658,14 +9659,25 @@ var/log/lastlog
 @dirrm usr/etc
 @dirrm usr/dict
 @dirrm usr/bin
+@dirrm usr/X11R6/man/man8
+@dirrm usr/X11R6/man/man7
+@dirrm usr/X11R6/man/man6
+@dirrm usr/X11R6/man/man5
+@dirrm usr/X11R6/man/man4
+@dirrm usr/X11R6/man/man3
+@dirrm usr/X11R6/man/man2
+@dirrm usr/X11R6/man/man1
 @dirrm usr/X11R6/man
 @dirrm usr/X11R6/lib/X11/locale/zh_TW.big5
 @dirrm usr/X11R6/lib/X11/locale/zh_TW
+@dirrm usr/X11R6/lib/X11/locale/zh_HK.big5hkscs
+@dirrm usr/X11R6/lib/X11/locale/zh_CN.gbk
+@dirrm usr/X11R6/lib/X11/locale/zh_CN.gb18030
 @dirrm usr/X11R6/lib/X11/locale/zh
 @dirrm usr/X11R6/lib/X11/locale/vi_VN.viscii
 @dirrm usr/X11R6/lib/X11/locale/vi_VN.tcvn
 @dirrm usr/X11R6/lib/X11/locale/tscii-0
-@dirrm usr/X11R6/lib/X11/locale/th_TH.TACTIS
+@dirrm usr/X11R6/lib/X11/locale/th_TH
 @dirrm usr/X11R6/lib/X11/locale/tatar-cyr
 @dirrm usr/X11R6/lib/X11/locale/nokhchi-1
 @dirrm usr/X11R6/lib/X11/locale/mulelao-1
