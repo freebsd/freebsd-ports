@@ -1,50 +1,93 @@
-bin/i386-mingw32msvc-addr2line
-bin/i386-mingw32msvc-ar
-bin/i386-mingw32msvc-as
-bin/i386-mingw32msvc-c++filt
-bin/i386-mingw32msvc-dlltool
-bin/i386-mingw32msvc-dllwrap
-bin/i386-mingw32msvc-gasp
-bin/i386-mingw32msvc-ld
-bin/i386-mingw32msvc-nm
-bin/i386-mingw32msvc-objcopy
-bin/i386-mingw32msvc-objdump
-bin/i386-mingw32msvc-ranlib
-bin/i386-mingw32msvc-readelf
-bin/i386-mingw32msvc-size
-bin/i386-mingw32msvc-strings
-bin/i386-mingw32msvc-strip
-bin/i386-mingw32msvc-windres
-i386-mingw32msvc/bin/ar
-i386-mingw32msvc/bin/as
-i386-mingw32msvc/bin/dlltool
-i386-mingw32msvc/bin/ld
-i386-mingw32msvc/bin/nm
-i386-mingw32msvc/bin/ranlib
-i386-mingw32msvc/bin/strip
-i386-mingw32msvc/lib/ldscripts/i386pe.x
-i386-mingw32msvc/lib/ldscripts/i386pe.xbn
-i386-mingw32msvc/lib/ldscripts/i386pe.xn
-i386-mingw32msvc/lib/ldscripts/i386pe.xr
-i386-mingw32msvc/lib/ldscripts/i386pe.xu
-@dirrm i386-mingw32msvc/bin
-@dirrm i386-mingw32msvc/lib/ldscripts
-@unexec rmdir -p %D/i386-mingw32msvc/lib 2>/dev/null || true
-include/ansidecl.h
-include/bfd.h
-include/bfdlink.h
-include/symcat.h
-lib/libbfd.a
-lib/libbfd.la
+@comment $FreeBSD$
+%%BINUTILS_TARG%%/bin/addr2line
+%%BINUTILS_TARG%%/bin/ar
+%%BINUTILS_TARG%%/bin/as
+%%BINUTILS_TARG%%/bin/c++filt
+%%BINUTILS_TARG%%/bin/dlltool
+%%BINUTILS_TARG%%/bin/dllwrap
+%%BINUTILS_TARG%%/bin/ld
+%%BINUTILS_TARG%%/bin/nm
+%%BINUTILS_TARG%%/bin/objcopy
+%%BINUTILS_TARG%%/bin/objdump
+%%BINUTILS_TARG%%/bin/ranlib
+%%BINUTILS_TARG%%/bin/readelf
+%%BINUTILS_TARG%%/bin/strip
+%%BINUTILS_TARG%%/bin/size
+%%BINUTILS_TARG%%/bin/strings
+%%BINUTILS_TARG%%/bin/windres
+%%BINUTILS_TARG%%/lib/ldscripts/i386pe.x
+%%BINUTILS_TARG%%/lib/ldscripts/i386pe.xbn
+%%BINUTILS_TARG%%/lib/ldscripts/i386pe.xn
+%%BINUTILS_TARG%%/lib/ldscripts/i386pe.xr
+%%BINUTILS_TARG%%/lib/ldscripts/i386pe.xu
 lib/libiberty.a
-lib/libopcodes.a
-lib/libopcodes.la
-share/locale/fr/LC_MESSAGES/bfd.mo
-share/locale/fr/LC_MESSAGES/binutils.mo
-share/locale/fr/LC_MESSAGES/gas.mo
-share/locale/fr/LC_MESSAGES/ld.mo
-share/locale/fr/LC_MESSAGES/opcodes.mo
-share/locale/sv/LC_MESSAGES/ld.mo
-share/locale/sv/LC_MESSAGES/opcodes.mo
-share/locale/tr/LC_MESSAGES/binutils.mo
-share/locale/tr/LC_MESSAGES/opcodes.mo
+bin/%%BINUTILS_TARG%%-addr2line
+bin/%%BINUTILS_TARG%%-ar
+bin/%%BINUTILS_TARG%%-as
+bin/%%BINUTILS_TARG%%-c++filt
+bin/%%BINUTILS_TARG%%-dlltool
+bin/%%BINUTILS_TARG%%-dllwrap
+bin/%%BINUTILS_TARG%%-ld
+bin/%%BINUTILS_TARG%%-nm
+bin/%%BINUTILS_TARG%%-objcopy
+bin/%%BINUTILS_TARG%%-objdump
+bin/%%BINUTILS_TARG%%-ranlib
+bin/%%BINUTILS_TARG%%-readelf
+bin/%%BINUTILS_TARG%%-strip
+bin/%%BINUTILS_TARG%%-size
+bin/%%BINUTILS_TARG%%-strings
+bin/%%BINUTILS_TARG%%-windres
+@unexec install-info --delete %D/info/bfd.info %D/info/dir
+@unexec install-info --delete %D/info/binutils.info %D/info/dir
+@unexec install-info --delete %D/info/standards.info %D/info/dir 2> /dev/null
+@unexec install-info --delete %D/info/configure.info %D/info/dir 2> /dev/null
+@unexec install-info --delete %D/info/as.info %D/info/dir
+@unexec install-info --delete %D/info/ld.info %D/info/dir
+info/bfd.info
+info/bfd.info-1
+info/bfd.info-2
+info/bfd.info-3
+info/bfd.info-4
+info/bfd.info-5
+info/bfd.info-6
+info/bfd.info-7
+info/bfd.info-8
+info/bfd.info-9
+info/binutils.info
+info/binutils.info-1
+info/binutils.info-2
+info/binutils.info-3
+info/standards.info
+info/configure.info
+info/configure.info-1
+info/configure.info-2
+info/configure.info-3
+info/as.info
+info/as.info-1
+info/as.info-2
+info/as.info-3
+info/as.info-4
+info/as.info-5
+info/as.info-6
+info/as.info-7
+info/as.info-8
+info/as.info-9
+info/as.info-10
+info/as.info-11
+info/ld.info
+info/ld.info-1
+info/ld.info-2
+info/ld.info-3
+info/ld.info-4
+info/ld.info-5
+info/ld.info-6
+@dirrm %%BINUTILS_TARG%%/bin
+@dirrm %%BINUTILS_TARG%%/lib/ldscripts
+@dirrm %%BINUTILS_TARG%%/lib
+@dirrm %%BINUTILS_TARG%%
+@exec   install-info          %D/info/bfd.info %D/info/dir
+@exec   install-info          %D/info/binutils.info %D/info/dir
+@exec   install-info          %D/info/standards.info %D/info/dir
+@exec   install-info          %D/info/configure.info %D/info/dir
+@exec   install-info          %D/info/as.info %D/info/dir
+@exec   install-info          %D/info/ld.info %D/info/dir
