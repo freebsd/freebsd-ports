@@ -8,7 +8,7 @@
 PORTNAME=	libsamplerate
 PORTVERSION=	0.0.15
 CATEGORIES=	audio
-MASTER_SITES= 	http://www.mega-nerd.com/SRC/
+MASTER_SITES=	http://www.mega-nerd.com/SRC/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Secret Rabbit Code: a Sample Rate Converter for audio

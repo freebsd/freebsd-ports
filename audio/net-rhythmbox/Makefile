@@ -33,18 +33,18 @@ CONFIGURE_ARGS=	--disable-lirc
 WITH_XOSD=	yes
 .endif
 .if exists(${LOCALBASE}/lib/libvorbis.so)
-WITH_VORBIS=  yes
+WITH_VORBIS=	yes
 .endif
 
 .ifdef (WITH_XOSD)
-LIB_DEPENDS+=   xosd.4:${PORTSDIR}/misc/xosd
+LIB_DEPENDS+=		xosd.4:${PORTSDIR}/misc/xosd
 .else
-CONFIGURE_ARGS+=    --disable-xosd
+CONFIGURE_ARGS+=	--disable-xosd
 .endif
 .ifdef (WITH_VORBIS)
-LIB_DEPENDS+=   vorbis.2:${PORTSDIR}/audio/libvorbis
+LIB_DEPENDS+=		vorbis.2:${PORTSDIR}/audio/libvorbis
 .else
-CONFIGURE_ARGS+=    --disable-vorbistest
+CONFIGURE_ARGS+=	--disable-vorbistest
 .endif
 
 pre-everything::

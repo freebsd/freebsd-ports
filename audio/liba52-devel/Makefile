@@ -25,7 +25,7 @@ INSTALLS_SHLIB=	yes
 BUILD_DEPENDS+=	${LOCALBASE}/lib/libdjbfft.a:${PORTSDIR}/math/djbfft
 RUN_DEPENDS+=	${LOCALBASE}/lib/libdjbfft.a:${PORTSDIR}/math/djbfft
 
-CONFIGURE_ENV+= CFLAGS="${CFLAGS} -I${LOCALBASE}/include" \
+CONFIGURE_ENV+=	CFLAGS="${CFLAGS} -I${LOCALBASE}/include" \
 		LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib"
 CONFIGURE_ARGS+=	--enable-djbfft
 .endif

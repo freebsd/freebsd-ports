@@ -36,7 +36,7 @@ CONFIGURE_ARGS+=	--disable-oggvorbis
 CONFIGURE_ARGS+=	--disable-wav
 .endif
 
-DOC_FILES=      AUTHORS COPYING NEWS README
+DOC_FILES=	AUTHORS COPYING NEWS README
 
 pre-everything::
 .ifndef(WITHOUT_MP3)

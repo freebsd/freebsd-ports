@@ -29,7 +29,7 @@ LIBS+=		-L${LOCALBASE}/lib -lm -lmpeg2 ${PTHREAD_LIBS} \
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} >= 500113
-BROKEN=         "Does not compile (bad C++ code)"
+BROKEN=		"Does not compile (bad C++ code)"
 .endif
 
 do-build:

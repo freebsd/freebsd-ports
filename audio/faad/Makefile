@@ -19,7 +19,7 @@ LIB_DEPENDS=	sndfile.1:${PORTSDIR}/audio/libsndfile
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
-USE_AUTOMAKE_VER= 15
+USE_AUTOMAKE_VER=	15
 AUTOMAKE_ARGS=	--add-missing
 
 USE_GETOPT_LONG=	yes
@@ -45,7 +45,7 @@ post-patch:
 	@${FIND} ${WRKSRC} -type f -name Makefile.am | \
 		${XARGS} -n 5 -x \
 			${REINPLACE_CMD} -e \
-				's|-O2|${CFLAGS}|' 
+				's|-O2|${CFLAGS}|'
 
 post-configure:
 # sync the multiple libtool copies

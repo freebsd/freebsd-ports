@@ -7,7 +7,7 @@
 PORTNAME=	wmmp3
 PORTVERSION=	0.12
 CATEGORIES=	audio windowmaker
-MASTER_SITES= 	http://www.dotfiles.com/software/wmmp3/
+MASTER_SITES=	http://www.dotfiles.com/software/wmmp3/
 
 MAINTAINER=	jim@FreeBSD.org
 COMMENT=	A front-end for mpg123 in a Window Maker dockapp

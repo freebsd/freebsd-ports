@@ -5,10 +5,10 @@
 # $FreeBSD$
 #
 
-PORTNAME=       tempest_for_eliza
+PORTNAME=	tempest_for_eliza
 PORTVERSION=	1.0.5
-CATEGORIES=     audio
-MASTER_SITES=   http://www.erikyyy.de/tempest/
+CATEGORIES=	audio
+MASTER_SITES=	http://www.erikyyy.de/tempest/
 
 MAINTAINER=	greid@FreeBSD.org
 COMMENT=	A program to send AM radio signals using a PC monitor
