@@ -8,7 +8,8 @@
 
 DISTNAME=	pan-0.6.7
 CATEGORIES=	news gnome
-MASTER_SITES=	ftp://source.rebelbase.com/pub/pan/
+MASTER_SITES=	ftp://source.rebelbase.com/pub/pan/ \
+		ftp://source.rebelbase.com/pub/pan/obsolete/
 
 MAINTAINER=	jedgar@FreeBSD.org
 
