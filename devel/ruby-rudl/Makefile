@@ -16,6 +16,8 @@ DIST_SUBDIR=	ruby
 MAINTAINER=	knu@FreeBSD.org
 COMMENT=	A high level library to use SDL from Ruby
 
+BROKEN=		"Does not build"
+
 USE_SDL=	image mixer ttf sdl
 USE_RUBY=	yes
 USE_RUBY_EXTCONF=	yes
