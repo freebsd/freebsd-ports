@@ -2,4 +2,4 @@ bin/bbsnet
 etc/bbsnet/Help
 etc/bbsnet/Welcome
 etc/bbsnet/bbsdata
-@dirrm etc/bbsnet/
+@dirrm etc/bbsnet
