@@ -7,10 +7,13 @@
 
 PORTNAME=	sj3
 PORTVERSION=	2.0.1.20
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	japanese
 MASTER_SITES=	ftp://ftp.sony.co.jp/pub/unsupported/src/ \
 		ftp://ftp.cs.titech.ac.jp/pub/japanese/sj3/
+
+PATCH_SITES=	http://oikumene.que.ne.jp/misc/
+PATCHFILES=	${PORTNAME}-patches-20040704.bz2
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A Japanese input method
@@ -27,10 +30,6 @@ STARTUP_SCRIPT=	${PREFIX}/etc/rc.d/sj3.sh
 # NOTE : You must not use 'xmkmf -a', because the running 'make depend' caused a error.
 
 .include <bsd.port.pre.mk>
-
-.if ${ARCH} == "ia64" || ${ARCH} == "amd64"
-BROKEN=		"Coredump during build on amd64 and ia64"
-.endif
 
 do-configure:
 	( cd $(WRKSRC) ; xmkmf ; make Makefiles )
