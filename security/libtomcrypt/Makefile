@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	libtomcrypt
-PORTVERSION=	0.92
+PORTVERSION=	0.94
 CATEGORIES=	security
 MASTER_SITES=	http://libtomcrypt.org/files/
 DISTNAME=	crypt-${PORTVERSION}
@@ -18,6 +18,7 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 MAKEFILE=	makefile
 MAKE_ENV=	PREFIX=${PREFIX} DOCSDIR=${DOCSDIR} EXAMPLESDIR=${EXAMPLESDIR}
 USE_BZIP2=	yes
+USE_REINPLACE=	yes
 ALL_TARGET=	library
 
 .if defined(WITH_DOCS)
@@ -31,5 +32,8 @@ INSTALL_TARGET=	install-nodocs
 test:	build
 	(cd ${WRKSRC} && ${MAKE} test && ${WRKSRC}/test)
 .endif
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|||' ${WRKSRC}/whirl.c
 
 .include <bsd.port.mk>
