@@ -1,0 +1,11 @@
+--- surfraw.in.orig	Sun Aug 20 19:47:02 2000
++++ surfraw.in	Sun Aug 20 19:47:17 2000
+@@ -245,7 +245,7 @@
+ }
+ 
+ w3_browse_url () {
+-   if ok SURFRAW_new_screen && ! test -z "$STY"; then
++   if ok SURFRAW_new_screen && [ ! -z "$STY" ]; then
+    	screen=yes
+    else
+    	screen=no
