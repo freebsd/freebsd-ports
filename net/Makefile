@@ -604,6 +604,7 @@
     SUBDIR += py-google
     SUBDIR += py-jabber
     SUBDIR += py-kenosis
+    SUBDIR += py-kenosis-bittorrent
     SUBDIR += py-ldap2
     SUBDIR += py-libnet
     SUBDIR += py-medusa
