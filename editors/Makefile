@@ -45,6 +45,7 @@
     SUBDIR += gate
     SUBDIR += gedit
     SUBDIR += ghex
+    SUBDIR += gmanedit
     SUBDIR += gnotepad+
     SUBDIR += gxedit
     SUBDIR += hexedit
