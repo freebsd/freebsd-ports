@@ -12,3 +12,4 @@ libdata/pkgconfig/lcms.pc
 %%PORTDOCS%%%%DOCSDIR%%/tifficc.c
 %%PORTDOCS%%%%DOCSDIR%%/wtpt.c
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
+@unexec rmdir %D/libdata/pkgconfig 2>/dev/null || true

@@ -5,3 +5,4 @@ lib/libcdaudio.so
 lib/libcdaudio.so.1
 libdata/pkgconfig/libcdaudio.pc
 share/aclocal/libcdaudio.m4
+@unexec rmdir %D/libdata/pkgconfig 2>/dev/null || true

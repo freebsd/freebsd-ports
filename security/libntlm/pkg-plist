@@ -3,3 +3,4 @@ lib/libntlm.a
 lib/libntlm.so
 lib/libntlm.so.0
 libdata/pkgconfig/libntlm.pc
+@unexec rmdir %D/libdata/pkgconfig 2>/dev/null || true
