@@ -4,7 +4,7 @@
 # Date created:         8 Jul 1995
 # Whom:                 ache
 #
-# $Id: Makefile,v 1.11 1995/12/02 23:16:55 ache Exp $
+# $Id: Makefile,v 1.12 1995/12/06 10:42:18 markm Exp $
 #
 
 CATEGORIES+=	security
@@ -13,7 +13,6 @@ CATEGORIES+=	security
 DISTNAME=	pgp262s
 
 MAINTAINER=	ache@FreeBSD.ORG
-WRKSRC=         ${WRKDIR}/src
 NO_PACKAGE=     YES
 MAKEFILE=       makefile
 ALL_TARGET=     freebsd
@@ -23,12 +22,12 @@ IS_INTERACTIVE=	YES
 
 do-install:
 	cd ${WRKSRC}; install -c -o bin -g bin -m 555 pgp ${PREFIX}/bin
-	cd ${WRKDIR}/doc; \
+	cd ${WRKSRC}/../doc; \
 		  install -c -o bin -g bin -m 444 pgp.1 ${PREFIX}/man/man1
 	-mkdir -p ${PGPLIB}
 	chown bin.bin ${PGPLIB}
 	chmod 555 ${PGPLIB}
-	cd ${WRKDIR}; \
+	cd ${WRKSRC}/..; \
 	    install -c -o bin -g bin -m 444 pgp.hlp \
 			      doc/pgpdoc1.txt doc/pgpdoc2.txt ${PGPLIB}; \
 	    [ -f ${PGPLIB}/language.txt ] || \
@@ -49,6 +48,7 @@ DISTNAME=       pgp262s
 PKGNAME=	pgp-2.6.2
 MASTER_SITES=   ftp://sable.ox.ac.uk/pub/crypto/pgp/unix/
 EXTRACT_SUFX=   .zip
+WRKSRC=         ${WRKDIR}/src
 BUILD_DEPENDS+= gmake:${PORTSDIR}/devel/gmake
 BUILD_DEPENDS+= unzip:${PORTSDIR}/archivers/unzip
 EXTRACT_CMD=    unzip
@@ -69,6 +69,7 @@ PKGNAME=        pgp-2.6.3i
 MASTER_SITES=   ftp://ftp.ifi.uio.no/pub/pgp/incoming/ \
 		ftp://ftp.kiae.su/unix/crypto/pgp/
 EXTRACT_SUFX=   .tgz
+WRKSRC=         ${WRKDIR}/pgp263i/src
 FILESDIR=       ${.CURDIR}/files.non_usa
 PATCHDIR=       ${.CURDIR}/patches.non_usa
 
