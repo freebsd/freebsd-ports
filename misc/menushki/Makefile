@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	menushki
-PORTVERSION=	0.6
+PORTVERSION=	0.7
 CATEGORIES=	misc x11
-MASTER_SITES=	http://www.geocities.com/loki_bg/ \
-		${MASTER_SITE_SOURCEFORGE}
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	pat@databits.net
@@ -19,12 +18,6 @@ GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 
 DOCS=	AUTHORS ChangeLog README TODO
-PATCH_CLOSE=	editor.cc menushki.cc
-
-post-patch:
-.for files in ${PATCH_CLOSE}
-	@${PERL} -pi -e "s!(tw\.close);!\1\(\);!" ${WRKSRC}/${files}
-.endfor
 
 post-install:
 .ifndef(NOPORTDOCS)
