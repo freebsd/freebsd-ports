@@ -265,8 +265,8 @@ Headers/gnustep/xraw/XRView.h
 Headers/gnustep/xraw/XRWindow.h
 Headers/gnustep/xraw/XRWindowView.h
 Headers/gnustep/xraw/stdxr.h
-Headers/ix86/freebsd3.1/GSConfig.h
-Headers/ix86/freebsd3.1/mframe.h
+Headers/%%GNU_ARCH%%/%%GNU_HOST%%/GSConfig.h
+Headers/%%GNU_ARCH%%/%%GNU_HOST%%/mframe.h
 Libraries/Resources/Images/GNUstep_Images_Copyright
 Libraries/Resources/Images/common_ArrowDown.tiff
 Libraries/Resources/Images/common_ArrowDownH.tiff
@@ -805,33 +805,13 @@ Libraries/Resources/gnustep/NSTimeZones/zones/Universal
 Libraries/Resources/gnustep/NSTimeZones/zones/W-SU
 Libraries/Resources/gnustep/NSTimeZones/zones/WET
 Libraries/Resources/gnustep/NSTimeZones/zones/Zulu
-Libraries/ix86/freebsd3.1/gnu-gnu-gnu-xraw/libgmodel.so
-@exec ln -sf %D/%F %D/../lib/%f
-@unexec rm -f %D/../lib/%f
-Libraries/ix86/freebsd3.1/gnu-gnu-gnu-xraw/libgmodel.so.0.5.5
-@exec ln -sf %D/%F %D/../lib/%f
-@unexec rm -f %D/../lib/%f
-Libraries/ix86/freebsd3.1/gnu-gnu-gnu-xraw/libgnustep-base.so
-@exec ln -sf %D/%F %D/../lib/%f
-@unexec rm -f %D/../lib/%f
-Libraries/ix86/freebsd3.1/gnu-gnu-gnu-xraw/libgnustep-base.so.0.5.5
-@exec ln -sf %D/%F %D/../lib/%f
-@unexec rm -f %D/../lib/%f
-Libraries/ix86/freebsd3.1/gnu-gnu-gnu-xraw/libgnustep-gui.so
-@exec ln -sf %D/%F %D/../lib/%f
-@unexec rm -f %D/../lib/%f
-Libraries/ix86/freebsd3.1/gnu-gnu-gnu-xraw/libgnustep-gui.so.0.5.5
-@exec ln -sf %D/%F %D/../lib/%f
-@unexec rm -f %D/../lib/%f
-Libraries/ix86/freebsd3.1/gnu-gnu-gnu-xraw/libgnustep-xraw.so
-@exec ln -sf %D/%F %D/../lib/%f
-@unexec rm -f %D/../lib/%f
-Libraries/ix86/freebsd3.1/gnu-gnu-gnu-xraw/libgnustep-xraw.so.0.5.5
-@exec ln -sf %D/%F %D/../lib/%f
-@unexec rm -f %D/../lib/%f
+Libraries/%%GNU_ARCH%%/%%GNU_HOST%%/gnu-gnu-gnu-xraw/libgmodel_s.a
+Libraries/%%GNU_ARCH%%/%%GNU_HOST%%/gnu-gnu-gnu-xraw/libgnustep-base_s.a
+Libraries/%%GNU_ARCH%%/%%GNU_HOST%%/gnu-gnu-gnu-xraw/libgnustep-gui_s.a
+Libraries/%%GNU_ARCH%%/%%GNU_HOST%%/gnu-gnu-gnu-xraw/libgnustep-xraw_s.a
 Library/Model/SavePanel.gmodel
 Library/Services/example.service/Resources/Info-gnustep.plist
-Library/Services/example.service/ix86/freebsd3.1/gnu-gnu-gnu-xraw/example
+Library/Services/example.service/%%GNU_ARCH%%/%%GNU_HOST%%/gnu-gnu-gnu-xraw/example
 Makefiles/GNUstep.csh
 Makefiles/GNUstep.sh
 Makefiles/MediaBook.func
@@ -849,8 +829,8 @@ Makefiles/config.sub
 Makefiles/cpu.sh
 Makefiles/documentation.make
 Makefiles/install-sh
-Makefiles/ix86/freebsd3.1/config.make
-Makefiles/ix86/freebsd3.1/which_lib
+Makefiles/%%GNU_ARCH%%/%%GNU_HOST%%/config.make
+Makefiles/%%GNU_ARCH%%/%%GNU_HOST%%/which_lib
 Makefiles/ld_lib_path.csh
 Makefiles/ld_lib_path.sh
 Makefiles/library.make
@@ -871,42 +851,42 @@ Makefiles/tool.make
 Makefiles/transform_paths.sh
 Makefiles/vendor.sh
 Tools/debugapp
-Tools/ix86/freebsd3.1/gdomap
-Tools/ix86/freebsd3.1/gnu-gnu-gnu-xraw/defaults
-Tools/ix86/freebsd3.1/gnu-gnu-gnu-xraw/dread
-Tools/ix86/freebsd3.1/gnu-gnu-gnu-xraw/dremove
-Tools/ix86/freebsd3.1/gnu-gnu-gnu-xraw/dwrite
-Tools/ix86/freebsd3.1/gnu-gnu-gnu-xraw/gdnc
-Tools/ix86/freebsd3.1/gnu-gnu-gnu-xraw/gpbs
-Tools/ix86/freebsd3.1/gnu-gnu-gnu-xraw/make_services
-Tools/ix86/freebsd3.1/gnu-gnu-gnu-xraw/plparse
-Tools/ix86/freebsd3.1/gnu-gnu-gnu-xraw/set_show_service
-Tools/ix86/freebsd3.1/gnu-gnu-gnu-xraw/sfparse
+Tools/%%GNU_ARCH%%/%%GNU_HOST%%/gdomap
+Tools/%%GNU_ARCH%%/%%GNU_HOST%%/gnu-gnu-gnu-xraw/defaults
+Tools/%%GNU_ARCH%%/%%GNU_HOST%%/gnu-gnu-gnu-xraw/dread
+Tools/%%GNU_ARCH%%/%%GNU_HOST%%/gnu-gnu-gnu-xraw/dremove
+Tools/%%GNU_ARCH%%/%%GNU_HOST%%/gnu-gnu-gnu-xraw/dwrite
+Tools/%%GNU_ARCH%%/%%GNU_HOST%%/gnu-gnu-gnu-xraw/gdnc
+Tools/%%GNU_ARCH%%/%%GNU_HOST%%/gnu-gnu-gnu-xraw/gpbs
+Tools/%%GNU_ARCH%%/%%GNU_HOST%%/gnu-gnu-gnu-xraw/make_services
+Tools/%%GNU_ARCH%%/%%GNU_HOST%%/gnu-gnu-gnu-xraw/plparse
+Tools/%%GNU_ARCH%%/%%GNU_HOST%%/gnu-gnu-gnu-xraw/set_show_service
+Tools/%%GNU_ARCH%%/%%GNU_HOST%%/gnu-gnu-gnu-xraw/sfparse
 Tools/openapp
 Tools/opentool
 share/config.site
 @dirrm share
-@dirrm Tools/ix86/freebsd3.1/gnu-gnu-gnu-xraw
-@dirrm Tools/ix86/freebsd3.1
-@dirrm Tools/ix86
+@dirrm Tools/%%GNU_ARCH%%/%%GNU_HOST%%/gnu-gnu-gnu-xraw
+@dirrm Tools/%%GNU_ARCH%%/%%GNU_HOST%%
+@dirrm Tools/%%GNU_ARCH%%
 @dirrm Tools
-@dirrm Makefiles/ix86/freebsd3.1
-@dirrm Makefiles/ix86
+@dirrm Makefiles/%%GNU_ARCH%%/%%GNU_HOST%%
+@dirrm Makefiles/%%GNU_ARCH%%
 @dirrm Makefiles
 @dirrm Library/man
 @dirrm Library/info
-@dirrm Library/Services/example.service/ix86/freebsd3.1/gnu-gnu-gnu-xraw
-@dirrm Library/Services/example.service/ix86/freebsd3.1
-@dirrm Library/Services/example.service/ix86
+@dirrm Library/Services/example.service/%%GNU_ARCH%%/%%GNU_HOST%%/gnu-gnu-gnu-xraw
+@dirrm Library/Services/example.service/%%GNU_ARCH%%/%%GNU_HOST%%
+@dirrm Library/Services/example.service/%%GNU_ARCH%%
 @dirrm Library/Services/example.service/Resources
 @dirrm Library/Services/example.service
 @dirrm Library/Services
 @dirrm Library/PostScript
 @dirrm Library/Model
 @dirrm Library
-@dirrm Libraries/ix86/freebsd3.1/gnu-gnu-gnu-xraw
-@dirrm Libraries/ix86/freebsd3.1
-@dirrm Libraries/ix86
+@dirrm Libraries/%%GNU_ARCH%%/%%GNU_HOST%%/gnu-gnu-gnu-xraw
+@dirrm Libraries/%%GNU_ARCH%%/%%GNU_HOST%%
+@dirrm Libraries/%%GNU_ARCH%%
 @dirrm Libraries/Resources/gnustep/NSTimeZones/zones/US
 @dirrm Libraries/Resources/gnustep/NSTimeZones/zones/SystemV
 @dirrm Libraries/Resources/gnustep/NSTimeZones/zones/Pacific
@@ -933,8 +913,8 @@ share/config.site
 @dirrm Libraries/Resources/Images
 @dirrm Libraries/Resources
 @dirrm Libraries
-@dirrm Headers/ix86/freebsd3.1
-@dirrm Headers/ix86
+@dirrm Headers/%%GNU_ARCH%%/%%GNU_HOST%%
+@dirrm Headers/%%GNU_ARCH%%
 @dirrm Headers/gnustep/xraw
 @dirrm Headers/gnustep/unicode
 @dirrm Headers/gnustep/gui/AppKit
