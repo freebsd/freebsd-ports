@@ -101,6 +101,7 @@
     SUBDIR += cflow
     SUBDIR += cflow2vcg
     SUBDIR += chora
+    SUBDIR += cil
     SUBDIR += cl-asdf
     SUBDIR += cl-asdf-clisp
     SUBDIR += cl-asdf-cmucl
