@@ -1,8 +1,12 @@
 bin/gddemo
 bin/giftogd
 bin/webgif
-lib/libgd.a
 include/gd/gd.h
+include/gd/gdfontg.h
+include/gd/gdfontl.h
+include/gd/gdfontmb.h
 include/gd/gdfonts.h
-share/examples/gd/index.html
+include/gd/gdfontt.h
+lib/libgd.a
 share/examples/gd/demoin.gif
+share/examples/gd/index.html
