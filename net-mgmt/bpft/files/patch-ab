@@ -1,0 +1,19 @@
+*** trafd/trafstop.orig	Fri Mar 19 21:03:06 1999
+--- trafd/trafstop	Fri Mar 19 21:04:13 1999
+***************
+*** 6,12 ****
+  #
+  # usage: trafstop interfaces...
+  #
+! PATH=/bin:/usr/bin:/sbin:/usr/sbin:/usr/local/bin
+  WHERE_PID=/var/run/trafd.
+  LOG_FILE=/var/log/traffic.log
+  
+--- 6,12 ----
+  #
+  # usage: trafstop interfaces...
+  #
+! PATH=/bin:/usr/bin:/sbin:/usr/sbin:/usr/local/bin:/usr/local/sbin
+  WHERE_PID=/var/run/trafd.
+  LOG_FILE=/var/log/traffic.log
+  

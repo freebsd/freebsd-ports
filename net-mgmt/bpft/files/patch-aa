@@ -1,0 +1,80 @@
+*** Makefile.orig	Wed Oct 30 12:38:00 1996
+--- Makefile	Fri Mar 19 23:42:26 1999
+***************
+*** 11,16 ****
+--- 11,17 ----
+  
+  # Target directory for install execution files.
+  PATH_BINDIR=/usr/local/bin
++ PATH_SBINDIR=/usr/local/sbin
+  
+  # Target directory for install man pages.
+  PATH_MANDIR=/usr/local/man/man1
+***************
+*** 18,24 ****
+  # Trailing slash directory, summary traffic log files will be put there.
+  PATH_TOSAVE=/var/log/
+  
+! # Full pathname where locate tarfstat program.
+  PATH_TRAFSTAT=/usr/local/bin/trafstat
+  
+  # Where locate trafstatd log file, if you want log then file must exist.
+--- 19,25 ----
+  # Trailing slash directory, summary traffic log files will be put there.
+  PATH_TOSAVE=/var/log/
+  
+! # Full pathname where locate trafstat program.
+  PATH_TRAFSTAT=/usr/local/bin/trafstat
+  
+  # Where locate trafstatd log file, if you want log then file must exist.
+***************
+*** 56,79 ****
+  	$(MAKE) CC=$(CC) CFLAGS='$(CFLAGS)' LIB='$(LIB)')
+  	@(cd trafstatd; echo "Build trafstatd in `pwd`"; \
+  	$(MAKE) CC=$(CC) CFLAGS='$(CFLAGS)' LIB='$(LIB)')
+! 	@(cd traflog; echo "Build tarflog in `pwd`"; \
+  	$(MAKE) CC=$(CC) CFLAGS='$(CFLAGS)' LIB='$(LIB)')
+  	@(cd trafshow; echo "Build trafshow in `pwd`"; \
+  	$(MAKE) CC=$(CC) CFLAGS='$(CFLAGS)' LIB='$(LIB)')
+  	@echo Done.
+  
+  install: all
+! 	install -s -o root -g $(GROUP) -m $(MODE) trafd/trafd $(PATH_BINDIR)
+! 	install -c -o root -g $(GROUP) -m $(MODE) trafd/trafstart $(PATH_BINDIR)
+! 	install -c -o root -g $(GROUP) -m $(MODE) trafd/trafstop $(PATH_BINDIR)
+! 	install -c -o root -g $(GROUP) -m $(MODE) trafd/trafsave $(PATH_BINDIR)
+! 	install -c -o root -g $(GROUP) -m $(MODE) trafd/trafdump $(PATH_BINDIR)
+  	install -s -o root -g $(GROUP) -m $(MODE) trafstat/trafstat $(PATH_BINDIR)
+! 	install -s -o root -g $(GROUP) -m $(MODE) trafstatd/trafstatd $(PATH_BINDIR)
+! 	install -s -o root -g $(GROUP) -m $(MODE) traflog/traflog $(PATH_BINDIR)
+  	install -c -o root -g $(GROUP) -m $(MODE) traflog/traflog.format $(PATH_TRAFLOG_FMT)
+  	install -s -o root -g $(GROUP) -m $(MODE) trafshow/trafshow $(PATH_BINDIR)
+! 	install -c -m 644 trafshow/trafshow.1 $(PATH_MANDIR)
+  	@echo Done.
+  
+  clean:
+--- 57,80 ----
+  	$(MAKE) CC=$(CC) CFLAGS='$(CFLAGS)' LIB='$(LIB)')
+  	@(cd trafstatd; echo "Build trafstatd in `pwd`"; \
+  	$(MAKE) CC=$(CC) CFLAGS='$(CFLAGS)' LIB='$(LIB)')
+! 	@(cd traflog; echo "Build traflog in `pwd`"; \
+  	$(MAKE) CC=$(CC) CFLAGS='$(CFLAGS)' LIB='$(LIB)')
+  	@(cd trafshow; echo "Build trafshow in `pwd`"; \
+  	$(MAKE) CC=$(CC) CFLAGS='$(CFLAGS)' LIB='$(LIB)')
+  	@echo Done.
+  
+  install: all
+! 	install -s -o root -g $(GROUP) -m $(MODE) trafd/trafd       $(PATH_SBINDIR)
+! 	install -c -o root -g $(GROUP) -m $(MODE) trafd/trafstart   $(PATH_BINDIR)
+! 	install -c -o root -g $(GROUP) -m $(MODE) trafd/trafstop    $(PATH_BINDIR)
+! 	install -c -o root -g $(GROUP) -m $(MODE) trafd/trafsave    $(PATH_BINDIR)
+! 	install -c -o root -g $(GROUP) -m $(MODE) trafd/trafdump    $(PATH_BINDIR)
+  	install -s -o root -g $(GROUP) -m $(MODE) trafstat/trafstat $(PATH_BINDIR)
+! 	install -s -o root -g $(GROUP) -m $(MODE) trafstatd/trafstatd $(PATH_SBINDIR)
+! 	install -s -o root -g $(GROUP) -m $(MODE) traflog/traflog   $(PATH_BINDIR)
+  	install -c -o root -g $(GROUP) -m $(MODE) traflog/traflog.format $(PATH_TRAFLOG_FMT)
+  	install -s -o root -g $(GROUP) -m $(MODE) trafshow/trafshow $(PATH_BINDIR)
+! 	install -c -m 644 trafshow/trafshow.1                       $(PATH_MANDIR)
+  	@echo Done.
+  
+  clean:

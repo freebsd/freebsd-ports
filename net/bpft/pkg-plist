@@ -1,0 +1,12 @@
+bin/trafdump
+bin/traflog
+bin/trafsave
+bin/trafshow
+bin/trafstart
+bin/trafstat
+bin/trafstop
+etc/traflog.format
+sbin/trafd
+sbin/trafstatd
+share/doc/bpft/README
+@dirrm share/doc/bpft
