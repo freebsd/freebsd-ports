@@ -1,0 +1,12 @@
+--- config.guess.orig	Sun Feb 22 15:44:23 2004
++++ config.guess	Wed Apr 21 15:10:25 2004
+@@ -792,6 +792,9 @@
+ 	#endif
+ EOF
+ 	eval `$CC_FOR_BUILD -E $dummy.c 2>/dev/null | grep ^LIBC=`
++	if [ ".$UNAME_MACHINE" = ".amd64" ] ; then
++	    UNAME_MACHINE=x86_64
++	fi
+ 	# GNU/KFreeBSD systems have a "k" prefix to indicate we are using
+ 	# FreeBSD's kernel, but not the complete OS.
+ 	case ${LIBC} in gnu) kernel_only='k' ;; esac
