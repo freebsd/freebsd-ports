@@ -10,6 +10,7 @@ mpich/MPI-2-C++/examples/topology.cc
 mpich/MPI-2-C++/examples/user_bcast.cc
 mpich/bin/config.status
 mpich/bin/execer
+mpich/bin/jumpshot
 mpich/bin/mpereconfig
 mpich/bin/mpiCC
 mpich/bin/mpicc
@@ -49,6 +50,7 @@ mpich/build/bitmaps/white
 mpich/build/freebsd/ch_p4/bin/chkserv
 mpich/build/freebsd/ch_p4/bin/chp4_servs
 mpich/build/freebsd/ch_p4/bin/config.status
+mpich/build/freebsd/ch_p4/bin/jumpshot
 mpich/build/freebsd/ch_p4/bin/mpiCC
 mpich/build/freebsd/ch_p4/bin/mpicc
 mpich/build/freebsd/ch_p4/bin/mpif77
@@ -115,9 +117,11 @@ mpich/build/freebsd/ch_p4/include/mpidefs.h
 mpich/build/freebsd/ch_p4/include/mpif.h
 mpich/build/freebsd/ch_p4/include/mpio.h
 mpich/build/freebsd/ch_p4/include/mpiof.h
+mpich/build/freebsd/ch_p4/lib/libampi.a
 mpich/build/freebsd/ch_p4/lib/libfmpich.a
 mpich/build/freebsd/ch_p4/lib/liblmpi.a
 mpich/build/freebsd/ch_p4/lib/libmpe.a
+mpich/build/freebsd/ch_p4/lib/libmpe_nompi.a
 mpich/build/freebsd/ch_p4/lib/libmpich++.a
 mpich/build/freebsd/ch_p4/lib/libmpich.a
 mpich/build/freebsd/ch_p4/lib/libpmpich.a

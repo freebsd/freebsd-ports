@@ -10,9 +10,12 @@ DISTNAME=	mpich-1.1.2
 CATEGORIES=	net
 MASTER_SITES=	ftp://ftp.mcs.anl.gov/pub/mpi/
 
+PATCH_SITES=	ftp://ftp.mcs.anl.gov/pub/mpi/patch/1.1.2/
+PATCHFILES=	4152 4165 4169 4180 4224
+
 MAINTAINER=	dbader@eece.unm.edu
 
-.include <bsd.port.pre.mk>
+DIST_SUBDIR=	mpich
 
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	--cflags="$(CFLAGS)" -prefix=$(PREFIX)/mpich
@@ -165,4 +168,4 @@ MAN4=		CLOG_Finalize.4 CLOG_Init.4 CLOG_Output.4 \
 		MPE_Stop_log.4 MPE_TagsEnd.4 MPE_Update.4
 INSTALL_TARGET=	install
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
