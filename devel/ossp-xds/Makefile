@@ -23,4 +23,10 @@ MAN3=		xds.3
 test:
 	cd ${WRKSRC}; make check
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == "amd64"
+BROKEN=		"Does not compile on amd64"
+.endif
+
+.include <bsd.port.post.mk>
