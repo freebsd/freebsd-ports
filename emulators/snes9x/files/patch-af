@@ -1,5 +1,5 @@
 --- unix/unix.cpp.orig	Wed Feb 28 16:12:23 2001
-+++ unix/unix.cpp	Wed May  7 16:18:26 2003
++++ unix/unix.cpp	Tue May 13 13:07:48 2003
 @@ -51,9 +51,11 @@
  #include <ctype.h>
  
@@ -179,6 +179,24 @@
 -	    if ((t = atoi (argv [++i])) < 15) js_map_button [1][t] = SNES_START_MASK;
 -	    if ((t = atoi (argv [++i])) < 15) js_map_button [1][t] = SNES_SELECT_MASK;
 -	}
+-	else
+-	    S9xUsage ();
+-    }
+-    else if (strcasecmp (argv [i], "-joymap3") == 0)
+-    {
+-	if (i + 8 < argc)
+-	{
+-	    int t;
+-
+-	    if ((t = atoi (argv [++i])) < 15) js_map_button [2][t] = SNES_A_MASK;
+-	    if ((t = atoi (argv [++i])) < 15) js_map_button [2][t] = SNES_B_MASK;
+-	    if ((t = atoi (argv [++i])) < 15) js_map_button [2][t] = SNES_X_MASK;
+-	    if ((t = atoi (argv [++i])) < 15) js_map_button [2][t] = SNES_Y_MASK;
+-	    if ((t = atoi (argv [++i])) < 15) js_map_button [2][t] = SNES_TL_MASK;
+-	    if ((t = atoi (argv [++i])) < 15) js_map_button [2][t] = SNES_TR_MASK;
+-	    if ((t = atoi (argv [++i])) < 15) js_map_button [2][t] = SNES_START_MASK;
+-	    if ((t = atoi (argv [++i])) < 15) js_map_button [2][t] = SNES_SELECT_MASK;
+-	}
 +#ifdef __FreeBSD__
 +    else if (strcasecmp(argv[i], "-joyshift") == 0)
 +	JoystickShift = 1;
@@ -196,24 +214,6 @@
 -	    S9xUsage ();
 +		S9xUsage();
      }
--    else if (strcasecmp (argv [i], "-joymap3") == 0)
--    {
--	if (i + 8 < argc)
--	{
--	    int t;
--
--	    if ((t = atoi (argv [++i])) < 15) js_map_button [2][t] = SNES_A_MASK;
--	    if ((t = atoi (argv [++i])) < 15) js_map_button [2][t] = SNES_B_MASK;
--	    if ((t = atoi (argv [++i])) < 15) js_map_button [2][t] = SNES_X_MASK;
--	    if ((t = atoi (argv [++i])) < 15) js_map_button [2][t] = SNES_Y_MASK;
--	    if ((t = atoi (argv [++i])) < 15) js_map_button [2][t] = SNES_TL_MASK;
--	    if ((t = atoi (argv [++i])) < 15) js_map_button [2][t] = SNES_TR_MASK;
--	    if ((t = atoi (argv [++i])) < 15) js_map_button [2][t] = SNES_START_MASK;
--	    if ((t = atoi (argv [++i])) < 15) js_map_button [2][t] = SNES_SELECT_MASK;
--	}
--	else
--	    S9xUsage ();
--    }
 -    else if (strcasecmp (argv [i], "-joymap4") == 0)
 -    {
 -	if (i + 8 < argc)
@@ -272,7 +272,7 @@
  void InitJoysticks ()
  {
  #ifdef JSIOCGVERSION
-@@ -730,6 +759,193 @@
+@@ -730,6 +759,189 @@
      }
  #endif
  }
@@ -304,14 +304,10 @@
 +		return (-1);
 +	}
 +	report_id = 0;
-+#if __FreeBSD__ >= 5
-+#if __FreeBSD_version < 500111
++#if __FreeBSD__ >= 5 && __FreeBSD_version < 500111
 +	reportlen = hid_report_size(rd, report_id, hid_input);
 +#else
 +	reportlen = hid_report_size(rd, hid_input, report_id);
-+#endif
-+#else
-+	reportlen = hid_report_size(rd, hid_input, &report_id);
 +#endif
 +	my_info->buf = (char *)malloc(reportlen);
 +	if (my_info->buf == NULL)
@@ -466,7 +462,7 @@
  #endif // defined (JOYSTICK_SUPPORT)
  
  const char *GetHomeDirectory ()
-@@ -1422,7 +1638,7 @@
+@@ -1422,7 +1634,7 @@
  }
  #endif
  
@@ -475,7 +471,7 @@
  static int Rates[8] =
  {
      0, 8192, 11025, 16500, 22050, 29300, 36600, 44000
-@@ -1541,7 +1757,7 @@
+@@ -1541,7 +1753,7 @@
  }
  #endif
  
@@ -484,7 +480,7 @@
  void S9xUnixProcessSound (void)
  {
  }
-@@ -1640,7 +1856,7 @@
+@@ -1640,7 +1852,7 @@
  
  void *S9xProcessSound (void *)
  {
