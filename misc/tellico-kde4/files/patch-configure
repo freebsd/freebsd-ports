@@ -1,0 +1,11 @@
+--- configure.orig	Sat Feb  5 23:57:12 2005
++++ configure	Tue Feb  8 17:21:55 2005
+@@ -27409,7 +27409,7 @@
+ 
+ fi;
+ 
+-if test x$enable_amazon == xyes; then
++if test x$enable_amazon = xyes; then
+ 
+ cat >>confdefs.h <<\_ACEOF
+ #define AMAZON_SUPPORT 1
