@@ -1,10 +1,10 @@
---- netperf.c~	Fri Jun 21 22:42:53 2002
-+++ netperf.c	Tue Jan 21 00:55:34 2003
-@@ -47,6 +47,7 @@
- 
+--- netperf.c.orig	Tue Sep 21 22:33:40 2004
++++ netperf.c	Fri Nov  5 12:58:32 2004
+@@ -50,6 +50,7 @@
  #include <stdio.h>
  #include <stdlib.h>
+ #include <strings.h>
 +#include <sys/types.h>
  
  #ifdef WIN32
- #include <windows.h>
+ #include <winsock2.h>
