@@ -1,5 +1,6 @@
 bin/crossedit
 bin/crossfire
+bin/crossfire-config
 bin/crossloop
 bin/crossloop.pl
 bin/crossloop.web
@@ -65,332 +66,142 @@ share/crossfire/help/traps
 share/crossfire/help/unbind
 share/crossfire/help/usekeys
 share/crossfire/image_info
-share/crossfire/maps/CHANGES
+share/crossfire/maps/.emergency
 share/crossfire/maps/HallOfSelection
-share/crossfire/maps/Lake_Country/Butakis/B_gshop
-share/crossfire/maps/Lake_Country/Butakis/B_wshop
-share/crossfire/maps/Lake_Country/Butakis/Butakis0
-share/crossfire/maps/Lake_Country/Butakis/Rlib1
-share/crossfire/maps/Lake_Country/Butakis/Rlib2
-share/crossfire/maps/Lake_Country/Butakis/Wist_portal
-share/crossfire/maps/Lake_Country/Butakis/Wist_study
-share/crossfire/maps/Lake_Country/Butakis/alchemist
-share/crossfire/maps/Lake_Country/Butakis/arena
-share/crossfire/maps/Lake_Country/Butakis/blacksmith
-share/crossfire/maps/Lake_Country/Butakis/church-1
-share/crossfire/maps/Lake_Country/Butakis/church0
-share/crossfire/maps/Lake_Country/Butakis/church1
-share/crossfire/maps/Lake_Country/Butakis/gate_inner
-share/crossfire/maps/Lake_Country/Butakis/gate_outer
-share/crossfire/maps/Lake_Country/Butakis/houses/Bobs_house
-share/crossfire/maps/Lake_Country/Butakis/houses/Jacks_house
-share/crossfire/maps/Lake_Country/Butakis/houses/Jacobs_house
-share/crossfire/maps/Lake_Country/Butakis/houses/James_house
-share/crossfire/maps/Lake_Country/Butakis/houses/Sams_house
-share/crossfire/maps/Lake_Country/Butakis/houses/Seans_house
-share/crossfire/maps/Lake_Country/Butakis/inn
-share/crossfire/maps/Lake_Country/Butakis/luck1
-share/crossfire/maps/Lake_Country/Butakis/luck2
-share/crossfire/maps/Lake_Country/Butakis/luck3
-share/crossfire/maps/Lake_Country/Butakis/p_ghouse_s
-share/crossfire/maps/Lake_Country/Butakis/p_ghouse_w
-share/crossfire/maps/Lake_Country/Butakis/prison-1
-share/crossfire/maps/Lake_Country/Butakis/prison0
-share/crossfire/maps/Lake_Country/Butakis/prison1
-share/crossfire/maps/Lake_Country/Butakis/prison_e
-share/crossfire/maps/Lake_Country/Butakis/prison_n
-share/crossfire/maps/Lake_Country/Butakis/prison_s
-share/crossfire/maps/Lake_Country/Butakis/prison_w
-share/crossfire/maps/Lake_Country/DA
-share/crossfire/maps/Lake_Country/Mwizard/Mwizard0
-share/crossfire/maps/Lake_Country/Mwizard/Mwizard1
-share/crossfire/maps/Lake_Country/Mwizard/Mwizard2
-share/crossfire/maps/Lake_Country/Mwizard/Mwizard3
-share/crossfire/maps/Lake_Country/Mwizard/Mwizard4
-share/crossfire/maps/Lake_Country/Mwizard/Mwizard5
-share/crossfire/maps/Lake_Country/Mwizard/Mwizard6
-share/crossfire/maps/Lake_Country/Mwizard/MwizardD
-share/crossfire/maps/Lake_Country/Mwizard/MwizardG
-share/crossfire/maps/Lake_Country/Mwizard/MwizardT
-share/crossfire/maps/Lake_Country/RETower/tower0
-share/crossfire/maps/Lake_Country/RETower/tower1
-share/crossfire/maps/Lake_Country/RETower/tower2
-share/crossfire/maps/Lake_Country/RETower/tower3
-share/crossfire/maps/Lake_Country/RETower/tower4
-share/crossfire/maps/Lake_Country/RETower/tower5
-share/crossfire/maps/Lake_Country/Sunset_Lake/fortress
-share/crossfire/maps/Lake_Country/Sunset_Lake/gatehouse
-share/crossfire/maps/Lake_Country/Sunset_Lake/inn
-share/crossfire/maps/Lake_Country/ebony/entrance1
-share/crossfire/maps/Lake_Country/ebony/entrance2
-share/crossfire/maps/Lake_Country/ebony/masterlev
-share/crossfire/maps/Lake_Country/kundi_area
-share/crossfire/maps/Lake_Country/marsh/marsh1_1
-share/crossfire/maps/Lake_Country/marsh/marsh1_2
-share/crossfire/maps/Lake_Country/marsh/marsh2_1
-share/crossfire/maps/Lake_Country/marsh/marsh2_2
-share/crossfire/maps/Lake_Country/quest/lefttower2
-share/crossfire/maps/Lake_Country/shops/Mopoon_wshop
-share/crossfire/maps/Lake_Country/shops/Olds_jewel
-share/crossfire/maps/Lake_Country/shops/clems_archery
-share/crossfire/maps/Lake_Country/shops/klondors_wands
-share/crossfire/maps/Lake_Country/small_buildings/LC_inn1
-share/crossfire/maps/Lake_Country/small_buildings/burial_ground
-share/crossfire/maps/Lake_Country/small_buildings/hut_Galmorus
-share/crossfire/maps/Lake_Country/small_buildings/oak_twak1
-share/crossfire/maps/Lake_Country/small_buildings/portal
-share/crossfire/maps/Lake_Country/snake_pit/Chaos_lair1
-share/crossfire/maps/Lake_Country/snake_pit/Chaos_lair2
-share/crossfire/maps/Lake_Country/snake_pit/Chaos_lair3
-share/crossfire/maps/Lake_Country/snake_pit/Chaos_lair4
-share/crossfire/maps/Lake_Country/snake_pit/Takuse_lair
-share/crossfire/maps/Lake_Country/snake_pit/pit
-share/crossfire/maps/Lake_Country/snake_pit/snakepit_1
-share/crossfire/maps/Lake_Country/snake_pit/snakepit_2
-share/crossfire/maps/Lake_Country/snake_pit/snakepit_3
-share/crossfire/maps/Lake_Country/snake_pit/snakepit_4
-share/crossfire/maps/Lake_Country/snake_pit/snakepit_5
-share/crossfire/maps/asyvan/gate1
-share/crossfire/maps/asyvan/gate2
-share/crossfire/maps/asyvan/gate3
-share/crossfire/maps/asyvan/gate4
-share/crossfire/maps/asyvan/gate5
-share/crossfire/maps/asyvan/gate6
-share/crossfire/maps/asyvan/gate7
-share/crossfire/maps/asyvan/gate8
-share/crossfire/maps/asyvan/gate9
-share/crossfire/maps/asyvan/palace1
-share/crossfire/maps/asyvan/palace2
-share/crossfire/maps/asyvan/palace3
-share/crossfire/maps/brittany/Brest/Castle/AcidChamber
-share/crossfire/maps/brittany/Brest/Castle/DragonRoom
-share/crossfire/maps/brittany/Brest/Castle/Finale
-share/crossfire/maps/brittany/Brest/Castle/LargeRoom
-share/crossfire/maps/brittany/Brest/Castle/castle
-share/crossfire/maps/brittany/Brest/amphis
-share/crossfire/maps/brittany/Brest/brest
-share/crossfire/maps/brittany/Brest/brest.armour
-share/crossfire/maps/brittany/Brest/brest.cvt
-share/crossfire/maps/brittany/Brest/brest.food
-share/crossfire/maps/brittany/Brest/brest.inn
-share/crossfire/maps/brittany/Brest/brest.magic
-share/crossfire/maps/brittany/Brest/brest.weapon
-share/crossfire/maps/brittany/Brest/elec.jes
-share/crossfire/maps/brittany/Brest/info.2.zoon
-share/crossfire/maps/brittany/Brest/info_first
-share/crossfire/maps/brittany/Brest/jes.admini
-share/crossfire/maps/brittany/Brest/jes.admini.1
-share/crossfire/maps/brittany/Brest/ludo1
-share/crossfire/maps/brittany/Brest/ludo2
-share/crossfire/maps/brittany/Brest/nasty_house
-share/crossfire/maps/brittany/Brest/sport.jess
-share/crossfire/maps/brittany/Brest/underground
-share/crossfire/maps/brittany/Brest/underground2
-share/crossfire/maps/brittany/dol-guldur.1
-share/crossfire/maps/brittany/dol-guldur.2
-share/crossfire/maps/brittany/dol-guldur.3
-share/crossfire/maps/brittany/dol-guldur.4
-share/crossfire/maps/brittany/dol-guldur.5
-share/crossfire/maps/brittany/dol-guldur.6
-share/crossfire/maps/brittany/enigme.1
-share/crossfire/maps/brittany/enigme.2
-share/crossfire/maps/brittany/enigme.3
-share/crossfire/maps/brittany/enigme.4
-share/crossfire/maps/brittany/enigme.5
-share/crossfire/maps/brittany/enigme.6
-share/crossfire/maps/brittany/hole
-share/crossfire/maps/brittany/jessy.1
-share/crossfire/maps/brittany/jessy.2
-share/crossfire/maps/brittany/jessy.3
-share/crossfire/maps/brittany/khazad.1
-share/crossfire/maps/brittany/khazad.2
-share/crossfire/maps/brittany/khazad.3
-share/crossfire/maps/brittany/khazad.4
-share/crossfire/maps/brittany/khazad.5
-share/crossfire/maps/brittany/tower_of__zoon
-share/crossfire/maps/cd/cd.castle.750
-share/crossfire/maps/cd/cd.cellar1.757
-share/crossfire/maps/cd/cd.inn.752
-share/crossfire/maps/cd/cd.store.753
-share/crossfire/maps/cd/cd.tower1.754
-share/crossfire/maps/cd/cd.tower2.755
-share/crossfire/maps/cd/cd.tunnel.751
-share/crossfire/maps/city/anthony/passoffice
-share/crossfire/maps/city/anthony/portgate
-share/crossfire/maps/city/anthony/prison
-share/crossfire/maps/city/apartment/Apartments1
-share/crossfire/maps/city/apartment/Apartments2
-share/crossfire/maps/city/apartment/Apartments3
-share/crossfire/maps/city/apartment/Apartments4
-share/crossfire/maps/city/apartment/Apartments5
-share/crossfire/maps/city/apartment/apartments
-share/crossfire/maps/city/cannery/ware1
-share/crossfire/maps/city/city
-share/crossfire/maps/city/houses/chess_club
-share/crossfire/maps/city/houses/house.haunted
-share/crossfire/maps/city/houses/house.haunted2
-share/crossfire/maps/city/houses/house1
-share/crossfire/maps/city/houses/house2
-share/crossfire/maps/city/houses/jones
-share/crossfire/maps/city/houses/map.fr.ruin
-share/crossfire/maps/city/houses/maze1
-share/crossfire/maps/city/houses/newhouse1
-share/crossfire/maps/city/houses/wizz.entry
-share/crossfire/maps/city/houses/wizz.lev1
-share/crossfire/maps/city/houses/wizz.lev1.pass1
-share/crossfire/maps/city/kar/creepy.house
-share/crossfire/maps/city/kar/creepy.house2
-share/crossfire/maps/city/kar/drink
-share/crossfire/maps/city/kar/gorks1
-share/crossfire/maps/city/kar/gorks2
-share/crossfire/maps/city/kar/gorks3
-share/crossfire/maps/city/kar/somehouse
-share/crossfire/maps/city/kar/somehouse2
-share/crossfire/maps/city/kar/somehouse3
-share/crossfire/maps/city/magara/porter_house
-share/crossfire/maps/city/mansion/entrance
-share/crossfire/maps/city/mansion/garden
-share/crossfire/maps/city/mansion/muriskunes
-share/crossfire/maps/city/mansion/str-tunnel
-share/crossfire/maps/city/mansion/stronghold
-share/crossfire/maps/city/misc/HallOfQuests
-share/crossfire/maps/city/misc/HospitalityRoom
-share/crossfire/maps/city/misc/HouseofHealing
-share/crossfire/maps/city/misc/PowerHouse
-share/crossfire/maps/city/misc/battle_arena/arena
-share/crossfire/maps/city/misc/battle_arena/arena_ud
-share/crossfire/maps/city/misc/battle_arena/entrance
-share/crossfire/maps/city/misc/battle_arena/first-aide
-share/crossfire/maps/city/misc/battle_arena/snack
-share/crossfire/maps/city/misc/beginners
-share/crossfire/maps/city/misc/castle
-share/crossfire/maps/city/misc/castle2
-share/crossfire/maps/city/misc/church
-share/crossfire/maps/city/misc/cityhall
-share/crossfire/maps/city/misc/devourlower
-share/crossfire/maps/city/misc/dragon_guild
-share/crossfire/maps/city/misc/drywell
-share/crossfire/maps/city/misc/gatehouse
-share/crossfire/maps/city/misc/jail
-share/crossfire/maps/city/misc/library
-share/crossfire/maps/city/misc/mercenaries
-share/crossfire/maps/city/misc/port_arena
-share/crossfire/maps/city/misc/prison
-share/crossfire/maps/city/misc/templedevour
-share/crossfire/maps/city/misc/templelyth
-share/crossfire/maps/city/misc/testing_area
-share/crossfire/maps/city/misc/zoo
-share/crossfire/maps/city/misc/zoo2
-share/crossfire/maps/city/oldcity/end
-share/crossfire/maps/city/oldcity/oldcity1
-share/crossfire/maps/city/oldcity/oldcity10
-share/crossfire/maps/city/oldcity/oldcity11
-share/crossfire/maps/city/oldcity/oldcity12
-share/crossfire/maps/city/oldcity/oldcity13
-share/crossfire/maps/city/oldcity/oldcity14
-share/crossfire/maps/city/oldcity/oldcity15
-share/crossfire/maps/city/oldcity/oldcity2
-share/crossfire/maps/city/oldcity/oldcity3
-share/crossfire/maps/city/oldcity/oldcity4
-share/crossfire/maps/city/oldcity/oldcity5
-share/crossfire/maps/city/oldcity/oldcity6
-share/crossfire/maps/city/oldcity/oldcity7
-share/crossfire/maps/city/oldcity/oldcity8
-share/crossfire/maps/city/oldcity/oldcity9
-share/crossfire/maps/city/shops/BasicSpells
-share/crossfire/maps/city/shops/armourshop
-share/crossfire/maps/city/shops/bank
-share/crossfire/maps/city/shops/bowshop
-share/crossfire/maps/city/shops/gemshop
-share/crossfire/maps/city/shops/generalshop
-share/crossfire/maps/city/shops/magicshop
-share/crossfire/maps/city/shops/potionshop
-share/crossfire/maps/city/shops/weaponshop
-share/crossfire/maps/city/taverns/apartments
-share/crossfire/maps/city/taverns/goths
-share/crossfire/maps/city/taverns/goths0
-share/crossfire/maps/city/taverns/goths2
-share/crossfire/maps/city/taverns/inn
-share/crossfire/maps/city/taverns/inn2
-share/crossfire/maps/city/temples/gaea
-share/crossfire/maps/city/temples/gnarg
-share/crossfire/maps/city/temples/gorokh
-share/crossfire/maps/city/temples/mostrai
-share/crossfire/maps/city/temples/mostrai2
-share/crossfire/maps/city/temples/ruggilli1
-share/crossfire/maps/city/temples/ruggilli2
-share/crossfire/maps/city/temples/sorig
-share/crossfire/maps/city/temples/sorig2
-share/crossfire/maps/city/temples/valriel
-share/crossfire/maps/city/temples/valriel2
-share/crossfire/maps/city/temples/valriel3
-share/crossfire/maps/city/towers/tower
-share/crossfire/maps/city/towers/tower.mad
-share/crossfire/maps/city/towers/tower.mad1
-share/crossfire/maps/city/towers/tower.mad2
-share/crossfire/maps/city/towers/tower.mad3
-share/crossfire/maps/destiny/ambush1
-share/crossfire/maps/destiny/cave/a_mine
-share/crossfire/maps/destiny/cave/a_mine2
-share/crossfire/maps/destiny/cave/cave1
-share/crossfire/maps/destiny/cave/cave2
-share/crossfire/maps/destiny/cave/cave3
-share/crossfire/maps/destiny/cave/entrance
-share/crossfire/maps/destiny/cave/m_inn
-share/crossfire/maps/destiny/cave/m_inn2
-share/crossfire/maps/destiny/cave/m_temple
-share/crossfire/maps/destiny/cave/mithril
-share/crossfire/maps/destiny/circus/mp_castle
-share/crossfire/maps/destiny/circus/mp_cave
-share/crossfire/maps/destiny/circus/mp_church
-share/crossfire/maps/destiny/circus/mp_s
-share/crossfire/maps/destiny/circus/mp_start
-share/crossfire/maps/destiny/circus/mp_tavern
-share/crossfire/maps/destiny/circus/mp_world
-share/crossfire/maps/destiny/circus/petshop
-share/crossfire/maps/destiny/dd_alchemy
-share/crossfire/maps/destiny/dd_alchemy2
-share/crossfire/maps/destiny/dd_alchemy3
-share/crossfire/maps/destiny/dd_baron
-share/crossfire/maps/destiny/dd_baron2
-share/crossfire/maps/destiny/dd_chaos
-share/crossfire/maps/destiny/dd_church
-share/crossfire/maps/destiny/dd_court
-share/crossfire/maps/destiny/dd_inn
-share/crossfire/maps/destiny/dd_keep
-share/crossfire/maps/destiny/dd_market
-share/crossfire/maps/destiny/dd_shop
-share/crossfire/maps/destiny/dd_tavern
-share/crossfire/maps/destiny/denray
-share/crossfire/maps/destiny/dm_cellar
-share/crossfire/maps/destiny/dm_church
-share/crossfire/maps/destiny/dm_inn
-share/crossfire/maps/destiny/dm_keep
-share/crossfire/maps/destiny/dm_shop
-share/crossfire/maps/destiny/dm_tavern
-share/crossfire/maps/destiny/dm_wizard
-share/crossfire/maps/destiny/dun_marksel
-share/crossfire/maps/destiny/elcyon/elcyon_start
-share/crossfire/maps/destiny/elcyon/elf_grove
-share/crossfire/maps/destiny/elcyon/fall
-share/crossfire/maps/destiny/elcyon/g_store
-share/crossfire/maps/destiny/elcyon/gnome_hut
-share/crossfire/maps/destiny/elcyon/merchant
-share/crossfire/maps/destiny/elcyon/old_temple
-share/crossfire/maps/destiny/elcyon/palace
-share/crossfire/maps/destiny/elcyon/plaza
-share/crossfire/maps/destiny/elcyon/seacity
-share/crossfire/maps/destiny/elcyon/seacity_west
-share/crossfire/maps/destiny/elcyon/temple
-share/crossfire/maps/destiny/elcyon/witch_house
-share/crossfire/maps/destiny/kandora
-share/crossfire/maps/destiny/ship_city
-share/crossfire/maps/destiny/ship_dog
-share/crossfire/maps/destiny/ship_home
-share/crossfire/maps/destiny/ship_treasure
-share/crossfire/maps/destiny/signal
-share/crossfire/maps/destiny/signal2
-share/crossfire/maps/destiny/signal3
+share/crossfire/maps/Info/README
+share/crossfire/maps/Info/ann_map.gif
+share/crossfire/maps/Info/combine.pl
+share/crossfire/maps/Info/el_map.gif
+share/crossfire/maps/Info/land.c
+share/crossfire/maps/Info/map_sed.pl
+share/crossfire/maps/Info/mapguide
+share/crossfire/maps/Info/terrain_map.gif
+share/crossfire/maps/Info/update_apart.pl
+share/crossfire/maps/Info/update_exits.pl
+share/crossfire/maps/Info/world.gif
+share/crossfire/maps/brest/Castle/AcidChamber
+share/crossfire/maps/brest/Castle/DragonRoom
+share/crossfire/maps/brest/Castle/Finale
+share/crossfire/maps/brest/Castle/LargeRoom
+share/crossfire/maps/brest/Castle/castle
+share/crossfire/maps/brest/amphis
+share/crossfire/maps/brest/asyvan/gate1
+share/crossfire/maps/brest/asyvan/gate2
+share/crossfire/maps/brest/asyvan/gate3
+share/crossfire/maps/brest/asyvan/gate4
+share/crossfire/maps/brest/asyvan/gate5
+share/crossfire/maps/brest/asyvan/gate6
+share/crossfire/maps/brest/asyvan/gate7
+share/crossfire/maps/brest/asyvan/gate8
+share/crossfire/maps/brest/asyvan/gate9
+share/crossfire/maps/brest/asyvan/palace1
+share/crossfire/maps/brest/asyvan/palace2
+share/crossfire/maps/brest/asyvan/palace3
+share/crossfire/maps/brest/black_shield/bigchest
+share/crossfire/maps/brest/black_shield/ground
+share/crossfire/maps/brest/black_shield/upper
+share/crossfire/maps/brest/brest.armour
+share/crossfire/maps/brest/brest.cvt
+share/crossfire/maps/brest/brest.food
+share/crossfire/maps/brest/brest.inn
+share/crossfire/maps/brest/brest.magic
+share/crossfire/maps/brest/brest.weapon
+share/crossfire/maps/brest/brittany/dol-guldur.1
+share/crossfire/maps/brest/brittany/dol-guldur.2
+share/crossfire/maps/brest/brittany/dol-guldur.3
+share/crossfire/maps/brest/brittany/dol-guldur.4
+share/crossfire/maps/brest/brittany/dol-guldur.5
+share/crossfire/maps/brest/brittany/dol-guldur.6
+share/crossfire/maps/brest/brittany/enigme.1
+share/crossfire/maps/brest/brittany/enigme.2
+share/crossfire/maps/brest/brittany/enigme.3
+share/crossfire/maps/brest/brittany/enigme.4
+share/crossfire/maps/brest/brittany/enigme.5
+share/crossfire/maps/brest/brittany/enigme.6
+share/crossfire/maps/brest/brittany/hole
+share/crossfire/maps/brest/brittany/jessy.1
+share/crossfire/maps/brest/brittany/jessy.2
+share/crossfire/maps/brest/brittany/jessy.3
+share/crossfire/maps/brest/brittany/khazad.1
+share/crossfire/maps/brest/brittany/khazad.2
+share/crossfire/maps/brest/brittany/khazad.3
+share/crossfire/maps/brest/brittany/khazad.4
+share/crossfire/maps/brest/brittany/khazad.5
+share/crossfire/maps/brest/brittany/tower_of__zoon
+share/crossfire/maps/brest/elec.jes
+share/crossfire/maps/brest/info.2.zoon
+share/crossfire/maps/brest/info_first
+share/crossfire/maps/brest/jes.admini
+share/crossfire/maps/brest/jes.admini.1
+share/crossfire/maps/brest/ludo1
+share/crossfire/maps/brest/ludo2
+share/crossfire/maps/brest/nasty_house
+share/crossfire/maps/brest/pantheon
+share/crossfire/maps/brest/sport.jess
+share/crossfire/maps/brest/underground
+share/crossfire/maps/brest/underground2
+share/crossfire/maps/darcap/README
+share/crossfire/maps/darcap/castle/castle2.0
+share/crossfire/maps/darcap/castle/castle2.1
+share/crossfire/maps/darcap/castle/castle2.2
+share/crossfire/maps/darcap/castle/castle2.3
+share/crossfire/maps/darcap/cave/level1
+share/crossfire/maps/darcap/cave/level2
+share/crossfire/maps/darcap/cave/level3
+share/crossfire/maps/darcap/cave/level4
+share/crossfire/maps/darcap/darcap/apartment
+share/crossfire/maps/darcap/darcap/church
+share/crossfire/maps/darcap/darcap/circus/bigtop
+share/crossfire/maps/darcap/darcap/circus/chess
+share/crossfire/maps/darcap/darcap/circus/circus
+share/crossfire/maps/darcap/darcap/circus/double
+share/crossfire/maps/darcap/darcap/circus/ghost
+share/crossfire/maps/darcap/darcap/circus/illusions
+share/crossfire/maps/darcap/darcap/circus/movers
+share/crossfire/maps/darcap/darcap/circus/roller1
+share/crossfire/maps/darcap/darcap/circus/roller2
+share/crossfire/maps/darcap/darcap/circus/roller3
+share/crossfire/maps/darcap/darcap/circus/shooting
+share/crossfire/maps/darcap/darcap/circus/strength
+share/crossfire/maps/darcap/darcap/circus/walls
+share/crossfire/maps/darcap/darcap/circus/wheel
+share/crossfire/maps/darcap/darcap/circus/wurfbude
+share/crossfire/maps/darcap/darcap/gshop
+share/crossfire/maps/darcap/darcap/guilds/poisoned_dagger/bigchest
+share/crossfire/maps/darcap/darcap/guilds/poisoned_dagger/ground
+share/crossfire/maps/darcap/darcap/guilds/poisoned_dagger/upper
+share/crossfire/maps/darcap/darcap/guilds/smoking_cauldron/bigchest
+share/crossfire/maps/darcap/darcap/guilds/smoking_cauldron/ground
+share/crossfire/maps/darcap/darcap/guilds/smoking_cauldron/upper
+share/crossfire/maps/darcap/darcap/houses
+share/crossfire/maps/darcap/darcap/inn
+share/crossfire/maps/darcap/darcap/maze
+share/crossfire/maps/darcap/darcap/potionshop
+share/crossfire/maps/darcap/darcap/quest
+share/crossfire/maps/darcap/darcap/shop_a
+share/crossfire/maps/darcap/darcap/shop_g
+share/crossfire/maps/darcap/darcap/shop_m
+share/crossfire/maps/darcap/darcap/shop_w
+share/crossfire/maps/darcap/darcap/tavern
+share/crossfire/maps/darcap/darcap/temple
+share/crossfire/maps/darcap/house1
+share/crossfire/maps/darcap/lynn/castle1.0
+share/crossfire/maps/darcap/lynn/castle1.1
+share/crossfire/maps/darcap/lynn/castle1.2
+share/crossfire/maps/darcap/lynn/castle1.3
+share/crossfire/maps/darcap/quest/fire
+share/crossfire/maps/darcap/quest/water
+share/crossfire/maps/darcap/town2/shop_b
+share/crossfire/maps/darcap/town2/shop_f
+share/crossfire/maps/darcap/town2/tower1
+share/crossfire/maps/darcap/town2/tower2
+share/crossfire/maps/darcap/town2/tower3
+share/crossfire/maps/darcap/town2/tower4
+share/crossfire/maps/darcap/town2/towers
+share/crossfire/maps/darcap/undead/undead.1
+share/crossfire/maps/darcap/undead/undead.2
+share/crossfire/maps/darcap/undead/undead.3
+share/crossfire/maps/darcap/village1
 share/crossfire/maps/dragonisland/advguild
 share/crossfire/maps/dragonisland/advguild2
 share/crossfire/maps/dragonisland/advguild3
@@ -423,85 +234,22 @@ share/crossfire/maps/dragonisland/house8
 share/crossfire/maps/dragonisland/house9
 share/crossfire/maps/dragonisland/housebrxzl
 share/crossfire/maps/dragonisland/intwell
-share/crossfire/maps/dragonisland/island
 share/crossfire/maps/dragonisland/keysale
 share/crossfire/maps/dragonisland/luxhouse
-share/crossfire/maps/dragonisland/stoneville
 share/crossfire/maps/dragonisland/tavern
 share/crossfire/maps/dragonisland/thievesden
-share/crossfire/maps/dtabb/castle/castle2.0
-share/crossfire/maps/dtabb/castle/castle2.1
-share/crossfire/maps/dtabb/castle/castle2.2
-share/crossfire/maps/dtabb/castle/castle2.3
-share/crossfire/maps/dtabb/caterham/apartment
-share/crossfire/maps/dtabb/caterham/caterham
-share/crossfire/maps/dtabb/caterham/circus/bigtop
-share/crossfire/maps/dtabb/caterham/circus/chess
-share/crossfire/maps/dtabb/caterham/circus/circus
-share/crossfire/maps/dtabb/caterham/circus/double
-share/crossfire/maps/dtabb/caterham/circus/ghost
-share/crossfire/maps/dtabb/caterham/circus/illusions
-share/crossfire/maps/dtabb/caterham/circus/movers
-share/crossfire/maps/dtabb/caterham/circus/roller1
-share/crossfire/maps/dtabb/caterham/circus/roller2
-share/crossfire/maps/dtabb/caterham/circus/roller3
-share/crossfire/maps/dtabb/caterham/circus/shooting
-share/crossfire/maps/dtabb/caterham/circus/strength
-share/crossfire/maps/dtabb/caterham/circus/walls
-share/crossfire/maps/dtabb/caterham/circus/wheel
-share/crossfire/maps/dtabb/caterham/circus/wurfbude
-share/crossfire/maps/dtabb/caterham/gshop
-share/crossfire/maps/dtabb/caterham/potionshop
-share/crossfire/maps/dtabb/cave
-share/crossfire/maps/dtabb/cave2
-share/crossfire/maps/dtabb/cave3
-share/crossfire/maps/dtabb/darcap/church
-share/crossfire/maps/dtabb/darcap/darcap
-share/crossfire/maps/dtabb/darcap/houses
-share/crossfire/maps/dtabb/darcap/inn
-share/crossfire/maps/dtabb/darcap/maze
-share/crossfire/maps/dtabb/darcap/quest
-share/crossfire/maps/dtabb/darcap/shop_a
-share/crossfire/maps/dtabb/darcap/shop_g
-share/crossfire/maps/dtabb/darcap/shop_m
-share/crossfire/maps/dtabb/darcap/shop_w
-share/crossfire/maps/dtabb/darcap/tavern
-share/crossfire/maps/dtabb/darcap/temple
-share/crossfire/maps/dtabb/house1
-share/crossfire/maps/dtabb/lynn/castle1.0
-share/crossfire/maps/dtabb/lynn/castle1.1
-share/crossfire/maps/dtabb/lynn/castle1.2
-share/crossfire/maps/dtabb/lynn/castle1.3
-share/crossfire/maps/dtabb/quest/fire
-share/crossfire/maps/dtabb/quest/shop_b
-share/crossfire/maps/dtabb/quest/shop_f
-share/crossfire/maps/dtabb/quest/tower1
-share/crossfire/maps/dtabb/quest/tower2
-share/crossfire/maps/dtabb/quest/tower3
-share/crossfire/maps/dtabb/quest/tower4
-share/crossfire/maps/dtabb/quest/towers
-share/crossfire/maps/dtabb/quest/town2
-share/crossfire/maps/dtabb/quest/water
-share/crossfire/maps/dtabb/town/church
-share/crossfire/maps/dtabb/town/houses
-share/crossfire/maps/dtabb/town/inn
-share/crossfire/maps/dtabb/town/maze
-share/crossfire/maps/dtabb/town/quest
-share/crossfire/maps/dtabb/town/shop_a
-share/crossfire/maps/dtabb/town/shop_g
-share/crossfire/maps/dtabb/town/shop_m
-share/crossfire/maps/dtabb/town/shop_w
-share/crossfire/maps/dtabb/town/tavern
-share/crossfire/maps/dtabb/town/temple
-share/crossfire/maps/dtabb/town/town
-share/crossfire/maps/dtabb/undead/undead.1
-share/crossfire/maps/dtabb/undead/undead.2
-share/crossfire/maps/dtabb/undead/undead.3
-share/crossfire/maps/dtabb/village1
-share/crossfire/maps/dtabb/volcano/level1
-share/crossfire/maps/dtabb/volcano/level2
-share/crossfire/maps/dtabb/volcano/level3
-share/crossfire/maps/dtabb/volcano/level4
+share/crossfire/maps/dungeons/barad_dur
+share/crossfire/maps/dungeons/castle_aaaarg
+share/crossfire/maps/dungeons/grukks/grukks.1
+share/crossfire/maps/dungeons/grukks/grukks.2
+share/crossfire/maps/dungeons/grukks/grukks.3
+share/crossfire/maps/dungeons/grukks/grukks.4
+share/crossfire/maps/dungeons/hole
+share/crossfire/maps/dungeons/hut/ancient_hut
+share/crossfire/maps/dungeons/hut/kjerring
+share/crossfire/maps/dungeons/hut/watertunnel
+share/crossfire/maps/dungeons/ruins
+share/crossfire/maps/dungeons/xyzzy-mines
 share/crossfire/maps/editor/picks/TownStaff
 share/crossfire/maps/editor/picks/alchemy
 share/crossfire/maps/editor/picks/alltown
@@ -530,204 +278,119 @@ share/crossfire/maps/editor/walls/caves2
 share/crossfire/maps/editor/walls/misc
 share/crossfire/maps/editor/walls/wall
 share/crossfire/maps/editor/walls/wall-special
-share/crossfire/maps/eeur/barad_dur
-share/crossfire/maps/eeur/hut.1
-share/crossfire/maps/eeur/hut.2
-share/crossfire/maps/eeur/tower1.1
-share/crossfire/maps/eeur/tower1.2
-share/crossfire/maps/eeur/tower1.3
-share/crossfire/maps/eeur/tower1.4
-share/crossfire/maps/ender/island/isl_yel
-share/crossfire/maps/ender/island/island1
-share/crossfire/maps/ender/island/jungle
-share/crossfire/maps/ender/island/middleisland
-share/crossfire/maps/ender/island/strong_island
-share/crossfire/maps/ender/island/stronghold
-share/crossfire/maps/ender/island/treas_room
-share/crossfire/maps/ender/island/treasureisland
-share/crossfire/maps/ender/piratedung
-share/crossfire/maps/ender/pirateenter
-share/crossfire/maps/ender/pisland/hut
-share/crossfire/maps/ender/pisland/pirateisland
-share/crossfire/maps/ender/pisland/ship
-share/crossfire/maps/ender/pisland/ship_deck2
-share/crossfire/maps/ender/pisland/underworld
-share/crossfire/maps/ender/pisland/vol_vill_shops
-share/crossfire/maps/ender/pisland/vol_village
-share/crossfire/maps/ender/pisland/volcano
-share/crossfire/maps/ender/pisland/vvhuts
-share/crossfire/maps/ender/pisland/vvmansion
-share/crossfire/maps/ender/temple/enterance
-share/crossfire/maps/ender/temple/temp_dung1
-share/crossfire/maps/ender/temple/temple
-share/crossfire/maps/esben/ancient_hut
-share/crossfire/maps/esben/castle_aaaarg
-share/crossfire/maps/esben/grukks.1
-share/crossfire/maps/esben/grukks.2
-share/crossfire/maps/esben/grukks.3
-share/crossfire/maps/esben/grukks.4
-share/crossfire/maps/esben/hole
-share/crossfire/maps/esben/kjerring
-share/crossfire/maps/esben/map.esben.2
-share/crossfire/maps/esben/puddings.place
-share/crossfire/maps/esben/ruins
-share/crossfire/maps/esben/sokoban1
-share/crossfire/maps/esben/sokoban2
-share/crossfire/maps/esben/sokoban3
-share/crossfire/maps/esben/sokoban4
-share/crossfire/maps/esben/sokoban5
-share/crossfire/maps/esben/watertunnel
-share/crossfire/maps/espen/church.2
-share/crossfire/maps/espen/church.3
-share/crossfire/maps/espen/church.4a
-share/crossfire/maps/espen/church.4b
-share/crossfire/maps/espen/church.4c
-share/crossfire/maps/espen/church.4d
-share/crossfire/maps/espen/espen1
-share/crossfire/maps/espen/espen2
-share/crossfire/maps/espen/palace
-share/crossfire/maps/generic/xyzzy-mines
-share/crossfire/maps/good/pantheon
-share/crossfire/maps/guilds/black_shield/bigchest
-share/crossfire/maps/guilds/black_shield/ground
-share/crossfire/maps/guilds/black_shield/upper
-share/crossfire/maps/guilds/damned_heretics/bigchest
-share/crossfire/maps/guilds/damned_heretics/ground
-share/crossfire/maps/guilds/damned_heretics/upper
-share/crossfire/maps/guilds/dreaming_sage/bigchest
-share/crossfire/maps/guilds/dreaming_sage/ground
-share/crossfire/maps/guilds/dreaming_sage/upper
-share/crossfire/maps/guilds/drunken_barbarian/bigchest
-share/crossfire/maps/guilds/drunken_barbarian/ground
-share/crossfire/maps/guilds/drunken_barbarian/upper
-share/crossfire/maps/guilds/guildhousesinc
-share/crossfire/maps/guilds/laughing_skull/bigchest
-share/crossfire/maps/guilds/laughing_skull/ground
-share/crossfire/maps/guilds/laughing_skull/upper
-share/crossfire/maps/guilds/mailed_fist/bigchest
-share/crossfire/maps/guilds/mailed_fist/ground
-share/crossfire/maps/guilds/mailed_fist/upper
-share/crossfire/maps/guilds/poisoned_dagger/bigchest
-share/crossfire/maps/guilds/poisoned_dagger/ground
-share/crossfire/maps/guilds/poisoned_dagger/upper
-share/crossfire/maps/guilds/purple_butterfly/bigchest
-share/crossfire/maps/guilds/purple_butterfly/ground
-share/crossfire/maps/guilds/purple_butterfly/upper
-share/crossfire/maps/guilds/smoking_cauldron/bigchest
-share/crossfire/maps/guilds/smoking_cauldron/ground
-share/crossfire/maps/guilds/smoking_cauldron/upper
-share/crossfire/maps/hendel/acid_room
-share/crossfire/maps/hendel/mountain_pass
-share/crossfire/maps/hendel/pre_acid
-share/crossfire/maps/kar/boulder_inferno
-share/crossfire/maps/kar/devil.church1
-share/crossfire/maps/kar/devil.church2
-share/crossfire/maps/kar/devil.church3
-share/crossfire/maps/kar/devil.church4
-share/crossfire/maps/kar/devil.church5
-share/crossfire/maps/kar/hallofbones
-share/crossfire/maps/kar/magic.shop
-share/crossfire/maps/kar/map.fr.0
-share/crossfire/maps/kar/map.fr.1
-share/crossfire/maps/kar/map.fr.2
-share/crossfire/maps/kar/map.fr.3
-share/crossfire/maps/kar/undead
-share/crossfire/maps/kar/wiz1
-share/crossfire/maps/kar/wiz2
-share/crossfire/maps/kar/wiz3
-share/crossfire/maps/kar/wiz4
-share/crossfire/maps/kar/wiz5
-share/crossfire/maps/kar/wiz6
-share/crossfire/maps/kar/wiz7
-share/crossfire/maps/langley/goblin/caves
-share/crossfire/maps/langley/goblin/dungeon1
-share/crossfire/maps/langley/goblin/dungeon2
-share/crossfire/maps/langley/goblin/dungeon3
-share/crossfire/maps/langley/goblin/fort2
-share/crossfire/maps/langley/goblin/fortress
-share/crossfire/maps/langley/goblin/goblinisle
-share/crossfire/maps/langley/goblin/hole
-share/crossfire/maps/langley/goblin/hut
-share/crossfire/maps/langley/goblin/netower
-share/crossfire/maps/langley/goblin/nwtower
-share/crossfire/maps/langley/goblin/setower
-share/crossfire/maps/langley/goblin/swtower
-share/crossfire/maps/langley/pirates/fortvsship
-share/crossfire/maps/langley/pirates/madvillage
-share/crossfire/maps/langley/pirates/mbgrave
-share/crossfire/maps/langley/pirates/mbgrave2
-share/crossfire/maps/langley/pirates/mooglyprize
-share/crossfire/maps/langley/pirates/mooglypuzzle
-share/crossfire/maps/langley/pirates/tortcave
-share/crossfire/maps/langley/pirates/torthole
-share/crossfire/maps/langley/pirates/tortola
-share/crossfire/maps/langley/pirates/tortship
-share/crossfire/maps/langley/pirates/tortship2
-share/crossfire/maps/langley/pirates/tortship3
-share/crossfire/maps/langley/pirates/torttemple
-share/crossfire/maps/langley/readme
-share/crossfire/maps/langley/town/church
-share/crossfire/maps/langley/town/churchcrypt
-share/crossfire/maps/langley/town/churchtower
-share/crossfire/maps/langley/town/dshark
-share/crossfire/maps/langley/town/generalstore
-share/crossfire/maps/langley/town/inn
-share/crossfire/maps/langley/town/percy
-share/crossfire/maps/langley/town/portia
-share/crossfire/maps/langley/town/portia2
-share/crossfire/maps/langley/town/portjoseph
-share/crossfire/maps/mak/Bogustest
-share/crossfire/maps/mak/Entrance
-share/crossfire/maps/mak/MainFloor
-share/crossfire/maps/mak/Nexus
-share/crossfire/maps/mak/academy.crap/Entrance
-share/crossfire/maps/mak/academy.crap/Fighter.2
-share/crossfire/maps/mak/academy.crap/Fighter.3
-share/crossfire/maps/mak/academy.crap/Fighter.4
-share/crossfire/maps/mak/academy.crap/Fighter.5
-share/crossfire/maps/mak/academy.crap/Fighter.5_2
-share/crossfire/maps/mak/academy.crap/MainFloor
-share/crossfire/maps/mak/chaos/down1
-share/crossfire/maps/mak/chaos/down2
-share/crossfire/maps/mak/chaos/down3
-share/crossfire/maps/mak/chaos/down4
-share/crossfire/maps/mak/chaos/down5
-share/crossfire/maps/mak/chaos/fallen
-share/crossfire/maps/mak/chaos/monsters.pick
-share/crossfire/maps/mak/chaos/tritemples
-share/crossfire/maps/mak/chaos/up1
-share/crossfire/maps/mak/chaos/up2
-share/crossfire/maps/mak/chaos/up3
-share/crossfire/maps/mak/chaos/up4
-share/crossfire/maps/mak/chaos/up5
-share/crossfire/maps/mak/dragons/chaos
-share/crossfire/maps/mak/dragons/elec
-share/crossfire/maps/mak/dragons/fire
-share/crossfire/maps/mak/dragons/ice
-share/crossfire/maps/mak/dragons/jumpgate
-share/crossfire/maps/mak/giant/mainfloor
-share/crossfire/maps/mak/giant/secondfloor
-share/crossfire/maps/mak/giant/thirdfloor
-share/crossfire/maps/mak/mansion/basement
-share/crossfire/maps/mak/mansion/floor1
-share/crossfire/maps/mak/mansion/floor2
-share/crossfire/maps/mak/troll_cave/Guards
-share/crossfire/maps/mak/troll_cave/cave.1
-share/crossfire/maps/mak/troll_cave/cave.2
-share/crossfire/maps/mak/troll_cave/cave.3
-share/crossfire/maps/mak/undead/catacombs
-share/crossfire/maps/mak/undead/graveyard
-share/crossfire/maps/mak/undead/mausoleum
-share/crossfire/maps/mak/unnatural/unnat
-share/crossfire/maps/mcz/castle1
-share/crossfire/maps/mcz/castle_air
-share/crossfire/maps/mcz/castle_earth
-share/crossfire/maps/mcz/castle_fire
-share/crossfire/maps/mcz/castle_low1
-share/crossfire/maps/mcz/castle_low2
-share/crossfire/maps/mcz/castle_water
-share/crossfire/maps/mcz/forest
-share/crossfire/maps/navar_city/city1
+share/crossfire/maps/euthville/boulder_inferno
+share/crossfire/maps/euthville/demon_quest
+share/crossfire/maps/euthville/devil.church1
+share/crossfire/maps/euthville/devil.church2
+share/crossfire/maps/euthville/devil.church3
+share/crossfire/maps/euthville/devil.church4
+share/crossfire/maps/euthville/devil.church5
+share/crossfire/maps/euthville/hallofbones
+share/crossfire/maps/euthville/magic.shop
+share/crossfire/maps/euthville/map.fr.0
+share/crossfire/maps/euthville/map.fr.1
+share/crossfire/maps/euthville/map.fr.2
+share/crossfire/maps/euthville/map.fr.3
+share/crossfire/maps/euthville/wiz1
+share/crossfire/maps/euthville/wiz2
+share/crossfire/maps/euthville/wiz3
+share/crossfire/maps/euthville/wiz4
+share/crossfire/maps/euthville/wiz5
+share/crossfire/maps/euthville/wiz6
+share/crossfire/maps/euthville/wiz7
+share/crossfire/maps/inn_and_outpost/README
+share/crossfire/maps/inn_and_outpost/hermes_inn
+share/crossfire/maps/inn_and_outpost/hermes_inn2
+share/crossfire/maps/lake_country/Butakis/B_gshop
+share/crossfire/maps/lake_country/Butakis/B_wshop
+share/crossfire/maps/lake_country/Butakis/Butakis0
+share/crossfire/maps/lake_country/Butakis/Rlib1
+share/crossfire/maps/lake_country/Butakis/Rlib2
+share/crossfire/maps/lake_country/Butakis/Wist_portal
+share/crossfire/maps/lake_country/Butakis/Wist_study
+share/crossfire/maps/lake_country/Butakis/alchemist
+share/crossfire/maps/lake_country/Butakis/arena
+share/crossfire/maps/lake_country/Butakis/blacksmith
+share/crossfire/maps/lake_country/Butakis/church-1
+share/crossfire/maps/lake_country/Butakis/church0
+share/crossfire/maps/lake_country/Butakis/church1
+share/crossfire/maps/lake_country/Butakis/gate_inner
+share/crossfire/maps/lake_country/Butakis/gate_outer
+share/crossfire/maps/lake_country/Butakis/houses/Bobs_house
+share/crossfire/maps/lake_country/Butakis/houses/Jacks_house
+share/crossfire/maps/lake_country/Butakis/houses/Jacobs_house
+share/crossfire/maps/lake_country/Butakis/houses/James_house
+share/crossfire/maps/lake_country/Butakis/houses/Sams_house
+share/crossfire/maps/lake_country/Butakis/houses/Seans_house
+share/crossfire/maps/lake_country/Butakis/inn
+share/crossfire/maps/lake_country/Butakis/luck1
+share/crossfire/maps/lake_country/Butakis/luck2
+share/crossfire/maps/lake_country/Butakis/luck3
+share/crossfire/maps/lake_country/Butakis/p_ghouse_s
+share/crossfire/maps/lake_country/Butakis/p_ghouse_w
+share/crossfire/maps/lake_country/Butakis/prison-1
+share/crossfire/maps/lake_country/Butakis/prison0
+share/crossfire/maps/lake_country/Butakis/prison1
+share/crossfire/maps/lake_country/Butakis/prison_e
+share/crossfire/maps/lake_country/Butakis/prison_n
+share/crossfire/maps/lake_country/Butakis/prison_s
+share/crossfire/maps/lake_country/Butakis/prison_w
+share/crossfire/maps/lake_country/DA
+share/crossfire/maps/lake_country/Mwizard/Mwizard0
+share/crossfire/maps/lake_country/Mwizard/Mwizard1
+share/crossfire/maps/lake_country/Mwizard/Mwizard2
+share/crossfire/maps/lake_country/Mwizard/Mwizard3
+share/crossfire/maps/lake_country/Mwizard/Mwizard4
+share/crossfire/maps/lake_country/Mwizard/Mwizard5
+share/crossfire/maps/lake_country/Mwizard/Mwizard6
+share/crossfire/maps/lake_country/Mwizard/MwizardD
+share/crossfire/maps/lake_country/Mwizard/MwizardG
+share/crossfire/maps/lake_country/Mwizard/MwizardT
+share/crossfire/maps/lake_country/RETower/tower0
+share/crossfire/maps/lake_country/RETower/tower1
+share/crossfire/maps/lake_country/RETower/tower2
+share/crossfire/maps/lake_country/RETower/tower3
+share/crossfire/maps/lake_country/RETower/tower4
+share/crossfire/maps/lake_country/RETower/tower5
+share/crossfire/maps/lake_country/Sunset_Lake/fortress
+share/crossfire/maps/lake_country/Sunset_Lake/gatehouse
+share/crossfire/maps/lake_country/Sunset_Lake/inn
+share/crossfire/maps/lake_country/ebony/entrance1
+share/crossfire/maps/lake_country/ebony/entrance2
+share/crossfire/maps/lake_country/ebony/masterlev
+share/crossfire/maps/lake_country/marsh/marsh1_1
+share/crossfire/maps/lake_country/marsh/marsh1_2
+share/crossfire/maps/lake_country/marsh/marsh2_1
+share/crossfire/maps/lake_country/marsh/marsh2_2
+share/crossfire/maps/lake_country/shops/Mopoon_wshop
+share/crossfire/maps/lake_country/shops/Olds_jewel
+share/crossfire/maps/lake_country/shops/clems_archery
+share/crossfire/maps/lake_country/shops/klondors_wands
+share/crossfire/maps/lake_country/small_buildings/LC_inn1
+share/crossfire/maps/lake_country/small_buildings/burial_ground
+share/crossfire/maps/lake_country/small_buildings/hut_Galmorus
+share/crossfire/maps/lake_country/small_buildings/oak_twak1
+share/crossfire/maps/lake_country/small_buildings/portal
+share/crossfire/maps/lake_country/snake_pit/Chaos_lair1
+share/crossfire/maps/lake_country/snake_pit/Chaos_lair2
+share/crossfire/maps/lake_country/snake_pit/Chaos_lair3
+share/crossfire/maps/lake_country/snake_pit/Chaos_lair4
+share/crossfire/maps/lake_country/snake_pit/Takuse_lair
+share/crossfire/maps/lake_country/snake_pit/pit
+share/crossfire/maps/lake_country/snake_pit/snakepit_1
+share/crossfire/maps/lake_country/snake_pit/snakepit_2
+share/crossfire/maps/lake_country/snake_pit/snakepit_3
+share/crossfire/maps/lake_country/snake_pit/snakepit_4
+share/crossfire/maps/lake_country/snake_pit/snakepit_5
+share/crossfire/maps/maps.tar
+share/crossfire/maps/marksel/cellar
+share/crossfire/maps/marksel/church
+share/crossfire/maps/marksel/grumms_inn
+share/crossfire/maps/marksel/grumms_inn2
+share/crossfire/maps/marksel/keep
+share/crossfire/maps/marksel/mines
+share/crossfire/maps/marksel/shop
+share/crossfire/maps/marksel/wizard
 share/crossfire/maps/navar_city/city1armour
 share/crossfire/maps/navar_city/city1bank
 share/crossfire/maps/navar_city/city1church1
@@ -743,6 +406,9 @@ share/crossfire/maps/navar_city/city1prison
 share/crossfire/maps/navar_city/city1smith
 share/crossfire/maps/navar_city/city1weapon
 share/crossfire/maps/navar_city/collosium
+share/crossfire/maps/navar_city/dreaming_sage/bigchest
+share/crossfire/maps/navar_city/dreaming_sage/ground
+share/crossfire/maps/navar_city/dreaming_sage/upper
 share/crossfire/maps/navar_city/illusion/illexit
 share/crossfire/maps/navar_city/illusion/illtow1
 share/crossfire/maps/navar_city/illusion/illtow2
@@ -779,86 +445,39 @@ share/crossfire/maps/navar_city/warehouse5
 share/crossfire/maps/navar_city/warehouse6
 share/crossfire/maps/navar_city/warehouse7
 share/crossfire/maps/navar_city/warehouse8
-share/crossfire/maps/peterm/CTower/Barracks
-share/crossfire/maps/peterm/CTower/CTower
-share/crossfire/maps/peterm/CTower/Chamber
-share/crossfire/maps/peterm/CTower/Dungeon
-share/crossfire/maps/peterm/CTower/GroundLevel
-share/crossfire/maps/peterm/CTower/Laboratory
-share/crossfire/maps/peterm/CTower/Library
-share/crossfire/maps/peterm/CTower/Officers
-share/crossfire/maps/peterm/CTower/Servants
-share/crossfire/maps/peterm/CTower/Study
-share/crossfire/maps/peterm/CTower/TowerTop
-share/crossfire/maps/peterm/Demonology/AirMaster
-share/crossfire/maps/peterm/Demonology/AirStudy
-share/crossfire/maps/peterm/Demonology/AirTower1
-share/crossfire/maps/peterm/Demonology/AirTower2
-share/crossfire/maps/peterm/Demonology/ApprenticeLevel
-share/crossfire/maps/peterm/Demonology/Demon1
-share/crossfire/maps/peterm/Demonology/Demon2
-share/crossfire/maps/peterm/Demonology/Demon3
-share/crossfire/maps/peterm/Demonology/EarthMaster
-share/crossfire/maps/peterm/Demonology/EarthStudy
-share/crossfire/maps/peterm/Demonology/EarthTower1
-share/crossfire/maps/peterm/Demonology/EarthTower2
-share/crossfire/maps/peterm/Demonology/Entrance
-share/crossfire/maps/peterm/Demonology/FireMaster
-share/crossfire/maps/peterm/Demonology/FireStudy
-share/crossfire/maps/peterm/Demonology/FireTower1
-share/crossfire/maps/peterm/Demonology/FireTower2
-share/crossfire/maps/peterm/Demonology/GroundLevel
-share/crossfire/maps/peterm/Demonology/HighTower1
-share/crossfire/maps/peterm/Demonology/HighTower2
-share/crossfire/maps/peterm/Demonology/HighTowerTop
-share/crossfire/maps/peterm/Demonology/JourneymanLevel
-share/crossfire/maps/peterm/Demonology/MasterLevel
-share/crossfire/maps/peterm/Demonology/WaterMaster
-share/crossfire/maps/peterm/Demonology/WaterStudy
-share/crossfire/maps/peterm/Demonology/WaterTower1
-share/crossfire/maps/peterm/Demonology/WaterTower2
-share/crossfire/maps/peterm/DragonQuest/ElectricAnte
-share/crossfire/maps/peterm/DragonQuest/ElectricHatchery
-share/crossfire/maps/peterm/DragonQuest/ElectricLord
-share/crossfire/maps/peterm/DragonQuest/Entrance
-share/crossfire/maps/peterm/DragonQuest/FireAnte
-share/crossfire/maps/peterm/DragonQuest/FireHatchery
-share/crossfire/maps/peterm/DragonQuest/FireLord
-share/crossfire/maps/peterm/DragonQuest/IceAnte
-share/crossfire/maps/peterm/DragonQuest/IceHatchery
-share/crossfire/maps/peterm/DragonQuest/IceLord
-share/crossfire/maps/peterm/DragonQuest/WyvernNest
-share/crossfire/maps/peterm/FireTemple/Entrance
-share/crossfire/maps/peterm/FireTemple/FifthFloor
-share/crossfire/maps/peterm/FireTemple/Fire1
-share/crossfire/maps/peterm/FireTemple/Fire2
-share/crossfire/maps/peterm/FireTemple/Fire3
-share/crossfire/maps/peterm/FireTemple/Fire4
-share/crossfire/maps/peterm/FireTemple/FirstFloor
-share/crossfire/maps/peterm/FireTemple/FourthFloor
-share/crossfire/maps/peterm/FireTemple/HotMines
-share/crossfire/maps/peterm/FireTemple/LavaChamber
-share/crossfire/maps/peterm/FireTemple/Mezannine1
-share/crossfire/maps/peterm/FireTemple/Passageway
-share/crossfire/maps/peterm/FireTemple/SecondFloor
-share/crossfire/maps/peterm/FireTemple/ThirdFloor
-share/crossfire/maps/peterm/Nethack_in_crossfire_Yendor
-share/crossfire/maps/peterm/Nethack_in_crossfire_entrance
-share/crossfire/maps/peterm/quests/TitanGate
-share/crossfire/maps/peterm/quests/demon_quest
-share/crossfire/maps/peterm/quests/dragon_quest
-share/crossfire/maps/peterm/quests/dragonquest2
-share/crossfire/maps/peterm/quests/goblin_chief
-share/crossfire/maps/peterm/quests/mushroom_quest
-share/crossfire/maps/peterm/quests/ogre_chief
-share/crossfire/maps/peterm/quests/titan_quest
-share/crossfire/maps/peterm/quests/undead_quest
-share/crossfire/maps/peterm/quests/wyvern_quest
-share/crossfire/maps/peterm/temple/AnteChamber
-share/crossfire/maps/peterm/temple/GemTunnel
-share/crossfire/maps/peterm/temple/InnerTemple
-share/crossfire/maps/peterm/temple/OuterTemple
-share/crossfire/maps/peterm/temple/Temple
+share/crossfire/maps/port_joseph/README
+share/crossfire/maps/port_joseph/goblin/caves
+share/crossfire/maps/port_joseph/goblin/dungeon1
+share/crossfire/maps/port_joseph/goblin/dungeon2
+share/crossfire/maps/port_joseph/goblin/dungeon3
+share/crossfire/maps/port_joseph/goblin/fort2
+share/crossfire/maps/port_joseph/goblin/fortress
+share/crossfire/maps/port_joseph/goblin/hole
+share/crossfire/maps/port_joseph/goblin/hut
+share/crossfire/maps/port_joseph/goblin/netower
+share/crossfire/maps/port_joseph/goblin/nwtower
+share/crossfire/maps/port_joseph/goblin/setower
+share/crossfire/maps/port_joseph/goblin/swtower
+share/crossfire/maps/port_joseph/pirates/fortvsship
+share/crossfire/maps/port_joseph/pirates/madvillage
+share/crossfire/maps/port_joseph/pirates/mbgrave
+share/crossfire/maps/port_joseph/pirates/mbgrave2
+share/crossfire/maps/port_joseph/pirates/mooglyprize
+share/crossfire/maps/port_joseph/pirates/mooglypuzzle
+share/crossfire/maps/port_joseph/pirates/tortcave
+share/crossfire/maps/port_joseph/pirates/torthole
+share/crossfire/maps/port_joseph/pirates/tortship
+share/crossfire/maps/port_joseph/pirates/tortship2
+share/crossfire/maps/port_joseph/pirates/tortship3
+share/crossfire/maps/port_joseph/pirates/torttemple
+share/crossfire/maps/port_joseph/town/church
+share/crossfire/maps/port_joseph/town/churchcrypt
+share/crossfire/maps/port_joseph/town/churchtower
+share/crossfire/maps/port_joseph/town/dshark
+share/crossfire/maps/port_joseph/town/generalstore
+share/crossfire/maps/port_joseph/town/inn
+share/crossfire/maps/port_joseph/town/portia
+share/crossfire/maps/port_joseph/town/portia2
 share/crossfire/maps/pup_land/ancient/castle/castle.1
 share/crossfire/maps/pup_land/ancient/castle/castle.2
 share/crossfire/maps/pup_land/ancient/castle/castle.3
@@ -965,11 +584,16 @@ share/crossfire/maps/pup_land/cave_weapon/cave3
 share/crossfire/maps/pup_land/cave_weapon/cave4
 share/crossfire/maps/pup_land/cave_weapon/cave5
 share/crossfire/maps/pup_land/cave_weapon/cave51
+share/crossfire/maps/pup_land/guilds/laughing_skull/bigchest
+share/crossfire/maps/pup_land/guilds/laughing_skull/ground
+share/crossfire/maps/pup_land/guilds/laughing_skull/upper
+share/crossfire/maps/pup_land/guilds/purple_butterfly/bigchest
+share/crossfire/maps/pup_land/guilds/purple_butterfly/ground
+share/crossfire/maps/pup_land/guilds/purple_butterfly/upper
 share/crossfire/maps/pup_land/hall2
 share/crossfire/maps/pup_land/hall_of_fame
 share/crossfire/maps/pup_land/hq
 share/crossfire/maps/pup_land/hq_ud
-share/crossfire/maps/pup_land/jk/Fogs
 share/crossfire/maps/pup_land/jk/gs_house
 share/crossfire/maps/pup_land/jk/heads
 share/crossfire/maps/pup_land/kurte/eureca_road1
@@ -1235,11 +859,180 @@ share/crossfire/maps/pup_land/s_f/to-jyo
 share/crossfire/maps/pup_land/terminal
 share/crossfire/maps/pup_land/terminal_u1
 share/crossfire/maps/pup_land/world
+share/crossfire/maps/python/CFBank.py
+share/crossfire/maps/python/CFBoard.py
+share/crossfire/maps/python/CFGamble.py
+share/crossfire/maps/python/CFLog.py
+share/crossfire/maps/python/CFMail.py
+share/crossfire/maps/python/CFgetPaths.py
+share/crossfire/maps/python/IPO/board.py
+share/crossfire/maps/python/IPO/receive.py
+share/crossfire/maps/python/IPO/say.py
+share/crossfire/maps/python/IPO/send.py
+share/crossfire/maps/python/casino/goldslots.py
+share/crossfire/maps/python/casino/platinumslots.py
+share/crossfire/maps/python/casino/silverslots.py
+share/crossfire/maps/python/python_born.py
+share/crossfire/maps/python/python_login.py
+share/crossfire/maps/python/python_remove.py
 share/crossfire/maps/python/ring_occidental_mages.py
 share/crossfire/maps/python/weapon_occidental_mages.py
+share/crossfire/maps/quests/cd/cd.castle.750
+share/crossfire/maps/quests/cd/cd.cellar1.757
+share/crossfire/maps/quests/cd/cd.inn.752
+share/crossfire/maps/quests/cd/cd.store.753
+share/crossfire/maps/quests/cd/cd.tower1.754
+share/crossfire/maps/quests/cd/cd.tower2.755
+share/crossfire/maps/quests/cd/cd.tunnel.751
+share/crossfire/maps/quests/hendel/acid_room
+share/crossfire/maps/quests/hendel/mountain_pass
+share/crossfire/maps/quests/hendel/pre_acid
+share/crossfire/maps/quests/mak/MainFloor
+share/crossfire/maps/quests/mak/chaos/down1
+share/crossfire/maps/quests/mak/chaos/down2
+share/crossfire/maps/quests/mak/chaos/down3
+share/crossfire/maps/quests/mak/chaos/down4
+share/crossfire/maps/quests/mak/chaos/down5
+share/crossfire/maps/quests/mak/chaos/fallen
+share/crossfire/maps/quests/mak/chaos/monsters.pick
+share/crossfire/maps/quests/mak/chaos/tritemples
+share/crossfire/maps/quests/mak/chaos/up1
+share/crossfire/maps/quests/mak/chaos/up2
+share/crossfire/maps/quests/mak/chaos/up3
+share/crossfire/maps/quests/mak/chaos/up4
+share/crossfire/maps/quests/mak/chaos/up5
+share/crossfire/maps/quests/mak/dragons/chaos
+share/crossfire/maps/quests/mak/dragons/elec
+share/crossfire/maps/quests/mak/dragons/fire
+share/crossfire/maps/quests/mak/dragons/ice
+share/crossfire/maps/quests/mak/giant/mainfloor
+share/crossfire/maps/quests/mak/giant/secondfloor
+share/crossfire/maps/quests/mak/giant/thirdfloor
+share/crossfire/maps/quests/mak/mansion/basement
+share/crossfire/maps/quests/mak/mansion/floor1
+share/crossfire/maps/quests/mak/mansion/floor2
+share/crossfire/maps/quests/mak/troll_cave/Guards
+share/crossfire/maps/quests/mak/troll_cave/cave.1
+share/crossfire/maps/quests/mak/troll_cave/cave.2
+share/crossfire/maps/quests/mak/troll_cave/cave.3
+share/crossfire/maps/quests/mak/undead/catacombs
+share/crossfire/maps/quests/mak/undead/graveyard
+share/crossfire/maps/quests/mak/undead/mausoleum
+share/crossfire/maps/quests/mak/unnatural/unnat
+share/crossfire/maps/quests/mcz/castle1
+share/crossfire/maps/quests/mcz/castle_air
+share/crossfire/maps/quests/mcz/castle_earth
+share/crossfire/maps/quests/mcz/castle_fire
+share/crossfire/maps/quests/mcz/castle_low1
+share/crossfire/maps/quests/mcz/castle_low2
+share/crossfire/maps/quests/mcz/castle_water
+share/crossfire/maps/quests/peterm/CTower/Barracks
+share/crossfire/maps/quests/peterm/CTower/Chamber
+share/crossfire/maps/quests/peterm/CTower/Dungeon
+share/crossfire/maps/quests/peterm/CTower/GroundLevel
+share/crossfire/maps/quests/peterm/CTower/Laboratory
+share/crossfire/maps/quests/peterm/CTower/Library
+share/crossfire/maps/quests/peterm/CTower/Officers
+share/crossfire/maps/quests/peterm/CTower/Servants
+share/crossfire/maps/quests/peterm/CTower/Study
+share/crossfire/maps/quests/peterm/CTower/TowerTop
+share/crossfire/maps/quests/peterm/Demonology/AirMaster
+share/crossfire/maps/quests/peterm/Demonology/AirStudy
+share/crossfire/maps/quests/peterm/Demonology/AirTower1
+share/crossfire/maps/quests/peterm/Demonology/AirTower2
+share/crossfire/maps/quests/peterm/Demonology/ApprenticeLevel
+share/crossfire/maps/quests/peterm/Demonology/Demon1
+share/crossfire/maps/quests/peterm/Demonology/Demon2
+share/crossfire/maps/quests/peterm/Demonology/Demon3
+share/crossfire/maps/quests/peterm/Demonology/EarthMaster
+share/crossfire/maps/quests/peterm/Demonology/EarthStudy
+share/crossfire/maps/quests/peterm/Demonology/EarthTower1
+share/crossfire/maps/quests/peterm/Demonology/EarthTower2
+share/crossfire/maps/quests/peterm/Demonology/FireMaster
+share/crossfire/maps/quests/peterm/Demonology/FireStudy
+share/crossfire/maps/quests/peterm/Demonology/FireTower1
+share/crossfire/maps/quests/peterm/Demonology/FireTower2
+share/crossfire/maps/quests/peterm/Demonology/GroundLevel
+share/crossfire/maps/quests/peterm/Demonology/HighTower1
+share/crossfire/maps/quests/peterm/Demonology/HighTower2
+share/crossfire/maps/quests/peterm/Demonology/HighTowerTop
+share/crossfire/maps/quests/peterm/Demonology/JourneymanLevel
+share/crossfire/maps/quests/peterm/Demonology/MasterLevel
+share/crossfire/maps/quests/peterm/Demonology/WaterMaster
+share/crossfire/maps/quests/peterm/Demonology/WaterStudy
+share/crossfire/maps/quests/peterm/Demonology/WaterTower1
+share/crossfire/maps/quests/peterm/Demonology/WaterTower2
+share/crossfire/maps/quests/peterm/DragonQuest/ElectricAnte
+share/crossfire/maps/quests/peterm/DragonQuest/ElectricHatchery
+share/crossfire/maps/quests/peterm/DragonQuest/ElectricLord
+share/crossfire/maps/quests/peterm/DragonQuest/Entrance
+share/crossfire/maps/quests/peterm/DragonQuest/FireAnte
+share/crossfire/maps/quests/peterm/DragonQuest/FireHatchery
+share/crossfire/maps/quests/peterm/DragonQuest/FireLord
+share/crossfire/maps/quests/peterm/DragonQuest/IceAnte
+share/crossfire/maps/quests/peterm/DragonQuest/IceHatchery
+share/crossfire/maps/quests/peterm/DragonQuest/IceLord
+share/crossfire/maps/quests/peterm/DragonQuest/WyvernNest
+share/crossfire/maps/quests/peterm/FireTemple/Entrance
+share/crossfire/maps/quests/peterm/FireTemple/FifthFloor
+share/crossfire/maps/quests/peterm/FireTemple/Fire1
+share/crossfire/maps/quests/peterm/FireTemple/Fire2
+share/crossfire/maps/quests/peterm/FireTemple/Fire3
+share/crossfire/maps/quests/peterm/FireTemple/Fire4
+share/crossfire/maps/quests/peterm/FireTemple/FirstFloor
+share/crossfire/maps/quests/peterm/FireTemple/FourthFloor
+share/crossfire/maps/quests/peterm/FireTemple/HotMines
+share/crossfire/maps/quests/peterm/FireTemple/LavaChamber
+share/crossfire/maps/quests/peterm/FireTemple/Mezannine1
+share/crossfire/maps/quests/peterm/FireTemple/Passageway
+share/crossfire/maps/quests/peterm/FireTemple/SecondFloor
+share/crossfire/maps/quests/peterm/FireTemple/ThirdFloor
+share/crossfire/maps/quests/peterm/Nethack_in_crossfire_Yendor
+share/crossfire/maps/quests/peterm/Nethack_in_crossfire_entrance
+share/crossfire/maps/quests/peterm/quests/TitanGate
+share/crossfire/maps/quests/peterm/quests/dragon_quest
+share/crossfire/maps/quests/peterm/quests/dragonquest2
+share/crossfire/maps/quests/peterm/quests/goblin_chief
+share/crossfire/maps/quests/peterm/quests/mushroom_quest
+share/crossfire/maps/quests/peterm/quests/ogre_chief
+share/crossfire/maps/quests/peterm/quests/titan_quest
+share/crossfire/maps/quests/peterm/quests/wyvern_quest
+share/crossfire/maps/quests/peterm/temple/AnteChamber
+share/crossfire/maps/quests/peterm/temple/GemTunnel
+share/crossfire/maps/quests/peterm/temple/InnerTemple
+share/crossfire/maps/quests/peterm/temple/OuterTemple
+share/crossfire/maps/quests/peterm/temple/Temple
+share/crossfire/maps/quests/skud/court
+share/crossfire/maps/quests/skud/east_1
+share/crossfire/maps/quests/skud/entrance
+share/crossfire/maps/quests/skud/maze
+share/crossfire/maps/quests/skud/north_1
+share/crossfire/maps/quests/skud/west_1
+share/crossfire/maps/quests/todd/aljwaf/crypt
+share/crossfire/maps/quests/todd/aljwaf/crypt2
+share/crossfire/maps/quests/todd/aljwaf/crypt3
+share/crossfire/maps/quests/todd/aljwaf/crypt4
+share/crossfire/maps/quests/todd/aljwaf/crypt5
+share/crossfire/maps/quests/todd/aljwaf/crypt6
+share/crossfire/maps/quests/todd/aljwaf/hall1
+share/crossfire/maps/quests/todd/aljwaf/hall2
+share/crossfire/maps/quests/todd/aljwaf/ruins
+share/crossfire/maps/quests/todd/aljwaf/tomb
+share/crossfire/maps/quests/todd/aljwaf/tower1
+share/crossfire/maps/quests/todd/aljwaf/tower2
+share/crossfire/maps/quests/todd/aljwaf/tower3
+share/crossfire/maps/quests/todd/aljwaf/tower4
 share/crossfire/maps/santo_dominion/basement
 share/crossfire/maps/santo_dominion/crossfire
 share/crossfire/maps/santo_dominion/den
+share/crossfire/maps/santo_dominion/eeur/hut.1
+share/crossfire/maps/santo_dominion/eeur/hut.2
+share/crossfire/maps/santo_dominion/espen/espen1
+share/crossfire/maps/santo_dominion/espen/espen2
+share/crossfire/maps/santo_dominion/espen/palace
+share/crossfire/maps/santo_dominion/guilds/drunken_barbarian/bigchest
+share/crossfire/maps/santo_dominion/guilds/drunken_barbarian/ground
+share/crossfire/maps/santo_dominion/guilds/drunken_barbarian/upper
 share/crossfire/maps/santo_dominion/house_of_hell
 share/crossfire/maps/santo_dominion/houses/house1
 share/crossfire/maps/santo_dominion/just_preliminary
@@ -1285,13 +1078,236 @@ share/crossfire/maps/santo_dominion/tavern.downstairs
 share/crossfire/maps/santo_dominion/tobias
 share/crossfire/maps/santo_dominion/tobias.top
 share/crossfire/maps/santo_dominion/tollpost
-share/crossfire/maps/santo_dominion/town
-share/crossfire/maps/skud/court
-share/crossfire/maps/skud/east_1
-share/crossfire/maps/skud/entrance
-share/crossfire/maps/skud/maze
-share/crossfire/maps/skud/north_1
-share/crossfire/maps/skud/west_1
+share/crossfire/maps/scorn/README
+share/crossfire/maps/scorn/anthony/passoffice
+share/crossfire/maps/scorn/anthony/portgate
+share/crossfire/maps/scorn/anthony/prison
+share/crossfire/maps/scorn/apartment/Apartments1
+share/crossfire/maps/scorn/apartment/Apartments2
+share/crossfire/maps/scorn/apartment/Apartments3
+share/crossfire/maps/scorn/apartment/Apartments4
+share/crossfire/maps/scorn/apartment/Apartments5
+share/crossfire/maps/scorn/apartment/apartments
+share/crossfire/maps/scorn/cannery/ware1
+share/crossfire/maps/scorn/dtabb/cave
+share/crossfire/maps/scorn/dtabb/cave2
+share/crossfire/maps/scorn/dtabb/cave3
+share/crossfire/maps/scorn/guilds/guildhousesinc
+share/crossfire/maps/scorn/guilds/mailed_fist/bigchest
+share/crossfire/maps/scorn/guilds/mailed_fist/ground
+share/crossfire/maps/scorn/guilds/mailed_fist/upper
+share/crossfire/maps/scorn/houses/angrygiant
+share/crossfire/maps/scorn/houses/barracks
+share/crossfire/maps/scorn/houses/bowyer
+share/crossfire/maps/scorn/houses/chess_club
+share/crossfire/maps/scorn/houses/house.haunted
+share/crossfire/maps/scorn/houses/house.haunted2
+share/crossfire/maps/scorn/houses/house1
+share/crossfire/maps/scorn/houses/house2
+share/crossfire/maps/scorn/houses/jeweler
+share/crossfire/maps/scorn/houses/jones
+share/crossfire/maps/scorn/houses/kitchen
+share/crossfire/maps/scorn/houses/map.fr.ruin
+share/crossfire/maps/scorn/houses/maze1
+share/crossfire/maps/scorn/houses/messhall
+share/crossfire/maps/scorn/houses/newhouse1
+share/crossfire/maps/scorn/houses/smithery
+share/crossfire/maps/scorn/houses/tannery
+share/crossfire/maps/scorn/houses/wizardw
+share/crossfire/maps/scorn/houses/wizz.entry
+share/crossfire/maps/scorn/houses/wizz.lev1
+share/crossfire/maps/scorn/houses/wizz.lev1.pass1
+share/crossfire/maps/scorn/kar/creepy.house
+share/crossfire/maps/scorn/kar/creepy.house2
+share/crossfire/maps/scorn/kar/drink
+share/crossfire/maps/scorn/kar/gorks1
+share/crossfire/maps/scorn/kar/gorks2
+share/crossfire/maps/scorn/kar/gorks3
+share/crossfire/maps/scorn/kar/somehouse
+share/crossfire/maps/scorn/kar/somehouse2
+share/crossfire/maps/scorn/kar/somehouse3
+share/crossfire/maps/scorn/magara/porter_house
+share/crossfire/maps/scorn/mansion/entrance
+share/crossfire/maps/scorn/mansion/garden
+share/crossfire/maps/scorn/mansion/muriskunes
+share/crossfire/maps/scorn/mansion/str-tunnel
+share/crossfire/maps/scorn/mansion/stronghold
+share/crossfire/maps/scorn/misc/HallOfQuests
+share/crossfire/maps/scorn/misc/HospitalityRoom
+share/crossfire/maps/scorn/misc/HouseofHealing
+share/crossfire/maps/scorn/misc/PowerHouse
+share/crossfire/maps/scorn/misc/battle_arena/arena
+share/crossfire/maps/scorn/misc/battle_arena/arena_ud
+share/crossfire/maps/scorn/misc/battle_arena/entrance
+share/crossfire/maps/scorn/misc/battle_arena/first-aide
+share/crossfire/maps/scorn/misc/battle_arena/snack
+share/crossfire/maps/scorn/misc/beginners
+share/crossfire/maps/scorn/misc/castle
+share/crossfire/maps/scorn/misc/castle2
+share/crossfire/maps/scorn/misc/church
+share/crossfire/maps/scorn/misc/cityhall
+share/crossfire/maps/scorn/misc/devourlower
+share/crossfire/maps/scorn/misc/dragon_guild
+share/crossfire/maps/scorn/misc/drywell
+share/crossfire/maps/scorn/misc/gatehouse
+share/crossfire/maps/scorn/misc/jail
+share/crossfire/maps/scorn/misc/library
+share/crossfire/maps/scorn/misc/map.esben.2
+share/crossfire/maps/scorn/misc/mercenaries
+share/crossfire/maps/scorn/misc/port_arena
+share/crossfire/maps/scorn/misc/prison
+share/crossfire/maps/scorn/misc/puddings.place
+share/crossfire/maps/scorn/misc/templedevour
+share/crossfire/maps/scorn/misc/templelyth
+share/crossfire/maps/scorn/misc/testing_area
+share/crossfire/maps/scorn/misc/zoo
+share/crossfire/maps/scorn/misc/zoo2
+share/crossfire/maps/scorn/mlab/citydeclouds
+share/crossfire/maps/scorn/mlab/citydeclouds2
+share/crossfire/maps/scorn/mlab/cshrine1
+share/crossfire/maps/scorn/mlab/dream
+share/crossfire/maps/scorn/mlab/skyship1
+share/crossfire/maps/scorn/mlab/standard
+share/crossfire/maps/scorn/mlab/tavern
+share/crossfire/maps/scorn/mlab/tavern2
+share/crossfire/maps/scorn/mlab/tavern3
+share/crossfire/maps/scorn/mlab/tavern4
+share/crossfire/maps/scorn/mlab/tavern5
+share/crossfire/maps/scorn/mlab/tavern6
+share/crossfire/maps/scorn/mlab/tavern7
+share/crossfire/maps/scorn/mlab/tavernb1
+share/crossfire/maps/scorn/mlab/tavernb2
+share/crossfire/maps/scorn/mlab/tavernb3
+share/crossfire/maps/scorn/mlab/tavernb4
+share/crossfire/maps/scorn/mlab/thehole
+share/crossfire/maps/scorn/mlab/ttower10
+share/crossfire/maps/scorn/mlab/ttower11
+share/crossfire/maps/scorn/mlab/ttower12
+share/crossfire/maps/scorn/mlab/ttower13
+share/crossfire/maps/scorn/mlab/ttower14
+share/crossfire/maps/scorn/mlab/ttower15
+share/crossfire/maps/scorn/mlab/ttower16
+share/crossfire/maps/scorn/mlab/ttower17
+share/crossfire/maps/scorn/mlab/ttower18
+share/crossfire/maps/scorn/mlab/ttower19
+share/crossfire/maps/scorn/mlab/ttower20
+share/crossfire/maps/scorn/mlab/ttower21
+share/crossfire/maps/scorn/mlab/ttower22
+share/crossfire/maps/scorn/mlab/ttower23
+share/crossfire/maps/scorn/mlab/ttower24
+share/crossfire/maps/scorn/mlab/ttower25
+share/crossfire/maps/scorn/mlab/ttower26
+share/crossfire/maps/scorn/mlab/ttower27
+share/crossfire/maps/scorn/mlab/ttower28
+share/crossfire/maps/scorn/mlab/ttower29
+share/crossfire/maps/scorn/mlab/ttower30
+share/crossfire/maps/scorn/mlab/ttower31
+share/crossfire/maps/scorn/mlab/ttower32
+share/crossfire/maps/scorn/mlab/ttower33
+share/crossfire/maps/scorn/mlab/ttower34
+share/crossfire/maps/scorn/mlab/ttower35
+share/crossfire/maps/scorn/mlab/ttower36
+share/crossfire/maps/scorn/mlab/ttower37
+share/crossfire/maps/scorn/mlab/ttower38
+share/crossfire/maps/scorn/mlab/ttower39
+share/crossfire/maps/scorn/mlab/ttower40
+share/crossfire/maps/scorn/mlab/ttower40b
+share/crossfire/maps/scorn/mlab/ttower41
+share/crossfire/maps/scorn/mlab/ttower42
+share/crossfire/maps/scorn/mlab/ttower43
+share/crossfire/maps/scorn/mlab/ttower44
+share/crossfire/maps/scorn/mlab/ttower8
+share/crossfire/maps/scorn/mlab/ttower9
+share/crossfire/maps/scorn/mlab/weapons
+share/crossfire/maps/scorn/mlab/world1c
+share/crossfire/maps/scorn/oldcity/.#end.1.1
+share/crossfire/maps/scorn/oldcity/.#oldcity1.1.1
+share/crossfire/maps/scorn/oldcity/.#oldcity10.1.1
+share/crossfire/maps/scorn/oldcity/.#oldcity11.1.1
+share/crossfire/maps/scorn/oldcity/.#oldcity12.1.1
+share/crossfire/maps/scorn/oldcity/.#oldcity13.1.1
+share/crossfire/maps/scorn/oldcity/.#oldcity14.1.1
+share/crossfire/maps/scorn/oldcity/.#oldcity15.1.1
+share/crossfire/maps/scorn/oldcity/.#oldcity2.1.2
+share/crossfire/maps/scorn/oldcity/.#oldcity3.1.1
+share/crossfire/maps/scorn/oldcity/.#oldcity6.1.1
+share/crossfire/maps/scorn/oldcity/.#oldcity7.1.2
+share/crossfire/maps/scorn/oldcity/.#oldcity8.1.1
+share/crossfire/maps/scorn/oldcity/.#oldcity9.1.1
+share/crossfire/maps/scorn/oldcity/end
+share/crossfire/maps/scorn/oldcity/oldcity1
+share/crossfire/maps/scorn/oldcity/oldcity10
+share/crossfire/maps/scorn/oldcity/oldcity11
+share/crossfire/maps/scorn/oldcity/oldcity12
+share/crossfire/maps/scorn/oldcity/oldcity13
+share/crossfire/maps/scorn/oldcity/oldcity14
+share/crossfire/maps/scorn/oldcity/oldcity15
+share/crossfire/maps/scorn/oldcity/oldcity15e
+share/crossfire/maps/scorn/oldcity/oldcity2
+share/crossfire/maps/scorn/oldcity/oldcity3
+share/crossfire/maps/scorn/oldcity/oldcity4
+share/crossfire/maps/scorn/oldcity/oldcity5
+share/crossfire/maps/scorn/oldcity/oldcity54
+share/crossfire/maps/scorn/oldcity/oldcity6
+share/crossfire/maps/scorn/oldcity/oldcity7
+share/crossfire/maps/scorn/oldcity/oldcity8
+share/crossfire/maps/scorn/oldcity/oldcity9
+share/crossfire/maps/scorn/peterm/undead_quest
+share/crossfire/maps/scorn/shops/BasicSpells
+share/crossfire/maps/scorn/shops/armourshop
+share/crossfire/maps/scorn/shops/bank
+share/crossfire/maps/scorn/shops/bowshop
+share/crossfire/maps/scorn/shops/gemshop
+share/crossfire/maps/scorn/shops/generalshop
+share/crossfire/maps/scorn/shops/light_shop
+share/crossfire/maps/scorn/shops/magicshop
+share/crossfire/maps/scorn/shops/potionshop
+share/crossfire/maps/scorn/shops/weaponshop
+share/crossfire/maps/scorn/taverns/apartments
+share/crossfire/maps/scorn/taverns/goths
+share/crossfire/maps/scorn/taverns/goths0
+share/crossfire/maps/scorn/taverns/goths2
+share/crossfire/maps/scorn/taverns/inn
+share/crossfire/maps/scorn/taverns/inn2
+share/crossfire/maps/scorn/temples/gaea
+share/crossfire/maps/scorn/temples/gnarg
+share/crossfire/maps/scorn/temples/gorokh
+share/crossfire/maps/scorn/temples/mostrai
+share/crossfire/maps/scorn/temples/mostrai2
+share/crossfire/maps/scorn/temples/ruggilli1
+share/crossfire/maps/scorn/temples/ruggilli2
+share/crossfire/maps/scorn/temples/sorig
+share/crossfire/maps/scorn/temples/sorig2
+share/crossfire/maps/scorn/temples/valriel
+share/crossfire/maps/scorn/temples/valriel2
+share/crossfire/maps/scorn/temples/valriel3
+share/crossfire/maps/scorn/towers/tower
+share/crossfire/maps/scorn/towers/tower.mad
+share/crossfire/maps/scorn/towers/tower.mad1
+share/crossfire/maps/scorn/towers/tower.mad2
+share/crossfire/maps/scorn/towers/tower.mad3
+share/crossfire/maps/sisters/README
+share/crossfire/maps/sisters/compound1
+share/crossfire/maps/sisters/compound2
+share/crossfire/maps/sisters/compound3
+share/crossfire/maps/sisters/entrance
+share/crossfire/maps/sisters/granary
+share/crossfire/maps/sisters/necro_entrance
+share/crossfire/maps/sisters/necro_hole1
+share/crossfire/maps/sisters/necro_ruin1
+share/crossfire/maps/sisters/necro_ruin1a
+share/crossfire/maps/sisters/shrine0
+share/crossfire/maps/sisters/shrine0_east
+share/crossfire/maps/sisters/shrine0_west
+share/crossfire/maps/sisters/shrine1
+share/crossfire/maps/sisters/shrine_entrance
+share/crossfire/maps/sisters/small_manor0
+share/crossfire/maps/sisters/small_manor1
+share/crossfire/maps/sisters/small_manor2
+share/crossfire/maps/sisters/tower0
+share/crossfire/maps/sisters/tower1
+share/crossfire/maps/sisters/tower2
+share/crossfire/maps/sisters/tower3
 share/crossfire/maps/styles/decorstyles/alchemy
 share/crossfire/maps/styles/decorstyles/craters
 share/crossfire/maps/styles/decorstyles/creepy
@@ -1513,6 +1529,14 @@ share/crossfire/maps/styles/monsterstyles/subterranean/subterranean_6
 share/crossfire/maps/styles/monsterstyles/subterranean/subterranean_7
 share/crossfire/maps/styles/monsterstyles/subterranean/subterranean_8
 share/crossfire/maps/styles/monsterstyles/subterranean/subterranean_9
+share/crossfire/maps/styles/monsterstyles/sylvan/sylvan_1
+share/crossfire/maps/styles/monsterstyles/sylvan/sylvan_2
+share/crossfire/maps/styles/monsterstyles/sylvan/sylvan_3
+share/crossfire/maps/styles/monsterstyles/sylvan/sylvan_4
+share/crossfire/maps/styles/monsterstyles/sylvan/sylvan_5
+share/crossfire/maps/styles/monsterstyles/sylvan/sylvan_6
+share/crossfire/maps/styles/monsterstyles/sylvan/sylvan_7
+share/crossfire/maps/styles/monsterstyles/sylvan/sylvan_8
 share/crossfire/maps/styles/monsterstyles/undead/undead_1
 share/crossfire/maps/styles/monsterstyles/undead/undead_10
 share/crossfire/maps/styles/monsterstyles/undead/undead_11
@@ -1585,200 +1609,31 @@ share/crossfire/maps/styles/wallstyles/trees
 share/crossfire/maps/styles/wallstyles/water
 share/crossfire/maps/styles/wallstyles/wharf
 share/crossfire/maps/styles/wallstyles/wooden
-share/crossfire/maps/terrain/desert_1
-share/crossfire/maps/terrain/desert_2
-share/crossfire/maps/terrain/empty
-share/crossfire/maps/terrain/forest_1
-share/crossfire/maps/terrain/forest_2
-share/crossfire/maps/terrain/hills_1
-share/crossfire/maps/terrain/hills_2
-share/crossfire/maps/terrain/jungle_1
-share/crossfire/maps/terrain/jungle_2
-share/crossfire/maps/terrain/mountain_1
-share/crossfire/maps/terrain/mountain_2
-share/crossfire/maps/terrain/plains_1
-share/crossfire/maps/terrain/plains_2
-share/crossfire/maps/terrain/swamp_1
-share/crossfire/maps/terrain/swamp_2
-share/crossfire/maps/test/anthony/README
-share/crossfire/maps/test/anthony/cascades
-share/crossfire/maps/test/anthony/connected_objects
-share/crossfire/maps/test/anthony/conveyor
-share/crossfire/maps/test/anthony/raffles_cascade
-share/crossfire/maps/test/anthony/roller_cades
-share/crossfire/maps/test/anthony/special_objects
-share/crossfire/maps/test/bigmonpit
-share/crossfire/maps/test/connected_bug
-share/crossfire/maps/test/cyclops
-share/crossfire/maps/test/diagonal
-share/crossfire/maps/test/faceofdeath
-share/crossfire/maps/test/insert_bug
-share/crossfire/maps/test/lighting
-share/crossfire/maps/test/multisquare
-share/crossfire/maps/test/paralyze
-share/crossfire/maps/test/pit
-share/crossfire/maps/test/playermover
-share/crossfire/maps/test/randomtreasure
-share/crossfire/maps/test/remote_altar
-share/crossfire/maps/test/tile1
-share/crossfire/maps/test/tile2
-share/crossfire/maps/test/tile3
-share/crossfire/maps/test/trigger
-share/crossfire/maps/thomas/sisters/compound1
-share/crossfire/maps/thomas/sisters/compound2
-share/crossfire/maps/thomas/sisters/compound3
-share/crossfire/maps/thomas/sisters/entrance
-share/crossfire/maps/thomas/sisters/granary
-share/crossfire/maps/thomas/sisters/necro_entrance
-share/crossfire/maps/thomas/sisters/necro_hole1
-share/crossfire/maps/thomas/sisters/necro_ruin1
-share/crossfire/maps/thomas/sisters/necro_ruin1a
-share/crossfire/maps/thomas/sisters/shrine0
-share/crossfire/maps/thomas/sisters/shrine0_east
-share/crossfire/maps/thomas/sisters/shrine0_west
-share/crossfire/maps/thomas/sisters/shrine1
-share/crossfire/maps/thomas/sisters/shrine_entrance
-share/crossfire/maps/thomas/sisters/small_manor0
-share/crossfire/maps/thomas/sisters/small_manor1
-share/crossfire/maps/thomas/sisters/small_manor2
-share/crossfire/maps/thomas/sisters/small_village
-share/crossfire/maps/thomas/sisters/tower0
-share/crossfire/maps/thomas/sisters/tower1
-share/crossfire/maps/thomas/sisters/tower2
-share/crossfire/maps/thomas/sisters/tower3
-share/crossfire/maps/thomas/sisters/valley
-share/crossfire/maps/todd/aljwaf/crypt
-share/crossfire/maps/todd/aljwaf/crypt2
-share/crossfire/maps/todd/aljwaf/crypt3
-share/crossfire/maps/todd/aljwaf/crypt4
-share/crossfire/maps/todd/aljwaf/crypt5
-share/crossfire/maps/todd/aljwaf/hall1
-share/crossfire/maps/todd/aljwaf/hall2
-share/crossfire/maps/todd/aljwaf/ruins
-share/crossfire/maps/todd/aljwaf/tomb
-share/crossfire/maps/unlinked/Greyshield/Archery
-share/crossfire/maps/unlinked/Greyshield/Arena
-share/crossfire/maps/unlinked/Greyshield/Castle
-share/crossfire/maps/unlinked/Greyshield/Cave
-share/crossfire/maps/unlinked/Greyshield/Cavern
-share/crossfire/maps/unlinked/Greyshield/Cavern2
-share/crossfire/maps/unlinked/Greyshield/Chamber
-share/crossfire/maps/unlinked/Greyshield/Doors
-share/crossfire/maps/unlinked/Greyshield/Dungeon
-share/crossfire/maps/unlinked/Greyshield/Elements
-share/crossfire/maps/unlinked/Greyshield/Factory
-share/crossfire/maps/unlinked/Greyshield/Finish
-share/crossfire/maps/unlinked/Greyshield/Fortress
-share/crossfire/maps/unlinked/Greyshield/GreyMaster
-share/crossfire/maps/unlinked/Greyshield/Greysword
-share/crossfire/maps/unlinked/Greyshield/Island
-share/crossfire/maps/unlinked/Greyshield/Island1
-share/crossfire/maps/unlinked/Greyshield/Ruins
-share/crossfire/maps/unlinked/Greyshield/Sphinx
-share/crossfire/maps/unlinked/ImperialPost/README
-share/crossfire/maps/unlinked/ImperialPost/local/ImperialPost/IPO
-share/crossfire/maps/unlinked/ImperialPost/local/ImperialPost/board.py
-share/crossfire/maps/unlinked/ImperialPost/local/ImperialPost/receive.py
-share/crossfire/maps/unlinked/ImperialPost/local/ImperialPost/say.py
-share/crossfire/maps/unlinked/ImperialPost/local/ImperialPost/send.py
-share/crossfire/maps/unlinked/ImperialPost/python/CFBank.py
-share/crossfire/maps/unlinked/ImperialPost/python/CFBoard.py
-share/crossfire/maps/unlinked/ImperialPost/python/CFLog.py
-share/crossfire/maps/unlinked/ImperialPost/python/CFMail.py
-share/crossfire/maps/unlinked/ImperialPost/python/python_born.py
-share/crossfire/maps/unlinked/ImperialPost/python/python_login.py
-share/crossfire/maps/unlinked/ImperialPost/python/python_remove.py
-share/crossfire/maps/unlinked/tomble/CHANGELOG
-share/crossfire/maps/unlinked/tomble/COPYRIGHT
-share/crossfire/maps/unlinked/tomble/README
-share/crossfire/maps/unlinked/tomble/candy-apple/inn1
-share/crossfire/maps/unlinked/tomble/candy-apple/island-pr
-share/crossfire/maps/unlinked/tomble/candy-apple/lament-keepGD
-share/crossfire/maps/unlinked/tomble/candy-apple/smallshop1
-share/crossfire/maps/unlinked/tomble/candy-apple/tower1
-share/crossfire/maps/unlinked/tomble/candy-apple/town1
-share/crossfire/maps/unlinked/tomble/ex-navar/evilshop
-share/crossfire/maps/unlinked/tomble/ex-navar/market1
-share/crossfire/maps/unlinked/tomble/ex-navar/market1-purge
-share/crossfire/maps/unlinked/tomble/ex-navar/quiet_shop
-share/crossfire/maps/unlinked/tomble/ex-navar/silly1
-share/crossfire/maps/unlinked/tomble/ex-navar/slum-proto1
-share/crossfire/maps/unlinked/tomble/ex-navar/slum-proto2
-share/crossfire/maps/unlinked/tomble/ex-navar/slumgate-proto1
-share/crossfire/maps/unlinked/tomble/ex-navar/slumgate-proto2
-share/crossfire/maps/unlinked/tomble/ex-navar/slumgate-proto3
-share/crossfire/maps/unlinked/tomble/ex-scorn/eng_guild
-share/crossfire/maps/unlinked/tomble/ex-scorn/spring_works
-share/crossfire/maps/unlinked/tomble/ex-scorn/t_v_lab_gifts
-share/crossfire/maps/unlinked/tomble/ex-scorn/t_v_lab_shed
-share/crossfire/maps/unlinked/tomble/ex-scorn/temp-s
-share/crossfire/maps/unlinked/tomble/ex-scorn/tombles_experiment1
-share/crossfire/maps/unlinked/tomble/ex-scorn/tombles_experiment2
-share/crossfire/maps/unlinked/tomble/ex-scorn/tombles_experiment3
-share/crossfire/maps/unlinked/tomble/ex-scorn/tombles_vampyre_lab
-share/crossfire/maps/unlinked/tomble/p.tui/p.tui
-share/crossfire/maps/unlinked/tomble/picks/tbls-exits
-share/crossfire/maps/unlinked/tomble/prototypes/cursemap
-share/crossfire/maps/unlinked/tomble/prototypes/dun-east0.orig
-share/crossfire/maps/unlinked/tomble/prototypes/dun-east0b
-share/crossfire/maps/unlinked/tomble/prototypes/guardhouse
-share/crossfire/maps/unlinked/tomble/prototypes/inn1
-share/crossfire/maps/unlinked/tomble/prototypes/keep-prot
-share/crossfire/maps/unlinked/tomble/prototypes/keep-prot-pt2
-share/crossfire/maps/unlinked/tomble/prototypes/keep-prot-pt3
-share/crossfire/maps/unlinked/tomble/prototypes/keep-prot-pt4
-share/crossfire/maps/unlinked/tomble/prototypes/keep-prot-pt5
-share/crossfire/maps/unlinked/tomble/prototypes/my-elevation1
-share/crossfire/maps/unlinked/tomble/prototypes/p.tui-proto
-share/crossfire/maps/unlinked/tomble/prototypes/squishi-orig
-share/crossfire/maps/unlinked/tomble/prototypes/squishi1
-share/crossfire/maps/unlinked/tomble/prototypes/squishi2
-share/crossfire/maps/unlinked/tomble/prototypes/squishi3
-share/crossfire/maps/unlinked/tomble/squishi/alch-cellar
-share/crossfire/maps/unlinked/tomble/squishi/alch-top
-share/crossfire/maps/unlinked/tomble/squishi/alchemist
-share/crossfire/maps/unlinked/tomble/squishi/auction1
-share/crossfire/maps/unlinked/tomble/squishi/cin-sc1
-share/crossfire/maps/unlinked/tomble/squishi/cinema
-share/crossfire/maps/unlinked/tomble/squishi/colosseum
-share/crossfire/maps/unlinked/tomble/squishi/guardhouse
-share/crossfire/maps/unlinked/tomble/squishi/inns/inn1
-share/crossfire/maps/unlinked/tomble/squishi/inns/soelim1
-share/crossfire/maps/unlinked/tomble/squishi/kebabery
-share/crossfire/maps/unlinked/tomble/squishi/magic-shop1
-share/crossfire/maps/unlinked/tomble/squishi/main-structures/courthouse
-share/crossfire/maps/unlinked/tomble/squishi/main-structures/keep-prelim
-share/crossfire/maps/unlinked/tomble/squishi/main-structures/temple1
-share/crossfire/maps/unlinked/tomble/squishi/main-structures/univ1
-share/crossfire/maps/unlinked/tomble/squishi/main-structures/univ11proto
-share/crossfire/maps/unlinked/tomble/squishi/market/market-w
-share/crossfire/maps/unlinked/tomble/squishi/market/stall_1
-share/crossfire/maps/unlinked/tomble/squishi/market/stall_2
-share/crossfire/maps/unlinked/tomble/squishi/newall-twr-gnd
-share/crossfire/maps/unlinked/tomble/squishi/nw-twr-gnd
-share/crossfire/maps/unlinked/tomble/squishi/nwwall-twr-gnd
-share/crossfire/maps/unlinked/tomble/squishi/squishi
-share/crossfire/maps/unlinked/tomble/squishi/stringy/stringy-mos.ASC
-share/crossfire/maps/unlinked/tomble/squishi/stringy/stringy-mos.TXT
-share/crossfire/maps/unlinked/tomble/squishi/stringy/stringys-atrium
-share/crossfire/maps/unlinked/tomble/squishi/stringy/stringys-diningroom
-share/crossfire/maps/unlinked/tomble/squishi/stringy/stringys-hallway
-share/crossfire/maps/unlinked/tomble/squishi/stringy/stringys-kitchen
-share/crossfire/maps/unlinked/tomble/squishi/ug/alch-dun
-share/crossfire/maps/unlinked/tomble/squishi/ug/dun-east0
-share/crossfire/maps/unlinked/tomble/squishi/ug/dun-west0
-share/crossfire/maps/unlinked/tomble/squishi/ug/stav-hall
-share/crossfire/maps/unlinked/tomble/squishi/ug/subtemp-ent
-share/crossfire/maps/unlinked/tomble/styles/specialmaps/house_of_fun
-share/crossfire/maps/unlinked/tomble/styles/specialmaps/house_of_fun2
-share/crossfire/maps/unlinked/tomble/styles/specialmaps/mushroom_shop
-share/crossfire/maps/unlinked/tomble/wall-picks/moat
-share/crossfire/maps/unlinked/tomble/wall-picks/tbls-walls
-share/crossfire/maps/unlinked/tomble/world/world_c4-tbl
-share/crossfire/maps/unlinked/tomble/world/world_c5
-share/crossfire/maps/unlinked/tomble/world/world_c6
+share/crossfire/maps/under_world/README
+share/crossfire/maps/under_world/uworld_120_109
 share/crossfire/maps/wolfsburg/dept_store
+share/crossfire/maps/wolfsburg/dungeons/church.2
+share/crossfire/maps/wolfsburg/dungeons/church.3
+share/crossfire/maps/wolfsburg/dungeons/church.4a
+share/crossfire/maps/wolfsburg/dungeons/church.4b
+share/crossfire/maps/wolfsburg/dungeons/church.4c
+share/crossfire/maps/wolfsburg/dungeons/church.4d
+share/crossfire/maps/wolfsburg/dungeons/hut
+share/crossfire/maps/wolfsburg/dungeons/piratedung
+share/crossfire/maps/wolfsburg/dungeons/pirateenter
+share/crossfire/maps/wolfsburg/dungeons/ship
+share/crossfire/maps/wolfsburg/dungeons/ship_deck2
+share/crossfire/maps/wolfsburg/dungeons/stronghold
+share/crossfire/maps/wolfsburg/dungeons/treas_room
+share/crossfire/maps/wolfsburg/dungeons/underworld
+share/crossfire/maps/wolfsburg/eeur/tower1.1
+share/crossfire/maps/wolfsburg/eeur/tower1.2
+share/crossfire/maps/wolfsburg/eeur/tower1.3
+share/crossfire/maps/wolfsburg/eeur/tower1.4
 share/crossfire/maps/wolfsburg/etern_rew
+share/crossfire/maps/wolfsburg/guilds/damned_heretics/bigchest
+share/crossfire/maps/wolfsburg/guilds/damned_heretics/ground
+share/crossfire/maps/wolfsburg/guilds/damned_heretics/upper
 share/crossfire/maps/wolfsburg/inns
 share/crossfire/maps/wolfsburg/magara/castle/cellar
 share/crossfire/maps/wolfsburg/magara/castle/floor_1
@@ -1794,34 +1649,925 @@ share/crossfire/maps/wolfsburg/magara/tower1/floor_3
 share/crossfire/maps/wolfsburg/magara/tower2/floor_1
 share/crossfire/maps/wolfsburg/magara/tower2/floor_2
 share/crossfire/maps/wolfsburg/piratechurch
-share/crossfire/maps/wolfsburg/piratetown
 share/crossfire/maps/wolfsburg/prison
 share/crossfire/maps/wolfsburg/slave_pit1
 share/crossfire/maps/wolfsburg/slave_pit2
 share/crossfire/maps/wolfsburg/slave_pit3
 share/crossfire/maps/wolfsburg/snakepit
+share/crossfire/maps/wolfsburg/temple/enterance
+share/crossfire/maps/wolfsburg/temple/temp_dung1
+share/crossfire/maps/wolfsburg/temple/temple
 share/crossfire/maps/wolfsburg/tt/tta1
 share/crossfire/maps/wolfsburg/tt/tta2
 share/crossfire/maps/wolfsburg/tt/ttb1
 share/crossfire/maps/wolfsburg/tt/ttb2
+share/crossfire/maps/wolfsburg/volcano/volcano
+share/crossfire/maps/wolfsburg/volcano/vvhuts
+share/crossfire/maps/wolfsburg/volcano/vvmansion
 share/crossfire/maps/wolfsburg/ware1
 share/crossfire/maps/wolfsburg/whorehouse
-share/crossfire/maps/world/README
-share/crossfire/maps/world/connect.pl
-share/crossfire/maps/world/world_a1
-share/crossfire/maps/world/world_a2
-share/crossfire/maps/world/world_a3
-share/crossfire/maps/world/world_a4
-share/crossfire/maps/world/world_b1
-share/crossfire/maps/world/world_b2
-share/crossfire/maps/world/world_b3
-share/crossfire/maps/world/world_b4
-share/crossfire/maps/world/world_c1
-share/crossfire/maps/world/world_c2
-share/crossfire/maps/world/world_c3
-share/crossfire/maps/world/world_c4
-share/crossfire/maps/world/world_e1
-share/crossfire/maps/world/world_e2
+share/crossfire/maps/world/.#world_105_115.1.12
+share/crossfire/maps/world/world_100_100
+share/crossfire/maps/world/world_100_101
+share/crossfire/maps/world/world_100_102
+share/crossfire/maps/world/world_100_103
+share/crossfire/maps/world/world_100_104
+share/crossfire/maps/world/world_100_105
+share/crossfire/maps/world/world_100_106
+share/crossfire/maps/world/world_100_107
+share/crossfire/maps/world/world_100_108
+share/crossfire/maps/world/world_100_109
+share/crossfire/maps/world/world_100_110
+share/crossfire/maps/world/world_100_111
+share/crossfire/maps/world/world_100_112
+share/crossfire/maps/world/world_100_113
+share/crossfire/maps/world/world_100_114
+share/crossfire/maps/world/world_100_115
+share/crossfire/maps/world/world_100_116
+share/crossfire/maps/world/world_100_117
+share/crossfire/maps/world/world_100_118
+share/crossfire/maps/world/world_100_119
+share/crossfire/maps/world/world_100_120
+share/crossfire/maps/world/world_100_121
+share/crossfire/maps/world/world_100_122
+share/crossfire/maps/world/world_100_123
+share/crossfire/maps/world/world_100_124
+share/crossfire/maps/world/world_100_125
+share/crossfire/maps/world/world_100_126
+share/crossfire/maps/world/world_100_127
+share/crossfire/maps/world/world_100_128
+share/crossfire/maps/world/world_100_129
+share/crossfire/maps/world/world_101_100
+share/crossfire/maps/world/world_101_101
+share/crossfire/maps/world/world_101_102
+share/crossfire/maps/world/world_101_103
+share/crossfire/maps/world/world_101_104
+share/crossfire/maps/world/world_101_105
+share/crossfire/maps/world/world_101_106
+share/crossfire/maps/world/world_101_107
+share/crossfire/maps/world/world_101_108
+share/crossfire/maps/world/world_101_109
+share/crossfire/maps/world/world_101_110
+share/crossfire/maps/world/world_101_111
+share/crossfire/maps/world/world_101_112
+share/crossfire/maps/world/world_101_113
+share/crossfire/maps/world/world_101_114
+share/crossfire/maps/world/world_101_115
+share/crossfire/maps/world/world_101_116
+share/crossfire/maps/world/world_101_117
+share/crossfire/maps/world/world_101_118
+share/crossfire/maps/world/world_101_119
+share/crossfire/maps/world/world_101_120
+share/crossfire/maps/world/world_101_121
+share/crossfire/maps/world/world_101_122
+share/crossfire/maps/world/world_101_123
+share/crossfire/maps/world/world_101_124
+share/crossfire/maps/world/world_101_125
+share/crossfire/maps/world/world_101_126
+share/crossfire/maps/world/world_101_127
+share/crossfire/maps/world/world_101_128
+share/crossfire/maps/world/world_101_129
+share/crossfire/maps/world/world_102_100
+share/crossfire/maps/world/world_102_101
+share/crossfire/maps/world/world_102_102
+share/crossfire/maps/world/world_102_103
+share/crossfire/maps/world/world_102_104
+share/crossfire/maps/world/world_102_105
+share/crossfire/maps/world/world_102_106
+share/crossfire/maps/world/world_102_107
+share/crossfire/maps/world/world_102_108
+share/crossfire/maps/world/world_102_109
+share/crossfire/maps/world/world_102_110
+share/crossfire/maps/world/world_102_111
+share/crossfire/maps/world/world_102_112
+share/crossfire/maps/world/world_102_113
+share/crossfire/maps/world/world_102_114
+share/crossfire/maps/world/world_102_115
+share/crossfire/maps/world/world_102_116
+share/crossfire/maps/world/world_102_117
+share/crossfire/maps/world/world_102_118
+share/crossfire/maps/world/world_102_119
+share/crossfire/maps/world/world_102_120
+share/crossfire/maps/world/world_102_121
+share/crossfire/maps/world/world_102_122
+share/crossfire/maps/world/world_102_123
+share/crossfire/maps/world/world_102_124
+share/crossfire/maps/world/world_102_125
+share/crossfire/maps/world/world_102_126
+share/crossfire/maps/world/world_102_127
+share/crossfire/maps/world/world_102_128
+share/crossfire/maps/world/world_102_129
+share/crossfire/maps/world/world_103_100
+share/crossfire/maps/world/world_103_101
+share/crossfire/maps/world/world_103_102
+share/crossfire/maps/world/world_103_103
+share/crossfire/maps/world/world_103_104
+share/crossfire/maps/world/world_103_105
+share/crossfire/maps/world/world_103_106
+share/crossfire/maps/world/world_103_107
+share/crossfire/maps/world/world_103_108
+share/crossfire/maps/world/world_103_109
+share/crossfire/maps/world/world_103_110
+share/crossfire/maps/world/world_103_111
+share/crossfire/maps/world/world_103_112
+share/crossfire/maps/world/world_103_113
+share/crossfire/maps/world/world_103_114
+share/crossfire/maps/world/world_103_115
+share/crossfire/maps/world/world_103_116
+share/crossfire/maps/world/world_103_117
+share/crossfire/maps/world/world_103_118
+share/crossfire/maps/world/world_103_119
+share/crossfire/maps/world/world_103_120
+share/crossfire/maps/world/world_103_121
+share/crossfire/maps/world/world_103_122
+share/crossfire/maps/world/world_103_123
+share/crossfire/maps/world/world_103_124
+share/crossfire/maps/world/world_103_125
+share/crossfire/maps/world/world_103_126
+share/crossfire/maps/world/world_103_127
+share/crossfire/maps/world/world_103_128
+share/crossfire/maps/world/world_103_129
+share/crossfire/maps/world/world_104_100
+share/crossfire/maps/world/world_104_101
+share/crossfire/maps/world/world_104_102
+share/crossfire/maps/world/world_104_103
+share/crossfire/maps/world/world_104_104
+share/crossfire/maps/world/world_104_105
+share/crossfire/maps/world/world_104_106
+share/crossfire/maps/world/world_104_107
+share/crossfire/maps/world/world_104_108
+share/crossfire/maps/world/world_104_109
+share/crossfire/maps/world/world_104_110
+share/crossfire/maps/world/world_104_111
+share/crossfire/maps/world/world_104_112
+share/crossfire/maps/world/world_104_113
+share/crossfire/maps/world/world_104_114
+share/crossfire/maps/world/world_104_115
+share/crossfire/maps/world/world_104_116
+share/crossfire/maps/world/world_104_117
+share/crossfire/maps/world/world_104_118
+share/crossfire/maps/world/world_104_119
+share/crossfire/maps/world/world_104_120
+share/crossfire/maps/world/world_104_121
+share/crossfire/maps/world/world_104_122
+share/crossfire/maps/world/world_104_123
+share/crossfire/maps/world/world_104_124
+share/crossfire/maps/world/world_104_125
+share/crossfire/maps/world/world_104_126
+share/crossfire/maps/world/world_104_127
+share/crossfire/maps/world/world_104_128
+share/crossfire/maps/world/world_104_129
+share/crossfire/maps/world/world_105_100
+share/crossfire/maps/world/world_105_101
+share/crossfire/maps/world/world_105_102
+share/crossfire/maps/world/world_105_103
+share/crossfire/maps/world/world_105_104
+share/crossfire/maps/world/world_105_105
+share/crossfire/maps/world/world_105_106
+share/crossfire/maps/world/world_105_107
+share/crossfire/maps/world/world_105_108
+share/crossfire/maps/world/world_105_109
+share/crossfire/maps/world/world_105_110
+share/crossfire/maps/world/world_105_111
+share/crossfire/maps/world/world_105_112
+share/crossfire/maps/world/world_105_113
+share/crossfire/maps/world/world_105_114
+share/crossfire/maps/world/world_105_115
+share/crossfire/maps/world/world_105_116
+share/crossfire/maps/world/world_105_117
+share/crossfire/maps/world/world_105_118
+share/crossfire/maps/world/world_105_119
+share/crossfire/maps/world/world_105_120
+share/crossfire/maps/world/world_105_121
+share/crossfire/maps/world/world_105_122
+share/crossfire/maps/world/world_105_123
+share/crossfire/maps/world/world_105_124
+share/crossfire/maps/world/world_105_125
+share/crossfire/maps/world/world_105_126
+share/crossfire/maps/world/world_105_127
+share/crossfire/maps/world/world_105_128
+share/crossfire/maps/world/world_105_129
+share/crossfire/maps/world/world_106_100
+share/crossfire/maps/world/world_106_101
+share/crossfire/maps/world/world_106_102
+share/crossfire/maps/world/world_106_103
+share/crossfire/maps/world/world_106_104
+share/crossfire/maps/world/world_106_105
+share/crossfire/maps/world/world_106_106
+share/crossfire/maps/world/world_106_107
+share/crossfire/maps/world/world_106_108
+share/crossfire/maps/world/world_106_109
+share/crossfire/maps/world/world_106_110
+share/crossfire/maps/world/world_106_111
+share/crossfire/maps/world/world_106_112
+share/crossfire/maps/world/world_106_113
+share/crossfire/maps/world/world_106_114
+share/crossfire/maps/world/world_106_115
+share/crossfire/maps/world/world_106_116
+share/crossfire/maps/world/world_106_117
+share/crossfire/maps/world/world_106_118
+share/crossfire/maps/world/world_106_119
+share/crossfire/maps/world/world_106_120
+share/crossfire/maps/world/world_106_121
+share/crossfire/maps/world/world_106_122
+share/crossfire/maps/world/world_106_123
+share/crossfire/maps/world/world_106_124
+share/crossfire/maps/world/world_106_125
+share/crossfire/maps/world/world_106_126
+share/crossfire/maps/world/world_106_127
+share/crossfire/maps/world/world_106_128
+share/crossfire/maps/world/world_106_129
+share/crossfire/maps/world/world_107_100
+share/crossfire/maps/world/world_107_101
+share/crossfire/maps/world/world_107_102
+share/crossfire/maps/world/world_107_103
+share/crossfire/maps/world/world_107_104
+share/crossfire/maps/world/world_107_105
+share/crossfire/maps/world/world_107_106
+share/crossfire/maps/world/world_107_107
+share/crossfire/maps/world/world_107_108
+share/crossfire/maps/world/world_107_109
+share/crossfire/maps/world/world_107_110
+share/crossfire/maps/world/world_107_111
+share/crossfire/maps/world/world_107_112
+share/crossfire/maps/world/world_107_113
+share/crossfire/maps/world/world_107_114
+share/crossfire/maps/world/world_107_115
+share/crossfire/maps/world/world_107_116
+share/crossfire/maps/world/world_107_117
+share/crossfire/maps/world/world_107_118
+share/crossfire/maps/world/world_107_119
+share/crossfire/maps/world/world_107_120
+share/crossfire/maps/world/world_107_121
+share/crossfire/maps/world/world_107_122
+share/crossfire/maps/world/world_107_123
+share/crossfire/maps/world/world_107_124
+share/crossfire/maps/world/world_107_125
+share/crossfire/maps/world/world_107_126
+share/crossfire/maps/world/world_107_127
+share/crossfire/maps/world/world_107_128
+share/crossfire/maps/world/world_107_129
+share/crossfire/maps/world/world_108_100
+share/crossfire/maps/world/world_108_101
+share/crossfire/maps/world/world_108_102
+share/crossfire/maps/world/world_108_103
+share/crossfire/maps/world/world_108_104
+share/crossfire/maps/world/world_108_105
+share/crossfire/maps/world/world_108_106
+share/crossfire/maps/world/world_108_107
+share/crossfire/maps/world/world_108_108
+share/crossfire/maps/world/world_108_109
+share/crossfire/maps/world/world_108_110
+share/crossfire/maps/world/world_108_111
+share/crossfire/maps/world/world_108_112
+share/crossfire/maps/world/world_108_113
+share/crossfire/maps/world/world_108_114
+share/crossfire/maps/world/world_108_115
+share/crossfire/maps/world/world_108_116
+share/crossfire/maps/world/world_108_117
+share/crossfire/maps/world/world_108_118
+share/crossfire/maps/world/world_108_119
+share/crossfire/maps/world/world_108_120
+share/crossfire/maps/world/world_108_121
+share/crossfire/maps/world/world_108_122
+share/crossfire/maps/world/world_108_123
+share/crossfire/maps/world/world_108_124
+share/crossfire/maps/world/world_108_125
+share/crossfire/maps/world/world_108_126
+share/crossfire/maps/world/world_108_127
+share/crossfire/maps/world/world_108_128
+share/crossfire/maps/world/world_108_129
+share/crossfire/maps/world/world_109_100
+share/crossfire/maps/world/world_109_101
+share/crossfire/maps/world/world_109_102
+share/crossfire/maps/world/world_109_103
+share/crossfire/maps/world/world_109_104
+share/crossfire/maps/world/world_109_105
+share/crossfire/maps/world/world_109_106
+share/crossfire/maps/world/world_109_107
+share/crossfire/maps/world/world_109_108
+share/crossfire/maps/world/world_109_109
+share/crossfire/maps/world/world_109_110
+share/crossfire/maps/world/world_109_111
+share/crossfire/maps/world/world_109_112
+share/crossfire/maps/world/world_109_113
+share/crossfire/maps/world/world_109_114
+share/crossfire/maps/world/world_109_115
+share/crossfire/maps/world/world_109_116
+share/crossfire/maps/world/world_109_117
+share/crossfire/maps/world/world_109_118
+share/crossfire/maps/world/world_109_119
+share/crossfire/maps/world/world_109_120
+share/crossfire/maps/world/world_109_121
+share/crossfire/maps/world/world_109_122
+share/crossfire/maps/world/world_109_123
+share/crossfire/maps/world/world_109_124
+share/crossfire/maps/world/world_109_125
+share/crossfire/maps/world/world_109_126
+share/crossfire/maps/world/world_109_127
+share/crossfire/maps/world/world_109_128
+share/crossfire/maps/world/world_109_129
+share/crossfire/maps/world/world_110_100
+share/crossfire/maps/world/world_110_101
+share/crossfire/maps/world/world_110_102
+share/crossfire/maps/world/world_110_103
+share/crossfire/maps/world/world_110_104
+share/crossfire/maps/world/world_110_105
+share/crossfire/maps/world/world_110_106
+share/crossfire/maps/world/world_110_107
+share/crossfire/maps/world/world_110_108
+share/crossfire/maps/world/world_110_109
+share/crossfire/maps/world/world_110_110
+share/crossfire/maps/world/world_110_111
+share/crossfire/maps/world/world_110_112
+share/crossfire/maps/world/world_110_113
+share/crossfire/maps/world/world_110_114
+share/crossfire/maps/world/world_110_115
+share/crossfire/maps/world/world_110_116
+share/crossfire/maps/world/world_110_117
+share/crossfire/maps/world/world_110_118
+share/crossfire/maps/world/world_110_119
+share/crossfire/maps/world/world_110_120
+share/crossfire/maps/world/world_110_121
+share/crossfire/maps/world/world_110_122
+share/crossfire/maps/world/world_110_123
+share/crossfire/maps/world/world_110_124
+share/crossfire/maps/world/world_110_125
+share/crossfire/maps/world/world_110_126
+share/crossfire/maps/world/world_110_127
+share/crossfire/maps/world/world_110_128
+share/crossfire/maps/world/world_110_129
+share/crossfire/maps/world/world_111_100
+share/crossfire/maps/world/world_111_101
+share/crossfire/maps/world/world_111_102
+share/crossfire/maps/world/world_111_103
+share/crossfire/maps/world/world_111_104
+share/crossfire/maps/world/world_111_105
+share/crossfire/maps/world/world_111_106
+share/crossfire/maps/world/world_111_107
+share/crossfire/maps/world/world_111_108
+share/crossfire/maps/world/world_111_109
+share/crossfire/maps/world/world_111_110
+share/crossfire/maps/world/world_111_111
+share/crossfire/maps/world/world_111_112
+share/crossfire/maps/world/world_111_113
+share/crossfire/maps/world/world_111_114
+share/crossfire/maps/world/world_111_115
+share/crossfire/maps/world/world_111_116
+share/crossfire/maps/world/world_111_117
+share/crossfire/maps/world/world_111_118
+share/crossfire/maps/world/world_111_119
+share/crossfire/maps/world/world_111_120
+share/crossfire/maps/world/world_111_121
+share/crossfire/maps/world/world_111_122
+share/crossfire/maps/world/world_111_123
+share/crossfire/maps/world/world_111_124
+share/crossfire/maps/world/world_111_125
+share/crossfire/maps/world/world_111_126
+share/crossfire/maps/world/world_111_127
+share/crossfire/maps/world/world_111_128
+share/crossfire/maps/world/world_111_129
+share/crossfire/maps/world/world_112_100
+share/crossfire/maps/world/world_112_101
+share/crossfire/maps/world/world_112_102
+share/crossfire/maps/world/world_112_103
+share/crossfire/maps/world/world_112_104
+share/crossfire/maps/world/world_112_105
+share/crossfire/maps/world/world_112_106
+share/crossfire/maps/world/world_112_107
+share/crossfire/maps/world/world_112_108
+share/crossfire/maps/world/world_112_109
+share/crossfire/maps/world/world_112_110
+share/crossfire/maps/world/world_112_111
+share/crossfire/maps/world/world_112_112
+share/crossfire/maps/world/world_112_113
+share/crossfire/maps/world/world_112_114
+share/crossfire/maps/world/world_112_115
+share/crossfire/maps/world/world_112_116
+share/crossfire/maps/world/world_112_117
+share/crossfire/maps/world/world_112_118
+share/crossfire/maps/world/world_112_119
+share/crossfire/maps/world/world_112_120
+share/crossfire/maps/world/world_112_121
+share/crossfire/maps/world/world_112_122
+share/crossfire/maps/world/world_112_123
+share/crossfire/maps/world/world_112_124
+share/crossfire/maps/world/world_112_125
+share/crossfire/maps/world/world_112_126
+share/crossfire/maps/world/world_112_127
+share/crossfire/maps/world/world_112_128
+share/crossfire/maps/world/world_112_129
+share/crossfire/maps/world/world_113_100
+share/crossfire/maps/world/world_113_101
+share/crossfire/maps/world/world_113_102
+share/crossfire/maps/world/world_113_103
+share/crossfire/maps/world/world_113_104
+share/crossfire/maps/world/world_113_105
+share/crossfire/maps/world/world_113_106
+share/crossfire/maps/world/world_113_107
+share/crossfire/maps/world/world_113_108
+share/crossfire/maps/world/world_113_109
+share/crossfire/maps/world/world_113_110
+share/crossfire/maps/world/world_113_111
+share/crossfire/maps/world/world_113_112
+share/crossfire/maps/world/world_113_113
+share/crossfire/maps/world/world_113_114
+share/crossfire/maps/world/world_113_115
+share/crossfire/maps/world/world_113_116
+share/crossfire/maps/world/world_113_117
+share/crossfire/maps/world/world_113_118
+share/crossfire/maps/world/world_113_119
+share/crossfire/maps/world/world_113_120
+share/crossfire/maps/world/world_113_121
+share/crossfire/maps/world/world_113_122
+share/crossfire/maps/world/world_113_123
+share/crossfire/maps/world/world_113_124
+share/crossfire/maps/world/world_113_125
+share/crossfire/maps/world/world_113_126
+share/crossfire/maps/world/world_113_127
+share/crossfire/maps/world/world_113_128
+share/crossfire/maps/world/world_113_129
+share/crossfire/maps/world/world_114_100
+share/crossfire/maps/world/world_114_101
+share/crossfire/maps/world/world_114_102
+share/crossfire/maps/world/world_114_103
+share/crossfire/maps/world/world_114_104
+share/crossfire/maps/world/world_114_105
+share/crossfire/maps/world/world_114_106
+share/crossfire/maps/world/world_114_107
+share/crossfire/maps/world/world_114_108
+share/crossfire/maps/world/world_114_109
+share/crossfire/maps/world/world_114_110
+share/crossfire/maps/world/world_114_111
+share/crossfire/maps/world/world_114_112
+share/crossfire/maps/world/world_114_113
+share/crossfire/maps/world/world_114_114
+share/crossfire/maps/world/world_114_115
+share/crossfire/maps/world/world_114_116
+share/crossfire/maps/world/world_114_117
+share/crossfire/maps/world/world_114_118
+share/crossfire/maps/world/world_114_119
+share/crossfire/maps/world/world_114_120
+share/crossfire/maps/world/world_114_121
+share/crossfire/maps/world/world_114_122
+share/crossfire/maps/world/world_114_123
+share/crossfire/maps/world/world_114_124
+share/crossfire/maps/world/world_114_125
+share/crossfire/maps/world/world_114_126
+share/crossfire/maps/world/world_114_127
+share/crossfire/maps/world/world_114_128
+share/crossfire/maps/world/world_114_129
+share/crossfire/maps/world/world_115_100
+share/crossfire/maps/world/world_115_101
+share/crossfire/maps/world/world_115_102
+share/crossfire/maps/world/world_115_103
+share/crossfire/maps/world/world_115_104
+share/crossfire/maps/world/world_115_105
+share/crossfire/maps/world/world_115_106
+share/crossfire/maps/world/world_115_107
+share/crossfire/maps/world/world_115_108
+share/crossfire/maps/world/world_115_109
+share/crossfire/maps/world/world_115_110
+share/crossfire/maps/world/world_115_111
+share/crossfire/maps/world/world_115_112
+share/crossfire/maps/world/world_115_113
+share/crossfire/maps/world/world_115_114
+share/crossfire/maps/world/world_115_115
+share/crossfire/maps/world/world_115_116
+share/crossfire/maps/world/world_115_117
+share/crossfire/maps/world/world_115_118
+share/crossfire/maps/world/world_115_119
+share/crossfire/maps/world/world_115_120
+share/crossfire/maps/world/world_115_121
+share/crossfire/maps/world/world_115_122
+share/crossfire/maps/world/world_115_123
+share/crossfire/maps/world/world_115_124
+share/crossfire/maps/world/world_115_125
+share/crossfire/maps/world/world_115_126
+share/crossfire/maps/world/world_115_127
+share/crossfire/maps/world/world_115_128
+share/crossfire/maps/world/world_115_129
+share/crossfire/maps/world/world_116_100
+share/crossfire/maps/world/world_116_101
+share/crossfire/maps/world/world_116_102
+share/crossfire/maps/world/world_116_103
+share/crossfire/maps/world/world_116_104
+share/crossfire/maps/world/world_116_105
+share/crossfire/maps/world/world_116_106
+share/crossfire/maps/world/world_116_107
+share/crossfire/maps/world/world_116_108
+share/crossfire/maps/world/world_116_109
+share/crossfire/maps/world/world_116_110
+share/crossfire/maps/world/world_116_111
+share/crossfire/maps/world/world_116_112
+share/crossfire/maps/world/world_116_113
+share/crossfire/maps/world/world_116_114
+share/crossfire/maps/world/world_116_115
+share/crossfire/maps/world/world_116_116
+share/crossfire/maps/world/world_116_117
+share/crossfire/maps/world/world_116_118
+share/crossfire/maps/world/world_116_119
+share/crossfire/maps/world/world_116_120
+share/crossfire/maps/world/world_116_121
+share/crossfire/maps/world/world_116_122
+share/crossfire/maps/world/world_116_123
+share/crossfire/maps/world/world_116_124
+share/crossfire/maps/world/world_116_125
+share/crossfire/maps/world/world_116_126
+share/crossfire/maps/world/world_116_127
+share/crossfire/maps/world/world_116_128
+share/crossfire/maps/world/world_116_129
+share/crossfire/maps/world/world_117_100
+share/crossfire/maps/world/world_117_101
+share/crossfire/maps/world/world_117_102
+share/crossfire/maps/world/world_117_103
+share/crossfire/maps/world/world_117_104
+share/crossfire/maps/world/world_117_105
+share/crossfire/maps/world/world_117_106
+share/crossfire/maps/world/world_117_107
+share/crossfire/maps/world/world_117_108
+share/crossfire/maps/world/world_117_109
+share/crossfire/maps/world/world_117_110
+share/crossfire/maps/world/world_117_111
+share/crossfire/maps/world/world_117_112
+share/crossfire/maps/world/world_117_113
+share/crossfire/maps/world/world_117_114
+share/crossfire/maps/world/world_117_115
+share/crossfire/maps/world/world_117_116
+share/crossfire/maps/world/world_117_117
+share/crossfire/maps/world/world_117_118
+share/crossfire/maps/world/world_117_119
+share/crossfire/maps/world/world_117_120
+share/crossfire/maps/world/world_117_121
+share/crossfire/maps/world/world_117_122
+share/crossfire/maps/world/world_117_123
+share/crossfire/maps/world/world_117_124
+share/crossfire/maps/world/world_117_125
+share/crossfire/maps/world/world_117_126
+share/crossfire/maps/world/world_117_127
+share/crossfire/maps/world/world_117_128
+share/crossfire/maps/world/world_117_129
+share/crossfire/maps/world/world_118_100
+share/crossfire/maps/world/world_118_101
+share/crossfire/maps/world/world_118_102
+share/crossfire/maps/world/world_118_103
+share/crossfire/maps/world/world_118_104
+share/crossfire/maps/world/world_118_105
+share/crossfire/maps/world/world_118_106
+share/crossfire/maps/world/world_118_107
+share/crossfire/maps/world/world_118_108
+share/crossfire/maps/world/world_118_109
+share/crossfire/maps/world/world_118_110
+share/crossfire/maps/world/world_118_111
+share/crossfire/maps/world/world_118_112
+share/crossfire/maps/world/world_118_113
+share/crossfire/maps/world/world_118_114
+share/crossfire/maps/world/world_118_115
+share/crossfire/maps/world/world_118_116
+share/crossfire/maps/world/world_118_117
+share/crossfire/maps/world/world_118_118
+share/crossfire/maps/world/world_118_119
+share/crossfire/maps/world/world_118_120
+share/crossfire/maps/world/world_118_121
+share/crossfire/maps/world/world_118_122
+share/crossfire/maps/world/world_118_123
+share/crossfire/maps/world/world_118_124
+share/crossfire/maps/world/world_118_125
+share/crossfire/maps/world/world_118_126
+share/crossfire/maps/world/world_118_127
+share/crossfire/maps/world/world_118_128
+share/crossfire/maps/world/world_118_129
+share/crossfire/maps/world/world_119_100
+share/crossfire/maps/world/world_119_101
+share/crossfire/maps/world/world_119_102
+share/crossfire/maps/world/world_119_103
+share/crossfire/maps/world/world_119_104
+share/crossfire/maps/world/world_119_105
+share/crossfire/maps/world/world_119_106
+share/crossfire/maps/world/world_119_107
+share/crossfire/maps/world/world_119_108
+share/crossfire/maps/world/world_119_109
+share/crossfire/maps/world/world_119_110
+share/crossfire/maps/world/world_119_111
+share/crossfire/maps/world/world_119_112
+share/crossfire/maps/world/world_119_113
+share/crossfire/maps/world/world_119_114
+share/crossfire/maps/world/world_119_115
+share/crossfire/maps/world/world_119_116
+share/crossfire/maps/world/world_119_117
+share/crossfire/maps/world/world_119_118
+share/crossfire/maps/world/world_119_119
+share/crossfire/maps/world/world_119_120
+share/crossfire/maps/world/world_119_121
+share/crossfire/maps/world/world_119_122
+share/crossfire/maps/world/world_119_123
+share/crossfire/maps/world/world_119_124
+share/crossfire/maps/world/world_119_125
+share/crossfire/maps/world/world_119_126
+share/crossfire/maps/world/world_119_127
+share/crossfire/maps/world/world_119_128
+share/crossfire/maps/world/world_119_129
+share/crossfire/maps/world/world_120_100
+share/crossfire/maps/world/world_120_101
+share/crossfire/maps/world/world_120_102
+share/crossfire/maps/world/world_120_103
+share/crossfire/maps/world/world_120_104
+share/crossfire/maps/world/world_120_105
+share/crossfire/maps/world/world_120_106
+share/crossfire/maps/world/world_120_107
+share/crossfire/maps/world/world_120_108
+share/crossfire/maps/world/world_120_109
+share/crossfire/maps/world/world_120_110
+share/crossfire/maps/world/world_120_111
+share/crossfire/maps/world/world_120_112
+share/crossfire/maps/world/world_120_113
+share/crossfire/maps/world/world_120_114
+share/crossfire/maps/world/world_120_115
+share/crossfire/maps/world/world_120_116
+share/crossfire/maps/world/world_120_117
+share/crossfire/maps/world/world_120_118
+share/crossfire/maps/world/world_120_119
+share/crossfire/maps/world/world_120_120
+share/crossfire/maps/world/world_120_121
+share/crossfire/maps/world/world_120_122
+share/crossfire/maps/world/world_120_123
+share/crossfire/maps/world/world_120_124
+share/crossfire/maps/world/world_120_125
+share/crossfire/maps/world/world_120_126
+share/crossfire/maps/world/world_120_127
+share/crossfire/maps/world/world_120_128
+share/crossfire/maps/world/world_120_129
+share/crossfire/maps/world/world_121_100
+share/crossfire/maps/world/world_121_101
+share/crossfire/maps/world/world_121_102
+share/crossfire/maps/world/world_121_103
+share/crossfire/maps/world/world_121_104
+share/crossfire/maps/world/world_121_105
+share/crossfire/maps/world/world_121_106
+share/crossfire/maps/world/world_121_107
+share/crossfire/maps/world/world_121_108
+share/crossfire/maps/world/world_121_109
+share/crossfire/maps/world/world_121_110
+share/crossfire/maps/world/world_121_111
+share/crossfire/maps/world/world_121_112
+share/crossfire/maps/world/world_121_113
+share/crossfire/maps/world/world_121_114
+share/crossfire/maps/world/world_121_115
+share/crossfire/maps/world/world_121_116
+share/crossfire/maps/world/world_121_117
+share/crossfire/maps/world/world_121_118
+share/crossfire/maps/world/world_121_119
+share/crossfire/maps/world/world_121_120
+share/crossfire/maps/world/world_121_121
+share/crossfire/maps/world/world_121_122
+share/crossfire/maps/world/world_121_123
+share/crossfire/maps/world/world_121_124
+share/crossfire/maps/world/world_121_125
+share/crossfire/maps/world/world_121_126
+share/crossfire/maps/world/world_121_127
+share/crossfire/maps/world/world_121_128
+share/crossfire/maps/world/world_121_129
+share/crossfire/maps/world/world_122_100
+share/crossfire/maps/world/world_122_101
+share/crossfire/maps/world/world_122_102
+share/crossfire/maps/world/world_122_103
+share/crossfire/maps/world/world_122_104
+share/crossfire/maps/world/world_122_105
+share/crossfire/maps/world/world_122_106
+share/crossfire/maps/world/world_122_107
+share/crossfire/maps/world/world_122_108
+share/crossfire/maps/world/world_122_109
+share/crossfire/maps/world/world_122_110
+share/crossfire/maps/world/world_122_111
+share/crossfire/maps/world/world_122_112
+share/crossfire/maps/world/world_122_113
+share/crossfire/maps/world/world_122_114
+share/crossfire/maps/world/world_122_115
+share/crossfire/maps/world/world_122_116
+share/crossfire/maps/world/world_122_117
+share/crossfire/maps/world/world_122_118
+share/crossfire/maps/world/world_122_119
+share/crossfire/maps/world/world_122_120
+share/crossfire/maps/world/world_122_121
+share/crossfire/maps/world/world_122_122
+share/crossfire/maps/world/world_122_123
+share/crossfire/maps/world/world_122_124
+share/crossfire/maps/world/world_122_125
+share/crossfire/maps/world/world_122_126
+share/crossfire/maps/world/world_122_127
+share/crossfire/maps/world/world_122_128
+share/crossfire/maps/world/world_122_129
+share/crossfire/maps/world/world_123_100
+share/crossfire/maps/world/world_123_101
+share/crossfire/maps/world/world_123_102
+share/crossfire/maps/world/world_123_103
+share/crossfire/maps/world/world_123_104
+share/crossfire/maps/world/world_123_105
+share/crossfire/maps/world/world_123_106
+share/crossfire/maps/world/world_123_107
+share/crossfire/maps/world/world_123_108
+share/crossfire/maps/world/world_123_109
+share/crossfire/maps/world/world_123_110
+share/crossfire/maps/world/world_123_111
+share/crossfire/maps/world/world_123_112
+share/crossfire/maps/world/world_123_113
+share/crossfire/maps/world/world_123_114
+share/crossfire/maps/world/world_123_115
+share/crossfire/maps/world/world_123_116
+share/crossfire/maps/world/world_123_117
+share/crossfire/maps/world/world_123_118
+share/crossfire/maps/world/world_123_119
+share/crossfire/maps/world/world_123_120
+share/crossfire/maps/world/world_123_121
+share/crossfire/maps/world/world_123_122
+share/crossfire/maps/world/world_123_123
+share/crossfire/maps/world/world_123_124
+share/crossfire/maps/world/world_123_125
+share/crossfire/maps/world/world_123_126
+share/crossfire/maps/world/world_123_127
+share/crossfire/maps/world/world_123_128
+share/crossfire/maps/world/world_123_129
+share/crossfire/maps/world/world_124_100
+share/crossfire/maps/world/world_124_101
+share/crossfire/maps/world/world_124_102
+share/crossfire/maps/world/world_124_103
+share/crossfire/maps/world/world_124_104
+share/crossfire/maps/world/world_124_105
+share/crossfire/maps/world/world_124_106
+share/crossfire/maps/world/world_124_107
+share/crossfire/maps/world/world_124_108
+share/crossfire/maps/world/world_124_109
+share/crossfire/maps/world/world_124_110
+share/crossfire/maps/world/world_124_111
+share/crossfire/maps/world/world_124_112
+share/crossfire/maps/world/world_124_113
+share/crossfire/maps/world/world_124_114
+share/crossfire/maps/world/world_124_115
+share/crossfire/maps/world/world_124_116
+share/crossfire/maps/world/world_124_117
+share/crossfire/maps/world/world_124_118
+share/crossfire/maps/world/world_124_119
+share/crossfire/maps/world/world_124_120
+share/crossfire/maps/world/world_124_121
+share/crossfire/maps/world/world_124_122
+share/crossfire/maps/world/world_124_123
+share/crossfire/maps/world/world_124_124
+share/crossfire/maps/world/world_124_125
+share/crossfire/maps/world/world_124_126
+share/crossfire/maps/world/world_124_127
+share/crossfire/maps/world/world_124_128
+share/crossfire/maps/world/world_124_129
+share/crossfire/maps/world/world_125_100
+share/crossfire/maps/world/world_125_101
+share/crossfire/maps/world/world_125_102
+share/crossfire/maps/world/world_125_103
+share/crossfire/maps/world/world_125_104
+share/crossfire/maps/world/world_125_105
+share/crossfire/maps/world/world_125_106
+share/crossfire/maps/world/world_125_107
+share/crossfire/maps/world/world_125_108
+share/crossfire/maps/world/world_125_109
+share/crossfire/maps/world/world_125_110
+share/crossfire/maps/world/world_125_111
+share/crossfire/maps/world/world_125_112
+share/crossfire/maps/world/world_125_113
+share/crossfire/maps/world/world_125_114
+share/crossfire/maps/world/world_125_115
+share/crossfire/maps/world/world_125_116
+share/crossfire/maps/world/world_125_117
+share/crossfire/maps/world/world_125_118
+share/crossfire/maps/world/world_125_119
+share/crossfire/maps/world/world_125_120
+share/crossfire/maps/world/world_125_121
+share/crossfire/maps/world/world_125_122
+share/crossfire/maps/world/world_125_123
+share/crossfire/maps/world/world_125_124
+share/crossfire/maps/world/world_125_125
+share/crossfire/maps/world/world_125_126
+share/crossfire/maps/world/world_125_127
+share/crossfire/maps/world/world_125_128
+share/crossfire/maps/world/world_125_129
+share/crossfire/maps/world/world_126_100
+share/crossfire/maps/world/world_126_101
+share/crossfire/maps/world/world_126_102
+share/crossfire/maps/world/world_126_103
+share/crossfire/maps/world/world_126_104
+share/crossfire/maps/world/world_126_105
+share/crossfire/maps/world/world_126_106
+share/crossfire/maps/world/world_126_107
+share/crossfire/maps/world/world_126_108
+share/crossfire/maps/world/world_126_109
+share/crossfire/maps/world/world_126_110
+share/crossfire/maps/world/world_126_111
+share/crossfire/maps/world/world_126_112
+share/crossfire/maps/world/world_126_113
+share/crossfire/maps/world/world_126_114
+share/crossfire/maps/world/world_126_115
+share/crossfire/maps/world/world_126_116
+share/crossfire/maps/world/world_126_117
+share/crossfire/maps/world/world_126_118
+share/crossfire/maps/world/world_126_119
+share/crossfire/maps/world/world_126_120
+share/crossfire/maps/world/world_126_121
+share/crossfire/maps/world/world_126_122
+share/crossfire/maps/world/world_126_123
+share/crossfire/maps/world/world_126_124
+share/crossfire/maps/world/world_126_125
+share/crossfire/maps/world/world_126_126
+share/crossfire/maps/world/world_126_127
+share/crossfire/maps/world/world_126_128
+share/crossfire/maps/world/world_126_129
+share/crossfire/maps/world/world_127_100
+share/crossfire/maps/world/world_127_101
+share/crossfire/maps/world/world_127_102
+share/crossfire/maps/world/world_127_103
+share/crossfire/maps/world/world_127_104
+share/crossfire/maps/world/world_127_105
+share/crossfire/maps/world/world_127_106
+share/crossfire/maps/world/world_127_107
+share/crossfire/maps/world/world_127_108
+share/crossfire/maps/world/world_127_109
+share/crossfire/maps/world/world_127_110
+share/crossfire/maps/world/world_127_111
+share/crossfire/maps/world/world_127_112
+share/crossfire/maps/world/world_127_113
+share/crossfire/maps/world/world_127_114
+share/crossfire/maps/world/world_127_115
+share/crossfire/maps/world/world_127_116
+share/crossfire/maps/world/world_127_117
+share/crossfire/maps/world/world_127_118
+share/crossfire/maps/world/world_127_119
+share/crossfire/maps/world/world_127_120
+share/crossfire/maps/world/world_127_121
+share/crossfire/maps/world/world_127_122
+share/crossfire/maps/world/world_127_123
+share/crossfire/maps/world/world_127_124
+share/crossfire/maps/world/world_127_125
+share/crossfire/maps/world/world_127_126
+share/crossfire/maps/world/world_127_127
+share/crossfire/maps/world/world_127_128
+share/crossfire/maps/world/world_127_129
+share/crossfire/maps/world/world_128_100
+share/crossfire/maps/world/world_128_101
+share/crossfire/maps/world/world_128_102
+share/crossfire/maps/world/world_128_103
+share/crossfire/maps/world/world_128_104
+share/crossfire/maps/world/world_128_105
+share/crossfire/maps/world/world_128_106
+share/crossfire/maps/world/world_128_107
+share/crossfire/maps/world/world_128_108
+share/crossfire/maps/world/world_128_109
+share/crossfire/maps/world/world_128_110
+share/crossfire/maps/world/world_128_111
+share/crossfire/maps/world/world_128_112
+share/crossfire/maps/world/world_128_113
+share/crossfire/maps/world/world_128_114
+share/crossfire/maps/world/world_128_115
+share/crossfire/maps/world/world_128_116
+share/crossfire/maps/world/world_128_117
+share/crossfire/maps/world/world_128_118
+share/crossfire/maps/world/world_128_119
+share/crossfire/maps/world/world_128_120
+share/crossfire/maps/world/world_128_121
+share/crossfire/maps/world/world_128_122
+share/crossfire/maps/world/world_128_123
+share/crossfire/maps/world/world_128_124
+share/crossfire/maps/world/world_128_125
+share/crossfire/maps/world/world_128_126
+share/crossfire/maps/world/world_128_127
+share/crossfire/maps/world/world_128_128
+share/crossfire/maps/world/world_128_129
+share/crossfire/maps/world/world_129_100
+share/crossfire/maps/world/world_129_101
+share/crossfire/maps/world/world_129_102
+share/crossfire/maps/world/world_129_103
+share/crossfire/maps/world/world_129_104
+share/crossfire/maps/world/world_129_105
+share/crossfire/maps/world/world_129_106
+share/crossfire/maps/world/world_129_107
+share/crossfire/maps/world/world_129_108
+share/crossfire/maps/world/world_129_109
+share/crossfire/maps/world/world_129_110
+share/crossfire/maps/world/world_129_111
+share/crossfire/maps/world/world_129_112
+share/crossfire/maps/world/world_129_113
+share/crossfire/maps/world/world_129_114
+share/crossfire/maps/world/world_129_115
+share/crossfire/maps/world/world_129_116
+share/crossfire/maps/world/world_129_117
+share/crossfire/maps/world/world_129_118
+share/crossfire/maps/world/world_129_119
+share/crossfire/maps/world/world_129_120
+share/crossfire/maps/world/world_129_121
+share/crossfire/maps/world/world_129_122
+share/crossfire/maps/world/world_129_123
+share/crossfire/maps/world/world_129_124
+share/crossfire/maps/world/world_129_125
+share/crossfire/maps/world/world_129_126
+share/crossfire/maps/world/world_129_127
+share/crossfire/maps/world/world_129_128
+share/crossfire/maps/world/world_129_129
+share/crossfire/materials
 share/crossfire/messages
 share/crossfire/races
 share/crossfire/treasures
@@ -1838,6 +2584,7 @@ share/crossfire/wizhelp/dumpfriendlyobjects
 share/crossfire/wizhelp/forget_spell
 share/crossfire/wizhelp/free
 share/crossfire/wizhelp/goto
+share/crossfire/wizhelp/hide
 share/crossfire/wizhelp/invisible
 share/crossfire/wizhelp/kick
 share/crossfire/wizhelp/learn_special_prayer
@@ -1870,51 +2617,28 @@ var/crossfire/highscore
 var/crossfire/temp.maps
 @dirrm share/crossfire/wizhelp
 @dirrm share/crossfire/maps/world
+@dirrm share/crossfire/maps/wolfsburg/volcano
 @dirrm share/crossfire/maps/wolfsburg/tt
+@dirrm share/crossfire/maps/wolfsburg/temple
 @dirrm share/crossfire/maps/wolfsburg/magara/tower2
 @dirrm share/crossfire/maps/wolfsburg/magara/tower1
 @dirrm share/crossfire/maps/wolfsburg/magara/cellar1
 @dirrm share/crossfire/maps/wolfsburg/magara/castle
 @dirrm share/crossfire/maps/wolfsburg/magara
+@dirrm share/crossfire/maps/wolfsburg/guilds/damned_heretics
+@dirrm share/crossfire/maps/wolfsburg/guilds
+@dirrm share/crossfire/maps/wolfsburg/eeur
+@dirrm share/crossfire/maps/wolfsburg/dungeons
 @dirrm share/crossfire/maps/wolfsburg
-@dirrm share/crossfire/maps/unlinked/tomble/world
-@dirrm share/crossfire/maps/unlinked/tomble/wall-picks
-@dirrm share/crossfire/maps/unlinked/tomble/styles/specialmaps
-@dirrm share/crossfire/maps/unlinked/tomble/styles
-@dirrm share/crossfire/maps/unlinked/tomble/squishi/ug
-@dirrm share/crossfire/maps/unlinked/tomble/squishi/stringy
-@dirrm share/crossfire/maps/unlinked/tomble/squishi/market
-@dirrm share/crossfire/maps/unlinked/tomble/squishi/main-structures
-@dirrm share/crossfire/maps/unlinked/tomble/squishi/inns
-@dirrm share/crossfire/maps/unlinked/tomble/squishi
-@dirrm share/crossfire/maps/unlinked/tomble/prototypes
-@dirrm share/crossfire/maps/unlinked/tomble/picks
-@dirrm share/crossfire/maps/unlinked/tomble/p.tui
-@dirrm share/crossfire/maps/unlinked/tomble/ex-scorn
-@dirrm share/crossfire/maps/unlinked/tomble/ex-navar
-@dirrm share/crossfire/maps/unlinked/tomble/candy-apple
-@dirrm share/crossfire/maps/unlinked/tomble
-@dirrm share/crossfire/maps/unlinked/ImperialPost/python
-@dirrm share/crossfire/maps/unlinked/ImperialPost/local/ImperialPost
-@dirrm share/crossfire/maps/unlinked/ImperialPost/local
-@dirrm share/crossfire/maps/unlinked/ImperialPost
-@dirrm share/crossfire/maps/unlinked/Greyshield
-@dirrm share/crossfire/maps/unlinked
-@dirrm share/crossfire/maps/todd/aljwaf
-@dirrm share/crossfire/maps/todd
-@dirrm share/crossfire/maps/thomas/sisters
-@dirrm share/crossfire/maps/thomas
-@dirrm share/crossfire/maps/test/anthony
-@dirrm share/crossfire/maps/test
-@dirrm share/crossfire/maps/terrain
+@dirrm share/crossfire/maps/under_world
 @dirrm share/crossfire/maps/styles/wallstyles
 @dirrm share/crossfire/maps/styles/treasurestyles
 @dirrm share/crossfire/maps/styles/trapstyles
-@dirrm share/crossfire/maps/styles/specialstyles
 @dirrm share/crossfire/maps/styles/specialmaps
 @dirrm share/crossfire/maps/styles/monsterstyles/wyvern
 @dirrm share/crossfire/maps/styles/monsterstyles/vegetable
 @dirrm share/crossfire/maps/styles/monsterstyles/undead
+@dirrm share/crossfire/maps/styles/monsterstyles/sylvan
 @dirrm share/crossfire/maps/styles/monsterstyles/subterranean
 @dirrm share/crossfire/maps/styles/monsterstyles/orc
 @dirrm share/crossfire/maps/styles/monsterstyles/nethack
@@ -1941,7 +2665,27 @@ var/crossfire/temp.maps
 @dirrm share/crossfire/maps/styles/doorstyles
 @dirrm share/crossfire/maps/styles/decorstyles
 @dirrm share/crossfire/maps/styles
-@dirrm share/crossfire/maps/skud
+@dirrm share/crossfire/maps/sisters
+@dirrm share/crossfire/maps/scorn/towers
+@dirrm share/crossfire/maps/scorn/temples
+@dirrm share/crossfire/maps/scorn/taverns
+@dirrm share/crossfire/maps/scorn/shops
+@dirrm share/crossfire/maps/scorn/peterm
+@dirrm share/crossfire/maps/scorn/oldcity
+@dirrm share/crossfire/maps/scorn/mlab
+@dirrm share/crossfire/maps/scorn/misc/battle_arena
+@dirrm share/crossfire/maps/scorn/misc
+@dirrm share/crossfire/maps/scorn/mansion
+@dirrm share/crossfire/maps/scorn/magara
+@dirrm share/crossfire/maps/scorn/kar
+@dirrm share/crossfire/maps/scorn/houses
+@dirrm share/crossfire/maps/scorn/guilds/mailed_fist
+@dirrm share/crossfire/maps/scorn/guilds
+@dirrm share/crossfire/maps/scorn/dtabb
+@dirrm share/crossfire/maps/scorn/cannery
+@dirrm share/crossfire/maps/scorn/apartment
+@dirrm share/crossfire/maps/scorn/anthony
+@dirrm share/crossfire/maps/scorn
 @dirrm share/crossfire/maps/santo_dominion/shops
 @dirrm share/crossfire/maps/santo_dominion/mudman
 @dirrm share/crossfire/maps/santo_dominion/magara/well
@@ -1951,7 +2695,35 @@ var/crossfire/temp.maps
 @dirrm share/crossfire/maps/santo_dominion/magara
 @dirrm share/crossfire/maps/santo_dominion/lord_byron
 @dirrm share/crossfire/maps/santo_dominion/houses
+@dirrm share/crossfire/maps/santo_dominion/guilds/drunken_barbarian
+@dirrm share/crossfire/maps/santo_dominion/guilds
+@dirrm share/crossfire/maps/santo_dominion/espen
+@dirrm share/crossfire/maps/santo_dominion/eeur
 @dirrm share/crossfire/maps/santo_dominion
+@dirrm share/crossfire/maps/quests/todd/aljwaf
+@dirrm share/crossfire/maps/quests/todd
+@dirrm share/crossfire/maps/quests/skud
+@dirrm share/crossfire/maps/quests/peterm/temple
+@dirrm share/crossfire/maps/quests/peterm/quests
+@dirrm share/crossfire/maps/quests/peterm/FireTemple
+@dirrm share/crossfire/maps/quests/peterm/DragonQuest
+@dirrm share/crossfire/maps/quests/peterm/Demonology
+@dirrm share/crossfire/maps/quests/peterm/CTower
+@dirrm share/crossfire/maps/quests/peterm
+@dirrm share/crossfire/maps/quests/mcz
+@dirrm share/crossfire/maps/quests/mak/unnatural
+@dirrm share/crossfire/maps/quests/mak/undead
+@dirrm share/crossfire/maps/quests/mak/troll_cave
+@dirrm share/crossfire/maps/quests/mak/mansion
+@dirrm share/crossfire/maps/quests/mak/giant
+@dirrm share/crossfire/maps/quests/mak/dragons
+@dirrm share/crossfire/maps/quests/mak/chaos
+@dirrm share/crossfire/maps/quests/mak
+@dirrm share/crossfire/maps/quests/hendel
+@dirrm share/crossfire/maps/quests/cd
+@dirrm share/crossfire/maps/quests
+@dirrm share/crossfire/maps/python/casino
+@dirrm share/crossfire/maps/python/IPO
 @dirrm share/crossfire/maps/python
 @dirrm share/crossfire/maps/pup_land/s_f
 @dirrm share/crossfire/maps/pup_land/ruin_barbarian
@@ -1976,6 +2748,9 @@ var/crossfire/temp.maps
 @dirrm share/crossfire/maps/pup_land/lone_town
 @dirrm share/crossfire/maps/pup_land/kurte
 @dirrm share/crossfire/maps/pup_land/jk
+@dirrm share/crossfire/maps/pup_land/guilds/purple_butterfly
+@dirrm share/crossfire/maps/pup_land/guilds/laughing_skull
+@dirrm share/crossfire/maps/pup_land/guilds
 @dirrm share/crossfire/maps/pup_land/cave_weapon
 @dirrm share/crossfire/maps/pup_land/castle_eureca
 @dirrm share/crossfire/maps/pup_land/begin
@@ -1989,106 +2764,56 @@ var/crossfire/temp.maps
 @dirrm share/crossfire/maps/pup_land/ancient/castle
 @dirrm share/crossfire/maps/pup_land/ancient
 @dirrm share/crossfire/maps/pup_land
-@dirrm share/crossfire/maps/peterm/temple
-@dirrm share/crossfire/maps/peterm/quests
-@dirrm share/crossfire/maps/peterm/FireTemple
-@dirrm share/crossfire/maps/peterm/DragonQuest
-@dirrm share/crossfire/maps/peterm/Demonology
-@dirrm share/crossfire/maps/peterm/CTower
-@dirrm share/crossfire/maps/peterm
+@dirrm share/crossfire/maps/port_joseph/town
+@dirrm share/crossfire/maps/port_joseph/pirates
+@dirrm share/crossfire/maps/port_joseph/goblin
+@dirrm share/crossfire/maps/port_joseph
 @dirrm share/crossfire/maps/navar_city/tower
 @dirrm share/crossfire/maps/navar_city/magara/houses
 @dirrm share/crossfire/maps/navar_city/magara
 @dirrm share/crossfire/maps/navar_city/light
 @dirrm share/crossfire/maps/navar_city/illusion
+@dirrm share/crossfire/maps/navar_city/dreaming_sage
 @dirrm share/crossfire/maps/navar_city
-@dirrm share/crossfire/maps/mcz
-@dirrm share/crossfire/maps/mak/unnatural
-@dirrm share/crossfire/maps/mak/undead
-@dirrm share/crossfire/maps/mak/troll_cave
-@dirrm share/crossfire/maps/mak/mansion
-@dirrm share/crossfire/maps/mak/giant
-@dirrm share/crossfire/maps/mak/dragons
-@dirrm share/crossfire/maps/mak/chaos
-@dirrm share/crossfire/maps/mak/academy.crap
-@dirrm share/crossfire/maps/mak
-@dirrm share/crossfire/maps/langley/town
-@dirrm share/crossfire/maps/langley/pirates
-@dirrm share/crossfire/maps/langley/goblin
-@dirrm share/crossfire/maps/langley
-@dirrm share/crossfire/maps/kar
-@dirrm share/crossfire/maps/hendel
-@dirrm share/crossfire/maps/guilds/smoking_cauldron
-@dirrm share/crossfire/maps/guilds/purple_butterfly
-@dirrm share/crossfire/maps/guilds/poisoned_dagger
-@dirrm share/crossfire/maps/guilds/mailed_fist
-@dirrm share/crossfire/maps/guilds/laughing_skull
-@dirrm share/crossfire/maps/guilds/drunken_barbarian
-@dirrm share/crossfire/maps/guilds/dreaming_sage
-@dirrm share/crossfire/maps/guilds/damned_heretics
-@dirrm share/crossfire/maps/guilds/black_shield
-@dirrm share/crossfire/maps/guilds
-@dirrm share/crossfire/maps/good
-@dirrm share/crossfire/maps/generic
-@dirrm share/crossfire/maps/espen
-@dirrm share/crossfire/maps/esben
-@dirrm share/crossfire/maps/ender/temple
-@dirrm share/crossfire/maps/ender/pisland
-@dirrm share/crossfire/maps/ender/island
-@dirrm share/crossfire/maps/ender
-@dirrm share/crossfire/maps/eeur
+@dirrm share/crossfire/maps/marksel
+@dirrm share/crossfire/maps/lake_country/snake_pit
+@dirrm share/crossfire/maps/lake_country/small_buildings
+@dirrm share/crossfire/maps/lake_country/shops
+@dirrm share/crossfire/maps/lake_country/marsh
+@dirrm share/crossfire/maps/lake_country/ebony
+@dirrm share/crossfire/maps/lake_country/Sunset_Lake
+@dirrm share/crossfire/maps/lake_country/RETower
+@dirrm share/crossfire/maps/lake_country/Mwizard
+@dirrm share/crossfire/maps/lake_country/Butakis/houses
+@dirrm share/crossfire/maps/lake_country/Butakis
+@dirrm share/crossfire/maps/lake_country
+@dirrm share/crossfire/maps/inn_and_outpost
+@dirrm share/crossfire/maps/euthville
 @dirrm share/crossfire/maps/editor/walls
 @dirrm share/crossfire/maps/editor/picks
 @dirrm share/crossfire/maps/editor
-@dirrm share/crossfire/maps/dtabb/volcano
-@dirrm share/crossfire/maps/dtabb/undead
-@dirrm share/crossfire/maps/dtabb/town
-@dirrm share/crossfire/maps/dtabb/quest
-@dirrm share/crossfire/maps/dtabb/lynn
-@dirrm share/crossfire/maps/dtabb/darcap
-@dirrm share/crossfire/maps/dtabb/caterham/town
-@dirrm share/crossfire/maps/dtabb/caterham/temple
-@dirrm share/crossfire/maps/dtabb/caterham/circus
-@dirrm share/crossfire/maps/dtabb/caterham
-@dirrm share/crossfire/maps/dtabb/castle
-@dirrm share/crossfire/maps/dtabb
+@dirrm share/crossfire/maps/dungeons/hut
+@dirrm share/crossfire/maps/dungeons/grukks
+@dirrm share/crossfire/maps/dungeons
 @dirrm share/crossfire/maps/dragonisland
-@dirrm share/crossfire/maps/destiny/elcyon
-@dirrm share/crossfire/maps/destiny/circus
-@dirrm share/crossfire/maps/destiny/cave
-@dirrm share/crossfire/maps/destiny
-@dirrm share/crossfire/maps/city/towers
-@dirrm share/crossfire/maps/city/temples
-@dirrm share/crossfire/maps/city/taverns
-@dirrm share/crossfire/maps/city/shops
-@dirrm share/crossfire/maps/city/oldcity
-@dirrm share/crossfire/maps/city/misc/battle_arena
-@dirrm share/crossfire/maps/city/misc
-@dirrm share/crossfire/maps/city/mansion
-@dirrm share/crossfire/maps/city/magara
-@dirrm share/crossfire/maps/city/kar
-@dirrm share/crossfire/maps/city/houses
-@dirrm share/crossfire/maps/city/cannery
-@dirrm share/crossfire/maps/city/apartment
-@dirrm share/crossfire/maps/city/anthony
-@dirrm share/crossfire/maps/city
-@dirrm share/crossfire/maps/cd
-@dirrm share/crossfire/maps/brittany/Brest/Castle
-@dirrm share/crossfire/maps/brittany/Brest
-@dirrm share/crossfire/maps/brittany
-@dirrm share/crossfire/maps/asyvan
-@dirrm share/crossfire/maps/Lake_Country/snake_pit
-@dirrm share/crossfire/maps/Lake_Country/small_buildings
-@dirrm share/crossfire/maps/Lake_Country/shops
-@dirrm share/crossfire/maps/Lake_Country/quest
-@dirrm share/crossfire/maps/Lake_Country/marsh
-@dirrm share/crossfire/maps/Lake_Country/ebony
-@dirrm share/crossfire/maps/Lake_Country/Sunset_Lake
-@dirrm share/crossfire/maps/Lake_Country/RETower
-@dirrm share/crossfire/maps/Lake_Country/Mwizard
-@dirrm share/crossfire/maps/Lake_Country/Butakis/houses
-@dirrm share/crossfire/maps/Lake_Country/Butakis
-@dirrm share/crossfire/maps/Lake_Country
+@dirrm share/crossfire/maps/darcap/undead
+@dirrm share/crossfire/maps/darcap/town2
+@dirrm share/crossfire/maps/darcap/quest
+@dirrm share/crossfire/maps/darcap/lynn
+@dirrm share/crossfire/maps/darcap/darcap/guilds/smoking_cauldron
+@dirrm share/crossfire/maps/darcap/darcap/guilds/poisoned_dagger
+@dirrm share/crossfire/maps/darcap/darcap/guilds
+@dirrm share/crossfire/maps/darcap/darcap/circus
+@dirrm share/crossfire/maps/darcap/darcap
+@dirrm share/crossfire/maps/darcap/cave
+@dirrm share/crossfire/maps/darcap/castle
+@dirrm share/crossfire/maps/darcap
+@dirrm share/crossfire/maps/brest/brittany
+@dirrm share/crossfire/maps/brest/black_shield
+@dirrm share/crossfire/maps/brest/asyvan
+@dirrm share/crossfire/maps/brest/Castle
+@dirrm share/crossfire/maps/brest
+@dirrm share/crossfire/maps/Info
 @dirrm share/crossfire/maps
 @dirrm share/crossfire/help
 @dirrm share/crossfire/adm
