@@ -12,6 +12,7 @@
     SUBDIR += d1489
     SUBDIR += elm.language
     SUBDIR += fortuneru
+    SUBDIR += gaim
     SUBDIR += kde3-i18n
     SUBDIR += koffice-i18n
     SUBDIR += koi2koi
