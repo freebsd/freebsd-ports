@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	keychain
-PORTVERSION=	2.0.2
-PORTREVISION=	1
+PORTVERSION=	2.0.3
 CATEGORIES=	security
 MASTER_SITES=	${MASTER_SITE_SUNSITE}
 MASTER_SITE_SUBDIR=	distributions/gentoo/distfiles
@@ -24,10 +23,13 @@ NO_BUILD=	yes
 RUN_DEPENDS=	ssh-agent:${PORTSDIR}/security/openssh
 .endif
 
+MAN1=		keychain.1
+
 DOCS=		ChangeLog README
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/keychain ${PREFIX}/bin
+	${INSTALL_SCRIPT} ${WRKSRC}/keychain.1 ${PREFIX}/man/man1
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 .for file in ${DOCS}
