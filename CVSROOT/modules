@@ -5161,6 +5161,7 @@ linux-geepee32	ports/emulators/linux-geepee32
 linux-glib2	ports/devel/linux-glib2
 linux-gnomelibs	ports/x11/linux-gnomelibs
 linux-gtk	ports/x11-toolkits/linux-gtk
+linux-gtk-bluecurve-theme	ports/x11-themes/linux-gtk-bluecurve-theme
 linux-gtk2	ports/x11-toolkits/linux-gtk2
 linux-ibm-jdk13	ports/java/linux-ibm-jdk13
 linux-ibm-jdk14	ports/java/linux-ibm-jdk14
