@@ -24,10 +24,6 @@ USE_BISON=	yes
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} >= 502108
-BROKEN=		"Does not compile on FreeBSD >= 5.x"
-.endif
-
 post-patch:
 .if defined(WITHOUT_X11)
 	@${PATCH} ${PATCH_ARGS} < ${FILESDIR}/extra-patch-src::prelude.h
