@@ -26,4 +26,8 @@ USE_INC_LIBTOOL_VER=	13
 INSTALLS_SHLIB=	yes
 CONFIGURE_ARGS=	--enable-static
 
+post-patch:
+	@${REINPLACE_CMD} -e '/^SUBDIRS =/s/examples//' \
+		${WRKSRC}/Makefile.in
+
 .include <bsd.port.mk>
