@@ -1,0 +1,7 @@
+bin/htexp
+bin/htexpini
+share/texmf/htexpformats/hlatex.fmt
+share/texmf/htexpformats/tex.poo
+@dirrm share/texmf/htexpformats
+@exec env PATH=%D/bin:$PATH %D/bin/texhash
+@unexec env PATH=%D/bin:$PATH %D/bin/texhash
