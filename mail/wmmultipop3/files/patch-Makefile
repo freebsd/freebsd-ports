@@ -1,6 +1,6 @@
---- wmmultipop3/Makefile.orig	Sat Sep 22 11:29:50 2001
-+++ wmmultipop3/Makefile	Fri Sep 28 16:36:39 2001
-@@ -1,16 +1,15 @@
+--- wmmultipop3/Makefile.orig	Sun May 26 13:43:33 2002
++++ wmmultipop3/Makefile	Sun May 26 19:40:43 2002
+@@ -1,14 +1,13 @@
 -LIBDIR = -L/usr/X11R6/lib
 +LIBDIR = -L${X11BASE}/lib
  LIBS   = -lXpm -lXext -lX11
@@ -10,14 +10,11 @@
  
  .c.o:
 -	cc -I/usr/X11R6/share/include $(FLAGS) -c -Wall $< -o $*.o
-+	$(CC) -I${X11BASE}/include -c $< -o $*.o
++	$(CC) -I${X11BASE}/include $(CFLAGS) -c -Wall $< -o $*.o
  
  wmmultipop3: $(OBJS) 
 -	cc $(FLAGS) -o wmmultipop3 $^ -lXext $(LIBDIR) $(LIBS)
-+	$(CC) -o wmmultipop3 $^ $(LIBDIR) $(LIBS)
++	$(CC) $(CFLAGS) -o wmmultipop3 $^ -lXext $(LIBDIR) $(LIBS)
  
--all:: wmpop3
-+all:: wmmultipop3
+ all:: wmmultipop3
  
- clean::
- 	for i in $(OBJS) ; do \

@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	wmmultipop3
-PORTVERSION=	0.7
+PORTVERSION=	0.8
 CATEGORIES=	mail windowmaker
 MASTER_SITES=	http://sumpan.campus.luth.se/software/wmmultipop3/
 DISTNAME=	wmMultiPop3-${PORTVERSION}
