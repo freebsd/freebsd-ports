@@ -1,0 +1,18 @@
+--- doc/Makefile.in.orig	Sat Aug 21 02:46:30 2004
++++ doc/Makefile.in	Sat Aug 21 03:00:56 2004
+@@ -84,13 +84,13 @@
+ 
+ install: auctex
+ 	-$(MKINSTALLDIRS) $(infodir)
+-	$(INSTALL_DATA) auctex $(infodir)
++	$(INSTALL_DATA) auctex $(infodir)/auctex.info
+ 	for x in auctex-*; do \
+ 	  if [ -r $$x ]; then \
+ 	    $(INSTALL_DATA) $$x $(infodir) ; \
+ 	  fi; \
+ 	done
+-	-$(INSTALL_INFO)  --info-dir=$(infodir) auctex
++	$(INSTALL_INFO) $(infodir)/auctex.info $(infodir)/dir
+ 
+ clean:
+ 	rm -f *.dvi *.ps *.pdf *.aux *.cp *.fn *.info *.ky *.log *~ \#*\# \
