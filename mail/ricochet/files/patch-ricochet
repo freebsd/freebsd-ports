@@ -1,5 +1,5 @@
---- ricochet.orig	Wed Mar  6 06:10:54 2002
-+++ ricochet	Wed Mar  6 06:12:13 2002
+--- ricochet.old	Thu Feb  8 22:23:19 2001
++++ ricochet	Wed Mar  6 06:29:48 2002
 @@ -233,7 +233,15 @@
          unless ($hdata eq '') {
              $hdata =~ s/\n*$//; 
@@ -44,3 +44,13 @@
      grep { 
          if (_nslookup ($_)) { 
              $auth = 1;
+@@ -574,7 +595,8 @@
+ 
+ sub initialize { 
+     my $self = shift; 
+-    my $rc = "$ENV{RICOCHET}" || "$ENV{HOME}/.ricochet"; $rc .= "/ricochetrc"; 
++    my $rc = "$ENV{RICOCHET}" || -d "$ENV{HOME}/.ricochet" ? "$ENV{HOME}/.ricochet" : "%%PREFIX%%/share/ricochet";
++    $rc .= "/ricochetrc"; 
+     Carp::croak "** Ricochet configuration file $rc doesn't exist. Aborting.\n" unless -e $rc; 
+     open (RC, $rc); 
+     grep { 
