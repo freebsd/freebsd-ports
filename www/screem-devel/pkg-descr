@@ -1,0 +1,11 @@
+SCREEM (Site CReating and Editing EnvironMent) is a VERY nice
+GUI-based HTML editor, much like bluefish. It even imports bluefish
+functions from your bluefish installation!
+
+SCREEM makes a rather ideal GUI HTML editor, especially for 
+Unixheads like myself who like using CVS to manage source trees,
+as SCREEM has functional CVS interaction.
+
+WWW: http://www.screem.org/
+
+- Will <andrews@technologist.com>

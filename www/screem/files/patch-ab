@@ -1,0 +1,11 @@
+--- configure	Thu Oct 28 15:09:16 1999
++++ configure.new	Sat Nov 13 15:01:06 1999
+@@ -5686,7 +5686,7 @@
+   cat conftest.$ac_ext >&5
+   rm -rf conftest*
+   CATOBJEXT=.mo
+-		   DATADIRNAME=lib
++		   DATADIRNAME=share
+ fi
+ rm -f conftest*
+ 		INSTOBJEXT=.mo
