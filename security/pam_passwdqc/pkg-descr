@@ -1,0 +1,8 @@
+This PAM module validates passwords for resistance against password
+attacks. It examines passwords in the same way as cracking tools examine
+the password hash.
+
+WWW: http://www.openwall.com/passwdqc/
+
+- Dominic
+dominic_marks@btinternet.com

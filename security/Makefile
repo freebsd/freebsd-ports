@@ -167,6 +167,7 @@
     SUBDIR += pam_alreadyloggedin
     SUBDIR += pam_krb5
     SUBDIR += pam_ldap
+    SUBDIR += pam_passwdqc
     SUBDIR += pam_pwdfile
     SUBDIR += pam_smb
     SUBDIR += pam_ssh

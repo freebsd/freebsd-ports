@@ -1,0 +1,36 @@
+--- Makefile.orig	Fri Oct 12 18:09:30 2001
++++ Makefile	Sun Mar 31 22:49:43 2002
+@@ -2,13 +2,12 @@
+ # Copyright (c) 2000,2001 by Solar Designer. See LICENSE.
+ #
+ 
+-CC = gcc
+ LD = ld
+ RM = rm -f
+ MKDIR = mkdir -p
+ INSTALL = install
+-CFLAGS = -c -Wall -fPIC -DHAVE_SHADOW -O2
+-LDFLAGS = -s -lpam -lcrypt --shared
++CFLAGS += -c -Wall -fPIC
++LDFLAGS = -lpam -lcrypt -shared
+ LDFLAGS_SUN = -s -lpam -lcrypt -G
+ 
+ TITLE = pam_passwdqc
+@@ -20,15 +19,8 @@
+ PROJ = $(LIBSHARED)
+ OBJS = pam_passwdqc.o passwdqc_check.o passwdqc_random.o wordset_4k.o
+ 
+-all:
+-	if [ "`uname -s`" = "SunOS" ]; then \
+-		make LDFLAGS="$(LDFLAGS_SUN)" $(PROJ); \
+-	else \
+-		make $(PROJ); \
+-	fi
+-
+-$(LIBSHARED): $(OBJS)
+-	$(LD) $(LDFLAGS) $(OBJS) -o $(LIBSHARED)
++all: $(OBJS)
++	$(CC) $(OBJS) -o $(LIBSHARED) $(LDFLAGS)
+ 
+ .c.o:
+ 	$(CC) $(CFLAGS) $*.c
