@@ -117,22 +117,30 @@ share/gnome/pixmaps/mc/i-regular.png
 share/gnome/pixmaps/mc/i-sock.png
 share/gnome/pixmaps/mc/i-stalled.png
 share/gnome/pixmaps/mc/i-symlink.png
+share/gnome/pixmaps/mc/i-zipdisk.png
+share/gnome/pixmaps/mc/i-zipdisk2.png
 share/gnome/pixmaps/mc/makefile.xpm
 share/gnome/pixmaps/mc/sound.xpm
 share/gnome/pixmaps/mc/trash.xpm
+share/locale/ca/LC_MESSAGES/mc.mo
 share/locale/cs/LC_MESSAGES/mc.mo
 share/locale/da/LC_MESSAGES/mc.mo
 share/locale/de/LC_MESSAGES/mc.mo
 share/locale/es/LC_MESSAGES/mc.mo
 share/locale/es_ES/LC_MESSAGES/mc.mo
+share/locale/fi/LC_MESSAGES/mc.mo
 share/locale/fr/LC_MESSAGES/mc.mo
+share/locale/hu/LC_MESSAGES/mc.mo
 share/locale/it/LC_MESSAGES/mc.mo
+share/locale/ja/LC_MESSAGES/mc.mo
 share/locale/ko/LC_MESSAGES/mc.mo
 share/locale/no/LC_MESSAGES/mc.mo
 share/locale/pl/LC_MESSAGES/mc.mo
 share/locale/ro/LC_MESSAGES/mc.mo
 share/locale/ru/LC_MESSAGES/mc.mo
+share/locale/wa/LC_MESSAGES/mc.mo
+share/locale/zh_TW.Big5/LC_MESSAGES/mc.mo
 @dirrm share/gnome/pixmaps/mc
-@dirrm share/gnome/mc/desktop-scripts
-@dirrm share/gnome/mc/extfs
 @dirrm share/gnome/mc/syntax
+@dirrm share/gnome/mc/extfs
+@dirrm share/gnome/mc/desktop-scripts

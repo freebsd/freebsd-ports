@@ -1,15 +1,15 @@
---- Makefile.in.orig	Sat Apr 10 21:38:29 1999
-+++ Makefile.in	Thu May  6 08:59:05 1999
+--- Makefile.in.orig	Wed Jul  7 01:43:31 1999
++++ Makefile.in	Thu Jul 15 11:26:56 1999
 @@ -5,7 +5,7 @@
  @MCFGR@@MCF@
  
  foreigndirs=pc
--codedirs=vfs lib doc slang gtkedit edit src gnome new_icons icons idl syntax
+-codedirs=vfs lib doc doc-gnome doc-gnome/C doc-gnome/C/figs slang gtkedit edit src gnome new_icons icons idl syntax
 +codedirs=vfs lib gtkedit gnome new_icons icons idl syntax
  unixdirs=intl $(codedirs) @POSUB@
  alldirs=$(unixdirs) $(foreigndirs) 
  subdirs=$(alldirs)
-@@ -46,8 +46,6 @@
+@@ -45,8 +45,6 @@
  install: installdirs
  	@for I in $(unixdirs); do cd $$I; $(MAKE) DESTDIR=$(DESTDIR) $@ || exit 1; cd ..; done
  	$(INSTALL_DATA) $(srcdir)/FAQ $(DESTDIR)$(mclibdir)/FAQ
@@ -18,22 +18,24 @@
  	@echo "Please verify that the configuration values are correctly"
  	@echo "set in the mc.ext file in $(mclibdir)"
  
-@@ -58,9 +56,8 @@
+@@ -58,12 +56,9 @@
  installdirs:
  	$(MKINSTALLDIRS) $(DESTDIR)$(bindir) $(DESTDIR)$(mclibdir)
  	$(MKINSTALLDIRS) $(DESTDIR)$(mandir) $(DESTDIR)$(man8dir)
 -	$(MKINSTALLDIRS) $(DESTDIR)$(icondir) $(DESTDIR)$(suppbindir)
 -	$(MKINSTALLDIRS) $(DESTDIR)$(tidir) $(DESTDIR)$(extfsdir)
++	$(MKINSTALLDIRS) $(DESTDIR)$(icondir)
++	$(MKINSTALLDIRS) $(DESTDIR)$(extfsdir)
  	$(MKINSTALLDIRS) $(DESTDIR)$(idldir) $(DESTDIR)$(syntaxdir)
-+	$(MKINSTALLDIRS) $(DESTDIR)$(icondir) $(DESTDIR)$(extfsdir)
+-
+-mcfninstall:
+-	-/bin/sh ./mcfn_install
  
- mcfninstall:
- 	-/bin/sh ./mcfn_install
-
-
---- lib/Makefile.in.orig	Sat Apr 10 21:38:30 1999
-+++ lib/Makefile.in	Thu May  6 08:56:26 1999
-@@ -16,7 +16,6 @@
+ uninstall:
+ 	@for I in $(unixdirs); do cd $$I; $(MAKE) $@ || exit 1; cd ..; done
+--- lib/Makefile.in.orig	Tue Mar 30 08:34:36 1999
++++ lib/Makefile.in	Wed Apr  7 22:36:45 1999
+@@ -16,12 +16,10 @@
  LIBFILES_OUT = mc.ext mc-gnome.ext
  LIBFILES_CONST = mc.hint mc.lib mc.menu
  DESKTOP_FILES = startup.links README.desktop
@@ -41,7 +43,12 @@
  
  DISTLIB = \
  	$(LIBFILES_IN) 		\
-@@ -57,8 +56,6 @@
+ 	$(LIBFILES_CONST) 	\
+-	$(TIFILES) 		\
+ 	$(DESKTOP_FILES)	\
+ 	Makefile.in tdiff 	\
+ 	xnc.hlp ncurses.h 	\
+@@ -57,8 +55,6 @@
  	do $(INSTALL_DATA) $(srcdir)/$$I $(DESTDIR)$(mclibdir)/$$I; done
  	for I in $(LIBFILES_OUT); \
  	do $(INSTALL_DATA) $(builddir)/lib/$$I $(DESTDIR)$(mclibdir)/$$I; done
