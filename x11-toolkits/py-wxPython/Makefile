@@ -8,7 +8,8 @@
 PORTNAME=	py-wxPython
 PORTVERSION=	2.2.1
 CATEGORIES=	x11-toolkits python
-MASTER_SITES=	http://alldunn.com/wxPython/dist/
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR= wxpython
 DISTNAME=	wxPython-${PORTVERSION}
 
 MAINTAINER=	nectar@FreeBSD.ORG
