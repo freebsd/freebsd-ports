@@ -10,14 +10,15 @@ share/feh/fonts/black.style
 share/feh/fonts/menu.style
 share/feh/fonts/yudit.ttf
 share/feh/images/about.png
-share/feh/images/menubg.png
 share/feh/images/menubg_aluminium.png
 share/feh/images/menubg_aqua.png
 share/feh/images/menubg_black.png
 share/feh/images/menubg_britney.png
 share/feh/images/menubg_brushed.png
 share/feh/images/menubg_chrome.png
+share/feh/images/menubg_default.png
 share/feh/images/menubg_pastel.png
+share/feh/images/menubg_sky.png
 share/feh/images/menubg_wood.png
 @dirrm share/feh/images
 @dirrm share/feh/fonts
