@@ -8711,6 +8711,7 @@ xmms-kde	ports/audio/xmms-kde
 xmms-ladspa	ports/audio/xmms-ladspa
 xmms-liveice	ports/audio/xmms-liveice
 xmms-mad	ports/audio/xmms-mad
+xmms-mailnotify	ports/audio/xmms-mailnotify
 xmms-musepack	ports/audio/xmms-musepack
 xmms-nebulus	ports/graphics/xmms-nebulus
 xmms-osssurround	ports/audio/xmms-osssurround
