@@ -11,7 +11,7 @@ CATEGORIES=	textproc
 MASTER_SITES=	http://www.tei-c.org/Software/maketeidtd/
 DISTNAME=	${PORTNAME}
 
-MAINTAINER=	henrik.motakef@web.de
+MAINTAINER=	ports@henrik-motakef.de
 COMMENT=	Generate customized TEI-DTDs
 
 RUN_DEPENDS=	carthage:${PORTSDIR}/textproc/carthage \
