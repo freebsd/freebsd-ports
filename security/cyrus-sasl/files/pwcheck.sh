@@ -61,8 +61,8 @@ else
 		fi
 	fi
 
-	if [ -f ${prefix}/etc/rc.conf.d/cyrus_pwcheck" ]; then
-		. ${prefix}/etc/rc.conf.d/cyrus_pwcheck}"
+	if [ -f "${prefix}/etc/rc.conf.d/cyrus_pwcheck" ]; then
+		. ${prefix}/etc/rc.conf.d/cyrus_pwcheck
 	fi
 
 	if [ -z "${cyrus_pwcheck_enable}" ] ; then
