@@ -3,12 +3,12 @@
 # Date created:        23 March 1997
 # Whom:                Matthew Hunt <mph@pobox.com>
 #
-# $Id: Makefile,v 1.2 1997/03/29 12:29:24 max Exp $
+# $Id: Makefile,v 1.3 1998/04/17 23:26:31 mph Exp $
 #
 
 DISTNAME=	xprompt-1.4
 CATEGORIES=	x11
-MASTER_SITES=   ftp://ftp.nsg.bc.ca/pub/nsg/src/xprompt/
+MASTER_SITES=   http://www.freebsd.org/~mph/distfiles/
 
 MAINTAINER=	mph@freebsd.org
 
