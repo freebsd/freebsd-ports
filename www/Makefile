@@ -362,6 +362,7 @@
     SUBDIR += web500gw
     SUBDIR += webalizer
     SUBDIR += webcopy
+    SUBDIR += webcheck
     SUBDIR += webcrawl
     SUBDIR += webfs
     SUBDIR += webglimpse

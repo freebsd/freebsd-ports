@@ -1,33 +1,33 @@
-share/linbot/config.py
-share/linbot/debugio.py
-share/linbot/htmlparse.py
-share/linbot/httpcodes.py
-share/linbot/linbot.css
-share/linbot/linbot.py
-share/linbot/myUrlLib.py
-share/linbot/plugins/__init__.py
-share/linbot/plugins/badlinks.py
-share/linbot/plugins/external.py
-share/linbot/plugins/images.py
-share/linbot/plugins/notchkd.py
-share/linbot/plugins/notitles.py
-share/linbot/plugins/problems.py
-share/linbot/plugins/rptlib.py
-share/linbot/plugins/sitemap.py
-share/linbot/plugins/slow.py
-share/linbot/plugins/whatsnew.py
-share/linbot/plugins/whatsold.py
-share/linbot/robotparser.py
-share/linbot/schemes/__init__.py
-share/linbot/schemes/filelink.py
-share/linbot/schemes/ftplink.py
-share/linbot/schemes/httplink.py
-share/linbot/version.py
-%%PORTDOCS%%share/doc/linbot/USAGE
-%%PORTDOCS%%@dirrm share/doc/linbot/
-@unexec rm -f %D/share/linbot/*.py[co] %D/share/linbot/*/*.py[co]
-@dirrm share/linbot/plugins
-@dirrm share/linbot/schemes
-@dirrm share/linbot
-@exec ln -fs %D/share/linbot/linbot.py %D/bin/linbot
-@unexec rm %D/bin/linbot
+share/webcheck/config.py
+share/webcheck/debugio.py
+share/webcheck/htmlparse.py
+share/webcheck/httpcodes.py
+share/webcheck/webcheck.css
+share/webcheck/webcheck.py
+share/webcheck/myUrlLib.py
+share/webcheck/plugins/__init__.py
+share/webcheck/plugins/badlinks.py
+share/webcheck/plugins/external.py
+share/webcheck/plugins/images.py
+share/webcheck/plugins/notchkd.py
+share/webcheck/plugins/notitles.py
+share/webcheck/plugins/problems.py
+share/webcheck/plugins/rptlib.py
+share/webcheck/plugins/sitemap.py
+share/webcheck/plugins/slow.py
+share/webcheck/plugins/whatsnew.py
+share/webcheck/plugins/whatsold.py
+share/webcheck/robotparser.py
+share/webcheck/schemes/__init__.py
+share/webcheck/schemes/filelink.py
+share/webcheck/schemes/ftplink.py
+share/webcheck/schemes/httplink.py
+share/webcheck/version.py
+%%PORTDOCS%%share/doc/webcheck/USAGE
+%%PORTDOCS%%@dirrm share/doc/webcheck
+@unexec rm -f %D/share/webcheck/*.py[co] %D/share/webcheck/*/*.py[co]
+@dirrm share/webcheck/plugins
+@dirrm share/webcheck/schemes
+@dirrm share/webcheck
+@exec ln -fs %D/share/webcheck/webcheck.py %D/bin/webcheck
+@unexec rm %D/bin/webcheck
