@@ -3,7 +3,7 @@
 # Date created:		4 Nov 1996
 # Whom:			Mita Yoshio <mita@jp.FreeBSD.org>
 #
-# $Id: Makefile,v 1.5 1997/09/24 06:43:47 max Exp $
+# $Id: Makefile,v 1.6 1997/11/10 11:22:24 asami Exp $
 #
 
 DISTNAME?=	ja-jlatex209-a17-n152
@@ -16,6 +16,7 @@ DISTFILES=	jtex-1.52.tar.gz tfm-files.tar.Z jtex1.7.tar.gz pTeX-JIS-patch
 
 MAINTAINER=	mita@jp.FreeBSD.org
 
+MANUAL_PACKAGE_BUILD=	incompatible with other versions of jtex-*
 USE_GMAKE=	yes
 NO_WRKSUBDIR=	yes
 EXTRACT_ONLY=	jtex-1.52.tar.gz
@@ -63,7 +64,5 @@ pre-reinstall:
 	  cd ${WRKSRC} ; \
 	  ${MAKE} reinstall DISTDIR=${DISTDIR} FILESDIR=${FILESDIR} \
 	)
-
-MANUAL_PACKAGE_BUILD=	incompatible with other versions of jtex-*
 
 .include <bsd.port.mk>

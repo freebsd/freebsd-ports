@@ -3,7 +3,7 @@
 # Date created:		05 Oct 1997
 # Whom:			max
 #
-# $Id: Makefile,v 1.2 1997/10/04 17:58:43 max Exp $
+# $Id: Makefile,v 1.3 1997/11/10 11:22:53 asami Exp $
 #
 
 DISTNAME=	ptex215
@@ -16,6 +16,7 @@ MAINTAINER=	max@FreeBSD.ORG
 
 RUN_DEPENDS=	ptex-common:${PORTSDIR}/japanese/ptex-common
 
+MANUAL_PACKAGE_BUILD=	incompatible with other versions of ptex-*
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	euc
@@ -45,7 +46,5 @@ post-install:
 
 pre-clean:
 	@${RM} -rf ${WRKSRC}
-
-MANUAL_PACKAGE_BUILD=	incompatible with other versions of ptex-*
 
 .include <bsd.port.mk>
