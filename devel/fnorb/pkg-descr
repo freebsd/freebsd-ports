@@ -8,13 +8,6 @@ test harnesses for CORBA development projects.
 Fnorb is being developed at the CRC for Distributed Systems Technology based
 at the University of Queensland in Brisbane, Australia.
 
-IMPORTANT NOTE: 
-
-Fnorb's licence allows it to be used freely for academic, research and
-non-commercial purposes.  Commercial use requires the purchase of a licence,
-though you may evaluate the product free for 90 days.  Consult the Fnorb web
-site for licensing updates or further information.
-
 WWW: http://www.fnorb.org/
 
 -- Johann Visagie <wjv@FreeBSD.org>
