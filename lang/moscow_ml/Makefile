@@ -3,7 +3,7 @@
 # Date created:         26 July 1996
 # Whom:                 chuckr
 #
-# $Id: Makefile,v 1.5 1996/10/11 18:58:01 asami Exp $
+# $Id: Makefile,v 1.6 1996/11/12 02:18:45 obrien Exp $
 #
 
 DISTNAME=       mos14src
@@ -27,7 +27,7 @@ post-install:
 	(cd ${WRKDIR}/mosml/examples; \
 	${INSTALL_DATA} README ${PREFIX}/moscow_ml/examples; \
 	for sdirs in manual mls helpsigs calc pretty lexyacc;do \
-	${MKDRI} ${PREFIX}/moscow_ml/examples/$${sdirs}; \
+	${MKDIR} ${PREFIX}/moscow_ml/examples/$${sdirs}; \
 	for file in $${sdirs}/*;do \
 	${INSTALL_DATA} $${file} ${PREFIX}/moscow_ml/examples/$${sdirs}; \
 	done; done;)
