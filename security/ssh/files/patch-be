@@ -1,5 +1,5 @@
 --- configure.in.orig	Wed May 12 04:20:02 1999
-+++ configure.in	Thu Apr 20 23:12:36 2000
++++ configure.in	Wed Apr 19 01:02:34 2000
 @@ -30,8 +30,140 @@
  fi
  
@@ -289,7 +289,7 @@
    KERBEROS_ROOT="$with_kerberos5"
    KERBEROS_INCS="-I${KERBEROS_ROOT}/include"
 -  KERBEROS_LIBS="-L${KERBEROS_ROOT}/lib -lgssapi_krb5 -lkrb5 -lcrypto -lcom_err"
-+  if [ -f ${KERBEROS_ROOT}/lib/libk5crypto.a ]; then
++  if test -f ${KERBEROS_ROOT}/lib/libk5crypto.a ; then
 +     KERBEROS_LIBS="-L${KERBEROS_ROOT}/lib -lgssapi_krb5 -lkrb5 -lk5crypto -lcom_err"
 +  else
 +     KERBEROS_LIBS="-L${KERBEROS_ROOT}/lib -lgssapi_krb5 -lkrb5 -lcrypto -lcom_err"
