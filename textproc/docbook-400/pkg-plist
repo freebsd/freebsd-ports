@@ -1,0 +1,15 @@
+share/sgml/docbook/4.0/40chg.txt
+share/sgml/docbook/4.0/50issues.txt
+share/sgml/docbook/4.0/cals-tbl.dtd
+share/sgml/docbook/4.0/dbcent.mod
+share/sgml/docbook/4.0/dbgenent.mod
+share/sgml/docbook/4.0/dbhier.mod
+share/sgml/docbook/4.0/dbnotn.mod
+share/sgml/docbook/4.0/dbpool.mod
+share/sgml/docbook/4.0/docbook.cat
+share/sgml/docbook/4.0/docbook.dcl
+share/sgml/docbook/4.0/docbook.dtd
+share/sgml/docbook/4.0/catalog
+share/sgml/docbook/4.0/readme.txt
+@dirrm share/sgml/docbook/4.1
+@dirrm share/sgml/docbook
