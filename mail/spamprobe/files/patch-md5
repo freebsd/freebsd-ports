@@ -1,0 +1,76 @@
+--- MimeMessageReader.h	Thu Sep 19 12:15:38 2002
++++ MimeMessageReader.h	Wed Sep 25 09:19:55 2002
+@@ -34,4 +34,7 @@
+ #include "MimeHeader.h"
++#include <sys/types.h>
++#include <md5.h>
++#define MD5_DIGEST_LENGTH 16
+ 
+-class md5_state_s;
++typedef	unsigned char md5_digest_t[MD5_DIGEST_LENGTH*2 + 1];
+ 
+@@ -64,3 +65,3 @@
+ 
+-  const string &getMD5Digest();
++  const md5_digest_t &getMD5Digest();
+ 
+@@ -105,4 +106,4 @@
+   vector<MimeHeader> m_headers;
+-  string m_md5digest;
+-  NewPtr<md5_state_s> m_md5state;
++  md5_digest_t m_md5digest;
++  NewPtr<MD5_CTX> m_md5state;
+ };
+--- MimeMessageReader.cc	Thu Sep 19 12:15:38 2002
++++ MimeMessageReader.cc	Wed Sep 25 22:56:17 2002
+@@ -30,4 +30,5 @@
+ 
+-#include <cstdio>
+-#include "md5.h"
++#include <sys/types.h>
++#include <md5.h>
++#define MD5_DIGEST_LENGTH 16
+ #include "util.h"
+@@ -93,4 +92,4 @@
+ 
+-  m_md5state.set(new md5_state_s);
+-  md5_init(m_md5state.get());
++  m_md5state.set(new MD5_CTX);
++  MD5Init(m_md5state.get());
+ 
+@@ -140,3 +139,3 @@
+     }
+-    md5_append(m_md5state.get(), (md5_byte_t *)value.data(), value.length());
++    MD5Update(m_md5state.get(), (const unsigned char *)value.data(), value.length());
+   }
+@@ -228,3 +227,3 @@
+ 
+-const string &MimeMessageReader::getMD5Digest()
++const md5_digest_t &MimeMessageReader::getMD5Digest()
+ {
+@@ -236,11 +235,10 @@
+ 
+-    m_md5digest.erase();
+-
+-    md5_byte_t raw_digest[32];
+-    char hexcode[8];
+-    md5_finish(m_md5state.get(), raw_digest);
+-    for (int i = 0; i < 16; ++i) {
+-      sprintf(hexcode, "%02x", (unsigned)raw_digest[i]);
+-      m_md5digest += hexcode;
++    MD5Final(m_md5digest + MD5_DIGEST_LENGTH + 1, m_md5state.get());
++    for (int i = 0; i < MD5_DIGEST_LENGTH; i++) {
++	char hexdigits[] = "0123456789abcdef";
++	m_md5digest[i*2] = hexdigits[m_md5digest[i + MD5_DIGEST_LENGTH + 1] >> 4];
++	m_md5digest[i*2 + 1] =
++		hexdigits[m_md5digest[i + MD5_DIGEST_LENGTH + 1] & 0x0f];
+     }
++    m_md5digest[MD5_DIGEST_LENGTH*2 + 1] = '\0';
+     m_md5state.clear();
+--- MessageFactory.cc	Tue Sep 17 17:39:36 2002
++++ MessageFactory.cc	Tue Oct  8 18:59:07 2002
+@@ -127,3 +127,3 @@
+ 
+-  msg.setDigest(reader.getMD5Digest());
++  msg.setDigest((char *)reader.getMD5Digest());
+ 
