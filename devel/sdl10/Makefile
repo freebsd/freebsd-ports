@@ -22,13 +22,11 @@ USE_GMAKE=		yes
 USE_XLIB=		yes
 GNU_CONFIGURE=		yes
 
-#DGA seems hosed, at least on my two 4.0 boxes (XFree86 3.3.5)
-CONFIGURE_ARGS=		--disable-video-x11-dga
-
 CONFIGURE_ENV=		NASM="${LOCALBASE}/bin/nasm" \
 			LOCALBASE="${LOCALBASE}"
 
-CFLAGS+=		-I${LOCALBASE}/include/pthread/linuxthreads
+CFLAGS+=		-I${LOCALBASE}/include/pthread/linuxthreads \
+			-D_THREAD_SAFE
 
 post-install:
 	@ ${MKDIR} ${PREFIX}/share/examples/SDL
@@ -37,8 +35,8 @@ post-install:
 .for file in BUGS COPYING CREDITS README WhatsNew docs.html
 	@ ${INSTALL_DATA} ${WRKSRC}/${file} ${PREFIX}/share/doc/SDL
 .endfor
-	@ cd ${WRKSRC}/docs; tar cf - audio cdrom events images index.html threads video | \
-		(cd ${PREFIX}/share/doc/SDL; tar --unlink -xf - )
+	@ cd ${WRKSRC}/docs; tar cf - `/bin/ls | ${GREP} -v Makefile` | \
+		(cd ${PREFIX}/share/doc/SDL; ${TAR} --unlink -xf - )
 .endif
 
 .include <bsd.port.mk>

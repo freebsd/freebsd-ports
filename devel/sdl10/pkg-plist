@@ -53,11 +53,16 @@ share/doc/SDL/events/keysym.html
 share/doc/SDL/images/rainbow.gif
 share/doc/SDL/index.html
 share/doc/SDL/threads/index.html
+share/doc/SDL/time/examples.html
+share/doc/SDL/time/funclist.html
+share/doc/SDL/time/functions.html
+share/doc/SDL/time/index.html
 share/doc/SDL/video/examples.html
 share/doc/SDL/video/funclist.html
 share/doc/SDL/video/functions.html
 share/doc/SDL/video/index.html
 @dirrm share/doc/SDL/video
+@dirrm share/doc/SDL/time
 @dirrm share/doc/SDL/threads
 @dirrm share/doc/SDL/images
 @dirrm share/doc/SDL/events
