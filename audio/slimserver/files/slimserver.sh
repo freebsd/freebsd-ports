@@ -16,6 +16,7 @@
 . %%RC_SUBR%%
 
 name=slimserver
+start_precmd="slimserver_start_precmd"
 stop_cmd="slimserver_stop"
 rcvar=`set_rcvar`
 
@@ -27,6 +28,16 @@ u=slimserv
 g=slimserv
 command_args="--daemon --prefsfile=${conffile} --logfile=${logfile} --user=${u} --group=${g} --pidfile=${pidfile}"
 
+PGREP=%%PGREPBASE%%/bin/pgrep
+
+slimserver_start_precmd()
+{
+	if [ ! -f ${conffile} ]; then
+		touch ${conffile}
+		chown slimserv:slimserv ${conffile}
+	fi
+}
+
 slimserver_stop()
 {
 	if [ ! -f ${pidfile} ]; then
@@ -34,9 +45,10 @@ slimserver_stop()
 	fi
 	echo 'Stopping SlimServer.'
 	rc_pid=`cat ${pidfile}`
-	rc_pid=`pgrep -u ${u} | grep ${rc_pid}`
+	rc_pid=`${PGREP} -u ${u} | grep ${rc_pid}`
 	if [ -n "${rc_pid}" ]; then
-		rc_pids="${rc_pid} `pgrep -u ${u} mDNSResponderPosix`"
+		# Should be mDNSResponderPosix, but the port truncates
+		rc_pids="${rc_pid} `${PGREP} -u ${u} mDNSResponderPos`"
 
 		kill $sig_stop $rc_pids
 		wait_for_pids $rc_pids
