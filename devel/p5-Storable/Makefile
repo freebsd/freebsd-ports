@@ -1,13 +1,13 @@
 # New ports collection makefile for:	p5-Storable
-# Version required:			0.5.7
+# Version required:			0.5.8
 # Date created:				July 7th 1997
 # Whom:	      				James FitzGibbon <jfitz@FreeBSD.org>
 #
-# $Id: Makefile,v 1.4 1998/04/14 02:11:13 asami Exp $
+# $Id: Makefile,v 1.5 1998/04/28 14:43:15 vanilla Exp $
 #
 
-DISTNAME=	Storable-0.5@7
-PKGNAME=	p5-Storable-0.5.7
+DISTNAME=	Storable-0.5@8
+PKGNAME=	p5-Storable-0.5.8
 CATEGORIES=	devel perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Storable
