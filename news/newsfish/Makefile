@@ -6,9 +6,10 @@
 #
 
 PORTNAME=	newsfish
-PORTVERSION=	1.2.3
+PORTVERSION=	1.2.4
 CATEGORIES=	news
-MASTER_SITES=	ftp://ftp.philosophysw.com/pub/software/
+MASTER_SITES=	http://download.sourceforge.net/newsfish/ \
+		ftp://ftp.philosophysw.com/pub/software/
 
 MAINTAINER=	asaddi@philosophysw.com
 
