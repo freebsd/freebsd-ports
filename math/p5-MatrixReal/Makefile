@@ -3,7 +3,7 @@
 # Date Created:				Aug 14 1997
 # Whom:					Sander Vesik <sander@haldjas.folklore.ee>
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1997/11/24 00:47:50 fenner Exp $
 
 DISTNAME=		Math-MatrixReal-1.2
 PKGNAME=		p5-MatrixReal-1.2
@@ -13,7 +13,7 @@ MASTER_SITE_SUBDIR=	Math
 
 MAINTAINER=	sander@haldjas.folklore.ee
 
-#USE_PERL5=	YES
+USE_PERL5=	YES
 
 MANPREFIX=	${PREFIX}/lib/perl5
 MAN3=	Math::MatrixReal.3 Math::Kleene.3
