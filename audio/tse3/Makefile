@@ -6,6 +6,7 @@
 
 PORTNAME=	tse3
 PORTVERSION=	0.2.7
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -15,7 +16,6 @@ COMMENT=	A MIDI library
 
 LIB_DEPENDS=	artsc:${PORTSDIR}/audio/arts
 
-GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_LIBTOOL_VER=13
 INSTALLS_SHLIB=	yes
@@ -51,6 +51,9 @@ pre-everything::
 	${ECHO_MSG};\
 	${ECHO_MSG} "Aborting."; exit 1;\
 	fi
+
+post-patch:
+	@${FIND} ${WRKSRC} -name Makefile.in | ${XARGS} ${REINPLACE_CMD} -e 's|prefix}/doc/$${PACKAGE}-$${VERSION}|prefix}/share/doc/$${PACKAGE}|'
 
 pre-configure:
 	@${FIND} ${WRKSRC} -type f | ${XARGS} -x -n 10 \
