@@ -1,0 +1,6 @@
+#!/usr/bin/perl
+if('DEINSTALL' eq $ARGV[1])	{
+	eval "use XML::SAX;";
+	die $@ if $@;
+	XML::SAX->remove_parser(q(XML::SAX::Expat))->save_parsers();
+}
