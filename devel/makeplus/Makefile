@@ -9,7 +9,7 @@ PORTNAME=	makeplus
 PORTVERSION=	0.2.3
 PORTREVISION=	1
 CATEGORIES=	devel
-MASTER_SITES=	http://www.annexia.org/freeware/${PORTNAME}/
+MASTER_SITES=	http://www.annexia.org/_file/
 
 MAINTAINER=	sergei@FreeBSD.org
 COMMENT=	Advanced build system for GNU Make
