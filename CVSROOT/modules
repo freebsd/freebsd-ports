@@ -2064,7 +2064,6 @@ hlserver-flf	ports/games/hlserver-flf
 hlserver-glbwar	ports/games/hlserver-glbwar
 hlserver-heroes	ports/games/hlserver-heroes
 hlserver-opfor	ports/games/hlserver-opfor
-hlserver-oz	ports/games/hlserver-oz
 hlserver-psychostats	ports/games/hlserver-psychostats
 hlserver-pvk	ports/games/hlserver-pvk
 hlserver-si	ports/games/hlserver-si
@@ -6926,7 +6925,6 @@ wmpal		ports/misc/wmpal
 wmpccard	ports/sysutils/wmpccard
 wmpinboard	ports/deskutils/wmpinboard
 wmpop3		ports/mail/wmpop3
-wmqmon		ports/net/wmqmon
 wmrecord	ports/audio/wmrecord
 wmsmixer	ports/audio/wmsmixer
 wmspaceweather	ports/astro/wmspaceweather
