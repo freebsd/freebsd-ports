@@ -14,7 +14,7 @@ DISTNAME=	caudium-${PORTVERSION}
 
 MAINTAINER=	kiwi@oav.net
 
-BUILD_DEPENDS=	pike:${PORTSDIR}/lang/pike/
+BUILD_DEPENDS=	pike:${PORTSDIR}/lang/pike70/
 LIB_DEPENDS=	sablot.69:${PORTSDIR}/textproc/sablotron/
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/
