@@ -3941,6 +3941,7 @@ lib765		ports/emulators/lib765
 libICE		ports/x11/libICE
 libIDL		ports/devel/libIDL
 libPropList	ports/devel/libPropList
+libSM		ports/x11/libSM
 libU77		ports/devel/libU77
 libX11		ports/x11/libX11
 libXau		ports/x11/libXau
