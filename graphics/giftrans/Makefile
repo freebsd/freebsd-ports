@@ -1,26 +1,37 @@
 # New ports collection makefile for:   giftrans
-# Version required:    v1.12
+# Version required:    v1.12.2
 # Date created:        14 October 1996
 # Whom:                Yukihiro Nakai <Nakai@Mlab.t.u-tokyo.ac.jp>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	giftrans
-PKGNAME=	giftrans-1.12
+DISTNAME=	giftrans-1.12.2
 CATEGORIES=	graphics
-MASTER_SITES=	ftp://ftp.lab.kdd.co.jp/infosystems/misc/tools/
+MASTER_SITES=	ftp://ftp.rz.uni-karlsruhe.de/pub/net/www/tools/giftrans/
+DISTFILES=	giftrans.c giftrans.1
 
-MAINTAINER=	nacai@iname.com
+MAINTAINER=	nakai@FreeBSD.org
 
-CONFIGURE_ENV=	X11BASE=${X11BASE}
+DIST_SUBDIR=	giftrans
+NO_WRKSUBDIR=	yes
+
 MAN1=		giftrans.1
 
+do-extract:
+	@${MKDIR} ${WRKSRC}
+	@for file in ${DISTFILES}; do \
+		${CP} ${_DISTDIR}/$$file ${WRKSRC}; \
+	done
+
+post-patch:
+	@${PERL} -pi -e 's|%%X11BASE%%|${X11BASE}|g' ${WRKSRC}/giftrans.c
+
 do-build:
-	(cd ${WRKSRC}; cc -O2 giftrans.c -o giftrans)
+	(cd ${WRKSRC}; ${CC} ${CFLAGS} giftrans.c -o giftrans)
 
 do-install:
-	@ ${INSTALL_PROGRAM} ${WRKSRC}/giftrans ${PREFIX}/bin
-	@ ${INSTALL_MAN} ${WRKSRC}/giftrans.1 ${PREFIX}/man/man1
+	${INSTALL_PROGRAM} ${WRKSRC}/giftrans ${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/giftrans.1 ${PREFIX}/man/man1
 
 .include <bsd.port.mk>
