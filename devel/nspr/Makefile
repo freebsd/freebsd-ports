@@ -28,6 +28,8 @@ MAKE_ENV=	DIST=${WRKSRC}/dist
 
 LIBS=		libnspr4.so.1 libplc4.so.1 libplds4.so.1
 
+NOT_FOR_ARCHS=	amd64
+
 do-install:
 	${MKDIR} ${PREFIX}/include/nspr
 	${TAR} -C ${WRKSRC}/dist/include --dereference -cf - . | \
