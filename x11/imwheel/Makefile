@@ -9,7 +9,9 @@ PORTNAME=	imwheel
 PORTVERSION=	0.9.9
 PORTREVISION=	1
 CATEGORIES=	x11
-MASTER_SITES=	http://jonatkins.org/imwheel/files/
+MASTER_SITES=	ftp://jcatki.no-ip.org/pub/imwheel/ \
+		${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Utility to translate mouse wheel actions into X keyboard events
