@@ -6,7 +6,7 @@
 # $FreeBSD$
 #
 
-SNAPDATE=	2002-02-04
+SNAPDATE=	2002-02-25
 SNAPVER=	${SNAPDATE:S/-//g}
 
 PORTNAME=	gcc-devel
@@ -78,7 +78,8 @@ CONFIGURE_ARGS+= --enable-threads
 CONFIGURE_ARGS+= --enable-threads=posix
 .endif
 ALL_TARGET=	bootstrap
-MAN1=		gcpp.1 gg++.1 gg77.1 ggcc.1 ggcov.1
+#MAN1=		gcpp.1 gg++.1 gg77.1 ggcc.1 ggcov.1
+MAN1=		gg++.1
 
 pre-fetch:
 	@${ECHO} "Making GCC ${DISTNAME:S/^gcc-//} for ${OPSYS} ${OSREL} ${PORTOBJFORMAT}	target ${ARCH}-portbld-freebsd${OSREL}"
@@ -120,7 +121,7 @@ post-install:
 	do \
 		strip $$prog ; \
 	done )
-.for file in gcc g++ cpp g++filt gcov ${CONFIGURE_TARGET}-gcc ${CONFIGURE_TARGET}-g++
+.for file in gcc g++ cpp g++filt gcov
 	${MV} -f ${PREFIX}/bin/${file} ${PREFIX}/bin/g${file}
 	-( test -e ${PREFIX}/man/man1/${file}.1 \
 		&& ${MV} -f ${PREFIX}/man/man1/${file}.1 \
@@ -128,7 +129,7 @@ post-install:
 .endfor
 .for file in g77
 	${MV} -f ${PREFIX}/bin/${file} ${PREFIX}/bin/g${file}
-	${MV} -f ${PREFIX}/man/man1/${file}.1 ${PREFIX}/man/man1/g${file}.1
+	#${MV} -f ${PREFIX}/man/man1/${file}.1 ${PREFIX}/man/man1/g${file}.1
 .endfor
 	${MV} -f ${PREFIX}/bin/gccbug ${PREFIX}/bin/gccbug-${SNAPVER}
 	# These 3 libraries are moved from PREFIX/lib to avoid conflicts
