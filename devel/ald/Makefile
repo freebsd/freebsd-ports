@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	ald
-PORTVERSION=	0.1.5
+PORTVERSION=	0.1.6
 CATEGORIES=	devel
-MASTER_SITES=	http://dunx1.irt.drexel.edu/~psa22/source/
+MASTER_SITES=	http://ald.sourceforge.net/source/
 
 MAINTAINER=	pa59@cornell.edu
 COMMENT=	Debugger for assembly level programs
