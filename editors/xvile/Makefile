@@ -3,7 +3,7 @@
 # Date created:         Wed Nov 26, 1996
 # Whom:                 pgf
 #
-# $Id: Makefile,v 1.16 1998/06/27 05:19:53 asami Exp $
+# $Id: Makefile,v 1.17 1998/11/28 00:44:33 asami Exp $
 #
 
 DISTNAME=	vile-8.0
@@ -39,7 +39,7 @@ SCREEN_TYPE=	x11
 .if defined(USE_PERL)
 WITH_PERL=	--with-perl
 PLIST=		${PKGDIR}/PLIST.perl
-BUILD_DEPENDS=	perl5:${PORTSDIR}/lang/perl5
+USE_PERL5=	yes
 .endif
 
 post-install:

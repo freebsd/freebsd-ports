@@ -3,7 +3,7 @@
 # Date created:         19 Apr 1997
 # Whom:                 Choi Jun Ho <junker@jazz.snu.ac.kr>
 #
-# $Id: Makefile,v 1.3 1997/09/22 16:22:12 max Exp $
+# $Id: Makefile,v 1.4 1998/09/15 21:31:46 asami Exp $
 #
 
 DISTNAME=	nhppf-1.2
@@ -13,10 +13,10 @@ MASTER_SITES=	ftp://jazz.snu.ac.kr/pub/unix/util/nhppf/
 
 MAINTAINER=	junker@jazz.snu.ac.kr
 
-NO_BUILD=	yes
+RUN_DEPENDS=    ${PREFIX}/share/fonts/HLaTeX-0.95-pfb:$(PORTSDIR)/korean/hlatexpsfonts
 
-RUN_DEPENDS=    ${PREFIX}/share/fonts/HLaTeX-0.95-pfb:$(PORTSDIR)/korean/hlatexpsfonts \
-		perl5.00401:${PORTSDIR}/lang/perl5
+USE_PERL5=	yes
+NO_BUILD=	yes
 
 do-configure:
 	@cd ${WRKSRC}; \

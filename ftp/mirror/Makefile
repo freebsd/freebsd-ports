@@ -3,7 +3,7 @@
 # Date created:		15 May 1995
 # Whom:			torstenb
 #
-# $Id: Makefile,v 1.7 1998/06/08 12:41:12 torstenb Exp $
+# $Id: Makefile,v 1.8 1998/08/16 00:54:39 hoek Exp $
 #
 
 DISTNAME=	mirror-2.9
@@ -12,11 +12,11 @@ MASTER_SITES=	ftp://src.doc.ic.ac.uk/computing/archiving/mirror/
 
 MAINTAINER=	torstenb@FreeBSD.ORG
 
+USE_PERL5=	yes
 NO_WRKSUBDIR=	yes
 MAKEFILE=	makefile
 MAN1=		mirror.1 mirror-master.1
 
-RUN_DEPENDS=	perl5:${PORTSDIR}/lang/perl5
 
 pre-install:
 	${MKDIR} ${PREFIX}/lib/mirror

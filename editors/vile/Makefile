@@ -3,7 +3,7 @@
 # Date created:         Wed Nov 26, 1996
 # Whom:                 pgf
 #
-# $Id: Makefile,v 1.14 1997/12/10 20:26:37 gj Exp $
+# $Id: Makefile,v 1.15 1998/06/04 20:04:55 gj Exp $
 #
 
 DISTNAME=	vile-8.0
@@ -22,7 +22,7 @@ MAN1=		vile.1
 .if defined(USE_PERL)
 CONFIGURE_ARGS=	--with-perl
 PLIST=		${PKGDIR}/PLIST.perl
-BUILD_DEPENDS=	perl5:${PORTSDIR}/lang/perl5
+USE_PERL5=	yes
 .endif
 
 pre-configure:
