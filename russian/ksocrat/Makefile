@@ -1,0 +1,35 @@
+# New ports collection makefile for:   	ksocrat
+# Date created:        	30.04.2003
+# Whom:                	Kirill Ponomarew <ponomarew@oberon.net>
+#
+# $FreeBSD$
+
+PORTNAME=	ksocrat
+PORTVERSION=	3.1.2
+CATEGORIES=	russian kde
+MASTER_SITES=	http://apps.kde.com/na/2/counter/vid/9139/dld0/	\
+		http://voodoo.oberon.net/
+MASTER_SITE_SUBDIR=	${PORTNAME}-${PORTVERSION}
+DISTFILES=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX} \
+		${PORTNAME}-enru-dic-1.0.1${EXTRACT_SUFX} \
+		${PORTNAME}-ruen-dic-1.0.1${EXTRACT_SUFX}
+
+MAINTAINER=	ponomarew@oberon.net
+COMMENT=	KSocrat is the simple English/Russian Russian/English dictionary
+
+USE_BZIP2=	yes
+USE_KDELIBS_VER=3
+GNU_CONFIGURE=	yes
+USE_GMAKE=	yes
+
+RESTRICTED=	"Redistribution not allowed"
+NO_CDROM=	${RESTRICTED}
+#NO_PACKAGE=	${RESTRICTED}
+
+post-install:
+		${INSTALL_DATA} ${WRKDIR}/usr/share/apps/ksocrat/* \
+			 ${PREFIX}/share/apps/ksocrat
+
+.include <bsd.port.pre.mk>
+.include "${PORTSDIR}/x11/kde3/Makefile.kde"
+.include <bsd.port.post.mk>
