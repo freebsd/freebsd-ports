@@ -26,11 +26,14 @@ APXS?=          ${LOCALBASE}/sbin/apxs
 APACHE_PORT?=   ${PORTSDIR}/www/apache2
 APWRKSRC?=	${WRKSRC}/apache2
 PLIST_SUB=	APACHE=apache2
+SO=		la
 .else
 APACHE_PORT?=   ${PORTSDIR}/www/apache13
 APWRKSRC?=	${WRKSRC}/apache1
 PLIST_SUB=	APACHE=apache
+SO=		so
 .endif
+PLIST_SUB+=	SO=${SO}
 
 BUILD_DEPENDS+= ${APXS}:${APACHE_PORT}
 RUN_DEPENDS+=   ${APXS}:${APACHE_PORT}
@@ -41,7 +44,7 @@ do-build:
 	@cd ${APWRKSRC} && ${APXS} -c mod_security.c
 
 do-install:
-	${APXS} -i -a -n security ${APWRKSRC}/mod_security.so
+	${APXS} -i -a -n security ${APWRKSRC}/mod_security.${SO}
 	@${MKDIR} ${EXAMPLESDIR}
 	@${INSTALL_DATA} ${WRKSRC}/httpd.conf.example-* ${EXAMPLESDIR}
 .if !defined(NOPORTDOCS)
