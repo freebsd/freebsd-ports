@@ -1,0 +1,84 @@
+@comment === EXECUTABLES ===
+%%CLIENT%%bin/quake2
+%%SDLCLIENT%%bin/sdlquake2
+%%SERVER%%bin/q2ded
+@comment === DOCS ===
+%%PORTDOCS%%share/doc/quake2lnx/README
+%%PORTDOCS%%@dirrm share/doc/quake2lnx
+@comment === RENDERERS ===
+%%SVGA%%share/quake2lnx/ref_soft.so
+%%SDL%%share/quake2lnx/ref_softsdl.so
+%%SDLGL%%share/quake2lnx/ref_sdlgl.so
+%%X11%%share/quake2lnx/ref_softx.so
+%%GLX%%share/quake2lnx/ref_glx.so
+%%AA%%share/quake2lnx/ref_softaa.so
+@comment === DATA ===
+%%GAME%%share/quake2lnx/baseq2/game%%ARCH%%.so
+%%QMAX%%share/quake2lnx/baseq2/maxpak.pak
+%%SHAREWARE%%share/quake2lnx/baseq2/pak0.pak
+%%SHAREWARE%%share/quake2lnx/baseq2/players/female/athena.pcx
+%%SHAREWARE%%share/quake2lnx/baseq2/players/female/athena_i.pcx
+%%SHAREWARE%%share/quake2lnx/baseq2/players/female/brianna.pcx
+%%SHAREWARE%%share/quake2lnx/baseq2/players/female/brianna_i.pcx
+%%SHAREWARE%%share/quake2lnx/baseq2/players/female/cobalt.pcx
+%%SHAREWARE%%share/quake2lnx/baseq2/players/female/cobalt_i.pcx
+%%SHAREWARE%%share/quake2lnx/baseq2/players/female/doomgal.pcx
+%%SHAREWARE%%share/quake2lnx/baseq2/players/female/doomgal_i.pcx
+%%SHAREWARE%%share/quake2lnx/baseq2/players/female/ensign.pcx
+%%SHAREWARE%%share/quake2lnx/baseq2/players/female/ensign_i.pcx
+%%SHAREWARE%%share/quake2lnx/baseq2/players/female/jezebel.pcx
+%%SHAREWARE%%share/quake2lnx/baseq2/players/female/jezebel_i.pcx
+%%SHAREWARE%%share/quake2lnx/baseq2/players/female/jungle.pcx
+%%SHAREWARE%%share/quake2lnx/baseq2/players/female/jungle_i.pcx
+%%SHAREWARE%%share/quake2lnx/baseq2/players/female/lotus.pcx
+%%SHAREWARE%%share/quake2lnx/baseq2/players/female/lotus_i.pcx
+%%SHAREWARE%%share/quake2lnx/baseq2/players/female/stiletto.pcx
+%%SHAREWARE%%share/quake2lnx/baseq2/players/female/stiletto_i.pcx
+%%SHAREWARE%%share/quake2lnx/baseq2/players/female/tris.md2
+%%SHAREWARE%%share/quake2lnx/baseq2/players/female/venus.pcx
+%%SHAREWARE%%share/quake2lnx/baseq2/players/female/venus_i.pcx
+%%SHAREWARE%%share/quake2lnx/baseq2/players/female/voodoo.pcx
+%%SHAREWARE%%share/quake2lnx/baseq2/players/female/voodoo_i.pcx
+%%SHAREWARE%%share/quake2lnx/baseq2/players/female/weapon.md2
+%%SHAREWARE%%share/quake2lnx/baseq2/players/female/weapon.pcx
+%%SHAREWARE%%share/quake2lnx/baseq2/players/male/cipher.pcx
+%%SHAREWARE%%share/quake2lnx/baseq2/players/male/cipher_i.pcx
+%%SHAREWARE%%share/quake2lnx/baseq2/players/male/claymore.pcx
+%%SHAREWARE%%share/quake2lnx/baseq2/players/male/claymore_i.pcx
+%%SHAREWARE%%share/quake2lnx/baseq2/players/male/flak.pcx
+%%SHAREWARE%%share/quake2lnx/baseq2/players/male/flak_i.pcx
+%%SHAREWARE%%share/quake2lnx/baseq2/players/male/grunt.pcx
+%%SHAREWARE%%share/quake2lnx/baseq2/players/male/grunt_i.pcx
+%%SHAREWARE%%share/quake2lnx/baseq2/players/male/howitzer.pcx
+%%SHAREWARE%%share/quake2lnx/baseq2/players/male/howitzer_i.pcx
+%%SHAREWARE%%share/quake2lnx/baseq2/players/male/major.pcx
+%%SHAREWARE%%share/quake2lnx/baseq2/players/male/major_i.pcx
+%%SHAREWARE%%share/quake2lnx/baseq2/players/male/nightops.pcx
+%%SHAREWARE%%share/quake2lnx/baseq2/players/male/nightops_i.pcx
+%%SHAREWARE%%share/quake2lnx/baseq2/players/male/pointman.pcx
+%%SHAREWARE%%share/quake2lnx/baseq2/players/male/pointman_i.pcx
+%%SHAREWARE%%share/quake2lnx/baseq2/players/male/psycho.pcx
+%%SHAREWARE%%share/quake2lnx/baseq2/players/male/psycho_i.pcx
+%%SHAREWARE%%share/quake2lnx/baseq2/players/male/rampage.pcx
+%%SHAREWARE%%share/quake2lnx/baseq2/players/male/rampage_i.pcx
+%%SHAREWARE%%share/quake2lnx/baseq2/players/male/razor.pcx
+%%SHAREWARE%%share/quake2lnx/baseq2/players/male/razor_i.pcx
+%%SHAREWARE%%share/quake2lnx/baseq2/players/male/recon.pcx
+%%SHAREWARE%%share/quake2lnx/baseq2/players/male/recon_i.pcx
+%%SHAREWARE%%share/quake2lnx/baseq2/players/male/scout.pcx
+%%SHAREWARE%%share/quake2lnx/baseq2/players/male/scout_i.pcx
+%%SHAREWARE%%share/quake2lnx/baseq2/players/male/skin.pcx
+%%SHAREWARE%%share/quake2lnx/baseq2/players/male/sniper.pcx
+%%SHAREWARE%%share/quake2lnx/baseq2/players/male/sniper_i.pcx
+%%SHAREWARE%%share/quake2lnx/baseq2/players/male/tris.md2
+%%SHAREWARE%%share/quake2lnx/baseq2/players/male/viper.pcx
+%%SHAREWARE%%share/quake2lnx/baseq2/players/male/viper_i.pcx
+%%SHAREWARE%%share/quake2lnx/baseq2/players/male/weapon.md2
+%%SHAREWARE%%share/quake2lnx/baseq2/players/male/weapon.pcx
+%%SHAREWARE%%@dirrm share/quake2lnx/baseq2/players/male
+%%SHAREWARE%%@dirrm share/quake2lnx/baseq2/players/female
+%%SHAREWARE%%@dirrm share/quake2lnx/baseq2/players
+%%CTF%%share/quake2lnx/ctf/game%%ARCH%%.so
+%%CTF%%@dirrm share/quake2lnx/ctf
+@dirrm share/quake2lnx/baseq2
+@dirrm share/quake2lnx
