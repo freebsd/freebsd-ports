@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	aoi
-PORTVERSION=	1.4
+PORTVERSION=	1.6
 CATEGORIES=	graphics java
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	aoi
-DISTNAME=	artofillusion${PORTVERSION:S/.//g}
+DISTNAME=	AoI${PORTVERSION:S/.//}
 
 MAINTAINER=	lioux@FreeBSD.org
 COMMENT=	An open source Java written 3D modelling and rendering studio
