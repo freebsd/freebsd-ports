@@ -246,6 +246,7 @@ agsatellite	ports/audio/agsatellite
 aic7xxx		src/sys/dev/aic7xxx
 aide		ports/security/aide
 aim		ports/net/aim
+airoflash	ports/misc/airoflash
 airport		ports/net/airport
 aish		ports/converters/aish
 ald		ports/devel/ald
