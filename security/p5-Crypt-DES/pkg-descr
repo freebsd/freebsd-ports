@@ -1,0 +1,6 @@
+       This perl extension is an implementation of the DES block
+       cipher algorithm.  The module implements the
+       Crypt::BlockCipher interface, which has the following
+       methods
+
+       blocksize =item keysize =item encrypt =item decrypt
