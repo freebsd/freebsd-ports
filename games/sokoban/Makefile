@@ -19,17 +19,17 @@ ALL_TARGET=
 
 do-install:
 	@ ${INSTALL_PROGRAM} ${WRKSRC}/sokoban ${PREFIX}/bin/sokoban
-	@ ${CHOWN} games:bin ${PREFIX}/bin/sokoban
-	@ ${CHMOD} 4555 ${PREFIX}/bin/sokoban
+	@ ${CHOWN} root:games ${PREFIX}/bin/sokoban
+	@ ${CHMOD} 2555 ${PREFIX}/bin/sokoban
 	@ ${MKDIR} ${PREFIX}/share/sokoban
-	@ ${CHOWN} games:bin ${PREFIX}/share/sokoban
+	@ ${CHOWN} root:games ${PREFIX}/share/sokoban
 	@ ${MKDIR} ${PREFIX}/share/sokoban/screens
-	@ ${CHOWN} games:bin ${PREFIX}/share/sokoban/screens
+	@ ${CHOWN} root:games ${PREFIX}/share/sokoban/screens
 	@ ${INSTALL_DATA} ${WRKSRC}/screens/* ${PREFIX}/share/sokoban/screens
 	@ if [ ! -f ${PREFIX}/share/sokoban/highscore ]; then \
 		dd if=/dev/zero of=${PREFIX}/share/sokoban/highscore bs=1 count=2; \
 	  fi
-	@ ${CHOWN} games:bin ${PREFIX}/share/sokoban/highscore
+	@ ${CHOWN} root:games ${PREFIX}/share/sokoban/highscore
 	@ ${CHMOD} 0600 ${PREFIX}/share/sokoban/highscore
 
 .include <bsd.port.mk>
