@@ -2,11 +2,12 @@
 	Please, follow the instructions in
 		file:/usr/local/share/doc/mod_dtcl/documentation.html
 
-	(where  /usr/local may  be  replaced  by a  machine's
-	setting for LOCALBASE) to enable the mod_dtcl's usage.
-
 	The mentioning of mod_dtcl is already in the Apache's config
 	file, but it is commented out -- you have to uncomment it
 	manually and add the line:
 		AddType application/x-httpd-tcl .ttml
+
+	** Note, that the older style <+ ... +> tags are no longer **
+	** recognized! If you are upgrading, switch to the new <?  **
+	** ... ?> tags before restarting Apache!		   **
 -
