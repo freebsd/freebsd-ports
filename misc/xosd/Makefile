@@ -24,11 +24,9 @@ USE_X_PREFIX=	yes
 USE_GMAKE=	yes
 USE_GNOMENG=	yes
 USE_GNOME=	gtk12
-USE_LIBTOOL=	yes
-USE_AUTOMAKE_VER=	15
-AUTOMAKE_ARGS=	--add-missing
-USE_AUTOCONF=	yes
+GNU_CONFIGURE=	yes
 INSTALLS_SHLIB=	yes
+USE_REINPLACE=	yes
 CONFIGURE_ENV=	LIBS=${PTHREAD_LIBS}' -L${LOCALBASE}/lib -lgnugetopt' \
 		CFLAGS='${CFLAGS}' X11BASE='${X11BASE}' \
 		GTK_CONFIG='${GTK_CONFIG}' GLIB_CONFIG='${GLIB_CONFIG}' \
@@ -40,7 +38,10 @@ MAN3=		xosd_destroy.3 xosd_is_onscreen.3 xosd_set_shadow_offset.3 \
 		xosd.3 xosd_get_number_lines.3 xosd_set_horizontal_offset.3 \
 		xosd_show.3 xosd_create.3 xosd_hide.3 xosd_set_pos.3 xosd_uninit.3
 
-pre-configure:
-	cd ${WRKSRC} && ${LOCALBASE}/bin/libtoolize --force && ${ACLOCAL}
+pre-patch:
+	${REINPLACE_CMD} -e 's,-lc_r,-lblahblah,g' ${WRKSRC}/ltmain.sh
+.for f in src/libxosd/Makefile.in src/xmms_plugin/Makefile.in
+	${REINPLACE_CMD} -e 's,^\(CFLAGS =\)\(.*\)$$,\1 -I.. \2,g' ${WRKSRC}/$f
+.endfor
 
 .include <bsd.port.mk>
