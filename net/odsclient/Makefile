@@ -6,13 +6,12 @@
 #
 
 PORTNAME=	odsclient
-PORTVERSION=	1.01
+PORTVERSION=	1.02
 CATEGORIES=	net
 MASTER_SITES=	http://www.ods.org/
 
 MAINTAINER=	geniusj@ods.org
 
-WRKSRC=		${WRKDIR}/${PORTNAME}
 ALL_TARGET=	odsclient
 
 post-patch:

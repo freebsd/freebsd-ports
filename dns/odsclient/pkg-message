@@ -3,7 +3,7 @@ To use this client you must first signup for an account at ods.org You
 can find the signup page at http://www.ods.org/adduserform.html
 
 After you signup you can get your host by typing:
-odsclient Username Password Hostname [IP-address]
+odsclient Username Password Hostname [ip address]
 
 The IP address is optional. If it is not specified, the server will
 determine it for you.
