@@ -98,6 +98,7 @@
     SUBDIR += plotmtv
     SUBDIR += plotutils
     SUBDIR += png
+    SUBDIR += png2html
     SUBDIR += pnmtopng
     SUBDIR += povray
     SUBDIR += povray31
