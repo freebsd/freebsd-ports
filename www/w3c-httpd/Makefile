@@ -3,7 +3,7 @@
 # Date created:		29 October 1994
 # Whom:			pst
 #
-# $Id: Makefile,v 1.16 1997/03/08 22:02:40 obrien Exp $
+# $Id: Makefile,v 1.17 1998/02/20 18:39:57 steve Exp $
 #
 
 DISTNAME=	w3c-httpd-3.0A
@@ -13,6 +13,8 @@ MASTER_SITES=	ftp://ftp.w3.org/pub/httpd/
 MAINTAINER=	giffunip@asme.org
 
 NO_WRKSUBDIR=	yes
+
+BROKEN_ELF=	yes
 
 WWW_ROOT=	${PREFIX}/www
 
