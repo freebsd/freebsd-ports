@@ -3,7 +3,7 @@
 # Date created:		12 September 1995
 # Whom:			asami
 #
-# $Id: Makefile,v 1.8 1998/09/17 00:32:33 asami Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	xbill-2.0

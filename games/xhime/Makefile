@@ -3,7 +3,7 @@
 # Date created:        25 August 1998
 # Whom:                Seiichirou Hiraoka
 #
-# $Id: Makefile,v 1.1.1.2 1998/11/25 11:13:20 flathill Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	xhime151

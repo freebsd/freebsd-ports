@@ -3,7 +3,7 @@
 # Date created:		22 January 1997
 # Whom:			Yukihiro Nakai <Nakai@Mlab.t.u-tokyo.ac.jp>
 #
-# $Id: Makefile,v 1.7 1998/09/17 00:32:40 asami Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	xsoldier-0.96

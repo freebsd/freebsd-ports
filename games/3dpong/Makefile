@@ -3,7 +3,7 @@
 # Date created:				10 March 1998
 # Whom:					Andrey Zakhvatov
 #
-# $Id: Makefile,v 1.4 1998/08/10 12:16:53 steve Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	3dpong.0.3

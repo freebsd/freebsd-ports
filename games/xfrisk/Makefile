@@ -3,7 +3,7 @@
 # Date created:        20 April 1997
 # Whom:                Matthew Hunt <mph@pobox.com>
 #
-# $Id: Makefile,v 1.6 1998/04/17 23:26:23 mph Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	XFrisk-1.00

@@ -3,7 +3,7 @@
 # Date created:         6 Apr 97
 # Whom:                 Pedro Giffuni
 #
-# $Id: Makefile,v 1.3 1998/02/20 18:39:47 steve Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	xbattle-5.4.1

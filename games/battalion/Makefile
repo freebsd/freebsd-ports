@@ -3,7 +3,7 @@
 # Date created:				17 May 1998
 # Whom:					Andrey Zakhvatov
 #
-# $Id: Makefile,v 1.5 1998/09/27 16:06:56 steve Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	battalion-1.4

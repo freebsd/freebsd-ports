@@ -3,7 +3,7 @@
 # Date created:         5 Jan 1997
 # Whom:                 xaa@stack.nl
 #
-# $Id: Makefile,v 1.17 1999/01/27 07:41:13 fenner Exp $
+# $FreeBSD$
 #
 
 DISTNAME=       xboard-4.0.2

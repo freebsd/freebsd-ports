@@ -3,7 +3,7 @@
 # Date created:				October 26th 1996
 # Whom:					jfitz@FreeBSD.ORG
 #
-# $Id: Makefile,v 1.16 1999/08/22 18:58:00 mharo Exp $
+# $FreeBSD$
 #
 
 PKGNAME=	quakeserver-1.0

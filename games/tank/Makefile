@@ -3,7 +3,7 @@
 # Date created:         4 Mar 1998
 # Whom:                 Donald Burr <dburr@FreeBSD.ORG>
 #
-# $Id: Makefile,v 1.8 1998/10/09 06:07:22 asami Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	tank-0.4a-src

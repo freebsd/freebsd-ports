@@ -3,7 +3,7 @@
 # Date created:				7 May 1998
 # Whom:					Matthew Hunt <mph@FreeBSD.org>
 #
-# $Id: Makefile,v 1.4 1999/02/03 11:11:44 asami Exp $
+# $FreeBSD$
 #
 
 DISTNAME=		jzip201g

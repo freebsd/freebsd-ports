@@ -3,7 +3,7 @@
 # Date created:         07 Feb 1998
 # Whom:                 Thomas Gellekum <tg@FreeBSD.ORG>
 #
-# $Id: Makefile,v 1.3 1998/09/15 11:13:19 asami Exp $
+# $FreeBSD$
 #
 
 DISTNAME=       xsok-1.02

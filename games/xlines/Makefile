@@ -3,7 +3,7 @@
 # Date created:				11 February 1998
 # Whom:					Andrey Zakhvatov
 #
-# $Id: Makefile,v 1.6 1998/08/12 06:29:28 asami Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	xlines

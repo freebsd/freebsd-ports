@@ -4,7 +4,7 @@
 # Whom:			Joel Sutton <sutton@aardvark.apana.org.au>
 # FreeBSD Version:	2.2.1-RELEASE
 #
-# $Id$
+# $FreeBSD$
 #
 
 DISTNAME=		yahtzee-src

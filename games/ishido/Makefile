@@ -4,7 +4,7 @@
 # Date created:         Wed June 24, 1998
 # Whom:                 Steven H. Samorodin (samorodi@NUXI.com)
 #
-# $Id: Makefile,v 1.1.1.1 1998/06/25 08:04:11 obrien Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	ishido-1.1

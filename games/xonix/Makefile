@@ -3,7 +3,7 @@
 # Date created:		3 May 1995
 # Whom:			joerg
 #
-# $Id: Makefile,v 1.6 1998/09/17 00:32:38 asami Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	xonix-1.4

@@ -3,7 +3,7 @@
 # Date created:		27 May 1999
 # Whom:			Thomas Gellekum <tg@FreeBSD.ORG>
 #
-# $Id: Makefile,v 1.2 1999/06/22 17:58:10 steve Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	rocksndiamonds-1.2.0

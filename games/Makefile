@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.221 1999/08/18 19:49:05 cpiazza Exp $
+# $FreeBSD$
 #
 
     SUBDIR += 3dc

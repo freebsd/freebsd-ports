@@ -3,7 +3,7 @@
 # Date created:				6 June 1997
 # Whom:					Andrey Zakhvatov
 #
-# $Id$
+# $FreeBSD$
 #
 
 DISTNAME=		blue-2.3

@@ -3,7 +3,7 @@
 # Date created:				21 March 1998
 # Whom:					Andrey Zakhvatov
 #
-# $Id: Makefile,v 1.5 1998/09/21 22:15:54 steve Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	xvmahjongg2.1

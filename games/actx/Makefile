@@ -3,7 +3,7 @@
 # Date created:        19 Feb 1999
 # Whom:                Shinya Esu <esu@yk.rim.or.jp>
 #
-# $Id$
+# $FreeBSD$
 #
 
 DISTNAME=	actx-0.98pre4

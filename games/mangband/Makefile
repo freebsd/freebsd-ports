@@ -3,7 +3,7 @@
 # Version required:    0.5.4
 # Date created:        30 Dec 1998
 #
-# $Id: Makefile,v 1.2 1999/08/22 18:57:56 mharo Exp $
+# $FreeBSD$
 #
 
 DISTNAME=       mangband-054

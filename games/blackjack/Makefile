@@ -3,7 +3,7 @@
 # Date created:		23 February 1998
 # Whom:			Peter Mutsaers
 #
-# $Id: Makefile,v 1.4 1998/08/07 23:56:19 asami Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	blackjack-1.1

@@ -3,7 +3,7 @@
 # Date created:         24 Feb 1999
 # Whom:                 Donald Burr <dburr@FreeBSD.ORG>
 #
-# $Id: Makefile,v 1.3 1999/05/01 12:34:22 jseger Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	uox3v6902-linux

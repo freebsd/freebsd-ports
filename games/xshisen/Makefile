@@ -3,7 +3,7 @@
 # Date created:               9 Oct 1996
 # Whom:                 Yukihiro Nakai <Nakai@Mlab.t.u-tokyo.ac.jp>
 #
-# $Id: Makefile,v 1.11 1999/01/12 16:51:26 vanilla Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	xshisen-1.36

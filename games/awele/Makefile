@@ -3,7 +3,7 @@
 # Date created:		01 May 1998
 # Whom:			Thomas Gellekum <tg@FreeBSD.ORG>
 #
-# $Id: Makefile,v 1.2 1998/09/28 02:04:08 steve Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	awele

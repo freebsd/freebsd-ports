@@ -3,7 +3,7 @@
 # Date created:				2 May 1999
 # Whom:					Andrey Zakhvatov
 #
-# $Id$
+# $FreeBSD$
 #
 
 DISTNAME=		phalanx-21

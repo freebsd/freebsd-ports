@@ -3,7 +3,7 @@
 # Date created:         20 Feb 1998
 # Whom:                 Thomas Gellekum <tg@FreeBSD.ORG>
 #
-# $Id: Makefile,v 1.3 1998/08/05 09:30:58 asami Exp $
+# $FreeBSD$
 #
 
 DISTNAME=       xbomb-2.1

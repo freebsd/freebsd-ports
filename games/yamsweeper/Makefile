@@ -3,7 +3,7 @@
 # Date created:		14 Sep 1996
 # Whom:			Hidekazu Kuroki <hidekazu@cs.titech.ac.jp>
 #
-# $Id: Makefile,v 1.6 1999/08/22 18:58:17 mharo Exp $
+# $FreeBSD$
 #
 
 DISTNAME=       yamsweeper-1.9

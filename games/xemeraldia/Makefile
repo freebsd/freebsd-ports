@@ -3,7 +3,7 @@
 # Date created:         22 Mar 1995
 # Whom:                 asami
 #
-# $Id: Makefile,v 1.13 1997/12/25 22:29:19 asami Exp $
+# $FreeBSD$
 #
 
 DISTNAME=       xemeraldia-0.3

@@ -3,7 +3,7 @@
 # Date created:		Jun 20 1997
 # Whom:			ada@bsd.org
 #
-# $Id: Makefile,v 1.21 1999/06/20 01:21:00 cpiazza Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	freeciv-1.8.1

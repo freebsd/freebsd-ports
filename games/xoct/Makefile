@@ -3,7 +3,7 @@
 # Date created:				28 March 1998
 # Whom:					Andrey Zakhvatov
 #
-# $Id: Makefile,v 1.3 1998/07/27 23:25:10 asami Exp $
+# $FreeBSD$
 #
 
 DISTNAME=		xoct-5.4.4

@@ -3,7 +3,7 @@
 # Date created:         4 Jan 1995
 # Whom:                 swallace
 #
-# $Id: Makefile,v 1.7 1997/01/03 09:37:04 obrien Exp $
+# $FreeBSD$
 #
 
 DISTNAME=       xchomp-pl1

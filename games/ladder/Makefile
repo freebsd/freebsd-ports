@@ -3,7 +3,7 @@
 # Date created:        18 Feb 1998
 # Whom:                Stefan Zehl <sec@42.org>
 #
-# $Id: Makefile,v 1.1.1.1 1998/02/20 05:46:59 steve Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	ladder

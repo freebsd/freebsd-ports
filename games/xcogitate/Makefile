@@ -3,7 +3,7 @@
 # Date created:				15 March 1998
 # Whom:					Andrey Zakhvatov
 #
-# $Id: Makefile,v 1.5 1998/09/15 11:13:11 asami Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	xcogitate-1.02

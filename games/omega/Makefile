@@ -3,7 +3,7 @@
 # Date created:				14 May 1998
 # Whom:					Andrey Zakhvatov
 #
-# $Id: Makefile,v 1.1.1.1 1999/07/05 03:05:57 cpiazza Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	omega-0.90-pa4

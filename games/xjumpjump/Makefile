@@ -3,7 +3,7 @@
 # Date created:				9 April 1998
 # Whom:					Andrey Zakhvatov
 #
-# $Id: Makefile,v 1.7 1999/01/07 08:19:31 simokawa Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	xjumpjump

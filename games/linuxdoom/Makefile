@@ -3,7 +3,7 @@
 # Date created:         Mon Dec  9 09:42:37 CST 1996
 # Whom:                 erich@rrnet.com
 #
-# $Id: Makefile,v 1.9 1999/01/18 08:44:45 asami Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	doom-1.8

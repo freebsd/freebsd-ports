@@ -3,7 +3,7 @@
 # Date created:         13 Feb 1998
 # Whom:                 Thomas Gellekum <tg@FreeBSD.ORG>
 #
-# $Id: Makefile,v 1.3 1998/11/28 09:06:16 asami Exp $
+# $FreeBSD$
 #
 
 DISTNAME=       xdemineur-2.1.1

@@ -3,7 +3,7 @@
 # Date created:         19 Aug 1995
 # Whom:                 joerg
 #
-# $Id: Makefile,v 1.6 1999/02/03 11:11:45 asami Exp $
+# $FreeBSD$
 #
 
 DISTNAME=       pacman10

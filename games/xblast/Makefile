@@ -3,7 +3,7 @@
 # Date created:         Sat Nov 08 09:47:12 CET 1997
 # Whom:                 se
 #
-# $Id: Makefile,v 1.4 1998/02/12 21:35:13 se Exp $
+# $FreeBSD$
 #
 
 DISTNAME=       xblast-2.6.beta

@@ -3,7 +3,7 @@
 # Date created:		04 July 1996
 # Whom:			markm
 #
-# $Id: Makefile,v 1.5 1998/12/28 22:55:34 mph Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	gnuchess-4.0.pl79

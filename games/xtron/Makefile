@@ -3,7 +3,7 @@
 # Date created:				29 March 1998
 # Whom:					Andrey Zakhvatov
 #
-# $Id: Makefile,v 1.1.1.1 1999/01/11 05:22:44 steve Exp $
+# $FreeBSD$
 #
 
 DISTNAME=		xtron-1.1a

@@ -3,7 +3,7 @@
 # Date created:				2 July 1997
 # Whom:					Andrey Zakhvatov
 #
-# $Id: Makefile,v 1.1.1.1 1997/07/02 07:13:50 tg Exp $
+# $FreeBSD$
 #
 
 DISTNAME=		sokoban-src

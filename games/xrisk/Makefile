@@ -3,7 +3,7 @@
 # Date created:         4 Jan 1995
 # Whom:                 swallace
 #
-# $Id: Makefile,v 1.11 1998/08/05 09:31:01 asami Exp $
+# $FreeBSD$
 #
 
 DISTNAME=       xrisk-2.13

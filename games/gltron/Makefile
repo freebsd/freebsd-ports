@@ -3,7 +3,7 @@
 # Date created:				24 July 1999
 # Whom:					Andrey Zakhvatov
 #
-# $Id$
+# $FreeBSD$
 #
 
 DISTNAME=	glTron-0.32

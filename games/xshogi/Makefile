@@ -3,7 +3,7 @@
 # Date created:        20 October 1996
 # Whom:                Yukihiro Nakai <Nakai@Mlab.t.u-tokyo.ac.jp>
 #
-# $Id: Makefile,v 1.5 1999/01/27 07:41:14 fenner Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	xshogi-1.2p03

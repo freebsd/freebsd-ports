@@ -3,7 +3,7 @@
 # Date created:         3 Jan 1995
 # Whom:                 swallace
 #
-# $Id: Makefile,v 1.11 1997/05/29 02:34:01 fenner Exp $
+# $FreeBSD$
 #
 
 DISTNAME=       xinvaders

@@ -3,7 +3,7 @@
 # Date created:				16 May 1998
 # Whom:					Andrey Zakhvatov
 #
-# $Id: Makefile,v 1.1.1.1 1998/05/18 04:10:04 mph Exp $
+# $FreeBSD$
 #
 
 DISTNAME=		UnixFrotz232R2Std10

@@ -3,7 +3,7 @@
 # Date created:        28 December 1996
 # Whom:                Yukihiro Nakai <Nakai@Mlab.t.u-tokyo.ac.jp>
 #
-# $Id: Makefile,v 1.3 1999/01/12 16:50:23 vanilla Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	cosmo-2.0.4

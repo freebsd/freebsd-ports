@@ -4,7 +4,7 @@
 # Whom:					Matthew Hunt <mph@FreeBSD.org>
 # Based on ports by:			Stefan Eggers <seggers@semyam.dinoco.de>
 #
-# $Id: Makefile,v 1.1.1.1 1998/12/29 18:49:29 mph Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	crafty-open-rock-19980707

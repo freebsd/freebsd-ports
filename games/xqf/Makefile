@@ -3,7 +3,7 @@
 # Date created:				08 February 1999
 # Whom:					steve farrell
 #
-# $Id: Makefile,v 1.4 1999/05/29 03:56:09 steve Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	xqf-0.9.0

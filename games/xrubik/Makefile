@@ -3,7 +3,7 @@
 # Date created:		20 October 1996
 # Whom:			Yukihiro Nakai <nakai@mlab.t.u-tokyo.ac.jp>
 #
-# $Id: Makefile,v 1.9 1998/08/25 00:44:14 asami Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	xrubik-5.4.4

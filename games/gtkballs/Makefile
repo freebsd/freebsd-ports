@@ -3,7 +3,7 @@
 # Date created:				11 November 1998
 # Whom:					Andrey Zakhvatov
 #
-# $Id: Makefile,v 1.4 1999/05/29 03:55:39 steve Exp $
+# $FreeBSD$
 #
 
 DISTNAME=		gtkballs-1.04

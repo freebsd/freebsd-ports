@@ -3,7 +3,7 @@
 # Date created:         2 Jan 1995
 # Whom:                 swallace
 #
-# $Id: Makefile,v 1.9 1999/03/08 21:03:08 steve Exp $
+# $FreeBSD$
 #
 
 DISTNAME=       xsol-new

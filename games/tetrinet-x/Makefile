@@ -3,7 +3,7 @@
 # Date created:        11 Apr 1999
 # Whom:                gmarco@scotty.masternet.it
 #
-# $Id$
+# $FreeBSD$
 #
 
 DISTNAME= tetrinet-x.1.13.16

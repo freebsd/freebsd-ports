@@ -3,7 +3,7 @@
 # Date created:		25 December 1994
 # Whom:			joerg
 #
-# $Id: Makefile,v 1.16 1998/09/21 01:35:31 steve Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	xmine-1.0.3-Xaw

@@ -3,7 +3,7 @@
 # Date created:         Mon Dec 14 21:03:01 MET 1998
 # Whom:                 jmz
 #
-# $Id: Makefile,v 1.15 1999/06/22 16:29:28 steve Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	doomsrc

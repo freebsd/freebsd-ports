@@ -3,7 +3,7 @@
 # Date created:		02 January 1997
 # Whom:			Thomas Gellekum <tg@FreeBSD.org>
 #
-# $Id: Makefile,v 1.13 1999/05/25 12:23:11 tg Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	xgammon-0.98

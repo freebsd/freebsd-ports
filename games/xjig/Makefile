@@ -3,7 +3,7 @@
 # Date Created:		17 Sep 1997
 # Whom:			Vanilla I. Shu <vanilla@MinJe.com.TW>
 #
-# $Id: Makefile,v 1.2 1997/11/30 19:41:10 vanilla Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	xjig-2.4

@@ -3,7 +3,7 @@
 # Date created:				11 March 1998
 # Whom:					Andrey Zakhvatov
 #
-# $Id: Makefile,v 1.4 1998/12/21 11:51:10 flathill Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	koules1.4-src

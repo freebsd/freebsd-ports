@@ -3,7 +3,7 @@
 # Date created:				19 August 1999
 # Whom:					Andrey Zakhvatov
 #
-# $Id$
+# $FreeBSD$
 #
 
 DISTNAME=	PowerPak

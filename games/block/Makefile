@@ -3,7 +3,7 @@
 # Date created:				10 May 1997
 # Whom:					Andrey Zakhvatov
 #
-# $Id: Makefile,v 1.1.1.1 1997/05/21 03:34:47 asami Exp $
+# $FreeBSD$
 #
 
 DISTNAME=		block-0.6

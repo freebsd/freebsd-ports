@@ -3,7 +3,7 @@
 # Date created:				5 August 1998
 # Whom:					Andrey Zakhvatov
 #
-# $Id: Makefile,v 1.1.1.1 1999/04/13 14:43:17 taoka Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	garith-2.1

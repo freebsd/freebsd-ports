@@ -3,7 +3,7 @@
 # Date created:         30 Dec 1994
 # Whom:                 swallace
 #
-# $Id: Makefile,v 1.9 1998/08/25 00:43:58 asami Exp $
+# $FreeBSD$
 #
 
 DISTNAME=       xmille

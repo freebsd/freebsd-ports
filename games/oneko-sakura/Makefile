@@ -3,7 +3,7 @@
 # Date created:		25 May 1999
 # Whom:			HOTARU-YA <hotaru@tail.net>
 #
-# $Id$
+# $FreeBSD$
 #
 
 DISTNAME=	oneko-1.2

@@ -3,7 +3,7 @@
 # Date created:				2 March 1998
 # Whom:					Andrey Zakhvatov
 #
-# $Id: Makefile,v 1.6 1998/09/17 00:32:37 asami Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	xnibbles-1.0BETA3

@@ -3,7 +3,7 @@
 # Date created:		27 July 1997
 # Whom:			Thomas Gellekum <tg@FreeBSD.org>
 #
-# $Id: Makefile,v 1.5 1999/04/18 23:22:35 mharo Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	xscrabble

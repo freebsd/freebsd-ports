@@ -3,7 +3,7 @@
 # Date created:         26 June 1995
 # Whom:                 Thomas Gellekum <tg@FreeBSD.ORG>
 #
-# $Id: Makefile,v 1.12 1998/08/07 23:56:21 asami Exp $
+# $FreeBSD$
 #
 
 DISTNAME=       tksol-1.0

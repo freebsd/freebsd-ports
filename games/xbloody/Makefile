@@ -3,7 +3,7 @@
 # Date created:		10 February 1998
 # Whom:			FURUSAWA,Kazuhisa <kazu@jp.freebsd.org>
 #
-# $Id: Makefile,v 1.1.1.1 1998/02/15 17:03:36 jseger Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	xbloody

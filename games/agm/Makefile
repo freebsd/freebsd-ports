@@ -3,7 +3,7 @@
 # Date created:				4 July 1997
 # Whom:					Andrey Zakhvatov
 #
-# $Id: Makefile,v 1.2 1998/03/28 14:18:34 steve Exp $
+# $FreeBSD$
 #
 
 DISTNAME=		agm-1.4

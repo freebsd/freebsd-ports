@@ -3,7 +3,7 @@
 # Date created:				21 May 1998
 # Whom:					Andrey Zakhvatov
 #
-# $Id: Makefile,v 1.1.1.1 1998/07/12 23:57:25 steve Exp $
+# $FreeBSD$
 #
 
 DISTNAME=		xmball-5.4.4

@@ -3,7 +3,7 @@
 # Date created:				31 March 1998
 # Whom:					Andrey Zakhvatov
 #
-# $Id: Makefile,v 1.7 1999/01/07 08:19:35 simokawa Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	xothello

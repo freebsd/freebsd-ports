@@ -3,7 +3,7 @@
 # Date created:				14 March 1998
 # Whom:					Andrey Zakhvatov
 #
-# $Id: Makefile,v 1.2 1998/07/27 23:25:31 asami Exp $
+# $FreeBSD$
 #
 
 DISTNAME=		xtruco

@@ -3,7 +3,7 @@
 # Date created:         So  27 Okt 1996 12:25:55 MET
 # Whom:                 Andreas Klemm <andreas@klemm.gtn.com>
 #
-# $Id: Makefile,v 1.27 1999/08/21 17:17:47 andreas Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	crossfire-${MAJ}.${MIN}.${PL}

@@ -3,7 +3,7 @@
 # Date created:        12 October 1996
 # Whom:                Yukihiro Nakai <Nakai@Mlab.t.u-tokyo.ac.jp>
 #
-# $Id: Makefile,v 1.6 1998/08/25 00:43:47 asami Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	xcubes-5.4.4

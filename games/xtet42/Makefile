@@ -3,7 +3,7 @@
 # Date created:        14 Feb 1999
 # Whom:                gmarco@scotty.masternet.it
 #
-# $Id: Makefile,v 1.1.1.1 1999/04/19 04:21:27 steve Exp $
+# $FreeBSD$
 #
 
 DISTNAME= 	xtet42-2.21

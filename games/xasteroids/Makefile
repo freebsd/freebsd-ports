@@ -3,7 +3,7 @@
 # Date created:         3 Jan 1995
 # Whom:                 swallace
 #
-# $Id: Makefile,v 1.10 1998/10/03 13:39:44 jseger Exp $
+# $FreeBSD$
 #
 
 DISTNAME=       xasteroids

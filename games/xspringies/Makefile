@@ -3,7 +3,7 @@
 # Date created:				12 January 1997
 # Whom:					jkh
 #
-# $Id: Makefile,v 1.1.1.1 1997/02/16 01:35:52 obrien Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	xspringies-1.1

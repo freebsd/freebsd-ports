@@ -3,7 +3,7 @@
 # Date created:        18 March 1999
 # Whom:                Zenin <zenin@archive.rhps.org>
 #
-# $Id: Makefile,v 1.1.1.1 1999/03/31 06:33:48 taoka Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	wmeyes-1.0

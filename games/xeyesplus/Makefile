@@ -3,7 +3,7 @@
 # Date created:         20 Oct 1996
 # Whom:                 Yukihiro Nakai <nakai@mlab.t.u-tokyo.ac.jp>
 #
-# $Id: Makefile,v 1.8 1999/01/12 16:51:19 vanilla Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	xeyes+2.01

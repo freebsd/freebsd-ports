@@ -3,7 +3,7 @@
 # Date Created:		3 Jul 1996
 # Whom:			Tim Vanderhoek <ac199@hwcn.org>
 #
-# $Id: Makefile,v 1.7 1998/09/28 02:14:24 steve Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	tvp-0.9.7.1

@@ -3,7 +3,7 @@
 # Date created:		31 Oct 1998
 # Whom:			Seiichirou Hiraoka
 #
-# $Id: Makefile,v 1.5 1999/06/22 16:36:09 steve Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	fkiss028

@@ -3,7 +3,7 @@
 # Date created:				28 June 1998
 # Whom:					Matthew Hunt <mph@FreeBSD.org>
 #
-# $Id: Makefile,v 1.7 1999/05/23 20:43:27 mph Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	inform-6.21

@@ -3,7 +3,7 @@
 # Date created:		29 December 1996
 # Whom:			jseger@scds.com
 #
-# $Id: Makefile,v 1.2 1997/10/13 09:14:47 tg Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	gnugo-1.2

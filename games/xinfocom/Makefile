@@ -3,7 +3,7 @@
 # Date created:				7 May 1998
 # Whom:					Matthew Hunt <mph@FreeBSD.org>
 #
-# $Id: Makefile,v 1.1.1.1 1998/05/07 19:05:47 mph Exp $
+# $FreeBSD$
 #
 
 DISTNAME=		unix8m

@@ -3,7 +3,7 @@
 # Date created:				6 August 1998
 # Whom:					Andrey Zakhvatov
 #
-# $Id$
+# $FreeBSD$
 #
 
 DISTNAME=		miscom

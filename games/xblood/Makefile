@@ -3,7 +3,7 @@
 # Date created:        27 Jun 1999
 # Whom:                Sakai Hiroaki <sakai@miya.ee.kagu.sut.ac.jp>
 #
-# $Id$
+# $FreeBSD$
 #
 
 DISTNAME=	xblood-1.0

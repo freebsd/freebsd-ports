@@ -3,7 +3,7 @@
 # Date created:        15 Feb 1999
 # Whom:                gmarco@scotty.masternet.it
 #
-# $Id: Makefile,v 1.1.1.1 1999/04/02 04:10:14 steve Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	pmars08s
