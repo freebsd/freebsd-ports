@@ -49,6 +49,7 @@ DISTFILES=		redhat-release-8.0-8.noarch.rpm \
 			libgcc-3.2-7.${ARCH}.rpm \
 			freetype-2.1.5-0.ximian.5.1.${ARCH}.rpm:ft \
 			zlib-1.1.4-8.8x.${ARCH}.rpm:new
+EXTRACT_ONLY=
 
 MAINTAINER=		freebsd-emulation@FreeBSD.org
 COMMENT=	Base set of packages needed in Linux mode (only for i386)
@@ -98,7 +99,7 @@ FALLBACK_ELF_MIB=	kern.fallback_elf_brand
 LINUX_ELF=		3
 PREVIOUS_ELF!=		/sbin/sysctl -n ${FALLBACK_ELF_MIB}
 
-do-extract:
+do-install:
 #
 # Handle the loading of the linux loadable kernel module if required.
 	@${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
@@ -142,14 +143,16 @@ do-extract:
 		${RM} -f ${WRKSRC}/$$F; \
 	done
 	@${LN} -sf /var/tmp ${WRKSRC}/usr/tmp
-
-pre-install:
+#
+# Create PLIST
+#
 	${RM} -f ${PLIST}
 	cd ${WRKSRC} && ${FIND} -s . -type f -o -type l | \
 		${CUT} -c3-999 >> ${PLIST} \
 		&& ${FIND} -d * -type d | ${SED} -e 's:^:@dirrm :' >> ${PLIST}
-
-do-install:
+#
+# The real do-install:
+#
 	cd ${WRKSRC} && ${FIND} * | ${CPIO} -dmp ${PREFIX}
 	${FIND} ${PREFIX} -type d -exec ${CHMOD} 755 \{\} \;
 
