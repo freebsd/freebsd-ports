@@ -1,6 +1,6 @@
---- configure.orig	Tue Jun  1 13:57:51 2004
-+++ configure	Tue Jun  1 13:58:33 2004
-@@ -1706,30 +1706,7 @@
+--- configure.orig	Sat Jul  3 16:37:01 2004
++++ configure	Sat Jul  3 16:40:21 2004
+@@ -1705,30 +1705,7 @@
  echo "$as_me: WARNING: \`missing' script is too old or missing" >&2;}
  fi
  
@@ -31,11 +31,17 @@
  
  for ac_prog in gawk mawk nawk awk
  do
-@@ -19101,6 +19078,7 @@
+@@ -22732,11 +22709,11 @@
+ echo "$as_me:$LINENO: result: $MOZILLA_VERSION$autodetect" >&5
+ echo "${ECHO_T}$MOZILLA_VERSION$autodetect" >&6
  
- # This can be used to rebuild libtool when needed
- LIBTOOL_DEPS="$ac_aux_dir/ltmain.sh"
-+$ac_aux_dir/ltconfig $LIBTOOL_DEPS
+-if test $MOZILLA_VERSION == "trunk"; then
++if test $MOZILLA_VERSION = "trunk"; then
+ 	MOZILLA_VERSION=99.0 # use a high number
+ fi
  
- # Always use our own libtool.
- LIBTOOL='$(SHELL) $(top_builddir)/libtool'
+-version=$(echo $MOZILLA_VERSION | sed -e 's/\([0-9]\+\|[a-z]\+\)/\1 /g' -e 's/\.//g')
++version=$(echo $MOZILLA_VERSION | sed -E -e 's/([0-9]+|[a-z]+)/\1 /g' -e 's/\.//g')
+ 
+ set -- $version;
+ 
