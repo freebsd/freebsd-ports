@@ -1,0 +1,31 @@
+bin/ssystem
+share/doc/ssystem/CHANGES
+share/doc/ssystem/LEEME
+share/doc/ssystem/LICENSE
+share/doc/ssystem/README
+share/doc/ssystem/TODO
+share/ssystem/Stars.dat
+share/ssystem/callisto.jpg
+share/ssystem/charon.jpg
+share/ssystem/dione.jpg
+share/ssystem/earth.jpg
+share/ssystem/europa.jpg
+share/ssystem/ganymede.jpg
+share/ssystem/io.jpg
+share/ssystem/jupiter.jpg
+share/ssystem/mars.jpg
+share/ssystem/mercury.jpg
+share/ssystem/moon.jpg
+share/ssystem/neptune.jpg
+share/ssystem/pluto.jpg
+share/ssystem/rhea.jpg
+share/ssystem/satrings.jpg
+share/ssystem/saturn.jpg
+share/ssystem/sun.jpg
+share/ssystem/tethys.jpg
+share/ssystem/titan.jpg
+share/ssystem/triton.jpg
+share/ssystem/uranus.jpg
+share/ssystem/venus.jpg
+@dirrm share/doc/ssystem
+@dirrm share/ssystem
