@@ -7,6 +7,7 @@
 
 PORTNAME=	arla
 PORTVERSION=	0.34.2
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	ftp://ftp.stacken.kth.se/pub/arla/
 
@@ -21,5 +22,6 @@ BROKEN=		requires kernel source
 .endif
 
 GNU_CONFIGURE=	yes
+MAN3=		cmd.3
 
 .include <bsd.port.mk>
