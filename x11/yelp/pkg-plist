@@ -43,6 +43,7 @@ share/gnome/yelp/icons/warning.png
 share/gnome/yelp/important_docs.xml
 share/gnome/yelp/toc.xml
 share/gnome/yelp/ui/yelp.glade
+share/locale/af/LC_MESSAGES/yelp.mo
 share/locale/am/LC_MESSAGES/yelp.mo
 share/locale/ar/LC_MESSAGES/yelp.mo
 share/locale/az/LC_MESSAGES/yelp.mo
@@ -65,6 +66,7 @@ share/locale/fi/LC_MESSAGES/yelp.mo
 share/locale/fr/LC_MESSAGES/yelp.mo
 share/locale/ga/LC_MESSAGES/yelp.mo
 share/locale/gl/LC_MESSAGES/yelp.mo
+share/locale/gu/LC_MESSAGES/yelp.mo
 share/locale/he/LC_MESSAGES/yelp.mo
 share/locale/hi/LC_MESSAGES/yelp.mo
 share/locale/hr/LC_MESSAGES/yelp.mo
