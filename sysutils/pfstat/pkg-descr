@@ -1,0 +1,7 @@
+Pfstat is a small utility that collects packet filter (security/pf) statistics
+and produces graphs like mrtg or alike. Samples can be found at the website
+below.
+
+WWW: http://www.benzedrine.cx/pfstat.html
+
+-Max <max@love2party.net>
