@@ -6,7 +6,6 @@
     SUBDIR += WebMagick
     SUBDIR += abcache
     SUBDIR += adzap
-    SUBDIR += adzapper
     SUBDIR += amaya
     SUBDIR += amyc
     SUBDIR += analog
