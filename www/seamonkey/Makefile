@@ -6,15 +6,15 @@
 #
 
 PORTNAME?=	mozilla
-PORTVERSION=	1.7.r2
+PORTVERSION=	1.7.r3
 PORTREVISION?=	0
 PORTEPOCH?=	2
 CATEGORIES?=	www
 MASTER_SITES=	${MASTER_SITE_MOZILLA} \
 		${MASTER_SITE_LOCAL:S/$/:local/}
-MASTER_SITE_SUBDIR=	mozilla/releases/${PORTNAME}${PORTVERSION:S/.r2/rc2/}/src \
+MASTER_SITE_SUBDIR=	mozilla/releases/${PORTNAME}${PORTVERSION:S/.r3/rc3/}/src \
 			marcus/:local
-DISTFILES=	${PORTNAME}-source-${PORTVERSION:S/.r2/rc2/}${EXTRACT_SUFX}
+DISTFILES=	${PORTNAME}-source-${PORTVERSION:S/.r3/rc3/}${EXTRACT_SUFX}
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	The open source, standards compliant web browser
