@@ -42,6 +42,7 @@ LDFLAGS=	-L${LOCALBASE}/lib
 DICT?=		none
 
 .if ${DICT} != "none"
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
 .if ${DICT} == "all"
 DISTFILES+=	Dutch.tgz
 DISTFILES+=	English.tgz
