@@ -60,7 +60,7 @@ PLIST_SUB+=	NOBASE=""
 .endif
 
 MAKE_ENV+=	MANPREFIX=${MANPREFIX}
-NOPRECIOUSMAKEVARS=	To much _MLINKS for fetch
+NOPRECIOUSMAKEVARS=	Too many _MLINKS for fetch
 
 MAN1=	CA.pl.1 asn1parse.1 ca.1 ciphers.1 crl.1 crl2pkcs7.1 dgst.1 dhparam.1 \
 	dsa.1 dsaparam.1 enc.1 gendsa.1 genrsa.1 nseq.1 ocsp.1 openssl.1 \
