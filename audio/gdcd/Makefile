@@ -22,7 +22,7 @@ USE_X_PREFIX=	yes
 USE_AUTOMAKE=	yes
 AUTOMAKE=	automake -a -i
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		GLIB_CONFIG="${GTK_CONFIG}" \
+		GLIB_CONFIG="${GLIB_CONFIG}" \
 		GTK_CONFIG="${GTK_CONFIG}" \
 		LIBS="-L${LOCALBASE}/lib"
 CONFIGURE_ARGS=	--disable-glibtest --disable-gtktest
