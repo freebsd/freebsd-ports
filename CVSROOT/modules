@@ -7691,6 +7691,7 @@ php4-dba	ports/databases/php4-dba
 php4-dbase	ports/databases/php4-dbase
 php4-dbx	ports/databases/php4-dbx
 php4-dtc	ports/lang/php4-dtc
+php4-filepro	ports/databases/php4-filepro
 php4-gd		ports/graphics/php4-gd
 php4-horde	ports/lang/php4-horde
 php4-iconv	ports/converters/php4-iconv
