@@ -502,6 +502,7 @@
     SUBDIR += p5-Kwiki-Atom
     SUBDIR += p5-Kwiki-GDGraphGenerator
     SUBDIR += p5-Kwiki-NewPage
+    SUBDIR += p5-Kwiki-PagePrivacy
     SUBDIR += p5-Kwiki-RecentChanges
     SUBDIR += p5-Kwiki-RecentChangesRSS
     SUBDIR += p5-Kwiki-Revisions

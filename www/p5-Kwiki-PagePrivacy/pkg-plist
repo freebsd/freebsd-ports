@@ -1,0 +1,4 @@
+%%SITE_PERL%%/Kwiki/PagePrivacy.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Kwiki/PagePrivacy/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Kwiki/PagePrivacy
+@unexec rmdir %D/%%SITE_PERL%%/Kwiki 2>/dev/null || true
