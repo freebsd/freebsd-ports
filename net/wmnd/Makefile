@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	wmnd
-PORTVERSION=	0.4.4
+PORTVERSION=	0.4.5
 CATEGORIES=	net
-MASTER_SITES=	http://www.hydra.ubiest.com/wmnd/releases/
+MASTER_SITES=	http://www.yuv.info/wmnd/releases/
 
 MAINTAINER=	flag@gufi.org
 COMMENT=	Improved network monitoring dock app (with tons of features)
