@@ -1,0 +1,12 @@
+*** configure.orig	Tue May 26 23:50:45 1998
+--- configure	Tue May 26 23:50:28 1998
+***************
+*** 3432,3437 ****
+--- 3432,3438 ----
+  s%@host_os@%$host_os%g
+  s%@CC@%$CC%g
+  s%@INSTALL_PROGRAM@%$INSTALL_PROGRAM%g
++ s%@INSTALL_SCRIPT@%$INSTALL_SCRIPT%g
+  s%@INSTALL_DATA@%$INSTALL_DATA%g
+  s%@CPP@%$CPP%g
+  s%@LEX@%$LEX%g
