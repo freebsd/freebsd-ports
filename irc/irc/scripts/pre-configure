@@ -1,6 +1,6 @@
 #!/bin/sh
 #
-# $Id: pre-configure,v 1.1 1997/03/11 23:47:23 torstenb Exp $
+# $FreeBSD$
 #
 
 mv ${WRKSRC}/support/config.h.dist ${WRKSRC}/support/config.h.dist.bak.2

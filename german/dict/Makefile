@@ -3,7 +3,7 @@
 # Date created:         6 August 1997
 # Whom:                 wosch
 #
-# $Id: Makefile,v 1.6 1997/12/31 22:33:44 asami Exp $
+# $FreeBSD$
 #
 
 DISTNAME=       dict-1.1

@@ -1,6 +1,6 @@
 #!/bin/sh
 #
-# $Id: qserver.sh,v 1.1 1997/05/31 00:52:03 jfitz Exp $
+# $FreeBSD$
 #
 
 QSERVER=%%PREFIX%%/quakeserver/unixded

@@ -1,6 +1,6 @@
 #!/bin/sh
 #
-# $Id:$
+# $FreeBSD$
 #
 
 mv ${WRKSRC}/mirror.pl ${WRKSRC}/mirror.pl.bak

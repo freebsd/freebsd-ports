@@ -1,6 +1,6 @@
 #!/bin/sh
 #
-# $Id: configure,v 1.1.1.1 1995/03/26 18:08:54 joerg Exp $
+# $FreeBSD$
 #
 # Author:		Jörg Wunsch <joerg@FreeBSD.org>
 # Date of creation:	Mar 27, 1995
