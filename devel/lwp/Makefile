@@ -19,4 +19,10 @@ USE_LIBTOOL=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 INSTALLS_SHLIB=	yes
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} != "i386" && ${ARCH} != "alpha"
+BROKEN=		"Does not compile on !i386 and !alpha"
+.endif
+
+.include <bsd.port.post.mk>
