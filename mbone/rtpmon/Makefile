@@ -3,7 +3,7 @@
 # Date created:				1 November 1996
 # Whom:	      Bill Fenner <fenner@FreeBSD.ORG>
 #
-#   $Id: Makefile,v 1.8 1998/08/07 23:56:36 asami Exp $
+# $Id: Makefile,v 1.9 1998/09/26 23:11:01 steve Exp $
 #
 
 DISTNAME=	rtpmon-1.0a7
@@ -20,7 +20,7 @@ USE_X_PREFIX=	yes
 MAN1=		rtpmon.1
 
 pre-configure:
-	@cd ${WRKSRC}; autoconf
+	@cd ${WRKSRC}; chmod +w configure; autoconf
 
 post-install:
 	strip ${PREFIX}/bin/rtpmon
