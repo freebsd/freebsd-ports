@@ -1,38 +1,9 @@
---- configure.orig	Wed Apr 12 20:43:02 2000
-+++ configure	Mon Apr 17 17:54:44 2000
-@@ -2507,7 +2507,7 @@
- fi
- if eval "test \"`echo '$ac_cv_lib_'$ac_lib_var`\" = yes"; then
-   echo "$ac_t""yes" 1>&6
--  PTHREAD_LIB="-lc_r"
-+  PTHREAD_LIB=""
- else
-   echo "$ac_t""no" 1>&6
- echo $ac_n "checking for pthread_create""... $ac_c" 1>&6
-@@ -5319,15 +5319,15 @@
- fi
- 
-         
--	USE_INCLUDED_LIBINTL=yes
-+#	USE_INCLUDED_LIBINTL=yes
-         CATOBJEXT=.gmo
-         INSTOBJEXT=.mo
-         DATADIRNAME=share
- 	INTLDEPS='$(top_builddir)/intl/libintl.a'
--	INTLLIBS=$INTLDEPS
-+	INTLLIBS='-lintl'
- 	LIBS=`echo $LIBS | sed -e 's/-lintl//'`
--        nls_cv_header_intl=intl/libintl.h
--        nls_cv_header_libgt=intl/libgettext.h
-+#        nls_cv_header_intl=intl/libintl.h
-+#        nls_cv_header_libgt=intl/libgettext.h
-       fi
- 
-             if test "$XGETTEXT" != ":"; then
-@@ -5876,8 +5876,8 @@
+--- configure.orig	Tue May  9 20:50:13 2000
++++ configure	Tue May 16 09:56:35 2000
+@@ -5951,8 +5951,8 @@
  
  echo $ac_n "checking for GTK >= 1.2.7""... $ac_c" 1>&6
- echo "configure:5879: checking for GTK >= 1.2.7" >&5
+ echo "configure:5954: checking for GTK >= 1.2.7" >&5
 -if gtk-config --version > /dev/null 2>&1; then 
 -        vers=`gtk-config --version | awk 'BEGIN { FS = "."; } { printf "%d", ($1 * 1000 + $2) * 1000 + $3;}'`
 +if $GTK_CONFIG --version > /dev/null 2>&1; then 

@@ -1,53 +1,58 @@
 bin/gnumeric
 etc/CORBA/servers/gnumeric.gnorba
 etc/CORBA/servers/graph.gnorba
+etc/gnumericConf.sh
+lib/gnumeric/%%VERSION%%/plugins/gnum_csv.so
+lib/gnumeric/%%VERSION%%/plugins/gnum_dif.so
+lib/gnumeric/%%VERSION%%/plugins/gnum_guile.so
+lib/gnumeric/%%VERSION%%/plugins/gnum_html.so
+lib/gnumeric/%%VERSION%%/plugins/gnum_lotus.so
+lib/gnumeric/%%VERSION%%/plugins/gnum_numtheory.so
+lib/gnumeric/%%VERSION%%/plugins/gnum_oleo.so
+lib/gnumeric/%%VERSION%%/plugins/gnum_sc.so
+lib/gnumeric/%%VERSION%%/plugins/gnum_sylk.so
+lib/gnumeric/%%VERSION%%/plugins/gnum_text.so
+lib/gnumeric/%%VERSION%%/plugins/gnum_xbase.so
 share/gnome/apps/Applications/gnumeric.desktop
-share/gnome/gnumeric/glade/advanced-filter.glade
-share/gnome/gnumeric/glade/analysis-tools.glade
-share/gnome/gnumeric/glade/autocorrect-exceptions.glade
-share/gnome/gnumeric/glade/autocorrect.glade
-share/gnome/gnumeric/glade/autosave-prompt.glade
-share/gnome/gnumeric/glade/autosave.glade
-share/gnome/gnumeric/glade/cell-format.glade
-share/gnome/gnumeric/glade/cell-sort.glade
-share/gnome/gnumeric/glade/col-width.glade
-share/gnome/gnumeric/glade/delete-cells.glade
-share/gnome/gnumeric/glade/dialog-stf.glade
-share/gnome/gnumeric/glade/dialog-zoom.glade
-share/gnome/gnumeric/glade/font-sel.glade
-share/gnome/gnumeric/glade/function-select.glade
-share/gnome/gnumeric/glade/graphics.glade
-share/gnome/gnumeric/glade/hf-config.glade
-share/gnome/gnumeric/glade/import.glade
-share/gnome/gnumeric/glade/insert-cells.glade
-share/gnome/gnumeric/glade/names.glade
-share/gnome/gnumeric/glade/plugin-manager.glade
-share/gnome/gnumeric/glade/print.glade
-share/gnome/gnumeric/glade/row-height.glade
-share/gnome/gnumeric/glade/sheet-order.glade
-share/gnome/gnumeric/glade/sheet-rename.glade
-share/gnome/gnumeric/glade/solver-options.glade
-share/gnome/gnumeric/glade/solver.glade
-share/gnome/gnumeric/glade/summary.glade
-share/gnome/gnumeric/glade/workbook-attr.glade
-share/gnome/gnumeric/guile/functions.scm
-share/gnome/gnumeric/guile/gnumeric_startup.scm
-share/gnome/gnumeric/plugins/%%GNUMERIC_REV%%/libgnum_csv.so
-share/gnome/gnumeric/plugins/%%GNUMERIC_REV%%/libgnum_dif.so
-share/gnome/gnumeric/plugins/%%GNUMERIC_REV%%/libgnum_guile.so
-share/gnome/gnumeric/plugins/%%GNUMERIC_REV%%/libgnum_html.so
-share/gnome/gnumeric/plugins/%%GNUMERIC_REV%%/libgnum_lotus.so
-share/gnome/gnumeric/plugins/%%GNUMERIC_REV%%/libgnum_oleo.so
-share/gnome/gnumeric/plugins/%%GNUMERIC_REV%%/libgnum_sc.so
-share/gnome/gnumeric/plugins/%%GNUMERIC_REV%%/libgnum_sylk.so
-share/gnome/gnumeric/plugins/%%GNUMERIC_REV%%/libgnum_text.so
-share/gnome/gnumeric/plugins/%%GNUMERIC_REV%%/libgnum_xbase.so
-share/gnome/gnumeric/python/gnumeric_startup.py
+share/gnome/gnumeric/%%VERSION%%/glade/advanced-filter.glade
+share/gnome/gnumeric/%%VERSION%%/glade/analysis-tools.glade
+share/gnome/gnumeric/%%VERSION%%/glade/autocorrect-exceptions.glade
+share/gnome/gnumeric/%%VERSION%%/glade/autocorrect.glade
+share/gnome/gnumeric/%%VERSION%%/glade/autosave-prompt.glade
+share/gnome/gnumeric/%%VERSION%%/glade/autosave.glade
+share/gnome/gnumeric/%%VERSION%%/glade/cell-format.glade
+share/gnome/gnumeric/%%VERSION%%/glade/cell-sort.glade
+share/gnome/gnumeric/%%VERSION%%/glade/col-width.glade
+share/gnome/gnumeric/%%VERSION%%/glade/delete-cells.glade
+share/gnome/gnumeric/%%VERSION%%/glade/dialog-stf-export.glade
+share/gnome/gnumeric/%%VERSION%%/glade/dialog-stf.glade
+share/gnome/gnumeric/%%VERSION%%/glade/dialog-zoom.glade
+share/gnome/gnumeric/%%VERSION%%/glade/font-sel.glade
+share/gnome/gnumeric/%%VERSION%%/glade/function-select.glade
+share/gnome/gnumeric/%%VERSION%%/glade/graphics.glade
+share/gnome/gnumeric/%%VERSION%%/glade/hf-config.glade
+share/gnome/gnumeric/%%VERSION%%/glade/import.glade
+share/gnome/gnumeric/%%VERSION%%/glade/insert-cells.glade
+share/gnome/gnumeric/%%VERSION%%/glade/names.glade
+share/gnome/gnumeric/%%VERSION%%/glade/plugin-manager.glade
+share/gnome/gnumeric/%%VERSION%%/glade/print.glade
+share/gnome/gnumeric/%%VERSION%%/glade/row-height.glade
+share/gnome/gnumeric/%%VERSION%%/glade/sheet-order.glade
+share/gnome/gnumeric/%%VERSION%%/glade/sheet-rename.glade
+share/gnome/gnumeric/%%VERSION%%/glade/solver-options.glade
+share/gnome/gnumeric/%%VERSION%%/glade/solver.glade
+share/gnome/gnumeric/%%VERSION%%/glade/summary.glade
+share/gnome/gnumeric/%%VERSION%%/glade/workbook-attr.glade
+share/gnome/gnumeric/%%VERSION%%/guile/functions.scm
+share/gnome/gnumeric/%%VERSION%%/guile/gnumeric_startup.scm
+share/gnome/gnumeric/%%VERSION%%/python/gnumeric_defs.py
+share/gnome/gnumeric/%%VERSION%%/python/gnumeric_startup.py
 share/gnome/idl/Gnumeric.idl
 share/gnome/idl/Graph.idl
 share/gnome/mc/templates/gnumeric.desktop
 share/gnome/mime-info/gnumeric.keys
 share/gnome/mime-info/gnumeric.mime
+share/gnome/oaf/graph.oafinfo
 share/gnome/pixmaps/gnome-application-x-gnumeric.png
 share/gnome/pixmaps/gnome-application-x-xls.png
 share/gnome/pixmaps/gnome-gnumeric.png
@@ -132,11 +137,17 @@ share/gnome/pixmaps/gnumeric/gp_25grey
 share/gnome/pixmaps/gnumeric/gp_50grey
 share/gnome/pixmaps/gnumeric/gp_625grey
 share/gnome/pixmaps/gnumeric/gp_75grey
+share/gnome/pixmaps/gnumeric/gp_bricks
 share/gnome/pixmaps/gnumeric/gp_diag
 share/gnome/pixmaps/gnumeric/gp_diag_cross
+share/gnome/pixmaps/gnumeric/gp_foreground_solid
 share/gnome/pixmaps/gnumeric/gp_horiz
+share/gnome/pixmaps/gnumeric/gp_large_circles
 share/gnome/pixmaps/gnumeric/gp_rev_diag
+share/gnome/pixmaps/gnumeric/gp_semi_circle
+share/gnome/pixmaps/gnumeric/gp_small_circle
 share/gnome/pixmaps/gnumeric/gp_solid
+share/gnome/pixmaps/gnumeric/gp_thatch
 share/gnome/pixmaps/gnumeric/gp_thick_diag_cross
 share/gnome/pixmaps/gnumeric/gp_thin_diag
 share/gnome/pixmaps/gnumeric/gp_thin_diag_cross
@@ -169,6 +180,7 @@ share/gnome/pixmaps/gnumeric/outline_border
 share/gnome/pixmaps/gnumeric/rev_diag_border
 share/gnome/pixmaps/gnumeric/right-down.png
 share/gnome/pixmaps/gnumeric/right_border
+share/gnome/pixmaps/gnumeric/stf-druid.png
 share/gnome/pixmaps/gnumeric/top_border
 share/locale/cs/LC_MESSAGES/gnumeric.mo
 share/locale/da/LC_MESSAGES/gnumeric.mo
@@ -203,10 +215,13 @@ share/locale/sv/LC_MESSAGES/gnumeric.mo
 share/locale/uk/LC_MESSAGES/gnumeric.mo
 share/locale/zh_CN.GB2312/LC_MESSAGES/gnumeric.mo
 share/locale/zh_TW.Big5/LC_MESSAGES/gnumeric.mo
-@dirrm share/gnome/gnumeric/guile
-@dirrm share/gnome/gnumeric/glade
-@dirrm share/gnome/gnumeric/plugins/%%GNUMERIC_REV%%/
-@dirrm share/gnome/gnumeric/plugins
-@dirrm share/gnome/gnumeric/python
+@dirrm share/gnome/gnumeric/%%VERSION%%/python
+@dirrm share/gnome/gnumeric/%%VERSION%%/guile
+@dirrm share/gnome/gnumeric/%%VERSION%%/glade
+@dirrm share/gnome/gnumeric/%%VERSION%%
 @dirrm share/gnome/gnumeric
 @dirrm share/gnome/pixmaps/gnumeric
+@dirrm share/gnome/oaf
+@dirrm lib/gnumeric/%%VERSION%%/plugins
+@dirrm lib/gnumeric/%%VERSION%%
+@dirrm lib/gnumeric
