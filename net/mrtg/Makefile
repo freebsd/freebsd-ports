@@ -1,18 +1,18 @@
 # New ports collection makefile for:	MRTG
-# Version required:			2.2
+# Version required:			2.3
 # Date created:				April 18th 1997
 # Whom:	      				James FitzGibbon <jfitz@FreeBSD.org>
 #
-#   $Id: Makefile,v 1.3 1997/04/25 13:54:01 jfitz Exp $
+#   $Id: Makefile,v 1.4 1997/06/13 18:01:07 jfitz Exp $
 #
 
-DISTNAME=	mrtg-2.2
+DISTNAME=	mrtg-2.3
 CATEGORIES=	net
 MASTER_SITES=	http://www.ee.ethz.ch/~oetiker/webtools/mrtg/pub/
 
 MAINTAINER=	jfitz@FreeBSD.ORG
 
-BUILD_DEPENDS=	${PREIFX}/bin/perl5.004:${PORTSDIR}/lang/perl5 \
+BUILD_DEPENDS=	${PREFIX}/bin/perl5.004:${PORTSDIR}/lang/perl5 \
 		${PREFIX}/lib/libgd.a:${PORTSDIR}/graphics/gd
 RUN_DEPENDS=	${PREFIX}/lib/perl5/site_perl/PV.pm:${PORTSDIR}/devel/p5-PV
 
