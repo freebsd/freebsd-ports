@@ -1,30 +1,52 @@
 bin/zhcon
-lib/zhcon/asc16
-lib/zhcon/big516
-%%BIG5IME%%lib/zhcon/big5-ary30.mb
-%%BIG5IME%%lib/zhcon/big5-cj.mb
-%%BIG5IME%%lib/zhcon/big5-liu5.mb
-%%BIG5IME%%lib/zhcon/big5-phone-et.mb
-%%BIG5IME%%lib/zhcon/big5-phone-gy.mb
-%%BIG5IME%%lib/zhcon/big5-phone-ibm.mb
-%%BIG5IME%%lib/zhcon/big5-phone.mb
-lib/zhcon/cjf.mb
-lib/zhcon/cjj.mb
-lib/zhcon/dzm.mb
-lib/zhcon/ed.mb
-lib/zhcon/gb16
-lib/zhcon/gbk16
-lib/zhcon/jis16
-lib/zhcon/jp.mb
-lib/zhcon/kscm16
-lib/zhcon/pt.mb
-lib/zhcon/py.mb
-lib/zhcon/sp.mb
-lib/zhcon/wb.mb
-lib/zhcon/wbew.mb
-lib/zhcon/wbh.mb
-lib/zhcon/winpy.mb
-lib/zhcon/winsp.mb
-lib/zhcon/winzm.mb
-lib/zhcon/zhcon.cfg
-@dirrm lib/zhcon/
+etc/zhcon.conf.sample
+lib/zhcon/font/asc12.bpsf
+lib/zhcon/font/asc12x.bpsf
+lib/zhcon/font/asc14.bpsf
+lib/zhcon/font/asc14b.bpsf
+lib/zhcon/font/asc16.bpsf
+lib/zhcon/font/asc24.bpsf
+lib/zhcon/font/big5-12-ming.bpsf
+lib/zhcon/font/big5-16-ming.bpsf
+lib/zhcon/font/big5-16.bpsf
+lib/zhcon/font/gb-16.bpsf
+lib/zhcon/font/gb-24-kai.bpsf
+lib/zhcon/font/gbk-16.bpsf
+lib/zhcon/font/hzk12.bpsf
+lib/zhcon/font/hzk14.bpsf
+lib/zhcon/font/hzk16.bpsf
+lib/zhcon/font/jis-16.bpsf
+lib/zhcon/font/kscm-16.bpsf
+lib/zhcon/input/big5-ary30.mb
+lib/zhcon/input/big5-cj.mb
+lib/zhcon/input/big5-liu5.mb
+lib/zhcon/input/big5-phone.mb
+lib/zhcon/input/cjf.mb
+lib/zhcon/input/cjj.mb
+lib/zhcon/input/dzm.mb
+lib/zhcon/input/ed.mb
+lib/zhcon/input/jp.mb
+lib/zhcon/input/pt.mb
+lib/zhcon/input/py.mb
+lib/zhcon/input/sp.mb
+lib/zhcon/input/wb.mb
+lib/zhcon/input/wbew.mb
+lib/zhcon/input/wbh.mb
+lib/zhcon/input/winpy.mb
+lib/zhcon/input/winsp.mb
+lib/zhcon/input/winzm.mb
+share/locale/ja/LC_MESSAGES/zhcon.mo
+share/locale/zh_CN.GB2312/LC_MESSAGES/zhcon.mo
+share/locale/zh_CN.GBK/LC_MESSAGES/zhcon.mo
+share/locale/zh_TW.Big5/LC_MESSAGES/zhcon.mo
+@dirrm share/locale/zh_TW.Big5/LC_MESSAGES
+@dirrm share/locale/zh_TW.Big5
+@dirrm share/locale/zh_CN.GBK/LC_MESSAGES
+@dirrm share/locale/zh_CN.GBK
+@dirrm share/locale/zh_CN.GB2312/LC_MESSAGES
+@dirrm share/locale/zh_CN.GB2312
+@dirrm share/locale/kr/LC_MESSAGES
+@dirrm share/locale/kr
+@dirrm lib/zhcon/input
+@dirrm lib/zhcon/font
+@dirrm lib/zhcon
