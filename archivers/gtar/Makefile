@@ -32,4 +32,10 @@ LDSTATIC=	-static
 LDSTATIC=
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 470000
+IGNORE=		is in the base system
+.endif
+
+.include <bsd.port.post.mk>
