@@ -12,6 +12,7 @@ MASTER_SITES=	http://ulli.on.openave.net/gnome2wmaker/
 
 MAINTAINER=	reg@FreeBSD.org
 
+LIB_DEPENDS=	PropList.2:${PORTSDIR}/devel/libPropList
 RUN_DEPENDS=	wmaker:${PORTSDIR}/x11-wm/windowmaker
 
 USE_BZIP2=	yes
