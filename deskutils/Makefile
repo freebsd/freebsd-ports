@@ -59,6 +59,7 @@
     SUBDIR += gtweakui
     SUBDIR += gucharmap
     SUBDIR += gworkspace
+    SUBDIR += gxmessage
     SUBDIR += hot-babe
     SUBDIR += howm
     SUBDIR += ical
