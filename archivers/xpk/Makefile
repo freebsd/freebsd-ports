@@ -8,8 +8,7 @@
 PORTNAME=	xpk
 PORTVERSION=	0.1.4
 CATEGORIES=	archivers
-MASTER_SITES=	http://www.jormas.com/~vesuri/xpk/ \
-		http://energyhq.homeip.net/files/
+MASTER_SITES=	http://www.jormas.com/~vesuri/xpk/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The eXternal PacKer (XPK) library system
