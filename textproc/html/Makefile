@@ -3,7 +3,7 @@
 # Date created:		Sept 19, 1997
 # Whom:			jfieber
 #
-# $Id: Makefile,v 1.1.1.1 1997/09/19 21:19:25 jfieber Exp $
+# $Id: Makefile,v 1.2 1998/06/05 16:33:06 jfieber Exp $
 #
 
 DISTNAME=	html-4.0b
@@ -15,8 +15,6 @@ MAINTAINER=	jfieber@FreeBSD.ORG
 NO_MTREE=       yes
 EXTRACT_ONLY=	# empty
 NO_BUILD=       yes
-NO_PATCH=	yes
-NO_CONFIGURE=	yes
 NO_WRKSUBDIR=	yes
 
 INSTDIR=	${PREFIX}/share/sgml/html

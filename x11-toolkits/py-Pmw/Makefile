@@ -3,7 +3,7 @@
 # Date created:		03 June 1998
 # Whom:			Thomas Gellekum <tg@FreeBSD.ORG>
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1998/06/05 06:50:32 tg Exp $
 
 DISTNAME=	Pmw.0.7
 PKGNAME=	pmw-0.7
@@ -14,8 +14,6 @@ MAINTAINER=	tg@FreeBSD.ORG
 
 BUILD_DEPENDS=	python:${PORTSDIR}/lang/python
 RUN_DEPENDS=	python:${PORTSDIR}/lang/python
-
-NO_CONFIGURE=	true
 
 PYTHONSCRIPTDIR=${PREFIX}/lib/python1.5
 SITEPYDIR=	${PYTHONSCRIPTDIR}/site-packages

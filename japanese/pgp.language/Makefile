@@ -3,7 +3,7 @@
 # Date created:         9 May 1997
 # Whom:                 Hironori Ikura <hikura@kaisei.org>
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1998/02/23 20:19:53 steve Exp $
 #
 
 DISTNAME=	pgp263i-${PGP_LANGUAGE}
@@ -20,8 +20,6 @@ RUN_DEPENDS=	pgp:${PORTSDIR}/security/pgp
 
 EXTRACT_CMD=	unzip
 EXTRACT_ARGS=	-q
-NO_CONFIGURE=	YES
-NO_PATCH=	YES
 NO_BUILD=	YES
 
 # version and language specifications

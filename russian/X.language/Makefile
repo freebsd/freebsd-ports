@@ -3,7 +3,7 @@
 # Date created:         31 Aug 1995
 # Whom:                 ache
 #
-# $Id: Makefile,v 1.15 1997/12/25 22:08:25 asami Exp $
+# $Id: Makefile,v 1.16 1997/12/25 22:42:19 ache Exp $
 #
 
 DISTNAME=       x6rus-2.2.0-bin
@@ -17,8 +17,6 @@ MAINTAINER=	ache@FreeBSD.ORG
 RUN_DEPENDS=	${X11BASE}/bin/xinit:${PORTSDIR}/x11/XFree86
 
 WRKSRC=         ${WRKDIR}/cyrillic
-NO_CONFIGURE=   YES
-NO_PATCH=       YES
 NO_BUILD=       YES
 USE_X11=        YES
 

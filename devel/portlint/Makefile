@@ -3,7 +3,7 @@
 # Date created:		13 Jun 1997
 # Whom:			Jun-ichiro itojun Itoh <itojun@itojun.org>
 #
-# $Id: Makefile,v 1.18 1997/11/20 03:52:36 itojun Exp $
+# $Id: Makefile,v 1.19 1997/11/25 11:43:15 itojun Exp $
 #
 
 DISTNAME=       portlint-1.61
@@ -17,7 +17,6 @@ EXTRACT_CMD=	${CAT}
 EXTRACT_BEFORE_ARGS=			# yes, it is blank
 EXTRACT_AFTER_ARGS=	|sh
 NO_WRKSUBDIR=	yes
-NO_CONFIGURE=	yes
 NO_BUILD=	yes
 
 MAN1=		portlint.1

@@ -3,7 +3,7 @@
 # Date created:		12 Dec 1997
 # Whom:			Ian Vaudrey <i.vaudrey@bigfoot.com>
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1997/12/26 19:26:38 hoek Exp $
 #
 
 DISTNAME=	vilearn
@@ -17,7 +17,6 @@ EXTRACT_SUFX=	.Z
 MAINTAINER=	i.vaudrey@bigfoot.com
 
 WRKSRC=		${WRKDIR}/${PKGNAME}
-NO_CONFIGURE=	yes
 EXTRACT_CMD=	uncompress
 EXTRACT_BEFORE_ARGS=	-c
 EXTRACT_AFTER_ARGS=	| tail -n 1759 | sh

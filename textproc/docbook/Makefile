@@ -3,7 +3,7 @@
 # Date created:		June 19, 1997
 # Whom:			jfieber
 #
-# $Id: Makefile,v 1.2 1997/06/29 09:49:45 obrien Exp $
+# $Id: Makefile,v 1.3 1997/07/10 02:41:08 jfieber Exp $
 #
 
 DISTNAME=	docbook-3.0
@@ -18,8 +18,6 @@ RUN_DEPENDS=	${ISOCAT}:${PORTSDIR}/textproc/iso8879
 NO_MTREE=       yes
 EXTRACT_ONLY=	# empty
 NO_BUILD=       yes
-NO_PATCH=	yes
-NO_CONFIGURE=	yes
 NO_WRKSUBDIR=	yes
 
 INSTDIR=	${PREFIX}/share/sgml/docbook

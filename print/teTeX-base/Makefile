@@ -3,7 +3,7 @@
 # Date created:		5 December 1996
 # Whom:			Bernd Rosauer <br@schiele-ct.de>
 #
-# $Id: Makefile,v 1.20 1997/08/05 06:56:41 tg Exp $
+# $Id: Makefile,v 1.21 1998/05/26 08:01:03 tg Exp $
 #
 
 DISTNAME=	teTeX-src-0.4
@@ -17,7 +17,6 @@ MAINTAINER=	br@schiele-ct.de
 
 DIST_SUBDIR=	teTeX
 PATCH_DIST_STRIP=	-p1
-NO_CONFIGURE=	yes
 USE_GMAKE=	yes
 ALL_TARGET=	config clean texhash all
 INSTALL_TARGET=	install ini

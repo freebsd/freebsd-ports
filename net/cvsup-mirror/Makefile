@@ -3,7 +3,7 @@
 # Date created:		01 February 1997
 # Whom:			jdp
 #
-# $Id: Makefile,v 1.2 1997/02/06 06:50:40 asami Exp $
+# $Id: Makefile,v 1.3 1997/07/13 18:49:27 max Exp $
 #
 
 DISTNAME=	cvsup-mirror-1.0
@@ -16,7 +16,6 @@ RUN_DEPENDS=	${PREFIX}/sbin/cvsupd:${PORTSDIR}/net/cvsup
 
 NO_WRKSUBDIR=	true
 NO_CHECKSUM=	true
-NO_PATCH=	true
 NO_BUILD=	true
 IS_INTERACTIVE=	true
 NO_PACKAGE=	too interactive

@@ -3,7 +3,7 @@
 # Date created:		3 June 1995
 # Whom:			roberto
 #
-# $Id: Makefile,v 1.5 1997/04/21 00:30:27 obrien Exp $
+# $Id: Makefile,v 1.6 1997/07/17 15:12:40 max Exp $
 #
 
 DISTNAME=	dlmalloc
@@ -15,7 +15,6 @@ DISTFILES=	malloc-2.6.4.c
 MAINTAINER=	roberto@FreeBSD.ORG
 
 NO_WRKSUBDIR=   yes
-NO_CONFIGURE=	yes
 
 do-extract:
 	@rm -rf ${WRKDIR}

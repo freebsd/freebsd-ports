@@ -3,7 +3,7 @@
 # Date created:		16 March 1998
 # Whom:			Jun Kuriyama <kuriyama@opt.phys.waseda.ac.jp>
 #
-# $Id: Makefile,v 1.1.1.1 1998/03/25 14:10:27 nik Exp $
+# $Id: Makefile,v 1.2 1998/06/19 15:25:16 kuriyama Exp $
 #
 
 DISTNAME=	db108
@@ -22,8 +22,6 @@ EXTRACT_CMD=	unzip
 EXTRACT_BEFORE_ARGS=	-a -q -L
 NO_MTREE=	yes
 NO_BUILD=	yes
-NO_PATCH=	yes
-NO_CONFIGURE=	yes
 
 INSTDIR=	${PREFIX}/share/sgml/docbook/dsssl/modular
 

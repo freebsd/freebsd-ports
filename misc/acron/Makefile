@@ -3,7 +3,7 @@
 # Date created:         13 Dec 1997
 # Whom:                 Thomas Gellekum <tg@FreeBSD.ORG>
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1997/12/15 08:44:23 tg Exp $
 #
 
 DISTNAME=       acron
@@ -14,7 +14,6 @@ EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.ORG
 
-NO_CONFIGURE=	yes
 NO_BUILD=	yes
 
 post-patch:

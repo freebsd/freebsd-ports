@@ -3,7 +3,7 @@
 # Date created:         01 June 1997
 # Whom:                 Peter Cornelius <pc@inr.fzk.de>
 #
-# $Id: Makefile,v 1.3 1998/02/09 12:42:58 tg Exp $
+# $Id: Makefile,v 1.4 1998/05/25 07:34:12 tg Exp $
 
 DISTNAME=	xtem_texmenu.6.18
 PKGNAME=	xtem-6.18
@@ -19,7 +19,6 @@ RUN_DEPENDS+=	gv:${PORTSDIR}/print/gv \
 .endif
 
 WRKSRC=		${WRKDIR}/${PKGNAME}
-NO_CONFIGURE=	yes
 MAN1=		xtem.1
 
 pre-extract:

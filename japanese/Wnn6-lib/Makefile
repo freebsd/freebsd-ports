@@ -3,7 +3,7 @@
 # Date created:		11 July 1997
 # Whom:			Satoshi Taoka <taoka@infonets.hiroshima-u.ac.jp>
 #
-# $Id: Makefile,v 1.18 1997/09/10 07:55:37 asami Exp $
+# $Id: Makefile,v 1.19 1997/09/19 09:30:10 asami Exp $
 #
 
 DISTNAME=	FreeBSD-2.2R
@@ -19,8 +19,6 @@ DIST_SUBDIR=	Wnn6-lib
 DOCDIR=		${PREFIX}/share/doc/Wnn6-lib
 
 NO_BUILD=	yes
-NO_CONFIGURE=	yes
-NO_PATCH=	yes
 
 do-install:
 	@${MKDIR} ${PREFIX}/include/wnn

@@ -3,7 +3,7 @@
 # Date created:         4 May 1995
 # Whom:                 ache
 #
-# $Id: Makefile,v 1.15 1997/08/09 19:50:02 fenner Exp $
+# $Id: Makefile,v 1.16 1997/08/10 22:31:25 fenner Exp $
 #
 
 DISTNAME=       pgp26ru
@@ -20,8 +20,6 @@ RUN_DEPENDS += pgp:${PORTSDIR}/security/pgp
 EXTRACT_CMD=    unzip
 EXTRACT_ARGS=   -q
 NO_WRKSUBDIR=   YES
-NO_CONFIGURE=   YES
-NO_PATCH=       YES
 NO_BUILD=       YES
 
 PGPLIB=         ${PREFIX}/lib/pgp
