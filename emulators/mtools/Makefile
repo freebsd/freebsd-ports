@@ -1,12 +1,12 @@
 # New ports collection makefile for:    mtools
-# Version required:     3.0
+# Version required:     3.3
 # Date created:         5 October 1994
 # Whom:                 jmz
 #
-# $Id: Makefile,v 1.11 1996/11/18 10:23:04 asami Exp $
+# $Id: Makefile,v 1.12 1996/12/21 07:27:17 ache Exp $
 #
 
-DISTNAME=	mtools-3.0
+DISTNAME=	mtools-3.3
 CATEGORIES=	emulators
 MASTER_SITES=	${MASTER_SITE_GNU}
 
@@ -14,9 +14,12 @@ MAINTAINER=	jmz@FreeBSD.org
 
 HAS_CONFIGURE=  yes
 CONFIGURE_ARGS+=--enable-xdf --prefix=${PREFIX}
+
+USE_GMAKE=	yes
+
 MAN1=		mattrib.1 mbadblocks.1 mcd.1 mcopy.1 mdel.1 mdeltree.1 \
 		mdir.1 mformat.1 mkmanifest.1 mlabel.1 mmd.1 mmount.1 mmove.1 \
-		mrd.1 mread.1 mren.1 mttest.1 mtools.1 mtype.1 mwrite.1
+		mrd.1 mread.1 mren.1 mtoolstest.1 mtools.1 mtype.1 mwrite.1
 MAN5=		mtools.5
 
 post-patch:
@@ -24,7 +27,6 @@ post-patch:
 	 mv $$f $$f.orig; \
 	 sed -e s:/etc/mtools.conf:${PREFIX}/etc/mtools.conf: \
 	 < $$f.orig > $$f; done
-	@cd ${WRKSRC}; mv mtest.1 mttest.1
 
 post-install:
 	@install -c ${WRKSRC}/mtools.conf ${PREFIX}/etc
