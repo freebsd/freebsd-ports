@@ -1,0 +1,27 @@
+--- filter/Makefile.in.orig	Sat Aug 19 19:26:37 2000
++++ filter/Makefile.in	Wed Aug 23 12:09:59 2000
+@@ -164,3 +164,3 @@
+ 
+-gladedir = $(prefix)/share/evolution/glade
++gladedir = $(datadir)/evolution/glade
+ glade_DATA = filter.glade
+--- mail/mail-crypto.c.orig	Fri Aug 11 15:27:12 2000
++++ mail/mail-crypto.c	Wed Aug 23 11:17:44 2000
+@@ -189,7 +189,7 @@
+ 
+         passwd_next = passphrase;
+         passwd_remaining = strlen (passphrase);
+-        passwd_incr = fpathconf (passwd_fds[1], _PC_PIPE_BUF);
++        passwd_incr = 1024; /* XXX: no fpathconf() in libc_r? */
+ 	/* Use a reasonable default value on error. */
+         if (passwd_incr <= 0)
+ 		passwd_incr = 1024;
+@@ -197,7 +197,7 @@
+ 
+ 	input_next = input;
+ 	input_remaining = strlen (input);
+-	input_incr = fpathconf (ip_fds[1], _PC_PIPE_BUF);
++	input_incr = 1024; /* XXX: no fpathconf() in libc_r? */
+ 	if (input_incr <= 0)
+                 input_incr = 1024;
+ 	input_eof_seen = FALSE;

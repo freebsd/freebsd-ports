@@ -12,6 +12,20 @@
 -libcamelmbox_la_LDFLAGS = -version-info 0:0:0
 +libcamelmbox_la_LDFLAGS = -avoid-version
  
+--- camel/providers/mh/Makefile.in.orig	Sat Aug 19 19:26:36 2000
++++ camel/providers/mh/Makefile.in	Wed Aug 23 11:39:46 2000
+@@ -180,3 +180,3 @@
+ 
+-libcamelmh_la_LDFLAGS = -version-info 0:0:0
++libcamelmh_la_LDFLAGS = -avoid-version
+ 
+--- camel/providers/nntp/Makefile.in.orig	Sat Aug 19 19:26:36 2000
++++ camel/providers/nntp/Makefile.in	Wed Aug 23 11:40:11 2000
+@@ -180,3 +180,3 @@
+ 
+-libcamelnntp_la_LDFLAGS = -version-info 0:0:0
++libcamelnntp_la_LDFLAGS = -avoid-version
+ 
 --- camel/providers/pop3/Makefile.in.orig	Fri Jun  2 15:48:48 2000
 +++ camel/providers/pop3/Makefile.in	Wed Jun 28 18:54:35 2000
 @@ -167,3 +167,3 @@
