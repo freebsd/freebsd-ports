@@ -1,0 +1,23 @@
+
+$FreeBSD$
+
+--- Imakefile.orig	Tue Jan 12 19:59:29 1993
++++ Imakefile	Mon Aug 25 00:47:20 2003
+@@ -15,6 +15,11 @@
+ 
+ LOCAL_LIBRARIES = XawClientLibs
+ LINTLIBS = -lXaw -lXt -lX11
++           SRCS = main.c top_setup.c logo_setup.c button_setup.c cdrom_callb.c\
++                  cdrom_freebsd.c internals.c shuffle.c program.c leds.c debug.c 
++
++           OBJS = main.o top_setup.o logo_setup.o button_setup.o cdrom_callb.o\
++                  cdrom_freebsd.o internals.o shuffle.o program.o leds.o debug.o
+ #ifdef SunArchitecture
+            SRCS = main.c top_setup.c logo_setup.c button_setup.c cdrom_callb.c\
+                   cdrom_sun.c internals.c shuffle.c program.c leds.c debug.c 
+@@ -38,5 +43,4 @@
+ ComplexProgramTarget(xcdplayer)
+ NormalProgramTarget(cdinfo, cdinfo.o,,,)
+ NormalProgramTarget(cdgrab, cdgrab.o,,,)
+-NormalLintTarget(${SRCS})
+ InstallAppDefaults(XCdplayer)
