@@ -12,7 +12,7 @@ MASTER_SITES=	http://emacs-w3m.namazu.org/
 PKGNAMESUFFIX=	-${EMACS_PORT_NAME}
 DISTNAME=	w3m_el-${PORTVERSION}
 
-MAINTAINER=	nobutaka@nobutaka.com
+MAINTAINER=	nobutaka@FreeBSD.org
 
 EMACS_PORT_NAME?=	emacs20
 

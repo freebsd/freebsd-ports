@@ -13,7 +13,7 @@ MASTER_SITES=	http://xine.sourceforge.net/files/ \
 MASTER_SITE_SUBDIR=	${PORTNAME}
 DISTNAME=	${PORTNAME}-ui-${PORTVERSION}
 
-MAINTAINER=	nobutaka@nobutaka.com
+MAINTAINER=	nobutaka@FreeBSD.org
 
 LIB_DEPENDS=	xine.0:${PORTSDIR}/graphics/libxine \
 		aa.1:${PORTSDIR}/graphics/aalib \

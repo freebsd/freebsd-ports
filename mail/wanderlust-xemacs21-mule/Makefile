@@ -5,7 +5,7 @@
 # $FreeBSD$
 #
 
-MAINTAINER=	nobutaka@nobutaka.com
+MAINTAINER=	nobutaka@FreeBSD.org
 
 MASTERDIR=	${.CURDIR}/../../mail/wanderlust-emacs
 

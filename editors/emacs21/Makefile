@@ -16,7 +16,7 @@ PATCH_SITES=		http://www.nijino.com/ari/patches/
 PATCHFILES=		emacs-21.1-fontset.patch.gz
 PATCH_DIST_STRIP=	-p1
 
-MAINTAINER=	nobutaka@nobutaka.com
+MAINTAINER=	nobutaka@FreeBSD.org
 
 .if !defined(WITHOUT_X11)
 LIB_DEPENDS=	Xaw3d.${XAWVER}:${PORTSDIR}/x11-toolkits/Xaw3d \

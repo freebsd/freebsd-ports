@@ -12,7 +12,7 @@ PORTEPOCH=	1
 CATEGORIES=	japanese elisp
 MASTER_SITES=   http://migemo.namazu.org/stable/
 
-MAINTAINER=	nobutaka@nobutaka.com
+MAINTAINER=	nobutaka@FreeBSD.org
 
 .if !defined(EMACS_PORT_NAME)
 USE_AUTOMAKE=	yes
