@@ -1,6 +1,6 @@
 diff -ru src.old/kernel/freebsd.c src/kernel/freebsd.c
---- src.old/kernel/freebsd.c	Sat Mar 20 20:36:51 2004
-+++ src/kernel/freebsd.c	Sat Mar 20 20:37:09 2004
+--- src.old/kernel/freebsd.c	Tue May 18 23:12:23 2004
++++ src/kernel/freebsd.c	Tue May 18 23:13:45 2004
 @@ -159,11 +159,11 @@
  
  #ifdef _HAVE_OLD_INPCB
@@ -38,7 +38,7 @@ diff -ru src.old/kernel/freebsd.c src/kernel/freebsd.c
  			pcbp->inp_fport == fport &&
  			pcbp->inp_lport == lport)
  		{
-@@ -199,16 +199,33 @@
+@@ -199,28 +199,45 @@
  
  #else
  
@@ -76,7 +76,10 @@ diff -ru src.old/kernel/freebsd.c src/kernel/freebsd.c
  
  	head = pcbhead->lh_first;
  	if (head == NULL)
-@@ -218,9 +235,9 @@
+ 		return (NULL);
+ 
+-	do {
++	for (; head != NULL; head = pcbp.inp_list.le_next) {
  		if (getbuf((u_long) head, &pcbp, sizeof(struct inpcb)) == -1)
  			break;
  
@@ -89,7 +92,7 @@ diff -ru src.old/kernel/freebsd.c src/kernel/freebsd.c
  				pcbp.inp_fport == fport &&
  				pcbp.inp_lport == lport)
  			{
-@@ -228,8 +245,32 @@
+@@ -228,16 +245,39 @@
  			}
  		}
  
@@ -124,7 +127,16 @@ diff -ru src.old/kernel/freebsd.c src/kernel/freebsd.c
  			pcbp.inp_fport == fport &&
  			pcbp.inp_lport == lport)
  		{
-@@ -248,7 +289,7 @@
+ 			return (pcbp.inp_socket);
+ 		}
+ 
+-		head = pcbp.inp_list.le_next;
+-	} while (head != NULL);
++	}
+ 
+ 	return (NULL);
+ }
+@@ -248,7 +288,7 @@
  ** Return the UID of the connection owner
  */
  
@@ -133,7 +145,7 @@ diff -ru src.old/kernel/freebsd.c src/kernel/freebsd.c
  				in_port_t fport,
  				struct sockaddr_storage *laddr,
  				struct sockaddr_storage *faddr)
-@@ -276,8 +317,9 @@
+@@ -276,8 +316,9 @@
  	tcb.inp_prev = (struct inpcb *) kinfo->nl[N_TCB].n_value;
  #endif
  
@@ -145,7 +157,7 @@ diff -ru src.old/kernel/freebsd.c src/kernel/freebsd.c
  
  	if (sockp == NULL)
  		return (-1);
-@@ -346,6 +388,14 @@
+@@ -346,6 +387,14 @@
  	return (-1);
  }
  
@@ -160,7 +172,7 @@ diff -ru src.old/kernel/freebsd.c src/kernel/freebsd.c
  #ifdef MASQ_SUPPORT
  
  /*
-@@ -456,36 +506,7 @@
+@@ -456,36 +505,7 @@
  				struct sockaddr_storage *laddr,
  				struct sockaddr_storage *faddr)
  {
@@ -199,8 +211,8 @@ diff -ru src.old/kernel/freebsd.c src/kernel/freebsd.c
  
  #endif
 diff -ru src.old/kernel/freebsd5.c src/kernel/freebsd5.c
---- src.old/kernel/freebsd5.c	Sat Mar 20 20:36:51 2004
-+++ src/kernel/freebsd5.c	Sat Mar 20 20:37:13 2004
+--- src.old/kernel/freebsd5.c	Tue May 18 23:12:23 2004
++++ src/kernel/freebsd5.c	Tue May 18 23:12:46 2004
 @@ -160,11 +160,11 @@
  
  #ifdef _HAVE_OLD_INPCB
