@@ -1,5 +1,5 @@
---- Netscape.ad-ja_euc.orig	Mon Oct 11 07:29:16 1999
-+++ Netscape.ad-ja_euc	Mon Oct 11 07:35:10 1999
+--- Netscape.ad-ja_euc.orig	Mon May  8 16:54:37 2000
++++ Netscape.ad-ja_euc	Sat Jul  8 02:39:16 2000
 @@ -60,7 +60,7 @@
  ! code. The directory and file listings are always maintained
  ! as equal size. We don't do this for SGI, as they have solved
@@ -20,6 +20,15 @@
  
  ! For those MIME content-encodings which are not directly understood
  ! internally, it is possible to specify another Unix program to use as
+@@ -1480,7 +1480,7 @@
+ !
+ 
+ *menuBar.fileMenu.labelString:		ファイル
+-*menuBar.fileMenu.mnemonic:		F
++!*menuBar.fileMenu.mnemonic:		F
+ 
+ *menuBar.editMenu.labelString:		編集
+ !*menuBar.editMenu.mnemonic:		E
 @@ -2226,7 +2226,7 @@
  *decreaseFont.documentationString:	\
  このページの表示に使用するフォント サイズを小さくします。
@@ -98,7 +107,7 @@
  *toolBar*stopLoading.labelString:	停止
  
  *changeDocumentEncoding.documentationString: ドキュメントの文字コード セットを指定します。
-@@ -9022,7 +9024,7 @@
+@@ -9024,7 +9026,7 @@
  
  *strings.23715:新規/編集 ...
  
@@ -107,7 +116,7 @@
  
  *strings.23717:削除
  
-@@ -11155,7 +11157,7 @@
+@@ -11157,7 +11159,7 @@
  
  *strings.21597: キャッシュに一部だけあります。残りはサーバから取り出しています:\n
  
@@ -116,7 +125,7 @@
  
  *strings.21599: オブジェクトの期限が切れています。もう一度読み込みます:\n
  
-@@ -14573,3 +14575,6 @@
+@@ -14579,3 +14581,6 @@
  *tableCreateDialog.ApplyLabelString:		クリア
  *documentPropertiesDialog.ApplyLabelString:	クリア
  
