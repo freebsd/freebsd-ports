@@ -3,7 +3,7 @@
 # Date created:		15 November 1994
 # Whom:			torstenb
 #
-# $Id: Makefile,v 1.9 1996/11/15 16:04:24 tg Exp $
+# $Id: Makefile,v 1.10 1996/11/18 09:53:31 asami Exp $
 #
 
 DISTNAME=	ImageMagick-3.7.7
@@ -13,7 +13,7 @@ MASTER_SITE_SUBDIR=	applications/ImageMagick
 
 MAINTAINER=	ports@freebsd.org
 
-LIB_DEPENDS=    jpeg\\.6\\.:${PORTSDIR}/graphics/jpeg \
+LIB_DEPENDS=    jpeg\\.7\\.:${PORTSDIR}/graphics/jpeg \
 		mpeg\\.1\\.:${PORTSDIR}/graphics/mpeg-lib \
 		tiff\\.3\\.:${PORTSDIR}/graphics/tiff \
 		png\\.0\\.:${PORTSDIR}/graphics/png
