@@ -3,13 +3,13 @@
 # Date created:         Oct, 8 1998
 # Whom:                 cracauer
 #
-# $Id: Makefile,v 1.1.1.1 1998/10/08 16:29:25 cracauer Exp $
+# $Id: Makefile,v 1.2 1998/10/08 18:43:30 cracauer Exp $
 #
 
 DISTNAME=       MesaLib-2.6
 PKGNAME=	linux_mesa-2.6
 CATEGORIES=	emulators
-MASTER_SITES= 	ftp://iris.ssec.wisc.edu/pub/Mesa/
+MASTER_SITES= 	ftp://iris.ssec.wisc.edu/pub/Mesa/old-versions/
 
 MAINTAINER=	cracauer@cons.org
 
