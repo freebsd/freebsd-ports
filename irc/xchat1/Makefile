@@ -24,6 +24,7 @@ USE_BZIP2=		yes
 USE_GMAKE=		yes
 USE_PERL5=		yes
 USE_GNOMENG=		yes
+USE_GNOME=		gtk12
 WANT_GNOME=		yes
 GNU_CONFIGURE=		yes
 # Assign with `+=' for slave ports
