@@ -1,16 +1,17 @@
+# ex:ts=8
 # New ports collection makefile for:	bzip2
 # Version required:	0.9.0c
 # Date created:		19 Nov 1997
 # Whom:			Thomas Gellekum <tg@FreeBSD.ORG>
 #
-# $Id: Makefile,v 1.6 1998/10/28 23:17:16 asami Exp $
+# $Id: Makefile,v 1.7 1998/10/30 07:52:12 tg Exp $
 #
 
 DISTNAME=	bzip2-0.9.0c
 CATEGORIES=	archivers
 MASTER_SITES=	http://www.muraroa.demon.co.uk/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	obrien@FreeBSD.org
 
 FETCH_BEFORE_ARGS=	-b
 MAN1=		bzip2.1
