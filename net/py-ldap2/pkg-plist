@@ -1,16 +1,23 @@
 lib/%%PYTHON_VERSION%%/site-packages/ldap/__init__.py
 lib/%%PYTHON_VERSION%%/site-packages/ldap/__init__.pyc
+lib/%%PYTHON_VERSION%%/site-packages/ldap/__init__.pyo
 lib/%%PYTHON_VERSION%%/site-packages/ldap/async.py
 lib/%%PYTHON_VERSION%%/site-packages/ldap/async.pyc
+lib/%%PYTHON_VERSION%%/site-packages/ldap/async.pyo
 lib/%%PYTHON_VERSION%%/site-packages/ldap/functions.py
 lib/%%PYTHON_VERSION%%/site-packages/ldap/functions.pyc
+lib/%%PYTHON_VERSION%%/site-packages/ldap/functions.pyo
 lib/%%PYTHON_VERSION%%/site-packages/ldap/ldapobject.py
 lib/%%PYTHON_VERSION%%/site-packages/ldap/ldapobject.pyc
+lib/%%PYTHON_VERSION%%/site-packages/ldap/ldapobject.pyo
 lib/%%PYTHON_VERSION%%/site-packages/ldap/modlist.py
 lib/%%PYTHON_VERSION%%/site-packages/ldap/modlist.pyc
+lib/%%PYTHON_VERSION%%/site-packages/ldap/modlist.pyo
 lib/%%PYTHON_VERSION%%/site-packages/ldapurl.py
 lib/%%PYTHON_VERSION%%/site-packages/ldapurl.pyc
+lib/%%PYTHON_VERSION%%/site-packages/ldapurl.pyo
 lib/%%PYTHON_VERSION%%/site-packages/ldif.py
 lib/%%PYTHON_VERSION%%/site-packages/ldif.pyc
+lib/%%PYTHON_VERSION%%/site-packages/ldif.pyo
 lib/%%PYTHON_VERSION%%/site-packages/_ldap.so
 @dirrm lib/%%PYTHON_VERSION%%/site-packages/ldap
