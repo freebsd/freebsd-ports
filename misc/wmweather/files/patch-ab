@@ -1,11 +1,9 @@
---- GrabWeather.orig	Thu Mar 11 13:55:19 1999
-+++ GrabWeather	Thu Mar 11 13:58:18 1999
+--- GrabWeather.orig    Fri Apr 16 14:43:10 1999
++++ GrabWeather Fri Apr 16 14:43:28 1999
 @@ -49,7 +49,7 @@
      #  for some people? Dont know why... (Perhaps they have a ~/.wgetrc file
      #  that overrides command line options?).
      #
--    $GrabCmd = "wget --passive-ftp --tries 2 -q -O $home/.wmWeatherReports/$StationID.TXT $URL";
+-    $GrabCmd = "wget --proxy=off --passive-ftp --tries 0 -q -O $home/.wmWeatherReports/$StationID.TXT $URL";
 +    $GrabCmd = "fetch -q -o $home/.wmWeatherReports/$StationID.TXT $URL";
      system "$GrabCmd";
- 
- 
