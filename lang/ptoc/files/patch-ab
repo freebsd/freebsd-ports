@@ -1,24 +1,24 @@
---- trnod.cxx.old	Sat Feb 12 17:13:58 2000
-+++ trnod.cxx	Sat Feb 12 17:23:33 2000
-@@ -454,7 +454,7 @@
+--- trnod.cxx.orig	Sat Oct 21 04:24:34 2000
++++ trnod.cxx	Sat Oct 21 04:45:38 2000
+@@ -460,7 +460,7 @@
      if (language_c) { 
          if (params) { 
-             char* format = "";
--	    char* newln = (t_read->tag == TKN_READLN) ? "\\n" : "";
-+	    char* newln = (t_read->tag == TKN_READLN) ? (char *) "\\n" : (char *) "";
+             char const* format = "";
+-	    char const* newln = (t_read->tag == TKN_READLN) ? "\\n" : "";
++	    char const* newln = (t_read->tag == TKN_READLN) ? (char *) "\\n" : "";
  	    expr_node *prm = params->expr; 
  
  	    l_tkn = params->rpar;
-@@ -612,7 +612,7 @@
+@@ -618,7 +618,7 @@
  	    write_param_node *prm = params->vals; 
  
  	    l_tkn = params->rpar;
--	    char* newln = (t_write->tag == TKN_WRITELN) ? "\\n" : "";
-+	    char* newln = (t_write->tag == TKN_WRITELN) ? (char *) "\\n" : (char *) "";
+-	    char const* newln = (t_write->tag == TKN_WRITELN) ? "\\n" : "";
++	    char const* newln = (t_write->tag == TKN_WRITELN) ? (char *) "\\n" : "";
              write_format = NULL;
  	    if (prm->type->tag == tp_file) { 
  		prm->translate(ctx_value);
-@@ -994,7 +994,7 @@
+@@ -1000,7 +1000,7 @@
      from->translate(ctx_value);
      from->l_tkn->append(";"); 
      t_to->set_trans(t_ident->out_text); 
@@ -27,7 +27,7 @@
      till->translate(ctx_value);
      till->l_tkn->append(";"); 
      if (t_to->name->tag == TKN_TO) { 
-@@ -1063,11 +1063,11 @@
+@@ -1069,11 +1069,11 @@
      bool body_is_block = 
  	body != NULL && body->is_compound() && body->next == NULL;
  
@@ -41,7 +41,7 @@
      expr->translate(ctx_condition);
      f_tkn = t_repeat;
      l_tkn = expr->l_tkn; 
-@@ -1258,7 +1258,7 @@
+@@ -1264,7 +1264,7 @@
  
          } else if (var->type->tag == tp_proc) { 
  	    if (turbo_pascal && tkn->name->tag == TKN_HALT) {
@@ -50,7 +50,7 @@
  		return;
  	    }
  	    proc_tp* prc = (proc_tp*)var->type->get_typedef();
-@@ -1280,8 +1280,8 @@
+@@ -1286,8 +1286,8 @@
  			if (prm->var->type->tag == tp_file 
  			    || prm->var->type->tag == tp_text)
  			{
@@ -61,7 +61,7 @@
  			} else { 
  			    t = t->append("0");
  			}
-@@ -1328,7 +1328,7 @@
+@@ -1334,7 +1334,7 @@
  
              if (with != NULL) { 
  		f_tkn = tkn->prepend(language_c && with->tag == symbol::s_ref 
@@ -70,7 +70,7 @@
  		    ->prepend(with->out_name->text);
  	    }
  
-@@ -1744,7 +1744,7 @@
+@@ -1750,7 +1750,7 @@
  	    t_lbr->set_trans("set::of("); 
  	}
      }
@@ -79,7 +79,7 @@
  }
  
  idx_expr_node::idx_expr_node(expr_node* arr, token* t_lbr, expr_node* indices, 
-@@ -2173,7 +2173,7 @@
+@@ -2181,7 +2181,7 @@
        case tn_and:
          op->set_trans(((left->type && left->type->tag != tp_bool) || 
  	    (right->type && right->type->tag != tp_bool) || nological)
@@ -88,7 +88,7 @@
  	if (parent_tag != tn_group && parent_tag != tn_and) { 
  	    f_tkn = left->f_tkn->prepend("(");
  	    l_tkn = right->l_tkn->append(")");
-@@ -2193,12 +2193,12 @@
+@@ -2201,12 +2201,12 @@
  	if (parent_tag != tn_group) { 
  	    f_tkn = left->f_tkn->prepend(left->type && 
  			left->type->get_typedef() == &longint_type
@@ -98,12 +98,12 @@
  	} else { 
  	    f_tkn = left->f_tkn->prepend(left->type && 
  			left->type->get_typedef() == &longint_type
--			    ? "(unsigned long)" : "((cardinal)");
-+			    ? (char *) "(unsigned long)" : (char *) "((cardinal)");
+-			    ? "(unsigned long)" : "(cardinal)");
++			    ? (char *) "(unsigned long)" : (char *) "(cardinal)");
  	} 
  	op->set_trans(">>");
  	break;
-@@ -2216,14 +2216,14 @@
+@@ -2224,14 +2224,14 @@
  	}
  	op->set_trans(((left->type && left->type->tag != tp_bool) || 
  		       (right->type && right->type->tag != tp_bool) || 
@@ -120,7 +120,7 @@
  	    left->l_tkn->append(", ");
  	    l_tkn = right->l_tkn->append(")");
  	} else { 
-@@ -2245,14 +2245,14 @@
+@@ -2253,14 +2253,14 @@
  	    if (language_c) { 
  		if (short_set && ((set_tp*)type)->is_short_set()) {
  		    f_tkn = left->f_tkn->prepend(tag == tn_add 
@@ -141,7 +141,7 @@
  		}
  		l_tkn = right->l_tkn->append(")");
  		token::disable(left->l_tkn->next, right->f_tkn->prev);
-@@ -2290,9 +2290,9 @@
+@@ -2298,9 +2298,9 @@
  		} 
  		else if (ltype->tag == tp_enum || rtype->size <= ltype->size)
  		{
@@ -154,7 +154,7 @@
  		}
  	    } else if (((rtype->tag == tp_range && rtype->min_value >= 0) ||
  			rtype->tag == tp_enum) &&
-@@ -2305,9 +2305,9 @@
+@@ -2313,9 +2313,9 @@
                  else if (rtype->tag == tp_enum || ltype->size <= rtype->size)
  		{
  		    f_tkn = left->f_tkn->prepend(
@@ -167,7 +167,7 @@
  		}
  	    }
  	}
-@@ -2431,7 +2431,7 @@
+@@ -2439,7 +2439,7 @@
  	op->set_trans(CMP_OP(tag)); 
          break; 
        case tn_not:
@@ -176,7 +176,7 @@
          break; 
      }
      if ((unsigned(tag - tn_add) <= tn_div - tn_add) && type && type->tag == tp_longint)
-@@ -3388,7 +3388,7 @@
+@@ -3406,7 +3406,7 @@
  	    }
  	}
      } else { 
@@ -185,7 +185,7 @@
  	enumeration = NULL;
  	if (constant->type->tag == tp_string) { 
  	    ident->prepend("char ");
-@@ -3731,16 +3731,16 @@
+@@ -3749,16 +3749,16 @@
  			t = tkn->ident->copy(eltd->f_tkn, eltd->l_tkn);
  			if (tp->tag == tp_dynarray) { 
  			    tkn->ident->prepend(ctx == ctx_varpar 
@@ -206,7 +206,7 @@
  			    copy(tpd->f_tkn, tpd->l_tkn); 
  		    }
  		} else { 
-@@ -3805,7 +3805,7 @@
+@@ -3823,7 +3823,7 @@
  		// initialize file structure
  		tkn->ident->append(
  		    (tp->tag == tp_file || tp->tag == tp_text)
@@ -215,7 +215,7 @@
  	    }
  	    if (tkn->var->flags & symbol::f_static) { 
  		is_static = TRUE;
-@@ -3836,8 +3836,8 @@
+@@ -3854,8 +3854,8 @@
          { 
  	    f_tkn = f_tkn->prepend("EXTERN ");
  	} else if (scope != NULL) { 
@@ -226,7 +226,7 @@
  	}
          force_semicolon();
  	if (is_static) { 
-@@ -4188,7 +4188,7 @@
+@@ -4215,7 +4215,7 @@
      if (qualifiers) { 
  	if (is_external) { 
  	    f_tkn = f_tkn->prepend(type->is_extern_c && !language_c 
@@ -235,7 +235,7 @@
  	} else if (is_static) { 
  	    f_tkn = f_tkn->prepend("static ");
  	} else if (is_virtual) { 
-@@ -4801,7 +4801,7 @@
+@@ -4832,7 +4832,7 @@
  		t_array->set_trans("conf_matrix");
  	    } else {  	
  		t_array->set_trans(indices->next == NULL 

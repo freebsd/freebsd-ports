@@ -7,22 +7,34 @@ include/ptoc/io.h
 include/ptoc/paslib.h
 include/ptoc/ptoc.h
 include/ptoc/set.h
-lib/libptoc.a
 lib/libXbgi.a
+lib/libptoc.a
 share/doc/ptoc/Readme.htm
-share/examples/ptoc/Makefile
+share/examples/ptoc/arr.pas
 share/examples/ptoc/bgidemo.pas
+share/examples/ptoc/ccall.pas
 share/examples/ptoc/coord.txt
+share/examples/ptoc/dos.h
+share/examples/ptoc/dos.pas
+share/examples/ptoc/func.pas
 share/examples/ptoc/hello.pas
 share/examples/ptoc/impact.pas
 share/examples/ptoc/lister.pas
+share/examples/ptoc/makefile.bsd
+share/examples/ptoc/nested.pas
+share/examples/ptoc/objpas.pas
 share/examples/ptoc/polut2.pas
 share/examples/ptoc/printer.pas
 share/examples/ptoc/q2.txt
 share/examples/ptoc/random.txt
+share/examples/ptoc/rename.cxx
 share/examples/ptoc/rename.pas
 share/examples/ptoc/set.pas
+share/examples/ptoc/str.pas
+share/examples/ptoc/test.c
+share/examples/ptoc/test.cxx
 share/examples/ptoc/test.pas
+share/examples/ptoc/test.txt
 share/examples/ptoc/tpascal.pas
 share/examples/ptoc/trinor.pas
 share/examples/ptoc/vibrkinp.pas
@@ -30,11 +42,12 @@ share/examples/ptoc/vibrkinp.txt
 share/examples/ptoc/vibrtabl.pas
 share/examples/ptoc/war2.pas
 share/examples/ptoc/war2.txt
+share/examples/ptoc/xy2.txt
 share/examples/ptoc/xy2orig.txt
+share/ptoc/graph.pas
 share/ptoc/ptoc.pas
 share/ptoc/tptoc.pas
-share/ptoc/graph.pas
-@dirrm include/ptoc
-@dirrm share/doc/ptoc
 @dirrm share/examples/ptoc
 @dirrm share/ptoc
+@dirrm share/doc/ptoc
+@dirrm include/ptoc
