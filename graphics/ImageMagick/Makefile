@@ -112,7 +112,7 @@ CONFIGURE_ARGS+=	--without-bzlib
 
 # HDF (Hierarchical Data Format) images
 .if !defined(WITHOUT_IMAGEMAGICK_HDF)
-LIB_DEPENDS=		df.1:${PORTSDIR}/graphics/hdf
+LIB_DEPENDS+=		df.1:${PORTSDIR}/graphics/hdf
 CONFIGURE_ARGS+=	--with-hdf
 .endif
 
