@@ -8547,6 +8547,7 @@ xmms-faad	ports/audio/xmms-faad
 xmms-fc		ports/audio/xmms-fc
 xmms-finespectrum	ports/graphics/xmms-finespectrum
 xmms-fishmatic	ports/graphics/xmms-fishmatic
+xmms-flac	ports/audio/xmms-flac
 xmms-gdancer	ports/graphics/xmms-gdancer
 xmms-gforce	ports/graphics/xmms-gforce
 xmms-goom	ports/graphics/xmms-goom
