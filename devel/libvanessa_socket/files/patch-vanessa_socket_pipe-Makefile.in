@@ -1,0 +1,11 @@
+--- vanessa_socket_pipe/Makefile.in.orig	Fri Jun  6 05:49:20 2003
++++ vanessa_socket_pipe/Makefile.in	Tue Jul  1 17:05:55 2003
+@@ -113,7 +113,7 @@
+ 
+ INCLUDES = -I$(top_srcdir)/libvanessa_socket
+ 
+-vanessa_socket_pipe_LDADD =  -L../libvanessa_socket -L../libvanessa_socket/.libs/ -lvanessa_socket @extra_libs@ @vanessa_logger_libs@ -lpopt
++vanessa_socket_pipe_LDADD =  -L../libvanessa_socket ../libvanessa_socket/.libs/libvanessa_socket.so @extra_libs@ @vanessa_logger_libs@ -lpopt
+ 
+ mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs
+ CONFIG_HEADER = ../config.h
