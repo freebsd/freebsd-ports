@@ -13,7 +13,7 @@ MASTER_SITES=	http://gnometoaster.rulez.org/archive/
 DISTNAME=	${PORTNAME}1.0Beta6
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	eric@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 
 RUN_DEPENDS=	cdrecord:${PORTSDIR}/sysutils/cdrtools \
 		mkisofs:${PORTSDIR}/sysutils/mkisofs

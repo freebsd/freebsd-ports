@@ -10,7 +10,7 @@ PORTVERSION=	0.03
 CATEGORIES=	misc windowmaker
 MASTER_SITES=	http://www.cs.uml.edu/~jhawkins/wmx10/
 
-MAINTAINER=	eric@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 
 LIB_DEPENDS=	Xpm.4:${PORTSDIR}/graphics/xpm
 
