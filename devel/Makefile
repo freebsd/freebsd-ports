@@ -533,6 +533,7 @@
     SUBDIR += mkmf
     SUBDIR += mm
     SUBDIR += mob
+    SUBDIR += monodoc
     SUBDIR += monotone
     SUBDIR += motor
     SUBDIR += mpatrol
