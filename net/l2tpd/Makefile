@@ -6,28 +6,29 @@
 #
 
 PORTNAME=	l2tpd
-PORTVERSION=	0.64
+PORTVERSION=	0.69
 CATEGORIES=	net
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=	http://www.l2tpd.org/downloads/
 
 MAINTAINER=	sobomax@FreeBSD.org
 
-WRKSRC=		${WRKDIR}/${PORTNAME}
-
 USE_REINPLACE=	yes
 
+MAN5=	l2tp-secrets.5 l2tpd.conf.5
 MAN8=	l2tpd.8
 
 do-configure:
-	${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|g' ${WRKSRC}/l2tpd.8 \
-		${WRKSRC}/doc/l2tpd.conf.sample
+	${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|g' ${WRKSRC}/doc/l2tpd.8 \
+		${WRKSRC}/doc/l2tpd.conf.sample ${WRKSRC}/doc/l2tp-secrets.5 \
+		${WRKSRC}/doc/l2tpd.conf.5
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/l2tpd ${PREFIX}/bin
 	${MKDIR} ${DOCSDIR}
 	${INSTALL_MAN} ${WRKSRC}/README ${DOCSDIR}
-	${INSTALL_MAN} ${WRKSRC}/l2tpd.8 ${PREFIX}/man/man8
+	${INSTALL_MAN} ${WRKSRC}/doc/l2tpd.8 ${PREFIX}/man/man8
+	${INSTALL_MAN} ${WRKSRC}/doc/l2tp-secrets.5 ${PREFIX}/man/man5
+	${INSTALL_MAN} ${WRKSRC}/doc/l2tpd.conf.5 ${PREFIX}/man/man5
 	${MKDIR} ${PREFIX}/etc/l2tpd
 	${INSTALL_DATA} ${WRKSRC}/doc/l2tpd.conf.sample ${PREFIX}/etc/l2tpd
 	${INSTALL_DATA} ${WRKSRC}/doc/l2tp-secrets.sample ${PREFIX}/etc/l2tpd
