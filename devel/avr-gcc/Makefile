@@ -52,7 +52,7 @@ pre-build:
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 500000
+.if ${PERL_LEVEL} < 500600
 BROKEN=		"System's Pod::Man too old to generate the documentation."
 .endif
 
