@@ -441,6 +441,7 @@ avifile		ports/graphics/avifile
 avltree		ports/devel/avltree
 avr-binutils	ports/devel/avr-binutils
 avr-gcc		ports/devel/avr-gcc
+avr-gdb		ports/devel/avr-gdb
 avr-libc	ports/devel/avr-libc
 avrprog		ports/devel/avrprog
 awele		ports/games/awele
