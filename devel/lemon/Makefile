@@ -23,7 +23,7 @@ do-extract:
 do-build:
 	cd ${WRKSRC} && ${MAKE} VPATH=${DISTDIR} PROG=lemon NOMAN=1 \
 		CFLAGS="${CFLAGS} -DLEMPAR='\"${PREFIX}/share/lemon/lempar.c\"'" \
-			-f bsd.prog.mk
+			-f /usr/share/mk/bsd.prog.mk
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKDIR}/${PORTNAME} ${PREFIX}/bin/
