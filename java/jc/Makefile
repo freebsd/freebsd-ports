@@ -22,8 +22,8 @@ BUILD_DEPENDS=	jikes:${PORTSDIR}/java/jikes \
 LIB_DEPENDS=	popt.0:${PORTSDIR}/devel/popt \
 		ffi.2:${PORTSDIR}/devel/libffi
 
-#USE_LIBTOOL=	yes
-#LIBTOOLFILES=	${JCDIR}/aclocal.m4 ${CLASSPATHDIR}/aclocal.m4
+USE_LIBTOOL=	yes
+LIBTOOLFILES=	${JCDIR}/aclocal.m4 ${CLASSPATHDIR}/aclocal.m4
 USE_GMAKE=	yes
 INSTALLS_SHLIB=	yes
 PLIST_SUB=	PORTVERSION=${PORTVERSION}
