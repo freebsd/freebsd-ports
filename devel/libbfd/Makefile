@@ -15,6 +15,8 @@ DISTNAME=	binutils-${PORTVERSION}
 MAINTAINER=	joerg@freebsd.org
 COMMENT=	Universal BFD library from GNU binutils
 
+CONFLICTS=	mingw-binutils-[0-9]*
+
 WRKSRC=		${WRKDIR}/binutils-${PORTVERSION}/bfd
 
 USE_BZIP2=	yes
