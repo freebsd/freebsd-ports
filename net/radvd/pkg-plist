@@ -1,0 +1,6 @@
+etc/radvd.conf.example
+sbin/radvd
+sbin/radvdump
+share/doc/radvd/INTRO.html
+share/doc/radvd/README
+@dirrm share/doc/radvd
