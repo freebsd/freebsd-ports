@@ -2,4 +2,4 @@ sbin/dtcpclient
 @unexec if cmp -s %D/etc/dtcpclient.script %D/etc/dtcpclient.script.sample; then rm -f %D/etc/dtcpclient.script; fi
 etc/dtcpclient.script.sample
 @exec [ -f %B/dtcpclient.script ] || cp %B/%f %B/dtcpclient.script
-etc/rc.d/dtcpclient.sh.sample
+etc/rc.d/dtcpclient.sh
