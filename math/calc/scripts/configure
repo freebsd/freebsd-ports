@@ -10,3 +10,5 @@ echo "BINDIR= $PREFIX/bin" >> $F || exit 1;
 echo "TOPDIR= $PREFIX/lib" >> $F 
 echo "MANDIR= $PREFIX/man/man1" >> $F
 echo "CCOPT= -Wall -Wno-implicit -Wno-comment" >> $F
+echo "USE_READLINE= -DUSE_READLINE" >> $F
+echo "READLINE_LIB= -lreadline -lhistory" >> $F
