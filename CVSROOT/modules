@@ -2189,6 +2189,7 @@ gnat-glade	ports/lang/gnat-glade
 gnats		ports/databases/gnats
 gnet		ports/net/gnet
 gnetlist	ports/cad/gnetlist
+gnewtellium	ports/net/gnewtellium
 gngb		ports/emulators/gngb
 gniffel		ports/games/gniffel
 gno3dtet	ports/games/gno3dtet
