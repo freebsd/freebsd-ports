@@ -7,7 +7,7 @@
 
 PORTNAME=	ptex
 PORTVERSION=	3.1.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	japanese print
 MASTER_SITES=	ftp://ftp.ascii.co.jp/pub/TeX/ascii-ptex/tetex/
 PKGNAMEPREFIX=	ja-
@@ -28,16 +28,16 @@ ALL_TARGET=	default
 
 KANJICODE?=	euc
 SRCDIR=		ptex-${PORTVERSION}
-TETEX_VERSION=	2.0.1
+TETEX_VERSION=	2.0.2
 BINARIES=	ptex pdvitype jbibtex pltotf tftopl
 
 pre-extract:
-	@${ECHO} "The default kanji code is ${KANJICODE}."
-	@${ECHO} "You can change the kanji code at ptex runtime with the -kanji option."
-	@${ECHO} "e.g. ptex -kanji=sjis"
-	@${ECHO} "If you would like to change the default kanji code, run make as follows:"
-	@${ECHO} "    make KANJICODE=sjis"
-	@${ECHO} "for Shift-JIS.  KANJICODE can be one of sjis, jis or euc."
+	@${ECHO_MSG} "The default kanji code is ${KANJICODE}."
+	@${ECHO_MSG} "You can change the kanji code at ptex runtime with the -kanji option."
+	@${ECHO_MSG} "e.g. ptex -kanji=sjis"
+	@${ECHO_MSG} "If you would like to change the default kanji code, run make as follows:"
+	@${ECHO_MSG} "    make KANJICODE=sjis"
+	@${ECHO_MSG} "for Shift-JIS.  KANJICODE can be one of sjis, jis or euc."
 	@sleep 10
 .if !exists(${WRKDIRPREFIX}${.CURDIR}/../ptex-base/work/.build_done.ja-ptex-base-${PORTVERSION})
 	@(cd ${.CURDIR}/../ptex-base; \
@@ -55,7 +55,7 @@ pre-install:
 
 post-install:
 .for bin in ${BINARIES}
-	@/usr/bin/strip ${PREFIX}/bin/${bin}
+	@${STRIP_CMD} ${PREFIX}/bin/${bin}
 .endfor
 	@${LN} -sf ptex ${PREFIX}/bin/platex
 	@${PREFIX}/bin/mktexlsr ${PREFIX}/share/texmf
