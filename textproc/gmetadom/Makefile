@@ -20,6 +20,10 @@ BUILD_DEPENDS=	pkg-config:${PORTSDIR}/devel/pkgconfig
 LIB_DEPENDS=	gdome.8:${PORTSDIR}/textproc/gdome2
 RUN_DEPENDS=	pkg-config:${PORTSDIR}/devel/pkgconfig
 
+OPTIONS=	OCAML "OCAML language support" off
+
+.include <bsd.port.pre.mk>
+
 .if defined(WITH_OCAML)
 BUILD_DEPENDS+=	ocamlfind:${PORTSDIR}/devel/ocaml-findlib \
 		ocamlc:${PORTSDIR}/lang/ocaml
@@ -36,4 +40,4 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 INSTALLS_SHLIB=	yes
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
