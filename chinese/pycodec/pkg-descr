@@ -1,0 +1,6 @@
+This package provides Unicode codecs that make Python aware of
+Chinese character encodings such as Big5, EUC-GB2312.
+By using this package, Chinese characters can be treated
+as a character string instead of a byte sequence.
+
+WWW: http://sourceforge.net/projects/python-codecs/

@@ -68,6 +68,7 @@
     SUBDIR += p5-Date-Chinese
     SUBDIR += pine4
     SUBDIR += pyDict
+    SUBDIR += pycodec
     SUBDIR += qe
     SUBDIR += qterm
     SUBDIR += rxvt

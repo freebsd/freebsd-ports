@@ -1,0 +1,22 @@
+%%PYTHON_CODECDIR%%/big5_tw.py
+%%PYTHON_CODECDIR%%/chinesetw/__init__.py
+%%PYTHON_CODECDIR%%/chinesetw/big52utf1.py
+%%PYTHON_CODECDIR%%/chinesetw/big52utf2.py
+%%PYTHON_CODECDIR%%/chinesetw/utf2big51.py
+%%PYTHON_CODECDIR%%/chinesetw/utf2big52.py
+%%PYTHON_CODECDIR%%/big5_tw.pyc
+%%PYTHON_CODECDIR%%/chinesetw/__init__.pyc
+%%PYTHON_CODECDIR%%/chinesetw/big52utf1.pyc
+%%PYTHON_CODECDIR%%/chinesetw/big52utf2.pyc
+%%PYTHON_CODECDIR%%/chinesetw/utf2big51.pyc
+%%PYTHON_CODECDIR%%/chinesetw/utf2big52.pyc
+@dirrm %%PYTHON_CODECDIR%%/chinesetw
+%%PYTHON_CODECDIR%%/eucgb2312_cn.py
+%%PYTHON_CODECDIR%%/chinesecn/__init__.py
+%%PYTHON_CODECDIR%%/chinesecn/euc_gb23122utf.py
+%%PYTHON_CODECDIR%%/chinesecn/utf2euc_gb2312.py
+%%PYTHON_CODECDIR%%/eucgb2312_cn.pyc
+%%PYTHON_CODECDIR%%/chinesecn/__init__.pyc
+%%PYTHON_CODECDIR%%/chinesecn/euc_gb23122utf.pyc
+%%PYTHON_CODECDIR%%/chinesecn/utf2euc_gb2312.pyc
+@dirrm %%PYTHON_CODECDIR%%/chinesecn
