@@ -13,8 +13,8 @@ MASTER_SITES=	ftp://ftp.ifi.uio.no/pub/pgp/2.x/src/ \
 		ftp://ftp.kiarchive.ru/pub/unix/crypto/pgp/
 DISTNAME=	pgp263is
 
-MAINTAINER=     ports@FreeBSD.org
-COMMENT=	PGP MIT or International version - Public-Key encryption for the masses
+MAINTAINER=	ports@FreeBSD.org
+COMMENT=	PGP International version - Public-Key encryption for the masses
 
 WRKSRC=		${WRKDIR}/src
 
@@ -43,7 +43,7 @@ do-install:
 	-${PREFIX}/bin/pgp > /dev/null  2>&1  # update .idx file
 
 post-extract:
-	cd ${WRKDIR}; $(TAR) -xf pgp263ii.tar; \
+	cd ${WRKDIR}; ${TAR} -xf pgp263ii.tar; \
 		${RM} -f pgp263ii.tar
 
 post-install:
