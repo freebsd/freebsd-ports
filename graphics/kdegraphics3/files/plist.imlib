@@ -1,7 +1,7 @@
 bin/kuickshow
-lib/kuickshow.la
-lib/kuickshow.so
-share/applnk/Graphics/kuickshow.desktop
+lib/kde3/kuickshow.la
+lib/kde3/kuickshow.so
+share/applications/kde/kuickshow.desktop
 share/apps/kuickshow/im_palette.pal
 share/apps/kuickshow/pics/about.png
 share/apps/kuickshow/pics/calibrate.png
