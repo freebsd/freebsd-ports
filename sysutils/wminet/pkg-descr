@@ -1,0 +1,12 @@
+WMiNET is a complete inetd monitoring dock.app, it's mainly
+designed for usage in WindowMaker's dock and gives you some
+nice & nifty features like:
+
+        * Monitors number of processes, users, ftp users,
+          http users, and NFS mounts;
+        * Monitors any tcp port you specify.
+        * Selectable LED or LCD GUI;
+        * Commandline options (-h for help);
+        * Enable/disable monitoring through ~/.wminetrc;
+        * Customs stats posistioning throught ~/.wminetrc
+        * User-definable scripts/commands through ~/.wminetrc;

@@ -1,0 +1,66 @@
+*** ../../wminet.app/wminet/Makefile.orig	Fri Dec 11 22:15:44 1998
+--- ../../wminet.app/wminet/Makefile		Sun May 23 14:15:19 1999
+***************
+*** 1,19 ****
+  LIBDIR = -L/usr/X11R6/lib
+! LIBS   = -lXpm -lXext -lX11
+! FLAGS = -O2
+  OBJS =	wminet.o \
+  		../wmgeneral/wmgeneral.o \
+  		../wmgeneral/misc.o \
+  		../wmgeneral/list.o
+  
+  
+  .c.o:
+! 	cc -I/usr/X11R6/share/include $(FLAGS) -c -Wall $< -o $*.o
+  
+! wminet: $(OBJS)
+! 	cc $(FLAGS) -o wminet $^ -lXext $(LIBDIR) $(LIBS)
+  
+! all:: wminet
+  
+  clean::
+  	for i in $(OBJS) ; do \
+--- 1,22 ----
+  LIBDIR = -L/usr/X11R6/lib
+! LIBS   = -lXpm -lXext -lX11 -lkvm
+! CFLAGS ?= -O2
+! CFLAGS += -I/usr/X11R6/include
+! CFLAGS += -DDEFAULT_WMINETRC="\"${PREFIX}/etc/wminetrc\""
+  OBJS =	wminet.o \
+  		../wmgeneral/wmgeneral.o \
+  		../wmgeneral/misc.o \
+  		../wmgeneral/list.o
++ PROG = wminet
+  
+  
+  .c.o:
+! 	${CC} -I/usr/X11R6/share/include $(CFLAGS) -c -Wall $< -o $*.o
+  
+! $(PROG): $(OBJS)
+! 	${CC} $(CFLAGS) -o $@ $(OBJS) -lXext $(LIBDIR) $(LIBS)
+  
+! all:: $(PROG)
+  
+  clean::
+  	for i in $(OBJS) ; do \
+***************
+*** 23,33 ****
+  	rm -f *~
+  
+  install:: wminet
+! 	cp -f wminet /usr/local/bin/
+! 	chmod 755 /usr/local/bin/wminet
+! 	chown root:root /usr/local/bin/wminet
+! 	cp wminetrc $(HOME)/.wminetrc
+! 	chmod 600 $(HOME)/.wminetrc
+! 	cp wminetrc /etc/wminetrc
+! 	chmod 644 /etc/wminetrc
+! 	@echo "WMiNET Installation finished..."
+--- 26,31 ----
+  	rm -f *~
+  
+  install:: wminet
+! 	install -c -g kmem -m 2755 -o root $(PROG) ${PREFIX}/bin
+! 	install -c -g wheel -m 644 -o root wminetrc ${PREFIX}/etc/wminetrc
+! 

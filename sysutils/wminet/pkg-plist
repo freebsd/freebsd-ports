@@ -1,0 +1,4 @@
+bin/wminet
+etc/wminetrc
+share/doc/wminet/HINTS
+@dirrm share/doc/wminet

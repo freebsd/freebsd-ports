@@ -1,0 +1,689 @@
+*** ../../wminet.app/wminet/wminet.c.orig	Mon Nov 30 19:16:01 1998
+--- ../../wminet.app/wminet/wminet.c		Sun May 23 13:46:54 1999
+***************
+*** 10,15 ****
+--- 10,17 ----
+  
+   ProFTPD support by Mike Kershaw aka Dragorn (dragorn@melchior.nerv-un.ml.org)
+   ProFTPD support was made 64bit clean by Martijn Pieterse (pieterse@xs4all.nl)
++ 
++  FreeBSD port by Stephen Kiernan (sk-ports@vegamuse.org)
+   
+   see http://windowmaker.mezaway.org for more awesome wm dock apps :)
+  
+***************
+*** 23,28 ****
+--- 25,35 ----
+  #include <fcntl.h>
+  #include <unistd.h>
+  #include <ctype.h>
++ #ifdef __FreeBSD__
++ #include <limits.h>
++ #include <kvm.h>
++ #include <netdb.h>
++ #endif /* __FreeBSD__ */
+  
+  #include <sys/wait.h>
+  #include <sys/stat.h>
+***************
+*** 30,35 ****
+--- 37,59 ----
+  #include <sys/types.h>
+  #include <sys/ioctl.h>
+  #include <sys/socket.h>
++ #ifdef __FreeBSD__
++ #include <sys/socketvar.h>
++ #include <sys/sysctl.h>
++ 
++ #include <net/route.h>
++ #include <netinet/in.h>
++ #include <netinet/in_systm.h>
++ #include <netinet/ip.h>
++ #include <netinet/in_pcb.h>
++ #include <netinet/ip_var.h>
++ #include <netinet/tcp.h>
++ #include <netinet/tcp_fsm.h>
++ #include <netinet/tcp_timer.h>
++ #include <netinet/tcp_var.h>
++ 
++ #include <arpa/inet.h>
++ #endif /* __FreeBSD__ */
+  
+  #include <utmp.h>
+  #include <dirent.h>
+***************
+*** 57,62 ****
+--- 81,90 ----
+  // Lame work-around... Sigh... when will they standardize the headers!?!?
+  #define TCP_ESTABLISHED 1
+  
++ #ifndef DEFAULT_WMINETRC
++ #define DEFAULT_WMINETRC "/etc/wminetrc"
++ #endif /* DEFAULT_WMINETRC */
++ 
+  extern	char **environ;
+  
+  char	*ProgName;
+***************
+*** 97,102 ****
+--- 125,137 ----
+  
+  char uconfig_file[256];
+  
++ #ifdef __FreeBSD__
++ struct utmp *_wminet_getutent(FILE *);
++ #define setutent() { FILE *_wminet__ufp = fopen(_PATH_UTMP, "r")
++ #define getutent() _wminet_getutent(_wminet__ufp)
++ #define endutent() fclose(_wminet__ufp); }
++ #endif /* __FreeBSD__ */
++ 
+  void usage(void);
+  void printversion(void);
+  void BlitString(char *name, int x, int y);
+***************
+*** 105,114 ****
+  void wminet_routine(int, char **);
+  int PortWatch( short port );
+  int ReadConfigInt(FILE *fp, char *setting, int *value);
+! int ReadConfigString(FILE *fp, char *setting, char *value);
+  int Read_Config_File( char *filename );
+  
+  
+  int main(int argc, char *argv[]) {
+  
+  	int		i;
+--- 140,161 ----
+  void wminet_routine(int, char **);
+  int PortWatch( short port );
+  int ReadConfigInt(FILE *fp, char *setting, int *value);
+! int ReadConfigString(FILE *fp, char *setting, char *value, int len);
+  int Read_Config_File( char *filename );
+  
+  
++ #ifdef __FreeBSD__
++ inline
++ struct utmp *_wminet_getutent( FILE *fp )
++ {
++    static struct utmp usr;
++    if( fread((char *)&usr, sizeof(usr), 1, fp) == 1 )
++       return &usr;
++    else
++       return NULL;
++ }
++ #endif /* __FreeBSD__ */
++ 
+  int main(int argc, char *argv[]) {
+  
+  	int		i;
+***************
+*** 145,151 ****
+              case 'c' :
+                  if (argc > (i+1))
+                  {
+!                     strcpy(uconfig_file, argv[i+1]);
+                      i++;
+                  }
+                  break;
+--- 192,198 ----
+              case 'c' :
+                  if (argc > (i+1))
+                  {
+!                     strncpy(uconfig_file, argv[i+1], 256);
+                      i++;
+                  }
+                  break;
+***************
+*** 210,221 ****
+      }
+      else
+      {
+!         sprintf(config_file, "%s/.wminetrc", getenv("HOME"));
+  
+          if (!Read_Config_File(config_file))
+          {
+              // Fall back to /etc/wminetrc
+!             sprintf(config_file, "/etc/wminetrc");
+          
+              Read_Config_File(config_file);
+          }
+--- 257,268 ----
+      }
+      else
+      {
+!         snprintf(config_file, 256, "%s/.wminetrc", getenv("HOME"));
+  
+          if (!Read_Config_File(config_file))
+          {
+              // Fall back to /etc/wminetrc
+!             snprintf(config_file, 256, DEFAULT_WMINETRC);
+          
+              Read_Config_File(config_file);
+          }
+***************
+*** 236,248 ****
+                  if (use_proftpd)
+                  {
+                      if (strstr(dent->d_name, "proftpd-") != NULL)
+!                         strcpy(ftpclasses[0], dent->d_name);
+                  }
+                  else
+                  {
+                      if (strstr(dent->d_name, "ftp.pids-") != NULL)
+                      {
+!                         strcpy(ftpclasses[numftpclasses++], dent->d_name);
+                          //printf("ftppidfile: %s\n", dent->d_name);
+                      }
+                  }
+--- 283,295 ----
+                  if (use_proftpd)
+                  {
+                      if (strstr(dent->d_name, "proftpd-") != NULL)
+!                         strncpy(ftpclasses[0], dent->d_name, 64);
+                  }
+                  else
+                  {
+                      if (strstr(dent->d_name, "ftp.pids-") != NULL)
+                      {
+!                         strncpy(ftpclasses[numftpclasses++], dent->d_name, 64);
+                          //printf("ftppidfile: %s\n", dent->d_name);
+                      }
+                  }
+***************
+*** 406,415 ****
+  	FILE	*fp;
+      pid_t pid;
+      char buf[1024];
+      char *tok,*tok1;
+-     int i,j;
+      char seps[]={"/"};
+      char sep2[]={":"};
+  
+  #ifdef HTTP_MONITOR_PROC
+      DIR *dir;
+--- 453,465 ----
+  	FILE	*fp;
+      pid_t pid;
+      char buf[1024];
++     int i;
++ #ifndef __FreeBSD__
++     int j;
+      char *tok,*tok1;
+      char seps[]={"/"};
+      char sep2[]={":"};
++ #endif /* !__FreeBSD__ */
+  
+  #ifdef HTTP_MONITOR_PROC
+      DIR *dir;
+***************
+*** 427,434 ****
+          setutent();
+          while ((ut = getutent()))
+          {
+!             if ((ut->ut_type == USER_PROCESS) && 
+! 		(ut->ut_name[0] != '\0'))
+              {
+                  nUsers++;
+              }
+--- 477,489 ----
+          setutent();
+          while ((ut = getutent()))
+          {
+!             if (
+! #ifdef __FreeBSD__
+!                 (ut->ut_line[0] != '\0')
+! #else
+!                 (ut->ut_type == USER_PROCESS)
+! #endif /* __FreeBSD__ */
+! 		&& (ut->ut_name[0] != '\0'))
+              {
+                  nUsers++;
+              }
+***************
+*** 447,453 ****
+              logrun_t runent;
+              logrun_header_t head;
+  
+!             sprintf(buf, "%s/%s", ftp_pid_path, ftpclasses[0]);
+  
+              if (( fd = open(buf, O_RDONLY, 0644)) == -1)
+              {
+--- 502,508 ----
+              logrun_t runent;
+              logrun_header_t head;
+  
+!             snprintf(buf, 1024, "%s/%s", ftp_pid_path, ftpclasses[0]);
+  
+              if (( fd = open(buf, O_RDONLY, 0644)) == -1)
+              {
+***************
+*** 474,480 ****
+          } else {
+              for (i=0; i!= numftpclasses; i++)
+              {
+!                 sprintf(buf, "%s/%s", ftp_pid_path, ftpclasses[i]);
+                  //printf("opening '%s'\n", buf);
+                  fp = fopen(buf, "r");
+                  if (fp)
+--- 529,535 ----
+          } else {
+              for (i=0; i!= numftpclasses; i++)
+              {
+!                 snprintf(buf, 1024, "%s/%s", ftp_pid_path, ftpclasses[i]);
+                  //printf("opening '%s'\n", buf);
+                  fp = fopen(buf, "r");
+                  if (fp)
+***************
+*** 496,506 ****
+      // httpd processes
+      nHttp = 0;
+  
+! #ifdef HTTP_MONITOR_PROC
+  
+      if ( monitor_http )
+      {
+- 
+          dir = opendir("/proc");
+          if (dir)
+          {
+--- 551,560 ----
+      // httpd processes
+      nHttp = 0;
+  
+! #if defined(HTTP_MONITOR_PROC) && !defined(__FreeBSD__)
+  
+      if ( monitor_http )
+      {
+          dir = opendir("/proc");
+          if (dir)
+          {
+***************
+*** 508,514 ****
+              {
+                  if (!isalpha(dent->d_name[0]))
+                  {
+!                     sprintf(buf, "/proc/%s/stat", dent->d_name);
+                      //printf("opening '%s'\n", buf);
+                      fp=fopen(buf, "r");
+                      if (fp)
+--- 562,568 ----
+              {
+                  if (!isalpha(dent->d_name[0]))
+                  {
+!                     snprintf(buf, 1024, "/proc/%s/stat", dent->d_name);
+                      //printf("opening '%s'\n", buf);
+                      fp=fopen(buf, "r");
+                      if (fp)
+***************
+*** 532,572 ****
+  #ifdef HTTP_MONITOR_NET
+  
+      if ( monitor_http )
+!     {
+! 
+!         fp = fopen("/proc/net/tcp", "r");
+!         if (fp)
+!         {
+!             fgets(buf, 512, fp); // get rid of text header
+!     
+!             while ( (fgets(buf, 512, fp)) )
+!             {
+!                 tok = strtok(buf, sep2);
+!                 tok = strtok(NULL, sep2);
+!                 tok = strtok(NULL, sep2);
+!     
+!                 tok[4]=0;
+! 				tok1 = strtok(NULL, sep2);
+! 				tok1 += 5;
+! 				tok1[2] = 0;
+!     
+!                 // printf("port: %i\n", strtol(tok, NULL, 16));
+! 				// printf("state: %i\n", strtol(tok1, NULL, 16));
+!     
+!                 i = strtol(tok, NULL, 16);
+! 				j = strtol(tok1, NULL, 16);
+!     
+!                 // should make this configurable
+!                 if (( i == 80  || i == 8080) && (j == TCP_ESTABLISHED))
+!                 {
+!                     nHttp++;
+!                 }
+!     
+!             }
+!     
+!             fclose(fp);
+!         }
+!     }
+  #endif
+  
+  
+--- 586,592 ----
+  #ifdef HTTP_MONITOR_NET
+  
+      if ( monitor_http )
+!         nHttp = PortWatch( 80 ) + PortWatch( 8080 );
+  #endif
+  
+  
+***************
+*** 575,581 ****
+--- 595,605 ----
+  
+      if ( monitor_nfs )
+      {
++ #ifdef __FreeBSD__
++         fp = popen("/usr/bin/showmount -d", "r");
++ #else
+          fp = popen("/usr/sbin/showmount -d", "r");
++ #endif /* __FreeBSD__ */
+          if (fp)
+          {
+              while ( (fgets(buf, 128, fp)) )
+***************
+*** 592,600 ****
+      // Total Processes
+      nProc = 0;
+  
+      if ( monitor_proc )
+      {
+!         
+          fp = fopen("/proc/loadavg", "r");
+          if (fp)
+          {
+--- 616,661 ----
+      // Total Processes
+      nProc = 0;
+  
++ #if defined(__FreeBSD__) && defined(HTTP_MONITOR_PROC)
++     if( monitor_proc || monitor_http )
++ #else
+      if ( monitor_proc )
++ #endif /* __FreeBSD__ && HTTP_MONITOR_PROC */
+      {
+! #ifdef __FreeBSD__
+!         char errbuf[_POSIX2_LINE_MAX];
+!         kvm_t *kd = kvm_openfiles( NULL, NULL, NULL, O_RDONLY, errbuf );
+!         if( kd == 0 )
+!            fprintf( stderr, "%s", errbuf );
+!         else
+!         {
+!            int procs;
+! 
+! #ifdef HTTP_MONITOR_PROC
+!            struct kinfo_proc *kinfo =
+! #endif /* HTTP_MONITOR_PROC */
+!                kvm_getprocs(kd,KERN_PROC_ALL,0,&procs);
+! 
+! #ifdef HTTP_MONITOR_PROC
+!            if( monitor_http )
+!            {
+!               int i;
+!               for( i = 0; i < procs; i++ )
+!               {
+!                  if( !strncmp( KI_PROC(&kinfo[i])->p_comm, "(httpd)", 7 ) )
+!                  {
+!                     nHttp++;
+!                  }
+!               }
+!            }
+! #endif /* HTTP_MONITOR_PROC */
+! 
+!            kvm_close( kd );
+! 
+!            if( monitor_proc )
+!               nProc = procs;
+!         }
+! #else        
+          fp = fopen("/proc/loadavg", "r");
+          if (fp)
+          {
+***************
+*** 605,610 ****
+--- 666,672 ----
+              
+              fclose(fp);
+          }
++ #endif /* __FreeBSD__ */
+      }
+  
+      // Port Watchers
+***************
+*** 622,635 ****
+  
+  int PortWatch( short port )
+  {
+      FILE *fp;
+      char buf[1024];
+      char *tok,*tok1;
+      int i,j;
+      char sep2[]={":"};
+  
+-     int count=0;
+- 
+      fp = fopen("/proc/net/tcp", "r");
+      if (fp)
+      {
+--- 684,744 ----
+  
+  int PortWatch( short port )
+  {
++ 
++     int count=0;
++ 
++ #ifdef __FreeBSD__
++     struct protoent *p;
++ 
++     setprotoent(1);
++     setservent(1);
++     while((p = getprotoent()))
++     {
++        if( !strcmp( p->p_name, "tcp" ) )
++        {
++           int len = 0;
++           if( sysctlbyname( "net.inet.tcp.pcblist", 0, &len, 0, 0 ) >= 0 )
++           {
++              char *buf = malloc(len);
++              if( buf )
++              {
++                 if( sysctlbyname("net.inet.tcp.pcblist", buf, &len, 0, 0) >= 0 )
++                 {
++                    struct xinpgen *xig, *oxig;
++ 
++                    oxig = xig = (struct xinpgen *)buf;
++                    for( xig = (struct xinpgen *)((char *)xig + xig->xig_len);
++                         xig->xig_len > sizeof(struct xinpgen);
++                         xig = (struct xinpgen *)((char *)xig + xig->xig_len))
++                    {
++                       struct tcpcb   *tp  = &((struct xtcpcb *)xig)->xt_tp;
++                       struct inpcb   *inp = &((struct xtcpcb *)xig)->xt_inp;
++                       struct xsocket *so  = &((struct xtcpcb *)xig)->xt_socket;
++ 
++                       if( ( so->xso_protocol != IPPROTO_TCP ) ||
++                           ( inp->inp_gencnt > oxig->xig_gen ) ||
++                           ( inet_lnaof(inp->inp_laddr) == INADDR_ANY ) )
++                         continue;
++ 
++                       if( ( ntohs((u_short)inp->inp_lport) == port ) &&
++                           ( tp->t_state == TCPS_ESTABLISHED ) )
++                       {
++                          count++;
++                       }
++                    }
++                 }
++                 free(buf);
++              }
++           }
++        }
++     }
++ #else
+      FILE *fp;
+      char buf[1024];
+      char *tok,*tok1;
+      int i,j;
+      char sep2[]={":"};
+  
+      fp = fopen("/proc/net/tcp", "r");
+      if (fp)
+      {
+***************
+*** 661,666 ****
+--- 770,776 ----
+  
+          fclose(fp);
+      }
++ #endif /* __FreeBSD__ */
+  
+      return count;
+  }
+***************
+*** 713,726 ****
+          newx -= CHAR_WIDTH;
+      }
+  
+!     sprintf(buf, "%02i", num);
+  
+      BlitString(buf, newx, y);
+  }
+      
+  
+  // ReadConfigSetting
+! int ReadConfigString(FILE *fp, char *setting, char *value)
+  {
+      char str[1024];
+      char buf[1024];
+--- 823,836 ----
+          newx -= CHAR_WIDTH;
+      }
+  
+!     snprintf(buf, 1024, "%02i", num);
+  
+      BlitString(buf, newx, y);
+  }
+      
+  
+  // ReadConfigSetting
+! int ReadConfigString(FILE *fp, char *setting, char *value, int vallen)
+  {
+      char str[1024];
+      char buf[1024];
+***************
+*** 735,741 ****
+          return 0;
+      }
+  
+!     sprintf(str, "%s=", setting);
+      slen = strlen(str);
+      
+      fseek(fp, 0, SEEK_SET);
+--- 845,851 ----
+          return 0;
+      }
+  
+!     snprintf(str, 1024, "%s=", setting);
+      slen = strlen(str);
+      
+      fseek(fp, 0, SEEK_SET);
+***************
+*** 767,773 ****
+                  if ( buf[i] == '=' )
+                  {
+                      p=buf+i+1;
+!                     strcpy(value, p);
+                      return 1;
+                  }
+              }
+--- 877,883 ----
+                  if ( buf[i] == '=' )
+                  {
+                      p=buf+i+1;
+!                     strncpy(value, p, vallen);
+                      return 1;
+                  }
+              }
+***************
+*** 782,788 ****
+  {
+      char buf[1024];
+  
+!     if (ReadConfigString(fp, setting, (char *) &buf))
+      {
+          *value = atoi(buf);
+          return 1;
+--- 892,898 ----
+  {
+      char buf[1024];
+  
+!     if (ReadConfigString(fp, setting, (char *) &buf, 1024))
+      {
+          *value = atoi(buf);
+          return 1;
+***************
+*** 798,831 ****
+      fp = fopen(filename, "r");
+      if (fp)
+      {
+!         ReadConfigString(fp, "action1", action1);
+!         ReadConfigString(fp, "action2", action2);
+!         ReadConfigString(fp, "action3", action3);
+!         ReadConfigString(fp, "action4", action4);
+!         ReadConfigString(fp, "action5", action5);
+          ReadConfigInt(fp, "monitor_proc", &monitor_proc);
+          ReadConfigInt(fp, "monitor_users", &monitor_users);
+          ReadConfigInt(fp, "monitor_ftp", &monitor_ftp);
+          ReadConfigInt(fp, "monitor_http", &monitor_http);
+          ReadConfigInt(fp, "monitor_nfs", &monitor_nfs);
+          ReadConfigInt(fp, "use_proftpd", &use_proftpd);
+!         ReadConfigString(fp, "ftp_pid_path", ftp_pid_path);
+  
+          ReadConfigInt(fp, "portwatch1.pos", &portwatch[1].pos);
+          ReadConfigInt(fp, "portwatch1.port", &portwatch[1].port);
+!         ReadConfigString(fp, "portwatch1.label", portwatch[1].label);
+          ReadConfigInt(fp, "portwatch2.pos", &portwatch[2].pos);
+          ReadConfigInt(fp, "portwatch2.port", &portwatch[2].port);
+!         ReadConfigString(fp, "portwatch2.label", portwatch[2].label);
+          ReadConfigInt(fp, "portwatch3.pos", &portwatch[3].pos);
+          ReadConfigInt(fp, "portwatch3.port", &portwatch[3].port);
+!         ReadConfigString(fp, "portwatch3.label", portwatch[3].label);
+          ReadConfigInt(fp, "portwatch4.pos", &portwatch[4].pos);
+          ReadConfigInt(fp, "portwatch4.port", &portwatch[4].port);
+!         ReadConfigString(fp, "portwatch4.label", portwatch[4].label);
+          ReadConfigInt(fp, "portwatch5.pos", &portwatch[5].pos);
+          ReadConfigInt(fp, "portwatch5.port", &portwatch[5].port);
+!         ReadConfigString(fp, "portwatch5.label", portwatch[5].label);
+          
+          fclose(fp);
+          return 1;
+--- 908,941 ----
+      fp = fopen(filename, "r");
+      if (fp)
+      {
+!         ReadConfigString(fp, "action1", action1, 256);
+!         ReadConfigString(fp, "action2", action2, 256);
+!         ReadConfigString(fp, "action3", action3, 256);
+!         ReadConfigString(fp, "action4", action4, 256);
+!         ReadConfigString(fp, "action5", action5, 256);
+          ReadConfigInt(fp, "monitor_proc", &monitor_proc);
+          ReadConfigInt(fp, "monitor_users", &monitor_users);
+          ReadConfigInt(fp, "monitor_ftp", &monitor_ftp);
+          ReadConfigInt(fp, "monitor_http", &monitor_http);
+          ReadConfigInt(fp, "monitor_nfs", &monitor_nfs);
+          ReadConfigInt(fp, "use_proftpd", &use_proftpd);
+!         ReadConfigString(fp, "ftp_pid_path", ftp_pid_path, 256);
+  
+          ReadConfigInt(fp, "portwatch1.pos", &portwatch[1].pos);
+          ReadConfigInt(fp, "portwatch1.port", &portwatch[1].port);
+!         ReadConfigString(fp, "portwatch1.label", portwatch[1].label, 10);
+          ReadConfigInt(fp, "portwatch2.pos", &portwatch[2].pos);
+          ReadConfigInt(fp, "portwatch2.port", &portwatch[2].port);
+!         ReadConfigString(fp, "portwatch2.label", portwatch[2].label, 10);
+          ReadConfigInt(fp, "portwatch3.pos", &portwatch[3].pos);
+          ReadConfigInt(fp, "portwatch3.port", &portwatch[3].port);
+!         ReadConfigString(fp, "portwatch3.label", portwatch[3].label, 10);
+          ReadConfigInt(fp, "portwatch4.pos", &portwatch[4].pos);
+          ReadConfigInt(fp, "portwatch4.port", &portwatch[4].port);
+!         ReadConfigString(fp, "portwatch4.label", portwatch[4].label, 10);
+          ReadConfigInt(fp, "portwatch5.pos", &portwatch[5].pos);
+          ReadConfigInt(fp, "portwatch5.port", &portwatch[5].port);
+!         ReadConfigString(fp, "portwatch5.label", portwatch[5].label, 10);
+          
+          fclose(fp);
+          return 1;
