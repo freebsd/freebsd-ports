@@ -8,7 +8,7 @@
 
 DISTNAME=	nkf171
 PKGNAME=	ja-p5-nkf-0.01
-CATEGORIES=	japanese
+CATEGORIES=	japanese perl5
 MASTER_SITES=	ftp://ftp.ie.u-ryukyu.ac.jp/pub/software/kono/ \
 		ftp://ftp.win.ne.jp/pub/misc/ \
 		ftp://ftp.eos.hokudai.ac.jp/pub/tools/code-conv/nkf/
