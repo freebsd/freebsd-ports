@@ -12,5 +12,6 @@ man/man1/ctags.1.gz
 man/man1/ref.1.gz
 man/man1/elvrec.1.gz
 man/man1/elvprsv.1.gz
-etc/rc.d/jp-elvis.sh
-share/doc/jp-elvis/README.j18
+etc/rc.d/ja-elvis.sh
+share/doc/ja-elvis/README.j18
+@dirrm share/doc/ja-elvis
