@@ -18,12 +18,12 @@ USE_GTK=	yes
 
 ALL_TARGET=	# empty
 
-CARRIERS= 	antarctic.carrier belgian.carrier beta.carrier \
+CARRIERS=	antarctic.carrier belgian.carrier beta.carrier \
 		brother.carrier kpsi.carrier liberati.carrier \
 		reticulian.carrier russel.carrier tz8.carrier \
 		unmetric.carrier
 
-DOCS= 		index.html mg01.html mg02.html mg03.html mg04.html \
+DOCS=	index.html mg01.html mg02.html mg03.html mg04.html \
 		mg05.html mg06.html mg07.html mg08.html mg09.html \
 		mg10.html mg11.html mg12.html mg13.html mg14.html \
 		mg15.html mg16.html mg17.html mg18.html mg19.html \

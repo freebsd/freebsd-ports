@@ -7,7 +7,7 @@
 
 PORTNAME=	rocksndiamonds
 PORTVERSION=	1.4.0
-PORTREVISION= 	1
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	http://www.artsoft.org/rocksndiamonds/RELEASES/ \
 		${MASTER_SITE_XCONTRIB}
