@@ -1,12 +1,12 @@
 # New ports collection makefile for:	xdaliclock
-# Version required:			2.18
 # Date created:				10th February 1995
 # Whom:					gpalmer
 #
 # $FreeBSD$
 #
 
-DISTNAME=	xdaliclock-2.18
+PORTNAME=	xdaliclock
+PORTVERSION= 	2.18
 CATEGORIES=	x11-clocks
 MASTER_SITES=	http://www.jwz.org/xdaliclock/ \
 		${MASTER_SITE_XCONTRIB}

@@ -1,12 +1,12 @@
 # New ports collection makefile for:   wmtime
-# Version required:    1.0b2
 # Date created:        1 July 1998
 # Whom:                Rich Neswold <rneswold@mcs.net>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	wmtime-1.0b2
+PORTNAME=	wmtime
+PORTVERSION= 	1.0b2
 CATEGORIES=	x11-clocks windowmaker
 MASTER_SITES=	ftp://ftp.mezaway.org/pub/DockApps/
 

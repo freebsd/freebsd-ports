@@ -1,12 +1,12 @@
 # New ports collection makefile for:	pclock
-# Version required:		0.13
 # Date created:			15 Apr 1999
 # Whom:				Jim Mock <jim@FreeBSD.org>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	pclock-0.13
+PORTNAME=	pclock
+PORTVERSION= 	0.13
 CATEGORIES=	x11-clocks windowmaker afterstep
 MASTER_SITES=	ftp://ftp.kourakos.com/pub/pclock/
 EXTRACT_SUFX=	.tgz
