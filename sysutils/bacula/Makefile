@@ -126,7 +126,7 @@ post-install:
 		cpio -pdm -L -R root:wheel ${DOCSDIR}
 .endif
 
-# Inform user afer install about important things ....
+# Inform user after install about important things ....
 .if !defined(WITH_CLIENT_ONLY)
 	@${ECHO_MSG} "*******************************************************"
 	@${ECHO_MSG} "NOTE:"
