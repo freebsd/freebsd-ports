@@ -6,6 +6,7 @@
 
 PORTNAME=	libgcrypt
 PORTVERSION=	1.1.91
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	${MASTER_SITE_GNUPG}
 MASTER_SITE_SUBDIR=	alpha/libgcrypt
@@ -15,18 +16,15 @@ DISTFILES=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX} \
 MAINTAINER=	arved@FreeBSD.org
 COMMENT=	"General purpose crypto library based on code used in GnuPG"
 
-LIB_DEPENDS=	gpg-error.1:${PORTSDIR}/security/libgpg-error \
-		pth.20:${PORTSDIR}/devel/pth
+LIB_DEPENDS=	gpg-error.1:${PORTSDIR}/security/libgpg-error
 
 CONFLICTS=	libgcrypt-1.1*
 USE_REINPLACE=	yes
 USE_PERL5=	yes
-USE_GNOME=	lthack
-USE_LIBTOOL_VER=13
-CONFIGURE_ENV=	MAKEINFO="makeinfo --no-split" \
-		CPPFLAGS="${CFLAGS} -I${LOCALBASE}/include/pth" \
-		LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib/pth"
+GNU_CONFIGURE=	yes
+CONFIGURE_ENV=	MAKEINFO="makeinfo --no-split"
 CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
+CONFIGURE_ARGS=		--with-pth=no
 INSTALLS_SHLIB=	yes
 
 INFO=	gcrypt
@@ -47,8 +45,10 @@ pre-extract:
 .endif
 
 post-patch:
-	@${REINPLACE_CMD} -e "s|%%PTHREAD_LIBS%%|${PTHREAD_LIBS}|" \
-		${WRKSRC}/ltmain.sh
+	@${FIND} ${WRKSRC} -name "configure" | ${XARGS} ${REINPLACE_CMD} -e \
+		's|-lpthread|${PTHREAD_LIBS}|g'
+	@${REINPLACE_CMD} -e s'|-lpthread|${PTHREAD_LIBS}|g' \
+		${WRKSRC}/src/Makefile.in
 
 pre-configure:
 	@${RM} -f ${WRKSRC}/doc/gcrypt.info*
