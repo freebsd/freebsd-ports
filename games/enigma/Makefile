@@ -18,11 +18,10 @@ COMMENT=	Enigma is a reimplementation of Oxyd, a puzzle game
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/libzipios.a:${PORTSDIR}/archivers/zipios++
 BUILD_DEPENDS+=	${LOCALBASE}/bin/tolua:${PORTSDIR}/lang/tolua4
-LIB_DEPENDS=	lua.4:${PORTSDIR}/lang/lua4
+LIB_DEPENDS=	lua.4:${PORTSDIR}/lang/lua4 \
+		SDL_ttf.3:${PORTSDIR}/graphics/sdl_ttf
 
-BROKEN=		Does not compile
-
-USE_GCC=	3.3
+USE_GCC=	3.4
 
 GNU_CONFIGURE=	yes
 USE_XLIB=	yes
