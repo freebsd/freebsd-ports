@@ -18,6 +18,7 @@ BUILD_DEPENDS=  buildhash:${PORTSDIR}/textproc/ispell
 USE_BZIP2=	YES
 ALL_TARGET=	koi
 USE_GMAKE=	YES
+USE_PERL5=	yes
 
 # Still need gmake for other reasons :-\
 #post-patch:

@@ -13,11 +13,12 @@ MASTER_SITES=	http://triptico.dhis.org/download/
 MAINTAINER=	markp@FreeBSD.org
 
 USE_GMAKE=	yes
+USE_REINPLACE=	yes
 MAKE_ARGS+=	PREFIX="${PREFIX}"
 MAKEFILE=	makefile
 
 pre-configure:
-	${PERL} -pi -e "s@gcc -g -Wall@${CC} ${CFLAGS} -Wall@g" ${WRKSRC}/makefile
+	${REINPLACE_CMD} -e "s@gcc -g -Wall@${CC} ${CFLAGS} -Wall@g" ${WRKSRC}/makefile
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/mp ${PREFIX}/bin

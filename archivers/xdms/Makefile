@@ -14,11 +14,12 @@ DISTNAME=	xdms
 MAINTAINER=	markp@FreeBSD.org
 
 USE_ZIP=	yes
+USE_REINPLACE=	yes
 WRKSRC=		${WRKDIR}/xdms/src
 ALL_TARGET=	xdms
 
 pre-build:
-	${PERL} -pi -e "s@gcc@${CC}@g; s@-O3 -Wall@${CFLAGS} -Wall@g" ${WRKSRC}/Makefile
+	${REINPLACE_CMD} -e "s@gcc@${CC}@g; s@-O3 -Wall@${CFLAGS} -Wall@g" ${WRKSRC}/Makefile
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/xdms ${PREFIX}/bin

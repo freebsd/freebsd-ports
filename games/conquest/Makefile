@@ -14,16 +14,17 @@ EXTRACT_SUFX=	.src.tar.gz
 MAINTAINER=	markp@FreeBSD.org
 
 GNU_CONFIGURE=	yes
+USE_REINPLACE=	yes
 BINGRP=		conquest
 SHAREGRP=	conquest
 
 post-patch:
-	${PERL} -pi -e "s|\@prefix\@/conquest|\@prefix\@|g; \
+	${REINPLACE_CMD} -e "s|\@prefix\@/conquest|\@prefix\@|g; \
 		s|^.+\@chgrp .\(CONQGROUP\) conq.+||g; \
 		s|^.+\@chmod 2771 conq.+||g;" ${WRKSRC}/Makefile.in
-	${PERL} -pi -e "s/# include <termio.h>//g" ${WRKSRC}/c_defs.h
-	${PERL} -pi -e "s/-O2 -fPIC//g" ${WRKSRC}/configure
-	${PERL} -pi -e "s|/opt/conquest|${PREFIX}|g; \
+	${REINPLACE_CMD} -e "s/# include <termio.h>//g" ${WRKSRC}/c_defs.h
+	${REINPLACE_CMD} -e "s/-O2 -fPIC//g" ${WRKSRC}/configure
+	${REINPLACE_CMD} -e "s|/opt/conquest|${PREFIX}|g; \
 		s|etc/conquestrc|etc/conquest/conquestrc|g; \
 		s|bin/conqdriv|libexec/conqdriv|g; \
 		s|etc/conquest_common.img|etc/conquest/conquest_common.img|g; \

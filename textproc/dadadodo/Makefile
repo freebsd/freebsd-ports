@@ -12,8 +12,10 @@ MASTER_SITES=	http://www.jwz.org/dadadodo/
 
 MAINTAINER=	markp@FreeBSD.org
 
+USE_REINPLACE=	yes
+
 pre-patch:
-	${PERL} -pi -e "s/^(CC|CFLAGS).+//" ${WRKSRC}/Makefile
+	${REINPLACE_CMD} -e "s/^(CC|CFLAGS).+//" ${WRKSRC}/Makefile
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/dadadodo ${PREFIX}/bin

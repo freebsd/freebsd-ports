@@ -16,10 +16,11 @@ DISTNAME=	${PORTNAME}_1_8
 MAINTAINER=	maurice@serc.rmit.edu.au
 
 USE_GMAKE=	yes
+USE_REINPLACE=	yes
 
 pre-patch:
 .for files in packet.cc socketchan.cc
-	@${PERL} -pi -e 's|malloc.h|stdlib.h|' ${WRKSRC}/ncp/${files}
+	@${REINPLACE_CMD} -e 's|malloc.h|stdlib.h|' ${WRKSRC}/ncp/${files}
 .endfor
 
 do-install:

@@ -15,6 +15,7 @@ MAINTAINER=	mwest@uct.ac.za
 
 GNU_CONFIGURE=	YES
 USE_GMAKE=	YES
+USE_REINPLACE=	yes
 
 .if defined(NOPORTDOCS)
 MAKE_ARGS=	NOPORTDOCS=1
@@ -23,7 +24,8 @@ MAKE_ARGS=	NOPORTDOCS=1
 MAN1=		gruftistats.1
 
 post-patch:
-	@${PERL} -pi -e 's,strcasestr,strcasestr_x,g' ${WRKSRC}/ircstats.h \
+	@${REINPLACE_CMD} -e \
+		's,strcasestr,strcasestr_x,g' ${WRKSRC}/ircstats.h \
 		${WRKSRC}/lib.c
 
 .include <bsd.port.mk>

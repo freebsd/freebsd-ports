@@ -14,9 +14,10 @@ MASTER_SITE_SUBDIR=	mharo
 MAINTAINER=	mharo@FreeBSD.org
 
 NO_BUILD=	yes
+USE_REINPLACE=	yes
 
 post-patch:
-	${PERL} -pi -e 's,__PREFIX__,${PREFIX},' ${WRKSRC}/keyprint
+	${REINPLACE_CMD} -e 's,__PREFIX__,${PREFIX},' ${WRKSRC}/keyprint
 
 do-install:
 	${MKDIR} ${PREFIX}/share/keyprint

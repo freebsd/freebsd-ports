@@ -16,10 +16,11 @@ MAINTAINER=	mbac@nyct.net
 HAS_CONFIGURE=	yes
 ALL_TARGET=	${PORTNAME}
 USE_BZIP2=	yes
+USE_REINPLACE=	yes
 
 MAN8=		tmetric.8
 
 post-patch:
-	@${PERL5} -pi -e 's%/usr/local%${PREFIX}%' ${WRKSRC}/*
+	@${REINPLACE_CMD} -e 's%/usr/local%${PREFIX}%' ${WRKSRC}/*
 
 .include <bsd.port.mk>
