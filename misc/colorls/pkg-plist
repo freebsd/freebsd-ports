@@ -1,0 +1,5 @@
+@cwd /usr/local
+@mode 555
+bin/colorls
+@mode 444
+man/man1/colorls.1.gz

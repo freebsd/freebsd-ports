@@ -1,0 +1,354 @@
+--- ./ls.c.org	Wed Mar  8 02:14:11 1995
++++ ./ls.c	Wed Mar  8 02:17:10 1995
+@@ -93,6 +93,7 @@
+ int f_dirname;			/* if precede with directory name */
+ int f_timesort;			/* sort by time vice name */
+ int f_type;			/* add type character for non-regular files */
++int f_color;			/* add type in color for non-regular files */
+ 
+ int
+ main(argc, argv)
+@@ -122,7 +123,7 @@
+ 		f_listdot = 1;
+ 
+ 	fts_options = FTS_PHYSICAL;
+-	while ((ch = getopt(argc, argv, "1ACFLRTacdfgikloqrstu")) != EOF) {
++	while ((ch = getopt(argc, argv, "1ACFGLRTacdfgikloqrstu")) != EOF) {
+ 		switch (ch) {
+ 		/*
+ 		 * The -1, -C and -l options all override each other so shell
+@@ -152,6 +153,9 @@
+ 		case 'F':
+ 			f_type = 1;
+ 			break;
++		case 'G':
++			f_color = 1;
++			break;
+ 		case 'L':
+ 			fts_options &= ~FTS_PHYSICAL;
+ 			fts_options |= FTS_LOGICAL;
+@@ -207,18 +211,21 @@
+ 	argc -= optind;
+ 	argv += optind;
+ 
++	parsecolors(getenv("LSCOLORS"));
++
+ 	/*
+ 	 * If not -F, -i, -l, -s or -t options, don't require stat
+ 	 * information.
+ 	 */
+-	if (!f_inode && !f_longform && !f_size && !f_timesort && !f_type)
++	if (!f_inode && !f_longform && !f_size && !f_timesort && !f_type
++	    && !f_color)
+ 		fts_options |= FTS_NOSTAT;
+ 
+ 	/*
+ 	 * If not -F, -d or -l options, follow any symbolic links listed on
+ 	 * the command line.
+ 	 */
+-	if (!f_longform && !f_listdir && !f_type)
++	if (!f_longform && !f_listdir && !f_type && !f_color)
+ 		fts_options |= FTS_COMFOLLOW;
+ 
+ 	/* If -l or -s, figure out block size. */
+--- ./ls.h.org	Wed Mar  8 02:14:11 1995
++++ ./ls.h	Wed Mar  8 02:17:11 1995
+@@ -49,6 +49,7 @@
+ extern int f_size;		/* list size in short listing */
+ extern int f_statustime;	/* use time of last mode change */
+ extern int f_type;		/* add type character for non-regular files */
++extern int f_color;		/* add type in color for non-regular files */
+ 
+ typedef struct {
+ 	FTSENT *list;
+--- ./print.c.org	Wed Mar  8 02:14:11 1995
++++ ./print.c	Wed Mar  8 02:17:11 1995
+@@ -66,6 +66,26 @@
+ 
+ #define	IS_NOPRINT(p)	((p)->fts_number == NO_PRINT)
+ 
++/* Most of these are taken from <sys/stat.h> */
++typedef enum Colors {
++    C_DIR,     /* directory */
++    C_LNK,     /* symbolic link */
++    C_SOCK,    /* socket */
++    C_FIFO,    /* pipe */
++    C_EXEC,    /* executable */
++    C_BLK,     /* block special */
++    C_CHR,     /* character special */
++    C_SUID,    /* setuid executable */
++    C_SGID,    /* setgid executable */
++    C_WSDIR,   /* directory writeble to others, with sticky bit */
++    C_WDIR,    /* directory writeble to others, without sticky bit */
++    C_NUMCOLORS        /* just a place-holder */
++} Colors ;
++
++char *defcolors = "4x5x2x3x1x464301060203";
++
++static int colors[C_NUMCOLORS][2];
++
+ void
+ printscol(dp)
+ 	DISPLAY *dp;
+@@ -122,10 +142,14 @@
+ 			printtime(sp->st_ctime);
+ 		else
+ 			printtime(sp->st_mtime);
++		if (f_color)
++			(void)colortype(sp->st_mode);
+ 		(void)printf("%s", p->fts_name);
+ 		if (f_type)
+ 			(void)printtype(sp->st_mode);
+-		if (S_ISLNK(sp->st_mode))
++		if (f_color)
++			(void)printf("\033[m");
++	if (S_ISLNK(sp->st_mode))
+ 			printlink(p);
+ 		(void)putchar('\n');
+ 	}
+@@ -217,9 +241,13 @@
+ 	if (f_size)
+ 		chcnt += printf("%*qd ",
+ 		    (int)sizefield, howmany(sp->st_blocks, blocksize));
++	if (f_color)
++		(void)colortype(sp->st_mode);
+ 	chcnt += printf("%s", p->fts_name);
+ 	if (f_type)
+ 		chcnt += printtype(sp->st_mode);
++	if (f_color)
++		printf("\033[m");
+ 	return (chcnt);
+ }
+ 
+@@ -274,6 +302,95 @@
+ 	return (0);
+ }
+ 
++void
++printcolor(c)
++       Colors c;
++{
++	printf("\033[");
++	if (colors[c][0] != -1) {
++		printf("3%d", colors[c][0]);
++		if (colors[c][1] != -1)
++		    printf(";");
++	}
++	if (colors[c][1] != -1)
++	    printf("4%d", colors[c][1]);
++	printf("m");
++}
++
++colortype(mode)
++       mode_t mode;
++{
++	switch(mode & S_IFMT) {
++	      case S_IFDIR:
++		if (mode & S_IWOTH)
++		    if (mode & S_ISTXT)
++			printcolor(C_WSDIR);
++		    else
++			printcolor(C_WDIR);
++		else
++		    printcolor(C_DIR);
++		return(1);
++	      case S_IFLNK:
++		printcolor(C_LNK);
++		return(1);
++	      case S_IFSOCK:
++		printcolor(C_SOCK);
++		return(1);
++	      case S_IFIFO:
++		printcolor(C_FIFO);
++		return(1);
++	      case S_IFBLK:
++		printcolor(C_BLK);
++		return(1);
++	      case S_IFCHR:
++		printcolor(C_CHR);
++		return(1);
++	}
++	if (mode & (S_IXUSR | S_IXGRP | S_IXOTH)) {
++		if (mode & S_ISUID)
++		    printcolor(C_SUID);
++		else if (mode & S_ISGID)
++		    printcolor(C_SGID);
++		else
++		    printcolor(C_EXEC);
++		return(1);
++	}
++	return(0);
++}
++
++void
++parsecolors(cs)
++char *cs;
++{
++	int i, j, len;
++	char c[2];
++	if (cs == NULL)    cs = ""; /* LSCOLORS not set */
++	len = strlen(cs);
++	for (i = 0 ; i < C_NUMCOLORS ; i++) {
++		if (len <= 2*i) {
++			c[0] = defcolors[2*i];
++			c[1] = defcolors[2*i+1];
++		}
++		else {
++			c[0] = cs[2*i];
++			c[1] = cs[2*i+1];
++		}
++		for (j = 0 ; j < 2 ; j++) {
++			if ((c[j] < '0' || c[j] > '7') &&
++			    tolower(c[j]) != 'x') {
++				fprintf(stderr,
++					"error: invalid character '%c' in LSCOLORS env var\n",
++					c[j]);
++				c[j] = defcolors[2*i+j];
++			}
++			if (c[j] == 'x')
++			    colors[i][j] = -1;
++			else
++			    colors[i][j] = c[j]-'0';
++		}
++	}
++}
++ 
+ static void
+ printlink(p)
+ 	FTSENT *p;
+--- ./Makefile.org	Wed Mar  8 02:14:10 1995
++++ ./Makefile	Wed Mar  8 02:20:01 1995
+@@ -1,7 +1,12 @@
+ #	@(#)Makefile	8.1 (Berkeley) 6/2/93
+ #	Makefile,v 1.2 1994/09/24 02:55:51 davidg Exp
+ 
+-PROG=	ls
++PROG=	colorls
+ SRCS=	cmp.c stat_flags.c ls.c print.c util.c
++BINDIR=	${PREFIX}/bin
++MANDIR= ${PREFIX}/man/man
++
++beforeinstall:
++	cp ls.1 colorls.1
+ 
+ .include <bsd.prog.mk>
+--- ./ls.1.org	Wed Mar  8 02:14:10 1995
++++ ./ls.1	Wed Mar  8 02:17:10 1995
+@@ -36,16 +36,24 @@
+ .\"	ls.1,v 1.3 1994/09/24 02:55:53 davidg Exp
+ .\"
+ .Dd April 18, 1994
+-.Dt LS 1
++.Dt COLORLS 1
+ .Os
+ .Sh NAME
+-.Nm ls
+-.Nd list directory contents
++.Nm colorls
++.Nd list directory contents in color
+ .Sh SYNOPSIS
+-.Nm ls
+-.Op Fl ACFLRTacdfiloqrstu1
++.Nm colorls
++.Op Fl ACFGLRTacdfiloqrstu1
+ .Op Ar file ...
+ .Sh DESCRIPTION
++(Note: This man page describes the color version of the program.  To
++minimize the differences from the original, the program is referred to
++as
++.Nm ls
++in this manual.  The new option
++.Fl G
++is for color display.)
++.Pp
+ For each operand that names a
+ .Ar file
+ of a type other than
+@@ -85,6 +93,12 @@
+ and an at sign (@) after each symbolic link.
+ .\" and a vertical bar (|) after each that is a
+ .\" .Tn FIFO . 
++.It Fl G
++Use ANSI color sequences to distinguish file types.  (See
++.Ev LSCOLORS
++below.)  In addition to those mentioned above in
++.Fl F ,
++some extra attributes (setuid bit set, etc.) are also displayed.
+ .It Fl L
+ If argument is a symbolic link, list the file or directory the link references
+ rather than the link itself.
+@@ -314,6 +328,74 @@
+ See
+ .Xr environ 7
+ for more information.
++.It LSCOLORS
++The value of this variable describes what color to use for which
++attribute when the color output
++.Pq Fl G
++is specified.  This string is a concatenation of pairs of the format
++.Sy fb ,
++where
++.Sy f
++is the foreground color and
++.Sy b
++is the background color.
++.Pp
++The color designators are as follows:
++.Pp
++.Bl -tag -width 4n -offset indent -compact
++.It Sy 0
++black
++.It Sy 1
++red
++.It Sy 2
++green
++.It Sy 3
++yellow
++.It Sy 4
++blue
++.It Sy 5
++magenta
++.It Sy 6
++cyan
++.It Sy 7
++white
++.It Sy x
++default foreground or background
++.El
++.Pp
++(Note: the above are standard ANSI colors.  The actual display may
++differ depending on the color capabilities of your terminal.)
++.Pp
++The order of the attributes are as follows:
++.Pp
++.Bl -enum -offset indent -compact
++.It
++directory
++.It
++symbolic link
++.It
++socket
++.It
++pipe
++.It
++executable
++.It
++block special
++.It
++character special
++.It
++executable with setuid bit set
++.It
++executable with setgid bit set
++.It
++directory writable to others, with sticky bit
++.It
++directory writable to others, without sticky bit
++.El
++.Pp
++The default is "4x5x2x3x1x464301060203", i.e., blue foreground and
++default background for regular directories, black foreground and red
++background for setuid executables, etc.
+ .El
+ .Sh COMPATIBILITY
+ The group field is now automatically included in the long listing for

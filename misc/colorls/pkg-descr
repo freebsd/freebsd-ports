@@ -1,0 +1,11 @@
+This is a simple hack to the 2.0R /bin/ls to use ANSI sequences to
+display file attributes in color.  There is a -G flag (somewhat
+similar to the -F flag).  Take a look at the man page for details.
+
+The program is called "colorls" and installs itself in /usr/local/bin.
+The file patches/patch-aa is the diffs with the 2.0-Release /usr/src/bin/ls
+directory.  Stock xterm doesn't know about colors, so you should use
+color_xterm or kterm (available from ports).
+
+Satoshi Asami
+asami@cs.berkeley.edu
