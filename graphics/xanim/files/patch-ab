@@ -1,9 +1,9 @@
-*** Imakefile.orig	Sat Aug  3 01:32:32 1996
---- Imakefile	Fri Sep 27 00:53:38 1996
+*** Imakefile.orig	Mon Jan 27 01:22:08 1997
+--- Imakefile	Tue Jun 10 07:12:07 1997
 ***************
-*** 68,80 ****
-  XCOMM AND have downloaded the proper decompression modules AND have verified
-  XCOMM that they are the correct size in bytes as listed in the readmes.
+*** 91,103 ****
+  XCOMM --    Indeo 3.x  IV32	indeo.readme
+  XCOMM --    Creative   CYUV	creative.readme
   XCOMM 
 ! XCOMM XA_IV32_DEF = -DXA_INDEO 
 ! XCOMM XA_CVID_DEF = -DXA_CINEPAK
@@ -15,9 +15,9 @@
   XCOMM
   XCOMM -- NOTE: SGI Machines only: if you see an error like
   XCOMM --               "merge_ext returns nil during relocation" or similiar
---- 68,80 ----
-  XCOMM AND have downloaded the proper decompression modules AND have verified
-  XCOMM that they are the correct size in bytes as listed in the readmes.
+--- 91,103 ----
+  XCOMM --    Indeo 3.x  IV32	indeo.readme
+  XCOMM --    Creative   CYUV	creative.readme
   XCOMM 
 ! XA_IV32_DEF = -DXA_INDEO
 ! XA_CVID_DEF = -DXA_CINEPAK
@@ -30,7 +30,7 @@
   XCOMM -- NOTE: SGI Machines only: if you see an error like
   XCOMM --               "merge_ext returns nil during relocation" or similiar
 ***************
-*** 183,189 ****
+*** 154,160 ****
   XCOMM XA_AUDIO_DEFS =
   XCOMM
   XCOMM -- Sun Sparcs -----------------------------------------------------------
@@ -38,7 +38,7 @@
   XCOMM
   XCOMM NOTE: Imakefile should add the -DSVR4 to Sun Solaris machines, if not
   XCOMM       use the following:
---- 183,189 ----
+--- 154,160 ----
   XCOMM XA_AUDIO_DEFS =
   XCOMM
   XCOMM -- Sun Sparcs -----------------------------------------------------------
@@ -47,7 +47,7 @@
   XCOMM NOTE: Imakefile should add the -DSVR4 to Sun Solaris machines, if not
   XCOMM       use the following:
 ***************
-*** 224,230 ****
+*** 199,205 ****
   XCOMM XA_MACH_LIBS = -lc
   XCOMM 
   XCOMM -- Also FreeBSD, and BSDI with SBlast-BSD-1.5 (development stages)-------
@@ -55,7 +55,7 @@
   XCOMM XA_AUDIO_LIBS = -lc
   XCOMM
   XCOMM -- SGI Indigo -----------------------------------------------------------
---- 224,230 ----
+--- 199,205 ----
   XCOMM XA_MACH_LIBS = -lc
   XCOMM 
   XCOMM -- Also FreeBSD, and BSDI with SBlast-BSD-1.5 (development stages)-------
