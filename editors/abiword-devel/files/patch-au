@@ -1,46 +1,45 @@
-
-$FreeBSD$
-
---- src/pkg/common/unix/scripts/makewrapper.sh.orig	Tue Nov 13 07:59:56 2001
-+++ src/pkg/common/unix/scripts/makewrapper.sh	Fri Nov 23 16:31:06 2001
-@@ -66,23 +66,31 @@
+--- src/pkg/common/unix/scripts/makewrapper.sh.orig	Wed Jan 23 09:16:52 2002
++++ src/pkg/common/unix/scripts/makewrapper.sh	Sat Feb 23 15:30:19 2002
+@@ -80,23 +80,31 @@
  if [ -z "\$locale" ]
  then
      locale=\$LANG
-+elif [ -z \$locale ]
++elif [ -x \$locale ]
 +then
-+    locale=\$LC_CTYPE
++	locale=\$LC_CTYPE
  fi
- #
+ 
  if [ ! -z "\$locale" ]
  then
 -    #now guess encoding
-+    #now guess country/region/encoding
-+    country=\`echo \$locale | sed -e 's/\(.*\)_.*\$/\1/'\`
-+    region=\`echo \$locale | sed -e 's/^.*_\(.*\)\..*/\1/'\`
++	#now guess country/region/encoding
++	country=\`echo \$locale | sed -e 's/\(.*\)_.*\$/\1/'\`
++	region=\`echo \$locale | sed -e 's/^.*_\(.*\)\..*/\1/'\`
      encoding=\`echo \$locale | sed -e 's/^.*\.\(.*\)\$/\1/'\`
 -    if [ ! -z "\$encoding" ]
-+    if [ ! -z \$country -o ! -z \$region -o ! -z \$encoding ]
++	if [ ! -z \$country -o ! -z \$region -o ! -z \$encoding ]
      then
 -	addfontdir=\$ABISUITE_FONT_HOME/\$encoding
 -	if [ ! -z "\$addfontdir" ]
 -	then
 -	    if [ -d "\$addfontdir" ]
+-	    then
+-	    	#add directory with locale-specific fonts to font path
+-	    	ABISUITE_FONT_PATH=\$ABISUITE_FONT_PATH,\$addfontdir
+-	    fi
+-	fi
 +	addfontdirlst="\$ABISUITE_FONT_HOME/\$country \$ABISUITE_FONT_HOME/\${country}-\${region} \$ABISUITE_FONT_HOME/\$encoding \$ABISUITE_FONT_HOME/\${country}-\${region}.\${encoding}"
 +	for addfontdir in \$addfontdirlst
 +	do
-+	    if [ ! -z \$addfontdir ]
- 	    then
--	    	#add directory with locale-specific fonts to font path
--	    	ABISUITE_FONT_PATH=\$ABISUITE_FONT_PATH,\$addfontdir
++		if [ ! -z \$addfontdir ]
++		then
 +		if [ -d \$addfontdir -a ! -f \$addfontdir/.already-in-fp ]
 +		then
-+		    #add directory with locale-specific fonts to font path
-+		    ABISUITE_FONT_PATH=\$ABISUITE_FONT_PATH,\$addfontdir
++			#add directory with locale-specific fonts to font path
++			ABISUITE_FONT_PATH=\$ABISUITE_FONT_PATH,\$addfontdir
 +		fi
- 	    fi
--	fi
++		fi
 +	done
      fi
  fi
- #
+ 

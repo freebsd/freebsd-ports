@@ -10,8 +10,7 @@
 # AbiWord build system.
 
 PORTNAME=	AbiWord
-PORTVERSION=	0.99.1
-PORTREVISION=	1
+PORTVERSION=	0.99.2
 CATEGORIES=	editors
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		http://www.abisource.com/downloads/Version-${PORTVERSION}/lf/
@@ -29,7 +28,7 @@ LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png \
 
 DIST_SUBDIR=	AbiWord
 
-WRKSRC=		${WRKDIR}/abiword/abi
+WRKSRC=		${WRKDIR}/abiword-${PORTVERSION}/abi
 
 USE_X_PREFIX=	yes
 USE_AUTOMAKE=	yes
