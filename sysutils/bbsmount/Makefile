@@ -22,9 +22,13 @@ GNU_CONFIGURE=	yes
 USE_GCC=	2.95
 PORTDOCS=	README BUGS NEWS AUTHORS ChangeLog
 
-post-patch:   
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 500000
+post-patch:
 	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|g' \
 		${WRKSRC}/${CONFIGURE_SCRIPT}
+.endif
 
 post-install:
 .if !defined(NOPORTDOCS)
@@ -39,4 +43,4 @@ post-install:
 	fi
 	@${INSTALL} ${WRKSRC}/data/bbsmount.bb ${PREFIX}/share/bbtools/bbsmount.bb-sample
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
