@@ -13,7 +13,7 @@ MASTER_SITES=	ftp://ftp.foolabs.com/pub/xpdf/  \
 MASTER_SITE_SUBDIR=	support/xpdf
 EXTRACT_SUFX=	.tgz
 
-PATCH_SITES=	xhttp://vzzbx.xs4all.nl/files/ \
+PATCH_SITES=	http://vzzbx.xs4all.nl/files/ \
 		http://www.cs.cmu.edu/~dst/Adobe/Gallery/
 PATCHFILES=	xpdf-ro-remove.patch
 PATCH_DIST_STRIP= -p1
