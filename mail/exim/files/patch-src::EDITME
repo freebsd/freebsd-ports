@@ -1,5 +1,5 @@
---- src/EDITME.orig	Mon Sep 15 12:47:55 2003
-+++ src/EDITME	Sat Sep 20 17:08:19 2003
+--- src/EDITME.orig	Mon Dec  1 12:15:41 2003
++++ src/EDITME	Tue Jan  6 12:04:13 2004
 @@ -98,7 +98,7 @@
  # /usr/local/sbin. The installation script will try to create this directory,
  # and any superior directories, if they do not exist.
@@ -18,15 +18,16 @@
  
  # It is possible to specify a colon-separated list of files for CONFIGURE_FILE.
  # In this case, Exim will use the first of them that exists when it is run.
-@@ -132,14 +132,14 @@
+@@ -132,7 +132,7 @@
  # owner of a local mailbox.) Specifying these values as root is very strongly
- # discouraged. These values are compiled into the binary.
+ # discouraged.
  
 -EXIM_USER=
-+EXIM_USER=mailnull
++EXIM_USER=ref:mailnull
  
- # If the setting of EXIM_USER is numeric (e.g. EXIM_USER=42), there must
- # also be a setting of EXIM_GROUP. If, on the other hand, you use a name
+ # If you specify EXIM_USER as a name, this is looked up at build time, and the
+ # uid number is built into the binary. However, you can specify that this
+@@ -153,7 +153,7 @@
  # for EXIM_USER (e.g. EXIM_USER=exim), you don't need to set EXIM_GROUP unless
  # you want to use a group other than the default group for the given user.
  
@@ -35,7 +36,7 @@
  
  # Many sites define a user called "exim", with an appropriate default group,
  # and use
-@@ -267,6 +267,7 @@
+@@ -286,6 +286,7 @@
  # LDAP_LIB_TYPE=OPENLDAP2
  # LDAP_LIB_TYPE=NETSCAPE
  # LDAP_LIB_TYPE=SOLARIS
@@ -43,7 +44,7 @@
  
  # If you don't set any of these, Exim assumes the original University of
  # Michigan (OpenLDAP 1) library.
-@@ -280,8 +281,10 @@
+@@ -299,8 +300,10 @@
  # specified in INCLUDE. The settings below are just examples; -lpq is for
  # PostgreSQL, -lgds is for Interbase.
  
@@ -56,7 +57,7 @@
  
  #------------------------------------------------------------------------------
  # Compiling the Exim monitor: If you want to compile the Exim monitor, a
-@@ -291,7 +294,7 @@
+@@ -310,7 +313,7 @@
  # files are defaulted in the OS/Makefile-Default file, but can be overridden in
  # local OS-specific make files.
  
@@ -65,7 +66,7 @@
  
  
  
-@@ -332,6 +335,7 @@
+@@ -353,6 +356,7 @@
  
  # ALT_CONFIG_PREFIX=/some/directory/
  # ALT_CONFIG_PREFIX=/some/directory/exim.conf-
@@ -73,7 +74,7 @@
  
  
  #------------------------------------------------------------------------------
-@@ -376,7 +380,7 @@
+@@ -397,7 +401,7 @@
  # one that is set in the headers_charset option. The default setting is
  # defined by this setting:
  
@@ -82,7 +83,7 @@
  
  # If you are going to make use of $header_xxx expansions in your configuration
  # file, or if your users are going to use them in filter files, and the normal
-@@ -448,7 +452,7 @@
+@@ -469,7 +473,7 @@
  # SUPPORT_TLS=yes
  
  # Uncomment this setting if you are using OpenSSL
@@ -91,7 +92,7 @@
  
  # Uncomment these settings if you are using GnuTLS
  # USE_GNUTLS=yes
-@@ -499,7 +503,7 @@
+@@ -520,7 +524,7 @@
  # Once you have done this, "make install" will build the info files and
  # install them in the directory you have defined.
  
@@ -100,7 +101,7 @@
  
  
  #------------------------------------------------------------------------------
-@@ -512,7 +516,7 @@
+@@ -533,7 +537,7 @@
  # %s. This will be replaced by one of the strings "main", "panic", or "reject"
  # to form the final file names. Some installations may want something like this:
  
@@ -109,7 +110,7 @@
  
  # which results in files with names /var/log/exim_mainlog, etc. The directory
  # in which the log files are placed must exist; Exim does not try to create
-@@ -649,12 +653,20 @@
+@@ -670,12 +674,20 @@
  #
  # USE_TCP_WRAPPERS=yes
  # CFLAGS=-O -I/usr/local/include
@@ -132,7 +133,7 @@
  #------------------------------------------------------------------------------
  # The default action of the exim_install script (which is run by "make
  # install") is to install the Exim binary with a unique name such as
-@@ -896,7 +908,7 @@
+@@ -917,7 +929,7 @@
  # (process id) to a file so that it can easily be identified. The path of the
  # file can be specified here. Some installations may want something like this:
  
