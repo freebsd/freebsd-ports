@@ -1,3 +1,5 @@
+bin/convert_pwdb
+bin/pwdb2csv
 bin/pwman
 %%PORTDOCS%%share/doc/pwman/AUTHORS
 %%PORTDOCS%%share/doc/pwman/COPYING
