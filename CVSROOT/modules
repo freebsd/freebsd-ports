@@ -6903,6 +6903,7 @@ p5-Image-Imlib2	ports/graphics/p5-Image-Imlib2
 p5-Image-Info	ports/graphics/p5-Image-Info
 p5-Image-Size	ports/graphics/p5-Image-Size
 p5-Imager	ports/graphics/p5-Imager
+p5-Imager-Plot	ports/graphics/p5-Imager-Plot
 p5-Imlib2	ports/graphics/p5-Imlib2
 p5-Include	ports/devel/p5-Include
 p5-Inline	ports/devel/p5-Inline
