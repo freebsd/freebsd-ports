@@ -7,7 +7,9 @@
 
 PORTNAME=	dancer-ircd
 PORTVERSION=	1.0.35
-CATEGORIES=	irc ipv6
+PORTREVISION=	1
+CATEGORIES=	irc
+#CATEGORIES=	irc ipv6
 MASTER_SITES=	http://source.freenode.net/~asuffield/dancer/%SUBDIR%/ \
 		http://source.freenode.net/~asuffield/dancer/%SUBDIR%/:doc1 \
 		http://source.freenode.net/~asuffield/dancer/%SUBDIR%/:doc2
