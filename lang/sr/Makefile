@@ -35,6 +35,10 @@ USE_XLIB=	yes
 
 .include	<bsd.port.pre.mk>
 
+.if ${ARCH} != "i386" && ${ARCH} != "alpha"
+BROKEN=		"Does not compile on !i386 and !alpha"
+.endif
+
 pre-install:
 	@${MKDIR} ${PREFIX}/lib/sr
 
