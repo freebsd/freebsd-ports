@@ -218,6 +218,7 @@
     SUBDIR += lincity
     SUBDIR += linux-nwserver
     SUBDIR += linux-q3ademo
+    SUBDIR += linux_nwnclient
     SUBDIR += linux_nwndata
     SUBDIR += lm-solve
     SUBDIR += ltris
