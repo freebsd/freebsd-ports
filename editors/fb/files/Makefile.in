@@ -1,8 +1,6 @@
 PROG=fb
 
-CFLAGS+=-Dstrtoull=strtoul
-
-BINDIR=UL/bin
-MANDIR=UL/man/man
+BINDIR=${PREFIX}/bin
+MANDIR=${PREFIX}/man/man
 
 .include <bsd.prog.mk>
