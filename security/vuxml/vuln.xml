@@ -36,8 +36,8 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     <topic>isc-dhcp3-server buffer overflow in logging mechanism</topic>
     <affects>
       <package>
-        <name>isc-dhcp3-server</name>
-        <range><lt>3.0.1.r12</lt></range>
+        <name>isc-dhcp3-{relay,server}</name>
+        <range><ge>3.0.1.r12</ge><lt>3.0.1.r14</lt></range>
       </package>
     </affects>
     <description>
