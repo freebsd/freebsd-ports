@@ -3,7 +3,7 @@
 # Date created:		19 October 1996
 # Whom:			Pedro Giffuni
 #
-# $Id: Makefile,v 1.7 1998/10/11 14:35:44 jseger Exp $
+# $Id: Makefile,v 1.8 1998/10/21 21:05:11 asami Exp $
 #
 
 DISTNAME=	felt-3.02
@@ -14,7 +14,6 @@ EXTRACT_SUFX=	.src.tar.gz
 
 MAINTAINER=	giffunip@asme.org
 
-OSVERSION!=	sysctl -n kern.osreldate
 BROKEN=		too few arguments to function error
 
 WRKSRC=         ${WRKDIR}/FElt-3.02
