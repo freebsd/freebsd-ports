@@ -49,14 +49,11 @@ PORTDIR=	usr/ports/lang/mlton
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 500000
 BOOT_EXTRACT=	--gzip
 BOOT_SUF=	tgz
 BOOT_VER=	20040429
-.else
-BOOT_EXTRACT=	--bzip
-BOOT_SUF=	tbz
-BOOT_VER=	20040623
+.if ${OSVERSION} >= 500000
+LIB_DEPENDS+=	c.4:${PORTSDIR}/misc/compat4x
 .endif
 
 post-extract:
