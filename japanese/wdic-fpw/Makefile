@@ -5,40 +5,55 @@
 # $FreeBSD$
 #
 
-PORTNAME=	wdic001-fpw
-PORTVERSION=	0.11
+PORTNAME=	wdic-fpw
+PORTVERSION=	${SCRPT_VERSION}
 CATEGORIES=	japanese
 MASTER_SITES=	http://www.infonets.hiroshima-u.ac.jp/~taoka/FreeBSD/ports/ \
 		http://www.wdic.org/file/ \
-		http://www.geocities.co.jp/SiliconValley-Bay/2872/
-DISTFILES=	${DICTFILES} wdc001fpw-${PORTVERSION}.tar.gz
-EXTRACT_ONLY=	wdc001fpw-${PORTVERSION}.tar.gz
+		http://openlab.ring.gr.jp/edict/fpw/dist/wdic/
+DISTNAME=	${PORTNAME}${PORTVERSION}-src
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${DICTFILES}
+EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=    	taoka@FreeBSD.org
 
-BUILD_DEPENDS=	nkf:${PORTSDIR}/japanese/nkf \
-		fpwmake:${PORTSDIR}/japanese/freepwing \
+BUILD_DEPENDS=	${LOCALBASE}/share/doc/freepwing/fpwutils.mk:${PORTSDIR}/japanese/freepwing \
 		catdump:${PORTSDIR}/japanese/epwutil \
-		${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/${PERL_ARCH}/Jcode.pm:${PORTSDIR}/japanese/p5-Jcode \
-		${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/${PERL_ARCH}/NKF.pm:${PORTSDIR}/japanese/p5-nkf
+		lha:${PORTSDIR}/archivers/lha \
+		nkf:${PORTSDIR}/japanese/nkf \
+		${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/${PERL_ARCH}/Jcode.pm:${PORTSDIR}/japanese/p5-Jcode
+#		${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/${PERL_ARCH}/NKF.pm:${PORTSDIR}/japanese/p5-nkf
 
-WRKSRC=		${WRKDIR}/wdc001-fpw${PORTVERSION}
-DICTFILES=	wdc001a.lzh wdc001b.lzh wdc001c.lzh wdc001d.lzh wdc001e.lzh \
-		wdc001f.lzh
-ALL_TARGET=	#
+USE_GMAKE=	yes
+
+WRKSRC=		${WRKDIR}/${PORTNAME}${PORTVERSION}
+DICT_VERSION=	002
+SCRPT_VERSION=	1.1b
+DICTFILES=	wdc${DICT_VERSION}.lzh wdc00p12.lzh
 
 post-extract:
-	cd ${WRKSRC}/data; \
+	${MKDIR} ${WRKSRC}/wdic${DICT_VERSION}
+	${CP} ${LOCALBASE}/share/doc/freepwing/fpwutils.mk ${WRKSRC}
+	cd ${WRKSRC}/wdic${DICT_VERSION}; \
 	for i in ${DICTFILES}; do \
 		lha xqf ${DISTDIR}/$$i; \
 	done
-# join several dictionaris
-	${CAT} ${FILESDIR}/MOE_RAIL.H ${WRKSRC}/data/MOE[12].DIC ${WRKSRC}/data/RAIL.DIC > ${WRKSRC}/data/MOE_RAIL.DIC
-	${RM} ${WRKSRC}/data/MOE[12].DIC  ${WRKSRC}/data/RAIL.DIC
-	${CAT} ${FILESDIR}/YOGOPASO.H ${WRKSRC}/data/YOGO.DIC ${WRKSRC}/data/PASO.DIC > ${WRKSRC}/data/YOGOPASO.DIC
-	${RM}  ${WRKSRC}/data/PASO.DIC ${WRKSRC}/data/YOGO.DIC
-	${MV} ${WRKSRC}/Makefile ${WRKSRC}/Makefile.org
-	${SED} 's,/usr/local/share/eb/data/wdc001,${PREFIX}/share/dict/wdc001-fpw,' \
-		${WRKSRC}/Makefile.org > ${WRKSRC}/Makefile
+
+post-build:
+	cd ${WRKSRC}; nkf -eSd catalogs.sjis > catalogs.txt; \
+	catdump -u catalogs.txt catalogs
+
+do-install:
+	${MKDIR} ${PREFIX}/share/dict/wdic-fpw/wdic/data
+	${MKDIR} ${PREFIX}/share/dict/wdic-fpw/wdic/gaiji
+	${INSTALL_DATA} ${WRKSRC}/honmon ${PREFIX}/share/dict/wdic-fpw/wdic/data
+	${INSTALL_DATA} ${WRKSRC}/catalogs ${PREFIX}/share/dict/wdic-fpw
+	${INSTALL_DATA} ${WRKSRC}/gai16h ${PREFIX}/share/dict/wdic-fpw/wdic/gaiji
+.if !defined(NOPORTDOCS)
+	${MKDIR} ${PREFIX}/share/doc/wdic-fpw
+	${INSTALL_DATA} ${WRKSRC}/readme.1st ${PREFIX}/share/doc/wdic-fpw
+	${INSTALL_DATA} ${WRKSRC}/readme.txt ${PREFIX}/share/doc/wdic-fpw
+.endif
+
 
 .include <bsd.port.mk>
