@@ -1,12 +1,12 @@
 # New ports collection makefile for:	sdl_mixer
-# Date created:		24 Aprim 2000
+# Date created:		24 April 2000
 # Whom:			Maxim Sobolev <sobomax@FreeBSD.org>
 #
 # $FreeBSD$
 #
 
 PORTNAME=	sdl_mixer
-PORTVERSION=	1.0.5
+PORTVERSION=	1.0.6
 CATEGORIES=	audio
 MASTER_SITES=	http://www.devolution.com/~slouken/SDL/projects/SDL_mixer/src/
 DISTNAME=	SDL_mixer-${PORTVERSION}
@@ -18,8 +18,10 @@ LIB_DEPENDS=  	SDL-1.1.2:${PORTSDIR}/devel/sdl-devel \
 		mikmod.2:${PORTSDIR}/audio/libmikmod
 
 SDL_CONFIG=	${LOCALBASE}/bin/sdl11-config
-GNU_CONFIGURE=	yes
+
+USE_LIBTOOL=	yes
 USE_GMAKE=	yes
+INSTALLS_SHLIB=	yes
 CONFIGURE_ENV=	SDL_CONFIG="${SDL_CONFIG}" \
 		CPPFLAGS="-I${X11BASE}/include"
 
