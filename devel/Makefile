@@ -184,6 +184,7 @@
     SUBDIR += patch
     SUBDIR += pccts
     SUBDIR += pcre
+    SUBDIR += perforce
     SUBDIR += pharmacy
     SUBDIR += picprog
     SUBDIR += pmake
