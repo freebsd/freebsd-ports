@@ -1,0 +1,11 @@
+--- Makefile.in.orig	Wed Sep 20 17:44:12 2000
++++ Makefile.in	Thu Sep 21 10:54:20 2000
+@@ -94,7 +94,7 @@
+ EXTRA_DIST =  	libunicode.spec.in		unicodeConf.sh.in
+ 
+ 
+-confexecdir = $(libdir)
++confexecdir = $(sysconfdir)
+ confexec_DATA = unicodeConf.sh
+ 
+ CLEAN_FILES = unicodeConf.sh
