@@ -7,15 +7,15 @@ include/libexif/exif-format.h
 include/libexif/exif-ifd.h
 include/libexif/exif-loader.h
 include/libexif/exif-log.h
+include/libexif/exif-mem.h
 include/libexif/exif-mnote-data.h
-include/libexif/exif-result.h
 include/libexif/exif-tag.h
 include/libexif/exif-utils.h
 lib/libexif.a
 lib/libexif.so
-lib/libexif.so.10
+lib/libexif.so.12
 libdata/pkgconfig/libexif.pc
-%%NLS%%share/locale/de/LC_MESSAGES/libexif.mo
-%%NLS%%share/locale/es/LC_MESSAGES/libexif.mo
-%%NLS%%share/locale/fr/LC_MESSAGES/libexif.mo
+%%NLS%%share/locale/de/LC_MESSAGES/libexif-12.mo
+%%NLS%%share/locale/es/LC_MESSAGES/libexif-12.mo
+%%NLS%%share/locale/fr/LC_MESSAGES/libexif-12.mo
 @dirrm include/libexif
