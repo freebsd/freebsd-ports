@@ -145,19 +145,6 @@ diff -rc2 orig-immserv.c immserv.c
   #include "protocol.h"
   #if defined(sgi) || defined (ultrix) || defined (__alpha) || defined(hpux) || defined(__NetBSD__)
 ***************
-*** 1098,1102 ****
-  	while (top != NULL) {
-  	    /* extract name and directory */
-! 	    token = strrchr(top->name, '//') + 1;
-  	    entry = liststrdup(token,NULL);
-  	    i = strlen(top->name) - strlen(entry);
---- 1099,1103 ----
-  	while (top != NULL) {
-  	    /* extract name and directory */
-! 	    token = strrchr(top->name, '/') + 1;
-  	    entry = liststrdup(token,NULL);
-  	    i = strlen(top->name) - strlen(entry);
-***************
 *** 1195,1199 ****
   int setackalarm() {}
   /******************************************************************************/
@@ -190,14 +177,6 @@ diff -rc2 orig-mcl.c mcl.c
 + #include <arpa/inet.h>
   
   extern int SendDeclarePacket();    
-***************
-*** 50,54 ****
-  
-  int len_addr_dist;
-- extern struct nodelist;
-  extern int locktransmit;
-  extern char *localhost;
---- 57,60 ----
 diff -rc2 orig-xlopen.c xlopen.c
 *** orig-xlopen.c	Fri Mar  4 19:01:14 1994
 --- xlopen.c	Thu Oct 13 21:18:29 1994
