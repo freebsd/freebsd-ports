@@ -1,6 +1,6 @@
 # New ports collection Makefile for:    oooqs
 # Date created:                 21 July 2002
-# Whom:                         Tilman Linneweh <freebsdports@arved.de>
+# Whom:                         Tilman Linneweh <arved@FreeBSD.org>
 #
 # $FreeBSD$
 
@@ -10,7 +10,7 @@ CATEGORIES=	x11
 MASTER_SITES=	http://download.berlios.de/segfaultskde/
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/.R./_rc/}
 
-MAINTAINER=	freebsdports@arved.de
+MAINTAINER=	arved@FreeBSD.org
 
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
