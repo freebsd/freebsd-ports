@@ -549,6 +549,7 @@
     SUBDIR += p5-DateTime-Calendar-Julian
     SUBDIR += p5-DateTime-Calendar-Mayan
     SUBDIR += p5-DateTime-Event-Cron
+    SUBDIR += p5-DateTime-Event-Easter
     SUBDIR += p5-DateTime-LeapSecond
     SUBDIR += p5-DateTime-Precise
     SUBDIR += p5-DateTime-Set
