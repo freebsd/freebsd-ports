@@ -1,0 +1,18 @@
+--- m3/m3core/src/unix/freebsd-2/off_t_wrap.c.orig	Thu Jan 12 09:28:20 1995
++++ m3/m3core/src/unix/freebsd-2/off_t_wrap.c	Thu Apr 23 22:08:58 1998
+@@ -33,15 +33,3 @@
+   off_t len = (off_t) length;
+   return ftruncate(fd, length);
+ }
+-
+-/* added to avoid problems with the ellipsis... */
+-
+-int m3_fcntl(int fd, int cmd, int arg)
+-{
+-  return fcntl(fd, cmd, arg);
+-}
+-
+-int m3_open(const char *path, int flags, mode_t mode)
+-{
+-  return open(path, flags, mode);
+-}
