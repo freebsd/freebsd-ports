@@ -1,24 +1,5 @@
-XJDIC V2.3, XJDSERVER V2.3 -- (Copyright: J.W. Breen - 1998)
+UTF-8 version of edict's dictionary files
 
-XJDIC is an  electronic  Japanese-English  dictionary  program  designed  to 
-operate  in  the  X11 window environment.  In particular,  it must run in an 
-"xterm" environment which has Japanese language support such as provided  by 
-"kterm" or internationalized xterm, aixterm, etc. 
-
-It  is based on JDIC and JREADER which were developed to run under MS-DOS on 
-IBM PCs or clones. 
-
-XJDIC functions as: 
-
-(a) an English to  Japanese  dictionary  (eiwa  jiten),  searching  for  and 
-displaying entries for key-words entered in English; 
-
-(b)  a  Japanese  to  English  dictionary  (waei  jiten),  searching for and 
-displaying entries for keywords  or  phrases  entered  in  Japanese  (kanji, 
-hiragana or katakana); 
-
-(c)  a  Japanese-English  Character  dictionary  (kanei  jiten),  capable of 
-selecting kanji characters by JIS code, radical, stroke count,  Nelson Index 
-number or reading, and displaying compounds containing that kanji. 
+see japanese/edict/pkg-descr for more information
 
 WWW: ftp://ftp.cc.monash.edu.au/pub/nihongo/00INDEX.html

@@ -58,6 +58,7 @@
     SUBDIR += edict
     SUBDIR += edict-fpw
     SUBDIR += edict-sdic
+    SUBDIR += edict-utf-8
     SUBDIR += eijiro-fpw
     SUBDIR += elisa10x8
     SUBDIR += elisa8x8
