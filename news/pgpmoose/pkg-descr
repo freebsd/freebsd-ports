@@ -1,6 +1,4 @@
-PGP Moose
-=========
-by Greg Rose <ggr@usenix.org>
+PGP Moose / by Greg Rose <ggr@usenix.org>
 
 The aim of this software is to monitor the news
 postings of moderators of USENET newsgroups, and to
@@ -23,5 +21,4 @@ PGP, the crux of the cryptographic software, was
 written by Phil Zimmermann <prz@acm.org>, who
 otherwise has nothing to do with this. The
 cryptographic framework was written by Greg Rose
-<ggr@usenix.org>, as were the INN news system
-hooks.
+<ggr@usenix.org>, as were the INN news system hooks.
