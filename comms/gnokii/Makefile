@@ -6,25 +6,24 @@
 #
 
 PORTNAME=	gnokii
-PORTVERSION=	0.3.3
-PORTREVISION=	2
+PORTVERSION=	0.4.0.p20
 PORTEPOCH=	1
 CATEGORIES=	comms
-MASTER_SITES=	ftp://ftp.gnokii.org/pub/gnokii/ \
-		ftp://urtica.linuxnews.pl/pub/people/pkot/gnokii/
+MASTER_SITES=	ftp://ftp.gnokii.org/pub/gnokii/pre/ \
+		ftp://urtica.linuxnews.pl/pub/people/pkot/gnokii/ \
+		http://freesoftware.fsf.org/download/gnokii/
+DISTNAME=	${PORTNAME}-0.4.0pre20
 
 MAINTAINER=	anders@FreeBSD.org
-
-FORBIDDEN=	"Contains security hole: http://www.gnokii.org/news.shtml"
 
 LIB_DEPENDS=	intl.2:${PORTSDIR}/devel/gettext
 
 USE_GMAKE=	yes
-USE_AUTOCONF=	yes
 .if !defined(WITHOUT_X11)
 USE_XPM=	yes
 USE_GTK=	yes
 .endif
+INSTALLS_SHLIB=	yes
 
 GNU_CONFIGURE=	yes
 
@@ -36,6 +35,8 @@ PLIST_SUB+=	X11='@comment '
 .else
 PLIST_SUB+=	X11=''
 .endif
+CONFIGURE_ENV+=	MSGFMT="${LOCALBASE}/bin/msgfmt" \
+		XGETTEXT="${LOCALBASE}/bin/xgettext"
 
 NO_PACKAGE=	"Group needs to be created"
 MAN1=	gnokii.1 todologo.1
@@ -46,14 +47,19 @@ MAN8=	gnokiid.8 mgnokiidev.8
 
 INSTALL_TARGET=	install-suid
 
-FIXPREFIX=	common/cfgreader.c ChangeLog Docs/man/gnokiid.8 \
-		Docs/DataCalls-QuickStart Docs/README po/et.po po/pl.po
+FIXPREFIX=	Docs/man/gnokiid.8 Docs/DataCalls-QuickStart Docs/README \
+		common/cfgreader.c po/et.po po/sl.po
 
 post-patch:
 .for f in ${FIXPREFIX}
-	${PERL} -pi -e "s@/etc/gnokiirc@${PREFIX}/etc/gnokiirc@g" \
-	${WRKSRC}/${f}
+	@${SED} -e "s:/etc/gnokiirc:${PREFIX}/etc/gnokiirc:g" \
+	< ${WRKSRC}/${f} > ${WRKSRC}/${f}.post_sed
+	@${CP} ${WRKSRC}/${f}.post_sed ${WRKSRC}/${f}
 .endfor
+	@${SED} -e "s:%%PTHREAD_LIBS%%:${PTHREAD_LIBS}:" \
+		-e "s:%%PTHREAD_CFLAGS%%:${PTHREAD_CFLAGS}:" \
+	< ${WRKSRC}/configure > ${WRKSRC}/configure.post_sed
+	@${CP} ${WRKSRC}/configure.post_sed ${WRKSRC}/configure
 
 pre-install:
 	@${SH} ${SCRIPTDIR}/creategroup
@@ -61,7 +67,9 @@ pre-install:
 post-install:
 	@(cd ${WRKSRC} && ${GMAKE} install-docs)
 	${INSTALL_DATA} ${WRKSRC}/Docs/sample/gnokiirc \
-	    ${PREFIX}/etc/gnokiirc.sample
+		${PREFIX}/etc/gnokiirc.sample
+	${INSTALL_DATA} ${WRKSRC}/common/libgnokii.so ${PREFIX}/lib/
+	@(cd ${PREFIX}/lib && ${LN} -s libgnokii.so libgnokii.so.0)
 	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
