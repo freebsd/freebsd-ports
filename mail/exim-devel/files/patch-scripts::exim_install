@@ -7,9 +7,8 @@ This patch makes three changes to the exim_install script:
 *) Causes the configure file to be installed as a sample only.  The
    administrator needs to rename this file to "activate" exim.
 
-*) Changes the invocation of make-info to be less prone to fail on
-   silly errors and fixes the info(1) titles so that, for example
-   ``info exim'' actually enters the exim.info file.
+*) Fixes the info(1) titles so that, for example ``info exim'' actually
+   enters the exim.info file.
 
 --- scripts/exim_install.orig	Mon Aug  2 17:43:03 1999
 +++ scripts/exim_install	Tue Aug  3 14:31:20 1999
@@ -57,30 +56,21 @@ This patch makes three changes to the exim_install script:
  
  # Install info files if the directory is defined and the Texinfo
  # source documentation is present.
-@@ -239,23 +234,25 @@
-   echo $com Info installation directory is ${INFO_DIRECTORY}
-   echo $com ""
- 
--  makeinfo --no-split --output exim_overview.info ../doc/oview.texinfo
-+  makeinfo --no-validate --no-split --output exim_overview.info \
-+      ../doc/oview.texinfo
+@@ -243,19 +238,19 @@
    echo ${CP} exim_overview.info ${INFO_DIRECTORY}
    ${real} ${CP} exim_overview.info ${INFO_DIRECTORY}
    install-info --section="Exim" \
 -      --entry "* Overview: (exim_overview).    Overview of the Exim system" \
 +      --entry "* Exim Overview: (exim_overview).   Overview of the Exim system" \
        ${INFO_DIRECTORY}/exim_overview.info ${INFO_DIRECTORY}/dir
--  makeinfo --no-split --output exim.info ../doc/spec.texinfo
-+  makeinfo --no-validate --no-split --output exim.info ../doc/spec.texinfo
+   makeinfo --no-split --output exim.info ../doc/spec.texinfo
    echo ${CP} exim.info ${INFO_DIRECTORY}
    ${real} ${CP} exim.info ${INFO_DIRECTORY}
    install-info --section="Exim" \
 -      --entry "* User guide: (exim).           Exim manual" \
 +      --entry "* Exim Specification: (exim).       Exim manual" \
        ${INFO_DIRECTORY}/exim.info ${INFO_DIRECTORY}/dir
--  makeinfo --no-split --output exim_filter.info ../doc/filter.texinfo
-+  makeinfo --no-validate --no-split --output exim_filter.info \
-+      ../doc/filter.texinfo
+   makeinfo --no-split --output exim_filter.info ../doc/filter.texinfo
    echo ${CP} exim_filter.info ${INFO_DIRECTORY}
    ${real} ${CP} exim_filter.info ${INFO_DIRECTORY}
    install-info --section="Exim" \
