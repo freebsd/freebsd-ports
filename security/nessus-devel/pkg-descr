@@ -1,16 +1,16 @@
-The 'Nessus' Project was started in early 1998, and first released in
-April 1998. At this time, the most complete free security scanner was
-SATAN, which is clearly outdated, and you could see the emergence of
-several commercial ones, that were clearly too expensive.
+Nessus is a security scanner that crawls across a network, looking
+for well-known vulnerabilities and common misconfiguration.
 
-The Nessus Security Scanner is not only another security auditing tool. It
-is a security auditing as I think it should be - never trust the version
-number, never trust that a given service is listenning on the good port
-(do all the web servers on earth listen on port 80 ?).
+It has a unique set of features, including automatic SSL discovery,
+services recognition (so it will catch, for instance, a FTP server
+running on a port different than 21) and its own scripting language.
 
-The Nessus Security Scanner is free, open-sourced and wants to be easy to
-use. 
+The Nessus Security Scanner is released under the GNU General Public
+Licence and aims to be easy to use while extremely powerful.
 
 WWW: http://www.nessus.org/
 
-PS: To install the lot in one operation, do nessus-plugins first.
+PS: To install the lot in one operation, do nessus-plugins-devel first.
+
+The -devel branch is Nessus 1.3.x. Its aim is to make the code much more
+robust and much faster than in Nessus 1.2.x. Use with care!
