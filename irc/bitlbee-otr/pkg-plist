@@ -1,7 +1,7 @@
 sbin/bitlbee
-share/bitlbee/help.txt
+%%DATADIR%%/help.txt
 @exec mkdir -p -m 700 %D/etc/bitlbee
 etc/bitlbee/bitlbee.conf.orig
 etc/bitlbee/motd.txt.orig
-@dirrm share/bitlbee
+@dirrm %%DATADIR%%
 @dirrm etc/bitlbee
