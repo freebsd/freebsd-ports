@@ -11,7 +11,7 @@ MASTER_SITES=	ftp://ftp.openbsd.org/pub/OpenBSD/OpenSSH/portable/ \
 		ftp://carroll.cac.psu.edu/pub/OpenBSD/OpenSSH/portable/
 DISTNAME=	openssh-${PORTVERSION}
 
-MAINTAINER=	markhannon@optusnet.com.au
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A graphical ssh askpass utility for Gnome2
 
 WRKSRC=		${WRKDIR}/openssh-3.6p1
