@@ -6,7 +6,7 @@
 #
 
 PORTNAME=      kebook
-PORTVERSION=   0.3.4
+PORTVERSION=   0.3.5
 CATEGORIES=    japanese kde
 MASTER_SITES=  http://www.os.rim.or.jp/~s_mitu/library/kebook/ \
 		ftp://ftp.kde.gr.jp/pub/kde/unstable/contrib/
@@ -20,20 +20,24 @@ LIB_DEPENDS=    qti18n.3:${PORTSDIR}/x11-toolkits/qt-i18n \
 		kfm.2:${PORTSDIR}/x11/kdebase11-i18n \
 		eb.3:${PORTSDIR}/japanese/eb
 
+BUILD_DEPENDS= msgfmt:${PORTSDIR}/devel/gettext
+
 USE_BZIP2=      yes
 USE_GMAKE=      yes
 USE_NEWGCC=     yes
 USE_LIBTOOL=    yes
 
-CONFIGURE_ARGS= "--with-qt-includes=${QTDIR}/include/X11/qt" \
-		"--with-eb-includes=$(LOCALBASE)/include" \
-		"--with-eb-libraries=$(LOCALBASE)/lib" \
+CONFIGURE_ARGS= "--with-qt-dir=${QTDIR}" \
+		"--with-qt-includes=${QTDIR}/include/X11/qt" \
+		"--with-qt-libraries=${QTDIR}/lib" \
+		"--with-eb-includes=${LOCALBASE}/include" \
+		"--with-eb-libraries=${LOCALBASE}/lib" \
 		"--with-extra-includes=${LOCALBASE}/include" \
 		"--with-extra-libs=${LOCALBASE}/lib"
-CONFIGURE_ENV=	CPPFLAGS=-I$(LOCALBASE)/include \
-		LDFLAGS=-L$(LOCALBASE)/lib \
-		X_EXTRA_LIBS="-lxpg4" \
+CONFIGURE_ENV=  CPPFLAGS=-I${LOCALBASE}/include \
+		LDFLAGS=-L${LOCALBASE}/lib \
 		QTDIR=${QTDIR}
+
 CXXFLAGS?=      ${CFLAGS}
 
 DOCDIR=         share/apps/kebook/doc
@@ -45,6 +49,12 @@ QTDIR?=         ${PREFIX}
 QTDIR?=         ${X11BASE}
 .endif
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 400020 || ( ${OSVERSION} >= 500000 && ${OSVERSION} < 500005 )
+CONFIGURE_ENV+=        X_EXTRA_LIBS="-lxpg4"
+.endif
+
 post-install:
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${PREFIX}/${DOCDIR}
@@ -53,4 +63,4 @@ post-install:
 	done
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
