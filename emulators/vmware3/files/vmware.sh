@@ -10,11 +10,18 @@ host_ip=@@HOST_IP@@
 netmask=@@NETMASK@@
 
 [ -x $vmware_dir/bin/vmware ] || exit
+
+if [ `sysctl -n hw.ncpu` -eq 1 ]; then
+    suffix=up
+else
+    suffix=smp
+fi
+
 exec >/dev/null
 
 case $1 in
 start)
-    kldload ${vmware_dir}/lib/modules/vmmon.ko
+    kldload ${vmware_dir}/lib/modules/vmmon_${suffix}.ko
     if [ $networking -eq 1 ]; then
 	kldload ${vmware_dir}/lib/modules/vmnet.ko
 	echo -n >/dev/vmnet1
@@ -24,7 +31,7 @@ start)
     ;;
 
 stop)
-    kldunload vmmon
+    kldunload vmmon_${suffix}
     if [ $networking -eq 1 ]; then
 	ifconfig vmnet1 down
 	ifconfig vmnet1 delete $host_ip

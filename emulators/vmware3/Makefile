@@ -1,14 +1,14 @@
-# ports collection makefile for:	VMware 1.1.2 for Linux
-# Version required:	1.1.2
+# ports collection makefile for:	VMware 2.0 for Linux
+# Version required:	2.0 - Build 476
 # Date created:		Fri 26 Nov 19:16:47 EST 1999
 # Whom:			vns@delta.odessa.ua
 #
 # $FreeBSD$
-# $vmFreeBSD: vmware/vmmon-only/freebsd/port/Makefile,v 1.8 1999/12/17 00:38:27 vsilyaev Exp $
+# $vmFreeBSD: vmware/vmmon-only/freebsd/port/Makefile,v 1.9 2000/01/23 22:29:24 vsilyaev Exp $
 #
 
-DISTNAME=	VMware-1.1.2-364
-PKGNAME=	vmware-1.1.2.364
+DISTNAME=	VMware-2.0-476
+PKGNAME=	vmware-2.0.476
 CATEGORIES=	emulators linux
 MASTER_SITES=	http://www4.vmware.com/software/ \
 		http://vmware-svca.www.conxion.com/software/ \
@@ -21,8 +21,8 @@ MASTER_SITES=	http://www4.vmware.com/software/ \
 PATCH_SITES=	http://www.mindspring.com/~vsilyaev/vmware/files/ \
 		ftp://mirror.aarnet.edu.au/pub/vmware/freebsd/ \
 		http://mirror.aarnet.edu.au/pub/vmware/freebsd/
-PATCHFILES=	vmmon-freebsd-0.94.tar.gz \
-		vmnet-freebsd-0.10.tar.gz
+PATCHFILES=	vmmon-freebsd-0.95.tar.gz \
+		vmnet-freebsd-0.11.tar.gz
 
 MAINTAINER=	freebsd-emulation@FreeBSD.org
 
@@ -45,12 +45,8 @@ MAN1=		vmware.1
 BROKEN=		"Systems prior to 400013 is out of support"
 .endif
 
-.if exists(/modules/linprocfs.ko) || exists(${PREFIX}/modules/linprocfs.ko)
-HAVE_LINPROCFS=	yes
-.endif
-
-.if !defined(HAVE_LINPROCFS)
-BROKEN=		"You need Linux procfs to run this software"
+.if !defined(HAVE_LINPROCFS) && !exists(/modules/linprocfs.ko) && !exists(${PREFIX}/modules/linprocfs.ko)
+BROKEN=		"This software absolutely requires Linux procfs support"
 .endif
 
 .if exists(${WRKDIRPREFIX}${.CURDIR}/work/Makefile.inc.net)
@@ -64,6 +60,7 @@ MAKE_ARGS=	KMODDIR="${VMDIR}/lib/modules"
 
 post-patch:
 	${CP} ${FILESDIR}/Makefile ${WRKSRC}
+	${CP} ${FILESDIR}/Makefile.vmmon ${WRKSRC}/vmmon-only/Makefile
 
 setoptions:
 	${SED} 	-e 's;@@PREFIX@@;${PREFIX};' \
@@ -100,6 +97,8 @@ pre-install: setoptions
 	${LN} -s ${VMDIR}/bin/vmware ${PREFIX}/bin/
 	${MKDIR} ${VMDIR}/lib
 	${INSTALL_DATA} ${WRKSRC}/lib/config ${VMDIR}/lib
+	${MKDIR} ${VMDIR}/lib/floppies
+	${INSTALL_DATA} ${WRKSRC}/lib/floppies/* ${VMDIR}/lib/floppies
 	${MKDIR} ${VMDIR}/lib/help
 	${INSTALL_DATA} ${WRKSRC}/lib/help/* ${VMDIR}/lib/help
 	${MKDIR} ${VMDIR}/lib/xkeymap
@@ -107,11 +106,24 @@ pre-install: setoptions
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${PREFIX}/share/doc/vmware
 	${INSTALL_DATA} ${WRKSRC}/doc/* ${PREFIX}/share/doc/vmware
-	${INSTALL_DATA} ${FILESDIR}/README.FreeBSD ${PREFIX}/share/doc/vmware
+.for f in README.FreeBSD Hints.FreeBSD
+	${INSTALL_DATA} ${FILESDIR}/${f} ${PREFIX}/share/doc/vmware
+.endfor
 .endif
 
 post-install:
 	${LN} -s ${PREFIX}/etc/vmware /etc/vmware
+.if !exists(/dev/rtc) && !exists(${LINUX_DIR}/dev/rtc)
+	@${ECHO} "************************************************************"
+	@${ECHO} "This system doesn't seem to have /dev/rtc device support."
+	@${ECHO} "With it, you can benefit from VMware's rtc support."
+	@${ECHO}
+	@${ECHO} "You may want to grab the unofficial rtc port at:"
+	@${ECHO} "    http://people.FreeBSD.org/~knu/ports/emulators/"
+	@${ECHO}
+	@${ECHO} "Use it at your own risk, thanks."
+	@${ECHO} "************************************************************"
+.endif
 	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.post.mk>

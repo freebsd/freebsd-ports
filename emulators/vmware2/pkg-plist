@@ -13,15 +13,19 @@ lib/vmware/bin/vmware-loop
 lib/vmware/bin/vmware-ping
 lib/vmware/bin/vmware-wizard
 lib/vmware/lib/config
+lib/vmware/lib/floppies/linux.flp
+lib/vmware/lib/floppies/windows.flp
 lib/vmware/lib/help/AutoFit.htm
 lib/vmware/lib/help/ConfigDiskPartition.htm
 lib/vmware/lib/help/ConfigDisks.htm
 lib/vmware/lib/help/ConfigEditor.htm
 lib/vmware/lib/help/ConfigEthernet.htm
 lib/vmware/lib/help/ConfigFloppy.htm
+lib/vmware/lib/help/ConfigGuestOS.htm       
 lib/vmware/lib/help/ConfigMemory.htm
 lib/vmware/lib/help/ConfigMisc.htm
 lib/vmware/lib/help/ConfigParallel.htm
+lib/vmware/lib/help/ConfigScsiDisks.htm
 lib/vmware/lib/help/ConfigSerial.htm
 lib/vmware/lib/help/ConfigSound.htm
 lib/vmware/lib/help/ConfigWiz.htm
@@ -54,6 +58,7 @@ lib/vmware/lib/help/StatusBar.htm
 lib/vmware/lib/help/Suspend.gif
 lib/vmware/lib/help/Suspend.htm
 lib/vmware/lib/help/ToolbarButtons.htm
+lib/vmware/lib/help/ToolsInstall.htm
 lib/vmware/lib/help/View.htm
 lib/vmware/lib/help/Wizcd.htm
 lib/vmware/lib/help/Wizcongrats.htm
@@ -65,7 +70,8 @@ lib/vmware/lib/help/Wiznetwork.htm
 lib/vmware/lib/help/Wizos.htm
 lib/vmware/lib/help/Wizpath.htm
 lib/vmware/lib/help/toc.htm
-lib/vmware/lib/modules/vmmon.ko
+lib/vmware/lib/modules/vmmon_smp.ko
+lib/vmware/lib/modules/vmmon_up.ko
 lib/vmware/lib/modules/vmnet.ko
 lib/vmware/lib/xkeymap/be101
 lib/vmware/lib/xkeymap/be104
@@ -102,9 +108,11 @@ lib/vmware/lib/xkeymap/us104
 share/doc/vmware/CHANGES
 share/doc/vmware/DHCP-COPYRIGHT
 share/doc/vmware/EULA
+share/doc/vmware/Hints.FreeBSD
 share/doc/vmware/INSTALL
 share/doc/vmware/README
 share/doc/vmware/README.FreeBSD
+share/doc/vmware/SAMBA-LICENSE
 @exec mkdir -p /compat/linux/dev;for n in 0 1 2 3 4 5 6 7 8 9; do ln -s /dev/ttyv$n /compat/linux/dev/tty$n;done
 @exec ln -s /dev/ttyva /compat/linux/dev/tty10
 @exec ln -s /dev/ttyvb /compat/linux/dev/tty11
@@ -116,6 +124,7 @@ share/doc/vmware/README.FreeBSD
 @unexec rm -f /etc/vmware /dev/vmmon /dev/vmnet1 /compat/linux/bin/df /compat/linux/dev/tty[0-9]* /compat/linux/dev/hd?
 @dirrm etc/vmware
 @dirrm lib/vmware/bin
+@dirrm lib/vmware/lib/floppies
 @dirrm lib/vmware/lib/help
 @dirrm lib/vmware/lib/modules
 @dirrm lib/vmware/lib/xkeymap

@@ -1,20 +1,11 @@
 ************************************************************
-Add the following entry to /etc/fstab:
+Get Linux procfs ready and initialize vmmon/vmnet as follows:
 
-	linproc /compat/linux/proc linprocfs rw 0 0
-
-and you can play with VMware after the next boot.
-
-Or hit the following commands to play now. :)
-
-	/sbin/mount_linprocfs linproc /compat/linux/proc
 	/usr/local/etc/rc.d/vmware.sh start
 
-Also, consider making a link /compat/linux/tmp if your /tmp
-doesn't have sufficient free space or is slow.  VMware uses
-/tmp to back the VM's memory.
+then you'll be ready to start vmware.
 
-e.g.
-	ln -s /usr/tmp /compat/linux/tmp
+Don't miss the documents installed:
 
+	vmware(1) /usr/local/share/doc/vmware/*
 ************************************************************
