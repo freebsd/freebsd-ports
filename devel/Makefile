@@ -1057,6 +1057,7 @@
     SUBDIR += titano
     SUBDIR += tkcon
     SUBDIR += tkcvs
+    SUBDIR += tkinspect
     SUBDIR += tkp4
     SUBDIR += tkref
     SUBDIR += tla
