@@ -1,0 +1,18 @@
+#iZ 43129
+top level makefile.mk doesn't understand parallele build
+
+--- config_office/makefile.rc.old	Thu Oct 28 17:53:25 2004
++++ config_office/makefile.rc	Sat Feb 19 12:21:23 2005
+@@ -188,10 +188,10 @@
+ 	zlib
+ 
+ build_all .SETDIR=instsetoo_native/prj:
+-	@+perl $(SOLARENV)$/bin$/build.pl --all $(PROFULLSWITCH)
++	@+perl $(SOLARENV)$/bin$/build.pl -P%%NUMOFPROCESSES%% --all $(PROFULLSWITCH)
+ 
+ depend .SETDIR=instsetoo_native/prj:
+-	@+perl $(SOLARENV)$/bin$/build.pl --all $(PROFULLSWITCH) depend=t
++	@+perl $(SOLARENV)$/bin$/build.pl -P%%NUMOFPROCESSES%% --all $(PROFULLSWITCH) depend=t
+ 
+ 
+ # 
