@@ -1,7 +1,8 @@
-# $Id: Makefile,v 1.24 1996/04/01 11:17:56 asami Exp $
+# $Id: Makefile,v 1.25 1996/09/14 02:07:26 asami Exp $
 #
 
 SUBDIR += archivers
+SUBDIR += astro
 SUBDIR += audio
 SUBDIR += benchmarks
 SUBDIR += cad
