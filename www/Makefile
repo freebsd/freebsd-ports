@@ -530,6 +530,7 @@
     SUBDIR += php4-session
     SUBDIR += php5-cgi
     SUBDIR += php5-mnogosearch
+    SUBDIR += php5-session
     SUBDIR += phpSysInfo
     SUBDIR += phpbb
     SUBDIR += phpgedview
