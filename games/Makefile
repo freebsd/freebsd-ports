@@ -106,6 +106,7 @@
     SUBDIR += gtkabale
     SUBDIR += gtkballs
     SUBDIR += gtktetcolor
+    SUBDIR += gtypist
     SUBDIR += halflifeserver
     SUBDIR += heretic
     SUBDIR += heroes
