@@ -19,6 +19,13 @@ MASTER_SITE_SUBDIR=	gtk/v${PORTVERSION:R}
 DISTNAME=	gtk+-${PORTVERSION}
 DIST_SUBDIR=	gnome2
 
+.if defined(WITH_DROPSHADOW)
+PATCH_SITES=	${MASTER_SITE_SOURCEFORGE}
+PATCH_SITE_SUBDIR=	xfce
+PATCHFILES=	gtk+-2.4.0-menushadow.patch
+PATCH_DIST_STRIP=	-p1
+.endif
+
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Gimp Toolkit for X11 GUI (current stable version)
 
@@ -42,6 +49,16 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include/freetype2 \
 			  -I${LOCALBASE}/include -I${X11BASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib"
 PLIST_SUB=	GTK_VERSION="2.4.0"
+
+pre-everything::
+.if !defined(WITH_DROPSHADOW)
+	@${ECHO_MSG}
+	@${ECHO_MSG} "If you want to compile with experimental menu dropshadow patch,"
+	@${ECHO_MSG} "hit Ctrl-C right now and use make \"WITH_DROPSHADOW=yes\""
+	@${ECHO_MSG} "NOTE: This option is not supported by FreeBSD GNOME Team."
+	@${ECHO_MSG} "Please, don't bug us if it doesn't work or build broken."
+	@${ECHO_MSG}
+.endif
 
 post-patch:
 	@${FIND} ${WRKSRC} -name "Makefile.in" | ${XARGS} ${GREP} -l lgmodule | \
