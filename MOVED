@@ -107,3 +107,7 @@ editors/openoffice-pt|portuguese/openoffice|2002-12-06|new category
 editors/staroffice52-pt|portuguese/staroffice52|2002-12-06|new category
 www/frontpage-pt_BR|portuguese/frontpage-pt_BR|2002-12-06|new category
 audio/kdemultimedia3|multimedia/kdemultimedia3|2002-12-08|new category
+japanese/gn-mnews||2002-12-08|security vulnerability
+japanese/mnews||2002-12-08|security vulnerability
+japanese/mnews-gnspool||2002-12-08|security vulnerability
+japanese/mnews-im||2002-12-08|security vulnerability
