@@ -7,7 +7,7 @@
 prefix=/usr/local
 exec_prefix=${prefix}
 libdir=${exec_prefix}/lib
-VERSION=5.2
+VERSION=5.3
 
 CFLAGS="-I$libdir/adacurses -L$libdir/adacurses"
 LIBS="-L$prefix/lib -lAdaCurses"
