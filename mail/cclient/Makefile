@@ -46,7 +46,7 @@ SHLIBNAME=	lib${SHLIBBASE}.so.${SHLIBMAJ}.0
 
 post-patch:
 .for file in ${PREFIX_FIX_FILES}
-	@${REINPLACE_CMD} -ne "s!/usr/local!${PREFIX}!g" ${WRKSRC}/${file}
+	@${REINPLACE_CMD} -e "s|/usr/local|${PREFIX}|g" ${WRKSRC}/${file}
 .endfor
 
 post-configure:
