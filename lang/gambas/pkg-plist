@@ -362,69 +362,26 @@ lib/gambas/lib.gb.vb.so.0
 %%PORTDOCS%%%%EXAMPLESDIR%%/Sound/MusicPlayer/sound.png
 %%PORTDOCS%%%%EXAMPLESDIR%%/Sound/MusicPlayer/stop.png
 %%PORTDOCS%%%%DATADIR%%/help/.rsrc/ChristopheBONNET/ALL_OBJECT.tar.gz
-%%PORTDOCS%%%%DATADIR%%/help/.rsrc/ChristopheBONNET/ALL_OBJECT.tar.gz,v
 %%PORTDOCS%%%%DATADIR%%/help/.rsrc/DifferencesFromVB/vbdiff.png
-%%PORTDOCS%%%%DATADIR%%/help/.rsrc/DifferencesFromVB/vbdiff.png,v
-%%PORTDOCS%%%%DATADIR%%/help/.rsrc/Gambas/src-catenate.tgz
-%%PORTDOCS%%%%DATADIR%%/help/.rsrc/HowDoICompareStringsUsingLike/index.html.1
-%%PORTDOCS%%%%DATADIR%%/help/.rsrc/HowDoICompareStringsUsingLike/index.html.2
 %%PORTDOCS%%%%DATADIR%%/help/.rsrc/HowDoICompareStringsUsingLike/like.png
-%%PORTDOCS%%%%DATADIR%%/help/.rsrc/HowDoICompareStringsUsingLike/like.png.1
-%%PORTDOCS%%%%DATADIR%%/help/.rsrc/HowDoICompareStringsUsingLike/list.html
-%%PORTDOCS%%%%DATADIR%%/help/.rsrc/HowDoICompareStringsUsingLike/list.html.1
 %%PORTDOCS%%%%DATADIR%%/help/.rsrc/HowDoICompareStringsUsingLike/src-like.tgz
 %%PORTDOCS%%%%DATADIR%%/help/.rsrc/HowDoIConcatenateStrings/catenate.png
-%%PORTDOCS%%%%DATADIR%%/help/.rsrc/HowDoIConcatenateStrings/catenate.png.1
-%%PORTDOCS%%%%DATADIR%%/help/.rsrc/HowDoIConcatenateStrings/index.html.1
-%%PORTDOCS%%%%DATADIR%%/help/.rsrc/HowDoIConcatenateStrings/index.html.2
-%%PORTDOCS%%%%DATADIR%%/help/.rsrc/HowDoIConcatenateStrings/list.html
-%%PORTDOCS%%%%DATADIR%%/help/.rsrc/HowDoIConcatenateStrings/list.html.1
 %%PORTDOCS%%%%DATADIR%%/help/.rsrc/HowDoIConcatenateStrings/src-catenate.tgz
 %%PORTDOCS%%%%DATADIR%%/help/.rsrc/HowDoIConvertDataToStrings/cstr.png
-%%PORTDOCS%%%%DATADIR%%/help/.rsrc/HowDoIConvertDataToStrings/cstr.png.1
-%%PORTDOCS%%%%DATADIR%%/help/.rsrc/HowDoIConvertDataToStrings/index.html.1
-%%PORTDOCS%%%%DATADIR%%/help/.rsrc/HowDoIConvertDataToStrings/index.html.2
-%%PORTDOCS%%%%DATADIR%%/help/.rsrc/HowDoIConvertDataToStrings/list.html
-%%PORTDOCS%%%%DATADIR%%/help/.rsrc/HowDoIConvertDataToStrings/list.html.1
 %%PORTDOCS%%%%DATADIR%%/help/.rsrc/HowDoIConvertDataToStrings/src-cstr.tgz
 %%PORTDOCS%%%%DATADIR%%/help/.rsrc/HowDoIConvertStringsToInt/cint.png
-%%PORTDOCS%%%%DATADIR%%/help/.rsrc/HowDoIConvertStringsToInt/cint.png.1
-%%PORTDOCS%%%%DATADIR%%/help/.rsrc/HowDoIConvertStringsToInt/index.html.1
-%%PORTDOCS%%%%DATADIR%%/help/.rsrc/HowDoIConvertStringsToInt/index.html.2
-%%PORTDOCS%%%%DATADIR%%/help/.rsrc/HowDoIConvertStringsToInt/list.html
-%%PORTDOCS%%%%DATADIR%%/help/.rsrc/HowDoIConvertStringsToInt/list.html.1
 %%PORTDOCS%%%%DATADIR%%/help/.rsrc/HowDoIConvertStringsToInt/src-cint.tgz
-%%PORTDOCS%%%%DATADIR%%/help/.rsrc/HowDoIConvertStringsWithVal/index.html.1
-%%PORTDOCS%%%%DATADIR%%/help/.rsrc/HowDoIConvertStringsWithVal/index.html.2
-%%PORTDOCS%%%%DATADIR%%/help/.rsrc/HowDoIConvertStringsWithVal/list.html
-%%PORTDOCS%%%%DATADIR%%/help/.rsrc/HowDoIConvertStringsWithVal/list.html.1
 %%PORTDOCS%%%%DATADIR%%/help/.rsrc/HowDoIConvertStringsWithVal/src-val.tgz
 %%PORTDOCS%%%%DATADIR%%/help/.rsrc/HowDoIConvertStringsWithVal/val.png
-%%PORTDOCS%%%%DATADIR%%/help/.rsrc/HowDoIConvertStringsWithVal/val.png.1
 %%PORTDOCS%%%%DATADIR%%/help/.rsrc/HowDoIConvertVbProjects/vb2gb.tgz
-%%PORTDOCS%%%%DATADIR%%/help/.rsrc/HowDoIConvertVbProjects/vb2gb.tgz,v
 %%PORTDOCS%%%%DATADIR%%/help/.rsrc/HowDoIDivideAStringIntoChars/dividechar.png
-%%PORTDOCS%%%%DATADIR%%/help/.rsrc/HowDoIDivideAStringIntoChars/dividechar.png.1
-%%PORTDOCS%%%%DATADIR%%/help/.rsrc/HowDoIDivideAStringIntoChars/index.html.1
-%%PORTDOCS%%%%DATADIR%%/help/.rsrc/HowDoIDivideAStringIntoChars/index.html.2
-%%PORTDOCS%%%%DATADIR%%/help/.rsrc/HowDoIDivideAStringIntoChars/list.html
-%%PORTDOCS%%%%DATADIR%%/help/.rsrc/HowDoIDivideAStringIntoChars/list.html.1
 %%PORTDOCS%%%%DATADIR%%/help/.rsrc/HowDoIDivideAStringIntoChars/src-dividechar.tgz
 %%PORTDOCS%%%%DATADIR%%/help/.rsrc/HowDoIDivideAStringIntoWords/dividewords.png
-%%PORTDOCS%%%%DATADIR%%/help/.rsrc/HowDoIDivideAStringIntoWords/dividewords.png.1
-%%PORTDOCS%%%%DATADIR%%/help/.rsrc/HowDoIDivideAStringIntoWords/index.html.1
-%%PORTDOCS%%%%DATADIR%%/help/.rsrc/HowDoIDivideAStringIntoWords/index.html.2
-%%PORTDOCS%%%%DATADIR%%/help/.rsrc/HowDoIDivideAStringIntoWords/list.html
-%%PORTDOCS%%%%DATADIR%%/help/.rsrc/HowDoIDivideAStringIntoWords/list.html.1
 %%PORTDOCS%%%%DATADIR%%/help/.rsrc/HowDoIDivideAStringIntoWords/src-dividewords.tgz
 %%PORTDOCS%%%%DATADIR%%/help/.rsrc/HowDoIDoTransparency/barcelona-aquarium.jpg
-%%PORTDOCS%%%%DATADIR%%/help/.rsrc/HowDoIDoTransparency/barcelona-aquarium.jpg,v
 %%PORTDOCS%%%%DATADIR%%/help/.rsrc/HowDoIDoTransparency/chilled-shrimp.png
-%%PORTDOCS%%%%DATADIR%%/help/.rsrc/HowDoIDoTransparency/chilled-shrimp.png,v
 %%PORTDOCS%%%%DATADIR%%/help/.rsrc/HowDoIDoTransparency/gambas7.png
-%%PORTDOCS%%%%DATADIR%%/help/.rsrc/HowDoIDoTransparency/gambas7.png,v
 %%PORTDOCS%%%%DATADIR%%/help/.rsrc/HowDoIDoTransparency/transparent-example.tar.gz
-%%PORTDOCS%%%%DATADIR%%/help/.rsrc/HowDoIDoTransparency/transparent-example.tar.gz,v
 %%PORTDOCS%%%%DATADIR%%/help/.rsrc/HowDoIMakeACollection/firstcollection.png
 %%PORTDOCS%%%%DATADIR%%/help/.rsrc/HowDoIMakeACollection/src-firstcollection.tgz
 %%PORTDOCS%%%%DATADIR%%/help/.rsrc/HowDoIMakeAFunction/function.png
@@ -432,23 +389,15 @@ lib/gambas/lib.gb.vb.so.0
 %%PORTDOCS%%%%DATADIR%%/help/.rsrc/HowDoIMakeAnArray/firstarray.png
 %%PORTDOCS%%%%DATADIR%%/help/.rsrc/HowDoIMakeAnArray/src-firstarray.tgz
 %%PORTDOCS%%%%DATADIR%%/help/.rsrc/HowDoIMakeAnArrayDatatype/ccar.html
-%%PORTDOCS%%%%DATADIR%%/help/.rsrc/HowDoIMakeAnArrayDatatype/index.html.1
-%%PORTDOCS%%%%DATADIR%%/help/.rsrc/HowDoIMakeAnArrayDatatype/index.html.2
-%%PORTDOCS%%%%DATADIR%%/help/.rsrc/HowDoIMakeAnArrayDatatype/list.html
-%%PORTDOCS%%%%DATADIR%%/help/.rsrc/HowDoIMakeAnArrayDatatype/list.html.1
 %%PORTDOCS%%%%DATADIR%%/help/.rsrc/HowDoIMakeAnArrayDatatype/myobjectarray.png
-%%PORTDOCS%%%%DATADIR%%/help/.rsrc/HowDoIMakeAnArrayDatatype/myobjectarray.png.1
 %%PORTDOCS%%%%DATADIR%%/help/.rsrc/HowDoIMakeAnArrayDatatype/src-myobjectarray.tgz
 %%PORTDOCS%%%%DATADIR%%/help/.rsrc/HowDoIMakeAnObjectOfAClass/ccar.html
 %%PORTDOCS%%%%DATADIR%%/help/.rsrc/HowDoIMakeAnObjectOfAClass/class-object.png
-%%PORTDOCS%%%%DATADIR%%/help/.rsrc/HowDoIMakeAnObjectOfAClass/index.html.1
 %%PORTDOCS%%%%DATADIR%%/help/.rsrc/HowDoIMakeAnObjectOfAClass/src-class-object.tgz
 %%PORTDOCS%%%%DATADIR%%/help/.rsrc/HowDoIMakeMoreThanOneObjectOfAClass/class-objects.png
-%%PORTDOCS%%%%DATADIR%%/help/.rsrc/HowDoIMakeMoreThanOneObjectOfAClass/easy2wiki-001.pl
 %%PORTDOCS%%%%DATADIR%%/help/.rsrc/HowDoIMakeMoreThanOneObjectOfAClass/src-class-objects.tgz
 %%PORTDOCS%%%%DATADIR%%/help/.rsrc/HowDoIPassAValue/modal.png
 %%PORTDOCS%%%%DATADIR%%/help/.rsrc/HowDoIPassAValue/modeless.png
-%%PORTDOCS%%%%DATADIR%%/help/.rsrc/HowDoIPassAValue/src-value.tgz
 %%PORTDOCS%%%%DATADIR%%/help/.rsrc/HowDoIPassAValue/value.png
 %%PORTDOCS%%%%DATADIR%%/help/.rsrc/HowDoISayHelloWorld/FMyHello-form-blue.png
 %%PORTDOCS%%%%DATADIR%%/help/.rsrc/HowDoISayHelloWorld/FMyHello-form-btn1.png
@@ -479,18 +428,12 @@ lib/gambas/lib.gb.vb.so.0
 %%PORTDOCS%%%%DATADIR%%/help/.rsrc/HowDoISayHelloWorld/toolbox.png
 %%PORTDOCS%%%%DATADIR%%/help/.rsrc/HowDoISayHelloWorld/view-component-explorer.png
 %%PORTDOCS%%%%DATADIR%%/help/.rsrc/HowDoITest1/ccar.html
-%%PORTDOCS%%%%DATADIR%%/help/.rsrc/HowDoITest1/index.html.1
-%%PORTDOCS%%%%DATADIR%%/help/.rsrc/HowDoITest1/index.html.2
-%%PORTDOCS%%%%DATADIR%%/help/.rsrc/HowDoITest1/list.html
-%%PORTDOCS%%%%DATADIR%%/help/.rsrc/HowDoITest1/list.html.1
 %%PORTDOCS%%%%DATADIR%%/help/.rsrc/HowDoITest1/myobjectarray.png
-%%PORTDOCS%%%%DATADIR%%/help/.rsrc/HowDoITest1/myobjectarray.png.1
 %%PORTDOCS%%%%DATADIR%%/help/.rsrc/HowDoITest1/src-myobjectarray.tgz
 %%PORTDOCS%%%%DATADIR%%/help/.rsrc/HowDoIUseConstructors/constructor.png
 %%PORTDOCS%%%%DATADIR%%/help/.rsrc/HowDoIUseConstructors/src-constructor.tgz
 %%PORTDOCS%%%%DATADIR%%/help/.rsrc/HowDoIUseLocalAndGlobalVariables/global-variable.png
 %%PORTDOCS%%%%DATADIR%%/help/.rsrc/HowDoIUseLocalAndGlobalVariables/src-global-variable.tgz
-%%PORTDOCS%%%%DATADIR%%/help/.rsrc/HowDoIUseModules/add-form.png
 %%PORTDOCS%%%%DATADIR%%/help/.rsrc/HowDoIUseModules/modules.png
 %%PORTDOCS%%%%DATADIR%%/help/.rsrc/HowDoIUseModules/src-modules.tgz
 %%PORTDOCS%%%%DATADIR%%/help/.rsrc/HowDoIUseOptionalParameters/optional.png
@@ -498,65 +441,21 @@ lib/gambas/lib.gb.vb.so.0
 %%PORTDOCS%%%%DATADIR%%/help/.rsrc/HowDoIUsePublicAndPrivateVariables/public-private.png
 %%PORTDOCS%%%%DATADIR%%/help/.rsrc/HowDoIUsePublicAndPrivateVariables/src-public-private.tgz
 %%PORTDOCS%%%%DATADIR%%/help/.rsrc/HowToTranslateGambas/translate-combo.png
-%%PORTDOCS%%%%DATADIR%%/help/.rsrc/HowToTranslateGambas/translate-combo.png,v
 %%PORTDOCS%%%%DATADIR%%/help/.rsrc/HowToTranslateGambas/translate-enter.png
-%%PORTDOCS%%%%DATADIR%%/help/.rsrc/HowToTranslateGambas/translate-enter.png,v
 %%PORTDOCS%%%%DATADIR%%/help/.rsrc/HowToTranslateGambas/translate-select.png
-%%PORTDOCS%%%%DATADIR%%/help/.rsrc/HowToTranslateGambas/translate-select.png,v
 %%PORTDOCS%%%%DATADIR%%/help/.rsrc/HowToTranslateGambas/translate-toolbar.png
-%%PORTDOCS%%%%DATADIR%%/help/.rsrc/HowToTranslateGambas/translate-toolbar.png,v
 %%PORTDOCS%%%%DATADIR%%/help/.rsrc/HowToTranslateGambas/translate.png
-%%PORTDOCS%%%%DATADIR%%/help/.rsrc/HowToTranslateGambas/translate.png,v
 %%PORTDOCS%%%%DATADIR%%/help/.rsrc/InfoExtract/gambas-info-extract.pl
-%%PORTDOCS%%%%DATADIR%%/help/.rsrc/ListOfComponentIcons/button.png
-%%PORTDOCS%%%%DATADIR%%/help/.rsrc/ListOfComponentIcons/checkbox.png
-%%PORTDOCS%%%%DATADIR%%/help/.rsrc/ListOfComponentIcons/columnview.png
-%%PORTDOCS%%%%DATADIR%%/help/.rsrc/ListOfComponentIcons/combobox.png
-%%PORTDOCS%%%%DATADIR%%/help/.rsrc/ListOfComponentIcons/dial.png
-%%PORTDOCS%%%%DATADIR%%/help/.rsrc/ListOfComponentIcons/drawingarea.png
-%%PORTDOCS%%%%DATADIR%%/help/.rsrc/ListOfComponentIcons/frame.png
-%%PORTDOCS%%%%DATADIR%%/help/.rsrc/ListOfComponentIcons/gambaseditor.png
-%%PORTDOCS%%%%DATADIR%%/help/.rsrc/ListOfComponentIcons/gridview.png
-%%PORTDOCS%%%%DATADIR%%/help/.rsrc/ListOfComponentIcons/iconview.png
-%%PORTDOCS%%%%DATADIR%%/help/.rsrc/ListOfComponentIcons/image.png
-%%PORTDOCS%%%%DATADIR%%/help/.rsrc/ListOfComponentIcons/label.png
-%%PORTDOCS%%%%DATADIR%%/help/.rsrc/ListOfComponentIcons/lcdnumber.png
-%%PORTDOCS%%%%DATADIR%%/help/.rsrc/ListOfComponentIcons/listbox.png
-%%PORTDOCS%%%%DATADIR%%/help/.rsrc/ListOfComponentIcons/listview.png
-%%PORTDOCS%%%%DATADIR%%/help/.rsrc/ListOfComponentIcons/panel.png
-%%PORTDOCS%%%%DATADIR%%/help/.rsrc/ListOfComponentIcons/progressbar.png
-%%PORTDOCS%%%%DATADIR%%/help/.rsrc/ListOfComponentIcons/radiobutton.png
-%%PORTDOCS%%%%DATADIR%%/help/.rsrc/ListOfComponentIcons/scrollbar.png
-%%PORTDOCS%%%%DATADIR%%/help/.rsrc/ListOfComponentIcons/scrollview.png
-%%PORTDOCS%%%%DATADIR%%/help/.rsrc/ListOfComponentIcons/select.png
-%%PORTDOCS%%%%DATADIR%%/help/.rsrc/ListOfComponentIcons/slider.png
-%%PORTDOCS%%%%DATADIR%%/help/.rsrc/ListOfComponentIcons/spinbox.png
-%%PORTDOCS%%%%DATADIR%%/help/.rsrc/ListOfComponentIcons/splitter.png
-%%PORTDOCS%%%%DATADIR%%/help/.rsrc/ListOfComponentIcons/staticsymbol.png
-%%PORTDOCS%%%%DATADIR%%/help/.rsrc/ListOfComponentIcons/staticsymbol.png,v
-%%PORTDOCS%%%%DATADIR%%/help/.rsrc/ListOfComponentIcons/tableview.png
-%%PORTDOCS%%%%DATADIR%%/help/.rsrc/ListOfComponentIcons/tabstrip.png
-%%PORTDOCS%%%%DATADIR%%/help/.rsrc/ListOfComponentIcons/textarea.png
-%%PORTDOCS%%%%DATADIR%%/help/.rsrc/ListOfComponentIcons/textbox.png
-%%PORTDOCS%%%%DATADIR%%/help/.rsrc/ListOfComponentIcons/textlabel.png
-%%PORTDOCS%%%%DATADIR%%/help/.rsrc/ListOfComponentIcons/timer.png
-%%PORTDOCS%%%%DATADIR%%/help/.rsrc/ListOfComponentIcons/togglebutton.png
-%%PORTDOCS%%%%DATADIR%%/help/.rsrc/ListOfComponentIcons/treeview.png
-%%PORTDOCS%%%%DATADIR%%/help/.rsrc/ListOfComponentIcons/workspace.png
+%%PORTDOCS%%%%DATADIR%%/help/.rsrc/InputBox/InputBox-0.0.2.tar.gz
 %%PORTDOCS%%%%DATADIR%%/help/.rsrc/VisualIntroductionToGambas/gambasvisual1.png
-%%PORTDOCS%%%%DATADIR%%/help/.rsrc/VisualIntroductionToGambas/gambasvisual1.png,v
 %%PORTDOCS%%%%DATADIR%%/help/.rsrc/VisualIntroductionToGambas/gambasvisual2.png
-%%PORTDOCS%%%%DATADIR%%/help/.rsrc/VisualIntroductionToGambas/gambasvisual2.png,v
-%%PORTDOCS%%%%DATADIR%%/help/.rsrc/WebHome/arrow.png
-%%PORTDOCS%%%%DATADIR%%/help/.rsrc/WebHome/arrow.png,v
 %%PORTDOCS%%%%DATADIR%%/help/.rsrc/WebSiteScreenshots/screenshot-2003-07-11.jpg
-%%PORTDOCS%%%%DATADIR%%/help/.rsrc/WebSiteScreenshots/screenshot-2003-07-11.jpg,v
 %%PORTDOCS%%%%DATADIR%%/help/.rsrc/WebSiteScreenshots/screenshot-2004-07-11b.jpg
-%%PORTDOCS%%%%DATADIR%%/help/.rsrc/WebSiteScreenshots/screenshot-2004-07-11b.jpg,v
 %%PORTDOCS%%%%DATADIR%%/help/.rsrc/style.css
 %%PORTDOCS%%%%DATADIR%%/help/AhmadKamal.html
 %%PORTDOCS%%%%DATADIR%%/help/AlbertoMelgar.html
 %%PORTDOCS%%%%DATADIR%%/help/AldoPagin.html
+%%PORTDOCS%%%%DATADIR%%/help/AntonioBonfa.html
 %%PORTDOCS%%%%DATADIR%%/help/AntonioMaschio.html
 %%PORTDOCS%%%%DATADIR%%/help/ApiARG.html
 %%PORTDOCS%%%%DATADIR%%/help/ApiArgument.html
@@ -570,16 +469,20 @@ lib/gambas/lib.gb.vb.so.0
 %%PORTDOCS%%%%DATADIR%%/help/ApiENDMETHOD.html
 %%PORTDOCS%%%%DATADIR%%/help/ApiENDPROPERTY.html
 %%PORTDOCS%%%%DATADIR%%/help/ApiGBARRAY.html
+%%PORTDOCS%%%%DATADIR%%/help/ApiGBAUTOCREATABLE.html
 %%PORTDOCS%%%%DATADIR%%/help/ApiGBAdd.html
 %%PORTDOCS%%%%DATADIR%%/help/ApiGBAddString.html
 %%PORTDOCS%%%%DATADIR%%/help/ApiGBAlloc.html
 %%PORTDOCS%%%%DATADIR%%/help/ApiGBApplicationName.html
 %%PORTDOCS%%%%DATADIR%%/help/ApiGBApplicationPath.html
+%%PORTDOCS%%%%DATADIR%%/help/ApiGBApplicationTitle.html
+%%PORTDOCS%%%%DATADIR%%/help/ApiGBApplicationVersion.html
 %%PORTDOCS%%%%DATADIR%%/help/ApiGBArrayAdd.html
 %%PORTDOCS%%%%DATADIR%%/help/ApiGBArrayCount.html
 %%PORTDOCS%%%%DATADIR%%/help/ApiGBArrayGet.html
 %%PORTDOCS%%%%DATADIR%%/help/ApiGBArrayNew.html
 %%PORTDOCS%%%%DATADIR%%/help/ApiGBAttach.html
+%%PORTDOCS%%%%DATADIR%%/help/ApiGBAutoCreate.html
 %%PORTDOCS%%%%DATADIR%%/help/ApiGBBASE.html
 %%PORTDOCS%%%%DATADIR%%/help/ApiGBBOOLEAN.html
 %%PORTDOCS%%%%DATADIR%%/help/ApiGBCLASS.html
@@ -587,6 +490,7 @@ lib/gambas/lib.gb.vb.so.0
 %%PORTDOCS%%%%DATADIR%%/help/ApiGBCOMPBINARY.html
 %%PORTDOCS%%%%DATADIR%%/help/ApiGBCOMPTEXT.html
 %%PORTDOCS%%%%DATADIR%%/help/ApiGBCONSTANT.html
+%%PORTDOCS%%%%DATADIR%%/help/ApiGBCall.html
 %%PORTDOCS%%%%DATADIR%%/help/ApiGBCanRaise.html
 %%PORTDOCS%%%%DATADIR%%/help/ApiGBCheckObject.html
 %%PORTDOCS%%%%DATADIR%%/help/ApiGBCheckPost.html
@@ -595,6 +499,7 @@ lib/gambas/lib.gb.vb.so.0
 %%PORTDOCS%%%%DATADIR%%/help/ApiGBCollectionNew.html
 %%PORTDOCS%%%%DATADIR%%/help/ApiGBCollectionSet.html
 %%PORTDOCS%%%%DATADIR%%/help/ApiGBConv.html
+%%PORTDOCS%%%%DATADIR%%/help/ApiGBConvString.html
 %%PORTDOCS%%%%DATADIR%%/help/ApiGBCount.html
 %%PORTDOCS%%%%DATADIR%%/help/ApiGBDATE.html
 %%PORTDOCS%%%%DATADIR%%/help/ApiGBDATESERIAL.html
@@ -608,6 +513,8 @@ lib/gambas/lib.gb.vb.so.0
 %%PORTDOCS%%%%DATADIR%%/help/ApiGBExistFile.html
 %%PORTDOCS%%%%DATADIR%%/help/ApiGBExtendString.html
 %%PORTDOCS%%%%DATADIR%%/help/ApiGBFLOAT.html
+%%PORTDOCS%%%%DATADIR%%/help/ApiGBFUNCION.html
+%%PORTDOCS%%%%DATADIR%%/help/ApiGBFileName.html
 %%PORTDOCS%%%%DATADIR%%/help/ApiGBFindClass.html
 %%PORTDOCS%%%%DATADIR%%/help/ApiGBFree.html
 %%PORTDOCS%%%%DATADIR%%/help/ApiGBFreeArray.html
@@ -616,7 +523,10 @@ lib/gambas/lib.gb.vb.so.0
 %%PORTDOCS%%%%DATADIR%%/help/ApiGBGetClassName.html
 %%PORTDOCS%%%%DATADIR%%/help/ApiGBGetEnum.html
 %%PORTDOCS%%%%DATADIR%%/help/ApiGBGetEvent.html
+%%PORTDOCS%%%%DATADIR%%/help/ApiGBGetFunction.html
 %%PORTDOCS%%%%DATADIR%%/help/ApiGBGetInterface.html
+%%PORTDOCS%%%%DATADIR%%/help/ApiGBGetTempDir.html
+%%PORTDOCS%%%%DATADIR%%/help/ApiGBGetTime.html
 %%PORTDOCS%%%%DATADIR%%/help/ApiGBGetUnknown.html
 %%PORTDOCS%%%%DATADIR%%/help/ApiGBHASHTABLE.html
 %%PORTDOCS%%%%DATADIR%%/help/ApiGBHASHTABLEENUMFUNC.html
@@ -637,6 +547,7 @@ lib/gambas/lib.gb.vb.so.0
 %%PORTDOCS%%%%DATADIR%%/help/ApiGBINHERITS.html
 %%PORTDOCS%%%%DATADIR%%/help/ApiGBINTEGER.html
 %%PORTDOCS%%%%DATADIR%%/help/ApiGBIs.html
+%%PORTDOCS%%%%DATADIR%%/help/ApiGBIsProperty.html
 %%PORTDOCS%%%%DATADIR%%/help/ApiGBLoadComponent.html
 %%PORTDOCS%%%%DATADIR%%/help/ApiGBLoadFile.html
 %%PORTDOCS%%%%DATADIR%%/help/ApiGBMETHOD.html
@@ -659,6 +570,7 @@ lib/gambas/lib.gb.vb.so.0
 %%PORTDOCS%%%%DATADIR%%/help/ApiGBPROPERTYREAD.html
 %%PORTDOCS%%%%DATADIR%%/help/ApiGBPROPERTYSELF.html
 %%PORTDOCS%%%%DATADIR%%/help/ApiGBPost.html
+%%PORTDOCS%%%%DATADIR%%/help/ApiGBPropagate.html
 %%PORTDOCS%%%%DATADIR%%/help/ApiGBPush.html
 %%PORTDOCS%%%%DATADIR%%/help/ApiGBRaise.html
 %%PORTDOCS%%%%DATADIR%%/help/ApiGBRealloc.html
@@ -680,7 +592,11 @@ lib/gambas/lib.gb.vb.so.0
 %%PORTDOCS%%%%DATADIR%%/help/ApiGBSTATICPROPERTY.html
 %%PORTDOCS%%%%DATADIR%%/help/ApiGBSTATICPROPERTYREAD.html
 %%PORTDOCS%%%%DATADIR%%/help/ApiGBSTATICPROPERTYSELF.html
+%%PORTDOCS%%%%DATADIR%%/help/ApiGBSTREAM.html
+%%PORTDOCS%%%%DATADIR%%/help/ApiGBSTREAMDESC.html
 %%PORTDOCS%%%%DATADIR%%/help/ApiGBSTRING.html
+%%PORTDOCS%%%%DATADIR%%/help/ApiGBSUBCOLLECTION.html
+%%PORTDOCS%%%%DATADIR%%/help/ApiGBSUBCOLLECTIONDESC.html
 %%PORTDOCS%%%%DATADIR%%/help/ApiGBSUBSTCALLBACK.html
 %%PORTDOCS%%%%DATADIR%%/help/ApiGBSplitDate.html
 %%PORTDOCS%%%%DATADIR%%/help/ApiGBStopEnum.html
@@ -719,6 +635,15 @@ lib/gambas/lib.gb.vb.so.0
 %%PORTDOCS%%%%DATADIR%%/help/ApiGBWATCHREADWRITE.html
 %%PORTDOCS%%%%DATADIR%%/help/ApiGBWATCHWRITE.html
 %%PORTDOCS%%%%DATADIR%%/help/ApiGBWatch.html
+%%PORTDOCS%%%%DATADIR%%/help/ApiGBstrcasecmp.html
+%%PORTDOCS%%%%DATADIR%%/help/ApiGBstrncasecmp.html
+%%PORTDOCS%%%%DATADIR%%/help/ApiGBtolower.html
+%%PORTDOCS%%%%DATADIR%%/help/ApiGBtoupper.html
+%%PORTDOCS%%%%DATADIR%%/help/ApiGbSubCollectionAdd.html
+%%PORTDOCS%%%%DATADIR%%/help/ApiGbSubCollectionContainer.html
+%%PORTDOCS%%%%DATADIR%%/help/ApiGbSubCollectionGet.html
+%%PORTDOCS%%%%DATADIR%%/help/ApiGbSubCollectionNew.html
+%%PORTDOCS%%%%DATADIR%%/help/ApiGbSubCollectionRemove.html
 %%PORTDOCS%%%%DATADIR%%/help/ApiLENGTH.html
 %%PORTDOCS%%%%DATADIR%%/help/ApiMISSING.html
 %%PORTDOCS%%%%DATADIR%%/help/ApiPROP.html
@@ -737,11 +662,12 @@ lib/gambas/lib.gb.vb.so.0
 %%PORTDOCS%%%%DATADIR%%/help/Articles.html
 %%PORTDOCS%%%%DATADIR%%/help/BenoitMinisini.html
 %%PORTDOCS%%%%DATADIR%%/help/BrandonBergren.html
+%%PORTDOCS%%%%DATADIR%%/help/BudiAriefGusandi.html
 %%PORTDOCS%%%%DATADIR%%/help/CarlosPons.html
 %%PORTDOCS%%%%DATADIR%%/help/CarstenOlsen.html
+%%PORTDOCS%%%%DATADIR%%/help/CharlieR.html
 %%PORTDOCS%%%%DATADIR%%/help/CharlieReinl.html
 %%PORTDOCS%%%%DATADIR%%/help/ChristopheBONNET.html
-%%PORTDOCS%%%%DATADIR%%/help/ComponentIcons.html
 %%PORTDOCS%%%%DATADIR%%/help/ComponentList.html
 %%PORTDOCS%%%%DATADIR%%/help/Components.html
 %%PORTDOCS%%%%DATADIR%%/help/CrossSumProgram.html
@@ -761,6 +687,7 @@ lib/gambas/lib.gb.vb.so.0
 %%PORTDOCS%%%%DATADIR%%/help/FabrizzioV.html
 %%PORTDOCS%%%%DATADIR%%/help/FileAttachment.html
 %%PORTDOCS%%%%DATADIR%%/help/FilippiChristian.html
+%%PORTDOCS%%%%DATADIR%%/help/FlorentG.html
 %%PORTDOCS%%%%DATADIR%%/help/FromFormToFormProgram.html
 %%PORTDOCS%%%%DATADIR%%/help/FunctionalListing.html
 %%PORTDOCS%%%%DATADIR%%/help/Future.html
@@ -786,12 +713,10 @@ lib/gambas/lib.gb.vb.so.0
 %%PORTDOCS%%%%DATADIR%%/help/GbApplicationRArgs.html
 %%PORTDOCS%%%%DATADIR%%/help/GbApplicationREnv.html
 %%PORTDOCS%%%%DATADIR%%/help/GbApplicationRHandle.html
-%%PORTDOCS%%%%DATADIR%%/help/GbApplicationRHome.html
 %%PORTDOCS%%%%DATADIR%%/help/GbApplicationRId.html
 %%PORTDOCS%%%%DATADIR%%/help/GbApplicationRName.html
 %%PORTDOCS%%%%DATADIR%%/help/GbApplicationRPath.html
 %%PORTDOCS%%%%DATADIR%%/help/GbApplicationRTitle.html
-%%PORTDOCS%%%%DATADIR%%/help/GbApplicationRUser.html
 %%PORTDOCS%%%%DATADIR%%/help/GbApplicationRVersion.html
 %%PORTDOCS%%%%DATADIR%%/help/GbArray.html
 %%PORTDOCS%%%%DATADIR%%/help/GbArrayMClear.html
@@ -799,11 +724,11 @@ lib/gambas/lib.gb.vb.so.0
 %%PORTDOCS%%%%DATADIR%%/help/GbArrayMResize.html
 %%PORTDOCS%%%%DATADIR%%/help/GbArrayMReverse.html
 %%PORTDOCS%%%%DATADIR%%/help/GbArrayMSort.html
-%%PORTDOCS%%%%DATADIR%%/help/GbArrayMfree.html
 %%PORTDOCS%%%%DATADIR%%/help/GbArrayRCount.html
 %%PORTDOCS%%%%DATADIR%%/help/GbArrayRLength.html
 %%PORTDOCS%%%%DATADIR%%/help/GbByteArray.html
 %%PORTDOCS%%%%DATADIR%%/help/GbByteArrayMAdd.html
+%%PORTDOCS%%%%DATADIR%%/help/GbByteArrayMCopy.html
 %%PORTDOCS%%%%DATADIR%%/help/GbByteArrayMFind.html
 %%PORTDOCS%%%%DATADIR%%/help/GbByteArrayMInsert.html
 %%PORTDOCS%%%%DATADIR%%/help/GbByteArrayMPop.html
@@ -840,7 +765,6 @@ lib/gambas/lib.gb.vb.so.0
 %%PORTDOCS%%%%DATADIR%%/help/GbCollectionMClear.html
 %%PORTDOCS%%%%DATADIR%%/help/GbCollectionMExist.html
 %%PORTDOCS%%%%DATADIR%%/help/GbCollectionMRemove.html
-%%PORTDOCS%%%%DATADIR%%/help/GbCollectionMfree.html
 %%PORTDOCS%%%%DATADIR%%/help/GbCollectionMget.html
 %%PORTDOCS%%%%DATADIR%%/help/GbCollectionMnew.html
 %%PORTDOCS%%%%DATADIR%%/help/GbCollectionMnext.html
@@ -862,9 +786,6 @@ lib/gambas/lib.gb.vb.so.0
 %%PORTDOCS%%%%DATADIR%%/help/GbCompressCompressMFile.html
 %%PORTDOCS%%%%DATADIR%%/help/GbCompressCompressMOpen.html
 %%PORTDOCS%%%%DATADIR%%/help/GbCompressCompressMString.html
-%%PORTDOCS%%%%DATADIR%%/help/GbCompressCompressMexit.html
-%%PORTDOCS%%%%DATADIR%%/help/GbCompressCompressMfree.html
-%%PORTDOCS%%%%DATADIR%%/help/GbCompressCompressMinit.html
 %%PORTDOCS%%%%DATADIR%%/help/GbCompressCompressMnew.html
 %%PORTDOCS%%%%DATADIR%%/help/GbCompressCompressPType.html
 %%PORTDOCS%%%%DATADIR%%/help/GbCompressCompressRDefault.html
@@ -874,13 +795,11 @@ lib/gambas/lib.gb.vb.so.0
 %%PORTDOCS%%%%DATADIR%%/help/GbCompressUncompressMFile.html
 %%PORTDOCS%%%%DATADIR%%/help/GbCompressUncompressMOpen.html
 %%PORTDOCS%%%%DATADIR%%/help/GbCompressUncompressMString.html
-%%PORTDOCS%%%%DATADIR%%/help/GbCompressUncompressMexit.html
-%%PORTDOCS%%%%DATADIR%%/help/GbCompressUncompressMfree.html
-%%PORTDOCS%%%%DATADIR%%/help/GbCompressUncompressMinit.html
 %%PORTDOCS%%%%DATADIR%%/help/GbCompressUncompressMnew.html
 %%PORTDOCS%%%%DATADIR%%/help/GbCompressUncompressPType.html
 %%PORTDOCS%%%%DATADIR%%/help/GbDateArray.html
 %%PORTDOCS%%%%DATADIR%%/help/GbDateArrayMAdd.html
+%%PORTDOCS%%%%DATADIR%%/help/GbDateArrayMCopy.html
 %%PORTDOCS%%%%DATADIR%%/help/GbDateArrayMFind.html
 %%PORTDOCS%%%%DATADIR%%/help/GbDateArrayMInsert.html
 %%PORTDOCS%%%%DATADIR%%/help/GbDateArrayMPop.html
@@ -893,16 +812,9 @@ lib/gambas/lib.gb.vb.so.0
 %%PORTDOCS%%%%DATADIR%%/help/GbDateArrayMput.html
 %%PORTDOCS%%%%DATADIR%%/help/GbDb.html
 %%PORTDOCS%%%%DATADIR%%/help/GbDbConnection.html
-%%PORTDOCS%%%%DATADIR%%/help/GbDbConnectionDatabase.html
-%%PORTDOCS%%%%DATADIR%%/help/GbDbConnectionDatabaseMCreate.html
-%%PORTDOCS%%%%DATADIR%%/help/GbDbConnectionDatabaseMDelete.html
-%%PORTDOCS%%%%DATADIR%%/help/GbDbConnectionDatabaseMExist.html
-%%PORTDOCS%%%%DATADIR%%/help/GbDbConnectionDatabaseMFind.html
-%%PORTDOCS%%%%DATADIR%%/help/GbDbConnectionDatabaseMRemove.html
-%%PORTDOCS%%%%DATADIR%%/help/GbDbConnectionDatabaseMcall.html
-%%PORTDOCS%%%%DATADIR%%/help/GbDbConnectionDatabaseMnext.html
-%%PORTDOCS%%%%DATADIR%%/help/GbDbConnectionDatabaseRName.html
-%%PORTDOCS%%%%DATADIR%%/help/GbDbConnectionDatabaseRSystem.html
+%%PORTDOCS%%%%DATADIR%%/help/GbDbConnectionDatabases.html
+%%PORTDOCS%%%%DATADIR%%/help/GbDbConnectionDatabasesMAdd.html
+%%PORTDOCS%%%%DATADIR%%/help/GbDbConnectionDatabasesMRemove.html
 %%PORTDOCS%%%%DATADIR%%/help/GbDbConnectionMBegin.html
 %%PORTDOCS%%%%DATADIR%%/help/GbDbConnectionMClose.html
 %%PORTDOCS%%%%DATADIR%%/help/GbDbConnectionMCommit.html
@@ -912,9 +824,8 @@ lib/gambas/lib.gb.vb.so.0
 %%PORTDOCS%%%%DATADIR%%/help/GbDbConnectionMFind.html
 %%PORTDOCS%%%%DATADIR%%/help/GbDbConnectionMOpen.html
 %%PORTDOCS%%%%DATADIR%%/help/GbDbConnectionMRollback.html
-%%PORTDOCS%%%%DATADIR%%/help/GbDbConnectionMfree.html
 %%PORTDOCS%%%%DATADIR%%/help/GbDbConnectionMnew.html
-%%PORTDOCS%%%%DATADIR%%/help/GbDbConnectionPDatabase.html
+%%PORTDOCS%%%%DATADIR%%/help/GbDbConnectionPDatabases.html
 %%PORTDOCS%%%%DATADIR%%/help/GbDbConnectionPHost.html
 %%PORTDOCS%%%%DATADIR%%/help/GbDbConnectionPLogin.html
 %%PORTDOCS%%%%DATADIR%%/help/GbDbConnectionPName.html
@@ -922,27 +833,15 @@ lib/gambas/lib.gb.vb.so.0
 %%PORTDOCS%%%%DATADIR%%/help/GbDbConnectionPPort.html
 %%PORTDOCS%%%%DATADIR%%/help/GbDbConnectionPTables.html
 %%PORTDOCS%%%%DATADIR%%/help/GbDbConnectionPType.html
-%%PORTDOCS%%%%DATADIR%%/help/GbDbConnectionPUser.html
+%%PORTDOCS%%%%DATADIR%%/help/GbDbConnectionPUsers.html
 %%PORTDOCS%%%%DATADIR%%/help/GbDbConnectionRCharset.html
+%%PORTDOCS%%%%DATADIR%%/help/GbDbConnectionRVersion.html
 %%PORTDOCS%%%%DATADIR%%/help/GbDbConnectionTables.html
-%%PORTDOCS%%%%DATADIR%%/help/GbDbConnectionTablesMCreate.html
-%%PORTDOCS%%%%DATADIR%%/help/GbDbConnectionTablesMDelete.html
-%%PORTDOCS%%%%DATADIR%%/help/GbDbConnectionTablesMExist.html
-%%PORTDOCS%%%%DATADIR%%/help/GbDbConnectionTablesMRefresh.html
+%%PORTDOCS%%%%DATADIR%%/help/GbDbConnectionTablesMAdd.html
 %%PORTDOCS%%%%DATADIR%%/help/GbDbConnectionTablesMRemove.html
-%%PORTDOCS%%%%DATADIR%%/help/GbDbConnectionTablesMget.html
-%%PORTDOCS%%%%DATADIR%%/help/GbDbConnectionTablesMnext.html
-%%PORTDOCS%%%%DATADIR%%/help/GbDbConnectionUser.html
-%%PORTDOCS%%%%DATADIR%%/help/GbDbConnectionUserMCreate.html
-%%PORTDOCS%%%%DATADIR%%/help/GbDbConnectionUserMDelete.html
-%%PORTDOCS%%%%DATADIR%%/help/GbDbConnectionUserMExist.html
-%%PORTDOCS%%%%DATADIR%%/help/GbDbConnectionUserMFind.html
-%%PORTDOCS%%%%DATADIR%%/help/GbDbConnectionUserMRemove.html
-%%PORTDOCS%%%%DATADIR%%/help/GbDbConnectionUserMcall.html
-%%PORTDOCS%%%%DATADIR%%/help/GbDbConnectionUserMnext.html
-%%PORTDOCS%%%%DATADIR%%/help/GbDbConnectionUserPPassword.html
-%%PORTDOCS%%%%DATADIR%%/help/GbDbConnectionUserRAdministrator.html
-%%PORTDOCS%%%%DATADIR%%/help/GbDbConnectionUserRName.html
+%%PORTDOCS%%%%DATADIR%%/help/GbDbConnectionUsers.html
+%%PORTDOCS%%%%DATADIR%%/help/GbDbConnectionUsersMAdd.html
+%%PORTDOCS%%%%DATADIR%%/help/GbDbConnectionUsersMRemove.html
 %%PORTDOCS%%%%DATADIR%%/help/GbDbDB.html
 %%PORTDOCS%%%%DATADIR%%/help/GbDbDBMBegin.html
 %%PORTDOCS%%%%DATADIR%%/help/GbDbDBMClose.html
@@ -954,18 +853,37 @@ lib/gambas/lib.gb.vb.so.0
 %%PORTDOCS%%%%DATADIR%%/help/GbDbDBMOpen.html
 %%PORTDOCS%%%%DATADIR%%/help/GbDbDBMRollback.html
 %%PORTDOCS%%%%DATADIR%%/help/GbDbDBPCurrent.html
-%%PORTDOCS%%%%DATADIR%%/help/GbDbDBPDatabase.html
+%%PORTDOCS%%%%DATADIR%%/help/GbDbDBPDatabases.html
 %%PORTDOCS%%%%DATADIR%%/help/GbDbDBPTables.html
-%%PORTDOCS%%%%DATADIR%%/help/GbDbDBPUser.html
+%%PORTDOCS%%%%DATADIR%%/help/GbDbDBPUsers.html
 %%PORTDOCS%%%%DATADIR%%/help/GbDbDBRCharset.html
+%%PORTDOCS%%%%DATADIR%%/help/GbDbDBRVersion.html
+%%PORTDOCS%%%%DATADIR%%/help/GbDbDatabase.html
+%%PORTDOCS%%%%DATADIR%%/help/GbDbDatabaseMDelete.html
+%%PORTDOCS%%%%DATADIR%%/help/GbDbDatabaseRConnection.html
+%%PORTDOCS%%%%DATADIR%%/help/GbDbDatabaseRName.html
+%%PORTDOCS%%%%DATADIR%%/help/GbDbDatabaseRSystem.html
+%%PORTDOCS%%%%DATADIR%%/help/GbDbField.html
+%%PORTDOCS%%%%DATADIR%%/help/GbDbFieldRDefault.html
+%%PORTDOCS%%%%DATADIR%%/help/GbDbFieldRLength.html
+%%PORTDOCS%%%%DATADIR%%/help/GbDbFieldRName.html
+%%PORTDOCS%%%%DATADIR%%/help/GbDbFieldRTable.html
+%%PORTDOCS%%%%DATADIR%%/help/GbDbFieldRType.html
+%%PORTDOCS%%%%DATADIR%%/help/GbDbIndex.html
+%%PORTDOCS%%%%DATADIR%%/help/GbDbIndexRFields.html
+%%PORTDOCS%%%%DATADIR%%/help/GbDbIndexRName.html
+%%PORTDOCS%%%%DATADIR%%/help/GbDbIndexRPrimary.html
+%%PORTDOCS%%%%DATADIR%%/help/GbDbIndexRTable.html
+%%PORTDOCS%%%%DATADIR%%/help/GbDbIndexRUnique.html
 %%PORTDOCS%%%%DATADIR%%/help/GbDbResult.html
 %%PORTDOCS%%%%DATADIR%%/help/GbDbResultField.html
-%%PORTDOCS%%%%DATADIR%%/help/GbDbResultFieldMFind.html
-%%PORTDOCS%%%%DATADIR%%/help/GbDbResultFieldMnext.html
-%%PORTDOCS%%%%DATADIR%%/help/GbDbResultFieldRCount.html
 %%PORTDOCS%%%%DATADIR%%/help/GbDbResultFieldRLength.html
 %%PORTDOCS%%%%DATADIR%%/help/GbDbResultFieldRName.html
+%%PORTDOCS%%%%DATADIR%%/help/GbDbResultFieldRResult.html
 %%PORTDOCS%%%%DATADIR%%/help/GbDbResultFieldRType.html
+%%PORTDOCS%%%%DATADIR%%/help/GbDbResultFields.html
+%%PORTDOCS%%%%DATADIR%%/help/GbDbResultFieldsMnext.html
+%%PORTDOCS%%%%DATADIR%%/help/GbDbResultFieldsRCount.html
 %%PORTDOCS%%%%DATADIR%%/help/GbDbResultMDelete.html
 %%PORTDOCS%%%%DATADIR%%/help/GbDbResultMMoveFirst.html
 %%PORTDOCS%%%%DATADIR%%/help/GbDbResultMMoveLast.html
@@ -973,41 +891,34 @@ lib/gambas/lib.gb.vb.so.0
 %%PORTDOCS%%%%DATADIR%%/help/GbDbResultMMovePrevious.html
 %%PORTDOCS%%%%DATADIR%%/help/GbDbResultMMoveTo.html
 %%PORTDOCS%%%%DATADIR%%/help/GbDbResultMUpdate.html
-%%PORTDOCS%%%%DATADIR%%/help/GbDbResultMfree.html
 %%PORTDOCS%%%%DATADIR%%/help/GbDbResultMget.html
 %%PORTDOCS%%%%DATADIR%%/help/GbDbResultMnext.html
 %%PORTDOCS%%%%DATADIR%%/help/GbDbResultMput.html
 %%PORTDOCS%%%%DATADIR%%/help/GbDbResultRAvailable.html
+%%PORTDOCS%%%%DATADIR%%/help/GbDbResultRConnection.html
 %%PORTDOCS%%%%DATADIR%%/help/GbDbResultRCount.html
-%%PORTDOCS%%%%DATADIR%%/help/GbDbResultRField.html
+%%PORTDOCS%%%%DATADIR%%/help/GbDbResultRFields.html
 %%PORTDOCS%%%%DATADIR%%/help/GbDbResultRIndex.html
 %%PORTDOCS%%%%DATADIR%%/help/GbDbTable.html
-%%PORTDOCS%%%%DATADIR%%/help/GbDbTableField.html
-%%PORTDOCS%%%%DATADIR%%/help/GbDbTableFieldMCreate.html
-%%PORTDOCS%%%%DATADIR%%/help/GbDbTableFieldMFind.html
-%%PORTDOCS%%%%DATADIR%%/help/GbDbTableFieldMcall.html
-%%PORTDOCS%%%%DATADIR%%/help/GbDbTableFieldMnext.html
-%%PORTDOCS%%%%DATADIR%%/help/GbDbTableFieldRDefault.html
-%%PORTDOCS%%%%DATADIR%%/help/GbDbTableFieldRLength.html
-%%PORTDOCS%%%%DATADIR%%/help/GbDbTableFieldRName.html
-%%PORTDOCS%%%%DATADIR%%/help/GbDbTableFieldRType.html
-%%PORTDOCS%%%%DATADIR%%/help/GbDbTableIndex.html
-%%PORTDOCS%%%%DATADIR%%/help/GbDbTableIndexMCreate.html
-%%PORTDOCS%%%%DATADIR%%/help/GbDbTableIndexMDelete.html
-%%PORTDOCS%%%%DATADIR%%/help/GbDbTableIndexMFind.html
-%%PORTDOCS%%%%DATADIR%%/help/GbDbTableIndexMcall.html
-%%PORTDOCS%%%%DATADIR%%/help/GbDbTableIndexMnext.html
-%%PORTDOCS%%%%DATADIR%%/help/GbDbTableIndexRFields.html
-%%PORTDOCS%%%%DATADIR%%/help/GbDbTableIndexRName.html
-%%PORTDOCS%%%%DATADIR%%/help/GbDbTableIndexRPrimary.html
-%%PORTDOCS%%%%DATADIR%%/help/GbDbTableIndexRUnique.html
+%%PORTDOCS%%%%DATADIR%%/help/GbDbTableFields.html
+%%PORTDOCS%%%%DATADIR%%/help/GbDbTableFieldsMAdd.html
+%%PORTDOCS%%%%DATADIR%%/help/GbDbTableIndexes.html
+%%PORTDOCS%%%%DATADIR%%/help/GbDbTableIndexesMAdd.html
+%%PORTDOCS%%%%DATADIR%%/help/GbDbTableIndexesMRemove.html
 %%PORTDOCS%%%%DATADIR%%/help/GbDbTableMUpdate.html
-%%PORTDOCS%%%%DATADIR%%/help/GbDbTableMfree.html
 %%PORTDOCS%%%%DATADIR%%/help/GbDbTablePPrimaryKey.html
-%%PORTDOCS%%%%DATADIR%%/help/GbDbTableRField.html
-%%PORTDOCS%%%%DATADIR%%/help/GbDbTableRIndex.html
+%%PORTDOCS%%%%DATADIR%%/help/GbDbTablePType.html
+%%PORTDOCS%%%%DATADIR%%/help/GbDbTableRConnection.html
+%%PORTDOCS%%%%DATADIR%%/help/GbDbTableRFields.html
+%%PORTDOCS%%%%DATADIR%%/help/GbDbTableRIndexes.html
 %%PORTDOCS%%%%DATADIR%%/help/GbDbTableRName.html
 %%PORTDOCS%%%%DATADIR%%/help/GbDbTableRSystem.html
+%%PORTDOCS%%%%DATADIR%%/help/GbDbUser.html
+%%PORTDOCS%%%%DATADIR%%/help/GbDbUserMDelete.html
+%%PORTDOCS%%%%DATADIR%%/help/GbDbUserPPassword.html
+%%PORTDOCS%%%%DATADIR%%/help/GbDbUserRAdministrator.html
+%%PORTDOCS%%%%DATADIR%%/help/GbDbUserRConnection.html
+%%PORTDOCS%%%%DATADIR%%/help/GbDbUserRName.html
 %%PORTDOCS%%%%DATADIR%%/help/GbDebug.html
 %%PORTDOCS%%%%DATADIR%%/help/GbDebugDebug.html
 %%PORTDOCS%%%%DATADIR%%/help/GbDebugDebugERead.html
@@ -1016,7 +927,6 @@ lib/gambas/lib.gb.vb.so.0
 %%PORTDOCS%%%%DATADIR%%/help/GbDebugDebugMStart.html
 %%PORTDOCS%%%%DATADIR%%/help/GbDebugDebugMStop.html
 %%PORTDOCS%%%%DATADIR%%/help/GbDebugDebugMWrite.html
-%%PORTDOCS%%%%DATADIR%%/help/GbDebugDebugMexit.html
 %%PORTDOCS%%%%DATADIR%%/help/GbError.html
 %%PORTDOCS%%%%DATADIR%%/help/GbErrorMClear.html
 %%PORTDOCS%%%%DATADIR%%/help/GbErrorMRaise.html
@@ -1027,7 +937,6 @@ lib/gambas/lib.gb.vb.so.0
 %%PORTDOCS%%%%DATADIR%%/help/GbEval.html
 %%PORTDOCS%%%%DATADIR%%/help/GbEvalExpression.html
 %%PORTDOCS%%%%DATADIR%%/help/GbEvalExpressionMCompile.html
-%%PORTDOCS%%%%DATADIR%%/help/GbEvalExpressionMfree.html
 %%PORTDOCS%%%%DATADIR%%/help/GbEvalExpressionMnew.html
 %%PORTDOCS%%%%DATADIR%%/help/GbEvalExpressionPEnvironment.html
 %%PORTDOCS%%%%DATADIR%%/help/GbEvalExpressionPText.html
@@ -1041,7 +950,6 @@ lib/gambas/lib.gb.vb.so.0
 %%PORTDOCS%%%%DATADIR%%/help/GbFileMLoad.html
 %%PORTDOCS%%%%DATADIR%%/help/GbFileMName.html
 %%PORTDOCS%%%%DATADIR%%/help/GbFileMSave.html
-%%PORTDOCS%%%%DATADIR%%/help/GbFileMfree.html
 %%PORTDOCS%%%%DATADIR%%/help/GbFilePerm.html
 %%PORTDOCS%%%%DATADIR%%/help/GbFilePermMget.html
 %%PORTDOCS%%%%DATADIR%%/help/GbFilePermRGroup.html
@@ -1067,6 +975,7 @@ lib/gambas/lib.gb.vb.so.0
 %%PORTDOCS%%%%DATADIR%%/help/GbFileRUser.html
 %%PORTDOCS%%%%DATADIR%%/help/GbFloatArray.html
 %%PORTDOCS%%%%DATADIR%%/help/GbFloatArrayMAdd.html
+%%PORTDOCS%%%%DATADIR%%/help/GbFloatArrayMCopy.html
 %%PORTDOCS%%%%DATADIR%%/help/GbFloatArrayMFind.html
 %%PORTDOCS%%%%DATADIR%%/help/GbFloatArrayMInsert.html
 %%PORTDOCS%%%%DATADIR%%/help/GbFloatArrayMPop.html
@@ -1095,7 +1004,6 @@ lib/gambas/lib.gb.vb.so.0
 %%PORTDOCS%%%%DATADIR%%/help/GbGbCFriday.html
 %%PORTDOCS%%%%DATADIR%%/help/GbGbCGeneralDate.html
 %%PORTDOCS%%%%DATADIR%%/help/GbGbCGeneralNumber.html
-%%PORTDOCS%%%%DATADIR%%/help/GbGbCGroup.html
 %%PORTDOCS%%%%DATADIR%%/help/GbGbCInteger.html
 %%PORTDOCS%%%%DATADIR%%/help/GbGbCLang.html
 %%PORTDOCS%%%%DATADIR%%/help/GbGbCLink.html
@@ -1108,7 +1016,6 @@ lib/gambas/lib.gb.vb.so.0
 %%PORTDOCS%%%%DATADIR%%/help/GbGbCNewLine.html
 %%PORTDOCS%%%%DATADIR%%/help/GbGbCNull.html
 %%PORTDOCS%%%%DATADIR%%/help/GbGbCObject.html
-%%PORTDOCS%%%%DATADIR%%/help/GbGbCOther.html
 %%PORTDOCS%%%%DATADIR%%/help/GbGbCPercent.html
 %%PORTDOCS%%%%DATADIR%%/help/GbGbCPipe.html
 %%PORTDOCS%%%%DATADIR%%/help/GbGbCRead.html
@@ -1125,12 +1032,12 @@ lib/gambas/lib.gb.vb.so.0
 %%PORTDOCS%%%%DATADIR%%/help/GbGbCText.html
 %%PORTDOCS%%%%DATADIR%%/help/GbGbCThursday.html
 %%PORTDOCS%%%%DATADIR%%/help/GbGbCTuesday.html
-%%PORTDOCS%%%%DATADIR%%/help/GbGbCUser.html
 %%PORTDOCS%%%%DATADIR%%/help/GbGbCVariant.html
 %%PORTDOCS%%%%DATADIR%%/help/GbGbCWednesday.html
 %%PORTDOCS%%%%DATADIR%%/help/GbGbCWrite.html
 %%PORTDOCS%%%%DATADIR%%/help/GbIntegerArray.html
 %%PORTDOCS%%%%DATADIR%%/help/GbIntegerArrayMAdd.html
+%%PORTDOCS%%%%DATADIR%%/help/GbIntegerArrayMCopy.html
 %%PORTDOCS%%%%DATADIR%%/help/GbIntegerArrayMFind.html
 %%PORTDOCS%%%%DATADIR%%/help/GbIntegerArrayMInsert.html
 %%PORTDOCS%%%%DATADIR%%/help/GbIntegerArrayMPop.html
@@ -1143,31 +1050,36 @@ lib/gambas/lib.gb.vb.so.0
 %%PORTDOCS%%%%DATADIR%%/help/GbIntegerArrayMput.html
 %%PORTDOCS%%%%DATADIR%%/help/GbNet.html
 %%PORTDOCS%%%%DATADIR%%/help/GbNetCurl.html
+%%PORTDOCS%%%%DATADIR%%/help/GbNetCurlCurl.html
+%%PORTDOCS%%%%DATADIR%%/help/GbNetCurlCurlEConnect.html
+%%PORTDOCS%%%%DATADIR%%/help/GbNetCurlCurlEError.html
+%%PORTDOCS%%%%DATADIR%%/help/GbNetCurlCurlEFinished.html
+%%PORTDOCS%%%%DATADIR%%/help/GbNetCurlCurlERead.html
+%%PORTDOCS%%%%DATADIR%%/help/GbNetCurlCurlMPeek.html
+%%PORTDOCS%%%%DATADIR%%/help/GbNetCurlCurlMnew.html
+%%PORTDOCS%%%%DATADIR%%/help/GbNetCurlCurlPPassword.html
+%%PORTDOCS%%%%DATADIR%%/help/GbNetCurlCurlPTag.html
+%%PORTDOCS%%%%DATADIR%%/help/GbNetCurlCurlPURL.html
+%%PORTDOCS%%%%DATADIR%%/help/GbNetCurlCurlPUser.html
+%%PORTDOCS%%%%DATADIR%%/help/GbNetCurlCurlRProxy.html
+%%PORTDOCS%%%%DATADIR%%/help/GbNetCurlCurlRStatus.html
+%%PORTDOCS%%%%DATADIR%%/help/GbNetCurlFtpClient.html
+%%PORTDOCS%%%%DATADIR%%/help/GbNetCurlFtpClientMGet.html
+%%PORTDOCS%%%%DATADIR%%/help/GbNetCurlFtpClientMPut.html
+%%PORTDOCS%%%%DATADIR%%/help/GbNetCurlFtpClientMStop.html
+%%PORTDOCS%%%%DATADIR%%/help/GbNetCurlFtpClientMnew.html
 %%PORTDOCS%%%%DATADIR%%/help/GbNetCurlHttpClient.html
-%%PORTDOCS%%%%DATADIR%%/help/GbNetCurlHttpClientEConnect.html
-%%PORTDOCS%%%%DATADIR%%/help/GbNetCurlHttpClientEError.html
-%%PORTDOCS%%%%DATADIR%%/help/GbNetCurlHttpClientEFinished.html
-%%PORTDOCS%%%%DATADIR%%/help/GbNetCurlHttpClientERead.html
 %%PORTDOCS%%%%DATADIR%%/help/GbNetCurlHttpClientMGet.html
-%%PORTDOCS%%%%DATADIR%%/help/GbNetCurlHttpClientMPeek.html
 %%PORTDOCS%%%%DATADIR%%/help/GbNetCurlHttpClientMPost.html
 %%PORTDOCS%%%%DATADIR%%/help/GbNetCurlHttpClientMStop.html
-%%PORTDOCS%%%%DATADIR%%/help/GbNetCurlHttpClientMexit.html
-%%PORTDOCS%%%%DATADIR%%/help/GbNetCurlHttpClientMfree.html
-%%PORTDOCS%%%%DATADIR%%/help/GbNetCurlHttpClientMinit.html
 %%PORTDOCS%%%%DATADIR%%/help/GbNetCurlHttpClientMnew.html
 %%PORTDOCS%%%%DATADIR%%/help/GbNetCurlHttpClientPAuth.html
 %%PORTDOCS%%%%DATADIR%%/help/GbNetCurlHttpClientPCookiesFile.html
 %%PORTDOCS%%%%DATADIR%%/help/GbNetCurlHttpClientPHeaders.html
-%%PORTDOCS%%%%DATADIR%%/help/GbNetCurlHttpClientPPassword.html
-%%PORTDOCS%%%%DATADIR%%/help/GbNetCurlHttpClientPURL.html
 %%PORTDOCS%%%%DATADIR%%/help/GbNetCurlHttpClientPUpdateCookies.html
-%%PORTDOCS%%%%DATADIR%%/help/GbNetCurlHttpClientPUser.html
 %%PORTDOCS%%%%DATADIR%%/help/GbNetCurlHttpClientPUserAgent.html
 %%PORTDOCS%%%%DATADIR%%/help/GbNetCurlHttpClientRCode.html
-%%PORTDOCS%%%%DATADIR%%/help/GbNetCurlHttpClientRProxy.html
 %%PORTDOCS%%%%DATADIR%%/help/GbNetCurlHttpClientRReason.html
-%%PORTDOCS%%%%DATADIR%%/help/GbNetCurlHttpClientRStatus.html
 %%PORTDOCS%%%%DATADIR%%/help/GbNetCurlNet.html
 %%PORTDOCS%%%%DATADIR%%/help/GbNetCurlNetCAbortedByCallback.html
 %%PORTDOCS%%%%DATADIR%%/help/GbNetCurlNetCAuthBasic.html
@@ -1238,7 +1150,6 @@ lib/gambas/lib.gb.vb.so.0
 %%PORTDOCS%%%%DATADIR%%/help/GbNetCurlNetCUploadFailed.html
 %%PORTDOCS%%%%DATADIR%%/help/GbNetCurlNetCWriteError.html
 %%PORTDOCS%%%%DATADIR%%/help/GbNetCurlProxy.html
-%%PORTDOCS%%%%DATADIR%%/help/GbNetCurlProxyMfree.html
 %%PORTDOCS%%%%DATADIR%%/help/GbNetCurlProxyMnew.html
 %%PORTDOCS%%%%DATADIR%%/help/GbNetCurlProxyPAuth.html
 %%PORTDOCS%%%%DATADIR%%/help/GbNetCurlProxyPHost.html
@@ -1250,7 +1161,6 @@ lib/gambas/lib.gb.vb.so.0
 %%PORTDOCS%%%%DATADIR%%/help/GbNetDnsClientMGetHostIP.html
 %%PORTDOCS%%%%DATADIR%%/help/GbNetDnsClientMGetHostName.html
 %%PORTDOCS%%%%DATADIR%%/help/GbNetDnsClientMStop.html
-%%PORTDOCS%%%%DATADIR%%/help/GbNetDnsClientMfree.html
 %%PORTDOCS%%%%DATADIR%%/help/GbNetDnsClientMnew.html
 %%PORTDOCS%%%%DATADIR%%/help/GbNetDnsClientPAsync.html
 %%PORTDOCS%%%%DATADIR%%/help/GbNetDnsClientPHostIP.html
@@ -1283,12 +1193,10 @@ lib/gambas/lib.gb.vb.so.0
 %%PORTDOCS%%%%DATADIR%%/help/GbNetSerialPortCBits7.html
 %%PORTDOCS%%%%DATADIR%%/help/GbNetSerialPortCBits8.html
 %%PORTDOCS%%%%DATADIR%%/help/GbNetSerialPortCBoth.html
-%%PORTDOCS%%%%DATADIR%%/help/GbNetSerialPortCDefaultEvent.html
 %%PORTDOCS%%%%DATADIR%%/help/GbNetSerialPortCEven.html
 %%PORTDOCS%%%%DATADIR%%/help/GbNetSerialPortCHardware.html
 %%PORTDOCS%%%%DATADIR%%/help/GbNetSerialPortCNone.html
 %%PORTDOCS%%%%DATADIR%%/help/GbNetSerialPortCOdd.html
-%%PORTDOCS%%%%DATADIR%%/help/GbNetSerialPortCProperties.html
 %%PORTDOCS%%%%DATADIR%%/help/GbNetSerialPortCSoftware.html
 %%PORTDOCS%%%%DATADIR%%/help/GbNetSerialPortECTSChange.html
 %%PORTDOCS%%%%DATADIR%%/help/GbNetSerialPortEDCDChange.html
@@ -1298,7 +1206,6 @@ lib/gambas/lib.gb.vb.so.0
 %%PORTDOCS%%%%DATADIR%%/help/GbNetSerialPortERTSChange.html
 %%PORTDOCS%%%%DATADIR%%/help/GbNetSerialPortERead.html
 %%PORTDOCS%%%%DATADIR%%/help/GbNetSerialPortMOpen.html
-%%PORTDOCS%%%%DATADIR%%/help/GbNetSerialPortMfree.html
 %%PORTDOCS%%%%DATADIR%%/help/GbNetSerialPortMnew.html
 %%PORTDOCS%%%%DATADIR%%/help/GbNetSerialPortPDTR.html
 %%PORTDOCS%%%%DATADIR%%/help/GbNetSerialPortPDataBits.html
@@ -1321,7 +1228,6 @@ lib/gambas/lib.gb.vb.so.0
 %%PORTDOCS%%%%DATADIR%%/help/GbNetServerSocketMListen.html
 %%PORTDOCS%%%%DATADIR%%/help/GbNetServerSocketMPause.html
 %%PORTDOCS%%%%DATADIR%%/help/GbNetServerSocketMResume.html
-%%PORTDOCS%%%%DATADIR%%/help/GbNetServerSocketMfree.html
 %%PORTDOCS%%%%DATADIR%%/help/GbNetServerSocketMnew.html
 %%PORTDOCS%%%%DATADIR%%/help/GbNetServerSocketPPath.html
 %%PORTDOCS%%%%DATADIR%%/help/GbNetServerSocketPPort.html
@@ -1336,12 +1242,12 @@ lib/gambas/lib.gb.vb.so.0
 %%PORTDOCS%%%%DATADIR%%/help/GbNetSocketEReady.html
 %%PORTDOCS%%%%DATADIR%%/help/GbNetSocketMConnect.html
 %%PORTDOCS%%%%DATADIR%%/help/GbNetSocketMPeek.html
-%%PORTDOCS%%%%DATADIR%%/help/GbNetSocketMexit.html
-%%PORTDOCS%%%%DATADIR%%/help/GbNetSocketMfree.html
 %%PORTDOCS%%%%DATADIR%%/help/GbNetSocketMnew.html
+%%PORTDOCS%%%%DATADIR%%/help/GbNetSocketPHost.html
+%%PORTDOCS%%%%DATADIR%%/help/GbNetSocketPPath.html
+%%PORTDOCS%%%%DATADIR%%/help/GbNetSocketPPort.html
 %%PORTDOCS%%%%DATADIR%%/help/GbNetSocketRLocalHost.html
 %%PORTDOCS%%%%DATADIR%%/help/GbNetSocketRLocalPort.html
-%%PORTDOCS%%%%DATADIR%%/help/GbNetSocketRPath.html
 %%PORTDOCS%%%%DATADIR%%/help/GbNetSocketRRemoteHost.html
 %%PORTDOCS%%%%DATADIR%%/help/GbNetSocketRRemotePort.html
 %%PORTDOCS%%%%DATADIR%%/help/GbNetSocketRStatus.html
@@ -1350,7 +1256,6 @@ lib/gambas/lib.gb.vb.so.0
 %%PORTDOCS%%%%DATADIR%%/help/GbNetUdpSocketERead.html
 %%PORTDOCS%%%%DATADIR%%/help/GbNetUdpSocketMBind.html
 %%PORTDOCS%%%%DATADIR%%/help/GbNetUdpSocketMPeek.html
-%%PORTDOCS%%%%DATADIR%%/help/GbNetUdpSocketMfree.html
 %%PORTDOCS%%%%DATADIR%%/help/GbNetUdpSocketMnew.html
 %%PORTDOCS%%%%DATADIR%%/help/GbNetUdpSocketPTargetHost.html
 %%PORTDOCS%%%%DATADIR%%/help/GbNetUdpSocketPTargetPort.html
@@ -1360,6 +1265,7 @@ lib/gambas/lib.gb.vb.so.0
 %%PORTDOCS%%%%DATADIR%%/help/GbObject.html
 %%PORTDOCS%%%%DATADIR%%/help/GbObjectArray.html
 %%PORTDOCS%%%%DATADIR%%/help/GbObjectArrayMAdd.html
+%%PORTDOCS%%%%DATADIR%%/help/GbObjectArrayMCopy.html
 %%PORTDOCS%%%%DATADIR%%/help/GbObjectArrayMFind.html
 %%PORTDOCS%%%%DATADIR%%/help/GbObjectArrayMInsert.html
 %%PORTDOCS%%%%DATADIR%%/help/GbObjectArrayMPop.html
@@ -1373,10 +1279,13 @@ lib/gambas/lib.gb.vb.so.0
 %%PORTDOCS%%%%DATADIR%%/help/GbObjectMClass.html
 %%PORTDOCS%%%%DATADIR%%/help/GbObjectMDetach.html
 %%PORTDOCS%%%%DATADIR%%/help/GbObjectMGetProperty.html
+%%PORTDOCS%%%%DATADIR%%/help/GbObjectMIsLocked.html
 %%PORTDOCS%%%%DATADIR%%/help/GbObjectMIsValid.html
+%%PORTDOCS%%%%DATADIR%%/help/GbObjectMLock.html
 %%PORTDOCS%%%%DATADIR%%/help/GbObjectMParent.html
 %%PORTDOCS%%%%DATADIR%%/help/GbObjectMSetProperty.html
 %%PORTDOCS%%%%DATADIR%%/help/GbObjectMType.html
+%%PORTDOCS%%%%DATADIR%%/help/GbObjectMUnlock.html
 %%PORTDOCS%%%%DATADIR%%/help/GbProcess.html
 %%PORTDOCS%%%%DATADIR%%/help/GbProcessCCrashed.html
 %%PORTDOCS%%%%DATADIR%%/help/GbProcessCRunning.html
@@ -1385,11 +1294,7 @@ lib/gambas/lib.gb.vb.so.0
 %%PORTDOCS%%%%DATADIR%%/help/GbProcessEKill.html
 %%PORTDOCS%%%%DATADIR%%/help/GbProcessERead.html
 %%PORTDOCS%%%%DATADIR%%/help/GbProcessMKill.html
-%%PORTDOCS%%%%DATADIR%%/help/GbProcessMSend.html
 %%PORTDOCS%%%%DATADIR%%/help/GbProcessMSignal.html
-%%PORTDOCS%%%%DATADIR%%/help/GbProcessMexit.html
-%%PORTDOCS%%%%DATADIR%%/help/GbProcessMfree.html
-%%PORTDOCS%%%%DATADIR%%/help/GbProcessMinit.html
 %%PORTDOCS%%%%DATADIR%%/help/GbProcessMnew.html
 %%PORTDOCS%%%%DATADIR%%/help/GbProcessRHandle.html
 %%PORTDOCS%%%%DATADIR%%/help/GbProcessRId.html
@@ -1419,6 +1324,7 @@ lib/gambas/lib.gb.vb.so.0
 %%PORTDOCS%%%%DATADIR%%/help/GbQtApplicationTooltipPEnabled.html
 %%PORTDOCS%%%%DATADIR%%/help/GbQtApplicationTooltipPFont.html
 %%PORTDOCS%%%%DATADIR%%/help/GbQtArrange.html
+%%PORTDOCS%%%%DATADIR%%/help/GbQtArrangeCFill.html
 %%PORTDOCS%%%%DATADIR%%/help/GbQtArrangeCHorizontal.html
 %%PORTDOCS%%%%DATADIR%%/help/GbQtArrangeCLeftRight.html
 %%PORTDOCS%%%%DATADIR%%/help/GbQtArrangeCNone.html
@@ -1431,10 +1337,7 @@ lib/gambas/lib.gb.vb.so.0
 %%PORTDOCS%%%%DATADIR%%/help/GbQtBorderCRaised.html
 %%PORTDOCS%%%%DATADIR%%/help/GbQtBorderCSunken.html
 %%PORTDOCS%%%%DATADIR%%/help/GbQtButton.html
-%%PORTDOCS%%%%DATADIR%%/help/GbQtButtonCDefaultEvent.html
-%%PORTDOCS%%%%DATADIR%%/help/GbQtButtonCProperties.html
 %%PORTDOCS%%%%DATADIR%%/help/GbQtButtonEClick.html
-%%PORTDOCS%%%%DATADIR%%/help/GbQtButtonMfree.html
 %%PORTDOCS%%%%DATADIR%%/help/GbQtButtonMnew.html
 %%PORTDOCS%%%%DATADIR%%/help/GbQtButtonPBorder.html
 %%PORTDOCS%%%%DATADIR%%/help/GbQtButtonPCancel.html
@@ -1444,8 +1347,6 @@ lib/gambas/lib.gb.vb.so.0
 %%PORTDOCS%%%%DATADIR%%/help/GbQtButtonPText.html
 %%PORTDOCS%%%%DATADIR%%/help/GbQtButtonPValue.html
 %%PORTDOCS%%%%DATADIR%%/help/GbQtCheckBox.html
-%%PORTDOCS%%%%DATADIR%%/help/GbQtCheckBoxCDefaultEvent.html
-%%PORTDOCS%%%%DATADIR%%/help/GbQtCheckBoxCProperties.html
 %%PORTDOCS%%%%DATADIR%%/help/GbQtCheckBoxEClick.html
 %%PORTDOCS%%%%DATADIR%%/help/GbQtCheckBoxMnew.html
 %%PORTDOCS%%%%DATADIR%%/help/GbQtCheckBoxPCaption.html
@@ -1458,7 +1359,6 @@ lib/gambas/lib.gb.vb.so.0
 %%PORTDOCS%%%%DATADIR%%/help/GbQtClipboardMClear.html
 %%PORTDOCS%%%%DATADIR%%/help/GbQtClipboardMCopy.html
 %%PORTDOCS%%%%DATADIR%%/help/GbQtClipboardMPaste.html
-%%PORTDOCS%%%%DATADIR%%/help/GbQtClipboardMinit.html
 %%PORTDOCS%%%%DATADIR%%/help/GbQtClipboardRFormat.html
 %%PORTDOCS%%%%DATADIR%%/help/GbQtClipboardRType.html
 %%PORTDOCS%%%%DATADIR%%/help/GbQtColor.html
@@ -1488,19 +1388,16 @@ lib/gambas/lib.gb.vb.so.0
 %%PORTDOCS%%%%DATADIR%%/help/GbQtColorMRGB.html
 %%PORTDOCS%%%%DATADIR%%/help/GbQtColorPSelected.html
 %%PORTDOCS%%%%DATADIR%%/help/GbQtColumnView.html
-%%PORTDOCS%%%%DATADIR%%/help/GbQtColumnViewCDefaultEvent.html
 %%PORTDOCS%%%%DATADIR%%/help/GbQtColumnViewCExtended.html
 %%PORTDOCS%%%%DATADIR%%/help/GbQtColumnViewCMulti.html
 %%PORTDOCS%%%%DATADIR%%/help/GbQtColumnViewCNone.html
-%%PORTDOCS%%%%DATADIR%%/help/GbQtColumnViewCProperties.html
 %%PORTDOCS%%%%DATADIR%%/help/GbQtColumnViewCSingle.html
 %%PORTDOCS%%%%DATADIR%%/help/GbQtColumnViewColumn.html
-%%PORTDOCS%%%%DATADIR%%/help/GbQtColumnViewColumnPAlign.html
+%%PORTDOCS%%%%DATADIR%%/help/GbQtColumnViewColumnPAlignment.html
 %%PORTDOCS%%%%DATADIR%%/help/GbQtColumnViewColumnPAutoResize.html
 %%PORTDOCS%%%%DATADIR%%/help/GbQtColumnViewColumnPText.html
 %%PORTDOCS%%%%DATADIR%%/help/GbQtColumnViewColumnPWidth.html
 %%PORTDOCS%%%%DATADIR%%/help/GbQtColumnViewColumns.html
-%%PORTDOCS%%%%DATADIR%%/help/GbQtColumnViewColumnsMAdjust.html
 %%PORTDOCS%%%%DATADIR%%/help/GbQtColumnViewColumnsMget.html
 %%PORTDOCS%%%%DATADIR%%/help/GbQtColumnViewColumnsPAscending.html
 %%PORTDOCS%%%%DATADIR%%/help/GbQtColumnViewColumnsPCount.html
@@ -1548,9 +1445,9 @@ lib/gambas/lib.gb.vb.so.0
 %%PORTDOCS%%%%DATADIR%%/help/GbQtColumnViewMMovePrevious.html
 %%PORTDOCS%%%%DATADIR%%/help/GbQtColumnViewMMoveTo.html
 %%PORTDOCS%%%%DATADIR%%/help/GbQtColumnViewMRemove.html
-%%PORTDOCS%%%%DATADIR%%/help/GbQtColumnViewMfree.html
 %%PORTDOCS%%%%DATADIR%%/help/GbQtColumnViewMget.html
 %%PORTDOCS%%%%DATADIR%%/help/GbQtColumnViewMnew.html
+%%PORTDOCS%%%%DATADIR%%/help/GbQtColumnViewPAutoResize.html
 %%PORTDOCS%%%%DATADIR%%/help/GbQtColumnViewPBorder.html
 %%PORTDOCS%%%%DATADIR%%/help/GbQtColumnViewPEditable.html
 %%PORTDOCS%%%%DATADIR%%/help/GbQtColumnViewPHeader.html
@@ -1570,8 +1467,6 @@ lib/gambas/lib.gb.vb.so.0
 %%PORTDOCS%%%%DATADIR%%/help/GbQtColumnViewRItem.html
 %%PORTDOCS%%%%DATADIR%%/help/GbQtColumnViewRKey.html
 %%PORTDOCS%%%%DATADIR%%/help/GbQtComboBox.html
-%%PORTDOCS%%%%DATADIR%%/help/GbQtComboBoxCDefaultEvent.html
-%%PORTDOCS%%%%DATADIR%%/help/GbQtComboBoxCProperties.html
 %%PORTDOCS%%%%DATADIR%%/help/GbQtComboBoxEActivate.html
 %%PORTDOCS%%%%DATADIR%%/help/GbQtComboBoxEChange.html
 %%PORTDOCS%%%%DATADIR%%/help/GbQtComboBoxEClick.html
@@ -1596,6 +1491,7 @@ lib/gambas/lib.gb.vb.so.0
 %%PORTDOCS%%%%DATADIR%%/help/GbQtComboBoxRCount.html
 %%PORTDOCS%%%%DATADIR%%/help/GbQtComboBoxRCurrent.html
 %%PORTDOCS%%%%DATADIR%%/help/GbQtComboBoxRLength.html
+%%PORTDOCS%%%%DATADIR%%/help/GbQtComboBoxRSelect.html
 %%PORTDOCS%%%%DATADIR%%/help/GbQtComboBoxRSelection.html
 %%PORTDOCS%%%%DATADIR%%/help/GbQtContainer.html
 %%PORTDOCS%%%%DATADIR%%/help/GbQtContainerChildren.html
@@ -1609,10 +1505,7 @@ lib/gambas/lib.gb.vb.so.0
 %%PORTDOCS%%%%DATADIR%%/help/GbQtContainerRClientX.html
 %%PORTDOCS%%%%DATADIR%%/help/GbQtContainerRClientY.html
 %%PORTDOCS%%%%DATADIR%%/help/GbQtControl.html
-%%PORTDOCS%%%%DATADIR%%/help/GbQtControlCDefaultEvent.html
-%%PORTDOCS%%%%DATADIR%%/help/GbQtControlCProperties.html
 %%PORTDOCS%%%%DATADIR%%/help/GbQtControlEDblClick.html
-%%PORTDOCS%%%%DATADIR%%/help/GbQtControlEDelete.html
 %%PORTDOCS%%%%DATADIR%%/help/GbQtControlEDrag.html
 %%PORTDOCS%%%%DATADIR%%/help/GbQtControlEDragMove.html
 %%PORTDOCS%%%%DATADIR%%/help/GbQtControlEDrop.html
@@ -1638,13 +1531,13 @@ lib/gambas/lib.gb.vb.so.0
 %%PORTDOCS%%%%DATADIR%%/help/GbQtControlMResize.html
 %%PORTDOCS%%%%DATADIR%%/help/GbQtControlMSetFocus.html
 %%PORTDOCS%%%%DATADIR%%/help/GbQtControlMShow.html
-%%PORTDOCS%%%%DATADIR%%/help/GbQtControlMfree.html
 %%PORTDOCS%%%%DATADIR%%/help/GbQtControlPBackColor.html
 %%PORTDOCS%%%%DATADIR%%/help/GbQtControlPBackground.html
 %%PORTDOCS%%%%DATADIR%%/help/GbQtControlPCursor.html
 %%PORTDOCS%%%%DATADIR%%/help/GbQtControlPDesign.html
 %%PORTDOCS%%%%DATADIR%%/help/GbQtControlPDrop.html
 %%PORTDOCS%%%%DATADIR%%/help/GbQtControlPEnabled.html
+%%PORTDOCS%%%%DATADIR%%/help/GbQtControlPExpand.html
 %%PORTDOCS%%%%DATADIR%%/help/GbQtControlPFont.html
 %%PORTDOCS%%%%DATADIR%%/help/GbQtControlPForeColor.html
 %%PORTDOCS%%%%DATADIR%%/help/GbQtControlPForeground.html
@@ -1667,9 +1560,7 @@ lib/gambas/lib.gb.vb.so.0
 %%PORTDOCS%%%%DATADIR%%/help/GbQtControlRScreenY.html
 %%PORTDOCS%%%%DATADIR%%/help/GbQtControlRWindow.html
 %%PORTDOCS%%%%DATADIR%%/help/GbQtCursor.html
-%%PORTDOCS%%%%DATADIR%%/help/GbQtCursorMfree.html
 %%PORTDOCS%%%%DATADIR%%/help/GbQtCursorMnew.html
-%%PORTDOCS%%%%DATADIR%%/help/GbQtCursorRPicture.html
 %%PORTDOCS%%%%DATADIR%%/help/GbQtCursorRX.html
 %%PORTDOCS%%%%DATADIR%%/help/GbQtCursorRY.html
 %%PORTDOCS%%%%DATADIR%%/help/GbQtDesktop.html
@@ -1677,6 +1568,7 @@ lib/gambas/lib.gb.vb.so.0
 %%PORTDOCS%%%%DATADIR%%/help/GbQtDesktopRCharset.html
 %%PORTDOCS%%%%DATADIR%%/help/GbQtDesktopRH.html
 %%PORTDOCS%%%%DATADIR%%/help/GbQtDesktopRHeight.html
+%%PORTDOCS%%%%DATADIR%%/help/GbQtDesktopRResolution.html
 %%PORTDOCS%%%%DATADIR%%/help/GbQtDesktopRW.html
 %%PORTDOCS%%%%DATADIR%%/help/GbQtDesktopRWidth.html
 %%PORTDOCS%%%%DATADIR%%/help/GbQtDialog.html
@@ -1685,8 +1577,6 @@ lib/gambas/lib.gb.vb.so.0
 %%PORTDOCS%%%%DATADIR%%/help/GbQtDialogMSelectColor.html
 %%PORTDOCS%%%%DATADIR%%/help/GbQtDialogMSelectDirectory.html
 %%PORTDOCS%%%%DATADIR%%/help/GbQtDialogMSelectFont.html
-%%PORTDOCS%%%%DATADIR%%/help/GbQtDialogMexit.html
-%%PORTDOCS%%%%DATADIR%%/help/GbQtDialogMinit.html
 %%PORTDOCS%%%%DATADIR%%/help/GbQtDialogPColor.html
 %%PORTDOCS%%%%DATADIR%%/help/GbQtDialogPFilter.html
 %%PORTDOCS%%%%DATADIR%%/help/GbQtDialogPFont.html
@@ -1700,7 +1590,6 @@ lib/gambas/lib.gb.vb.so.0
 %%PORTDOCS%%%%DATADIR%%/help/GbQtDragCNone.html
 %%PORTDOCS%%%%DATADIR%%/help/GbQtDragCText.html
 %%PORTDOCS%%%%DATADIR%%/help/GbQtDragMcall.html
-%%PORTDOCS%%%%DATADIR%%/help/GbQtDragMexit.html
 %%PORTDOCS%%%%DATADIR%%/help/GbQtDragPIcon.html
 %%PORTDOCS%%%%DATADIR%%/help/GbQtDragRAction.html
 %%PORTDOCS%%%%DATADIR%%/help/GbQtDragRData.html
@@ -1734,8 +1623,6 @@ lib/gambas/lib.gb.vb.so.0
 %%PORTDOCS%%%%DATADIR%%/help/GbQtDrawMTextHeight.html
 %%PORTDOCS%%%%DATADIR%%/help/GbQtDrawMTextWidth.html
 %%PORTDOCS%%%%DATADIR%%/help/GbQtDrawMTile.html
-%%PORTDOCS%%%%DATADIR%%/help/GbQtDrawMexit.html
-%%PORTDOCS%%%%DATADIR%%/help/GbQtDrawMinit.html
 %%PORTDOCS%%%%DATADIR%%/help/GbQtDrawPBackColor.html
 %%PORTDOCS%%%%DATADIR%%/help/GbQtDrawPBackground.html
 %%PORTDOCS%%%%DATADIR%%/help/GbQtDrawPFillColor.html
@@ -1752,8 +1639,6 @@ lib/gambas/lib.gb.vb.so.0
 %%PORTDOCS%%%%DATADIR%%/help/GbQtDrawRClip.html
 %%PORTDOCS%%%%DATADIR%%/help/GbQtDrawing.html
 %%PORTDOCS%%%%DATADIR%%/help/GbQtDrawingArea.html
-%%PORTDOCS%%%%DATADIR%%/help/GbQtDrawingAreaCDefaultEvent.html
-%%PORTDOCS%%%%DATADIR%%/help/GbQtDrawingAreaCProperties.html
 %%PORTDOCS%%%%DATADIR%%/help/GbQtDrawingAreaEDraw.html
 %%PORTDOCS%%%%DATADIR%%/help/GbQtDrawingAreaMClear.html
 %%PORTDOCS%%%%DATADIR%%/help/GbQtDrawingAreaMnew.html
@@ -1767,7 +1652,6 @@ lib/gambas/lib.gb.vb.so.0
 %%PORTDOCS%%%%DATADIR%%/help/GbQtDrawingMCopy.html
 %%PORTDOCS%%%%DATADIR%%/help/GbQtDrawingMLoad.html
 %%PORTDOCS%%%%DATADIR%%/help/GbQtDrawingMSave.html
-%%PORTDOCS%%%%DATADIR%%/help/GbQtDrawingMfree.html
 %%PORTDOCS%%%%DATADIR%%/help/GbQtDrawingMnew.html
 %%PORTDOCS%%%%DATADIR%%/help/GbQtDrawingRDepth.html
 %%PORTDOCS%%%%DATADIR%%/help/GbQtDrawingRHeight.html
@@ -1776,8 +1660,6 @@ lib/gambas/lib.gb.vb.so.0
 %%PORTDOCS%%%%DATADIR%%/help/GbQtEditorGambasEditor.html
 %%PORTDOCS%%%%DATADIR%%/help/GbQtEditorGambasEditorCBreakpoint.html
 %%PORTDOCS%%%%DATADIR%%/help/GbQtEditorGambasEditorCCurrent.html
-%%PORTDOCS%%%%DATADIR%%/help/GbQtEditorGambasEditorCDefaultEvent.html
-%%PORTDOCS%%%%DATADIR%%/help/GbQtEditorGambasEditorCProperties.html
 %%PORTDOCS%%%%DATADIR%%/help/GbQtEditorGambasEditorColors.html
 %%PORTDOCS%%%%DATADIR%%/help/GbQtEditorGambasEditorColorsCBackground.html
 %%PORTDOCS%%%%DATADIR%%/help/GbQtEditorGambasEditorColorsCBreakpoint.html
@@ -1806,28 +1688,35 @@ lib/gambas/lib.gb.vb.so.0
 %%PORTDOCS%%%%DATADIR%%/help/GbQtEditorGambasEditorMClear.html
 %%PORTDOCS%%%%DATADIR%%/help/GbQtEditorGambasEditorMCopy.html
 %%PORTDOCS%%%%DATADIR%%/help/GbQtEditorGambasEditorMCut.html
+%%PORTDOCS%%%%DATADIR%%/help/GbQtEditorGambasEditorMEnsureVisible.html
 %%PORTDOCS%%%%DATADIR%%/help/GbQtEditorGambasEditorMFindNextBreakpoint.html
+%%PORTDOCS%%%%DATADIR%%/help/GbQtEditorGambasEditorMGoto.html
+%%PORTDOCS%%%%DATADIR%%/help/GbQtEditorGambasEditorMIndent.html
 %%PORTDOCS%%%%DATADIR%%/help/GbQtEditorGambasEditorMInsert.html
 %%PORTDOCS%%%%DATADIR%%/help/GbQtEditorGambasEditorMPaste.html
 %%PORTDOCS%%%%DATADIR%%/help/GbQtEditorGambasEditorMPurgeLine.html
 %%PORTDOCS%%%%DATADIR%%/help/GbQtEditorGambasEditorMRedo.html
+%%PORTDOCS%%%%DATADIR%%/help/GbQtEditorGambasEditorMRefresh.html
 %%PORTDOCS%%%%DATADIR%%/help/GbQtEditorGambasEditorMSelect.html
 %%PORTDOCS%%%%DATADIR%%/help/GbQtEditorGambasEditorMToColumn.html
 %%PORTDOCS%%%%DATADIR%%/help/GbQtEditorGambasEditorMToLine.html
 %%PORTDOCS%%%%DATADIR%%/help/GbQtEditorGambasEditorMToPos.html
 %%PORTDOCS%%%%DATADIR%%/help/GbQtEditorGambasEditorMToPosX.html
 %%PORTDOCS%%%%DATADIR%%/help/GbQtEditorGambasEditorMUndo.html
-%%PORTDOCS%%%%DATADIR%%/help/GbQtEditorGambasEditorMexit.html
 %%PORTDOCS%%%%DATADIR%%/help/GbQtEditorGambasEditorMnew.html
 %%PORTDOCS%%%%DATADIR%%/help/GbQtEditorGambasEditorPColumn.html
 %%PORTDOCS%%%%DATADIR%%/help/GbQtEditorGambasEditorPFrozen.html
 %%PORTDOCS%%%%DATADIR%%/help/GbQtEditorGambasEditorPLine.html
 %%PORTDOCS%%%%DATADIR%%/help/GbQtEditorGambasEditorPPos.html
 %%PORTDOCS%%%%DATADIR%%/help/GbQtEditorGambasEditorPReadOnly.html
+%%PORTDOCS%%%%DATADIR%%/help/GbQtEditorGambasEditorPShowProc.html
+%%PORTDOCS%%%%DATADIR%%/help/GbQtEditorGambasEditorPTabLength.html
 %%PORTDOCS%%%%DATADIR%%/help/GbQtEditorGambasEditorPText.html
+%%PORTDOCS%%%%DATADIR%%/help/GbQtEditorGambasEditorPUseRelief.html
 %%PORTDOCS%%%%DATADIR%%/help/GbQtEditorGambasEditorRColors.html
 %%PORTDOCS%%%%DATADIR%%/help/GbQtEditorGambasEditorRCursorX.html
 %%PORTDOCS%%%%DATADIR%%/help/GbQtEditorGambasEditorRCursorY.html
+%%PORTDOCS%%%%DATADIR%%/help/GbQtEditorGambasEditorRLength.html
 %%PORTDOCS%%%%DATADIR%%/help/GbQtEditorGambasEditorRLineHeight.html
 %%PORTDOCS%%%%DATADIR%%/help/GbQtEditorGambasEditorRLines.html
 %%PORTDOCS%%%%DATADIR%%/help/GbQtEditorGambasEditorRPositions.html
@@ -1843,8 +1732,6 @@ lib/gambas/lib.gb.vb.so.0
 %%PORTDOCS%%%%DATADIR%%/help/GbQtEditorGambasEditorSelectionRStart.html
 %%PORTDOCS%%%%DATADIR%%/help/GbQtExt.html
 %%PORTDOCS%%%%DATADIR%%/help/GbQtExtDial.html
-%%PORTDOCS%%%%DATADIR%%/help/GbQtExtDialCDefaultEvent.html
-%%PORTDOCS%%%%DATADIR%%/help/GbQtExtDialCProperties.html
 %%PORTDOCS%%%%DATADIR%%/help/GbQtExtDialEChange.html
 %%PORTDOCS%%%%DATADIR%%/help/GbQtExtDialMnew.html
 %%PORTDOCS%%%%DATADIR%%/help/GbQtExtDialPMark.html
@@ -1854,11 +1741,14 @@ lib/gambas/lib.gb.vb.so.0
 %%PORTDOCS%%%%DATADIR%%/help/GbQtExtDialPStep.html
 %%PORTDOCS%%%%DATADIR%%/help/GbQtExtDialPValue.html
 %%PORTDOCS%%%%DATADIR%%/help/GbQtExtDialPWrap.html
+%%PORTDOCS%%%%DATADIR%%/help/GbQtExtHSplit.html
+%%PORTDOCS%%%%DATADIR%%/help/GbQtExtHSplitEResize.html
+%%PORTDOCS%%%%DATADIR%%/help/GbQtExtHSplitMnew.html
+%%PORTDOCS%%%%DATADIR%%/help/GbQtExtHSplitPLayout.html
 %%PORTDOCS%%%%DATADIR%%/help/GbQtExtLCDNumber.html
 %%PORTDOCS%%%%DATADIR%%/help/GbQtExtLCDNumberCFilled.html
 %%PORTDOCS%%%%DATADIR%%/help/GbQtExtLCDNumberCFlat.html
 %%PORTDOCS%%%%DATADIR%%/help/GbQtExtLCDNumberCOutline.html
-%%PORTDOCS%%%%DATADIR%%/help/GbQtExtLCDNumberCProperties.html
 %%PORTDOCS%%%%DATADIR%%/help/GbQtExtLCDNumberMnew.html
 %%PORTDOCS%%%%DATADIR%%/help/GbQtExtLCDNumberPBorder.html
 %%PORTDOCS%%%%DATADIR%%/help/GbQtExtLCDNumberPDigits.html
@@ -1866,9 +1756,13 @@ lib/gambas/lib.gb.vb.so.0
 %%PORTDOCS%%%%DATADIR%%/help/GbQtExtLCDNumberPStyle.html
 %%PORTDOCS%%%%DATADIR%%/help/GbQtExtLCDNumberPValue.html
 %%PORTDOCS%%%%DATADIR%%/help/GbQtExtLCDNumberROverflow.html
+%%PORTDOCS%%%%DATADIR%%/help/GbQtExtMovieBox.html
+%%PORTDOCS%%%%DATADIR%%/help/GbQtExtMovieBoxMRewind.html
+%%PORTDOCS%%%%DATADIR%%/help/GbQtExtMovieBoxMnew.html
+%%PORTDOCS%%%%DATADIR%%/help/GbQtExtMovieBoxPBorder.html
+%%PORTDOCS%%%%DATADIR%%/help/GbQtExtMovieBoxPPath.html
+%%PORTDOCS%%%%DATADIR%%/help/GbQtExtMovieBoxPPlaying.html
 %%PORTDOCS%%%%DATADIR%%/help/GbQtExtScrollBar.html
-%%PORTDOCS%%%%DATADIR%%/help/GbQtExtScrollBarCDefaultEvent.html
-%%PORTDOCS%%%%DATADIR%%/help/GbQtExtScrollBarCProperties.html
 %%PORTDOCS%%%%DATADIR%%/help/GbQtExtScrollBarEChange.html
 %%PORTDOCS%%%%DATADIR%%/help/GbQtExtScrollBarMnew.html
 %%PORTDOCS%%%%DATADIR%%/help/GbQtExtScrollBarPMaxValue.html
@@ -1878,8 +1772,6 @@ lib/gambas/lib.gb.vb.so.0
 %%PORTDOCS%%%%DATADIR%%/help/GbQtExtScrollBarPTracking.html
 %%PORTDOCS%%%%DATADIR%%/help/GbQtExtScrollBarPValue.html
 %%PORTDOCS%%%%DATADIR%%/help/GbQtExtSlider.html
-%%PORTDOCS%%%%DATADIR%%/help/GbQtExtSliderCDefaultEvent.html
-%%PORTDOCS%%%%DATADIR%%/help/GbQtExtSliderCProperties.html
 %%PORTDOCS%%%%DATADIR%%/help/GbQtExtSliderEChange.html
 %%PORTDOCS%%%%DATADIR%%/help/GbQtExtSliderMnew.html
 %%PORTDOCS%%%%DATADIR%%/help/GbQtExtSliderPMark.html
@@ -1890,7 +1782,6 @@ lib/gambas/lib.gb.vb.so.0
 %%PORTDOCS%%%%DATADIR%%/help/GbQtExtSliderPTracking.html
 %%PORTDOCS%%%%DATADIR%%/help/GbQtExtSliderPValue.html
 %%PORTDOCS%%%%DATADIR%%/help/GbQtExtSpinBox.html
-%%PORTDOCS%%%%DATADIR%%/help/GbQtExtSpinBoxCProperties.html
 %%PORTDOCS%%%%DATADIR%%/help/GbQtExtSpinBoxEChange.html
 %%PORTDOCS%%%%DATADIR%%/help/GbQtExtSpinBoxMnew.html
 %%PORTDOCS%%%%DATADIR%%/help/GbQtExtSpinBoxPMaxValue.html
@@ -1903,9 +1794,7 @@ lib/gambas/lib.gb.vb.so.0
 %%PORTDOCS%%%%DATADIR%%/help/GbQtExtSpinBoxRFullText.html
 %%PORTDOCS%%%%DATADIR%%/help/GbQtExtSpinBoxRText.html
 %%PORTDOCS%%%%DATADIR%%/help/GbQtExtSplitter.html
-%%PORTDOCS%%%%DATADIR%%/help/GbQtExtSplitterCDefaultEvent.html
 %%PORTDOCS%%%%DATADIR%%/help/GbQtExtSplitterCHorizontal.html
-%%PORTDOCS%%%%DATADIR%%/help/GbQtExtSplitterCProperties.html
 %%PORTDOCS%%%%DATADIR%%/help/GbQtExtSplitterCVertical.html
 %%PORTDOCS%%%%DATADIR%%/help/GbQtExtSplitterEChange.html
 %%PORTDOCS%%%%DATADIR%%/help/GbQtExtSplitterMnew.html
@@ -1913,11 +1802,9 @@ lib/gambas/lib.gb.vb.so.0
 %%PORTDOCS%%%%DATADIR%%/help/GbQtExtSplitterPOrientation.html
 %%PORTDOCS%%%%DATADIR%%/help/GbQtExtTableView.html
 %%PORTDOCS%%%%DATADIR%%/help/GbQtExtTableViewCBoth.html
-%%PORTDOCS%%%%DATADIR%%/help/GbQtExtTableViewCDefaultEvent.html
 %%PORTDOCS%%%%DATADIR%%/help/GbQtExtTableViewCHorizontal.html
 %%PORTDOCS%%%%DATADIR%%/help/GbQtExtTableViewCMulti.html
 %%PORTDOCS%%%%DATADIR%%/help/GbQtExtTableViewCNone.html
-%%PORTDOCS%%%%DATADIR%%/help/GbQtExtTableViewCProperties.html
 %%PORTDOCS%%%%DATADIR%%/help/GbQtExtTableViewCSingle.html
 %%PORTDOCS%%%%DATADIR%%/help/GbQtExtTableViewCVertical.html
 %%PORTDOCS%%%%DATADIR%%/help/GbQtExtTableViewCell.html
@@ -1968,7 +1855,6 @@ lib/gambas/lib.gb.vb.so.0
 %%PORTDOCS%%%%DATADIR%%/help/GbQtExtTableViewMMoveTo.html
 %%PORTDOCS%%%%DATADIR%%/help/GbQtExtTableViewMRefresh.html
 %%PORTDOCS%%%%DATADIR%%/help/GbQtExtTableViewMRowAt.html
-%%PORTDOCS%%%%DATADIR%%/help/GbQtExtTableViewMfree.html
 %%PORTDOCS%%%%DATADIR%%/help/GbQtExtTableViewMget.html
 %%PORTDOCS%%%%DATADIR%%/help/GbQtExtTableViewMnew.html
 %%PORTDOCS%%%%DATADIR%%/help/GbQtExtTableViewPBorder.html
@@ -2005,11 +1891,8 @@ lib/gambas/lib.gb.vb.so.0
 %%PORTDOCS%%%%DATADIR%%/help/GbQtExtTableViewRowsRW.html
 %%PORTDOCS%%%%DATADIR%%/help/GbQtExtTableViewRowsRWidth.html
 %%PORTDOCS%%%%DATADIR%%/help/GbQtExtTextView.html
-%%PORTDOCS%%%%DATADIR%%/help/GbQtExtTextViewCDefaultEvent.html
-%%PORTDOCS%%%%DATADIR%%/help/GbQtExtTextViewCProperties.html
 %%PORTDOCS%%%%DATADIR%%/help/GbQtExtTextViewELink.html
 %%PORTDOCS%%%%DATADIR%%/help/GbQtExtTextViewMClear.html
-%%PORTDOCS%%%%DATADIR%%/help/GbQtExtTextViewMfree.html
 %%PORTDOCS%%%%DATADIR%%/help/GbQtExtTextViewMnew.html
 %%PORTDOCS%%%%DATADIR%%/help/GbQtExtTextViewPBorder.html
 %%PORTDOCS%%%%DATADIR%%/help/GbQtExtTextViewPPath.html
@@ -2020,15 +1903,17 @@ lib/gambas/lib.gb.vb.so.0
 %%PORTDOCS%%%%DATADIR%%/help/GbQtExtTextViewPTextHeight.html
 %%PORTDOCS%%%%DATADIR%%/help/GbQtExtTextViewPTextWidth.html
 %%PORTDOCS%%%%DATADIR%%/help/GbQtExtTextViewRRoot.html
+%%PORTDOCS%%%%DATADIR%%/help/GbQtExtVSplit.html
+%%PORTDOCS%%%%DATADIR%%/help/GbQtExtVSplitEResize.html
+%%PORTDOCS%%%%DATADIR%%/help/GbQtExtVSplitMnew.html
+%%PORTDOCS%%%%DATADIR%%/help/GbQtExtVSplitPLayout.html
 %%PORTDOCS%%%%DATADIR%%/help/GbQtExtWorkspace.html
 %%PORTDOCS%%%%DATADIR%%/help/GbQtExtWorkspaceCCascade.html
-%%PORTDOCS%%%%DATADIR%%/help/GbQtExtWorkspaceCProperties.html
 %%PORTDOCS%%%%DATADIR%%/help/GbQtExtWorkspaceCTile.html
 %%PORTDOCS%%%%DATADIR%%/help/GbQtExtWorkspaceChildren.html
 %%PORTDOCS%%%%DATADIR%%/help/GbQtExtWorkspaceChildrenMnext.html
 %%PORTDOCS%%%%DATADIR%%/help/GbQtExtWorkspaceChildrenRCount.html
 %%PORTDOCS%%%%DATADIR%%/help/GbQtExtWorkspaceMArrange.html
-%%PORTDOCS%%%%DATADIR%%/help/GbQtExtWorkspaceMinit.html
 %%PORTDOCS%%%%DATADIR%%/help/GbQtExtWorkspaceMnew.html
 %%PORTDOCS%%%%DATADIR%%/help/GbQtExtWorkspaceRActiveWindow.html
 %%PORTDOCS%%%%DATADIR%%/help/GbQtExtWorkspaceRChildren.html
@@ -2052,10 +1937,7 @@ lib/gambas/lib.gb.vb.so.0
 %%PORTDOCS%%%%DATADIR%%/help/GbQtFontMHeight.html
 %%PORTDOCS%%%%DATADIR%%/help/GbQtFontMToString.html
 %%PORTDOCS%%%%DATADIR%%/help/GbQtFontMWidth.html
-%%PORTDOCS%%%%DATADIR%%/help/GbQtFontMexit.html
-%%PORTDOCS%%%%DATADIR%%/help/GbQtFontMfree.html
 %%PORTDOCS%%%%DATADIR%%/help/GbQtFontMget.html
-%%PORTDOCS%%%%DATADIR%%/help/GbQtFontMinit.html
 %%PORTDOCS%%%%DATADIR%%/help/GbQtFontMnew.html
 %%PORTDOCS%%%%DATADIR%%/help/GbQtFontPBold.html
 %%PORTDOCS%%%%DATADIR%%/help/GbQtFontPItalic.html
@@ -2076,7 +1958,6 @@ lib/gambas/lib.gb.vb.so.0
 %%PORTDOCS%%%%DATADIR%%/help/GbQtFormMMain.html
 %%PORTDOCS%%%%DATADIR%%/help/GbQtFormMnew.html
 %%PORTDOCS%%%%DATADIR%%/help/GbQtFrame.html
-%%PORTDOCS%%%%DATADIR%%/help/GbQtFrameCProperties.html
 %%PORTDOCS%%%%DATADIR%%/help/GbQtFrameMnew.html
 %%PORTDOCS%%%%DATADIR%%/help/GbQtFramePCaption.html
 %%PORTDOCS%%%%DATADIR%%/help/GbQtFramePText.html
@@ -2112,8 +1993,6 @@ lib/gambas/lib.gb.vb.so.0
 %%PORTDOCS%%%%DATADIR%%/help/GbQtGridRowsPHeight.html
 %%PORTDOCS%%%%DATADIR%%/help/GbQtGridRowsPResizable.html
 %%PORTDOCS%%%%DATADIR%%/help/GbQtGridView.html
-%%PORTDOCS%%%%DATADIR%%/help/GbQtGridViewCDefaultEvent.html
-%%PORTDOCS%%%%DATADIR%%/help/GbQtGridViewCProperties.html
 %%PORTDOCS%%%%DATADIR%%/help/GbQtGridViewEActivate.html
 %%PORTDOCS%%%%DATADIR%%/help/GbQtGridViewEClick.html
 %%PORTDOCS%%%%DATADIR%%/help/GbQtGridViewEScroll.html
@@ -2132,14 +2011,20 @@ lib/gambas/lib.gb.vb.so.0
 %%PORTDOCS%%%%DATADIR%%/help/GbQtGridViewRColumns.html
 %%PORTDOCS%%%%DATADIR%%/help/GbQtGridViewRCurrent.html
 %%PORTDOCS%%%%DATADIR%%/help/GbQtGridViewRRows.html
+%%PORTDOCS%%%%DATADIR%%/help/GbQtHBox.html
+%%PORTDOCS%%%%DATADIR%%/help/GbQtHBoxMnew.html
+%%PORTDOCS%%%%DATADIR%%/help/GbQtHBoxPPadding.html
+%%PORTDOCS%%%%DATADIR%%/help/GbQtHBoxPSpacing.html
+%%PORTDOCS%%%%DATADIR%%/help/GbQtHPanel.html
+%%PORTDOCS%%%%DATADIR%%/help/GbQtHPanelMnew.html
+%%PORTDOCS%%%%DATADIR%%/help/GbQtHPanelPPadding.html
+%%PORTDOCS%%%%DATADIR%%/help/GbQtHPanelPSpacing.html
 %%PORTDOCS%%%%DATADIR%%/help/GbQtIconView.html
-%%PORTDOCS%%%%DATADIR%%/help/GbQtIconViewCDefaultEvent.html
 %%PORTDOCS%%%%DATADIR%%/help/GbQtIconViewCExtended.html
 %%PORTDOCS%%%%DATADIR%%/help/GbQtIconViewCFree.html
 %%PORTDOCS%%%%DATADIR%%/help/GbQtIconViewCLeftRight.html
 %%PORTDOCS%%%%DATADIR%%/help/GbQtIconViewCMulti.html
 %%PORTDOCS%%%%DATADIR%%/help/GbQtIconViewCNone.html
-%%PORTDOCS%%%%DATADIR%%/help/GbQtIconViewCProperties.html
 %%PORTDOCS%%%%DATADIR%%/help/GbQtIconViewCSingle.html
 %%PORTDOCS%%%%DATADIR%%/help/GbQtIconViewCTopBottom.html
 %%PORTDOCS%%%%DATADIR%%/help/GbQtIconViewEActivate.html
@@ -2174,7 +2059,6 @@ lib/gambas/lib.gb.vb.so.0
 %%PORTDOCS%%%%DATADIR%%/help/GbQtIconViewMMoveTo.html
 %%PORTDOCS%%%%DATADIR%%/help/GbQtIconViewMRemove.html
 %%PORTDOCS%%%%DATADIR%%/help/GbQtIconViewMSelectAll.html
-%%PORTDOCS%%%%DATADIR%%/help/GbQtIconViewMfree.html
 %%PORTDOCS%%%%DATADIR%%/help/GbQtIconViewMget.html
 %%PORTDOCS%%%%DATADIR%%/help/GbQtIconViewMnew.html
 %%PORTDOCS%%%%DATADIR%%/help/GbQtIconViewPArrangement.html
@@ -2205,36 +2089,25 @@ lib/gambas/lib.gb.vb.so.0
 %%PORTDOCS%%%%DATADIR%%/help/GbQtImageMRotate.html
 %%PORTDOCS%%%%DATADIR%%/help/GbQtImageMSave.html
 %%PORTDOCS%%%%DATADIR%%/help/GbQtImageMStretch.html
-%%PORTDOCS%%%%DATADIR%%/help/GbQtImageMfree.html
 %%PORTDOCS%%%%DATADIR%%/help/GbQtImageMget.html
 %%PORTDOCS%%%%DATADIR%%/help/GbQtImageMnew.html
 %%PORTDOCS%%%%DATADIR%%/help/GbQtImageMput.html
 %%PORTDOCS%%%%DATADIR%%/help/GbQtImagePDepth.html
-%%PORTDOCS%%%%DATADIR%%/help/GbQtImagePixels.html
-%%PORTDOCS%%%%DATADIR%%/help/GbQtImagePixelsMget.html
-%%PORTDOCS%%%%DATADIR%%/help/GbQtImagePixelsMput.html
 %%PORTDOCS%%%%DATADIR%%/help/GbQtImageRHeight.html
 %%PORTDOCS%%%%DATADIR%%/help/GbQtImageRPicture.html
-%%PORTDOCS%%%%DATADIR%%/help/GbQtImageRPixels.html
 %%PORTDOCS%%%%DATADIR%%/help/GbQtImageRWidth.html
 %%PORTDOCS%%%%DATADIR%%/help/GbQtKde.html
 %%PORTDOCS%%%%DATADIR%%/help/GbQtKdeApplication.html
 %%PORTDOCS%%%%DATADIR%%/help/GbQtKdeApplicationMget.html
 %%PORTDOCS%%%%DATADIR%%/help/GbQtKdeColorBox.html
-%%PORTDOCS%%%%DATADIR%%/help/GbQtKdeColorBoxCDefaultEvent.html
-%%PORTDOCS%%%%DATADIR%%/help/GbQtKdeColorBoxCProperties.html
 %%PORTDOCS%%%%DATADIR%%/help/GbQtKdeColorBoxEClick.html
 %%PORTDOCS%%%%DATADIR%%/help/GbQtKdeColorBoxMnew.html
 %%PORTDOCS%%%%DATADIR%%/help/GbQtKdeColorBoxPColor.html
 %%PORTDOCS%%%%DATADIR%%/help/GbQtKdeColorBoxPValue.html
 %%PORTDOCS%%%%DATADIR%%/help/GbQtKdeDCOPRef.html
-%%PORTDOCS%%%%DATADIR%%/help/GbQtKdeDCOPRefMfree.html
-%%PORTDOCS%%%%DATADIR%%/help/GbQtKdeDCOPRefMunknown.html
 %%PORTDOCS%%%%DATADIR%%/help/GbQtKdeDCOPRefRApplication.html
 %%PORTDOCS%%%%DATADIR%%/help/GbQtKdeDCOPRefRName.html
 %%PORTDOCS%%%%DATADIR%%/help/GbQtKdeDatePicker.html
-%%PORTDOCS%%%%DATADIR%%/help/GbQtKdeDatePickerCDefaultEvent.html
-%%PORTDOCS%%%%DATADIR%%/help/GbQtKdeDatePickerCProperties.html
 %%PORTDOCS%%%%DATADIR%%/help/GbQtKdeDatePickerEChange.html
 %%PORTDOCS%%%%DATADIR%%/help/GbQtKdeDatePickerMnew.html
 %%PORTDOCS%%%%DATADIR%%/help/GbQtKdeDatePickerPValue.html
@@ -2243,37 +2116,26 @@ lib/gambas/lib.gb.vb.so.0
 %%PORTDOCS%%%%DATADIR%%/help/GbQtKdeDialogMSaveFile.html
 %%PORTDOCS%%%%DATADIR%%/help/GbQtKdeDialogMSelectColor.html
 %%PORTDOCS%%%%DATADIR%%/help/GbQtKdeDialogMSelectDirectory.html
-%%PORTDOCS%%%%DATADIR%%/help/GbQtKdeDialogMexit.html
-%%PORTDOCS%%%%DATADIR%%/help/GbQtKdeDialogMinit.html
 %%PORTDOCS%%%%DATADIR%%/help/GbQtKdeDialogPColor.html
 %%PORTDOCS%%%%DATADIR%%/help/GbQtKdeDialogPFilter.html
 %%PORTDOCS%%%%DATADIR%%/help/GbQtKdeDialogPPath.html
 %%PORTDOCS%%%%DATADIR%%/help/GbQtKdeDialogPTitle.html
 %%PORTDOCS%%%%DATADIR%%/help/GbQtKdeHtml.html
 %%PORTDOCS%%%%DATADIR%%/help/GbQtKdeHtmlWebBrowser.html
-%%PORTDOCS%%%%DATADIR%%/help/GbQtKdeHtmlWebBrowserCDefaultEvent.html
-%%PORTDOCS%%%%DATADIR%%/help/GbQtKdeHtmlWebBrowserCProperties.html
 %%PORTDOCS%%%%DATADIR%%/help/GbQtKdeHtmlWebBrowserEChange.html
 %%PORTDOCS%%%%DATADIR%%/help/GbQtKdeHtmlWebBrowserEClick.html
 %%PORTDOCS%%%%DATADIR%%/help/GbQtKdeHtmlWebBrowserELink.html
 %%PORTDOCS%%%%DATADIR%%/help/GbQtKdeHtmlWebBrowserMStop.html
-%%PORTDOCS%%%%DATADIR%%/help/GbQtKdeHtmlWebBrowserMfree.html
 %%PORTDOCS%%%%DATADIR%%/help/GbQtKdeHtmlWebBrowserMnew.html
 %%PORTDOCS%%%%DATADIR%%/help/GbQtKdeHtmlWebBrowserPJavaScript.html
 %%PORTDOCS%%%%DATADIR%%/help/GbQtKdeHtmlWebBrowserPPath.html
 %%PORTDOCS%%%%DATADIR%%/help/GbQtKdeHtmlWebBrowserPZoom.html
 %%PORTDOCS%%%%DATADIR%%/help/GbQtKdeHtmlWebBrowserRLink.html
 %%PORTDOCS%%%%DATADIR%%/help/GbQtKdeKDEApplication.html
-%%PORTDOCS%%%%DATADIR%%/help/GbQtKdeKDEApplicationMexit.html
-%%PORTDOCS%%%%DATADIR%%/help/GbQtKdeKDEApplicationMfree.html
 %%PORTDOCS%%%%DATADIR%%/help/GbQtKdeKDEApplicationMget.html
-%%PORTDOCS%%%%DATADIR%%/help/GbQtKdeKDEApplicationMunknown.html
 %%PORTDOCS%%%%DATADIR%%/help/GbQtKdeKDEApplicationRName.html
 %%PORTDOCS%%%%DATADIR%%/help/GbQtKdeKDEObject.html
-%%PORTDOCS%%%%DATADIR%%/help/GbQtKdeKDEObjectMunknown.html
 %%PORTDOCS%%%%DATADIR%%/help/GbQtKdeURLLabel.html
-%%PORTDOCS%%%%DATADIR%%/help/GbQtKdeURLLabelCDefaultEvent.html
-%%PORTDOCS%%%%DATADIR%%/help/GbQtKdeURLLabelCProperties.html
 %%PORTDOCS%%%%DATADIR%%/help/GbQtKdeURLLabelEClick.html
 %%PORTDOCS%%%%DATADIR%%/help/GbQtKdeURLLabelMnew.html
 %%PORTDOCS%%%%DATADIR%%/help/GbQtKdeURLLabelPText.html
@@ -2329,16 +2191,16 @@ lib/gambas/lib.gb.vb.so.0
 %%PORTDOCS%%%%DATADIR%%/help/GbQtKeyCSysReq.html
 %%PORTDOCS%%%%DATADIR%%/help/GbQtKeyCTab.html
 %%PORTDOCS%%%%DATADIR%%/help/GbQtKeyCUp.html
-%%PORTDOCS%%%%DATADIR%%/help/GbQtKeyMexit.html
 %%PORTDOCS%%%%DATADIR%%/help/GbQtKeyMget.html
 %%PORTDOCS%%%%DATADIR%%/help/GbQtKeyRAlt.html
 %%PORTDOCS%%%%DATADIR%%/help/GbQtKeyRCode.html
 %%PORTDOCS%%%%DATADIR%%/help/GbQtKeyRControl.html
+%%PORTDOCS%%%%DATADIR%%/help/GbQtKeyRMeta.html
+%%PORTDOCS%%%%DATADIR%%/help/GbQtKeyRNormal.html
 %%PORTDOCS%%%%DATADIR%%/help/GbQtKeyRShift.html
 %%PORTDOCS%%%%DATADIR%%/help/GbQtKeyRState.html
 %%PORTDOCS%%%%DATADIR%%/help/GbQtKeyRText.html
 %%PORTDOCS%%%%DATADIR%%/help/GbQtLabel.html
-%%PORTDOCS%%%%DATADIR%%/help/GbQtLabelCProperties.html
 %%PORTDOCS%%%%DATADIR%%/help/GbQtLabelMnew.html
 %%PORTDOCS%%%%DATADIR%%/help/GbQtLabelPAlignment.html
 %%PORTDOCS%%%%DATADIR%%/help/GbQtLabelPBorder.html
@@ -2352,11 +2214,9 @@ lib/gambas/lib.gb.vb.so.0
 %%PORTDOCS%%%%DATADIR%%/help/GbQtLineCNone.html
 %%PORTDOCS%%%%DATADIR%%/help/GbQtLineCSolid.html
 %%PORTDOCS%%%%DATADIR%%/help/GbQtListBox.html
-%%PORTDOCS%%%%DATADIR%%/help/GbQtListBoxCDefaultEvent.html
 %%PORTDOCS%%%%DATADIR%%/help/GbQtListBoxCExtended.html
 %%PORTDOCS%%%%DATADIR%%/help/GbQtListBoxCMulti.html
 %%PORTDOCS%%%%DATADIR%%/help/GbQtListBoxCNone.html
-%%PORTDOCS%%%%DATADIR%%/help/GbQtListBoxCProperties.html
 %%PORTDOCS%%%%DATADIR%%/help/GbQtListBoxCSingle.html
 %%PORTDOCS%%%%DATADIR%%/help/GbQtListBoxEActivate.html
 %%PORTDOCS%%%%DATADIR%%/help/GbQtListBoxEClick.html
@@ -2379,11 +2239,9 @@ lib/gambas/lib.gb.vb.so.0
 %%PORTDOCS%%%%DATADIR%%/help/GbQtListBoxRCurrent.html
 %%PORTDOCS%%%%DATADIR%%/help/GbQtListBoxRText.html
 %%PORTDOCS%%%%DATADIR%%/help/GbQtListView.html
-%%PORTDOCS%%%%DATADIR%%/help/GbQtListViewCDefaultEvent.html
 %%PORTDOCS%%%%DATADIR%%/help/GbQtListViewCExtended.html
 %%PORTDOCS%%%%DATADIR%%/help/GbQtListViewCMulti.html
 %%PORTDOCS%%%%DATADIR%%/help/GbQtListViewCNone.html
-%%PORTDOCS%%%%DATADIR%%/help/GbQtListViewCProperties.html
 %%PORTDOCS%%%%DATADIR%%/help/GbQtListViewCSingle.html
 %%PORTDOCS%%%%DATADIR%%/help/GbQtListViewEActivate.html
 %%PORTDOCS%%%%DATADIR%%/help/GbQtListViewEClick.html
@@ -2414,7 +2272,6 @@ lib/gambas/lib.gb.vb.so.0
 %%PORTDOCS%%%%DATADIR%%/help/GbQtListViewMMovePrevious.html
 %%PORTDOCS%%%%DATADIR%%/help/GbQtListViewMMoveTo.html
 %%PORTDOCS%%%%DATADIR%%/help/GbQtListViewMRemove.html
-%%PORTDOCS%%%%DATADIR%%/help/GbQtListViewMfree.html
 %%PORTDOCS%%%%DATADIR%%/help/GbQtListViewMget.html
 %%PORTDOCS%%%%DATADIR%%/help/GbQtListViewMnew.html
 %%PORTDOCS%%%%DATADIR%%/help/GbQtListViewPBorder.html
@@ -2432,19 +2289,14 @@ lib/gambas/lib.gb.vb.so.0
 %%PORTDOCS%%%%DATADIR%%/help/GbQtListViewRItem.html
 %%PORTDOCS%%%%DATADIR%%/help/GbQtListViewRKey.html
 %%PORTDOCS%%%%DATADIR%%/help/GbQtMenu.html
-%%PORTDOCS%%%%DATADIR%%/help/GbQtMenuCDefaultEvent.html
-%%PORTDOCS%%%%DATADIR%%/help/GbQtMenuCProperties.html
 %%PORTDOCS%%%%DATADIR%%/help/GbQtMenuChildren.html
 %%PORTDOCS%%%%DATADIR%%/help/GbQtMenuChildrenMClear.html
 %%PORTDOCS%%%%DATADIR%%/help/GbQtMenuChildrenMnext.html
 %%PORTDOCS%%%%DATADIR%%/help/GbQtMenuChildrenRCount.html
 %%PORTDOCS%%%%DATADIR%%/help/GbQtMenuEClick.html
-%%PORTDOCS%%%%DATADIR%%/help/GbQtMenuEDelete.html
 %%PORTDOCS%%%%DATADIR%%/help/GbQtMenuEShow.html
 %%PORTDOCS%%%%DATADIR%%/help/GbQtMenuMDelete.html
 %%PORTDOCS%%%%DATADIR%%/help/GbQtMenuMPopup.html
-%%PORTDOCS%%%%DATADIR%%/help/GbQtMenuMfree.html
-%%PORTDOCS%%%%DATADIR%%/help/GbQtMenuMinit.html
 %%PORTDOCS%%%%DATADIR%%/help/GbQtMenuMnew.html
 %%PORTDOCS%%%%DATADIR%%/help/GbQtMenuPCaption.html
 %%PORTDOCS%%%%DATADIR%%/help/GbQtMenuPChecked.html
@@ -2456,12 +2308,12 @@ lib/gambas/lib.gb.vb.so.0
 %%PORTDOCS%%%%DATADIR%%/help/GbQtMenuPVisible.html
 %%PORTDOCS%%%%DATADIR%%/help/GbQtMenuRChildren.html
 %%PORTDOCS%%%%DATADIR%%/help/GbQtMessage.html
+%%PORTDOCS%%%%DATADIR%%/help/GbQtMessageMDelete.html
 %%PORTDOCS%%%%DATADIR%%/help/GbQtMessageMError.html
 %%PORTDOCS%%%%DATADIR%%/help/GbQtMessageMInfo.html
 %%PORTDOCS%%%%DATADIR%%/help/GbQtMessageMQuestion.html
 %%PORTDOCS%%%%DATADIR%%/help/GbQtMessageMWarning.html
 %%PORTDOCS%%%%DATADIR%%/help/GbQtMessageMcall.html
-%%PORTDOCS%%%%DATADIR%%/help/GbQtMessageMexit.html
 %%PORTDOCS%%%%DATADIR%%/help/GbQtMouse.html
 %%PORTDOCS%%%%DATADIR%%/help/GbQtMouseCArrow.html
 %%PORTDOCS%%%%DATADIR%%/help/GbQtMouseCBlank.html
@@ -2494,7 +2346,9 @@ lib/gambas/lib.gb.vb.so.0
 %%PORTDOCS%%%%DATADIR%%/help/GbQtMouseRControl.html
 %%PORTDOCS%%%%DATADIR%%/help/GbQtMouseRDelta.html
 %%PORTDOCS%%%%DATADIR%%/help/GbQtMouseRLeft.html
+%%PORTDOCS%%%%DATADIR%%/help/GbQtMouseRMeta.html
 %%PORTDOCS%%%%DATADIR%%/help/GbQtMouseRMiddle.html
+%%PORTDOCS%%%%DATADIR%%/help/GbQtMouseRNormal.html
 %%PORTDOCS%%%%DATADIR%%/help/GbQtMouseROrientation.html
 %%PORTDOCS%%%%DATADIR%%/help/GbQtMouseRRight.html
 %%PORTDOCS%%%%DATADIR%%/help/GbQtMouseRScreenX.html
@@ -2503,14 +2357,14 @@ lib/gambas/lib.gb.vb.so.0
 %%PORTDOCS%%%%DATADIR%%/help/GbQtMouseRX.html
 %%PORTDOCS%%%%DATADIR%%/help/GbQtMouseRY.html
 %%PORTDOCS%%%%DATADIR%%/help/GbQtPanel.html
-%%PORTDOCS%%%%DATADIR%%/help/GbQtPanelCProperties.html
 %%PORTDOCS%%%%DATADIR%%/help/GbQtPanelMnew.html
 %%PORTDOCS%%%%DATADIR%%/help/GbQtPanelPArrangement.html
+%%PORTDOCS%%%%DATADIR%%/help/GbQtPanelPAutoResize.html
 %%PORTDOCS%%%%DATADIR%%/help/GbQtPanelPBorder.html
+%%PORTDOCS%%%%DATADIR%%/help/GbQtPanelPPadding.html
+%%PORTDOCS%%%%DATADIR%%/help/GbQtPanelPSpacing.html
 %%PORTDOCS%%%%DATADIR%%/help/GbQtPicture.html
 %%PORTDOCS%%%%DATADIR%%/help/GbQtPictureBox.html
-%%PORTDOCS%%%%DATADIR%%/help/GbQtPictureBoxCProperties.html
-%%PORTDOCS%%%%DATADIR%%/help/GbQtPictureBoxMfree.html
 %%PORTDOCS%%%%DATADIR%%/help/GbQtPictureBoxMnew.html
 %%PORTDOCS%%%%DATADIR%%/help/GbQtPictureBoxPAlignment.html
 %%PORTDOCS%%%%DATADIR%%/help/GbQtPictureBoxPBorder.html
@@ -2523,8 +2377,6 @@ lib/gambas/lib.gb.vb.so.0
 %%PORTDOCS%%%%DATADIR%%/help/GbQtPictureMLoad.html
 %%PORTDOCS%%%%DATADIR%%/help/GbQtPictureMResize.html
 %%PORTDOCS%%%%DATADIR%%/help/GbQtPictureMSave.html
-%%PORTDOCS%%%%DATADIR%%/help/GbQtPictureMexit.html
-%%PORTDOCS%%%%DATADIR%%/help/GbQtPictureMfree.html
 %%PORTDOCS%%%%DATADIR%%/help/GbQtPictureMget.html
 %%PORTDOCS%%%%DATADIR%%/help/GbQtPictureMnew.html
 %%PORTDOCS%%%%DATADIR%%/help/GbQtPictureMput.html
@@ -2541,7 +2393,6 @@ lib/gambas/lib.gb.vb.so.0
 %%PORTDOCS%%%%DATADIR%%/help/GbQtPrinterMAbort.html
 %%PORTDOCS%%%%DATADIR%%/help/GbQtPrinterMNewPage.html
 %%PORTDOCS%%%%DATADIR%%/help/GbQtPrinterMSetup.html
-%%PORTDOCS%%%%DATADIR%%/help/GbQtPrinterMexit.html
 %%PORTDOCS%%%%DATADIR%%/help/GbQtPrinterPColorMode.html
 %%PORTDOCS%%%%DATADIR%%/help/GbQtPrinterPCopies.html
 %%PORTDOCS%%%%DATADIR%%/help/GbQtPrinterPFile.html
@@ -2556,14 +2407,11 @@ lib/gambas/lib.gb.vb.so.0
 %%PORTDOCS%%%%DATADIR%%/help/GbQtPrinterRHeight.html
 %%PORTDOCS%%%%DATADIR%%/help/GbQtPrinterRWidth.html
 %%PORTDOCS%%%%DATADIR%%/help/GbQtProgressBar.html
-%%PORTDOCS%%%%DATADIR%%/help/GbQtProgressBarCProperties.html
 %%PORTDOCS%%%%DATADIR%%/help/GbQtProgressBarMReset.html
 %%PORTDOCS%%%%DATADIR%%/help/GbQtProgressBarMnew.html
 %%PORTDOCS%%%%DATADIR%%/help/GbQtProgressBarPLabel.html
 %%PORTDOCS%%%%DATADIR%%/help/GbQtProgressBarPValue.html
 %%PORTDOCS%%%%DATADIR%%/help/GbQtRadioButton.html
-%%PORTDOCS%%%%DATADIR%%/help/GbQtRadioButtonCDefaultEvent.html
-%%PORTDOCS%%%%DATADIR%%/help/GbQtRadioButtonCProperties.html
 %%PORTDOCS%%%%DATADIR%%/help/GbQtRadioButtonEClick.html
 %%PORTDOCS%%%%DATADIR%%/help/GbQtRadioButtonMnew.html
 %%PORTDOCS%%%%DATADIR%%/help/GbQtRadioButtonPCaption.html
@@ -2575,7 +2423,6 @@ lib/gambas/lib.gb.vb.so.0
 %%PORTDOCS%%%%DATADIR%%/help/GbQtScrollCNone.html
 %%PORTDOCS%%%%DATADIR%%/help/GbQtScrollCVertical.html
 %%PORTDOCS%%%%DATADIR%%/help/GbQtScrollView.html
-%%PORTDOCS%%%%DATADIR%%/help/GbQtScrollViewCProperties.html
 %%PORTDOCS%%%%DATADIR%%/help/GbQtScrollViewMScroll.html
 %%PORTDOCS%%%%DATADIR%%/help/GbQtScrollViewMnew.html
 %%PORTDOCS%%%%DATADIR%%/help/GbQtScrollViewPBackColor.html
@@ -2596,31 +2443,38 @@ lib/gambas/lib.gb.vb.so.0
 %%PORTDOCS%%%%DATADIR%%/help/GbQtTabChildrenRCount.html
 %%PORTDOCS%%%%DATADIR%%/help/GbQtTabPCaption.html
 %%PORTDOCS%%%%DATADIR%%/help/GbQtTabPEnabled.html
+%%PORTDOCS%%%%DATADIR%%/help/GbQtTabPPicture.html
 %%PORTDOCS%%%%DATADIR%%/help/GbQtTabPText.html
 %%PORTDOCS%%%%DATADIR%%/help/GbQtTabRChildren.html
 %%PORTDOCS%%%%DATADIR%%/help/GbQtTabStrip.html
 %%PORTDOCS%%%%DATADIR%%/help/GbQtTabStripCBottom.html
-%%PORTDOCS%%%%DATADIR%%/help/GbQtTabStripCDefaultEvent.html
-%%PORTDOCS%%%%DATADIR%%/help/GbQtTabStripCProperties.html
 %%PORTDOCS%%%%DATADIR%%/help/GbQtTabStripCTop.html
 %%PORTDOCS%%%%DATADIR%%/help/GbQtTabStripEClick.html
-%%PORTDOCS%%%%DATADIR%%/help/GbQtTabStripMfree.html
 %%PORTDOCS%%%%DATADIR%%/help/GbQtTabStripMget.html
 %%PORTDOCS%%%%DATADIR%%/help/GbQtTabStripMnew.html
+%%PORTDOCS%%%%DATADIR%%/help/GbQtTabStripPArrangement.html
+%%PORTDOCS%%%%DATADIR%%/help/GbQtTabStripPAutoResize.html
 %%PORTDOCS%%%%DATADIR%%/help/GbQtTabStripPCaption.html
 %%PORTDOCS%%%%DATADIR%%/help/GbQtTabStripPCount.html
+%%PORTDOCS%%%%DATADIR%%/help/GbQtTabStripPEnabled.html
 %%PORTDOCS%%%%DATADIR%%/help/GbQtTabStripPIndex.html
 %%PORTDOCS%%%%DATADIR%%/help/GbQtTabStripPOrientation.html
+%%PORTDOCS%%%%DATADIR%%/help/GbQtTabStripPPadding.html
+%%PORTDOCS%%%%DATADIR%%/help/GbQtTabStripPPicture.html
+%%PORTDOCS%%%%DATADIR%%/help/GbQtTabStripPSpacing.html
 %%PORTDOCS%%%%DATADIR%%/help/GbQtTabStripPText.html
+%%PORTDOCS%%%%DATADIR%%/help/GbQtTabStripRClientH.html
+%%PORTDOCS%%%%DATADIR%%/help/GbQtTabStripRClientHeight.html
+%%PORTDOCS%%%%DATADIR%%/help/GbQtTabStripRClientW.html
+%%PORTDOCS%%%%DATADIR%%/help/GbQtTabStripRClientWidth.html
 %%PORTDOCS%%%%DATADIR%%/help/GbQtTabStripRCurrent.html
 %%PORTDOCS%%%%DATADIR%%/help/GbQtTextArea.html
-%%PORTDOCS%%%%DATADIR%%/help/GbQtTextAreaCDefaultEvent.html
-%%PORTDOCS%%%%DATADIR%%/help/GbQtTextAreaCProperties.html
 %%PORTDOCS%%%%DATADIR%%/help/GbQtTextAreaEChange.html
 %%PORTDOCS%%%%DATADIR%%/help/GbQtTextAreaECursor.html
 %%PORTDOCS%%%%DATADIR%%/help/GbQtTextAreaMClear.html
 %%PORTDOCS%%%%DATADIR%%/help/GbQtTextAreaMCopy.html
 %%PORTDOCS%%%%DATADIR%%/help/GbQtTextAreaMCut.html
+%%PORTDOCS%%%%DATADIR%%/help/GbQtTextAreaMEnsureVisible.html
 %%PORTDOCS%%%%DATADIR%%/help/GbQtTextAreaMInsert.html
 %%PORTDOCS%%%%DATADIR%%/help/GbQtTextAreaMPaste.html
 %%PORTDOCS%%%%DATADIR%%/help/GbQtTextAreaMRedo.html
@@ -2637,16 +2491,18 @@ lib/gambas/lib.gb.vb.so.0
 %%PORTDOCS%%%%DATADIR%%/help/GbQtTextAreaPText.html
 %%PORTDOCS%%%%DATADIR%%/help/GbQtTextAreaPWrap.html
 %%PORTDOCS%%%%DATADIR%%/help/GbQtTextAreaRLength.html
+%%PORTDOCS%%%%DATADIR%%/help/GbQtTextAreaRSelect.html
 %%PORTDOCS%%%%DATADIR%%/help/GbQtTextAreaRSelection.html
 %%PORTDOCS%%%%DATADIR%%/help/GbQtTextAreaSelection.html
+%%PORTDOCS%%%%DATADIR%%/help/GbQtTextAreaSelectionMAll.html
 %%PORTDOCS%%%%DATADIR%%/help/GbQtTextAreaSelectionMClear.html
+%%PORTDOCS%%%%DATADIR%%/help/GbQtTextAreaSelectionMHide.html
 %%PORTDOCS%%%%DATADIR%%/help/GbQtTextAreaSelectionMcall.html
 %%PORTDOCS%%%%DATADIR%%/help/GbQtTextAreaSelectionPText.html
 %%PORTDOCS%%%%DATADIR%%/help/GbQtTextAreaSelectionRLength.html
+%%PORTDOCS%%%%DATADIR%%/help/GbQtTextAreaSelectionRPos.html
 %%PORTDOCS%%%%DATADIR%%/help/GbQtTextAreaSelectionRStart.html
 %%PORTDOCS%%%%DATADIR%%/help/GbQtTextBox.html
-%%PORTDOCS%%%%DATADIR%%/help/GbQtTextBoxCDefaultEvent.html
-%%PORTDOCS%%%%DATADIR%%/help/GbQtTextBoxCProperties.html
 %%PORTDOCS%%%%DATADIR%%/help/GbQtTextBoxEActivate.html
 %%PORTDOCS%%%%DATADIR%%/help/GbQtTextBoxEChange.html
 %%PORTDOCS%%%%DATADIR%%/help/GbQtTextBoxMClear.html
@@ -2660,33 +2516,30 @@ lib/gambas/lib.gb.vb.so.0
 %%PORTDOCS%%%%DATADIR%%/help/GbQtTextBoxPReadOnly.html
 %%PORTDOCS%%%%DATADIR%%/help/GbQtTextBoxPText.html
 %%PORTDOCS%%%%DATADIR%%/help/GbQtTextBoxRLength.html
+%%PORTDOCS%%%%DATADIR%%/help/GbQtTextBoxRSelect.html
 %%PORTDOCS%%%%DATADIR%%/help/GbQtTextBoxRSelection.html
 %%PORTDOCS%%%%DATADIR%%/help/GbQtTextBoxSelection.html
+%%PORTDOCS%%%%DATADIR%%/help/GbQtTextBoxSelectionMAll.html
 %%PORTDOCS%%%%DATADIR%%/help/GbQtTextBoxSelectionMClear.html
+%%PORTDOCS%%%%DATADIR%%/help/GbQtTextBoxSelectionMHide.html
 %%PORTDOCS%%%%DATADIR%%/help/GbQtTextBoxSelectionMcall.html
 %%PORTDOCS%%%%DATADIR%%/help/GbQtTextBoxSelectionPText.html
 %%PORTDOCS%%%%DATADIR%%/help/GbQtTextBoxSelectionRLength.html
+%%PORTDOCS%%%%DATADIR%%/help/GbQtTextBoxSelectionRPos.html
 %%PORTDOCS%%%%DATADIR%%/help/GbQtTextBoxSelectionRStart.html
 %%PORTDOCS%%%%DATADIR%%/help/GbQtTextLabel.html
-%%PORTDOCS%%%%DATADIR%%/help/GbQtTextLabelCProperties.html
 %%PORTDOCS%%%%DATADIR%%/help/GbQtTextLabelMnew.html
 %%PORTDOCS%%%%DATADIR%%/help/GbQtTextLabelPAlignment.html
 %%PORTDOCS%%%%DATADIR%%/help/GbQtTextLabelPBorder.html
 %%PORTDOCS%%%%DATADIR%%/help/GbQtTextLabelPCaption.html
 %%PORTDOCS%%%%DATADIR%%/help/GbQtTextLabelPText.html
 %%PORTDOCS%%%%DATADIR%%/help/GbQtTimer.html
-%%PORTDOCS%%%%DATADIR%%/help/GbQtTimerCDefaultEvent.html
-%%PORTDOCS%%%%DATADIR%%/help/GbQtTimerCProperties.html
 %%PORTDOCS%%%%DATADIR%%/help/GbQtTimerETimer.html
-%%PORTDOCS%%%%DATADIR%%/help/GbQtTimerMfree.html
 %%PORTDOCS%%%%DATADIR%%/help/GbQtTimerMnew.html
 %%PORTDOCS%%%%DATADIR%%/help/GbQtTimerPDelay.html
 %%PORTDOCS%%%%DATADIR%%/help/GbQtTimerPEnabled.html
 %%PORTDOCS%%%%DATADIR%%/help/GbQtToggleButton.html
-%%PORTDOCS%%%%DATADIR%%/help/GbQtToggleButtonCDefaultEvent.html
-%%PORTDOCS%%%%DATADIR%%/help/GbQtToggleButtonCProperties.html
 %%PORTDOCS%%%%DATADIR%%/help/GbQtToggleButtonEClick.html
-%%PORTDOCS%%%%DATADIR%%/help/GbQtToggleButtonMfree.html
 %%PORTDOCS%%%%DATADIR%%/help/GbQtToggleButtonMnew.html
 %%PORTDOCS%%%%DATADIR%%/help/GbQtToggleButtonPBorder.html
 %%PORTDOCS%%%%DATADIR%%/help/GbQtToggleButtonPCaption.html
@@ -2694,10 +2547,7 @@ lib/gambas/lib.gb.vb.so.0
 %%PORTDOCS%%%%DATADIR%%/help/GbQtToggleButtonPText.html
 %%PORTDOCS%%%%DATADIR%%/help/GbQtToggleButtonPValue.html
 %%PORTDOCS%%%%DATADIR%%/help/GbQtToolButton.html
-%%PORTDOCS%%%%DATADIR%%/help/GbQtToolButtonCDefaultEvent.html
-%%PORTDOCS%%%%DATADIR%%/help/GbQtToolButtonCProperties.html
 %%PORTDOCS%%%%DATADIR%%/help/GbQtToolButtonEClick.html
-%%PORTDOCS%%%%DATADIR%%/help/GbQtToolButtonMfree.html
 %%PORTDOCS%%%%DATADIR%%/help/GbQtToolButtonMnew.html
 %%PORTDOCS%%%%DATADIR%%/help/GbQtToolButtonPBorder.html
 %%PORTDOCS%%%%DATADIR%%/help/GbQtToolButtonPCaption.html
@@ -2706,11 +2556,9 @@ lib/gambas/lib.gb.vb.so.0
 %%PORTDOCS%%%%DATADIR%%/help/GbQtToolButtonPToggle.html
 %%PORTDOCS%%%%DATADIR%%/help/GbQtToolButtonPValue.html
 %%PORTDOCS%%%%DATADIR%%/help/GbQtTreeView.html
-%%PORTDOCS%%%%DATADIR%%/help/GbQtTreeViewCDefaultEvent.html
 %%PORTDOCS%%%%DATADIR%%/help/GbQtTreeViewCExtended.html
 %%PORTDOCS%%%%DATADIR%%/help/GbQtTreeViewCMulti.html
 %%PORTDOCS%%%%DATADIR%%/help/GbQtTreeViewCNone.html
-%%PORTDOCS%%%%DATADIR%%/help/GbQtTreeViewCProperties.html
 %%PORTDOCS%%%%DATADIR%%/help/GbQtTreeViewCSingle.html
 %%PORTDOCS%%%%DATADIR%%/help/GbQtTreeViewEActivate.html
 %%PORTDOCS%%%%DATADIR%%/help/GbQtTreeViewEClick.html
@@ -2752,7 +2600,6 @@ lib/gambas/lib.gb.vb.so.0
 %%PORTDOCS%%%%DATADIR%%/help/GbQtTreeViewMMovePrevious.html
 %%PORTDOCS%%%%DATADIR%%/help/GbQtTreeViewMMoveTo.html
 %%PORTDOCS%%%%DATADIR%%/help/GbQtTreeViewMRemove.html
-%%PORTDOCS%%%%DATADIR%%/help/GbQtTreeViewMfree.html
 %%PORTDOCS%%%%DATADIR%%/help/GbQtTreeViewMget.html
 %%PORTDOCS%%%%DATADIR%%/help/GbQtTreeViewMnew.html
 %%PORTDOCS%%%%DATADIR%%/help/GbQtTreeViewPBorder.html
@@ -2770,15 +2617,21 @@ lib/gambas/lib.gb.vb.so.0
 %%PORTDOCS%%%%DATADIR%%/help/GbQtTreeViewRCurrent.html
 %%PORTDOCS%%%%DATADIR%%/help/GbQtTreeViewRItem.html
 %%PORTDOCS%%%%DATADIR%%/help/GbQtTreeViewRKey.html
+%%PORTDOCS%%%%DATADIR%%/help/GbQtVBox.html
+%%PORTDOCS%%%%DATADIR%%/help/GbQtVBoxMnew.html
+%%PORTDOCS%%%%DATADIR%%/help/GbQtVBoxPPadding.html
+%%PORTDOCS%%%%DATADIR%%/help/GbQtVBoxPSpacing.html
+%%PORTDOCS%%%%DATADIR%%/help/GbQtVPanel.html
+%%PORTDOCS%%%%DATADIR%%/help/GbQtVPanelMnew.html
+%%PORTDOCS%%%%DATADIR%%/help/GbQtVPanelPPadding.html
+%%PORTDOCS%%%%DATADIR%%/help/GbQtVPanelPSpacing.html
 %%PORTDOCS%%%%DATADIR%%/help/GbQtWindow.html
-%%PORTDOCS%%%%DATADIR%%/help/GbQtWindowCDefaultEvent.html
 %%PORTDOCS%%%%DATADIR%%/help/GbQtWindowCFixed.html
 %%PORTDOCS%%%%DATADIR%%/help/GbQtWindowCFullScreen.html
 %%PORTDOCS%%%%DATADIR%%/help/GbQtWindowCMaximized.html
 %%PORTDOCS%%%%DATADIR%%/help/GbQtWindowCMinimized.html
 %%PORTDOCS%%%%DATADIR%%/help/GbQtWindowCNone.html
 %%PORTDOCS%%%%DATADIR%%/help/GbQtWindowCNormal.html
-%%PORTDOCS%%%%DATADIR%%/help/GbQtWindowCProperties.html
 %%PORTDOCS%%%%DATADIR%%/help/GbQtWindowCResizable.html
 %%PORTDOCS%%%%DATADIR%%/help/GbQtWindowEActivate.html
 %%PORTDOCS%%%%DATADIR%%/help/GbQtWindowEClose.html
@@ -2798,16 +2651,16 @@ lib/gambas/lib.gb.vb.so.0
 %%PORTDOCS%%%%DATADIR%%/help/GbQtWindowMenus.html
 %%PORTDOCS%%%%DATADIR%%/help/GbQtWindowMenusMnext.html
 %%PORTDOCS%%%%DATADIR%%/help/GbQtWindowMenusRCount.html
-%%PORTDOCS%%%%DATADIR%%/help/GbQtWindowMfree.html
-%%PORTDOCS%%%%DATADIR%%/help/GbQtWindowMinit.html
 %%PORTDOCS%%%%DATADIR%%/help/GbQtWindowMnew.html
 %%PORTDOCS%%%%DATADIR%%/help/GbQtWindowPArrangement.html
 %%PORTDOCS%%%%DATADIR%%/help/GbQtWindowPBorder.html
 %%PORTDOCS%%%%DATADIR%%/help/GbQtWindowPCaption.html
 %%PORTDOCS%%%%DATADIR%%/help/GbQtWindowPIcon.html
 %%PORTDOCS%%%%DATADIR%%/help/GbQtWindowPMask.html
+%%PORTDOCS%%%%DATADIR%%/help/GbQtWindowPPadding.html
 %%PORTDOCS%%%%DATADIR%%/help/GbQtWindowPPersistent.html
 %%PORTDOCS%%%%DATADIR%%/help/GbQtWindowPSkipTaskbar.html
+%%PORTDOCS%%%%DATADIR%%/help/GbQtWindowPSpacing.html
 %%PORTDOCS%%%%DATADIR%%/help/GbQtWindowPState.html
 %%PORTDOCS%%%%DATADIR%%/help/GbQtWindowPText.html
 %%PORTDOCS%%%%DATADIR%%/help/GbQtWindowPTitle.html
@@ -2816,6 +2669,7 @@ lib/gambas/lib.gb.vb.so.0
 %%PORTDOCS%%%%DATADIR%%/help/GbQtWindowRHandle.html
 %%PORTDOCS%%%%DATADIR%%/help/GbQtWindowRId.html
 %%PORTDOCS%%%%DATADIR%%/help/GbQtWindowRMenus.html
+%%PORTDOCS%%%%DATADIR%%/help/GbQtWindowRModal.html
 %%PORTDOCS%%%%DATADIR%%/help/GbQtWindows.html
 %%PORTDOCS%%%%DATADIR%%/help/GbQtWindowsMget.html
 %%PORTDOCS%%%%DATADIR%%/help/GbQtWindowsMnext.html
@@ -2825,7 +2679,6 @@ lib/gambas/lib.gb.vb.so.0
 %%PORTDOCS%%%%DATADIR%%/help/GbSdlChannelMPause.html
 %%PORTDOCS%%%%DATADIR%%/help/GbSdlChannelMPlay.html
 %%PORTDOCS%%%%DATADIR%%/help/GbSdlChannelMStop.html
-%%PORTDOCS%%%%DATADIR%%/help/GbSdlChannelMexit.html
 %%PORTDOCS%%%%DATADIR%%/help/GbSdlChannels.html
 %%PORTDOCS%%%%DATADIR%%/help/GbSdlChannelsMget.html
 %%PORTDOCS%%%%DATADIR%%/help/GbSdlChannelsPCount.html
@@ -2837,10 +2690,15 @@ lib/gambas/lib.gb.vb.so.0
 %%PORTDOCS%%%%DATADIR%%/help/GbSdlMusicPPos.html
 %%PORTDOCS%%%%DATADIR%%/help/GbSdlSound.html
 %%PORTDOCS%%%%DATADIR%%/help/GbSdlSoundMPlay.html
-%%PORTDOCS%%%%DATADIR%%/help/GbSdlSoundMfree.html
 %%PORTDOCS%%%%DATADIR%%/help/GbSdlSoundMnew.html
+%%PORTDOCS%%%%DATADIR%%/help/GbSettings.html
+%%PORTDOCS%%%%DATADIR%%/help/GbSettingsMSave.html
+%%PORTDOCS%%%%DATADIR%%/help/GbSettingsMget.html
+%%PORTDOCS%%%%DATADIR%%/help/GbSettingsMnew.html
+%%PORTDOCS%%%%DATADIR%%/help/GbSettingsMput.html
 %%PORTDOCS%%%%DATADIR%%/help/GbShortArray.html
 %%PORTDOCS%%%%DATADIR%%/help/GbShortArrayMAdd.html
+%%PORTDOCS%%%%DATADIR%%/help/GbShortArrayMCopy.html
 %%PORTDOCS%%%%DATADIR%%/help/GbShortArrayMFind.html
 %%PORTDOCS%%%%DATADIR%%/help/GbShortArrayMInsert.html
 %%PORTDOCS%%%%DATADIR%%/help/GbShortArrayMPop.html
@@ -2852,8 +2710,10 @@ lib/gambas/lib.gb.vb.so.0
 %%PORTDOCS%%%%DATADIR%%/help/GbShortArrayMnext.html
 %%PORTDOCS%%%%DATADIR%%/help/GbShortArrayMput.html
 %%PORTDOCS%%%%DATADIR%%/help/GbStream.html
+%%PORTDOCS%%%%DATADIR%%/help/GbString.html
 %%PORTDOCS%%%%DATADIR%%/help/GbStringArray.html
 %%PORTDOCS%%%%DATADIR%%/help/GbStringArrayMAdd.html
+%%PORTDOCS%%%%DATADIR%%/help/GbStringArrayMCopy.html
 %%PORTDOCS%%%%DATADIR%%/help/GbStringArrayMFind.html
 %%PORTDOCS%%%%DATADIR%%/help/GbStringArrayMInsert.html
 %%PORTDOCS%%%%DATADIR%%/help/GbStringArrayMJoin.html
@@ -2864,6 +2724,21 @@ lib/gambas/lib.gb.vb.so.0
 %%PORTDOCS%%%%DATADIR%%/help/GbStringArrayMnew.html
 %%PORTDOCS%%%%DATADIR%%/help/GbStringArrayMnext.html
 %%PORTDOCS%%%%DATADIR%%/help/GbStringArrayMput.html
+%%PORTDOCS%%%%DATADIR%%/help/GbStringMLCase.html
+%%PORTDOCS%%%%DATADIR%%/help/GbStringMLeft.html
+%%PORTDOCS%%%%DATADIR%%/help/GbStringMLen.html
+%%PORTDOCS%%%%DATADIR%%/help/GbStringMLower.html
+%%PORTDOCS%%%%DATADIR%%/help/GbStringMMid.html
+%%PORTDOCS%%%%DATADIR%%/help/GbStringMPos.html
+%%PORTDOCS%%%%DATADIR%%/help/GbStringMRight.html
+%%PORTDOCS%%%%DATADIR%%/help/GbStringMUCase.html
+%%PORTDOCS%%%%DATADIR%%/help/GbStringMUpper.html
+%%PORTDOCS%%%%DATADIR%%/help/GbSubCollection.html
+%%PORTDOCS%%%%DATADIR%%/help/GbSubCollectionMExist.html
+%%PORTDOCS%%%%DATADIR%%/help/GbSubCollectionMget.html
+%%PORTDOCS%%%%DATADIR%%/help/GbSubCollectionMnext.html
+%%PORTDOCS%%%%DATADIR%%/help/GbSubCollectionRCount.html
+%%PORTDOCS%%%%DATADIR%%/help/GbSubCollectionRLength.html
 %%PORTDOCS%%%%DATADIR%%/help/GbSymbol.html
 %%PORTDOCS%%%%DATADIR%%/help/GbSymbolRHidden.html
 %%PORTDOCS%%%%DATADIR%%/help/GbSymbolRKind.html
@@ -2876,9 +2751,14 @@ lib/gambas/lib.gb.vb.so.0
 %%PORTDOCS%%%%DATADIR%%/help/GbSystem.html
 %%PORTDOCS%%%%DATADIR%%/help/GbSystemPLanguage.html
 %%PORTDOCS%%%%DATADIR%%/help/GbSystemRCharset.html
+%%PORTDOCS%%%%DATADIR%%/help/GbSystemRDomain.html
+%%PORTDOCS%%%%DATADIR%%/help/GbSystemRHome.html
+%%PORTDOCS%%%%DATADIR%%/help/GbSystemRHost.html
 %%PORTDOCS%%%%DATADIR%%/help/GbSystemRPath.html
+%%PORTDOCS%%%%DATADIR%%/help/GbSystemRUser.html
 %%PORTDOCS%%%%DATADIR%%/help/GbVariantArray.html
 %%PORTDOCS%%%%DATADIR%%/help/GbVariantArrayMAdd.html
+%%PORTDOCS%%%%DATADIR%%/help/GbVariantArrayMCopy.html
 %%PORTDOCS%%%%DATADIR%%/help/GbVariantArrayMInsert.html
 %%PORTDOCS%%%%DATADIR%%/help/GbVariantArrayMPop.html
 %%PORTDOCS%%%%DATADIR%%/help/GbVariantArrayMPush.html
@@ -2888,6 +2768,8 @@ lib/gambas/lib.gb.vb.so.0
 %%PORTDOCS%%%%DATADIR%%/help/GbVariantArrayMput.html
 %%PORTDOCS%%%%DATADIR%%/help/GbVb.html
 %%PORTDOCS%%%%DATADIR%%/help/GbVbVb.html
+%%PORTDOCS%%%%DATADIR%%/help/GbVbVbMDateAdd.html
+%%PORTDOCS%%%%DATADIR%%/help/GbVbVbMDateDiff.html
 %%PORTDOCS%%%%DATADIR%%/help/GbVbVbMLeft.html
 %%PORTDOCS%%%%DATADIR%%/help/GbVbVbMMid.html
 %%PORTDOCS%%%%DATADIR%%/help/GbVbVbMRight.html
@@ -2895,7 +2777,9 @@ lib/gambas/lib.gb.vb.so.0
 %%PORTDOCS%%%%DATADIR%%/help/GbVbVbMVal.html
 %%PORTDOCS%%%%DATADIR%%/help/GeorgBrandl.html
 %%PORTDOCS%%%%DATADIR%%/help/GeorgesCannard.html
+%%PORTDOCS%%%%DATADIR%%/help/HansMartinBundeshund.html
 %%PORTDOCS%%%%DATADIR%%/help/HelbertJacques.html
+%%PORTDOCS%%%%DATADIR%%/help/HelmaEben.html
 %%PORTDOCS%%%%DATADIR%%/help/HowDoIChangeTheScaleOfADrawingArea.html
 %%PORTDOCS%%%%DATADIR%%/help/HowDoICompareStringsUsingLike.html
 %%PORTDOCS%%%%DATADIR%%/help/HowDoIConcatenateStrings.html
@@ -2940,14 +2824,20 @@ lib/gambas/lib.gb.vb.so.0
 %%PORTDOCS%%%%DATADIR%%/help/IndexByCategory.html
 %%PORTDOCS%%%%DATADIR%%/help/IndexByName.html
 %%PORTDOCS%%%%DATADIR%%/help/InfoExtract.html
+%%PORTDOCS%%%%DATADIR%%/help/InputBox.html
 %%PORTDOCS%%%%DATADIR%%/help/JackyScops.html
 %%PORTDOCS%%%%DATADIR%%/help/JakeStookey.html
+%%PORTDOCS%%%%DATADIR%%/help/JanaLingo.html
 %%PORTDOCS%%%%DATADIR%%/help/JaniT.html
 %%PORTDOCS%%%%DATADIR%%/help/JeanPierreWeber.html
 %%PORTDOCS%%%%DATADIR%%/help/JohnTumath.html
+%%PORTDOCS%%%%DATADIR%%/help/JorgePerrone.html
+%%PORTDOCS%%%%DATADIR%%/help/JoseLRedrejo.html
 %%PORTDOCS%%%%DATADIR%%/help/JoseMunoz.html
+%%PORTDOCS%%%%DATADIR%%/help/JosefWimmer.html
 %%PORTDOCS%%%%DATADIR%%/help/KanwarPlaha.html
 %%PORTDOCS%%%%DATADIR%%/help/KarinaBuenaventura.html
+%%PORTDOCS%%%%DATADIR%%/help/KeyCodeProgram.html
 %%PORTDOCS%%%%DATADIR%%/help/KeyReleaseProgram.html
 %%PORTDOCS%%%%DATADIR%%/help/KholiqulKarim.html
 %%PORTDOCS%%%%DATADIR%%/help/LaneLester.html
@@ -3109,6 +2999,7 @@ lib/gambas/lib.gb.vb.so.0
 %%PORTDOCS%%%%DATADIR%%/help/LangSTOP.html
 %%PORTDOCS%%%%DATADIR%%/help/LangSTOPEVENT.html
 %%PORTDOCS%%%%DATADIR%%/help/LangSUB.html
+%%PORTDOCS%%%%DATADIR%%/help/LangSWAP.html
 %%PORTDOCS%%%%DATADIR%%/help/LangSecond.html
 %%PORTDOCS%%%%DATADIR%%/help/LangSeek.html
 %%PORTDOCS%%%%DATADIR%%/help/LangSgn.html
@@ -3146,10 +3037,11 @@ lib/gambas/lib.gb.vb.so.0
 %%PORTDOCS%%%%DATADIR%%/help/LangWHILE.html
 %%PORTDOCS%%%%DATADIR%%/help/LangWITH.html
 %%PORTDOCS%%%%DATADIR%%/help/LangWRITE.html
-%%PORTDOCS%%%%DATADIR%%/help/LangWeblinks.html
 %%PORTDOCS%%%%DATADIR%%/help/LangWeekDay.html
 %%PORTDOCS%%%%DATADIR%%/help/LangXOR.html
 %%PORTDOCS%%%%DATADIR%%/help/LangYear.html
+%%PORTDOCS%%%%DATADIR%%/help/LaszloZsembery.html
+%%PORTDOCS%%%%DATADIR%%/help/LaurentCarlier.html
 %%PORTDOCS%%%%DATADIR%%/help/LewisEichorn.html
 %%PORTDOCS%%%%DATADIR%%/help/Libraries.html
 %%PORTDOCS%%%%DATADIR%%/help/LibraryUtil.html
@@ -3157,6 +3049,8 @@ lib/gambas/lib.gb.vb.so.0
 %%PORTDOCS%%%%DATADIR%%/help/LinuxFrench.html
 %%PORTDOCS%%%%DATADIR%%/help/LuizOliveira.html
 %%PORTDOCS%%%%DATADIR%%/help/MadhuVT.html
+%%PORTDOCS%%%%DATADIR%%/help/MandrakePackages.html
+%%PORTDOCS%%%%DATADIR%%/help/ManoelSantana.html
 %%PORTDOCS%%%%DATADIR%%/help/MartinJones.html
 %%PORTDOCS%%%%DATADIR%%/help/MathFunctionProgram.html
 %%PORTDOCS%%%%DATADIR%%/help/MohammedMuddassir.html
@@ -3167,8 +3061,8 @@ lib/gambas/lib.gb.vb.so.0
 %%PORTDOCS%%%%DATADIR%%/help/NigelGerrard.html
 %%PORTDOCS%%%%DATADIR%%/help/NobodyGroup.html
 %%PORTDOCS%%%%DATADIR%%/help/OfficeLocations.html
-%%PORTDOCS%%%%DATADIR%%/help/OldDefaultContentsOfWiki.html
 %%PORTDOCS%%%%DATADIR%%/help/PabloSaborio.html
+%%PORTDOCS%%%%DATADIR%%/help/PaoloSaudin.html
 %%PORTDOCS%%%%DATADIR%%/help/ParrotBasic.html
 %%PORTDOCS%%%%DATADIR%%/help/PaulRobinson.html
 %%PORTDOCS%%%%DATADIR%%/help/PaulinoMichelazzo.html
@@ -3181,6 +3075,7 @@ lib/gambas/lib.gb.vb.so.0
 %%PORTDOCS%%%%DATADIR%%/help/RaymondMoore.html
 %%PORTDOCS%%%%DATADIR%%/help/ReinerHoffmann.html
 %%PORTDOCS%%%%DATADIR%%/help/RenzoSolfaroli.html
+%%PORTDOCS%%%%DATADIR%%/help/RicardoLuis.html
 %%PORTDOCS%%%%DATADIR%%/help/RobKudla.html
 %%PORTDOCS%%%%DATADIR%%/help/RomainCHAUMAIS.html
 %%PORTDOCS%%%%DATADIR%%/help/RonaldGrasso.html
@@ -3192,6 +3087,7 @@ lib/gambas/lib.gb.vb.so.0
 %%PORTDOCS%%%%DATADIR%%/help/SpiralProgram.html
 %%PORTDOCS%%%%DATADIR%%/help/SpiralProgramm.html
 %%PORTDOCS%%%%DATADIR%%/help/StefanusEddy.html
+%%PORTDOCS%%%%DATADIR%%/help/StepByStepProgram.html
 %%PORTDOCS%%%%DATADIR%%/help/StephanGans.html
 %%PORTDOCS%%%%DATADIR%%/help/StephaneMartin.html
 %%PORTDOCS%%%%DATADIR%%/help/SunsetProgram.html
@@ -3201,6 +3097,7 @@ lib/gambas/lib.gb.vb.so.0
 %%PORTDOCS%%%%DATADIR%%/help/TWikiUsers.html
 %%PORTDOCS%%%%DATADIR%%/help/TWikiVariables.html
 %%PORTDOCS%%%%DATADIR%%/help/TrademarkAttributions.html
+%%PORTDOCS%%%%DATADIR%%/help/ValerioGuaglianone.html
 %%PORTDOCS%%%%DATADIR%%/help/VisualIntroductionToGambas.html
 %%PORTDOCS%%%%DATADIR%%/help/VolkerEbbert.html
 %%PORTDOCS%%%%DATADIR%%/help/WebChanges.html
@@ -3216,6 +3113,7 @@ lib/gambas/lib.gb.vb.so.0
 %%PORTDOCS%%%%DATADIR%%/help/WebSiteIntroduction.html
 %%PORTDOCS%%%%DATADIR%%/help/WebSiteScreenshots.html
 %%PORTDOCS%%%%DATADIR%%/help/WebStatistics.html
+%%PORTDOCS%%%%DATADIR%%/help/WebTopicList.html
 %%PORTDOCS%%%%DATADIR%%/help/WikiExportTodoList.html
 %%PORTDOCS%%%%DATADIR%%/help/WikiName.html
 %%PORTDOCS%%%%DATADIR%%/help/WikiRon.html
@@ -3276,6 +3174,7 @@ lib/gambas/lib.gb.vb.so.0
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/WebChanges
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/VolkerEbbert
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/VisualIntroductionToGambas
+%%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/ValerioGuaglianone
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/TrademarkAttributions
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/TWikiVariables
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/TWikiUsers
@@ -3285,6 +3184,7 @@ lib/gambas/lib.gb.vb.so.0
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/SunsetProgram
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/StephaneMartin
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/StephanGans
+%%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/StepByStepProgram
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/StefanusEddy
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/SpiralProgramm
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/SpiralProgram
@@ -3296,6 +3196,7 @@ lib/gambas/lib.gb.vb.so.0
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/RonaldGrasso
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/RomainCHAUMAIS
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/RobKudla
+%%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/RicardoLuis
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/RenzoSolfaroli
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/ReinerHoffmann
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/RaymondMoore
@@ -3308,6 +3209,7 @@ lib/gambas/lib.gb.vb.so.0
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/PaulinoMichelazzo
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/PaulRobinson
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/ParrotBasic
+%%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/PaoloSaudin
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/PabloSaborio
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/OfficeLocations
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/NobodyGroup
@@ -3319,14 +3221,17 @@ lib/gambas/lib.gb.vb.so.0
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/MohammedMuddassir
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/MathFunctionProgram
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/MartinJones
+%%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/ManoelSantana
+%%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/MandrakePackages
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/MadhuVT
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/LuizOliveira
-%%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/ListOfComponentIcons
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/LinuxFrench
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/LibraryUtilConfig
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/LibraryUtil
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/Libraries
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/LewisEichorn
+%%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/LaurentCarlier
+%%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/LaszloZsembery
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/LangYear
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/LangXOR
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/LangWeekDay
@@ -3367,6 +3272,7 @@ lib/gambas/lib.gb.vb.so.0
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/LangSgn
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/LangSeek
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/LangSecond
+%%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/LangSWAP
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/LangSUB
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/LangSTOPEVENT
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/LangSTOP
@@ -3528,14 +3434,20 @@ lib/gambas/lib.gb.vb.so.0
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/LaneLester
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/KholiqulKarim
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/KeyReleaseProgram
+%%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/KeyCodeProgram
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/KarinaBuenaventura
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/KanwarPlaha
+%%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/JosefWimmer
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/JoseMunoz
+%%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/JoseLRedrejo
+%%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/JorgePerrone
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/JohnTumath
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/JeanPierreWeber
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/JaniT
+%%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/JanaLingo
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/JakeStookey
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/JackyScops
+%%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/InputBox
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/InfoExtract
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/IndexByName
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/IndexByCategory
@@ -3580,7 +3492,9 @@ lib/gambas/lib.gb.vb.so.0
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/HowDoIConcatenateStrings
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/HowDoICompareStringsUsingLike
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/HowDoIChangeTheScaleOfADrawingArea
+%%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/HelmaEben
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/HelbertJacques
+%%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/HansMartinBundeshund
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GeorgesCannard
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GeorgBrandl
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbVbVbMVal
@@ -3588,6 +3502,8 @@ lib/gambas/lib.gb.vb.so.0
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbVbVbMRight
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbVbVbMMid
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbVbVbMLeft
+%%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbVbVbMDateDiff
+%%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbVbVbMDateAdd
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbVbVb
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbVb
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbVariantArrayMput
@@ -3597,9 +3513,14 @@ lib/gambas/lib.gb.vb.so.0
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbVariantArrayMPush
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbVariantArrayMPop
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbVariantArrayMInsert
+%%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbVariantArrayMCopy
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbVariantArrayMAdd
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbVariantArray
+%%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbSystemRUser
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbSystemRPath
+%%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbSystemRHost
+%%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbSystemRHome
+%%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbSystemRDomain
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbSystemRCharset
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbSystemPLanguage
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbSystem
@@ -3612,6 +3533,21 @@ lib/gambas/lib.gb.vb.so.0
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbSymbolRKind
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbSymbolRHidden
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbSymbol
+%%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbSubCollectionRLength
+%%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbSubCollectionRCount
+%%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbSubCollectionMnext
+%%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbSubCollectionMget
+%%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbSubCollectionMExist
+%%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbSubCollection
+%%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbStringMUpper
+%%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbStringMUCase
+%%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbStringMRight
+%%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbStringMPos
+%%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbStringMMid
+%%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbStringMLower
+%%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbStringMLen
+%%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbStringMLeft
+%%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbStringMLCase
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbStringArrayMput
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbStringArrayMnext
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbStringArrayMnew
@@ -3622,8 +3558,10 @@ lib/gambas/lib.gb.vb.so.0
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbStringArrayMJoin
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbStringArrayMInsert
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbStringArrayMFind
+%%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbStringArrayMCopy
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbStringArrayMAdd
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbStringArray
+%%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbString
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbStream
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbShortArrayMput
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbShortArrayMnext
@@ -3635,10 +3573,15 @@ lib/gambas/lib.gb.vb.so.0
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbShortArrayMPop
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbShortArrayMInsert
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbShortArrayMFind
+%%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbShortArrayMCopy
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbShortArrayMAdd
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbShortArray
+%%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbSettingsMput
+%%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbSettingsMnew
+%%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbSettingsMget
+%%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbSettingsMSave
+%%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbSettings
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbSdlSoundMnew
-%%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbSdlSoundMfree
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbSdlSoundMPlay
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbSdlSound
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbSdlMusicPPos
@@ -3650,7 +3593,6 @@ lib/gambas/lib.gb.vb.so.0
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbSdlChannelsPCount
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbSdlChannelsMget
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbSdlChannels
-%%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbSdlChannelMexit
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbSdlChannelMStop
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbSdlChannelMPlay
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbSdlChannelMPause
@@ -3660,6 +3602,7 @@ lib/gambas/lib.gb.vb.so.0
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtWindowsMnext
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtWindowsMget
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtWindows
+%%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtWindowRModal
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtWindowRMenus
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtWindowRId
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtWindowRHandle
@@ -3668,16 +3611,16 @@ lib/gambas/lib.gb.vb.so.0
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtWindowPTitle
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtWindowPText
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtWindowPState
+%%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtWindowPSpacing
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtWindowPSkipTaskbar
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtWindowPPersistent
+%%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtWindowPPadding
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtWindowPMask
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtWindowPIcon
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtWindowPCaption
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtWindowPBorder
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtWindowPArrangement
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtWindowMnew
-%%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtWindowMinit
-%%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtWindowMfree
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtWindowMenusRCount
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtWindowMenusMnext
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtWindowMenus
@@ -3697,15 +3640,21 @@ lib/gambas/lib.gb.vb.so.0
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtWindowEClose
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtWindowEActivate
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtWindowCResizable
-%%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtWindowCProperties
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtWindowCNormal
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtWindowCNone
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtWindowCMinimized
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtWindowCMaximized
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtWindowCFullScreen
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtWindowCFixed
-%%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtWindowCDefaultEvent
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtWindow
+%%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtVPanelPSpacing
+%%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtVPanelPPadding
+%%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtVPanelMnew
+%%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtVPanel
+%%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtVBoxPSpacing
+%%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtVBoxPPadding
+%%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtVBoxMnew
+%%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtVBox
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtTreeViewRKey
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtTreeViewRItem
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtTreeViewRCurrent
@@ -3723,7 +3672,6 @@ lib/gambas/lib.gb.vb.so.0
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtTreeViewPBorder
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtTreeViewMnew
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtTreeViewMget
-%%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtTreeViewMfree
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtTreeViewMRemove
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtTreeViewMMoveTo
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtTreeViewMMovePrevious
@@ -3765,11 +3713,9 @@ lib/gambas/lib.gb.vb.so.0
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtTreeViewEClick
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtTreeViewEActivate
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtTreeViewCSingle
-%%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtTreeViewCProperties
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtTreeViewCNone
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtTreeViewCMulti
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtTreeViewCExtended
-%%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtTreeViewCDefaultEvent
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtTreeView
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtToolButtonPValue
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtToolButtonPToggle
@@ -3778,10 +3724,7 @@ lib/gambas/lib.gb.vb.so.0
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtToolButtonPCaption
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtToolButtonPBorder
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtToolButtonMnew
-%%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtToolButtonMfree
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtToolButtonEClick
-%%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtToolButtonCProperties
-%%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtToolButtonCDefaultEvent
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtToolButton
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtToggleButtonPValue
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtToggleButtonPText
@@ -3789,33 +3732,30 @@ lib/gambas/lib.gb.vb.so.0
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtToggleButtonPCaption
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtToggleButtonPBorder
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtToggleButtonMnew
-%%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtToggleButtonMfree
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtToggleButtonEClick
-%%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtToggleButtonCProperties
-%%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtToggleButtonCDefaultEvent
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtToggleButton
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtTimerPEnabled
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtTimerPDelay
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtTimerMnew
-%%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtTimerMfree
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtTimerETimer
-%%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtTimerCProperties
-%%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtTimerCDefaultEvent
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtTimer
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtTextLabelPText
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtTextLabelPCaption
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtTextLabelPBorder
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtTextLabelPAlignment
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtTextLabelMnew
-%%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtTextLabelCProperties
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtTextLabel
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtTextBoxSelectionRStart
+%%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtTextBoxSelectionRPos
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtTextBoxSelectionRLength
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtTextBoxSelectionPText
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtTextBoxSelectionMcall
+%%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtTextBoxSelectionMHide
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtTextBoxSelectionMClear
+%%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtTextBoxSelectionMAll
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtTextBoxSelection
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtTextBoxRSelection
+%%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtTextBoxRSelect
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtTextBoxRLength
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtTextBoxPText
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtTextBoxPReadOnly
@@ -3829,16 +3769,18 @@ lib/gambas/lib.gb.vb.so.0
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtTextBoxMClear
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtTextBoxEChange
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtTextBoxEActivate
-%%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtTextBoxCProperties
-%%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtTextBoxCDefaultEvent
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtTextBox
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtTextAreaSelectionRStart
+%%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtTextAreaSelectionRPos
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtTextAreaSelectionRLength
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtTextAreaSelectionPText
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtTextAreaSelectionMcall
+%%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtTextAreaSelectionMHide
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtTextAreaSelectionMClear
+%%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtTextAreaSelectionMAll
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtTextAreaSelection
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtTextAreaRSelection
+%%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtTextAreaRSelect
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtTextAreaRLength
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtTextAreaPWrap
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtTextAreaPText
@@ -3855,31 +3797,38 @@ lib/gambas/lib.gb.vb.so.0
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtTextAreaMRedo
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtTextAreaMPaste
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtTextAreaMInsert
+%%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtTextAreaMEnsureVisible
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtTextAreaMCut
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtTextAreaMCopy
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtTextAreaMClear
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtTextAreaECursor
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtTextAreaEChange
-%%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtTextAreaCProperties
-%%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtTextAreaCDefaultEvent
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtTextArea
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtTabStripRCurrent
+%%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtTabStripRClientWidth
+%%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtTabStripRClientW
+%%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtTabStripRClientHeight
+%%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtTabStripRClientH
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtTabStripPText
+%%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtTabStripPSpacing
+%%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtTabStripPPicture
+%%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtTabStripPPadding
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtTabStripPOrientation
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtTabStripPIndex
+%%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtTabStripPEnabled
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtTabStripPCount
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtTabStripPCaption
+%%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtTabStripPAutoResize
+%%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtTabStripPArrangement
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtTabStripMnew
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtTabStripMget
-%%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtTabStripMfree
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtTabStripEClick
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtTabStripCTop
-%%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtTabStripCProperties
-%%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtTabStripCDefaultEvent
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtTabStripCBottom
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtTabStrip
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtTabRChildren
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtTabPText
+%%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtTabPPicture
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtTabPEnabled
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtTabPCaption
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtTabChildrenRCount
@@ -3900,7 +3849,6 @@ lib/gambas/lib.gb.vb.so.0
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtScrollViewPBackColor
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtScrollViewMnew
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtScrollViewMScroll
-%%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtScrollViewCProperties
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtScrollView
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtScrollCVertical
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtScrollCNone
@@ -3912,14 +3860,11 @@ lib/gambas/lib.gb.vb.so.0
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtRadioButtonPCaption
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtRadioButtonMnew
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtRadioButtonEClick
-%%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtRadioButtonCProperties
-%%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtRadioButtonCDefaultEvent
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtRadioButton
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtProgressBarPValue
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtProgressBarPLabel
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtProgressBarMnew
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtProgressBarMReset
-%%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtProgressBarCProperties
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtProgressBar
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtPrinterRWidth
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtPrinterRHeight
@@ -3934,7 +3879,6 @@ lib/gambas/lib.gb.vb.so.0
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtPrinterPFile
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtPrinterPCopies
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtPrinterPColorMode
-%%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtPrinterMexit
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtPrinterMSetup
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtPrinterMNewPage
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtPrinterMAbort
@@ -3951,8 +3895,6 @@ lib/gambas/lib.gb.vb.so.0
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtPictureMput
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtPictureMnew
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtPictureMget
-%%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtPictureMfree
-%%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtPictureMexit
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtPictureMSave
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtPictureMResize
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtPictureMLoad
@@ -3965,14 +3907,14 @@ lib/gambas/lib.gb.vb.so.0
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtPictureBoxPBorder
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtPictureBoxPAlignment
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtPictureBoxMnew
-%%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtPictureBoxMfree
-%%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtPictureBoxCProperties
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtPictureBox
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtPicture
+%%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtPanelPSpacing
+%%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtPanelPPadding
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtPanelPBorder
+%%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtPanelPAutoResize
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtPanelPArrangement
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtPanelMnew
-%%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtPanelCProperties
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtPanel
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtMouseRY
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtMouseRX
@@ -3981,7 +3923,9 @@ lib/gambas/lib.gb.vb.so.0
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtMouseRScreenX
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtMouseRRight
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtMouseROrientation
+%%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtMouseRNormal
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtMouseRMiddle
+%%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtMouseRMeta
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtMouseRLeft
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtMouseRDelta
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtMouseRControl
@@ -4014,12 +3958,12 @@ lib/gambas/lib.gb.vb.so.0
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtMouseCBlank
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtMouseCArrow
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtMouse
-%%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtMessageMexit
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtMessageMcall
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtMessageMWarning
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtMessageMQuestion
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtMessageMInfo
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtMessageMError
+%%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtMessageMDelete
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtMessage
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtMenuRChildren
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtMenuPVisible
@@ -4031,19 +3975,14 @@ lib/gambas/lib.gb.vb.so.0
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtMenuPChecked
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtMenuPCaption
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtMenuMnew
-%%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtMenuMinit
-%%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtMenuMfree
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtMenuMPopup
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtMenuMDelete
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtMenuEShow
-%%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtMenuEDelete
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtMenuEClick
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtMenuChildrenRCount
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtMenuChildrenMnext
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtMenuChildrenMClear
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtMenuChildren
-%%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtMenuCProperties
-%%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtMenuCDefaultEvent
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtMenu
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtListViewRKey
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtListViewRItem
@@ -4061,7 +4000,6 @@ lib/gambas/lib.gb.vb.so.0
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtListViewPBorder
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtListViewMnew
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtListViewMget
-%%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtListViewMfree
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtListViewMRemove
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtListViewMMoveTo
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtListViewMMovePrevious
@@ -4092,11 +4030,9 @@ lib/gambas/lib.gb.vb.so.0
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtListViewEClick
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtListViewEActivate
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtListViewCSingle
-%%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtListViewCProperties
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtListViewCNone
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtListViewCMulti
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtListViewCExtended
-%%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtListViewCDefaultEvent
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtListView
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtListBoxRText
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtListBoxRCurrent
@@ -4119,11 +4055,9 @@ lib/gambas/lib.gb.vb.so.0
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtListBoxEClick
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtListBoxEActivate
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtListBoxCSingle
-%%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtListBoxCProperties
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtListBoxCNone
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtListBoxCMulti
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtListBoxCExtended
-%%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtListBoxCDefaultEvent
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtListBox
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtLineCSolid
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtLineCNone
@@ -4137,16 +4071,16 @@ lib/gambas/lib.gb.vb.so.0
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtLabelPBorder
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtLabelPAlignment
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtLabelMnew
-%%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtLabelCProperties
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtLabel
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtKeyRText
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtKeyRState
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtKeyRShift
+%%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtKeyRNormal
+%%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtKeyRMeta
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtKeyRControl
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtKeyRCode
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtKeyRAlt
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtKeyMget
-%%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtKeyMexit
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtKeyCUp
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtKeyCTab
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtKeyCSysReq
@@ -4202,37 +4136,26 @@ lib/gambas/lib.gb.vb.so.0
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtKdeURLLabelPText
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtKdeURLLabelMnew
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtKdeURLLabelEClick
-%%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtKdeURLLabelCProperties
-%%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtKdeURLLabelCDefaultEvent
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtKdeURLLabel
-%%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtKdeKDEObjectMunknown
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtKdeKDEObject
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtKdeKDEApplicationRName
-%%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtKdeKDEApplicationMunknown
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtKdeKDEApplicationMget
-%%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtKdeKDEApplicationMfree
-%%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtKdeKDEApplicationMexit
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtKdeKDEApplication
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtKdeHtmlWebBrowserRLink
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtKdeHtmlWebBrowserPZoom
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtKdeHtmlWebBrowserPPath
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtKdeHtmlWebBrowserPJavaScript
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtKdeHtmlWebBrowserMnew
-%%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtKdeHtmlWebBrowserMfree
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtKdeHtmlWebBrowserMStop
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtKdeHtmlWebBrowserELink
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtKdeHtmlWebBrowserEClick
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtKdeHtmlWebBrowserEChange
-%%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtKdeHtmlWebBrowserCProperties
-%%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtKdeHtmlWebBrowserCDefaultEvent
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtKdeHtmlWebBrowser
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtKdeHtml
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtKdeDialogPTitle
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtKdeDialogPPath
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtKdeDialogPFilter
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtKdeDialogPColor
-%%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtKdeDialogMinit
-%%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtKdeDialogMexit
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtKdeDialogMSelectDirectory
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtKdeDialogMSelectColor
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtKdeDialogMSaveFile
@@ -4241,36 +4164,25 @@ lib/gambas/lib.gb.vb.so.0
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtKdeDatePickerPValue
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtKdeDatePickerMnew
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtKdeDatePickerEChange
-%%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtKdeDatePickerCProperties
-%%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtKdeDatePickerCDefaultEvent
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtKdeDatePicker
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtKdeDCOPRefRName
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtKdeDCOPRefRApplication
-%%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtKdeDCOPRefMunknown
-%%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtKdeDCOPRefMfree
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtKdeDCOPRef
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtKdeColorBoxPValue
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtKdeColorBoxPColor
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtKdeColorBoxMnew
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtKdeColorBoxEClick
-%%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtKdeColorBoxCProperties
-%%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtKdeColorBoxCDefaultEvent
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtKdeColorBox
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtKdeApplicationMget
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtKdeApplication
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtKde
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtImageRWidth
-%%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtImageRPixels
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtImageRPicture
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtImageRHeight
-%%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtImagePixelsMput
-%%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtImagePixelsMget
-%%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtImagePixels
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtImagePDepth
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtImageMput
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtImageMnew
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtImageMget
-%%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtImageMfree
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtImageMStretch
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtImageMSave
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtImageMRotate
@@ -4301,7 +4213,6 @@ lib/gambas/lib.gb.vb.so.0
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtIconViewPArrangement
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtIconViewMnew
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtIconViewMget
-%%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtIconViewMfree
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtIconViewMSelectAll
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtIconViewMRemove
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtIconViewMMoveTo
@@ -4336,14 +4247,20 @@ lib/gambas/lib.gb.vb.so.0
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtIconViewEActivate
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtIconViewCTopBottom
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtIconViewCSingle
-%%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtIconViewCProperties
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtIconViewCNone
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtIconViewCMulti
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtIconViewCLeftRight
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtIconViewCFree
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtIconViewCExtended
-%%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtIconViewCDefaultEvent
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtIconView
+%%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtHPanelPSpacing
+%%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtHPanelPPadding
+%%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtHPanelMnew
+%%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtHPanel
+%%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtHBoxPSpacing
+%%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtHBoxPPadding
+%%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtHBoxMnew
+%%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtHBox
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtGridViewRRows
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtGridViewRCurrent
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtGridViewRColumns
@@ -4362,8 +4279,6 @@ lib/gambas/lib.gb.vb.so.0
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtGridViewEScroll
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtGridViewEClick
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtGridViewEActivate
-%%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtGridViewCProperties
-%%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtGridViewCDefaultEvent
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtGridView
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtGridRowsPResizable
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtGridRowsPHeight
@@ -4399,7 +4314,6 @@ lib/gambas/lib.gb.vb.so.0
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtFramePText
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtFramePCaption
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtFrameMnew
-%%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtFrameCProperties
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtFrame
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtFormMnew
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtFormMMain
@@ -4420,10 +4334,7 @@ lib/gambas/lib.gb.vb.so.0
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtFontPItalic
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtFontPBold
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtFontMnew
-%%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtFontMinit
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtFontMget
-%%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtFontMfree
-%%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtFontMexit
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtFontMWidth
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtFontMToString
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtFontMHeight
@@ -4447,15 +4358,17 @@ lib/gambas/lib.gb.vb.so.0
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtExtWorkspaceRChildren
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtExtWorkspaceRActiveWindow
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtExtWorkspaceMnew
-%%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtExtWorkspaceMinit
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtExtWorkspaceMArrange
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtExtWorkspaceChildrenRCount
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtExtWorkspaceChildrenMnext
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtExtWorkspaceChildren
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtExtWorkspaceCTile
-%%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtExtWorkspaceCProperties
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtExtWorkspaceCCascade
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtExtWorkspace
+%%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtExtVSplitPLayout
+%%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtExtVSplitMnew
+%%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtExtVSplitEResize
+%%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtExtVSplit
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtExtTextViewRRoot
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtExtTextViewPTextWidth
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtExtTextViewPTextHeight
@@ -4466,11 +4379,8 @@ lib/gambas/lib.gb.vb.so.0
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtExtTextViewPPath
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtExtTextViewPBorder
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtExtTextViewMnew
-%%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtExtTextViewMfree
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtExtTextViewMClear
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtExtTextViewELink
-%%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtExtTextViewCProperties
-%%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtExtTextViewCDefaultEvent
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtExtTextView
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtExtTableViewRowsRWidth
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtExtTableViewRowsRW
@@ -4507,7 +4417,6 @@ lib/gambas/lib.gb.vb.so.0
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtExtTableViewPBorder
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtExtTableViewMnew
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtExtTableViewMget
-%%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtExtTableViewMfree
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtExtTableViewMRowAt
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtExtTableViewMRefresh
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtExtTableViewMMoveTo
@@ -4558,11 +4467,9 @@ lib/gambas/lib.gb.vb.so.0
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtExtTableViewCell
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtExtTableViewCVertical
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtExtTableViewCSingle
-%%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtExtTableViewCProperties
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtExtTableViewCNone
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtExtTableViewCMulti
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtExtTableViewCHorizontal
-%%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtExtTableViewCDefaultEvent
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtExtTableViewCBoth
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtExtTableView
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtExtSplitterPOrientation
@@ -4570,9 +4477,7 @@ lib/gambas/lib.gb.vb.so.0
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtExtSplitterMnew
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtExtSplitterEChange
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtExtSplitterCVertical
-%%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtExtSplitterCProperties
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtExtSplitterCHorizontal
-%%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtExtSplitterCDefaultEvent
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtExtSplitter
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtExtSpinBoxRText
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtExtSpinBoxRFullText
@@ -4585,7 +4490,6 @@ lib/gambas/lib.gb.vb.so.0
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtExtSpinBoxPMaxValue
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtExtSpinBoxMnew
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtExtSpinBoxEChange
-%%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtExtSpinBoxCProperties
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtExtSpinBox
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtExtSliderPValue
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtExtSliderPTracking
@@ -4596,8 +4500,6 @@ lib/gambas/lib.gb.vb.so.0
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtExtSliderPMark
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtExtSliderMnew
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtExtSliderEChange
-%%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtExtSliderCProperties
-%%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtExtSliderCDefaultEvent
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtExtSlider
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtExtScrollBarPValue
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtExtScrollBarPTracking
@@ -4607,9 +4509,13 @@ lib/gambas/lib.gb.vb.so.0
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtExtScrollBarPMaxValue
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtExtScrollBarMnew
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtExtScrollBarEChange
-%%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtExtScrollBarCProperties
-%%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtExtScrollBarCDefaultEvent
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtExtScrollBar
+%%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtExtMovieBoxPPlaying
+%%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtExtMovieBoxPPath
+%%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtExtMovieBoxPBorder
+%%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtExtMovieBoxMnew
+%%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtExtMovieBoxMRewind
+%%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtExtMovieBox
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtExtLCDNumberROverflow
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtExtLCDNumberPValue
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtExtLCDNumberPStyle
@@ -4617,11 +4523,14 @@ lib/gambas/lib.gb.vb.so.0
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtExtLCDNumberPDigits
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtExtLCDNumberPBorder
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtExtLCDNumberMnew
-%%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtExtLCDNumberCProperties
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtExtLCDNumberCOutline
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtExtLCDNumberCFlat
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtExtLCDNumberCFilled
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtExtLCDNumber
+%%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtExtHSplitPLayout
+%%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtExtHSplitMnew
+%%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtExtHSplitEResize
+%%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtExtHSplit
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtExtDialPWrap
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtExtDialPValue
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtExtDialPStep
@@ -4631,8 +4540,6 @@ lib/gambas/lib.gb.vb.so.0
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtExtDialPMark
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtExtDialMnew
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtExtDialEChange
-%%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtExtDialCProperties
-%%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtExtDialCDefaultEvent
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtExtDial
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtExt
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtEditorGambasEditorSelectionRStart
@@ -4648,28 +4555,35 @@ lib/gambas/lib.gb.vb.so.0
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtEditorGambasEditorRPositions
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtEditorGambasEditorRLines
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtEditorGambasEditorRLineHeight
+%%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtEditorGambasEditorRLength
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtEditorGambasEditorRCursorY
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtEditorGambasEditorRCursorX
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtEditorGambasEditorRColors
+%%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtEditorGambasEditorPUseRelief
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtEditorGambasEditorPText
+%%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtEditorGambasEditorPTabLength
+%%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtEditorGambasEditorPShowProc
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtEditorGambasEditorPReadOnly
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtEditorGambasEditorPPos
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtEditorGambasEditorPLine
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtEditorGambasEditorPFrozen
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtEditorGambasEditorPColumn
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtEditorGambasEditorMnew
-%%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtEditorGambasEditorMexit
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtEditorGambasEditorMUndo
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtEditorGambasEditorMToPosX
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtEditorGambasEditorMToPos
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtEditorGambasEditorMToLine
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtEditorGambasEditorMToColumn
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtEditorGambasEditorMSelect
+%%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtEditorGambasEditorMRefresh
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtEditorGambasEditorMRedo
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtEditorGambasEditorMPurgeLine
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtEditorGambasEditorMPaste
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtEditorGambasEditorMInsert
+%%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtEditorGambasEditorMIndent
+%%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtEditorGambasEditorMGoto
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtEditorGambasEditorMFindNextBreakpoint
+%%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtEditorGambasEditorMEnsureVisible
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtEditorGambasEditorMCut
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtEditorGambasEditorMCopy
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtEditorGambasEditorMClear
@@ -4698,8 +4612,6 @@ lib/gambas/lib.gb.vb.so.0
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtEditorGambasEditorColorsCBreakpoint
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtEditorGambasEditorColorsCBackground
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtEditorGambasEditorColors
-%%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtEditorGambasEditorCProperties
-%%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtEditorGambasEditorCDefaultEvent
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtEditorGambasEditorCCurrent
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtEditorGambasEditorCBreakpoint
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtEditorGambasEditor
@@ -4708,7 +4620,6 @@ lib/gambas/lib.gb.vb.so.0
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtDrawingRHeight
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtDrawingRDepth
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtDrawingMnew
-%%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtDrawingMfree
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtDrawingMSave
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtDrawingMLoad
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtDrawingMCopy
@@ -4722,8 +4633,6 @@ lib/gambas/lib.gb.vb.so.0
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtDrawingAreaMnew
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtDrawingAreaMClear
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtDrawingAreaEDraw
-%%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtDrawingAreaCProperties
-%%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtDrawingAreaCDefaultEvent
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtDrawingArea
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtDrawing
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtDrawRClip
@@ -4740,8 +4649,6 @@ lib/gambas/lib.gb.vb.so.0
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtDrawPFillColor
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtDrawPBackground
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtDrawPBackColor
-%%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtDrawMinit
-%%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtDrawMexit
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtDrawMTile
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtDrawMTextWidth
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtDrawMTextHeight
@@ -4775,7 +4682,6 @@ lib/gambas/lib.gb.vb.so.0
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtDragRData
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtDragRAction
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtDragPIcon
-%%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtDragMexit
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtDragMcall
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtDragCText
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtDragCNone
@@ -4789,8 +4695,6 @@ lib/gambas/lib.gb.vb.so.0
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtDialogPFont
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtDialogPFilter
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtDialogPColor
-%%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtDialogMinit
-%%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtDialogMexit
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtDialogMSelectFont
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtDialogMSelectDirectory
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtDialogMSelectColor
@@ -4799,6 +4703,7 @@ lib/gambas/lib.gb.vb.so.0
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtDialog
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtDesktopRWidth
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtDesktopRW
+%%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtDesktopRResolution
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtDesktopRHeight
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtDesktopRH
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtDesktopRCharset
@@ -4806,9 +4711,7 @@ lib/gambas/lib.gb.vb.so.0
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtDesktop
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtCursorRY
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtCursorRX
-%%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtCursorRPicture
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtCursorMnew
-%%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtCursorMfree
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtCursor
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtControlRWindow
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtControlRScreenY
@@ -4831,13 +4734,13 @@ lib/gambas/lib.gb.vb.so.0
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtControlPForeground
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtControlPForeColor
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtControlPFont
+%%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtControlPExpand
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtControlPEnabled
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtControlPDrop
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtControlPDesign
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtControlPCursor
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtControlPBackground
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtControlPBackColor
-%%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtControlMfree
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtControlMShow
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtControlMSetFocus
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtControlMResize
@@ -4863,10 +4766,7 @@ lib/gambas/lib.gb.vb.so.0
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtControlEDrop
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtControlEDragMove
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtControlEDrag
-%%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtControlEDelete
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtControlEDblClick
-%%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtControlCProperties
-%%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtControlCDefaultEvent
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtControl
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtContainerRClientY
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtContainerRClientX
@@ -4880,6 +4780,7 @@ lib/gambas/lib.gb.vb.so.0
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtContainerChildren
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtContainer
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtComboBoxRSelection
+%%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtComboBoxRSelect
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtComboBoxRLength
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtComboBoxRCurrent
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtComboBoxRCount
@@ -4904,8 +4805,6 @@ lib/gambas/lib.gb.vb.so.0
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtComboBoxEClick
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtComboBoxEChange
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtComboBoxEActivate
-%%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtComboBoxCProperties
-%%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtComboBoxCDefaultEvent
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtComboBox
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtColumnViewRKey
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtColumnViewRItem
@@ -4925,9 +4824,9 @@ lib/gambas/lib.gb.vb.so.0
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtColumnViewPHeader
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtColumnViewPEditable
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtColumnViewPBorder
+%%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtColumnViewPAutoResize
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtColumnViewMnew
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtColumnViewMget
-%%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtColumnViewMfree
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtColumnViewMRemove
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtColumnViewMMoveTo
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtColumnViewMMovePrevious
@@ -4975,19 +4874,16 @@ lib/gambas/lib.gb.vb.so.0
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtColumnViewColumnsPCount
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtColumnViewColumnsPAscending
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtColumnViewColumnsMget
-%%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtColumnViewColumnsMAdjust
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtColumnViewColumns
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtColumnViewColumnPWidth
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtColumnViewColumnPText
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtColumnViewColumnPAutoResize
-%%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtColumnViewColumnPAlign
+%%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtColumnViewColumnPAlignment
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtColumnViewColumn
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtColumnViewCSingle
-%%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtColumnViewCProperties
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtColumnViewCNone
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtColumnViewCMulti
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtColumnViewCExtended
-%%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtColumnViewCDefaultEvent
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtColumnView
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtColorPSelected
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtColorMRGB
@@ -5017,7 +4913,6 @@ lib/gambas/lib.gb.vb.so.0
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtColor
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtClipboardRType
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtClipboardRFormat
-%%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtClipboardMinit
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtClipboardMPaste
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtClipboardMCopy
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtClipboardMClear
@@ -5030,8 +4925,6 @@ lib/gambas/lib.gb.vb.so.0
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtCheckBoxPCaption
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtCheckBoxMnew
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtCheckBoxEClick
-%%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtCheckBoxCProperties
-%%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtCheckBoxCDefaultEvent
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtCheckBox
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtButtonPValue
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtButtonPText
@@ -5041,10 +4934,7 @@ lib/gambas/lib.gb.vb.so.0
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtButtonPCancel
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtButtonPBorder
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtButtonMnew
-%%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtButtonMfree
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtButtonEClick
-%%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtButtonCProperties
-%%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtButtonCDefaultEvent
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtButton
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtBorderCSunken
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtBorderCRaised
@@ -5057,6 +4947,7 @@ lib/gambas/lib.gb.vb.so.0
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtArrangeCNone
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtArrangeCLeftRight
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtArrangeCHorizontal
+%%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtArrangeCFill
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtArrange
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtApplicationTooltipPFont
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbQtApplicationTooltipPEnabled
@@ -5086,11 +4977,7 @@ lib/gambas/lib.gb.vb.so.0
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbProcessRId
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbProcessRHandle
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbProcessMnew
-%%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbProcessMinit
-%%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbProcessMfree
-%%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbProcessMexit
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbProcessMSignal
-%%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbProcessMSend
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbProcessMKill
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbProcessERead
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbProcessEKill
@@ -5099,10 +4986,13 @@ lib/gambas/lib.gb.vb.so.0
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbProcessCRunning
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbProcessCCrashed
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbProcess
+%%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbObjectMUnlock
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbObjectMType
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbObjectMSetProperty
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbObjectMParent
+%%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbObjectMLock
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbObjectMIsValid
+%%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbObjectMIsLocked
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbObjectMGetProperty
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbObjectMDetach
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbObjectMClass
@@ -5116,6 +5006,7 @@ lib/gambas/lib.gb.vb.so.0
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbObjectArrayMPop
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbObjectArrayMInsert
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbObjectArrayMFind
+%%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbObjectArrayMCopy
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbObjectArrayMAdd
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbObjectArray
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbObject
@@ -5125,7 +5016,6 @@ lib/gambas/lib.gb.vb.so.0
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbNetUdpSocketPTargetPort
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbNetUdpSocketPTargetHost
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbNetUdpSocketMnew
-%%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbNetUdpSocketMfree
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbNetUdpSocketMPeek
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbNetUdpSocketMBind
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbNetUdpSocketERead
@@ -5134,12 +5024,12 @@ lib/gambas/lib.gb.vb.so.0
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbNetSocketRStatus
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbNetSocketRRemotePort
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbNetSocketRRemoteHost
-%%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbNetSocketRPath
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbNetSocketRLocalPort
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbNetSocketRLocalHost
+%%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbNetSocketPPort
+%%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbNetSocketPPath
+%%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbNetSocketPHost
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbNetSocketMnew
-%%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbNetSocketMfree
-%%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbNetSocketMexit
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbNetSocketMPeek
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbNetSocketMConnect
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbNetSocketEReady
@@ -5154,7 +5044,6 @@ lib/gambas/lib.gb.vb.so.0
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbNetServerSocketPPort
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbNetServerSocketPPath
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbNetServerSocketMnew
-%%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbNetServerSocketMfree
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbNetServerSocketMResume
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbNetServerSocketMPause
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbNetServerSocketMListen
@@ -5177,7 +5066,6 @@ lib/gambas/lib.gb.vb.so.0
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbNetSerialPortPDataBits
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbNetSerialPortPDTR
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbNetSerialPortMnew
-%%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbNetSerialPortMfree
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbNetSerialPortMOpen
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbNetSerialPortERead
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbNetSerialPortERTSChange
@@ -5187,12 +5075,10 @@ lib/gambas/lib.gb.vb.so.0
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbNetSerialPortEDCDChange
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbNetSerialPortECTSChange
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbNetSerialPortCSoftware
-%%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbNetSerialPortCProperties
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbNetSerialPortCOdd
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbNetSerialPortCNone
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbNetSerialPortCHardware
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbNetSerialPortCEven
-%%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbNetSerialPortCDefaultEvent
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbNetSerialPortCBoth
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbNetSerialPortCBits8
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbNetSerialPortCBits7
@@ -5225,7 +5111,6 @@ lib/gambas/lib.gb.vb.so.0
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbNetDnsClientPHostIP
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbNetDnsClientPAsync
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbNetDnsClientMnew
-%%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbNetDnsClientMfree
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbNetDnsClientMStop
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbNetDnsClientMGetHostName
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbNetDnsClientMGetHostIP
@@ -5237,7 +5122,6 @@ lib/gambas/lib.gb.vb.so.0
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbNetCurlProxyPHost
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbNetCurlProxyPAuth
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbNetCurlProxyMnew
-%%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbNetCurlProxyMfree
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbNetCurlProxy
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbNetCurlNetCWriteError
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbNetCurlNetCUploadFailed
@@ -5308,31 +5192,36 @@ lib/gambas/lib.gb.vb.so.0
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbNetCurlNetCAuthBasic
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbNetCurlNetCAbortedByCallback
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbNetCurlNet
-%%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbNetCurlHttpClientRStatus
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbNetCurlHttpClientRReason
-%%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbNetCurlHttpClientRProxy
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbNetCurlHttpClientRCode
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbNetCurlHttpClientPUserAgent
-%%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbNetCurlHttpClientPUser
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbNetCurlHttpClientPUpdateCookies
-%%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbNetCurlHttpClientPURL
-%%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbNetCurlHttpClientPPassword
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbNetCurlHttpClientPHeaders
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbNetCurlHttpClientPCookiesFile
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbNetCurlHttpClientPAuth
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbNetCurlHttpClientMnew
-%%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbNetCurlHttpClientMinit
-%%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbNetCurlHttpClientMfree
-%%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbNetCurlHttpClientMexit
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbNetCurlHttpClientMStop
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbNetCurlHttpClientMPost
-%%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbNetCurlHttpClientMPeek
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbNetCurlHttpClientMGet
-%%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbNetCurlHttpClientERead
-%%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbNetCurlHttpClientEFinished
-%%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbNetCurlHttpClientEError
-%%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbNetCurlHttpClientEConnect
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbNetCurlHttpClient
+%%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbNetCurlFtpClientMnew
+%%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbNetCurlFtpClientMStop
+%%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbNetCurlFtpClientMPut
+%%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbNetCurlFtpClientMGet
+%%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbNetCurlFtpClient
+%%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbNetCurlCurlRStatus
+%%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbNetCurlCurlRProxy
+%%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbNetCurlCurlPUser
+%%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbNetCurlCurlPURL
+%%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbNetCurlCurlPTag
+%%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbNetCurlCurlPPassword
+%%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbNetCurlCurlMnew
+%%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbNetCurlCurlMPeek
+%%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbNetCurlCurlERead
+%%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbNetCurlCurlEFinished
+%%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbNetCurlCurlEError
+%%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbNetCurlCurlEConnect
+%%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbNetCurlCurl
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbNetCurl
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbNet
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbIntegerArrayMput
@@ -5345,12 +5234,12 @@ lib/gambas/lib.gb.vb.so.0
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbIntegerArrayMPop
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbIntegerArrayMInsert
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbIntegerArrayMFind
+%%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbIntegerArrayMCopy
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbIntegerArrayMAdd
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbIntegerArray
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbGbCWrite
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbGbCWednesday
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbGbCVariant
-%%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbGbCUser
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbGbCTuesday
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbGbCThursday
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbGbCText
@@ -5367,7 +5256,6 @@ lib/gambas/lib.gb.vb.so.0
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbGbCRead
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbGbCPipe
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbGbCPercent
-%%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbGbCOther
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbGbCObject
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbGbCNull
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbGbCNewLine
@@ -5380,7 +5268,6 @@ lib/gambas/lib.gb.vb.so.0
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbGbCLink
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbGbCLang
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbGbCInteger
-%%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbGbCGroup
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbGbCGeneralNumber
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbGbCGeneralDate
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbGbCFriday
@@ -5409,6 +5296,7 @@ lib/gambas/lib.gb.vb.so.0
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbFloatArrayMPop
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbFloatArrayMInsert
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbFloatArrayMFind
+%%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbFloatArrayMCopy
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbFloatArrayMAdd
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbFloatArray
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbFileRUser
@@ -5434,7 +5322,6 @@ lib/gambas/lib.gb.vb.so.0
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbFilePermRGroup
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbFilePermMget
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbFilePerm
-%%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbFileMfree
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbFileMSave
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbFileMName
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbFileMLoad
@@ -5448,7 +5335,6 @@ lib/gambas/lib.gb.vb.so.0
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbEvalExpressionPText
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbEvalExpressionPEnvironment
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbEvalExpressionMnew
-%%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbEvalExpressionMfree
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbEvalExpressionMCompile
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbEvalExpression
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbEval
@@ -5459,7 +5345,6 @@ lib/gambas/lib.gb.vb.so.0
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbErrorMRaise
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbErrorMClear
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbError
-%%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbDebugDebugMexit
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbDebugDebugMWrite
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbDebugDebugMStop
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbDebugDebugMStart
@@ -5468,41 +5353,34 @@ lib/gambas/lib.gb.vb.so.0
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbDebugDebugERead
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbDebugDebug
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbDebug
+%%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbDbUserRName
+%%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbDbUserRConnection
+%%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbDbUserRAdministrator
+%%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbDbUserPPassword
+%%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbDbUserMDelete
+%%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbDbUser
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbDbTableRSystem
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbDbTableRName
-%%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbDbTableRIndex
-%%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbDbTableRField
+%%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbDbTableRIndexes
+%%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbDbTableRFields
+%%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbDbTableRConnection
+%%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbDbTablePType
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbDbTablePPrimaryKey
-%%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbDbTableMfree
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbDbTableMUpdate
-%%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbDbTableIndexRUnique
-%%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbDbTableIndexRPrimary
-%%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbDbTableIndexRName
-%%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbDbTableIndexRFields
-%%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbDbTableIndexMnext
-%%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbDbTableIndexMcall
-%%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbDbTableIndexMFind
-%%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbDbTableIndexMDelete
-%%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbDbTableIndexMCreate
-%%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbDbTableIndex
-%%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbDbTableFieldRType
-%%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbDbTableFieldRName
-%%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbDbTableFieldRLength
-%%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbDbTableFieldRDefault
-%%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbDbTableFieldMnext
-%%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbDbTableFieldMcall
-%%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbDbTableFieldMFind
-%%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbDbTableFieldMCreate
-%%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbDbTableField
+%%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbDbTableIndexesMRemove
+%%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbDbTableIndexesMAdd
+%%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbDbTableIndexes
+%%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbDbTableFieldsMAdd
+%%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbDbTableFields
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbDbTable
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbDbResultRIndex
-%%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbDbResultRField
+%%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbDbResultRFields
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbDbResultRCount
+%%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbDbResultRConnection
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbDbResultRAvailable
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbDbResultMput
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbDbResultMnext
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbDbResultMget
-%%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbDbResultMfree
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbDbResultMUpdate
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbDbResultMMoveTo
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbDbResultMMovePrevious
@@ -5510,18 +5388,37 @@ lib/gambas/lib.gb.vb.so.0
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbDbResultMMoveLast
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbDbResultMMoveFirst
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbDbResultMDelete
+%%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbDbResultFieldsRCount
+%%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbDbResultFieldsMnext
+%%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbDbResultFields
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbDbResultFieldRType
+%%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbDbResultFieldRResult
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbDbResultFieldRName
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbDbResultFieldRLength
-%%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbDbResultFieldRCount
-%%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbDbResultFieldMnext
-%%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbDbResultFieldMFind
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbDbResultField
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbDbResult
+%%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbDbIndexRUnique
+%%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbDbIndexRTable
+%%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbDbIndexRPrimary
+%%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbDbIndexRName
+%%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbDbIndexRFields
+%%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbDbIndex
+%%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbDbFieldRType
+%%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbDbFieldRTable
+%%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbDbFieldRName
+%%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbDbFieldRLength
+%%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbDbFieldRDefault
+%%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbDbField
+%%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbDbDatabaseRSystem
+%%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbDbDatabaseRName
+%%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbDbDatabaseRConnection
+%%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbDbDatabaseMDelete
+%%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbDbDatabase
+%%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbDbDBRVersion
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbDbDBRCharset
-%%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbDbDBPUser
+%%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbDbDBPUsers
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbDbDBPTables
-%%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbDbDBPDatabase
+%%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbDbDBPDatabases
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbDbDBPCurrent
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbDbDBMRollback
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbDbDBMOpen
@@ -5533,27 +5430,15 @@ lib/gambas/lib.gb.vb.so.0
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbDbDBMClose
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbDbDBMBegin
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbDbDB
-%%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbDbConnectionUserRName
-%%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbDbConnectionUserRAdministrator
-%%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbDbConnectionUserPPassword
-%%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbDbConnectionUserMnext
-%%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbDbConnectionUserMcall
-%%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbDbConnectionUserMRemove
-%%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbDbConnectionUserMFind
-%%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbDbConnectionUserMExist
-%%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbDbConnectionUserMDelete
-%%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbDbConnectionUserMCreate
-%%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbDbConnectionUser
-%%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbDbConnectionTablesMnext
-%%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbDbConnectionTablesMget
+%%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbDbConnectionUsersMRemove
+%%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbDbConnectionUsersMAdd
+%%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbDbConnectionUsers
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbDbConnectionTablesMRemove
-%%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbDbConnectionTablesMRefresh
-%%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbDbConnectionTablesMExist
-%%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbDbConnectionTablesMDelete
-%%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbDbConnectionTablesMCreate
+%%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbDbConnectionTablesMAdd
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbDbConnectionTables
+%%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbDbConnectionRVersion
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbDbConnectionRCharset
-%%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbDbConnectionPUser
+%%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbDbConnectionPUsers
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbDbConnectionPType
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbDbConnectionPTables
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbDbConnectionPPort
@@ -5561,9 +5446,8 @@ lib/gambas/lib.gb.vb.so.0
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbDbConnectionPName
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbDbConnectionPLogin
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbDbConnectionPHost
-%%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbDbConnectionPDatabase
+%%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbDbConnectionPDatabases
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbDbConnectionMnew
-%%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbDbConnectionMfree
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbDbConnectionMRollback
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbDbConnectionMOpen
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbDbConnectionMFind
@@ -5573,16 +5457,9 @@ lib/gambas/lib.gb.vb.so.0
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbDbConnectionMCommit
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbDbConnectionMClose
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbDbConnectionMBegin
-%%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbDbConnectionDatabaseRSystem
-%%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbDbConnectionDatabaseRName
-%%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbDbConnectionDatabaseMnext
-%%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbDbConnectionDatabaseMcall
-%%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbDbConnectionDatabaseMRemove
-%%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbDbConnectionDatabaseMFind
-%%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbDbConnectionDatabaseMExist
-%%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbDbConnectionDatabaseMDelete
-%%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbDbConnectionDatabaseMCreate
-%%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbDbConnectionDatabase
+%%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbDbConnectionDatabasesMRemove
+%%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbDbConnectionDatabasesMAdd
+%%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbDbConnectionDatabases
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbDbConnection
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbDb
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbDateArrayMput
@@ -5595,13 +5472,11 @@ lib/gambas/lib.gb.vb.so.0
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbDateArrayMPop
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbDateArrayMInsert
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbDateArrayMFind
+%%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbDateArrayMCopy
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbDateArrayMAdd
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbDateArray
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbCompressUncompressPType
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbCompressUncompressMnew
-%%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbCompressUncompressMinit
-%%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbCompressUncompressMfree
-%%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbCompressUncompressMexit
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbCompressUncompressMString
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbCompressUncompressMOpen
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbCompressUncompressMFile
@@ -5611,9 +5486,6 @@ lib/gambas/lib.gb.vb.so.0
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbCompressCompressRDefault
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbCompressCompressPType
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbCompressCompressMnew
-%%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbCompressCompressMinit
-%%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbCompressCompressMfree
-%%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbCompressCompressMexit
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbCompressCompressMString
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbCompressCompressMOpen
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbCompressCompressMFile
@@ -5635,7 +5507,6 @@ lib/gambas/lib.gb.vb.so.0
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbCollectionMnext
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbCollectionMnew
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbCollectionMget
-%%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbCollectionMfree
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbCollectionMRemove
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbCollectionMExist
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbCollectionMClear
@@ -5672,11 +5543,11 @@ lib/gambas/lib.gb.vb.so.0
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbByteArrayMPop
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbByteArrayMInsert
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbByteArrayMFind
+%%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbByteArrayMCopy
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbByteArrayMAdd
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbByteArray
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbArrayRLength
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbArrayRCount
-%%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbArrayMfree
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbArrayMSort
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbArrayMReverse
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbArrayMResize
@@ -5684,12 +5555,10 @@ lib/gambas/lib.gb.vb.so.0
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbArrayMClear
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbArray
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbApplicationRVersion
-%%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbApplicationRUser
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbApplicationRTitle
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbApplicationRPath
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbApplicationRName
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbApplicationRId
-%%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbApplicationRHome
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbApplicationRHandle
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbApplicationREnv
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GbApplicationRArgs
@@ -5703,7 +5572,6 @@ lib/gambas/lib.gb.vb.so.0
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/Gb
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GaryFrankenbery
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GandiWahyu
-%%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/Gambas
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/FutureVisualBasicCompatibility
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/FutureSDLComponent
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/FutureReport
@@ -5716,6 +5584,7 @@ lib/gambas/lib.gb.vb.so.0
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/Future
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/FunctionalListing
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/FromFormToFormProgram
+%%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/FlorentG
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/FilippiChristian
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/FileAttachment
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/FabrizzioV
@@ -5735,11 +5604,12 @@ lib/gambas/lib.gb.vb.so.0
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/CrossSumProgram
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/Components
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/ComponentList
-%%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/ComponentIcons
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/ChristopheBONNET
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/CharlieReinl
+%%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/CharlieR
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/CarstenOlsen
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/CarlosPons
+%%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/BudiAriefGusandi
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/BrandonBergren
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/BenoitMinisini
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/Articles
@@ -5758,6 +5628,15 @@ lib/gambas/lib.gb.vb.so.0
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/ApiPROP
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/ApiMISSING
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/ApiLENGTH
+%%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/ApiGbSubCollectionRemove
+%%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/ApiGbSubCollectionNew
+%%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/ApiGbSubCollectionGet
+%%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/ApiGbSubCollectionContainer
+%%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/ApiGbSubCollectionAdd
+%%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/ApiGBtoupper
+%%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/ApiGBtolower
+%%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/ApiGBstrncasecmp
+%%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/ApiGBstrcasecmp
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/ApiGBWatch
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/ApiGBWATCHWRITE
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/ApiGBWATCHREADWRITE
@@ -5796,7 +5675,11 @@ lib/gambas/lib.gb.vb.so.0
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/ApiGBStopEnum
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/ApiGBSplitDate
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/ApiGBSUBSTCALLBACK
+%%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/ApiGBSUBCOLLECTIONDESC
+%%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/ApiGBSUBCOLLECTION
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/ApiGBSTRING
+%%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/ApiGBSTREAMDESC
+%%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/ApiGBSTREAM
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/ApiGBSTATICPROPERTYSELF
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/ApiGBSTATICPROPERTYREAD
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/ApiGBSTATICPROPERTY
@@ -5818,6 +5701,7 @@ lib/gambas/lib.gb.vb.so.0
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/ApiGBRealloc
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/ApiGBRaise
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/ApiGBPush
+%%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/ApiGBPropagate
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/ApiGBPost
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/ApiGBPROPERTYSELF
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/ApiGBPROPERTYREAD
@@ -5840,6 +5724,7 @@ lib/gambas/lib.gb.vb.so.0
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/ApiGBMETHOD
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/ApiGBLoadFile
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/ApiGBLoadComponent
+%%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/ApiGBIsProperty
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/ApiGBIs
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/ApiGBINTEGER
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/ApiGBINHERITS
@@ -5860,7 +5745,10 @@ lib/gambas/lib.gb.vb.so.0
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/ApiGBHASHTABLEENUMFUNC
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/ApiGBHASHTABLE
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/ApiGBGetUnknown
+%%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/ApiGBGetTime
+%%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/ApiGBGetTempDir
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/ApiGBGetInterface
+%%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/ApiGBGetFunction
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/ApiGBGetEvent
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/ApiGBGetEnum
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/ApiGBGetClassName
@@ -5869,6 +5757,8 @@ lib/gambas/lib.gb.vb.so.0
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/ApiGBFreeArray
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/ApiGBFree
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/ApiGBFindClass
+%%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/ApiGBFileName
+%%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/ApiGBFUNCION
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/ApiGBFLOAT
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/ApiGBExtendString
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/ApiGBExistFile
@@ -5882,6 +5772,7 @@ lib/gambas/lib.gb.vb.so.0
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/ApiGBDATESERIAL
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/ApiGBDATE
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/ApiGBCount
+%%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/ApiGBConvString
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/ApiGBConv
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/ApiGBCollectionSet
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/ApiGBCollectionNew
@@ -5890,6 +5781,7 @@ lib/gambas/lib.gb.vb.so.0
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/ApiGBCheckPost
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/ApiGBCheckObject
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/ApiGBCanRaise
+%%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/ApiGBCall
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/ApiGBCONSTANT
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/ApiGBCOMPTEXT
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/ApiGBCOMPBINARY
@@ -5897,16 +5789,20 @@ lib/gambas/lib.gb.vb.so.0
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/ApiGBCLASS
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/ApiGBBOOLEAN
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/ApiGBBASE
+%%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/ApiGBAutoCreate
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/ApiGBAttach
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/ApiGBArrayNew
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/ApiGBArrayGet
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/ApiGBArrayCount
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/ApiGBArrayAdd
+%%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/ApiGBApplicationVersion
+%%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/ApiGBApplicationTitle
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/ApiGBApplicationPath
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/ApiGBApplicationName
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/ApiGBAlloc
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/ApiGBAddString
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/ApiGBAdd
+%%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/ApiGBAUTOCREATABLE
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/ApiGBARRAY
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/ApiENDPROPERTY
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/ApiENDMETHOD
@@ -5920,6 +5816,7 @@ lib/gambas/lib.gb.vb.so.0
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/ApiArgument
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/ApiARG
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/AntonioMaschio
+%%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/AntonioBonfa
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/AldoPagin
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/AlbertoMelgar
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/AhmadKamal
