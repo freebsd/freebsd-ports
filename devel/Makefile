@@ -248,6 +248,7 @@
     SUBDIR += perforce
     SUBDIR += pharmacy
     SUBDIR += picprog
+    SUBDIR += pinstall
     SUBDIR += pmake
     SUBDIR += popt
     SUBDIR += portcheckout
