@@ -7,7 +7,7 @@
 
 PORTNAME=	liba52
 PORTVERSION=	0.7.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	audio
 MASTER_SITES=	http://liba52.sourceforge.net/files/
 DISTNAME=	a52dec-${PORTVERSION:S/.b/b/}
@@ -21,6 +21,7 @@ USE_LIBTOOL=	yes
 
 .ifndef(WITHOUT_DJBFFT)
 BUILD_DEPENDS+=	${LOCALBASE}/lib/libdjbfft.a:${PORTSDIR}/math/djbfft
+RUN_DEPENDS+=	${LOCALBASE}/lib/libdjbfft.a:${PORTSDIR}/math/djbfft
 
 CONFIGURE_ENV+= CFLAGS="${CFLAGS} -I${LOCALBASE}/include" \
 		LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib"
