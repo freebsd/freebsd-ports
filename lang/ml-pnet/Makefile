@@ -15,6 +15,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Mono's upper-level libraries
 
 BUILD_DEPENDS=	cscc:${PORTSDIR}/lang/pnet-base \
+		treecc:${PORTSDIR}/lang/treecc \
 		${LOCALBASE}/lib/cscc/lib/libXsharpSupport.so.0:${PORTSDIR}/lang/pnetlib
 RUN_DEPENDS=	${LOCALBASE}/lib/cscc/lib/libXsharpSupport.so.0:${PORTSDIR}/lang/pnetlib
 

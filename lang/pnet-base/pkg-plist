@@ -140,6 +140,6 @@ share/gc/tree.html
 @dirrm lib/pnet/elf
 @dirrm lib/pnet
 @dirrm lib/cscc/plugins
-@unexec rmdir %D/lib/cscc 2> /dev/null || true
+@unexec rmdir %D/lib/cscc 2>/dev/null || true
 @dirrm include/pnet/gc
 @dirrm include/pnet

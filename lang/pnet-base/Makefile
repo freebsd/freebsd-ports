@@ -17,7 +17,6 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	C\# compiler and runtime engine
 
 BUILD_DEPENDS=	treecc:${PORTSDIR}/lang/treecc
-LIB_DEPENDS=	ffi.2:${PORTSDIR}/devel/libffi
 
 .if !defined(WITHOUT_X11)
 USE_XLIB=	yes

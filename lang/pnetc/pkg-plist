@@ -1,6 +1,6 @@
-lib/cscc/lib/1.2.3400.0/libc.dll
-lib/cscc/lib/1.2.3400.0/libm.dll
-lib/cscc/lib/1.2.3400.0/libpthread.dll
+lib/cscc/lib/2.0.3600.0/libc.dll
+lib/cscc/lib/2.0.3600.0/libm.dll
+lib/cscc/lib/2.0.3600.0/libpthread.dll
 lib/cscc/lib/libc.dll
 lib/cscc/lib/libm.dll
 lib/cscc/lib/libpthread.dll
@@ -118,14 +118,14 @@ share/cscc/include/varargs.h
 share/cscc/include/wchar.h
 share/cscc/include/wctype.h
 share/cscc/include/xlocale.h
-@dirrm share/cscc/include/sys
-@dirrm share/cscc/include/netinet
-@dirrm share/cscc/include/gnu
-@dirrm share/cscc/include/bits
-@dirrm share/cscc/include/assembly
-@dirrm share/cscc/include/arpa
-@dirrm share/cscc/include
-@unexec rmdir %D/share/cscc 2> /dev/null || true
-@unexec rmdir %D/lib/cscc/lib/1.2.3400.0 2> /dev/null || true
-@unexec rmdir %D/lib/cscc/lib 2> /dev/null || true
-@unexec rmdir %D/lib/cscc 2> /dev/null || true
+@unexec rmdir %D/share/cscc/include/sys 2>/dev/null || true
+@unexec rmdir %D/share/cscc/include/netinet 2>/dev/null || true
+@unexec rmdir %D/share/cscc/include/gnu 2>/dev/null || true
+@unexec rmdir %D/share/cscc/include/bits 2>/dev/null || true
+@unexec rmdir %D/share/cscc/include/assembly 2>/dev/null || true
+@unexec rmdir %D/share/cscc/include/arpa 2>/dev/null || true
+@unexec rmdir %D/share/cscc/include 2>/dev/null || true
+@unexec rmdir %D/share/cscc 2>/dev/null || true
+@unexec rmdir %D/lib/cscc/lib/2.0.3600.0 2>/dev/null || true
+@unexec rmdir %D/lib/cscc/lib 2>/dev/null || true
+@unexec rmdir %D/lib/cscc 2>/dev/null || true
