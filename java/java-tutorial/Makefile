@@ -22,9 +22,6 @@ PKGMESSAGE= ${WRKDIR}/MESSAGE
 
 .include <bsd.port.pre.mk>
 
-post-extract:
-	(cd ${WRKSRC} && ${CHOWN} -R root.wheel *)
-
 do-install:
 	${MKDIR} ${PREFIX}/jdk${VERSION}/docs/books/tutorial
 	(cd ${WRKSRC} && ${TAR} -cf - * ) \
