@@ -3,7 +3,7 @@
 # Date created:         22 Dec 1994
 # Whom:                 ache
 #
-# $Id: Makefile,v 1.12 1998/07/24 19:45:41 hoek Exp $
+# $Id: Makefile,v 1.13 1999/03/12 15:28:44 scrappy Exp $
 #
 
 DISTNAME=       zip22
@@ -14,7 +14,6 @@ MASTER_SITES=   ftp://ftp.cdrom.com/pub/infozip/src/
 MAINTAINER=     ache@FreeBSD.ORG
 
 Y2K=		http://www.cdrom.com/pub/infozip/FAQ.html#Y2K
-WWW_SITE=	http://www.cdrom.com/pub/infozip/Zip.html
 
 WRKSRC=         ${WRKDIR}/zip-2.2
 MAKEFILE=       unix/Makefile
