@@ -11,7 +11,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 DISTNAME=	VisualBoyAdvance-src-${PORTVERSION}
 
-MAINTAINER=	arundel@gmx.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Open Source Gameboy Advance emulator
 
 BUILD_DEPENDS=	nasm:${PORTSDIR}/devel/nasm
