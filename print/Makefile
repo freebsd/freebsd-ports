@@ -13,6 +13,7 @@
     SUBDIR += afm
     SUBDIR += amspsfnt
     SUBDIR += apsfilter
+    SUBDIR += apsfilter6
     SUBDIR += asprint
     SUBDIR += auctex
     SUBDIR += bibcard
