@@ -6,8 +6,7 @@
 #
 
 PORTNAME=		xchat
-PORTVERSION=		1.8.5
-PORTREVISION=		1
+PORTVERSION=		1.8.6
 CATEGORIES+=		irc gnome ipv6
 MASTER_SITES=		http://xchat.org/files/source/1.8/ \
 			http://xchat.linuxpower.org/files/source/1.8/
@@ -52,13 +51,18 @@ USE_OPENSSL=		YES
 CONFIGURE_ARGS+=	--enable-openssl
 .endif
 
+.if defined(WITH_TRANSPARENCY)
+BUILD_DEPENDS+=		${X11BASE}/bin/gdk-pixbuf-config:${PORTSDIR}/graphics/gdk-pixbuf
+CONFIGURE_ARGS+=	--enable-gdk-pixbuf
+.endif
+
 .if defined(HAVE_GNOME)
 USE_GNOME=		yes
 CONFIGURE_ARGS+=	--enable-gnome --enable-panel --enable-gdk-pixbuf \
 			--enable-zvt
 MAKE_ARGS=		icondir="${PREFIX}/share/gnome/pixmaps"
 .else
-CONFIGURE_ARGS+=	--disable-gnome --disable-gdk-pixbuf --disable-zvt
+CONFIGURE_ARGS+=	--disable-gnome --disable-zvt
 .endif
 
 post-patch:
