@@ -1062,6 +1062,7 @@ darkice		ports/audio/darkice
 darkstat	ports/net/darkstat
 darts		ports/devel/darts
 datapipe	ports/net/datapipe
+dataplot	ports/graphics/dataplot
 datedif		ports/misc/datedif
 db2		ports/databases/db2
 db3		ports/databases/db3
