@@ -7,6 +7,7 @@
 
 PORTNAME=	pgpmoose
 PORTVERSION=	1.19
+PORTREVISION=	1
 CATEGORIES=	news security
 MASTER_SITES=	http://people.qualcomm.com/ggr/ \
 		ftp://ftp.dinoex.de/pub/FreeBSD/distfiles/
@@ -21,6 +22,12 @@ BIN1=		pmapp pmcanon pmcheck pmnewsgroups \
 		pmdaemon pmcancel
 
 NO_WRKSUBDIR=	yes
+NEWSCTL?=	${PREFIX}/news/lib
+
+post-patch:
+	@${MV} ${WRKSRC}/pmapp ${WRKSRC}/pmapp.sed
+	${SED} -e "s=/usr/local/news=${NEWSCTL}=" \
+		${WRKSRC}/pmapp.sed >${WRKSRC}/pmapp
 
 do-install:
 .for i in ${BIN1}
