@@ -513,3 +513,4 @@ mail/flink||2003-08-12|removed as part of GNOME 1.4 desktop phase out
 net/openldap20|net/openldap20-server|2003-08-13|split into -client and -server
 net/openldap21|net/openldap21-server|2003-08-13|split into -client and -server
 net/openldap22|net/openldap22-server|2003-08-13|split into -client and -server
+x11-toolkits/gtk-industrial-theme|x11-toolkits/gnome-themes-extras|2003-08-14|gtk-industrial-theme is now included with gnome-themes-extras
