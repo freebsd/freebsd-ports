@@ -3,21 +3,27 @@
 # Date created:		28 March 1997
 # Whom:			gena
 #
-# $Id: Makefile,v 1.18 1998/08/07 22:56:48 asami Exp $
+# $Id: Makefile,v 1.19 1998/09/26 23:14:12 steve Exp $
 #
 
+ARE_WE_ELF!=    test -x /usr/bin/objformat && /usr/bin/objformat || echo aout
+.if ${ARE_WE_ELF} == "elf"
+DISTNAME=	bxform-freebsd-elf
+MASTER_SITES=	http://bragg.phys.uwm.edu/~zhao/ftp/
+PATCHDIR=	${.CURDIR}/patches.elf
+.else
 DISTNAME=	bxform-088
-PKGNAME=	xforms-0.88.1
-CATEGORIES=	graphics x11-toolkits
 MASTER_SITES=	ftp://bragg.phys.uwm.edu/pub/xforms/freeBSD/ \
 		ftp://ftp.via.ecp.fr/pub2/xforms/freeBSD/ \
 		ftp://ftp.st.ryukoku.ac.jp/pub/X11/xforms/freeBSD/
+.endif
+PKGNAME=	xforms-0.88.1
+CATEGORIES=	graphics x11-toolkits
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	gena@NetVision.net.il
 
-BROKEN_ELF=	a.out library only
-
+PATCH_STRIP=	-p0 -t
 USE_X_PREFIX=	yes
 WRKSRC=		${WRKDIR}/xforms
 MAN1=		fdesign.1 fd2ps.1
