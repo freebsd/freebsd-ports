@@ -7,3 +7,5 @@ This was done simply to make the port easier to deal with.
 
 You will need to make sure to get the configure options right for the hardware
 you will be using. This is left as an exercise to the reader. :-)
+
+WWW: http://www.teleport.com/~anholt/devel/dri/
