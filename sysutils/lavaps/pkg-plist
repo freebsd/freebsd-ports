@@ -1,0 +1,3 @@
+bin/lavaps
+@exec chgrp kmem %D/bin/lavaps
+@exec chmod g+s %D/bin/lavaps
