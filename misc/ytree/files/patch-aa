@@ -1,5 +1,5 @@
---- Makefile.orig	Sun Jul 16 07:01:56 2000
-+++ Makefile	Tue Dec  5 23:30:00 2000
+--- Makefile.orig	Sat Jun 16 23:12:10 2001
++++ Makefile	Sat Jun 16 23:13:07 2001
 @@ -6,7 +6,7 @@
  #
  ############################################################################
@@ -9,9 +9,9 @@
  
  #
  # ADD_CFLAGS: Add -DVI_KEYS if you want vi-cursor-keys
-@@ -25,10 +25,10 @@
+@@ -27,10 +27,10 @@
  ###########################
- # LINUX (testet with ncurses 5.0)
+ # LINUX (testet with ncurses 5.2)
  ###########################
 -COLOR       = -DCOLOR_SUPPORT 
 +#COLOR       = -DCOLOR_SUPPORT 
@@ -23,13 +23,13 @@
  
  ###########################
  # LINUX (X11 using PDCurses) thanks to  Mark Hessling
-@@ -43,8 +43,8 @@
+@@ -54,8 +54,8 @@
  ###########################
  # FreeBSD (Thanks to Peter Brevik)
  ###########################
 -#CFLAGS      = -DCOLOR_SUPPORT -DNCURSES
 -#LIBS        = -lncurses -lmytinfo -lcompat
-+CFLAGS      += -DCOLOR_SUPPORT -DNCURSES
++CFLAGS      = -DCOLOR_SUPPORT -DNCURSES
 +LIBS        = -lncurses -lmytinfo -lcompat
  
  ###########################
