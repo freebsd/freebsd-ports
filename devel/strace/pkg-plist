@@ -1,0 +1,4 @@
+bin/strace
+bin/strace-graph
+share/strace/xlate.el
+@dirrm share/strace
