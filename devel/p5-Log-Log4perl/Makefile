@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Log-Log4perl
-PORTVERSION=	0.42
+PORTVERSION=	0.43
 CATEGORIES=	devel perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Log
@@ -15,12 +15,16 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	lars@thegler.dk
 COMMENT=	Log4j implementation for Perl
 
+BUILD_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/Storable.pm:${PORTSDIR}/devel/p5-Storable
+RUN_DEPENDS=	${BUILD_DEPENDS}
+
 PERL_CONFIGURE=	yes
 
 MAN3=		Log::Log4perl.3 \
 		Log::Log4perl::Appender.3 \
 		Log::Log4perl::Appender::DBI.3 \
 		Log::Log4perl::Appender::File.3 \
+		Log::Log4perl::Appender::Limit.3 \
 		Log::Log4perl::Appender::Screen.3 \
 		Log::Log4perl::Appender::Socket.3 \
 		Log::Log4perl::Appender::Synchronized.3 \
