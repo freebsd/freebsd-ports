@@ -8,7 +8,7 @@
 #
 
 PORTNAME=	javavmwrapper
-PORTVERSION=	1.4
+PORTVERSION=	1.5
 CATEGORIES=	java
 MASTER_SITES=	# none
 DISTFILES=	# none
@@ -20,15 +20,23 @@ NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
 
 SRC=		${.CURDIR}/src
+SCRIPTS=	classpath javavmwrapper
+# This is normally defined by bsd.java.mk when USE_JAVA is defined, but
+# we can't do that here since it would result in a circular dependency
+JAVAJARDIR=	${PREFIX}/share/java/classes
 
 do-fetch:
 	@${DO_NADA}
 
 do-configure:
-	${SED} 's|%%PREFIX%%|${PREFIX}|' \
-		< ${SRC}/javavmwrapper.sh > ${WRKDIR}/javavmwrapper.sh
+.for _script in ${SCRIPTS}
+	${SED} -e 's|%%PREFIX%%|${PREFIX}|;' \
+	       -e 's|%%JAVAJARDIR%%|${JAVAJARDIR}|;' \
+		<${SRC}/${_script}.sh >${WRKDIR}/${_script}.sh
+.endfor
 
 do-install:
+	${INSTALL_SCRIPT} ${WRKDIR}/classpath.sh ${PREFIX}/bin/classpath
 	${INSTALL_SCRIPT} ${WRKDIR}/javavmwrapper.sh ${PREFIX}/bin/javavm
 	${LN} -sf ${PREFIX}/bin/javavm ${PREFIX}/bin/registervm
 	${LN} -sf ${PREFIX}/bin/javavm ${PREFIX}/bin/unregistervm
