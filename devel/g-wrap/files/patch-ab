@@ -1,0 +1,13 @@
+--- doc/g-wrap.texi.orig	Thu Jun 22 06:42:12 2000
++++ doc/g-wrap.texi	Sat Jul 15 12:15:38 2000
+@@ -2,6 +2,10 @@
+ @c %**start of header
+ @setfilename g-wrap.info
+ @settitle g-wrap
++@dircategory Scheme Programming
++@direntry
++* g-wrap: (g-wrap).      A tool for exporting C libraries into Scheme interpreters.
++@end direntry
+ @setchapternewpage on
+ @c Choices for setchapternewpage are {on,off,odd}.
+ @paragraphindent 0
