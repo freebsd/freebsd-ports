@@ -16,6 +16,8 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The SOAP Method product provides support for remote SOAP methods
 
+BROKEN=		Broken dependency
+
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/SOAPpy/__init__.py:${PORTSDIR}/net/py-soappy
 
 USE_PYTHON=	yes
