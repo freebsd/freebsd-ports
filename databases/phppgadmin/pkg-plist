@@ -6,8 +6,9 @@ www/data.default/phpPgAdmin/INSTALL
 www/data.default/phpPgAdmin/README
 www/data.default/phpPgAdmin/TODO
 www/data.default/phpPgAdmin/all_db.php
+www/data.default/phpPgAdmin/basque.inc.php
 www/data.default/phpPgAdmin/castellano.inc.php
-www/data.default/phpPgAdmin/catala.inc.php
+www/data.default/phpPgAdmin/catalan.inc.php
 www/data.default/phpPgAdmin/chinese_big5.inc.php
 www/data.default/phpPgAdmin/chinese_gb.inc.php
 www/data.default/phpPgAdmin/config.inc.php-dist
@@ -17,6 +18,7 @@ www/data.default/phpPgAdmin/db_details.php
 www/data.default/phpPgAdmin/db_dump.php
 www/data.default/phpPgAdmin/db_privilege.php
 www/data.default/phpPgAdmin/db_readdump.php
+www/data.default/phpPgAdmin/dutch.inc.php
 www/data.default/phpPgAdmin/english.inc.php
 www/data.default/phpPgAdmin/extchg.sh
 www/data.default/phpPgAdmin/file_sql.php
@@ -27,6 +29,7 @@ www/data.default/phpPgAdmin/func_properties.php
 www/data.default/phpPgAdmin/german.inc.php
 www/data.default/phpPgAdmin/grp_admin.php
 www/data.default/phpPgAdmin/header.inc.php
+www/data.default/phpPgAdmin/hung.inc.php
 www/data.default/phpPgAdmin/images/.cvsignore
 www/data.default/phpPgAdmin/images/bkg.gif
 www/data.default/phpPgAdmin/images/browse.gif
@@ -72,6 +75,7 @@ www/data.default/phpPgAdmin/tbl_replace.php
 www/data.default/phpPgAdmin/tbl_select.php
 www/data.default/phpPgAdmin/trig_create.php
 www/data.default/phpPgAdmin/trig_properties.php
+www/data.default/phpPgAdmin/turkish.inc.php
 www/data.default/phpPgAdmin/user_admin.php
 www/data.default/phpPgAdmin/view_create.php
 @dirrm www/data.default/phpPgAdmin/images
