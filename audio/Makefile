@@ -6,7 +6,6 @@
     SUBDIR += ascd
     SUBDIR += aumix
     SUBDIR += bladeenc
-    SUBDIR += bwap
     SUBDIR += cam
     SUBDIR += cd-console
     SUBDIR += cd2mp3
@@ -91,6 +90,7 @@
     SUBDIR += splaytk
     SUBDIR += streamripper
     SUBDIR += tclmidi
+    SUBDIR += teknap
     SUBDIR += timidity
     SUBDIR += timidity++
     SUBDIR += timidity++-emacs
