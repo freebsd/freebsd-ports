@@ -109,6 +109,7 @@
     SUBDIR += kdc2tiff
     SUBDIR += kdegraphics2
     SUBDIR += killustrator
+    SUBDIR += kisomandel
     SUBDIR += kplot3d
     SUBDIR += kuickshow
     SUBDIR += landscape

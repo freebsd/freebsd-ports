@@ -1,0 +1,29 @@
+# ex:ts=8
+# New ports collection makefile for:	Kisomandel
+# Date created:			Jun 10, 2001
+# Whom:				ijliao
+#
+# $FreeBSD$
+#
+
+PORTNAME=	kisomandel
+PORTVERSION=	0.66
+CATEGORIES=	graphics
+MASTER_SITES=	http://helsteger.supereva.it/kisomandel/
+
+MAINTAINER=	ijliao@FreeBSD.org
+
+LIB_DEPENDS=	png:${PORTSDIR}/graphics/png
+
+USE_BZIP2=	yes
+USE_QT_VER=	2
+GNU_CONFIGURE=	yes
+WRKSRC=		${WRKDIR}/${PORTNAME}
+USE_GMAKE=	yes
+
+post-patch:
+	@${PERL} -pi -e "s,-lqt,-lqt2,g" ${WRKSRC}/configure
+	@find ${WRKSRC} -name Makefile.in | xargs \
+		${PERL} -pi -e "s,-lqt,-lqt2,g"
+
+.include <bsd.port.mk>
