@@ -10265,7 +10265,6 @@ scm		ports/lang/scm
 scmail		ports/mail/scmail
 scmxx		ports/comms/scmxx
 scons		ports/devel/scons
-scorched3d-devel	ports/games/scorched3d-devel
 scotty3		ports/net-mgmt/scotty3
 scout		ports/www/scout
 scponly		ports/shells/scponly
