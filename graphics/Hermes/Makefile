@@ -12,6 +12,7 @@ MASTER_SITES=	http://dark.x.dtu.dk/~mbn/clanlib/download/
 
 MAINTAINER=	ports@FreeBSD.org
 
+ONLY_FOR_ARCHS=	i386 alpha
 USE_GMAKE=	yes
 USE_LIBTOOL=	yes
 INSTALLS_SHLIB=	yes
