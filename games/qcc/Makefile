@@ -7,19 +7,24 @@
 
 PORTNAME=	qcc
 PORTVERSION=	1.01
-CATEGORIES=	games
+CATEGORIES=	games devel
 MASTER_SITES=	ftp://ftp.idsoftware.com/idstuff/source/
 DISTNAME=	${PORTNAME}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	The QuakeC compiler, for building custom games of Quake
+
+USE_REINPLACE=	yes
 
 WRKSRC=		${WRKDIR}/send
 MAKEFILE=	makefile
 
+post-extract:
+		@${REINPLACE_CMD} -e '/^CFLAGS/d' ${WRKSRC}/makefile
+
 do-install:
 		${INSTALL_PROGRAM} ${WRKSRC}/qcc ${PREFIX}/bin
-		@ ${MKDIR} ${PREFIX}/share/qcc/v101qc
+		@${MKDIR} ${PREFIX}/share/qcc/v101qc
 		${INSTALL_DATA} ${WRKSRC}/readme.txt ${PREFIX}/share/qcc
 		${INSTALL_DATA} ${WRKSRC}/v101qc/* ${PREFIX}/share/qcc/v101qc
 
