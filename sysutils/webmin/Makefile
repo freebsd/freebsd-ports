@@ -3,7 +3,7 @@
 # Date created:		Do  19 Nov 1998 21:13:55 CET
 # Whom:			Andreas Klemm <andreas@klemm.gtn.com>
 #
-# $Id: Makefile,v 1.1.1.1 1998/11/19 21:38:24 andreas Exp $
+# $Id: Makefile,v 1.2 1998/11/19 21:41:15 andreas Exp $
 #
 
 DISTNAME=	webmin-0.64
@@ -15,6 +15,16 @@ MAINTAINER=	andreas@FreeBSD.ORG
 NO_BUILD=	yes
 IS_INTERACTIVE=	yes
 USE_PERL5=	yes
+
+pre-extract:
+	@if [ -x ${PREFIX}/sbin/httpd ]; then \
+	echo Good ! You seem to have apache webserver installed ...; \
+	else \
+	echo You need to install one of the different apache webservers; \
+	echo Best would be apache13-modssl or apache13-php3 that can be; \
+	echo configured to use modssl for better security as well; \
+	exit 1; \
+	fi
 
 do-install:
 	${MKDIR} ${PREFIX}/lib/webmin
