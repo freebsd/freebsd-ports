@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.122 1997/01/13 08:07:41 tg Exp $
+# $Id: Makefile,v 1.123 1997/01/20 07:18:36 tg Exp $
 #
 
     SUBDIR += FWF
@@ -27,6 +27,7 @@
     SUBDIR += lesstif
     SUBDIR += libsx
     SUBDIR += lupe
+    SUBDIR += mlvwm
     SUBDIR += neXtaw
     SUBDIR += olvwm
     SUBDIR += p5-Tk400
