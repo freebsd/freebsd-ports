@@ -58,7 +58,10 @@ lib/libgnunettransport_udp.so
 lib/libgnunetutil.a
 lib/libgnunetutil.so
 lib/libgnunetutil.so.0
+share/GNUnet/gnunet_logo.png
+share/locale/de/LC_MESSAGES/GNUnet.mo
 %%WITH_GDBM%%lib/libgnunetafs_database_gdbm.so
 %%WITH_TDB%%lib/libgnunetafs_database_tdb.so
 %%WITH_IPV6%%lib/libgnunettransport_tcp6.so
 %%WITH_IPV6%%lib/libgnunettransport_udp6.so
+@dirrm share/GNUnet
