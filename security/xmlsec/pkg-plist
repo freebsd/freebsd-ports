@@ -1,0 +1,27 @@
+bin/xmlsec
+bin/xmlsec-config
+include/xmlsec/base64.h
+include/xmlsec/bn.h
+include/xmlsec/buffered.h
+include/xmlsec/ciphers.h
+include/xmlsec/debug.h
+include/xmlsec/digests.h
+include/xmlsec/io.h
+include/xmlsec/keyinfo.h
+include/xmlsec/keys.h
+include/xmlsec/keysInternal.h
+include/xmlsec/keysmngr.h
+include/xmlsec/membuf.h
+include/xmlsec/transforms.h
+include/xmlsec/transformsInternal.h
+include/xmlsec/version.h
+include/xmlsec/x509.h
+include/xmlsec/xmldsig.h
+include/xmlsec/xmlenc.h
+include/xmlsec/xmlsec.h
+include/xmlsec/xmltree.h
+include/xmlsec/xpath.h
+@dirrm include/xmlsec
+lib/libxmlsec.a
+lib/libxmlsec.so
+lib/libxmlsec.so.0
