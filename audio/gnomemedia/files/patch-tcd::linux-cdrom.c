@@ -1,8 +1,5 @@
-
-$FreeBSD$
-
---- tcd/linux-cdrom.c.orig	Mon Jun 11 20:50:58 2001
-+++ tcd/linux-cdrom.c	Fri Jul 13 12:52:22 2001
+--- tcd/linux-cdrom.c.orig	Mon Jun 11 13:50:58 2001
++++ tcd/linux-cdrom.c	Tue Apr 16 15:55:46 2002
 @@ -67,6 +67,7 @@
      return;
  }
@@ -279,14 +276,18 @@ $FreeBSD$
      tcd_close_disc ( cd );
      if(tmp < 0)
  	return FALSE;
-@@ -360,6 +470,14 @@
+@@ -360,6 +470,18 @@
  
  int tcd_get_volume(cd_struct *cd)
  {
 +#ifdef TCD_BSD
 +    struct ioc_vol vol;
++    int tmp;
 +
-+    if(ioctl(cd->cd_dev, CDIOCGETVOL, &vol) < 0)
++    tcd_opencddev( cd, NULL );
++    tmp = ioctl(cd->cd_dev, CDIOCGETVOL, &vol);
++    tcd_close_disc ( cd );
++    if (tmp < 0)
 +	return -1;
 +
 +    return vol.vol[0];
@@ -294,7 +295,7 @@ $FreeBSD$
  #ifdef CDROMVOLREAD
      struct cdrom_volctrl vol;
      int tmp;
-@@ -374,12 +492,38 @@
+@@ -374,12 +496,38 @@
  #else
      return 0;
  #endif
@@ -333,7 +334,7 @@ $FreeBSD$
      debug("cdrom.c: tcd_playtracks( %p, %d, %d )\n", cd, start_t, end_t );
      cd->err = FALSE;
  	
-@@ -390,7 +534,7 @@
+@@ -390,7 +538,7 @@
      tcd_gettime(cd);
      if(cd->err) 
      {
@@ -342,7 +343,7 @@ $FreeBSD$
  	tcd_ejectcd(cd);
  
  	if(cd->err) 
-@@ -401,62 +545,79 @@
+@@ -401,62 +549,79 @@
      }
  
      tcd_opencddev( cd, NULL );
@@ -446,7 +447,7 @@ $FreeBSD$
  	{
  	    strcpy( cd->errmsg, "Error playing disc" );
  	    cd->err = TRUE;
-@@ -472,25 +633,15 @@
+@@ -472,25 +637,15 @@
      return;
  }       
  
@@ -476,7 +477,7 @@ $FreeBSD$
      int tmp;
  
      debug("cdrom.c: tcd_play_seconds( %p, %ld )\n", cd, offset );
-@@ -498,53 +649,54 @@
+@@ -498,53 +653,54 @@
      cd->err = FALSE;
      cd->isplayable=FALSE;
  
@@ -561,7 +562,7 @@ $FreeBSD$
      }
      cd->isplayable=TRUE;
      tcd_close_disc( cd );
-@@ -562,7 +714,11 @@
+@@ -562,7 +718,11 @@
      cd->err = FALSE;
  
      tcd_opencddev( cd, NULL );
@@ -573,7 +574,7 @@ $FreeBSD$
      {
  	cd->isplayable = FALSE;
  	strcpy(cd->errmsg, "No disc in drive ");
-@@ -570,9 +726,17 @@
+@@ -570,9 +730,17 @@
      } 
      else 
      {
@@ -591,7 +592,7 @@ $FreeBSD$
  
  	if(tcd_post_init(cd))
  	{
-@@ -582,6 +746,9 @@
+@@ -582,6 +750,9 @@
  	    debug("cdrom.c: tcd_eject - disc init error. %s\n",  
  		  strerror(errno) );
  
@@ -601,7 +602,7 @@ $FreeBSD$
  	    return(-1);
  	}
  	cd->isplayable = TRUE;
-@@ -600,12 +767,21 @@
+@@ -600,12 +771,21 @@
      debug("cdrom.c: tcd_stopcd(%p)\n", cd );
  	
      /* SDH: Makes things cleaner on eject */
@@ -623,7 +624,7 @@ $FreeBSD$
      tcd_close_disc ( cd );
      if(tmp)
      {
-@@ -626,13 +802,25 @@
+@@ -626,13 +806,25 @@
      cd->err = FALSE;
  	
      tcd_opencddev( cd, NULL );
@@ -649,7 +650,7 @@ $FreeBSD$
      }
      if(tmp < 0)
      {
-@@ -647,6 +835,7 @@
+@@ -647,6 +839,7 @@
  int tcd_change_disc( cd_struct *cd, int disc )
  {
  #ifdef TCD_CHANGER_ENABLED
@@ -657,7 +658,7 @@ $FreeBSD$
      int tmp;
      cd->err = FALSE;
  
-@@ -657,6 +846,7 @@
+@@ -657,6 +850,7 @@
  	fprintf( stdout, "ioctl: %s\n", strerror(errno) );	
  
      return tmp;
