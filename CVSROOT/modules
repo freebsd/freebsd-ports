@@ -1938,6 +1938,7 @@ gawk		ports/lang/gawk
 gbackground	ports/x11/gbackground
 gbase		ports/converters/gbase
 gbe		ports/emulators/gbe
+gbib		ports/databases/gbib
 gbiff		ports/mail/gbiff
 gbuffy		ports/mail/gbuffy
 gcal		ports/deskutils/gcal
