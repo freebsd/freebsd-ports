@@ -1,4 +1,4 @@
-bin/gp-2.2
+bin/gp-%%MAJOR_VERSION%%.%%MINOR_VERSION%%
 bin/gp
 bin/tex2mail
 bin/gphelp
@@ -15,9 +15,9 @@ include/pari/parisys.h
 include/pari/pariport.h
 include/pari/paridecl.h
 include/pari/genpari.h
-lib/libpari-2.2.so.3.0.0
-lib/libpari-2.2.so.3
-lib/libpari-2.2.so
+lib/libpari-%%MAJOR_VERSION%%.%%MINOR_VERSION%%.so.%%REV_VERSION%%.0.0
+lib/libpari-%%MAJOR_VERSION%%.%%MINOR_VERSION%%.so.%%REV_VERSION%%
+lib/libpari-%%MAJOR_VERSION%%.%%MINOR_VERSION%%.so
 share/doc/pari/emacs/pari.el
 share/doc/pari/emacs/pariemacs.txt
 share/doc/pari/emacs/with-syntax.el
