@@ -67,8 +67,6 @@ lib/pulslib.a
 %%PORTDOCS%%share/doc/oases/figs/vol_scat.ps
 %%PORTDOCS%%share/doc/oases/figs/wg_rhs.ps
 %%PORTDOCS%%share/doc/oases/figs/wg_scat.ps
-%%PORTDOCS%%@dirrm share/doc/oases/figs
-%%PORTDOCS%%@dirrm share/doc/oases
 %%PORTDOCS%%share/examples/oases/mfp/crack.dat
 %%PORTDOCS%%share/examples/oases/mfp/crackmfp.dat
 %%PORTDOCS%%share/examples/oases/mfp/f9-2.dat
@@ -1058,18 +1056,20 @@ lib/pulslib.a
 %%PORTDOCS%%share/examples/oases/volume/scenarios_vol/vol_c_iso4_scat.dat
 %%PORTDOCS%%share/examples/oases/volume/scenarios_vol/vol_c_iso6.dat
 %%PORTDOCS%%share/examples/oases/volume/scenarios_vol/vol_c_iso6_scat.dat
-%%PORTDOCS%%@dirrm share/examples/oases/mfp
-%%PORTDOCS%%@dirrm share/examples/oases/mfp_geo
-%%PORTDOCS%%@dirrm share/examples/oases/noise
-%%PORTDOCS%%@dirrm share/examples/oases/pulse
-%%PORTDOCS%%@dirrm share/examples/oases/rcoef
-%%PORTDOCS%%@dirrm share/examples/oases/rd_test
-%%PORTDOCS%%@dirrm share/examples/oases/rdloss
-%%PORTDOCS%%@dirrm share/examples/oases/rdpulse
-%%PORTDOCS%%@dirrm share/examples/oases/scat
-%%PORTDOCS%%@dirrm share/examples/oases/scatp
-%%PORTDOCS%%@dirrm share/examples/oases/tloss
-%%PORTDOCS%%@dirrm share/examples/oases/volume/scenarios_rgh
 %%PORTDOCS%%@dirrm share/examples/oases/volume/scenarios_vol
+%%PORTDOCS%%@dirrm share/examples/oases/volume/scenarios_rgh
 %%PORTDOCS%%@dirrm share/examples/oases/volume
+%%PORTDOCS%%@dirrm share/examples/oases/tloss
+%%PORTDOCS%%@dirrm share/examples/oases/scatp
+%%PORTDOCS%%@dirrm share/examples/oases/scat
+%%PORTDOCS%%@dirrm share/examples/oases/rdpulse
+%%PORTDOCS%%@dirrm share/examples/oases/rdloss
+%%PORTDOCS%%@dirrm share/examples/oases/rd_test
+%%PORTDOCS%%@dirrm share/examples/oases/rcoef
+%%PORTDOCS%%@dirrm share/examples/oases/pulse
+%%PORTDOCS%%@dirrm share/examples/oases/noise
+%%PORTDOCS%%@dirrm share/examples/oases/mfp_geo
+%%PORTDOCS%%@dirrm share/examples/oases/mfp
 %%PORTDOCS%%@dirrm share/examples/oases
+%%PORTDOCS%%@dirrm share/doc/oases/figs
+%%PORTDOCS%%@dirrm share/doc/oases
