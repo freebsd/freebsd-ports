@@ -6,16 +6,16 @@
 #
 
 PORTNAME=	roundup
-PORTVERSION=	0.6.8
+PORTVERSION=	0.7.2
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	roundup
+MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An Issue-Tracking System for Knowledge Workers
 
 USE_PYTHON=	yes
-USE_PYDISTUTILS=yes
+USE_PYDISTUTILS=	yes
 
 MAN1=		roundup-admin.1 roundup-mailgw.1 roundup-server.1
 
