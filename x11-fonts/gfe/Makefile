@@ -13,6 +13,7 @@ MASTER_SITES=	${MASTER_SITE_SUNSITE}
 MASTER_SITE_SUBDIR=	X11/fonts
 
 MAINTAINER=	bms@spc.org
+COMMENT=	GTK+-based .bdf font editor for X
 
 GNU_CONFIGURE=	yes
 USE_GNOMENG=	yes

@@ -11,6 +11,7 @@ CATEGORIES=	x11
 MASTER_SITES=	ftp://ftp.uni-koeln.de/windows/xcontrib/
 
 MAINTAINER=	jacs@gnome.co.uk
+COMMENT=	Make fish swim in the background of your screen
 
 USE_IMAKE=	yes
 WRKSRC=		${WRKDIR}/xfishtank2.0

@@ -12,6 +12,7 @@ MASTER_SITES=	http://www.csn.ul.ie/~caolan/publink/X/
 DISTNAME=	XswallowSource-${PORTVERSION}
 
 MAINTAINER=	conrads@home.com
+COMMENT=	A general-purpose, user-configurable plugin for Netscape
 
 USE_XLIB=	yes
 WRKSRC=		${WRKDIR}/xswallow/xswallow

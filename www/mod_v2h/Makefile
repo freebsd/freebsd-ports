@@ -12,6 +12,7 @@ MASTER_SITES=	http://www.fractal.net/files/
 DISTNAME=	mod_v2h
 
 MAINTAINER=     hikari@hikari.org.uk
+COMMENT=	A mass virtual hosting module for Apache with support
 
 BUILD_DEPENDS=  ${LOCALBASE}/sbin/httpd:${PORTSDIR}/www/apache2 \
 		${LOCALBASE}/lib/mysql/libmysqlclient.so:${PORTSDIR}/databases/mysql323-client

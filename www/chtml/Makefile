@@ -13,6 +13,7 @@ DISTNAME=       chtml
 EXTRACT_SUFX=   .tgz
 
 MAINTAINER=     david+ports@bushong.net
+COMMENT=	Chunked HTML templating engine
 
 BUILD_DEPENDS=	${LOCALBASE}/bin/csiod:${PORTSDIR}/lang/siod
 

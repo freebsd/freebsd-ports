@@ -12,6 +12,7 @@ MASTER_SITES=	http://www.axkit.org/download/
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	dom@happygiraffe.net
+COMMENT=	XML Delivery Toolkit for Apache/Perl
 
 LIB_DEPENDS=	iconv.3:${PORTSDIR}/converters/libiconv
 BUILD_DEPENDS=	\

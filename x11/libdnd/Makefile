@@ -13,6 +13,7 @@ DISTNAME=	dnd.${PORTVERSION}
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	lukin@okbmei.msk.su
+COMMENT=	Drag and drop library
 
 USE_XLIB=	yes
 INSTALLS_SHLIB=	yes

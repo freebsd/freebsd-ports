@@ -15,6 +15,7 @@ MASTER_SITES=	http://www.reportmagic.com/	\
 DISTNAME=	rmagic-${PORTVERSION}
 
 MAINTAINER=	jeremy@external.org
+COMMENT=	A web site statistics post-processor for Analog
 
 RUN_DEPENDS=	analog:${PORTSDIR}/www/analog \
 		${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/GD/Graph3d.pm:${PORTSDIR}/graphics/p5-GD-Graph3d \

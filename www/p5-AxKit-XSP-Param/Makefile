@@ -12,6 +12,7 @@ MASTER_SITES=	http://www.cpan.org/authors/id/M/MS/MSERGEANT/
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	dom@happygiraffe.net
+COMMENT=	A namespace wrapper for accessing HTTP request paramaters
 
 BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/AxKit.pm:${PORTSDIR}/www/p5-AxKit
 RUN_DEPENDS=	${BUILD_DEPENDS}

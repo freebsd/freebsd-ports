@@ -13,6 +13,7 @@ DISTNAME=	wm-oldmenu2new
 EXTRACT_SUFX=	.gz
 
 MAINTAINER=	bms@spc.org
+COMMENT=	Script to convert WindowMaker RootMenu menus to new PropList format
 
 USE_X_PREFIX=	yes
 NO_BUILD=	yes

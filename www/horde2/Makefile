@@ -16,6 +16,7 @@ MASTER_SITES=	ftp://ftp.horde.org/pub/horde/				\
 		ftp://ftp.pt.horde.org/pub/horde-ftp/horde/
 
 MAINTAINER=	thierry@pompo.net
+COMMENT=	A common code-base used by Horde applications, written in PHP
 
 #-----------------------------------------------------------------------
 # You may define these options:

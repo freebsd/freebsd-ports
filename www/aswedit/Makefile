@@ -15,6 +15,7 @@ MASTER_SITES=	http://www.advasoft.com/asWedit/ \
 DISTNAME=	asWedit-4.0-i386.linux
 
 MAINTAINER=	brett@peloton.runet.edu
+COMMENT=	An easy to use HTML and text editor
 
 RESTRICTED=	"Commercial software"
 NO_BUILD=	yes

@@ -12,6 +12,7 @@ MASTER_SITES=	http://www.geocities.com/samngms/twhttpd/download/
 DISTNAME=	twhttpd-${PORTVERSION}
 
 MAINTAINER=	opr@bsdaemon.be
+COMMENT=	Secure HTTP Proxy
 
 GNU_CONFIGURE=  yes
 USE_GMAKE=	yes

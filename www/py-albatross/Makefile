@@ -11,6 +11,7 @@ MASTER_SITES=	http://object-craft.com.au/projects/albatross/download/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	gnb@itga.com.au
+COMMENT=	Python toolkit for developing highly stateful web applications
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes

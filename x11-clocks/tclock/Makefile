@@ -14,6 +14,7 @@ MASTER_SITES=	ftp://ftp.uni-potsdam.de/pub/X11/tools/clocks/		\
 EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=	Lars.Koeller@Uni-Bielefeld.DE
+COMMENT=	Transparent analog clock for x11
 
 NO_WRKSUBDIR=	yes
 USE_IMAKE=	yes

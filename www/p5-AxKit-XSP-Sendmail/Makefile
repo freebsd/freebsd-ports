@@ -12,6 +12,7 @@ MASTER_SITES=	http://www.cpan.org/authors/id/M/MS/MSERGEANT/
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	dom@happygiraffe.net
+COMMENT=	Simple SMTP mailer tag library for AxKit eXtesible Server Pages.
 
 BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/AxKit.pm:${PORTSDIR}/www/p5-AxKit \
 		${SITE_PERL}/Mail/Sendmail.pm:${PORTSDIR}/mail/p5-Mail-Sendmail \

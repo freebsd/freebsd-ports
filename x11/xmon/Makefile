@@ -12,6 +12,7 @@ MASTER_SITES=	http://www.ibiblio.org/pub/X11/contrib/devel_tools/
 DISTNAME=	xmon.${PORTVERSION}
 
 MAINTAINER=	bms@spc.org
+COMMENT=	Raw X11 protocol analyser
 
 WRKSRC=		${WRKDIR}/xmon.${PORTVERSION}
 USE_IMAKE=	yes

@@ -12,6 +12,7 @@ MASTER_SITES=	http://www.oersted.co.jp/~yav/soft/
 DISTNAME=	lupe008	
 
 MAINTAINER=	kazu@jp.freebsd.org
+COMMENT=	Real-time magnifying glass for X11
 
 WRKSRC=		${WRKDIR}/lupe
 USE_IMAKE=	yes

@@ -12,6 +12,7 @@ CATEGORIES=	x11-fm
 MASTER_SITES=	ftp://ftp.berlios.de/pub/apotheke/
 
 MAINTAINER=	martin.klaffenboeck@gmx.at
+COMMENT=	A CVS view for Nautilus
 
 LIB_DEPENDS=	nautilus.2:${PORTSDIR}/x11-fm/nautilus2
 RUN_DEPENDS=	ssh-askpass:${PORTSDIR}/security/openssh-askpass

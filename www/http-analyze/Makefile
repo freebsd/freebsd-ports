@@ -13,6 +13,7 @@ DISTNAME=	${PORTNAME}${PORTVERSION}
 EXTRACT_SUFX=	-src.tar.gz
 
 MAINTAINER=	todd@thisisa.com
+COMMENT=	A fast Log-Analyzer for web servers
 
 BUILD_DEPENDS=	gif2png:${PORTSDIR}/graphics/gif2png
 LIB_DEPENDS=	gd.2:${PORTSDIR}/graphics/gd

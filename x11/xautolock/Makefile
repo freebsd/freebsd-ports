@@ -14,6 +14,7 @@ DISTNAME=	${PORTNAME}-pl15
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	eblood@cs.unr.edu
+COMMENT=	Used to activate xlock after a user defined time of inactivity
 
 USE_IMAKE=	yes
 MAN1=		xautolock.1

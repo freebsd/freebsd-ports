@@ -16,6 +16,7 @@ DISTNAME=	purge
 EXTRACT_SUFX=	-20000921-src.tar.gz
 
 MAINTAINER=	dean@odyssey.apana.org.au
+COMMENT=	Powerful object purging utility for the Squid web proxy cache
 
 RUN_DEPENDS=	${LOCALBASE}/sbin/squid:${PORTSDIR}/www/squid24
 

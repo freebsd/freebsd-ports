@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	aolserver
 DISTNAME=	${PORTNAME}-${PORTVERSION}-src
 
 MAINTAINER=	mab@red-bean.com
+COMMENT=	A multithreaded web server with embedded TCL interpreter
 
 WRKSRC=	${WRKDIR}/${PORTNAME}-${PORTVERSION}
 

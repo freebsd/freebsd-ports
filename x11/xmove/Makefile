@@ -12,6 +12,7 @@ MASTER_SITES=	ftp://ftp.cs.columbia.edu/pub/xmove/
 DISTNAME=	${PORTNAME}.${PORTVERSION:S/b/beta/}
 
 MAINTAINER=	sec@42.org
+COMMENT=	Pseudoserver to support mobile X11 clients
 
 WRKSRC=		${WRKDIR}/xmove
 

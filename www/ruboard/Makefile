@@ -12,6 +12,7 @@ CATEGORIES=	www russian
 MASTER_SITES=	ftp://ftp.amsoft.ru/software/ruboard/
 
 MAINTAINER=	am@amsoft.ru
+COMMENT=	A web based discussion board
 
 USE_PERL5_BUILD=yes
 USE_PERL5_RUN	=yes

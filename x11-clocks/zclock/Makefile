@@ -11,6 +11,7 @@ CATEGORIES=	x11-clocks gnome
 MASTER_SITES=	http://zack.vpop.net/download/
 
 MAINTAINER=	zgh@malfunktion.net
+COMMENT=	A simple but powerful clock applet for GNOME
 
 .if !defined(NOPORTDOCS)
 # I am going to install the dependencies for building the Zclock html

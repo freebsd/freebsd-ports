@@ -11,6 +11,7 @@ CATEGORIES=	www
 MASTER_SITES=	http://wonko.com/notftp/files/
 
 MAINTAINER=	ryan@wonko.com
+COMMENT=	An easy to use Web to FTP gateway written in PHP
 
 RUN_DEPENDS=	${LOCALBASE}/libexec/apache/libphp4.so:${PORTSDIR}/www/mod_php4
 

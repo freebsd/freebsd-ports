@@ -14,6 +14,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	firewolf@lightningfire.net
+COMMENT=	Free real-time logfile analyzer to get advanced web statistics
 
 NO_BUILD=	yes
 USE_PERL5_RUN=	yes

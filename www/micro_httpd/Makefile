@@ -13,6 +13,7 @@ MASTER_SITES=	http://www.acme.com/software/micro_httpd/ \
 DISTNAME=	${PORTNAME}_15dec00
 
 MAINTAINER=	user@unknown.nu
+COMMENT=	An extremely small web server
 
 USE_REINPLACE=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}

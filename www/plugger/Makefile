@@ -15,6 +15,7 @@ MASTER_SITE_SUBDIR=	sdk/plugin/unix
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} unix-sdk-3.0b5.tar.Z
 
 MAINTAINER=	coop9211@uidaho.edu
+COMMENT=	A multimedia front-end plugin for Mozilla or Opera
 
 RUN_DEPENDS=	${X11BASE}/bin/xanim:${PORTSDIR}/graphics/xanim \
 		${LOCALBASE}/bin/timidity:${PORTSDIR}/audio/timidity++ \

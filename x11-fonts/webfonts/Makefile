@@ -25,6 +25,7 @@ DISTFILES=	andale32.exe trebuc32.exe georgi32.exe verdan32.exe \
 DIST_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	kkonstan@duth.gr
+COMMENT=	TrueType core fonts for the Web
 
 BUILD_DEPENDS=	ttmkfdir:${PORTSDIR}/x11-fonts/ttmkfdir \
 		cabextract:${PORTSDIR}/archivers/cabextract

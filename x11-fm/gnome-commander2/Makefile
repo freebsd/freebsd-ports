@@ -12,6 +12,7 @@ MASTER_SITES=	http://freesoftware.fsf.org/download/gcmd/gcmd.pkg/0.9.7/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-2
 
 MAINTAINER=	edybsd@yahoo.com.ar
+COMMENT=	File manager for Gnome
 
 WRKSRC=	${WRKDIR}/${PORTNAME}-${PORTVERSION}
 .if defined(WITH_FAM)

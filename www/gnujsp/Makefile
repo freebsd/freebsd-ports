@@ -11,6 +11,7 @@ CATEGORIES=	www java
 MASTER_SITES=	http://www.klomp.org/gnujsp/downloads/
 
 MAINTAINER=	girgen@partitur.se
+COMMENT=	GNU implementation of Sun's Java Server Pages
 
 RUN_DEPENDS=	${LOCALBASE}/libexec/apache/mod_jserv.so:${PORTSDIR}/www/apache-jserv
 

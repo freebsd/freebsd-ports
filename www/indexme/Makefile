@@ -12,6 +12,7 @@ MASTER_SITES=	ftp://users.uk.freebsd.org/pub/lord_cj/
 DISTNAME=	${PORTNAME}
 
 MAINTAINER=	calle.madestrand@norrgarden.se
+COMMENT=	Links files into a HTML index for viewing and easy overview
 
 USE_PERL5=	yes
 

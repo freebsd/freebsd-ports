@@ -12,6 +12,7 @@ CATEGORIES=		x11
 MASTER_SITES=		http://www.math.missouri.edu/~stephen/software/xkbset/
 
 MAINTAINER=		stephen@math.missouri.edu
+COMMENT=	Manage various XKB features of X Window
 
 MAN1=			xkbset.1
 USE_X_PREFIX=		yes

@@ -11,6 +11,7 @@ CATEGORIES=	x11
 MASTER_SITES=	http://www-2.cs.cmu.edu/~spot/cache/
 
 MAINTAINER=	dyeske@yahoo.com
+COMMENT=	A nice distributed screensaver
 
 RUN_DEPENDS=	xloadimage:${PORTSDIR}/x11/xloadimage \
 		xsetbg:${PORTSDIR}/graphics/xli \

@@ -11,6 +11,7 @@ CATEGORIES=	www
 MASTER_SITES=	http://www.gohome.org/teranisi/
 
 MAINTAINER=	stolz+nd@i2.informatik.rwth-aachen.de
+COMMENT=	A simple command line interface for WebDAV (RFC2518) server
 
 LIB_DEPENDS=	xml2.5:${PORTSDIR}/textproc/libxml2
 

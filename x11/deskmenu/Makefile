@@ -12,6 +12,7 @@ MASTER_SITES=	http://matt.peterson.org/FreeBSD/ports/ \
 		http://gd.tuwien.ac.at/opsys/linux/gentoo/distfiles/
 
 MAINTAINER=	matt@peterson.org
+COMMENT=	X11 application launcher
 
 USE_X_PREFIX=	yes
 USE_GNOMENG=	yes

@@ -13,6 +13,7 @@ MASTER_SITES=	http://www.boa.org/
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/.r/rc/}
 
 MAINTAINER=	sysadmin@alexdupre.com
+COMMENT=	High performance single-tasking web server
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes

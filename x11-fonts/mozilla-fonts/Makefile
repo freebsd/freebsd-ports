@@ -13,6 +13,7 @@ CATEGORIES=	x11-fonts www
 MASTER_SITES=	http://www.myrddin.demon.co.uk/dist/
 
 MAINTAINER=	dom@happygiraffe.net
+COMMENT=	Web fonts for Netscape/Mozilla
 
 USE_X_PREFIX=	true
 

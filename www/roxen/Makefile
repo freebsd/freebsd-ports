@@ -13,6 +13,7 @@ FETCH_CMD=	/usr/bin/fetch
 DISTNAME=	roxen-dist-2.1.231
 WRKSRC=		${WRKDIR}/roxen-${PORTVERSION}-src
 MAINTAINER=	k@123.org
+COMMENT=	The Roxen WebServer 2.1
 HAS_CONFIGURE=	yes
 PKGMESSAGE=     ${WRKSRC}/MESSAGE
 STARTUP_SCRIPT= ${PREFIX}/etc/rc.d/roxen.sh.sample

@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	HTTPD
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	dom@happygiraffe.net
+COMMENT=	Perl module for HTTP benchmarking
 
 PERL_CONFIGURE=	yes
 

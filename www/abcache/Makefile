@@ -12,6 +12,7 @@ MASTER_SITES=	http://afterburner.bware.it/download/
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	sysadmin@alexdupre.com
+COMMENT=	A tool to cache applications written in PHP
 
 BUILD_DEPENDS=	aclocal:${PORTSDIR}/devel/automake \
 		autoconf:${PORTSDIR}/devel/autoconf \

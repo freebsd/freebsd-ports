@@ -12,6 +12,7 @@ MASTER_SITES=	${MASTER_SITE_SUNSITE}
 MASTER_SITE_SUBDIR=	X11/clocks
 
 MAINTAINER=	kazu@jp.freebsd.org
+COMMENT=	Display the current time using the X root cursor
 
 USE_GMAKE=	yes
 USE_IMAKE=	yes

@@ -11,6 +11,7 @@ MASTER_SITES=		http://www.oldach.net/
 DISTNAME=		${PORTNAME}
 
 MAINTAINER=		mod_bunzip2@oldach.net
+COMMENT=	Apache module for server-side decompression of bzip2 files
 
 BUILD_DEPENDS=	${APXS}:${APACHE_PORT}
 RUN_DEPENDS=	${APXS}:${APACHE_PORT}

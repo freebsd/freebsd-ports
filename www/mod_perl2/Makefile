@@ -14,6 +14,7 @@ PKGNAMESUFFIX=	2
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/r/_/}
 
 MAINTAINER=	larse@isi.edu
+COMMENT=	Embeds a Perl interpreter in the Apache2 server
 
 BUILD_DEPENDS=	${LOCALBASE}/sbin/apxs:${APACHE2_PORT}
 RUN_DEPENDS=	${LOCALBASE}/sbin/apxs:${APACHE2_PORT}

@@ -12,6 +12,7 @@ MASTER_SITES=	http://uts.cc.utexas.edu/~foxx/dhttpd/
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	gslin@ccca.nctu.edu.tw
+COMMENT=	Minimal secure webserver. Fast and efficient, no cgi-bin support
 
 USE_REINPLACE=	yes
 

@@ -14,6 +14,7 @@ MASTER_SITES=	http://tkdesk.sourceforge.net/dist/ \
 MASTER_SITE_SUBDIR= X11/desktop
 
 MAINTAINER=	spadger@best.com
+COMMENT=	A graphical, highly configurable and powerful file manager
 
 LIB_DEPENDS=	itcl32:${PORTSDIR}/lang/itcl \
 		BLT24.2:${PORTSDIR}/x11-toolkits/blt

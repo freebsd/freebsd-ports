@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	FAQ
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	svenasse@polaris.ca
+COMMENT=	Perl API to manipulate FAQ-O-Matics
 
 PERL_CONFIGURE=	yes
 

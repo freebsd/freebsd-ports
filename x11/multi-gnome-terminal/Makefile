@@ -14,6 +14,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 MASTER_SITE_SUBDIR=	multignometerm
 
 MAINTAINER=	fdubuy@free.fr
+COMMENT=	Gnome tabbed terminal emulator
 
 USE_X_PREFIX=	yes
 USE_GNOMENG=	yes

@@ -11,6 +11,7 @@ CATEGORIES=	x11 gnome
 MASTER_SITES=	http://www.fcoutant.freesurf.fr/download/
 
 MAINTAINER=	karlj000@unbc.ca
+COMMENT=	A popup menu of icons that launch programs for the WindowMaker dock
 
 LIB_DEPENDS=	dockapp.1:${PORTSDIR}/x11-wm/libdockapp:install
 

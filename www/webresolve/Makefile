@@ -12,6 +12,7 @@ MASTER_SITES=	http://siag.nu/pub/webresolve/ \
 		ftp://siag.nu/pub/webresolve/
 
 MAINTAINER=	joseph@randomnetworks.com
+COMMENT=	Webresolve resolves IP addresses to host names in web log files
 
 ALL_TARGET=	webresolve
 

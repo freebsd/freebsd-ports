@@ -12,6 +12,7 @@ MASTER_SITES=	${MASTER_SITE_PORTS_JP}
 EXTRACT_SUFX=	.bz2
 
 MAINTAINER=	koma2@jiro.c.u-tokyo.ac.jp
+COMMENT=	Perl script to make BDF font italic
 
 USE_PERL5=	yes
 USE_X_PREFIX=	yes

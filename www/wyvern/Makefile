@@ -11,6 +11,7 @@ CATEGORIES=	www ipv6
 MASTER_SITES=	http://www.MysticWALL.COM/software/src/
 
 MAINTAINER=	kouichi@MysticWALL.COM
+COMMENT=	Simple/powerful/lightweight/secure/embed-able HTTP server
 
 USE_BZIP2=	yes
 USE_OPENSSL=	yes

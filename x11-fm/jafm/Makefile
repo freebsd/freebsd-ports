@@ -13,6 +13,7 @@ MASTER_SITES=	http://www-personal.usyd.edu.au/~rlittlew/jafm/ \
 MASTER_SITE_SUBDIR=	X11/desktop
 
 MAINTAINER=	brett@peloton.runet.edu
+COMMENT=	Yet another file manager!
 
 BROKEN=		"Does not build"
 

@@ -12,6 +12,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	mitsuru@riken.go.jp
+COMMENT=	A small, efficient HTTP proxy server
 
 GNU_CONFIGURE=  yes
 USE_GMAKE=	yes

@@ -12,6 +12,7 @@ MASTER_SITES=	http://galileo.spaceports.com/~jharris/distfiles/ \
 		ftp://samurai.ruin.org/pub/All/
 
 MAINTAINER=	jmrobins@samurai.ruin.org
+COMMENT=	Quick, easy-to-read, web statistics program
 
 USE_PERL5=	yes
 NO_BUILD=	yes

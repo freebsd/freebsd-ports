@@ -12,6 +12,7 @@ MASTER_SITES=	ftp://ftp.holywar.net/pub/FreeBSD/ \
 		http://www.fastcgi.com/dist/
 
 MAINTAINER=	hollywar@mail.holywar.net
+COMMENT=	A fast-cgi module for Apache
 
 BUILD_DEPENDS=	${LOCALBASE}/sbin/apxs:${APACHE_PORT}
 RUN_DEPENDS=	${LOCALBASE}/sbin/apxs:${APACHE_PORT}

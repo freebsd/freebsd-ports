@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	WWW
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	erwin@lansing.dk
+COMMENT=	Perl interface to obtain translations from the babelfish server
 
 BUILD_DEPENDS=	${SITE_PERL}/LWP/UserAgent.pm:${PORTSDIR}/www/p5-libwww \
 		${SITE_PERL}/IO/String.pm:${PORTSDIR}/devel/p5-IO-String

@@ -12,6 +12,7 @@ MASTER_SITES=	http://www.csacek.cz/distrib/
 DISTNAME=	${PORTNAME:S/mod_//g}-${PORTVERSION}
 
 MAINTAINER=	ms@vol.cz
+COMMENT=	Charset recoding module for Apache
 
 BUILD_DEPENDS=	${LOCALBASE}/sbin/apxs:${PORTSDIR}/www/apache13
 RUN_DEPENDS=	${LOCALBASE}/sbin/apxs:${PORTSDIR}/www/apache13

@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	post-nuke
 DISTNAME=	Rogue_714
 
 MAINTAINER=	rapzzard@rapzzard.pe.kr
+COMMENT=	An automated website package to distribute and manage content
 
 LIB_DEPENDS=	mysqlclient.10:${PORTSDIR}/databases/mysql323-client
 RUN_DEPENDS=    ${LOCALBASE}/lib/php/System.php:${PORTSDIR}/www/mod_php4

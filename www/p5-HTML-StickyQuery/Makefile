@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	HTML
 PKGNAMEPREFIX=		p5-
 
 MAINTAINER=		svenasse@polaris.ca
+COMMENT=	Add sticky QUERY_STRING to a tag href attributes
 
 BUILD_DEPENDS=		${SITE_PERL}/${PERL_ARCH}/HTML/Parser.pm:${PORTSDIR}/www/p5-HTML-Parser \
 			${SITE_PERL}/URI.pm:${PORTSDIR}/net/p5-URI

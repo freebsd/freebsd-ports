@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	Bundle
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	autrijus@autrijus.org
+COMMENT=	A bundle to install all modules used for Slash
 
 BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Digest/MD5.pm:${PORTSDIR}/security/p5-Digest-MD5 \
 		${SITE_PERL}/${PERL_ARCH}/Compress/Zlib.pm:${PORTSDIR}/archivers/p5-Compress-Zlib \

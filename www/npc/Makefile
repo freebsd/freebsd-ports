@@ -11,6 +11,7 @@ CATEGORIES=	www
 MASTER_SITES=	http://www2.biglobe.ne.jp/%7Enir/soft/
 
 MAINTAINER=	yasuf@big.or.jp
+COMMENT=	An animated web counter
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/src
 MAKE_ARGS=	INDEX_DIR="${INDEX_DIR}"

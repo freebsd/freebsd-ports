@@ -12,6 +12,7 @@ MASTER_SITES=	http://www.boomerangsworld.de/worker/downloads/ \
 		http://www.informatik.uni-halle.de/~hoffmanr/worker/downloads/
 
 MAINTAINER=	simond@irrelevant.org
+COMMENT=	X11 File Manager based on Directory Opus
 
 GNU_CONFIGURE=	yes
 USE_XLIB=	yes

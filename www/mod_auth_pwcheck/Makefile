@@ -11,6 +11,7 @@ CATEGORIES=	www
 MASTER_SITES=	http://www.chelcom.ru/~anton/projects/files/
 
 MAINTAINER=	anton@urc.ac.ru
+COMMENT=	Apache module for user authentication via Cyrus pwcheck daemon
 
 BUILD_DEPENDS=	${APXS}:${PORTSDIR}/${AP_CATEGORY}/${AP_PORT}
 RUN_DEPENDS=	${LOCALBASE}/sbin/${AP_TARGET}:${PORTSDIR}/${AP_CATEGORY}/${AP_PORT} \

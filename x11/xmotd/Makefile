@@ -11,6 +11,7 @@ CATEGORIES=	x11
 MASTER_SITES=	http://www.ee.ryerson.ca/~elf/pub/
 
 MAINTAINER=	mwest@uct.ac.za
+COMMENT=	A message-of-the-day browser for X11 and dumb-terminals
 
 USE_IMAKE=	yes
 NO_INSTALL_MANPAGES=	yes

@@ -12,6 +12,7 @@ CATEGORIES=	x11-fonts
 MASTER_SITES=	http://www.is-vn.bg/hamster/
 
 MAINTAINER=	gugod@gugod.org
+COMMENT=	Terminus Font - a clean fixed width font
 
 BUILD_DEPENDS=	mkitalic:${PORTSDIR}/x11-fonts/mkitalic
 

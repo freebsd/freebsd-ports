@@ -13,6 +13,7 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${DISTNAME}${EXTRACT_SUFX}.asc
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	jharris@widomaker.com
+COMMENT=	Elinks - links text WWW browser with enhancements
 
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes

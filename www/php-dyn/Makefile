@@ -14,6 +14,7 @@ DISTNAME=	php_dyn-${PORTVERSION}
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	sysadmin@alexdupre.com
+COMMENT=	A PHP Extension to help debugging a PHP script
 
 BUILD_DEPENDS=	aclocal:${PORTSDIR}/devel/automake \
 		autoconf:${PORTSDIR}/devel/autoconf \

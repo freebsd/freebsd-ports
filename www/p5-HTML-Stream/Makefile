@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	HTML
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	erwin@lansing.dk
+COMMENT=	Perl5 HTML output stream class, and some markup utilities
 
 PERL_CONFIGURE=	YES
 

@@ -11,6 +11,7 @@ CATEGORIES=	www
 MASTER_SITES=	http://adzapper.sourceforge.net/
 
 MAINTAINER=	jdunn@aquezada.com
+COMMENT=	A filtering proxy that can block ads from being displayed
 
 USE_PYTHON=	yes
 

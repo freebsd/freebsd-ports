@@ -11,6 +11,7 @@ CATEGORIES=	x11
 MASTER_SITES=	http://wwwmiya.ee.kagu.tus.ac.jp/~sakai/
 
 MAINTAINER=	sakai@miya.ee.kagu.tus.ac.jp
+COMMENT=	Balloons move on root window
 
 ALL_TARGET=	xballoon
 

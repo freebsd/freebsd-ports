@@ -12,6 +12,7 @@ MASTER_SITES=	ftp://ftp.cs.brown.edu/pub/xmx/
 EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=	ob@breuninger.org
+COMMENT=	An X protocol multiplexor
 
 USE_X_PREFIX=	yes
 

@@ -14,6 +14,7 @@ MASTER_SITES=	http://www.klomp.org/mod_roaming/
 DISTNAME=	${PORTNAME:S/2$//}-${PORTVERSION}
 
 MAINTAINER=	vivek@kciLink.com
+COMMENT=	An Apache module that works as a Netscape Roaming Access server
 
 BUILD_DEPENDS=	${APXS}:${PORTSDIR}/www/apache2
 RUN_DEPENDS=	${APXS}:${PORTSDIR}/www/apache2

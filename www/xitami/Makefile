@@ -13,6 +13,7 @@ DISTNAME=	suni24d7
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	bdluevel@heitec.net
+COMMENT=	A fast, portable multithreaded web server
 
 NO_WRKSUBDIR=	yes
 

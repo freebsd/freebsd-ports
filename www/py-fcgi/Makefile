@@ -16,6 +16,7 @@ EXTRACT_SUFX=	.py
 EXTRACT_ONLY=	#
 
 MAINTAINER=	hollywar@mail.holywar.net
+COMMENT=	Python FastCGI interface library
 
 USE_PYTHON=	yes
 NO_WRKSUBDIR=	yes

@@ -13,6 +13,7 @@ MASTER_SITES=	http://www.xs4all.nl/~hanb/software/fluxbox/ \
 DISTNAME=	${PORTNAME}
 
 MAINTAINER=	d.marks@student.umist.ac.uk
+COMMENT=	A set of free fonts for X11 desktops
 
 NO_BUILD=	yes
 USE_BZIP2=	yes

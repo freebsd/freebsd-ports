@@ -11,6 +11,7 @@ CATEGORIES=	x11-fm gnome
 MASTER_SITES=	http://www.zoned.net:8000/~xkahn/file_menu_applet/
 
 MAINTAINER=	klammer@webonaut.com
+COMMENT=	A small GNOME panel application which creates a file manager
 
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
