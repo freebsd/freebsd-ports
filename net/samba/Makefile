@@ -153,7 +153,7 @@ PLIST_SUB=      AUDIT=${AUDIT} \
 .if defined(WITH_RECYCLE) || defined(WITH_AUDIT)
 post-build:
 	cd ${WRKDIR}/${DISTNAME}/examples/VFS; \
-		${RM} config.cache;./configure;${GMAKE}; \
+		./configure;${GMAKE}; \
 		${RM} -f config.cache config.log config.status
 .endif
 
