@@ -19,7 +19,7 @@ DISTNAME=	${PORTNAME}${PORTVERSION}
 MAINTAINER=	maho@FreeBSD.org
 COMMENT=        Automatically Tuned Linear Algebra Software (ATLAS)
 
-LIB_DEPENDS=    lapack:${PORTSDIR}/math/lapack
+BUILD_DEPENDS=	${LOCALBASE}/lib/liblapack.a:${PORTSDIR}/math/lapack
 
 USE_BZIP2=	yes
 WRKSRC=		${WRKDIR}/ATLAS
