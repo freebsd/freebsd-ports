@@ -24,6 +24,8 @@ PATCHFILES=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	nsayer@freebsd.org
 
+BROKEN=		"The c-client library is no longer built in the pine port, and that's where the SSL hacking needs to happen"
+
 EXTRACT_ONLY=	pine4.21${EXTRACT_SUFX}
 
 WRKSRC=		${WRKDIR}/pine4.21
