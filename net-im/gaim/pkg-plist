@@ -21,6 +21,7 @@ lib/gaim/libzephyr.so
 lib/gaim/notify.so
 lib/gaim/spellchk.so
 lib/gaim/statenotify.so
+%%TCL:%%lib/gaim/tcl.so
 lib/gaim/ticker.so
 lib/gaim/timestamp.so
 lib/libgaim-remote.a
