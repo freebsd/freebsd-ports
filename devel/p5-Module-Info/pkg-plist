@@ -1,0 +1,11 @@
+bin/module_info
+bin/pfunc
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Module/Info/.packlist
+%%SITE_PERL%%/B/Module/Info.pm
+%%SITE_PERL%%/B/Utils.pm
+%%SITE_PERL%%/Module/Info.pm
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Module/Info
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Module 2>/dev/null || true
+@dirrm %%SITE_PERL%%/B/Module
+@unexec rmdir %D/%%SITE_PERL%%/B 2>/dev/null || true
+@dirrm %%SITE_PERL%%/Module
