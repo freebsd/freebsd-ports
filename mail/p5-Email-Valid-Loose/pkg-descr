@@ -1,0 +1,5 @@
+Email::Valid::Loose is a subclass of Email::Valid, which allows . (dot)
+before @ (at-mark). It is invalid in RFC822, but is commonly used in some of
+mobile phone addresses in Japan (like docomo.ne.jp or jp-t.ne.jp).
+
+WWW: http://search.cpan.org/search?dist=Email-Valid-Loose
