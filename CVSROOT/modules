@@ -8524,6 +8524,7 @@ ruby-ldap	ports/net/ruby-ldap
 ruby-libart	ports/graphics/ruby-libart
 ruby-libart2	ports/graphics/ruby-libart2
 ruby-libexif	ports/graphics/ruby-libexif
+ruby-libgda	ports/databases/ruby-libgda
 ruby-libglade	ports/devel/ruby-libglade
 ruby-libglade2	ports/devel/ruby-libglade2
 ruby-libpng	ports/graphics/ruby-libpng
