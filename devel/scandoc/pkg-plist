@@ -1,0 +1,22 @@
+bin/scandoc
+%%PORTDOCS%%share/doc/scandoc/COPYING
+%%PORTDOCS%%share/doc/scandoc/ChangeLog
+%%PORTDOCS%%share/doc/scandoc/README
+%%PORTDOCS%%share/doc/scandoc/images/ScanDocBig.jpg
+%%PORTDOCS%%share/doc/scandoc/images/ScanDocSmall.jpg
+%%PORTDOCS%%share/doc/scandoc/images/ball1.gif
+%%PORTDOCS%%share/doc/scandoc/images/ball2.gif
+%%PORTDOCS%%share/doc/scandoc/images/bug.gif
+%%PORTDOCS%%share/doc/scandoc/images/caution.gif
+%%PORTDOCS%%share/doc/scandoc/images/master.gif
+%%PORTDOCS%%share/doc/scandoc/images/tip.gif
+%%PORTDOCS%%share/doc/scandoc/images/warning.gif
+%%PORTDOCS%%share/doc/scandoc/scandoc.html
+%%PORTDOCS%%share/doc/scandoc/templates/apache.pl
+%%PORTDOCS%%share/doc/scandoc/templates/default.pl
+%%PORTDOCS%%share/doc/scandoc/test/Makefile
+%%PORTDOCS%%share/doc/scandoc/test/example.h
+%%PORTDOCS%%@dirrm share/doc/scandoc/images
+%%PORTDOCS%%@dirrm share/doc/scandoc/templates
+%%PORTDOCS%%@dirrm share/doc/scandoc/test
+%%PORTDOCS%%@dirrm share/doc/scandoc

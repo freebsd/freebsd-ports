@@ -407,6 +407,7 @@
     SUBDIR += ruby-textbuf
     SUBDIR += ruby-unit
     SUBDIR += rvm
+    SUBDIR += scandoc
     SUBDIR += sdcc
     SUBDIR += sdl10
     SUBDIR += sdl12
