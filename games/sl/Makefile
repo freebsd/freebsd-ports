@@ -8,7 +8,7 @@
 PORTNAME=	sl
 PORTVERSION=	3.03
 CATEGORIES=	games
-MASTER_SITES=	http://www.is.titech.ac.jp/~toyoda/sl/
+MASTER_SITES=	http://www.tkl.iis.u-tokyo.ac.jp/~toyoda/sl/
 DISTNAME=	${PORTNAME}
 EXTRACT_SUFX=	.tar
 
