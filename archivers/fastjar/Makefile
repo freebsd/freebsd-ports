@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	fastjar
-PORTVERSION=    0.93
+PORTVERSION=	0.93
 CATEGORIES=	archivers java
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -15,8 +15,8 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A version of JDK's `jar' command written entirely in C
 
-GNU_CONFIGURE=  yes
-USE_GMAKE=      yes
+GNU_CONFIGURE=	yes
+USE_GMAKE=	yes
 
 post-install:
 .if !defined(NOPORTDOCS)
