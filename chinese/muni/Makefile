@@ -3,7 +3,7 @@
 # Date created:		6 May 1999
 # Whom:			G. Adam Stanislav <adam@whizkidtech.net>
 #
-# $Id$
+# $FreeBSD$
 #
 
 DISTNAME=	muni-1.0

@@ -3,7 +3,7 @@
 # Date created:         18 Dec 1994
 # Whom:                 swallace
 #
-# $Id: Makefile,v 1.14 1998/11/29 12:43:09 asami Exp $
+# $FreeBSD$
 #
 
 DISTNAME=       magic-6.5

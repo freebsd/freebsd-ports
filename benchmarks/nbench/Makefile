@@ -3,7 +3,7 @@
 # Date created:				17 December 1997
 # Whom:					Andrey Zakhvatov
 #
-# $Id$
+# $FreeBSD$
 #
 
 DISTNAME=		nbench-byte-2.1

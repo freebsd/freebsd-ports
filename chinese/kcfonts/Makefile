@@ -3,7 +3,7 @@
 # Date Created:				5 Dec 1997
 # Whom:					Ming-I Hseh <PA@FreeBSD.Ntu.edu.TW>
 #
-# $Id: Makefile,v 1.6 1998/08/05 09:30:46 asami Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	kcfonts-1.05

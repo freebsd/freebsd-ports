@@ -3,7 +3,7 @@
 # Date created:			24 Nov 1998
 # Whom:				Vanilla I. Shu <vanilla@FreeBSD.ORG>
 #
-# $Id: Makefile,v 1.9 1999/04/22 20:06:32 mharo Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	gEDA-19990327

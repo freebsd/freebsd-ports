@@ -3,7 +3,7 @@
 # Date created:         26 September 1994
 # Whom:                 jmz
 #
-# $Id: Makefile,v 1.21 1999/07/07 22:40:08 jmz Exp $
+# $FreeBSD$
 #
 
 DISTNAME=       iozone

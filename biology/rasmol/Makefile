@@ -3,7 +3,7 @@
 # Date created:         Dec 4 1997
 # Whom:                 frankch@waru.life.nthu.edu.tw
 #
-# $Id: Makefile,v 1.3 1998/07/27 23:24:02 asami Exp $
+# $FreeBSD$
 #
 
 DISTNAME=       RasMol26b2x1

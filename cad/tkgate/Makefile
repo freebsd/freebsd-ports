@@ -3,7 +3,7 @@
 # Date created:				28 May 1999
 # Whom:					Jeffery Hansen <hansen@cmu.edu>
 #
-# $Id: Makefile,v 1.1.1.1 1999/06/06 17:11:58 steve Exp $
+# $FreeBSD$
 #
 
 DISTNAME=		tkgate-0.9

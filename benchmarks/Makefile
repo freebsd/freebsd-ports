@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.9 1999/04/14 20:39:06 billf Exp $
+# $FreeBSD$
 #
 
     SUBDIR += bonnie

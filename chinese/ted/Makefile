@@ -3,7 +3,7 @@
 # Date Created:		18 Sep 1997
 # Whom:			Vanilla I. Shu <vanilla@MinJe.com.TW>
 #
-# $Id: Makefile,v 1.19 1998/11/19 16:36:40 vanilla Exp $
+# $FreeBSD$
 #
 
 DISTNAME=		ted4.3b

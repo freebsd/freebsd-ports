@@ -3,7 +3,7 @@
 # Date created:		1999-04-22
 # Whom:			Ryo MIYAMOTO <rmiya@cc.hirosaki-u.ac.jp>
 #
-# $Id: Makefile,v 1.2 1999/05/24 02:12:36 steve Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	platon

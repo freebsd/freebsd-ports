@@ -3,7 +3,7 @@
 # Date created:		Nov 28 ,1997
 # Whom:			Yen-Shuo Su <yssu@CCCA.NCTU.edu.tw>
 #
-# $Id: Makefile,v 1.8 1998/11/23 12:44:04 vanilla Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	xcin-2.3.03

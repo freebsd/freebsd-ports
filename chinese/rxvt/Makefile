@@ -3,7 +3,7 @@
 # Date created:         Nov 16 1997
 # Whom:                 frankch@waru.life.nthu.edu.tw
 #
-# $Id: Makefile,v 1.12 1999/04/13 15:11:32 taoka Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	rxvt-2.6.0

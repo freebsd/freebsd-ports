@@ -3,7 +3,7 @@
 # Date created:		26 April 1999
 # Whom:			Chia-Hsing Yu <davidyu@ken.csie.ntu.edu.tw>
 #
-# $Id: Makefile,v 1.3 1999/05/10 16:20:11 flathill Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	aterm-0.3.6

@@ -3,7 +3,7 @@
 # Date created:		1998-11-11
 # Whom:			Ryo MIYAMOTO
 #
-# $Id: Makefile,v 1.2 1999/05/06 08:27:29 taoka Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	psi88

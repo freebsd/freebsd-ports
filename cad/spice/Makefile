@@ -3,7 +3,7 @@
 # Date created:         26 Mar 96
 # Whom:                 Julian Jenkins <kaveman@magna.com.au>
 #
-# $Id: Makefile,v 1.12 1998/12/18 06:28:20 asami Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	sp3f4.kit

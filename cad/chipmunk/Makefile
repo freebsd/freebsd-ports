@@ -3,7 +3,7 @@
 # Date created:		29 July 1995
 # Whom:			janek@gaja.ipan.lublin.pl
 #
-# $Id: Makefile,v 1.6 1998/11/28 09:07:12 asami Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	chipmunk-5.10

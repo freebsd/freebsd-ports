@@ -3,7 +3,7 @@
 # Date created:		1 March 1999
 # Whom:			J.T. Jang (jtjang@gcn.net.tw)
 #
-# $Id: Makefile,v 1.6 1999/03/09 08:53:23 foxfair Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	zh-CJK-4.2.0

@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.12 1998/12/07 02:21:52 asami Exp $
+# $FreeBSD$
 #
 
     SUBDIR += acs

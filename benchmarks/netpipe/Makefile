@@ -3,7 +3,7 @@
 # Date created:		20 Feb 1998
 # Whom:			jkoshy
 #
-# $Id: Makefile,v 1.1.1.1 1999/02/21 00:02:50 jkoshy Exp $
+# $FreeBSD$
 
 DISTNAME=	netpipe-2.3
 CATEGORIES=	benchmarks net

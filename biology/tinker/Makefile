@@ -3,7 +3,7 @@
 # Date Created:                26 August 1998
 # Whom:                        Glenn Johnson
 #
-# $Id: Makefile,v 1.3 1999/05/24 02:01:37 steve Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	tinker

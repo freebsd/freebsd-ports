@@ -3,7 +3,7 @@
 # Date created:		9 July 1999
 # Whom:			Keith Jang <jtjang@gcn.net.tw>
 #
-# $Id: Makefile,v 1.1.1.1 1999/07/18 00:57:33 foxfair Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	zh-moettf-1.0

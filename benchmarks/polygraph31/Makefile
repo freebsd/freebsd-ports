@@ -3,7 +3,7 @@
 # Date created:         3 March 1999
 # Whom:                 Dima Sivachenko <dima@chg.ru>
 #
-# $Id: Makefile,v 1.2 1999/04/26 18:21:23 mharo Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	polygraph-1.2.0-src

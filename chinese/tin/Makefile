@@ -3,7 +3,7 @@
 # Date created:		2 Dec 1997
 # Whom:			Yen-Shuo Su <yssu@CCCA.NCTU.edu.tw>
 #
-# $Id: Makefile,v 1.15 1998/09/27 00:05:53 steve Exp $
+# $FreeBSD$
 #
 
 DISTNAME=       tinpre-1.4-980818

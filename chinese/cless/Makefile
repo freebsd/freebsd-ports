@@ -3,7 +3,7 @@
 # Date created:         Sat Aug 10, 1996
 # Whom:                 David O'Brien (obrien@cs.ucdavis.edu)
 #
-# $Id: Makefile,v 1.6 1997/10/10 06:53:47 obrien Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	cless-290

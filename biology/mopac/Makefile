@@ -3,7 +3,7 @@
 # Date created:  1997-04-23
 # Whom:	 Ryo MIYAMOTO <rmiya@cc.hirosaki-u.ac.jp>
 #
-# $Id: Makefile,v 1.3 1999/05/08 08:06:43 taoka Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	mopac7

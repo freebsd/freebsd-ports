@@ -3,7 +3,7 @@
 # Date created:		13 Feb 1999
 # Whom:			Ching-Hong Wu <woju@freebsd.ntu.edu.tw>
 #
-# $Id: Makefile,v 1.10 1999/02/12 16:39:39 foxfair Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	telnet8-1.0

@@ -3,7 +3,7 @@
 # Date created:		1999-05-08
 # Whom:			Ryo MIYAMOTO
 #
-# $Id: Makefile,v 1.1.1.1 1999/05/19 13:37:58 taoka Exp $
+# $FreeBSD$
 #
 
 DISTNAME= ortep

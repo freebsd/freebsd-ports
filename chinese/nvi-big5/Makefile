@@ -3,7 +3,7 @@
 # Date created:		6 Mar 1997
 # Whom:			Jun-ichiro itojun Itoh <itojun@itojun.org>
 #
-# $Id: Makefile,v 1.13 1998/12/01 03:05:49 asami Exp $
+# $FreeBSD$
 #
 
 PKGNAME=	zh-nvi-big5-1.79.19990331

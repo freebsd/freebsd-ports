@@ -3,7 +3,7 @@
 # Date created:         10 October 1997
 # Whom:                 volf@oasis.IAEhv.nl
 #
-# $Id: Makefile,v 1.6 1998/11/28 00:44:32 asami Exp $
+# $FreeBSD$
 #
 
 DISTNAME=		sis-1.2

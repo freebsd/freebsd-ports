@@ -3,7 +3,7 @@
 # Date created:		June 29 1998
 # Whom:			barnhart@genetics.wustl.edu
 #
-# $Id: Makefile,v 1.3 1999/01/02 00:12:17 asami Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	hmmer-2.1.1

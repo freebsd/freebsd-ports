@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.34 1999/06/17 09:37:42 taoka Exp $
+# $FreeBSD$
 #
 
     SUBDIR += CJK

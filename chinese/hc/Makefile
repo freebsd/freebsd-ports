@@ -4,7 +4,7 @@
 # Date created:			  Mon Feb 03, 1997
 # Whom:				  David O'Brien (obrien@FreeBSD.org)
 #
-# $Id: Makefile,v 1.2 1997/09/22 17:48:33 max Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	hc-3.0

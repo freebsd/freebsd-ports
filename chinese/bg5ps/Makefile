@@ -3,7 +3,7 @@
 # Date created:		17 June 1998
 # Whom:			J.T. Jang (keith@email.gcn.net.tw)
 #
-# $Id$
+# $FreeBSD$
 #
 
 DISTNAME=	bg5ps-1.1b
