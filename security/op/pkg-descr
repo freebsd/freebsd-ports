@@ -1,0 +1,5 @@
+The `op' tool provides a flexible means for system administrators to
+grant trusted users access to certain root operations without having
+to give them full superuser privileges. Different sets of users
+may access different operations, and the security-related aspects
+of environment of each operation can be carefully controlled
