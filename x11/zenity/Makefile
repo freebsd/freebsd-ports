@@ -14,6 +14,8 @@ MASTER_SITES=	http://ftp.acc.umu.se/pub/GNOME/sources/zenity/1.0/
 MAINTAINER=	klammer@webonaut.com
 COMMENT=	Display GNOME dialogs from the command line
 
+BROKEN=		"Does not compile"
+
 LIB_DEPENDS=	popt.0:${PORTSDIR}/devel/popt
 
 USE_X_PREFIX=	yes

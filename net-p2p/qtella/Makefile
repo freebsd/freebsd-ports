@@ -14,6 +14,8 @@ MASTER_SITE_SUBDIR=	qtella
 MAINTAINER=		jon@witchspace.com
 COMMENT=	A Gnutella client using Qt
 
+BROKEN=		"Does not compile"
+
 HAS_CONFIGURE=		yes
 USE_GMAKE=		yes
 CONFIGURE_ARGS+=	--with-qt-dir=${X11BASE} --with-qt-moc=${X11BASE}/bin

@@ -16,6 +16,8 @@ DISTNAME=	${PORTNAME:U}-${PORTVERSION}
 MAINTAINER=	knu@FreeBSD.org
 COMMENT=	A user level multi-thread library based on POSIX 1003.1c API
 
+BROKEN=		"Does not compile"
+
 BUILD_DEPENDS=	autoconf:${PORTSDIR}/devel/autoconf
 
 PATCH_SITES=	${MASTER_SITES}

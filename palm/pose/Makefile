@@ -15,6 +15,8 @@ DISTFILES=	emulator_src_31.tar.gz emulator_skins_16.tar.gz
 MAINTAINER=	wlloyd@slap.net
 COMMENT=	Palm OS(R) Emulator
 
+BROKEN=		"Does not compile"
+
 LIB_DEPENDS=	fltk.1:${PORTSDIR}/x11-toolkits/fltk
 
 USE_MESA=	yes

@@ -16,6 +16,8 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}
 MAINTAINER=	ngps@post1.com
 COMMENT=	Python wrapper for OpenSSL
 
+BROKEN=		"Does not compile"
+
 BUILD_DEPENDS=	swig1.3:${PORTSDIR}/devel/swig13 \
 		pinstall:${PORTSDIR}/devel/pinstall
 

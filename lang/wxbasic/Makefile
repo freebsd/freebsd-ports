@@ -16,6 +16,8 @@ DISTNAME=	wxsource-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A cross-platform GUI Basic interpreter
 
+BROKEN=		"Does not compile"
+
 LIB_DEPENDS=	wx_gtk.2:${PORTSDIR}/x11-toolkits/wxgtk-devel
 
 NO_WRKSUBDIR=	yes
