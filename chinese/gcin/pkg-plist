@@ -14,7 +14,10 @@ share/gcin/table/ar30.gtab
 share/gcin/table/cj.gtab
 share/gcin/table/et.kbm
 share/gcin/table/et-asdf.kbm
+share/gcin/table/et26.kbm
+share/gcin/table/et26-asdf.kbm
 share/gcin/table/gtab.list
+share/gcin/table/hsu.kbm
 share/gcin/table/ibm.kbm
 share/gcin/table/phrase.table
 share/gcin/table/pho.tab
