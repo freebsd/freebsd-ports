@@ -1,6 +1,6 @@
 # New ports collection makefile for:    httptunnel
 # Date created:         March 20 2000
-# Whom:                 Brian Somers <brian@Awfulhak.org>
+# Whom:                 Brian Somers <brian@FreeBSD.org>
 #
 # $FreeBSD$
 #
@@ -12,7 +12,7 @@ MASTER_SITES=	http://www.Awfulhak.org/httptunnel/ \
 		ftp://ftp.nocrew.org/pub/nocrew/unix/ \
 		http://www.nocrew.org/software/httptunnel/
 
-MAINTAINER=	brian@Awfulhak.org
+MAINTAINER=	brian@FreeBSD.org
 
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	--quiet
