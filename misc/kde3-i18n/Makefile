@@ -16,27 +16,27 @@ MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Localized messages and documentation for KDE
 
 RUN_DEPENDS+=\
-	${PREFIX}/share/locale/de/entry.desktop:${PORTSDIR}/german/kde3-i18n \
-	${PREFIX}/share/locale/fr/entry.desktop:${PORTSDIR}/french/kde3-i18n \
-	${PREFIX}/share/locale/he/entry.desktop:${PORTSDIR}/hebrew/kde3-i18n \
-	${PREFIX}/share/locale/hu/entry.desktop:${PORTSDIR}/hungarian/kde3-i18n \
-	${PREFIX}/share/locale/ja/entry.desktop:${PORTSDIR}/japanese/kde3-i18n \
-	${PREFIX}/share/locale/ko/entry.desktop:${PORTSDIR}/korean/kde3-i18n \
-	${PREFIX}/share/locale/ru/entry.desktop:${PORTSDIR}/russian/kde3-i18n \
-	${PREFIX}/share/locale/uk/entry.desktop:${PORTSDIR}/ukrainian/kde3-i18n \
-	${PREFIX}/share/locale/vi/entry.desktop:${PORTSDIR}/vietnamese/kde3-i18n
+	${LOCALBASE}/share/locale/ja/entry.desktop:${PORTSDIR}/japanese/kde3-i18n \
+	${LOCALBASE}/share/locale/fr/entry.desktop:${PORTSDIR}/french/kde3-i18n \
+	${LOCALBASE}/share/locale/de/entry.desktop:${PORTSDIR}/german/kde3-i18n \
+	${LOCALBASE}/share/locale/he/entry.desktop:${PORTSDIR}/hebrew/kde3-i18n \
+	${LOCALBASE}/share/locale/hu/entry.desktop:${PORTSDIR}/hungarian/kde3-i18n \
+	${LOCALBASE}/share/locale/ko/entry.desktop:${PORTSDIR}/korean/kde3-i18n \
+	${LOCALBASE}/share/locale/ru/entry.desktop:${PORTSDIR}/russian/kde3-i18n \
+	${LOCALBASE}/share/locale/uk/entry.desktop:${PORTSDIR}/ukrainian/kde3-i18n \
+	${LOCALBASE}/share/locale/vi/entry.desktop:${PORTSDIR}/vietnamese/kde3-i18n
 
 .for LANG in af ar az bg bs ca cs da el en_GB eo es et fi hr id is it \
 	lt lv mt nb nl nn pl ro sk sl sr sv ta th tr ven xh zu
 RUN_DEPENDS+=\
-${PREFIX}/share/locale/${LANG}/entry.desktop:${PORTSDIR}/misc/kde3-i18n-${LANG}
+${LOCALBASE}/share/locale/${LANG}/entry.desktop:${PORTSDIR}/misc/kde3-i18n-${LANG}
 .endfor
 RUN_DEPENDS+=\
-${PREFIX}/share/locale/pt/entry.desktop:${PORTSDIR}/portuguese/kde3-i18n \
-${PREFIX}/share/locale/pt_BR/entry.desktop:${PORTSDIR}/portuguese/kde3-i18n-pt_BR
+${LOCALBASE}/share/locale/pt/entry.desktop:${PORTSDIR}/portuguese/kde3-i18n \
+${LOCALBASE}/share/locale/pt_BR/entry.desktop:${PORTSDIR}/portuguese/kde3-i18n-pt_BR
 .for ZH in zh_CN zh_TW
 RUN_DEPENDS+=\
-${PREFIX}/share/locale/${ZH}/entry.desktop:${PORTSDIR}/chinese/kde3-i18n-${ZH}
+${LOCALBASE}/share/locale/${ZH}/entry.desktop:${PORTSDIR}/chinese/kde3-i18n-${ZH}
 .endfor
 
 USE_KDELIBS_VER=3

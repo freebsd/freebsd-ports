@@ -426,7 +426,17 @@ share/doc/HTML/fr/kdebugdialog/index.docbook
 share/doc/HTML/fr/kdeprint/add-printer-wiz.docbook
 share/doc/HTML/fr/kdeprint/common
 share/doc/HTML/fr/kdeprint/cups-config.docbook
+share/doc/HTML/fr/kdeprint/cupsaddprinterwizard1.png
+share/doc/HTML/fr/kdeprint/cupsaddprinterwizard2_backendselection.png
+share/doc/HTML/fr/kdeprint/cupsaddprinterwizard4_networkscan_config.png
 share/doc/HTML/fr/kdeprint/cupsoptions.docbook
+share/doc/HTML/fr/kdeprint/cupsserverconfiguration10_browsinggeneral.png
+share/doc/HTML/fr/kdeprint/cupsserverconfiguration1_welcome.png
+share/doc/HTML/fr/kdeprint/cupsserverconfiguration2_general.png
+share/doc/HTML/fr/kdeprint/cupsserverconfiguration3_logging.png
+share/doc/HTML/fr/kdeprint/cupsserverconfiguration4_directories.png
+share/doc/HTML/fr/kdeprint/cupsserverconfiguration6_encryption.png
+share/doc/HTML/fr/kdeprint/cupsserverconfiguration8_networkgeneral.png
 share/doc/HTML/fr/kdeprint/extensions.docbook
 share/doc/HTML/fr/kdeprint/external-command.docbook
 share/doc/HTML/fr/kdeprint/final-word.docbook
@@ -434,6 +444,10 @@ share/doc/HTML/fr/kdeprint/getting-started.docbook
 share/doc/HTML/fr/kdeprint/highlights.docbook
 share/doc/HTML/fr/kdeprint/index.cache.bz2
 share/doc/HTML/fr/kdeprint/index.docbook
+share/doc/HTML/fr/kdeprint/kcron_to_be_printed.png
+share/doc/HTML/fr/kdeprint/kprinter.png
+share/doc/HTML/fr/kdeprint/kprinter_called_from_run_command.png
+share/doc/HTML/fr/kdeprint/kprinter_with_kcron_developer_special.png
 share/doc/HTML/fr/kdeprint/lpd.docbook
 share/doc/HTML/fr/kdeprint/lpr-bsd.docbook
 share/doc/HTML/fr/kdeprint/lprng.docbook
@@ -700,6 +714,9 @@ share/doc/HTML/fr/kjots/index.docbook
 share/doc/HTML/fr/kjumpingcube/common
 share/doc/HTML/fr/kjumpingcube/index.cache.bz2
 share/doc/HTML/fr/kjumpingcube/index.docbook
+share/doc/HTML/fr/klettres/common
+share/doc/HTML/fr/klettres/index.cache.bz2
+share/doc/HTML/fr/klettres/index.docbook
 share/doc/HTML/fr/klickety/common
 share/doc/HTML/fr/klickety/index.cache.bz2
 share/doc/HTML/fr/klickety/index.docbook
@@ -769,11 +786,18 @@ share/doc/HTML/fr/knewsticker/index.cache.bz2
 share/doc/HTML/fr/knewsticker/index.docbook
 share/doc/HTML/fr/knewsticker/kcmnewsticker-general.png
 share/doc/HTML/fr/knewsticker/kcmnewsticker-newssources.png
+share/doc/HTML/fr/knode/commands.docbook
 share/doc/HTML/fr/knode/common
 share/doc/HTML/fr/knode/credits.docbook
+share/doc/HTML/fr/knode/faq.docbook
+share/doc/HTML/fr/knode/gloss.docbook
 share/doc/HTML/fr/knode/index.cache.bz2
 share/doc/HTML/fr/knode/index.docbook
+share/doc/HTML/fr/knode/install.docbook
+share/doc/HTML/fr/knode/introduction.docbook
+share/doc/HTML/fr/knode/journey.docbook
 share/doc/HTML/fr/knode/knode-cleanup.png
+share/doc/HTML/fr/knode/knode-colors-fonts.png
 share/doc/HTML/fr/knode/knode-colors.png
 share/doc/HTML/fr/knode/knode-composer-attachments.png
 share/doc/HTML/fr/knode/knode-composer-settings.png
@@ -796,6 +820,10 @@ share/doc/HTML/fr/knode/knode-search.png
 share/doc/HTML/fr/knode/knode-start.png
 share/doc/HTML/fr/knode/knode-subscribe.png
 share/doc/HTML/fr/knode/knode-views.png
+share/doc/HTML/fr/knode/more.docbook
+share/doc/HTML/fr/knode/using-firststart.docbook
+share/doc/HTML/fr/knode/using-morefeatures.docbook
+share/doc/HTML/fr/knode/using-subscribing.docbook
 share/doc/HTML/fr/knotes/common
 share/doc/HTML/fr/knotes/index.cache.bz2
 share/doc/HTML/fr/knotes/index.docbook
@@ -1211,6 +1239,9 @@ share/doc/HTML/fr/lisa/index.docbook
 share/doc/HTML/fr/lskat/common
 share/doc/HTML/fr/lskat/index.cache.bz2
 share/doc/HTML/fr/lskat/index.docbook
+share/doc/HTML/fr/megami/common
+share/doc/HTML/fr/megami/index.cache.bz2
+share/doc/HTML/fr/megami/index.docbook
 share/doc/HTML/fr/noatun/common
 share/doc/HTML/fr/noatun/index.cache.bz2
 share/doc/HTML/fr/noatun/index.docbook
@@ -1248,6 +1279,7 @@ share/locale/fr/LC_MESSAGES/desktop_kdesdk.mo
 share/locale/fr/LC_MESSAGES/desktop_kdetoys.mo
 share/locale/fr/LC_MESSAGES/desktop_kdeutils.mo
 share/locale/fr/LC_MESSAGES/dirfilterplugin.mo
+share/locale/fr/LC_MESSAGES/dockbarextension.mo
 share/locale/fr/LC_MESSAGES/domtreeviewer.mo
 share/locale/fr/LC_MESSAGES/drkonqi.mo
 share/locale/fr/LC_MESSAGES/dub.mo
@@ -1471,7 +1503,6 @@ share/locale/fr/LC_MESSAGES/kjots.mo
 share/locale/fr/LC_MESSAGES/kjumpingcube.mo
 share/locale/fr/LC_MESSAGES/klaptopdaemon.mo
 share/locale/fr/LC_MESSAGES/klegacyimport.mo
-share/locale/fr/LC_MESSAGES/kless.mo
 share/locale/fr/LC_MESSAGES/klettres.mo
 share/locale/fr/LC_MESSAGES/klickety.mo
 share/locale/fr/LC_MESSAGES/klines.mo
@@ -1651,6 +1682,7 @@ share/locale/fr/charset
 share/locale/fr/entry.desktop
 share/locale/fr/flag.png
 @dirrm share/doc/HTML/fr/noatun
+@dirrm share/doc/HTML/fr/megami
 @dirrm share/doc/HTML/fr/lskat
 @dirrm share/doc/HTML/fr/lisa
 @dirrm share/doc/HTML/fr/kxconfig
@@ -1733,6 +1765,7 @@ share/locale/fr/flag.png
 @dirrm share/doc/HTML/fr/klipper
 @dirrm share/doc/HTML/fr/klines
 @dirrm share/doc/HTML/fr/klickety
+@dirrm share/doc/HTML/fr/klettres
 @dirrm share/doc/HTML/fr/kjumpingcube
 @dirrm share/doc/HTML/fr/kjots
 @dirrm share/doc/HTML/fr/kit

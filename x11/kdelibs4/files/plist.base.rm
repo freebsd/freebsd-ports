@@ -13,19 +13,6 @@
 @unexec /bin/rmdir %D/share/doc/HTML/en/kdelibs-apidocs/kabc/html || true
 @unexec /bin/rmdir %D/share/doc/HTML/en/kdelibs-apidocs/interfaces/html || true
 @unexec /bin/rmdir %D/share/doc/HTML/en/kdelibs-apidocs/dcop/html || true
-@unexec /bin/rmdir %D/share/apps/ksgmltools2/docbook/xsl/template || true
-@unexec /bin/rmdir %D/share/apps/ksgmltools2/docbook/xsl/javahelp || true
-@unexec /bin/rmdir %D/share/apps/ksgmltools2/docbook/xsl/indexing || true
-@unexec /bin/rmdir %D/share/apps/ksgmltools2/docbook/xml-dtd-4.2/ent || true
-@unexec /bin/rmdir %D/share/apps/ksgmltools2/customization/zh-CN/entities || true
-@unexec /bin/rmdir %D/share/apps/ksgmltools2/customization/xx/entities || true
-@unexec /bin/rmdir %D/share/apps/ksgmltools2/customization/xh/entities || true
-@unexec /bin/rmdir %D/share/apps/ksgmltools2/customization/wa/entities || true
-@unexec /bin/rmdir %D/share/apps/ksgmltools2/customization/stylesheets || true
-@unexec /bin/rmdir %D/share/apps/ksgmltools2/customization/no-NY/entities || true
-@unexec /bin/rmdir %D/share/apps/ksgmltools2/customization/lt/entities || true
-@unexec /bin/rmdir %D/share/apps/ksgmltools2/customization/fo/entities || true
-@unexec /bin/rmdir %D/share/apps/ksgmltools2/customization/bg/entities || true
 @dirrm share/servicetypes
 @dirrm share/services/kded
 @dirrm share/services
@@ -111,17 +98,12 @@
 @dirrm share/apps/ksgmltools2/docbook/xsl/html
 @dirrm share/apps/ksgmltools2/docbook/xsl/common
 @dirrm share/apps/ksgmltools2/docbook/xsl
-@dirrm share/apps/ksgmltools2/docbook/xml-dtd-4.2
 @dirrm share/apps/ksgmltools2/docbook/xml-dtd-4.1.2/ent
 @dirrm share/apps/ksgmltools2/docbook/xml-dtd-4.1.2
 @dirrm share/apps/ksgmltools2/docbook
 @dirrm share/apps/ksgmltools2/customization/zh-TW/entities
 @dirrm share/apps/ksgmltools2/customization/zh-TW
-@dirrm share/apps/ksgmltools2/customization/zh-CN
-@dirrm share/apps/ksgmltools2/customization/xx
 @dirrm share/apps/ksgmltools2/customization/xsl
-@dirrm share/apps/ksgmltools2/customization/xh
-@dirrm share/apps/ksgmltools2/customization/wa
 @dirrm share/apps/ksgmltools2/customization/uk/entities
 @dirrm share/apps/ksgmltools2/customization/uk
 @dirrm share/apps/ksgmltools2/customization/tr/entities
@@ -146,13 +128,11 @@
 @dirrm share/apps/ksgmltools2/customization/pl
 @dirrm share/apps/ksgmltools2/customization/obsolete
 @dirrm share/apps/ksgmltools2/customization/no/entities
-@dirrm share/apps/ksgmltools2/customization/no-NY
 @dirrm share/apps/ksgmltools2/customization/no
 @dirrm share/apps/ksgmltools2/customization/nn/entities
 @dirrm share/apps/ksgmltools2/customization/nn
 @dirrm share/apps/ksgmltools2/customization/nl/entities
 @dirrm share/apps/ksgmltools2/customization/nl
-@dirrm share/apps/ksgmltools2/customization/lt
 @dirrm share/apps/ksgmltools2/customization/ko/entities
 @dirrm share/apps/ksgmltools2/customization/ko
 @dirrm share/apps/ksgmltools2/customization/ja/entities
@@ -167,7 +147,6 @@
 @dirrm share/apps/ksgmltools2/customization/he
 @dirrm share/apps/ksgmltools2/customization/fr/entities
 @dirrm share/apps/ksgmltools2/customization/fr
-@dirrm share/apps/ksgmltools2/customization/fo
 @dirrm share/apps/ksgmltools2/customization/fi/entities
 @dirrm share/apps/ksgmltools2/customization/fi
 @dirrm share/apps/ksgmltools2/customization/et/entities
@@ -190,7 +169,6 @@
 @dirrm share/apps/ksgmltools2/customization/cs
 @dirrm share/apps/ksgmltools2/customization/ca/entities
 @dirrm share/apps/ksgmltools2/customization/ca
-@dirrm share/apps/ksgmltools2/customization/bg
 @dirrm share/apps/ksgmltools2/customization/af/entities
 @dirrm share/apps/ksgmltools2/customization/af
 @dirrm share/apps/ksgmltools2/customization
@@ -260,3 +238,4 @@
 @dirrm include/kate
 @dirrm include/kabc
 @dirrm include/dom
+@unexec /bin/rmdir %D/include/arts || true

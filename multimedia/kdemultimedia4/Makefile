@@ -17,7 +17,8 @@ MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Multimedia utilities for the KDE integrated X11 desktop
 
 RUN_DEPENDS+=	xanim:${PORTSDIR}/multimedia/xanim
-LIB_DEPENDS+=	ogg.4:${PORTSDIR}/audio/libogg \
+LIB_DEPENDS+=	cdda_paranoia:${PORTSDIR}/audio/cdparanoia \
+		ogg.4:${PORTSDIR}/audio/libogg \
 		vorbis.2:${PORTSDIR}/audio/libvorbis
 
 USE_KDELIBS_VER=3
@@ -33,11 +34,9 @@ MAKE_ENV=	${CONFIGURE_ENV}
 
 CONFIGURE_ARGS+=	--without-lame \
 			--with-vorbis="${LOCALBASE}" \
-			--disable-cdparanoia \
 			--enable-audio=oss,esd
 
-#.include "${.CURDIR}/../../x11/kde3/Makefile.kde"
-.include "/usr/ports/x11/kde3/Makefile.kde"
+.include "${.CURDIR}/../../x11/kde3/Makefile.kde"
 .include <bsd.port.pre.mk>
 
 .if defined(WITH_MIDI) || defined(WITH_KMIDI)

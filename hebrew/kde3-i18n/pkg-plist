@@ -88,12 +88,14 @@ share/locale/he/LC_MESSAGES/desktop_kdesdk.mo
 share/locale/he/LC_MESSAGES/desktop_kdetoys.mo
 share/locale/he/LC_MESSAGES/desktop_kdeutils.mo
 share/locale/he/LC_MESSAGES/dirfilterplugin.mo
+share/locale/he/LC_MESSAGES/dockbarextension.mo
 share/locale/he/LC_MESSAGES/domtreeviewer.mo
 share/locale/he/LC_MESSAGES/drkonqi.mo
 share/locale/he/LC_MESSAGES/dub.mo
 share/locale/he/LC_MESSAGES/extensionproxy.mo
 share/locale/he/LC_MESSAGES/ffrs.mo
 share/locale/he/LC_MESSAGES/filetypes.mo
+share/locale/he/LC_MESSAGES/flashkard.mo
 share/locale/he/LC_MESSAGES/fontinst.mo
 share/locale/he/LC_MESSAGES/htmlsearch.mo
 share/locale/he/LC_MESSAGES/imagerename_plugin.mo

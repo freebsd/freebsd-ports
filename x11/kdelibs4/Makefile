@@ -7,15 +7,15 @@
 #
 
 PORTNAME=	kdelibs
-PORTVERSION=	${KDE_VERSION}a
+PORTVERSION=	${KDE_VERSION}
 PORTREVISION=	0
 CATEGORIES=	x11 kde
 MASTER_SITES=	${MASTER_SITE_KDE}
-MASTER_SITE_SUBDIR=	stable/${KDE_VERSION}a/src
+MASTER_SITE_SUBDIR=	stable/${KDE_VERSION}/src
 DIST_SUBDIR=	KDE
 
 MAINTAINER=	kde@FreeBSD.org
-COMMENT=        This is the base set of libraries needed by KDE programs
+COMMENT=	This is the base set of libraries needed by KDE programs
 
 BUILD_DEPENDS=	mkfontdir:${PORTSDIR}/x11/XFree86-4-clients
 LIB_DEPENDS=	tiff.4:${PORTSDIR}/graphics/tiff \
@@ -63,7 +63,7 @@ LIB_DEPENDS+=	bz2.1:${PORTSDIR}/archivers/bzip2
 KDE_BUILD_PLIST=	yes
 # kabc (the addressbook backend) can use ldap if it's available
 .if defined(WITH_LDAP) || exists($(LOCALBASE)/lib/libldap.so)
-LIB_DEPENDS+=	libldap.so:${PORTSDIR}/net/openldap21
+LIB_DEPENDS+=	ldap:${PORTSDIR}/net/openldap21
 PLIST_APPEND+=	plist.ldap
 .endif
 

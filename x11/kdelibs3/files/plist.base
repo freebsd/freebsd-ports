@@ -103,6 +103,7 @@ include/kabc/distributionlistdialog.h
 include/kabc/distributionlisteditor.h
 include/kabc/errorhandler.h
 include/kabc/field.h
+include/kabc/format.h
 include/kabc/formatfactory.h
 include/kabc/formatplugin.h
 include/kabc/geo.h
@@ -3868,19 +3869,6 @@ share/servicetypes/ktexteditorplugin.desktop
 share/servicetypes/kurifilterplugin.desktop
 share/servicetypes/renamedlgplugin.desktop
 share/servicetypes/scriptinterface.desktop
-@exec /bin/mkdir -p %D/share/apps/ksgmltools2/customization/bg/entities
-@exec /bin/mkdir -p %D/share/apps/ksgmltools2/customization/fo/entities
-@exec /bin/mkdir -p %D/share/apps/ksgmltools2/customization/lt/entities
-@exec /bin/mkdir -p %D/share/apps/ksgmltools2/customization/no-NY/entities
-@exec /bin/mkdir -p %D/share/apps/ksgmltools2/customization/stylesheets
-@exec /bin/mkdir -p %D/share/apps/ksgmltools2/customization/wa/entities
-@exec /bin/mkdir -p %D/share/apps/ksgmltools2/customization/xh/entities
-@exec /bin/mkdir -p %D/share/apps/ksgmltools2/customization/xx/entities
-@exec /bin/mkdir -p %D/share/apps/ksgmltools2/customization/zh-CN/entities
-@exec /bin/mkdir -p %D/share/apps/ksgmltools2/docbook/xml-dtd-4.2/ent
-@exec /bin/mkdir -p %D/share/apps/ksgmltools2/docbook/xsl/indexing
-@exec /bin/mkdir -p %D/share/apps/ksgmltools2/docbook/xsl/javahelp
-@exec /bin/mkdir -p %D/share/apps/ksgmltools2/docbook/xsl/template
 @exec /bin/mkdir -p %D/share/doc/HTML/en/kdelibs-apidocs/dcop/html
 @exec /bin/mkdir -p %D/share/doc/HTML/en/kdelibs-apidocs/interfaces/html
 @exec /bin/mkdir -p %D/share/doc/HTML/en/kdelibs-apidocs/kabc/html

@@ -44,15 +44,12 @@ lib/kde3/kfile_vcf.la
 lib/kde3/kfile_vcf.so
 lib/kde3/libaddressconduit.la
 lib/kde3/libaddressconduit.so
-lib/kde3/libaddressconduit.so.0
 lib/kde3/libexpenseconduit.la
 lib/kde3/libexpenseconduit.so
-lib/kde3/libexpenseconduit.so.0
 lib/kde3/libkaddressbookpart.la
 lib/kde3/libkaddressbookpart.so
 lib/kde3/libknotesconduit.la
 lib/kde3/libknotesconduit.so
-lib/kde3/libknotesconduit.so.0
 lib/kde3/libkorg_birthdays.la
 lib/kde3/libkorg_birthdays.so
 lib/kde3/libkorg_datenums.la
@@ -67,19 +64,14 @@ lib/kde3/libkorg_webexport.la
 lib/kde3/libkorg_webexport.so
 lib/kde3/libnullconduit.la
 lib/kde3/libnullconduit.so
-lib/kde3/libnullconduit.so.0
 lib/kde3/libpopmailconduit.la
 lib/kde3/libpopmailconduit.so
-lib/kde3/libpopmailconduit.so.0
 lib/kde3/libtimeconduit.la
 lib/kde3/libtimeconduit.so
-lib/kde3/libtimeconduit.so.0
 lib/kde3/libtodoconduit.la
 lib/kde3/libtodoconduit.so
-lib/kde3/libtodoconduit.so.0
 lib/kde3/libvcalconduit.la
 lib/kde3/libvcalconduit.so
-lib/kde3/libvcalconduit.so.0
 lib/libkalarmd.la
 lib/libkalarmd.so
 lib/libkalarmd.so.0
@@ -432,77 +424,100 @@ share/servicetypes/calendardecoration.desktop
 share/servicetypes/calendarplugin.desktop
 share/servicetypes/korganizerpart.desktop
 share/servicetypes/kpilotconduit.desktop
+@exec /bin/mkdir -p %D/share/doc/HTML/en/kdepim-apidocs/libkpimexchange/html
+@exec /bin/mkdir -p %D/share/doc/HTML/en/kdepim-apidocs/libkpimexchange/html
+@exec /bin/mkdir -p %D/share/doc/HTML/en/kdepim-apidocs/libkdepim/html
+@exec /bin/mkdir -p %D/share/doc/HTML/en/kdepim-apidocs/libkdepim/html
+@exec /bin/mkdir -p %D/share/doc/HTML/en/kdepim-apidocs/libkcal/html
+@exec /bin/mkdir -p %D/share/doc/HTML/en/kdepim-apidocs/libkcal/html
+@exec /bin/mkdir -p %D/share/doc/HTML/en/kdepim-apidocs/ksync/html
+@exec /bin/mkdir -p %D/share/doc/HTML/en/kdepim-apidocs/ksync/html
+@exec /bin/mkdir -p %D/share/doc/HTML/en/kdepim-apidocs/kpilot/html
+@exec /bin/mkdir -p %D/share/doc/HTML/en/kdepim-apidocs/kpilot/html
+@exec /bin/mkdir -p %D/share/doc/HTML/en/kdepim-apidocs/korganizer/html
+@exec /bin/mkdir -p %D/share/doc/HTML/en/kdepim-apidocs/korganizer/html
+@exec /bin/mkdir -p %D/share/doc/HTML/en/kdepim-apidocs/konsolekalendar/html
+@exec /bin/mkdir -p %D/share/doc/HTML/en/kdepim-apidocs/konsolekalendar/html
+@exec /bin/mkdir -p %D/share/doc/HTML/en/kdepim-apidocs/knotes/html
+@exec /bin/mkdir -p %D/share/doc/HTML/en/kdepim-apidocs/knotes/html
+@exec /bin/mkdir -p %D/share/doc/HTML/en/kdepim-apidocs/kgantt/html
+@exec /bin/mkdir -p %D/share/doc/HTML/en/kdepim-apidocs/kgantt/html
+@exec /bin/mkdir -p %D/share/doc/HTML/en/kdepim-apidocs/kfile-plugins/html
+@exec /bin/mkdir -p %D/share/doc/HTML/en/kdepim-apidocs/kfile-plugins/html
+@exec /bin/mkdir -p %D/share/doc/HTML/en/kdepim-apidocs/kandy/html
+@exec /bin/mkdir -p %D/share/doc/HTML/en/kdepim-apidocs/kandy/html
+@exec /bin/mkdir -p %D/share/doc/HTML/en/kdepim-apidocs/kalarmd/html
+@exec /bin/mkdir -p %D/share/doc/HTML/en/kdepim-apidocs/kalarmd/html
+@exec /bin/mkdir -p %D/share/doc/HTML/en/kdepim-apidocs/kalarm/html
+@exec /bin/mkdir -p %D/share/doc/HTML/en/kdepim-apidocs/kalarm/html
+@exec /bin/mkdir -p %D/share/doc/HTML/en/kdepim-apidocs/kaddressbook/html
+@exec /bin/mkdir -p %D/share/doc/HTML/en/kdepim-apidocs/kaddressbook/html
+@exec /bin/mkdir -p %D/share/doc/HTML/en/kdepim-apidocs/kabc/kabc2mutt/html
+@exec /bin/mkdir -p %D/share/doc/HTML/en/kdepim-apidocs/kabc/kabc2mutt/html
+@exec /bin/mkdir -p %D/share/doc/HTML/en/kdepim-apidocs/kabc/kabc2mutt/html
+@exec /bin/mkdir -p %D/share/doc/HTML/en/kdepim-apidocs/calendarsystem/html
+@exec /bin/mkdir -p %D/share/doc/HTML/en/kdepim-apidocs/calendarsystem/html
 @exec /bin/mkdir -p %D/share/doc/HTML/en/kdepim-apidocs/calendarsystem/html
 @exec /bin/mkdir -p %D/share/doc/HTML/en/kdepim-apidocs/kabc/kabc2mutt/html
-@exec /bin/mkdir -p %D/share/doc/HTML/en/kdepim-apidocs/kaddressbook/html
-@exec /bin/mkdir -p %D/share/doc/HTML/en/kdepim-apidocs/kalarm/html
-@exec /bin/mkdir -p %D/share/doc/HTML/en/kdepim-apidocs/kalarmd/html
-@exec /bin/mkdir -p %D/share/doc/HTML/en/kdepim-apidocs/kandy/html
 @exec /bin/mkdir -p %D/share/doc/HTML/en/kdepim-apidocs/kfile-plugins/html
 @exec /bin/mkdir -p %D/share/doc/HTML/en/kdepim-apidocs/kgantt/html
 @exec /bin/mkdir -p %D/share/doc/HTML/en/kdepim-apidocs/knotes/html
-@exec /bin/mkdir -p %D/share/doc/HTML/en/kdepim-apidocs/konsolekalendar/html
-@exec /bin/mkdir -p %D/share/doc/HTML/en/kdepim-apidocs/korganizer/html
+@exec /bin/mkdir -p %D/share/doc/HTML/en/kdepim-apidocs/libkdepim/html
+@exec /bin/mkdir -p %D/share/doc/HTML/en/kdepim-apidocs/libkcal/html
+@exec /bin/mkdir -p %D/share/doc/HTML/en/kdepim-apidocs/kandy/html
+@exec /bin/mkdir -p %D/share/doc/HTML/en/kdepim-apidocs/kaddressbook/html
 @exec /bin/mkdir -p %D/share/doc/HTML/en/kdepim-apidocs/kpilot/html
 @exec /bin/mkdir -p %D/share/doc/HTML/en/kdepim-apidocs/ksync/html
-@exec /bin/mkdir -p %D/share/doc/HTML/en/kdepim-apidocs/libkcal/html
-@exec /bin/mkdir -p %D/share/doc/HTML/en/kdepim-apidocs/libkdepim/html
+@exec /bin/mkdir -p %D/share/doc/HTML/en/kdepim-apidocs/konsolekalendar/html
+@exec /bin/mkdir -p %D/share/doc/HTML/en/kdepim-apidocs/kalarmd/html
 @exec /bin/mkdir -p %D/share/doc/HTML/en/kdepim-apidocs/libkpimexchange/html
-@unexec /bin/rmdir %D/share/doc/HTML/en/kdepim-apidocs/libkpimexchange/html || true
-@unexec /bin/rmdir %D/share/doc/HTML/en/kdepim-apidocs/libkdepim/html || true
-@unexec /bin/rmdir %D/share/doc/HTML/en/kdepim-apidocs/libkcal/html || true
-@unexec /bin/rmdir %D/share/doc/HTML/en/kdepim-apidocs/ksync/html || true
-@unexec /bin/rmdir %D/share/doc/HTML/en/kdepim-apidocs/kpilot/html || true
-@unexec /bin/rmdir %D/share/doc/HTML/en/kdepim-apidocs/korganizer/html || true
-@unexec /bin/rmdir %D/share/doc/HTML/en/kdepim-apidocs/konsolekalendar/html || true
-@unexec /bin/rmdir %D/share/doc/HTML/en/kdepim-apidocs/knotes/html || true
-@unexec /bin/rmdir %D/share/doc/HTML/en/kdepim-apidocs/kgantt/html || true
-@unexec /bin/rmdir %D/share/doc/HTML/en/kdepim-apidocs/kfile-plugins/html || true
-@unexec /bin/rmdir %D/share/doc/HTML/en/kdepim-apidocs/kandy/html || true
-@unexec /bin/rmdir %D/share/doc/HTML/en/kdepim-apidocs/kalarmd/html || true
-@unexec /bin/rmdir %D/share/doc/HTML/en/kdepim-apidocs/kalarm/html || true
-@unexec /bin/rmdir %D/share/doc/HTML/en/kdepim-apidocs/kaddressbook/html || true
-@unexec /bin/rmdir %D/share/doc/HTML/en/kdepim-apidocs/kabc/kabc2mutt/html || true
-@unexec /bin/rmdir %D/share/doc/HTML/en/kdepim-apidocs/calendarsystem/html || true
-@dirrm share/servicetypes
+@exec /bin/mkdir -p %D/share/doc/HTML/en/kdepim-apidocs/kalarm/html
+@exec /bin/mkdir -p %D/share/doc/HTML/en/kdepim-apidocs/korganizer/html
 @dirrm share/services/korganizer
-@dirrm share/services
 @dirrm share/icons/locolor/32x32/apps
 @dirrm share/icons/locolor/32x32
 @dirrm share/icons/locolor/16x16/apps
 @dirrm share/icons/locolor/16x16
 @dirrm share/icons/locolor
 @dirrm share/icons/crystalsvg/48x48/apps
-@dirrm share/icons/crystalsvg/48x48
 @dirrm share/icons/crystalsvg/32x32/apps
-@dirrm share/icons/crystalsvg/32x32
 @dirrm share/icons/crystalsvg/22x22/apps
-@dirrm share/icons/crystalsvg/22x22/actions
-@dirrm share/icons/crystalsvg/22x22
 @dirrm share/icons/crystalsvg/16x16/apps
-@dirrm share/icons/crystalsvg/16x16/actions
-@dirrm share/icons/crystalsvg/16x16
-@dirrm share/icons/crystalsvg
-@dirrm share/icons
 @dirrm share/doc/HTML/en/kpilot
 @dirrm share/doc/HTML/en/korganizer
 @dirrm share/doc/HTML/en/knotes
+@dirrm share/doc/HTML/en/kdepim-apidocs/libkpimexchange/html
 @dirrm share/doc/HTML/en/kdepim-apidocs/libkpimexchange
+@dirrm share/doc/HTML/en/kdepim-apidocs/libkdepim/html
 @dirrm share/doc/HTML/en/kdepim-apidocs/libkdepim
+@dirrm share/doc/HTML/en/kdepim-apidocs/libkcal/html
 @dirrm share/doc/HTML/en/kdepim-apidocs/libkcal
+@dirrm share/doc/HTML/en/kdepim-apidocs/ksync/html
 @dirrm share/doc/HTML/en/kdepim-apidocs/ksync
+@dirrm share/doc/HTML/en/kdepim-apidocs/kpilot/html
 @dirrm share/doc/HTML/en/kdepim-apidocs/kpilot
+@dirrm share/doc/HTML/en/kdepim-apidocs/korganizer/html
 @dirrm share/doc/HTML/en/kdepim-apidocs/korganizer
+@dirrm share/doc/HTML/en/kdepim-apidocs/konsolekalendar/html
 @dirrm share/doc/HTML/en/kdepim-apidocs/konsolekalendar
+@dirrm share/doc/HTML/en/kdepim-apidocs/knotes/html
 @dirrm share/doc/HTML/en/kdepim-apidocs/knotes
+@dirrm share/doc/HTML/en/kdepim-apidocs/kgantt/html
 @dirrm share/doc/HTML/en/kdepim-apidocs/kgantt
+@dirrm share/doc/HTML/en/kdepim-apidocs/kfile-plugins/html
 @dirrm share/doc/HTML/en/kdepim-apidocs/kfile-plugins
+@dirrm share/doc/HTML/en/kdepim-apidocs/kandy/html
 @dirrm share/doc/HTML/en/kdepim-apidocs/kandy
+@dirrm share/doc/HTML/en/kdepim-apidocs/kalarmd/html
 @dirrm share/doc/HTML/en/kdepim-apidocs/kalarmd
+@dirrm share/doc/HTML/en/kdepim-apidocs/kalarm/html
 @dirrm share/doc/HTML/en/kdepim-apidocs/kalarm
+@dirrm share/doc/HTML/en/kdepim-apidocs/kaddressbook/html
 @dirrm share/doc/HTML/en/kdepim-apidocs/kaddressbook
+@dirrm share/doc/HTML/en/kdepim-apidocs/kabc/kabc2mutt/html
 @dirrm share/doc/HTML/en/kdepim-apidocs/kabc/kabc2mutt
 @dirrm share/doc/HTML/en/kdepim-apidocs/kabc
+@dirrm share/doc/HTML/en/kdepim-apidocs/calendarsystem/html
 @dirrm share/doc/HTML/en/kdepim-apidocs/calendarsystem
 @dirrm share/doc/HTML/en/kdepim-apidocs
 @dirrm share/doc/HTML/en/kcontrol/kalarmd
@@ -511,10 +526,6 @@ share/servicetypes/kpilotconduit.desktop
 @dirrm share/doc/HTML/en/kandy
 @dirrm share/doc/HTML/en/kalarm
 @dirrm share/doc/HTML/en/kaddressbook
-@dirrm share/doc/HTML/en
-@dirrm share/doc/HTML
-@dirrm share/config
-@dirrm share/autostart
 @dirrm share/apps/ksync
 @dirrm share/apps/kpilot/icons/crystalsvg/16x16/actions
 @dirrm share/apps/kpilot/icons/crystalsvg/16x16
@@ -573,13 +584,10 @@ share/servicetypes/kpilotconduit.desktop
 @dirrm share/apps/kaddressbook/icons
 @dirrm share/apps/kaddressbook/csv-templates
 @dirrm share/apps/kaddressbook
-@dirrm share/apps
 @dirrm share/applnk/Utilities/More
 @dirrm share/applnk/Utilities
 @dirrm share/applnk/Applications
 @dirrm share/applnk/.hidden
-@dirrm share/applnk
-@dirrm lib/kde3
 @dirrm include/kpilot
 @dirrm include/korganizer
 @dirrm include/kgantt

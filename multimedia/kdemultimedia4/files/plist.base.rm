@@ -103,6 +103,8 @@
 @dirrm share/apps/aktion/toolbar
 @dirrm share/apps/aktion
 @dirrm share/apps
+@dirrm share/applnk/Settings/Sound
+@dirrm share/applnk/Settings
 @dirrm share/applnk/Multimedia/More
 @dirrm share/applnk/Multimedia
 @dirrm share/applnk/.hidden

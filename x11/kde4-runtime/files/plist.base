@@ -2783,6 +2783,7 @@ share/services/konq_sidebartng.desktop
 share/services/konq_textview.desktop
 share/services/konq_treeview.desktop
 share/services/konqueror_config.desktop
+share/services/konsole-script.desktop
 share/services/konsolepart.desktop
 share/services/kshorturifilter.desktop
 share/services/kuriikwsfilter.desktop
