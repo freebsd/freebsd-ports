@@ -1,0 +1,14 @@
+$Id: DESCR,v 1.1.1.1 1998/06/05 16:15:09 itojun Exp $
+
+This distribution of the Multi-threaded Routing Toolkit includes
+routing daemons, programming libraries and Internet
+statistics/performance measurement tools.
+
+The work is supported by National Science Foundation grants
+(NCR-9710176 and NCR-9318902), and a gift from Intel Corporation. 
+	
+Documentation and an installation guide for the MRT toolkit is 
+available online at
+   http://www.merit.edu/~mrt/mrt_doc	
+
+Send email to mrt-support@merit.edu for assistence/bugs/comments.
