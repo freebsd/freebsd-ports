@@ -10,6 +10,7 @@ share/gnome/scite/html.properties
 share/gnome/scite/latex.properties
 share/gnome/scite/lua.properties
 share/gnome/scite/others.properties
+share/gnome/scite/pascal.properties
 share/gnome/scite/perl.properties
 share/gnome/scite/python.properties
 share/gnome/scite/sql.properties
