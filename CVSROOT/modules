@@ -632,6 +632,7 @@ biew		ports/editors/biew
 biffer		ports/mail/biffer
 biggles		ports/math/biggles
 bigloo		ports/lang/bigloo
+bigsister	ports/net-mgmt/bigsister
 bigyear		ports/deskutils/bigyear
 bin86		ports/devel/bin86
 bincimap	ports/mail/bincimap
