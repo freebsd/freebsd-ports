@@ -60,8 +60,10 @@ CONFIGURE_ARGS+=	--with-gtk-extra
 .if defined(WITHOUT_X11)
 CONFIGURE_ARGS+=	--with-no-gui
 .endif
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}" \
+
+CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib" \
+		CFLAGS="${CFLAGS}"
+MAKE_ENV=	LDFLAGS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}" \
 		CFLAGS="${CFLAGS} ${PTHREAD_CFLAGS}"
 
 GNU_CONFIGURE=	yes
@@ -77,7 +79,6 @@ WRKSRC=		${WRKDIR}/snd-5
 
 post-configure:
 	@${PERL} -pi -e "s: -ldl::g" ${WRKSRC}/makefile
-	@${PERL} -pi -e "s:-lm   -lm:-lm:g" ${WRKSRC}/makefile
 
 pre-install:
 	${ECHO} bin/snd > ${PLIST}
