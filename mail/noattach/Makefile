@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	noattach
-PORTVERSION=	1.0p1
+PORTVERSION=	1.1
 CATEGORIES=	mail
 MASTER_SITES=	ftp://ftp.rhnet.is/pub/noattach/
 
