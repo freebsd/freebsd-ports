@@ -75,9 +75,10 @@ CONFIGURE_ARGS=	--enable-flock --disable-fcntl \
 CONFIGURE_ARGS+=	${MUTT_CONFIGURE_ARGS}
 .endif
 
-.include <bsd.port.pre.mk>
-
+USE_REINPLACE=	yes
 USE_AUTOMAKE=	yes
+
+.include <bsd.port.pre.mk>
 
 .if defined(WITH_MUTT_COMPRESSED_FOLDERS) || defined(WITH_MUTT_NNTP) || \
 		defined(WITH_MUTT_QUOTE_PATCH)
@@ -91,8 +92,10 @@ PATCH_SITES+=	http://www.mutt.org.ua/download/mutt-${PATCH_VERSION}/ \
 # this should be done automagically by aclocal but ....
 # for now, this will have to do
 pre-build:
-	@${PERL} -pi -e "s/^(ACLOCAL = ).+/\1${ACLOCAL}/; s/^(AUTOCONF = ).+/\1${AUTOCONF}/; \
-		s/^(AUTOMAKE = ).+/\1${AUTOMAKE}/; s/^(AUTOHEADER = ).+/\1${AUTOHEADER}/" \
+	@${REINPLACE_CMD} -E -e "s/^(ACLOCAL = ).+/\1${ACLOCAL}/" \
+			-e "s/^(AUTOCONF = ).+/\1${AUTOCONF}/" \
+			-e "s/^(AUTOMAKE = ).+/\1${AUTOMAKE}/" \
+			-e "s/^(AUTOHEADER = ).+/\1${AUTOHEADER}/" \
 		${BUILD_WRKSRC}/Makefile
 
 .if !defined(PATCH_VERSION)
@@ -190,7 +193,7 @@ MAN1=		flea.1 mutt.1 mutt_dotlock.1 muttbug.1
 MAN5=		muttrc.5 mbox.5
 
 post-patch::
-	@${PERL} -pi.fbsd -e 's,/usr/bin/gpg,${LOCALBASE}/bin/gpg,g' \
+	@${REINPLACE_CMD} -e 's,/usr/bin/gpg,${LOCALBASE}/bin/gpg,g' \
 		${WRKSRC}/contrib/gpg.rc
 	@${CP} ${PATCHDIR}/smime.h ${WRKSRC}
 
