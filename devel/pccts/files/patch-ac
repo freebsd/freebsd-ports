@@ -1,0 +1,19 @@
+*** testcpp/makefile	Tue Oct  3 23:48:53 1995
+--- /home/andy/tmp/wrk/testcpp/makefile	Tue Jun 24 05:44:59 1997
+***************
+*** 5,11 ****
+  #
+  # For SGI machines, we recommend using "-woff 3262" in your CFLAGS
+  #
+! #CCC = g++
+  make:
+  	-(cd 1; make CCC=$(CCC))
+  	-(cd 2; make CCC=$(CCC))
+--- 5,11 ----
+  #
+  # For SGI machines, we recommend using "-woff 3262" in your CFLAGS
+  #
+! CCC = g++
+  make:
+  	-(cd 1; make CCC=$(CCC))
+  	-(cd 2; make CCC=$(CCC))
