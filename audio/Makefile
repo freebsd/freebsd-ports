@@ -30,6 +30,7 @@
     SUBDIR += cd-console
     SUBDIR += cd-discid
     SUBDIR += cd2mp3
+    SUBDIR += cdparanoia
     SUBDIR += cdplay
     SUBDIR += cdplayer.app
     SUBDIR += cheesetracker

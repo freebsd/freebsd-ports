@@ -1,0 +1,33 @@
+Index: interface/Makefile.in
+===================================================================
+RCS file: /home/cvs/cdparanoia/interface/Makefile.in,v
+retrieving revision 1.1.1.1
+retrieving revision 1.3
+diff -u -r1.1.1.1 -r1.3
+--- interface/Makefile.in	2003/01/05 09:46:26	1.1.1.1
++++ interface/Makefile.in	2003/01/05 12:03:46	1.3
+@@ -9,13 +9,13 @@
+ @SET_MAKE@
+ FLAGS=@SBPCD_H@ @UCDROM_H@ @TYPESIZES@ @CFLAGS@
+ OPT=@OPT@ $(FLAGS)
+-DEBUG=@DEBUG@ $(FLAGS) -DCDDA_TEST
++DEBUG=@DEBUG@ $(FLAGS)
+ CC=@CC@
+ LD=@CC@
+ LDFLAGS=@LDFLAGS@ $(FLAGS)
+ AR=@AR@
+ RANLIB=@RANLIB@
+-LIBS = -lm
++LIBS = -lm -lcam
+ CPPFLAGS+=-D_REENTRANT
+ 
+ OFILES = scan_devices.o	common_interface.o cooked_interface.o interface.o\
+@@ -46,7 +46,7 @@
+ 	$(RANLIB) libcdda_interface.a
+ 
+ libcdda_interface.so: 	$(OFILES)	
+-	$(CC) -fpic -shared -o libcdda_interface.so.0.$(VERSION) -Wl,-soname -Wl,libcdda_interface.so.0 $(OFILES)
++	$(CC) -fpic -shared -o libcdda_interface.so.0.$(VERSION) -Wl,-soname -Wl,libcdda_interface.so.0 $(OFILES) ${LIBS}
+ 	[ -e libcdda_interface.so.0 ] || ln -s libcdda_interface.so.0.$(VERSION) libcdda_interface.so.0
+ 	[ -e libcdda_interface.so ] || ln -s libcdda_interface.so.0.$(VERSION) libcdda_interface.so
+ 
