@@ -3,12 +3,12 @@
 # Date created:		21 July 1998
 # Whom:			jkoshy
 #
-# $Id: Makefile,v 1.2 1998/09/07 02:50:09 jkoshy Exp $
+# $Id: Makefile,v 1.3 1998/10/13 23:45:15 jseger Exp $
 #
 
 DISTNAME=	cl74unix
 PKGNAME=	caml-0.74
-CATEGORIES=	lang
+CATEGORIES=	lang elisp
 MASTER_SITES=	ftp://ftp.inria.fr/lang/caml-light/ \
 	ftp://sunsite.doc.ic.ac.uk/computing/programming/languages/ml/caml-light/ \
 	ftp://arcadia.informatik.uni-muenchen.de/pub/comp/programming/languages/functional/caml-light/ \

@@ -3,12 +3,12 @@
 # Date created:		10 November 1995
 # Whom:			pst
 #
-# $Id: Makefile,v 1.15 1998/01/24 22:16:58 pst Exp $
+# $Id: Makefile,v 1.16 1998/08/16 19:25:41 pst Exp $
 #
 
 DISTNAME=       gnats-3.106-beta
 PKGNAME=	gnats-3.106b
-CATEGORIES=	databases
+CATEGORIES=	databases elisp
 #MASTER_SITES=	ftp://ftp.cygnus.com/pub/gnats/
 MASTER_SITES=	ftp://ftp.juniper.net/pub/gnats/
 
