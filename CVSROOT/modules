@@ -4452,6 +4452,8 @@ netsaint	ports/net/netsaint
 netsaint-plugins	ports/net/netsaint-plugins
 netscape-remote	ports/www/netscape-remote
 netscape-wrapper	ports/www/netscape-wrapper
+netscape47-communicator	ports/www/netscape47-communicator
+netscape47-navigator	ports/www/netscape47-navigator
 netscape48-communicator	ports/www/netscape48-communicator
 netscape48-navigator	ports/www/netscape48-navigator
 netscape7	ports/www/netscape7
