@@ -6,9 +6,10 @@
 #
 
 PORTNAME=	swatch
-PORTVERSION=	3.0.3
+PORTVERSION=	3.0.4
 CATEGORIES=	security sysutils
-MASTER_SITES=	ftp://ftp.stanford.edu/general/security-tools/swatch/
+MASTER_SITES=	ftp://ftp.stanford.edu/general/security-tools/swatch/ \
+		http://www.oit.ucsb.edu/~eta/swatch/
 
 MAINTAINER=	joseph@randomnetworks.com
 
