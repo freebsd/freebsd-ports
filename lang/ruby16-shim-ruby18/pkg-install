@@ -23,6 +23,7 @@ delete_modules () {
 	openssl
 	optparse
 	racc-runtime
+	rdoc
 	rexml
 	soap
 	strscan

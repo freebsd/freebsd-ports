@@ -2,6 +2,8 @@
 bin/erb%%_RUBY_SUFFIX%%
 %%IF_DEFAULT%%bin/h2rb%%RUBY_R%%
 bin/h2rb%%_RUBY_SUFFIX%%
+%%IF_DEFAULT%%bin/rdoc%%RUBY_R%%
+bin/rdoc%%_RUBY_SUFFIX%%
 @comment features/ruby18
 %%RUBY_SITEARCHLIBDIR%%/features/ruby18/file_ruby18.so
 %%RUBY_SITEARCHLIBDIR%%/features/ruby18/io_ruby18.so
@@ -90,6 +92,53 @@ bin/h2rb%%_RUBY_SUFFIX%%
 @dirrm %%RUBY_SITEARCHLIBDIR%%/racc
 %%RUBY_SITELIBDIR%%/racc/parser.rb
 @dirrm %%RUBY_SITELIBDIR%%/racc
+@comment rdoc
+%%RUBY_SITELIBDIR%%/rdoc/code_objects.rb
+%%RUBY_SITELIBDIR%%/rdoc/diagram.rb
+%%RUBY_SITELIBDIR%%/rdoc/dot/dot.rb
+%%RUBY_SITELIBDIR%%/rdoc/generators/chm_generator.rb
+%%RUBY_SITELIBDIR%%/rdoc/generators/html_generator.rb
+%%RUBY_SITELIBDIR%%/rdoc/generators/template/chm/chm.rb
+%%RUBY_SITELIBDIR%%/rdoc/generators/template/html/css2.rb
+%%RUBY_SITELIBDIR%%/rdoc/generators/template/html/hefss.rb
+%%RUBY_SITELIBDIR%%/rdoc/generators/template/html/html.rb
+%%RUBY_SITELIBDIR%%/rdoc/generators/template/html/kilmer.rb
+%%RUBY_SITELIBDIR%%/rdoc/generators/template/xml/rdf.rb
+%%RUBY_SITELIBDIR%%/rdoc/generators/template/xml/xml.rb
+%%RUBY_SITELIBDIR%%/rdoc/generators/xml_generator.rb
+%%RUBY_SITELIBDIR%%/rdoc/markup/sample/rdoc2latex.rb
+%%RUBY_SITELIBDIR%%/rdoc/markup/sample/sample.rb
+%%RUBY_SITELIBDIR%%/rdoc/markup/simple_markup.rb
+%%RUBY_SITELIBDIR%%/rdoc/markup/simple_markup/fragments.rb
+%%RUBY_SITELIBDIR%%/rdoc/markup/simple_markup/inline.rb
+%%RUBY_SITELIBDIR%%/rdoc/markup/simple_markup/lines.rb
+%%RUBY_SITELIBDIR%%/rdoc/markup/simple_markup/preprocess.rb
+%%RUBY_SITELIBDIR%%/rdoc/markup/simple_markup/to_html.rb
+%%RUBY_SITELIBDIR%%/rdoc/markup/simple_markup/to_latex.rb
+%%RUBY_SITELIBDIR%%/rdoc/markup/test/AllTests.rb
+%%RUBY_SITELIBDIR%%/rdoc/markup/test/TestInline.rb
+%%RUBY_SITELIBDIR%%/rdoc/markup/test/TestParse.rb
+%%RUBY_SITELIBDIR%%/rdoc/options.rb
+%%RUBY_SITELIBDIR%%/rdoc/parsers/parse_c.rb
+%%RUBY_SITELIBDIR%%/rdoc/parsers/parse_f95.rb
+%%RUBY_SITELIBDIR%%/rdoc/parsers/parse_rb.rb
+%%RUBY_SITELIBDIR%%/rdoc/parsers/parse_simple.rb
+%%RUBY_SITELIBDIR%%/rdoc/parsers/parserfactory.rb
+%%RUBY_SITELIBDIR%%/rdoc/rdoc.rb
+%%RUBY_SITELIBDIR%%/rdoc/template.rb
+%%RUBY_SITELIBDIR%%/rdoc/tokenstream.rb
+@dirrm %%RUBY_SITELIBDIR%%/rdoc/parsers
+@dirrm %%RUBY_SITELIBDIR%%/rdoc/markup/test
+@dirrm %%RUBY_SITELIBDIR%%/rdoc/markup/simple_markup
+@dirrm %%RUBY_SITELIBDIR%%/rdoc/markup/sample
+@dirrm %%RUBY_SITELIBDIR%%/rdoc/markup
+@dirrm %%RUBY_SITELIBDIR%%/rdoc/generators/template/xml
+@dirrm %%RUBY_SITELIBDIR%%/rdoc/generators/template/html
+@dirrm %%RUBY_SITELIBDIR%%/rdoc/generators/template/chm
+@dirrm %%RUBY_SITELIBDIR%%/rdoc/generators/template
+@dirrm %%RUBY_SITELIBDIR%%/rdoc/generators
+@dirrm %%RUBY_SITELIBDIR%%/rdoc/dot
+@dirrm %%RUBY_SITELIBDIR%%/rdoc
 @comment rexml
 %%RUBY_SITELIBDIR%%/rexml/attlistdecl.rb
 %%RUBY_SITELIBDIR%%/rexml/attribute.rb
@@ -106,18 +155,14 @@ bin/h2rb%%_RUBY_SUFFIX%%
 %%RUBY_SITELIBDIR%%/rexml/element.rb
 %%RUBY_SITELIBDIR%%/rexml/encoding.rb
 %%RUBY_SITELIBDIR%%/rexml/encodings/EUC-JP.rb
-%%RUBY_SITELIBDIR%%/rexml/encodings/EUC-JP_decl.rb
+%%RUBY_SITELIBDIR%%/rexml/encodings/ICONV.rb
 %%RUBY_SITELIBDIR%%/rexml/encodings/ISO-8859-1.rb
-%%RUBY_SITELIBDIR%%/rexml/encodings/ISO-8859-1_decl.rb
-%%RUBY_SITELIBDIR%%/rexml/encodings/Shift-JIS.rb
-%%RUBY_SITELIBDIR%%/rexml/encodings/Shift-JIS_decl.rb
-%%RUBY_SITELIBDIR%%/rexml/encodings/Shift_JIS.rb
+%%RUBY_SITELIBDIR%%/rexml/encodings/SHIFT-JIS.rb
+%%RUBY_SITELIBDIR%%/rexml/encodings/SHIFT_JIS.rb
 %%RUBY_SITELIBDIR%%/rexml/encodings/UNILE.rb
-%%RUBY_SITELIBDIR%%/rexml/encodings/UNILE_decl.rb
 %%RUBY_SITELIBDIR%%/rexml/encodings/US-ASCII.rb
-%%RUBY_SITELIBDIR%%/rexml/encodings/US-ASCII_decl.rb
 %%RUBY_SITELIBDIR%%/rexml/encodings/UTF-16.rb
-%%RUBY_SITELIBDIR%%/rexml/encodings/UTF-16_decl.rb
+%%RUBY_SITELIBDIR%%/rexml/encodings/UTF-8.rb
 %%RUBY_SITELIBDIR%%/rexml/entity.rb
 %%RUBY_SITELIBDIR%%/rexml/functions.rb
 %%RUBY_SITELIBDIR%%/rexml/instruction.rb

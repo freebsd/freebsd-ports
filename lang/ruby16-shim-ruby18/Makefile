@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	shim-ruby18
-PORTVERSION=	1.8.1.p2
+PORTVERSION=	1.8.1.p3
 CATEGORIES=	lang devel ruby
 MASTER_SITES=	${MASTER_SITE_RUBY}
 MASTER_SITE_SUBDIR=	shim
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
-DISTNAME=	shim-ruby16_18-1.8.1-preview2
+DISTNAME=	shim-ruby16_18-1.8.1-preview3
 DIST_SUBDIR=	ruby
 
 MAINTAINER=	knu@FreeBSD.org
@@ -39,7 +39,8 @@ IF_DEFAULT=	"@comment "
 .endif
 
 INSTALLED_SCRIPTS=	${PREFIX}/bin/erb \
-			${PREFIX}/bin/h2rb
+			${PREFIX}/bin/h2rb \
+			${PREFIX}/bin/rdoc
 
 PLIST_SUB+=	IF_DEFAULT=${IF_DEFAULT} \
 
