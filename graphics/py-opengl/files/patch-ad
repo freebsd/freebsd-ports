@@ -1,0 +1,25 @@
+--- Tkinter.py.orig	Mon Dec  4 19:27:43 2000
++++ Tkinter.py	Mon Dec  4 19:36:19 2000
+@@ -0,0 +1,22 @@
++import os
++
++class nullcall:
++	def __init(self):
++		pass
++	def call(self, a1='', a2='', a3='', a4='', a5=''):
++		os.system('echo' + ' ' + a1 + ' ' + a2 + ' ' + a3 + ' ' + a4 + \
++		 ' ' + a5 + ' >> register.tcl')
++
++class Tk:
++	tk = None
++	def __init__(self):
++		self.tk = nullcall()
++		pass
++	def getvar(self, varname):
++		if varname == 'tk_version' or varname == 'tcl_version':
++			return '8.3'
++		if varname == 'tcl_library':
++			return '%%LOCALBASE%%/lib/tcl8.3'
++		if varname == 'tk_library':
++			return '%%LOCALBASE%%/lib/tk8.3'
++		return ''
