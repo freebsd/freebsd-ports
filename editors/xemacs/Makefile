@@ -80,6 +80,13 @@ WITH_OFFIX?=	--with-offix=no
 .endif
 .endif
 
+# fix .so references in a few man pages
+pre-configure::
+.for file in etc/ctags.1 etc/gnuattach.1 etc/gnuclient.1 etc/gnudoit.1
+	@${SED} -e 's/\.1/&.gz/' ${WRKSRC}/${file} > tmp_zot
+	@${MV} tmp_zot ${WRKSRC}/${file}
+.endfor
+
 post-install::
 .if !defined(MULE_COMMON)
 	${LN} -sf xemacs-${XEMACS_VER} ${PREFIX}/bin/xemacs21${BINNAMEEXT}
