@@ -10,3 +10,11 @@
  	V_OBJ_GRABBER="video/grabber-spigot.o $V_OBJ_GRABBER"
  	V_LIB_GRABBER="$V_LIB_GRABBER -lspigot"
  	V_INCLUDE_GRABBER="$V_INCLUDE_GRABBER -I/usr/local/include"
+@@ -249,6 +248,7 @@
+ 	else
+ 		V_DEFINE="$V_DEFINE -DFreeBSD"
+ 	fi
++	V_DEFINE="$V_DEFINE -DSIGARGS=int"
+ 	OPSYS=freebsd
+ 	;;
+ *-*-hpux*)
