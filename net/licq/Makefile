@@ -20,7 +20,7 @@ BUILD_DEPENDS=	${LOCALBASE}/lib/libsocks5.a:${PORTSDIR}/net/socks5
 
 USE_REINPLACE=	yes
 WRKSRC=		${WRKDIR}/${DISTNAME}
-LICQ_PORT?=	${PKGCATEGORY}/${PORTDIRNAME}
+LICQ_PORT?=	net/licq
 
 # workaround for installed autoconf/automake
 CONFIGURE_ARGS+=--program-transform-name=s,y,y,
