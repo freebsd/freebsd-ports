@@ -73,8 +73,7 @@ XMESSDOCS=	changes.mess \
 		messold.txt \
 		messroms.txt \
 		credits.txt
-PINMAMEDOCS=	credits.txt \
-		pinmame/simulation.txt \
+PINMAMEDOCS=	pinmame/simulation.txt \
 		pinmame/whatsnew.txt \
 		pinmame/pinmame.txt \
 		pinmame/gamelist.txt \
