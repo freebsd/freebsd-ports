@@ -19,6 +19,8 @@ COMMENT=	Python Bindings for KDE
 
 BUILD_DEPENDS=	pyuic:${PORTSDIR}/x11-toolkits/py-qt
 
+BROKEN=		Unfetchable
+
 USE_PYTHON=	yes
 USE_KDELIBS_VER=3
 USE_REINPLACE=	yes
