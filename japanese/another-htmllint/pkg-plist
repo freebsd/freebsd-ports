@@ -2,11 +2,13 @@ bin/htmllint
 share/htmllint/htmllint.pm
 share/htmllint/RFC2396.pm
 share/htmllint/rule/15445.rul
+share/htmllint/rule/15445-preparation.rul
 share/htmllint/rule/arena.rul
 share/htmllint/rule/charsets.rul
 share/htmllint/rule/colortable.rul
 share/htmllint/rule/common.rul
 share/htmllint/rule/compact-html.rul
+share/htmllint/rule/doti10.rul
 share/htmllint/rule/html10.rul
 share/htmllint/rule/html20.rul
 share/htmllint/rule/html40-frameset.rul
@@ -24,7 +26,9 @@ share/htmllint/rule/ie50.rul
 share/htmllint/rule/ie55.rul
 share/htmllint/rule/imode.rul
 share/htmllint/rule/imode20.rul
+share/htmllint/rule/imode30.rul
 share/htmllint/rule/jpo.rul
+share/htmllint/rule/jskystation.rul
 share/htmllint/rule/jskyweb.rul
 share/htmllint/rule/mozilla20.rul
 share/htmllint/rule/mozilla30.rul
@@ -38,6 +42,7 @@ share/htmllint/rule/xhtml1-transitional.rul
 share/htmllint/rule/xhtml11.rul
 share/htmllint/html/htmllint.cgi
 share/htmllint/html/colors.html
+share/htmllint/html/colorsbk.html
 share/htmllint/html/download.html
 share/htmllint/html/explain-omake.html
 share/htmllint/html/explain-score.html
