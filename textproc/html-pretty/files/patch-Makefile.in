@@ -1,0 +1,113 @@
+$FreeBSD$
+
+--- Makefile.in.orig	Sat Aug 25 15:56:14 2001
++++ Makefile.in	Tue Mar 16 17:58:19 2004
+@@ -34,7 +34,7 @@
+ ###	install			install htmlpty in system directories
+ ###	install-exe		install only htmlpty executable
+ ###	install-man		install only htmlpty manual pages
+-###	install-lib		install only htmlpty library files
++###	install-data		install only htmlpty data files
+ ###	install-ftp		install htmlpty in FTP directory
+ ###	lint			run lint on C source code
+ ###	maintainer-clean	remove absolutely everything that make
+@@ -49,7 +49,7 @@
+ ###	uninstall		remove htmlpty from system directories
+ ###	uninstall-exe		remove htmlpty executable from system
+ ###				directories
+-###	uninstall-lib		remove htmlpty library files from system
++###	uninstall-data		remove htmlpty data files from system
+ ###				directories
+ ###	uninstall-man		remove htmlpty manual pages from system
+ ###				directories
+@@ -149,21 +149,21 @@
+ 
+ #### Start of system configuration section. ####
+ 
+-prefix          = /usr/local
++prefix          = @prefix@
+ exec_prefix     = $(prefix)
+ 
+ bindir          = $(exec_prefix)/bin
+-datadir         = $(prefix)/lib
++datadir         = $(prefix)/share
+ infodir         = $(prefix)/info
+-libdir          = $(prefix)/share/lib
++libdir          = $(prefix)/lib
+ srcdir          = @srcdir@
+ 
+ ### NB: the default catalog search algorithm in htmlpty is based on
+ ### mapping /the/path/to/bin/htmlpty to
+-### /the/path/to/share/lib/htmlpty, so the values of BINDIR and LIBDIR
++### /the/path/to/share/lib/htmlpty, so the values of BINDIR and DATADIR
+ ### are NOT independent.
+ BINDIR          = $(bindir)
+-LIBDIR		= $(libdir)
++DATADIR		= $(datadir)
+ MANDIR          = $(prefix)/man
+ MANEXT		= 1
+ 
+@@ -217,7 +217,7 @@
+ INSTALL_PROGRAM = @INSTALL_PROGRAM@
+ INSTALL_DATA    = @INSTALL_DATA@
+ 
+-LDFLAGS         = $(OPT) -L$(prefix)/lib
++LDFLAGS         = $(OPT)
+ LIBS            = @LIBS@
+ 
+ VPATH           = @srcdir@
+@@ -743,7 +743,7 @@
+ 	$(ZOO) v htmlpty-$(VERSION).zoo >htmlpty-$(VERSION).zoo-lst
+ 	$(LN) htmlpty-$(VERSION).zoo htmlpty.zoo
+ 
+-install:	htmlpty install-exe install-lib install-man
++install:	htmlpty install-exe install-data install-man
+ 
+ ### Remove the old executable before installing the new one, so as to
+ ### preserve the link to the old version.  We first rename the file
+@@ -755,20 +755,15 @@
+ 		$(MV) $(BINDIR)/$(PROGRAM) $(BINDIR)/$(PROGRAM).tmp ; \
+ 		$(RM) $(BINDIR)/$(PROGRAM).tmp ; \
+ 	fi
+-	$(CP) htmlpty $(BINDIR)/$(PROGRAM)
+-	-$(CHMOD) 775 $(BINDIR)/$(PROGRAM)
+-	-$(RM) $(BINDIR)/$(PROGRAM)-$(VERSION)
+-	$(LN) $(BINDIR)/$(PROGRAM) $(BINDIR)/$(PROGRAM)-$(VERSION)
++	$(INSTALL) -m 755 htmlpty $(BINDIR)/$(PROGRAM)
+ 
+ install-man:
+-	-$(RM) $(MANDIR)/cat$(MANEXT)/$(PROGRAM).$(MANEXT)
+-	$(CP) htmlpty.man $(MANDIR)/man$(MANEXT)/$(PROGRAM).$(MANEXT)
+-	-$(CHMOD) 664 $(MANDIR)/man$(MANEXT)/$(PROGRAM).$(MANEXT)
+-
+-install-lib:
+-	-$(MKDIR) $(LIBDIR)/$(PROGRAM)
+-	$(CP) Styles/catalog Styles/*.sty $(LIBDIR)/$(PROGRAM)/
+-	$(CHMOD) 664 $(LIBDIR)/$(PROGRAM)/*
++	-$(MKDIR) $(MANDIR)/man$(MANEXT)
++	$(INSTALL_DATA) htmlpty.man $(MANDIR)/man$(MANEXT)/$(PROGRAM).$(MANEXT)
++
++install-data:
++	-$(MKDIR) $(DATADIR)/$(PROGRAM)
++	$(INSTALL_DATA) Styles/catalog Styles/*.sty $(DATADIR)/$(PROGRAM)/
+ 
+ install-ftp:	htmlpty.tar htmlpty.zip htmlpty.zoo
+ 	$(TAR) tvf htmlpty-$(VERSION).tar >$(FTPDIR)/htmlpty-$(VERSION).tar-lst
+@@ -827,14 +822,14 @@
+ test-version:
+ 	@echo "Version number is ""'"$(VERSION)"'"
+ 
+-uninstall:	uninstall-exe uninstall-lib uninstall-man
++uninstall:	uninstall-exe uninstall-data uninstall-man
+ 
+ uninstall-exe:
+ 	-$(RM) $(BINDIR)/$(PROGRAM)
+ 	-$(RM) $(BINDIR)/$(PROGRAM)-$(VERSION)
+ 
+-uninstall-lib:
+-	-$(RM) -r $(LIBDIR)/$(PROGRAM)
++uninstall-data:
++	-$(RM) -r $(DATADIR)/$(PROGRAM)
+ 
+ uninstall-man:
+ 	-$(RM) $(MANDIR)/cat$(MANEXT)/$(PROGRAM).$(MANEXT)

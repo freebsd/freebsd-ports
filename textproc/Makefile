@@ -118,6 +118,7 @@
     SUBDIR += hs-haxml
     SUBDIR += htdig
     SUBDIR += html
+    SUBDIR += html-pretty
     SUBDIR += html2fo
     SUBDIR += html2text
     SUBDIR += htmldoc

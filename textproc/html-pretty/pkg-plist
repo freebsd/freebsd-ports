@@ -1,0 +1,10 @@
+bin/html-pretty
+%%DATADIR%%/catalog
+%%DATADIR%%/cougar.sty
+%%DATADIR%%/dtd.sty
+%%DATADIR%%/html-20.sty
+%%DATADIR%%/html-30.sty
+%%DATADIR%%/html-32.sty
+%%DATADIR%%/html-40.sty
+%%DATADIR%%/html-all.sty
+@dirrm %%DATADIR%%
