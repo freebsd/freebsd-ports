@@ -1,0 +1,18 @@
+PostMark is the benchmark used in the NetApp Technical Report TR-3022,
+"PostMark: A New File System Benchmark".  The paper fully explains how
+to use this tool.
+
+From the paper's Abstract:
+	Existing file system benchmarks are deficient in portraying
+	performance in the ephemeral small-file regime used by Internet
+	software, especially:
+		* electronic mail
+		* netnews
+		* web-based commerce
+
+PostMark is a new benchmark to measure performance for this class of
+application.
+
+WWW: http://www.netapp.com/tech_library/3022.html
+
+	-- David	(obrien@cs.ucdavis.edu)
