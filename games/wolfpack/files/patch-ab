@@ -5,7 +5,7 @@ diff -u -r ./include/misc.h ../emp4.patched/include/misc.h
  extern	char *calloc();
  #endif
  #else
--#if !defined(ALPHA) && !defined(__osf__) && !defined(ultrix) && !defined(hpux)
+-#if !defined(ALPHA) && !defined(__osf__) && !defined(ultrix) && !defined(hpux) && !defined(FBSD)
 +#if !defined(ALPHA) && !defined(__osf__) && !defined(ultrix) && !defined(hpux) && !defined(__FreeBSD__)
  extern	char *malloc();
  extern	char *calloc();
