@@ -3,7 +3,7 @@
 # Date created:         So  17 Nov 1996 16:59:23 MET
 # Whom:                 Andreas Klemm <andreas@klemm.gtn.com>
 #
-# $Id: Makefile,v 1.24 1998/05/18 21:54:12 andreas Exp $
+# $Id: Makefile,v 1.25 1998/05/22 17:09:05 andreas Exp $
 #
 
 DISTNAME=	bb-1.06c
@@ -31,6 +31,8 @@ post-configure:
 	@${CP} ${FILESDIR}/Makefile ${WRKSRC}
 
 do-install:
+	@${MKDIR} ${PREFIX}/www/cgi-bin
+	@${MKDIR} ${PREFIX}/www/data
 	@${MKDIR} ${PREFIX}/bb/bin
 	@${MKDIR} ${PREFIX}/bb/etc
 	@${MKDIR} ${PREFIX}/bb/web
