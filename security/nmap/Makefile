@@ -4,7 +4,7 @@
 # Date created:			  Tue Aug 04, 1998
 # Whom:				  David O'Brien (obrien@NUXI.com)
 #
-# $Id: Makefile,v 1.1.1.1 1998/08/04 17:59:51 obrien Exp $
+# $Id: Makefile,v 1.2 1998/08/04 18:01:31 obrien Exp $
 #
 
 DISTNAME=	nmap-1.51
@@ -14,6 +14,7 @@ MASTER_SITES=	http://www.insecure.org/nmap/
 MAINTAINER=     obrien@FreeBSD.org
 
 GNU_CONFIGURE=	yes
+CFLAGS+=        -DDLT_RAW=12 # for obsoleted <net/bpf.h>
 MAN1=		nmap.1
 
 post-install:
