@@ -3,7 +3,7 @@
 # Date created:         08 August 1995
 # Whom:                 jkh
 #
-# $Id: Makefile,v 1.44 1999/02/18 09:37:34 thepish Exp $
+# $Id: Makefile,v 1.45 1999/02/22 19:06:06 nectar Exp $
 #
 
 DISTNAME=       pyth151
@@ -113,5 +113,6 @@ post-install:
 	strip ${PREFIX}/bin/python
 	@${MKDIR} ${PREFIX}/share/doc/python
 	${INSTALL_DATA} ${WRKSRC}/Misc/COPYRIGHT ${PREFIX}/share/doc/python
+	@${MKDIR} ${PREFIX}/lib/python1.5/site-packages
 
 .include <bsd.port.post.mk>

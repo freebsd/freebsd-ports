@@ -913,6 +913,7 @@ lib/python1.5/zmod.py
 lib/python1.5/zmod.pyc
 lib/python1.5/zmod.pyo
 share/doc/python/COPYRIGHT
+@exec mkdir -p %D/lib/python1.5/site-packages
 @dirrm share/doc/python
 @dirrm lib/python1.5/test/output
 @dirrm lib/python1.5/test
@@ -922,5 +923,6 @@ share/doc/python/COPYRIGHT
 @dirrm lib/python1.5/lib-stdwin
 @dirrm lib/python1.5/lib-dynload
 @dirrm lib/python1.5/config
+@dirrm lib/python1.5/site-packages
 @dirrm lib/python1.5
 @dirrm include/python1.5
