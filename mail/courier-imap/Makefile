@@ -28,7 +28,6 @@ PLIST_SUB=	OPENSSLFLAG="@comment "
 CONFIGURE_ARGS=	--without-authldap --with-authldaprc=filename \
 		--without-authshadow \
 		--without-authcram \
-		--without-authmysql \
 		--sysconfdir=${PREFIX}/etc/courier-imap \
 		--with-userdb=${PREFIX}/etc/userdb \
 		--datadir=${PREFIX}/share/courier-imap \
@@ -36,12 +35,23 @@ CONFIGURE_ARGS=	--without-authldap --with-authldaprc=filename \
 		--enable-workarounds-for-imap-client-bugs \
 		--disable-root-check
 
+VPOPMAILDIR?=	${LOCALBASE}/vpopmail
 .if !defined(WITH_VPOPMAIL)
 CONFIGURE_ARGS+=	\
 		--without-authvchkpw
 PLIST_SUB+=	VPOPMAILFLAG="@comment "
 .else
+BUILD_DEPENDS+=	${VPOPMAILDIR}/lib/libvpopmail.a:${PORTSDIR}/mail/vpopmail
 PLIST_SUB+=	VPOPMAILFLAG=""
+.endif
+
+.if !defined(WITH_MYSQL)
+CONFIGURE_ARGS+=	\
+		--without-authmysql \
+PLIST_SUB+=	MYSQLFLAG="@comment "
+.else
+LIB_DEPENDS+=	mysqlclient.10:${PORTSDIR}/databases/mysql323-client
+PLIST_SUB+=	MYSQLFLAG=""
 .endif
 
 .if !defined(WITHOUT_PAM)
@@ -51,7 +61,7 @@ PLIST_SUB+=	PAMFLAG=""
 .else
 CONFIGURE_ARGS+=	\
 		--without-authpam
-PLIST_SUB+=	PAMFLAG="@comment"
+PLIST_SUB+=	PAMFLAG="@comment "
 .endif
 
 MAN1=		maildirmake.1

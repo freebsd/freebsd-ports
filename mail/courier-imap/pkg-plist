@@ -10,6 +10,7 @@ etc/courier-imap/pop3d.cnf.dist
 etc/courier-imap/pop3d.dist
 etc/courier-imap/quotawarnmsg.example
 libexec/courier-imap/authlib/authcustom
+%%MYSQLFLAG%%libexec/courier-imap/authlib/authmysql
 %%PAMFLAG%%libexec/courier-imap/authlib/authpam
 libexec/courier-imap/authlib/authpwd
 libexec/courier-imap/authlib/authuserdb
