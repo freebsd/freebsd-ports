@@ -3,7 +3,7 @@
 # Date created:		20 Oct 1994
 # Whom:			torstenb
 #
-# $Id: Makefile,v 1.5 1995/05/05 09:21:43 asami Exp $
+# $Id: Makefile,v 1.6 1995/05/09 00:48:44 asami Exp $
 #
 
 DISTNAME=	inn1.4sec
@@ -11,6 +11,9 @@ PKGNAME=	inn-1.4
 CATEGORIES+=	news
 MASTER_SITES=	ftp://ftp.uu.net/networking/news/nntp/inn/
 EXTRACT_SUFX=	.tar.Z
+
+PATCH_SITES=	ftp://ftp.math.psu.edu/pub/INN/patches/
+PATCHFILES=	select-loop-bug.patch
 
 MAINTAINER=	torstenb@FreeBSD.ORG
 
