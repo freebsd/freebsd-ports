@@ -137,7 +137,7 @@ do-build:
 	@cd ${WRKSRC} && ${MAKE} -f ${WRKSRC}/Makefile fixdeps
 
 do-install:
-	@${MKDIR} ${LOCALBASE}/var/log/rt2
+	@${MKDIR} /var/log/rt2
 .if defined(INSTALL_NEW)
 	-@cd ${WRKSRC} && ${MAKE} -f ${WRKSRC}/Makefile dropdb
 	@cd ${WRKSRC} && ${MAKE} -f ${WRKSRC}/Makefile install
