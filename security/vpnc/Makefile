@@ -7,6 +7,7 @@
 
 PORTNAME=	vpnc
 PORTVERSION=	0.3.2
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	http://www.unix-ag.uni-kl.de/~massar/vpnc/:source \
 	http://dragon.roe.ch/mirrors/distfiles/vpnc/:script
@@ -16,7 +17,7 @@ EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 MAINTAINER=	delta@lackas.net
 COMMENT=	Client for Cisco 3000 VPN Concentrator
 
-LIB_DEPENDS=	gcrypt.12:${PORTSDIR}/security/libgcrypt
+LIB_DEPENDS=	gcrypt.13:${PORTSDIR}/security/libgcrypt
 
 STARTSCRIPT=    vpnc-wrapper-1.10
 USE_GMAKE=	yes

@@ -7,6 +7,7 @@
 
 PORTNAME=	gnutls
 PORTVERSION=	1.1.9
+PORTREVISION=	1
 CATEGORIES=	security net
 MASTER_SITES=	${MASTER_SITE_GNUPG} \
 	http://www.mirrors.wiretapped.net/security/network-security/gnutls/devel/ \
@@ -18,7 +19,7 @@ PKGNAMESUFFIX=	-devel
 MAINTAINER=	sergei@FreeBSD.org
 COMMENT=	GNU Transport Layer Security library (development version)
 
-LIB_DEPENDS=	gcrypt.12:${PORTSDIR}/security/libgcrypt \
+LIB_DEPENDS=	gcrypt.13:${PORTSDIR}/security/libgcrypt \
 		gpg-error.1:${PORTSDIR}/security/libgpg-error \
 		tasn1.2:${PORTSDIR}/security/libtasn1 \
 		opencdk.8:${PORTSDIR}/security/opencdk

@@ -7,6 +7,7 @@
 
 PORTNAME=	opencdk
 PORTVERSION=	0.5.5
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	security
 MASTER_SITES=	${MASTER_SITE_GNUPG} \
@@ -18,7 +19,7 @@ MASTER_SITE_SUBDIR=	alpha/gnutls/opencdk
 MAINTAINER=	sergei@FreeBSD.org
 COMMENT=	Open Crypto Development Kit
 
-LIB_DEPENDS=	gcrypt.12:${PORTSDIR}/security/libgcrypt
+LIB_DEPENDS=	gcrypt.13:${PORTSDIR}/security/libgcrypt
 
 USE_BZIP2=	yes
 USE_LIBTOOL_VER=15
