@@ -1,0 +1,43 @@
+--- Makefile.in.orig	Sat Dec  2 13:19:00 2000
++++ Makefile.in	Sat Mar 17 12:05:28 2001
+@@ -6,7 +6,8 @@
+ ############################################################################
+ 
+ # Step 1: Define ONE of the CHKHISTORY 
+-CHKHISTORY=chkhistory.o		# use flat file history routine
++#CHKHISTORY=chkhistory.o		# use flat file history routine
++CHKHISTORY=chkhistory_db.o
+ #CHKHISTORY=chkhistory_db.o	# use DB history routine, if you use 
+                                 # DBM, GDBM, NDBM, or DBZ
+                                 # in order to use DBZ with INN you will need
+@@ -22,6 +23,7 @@
+ #DB_TYPE=-DUSE_DBZ	# for inn-1.X.X users
+ #DB_TYPE=-DUSE_INN2	# for inn-2.1-2.X users
+ #DB_TYPE=-DUSE_INN23	# for inn-2.3.X users
++DB_TYPE=-DUSE_DBZ
+ 
+ # Step 3: Define ONE Library that contains the functions
+ # If you are using INN-2.X, and the compiler complains 
+@@ -33,11 +35,13 @@
+ #DB_LIB=-ldbz
+ #DB_LIB=-linn -lstorage	# see note above
+ #DB_LIB=-linn		# INN puts DBZ code in here
++DB_LIB=-lcnews		# cnews puts DBZ code in here
+ 
+ # Step 4: IF your DB Library/Includes are in a non-standard place, 
+ # define These
+ #DB_INC_LOC=-I/usr/src/inn-2.3/include
+ #DB_LIB_LOC=-L/usr/src/inn-2.3/lib
++DB_LIB_LOC=-L/usr/local/lib
+ 
+ # Step 5: If you want to use embedded PERL functions as kill routines
+ # define these. 
+@@ -111,7 +115,7 @@
+ @SET_MAKE@
+ 
+ CFLAGS = @CFLAGS@
+-CPPFLAGS = -I. -I$(srcdir) @CPPFLAGS@
++CPPFLAGS = -I. -I$(srcdir) -I/usr/local/include @CPPFLAGS@
+ LDFLAGS = @LDFLAGS@ $(DMALLOC_LD) $(OS2_LD)
+ DEFS = @DEFS@ -DSUCK_VERSION=\"$(VERSION)\" $(DMALLOC_DEFS) $(OS2_DEFS) $(DMALLOC_INC)
+ LIBS = @LIBS@ $(DMALLOC_LIB)
