@@ -1,6 +1,6 @@
 diff -udr ../../gnuchess-4.0.pl79/src/dspcom.c ./src/dspcom.c
 --- ../../gnuchess-4.0.pl79/src/dspcom.c	Mon Sep 28 08:41:19 1998
-+++ ./src/dspcom.c	Thu Dec 10 23:40:57 1998
++++ ./dspcom.c	Thu Dec 10 23:40:57 1998
 @@ -1099,14 +1099,14 @@
  #ifdef NONDSP
        s[0] = sx[0] = '\0';
@@ -19,7 +19,7 @@ diff -udr ../../gnuchess-4.0.pl79/src/dspcom.c ./src/dspcom.c
        sscanf (sx, "%s", s);
 diff -udr ../../gnuchess-4.0.pl79/src/gnuan.c ./src/gnuan.c
 --- ../../gnuchess-4.0.pl79/src/gnuan.c	Mon Sep 28 08:41:21 1998
-+++ ./src/gnuan.c	Thu Dec 10 23:39:26 1998
++++ ./gnuan.c	Thu Dec 10 23:39:26 1998
 @@ -1348,12 +1348,12 @@
      fpout = stderr;
      fprintf (fpout, "Input the file with the algebraic moves of the game.\n");
@@ -63,18 +63,9 @@ diff -udr ../../gnuchess-4.0.pl79/src/gnuan.c ./src/gnuan.c
  		    p = GNUANinbuf1;
  		    q = GNUANinbuf;
  		    while (true)
-@@ -1724,7 +1725,7 @@
-     move_percent[black] = ((float) same_moves[black]) * 200 / (float) (GNUANmovecnt + (GNUANmovecnt % 2 ? 1 : 0));
-     fprintf (fpout, "\n           White's percentage was %5.2f%%.     Black's percentage was %5.2f%%.\n", move_percent[white], move_percent[black]);
-     time (&end_time);
--    elapsed_time = difftime(end_time - start_time);
-+    elapsed_time = difftime(end_time, start_time);
-     fprintf (fpout, "\n           Elapsed time was %ld seconds.\n", elapsed_time);
-     fclose (fpin);
-     fclose (fpout);
 diff -udr ../../gnuchess-4.0.pl79/src/nondsp.c ./src/nondsp.c
 --- ../../gnuchess-4.0.pl79/src/nondsp.c	Mon Sep 28 08:41:22 1998
-+++ ./src/nondsp.c	Thu Dec 10 23:39:26 1998
++++ ./nondsp.c	Thu Dec 10 23:39:26 1998
 @@ -264,10 +264,11 @@
  
    NewGame ();
@@ -100,7 +91,7 @@ diff -udr ../../gnuchess-4.0.pl79/src/nondsp.c ./src/nondsp.c
    /* skip whitespace */
 diff -udr ../../gnuchess-4.0.pl79/src/search.c ./src/search.c
 --- ../../gnuchess-4.0.pl79/src/search.c	Mon Sep 28 08:41:23 1998
-+++ ./src/search.c	Thu Dec 10 23:39:26 1998
++++ ./search.c	Thu Dec 10 23:39:26 1998
 @@ -174,7 +174,7 @@
        while (true)
  	{
@@ -112,7 +103,7 @@ diff -udr ../../gnuchess-4.0.pl79/src/search.c ./src/search.c
  	  else if (b[0] == '\0')
 diff -udr ../../gnuchess-4.0.pl79/src/uxdsp.c ./src/uxdsp.c
 --- ../../gnuchess-4.0.pl79/src/uxdsp.c	Mon Sep 28 08:41:25 1998
-+++ ./src/uxdsp.c	Thu Dec 10 23:41:35 1998
++++ ./uxdsp.c	Thu Dec 10 23:41:35 1998
 @@ -773,9 +773,9 @@
     refresh ();
  #ifdef MSDOS
