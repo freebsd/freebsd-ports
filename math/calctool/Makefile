@@ -8,8 +8,9 @@
 PORTNAME=       calctool
 PORTVERSION=	2.4.13
 CATEGORIES=     math
-MASTER_SITES=   ftp://ftp.kfu.com/pub/
+MASTER_SITES=   ${MASTER_SITE_LOCAL}
 DISTNAME=       calctool-2.4pl13
+MASTER_SITE_SUBDIR=	nsayer
 
 MAINTAINER=     nsayer@quack.kfu.com
 

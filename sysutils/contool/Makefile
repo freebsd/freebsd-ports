@@ -8,7 +8,8 @@
 PORTNAME=	contool
 PORTVERSION=	3.3a
 CATEGORIES=	sysutils
-MASTER_SITES=	ftp://ftp.kfu.com/pub/
+MASTER_SITES=	${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	nsayer
 
 MAINTAINER=	nsayer@quack.kfu.com
 
