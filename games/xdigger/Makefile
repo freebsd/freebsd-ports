@@ -3,7 +3,7 @@
 # Date created:				29 June 1998
 # Whom:					Andrey Zakhvatov
 #
-# $Id: Makefile,v 1.2 1998/08/25 00:43:49 asami Exp $
+# $Id: Makefile,v 1.3 1998/10/03 13:39:45 jseger Exp $
 #
 
 DISTNAME=		xdigger-1.0.9
@@ -13,6 +13,10 @@ MASTER_SITE_SUBDIR=	games/arcade
 EXTRACT_SUFX=		.tgz
 
 MAINTAINER=		andy@icc.surw.chel.su
+
+.if ${MACHINE_ARCH} == "alpha"
+BROKEN=			no sound support on the alpha yet
+.endif
 
 USE_IMAKE=		yes
 MAN6=			xdigger.6
