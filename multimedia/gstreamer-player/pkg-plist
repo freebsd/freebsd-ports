@@ -1,10 +1,6 @@
 bin/gst-player
 bin/gst-player-gtk
-etc/gconf/gconf.xml.defaults/%gconf.xml
-etc/gconf/gconf.xml.defaults/apps/%gconf.xml
 etc/gconf/gconf.xml.defaults/apps/gst-player/%gconf.xml
-etc/gconf/gconf.xml.defaults/schemas/%gconf.xml
-etc/gconf/gconf.xml.defaults/schemas/apps/%gconf.xml
 etc/gconf/gconf.xml.defaults/schemas/apps/gst-player/%gconf.xml
 etc/gconf/schemas/gst-player.schemas
 include/gst-player-%%VERSION%%/gst/gstvideowidget.h
