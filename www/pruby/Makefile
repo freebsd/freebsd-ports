@@ -14,6 +14,7 @@ DIST_SUBDIR=	ruby
 MAINTAINER=	knu@FreeBSD.org
 
 BUILD_DEPENDS=	php:${PHP4_PORTDIR} \
+		${LOCALBASE}/libexec/apache/libphp4.so:${MOD_PHP4_PORTDIR} \
 		${NONEXISTENT}:${MOD_PHP4_PORTDIR}:configure
 RUN_DEPENDS=	${LOCALBASE}/libexec/apache/libphp4.so:${MOD_PHP4_PORTDIR}
 
