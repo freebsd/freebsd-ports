@@ -6,37 +6,29 @@
 #
 
 PORTNAME=	arts++
-PORTVERSION=	1.1.a8
-PORTREVISION=	2
+PORTVERSION=	1.1.a11
+PORTREVISION=	0
 PORTEPOCH=	1
 CATEGORIES=	net-mgmt
 MASTER_SITES=	ftp://ftp.caida.org/pub/arts++/
-DISTNAME=	${PORTNAME}-${PORTVERSION:S/./-/g}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A network data storage and analysis library from CAIDA
 
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
-CONFIGURE_ARGS+=--enable-shared
+CONFIGURE_ARGS=	--enable-shared
 INSTALLS_SHLIB=	yes
 USE_REINPLACE=	yes
+USE_INC_LIBTOOL_VER=13
+USE_GCC=	2.95
 
 MANL=		artsportagg.l artsports.l artsprotos.l artsnets.l artsdump.l \
 		artsases.l artstoc.l artsagg.l artsprotoagg.l artsnetagg.l \
 		artsasagg.l artsportms.l artsportmagg.l artsintfms.l \
 		artsintfmagg.l artsnexthops.l artsnexthopagg.l artstos.l
 
-.include <bsd.port.pre.mk>
+post-configure:
+	@${REINPLACE_CMD} -E -e "s,( gcc\*),\1 | g++\*,g" ${WRKSRC}/libtool
 
-.if ${OSVERSION} >= 502126
-BROKEN=		"Does not compile with gcc 3.4.2"
-.endif
-
-post-patch:
-	cd ${WRKSRC}/classes/src; \
-		${REINPLACE_CMD} -e "s,<strstream.h>,<strstream>," \
-		ArtsBgp4AsPathSegment.cc ArtsIfIndexSelectionSet.lex \
-		ArtsObjectTypeSelectionSet.lex  ArtsTimeIntervalSelectionSet.lex
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
