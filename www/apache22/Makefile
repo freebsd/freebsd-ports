@@ -7,6 +7,7 @@
 
 PORTNAME=	apache
 PORTVERSION=	2.0.35
+PORTREVISION=	1
 CATEGORIES=	www ipv6
 MASTER_SITES=	http://www.apache.org/dist/httpd/ \
 		http://apache.mirrorcentral.com/dist/httpd/ \
@@ -46,7 +47,7 @@ RC_SUB=		-e 's,@@PREFIX@@,${PREFIX},g'
 MAKE_ENV+=	NOPORTDOCS=YES
 .endif
 
-.if !defined(WITHOUT_THREADS)
+.if defined(WITH_THREADS)
 CONFIGURE_ARGS+= --enable-threads
 .endif
 
@@ -73,7 +74,7 @@ PLIST_SUB+=	SUEXEC=""
 PLIST_SUB+=	SUEXEC="@comment "
 .endif
 
-.if !defined(WITHOUT_CACHE) && !defined(WITHOUT_THREADS)
+.if !defined(WITHOUT_CACHE) && defined(WITH_THREADS)
 SHARED_MODULES+= cache file-cache disk-cache mem_cache
 PLIST_SUB+=	MODCACHE=""
 .else
@@ -89,7 +90,7 @@ PLIST_SUB+=	MODPROXY="@comment "
 
 .if ${WITH_MPM} != "prefork"
 PKGNAMESUFFIX=	-${WITH_MPM}
-.if defined(WITHOUT_THREADS)
+.if !defined(WITH_THREADS)
 IGNORE=		"requires threads for ${WITH_MPM} mpm"
 .endif
 .endif
@@ -112,8 +113,11 @@ post-patch:
 	@${FIND} ${WRKSRC} -name "*.orig" -exec ${RM} -f {} \;
 	@${SED} ${RC_SUB} ${FILESDIR}/apache.sh >${WRKDIR}/apache2.sh
 .if ${OSVERSION} >= 500032
+.for ltfile in srclib/pcre/ltmain.sh srclib/apr/build/ltmain.sh \
+		srclib/apr-util/xml/expat/conftools/ltmain.sh
 	@${PERL} -pi.orig -e 's|expr|expr --|' \
-		${WRKSRC}/srclib/apr/build/ltmain.sh
+		${WRKSRC}/${ltfile}
+.endfor
 .endif
 
 pre-install:
