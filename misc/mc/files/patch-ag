@@ -1,6 +1,6 @@
---- lib/mc.ext.in.orig	Wed Jan 13 05:38:06 1999
-+++ lib/mc.ext.in	Sat Jan 16 23:41:24 1999
-@@ -265,7 +265,7 @@
+--- lib/mc.ext.in.orig	Fri Sep 24 01:01:11 1999
++++ lib/mc.ext.in	Sat Oct  9 12:15:10 1999
+@@ -258,7 +258,7 @@
  # ar library
  regex/\.s?a$
  	Open=%cd %p#uar
@@ -9,7 +9,7 @@
  
  # C
  shell/.c
-@@ -327,8 +327,8 @@
+@@ -320,8 +320,8 @@
  
  # ar library
  regex/\.s?a$
@@ -20,7 +20,7 @@
  	Icon=a.xpm
  
  # .so libraries are not manual pages
-@@ -338,26 +338,26 @@
+@@ -336,26 +336,26 @@
  
  # Manual page
  regex/(([^0-9]|^[^\.]*)\.([1-9][A-Za-z]*|n)|\.man)$
@@ -48,14 +48,14 @@
  
  # Manual page - compressed
  regex/([^0-9]|^[^\.]*)\.([1-9][a-z]?|n)\.g?[Zz]$
--	Open=gunzip -dc %f | nroff @TROFFASCII@ @MANDOC@ | %var{PAGER:more}
--	View=%view{ascii,nroff} gunzip -dc %f | nroff @TROFFASCII@ @MANDOC@
-+	Open=gunzip -dc '%d/%p' | nroff @TROFFASCII@ @MANDOC@ | %var{PAGER:more}
-+	View=%view{ascii,nroff} gunzip -dc '%d/%p' | nroff @TROFFASCII@ @MANDOC@
+-	Open=gzip -dc %f | nroff @TROFFASCII@ @MANDOC@ | %var{PAGER:more}
+-	View=%view{ascii,nroff} gzip -dc %f | nroff @TROFFASCII@ @MANDOC@
++	Open=gzip -dc '%d/%p' | nroff @TROFFASCII@ @MANDOC@ | %var{PAGER:more}
++	View=%view{ascii,nroff} gzip -dc '%d/%p' | nroff @TROFFASCII@ @MANDOC@
  	Icon=man.xpm
  
- regex/(read\.?me$)|(README)
-@@ -372,52 +372,52 @@
+ regex/([^0-9]|^[^\.]*)\.([1-9][a-z]?|n)\.bz$
+@@ -380,52 +380,52 @@
  	View with GhostView=gv %f
  
  type/GIF\ image
@@ -118,7 +118,7 @@
  	Icon=ppm.xpm
  	Include=image-options
  
-@@ -426,14 +426,14 @@
+@@ -434,14 +434,14 @@
  	Icon=xbm.xpm
  
  shell/.xpm
@@ -135,19 +135,7 @@
  
  # Sound files
  shell/.mod
-@@ -448,9 +448,9 @@
- 	Icon=framemaker.xpm
- 
- type/mail
--	Open=elm -f %f
-+	Open=mutt -f '%d/%p'
- 	Icon=mail.xpm
--	View=%view{ascii} mcmfmt < %f
-+	View=%view{ascii} mcmfmt < '%d/%p'
- 
- # gzipped
- type/gzip
-@@ -531,14 +531,14 @@
+@@ -525,21 +525,21 @@
         Icon=rexx.xpm
  
  # Microsoft Word Document
@@ -168,12 +156,28 @@
   
  # cpio rules
  
-@@ -551,7 +551,7 @@
- shell/.cpio.gz
+ shell/.cpio.Z
  	Open=%cd %d/%p#ucpio/
- 	View=%view{ascii} gzip -dc '%f' | cpio -ictv
--	Extract=gzip -dc '%f' | cpio -ic
-+	Extract=gzip -dc '%d/%p' | cpio -ic
+ 	View=%view{ascii} compress -dc '%f' | cpio -ictv
+-	Extract=compress -dc '%f' | cpio -ic
++	Extract=compress -dc '%d/%p' | cpio -ic
  	Icon=compressed.xpm
  
- shell/.cpio
+ shell/.cpio.gz
+--- lib/mc.csh.in.orig	Sat Oct  9 15:08:10 1999
++++ lib/mc.csh.in	Sat Oct  9 15:08:28 1999
+@@ -1,2 +1,2 @@
+-alias mc 'setenv MC `@prefix@/bin/mc -P \!*`; cd $MC; unsetenv MC'
++alias mc 'setenv MC `@prefix@/bin/midc -P \!*`; cd $MC; unsetenv MC'
+ 
+--- lib/mc.sh.in.orig	Sat Oct  9 15:08:13 1999
++++ lib/mc.sh.in	Sat Oct  9 15:08:39 1999
+@@ -3,7 +3,7 @@
+         mkdir -p ~/.mc/tmp 2> /dev/null
+ 	chmod 700 ~/.mc/tmp
+ 	MC=~/.mc/tmp/mc-$$
+-	@prefix@/bin/mc -P "$@" > "$MC"
++	@prefix@/bin/midc -P "$@" > "$MC"
+ 	cd "`cat $MC`"
+ 	rm "$MC"
+         unset MC;
