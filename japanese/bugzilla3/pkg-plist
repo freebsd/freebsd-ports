@@ -58,9 +58,11 @@
 %%PORTDOCS%%%%DOCSDIR%%/html/whatis.html
 %%PORTDOCS%%%%DOCSDIR%%/html/why.html
 %%PORTDOCS%%%%DOCSDIR%%/html/win32.html
+%%PORTDOCS%%%%DOCSDIR%%/images/bzLifecycle.png
+%%PORTDOCS%%%%DOCSDIR%%/images/bzLifecycle.xml
 %%PORTDOCS%%%%DOCSDIR%%/images/caution.gif
+%%PORTDOCS%%%%DOCSDIR%%/images/dbschema.cdr
 %%PORTDOCS%%%%DOCSDIR%%/images/dbschema.jpg
-%%PORTDOCS%%%%DOCSDIR%%/images/dbschema.ps
 %%PORTDOCS%%%%DOCSDIR%%/images/note.gif
 %%PORTDOCS%%%%DOCSDIR%%/images/tip.gif
 %%PORTDOCS%%%%DOCSDIR%%/images/warning.gif
