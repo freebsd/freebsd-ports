@@ -38,7 +38,7 @@ do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/PGB/${module} \
 		${PREFIX}/lib/perl5/site_perl/${PERL_VER}/PGB
 .endfor
-.if !defined(NOPORTDCS)
+.if !defined(NOPORTDOCS)
 	@${MKDIR} ${PREFIX}/share/doc/gutenbook
 	${INSTALL_DATA} ${WRKSRC}/MANUAL ${PREFIX}/share/doc/gutenbook
 	${INSTALL_DATA} ${WRKSRC}/gutenbook.spec ${PREFIX}/share/doc/gutenbook
