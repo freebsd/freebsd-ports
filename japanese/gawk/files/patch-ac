@@ -1,18 +1,18 @@
---- Makefile.in.orig	Sat Sep  4 06:27:22 1999
-+++ Makefile.in	Sat Sep  4 06:31:43 1999
+--- Makefile.in.orig	Mon Jul 16 20:42:58 2001
++++ Makefile.in	Mon Jul 16 20:48:25 2001
 @@ -194,14 +194,8 @@
- mbc.o:	Makefile
+ mbc.o: Makefile
  
- install:	gawk$(exec_suffix) info installdirs
--	-rm -f $(bindir)/gawk$(exec_suffix)
+ install:	gawk info installdirs
+-	-rm -f $(bindir)/gawk
 -	fullname=gawk-$(REL).`./gawk '{print $$3}' $(srcdir)/patchlevel.h`+mb$(MBREL) ; \
--	$(INSTALL_PROGRAM) gawk$(exec_suffix) $(bindir)/$${fullname}$(exec_suffix) ; \
--	(cd $(bindir); $(LN) $${fullname}$(exec_suffix) gawk$(exec_suffix))
--	(cd $(bindir);\
--	if [ ! -f awk$(exec_suffix) ]; \
--	then	$(LN_S) gawk$(exec_suffix) awk$(exec_suffix); \
+-	$(INSTALL_PROGRAM) gawk $(bindir)/$$fullname ; \
+-	(cd $(bindir); $(LN) $$fullname gawk)
+-	(cd $(bindir); \
+-	if [ ! -f awk ]; \
+-	then	$(LN_S) gawk awk; \
 -	fi; exit 0)
-+	$(INSTALL_PROGRAM) gawk$(exec_suffix) \
++	$(INSTALL_PROGRAM) gawk \
 +		$(bindir)/$(binprefix)gawk$(exec_suffix)
  	cd doc && $(MAKE) install
  	cd awklib && $(MAKE) install
