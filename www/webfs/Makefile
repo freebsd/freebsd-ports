@@ -6,15 +6,16 @@
 #
 
 PORTNAME=	webfs
-PORTVERSION=	1.6
+PORTVERSION=	1.10
 CATEGORIES=	www ipv6
-MASTER_SITES=	http://www.strusel007.de/linux/misc/
+MASTER_SITES=	http://www.bytesex.org/misc/
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
 MAINTAINER=	jedgar@FreeBSD.org
 
 WRKSRC=		${WRKDIR}/${DISTNAME:S/_/-/}
 MAN1=		webfsd.1
+MIMEFILE?=	${PREFIX}/etc/webfsd/mime.types
 
 .include <bsd.port.pre.mk>
 
@@ -23,14 +24,13 @@ BROKEN=		"Requires FreeBSD 4.x or greater due to ipv6 support"
 .endif
 
 do-configure:
-	@${CP} ${WRKSRC}/webfsd.man ${WRKSRC}/webfsd.1
-.for file in webfsd.1 main.c Makefile
-	@${PERL} -pi.orig -e 's|/etc/mime.types|${PREFIX}/etc/webfsd/mime.types|' ${WRKSRC}/${file}
-.endfor
+	@${PERL} -pi.orig -e 's|/etc/mime.types|${MIMEFILE}|' ${WRKSRC}/Makefile
+# author forgot to bump the revision number
+	@${PERL} -pi.orig -e 's|1.9|1.10|' ${WRKSRC}/main.c
 
 do-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/webfsd ${PREFIX}/sbin
-	@${INSTALL_MAN} ${WRKSRC}/webfsd.1 ${PREFIX}/man/man1
+	@${INSTALL_MAN} ${WRKSRC}/webfsd.man ${PREFIX}/man/man1/webfsd.1
 .if !exists(${PREFIX}/etc/webfsd/mime.types)
 	@${MKDIR} ${PREFIX}/etc/webfsd
 	@${ECHO} "# Insert mime types here" > ${PREFIX}/etc/webfsd/mime.types
