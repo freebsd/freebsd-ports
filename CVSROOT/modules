@@ -2927,6 +2927,7 @@ gpsdrive	ports/astro/gpsdrive
 gpsman		ports/astro/gpsman
 gpsmanshp	ports/graphics/gpsmanshp
 gpt31		ports/misc/gpt31
+gpte		ports/sysutils/gpte
 gputils		ports/devel/gputils
 gq		ports/net/gq
 gqlplus		ports/databases/gqlplus
