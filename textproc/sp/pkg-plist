@@ -132,7 +132,6 @@ include/sp/XMLCodingSystem.h
 include/sp/XcharMap.cxx
 include/sp/XcharMap.h
 include/sp/config.h
-include/sp/config.h.orig
 include/sp/constant.h
 include/sp/macros.h
 include/sp/rtti.h
