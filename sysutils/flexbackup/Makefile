@@ -12,7 +12,7 @@ MASTER_SITES=   http://www.bluecherry.net/~edwinh/flexbackup/tarball/ \
 		http://members.home.com/flexbackup/tarball/ \
 		http://metalab.unc.edu/pub/linux/system/backup/
 
-MAINTAINER=     jreynold@primenet.com
+MAINTAINER=     jjreynold@home.com
 
 RUN_DEPENDS=    afio:${PORTSDIR}/sysutils/afio \
 		buffer:${PORTSDIR}/misc/buffer
