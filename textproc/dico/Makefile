@@ -14,7 +14,7 @@ MASTER_SITES=	http://www.montefiore.ulg.ac.be/~geuzaine/BRONNE/WWW/ftp/
 DISTNAME=	le_dico
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	clefevre@redirect.to
+MAINTAINER=	clefevre@citeweb.net
 
 NO_WRKSUBDIR=	true
 PATCH_STRIP=	-p1

@@ -11,7 +11,7 @@ CATEGORIES=	databases
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	gdbm
 
-MAINTAINER=	clefevre@redirect.to
+MAINTAINER=	clefevre@citeweb.net
 
 USE_LIBTOOL=	yes
 INSTALLS_SHLIB=	yes
