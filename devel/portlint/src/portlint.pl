@@ -17,7 +17,7 @@
 # OpenBSD and NetBSD will be accepted.
 #
 # $FreeBSD$
-# $Id: portlint.pl,v 1.20 2003/10/27 05:08:25 marcus Exp $
+# $Id: portlint.pl,v 1.22 2003/11/09 00:41:10 marcus Exp $
 #
 
 use vars qw/ $opt_a $opt_A $opt_b $opt_c $opt_h $opt_t $opt_v $opt_M $opt_N $opt_B $opt_V /;
@@ -40,7 +40,7 @@ $portdir = '.';
 # version variables
 my $major = 2;
 my $minor = 4;
-my $micro = 5;
+my $micro = 7;
 
 sub l { '[{(]'; }
 sub r { '[)}]'; }
@@ -65,6 +65,7 @@ my $manchapters = '123456789ln';
 my $localbase = '/usr/local';
 
 my %lang_pref = qw(
+	arabic		ar
 	chinese		zh
 	french		fr
 	german		de
@@ -79,8 +80,8 @@ my %lang_pref = qw(
 	vietnamese	vi
 );
 my @lang_cat = keys %lang_pref;
-my @lang_pref = values %lang_pref;
-my $re_lang_pref = '(' . join('|', @lang_pref) . ')-';
+my @lang_short = values %lang_pref;
+my $re_lang_short = '(' . join('|', @lang_short) . ')-';
 
 my ($prog) = ($0 =~ /([^\/]+)$/);
 sub usage {
@@ -768,7 +769,7 @@ sub checkmakefile {
 	my($i, $j, $k, $l);
 	my @cat = ();
 	my $has_lang_cat = 0;
-	my $lang_pref = '';
+	my $port_lang = '';
 	my $tmp;
 	my $bogusdistfiles = 0;
 	my @varnames = ();
@@ -856,6 +857,49 @@ sub checkmakefile {
 			&perror("WARN: use \${VARIABLE}, instead of ".
 				"\$(VARIABLE).");
 		}
+	}
+
+	#
+	# whole file: USE_* used too late
+	#
+	pos($whole) = 0;
+	if ($whole =~ /^\.include\s+<bsd\.port\.pre\.mk>$/gm) {
+		print "OK: checking for USE_* used too late.\n" if ($verbose);
+		my @use_early = qw(
+			APACHE
+			GNUSTEP
+			IMAKE
+			JAVA
+			KDE(?:BASE|LIBS)_VER
+			LIBRUBY
+			LINUX_PREFIX
+			OPENSSL
+			PYTHON
+			QT2?
+			QT_VER
+			RUBY
+			X_PREFIX
+		);
+
+		my @other_early = qw(
+			EMACS_PORT_NAME
+		);
+
+		my $earlypattern = join('|', 'USE_(?:'.join('|', @use_early).')',
+			@other_early);
+
+		while ($whole =~ /^($earlypattern)[+?:!]?=/gmo) {
+			&perror("FATAL: $1 is set after including bsd.port.pre.mk.");
+		}
+	}
+
+	#
+	# whole file: anything after bsd.port(.post).mk
+	#
+	print "OK: checking for anything after bsd.port(.post).mk.\n"
+		if ($verbose);
+	if ($whole =~ /^\.include\s+<bsd\.port(?:\.post)\.mk>\s*[^\s]/m) {
+		&perror("FATAL: do not include anything after bsd.port(.post).mk.");
 	}
 
 	#
@@ -1158,7 +1202,7 @@ DISTFILES DIST_SUBDIR EXTRACT_ONLY
 	# skip the first category specification if it's a language specific one.
 	if (grep($_ eq $cat[0], @lang_cat)) {
 		$has_lang_cat = 1;
-		$lang_pref = $lang_pref{$cat[0]};
+		$port_lang = $lang_pref{$cat[0]};
 		shift @cat;
 	}
 	
@@ -1187,12 +1231,13 @@ DISTFILES DIST_SUBDIR EXTRACT_ONLY
 		shift @cat;
 	
 		# any language specific one after non language specific ones?
-		my $cat;
-		if (grep(do { $cat = $_; grep($_ eq $cat, @cat) }, @lang_cat)) {
-			$has_lang_cat = 1;
-			$lang_pref = $lang_pref{$cat};
-			&perror("WARN: when you specify multiple categories, ".
-			"language specific category should come first.");
+		foreach my $cat (@cat) {
+			if (grep($_ eq $cat, @lang_cat)) {
+				$has_lang_cat = 1;
+				$port_lang = $lang_pref{$cat};
+				&perror("WARN: when you specify multiple categories, ".
+				"language specific category should come first.");
+			}
 		}
 	}
 
@@ -1255,7 +1300,7 @@ DISTFILES DIST_SUBDIR EXTRACT_ONLY
 		&perror("WARN: DISTNAME is \${PORTNAME}-\${PORTVERSION} by default, ".
 			"you don't need to define DISTNAME.");
 	}
-	if ($portname =~ /^$re_lang_pref/) {
+	if ($portname =~ /^$re_lang_short/) {
 		&perror("FATAL: language prefix is automatically".
 			" set by PKGNAMEPREFIX.".
 			" you must remove it from PORTNAME.");
@@ -1315,7 +1360,7 @@ DISTFILES DIST_SUBDIR EXTRACT_ONLY
 
 	# additional checks for committer.
 	if ($committer && $has_lang_cat) {
-		&perror("WARN: be sure to include language code \"$lang_pref-\" ".
+		&perror("WARN: be sure to include language code \"$port_lang-\" ".
 			"in the module alias name.");
 	}
 
