@@ -385,8 +385,8 @@ share/gnome/gnumeric/%%VERSION%%/help/gnumeric/C/figures/button-font-size.png
 share/gnome/gnumeric/%%VERSION%%/help/gnumeric/C/figures/button-font-type.png
 share/gnome/gnumeric/%%VERSION%%/help/gnumeric/C/figures/button-frame.png
 share/gnome/gnumeric/%%VERSION%%/help/gnumeric/C/figures/button-function.png
-share/gnome/gnumeric/%%VERSION%%/help/gnumeric/C/figures/button-graphEditor-add.png
 share/gnome/gnumeric/%%VERSION%%/help/gnumeric/C/figures/button-graph.png
+share/gnome/gnumeric/%%VERSION%%/help/gnumeric/C/figures/button-graphEditor-add.png
 share/gnome/gnumeric/%%VERSION%%/help/gnumeric/C/figures/button-increase-indent.png
 share/gnome/gnumeric/%%VERSION%%/help/gnumeric/C/figures/button-increase-precision.png
 share/gnome/gnumeric/%%VERSION%%/help/gnumeric/C/figures/button-insert-component.png
@@ -528,6 +528,9 @@ share/gnome/gnumeric/%%VERSION%%/help/gnumeric/C/figures/print-preview-toolbar.p
 share/gnome/gnumeric/%%VERSION%%/help/gnumeric/C/figures/print-preview-zoomin.png
 share/gnome/gnumeric/%%VERSION%%/help/gnumeric/C/figures/print-preview-zoomout.png
 share/gnome/gnumeric/%%VERSION%%/help/gnumeric/C/figures/print-preview.png
+share/gnome/gnumeric/%%VERSION%%/help/gnumeric/C/figures/print-worksheet-job.png
+share/gnome/gnumeric/%%VERSION%%/help/gnumeric/C/figures/print-worksheet-paper.png
+share/gnome/gnumeric/%%VERSION%%/help/gnumeric/C/figures/print-worksheet-printer.png
 share/gnome/gnumeric/%%VERSION%%/help/gnumeric/C/figures/print.png
 share/gnome/gnumeric/%%VERSION%%/help/gnumeric/C/figures/printing-preview.png
 share/gnome/gnumeric/%%VERSION%%/help/gnumeric/C/figures/printing-setup-header-config.png
