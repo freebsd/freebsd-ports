@@ -3,13 +3,14 @@
 # Date created:        18 August 1997
 # Whom:                Vanill I. Shu <vanilla@MinJe.com.TW>
 #
-# $Id: Makefile,v 1.1.1.1 1997/06/03 23:39:10 asami Exp $
+# $Id: Makefile,v 1.2 1997/08/18 17:45:11 chuckr Exp $
 #
 
 DISTNAME=	imlib_DR-0.4
 PKGNAME=	imlib-0.4
 CATEGORIES=	graphics
-MASTER_SITES=	ftp://cthulhu.mandrake.net/pub/enlightenment/
+MASTER_SITES=	http://www.rasterman.com/ftp/ \
+		ftp://cthulhu.mandrake.net/pub/enlightenment/
 
 MAINTAINER=	Vanill I. Shu <vanilla@MinJe.com.TW>
 
