@@ -4339,6 +4339,7 @@ moneydance	ports/deskutils/moneydance
 monitord	ports/sysutils/monitord
 mono		ports/lang/mono
 moon-buggy	ports/games/moon-buggy
+moonlander	ports/games/moonlander
 moonshine	ports/devel/moonshine
 mopac		ports/biology/mopac
 mopd		ports/net/mopd
