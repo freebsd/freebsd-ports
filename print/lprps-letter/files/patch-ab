@@ -1,11 +1,51 @@
---- lprps.c.orig	Wed Sep 11 03:12:26 1996
-+++ lprps.c	Wed Sep 11 03:14:28 1996
-@@ -346,7 +346,7 @@
- char *strsignal(n)
+--- lprps.c.orig	Mon Feb 22 04:46:10 1993
++++ lprps.c	Wed Jan 29 05:02:14 1997
+@@ -17,6 +17,10 @@
+ #include <syslog.h>
+ #include <errno.h>
+ 
++#if defined(__FreeBSD__) || defined(__NetBSD__) || defined(__OpenBSD__) || defined(__bsdi__)
++#include <sys/param.h>
++#endif
++
+ #ifndef errno
+ extern int errno;
+ #endif
+@@ -27,7 +31,13 @@
+ #define VOLATILE /* as nothing */
+ #endif
+ 
+-#define SENDMAIL "/usr/lib/sendmail"
++#ifndef SENDMAIL
++#    if (defined(BSD) && (BSD >= 199103))
++#	define SENDMAIL "/usr/sbin/sendmail"
++#    else
++#	define SENDMAIL "/usr/lib/sendmail"
++#    endif
++#endif
+ 
+ #define EXIT_SUCCESS 0
+ #define EXIT_REPRINT 1
+@@ -136,7 +146,7 @@
+ void restore_status_file();
+ void handle_printer_error();
+ char *xmalloc();
+-char *strsignal();
++const char *strsignal();
+ 
+ 
+ void handle_timeout()
+@@ -343,10 +353,12 @@
+   exit(exit_code);
+ }
+ 
+-char *strsignal(n)
++const char *strsignal(n)
  int n;
  {
--  extern char *sys_siglist[];
-+  /* extern char *sys_siglist[]; */
++# if !(defined(BSD) && (BSD >= 199103))
+   extern char *sys_siglist[];
++# endif
    static char buf[32];
    if (n >= 0 && n < NSIG)
      return sys_siglist[n];
