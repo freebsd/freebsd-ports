@@ -1,9 +1,9 @@
 # New ports collection makefile for:	apel for emacs
-# Version required:	9.12
+# Version required:	9.13
 # Date created:		23 September 1998
 # Whom:			Shigeyuki FUKUSHIMA <shige@kuis.kyoto-u.ac.jp>
 #
-# $Id: Makefile,v 1.3 1999/01/24 03:46:04 kuriyama Exp $
+# $Id: Makefile,v 1.4 1999/03/01 09:37:13 shige Exp $
 #
 
 DISTNAME=	apel-${APEL_VER}
@@ -13,7 +13,7 @@ MASTER_SITES=	ftp://ftp.jaist.ac.jp/pub/GNU/elisp/apel/
 MAINTAINER?=	shige@FreeBSD.ORG
 
 # distfile version
-APEL_VER=	9.12
+APEL_VER=	9.13
 APEL_SETUPEL=	apel-setup.el
 
 # This is a master port.
