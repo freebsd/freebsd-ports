@@ -24,4 +24,11 @@ BROKEN=		You need to have libc sources installed in /usr/src/lib/libc \
 		before compiling.
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 500039
+post-patch:
+	@(cd ${_DISTDIR};${PATCH} ${PATCH_ARGS} < ${PATCHDIR}/vsnprintf-current.patch)
+.endif
+
+.include <bsd.port.post.mk>
