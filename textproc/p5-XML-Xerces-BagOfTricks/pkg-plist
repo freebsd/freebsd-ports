@@ -1,0 +1,9 @@
+%%SITE_PERL%%/XML/Xerces/BagOfTricks.pm
+%%SITE_PERL%%/auto/XML/Xerces/BagOfTricks/autosplit.ix
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/Xerces/BagOfTricks/.packlist
+@dirrm %%SITE_PERL%%/XML/Xerces
+@dirrm %%SITE_PERL%%/auto/XML/Xerces/BagOfTricks
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/Xerces/BagOfTricks
+@unexec rmdir %D/%%SITE_PERL%%/XML 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/auto/XML/Xerces 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/Xerces 2>/dev/null || true
