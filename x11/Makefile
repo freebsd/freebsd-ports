@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.192 1998/04/08 13:37:20 tg Exp $
+# $Id: Makefile,v 1.193 1998/04/09 08:14:54 tg Exp $
 #
 
     SUBDIR += FWF
@@ -102,6 +102,7 @@
     SUBDIR += xmascot
     SUBDIR += xmbdfed
     SUBDIR += xmold
+    SUBDIR += xmove
     SUBDIR += xpostit
     SUBDIR += xpostitPlus
     SUBDIR += xprompt
