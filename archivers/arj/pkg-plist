@@ -1,13 +1,14 @@
 bin/arj
+bin/arj-register
 bin/arjdisp
 bin/rearj
-bin/register
-lib/arjcrypt.so
-%%PORTDOCS%%share/doc/arj/COPYING
-%%PORTDOCS%%share/doc/arj/arjl.txt
-%%PORTDOCS%%share/doc/arj/arjs.txt
-%%PORTDOCS%%share/doc/arj/debug.txt
-%%PORTDOCS%%share/doc/arj/history.txt
-%%PORTDOCS%%share/doc/arj/readme.txt
-%%PORTDOCS%%share/doc/arj/unix.txt
-%%PORTDOCS%%@dirrm share/doc/arj
+lib/arj/arjcrypt.so
+%%PORTDOCS%%%%DOCSDIR%%/COPYING
+%%PORTDOCS%%%%DOCSDIR%%/arjl.txt
+%%PORTDOCS%%%%DOCSDIR%%/arjs.txt
+%%PORTDOCS%%%%DOCSDIR%%/debug.txt
+%%PORTDOCS%%%%DOCSDIR%%/history.txt
+%%PORTDOCS%%%%DOCSDIR%%/readme.txt
+%%PORTDOCS%%%%DOCSDIR%%/unix.txt
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
+@dirrm lib/arj

@@ -6,28 +6,36 @@
 #
 
 PORTNAME=	arj
-PORTVERSION=	3.10b
+PORTVERSION=	3.10g
 CATEGORIES=	archivers
 MASTER_SITES=	${MASTER_SITE_LOCAL} \
 		http://testcase.newmail.ru/files/
-MASTER_SITE_SUBDIR=	keramida
+MASTER_SITE_SUBDIR=	osa
 
 MAINTAINER=	kot@premierbank.dp.ua
 COMMENT=	Open-source ARJ
 
-USE_AUTOCONF=	yes
+WRKSRC=		${WRKDIR}/${PORTNAME}
+USE_REINPLACE=	yes
+USE_AUTOCONF_VER=	253
 USE_GMAKE=	yes
 CONFIGURE_WRKSRC=	${WRKSRC}/gnu
-MAKEFILE=	makefile.gnu
+MAKEFILE=	GNUmakefile
+STRIP=
+LANGUAGE?=	en
+MAKE_ENV+=	"LOCALE=${LANGUAGE}"
+
+MAN1=		arj-register.1 arj.1 arjdisp.1 rearj.1
+
+post-extract:
+	@${REINPLACE_CMD} -e 's!/etc!${LOCALBASE}/etc!' \
+		 ${WRKSRC}/arj.c ${WRKSRC}/file_reg.c ${WRKSRC}/rearj.c
+	@${REINPLACE_CMD} -e 's!-O2!!' ${WRKSRC}/gnu/configure.in
 
 pre-build:
 	@(cd ${BUILD_WRKSRC}; ${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} prepare)
 
-do-install:
-.for f in arj rearj arjdisp register
-	${INSTALL_PROGRAM} ${WRKSRC}/freebsd${OSREL}/en/rs/$f/$f ${PREFIX}/bin
-.endfor
-	${INSTALL_PROGRAM} ${WRKSRC}/freebsd${OSREL}/en/rs/arjcrypt/arjcrypt.so ${PREFIX}/lib
+post-install:
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 	cd ${WRKSRC}/doc && ${INSTALL_DATA} COPYING debug.txt ${DOCSDIR}
