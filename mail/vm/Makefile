@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	vm
-PORTVERSION=	7.18
+PORTVERSION=	7.19
 CATEGORIES=	mail elisp
 MASTER_SITES=	http://www.seanet.com/~kylemonger/vm/ \
 		ftp://ftp.uni-mainz.de/pub/software/gnu/vm/ \
@@ -19,7 +19,8 @@ MASTER_SITES=	http://www.seanet.com/~kylemonger/vm/ \
 		http://www.rge.com/pub/mail/vm/ \
 		http://ftp.lip6.fr/pub/unix/mail/vm/ \
 		ftp://ftp.surfnet.nl/pub/mail/vm/ \
-		http://ftp.algx.net/pub/packages/mail/vm/
+		http://ftp.gwdg.de/pub/gnu2/vm/ \
+		http://ftp.vim.org/pub/mail/vm/
 PKGNAMESUFFIX=	-${EMACS_PORT_NAME}
 
 MAINTAINER=	olive@oban.frmug.org
