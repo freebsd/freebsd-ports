@@ -97,6 +97,7 @@
     SUBDIR += weechat
     SUBDIR += xaric
     SUBDIR += xchat
+    SUBDIR += xchat-fish
     SUBDIR += xchat-gnome
     SUBDIR += xchat-mircryption
     SUBDIR += xchat-systray-plugin
