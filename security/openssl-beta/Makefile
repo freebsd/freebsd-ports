@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	openssl
-PORTVERSION=	0.9.6d
+PORTVERSION=	0.9.6e
 CATEGORIES=	security devel
 MASTER_SITES=	http://www.openssl.org/source/ \
 		ftp://ftp.openssl.org/source/ \
@@ -99,9 +99,10 @@ MAN3=		BN_CTX_new.3 BN_CTX_start.3 BN_add.3 BN_add_word.3 \
 		SSL_SESSION_get_ex_new_index.3 SSL_SESSION_get_time.3 \
 		SSL_accept.3 SSL_alert_type_string.3 SSL_clear.3 \
 		SSL_connect.3 SSL_free.3 SSL_get_SSL_CTX.3 SSL_get_ciphers.3 \
-		SSL_get_client_CA_list.3 SSL_get_current_cipher.3 \
-		SSL_get_default_timeout.3 SSL_get_ex_data_X509_STORE_CTX_idx.3 \
-		SSL_get_ex_new_index.3 SSL_get_fd.3 SSL_get_peer_cert_chain.3 \
+		SSL_do_handshake.3 SSL_get_client_CA_list.3 \
+		SSL_get_current_cipher.3 SSL_get_default_timeout.3 \
+		SSL_get_ex_data_X509_STORE_CTX_idx.3 SSL_get_ex_new_index.3 \
+		SSL_get_fd.3 SSL_get_peer_cert_chain.3 \
 		SSL_get_peer_certificate.3 SSL_get_rbio.3 SSL_get_session.3 \
 		SSL_get_verify_result.3 SSL_get_version.3 SSL_library_init.3 \
 		SSL_load_client_CA_file.3 SSL_new.3 SSL_pending.3 SSL_read.3 \
