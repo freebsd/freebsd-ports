@@ -15,6 +15,7 @@
     SUBDIR += libiodbc
     SUBDIR += metakit
     SUBDIR += msql
+    SUBDIR += myodbc
     SUBDIR += mysql-editor
     SUBDIR += mysql-jdbc-mm
     SUBDIR += mysql322-client
