@@ -14,7 +14,7 @@ MAINTAINER=	clement@FreeBSD.org
 COMMENT=	A modular open source user-space load balancing system
 
 LIB_DEPENDS+=	pcre.0:${PORTSDIR}/devel/pcre \
-		gnutls.13:${PORTSDIR}/security/gnutls \
+		gnutls.12:${PORTSDIR}/security/gnutls \
 		ggz.2:${PORTSDIR}/games/libggz
 
 CFLAGS+=	${PTHREAD_CFLAGS} -I${LOCALBASE}/include
