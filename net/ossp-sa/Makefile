@@ -18,7 +18,7 @@ PKGNAMEPREFIX=	ossp-
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An abstraction library for the Unix socket API
 
-USE_GNAKE=	yes
+USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 USE_LIBTOOL=	yes
 INSTALLS_SHLIB=	yes
