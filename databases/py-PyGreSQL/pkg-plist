@@ -1,11 +1,11 @@
 %%PORTDOCS%%share/doc/PyGreSQL/Announce
 %%PORTDOCS%%share/doc/PyGreSQL/ChangeLog
 %%PORTDOCS%%share/doc/PyGreSQL/README
-lib/%%PYTHON_VERSION%%/site-packages/_pgmodule.so
-lib/%%PYTHON_VERSION%%/site-packages/pg.py
-lib/%%PYTHON_VERSION%%/site-packages/pg.pyc
-lib/%%PYTHON_VERSION%%/site-packages/pg.pyo
-lib/%%PYTHON_VERSION%%/site-packages/pgdb.py
-lib/%%PYTHON_VERSION%%/site-packages/pgdb.pyc
-lib/%%PYTHON_VERSION%%/site-packages/pgdb.pyo
+%%PYTHON_SITELIBDIR%%/_pgmodule.so
+%%PYTHON_SITELIBDIR%%/pg.py
+%%PYTHON_SITELIBDIR%%/pg.pyc
+%%PYTHON_SITELIBDIR%%/pg.pyo
+%%PYTHON_SITELIBDIR%%/pgdb.py
+%%PYTHON_SITELIBDIR%%/pgdb.pyc
+%%PYTHON_SITELIBDIR%%/pgdb.pyo
 %%PORTDOCS%%@dirrm share/doc/PyGreSQL
