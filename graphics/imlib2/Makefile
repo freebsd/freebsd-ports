@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	imlib2
-PORTVERSION=	1.1.0
+PORTVERSION=	1.1.1
 CATEGORIES=	graphics
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	enlightenment
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	vanilla@FreeBSD.org
 COMMENT=	The next generation graphic library for enlightenment package
 
 LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
@@ -21,6 +21,7 @@ LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
 		freetype.9:${PORTSDIR}/print/freetype2
 
 USE_LIBLTDL=	yes
+USE_LIBTOOL_VER=	15
 USE_X_PREFIX=	yes
 USE_GNOME=	gnomehack pkgconfig
 USE_REINPLACE=	yes
@@ -35,7 +36,6 @@ INSTALLS_SHLIB=	yes
 CONFIGURE_ARGS=	--enable-mmx
 .endif
 
-post-configure:
-	@${REINPLACE_CMD} -e 's|\@localbase\@|${LOCALBASE}|g' ${WRKSRC}/imlib2-config
-
 .include <bsd.port.post.mk>
+
+CONFIGURE_TARGET:=	--build=${CONFIGURE_TARGET}
