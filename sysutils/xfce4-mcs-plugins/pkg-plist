@@ -1,0 +1,20 @@
+lib/xfce4/mcs-plugins/keyboard_plugin.a
+lib/xfce4/mcs-plugins/keyboard_plugin.la
+lib/xfce4/mcs-plugins/keyboard_plugin.so
+lib/xfce4/mcs-plugins/mouse_plugin.a
+lib/xfce4/mcs-plugins/mouse_plugin.la
+lib/xfce4/mcs-plugins/mouse_plugin.so
+lib/xfce4/mcs-plugins/ui_plugin.a
+lib/xfce4/mcs-plugins/ui_plugin.la
+lib/xfce4/mcs-plugins/ui_plugin.so
+share/xfce4/doc/C/images/font_selection.png
+share/xfce4/doc/C/images/keyboard_settings.png
+share/xfce4/doc/C/images/mouse_settings.png
+share/xfce4/doc/C/images/user_interface_settings.png
+share/xfce4/doc/C/xfce-mcs-plugins.html
+@unexec rmdir %D/lib/xfce4/mcs-plugins 2>/dev/null || true
+@unexec rmdir %D/lib/xfce4 2>/dev/null || true
+@unexec rmdir %D/share/xfce4/doc/C/images 2>/dev/null || true
+@unexec rmdir %D/share/xfce4/doc/C 2>/dev/null || true
+@unexec rmdir %D/share/xfce4/doc 2>/dev/null || true
+@unexec rmdir %D/share/xfce4 2>/dev/null || true

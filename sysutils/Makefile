@@ -334,6 +334,7 @@
     SUBDIR += xcpustate
     SUBDIR += xdu
     SUBDIR += xfce4-mcs-manager
+    SUBDIR += xfce4-mcs-plugins
     SUBDIR += xfsm
     SUBDIR += xin
     SUBDIR += xloadface
