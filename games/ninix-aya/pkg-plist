@@ -23,12 +23,10 @@ libexec/ninix/ninix/dll/mciaudio.pyc
 libexec/ninix/ninix/dll/textcopy.pyc
 libexec/ninix/ninix/dll/wmove.py
 libexec/ninix/ninix/dll/wmove.pyc
-libexec/ninix/ninix/dll/aya.pyc
 libexec/ninix/ninix/dll/hanayu.pyc
 libexec/ninix/ninix/dll/mciaudior.pyc
 libexec/ninix/ninix/dll/misaka.pyc
 libexec/ninix/ninix/dll/niseshiori.pyc
-libexec/ninix/ninix/dll/satori.pyc
 libexec/ninix/ninix/dll/saori_cpuid.py
 libexec/ninix/ninix/dll/saori_cpuid.pyc
 libexec/ninix/ninix/dll/ssu.py
@@ -45,9 +43,11 @@ libexec/ninix/ninix/entry_db.py
 libexec/ninix/ninix/home.py
 libexec/ninix/ninix/httplib.py
 libexec/ninix/ninix/keymap.py
+libexec/ninix/ninix/kinoko.py
 libexec/ninix/ninix/main.py
-libexec/ninix/ninix/menu.py
 libexec/ninix/ninix/makoto.py
+libexec/ninix/ninix/menu.py
+libexec/ninix/ninix/nekodorif.py
 libexec/ninix/ninix/netlib.py
 libexec/ninix/ninix/pix.py
 libexec/ninix/ninix/prefs.py
@@ -66,9 +66,11 @@ libexec/ninix/ninix/dll.pyc
 libexec/ninix/ninix/home.pyc
 libexec/ninix/ninix/httplib.pyc
 libexec/ninix/ninix/keymap.pyc
+libexec/ninix/ninix/kinoko.pyc
 libexec/ninix/ninix/main.pyc
 libexec/ninix/ninix/menu.pyc
 libexec/ninix/ninix/makoto.pyc
+libexec/ninix/ninix/nekodorif.pyc
 libexec/ninix/ninix/netlib.pyc
 libexec/ninix/ninix/pix.pyc
 libexec/ninix/ninix/prefs.pyc
