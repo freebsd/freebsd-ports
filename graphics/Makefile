@@ -228,6 +228,7 @@
     SUBDIR += urt
     SUBDIR += utah-glx
     SUBDIR += vcdgear
+    SUBDIR += vcdimager
     SUBDIR += vcdpad
     SUBDIR += vcdtools
     SUBDIR += vcg

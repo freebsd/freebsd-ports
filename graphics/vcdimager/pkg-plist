@@ -1,0 +1,5 @@
+bin/vcdimager
+bin/vcdrip
+@unexec install-info --delete %D/info/vcdimager.info %D/info/dir
+info/vcdimager.info
+@exec install-info %D/info/vcdimager.info %D/info/dir
