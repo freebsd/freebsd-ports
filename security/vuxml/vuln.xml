@@ -32,6 +32,42 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="832e9d75-5bfc-11d9-a9e7-0001020eed82">
+    <topic>kdelibs3 -- konqueror FTP command injection vulnerability</topic>
+    <affects>
+      <package>
+	<name>ja-kdelibs</name>
+	<name>kdelibs</name>
+	<range><lt>3.3.2_2</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Albert Puigsech Galicia reports that Konqueror (more
+	  specifically kio_ftp) and Microsoft Internet Explorer are
+	  vulnerable to a FTP command injection vulnerability which
+	  can be exploited by tricking an user into clicking a
+	  specially crafted FTP URI.</p>
+	<p>It is also reported by Ian Gulliver and Emanuele Balla that
+	  this vulnerability can be used to tricking a client into
+	  sending out emails without user interaction.</p>
+      </body>
+    </description>
+    <references>
+      <bid>11827</bid>
+      <cvename>CAN-2004-1165</cvename>
+      <mlist msgid="200412051011.54045.ripe@7a69ezine.org">http://marc.theaimsgroup.com/?l=bugtraq&amp;m=110245752232681</mlist>
+      <mlist msgid="20041223235620.GA2846@penguinhosting.net">http://marc.theaimsgroup.com/?l=full-disclosure&amp;m=110387390226693</mlist>
+      <mlist msgid="20041224142506.GB12939@penguinhosting.net">http://marc.theaimsgroup.com/?l=full-disclosure&amp;m=110390734925183</mlist>
+      <url>http://bugs.kde.org/show_bug.cgi?id=95825</url>
+      <url>http://bugs.debian.org/cgi-bin/bugreport.cgi?bug=285128</url>
+    </references>
+    <dates>
+      <discovery>2004-12-01</discovery>
+      <entry>2005-01-01</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="9168253c-5a6d-11d9-a9e7-0001020eed82">
     <topic>a2ps -- insecure temporary file creation</topic>
     <affects>
