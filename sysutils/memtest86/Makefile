@@ -6,34 +6,41 @@
 #
 
 PORTNAME=	memtest86
-PORTVERSION=	3.1a
+PORTVERSION=	3.2
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.memtest86.com/
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${DISTNAME}.iso.zip
+EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
-MAINTAINER=	ports@freebsd.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Stand alone memory test for x86 architecture computers
+
+EXTRACT_DEPENDS=	unzip:${PORTSDIR}/archivers/unzip
 
 ONLY_FOR_ARCHS=	i386
 
-PKGMESSAGE=	${WRKDIR}/pkg-message
-PORTDOCS=	README
-PLIST_FILES=	share/${PORTNAME}/floppy.bin share/${PORTNAME}/memtest.iso.gz
-PLIST_DIRS=	share/${PORTNAME}
+NO_BUILD=	yes
 
-do-build:
-	@${CAT} ${FILESDIR}/pkg-message.in | ${SED} 's|%%DATADIR%%|${DATADIR}|g' > ${WRKDIR}/pkg-message
+PORTDOCS=	README
+PLIST_FILES=	%%DATADIR%%/floppy.bin %%DATADIR%%/memtest.iso.gz
+PLIST_DIRS=	%%DATADIR%%
+
+SUB_FILES=	pkg-message
+
+post-extract:
+	@${UNZIP_CMD} -qo ${DISTDIR}/${DISTNAME}.iso.zip -d ${WRKSRC}
 
 do-install:
-	${MKDIR} ${DATADIR}
+	@${MKDIR} ${DATADIR}
 	${INSTALL_DATA} ${WRKSRC}/precomp.bin ${DATADIR}/floppy.bin
-	${INSTALL_DATA} ${WRKSRC}/memtest.iso ${DATADIR}
+	${INSTALL_DATA} ${WRKSRC}/${DISTNAME}.iso ${DATADIR}/memtest.iso
 	${GZIP_CMD} ${DATADIR}/memtest.iso
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}
+	@${MKDIR} ${DOCSDIR}
 .for i in ${PORTDOCS}
 	${INSTALL_DATA} ${WRKSRC}/${i} ${DOCSDIR}
 .endfor
 .endif
-	${CAT} ${PKGMESSAGE}
+	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
