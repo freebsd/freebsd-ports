@@ -14,11 +14,10 @@ DISTFILES=
 
 MAINTAINER=	sobomax@FreeBSD.org
 
-BUILD_DEPENDS=	/nonexistent:${PORTSDIR}/www/mozilla:build
+BUILD_DEPENDS=	/nonexistent:${PORTSDIR}/www/mozilla:build \
+		zip:${PORTSDIR}/archivers/zip
 LIB_DEPENDS=	${MAKE} -V LIB_DEPENDS -f ${MAINDIR}/${MAKEFILE}
 RUN_DEPENDS=	${MAKE} -V RUN_DEPENDS -f ${MAINDIR}/${MAKEFILE}
-
-BROKEN=		"it has not been synced with mozilla-0.8.1 yet"
 
 USE_X_PREFIX=	yes
 
