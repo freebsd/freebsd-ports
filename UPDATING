@@ -6,6 +6,12 @@ You should get into the habit of checking this file for changes each
 time you update your ports collection, before attempting any port
 upgrades.
 
+20040622:
+  AFFECTS: users of net/openslp
+
+  The openslp port must now be enabled / disabled and configured in
+  rc.conf.  See the script for details.
+
 20040619:
   AFFECTS: users of sysutils/webmin and sysutils/usermin
 
