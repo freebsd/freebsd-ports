@@ -27,6 +27,6 @@ CONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV=	CFLAGS="${CFLAGS} -I${X11BASE}/include"
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
-BROKEN=		Will not work until xmms and arts will use the same glib version. Use xmms-arts_output port instead
+IGNORE=		will not work until xmms and arts will use the same glib version. Use xmms-arts_output port instead
 
 .include <bsd.port.mk>
