@@ -10,6 +10,7 @@
     SUBDIR += MT
     SUBDIR += acroread5-chsfont
     SUBDIR += acroread5-chtfont
+    SUBDIR += arnettf
     SUBDIR += arphicttf
     SUBDIR += aterm
     SUBDIR += auto-tw-l10n
