@@ -30,7 +30,6 @@
     SUBDIR += boxes
     SUBDIR += brs
     SUBDIR += buffer
-    SUBDIR += cassowary
     SUBDIR += cave
     SUBDIR += cfe
     SUBDIR += cheatah
