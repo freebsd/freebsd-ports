@@ -1,4 +1,4 @@
-# New ports collection makefile for:	XFree86XPrintServer-4.0.1
+# New ports collection makefile for:	XFree86-PrintServer
 # Date created:		10 Oct 1999
 # Whom:			taguchi@tohoku.iij.ad.jp
 #
@@ -6,16 +6,12 @@
 #
 
 PORTNAME=	PrintServer
-PORTVERSION=	4.0.3
+PORTVERSION=	4.1.0
 CATEGORIES=	x11-servers
 MASTER_SITES=	${MASTER_SITE_XFREE}
-MASTER_SITE_SUBDIR=	4.0.2
+MASTER_SITE_SUBDIR=	4.1.0
 PKGNAMEPREFIX=	XFree86-
-DISTFILES=	X402src-1.tgz
-
-PATCH_SITES=	${MASTER_SITE_XFREE:S,%SUBDIR%/source,4.0.3/patches,g}
-PATCHFILES=	4.0.2-4.0.3.diff.gz
-PATCH_DIST_STRIP=	-p1
+DISTFILES=	X410src-1.tgz
 
 MAINTAINER=	taguchi@tohoku.iij.ad.jp
 
@@ -26,7 +22,7 @@ WRKSRC=			${WRKDIR}/xc
 PATCHDIR=		${.CURDIR}/../../x11/XFree86-4-libraries/files
 MAKE_ENV=		MAN_INSTALL_TARGET=NOOP
 ALL_TARGET=		FreeBSDPortsBuild
-INSTALL_TARGET= 	installXprt
+INSTALL_TARGET=		installXprt
 
 do-configure:
 	cd ${.CURDIR} && ${SETENV} ${SCRIPTS_ENV} ${SH} ${SCRIPTDIR}/configure

@@ -1,4 +1,4 @@
-# New ports collection makefile for:	XFree86XServer-4.0.1
+# New ports collection makefile for:	XFree86-Server
 # Date created:		10 Oct 1999
 # Whom:			taguchi@tohoku.iij.ad.jp
 #
@@ -6,17 +6,12 @@
 #
 
 PORTNAME=	Server
-PORTVERSION=	4.0.3
-PORTREVISION=	1
+PORTVERSION=	4.1.0
 CATEGORIES=	x11-servers
 MASTER_SITES=	${MASTER_SITE_XFREE}
-MASTER_SITE_SUBDIR=	4.0.2
+MASTER_SITE_SUBDIR=	4.1.0
 PKGNAMEPREFIX=	XFree86-
-DISTFILES=	X402src-1.tgz
-
-PATCH_SITES=	${MASTER_SITE_XFREE:S,%SUBDIR%/source,4.0.3/patches,g}
-PATCHFILES=	4.0.2-4.0.3.diff.gz
-PATCH_DIST_STRIP=	-p1
+DISTFILES=	X410src-1.tgz
 
 MAINTAINER=	taguchi@tohoku.iij.ad.jp
 
@@ -33,15 +28,16 @@ SCRIPTS_ENV=		OSVERSION=${OSVERSION} \
 			BuildXF86DRI=${BuildXF86DRI} \
 			BuildXF86DRM=${BuildXF86DRM} \
 			HaveMatroxHal=${HaveMatroxHal}
-MAKE_ENV=		MAN_INSTALL_TARGET=FreeBSDPortsInstall.man
+MAKE_ENV=		MAN_INSTALL_TARGET=FreeBSDPortsInstall.man WORLDOPTS=
+MAKE_ARGS=		WORLDOPTS=
 ALL_TARGET=		FreeBSDPortsBuild
 INSTALL_TARGET=		FreeBSDPortsInstall  FreeBSDPortsInstall.man
-MAN1=			SuperProbe.1 \
-			XFree86.1 \
+MAN1=			XFree86.1 \
 			Xserver.1 \
 			kbd_mode.1 \
 			pcitweak.1 \
 			scanpci.1 \
+			xf86cfg.1 \
 			xf86config.1
 MAN3=			XF86VidMode.3 \
 			XF86VidModeDeleteModeLine.3 \
@@ -65,9 +61,11 @@ MAN4=			mga.4 \
 			nv.4 \
 			siliconmotion.4 \
 			vga.4 \
+			vmware.4 \
 			keyboard.4 \
 			mouse.4
 MAN5=			XF86Config.5
+PKGMESSAGE=		${WRKDIR}/.pkg-message
 
 .include <bsd.port.pre.mk>
 
@@ -83,23 +81,28 @@ HasXdmAuth?=		DEFAULT
 HasSecureRPC?=		DEFAULT
 HasPam?=		DEFAULT
 ExtendedInputDevices?=	DEFAULT
-.if (exists(/sys) || exists(/usr/src/sys)) && ${OSVERSION} < 500013
+.if !defined(I_WANT_TO_FIX_BUILDING_DRI_MODULES)
+BuildXF86DRI=		NO
+BuildXF86DRM=		NO
+PLIST_SUB+=		DRI="@comment "
+.else
+.if ${OSVERSION} < 500013 && ${MACHINE} != alpha
+.if (exists(/sys) || exists(/usr/src/sys))
 BuildXF86DRI=		YES
 BuildXF86DRM=		YES
 PLIST_SUB+=		DRI=""
-PKGMESSAGE=		${.CURDIR}/pkg-message-drm
+.else
+_pre-fetch::
+	@${ECHO_MSG} "DRI would not build: kernel source required in /sys."
+.endif	# have /sys
 .else
 BuildXF86DRI=		NO
 BuildXF86DRM=		NO
 PLIST_SUB+=		DRI="@comment "
-.if ${OSVERSION} < 500013
-pre-fetch::
-	@${ECHO_MSG} "DRI would not build: kernel source required in /sys."
-.else
-pre-fetch::
-	@${ECHO_MSG} "DRI would not build: incompatible with SMPng."
-.endif
-.endif
+_pre-fetch::
+	@${ECHO_MSG} "DRI would not build: incompatible with SMPng and alpha"
+.endif	# PRE_SMPNG && !alpha
+.endif	# DRI is totally broken
 
 .if ${ARCH} == i386
 PLIST_SUB+=	I386:=""
@@ -135,10 +138,11 @@ MAN4+=		citron.4 \
 PLIST_SUB+=	XIE:="@comment "
 .endif
 
+.if !defined(INCOMPATIBLE_WITH_4_1_0)
 .if !defined(WITH_MATROX_GXX_DRIVER)
 HaveMatroxHal=		NO
 PLIST_SUB+=		MATROX="@comment "
-pre-fetch::
+_pre-fetch::
 	@${ECHO_MSG} "Define WITH_MATROX_GXX_DRIVER to enable the official Matrox drivers for"
 	@${ECHO_MSG} "the G200, G400 and G450 graphic adapters."
 .else
@@ -146,7 +150,7 @@ HaveMatroxHal=		YES
 MGA_DRIVER_VERSION=	1_2_0beta
 MASTER_SITES+=		ftp://ftp.matrox.com/pub/mga/archive/linux/2001/beta_${MGA_DRIVER_VERSION:S/beta//}/
 DISTFILES+=		mga-${MGA_DRIVER_VERSION}.tgz
-EXTRACT_ONLY=		X402src-1.tgz
+EXTRACT_ONLY=		X410src-1.tgz
 PLIST_SUB+=		MATROX=""
 post-patch::
 	@${MV} ${WRKSRC}/programs/Xserver/hw/xfree86/drivers/mga \
@@ -154,6 +158,7 @@ post-patch::
 	@${TAR} -xzf ${DISTDIR}/${DIST_SUBDIR}/mga-${MGA_DRIVER_VERSION}.tgz \
 		-C ${WRKSRC}/programs/Xserver/hw/xfree86/drivers
 .endif	# !WITH_MATROX_GXX_DRIVER
+.endif	# INCOMPATIBLE_WITH_4_1_0
 
 do-configure:
 	cd ${.CURDIR} && ${SETENV} ${SCRIPTS_ENV} ${SH} ${SCRIPTDIR}/configure
@@ -166,6 +171,7 @@ pre-install:
 post-install:
 	strip ${PREFIX}/bin/XFree86
 .if ${BuildXF86DRM} == "YES"
+	@(cd ${.CURDIR}; ${CAT} pkg-message pkg-message-drm > ${PKGMESSAGE})
 	@${SED} -e s,/usr/X11R6,${PREFIX}, ${PKGMESSAGE}
 .endif
 
