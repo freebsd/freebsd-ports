@@ -10,3 +10,4 @@ share/texmf/web2c/platex.fmt
 share/texmf/web2c/ptex.fmt
 share/texmf/web2c/ptex.pool
 share/texmf/web2c/texmf.cnf
+@exec %D/bin/mktexlsr %D/share/texmf
