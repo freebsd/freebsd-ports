@@ -3,7 +3,7 @@
 # Date created:		7 July 1997
 # Whom:			doconnor@ist.flinders.edu.au
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1997/10/29 12:16:52 tg Exp $
 #
 
 DISTNAME=	xmp3_1.0.0
@@ -18,6 +18,7 @@ RUN_DEPENDS=	amp:${PORTSDIR}/audio/amp \
 		wish4.2:${PORTSDIR}/x11/tk42
 
 WRKSRC=		${WRKDIR}/xmpeg3
+NO_BUILD=	yes
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/xmpeg3 ${PREFIX}/bin
