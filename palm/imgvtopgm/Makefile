@@ -9,6 +9,7 @@
 DISTNAME=	imgvtopgm-2.0
 CATEGORIES=	palm graphics
 MASTER_SITES=	http://www.trends.net/~mu/srcs/
+BUILD_DEPENDS=	${X11BASE}/lib/libpbm.a:${PORTSDIR}/graphics/netpbm
 
 MAINTAINER=	sumikawa@kame.net
 
