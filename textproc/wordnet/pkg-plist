@@ -1,5 +1,14 @@
 bin/wnb
 bin/wn
+include/wordnet-1.6/license.h
+include/wordnet-1.6/setutil.h
+include/wordnet-1.6/wn.h
+include/wordnet-1.6/wnconsts.h
+include/wordnet-1.6/wnglobal.h
+include/wordnet-1.6/wnhelp.h
+include/wordnet-1.6/wnrtl.h
+include/wordnet-1.6/wntypes.h
+lib/libwn1.a
 lib/libwn1.so.6
 lib/libwn1.so
 lib/libtclwn1.so.6
@@ -30,6 +39,7 @@ share/wordnet-1.6/wnres/license.txt
 share/wordnet-1.6/wnres/wn.xbm
 share/wordnet-1.6/wnres/wnb.man
 share/wordnet-1.6/wnres/wngloss.man
+@dirrm include/wordnet-1.6
 @dirrm lib/tcl%%TCL_DVER%%/Wordnet
 @dirrm share/wordnet-1.6/wnres
 @dirrm share/wordnet-1.6
