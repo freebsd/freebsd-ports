@@ -1,10 +1,12 @@
-lib/perl5/site_perl/%%PERL_VER%%/HTML/Entities.pm
-lib/perl5/site_perl/%%PERL_VER%%/HTML/Filter.pm
-lib/perl5/site_perl/%%PERL_VER%%/HTML/HeadParser.pm
-lib/perl5/site_perl/%%PERL_VER%%/HTML/LinkExtor.pm
-lib/perl5/site_perl/%%PERL_VER%%/HTML/Parser.pm
-lib/perl5/site_perl/%%PERL_VER%%/HTML/TokeParser.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/HTML/Entities.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/HTML/Filter.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/HTML/HeadParser.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/HTML/LinkExtor.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/HTML/Parser.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/HTML/TokeParser.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/HTML/Parser/Parser.bs
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/HTML/Parser/Parser.so
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/HTML/Parser/.packlist
 @dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/HTML/Parser
 @unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/HTML 2>/dev/null || true
-@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/HTML 2>/dev/null || true
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/HTML 2>/dev/null || true
