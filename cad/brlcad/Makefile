@@ -31,11 +31,6 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 CONFIGURE_ENV+=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 CONFIGURE_ARGS+=	--with-libs="-lpng"
 
-.ifdef PACKAGE_BUILDING
-CONFIGURE_ARGS+=	--disable-debug --enable-optimized
-.else
-CONFIGURE_ARGS+=	--disable-dependency-tracking --disable-libtool-lock
-.endif
 ALL_TARGET=
 
 MAN1=	aliastorle.1 all_sf.1 alias-pix.1 anim_cascade.1 anim_fly.1 	\
@@ -204,8 +199,26 @@ LDFLAGS+=	${PTHREAD_LIBS}
 BROKEN=		"Does not compile on FreeBSD-${OSREL}"
 .endif
 
-.if ${ARCH} != "i386" && ${ARCH} != "amd64"
-BROKEN=		"Does not compile on !i386 and !amd64"
+.if ${ARCH} != i386
+IGNORE=		"Dumps core on ${ARCH}!"
+.endif
+
+.ifndef WITHOUT_OPTIMIZATION
+CONFIGURE_ARGS+=	--disable-debug
+.if !(${ARCH} == alpha || ${ARCH} == sparc64)
+CONFIGURE_ARGS+=	--enable-optimized
+.endif
+.else
+CONFIGURE_ARGS+=	--disable-dependency-tracking --disable-libtool-lock
+.endif
+
+.ifndef (WITHOUT_OPTIMIZATION)
+pre-everything::
+	@${ECHO_MSG}
+	@${ECHO_MSG} Hit CTRL+C now and build an unoptimized version of brlcad by
+	@${ECHO_MSG} specifying -DWITHOUT_OPTIMIZATION at the command line!
+	@${ECHO_MSG}
+	@sleep 2
 .endif
 
 pre-install:
@@ -214,6 +227,6 @@ pre-install:
 		${WRKSRC}/mged.sh
 
 post-install:
-	@${INSTALL_SCRIPT} ${WRKSRC}/mged.sh ${PREFIX}/../bin/mged
+	@${INSTALL_SCRIPT} ${WRKSRC}/mged.sh ${LOCALBASE}/bin/mged
 
 .include <bsd.port.post.mk>
