@@ -1,0 +1,17 @@
+--- Makefile.in.orig	Mon Aug  9 05:38:39 1999
++++ Makefile.in	Wed Aug 18 11:17:53 1999
+@@ -131,12 +131,12 @@
+ bin_SCRIPTS = libglade-config libglade-xgettext
+ noinst_PROGRAMS = test-libglade
+ test_libglade_LDADD = $(THE_LIBS) $(XML_LIBS)
+-SUBDIRS = intl po macros glade doc
++SUBDIRS = intl po macros glade
+ 
+ m4datadir = $(datadir)/aclocal
+ m4data_DATA = libglade.m4
+ 
+-confexecdir = $(libdir)
++confexecdir = $(prefix)/etc
+ confexec_DATA = libgladeConf.sh
+ 
+ test_libglade_SOURCES = test-libglade.c
