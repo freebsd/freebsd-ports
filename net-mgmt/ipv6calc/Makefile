@@ -6,27 +6,20 @@
 #
 
 PORTNAME=	ipv6calc
-PORTVERSION=	0.38
-PORTREVISION=	1
+PORTVERSION=	0.40
 CATEGORIES=	net ipv6
 MASTER_SITES=	ftp://ftp.bieringer.de/pub/linux/IPv6/ipv6calc/
 
 MAINTAINER=	edwin@mavetju.org
 
-LIB_DEPENDS=	intl.2:${PORTSDIR}/devel/gettext \
-		gnugetopt.1:${PORTSDIR}/devel/libgnugetopt
+LIB_DEPENDS=	intl.2:${PORTSDIR}/devel/gettext
 
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_LIBTOOL=	yes
 
-post-extract:
-.for junk in config.h config.log Makefile config.status ipv6calc.h \
-	config.cache
-	@${RM} ${WRKSRC}/${junk}
-.endfor
-
 do-install:
-	@${INSTALL_PROGRAM} ${WRKSRC}/ipv6calc ${PREFIX}/bin
+	@${INSTALL_PROGRAM} ${WRKSRC}/ipv6calc/ipv6calc ${PREFIX}/bin
+	@${INSTALL_PROGRAM} ${WRKSRC}/ipv6logconv/ipv6logconv ${PREFIX}/bin
 
 .include <bsd.port.mk>
