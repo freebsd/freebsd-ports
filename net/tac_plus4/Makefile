@@ -23,6 +23,11 @@ MAN1=		tac_plus.1
 EXTRA_PATCHES=	${PATCHDIR}/extra-patch-ba
 .endif
 
+# check expiration dates against 'expire' field of master.passwd file
+.if defined(TAC_EXPIRE_MASTER_PASSWD) && ${TAC_EXPIRE_MASTER_PASSWD} == YES
+EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-bb
+.endif
+
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/tac_plus ${PREFIX}/sbin
 	${INSTALL_MAN} ${WRKSRC}/tac_plus.1 ${PREFIX}/man/man1/tac_plus.1

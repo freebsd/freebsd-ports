@@ -1,0 +1,47 @@
+Hello!
+
+The tac_plus user guide says that when passwd(5) file is used for user
+authentication, the expiry date checks against shell field of password file.
+Maybe it is OK for custom passwd files, but not for system password file.
+
+Here is a little patch below which allow the tacacs daemon check
+the expiration dates against 'expire' field of FreeBSD's master.passwd file.
+It is very useful for me, and may be useful for other FreeBSD&tacacs users.
+
+With best regards,
+Sergey Levov (serg@informika.ru)
+
+------------------------------ cut here ---------------------------
+
+--- pwlib.c.orig	Fri Dec  1 15:07:03 2000
++++ pwlib.c	Fri Dec  1 15:07:48 2000
+@@ -195,7 +195,7 @@
+     struct passwd *pw;
+     char *exp_date;
+     char *cfg_passwd;
+-#ifdef SHADOW_PASSWORDS
++#if defined(SHADOW_PASSWORDS) || defined(FREEBSD)
+     char buf[12];
+ #endif /* SHADOW_PASSWORDS */
+ 
+@@ -217,7 +217,20 @@
+ 	return (0);
+     }
+     cfg_passwd = pw->pw_passwd;
++#ifdef FREEBSD
++   buf[0] = '\0';
++   if (pw->pw_expire > (time_t) 0)
++   {
++       long secs = pw->pw_expire;
++       char *p = ctime(&secs);
++       bcopy(p+4, buf, 7);
++       bcopy(p+20, buf+7, 4);
++       buf[11] = '\0';
++   }
++       exp_date = buf;   
++#else
+     exp_date = pw->pw_shell;
++#endif
+ 
+ #ifdef SHADOW_PASSWORDS
+     if (STREQ(pw->pw_passwd, "x")) {
