@@ -1,0 +1,9 @@
+The Getargs::Long module allows usage of named parameters in function
+calls, along with optional argument type-checking. It provides an
+easy way to get at the parameters within the routine, and yields
+concise descriptions for the common cases of all-mandatory and
+all-optional parameter lists.
+
+WWW: http://search.cpan.org/search?dist=Getargs-Long
+
+Seamus Venasse <svenasse@polaris.ca>
