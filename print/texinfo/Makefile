@@ -7,16 +7,17 @@
 
 PORTNAME=	texinfo
 PORTVERSION=	2.218
+PORTREVISION=	1
 CATEGORIES=	print
 #other equivalent sites: ftp.shsu.edu ftp.dante.de
 MASTER_SITES=	ftp://ftp.tex.ac.uk/tex-archive/macros/eplain/doc/ \
 		ftp://ftp.tex.ac.uk/tex-archive/fonts/latex/tfm/
 DISTFILES=	texinfo.tex lcircle10.tfm
 
-MAINTAINER=	jmz@FreeBSD.org
+MAINTAINER=	ports@geeksrus.net
 
-BUILD_DEPENDS=	tex:${PORTSDIR}/print/tex
-RUN_DEPENDS=	tex:${PORTSDIR}/print/tex
+BUILD_DEPENDS=	tex:${PORTSDIR}/print/teTeX
+RUN_DEPENDS=	tex:${PORTSDIR}/print/teTeX
 
 EXTRACT_ONLY=
 NO_WRKSUBDIR=	yes
