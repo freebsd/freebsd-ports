@@ -6,13 +6,14 @@
 #
 
 PORTNAME=	fastest_cvsup
-PORTVERSION=	0.2.8
+PORTVERSION=	0.2.9
 CATEGORIES=	sysutils
 MASTER_SITES=	http://fastest-cvsup.sourceforge.net/download/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Finds fastest CVSup server
 
+DISTVERSION=	0.2.8
 USE_PERL5=	yes
 
 MAN7=		fastest_cvsup.7

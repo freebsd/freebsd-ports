@@ -1,9 +1,23 @@
-
-$FreeBSD$
-
---- fastest_cvsup.orig	Tue Oct 12 20:23:25 2004
-+++ fastest_cvsup	Tue Oct 12 20:23:52 2004
-@@ -82,7 +82,7 @@
+--- fastest_cvsup.orig	Thu Sep 19 21:12:17 2002
++++ fastest_cvsup	Mon Dec 13 18:06:56 2004
+@@ -1,13 +1,15 @@
+ #!/usr/bin/perl
+ #-----------------------------------------------------------------------------#
+ #
+-#  Find fastest CVSup server script for FreeBSD - version 0.2.8
++#  Find fastest CVSup server script for FreeBSD - version 0.2.9
+ #  Copyright (c) A.J.Robinson (ajr@subdimension.com) 2002
+ #  Distributed under the BSD license.
+ #
+ #-----------------------------------------------------------------------------#
+ #
+ # Changes:
++# 0.2.9  - added 'us' country code for USA hosts and 'tld' for top-level
++#          domain machines (can be in any country)
+ # 0.2.8  - fixed the progress meter, timestamped %FREEBSD_SERVERS
+ # 0.2.7  - updated documentation, usage message and progress meter.
+ # 0.2.6  - changed from freebsdmirrors.org to the online handbook.
+@@ -82,7 +84,7 @@
    'ca' => 2,    # Canada
    'cn' => 1,    # China
    'cz' => 1,    # Czech Republic
@@ -12,3 +26,68 @@ $FreeBSD$
    'dk' => 1,    # Denmark
    'ee' => 1,    # Estonia
    'es' => 3,    # Spain
+@@ -110,8 +112,9 @@
+   'tw' => 3,    # Taiwan
+   'ua' => 5,    # Ukraine
+   'uk' => 5,    # United Kingdom
+-  'us' => 17,   # USA
++  'us' => 18,   # USA
+   'za' => 2,    # South Africa
++  'tld' => 18,	# Top Level Domain
+ );
+ 
+ my %OTHER_SERVERS = (
+@@ -177,6 +180,7 @@
+         "         -Q           very quiet mode, no progress meter\n",
+         "         -r           uses remote server list from FreeBSD Handbook\n",
+         "         -c aa,bb,cc  queries servers in countries aa,bb,cc\n",
++        "            tld       queries servers in the top level domain\n",
+         "            local     queries servers set as local in the script\n",
+         "            all       queries all FreeBSD servers\n\n",
+         "  See the man page, fastest_cvsup(7), for more details.\n\n";
+@@ -307,12 +311,12 @@
+             unless ( $cc_name{$cc} ) { $cc_name{$cc} = $country }
+           }
+ 
+-          # parse US servers
++          # parse TLD servers
+ 
+           elsif ( $server =~ /cvsup([\d]*)\.freebsd\.org/i ) {
+             my $i = $1 || 1;
+-            if ( !$srv{'us'} or $srv{'us'} < $i ) { $srv{'us'} = $i }
+-            unless ( $cc_name{'us'} ) { $cc_name{'us'} = $country }
++            if ( !$srv{'tld'} or $srv{'tld'} < $i ) { $srv{'tld'} = $i }
++            unless ( $cc_name{'tld'} ) { $cc_name{'tld'} = $country }
+           }
+         }
+       }
+@@ -419,7 +423,7 @@
+ 
+   for ( my $i=1; $i<=$FREEBSD_SERVERS{$cc}; $i++ ) {
+ 
+-    if ( $cc eq 'us' ) { # use no country code, include the '1'
++    if ( $cc eq 'tld' ) { # use no country code, include the '1'
+       if ( $i == 1 ) { push(@first,"cvsup$i.freebsd.org"); }
+       else           { push(@others,"cvsup$i.freebsd.org"); }
+     }
+@@ -575,7 +579,7 @@
+ 
+ =head1 SYNOPSIS
+ 
+-B<fastest_cvsup> [B<-h>] [B<-(q|Q)>] [B<-r>] B<-c> (B<country codes>|B<local>|B<all>)
++B<fastest_cvsup> [B<-h>] [B<-(q|Q)>] [B<-r>] B<-c> (B<country codes>|B<tld>|B<local>|B<all>)
+ 
+ =head1 DESCRIPTION
+ 
+@@ -619,6 +623,11 @@
+ 
+ NetBSD and OpenBSD servers are lumped together under the 'netbsd' and
+ 'openbsd' codes respectively.
++
++=item B<-c tld>
++
++checks the servers in the Top Level Domain.  These can be anywhere in the
++world.
+ 
+ =item B<-c local>
+ 
