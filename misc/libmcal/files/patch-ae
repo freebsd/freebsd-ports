@@ -1,0 +1,73 @@
+--- datetime.c.orig	Sat Mar 11 03:14:42 2000
++++ datetime.c	Thu May 11 21:43:23 2000
+@@ -1,5 +1,5 @@
+ /*
+- *	$Id: datetime.c,v 1.2 2000/03/11 02:14:42 chuck Exp $
++ *	$Id: datetime.c,v 1.3 2000/05/11 19:43:23 inan Exp $
+  * Libmcal - Modular Calendar Access Library
+  * Copyright (C) 1999 Mark Musone and Andrew Skalski
+  *
+@@ -280,8 +280,37 @@
+ {
+ 	return dt_dayofepoch(dt) % 7;
+ }
+-
+-
++/*
++char*
++dt_dayofweekstr(const datetime_t *dt)
++{
++	char output[3];
++	switch (dt_dayofepoch(dt) % 7) {
++		case 0:
++			strcpy (output, "SU");
++			break;
++		case 1:
++			strcpy (output, "MO");
++			break;
++		case 2:
++			strcpy (output, "TU");
++			break;
++		case 3:
++			strcpy (output, "WE");
++			break;
++		case 4:
++			strcpy (output, "TH");
++			break;
++		case 5:
++			strcpy (output, "FR");
++			break;
++		case 6:
++			strcpy (output, "SA");
++			break;
++	}
++	return output;			
++}
++*/
+ int
+ dt_dayofepoch(const datetime_t *dt)
+ {
+@@ -460,3 +489,23 @@
+ 	}
+ 	return w;
+ }
++
++int 
++dt_orderofmonth( const datetime_t *dt, const direction_t direction)
++{
++	datetime_t	temp_dt = DT_INIT;
++	int		temp_int;
++	
++	switch (direction) {
++		case DT_FORWARD:
++			dt_setnthwday(&temp_dt, dt->year, dt->mon, 1, dt_dayofweek(dt) );
++			temp_int = (dt->mday - temp_dt.mday)/7;
++			temp_int ++;							//start count at 1, not zero
++			break;
++		case DT_BACKWARD:
++			// not built
++			return false;
++	}
++	return temp_int;	
++}
++

@@ -1,0 +1,88 @@
+--- icap/icap.c.orig	Mon Mar 27 06:12:33 2000
++++ icap/icap.c	Fri Jul  7 17:16:18 2000
+@@ -2,7 +2,7 @@
+  * Libmcal - Modular Calendar Access Library 
+  * Copyright (C) 1999 Mark Musone and Andrew Skalski
+  * 
+- *	#$Id: icap.c,v 1.1.1.1 1999/12/02 08:02:27 zircote Exp $
++ *	#$Id: icap.c,v 1.4 2000/07/07 15:16:18 markie Exp $
+  *
+  * This library is free software; you can redistribute it and/or
+  * modify it under the terms of the GNU Library General Public
+@@ -36,7 +36,7 @@
+ #include "icaproutines.h"
+ 
+ 
+-#define ICAP_VAR "0.3"
++#define ICAP_VAR "0.2"
+ /** ICAP Driver **/
+ #define	DATA_T	struct icap_data
+ #define	DATA	((DATA_T*) stream->data)
+@@ -49,6 +49,7 @@
+ 					const CALADDR *addr, long options);
+ static CALSTREAM*	icap_close(CALSTREAM *stream, long options);
+ static bool		icap_ping(CALSTREAM *stream);
++static bool		icap_create(CALSTREAM *stream, const char *calendar);
+ static bool		icap_search_range(	CALSTREAM *stream,
+ 						const datetime_t *start,
+ 						const datetime_t *end);
+@@ -72,6 +73,7 @@
+ 	icap_open,
+ 	icap_close,
+ 	icap_ping,
++	icap_create,
+ 	icap_search_range,
+ 	icap_search_alarm,
+ 	icap_fetch,
+@@ -243,6 +245,13 @@
+ 
+ 
+ bool
++icap_create(CALSTREAM *stream, const char *calendar)
++{
++	return false;
++}
++
++
++bool
+ icap_search_range(	CALSTREAM *stream,
+ 			const datetime_t *start,
+ 			const datetime_t *end)
+@@ -258,12 +267,12 @@
+ 
+ 	endq = query;
+ 	if (start && dt_hasdate(start)) {
+-		endq += sprintf(endq, " ICAL DTSTART>=%04u%02u%02u",
+-			start->year, start->mon, start->mday);
++		endq += sprintf(endq, " ICAL DTSTART > %04u%02u%02u",
++			start->year, start->mon, start->mday-1);
+ 	}
+ 	if (end && dt_hasdate(end)) {
+-		endq += sprintf(endq, " ICAL DTSTART<=%04u%02u%02u",
+-			end->year, end->mon, end->mday);
++		endq += sprintf(endq, " ICAL DTSTART < %04u%02u%02u",
++			end->year, end->mon, end->mday+1);
+ 	}
+ 	if (endq == query)
+ 		strcpy(query, " ALL");
+@@ -288,7 +297,7 @@
+ 	if (dt_empty(when))
+ 		return false;
+ 
+-	sprintf(query,	"UID SEARCH ALARMING %04u%02u%02uT%02u%02u%02uZ",
++	sprintf(query,	"UID SEARCH COMPONENT VALARM ICAL DTSTART =  %04u%02u%02uT%02u%02u%02uZ",
+ 			when->year, when->mon, when->mday,
+ 			when->hour, when->min, when->sec);
+ 
+@@ -373,9 +382,9 @@
+ {
+ 	char		query[1024];
+ 
+-	if (!icap_begin(DATA->net, "UID REMOVE "))
++	if (!icap_begin(DATA->net, "UID STORE "))
+ 		return false;
+-	sprintf(query, "%lu", id);
++	sprintf(query, "%lu +FLAGS \\Deleted", id);
+ 	if (!icap_opaque(DATA->net, query))
+ 		return false;
+ 	if (icap_end(DATA->net) != ICAP_OK)
