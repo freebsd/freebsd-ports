@@ -18,11 +18,13 @@ DISTFILES=	bash-${PORTVERSION:C/\....$//}.tar.gz
 DISTFILES+=	bash-doc-${PORTVERSION:C/\....$//}.tar.gz
 .endif
 
-PATCH_SITES=	ftp://ftp.cwru.edu/pub/bash/bash-2.05b-patches/ \
+PATCH_SITES=	${MASTER_SITE_GNU} \
+		ftp://ftp.cwru.edu/pub/bash/bash-2.05b-patches/ \
 		${MASTER_SITE_LOCAL}
-PATCH_SITE_SUBDIR=	obrien
+PATCH_SITE_SUBDIR=	bash/bash-2.05b-patches obrien
 PATCHFILES=	bash205b-001 bash205b-002 bash205b-003 bash205b-004 \
 		bash205b-005 bash205b-006 bash205b-007
+#		msg00029.txt msg00031.txt msg00030.txt
 
 MAINTAINER=	obrien@FreeBSD.org
 COMMENT=	The GNU Bourne Again Shell
