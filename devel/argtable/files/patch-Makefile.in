@@ -1,0 +1,13 @@
+--- Makefile.in.orig	Wed Dec 17 10:51:08 2003
++++ Makefile.in	Wed Dec 17 10:51:31 2003
+@@ -34,8 +34,8 @@
+ incldir     = $(prefix)/include
+ libdir      = $(prefix)/lib
+ mandir      = $(prefix)/man/man3
+-docdir      = $(prefix)/share/doc/argtable-2.x
+-exmdir      = $(prefix)/share/doc/argtable-2.x/example
++docdir      = $(prefix)/share/doc/argtable
++exmdir      = $(prefix)/share/examples/argtable
+ 
+ 
+ all:
