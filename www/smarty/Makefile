@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	smarty
-PORTVERSION=	2.3.0
+PORTVERSION=	2.3.1
 CATEGORIES=	www
 MASTER_SITES=	http://smarty.php.net/distributions/ \
 		http://smarty.php.net/distributions/manual/en/:manual
@@ -15,7 +15,7 @@ DISTFILES=	Smarty-${PORTVERSION}${EXTRACT_SUFX}
 DISTFILES+=	Smarty-${PORTVERSION}-docs${EXTRACT_SUFX}:manual
 .endif
 
-MAINTAINER=	corecode@corecode.ath.cx
+MAINTAINER=	ports@FreeBSD.org
 
 RUN_DEPENDS=	php-config:${PORTSDIR}/www/mod_php4
 
