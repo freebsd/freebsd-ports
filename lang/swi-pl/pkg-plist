@@ -1,22 +1,16 @@
 bin/pl
-bin/pl-bite
-bin/plrc
 bin/plld
+bin/plrc
 include/SWI-Prolog.h
 lib/%%DISTNAME%%/bin/%%PERL_ARCH%%/pl
-lib/%%DISTNAME%%/bin/%%PERL_ARCH%%/pl-bite
 lib/%%DISTNAME%%/bin/%%PERL_ARCH%%/plld
 lib/%%DISTNAME%%/bin/%%PERL_ARCH%%/plrc
 lib/%%DISTNAME%%/bin/swipl
-lib/%%DISTNAME%%/man/pl.1
-lib/%%DISTNAME%%/man/plrc.1
-lib/%%DISTNAME%%/man/plld.1
-lib/%%DISTNAME%%/boot/aix_foreign.pl
+lib/%%DISTNAME%%/boot.prc
 lib/%%DISTNAME%%/boot/apply.pl
 lib/%%DISTNAME%%/boot/autoload.pl
 lib/%%DISTNAME%%/boot/bags.pl
 lib/%%DISTNAME%%/boot/dwim.pl
-lib/%%DISTNAME%%/boot/foreign.pl
 lib/%%DISTNAME%%/boot/history.pl
 lib/%%DISTNAME%%/boot/init.pl
 lib/%%DISTNAME%%/boot/list.pl
@@ -33,44 +27,50 @@ lib/%%DISTNAME%%/boot/syspred.pl
 lib/%%DISTNAME%%/boot/toplevel.pl
 lib/%%DISTNAME%%/boot/topvars.pl
 lib/%%DISTNAME%%/boot/writef.pl
+lib/%%DISTNAME%%/include/SWI-Exports
+lib/%%DISTNAME%%/include/SWI-Prolog.h
+lib/%%DISTNAME%%/include/SWI-Stream.h
+lib/%%DISTNAME%%/include/stub.c
 lib/%%DISTNAME%%/library/INDEX.pl
+lib/%%DISTNAME%%/library/MANUAL
 lib/%%DISTNAME%%/library/am_match.pl
 lib/%%DISTNAME%%/library/backcomp.pl
 lib/%%DISTNAME%%/library/bim.pl
 lib/%%DISTNAME%%/library/check.pl
 lib/%%DISTNAME%%/library/ctypes.pl
-lib/%%DISTNAME%%/library/dde.pl
-lib/%%DISTNAME%%/library/dld.pl
+lib/%%DISTNAME%%/library/edinburgh.pl
 lib/%%DISTNAME%%/library/edit.pl
 lib/%%DISTNAME%%/library/emacs_interface.pl
 lib/%%DISTNAME%%/library/explain.pl
 lib/%%DISTNAME%%/library/files.pl
 lib/%%DISTNAME%%/library/gensym.pl
 lib/%%DISTNAME%%/library/help.pl
-lib/%%DISTNAME%%/library/help_index.pl
 lib/%%DISTNAME%%/library/helpidx.pl
+lib/%%DISTNAME%%/library/netscape.pl
 lib/%%DISTNAME%%/library/oset.pl
-lib/%%DISTNAME%%/library/progman.pl
-lib/%%DISTNAME%%/library/qlfutil.pl
-lib/%%DISTNAME%%/library/qp_interface.pl
 lib/%%DISTNAME%%/library/qsave.pl
 lib/%%DISTNAME%%/library/quintus.pl
 lib/%%DISTNAME%%/library/readln.pl
-lib/%%DISTNAME%%/library/registry.pl
-lib/%%DISTNAME%%/library/tty.pl
 lib/%%DISTNAME%%/library/shell.pl
 lib/%%DISTNAME%%/library/shlib.pl
+lib/%%DISTNAME%%/library/statistics.pl
 lib/%%DISTNAME%%/library/system.pl
-lib/%%DISTNAME%%/library/toolkit.pl
-lib/%%DISTNAME%%/library/topvars.pl
-lib/%%DISTNAME%%/library/wise.pl
-lib/%%DISTNAME%%/library/MANUAL
-lib/%%DISTNAME%%/include/SWI-Prolog.h
-lib/%%DISTNAME%%/include/SWI-Exports
-lib/%%DISTNAME%%/include/SWI-Stream.h
-lib/%%DISTNAME%%/include/stub.c
+lib/%%DISTNAME%%/library/threadutil.pl
+lib/%%DISTNAME%%/library/tty.pl
+lib/%%DISTNAME%%/library/url.pl
+lib/%%DISTNAME%%/man/pl.1
+lib/%%DISTNAME%%/man/plld.1
+lib/%%DISTNAME%%/man/plrc.1
 lib/%%DISTNAME%%/runtime/%%PERL_ARCH%%/libpl.a
-lib/%%DISTNAME%%/boot.prc
 lib/%%DISTNAME%%/swipl
-lib/%%DISTNAME%%/README.bin
-lib/%%DISTNAME%%/LICENSE
+@dirrm lib/%%DISTNAME%%/bin/%%PERL_ARCH%%
+@dirrm lib/%%DISTNAME%%/bin
+@dirrm lib/%%DISTNAME%%/boot
+@dirrm lib/%%DISTNAME%%/include
+@dirrm lib/%%DISTNAME%%/lib/%%PERL_ARCH%%
+@dirrm lib/%%DISTNAME%%/lib
+@dirrm lib/%%DISTNAME%%/library
+@dirrm lib/%%DISTNAME%%/man
+@dirrm lib/%%DISTNAME%%/runtime/%%PERL_ARCH%%
+@dirrm lib/%%DISTNAME%%/runtime
+@dirrm lib/%%DISTNAME%%
