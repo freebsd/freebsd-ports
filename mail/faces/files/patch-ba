@@ -1,104 +1,17 @@
---- compface/Makefile.orig	Wed Oct 23 19:28:06 1991
-+++ compface/Makefile	Sat Mar 10 15:38:13 2001
-@@ -19,62 +19,69 @@
- #
- #SYSV           = -DSYSV32
- #--------------------------------------------------------------------------
--# BINDIR, LIBDIR, and MANDIR are expected to be overridden by the
-+# BINDIR, LIBDIR, INCDIR and MANDIR are expected to be overridden by the
- # calling Makefile
- 
- BINDIR		= /usr/local/bin
- LIBDIR		= /usr/local/lib
--MANDIR		= /usr/manl
-+INCDIR		= /usr/local/include
-+MANDIR		= /usr/local/man
- 
- NAME		= compface
- UNNAME		= uncompface
- EXECUTABLE	= $(BINDIR)/$(NAME)
- UNEXECUTABLE	= $(BINDIR)/$(UNNAME)
- LIBNAME		= lib$(NAME).a
--LIBRARY		= $(LIBDIR)/$(LIBNAME)
-+SHLIB_MAJOR	= 1
-+SHLIB_MINOR	= 0
-+LIB		= $(NAME)
-+.if ${PORTOBJFORMAT} == "elf"
-+SOLIB		= lib$(NAME).so.$(SHLIB_MAJOR)
-+.else
-+SOLIB		= lib$(NAME).so.$(SHLIB_MAJOR).$(SHLIB_MINOR)
-+.endif
-+NOPROFILE	= ''
-+LIBRARY		= $(LIBDIR)
- MAN1DIR		= $(MANDIR)/man1
- MAN3DIR		= $(MANDIR)/man3
- OBJECTS		= arith.o file.o compress.o gen.o uncompface.o
- SOURCES		= compface.c uncompface.o arith.c file.c compress.c gen.c \
- 		  cmain.c uncmain.c
-+SRCS		= arith.c file.c compress.c gen.c uncompface.c
- HDRS		= compface.h data.h
- OTHERS		= README $(NAME).1 $(NAME).3 Makefile
- 
--CC		= cc
-+CC		?= cc
- CDEFS		= $(SYSV)
--CCOMP		= -g
--CFLAGS		= $(CDEFS) $(CCOMP)
-+CFLAGS		+= $(CDEFS) $(CCOMP)
- 
--all:		$(NAME) $(UNNAME)
-+all:		lib$(NAME).a $(SOLIB) $(NAME) $(UNNAME) 
- 
--$(NAME) :	cmain.o compface.o $(LIBNAME)
--		$(CC) $(CFLAGS) -o $(NAME) cmain.o compface.o $(LIBNAME)
-+$(NAME) :	cmain.o compface.o
-+		$(CC) $(CFLAGS) -o $(NAME) cmain.o compface.o -L./ -lcompface
- 
- $(UNNAME) :	uncmain.o $(LIBNAME)
--		$(CC) $(CFLAGS) -o $(UNNAME) uncmain.o $(LIBNAME)
--
--$(LIBNAME) :	$(OBJECTS)
--		ar rc $(LIBNAME) $(OBJECTS)
--		-ranlib $(LIBNAME)
-+		$(CC) $(CFLAGS) -o $(UNNAME) uncmain.o -L./ -lcompface
- 
- lint :
- 		lint -abchx $(SOURCES)
- 
- clean :
--		rm -f *.o *.a *.sh core a.out $(NAME) $(UNNAME)
-+		rm -f *.o *po *so *.a *.so.* *.sh core a.out $(NAME) $(UNNAME)
- 
- install :	$(NAME) $(UNNAME) $(LIBNAME)
--		-cp $(NAME) $(EXECUTABLE)
--		strip $(EXECUTABLE)
--		-cp $(UNNAME) $(UNEXECUTABLE)
--		strip $(UNEXECUTABLE)
--		-cp $(NAME).1 $(MAN1DIR)
--		rm -f $(MAN1DIR)/$(UNNAME).1
--		-ln $(MAN1DIR)/$(NAME).1 $(MAN1DIR)/$(UNNAME).1
--		-cp $(LIBNAME) $(LIBRARY)
--		-cp $(NAME).3 $(MAN3DIR)
--		rm -f $(MAN3DIR)/$(UNNAME).3
--		-ln $(MAN3DIR)/$(NAME).3 $(MAN3DIR)/$(UNNAME).3
-+		install -c -s -o bin -m 755 $(NAME) $(EXECUTABLE)
-+		install -c -s -o bin -m 755 $(UNNAME) $(UNEXECUTABLE)
-+		install -c -g bin -o bin -m 444 $(NAME).1 $(MAN1DIR)
-+		-rm -f $(MAN1DIR)/$(UNNAME).1*
-+		ln -fs $(MAN1DIR)/$(NAME).1 $(MAN1DIR)/$(UNNAME).1
-+		install -c -o bin -m 444 $(LIBNAME) $(LIBRARY)
-+		install -c -o bin -m 444 $(SOLIB) $(LIBRARY)
-+		ln -sf $(SOLIB) $(LIBRARY)/lib$(NAME).so
-+		install -c -g bin -o bin -m 444 $(NAME).3 $(MAN3DIR)
-+		rm -f $(MAN3DIR)/$(UNNAME).3*
-+		ln -fs $(MAN3DIR)/$(NAME).3 $(MAN3DIR)/$(UNNAME).3
-+		install -m 444 -o bin -g bin -c compface.h $(INCDIR)
- 
- shar :
- 		shar.script $(OTHERS) $(HDRS) $(SOURCES) > $(NAME).sh
-@@ -88,3 +95,5 @@
- gen.o:		gen.c compface.h data.h
- uncmain.o:	uncmain.c compface.h data.h
- uncompface.o:	uncompface.c compface.h data.h
-+
-+.include <bsd.lib.mk>
+*** faces/Faces.ad.orig	Tue Dec 18 05:11:31 2001
+--- faces/Faces.ad	Sun Mar 17 21:14:05 2002
+***************
+*** 12,17 ****
+  faces.button1clear:		false
+  faces.displayHostname:		false
+  
+! faces.audioSupport:		false
+! faces.audioCommand:		play
+  faces.bellAudioFile:
+--- 12,17 ----
+  faces.button1clear:		false
+  faces.displayHostname:		false
+  
+! faces.audioSupport:		true
+! faces.audioCommand:		rplay
+  faces.bellAudioFile:

@@ -1,0 +1,99 @@
+#
+#  Compface - 48x48x1 image compression and decompression
+#
+#  Copyright (c) James Ashton - Sydney University - June 1990.
+#
+#  Written 11th November 1989.
+#
+#  Permission is given to distribute these sources, as long as the
+#  copyright messages are not removed, and no monies are exchanged.
+#
+#  No responsibility is taken for any errors on inaccuracies inherent
+#  either to the comments or the code of this program, but if reported
+#  to me, then an attempt will be made to fix them.
+
+# SYSV is expected to be overridden by the calling Makefile.
+#--------------------------------------------------------------------------
+#  If you are running on a Unix System V machine, then you should uncomment
+#  the next definition.
+#
+#SYSV           = -DSYSV32
+#--------------------------------------------------------------------------
+# BINDIR, LIBDIR, INCDIR and MANDIR are expected to be overridden by the
+# calling Makefile
+
+BINDIR		= ${PREFIX}/bin
+LIBDIR		= ${PREFIX}/lib
+INCDIR		= ${PREFIX}/include
+MANDIR		= ${PREFIX}/man
+
+NAME		= compface
+UNNAME		= uncompface
+EXECUTABLE	= $(BINDIR)/$(NAME)
+UNEXECUTABLE	= $(BINDIR)/$(UNNAME)
+LIBNAME		= lib$(NAME).a
+SHLIB_MAJOR	= 1
+SHLIB_MINOR	= 0
+LIB		= $(NAME)
+.if ${PORTOBJFORMAT} == "elf"
+SOLIB		= lib$(NAME).so.$(SHLIB_MAJOR)
+.else
+SOLIB		= lib$(NAME).so.$(SHLIB_MAJOR).$(SHLIB_MINOR)
+.endif
+NOPROFILE	= ''
+LIBRARY		= $(LIBDIR)
+MAN1DIR		= $(MANDIR)/man1
+MAN3DIR		= $(MANDIR)/man3
+OBJECTS		= arith.o file.o compress.o gen.o uncompface.o
+SOURCES		= compface.c uncompface.o arith.c file.c compress.c gen.c \
+		  cmain.c uncmain.c
+SRCS		= arith.c file.c compress.c gen.c uncompface.c
+HDRS		= compface.h data.h
+OTHERS		= README $(NAME).1 $(NAME).3 Makefile
+
+CC		?= cc
+CDEFS		= $(SYSV)
+CFLAGS		+= $(CDEFS) $(CCOMP)
+
+all:		lib$(NAME).a $(SOLIB) $(NAME) $(UNNAME)
+
+$(NAME) :	cmain.o compface.o
+		$(CC) $(CFLAGS) -o $(NAME) cmain.o compface.o -L./ -lcompface
+
+$(UNNAME) :	uncmain.o $(LIBNAME)
+		$(CC) $(CFLAGS) -o $(UNNAME) uncmain.o -L./ -lcompface
+
+lint :
+		lint -abchx $(SOURCES)
+
+clean :
+		rm -f *.o *po *so *.a *.so.* *.sh core a.out $(NAME) $(UNNAME)
+
+install :	$(NAME) $(UNNAME) $(LIBNAME)
+		install -c -s -o bin -m 755 $(NAME) $(EXECUTABLE)
+		install -c -s -o bin -m 755 $(UNNAME) $(UNEXECUTABLE)
+		install -c -g bin -o bin -m 444 $(NAME).1 $(MAN1DIR)
+		-rm -f $(MAN1DIR)/$(UNNAME).1*
+		ln -fs $(MAN1DIR)/$(NAME).1 $(MAN1DIR)/$(UNNAME).1
+		install -c -o bin -m 444 $(LIBNAME) $(LIBRARY)
+		install -c -o bin -m 444 $(SOLIB) $(LIBRARY)
+		ln -sf $(SOLIB) $(LIBRARY)/lib$(NAME).so
+		install -c -g bin -o bin -m 444 $(NAME).3 $(MAN3DIR)
+		rm -f $(MAN3DIR)/$(UNNAME).3*
+		ln -fs $(MAN3DIR)/$(NAME).3 $(MAN3DIR)/$(UNNAME).3
+		install -m 444 -o bin -g bin -c compface.h $(INCDIR)
+
+shar :
+		shar.script $(OTHERS) $(HDRS) $(SOURCES) > $(NAME).sh
+		compress $(NAME).sh
+
+arith.o:	arith.c compface.h data.h
+cmain.o:	cmain.c compface.h data.h
+compface.o:	compface.c compface.h data.h
+compress.o:	compress.c compface.h data.h
+file.o:		file.c compface.h data.h
+gen.o:		gen.c compface.h data.h
+uncmain.o:	uncmain.c compface.h data.h
+uncompface.o:	uncompface.c compface.h data.h
+
+.include <bsd.lib.mk>

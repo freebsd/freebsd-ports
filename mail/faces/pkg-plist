@@ -1,38 +1,11 @@
-bin/addxface
-bin/compface
-bin/face_update
 bin/faces
-bin/faces.sendmail
-bin/facesaddr
-bin/facesall
-bin/from.faces
-bin/fs2ikon
-bin/fs2xbm
-bin/icon2ikon
-bin/ikon2icon
-bin/ikon2xbm
-bin/lpqall.faces
-bin/mailq.faces
-bin/mkfacesindex
-bin/newscheck.faces
-bin/newsfrom.faces
-bin/rotary.faces
-bin/rs2icon
+lib/X11/app-defaults/Faces
+bin/compface
 bin/uncompface
-bin/xbm2ikon
-bin/xbmcut48
-bin/xbmsize48
 include/compface.h
 lib/libcompface.a
 lib/libcompface.so
 lib/libcompface.so.1.0
-lib/X11/app-defaults/Faces
+%%APPDEF%%lib/X11/app-defaults/Faces
 share/doc/faces/README
-share/doc/faces/README.kinzler
-share/doc/faces/from.allrc-eg
-share/faces/lib/allrc
-share/faces/machine.tab
-share/faces/people.tab
 @dirrm share/doc/faces
-@dirrm share/faces/lib
-@dirrm share/faces
