@@ -8,4 +8,3 @@
 +#define SCM_SIG_SUSPEND		SIGUSR1
  #define SCM_SIG_RESUME		SIGXCPU
  #endif
- 
