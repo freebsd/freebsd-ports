@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	nut
-PORTVERSION=	0.44.3
+PORTVERSION=	0.45.0
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.exploits.org/nut/release/
 
@@ -54,7 +54,7 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/docs/FAQ ${NDOCDIR}
 	${INSTALL_DATA} ${WRKSRC}/docs/Changes.trust ${NDOCDIR}
 	${INSTALL_DATA} ${WRKSRC}/README ${NDOCDIR}
-	${INSTALL_DATA} ${WRKSRC}/QUICKSTART ${NDOCDIR}
+	${INSTALL_DATA} ${WRKSRC}/INSTALL ${NDOCDIR}
 .endif
 .if defined(CGI)
 	@if ! [ -d ${NCGIDIR} ]; then ${MKDIR} ${NCGIDIR}; fi
