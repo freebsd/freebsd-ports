@@ -8,18 +8,13 @@
 
 PORTNAME=	glrparser
 PORTVERSION=	1.4
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://nlp.fi.muni.cz/projekty/glr/
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A parser works with the GLR(0) algorithm
+COMMENT=	A parser which works with the GLR(0) algorithm
 
 GNU_CONFIGURE=	yes
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 502126
-BROKEN=		"Does not compile with gcc 3.4.2"
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
