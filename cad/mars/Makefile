@@ -7,6 +7,7 @@
 
 PORTNAME=	mars
 PORTVERSION=	2.1
+PORTREVISION=	1
 CATEGORIES=	cad
 MASTER_SITES=	ftp://ftp.cs.umd.edu/pub/sdag/MaRS/
 DISTNAME=	MaRS-${PORTVERSION}
@@ -30,10 +31,6 @@ ALL_TARGET=	depend mars
 MAN1=		mars.1
 
 .include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 501000
-BROKEN=		"Does not compile with recent gcc: needs stdarg.h, not varargs.h"
-.endif
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/mars ${PREFIX}/bin
