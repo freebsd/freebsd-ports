@@ -1,0 +1,22 @@
+This is v2.0 of a Basic Interpreter by Phil J. A. Cockcroft
+earlier versions used to be known as Rabbit Basic.
+
+According to an earlier lisencing document:
+
+===
+This code is being put in the Public Domain since I will soon loose
+network connectivity (I am leaving my job) and I don't particularly want
+to sell it. This system does not contain any proprietary software. All
+the algorithms are original or come from publicly available sources.
+
+There are no licensing restrictions on this code or documentation at
+all. I only ask that you give appropriate credit to the author.
+===
+
+So, there you have it. :)
+
+Satoshi
+asami@freebsd.org
+
+This program was ported to FreeBSD by Julian Stacey (jhs@freebsd.org).
+See README.JHS for more comments from him.
