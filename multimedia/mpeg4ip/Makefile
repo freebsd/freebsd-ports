@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	mpeg4ip
-PORTVERSION=	0.9.8
-PORTREVISION=	1
+PORTVERSION=	0.9.9
 CATEGORIES=	multimedia audio ipv6 net
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -23,7 +22,6 @@ USE_GNOME=	gtk20
 USE_GMAKE=	yes
 USE_LIBTOOL=	yes
 USE_REINPLACE=	yes
-GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--datadir=${DATADIR} \
 		--with-glib-prefix=${LOCALBASE} \
 		--with-gtk-prefix=${X11BASE} \

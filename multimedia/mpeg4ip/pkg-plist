@@ -2,7 +2,6 @@ bin/avi2raw
 bin/avidump
 bin/faac
 bin/gmp4player
-bin/iptv_prog
 bin/lboxcrop
 bin/mp4creator
 bin/mp4dump
@@ -11,7 +10,6 @@ bin/mp4extract
 bin/mp4info
 bin/mp4player
 bin/mp4trackdump
-bin/mp4venc
 bin/rgb2yuv
 bin/xvidenc
 bin/yuvdump
