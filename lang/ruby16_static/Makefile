@@ -7,7 +7,7 @@
 
 PORTNAME=	ruby_static
 PORTVERSION=	${RUBY_PORTVERSION}
-PORTREVISION?=	0
+PORTREVISION?=	1
 CATEGORIES=	lang ruby ipv6
 MASTER_SITES=	# none
 DISTFILES=	# none
@@ -128,7 +128,7 @@ do-extract:
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${RUBY_NAME} ${RUBY_WITH_SUFFIX}_s
 .if ${RUBY_VER} == ${RUBY_DEFAULT_VER}
-	${LN} -fs ruby${_RUBY_SUFFIX}_s ${RUBY_WITHOUT_SUFFIX}_s
+	${LN} -fs ${RUBY_NAME}_s ${RUBY_WITHOUT_SUFFIX}_s
 .endif
 
 .include <bsd.port.post.mk>

@@ -61,10 +61,9 @@ Ruby_Include_MAINTAINER=	knu@FreeBSD.org
 # RUBY_SHLIBVER		- Major version of libruby (see below for current value).
 # RUBY_ARCH		- Set to target architecture name. (e.g. i386-freebsdelf4.3)
 # RUBY_R		- Extra suffix only defined when RUBY_WITH_PTHREAD is defined. (_r)
-# RUBY_SUFFIX		- Suffix for ruby binaries and directories.  ${RUBY_R} or ${_RUBY_SUFFIX}.
-# _RUBY_SUFFIX		- String to be used as RUBY_SUFFIX.  Always ${RUBY_VER:S/.//}${RUBY_R}.
+# RUBY_SUFFIX		- Suffix for ruby binaries and directories (${RUBY_VER:S/.//}${RUBY_R}).
 # RUBY_WITHOUT_SUFFIX	- Always ${LOCALBASE}/bin/ruby.
-# RUBY_WITH_SUFFIX	- Always ${RUBY_WITHOUT_SUFFIX}${_RUBY_SUFFIX}.
+# RUBY_WITH_SUFFIX	- Always ${RUBY_WITHOUT_SUFFIX}${RUBY_SUFFIX}.
 # RUBY_NAME		- Ruby's name with trailing suffix.
 #
 # RUBY_MODNAME		- Set to the module name (default: ${PORTNAME}).
@@ -97,11 +96,7 @@ Ruby_Include_MAINTAINER=	knu@FreeBSD.org
 # RUBY_ELISPDIR		- Installation path for emacs lisp files.
 #
 
-.if ${ARCH} == alpha || ${ARCH} == sparc64 || ${ARCH} == amd64 || ${ARCH} == ia64
 RUBY_DEFAULT_VER?=	1.8
-.else
-RUBY_DEFAULT_VER?=	1.6
-.endif
 
 RUBY_VER?=		${RUBY_DEFAULT_VER}
 
@@ -169,18 +164,12 @@ RUBY_WRKSRC?=		${WRKDIR}/${RUBY_DISTNAME}
 
 RUBY_VERSION_CODE?=	${RUBY_VERSION:S/.//g}
 RUBY_VER=		${RUBY_VERSION:R}
-_RUBY_SUFFIX=		${RUBY_VER:S/.//}${RUBY_R}
-
-.if ${RUBY_VER} == ${RUBY_DEFAULT_VER}
-RUBY_SUFFIX?=		${RUBY_R}
-.else
-RUBY_SUFFIX?=		${_RUBY_SUFFIX}
-.endif
+RUBY_SUFFIX=		${RUBY_VER:S/.//}${RUBY_R}
 
 RUBY_WITHOUT_SUFFIX?=	${LOCALBASE}/bin/ruby
-RUBY_WITH_SUFFIX?=	${RUBY_WITHOUT_SUFFIX}${_RUBY_SUFFIX}
+RUBY_WITH_SUFFIX?=	${RUBY_WITHOUT_SUFFIX}${RUBY_SUFFIX}
 
-RUBY_PKGNAMEPREFIX?=	ruby${RUBY_SUFFIX}-	# could be rb${RUBY_SUFFIX}-
+RUBY_PKGNAMEPREFIX?=	ruby${RUBY_SUFFIX}-
 RUBY_SHLIBVER?=		${RUBY_VER:S/.//}
 
 RUBY_CONFIGURE_ARGS+=	--program-prefix=""
@@ -199,9 +188,7 @@ RUBY_CONFIGURE_ARGS+=	--with-libc_r=no
 RUBY_R=			# none
 .endif
 
-.if !empty(RUBY_SUFFIX)
 RUBY_CONFIGURE_ARGS+=	--program-suffix="${RUBY_SUFFIX}"
-.endif
 
 RUBY_MODNAME?=		${PORTNAME}
 
@@ -250,18 +237,23 @@ PLIST_SUB+=		RUBY_VERSION="${RUBY_VERSION}" \
 			RUBY_VER="${RUBY_VER}" \
 			RUBY_SHLIBVER="${RUBY_SHLIBVER}" \
 			RUBY_ARCH="${RUBY_ARCH}" \
-			_RUBY_SUFFIX="${_RUBY_SUFFIX}" \
 			RUBY_SUFFIX="${RUBY_SUFFIX}" \
 			RUBY_NAME="${RUBY_NAME}" \
 			RUBY_R="${RUBY_R}" \
 			RUBY_DEFAULT_SUFFIX="${RUBY_DEFAULT_SUFFIX}" \
 			${PLIST_RUBY_DIRS:S,DIR="${LOCALBASE}/,DIR=",}
 
-.if ${RUBY_VER} >= 1.8
-PLIST_SUB+=		RUBY18_ONLY=""
-.else
-PLIST_SUB+=		RUBY18_ONLY="@comment "
+.if ${RUBY_VER} >= 1.7
+RUBY18_ONLY=		""
+.elif ${RUBY_VER} >= 1.6
+RUBY16_ONLY=		""
 .endif
+
+RUBY16_ONLY?=		"@comment "
+RUBY18_ONLY?=		"@comment "
+
+PLIST_SUB+=		RUBY16_ONLY=${RUBY16_ONLY} \
+			RUBY18_ONLY=${RUBY18_ONLY}
 
 # require check
 .if defined(RUBY_REQUIRE)

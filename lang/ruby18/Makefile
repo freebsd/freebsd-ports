@@ -7,7 +7,7 @@
 
 PORTNAME=	ruby${RUBY_R}
 PORTVERSION=	${RUBY_PORTVERSION}
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	lang ruby ipv6
 MASTER_SITES=		${MASTER_SITE_RUBY}
 MASTER_SITE_SUBDIR=	${MASTER_SITE_SUBDIR_RUBY}
@@ -53,7 +53,7 @@ STRIP=		# none
 .endif
 
 INSTALLS_SHLIB=	yes
-MAN1=		ruby${_RUBY_SUFFIX}.1
+MAN1=		${RUBY_NAME}.1
 
 LATEST_LINK=	ruby-devel
 
@@ -66,7 +66,7 @@ CONFIGURE_ARGS+=	--enable-ipv6
 .endif
 
 .if ${RUBY_VER} == ${RUBY_DEFAULT_VER}
-MLINKS=		ruby${_RUBY_SUFFIX}.1 ruby${RUBY_R}.1
+MLINKS=		${RUBY_NAME}.1 ruby${RUBY_R}.1
 IF_DEFAULT=	""
 .else
 IF_DEFAULT=	"@comment "
@@ -141,10 +141,10 @@ post-install:
 .endif
 .if ${RUBY_VER} == ${RUBY_DEFAULT_VER}
 # Link just installed "ruby" to "ruby18", etc.
-	${LN} -f ${RUBY_WITHOUT_SUFFIX}${RUBY_R} ${RUBY_WITH_SUFFIX}
-	${LN} -f ${PREFIX}/man/man1/ruby${RUBY_R}.1 ${PREFIX}/man/man1/ruby${_RUBY_SUFFIX}.1
+	${LN} -f ${RUBY_WITH_SUFFIX} ${RUBY_WITHOUT_SUFFIX}${RUBY_R}
+	${LN} -f ${PREFIX}/man/man1/${RUBY_NAME}.1 ${PREFIX}/man/man1/ruby${RUBY_R}.1
 	for f in ${INSTALLED_SCRIPTS}; do \
-		${LN} -f $${f}${RUBY_R} $${f}${_RUBY_SUFFIX}; \
+		${LN} -f $${f}${RUBY_SUFFIX} $${f}${RUBY_R}; \
 	done
 .endif
 	${LDCONFIG} -m ${PREFIX}/lib

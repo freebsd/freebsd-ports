@@ -1,7 +1,7 @@
 %%IF_DEFAULT%%bin/irb%%RUBY_R%%
-bin/irb%%_RUBY_SUFFIX%%
+bin/irb%%RUBY_SUFFIX%%
 %%IF_DEFAULT%%bin/ruby%%RUBY_R%%
-bin/ruby%%_RUBY_SUFFIX%%
+bin/ruby%%RUBY_SUFFIX%%
 lib/lib%%RUBY_NAME%%.so
 lib/lib%%RUBY_NAME%%.so.%%RUBY_SHLIBVER%%
 %%RUBY_ARCHLIBDIR%%/config.h
