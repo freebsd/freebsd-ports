@@ -12,7 +12,7 @@ PORTREVISION=	2
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	http://www.go-mono.com/archive/${PORTVERSION}/
 
-MAINTAINER=	coop9211@uidaho.edu
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GTK+ and GNOME interfaces for the .NET runtime
 
 BUILD_DEPENDS=	mono:${PORTSDIR}/lang/mono

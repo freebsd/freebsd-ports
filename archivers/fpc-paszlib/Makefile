@@ -11,7 +11,7 @@ CATEGORIES=	archivers devel
 MASTER_SITES=	http://www.borgsdemons.com/distfiles/
 PKGNAMEPREFIX=	fpc-
 
-MAINTAINER=	coop9211@uidaho.edu
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Free Pascal unit for native compression IO
 
 BUILD_DEPENDS=	ppc386:${PORTSDIR}/lang/fpc

@@ -20,7 +20,7 @@ PKGNAMEPREFIX=	fpc-
 DISTNAME=	fpc-${PORTVERSION}.ELF
 EXTRACT_SUFX=	.tar
 
-MAINTAINER=	coop9211@uidaho.edu
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Free Pascal interface to interbase
 
 BUILD_DEPENDS=	ppc386:${PORTSDIR}/lang/fpc

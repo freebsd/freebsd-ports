@@ -12,7 +12,7 @@ MASTER_SITES=	# empty
 DISTFILES=	# empty
 EXTRACT_ONLY=	# empty
 
-MAINTAINER=	coop9211@uidaho.edu
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Meta package to install all of the Free Pascal base
 
 RUN_DEPENDS=	fp:${PORTSDIR}/editors/fpc-ide \

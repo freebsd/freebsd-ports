@@ -12,7 +12,7 @@ CATEGORIES=	java lang
 MASTER_SITES=	http://www2.hursley.ibm.com/netrexx/
 DISTNAME=	NetRexx
 
-MAINTAINER=	coop9211@uidaho.edu
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Human-oriented programming language for writing/using Java classes
 
 RUN_DEPENDS=	${LOCALBASE}/bin/rexx:${PORTSDIR}/lang/rexx-imc

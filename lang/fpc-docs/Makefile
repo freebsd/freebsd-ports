@@ -20,7 +20,7 @@ PKGNAMEPREFIX=	fpc-
 DISTNAME=	${PKGNAMEPREFIX}${PORTVERSION}.ELF
 EXTRACT_SUFX=	.tar
 
-MAINTAINER=	coop9211@uidaho.edu
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Free Pascal compiler Adobe Acrobat(tm) documentation
 
 DOCSDIR=	${PREFIX}/share/doc/fpc

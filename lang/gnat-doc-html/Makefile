@@ -21,7 +21,7 @@ MASTER_SITE_SUBDIR=	${PORTVERSION}
 PKGNAMESUFFIX=	-${DOCFORMAT}
 DISTNAME=	gnat-${PORTVERSION}-unx-docs
 
-MAINTAINER=	coop9211@uidaho.edu
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Documentation for the GNAT compiler
 
 WRKSRC=		${WRKDIR}/gnat-${PORTVERSION}-unx-docs

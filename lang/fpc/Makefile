@@ -20,7 +20,7 @@ MASTER_SITE_SUBDIR=	freepascal
 DISTNAME=	${PORTNAME}-${PORTVERSION}.ELF
 EXTRACT_SUFX=	.tar
 
-MAINTAINER=	coop9211@uidaho.edu
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Free Pascal compiler with Turbo, Delphi and other extensions
 
 .include <bsd.port.pre.mk>

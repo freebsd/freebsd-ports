@@ -21,7 +21,7 @@ PKGNAMEPREFIX=	fpc-
 DISTNAME=	fpc-${PORTVERSION}.ELF
 EXTRACT_SUFX=	.tar
 
-MAINTAINER=	coop9211@uidaho.edu
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Free Pascal unit providing interface to gdb
 
 .include <bsd.port.pre.mk>

@@ -15,7 +15,7 @@ MASTER_SITES=	ftp://ftp.easysw.com/pub/cups/windows/ \
 		ftp://ftp3.easysw.com/pub/cups/windows/
 DISTNAME=	${PORTNAME}-5.0rc3
 
-MAINTAINER=	coop9211@uidaho.edu
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The Common UNIX Printing System:  MS Windows client drivers
 
 BUILD_DEPENDS=	bash:${PORTSDIR}/shells/bash2 \
