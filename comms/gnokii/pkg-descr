@@ -1,7 +1,8 @@
-Software to talk to Nokia 3810/3110/8110/6110 cellular phones.  The
-software is under development and is currently not especially useful.
+Gnokii is a tool suite and modem driver for Nokia mobile phones. It currently
+supports most phones from the 3810/8110, 5110/6110, and 2110 series, details
+including bugs specific to each series appear in the files README-3810,
+README-6110 and README-2110 respectively.
 
-WWW: http://multivac.fatburen.org/gnokii/
+WWW: http://www.gnokii.org/
 
-- Staffan Ulfberg
-staffanu@nada.kth.se
+- Anders Nordby <anders@fix.no>

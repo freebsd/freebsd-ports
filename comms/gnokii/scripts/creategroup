@@ -1,0 +1,16 @@
+#!/bin/sh
+
+PATH=/bin:/usr/sbin
+
+GROUP=gnokii
+
+if pw group show "${GROUP}" 2>/dev/null; then
+	echo "You already have a group \"${GROUP}\", so I will use it."
+else
+	if pw groupadd ${GROUP}; then
+		echo "Added group \"${GROUP}\"."
+	else
+		echo "Adding group \"${GROUP}\" failed..."
+		exit 1
+	fi
+fi

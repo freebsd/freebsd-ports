@@ -1,0 +1,11 @@
+--- Docs/sample/gnokiirc.orig	Thu May  3 00:55:27 2001
++++ Docs/sample/gnokiirc	Thu May  3 00:55:36 2001
+@@ -5,7 +5,7 @@
+ [global]
+ 
+ # Set port to the physical serial port used to connect to your phone
+-port = /dev/ttyS0
++port = /dev/cuaa0
+ 
+ # Set model to the model number of your phone
+ model = 6110
