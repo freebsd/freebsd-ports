@@ -51,4 +51,12 @@ CONFIGURE_ARGS+=	--with-drac=${PREFIX}/lib \
 
 MAN8=		teapop.8
 
+post-install:
+	@${ECHO} "		"
+	@${ECHO} "------------------------------------------------------------------------"
+	@${ECHO} "===> Be sure to copy ${LOCALBASE}/etc/teapop.passwd.sample to"
+	@${ECHO} "===> ${LOCALBASE}/etc/teapop.passwd before using teapop"
+	@${ECHO} "------------------------------------------------------------------------"
+	@${ECHO} "		"
+
 .include <bsd.port.mk>
