@@ -10,4 +10,5 @@ share/examples/pgsql/jdbc/README_6.3
 @dirrm share/examples/pgsql/jdbc
 @dirrm share/examples/pgsql
 share/java/classes/postgresql.jar
+@unexec rmdir %D/share/java/classes 2>/dev/null || true
 @unexec rmdir %D/share/java 2>/dev/null || true

@@ -1,5 +1,5 @@
---- interfaces/jdbc/Makefile.orig	Tue Mar 14 16:55:17 2000
-+++ interfaces/jdbc/Makefile	Sun Apr 16 21:16:43 2000
+--- interfaces/jdbc/Makefile.orig	Sun Nov  5 05:03:53 2000
++++ interfaces/jdbc/Makefile	Fri Dec  8 03:16:17 2000
 @@ -10,10 +10,10 @@
  
  FIND		= find
@@ -15,11 +15,3 @@
  RM		= rm -f
  TOUCH		= touch
  
-@@ -40,6 +40,7 @@
- 	@echo To compile, type:
- 	@echo "  $(MAKE) jdbc2"
- 	@echo ------------------------------------------------------------
-+	$(MAKE) jdbc1
- 
- msg:	
- 	@echo ------------------------------------------------------------

@@ -17,13 +17,13 @@ start)
 
 stop)
     [ -x !!PREFIX!!/pgsql/bin/pg_ctl ] && {
-	su -l pgsql -c 'exec !!PREFIX!!/pgsql/bin/pg_ctl -w -m fast stop'
+	exec su -l pgsql -c 'exec !!PREFIX!!/pgsql/bin/pg_ctl -w -m fast stop'
     }
     ;;
 
 status)
     [ -x !!PREFIX!!/pgsql/bin/pg_ctl ] && {
-	su -l pgsql -c 'exec !!PREFIX!!/pgsql/bin/pg_ctl status'
+	exec su -l pgsql -c 'exec !!PREFIX!!/pgsql/bin/pg_ctl status'
     }
     ;;
 

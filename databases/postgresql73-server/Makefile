@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	postgresql
-PORTVERSION=	7.0.2
+PORTVERSION=	7.0.3
 CATEGORIES=	databases
 MASTER_SITES=	ftp://ftp.postgresql.org/pub/%SUBDIR%/ \
 		ftp://ftp.de.postgresql.org/%SUBDIR%/ \
@@ -22,59 +22,12 @@ DIST_SUBDIR=	postgresql
 
 MAINTAINER=	girgen@partitur.se
 
+BUILD_DEPENDS=	autoconf:${PORTSDIR}/devel/autoconf
+
 Y2K=		http://www.postgresql.org/y2k.html
 
 INSTALLS_SHLIB=	YES
 LDCONFIG_DIRS=	%%PREFIX%%/pgsql/lib
-BUILD_DEPENDS=	autoconf:${PORTSDIR}/devel/autoconf
-
-.if defined(KRB5_HOME) && exists(${KRB5_HOME})
-CONFIGURE_KRB=	--with-krb5=${KRB5_HOME} \
-		--with-krb-keytab=FILE:${PREFIX}/pgsql/etc/keytab
-.endif
-
-# if you want to use the tcl/tk frontend pgaccess, then you need to build
-# postgresql with tcl support by typing: make -DWITH_TCL
-.if defined(WITH_TCL)
-TCL_INCDIR=	${LOCALBASE}/include/tcl8.3
-TK_INCDIR=	${LOCALBASE}/include/tk8.3
-MAKE_ENV=	TCL_INCDIR=${TCL_INCDIR}
-CONFIGURE_ENV=	WISH=${LOCALBASE}/bin/wish8.3
-LIB_DEPENDS=	tcl83.1:${PORTSDIR}/lang/tcl83 \
-		tk83.1:${PORTSDIR}/x11-toolkits/tk83
-CONFIGURE_TCL=	--with-tcl --with-tclconfig="${LOCALBASE}/lib/tcl8.3 ${LOCALBASE}/lib/tk8.3"
-.endif
-
-# if you want to disable the multibyte support, type:
-#   make -DWITHOUT_MULTIBYTE
-#
-# if you want to set the default encoding for the multibyte support, type:
-#   make DEFAULT_ENCODING=<encoding>
-# where <encoding> is one of these:
-#   SQL_ASCII   LATIN1      LATIN2      LATIN3      LATIN4      LATIN5
-#   EUC_JP      EUC_CN      EUC_KR      EUC_TW      KOI8
-#   UNICODE     MULE_INTERNAL           WIN         ALT
-.if defined(WITHOUT_MULTIBYTE)
-CONFIGURE_MULTIBYTE=	# none
-.elif defined(DEFAULT_ENCODING)
-CONFIGURE_MULTIBYTE=	--enable-multibyte="${DEFAULT_ENCODING}"
-.else
-CONFIGURE_MULTIBYTE=	--enable-multibyte
-.endif
-.if defined(WITH_PERL)
-CONFIGURE_PERL=		--with-perl
-.endif
-.if defined(WITH_ODBC)
-CONFIGURE_ODBC=		--with-odbc
-.endif
-
-# if you want jdbc, type make -DWITH_JDBC
-# Honors JAVA_HOME if you have it set, and don't want the dependency.
-.if defined(WITH_JDBC)
-JAVA_HOME?=	${LOCALBASE}/jdk1.1.8
-BUILD_DEPENDS=	${JAVA_HOME}/bin/javac:${PORTSDIR}/java/jdk
-SCRIPTS_ENV+=	JAVA_HOME=${JAVA_HOME}
-.endif
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/src
 DOCDIR=		${WRKDIR}/${DISTNAME}/doc
@@ -86,11 +39,6 @@ CONFIGURE_ARGS=	--prefix=${PREFIX}/pgsql \
 		--enable-locale \
 		--with-template=`uname -s | ${TR} '[A-Z]' '[a-z]'` \
 		--with-includes="${PREFIX}/include ${TCL_INCDIR} ${TK_INCDIR}" \
-		${CONFIGURE_KRB} \
-		${CONFIGURE_TCL} \
-		${CONFIGURE_MULTIBYTE} \
-		${CONFIGURE_PERL} \
-		${CONFIGURE_ODBC} \
 		--with-libraries=${PREFIX}/lib
 
 MAN1=		createdb.1 createlang.1 createuser.1 dropdb.1 droplang.1 \
@@ -117,49 +65,20 @@ MANL=		abort.l alter_group.l alter_table.l alter_user.l \
 
 MANPREFIX=	${PREFIX}/pgsql
 
-pre-fetch:
-	@${ECHO_MSG} "To install and run postgresql you need to compile kernel with:"
-	@${ECHO_MSG} "    options    \"SYSVSHM, SYSVSEM, SYSVMSG\""
-.if !defined(WITH_TCL)
-	@${ECHO_MSG} "To build the \"PostgreSQL to Tcl interface library\", libpgtcl, type:"
-	@${ECHO_MSG} "    make -DWITH_TCL"
-.else
-	@${ECHO_MSG} "Building PostgreSQL with \"libpgtcl\"."
+SCRIPTS_ENV=	WRKDIRPREFIX="${WRKDIRPREFIX}" \
+		WRKDIR="${WRKDIR}" \
+		FILESDIR="${FILESDIR}" \
+		TOUCH="${TOUCH}" \
+		MKDIR="${MKDIR}" \
+		NO_OPENSSL="${NO_OPENSSL}" \
+		DISTNAME="${DISTNAME}"
+
+.if exists(${WRKDIRPREFIX}${.CURDIR}/Makefile.inc)
+.include "${WRKDIRPREFIX}${.CURDIR}/Makefile.inc"
 .endif
-.if !defined(WITHOUT_MULTIBYTE)
-	@${ECHO_MSG} "To disable multibyte support, type:"
-	@${ECHO_MSG} "    make -DWITHOUT_MULTIBYTE"
-.if !defined(DEFAULT_ENCODING)
-	@${ECHO_MSG} "To set the default encoding for the multibyte support, type:"
-	@${ECHO_MSG} "    make DEFAULT_ENCODING=<encoding>"
-	@${ECHO_MSG} "where <encoding> is one of these:"
-	@${ECHO_MSG} "    SQL_ASCII   LATIN1      LATIN2      LATIN3      LATIN4      LATIN5"
-	@${ECHO_MSG} "    EUC_JP      EUC_CN      EUC_KR      EUC_TW      KOI8"
-	@${ECHO_MSG} "    UNICODE     MULE_INTERNAL           WIN         ALT"
-.else
-	@${ECHO_MSG} "The default encoding is '${DEFAULT_ENCODING}'."
-.endif
-.else
-	@${ECHO_MSG} "Building PostgreSQL without multibyte support."
-.endif
-.if !defined(WITH_JDBC)
-	@${ECHO_MSG} "To build Java (JDBC) support, type:"
-	@${ECHO_MSG} "    make -DWITH_JDBC"
-.else
-	@${ECHO_MSG} "Building PostgreSQL with \"postgresql.jar\"."
-.endif
-.if !defined(WITH_PERL)
-	@${ECHO_MSG} "To build Perl interface and pl/Perl interpreter:"
-	@${ECHO_MSG} "    make -DWITH_PERL"
-.else
-	@${ECHO_MSG} "Building PostgreSQL with \"pl/Perl\"."
-.endif
-.if !defined(WITH_ODBC)
-	@${ECHO_MSG} "To build the ODBC driver package:"
-	@${ECHO_MSG} "    make -DWITH_ODBC"
-.else
-	@${ECHO_MSG} "Building PostgreSQL with ODBC Drivers."
-.endif
+
+pre-extract:
+	@ ${SETENV} ${SCRIPTS_ENV} ${SH} ${SCRIPTDIR}/configure.postgresql
 
 post-patch:
 	@ ${MV} ${WRKSRC}/template/freebsd ${WRKSRC}/template/freebsd.orig
@@ -180,16 +99,8 @@ pre-configure:
 
 post-build:
 .if defined(WITH_JDBC)
-	@ cd ${WRKSRC}/interfaces/jdbc && ${GMAKE}
-.if !defined(NOPORTDOCS)
-	@ cd ${WRKSRC}/interfaces/jdbc && ${GMAKE} examples
+	@ ${GMAKE} -C ${WRKSRC}/interfaces/jdbc jdbc${JAVAVERSION}
 .endif
-.endif
-	@ ${ECHO} "------------------------------------------------------------"
-	@ ${ECHO} "Dump existing databases, before installing new db version !!"
-	@ ${ECHO} "Detailed instructions, see"
-	@ ${ECHO} "${WRKDIR}/${DISTNAME}/INSTALL"
-	@ ${ECHO} "------------------------------------------------------------"
 
 pre-install:
 .if defined(PACKAGE_BUILDING)
@@ -197,53 +108,54 @@ pre-install:
 .endif
 	@ ${MKDIR} ${PREFIX}/pgsql
 	@ ${SETENV} ${MAKE_ENV} perl ${SCRIPTDIR}/createuser
+.if !defined(BATCH)
+	@ ${SED} -e "s#%%WRKDIR%%#${WRKDIR}#; s#%%DISTNAME%%#${DISTNAME}#" \
+	< ${FILESDIR}/pre-install-notes | more -e
+.endif
 
 post-install:
 .if defined(NOPORTDOCS)
-	@ ( cd ${DOCDIR}; ${GMAKE} man )
+	@ ${GMAKE} -C ${DOCDIR} man
 .else
-	@ ( cd ${DOCDIR}; ${GMAKE} install )
+	@ ${GMAKE} -C ${DOCDIR} install
+	${INSTALL_MAN} ${WRKDIR}/${DISTNAME}/doc/FAQ* ${PREFIX}/share/doc/pgsql
+	${INSTALL_MAN} ${WRKDIR}/${DISTNAME}/doc/README* ${PREFIX}/share/doc/pgsql
+	${INSTALL_MAN} ${WRKDIR}/${DISTNAME}/doc/TODO ${PREFIX}/share/doc/pgsql
+#	${INSTALL_MAN} ${WRKDIR}/${DISTNAME}/doc/*ps.gz ${PREFIX}/share/doc/pgsql
+	@ ${CAT} ${PKGDIR}/pkg-plist.doc >> ${TMPPLIST}
 .endif
 	@ if [ ! -f ${PREFIX}/pgsql/.profile ]; then \
-		${ECHO} "PATH=${PATH}:${PREFIX}/pgsql/bin" \
+		${SED} 's|%%PREFIX%%|${PREFIX}|g' \
+			< ${FILESDIR}/dot.profile.in \
 			> ${PREFIX}/pgsql/.profile; \
-		${ECHO} "MANPATH=${MANPATH}:${PREFIX}/pgsql/man" \
-			>> ${PREFIX}/pgsql/.profile; \
-		${ECHO} "PGLIB=${PREFIX}/pgsql/lib" \
-			>> ${PREFIX}/pgsql/.profile; \
-		${ECHO} "# note: PGDATA overwrites the -D startup option" \
-			>> ${PREFIX}/pgsql/.profile; \
-		${ECHO} "PGDATA=${PREFIX}/pgsql/data" \
-			>> ${PREFIX}/pgsql/.profile; \
-		${ECHO} "DISPLAY=:0" \
-			>> ${PREFIX}/pgsql/.profile; \
-		${ECHO} "export PATH MANPATH PGLIB PGDATA DISPLAY" \
-			>> ${PREFIX}/pgsql/.profile; \
-		${ECHO} "# if you want to make regression tests use this TZ" \
-			>> ${PREFIX}/pgsql/.profile; \
-		${ECHO} "#TZ=PST8PDT" \
-			>> ${PREFIX}/pgsql/.profile; \
-		${ECHO} "#export TZ" \
-			>> ${PREFIX}/pgsql/.profile; \
 	fi
 	@ ${CHOWN} -R pgsql:pgsql ${PREFIX}/pgsql
 	@ ${CHOWN} root:pgsql ${PREFIX}/pgsql/lib
 	@ ${ECHO} 'Initializing PostgreSQL Databases - this may take a few minutes...'
 	@ ${SETENV} OBJFORMAT=${PORTOBJFORMAT} ${LDCONFIG} -m ${PREFIX}/pgsql/lib
-	@ su -l pgsql -c 'PATH=${PREFIX}/pgsql/bin:${PATH} LD_LIBRARY_PATH=${PREFIX}/pgsql/lib ${PREFIX}/pgsql/bin/initdb --pglib=${PREFIX}/pgsql/lib --pgdata=${PREFIX}/pgsql/data'
+# '-' so we don't fail to create packagelist at this stage,
+# when we already have everything installed on top of previous version
+	-@ su -l pgsql -c 'PATH=${PREFIX}/pgsql/bin:${PATH} ${PREFIX}/pgsql/bin/initdb --pglib=${PREFIX}/pgsql/lib --pgdata=${PREFIX}/pgsql/data'
 	@ ${SED} -e "s=!!PREFIX!!=${PREFIX}=g" < ${FILESDIR}/pgsql.sh.tmpl \
 		> ${PREFIX}/etc/rc.d/pgsql.sh
 	@ ${CHMOD} 554 ${PREFIX}/etc/rc.d/pgsql.sh
 	@ ${CHOWN} root.pgsql ${PREFIX}/etc/rc.d/pgsql.sh
-	@ ${INSTALL_DATA} ${FILESDIR}/post-install-notes ${PREFIX}/pgsql
+	@ ${SED} -e 's#%%PREFIX%%#${PREFIX}#' < ${FILESDIR}/post-install-notes \
+		> ${PREFIX}/pgsql/post-install-notes
 .if defined(WITHOUT_MULTIBYTE)
 	@${CP} ${TMPPLIST} ${TMPPLIST}.nomulti
 	@${GREP} -v pgsql/bin/pg_encoding ${TMPPLIST}.nomulti > ${TMPPLIST}
 .endif
 .if defined(WITH_TCL)
 	@${CP} ${TMPPLIST} ${TMPPLIST}.notcl
-	@${CAT} ${PKGDIR}/pkg-plist.tcl ${TMPPLIST}.notcl > ${TMPPLIST}
+	@${CAT} ${PKGDIR}/${TCL_PLIST} ${TMPPLIST}.notcl > ${TMPPLIST}
 	@${RM} ${TMPPLIST}.notcl
+# Preparing a loadable TCL-package (pkgIndex.tcl)
+# XXX This directory and the single file are not registered in
+# XXX the PLIST, because of different PREFIX.
+	@${MKDIR} ${LOCALBASE}/lib/tcl${WITH_TCL}/Pgtcl1.3
+	@${SED} 's|%%PREFIX%%|${PREFIX}|' < ${FILESDIR}/pkgIndex.tcl.in \
+		> ${LOCALBASE}/lib/tcl${WITH_TCL}/Pgtcl1.3/pkgIndex.tcl
 .endif
 .if defined(WITH_ODBC)
 	@${CP} ${TMPPLIST} ${TMPPLIST}.noodbc
@@ -272,24 +184,18 @@ post-install:
 	@ ${ECHO_MSG} "---------------------------------------------------------"
 	@ ${ECHO_MSG} "Putting jdbc examples into ${PREFIX}/share/examples/pgsql"
 	@ ${ECHO_MSG} "---------------------------------------------------------"
-	@ ${CAT} ${PKGDIR}/pkg-plist.doc >> ${TMPPLIST}
 .endif
-.endif
-.if !defined(NOPORTDOCS)
-	${MKDIR} ${PREFIX}/share/doc/pgsql
-	@ ${GMAKE} -C ${WRKDIR}/${DISTNAME}/doc install
-	${INSTALL_MAN} ${WRKDIR}/${DISTNAME}/doc/FAQ* ${PREFIX}/share/doc/pgsql
-	${INSTALL_MAN} ${WRKDIR}/${DISTNAME}/doc/README* ${PREFIX}/share/doc/pgsql
-	${INSTALL_MAN} ${WRKDIR}/${DISTNAME}/doc/TODO ${PREFIX}/share/doc/pgsql
-#	${INSTALL_MAN} ${WRKDIR}/${DISTNAME}/doc/*ps.gz ${PREFIX}/share/doc/pgsql
 .endif
 .if !defined(BATCH)
-	@ more -e ${FILESDIR}/post-install-notes
+	@ more -e ${PREFIX}/pgsql/post-install-notes
 .endif
 .if !defined(DEBUG_FLAGS)
 .for file in ecpg pg_dump pg_id pg_passwd pg_version postgres psql
 	@ strip ${PREFIX}/pgsql/bin/${file}
 .endfor
 .endif
+
+post-clean:
+	@ ${RM} -f ${WRKDIRPREFIX}${.CURDIR}/Makefile.inc
 
 .include <bsd.port.mk>

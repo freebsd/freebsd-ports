@@ -1,0 +1,58 @@
+--- configure.in.orig	Sun Nov  5 05:03:47 2000
++++ configure.in	Mon Dec  4 02:36:15 2000
+@@ -299,13 +299,28 @@
+    [  --with-tcl              build Tcl interfaces and pgtclsh ],
+    [
+ 	case "$withval" in
+-	y | ye | yes)		USE_TCL=true; USE_TK=true; AC_MSG_RESULT(enabled) ;;
++	y | ye | yes)		USE_TCL=true; AC_MSG_RESULT(enabled) ;;
+ 	*)			USE_TCL=; USE_TK=; AC_MSG_RESULT(disabled) ;;
+ 	esac
+    ],
+    [ USE_TCL=; USE_TK=; AC_MSG_RESULT(disabled) ]
+ )
+ 
++dnl We include tk support with tcl unless user says --without-tk
++if test USE_TCL = true
++then
++AC_MSG_CHECKING(setting USE_TK)
++AC_ARG_WITH(
++   tk,
++   [  --without-tk              build Tcl *without* Tk ],
++   [
++	case "$withval" in
++	y | ye | yes)		USE_TK=true; USE_TK=true; AC_MSG_RESULT(enabled) ;;
++	*)			USE_TK=n; AC_MSG_RESULT(disabled) ;;
++	esac
++   ]
++)
++fi
+ export USE_TCL
+ export USE_TK
+ 
+@@ -482,7 +497,7 @@
+ #endif
+ ],
+ 	ELF_SYS=true,
+-[if test "X$elf" = "Xyes"
++[if test "X$PORTOBJFORMAT" = "Xyes"
+ then
+ 	ELF_SYS=true
+ else
+@@ -1248,10 +1263,15 @@
+ 	else
+ 		AC_MSG_RESULT($TCL_CONFIG_SH)
+ 		AC_SUBST(TCL_CONFIG_SH)
++		. ${TCL_CONFIG_SH}
++		AC_SUBST(TCL_LIB_SPEC)
+ 	fi
+ fi
+ 
+-USE_TK=$USE_TCL		# If TCL is disabled, disable TK
++USE_TK=${USE_TK:=$USE_TCL}	# If TCL is disabled, disable TK
++				# otherwise -- enable unless explicitly
++				# disabled
++
+ 
+ dnl Check for Tk configuration script tkConfig.sh
+ if test "$USE_TK" = true
