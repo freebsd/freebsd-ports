@@ -1,7 +1,6 @@
 bin/gentoo
 etc/gentoogtkrc
 etc/gentoorc
-lib/charset.alias
 %%PORTDOCS%%share/doc/gentoo/BUGS
 %%PORTDOCS%%share/doc/gentoo/CONFIG-CHANGES
 %%PORTDOCS%%share/doc/gentoo/CREDITS
@@ -213,7 +212,7 @@ share/gentoo/icons/xbm2.xpm
 share/gentoo/icons/xcf.xpm
 share/gentoo/icons/xpm.xpm
 share/gentoo/icons/xpm2.xpm
-share/locale/locale.alias
+share/locale/pl/LC_MESSAGES/gentoo.mo
 share/locale/sv/LC_MESSAGES/gentoo.mo
 @dirrm share/gentoo/icons
 @dirrm share/gentoo
