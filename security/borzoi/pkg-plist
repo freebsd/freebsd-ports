@@ -1,7 +1,9 @@
 bin/borzoi
 include/borzoi.h
+include/borzoi_math.h
 include/borzoi_util.h
-include/fips186_2.h
+include/mpi.h
+include/nist_curves.h
 include/rijndael-alg-fst.h
 include/rng.h
 lib/libborzoi.a
