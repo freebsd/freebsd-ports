@@ -28,8 +28,10 @@ do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/contrib/todayhns/todayhns ${PREFIX}/bin/todayhns
 
 post-install:
-	@cd ${WRKSRC} && find . -type f -o -type l | sed 's,^\.,share/${PORTNAME},' | sort >> ${TMPPLIST}
-	@cd ${WRKSRC} && find . -type d | sed 's,^\.,@dirrm share/${PORTNAME},' | sort -r >> ${TMPPLIST}
+	@cd ${WRKSRC} && ${FIND} . -type f -o -type l | \
+		sed 's,^\.,share/${PORTNAME},' | sort >> ${TMPPLIST}
+	@cd ${WRKSRC} && ${FIND} . -type d | \
+		sed 's,^\.,@dirrm share/${PORTNAME},' | sort -r >> ${TMPPLIST}
 	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>

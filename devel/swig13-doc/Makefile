@@ -25,7 +25,9 @@ do-build:
 
 do-install:
 	${MKDIR} ${DOCSDIR}
-	cd ${WRKSRC} && find Examples Doc -type d -exec ${INSTALL} -d ${DOCSDIR}/{} \;
-	cd ${WRKSRC} && find Examples Doc -type f -exec ${INSTALL_DATA} {} ${DOCSDIR}/{} \;
+	cd ${WRKSRC} && ${FIND} Examples Doc -type d \
+		-exec ${INSTALL} -d ${DOCSDIR}/{} \;
+	cd ${WRKSRC} && ${FIND} Examples Doc -type f \
+		-exec ${INSTALL_DATA} {} ${DOCSDIR}/{} \;
 
 .include <bsd.port.mk>

@@ -29,7 +29,7 @@ BROKEN=         "Does not build"
 .endif
 
 post-extract:
-	find ${WRKSRC} -name CVS | xargs ${RM} -rf
+	${FIND} ${WRKSRC} -name CVS | ${XARGS} ${RM} -rf
 
 post-install:
 	@echo

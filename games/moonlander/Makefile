@@ -43,6 +43,7 @@ do-install:
 .endfor
 
 post-install:
-	@find ${PREFIX}/share/moonlander -type f -print0 |xargs -0 ${CHMOD} 444
+	@${FIND} ${PREFIX}/share/moonlander -type f -print0 | \
+		${XARGS} -0 ${CHMOD} 444
 
 .include <bsd.port.mk>

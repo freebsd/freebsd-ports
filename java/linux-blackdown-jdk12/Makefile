@@ -37,7 +37,7 @@ CPIO?=		/usr/bin/cpio
 
 post-patch:
 	${FIND} ${WRKSRC} \( -name '*.orig' -o -name '.*.orig' \) -print \
-	  | xargs ${RM} -f
+	  | ${XARGS} ${RM} -f
 
 do-install:
 	${MKDIR} ${APP_HOME}

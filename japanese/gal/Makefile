@@ -14,6 +14,6 @@ MAINTAINER=	ports@FreeBSD.org
 
 post-patch:
 	perl -pi -e  's/gdk_font_load(\s)\(.*\)/gdk_fontset_load$$1\("-misc-fixed-medium-r-normal--14-*-*-*-*-*-*-*"\)/' \
-		`find ${WRKSRC} -name "*.c" -print`
+		`${FIND} ${WRKSRC} -name "*.c" -print`
 
 .include "${MASTERDIR}/Makefile"

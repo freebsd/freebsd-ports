@@ -46,7 +46,7 @@ post-install:
 	@ ${INSTALL_DATA} ${WRKSRC}/doc/* ${DOCSDIR}
 	@ ${MKDIR} ${EXAMPLESDIR}
 	@ ${RMDIR} ${WRKSRC}/example/aln 2>/dev/null || ${TRUE}
-	@ cd ${WRKSRC}/example && find * \
+	@ cd ${WRKSRC}/example && ${FIND} * \
 	  | cpio --quiet -pdum -R ${SHAREOWN}:${SHAREGRP} ${EXAMPLESDIR}
 	@ ${SED} -e 's#%%DATADIR%%#${DATADIR}#' ${.CURDIR}/pkg-message \
 	  > ${PKGMESSAGE}

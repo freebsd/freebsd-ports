@@ -19,7 +19,7 @@ WRKSRC=	${WRKDIR}/${PORTNAME}
 NO_BUILD=	YES
 
 post-extract:
-	find ${WRKSRC} -name '*~' -delete
+	${FIND} ${WRKSRC} -name '*~' -delete
 
 do-install:
 	(\

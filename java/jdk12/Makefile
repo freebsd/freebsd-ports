@@ -146,8 +146,9 @@ post-build:
 		done; \
 	done
 	for dir in ${JDKIMAGEDIR} ${JREIMAGEDIR}; do \
-		find $${dir} -type  f | xargs file | ${GREP} 'not stripped$$' | \
-			${SED} 's|:.*$$||' | xargs strip; \
+		${FIND} $${dir} -type  f | ${XARGS} file | \
+			${GREP} 'not stripped$$' | \
+			${SED} 's|:.*$$||' | ${XARGS} strip; \
 	done
 
 .if !defined(NODEBUG)

@@ -83,7 +83,7 @@ pre-configure:
 	@cd ${WRKSRC}/ac-helpers && ${RM} -f install-sh mkinstalldirs missing
 	@${RM} -f ${WRKSRC}/configure.ac
 	@cd ${WRKSRC} && ./autogen.sh && ${TRUE}
-	@${FIND} ${WRKSRC} -name GNUmakefile.in | xargs ${REINPLACE_CMD} -e \
+	@${FIND} ${WRKSRC} -name GNUmakefile.in | ${XARGS} ${REINPLACE_CMD} -e \
 		's|[(]libdir[)]/@PACKAGE@|(datadir)/@PACKAGE@|g ; \
 		 s|[(]libdir[)]/bonobo/servers|(prefix)/libdata/bonobo/servers|g; \
 		 s|@DEFS@|-I${WRKSRC}/../libiconv/include @DEFS@|g' && ${TRUE}

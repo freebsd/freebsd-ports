@@ -41,7 +41,7 @@ IGNORE=You must manually fetch the Sun Java 2 Standard Edition SDK ${JDK_VERSION
 .endif
 
 post-patch:
-	@${FIND} ${WRKSRC} -name '*.orig' -print | xargs ${RM} -f
+	@${FIND} ${WRKSRC} -name '*.orig' -print | ${XARGS} ${RM} -f
 
 do-install:
 	@${ECHO_CMD} -n ">> Creating destination directory ${APP_HOME}..."

@@ -31,7 +31,7 @@ BIN_FILES=	altair h316 ibm1130 pdp11 pdp8 \
 
 pre-patch:
 	@${MKDIR} ${WRKSRC}/BIN
-	@for i in ${WRKSRC}/makefile `find ${WRKSRC} -name "*.[hc]"`; do \
+	@for i in ${WRKSRC}/makefile `${FIND} ${WRKSRC} -name "*.[hc]"`; do \
 		${CAT} $$i | ${TR} -d '\r' > $$i.new; \
 		${MV} $$i.new $$i; \
 	done

@@ -40,7 +40,7 @@ MAN8=	astat.8 autoupdateconfig.pl.8 cardusage.8 checkenv.pl.8 chknavig.8 \
 	search.8 sgateway.8 siteadmin.pl.8 sortsuffix.8
 
 pre-install:
-	find ${WRKSRC} \( -name \*.orig -o -name \*~ \) -exec ${RM} \{} \;
+	${FIND} ${WRKSRC} \( -name \*.orig -o -name \*~ \) -exec ${RM} \{} \;
 
 post-install:
 	${LN} -sf ${PREFIX}/ftpsearch/bin/gateway ${PREFIX}/bin/ftpsearch

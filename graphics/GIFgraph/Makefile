@@ -24,6 +24,6 @@ PERL_CONFIGURE=	YES
 MAN3=		GIFgraph.3 GIFgraph::colour.3
 
 post-patch:
-	find ${WRKSRC} -name '*.orig' -delete
+	${FIND} ${WRKSRC} -name '*.orig' -delete
 
 .include <bsd.port.mk>

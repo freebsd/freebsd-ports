@@ -45,7 +45,7 @@ post-build:
 
 post-install:
 	@ ${MKDIR} ${FNORB_DIR}/script
-	@ cd ${WRKSRC} && find *.py *.pyc *.pyo compiler cos orb parser \
+	@ cd ${WRKSRC} && ${FIND} *.py *.pyc *.pyo compiler cos orb parser \
 	  script/*.py script/*.pyc script/*.pyo \! -name \*.orig \
 	  | ${CPIO} ${BINOWN}:${BINGRP} ${FNORB_DIR}
 	@ ${MKDIR} ${PREFIX}/bin
@@ -56,10 +56,10 @@ post-install:
 	  ${PREFIX}/etc/fnorb.cfg.sample
 .if !defined(NOPORTDOCS)
 	@ ${MKDIR} ${EXAMPLESDIR}
-	@ cd ${WRKSRC}/examples && find * \
+	@ cd ${WRKSRC}/examples && ${FIND} * \
 	  | ${CPIO} ${SHAREOWN}:${SHAREGRP} ${EXAMPLESDIR}
 	@ ${MKDIR} ${DOCSDIR}
-	@ cd ${WRKSRC}/doc && find . \
+	@ cd ${WRKSRC}/doc && ${FIND} . \
 	  | ${CPIO} ${SHAREOWN}:${SHAREGRP} ${DOCSDIR}
 	@ ${CHMOD} -R u-x ${DOCSDIR} && ${CHMOD} -R u+X ${DOCSDIR}
 .for file in ANNOUNCE CHANGES README LICENSE.HTML

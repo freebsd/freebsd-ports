@@ -24,7 +24,7 @@ DOCDIR=${PREFIX}/share/doc/ccdoc
 
 pre-patch:
 	@${ECHO} "Stripping ^M from all the files..."
-	@find ${WRKSRC} -type f | xargs perl -pi -e 's/\r//'
+	@${FIND} ${WRKSRC} -type f | ${XARGS} perl -pi -e 's/\r//'
 
 do-build:
 	(cd ${WRKSRC}/ccdoc_dev/libjdl/src; ${PERL} mk.pl opt)

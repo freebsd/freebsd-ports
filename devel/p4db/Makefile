@@ -49,7 +49,7 @@ post-patch:
 		-e 's,!!PERFORCE_PORT!!,${PERFORCE_PORT},g;' \
 		-e 's,!!FQDN!!,${FQDN},g;' \
 		${WRKSRC}/${PORTNAME}/P4DB.conf.sample
-	find ${WRKSRC}/${PORTNAME} -name '*.orig' -delete
+	${FIND} ${WRKSRC}/${PORTNAME} -name '*.orig' -delete
 
 do-install:
 	${MKDIR} ${P4DB_HOME}/www

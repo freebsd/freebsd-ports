@@ -39,7 +39,7 @@ post-patch:
 		 s|include/qaction.h|include/${QTNAME}/qaction.h|g ; \
 		 s|qtdir/include$$|qtdir/include/${QTNAME}|g ; \
 		 s|-lqt|-l${QTNAME}|g' ${WRKSRC}/configure
-	@find ${WRKSRC} -name "Makefile.in" | xargs ${PERL} -pi -e \
+	@${FIND} ${WRKSRC} -name "Makefile.in" | ${XARGS} ${PERL} -pi -e \
 		's|doc po images|doc images|g ; \
 		 s|prefix\)/qtez/plugins|prefix\)/lib/qtez/plugins|g ; \
 		 s|prefix\)/qtez/img|QTEZ\)/img|g'

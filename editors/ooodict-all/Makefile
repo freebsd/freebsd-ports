@@ -106,7 +106,8 @@ post-install:
 			cd ${PREFIX} && ${FIND} -s ${DICT_DIR} -type f | \
 			    ${GREP} $${LANGUAGE}_$${COUNTRY} >> ${TMPPLIST} ; \
 			cd ${PREFIX} && ${FIND} -s ${DICT_DIR} -type f | \
-			    ${GREP} $${LANGUAGE}_$${COUNTRY} | xargs chmod 755 ; \
+			    ${GREP} $${LANGUAGE}_$${COUNTRY} | \
+			    ${XARGS} chmod 755 ; \
 			${ECHO} "@unexec ${CP} ${DICT_LIST} \
 			    ${DICT_LIST}.$${LANGUAGE}_$${COUNTRY}" >> ${TMPPLIST} ; \
 			${ECHO} "@unexec \
@@ -123,10 +124,10 @@ post-install:
 				${ECHO} "@exec ${ECHO} \"DICT $${LANGUAGE} AT de_AT\" \
 				    >> ${DICT_LIST}" >> ${TMPPLIST} ; \
 				${ECHO_CMD} "DICT $$LANGUAGE AT $${ABRV}" >> ${DICT_LIST_INST} ; \
-				cd ${PREFIX} && ${FIND} -s ${DICT_DIR} -type f | \
-				    ${GREP} $${LANGUAGE}_AT >> ${TMPPLIST} ; \
-				cd ${PREFIX} && ${FIND} -s ${DICT_DIR} -type l | \
-				    ${GREP} $${LANGUAGE}_AT >> ${TMPPLIST} ; \
+				cd ${PREFIX} && ${FIND} -s ${DICT_DIR} -type f \
+				    | ${GREP} $${LANGUAGE}_AT >> ${TMPPLIST} ; \
+				cd ${PREFIX} && ${FIND} -s ${DICT_DIR} -type l \
+				    | ${GREP} $${LANGUAGE}_AT >> ${TMPPLIST} ; \
 				${ECHO} "@unexec ${CP} ${DICT_LIST} \
 				    ${DICT_LIST}.$${LANGUAGE}_AT" >> ${TMPPLIST} ; \
 				${ECHO} "@unexec \
@@ -165,7 +166,7 @@ post-install:
 			cd ${PREFIX} && ${FIND} -s ${DICT_DIR} -type f | \
 			    ${GREP} hyph_$${ABRV}.dic >> ${TMPPLIST} ; \
 			cd ${PREFIX} && ${FIND} -s ${DICT_DIR} -type f | \
-			    ${GREP} hyph_$${ABRV}.dic | xargs chmod 755 ; \
+			    ${GREP} hyph_$${ABRV}.dic | ${XARGS} chmod 755 ; \
 			${ECHO} "@unexec ${CP} ${DICT_LIST} \
 			    ${DICT_LIST}.hyph_$${LANGUAGE}_$${COUNTRY}" >> ${TMPPLIST} ; \
 			${ECHO} "@unexec \

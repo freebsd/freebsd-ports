@@ -28,6 +28,7 @@ CONFIGURE_ENV=	SDL_CONFIG="${SDL_CONFIG}" \
 		LDFLAGS="-L${LOCALBASE}/lib ${PTHREAD_LIBS} -lintl"
 
 pre-patch:
-	@find ${WRKSRC} -name "*.[ch]" | xargs ${PERL} -pi -e 's|<SDL/|<|g'
+	@${FIND} ${WRKSRC} -name "*.[ch]" | \
+		${XARGS} ${PERL} -pi -e 's|<SDL/|<|g'
 
 .include <bsd.port.mk>

@@ -48,7 +48,7 @@ LIB_DEPENDS+=	fam.0:${PORTSDIR}/devel/fam
 .endif
 
 post-patch:
-	@${FIND} ${WRKSRC} -name "*info.in" | xargs ${REINPLACE_CMD} -e \
+	@${FIND} ${WRKSRC} -name "*info.in" | ${XARGS} ${REINPLACE_CMD} -e \
 		's|\@datadir\@/gnome|\@datadir\@|g'
 	@${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|g' \
 		${WRKSRC}/libgnomevfs/Makefile.in \

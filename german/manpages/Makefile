@@ -29,7 +29,7 @@ do-build:
 .endif
 
 pre-install:
-	find ${WRKSRC}/${manpages} -type f -print | \
+	${FIND} ${WRKSRC}/${manpages} -type f -print | \
 		 ${SED} "s%${WRKSRC}/${manpages}%man/${LANG}%" > ${PLIST}
 
 do-install:

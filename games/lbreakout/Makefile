@@ -25,8 +25,8 @@ CONFIGURE_ENV=	LIBS="-lcompat" \
 
 pre-patch:
 	@${PERL} -pi -e 's|-lpthread|${PTHREAD_LIBS}|g' ${WRKSRC}/configure
-	@find ${WRKSRC} \( -name "*.[ch]" -or -name "*.cpp" \) | \
-		xargs ${PERL} -pi -e 's|"SDL/SDL|"SDL|g ; s|<SDL/SDL|<SDL|g'
+	@${FIND} ${WRKSRC} \( -name "*.[ch]" -or -name "*.cpp" \) | \
+		${XARGS} ${PERL} -pi -e 's|"SDL/SDL|"SDL|g ; s|<SDL/SDL|<SDL|g'
 
 pre-install:
 	${MKDIR} /var/games/${PORTNAME}

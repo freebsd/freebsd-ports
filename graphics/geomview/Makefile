@@ -46,7 +46,7 @@ AC_FAKE_FILES=	aclocal.m4 config.h.in stamp-h stamp-h.in
 
 post-configure:
 	cd ${WRKSRC}; ${TOUCH} ${AC_FAKE_FILES}
-	find ${WRKSRC} -name Makefile.in | xargs ${TOUCH}
+	${FIND} ${WRKSRC} -name Makefile.in | ${XARGS} ${TOUCH}
 
 pre-install:
 	${MKDIR} ${PREFIX}/share/geomview

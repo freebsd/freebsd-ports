@@ -24,7 +24,7 @@ SDL_CONFIG=	${LOCALBASE}/bin/sdl11-config
 USE_REINPLACE=	yes
 
 pre-patch:
-	@find ${WRKSRC}/.. -type d -name CVS | ${XARGS} ${RM} -rf
+	@${FIND} ${WRKSRC}/.. -type d -name CVS | ${XARGS} ${RM} -rf
 
 post-patch:
 	@cd ${WRKSRC}/code && ${GMAKE} clean

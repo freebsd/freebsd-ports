@@ -24,8 +24,10 @@ do-install:
 	@${MKDIR} ${PREFIX}/share/xbomber
 	${TAR} -C ${WRKSRC} -cf - bitmaps jungle levels pixmaps sounds | \
 		${TAR} -C ${PREFIX}/share/xbomber --unlink -xf -
-	@find ${PREFIX}/share/xbomber | xargs ${CHOWN} ${SHAREOWN}:${SHAREGRP}
-	@find ${PREFIX}/share/xbomber -type f | xargs ${CHMOD} ${SHAREMODE}
+	@${FIND} ${PREFIX}/share/xbomber | \
+		${XARGS} ${CHOWN} ${SHAREOWN}:${SHAREGRP}
+	@${FIND} ${PREFIX}/share/xbomber -type f | \
+		${XARGS} ${CHMOD} ${SHAREMODE}
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${PREFIX}/share/doc/xbomber
 .for file in README.txt LEVELS.txt SOUND.txt GRAPHICS.txt

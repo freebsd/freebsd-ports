@@ -39,7 +39,7 @@ EXECUTABLES=	ucc ucc-bin ngStatsUT ngStatsUT.exe ngWorldStats \
 
 pre-patch:
 # remove trailing ^M
-	@find -E ${WRKSRC} -type f \
+	@${FIND} -E ${WRKSRC} -type f \
 		-iregex ".*\.(bat|cfg|gam|htm|html|inf|ini|int|lst|pl|pm|sc|sh|scr|txt|url|uhtm)" \
 		-exec ${PERL} -pi -ne 's!\r\n!\n!' {} 1>/dev/null 2>&1 \;
 	@${SED} -e "s!%%LOCALBASE%%!${LOCALBASE}!" \

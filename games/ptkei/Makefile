@@ -19,9 +19,9 @@ RUN_DEPENDS=	${PYTHON_SITELIBDIR}/_tkinter.so:${PORTSDIR}/x11-toolkits/py-tkinte
 USE_PYTHON=	yes
 
 do-build:
-	@find ${WRKSRC} -name "*.pyc" | xargs ${RM}
-	@find ${WRKSRC} \( -type f -or -type l \) | xargs ${CHMOD} 644
-	@find ${WRKSRC} -type d | xargs ${CHMOD} 755
+	@${FIND} ${WRKSRC} -name "*.pyc" | ${XARGS} ${RM}
+	@${FIND} ${WRKSRC} \( -type f -or -type l \) | ${XARGS} ${CHMOD} 644
+	@${FIND} ${WRKSRC} -type d | ${XARGS} ${CHMOD} 755
 	@${PYTHON_CMD} ${PYTHON_LIBDIR}/compileall.py ${WRKSRC} 2>/dev/null
 
 do-install:

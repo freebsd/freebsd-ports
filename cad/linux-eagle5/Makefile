@@ -39,7 +39,7 @@ CPIO?=		/usr/bin/cpio --quiet -pdum -R
 do-install:
 	@${MKDIR} ${DATADIR}
 	@ cd ${WRKSRC} && ${FIND} * -type f -print | ${CPIO} ${BINOWN}:${BINGRP} ${DATADIR}
-	@ cd ${DATADIR} && ${FIND} * -type d -print | xargs ${CHMOD} 0755
+	@ cd ${DATADIR} && ${FIND} * -type d -print | ${XARGS} ${CHMOD} 0755
 	@${LN} -sf ${DATADIR}/bin/eagle ${PREFIX}/bin/eagle
 	@${INSTALL_MAN} ${DATADIR}/man/eagle.1 ${PREFIX}/man/man1
 

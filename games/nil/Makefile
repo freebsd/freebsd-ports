@@ -32,9 +32,9 @@ BROKEN=         "Does not compile (bad C++ code)"
 .endif
 
 pre-patch:
-	@find ${WRKSRC} \( -name "*.[ch]" -or -name "*.cpp" \) | \
-		xargs ${PERL} -pi -e 's|"SDL/|"|g ; s|<SDL/|<|g'
-	@find ${WRKSRC}/.. -type d -name CVS | xargs ${RM} -rf
+	@${FIND} ${WRKSRC} \( -name "*.[ch]" -or -name "*.cpp" \) | \
+		${XARGS} ${PERL} -pi -e 's|"SDL/|"|g ; s|<SDL/|<|g'
+	@${FIND} ${WRKSRC}/.. -type d -name CVS | ${XARGS} ${RM} -rf
 
 post-configure:
 	@${PERL} -pi -e "s|%%PREFIX%%|${PREFIX}|g" ${WRKSRC}/nil/configuration.cpp

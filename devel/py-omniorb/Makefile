@@ -47,7 +47,7 @@ EXAMPLESDIR=	${PREFIX}/share/examples/omniORBpy
 
 pre-configure:
 	@ ${MKDIR} ${CONFIGURE_WRKSRC}
-	@ cd ${OMNIORB_WRKSRC} && find idl | ${CPIO} ${WRKSRC}
+	@ cd ${OMNIORB_WRKSRC} && ${FIND} idl | ${CPIO} ${WRKSRC}
 
 post-patch:
 	@${REINPLACE_CMD} -Ee 's#-pthread|-lc_r#${PTHREAD_LIBS}#' \
@@ -61,7 +61,7 @@ pre-install:
 	@ ${INSTALL_DATA} ${WRKSRC}/doc/omniORBpy/* ${DOCSDIR}/html
 	@ ${INSTALL_DATA} ${WRKSRC}/doc/tex/* ${DOCSDIR}/tex
 	@ ${MKDIR} ${EXAMPLESDIR}
-	@ cd ${WRKSRC}/examples && find . \
+	@ cd ${WRKSRC}/examples && ${FIND} . \
 	  | ${CPIO} -R ${SHAREOWN}:${SHAREGRP} ${EXAMPLESDIR}
 .endif
 

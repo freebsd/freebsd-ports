@@ -28,7 +28,7 @@ USE_GNOME+=	gnomelibs
 .endif
 
 pre-build:
-	find ${WRKSRC} -name Makefile | xargs ${PERL} \
+	${FIND} ${WRKSRC} -name Makefile | ${XARGS} ${PERL} \
 		-pi -e "s@gtk-config@${GTK_CONFIG}@g"
 
 .include <bsd.port.post.mk>
