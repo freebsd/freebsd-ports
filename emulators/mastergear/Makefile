@@ -14,7 +14,7 @@ EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=	nakai@FreeBSD.org
 
-WRKSRC=		${WRKDIR}/SMS
+NO_WRKSUBDIR=	yes
 ONLY_FOR_ARCHS=	i386
 
 NO_BUILD=	yes
@@ -23,7 +23,9 @@ USE_X_PREFIX=	yes
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/mg ${PREFIX}/bin
+.if(!defined(NOPORTDOCS))
 	@${MKDIR} ${PREFIX}/share/mastergear
-	${INSTALL_DATA} ${WRKSRC}/MG.doc ${PREFIX}/share/mastergear
+	${INSTALL_DATA} ${WRKSRC}/MG.html ${PREFIX}/share/mastergear
+.endif
 
 .include <bsd.port.mk>
