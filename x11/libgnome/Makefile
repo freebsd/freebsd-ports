@@ -1,14 +1,14 @@
-# New ports collection makefile for:   gnomelibs
-# Version required:    0.99.3
-# Date created:        17 June 1998
-# Whom:                Yukihiro Nakai <Nakai@technologist.com>
+# New ports collection makefile for:	gnomelibs
+# Version required:			0.99.4
+# Date created:				17 June 1998
+# Whom:					Yukihiro Nakai <Nakai@technologist.com>
 #
-# $Id: Makefile,v 1.25 1999/01/14 16:59:32 vanilla Exp $
+# $Id: Makefile,v 1.26 1999/01/14 18:54:49 vanilla Exp $
 #
 
-DISTNAME=	gnome-libs-0.99.3
-PKGNAME=	gnomelibs-0.99.3
-CATEGORIES=	x11
+DISTNAME=	gnome-libs-0.99.4
+PKGNAME=	gnomelibs-0.99.4
+CATEGORIES=	x11 gnome
 MASTER_SITES=	ftp://ftp.jimpick.com/pub/mirrors/gnome/sources/latest/ \
 		ftp://ftp.geo.net/pub/gnome/sources/latest/ \
 		ftp://gnomeftp.wgn.net/pub/gnome/sources/latest/ \
@@ -29,11 +29,7 @@ LIB_DEPENDS=	gdk_imlib.2:${PORTSDIR}/graphics/imlib \
 		esd.1:${PORTSDIR}/audio/esound
 
 USE_X_PREFIX=	yes
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} <= 300000
 USE_PERL5=	yes
-.endif
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--localstatedir=${PREFIX}/share/gnome \
@@ -43,13 +39,9 @@ CONFIGURE_ARGS=	--localstatedir=${PREFIX}/share/gnome \
 CONFIGURE_ENV=	CPPFLAGS="${CFLAGS} -I${LOCALBASE}/include \
 		-I${X11BASE}/include" \
 		GTK_CONFIG="${X11BASE}/bin/gtk11d-config" \
-		GLIB_CONFIG="${LOCALBASE}/bin/glib11d-config" \
 		LIBS="-L${LOCALBASE}/lib -L${X11BASE}/lib -lxpg4"
-
-pre-build:
-	( cd ${WRKSRC}/support; ${GMAKE} gnomesupport.h )
 
 post-install:
 	@${SETENV} OBJFORMAT=${PORTOBJFORMAT} ${LDCONFIG} -m ${PREFIX}/lib
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
