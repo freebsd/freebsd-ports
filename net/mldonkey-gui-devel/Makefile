@@ -12,6 +12,6 @@ WITHOUT_CORE=	yes
 
 COMMENT=	A OCAML/GTK GUI for the MLdonkey peer-to-peer network client
 
-MASTERDIR=	${.CURDIR}/../mldonkey
+MASTERDIR=	${.CURDIR}/../mldonkey-devel
 
 .include "${MASTERDIR}/Makefile"
