@@ -16,6 +16,7 @@
     SUBDIR += gdesklets-weather
     SUBDIR += gkrellmearth
     SUBDIR += gkrellmoon
+    SUBDIR += gkrellmoon2
     SUBDIR += gkrellmseti
     SUBDIR += gkrellsun
     SUBDIR += glunarclock

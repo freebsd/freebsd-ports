@@ -1,0 +1,7 @@
+gkrellmoon is a moon clock plugin for Gkrellm2. This plugin is based
+upon the glunarclock and wmMoonClock applications.
+
+The port is based on the original gkrellmoon port for Grellm1 by Patrick Li.
+
+WWW: http://gkrellmoon.sourceforge.net/
+Author:	Dale P. Smith <dsmith@altustech.com>
