@@ -77,8 +77,4 @@ include/quagga/zebra.h
 @dirrm include/quagga
 @dirrm share/examples/quagga
 @dirrm etc/quagga
-@cwd %%RC_DIR%%
-quagga%%RC_SUFX%%
-watchquagga%%RC_SUFX%%
-@cwd %%CWD_TRICK%%
 @unexec rmdir %%LOCALSTATE_DIR%% 2>/dev/null || true
