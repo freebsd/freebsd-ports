@@ -73,6 +73,7 @@
     SUBDIR += nwclient
     SUBDIR += obliterate
     SUBDIR += p5-Quota
+    SUBDIR += p5-Schedule-At
     SUBDIR += p5-Schedule-Cron
     SUBDIR += p5-Schedule-Match
     SUBDIR += p5-SyslogScan

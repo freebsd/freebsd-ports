@@ -1,0 +1,4 @@
+This modules provides an OS independent interface to 'at', the Unix
+command that allows you to execute commands at a specified time.
+
+WWW: http://search.cpan.org/search?dist=Schedule-At
