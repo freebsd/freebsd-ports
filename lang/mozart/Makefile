@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mozart
-PORTVERSION=	1.2.1.20010816
+PORTVERSION=	1.2.3.20011201
 CATEGORIES=	lang tk83
 MASTER_SITES=	ftp://ftp.mozart-oz.org/pub/mozart/${PORTVERSION}/tar/ \
 		ftp://ftp.sics.se/pub/mozart/${PORTVERSION}/tar/
@@ -17,9 +17,7 @@ DISTFILES+=	${MOZART_DOCS}
 
 MAINTAINER=	mathiasp@virtual-earth.de
 
-BROKEN=		"Does not detect bison correctly"
-
-BUILD_DEPENDS=	emacs:${PORTSDIR}/editors/emacs20
+BUILD_DEPENDS=	emacs:${PORTSDIR}/editors/emacs21
 LIB_DEPENDS=	gdbm.2:${PORTSDIR}/databases/gdbm \
 		tk83.1:${PORTSDIR}/x11-toolkits/tk83
 
@@ -36,7 +34,7 @@ USE_XLIB=	yes
 # mozart's configure will not find the right install
 # when configuring as root.
 CONFIGURE_ENV=	INSTALL=${CHMOD}
-CONFIGURE_ARGS=	--prefix=${PREFIX}/lib/oz  --disable-doc \
+CONFIGURE_ARGS=	--prefix=${PREFIX}/lib/oz --disable-doc \
 	--with-inc-dir=${LOCALBASE}/include/tcl8.3,${LOCALBASE}/include/tk8.3 \
 	--with-lib-dir=${LOCALBASE}/lib --with-tcl-lib=${LOCALBASE}/lib \
 	--with-tk-lib=${LOCALBASE}/lib \
@@ -52,6 +50,11 @@ pre-extract:
 	@${ECHO}
 	@${ECHO} ----------------------------------------------------
 	@${ECHO}
+
+post-patch:
+	cd ${WRKSRC}/contrib/gtk && autoconf213 -l ${WRKSRC}
+	cd ${WRKSRC}/platform/emulator && autoconf213 -l ${WRKSRC}
+	cd ${WRKSRC}/platform/tools/gump/ozflex && autoconf213 -l ${WRKSRC}
 
 post-install:
 .if !defined(NOPORTDOCS)
