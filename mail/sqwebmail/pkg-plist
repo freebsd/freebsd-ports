@@ -5,9 +5,12 @@ libexec/sqwebmail/authlib/authcustom
 %%AUTHDFLAG%%libexec/sqwebmail/authlib/authdaemon
 %%AUTHDFLAG%%libexec/sqwebmail/authlib/authdaemon.passwd
 %%AUTHDFLAG%%libexec/sqwebmail/authlib/authdaemond
+%%LDAPFLAG%%libexec/sqwebmail/authlib/authdaemond.ldap
+%%LDAPFLAG%%libexec/sqwebmail/authlib/authldap
 %%PGSQLFLAG%%libexec/sqwebmail/authlib/authdaemond.pgsql
 %%AUTHDFLAG%%libexec/sqwebmail/authlib/authdaemond.plain
 %%MYSQLFLAG%%libexec/sqwebmail/authlib/authdaemond.mysql
+%%MYSQLFLAG%%libexec/sqwebmail/authlib/authmysql
 %%VPOPMAILFLAG%%libexec/sqwebmail/authlib/authvchkpw
 libexec/sqwebmail/authlib/authpam
 libexec/sqwebmail/authlib/authsystem.passwd
@@ -22,6 +25,7 @@ libexec/sqwebmail/sqwebmail/reformime
 libexec/sqwebmail/sqwebmail/sqwebmaild
 %%AUTHDFLAG%%share/sqwebmail/authdaemonrc.dist
 share/sqwebmail/authmodulelist
+%%LDAPFLAG%%share/sqwebmail/authldaprc.dist
 %%MYSQLFLAG%%share/sqwebmail/authmysqlrc.dist
 %%PGSQLFLAG%%share/sqwebmail/authpgsqlrc.dist
 %%CACHE%%@unexec %D/share/sqwebmail/cleancache.pl
