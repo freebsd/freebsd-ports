@@ -48,16 +48,16 @@ post-patch:
 		${WRKSRC}/Makefile.in
 
 post-install:
-	@${MKDIR} -p ${PREFIX}/bin
+	@${MKDIR} ${PREFIX}/bin
 	@${INSTALL_SCRIPT} ${WRKSRC}/gnet-config ${PREFIX}/bin/gnet-glib2-config
-	@${MKDIR} -p ${PREFIX}/share/aclocal
+	@${MKDIR} ${PREFIX}/share/aclocal
 	@${INSTALL_DATA} ${WRKSRC}/gnet.m4 ${PREFIX}/share/aclocal/gnet-glib2.m4
 	@${INSTALL_DATA} ${WRKSRC}/gnetconfig.h \
 		${PREFIX}/include/gnet-glib2
-	@${MKDIR} -p ${PREFIX}/libdata/pkgconfig
+	@${MKDIR} ${PREFIX}/libdata/pkgconfig
 	@${INSTALL_DATA} ${WRKSRC}/gnet.pc \
 		${PREFIX}/libdata/pkgconfig/gnet-glib2.pc
-	@${MKDIR} -p ${PREFIX}/man/man1
+	@${MKDIR} ${PREFIX}/man/man1
 	@${INSTALL_DATA} ${WRKSRC}/doc/gnet-config.1 \
 		${PREFIX}/man/man1/gnet-glib2-config.1
 
