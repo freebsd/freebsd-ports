@@ -10,6 +10,7 @@
 
 PORTNAME=	libiodbc
 PORTVERSION=	3.0.5
+PORTREVISION=	1
 CATEGORIES=	databases
 MASTER_SITES=	http://www.iodbc.org/dist/
 
@@ -17,11 +18,19 @@ MAINTAINER=	ebakke@trolltech.com
 
 USE_LIBTOOL=	yes
 USE_GMAKE=	yes
-USE_GNOMENG=	yes
-USE_GNOME=	gtk12
 INSTALLS_SHLIB=	yes
 INIDIR=		${PREFIX}/etc/${PORTNAME}
-CONFIGURE_ARGS=	--with-iodbc-inidir=${INIDIR}
+CONFIGURE_ENV=	LDFLAGS="${PTHREAD_LIBS}"
+CONFIGURE_ARGS=	--with-iodbc-inidir=${INIDIR} --with-pthread
+
+.if !defined(WITHOUT_GUI)
+USE_GNOMENG=	yes
+USE_GNOME=	gtk12
+PLIST_SUB+=	GUI=""
+.else
+CONFIGURE_ARGS+=	--disable-gui
+PLIST_SUB+=	GUI="@comment "
+.endif
 
 post-install:
 	@ ${MKDIR} ${PREFIX}/bin && ${INSTALL_PROGRAM} \
