@@ -17,13 +17,11 @@ MAINTAINER=	ports@FreeBSD.org
 ONLY_FOR_ARCHS=	alpha i386
 
 .ifdef WITHOUT_X11
-MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS}"
 CONFIG_CMD=	Configure
 PLIST_SUB=	WITHOUT_X11="@comment "
 .else
 USE_XLIB=	yes
-MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS} -I${X11BASE}/include" \
-		XLIBS="-L${X11BASE}/lib -lX11"
+CFLAGS+=	-I${X11BASE}/include
 CONFIG_CMD=	X-Configure
 PLIST_SUB=	WITHOUT_X11=
 .endif
@@ -36,9 +34,10 @@ ARCH_NAME=	${ARCH:S/i386/intel/}_${OPSYS:L}
 ICONDIR=	${PREFIX}/lib/${PORTNAME}
 
 pre-patch:
-	@${REINPLACE_CMD} -e 's|^CC|#CC|g ; \
-		 s|^CFLAGS|#CFLAGS|g ; \
-		 s|^XLIBS|#XLIBS|g' ${WRKSRC}/config/unix/${ARCH_NAME}/Makedefs
+	@${REINPLACE_CMD} -e "s|^CC.*|CC=${CC}|g ; \
+		 s|^CFLAGS.*|CFLAGS=${CFLAGS}|g ; \
+		 s|^XLIBS.*|XLIBS=-L${X11BASE}/lib -lX11|g" \
+		${WRKSRC}/config/unix/${ARCH_NAME}/Makedefs
 	@${REINPLACE_CMD} -e 's|/opt/icon|${ICONDIR}|g' ${WRKSRC}/ipl/BuildBin
 
 do-configure:
