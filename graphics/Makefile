@@ -224,6 +224,7 @@
     SUBDIR += opendx
     SUBDIR += opendx-samples
     SUBDIR += opengl-man
+    SUBDIR += openrm
     SUBDIR += ophoto
     SUBDIR += osg
     SUBDIR += osgedit
