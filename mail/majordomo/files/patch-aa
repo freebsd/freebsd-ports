@@ -5,7 +5,7 @@
   
  # Put the location of your Perl binary here:
 -PERL = /bin/perl
-+PERL = ${PREFIX}/bin/perl
++PERL = /usr/bin/perl
  
  # What do you call your C compiler?
  CC = cc
