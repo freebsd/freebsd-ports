@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	vtwm
-PORTVERSION=	5.4.6a
+PORTVERSION=	5.4.6b
 PORTREVISION=	0
 CATEGORIES=	x11-wm
 MASTER_SITES=	ftp://ftp.visi.com/users/hawkeyd/X/
 
-MAINTAINER=	bmah@freebsd.org
+MAINTAINER=	ports@freebsd.org
 COMMENT=	Twm with a virtual desktop and optional Motif-like features
 
 USE_IMAKE=	yes
