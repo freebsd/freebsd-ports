@@ -1,0 +1,9 @@
+dnshijacker is a libnet/libpcap based packet sniffer & spoofer. a
+versatile tool, dnshijacker supports tcpdump style filters that allow
+you to specifically target victims. dns answers are forged based on
+entries in a "fabrication table" or by simply forging one answer to all
+requests. a print only mode is also supported, allowing one to simply
+monitor dns traffic. dns hijacker is an excellent tool for network level
+ad blocking / removal.
+
+WWW:	http://pedram.redhive.com/projects.php
