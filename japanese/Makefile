@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.30 1996/05/04 09:01:22 asami Exp $
+# $Id: Makefile,v 1.31 1996/07/10 09:34:49 asami Exp $
 #
 
     SUBDIR += Canna
@@ -36,8 +36,10 @@
     SUBDIR += qkc
     SUBDIR += sed
     SUBDIR += tcl
+    SUBDIR += tcl75
     SUBDIR += tgif
     SUBDIR += tk
+    SUBDIR += tk41
     SUBDIR += xdvi
 
 .include <bsd.port.subdir.mk>
