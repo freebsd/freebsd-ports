@@ -2993,6 +2993,7 @@ ja-netypesv	ports/japanese/netypesv
 ja-newosaka	ports/japanese/newosaka
 ja-ng		ports/japanese/ng
 ja-ng-canna	ports/japanese/ng-canna
+ja-ng-devel	ports/japanese/ng-devel
 ja-ngraph-fonts	ports/japanese/ngraph-fonts
 ja-nkf		ports/japanese/nkf
 ja-nvi-euc-jp	ports/japanese/nvi-euc-jp
