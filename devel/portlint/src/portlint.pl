@@ -17,7 +17,7 @@
 # OpenBSD and NetBSD will be accepted.
 #
 # $FreeBSD$
-# $Id: portlint.pl,v 1.55 2004/06/25 16:03:32 marcus Exp $
+# $Id: portlint.pl,v 1.61 2004/09/01 04:08:34 marcus Exp $
 #
 
 use vars qw/ $opt_a $opt_A $opt_b $opt_C $opt_c $opt_h $opt_t $opt_v $opt_M $opt_N $opt_B $opt_V /;
@@ -40,7 +40,7 @@ $portdir = '.';
 # version variables
 my $major = 2;
 my $minor = 6;
-my $micro = 6;
+my $micro = 7;
 
 sub l { '[{(]'; }
 sub r { '[)}]'; }
@@ -737,7 +737,7 @@ sub checkplist {
 			}
 		}
 
-		if ($_ =~ /.*\.schemas?$/) {
+		if ($_ =~ m|^etc/gconf/schemas/.*\.schemas?$|) {
 			$gconfseen{$_} = $.;
 			$gconfafterinstall{$_}++ if ($gconfinstallseen{$_});
 			$gconfbeforeremove{$_}++ if (!$gconfremoveseen{$_});
@@ -1273,12 +1273,13 @@ sub checkmakefile {
 	my %cmdnames = ();
 	print "OK: checking direct use of command names.\n" if ($verbose);
 	foreach my $i (qw(
-awk basename brandelf cat chmod chown cp cpio dialog dirname echo egrep expr
+awk basename brandelf cat chmod chown cp cpio dialog dirname egrep expr
 false file find gmake grep gzcat ldconfig ln md5 mkdir mv objcopy paste patch
 pax perl printf rm rmdir ruby sed sh sort touch tr which xargs xmkmf
 	)) {
 		$cmdnames{$i} = "\$\{\U$i\E\}";
 	}
+	$cmdnames{'echo'} = '${ECHO_CMD} or ${ECHO_MSG}';
 	$cmdnames{'env'} = '${SETENV}';
 	$cmdnames{'gunzip'} = '${GUNZIP_CMD}';
 	$cmdnames{'gzip'} = '${GZIP_CMD}';
@@ -1304,7 +1305,7 @@ pax perl printf rm rmdir ruby sed sh sort touch tr which xargs xmkmf
 		while ($j =~ /^(.*$i.*)$/gm) {
 			my $curline = $1;
 			my $lineno = &linenumber($`);
-			if ($curline =~ /(^|\s+)[\@\-]{0,2}$i\b/
+			if ($curline =~ /(?:^|\s)[\@\-]{0,2}$i(?:$|\s)/
 				&& $curline !~ /^[A-Z]+_TARGET[?+]?=[^\n]+$i/m
 				&& $curline !~ /^IGNORE(.)?=[^\n]+$i/m
 				&& $curline !~ /^BROKEN(.)?=[^\n]+$i/m
@@ -1761,10 +1762,10 @@ DISTFILES DIST_SUBDIR EXTRACT_ONLY
 				$selfconflict = ($makevar{PKGNAME} =~ /^$conflictre$/);
 			}
 			if ($conflict !~ /(?:[<>=]|[]?*]$)/) {
-				&perror("WARN: Conflict \"$conflict\" specified to narrow. ".
+				&perror("WARN: Conflict \"$conflict\" specified too narrow. ".
 					"You should end it with a wildcard (-[0-9]*).");
 			} elsif ($conflict !~ /[<>=-][^-]*[0-9][^-]*$/) {
-				&perror("WARN: Conflict \"$conflict\" specified to broad. ".
+				&perror("WARN: Conflict \"$conflict\" specified too broad. ".
 					"You should end it with a version number fragment (-[0-9]*).");
 			}
 			if ($selfconflict) {
