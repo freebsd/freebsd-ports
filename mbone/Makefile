@@ -2,7 +2,6 @@
 #
 
     SUBDIR += imm
-    SUBDIR += mbone_vcr
     SUBDIR += nte
     SUBDIR += rat
     SUBDIR += rqm
