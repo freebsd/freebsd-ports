@@ -11,7 +11,7 @@ CATEGORIES=	sysutils net
 MASTER_SITES=	http://www.benzedrine.cx/
 DISTNAME=	${PORTNAME}-${PORTVERSION}
 
-MAINTAINER=	max@love2party.net
+MAINTAINER=	mlaier@freebsd.org
 COMMENT=	Utility to render grafical statistics for pf
 
 .if defined(WITH_GD1)

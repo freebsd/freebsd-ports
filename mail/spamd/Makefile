@@ -11,7 +11,7 @@ CATEGORIES=	mail
 MASTER_SITES=	http://pf4freebsd.love2party.net/
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
-MAINTAINER=	max@love2party.net
+MAINTAINER=	mlaier@freebsd.org
 COMMENT=	Traps spammers with a very slow smtp-login and return 4xx error
 
 .if !defined(BATCH) && !defined(PACKAGE_BUILDING)
