@@ -16,7 +16,6 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		ftp://mirror.cs.wisc.edu/pub/mirrors/ghost/AFPL/gs700/ \
 		ftp://mirror.cs.wisc.edu/pub/mirrors/ghost/AFPL/fonts/
 MASTER_SITE_SUBDIR=	${PORTNAME} gimp-print hpinkjet
-PKGNAMESUFFIX=	-afpl
 
 DISTFILES=	${GS_SOURCES} ${GS_FONTS_STD} ${GS_FONTS_OTHER} \
 		${DECRYPT_PDF} ${HP8XX_DRV} ${HPDJ_SRC} ${PCL3_SRC} \
