@@ -85,7 +85,7 @@ InputExtCheck:: initialize
 	${ECHO} "#endif" >> ${CONFFILE}; \
 	${ECHO} "#define BuildXInputExt YES" >> ${CONFFILE}; \
 	${ECHO_MSG} "   Using BuildXInputExt." )
-.else
+.elif !defined (AlphaArchitecture)
 	@( \
 	${ECHO} "#ifdef JoystickSupport" >> ${CONFFILE}; \
 	${ECHO} "#undef JoystickSupport" >> ${CONFFILE}; \
