@@ -1,7 +1,8 @@
-# $Id: Makefile,v 1.16 1995/10/05 12:36:56 asami Exp $
+# $Id: Makefile,v 1.17 1995/12/02 20:40:30 ache Exp $
 #
 
     SUBDIR += elm
+    SUBDIR += elm+mime
     SUBDIR += elm+pgp
     SUBDIR += metamail
     SUBDIR += mh
