@@ -1,7 +1,13 @@
---- configs/freebsd.h.orig	Wed Jul 29 05:07:27 1998
-+++ configs/freebsd.h	Wed Jul 29 05:07:47 1998
-@@ -12,5 +12,5 @@
- #include <libutil.h>	/* for openpty() */
+--- configs/freebsd.h.orig	Tue Jul  7 00:31:14 1998
++++ configs/freebsd.h	Wed Aug  2 02:53:06 2000
+@@ -7,9 +7,11 @@
+ 
+ #define HAVE_SETENV	/* My machine has setenv() */
+ 
++#define NO_MALLOC_H	/* no <malloc.h>  */
++			/* (has <sys/malloc.h> but not needed) */
+ #define HAVE_BSD_OPENPTY /* BSD type openpty() */
+ /*#include <libutil.h>	/* for openpty() */
  
  #if makefile_parameter
 -SYSLIBS=-lutil
