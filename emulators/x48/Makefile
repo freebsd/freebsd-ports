@@ -3,13 +3,13 @@
 # Date created:         Thu Oct 24 13:10:59 CDT 1996
 # Whom:                 erich@FreeBSD.org
 #
-# $Id: Makefile,v 1.2 1996/11/12 02:17:07 obrien Exp $
+# $Id: Makefile,v 1.3 1996/11/18 10:35:50 asami Exp $
 #
 
 DISTNAME=	x48-0.4.0
 CATEGORIES=	emulators
 MASTER_SITES=	${MASTER_SITE_SUNSITE}
-MASTER_SITE_SUBDIR=	system/Emulators
+MASTER_SITE_SUBDIR=	system/emulators
 
 MAINTAINER=	erich@FreeBSD.org
 
