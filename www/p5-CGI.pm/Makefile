@@ -15,16 +15,22 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	tobez@FreeBSD.org
 
-BUILD_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/File/Spec.pm:${PORTSDIR}/devel/p5-File-Spec
-RUN_DEPENDS=	${BUILD_DEPENDS}
-
 PERL_CONFIGURE=	yes
 
-MAN3=	CGI.3 CGI::Apache.3 CGI::Carp.3 CGI::Cookie.3 CGI::Fast.3 \
-	CGI::Pretty.3 CGI::Push.3 CGI::Switch.3 CGI::Util.3
+MAN3=           CGI.3 CGI::Apache.3 CGI::Carp.3 CGI::Cookie.3 \
+		CGI::Fast.3 CGI::Pretty.3 CGI::Push.3 CGI::Switch.3 \
+		CGI::Util.3
+
 MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 
 pre-patch:
 	@${PERL} -pi -e '$$_ = "" if /INSTALLDIRS|5\.6\.0/' ${WRKSRC}/Makefile.PL
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} < 500601
+BUILD_DEPENDS+=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/File/Spec.pm:${PORTSDIR}/devel/p5-File-Spec
+RUN_DEPENDS+=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/File/Spec.pm:${PORTSDIR}/devel/p5-File-Spec
+.endif
+
+.include <bsd.port.post.mk>
