@@ -12,9 +12,11 @@
 PORTNAME=	fetchmail
 PORTVERSION=	6.2.5
 CATEGORIES=	mail ipv6
-MASTER_SITES=	http://www.catb.org/~esr/fetchmail/ \
-		ftp://ftp.ccil.org/pub/esr/fetchmail/ \
-		ftp://ftp.win.ne.jp/pub/network/mail/fetchmail/
+MASTER_SITES=	http://www.catb.org/~esr/%SUBDIR%/ \
+		ftp://ftp.ayamura.org/pub/%SUBDIR%/ \
+		ftp://ftp.win.jp/pub/%SUBDIR%/ \
+		ftp://ftp.dti.ad.jp/pub/net/mail/%SUBDIR%/
+MASTER_SITE_SUBDIR=	fetchmail
 
 MAINTAINER=	eik@FreeBSD.org
 COMMENT=	Batch mail retrieval utility for IMAP/POP2/POP3/APOP/KPOP/ETRN/ODMR
