@@ -1,5 +1,5 @@
---- Makefile.PL.orig	Sat Aug  5 04:59:22 2000
-+++ Makefile.PL	Thu May 10 06:36:36 2001
+--- Makefile.PL.orig	Wed Jun 19 14:02:59 2002
++++ Makefile.PL	Sat Jun 22 21:25:18 2002
 @@ -3,40 +3,17 @@
  warn "NOTICE: This module requires libgd 1.8.4 or higher (shared library version 4.X).\n";
  
@@ -28,7 +28,7 @@
 -
 -push @LIBS,'-lfreetype' if $TTF;
 -push @LIBS,'-ljpeg' if $JPEG;
--push @LIBS,'-lm' unless $^O eq 'MSWin32';
+-push @LIBS, '-lm' unless $^O eq 'MSWin32';
 -
 -# FreeBSD 3.3 with libgd built from ports croaks if -lXpm is specified 
 -if ($^O ne 'freebsd' && $^O ne 'MSWin32') { 
