@@ -114,6 +114,8 @@ bin/opera
 %%DATADIR%%/styles/user/textonly.css
 %%DATADIR%%/styles/user/userstyle.ini
 %%DATADIR%%/styles/wml.css
+%%GNOME%%share/gnome/apps/Internet/linux-opera.desktop
+%%GNOME%%share/gnome/pixmaps/linux-opera.xpm
 @dirrm %%DATADIR%%/styles/user
 @dirrm %%DATADIR%%/styles
 @dirrm %%DATADIR%%/skin
@@ -128,9 +130,12 @@ bin/opera
 @dirrm %%DATADIR%%/bin
 @dirrm %%DATADIR%%
 @dirrm %%DOCSDIR%%
+
+%%KDE%%@cwd %%LOCALBASE%%
 %%KDE%%share/applnk/Internet/opera.desktop
-%%KDE2%%share/applnk/Networking/WWW/opera.desktop
-%%GNOMELNK%%share/gnome/apps/Internet/opera.desktop
-%%GNOME%%share/gnome/pixmaps/opera.xpm
-%%KDE2%%@dirrm share/applnk/Networking/WWW
-%%APPLNK%%applnk/Internet/opera.desktop
+%%KDE%%share/icons/hicolor/22x22/apps/opera.png
+%%KDE%%share/icons/hicolor/32x32/apps/opera.png
+%%KDE%%share/icons/hicolor/48x48/apps/opera.png
+%%KDE%%share/icons/locolor/16x16/apps/opera.png
+%%KDE%%share/icons/locolor/22x22/apps/opera.png
+%%KDE%%share/icons/locolor/32x32/apps/opera.png
