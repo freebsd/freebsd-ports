@@ -1,20 +1,29 @@
-@cd /usr/local/Minerva
-run_daemon
-bin/msql
-bin/msqld
-bin/msqladmin
-bin/relshow
-bin/msqldump
-include/msql.h
-lib/libmsql.a
-doc/HISTORY
-doc/Commercial
-doc/License
-doc/acl.txt
-doc/mSQL-1.0.11.ps
-doc/mSQL-Invoice.txt
-doc/msql-pwr.README
-doc/msql-pwr.gif
-doc/msql-pwr2.gif
-msql.acl.sample
+etc/rc.d/msql.sh
+Minerva/run_daemon
+Minerva/bin/msql
+Minerva/bin/msqld
+Minerva/bin/msqladmin
+Minerva/bin/relshow
+Minerva/bin/msqldump
+Minerva/include/msql.h
+Minerva/lib/libmsql.a
+Minerva/doc/HISTORY
+Minerva/doc/Commercial
+Minerva/doc/License
+Minerva/doc/License.mSQL
+Minerva/doc/acl.txt
+Minerva/doc/mSQL-1.0.11.ps
+Minerva/doc/mSQL-Invoice.txt
+Minerva/doc/mSQL-Invoice.ps
+Minerva/doc/msql-pwr.README
+Minerva/doc/msql-pwr.gif
+Minerva/doc/msql-pwr2.gif
+Minerva/msql.acl.sample
 @exec mkdir -p %D/msqldb/.tmp
+@dirrm Minerva/bin
+@dirrm Minerva/lib
+@dirrm Minerva/include
+@dirrm Minerva/doc
+@dirrm Minerva/msqldb/.tmp
+@dirrm Minerva/msqldb
+@dirrm Minerva
