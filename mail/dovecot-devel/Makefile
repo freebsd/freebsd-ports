@@ -6,19 +6,45 @@
 #
 
 PORTNAME=	dovecot
-PORTVERSION=	0.99.5
+PORTVERSION=	0.99.8
 CATEGORIES=	mail ipv6
-MASTER_SITES=	http://dovecot.procontrol.fi/
+MASTER_SITES=	http://dovecot.procontrol.fi/test/
+DISTNAME=	${PORTNAME}-${PORTVERSION}-test5
 
 MAINTAINER=	d.marks@student.umist.ac.uk
 
 USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS+=	--disable-shadow --enable-ipv6 \
+CONFIGURE_ARGS+=	--without-shadow --enable-ipv6 \
 		--localstatedir=/var/dovecot --with-ssl=openssl \
-		--with-vpopmail --with-pam --with-rawlog \
-		--with-ssldir=/var/dovecot/ssl 
-		
+		--with-ssldir=/var/dovecot/ssl --with-pop3d \
+		--with-ldap --with-pam
+
+#
+# SASL2 support
+#
+# SASL provides authentication support to
+# session-based protocols. This is can be
+# used by dovecot for authentication sources.
+#
+.if WITH_SASL2
+LIB_DEPENDS+=	sasl2.2:${PORTSDIR}/security/cyrus-sasl2
+CONFIGURE_ARGS+=	--with-cyrus-sasl2
+.endif
+
+#
+# VPopMail Support
+#
+# vpopmail provides easy authentication and
+# multi-domain features. It was originally
+# created for use with Qmail.
+#
+.if WITH_VPOPMAIL
+VPOPMAIL=	${LOCALBASE}/vpopmail/bin/vchkpw
+BUILD_DEPENDS+=	${VPOPMAIL}:${PORTSDIR}/mail/vpopmail
+CONFIGURE_ARGS+=	--with-vpopmail
+.endif
+
 pre-build:
 	@${REINPLACE_CMD} -e 's,%%PREFIX%%,${PREFIX},' \
 		${WRKSRC}/dovecot-example.conf
@@ -31,11 +57,13 @@ do-install:
 	@${MKDIR} ${PREFIX}/lib/dovecot
 	${INSTALL_PROGRAM} \
 		${WRKSRC}/src/imap/imap \
-		${WRKSRC}/src/auth/imap-auth \
-		${WRKSRC}/src/login/imap-login \
+		${WRKSRC}/src/pop3/pop3 \
+		${WRKSRC}/src/auth/dovecot-auth \
+		${WRKSRC}/src/imap-login/imap-login \
+		${WRKSRC}/src/pop3-login/pop3-login \
 			${PREFIX}/lib/dovecot/
-	${INSTALL_DATA} ${WRKSRC}/dovecot-example.conf ${PREFIX}/etc/		
-	${INSTALL_PROGRAM} ${WRKSRC}/src/master/imap-master ${PREFIX}/sbin/
+	${INSTALL_DATA} ${WRKSRC}/dovecot-example.conf ${PREFIX}/etc/
+	${INSTALL_PROGRAM} ${WRKSRC}/src/master/dovecot ${PREFIX}/sbin/
 
 post-install:
 	@${MKDIR} /var/dovecot
