@@ -11,6 +11,7 @@ CATEGORIES=	sysutils
 MASTER_SITES=	http://web.wt.net/~billw/gkrellm/Plugins/
 
 MAINTAINER=	steffen@vogelreuter.de
+COMMENT=	A plugin that scrolls in a panel a list of currently logged on users
 
 BUILD_DEPENDS=	${X11BASE}/include/gkrellm/gkrellm.h:${PORTSDIR}/sysutils/gkrellm
 RUN_DEPENDS=	gkrellm:${PORTSDIR}/sysutils/gkrellm
