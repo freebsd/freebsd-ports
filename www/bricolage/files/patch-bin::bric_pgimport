@@ -1,22 +1,19 @@
-*** bin/bric_pgimport.orig	Sun Feb 29 15:11:56 2004
---- bin/bric_pgimport	Tue Jun  1 22:55:42 2004
+*** bin/bric_pgimport.orig	Tue Jun  8 22:22:34 2004
+--- bin/bric_pgimport	Wed Aug 18 18:00:40 2004
 ***************
-*** 33,41 ****
+*** 35,41 ****
   
-  =item -w
-  
-! The directory with the CVS SQL files. Defaults to lib subdirectory of
-! BRICOLAGE_ROOT environment variable, which itself defaults to
+  The directory with the Subversion SQL files. Defaults to lib subdirectory of
+  BRICOLAGE_ROOT environment variable, which itself defaults to
 ! F</usr/local/bricolage>.
   
   =item -u
   
---- 33,40 ----
+--- 35,41 ----
   
-  =item -w
-  
-! The directory with the Bricolage SQL files. Defaults to 
-! F</usr/local/share/bricolage>.
+  The directory with the Subversion SQL files. Defaults to lib subdirectory of
+  BRICOLAGE_ROOT environment variable, which itself defaults to
+! F<%%SQLDIR%%>.
   
   =item -u
   
@@ -32,14 +29,31 @@
       }
   
       # Print a usage message unless all required args are included or if -h has
---- 188,197 ----
+--- 189,198 ----
   
       if ($opt_w) {
           # Add on the location of the SQL.
 !         $opt_w = catdir($opt_w);
       } else {
-! 	$ENV{BRICOLAGE_ROOT} ||= '/usr/local/share/bricolage';
+! 	$ENV{BRICOLAGE_ROOT} ||= '%%SQLDIR%%';
 ! 	$opt_w = catdir($ENV{BRICOLAGE_ROOT});
       }
   
       # Print a usage message unless all required args are included or if -h has
+***************
+*** 252,258 ****
+       This should work if psql is in your path.
+    -w The directory with the Subversion SQL files. Defaults to lib subdirectory
+       of BRICOLAGE_ROOT environment variable, which itself defaults to
+!      /usr/local/bricolage.
+    -u Database user login. Defaults to PGUSER environment variable.
+    -p Database user password. Defaults to PGPASSWORD environment variable.
+    -d Database name. Defaults to PGDATABASE environment variable.
+--- 252,258 ----
+       This should work if psql is in your path.
+    -w The directory with the Subversion SQL files. Defaults to lib subdirectory
+       of BRICOLAGE_ROOT environment variable, which itself defaults to
+!      %%SQLDIR%%.
+    -u Database user login. Defaults to PGUSER environment variable.
+    -p Database user password. Defaults to PGPASSWORD environment variable.
+    -d Database name. Defaults to PGDATABASE environment variable.

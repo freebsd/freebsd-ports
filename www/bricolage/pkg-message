@@ -1,5 +1,8 @@
 ************************************************************
-Bricolage has been installed but is not yet usable.
+NEW INSTALL:
+
+The Bricolage software has now been installed, but there are
+number of steps remaining to make it usable.
 
 You must: 1) Import the database
           2) Edit your apache.conf file
@@ -45,5 +48,24 @@ NOTE: Bricolage will take over the entire namespace of the
 
 	Login:	 	"admin"
 	Password:	"change me now!"
+
+************************************************************
+UPGRADE: 
+
+If you are upgrading from one version of the www/bricolage port to
+another, skip the above installation related items and instead
+run the following upgrade command after making backups of
+the %%PREFIX%%/bricolage path and the bric database:
+
+  bric_upgrade [options] <Previous Bricolage Version>
+
+Common Supported Options:
+  -u Database user login.
+  -p Database user password.
+  -d Database name.
+
+Example:
+
+	%%PREFIX%%/bin/bric_upgrade -u pgsql -d bric 1.8.0 
 
 ************************************************************
