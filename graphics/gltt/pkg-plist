@@ -1,0 +1,24 @@
+include/gltt/FTBitmapFont.h
+include/gltt/FTEngine.h
+include/gltt/FTFace.h
+include/gltt/FTFont.h
+include/gltt/FTGlyph.h
+include/gltt/FTGlyphBitmap.h
+include/gltt/FTGlyphPixmap.h
+include/gltt/FTGlyphVectorizer.h
+include/gltt/FTInstance.h
+include/gltt/FTPixmapFont.h
+include/gltt/GLTTBitmapFont.h
+include/gltt/GLTTFont.h
+include/gltt/GLTTGlyphPolygonizer.h
+include/gltt/GLTTGlyphPolygonizerHandler.h
+include/gltt/GLTTGlyphTriangulator.h
+include/gltt/GLTTOutlineFont.h
+include/gltt/GLTTPixmapFont.h
+include/gltt/GLTTboolean.h
+include/gltt/GLTTminmax.h
+lib/libgltt.a
+lib/libgltt.la
+lib/libgltt.so
+lib/libgltt.so.0
+@dirrm include/gltt
