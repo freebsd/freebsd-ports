@@ -1300,3 +1300,4 @@ irc/liece-emacs20|irc/rieceemacs20|2004-10-31|Upgrade to irc/riece-emacs20
 japanese/ndtpd|japanese/ebnetd|2004-10-31|successor project
 net/dcgui|net/valknut|2004-10-31|renamed
 japanese/lookup-mule||2004-11-05|no longer supported
+emulators/linux-mupen64|emulators/mupen64|2004-11-08|replaced with native port
