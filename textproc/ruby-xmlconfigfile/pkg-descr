@@ -1,5 +1,5 @@
 Ruby/xmlconfigfile is a Ruby module for easy handling of XML
 configuration files.
 
-Author:	Maik Schmidt <contact@maik-schmidt.de>
-WWW:	http://www.maik-schmidt.de/projects/xmlconfigfile/index.html
+Author:	Maik Schmidt and Curtis Schofield <curtis.schofield@gmail.com>
+WWW:	http://www.cs.ualberta.ca/~schofiel/xml-configfile/xml-configfile.html
