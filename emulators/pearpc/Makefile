@@ -62,6 +62,11 @@ pre-everything::
 	@${ECHO_MSG} ""
 .endif
 
+post-patch:
+.if ${OSVERSION} < 500000
+	@${REINPLACE_CMD} -e 's|stdint.h|inttypes.h|' ${WRKSRC}/src/system/posix/types.h
+.endif
+
 post-configure:
 	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|g' ${WRKSRC}/Makefile
 	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|g' ${WRKSRC}/src/Makefile
