@@ -30,6 +30,7 @@ pre-configure:
 	@${SED} -e "s:%%PREFIX%%:${PREFIX}:g"  \
 	     -e "s:%%LCCDESTDIR%%:${LCCDESTDIR}:g"  \
 	     -e "s:%%VERSION%%:${DISTNAME}:g"  \
+	     -e "s:!!ARCH!!:${ARCH}:g"  \
 		${FILESDIR}/${OPSYS}.c.in > ${WRKSRC}/etc/${OPSYS}.c
 	@#	below can be used to patchup PLIST file for diff os/arch
 	@#${SED} -e "s:%%LCCDESTDIR%%:${LCCDESTDIR}:g"  \
