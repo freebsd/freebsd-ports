@@ -11,7 +11,7 @@ DISTNAME=       WebMagick-1.46
 CATEGORIES=     www graphics
 MASTER_SITES=   ftp://ftp.simplesystems.org/pub/WebMagick/
 
-LIB_DEPENDS=    Magick.4:${PORTSDIR}/graphics/ImageMagick
+LIB_DEPENDS=    Magick.5:${PORTSDIR}/graphics/ImageMagick
 
 MAINTAINER=     ache@freebsd.org
 
