@@ -29,6 +29,7 @@ IS_INTERACTIVE=	yes
 .endif
 
 RESTRICTED=	"Not sure if we can redistribute this."
+NO_PACKAGE=	${RESTRICTED}
 
 VMWARE_VER=	4.0.0
 BUILD_VER=	4460

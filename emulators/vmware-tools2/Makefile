@@ -25,6 +25,7 @@ USE_X_PREFIX=	yes
 NO_BUILD=	yes
 
 RESTRICTED=	"Not sure if we can redistribute this."
+NO_PACKAGE=	${RESTRICTED}
 
 VMWARE_VER=	2.0.4
 BUILD_VER=	307
