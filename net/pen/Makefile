@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	pen
-PORTVERSION=	0.5.0
+PORTVERSION=	0.6.3
 CATEGORIES=	net
 MASTER_SITES=	ftp://siag.nu/pub/pen/ \
 		http://siag.nu/pub/pen/
@@ -17,6 +17,6 @@ MAINTAINER=	ports@FreeBSD.org
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-daemon
 
-MAN1=	mergelogs.1 pen.1
+MAN1=		mergelogs.1 pen.1 penctl.1
 
 .include <bsd.port.mk>
