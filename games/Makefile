@@ -177,6 +177,7 @@
     SUBDIR += trojka
     SUBDIR += tvp
     SUBDIR += nil
+    SUBDIR += nonsense
     SUBDIR += omega
     SUBDIR += uox3
     SUBDIR += wmeyes
