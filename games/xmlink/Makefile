@@ -13,14 +13,15 @@ MASTER_SITE_SUBDIR=	games/xpuzzles
 
 MAINTAINER=	ports@FreeBSD.org
 
-WRKSRC=		${WRKDIR}/xmlink
+WRKSRC=		${WRKDIR}/${PORTNAME}
 USE_IMAKE=	yes
 MAN1=		xmlink.1
 MANCOMPRESSED=	no
+XFREE86_HTML_MAN=	no
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/xmlink ${PREFIX}/bin
 	${INSTALL_DATA} ${WRKSRC}/Mlink.ad ${PREFIX}/lib/X11/app-defaults/Mlink
-	${INSTALL_MAN} ${WRKSRC}/xmlink.man ${PREFIX}/man/man1/xmlink.1
+	${INSTALL_MAN} ${WRKSRC}/xmlink.man ${MANPREFIX}/man/man1/xmlink.1
 
 .include <bsd.port.mk>

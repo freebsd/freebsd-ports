@@ -13,15 +13,16 @@ MASTER_SITE_SUBDIR=	games/xpuzzles
 
 MAINTAINER=	nakai@FreeBSD.org
 
-WRKSRC=		${WRKDIR}/xtriangles
+WRKSRC=		${WRKDIR}/${PORTNAME}
 USE_IMAKE=	yes
 MAN1=		xtriangles.1
 MANCOMPRESSED=	no
+XFREE86_HTML_MAN=	no
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/xtriangles ${PREFIX}/bin
 	${INSTALL_DATA} ${WRKSRC}/Triangles.ad \
 		 ${PREFIX}/lib/X11/app-defaults/Triangles
-	${INSTALL_MAN} ${WRKSRC}/xtriangles.man ${PREFIX}/man/man1/xtriangles.1
+	${INSTALL_MAN} ${WRKSRC}/xtriangles.man ${MANPREFIX}/man/man1/xtriangles.1
 
 .include <bsd.port.mk>
