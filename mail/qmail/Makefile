@@ -27,6 +27,8 @@ PATCH_DIST_STRIP+=	-p1
 
 MAINTAINER=	lioux@FreeBSD.org
 
+NO_PACKAGE=	Forbidden - we have patches to the distribution.
+
 # A normal qmail installation puts everything into /var/qmail/.
 # If you want to install to /usr/local/, then "/usr/local/qmail" is
 # suggested instead of "/usr/local", but both will work.
