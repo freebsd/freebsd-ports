@@ -6,22 +6,23 @@
 #
 
 PORTNAME=	qmailadmin
-PORTVERSION=	1.2.0
+PORTVERSION=	1.2.1
 CATEGORIES=	mail www
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
+PKGNAMESUFFIX=	-devel
 
-MAINTAINER=	roam@FreeBSD.org
+MAINTAINER=	ale@FreeBSD.org
 COMMENT=	CGI program for administering Qmail with vchkpw/vpopmail
 
-BUILD_DEPENDS= \
+BUILD_DEPENDS=	\
 	${QMAIL_DIR}/bin/qmail-send:${PORTSDIR}/mail/qmail \
 	autorespond:${PORTSDIR}/mail/autorespond \
-	${LOCALBASE}/vpopmail/lib/libvpopmail.a:${PORTSDIR}/mail/vpopmail
-RUN_DEPENDS= \
+	${LOCALBASE}/vpopmail/lib/libvpopmail.a:${PORTSDIR}/mail/vpopmail-devel
+RUN_DEPENDS=	\
 	${QMAIL_DIR}/bin/qmail-send:${PORTSDIR}/mail/qmail \
 	autorespond:${PORTSDIR}/mail/autorespond \
-	${LOCALBASE}/vpopmail/lib/libvpopmail.a:${PORTSDIR}/mail/vpopmail
+	${LOCALBASE}/vpopmail/lib/libvpopmail.a:${PORTSDIR}/mail/vpopmail-devel
 
 .if defined(WITHOUT_IDX)
 BUILD_DEPENDS+=	ezmlm-send:${PORTSDIR}/mail/ezmlm
@@ -30,6 +31,8 @@ RUN_DEPENDS+=	ezmlm-send:${PORTSDIR}/mail/ezmlm
 BUILD_DEPENDS+=	ezmlm-idx:${PORTSDIR}/mail/ezmlm-idx
 RUN_DEPENDS+=	ezmlm-idx:${PORTSDIR}/mail/ezmlm-idx
 .endif
+
+CONFLICTS=	qmailadmin-1.*
 
 GNU_CONFIGURE=	YES
 USE_GMAKE=	YES
@@ -58,7 +61,7 @@ CGIBINDIR?=	www/cgi-bin.default
 CGIBINSUBDIR?=	qmailadmin
 CGIBINURL?=	/cgi-bin
 WEBDATADIR?=	www/data.default
-WEBDATASUBDIR?= qmailadmin
+WEBDATASUBDIR?=	qmailadmin
 WEBDATAURL?=
 
 PLIST_SUB+=	CGIBINDIR="${CGIBINDIR}" CGIBINSUBDIR="${CGIBINSUBDIR}" \
