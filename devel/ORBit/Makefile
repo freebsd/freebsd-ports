@@ -30,6 +30,8 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 
 INFO=		libIDL
 
+CONFLICTS=	ORBacus-*
+
 post-patch:
 	@${TOUCH} ${WRKSRC}/configure
 
