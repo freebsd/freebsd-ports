@@ -1,0 +1,25 @@
+*** lib/audio/Imakefile  Tue Feb 13 12:18:13 1996
+--- lib/audio/Imakefile      Tue Feb 13 10:21:19 1996
+***************
+*** 66,73 ****
+  #endif /* ProjectX < 5 */
+  
+       EDB_DEFINES = -DERRORDB=\"$(LIBDIR)/AuErrorDB\"
+  
+          DEFINES = $(MALLOC_DEFINES) $(SYSV_DEFINES)
+!    CONN_DEFINES = ConnectionFlags
+     INSTALLFLAGS += $(INSTINCFLAGS)
+  
+--- 66,78 ----
+  #endif /* ProjectX < 5 */
+  
++ #if HasBSD44Sockets
++    SOCK_DEFINES = -DBSD44SOCKETS
++ #endif
++ 
++ 
+       EDB_DEFINES = -DERRORDB=\"$(LIBDIR)/AuErrorDB\"
+  
+          DEFINES = $(MALLOC_DEFINES) $(SYSV_DEFINES)
+!    CONN_DEFINES = ConnectionFlags $(SOCK_DEFINES)
+     INSTALLFLAGS += $(INSTINCFLAGS)
