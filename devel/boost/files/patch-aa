@@ -1,0 +1,14 @@
+--- tools/build/jam_src/Makefile.orig	Fri Nov 30 14:03:54 2001
++++ tools/build/jam_src/Makefile	Sun Jan  6 04:04:08 2002
+@@ -4,9 +4,9 @@
+ # located in the "builds" directory
+ #
+ 
+-CC = cc
++#CC = cc
+ TARGET = -o jam0
+-CFLAGS =
++#CFLAGS =
+ 
+ # Borland C++ on Windows
+ #CC = bcc32

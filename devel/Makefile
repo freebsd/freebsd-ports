@@ -58,6 +58,7 @@
     SUBDIR += boehm-gc
     SUBDIR += bonobo
     SUBDIR += bonobo-conf
+    SUBDIR += boost
     SUBDIR += bugbuddy
     SUBDIR += bugzilla
     SUBDIR += c2lib

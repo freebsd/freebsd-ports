@@ -1,0 +1,570 @@
+include/boost/any.hpp
+include/boost/array.hpp
+include/boost/array_traits.hpp
+include/boost/bind.hpp
+include/boost/bind/bind_cc.hpp
+include/boost/bind/bind_mf_cc.hpp
+include/boost/bind/bind_template.hpp
+include/boost/bind/mem_fn_cc.hpp
+include/boost/bind/mem_fn_template.hpp
+include/boost/bind/mem_fn_vw.hpp
+include/boost/call_traits.hpp
+include/boost/cast.hpp
+include/boost/compatibility/cpp_c_headers/cassert
+include/boost/compatibility/cpp_c_headers/cctype
+include/boost/compatibility/cpp_c_headers/cerrno
+include/boost/compatibility/cpp_c_headers/cfloat
+include/boost/compatibility/cpp_c_headers/climits
+include/boost/compatibility/cpp_c_headers/clocale
+include/boost/compatibility/cpp_c_headers/cmath
+include/boost/compatibility/cpp_c_headers/csetjmp
+include/boost/compatibility/cpp_c_headers/csignal
+include/boost/compatibility/cpp_c_headers/cstdarg
+include/boost/compatibility/cpp_c_headers/cstddef
+include/boost/compatibility/cpp_c_headers/cstdio
+include/boost/compatibility/cpp_c_headers/cstdlib
+include/boost/compatibility/cpp_c_headers/cstring
+include/boost/compatibility/cpp_c_headers/ctime
+include/boost/compatibility/cpp_c_headers/cwchar
+include/boost/compatibility/cpp_c_headers/cwctype
+include/boost/compose.hpp
+include/boost/compressed_pair.hpp
+include/boost/concept_archetype.hpp
+include/boost/concept_check.hpp
+include/boost/config.hpp
+include/boost/config/compiler/borland.hpp
+include/boost/config/compiler/comeau.hpp
+include/boost/config/compiler/common_edg.hpp
+include/boost/config/compiler/compaq_cxx.hpp
+include/boost/config/compiler/gcc.hpp
+include/boost/config/compiler/greenhills.hpp
+include/boost/config/compiler/hp_acc.hpp
+include/boost/config/compiler/intel.hpp
+include/boost/config/compiler/kai.hpp
+include/boost/config/compiler/metrowerks.hpp
+include/boost/config/compiler/mpw.hpp
+include/boost/config/compiler/sgi_mipspro.hpp
+include/boost/config/compiler/sunpro_cc.hpp
+include/boost/config/compiler/vacpp.hpp
+include/boost/config/compiler/visualc.hpp
+include/boost/config/platform/aix.hpp
+include/boost/config/platform/beos.hpp
+include/boost/config/platform/bsd.hpp
+include/boost/config/platform/cygwin.hpp
+include/boost/config/platform/hpux.hpp
+include/boost/config/platform/irix.hpp
+include/boost/config/platform/linux.hpp
+include/boost/config/platform/macos.hpp
+include/boost/config/platform/solaris.hpp
+include/boost/config/platform/win32.hpp
+include/boost/config/posix_features.hpp
+include/boost/config/select_compiler_config.hpp
+include/boost/config/select_platform_config.hpp
+include/boost/config/select_stdlib_config.hpp
+include/boost/config/stdlib/dinkumware.hpp
+include/boost/config/stdlib/libstdcpp3.hpp
+include/boost/config/stdlib/modena.hpp
+include/boost/config/stdlib/msl.hpp
+include/boost/config/stdlib/roguewave.hpp
+include/boost/config/stdlib/sgi.hpp
+include/boost/config/stdlib/stlport.hpp
+include/boost/config/stdlib/vacpp.hpp
+include/boost/config/suffix.hpp
+include/boost/config/user.hpp
+include/boost/counting_iterator.hpp
+include/boost/crc.hpp
+include/boost/cregex.hpp
+include/boost/cstdint.hpp
+include/boost/cstdlib.hpp
+include/boost/detail/allocator.hpp
+include/boost/detail/call_traits.hpp
+include/boost/detail/catch_exceptions.hpp
+include/boost/detail/compressed_pair.hpp
+include/boost/detail/iterator.hpp
+include/boost/detail/limits.hpp
+include/boost/detail/named_template_params.hpp
+include/boost/detail/numeric_traits.hpp
+include/boost/detail/ob_call_traits.hpp
+include/boost/detail/ob_compressed_pair.hpp
+include/boost/detail/select_type.hpp
+include/boost/function.hpp
+include/boost/function/function0.hpp
+include/boost/function/function1.hpp
+include/boost/function/function10.hpp
+include/boost/function/function2.hpp
+include/boost/function/function3.hpp
+include/boost/function/function4.hpp
+include/boost/function/function5.hpp
+include/boost/function/function6.hpp
+include/boost/function/function7.hpp
+include/boost/function/function8.hpp
+include/boost/function/function9.hpp
+include/boost/function/function_base.hpp
+include/boost/function/function_template.hpp
+include/boost/function/gen_function_N.pl
+include/boost/function_output_iterator.hpp
+include/boost/functional.hpp
+include/boost/generator_iterator.hpp
+include/boost/graph/adjacency_iterator.hpp
+include/boost/graph/adjacency_list.hpp
+include/boost/graph/adjacency_list_io.hpp
+include/boost/graph/adjacency_matrix.hpp
+include/boost/graph/bandwidth.hpp
+include/boost/graph/bellman_ford_shortest_paths.hpp
+include/boost/graph/biconnected_components.hpp
+include/boost/graph/breadth_first_search.hpp
+include/boost/graph/connected_components.hpp
+include/boost/graph/copy.hpp
+include/boost/graph/create_condensation_graph.hpp
+include/boost/graph/cuthill_mckee_ordering.hpp
+include/boost/graph/dag_shortest_paths.hpp
+include/boost/graph/depth_first_search.hpp
+include/boost/graph/detail/adj_list_edge_iterator.hpp
+include/boost/graph/detail/adjacency_list.hpp
+include/boost/graph/detail/array_binary_tree.hpp
+include/boost/graph/detail/bitset.hpp
+include/boost/graph/detail/bitset_adaptor.hpp
+include/boost/graph/detail/connected_components.hpp
+include/boost/graph/detail/edge.hpp
+include/boost/graph/detail/incidence_iterator.hpp
+include/boost/graph/detail/incremental_components.hpp
+include/boost/graph/detail/intset.hpp
+include/boost/graph/detail/is_same.hpp
+include/boost/graph/detail/list_base.hpp
+include/boost/graph/detail/permutation.hpp
+include/boost/graph/detail/self_avoiding_walk.hpp
+include/boost/graph/detail/set_adaptor.hpp
+include/boost/graph/detail/shadow_iterator.hpp
+include/boost/graph/dijkstra_shortest_paths.hpp
+include/boost/graph/edge_connectivity.hpp
+include/boost/graph/edge_list.hpp
+include/boost/graph/edmunds_karp_max_flow.hpp
+include/boost/graph/filtered_graph.hpp
+include/boost/graph/graph_archetypes.hpp
+include/boost/graph/graph_as_tree.hpp
+include/boost/graph/graph_concepts.hpp
+include/boost/graph/graph_selectors.hpp
+include/boost/graph/graph_traits.hpp
+include/boost/graph/graph_utility.hpp
+include/boost/graph/graphviz.hpp
+include/boost/graph/incremental_components.hpp
+include/boost/graph/isomorphism.hpp
+include/boost/graph/johnson_all_pairs_shortest.hpp
+include/boost/graph/kruskal_min_spanning_tree.hpp
+include/boost/graph/leda_graph.hpp
+include/boost/graph/matrix_as_graph.hpp
+include/boost/graph/minimum_degree_ordering.hpp
+include/boost/graph/named_function_params.hpp
+include/boost/graph/neighbor_bfs.hpp
+include/boost/graph/prim_minimum_spanning_tree.hpp
+include/boost/graph/properties.hpp
+include/boost/graph/property_iter_range.hpp
+include/boost/graph/push_relabel_max_flow.hpp
+include/boost/graph/read_dimacs.hpp
+include/boost/graph/relax.hpp
+include/boost/graph/reverse_graph.hpp
+include/boost/graph/sequential_vertex_coloring.hpp
+include/boost/graph/smallest_last_ordering.hpp
+include/boost/graph/stanford_graph.hpp
+include/boost/graph/strong_components.hpp
+include/boost/graph/subgraph.hpp
+include/boost/graph/topological_sort.hpp
+include/boost/graph/transitive_closure.hpp
+include/boost/graph/transpose_graph.hpp
+include/boost/graph/tree_traits.hpp
+include/boost/graph/vector_as_graph.hpp
+include/boost/graph/visitors.hpp
+include/boost/half_open_range.hpp
+include/boost/integer.hpp
+include/boost/integer_traits.hpp
+include/boost/iterator.hpp
+include/boost/iterator_adaptors.hpp
+include/boost/lexical_cast.hpp
+include/boost/limits.hpp
+include/boost/math/common_factor.hpp
+include/boost/math/octonion.hpp
+include/boost/math/quaternion.hpp
+include/boost/math/special_functions/acosh.hpp
+include/boost/math/special_functions/asinh.hpp
+include/boost/math/special_functions/atanh.hpp
+include/boost/math/special_functions/sinc.hpp
+include/boost/math/special_functions/sinhc.hpp
+include/boost/math_fwd.hpp
+include/boost/mem_fn.hpp
+include/boost/min_rand.hpp
+include/boost/nondet_random.hpp
+include/boost/operators.hpp
+include/boost/pending/bucket_sorter.hpp
+include/boost/pending/container_traits.hpp
+include/boost/pending/cstddef.hpp
+include/boost/pending/ct_if.hpp
+include/boost/pending/detail/disjoint_sets.hpp
+include/boost/pending/detail/int_iterator.hpp
+include/boost/pending/detail/property.hpp
+include/boost/pending/disjoint_sets.hpp
+include/boost/pending/fenced_priority_queue.hpp
+include/boost/pending/fibonacci_heap.hpp
+include/boost/pending/indirect_cmp.hpp
+include/boost/pending/integer_range.hpp
+include/boost/pending/is_heap.hpp
+include/boost/pending/iterator_adaptors.hpp
+include/boost/pending/iterator_tests.hpp
+include/boost/pending/mutable_heap.hpp
+include/boost/pending/mutable_queue.hpp
+include/boost/pending/property.hpp
+include/boost/pending/queue.hpp
+include/boost/pending/stringtok.hpp
+include/boost/permutation_iterator.hpp
+include/boost/pool/detail/ct_gcd_lcm.hpp
+include/boost/pool/detail/for.m4
+include/boost/pool/detail/gcd_lcm.hpp
+include/boost/pool/detail/guard.hpp
+include/boost/pool/detail/mutex.hpp
+include/boost/pool/detail/pool_construct.bat
+include/boost/pool/detail/pool_construct.inc
+include/boost/pool/detail/pool_construct.m4
+include/boost/pool/detail/pool_construct.sh
+include/boost/pool/detail/pool_construct_simple.bat
+include/boost/pool/detail/pool_construct_simple.inc
+include/boost/pool/detail/pool_construct_simple.m4
+include/boost/pool/detail/pool_construct_simple.sh
+include/boost/pool/detail/singleton.hpp
+include/boost/pool/object_pool.hpp
+include/boost/pool/pool.hpp
+include/boost/pool/pool_alloc.hpp
+include/boost/pool/poolfwd.hpp
+include/boost/pool/simple_segregated_storage.hpp
+include/boost/pool/singleton_pool.hpp
+include/boost/preprocessor.hpp
+include/boost/preprocessor/arithmetic.hpp
+include/boost/preprocessor/arithmetic/add.hpp
+include/boost/preprocessor/arithmetic/div.hpp
+include/boost/preprocessor/arithmetic/mul.hpp
+include/boost/preprocessor/arithmetic/sub.hpp
+include/boost/preprocessor/assert_msg.hpp
+include/boost/preprocessor/cat.hpp
+include/boost/preprocessor/comma.hpp
+include/boost/preprocessor/comma_if.hpp
+include/boost/preprocessor/comparison.hpp
+include/boost/preprocessor/comparison/equal.hpp
+include/boost/preprocessor/comparison/greater.hpp
+include/boost/preprocessor/comparison/greater_equal.hpp
+include/boost/preprocessor/comparison/less.hpp
+include/boost/preprocessor/comparison/less_equal.hpp
+include/boost/preprocessor/comparison/not_equal.hpp
+include/boost/preprocessor/dec.hpp
+include/boost/preprocessor/empty.hpp
+include/boost/preprocessor/enum_params.hpp
+include/boost/preprocessor/enum_params_with_a_default.hpp
+include/boost/preprocessor/enum_params_with_defaults.hpp
+include/boost/preprocessor/enum_shifted_params.hpp
+include/boost/preprocessor/identity.hpp
+include/boost/preprocessor/if.hpp
+include/boost/preprocessor/inc.hpp
+include/boost/preprocessor/limits.hpp
+include/boost/preprocessor/logical.hpp
+include/boost/preprocessor/logical/and.hpp
+include/boost/preprocessor/logical/bool.hpp
+include/boost/preprocessor/logical/nor.hpp
+include/boost/preprocessor/logical/not.hpp
+include/boost/preprocessor/logical/or.hpp
+include/boost/preprocessor/logical/xor.hpp
+include/boost/preprocessor/max.hpp
+include/boost/preprocessor/min.hpp
+include/boost/preprocessor/repeat.hpp
+include/boost/preprocessor/repeat_2nd.hpp
+include/boost/preprocessor/repeat_3rd.hpp
+include/boost/preprocessor/stringize.hpp
+include/boost/preprocessor/tuple.hpp
+include/boost/preprocessor/while.hpp
+include/boost/progress.hpp
+include/boost/property_map.hpp
+include/boost/property_map_iterator.hpp
+include/boost/python/callback.hpp
+include/boost/python/caller.hpp
+include/boost/python/class_builder.hpp
+include/boost/python/classes.hpp
+include/boost/python/conversions.hpp
+include/boost/python/cross_module.hpp
+include/boost/python/detail/base_object.hpp
+include/boost/python/detail/cast.hpp
+include/boost/python/detail/config.hpp
+include/boost/python/detail/extension_class.hpp
+include/boost/python/detail/functions.hpp
+include/boost/python/detail/init_function.hpp
+include/boost/python/detail/none.hpp
+include/boost/python/detail/signatures.hpp
+include/boost/python/detail/singleton.hpp
+include/boost/python/detail/types.hpp
+include/boost/python/detail/void_adaptor.hpp
+include/boost/python/detail/wrap_python.hpp
+include/boost/python/errors.hpp
+include/boost/python/module_builder.hpp
+include/boost/python/objects.hpp
+include/boost/python/operators.hpp
+include/boost/python/reference.hpp
+include/boost/random.hpp
+include/boost/random/additive_combine.hpp
+include/boost/random/bernoulli_distribution.hpp
+include/boost/random/cauchy_distribution.hpp
+include/boost/random/detail/const_mod.hpp
+include/boost/random/detail/iterator_mixin.hpp
+include/boost/random/detail/signed_unsigned_compare.hpp
+include/boost/random/exponential_distribution.hpp
+include/boost/random/geometric_distribution.hpp
+include/boost/random/inversive_congruential.hpp
+include/boost/random/lagged_fibonacci.hpp
+include/boost/random/linear_congruential.hpp
+include/boost/random/lognormal_distribution.hpp
+include/boost/random/mersenne_twister.hpp
+include/boost/random/normal_distribution.hpp
+include/boost/random/random_number_generator.hpp
+include/boost/random/shuffle_output.hpp
+include/boost/random/triangle_distribution.hpp
+include/boost/random/uniform_01.hpp
+include/boost/random/uniform_int.hpp
+include/boost/random/uniform_on_sphere.hpp
+include/boost/random/uniform_real.hpp
+include/boost/random/uniform_smallint.hpp
+include/boost/rational.hpp
+include/boost/ref.hpp
+include/boost/regex.h
+include/boost/regex.hpp
+include/boost/regex/config.hpp
+include/boost/regex/detail/fileiter.hpp
+include/boost/regex/detail/regex_compile.hpp
+include/boost/regex/detail/regex_cstring.hpp
+include/boost/regex/detail/regex_format.hpp
+include/boost/regex/detail/regex_kmp.hpp
+include/boost/regex/detail/regex_library_include.hpp
+include/boost/regex/detail/regex_match.hpp
+include/boost/regex/detail/regex_raw_buffer.hpp
+include/boost/regex/detail/regex_split.hpp
+include/boost/regex/detail/regex_stack.hpp
+include/boost/regex/detail/regex_synch.hpp
+include/boost/regex/pattern_except.hpp
+include/boost/regex/regex_traits.hpp
+include/boost/regex/src.cpp
+include/boost/regex/user.hpp
+include/boost/smart_ptr.hpp
+include/boost/static_assert.hpp
+include/boost/test/cpp_main.cpp
+include/boost/test/test_main.cpp
+include/boost/test/test_tools.hpp
+include/boost/thread/condition.hpp
+include/boost/thread/config.hpp
+include/boost/thread/detail/lock.hpp
+include/boost/thread/exceptions.hpp
+include/boost/thread/mutex.hpp
+include/boost/thread/once.hpp
+include/boost/thread/recursive_mutex.hpp
+include/boost/thread/thread.hpp
+include/boost/thread/tss.hpp
+include/boost/thread/xtime.hpp
+include/boost/timer.hpp
+include/boost/token_functions.hpp
+include/boost/token_iterator.hpp
+include/boost/tokenizer.hpp
+include/boost/tuple/detail/tuple_basic.hpp
+include/boost/tuple/detail/tuple_basic_no_partial_spec.hpp
+include/boost/tuple/tuple.hpp
+include/boost/tuple/tuple_comparison.hpp
+include/boost/tuple/tuple_io.hpp
+include/boost/type.hpp
+include/boost/type_traits.hpp
+include/boost/type_traits/alignment_traits.hpp
+include/boost/type_traits/arithmetic_traits.hpp
+include/boost/type_traits/composite_traits.hpp
+include/boost/type_traits/conversion_traits.hpp
+include/boost/type_traits/cv_traits.hpp
+include/boost/type_traits/function_traits.hpp
+include/boost/type_traits/fwd.hpp
+include/boost/type_traits/ice.hpp
+include/boost/type_traits/object_traits.hpp
+include/boost/type_traits/same_traits.hpp
+include/boost/type_traits/transform_traits.hpp
+include/boost/type_traits/transform_traits_spec.hpp
+include/boost/type_traits/type_traits_test.hpp
+include/boost/utility.hpp
+include/boost/utility/base_from_member.hpp
+include/boost/utility_fwd.hpp
+include/boost/version.hpp
+lib/libboost_python.a
+lib/libboost_python_d.a
+lib/libboost_regex.a
+lib/libboost_regex.so
+lib/libboost_thread.a
+%%PORTDOCS%%share/doc/boost/index.htm
+%%PORTDOCS%%share/doc/boost/libs/array/index.htm
+%%PORTDOCS%%share/doc/boost/libs/compose/index.htm
+%%PORTDOCS%%share/doc/boost/libs/concept_check/bibliography.htm
+%%PORTDOCS%%share/doc/boost/libs/concept_check/concept_check.htm
+%%PORTDOCS%%share/doc/boost/libs/concept_check/concept_covering.htm
+%%PORTDOCS%%share/doc/boost/libs/concept_check/creating_concepts.htm
+%%PORTDOCS%%share/doc/boost/libs/concept_check/implementation.htm
+%%PORTDOCS%%share/doc/boost/libs/concept_check/prog_with_concepts.htm
+%%PORTDOCS%%share/doc/boost/libs/concept_check/reference.htm
+%%PORTDOCS%%share/doc/boost/libs/concept_check/using_concept_check.htm
+%%PORTDOCS%%share/doc/boost/libs/config/config.htm
+%%PORTDOCS%%share/doc/boost/libs/conversion/cast.htm
+%%PORTDOCS%%share/doc/boost/libs/conversion/index.htm
+%%PORTDOCS%%share/doc/boost/libs/conversion/lexical_cast.htm
+%%PORTDOCS%%share/doc/boost/libs/dir_it/index.htm
+%%PORTDOCS%%share/doc/boost/libs/integer/cstdint.htm
+%%PORTDOCS%%share/doc/boost/libs/integer/index.htm
+%%PORTDOCS%%share/doc/boost/libs/integer/integer.htm
+%%PORTDOCS%%share/doc/boost/libs/libraries.htm
+%%PORTDOCS%%share/doc/boost/libs/min_rand/index.htm
+%%PORTDOCS%%share/doc/boost/libs/preprocessor/doc/examples_preprocessed.htm
+%%PORTDOCS%%share/doc/boost/libs/preprocessor/doc/index.htm
+%%PORTDOCS%%share/doc/boost/libs/preprocessor/doc/known_problems_with_cpp.htm
+%%PORTDOCS%%share/doc/boost/libs/preprocessor/doc/problems_with_compilers.htm
+%%PORTDOCS%%share/doc/boost/libs/preprocessor/doc/references.htm
+%%PORTDOCS%%share/doc/boost/libs/preprocessor/doc/tutorial.htm
+%%PORTDOCS%%share/doc/boost/libs/regex/appendix.htm
+%%PORTDOCS%%share/doc/boost/libs/regex/faq.htm
+%%PORTDOCS%%share/doc/boost/libs/regex/format_string.htm
+%%PORTDOCS%%share/doc/boost/libs/regex/hl_ref.htm
+%%PORTDOCS%%share/doc/boost/libs/regex/index.htm
+%%PORTDOCS%%share/doc/boost/libs/regex/introduction.htm
+%%PORTDOCS%%share/doc/boost/libs/regex/posix_ref.htm
+%%PORTDOCS%%share/doc/boost/libs/regex/syntax.htm
+%%PORTDOCS%%share/doc/boost/libs/regex/template_class_ref.htm
+%%PORTDOCS%%share/doc/boost/libs/regex/traits_class_ref.htm
+%%PORTDOCS%%share/doc/boost/libs/smart_ptr/index.htm
+%%PORTDOCS%%share/doc/boost/libs/smart_ptr/scoped_array.htm
+%%PORTDOCS%%share/doc/boost/libs/smart_ptr/scoped_ptr.htm
+%%PORTDOCS%%share/doc/boost/libs/smart_ptr/shared_array.htm
+%%PORTDOCS%%share/doc/boost/libs/smart_ptr/shared_ptr.htm
+%%PORTDOCS%%share/doc/boost/libs/smart_ptr/smart_ptr.htm
+%%PORTDOCS%%share/doc/boost/libs/smart_ptr/smarttests.htm
+%%PORTDOCS%%share/doc/boost/libs/static_assert/static_assert.htm
+%%PORTDOCS%%share/doc/boost/libs/test/doc/execution_tools.htm
+%%PORTDOCS%%share/doc/boost/libs/test/doc/index.htm
+%%PORTDOCS%%share/doc/boost/libs/test/doc/test_lib_design.htm
+%%PORTDOCS%%share/doc/boost/libs/test/doc/test_tools.htm
+%%PORTDOCS%%share/doc/boost/libs/timer/index.htm
+%%PORTDOCS%%share/doc/boost/libs/timer/timer.htm
+%%PORTDOCS%%share/doc/boost/libs/tokenizer/char_delimiters_separator.htm
+%%PORTDOCS%%share/doc/boost/libs/tokenizer/escaped_list_separator.htm
+%%PORTDOCS%%share/doc/boost/libs/tokenizer/index.htm
+%%PORTDOCS%%share/doc/boost/libs/tokenizer/introduc.htm
+%%PORTDOCS%%share/doc/boost/libs/tokenizer/offset_separator.htm
+%%PORTDOCS%%share/doc/boost/libs/tokenizer/token_iterator.htm
+%%PORTDOCS%%share/doc/boost/libs/tokenizer/tokenizer.htm
+%%PORTDOCS%%share/doc/boost/libs/tokenizer/tokenizerfunction.htm
+%%PORTDOCS%%share/doc/boost/libs/type_traits/c++_type_traits.htm
+%%PORTDOCS%%share/doc/boost/libs/type_traits/index.htm
+%%PORTDOCS%%share/doc/boost/libs/utility/call_traits.htm
+%%PORTDOCS%%share/doc/boost/libs/utility/compressed_pair.htm
+%%PORTDOCS%%share/doc/boost/libs/utility/counting_iterator.htm
+%%PORTDOCS%%share/doc/boost/libs/utility/filter_iterator.htm
+%%PORTDOCS%%share/doc/boost/libs/utility/function_output_iterator.htm
+%%PORTDOCS%%share/doc/boost/libs/utility/generator_iterator.htm
+%%PORTDOCS%%share/doc/boost/libs/utility/indirect_iterator.htm
+%%PORTDOCS%%share/doc/boost/libs/utility/iterator_adaptors.htm
+%%PORTDOCS%%share/doc/boost/libs/utility/operators.htm
+%%PORTDOCS%%share/doc/boost/libs/utility/permutation_iterator.htm
+%%PORTDOCS%%share/doc/boost/libs/utility/projection_iterator.htm
+%%PORTDOCS%%share/doc/boost/libs/utility/reverse_iterator.htm
+%%PORTDOCS%%share/doc/boost/libs/utility/transform_iterator.htm
+%%PORTDOCS%%share/doc/boost/libs/utility/utility.htm
+%%PORTDOCS%%share/doc/boost/more/count_bdy.htm
+%%PORTDOCS%%share/doc/boost/more/discussion_policy.htm
+%%PORTDOCS%%share/doc/boost/more/faq.htm
+%%PORTDOCS%%share/doc/boost/more/feature_model_diagrams.htm
+%%PORTDOCS%%share/doc/boost/more/formal_review_process.htm
+%%PORTDOCS%%share/doc/boost/more/header.htm
+%%PORTDOCS%%share/doc/boost/more/imp_vars.htm
+%%PORTDOCS%%share/doc/boost/more/index.htm
+%%PORTDOCS%%share/doc/boost/more/int_const_guidelines.htm
+%%PORTDOCS%%share/doc/boost/more/lib_guide.htm
+%%PORTDOCS%%share/doc/boost/more/library_reuse.htm
+%%PORTDOCS%%share/doc/boost/more/mailing_lists.htm
+%%PORTDOCS%%share/doc/boost/more/submission_process.htm
+%%PORTDOCS%%share/doc/boost/more/test_policy.htm
+%%PORTDOCS%%share/doc/boost/people/aleksey_gurtovoy.htm
+%%PORTDOCS%%share/doc/boost/people/darin_adler.htm
+%%PORTDOCS%%share/doc/boost/people/dave_abrahams.htm
+%%PORTDOCS%%share/doc/boost/people/dietmar_kuehl.htm
+%%PORTDOCS%%share/doc/boost/people/ed_brey.htm
+%%PORTDOCS%%share/doc/boost/people/gary_powell.htm
+%%PORTDOCS%%share/doc/boost/people/gavin_collings.htm
+%%PORTDOCS%%share/doc/boost/people/greg_colvin.htm
+%%PORTDOCS%%share/doc/boost/people/howard_hinnant.htm
+%%PORTDOCS%%share/doc/boost/people/jaakko_jarvi.htm
+%%PORTDOCS%%share/doc/boost/people/jens_maurer.htm
+%%PORTDOCS%%share/doc/boost/people/jeremy_siek.htm
+%%PORTDOCS%%share/doc/boost/people/john_maddock.htm
+%%PORTDOCS%%share/doc/boost/people/kevlin_henney.htm
+%%PORTDOCS%%share/doc/boost/people/liequan_lee.htm
+%%PORTDOCS%%share/doc/boost/people/mark_rodgers.htm
+%%PORTDOCS%%share/doc/boost/people/paul_moore.htm
+%%PORTDOCS%%share/doc/boost/people/people.htm
+%%PORTDOCS%%share/doc/boost/people/peter_dimov.htm
+%%PORTDOCS%%share/doc/boost/people/ralf_w_grosse_kunstleve.htm
+%%PORTDOCS%%share/doc/boost/people/valentin_bonnard.htm
+%%PORTDOCS%%share/doc/boost/people/vesa_karvonen.htm
+%%PORTDOCS%%share/doc/boost/people/william_kempf.htm
+%%PORTDOCS%%share/doc/boost/tools/build/build_system.htm
+%%PORTDOCS%%@dirrm share/doc/boost/tools/build
+%%PORTDOCS%%@dirrm share/doc/boost/tools
+%%PORTDOCS%%@dirrm share/doc/boost/people
+%%PORTDOCS%%@dirrm share/doc/boost/more
+%%PORTDOCS%%@dirrm share/doc/boost/libs/utility
+%%PORTDOCS%%@dirrm share/doc/boost/libs/type_traits
+%%PORTDOCS%%@dirrm share/doc/boost/libs/tokenizer
+%%PORTDOCS%%@dirrm share/doc/boost/libs/timer
+%%PORTDOCS%%@dirrm share/doc/boost/libs/test/doc
+%%PORTDOCS%%@dirrm share/doc/boost/libs/test
+%%PORTDOCS%%@dirrm share/doc/boost/libs/static_assert
+%%PORTDOCS%%@dirrm share/doc/boost/libs/smart_ptr
+%%PORTDOCS%%@dirrm share/doc/boost/libs/regex
+%%PORTDOCS%%@dirrm share/doc/boost/libs/preprocessor/doc
+%%PORTDOCS%%@dirrm share/doc/boost/libs/preprocessor
+%%PORTDOCS%%@dirrm share/doc/boost/libs/min_rand
+%%PORTDOCS%%@dirrm share/doc/boost/libs/integer
+%%PORTDOCS%%@dirrm share/doc/boost/libs/dir_it
+%%PORTDOCS%%@dirrm share/doc/boost/libs/conversion
+%%PORTDOCS%%@dirrm share/doc/boost/libs/config
+%%PORTDOCS%%@dirrm share/doc/boost/libs/concept_check
+%%PORTDOCS%%@dirrm share/doc/boost/libs/compose
+%%PORTDOCS%%@dirrm share/doc/boost/libs/array
+%%PORTDOCS%%@dirrm share/doc/boost/libs
+%%PORTDOCS%%@dirrm share/doc/boost
+@dirrm include/boost/utility
+@dirrm include/boost/type_traits
+@dirrm include/boost/tuple/detail
+@dirrm include/boost/tuple
+@dirrm include/boost/thread/detail
+@dirrm include/boost/thread
+@dirrm include/boost/test
+@dirrm include/boost/regex/detail
+@dirrm include/boost/regex
+@dirrm include/boost/re_detail
+@dirrm include/boost/random/detail
+@dirrm include/boost/random
+@dirrm include/boost/python/detail
+@dirrm include/boost/python
+@dirrm include/boost/preprocessor/logical
+@dirrm include/boost/preprocessor/comparison
+@dirrm include/boost/preprocessor/arithmetic
+@dirrm include/boost/preprocessor
+@dirrm include/boost/pool/detail
+@dirrm include/boost/pool
+@dirrm include/boost/pending/detail
+@dirrm include/boost/pending
+@dirrm include/boost/math/special_functions
+@dirrm include/boost/math
+@dirrm include/boost/graph/detail
+@dirrm include/boost/graph
+@dirrm include/boost/function
+@dirrm include/boost/detail
+@dirrm include/boost/config/stdlib
+@dirrm include/boost/config/platform
+@dirrm include/boost/config/compiler
+@dirrm include/boost/config
+@dirrm include/boost/compatibility/cpp_c_headers
+@dirrm include/boost/compatibility
+@dirrm include/boost/bind
+@dirrm include/boost
