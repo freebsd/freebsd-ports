@@ -3,7 +3,7 @@
 # Date created:         27 Dec 1994
 # Whom:                 thomas@ghpc8.ihf.rwth-aachen.de
 #
-# $Id: Makefile,v 1.14 1995/12/18 07:29:08 tg Exp $
+# $Id: Makefile,v 1.15 1996/01/18 15:30:33 tg Exp $
 #
 
 DISTNAME=	tkman-1.7.5
@@ -17,8 +17,7 @@ LIB_DEPENDS=	tk40\\.1\\.:${PORTSDIR}/x11/tk4
 RUN_DEPENDS=	rman:${PORTSDIR}/misc/rman \
 		glimpse:${PORTSDIR}/misc/glimpse
 
-# Restrictive copyright
-NO_PACKAGE=	yes
+NO_CDROM=	yes	# Don't sell for profit
 
 post-install:
 .if !defined(NOMANCOMPRESS)

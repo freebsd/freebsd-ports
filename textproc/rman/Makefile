@@ -3,7 +3,7 @@
 # Date created:         27 Dec 1994
 # Whom:                 thomas@ghpc8.ihf.rwth-aachen.de
 #
-# $Id: Makefile,v 1.6 1995/11/26 10:48:20 asami Exp $
+# $Id: Makefile,v 1.7 1996/01/19 07:15:04 tg Exp $
 #
 
 DISTNAME=       rman-2.4
@@ -13,8 +13,7 @@ EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=	thomas@ghpc8.ihf.rwth-aachen.de
 
-# Restrictive copyright
-NO_PACKAGE=	yes
+NO_CDROM=	yes	# don't sell for profit
 
 post-install:
 .if !defined(NOMANCOMPRESS)
