@@ -2,11 +2,15 @@
 include/ao/ao.h
 include/ao/os_types.h
 include/ao/plugin.h
+lib/libao.a
+lib/libao.la
 lib/libao.so
-lib/libao.so.2
-%%ARTS%%lib/ao/libarts.so
-lib/ao/liboss.so
-%%ESOUND%%lib/ao/libesd.so
+lib/libao.so.3
+%%ARTS%%lib/ao/plugins-2/libarts.la
+%%ARTS%%lib/ao/plugins-2/libarts.so
+lib/ao/plugins-2/liboss.so
+%%ESOUND%%lib/ao/plugins-2/libesd.la
+%%ESOUND%%lib/ao/plugins-2/libesd.so
 share/aclocal/ao.m4
 %%PORTDOCS%%share/doc/libao/ao_append_option.html
 %%PORTDOCS%%share/doc/libao/ao_close.html
@@ -16,6 +20,7 @@ share/aclocal/ao.m4
 %%PORTDOCS%%share/doc/libao/ao_driver_info.html
 %%PORTDOCS%%share/doc/libao/ao_driver_info_list.html
 %%PORTDOCS%%share/doc/libao/ao_example.c
+%%PORTDOCS%%share/doc/libao/ao_file_extension.html
 %%PORTDOCS%%share/doc/libao/ao_free_options.html
 %%PORTDOCS%%share/doc/libao/ao_info.html
 %%PORTDOCS%%share/doc/libao/ao_initialize.html
@@ -27,6 +32,7 @@ share/aclocal/ao.m4
 %%PORTDOCS%%share/doc/libao/ao_plugin_device_clear.html
 %%PORTDOCS%%share/doc/libao/ao_plugin_device_init.html
 %%PORTDOCS%%share/doc/libao/ao_plugin_driver_info.html
+%%PORTDOCS%%share/doc/libao/ao_plugin_file_extension.html
 %%PORTDOCS%%share/doc/libao/ao_plugin_open.html
 %%PORTDOCS%%share/doc/libao/ao_plugin_play.html
 %%PORTDOCS%%share/doc/libao/ao_plugin_set_option.html
@@ -42,5 +48,6 @@ share/aclocal/ao.m4
 %%PORTDOCS%%share/doc/libao/plugin-overview.html
 %%PORTDOCS%%share/doc/libao/style.css
 @dirrm include/ao
+@dirrm lib/ao/plugins-2
 @dirrm lib/ao
 %%PORTDOCS%%@dirrm share/doc/libao
