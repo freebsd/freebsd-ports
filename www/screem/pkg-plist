@@ -11,7 +11,6 @@ lib/screem/plugins/ssiWizard.so
 lib/screem/plugins/tableWizard.so
 lib/screem/plugins/uploadWizard.so
 share/gnome/application-registry/screem.applications
-share/gnome/applications/mimeinfo.cache
 share/gnome/applications/screem.desktop
 share/gnome/help/screem/C/figures/color-wizard.png
 share/gnome/help/screem/C/figures/css-wizard1.png
