@@ -167,7 +167,6 @@ post-patch:
 	done
 
 .if !defined(NATIVE_BOOTSTRAP)
-ECHO_MSG=echo
 pre-build:
 	@if [ "$${WRKDIRPREFIX}" -a \
 	     -L "/compat/linux/$${WRKDIRPREFIX}" -a \
