@@ -1,9 +1,9 @@
---- conf/jserv.properties.in.orig	Sat Jun 12 05:38:46 1999
-+++ conf/jserv.properties.in	Tue Jun 29 23:02:02 1999
-@@ -52,8 +52,15 @@
- # Note: the classes you want to be automatically reloaded upon modification
+--- conf/jserv.properties.in.orig	Wed Jan 26 18:26:31 2000
++++ conf/jserv.properties.in	Wed Jan 26 18:28:44 2000
+@@ -53,8 +53,15 @@
  #       MUST NOT be in this classpath or the classpath of the shell
  #       you start the Apache from.
+ #
 -wrapper.classpath=@JSERV_CLASSES@
 +wrapper.classpath=@libexecdir@/ApacheJServ.jar
  wrapper.classpath=@JSDK_CLASSES@
@@ -16,8 +16,8 @@
 +#wrapper.classpath=@prefix@/share/java/classes/lotusxsl.jar
  
  # An environment name with value passed to the JVM
- # Syntax: wrapper.env=[name]=[value]
-@@ -94,7 +101,7 @@
+ # Syntax: wrapper.env=[name]=[value] (String)
+@@ -117,7 +124,7 @@
  # Syntax: [servlet zone name as on the zones list].properties=[full path to configFile] (String)
  # Default: NONE
  # Note: if the file could not be opened, try using absolute paths.
@@ -25,8 +25,8 @@
 +root.properties=@sysconfdir@/zone.properties
  
  #
- # Security parameters
-@@ -177,7 +184,7 @@
+ # Thread Pool parameters
+@@ -247,7 +254,7 @@
  # Syntax: log.file=[log path and filename] (String)
  # Default: NONE
  # Note: if the file could not be opened, try using absolute paths.
