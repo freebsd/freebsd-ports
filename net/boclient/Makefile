@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	boclient
-PORTVERSION=	1.2.1
+PORTVERSION=	1.21
 CATEGORIES=	net security
 MASTER_SITES=	http://www.ennui.net/~crioux/ \
 		http://orifice.rotten.com/cDc/ \
