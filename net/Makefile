@@ -8,6 +8,7 @@
     SUBDIR += 4g8
     SUBDIR += 6tunnel
     SUBDIR += AquaGatekeeper
+    SUBDIR += AquaGatekeeper2
     SUBDIR += DarwinStreamingServer
     SUBDIR += GeoIP
     SUBDIR += Sockets

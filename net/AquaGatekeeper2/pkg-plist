@@ -1,7 +1,6 @@
 sbin/AquaGatekeeper
 etc/rc.d/agk.sh.sample
 etc/AquaGatekeeper.cfg.sample
-%%PORTDOCS%%%%DOCSDIR%%/AdministratorGuide.pdf
 %%PORTDOCS%%%%DOCSDIR%%/AquaGatekeeper.htm
 %%PORTDOCS%%%%DOCSDIR%%/CommandLineOptions.htm
 %%PORTDOCS%%%%DOCSDIR%%/ConfigSyntax.htm
@@ -10,7 +9,6 @@ etc/AquaGatekeeper.cfg.sample
 %%PORTDOCS%%%%DOCSDIR%%/OperationPrinciples.htm
 %%PORTDOCS%%%%DOCSDIR%%/RevisionHistory.htm
 %%PORTDOCS%%%%DOCSDIR%%/default.css
-%%PORTDOCS%%%%DOCSDIR%%/Rus/AdministratorGuideRus.pdf
 %%PORTDOCS%%%%DOCSDIR%%/Rus/AquaGatekeeper.htm
 %%PORTDOCS%%%%DOCSDIR%%/Rus/CommandLineOptions.htm
 %%PORTDOCS%%%%DOCSDIR%%/Rus/ConfigSyntax.htm

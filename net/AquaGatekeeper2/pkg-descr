@@ -1,12 +1,12 @@
-Aqua Gatekeeper is H.323 gatekeeper and proxy by Aqua Project Group.
+Aqua Gatekeeper 2.0 is H.323 gatekeeper and proxy by Infinet Wireless LTD.
 It is compatible with many hardware/software like Cisco H.323 gateways and
 Microsoft NetMeeting 3.01 for Windows 2000 and later.
 
 This port presents Aqua Gatekeeper Startup Edition.
 It is not a free software but may be used free of charge.
-The Aqua Gatekeeper Startup Edition is limited to 30 concurrent calls.
+The Aqua Gatekeeper Startup Edition 2.0 is limited to 7 concurrent calls.
 
-WWW: http://www.aqua.comptek.ru/man/voip/gatekeeper/index.htm
+WWW: http://www.infinetwireless.com/WirelessEq/tmp/software/docs/agk_manual/agk
 
 - Grosbein
 eugen@grosbein.pp.ru
