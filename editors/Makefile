@@ -199,7 +199,6 @@
     SUBDIR += xemacs-devel-mule
     SUBDIR += xemacs-mule-packages
     SUBDIR += xemacs-packages
-    SUBDIR += xemacs21
     SUBDIR += xemacs21-mule
     SUBDIR += xenon
     SUBDIR += xmleditor
