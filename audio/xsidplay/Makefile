@@ -6,12 +6,9 @@
 #
 
 PORTNAME=	xsidplay
-PORTVERSION=	1.6.4.3
-PORTREVISION=	2
+PORTVERSION=	1.6.5.1a
 PORTEPOCH=	1
 CATEGORIES=	audio emulators
-# version 1.6.4.3 isn't fetchable anymore, informed maintainer about
-# version 1.6.5pre19 which is still there - edwin 20021227
 MASTER_SITES=	http://www.geocities.com/SiliconValley/Lakes/5147/sidplay/packages/
 EXTRACT_SUFX=	.tgz
 
@@ -40,10 +37,6 @@ MAN1=		xsidplay.1
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} >= 500113
-BROKEN=         "Configure fails"
-.endif
-
 .if ${MACHINE_ARCH} == "alpha"
 CFLAGS+=	-O0
 .endif
@@ -52,6 +45,7 @@ pre-patch:
 .for file in configure src/Makefile.in
 	@${REINPLACE_CMD} -e 's|lib-mt|libqt-mt|g' ${WRKSRC}/${file}
 .endfor
+	@${REINPLACE_CMD} -e 's|-lqt|-lqt-mt|g' ${WRKSRC}/configure
 	@${REINPLACE_CMD} -e 's|/usr/share|${PREFIX}|g' ${WRKSRC}/xsidplay.1
 
 do-install:
@@ -63,8 +57,6 @@ do-install:
 	@${MKDIR} ${DOCSDIR}
 	@${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
 	@${INSTALL_DATA} ${WRKSRC}/*.faq ${DOCSDIR}
-	@${MKDIR} ${EXAMPLESDIR}
-	@${INSTALL_DATA} ${WRKSRC}/example-sidtunes/*.sid ${EXAMPLESDIR}
 .endif
 
 .include <bsd.port.post.mk>
