@@ -7,8 +7,7 @@
 #
 
 PORTNAME=	hydra
-PORTVERSION=	0.1.4
-PORTREVISION=	2
+PORTVERSION=	0.1.7
 CATEGORIES=	www
 MASTER_SITES=	ftp://ftp.hellug.gr/pub/software/hydra/ \
 		http://hydra.hellug.gr/download/ \
@@ -22,8 +21,11 @@ LIB_DEPENDS=	gnutls.12:${PORTSDIR}/security/gnutls
 NO_LATEST_LINK=	yes
 USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
+CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
+CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 
-CFLAGS+=	-I${LOCALBASE}/include
+CPPFLAGS=	-I${LOCALBASE}/include
+LDFLAGS=	-L${LOCALBASE}/lib
 
 post-patch:
 	@${REINPLACE_CMD} -e "s,-pthread,${PTHREAD_LIBS},g" ${WRKSRC}/configure
