@@ -1,6 +1,6 @@
---- editor/editor.C.orig	Sun Jun 18 04:27:07 1995
-+++ editor/editor.C	Sat Apr  1 20:10:46 2000
-@@ -45,11 +45,14 @@
+--- editor/editor.C.orig	Sun Jun 18 07:27:07 1995
++++ editor/editor.C	Fri Dec  7 21:02:51 2001
+@@ -45,11 +45,13 @@
  #include <stdio.h>
  #include <time.h>
  #include <unistd.h>
@@ -8,14 +8,14 @@
  #include <sys/time.h>
  #include <sys/types.h>
  #include <sys/wait.h>
+-#include "pbmplus.h"
 +extern "C" {
- #include "pbmplus.h"
  #include "pnm.h"
 +}
  
  #define del(x) delete x; x = NULL;
  
-@@ -3249,17 +3252,17 @@
+@@ -3249,17 +3251,17 @@
        wins[0] = play_btn->WinId();
        play_btn->RestrictEvents(wins,1);
  
@@ -37,7 +37,7 @@
  
        dither_delay = clk.tv_usec + 1000000*clk.tv_sec;
        dither_delay -= target.tv_usec + 1000000*target.tv_sec;
-@@ -3268,9 +3271,9 @@
+@@ -3268,9 +3270,9 @@
  
        for(int a=0; a<5; a++)
  	{
@@ -49,7 +49,7 @@
  
  	  usleep_delay += clk.tv_usec + 1000000*clk.tv_sec - 10000;
  	  usleep_delay -= target.tv_usec + 1000000*target.tv_sec;
-@@ -3283,7 +3286,7 @@
+@@ -3283,7 +3285,7 @@
  
  // Calculate when the frame _should_ finish
  
@@ -58,7 +58,7 @@
  	  target.tv_usec += usec_per_frame - dither_delay - decode_delay;
  	  if(target.tv_usec >= 1000000)
  	    {
-@@ -3299,7 +3302,7 @@
+@@ -3299,7 +3301,7 @@
  
  // See if we're ahead by more than a decode delay (for the next frame)
  

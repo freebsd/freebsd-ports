@@ -1,4 +1,4 @@
 bin/mpeg_edit
-share/doc/mpeg_edit/README
-share/doc/mpeg_edit/manual.ps
-@dirrm share/doc/mpeg_edit
+%%PORTDOCS%%share/doc/mpegedit/README
+%%PORTDOCS%%share/doc/mpegedit/manual.ps
+%%PORTDOCS%%@dirrm share/doc/mpegedit
