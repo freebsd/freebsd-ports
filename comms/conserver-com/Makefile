@@ -25,6 +25,12 @@ MAN8=	conserver.8
 DEFAULTPORT?=	782
 DEFAULTHOST?=	localhost
 
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == "alpha" || ${ARCH} == "sparc64"
+CONFIGURE_ARGS+=--with-64bit
+.endif
+
 post-patch:
 	${REINPLACE_CMD} \
 		-e 's@/usr/local/bin@${PREFIX}/sbin@' \
@@ -33,4 +39,4 @@ post-patch:
 post-install:
 	${LN} -sf ../conserver.rc ${PREFIX}/etc/rc.d/conserver.sh-
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
