@@ -1,0 +1,16 @@
+etc/dhcp-agent/dhcp-client/default.conf
+etc/dhcp-agent/dhcp-client/default.sysconf
+etc/dhcp-agent/dhcp-server/lease.conf.example
+@dirrm etc/dhcp-agent/dhcp-client
+@dirrm etc/dhcp-agent/dhcp-server
+@dirrm etc/dhcp-agent
+sbin/dhcp-sniff
+sbin/dhcp-client
+sbin/dhcp-server
+lib/libdhcputil.a
+lib/libdhcputil.so
+lib/libdhcputil.so.0
+@dirrm var/dhcp-agent/dhcp-client
+@dirrm var/dhcp-agent/dhcp-server
+@dirrm var/dhcp-agent
+@dirrm var

@@ -1,0 +1,16 @@
+dhcp-agent is a suite, or a set of tools, that allow a UNIX host to make use
+of the Dynamic Host Configuration protocol.
+
+Currently the suite is packaged with the following tools:
+    * dhcp-client : A highly configurable and extendable DHCP client.
+    * dhcp-sniff : A command line DHCP sniffer.
+
+In good time the suite will also be packaged with:
+    * dhcp-server : A configurable and extendable DHCP server.
+    * dhcp-relay : A DHCP relay agent.
+
+Under FreeBSD the client will make use of two bpf devices. This is because
+of a limitation in dnet. If you run out of bpf devices you may need to
+compile a kernel with more bpf devices.
+
+WWW: http://dhcp-agent.sourceforge.net/

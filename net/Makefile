@@ -99,6 +99,7 @@
     SUBDIR += dgd
     SUBDIR += dgd-lpmud
     SUBDIR += dgd-net
+    SUBDIR += dhcp-agent
     SUBDIR += dhcpconf
     SUBDIR += dhcpdump
     SUBDIR += dhcping
