@@ -13,7 +13,7 @@ MASTER_SITE_SUBDIR=	HTTP
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	skv@FreeBSD.org
-COMMENT=	Perl interface to the gnome ghttp library
+COMMENT=	WebDAV client library
 
 BUILD_DEPENDS=	${SITE_PERL}/XML/DOM.pm:${PORTSDIR}/textproc/p5-XML-DOM \
 		${SITE_PERL}/LWP.pm:${PORTSDIR}/www/p5-libwww
@@ -23,7 +23,6 @@ PERL_CONFIGURE=	yes
 
 MAN1PREFIX=	${PREFIX}
 MAN1=		dave.1
-MAN3PREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 MAN3=		HTTP::DAV.3 HTTP::DAV::Lock.3 HTTP::DAV::Resource.3 \
 		HTTP::DAV::Response.3
 
