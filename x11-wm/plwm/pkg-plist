@@ -31,6 +31,9 @@ lib/%%PYTHON_VERSION%%/site-packages/plwm/focus.pyo
 lib/%%PYTHON_VERSION%%/site-packages/plwm/font.py
 lib/%%PYTHON_VERSION%%/site-packages/plwm/font.pyc
 lib/%%PYTHON_VERSION%%/site-packages/plwm/font.pyo
+lib/%%PYTHON_VERSION%%/site-packages/plwm/input.py
+lib/%%PYTHON_VERSION%%/site-packages/plwm/input.pyc
+lib/%%PYTHON_VERSION%%/site-packages/plwm/input.pyo
 lib/%%PYTHON_VERSION%%/site-packages/plwm/inspect.py
 lib/%%PYTHON_VERSION%%/site-packages/plwm/inspect.pyc
 lib/%%PYTHON_VERSION%%/site-packages/plwm/inspect.pyo
@@ -40,6 +43,12 @@ lib/%%PYTHON_VERSION%%/site-packages/plwm/keys.pyo
 lib/%%PYTHON_VERSION%%/site-packages/plwm/menu.py
 lib/%%PYTHON_VERSION%%/site-packages/plwm/menu.pyc
 lib/%%PYTHON_VERSION%%/site-packages/plwm/menu.pyo
+lib/%%PYTHON_VERSION%%/site-packages/plwm/message.py
+lib/%%PYTHON_VERSION%%/site-packages/plwm/message.pyc
+lib/%%PYTHON_VERSION%%/site-packages/plwm/message.pyo
+lib/%%PYTHON_VERSION%%/site-packages/plwm/misc.py
+lib/%%PYTHON_VERSION%%/site-packages/plwm/misc.pyc
+lib/%%PYTHON_VERSION%%/site-packages/plwm/misc.pyo
 lib/%%PYTHON_VERSION%%/site-packages/plwm/modestatus.py
 lib/%%PYTHON_VERSION%%/site-packages/plwm/modestatus.pyc
 lib/%%PYTHON_VERSION%%/site-packages/plwm/modestatus.pyo
@@ -58,6 +67,9 @@ lib/%%PYTHON_VERSION%%/site-packages/plwm/mw_biff.pyo
 lib/%%PYTHON_VERSION%%/site-packages/plwm/mw_clock.py
 lib/%%PYTHON_VERSION%%/site-packages/plwm/mw_clock.pyc
 lib/%%PYTHON_VERSION%%/site-packages/plwm/mw_clock.pyo
+lib/%%PYTHON_VERSION%%/site-packages/plwm/mw_load.py
+lib/%%PYTHON_VERSION%%/site-packages/plwm/mw_load.pyc
+lib/%%PYTHON_VERSION%%/site-packages/plwm/mw_load.pyo
 lib/%%PYTHON_VERSION%%/site-packages/plwm/outline.py
 lib/%%PYTHON_VERSION%%/site-packages/plwm/outline.pyc
 lib/%%PYTHON_VERSION%%/site-packages/plwm/outline.pyo
