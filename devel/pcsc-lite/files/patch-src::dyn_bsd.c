@@ -1,6 +1,6 @@
---- src/dyn_bsd.c.dist	Thu Nov  8 16:40:00 2001
-+++ src/dyn_bsd.c	Thu Nov  8 16:40:21 2001
-@@ -74,3 +74,3 @@
+--- src/dyn_bsd.c.dist	Wed Dec 26 06:37:11 2001
++++ src/dyn_bsd.c	Wed Dec 26 06:39:24 2001
+@@ -77,3 +77,3 @@
    *pvFHandle = 0;
 -  *pvFHandle = dlsym( pvLHandle, pcFunctionName );
 +  *pvFHandle = dlsym( pvLHandle, pcFunction );

@@ -6,21 +6,33 @@
 #
 
 PORTNAME=	pcsc-lite
-PORTVERSION=	1.0.1
+PORTVERSION=	1.0.2.b2
 CATEGORIES=	devel security
 MASTER_SITES=	http://www.linuxnet.com/middleware/files/
+DISTNAME=	pcsc-lite-${PORTVERSION:S/b/beta/}
 
 MAINTAINER=	toni@ants.at
 
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_LIBTOOL=	yes
+LIBTOOLFILES+=	build/aclocal.m4
 
 INSTALLS_SHLIB=	yes
-CONFIGURE_ARGS+=	--enable-syslog --enable-daemon
+CONFIGURE_ARGS+=	--enable-syslog --enable-daemon \
+			--enable-runpid=/var/run/pcscd.pid
 PKGMESSAGE=	${WRKDIR}/pkg-message
 
+post-patch:
+	@${PERL} -pi -e 's,SUBDIRS = src etc doc,SUBDIRS = src,' \
+		${WRKSRC}/Makefile.in
+
 post-install:
+.if !defined(NOPORTDOCS)
+	@${MKDIR} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/doc/README.DAEMON ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/doc/pcsc-lite-0.8.7.pdf ${DOCSDIR}
+.endif
 	${INSTALL_DATA} ${WRKSRC}/etc/reader.conf \
 		${PREFIX}/etc/reader.conf.sample
 	${INSTALL_SCRIPT} ${FILESDIR}/pcscd.sh \

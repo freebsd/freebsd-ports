@@ -1,3 +1,7 @@
+bin/formaticc
+bin/installifd
+%%PORTDOCS%%share/doc/pcsc-lite/README.DAEMON
+%%PORTDOCS%%share/doc/pcsc-lite/pcsc-lite-0.8.7.pdf
 etc/rc.d/pcscd.sh.sample
 etc/reader.conf.sample
 include/atrhandler.h
@@ -17,10 +21,8 @@ include/winscard.h
 include/winscard_msg.h
 include/winscard_svc.h
 include/wintypes.h
-lib/libpcsclite-core.a
-lib/libpcsclite-core.so
-lib/libpcsclite-core.so.0
 lib/libpcsclite.a
 lib/libpcsclite.so
 lib/libpcsclite.so.0
 sbin/pcscd
+%%PORTDOCS%%@dirrm share/doc/pcsc-lite
