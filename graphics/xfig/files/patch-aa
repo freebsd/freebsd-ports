@@ -1,0 +1,8 @@
+*** fig.h.orig	Wed Nov 23 02:13:41 1994
+--- fig.h	Wed Nov 23 02:19:18 1994
+***************
+*** 223,225 ****
+  extern int	sys_nerr;
+- extern char    *sys_errlist[];
+  
+--- 223,224 ----
