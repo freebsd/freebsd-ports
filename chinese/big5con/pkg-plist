@@ -2,8 +2,8 @@ bin/b5c
 bin/b5cfld
 bin/et
 etc/big5con.cfg
-lib/fonts/taipei16.bdf.gz
-lib/fonts/8x16.bdf.gz
+lib/fonts/kc16.smf
+lib/fonts/kc8x16.smf
 lib/xcin/Boshiamy.cin
 lib/xcin/Boshiamy.tab
 lib/xcin/Boshiamy.tab.rev
