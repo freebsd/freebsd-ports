@@ -6,7 +6,8 @@
 #
 
 PORTNAME=	Net_NNTP
-PORTVERSION=	1.2.0
+PORTVERSION=	1.0.0
+PORTEPOCH=	1
 CATEGORIES=	net news www pear
 
 MAINTAINER=	antonio@php.net
@@ -16,8 +17,7 @@ BUILD_DEPENDS=	${PEARDIR}/Net/Socket.php:${PORTSDIR}/net/pear-Net_Socket
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 CATEGORY=	Net
-FILES=		NNTP/Client.php NNTP/Header.php NNTP/Message.php \
-		NNTP/Protocol/Client.php
+FILES=		NNTP.php NNTP/Client.php NNTP/Protocol/Client.php
 EXAMPLES=	index.php group.php read.php
 _EXAMPLESDIR=	docs/examples/news.php.net
 
