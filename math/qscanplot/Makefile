@@ -8,8 +8,7 @@
 PORTNAME=	qscanplot
 PORTVERSION=	0.3
 CATEGORIES=	math
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	lib3ds
+MASTER_SITES=	http://www.gae.ucm.es/~gonzalez/qscanplot/
 
 MAINTAINER=	sobomax@FreeBSD.org
 
