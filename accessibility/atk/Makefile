@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	atk
-PORTVERSION=	1.6.0
+PORTVERSION=	1.6.1
 CATEGORIES=	accessibility devel
 MASTER_SITES=	${MASTER_SITE_GNOME} \
 		ftp://ftp.gtk.org/pub/gtk/v2.3/
