@@ -22,7 +22,8 @@ stop)
 	rm -f ${PIDFILE}
 	;;
 *)
-	echo "Usage: `basename $0` {start|stop}" >&2
+	echo "Usage: ${0##*/} { start | stop }" >&2
+	exit 64
 	;;
 esac
 

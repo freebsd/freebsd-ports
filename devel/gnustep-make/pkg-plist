@@ -68,6 +68,7 @@ System/Library/Makefiles/clean_vendor.sh
 System/Library/Makefiles/clibrary.make
 System/Library/Makefiles/common.make
 System/Library/Makefiles/config.guess
+System/Library/Makefiles/config.make
 System/Library/Makefiles/config.sub
 System/Library/Makefiles/cpu.sh
 System/Library/Makefiles/ctool.make
@@ -78,9 +79,6 @@ System/Library/Makefiles/framework.make
 System/Library/Makefiles/gswapp.make
 System/Library/Makefiles/gswbundle.make
 System/Library/Makefiles/install-sh
-System/Library/Makefiles/config.make
-System/Library/Makefiles/user_home
-System/Library/Makefiles/which_lib
 System/Library/Makefiles/java-executable.template
 System/Library/Makefiles/java-tool.make
 System/Library/Makefiles/java.make
@@ -92,6 +90,7 @@ System/Library/Makefiles/library.make
 System/Library/Makefiles/messages.make
 System/Library/Makefiles/mkinstalldirs
 System/Library/Makefiles/names.make
+%%GNUSTEP_DEVEL%%System/Library/Makefiles/native-library.make
 System/Library/Makefiles/objc.make
 System/Library/Makefiles/os.sh
 System/Library/Makefiles/palette.make
@@ -102,6 +101,7 @@ System/Library/Makefiles/service.make
 System/Library/Makefiles/spec-debug-alone-rules.template
 System/Library/Makefiles/spec-debug-rules.template
 System/Library/Makefiles/spec-rules.template
+%%GNUSTEP_DEVEL%%System/Library/Makefiles/strip_makefiles.sh
 System/Library/Makefiles/subproject.make
 System/Library/Makefiles/target.make
 System/Library/Makefiles/test-application.make
@@ -109,7 +109,9 @@ System/Library/Makefiles/test-library.make
 System/Library/Makefiles/test-tool.make
 System/Library/Makefiles/tool.make
 System/Library/Makefiles/transform_paths.sh
+System/Library/Makefiles/user_home
 System/Library/Makefiles/vendor.sh
+System/Library/Makefiles/which_lib
 System/Tools/debugapp
 System/Tools/openapp
 System/Tools/opentool

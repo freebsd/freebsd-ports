@@ -7,7 +7,7 @@
 
 PORTNAME=	gnustep
 .if defined(WITH_GNUSTEP_DEVEL)
-PORTVERSION=	1.7.4
+PORTVERSION=	1.9.0
 .else
 PORTVERSION=	1.8.0
 .endif
