@@ -12,7 +12,7 @@ MASTER_SITES=	ftp://gatekeeper.dec.com/pub/DEC/Scheme-to-C/
 DISTNAME=	15mar93
 EXTRACT_SUFX=	.tar.Z
 
-MAINTAINER=	jmacd@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 
 USE_XLIB=	yes
 INSTALLS_SHLIB=	yes
