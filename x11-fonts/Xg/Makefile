@@ -3,14 +3,13 @@
 # Date created:         Sun Aug 13 12:36:14 CDT 1995
 # Whom:                 erich@rrnet.com
 #
-# $Id: Makefile,v 1.2 1995/10/28 20:28:37 erich Exp $
+# $Id: Makefile,v 1.3 1996/11/12 02:19:36 obrien Exp $
 #
 
 DISTNAME=	libXg.utf.fonts
 PKGNAME=	libXgFonts-1.0
 CATEGORIES=	plan9
 MASTER_SITES=	ftp://ftp.ecf.toronto.edu/pub/plan9/matty/
-EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=	erich@FreeBSD.org
 
