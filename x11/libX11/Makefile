@@ -7,6 +7,7 @@
 
 PORTNAME=	libX11
 PORTVERSION=	6.2.1
+PORTREVISION=	1
 CATEGORIES=	x11
 MASTER_SITES=	http://pdx.freedesktop.org/~xlibs/release/
 
@@ -16,6 +17,7 @@ COMMENT=	X11 library
 LIB_PC_DEPENDS=	${X11BASE}/libdata/pkgconfig/xau.pc:${PORTSDIR}/x11/libXau
 BUILD_DEPENDS=	${X11BASE}/libdata/pkgconfig/xextensions.pc:${PORTSDIR}/x11/xextensions \
 		${X11BASE}/libdata/pkgconfig/xtrans.pc:${PORTSDIR}/x11/libXtrans \
+		${X11BASE}/libdata/pkgconfig/xproto.pc:${PORTSDIR}/x11/xproto \
 		${LIB_PC_DEPENDS}
 RUN_DEPENDS=	${LIB_PC_DEPENDS}
 
