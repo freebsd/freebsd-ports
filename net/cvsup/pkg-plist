@@ -1,6 +1,6 @@
-sbin/cvsup
-sbin/cvsupd
-sbin/supconv
+bin/cvsup
+bin/supconv
 man/man1/cvsup.1.gz
 man/man1/supconv.1.gz
 man/man8/cvsupd.8.gz
+sbin/cvsupd
