@@ -47,4 +47,16 @@ GNU_ARCH=	${MACHINE_ARCH}
 .endif
 PLIST_SUB+=	GNU_ARCH=${GNU_ARCH} VERSION=${PORTVERSION}
 
+ETCDIR=		${PREFIX}/../etc
+
+post-patch:
+.for f in bundle gswapp gswbundle woapp wobundle
+	${PERL} -pi -e 's/\$$\(TAR\) ch --exclude=CVS --to-stdout/\$$\(TAR\) -ch --exclude=CVS -f -/g' ${WRKSRC}/make/${f}.make
+.endfor
+
+post-install:
+	@${MKDIR} ${ETCDIR}
+	${INSTALL_SCRIPT} ${FILESDIR}/GNUstep.sh ${ETCDIR}/rc.d
+	${INSTALL_DATA} ${FILESDIR}/gdomap_if ${ETCDIR}
+
 .include <bsd.port.post.mk>
