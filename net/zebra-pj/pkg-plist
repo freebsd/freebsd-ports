@@ -9,5 +9,7 @@ etc/zebra/zebra.conf.sample
 etc/zebra/ospfd.conf.sample
 @unexec install-info --delete %D/info/zebra.info %D/info/dir
 info/zebra.info
+info/zebra.info-1
+info/zebra.info-2
 @exec install-info %D/info/zebra.info %D/info/dir
 @dirrm etc/zebra
