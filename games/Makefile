@@ -330,6 +330,7 @@
     SUBDIR += phpua-engine
     SUBDIR += phpua-hl
     SUBDIR += phpua-q3
+    SUBDIR += phpua-ut
     SUBDIR += pinball
     SUBDIR += pipenightdreams
     SUBDIR += pmars
