@@ -1,4 +1,5 @@
 DESCRIPTION
+
 	gd is a graphics library. It allows your code to quickly draw images
 	complete with lines, arcs, text, multiple colors, cut and paste from
 	other images, and flood fills, and write out the result as a .GIF file.
@@ -12,8 +13,12 @@ DESCRIPTION
 
 	gd does not provide for every possible desirable graphics operation. It
 	is not necessary or desirable for gd to become a kitchen-sink graphics
-	package, but version 1.2 incorporates most of the commonly requested 
-	features for a 2D package. 
+	package, but version 1.3 incorporates most of the commonly requested
+	features for an 8-bit 2D package. Support for scalable fonts, and 
+	truecolor images, JPEG and PNG is planned for version 2.0. Version 1.3
+	was released to correct longstanding bugs and provide an LZW-free GIF 
+	compression routine. 
+
 AUTHOR
 	gd 1.2 was written by Thomas Boutell and is currently distributed by 
 	boutell.com, Inc. 

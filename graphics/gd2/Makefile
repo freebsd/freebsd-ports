@@ -1,16 +1,15 @@
 # New ports collection makefile for: gd
-# Version required:     1.2
-# Date created:         28 Jan 1997
+# Version required:     1.3
+# Date created:         27 Mar 1998
 # Whom:                 jeff@cetlink.net
 #
-# $Id: Makefile,v 1.1.1.1 1997/02/13 14:51:44 tg Exp $
+# $Id$
 #
 
-DISTNAME=       gd1.2
-PKGNAME=        gd-1.2
+DISTNAME=       gd1.3
+PKGNAME=        gd-1.3
 CATEGORIES=	graphics
-MASTER_SITES=   http://www.boutell.com/gd/
-EXTRACT_SUFX=   .tar.Z
+MASTER_SITES=   http://www.boutell.com/gd/http/
 
 MAINTAINER=     jeff@cetlink.net
 
