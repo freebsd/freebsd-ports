@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	file
-PORTVERSION=	4.02
+PORTVERSION=	4.04
 CATEGORIES=	sysutils
 MASTER_SITES=	ftp://ftp.astron.com/pub/file/ \
 		ftp://ftp.gw.com/mirrors/pub/unix/file/ \
@@ -21,6 +21,8 @@ CONFIGURE_ARGS=	--enable-fsect-man5
 MAN1=		file.1
 MAN3=		libmagic.3
 MAN5=		magic.5
+
+INSTALLS_SHLIB=	yes
 
 # The rules below are required to suppress invocations of aclocal, automake,
 # autoconf and autoheader at `make build' and `make install'.
