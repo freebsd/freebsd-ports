@@ -16,7 +16,7 @@ MASTER_SITES=	http://www.catb.org/~esr/fetchmail/ \
 		ftp://ftp.ccil.org/pub/esr/fetchmail/ \
 		ftp://ftp.win.ne.jp/pub/network/mail/fetchmail/
 
-MAINTAINER=	eikemeier@fillmore-labs.com
+MAINTAINER=	eik@FreeBSD.org
 COMMENT=	Batch mail retrieval utility for IMAP/POP2/POP3/APOP/KPOP/ETRN/ODMR
 
 LIB_DEPENDS=	intl:${PORTSDIR}/devel/gettext

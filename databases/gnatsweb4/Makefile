@@ -11,7 +11,7 @@ CATEGORIES=		databases devel www
 MASTER_SITES=		${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	gnatsweb
 
-MAINTAINER=		eikemeier@fillmore-labs.com
+MAINTAINER=		eik@FreeBSD.org
 COMMENT=		Gnatsweb, a GNATS web interface
 
 RUN_DEPENDS=		${SITE_PERL}/${PERL_ARCH}/MIME/Base64.pm:${PORTSDIR}/converters/p5-MIME-Base64

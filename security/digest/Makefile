@@ -12,7 +12,7 @@ CATEGORIES=	security sysutils
 MASTER_SITES=	#
 DISTFILES=
 
-MAINTAINER=	eikemeier@fillmore-labs.com
+MAINTAINER=	eik@FreeBSD.org
 COMMENT=	Message digest wrapper utility
 
 GNU_CONFIGURE=	yes

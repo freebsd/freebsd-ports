@@ -12,7 +12,7 @@ CATEGORIES=	mail
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	eikemeier@fillmore-labs.com
+MAINTAINER=	eik@FreeBSD.org
 COMMENT=	Web based Cyrus IMAP user admin client
 
 .if defined(WITH_CYRUS_IMAPD_VER)

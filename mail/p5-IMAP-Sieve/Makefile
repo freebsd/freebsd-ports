@@ -13,7 +13,7 @@ MASTER_SITE_SUBDIR=	websieve
 PKGNAMEPREFIX=	p5-
 DISTNAME=	websieve-0.61
 
-MAINTAINER=	eikemeier@fillmore-labs.com
+MAINTAINER=	eik@FreeBSD.org
 COMMENT=	Perl module to edit Sieve scripts on an Cyrus IMAP server
 
 RUN_DEPENDS=	${SITE_PERL}/IO/Socket/SSL.pm:${PORTSDIR}/security/p5-IO-Socket-SSL \

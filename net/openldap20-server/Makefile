@@ -28,7 +28,7 @@ MASTER_SITE_SUBDIR=	openldap-release
 PKGNAMESUFFIX=		${OPENLDAP_PKGNAMESUFFIX}
 EXTRACT_SUFX=		.tgz
 
-MAINTAINER=		eikemeier@fillmore-labs.com
+MAINTAINER=		eik@FreeBSD.org
 COMMENT?=		Open source LDAP server implementation
 
 OPENLDAP_VERSION=	2.0.27

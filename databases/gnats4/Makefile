@@ -14,7 +14,7 @@ MASTER_SITES=		http://home.pacific.net.au/~meganandaj/ \
 			# ${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	gnats
 
-MAINTAINER=		eikemeier@fillmore-labs.com
+MAINTAINER=		eik@FreeBSD.org
 COMMENT=		GNATS, the GNU Problem Report Management System
 
 GNU_CONFIGURE=		yes
