@@ -10,7 +10,7 @@ PORTVERSION=	1998.08.10
 PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	http://www.acme.com/software/thumbnail_index/
-DISTNAME=	${PORTNAME}_10aug98
+DISTNAME=	${PORTNAME}_10aug1998
 
 MAINTAINER=	ports@FreeBSD.org
 
@@ -20,6 +20,6 @@ RUN_DEPENDS=	djpeg:${PORTSDIR}/graphics/jpeg \
 WRKSRC=		${WRKDIR}/${PORTNAME}
 MAN1=		thumbnail_index.1
 
-do-build:     # empty
+NO_BUILD=	yes
 
 .include <bsd.port.mk>
