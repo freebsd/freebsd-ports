@@ -7,6 +7,7 @@
 
 PORTNAME=	chbg
 PORTVERSION=	1.5
+PORTREVISION=	1
 CATEGORIES=	graphics gnome
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		http://www.idata.sk/~ondrej/sw/
@@ -14,8 +15,6 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	netchild@FreeBSD.org
-
-BROKEN=		"Incorrect pkg-plist"
 
 # GNOME parts aren't prefix safe, they install into "gnome-config --prefix"
 USE_X_PREFIX=	yes
@@ -33,8 +32,6 @@ CONFIGURE_ENV=	CFLAGS="${CFLAGS}" CPPFLAGS="-I${LOCALBASE}/include" \
 .if ${HAVE_GNOME:Mlibcapplet} != ""
 USE_GNOME+= gnomeprefix gnomehack libcapplet
 PKGNAMESUFFIX=	-gnome
-.else
-USE_GNOME+=	gtk12
 .endif
 
 MAN1=		chbg.1
