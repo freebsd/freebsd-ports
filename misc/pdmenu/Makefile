@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	pdmenu
-PORTVERSION=	1.2.64
+PORTVERSION=	1.2.65
 CATEGORIES=	misc
 MASTER_SITES=	http://kitenet.net/programs/code/pdmenu/
 DISTNAME=       pdmenu_${PORTVERSION}
