@@ -34,7 +34,6 @@ lib/libxsltbreakpoint.so.1
 %%PYTHON:%%lib/%%PYTHON_VERSION%%/site-packages/libxsltmod.so
 libdata/pkgconfig/libxslt.pc
 %%PYTHON:%%share/doc/libxslt-python/TODO
-%%PYTHON:%%share/doc/libxslt-python/libxsltclass.txt
 %%PYTHON:%%share/doc/libxslt-python/examples/basic.py
 %%PYTHON:%%share/doc/libxslt-python/examples/extfunc.py
 %%PYTHON:%%share/doc/libxslt-python/examples/pyxsltproc.py
