@@ -1,0 +1,23 @@
+*** webcopy.src.orig	Sat Jun  8 20:42:14 1996
+--- webcopy.src	Sat Sep 14 04:30:41 1996
+***************
+*** 1,4 ****
+! #!%PERL% -- # -*- perl -*-
+  eval 'exec %PERL% -S $0 "$*"'
+      if undef;
+  #
+--- 1,4 ----
+! #!%PERL% --
+  eval 'exec %PERL% -S $0 "$*"'
+      if undef;
+  #
+***************
+*** 275,280 ****
+--- 275,281 ----
+  		    &check_tag("OVERLAY", "SRC",        $image) ||
+  		    &check_tag("BODY",    "BACKGROUND", $image) ||
+  		    &check_tag("TABLE",   "BACKGROUND", $image) ||
++ 		    &check_tag("EMBED",   "SRC",        $image) ||
+  		    &check_tag("BGSOUND", "SRC",        $image) ||
+  		    &check_tag("FRAME",   "SRC",        $link)  ||
+  		    &check_tag("AREA",    "HREF",       $link)  ||
