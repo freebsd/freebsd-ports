@@ -13,6 +13,8 @@ MASTER_SITES=	http://ftp.ost.eltele.no/pub/www/proxy/squidGuard/ \
 
 MAINTAINER=	ports@tyfon.net
 
+BROKEN=		"Does not install cleanly"
+
 BUILD_DEPENDS=	${LOCALBASE}/lib/libdb3.so.2:${PORTSDIR}/databases/db3
 RUN_DEPENDS=	${LOCALBASE}/sbin/squid:${PORTSDIR}/www/squid24
 
