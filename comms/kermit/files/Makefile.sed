@@ -27,8 +27,7 @@ wart: ckwart.c
 ckcpro.c: ckcpro.w
 ckcpro.c: wart
 
-kermit.1: ckuker.cpp
-	$(CPP) ckuker.cpp | grep -v ^$$ | grep -v ^\# > kermit.1 || \
-		rm -f kermit.1
+kermit.1: ckuker.nr
+	cp ckuker.nr kermit.1
 
 .include <bsd.prog.mk>
