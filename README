@@ -19,3 +19,13 @@ for the latest official version from FreeBSD-current.
 The section "The Ports Collection" will tell you how to use the
 ports and packages and the "Porting Applications" section
 describes how one can contribute to the ports collection.
+
+NOTE:  This tree can GROW significantly in size during normal usage!
+The distribution tar files can and do accumulate in /usr/ports/distfiles,
+and the individual ports will also use up lots of space in their work
+subdirectories unless you remember to "make clean" after you're done
+building a given port.  /usr/ports/distfiles can also be periodically
+cleaned without ill-effect, though if you don't have the original
+distribution tarball(s) for something on CDROM then you will need to pull
+it all over your network connection again if you ever try to build the
+associated port.
