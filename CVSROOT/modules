@@ -7473,6 +7473,7 @@ py-spambayes	ports/mail/py-spambayes
 py-spark	ports/devel/py-spark
 py-spreadmodule	ports/net/py-spreadmodule
 py-sqlrelay	ports/databases/py-sqlrelay
+py-sybase	ports/databases/py-sybase
 py-tables	ports/devel/py-tables
 py-tarfile	ports/archivers/py-tarfile
 py-tkinter	ports/x11-toolkits/py-tkinter
