@@ -1,6 +1,6 @@
 bin/omi
-share/doc/omi/CHANGES
-share/doc/omi/README.txt
-share/doc/omi/README.html
-share/doc/omi/BSD-COPYRIGHT
-@dirrm share/doc/omi
+%%PORTDOCS%%%%DOCSDIR%%/CHANGES
+%%PORTDOCS%%%%DOCSDIR%%/README.txt
+%%PORTDOCS%%%%DOCSDIR%%/README.html
+%%PORTDOCS%%%%DOCSDIR%%/BSD-COPYRIGHT
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
