@@ -8,4 +8,3 @@
 +char *excludefile = PREFIX "/share/scanssh/exclude.list";
  struct exclude_list excludequeue;
  struct exclude_list rndexclqueue;
- 

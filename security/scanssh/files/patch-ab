@@ -1,11 +1,10 @@
---- Makefile.in.orig	Sun Oct  8 08:36:26 2000
-+++ Makefile.in	Fri Nov  3 10:58:43 2000
+--- Makefile.in.orig	Fri Mar  9 19:07:36 2001
++++ Makefile.in	Fri Mar  9 19:07:57 2001
 @@ -6,7 +6,7 @@
  VPATH= @srcdir@
  
  CC= @CC@
--CFLAGS= @CFLAGS@ @DEFS@ @PCAPINC@ -I$(srcdir)/missing -D_BSD_SOURCE
-+CFLAGS= @CFLAGS@ @DEFS@ @PCAPINC@ -I$(srcdir)/missing -D_BSD_SOURCE -DPREFIX=\"@prefix@\"
+-CFLAGS= @CFLAGS@ @DEFS@ -I. -I$(srcdir) -I$(srcdir)/missing @PCAPINC@ -D_BSD_SOURCE
++CFLAGS= @CFLAGS@ @DEFS@ -I. -I$(srcdir) -I$(srcdir)/missing @PCAPINC@ -D_BSD_SOURCE -DPREFIX=\"@prefix@\"
  LDFLAGS= @LDFLAGS@
- 
- prefix= @prefix@
+ LIBS= @LIBS@ @PCAPLIB@

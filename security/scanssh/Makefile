@@ -6,17 +6,16 @@
 #
 
 PORTNAME=	scanssh
-PORTVERSION=	1.3
-PORTREVISION=	1
+PORTVERSION=	1.5
 CATEGORIES=	security net
 MASTER_SITES=	http://www.monkey.org/~provos/
-DISTNAME=	scanssh
 
 MAINTAINER=	kris@FreeBSD.org
 
 GNU_CONFIGURE=	YES
 
 MAN1=		scanssh.1
+WRKSRC=		${WRKDIR}/scanssh
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/scanssh ${PREFIX}/bin
