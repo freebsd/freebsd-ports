@@ -1144,6 +1144,7 @@
     SUBDIR += pear-Pager
     SUBDIR += pear-Structures_DataGrid
     SUBDIR += pear-System_Command
+    SUBDIR += pear-Text_Diff
     SUBDIR += pear-VFS
     SUBDIR += pear-Validate
     SUBDIR += pear-Var_Dump
