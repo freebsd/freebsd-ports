@@ -2105,6 +2105,7 @@ firetalk	ports/net/firetalk
 firewalk	ports/security/firewalk
 fisg		ports/irc/fisg
 fist		ports/textproc/fist
+fityk		ports/math/fityk
 fix-mime-charset	ports/converters/fix-mime-charset
 fixesext	ports/x11/fixesext
 fkiss		ports/games/fkiss
