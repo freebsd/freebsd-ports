@@ -136,6 +136,7 @@
     SUBDIR += portsentry
     SUBDIR += pscan
     SUBDIR += py-amkCrypto
+    SUBDIR += py-fchksum
     SUBDIR += py-m2crypto
     SUBDIR += racoon
     SUBDIR += radiusniff
