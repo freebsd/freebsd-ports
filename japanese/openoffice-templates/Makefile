@@ -6,8 +6,8 @@
 #
 
 PORTNAME=	templates
-PORTVERSION=	${OPENOFFICE_VER}.20040612
-PORTREVISION=	2
+PORTVERSION=	${OPENOFFICE_VER}.20041007
+PORTREVISION=	0
 CATEGORIES=	japanese editors
 MASTER_SITES=	http://desktop.good-day.net/ooo11/
 PKGNAMEPREFIX=	ja-openoffice-
@@ -20,10 +20,8 @@ PLIST=		${WRKDIR}/pkg-plist
 
 RUN_DEPENDS=	${PREFIX}/${OPENOFFICE}/program/soffice:${PORTSDIR}/japanese/openoffice-1.1
 
-BROKEN=		Size mismatch
-
 OPENOFFICE=	OpenOffice.org${OPENOFFICE_VER}
-OPENOFFICE_VER=	1.1.2
+OPENOFFICE_VER=	1.1.4
 
 OOTEMPLATES=	\
 		A4-kariert.sti			\
@@ -51,6 +49,8 @@ OOTEMPLATES=	\
 		DASnowFlacks.sti		\
 		DASparkle.sti			\
 		Foot-prints.ja.sti		\
+		Foral-StudioA02.sti		\
+		Foral-Studio_A01.sti		\
 		Grad-blue.ja.sti		\
 		Grad-blue_2.ja.sti		\
 		Grad-blue_3.ja.sti		\
@@ -88,12 +88,16 @@ OOTEMPLATES=	\
 		coolspace.sti			\
 		earthlight.sti			\
 		jp-temple.sti			\
+		kamometemplate.sti		\
 		karteikarte.sti			\
 		lamp.sti			\
 		landscape.sti			\
+		lay_wood.sti			\
 		mondo_cyan.sti			\
 		mondo_green.sti			\
 		mondo_yellow.sti		\
+		ooo_blue.sti			\
+		ooo_red.sti			\
 		openblue.sti			\
 		redStar.sti			\
 		relief.sti			\
@@ -101,7 +105,8 @@ OOTEMPLATES=	\
 		sidepanel_cloud.sti		\
 		sidepanel_green.sti		\
 		sidepanel_red.sti		\
-		sun4.sti
+		sun4.sti			\
+		templatecopyright
 
 do-build:
 .for FILE in ${OOTEMPLATES}
