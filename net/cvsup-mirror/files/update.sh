@@ -47,21 +47,10 @@ options="-1gL 1 -b ${base} -c ${colldir} ${CVSUP_ARGS}"
 
 umask 2
 ok=yes
-if [ ${host_crypto} = ${host} ]; then
-    echo "Updating from ${host}"
-    su -f -m ${cuser} -c \
-	"${cmd} ${options} -h ${host} ${base}/supfile" || ok=no
-else
-    if [ -d ${base}/prefixes/FreeBSD-crypto.cvs ]; then
-	echo "Updating from ${host_crypto}"
-	su -f -m ${cuser} -c \
-	    "${cmd} ${options} -h ${host_crypto} ${base}/supfile.crypto" ||\
-		ok=no
-    fi
-    echo "Updating from ${host}"
-    su -f -m ${cuser} -c \
-	"${cmd} ${options} -h ${host} ${base}/supfile.non-crypto" || ok=no
-fi
+
+echo "Updating from ${host}"
+su -f -m ${cuser} -c \
+    "${cmd} ${options} -h ${host} ${base}/supfile" || ok=no
 
 if [ ${ok} = yes ]; then
     if [ -f ${base}/.start_server ]; then
