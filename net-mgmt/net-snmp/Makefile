@@ -7,6 +7,7 @@
 
 PORTNAME=	net-snmp
 PORTVERSION=	5.0.1
+PORTREVISION=	1
 CATEGORIES=	net ipv6
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		ftp://sunsite.cnlab-switch.ch/mirror/ucd-snmp/ \
@@ -69,7 +70,8 @@ STARTUP_FILE=	${PREFIX}/etc/rc.d/snmpd.sh
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} >= 400014
-CONFIGURE_ARGS+= --enable-ipv6
+CONFIGURE_ARGS+= --enable-ipv6 \
+		--with-transports="UDP UDPIPv6 TCP TCPIPv6 Unix"
 .endif
 
 SHLIB_VERSION=	5
@@ -83,6 +85,7 @@ post-install:
 	@( cd ${PREFIX}/sbin && strip ${SBIN} )
 	@( cd ${PREFIX}/include/net-snmp && ${CHMOD} 644 * )
 	@( cd ${PREFIX}/share/snmp/mibs && ${CHMOD} 644 * )
+	@${INSTALL_SCRIPT} -m 751 ${FILESDIR}/snmpd.sh.sample ${PREFIX}/etc/rc.d
 	@if [ ! -f ${STARTUP_FILE} ]; then \
 		${ECHO} "Creating ${PREFIX}/etc/rc.d/snmpd.sh startup file."; \
 		${INSTALL_SCRIPT} -m 751 ${FILESDIR}/snmpd.sh.sample ${STARTUP_FILE}; \
