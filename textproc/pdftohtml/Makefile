@@ -18,7 +18,7 @@ MAINTAINER=	erwin@lansing.dk
 
 RUN_DEPENDS=	${LOCALBASE}/bin/gs:${PORTSDIR}/print/ghostscript-gnu
 
-WRKSRC=		${WRKDIR}/${PORTNAME}
+WRKSRC=		${WRKDIR}/${DISTNAME}
 
 pre-patch:
 .for file in goo/Makefile xpdf/Makefile
