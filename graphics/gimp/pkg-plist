@@ -471,6 +471,7 @@ share/aclocal/gimp-2.0.m4
 %%DOCSDIR%%/libgimp/libgimpui-hierarchy.html
 %%DOCSDIR%%/libgimp/libgimpui.html
 %%DOCSDIR%%/libgimp/right.png
+%%DOCSDIR%%/libgimp/style.css
 %%DOCSDIR%%/libgimp/up.png
 %%DOCSDIR%%/libgimpbase/home.png
 %%DOCSDIR%%/libgimpbase/index.html
@@ -494,6 +495,7 @@ share/aclocal/gimp-2.0.m4
 %%DOCSDIR%%/libgimpbase/libgimpbase.devhelp
 %%DOCSDIR%%/libgimpbase/libgimpbase.html
 %%DOCSDIR%%/libgimpbase/right.png
+%%DOCSDIR%%/libgimpbase/style.css
 %%DOCSDIR%%/libgimpbase/up.png
 %%DOCSDIR%%/libgimpcolor/home.png
 %%DOCSDIR%%/libgimpcolor/index.html
@@ -542,6 +544,7 @@ share/aclocal/gimp-2.0.m4
 %%DOCSDIR%%/libgimpthumb/libgimpthumb.devhelp
 %%DOCSDIR%%/libgimpthumb/libgimpthumb.html
 %%DOCSDIR%%/libgimpthumb/right.png
+%%DOCSDIR%%/libgimpthumb/style.css
 %%DOCSDIR%%/libgimpthumb/up.png
 %%DOCSDIR%%/libgimpwidgets/GimpButton.html
 %%DOCSDIR%%/libgimpwidgets/GimpCellRendererColor.html
@@ -1366,7 +1369,6 @@ share/gimp/scripts/starscape-logo.scm
 share/gimp/scripts/swirltile.scm
 share/gimp/scripts/swirly-pattern.scm
 share/gimp/scripts/t-o-p-logo.scm
-share/gimp/scripts/test-sphere.scm
 share/gimp/scripts/text-circle.scm
 share/gimp/scripts/textured-logo.scm
 share/gimp/scripts/tileblur.scm
@@ -1683,6 +1685,10 @@ share/gimp/themes/Default/images/stock-wilber-eek-64.png
 share/gimp/themes/Default/images/stock-zoom-follow-window-12.png
 share/gimp/themes/Small/gtkrc
 share/gimp/tips/gimp-tips.xml
+share/locale/bg/LC_MESSAGES/gimp20-libgimp.mo
+share/locale/bg/LC_MESSAGES/gimp20-std-plug-ins.mo
+share/locale/bg/LC_MESSAGES/gimp20-script-fu.mo
+share/locale/bg/LC_MESSAGES/gimp20.mo
 share/locale/ca/LC_MESSAGES/gimp20-libgimp.mo
 share/locale/ca/LC_MESSAGES/gimp20-script-fu.mo
 share/locale/ca/LC_MESSAGES/gimp20-std-plug-ins.mo
