@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	crossfire
-PORTVERSION=	1.0.0
+PORTVERSION=	1.3.0
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		ftp://ftp.ifi.uio.no/pub/crossfire/ \
@@ -21,22 +21,20 @@ MAINTAINER=	ports@FreeBSD.org
 LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png
 
 USE_XPM=	yes
+USE_PERL5=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--with-includes="-I${LOCALBASE}/include -I${X11BASE}/include" \
-		--with-ldflags="-L${LOCALBASE}/lib -L${X11BASE}/lib" \
-		--without-x
+CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
+CONFIGURE_ARGS=	--with-includes="-I${LOCALBASE}/include" \
+		--with-ldflags="-L${LOCALBASE}/lib"
 
 MAN6=		crossfire.6 crossedit.6
 
-post-extract:
-	@${RM} ${WRKDIR}/maps/tmp
-
 post-install:
-	@${MKDIR} ${PREFIX}/share/crossfire
-	@${CP} -R ${WRKDIR}/maps ${PREFIX}/share/crossfire
-	@${MKDIR} ${PREFIX}/share/crossfire/maps/tmp
-	@${CHOWN} -R ${SHAREOWN}:${SHAREGRP} ${PREFIX}/share/crossfire
+	@${MKDIR} ${DATADIR}
+	@${CP} -R ${WRKDIR}/maps ${DATADIR}
+	@${MKDIR} ${DATADIR}/maps/tmp
+	@${CHOWN} -R ${SHAREOWN}:${SHAREGRP} ${DATADIR}
 	@${CHOWN} ${BINOWN}:games ${PREFIX}/bin/crossfire
 	@${CHMOD} 2755 ${PREFIX}/bin/crossfire
 	@${CHGRP} -R games ${PREFIX}/var/crossfire
