@@ -118,11 +118,7 @@ COMMENT=	Integrated wordprocessor/dbase/spreadheet/drawing/chart/browser
 # The JDK dependency needs to be at the first place, so all
 # following dependencies use the same JDK.
 #
-.if !defined(WITH_BSD_JDK)
-BUILD_DEPENDS+= ${JAVAVM}:${PORTSDIR}/java/linux-sun-jdk14
-.else
 BUILD_DEPENDS+= ${JAVAVM}:${PORTSDIR}/java/jdk14
-.endif
 
 #.if !defined(USE_GCC)
 #BUILD_DEPENDS=	${LOCALBASE}/lib/libstlport_gcc.so:${PORTSDIR}/devel/stlport
@@ -145,11 +141,7 @@ EXTRACT_AFTER_ARGS_R= | ${TAR} -xf -
 EXTRACT_CMD_R= ${GZIP_CMD}
 EXTRACT_REST=	gpc231.tar.Z
 
-.if !defined(WITH_BSD_JDK)
-JDKDIR?=	${LOCALBASE}/linux-sun-jdk1.4.1
-.else
-JDKDIR?=	${LOCALBASE}/jdk1.4.1
-.endif
+JDKDIR=		${LOCALBASE}/jdk1.4.1
 JAVAVM=         ${JDKDIR}/bin/java
 
 GNU_CONFIGURE=	yes
@@ -183,10 +175,6 @@ CONFIGURE_ARGS+=	--with-jdk-home=${JDKDIR} \
 #.if !defined(USE_GCC)
 #CONFIGURE_ARGS+=	--with-stlport4-home=${PREFIX}
 #.endif
-
-.if !defined(WITH_BSD_JDK)
-CONFIGURE_ARGS+=	--enable-linuxjdk=yes
-.endif
 
 .if defined(WITH_DEBUG)
 .if ${WITH_DEBUG} == 2
@@ -235,14 +223,6 @@ pre-fetch:
 	@${ECHO} "Add USE_GCC=2.95 or USE_GCC=3.2"
 	@${ECHO} "to compile openoffice with your"
 	@${ECHO} "prefered compiler."
-.endif
-.if !defined(WITH_BSD_JDK)
-	@${ECHO}
-	@${ECHO} "If you like to use the native BSD"
-	@${ECHO} "JDK for the build system, you can use"
-	@${ECHO} "WITH_BSD_JDK=TRUE to disable the"
-	@${ECHO} "usage of the linux-JDK and linux dependency."
-	@${ECHO}
 .endif
 .if !defined(WITH_DEBUG)
 	@${ECHO}
