@@ -1,0 +1,11 @@
+--- opengroupware.org-mod_ngobjweb.dist/GNUmakefile	Tue Jul 15 14:39:08 2003
++++ opengroupware.org-mod_ngobjweb/GNUmakefile	Sat Oct 11 20:32:42 2003
+@@ -4,7 +4,7 @@
+ 
+ # config
+ 
+-APACHE = /usr
++APACHE = /usr/local
+ APXS   = $(APACHE)/sbin/apxs
+ HTTPD  = $(APACHE)/sbin/httpd
+ 

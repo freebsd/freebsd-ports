@@ -1,0 +1,56 @@
+#!/bin/sh
+# $FreeBSD$
+#
+# Frank Reppin <frank.reppin@boerde.de>
+
+OGO_USER='ogo'
+OGO_GROUP='skyrix'
+OGO_BIN='/compat/linux/opt/opengroupware.org/WOApps/OpenGroupware.woa/ix86/linux-gnu/gnu-fd-nil/OpenGroupware'
+OGO_DIR='/compat/linux/opt/opengroupware.org'
+LOG='/var/log/opengroupware/ogo.log'
+
+
+case $1 in
+start)
+	[ ! -f ${LOG} ] && {
+		echo 'No OGo logfile present in /var/log/opengroupware - creating one...'
+		touch ${LOG}
+		chmod 600 ${LOG}
+		chown ${OGO_USER}:${OGO_GROUP} ${LOG}
+		echo 'done!'
+	}
+
+	chmod 600 ${LOG}
+	chown ${OGO_USER}:${OGO_GROUP} ${LOG}
+
+	[ -x ${OGO_BIN} ] && {
+		su -l ${OGO_USER} -c \
+			"./WOApps/OpenGroupware.woa/ix86/linux-gnu/gnu-fd-nil/OpenGroupware >>${LOG} 2>&1 &"
+		echo 'OpenGroupware started.'
+		echo "**** RECEIVED 'start' from STARTSCRIPT at `date` ****" >>${LOG}
+	}
+	;;
+
+stop)
+	killall -9 OpenGroupware >/dev/null 2>&1
+	killall -9 OpenGroupware >/dev/null 2>&1
+	echo 'OpenGroupware stopped.'
+	echo "" >>${LOG}
+	echo "**** RECEIVED 'stop' from STARTSCRIPT at `date` ****" >>${LOG}
+	;;
+
+restart)
+
+	./$0 stop
+	./$0 start
+	;;
+
+status)
+	ps auxwwwww|grep -vi grep|grep -i '/gnu-fd-nil/OpenGroupware'
+	;;
+
+*)
+    echo "usage: `basename $0` {start|stop|restart|status|}" >&2
+    exit 64
+    ;;
+esac

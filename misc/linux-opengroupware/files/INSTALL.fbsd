@@ -1,0 +1,141 @@
+#$Id: INSTALL.fbsd,v 1.2 2003/09/13 14:59:49 frank Exp $
+GENERAL NOTE:
+
+	You're welcome to ask questions about OpenGroupware
+	at
+
+		http://www.opengroupware.org
+
+	too. :p Don't hesitate.
+
+
+1)	First of all - you must have linux compat mode
+	activated.
+
+	Refer to:
+
+	http://www.freebsd.org/doc/en_US.ISO8859-1/books/handbook/linuxemu.html
+
+	on how to do this.
+
+	In short.... my rc.conf contains:
+	
+		linux_enable="YES"
+
+	and I recompiled my kernel with the following options:
+
+		# Enable Linux ABI emulation
+		options         COMPAT_LINUX
+
+		# Enable the linux-like proc filesystem support (requires COMPAT_LINUX
+		# and PSEUDOFS)
+		options         LINPROCFS
+
+	(kernel compilation is further described in:
+	http://www.freebsd.org/doc/en_US.ISO8859-1/books/handbook/kernelconfig-building.html)
+
+	You also want to add the following line into your /etc/fstab:
+
+		linproc                 /compat/linux/proc      linprocfs rw 0 0
+
+	(If you don't have linproc mounted - OGo will coredump :P - so check twice)
+
+
+2)	Make sure, that your PostgreSQL Installation
+	listens on TCP Port 5432!
+
+	Typing (as root)
+
+		`netstat -an -p tcp|grep -i 5432`
+
+	should show you if it is.
+	The output might look like:
+
+		[root@minax]/usr/local/pgsql/data: netstat -an -p tcp|grep -i 5432
+		tcp4       0      0  *.5432                 *.*                    LISTEN
+
+	(Hoping that it is really PostgreSQL showing up there :))
+
+		`lsof -Pni|grep -i 5432`
+
+	should give you better results since it gives an output like this:
+
+		[root@minax]/usr/local/pgsql/data: lsof -Pni|grep -i 5432
+		postgres  411 pgsql    3u  IPv4 0xc428cca8      0t0  TCP *:5432 (LISTEN)
+
+	If there's no output at all (ie. nothing similiar to what you've just seen)
+	then you must reconfigure PostgreSQL.
+	To do so edit:
+
+		'/usr/local/pgsql/data/postgresql.conf'
+
+	and make sure that there's the following line active:
+
+		tcpip_socket = true
+
+	After applying this modification save and exit 'postgresql.conf'.
+	Now restart PostgreSQL (there should be a start/stop script in your
+	local_startup dir:
+
+		`/usr/local/etc/rc.d/010.pgsql.sh stop`
+		`/usr/local/etc/rc.d/010.pgsql.sh start`
+
+	Voila!
+
+3)	Add an include statement into your current apache configuration,
+	typically located in:
+
+		'/usr/local/etc/apache/httpd.conf'
+
+	Edit this file and add the following line:
+
+		'include /compat/linux/opt/opengroupware.org/OpenGroupware.org.apacheinclude'
+
+	(best place to add this might depend on your individual configuration, in my
+	configuration I simply added this line at the very end of my httpd.conf)
+
+	Restart apache to activate the changes just made.
+
+		`/usr/local/etc/rc.d/apache.sh stop`
+		`/usr/local/etc/rc.d/apache.sh start`
+
+4)	Add a postgresql User/Database for OpenGroupware:
+
+		`su - pgsql`
+		`createdb ogo`
+		`createuser -A -D ogo`
+
+	Install the database scheme:
+
+		`psql ogo ogo`
+		
+		a shell like environment appears know.... type there:
+
+		\i /compat/linux/opt/opengroupware.org/Database/PostgreSQL/pg-build-schema.psql
+
+		...and the database scheme gets installed.
+
+		Leave this shell with
+
+		\q
+
+		and CTRL-D back to your `root` account.
+
+5)	Restart PostgreSQL again.
+
+6)	Start OpenGroupware:
+
+
+		`/usr/local/etc/rc.d/ogo.sh.sample start`
+
+
+NOW POINT YOUR BROWSER TO:
+
+	http://<host.where.you.installed.tld>/OpenGroupware/
+
+and enjoy! :)
+
+
+-- 
+
+	Frank Reppin

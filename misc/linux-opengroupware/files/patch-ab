@@ -1,0 +1,29 @@
+--- opt/skyrix/system/Makefiles/GNUstep.sh.dist	Wed Jul 23 20:26:13 2003
++++ opt/skyrix/system/Makefiles/GNUstep.sh	Wed Jul 23 20:27:27 2003
+@@ -27,13 +27,13 @@
+ #
+ # Set the GNUstep system root and local root
+ #
+-GNUSTEP_ROOT=/opt/skyrix/system
++GNUSTEP_ROOT=/compat/linux/opt/skyrix/system
+ 
+ if [ -z "$FORCED_USER_ROOT" ]; then
+   FORCED_USER_ROOT=
+ fi
+ 
+-GNUSTEP_SYSTEM_ROOT=/opt/skyrix/system
++GNUSTEP_SYSTEM_ROOT=/compat/linux/opt/skyrix/system
+ GNUSTEP_FLATTENED=
+ if [ -z "$LIBRARY_COMBO" ]; then
+   LIBRARY_COMBO=gnu-fd-nil
+@@ -43,8 +43,8 @@
+ GNUSTEP_MAKEFILES=$GNUSTEP_SYSTEM_ROOT/Makefiles
+ export GNUSTEP_MAKEFILES
+ 
+-GNUSTEP_LOCAL_ROOT=/opt/skyrix/system
+-GNUSTEP_NETWORK_ROOT=/opt/skyrix/system
++GNUSTEP_LOCAL_ROOT=/compat/linux/opt/skyrix/system
++GNUSTEP_NETWORK_ROOT=/compat/linux/opt/skyrix/system
+ export GNUSTEP_LOCAL_ROOT GNUSTEP_NETWORK_ROOT
+ 
+ # test to see if GNUSTEP_ROOT is in Win32 standard form and flag it

@@ -1,0 +1,11 @@
+--- opt/opengroupware.org/.bash_profile.dist	Wed Jul 23 21:30:12 2003
++++ opt/opengroupware.org/.bash_profile	Wed Jul 23 21:24:53 2003
+@@ -3,7 +3,7 @@
+ # new files can be read/written by the opengroupware user.
+ umask 007 
+ 
+-source /opt/opengroupware.org/OpenGroupware.org.sh
++source /compat/linux/opt/opengroupware.org/OpenGroupware.org.sh
+ 
+ export SASL_PATH="${GNUSTEP_USER_ROOT}/Library/Plugins/Plain.plugin/$GNUSTEP_HOST_CPU/$GNUSTEP_HOST_OS/$LIBRARY_COMBO"
+ 

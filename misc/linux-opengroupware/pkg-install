@@ -1,0 +1,88 @@
+#!/bin/sh
+#$Id: pkg-install,v 1.2 2003/09/13 14:59:44 frank Exp $
+# Frank Reppin
+# $FreeBSD$
+
+case $2 in
+POST-INSTALL)
+
+	OGO_USER='ogo'
+	OGO_GROUP='skyrix'
+	OGO_HOME='/compat/linux/opt/opengroupware.org'
+	OGO_DST='/compat/linux/opt'
+	OGO_DESCR='OpenGroupware'
+	OGO_SHELL='/usr/local/bin/bash'
+
+	echo "######################################################################################"
+	echo "Creating neccessary user/group"
+	if pw group show "${OGO_GROUP}" 2>/dev/null; then
+		echo "Found existing group \"${OGO_GROUP}\", nothing to be done for me here."
+	else
+		if pw group add ${OGO_GROUP}; then
+			echo "Successfully added group: \"${OGO_GROUP}\"."
+			else
+			echo "pw group add ${OGO_GROUP} failed :/."
+			exit 1
+		fi
+	fi
+
+	if pw user show "${OGO_USER}" 2>/dev/null; then
+		echo "Found existing user \"${OGO_USER}\", nothing to be done for me here."
+	else
+		if pw user add ${OGO_USER} -g ${OGO_GROUP} -c ${OGO_DESCR} -d ${OGO_HOME} -s ${OGO_SHELL}; then
+			echo "Successfully added user: \"${OGO_USER}\"."
+			else
+			echo "pw user add ${OGO_USER} failed :/."
+			exit 1
+		fi
+	fi
+	echo "######################################################################################"
+	;;
+
+WRITE-DEFAULTS-FIRSTTIME)
+
+	OGO='ogo'
+	SU='/usr/bin/su'
+	ME=`hostname`
+	DW='Defaults write'
+	DR='Defaults read'
+
+	if [ ! -e /compat/linux/opt/opengroupware.org/.libFoundation/Defaults/NSGlobalDomain.plist ] 2>/dev/null; then
+		echo "There seems to be no previous OGo installation..."
+		echo "going to write \`Defaults\` to .libFoundation/Defaults/NSGlobalDomain.plist"
+		${SU} -l ${OGO} -c "${DW} NSGlobalDomain skyrix_id ${ME}" >/dev/null 2>&1
+		${SU} -l ${OGO} -c "${DW} NSGlobalDomain LSAdaptor PostgreSQL72" >/dev/null 2>&1
+		${SU} -l ${OGO} -c "${DW} NSGlobalDomain LSModelName OpenGroupware.org_PostgreSQL" >/dev/null 2>&1
+		${SU} -l ${OGO} -c "${DW} NSGlobalDomain LSConnectionDictionary '{hostName=localhost; userName=ogo; password=\"\"; port=5432; databaseName=ogo}'" >/dev/null 2>&1
+		${SU} -l ${OGO} -c "${DW} NSGlobalDomain LSAttachmentPath \"/compat/linux/opt/opengroupware.org/documents\"" >/dev/null 2>&1
+		${SU} -l ${OGO} -c "${DW} NSGlobalDomain LSNewsImagesPath \"/compat/linux/opt/opengroupware.org/news\"" >/dev/null 2>&1
+		${SU} -l ${OGO} -c "${DW} NSGlobalDomain LSNewsImagesUrl \"/ArticleImages\"" >/dev/null 2>&1
+		${SU} -l ${OGO} -c "${DW} NSGlobalDomain NGBundlePath \"/compat/linux/opt/opengroupware.org/Library/OpenGroupware.org\"" >/dev/null 2>&1
+		${SU} -l ${OGO} -c "${DW} NSGlobalDomain XMLReader libxmlSAXDriver" >/dev/null 2>&1
+
+		${SU} -l ${OGO} -c "${DW} " >/dev/null 2>&1
+		echo "done."
+	else
+		echo "I think you've already installed OGo before..."
+		echo "Thus i am kind and don't mess your settings :)"
+	fi
+	;;
+
+COPY-TEMPLATES)
+	if [ ! -e /compat/linux/opt/opengroupware.org/.libFoundation/Defaults/OpenGroupware.plist ] 2>/dev/null; then
+		echo "OpenGroupware.plist not found..."
+		echo "thus I am using the one coming with the port."
+		cp files/OpenGroupware.plist.tmpl /compat/linux/opt/opengroupware.org/.libFoundation/Defaults/OpenGroupware.plist >/dev/null 2>&1
+	else
+		echo "OpenGroupware.plist is already in place!"
+	fi
+
+	if [ ! -e /compat/linux/opt/opengroupware.org/.libFoundation/Defaults/ZideStore.plist ] 2>/dev/null; then
+		echo "ZideStore.plist not found..."
+		echo "thus I am using the one coming with the port."
+		cp files/ZideStore.plist.tmpl /compat/linux/opt/opengroupware.org/.libFoundation/Defaults/ZideStore.plist >/dev/null 2>&1
+	else
+		echo "ZideStore.plist is already in place!"
+	fi
+	;;
+esac
