@@ -8,6 +8,9 @@ bin/interop2html
 %%PYTHON_SITELIBDIR%%/SOAPpy/Errors.py
 %%PYTHON_SITELIBDIR%%/SOAPpy/Errors.pyc
 %%PYTHON_SITELIBDIR%%/SOAPpy/Errors.pyo
+%%PYTHON_SITELIBDIR%%/SOAPpy/GSIServer.py
+%%PYTHON_SITELIBDIR%%/SOAPpy/GSIServer.pyc
+%%PYTHON_SITELIBDIR%%/SOAPpy/GSIServer.pyo
 %%PYTHON_SITELIBDIR%%/SOAPpy/NS.py
 %%PYTHON_SITELIBDIR%%/SOAPpy/NS.pyc
 %%PYTHON_SITELIBDIR%%/SOAPpy/NS.pyo
@@ -62,9 +65,14 @@ bin/interop2html
 %%PYTHON_SITELIBDIR%%/SOAPpy/wstools/__init__.py
 %%PYTHON_SITELIBDIR%%/SOAPpy/wstools/__init__.pyc
 %%PYTHON_SITELIBDIR%%/SOAPpy/wstools/__init__.pyo
+@dirrm %%PYTHON_SITELIBDIR%%/SOAPpy/wstools
+@dirrm %%PYTHON_SITELIBDIR%%/SOAPpy
+%%PORTDOCS%%%%DOCSDIR%%/GettingStarted.txt
+%%PORTDOCS%%%%DOCSDIR%%/GlobusSupport.txt
+%%PORTDOCS%%%%DOCSDIR%%/MethodParameterNaming.txt
+%%PORTDOCS%%%%DOCSDIR%%/WSDL.txt
 %%PORTDOCS%%%%DOCSDIR%%/attrs.txt
 %%PORTDOCS%%%%DOCSDIR%%/complexTypes.txt
-%%PORTDOCS%%%%DOCSDIR%%/quickstart.txt
 %%PORTDOCS%%%%DOCSDIR%%/simpleTypes.txt
 %%PORTDOCS%%%%EXAMPLESDIR%%/BabelfishWSDLTest.py
 %%PORTDOCS%%%%EXAMPLESDIR%%/SOAPtest.py
@@ -75,11 +83,13 @@ bin/interop2html
 %%PORTDOCS%%%%EXAMPLESDIR%%/echoClient.py
 %%PORTDOCS%%%%EXAMPLESDIR%%/echoHeader.py
 %%PORTDOCS%%%%EXAMPLESDIR%%/echoServer.py
+%%PORTDOCS%%%%EXAMPLESDIR%%/esj_test_client.py
+%%PORTDOCS%%%%EXAMPLESDIR%%/esj_test_server.py
 %%PORTDOCS%%%%EXAMPLESDIR%%/excelTest.py
-%%PORTDOCS%%%%EXAMPLESDIR%%/getNStest.py
 %%PORTDOCS%%%%EXAMPLESDIR%%/largeDataTest.py
 %%PORTDOCS%%%%EXAMPLESDIR%%/newsTest.py
 %%PORTDOCS%%%%EXAMPLESDIR%%/quoteTest.py
+%%PORTDOCS%%%%EXAMPLESDIR%%/simpleWSDL.py
 %%PORTDOCS%%%%EXAMPLESDIR%%/speedTest.py
 %%PORTDOCS%%%%EXAMPLESDIR%%/storageTest.py
 %%PORTDOCS%%%%EXAMPLESDIR%%/testClient1.py
@@ -89,7 +99,5 @@ bin/interop2html
 %%PORTDOCS%%%%EXAMPLESDIR%%/weatherTest.py
 %%PORTDOCS%%%%EXAMPLESDIR%%/whoisTest.py
 %%PORTDOCS%%%%EXAMPLESDIR%%/xmethods.py
-%%PORTDOCS%%@dirrm %%PYTHON_SITELIBDIR%%/SOAPpy/wstools
-%%PORTDOCS%%@dirrm %%PYTHON_SITELIBDIR%%/SOAPpy
 %%PORTDOCS%%@dirrm %%EXAMPLESDIR%%
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
