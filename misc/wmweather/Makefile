@@ -11,6 +11,8 @@ MASTER_SITES= 	http://nis-www.lanl.gov/~mgh/WindowMaker/
 
 MAINTAINER=	kris@FreeBSD.org
 
+RUN_DEPENDS=	${LOCALBASE}/bin/wget:${PORTSDIR}/ftp/wget
+
 WRKSRC=		${WRKDIR}/${DISTNAME}/Src
 
 USE_GMAKE=	yes
