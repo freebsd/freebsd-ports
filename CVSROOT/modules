@@ -7694,6 +7694,7 @@ php4-nms	ports/lang/php4-nms
 php4-pcre	ports/devel/php4-pcre
 php4-pear	ports/devel/php4-pear
 php4-xml	ports/textproc/php4-xml
+php4-zlib	ports/archivers/php4-zlib
 php5		ports/lang/php5
 php5-cgi	ports/www/php5-cgi
 php5-cli	ports/lang/php5-cli
