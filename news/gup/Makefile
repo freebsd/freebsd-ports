@@ -1,16 +1,16 @@
 # New ports collection makefile for:	gup
 # Version required:	0.4
 # Date created:		22 November 1998
-# Whom:			Denis Shaposhnikov <wizard@vlink.ru>
+# Whom:			Denis Shaposhnikov <dsh@vlink.ru>
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1999/06/09 00:35:32 steve Exp $
 #
 
 DISTNAME=	gup-0.4
 CATEGORIES=	news
 MASTER_SITES=	ftp://ftp.isc.org/isc/inn/unoff-contrib/
 
-MAINTAINER=	wizard@vlink.ru
+MAINTAINER=	dsh@vlink.ru
 
 WRKSRC=		${WRKDIR}/gup
 
