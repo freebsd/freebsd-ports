@@ -141,6 +141,12 @@ fcgi-devkit/tcl/tcl7.4/Makefile.in
 fcgi-devkit/tcl/tcl7.4/configure.in
 fcgi-devkit/version.conf
 fcgi-devkit/version.in
+include/fastcgi.h
+include/fcgi_config.h
+include/fcgi_stdio.h
+include/fcgiapp.h
+include/fcgiappmisc.h
+include/fcgimisc.h
 lib/libfcgi.a
 @dirrm fcgi-devkit/Perl
 @dirrm fcgi-devkit/cgi-fcgi
