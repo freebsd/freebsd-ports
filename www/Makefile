@@ -408,6 +408,7 @@
     SUBDIR += postnuke
     SUBDIR += pound
     SUBDIR += privoxy
+    SUBDIR += privoxy+ipv6
     SUBDIR += publicfile
     SUBDIR += py-HTMLgen
     SUBDIR += py-albatross
