@@ -1,9 +1,11 @@
 bin/xsane
 share/locale/cs/LC_MESSAGES/xsane.mo
 share/locale/de/LC_MESSAGES/xsane.mo
+share/locale/es/LC_MESSAGES/xsane.mo
 share/locale/fr/LC_MESSAGES/xsane.mo
 share/locale/it/LC_MESSAGES/xsane.mo
 share/locale/ja/LC_MESSAGES/xsane.mo
+share/locale/nl/LC_MESSAGES/xsane.mo
 share/locale/ru/LC_MESSAGES/xsane.mo
 share/locale/sl/LC_MESSAGES/xsane.mo
 share/locale/sv/LC_MESSAGES/xsane.mo
@@ -57,6 +59,7 @@ share/sane/xsane-medium.jpg
 share/sane/xsane-mirror-x.jpg
 share/sane/xsane-mirror-y.jpg
 share/sane/xsane-negative.jpg
+share/sane/xsane-ocr.jpg
 share/sane/xsane-pipette-black.jpg
 share/sane/xsane-pipette-gray.jpg
 share/sane/xsane-pipette-white.jpg
