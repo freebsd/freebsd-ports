@@ -31,7 +31,12 @@ Python_Include_MAINTAINER=	perky@FreeBSD.org
 #					are built from sources contained in the Python
 #					distribution.
 #
-# PYTHON_SITE_SUBDIR:	The ${MASTER_SITE_SUBDIR} for your python version.
+# PYTHON_MASTER_SITES:	The ${MASTER_SITES} for your python version. (You must
+#						use this instead of ${MASTER_SITE_PYTHON} to support
+#						python-devel port.)
+#
+# PYTHON_MASTER_SITE_SUBDIR:	The ${MASTER_SITE_SUBDIR} for your python
+#								version.
 #
 # PYTHON_INCLUDEDIR:	Location of the Python include files.
 #						default: ${PYTHONBASE}/include/${PYTHON_VERSION}
@@ -111,7 +116,7 @@ _PYTHON_PORTBRANCH=		2.3
 _PYTHON_ALLBRANCHES=	2.3 2.2 2.1 2.0 1.5 2.4 # preferred first
 
 .if defined(USE_ZOPE)
-PYTHON_VERSION=		python2.2
+PYTHON_VERSION=		python2.1
 .endif
 
 .if defined(PYTHON_VERSION)
@@ -177,13 +182,13 @@ PYTHONBASE!=		(${PYTHON_CMD} -c 'import sys; print sys.prefix') \
 						2> /dev/null || echo ${LOCALBASE}
 _PYTHON_PORTVERSION!=	(${PYTHON_CMD} -c 'import string, sys; \
 							print string.split(sys.version)[0]') 2> /dev/null || ${TRUE}
-.if !empty(_PYTHON_PORTVERSION)
+.if !defined(PYTHON_NO_DEPENDS) && !empty(_PYTHON_PORTVERSION)
 PYTHON_PORTVERSION=	${_PYTHON_PORTVERSION}
 .endif
 
 # Python-2.4
 .if ${PYTHON_VERSION} == "python2.4"
-PYTHON_PORTVERSION?=2.4.a0-20030801
+PYTHON_PORTVERSION?=2.4.a0.20031022
 PYTHON_PORTSDIR=	${PORTSDIR}/lang/python-devel
 PYTHON_REL=			240
 PYTHON_SUFFIX=		24
@@ -258,13 +263,19 @@ PYTHON_SUFFIX!=		${PYTHON_CMD} -c 'import sys; h = "%x" % sys.hexversion; \
 .endif
 
 .if defined(PYTHON_REL) && ${PYTHON_REL} < 160
-PYTHON_DISTFILE=	py152.tgz
-PYTHON_SITE_SUBDIR=	ftp/python/src
+PYTHON_MASTER_SITES=		${MASTER_SITE_PYTHON}
+PYTHON_MASTER_SITE_SUBDIR=	ftp/python/src
+PYTHON_DISTFILE=			py152.tgz
+.elif defined(PYTHON_REL) && ${PYTHON_REL} >= 240
+PYTHON_MASTER_SITES=		${MASTER_SITE_LOCAL}
+PYTHON_MASTER_SITE_SUBDIR=	perky
+PYTHON_DISTFILE=			Python-${PYTHON_PORTVERSION}.tgz
 .else
-PYTHON_DISTFILE=	Python-${PYTHON_PORTVERSION}.tgz
-PYTHON_SITE_SUBDIR=	ftp/python/${PYTHON_PORTVERSION}
-.endif
-PYTHON_WRKSRC=		${WRKDIR}/Python-${PYTHON_PORTVERSION}
+PYTHON_MASTER_SITES=		${MASTER_SITE_PYTHON}
+PYTHON_MASTER_SITE_SUBDIR=	ftp/python/${PYTHON_PORTVERSION}
+PYTHON_DISTFILE=			Python-${PYTHON_PORTVERSION}.tgz
+.endif	# defined(PYTHON_REL) && ${PYTHON_REL} < 160
+PYTHON_WRKSRC=				${WRKDIR}/Python-${PYTHON_PORTVERSION}
 
 PYTHON_INCLUDEDIR=		${PYTHONBASE}/include/${PYTHON_VERSION}
 PYTHON_LIBDIR=			${PYTHONBASE}/lib/${PYTHON_VERSION}

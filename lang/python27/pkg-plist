@@ -73,6 +73,7 @@ include/%%PYTHON_VERSION%%/ucnhash.h
 include/%%PYTHON_VERSION%%/unicodeobject.h
 include/%%PYTHON_VERSION%%/weakrefobject.h
 %%SHARED_ONLY%%lib/lib%%PYTHON_VERSION%%.so
+%%SHARED_ONLY%%lib/lib%%PYTHON_VERSION%%.so.1
 lib/%%PYTHON_VERSION%%/BaseHTTPServer.py
 lib/%%PYTHON_VERSION%%/BaseHTTPServer.pyc
 lib/%%PYTHON_VERSION%%/BaseHTTPServer.pyo
@@ -628,6 +629,9 @@ lib/%%PYTHON_VERSION%%/encodings/ascii.pyo
 lib/%%PYTHON_VERSION%%/encodings/base64_codec.py
 lib/%%PYTHON_VERSION%%/encodings/base64_codec.pyc
 lib/%%PYTHON_VERSION%%/encodings/base64_codec.pyo
+lib/%%PYTHON_VERSION%%/encodings/bz2_codec.py
+lib/%%PYTHON_VERSION%%/encodings/bz2_codec.pyc
+lib/%%PYTHON_VERSION%%/encodings/bz2_codec.pyo
 lib/%%PYTHON_VERSION%%/encodings/charmap.py
 lib/%%PYTHON_VERSION%%/encodings/charmap.pyc
 lib/%%PYTHON_VERSION%%/encodings/charmap.pyo
@@ -1070,7 +1074,6 @@ lib/%%PYTHON_VERSION%%/idlelib/dynOptionMenuWidget.pyc
 lib/%%PYTHON_VERSION%%/idlelib/dynOptionMenuWidget.pyo
 lib/%%PYTHON_VERSION%%/idlelib/extend.txt
 lib/%%PYTHON_VERSION%%/idlelib/help.txt
-lib/%%PYTHON_VERSION%%/idlelib/idle
 lib/%%PYTHON_VERSION%%/idlelib/idle.bat
 lib/%%PYTHON_VERSION%%/idlelib/idle.py
 lib/%%PYTHON_VERSION%%/idlelib/idle.pyc
@@ -1136,6 +1139,7 @@ lib/%%PYTHON_VERSION%%/lib-dynload/cmath.so
 lib/%%PYTHON_VERSION%%/lib-dynload/crypt.so
 lib/%%PYTHON_VERSION%%/lib-dynload/datetime.so
 lib/%%PYTHON_VERSION%%/lib-dynload/dbm.so
+%%32BIT_ONLY%%lib/%%PYTHON_VERSION%%/lib-dynload/dl.so
 lib/%%PYTHON_VERSION%%/lib-dynload/fcntl.so
 lib/%%PYTHON_VERSION%%/lib-dynload/grp.so
 %%X86_ONLY%%lib/%%PYTHON_VERSION%%/lib-dynload/imageop.so
@@ -1152,6 +1156,7 @@ lib/%%PYTHON_VERSION%%/lib-dynload/readline.so
 lib/%%PYTHON_VERSION%%/lib-dynload/regex.so
 lib/%%PYTHON_VERSION%%/lib-dynload/resource.so
 %%X86_ONLY%%lib/%%PYTHON_VERSION%%/lib-dynload/rgbimg.so
+%%X86_ONLY%%lib/%%PYTHON_VERSION%%/lib-dynload/ossaudiodev.so
 lib/%%PYTHON_VERSION%%/lib-dynload/rotor.so
 lib/%%PYTHON_VERSION%%/lib-dynload/select.so
 lib/%%PYTHON_VERSION%%/lib-dynload/sha.so
@@ -1583,7 +1588,6 @@ lib/%%PYTHON_VERSION%%/test/output/test_grammar
 lib/%%PYTHON_VERSION%%/test/output/test_httplib
 lib/%%PYTHON_VERSION%%/test/output/test_linuxaudiodev
 lib/%%PYTHON_VERSION%%/test/output/test_logging
-lib/%%PYTHON_VERSION%%/test/output/test_longexp
 lib/%%PYTHON_VERSION%%/test/output/test_math
 lib/%%PYTHON_VERSION%%/test/output/test_md5
 lib/%%PYTHON_VERSION%%/test/output/test_mmap
@@ -1656,6 +1660,9 @@ lib/%%PYTHON_VERSION%%/test/test___all__.pyo
 lib/%%PYTHON_VERSION%%/test/test___future__.py
 lib/%%PYTHON_VERSION%%/test/test___future__.pyc
 lib/%%PYTHON_VERSION%%/test/test___future__.pyo
+lib/%%PYTHON_VERSION%%/test/test__locale.py
+lib/%%PYTHON_VERSION%%/test/test__locale.pyc
+lib/%%PYTHON_VERSION%%/test/test__locale.pyo
 lib/%%PYTHON_VERSION%%/test/test_aepack.py
 lib/%%PYTHON_VERSION%%/test/test_aepack.pyc
 lib/%%PYTHON_VERSION%%/test/test_aepack.pyo
