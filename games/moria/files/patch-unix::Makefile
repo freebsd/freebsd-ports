@@ -1,0 +1,31 @@
+$FreeBSD$
+
+--- unix/Makefile.orig	Thu Jul 21 16:37:08 1994
++++ unix/Makefile	Wed Aug  6 16:17:52 2003
+@@ -3,10 +3,10 @@
+ # LIBDIR must be the same directory defined in config.h
+ # OWNER is who you want the game to be chown to.
+ # GROUP is who you wnat the game to be chgrp to.
+-BINDIR = /home/zariski/grabiner/moria
+-LIBDIR = /home/zariski/grabiner/moria/files
+-OWNER = grabiner
+-GROUP = grad
++BINDIR = %%PREFIX%%/bin
++LIBDIR = %%PREFIX%%/share/moria/
++OWNER = games
++GROUP = games
+ 
+ # For testing and debugging the program, it is best to use this line.
+ # CFLAGS = -g
+@@ -60,9 +60,11 @@
+ # you must define BINDIR and LIBDIR before installing
+ # assumes that BINDIR and LIBDIR exist
+ install:
++	-mkdir -p $(BINDIR)
+ 	chmod 755 $(BINDIR)
+ 	cp moria $(BINDIR)
+ 	chmod 4711 $(BINDIR)/moria
++	-mkdir -p $(LIBDIR)
+ 	chmod 711 $(LIBDIR)
+ 	(cd files; cp $(LIBFILES) $(LIBDIR))
+ 	(cd $(LIBDIR); chmod 444 $(LIBFILES))
