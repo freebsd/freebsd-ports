@@ -120,6 +120,7 @@
     SUBDIR += ettercap
     SUBDIR += eudc-emacs20
     SUBDIR += everybuddy
+    SUBDIR += ez-ipupdate
     SUBDIR += fidelio
     SUBDIR += firedns
     SUBDIR += firetalk
