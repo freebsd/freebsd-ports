@@ -28,7 +28,7 @@ PATCHDIR=		${MASTERDIR}/files
 			patch-c2 patch-dri-Imakefile \
 			patch-f patch-imake.c \
 			patch-texteroids patch-xditview-Imakefile patch-xdm \
-			patch-xdm_session.c patch-xf86.tmpl patch-xfree86.cf \
+			patch-xdm_session.c patch-xf86.tmpl \
 			patch-xterm-Imakefile patch-z05 patch-z14 \
 			patch-z15 patch-z30 patch-z32 patch-z34 patch-z35 \
 			patch-z41 patch-z44 patch-z45
