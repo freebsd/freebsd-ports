@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.119 1997/01/05 23:15:10 obrien Exp $
+# $Id: Makefile,v 1.120 1997/01/06 09:51:52 obrien Exp $
 #
 
     SUBDIR += FWF
@@ -24,6 +24,7 @@
     SUBDIR += getbdf
     SUBDIR += gwm
     SUBDIR += iv
+    SUBDIR += lesstif
     SUBDIR += olvwm
     SUBDIR += p5-Tk400
     SUBDIR += piewm
