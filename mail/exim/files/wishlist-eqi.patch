@@ -1,0 +1,90 @@
+Return-Path: eikemeier@fillmore-labs.com
+Delivery-Date: Thu, 28 Aug 2003 12:55:40 +0200
+Envelope-to: sheldonh@axl.seasidesoftware.co.za
+Received: from mail1.gambling.com ([207.139.179.10])
+	by axl.seasidesoftware.co.za with esmtp (Exim 4.22)
+	id 19sKQl-000MZl-Qw
+	for sheldonh@axl.seasidesoftware.co.za; Thu, 28 Aug 2003 12:55:08 +0200
+Received: from mx2.freebsd.org ([216.136.204.119])
+	by mail1.gambling.com with esmtp (Exim 4.21)
+	id 19sKQe-0000zp-LM
+	for sheldonh@starjuice.net; Thu, 28 Aug 2003 06:55:00 -0400
+Received: from hub.freebsd.org (hub.freebsd.org [216.136.204.18])
+	by mx2.freebsd.org (Postfix) with ESMTP id DC32F55487
+	for <sheldonh@starjuice.net>; Thu, 28 Aug 2003 03:54:54 -0700 (PDT)
+	(envelope-from eikemeier@fillmore-labs.com)
+Received: by hub.freebsd.org (Postfix)
+	id DBC0016A4C1; Thu, 28 Aug 2003 03:54:54 -0700 (PDT)
+Delivered-To: sheldonh@freebsd.org
+Received: from mx1.FreeBSD.org (mx1.freebsd.org [216.136.204.125])
+	by hub.freebsd.org (Postfix) with ESMTP id D8C6F16A4C0
+	for <sheldonh@FreeBSD.org>; Thu, 28 Aug 2003 03:54:54 -0700 (PDT)
+Received: from mx2.fillmore-labs.com (lima.fillmore-labs.com [62.138.193.83])
+	by mx1.FreeBSD.org (Postfix) with ESMTP id CA9D243FDF
+	for <sheldonh@FreeBSD.org>; Thu, 28 Aug 2003 03:54:53 -0700 (PDT)
+	(envelope-from eikemeier@fillmore-labs.com)
+Received: from p5080b7aa.dip.t-dialin.net
+	([80.128.183.170] helo=fillmore-labs.com ident=epdlpdx7p1uekapy)
+	by mx2.fillmore-labs.com with asmtp (TLSv1:AES256-SHA:256)
+	(Exim 4.22)
+	id 19sKQR-000IqS-IX; Thu, 28 Aug 2003 12:54:47 +0200
+Message-ID: <3F4DDF6D.80409@fillmore-labs.com>
+Date: Thu, 28 Aug 2003 12:54:37 +0200
+From: Oliver Eikemeier <eikemeier@fillmore-labs.com>
+Reply-To: exim-users@exim.org
+MIME-Version: 1.0
+To: exim-users@exim.org
+Cc: Philip Hazel <ph10@cus.cam.ac.uk>,
+	Sheldon Hearn <sheldonh@FreeBSD.org>
+Subject: Patch for Exim 4 wish list #181 (trivial): Caseless "eq" expansion
+ condition
+Content-Type: text/plain; charset=us-ascii; format=flowed
+Content-Transfer-Encoding: 7bit
+X-Authenticated-Sender: eikemeier@fillmore-labs.com
+User-Agent: KMail/1.5.9
+Organization: Fillmore Labs GmbH  <http://www.fillmore-labs.com/>
+X-Complaints-To: abuse@fillmore-labs.com
+X-Spam-Score: 1.1 (+)
+X-Spam-Score: 0.5 (/)
+
+The following patch gives you a 'eqi' operator,
+which is like 'eq', only case-insensitive (ASCII only):
+
+--- wishlist-eqi.patch begins here ---
+#
+# (Exim 4 wish list #181) Caseless "eq" expansion condition
+# - eqi = caseless eq
+#
+--- src/expand.c.orig	Mon Aug 18 14:52:54 2003
++++ src/expand.c	Wed Aug 27 14:52:54 2003
+@@ -1482,6 +1482,7 @@
+ 
+ 
+ /* eq:   tests for string equality
++eqi:     caseless test for string equality
+ match:   does a regular expression match and sets up the numerical
+            variables if it succeeds
+ crypteq: encrypts plaintext and compares against an encrypted text, using
+@@ -1491,6 +1492,7 @@
+ 
+ 
+ else if (Ustrcmp(name, "eq") == 0 ||
++         Ustrcmp(name, "eqi") == 0 ||
+          Ustrcmp(name, "match") == 0 ||
+          Ustrcmp(name, "crypteq") == 0 ||
+          !isalpha(name[0]))
+@@ -1565,7 +1567,7 @@
+     break;
+ 
+     case 'e':   /* Straight text comparison */
+-    *yield = (Ustrcmp(sub[0], sub[1]) == 0) == testfor;
++    *yield = (((name[2] == 'i')? strcmpic(sub[0], sub[1]) : Ustrcmp(sub[0], sub[1])) == 0) == testfor;
+     break;
+ 
+     case 'm':   /* Regular expression match */
+--- wishlist-eqi.patch ends here ---
+
+Regrads
+    Oliver
+
+
