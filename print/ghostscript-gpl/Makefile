@@ -9,7 +9,7 @@ PORTNAME=	ghostscript
 PORTVERSION=	7.04
 PORTREVISION=	7
 CATEGORIES=	print
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:S/$/:gs_srcs,gs_fonts,bjc250/} \
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:S/$/:gs_srcs,gs_fonts,gprint,bjc250/} \
 		http://www.gelhaus.net/hp880c/1.4beta/:hp8xx \
 		http://home.t-online.de/home/Martin.Lottermoser/pcl3dist/:hpdj_pcl3 \
 		http://www.harsch.net/Download/:dj970 \
@@ -23,6 +23,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:S/$/:gs_srcs,gs_fonts,bjc250/} \
 		ftp://mirror.cs.wisc.edu/pub/mirrors/ghost/AFPL/fonts/:fonts \
 		ftp://mirror.cs.wisc.edu/pub/mirrors/ghost/AFPL/gs704/
 MASTER_SITE_SUBDIR=	ghostscript/:gs_srcs,gs_fonts,ports_jp_gs \
+			gimp-print/:gprint \
 			bjc250gs/:bjc250 \
 			./:ports_jp
 PKGNAMESUFFIX=	-afpl
@@ -33,6 +34,7 @@ DISTFILES=	${GS_SRCS}:gs_srcs \
 		${HPDJ_SRCS}:hpdj_pcl3 \
 		${PCL3_SRCS}:hpdj_pcl3 \
 		${DJ970_SRCS}:dj970 \
+		${GPRINT_SRCS}:gprint \
 		${MD2K_SRCS}:md2k \
 		${ALPS_SRCS}:ports_jp_gs \
 		${BJ10V_SRCS}:ports_jp_gs \
@@ -139,6 +141,20 @@ PCL3_MAN1=	gs-pcl3.1 pcl3opts.1
 # http://www.harsch.net/Ghostscript/ghostscript.html
 DJ970=		gdevdj9
 DJ970_SRCS=	${DJ970}.c.gz
+
+# Gimp-Print - very high quality driver for Epson, HPs,...
+# http://gimp-print.sourceforge.net/
+#
+# NOTE:
+# Support of stp driver interface has already been discontinued, and using
+# ijs driver with ijsgimpprint (part of print/gimp-print port) is highly
+# recommended.
+#
+# For that reason, integlation of stp driver is disabled by default.
+GPRINT=		gimp-print
+GPRINT_VERS=	4.2.1
+GPRINT_NAME=	${GPRINT}-${GPRINT_VERS}
+GPRINT_SRCS=	${GPRINT_NAME}.tar.gz
 
 # MD2K - additional driver for Alps MD-2000/2010/4000/1300/1500/5000
 # http://plaza26.mbn.or.jp/~higamasa/gdevmd2k/
@@ -248,6 +264,9 @@ post-extract:
 	${ECHO_MSG} ">>>   extracting ${DJ970_SRCS} ..."
 	${CP} ${DISTDIR}/${DIST_SUBDIR}/${DJ970_SRCS} ${WRKSRC}/src
 	${GUNZIP_CMD} ${WRKSRC}/src/${DJ970_SRCS}
+# for Gimp-Print driver
+	${ECHO_MSG} ">>>   extracting ${GPRINT_SRCS} ..."
+	${TAR} -C ${WRKSRC} -xzf ${DISTDIR}/${DIST_SUBDIR}/${GPRINT_SRCS}
 # for MD2K driver
 	${ECHO_MSG} ">>>   extracting ${MD2K_SRCS} ..."
 	${TAR} -C ${WRKSRC} -xzf ${DISTDIR}/${DIST_SUBDIR}/${MD2K_SRCS}
@@ -265,7 +284,6 @@ post-extract:
 	${GZCAT} ${DISTDIR}/${DIST_SUBDIR}/${BJC250_SRCS} | \
 		${PATCH} -d ${WRKSRC}/${BJC250_NAME} -f -s -N -E -p1 \
 		2>/dev/null || ${TRUE}
-
 # for LIPS driver
 	${ECHO_MSG} ">>>   extracting ${LIPS_SRCS} ..."
 	${TAR} -C ${WRKSRC} -xzf ${DISTDIR}/${DIST_SUBDIR}/${LIPS_SRCS}
@@ -323,6 +341,10 @@ pre-configure:
 	${ECHO_MSG} ">>>   adding ${DJ970} driver to contrib.mak ..."
 	${CAT} ${FILESDIR}/dj970.contrib.mak \
 		>> ${WRKSRC}/src/contrib.mak
+# for Gimp-Print driver
+	${ECHO_MSG} ">>>   adding ${GPRINT} driver to contrib.mak ..."
+	${CAT} ${FILESDIR}/stp.contrib.mak \
+		>> ${WRKSRC}/src/contrib.mak
 # for MD2K driver
 	${ECHO_MSG} ">>>   adding ${MD2K} driver to contrib.mak ..."
 	${CAT} ${WRKSRC}/${MD2K_NAME}/gdevmd2k.mak-5.50 \
@@ -378,12 +400,36 @@ do-configure:
 	${SETENV} ${SCRIPTS_ENV} ${SH} ${SCRIPTDIR}/configure
 .endif
 
+post-configure:
+	${ECHO_MSG} ">>> in post-configure ..."
+# for Gimp-Print driver
+	${ECHO_MSG} ">>>   running configure script for ${GPRINT} library ..."
+	cd ${WRKSRC}/${GPRINT_NAME} ; \
+		${SETENV} ${MAKE_ENV} ${SH} ./configure \
+			--without-translated-ppds --with-ghost \
+			--without-gimp --without-samples \
+			--without-user-guide --disable-escputil \
+			--disable-nls --disable-shared \
+			--prefix=${PREFIX}
+
 pre-build:
 	${ECHO_MSG} ">>> in pre-build ..."
 	${ECHO_MSG} ">>>   creating directories for compilation ..."
 	${MKDIR} ${WRKSRC}/obj
 	${MKDIR} ${WRKSRC}/bin
 	${LN} -sf ${WRKSRC}/src/unix-gcc.mak ${WRKSRC}/Makefile
+# for Gimp-Print driver
+	${ECHO_MSG} ">>>   building ${GPRINT} library ..."
+	cd ${WRKSRC}/${GPRINT_NAME} ; \
+		${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_FLAGS} Makefile
+	${ECHO_MSG} ">>>   creating symlinks for ${GPRINT} ..."
+	${LN} -sf ${WRKSRC}/${GPRINT_NAME}/src/ghost/*.[ch] \
+		${WRKSRC}/src
+	${MKDIR} ${WRKSRC}/${GPRINT}
+	${LN} -sf ${WRKSRC}/${GPRINT_NAME}/include/gimp-print \
+		${WRKSRC}/${GPRINT}/gimp-print
+	${LN} -sf ${WRKSRC}/${GPRINT_NAME}/src/main/.libs/libgimpprint.a \
+		${WRKSRC}/${GPRINT}/libgimpprint.a
 # for MD2K driver
 	${ECHO_MSG} ">>>   creating symlinks for ${MD2K} ..."
 .for i in gdevmd2k.c

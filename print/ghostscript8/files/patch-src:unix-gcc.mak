@@ -101,7 +101,7 @@
  #   specific stuff that <math.h> typically needs; nevertheless, we expect
  #   gcc to accept ANSI-style function prototypes and function definitions.
 -XCFLAGS=
-+#XCFLAGS=
++XCFLAGS+=-I${.CURDIR}/gimp-print
  
  CFLAGS=$(CFLAGS_STANDARD) $(GCFLAGS) $(XCFLAGS)
  
@@ -110,7 +110,7 @@
  # giving the full path names of the shared library directories.
  # XLDFLAGS can be set from the command line.
 -XLDFLAGS=
-+XLDFLAGS=-L${LOCALBASE}/lib
++XLDFLAGS=-L${.CURDIR}/gimp-print -L${LOCALBASE}/lib
  
  LDFLAGS=$(XLDFLAGS) -fno-common
  
