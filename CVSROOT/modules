@@ -3997,6 +3997,7 @@ nethack		ports/games/nethack
 nethack-gtk	ports/games/nethack-gtk
 nethack-qt	ports/games/nethack-qt
 nethack3	ports/games/nethack3
+nethack3-gnome	ports/games/nethack3-gnome
 nethack3-tty	ports/games/nethack3-tty
 nethirc		ports/irc/nethirc
 netmask		ports/net/netmask
