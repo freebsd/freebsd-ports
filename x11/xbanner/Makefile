@@ -9,7 +9,6 @@ PORTNAME=	xbanner
 PORTVERSION= 	1.31
 CATEGORIES=	x11
 MASTER_SITES=	ftp://ftp.digital.com/pub/linux/XBanner/ \
-		ftp://ftp.uni-bielefeld.de/pub/systems/FreeBSD/lkoeller/ \
 		${MASTER_SITE_SUNSITE}
 MASTER_SITE_SUBDIR=	X11/xutils
 DISTNAME=	XBanner${PORTVERSION}
