@@ -1,0 +1,31 @@
+*** doc/examples/ftpusers.orig	Tue Aug  8 19:30:46 1995
+--- doc/examples/ftpusers	Tue Aug  8 19:33:46 1995
+***************
+*** 1,14 ****
+  root
+! bin
+! boot
+  daemon
+- digital
+- field
+- gateway
+- guest
+- nobody
+  operator
+! ris
+! sccs
+! sys
+  uucp
+--- 1,12 ----
+  root
+! toor
+  daemon
+  operator
+! bin
+! games
+! news
+! man
+  uucp
++ xten
++ ingres
++ nobody
