@@ -47,6 +47,7 @@
     SUBDIR += npadmin
     SUBDIR += pib
     SUBDIR += pkg_version
+    SUBDIR += prips
     SUBDIR += psmisc
     SUBDIR += rdate
     SUBDIR += rtty
