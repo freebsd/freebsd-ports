@@ -14,15 +14,18 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A clone of the 1981 Night Stalker video game
 
 LIB_DEPENDS=	gengameng.4:${PORTSDIR}/devel/gengameng \
-		SDL_mixer.2:${PORTSDIR}/audio/sdl_mixer \
-		gnugetopt.1:${PORTSDIR}/devel/libgnugetopt
+		SDL_mixer.2:${PORTSDIR}/audio/sdl_mixer
 
+USE_GETOPT_LONG=	yes
 USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV+=	CXX="${CXX} -I${LOCALBASE}/include" \
-		LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib -lgnugetopt"
-CONFIGURE_TARGET=	# none
+CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
+CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
+
 MAN6=		afternoonstalker.6
+
+CPPFLAGS=	-I${LOCALBASE}/include
+LDFLAGS=	-L${LOCALBASE}/lib
 
 post-patch:
 	${REINPLACE_CMD} "s@SDL/@SDL11/@g" ${WRKSRC}/configure \
