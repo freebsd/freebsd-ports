@@ -1,10 +1,30 @@
 bin/gnomeicu
 bin/gnomeicu-client
+etc/gconf/gconf.xml.defaults/apps/gnomeicu/%gconf.xml
+etc/gconf/gconf.xml.defaults/apps/gnomeicu/general/%gconf.xml
+etc/gconf/gconf.xml.defaults/apps/gnomeicu/general/connections/%gconf.xml
+etc/gconf/gconf.xml.defaults/apps/gnomeicu/general/events/%gconf.xml
+etc/gconf/gconf.xml.defaults/apps/gnomeicu/general/files/%gconf.xml
+etc/gconf/gconf.xml.defaults/apps/gnomeicu/general/status/%gconf.xml
+etc/gconf/gconf.xml.defaults/apps/gnomeicu/general/themes/%gconf.xml
+etc/gconf/gconf.xml.defaults/apps/gnomeicu/general/ui/%gconf.xml
+etc/gconf/gconf.xml.defaults/apps/gnomeicu/icq/%gconf.xml
+etc/gconf/gconf.xml.defaults/apps/gnomeicu/icq/color/%gconf.xml
+etc/gconf/gconf.xml.defaults/apps/gnomeicu/icq/network/%gconf.xml
+etc/gconf/gconf.xml.defaults/schemas/apps/gnomeicu/%gconf.xml
+etc/gconf/gconf.xml.defaults/schemas/apps/gnomeicu/general/%gconf.xml
+etc/gconf/gconf.xml.defaults/schemas/apps/gnomeicu/general/connections/%gconf.xml
+etc/gconf/gconf.xml.defaults/schemas/apps/gnomeicu/general/events/%gconf.xml
+etc/gconf/gconf.xml.defaults/schemas/apps/gnomeicu/general/files/%gconf.xml
+etc/gconf/gconf.xml.defaults/schemas/apps/gnomeicu/general/status/%gconf.xml
+etc/gconf/gconf.xml.defaults/schemas/apps/gnomeicu/general/themes/%gconf.xml
+etc/gconf/gconf.xml.defaults/schemas/apps/gnomeicu/general/ui/%gconf.xml
+etc/gconf/gconf.xml.defaults/schemas/apps/gnomeicu/icq/%gconf.xml
+etc/gconf/gconf.xml.defaults/schemas/apps/gnomeicu/icq/color/%gconf.xml
+etc/gconf/gconf.xml.defaults/schemas/apps/gnomeicu/icq/network/%gconf.xml
+etc/gconf/schemas/gnomeicu.schemas
 etc/sound/events/GnomeICU.soundlist
-libdata/bonobo/servers/GNOME_GnomeICUApplet.server
-libexec/gnomeicu-applet
 share/gnome/applications/GnomeICU.desktop
-share/gnome/gnome-2.0/ui/GNOME_GnomeICUApplet.xml
 share/gnome/gnomeicu/emoticons/AIM/angel.xpm
 share/gnome/gnomeicu/emoticons/AIM/bigsmile.xpm
 share/gnome/gnomeicu/emoticons/AIM/crossedlips.xpm
@@ -63,6 +83,7 @@ share/gnome/gnomeicu/emoticons/Always/wilted_rose.gif
 share/gnome/gnomeicu/emoticons/Default/bigsmile.png
 share/gnome/gnomeicu/emoticons/Default/cry.png
 share/gnome/gnomeicu/emoticons/Default/emoticon-data
+share/gnome/gnomeicu/emoticons/Default/glasses.png
 share/gnome/gnomeicu/emoticons/Default/sad.png
 share/gnome/gnomeicu/emoticons/Default/scream.png
 share/gnome/gnomeicu/emoticons/Default/smile.png
@@ -126,12 +147,14 @@ share/gnome/gnomeicu/emoticons/Yahoo/wink.gif
 share/gnome/gnomeicu/emoticons/Yahoo/wonder.gif
 share/gnome/gnomeicu/glade/addcontact.glade
 share/gnome/gnomeicu/glade/auth.glade
+share/gnome/gnomeicu/glade/auto_respond.glade
 share/gnome/gnomeicu/glade/grpmgr.glade
 share/gnome/gnomeicu/glade/history.glade
 share/gnome/gnomeicu/glade/main.glade
 share/gnome/gnomeicu/glade/message.glade
-share/gnome/gnomeicu/glade/pref.glade
+share/gnome/gnomeicu/glade/prefs.glade
 share/gnome/gnomeicu/glade/user_info.glade
+share/gnome/gnomeicu/glade/welcome.glade
 share/gnome/gnomeicu/icons/Default/gnomeicu-animation.gif
 share/gnome/gnomeicu/icons/Default/gnomeicu-auth.png
 share/gnome/gnomeicu/icons/Default/gnomeicu-away.png
@@ -197,11 +220,21 @@ share/gnome/gnomeicu/icons/reDubbed/gnomeicu-na.png
 share/gnome/gnomeicu/icons/reDubbed/gnomeicu-occ.png
 share/gnome/gnomeicu/icons/reDubbed/gnomeicu-offline.png
 share/gnome/gnomeicu/icons/reDubbed/gnomeicu-online.png
+share/gnome/gnomeicu/prefs_icon_gnomeicu.png
+share/gnome/gnomeicu/prefs_icon_icq.png
 share/gnome/help/gnomeicu/C/gnomeicu.xml
 share/gnome/omf/gnomeicu/gnomeicu-C.omf
 @exec scrollkeeper-install -q %D/share/gnome/omf/gnomeicu/gnomeicu-C.omf 2>/dev/null || /usr/bin/true
 share/gnome/pixmaps/gnome-gnomeicu.png
+share/gnome/sounds/gnomeicu/Auth.wav
+share/gnome/sounds/gnomeicu/File.wav
+share/gnome/sounds/gnomeicu/Online.wav
+share/gnome/sounds/gnomeicu/URL.wav
+share/gnome/sounds/gnomeicu/contlist.wav
 share/gnome/sounds/gnomeicu/message.wav
+share/locale/am/LC_MESSAGES/gnomeicu.mo
+share/locale/az/LC_MESSAGES/gnomeicu.mo
+share/locale/bg/LC_MESSAGES/gnomeicu.mo
 share/locale/ca/LC_MESSAGES/gnomeicu.mo
 share/locale/cs/LC_MESSAGES/gnomeicu.mo
 share/locale/da/LC_MESSAGES/gnomeicu.mo
@@ -213,6 +246,7 @@ share/locale/fi/LC_MESSAGES/gnomeicu.mo
 share/locale/fr/LC_MESSAGES/gnomeicu.mo
 share/locale/ga/LC_MESSAGES/gnomeicu.mo
 share/locale/gl/LC_MESSAGES/gnomeicu.mo
+share/locale/he/LC_MESSAGES/gnomeicu.mo
 share/locale/hu/LC_MESSAGES/gnomeicu.mo
 share/locale/it/LC_MESSAGES/gnomeicu.mo
 share/locale/ja/LC_MESSAGES/gnomeicu.mo
@@ -231,6 +265,7 @@ share/locale/ru/LC_MESSAGES/gnomeicu.mo
 share/locale/sk/LC_MESSAGES/gnomeicu.mo
 share/locale/sl/LC_MESSAGES/gnomeicu.mo
 share/locale/sv/LC_MESSAGES/gnomeicu.mo
+share/locale/th/LC_MESSAGES/gnomeicu.mo
 share/locale/tr/LC_MESSAGES/gnomeicu.mo
 share/locale/uk/LC_MESSAGES/gnomeicu.mo
 share/locale/vi/LC_MESSAGES/gnomeicu.mo
@@ -253,4 +288,26 @@ share/locale/zh_TW/LC_MESSAGES/gnomeicu.mo
 @dirrm share/gnome/gnomeicu/emoticons/AIM
 @dirrm share/gnome/gnomeicu/emoticons
 @dirrm share/gnome/gnomeicu
+@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/gnomeicu/icq/network
+@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/gnomeicu/icq/color
+@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/gnomeicu/icq
+@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/gnomeicu/general/ui
+@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/gnomeicu/general/themes
+@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/gnomeicu/general/status
+@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/gnomeicu/general/files
+@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/gnomeicu/general/events
+@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/gnomeicu/general/connections
+@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/gnomeicu/general
+@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/gnomeicu
+@dirrm etc/gconf/gconf.xml.defaults/apps/gnomeicu/icq/network
+@dirrm etc/gconf/gconf.xml.defaults/apps/gnomeicu/icq/color
+@dirrm etc/gconf/gconf.xml.defaults/apps/gnomeicu/icq
+@dirrm etc/gconf/gconf.xml.defaults/apps/gnomeicu/general/ui
+@dirrm etc/gconf/gconf.xml.defaults/apps/gnomeicu/general/themes
+@dirrm etc/gconf/gconf.xml.defaults/apps/gnomeicu/general/status
+@dirrm etc/gconf/gconf.xml.defaults/apps/gnomeicu/general/files
+@dirrm etc/gconf/gconf.xml.defaults/apps/gnomeicu/general/events
+@dirrm etc/gconf/gconf.xml.defaults/apps/gnomeicu/general/connections
+@dirrm etc/gconf/gconf.xml.defaults/apps/gnomeicu/general
+@dirrm etc/gconf/gconf.xml.defaults/apps/gnomeicu
 @unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnomeicu/gnomeicu-C.omf 2>/dev/null || /usr/bin/true

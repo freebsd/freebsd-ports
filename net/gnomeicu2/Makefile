@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	gnomeicu2
-PORTVERSION=	0.98.126
-PORTREVISION=	2
+PORTVERSION=	0.99
 CATEGORIES=	net gnome
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	gnomeicu
@@ -55,5 +54,7 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|g ; \
 		 s|DATADIRNAME=lib|DATADIRNAME=share|g ; \
 		 s|gnet|gnet-glib2|g' ${WRKSRC}/configure
+	@${REINPLACE_CMD} -e 's|GNOME_PARAM_GNOME_DATADIR|GNOME_PARAM_APP_DATADIR|g' \
+		${WRKSRC}/src/gnomeicu.c
 
 .include <bsd.port.mk>
