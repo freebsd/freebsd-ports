@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.15 1997/04/01 04:48:08 jdp Exp $
+# $Id: Makefile,v 1.16 1997/04/24 08:03:31 obrien Exp $
 #
 
     SUBDIR += SSLeay
@@ -18,6 +18,7 @@
     SUBDIR += ssh
     SUBDIR += sudo
     SUBDIR += super
+    SUBDIR += swatch
     SUBDIR += tcp_wrapper
     SUBDIR += tripwire
     SUBDIR += vscan
