@@ -5,6 +5,9 @@
 # $FreeBSD$
 #
 
+# NOTE: I would like to skip wget-1.9 and wait for stabilization.
+#       Please don't push me to update. Thank you.
+
 PORTNAME=	wget
 PORTVERSION=	1.8.2
 PORTREVISION=	4
@@ -19,7 +22,9 @@ PATCH_DIST_STRIP=	-p1
 MAINTAINER=	sf@FreeBSD.org
 COMMENT=	Retrieve files from the Net via HTTP and FTP
 
+.if !defined(WITHOUT_NLS)
 LIB_DEPENDS=	intl.5:${PORTSDIR}/devel/gettext
+.endif
 
 USE_REINPLACE=	yes
 USE_PERL5_BUILD=	yes
@@ -27,12 +32,17 @@ USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 
 .if defined(WITHOUT_SSL)
-CONFIGURE_ARGS=	--with-ssl=no
+CONFIGURE_ARGS=		--with-ssl=no
 .else
 USE_OPENSSL=	yes
 .endif
 CONFIGURE_ENV+=	CPPFLAGS=-I${LOCALBASE}/include \
 		LIBS=-L${LOCALBASE}/lib
+PLIST_SUB=	NLS=""
+.if defined(WITHOUT_NLS)
+CONFIGURE_ARGS+=	--disable-nls
+PLIST_SUB=	NLS="@comment "
+.endif
 
 MAN1=		wget.1
 INFO=		wget
