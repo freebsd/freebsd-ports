@@ -1,5 +1,5 @@
 --- Makefile.in.orig	Sat Jun 15 18:41:03 2002
-+++ Makefile.in	Tue Jun 18 22:37:19 2002
++++ Makefile.in	Sun Jul 21 03:15:18 2002
 @@ -31,12 +31,14 @@
  	@test -d $(DESTDIR)$(sysconfdir) || $(MKINSTALLDIRS) $(DESTDIR)$(sysconfdir)
  	@cd $(top_srcdir)/docs/conf; \
@@ -17,7 +17,17 @@
  		( \
  			n_lm=`awk 'BEGIN {n=0} /@@LoadModule@@/ {n+=1} END {print n}' < $$i`; \
  			if test $$n_lm -eq 0 -o "x$(DSO_MODULES)" = "x"; then \
-@@ -104,11 +106,14 @@
+@@ -54,6 +56,9 @@
+ 					if test "x$$j" = "xssl"; then \
+ 						echo "<IfDefine SSL>"; \
+ 					fi; \
++					if [ `echo "$$j" | egrep 'cgid|cache|dav|digest|proxy'` ]; then \
++					        echo -n "#"; \
++					fi; \
+ 					if test $$j != "^EOL^"; then \
+ 						echo "LoadModule $${j}_module $(rel_libexecdir)/mod_$${j}.so"; \
+ 					fi; \
+@@ -104,11 +109,14 @@
  
  install-htdocs:
  	@echo Installing HTML documents
@@ -35,7 +45,7 @@
  
  install-error:
  	@echo Installing error documents
-@@ -124,9 +129,10 @@
+@@ -124,9 +132,10 @@
  
  install-cgi:
  	@echo Installing CGIs

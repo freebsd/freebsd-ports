@@ -73,13 +73,22 @@ PLIST_SUB+=	SUEXEC="@comment "
 PKGNAMESUFFIX=	-${WITH_MPM}
 WITH_THREADS=	yes
 .if !defined(FORCE_THREADING_MPM)
-FORBIDDEN=	"doesn't work with threading MPMs on FreeBSD. If you are\
-		brave enough, make again with FORCE_THREADING_MPM=yes"
+FORBIDDEN=	"doesn't support threads on FreeBSD, officially. If you are\
+		prepared to risk unintended problems, make again with\
+		-DFORCE_THREADING_MPM"
 .endif
+.if ${WITH_MPM} == "worker"
+PLIST_SUB+=	PREFORK="@comment " WORKER=""
+.else
+PLIST_SUB+=	PREFORK="@comment " WORKER="@comment "
+.endif
+.else
+PLIST_SUB+=	PREFORK="" WORKER="@comment "
 .endif
 
 .if defined(WITH_THREADS)
 CONFIGURE_ARGS+= --enable-threads
+CFLAGS+=	-DFREEBSD_THREAD_HACK
 .endif
 
 .if !defined(WITHOUT_SSL) && exists(/usr/lib/libcrypto.so)

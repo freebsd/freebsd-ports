@@ -78,6 +78,7 @@ include/apache2/apr_xlate.h
 include/apache2/apr_xml.h
 include/apache2/apu.h
 include/apache2/apu_compat.h
+%%WORKER%%include/apache2/fdqueue.h
 include/apache2/http_config.h
 include/apache2/http_connection.h
 include/apache2/http_core.h
@@ -100,6 +101,7 @@ include/apache2/mpm_default.h
 include/apache2/os.h
 include/apache2/pcre.h
 include/apache2/pcreposix.h
+%%WORKER%%include/apache2/pod.h
 include/apache2/rfc1413.h
 include/apache2/scoreboard.h
 include/apache2/ssl_expr.h
@@ -145,7 +147,7 @@ libexec/apache2/mod_autoindex.so
 %%EXPERIMENTAL%%libexec/apache2/mod_case_filter.so
 %%EXPERIMENTAL%%libexec/apache2/mod_case_filter_in.so
 libexec/apache2/mod_cern_meta.so
-libexec/apache2/mod_cgi.so
+%%PREFORK%%libexec/apache2/mod_cgi.so
 libexec/apache2/mod_cgid.so
 %%EXPERIMENTAL%%libexec/apache2/mod_charset_lite.so
 libexec/apache2/mod_dav.so
