@@ -1,5 +1,5 @@
---- poppassd.c.orig	Mon Jul  7 15:15:03 2003
-+++ poppassd.c	Mon Jul  7 15:17:46 2003
+--- poppassd.c.orig	Fri Dec  5 13:14:06 2003
++++ poppassd.c	Fri Dec  5 13:15:49 2003
 @@ -13,11 +13,11 @@
   * 
   * Doesn't actually change any passwords itself.  It simply listens for
@@ -32,6 +32,15 @@
   * back to the client in the final 500 response, and a new version of the
   * code to find the next free pty, is by Norstad.
   *        
+@@ -125,7 +125,7 @@
+ #include <ctype.h>
+ #include <strings.h>
+ #include <errno.h>
+-#include <varargs.h>
++#include <stdarg.h>
+ #include <pwd.h>
+ #include <string.h>
+ #include <termios.h>
 @@ -145,8 +145,11 @@
  static char *P1[] =
     {"Old password:",
@@ -384,15 +393,32 @@
  /*
   * writestring()
   *
-@@ -485,8 +398,10 @@
+@@ -485,9 +398,11 @@
       }
  
       writestring(master, pswd);
 -
 +     sleep(2);
       if (!expect(master, P4, buf)) return FAILURE;
-+
-+     close(master);
  
++     close(master);
++
       return SUCCESS;
  }
+ 
+@@ -630,13 +545,11 @@
+    }
+ }
+ 
+-WriteToClient (fmt, va_alist)
+-char *fmt;
+-va_dcl
++WriteToClient (char *fmt, ...)
+ {
+ 	va_list ap;
+ 	
+-	va_start (ap);
++	va_start (ap, fmt);
+ 	vfprintf (stdout, fmt, ap);
+ 	fputs ("\r\n", stdout );
+ 	fflush (stdout);
