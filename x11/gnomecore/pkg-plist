@@ -1,3 +1,4 @@
+bin/another_clock_applet
 bin/asclock_applet
 bin/battery_applet
 bin/cdplayer_applet
@@ -17,8 +18,10 @@ bin/gnome-man2html
 bin/gnome-session
 bin/gnome-smproxy
 bin/gnome-terminal
+bin/gnome-wm
 bin/gnomepager_applet
 bin/jbc_applet
+bin/life_applet
 bin/mini_commander_applet
 bin/mixer_applet
 bin/modemlights_applet
@@ -27,6 +30,7 @@ bin/panel
 bin/save-session
 bin/slash_applet
 bin/webcontrol_applet
+etc/CORBA/servers/another_clock_applet.gnorba
 etc/CORBA/servers/asclock_applet.gnorba
 etc/CORBA/servers/battery_applet.gnorba
 etc/CORBA/servers/cdplayer_applet.gnorba
@@ -42,6 +46,7 @@ etc/CORBA/servers/gkb_applet.gnorba
 etc/CORBA/servers/gnomepager_applet.gnorba
 etc/CORBA/servers/help-browser.gnorba
 etc/CORBA/servers/jbc_applet.gnorba
+etc/CORBA/servers/life_applet.gnorba
 etc/CORBA/servers/mini-commander_applet.gnorba
 etc/CORBA/servers/mixer_applet.gnorba
 etc/CORBA/servers/modemlights_applet.gnorba
@@ -56,21 +61,19 @@ include/gnome-panel.h
 include/panel-types.h
 lib/libfish_applet.a
 lib/libfish_applet.la
-lib/libfish_applet.so
 lib/libfish_applet.so.0
 lib/libgkb_applet.a
 lib/libgkb_applet.la
-lib/libgkb_applet.so
 lib/libgkb_applet.so.0
 lib/libpanel_applet.a
 lib/libpanel_applet.la
-lib/libpanel_applet.so
 lib/libpanel_applet.so.1
 @unexec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -R
 @exec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -m %B
 share/gnome/applets/Amusements/.directory
 share/gnome/applets/Amusements/fifteen_applet.desktop
 share/gnome/applets/Amusements/fish_applet.desktop
+share/gnome/applets/Amusements/life_applet.desktop
 share/gnome/applets/Amusements/slash_applet.desktop
 share/gnome/applets/Monitors/.directory
 share/gnome/applets/Monitors/battery_applet.desktop
@@ -88,6 +91,7 @@ share/gnome/applets/Network/mailcheck_applet.desktop
 share/gnome/applets/Network/modemlights_applet.desktop
 share/gnome/applets/Network/webcontrol_applet.desktop
 share/gnome/applets/Utility/.directory
+share/gnome/applets/Utility/another_clock_applet.desktop
 share/gnome/applets/Utility/asclock_applet.desktop
 share/gnome/applets/Utility/charpick_applet.desktop
 share/gnome/applets/Utility/clock_applet.desktop
@@ -122,7 +126,81 @@ share/gnome/apps/Utilities/UNIX.desktop
 share/gnome/apps/Utilities/Vnterm.desktop
 share/gnome/apps/Utilities/gnome-terminal.desktop
 share/gnome/apps/gnome-help.desktop
-share/gnome/default.session
+share/gnome/asclock/Freeamp/beats.xpm
+share/gnome/asclock/Freeamp/clock.xpm
+share/gnome/asclock/Freeamp/config
+share/gnome/asclock/Freeamp/date.xpm
+share/gnome/asclock/Freeamp/hour.xpm
+share/gnome/asclock/Freeamp/led.xpm
+share/gnome/asclock/Freeamp/minute.xpm
+share/gnome/asclock/Freeamp/month.xpm
+share/gnome/asclock/Freeamp/second.xpm
+share/gnome/asclock/Freeamp/weekday.xpm
+share/gnome/asclock/Newstone/beats.xpm
+share/gnome/asclock/Newstone/clock.xpm
+share/gnome/asclock/Newstone/config
+share/gnome/asclock/Newstone/date.xpm
+share/gnome/asclock/Newstone/hour.xpm
+share/gnome/asclock/Newstone/led.xpm
+share/gnome/asclock/Newstone/minute.xpm
+share/gnome/asclock/Newstone/month.xpm
+share/gnome/asclock/Newstone/second.xpm
+share/gnome/asclock/Newstone/weekday.xpm
+share/gnome/asclock/Orb/beats.xpm
+share/gnome/asclock/Orb/clock.xpm
+share/gnome/asclock/Orb/config
+share/gnome/asclock/Orb/date.xpm
+share/gnome/asclock/Orb/hour.xpm
+share/gnome/asclock/Orb/led.xpm
+share/gnome/asclock/Orb/minute.xpm
+share/gnome/asclock/Orb/month.xpm
+share/gnome/asclock/Orb/second.xpm
+share/gnome/asclock/Orb/weekday.xpm
+share/gnome/asclock/Stone/beats.xpm
+share/gnome/asclock/Stone/clock.xpm
+share/gnome/asclock/Stone/config
+share/gnome/asclock/Stone/date.xpm
+share/gnome/asclock/Stone/hour.xpm
+share/gnome/asclock/Stone/led.xpm
+share/gnome/asclock/Stone/minute.xpm
+share/gnome/asclock/Stone/month.xpm
+share/gnome/asclock/Stone/second.xpm
+share/gnome/asclock/Stone/weekday.xpm
+share/gnome/asclock/beats/beats.xpm
+share/gnome/asclock/beats/clock.xpm
+share/gnome/asclock/beats/config
+share/gnome/asclock/beats/date.xpm
+share/gnome/asclock/beats/hour.xpm
+share/gnome/asclock/beats/led.xpm
+share/gnome/asclock/beats/minute.xpm
+share/gnome/asclock/beats/month.xpm
+share/gnome/asclock/beats/second.xpm
+share/gnome/asclock/beats/weekday.xpm
+share/gnome/asclock/classic/beats.xpm
+share/gnome/asclock/classic/clock.xpm
+share/gnome/asclock/classic/config
+share/gnome/asclock/classic/date.xpm
+share/gnome/asclock/classic/hour.xpm
+share/gnome/asclock/classic/led.xpm
+share/gnome/asclock/classic/minute.xpm
+share/gnome/asclock/classic/month.xpm
+share/gnome/asclock/classic/second.xpm
+share/gnome/asclock/classic/weekday.xpm
+share/gnome/asclock/shaped/beats.xpm
+share/gnome/asclock/shaped/clock.xpm
+share/gnome/asclock/shaped/config
+share/gnome/asclock/shaped/date.xpm
+share/gnome/asclock/shaped/hour.xpm
+share/gnome/asclock/shaped/led.xpm
+share/gnome/asclock/shaped/minute.xpm
+share/gnome/asclock/shaped/month.xpm
+share/gnome/asclock/shaped/second.xpm
+share/gnome/asclock/shaped/weekday.xpm
+share/gnome/gnome/default.session
+share/gnome/gnome/default.wm
+share/gnome/gnome/help/help-browser/ko/default-page.html
+share/gnome/gnome/help/help-browser/ko/help-browser.html
+share/gnome/gnome/help/help-browser/ko/topic.dat
 share/gnome/help/gnome-intro/C/a-sample-session.html
 share/gnome/help/gnome-intro/C/a-sample-session75.html
 share/gnome/help/gnome-intro/C/c93.html
@@ -174,28 +252,22 @@ share/gnome/help/gnome-intro/C/topic.dat
 share/gnome/help/help-browser/C/default-page.html
 share/gnome/help/help-browser/C/gnome-logo-large.png
 share/gnome/help/help-browser/C/help-browser.html
-share/gnome/help/help-browser/C/index.html
 share/gnome/help/help-browser/C/topic.dat
 share/gnome/help/help-browser/es/default-page.html
 share/gnome/help/help-browser/es/help-browser.html
-share/gnome/help/help-browser/es/index.html
 share/gnome/help/help-browser/es/topic.dat
 share/gnome/help/help-browser/fr/default-page.html
 share/gnome/help/help-browser/fr/help-browser.html
-share/gnome/help/help-browser/fr/index.html
 share/gnome/help/help-browser/fr/topic.dat
 share/gnome/help/help-browser/hu/default-page.html
 share/gnome/help/help-browser/hu/gnome-logo-large.png
 share/gnome/help/help-browser/hu/help-browser.html
-share/gnome/help/help-browser/hu/index.html
 share/gnome/help/help-browser/hu/topic.dat
 share/gnome/help/help-browser/it/default-page.html
 share/gnome/help/help-browser/it/help-browser.html
-share/gnome/help/help-browser/it/index.html
 share/gnome/help/help-browser/it/topic.dat
 share/gnome/help/help-browser/no/default-page.html
 share/gnome/help/help-browser/no/help-browser.html
-share/gnome/help/help-browser/no/index.html
 share/gnome/help/help-browser/no/topic.dat
 share/gnome/help/mini-commander_applet/C/change-log.html
 share/gnome/help/mini-commander_applet/C/clock.html
@@ -220,10 +292,12 @@ share/gnome/idl/gnome-panel.idl
 share/gnome/idl/help-browser.idl
 share/gnome/mc/templates/GIMP.desktop
 share/gnome/panelrc
+share/gnome/pixmaps/another_clock.xpm
 share/gnome/pixmaps/emacs.png
 share/gnome/pixmaps/fish/fishanim.png
 share/gnome/pixmaps/fish/oldwanda.png
 share/gnome/pixmaps/gkb.xpm
+share/gnome/pixmaps/gkb/at.xpm
 share/gnome/pixmaps/gkb/be.xpm
 share/gnome/pixmaps/gkb/bg.xpm
 share/gnome/pixmaps/gkb/ca.xpm
@@ -260,10 +334,18 @@ share/gnome/pixmaps/gnome-background.png
 share/gnome/pixmaps/gnome-balsa2.png
 share/gnome/pixmaps/gnome-calc2.png
 share/gnome/pixmaps/gnome-calendar.png
+share/gnome/pixmaps/gnome-cardgame.png
 share/gnome/pixmaps/gnome-color-browser.png
 share/gnome/pixmaps/gnome-cromagnon.png
 share/gnome/pixmaps/gnome-default.png
+share/gnome/pixmaps/gnome-die1.png
+share/gnome/pixmaps/gnome-die2.png
+share/gnome/pixmaps/gnome-die3.png
+share/gnome/pixmaps/gnome-die4.png
+share/gnome/pixmaps/gnome-die5.png
+share/gnome/pixmaps/gnome-die6.png
 share/gnome/pixmaps/gnome-ee.png
+share/gnome/pixmaps/gnome-eterm.png
 share/gnome/pixmaps/gnome-file-c.png
 share/gnome/pixmaps/gnome-file-h.png
 share/gnome/pixmaps/gnome-folder.png
@@ -325,6 +407,8 @@ share/gnome/pixmaps/tiles/tile-drc-1-down.png
 share/gnome/pixmaps/tiles/tile-drc-1-up.png
 share/gnome/pixmaps/tiles/tile-drc-2-down.png
 share/gnome/pixmaps/tiles/tile-drc-2-up.png
+share/gnome/pixmaps/tiles/tile-drc-4-down.png
+share/gnome/pixmaps/tiles/tile-drc-4-up.png
 share/gnome/pixmaps/tiles/tile-green-down.png
 share/gnome/pixmaps/tiles/tile-green-up.png
 share/gnome/pixmaps/tiles/tile-moon-down.png
@@ -346,6 +430,7 @@ share/gnome/xmodmap/xmodmap.dvorak
 share/gnome/xmodmap/xmodmap.es
 share/gnome/xmodmap/xmodmap.fi
 share/gnome/xmodmap/xmodmap.fr
+share/gnome/xmodmap/xmodmap.fr-2
 share/gnome/xmodmap/xmodmap.gr
 share/gnome/xmodmap/xmodmap.hu
 share/gnome/xmodmap/xmodmap.hu.old
@@ -392,41 +477,90 @@ share/locale/pl/LC_MESSAGES/gnome-core.mo
 share/locale/pt/LC_MESSAGES/gnome-core.mo
 share/locale/ru/LC_MESSAGES/gnome-core.mo
 share/locale/sv/LC_MESSAGES/gnome-core.mo
-@dirrm share/gnome/xmodmap
-@dirrm share/gnome/pixmaps/tiles
-@dirrm share/gnome/pixmaps/mini-commander
-@dirrm share/gnome/pixmaps/mailcheck
-@dirrm share/gnome/pixmaps/gkb
-@dirrm share/gnome/pixmaps/fish
-@dirrm share/gnome/mc/templates
-@dirrm share/gnome/mc
-@dirrm share/gnome/help/mini-commander_applet/C
-@dirrm share/gnome/help/mini-commander_applet
-@dirrm share/gnome/help/help-browser/no
-@dirrm share/gnome/help/help-browser/it
-@dirrm share/gnome/help/help-browser/hu
-@dirrm share/gnome/help/help-browser/fr
-@dirrm share/gnome/help/help-browser/es
-@dirrm share/gnome/help/help-browser/C
-@dirrm share/gnome/help/help-browser
-@dirrm share/gnome/help/gnome-intro/C/pix
-@dirrm share/gnome/help/gnome-intro/C
-@dirrm share/gnome/help/gnome-intro
-@dirrm share/gnome/help
-@dirrm share/gnome/apps/Utilities
-@dirrm share/gnome/apps/System
-@dirrm share/gnome/apps/Settings
-@dirrm share/gnome/apps/Multimedia
-@dirrm share/gnome/apps/Internet
-@dirrm share/gnome/apps/Graphics
-@dirrm share/gnome/apps/Games
-@dirrm share/gnome/apps/Applications
-@dirrm share/gnome/apps
-@dirrm share/gnome/applets/Utility
-@dirrm share/gnome/applets/Network
-@dirrm share/gnome/applets/Multimedia
-@dirrm share/gnome/applets/Monitors
-@dirrm share/gnome/applets/Amusements
-@dirrm share/gnome/applets
+share/locale/wa/LC_MESSAGES/gnome-core.mo
 @dirrm etc/CORBA/servers
 @dirrm etc/CORBA
+@dirrm etc/sound/events
+@dirrm share/gnome/applets/Amusements
+@dirrm share/gnome/applets/Monitors
+@dirrm share/gnome/applets/Multimedia
+@dirrm share/gnome/applets/Network
+@dirrm share/gnome/applets/Utility
+@dirrm share/gnome/applets
+@dirrm share/gnome/apps/Applications
+@dirrm share/gnome/apps/Games
+@dirrm share/gnome/apps/Graphics
+@dirrm share/gnome/apps/Internet
+@dirrm share/gnome/apps/Multimedia
+@dirrm share/gnome/apps/Settings
+@dirrm share/gnome/apps/System
+@dirrm share/gnome/apps/Utilities
+@dirrm share/gnome/apps
+@dirrm share/gnome/asclock/Freeamp
+@dirrm share/gnome/asclock/Newstone
+@dirrm share/gnome/asclock/Orb
+@dirrm share/gnome/asclock/Stone
+@dirrm share/gnome/asclock/beats
+@dirrm share/gnome/asclock/classic
+@dirrm share/gnome/asclock/shaped
+@dirrm share/gnome/asclock
+@dirrm share/gnome/gnome/help/help-browser/ko
+@dirrm share/gnome/gnome/help/help-browser
+@dirrm share/gnome/gnome/help
+@dirrm share/gnome/gnome
+@dirrm share/gnome/help/gnome-intro
+@dirrm share/gnome/help/gnome-intro/C
+@dirrm share/gnome/help/gnome-intro/C/pix
+@dirrm share/gnome/help/help-browser/C
+@dirrm share/gnome/help/help-browser/es
+@dirrm share/gnome/help/help-browser/fr
+@dirrm share/gnome/help/help-browser/hu
+@dirrm share/gnome/help/help-browser/it
+@dirrm share/gnome/help/help-browser/no
+@dirrm share/gnome/help/help-browser
+@dirrm share/gnome/help/mini-commander_applet/C
+@dirrm share/gnome/help/mini-commander_applet
+@dirrm share/gnome/help
+@dirrm share/gnome/idl
+@dirrm share/gnome/mc/templates
+@dirrm share/gnome/mc
+@dirrm share/gnome/pixmaps/fish
+@dirrm share/gnome/pixmaps/gkb
+@dirrm share/gnome/pixmaps/mailcheck
+@dirrm share/gnome/pixmaps/mini-commander
+@dirrm share/gnome/pixmaps/tiles
+@dirrm share/gnome/pixmaps
+@dirrm share/gnome/xmodmap
+@dirrm share/locale/ca/LC_MESSAGES
+@dirrm share/locale/cs/LC_MESSAGES
+@dirrm share/locale/da/LC_MESSAGES
+@dirrm share/locale/de/LC_MESSAGES
+@dirrm share/locale/es/LC_MESSAGES
+@dirrm share/locale/es_DO/LC_MESSAGES
+@dirrm share/locale/es_DO
+@dirrm share/locale/es_GT/LC_MESSAGES
+@dirrm share/locale/es_GT
+@dirrm share/locale/es_HN/LC_MESSAGES
+@dirrm share/locale/es_HN
+@dirrm share/locale/es_MX/LC_MESSAGES
+@dirrm share/locale/es_MX
+@dirrm share/locale/es_PA/LC_MESSAGES
+@dirrm share/locale/es_PA
+@dirrm share/locale/es_PE/LC_MESSAGES
+@dirrm share/locale/es_PE
+@dirrm share/locale/es_SV/LC_MESSAGES
+@dirrm share/locale/es_SV
+@dirrm share/locale/fi/LC_MESSAGES
+@dirrm share/locale/fr/LC_MESSAGES
+@dirrm share/locale/ga/LC_MESSAGES
+@dirrm share/locale/hu/LC_MESSAGES
+@dirrm share/locale/it/LC_MESSAGES
+@dirrm share/locale/ja/LC_MESSAGES
+@dirrm share/locale/ko/LC_MESSAGES
+@dirrm share/locale/nl/LC_MESSAGES
+@dirrm share/locale/no/LC_MESSAGES
+@dirrm share/locale/pl/LC_MESSAGES
+@dirrm share/locale/pt/LC_MESSAGES
+@dirrm share/locale/ru/LC_MESSAGES
+@dirrm share/locale/sv/LC_MESSAGES
+@dirrm share/locale/wa/LC_MESSAGES

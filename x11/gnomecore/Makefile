@@ -1,13 +1,13 @@
 # New ports collection makefile for:	gnomecore
-# Version required:			1.0.3
+# Version required:			1.0.5
 # Date created:				17 March 1998
 # Whom:					Yukihiro Nakai <Nakai@technologist.com>
 #
-# $Id: Makefile,v 1.21 1999/03/27 10:35:54 vanilla Exp $
+# $Id: Makefile,v 1.22 1999/04/02 03:25:23 steve Exp $
 #
 
-DISTNAME=	gnome-core-1.0.3
-PKGNAME=	gnomecore-1.0.3
+DISTNAME=	gnome-core-1.0.5
+PKGNAME=	gnomecore-1.0.5
 CATEGORIES=	x11 gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/gnome-core
