@@ -1,9 +1,9 @@
 
 $FreeBSD$
 
---- configure	2001/01/29 19:11:52	1.1
-+++ configure	2001/01/29 19:12:24
-@@ -1256,7 +1256,7 @@
+--- configure.orig	Wed Jan  2 18:17:42 2002
++++ configure	Fri Aug 30 14:53:55 2002
+@@ -1853,7 +1853,7 @@
    fi
  else
    if test "$GCC" = yes; then
@@ -12,12 +12,20 @@ $FreeBSD$
    else
      CFLAGS=
    fi
-@@ -3168,7 +3168,7 @@
-   if test "$enable_debug" = yes; then
+@@ -6986,6 +6986,7 @@
+ 
+ # This can be used to rebuild libtool when needed
+ LIBTOOL_DEPS="$ac_aux_dir/ltmain.sh"
++$ac_aux_dir/ltconfig $LIBTOOL_DEPS
+ 
+ # Always use our own libtool.
+ LIBTOOL='$(SHELL) $(top_builddir)/libtool'
+@@ -9685,7 +9686,7 @@
+   if test "X$enable_debug" = Xyes; then
      CFLAGS_O="$CFLAGS_O -O0"
    else
 -    CFLAGS_O="$CFLAGS_O -O2"
 +#    CFLAGS_O="$CFLAGS_O -O2"
    fi
-   CFLAGS_W="$CFLAGS_W -Wall -Wcast-align -Wwrite-strings"
-   case $host in
+   CFLAGS_W="$CFLAGS_W -Wall"
+   case $host_cpu in
