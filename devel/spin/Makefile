@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	spin
-PORTVERSION=	3.4.8
+PORTVERSION=	3.4.9
 CATEGORIES=	math
 MASTER_SITES=	ftp://netlib.bell-labs.com/netlib/spin/ \
 		ftp://www.netlib.org/spin/
