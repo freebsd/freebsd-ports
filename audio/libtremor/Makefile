@@ -15,11 +15,6 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	kwm@rainbow-runner.nl
 COMMENT=	Integer-only fully Ogg Vorbis compliant decoder library
 
-# pull in libtool this way because USE_LIBTOOL tries to patch
-# things that don't exist.
-
-BUILD_DEPENDS=	libtoolize13:${PORTSDIR}/devel/libtool13
-
 SNAP_DATE=	02132004
 WRKSRC=		${WRKDIR}/Tremor
 USE_REINPLACE=	yes
