@@ -1,0 +1,5 @@
+Retrieves module information from a file or script. Enhances
+Module::Info->new_from_file to include dir and name attributes.
+
+Author:	jonasbn <jonasbn@cpan.org>
+WWW:	http://search.cpn.org/dist/Module-Info_File
