@@ -1,5 +1,5 @@
 --- texk/kpathsea/texmf.in-teTeX.orig	Sun Feb  6 09:04:35 2005
-+++ texk/kpathsea/texmf.in-teTeX	Sat Feb 12 20:27:12 2005
++++ texk/kpathsea/texmf.in-teTeX	Sun Feb 13 05:40:44 2005
 @@ -177,11 +177,18 @@
  % latex209, useful for macros that were written for 2.09 and do not
  % mention 2e at all, but can be used with 2e.
@@ -59,7 +59,7 @@
  
  % PostScript Type 1 outline fonts.
  T1FONTS = .;$TEXMF/fonts/type1//
-@@ -310,10 +317,10 @@
+@@ -310,25 +317,25 @@
  LIGFONTS =  .;$TEXMF/fonts/lig//
  
  % Dvips' config.* files (this name should not start with `TEX'!).
@@ -71,7 +71,27 @@
 +INDEXSTYLE = .;$TEXMF/makeindex{/ptex,}//
  
  % Font encoding files (.enc).
- ENCFONTS = .;$TEXMF/fonts/enc//
+-ENCFONTS = .;$TEXMF/fonts/enc//
++ENCFONTS = .;$TEXMF/fonts/enc{/ptex,}//
+ 
+ % CMap files.
+-CMAPFONTS = .;$TEXMF/fonts/cmap//
++CMAPFONTS = .;$TEXMF/fonts/cmap{/ptex,}//
+ 
+ % Subfont definition files.
+-SFDFONTS = .;$TEXMF/fonts/sfd//
++SFDFONTS = .;$TEXMF/fonts/sfd{/ptex,}//
+ 
+ % Opentype outline fonts.
+-OPENTYPEFONTS = .;$TEXMF/fonts/opentype//
++OPENTYPEFONTS = .;$TEXMF/fonts/opentype{/ptex,}//
+ 
+ % pdftex config files:
+-PDFTEXCONFIG = .;$TEXMF/pdftex/{$progname,}//
++PDFTEXCONFIG = .;$TEXMF/pdftex/{$progname,}{/ptex,}//
+ 
+ % Used by DMP (ditroff-to-mpx), called by makempx -troff.
+ % The path given is correct for GROFF on Linux installed under /usr.
 @@ -366,6 +373,10 @@
  % search formats, you'll want to add their variables here as well.
  T4HTINPUTS   = .;$TEXMF/tex4ht//
@@ -92,6 +112,15 @@
  
  # $progname: kpathsea v. 3.5.3 or later overwrites this at runtime. To
  # avoid empty expansions from binaries linked against an earlier
+@@ -489,7 +500,7 @@
+ 
+ % Extra space for the hash table of control sequences (which allows 10K
+ % names as distributed).
+-hash_extra = 50000
++hash_extra = 100000
+ 
+ % Max number of characters in all strings, including all error messages,
+ % help texts, font names, control sequences.  These values apply to TeX and MP.
 @@ -556,3 +567,8 @@
  error_line = 79
  half_error_line = 50
