@@ -90,6 +90,23 @@
   
   /* 
 ***************
+*** 151,157 ****
+   * Target entries.
+   */
+  
+! all: $(TARGETS)
+  
+  SingleProgramTarget(youbind,$(YOUBIND_OBJS),,)
+  SingleProgramTarget(sendto,$(SENDTO_OBJS),,)
+--- 152,158 ----
+   * Target entries.
+   */
+  
+! all:: $(TARGETS)
+  
+  SingleProgramTarget(youbind,$(YOUBIND_OBJS),,)
+  SingleProgramTarget(sendto,$(SENDTO_OBJS),,)
+***************
 *** 169,177 ****
   install.man::
   	csh -c "cp $(MANSRC_DIR)/*.man ."
