@@ -6,46 +6,47 @@
 #
 
 PORTNAME=	drweb
-PORTVERSION=    4.27
+PORTVERSION=    4.28
 CATEGORIES=	security
-MASTER_SITES=   http://www.drweb.ru/ftp/web_pub/ \
-		http://www.drweb.ru/ftp/update_free/freebsd4/
-DISTFILES=      ${MAIN_NAME}.tgz \
-		drwebd_4.27_freebsd4_update.tgz
-EXTRACT_ONLY=   ${MAIN_NAME}.tgz
+MASTER_SITES=   http://drweb.spb.ru/download/unix/
+DISTFILES=      ${MAIN_NAME}.tgz
 
 MAINTAINER=	anton@urc.ac.ru
 
-NO_BUILD=	YES
+NO_BUILD=       yes
 
 WRKSRC=         ${WRKDIR}/${MAIN_NAME}
 
 # Needed for update.pl
 RUN_DEPENDS=    ${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/${PERL_ARCH}/String/CRC32.pm:${PORTSDIR}/devel/p5-String-CRC32
 
-MAIN_NAME=      ${PORTNAME}d-${PORTVERSION}-freebsd4
+MAIN_NAME=      ${PORTNAME}-${PORTVERSION}-freebsd4
 DRWEB_PREFIX=	${PREFIX}/${PORTNAME}
 
 do-install:
 	-@install -dv -o ${BINOWN} -g ${BINGRP} ${DRWEB_PREFIX}
-	@cd ${DRWEB_PREFIX}; ${RM} -f drw*.txt drw*.vdb drweb drwebd
-	${TAR} -xzf ${WRKSRC}/${MAIN_NAME}.tar.gz -C ${DRWEB_PREFIX} \
-		--exclude *.ini --exclude *.key
-	${TAR} -xzf ${DISTDIR}/drwebd_4.27_freebsd4_update.tgz -C ${DRWEB_PREFIX} \
-		--exclude README
-	${TAR} -xzOf ${WRKSRC}/${MAIN_NAME}.tar.gz drweb32.ini \
-		> ${DRWEB_PREFIX}/drweb32.ini-tmpl
-	${TAR} -xzOf ${WRKSRC}/${MAIN_NAME}.tar.gz drweb.key \
-		> ${DRWEB_PREFIX}/drweb.key-dist
-	${TAR} -xzOf ${WRKSRC}/${MAIN_NAME}.tar.gz drwebd.key \
-		> ${DRWEB_PREFIX}/drwebd.key-dist
-	cd ${DRWEB_PREFIX}; \
-		${PATCH} -s < ${FILESDIR}/ini-patch && \
-		${RM} drweb32.ini-tmpl.orig
-	cd ${DRWEB_PREFIX}; \
-		${SED} 's#__INSTALL_DIR__#${DRWEB_PREFIX}#' \
-		< drweb32.ini-tmpl > drweb32.ini-dist && \
-		${RM} drweb32.ini-tmpl
+	@cd ${DRWEB_PREFIX}; ${RM} -f drweb drwebd bases/* updates/*
+	${TAR} -cf - -C ${WRKSRC}/opt/drweb . | \
+		${TAR} -xf - -C ${DRWEB_PREFIX} \
+		--exclude "*.key" --exclude "update/update.pl*"
+	${TAR} -cf - -C ${WRKSRC}/var/drweb bases | \
+		${TAR} -xf - -C ${DRWEB_PREFIX}
+	${INSTALL_DATA} ${WRKSRC}/opt/drweb/drweb.key \
+		${DRWEB_PREFIX}/drweb.key-dist
+	${INSTALL_DATA} ${WRKSRC}/opt/drweb/drwebd.key \
+		${DRWEB_PREFIX}/drwebd.key-dist
+	${SED} 's#%INSTALL%#${DRWEB_PREFIX}#g' \
+		< ${WRKSRC}/opt/drweb/update/update.pl \
+		> ${DRWEB_PREFIX}/update/update.pl
+	chmod 750 ${DRWEB_PREFIX}/update/update.pl
+	${SED} 's#%INSTALL%#${DRWEB_PREFIX}#g' \
+		< ${WRKSRC}/etc/drweb/drweb32.ini \
+		> ${DRWEB_PREFIX}/drweb32.ini-dist
+	${RM} -f ${PREFIX}/bin/drweb
+	${SED} 's#%INSTALL%#${DRWEB_PREFIX}#g' \
+		< ${FILESDIR}/drweb.sh \
+		> ${PREFIX}/bin/drweb
+	chmod 755 ${PREFIX}/bin/drweb
 	if [ ! -f ${DRWEB_PREFIX}/drweb32.ini ] ; then \
 		${CP} ${DRWEB_PREFIX}/drweb32.ini-dist \
 		      ${DRWEB_PREFIX}/drweb32.ini; \
