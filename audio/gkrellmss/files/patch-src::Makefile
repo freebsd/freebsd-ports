@@ -1,0 +1,42 @@
+--- src/Makefile.orig	Sat Aug 25 14:33:25 2001
++++ src/Makefile	Sun Sep 30 18:26:49 2001
+@@ -1,13 +1,13 @@
+-INSTALLDIR ?= /usr/local/lib/gkrellm/plugins
+-INSTALL ?= install
++INSTALLDIR ?= ${PREFIX}/libexec/gkrellm/plugins
++INSTALL ?= ${INSTALL_PROGRAM}
+ 
+-GTK_INCLUDE = `gtk-config --cflags`
+-GTK_LIB = `gtk-config --libs`
++GTK_INCLUDE = `${GTK_CONFIG} --cflags`
++GTK_LIB = `${GTK_CONFIG} --libs`
+ 
+-ESD_INCLUDE = `esd-config --cflags`
+-ESD_LIB = `esd-config --libs`
++ESD_INCLUDE = `${ESD_CONFIG} --cflags`
++ESD_LIB = `${ESD_CONFIG} --libs`
+ 
+-FLAGS = -O2 -Wall -fPIC $(GTK_INCLUDE) $(ESD_INCLUDE)
++FLAGS = -Wall -fPIC $(GTK_INCLUDE) $(ESD_INCLUDE)
+ LIBS = $(GTK_LIB) $(ESD_LIB)
+ LFLAGS = -shared
+ 
+@@ -20,7 +20,7 @@
+ endif
+ 
+ 
+-CC = gcc $(FLAGS) $(CFLAGS)
++CC += $(FLAGS) $(CFLAGS)
+ 
+ OBJS = gkrellmss.o sdlib.o
+ 
+@@ -33,8 +33,7 @@
+ 	rm -f *.o core *.so* *.bak *~
+ 
+ install: 
+-	$(INSTALL) -d -m 755 $(INSTALLDIR)
+-	$(INSTALL) -c -s -m 755 gkrellmss.so $(INSTALLDIR)
++	$(INSTALL) gkrellmss.so $(INSTALLDIR)
+ 
+ gkrellmss.o: gkrellmss.c gkrellmss.h
+ sdlib.o: sdlib.c gkrellmss.h
