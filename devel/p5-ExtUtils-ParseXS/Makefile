@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ExtUtils-ParseXS
-PORTVERSION=	2.02
+PORTVERSION=	2.03
 CATEGORIES=	devel perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	ExtUtils
@@ -16,10 +16,9 @@ MAINTAINER=	demon@FreeBSD.org
 COMMENT=	Converts Perl XS code into C code
 
 PERL_CONFIGURE=	yes
-MAN3=		ExtUtils::ParseXS.3
+CONFIGURE_ARGS=	INSTALLDIRS=site
 
-pre-patch:
-	@${PERL} -pi -e 's/INSTALLDIRS/bebe/' ${WRKSRC}/Makefile.PL
+MAN3=		ExtUtils::ParseXS.3
 
 .include <bsd.port.pre.mk>
 
