@@ -32,9 +32,13 @@
 #
 35.7,  139.7, "ftp.jp.freebsd.org"            # Tokyo, Japan
 37.0,  127.0, "ftp.kr.freebsd.org"            # Seoul?, South Korea
--33.55,151.1, "ftp.au.freebsd.org"            # Sydney, Australia.
-#              "ftp2.au.freebsd.org"           # adfa.oz.au
--27.0, 153.0, "ftp3.au.freebsd.org"           # Brisbane (U of Q'sland)
+-27.0, 153.0,	"ftp.au.freebsd.org"		# Brisbane, Australia (UQ/AARNet)
+-42.88, 147.32,	"ftp2.au.freebsd.org"		# Hobart, Australia	(Tas. Govt)
+-33.55, 151.1,	"ftp3.au.freebsd.org"		# Sydney, Australia (U Syd)
+-37.82,	144.97,	"ftp4.au.freebsd.org"		# Melbourne, Australia (RMIT)
+-35.32, 149.20,	"ftp5.au.freebsd.org"		# Canberra, Australia (ADFA)
+-33.88,	151.18,	"ftp6.au.freebsd.org"		# Sydney, Australia (FirstLink)
+-37.82,	144.97,	"ftp7.au.freebsd.org"		# Melbourne, Australia (ITWorks)
 14.0,  101.0, "ftp.nectec.or.th"              # Bangkok?
 22.0,  114.0, "ftp.hk.super.net"              # Hong Kong 
 32.1,   34.8, "orgchem.weizmann.ac.il"         # Tel Aviv?, Israel
