@@ -3,7 +3,7 @@
 # Date created:		29 October 1994
 # Whom:			pst
 #
-# $Id: Makefile,v 1.8 1995/11/27 04:10:14 asami Exp $
+# $Id: Makefile,v 1.9 1995/12/10 18:41:24 ache Exp $
 #
 
 DISTNAME=	WWW
@@ -11,8 +11,8 @@ PKGNAME=	cern_httpd-3.0
 CATEGORIES+=	www
 MASTER_SITES=   ftp://ftp.w3.org/pub/httpd/ \
 		ftp://ftp.w3.org/pub/libwww/
-DISTFILES=      httpd_3.0_src.tar.gz \
-		libwww_2.17_src.tar.Z
+DISTFILES=      libwww_2.17_src.tar.Z \
+		httpd_3.0_src.tar.gz
 
 MAINTAINER=	sa2c@and.or.jp
 
