@@ -1,6 +1,6 @@
 # New ports collection makefile for:	pflogsumm
 # Date created:				13 April 2001
-# Whom:					Sergey Osokin aka oZZ <ports@FreeBSD.org>
+# Whom:					Sergey A. Osokin <osa@FreeBSD.org>
 #
 # $FreeBSD$
 #
@@ -27,9 +27,9 @@ do-install:
 		${PREFIX}/bin/${PORTNAME}
 	${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.1 ${MAN1PREFIX}/man/man1
 .if !defined(NOPORTDOCS)
-	@${MKDIR} ${PREFIX}/share/doc/pflogsumm
+	@${MKDIR} ${DOCSDIR}
 .for i in README ToDo pflogsumm-faq.txt
-	${INSTALL_DATA} ${WRKSRC}/$i ${PREFIX}/share/doc/pflogsumm
+	${INSTALL_DATA} ${WRKSRC}/$i ${DOCSDIR}
 .endfor
 .endif
 
