@@ -1,12 +1,12 @@
 # New ports collection makefile for:	ImageMagick
-# Version required:	4.0.1
+# Version required:	4.0.2
 # Date created:		15 November 1994
 # Whom:			torstenb
 #
-# $Id: Makefile,v 1.31 1998/02/12 14:26:52 jseger Exp $
+# $Id: Makefile,v 1.32 1998/03/02 22:08:36 jseger Exp $
 #
 
-DISTNAME=	ImageMagick-4.0.1
+DISTNAME=	ImageMagick-4.0.2
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.freebsd.org/~jseger/ \
 		ftp://ftp.wizards.dupont.com/pub/ImageMagick/ \
@@ -20,16 +20,16 @@ MASTER_SITES=	http://www.freebsd.org/~jseger/ \
 MAINTAINER=	jseger@FreeBSD.org
 
 LIB_DEPENDS=    jpeg\\.7\\.:${PORTSDIR}/graphics/jpeg \
-		mpeg\\.1\\.:${PORTSDIR}/graphics/mpeg-lib \
+		mpeg\\.1\\.[2-9]:${PORTSDIR}/graphics/mpeg-lib \
 		tiff34\\.1\\.:${PORTSDIR}/graphics/tiff34 \
-		png\\.0\\.:${PORTSDIR}/graphics/png \
-		jbig\\.0\\.:${PORTSDIR}/graphics/jbigkit \
+		png\\.0\\.99:${PORTSDIR}/graphics/png \
+		jbig\\.0\\.9:${PORTSDIR}/graphics/jbigkit \
 		ttf\\.1\\.:${PORTSDIR}/print/freetype
 BUILD_DEPENDS=	fig2dev:${PORTSDIR}/print/transfig \
 		picttoppm:${PORTSDIR}/graphics/netpbm \
 		gs:${PORTSDIR}/print/ghostscript5
 
-MAN1=	ImageMagick.1 animate.1 combine.1 convert.1 display.1 identify.1 import.1 mogrify.1 xtp.1
+MAN1=	ImageMagick.1 animate.1 combine.1 convert.1 display.1 identify.1 import.1 mogrify.1 montage.1 xtp.1
 MAN4=	miff.4
 MAN5=	quantize.5
 GNU_CONFIGURE=	YES

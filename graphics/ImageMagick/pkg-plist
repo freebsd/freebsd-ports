@@ -22,7 +22,7 @@ include/magick/widget.h
 lib/libMagick.a
 lib/libMagick.la
 lib/libMagick.so
-lib/libMagick.so.4.1
+lib/libMagick.so.4.2
 @exec ldconfig -m %D/lib
 man/man1/ImageMagick.1.gz
 man/man1/animate.1.gz
@@ -32,6 +32,7 @@ man/man1/display.1.gz
 man/man1/identify.1.gz
 man/man1/import.1.gz
 man/man1/mogrify.1.gz
+man/man1/montage.1.gz
 man/man1/xtp.1.gz
 man/man4/miff.4.gz
 man/man5/quantize.5.gz
