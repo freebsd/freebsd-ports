@@ -1,5 +1,5 @@
 --- main.c.orig	Mon Aug 21 08:47:47 2000
-+++ main.c	Sat Feb 10 05:42:17 2001
++++ main.c	Sun Sep  8 19:35:54 2002
 @@ -76,6 +76,9 @@
  #include "data.h"
  #include "error.h"
@@ -10,7 +10,18 @@
  
  #ifdef att
  #define ATT
-@@ -421,7 +424,11 @@
+@@ -279,6 +282,10 @@
+ #endif
+ #include <sys/param.h>	/* for NOFILE */
+ 
++#if (defined(BSD) && (BSD >= 199103))
++#define USE_POSIX_WAIT
++#endif
++
+ #ifdef  PUCC_PTYD
+ #include <local/openpty.h>
+ int	Ptyfd;
+@@ -421,7 +428,11 @@
          CFLUSH, CWERASE, CLNEXT
  };
  static int d_disipline = NTTYDISC;
@@ -22,7 +33,7 @@
  #ifdef sony
  static long int d_jmode = KM_SYSSJIS|KM_ASCII;
  static struct jtchars d_jtc = {
-@@ -586,6 +593,11 @@
+@@ -586,6 +597,11 @@
      Boolean sunFunctionKeys;	/* %%% should be widget resource? */
      Boolean wait_for_map;
      Boolean useInsertMode;
@@ -34,7 +45,7 @@
  } resource;
  
  /* used by VT (charproc.c) */
-@@ -613,6 +625,14 @@
+@@ -613,6 +629,14 @@
          offset(wait_for_map), XtRString, "false"},
      {"useInsertMode", "UseInsertMode", XtRBoolean, sizeof (Boolean),
          offset(useInsertMode), XtRString, "false"},
@@ -49,7 +60,7 @@
  };
  #undef offset
  
-@@ -621,7 +641,7 @@
+@@ -621,7 +645,7 @@
      "XTerm*SimpleMenu*HorizontalMargins: 16",
      "XTerm*SimpleMenu*Sme.height: 16",
      "XTerm*SimpleMenu*Cursor: left_ptr",
@@ -58,7 +69,7 @@
      "XTerm*vtMenu.Label:  VT Options (no app-defaults)",
      "XTerm*fontMenu.Label:  VT Fonts (no app-defaults)",
      "XTerm*tekMenu.Label:  Tek Options (no app-defaults)",
-@@ -693,6 +713,13 @@
+@@ -693,6 +717,13 @@
  {"+im",		"*useInsertMode", XrmoptionNoArg,	(caddr_t) "off"},
  {"-vb",		"*visualBell",	XrmoptionNoArg,		(caddr_t) "on"},
  {"+vb",		"*visualBell",	XrmoptionNoArg,		(caddr_t) "off"},
@@ -72,7 +83,7 @@
  {"-wf",		"*waitForMap",	XrmoptionNoArg,		(caddr_t) "on"},
  {"+wf",		"*waitForMap",	XrmoptionNoArg,		(caddr_t) "off"},
  /* bogus old compatibility stuff for which there are
-@@ -770,6 +797,11 @@
+@@ -770,6 +801,11 @@
  #endif
  { "-/+vb",                 "turn on/off visual bell" },
  { "-/+wf",                 "turn on/off wait for map before command exec" },
@@ -84,7 +95,7 @@
  { "-e command args ...",   "command to execute" },
  { "%geom",                 "Tek window geometry" },
  { "#geom",                 "icon window geometry" },
-@@ -815,6 +847,11 @@
+@@ -815,6 +851,11 @@
  
      fprintf (stderr, "\r\n\nType %s -help for a full description.\r\n\n",
  	     ProgramName);
@@ -96,7 +107,7 @@
      exit (1);
  }
  
-@@ -836,6 +873,11 @@
+@@ -836,6 +877,11 @@
  	putc ('\n', stderr);
      }
      putc ('\n', stderr);
@@ -108,7 +119,7 @@
  
      exit (0);
  }
-@@ -926,6 +968,11 @@
+@@ -926,6 +972,11 @@
  	int mode;
  	char *base_name();
  	int xerror(), xioerror();
@@ -120,7 +131,7 @@
  
  	XtSetLanguageProc (NULL, NULL, NULL);
  
-@@ -1150,6 +1197,39 @@
+@@ -1150,6 +1201,39 @@
  				  XtNumber(application_resources), NULL, 0);
  
  	waiting_for_initial_map = resource.wait_for_map;
@@ -160,7 +171,7 @@
  
  	/*
  	 * ICCCM delete_window.
-@@ -1255,6 +1335,11 @@
+@@ -1255,6 +1339,11 @@
  
  	if (screen->savelines < 0) screen->savelines = 0;
  
@@ -172,7 +183,7 @@
  	term->flags = 0;
  	if (!screen->jumpscroll) {
  	    term->flags |= SMOOTHSCROLL;
-@@ -2417,6 +2502,10 @@
+@@ -2417,6 +2506,10 @@
  			    HsSysError(cp_pipe[1], ERROR_TIOCSETC);
  #endif	/* TIOCSLTC */
  #ifdef TIOCLSET
