@@ -1,0 +1,19 @@
+*** main.cxx.orig	Thu Aug 28 08:27:00 2003
+--- main.cxx	Thu Aug 28 08:27:11 2003
+***************
+*** 261,267 ****
+  #include "speexcodec.h"
+  #ifndef NO_VIDEO
+  #include "h261codec.h"
+! #include "videoio.h"
+  #endif
+  #include "main.h"
+  
+--- 261,267 ----
+  #include "speexcodec.h"
+  #ifndef NO_VIDEO
+  #include "h261codec.h"
+! //#include "videoio.h"
+  #endif
+  #include "main.h"
+  
