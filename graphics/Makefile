@@ -250,6 +250,7 @@
     SUBDIR += spigot
     SUBDIR += splitmpg
     SUBDIR += stamp
+    SUBDIR += svg2swf
     SUBDIR += svgalib
     SUBDIR += synaesthesia
     SUBDIR += tcm
