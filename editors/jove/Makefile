@@ -3,10 +3,11 @@
 # Date created:		21 August 1994
 # Whom:			jkh
 #
-# $Id: Makefile,v 1.3 1994/09/13 06:34:47 jkh Exp $
+# $Id: Makefile,v 1.4 1994/11/10 22:33:47 jkh Exp $
 #
 
-DISTNAME=	jove-4.14.10
+DISTNAME=	jove4.14.10
 MASTER_SITES=	ftp://relay.cs.toronto.edu/pub/moraes/jove/
+EXTRAXT_SUFX=	.tar.Z
 
 .include <bsd.port.mk>
