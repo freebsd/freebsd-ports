@@ -609,5 +609,13 @@ PLIST_SUB+=	GNOMEDESKTOP:="@comment " NOGNOMEDESKTOP:=""
 CONFIGURE_FAIL_MESSAGE=	"Please direct the output of the failure of the make command to a file, and then feed that file to the gnomelogalyzer, available from "http://www.freebsd.org/gnome/gnomelogalyzer.sh", which will diagnose the problem and suggest a solution.  If - and only if - the gnomelogalyzer cannot solve the problem, report the problem to the FreeBSD GNOME team at ${MAINTAINER}, and attach \"${CONFIGURE_WRKSRC}/${CONFIGURE_LOG}\" and the output of the failure of the make command.  Also, it might be a good idea to provide an overview of all packages installed on your system (e.g. an \`ls ${PKG_DBDIR}\`)."
 .endif
 
+.if ${_USE_GNOME_ALL:Mgconf2}!=""
+pre-install: gnome-pre-install
+
+gnome-pre-install:
+	@${MKDIR} ${PREFIX}/etc/gconf/gconf.xml.defaults/
+
+.endif
+
 .endif
 # End of use part.
