@@ -16,6 +16,13 @@ apps/Memo/Help/README
 apps/Memo/Memo.py
 apps/Memo/Memo.pyc
 apps/Memo/Memo.pyo
+apps/Memo/Messages/dist
+apps/Memo/Messages/it.gmo
+apps/Memo/Messages/it.po
+apps/Memo/Messages/tips.py
+apps/Memo/Messages/tips.pyc
+apps/Memo/Messages/tips.pyo
+apps/Memo/Messages/update-po
 apps/Memo/Options.xml
 apps/Memo/ShowAll.py
 apps/Memo/ShowAll.pyc
@@ -32,6 +39,7 @@ apps/Memo/memos.pyo
 apps/Memo/pretty_time.py
 apps/Memo/pretty_time.pyc
 apps/Memo/pretty_time.pyo
+@dirrm apps/Memo/Messages
 @dirrm apps/Memo/Help
 @dirrm apps/Memo
 @unexec rmdir %D/apps 2>/dev/null || true
