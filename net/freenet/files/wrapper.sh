@@ -31,7 +31,7 @@ configure_java_classpath () {
 }
 
 display_usage () {
-  echo "Usage: ${0} [-h] [-i|-o]"
+  echo "Usage: ${0} [-h] [-c] [-i|-o]"
   echo 'Options:'
   echo '  -h  Display this help message'
   echo '  -c  Configure FreeNet node'
@@ -114,7 +114,7 @@ if [ $# -lt 1 ]; then
 fi
 
 # parse command line parameters
-while getopts ":io" COMMAND_LINE_ARGUMENT ; do
+while getopts "chio" COMMAND_LINE_ARGUMENT ; do
   case "${COMMAND_LINE_ARGUMENT}" in
   c)
 	CONFIGURE=yes
