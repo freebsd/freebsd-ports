@@ -8,10 +8,12 @@
 
 DISTNAME=	vrweb-1.5
 CATEGORIES=	www
-MASTER_SITES=	http://sunsite.unc.edu/pub/packages/infosystems/WWW/VRML/VRweb/UNIX/vrweb-1.5/
+MASTER_SITES=	ftp://ftp.iicm.edu/pub/VRweb/UNIX/vrweb-1.5/ \
+		ftp://ftp.sunet.se/pub/nir/Hyper-G/VRweb/UNIX/vrweb-1.5/ \
+		ftp://metalab.unc.edu/pub/packages/infosystems/WWW/VRML/VRweb/UNIX/vrweb-1.5/
 DISTFILES=	vrweb-src-1.5.tar.gz help-1.5.tar.gz
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	saper@system.pl
 
 LIB_DEPENDS=	GL.14:${PORTSDIR}/graphics/Mesa3
 
