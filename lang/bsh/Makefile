@@ -7,7 +7,7 @@
 
 PORTNAME=	bsh
 PORTVERSION=	1.2.b5
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	java
 MASTER_SITES=	http://www.beanshell.org/
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/.b/b/}
@@ -20,6 +20,7 @@ USE_JAVA=	1.1+
 NO_BUILD=	yes
 
 JAVALIBDIR=	${PREFIX}/share/java/classes
+BROKEN=		Checksum error
 
 do-install:
 	${MKDIR} ${JAVALIBDIR}
