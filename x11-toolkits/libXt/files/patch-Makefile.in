@@ -1,0 +1,11 @@
+--- Makefile.in.orig	Sat Mar 13 23:21:57 2004
++++ Makefile.in	Sat Mar 13 23:22:26 2004
+@@ -163,7 +163,7 @@
+ 
+ SUBDIRS = include util
+ 
+-AM_CFLAGS = $(RENDER_CFLAGS) $(X_CFLAGS) -I$(top_srcdir)/include/X11
++AM_CFLAGS = $(RENDER_CFLAGS) $(X_CFLAGS) -I$(top_srcdir)/include -I$(top_srcdir)/include/X11
+ 
+ lib_LTLIBRARIES = libXt.la
+ 
