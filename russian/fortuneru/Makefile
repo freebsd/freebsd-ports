@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	fortuneru
-PORTVERSION=	0.3
+PORTVERSION=	0.4
 CATEGORIES=	russian
 MASTER_SITES=	ftp://de22.kiev.ua/pub/files/ \
 		ftp://hosting.cvu.kiev.ua/pub/files/ \
-		ftp://viva-solutions.com.ua/pub/files/
+		ftp://viva-solutions.com/pub/files/
 DISTNAME=	fortune.ru-${PORTVERSION}
 
 MAINTAINER=	bestia@de22.kiev.ua
@@ -21,16 +21,11 @@ NO_BUILD=	yes
 PKGMESSAGE=	${WRKDIR}/pkg-message
 
 STRCMD=		/usr/games/strfile
-FORTUNES=	4hf beer-murphy enciklopedy fortune_rus \
-		guberman marazm maxim_and_fedor murphy police \
-		strug usenet verse windows_errors pavlenka fomenko speed-info
 
 do-install:
 	@${SETENV} STRCMD=${STRCMD} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
 	@${MKDIR} ${PREFIX}/share/games/fortune/rus
-.for fortune in ${FORTUNES}
-	${INSTALL_DATA} ${WRKSRC}/${fortune} ${PREFIX}/share/games/fortune/rus
-.endfor
+	${INSTALL_DATA} ${WRKSRC}/* ${PREFIX}/share/games/fortune/rus
 
 pre-install:
 .if !exists(${STRCMD})
@@ -39,9 +34,9 @@ pre-install:
 .endif
 
 post-install:
-.for fortune in ${FORTUNES}
-	${STRCMD} ${PREFIX}/share/games/fortune/rus/${fortune} >/dev/null 2>/dev/null
-.endfor
+	@for fortune in ${PREFIX}/share/games/fortune/rus/* ; do \
+		${STRCMD} $$fortune >/dev/null 2>/dev/null ; \
+		done
 	@${ECHO_MSG} ""
 	@${ECHO_MSG} "Usage:"
 	@${ECHO_MSG} "/usr/games/fortune ${PREFIX}/share/games/fortune/rus"
