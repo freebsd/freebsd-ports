@@ -20,6 +20,10 @@ LIB_DEPENDS=	Xaw3d.${XAWVER}:${PORTSDIR}/x11-toolkits/Xaw3d \
 		jpeg.9:${PORTSDIR}/graphics/jpeg \
 		aa.1:${PORTSDIR}/graphics/aalib
 
+.if !exists(/usr/include/machine/ioctl_bt848.h)
+BROKEN=		No ioctl_bt848.h on this architecture
+.endif
+
 WRKSRC=		${WRKDIR}/${DISTNAME:S/_/-/}
 USE_MOTIF=	yes
 GNU_CONFIGURE=	yes
