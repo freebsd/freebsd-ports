@@ -1,0 +1,5 @@
+bin/bzip2
+bin/bunzip2
+bin/bzip2recover
+man/man1/bzip2.1.gz
+man/man1/bunzip2.1.gz
