@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	xpuyopuyo
-PORTVERSION=	0.3.4
+PORTVERSION=	0.3.8
 CATEGORIES=	games
 MASTER_SITES=	http://chaos2.org/xpuyopuyo/ \
 		http://lenin.dabney.caltech.edu/~justins/xpuyopuyo/
@@ -24,7 +24,7 @@ USE_X_PREFIX=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	GTK_CONFIG="${GTK_CONFIG}" \
 		GLIB_CONFIG="${GLIB_CONFIG}"
-CONFIGURE_ARGS=	--enable-rotate-fixed --without-gnome
+CONFIGURE_ARGS=	--without-gnome
 
 MAN6=		xpuyopuyo.6
 
