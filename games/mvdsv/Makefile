@@ -5,15 +5,15 @@
 # $FreeBSD$
 #
 
-PORTNAME=	mvdsv
-PORTVERSION=	0.1725b
-CATEGORIES=	games
+PORTNAME?=	mvdsv
+PORTVERSION=	0.176
+CATEGORIES?=	games
 MASTER_SITES=	http://quakeworld.ru/files/vvd/mvdsv/ \
 		http://freebsd.nsu.ru/distfiles/
-DISTNAME=	${PORTNAME}${PORTVERSION}-sources
+DISTNAME=	mvdsv_${PORTVERSION}_sources
 
 MAINTAINER=	danfe@FreeBSD.org
-COMMENT=	Enhanced QuakeWorld server with multi-view demos capability
+COMMENT?=	Enhanced QuakeWorld server with multi-view demos capability
 
 USE_BZIP2=	yes
 
@@ -34,10 +34,11 @@ GCC_VER=	3
 .endif
 
 MAKEFILE=	${FILESDIR}/Makefile
+ALL_TARGET=	${PORTNAME}
 MAKE_ARGS+=	GCC_VER=${GCC_VER}
 
-PLIST_FILES=	bin/mvdsv
-WRKSRC=		${WRKDIR}/${PORTNAME}${PORTVERSION}/source
+PLIST_FILES=	bin/${PORTNAME}
+WRKSRC=		${WRKDIR}/mvdsv_${PORTVERSION}/source
 
 pre-everything::
 .if !defined(WITH_OPTIMIZED_CFLAGS)
@@ -48,6 +49,6 @@ pre-everything::
 .endif
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/../${PORTNAME} ${PREFIX}/bin
 
 .include <bsd.port.post.mk>

@@ -27,6 +27,8 @@ DO_CFLAGS +=	-falign-loops=2 -falign-jumps=2 -falign-functions=2
 .endif
 
 ########################################################################
+## MVDSV
+########################################################################
 
 SV_OBJS = \
 		pr_cmds.o \
@@ -57,6 +59,7 @@ SV_OBJS = \
 		net_udp.o \
 		pmove.o \
 		pmovetst.o \
+		sha1.o \
 		version.o \
 		world.o \
 		zone.o
@@ -70,14 +73,36 @@ SV_AS_OBJS = \
 
 SV_LIBS = -lm
 
+########################################################################
+## QWDTOOLS
+########################################################################
+
+QWDTOOLS_OBJS = \
+		qwdtools/dem_parse.o \
+		qwdtools/dem_send.o \
+		qwdtools/ini.o \
+		qwdtools/init.o \
+		qwdtools/main.o \
+		qwdtools/marge.o \
+		qwdtools/qwz.o \
+		qwdtools/sync.o \
+		qwdtools/tools.o
+
+########################################################################
+
 .c.o:
-		${CC} ${DO_CFLAGS} -c $< -o $*.o
+		${CC} ${DO_CFLAGS} -I. -c $< -o $*.o
 
 .s.o:
 		${CC} ${DO_CFLAGS} -DELF -x assembler-with-cpp -c $< -o $*.o
 
-all:	${SV_OBJS} ${SV_AS_OBJS}
-		${CC} ${CFLAGS} -o mvdsv ${SV_OBJS} ${SV_AS_OBJS} ${SV_LIBS}
+all:	mvdsv qwdtools
+
+mvdsv:	${SV_OBJS} ${SV_AS_OBJS}
+		${CC} ${CFLAGS} -o ../mvdsv ${SV_OBJS} ${SV_AS_OBJS} ${SV_LIBS}
+
+qwdtools:	${QWDTOOLS_OBJS}
+		${CC} ${CFLAGS} -o ../qwdtools ${QWDTOOLS_OBJS} ${SV_LIBS}
 
 clean:
 		-rm -f *.o *.core
