@@ -57,10 +57,10 @@ PRT_MODEL=	${PRTYPE:U:S/^-//}
 .if ${PRTYPE} == 790
 LIB_FILE=	libpm${PRTYPE}pt.so
 PRT_MODEL=	PM${PRTYPE}PT
-.elif ${PRTYPE} == 780cs
+.elif ${PRTYPE} == "780cs"
 LIB_FILE=	libpm${PRTYPE}.so
 PRT_MODEL=	PM${PRTYPE:U}
-.elif ${PRTYPE} == 820ug
+.elif ${PRTYPE} == "820ug"
 LIB_FILE=	libpm820cug.so
 PRT_MODEL=	PM820CUG
 .else
@@ -79,7 +79,7 @@ LANGS=		ja
 PLIST=		${MASTERDIR}/pkg-plist20
 .elif ${PORTVERSION} == 1.3
 PLIST=		${MASTERDIR}/pkg-plist13
-.elif ${PORTVERSION} == 1.3.1
+.elif ${PORTVERSION} == "1.3.1"
 LANGS=		de es fr it ja ko nl pt zh zh_TW
 #RUN_DEPENDS+=	${X11BASE}/lib/X11/fonts/local/cmex16m.pcf.gz:${PORTSDIR}/chinese/cmexfonts
 PLIST=		${MASTERDIR}/pkg-plist131
@@ -276,7 +276,7 @@ _MAKE_DESCR:
 .else # for defined(INTERNATIONAL_PRODUCTS)
 .if ${PRTYPE} != 800
 .for file in pkg-descr
-.if ${PRTYPE} == 750_2000
+.if ${PRTYPE} == "750_2000"
 	${SED}	-e 's/PM-800C/PM-750C PM-2000C/g' \
 		-e 's/pm800c/pm750c_2000c/g' \
 		-e 's/800/${PRTYPE}/g' \
@@ -286,12 +286,12 @@ _MAKE_DESCR:
 		-e 's/pm800c/pm790pt/g' \
 		-e 's/800/${PRTYPE}/g' \
 		${MASTERDIR}/${file} > ${.CURDIR}/${file}
-.elif ${PRTYPE} == 780cs
+.elif ${PRTYPE} == "780cs"
 	${SED}	-e 's/PM-800C/PM-780CS/g' \
 		-e 's/pm800c/pm780cs/g' \
 		-e 's/800/${PRTYPE}/g' \
 		${MASTERDIR}/${file} > ${.CURDIR}/${file}
-.elif ${PRTYPE} == 820ug
+.elif ${PRTYPE} == "820ug"
 	${SED}	-e 's/PM-800C/PM-820CUG/g' \
 		-e 's/pm800c/pm820cug/g' \
 		-e 's/800/${PRTYPE}/g' \
