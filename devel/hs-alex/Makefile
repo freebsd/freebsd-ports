@@ -15,6 +15,8 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}-src
 MAINTAINER=	haskell@FreeBSD.org
 COMMENT=	Alex is a tool for generating lexical analysers in Haskell
 
+BROKEN=		Unfetchable
+
 BUILD_DEPENDS=	ghc:${PORTSDIR}/lang/ghc
 .if !defined(NOPORTDOCS)
 BUILD_DEPENDS+=	jade:${PORTSDIR}/textproc/jade \

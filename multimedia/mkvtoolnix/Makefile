@@ -13,6 +13,8 @@ MASTER_SITES=	http://www.bunkus.org/videotools/mkvtoolnix/sources/
 MAINTAINER=	lioux@FreeBSD.org
 COMMENT=	Tools to extract from/get info about/create Matroska media streams
 
+BROKEN=		Unfetchable
+
 BUILD_DEPENDS=	${LOCALBASE}/lib/libmatroska.a:${PORTSDIR}/multimedia/libmatroska \
 		${LOCALBASE}/lib/libebml.a:${PORTSDIR}/textproc/libebml
 LIB_DEPENDS=	FLAC.5:${PORTSDIR}/audio/flac \

@@ -14,6 +14,8 @@ DISTNAME=	${PORTNAME}_${PORTVERSION:R}-${PORTVERSION:E}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Binary Editor And Viewer, a full featured binary file editor
 
+BROKEN=		"Unfetchable"
+
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:R}
 
 USE_REINPLACE=	yes

@@ -15,6 +15,8 @@ DISTNAME=	psycopg-${PORTVERSION}
 MAINTAINER=	simuran@shaw.ca
 COMMENT=	The high performance Python adapter for PostgreSQL
 
+BROKEN=		Unfetchable
+
 RUN_DEPENDS=	${DATETIME_DEP}:${PORTSDIR}/lang/py-mx-base
 BUILD_DEPENDS=	${DATETIME_DEP}:${PORTSDIR}/lang/py-mx-base
 LIB_DEPENDS=	pq.3:${PORTSDIR}/${POSTGRESQL_PORT}

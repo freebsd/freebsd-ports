@@ -16,6 +16,8 @@ DISTNAME=	JTree_source-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An additional library for the JX widget library
 
+BROKEN=		Unfetchable
+
 EXTRACT_DEPENDS=	${NONEXISTENT}:${JXPORT}:configure
 BUILD_DEPENDS=	makemake:${JXPORT}
 LIB_DEPENDS=	jx-1_5_3.1:${JXPORT}
