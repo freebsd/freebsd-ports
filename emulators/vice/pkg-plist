@@ -54,11 +54,3 @@ lib/vice/i386-unknown-freebsd2.2.5/xvic-0.14.1
 @unexec rm %D/bin/xvic
 @dirrm lib/vice/i386-unknown-freebsd2.2.5
 @dirrm lib/vice
-@exec ln -sf vice.1.gz %D/man/man1/x64.1.gz
-@exec ln -sf vice.1.gz %D/man/man1/xvic.1.gz
-@exec ln -sf vice.1.gz %D/man/man1/xpet.1.gz
-@exec ln -sf vice.1.gz %D/man/man1/recomment.1.gz
-@unexec rm %D/man/man1/x64.1.gz
-@unexec rm %D/man/man1/xvic.1.gz
-@unexec rm %D/man/man1/xpet.1.gz
-@unexec rm %D/man/man1/recomment.1.gz
