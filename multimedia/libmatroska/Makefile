@@ -6,17 +6,15 @@
 #
 
 PORTNAME=	libmatroska
-PORTVERSION=	0.4.3
-PORTREVISION=	1
+PORTVERSION=	0.6.3
 CATEGORIES=	multimedia audio
-MASTER_SITES=	http://matroska.sourceforge.net/downloads/
+MASTER_SITES=	http://dl.matroska.org/downloads/libmatroska/
 
 MAINTAINER=	lioux@FreeBSD.org
 COMMENT=	Extensible Multimedia Container Format
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/libebml.a:${PORTSDIR}/textproc/libebml
 
-USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_REINPLACE=	yes
 USE_SIZE=	yes
