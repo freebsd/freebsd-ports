@@ -15,7 +15,7 @@ MAINTAINER=	demon@FreeBSD.org
 COMMENT=	A perl interface to the Z39.50 information retrieval protocol
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/${PERL_ARCH}/Event.pm:${PORTSDIR}/devel/p5-Event
-LIB_DEPENDS=	yaz.1:${PORTSDIR}/net/yaz
+LIB_DEPENDS=	yaz.2:${PORTSDIR}/net/yaz
 RUN_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/MARC.pm:${PORTSDIR}/textproc/p5-MARC \
 		${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/${PERL_ARCH}/Event.pm:${PORTSDIR}/devel/p5-Event
 
