@@ -13,7 +13,7 @@ MASTER_SITES=	ftp://crl.nmsu.edu/CLR/multiling/General/
 MAINTAINER=	ports@freebsd.org
 
 .if defined(USE_FREETYPE)
-LIB_DEPENDS=	ttf.3:${PORTSDIR}/print/freetype
+LIB_DEPENDS=	ttf.4:${PORTSDIR}/print/freetype
 .endif
 
 USE_X_PREFIX=	yes

@@ -32,7 +32,7 @@ RUN_DEPENDS=	$(LOCALBASE)/share/ghostscript/fonts/CMap:${PORTSDIR}/korean/munhwa
 BUILD_DEPENDS=	/nonexistent:${PORTSDIR}/graphics/jpeg:extract \
 		/nonexistent:${PORTSDIR}/graphics/png:extract
 LIB_DEPENDS=	png.3:${PORTSDIR}/graphics/png \
-		ttf.3:${PORTSDIR}/print/freetype
+		ttf.4:${PORTSDIR}/print/freetype
 
 USE_XLIB=	yes
 EXTRACT_ONLY=	${GS_SOURCES} ${PCL3_DRV}

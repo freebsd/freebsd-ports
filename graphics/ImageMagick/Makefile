@@ -21,7 +21,7 @@ LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
 		tiff.4:${PORTSDIR}/graphics/tiff \
 		png.3:${PORTSDIR}/graphics/png \
 		jbig.1:${PORTSDIR}/graphics/jbigkit \
-		ttf.3:${PORTSDIR}/print/freetype
+		ttf.4:${PORTSDIR}/print/freetype
 BUILD_DEPENDS=	fig2dev:${PORTSDIR}/print/transfig \
 		picttoppm:${PORTSDIR}/graphics/netpbm \
 		mpeg2decode:${PORTSDIR}/graphics/mpeg2codec \
