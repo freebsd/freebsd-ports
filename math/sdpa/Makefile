@@ -37,8 +37,8 @@ WRKSRC=		${WRKDIR}/${PORTNAME}
 LAPACK=		-lalapack_r
 CBLAS=		-lptcblas -lptf77blas -latlas_r -lg2c ${PTHREAD_LIBS}
 .else
-LAPACK=		-static -lalapack
-CBLAS=		-static -lcblas -lf77blas -latlas -lg2c
+LAPACK=		-lalapack
+CBLAS=		-lcblas -lf77blas -latlas -lg2c
 .endif
 #WITH_SMP=	yes
 #WITH_ICC=	yes
