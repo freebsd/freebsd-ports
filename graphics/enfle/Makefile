@@ -16,7 +16,7 @@ MAINTAINER=	samy@goldmoon.org
 
 LIB_DEPENDS=	png.4:${PORTSDIR}/graphics/png \
 		jpeg.9:${PORTSDIR}/graphics/jpeg \
-		mng.0:${PORTSDIR}/graphics/libmng \
+		mng.1:${PORTSDIR}/graphics/libmng \
 		ungif.5:${PORTSDIR}/graphics/libungif \
 		arc.1:${PORTSDIR}/archivers/libarc \
 		bz2.1:${PORTSDIR}/archivers/bzip2
