@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Class-Factory-Util
-PORTVERSION=	1.2
+PORTVERSION=	1.4
 CATEGORIES=	devel perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Class
@@ -17,7 +17,6 @@ COMMENT=	Utility functions for (factory) classes
 
 PERL_CONFIGURE=	yes
 
-MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 MAN3=		Class::Factory::Util.3
 
 .include <bsd.port.mk>
