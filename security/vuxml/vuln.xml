@@ -405,12 +405,13 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     <affects>
       <package>
 	<name>webmin</name>
-	<range><lt>1.160</lt></range>
+	<range><lt>1.150_5</lt></range>
       </package>
     </affects>
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
-	<p></p>
+	<p>The Webmin developers documented a security issue in the
+	  release notes for version 1.160:</p>
 	<blockquote cite="http://www.webmin.com/changes-1.160.html">
           <p>Fixed a security hole in the maketemp.pl script, used
             to create the /tmp/.webmin directory at install time. If
@@ -428,6 +429,7 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     <dates>
       <discovery>2004-09-05</discovery>
       <entry>2004-09-14</entry>
+      <modified>2004-09-15</modified>
     </dates>
   </vuln>
 
