@@ -132,3 +132,4 @@ net/xtradius||2002-12-08|security vulnerability
 net/gated||2002-12-13|no longer distributed by vendor
 japanese/gnomecore|x11/gnomecore|2002-12-16|patches integrated into the upstream
 www/comline|www/libwww|2003-01-03|part of libwww
+devel/dbregc||2003-01-05|no longer relevant
