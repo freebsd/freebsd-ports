@@ -1,11 +1,15 @@
 Here is a list of some useful hints on using VMware on FreeBSD.
 
-- Full screen mode does not work. Don't do it.
+- Full screen text mode does not work.  Don't ever do it!
+
+- Full screen graphics mode will work, but you have to be careful e.g.
+when running a DOS prompt on MS Windows.  Hitting Alt+Enter will crash
+VMware before you can say "Chuck!"
 
 - Raw disk may not work.  Use virtual or plain disk instead.
 
 - The vmware-mount.pl utility does not work. If you want to mount
-the "disk" while vmware is not running, you must use plain disks
+the "disk" while VMware is not running, you must use plain disks
 instead of virtual ones. Set up a 63 sector file as an "mbr"
 section, then a file for each partition on the "plain" disk.
 To mount the "disk", use vnconfig -c /dev/vn__ file and
@@ -13,7 +17,8 @@ then mount the vn device.
 
 If you are setting up a plain disk as a workaround for the broken
 raw disks, you will need to set up the disk description file
-by hand, as the wizard will complain. Here is a sample one:
+by hand, as the configuration editor will complain. Here is a
+sample one:
 
 DRIVETYPE	ide
 CYLINDERS	16383
@@ -45,7 +50,7 @@ the length of the block. If you are using a file, its length must
 be equal to this number * 512.
 
 The last entry is an example of how to block out partitions you don't
-want vmware to mess with. Why do this instead of simply making the
+want VMware to mess with. Why do this instead of simply making the
 C/H/S numbers for the disk smaller? Because then the guest's BIOS
 might not make the same choices about the "fake" geometry to use,
 which would prevent the OS from booting in most cases.
@@ -54,7 +59,7 @@ You might be able to follow the same procedure to make SCSI drives
 work. It is slightly less likely to work as SCSI vendors often
 differ as to how they set up BIOS geometries. Your raw device
 must end up having the same BIOS geometry as a Bustek SCSI
-controller, which is the device vmware virtually supplies as the
+controller, which is the device VMware virtually supplies as the
 host adapter.
 
 - It is a good idea to disconnect removable media devices (CDROMs
@@ -75,10 +80,12 @@ memory.
 e.g.
 	ln -s /usr/tmp /compat/linux/tmp
 
-Also, be very careful if /tmp/ is a tmpfs partition. vmware
+Also, be very careful if /tmp/ is an MFS partition. VMware
 creates a file that is about 25% larger than the guest's RAM size,
 unlinks it and does mmap on it. Such a large, active file in
-tmpfs can lead to deadlocks.
+MFS can lead to deadlocks.
+
+- Don't miss the VMware FAQ available on the official site.
 
 -- 
 Akinori -Aki- MUSHA <knu@idaemons.org>
