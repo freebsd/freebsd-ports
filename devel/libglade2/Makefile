@@ -17,8 +17,8 @@ DIST_SUBDIR=	gnome2
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	GNOME glade library
 
-BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/pyexpat.so:${PORTSDIR}/textproc/py-expat
-RUN_DEPENDS=	${PYTHON_SITELIBDIR}/pyexpat.so:${PORTSDIR}/textproc/py-expat
+BUILD_DEPENDS=	${PYEXPAT}
+RUN_DEPENDS=	${PYEXPAT}
 
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes
