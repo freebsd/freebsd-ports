@@ -15,8 +15,8 @@ DISTNAME=	libapache-mod-musicindex_${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Apache module in C implements Perl module Apache::MP3
 
-BUILD_DEPENDS=	${APXS}:${APACHE_PORT}
-RUN_DEPENDS=	${APXS}:${APACHE_PORT}
+BUILD_DEPENDS=	${APXS}:${PORTSDIR}/${APACHE_PORT}
+RUN_DEPENDS=	${APXS}:${PORTSDIR}/${APACHE_PORT}
 LIB_DEPENDS=	vorbis.3:${PORTSDIR}/audio/libvorbis \
 		id3tag.2:${PORTSDIR}/audio/libid3tag \
 		mad.2:${PORTSDIR}/audio/libmad
@@ -33,12 +33,12 @@ PORTDOCS=	directory.png musicindex.css fetch.png \
 MODULE_EXT=	la
 MAKEFILE=	Makefile.apache2
 PLIST_SUB+=	MOD_DIR=libexec/apache2
-APACHE_PORT?=	${PORTSDIR}/www/apache2
+APACHE_PORT?=	www/apache2
 MAKE_TARGET=	all
 .else
 MODULE_EXT=	so
 PLIST_SUB+=	MOD_DIR=libexec/apache
-APACHE_PORT?=	${PORTSDIR}/www/apache13
+APACHE_PORT?=	www/apache13
 .endif
 
 post-patch:
