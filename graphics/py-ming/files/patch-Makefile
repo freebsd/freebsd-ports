@@ -1,0 +1,19 @@
+--- Makefile.orig	Fri Oct 13 15:26:29 2000
++++ Makefile	Mon Oct 16 19:08:12 2000
+@@ -1,11 +1,11 @@
+ all:
+-	swig -python ming.i
+-	gcc -I .. -I /usr/include/python1.5/ -fpic -c ming_wrap.c
+-	gcc -L .. -shared -o mingcmodule.so ming_wrap.o  -lming
++	swig1.3 -python ming.i
++	gcc -I${LOCALBASE}/include/ming -I${LOCALBASE}/include/${PYTHON_VERSION} -fpic -c ming_wrap.c
++	gcc -L${LOCALBASE}/lib -shared -o mingcmodule.so ming_wrap.o -lming
+ 
+ clean:
+ 	rm -f mingcmodule.so core *~ *.o ming_wrap*
+ 
+ install:
+-	cp mingcmodule.so ming.py /usr/lib/python1.5/site-packages
+-	chmod 755 /usr/lib/python1.5/site-packages/mingcmodule.so
++	cp mingcmodule.so ming.py ${LOCALBASE}/lib/${PYTHON_VERSION}/site-packages
++	chmod 755 ${LOCALBASE}/lib/${PYTHON_VERSION}/site-packages/mingcmodule.so

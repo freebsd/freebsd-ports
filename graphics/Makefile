@@ -149,6 +149,7 @@
     SUBDIR += pvmpov
     SUBDIR += py-imaging
     SUBDIR += py-imaging-handbook
+    SUBDIR += py-ming
     SUBDIR += py-opengl
     SUBDIR += qcread
     SUBDIR += qiv
