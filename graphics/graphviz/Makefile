@@ -3,7 +3,7 @@
 # Date created:         03 Feb 1998
 # Whom:                 Thomas Gellekum <tg@FreeBSD.ORG>
 #
-# $Id: Makefile,v 1.6 1998/10/05 02:57:52 steve Exp $
+# $Id: Makefile,v 1.7 1999/06/28 13:22:46 tg Exp $
 #
 
 DISTNAME=       graphviz_1_4.src.unix
@@ -16,7 +16,7 @@ MAINTAINER=	ports@FreeBSD.ORG
 LIB_DEPENDS=	tk80.1:${PORTSDIR}/x11-toolkits/tk80
 
 RESTRICTED=	"Cannot be fetched without license"
-#NO_PACKAGE=	${RESTRICTED}
+NO_PACKAGE=	${RESTRICTED}
 NO_CDROM=	${RESTRICTED}
 WRKSRC=		${WRKDIR}/gv1.4
 MAKEFILE=	makefile
