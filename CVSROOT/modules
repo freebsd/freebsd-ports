@@ -3033,7 +3033,7 @@ gsystem		ports/science/gsystem
 gtar		ports/archivers/gtar
 gtetrinet	ports/games/gtetrinet
 gtgt		ports/devel/gtgt
-gthumb2		ports/graphics/gthumb2
+gthumb		ports/graphics/gthumb
 gtic		ports/net/gtic
 gtick		ports/audio/gtick
 gtimer		ports/deskutils/gtimer
