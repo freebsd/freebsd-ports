@@ -1,2 +1,4 @@
-MD5 (gnutls-0.8.10.tar.gz) = 11130b920b1395d03e559beebf6b3c2b
-SIZE (gnutls-0.8.10.tar.gz) = 1040032
+MD5 (gnutls-1.0.8.tar.gz) = 7226b151a390150d02d270f9442e74b5
+SIZE (gnutls-1.0.8.tar.gz) = 1407598
+MD5 (gnutls-1.0.8.tar.gz.sig.asc) = de3cd68923a6a0503840602f43da792e
+SIZE (gnutls-1.0.8.tar.gz.sig.asc) = 392
