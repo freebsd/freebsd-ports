@@ -68,10 +68,10 @@ LIB_DEPENDS+=	pisock.8:${PORTSDIR}/palm/pilot-link
 RUN_DEPENDS+=	jpilot:${PORTSDIR}/palm/jpilot
 CONFIGURE_ARGS+=--enable-jpilot
 .else
-CONFIGURE_ARGS+=	--disable-jpilot
+CONFIGURE_ARGS+=--disable-jpilot
 .endif
 .if defined(WITH_LDAP)
-LIB_DEPENDS+=	ldap.2:${PORTSDIR}/net/openldap20-client
+USE_OPENLDAP=	yes
 CONFIGURE_ARGS+=--enable-ldap
 .else
 CONFIGURE_ARGS+=--disable-ldap

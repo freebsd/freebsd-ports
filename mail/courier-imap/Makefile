@@ -32,10 +32,7 @@ USE_GMAKE=	yes
 # WITH_VPOPMAIL:		Build in vpopmail support
 # WITH_MYSQL:			Build in mysql support
 # WITH_POSTGRESQL:		Build in postgresql support
-# WITH_LDAP:			Build in ldap support with openldap 2.1
-# WITH_LDAP21:			Build in ldap support with openldap 2.1
-# WITH_LDAP20:			Build in ldap support with openldap 2.0
-# WITH_LDAP1:			Build in ldap support with openldap 1.x
+# WITH_LDAP:			Build in ldap support with openldap
 # WITH_FAM:			Build in fam support for IDLE command
 # WITH_TRASHQUOTA:		Include deleted mails in the quota
 #
@@ -84,26 +81,7 @@ CONFIGURE_ARGS+=--with-trashquota
 .endif
 
 .if defined(WITH_LDAP)
-WITH_LDAP21=	yes
-.endif
-
-.if !defined(WITH_LDAP1) && !defined(WITH_LDAP20) && !defined(WITH_LDAP21)
-CONFIGURE_ARGS+=--without-authldap
-PLIST_SUB+=	LDAPFLAG="@comment "
-.else
-CONFIGURE_ARGS+=--with-authldap
-PLIST_SUB+=	LDAPFLAG=""
-
-.if defined(WITH_LDAP21)
-LIB_DEPENDS=	ldap.2:${PORTSDIR}/net/openldap21-client \
-		lber.2:${PORTSDIR}/net/openldap21-client
-.elseif defined(WITH_LDAP20)
-LIB_DEPENDS=	ldap.2:${PORTSDIR}/net/openldap20-client \
-		lber.2:${PORTSDIR}/net/openldap20-client
-.else
-LIB_DEPENDS=	ldap.1:${PORTSDIR}/net/openldap12 \
-		lber.1:${PORTSDIR}/net/openldap12
-.endif
+USE_OPENLDAP=	yes
 .endif
 
 .if !defined(WITH_MYSQL)
