@@ -582,33 +582,34 @@ lib/lib%%RUBY_NAME%%.so.%%RUBY_SHLIBVER%%
 %%PORTDOCS%%%%RUBY_DOCDIR%%/COPYING
 %%PORTDOCS%%%%RUBY_DOCDIR%%/COPYING.ja
 %%PORTDOCS%%%%RUBY_DOCDIR%%/ChangeLog
+%%PORTDOCS%%%%RUBY_DOCDIR%%/ChangeLog-1.8.0
 %%PORTDOCS%%%%RUBY_DOCDIR%%/LEGAL
 %%PORTDOCS%%%%RUBY_DOCDIR%%/NEWS
 %%PORTDOCS%%%%RUBY_DOCDIR%%/README
-%%PORTDOCS%%%%RUBY_DOCDIR%%/README.ja
 %%PORTDOCS%%%%RUBY_DOCDIR%%/README.EXT
 %%PORTDOCS%%%%RUBY_DOCDIR%%/README.EXT.ja
+%%PORTDOCS%%%%RUBY_DOCDIR%%/README.ja
 %%PORTDOCS%%%%RUBY_DOCDIR%%/bigdecimal_en.html
 %%PORTDOCS%%%%RUBY_DOCDIR%%/bigdecimal_ja.html
-%%PORTDOCS%%%%RUBY_DOCDIR%%/forwardable.rd
-%%PORTDOCS%%%%RUBY_DOCDIR%%/forwardable.rd.ja
-%%PORTDOCS%%%%RUBY_DOCDIR%%/shell.rd
-%%PORTDOCS%%%%RUBY_DOCDIR%%/shell.rd.ja
-%%PORTDOCS%%%%RUBY_DOCDIR%%/dl.txt
 %%PORTDOCS%%%%RUBY_DOCDIR%%/digest.txt
 %%PORTDOCS%%%%RUBY_DOCDIR%%/digest.txt.ja
+%%PORTDOCS%%%%RUBY_DOCDIR%%/dl.txt
 %%PORTDOCS%%%%RUBY_DOCDIR%%/enumerator.txt
 %%PORTDOCS%%%%RUBY_DOCDIR%%/etc.txt
 %%PORTDOCS%%%%RUBY_DOCDIR%%/etc.txt.ja
+%%PORTDOCS%%%%RUBY_DOCDIR%%/forwardable.rd
+%%PORTDOCS%%%%RUBY_DOCDIR%%/forwardable.rd.ja
 %%PORTDOCS%%%%RUBY_DOCDIR%%/irb/irb-tools.rd.ja
 %%PORTDOCS%%%%RUBY_DOCDIR%%/irb/irb.rd
 %%PORTDOCS%%%%RUBY_DOCDIR%%/irb/irb.rd.ja
 %%PORTDOCS%%%%RUBY_DOCDIR%%/pty/README
-%%PORTDOCS%%%%RUBY_DOCDIR%%/pty/README.ja
 %%PORTDOCS%%%%RUBY_DOCDIR%%/pty/README.expect
 %%PORTDOCS%%%%RUBY_DOCDIR%%/pty/README.expect.ja
+%%PORTDOCS%%%%RUBY_DOCDIR%%/pty/README.ja
 %%PORTDOCS%%%%RUBY_DOCDIR%%/readline/README
 %%PORTDOCS%%%%RUBY_DOCDIR%%/readline/README.ja
+%%PORTDOCS%%%%RUBY_DOCDIR%%/shell.rd
+%%PORTDOCS%%%%RUBY_DOCDIR%%/shell.rd.ja
 %%PORTDOCS%%%%RUBY_DOCDIR%%/syslog.txt
 %%PORTDOCS%%%%RUBY_DOCDIR%%/zlib.rd
 %%PORTDOCS%%@dirrm %%RUBY_DOCDIR%%/readline
@@ -621,8 +622,19 @@ lib/lib%%RUBY_NAME%%.so.%%RUBY_SHLIBVER%%
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/cal.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/cbreak.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/clnt.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/curses/hello.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/curses/rain.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/curses/view.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/dbmtest.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/dir.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/dl/c++sample.C
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/dl/c++sample.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/dl/drives.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/dl/getch.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/dl/libc.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/dl/msgbox.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/dl/msgbox2.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/dl/stream.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/dualstack-fetch.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/dualstack-httpd.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/eval.rb
@@ -643,6 +655,9 @@ lib/lib%%RUBY_NAME%%.so.%%RUBY_SHLIBVER%%
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/list.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/list2.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/list3.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/logger/app.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/logger/log.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/logger/shifting.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/mine.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/mkproto.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/mpart.rb
@@ -666,34 +681,81 @@ lib/lib%%RUBY_NAME%%.so.%%RUBY_SHLIBVER%%
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/optparse/opttest.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/philos.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/pi.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/pty/expect_sample.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/pty/script.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/pty/shl.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/rcs.awk
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/rcs.dat
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/rcs.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/regx.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/sieve.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/soap/babelfish.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/soap/calc/calc.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/soap/calc/calc2.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/soap/calc/client.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/soap/calc/client2.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/soap/calc/httpd.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/soap/calc/server.cgi
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/soap/calc/server.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/soap/calc/server2.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/soap/digraph.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/soap/exchange/client.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/soap/exchange/exchange.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/soap/exchange/httpd.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/soap/exchange/server.cgi
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/soap/exchange/server.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/soap/helloworld/hw_c.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/soap/helloworld/hw_s.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/soap/icd/IICD.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/soap/icd/icd.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/soap/raa/iRAA.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/soap/raa/soap4r.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/soap/sampleStruct/client.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/soap/sampleStruct/httpd.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/soap/sampleStruct/iSampleStruct.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/soap/sampleStruct/sampleStruct.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/soap/sampleStruct/server.cgi
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/soap/sampleStruct/server.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/svr.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/test.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/testunit/adder.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/testunit/subtracter.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/testunit/tc_adder.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/testunit/tc_subtracter.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/testunit/ts_examples.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/time.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/trojan.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/tsvr.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/uumerge.rb
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/curses/hello.rb
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/curses/rain.rb
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/curses/view.rb
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/dl/c++sample.C
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/dl/c++sample.rb
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/dl/drives.rb
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/dl/getch.rb
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/dl/libc.rb
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/dl/msgbox.rb
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/dl/msgbox2.rb
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/dl/stream.rb
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/pty/expect_sample.rb
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/pty/script.rb
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/pty/shl.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/wsdl/amazon/AmazonSearch.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/wsdl/amazon/AmazonSearchDriver.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/wsdl/amazon/sampleClient.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/wsdl/amazon/wsdlDriver.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/wsdl/googleSearch/GoogleSearch.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/wsdl/googleSearch/GoogleSearchDriver.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/wsdl/googleSearch/README
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/wsdl/googleSearch/httpd.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/wsdl/googleSearch/sampleClient.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/wsdl/googleSearch/sjissearch.sh
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/wsdl/googleSearch/wsdlDriver.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/wsdl/raa/raa.wsdl
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/wsdl/raa/soap4r.rb
+%%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/wsdl/raa
+%%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/wsdl/googleSearch
+%%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/wsdl/amazon
+%%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/wsdl
+%%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/testunit
+%%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/soap/sampleStruct
+%%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/soap/raa
+%%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/soap/icd
+%%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/soap/helloworld
+%%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/soap/exchange
+%%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/soap/calc
+%%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/soap
 %%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/pty
 %%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/optparse
 %%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/openssl
+%%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/logger
 %%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/dl
 %%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/curses
 %%RUBY_EXAMPLESDIR%%/.keep_me
