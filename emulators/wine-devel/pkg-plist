@@ -70,7 +70,10 @@ include/wine/msvcrt/unistd.h
 include/wine/msvcrt/wchar.h
 include/wine/msvcrt/wctype.h
 include/wine/windows/accctrl.h
+include/wine/windows/amvideo.h
+include/wine/windows/amvideo.idl
 include/wine/windows/audevcod.h
+include/wine/windows/aviriff.h
 include/wine/windows/axcore.idl
 include/wine/windows/axextend.idl
 include/wine/windows/basetsd.h
@@ -139,7 +142,6 @@ include/wine/windows/icmpapi.h
 include/wine/windows/imagehlp.h
 include/wine/windows/imm.h
 include/wine/windows/initguid.h
-include/wine/windows/instance.h
 include/wine/windows/ipexport.h
 include/wine/windows/iphlpapi.h
 include/wine/windows/ipifcons.h
@@ -211,6 +213,7 @@ include/wine/windows/rpcdcep.h
 include/wine/windows/rpcndr.h
 include/wine/windows/rpcnterr.h
 include/wine/windows/rpcproxy.h
+include/wine/windows/sddl.h
 include/wine/windows/servprov.h
 include/wine/windows/servprov.idl
 include/wine/windows/setupapi.h
@@ -288,7 +291,9 @@ lib/wine/avifile.dll.so
 lib/wine/aviinfo.exe.so
 lib/wine/aviplay.exe.so
 lib/wine/bug_report.pl
+lib/wine/capi2032.dll.so
 lib/wine/cabinet.dll.so
+lib/wine/cfgmgr32.dll.so
 lib/wine/clock.exe.so
 lib/wine/comcat.dll.so
 lib/wine/comctl32.dll.so
@@ -345,6 +350,8 @@ lib/wine/libadvapi32.def
 lib/wine/libavicap32.def
 lib/wine/libavifil32.def
 lib/wine/libcabinet.def
+lib/wine/libcapi2032.def
+lib/wine/libcfgmgr32.def
 lib/wine/libcomcat.def
 lib/wine/libcomctl32.def
 lib/wine/libcomdlg32.def
@@ -429,6 +436,7 @@ lib/wine/libuser32.def
 lib/wine/libuxtheme.def
 lib/wine/libversion.def
 lib/wine/libw32skrnl.def
+lib/wine/libwined3d.def
 lib/wine/libwinedos.def
 lib/wine/libwineps.def
 lib/wine/libwininet.def
@@ -545,6 +553,7 @@ lib/wine/wineaudioio.drv.so
 lib/wine/wineboot.exe.so
 lib/wine/winecfg.exe.so
 lib/wine/wineconsole.exe.so
+lib/wine/wined3d.dll.so
 lib/wine/winedbg.exe.so
 lib/wine/winedefault.reg
 lib/wine/winedos.dll.so
