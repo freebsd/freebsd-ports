@@ -5,7 +5,6 @@
     SUBDIR += ORBacus
     SUBDIR += ORBit
     SUBDIR += ORBit2
-    SUBDIR += SN
     SUBDIR += SpecTcl
     SUBDIR += a2dev
     SUBDIR += aap
@@ -860,6 +859,7 @@
     SUBDIR += simulavr
     SUBDIR += sip
     SUBDIR += soup
+    SUBDIR += sourcenav
     SUBDIR += sparc-rtems-binutils
     SUBDIR += sparc-rtems-g77
     SUBDIR += sparc-rtems-gcc
