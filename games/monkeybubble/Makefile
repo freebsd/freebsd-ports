@@ -14,7 +14,7 @@ DISTNAME=	monkey-bubble-${PORTVERSION}
 MAINTAINER=	adamw@FreeBSD.org
 COMMENT=	GTK2 Puzzle Bobble clone with monkeys
 
-LIB_DEPENDS=	gstplay-0.6.1:${PORTSDIR}/multimedia/gstreamer-plugins
+LIB_DEPENDS=	gstplay-0.6:${PORTSDIR}/multimedia/gstreamer-plugins
 
 USE_X_PREFIX=	yes
 USE_REINPLACE=	yes
@@ -27,7 +27,6 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LIBS="-L${LOCALBASE}/lib"
 
 post-patch:
-	@${REINPLACE_CMD} -e "s/-pg//" ${WRKSRC}/src/ui/Makefile.in
 	@${REINPLACE_CMD} -e "s|/usr/share|${LOCALBASE}/share| ; \
 		s|lang or die|lang, 0777 or die|" ${WRKSRC}/intltool-merge.in
 
