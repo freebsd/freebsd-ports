@@ -17,6 +17,7 @@ MAINTAINER=	gnome@freebsd.org
 COMMENT=	Bitstream Vera collection of 10 TrueType fonts
 
 BUILD_DEPENDS=	fc-cache:${PORTSDIR}/x11-fonts/fontconfig
+RUN_DEPENDS=	fc-cache:${PORTSDIR}/x11-fonts/fontconfig
 
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes
