@@ -1,6 +1,6 @@
-# $Id: Makefile,v 1.2 1995/05/14 03:29:21 asami Exp $
+# $Id: Makefile,v 1.3 1995/08/13 01:10:21 asami Exp $
 #
-
+    SUBDIR += gnats
     SUBDIR += msql
     SUBDIR += exodus
 
