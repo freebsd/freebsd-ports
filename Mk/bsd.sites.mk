@@ -17,9 +17,9 @@
 MASTER_SITE_LOCAL?= \
 	ftp://ftp.FreeBSD.org/pub/FreeBSD/ports/local-distfiles/%SUBDIR%/ \
 	ftp://ftp.se.FreeBSD.org/pub/FreeBSD/ports/local-distfiles/%SUBDIR%/ \
-	ftp://ftp.jp.FreeBSD.org/pub/FreeBSD/ports/local-distfiles/%SUBDIR%/ \
 	ftp://ftp.uk.FreeBSD.org/pub/FreeBSD/ports/local-distfiles/%SUBDIR%/ \
 	ftp://ftp.ru.FreeBSD.org/pub/FreeBSD/ports/local-distfiles/%SUBDIR%/
+#	ftp://ftp.jp.FreeBSD.org/pub/FreeBSD/ports/local-distfiles/%SUBDIR%/
 #	ftp://ftp.nectec.or.th/pub/FreeBSD/ports/local-distfiles/%SUBDIR%/
 
 MASTER_SITE_PORTS_JP+=	\
@@ -403,9 +403,22 @@ MASTER_SITE_XEMACS+= \
 
 MASTER_SITE_XFREE+= \
 	ftp://ftp.xfree86.org/pub/XFree86/%SUBDIR%/source/ \
-	ftp://ftp.cs.tu-berlin.de/pub/X/XFree86/%SUBDIR%/source/ \
-	ftp://sunsite.doc.ic.ac.uk/packages/XFree86/%SUBDIR%/source/ \
-	http://ftp-stud.fht-esslingen.de/pub/Mirrors/ftp.xfree86.org/XFree86/%SUBDIR%/source/ \
+	ftp://ftp.rge.com/pub/X/XFree86/%SUBDIR%/source/ \
+	ftp://archive.progeny.com/XFree86/%SUBDIR%/source/ \
+	ftp://ftp.mirrorcentral.com/pub/XFree86/%SUBDIR%/source/ \
 	${MASTER_SITE_RINGSERVER:S,%SUBDIR%,XFree86/&/source,} \
+	ftp://gd.tuwien.Ac.at/hci/X11/XFree86/%SUBDIR%/source/ \
+	ftp://ftp.fit.vutbr.cz/pub/XFree86/%SUBDIR%/source/ \
+	ftp://ftp.free.fr/pub/XFree86/%SUBDIR%/source/ \
+	ftp://mir1.ovh.net/ftp.xfree86.org/%SUBDIR%/source/ \
+	ftp://ftp.lami.univ-evry.fr/XFree86/%SUBDIR%/source/ \
+	ftp://ftp.cs.tu-berlin.de/pub/X/XFree86/%SUBDIR%/source/ \
+	ftp://ftp.gwdg.de/pub/xfree86/XFree86/%SUBDIR%/source/ \
+	http://ftp-stud.fht-esslingen.de/pub/Mirrors/ftp.xfree86.org/XFree86/%SUBDIR%/source/ \
 	ftp://ftp.rediris.es/mirror/XFree86/%SUBDIR%/source/ \
+	ftp://ftp.esat.net/pub/X11/XFree86/%SUBDIR%/source/ \
+	ftp://ftp.nl.uu.net/pub/XFree86/%SUBDIR%/source/ \
+	ftp://sunsite.uio.no/pub/XFree86/%SUBDIR%/source/ \
+	ftp://ftp.task.gda.pl/pub/XFree86/%SUBDIR%/source/ \
+	ftp://ftp.physics.uvt.ro/pub/XFree86/%SUBDIR%/source/ \
 	ftp://ftp.chg.ru/pub/XFree86/%SUBDIR%/source/
