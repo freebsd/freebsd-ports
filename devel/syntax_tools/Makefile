@@ -37,6 +37,6 @@ do-install:
 		@${INSTALL_DATA} ${WRKSRC}/*.erl ${SYNTAX_TOOLS}/src
 		@${INSTALL_DATA} ${WRKSRC}/*.beam ${SYNTAX_TOOLS}/ebin
 		@${INSTALL_DATA} ${WRKSRC}/doc/* ${SYNTAX_TOOLS}/doc
-		@${LN} -sf ${SYNTAX_TOOLS} ${PREFIX}/lib/erlang/lib/syntax_tools
+		@${LN} -sf ${DISTNAME} ${PREFIX}/lib/erlang/lib/syntax_tools
 
 .include <bsd.port.mk>
