@@ -2,4 +2,5 @@
 %%RUBY_SITELIBDIR%%/html-parser.rb
 %%RUBY_SITELIBDIR%%/sgml-parser.rb
 %%PORTDOCS%%%%RUBY_DOCDIR%%/html-parser/README.html
+%%PORTDOCS%%%%RUBY_DOCDIR%%/html-parser/README.rd
 %%PORTDOCS%%@dirrm %%RUBY_DOCDIR%%/html-parser
