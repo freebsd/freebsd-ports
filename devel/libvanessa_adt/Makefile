@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	libvanessa_adt
-PORTVERSION=	0.0.1
+PORTVERSION=	0.0.2
 CATEGORIES=	devel
 MASTER_SITES=	ftp://vanessa.sourceforge.net/pub/vanessa/%SUBDIR%/ \
 		ftp://ftp.au.vergenet.net/pub/vanessa/%SUBDIR%/ \
