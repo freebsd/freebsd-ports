@@ -3,7 +3,7 @@
 # Date created:                      6 Apr 1996
 # Whom:                              Brent J. Nordquist <bjn@visi.com>
 #
-# $Id: Makefile,v 1.7 1997/03/02 11:54:20 asami Exp $
+# $Id: Makefile,v 1.8 1997/08/18 22:19:20 fenner Exp $
 #
 
 DISTNAME=          sattrack-3.1.6
@@ -12,6 +12,7 @@ MASTER_SITES=      ${MASTER_SITE_LOCAL}
 
 MAINTAINER=        bjn@visi.com
 
+USE_XLIB=	   yes
 WRKSRC=            ${WRKDIR}/SatTrack-3.1.6/src
 
 post-install:
