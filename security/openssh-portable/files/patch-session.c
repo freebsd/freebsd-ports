@@ -58,7 +58,7 @@
 +	FILE *f;
 +	char buf[256];
 +	char *fname;
-+	char *shorttty;
++	const char *shorttty;
 +#endif /* HAVE_LOGIN_CAP */
 +#ifdef __FreeBSD__
 +#define DEFAULT_WARN  (2L * 7L * 86400L)  /* Two weeks */
