@@ -36,6 +36,7 @@ www/data-dist/egroupware/addressbook/inc/import/Import_from_Outlook_-_Deutsch
 www/data-dist/egroupware/addressbook/inc/import/Import_from_Outlook_-_English
 www/data-dist/egroupware/addressbook/inc/import/Import_from_Outlook_-_Espanol
 www/data-dist/egroupware/addressbook/inc/import/Import_from_Outlook_-_French
+www/data-dist/egroupware/addressbook/inc/import/Import_from_Outlook_-_Hungary
 www/data-dist/egroupware/addressbook/inc/import/Import_from_Outlook_-_Italiano
 www/data-dist/egroupware/addressbook/index.php
 www/data-dist/egroupware/addressbook/setup/phpgw_bg.lang
@@ -119,7 +120,7 @@ www/data-dist/egroupware/admin/inc/class.boconfig.inc.php
 www/data-dist/egroupware/admin/inc/class.bocurrentsessions.inc.php
 www/data-dist/egroupware/admin/inc/class.bolog.inc.php
 www/data-dist/egroupware/admin/inc/class.boserver.inc.php
-www/data-dist/egroupware/admin/inc/class.html.inc.php
+www/data-dist/egroupware/admin/inc/class.html_tables.inc.php
 www/data-dist/egroupware/admin/inc/class.soaccess_history.inc.php
 www/data-dist/egroupware/admin/inc/class.soaccounts.inc.php
 www/data-dist/egroupware/admin/inc/class.soapplications.inc.php
@@ -484,6 +485,7 @@ www/data-dist/egroupware/calendar/egroupware.org/holidays.KR.csv
 www/data-dist/egroupware/calendar/egroupware.org/holidays.MU.csv
 www/data-dist/egroupware/calendar/egroupware.org/holidays.MX.csv
 www/data-dist/egroupware/calendar/egroupware.org/holidays.MY.csv
+www/data-dist/egroupware/calendar/egroupware.org/holidays.NC.csv
 www/data-dist/egroupware/calendar/egroupware.org/holidays.NL.csv
 www/data-dist/egroupware/calendar/egroupware.org/holidays.PL.csv
 www/data-dist/egroupware/calendar/egroupware.org/holidays.PT.csv
@@ -1740,6 +1742,7 @@ www/data-dist/egroupware/felamimail/setup/phpgw_nl.lang
 www/data-dist/egroupware/felamimail/setup/phpgw_pl.lang
 www/data-dist/egroupware/felamimail/setup/phpgw_pt-br.lang
 www/data-dist/egroupware/felamimail/setup/phpgw_pt.lang
+www/data-dist/egroupware/felamimail/setup/phpgw_sl.lang
 www/data-dist/egroupware/felamimail/setup/phpgw_zh.lang
 www/data-dist/egroupware/felamimail/setup/phpgw_zt.lang
 www/data-dist/egroupware/felamimail/setup/phpmailer.lang-br.php
@@ -2097,6 +2100,7 @@ www/data-dist/egroupware/forum/inc/functions.inc.php
 www/data-dist/egroupware/forum/inc/hook_admin.inc.php
 www/data-dist/egroupware/forum/inc/hook_preferences.inc.php
 www/data-dist/egroupware/forum/inc/hook_settings.inc.php
+www/data-dist/egroupware/forum/inc/hook_sidebox_menu.inc.php
 www/data-dist/egroupware/forum/index.php
 www/data-dist/egroupware/forum/preference_category.php
 www/data-dist/egroupware/forum/preference_deletecategory.php
@@ -3003,6 +3007,39 @@ www/data-dist/egroupware/fudforum/setup/base/thm/default/i18n/slovak/img/tree_vi
 www/data-dist/egroupware/fudforum/setup/base/thm/default/i18n/slovak/locale
 www/data-dist/egroupware/fudforum/setup/base/thm/default/i18n/slovak/msg
 www/data-dist/egroupware/fudforum/setup/base/thm/default/i18n/slovak/pspell_lang
+www/data-dist/egroupware/fudforum/setup/base/thm/default/i18n/slovenian/charset
+www/data-dist/egroupware/fudforum/setup/base/thm/default/i18n/slovenian/help/boardusage.hlp
+www/data-dist/egroupware/fudforum/setup/base/thm/default/i18n/slovenian/help/create_poll.hlp
+www/data-dist/egroupware/fudforum/setup/base/thm/default/i18n/slovenian/help/dis_sml.hlp
+www/data-dist/egroupware/fudforum/setup/base/thm/default/i18n/slovenian/help/edit_tools.hlp
+www/data-dist/egroupware/fudforum/setup/base/thm/default/i18n/slovenian/help/faq_index.hlp
+www/data-dist/egroupware/fudforum/setup/base/thm/default/i18n/slovenian/help/forum_sub.hlp
+www/data-dist/egroupware/fudforum/setup/base/thm/default/i18n/slovenian/help/no_replies.hlp
+www/data-dist/egroupware/fudforum/setup/base/thm/default/i18n/slovenian/help/post_icon.hlp
+www/data-dist/egroupware/fudforum/setup/base/thm/default/i18n/slovenian/help/post_not.hlp
+www/data-dist/egroupware/fudforum/setup/base/thm/default/i18n/slovenian/help/readingposting.hlp
+www/data-dist/egroupware/fudforum/setup/base/thm/default/i18n/slovenian/help/show_index.hlp
+www/data-dist/egroupware/fudforum/setup/base/thm/default/i18n/slovenian/help/smilies.hlp
+www/data-dist/egroupware/fudforum/setup/base/thm/default/i18n/slovenian/help/thread_sub.hlp
+www/data-dist/egroupware/fudforum/setup/base/thm/default/i18n/slovenian/help/usermaintance.hlp
+www/data-dist/egroupware/fudforum/setup/base/thm/default/i18n/slovenian/img/flat_view.gif
+www/data-dist/egroupware/fudforum/setup/base/thm/default/i18n/slovenian/img/homepage.gif
+www/data-dist/egroupware/fudforum/setup/base/thm/default/i18n/slovenian/img/msg_about.gif
+www/data-dist/egroupware/fudforum/setup/base/thm/default/i18n/slovenian/img/msg_delete.gif
+www/data-dist/egroupware/fudforum/setup/base/thm/default/i18n/slovenian/img/msg_edit.gif
+www/data-dist/egroupware/fudforum/setup/base/thm/default/i18n/slovenian/img/msg_email.gif
+www/data-dist/egroupware/fudforum/setup/base/thm/default/i18n/slovenian/img/msg_forward.gif
+www/data-dist/egroupware/fudforum/setup/base/thm/default/i18n/slovenian/img/msg_pm.gif
+www/data-dist/egroupware/fudforum/setup/base/thm/default/i18n/slovenian/img/msg_quote.gif
+www/data-dist/egroupware/fudforum/setup/base/thm/default/i18n/slovenian/img/msg_reply.gif
+www/data-dist/egroupware/fudforum/setup/base/thm/default/i18n/slovenian/img/new_pm.gif
+www/data-dist/egroupware/fudforum/setup/base/thm/default/i18n/slovenian/img/new_thread.gif
+www/data-dist/egroupware/fudforum/setup/base/thm/default/i18n/slovenian/img/post_reply.gif
+www/data-dist/egroupware/fudforum/setup/base/thm/default/i18n/slovenian/img/show_posts.gif
+www/data-dist/egroupware/fudforum/setup/base/thm/default/i18n/slovenian/img/tree_view.gif
+www/data-dist/egroupware/fudforum/setup/base/thm/default/i18n/slovenian/locale
+www/data-dist/egroupware/fudforum/setup/base/thm/default/i18n/slovenian/msg
+www/data-dist/egroupware/fudforum/setup/base/thm/default/i18n/slovenian/pspell_lang
 www/data-dist/egroupware/fudforum/setup/base/thm/default/i18n/spanish/charset
 www/data-dist/egroupware/fudforum/setup/base/thm/default/i18n/spanish/help/boardusage.hlp
 www/data-dist/egroupware/fudforum/setup/base/thm/default/i18n/spanish/help/create_poll.hlp
@@ -3444,6 +3481,7 @@ www/data-dist/egroupware/fudforum/setup/base/www_root/images/tableHeaderbg3.gif
 www/data-dist/egroupware/fudforum/setup/base/www_root/lib.js
 www/data-dist/egroupware/fudforum/setup/default_records.inc.php
 www/data-dist/egroupware/fudforum/setup/index.php
+www/data-dist/egroupware/fudforum/setup/phpgw_sl.lang
 www/data-dist/egroupware/fudforum/setup/setup.inc.php
 www/data-dist/egroupware/fudforum/setup/tables_current.inc.php
 www/data-dist/egroupware/fudforum/templates/default/images/empty_dir
@@ -3485,6 +3523,7 @@ www/data-dist/egroupware/headlines/setup/phpgw_nl.lang
 www/data-dist/egroupware/headlines/setup/phpgw_no.lang
 www/data-dist/egroupware/headlines/setup/phpgw_pl.lang
 www/data-dist/egroupware/headlines/setup/phpgw_pt-br.lang
+www/data-dist/egroupware/headlines/setup/phpgw_sl.lang
 www/data-dist/egroupware/headlines/setup/phpgw_sv.lang
 www/data-dist/egroupware/headlines/setup/phpgw_uk.lang
 www/data-dist/egroupware/headlines/setup/phpgw_zh.lang
@@ -3530,13 +3569,10 @@ www/data-dist/egroupware/infolog/inc/class.solink.inc.php
 www/data-dist/egroupware/infolog/inc/class.uicustomfields.inc.php
 www/data-dist/egroupware/infolog/inc/class.uiinfolog.inc.php
 www/data-dist/egroupware/infolog/inc/class.uilink.inc.php
-www/data-dist/egroupware/infolog/inc/hook_admin.inc.php
 www/data-dist/egroupware/infolog/inc/hook_deleteaccount.inc.php
 www/data-dist/egroupware/infolog/inc/hook_home.inc.php
-www/data-dist/egroupware/infolog/inc/hook_preferences.inc.php
 www/data-dist/egroupware/infolog/inc/hook_settings.inc.php
 www/data-dist/egroupware/infolog/index.php
-www/data-dist/egroupware/infolog/setup/TRANSLATORS
 www/data-dist/egroupware/infolog/setup/etemplates.inc.php
 www/data-dist/egroupware/infolog/setup/phpgw_da.lang
 www/data-dist/egroupware/infolog/setup/phpgw_de.lang
@@ -3748,9 +3784,11 @@ www/data-dist/egroupware/jinn/setup/phpgw_de.lang
 www/data-dist/egroupware/jinn/setup/phpgw_en.lang
 www/data-dist/egroupware/jinn/setup/phpgw_es-ca.lang
 www/data-dist/egroupware/jinn/setup/phpgw_es-es.lang
+www/data-dist/egroupware/jinn/setup/phpgw_fr.lang
 www/data-dist/egroupware/jinn/setup/phpgw_it.lang
 www/data-dist/egroupware/jinn/setup/phpgw_nl.lang
 www/data-dist/egroupware/jinn/setup/phpgw_pt-br.lang
+www/data-dist/egroupware/jinn/setup/phpgw_sl.lang
 www/data-dist/egroupware/jinn/setup/phpgw_zt.lang
 www/data-dist/egroupware/jinn/setup/setup.inc.php
 www/data-dist/egroupware/jinn/setup/tables_baseline.inc.php
@@ -3856,6 +3894,7 @@ www/data-dist/egroupware/messenger/setup/phpgw_it.lang
 www/data-dist/egroupware/messenger/setup/phpgw_ja.lang
 www/data-dist/egroupware/messenger/setup/phpgw_pl.lang
 www/data-dist/egroupware/messenger/setup/phpgw_pt-br.lang
+www/data-dist/egroupware/messenger/setup/phpgw_sl.lang
 www/data-dist/egroupware/messenger/setup/phpgw_zh.lang
 www/data-dist/egroupware/messenger/setup/phpgw_zt.lang
 www/data-dist/egroupware/messenger/setup/setup.inc.php
@@ -3903,6 +3942,7 @@ www/data-dist/egroupware/news_admin/setup/phpgw_it.lang
 www/data-dist/egroupware/news_admin/setup/phpgw_nl.lang
 www/data-dist/egroupware/news_admin/setup/phpgw_pl.lang
 www/data-dist/egroupware/news_admin/setup/phpgw_pt-br.lang
+www/data-dist/egroupware/news_admin/setup/phpgw_sl.lang
 www/data-dist/egroupware/news_admin/setup/phpgw_uk.lang
 www/data-dist/egroupware/news_admin/setup/phpgw_zh.lang
 www/data-dist/egroupware/news_admin/setup/phpgw_zt.lang
@@ -3950,6 +3990,7 @@ www/data-dist/egroupware/phpbrain/inc/class.sokb.inc.php
 www/data-dist/egroupware/phpbrain/inc/class.uikb.inc.php
 www/data-dist/egroupware/phpbrain/inc/hook_admin.inc.php
 www/data-dist/egroupware/phpbrain/inc/hook_config.inc.php
+www/data-dist/egroupware/phpbrain/inc/hook_deleteaccount.inc.php
 www/data-dist/egroupware/phpbrain/inc/hook_preferences.inc.php
 www/data-dist/egroupware/phpbrain/inc/hook_settings.inc.php
 www/data-dist/egroupware/phpbrain/inc/hook_sidebox_menu.inc.php
@@ -3964,6 +4005,7 @@ www/data-dist/egroupware/phpbrain/setup/phpgw_it.lang
 www/data-dist/egroupware/phpbrain/setup/phpgw_nl.lang
 www/data-dist/egroupware/phpbrain/setup/phpgw_pl.lang
 www/data-dist/egroupware/phpbrain/setup/phpgw_pt-br.lang
+www/data-dist/egroupware/phpbrain/setup/phpgw_sl.lang
 www/data-dist/egroupware/phpbrain/setup/phpgw_zh.lang
 www/data-dist/egroupware/phpbrain/setup/phpgw_zt.lang
 www/data-dist/egroupware/phpbrain/setup/setup.inc.php
@@ -4076,6 +4118,7 @@ www/data-dist/egroupware/phpgwapi/doc/xmlrpc/phpgw_server.sgml
 www/data-dist/egroupware/phpgwapi/doc/xmlrpc/phpgw_server.txt
 www/data-dist/egroupware/phpgwapi/doc/xmlrpc/test.py
 www/data-dist/egroupware/phpgwapi/images/README
+www/data-dist/egroupware/phpgwapi/images/aanone.gif
 www/data-dist/egroupware/phpgwapi/images/blocks.png
 www/data-dist/egroupware/phpgwapi/images/books.png
 www/data-dist/egroupware/phpgwapi/images/charts.png
@@ -4592,6 +4635,7 @@ www/data-dist/egroupware/phpgwapi/js/htmlarea/plugins/ContextMenu/lang/de.js
 www/data-dist/egroupware/phpgwapi/js/htmlarea/plugins/ContextMenu/lang/el.js
 www/data-dist/egroupware/phpgwapi/js/htmlarea/plugins/ContextMenu/lang/en.js
 www/data-dist/egroupware/phpgwapi/js/htmlarea/plugins/ContextMenu/lang/he.js
+www/data-dist/egroupware/phpgwapi/js/htmlarea/plugins/ContextMenu/lang/lang.php
 www/data-dist/egroupware/phpgwapi/js/htmlarea/plugins/ContextMenu/lang/nl.js
 www/data-dist/egroupware/phpgwapi/js/htmlarea/plugins/ContextMenu/menu.css
 www/data-dist/egroupware/phpgwapi/js/htmlarea/plugins/EnterParagraphs/enter-paragraphs.js
@@ -4599,6 +4643,7 @@ www/data-dist/egroupware/phpgwapi/js/htmlarea/plugins/FullPage/full-page.js
 www/data-dist/egroupware/phpgwapi/js/htmlarea/plugins/FullPage/img/docprop.gif
 www/data-dist/egroupware/phpgwapi/js/htmlarea/plugins/FullPage/lang/en.js
 www/data-dist/egroupware/phpgwapi/js/htmlarea/plugins/FullPage/lang/he.js
+www/data-dist/egroupware/phpgwapi/js/htmlarea/plugins/FullPage/lang/lang.php
 www/data-dist/egroupware/phpgwapi/js/htmlarea/plugins/FullPage/lang/nl.js
 www/data-dist/egroupware/phpgwapi/js/htmlarea/plugins/FullPage/lang/ro.js
 www/data-dist/egroupware/phpgwapi/js/htmlarea/plugins/FullPage/popups/docprop.html
@@ -4609,8 +4654,11 @@ www/data-dist/egroupware/phpgwapi/js/htmlarea/plugins/HtmlTidy/html-tidy-logic.p
 www/data-dist/egroupware/phpgwapi/js/htmlarea/plugins/HtmlTidy/html-tidy.js
 www/data-dist/egroupware/phpgwapi/js/htmlarea/plugins/HtmlTidy/img/html-tidy.gif
 www/data-dist/egroupware/phpgwapi/js/htmlarea/plugins/HtmlTidy/lang/en.js
+www/data-dist/egroupware/phpgwapi/js/htmlarea/plugins/HtmlTidy/lang/lang.php
 www/data-dist/egroupware/phpgwapi/js/htmlarea/plugins/ListType/lang/en.js
+www/data-dist/egroupware/phpgwapi/js/htmlarea/plugins/ListType/lang/lang.php
 www/data-dist/egroupware/phpgwapi/js/htmlarea/plugins/ListType/list-type.js
+www/data-dist/egroupware/phpgwapi/js/htmlarea/plugins/SpellChecker/.htaccess
 www/data-dist/egroupware/phpgwapi/js/htmlarea/plugins/SpellChecker/img/he-spell-check.gif
 www/data-dist/egroupware/phpgwapi/js/htmlarea/plugins/SpellChecker/img/spell-check.gif
 www/data-dist/egroupware/phpgwapi/js/htmlarea/plugins/SpellChecker/lang/cz.js
@@ -4620,6 +4668,7 @@ www/data-dist/egroupware/phpgwapi/js/htmlarea/plugins/SpellChecker/lang/en.js
 www/data-dist/egroupware/phpgwapi/js/htmlarea/plugins/SpellChecker/lang/he.js
 www/data-dist/egroupware/phpgwapi/js/htmlarea/plugins/SpellChecker/lang/hu.js
 www/data-dist/egroupware/phpgwapi/js/htmlarea/plugins/SpellChecker/lang/it.js
+www/data-dist/egroupware/phpgwapi/js/htmlarea/plugins/SpellChecker/lang/lang.php
 www/data-dist/egroupware/phpgwapi/js/htmlarea/plugins/SpellChecker/lang/ro.js
 www/data-dist/egroupware/phpgwapi/js/htmlarea/plugins/SpellChecker/readme-tech.html
 www/data-dist/egroupware/phpgwapi/js/htmlarea/plugins/SpellChecker/spell-check-logic.cgi
@@ -4653,6 +4702,7 @@ www/data-dist/egroupware/phpgwapi/js/htmlarea/plugins/TableOperations/lang/fi.js
 www/data-dist/egroupware/phpgwapi/js/htmlarea/plugins/TableOperations/lang/he.js
 www/data-dist/egroupware/phpgwapi/js/htmlarea/plugins/TableOperations/lang/hu.js
 www/data-dist/egroupware/phpgwapi/js/htmlarea/plugins/TableOperations/lang/it.js
+www/data-dist/egroupware/phpgwapi/js/htmlarea/plugins/TableOperations/lang/lang.php
 www/data-dist/egroupware/phpgwapi/js/htmlarea/plugins/TableOperations/lang/makefile.xml
 www/data-dist/egroupware/phpgwapi/js/htmlarea/plugins/TableOperations/lang/nl.js
 www/data-dist/egroupware/phpgwapi/js/htmlarea/plugins/TableOperations/lang/no.js
@@ -4660,6 +4710,7 @@ www/data-dist/egroupware/phpgwapi/js/htmlarea/plugins/TableOperations/lang/ro.js
 www/data-dist/egroupware/phpgwapi/js/htmlarea/plugins/TableOperations/table-operations.js
 www/data-dist/egroupware/phpgwapi/js/htmlarea/plugins/UploadImage/img/up_image.gif
 www/data-dist/egroupware/phpgwapi/js/htmlarea/plugins/UploadImage/lang/en.js
+www/data-dist/egroupware/phpgwapi/js/htmlarea/plugins/UploadImage/lang/lang.php
 www/data-dist/egroupware/phpgwapi/js/htmlarea/plugins/UploadImage/lang/nl.js
 www/data-dist/egroupware/phpgwapi/js/htmlarea/plugins/UploadImage/popups/ImageEditor/2x2.gif
 www/data-dist/egroupware/phpgwapi/js/htmlarea/plugins/UploadImage/popups/ImageEditor/2x2_w.gif
@@ -4710,6 +4761,7 @@ www/data-dist/egroupware/phpgwapi/js/htmlarea/plugins/UploadImage/popups/insert_
 www/data-dist/egroupware/phpgwapi/js/htmlarea/plugins/UploadImage/popups/insert_image2.html
 www/data-dist/egroupware/phpgwapi/js/htmlarea/plugins/UploadImage/popups/popup.js
 www/data-dist/egroupware/phpgwapi/js/htmlarea/plugins/UploadImage/upload-image.js
+www/data-dist/egroupware/phpgwapi/js/htmlarea/plugins/merge_langs
 www/data-dist/egroupware/phpgwapi/js/htmlarea/plugins/tmp.php
 www/data-dist/egroupware/phpgwapi/js/htmlarea/popupdiv.js
 www/data-dist/egroupware/phpgwapi/js/htmlarea/popups/about.html
@@ -4803,6 +4855,7 @@ www/data-dist/egroupware/phpgwapi/js/wz_tooltip/wz_tooltip.js
 www/data-dist/egroupware/phpgwapi/setup/default_records.inc.php
 www/data-dist/egroupware/phpgwapi/setup/phpgw_bg.lang
 www/data-dist/egroupware/phpgwapi/setup/phpgw_cs.lang
+www/data-dist/egroupware/phpgwapi/setup/phpgw_cz.lang
 www/data-dist/egroupware/phpgwapi/setup/phpgw_da.lang
 www/data-dist/egroupware/phpgwapi/setup/phpgw_de.lang
 www/data-dist/egroupware/phpgwapi/setup/phpgw_el.lang
@@ -4811,6 +4864,7 @@ www/data-dist/egroupware/phpgwapi/setup/phpgw_es-ca.lang
 www/data-dist/egroupware/phpgwapi/setup/phpgw_es-es.lang
 www/data-dist/egroupware/phpgwapi/setup/phpgw_fi.lang
 www/data-dist/egroupware/phpgwapi/setup/phpgw_fr.lang
+www/data-dist/egroupware/phpgwapi/setup/phpgw_he.lang
 www/data-dist/egroupware/phpgwapi/setup/phpgw_hu.lang
 www/data-dist/egroupware/phpgwapi/setup/phpgw_it.lang
 www/data-dist/egroupware/phpgwapi/setup/phpgw_ja.lang
@@ -4820,6 +4874,7 @@ www/data-dist/egroupware/phpgwapi/setup/phpgw_no.lang
 www/data-dist/egroupware/phpgwapi/setup/phpgw_pl.lang
 www/data-dist/egroupware/phpgwapi/setup/phpgw_pt-br.lang
 www/data-dist/egroupware/phpgwapi/setup/phpgw_pt.lang
+www/data-dist/egroupware/phpgwapi/setup/phpgw_ro.lang
 www/data-dist/egroupware/phpgwapi/setup/phpgw_ru.lang
 www/data-dist/egroupware/phpgwapi/setup/phpgw_sl.lang
 www/data-dist/egroupware/phpgwapi/setup/phpgw_sv.lang
@@ -5707,6 +5762,121 @@ www/data-dist/egroupware/phpgwapi/templates/literati/navbar.tpl
 www/data-dist/egroupware/phpgwapi/templates/literati/navbar_app.tpl
 www/data-dist/egroupware/phpgwapi/templates/literati/nextmatchs.tpl
 www/data-dist/egroupware/phpgwapi/templates/literati/portal.tpl
+www/data-dist/egroupware/phpgwapi/templates/prisma/about.tpl
+www/data-dist/egroupware/phpgwapi/templates/prisma/css.tpl
+www/data-dist/egroupware/phpgwapi/templates/prisma/css/idots.css
+www/data-dist/egroupware/phpgwapi/templates/prisma/css/kneschke.css
+www/data-dist/egroupware/phpgwapi/templates/prisma/css/prisma.css
+www/data-dist/egroupware/phpgwapi/templates/prisma/footer.tpl
+www/data-dist/egroupware/phpgwapi/templates/prisma/head.inc.php
+www/data-dist/egroupware/phpgwapi/templates/prisma/head.tpl
+www/data-dist/egroupware/phpgwapi/templates/prisma/hook_settings.inc.php
+www/data-dist/egroupware/phpgwapi/templates/prisma/images/alpha-white.png
+www/data-dist/egroupware/phpgwapi/templates/prisma/images/appbox-header-background.png
+www/data-dist/egroupware/phpgwapi/templates/prisma/images/background-icon-bar.png
+www/data-dist/egroupware/phpgwapi/templates/prisma/images/body-background.png
+www/data-dist/egroupware/phpgwapi/templates/prisma/images/browse.png
+www/data-dist/egroupware/phpgwapi/templates/prisma/images/buttonbackground.png
+www/data-dist/egroupware/phpgwapi/templates/prisma/images/buttonbackgroundleft.png
+www/data-dist/egroupware/phpgwapi/templates/prisma/images/buttonbackgroundright.png
+www/data-dist/egroupware/phpgwapi/templates/prisma/images/buttonbackgroundscaled.png
+www/data-dist/egroupware/phpgwapi/templates/prisma/images/buttonseparator.png
+www/data-dist/egroupware/phpgwapi/templates/prisma/images/close.png
+www/data-dist/egroupware/phpgwapi/templates/prisma/images/configure.png
+www/data-dist/egroupware/phpgwapi/templates/prisma/images/configure_toolbars.png
+www/data-dist/egroupware/phpgwapi/templates/prisma/images/copy.gif
+www/data-dist/egroupware/phpgwapi/templates/prisma/images/delete.png
+www/data-dist/egroupware/phpgwapi/templates/prisma/images/down.png
+www/data-dist/egroupware/phpgwapi/templates/prisma/images/down2.png
+www/data-dist/egroupware/phpgwapi/templates/prisma/images/dragarea.png
+www/data-dist/egroupware/phpgwapi/templates/prisma/images/dragarea_left.png
+www/data-dist/egroupware/phpgwapi/templates/prisma/images/dragarea_right.png
+www/data-dist/egroupware/phpgwapi/templates/prisma/images/edit.png
+www/data-dist/egroupware/phpgwapi/templates/prisma/images/extra_icons.png
+www/data-dist/egroupware/phpgwapi/templates/prisma/images/favicon.ico
+www/data-dist/egroupware/phpgwapi/templates/prisma/images/fileopen.png
+www/data-dist/egroupware/phpgwapi/templates/prisma/images/filesave.png
+www/data-dist/egroupware/phpgwapi/templates/prisma/images/first-gray.png
+www/data-dist/egroupware/phpgwapi/templates/prisma/images/first-grey.png
+www/data-dist/egroupware/phpgwapi/templates/prisma/images/first.png
+www/data-dist/egroupware/phpgwapi/templates/prisma/images/grey-pixel.png
+www/data-dist/egroupware/phpgwapi/templates/prisma/images/groupevent.png
+www/data-dist/egroupware/phpgwapi/templates/prisma/images/icon_mini_login.gif
+www/data-dist/egroupware/phpgwapi/templates/prisma/images/icon_mini_search.gif
+www/data-dist/egroupware/phpgwapi/templates/prisma/images/info.gif
+www/data-dist/egroupware/phpgwapi/templates/prisma/images/last-grey.png
+www/data-dist/egroupware/phpgwapi/templates/prisma/images/last.png
+www/data-dist/egroupware/phpgwapi/templates/prisma/images/last2.png
+www/data-dist/egroupware/phpgwapi/templates/prisma/images/left-grey.png
+www/data-dist/egroupware/phpgwapi/templates/prisma/images/left.png
+www/data-dist/egroupware/phpgwapi/templates/prisma/images/login-background.jpg
+www/data-dist/egroupware/phpgwapi/templates/prisma/images/login-background.png
+www/data-dist/egroupware/phpgwapi/templates/prisma/images/logo-setup.png
+www/data-dist/egroupware/phpgwapi/templates/prisma/images/logo.png
+www/data-dist/egroupware/phpgwapi/templates/prisma/images/move.gif
+www/data-dist/egroupware/phpgwapi/templates/prisma/images/new.png
+www/data-dist/egroupware/phpgwapi/templates/prisma/images/nonav.png
+www/data-dist/egroupware/phpgwapi/templates/prisma/images/orange-ball.png
+www/data-dist/egroupware/phpgwapi/templates/prisma/images/password.png
+www/data-dist/egroupware/phpgwapi/templates/prisma/images/right-grey.png
+www/data-dist/egroupware/phpgwapi/templates/prisma/images/right.png
+www/data-dist/egroupware/phpgwapi/templates/prisma/images/sidebox-header-background.png
+www/data-dist/egroupware/phpgwapi/templates/prisma/images/spacer.gif
+www/data-dist/egroupware/phpgwapi/templates/prisma/images/tabs-bg0.gif
+www/data-dist/egroupware/phpgwapi/templates/prisma/images/tabs-bg0.png
+www/data-dist/egroupware/phpgwapi/templates/prisma/images/tabs-bg1.gif
+www/data-dist/egroupware/phpgwapi/templates/prisma/images/tabs-bg1.png
+www/data-dist/egroupware/phpgwapi/templates/prisma/images/tabs-end0.gif
+www/data-dist/egroupware/phpgwapi/templates/prisma/images/tabs-end0.png
+www/data-dist/egroupware/phpgwapi/templates/prisma/images/tabs-end1.gif
+www/data-dist/egroupware/phpgwapi/templates/prisma/images/tabs-end1.png
+www/data-dist/egroupware/phpgwapi/templates/prisma/images/tabs-ext.gif
+www/data-dist/egroupware/phpgwapi/templates/prisma/images/tabs-ext.png
+www/data-dist/egroupware/phpgwapi/templates/prisma/images/tabs-l0.gif
+www/data-dist/egroupware/phpgwapi/templates/prisma/images/tabs-l0.png
+www/data-dist/egroupware/phpgwapi/templates/prisma/images/tabs-l1.gif
+www/data-dist/egroupware/phpgwapi/templates/prisma/images/tabs-l1.png
+www/data-dist/egroupware/phpgwapi/templates/prisma/images/tabs-r0.gif
+www/data-dist/egroupware/phpgwapi/templates/prisma/images/tabs-r0.png
+www/data-dist/egroupware/phpgwapi/templates/prisma/images/tabs-r1.gif
+www/data-dist/egroupware/phpgwapi/templates/prisma/images/tabs-r1.png
+www/data-dist/egroupware/phpgwapi/templates/prisma/images/tabs-sepl.gif
+www/data-dist/egroupware/phpgwapi/templates/prisma/images/tabs-sepl.png
+www/data-dist/egroupware/phpgwapi/templates/prisma/images/tabs-sepm.gif
+www/data-dist/egroupware/phpgwapi/templates/prisma/images/tabs-sepm.png
+www/data-dist/egroupware/phpgwapi/templates/prisma/images/tabs-sepr.gif
+www/data-dist/egroupware/phpgwapi/templates/prisma/images/tabs-sepr.png
+www/data-dist/egroupware/phpgwapi/templates/prisma/images/tabs-start0.gif
+www/data-dist/egroupware/phpgwapi/templates/prisma/images/tabs-start0.png
+www/data-dist/egroupware/phpgwapi/templates/prisma/images/tabs-start1.gif
+www/data-dist/egroupware/phpgwapi/templates/prisma/images/tabs-start1.png
+www/data-dist/egroupware/phpgwapi/templates/prisma/images/thumbnail.png
+www/data-dist/egroupware/phpgwapi/templates/prisma/images/up.png
+www/data-dist/egroupware/phpgwapi/templates/prisma/images/up2.png
+www/data-dist/egroupware/phpgwapi/templates/prisma/images/valid-html401.png
+www/data-dist/egroupware/phpgwapi/templates/prisma/images/valid-xhtml11.png
+www/data-dist/egroupware/phpgwapi/templates/prisma/images/vcss.png
+www/data-dist/egroupware/phpgwapi/templates/prisma/images/view.png
+www/data-dist/egroupware/phpgwapi/templates/prisma/js/pngfix.js
+www/data-dist/egroupware/phpgwapi/templates/prisma/js/simple_show_hide.js
+www/data-dist/egroupware/phpgwapi/templates/prisma/js/slidereffects.js
+www/data-dist/egroupware/phpgwapi/templates/prisma/login.tpl
+www/data-dist/egroupware/phpgwapi/templates/prisma/login_denylogin.tpl
+www/data-dist/egroupware/phpgwapi/templates/prisma/navbar.inc.php
+www/data-dist/egroupware/phpgwapi/templates/prisma/navbar.tpl
+www/data-dist/egroupware/phpgwapi/templates/prisma/navbar_app.tpl
+www/data-dist/egroupware/phpgwapi/templates/prisma/nextmatchs.tpl
+www/data-dist/egroupware/phpgwapi/templates/prisma/portal.tpl
+www/data-dist/egroupware/phpgwapi/templates/prisma/source/emailadmin_navbar_icon.xcf
+www/data-dist/egroupware/phpgwapi/templates/prisma/source/logo-setup-anim.xcf
+www/data-dist/egroupware/phpgwapi/templates/prisma/source/logo.eps
+www/data-dist/egroupware/phpgwapi/templates/prisma/source/logo.svg
+www/data-dist/egroupware/phpgwapi/templates/prisma/source/logo.xcf
+www/data-dist/egroupware/phpgwapi/templates/prisma/source/navbar.xcf
+www/data-dist/egroupware/phpgwapi/templates/prisma/source/navbar32.xcf
+www/data-dist/egroupware/phpgwapi/templates/prisma/source/navbar48.xcf
+www/data-dist/egroupware/phpgwapi/templates/prisma/source/phpldapadmin_navbar_icon.xcf
+www/data-dist/egroupware/phpgwapi/templates/prisma/source/su_navbar_icon.xcf
 www/data-dist/egroupware/phpgwapi/themes/black.theme
 www/data-dist/egroupware/phpgwapi/themes/blue.theme
 www/data-dist/egroupware/phpgwapi/themes/brown.theme
@@ -6092,6 +6262,7 @@ www/data-dist/egroupware/polls/setup/phpgw_ja.lang
 www/data-dist/egroupware/polls/setup/phpgw_pl.lang
 www/data-dist/egroupware/polls/setup/phpgw_pt-br.lang
 www/data-dist/egroupware/polls/setup/phpgw_pt.lang
+www/data-dist/egroupware/polls/setup/phpgw_sl.lang
 www/data-dist/egroupware/polls/setup/phpgw_uk.lang
 www/data-dist/egroupware/polls/setup/phpgw_zh.lang
 www/data-dist/egroupware/polls/setup/phpgw_zt.lang
@@ -6321,6 +6492,7 @@ www/data-dist/egroupware/projects/inc/jpgraph-1.5.2/src/jpgraph_scatter.php
 www/data-dist/egroupware/projects/inc/jpgraph-1.5.2/src/jpgraph_spider.php
 www/data-dist/egroupware/projects/index.php
 www/data-dist/egroupware/projects/js/jscode/edit_project.js
+www/data-dist/egroupware/projects/js/jscode/list_projects.js
 www/data-dist/egroupware/projects/setup/default_records.inc.php
 www/data-dist/egroupware/projects/setup/phpgw_br.lang
 www/data-dist/egroupware/projects/setup/phpgw_da.lang
@@ -6446,6 +6618,7 @@ www/data-dist/egroupware/registration/setup/phpgw_it.lang
 www/data-dist/egroupware/registration/setup/phpgw_nl.lang
 www/data-dist/egroupware/registration/setup/phpgw_pl.lang
 www/data-dist/egroupware/registration/setup/phpgw_pt-br.lang
+www/data-dist/egroupware/registration/setup/phpgw_sl.lang
 www/data-dist/egroupware/registration/setup/phpgw_zt.lang
 www/data-dist/egroupware/registration/setup/setup.inc.php
 www/data-dist/egroupware/registration/setup/tables_baseline.inc.php
@@ -6657,6 +6830,7 @@ www/data-dist/egroupware/sitemgr/sitemgr-link/setup/phpgw_da.lang
 www/data-dist/egroupware/sitemgr/sitemgr-link/setup/phpgw_en.lang
 www/data-dist/egroupware/sitemgr/sitemgr-link/setup/phpgw_es-ca.lang
 www/data-dist/egroupware/sitemgr/sitemgr-link/setup/phpgw_fr.lang
+www/data-dist/egroupware/sitemgr/sitemgr-link/setup/phpgw_sl.lang
 www/data-dist/egroupware/sitemgr/sitemgr-link/setup/phpgw_zt.lang
 www/data-dist/egroupware/sitemgr/sitemgr-link/setup/setup.inc.php
 www/data-dist/egroupware/sitemgr/sitemgr-link/templates/default/images/navbar.gif
@@ -6937,6 +7111,7 @@ www/data-dist/egroupware/skel/setup/phpgw_en.lang
 www/data-dist/egroupware/skel/setup/phpgw_es-ca.lang
 www/data-dist/egroupware/skel/setup/phpgw_fr.lang
 www/data-dist/egroupware/skel/setup/phpgw_pt-br.lang
+www/data-dist/egroupware/skel/setup/phpgw_sl.lang
 www/data-dist/egroupware/skel/setup/setup.inc.php
 www/data-dist/egroupware/skel/setup/tables_baseline.inc.php
 www/data-dist/egroupware/skel/setup/tables_current.inc.php
@@ -6977,6 +7152,7 @@ www/data-dist/egroupware/stocks/setup/phpgw_it.lang
 www/data-dist/egroupware/stocks/setup/phpgw_ko.lang
 www/data-dist/egroupware/stocks/setup/phpgw_pl.lang
 www/data-dist/egroupware/stocks/setup/phpgw_pt-br.lang
+www/data-dist/egroupware/stocks/setup/phpgw_sl.lang
 www/data-dist/egroupware/stocks/setup/phpgw_zt.lang
 www/data-dist/egroupware/stocks/setup/setup.inc.php
 www/data-dist/egroupware/stocks/templates/default/images/navbar.gif
@@ -7116,6 +7292,7 @@ www/data-dist/egroupware/wiki/setup/phpgw_fr.lang
 www/data-dist/egroupware/wiki/setup/phpgw_it.lang
 www/data-dist/egroupware/wiki/setup/phpgw_ko.lang
 www/data-dist/egroupware/wiki/setup/phpgw_pt-br.lang
+www/data-dist/egroupware/wiki/setup/phpgw_sl.lang
 www/data-dist/egroupware/wiki/setup/phpgw_zt.lang
 www/data-dist/egroupware/wiki/setup/setup.inc.php
 www/data-dist/egroupware/wiki/setup/tables_baseline.inc.php
@@ -7374,6 +7551,11 @@ www/data-dist/egroupware/xmlrpc.php
 @dirrm www/data-dist/egroupware/phpldapadmin/images
 @dirrm www/data-dist/egroupware/phpldapadmin
 @dirrm www/data-dist/egroupware/phpgwapi/themes
+@dirrm www/data-dist/egroupware/phpgwapi/templates/prisma/images
+@dirrm www/data-dist/egroupware/phpgwapi/templates/prisma/css
+@dirrm www/data-dist/egroupware/phpgwapi/templates/prisma/js
+@dirrm www/data-dist/egroupware/phpgwapi/templates/prisma/source
+@dirrm www/data-dist/egroupware/phpgwapi/templates/prisma
 @dirrm www/data-dist/egroupware/phpgwapi/templates/literati/images
 @dirrm www/data-dist/egroupware/phpgwapi/templates/literati/doc
 @dirrm www/data-dist/egroupware/phpgwapi/templates/literati/css
@@ -7599,6 +7781,9 @@ www/data-dist/egroupware/xmlrpc.php
 @dirrm www/data-dist/egroupware/fudforum/setup/base/thm/default/i18n/spanish/img
 @dirrm www/data-dist/egroupware/fudforum/setup/base/thm/default/i18n/spanish/help
 @dirrm www/data-dist/egroupware/fudforum/setup/base/thm/default/i18n/spanish
+@dirrm www/data-dist/egroupware/fudforum/setup/base/thm/default/i18n/slovenian/img
+@dirrm www/data-dist/egroupware/fudforum/setup/base/thm/default/i18n/slovenian/help
+@dirrm www/data-dist/egroupware/fudforum/setup/base/thm/default/i18n/slovenian
 @dirrm www/data-dist/egroupware/fudforum/setup/base/thm/default/i18n/slovak/img
 @dirrm www/data-dist/egroupware/fudforum/setup/base/thm/default/i18n/slovak/help
 @dirrm www/data-dist/egroupware/fudforum/setup/base/thm/default/i18n/slovak
