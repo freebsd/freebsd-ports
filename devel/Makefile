@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.84 1997/11/09 10:33:56 jraynard Exp $
+# $Id: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 #
 
     SUBDIR += ElectricFence
@@ -80,6 +80,7 @@
     SUBDIR += p5-TraceFuncs
     SUBDIR += pccts
     SUBDIR += portlint
+    SUBDIR += prc-tools
     SUBDIR += prcs
     SUBDIR += sawt
     SUBDIR += scogdb
