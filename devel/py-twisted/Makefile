@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	twisted
-PORTVERSION=	1.1.1
+PORTVERSION=	1.2.0
 CATEGORIES=	devel net python
 MASTER_SITES=	http://twisted.sourceforge.net/ \
-		http://twistedmatrix.com/downloads/
+		http://twistedmatrix.com/downloads/old/
 MASTER_SITE_SUBDIR=	${PORTNAME}
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	Twisted_NoDocs-${PORTVERSION}
