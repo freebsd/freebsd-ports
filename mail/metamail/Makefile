@@ -9,12 +9,15 @@ PORTNAME=	metamail
 PORTVERSION=	2.7
 PORTREVISION=	2
 CATEGORIES=	mail
-MASTER_SITES=	ftp://thumper.bellcore.com/pub/nsb/
+MASTER_SITES=	http://ftp.funet.fi/pub/unix/mail/metamail/
 DISTNAME=	mm${PORTVERSION}
 EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Implementation of MIME, the Multipurpose Internet Mail Extensions
+
+DEPRECATED=	"mastersite disappeared\; last distfile update was in 1994"
+EXPIRATION_DATE=	"June 12 2004"
 
 RUN_DEPENDS=	xloadimage:${PORTSDIR}/x11/xloadimage
 
