@@ -32,6 +32,7 @@
     SUBDIR += nulib
     SUBDIR += p5-Archive-Tar
     SUBDIR += p5-Archive-Zip
+    SUBDIR += p5-Compress-Bzip2
     SUBDIR += p5-Compress-Zlib
     SUBDIR += p5-IO-Zlib
     SUBDIR += p5-Mac-Macbinary
