@@ -7,6 +7,7 @@
 
 PORTNAME=	minder
 PORTVERSION=	1.1
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	http://www.alhem.net/project/minder/
 
@@ -45,6 +46,7 @@ post-patch:
 		${WRKSRC}/minder.cpp
 
 do-install:
+	@${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
 	@${MKDIR} ${EXAMPLESDIR}
 	@${INSTALL_DATA} ${WRKSRC}/minder.cfg ${EXAMPLESDIR}
 
