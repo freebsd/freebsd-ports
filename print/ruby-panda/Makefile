@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	panda
-PORTVERSION=	0.0.3
+PORTVERSION=	0.0.4
 CATEGORIES=	print ruby
 MASTER_SITES=	http://www2s.biglobe.ne.jp/~Nori/ruby/dist/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
@@ -29,13 +29,13 @@ INSTALL_TARGET=	site-install
 
 DOCS_EN=	README
 DOCS_JA=	ChangeLog.ja	README.ja	TODO.ja
-EXAMPLES_EN=	main.rb
+EXAMPLES_EN=	circles.rb	main.rb
 
 post-install:
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${RUBY_EXAMPLESDIR}/${PORTNAME}
 .for f in ${EXAMPLES_EN}
-	${INSTALL_DATA} ${WRKSRC}/samples/${f} ${RUBY_EXAMPLESDIR}/${PORTNAME}/
+	${INSTALL_DATA} ${WRKSRC}/examples/${f} ${RUBY_EXAMPLESDIR}/${PORTNAME}/
 .endfor
 	cd ${RUBY_EXAMPLESDIR}/${PORTNAME} && ${LN} -sf ../../panda/*.jpg ../../panda/*.png ../../panda/*.tif .
 	${MKDIR} ${RUBY_DOCDIR}/${PORTNAME}/ja
