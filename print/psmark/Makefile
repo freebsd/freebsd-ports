@@ -8,7 +8,7 @@
 
 PORTNAME=	psmark
 PORTVERSION=	2.1
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	print
 MASTER_SITES=	http://www.antitachyon.com/download/
 DISTNAME=	${PORTNAME}-v${PORTVERSION}
