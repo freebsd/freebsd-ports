@@ -9,6 +9,7 @@
     SUBDIR += GeoIP
     SUBDIR += NeTraMet
     SUBDIR += NoCatAuth-Gateway
+    SUBDIR += NoCatAuth-Server
     SUBDIR += NoCatSplash
     SUBDIR += SSLtelnet
     SUBDIR += adasockets
