@@ -4180,6 +4180,7 @@ keynote		ports/security/keynote
 keyprint	ports/security/keyprint
 kfile-plugins	ports/misc/kfile-plugins
 kfreerings	ports/games/kfreerings
+kftpgrabber	ports/ftp/kftpgrabber
 kgpg		ports/security/kgpg
 khacc		ports/finance/khacc
 kicker-applets	ports/misc/kicker-applets
