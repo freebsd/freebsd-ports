@@ -16,15 +16,17 @@ COMMENT=	A tool for creating bass tablature
 
 WRKSRC=		${WRKDIR}
 
-do-build:
+PLIST_FILES=	bin/btc
+PORTDOCS=	btc.doc
 
+do-build:
 	${CC} ${CFLAGS} -o ${WRKSRC}/${PORTNAME} ${WRKSRC}/${PORTNAME}.c
 
 do-install:
-
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
-	${MKDIR} ${PREFIX}/share/doc/${PORTNAME}
-	${INSTALL_DATA} ${WRKSRC}/${PORTNAME}.doc \
-	 ${PREFIX}/share/doc/${PORTNAME}
+.if !defined(NOPORTDOCS)
+	@${MKDIR} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/${PORTNAME}.doc ${DOCSDIR}
+.endif
 
 .include <bsd.port.mk>
