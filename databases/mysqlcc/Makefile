@@ -16,6 +16,10 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}-src
 MAINTAINER=	ferruccio.vitale@tin.it
 COMMENT=	A platform-independent GUI administration client for the MySQL server
 
+BROKEN=		"Does not compile"
+DEPRECATED=	${BROKEN}
+EXPIRATION_DATE=2004-04-22
+
 USE_MYSQL=	yes
 
 USE_REINPLACE=	yes
