@@ -7,6 +7,7 @@
 
 PORTNAME=	idnkit
 PORTVERSION=	1.0
+PORTREVISION=	1
 CATEGORIES=	dns
 MASTER_SITES=	http://www.nic.ad.jp/ja/idn/idnkit/download/sources/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-src
@@ -19,7 +20,8 @@ LIB_DEPENDS=	iconv.3:${PORTSDIR}/converters/libiconv
 USE_LIBTOOL=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-libiconv=${LOCALBASE} \
-		--enable-runidn
+		--enable-runidn \
+		--enable-extra-ace
 
 INSTALLS_SHLIB=	yes
 
