@@ -1,12 +1,12 @@
 # New ports collection makefile for:	aumix
-# Version required:    2
+# Version required:    2.2
 # Date created:        21 May 1999
 # Whom:                Chris Piazza <cpiazza@FreeBSD.org>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	aumix-2.1
+DISTNAME=	aumix-2.2
 CATEGORIES=	audio
 MASTER_SITES=	http://jpj.net/~trevor/aumix/ \
 		http://jpj.net/~trevor/aumix/old/ \
@@ -27,6 +27,7 @@ GTK_CONFIG=	${X11BASE}/bin/gtk12-config
 MAN1=		aumix.1 xaumix.1
 
 GNU_CONFIGURE=	yes
+USE_GMAKE=	yes
 CONFIGURE_ARGS=	--includedir="${LOCALBASE}/include" \
 		--libdir="${LOCALBASE}/lib"
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
