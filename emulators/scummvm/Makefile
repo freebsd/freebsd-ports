@@ -6,32 +6,42 @@
 #
 
 PORTNAME=	scummvm
-PORTVERSION=	0.2.0
+PORTVERSION=	0.3.0b
 CATEGORIES=	games emulators
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 DISTNAME=	${PORTNAME}_${PORTVERSION}-src
-EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	flynn@energyhq.homeip.net
 
 LIB_DEPENDS=	SDL-1.1.4:${PORTSDIR}/devel/sdl12
 
 USE_GMAKE=	yes
-WRKSRC=         ${WRKDIR}/${PORTNAME}
+WRKSRC=         ${WRKDIR}/${PORTNAME}-0.3.0
+GNU_CONFIGURE=	yes
+USE_REINPLACE=	yes
 
-#MAKEFILE=	Makefile.x11
+MAN6=		scummvm.6
 
 pre-patch:
 	@${FIND} -E ${WRKSRC} -type f -iregex ".*\.(cpp|h|txt)" \
 		-exec ${PERL} -pi -ne 's!\r\n!\n!' {} 1>/dev/null 2>&1 \;
-	@${PERL} -pi -e 's|\r\n|\n|' ${WRKSRC}/Makefile
+	@${REINPLACE_CMD} -e 's|\r\n|\n|' ${WRKSRC}/Makefile
+	@${REINPLACE_CMD} -e 's@sdl-config@sdl11-config@g' \
+		${WRKSRC}/backends/sdl/build.rules
+
+post-configure:
+	@${REINPLACE_CMD} -e 's@-lmad@@g; \
+			s@:= -g -O@+= ${CFLAGS}@' \
+		${WRKSRC}/Makefile
 
 do-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/scummvm ${PREFIX}/bin
+	@${INSTALL_MAN} ${WRKSRC}/scummvm.6 ${PREFIX}/man/man6
+
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
-.for docs in copying.txt readme.txt whatsnew.txt
+.for docs in README
 	@${INSTALL_DATA} ${WRKSRC}/${docs} ${DOCSDIR}
 .endfor
 .endif

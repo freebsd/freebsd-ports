@@ -1,5 +1,3 @@
 bin/scummvm
-%%PORTDOCS%%share/doc/scummvm/copying.txt
-%%PORTDOCS%%share/doc/scummvm/readme.txt
-%%PORTDOCS%%share/doc/scummvm/whatsnew.txt
+%%PORTDOCS%%share/doc/scummvm/README
 %%PORTDOCS%%@dirrm share/doc/scummvm
