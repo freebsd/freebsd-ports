@@ -7,6 +7,7 @@
 
 PORTNAME=	docbook-xsl
 PORTVERSION=	1.64.1
+PORTREVISION=	1
 CATEGORIES=	textproc
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	docbook
@@ -15,7 +16,7 @@ MAINTAINER=	des@freebsd.org
 COMMENT=	XSL DocBook stylesheets
 
 RUN_DEPENDS=	${XMLDIR}/docbook/4.2/catalog.xml:${PORTSDIR}/textproc/docbook-xml \
-		${XMLDIR}/sdocbook/catalog:${PORTSDIR}/textproc/sdocbook-xml
+		${XMLDIR}/sdocbook/4.1.2.5/catalog:${PORTSDIR}/textproc/sdocbook-xml
 
 XMLDIR=		${LOCALBASE}/share/xml
 INSTDIR=	share/xsl/docbook
