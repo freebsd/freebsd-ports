@@ -6,4 +6,7 @@ You'll need to configure
 from distributed samples, and create
 	/usr/local/etc/rc.d/nntpcached.sh
 to activate nntpcache.
+
+NOTE: This software is NOT free.  Be sure to read the file
+/usr/local/share/doc/nntpcache/LICENSING for details.
 ************************************************************
