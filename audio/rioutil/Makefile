@@ -5,17 +5,17 @@
 # $FreeBSD$
 #
 
-PORTNAME=       rioutil
+PORTNAME=	rioutil
 PORTVERSION=	1.0.6
-CATEGORIES=     audio
-MASTER_SITES=   ${MASTER_SITE_SOURCEFORGE}
+PORTREVISION=	1
+CATEGORIES=	audio
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A program to inferface with the Rio600, Rio800 and psa[play devices
 
-LIB_DEPENDS=	gnugetopt.1:${PORTSDIR}/devel/libgnugetopt
-
+USE_GETOPT_LONG=yes
 USE_GMAKE=	yes
 INSTALLS_SHLIB=	yes
 GNU_CONFIGURE=	yes

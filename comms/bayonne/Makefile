@@ -7,6 +7,7 @@
 
 PORTNAME=	bayonne
 PORTVERSION=	0.5.3
+PORTREVISION=   1
 CATEGORIES=	comms
 MASTER_SITES=	${MASTER_SITE_GNU} \
 		ftp://www.voxilla.org/pub/bayonne/
@@ -19,9 +20,9 @@ BROKEN=		"Port is outdated and there is no known working Hardware for FreeBSD > 
 
 LIB_DEPENDS=	ccgnu2-1.0.0:${PORTSDIR}/devel/commoncpp \
 		ccscript-1.4.0:${PORTSDIR}/lang/ccscript \
-		ccaudio.0:${PORTSDIR}/audio/ccaudio \
-		gnugetopt.1:${PORTSDIR}/devel/libgnugetopt
+		ccaudio.0:${PORTSDIR}/audio/ccaudio
 
+USE_GETOPT_LONG=yes
 USE_GMAKE=	yes
 USE_LIBTOOL=	yes
 USE_AUTOCONF=	yes

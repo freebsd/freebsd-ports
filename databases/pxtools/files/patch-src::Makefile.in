@@ -1,14 +1,5 @@
 --- src/Makefile.in.orig	Tue Jul 16 07:12:57 2002
 +++ src/Makefile.in	Sat Sep 28 20:02:35 2002
-@@ -140,7 +140,7 @@
- DEFAULT_INCLUDES =  -I. -I$(srcdir) -I$(top_builddir)
- CPPFLAGS = @CPPFLAGS@
- LDFLAGS = @LDFLAGS@
--LIBS = @LIBS@
-+LIBS = @LIBS@ -lgnugetopt
- depcomp = $(SHELL) $(top_srcdir)/depcomp
- @AMDEP_TRUE@DEP_FILES = $(DEPDIR)/pxconvert.Po $(DEPDIR)/pxcsvdump.Po \
- @AMDEP_TRUE@	$(DEPDIR)/pxinfo.Po $(DEPDIR)/pxparse.Po \
 @@ -195,7 +195,7 @@
  	$(LINK) $(pxcsvdump_LDFLAGS) $(pxcsvdump_OBJECTS) $(pxcsvdump_LDADD) $(LIBS)
  pxinfo$(EXEEXT): $(pxinfo_OBJECTS) $(pxinfo_DEPENDENCIES) 

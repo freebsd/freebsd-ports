@@ -7,6 +7,7 @@
 
 PORTNAME=	dirmngr
 PORTVERSION=	0.4.5
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	${MASTER_SITE_GNUPG} \
 		http://tigress.com/lofi/:lofi/
@@ -19,9 +20,9 @@ COMMENT=	A client for managing and downloading certificate revocation lists
 
 LIB_DEPENDS=	db2.0:${PORTSDIR}/databases/db2 \
 		gcrypt.6:${PORTSDIR}/security/libgcrypt \
-		gnugetopt.1:${PORTSDIR}/devel/libgnugetopt \
 		ksba.7:${PORTSDIR}/security/libksba
 
+USE_GETOPT_LONG=yes
 USE_AUTOMAKE_VER=	15
 USE_LIBTOOL=	yes
 USE_GMAKE=	yes

@@ -1,0 +1,11 @@
+--- barcode-0.98/Makefile.in.bak	Tue Aug 27 12:23:41 2002
++++ barcode-0.98/Makefile.in	Mon Jul  7 06:37:34 2003
+@@ -3,7 +3,7 @@
+ #
+ 
+ CC = @CC@
+-CFLAGS = @CFLAGS@ @DEFS@ @NO_GETOPT@ @NO_LIBPAPER@ @NO_STRERROR@
++CFLAGS = @CPPFLAGS@ @CFLAGS@ @DEFS@ @NO_GETOPT@ @NO_LIBPAPER@ @NO_STRERROR@
+ RANLIB = @RANLIB@
+ 
+ INSTALL = @INSTALL@

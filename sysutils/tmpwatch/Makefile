@@ -7,6 +7,7 @@
 
 PORTNAME=	tmpwatch
 PORTVERSION=	2.8.1
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	${MASTER_SITE_REDHAT_LINUX}
 MASTER_SITE_SUBDIR=	updates/7.2/en/os/SRPMS
@@ -16,11 +17,11 @@ MAINTAINER=	markp@FreeBSD.org
 COMMENT=	A utility for removing files based on when they were last accessed
 
 BUILD_DEPENDS=	rpm2cpio:${PORTSDIR}/archivers/rpm2cpio
-LIB_DEPENDS=	gnugetopt.1:${PORTSDIR}/devel/libgnugetopt
+
+USE_GETOPT_LONG=yes
 
 CPIO?=		/usr/bin/cpio
-CFLAGS+=	-I${LOCALBASE}/include -DVERSION=\"${PORTVERSION}\"
-LDFLAGS+=	-L${LOCALBASE}/lib -lgnugetopt
+CFLAGS+=	${CPPFLAGS} -DVERSION=\"${PORTVERSION}\"
 MAN8=		tmpwatch.8
 
 do-extract:

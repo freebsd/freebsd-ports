@@ -11,14 +11,14 @@
 -DESTDIR = /usr/X11R6/bin
 -ICONDIR = /usr/share/icons/wmappl
 +CFLAGS += -DICONPATH=\"${DATADIR}\"
-+INCDIR  = -I${X11BASE}/include/X11 -I${X11BASE}/include -I${LOCALBASE}/include
-+LIBDIR  = -L${X11BASE}/lib -L${LOCALBASE}/lib
++INCDIR  = -I${X11BASE}/include/X11 -I${X11BASE}/include ${CPPFLAGS}
++LIBDIR  = -L${X11BASE}/lib
 +DESTDIR = ${X11BASE}/bin
 +ICONDIR = ${DATADIR}
  
  # for linux
 -LIBS   = -lXpm -lX11 -lXext
-+LIBS   = -lXpm -lX11 -lXext -lgnugetopt
++LIBS   = -lXpm -lX11 -lXext
  # for Solaris
  # LIBS   = -lXpm -lX11 -lXext -lsocket
  
@@ -27,7 +27,7 @@
  
  $(TARGET):	$(OBJS) 
 -	$(CC) $(CFLAGS) -o $(TARGET) $^ $(INCDIR) $(LIBDIR) $(LIBS)
-+	$(CC) $(CFLAGS) -o $(TARGET) $(OBJS) $(INCDIR) $(LIBDIR) $(LIBS)
++	$(CC) $(CFLAGS) -o $(TARGET) $(OBJS) $(INCDIR) $(LDFLAGS) $(LIBDIR) $(LIBS)
  
  clean:
  	for i in $(OBJS) ; do \

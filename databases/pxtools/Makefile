@@ -7,19 +7,21 @@
 
 PORTNAME=	pxtools
 PORTVERSION=	0.0.19
+PORTREVISION=	1
 CATEGORIES=	databases
 MASTER_SITES=	http://jan.kneschke.de/projects/pxtools/download/
 
 MAINTAINER=	jedgar@FreeBSD.org
 COMMENT=	Collection of tools to work with Paradox databases
 
-LIB_DEPENDS=	gnugetopt.1:${PORTSDIR}/devel/libgnugetopt \
-		intl.4:${PORTSDIR}/devel/gettext
+LIB_DEPENDS=	intl.4:${PORTSDIR}/devel/gettext
 
+USE_GETOPT_LONG=yes
 GNU_CONFIGURE=	yes
 USE_REINPLACE=	yes
-CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include" \
-		LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib"
+CPPFLAGS=	-I${LOCALBASE}/include
+LDFLAGS=	-L${LOCALBASE}/lib
+CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|-O2|${CFLAGS}|' \

@@ -7,16 +7,17 @@
 
 PORTNAME=	glabels
 PORTVERSION=	1.91.1
+PORTREVISION=	1
 CATEGORIES=	deskutils
 MASTER_SITES=	http://snaught.com/glabels/source/
 
 MAINTAINER=	martin.klaffenboeck@gmx.at
 COMMENT=	A programm to create labels and business cards
 
-LIB_DEPENDS=	gnugetopt.1:${PORTSDIR}/devel/libgnugetopt \
-		gnomeprintui-2.0:${PORTSDIR}/x11-toolkits/libgnomeprintui20 \
+LIB_DEPENDS=	gnomeprintui-2.0:${PORTSDIR}/x11-toolkits/libgnomeprintui20 \
 		gnomeui-2.200:${PORTSDIR}/x11-toolkits/libgnomeui
 
+USE_GETOPT_LONG=yes
 USE_GNOME=	gnomehack gnomeprefix gnomelibs
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes

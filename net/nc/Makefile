@@ -7,6 +7,7 @@
 
 PORTNAME=	nc
 PORTVERSION=	1.0.1
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_SUNSITE}
 MASTER_SITE_SUBDIR=	utils/file
@@ -15,11 +16,8 @@ DISTNAME=	ncat-${PORTVERSION}
 MAINTAINER=	markp@FreeBSD.org
 COMMENT=	Network aware cat
 
-LIB_DEPENDS=	gnugetopt.1:${PORTSDIR}/devel/libgnugetopt
-
+USE_GETOPT_LONG=yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include" \
-		LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib"
 MAN1=		ncat.1
 
 .include <bsd.port.mk>

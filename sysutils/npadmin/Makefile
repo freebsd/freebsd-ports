@@ -7,6 +7,7 @@
 
 PORTNAME=	npadmin
 PORTVERSION=	0.8.7
+PORTREVISION=	1
 CATEGORIES=	sysutils print
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -14,14 +15,11 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	dom@happygiraffe.net
 COMMENT=	An SNMP based command line network printer management tool
 
-LIB_DEPENDS=	gnugetopt.1:${PORTSDIR}/devel/libgnugetopt
-
 MAN1=		npadmin.1
 
+USE_GETOPT_LONG=yes
 USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
-
-CONFIGURE_ENV=	LIBS=-lgnugetopt LDFLAGS=-L${LOCALBASE}/lib CPPFLAGS=-I${LOCALBASE}/include
 
 pre-patch:
 	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|g' ${WRKSRC}/configure

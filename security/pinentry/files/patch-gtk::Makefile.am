@@ -5,7 +5,7 @@
  	-I$(top_srcdir)/secmem -I$(top_srcdir)/pinentry
  LDADD = ../pinentry/libpinentry.a ../assuan/libassuan.a ../secmem/libsecmem.a \
 -	$(LIBCAP) $(GTK_LIBS) $(libcurses)
-+	../common/libcommon.a $(LIBCAP) $(GTK_LIBS) $(libcurses) -lgnugetopt
++	../common/libcommon.a $(LIBCAP) $(GTK_LIBS) $(libcurses)
  
  pinentry_gtk_SOURCES = pinentry-gtk.c \
  	gtksecentry.c gtksecentry.h

@@ -7,6 +7,7 @@
 
 PORTNAME=	smtpmap
 PORTVERSION=	0.8
+PORTREVISION=	1
 CATEGORIES=	security mail net
 MASTER_SITES=	http://plasmahh.free-bsd.org/
 
@@ -14,11 +15,10 @@ MAINTAINER=	hubert@frbsd.org
 COMMENT=	An SMTP software identifier
 
 .if !exists(/usr/include/getopt.h)
-LIB_DEPENDS=	gnugetopt:${PORTSDIR}/devel/libgnugetopt
-MAKE_ENV=	LIBS="-L${LOCALBASE}/lib -lgnugetopt" \
-		INC=-I${LOCALBASE}/include
+MAKE_ENV=	LIBS="${LDFLAGS}" INC="${CPPFLAGS}"
 .endif
 
+USE_GETOPT_LONG=yes
 USE_BZIP2=	yes
 USE_REINPLACE=	yes
 USE_GMAKE=	yes

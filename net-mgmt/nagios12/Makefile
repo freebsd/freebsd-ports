@@ -7,6 +7,7 @@
 
 PORTNAME=	nagios
 PORTVERSION=	1.1
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=nagios
@@ -15,17 +16,20 @@ MAINTAINER=	blaz@si.FreeBSD.org
 COMMENT=	Extremely powerful network monitoring system
 
 .if defined(WITH_GD2)
-LIB_DEPENDS=    gd.4:${PORTSDIR}/graphics/gd2
+LIB_DEPENDS=	gd.4:${PORTSDIR}/graphics/gd2
 .else
 LIB_DEPENDS=	gd1.2:${PORTSDIR}/graphics/gd
 .endif
-LIB_DEPENDS+=	gnugetopt.1:${PORTSDIR}/devel/libgnugetopt
 RUN_DEPENDS=	${LOCALBASE}/libexec/nagios/check_nagios:${PORTSDIR}/net/nagios-plugins
 
+USE_GETOPT_LONG=yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CPPFLAGS="${INCGD} -I${LOCALBASE}/include" \
-		CFLAGS="${CFLAGS} ${INCGD} -I${LOCALBASE}/include" \
-		LIBS="-L${LOCALBASE}/lib ${LIBGD} -lgnugetopt"
+
+CPPFLAGS=	${INCGD} -I${LOCALBASE}/include
+CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" \
+		LDFLAGS="${LDFLAGS}" \
+		CFLAGS="${CFLAGS} ${INCGD}" \
+		LIBS="-L${LOCALBASE}/lib ${LIBGD}"
 CONFIGURE_ARGS=	--with-command-user=nagios \
 		--with-command-grp=www \
 		--with-nagios-user=nagios \

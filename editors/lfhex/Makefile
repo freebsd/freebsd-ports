@@ -8,7 +8,7 @@
 
 PORTNAME=	lfhex
 PORTVERSION=	0.3.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	editors
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	arved
@@ -16,8 +16,7 @@ MASTER_SITE_SUBDIR=	arved
 MAINTAINER=	ports@freebsd.org
 COMMENT=	"Large file hex editor"
 
-LIB_DEPENDS=	gnugetopt:${PORTSDIR}/devel/libgnugetopt
-
+USE_GETOPT_LONG=yes
 USE_REINPLACE=	yes
 USE_QT_VER=	3
 GNU_CONFIGURE=	yes
@@ -30,6 +29,6 @@ post-patch:
 		s,%%X11BASE%%,${X11BASE},g" ${WRKSRC}/src/Makefile.in
 
 post-configure:
-	${REINPLACE_CMD} -e "s,LFLAGS =,LFLAGS = ${PTHREAD_LIBS}," ${WRKSRC}/src/Makefile
+	${REINPLACE_CMD} -e "s,LFLAGS =,LFLAGS = ${PTHREAD_LIBS} ${LDFLAGS}," ${WRKSRC}/src/Makefile
 
 .include <bsd.port.mk>

@@ -7,6 +7,6 @@
 -	../assuan/libassuan.a ../secmem/libsecmem.a \
 -	$(LIBCAP) $(LIBCURSES) $(LIBICONV)
 +	../assuan/libassuan.a ../secmem/libsecmem.a ../common/libcommon.a \
-+	$(LIBCAP) $(LIBCURSES) $(LIBICONV) -lgnugetopt
++	$(LIBCAP) $(LIBCURSES) $(LIBICONV)
  
  pinentry_curses_SOURCES = pinentry-curses.c

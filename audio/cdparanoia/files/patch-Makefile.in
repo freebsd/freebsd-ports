@@ -1,17 +1,11 @@
-Index: Makefile.in
-===================================================================
-RCS file: /home/cvs/cdparanoia/Makefile.in,v
-retrieving revision 1.1.1.1
-retrieving revision 1.7
-diff -u -r1.1.1.1 -r1.7
---- Makefile.in	2003/01/05 09:46:26	1.1.1.1
-+++ Makefile.in	2003/02/13 02:41:38	1.7
+--- Makefile.in.orig	Wed Mar 28 07:46:58 2001
++++ Makefile.in	Mon Jul  7 06:24:17 2003
 @@ -8,7 +8,7 @@
  srcdir=@srcdir@
  
  @SET_MAKE@
 -FLAGS=@TYPESIZES@ @CFLAGS@
-+FLAGS=@TYPESIZES@ @CFLAGS@ -I./interface
++FLAGS=@TYPESIZES@ @CPPFLAGS@ @CFLAGS@ -I./interface
  OPT=@OPT@ $(FLAGS)
  DEBUG=@DEBUG@ $(FLAGS)
  CC=@CC@

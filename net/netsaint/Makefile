@@ -7,7 +7,7 @@
 
 PORTNAME=	netsaint
 PORTVERSION=	0.0.7
-PORTREVISION=	2
+PORTREVISION=	3
 PORTEPOCH=	1
 CATEGORIES=	net
 MASTER_SITES=	http://netsaint.sourceforge.net/download/ \
@@ -18,15 +18,16 @@ DISTFILES=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX} netsaint-graphics.tar.gz
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Extremely powerful network monitoring system
 
-LIB_DEPENDS=	gd.2:${PORTSDIR}/graphics/gd \
-		gnugetopt.1:${PORTSDIR}/devel/libgnugetopt
+LIB_DEPENDS=	gd.2:${PORTSDIR}/graphics/gd
 RUN_DEPENDS=	${LOCALBASE}/libexec/netsaint/check_netsaint:${PORTSDIR}/net/netsaint-plugins
 
+USE_GETOPT_LONG=yes
 GNU_CONFIGURE=	yes
 USE_PERL5=	yes
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
+CPPFLAGS=	-I${LOCALBASE}/include
+CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" \
 		CFLAGS="${CFLAGS} -I${LOCALBASE}/include" \
-		LIBS="-L${LOCALBASE}/lib -lgd -lgnugetopt"
+		LIBS="-L${LOCALBASE}/lib -lgd"
 CONFIGURE_ARGS=	--with-command-user=netsaint \
 		--with-command-grp=www \
 		--with-netsaint-user=netsaint \

@@ -7,22 +7,18 @@
 
 PORTNAME=	dvorak7min
 PORTVERSION=	1.6
+PORTREVISION=	1
 CATEGORIES=	misc
 MASTER_SITES=	http://lightside.eresmas.com/
 
 MAINTAINER=	llwang@infor.org
 COMMENT=	An ncurses-based Dvorak typing tutor
 
+USE_GETOPT_LONG=yes
+
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 500041
-LIB_DEPENDS=	gnugetopt.1:${PORTSDIR}/devel/libgnugetopt
-MAKE_ARGS=	PROF="-I${LOCALBASE}/include ${CFLAGS}" \
-		LDFLAGS="-L${LOCALBASE}/lib" \
-		LIBS="-lncurses -lgnugetopt"
-.else
-MAKE_ARGS=	PROF="${CFLAGS}"
-.endif
+MAKE_ARGS=	PROF="${CPPFLAGS} ${CFLAGS}" LDFLAGS="${LDFLAGS}"
 
 pre-build:
 	@cd ${WRKSRC} ; ${MAKE} clean

@@ -7,6 +7,7 @@
 
 PORTNAME=	mp3_check
 PORTVERSION=	1.98
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	mp3check
@@ -14,6 +15,8 @@ MASTER_SITE_SUBDIR=	mp3check
 MAINTAINER=	ericb@thedeepsky.com
 COMMENT=	Verifies the integrity of mp3 audio files
 
-LIB_DEPENDS=	gnugetopt.1:${PORTSDIR}/devel/libgnugetopt
+USE_GETOPT_LONG=yes
+MAKE_ENV=	CPPFLAGS="${CPPFLAGS}" \
+		LDFLAGS="${LDFLAGS}"
 
 .include <bsd.port.mk>

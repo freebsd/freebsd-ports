@@ -1,6 +1,6 @@
 --- Makefile.orig	Tue Jan  4 22:54:58 2000
-+++ Makefile	Sat Aug 12 00:49:23 2000
-@@ -6,17 +6,18 @@
++++ Makefile	Sun Jul  6 20:15:32 2003
+@@ -6,17 +6,17 @@
  OPTS	= -DALLBYOPTS -DRAND48 -DDEBIAN
  
  # Standard items
@@ -8,12 +8,10 @@
 -CFLAGS	= -O3
 -LD	= cc
 -#LDFLAGS	= -g
--LIBS	= -lm
 +CC	?= gcc
-+CFLAGS	+= -I${LOCALBASE}/include
++CFLAGS	+= ${CPPFLAGS}
 +LD	= ${CC}
-+LDFLAGS	= -L${LOCALBASE}/lib
-+LIBS	= -lm -lgnugetopt
+ LIBS	= -lm
  INSTALL	= install -s
  INFLAGS	=
  
@@ -26,7 +24,7 @@
  
  # End configuration section
  
-@@ -27,10 +28,8 @@
+@@ -27,10 +27,8 @@
  	./pwgen 8 20
  
  install: all

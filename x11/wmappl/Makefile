@@ -7,6 +7,7 @@
 
 PORTNAME=	wmappl
 PORTVERSION=	0.6
+PORTREVISION=	1
 CATEGORIES=	x11 windowmaker
 MASTER_SITES=	http://www.upl.cs.wisc.edu/~charkins/wmappl/
 .ifndef(NOICONS)
@@ -17,11 +18,12 @@ EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 MAINTAINER=	od@iclub.nsu.ru
 COMMENT=	An application launcher dockapp similar to wmbutton
 
-LIB_DEPENDS=	gnugetopt.1:${PORTSDIR}/devel/libgnugetopt
-
+USE_GETOPT_LONG=yes
 USE_X_PREFIX=	yes
 USE_XPM=	yes
-MAKE_ENV=	DATADIR="${DATADIR}"
+MAKE_ENV=	DATADIR="${DATADIR}" \
+		CPPFLAGS="${CPPFLAGS}" \
+		LDFLAGS="${LDFLAGS}"
 ICONSDIST=	16x16xpms.tar.gz icons_16x16.tar.gz smallicons.tar.gz
 .ifndef(NOICONS)
 PLIST_SUB=	ICONS=""
@@ -49,7 +51,7 @@ post-install:
 	@${ECHO_CMD} ""
 	@${ECHO_CMD} "===>   Installing icons to ${DATADIR} directory"
 	@${MKDIR} ${DATADIR}
-	@${INSTALL_DATA} ${WRKSRC}/icons/*.xpm ${DATADIR}
+	@(cd ${WRKSRC}/icons; ${INSTALL_DATA} *.xpm ${DATADIR})
 .endif
 .ifndef(NOPORTDOCS)
 	@${ECHO_CMD} "===>   Installing README as ${DOCSDIR}/README"

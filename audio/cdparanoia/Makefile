@@ -7,7 +7,7 @@
 
 PORTNAME=	cdparanoia
 PORTVERSION=	3.9.8
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	audio sysutils
 MASTER_SITES=	http://www.xiph.org/paranoia/download/
 DISTNAME=	${PORTNAME}-${PORTVERSION:C/^3\./III-alpha/}
@@ -16,12 +16,7 @@ EXTRACT_SUFX=	.src.tgz
 MAINTAINER=	corecode@corecode.ath.cx
 COMMENT=	A CDDA extraction tool (also known as ripper)
 
-.if !exists(/usr/include/getopt.h)
-CONFIGURE_ENV=	CFLAGS="${CFLAGS} -I${LOCALBASE}/include" \
-		LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib -lgnugetopt"
-LIB_DEPENDS=	gnugetopt.1:${PORTSDIR}/devel/libgnugetopt
-.endif
-
+USE_GETOPT_LONG=yes
 INSTALLS_SHLIB=	yes
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes

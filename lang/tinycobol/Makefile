@@ -7,6 +7,7 @@
 
 PORTNAME=	tinycobol
 PORTVERSION=	0.59
+PORTREVISION=	1
 CATEGORIES=	lang
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	tiny-cobol
@@ -14,19 +15,20 @@ MASTER_SITE_SUBDIR=	tiny-cobol
 MAINTAINER=	patrick@freebsd.org
 COMMENT=	A tiny COBOL compiler for IA32 platforms
 
-LIB_DEPENDS=	db2.0:${PORTSDIR}/databases/db2 \
-		gnugetopt.1:${PORTSDIR}/devel/libgnugetopt
+LIB_DEPENDS=	db2.0:${PORTSDIR}/databases/db2
 
 ONLY_FOR_ARCHS=	i386
+USE_GETOPT_LONG=yes
 HAS_CONFIGURE=	yes
 USE_BISON=	yes
 USE_GMAKE=	yes
 
 CONFIGURE_ARGS=	"--with-readline"
-CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib -lgnugetopt ${LDFLAGS}" \
-		CPPFLAGS="-I${LOCALBASE}/include" 
+CPPFLAGS=	-I${LOCALBASE}/include
+LDFLAGS=	-L${LOCALBASE}/lib
+CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 
-MAN1=        htcobol.1 htcobf2f.1 htcobolpp.1
+MAN1=		htcobol.1 htcobf2f.1 htcobolpp.1
 
 pre-install:
 

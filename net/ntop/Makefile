@@ -7,7 +7,7 @@
 
 PORTNAME=	ntop
 PORTVERSION=	2.2
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -17,8 +17,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Network monitoring tool with command line and web interfaces
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/libgdc.a:${PORTSDIR}/graphics/gdchart
-LIB_DEPENDS=	gnugetopt:${PORTSDIR}/devel/libgnugetopt \
-		gdbm:${PORTSDIR}/databases/gdbm
+LIB_DEPENDS=	gdbm:${PORTSDIR}/databases/gdbm
 
 .if !defined(BATCH) && !defined(PACKAGE_BUILDING)
 IS_INTERACTIVE=	yes
@@ -27,13 +26,14 @@ IS_INTERACTIVE=	yes
 DBDIR?=		/var/db
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/${PORTNAME}
+USE_GETOPT_LONG=yes
 USE_GMAKE=	yes
 USE_REINPLACE=	yes
 USE_OPENSSL=	yes
 USE_LIBTOOL=	yes
 INSTALLS_SHLIB=	yes
 PLIST_SUB+=	DBDIR=${DBDIR}
-CONFIGURE_ENV=	LIBS="-lcrypto -L${LOCALBASE}/lib -lgnugetopt"
+CONFIGURE_ENV=	LIBS="-lcrypto -L${LOCALBASE}/lib"
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS=	--localstatedir=${DBDIR} \
 		--with-ossl-root=${OPENSSLBASE} \

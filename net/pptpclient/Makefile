@@ -7,6 +7,7 @@
 
 PORTNAME=		pptpclient
 PORTVERSION=		1.1.0
+PORTREVISION=		1
 CATEGORIES=		net
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	pptpclient
@@ -16,12 +17,15 @@ DISTFILES=		pptp-linux-1.1.0-1.tar.gz
 MAINTAINER=	thomas@cuivre.fr.eu.org
 COMMENT=	PPTP client for establishing a VPN link with an NT server
 
-LIB_DEPENDS=	gnugetopt.1:${PORTSDIR}/devel/libgnugetopt
+USE_GETOPT_LONG=yes
 
-MAKE_ARGS=	DEBUG="" \
-		INCLUDE="-I${LOCALBASE}/include" \
-		LIBS="-L${LOCALBASE}/lib -lgnugetopt" \
-		all
+.include <bsd.port.pre.mk>
+
+MAKE_ARGS=	DEBUG=""
+.if ${OSVERSION} < 500041
+MAKE_ARGS+=	INCLUDE="${CPPFLAGS}" \
+		LIBS="${LDFLAGS}"
+.endif
 
 GUNZIP_CMD=		${GZIP_CMD} ${EXTRACT_BEFORE_ARGS}
 
@@ -39,4 +43,4 @@ do-install:
 	${INSTALL_DATA} ${FILESDIR}/README ${PREFIX}/share/examples/pptpclient
 	${INSTALL_DATA} ${FILESDIR}/ppp.conf ${PREFIX}/share/examples/pptpclient
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

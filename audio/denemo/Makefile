@@ -7,6 +7,7 @@
 
 PORTNAME=	denemo
 PORTVERSION=	0.5.9
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -14,10 +15,10 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	trevor@FreeBSD.org
 COMMENT=	Graphical score editor
 
-LIB_DEPENDS=	gnugetopt.1:${PORTSDIR}/devel/libgnugetopt \
-		intl.4:${PORTSDIR}/devel/gettext \
+LIB_DEPENDS=	intl.4:${PORTSDIR}/devel/gettext \
 		xml.5:${PORTSDIR}/textproc/libxml
 
+USE_GETOPT_LONG=yes
 GNU_CONFIGURE=	yes
 PLIST=		${WRKDIR}/pkg-plist
 SHARED=		denemo.conf denemo.keymaprc english.keymaprc french.keymaprc
@@ -29,11 +30,10 @@ USE_X_PREFIX=	yes
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} >= 500113
-BROKEN=         "Does not compile"
+BROKEN=		"Does not compile"
 .endif
 
 post-configure:
-	${PERL} -pi -e "s:module12:module12 -lgnugetopt:g" ${WRKSRC}/Makefile
 	${PERL} -pi -e "s:<wait.h:<sys/wait.h:g" ${WRKSRC}/*.c
 
 pre-install:

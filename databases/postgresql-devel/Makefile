@@ -7,7 +7,7 @@
 
 PORTNAME?=	postgresql
 PORTVERSION?=	7.4.2003.06.30
-PORTREVISION?=	0
+PORTREVISION?=	1
 CATEGORIES?=	databases
 MASTER_SITES=	http://freebsd.sean.chittenden.org/ports/ \
 		http://people.freebsd.org/~seanc/ports/
@@ -38,7 +38,7 @@ CONFIGURE_ARGS=	--with-libraries=${LOCALBASE}/lib \
 		--with-docdir=${LOCALBASE}/share/doc/${PORTNAME}${PKGNAMESUFFIX}
 
 .if !defined(WITHOUT_GNUGETOPT)
-LIB_DEPENDS=	gnugetopt:${PORTSDIR}/devel/libgnugetopt
+USE_GETOPT_LONG=yes
 .endif
 
 .if !defined(WITHOUT_GETTEXT)

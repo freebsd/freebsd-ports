@@ -7,6 +7,7 @@
 
 PORTNAME=	stamp
 PORTVERSION=	2.0.8
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	stamp
@@ -14,12 +15,13 @@ MASTER_SITE_SUBDIR=	stamp
 MAINTAINER=	billf@FreeBSD.org
 COMMENT=	Adds a graphical, configurable timestamp to a grayscale image
 
-LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
-		gnugetopt.1:${PORTSDIR}/devel/libgnugetopt
+LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg
 
+USE_GETOPT_LONG=yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CPPFLAGS="${CFLAGS} -I${LOCALBASE}/include" \
-		LIBS="-L${LOCALBASE}/lib -lgnugetopt"
+CPPFLAGS=	-I${LOCALBASE}/include
+CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}" \
+		LIBS="-L${LOCALBASE}/lib"
 USE_GMAKE=	unfortunatly
 
 .include <bsd.port.mk>

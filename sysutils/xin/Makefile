@@ -7,6 +7,7 @@
 
 PORTNAME=	xin
 PORTVERSION=	1.0.0
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	${MASTER_SITE_SUNSITE}
 MASTER_SITE_SUBDIR=	utils/file
@@ -14,10 +15,8 @@ MASTER_SITE_SUBDIR=	utils/file
 MAINTAINER=	markp@FreeBSD.org
 COMMENT=	Splits standard input and pipes into a command
 
-LIB_DEPENDS=	gnugetopt.1:${PORTSDIR}/devel/libgnugetopt
-
+USE_GETOPT_LONG=yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include" LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib"
 MAN1=		xin.1
 
 .include <bsd.port.mk>

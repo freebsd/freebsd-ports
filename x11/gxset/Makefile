@@ -7,6 +7,7 @@
 
 PORTNAME=	gxset
 PORTVERSION=	0.3
+PORTREVISION=	1
 CATEGORIES=	x11
 MASTER_SITES=	ftp://ftp.seindal.dk/pub/rene/ \
 		${MASTER_SITE_LOCAL}
@@ -15,8 +16,7 @@ MASTER_SITE_SUBDIR=	petef
 MAINTAINER=	bms@spc.org
 COMMENT=	GTK frontend for xset(1)
 
-LIB_DEPENDS=	gnugetopt.1:${PORTSDIR}/devel/libgnugetopt
-
+USE_GETOPT_LONG=yes
 USE_X_PREFIX=	yes
 USE_GNOME=	gtk12
 USE_XPM=	yes

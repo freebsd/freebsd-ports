@@ -7,6 +7,7 @@
 
 PORTNAME=	commoncpp2
 PORTVERSION=	1.0.8
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_GNU}
@@ -16,9 +17,10 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GNU project portable class framework for C++
 
 BUILD_DEPENDS=	doxygen:${PORTSDIR}/devel/doxygen
-LIB_DEPENDS=	gnugetopt.1:${PORTSDIR}/devel/libgnugetopt \
-		xml2.5:${PORTSDIR}/textproc/libxml2
+LIB_DEPENDS=	xml2.5:${PORTSDIR}/textproc/libxml2
 
+
+USE_GETOPT_LONG=yes
 USE_GMAKE=	yes
 USE_LIBTOOL=	yes
 USE_AUTOCONF=	yes

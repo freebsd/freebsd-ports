@@ -7,6 +7,7 @@
 
 PORTNAME=	transcode
 PORTVERSION=	0.6.8
+PORTREVISION=	1
 CATEGORIES=	multimedia
 MASTER_SITES=	http://www.zebra.fh-weingarten.de/~transcode/pre/
 
@@ -14,15 +15,16 @@ MAINTAINER=	hendrik@scholz.net
 COMMENT=	A text-console utility for video stream processing
 
 LIB_DEPENDS=	dvdread.3:${PORTSDIR}/multimedia/libdvdread \
-		gnugetopt.1:${PORTSDIR}/devel/libgnugetopt \
 		jpeg.9:${PORTSDIR}/graphics/jpeg
 
+USE_GETOPT_LONG=yes
 USE_XLIB=	yes
 USE_GNOME=	gtk12
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CFLAGS="-I${X11BASE}/include -I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib -lgnugetopt" \
+LDFLAGS=	-L${LOCALBASE}/lib -L${X11BASE}/lib
+CPPFLAGS=	-I${X11BASE}/include -I${LOCALBASE}/include
+CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}" \
 		SDL_CONFIG="${LOCALBASE}/bin/sdl11-config"
 CONFIGURE_ARGS=	--program-transform-name=""
 USE_REINPLACE=	yes
@@ -201,7 +203,7 @@ PLIST_SUB+=	WITH_LAME="@comment "
 
 .if defined(WITH_OGG)
 LIB_DEPENDS+=	ogg.4:${PORTSDIR}/audio/libogg
-CONFIGURE_ARGS+=  	--with-ogg=yes
+CONFIGURE_ARGS+=	--with-ogg=yes
 PLIST_SUB+=	WITH_OGG=""
 .else
 PLIST_SUB+=	WITH_OGG="@comment "
@@ -229,7 +231,7 @@ PLIST_SUB+=	WITH_SUBRIP="@comment "
 
 .if defined(WITH_DIVX5)
 BUILD_DEPENDS+=	${LINUXBASE}/usr/lib/libdivxdecore.so:${PORTSDIR}/multimedia/linux-divx4linux
-CONFIGURE_ENV+= CFLAGS="-I${LINUXBASE}/usr/include/divx" CPPFLAGS="-I${LINUXBASE}/usr/include/divx"
+CONFIGURE_ENV+=	CFLAGS="-I${LINUXBASE}/usr/include/divx" CPPFLAGS="-I${LINUXBASE}/usr/include/divx"
 .else
 .endif
 

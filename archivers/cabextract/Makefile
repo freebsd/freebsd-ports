@@ -7,17 +7,15 @@
 
 PORTNAME=	cabextract
 PORTVERSION=	0.6
+PORTREVISION=	1
 CATEGORIES=	archivers
 MASTER_SITES=	http://www.kyz.uklinux.net/downloads/
 
 MAINTAINER=	sobomax@FreeBSD.org
 COMMENT=	A program to extract Microsoft cabinet (.CAB) files
 
-LIB_DEPENDS=	gnugetopt.1:${PORTSDIR}/devel/libgnugetopt
-
+USE_GETOPT_LONG=yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib -lgnugetopt"
 
 MAN1=		cabextract.1
 
