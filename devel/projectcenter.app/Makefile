@@ -14,6 +14,7 @@ DISTNAME=	ProjectCenter-${PORTVERSION}
 MAINTAINER=	dinoex@FreeBSD.org
 
 BUILD_DEPENDS=	${BACKBUNDLEDIR}/libgnustep-back:${PORTSDIR}/x11-toolkits/gnustep-back
+BUILD_DEPENDS+=	${LOCALBASE}/lib/libcallback.a:${PORTSDIR}/devel/ffcall
 RUN_DEPENDS=	${BACKBUNDLEDIR}/libgnustep-back:${PORTSDIR}/x11-toolkits/gnustep-back
 
 PREFIX=		${LOCALBASE}/GNUstep
