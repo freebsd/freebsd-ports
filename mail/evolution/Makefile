@@ -19,7 +19,7 @@ MAINTAINER=	gnome@FreeBSD.org
 
 LIB_DEPENDS=	bonobo_conf.0:${PORTSDIR}/devel/bonobo-conf \
 		nss3.1:${PORTSDIR}/security/nss
-.if defined(WITH_LDAP}
+.if defined(WITH_LDAP)
 LIB_DEPENDS+=	ldap.2:${PORTSDIR}/net/openldap2
 .endif
 RUN_DEPENDS=	gnome-spell-component:${PORTSDIR}/textproc/gnomespell
