@@ -1,0 +1,34 @@
+#!/bin/sh
+# dserver configuration shell script
+# usage: /bin/sh configure 
+
+if [ X"${BATCH}" != X"yes" ] ; then
+/usr/bin/dialog --title "dserver port configuration" --radiolist \
+"How do you want to run  dserver, standalone or run by inetd?" -1 -1 2 \
+"standalone" "standalone" ON \
+"inetd" "inetd" OFF 2>/tmp/dserver.ports.selection
+
+if [ X`cat /tmp/dserver.ports.selection` = "Xinetd" ]
+	then
+	 echo 'Inetd mode is selected'
+	 cp ${FILESDIR}/setup.sh.inetd		${WRKSRC}/setup.sh.template
+	 cp ${FILESDIR}/deinstall.sh.inetd	${WRKSRC}/deinstall.sh.template
+	 cp ${WRKSRC}/server2.2-pl2/Makefile	${WRKSRC}/server2.2-pl2/Makefile.tmp
+	 cat ${WRKSRC}/server2.2-pl2/Makefile.tmp | sed -e "s/-DSTANDALONE//g" \
+		> ${WRKSRC}/server2.2-pl2/Makefile
+else
+	 echo 'Standalone mode is selected'
+	 cp ${FILESDIR}/setup.sh.standalone	${WRKSRC}/setup.sh.template
+	 cp ${FILESDIR}/deinstall.sh.standalone	${WRKSRC}/deinstall.sh.template
+	 
+fi
+
+rm -f /tmp/dserver.ports.selection
+
+else
+
+ echo 'Standalone mode (default) is selected'
+ cp ${FILESDIR}/setup.sh.standalone	${WRKSRC}/setup.sh.template
+ cp ${FILESDIR}/deinstall.sh.standalone	${WRKSRC}/deinstall.sh.template
+
+fi

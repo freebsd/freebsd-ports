@@ -1,0 +1,412 @@
+patches for server2.2-pl2
+--- server2.2-pl2/daemon.c.orig	Sat Aug 10 02:10:32 1996
++++ server2.2-pl2/daemon.c	Tue Jan 28 08:22:42 1997
+@@ -13,6 +13,11 @@
+ #include <sys/time.h>
+ #include <ctype.h>
+ 
++#ifdef __FreeBSD__
++#include <stdlib.h>
++#include <string.h>
++#endif
++
+ #ifdef linux
+ #include <string.h>
+ #include <stdlib.h>
+@@ -34,10 +39,11 @@
+ #include "ndtp.h"
+ #include "misc.h"
+ 
+-
++#ifndef __FreeBSD__
+ #ifdef DEBUG
+ extern int debug;
+ #endif
++#endif
+ 
+ ENV env[MAXUSER];
+ 
+@@ -104,8 +110,11 @@
+ #endif
+ 		exit(1);
+ 	}
+-
++#ifdef __FreeBSD__
++	if( bind(ls, (struct sockaddr *)&myaddr_in, sizeof(struct sockaddr_in)) == -1)  {
++#else
+ 	if( bind(ls, &myaddr_in, sizeof(struct sockaddr_in)) == -1)  {
++#endif
+ #ifdef SYSLOG
+ 		syslog(LOG_ERR,"Unable to bind address /iserver_init\n");
+ #endif
+--- server2.2-pl2/lookup.c.orig	Sat Aug 10 02:10:32 1996
++++ server2.2-pl2/lookup.c	Tue Jan 28 08:22:42 1997
+@@ -501,6 +501,54 @@
+ 	else return q+6;
+ }
+ 
++#ifdef HALF
++reg_jisstrnsub_(s,t,r,n,CODE)
++unsigned char *s, *t;
++int r,n;
++int CODE;
++{
++	unsigned int ss,tt;
++	if (CODE == FULL) {
++	  for(; ; s+=2,t+=2,n-=2) {
++	    ss = (*s&0x7f)<<8|*(s+1)&0x7f;
++	    tt = (*t&0x7f)<<8|*(t+1)&0x7f;
++	    if (n <= 0)  tt = 0; /* string terminate 95.2.8 by T.Motoda */
++	    
++		if(r==SHORT && (ss=='*' || ss=='?')) {
++			return 0;
++		}
++		if(r==WHOLE && (ss=='*')) {
++			return 0;
++		}
++		if(!ss || !tt) break;
++		if(r==WHOLE && (ss=='?')) {
++			continue;
++		}
++		if(ss!=tt) break;
++	  }
++	} else {
++	  for(; ; s++,t++,n--) {
++	    ss = (*s);
++	    tt = (*t);
++	    if (n <= 0)  tt = 0; /* string terminate 95.2.8 by T.Motoda */
++	    
++		if(r==SHORT && (ss=='*' || ss=='?')) {
++			return 0;
++		}
++		if(r==WHOLE && (ss=='*')) {
++			return 0;
++		}
++		if(!ss || !tt) break;
++		if(r==WHOLE && (ss=='?')) {
++			continue;
++		}
++		if(ss!=tt) break;
++	  }
++	}
++	return ss-tt;
++}
++#endif
++
+ findentry_int(key,realkey,frm,env_p)
+ unsigned char *key,*realkey;
+ ENV *env_p;
+@@ -509,6 +557,9 @@
+ 	unsigned char frame[FRAMESIZE+2];
+ 	static char msg[32];
+ 	Dict *dict;
++#ifdef HALF
++	int CODE=dict_set[env_p->dict_num].code; /* FULL or HALF */
++#endif
+ 
+ 	dict=env_p->dict;
+ 
+@@ -542,12 +593,21 @@
+ 				putnstr(q,s);
+ 				printf("\n");
+ #endif
++#ifdef HALF
++				if(reg_jisstrnsub_(key,q,SHORT,s,CODE)<=0) {
++					findentry_int(key,realkey,FOURBYTEUINT(q+s),env_p);
++				}
++				if(reg_jisstrnsub_(key,q,SHORT,s,CODE)<0) {
++					return;
++				}
++#else
+ 				if(reg_jisstrnsub(key,q,SHORT,s)<=0) {
+ 					findentry_int(key,realkey,FOURBYTEUINT(q+s),env_p);
+ 				}
+ 				if(reg_jisstrnsub(key,q,SHORT,s)<0) {
+ 					return;
+ 				}
++#endif
+ 			}
+ 		}
+ 		else if(frame[1]==0) {
+@@ -625,7 +685,11 @@
+ 						putnstr(q,s);
+ #endif
+ 						if(!match) {
++#ifdef HALF
++							match=!reg_jisstrnsub_(realkey,q,WHOLE,s,CODE);
++#else
+ 							match=!reg_jisstrnsub(realkey,q,WHOLE,s);
++#endif
+ 						}
+ 						q+=s;
+ #ifdef DEBUG
+@@ -644,7 +708,11 @@
+ 					putnstr(q,s);
+ #endif
+ 					if(!match) {
++#ifdef HALF
++						match=!reg_jisstrnsub_(realkey,q,WHOLE,s,CODE);
++#else
+ 						match=!reg_jisstrnsub(realkey,q,WHOLE,s);
++#endif
+ 					}
+ #ifdef DEBUG
+ 					putchar('\n');
+--- server2.2-pl2/Makefile.orig	Sat Aug 10 02:12:05 1996
++++ server2.2-pl2/Makefile	Tue Jan 28 08:22:43 1997
+@@ -2,33 +2,39 @@
+ #CC=cc
+ CC=gcc
+ 
+-DSERVERTOPDIR=/usr/local/etc/dserverdir
++DSERVERTOPDIR=${PREFIX}/lib/dserver
+ #DSERVERTOPDIR=/nfs/home40/usui/dserver/server2.2-current/table
+-DICTROOT=/usr/local/dict
++DICTROOT=${PREFIX}/share/dict
+ ACCESSFILE=${DSERVERTOPDIR}/dserver_access
+ 
+-BINDIR=/usr/local/lib
++BINDIR=${PREFIX}/lib/dserver
++DOCDIR=${DSERVERTOPDIR}/doc
++LISPLIB=${PREFIX}/lib/mule/site-lisp
+ #LISPLIB=/usr/local/lib/Nemacs/lisp #usui
+ 
+ DEFS=-D'ACCESSFILE="$(ACCESSFILE)"' \
+--D'DSERVERTOPDIR="$(DSERVERTOPDIR)"'
++-D'DSERVERTOPDIR="$(DSERVERTOPDIR)"' -DHALF
+ 
+ # define AUTH for auth
+ # define DICLOOKUPMULE for mule
+-OFLAG=
+-CFLAGS= $(OFLAG) -DSTANDALONE $(DEFS) -DDEBUG -DSYSLOG
+-CFLAGS=-Dsparc $(OFLAG) -DSYSLOG -DSTANDALONE $(DEFS)
++OFLAG= -O -m486
++#CFLAGS= $(OFLAG) -DSTANDALONE $(DEFS) -DDEBUG -DSYSLOG
++#CFLAGS=-Dsparc $(OFLAG) -DSYSLOG -DSTANDALONE $(DEFS)
+ #CFLAGS=-Dsparc $(OFLAG) -DSYSLOG -DAUTH -DDICLOOKUPMULE -DSTANDALONE $(DEFS)
+-CFLAGS=-Dsparc $(OFLAG) -DSYSLOG -DSTANDALONE $(DEFS) -DDEBUG
++#CFLAGS=-Dsparc $(OFLAG) -DSYSLOG -DSTANDALONE $(DEFS) -DDEBUG
++CFLAGS= $(OFRAG) -DSTANDALONE -DSYSLOG $(DEFS)
+ 
+ #for solaris
+ #CFLAGS=-Dsolaris -Dsparc $(OFLAG) -DSYSLOG -DSTANDALONE $(DEFS)
+ #DFLAGS =-lsocket -lnsl -R/usr/ucblib -L/usr/ucblib -lucb
+ 
+-all: dserver
++all: dserver compress/makedic
+ dserver: $(OBJ)
+ 	$(CC) $(CFLAGS) -o dserver $(OBJ)
+ 
++compress/makedic:
++	(cd compress ; ${MAKE} all)
++
+ #dserver: $(OBJ)
+ #	$(CC) $(CFLAGS) -o dserver $(OBJ) $(DFLAGS)
+ 
+@@ -39,4 +45,12 @@
+ 	lint -Dsparc -DSTANDALONE -DSYSLOG $(DEFS) *.c
+ 
+ install:
+-	install -m 755 dserver $(BINDIR)
++	if  [ ! -d ${DOCDIR} ] ; then mkdir -p ${DOCDIR} ; fi
++	if  [ ! -d ${DICTROOT}/cdrom ] ; then mkdir -p ${DICTROOT}/cdrom ; fi
++	install -c -s -m 755 dserver $(BINDIR)
++	(cd compress ; ${MAKE} install)
++	cp table/*.tbl table/dserver_access ${DSERVERTOPDIR}
++	cat table/dserver_access | sed -e 's!PREFIX_DIR!${PREFIX}!g'  > ${DSERVERTOPDIR}/dserver_access
++	cp CHANGES newfeature.doc ${DOCDIR}
++	cp README ${DOCDIR}/README.dserver
++	cp table/README ${DOCDIR}/README.table
+--- server2.2-pl2/subnet.c.orig	Sat Aug 10 02:10:30 1996
++++ server2.2-pl2/subnet.c	Tue Jan 28 08:22:43 1997
+@@ -1,6 +1,7 @@
+ #include <sys/types.h>
+ #include <sys/socket.h>
+ #include <netinet/in.h>
++#include <sys/time.h>
+ #include <net/if.h>
+ #include <sys/ioctl.h>
+ 
+--- server2.2-pl2/table/dserver_access.orig	Sat Aug 10 02:10:27 1996
++++ server2.2-pl2/table/dserver_access	Tue Jan 28 08:22:43 1997
+@@ -1,14 +1,20 @@
+-#DICT kojien /usr/local/etc/CDdict/yrrs096/koujien/start. "広辞苑第４版" 1  600
+-##DICT eiwa /usr/local/etc/CDdict/yrrs118/chujiten/start. "研究社中英和" 25 600
+-##DICT eiwa /usr/local/etc/CDdict/yrrs118/chujiten/start.comp "研究社中英和" 25 600
+-##DICT eiwa /usr/local/etc/CDdict/yrrs009/eiwa/start.comp "研究社中英和" 25 600
+-##DICT waei /usr/local/etc/CDdict/yrrs118/chujiten/start.comp "研究社中和英" 25 600
+-#DICT waei /usr/local/etc/CDdict/cdchujiten/chujiten/data/honmon. "研究社中和英" 25 600
+-#DICT eiwa /usr/local/etc/CDdict/cdchujiten/chujiten/data/honmon. "研究社中和英" 25 600
+-#DICT CDkojien /usr/local/etc/CDdict/cdkouji/koujien/data/honmon. "広辞苑ＣＤ版" 1  600
+-#DICT readers /usr/local/etc/CDdict/yrrs172/readers/start. "リーダーズ英和" 1  600
+-#DICTROOT /usr/local/etc/CDdict 2 500
++#DICT kojien PREFIX_DIR/share/dict/cdrom/yrrs096/koujien/start "広辞苑第４版" 1  600
++#DICT kojien-furoku PREFIX_DIR/share/dict/cdrom/yrrs096/furoku/start "広辞苑第４版付録" 1  600
++#DICT waei PREFIX_DIR/share/dict/cdrom/cdchujiten/chujiten/data/honmon "研究社中和英" 25 600
++#DICT eiwa PREFIX_DIR/share/dict/cdrom/cdchujiten/chujiten/data/honmon "研究社中和英" 25 600
++#DICT readers PREFIX_DIR/share/dict/cdrom/yrrs172/readers/start "リーダーズ英和" 1  600
++#DICT crfre PREFIX_DIR/share/dict/cdrom/yrrs091/crfre/start "三省堂クラウン仏和" 1  600
++#DICT crger PREFIX_DIR/share/dict/cdrom/yrrs092/crger/start "三省堂クラウン独和" 1  600
++#DICT italian /usr/local/share/dict/cdrom/yrrs214/jiten/start "現代イタリア語表現辞典" 1  600
++#DICT italian-j /usr/local/share/dict/cdrom/yrrs214/jiten/start "現代イタリア語表現辞典" 1  600
++#DICT oxford /usr/local/share/dict/cdrom/san042/oxford/start "OxfordEnglishDictionary" 1  600
++#DICT CDkojien PREFIX_DIR/share/dict/cdrom/cdkouji/koujien/data/honmon "広辞苑ＣＤ版" 1  600
++#DICTROOT PREFIX_DIR/share/dict/cdrom 2 500
+ ## access controle
+ #
+-topics
++localhost
+ #
++##DICT eiwa PREFIX_DIR/share/dict/cdrom/yrrs118/chujiten/start "研究社中英和" 25 600
++##DICT waei PREFIX_DIR/share/dict/cdrom/yrrs118/chujiten/start "研究社中英和" 25 600
++##DICT eiwa PREFIX_DIR/share/dict/cdrom/yrrs118/chujiten/start.comp "研究社中英和" 25 600
++##DICT waei PREFIX_DIR/share/dict/cdrom/yrrs118/chujiten/start.comp "研究社中和英" 25 600
+--- server2.2-pl2/compress/Makefile.orig	Sat Aug 10 02:10:29 1996
++++ server2.2-pl2/compress/Makefile	Tue Jan 28 08:22:43 1997
+@@ -11,11 +11,15 @@
+ CFLAGS = -O -Wall
+ LFLAGS =
+ 
++
+ OBJ1 = main.o compress.o
+ 
+ 
+ OBJS = $(OBJ1)
+ PROG = makedic
++BINDIR = ${PREFIX}/bin
++
++all: $(PROG)
+ 
+ $(PROG)		:	$(OBJS)
+ 	$(CC) $(OBJS) $(LFLAGS) -o $(PROG)
+@@ -26,5 +30,8 @@
+ main.o : defs.h
+ comp.o : defs.h
+ 
++install: $(PROG)
++	install -s $(PROG) $(BINDIR)
++
+ clean:
+-	rm -f *.o core makedic *~
++	rm -f *.o core makedic *~
+--- server2.2-pl2/compress/main.c.orig	Sat Aug 10 02:10:30 1996
++++ server2.2-pl2/compress/main.c	Tue Jan 28 08:22:43 1997
+@@ -3,6 +3,21 @@
+ 					by toshioji@darkover.iijnet.or.jp
+ 
+ 	dic version 0.24 cdio.c by kmiya さんを元に作成
++
++========== dic.man より引用開始 ==========
++DIC(1)                   Dic Users Manual                  DIC(1)
++
++
++DISTRIBUTION
++       このプログラムの改良 移植 転載 などは、 自由に行っても らっ
++       て結構です。 また、 作者に報告する必要もありません。
++
++       で き れば、改変された物であることの明記（どのバ−ジョンの
++       Dic をどのように変更したか）をしていただければ幸いです。
++
++       さらにソ−スコ−ドも同時に公開していただいてさらなる改良 が
++       自由に 行われるようにすることを希望します。
++========== dic.man より引用終了 ==========
+  */
+ 
+ #include    "defs.h"
+@@ -36,10 +51,95 @@
+   return 0;
+ }
+ 
++char ok(char *string)
++{
++  char key_buf[2];
++
++  fputs( string, stdout );
++  fgets( key_buf, 2, stdin );
++  return key_buf[0];
++}
++
++void caution(void)
++{
++
++  puts("<<<<<<<<< makedic を使われる前に※必ず※以下の内容を確認下さい。>>>>>>>>>
++
++これは dserver/server2.1/README「執筆   臼井 義比古＠環境システム研究所」
++からライセンス関係の記述を抜きだしたものです。
++
++==================== dserver/server2.1/README ====================
++
++  ライセンスはちゃんと守って下さい,以下に三田吉郎<mita@jp.FreeBSD.org>
++  さんが調べて下さった文章を添付します.
++
++------------------------------------------------------------------------
++" );
++  ok( "<改行キーを押して下さい>" );
++
++  puts("
++ ライセンスについて   三田吉郎 <mita@jp.FreeBSD.org>
++ 
++ dserverは、8cmCDROM版研究社新英和・和英中辞典、岩波書店広辞苑を
++ 始めとする、電子ブックを読むことが出来ます。使用のたびにCDROMを
++ マウントすればよいのですが、例えばCDROM分離型のノートパソコンで
++ 辞書を使いたいなど、ハードディスクにデータをコピーして使いたいと
++ 思うかも知れません。市販の
++ 辞書をハードディスクにコピーすること、または圧縮された辞書としての使用
++ に関して問題があるかどうか、研究社と岩波書店とにお伺いしてみました(平
++ 成8年6月20日)。
++");
++  ok( "<改行キーを押して下さい>" );
++  puts("
++  研究社の回答(電話03-3288-7777)
++ 個人として使用するかぎりにおいては、ハードディスクへのコピー、また
++ そのデータが圧縮されてたとしても使用して良い。ただし、LAN上で
++ 複数の端末で使用する場合は、別途端末の台数を申告していただき、
++ 端末台数×(CDROM一枚の価格−α)の値段を払う契約をしていただく。
++");
++  ok( "<改行キーを押して下さい>" );
++  puts("
++ 岩波書店辞典部の回答  (電話03-5210-4171)
++ CD-ROMドライブから読み出して使用することを前提としている。
++ ハードディスクへのコピーは避けていただきたい。
++ LAN上での使用の場合は、別途契約をしていただき、
++ ハードディスクへのコピーを許可している。ただしUNIX上の
++ サーバソフトに関しては把握していない。
++");
++  ok( "<改行キーを押して下さい>" );
++  puts("
++ dserverは、この他にもOEDや、科学技術用語辞典など、外字テーブルさえ
++ 用意すればほとんどのCDROMを読むことが出来ます。そのとき自分のローカル
++ ディスクにデータをコピーして使用して良いかは、各社対応が異なります。
++ 新しい辞書を使用する場合はまずライセンスを確認した後に使用することを
++ お勧めします。
++ 
++ ということですので、例えば新英和・和英中辞典に関しては個人のマシンの
++ ハードディスクにコピーすることは可能ですが、広辞苑に関してはLAN契約を
++ 結ばない限りハードディスクへのコピーをさけるのが良いようです。
++");
++  puts("------------------------------------------------------------------------
++以上
++");
++  switch( ok( "辞書を圧縮してハードディスクにコピーすることに
++ライセンス上の問題はありませんね[y/n] " ) ) {
++  case 'y':
++  case 'Y':
++	puts( "\n圧縮を開始します。\n" );
++	break;
++  default:
++	puts( "\nライセンス上の問題があるので中断しました\n" );
++	exit( -1 );
++	break;	
++  }
++}
++
+ int	main(int argc, char *argv[])
+ {
++  caution();
++
+   if( argc < 3 ) {
+-    fprintf( stderr, "%s soce_filename dest_filename\n", argv[ 0 ] );
++    fprintf( stderr, "Usage: %s soce_filename dest_filename\n", argv[ 0 ] );
+     exit( -1 );
+   }
+ 
