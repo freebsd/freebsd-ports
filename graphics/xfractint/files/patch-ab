@@ -1,0 +1,33 @@
+*** port.h.orig	Thu Sep  7 20:55:27 1995
+--- port.h	Thu Sep  7 21:27:45 1995
+***************
+*** 150,156 ****
+  #endif
+  
+          /* Keep this defined for Unix, even on a little-endian machine */
+! #define BIG_ENDIAN
+  
+  #define USE_BIGNUM_C_CODE
+  
+--- 150,158 ----
+  #endif
+  
+          /* Keep this defined for Unix, even on a little-endian machine */
+! #ifndef BIG_ENDIAN
+! #define BIG_ENDIAN 4321
+! #endif
+  
+  #define USE_BIGNUM_C_CODE
+  
+***************
+*** 202,207 ****
+--- 204,212 ----
+  #undef LDBL_DIG
+  #endif
+  #ifdef sun
++ #undef LDBL_DIG
++ #endif
++ #ifdef __FreeBSD__
+  #undef LDBL_DIG
+  #endif
+  
