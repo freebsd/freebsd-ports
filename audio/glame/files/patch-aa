@@ -1,0 +1,11 @@
+--- src/include/sem.h	2000/09/26 17:00:35	1.1
++++ src/include/sem.h	2000/09/26 17:01:08
+@@ -35,7 +35,7 @@
+ #if defined(__GNU_LIBRARY__) && !defined(_SEM_SEMUN_UNDEFINED)
+ /* union semun is defined by including <sys/sem.h> */
+ #else
+-#if !defined(_NO_XOPEN4)
++#if !defined(_NO_XOPEN4) && !defined(__FreeBSD__)
+ /* according to X/OPEN we have to define it ourselves */
+ union semun {
+ 	int val;                    /* value for SETVAL */
