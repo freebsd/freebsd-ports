@@ -1,0 +1,36 @@
+#!/bin/sh
+
+
+if [ "$2" != "POST-DEINSTALL" ]; then
+	exit 0
+fi
+
+POLIPOUSER=%%USER%%
+POLIPOGROUP=%%GROUP%%
+
+PCONFIGDIR=%%PCONFIGDIR%%
+PPIDDIR=%%PPIDDIR%%
+POLIPOCACHE=%%PCACHEDIR%%
+POLIPOLOG=%%PLOGFILE%%
+POLIPOPID=%%PPIDFILE%%
+POLIPODATA=%%DATADIR%%
+
+
+if pw usershow "${POLIPOUSER}" 2>/dev/null 1>&2; then
+	echo "---> To delete ${POLIPOUSER} user permanently, use 'pw userdel \"${POLIPOUSER}\"'"
+fi
+
+if [ -d "$POLIPOCACHE" ]; then
+	rm -r "$POLIPOCACHE" || exit 1
+fi
+if [ -d "$PPIDDIR" ]; then
+	rm -r "$PPIDDIR" || exit 1
+fi
+
+if fgrep "${POLIPOLOG}" "/etc/newsyslog.conf" 2>/dev/null 1>&2; then
+ 	echo "---> You should remove from /etc/newsyslog.conf the \"${POLIPOLOG}\" entry manually."
+fi
+
+rmdir $POLIPODATA/www/doc $POLIPODATA/www $POLIPODATA 2>/dev/null
+rmdir $PCONFIGDIR 2>/dev/null || echo "---> If you not plan to reinstall polipo, you can safely remove ${PCONFIGDIR}."
+exit 0

@@ -1,0 +1,78 @@
+#!/bin/sh
+
+POLIPOUSER=%%USER%%
+POLIPOGROUP=%%GROUP%%
+UID=173
+GID=${UID}
+
+POLIPOCACHE=%%PCACHEDIR%%
+POLIPOLOG=%%PLOGFILE%%
+PPIDDIR=%%PPIDDIR%%
+POLIPOPID=%%PPIDFILE%%
+
+if [ "$2" = "PRE-INSTALL" ]; then
+
+	if [ "%%RC_SUBR%%" = "" ]; then
+		echo "=> Port requires /etc/rc.subr (native or port/sysutils/rc_subr)!"
+		echo "=> If you want to install without you should modify startup script and pkg-install."
+		exit 1
+	fi
+
+	if fgrep "polipo" "%%DESTDIR%%/etc/newsyslog.conf" 2>/dev/null 1>&2; then
+		if ! fgrep "polipo.pid" "%%DESTDIR%%/etc/newsyslog.conf" 2>/dev/null 1>&2; then
+			echo "==> ERROR: Previous installation left an invalid entry in %%DESTDIR%%/etc/newsyslog.conf."
+			echo "==> Please remove the polipo line from this file and try again."
+			exit 1
+		fi
+	fi
+
+	if ! pw groupshow "$POLIPOGROUP" 2>/dev/null 1>&2; then
+		if pw groupadd $POLIPOGROUP -g ${GID} ; then
+			echo "=> Added group \"$POLIPOGROUP\"."
+		else
+			echo "=> Adding group \"$POLIPOGROUP\" failed..."
+			exit 1
+		fi
+	fi
+
+	if ! pw usershow "$POLIPOUSER" 2>/dev/null 1>&2; then
+		if pw useradd $POLIPOUSER -u ${UID} -g $POLIPOGROUP -h - \
+			-s "/sbin/nologin" -d "/nonexistent" \
+			-c "polipo web cache"; \
+		then
+			pw groupmod mail -m $POLIPOUSER
+			echo "=> Added user \"$POLIPOUSER\"."
+		else
+			echo "=> Adding user \"$POLIPOUSER\" failed..."
+			exit 1
+		fi
+	fi
+
+elif [ "$2" = "POST-INSTALL" ]; then
+
+	if [ ! -d "%%DESTDIR%%$POLIPOCACHE" ]; then
+		mkdir -p "%%DESTDIR%%$POLIPOCACHE" || exit 1
+		chown "$POLIPOUSER:$POLIPOGROUP" "%%DESTDIR%%$POLIPOCACHE" || exit 1
+		chmod 0770 "%%DESTDIR%%$POLIPOCACHE" || exit 1
+	fi
+
+	if [ ! -d "%%DESTDIR%%$PPIDDIR" ]; then
+		mkdir -p "%%DESTDIR%%$PPIDDIR" || exit 1
+		chgrp "$POLIPOGROUP" "%%DESTDIR%%$PPIDDIR" || exit 1
+		chmod g+w "%%DESTDIR%%$PPIDDIR" || exit 1
+	fi
+
+	if [ ! -f "%%DESTDIR%%$POLIPOLOG" ]; then
+		touch "%%DESTDIR%%$POLIPOLOG" || exit 1
+		chown "$POLIPOUSER" "%%DESTDIR%%$POLIPOLOG" || exit 1
+		chmod 0640 "%%DESTDIR%%$POLIPOLOG" || exit 1
+	fi
+
+
+	if ! fgrep "${POLIPOLOG}" "%%DESTDIR%%/etc/newsyslog.conf" 2>/dev/null 1>&2; then
+	echo "${POLIPOLOG}		${POLIPOUSER}:		640  3     100	*     J     $POLIPOPID 30" >> "%%DESTDIR%%/etc/newsyslog.conf" || exit 1
+	fi
+
+fi
+
+exit 0

@@ -602,6 +602,7 @@
     SUBDIR += plugger
     SUBDIR += plugger-plugins-hubbe
     SUBDIR += pnews
+    SUBDIR += polipo
     SUBDIR += postnuke
     SUBDIR += pound
     SUBDIR += preferential

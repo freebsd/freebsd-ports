@@ -1,0 +1,18 @@
+
+******************************************************************************
+To complete the polipo installation you should:
+
+1. copy the configuration file example and modify it if desired
+   cd %%PCONFIGDIR%%
+   cp config.sample config
+   vi config
+   
+2. enable automatic polipo startup with entry in %%DESTDIR%%/etc/rc.conf.local or %%DESTDIR%%/etc/rc.conf
+   polipo_enable="YES"
+   
+3. start polipo
+   %%DESTDIR%%%%PREFIX%%/etc/rc.d/polipo start
+   
+4. point your browser to the new proxy server, the default port is 8123
+******************************************************************************
+
