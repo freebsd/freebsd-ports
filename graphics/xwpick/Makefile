@@ -3,7 +3,7 @@
 # Date created:				24 June 1998
 # Whom:					Andrey Zakhvatov
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1998/07/12 23:35:13 steve Exp $
 #
 
 DISTNAME=		xwpick-2.20
@@ -15,6 +15,7 @@ MAINTAINER=		andy@icc.surw.chel.su
 
 USE_IMAKE=		yes
 MAN1=			xwpick.1
+MANCOMPRESSED=		no
 
 do-install:
 	@ ${INSTALL_PROGRAM} ${WRKSRC}/xwpick ${PREFIX}/bin

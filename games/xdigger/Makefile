@@ -3,7 +3,7 @@
 # Date created:				29 June 1998
 # Whom:					Andrey Zakhvatov
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1998/07/12 23:08:55 steve Exp $
 #
 
 DISTNAME=		xdigger-1.0.6
@@ -15,8 +15,8 @@ EXTRACT_SUFX=		.tgz
 MAINTAINER=		andy@icc.surw.chel.su
 
 USE_IMAKE=		yes
-
 MAN6=			xdigger.6
+MANCOMPRESSED=		no
 
 do-install:
 	@ ${INSTALL_PROGRAM} ${WRKSRC}/xdigger ${PREFIX}/bin

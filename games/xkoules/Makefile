@@ -3,7 +3,7 @@
 # Date created:				11 March 1998
 # Whom:					Andrey Zakhvatov
 #
-# $Id: Makefile,v 1.1.1.1 1998/04/19 21:35:21 mph Exp $
+# $Id: Makefile,v 1.2 1998/07/27 23:24:58 asami Exp $
 #
 
 DISTNAME=	koules1.4-src
@@ -16,6 +16,7 @@ MAINTAINER=	andy@icc.surw.chel.su
 USE_IMAKE=	yes
 WRKSRC=		${WRKDIR}/koules1.4
 MAN6=		xkoules.6
+MANCOMPRESSED=	no
 
 do-install:
 	@ ${INSTALL_PROGRAM} ${WRKSRC}/xkoules ${PREFIX}/bin

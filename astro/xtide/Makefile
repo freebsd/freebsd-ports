@@ -3,7 +3,7 @@
 # Date created:        30 August 1997
 # Whom:                Brion Moss <brion@queeg.com>
 #
-# $Id: Makefile,v 1.5 1998/08/20 17:42:06 jseger Exp $
+# $Id: Makefile,v 1.6 1998/08/21 02:22:36 jseger Exp $
 #
 
 DISTNAME=	xtide-1.6.2
@@ -20,6 +20,7 @@ EXTRACT_ONLY=	xtide-1.6.2.tar.gz
 USE_IMAKE=	yes
 NO_WRKSUBDIR=	yes
 MAN1=		xtide.1
+MANCOMPRESSED=	no
 
 post-extract:
 	@gzip -dc ${DISTDIR}/harmonics.gz > ${WRKSRC}/harmonics

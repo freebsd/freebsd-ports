@@ -3,7 +3,7 @@
 # Date created:				27 March 1998
 # Whom:					Andrey Zakhvatov
 #
-# $Id: Makefile,v 1.2 1998/06/11 02:51:23 mph Exp $
+# $Id: Makefile,v 1.3 1998/07/27 23:25:17 asami Exp $
 #
 
 DISTNAME=		xpanex-5.4.4
@@ -16,6 +16,7 @@ MAINTAINER=		andy@icc.surw.chel.su
 WRKSRC=			${WRKDIR}/xpanex
 USE_IMAKE=		yes
 MAN1=			xpanex.1
+MANCOMPRESSED=		no
 
 # Not configured to use Motif.
 # Optionally edit ${WRKSRC}/Imakefile before build.

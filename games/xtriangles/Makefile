@@ -3,7 +3,7 @@
 # Date created:        12 October 1996
 # Whom:                Yukihiro Nakai <Nakai@Mlab.t.u-tokyo.ac.jp>
 #
-# $Id: Makefile,v 1.4 1997/11/25 08:59:13 tg Exp $
+# $Id: Makefile,v 1.5 1998/07/24 12:52:13 vanilla Exp $
 #
 
 DISTNAME=        xtriangles-5.4.4
@@ -16,6 +16,7 @@ MAINTAINER=	Nakai@technologist.com
 WRKSRC=		${WRKDIR}/xtriangles
 USE_IMAKE=	yes
 MAN1=		xtriangles.1
+MANCOMPRESSED=	no
 
 post-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/xtriangles ${PREFIX}/bin

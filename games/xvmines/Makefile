@@ -3,7 +3,7 @@
 # Date created:				18 March 1998
 # Whom:					Andrey Zakhvatov
 #
-# $Id: Makefile,v 1.1.1.1 1998/03/27 10:09:54 tg Exp $
+# $Id: Makefile,v 1.2 1998/08/07 23:56:23 asami Exp $
 #
 
 DISTNAME=	xvmines-1.0
@@ -20,6 +20,7 @@ LIB_DEPENDS=	xview\\.3\\.2:${PORTSDIR}/x11-toolkits/xview-lib \
 
 USE_IMAKE=	yes
 MAN6=		xvmines.6
+MANCOMPRESSED=	no
 
 do-install:
 	@ ${INSTALL_PROGRAM} ${WRKSRC}/xvmines ${PREFIX}/bin

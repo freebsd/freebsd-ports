@@ -3,7 +3,7 @@
 # Date created:		15 July 1997
 # Whom:			Stephen Roznowski <sjr1@flash.net>
 #
-# $Id: Makefile,v 1.1.1.1 1998/01/09 04:57:37 andreas Exp $
+# $Id: Makefile,v 1.2 1998/01/09 04:59:36 andreas Exp $
 #
 
 DISTNAME=	xmail_1.6
@@ -16,6 +16,7 @@ MAINTAINER=	andreas@FreeBSD.ORG
 
 USE_IMAKE=	yes
 MAN1=		xmail.1
+MANCOMPRESSED=	no
 
 do-install:
 	$(INSTALL_PROGRAM) $(WRKSRC)/xmail $(PREFIX)/bin/xmail

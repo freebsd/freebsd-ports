@@ -3,7 +3,7 @@
 # Date created:				19 May 1998
 # Whom:					Andrey Zakhvatov
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1998/07/12 23:48:32 steve Exp $
 #
 
 DISTNAME=		xmlink-5.4.4
@@ -16,6 +16,7 @@ MAINTAINER=		andy@icc.surw.chel.su
 WRKSRC=			${WRKDIR}/xmlink
 USE_IMAKE=		yes
 MAN1=			xmlink.1
+MANCOMPRESSED=		no
 
 # Not configured to use Motif.
 # Optionally edit ${WRKSRC}/Imakefile before build.

@@ -3,7 +3,7 @@
 # Date created:        19 Januruary 1997
 # Whom:                Yukihiro Nakai <Nakai@Mlab.t.u-tokyo.ac.jp>
 #
-# $Id: Makefile,v 1.7 1998/03/11 07:31:11 vanilla Exp $
+# $Id: Makefile,v 1.8 1998/08/07 23:01:39 asami Exp $
 #
 
 DISTNAME=	mlvwm-0.8.6
@@ -19,8 +19,8 @@ LIB_DEPENDS=	Xpm\\.4\\.:${PORTSDIR}/graphics/xpm
 WRKSRC=		${WRKDIR}/mlvwm086
 USE_IMAKE=	yes
 EXTRACT_ONLY=	mlvwm-0.8.6.tar.gz
-
 MAN1=		mlvwm.1
+MANCOMPRESSED=	no
 
 post-install:
 	${MKDIR} ${PREFIX}/lib/X11/mlvwm/pixmap
