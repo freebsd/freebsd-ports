@@ -7,7 +7,7 @@
 
 PORTNAME=	svgalib
 PORTVERSION=	1.4.3
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	graphics devel
 MASTER_SITES=	http://www.svgalib.org/
 

@@ -54,105 +54,6 @@
 +    compressed_font_fg = fg;
 +}
 +
-+void gl_ccwriten(int x, int y, int n, char *s)
-+{
-+    char *str = alloca(n + 1);
-+    memcpy(str, s, n);
-+    str[n] = 0;
-+    gl_ccwrite(x, y, str);
-+}
-+
-+#ifndef SVGA_AOUT
-+
-+static int ccnprintf(int sx, int sy, 
-+                        size_t bufs, const char *fmt, va_list args)
-+{
-+    char *buf;
-+    static int x = 0, y = 0, x_start = 0;
-+    int n;
-+
-+    buf = alloca(bufs);
-+    n = vsnprintf(buf, bufs, fmt, args);
-+    if (n < 0)
-+	return n; /* buffer did not suffice, return and retry */
-+
-+    if ((sx >= 0) && (sy >= 0)) {
-+	x = x_start = sx;
-+	y = sy;
-+    }
-+	
-+    for (; *buf; buf++)
-+	switch (*buf) {
-+	case '\a':		/* badly implemented */
-+	    fputc('\a', stdout);
-+	    fflush(stdout);
-+	    break;
-+	case '\b':
-+	    x -= afont_width;
-+	    if (x < x_start) {
-+		x = WIDTH + (x_start % afont_width);
-+		while(x + afont_width > WIDTH)
-+		    x -= afont_width;
-+		if (y >= font_height)
-+		    y -= font_height;
-+	    }
-+	    break;
-+	case '\n':
-+	  newline:
-+	    y += font_height;
-+	    if (y + font_height > HEIGHT)
-+		y %= font_height;
-+	case '\r':
-+	    x = x_start;
-+	    break;
-+	case '\t':
-+	    x += ((TEXT_TABSIZE - 
-+                 ((x - x_start) / afont_width) % TEXT_TABSIZE) * afont_width);
-+	    goto chk_wrap;
-+	    break;
-+	case '\v':
-+	    y += font_height;
-+	    if (y + font_height > HEIGHT)
-+		y %= font_height;
-+	    break;
-+	default:
-+            if( ((unsigned char)(*buf) > 0xa0) 
-+                && ((unsigned char)(*(buf + 1)) > 0xa0)) {
-+                gl_ccwriten(x, y, 2, buf);
-+                buf += 1;
-+	        x += cfont_width;
-+            }
-+            else {
-+                gl_ccwriten(x, y, 1, buf);
-+                x += afont_width;
-+            }
-+        chk_wrap:
-+	    if (x + afont_width > WIDTH)
-+		goto newline;
-+	}
-+    return n;
-+}
-+
-+int gl_ccprintf(int x, int y, const char *fmt, ...)
-+{
-+    size_t bufs = BUFSIZ;
-+    int result;
-+    va_list args;
-+
-+    va_start(args, fmt);
-+
-+    /* Loop until buffer size suffices */
-+    do {
-+	result = ccnprintf(x, y, bufs, fmt, args);
-+	bufs <<= 1;
-+    } while(result < 0);
-+	
-+    va_end(args);
-+    return result;
-+}
-+
-+#endif
-+
 +static int getnextchar(char* s, uchar* cc)
 +{
 +    if( s[0] == '\0') return 0;
@@ -322,4 +223,103 @@
 +        }
 +    }
 +}
++
++void gl_ccwriten(int x, int y, int n, char *s)
++{
++    char *str = alloca(n + 1);
++    memcpy(str, s, n);
++    str[n] = 0;
++    gl_ccwrite(x, y, str);
++}
++
++#ifndef SVGA_AOUT
++
++static int ccnprintf(int sx, int sy, 
++                        size_t bufs, const char *fmt, va_list args)
++{
++    char *buf;
++    static int x = 0, y = 0, x_start = 0;
++    int n;
++
++    buf = alloca(bufs);
++    n = vsnprintf(buf, bufs, fmt, args);
++    if (n < 0)
++	return n; /* buffer did not suffice, return and retry */
++
++    if ((sx >= 0) && (sy >= 0)) {
++	x = x_start = sx;
++	y = sy;
++    }
++	
++    for (; *buf; buf++)
++	switch (*buf) {
++	case '\a':		/* badly implemented */
++	    fputc('\a', stdout);
++	    fflush(stdout);
++	    break;
++	case '\b':
++	    x -= afont_width;
++	    if (x < x_start) {
++		x = WIDTH + (x_start % afont_width);
++		while(x + afont_width > WIDTH)
++		    x -= afont_width;
++		if (y >= font_height)
++		    y -= font_height;
++	    }
++	    break;
++	case '\n':
++	  newline:
++	    y += font_height;
++	    if (y + font_height > HEIGHT)
++		y %= font_height;
++	case '\r':
++	    x = x_start;
++	    break;
++	case '\t':
++	    x += ((TEXT_TABSIZE - 
++                 ((x - x_start) / afont_width) % TEXT_TABSIZE) * afont_width);
++	    goto chk_wrap;
++	    break;
++	case '\v':
++	    y += font_height;
++	    if (y + font_height > HEIGHT)
++		y %= font_height;
++	    break;
++	default:
++            if( ((unsigned char)(*buf) > 0xa0) 
++                && ((unsigned char)(*(buf + 1)) > 0xa0)) {
++                gl_ccwriten(x, y, 2, buf);
++                buf += 1;
++	        x += cfont_width;
++            }
++            else {
++                gl_ccwriten(x, y, 1, buf);
++                x += afont_width;
++            }
++        chk_wrap:
++	    if (x + afont_width > WIDTH)
++		goto newline;
++	}
++    return n;
++}
++
++int gl_ccprintf(int x, int y, const char *fmt, ...)
++{
++    size_t bufs = BUFSIZ;
++    int result;
++    va_list args;
++
++    va_start(args, fmt);
++
++    /* Loop until buffer size suffices */
++    do {
++	result = ccnprintf(x, y, bufs, fmt, args);
++	bufs <<= 1;
++    } while(result < 0);
++	
++    va_end(args);
++    return result;
++}
++
++#endif
 +
