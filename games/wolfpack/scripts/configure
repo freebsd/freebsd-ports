@@ -41,4 +41,3 @@ if [ -z "$CC" ]; then
 fi
 
 sed -e "s/%%CC%%/$CC/" -e "s/%%NAME%%/$name/" -e "s/%%USERNAME%%/$username/" -e "s/%%EMAIL%%/$email/" -e "s#%%EMPDIR%%#$PREFIX/wolfpack#" <$FROM >$TO
-
