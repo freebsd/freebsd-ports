@@ -46,6 +46,9 @@ pb=/var/portbuild
 arch=$1
 shift
 
+# Default niceness value
+nice=0
+
 . ${pb}/${arch}/portbuild.conf
 . ${pb}/scripts/buildenv
 
@@ -152,6 +155,12 @@ if [ ${found} != 1 ]; then
   cp -p /usr/bin/killall ${chroot}/usr/bin
 fi
 
+# Figure out jail IP addr
+chrootpid=$(basename ${chroot})
+ip1=$(($chrootpid /(256*256)))
+ip2=$((($chrootpid - ($ip1*256*256)) /256))
+ip3=$((($chrootpid - ($ip1*256*256) - ($ip2*256))))
+
 # Set up desired uname version
 echo ${OSREL}-${BRANCH} > ${chroot}/usr/bin/UNAME_VERSION
 
@@ -229,6 +238,7 @@ cp -p ${pb}/scripts/buildscript ${chroot}
 cp -p ${pb}/scripts/pnohang.${arch} ${chroot}/pnohang
 
 # phase 1, make checksum
+# Needs to be chroot so that port can be fetched
 chroot ${chroot} /buildscript ${dirname} 1 2>&1 | tee -a ${chroot}/tmp/${pkgname}.log
 if [ -f ${chroot}/tmp/status ]; then
   error=$(cat ${chroot}/tmp/status)
@@ -245,7 +255,11 @@ if [ "${error}" = 0 ]; then
 
 # phase 2, make package
   ln -sf ${pkgname}.log2 ${chroot}/tmp/make.log
-  chroot ${chroot} /buildscript ${dirname} 2 > ${chroot}/tmp/${pkgname}.log2 2>&1
+
+  ifconfig lo0 alias 10.${ip1}.${ip2}.${ip3}/32
+  jail ${chroot} jail-${chroot} 10.${ip1}.${ip2}.${ip3} /usr/bin/nice -n $nice /buildscript ${dirname} 2 > ${chroot}/tmp/${pkgname}.log2 2>&1
+  ifconfig lo0 delete 10.${ip1}.${ip2}.${ip3}
+
   grep pnohang ${chroot}/tmp/${pkgname}.log2
   cat ${chroot}/tmp/${pkgname}.log2 >> ${chroot}/tmp/${pkgname}.log
   rm ${chroot}/tmp/${pkgname}.log2
