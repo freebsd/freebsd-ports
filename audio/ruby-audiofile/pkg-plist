@@ -5,6 +5,5 @@
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/cddb/wavcddb
 %%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/cddb
 %%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/audiofile.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/audiofile.rd
 %%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%
