@@ -13,7 +13,7 @@ MASTER_SITES=	http://omnibus.ruf.uni-freiburg.de/~gritter/archive/nail/
 
 MAINTAINER=	ports@FreeBSD.org
 
-LIB_DEPENDS=	iconv.2:${PORTSDIR}/converters/iconv
+LIB_DEPENDS=	iconv.3:${PORTSDIR}/converters/libiconv
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-rcfile="${PREFIX}/etc/nail.rc"

@@ -16,7 +16,7 @@ DIST_SUBDIR=	python
 MAINTAINER=	perky@fallin.lv
 
 BUILD_DEPENDS=	${PYDISTUTILS}
-LIB_DEPENDS=	iconv:${PORTSDIR}/converters/iconv
+LIB_DEPENDS=	iconv.3:${PORTSDIR}/converters/libiconv
 
 USE_PYTHON=	yes
 SETUP_CMD=	cd ${WRKSRC} && ${PYTHON_CMD} setup.py

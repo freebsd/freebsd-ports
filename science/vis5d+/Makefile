@@ -16,7 +16,7 @@ MAINTAINER=	ports@FreeBSD.org
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/libmix.a:${PORTSDIR}/graphics/qslim \
 		convert:${PORTSDIR}/graphics/ImageMagick
-LIB_DEPENDS=	giconv.2:${PORTSDIR}/converters/libiconv \
+LIB_DEPENDS=	iconv.3:${PORTSDIR}/converters/libiconv \
 		netcdf.1:${PORTSDIR}/math/netcdf
 RUN_DEPENDS=	convert:${PORTSDIR}/graphics/ImageMagick
 

@@ -16,7 +16,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	skv@FreeBSD.org
 
 LIB_DEPENDS=	sablot.67:${PORTSDIR}/textproc/sablotron \
-		iconv.2:${PORTSDIR}/converters/iconv
+		iconv.3:${PORTSDIR}/converters/libiconv
 
 PERL_CONFIGURE=	yes
 CONFIGURE_ARGS=	LIBS='-L${LOCALBASE}/lib -lexpat -lsablot -liconv' \

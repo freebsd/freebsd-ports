@@ -17,8 +17,8 @@ MASTER_SITE_SUBDIR=	Jirai/SOURCES
 
 MAINTAINER=	knu@FreeBSD.org
 
-LIB_DEPENDS=	iconv.2:${PORTSDIR}/converters/iconv
-RUN_DEPENDS=	${LOCALBASE}/libexec/iconv/iso-2022-jp.so:${PORTSDIR}/converters/iconv-extra
+LIB_DEPENDS=	iconv.3:${PORTSDIR}/converters/libiconv
+#RUN_DEPENDS=	${LOCALBASE}/libexec/iconv/iso-2022-jp.so:${PORTSDIR}/converters/iconv-extra
 
 MAKE_ARGS=	NOPROFILE=true
 INSTALLS_SHLIB=	yes

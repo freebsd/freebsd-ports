@@ -15,7 +15,7 @@ DISTNAME=	${PORTNAME}.${PORTVERSION}
 MAINTAINER=	dima@FreeBSD.org
 
 LIB_DEPENDS=	tk83:${PORTSDIR}/x11-toolkits/tk83 \
-		giconv:${PORTSDIR}/converters/libiconv
+		iconv.3:${PORTSDIR}/converters/libiconv
 
 USE_BZIP2=	yes
 USE_LIBTOOL=	yes

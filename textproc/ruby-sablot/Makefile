@@ -16,7 +16,7 @@ DIST_SUBDIR=	ruby
 MAINTAINER=	knu@FreeBSD.org
 
 LIB_DEPENDS=	sablot.67:${PORTSDIR}/textproc/sablotron \
-		iconv.2:${PORTSDIR}/converters/iconv \
+		iconv.3:${PORTSDIR}/converters/libiconv \
 		expat.2:${PORTSDIR}/textproc/expat2
 
 USE_RUBY=	yes

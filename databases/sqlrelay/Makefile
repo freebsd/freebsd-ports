@@ -14,7 +14,7 @@ MAINTAINER=	knu@FreeBSD.org
 
 LIB_DEPENDS=	rudiments.0:${PORTSDIR}/devel/rudiments \
 		xml2.5:${PORTSDIR}/textproc/libxml2 \
-		giconv.2:${PORTSDIR}/converters/libiconv
+		iconv.3:${PORTSDIR}/converters/libiconv
 
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes

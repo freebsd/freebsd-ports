@@ -18,7 +18,7 @@ MAINTAINER=	gnome@FreeBSD.org
 BUILD_DEPENDS=	msgfmt-new:${PORTSDIR}/devel/gettext \
 		${X11BASE}/libdata/pkgconfig/gnome-mime-data-2.0.pc:${PORTSDIR}/misc/gnomemimedata
 LIB_DEPENDS=	gconf-1.1:${PORTSDIR}/devel/gconf \
-		giconv.2:${PORTSDIR}/converters/libiconv
+		iconv.3:${PORTSDIR}/converters/libiconv
 .if !exists(/usr/bin/bzip2)
 LIB_DEPENDS+=	bz2.1:${PORTSDIR}/archivers/bzip2
 .endif

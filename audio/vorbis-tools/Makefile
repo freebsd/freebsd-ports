@@ -19,7 +19,7 @@ MAINTAINER=	naddy@FreeBSD.org
 
 LIB_DEPENDS=	ao.3:${PORTSDIR}/audio/libao \
 		curl.2:${PORTSDIR}/ftp/curl \
-		iconv.2:${PORTSDIR}/converters/iconv \
+		iconv.3:${PORTSDIR}/converters/libiconv \
 		vorbis.1:${PORTSDIR}/audio/libvorbis
 
 GNU_CONFIGURE=	yes

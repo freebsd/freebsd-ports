@@ -17,7 +17,7 @@ MAINTAINER=	sobomax@FreeBSD.org
 
 LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png \
 		tiff.4:${PORTSDIR}/graphics/tiff \
-		giconv.2:${PORTSDIR}/converters/libiconv
+		iconv.3:${PORTSDIR}/converters/libiconv
 
 NO_LATEST_LINK=	"Unstable, development version."
 

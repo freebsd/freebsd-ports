@@ -13,9 +13,9 @@ MASTER_SITE_SUBDIR=	gtkhx
 
 MAINTAINER=	jre@vineyard.net
 
-LIB_DEPENDS=	gdk_pixbuf.2:${PORTSDIR}/graphics/gdk-pixbuf:install \
+LIB_DEPENDS=	gdk_pixbuf.2:${PORTSDIR}/graphics/gdk-pixbuf \
 		intl.1:${PORTSDIR}/devel/gettext-old \
-		iconv.2:${PORTSDIR}/converters/iconv:install
+		iconv.3:${PORTSDIR}/converters/libiconv
 
 USE_XLIB=	yes
 USE_GLIB=	yes

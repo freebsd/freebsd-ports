@@ -14,7 +14,7 @@ MASTER_SITE_SUBDIR=	bison
 
 MAINTAINER=		ports@FreeBSD.org
 
-LIB_DEPENDS=		giconv.2:${PORTSDIR}/converters/libiconv
+LIB_DEPENDS=		iconv.3:${PORTSDIR}/converters/libiconv
 
 GNU_CONFIGURE=		yes
 CONFIGURE_ARGS=		--with-included-gettext

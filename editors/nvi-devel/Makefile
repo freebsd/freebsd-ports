@@ -12,7 +12,7 @@ MASTER_SITES=	http://www.kotnet.org/~skimo/nvi/devel/
 
 MAINTAINER=	dd@FreeBSD.org
 
-BUILD_DEPENDS=	iconv:${PORTSDIR}/converters/iconv
+BUILD_DEPENDS=	iconv:${PORTSDIR}/converters/libiconv
 LIB_DEPENDS=	db3.2:${PORTSDIR}/databases/db3
 
 USE_BZIP2=		yes

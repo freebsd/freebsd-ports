@@ -17,7 +17,7 @@ MAINTAINER=	lioux@FreeBSD.org
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/ogle/libdvdcontrol.so.5:${PORTSDIR}/graphics/ogle
 LIB_DEPENDS=	intl.1:${PORTSDIR}/devel/gettext-old \
-		giconv.2:${PORTSDIR}/converters/libiconv \
+		iconv.3:${PORTSDIR}/converters/libiconv \
 		glade.4:${PORTSDIR}/devel/libglade \
 		xml2.5:${PORTSDIR}/textproc/libxml2
 RUN_DEPENDS=	ogle:${PORTSDIR}/graphics/ogle

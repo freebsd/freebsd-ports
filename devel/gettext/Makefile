@@ -13,7 +13,7 @@ MASTER_SITE_SUBDIR=	gettext
 
 MAINTAINER=	sobomax@FreeBSD.org
 
-LIB_DEPENDS=	giconv.2:${PORTSDIR}/converters/libiconv
+LIB_DEPENDS=	iconv.3:${PORTSDIR}/converters/libiconv
 
 NO_LATEST_LINK=	yes
 
