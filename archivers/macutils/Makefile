@@ -4,7 +4,7 @@
 # Whom:			Joel Sutton <sutton@aardvark.apana.org.au>
 # FreeBSD Version:	2.1.5-RELEASE
 #
-# $Id: Makefile,v 1.3 1999/04/16 08:08:01 mharo Exp $
+# $Id: Makefile,v 1.4 1999/04/18 10:17:01 asami Exp $
 #
 
 DISTNAME=	macutils_2.0b3.orig
@@ -19,7 +19,9 @@ MAINTAINER=	sutton@aardvark.apana.org.au
 WRKSRC=		${WRKDIR}/macutils
 MAKEFILE=	makefile
 
-MANDIR=		${PREFIX}/man/man
+MAN1=		macunpack.1 hexbin.1 macsave.1 macstream.1 binhex.1 tomac.1 \
+		frommac.1 macutil.1
+
 BINDIR=		${PREFIX}/bin
 DOCDIR=		${PREFIX}/share/doc/macutils
 DOCFILES=	README.crc README.hexbin README.macput README.unpit \
@@ -39,14 +41,14 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/comm/tomac ${BINDIR}/
 	${INSTALL_PROGRAM} ${WRKSRC}/comm/frommac ${BINDIR}/
 	@${ECHO_MSG} "===>  Installing man pages..."
-	${INSTALL_MAN} ${WRKSRC}/man/macunpack.1 ${MANDIR}1/
-	${INSTALL_MAN} ${WRKSRC}/man/hexbin.1 ${MANDIR}1/
-	${INSTALL_MAN} ${WRKSRC}/man/macsave.1 ${MANDIR}1/
-	${INSTALL_MAN} ${WRKSRC}/man/macstream.1 ${MANDIR}1/
-	${INSTALL_MAN} ${WRKSRC}/man/binhex.1 ${MANDIR}1/
-	${INSTALL_MAN} ${WRKSRC}/man/tomac.1 ${MANDIR}1/
-	${INSTALL_MAN} ${WRKSRC}/man/frommac.1 ${MANDIR}1/
-	${INSTALL_MAN} ${WRKSRC}/man/macutil.1 ${MANDIR}1/
+	${INSTALL_MAN} ${WRKSRC}/man/macunpack.1 ${MANPREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/man/hexbin.1 ${MANPREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/man/macsave.1 ${MANPREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/man/macstream.1 ${MANPREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/man/binhex.1 ${MANPREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/man/tomac.1 ${MANPREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/man/frommac.1 ${MANPREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/man/macutil.1 ${MANPREFIX}/man/man1
 .if !defined(NOPORTDOCS)
 	@${ECHO_MSG} "===>  Installing supplementary documents..."
 	-${MKDIR} ${DOCDIR}/
