@@ -1,0 +1,10 @@
+daCode est un moteur de dépèches écrit en PHP. Ce genre d'application est 
+également appelé "gestionnaire de contenu", ou "Content Management System" 
+(CMS). Il fonctionne avec PHP 3 et 4, et nécessite l'utilisation d'une base 
+de données (MySQL ou PostgreSQL). Il peut également étre utilisé, en plus 
+d'une base de données, avec LDAP ou NIS.
+
+WWW: http://www.dacode.org
+    
+- S.
+gioria@FreeBSD.ORG
