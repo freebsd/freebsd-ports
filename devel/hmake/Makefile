@@ -6,9 +6,11 @@
 #
 
 PORTNAME=	hmake
-PORTVERSION=	3.05
+PORTVERSION=	3.06
 CATEGORIES=	devel
-MASTER_SITES=	ftp://ftp.cs.york.ac.uk/pub/haskell/hmake/
+MASTER_SITES=	http://www.haskell.org/hmake/ \
+		ftp://ftp.cs.york.ac.uk/pub/haskell/hmake/ \
+		http://www.cs.york.ac.uk/fp/hmake/
 
 MAINTAINER=	mwest@uct.ac.za
 

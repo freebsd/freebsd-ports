@@ -1,6 +1,7 @@
 bin/harch
 bin/hi
 bin/hmake
+bin/hmake-config
 lib/hmake/ix86-FreeBSD/HInteractive
 lib/hmake/ix86-FreeBSD/MkProg
 lib/hmake/ix86-FreeBSD/Older
