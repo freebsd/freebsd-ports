@@ -685,6 +685,9 @@ etc/rc.d/zope.sh
 %%ZOPEBASEDIR%%/lib/python/Products/ExternalMethod/help/ExternalMethod.pyc
 %%ZOPEBASEDIR%%/lib/python/Products/ExternalMethod/version.txt
 %%ZOPEBASEDIR%%/lib/python/Products/ExternalMethod/www/function.gif
+%%ZOPEBASEDIR%%/lib/python/Products/Hotfix_2001_05_01/README.txt
+%%ZOPEBASEDIR%%/lib/python/Products/Hotfix_2001_05_01/__init__.py
+%%ZOPEBASEDIR%%/lib/python/Products/Hotfix_2001_05_01/__init__.pyc
 %%ZOPEBASEDIR%%/lib/python/Products/MIMETools/MIMETag.py
 %%ZOPEBASEDIR%%/lib/python/Products/MIMETools/MIMETag.pyc
 %%ZOPEBASEDIR%%/lib/python/Products/MIMETools/README.txt
@@ -1293,7 +1296,6 @@ etc/rc.d/zope.sh
 %%ZOPEBASEDIR%%/lib/python/Shared/DC/xml/pyexpat/Makefile.pre.in
 %%ZOPEBASEDIR%%/lib/python/Shared/DC/xml/pyexpat/README
 %%ZOPEBASEDIR%%/lib/python/Shared/DC/xml/pyexpat/Setup
-%%ZOPEBASEDIR%%/lib/python/Shared/DC/xml/pyexpat/Setup.in
 %%ZOPEBASEDIR%%/lib/python/Shared/DC/xml/pyexpat/__init__.py
 %%ZOPEBASEDIR%%/lib/python/Shared/DC/xml/pyexpat/__init__.pyc
 %%ZOPEBASEDIR%%/lib/python/Shared/DC/xml/pyexpat/_checkversion.py
