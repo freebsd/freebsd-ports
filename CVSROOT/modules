@@ -2412,7 +2412,7 @@ gaim-encryption	ports/security/gaim-encryption
 gaim-festival	ports/audio/gaim-festival
 gaim-guifications	ports/misc/gaim-guifications
 gaim-openq	ports/net/gaim-openq
-gaim-otr	ports/net/gaim-otr
+gaim-otr	ports/security/gaim-otr
 gaim-rss-reader	ports/net/gaim-rss-reader
 gaim-xmms-remote	ports/multimedia/gaim-xmms-remote
 gal		ports/x11-toolkits/gal
