@@ -1,23 +1,255 @@
---- ../MailScanner-install-4.32.2.orig/docs/man/MailScanner.conf.5	Mon May 31 13:43:07 2004
-+++ docs/man/MailScanner.conf.5	Mon Jul 12 14:21:58 2004
+--- ../MailScanner-install-4.32.4.orig/docs/man/MailScanner.conf.5	Wed Jul 28 13:28:57 2004
++++ docs/man/MailScanner.conf.5	Wed Jul 28 13:29:47 2004
 @@ -1,4 +1,4 @@
--.TH "MailScanner.conf" "5" "4.31.4" "Julian Field" "Mail"
-+.TH "MailScanner.conf" "5" "4.32.2" "Julian Field" "Mail"
+-.TH "MailScanner.conf" "5" "4.32.2" "Julian Field" "Mail"
++.TH "MailScanner.conf" "5" "4.32.4" "Julian Field" "Mail"
  .SH "NAME"
  .LP 
  MailScanner.conf \- Main configuration for MailScanner
-@@ -1784,6 +1784,14 @@
+@@ -246,7 +246,15 @@
+ .br 
  
  .br 
- Do you want to debug SpamAssassin from within MailScanner?
+-If you want to create the quarantine/archive so the files are owned by a user othee: If the "Run As User" is not "root" then you cannot change the user but may still be able to change the group, if the "Run As User" is a member of both of the groups "Run As Group" and "Quarantine Group".
++If you want to create the quarantine/archive so the files are owned by a user other than the "Run As User" setting at the top of this file, you can change that here. Note: If the "Run As User" is not "root" then you cannot change the user but may still be able to change the group, if the "Run As User" is a member of both of the groups "Run As Group" and "Quarantine Group".
 +
 +.TP 
-+\fBRun In Foreground\fR
++\fBQuarantine Group\fR
++Default:
++.br 
++
++.br 
++If you want to create the quarantine/archive so the files are owned by a user other than the "Run As User" setting at the top of this file, you can change that here. Note: If the "Run As User" is not "root" then you cannot change the user but may still be able to change the group, if the "Run As User" is a member of both of the groups "Run As Group" and "Quarantine Group".
+ 
+ .TP 
+ \fBQuarantine Permissions\fR
+@@ -440,7 +448,23 @@
+ .br 
+ 
+ .br 
+-The director of these files for changes in size to detect when a Sophos update has happened. The date of the Sophos Lib Dir is also monitored. This is only used by the "sophossavi" virus scanner, not the "sophos" scanner setting.
++The directory (or a link to it) containing all the Sophos *.ide files. This is only used by the "sophossavi" virus scanner, and is irrelevant for all other scanners.
++
++.TP 
++\fBSophos Lib Dir\fR
++Default: /usr/local/Sophos/lib
++.br 
++
++.br 
++The directory (or a link to it) containing all the Sophos *.so libraries.This is only used by the "sophossavi" virus scanner, and is irrelevant for all other scanners.
++
++.TP 
++\fBMonitors For Sophos Updates\fR
++Default: /usr/local/Sophos/ide/*ides.zip
++.br 
++
++.br 
++SophosSAVI only: monitor each of these files for changes in size to detect when a Sophos update has happened. The date of the Sophos Lib Dir is also monitored. This is only used by the "sophossavi" virus scanner, not the "sophos" scanner setting.
+ 
+ .SH "Virus scanning and vulnerability testing"
+ .TP 
+@@ -461,7 +485,7 @@
+ .br 
+ 
+ .br 
+-Which Virus Scanning package to use. Possible choices are sophos, sophossavi, mcafee, command, bitdefender, kaspersky, kaspersky\-4.5, kavdaemonclient, inoculate, inoculan, nod32, nod32\-1.99, f\-secure, f\-prot, panda, rav, antivir, clamav, clamavmodule, css, trend, norman, avg, vexira, none (no virus scanning at all)
++Which Virus Scanning package to use. Possible choices are sophos, sophossavi, mcafee, command, bitdefender, kaspersky, kaspersky\-4.5, kavdaemonclient, inoculate, inoculan, nod32, nod32\-1.99, f\-secure, f\-prot, panda, rav, antivir, clamav, clamavmodule, css, trend, norman, avg, vexira, none (no virus scanning at all). This *cannot* be the filename of a ruleset.
+ .br 
+ 
+ .br 
+@@ -470,6 +494,10 @@
+ 
+ .br 
+ Note: If you want to use multiple virus scanners, then this should be a space\-separated list of virus scanners.
++.br 
++
++.br 
++Note: Make sure that you check that the base installation directory in the 3rd column of virus.scanners.conf matches the location you have installed each of your virus scanners. The supplied virus.scanners.conf file assumes the default installation locations recommended by each of the virus scanner installation guides.
+ 
+ .TP 
+ \fBVirus Scanner Timeout\fR
+@@ -594,7 +622,28 @@
+ .IP  \(bu 4
+ no     => Ban messages containing these tags
+ .IP  \(bu 4
+-disarm => Allow these tags, but stop these tags from fR
++disarm => Allow these tags, but stop these tags from working
++.RE
++
++.TP 
++\fBAllow Script Tags\fR
 +Default: no
 +.br 
 +
 +.br 
-+Set Run In Foreground to "yes" if you want MailScanner to operate normally in foreground (and not as a background daemon). Use this if you are controlling the execution of MailScanner with a tool like DJB's 'supervise' (see http://cr.yp.to/daemontools.html).
++Do you want to allow <Script> tags in email messages? This is a bad idea as these are used to exploit vulnerabilities in email applications and web browsers. This can also be the filename of a ruleset. Possible values:
++.br 
++.RS 7
++.IP  \(bu 4
++yes    => Allow these tags to be in the message
++.IP  \(bu 4
++no     => Ban messages containing these tags
++.IP  \(bu 4
++disarm => Allow these tags, but stop these tags from working
++.RE
++
++.TP 
++\fBAllow WebBugs\fR
+ Default: disarm
+ .br 
+ 
+@@ -785,7 +834,15 @@
+ .br 
+ 
+ .br 
+-If the "Sign Clean Messages" option is set, then the contents of this file will be appended to the end of the body of every message that is scanned by MailScanner. You can use this to inform your users that MailScanner has scanned it, and you can also add any disclaimers you feel should be on mail travelling through your servers. This option corresponds to the contents ext messages.
++If the "Sign Clean Messages" option is set, then the contents of this file will be appended to the end of the body of every message that is scanned by MailScanner. You can use this to inform your users that MailScanner has scanned it, and you can also add any disclaimers you feel should be on mail travelling through your servers. This option corresponds to the contents that is appended to HTML messages.
++
++.TP 
++\fBInline Text Signature\fR
++Default: %reports\-dir%/inline.sig.txt
++.br 
++
++.br 
++If the "Sign Clean Messages" option is set, then the contents of this file will be appended to the end of the body of every message that is scanned by MailScanner. You can use this to inform your users that MailScanner has scanned it, and you can also add any disclaimers you feel should be on mail travelling through your servers. This option corresponds to the contents that is appended to text messages.
  
  .TP 
- \fBLDAP Server\fR
+ \fBSender Error Report\fR
+@@ -1015,7 +1072,15 @@
+ .br 
+ 
+ .br 
+-If this option is set, then any message which is not scanned by MailScanner gets the "Mail Header" added to it with the stritomers/clients. 
++If this option is set, then any message which is not scanned by MailScanner gets the "Mail Header" added to it with the string contained in the "Unscanned Header Value" option. This can be used to advertise your MailScanner service to customers/clients who are currently not using it. 
++
++.TP 
++\fBUnscanned Header Value\fR
++Default: Not scanned: please contact your Internet E\-Mail Service Provider for details
++.br 
++
++.br 
++This supplies the text that is placed in the "Mail Header" of messages that have not been scanned, if the option "Mark Unscanned Messages" is set. It is a useful place to advertise your MailScanner service to new customers/clients. 
+ 
+ .TP 
+ \fBDeliver Cleaned Messages\fR
+@@ -1272,7 +1337,16 @@
+ .br 
+ 
+ .br 
+-When virus warn
++When virus warnings are sent to any users, this is the email address used as the "From:" header in the messages. 
++.SH "Definitions of virus scanners and spam detectors"
++.TP 
++\fBSpam List Definitions\fR
++Default: %etc\-dir%/spam.lists.conf
++.br 
++
++.br 
++This file contains all the definitions of the "Spam Lists" (also known as RBL's or DNSBL's) which can be used to try to detect spam based on where each message came from. Many more spam lists can be added to this file, but it contains the most popular ones to get you started. 
++
+ .TP 
+ \fBVirus Scanner Definitions\fR
+ Default: %etc\-dir%/virus.scanners.conf
+@@ -1479,7 +1553,24 @@
+ .br 
+ 
+ .br 
+-If you are using the Bayesian statistics engine on a busy server, you ma deliver
++If you are using the Bayesian statistics engine on a busy server, you may well need to force a Bayesian database rebuild and expiry at regular intervals. This is measures in seconds. 24 hours = 86400 seconds. To disable this feature set this to 0.
++
++.TP 
++\fBWait During Bayes Rebuild\fR
++Default: no
++.br 
++
++.br 
++# The Bayesian database rebuild and expiry may take a 2 or 3 minutes
++# to complete. During this time you can either wait, or simply
++# disable SpamAssassin checks until it has completed.
++WaitDuringBayesRebuild = no
++
++
++.SH "What to do with spam"
++.TP 
++\fBSpam Actions\fR
++Default: deliver
+ .br 
+ 
+ .br 
+@@ -1683,6 +1774,25 @@
+ .RE
+ .SH "Advanced Settings"
+ .TP 
++\fBSpam Score Number Format\fR
++Default: %d
++.br 
++
++.br 
++When putting the value of the spam score of a message into the headers, how do you want to format it. If you don't know how to use sprintf() or printf() in C, please *do not modify* this value. This can also be the filename of a ruleset. A few examples for you:
++.RS 7
++.TP 
++%d
++==> 12
++.TP 
++%5.2f
++==> 12.34
++.TP 
++%05.1f
++==> 012.3
++.RE
++
++.TP 
+ \fBDebug\fR
+ Default: no
+ .br 
+@@ -1718,7 +1828,25 @@
+ \fBLDAP Base\fR
+ Default:
+ .br 
+-ssing a batch of messages. It is designed to be used in conjunction with a Custom Function. The Custom Function should then be written to have a "side effect" of doing something useful such as logging lots of information about the batch of messages to a file or an SQL database. 
++
++.br 
++If you are using an LDAP server to read the configuration, these are the details required for the LDAP connection. The connection is anonymous. Example: o=fsl
++
++.TP 
++\fBLDAP Site\fR
++Default:
++.br 
++
++.br 
++If you are using an LDAP server to read the configuration, these are the details required for the LDAP connection. The connection is anonymous. Example: default
++
++.TP 
++\fBAlways Looked Up Last\fR
++Default: no
++.br 
++
++.br 
++The value of the option is actually never used, but it is evaluated at the end of processing a batch of messages. It is designed to be used in conjunction with a Custom Function. The Custom Function should then be written to have a "side effect" of doing something useful such as logging lots of information about the batch of messages to a file or an SQL database. 
+ 
+ .TP 
+ \fBDeliver in Background\fR
+@@ -1892,7 +2020,22 @@
+ .LP 
+ Many Windows e\-mail programs (eg. Microsoft Outlook) hide common file extensions in an attempt to not baffle the user. The result is that while an attachment called "Your Document.doc" is helpfully displayed as "Your Document", a more sinister attachment just as "Looks Safe.txt.pif" will appear simply as "Looks Safe.txt". Many users recognise the .txt filename extension as applying to plain text files, which they know are safe. So even an experienced user may well double\-click on this attachment thinking it is just going to start Notepad and display the text file. However, the file is really an MS\-Dos shortcut (.pif file) and can execute any arbitrary commands the author wanted: all without any indication to the unwitting user. 
+ .LP 
+-The rules are matched in order from the top to the bottom of the file, and the first rule containing a matching regular expression is used. Each line of the file is either blank, a comment (in which case it starts with a '#' character) or is a rule made up of 4 fields separated by one o
++The rules are matched in order from the top to the bottom of the file, and the first rule containing a matching regular expression is used. Each line of the file is either blank, a comment (in which case it starts with a '#' character) or is a rule made up of 4 fields separated by one or more TAB characters:
++
++.TP 
++allow / deny
++Accept or reject the attachment if its filename matches the regular expression 
++
++.TP 
++regular expression 
++The rule is executed if the attachment matches this expression. It may optionally be surrounded in '/' characters. 
++.TP 
++log text 
++If the rule matches, this text is placed in the syslog. If the text is "\-", no string is logged. 
++
++.TP 
++user text 
++If the rule matches, this text is placed in the text message sent to the user. If the text is "\-", no text is used. 
+ 
+ .LP 
+ Please have a look at the filename.rules.conf or filename.rules.conf.sample file provided with this distribution/package/port.

@@ -1,16 +1,128 @@
---- ../MailScanner-install-4.32.2.orig/docs/man/MailScanner.conf.5.html	Mon May 31 13:43:08 2004
-+++ docs/man/MailScanner.conf.5.html	Mon Jul 12 14:22:01 2004
+--- ../MailScanner-install-4.32.4.orig/docs/man/MailScanner.conf.5.html	Wed Jul 28 13:28:57 2004
++++ docs/man/MailScanner.conf.5.html	Wed Jul 28 13:29:22 2004
 @@ -1,5 +1,5 @@
  <!-- Creator     : groff version 1.19 -->
--<!-- CreationDate: Wed May 26 14:39:52 2004 -->
-+<!-- CreationDate: Mon Jul 12 14:19:46 2004 -->
+-<!-- CreationDate: Mon Jul 12 14:19:46 2004 -->
++<!-- CreationDate: Wed Jul 28 13:28:02 2004 -->
  <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
  "http://www.w3.org/TR/html4/loose.dtd">
  <html>
-@@ -5274,6 +5274,30 @@
+@@ -220,7 +220,25 @@
+ headers.</p>
+ </td>
+ </table>
+-<a name="System Settingsnner uses your server efficiently by running
++<a name="System Settings"></a>
++<h2>System Settings</h2>
++<!-- INDENTATION -->
++<table width="100%" border=0 rules="none" frame="void"
++       cols="2" cellspacing="0" cellpadding="0">
++<tr valign="top" align="left">
++<td width="11%"></td>
++<td width="89%">
++<p><b>Max Children</b></p></td>
++</table>
++<!-- INDENTATION -->
++<table width="100%" border=0 rules="none" frame="void"
++       cols="2" cellspacing="0" cellpadding="0">
++<tr valign="top" align="left">
++<td width="22%"></td>
++<td width="78%">
++<p>Default: 5</p>
++<!-- INDENTATION -->
++<p>MailScanner uses your server efficiently by running
+ several identical processes at the same time, all processing
+ mail. This is the number of these processes to run at once.
+ Turning this figure will optimise the performance of your
+@@ -497,7 +515,31 @@
  <!-- INDENTATION -->
- <p>Do you want to debug SpamAssassin from within
- MailScanner?</p>
+ <p>To avoid resource leaks the MailScanner parent process
+ stops and restarts its child processes from time to time.
+-Set the amount of seconds ea"top" align="left">
++Set the amount of seconds each child process is supposed to
++live here.</p>
++</td>
++</table>
++<!-- TABS -->
++<table width="100%" border=0 rules="none" frame="void"
++       cols="5" cellspacing="0" cellpadding="0">
++<tr valign="top" align="left">
++<td width="11%"></td>
++<td width="4%">
++
++<p><b>MTA</b></p>
++</td>
++<td width="7%"></td>
++<td width="26%">
++
++<p>Default: sendmail</p>
++</td>
++<td width="52%">
++</td>
++</table>
++<!-- INDENTATION -->
++<table width="100%" border=0 rules="none" frame="void"
++       cols="2" cellspacing="0" cellpadding="0">
++<tr valign="top" align="left">
+ <td width="22%"></td>
+ <td width="78%">
+ <p>MailScanner works with sendmail and exim. Since the queue
+@@ -730,7 +772,20 @@
+ <!-- INDENTATION -->
+ <p>If you want processes running under the same *group* as
+ MailScanner to be able to read the quarantined files (and
+-list what is in the directories, of course), set to 06="2" cellspacing="0" cellpadding="0">
++list what is in the directories, of course), set to 0640. If
++you want *all* other users to be able to read them, set to
++0644. For a detailed description, if you&rsquo;re not
++already familiar with it, refer to &lsquo;man 2
++chmod&lsquo;. Typical use: let the webserver have access to
++the files so users can download them if they really want to.
++Use with care, you may well open security holes.</p>
++</td>
++</table>
++<a name="Process Incoming Mail"></a>
++<h2>Process Incoming Mail</h2>
++<!-- INDENTATION -->
++<table width="100%" border=0 rules="none" frame="void"
++       cols="2" cellspacing="0" cellpadding="0">
+ <tr valign="top" align="left">
+ <td width="11%"></td>
+ <td width="89%">
+@@ -975,7 +1030,22 @@
+ <td width="89%">
+ <p><b>File Command</b></p></td>
+ </table>
+-<!-- INDENTATIoid"
++<!-- INDENTATION -->
++<table width="100%" border=0 rules="none" frame="void"
++       cols="2" cellspacing="0" cellpadding="0">
++<tr valign="top" align="left">
++<td width="22%"></td>
++<td width="78%">
++<p>Default: /usr/bin/file</p>
++<!-- INDENTATION -->
++<p>Where the &quot;file&quot; command is installed. This is
++used for checking the content type of files, regardless of
++their filename. To disable Filetype checking, set this value
++to blank.</p>
++</td>
++</table>
++<!-- INDENTATION -->
++<table width="100%" border=0 rules="none" frame="void"
+        cols="2" cellspacing="0" cellpadding="0">
+ <tr valign="top" align="left">
+ <td width="11%"></td>
+@@ -1216,7 +1286,23 @@
+ <tr valign="top" align="left">
+ <td width="22%"></td>
+ <td width="78%">
+-<p>Default: /usr/l100%" border=0 rules="none" frame="void"
++<p>Default: /usr/local/Sophos/ide</p>
++<!-- INDENTATION -->
++<p>The directory (or a link to it) containing all the Sophos
++*.ide files. This is only used by the &quot;sophossavi&quot;
++virus scanner, and is irrelevant for all other scanners.</p>
 +</td>
 +</table>
 +<!-- INDENTATION -->
@@ -19,9 +131,42 @@
 +<tr valign="top" align="left">
 +<td width="11%"></td>
 +<td width="89%">
-+<p><b>Run In Foreground</b></p></td>
++<p><b>Sophos Lib Dir</b></p></td>
 +</table>
 +<!-- INDENTATION -->
++<table width="100%" border=0 rules="none" frame="void"
+        cols="2" cellspacing="0" cellpadding="0">
+ <tr valign="top" align="left">
+ <td width="22%"></td>
+@@ -1303,7 +1389,8 @@
+ kaspersky&minus;4.5, kavdaemonclient, inoculate, inoculan,
+ nod32, nod32&minus;1.99, f&minus;secure, f&minus;prot,
+ panda, rav, antivir, clamav, clamavmodule, css, trend,
+-norman, avg, vexira, none (no virus scanning at all)</p>
++norman, avg, vexira, none (no virus scanning at all). This
++*cannot* be the filename of a ruleset.</p>
+ <!-- INDENTATION -->
+ <p>Note for McAfee users: Do NOT use any symlinks with
+ McAfee at all. It is very strange but McAfee may not detect
+@@ -1313,6 +1400,13 @@
+ <p>Note: If you want to use multiple virus scanners, then
+ this should be a space&minus;separated list of virus
+ scanners.</p>
++<!-- INDENTATION -->
++<p>Note: Make sure that you check that the base installation
++directory in the 3rd column of virus.scanners.conf matches
++the location you have installed each of your virus scanners.
++The supplied virus.scanners.conf file assumes the default
++installation locations recommended by each of the virus
++scanner installation guides.</p>
+ </td>
+ </table>
+ <!-- INDENTATION -->
+@@ -1468,7 +1562,19 @@
+ <p><b>Still Deliver Silent Viruses</b></p></td>
+ </table>
+ <!-- INDENTATION -->
+-<table width=t your users (and your management)
 +<table width="100%" border=0 rules="none" frame="void"
 +       cols="2" cellspacing="0" cellpadding="0">
 +<tr valign="top" align="left">
@@ -29,12 +174,521 @@
 +<td width="78%">
 +<p>Default: no</p>
 +<!-- INDENTATION -->
-+<p>Set Run In Foreground to &quot;yes&quot; if you want
-+MailScanner to operate normally in foreground (and not as a
-+background daemon). Use this if you are controlling the
-+execution of MailScanner with a tool like DJB&rsquo;s
-+&rsquo;supervise&rsquo; (see
-+http://cr.yp.to/daemontools.html).</p>
++<p>If this is set to yes then disinfected messsages that
++originally contained one of the &quot;silent&quot; viruses
++will still be delivered to the original recipients, even
++those addresses were chosen at random by the infected PC and
++do not correspond to anything a user intended to send. Set
++this to yes so that your users (and your management)
+ appreciate how much MailScanner is doing to protect them,
+ but set it to no if they complain a lot about receiving lots
+ of virus warnings.</p>
+@@ -1710,7 +1816,32 @@
+ </td>
+ </table>
+ <!-- TABS -->
+-<table width="100td>
++<table width="100%" border=0 rules="none" frame="void"
++       cols="4" cellspacing="0" cellpadding="0">
++<tr valign="top" align="left">
++<td width="22%"></td>
++<td width="1%">
++
++<p>&bull;</p>
++</td>
++<td width="5%"></td>
++<td width="72%">
++
++<p>yes =&gt; Allow these tags to be in the message</p>
++</td>
++<tr valign="top" align="left">
++<td width="22%"></td>
++<td width="1%">
++
++<p>&bull;</p>
++</td>
++<td width="5%"></td>
++<td width="72%">
++
++<p>no =&gt; Ban messages containing these tags</p>
++</td>
++<tr valign="top" align="left">
++<td width="22%"></td>
+ <td width="1%">
+ 
+ <p>&bull;</p>
+@@ -2009,7 +2140,24 @@
+ <p>Default: no</p>
+ <!-- INDENTATION -->
+ <p>Do you want to allow &lt;Form&gt; tags in email messages?
+-This is a bad idea as these are used as order=0 rules="none" frame="void"
++This is a bad idea as these are used as scams to pursuade
++people to part with credit card information and other
++personal data. This can also be the filename of a
++ruleset.</p>
++</td>
++</table>
++<a name="Attachment filename checking"></a>
++<h2>Attachment filename checking</h2>
++<!-- INDENTATION -->
++<table width="100%" border=0 rules="none" frame="void"
++       cols="2" cellspacing="0" cellpadding="0">
++<tr valign="top" align="left">
++<td width="11%"></td>
++<td width="89%">
++<p><b>Filename Rules</b></p></td>
++</table>
++<!-- INDENTATION -->
++<table width="100%" border=0 rules="none" frame="void"
+        cols="2" cellspacing="0" cellpadding="0">
+ <tr valign="top" align="left">
+ <td width="22%"></td>
+@@ -2244,7 +2392,23 @@
+ example of each of which is contained in the supplied sample
+ file.</p>
+ </td>
+-<ssage.txt</p>
++</table>
++<!-- INDENTATION -->
++<table width="100%" border=0 rules="none" frame="void"
++       cols="2" cellspacing="0" cellpadding="0">
++<tr valign="top" align="left">
++<td width="11%"></td>
++<td width="89%">
++<p><b>Deleted Bad Content Message Report</b></p></td>
++</table>
++<!-- INDENTATION -->
++<table width="100%" border=0 rules="none" frame="void"
++       cols="2" cellspacing="0" cellpadding="0">
++<tr valign="top" align="left">
++<td width="22%"></td>
++<td width="78%">
++<p>Default:
++/%reports&minus;dir%/deleted.content.message.txt</p>
+ <!-- INDENTATION -->
+ <p>This report is sent when a message is deleted because it
+ contained bad or dangerous content. A few variable
+@@ -2484,7 +2648,23 @@
+ <td width="78%">
+ <p>Default: X&minus;MailScanner:</p>
+ <!-- INDENTATION -->
+-<p>Extra header that should be added to all scanned me cols="2" cellspacing="0" cellpadding="0">
++<p>Extra header that should be added to all scanned messages
++to show they have been scanned. You might want to add an
++abbreviation of your site name to this, so that you can find
++headers that are added by your MailScanner server.</p>
++</td>
++</table>
++<!-- INDENTATION -->
++<table width="100%" border=0 rules="none" frame="void"
++       cols="2" cellspacing="0" cellpadding="0">
++<tr valign="top" align="left">
++<td width="11%"></td>
++<td width="89%">
++<p><b>Spam Header</b></p></td>
++</table>
++<!-- INDENTATION -->
++<table width="100%" border=0 rules="none" frame="void"
++       cols="2" cellspacing="0" cellpadding="0">
+ <tr valign="top" align="left">
+ <td width="22%"></td>
+ <td width="78%">
+@@ -2737,7 +2917,24 @@
+ SpamAssassin score. This means that people who only filter
+ on the &quot;Spam Stars&quot; will still be able to catch
+ messages which receive a very low SpamAssassin score. Set
+-this valdth="78%">
++this value to 0 to disable it. This can also be the filename
++of a ruleset.</p>
++</td>
++</table>
++<!-- INDENTATION -->
++<table width="100%" border=0 rules="none" frame="void"
++       cols="2" cellspacing="0" cellpadding="0">
++<tr valign="top" align="left">
++<td width="11%"></td>
++<td width="89%">
++<p><b>Clean header Value</b></p></td>
++</table>
++<!-- INDENTATION -->
++<table width="100%" border=0 rules="none" frame="void"
++       cols="2" cellspacing="0" cellpadding="0">
++<tr valign="top" align="left">
++<td width="22%"></td>
++<td width="78%">
+ <p>Default: Found to be clean</p>
+ <!-- INDENTATION -->
+ <p>This is the text that is added to the &quot;Mail
+@@ -2977,7 +3174,23 @@
+ E&minus;Mail Service Provider for details</p>
+ <!-- INDENTATION -->
+ <p>This supplies the text that is placed in the &quot;Mail
+-Header&quot; of messages that have not been scanned, if"0" cellpadding="0">
++Header&quot; of messages that have not been scanned, if the
++option &quot;Mark Unscanned Messages&quot; is set. It is a
++useful place to advertise your MailScanner service to new
++customers/clients.</p>
++</td>
++</table>
++<!-- INDENTATION -->
++<table width="100%" border=0 rules="none" frame="void"
++       cols="2" cellspacing="0" cellpadding="0">
++<tr valign="top" align="left">
++<td width="11%"></td>
++<td width="89%">
++<p><b>Deliver Cleaned Messages</b></p></td>
++</table>
++<!-- INDENTATION -->
++<table width="100%" border=0 rules="none" frame="void"
++       cols="2" cellspacing="0" cellpadding="0">
+ <tr valign="top" align="left">
+ <td width="22%"></td>
+ <td width="78%">
+@@ -3227,7 +3440,23 @@
+ <tr valign="top" align="left">
+ <td width="11%"></td>
+ <td width="89%">
+-<void"
++<p><b>Filename Subject Text</b></p></td>
++</table>
++<!-- INDENTATION -->
++<table width="100%" border=0 rules="none" frame="void"
++       cols="2" cellspacing="0" cellpadding="0">
++<tr valign="top" align="left">
++<td width="22%"></td>
++<td width="78%">
++<p>Default: {Virus?}</p>
++<!-- INDENTATION -->
++<p>This is the text inserted at the start of the
++&quot;Subject:&quot; line if the &quot;Filename Modify
++Subject&quot; option is set.</p>
++</td>
++</table>
++<!-- INDENTATION -->
++<table width="100%" border=0 rules="none" frame="void"
+        cols="2" cellspacing="0" cellpadding="0">
+ <tr valign="top" align="left">
+ <td width="11%"></td>
+@@ -3483,7 +3712,22 @@
+ format suitable for most Unix mail systems. These files must
+ already exist since MailScanner will not create them!</p>
+ <!-- INDENTATION -->
+-<p>If you give this option a ruleset, you can  Notices</b></p></td>
++<p>If you give this option a ruleset, you can control
++exactly whose mail is archived or forwarded. If you do this,
++beware of the legal implications as this could be deemed to
++be illegal interception unless the police have asked you to
++do this.</p>
++</td>
++</table>
++<a name="Notices to system administrators"></a>
++<h2>Notices to system administrators</h2>
++<!-- INDENTATION -->
++<table width="100%" border=0 rules="none" frame="void"
++       cols="2" cellspacing="0" cellpadding="0">
++<tr valign="top" align="left">
++<td width="11%"></td>
++<td width="89%">
++<p><b>Send Notices</b></p></td>
+ </table>
+ <!-- INDENTATION -->
+ <table width="100%" border=0 rules="none" frame="void"
+@@ -3732,7 +3976,21 @@
+ <tr valign="top" align="left">
+ <td width="11%"></td>
+ <td width="89%">
+-<p><b>Spam D be defined in the &quot;Spam List
++<p><b>Spam Domain List</b></p></td>
++</table>
++<!-- INDENTATION -->
++<table width="100%" border=0 rules="none" frame="void"
++       cols="2" cellspacing="0" cellpadding="0">
++<tr valign="top" align="left">
++<td width="22%"></td>
++<td width="78%">
++<p>Default:</p>
++<!-- INDENTATION -->
++<p>This provides a space&minus;separated list of &quot;Spam
++Lists&quot; (or RBL&rsquo;s or DNSBL&rsquo;s) which are
++checked for each message. These lists are based on the
++domain name of the sender address of each message. Every
++list used here must be defined in the &quot;Spam List
+ Definitions&quot; file mentioned above.</p>
+ </td>
+ </table>
+@@ -3974,7 +4232,23 @@
+ <!-- INDENTATION -->
+ <p>SpamAssassin is quite slow when processing very large
+ messages. To work round this problem, this option provides a
+-maximum size for messages that are processed">
++maximum size for messages that are processed with
++SpamAssassin. Most real spam is usually less than about
++50,000 bytes per message.</p>
++</td>
++</table>
++<!-- INDENTATION -->
++<table width="100%" border=0 rules="none" frame="void"
++       cols="2" cellspacing="0" cellpadding="0">
++<tr valign="top" align="left">
++<td width="11%"></td>
++<td width="89%">
++<p><b>Required Spam Assassin Score</b></p></td>
++</table>
++<!-- INDENTATION -->
++<table width="100%" border=0 rules="none" frame="void"
++       cols="2" cellspacing="0" cellpadding="0">
++<tr valign="top" align="left">
+ <td width="22%"></td>
+ <td width="78%">
+ <p>Default: 6</p>
+@@ -4216,7 +4490,24 @@
+ <!-- INDENTATION -->
+ <p>If you are using the Bayesian statistics engine on a busy
+ server, you may well need to force a Bayesian database
+-rebuild and expiry at regular intervals. This is measuth="22%"></td>
++rebuild and expiry at regular intervals. This is measures in
++seconds. 24 hours = 86400 seconds. To disable this feature
++set this to 0.</p>
++</td>
++</table>
++<!-- INDENTATION -->
++<table width="100%" border=0 rules="none" frame="void"
++       cols="2" cellspacing="0" cellpadding="0">
++<tr valign="top" align="left">
++<td width="11%"></td>
++<td width="89%">
++<p><b>Wait During Bayes Rebuild</b></p></td>
++</table>
++<!-- INDENTATION -->
++<table width="100%" border=0 rules="none" frame="void"
++       cols="2" cellspacing="0" cellpadding="0">
++<tr valign="top" align="left">
++<td width="22%"></td>
+ <td width="78%">
+ <p>Default: no</p>
+ <!-- INDENTATION -->
+@@ -4502,7 +4793,23 @@
+ <td width="11%"></td>
+ <td width="89%">
+ <p><b>Recipient Spam Report</b></p></td>
+-</>
++</table>
++<!-- INDENTATION -->
++<table width="100%" border=0 rules="none" frame="void"
++       cols="2" cellspacing="0" cellpadding="0">
++<tr valign="top" align="left">
++<td width="22%"></td>
++<td width="78%">
++<p>Default:
++%reports&minus;dir%/recipient.spam.report.txt</p>
++<!-- INDENTATION -->
++<p>If you use the &rsquo;notify&rsquo; Spam Action or High
++Scoring Spam Action then this is the location of the
++notification message that is sent to the original recipients
++of the message.</p>
++</td>
++</table>
++<!-- INDENTATION -->
+ <table width="100%" border=0 rules="none" frame="void"
+        cols="2" cellspacing="0" cellpadding="0">
+ <tr valign="top" align="left">
+@@ -4748,7 +5055,22 @@
+ <p><b>SpamAssassin Local Rules Dir</b></p></td>
+ </table>
+ <!-- INDENTATION -->
+-<table width="100%" border=0 rules="none" frame=dding="0">
++<table width="100%" border=0 rules="none" frame="void"
++       cols="2" cellspacing="0" cellpadding="0">
++<tr valign="top" align="left">
++<td width="22%"></td>
++<td width="78%">
++<p>Default:</p>
++<!-- INDENTATION -->
++<p>This tells MailScanner where to look for the
++site&minus;local rules. If this is set it adds to the list
++of places that are searched. MailScanner will always look at
++the following places (even if this option is not set):</p>
++</td>
++</table>
++<!-- TABS -->
++<table width="100%" border=0 rules="none" frame="void"
++       cols="5" cellspacing="0" cellpadding="0">
+ <tr valign="top" align="left">
+ <td width="22%"></td>
+ <td width="1%">
+@@ -4913,27 +5235,94 @@
+ </table>
+ <a name="Advanced Settings"></a>
+ <h2>Advanced Settings</h2>
++<!-- INDENTATION -->
++<table width="100%" border=0 rules="none" frame="void"
++       cols="2" cellspacing="0" cellpadding="0">
++<tr valign="top" align="left">
++<td width="11%"></td>
++<td width="89%">
++<p><b>Spam Score Number Format</b></p></td>
++</table>
++<!-- INDENTATION -->
++<table width="100%" border=0 rules="none" frame="void"
++       cols="2" cellspacing="0" cellpadding="0">
++<tr valign="top" align="left">
++<td width="22%"></td>
++<td width="78%">
++<p>Default: %d</p>
++<!-- INDENTATION -->
++<p>When putting the value of the spam score of a message
++into the headers, how do you want to format it. If you
++don&rsquo;t know how to use sprintf() or printf() in C,
++please *do not modify* this value. This can also be the
++filename of a ruleset. A few examples for you:</p>
++</td>
++</table>
+ <!-- TABS -->
+ <table width="100%" border=0 rules="none" frame="void"
+        cols="5" cellspacing="0" cellpadding="0">
+ <tr valign="top" align="left">
+ <td width="11%"></td>
+-<td width="7%">
++<td width="20%">
+ 
+-<p><b>Debug</b></p>
++<p>%d</p>
+ </td>
+-<td width="4%"></td>
+-<td width="16%">
++<td width="1%"></td>
++<td width="14%">
+ 
+-<p>Default: no</p>
++<p>==&gt; 12</p>
+ </td>
+-<td width="62%">
++<td width="54%">
++</td>
++<tr valign="top" align="left">
++<td width="11%"></td>
++<td width="20%">
++
++<p>%5.2f</p>
++</td>
++<td width="1%"></td>
++<td width="14%">
++
++<p>==&gt; 12.34</p>
++</td>
++<td width="54%">
++</td>
++<tr valign="top" align="left">
++<td width="11%"></td>
++<td width="20%">
++
++<p>%05.1f</p>
++</td>
++<td width="1%"></td>
++<td width="14%">
++
++<p>==&gt; 012.3</p>
++</td>
++<td width="54%">
++</td>
++<tr valign="top" align="left">
++<td width="11%"></td>
++<td width="20%">
++
++<p><b>Debug</b></p>
++</td>
++<td width="1%"></td>
++<td width="14%"></td>
++<td width="54%">
  </td>
  </table>
  <!-- INDENTATION -->
+ <table width="100%" border=0 rules="none" frame="void"
+        cols="2" cellspacing="0" cellpadding="0">
+ <tr valign="top" align="left">
++<td width="11%"></td>
++<td width="89%">
++<p>Default: no</p></td>
++</table>
++<!-- INDENTATION -->
++<table width="100%" border=0 rules="none" frame="void"
++       cols="2" cellspacing="0" cellpadding="0">
++<tr valign="top" align="left">
+ <td width="22%"></td>
+ <td width="78%">
+ <p>Not for use by normal users. Setting this option to
+@@ -5085,7 +5474,23 @@
+ <p><b>Deliver in Background</b></p></td>
+ </table>
+ <!-- INDENTATION -->
+-<table width="100%" border=0 rules="none" fr width="100%" border=0 rules="none" frame="void"
++<table width="100%" border=0 rules="none" frame="void"
++       cols="2" cellspacing="0" cellpadding="0">
++<tr valign="top" align="left">
++<td width="22%"></td>
++<td width="78%">
++<p>Default: yes</p>
++<!-- INDENTATION -->
++<p>When attempting delivery of any messages (when the
++&quot;Delivery Method = batch&quot;) the sendmail/Exim
++command will be run in the background so that MailScanner
++does not have to wait for the delivery attempt to complete.
++There are very few good reasons for setting this to
++&quot;no&quot;.</p>
++</td>
++</table>
++<!-- INDENTATION -->
++<table width="100%" border=0 rules="none" frame="void"
+        cols="2" cellspacing="0" cellpadding="0">
+ <tr valign="top" align="left">
+ <td width="11%"></td>
+@@ -5361,7 +5766,23 @@
+ end in &quot;.rules&quot; wherever possible.</p>
+ <!-- INDENTATION -->
+ <p>All blank lines are ignored, and comments start with
+-&quot;#&quot; and continue to the end of the liing="0">
++&quot;#&quot; and continue to the end of the line, like
++this: # This line is just a comment</p>
++<!-- INDENTATION -->
++<p>Other than that, every line is a rule and looks like this
++example: From: john.doe@domain.com yes</p>
++<!-- INDENTATION -->
++<p>As you can see, each rule has 3 fields:<br>
++1. Direction<br>
++2. Pattern to match<br>
++3. Result value (or values)</p>
++<!-- INDENTATION -->
++<p>1. Direction should be one of the following:</p>
++</td>
++</table>
++<!-- TABS -->
++<table width="100%" border=0 rules="none" frame="void"
++       cols="5" cellspacing="0" cellpadding="0">
+ <tr valign="top" align="left">
+ <td width="11%"></td>
+ <td width="7%">
+@@ -5610,4 +6031,22 @@
+ <tr valign="top" align="left">
+ <td width="11%"></td>
+ <td width="89%">
+-<p>Please have a look at the filename.rules.co
+\ No newline at end of file
++<p>Please have a look at the filename.rules.conf or
++filename.rules.conf.sample file provided with this
++distribution/package/port.</p>
++</td>
++</table>
++<a name="SEE ALSO"></a>
++<h2>SEE ALSO</h2>
++<!-- INDENTATION -->
++<table width="100%" border=0 rules="none" frame="void"
++       cols="2" cellspacing="0" cellpadding="0">
++<tr valign="top" align="left">
++<td width="11%"></td>
++<td width="89%">
++<p>MailScanner(8)</p>
++</td>
++</table>
++<hr>
++</body>
++</html>
