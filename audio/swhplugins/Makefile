@@ -6,6 +6,7 @@
 
 PORTNAME=	swhplugins
 PORTVERSION=	0.4.11
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	http://plugin.org.uk/releases/%SUBDIR%/
 MASTER_SITE_SUBDIR=	${PORTVERSION}
