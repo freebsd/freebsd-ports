@@ -12,8 +12,13 @@ lib/libtabe.so
 lib/libtabe.so.0.1
 @exec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -m %B
 @unexec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -R
+share/doc/tabe/BoPoMoFo.shtml
 share/doc/tabe/Changes
+share/doc/tabe/Changes.pre-0.1
 share/doc/tabe/README
+share/doc/tabe/TODO
+share/doc/tabe/ZuYinCode.txt
+share/doc/tabe/et26.txt
 share/doc/tabe/libtabe.sgml
 share/tabe/tsiyin/tsi.db
 share/tabe/tsiyin/yin.db

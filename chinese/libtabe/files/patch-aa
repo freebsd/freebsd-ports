@@ -1,5 +1,14 @@
---- src/Makefile.in.orig	Sat Dec 18 16:08:55 1999
-+++ src/Makefile.in	Sat Dec 18 16:09:08 1999
+--- src/Makefile.in.orig	Wed Feb 23 09:48:10 2000
++++ src/Makefile.in	Sun Feb 27 02:03:32 2000
+@@ -27,7 +27,7 @@
+ bindir	    = @bindir@
+ includedir  = @includedir@
+ 
+-version	    = 0.1-2
++version	    = 0.1
+ major_ver   = 0
+ 
+ #
 @@ -155,7 +155,7 @@
  
  install: install_binary install_data
@@ -8,7 +17,7 @@
 +install_binary:
  	if [ ! -d $(libdir) ]; then $(INSTALL) -d $(libdir); fi
  	$(INSTALL_DATA) lib$(LIBNAME).a $(libdir)
- 	if [ -f lib$(LIBNAME).so.$(version) ]; then \
+ 	if [ -f lib$(LIBNAME).so ]; then \
 @@ -171,6 +171,6 @@
  	(cd supports/bims; $(MAKE) install)
  	(cd util; $(MAKE) install)
