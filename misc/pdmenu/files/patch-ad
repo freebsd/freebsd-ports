@@ -1,7 +1,10 @@
---- Makefile.orig	Tue Aug 19 20:22:23 2003
-+++ Makefile	Tue Aug 19 20:22:35 2003
-@@ -11,7 +11,7 @@
- 	$(SRCDIR)/window.o $(SRCDIR)/error.o $(SRCDIR)/pdgetline.o
+
+$FreeBSD$
+
+--- Makefile.orig
++++ Makefile
+@@ -13,7 +13,7 @@
+ include makeinfo
  
  pdmenu: .dep $(OBJFILES)
 -	${CC} -o pdmenu $(OBJFILES) $(CFLAGS) $(LIBS)
@@ -9,3 +12,13 @@
  
  depend: .dep
  dep: .dep
+@@ -57,8 +57,7 @@
+ 	$(INSTALL) examples/showdir.pl $(INSTALL_PREFIX)/$(DATADIR)/pdmenu
+ 	cd $(INSTALL_PREFIX)/$(DATADIR)/pdmenu && $(LN_S) -f showdir.pl editdir.pl
+ 	for lang in $(LANGS); do \
+-		[ ! -d $(LOCALEDIR)/$$lang/LC_MESSAGES/ ] && mkdir -p $(LOCALEDIR)/$$lang/LC_MESSAGES/; \
+-		install -m 644 po/$$lang.mo $(LOCALEDIR)/$$lang/LC_MESSAGES/pdmenu.mo; \
++		install -m 644 po/$$lang.mo $(PREFIX)/share/locale/$$lang/LC_MESSAGES/pdmenu.mo; \
+ 	done
+ 
+ test: pdmenu
