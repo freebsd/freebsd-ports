@@ -6,7 +6,7 @@ bin/fixcvsdiff
 bin/grepdiff
 bin/interdiff
 bin/lsdiff
-bin/rediff
 bin/recountdiff
+bin/rediff
 bin/splitdiff
 bin/unwrapdiff
