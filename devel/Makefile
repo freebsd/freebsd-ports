@@ -284,6 +284,7 @@
     SUBDIR += str
     SUBDIR += swarm
     SUBDIR += t1lib
+    SUBDIR += tcl-memchan
     SUBDIR += tclcheck
     SUBDIR += tclcl
     SUBDIR += tclgetopts
