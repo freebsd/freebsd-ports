@@ -1,7 +1,6 @@
 bin/ant
 %%T%%/bin/antRun
 %%T%%/lib/ant.jar
-%%T%%/lib/junit.jar
 %%T%%/lib/optional.jar
 %%T%%/lib/README
 %%T%%/lib/xercesImpl.jar
