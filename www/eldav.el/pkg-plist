@@ -1,0 +1,6 @@
+share/emacs/site-lisp/eldav.el
+@exec mkdir -p %D/lib/xemacs/site-lisp
+@exec ln -sf %D/%F %D/lib/xemacs/site-lisp/eldav.el
+@unexec rm %D/lib/xemacs/site-lisp/eldav.el
+@dirrm lib/xemacs/site-lisp
+@dirrm lib/xemacs
