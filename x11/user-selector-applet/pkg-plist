@@ -1,4 +1,6 @@
+@unexec env GCONF_CONFIG_SOURCE=xml::%D/etc/gconf/gconf.xml.defaults gconftool-2 --makefile-uninstall-rule %D/etc/gconf/schemas/user-selector-applet.schemas > /dev/null || /usr/bin/true
 etc/gconf/schemas/user-selector-applet.schemas
+@exec env GCONF_CONFIG_SOURCE=xml::%D/etc/gconf/gconf.xml.defaults gconftool-2 --makefile-install-rule %D/etc/gconf/schemas/user-selector-applet.schemas > /dev/null || /usr/bin/true
 libdata/bonobo/servers/GNOME_UserSelectorApplet.server
 libexec/user-selector-applet
 share/icons/hicolor/16x16/apps/gdm-xnest.png
