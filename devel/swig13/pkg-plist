@@ -1,14 +1,10 @@
 bin/swig
-lib/libswig.a
+lib/libswigtcl.a
+lib/libswigpl.a
+lib/libswigtcl.so
+lib/libswigpl.so
 include/swig.h
 man/man1/swig.1
-share/swig_lib/Doc/Perl5Doc.ps.gz
-share/swig_lib/Doc/PythonDoc.ps.gz
-share/swig_lib/Doc/README
-share/swig_lib/Doc/SWIGDoc.ps.gz
-share/swig_lib/Doc/TclDoc.ps.gz
-share/swig_lib/Doc/swiglib.doc
-share/swig_lib/Doc/swiglib.html
 share/swig_lib/tcl/blt.i
 share/swig_lib/tcl/expect.i
 share/swig_lib/tcl/expectk.i
@@ -16,8 +12,10 @@ share/swig_lib/tcl/ish.i
 share/swig_lib/tcl/itclsh.i
 share/swig_lib/tcl/itkwish.i
 share/swig_lib/tcl/iwish.i
+share/swig_lib/tcl/ptrlang.i
 share/swig_lib/tcl/tclsh.i
 share/swig_lib/tcl/tix.i
+share/swig_lib/tcl/typemaps.i
 share/swig_lib/tcl/wish.i
 share/swig_lib/tcl/class.swg
 share/swig_lib/tcl/configcode.swg
@@ -29,17 +27,25 @@ share/swig_lib/tcl/objcmd.swg
 share/swig_lib/tcl/objcmd8.swg
 share/swig_lib/tcl/swigtcl.swg
 share/swig_lib/tcl/tcl8ptr.swg
+share/swig_lib/tcl/Makefile
 share/swig_lib/perl4/userinit.i
 share/swig_lib/perl5/perlmain.i
+share/swig_lib/perl5/ptrlang.i
+share/swig_lib/perl5/typemaps.i
 share/swig_lib/perl5/perl5.swg
 share/swig_lib/perl5/perl5mg.swg
 share/swig_lib/perl5/perl5ptr.swg
+share/swig_lib/perl5/Makefile
+share/swig_lib/perl5/Makefile.pl
 share/swig_lib/python/embed.i
 share/swig_lib/python/embed13.i
 share/swig_lib/python/embed14.i
+share/swig_lib/python/ptrlang.i
+share/swig_lib/python/typemaps.i
 share/swig_lib/python/defarg.swg
 share/swig_lib/python/pyexp.swg
 share/swig_lib/python/python.swg
+share/swig_lib/python/Makefile
 share/swig_lib/guile/guilemain.i
 share/swig_lib/guile/interpreter.i
 share/swig_lib/guile/guile.swg
@@ -47,16 +53,18 @@ share/swig_lib/config/swigptr.swg
 share/swig_lib/array.i
 share/swig_lib/autodoc.i
 share/swig_lib/carray.i
+share/swig_lib/constraints.i
 share/swig_lib/ctype.i
+share/swig_lib/exception.i
 share/swig_lib/malloc.i
 share/swig_lib/math.i
 share/swig_lib/memory.i
+share/swig_lib/objc.i
+share/swig_lib/pointer.i
 share/swig_lib/stdlib.i
-share/swig_lib/test.i
 share/swig_lib/timers.i
 share/swig_lib/swigptr.swg
 share/swig_lib/Makefile
-@dirrm share/swig_lib/Doc
 @dirrm share/swig_lib/tcl
 @dirrm share/swig_lib/perl4
 @dirrm share/swig_lib/perl5
