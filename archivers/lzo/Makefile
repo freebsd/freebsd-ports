@@ -9,8 +9,7 @@ PORTNAME=	lzo
 PORTVERSION=	1.08
 PORTREVISION=	1
 CATEGORIES=	archivers devel
-MASTER_SITES=	http://www.oberhumer.com/opensource/lzo/download/ \
-		${MASTER_SITE_SUNSITE}
+MASTER_SITES=	http://www.oberhumer.com/opensource/lzo/download/
 MASTER_SITE_SUBDIR=	libs/compression
 
 MAINTAINER=	ports@FreeBSD.org
