@@ -290,6 +290,7 @@
     SUBDIR += personality
     SUBDIR += pfstat
     SUBDIR += pftop
+    SUBDIR += php4-posix
     SUBDIR += pib
     SUBDIR += pipemeter
     SUBDIR += pkg_cutleaves

@@ -320,6 +320,7 @@
     SUBDIR += php4-crack
     SUBDIR += php4-mcrypt
     SUBDIR += php4-mhash
+    SUBDIR += php4-openssl
     SUBDIR += pidentd
     SUBDIR += pinentry
     SUBDIR += pinentry-curses
