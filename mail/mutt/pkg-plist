@@ -9,6 +9,8 @@ bin/pgpring
 @unexec if cmp -s %D/etc/mime.types.dist %D/etc/mime.types; then rm -f %D/etc/mime.types; fi
 etc/Muttrc.dist
 etc/mime.types.dist
+@exec if [ ! -f %D/etc/Muttrc ]; then cp %D/etc/Muttrc.dist %D/etc/Muttrc; fi
+@exec if [ ! -f %D/etc/mime.types ]; then cp %D/etc/mime.types.dist %D/etc/mime.types; fi
 %%DOCSDIR%%/COPYRIGHT
 %%DOCSDIR%%/ChangeLog
 %%DOCSDIR%%/GPL
