@@ -1,3 +1,4 @@
 bin/spamoracle
-%%PORTDOCS%%share/doc/spamoracle/README
-%%PORTDOCS%%@dirrm share/doc/spamoracle
+%%PORTDOCS%%%%DOCSDIR%%/Changes
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
