@@ -11,21 +11,16 @@ PORTNAME=	festival+OGI
 PORTVERSION=	1.4.1
 PORTREVISION=	1
 CATEGORIES=	audio accessibility
-MASTER_SITES=	${MASTER_SITE_FESTIVAL} ${MASTER_SITE_FESTIVAL_OGI}
-MASTER_SITE_SUBDIR=	${PORTVERSION}
+MASTER_SITES=	${MASTER_SITE_NETBSD}
 DISTFILES=	festival-${PORTVERSION}.tar.gz \
 		speech_tools-1.2.1.tar.gz \
 		OGIresLPC-2.0.9.tar.gz
 
-PATCH_SITES=	${MASTER_SITE_FESTIVAL_OGI}
+PATCH_SITES=	${MASTER_SITES}
 PATCHFILES=	OGIfestpatch-1.4.1.2.tar.gz
 
 MAINTAINER=	trevor@FreeBSD.org
 COMMENT=	Text-to-speech system with OGI residual LPC synthesizer
-
-BROKEN=		"Does not fetch"
-DEPRECATED=	${BROKEN}
-EXPIRATION_DATE=2004-06-18
 
 LIB_DEPENDS=	audio.2:${PORTSDIR}/audio/nas \
 		esd.2:${PORTSDIR}/audio/esound
