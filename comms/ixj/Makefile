@@ -18,7 +18,7 @@ ONLY_FOR_ARCHS=	i386
 WRKSRC=         ${WRKDIR}/ixj_freebsd
 MAKEFILE=	Makefile.BSD
 
-pre-fetch:
+pre-build:
 .if !exists(${SRC_BASE}/sys/Makefile)
 	@${ECHO} "*************************************************"; \
 	${ECHO} "This port requires the kernel source be available"; \
