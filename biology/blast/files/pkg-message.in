@@ -1,0 +1,15 @@
+======================================================================
+
+A sample configuration file has been installed in %%DATADIR%% and named
+sysblast.sample. Edit it to suit your needs, rename it to 'sysblast' and
+place it under /etc so that it can be recognized at runtime by the blast
+executable.
+
+Matrix files and filter executables have been placed in 
+%%DATADIR%%/matrix and %%DATADIR%%/filter, respectively. 
+You should set environment variables WUBLASTMAT and WUBLASTFILTER
+(pointing to the respective directories) so that the blast executable
+can find them.
+
+======================================================================
+
