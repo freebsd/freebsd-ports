@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	xfce4-minicmd-plugin
-PORTVERSION=	0.1.1
+PORTVERSION=	0.2.0
 CATEGORIES=	sysutils xfce
 MASTER_SITES=	http://download.berlios.de/xfce-goodies/
 DIST_SUBDIR=	xfce4
