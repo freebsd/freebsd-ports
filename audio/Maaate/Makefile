@@ -8,18 +8,19 @@
 
 PORTNAME=	Maaate
 PORTVERSION=	0.2.2
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	http://www.cmis.csiro.au/maaate/packages/
 
 MAINTAINER=	ports@FreeBSD.org
 
 USE_REINPLACE=	yes
-GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
+USE_LIBTOOL=	yes
 INSTALLS_SHLIB=	yes
 
 post-patch:
-	@${REINPLACE_CMD} -E -e "s,-ldl,,g ; s,\(CCLD,(CXXLD,g" ${WRKSRC}/demos/Makefile.in
+	@${REINPLACE_CMD} -e "s,-ldl,,g ; s,(CCLD,(CXXLD,g" ${WRKSRC}/demos/Makefile.in
 
 post-install:
 .if !defined(NOPORTDOCS)
