@@ -1,7 +1,8 @@
 %%PORTDOCS%%%%Q3DIR%%Q3-WFA.qst
 %%PORTDOCS%%%%Q3DIR%%WFA EULA.doc
-%%PORTDOCS%%%%Q3DIR%%WFA Version 2.9 Changes.doc
+%%PORTDOCS%%%%Q3DIR%%WFA Version 3.0 Changes.doc
 %%Q3DIR%%WFA-Media-ClanTags.pk3
+%%Q3DIR%%WFA-Media-Hud.pk3
 %%Q3DIR%%WFA-Media-Models.pk3
 %%Q3DIR%%WFA-Media-Players.pk3
 %%Q3DIR%%WFA-Media-Radio.pk3
@@ -10,9 +11,8 @@
 %%Q3DIR%%WFA-Media-Taunts.pk3
 %%Q3DIR%%WFA-Media-Textures.pk3
 %%Q3DIR%%WFA-Media-VM.pk3
-%%Q3DIR%%WFA-Media-hud.pk3
 %%PORTDOCS%%%%Q3DIR%%help/Binds.doc
-%%PORTDOCS%%%%Q3DIR%%help/BobWFACfgV201.exe
+%%PORTDOCS%%%%Q3DIR%%help/BobWFACfgV230.exe
 %%PORTDOCS%%%%Q3DIR%%help/ClassBinds.doc
 %%PORTDOCS%%%%Q3DIR%%help/ClientCmds.doc
 %%PORTDOCS%%%%Q3DIR%%help/ServerCmds.doc
@@ -24,8 +24,10 @@
 %%PORTDOCS%%%%Q3DIR%%help/readme-server.html
 %%PORTDOCS%%%%Q3DIR%%help/website.url
 %%Q3DIR%%map-sat2-wfa.pk3
+%%Q3DIR%%map-sky-wfa.pk3
+%%Q3DIR%%maplist.cfg
 %%PORTDOCS%%%%Q3DIR%%readme.txt
-%%Q3DIR%%wfa-ini.cfg
+%%Q3DIR%%servercfg.cfg
 %%Q3DIR%%wfa-server.cfg
 %%PORTDOCS%%%%Q3DIR%%wfa.ico
 %%PORTDOCS%%@dirrm %%Q3DIR%%help
