@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	rskkserv
-PORTVERSION=	2.90.1
+PORTVERSION=	2.91.1
 CATEGORIES=	japanese ruby
 MASTER_SITES=	http://www.unixuser.org/~ysjj/rskkserv/
 DIST_SUBDIR=	ruby
@@ -32,8 +32,8 @@ MAKE_ARGS=	prefix="${PREFIX}" \
 DOCS_EN=	ChangeLog
 DOCS_JA=	README		TODO
 
-post-patch:
-	${MV} ${WRKSRC}/rskkserv.conf ${WRKSRC}/rskkserv.conf.in
+pre-patch:
+	${CP} ${WRKSRC}/rskkserv.conf.sample ${WRKSRC}/rskkserv.conf.in
 
 post-install:
 	${CP} -R ${WRKSRC}/skkserv ${RUBY_SITELIBDIR}/
