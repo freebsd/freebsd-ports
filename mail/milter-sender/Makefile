@@ -14,8 +14,8 @@ DISTFILES=	libsnert-1.33.tgz milter-sender-${PORTVERSION}.tgz
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Real-time sender address verification, based on Milter API
 
-NO_CDROM=	Non-commercial distrubution only
-NO_PACKAGE=	Only the original source may be distrubuted
+NO_CDROM=	Non-commercial distribution only
+NO_PACKAGE=	Only the original source may be distributed
 
 USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
