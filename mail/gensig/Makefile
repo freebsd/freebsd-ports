@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gensig
-PORTVERSION=	2.2
+PORTVERSION=	2.3
 CATEGORIES=	mail
 MASTER_SITES=	http://www.geekthing.com/~robf/ware/gensig/ \
 		http://www.ooblick.com/software/gensig/
@@ -15,13 +15,10 @@ MAINTAINER=	arensb+freebsd-ports@ooblick.com
 COMMENT=	A random .signature generator
 
 GNU_CONFIGURE=	yes
+CONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
+
+USE_GETOPT_LONG=	yes
 
 MAN1=		gensig.1 cattag.1
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 501000
-BROKEN=		"Does not compile"
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
