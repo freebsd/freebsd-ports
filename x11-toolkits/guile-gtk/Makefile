@@ -6,25 +6,27 @@
 #
 
 PORTNAME=	guile-gtk
-PORTVERSION=	0.20
-PORTREVISION=	2
+PORTVERSION=	0.31
 CATEGORIES=	x11-toolkits
-MASTER_SITES=	${MASTER_SITE_GNOME}
-MASTER_SITE_SUBDIR=	sources/gnome-guile/0.20
-DISTNAME=	gnome-guile-${PORTVERSION}
+MASTER_SITES=	http://savannah.nongnu.org/download/guile-gtk/
+DISTNAME=	${PORTNAME}-1.2-${PORTVERSION}
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Guile binding library for GTK+
 
-LIB_DEPENDS=	guile.10:${PORTSDIR}/lang/guile
-
-WRKSRC=		${WRKDIR}/${DISTNAME}/guile-gtk
+LIB_DEPENDS=	guile.15:${PORTSDIR}/lang/guile
 
 USE_X_PREFIX=	yes
-USE_GNOME=	gtk12
+USE_GMAKE=	yes
+USE_GNOME=	gtk12 gnometarget
+USE_REINPLACE=	yes
 USE_LIBTOOL=	yes
 INSTALLS_SHLIB=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LIBS="-L${LOCALBASE}/lib" HAVE_PKG_CONFIG="no"
+		LIBS="-L${LOCALBASE}/lib"
+
+post-patch:
+	@${FIND} ${WRKSRC} -name "*.[ch]" | ${XARGS} ${REINPLACE_CMD} -e \
+		's|gtk-1\.2/||g'
 
 .include <bsd.port.mk>
