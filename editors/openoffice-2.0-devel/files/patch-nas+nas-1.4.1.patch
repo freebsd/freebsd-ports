@@ -1,6 +1,6 @@
 --- ../nas/nas-1.4.1.patch.orig	Thu Nov  1 17:27:31 2001
-+++ ../nas/nas-1.4.1.patch	Thu Aug  8 16:47:25 2002
-@@ -120,26 +120,139 @@
++++ ../nas/nas-1.4.1.patch	Thu Oct 31 10:17:40 2002
+@@ -120,26 +120,157 @@
    	    return(-1);
    	}
    
@@ -163,14 +163,21 @@
 +-#define NasConfigSearchPath /etc/nas/
 ++#define NasConfigSearchPath $(PROJECTROOT)/etc/
 + #endif
-+--- misc/nas-1.4.1/server/os/utils.c.orig	Tue Jul 23 23:48:23 2002
-++++ misc/build/nas-1.4.1/server/os/utils.c	Tue Jul 23 23:49:06 2002
-+@@ -120,7 +120,7 @@
++--- misc/nas-1.4.1/server/dia/gram.y.orig	Thu Oct 31 10:13:28 2002
+++++ misc/build/nas-1.4.1/server/dia/gram.y	Thu Oct 31 10:15:18 2002
++@@ -120,13 +120,13 @@
++ 		| MAXRATE number
++ 			{ ddaSetConfig(MAXRATE, (void *)$2); }
++ 		| MINRATE number
++-			{ ddaSetConfig(MINRATE, (void *)$2); }
+++			{ ddaSetConfig(MINRATE, (void *)$2); };
 + 
-+ void ddxUseMsg(void);
-+ 
-+-#if !defined(SVR4) && !defined(hpux) && !defined(linux) && !defined(AMOEBA) && !defined(_MINIX)
-++#if !defined(SVR4) && !defined(hpux) && !defined(linux) && !defined(AMOEBA) && !defined(_MINIX) && !defined(__FreeBSD__)
-+ extern char *sbrk();
-+ #endif
++ string		: STRING		{ ptr = (char *)malloc(strlen($1)+1);
++ 					  strcpy(ptr, $1);
++ 					  RemoveDQuote(ptr);
++ 					  $$ = ptr;
++-					}
+++					};
++ number		: NUMBER		{ $$ = $1; }
++ 		;
 + 
