@@ -6,16 +6,14 @@
 #
 
 PORTNAME=	rcalc
-PORTVERSION=	0.1
+PORTVERSION=	0.2.1
 CATEGORIES=	math gnome
-MASTER_SITES=	http://members.xoom.com/ratsoft/download/
+MASTER_SITES=	http://download.sourceforge.net/rcalc/
 DISTNAME=	rCalc-${PORTVERSION}
 
-MAINTAINER=	jedgar@fxp.org
+MAINTAINER=	jedgar@FreeBSD.org
 
 LIB_DEPENDS=	gnome.3:${PORTSDIR}/x11/gnomelibs
-
-FETCH_BEFORE_ARGS+= -b	# members.xoom.com is broken
 
 GTK_CONFIG?=	${X11BASE}/bin/gtk12-config
 

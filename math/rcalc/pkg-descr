@@ -10,7 +10,7 @@ rCalc is a symbolic calculator for GNOME, featuring:
   * Furthermore, variables are stored between sessions
     unless you delete them.
 
-WWW: http://rat.spunge.org/rcalc/
+WWW: http://rcalc.sourceforge.net/
 
 - Chris D. Faulhaber
-jedgar@fxp.org
+ <jedgar@FreeBSD.org>
