@@ -1001,9 +1001,62 @@ MAN3=	AllPlanes.3 \
 	glXSwapBuffers.3 \
 	glXUseXFont.3 \
 	glXWaitGL.3 \
-	glXWaitX.3
+	glXWaitX.3 \
+	gluBeginCurve.3 \
+	gluBeginPolygon.3 \
+	gluBeginSurface.3 \
+	gluBeginTrim.3 \
+	gluBuild1DMipmaps.3 \
+	gluBuild2DMipmaps.3 \
+	gluCylinder.3 \
+	gluDeleteNurbsRenderer.3 \
+	gluDeleteQuadric.3 \
+	gluDeleteTess.3 \
+	gluDisk.3 \
+	gluEndCurve.3 \
+	gluEndPolygon.3 \
+	gluEndSurface.3 \
+	gluEndTrim.3 \
+	gluErrorString.3 \
+	gluGetNurbsProperty.3 \
+	gluGetString.3 \
+	gluGetTessProperty.3 \
+	gluLoadSamplingMatrices.3 \
+	gluLookAt.3 \
+	gluNewNurbsRenderer.3 \
+	gluNewQuadric.3 \
+	gluNewTess.3 \
+	gluNextContour.3 \
+	gluNurbsCallback.3 \
+	gluNurbsCallbackDataEXT.3 \
+	gluNurbsCurve.3 \
+	gluNurbsProperty.3 \
+	gluNurbsSurface.3 \
+	gluOrtho2D.3 \
+	gluPartialDisk.3 \
+	gluPerspective.3 \
+	gluPickMatrix.3 \
+	gluProject.3 \
+	gluPwlCurve.3 \
+	gluQuadricCallback.3 \
+	gluQuadricDrawStyle.3 \
+	gluQuadricNormals.3 \
+	gluQuadricOrientation.3 \
+	gluQuadricTexture.3 \
+	gluScaleImage.3 \
+	gluSphere.3 \
+	gluTessBeginContour.3 \
+	gluTessBeginPolygon.3 \
+	gluTessCallback.3 \
+	gluTessEndContour.3 \
+	gluTessEndPolygon.3 \
+	gluTessNormal.3 \
+	gluTessProperty.3 \
+	gluTessVertex.3 \
+	gluUnProject.3
 MAN7=	X.7 \
 	XConsortium.7 \
 	XProjectTeam.7 \
 	XStandards.7 \
-	Xsecurity.7
+	Xsecurity.7 \
+	X.Org.7

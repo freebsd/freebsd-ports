@@ -1,0 +1,18 @@
+--- lib/GLU/Imakefile.orig	Wed Feb 14 04:19:11 2001
++++ lib/GLU/Imakefile	Thu Jun  7 03:00:26 2001
+@@ -103,6 +103,7 @@
+ #undef _LinkBuildLibrary
+ #define _LinkBuildLibrary(lib) LinkBuildLibrary(lib)
+ 
++#if !defined(LibInstall) || LibInstall
+ #if NormalLibGlu
+ NormalDepLibraryTarget($(LIBNAME),$(SUBDIRS) $(DONES),$(STATIC_OBJS))
+ InstallLibrary($(LIBNAME),$(USRLIBDIR))
+@@ -122,6 +123,7 @@
+ ProfiledDepLibraryTarget($(LIBNAME),$(SUBDIRS) $(DONES),$(PROFILE_OBJS))
+ InstallLibrary($(LIBNAME)_p,$(USRLIBDIR))
+ #endif /* ProfileLibFont */
++#endif
+ 
+ 
+ ForceSubdirs($(SUBDIRS))

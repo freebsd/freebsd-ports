@@ -1,4 +1,4 @@
-# New ports collection makefile for:	XFree86-4-clients
+# New ports collection makefile for:	XFree86-clients
 # Date created:		10 Oct 1999
 # Whom:			taguchi@tohoku.iij.ad.jp
 #
@@ -6,17 +6,13 @@
 #
 
 PORTNAME=	clients
-PORTVERSION=	4.0.3
+PORTVERSION=	4.1.0
 CATEGORIES=	x11
 MASTER_SITES=	${MASTER_SITE_XFREE}
-MASTER_SITE_SUBDIR=	4.0.2
+MASTER_SITE_SUBDIR=	4.1.0
 PKGNAMEPREFIX=	XFree86-
-DISTFILES=	X402src-1.tgz X402src-2.tgz
-EXTRACT_ONLY=	X402src-1.tgz
-
-PATCH_SITES=	${MASTER_SITE_XFREE:S,%SUBDIR%/source,4.0.3/patches,g}
-PATCHFILES=	4.0.2-4.0.3.diff.gz
-PATCH_DIST_STRIP=	-p1
+DISTFILES=	X410src-1.tgz X410src-2.tgz
+EXTRACT_ONLY=	X410src-1.tgz
 
 MAINTAINER=	taguchi@tohoku.iij.ad.jp
 
@@ -66,7 +62,7 @@ pre-fetch:
 MASTER_SITES+=	ftp://psych.psy.uq.oz.au/pub/X11R5/ \
 		ftp://ftp.internat.freebsd.org/pub/FreeBSD/X11-Crypto/ \
 		ftp://ftp3.za.freebsd.org/pub/FreeBSD/X11-Crypto/
-EXTRACT_ONLY=	X402src-1.tgz
+EXTRACT_ONLY=	X410src-1.tgz
 DISTFILES+=	Wraphelp.c
 IGNOREFILES=	Wraphelp.c
 .endif
@@ -78,7 +74,7 @@ IGNOREFILES=	Wraphelp.c
 post-extract:
 	( cd ${WRKDIR} && \
 	 ${EXTRACT_CMD} ${EXTRACT_BEFORE_ARGS} \
-	   ${DISTDIR}/${DIST_SUBDIR}/X402src-2.tgz \
+	   ${DISTDIR}/${DIST_SUBDIR}/X410src-2.tgz \
 	    | ${TAR} -xf - xc/fonts/util )
 
 do-configure:

@@ -1,31 +1,31 @@
---- lib/font/Imakefile.orig	Wed Dec 20 13:26:25 2000
-+++ lib/font/Imakefile	Wed Dec 20 13:29:32 2000
-@@ -120,22 +120,30 @@
+--- lib/font/Imakefile.orig	Thu Jan 18 04:43:16 2001
++++ lib/font/Imakefile	Thu Jun  7 04:03:36 2001
+@@ -125,22 +125,30 @@
  
  #if NormalLibFont
  NormalDepLibraryTarget($(LIBNAME),$(SUBDIRS) $(DONES),$(STATIC_OBJS))
-+# if !defined(LibInstall) || LibInstall 
++# if !defined(LibInstall) || LibInstall
  InstallLibrary($(LIBNAME),$(USRLIBDIR))
 +# endif /* LibInstall */
  #endif /* NormalLibFont */
  
  #if SharedLibFont
  SharedDepLibraryTarget($(LIBNAME),$(SOREV),$(SUBDIRS) $(DONES),$(SHARED_OBJS),.,.)
-+# if !defined(LibInstall) || LibInstall 
++# if !defined(LibInstall) || LibInstall
  InstallSharedLibrary($(LIBNAME),$(SOREV),$(SHLIBDIR))
 +# endif /* LibInstall */
  #endif /* SharedLibFont */
  
  #if DebugLibFont
- DebuggedDepLibraryTarget(Xfont,$(SUBDIRS) $(DONES),$(DEBUG_OBJS))
-+# if !defined(LibInstall) || LibInstall 
+ DebuggedDepLibraryTarget($(LIBNAME),$(SUBDIRS) $(DONES),$(DEBUG_OBJS))
++# if !defined(LibInstall) || LibInstall
  InstallLibrary($(LIBNAME)_d,$(USRLIBDIR))
 +# endif /* LibInstall */
  #endif /* DebugLibFont */
  
  #if ProfileLibFont
- ProfiledDepLibraryTarget(Xfont,$(SUBDIRS) $(DONES),$(PROFILE_OBJS))
-+# if !defined(LibInstall) || LibInstall 
+ ProfiledDepLibraryTarget($(LIBNAME),$(SUBDIRS) $(DONES),$(PROFILE_OBJS))
++# if !defined(LibInstall) || LibInstall
  InstallLibrary($(LIBNAME)_p,$(USRLIBDIR))
 +# endif /* LibInstall */
  #endif /* ProfileLibFont */

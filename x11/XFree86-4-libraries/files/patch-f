@@ -16,9 +16,9 @@
 -zh_TW.big5/Compose:	zh_TW.Big5
 +zh_TW.Big5/Compose:	zh_TW.Big5
  zh_TW/Compose:		zh_TW.eucTW
---- nls/locale.alias~	Tue Dec 12 03:18:29 2000
-+++ nls/locale.alias	Tue Dec 12 03:58:51 2000
-@@ -444,11 +444,11 @@
+--- nls/locale.alias~	Wed May 23 20:32:14 2001
++++ nls/locale.alias	Sat May 26 02:37:21 2001
+@@ -493,12 +493,12 @@
  zh						zh_CN.eucCN
  zh_CN						zh_CN.eucCN
  zh_CN.big5					zh_TW.big5
@@ -27,30 +27,29 @@
  zh_CN.EUC					zh_CN.eucCN
  zh_CN.euc					zh_CN.eucCN
  zh_CN.gb2312					zh_CN.eucCN
+ zh_CN.gbk					zh_CN.GBK
 -zh_TW						zh_TW.big5
 +zh_TW						zh_TW.Big5
  zh_TW.EUC					zh_TW.eucTW
  zh_TW.euc					zh_TW.eucTW
  
-@@ -1034,15 +1034,15 @@
+@@ -1182,13 +1182,13 @@
  yi_US.MICROSOFT-CP1255:				yi_US.CP1255
  zh:						zh_CN.eucCN
  zh_CN:						zh_CN.eucCN
 -zh_CN.big5:					zh_TW.big5
 -zh_CN.Big5:					zh_TW.big5
-+zh_CN.Big5:					zh_TW.Big5
++zh_CN.big5:					zh_TW.Big5
 +zh_CN.Big5:					zh_TW.Big5
  zh_CN.EUC:					zh_CN.eucCN
  zh_CN.euc:					zh_CN.eucCN
  zh_CN.gb2312:					zh_CN.eucCN
- zh_TW:						zh_TW.big5
+ zh_CN.gbk:					zh_CN.GBK
+-zh_TW:						zh_TW.big5
++zh_TW:						zh_TW.Big5
  zh_TW.EUC:					zh_TW.eucTW
  zh_TW.euc:					zh_TW.eucTW
--zh_TW.big5:					zh_TW.big5
-+zh_TW.Big5:					zh_TW.Big5
- 
- XCOMM The following locale names are used in SCO 3.0
- english_uk.8859:				en_GB.ISO8859-1
+ zh_TW.big5:					zh_TW.big5
 --- nls/locale.dir~	Tue Dec 12 03:18:29 2000
 +++ nls/locale.dir	Tue Dec 12 04:01:54 2000
 @@ -199,7 +199,7 @@
@@ -98,15 +97,15 @@
 +# Special Character
 +
 +# End of Sequence Definition
---- nls/XLC_LOCALE/Imakefile~	Tue Dec 12 03:18:29 2000
-+++ nls/XLC_LOCALE/Imakefile	Tue Dec 12 04:07:10 2000
-@@ -86,7 +86,7 @@
- LTarget(vi_VN.viscii)
- LTarget(zh)
+--- nls/XLC_LOCALE/Imakefile~	Tue Mar  6 19:54:45 2001
++++ nls/XLC_LOCALE/Imakefile	Sat May 26 02:38:44 2001
+@@ -88,7 +88,7 @@
+ LTarget(zh_CN.gbk)
+ LTarget(zh_HK.big5hkscs)
  LTarget(zh_TW)
 -LTarget(zh_TW.big5)
 +LTarget(zh_TW.Big5)
- LTarget(th_TH.TACTIS)
+ LTarget(th_TH)
  LTarget(en_US.UTF-8)
  #ifdef UXPArchitecture
 --- nls/XLC_LOCALE/zh_TW.Big5.orig	Sun Jul 16 04:33:35 2000

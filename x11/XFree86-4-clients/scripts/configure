@@ -101,5 +101,6 @@ configure () {
     cp -f $LOCALDEF $HOSTDEF
 }
 
+cp ${X11BASE}/lib/X11/config/version.def ${WRKSRC}/config/cf
 configure
 exit 0

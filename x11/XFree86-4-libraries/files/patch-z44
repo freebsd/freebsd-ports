@@ -1,0 +1,18 @@
+--- lib/GL/GL/Imakefile.orig	Tue Apr  3 11:29:31 2001
++++ lib/GL/GL/Imakefile	Thu Jun  7 03:19:35 2001
+@@ -214,7 +214,7 @@
+ #undef _LinkBuildLibrary
+ #define _LinkBuildLibrary(lib) LinkBuildLibrary(lib)
+ 
+-
++#if !defined(LibInstall) || LibInstall
+ #if NormalLibGlx
+ NormalLibraryTarget($(LIBNAME),$(UOBJS))
+ InstallLibrary($(LIBNAME),$(USRLIBDIR))
+@@ -239,5 +239,5 @@
+ ProfiledLibraryTarget($(LIBNAME),$(POBJS))
+ InstallLibrary($(LIBNAME)_p,$(USRLIBDIR))
+ #endif
+-
++#endif
+ 

@@ -8,10 +8,12 @@ bin/bitmap
 bin/bmtoa
 bin/cxpm
 bin/dga
+bin/dpsexec
+bin/dpsinfo
 bin/editres
-bin/fsinfo
 bin/fslsfonts
 bin/fstobdf
+bin/glxgears
 bin/glxinfo
 bin/iceauth
 bin/ico
@@ -32,6 +34,7 @@ bin/showrgb
 bin/smproxy
 bin/startx
 bin/sxpm
+bin/texteroids
 bin/twm
 bin/ucs2any.pl
 bin/viewres
@@ -55,6 +58,8 @@ bin/xf86cfg
 bin/xfd
 bin/xfindproxy
 bin/xfontsel
+bin/xfsinfo
+bin/xftcache
 bin/xfwp
 bin/xgamma
 bin/xgc
@@ -76,6 +81,7 @@ bin/xlsfonts
 bin/xmag
 bin/xman
 bin/xmessage
+bin/xmh
 bin/xmodmap
 bin/xon
 bin/xprop
@@ -106,6 +112,8 @@ include/X11/bitmaps/RotateRight
 include/X11/bitmaps/Stipple
 include/X11/bitmaps/Term
 include/X11/bitmaps/Up
+include/X11/bitmaps/black6
+include/X11/bitmaps/box6
 include/X11/bitmaps/ldblarrow
 include/X11/bitmaps/rdblarrow
 lib/X11/XErrorDB
@@ -140,9 +148,12 @@ lib/X11/app-defaults/Xgc
 lib/X11/app-defaults/Xmag
 lib/X11/app-defaults/Xman
 lib/X11/app-defaults/Xmessage
+lib/X11/app-defaults/Xmh
 lib/X11/app-defaults/Xvidtune
 lib/X11/doc/html/manindex1.html
 lib/X11/doc/html/manindex3.html
+lib/X11/etc/xterm.termcap
+lib/X11/etc/xterm.terminfo
 lib/X11/fonts/util/map-ISO8859-1
 lib/X11/fonts/util/map-ISO8859-2
 lib/X11/fonts/util/map-ISO8859-3
@@ -255,7 +266,8 @@ lib/X11/xkb/keymap/macintosh
 lib/X11/xkb/keymap/sgi/be
 lib/X11/xkb/keymap/sgi/bg
 lib/X11/xkb/keymap/sgi/ca
-lib/X11/xkb/keymap/sgi/cs
+lib/X11/xkb/keymap/sgi/cz
+lib/X11/xkb/keymap/sgi/cz_qwerty
 lib/X11/xkb/keymap/sgi/de
 lib/X11/xkb/keymap/sgi/de_CH
 lib/X11/xkb/keymap/sgi/dk
@@ -274,6 +286,8 @@ lib/X11/xkb/keymap/sgi/pl
 lib/X11/xkb/keymap/sgi/pt
 lib/X11/xkb/keymap/sgi/ru
 lib/X11/xkb/keymap/sgi/se
+lib/X11/xkb/keymap/sgi/sk
+lib/X11/xkb/keymap/sgi/sk_qwerty
 lib/X11/xkb/keymap/sgi/th
 lib/X11/xkb/keymap/sgi/us
 lib/X11/xkb/keymap/sony
@@ -306,12 +320,12 @@ lib/X11/xkb/symbols/az
 lib/X11/xkb/symbols/be
 lib/X11/xkb/symbols/bg
 lib/X11/xkb/symbols/br
+lib/X11/xkb/symbols/by
 lib/X11/xkb/symbols/ca
 lib/X11/xkb/symbols/ca_enhanced
-lib/X11/xkb/symbols/cs
-lib/X11/xkb/symbols/cs_qwerty
 lib/X11/xkb/symbols/ctrl
-lib/X11/xkb/symbols/czsk
+lib/X11/xkb/symbols/cz
+lib/X11/xkb/symbols/cz_qwerty
 lib/X11/xkb/symbols/de
 lib/X11/xkb/symbols/de_CH
 lib/X11/xkb/symbols/digital/lk
@@ -321,6 +335,7 @@ lib/X11/xkb/symbols/digital/vt
 lib/X11/xkb/symbols/dk
 lib/X11/xkb/symbols/dvorak
 lib/X11/xkb/symbols/ee
+lib/X11/xkb/symbols/el
 lib/X11/xkb/symbols/en_US
 lib/X11/xkb/symbols/es
 lib/X11/xkb/symbols/fi
@@ -329,9 +344,9 @@ lib/X11/xkb/symbols/fr_CH
 lib/X11/xkb/symbols/fujitsu/jp
 lib/X11/xkb/symbols/fujitsu/us
 lib/X11/xkb/symbols/gb
-lib/X11/xkb/symbols/gr
 lib/X11/xkb/symbols/group
 lib/X11/xkb/symbols/hp/us
+lib/X11/xkb/symbols/hr
 lib/X11/xkb/symbols/hu
 lib/X11/xkb/symbols/hu_US
 lib/X11/xkb/symbols/il
@@ -346,6 +361,7 @@ lib/X11/xkb/symbols/lock
 lib/X11/xkb/symbols/lt
 lib/X11/xkb/symbols/lt_p
 lib/X11/xkb/symbols/lt_std
+lib/X11/xkb/symbols/lv
 lib/X11/xkb/symbols/macintosh/de
 lib/X11/xkb/symbols/macintosh/de_CH
 lib/X11/xkb/symbols/macintosh/dk
@@ -372,6 +388,8 @@ lib/X11/xkb/symbols/ru
 lib/X11/xkb/symbols/se
 lib/X11/xkb/symbols/sgi/jp
 lib/X11/xkb/symbols/si
+lib/X11/xkb/symbols/sk
+lib/X11/xkb/symbols/sk_qwerty
 lib/X11/xkb/symbols/sony/us
 lib/X11/xkb/symbols/sr
 lib/X11/xkb/symbols/sun/se
@@ -390,6 +408,7 @@ lib/X11/xkb/types/basic
 lib/X11/xkb/types/cancel
 lib/X11/xkb/types/complete
 lib/X11/xkb/types/default
+lib/X11/xkb/types/extra
 lib/X11/xkb/types/iso9995
 lib/X11/xkb/types/mousekeys
 lib/X11/xkb/types/nocancel
