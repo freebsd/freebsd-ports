@@ -1,5 +1,5 @@
---- Makefile.orig	Sat Jan 22 15:59:52 2000
-+++ Makefile	Sat Jan 22 16:01:26 2000
+--- Makefile.orig	Thu Aug 12 07:09:31 1993
++++ Makefile	Sun Jun 23 15:01:35 2002
 @@ -1,7 +1,7 @@
  # @(#) Makefile 1.2 93/08/12 16:09:29
  
