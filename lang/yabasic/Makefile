@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	yabasic
-PORTVERSION=	2.730
-PORTREVISION=	1
+PORTVERSION=	2.743
 CATEGORIES=	lang
 MASTER_SITES=	http://www.yabasic.de/download/
 
@@ -21,6 +20,8 @@ GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 
 MAN1=		yabasic.1
+PLIST_FILES=	bin/yabasic
+PORTDOCS=	yabasic.htm
 
 post-patch:
 	@${REINPLACE_CMD} -e "s|= -DUNIX|= @X_CFLAGS@ -DUNIX|g" ${WRKSRC}/Makefile.in
