@@ -11,7 +11,7 @@ PORTREVISION=	1
 CATEGORIES=	mail
 MASTER_SITES=	http://untroubled.org/${PORTNAME}/
 
-MAINTAINER=	jfkimura@yahoo.co.jp
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	SMTP Relaying Control for qmail & tcpserver
 
 .if defined(WITH_DAEMONTOOLS)
