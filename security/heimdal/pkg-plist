@@ -1,4 +1,5 @@
 bin/afslog
+bin/compile_et
 bin/ftp
 bin/kauth
 bin/kdestroy
@@ -23,6 +24,8 @@ bin/verify_krb5_conf
 etc/rc.d/kdc.sh.sample
 include/asn1_err.h
 include/base64.h
+include/com_err.h
+include/com_right.h
 include/der.h
 include/editline.h
 include/fnmatch.h
@@ -58,13 +61,17 @@ include/rtbl.h
 include/sl.h
 include/ss/ss.h
 include/xdbm.h
+info/dir
 lib/libasn1.a
 lib/libasn1.so
 lib/libasn1.so.6
+lib/libcom_err.a
+lib/libcom_err.so
+lib/libcom_err.so.2
 lib/libeditline.a
 lib/libgssapi.a
 lib/libgssapi.so
-lib/libgssapi.so.4
+lib/libgssapi.so.5
 lib/libhdb.a
 lib/libhdb.so
 lib/libhdb.so.7
@@ -79,7 +86,7 @@ lib/libkafs.so
 lib/libkafs.so.4
 lib/libkrb5.a
 lib/libkrb5.so
-lib/libkrb5.so.19
+lib/libkrb5.so.20
 lib/libotp.a
 lib/libotp.so
 lib/libotp.so.1

@@ -6,8 +6,7 @@
 #
 
 PORTNAME=		heimdal
-PORTVERSION=	0.6
-PORTREVISION=	2
+PORTVERSION=	0.6.1
 CATEGORIES=		security ipv6
 MASTER_SITES=	ftp://ftp.pdc.kth.se/pub/heimdal/src/ \
 				ftp://ftp.replay.com/pub/replay/crypto/APPS/kerberos/heimdal/ \
@@ -18,48 +17,38 @@ DISTNAME=		heimdal-${PORTVERSION}
 MAINTAINER=		nectar@FreeBSD.ORG
 COMMENT=		A re-implementation of Kerberos V
 
-.if defined(WITH_LDAP)
-LIB_DEPENDS+=	ldap.2:${PORTSDIR}/net/openldap20-client
-.endif
-.if defined(WITH_CRACKLIB)
-BUILD_DEPENDS+= ${LOCALBASE}/lib/libcrack.a:${PORTSDIR}/security/cracklib
-.endif
+OPTIONS+=		LDAP     "Use OpenLDAP as the KDC backend" off
+OPTIONS+=		CRACKLIB "Use CrackLib for password quality checking" off
+OPTIONS+=		X11      "Build X11 utilies" off
 
-USE_LIBTOOL_VER=13
 USE_OPENSSL=		yes
 GNU_CONFIGURE=		yes
 INSTALLS_SHLIB=		yes
 CONFIGURE_ENV+=		CFLAGS="${CFLAGS}"
 CONFIGURE_ARGS+=	--enable-shared --without-krb4
+
+.include <bsd.port.pre.mk>
+
 .if defined(WITH_LDAP)
+USE_OPENLDAP=		yes
 CONFIGURE_ARGS+=	--with-openldap=${LOCALBASE}
+.endif
+.if defined(WITH_CRACKLIB)
+BUILD_DEPENDS+=		${LOCALBASE}/lib/libcrack.a:${PORTSDIR}/security/cracklib
+.endif
+.if defined(WITH_X11)
+USE_XLIB=			yes
+CONFIGURE_ARGS+=	--with-x
+.else
+CONFIGURE_ARGS+=	--without-x
 .endif
 
 .if defined(HEIMDAL_HOME)
 PREFIX=				${HEIMDAL_HOME}
 .endif
 
-.if exists(${X11BASE}/lib/libX11.a) && !defined(WITHOUT_X11)
-USE_XLIB=			yes
-.endif
-
-.if defined(USE_XLIB)
-CONFIGURE_ARGS+=	--with-x
-.else
-CONFIGURE_ARGS+=	--without-x
-.endif
-
 INFO=				heimdal
 PLIST:=				${WRKDIR}/PLIST
-
-pre-configure:
-.if !defined(WITH_CRACKLIB)
-	@${ECHO_MSG}
-	@${ECHO_MSG} You can utilize CrackLib for the kpasswdd by defining
-	@${ECHO_MSG} WITH_CRACKLIB and uncommenting the appropriate lines in
-	@${ECHO_MSG} ${PREFIX}/etc/rc.d/kdc.sh.
-	@${ECHO_MSG}
-.endif
 
 post-build:
 .if defined(WITH_CRACKLIB)
@@ -72,7 +61,7 @@ post-build:
 
 pre-install:
 	@${CP} ${PKGDIR}/pkg-plist ${PLIST}
-.if defined(USE_XLIB)
+.if defined(WITH_X11)
 	@${CAT} ${PKGDIR}/pkg-plist.x11 >> ${PLIST}
 .endif
 .if !exists(/usr/include/ifaddrs.h)
@@ -90,7 +79,6 @@ post-install:
 	${SED} 's;%%PREFIX%%;${PREFIX};g' ${FILESDIR}/kdc.sh > \
 		${PREFIX}/etc/rc.d/kdc.sh.sample
 
-.include <bsd.port.pre.mk>
 .if ${ARCH} == "amd64"
 CFLAGS+= -fPIC
 .endif
