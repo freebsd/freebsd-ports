@@ -6,7 +6,7 @@ ruser=asami
 rdir=w/ports/i386/tmp
 pb=/a/asami/portbuild
 
-lock=${pb}/cppackages
+lock=${pb}/cppackages.lock
 
 unset DISPLAY
 
