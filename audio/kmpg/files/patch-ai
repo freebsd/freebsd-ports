@@ -1,0 +1,13 @@
+--- configure.orig	Sun Feb  7 04:05:54 1999
++++ configure	Sat Sep 25 23:31:52 1999
+@@ -4004,7 +4004,9 @@
+ fi
+ if eval "test \"`echo '$ac_cv_lib_'$ac_lib_var`\" = yes"; then
+   echo "$ac_t""yes" 1>&6
+-  LIBPTHREAD="-lc_r"
++  LIBPTHREAD="-pthread"
++  CFLAGS="$CFLAGS -D_THREAD_SAFE"
++  CXXFLAGS+="$CFLAGS -D_THREAD_SAFE"
+ else
+   echo "$ac_t""no" 1>&6
+ fi
