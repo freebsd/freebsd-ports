@@ -17,6 +17,7 @@ MAINTAINER=	ports@FreeBSD.org
 USE_GNOMENG=	yes
 USE_GNOME=	glib12
 USE_GMAKE=	yes
+USE_PERL5=	yes
 USE_LIBTOOL=	yes
 INSTALLS_SHLIB=	yes
 
