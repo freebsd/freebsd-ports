@@ -29,6 +29,7 @@
     SUBDIR += bpatch
     SUBDIR += bvi
     SUBDIR += chexedit
+    SUBDIR += code-browser
     SUBDIR += color-mate
     SUBDIR += conglomerate
     SUBDIR += cooledit
