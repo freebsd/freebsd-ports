@@ -14,7 +14,7 @@ MASTER_SITE_SUBDIR=	GD
 
 MAINTAINER=	jfitz@FreeBSD.org
 
-BUILD_DEPENDS=	${LOCALBASE}/lib/libgd.a:${PORTSDIR}/graphics/gd
+LIB_DEPENDS=	gd.0:${PORTSDIR}/graphics/gd
 
 USE_PERL5=	YES
 

@@ -24,8 +24,8 @@ LIB_DEPENDS=    png.3:${PORTSDIR}/graphics/png \
 BUILD_DEPENDS=	${LOCALBASE}/lib/libgd.a:${PORTSDIR}/japanese/gd \
 		${LOCALBASE}/lib/libttf.a:${PORTSDIR}/print/freetype
 .else
-BUILD_DEPENDS=	${LOCALBASE}/lib/libgd.a:${PORTSDIR}/graphics/gd \
-		${LOCALBASE}/lib/libttf.a:${PORTSDIR}/print/freetype
+LIB_DEPENDS=	gd.0:${PORTSDIR}/graphics/gd
+BUILD_DEPENDS=	${LOCALBASE}/lib/libttf.a:${PORTSDIR}/print/freetype
 .endif
 
 EXTRACT_ONLY=	gnuplot-3.7.1.tar.gz
