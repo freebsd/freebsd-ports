@@ -42,13 +42,21 @@ OPTIONS=	ANTIWORD "AntiWord" off \
 
 .include <bsd.port.pre.mk>
 
-# WITH_SPEEDYCGI needs suidperl enabled under perl5.8
-PERL_V!=	${PERL} -V
-.if ${PERL_LEVEL} > 500800 && ${PERL_V:M*dosuid*} == "" && defined(WITH_SPEEDYCGI)
+# WITH_SPEEDYCGI needs suidperl enabled under perl 5.8.4 or above,
+# so, disable it first, and enable it again if perl exists and enabled suidperl
+.if ${PERL_LEVEL} >= 500804 && defined(WITH_SPEEDYCGI)
 DISABLE_SPEEDYCGI=yes
 WITHOUT_SPEEDYCGI=yes
 .undef WITH_SPEEDYCGI
-.endif
+.if exists(${PERL})
+PERL_V!=	${PERL} -V
+.if ${PERL_V:M*dosuid*} != ""
+.undef DISABLE_SPEEDYCGI
+.undef WITHOUT_SPEEDYCGI
+WITH_SPEEDYCGI=	yes
+.endif # dosuid
+.endif # exists(${PERL})
+.endif # perl5.8
 
 .if ${PERL_LEVEL} < 500800
 RUN_DEPENDS+=	${SITE_PERL}/CGI.pm:${PORTSDIR}/www/p5-CGI.pm \
@@ -114,9 +122,10 @@ post-patch:
 .if defined(DISABLE_SPEEDYCGI)
 	@${ECHO_MSG} ""
 	@${ECHO_MSG} "WARNING:"
-	@${ECHO_MSG} "Your perl doesn't support SUID, so SpeedyCGI support is disabled automatically."
+	@${ECHO_MSG} "Your perl doesn't support SUID, or you don't have perl yet,"
+	@${ECHO_MSG} "so SpeedyCGI support is disabled automatically."
 	@${ECHO_MSG} "If you want SpeedyCGI support, please reinstall perl with ENABLE_SUIDPERL=yes,"
-	@${ECHO_MSG} "and reinstall ${PORTNAME} again."
+	@${ECHO_MSG} "and reinstall ${PORTNAME}."
 	@${ECHO_MSG} ""
 .endif
 	@${MV} ${PATCH_WRKSRC}/etc/openwebmail.conf ${PATCH_WRKSRC}/etc/openwebmail.conf-dist
