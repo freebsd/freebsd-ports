@@ -32,7 +32,9 @@ share/gnome/pixmaps/ggv/toggleeven.xpm
 share/gnome/pixmaps/ggv/toggleodd.xpm
 share/gnome/pixmaps/ggv/zoom.xpm
 share/gnome/pixmaps/gnome-ghostview.png
+share/locale/am/LC_MESSAGES/ggv.mo
 share/locale/az/LC_MESSAGES/ggv.mo
+share/locale/be/LC_MESSAGES/ggv.mo
 share/locale/bg/LC_MESSAGES/ggv.mo
 share/locale/ca/LC_MESSAGES/ggv.mo
 share/locale/cs/LC_MESSAGES/ggv.mo
