@@ -6,16 +6,19 @@
 #
 
 PORTNAME=	seahorse
-PORTVERSION=	0.3.6
+PORTVERSION=	0.4.0
 CATEGORIES=	security
 MASTER_SITES=	http://www.mu.org/~dave/
 
 MAINTAINER=	dave@mu.org
 
 LIB_DEPENDS=	gtk12.2:${PORTSDIR}/x11-toolkits/gtk12
-RUN_DEPENDS=	gnupg-1.0.1:${PORTSDIR}/security/gnupg
+RUN_DEPENDS=	gpg:${PORTSDIR}/security/gnupg
+
+GTK_CONFIG?=	${X11BASE}/bin/gtk12-config
 
 GNU_CONFIGURE=	yes
+CONFIGURE_ENV=	GTK_CONFIG="${GTK_CONFIG}"
 MAN1=		seahorse.1
 
 do-install:
