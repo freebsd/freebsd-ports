@@ -7,10 +7,12 @@
 
 PORTNAME=	ptex
 PORTVERSION=	3.1.2
+PORTREVISION=	1
 CATEGORIES=	japanese print
 MASTER_SITES=	ftp://ftp.ascii.co.jp/pub/TeX/ascii-ptex/tetex/ \
-		ftp://ctan.tug.org/tex-archive/systems/unix/teTeX/2.0/distrib/ \
+		${MASTER_SITE_TEX_CTAN} \
 		ftp://ftp.ascii.co.jp/pub/TeX/ascii-ptex/dvips/
+MASTER_SITE_SUBDIR=	systems/unix/teTeX/2.0/distrib
 PKGNAMEPREFIX=	ja-
 PKGNAMESUFFIX=	-base
 DISTFILES=	${TETEX_SRC} ${TETEX_TEXMF} ${PTEX_TEXMF} ${DVIPSK_JPATCH}
@@ -21,7 +23,7 @@ COMMENT=	Base files for ASCII Japanese pTeX
 
 LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png \
 		wwwcore.1:${PORTSDIR}/www/libwww \
-		t1.4:${PORTSDIR}/devel/t1lib
+		t1.5:${PORTSDIR}/devel/t1lib
 
 USE_XLIB=	yes
 MANUAL_PACKAGE_BUILD=	can only build with empty /usr/local
@@ -74,13 +76,21 @@ LIBWWW_PREFIX?=	${LOCALBASE}
 LIBT1_PREFIX?=	${LOCALBASE}
 TEXMF_TREE=	${PREFIX}/share/texmf
 
+post-extract:
+	@${TAR} -zxf ${_DISTDIR}/${TETEX_TEXMF} -C ${WRKDIR} 'dvipdfm/*'
+
 pre-install:
 	@${MKDIR} ${TEXMF_TREE}
-	@${TAR} --exclude 'dvips/base/*' -zxf ${_DISTDIR}/${TETEX_TEXMF} -C ${TEXMF_TREE}
+	@${TAR} --exclude 'dvips/base/*' --exclude 'dvipdfm/*' -zxf ${_DISTDIR}/${TETEX_TEXMF} -C ${TEXMF_TREE}
 	@${TAR} -zxf ${_DISTDIR}/${PTEX_TEXMF} -C ${TEXMF_TREE}
-	@${MKDIR} ${TEXMF_TREE}/dvipdfm/.config
-	@${MV} ${TEXMF_TREE}/dvipdfm/* ${TEXMF_TREE}/dvipdfm/.config
-	@${MV} ${TEXMF_TREE}/dvipdfm/.config ${TEXMF_TREE}/dvipdfm/config
+	@${MKDIR} ${TEXMF_TREE}/dvipdfm-teTeX-dist/config
+	@${INSTALL_DATA} ${WRKDIR}/dvipdfm/* ${TEXMF_TREE}/dvipdfm-teTeX-dist/config
+	@if [ ! -d ${TEXMF_TREE}/dvipdfm ]; then \
+	  ${LN} -fs ${TEXMF_TREE}/dvipdfm-teTeX-dist ${TEXMF_TREE}/dvipdfm; \
+	  fi
+	@if [ ! -e $TEXMF_TREE}/web2c/texmf.cnf ]; then \
+	  ${LN} -fs ${TEXMF_TREE}/web2c/texmf.cnf-teTeX-dist ${TEXMF_TREE}/web2c/texmf.cnf; \
+	  fi
 	@${RM} ${TEXMF_TREE}/ls-R
 	@${PATCH} -d ${TEXMF_TREE}/dvips/pstricks -E --quiet < ${WRKDIR}/PSTricks.patch
 	@${RM} ${TEXMF_TREE}/dvips/pstricks/pst-text.pro.orig
@@ -95,6 +105,7 @@ post-install:
 	  ${PREFIX}/bin/texconfig font ro
 	@${SETENV} TEXMFMAIN=${TEXMF_TREE} PATH=${PREFIX}/bin:${PATH} \
 	  ${PREFIX}/bin/texconfig font options appendonlydir varfonts
+	@${PREFIX}/bin/mktexlsr ${TEXMF_TREE}
 	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>

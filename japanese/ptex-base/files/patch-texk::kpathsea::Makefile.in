@@ -1,0 +1,18 @@
+--- texk/kpathsea/Makefile.in.orig	Sun Feb 16 02:21:42 2003
++++ texk/kpathsea/Makefile.in	Thu Apr 17 13:22:26 2003
+@@ -190,10 +190,11 @@
+ 
+ install-data: texmf.cnf kpathsea.info install-man
+ 	$(SHELL) $(top_srcdir)/../mkinstalldirs $(texmf) $(infodir) $(web2cdir)
+-	if grep 'original texmf.cnf --' $(web2cdir)/texmf.cnf >/dev/null 2>&1 \
+-	   || test ! -r $(web2cdir)/texmf.cnf; then \
+-	  $(INSTALL_DATA) texmf.cnf $(web2cdir)/texmf.cnf; \
+-	else true; fi
++#	if grep 'original texmf.cnf --' $(web2cdir)/texmf.cnf >/dev/null 2>&1 \
++#	   || test ! -r $(web2cdir)/texmf.cnf; then \
++#	  $(INSTALL_DATA) texmf.cnf $(web2cdir)/texmf.cnf; \
++#	else true; fi
++	$(INSTALL_DATA) texmf.cnf $(web2cdir)/texmf.cnf-teTeX-dist
+ 	test -r ./kpathsea.info || cd $(srcdir) && for i in kpathsea.i*; do \
+ 	  $(INSTALL_DATA) $$i $(infodir)/$$i; done
+ # Should we install the headers?  They are not just system-dependent,

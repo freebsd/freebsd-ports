@@ -1,22 +1,22 @@
-@exec mkdir -p %D/share/texmf/fonts/afm/hoekwater
-@exec mkdir -p %D/share/texmf/fonts/bh/lucidabr
-@exec mkdir -p %D/share/texmf/fonts/bh/lumath
-@exec mkdir -p %D/share/texmf/fonts/ofm/public/ommincho
-@exec mkdir -p %D/share/texmf/fonts/ofm/uhc/gothic
-@exec mkdir -p %D/share/texmf/fonts/ofm/uhc/myoungjo
-@exec mkdir -p %D/share/texmf/fonts/ofm/uhc/taza
-@exec mkdir -p %D/share/texmf/fonts/ovf/public/ommincho
-@exec mkdir -p %D/share/texmf/fonts/ovf/uhc/gothic
-@exec mkdir -p %D/share/texmf/fonts/ovf/uhc/myoungjo
-@exec mkdir -p %D/share/texmf/fonts/ovf/uhc/taza
-@exec mkdir -p %D/share/texmf/fonts/ovp/public/ommincho
-@exec mkdir -p %D/share/texmf/fonts/pk
-@exec mkdir -p %D/share/texmf/fonts/tfm/monotype
-@exec mkdir -p %D/share/texmf/fonts/vf/monotype
-@exec mkdir -p %D/share/texmf/omega/generic/config
-@exec mkdir -p %D/share/texmf/omega/ocp/omegajapanese
-@exec mkdir -p %D/share/texmf/omega/otp/omega-j
-@exec mkdir -p %D/share/texmf/omega/otp/omegajapanese
+@exec /bin/mkdir -p %D/share/texmf/fonts/afm/hoekwater
+@exec /bin/mkdir -p %D/share/texmf/fonts/bh/lucidabr
+@exec /bin/mkdir -p %D/share/texmf/fonts/bh/lumath
+@exec /bin/mkdir -p %D/share/texmf/fonts/ofm/public/ommincho
+@exec /bin/mkdir -p %D/share/texmf/fonts/ofm/uhc/gothic
+@exec /bin/mkdir -p %D/share/texmf/fonts/ofm/uhc/myoungjo
+@exec /bin/mkdir -p %D/share/texmf/fonts/ofm/uhc/taza
+@exec /bin/mkdir -p %D/share/texmf/fonts/ovf/public/ommincho
+@exec /bin/mkdir -p %D/share/texmf/fonts/ovf/uhc/gothic
+@exec /bin/mkdir -p %D/share/texmf/fonts/ovf/uhc/myoungjo
+@exec /bin/mkdir -p %D/share/texmf/fonts/ovf/uhc/taza
+@exec /bin/mkdir -p %D/share/texmf/fonts/ovp/public/ommincho
+@exec /bin/mkdir -p %D/share/texmf/fonts/pk
+@exec /bin/mkdir -p %D/share/texmf/fonts/tfm/monotype
+@exec /bin/mkdir -p %D/share/texmf/fonts/vf/monotype
+@exec /bin/mkdir -p %D/share/texmf/omega/generic/config
+@exec /bin/mkdir -p %D/share/texmf/omega/ocp/omegajapanese
+@exec /bin/mkdir -p %D/share/texmf/omega/otp/omega-j
+@exec /bin/mkdir -p %D/share/texmf/omega/otp/omegajapanese
 bin/MakeTeXPK
 bin/access
 bin/allcm
@@ -112,7 +112,6 @@ bin/pfb2pfa
 bin/pk2bm
 bin/pktogf
 bin/pktype
-bin/pltotf
 bin/pooltype
 bin/ps2frag
 bin/ps2pk
@@ -135,7 +134,6 @@ bin/texi2pdf
 bin/texlinks
 bin/texshow
 bin/texutil
-bin/tftopl
 bin/thumbpdf
 bin/tie
 bin/ttf2afm
@@ -3299,8 +3297,8 @@ share/texmf/doc/tetex/TETEXDOC.ps
 share/texmf/doc/tetex/eurotex98-te.pdf
 share/texmf/doc/tetex/teTeX-FAQ
 share/texmf/doc/texdoctk/README
-share/texmf/dvipdfm/config/README.config
-share/texmf/dvipdfm/config/config
+share/texmf/dvipdfm-teTeX-dist/config/README.config
+share/texmf/dvipdfm-teTeX-dist/config/config
 share/texmf/dvips/antp/antp.enc
 share/texmf/dvips/antp/antp.map
 share/texmf/dvips/antp/config.antp
@@ -9297,7 +9295,6 @@ share/texmf/jbibtex/bst/jplain.bst
 share/texmf/jbibtex/bst/junsrt.bst
 share/texmf/jbibtex/bst/tieice.bst
 share/texmf/jbibtex/bst/tipsj.bst
-share/texmf/ls-R
 share/texmf/makeindex/gglo.ist
 share/texmf/makeindex/gind.ist
 share/texmf/makeindex/nomencl.ist
@@ -11882,9 +11879,14 @@ share/texmf/web2c/tex-pl.pool
 share/texmf/web2c/tex.fmt
 share/texmf/web2c/tex.log
 share/texmf/web2c/tex.pool
-share/texmf/web2c/texmf.cnf
+share/texmf/web2c/texmf.cnf-teTeX-dist
 share/texmf/web2c/updmap.cfg
 share/texmf/xdvi/XDvi
+@exec if [ ! -d %D/share/texmf/dvipdfm ]; then /bin/ln -fs %D/share/texmf/dvipdfm-teTeX-dist %D/share/texmf/dvipdfm; fi
+@unexec if [ -L %D/share/texmf/dvipdfm ]; then /bin/rm %D/share/texmf/dvipdfm ; fi
+@exec if [ ! -e %D/share/texmf/web2c/texmf.cnf ]; then /bin/ln -fs %D/share/texmf/web2c/texmf.cnf-teTeX-dist %D/share/texmf/web2c/texmf.cnf ; fi
+@unexec if [ -L %D/share/texmf/web2c/texmf.cnf ]; then /bin/rm %D/share/texmf/web2c/texmf.cnf ; fi
+@exec %D/bin/mktexlsr %D/share/texmf
 @dirrm share/texmf/xdvi
 @dirrm share/texmf/web2c
 @dirrm share/texmf/texdoctk
@@ -12446,8 +12448,8 @@ share/texmf/xdvi/XDvi
 @dirrm share/texmf/dvips/antt
 @dirrm share/texmf/dvips/antp
 @dirrm share/texmf/dvips
-@dirrm share/texmf/dvipdfm/config
-@dirrm share/texmf/dvipdfm
+@dirrm share/texmf/dvipdfm-teTeX-dist/config
+@dirrm share/texmf/dvipdfm-teTeX-dist
 @dirrm share/texmf/doc/texdoctk
 @dirrm share/texmf/doc/tetex
 @dirrm share/texmf/doc/ptex
@@ -12636,5 +12638,5 @@ share/texmf/xdvi/XDvi
 @dirrm share/texmf/bibtex/bib/ams
 @dirrm share/texmf/bibtex/bib
 @dirrm share/texmf/bibtex
-@dirrm share/texmf
+@unexec /bin/rmdir %D/share/texmf > /dev/null 2>&1 || true
 @dirrm include/kpathsea
