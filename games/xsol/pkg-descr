@@ -1,0 +1,12 @@
+xtetris 2.5.2
+
+xsol plays  a  solitaire  game  simliar to Klondike.  The playing field is
+made up of seven slots, where stacks are built in descending value with
+alternating suits.  Aces are built on at the top, and ascending order in the
+same suit.   Kings can be moved to any empty space in the play- ing field.
+The deck is gone through only once, card by card.
+
+The cards are moved using the Left mouse button (Button1).
+Pressing the button selects the  card,  and  it  (and  any cards on it)
+can then by dragged to its destination, where releasing will place them.
+The deck cards are selected by clicking on them.
