@@ -35,8 +35,9 @@ XDMCONFSCRIPTS=	GiveConsole TakeConsole Xsession Xsetup_0 Xwilling
 
 .if !defined(WITH_SETUID_LUIT)
 pre-everything::
-	@${ECHO_MSG} "If you want to use xterm with locales in a secure manner, luit must be installed"
-	@${ECHO_MSG} "setuid.  If you want to do this, hit Ctrl-C now and use \"make WITH_SETUID_LUIT=yes\""
+	@${ECHO_MSG} "If you want to use xterm with locales in a secure manner, luit must be"
+	@${ECHO_MSG} "installed setuid.  If you want to do this, hit Ctrl-C now and use"
+	@${ECHO_MSG} "\"make WITH_SETUID_LUIT=yes\""
 .endif
 
 post-install:
