@@ -8,9 +8,7 @@
 PORTNAME=	imaging
 PORTVERSION=	1.1.4
 CATEGORIES=	graphics python
-MASTER_SITES=	http://www.pythonware.com/downloads/ \
-		ftp://www.python.org/pub/python/src/ \
-		ftp://ftp.cwi.nl/pub/python/src/
+MASTER_SITES=	http://effbot.org/downloads/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	Imaging-${PORTVERSION}
 
