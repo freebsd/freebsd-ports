@@ -1,0 +1,15 @@
+*** imap/ANSI/c-client/news.c.orig	Wed May 15 13:50:02 1996
+--- imap/ANSI/c-client/news.c	Fri Jun 14 00:12:49 1996
+***************
+*** 310,314 ****
+    while (s = strchr (s,'.')) *s = '/';
+  				/* scan directory */
+!   if ((nmsgs = scandir (tmp,&names,news_select,news_numsort)) >= 0) {
+      stream->local = fs_get (sizeof (NEWSLOCAL));
+      LOCAL->dirty = NIL;		/* no update to .newsrc needed yet */
+--- 310,314 ----
+    while (s = strchr (s,'.')) *s = '/';
+  				/* scan directory */
+!   if ((nmsgs = scandir (tmp,&names,news_select,(void*)news_numsort)) >= 0) {
+      stream->local = fs_get (sizeof (NEWSLOCAL));
+      LOCAL->dirty = NIL;		/* no update to .newsrc needed yet */

@@ -1,0 +1,28 @@
+*** imap/ANSI/c-client/mh.c.orig	Wed May 15 13:49:54 1996
+--- imap/ANSI/c-client/mh.c	Fri Jun 14 00:12:23 1996
+***************
+*** 808,812 ****
+    if (sbuf.st_ctime != LOCAL->scantime) {
+      struct direct **names = NIL;
+!     long nfiles = scandir (LOCAL->dir,&names,mh_select,mh_numsort);
+      old = nmsgs ? mail_elt (stream,nmsgs)->data1 : 0;
+  				/* note scanned now */
+--- 808,812 ----
+    if (sbuf.st_ctime != LOCAL->scantime) {
+      struct direct **names = NIL;
+!     long nfiles = scandir (LOCAL->dir,&names,mh_select,(void*)mh_numsort);
+      old = nmsgs ? mail_elt (stream,nmsgs)->data1 : 0;
+  				/* note scanned now */
+***************
+*** 1050,1054 ****
+    }
+    mh_file (tmp,mailbox);	/* build file name we will use */
+!   if (nfiles = scandir (tmp,&names,mh_select,mh_numsort)) {
+  				/* largest number */
+      last = atoi (names[nfiles-1]->d_name);    
+--- 1050,1054 ----
+    }
+    mh_file (tmp,mailbox);	/* build file name we will use */
+!   if (nfiles = scandir (tmp,&names,mh_select,(void*)mh_numsort)) {
+  				/* largest number */
+      last = atoi (names[nfiles-1]->d_name);    

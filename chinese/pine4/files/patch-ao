@@ -1,0 +1,27 @@
+--- pine/send.c.orig	Tue Jul  9 02:10:50 1996
++++ pine/send.c	Sat Dec 28 02:36:30 1996
+@@ -49,6 +49,11 @@
+ #include "headers.h"
+ #include "../c-client/smtp.h"
+ #include "../c-client/nntp.h"
++/*
++woju
++disable bitstrip, keep 8-bit clean
++*/
++#define bitstrip(x) (x)
+ 
+ 
+ #ifndef TCPSTREAM
+@@ -5427,6 +5432,12 @@
+ 
+     if(body->encoding == ENCOTHER)
+       body->encoding = new_encoding;
++/*
++woju
++disable qp-encode
++*/
++    if (body->encoding == ENC8BIT)
++       body->encoding = 0;
+ 
+ #ifndef	DOS
+     fs_give((void **)&buf);
