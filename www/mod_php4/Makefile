@@ -3,7 +3,7 @@
 # Date created:		So  21 Jun 1998 16:09:39 CEST
 # Whom:			Stefan Herrmann <stefan@asterix.webaffairs.net>
 #
-# $Id: Makefile,v 1.71 1999/04/11 15:11:24 dirk Exp $
+# $Id: Makefile,v 1.72 1999/04/11 22:23:30 dirk Exp $
 #
 
 DISTNAME=	apache_${VERSION_APACHE}
@@ -109,8 +109,6 @@ pre-configure:
 	&& ${ECHO_MSG} "===>  Configuring for Apache-${VERSION_APACHE}"
 
 post-install:
-	@${RM} -f ${PREFIX}/etc/apache/access.conf*
-	@${RM} -f ${PREFIX}/etc/apache/srm.conf*
 	@if [ ! -f ${PREFIX}/etc/rc.d/apache.sh ]; then \
 		${ECHO} "Installing ${PREFIX}/etc/rc.d/apache.sh startup file."; \
 		${ECHO} "#!/bin/sh" > ${PREFIX}/etc/rc.d/apache.sh; \
