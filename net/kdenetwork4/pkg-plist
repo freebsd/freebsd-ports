@@ -6,11 +6,15 @@ bin/kmailcvt
 bin/knewstickerstub
 bin/knode
 bin/korn
+%%KTALKD%%bin/kotalkd
 bin/kppp
 bin/kppplogview
 bin/ksirc
+%%KTALKD%%bin/ktalkd
+%%KTALKD%%bin/ktalkdlg
 bin/kxmlrpcd
 bin/lisa
+%%KTALKD%%bin/mail.local
 bin/reslisa
 include/kmailIface.h
 include/mimelib/address.h
@@ -58,6 +62,8 @@ lib/kde3/kpfpropertiesdialogplugin.la
 lib/kde3/kpfpropertiesdialogplugin.so
 lib/kde3/libkcm_kcmkxmlrpcd.la
 lib/kde3/libkcm_kcmkxmlrpcd.so
+%%KTALKD%%lib/kde3/libkcm_ktalkd.la
+%%KTALKD%%lib/kde3/libkcm_ktalkd.so
 lib/kde3/libkcm_lanbrowser.la
 lib/kde3/libkcm_lanbrowser.so
 lib/kde3/libkcm_newsticker.la
@@ -87,6 +93,7 @@ share/applnk/Internet/kit.desktop
 share/applnk/Internet/knewsticker-standalone.desktop
 share/applnk/Internet/kppplogview.desktop
 share/applnk/Internet/ksirc.desktop
+%%KTALKD%%share/applnk/Settings/Network/kcmktalkd.desktop
 share/applnk/Settings/Network/kcmnewsticker.desktop
 share/applnk/Settings/Network/lanbrowser.desktop
 share/applnk/Settings/Personalization/kcmnewsticker.desktop
@@ -644,6 +651,7 @@ share/apps/ksirc/servers.txt
 share/apps/ksirc/sirc.help.gz
 share/apps/lisa/README
 share/config/ksircrc
+%%KTALKD%%share/config/ktalkdrc
 share/doc/HTML/en/kdict/applet.png
 share/doc/HTML/en/kdict/common
 share/doc/HTML/en/kdict/conf.png
@@ -766,6 +774,7 @@ share/icons/hicolor/16x16/apps/korn.png
 share/icons/hicolor/16x16/apps/kpf.png
 share/icons/hicolor/16x16/apps/kppp.png
 share/icons/hicolor/16x16/apps/ksirc.png
+%%KTALKD%%share/icons/hicolor/16x16/apps/ktalkd.png
 share/icons/hicolor/32x32/apps/kdict.png
 share/icons/hicolor/32x32/apps/kit.png
 share/icons/hicolor/32x32/apps/kmail.png
@@ -776,6 +785,7 @@ share/icons/hicolor/32x32/apps/korn.png
 share/icons/hicolor/32x32/apps/kpf.png
 share/icons/hicolor/32x32/apps/kppp.png
 share/icons/hicolor/32x32/apps/ksirc.png
+%%KTALKD%%share/icons/hicolor/32x32/apps/ktalkd.png
 share/icons/hicolor/48x48/apps/kdict.png
 share/icons/hicolor/48x48/apps/kit.png
 share/icons/hicolor/48x48/apps/kmail.png
@@ -786,6 +796,7 @@ share/icons/hicolor/48x48/apps/korn.png
 share/icons/hicolor/48x48/apps/kpf.png
 share/icons/hicolor/48x48/apps/kppp.png
 share/icons/hicolor/48x48/apps/ksirc.png
+%%KTALKD%%share/icons/hicolor/48x48/apps/ktalkd.png
 share/icons/locolor/16x16/apps/ksirc.png
 share/icons/locolor/32x32/apps/ksirc.png
 share/services/knewsservice.protocol
@@ -794,6 +805,7 @@ share/services/kpfpropertiesdialogplugin.desktop
 share/services/kxmlrpcd.desktop
 share/services/lan.protocol
 share/services/rlan.protocol
+%%KTALKD%%share/sounds/ktalkd.wav
 @dirrm share/doc/HTML/en/lisa
 @dirrm share/doc/HTML/en/ktalkd
 @dirrm share/doc/HTML/en/ksirc
