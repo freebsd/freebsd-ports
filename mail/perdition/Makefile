@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	perdition
-PORTVERSION=	1.11
-PORTREVISION=	2
+PORTVERSION=	1.12
 CATEGORIES=	mail net security
 MASTER_SITES=	http://www.vergenet.net/linux/perdition/download/${PORTVERSION}/
 
@@ -22,29 +21,31 @@ LIB_DEPENDS=	intl.5:${PORTSDIR}/devel/gettext \
 
 MAN5=		perditiondb.5
 MAN8=		perdition.8
-MLINK=		perdition.8  - perdition.pop3s.8 \
-		-  perdition.imap4.8 -  perdition.imap4s.8 \
-		- perdition.imaps.8  - perdition.pop3.8
 
 MANCOMPRESSED=	no
 
 USE_LIBTOOL=	YES
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include"
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" BDB_LIB=db3
 LDFLAGS+=	-L${LOCALBASE}/lib
 MAKE_ENV+=	DOCSDIR=${DOCSDIR}
+CONFIGURE_ARGS+=	--disable-daemon-map
 
 INSTALLS_SHLIB=	yes
 
-# Available knobs:
-# WITHOUT_SSL: Disable OpenSSL support
-# WITHOUT_POSIX_REGEX: Disable native regex support
-# WITH_BDB: Enable Berkerley database backend
-# WITH_NIS: Enable NIS database backend
-# WITH_GDBM: Enable gdbm database backend
-# WITH_MYSQL: Enable MySQL database backend
-# WITH_PGSQL: Enable PostgreSQL database backend
-# WITH_OPENLDAP: Enable OpenLDAP database backend
-# WITH_ODBC: Enable ODBC database backend
+##
+## Available knobs:
+##   WITH_BDB: Enable Berkerley database backend
+##   WITH_DAEMON_MAP: Enable Daemon Map support
+##   WITH_GDBM: Enable gdbm database backend
+##   WITH_MYSQL: Enable MySQL database backend
+##   WITH_NIS: Enable NIS database backend
+##   WITH_PGSQL: Enable PostgreSQL database backend
+##   WITH_ODBC: Enable ODBC database backend
+##   WITH_OPENLDAP: Enable OpenLDAP database backend
+##
+##   WITHOUT_SSL: Disable OpenSSL support
+##   WITHOUT_POSIX_REGEX: Disable native regex support
+##
 
 .if !defined(WITHOUT_SSL)
 CONFIGURE_ARGS+=	--enable-ssl
@@ -55,10 +56,19 @@ CONFIGURE_ARGS+=	--disable-ssl
 
 .if !defined(WITHOUT_POSIX_REGEX)
 CONFIGURE_ARGS+=	--enable-posix_regex
-PLIST_SUB+=		POSIX_REGEX=""
+PLIST_SUB+=		POSIXREGEX=""
 .else
 CONFIGURE_ARGS+=	--disable-posix_regex
-PLIST_SUB+=		POSIX_REGEX="@comment "
+PLIST_SUB+=		POSIXREGEX="@comment "
+.endif
+
+.if defined(WITH_DAEMON_MAP)
+CONFIGURE_ARGS+=	--enable-daemon-map
+PLIST_SUB+=		DAEMONMAP=""
+LIB_DEPENDS+=		gdbm:${PORTSDIR}/databases/gdbm
+.else
+CONFIGURE_ARGS+=	--disable-daemon-map
+PLIST_SUB+=		DAEMONMAP="@comment "
 .endif
 
 .if defined(WITH_BDB)
@@ -129,7 +139,13 @@ CONFIGURE_ARGS+=	--disable-odbc
 PLIST_SUB+=		ODBC="@comment "
 .endif
 
+pre-everything:: show-options
+
+show-options:
+	@${SED} -ne 's/^##//p' ${.CURDIR}/Makefile
+
 post-install:
+.if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 	@${INSTALL_DATA} ${WRKSRC}/etc/pam.d/perdition ${DOCSDIR}/perdition-pam.sample
 	@${ECHO_MSG} ""
@@ -138,5 +154,6 @@ post-install:
 	@${ECHO_MSG} " ${DOCSDIR}/perdition-pam.sample"
 	@${ECHO_MSG} "/********************************************************/"
 	@${ECHO_MSG} ""
+.endif
 
 .include <bsd.port.mk>
