@@ -321,6 +321,7 @@
     SUBDIR += p5-Net-DLookup
     SUBDIR += p5-Net-DNS
     SUBDIR += p5-Net-Daemon
+    SUBDIR += p5-Net-Google
     SUBDIR += p5-Net-ICQ2000
     SUBDIR += p5-Net-IPv4Addr
     SUBDIR += p5-Net-IPv6Addr
