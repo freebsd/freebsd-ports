@@ -1,13 +1,13 @@
 # ex:ts=8
 # Ports collection makefile for:  bash
-# Version required: 0.0
 # Date created:			  21 August 1994
 # Whom:				  jkh
 #
 # $FreeBSD$
 #
 
-DISTNAME=	bash-1.14.7
+PORTNAME=	bash
+PORTVERSION= 	1.14.7
 CATEGORIES=	shells
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	bash

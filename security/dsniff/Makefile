@@ -1,11 +1,12 @@
 # New ports collection makefile for:	dsniff
-# Version required:	1.7
 # Date created:		08 Jan 2000
 # Whom:			kris@FreeBSD.org
 #
 # $FreeBSD$
+#
 
-DISTNAME=	dsniff-1.7
+PORTNAME=	dsniff
+PORTVERSION= 	1.7
 CATEGORIES=	security
 MASTER_SITES=	http://naughty.monkey.org/~dugsong/dsniff/
 

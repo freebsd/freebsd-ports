@@ -1,16 +1,16 @@
 # New ports collection makefile for:	cfs
-# Version required:	1.3.3
 # Date created:		30 Jul 1997
 # Whom:			John Polstra <jdp@polstra.com>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	cfs-1.3.3bf
-PKGNAME=	cfs-1.3.3.1
+PORTNAME=	cfs
+PORTVERSION= 	1.3.3.1
 CATEGORIES=	security
 MASTER_SITES=   ftp://ftp.hacktic.nl/pub/crypto/disk/ \
 		ftp://ftp.uni-bielefeld.de/pub/crypto/replay/disk/
+DISTNAME=	cfs-1.3.3bf
 
 MAINTAINER=	green@FreeBSD.org
 

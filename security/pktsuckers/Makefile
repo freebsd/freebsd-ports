@@ -1,15 +1,15 @@
 # New ports collection makefile for:	pktsuckers
-# Version required:	1.2
 # Date created:		31 May 1999
 # Whom:			Warren Toomey <wkt@cs.adfa.edu.au>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	pktsuckers1_2
-PKGNAME=	pktsuckers-1.2
+PORTNAME=	pktsuckers
+PORTVERSION= 	1.2
 CATEGORIES=	security net
 MASTER_SITES=	ftp://minnie.cs.adfa.edu.au/pub/NetSecurity/
+DISTNAME=	${PORTNAME}1_2
 
 MAINTAINER=	wkt@cs.adfa.edu.au
 

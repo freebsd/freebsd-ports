@@ -1,18 +1,18 @@
 # ex:ts=8
 # Ports collection makefile for:  nmap
-# Version required: 0.0
 # Date created:			  Tue Aug 04, 1998
 # Whom:				  David O'Brien (obrien@NUXI.com)
 #
 # $FreeBSD$
 #
 
-DISTNAME=	nmap-2.30BETA18
-PKGNAME=	nmap-2.3b18
+PORTNAME=	nmap
+PORTVERSION=	2.3.b18
 CATEGORIES=	security net
 MASTER_SITES=	http://www.insecure.org/nmap/dist/  \
 		ftp://nuxi.ucdavis.edu/pub/misc/  \
 		http://www.mobis.com/ajax/projects/
+DISTNAME=	nmap-2.30BETA18
 EXTRACT_SUFX=	.tgz
 
 #PATCH_SITES=	http://www.mobis.com/ajax/projects/

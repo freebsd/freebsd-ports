@@ -1,16 +1,16 @@
 # ex:ts=8
 # Ports collection makefile for:  find_ddos
-# Version required: 0.0
 # Date created:			  Sun Feb 12, 2000
 # Whom:				  David O'Brien (obrien@NUXI.com)
 #
 # $FreeBSD$
 #
 
-DISTNAME=	find_ddos_v31_linux
-PKGNAME=	find_ddos-3.1
+PORTNAME=	find_ddos
+PORTVERSION= 	3.1
 CATEGORIES=	security
 MASTER_SITES=	http://www.fbi.gov/nipc/
+DISTNAME=	find_ddos_v31_linux
 EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=	obrien@FreeBSD.org

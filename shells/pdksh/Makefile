@@ -1,12 +1,12 @@
 # New ports collection makefile for:	pdksh
-# Version required:	5.2.14
 # Date created:		23 May 1995
 # Whom:			Thomas Gellekum <tg@FreeBSD.org>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	pdksh-5.2.14
+PORTNAME=	pdksh
+PORTVERSION= 	5.2.14
 CATEGORIES=	shells
 MASTER_SITES=	ftp://ftp.cs.mun.ca/pub/pdksh/ \
 		http://gd.tuwien.ac.at/utils/shells/pdksh/ \

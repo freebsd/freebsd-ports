@@ -1,16 +1,18 @@
 # New ports collection makefile for:	chrootuid
-# Version required:			1.2
 # Date created:				12 Dec 1999
 # Whom:					truckman
 #
 # $FreeBSD$
 #
 
+PORTNAME=	chrootuid
+PORTVERSION=	1.2
 DISTNAME=	chrootuid1.2
 PKGNAME=	chrootuid-1.2
 CATEGORIES=	security
 MASTER_SITES=	ftp://ftp.porcupine.org/pub/security/ \
 		ftp://coast.cs.purdue.edu/pub/tools/unix/chrootuid/
+DISTNAME=	${PORTNAME}${PORTVERSION}
 EXTRACT_SUFX=	.shar.Z
 
 MAINTAINER=	truckman@FreeBSD.org

@@ -1,12 +1,12 @@
 # New ports collection makefile for:	zsh-devel
-# Version required:		3.1.6
 # Date created:			31 October 1998
 # Whom:				shige
 #
 # $FreeBSD$
 #
 
-DISTNAME=	zsh-3.1.6
+PORTNAME=	zsh
+PORTVERSION= 	3.1.6
 CATEGORIES=	shells
 MASTER_SITES=	ftp://ftp.zsh.org/zsh/ \
 		ftp://ftp.sterling.com/zsh/ \

@@ -1,13 +1,13 @@
 # ex:ts=8
-# Ports collection makefile for:  ufcjohn
-# Version required: 0.0
+# Ports collection makefile for:  john
 # Date created:			  Sun Mar 09, 1997
 # Whom:				  David O'Brien (obrien@FreeBSD.org)
 #
 # $FreeBSD$
 #
 
-DISTNAME=	john-1.6
+PORTNAME=	john
+PORTVERSION=	1.6
 CATEGORIES=	security
 MASTER_SITES=	http://www.false.com/security/john/ \
 		ftp://ftp.false.com/pub/security/john/

@@ -1,15 +1,17 @@
 # New ports collection makefile for:	cops
-# Version required:			1.04
 # Date created:				29 August 1996
 # Whom:					oly
 #
 # $FreeBSD$
 #
 
+PORTNAME=	cops
+PORTVERSION=	1.04
 DISTNAME=	cops.1.04
 PKGNAME=	cops-1.04
 CATEGORIES=	security
 MASTER_SITES=	ftp://ftp.cert.org/pub/tools/cops/
+DISTNAME=	${PORTNAME}.${PORTVERSION}
 
 MAINTAINER=	oly@world.std.com
 

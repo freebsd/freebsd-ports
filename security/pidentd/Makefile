@@ -1,12 +1,12 @@
 # New ports collection makefile for:	pidentd
-# Version required:     2.8.5
 # Date created:		19 Oct 1994
 # Whom:			torstenb
 #
 # $FreeBSD$
 #
 
-DISTNAME=       pidentd-2.8.5
+PORTNAME=	pidentd
+PORTVERSION= 	2.8.5
 CATEGORIES=	security net ipv6
 MASTER_SITES=	ftp://ftp.lysator.liu.se/pub/ident/servers/ \
 		ftp://ftp.fu-berlin.de/unix/security/ident/servers/

@@ -1,12 +1,12 @@
 # New ports collection makefile for: checkpassword
-# Version required:	0.81
 # Date created:		05 August 1998
 # Whom:			sada@FreeBSD.org
 #
 # $FreeBSD$
 #
 
-DISTNAME=	checkpassword-0.81
+PORTNAME=	checkpassword
+PORTVERSION= 	0.81
 CATEGORIES=	security
 MASTER_SITES=	http://cr.yp.to/software/ \
 		http://people.FreeBSD.org/~sada/distfiles/ \

@@ -1,16 +1,16 @@
 # ex:ts=8
 # Ports collection makefile for:  fwtk
-# Version required: 0.0
 # Date created:			  15th June 1996
 # Whom:				  gpalmer
 #
 # $FreeBSD$
 #
 
-DISTNAME=	fwtk2.1
-PKGNAME=	fwtk-2.1
+PORTNAME=	fwtk
+PORTVERSION= 	2.1
 CATEGORIES=	security net
 DISTFILES=	fwtk2.1${EXTRACT_SUFX} fwtk-doc-only${EXTRACT_SUFX}
+DISTNAME=	${PORTNAME}${PORTVERSION}
 EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=	obrien@FreeBSD.org

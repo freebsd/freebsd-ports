@@ -1,12 +1,12 @@
 # New ports collection makefile for:	its4
-# Version required:			1.0.1
 # Date created:				21 February 2000
 # Whom:					Chris D. Faulhaber <jedgar@FreeBSD.org>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	its4-1.0.1
+PORTNAME=	its4
+PORTVERSION=	1.0.1
 CATEGORIES=	security
 MASTER_SITES=	""
 EXTRACT_SUFX=	.tgz

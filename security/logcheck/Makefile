@@ -1,12 +1,12 @@
 # Ports collection makefile for:	logcheck
-# Version required:	1.1.1
 # Date created:		9 December 1999
 # Whom:			Dan Langille <dan@freebsddiary.org>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	logcheck-1.1.1
+PORTNAME=	logcheck
+PORTVERSION=	1.1.1
 CATEGORIES=	security
 MASTER_SITES=	http://www.psionic.com/tools/
 

@@ -1,16 +1,16 @@
 # New ports collection makefile for:    p5-Authen-PAM
-# Version required:			0.08
 # Date created:				Mon Oct  4 1999
 # Whom:	      				Matt Behrens <matt@zigg.com>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	Authen-PAM-0.08
-PKGNAME=	p5-Authen-PAM-0.08
+PORTNAME=	p5-Authen-PAM
+PORTVERSION=	0.08
 CATEGORIES=	security perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Authen
+DISTNAME=	Authen-PAM-0.08	
 
 MAINTAINER=	matt@zigg.com
 

@@ -1,12 +1,12 @@
 # Ports collection Makefile for:	smurflog
-# Version required:			1.0
 # Date created:				7/06/1998
 # Whom:					nectar@FreeBSD.org
 #
 # $FreeBSD$
 #
 
-DISTNAME=	smurflog-2.1
+PORTNAME=	smurflog
+PORTVERSION= 	2.1
 CATEGORIES=	net security
 MASTER_SITES=	ftp://ftp.bitchx.org/pub/misc/                          \
 		ftp://ftp.plur.net/pub/software/bitchx/files/           \

@@ -1,15 +1,15 @@
 # New ports collection makefile for:	keynote
-# Version required:                     2-beta4
 # Date created:                         02 September 1999
 # Whom:                                 se
 #
 # $FreeBSD$
 #
 
-DISTNAME=	keynote-2-beta4
-PKGNAME=	keynote-2b4
+PORTNAME=	keynote
+PORTVERSION=	2.b4
 CATEGORIES=	security
 MASTER_SITES=	http://www.cis.upenn.edu/~angelos/Code/
+DISTNAME=	keynote-2-beta4
 
 MAINTAINER=	se@FreeBSD.org
 

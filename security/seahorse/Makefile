@@ -1,14 +1,13 @@
 # New ports collection makefile for:	Seahorse
-# Version required:	0.3.6
 # Date created:		08 March 2000
 # Whom:			Dave McKay <dave@mu.org>
 #
 # $FreeBSD$
 #
-#http://seahorse.sourceforge.net/
 
-DISTNAME=	seahorse-0.3.6
-CATEGORIES=	security 
+PORTNAME=	seahorse
+PORTVERSION=	0.3.6
+CATEGORIES=	security
 MASTER_SITES=	http://www.mu.org/~dave/
 
 MAINTAINER=	dave@mu.org

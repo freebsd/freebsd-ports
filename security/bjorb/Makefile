@@ -1,12 +1,12 @@
 # New ports collection makefile for:	bjorb
-# Version required:	0.5.5p1
 # Date created:		May 16, 1998
 # Whom:			issei@jp.FreeBSD.org
 #
 # $FreeBSD$
 #
 
-DISTNAME=	bjorb-0.5.5p1
+PORTNAME=	bjorb
+PORTVERSION=	0.5.5p1
 CATEGORIES=	net security
 MASTER_SITES=	ftp://ftp.hitachi-ms.co.jp/pub/bjorb/
 

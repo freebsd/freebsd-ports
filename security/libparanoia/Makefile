@@ -1,11 +1,12 @@
 # New ports collection makefile for:	libparanoia
-# Version required:			1.3
 # Date created:				1 Jan 1999
 # Whom:					Alexandre Snarskii <snar@paranoia.ru>
 #
 # $FreeBSD$
+#
 
-DISTNAME=	libparanoia-1.3
+PORTNAME=	libparanoia
+PORTVERSION=	1.3
 CATEGORIES=	security
 MASTER_SITES=	ftp://ftp.lexa.ru/pub/domestic/snar/
 

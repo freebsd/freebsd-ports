@@ -1,13 +1,12 @@
 # New ports collection makefile for:	rsaref
-# Version required:	2.0
 # Date created:		2 Feb 1997
 # Whom:			ache
 #
 # $FreeBSD$
 #
 
-DISTNAME=	rsaref20.1996
-PKGNAME=	rsaref-2.0
+PORTNAME=	rsaref
+PORTVERSION= 	2.0
 CATEGORIES=	security
 MASTER_SITES=	ftp://ftp.deva.net/pub/sources/crypto/ \
 		ftp://ftp.kddlabs.co.jp/.7/inet/caida/bmwt/ \
@@ -17,6 +16,7 @@ MASTER_SITES=	ftp://ftp.deva.net/pub/sources/crypto/ \
 		ftp://ftp.jyu.fi/.3/ftp.zedz.net/pub/replay/crypto/LIBS/rsa/ \
 		ftp://ftp.funet.fi/pub/mirrors/utopia.hacktic.nl/crypto/LIBS/rsa/ \
 		ftp://ftp.fu-berlin.de/unix/security/replay-mirror/crypto/LIBS/rsa/
+DISTNAME=	rsaref20.1996
 EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=	kris@FreeBSD.ORG

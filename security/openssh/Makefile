@@ -1,16 +1,16 @@
 # New ports collection makefile for:	OpenSSH
-# Version required:	1.2
 # Date created:		7 October 1999
 # Whom:			green
 #
 # $FreeBSD$
 #
 
-DISTNAME=	src/usr.bin/ssh
-PKGNAME=	OpenSSH-1.2.2
+PORTNAME=	OpenSSH
+PORTVERSION=	1.2.2
 CATEGORIES=	security net ipv6
 # ${MASTER_SITES} is only for if CVS won't work, period.
 MASTER_SITES=	ftp://internat.FreeBSD.org/pub/Crypto/OpenSSH/
+DISTNAME=	src/usr.bin/ssh
 
 MAINTAINER=	green@FreeBSD.org
 

@@ -1,12 +1,12 @@
 # New ports collection makefile for:	sash
-# Version required:	3.4
 # Date created:		Jan 22, 2000
 # Whom:			Patrick Gardella <patrick@freebsd.org>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	sash-3.4
+PORTNAME=	sash
+PORTVERSION= 	3.4
 CATEGORIES=	shells
 MASTER_SITES=	http://www.pcug.org.au/~dbell/programs/ \
 		http://people.FreeBSD.org/~patrick/

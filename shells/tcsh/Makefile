@@ -1,13 +1,12 @@
 # New ports collection makefile for:	tcsh
-# Version required:	6.09
 # Date created:		22 August 1994
 # Whom:			jkh
 #
 # $FreeBSD$
 #
 
-DISTNAME=       tcsh-6.09
-PKGNAME=        tcsh-6.09.00
+PORTNAME=	tcsh
+PORTVERSION= 	6.09
 CATEGORIES=	shells
 MASTER_SITES=   ftp://ftp.astron.com/pub/tcsh/
 

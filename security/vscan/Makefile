@@ -1,17 +1,17 @@
 # ex:ts=8
 # Ports collection makefile for:  vscan
-# Version required: 0.0
 # Date created:			  Thur Sept 25, 1996
 # Whom:				  David O'Brien (obrien@cs.ucdavis.edu)
 #
 # $FreeBSD$
 #
 
-DISTNAME=	nlxb318e
-PKGNAME=	vscan-3.1.8
+PORTNAME=	vscan
+PORTVERSION= 	3.1.8
 CATEGORIES=	security
 MASTER_SITES=   ftp://ftp.mcafee.com/pub/antivirus/unix/linux/ \
 		http://people.FreeBSD.org/~steve/distfiles/
+DISTNAME=	nlxb318e
 EXTRACT_SUFX=	.tar
 
 MAINTAINER=	obrien@FreeBSD.org

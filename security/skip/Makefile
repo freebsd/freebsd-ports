@@ -1,18 +1,19 @@
 # New ports collection makefile for:    skip
-# Version required:     		1.0
 # Date created:         		26 November 1997
 # Whom:                 		Archie L. Cobbs <archie@whistle.com>
 #
 # $FreeBSD$
+#
 
-DISTNAME=		skipsrc-1.0
-PKGNAME=		skip-1.0
+PORTNAME=		skip
+PORTVERSION=		1.0
 CATEGORIES=		security
 # Note: the original source comes from Sun, via this web page:
 #    http://skip.incog.com/src-form.html
 # The site below is outside of the U.S.
 MASTER_SITES=		ftp://ftp.replaytv.com/pub/replay/crypto/APPS/skip/ \
 			ftp://ftp.internat.freebsd.org/pub/FreeBSD/distfiles/
+DISTNAME=		skipsrc-1.0
 EXTRACT_SUFX=		.tar.Z
 
 MAINTAINER=		archie@freebsd.org

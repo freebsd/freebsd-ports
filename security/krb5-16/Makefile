@@ -1,12 +1,12 @@
 # Ports collection Makefile for:	MIT Kerberos V
-# Version required:			1.0.5
 # Date created:				6/5/1998
 # Whom:					nectar@FreeBSD.org
 #
 # $FreeBSD$
 #
 
-DISTNAME=		krb5-1.1.1
+PORTNAME=		krb5
+PORTVERSION=		1.1.1
 CATEGORIES=		security
 MASTER_SITES=		# manual download
 EXTRACT_SUFX=		.tar
