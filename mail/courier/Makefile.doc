@@ -1,0 +1,20 @@
+DOCS=	AUTHORS BENCHMARKS INSTALL NEWS README \
+	authlib/README.authmysql.html \
+	authlib/README.ldap \
+	gpglib/README.gpglib.html \
+	imap/FAQ.imap \
+	imap/FAQ.imap.html \
+	imap/README.imap \
+	imap/README.imap.html \
+	maildir/README.maildirfilter.html \
+	maildir/README.maildirquota.html \
+	maildir/README.maildirquota.txt \
+	maildir/README.sharedfolders.txt \
+	maildir/README.sharedfolders.html \
+	maildrop/README.maildrop.html \
+	pcp/README.pcp.html \
+	tcpd/README.couriertls \
+	webmail/BUGS.webmail \
+	webmail/BUGS.webmail.html \
+	webmail/SECURITY.webmail \
+	webmail/SECURITY.webmail.html

@@ -17,6 +17,7 @@
     SUBDIR += cclient
     SUBDIR += cmail
     SUBDIR += coolmail
+    SUBDIR += courier
     SUBDIR += courier-imap
     SUBDIR += cucipop
     SUBDIR += cvsmail

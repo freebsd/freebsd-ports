@@ -1,0 +1,309 @@
+--- courier/perms.sh.in.orig	Fri Dec  7 08:37:35 2001
++++ courier/perms.sh.in	Wed Dec 19 22:04:44 2001
+@@ -10,9 +10,9 @@
+ exec_prefix="@exec_prefix@"
+ 
+ PERMS="
+-.			755
++.			755	x	root	wheel
+ 
+-@localstatedir@		755	x	bin	bin
++@localstatedir@		755	x	root	wheel
+ @localstatedir@/tmp	770
+ @localstatedir@/msgs	750
+ @localstatedir@/msgq	750
+@@ -41,120 +41,131 @@
+ @sysconfdir@/rfcerr2046.txt	444	config
+ @sysconfdir@/rfcerr2047.txt	444	config
+ 
+-@libexecdir@		755	x	bin	bin
+-@libexecdir@/authlib	755	x	bin	bin
+-@libexecdir@/courier	755	x	bin	bin
+-@libexecdir@/courier/modules	755	x	bin	bin
+-@libexecdir@/courier/modules/modules.ctl	444	x	bin	bin
++@libexecdir@				755	x	root	wheel
++@libexecdir@/authlib			755	x	root	wheel
++@libexecdir@/courier			755	x	root	wheel
++@libexecdir@/courier/modules		755	x	root	wheel
++@libexecdir@/courier/modules/dsn	755	x	root	wheel
++@libexecdir@/courier/modules/esmtp	755	x	root	wheel
++@libexecdir@/courier/modules/esmtp/authend 555	x	root	wheel
++@libexecdir@/courier/modules/local	755	x	root	wheel
++@libexecdir@/courier/modules/local/courierdeliver 555 x	root	wheel
++@libexecdir@/courier/modules/local/courierlocal 555 x	root	wheel
++@libexecdir@/courier/modules/modules.ctl 444	x	root	wheel
++@libexecdir@/courier/modules/uucp	755	x	root	wheel
+ @libexecdir@/courier/submitmkdir	4550
+-@libexecdir@/courier/courierd	550
+-@libexecdir@/courier/courierpop3d	555
+-@libexecdir@/courier/courierpop3login	555
++@libexecdir@/courier/courierd		550
++@libexecdir@/courier/courierpop3d	555	x	root	wheel
++@libexecdir@/courier/courierpop3login	555	x	root	wheel
+ @libexecdir@/courier/aliasexp		550
+ @libexecdir@/courier/aliascombine	550
+ @libexecdir@/courier/aliascreate	550
+ @libexecdir@/courier/submit		550
+-@libexecdir@/courier/makedatprog	555
+-@libexecdir@/courier/imaplogin		555	x	bin	bin
+-@libexecdir@/courier/pcpd		555	x	bin	bin
+-@libexecdir@/courier/webmail		700	x	root	bin
+-@libexecdir@/courier/webmail/webmail	4555	x	root	bin
+-@libexecdir@/courier/webmail/webadmin	4555	x	root	bin
+-
+-@sbindir@			755	x	bin	bin
+-@sbindir@/courier		555
+-@sbindir@/showconfig		555
++@libexecdir@/courier/makedatprog	555	x	root	wheel
++@libexecdir@/courier/imaplogin		555	x	root	wheel
++@libexecdir@/courier/pcpd		555	x	root	wheel
++@libexecdir@/courier/webmail		700	x	root	wheel
++@libexecdir@/courier/webmail/webmail	4555	x	root	wheel
++@libexecdir@/courier/webmail/webadmin	4555	x	root	wheel
++@libexecdir@/filters			755	x	root	wheel
++@libexecdir@/filters/dupfilter		555	x	root	wheel
++@libexecdir@/filters/perlfilter		555	x	root	wheel
++
++@sbindir@			755	x	root	wheel
++@sbindir@/courier		555	x	root	wheel
++@sbindir@/showconfig		555	x	root	wheel
+ @sbindir@/showmodules		550
+-@sbindir@/userdbpw		555
+-@sbindir@/couriertcpd		555
+-@sbindir@/logger		555
+-@sbindir@/imapd			555
+-@sbindir@/imapd-ssl		555
+-@datadir@/imapd			555	x	bin	bin
+-@datadir@/imapd-ssl		555	x	bin	bin
++@sbindir@/userdbpw		555	x	root	wheel
++@sbindir@/couriertcpd		555	x	root	wheel
++@sbindir@/logger		555	x	root	wheel
++@sbindir@/imapd			555	x	root	wheel
++@sbindir@/imapd-ssl		555	x	root	wheel
++@datadir@/imapd			555	x	root	wheel
++@datadir@/imapd-ssl		555	x	root	wheel
+ 
+-@bindir@			755	x	bin	bin
++@bindir@			755	x	root	wheel
+ @bindir@/cancelmsg		6555
+-@bindir@/courier-config		555
+-@bindir@/mailq			2555
+-@bindir@/maildirmake		555
+-@bindir@/sendmail		4511	x	root
+-@bindir@/rmail			4511	x	root
+-@bindir@/dotlock		555
+-@bindir@/deliverquota		555
+-@bindir@/mailbot		555
+-@bindir@/makemime		555
+-@bindir@/reformail		555
+-@bindir@/reformime		555
+-@bindir@/mimegpg		555
+-@bindir@/couriermlm		555
+-@bindir@/dotforward		555
+-
+-@datadir@/makedat		555	x	bin	bin
+-@bindir@/makedat		555
+-@bindir@/testmxlookup		555
+-@bindir@/imapd			555
+-@datadir@/makealiases		550
+-@sbindir@/makealiases		550
+-@datadir@/makehosteddomains	555
+-@sbindir@/makehosteddomains	555
+-@datadir@/pop3d			755
+-@sbindir@/pop3d			755
+-@datadir@/pop3d-ssl		755
+-@sbindir@/pop3d-ssl		755
+-@datadir@/makeuserdb		555
+-@sbindir@/makeuserdb		555
+-@datadir@/webgpg		555
+-@sbindir@/webgpg		555
+-@datadir@/userdb		555
+-@sbindir@/userdb		555
+-@datadir@/pw2userdb		555
+-@sbindir@/pw2userdb		555
+-@datadir@/vchkpw2userdb		555
+-@sbindir@/vchkpw2userdb		555
+-
+-@datadir@			755	x	bin	bin
+-@datadir@/courierctl.start	555
+-
+-@datadir@/mkimapdcert		755
+-@sbindir@/mkimapdcert		755
+-@datadir@/mkpop3dcert		755
+-@sbindir@/mkpop3dcert		755
+-@datadir@/couriermlm		755
+-
+-@datadir@/couriermlm/adminrequest.tmpl	644
+-@datadir@/couriermlm/confsubj.tmpl	644
+-@datadir@/couriermlm/digestsubj.tmpl	644
+-@datadir@/couriermlm/fetch.tmpl	644
+-@datadir@/couriermlm/fetchsubj.tmpl	644
+-@datadir@/couriermlm/help.tmpl	644
+-@datadir@/couriermlm/idxsubject.tmpl	644
+-@datadir@/couriermlm/idxheaderhtml.tmpl	644
+-@datadir@/couriermlm/idxheader2html.tmpl 644
+-@datadir@/couriermlm/idxheadertxt.tmpl	644
+-@datadir@/couriermlm/modrejbody.tmpl	644
+-@datadir@/couriermlm/modreject.tmpl	644
+-@datadir@/couriermlm/modrejheader.tmpl	644
+-@datadir@/couriermlm/modsubject.tmpl	644
+-@datadir@/couriermlm/modtext.tmpl	644
+-@datadir@/couriermlm/modtext2.tmpl	644
+-@datadir@/couriermlm/sub.tmpl	644
+-@datadir@/couriermlm/sub2.tmpl	644
+-@datadir@/couriermlm/sub3.tmpl	644
+-@datadir@/couriermlm/sub4.tmpl	644
+-@datadir@/couriermlm/sub5.tmpl	644
+-@datadir@/couriermlm/subreportfooter.tmpl	644
+-@datadir@/couriermlm/subreporthdr.tmpl 644
+-@datadir@/couriermlm/subreporthdr1.tmpl 644
+-@datadir@/couriermlm/subreporthdr2.tmpl 644
+-@datadir@/couriermlm/subreporthdr3.tmpl 644
+-@datadir@/couriermlm/unsub.tmpl	644
+-@datadir@/couriermlm/unsub2.tmpl	644
+-@datadir@/couriermlm/unsub3.tmpl	644
+-@datadir@/couriermlm/warn1headers.tmpl	644
+-@datadir@/couriermlm/warn1text.tmpl	644
+-@datadir@/couriermlm/warn1text2.tmpl	644
+-@datadir@/couriermlm/warn2msg.tmpl	644
++@bindir@/courier-config		555	x	root	wheel
++@bindir@/mailq			2555	x	root
++@bindir@/maildirmake		555	x	root	wheel
++@bindir@/sendmail		4511	x	root	wheel
++@bindir@/rmail			4511	x	root	wheel
++@bindir@/dotlock		555	x	root	wheel
++@bindir@/deliverquota		555	x	root	wheel
++@bindir@/mailbot		555	x	root	wheel
++@bindir@/makemime		555	x	root	wheel
++@bindir@/reformail		555	x	root	wheel
++@bindir@/reformime		555	x	root	wheel
++@bindir@/mimegpg		555	x	root	wheel
++@bindir@/couriermlm		555	x	root	wheel
++@bindir@/dotforward		555	x	root	wheel
++@bindir@/preline		555	x	root	wheel
++
++@datadir@/makedat		555	x	root	wheel
++@bindir@/makedat		555	x	root	wheel
++@bindir@/testmxlookup		555	x	root	wheel
++@bindir@/imapd			555	x	root	wheel
++@datadir@/makealiases		555	x	root	wheel
++@sbindir@/makealiases		555	x	root	wheel
++@datadir@/makehosteddomains	555	x	root	wheel
++@sbindir@/makehosteddomains	555	x	root	wheel
++@datadir@/pop3d			555	x	root	wheel
++@sbindir@/pop3d			555	x	root	wheel
++@datadir@/pop3d-ssl		555	x	root	wheel
++@sbindir@/pop3d-ssl		555	x	root	wheel
++@datadir@/makeuserdb		555	x	root	wheel
++@sbindir@/makeuserdb		555	x	root	wheel
++@datadir@/webgpg		555	x	root	wheel
++@sbindir@/webgpg		555	x	root	wheel
++@datadir@/userdb		555	x	root	wheel
++@sbindir@/userdb		555	x	root	wheel
++@datadir@/pw2userdb		555	x	root	wheel
++@sbindir@/pw2userdb		555	x	root	wheel
++@datadir@/vchkpw2userdb		555	x	root	wheel
++@sbindir@/vchkpw2userdb		555	x	root	wheel
++
++@datadir@			755	x	root	wheel
++@datadir@/courierctl.start	555	x	root	wheel
++
++@datadir@/mkimapdcert		555	x	root	wheel
++@sbindir@/mkimapdcert		555	x	root	wheel
++@datadir@/mkpop3dcert		555	x	root	wheel
++@sbindir@/mkpop3dcert		555	x	root	wheel
++@datadir@/couriermlm		555	x	root	wheel
++
++@datadir@/couriermlm/adminrequest.tmpl	444	x	root	wheel
++@datadir@/couriermlm/confsubj.tmpl	444	x	root	wheel
++@datadir@/couriermlm/digestsubj.tmpl	444	x	root	wheel
++@datadir@/couriermlm/fetch.tmpl		444	x	root	wheel
++@datadir@/couriermlm/fetchsubj.tmpl	444	x	root	wheel
++@datadir@/couriermlm/help.tmpl		444	x	root	wheel
++@datadir@/couriermlm/idxsubject.tmpl	444	x	root	wheel
++@datadir@/couriermlm/idxheaderhtml.tmpl	444	x	root	wheel
++@datadir@/couriermlm/idxheader2html.tmpl 444	x	root	wheel
++@datadir@/couriermlm/idxheadertxt.tmpl	444	x	root	wheel
++@datadir@/couriermlm/modrejbody.tmpl	444	x	root	wheel
++@datadir@/couriermlm/modreject.tmpl	444	x	root	wheel
++@datadir@/couriermlm/modrejheader.tmpl	444	x	root	wheel
++@datadir@/couriermlm/modsubject.tmpl	444	x	root	wheel
++@datadir@/couriermlm/modtext.tmpl	444	x	root	wheel
++@datadir@/couriermlm/modtext2.tmpl	444	x	root	wheel
++@datadir@/couriermlm/sub.tmpl		444	x	root	wheel
++@datadir@/couriermlm/sub2.tmpl		444	x	root	wheel
++@datadir@/couriermlm/sub3.tmpl		444	x	root	wheel
++@datadir@/couriermlm/sub4.tmpl		444	x	root	wheel
++@datadir@/couriermlm/sub5.tmpl		444	x	root	wheel
++@datadir@/couriermlm/subreportfooter.tmpl 444	x	root	wheel
++@datadir@/couriermlm/subreporthdr.tmpl	444	x	root	wheel
++@datadir@/couriermlm/subreporthdr1.tmpl	444	x	root	wheel
++@datadir@/couriermlm/subreporthdr2.tmpl	444	x	root	wheel
++@datadir@/couriermlm/subreporthdr3.tmpl	444	x	root	wheel
++@datadir@/couriermlm/unsub.tmpl		444	x	root	wheel
++@datadir@/couriermlm/unsub2.tmpl	444	x	root	wheel
++@datadir@/couriermlm/unsub3.tmpl	444	x	root	wheel
++@datadir@/couriermlm/warn1headers.tmpl	444	x	root	wheel
++@datadir@/couriermlm/warn1text.tmpl	444	x	root	wheel
++@datadir@/couriermlm/warn1text2.tmpl	444	x	root	wheel
++@datadir@/couriermlm/warn2msg.tmpl	444	x	root	wheel
+ "
+ 
+ echo "$PERMS" | while read FILE MODE SPECIAL USER GROUP
+@@ -198,7 +209,7 @@
+ 
+ if test "$couriertls" != ""
+ then
+-   echo @bindir@/couriertls 555 bin bin
++   echo @bindir@/couriertls 555 root wheel
+ fi
+ 
+ if test "@HAVE_LDAP@" != 0
+@@ -207,23 +218,23 @@
+ 	echo @sbindir@/courierldapaliasd 700 @mailuser@ @mailgroup@
+ fi
+ 
+-echo @datadir@/sqwebmail/images 755 @mailuser@ @mailgroup@
++echo @datadir@/sqwebmail/images 755 root wheel
+ 
+ for f in `cat ../webmail/images/filelist 2>/dev/null`
+ do
+-	echo @datadir@/sqwebmail/images/$f 444 @mailuser@ @mailgroup@
++	echo @datadir@/sqwebmail/images/$f 444 root wheel
+ done
+ 
+ . ../maildrop/uidgid
+ 
+-echo @bindir@/maildrop 4511 $uid @mailgroup@
++echo @bindir@/maildrop 4511 $uid mail
+ 
+ sed 's:^:'@sysconfdir@/':;s/$/ 660 @mailuser@ @mailgroup@ config/' <../authlib/authconfiglist
+ 
+ for f in `cat ../authlib/installlist ../authlib/installlist.sh`
+ do
+ 	test -z "$f" && continue
+-	echo @libexecdir@/authlib/$f 755 bin bin
++	echo @libexecdir@/authlib/$f 555 root wheel
+ done
+ 
+ . ../authlib/authdaemonrc
+@@ -240,16 +251,16 @@
+ 
+ . ../authlib/authpwdprogs
+ 
+-echo "@authchangepwdir@ 755 @mailuser@ @mailgroup@"
++echo "@authchangepwdir@ 755 root wheel"
+ for f in `echo $PWPROGS dummy`
+ do
+ 	test "$f" = "dummy" && continue
+-	echo "@authchangepwdir@/$f 4555 root bin"
++	echo "@authchangepwdir@/$f 4555 root wheel"
+ done
+ 
+ for f in `echo $PWSCRIPTS dummy`
+ do
+ 	test "$f" = "dummy" && continue
+ 	echo "@authchangepwdir@/$f 555 @mailuser@ @mailgroup@"
+-	echo "@datadir@/$f 555 @mailuser@ @mailgroup@"
++	echo "@datadir@/$f 555 root wheel
+ done

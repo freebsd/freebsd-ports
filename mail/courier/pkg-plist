@@ -1,0 +1,648 @@
+@exec pw groupshow courier || pw groupadd courier -g 62 -h -
+@exec pw user show courier || pw useradd courier -u 62 -g 62 -h - -d /var/spool/courier -s /sbin/nologin -c "Courier Mail System"
+@exec install -d -o courier -g courier -m 0755 %D/etc/courier/aliasdir
+@exec install -d -o courier -g courier -m 0750 %D/etc/courier/aliases
+@exec install -d -o root -g wheel -m 0755 %D/etc/courier/esmtpacceptmailfor.dir
+@exec install -d -o root -g wheel -m 0755 %D/etc/courier/esmtppercentrelay.dir
+@exec install -d -o courier -g courier -m 0750 %D/etc/courier/filters/active
+@exec install -d -o courier -g courier -m 0755 %D/etc/courier/smtpaccess
+@exec install -d -o courier -g courier -m 0700 %D/etc/courier/webadmin
+@exec install -d -o courier -g courier -m 0755 %D/etc/courier/webadmin/added
+@exec install -d -o courier -g courier -m 0755 %D/etc/courier/webadmin/removed
+@unexec %D/etc/rc.d/courier.sh stop 2>/dev/null || true
+@unexec rm -f %D/etc/courier/*.dat 2>/dev/null || true
+@unexec cmp -s %D/etc/courier/authdaemonrc %D/etc/courier/authdaemonrc.dist && rm -f %D/etc/courier/authdaemonrc 2>/dev/null || true
+%%SUB_LDAP%%@unexec cmp -s %D/etc/courier/authldaprc %D/etc/courier/authldaprc.dist && rm -f %D/etc/courier/authldaprc 2>/dev/null || true
+%%SUB_MYSQL%%@unexec cmp -s %D/etc/courier/authmysqlrc %D/etc/courier/authmysqlrc.dist && rm -f %D/etc/courier/authmysqlrc 2>/dev/null || true
+%%SUB_PGSQL%%@unexec cmp -s %D/etc/courier/authpgsqlrc %D/etc/courier/authpgsqlrc.dist && rm -f %D/etc/courier/authpgsqlrc 2>/dev/null || true
+@unexec cmp -s %D/etc/courier/courierd %D/etc/courier/courierd.dist && rm -f %D/etc/courier/courierd 2>/dev/null || true
+@unexec cmp -s %D/etc/courier/esmtpd-msa %D/etc/courier/esmtpd-msa.dist && rm -f %D/etc/courier/esmtpd-msa 2>/dev/null || true
+@unexec cmp -s %D/etc/courier/esmtpd %D/etc/courier/esmtpd.dist && rm -f %D/etc/courier/esmtpd 2>/dev/null || true
+@unexec cmp -s %D/etc/courier/imapd-ssl %D/etc/courier/imapd-ssl.dist && rm -f %D/etc/courier/imapd-ssl 2>/dev/null || true
+@unexec cmp -s %D/etc/courier/imapd %D/etc/courier/imapd.dist && rm -f %D/etc/courier/imapd 2>/dev/null || true
+@unexec cmp -s %D/etc/courier/ldapaddressbook %D/etc/courier/ldapaddressbook.dist && rm -f %D/etc/courier/ldapaddressbook 2>/dev/null || true
+%%SUB_LDAP%%@unexec cmp -s %D/etc/courier/ldapaliasrc %D/etc/courier/ldapaliasrc.dist && rm -f %D/etc/courier/ldapaliasrc 2>/dev/null || true
+@unexec cmp -s %D/etc/courier/pop3d-ssl %D/etc/courier/pop3d-ssl.dist && rm -f %D/etc/courier/pop3d-ssl 2>/dev/null || true
+@unexec cmp -s %D/etc/courier/pop3d %D/etc/courier/pop3d.dist && rm -f %D/etc/courier/pop3d 2>/dev/null || true
+bin/cancelmsg
+bin/courier-config
+bin/couriermlm
+bin/couriertls
+bin/deliverquota
+bin/dotforward
+bin/dotlock
+bin/imapd
+bin/mailbot
+bin/maildirmake
+bin/maildrop
+bin/mailq
+bin/makedat
+bin/makemime
+bin/mimegpg
+bin/preline
+bin/reformail
+bin/reformime
+bin/rmail
+bin/sendmail
+bin/testmxlookup
+etc/courier/aliases/system
+etc/courier/authdaemonrc.dist
+%%SUB_LDAP%%etc/courier/authldaprc.dist
+etc/courier/authmodulelist
+%%SUB_MYSQL%%etc/courier/authmysqlrc.dist
+%%SUB_PGSQL%%etc/courier/authpgsqlrc.dist
+etc/courier/courierd.dist
+etc/courier/crontab
+etc/courier/dsndelayed.txt
+etc/courier/dsndelivered.txt
+etc/courier/dsnfailed.txt
+etc/courier/dsnfooter.txt
+etc/courier/dsnheader.txt
+etc/courier/dsnrelayed.txt
+etc/courier/dsnsubjectnotice.txt
+etc/courier/dsnsubjectwarn.txt
+etc/courier/enablefiltering
+etc/courier/esmtp.authpam
+etc/courier/esmtpauthclient
+etc/courier/esmtpd-msa.dist
+etc/courier/esmtpd.cnf
+etc/courier/esmtpd.dist
+etc/courier/imapd-ssl.dist
+etc/courier/imapd.authpam
+etc/courier/imapd.cnf
+etc/courier/imapd.dist
+etc/courier/ldapaddressbook.dist
+%%SUB_LDAP%%etc/courier/ldapaliasrc.dist
+etc/courier/locallowercase
+etc/courier/maildrop
+etc/courier/maildropfilter
+etc/courier/module.dsn
+etc/courier/module.esmtp
+etc/courier/module.local
+etc/courier/module.uucp
+etc/courier/pop3d-ssl.dist
+etc/courier/pop3d.authpam
+etc/courier/pop3d.cnf
+etc/courier/pop3d.dist
+etc/courier/quotawarnmsg.example
+etc/courier/rfcerr2045.txt
+etc/courier/rfcerr2046.txt
+etc/courier/rfcerr2047.txt
+etc/courier/rfcerrheader.txt
+etc/courier/smtpaccess/default
+etc/courier/webmail.authpam
+@exec [ -e /etc/aliases ] && ln -sf /etc/aliases %D/etc/courier/aliases/system
+@exec [ -f %D/etc/courier/authdaemonrc ] || cp -p %D/etc/courier/authdaemonrc.dist %D/etc/courier/authdaemonrc
+%%SUB_LDAP%%@exec [ -f %D/etc/courier/authldaprc ] || cp -p %D/etc/courier/authldaprc.dist %D/etc/courier/authldaprc
+%%SUB_MYSQL%%@exec [ -f %D/etc/courier/authmysqlrc ] || cp -p %D/etc/courier/authmysqlrc.dist %D/etc/courier/authmysqlrc
+%%SUB_PGSQL%%@exec [ -f %D/etc/courier/authpgsqlrc ] || cp -p %D/etc/courier/authpgsqlrc.dist %D/etc/courier/authpgsqlrc
+@exec [ -f %D/etc/courier/courierd ] || cp -p %D/etc/courier/courierd.dist %D/etc/courier/courierd
+@exec [ -f %D/etc/courier/esmtpd-msa ] || cp -p %D/etc/courier/esmtpd-msa.dist %D/etc/courier/esmtpd-msa
+@exec [ -f %D/etc/courier/esmtpd ] || cp -p %D/etc/courier/esmtpd.dist %D/etc/courier/esmtpd
+@exec [ -f %D/etc/courier/imapd-ssl ] || cp -p %D/etc/courier/imapd-ssl.dist %D/etc/courier/imapd-ssl
+@exec [ -f %D/etc/courier/imapd ] || cp -p %D/etc/courier/imapd.dist %D/etc/courier/imapd
+@exec [ -f %D/etc/courier/ldapaddressbook ] || cp -p %D/etc/courier/ldapaddressbook.dist %D/etc/courier/ldapaddressbook
+%%SUB_LDAP%%@exec [ -f %D/etc/courier/ldapaliasrc ] || cp -p %D/etc/courier/ldapaliasrc.dist %D/etc/courier/ldapaliasrc
+@exec [ -f %D/etc/courier/pop3d-ssl ] || cp -p %D/etc/courier/pop3d-ssl.dist %D/etc/courier/pop3d-ssl
+@exec [ -f %D/etc/courier/pop3d ] || cp -p %D/etc/courier/pop3d.dist %D/etc/courier/pop3d
+@unexec rmdir %D/etc/courier/aliasdir 2>/dev/null || true
+@unexec rmdir %D/etc/courier/aliases 2>/dev/null || true
+@unexec rmdir %D/etc/courier/esmtpacceptmailfor.dir 2>/dev/null || true
+@unexec rmdir %D/etc/courier/esmtppercentrelay.dir 2>/dev/null || true
+@unexec rmdir %D/etc/courier/filters/active 2>/dev/null || true
+@unexec rmdir %D/etc/courier/filters 2>/dev/null || true
+@unexec rmdir %D/etc/courier/smtpaccess 2>/dev/null || true
+@unexec rmdir %D/etc/courier/webadmin/added 2>/dev/null || true
+@unexec rmdir %D/etc/courier/webadmin/removed 2>/dev/null || true
+@unexec rmdir %D/etc/courier/webadmin 2>/dev/null || true
+@unexec rmdir %D/etc/courier 2>/dev/null || true
+etc/rc.d/courier.sh
+libexec/authlib/authdaemon
+libexec/authlib/authdaemond
+%%SUB_LDAP%%libexec/authlib/authdaemond.ldap
+%%SUB_MYSQL%%libexec/authlib/authdaemond.mysql
+%%SUB_PGSQL%%libexec/authlib/authdaemond.pgsql
+libexec/authlib/authdaemond.plain
+libexec/authlib/changepwd/authdaemon.passwd
+libexec/authlib/changepwd/authsystem.passwd
+libexec/courier/aliascombine
+libexec/courier/aliascreate
+libexec/courier/aliasexp
+libexec/courier/courierd
+libexec/courier/courierpop3d
+libexec/courier/courierpop3login
+libexec/courier/imaplogin
+libexec/courier/makedatprog
+libexec/courier/modules/dsn/courierdsn
+libexec/courier/modules/esmtp/addcr
+libexec/courier/modules/esmtp/authend
+libexec/courier/modules/esmtp/authstart
+libexec/courier/modules/esmtp/courieresmtp
+libexec/courier/modules/esmtp/courieresmtpd
+libexec/courier/modules/local/courierdeliver
+libexec/courier/modules/local/courierlocal
+libexec/courier/modules/modules.ctl
+libexec/courier/modules/uucp/courieruucp
+libexec/courier/pcpd
+libexec/courier/submit
+libexec/courier/submitmkdir
+libexec/courier/webmail/webadmin
+libexec/courier/webmail/webmail
+libexec/filters/dupfilter
+libexec/filters/perlfilter
+@dirrm libexec/authlib/changepwd
+@dirrm libexec/authlib
+@dirrm libexec/courier/modules/uucp
+@dirrm libexec/courier/modules/local
+@dirrm libexec/courier/modules/esmtp
+@dirrm libexec/courier/modules/dsn
+@dirrm libexec/courier/modules
+@dirrm libexec/courier/webmail
+@dirrm libexec/courier
+@dirrm libexec/filters
+sbin/courier
+sbin/courieresmtpd
+sbin/courierfilter
+%%SUB_LDAP%%sbin/courierldapaliasd
+sbin/couriertcpd
+sbin/esmtpd
+sbin/esmtpd-msa
+sbin/filterctl
+sbin/imapd
+sbin/imapd-ssl
+sbin/logger
+sbin/makeacceptmailfor
+sbin/makealiases
+sbin/makehosteddomains
+sbin/makepercentrelay
+sbin/makesmtpaccess
+sbin/makesmtpaccess-msa
+sbin/makeuserdb
+sbin/makeuucpneighbors
+sbin/mkesmtpdcert
+sbin/mkimapdcert
+sbin/mkpop3dcert
+sbin/pop3d
+sbin/pop3d-ssl
+sbin/pw2userdb
+sbin/showconfig
+sbin/showmodules
+sbin/userdb
+sbin/userdbpw
+sbin/vchkpw2userdb
+sbin/webgpg
+share/courier/authsystem.passwd
+share/courier/courierctl.start
+share/courier/couriermlm/adminrequest.tmpl
+share/courier/couriermlm/confsubj.tmpl
+share/courier/couriermlm/digestsubj.tmpl
+share/courier/couriermlm/fetch.tmpl
+share/courier/couriermlm/fetchsubj.tmpl
+share/courier/couriermlm/help.tmpl
+share/courier/couriermlm/idxheader2html.tmpl
+share/courier/couriermlm/idxheaderhtml.tmpl
+share/courier/couriermlm/idxheadertxt.tmpl
+share/courier/couriermlm/idxsubject.tmpl
+share/courier/couriermlm/modrejbody.tmpl
+share/courier/couriermlm/modreject.tmpl
+share/courier/couriermlm/modrejheader.tmpl
+share/courier/couriermlm/modsubject.tmpl
+share/courier/couriermlm/modtext.tmpl
+share/courier/couriermlm/modtext2.tmpl
+share/courier/couriermlm/sub.tmpl
+share/courier/couriermlm/sub2.tmpl
+share/courier/couriermlm/sub3.tmpl
+share/courier/couriermlm/sub4.tmpl
+share/courier/couriermlm/sub5.tmpl
+share/courier/couriermlm/subreportfooter.tmpl
+share/courier/couriermlm/subreporthdr.tmpl
+share/courier/couriermlm/subreporthdr1.tmpl
+share/courier/couriermlm/subreporthdr2.tmpl
+share/courier/couriermlm/subreporthdr3.tmpl
+share/courier/couriermlm/unsub.tmpl
+share/courier/couriermlm/unsub2.tmpl
+share/courier/couriermlm/unsub3.tmpl
+share/courier/couriermlm/warn1headers.tmpl
+share/courier/couriermlm/warn1text.tmpl
+share/courier/couriermlm/warn1text2.tmpl
+share/courier/couriermlm/warn2msg.tmpl
+@dirrm share/courier/couriermlm
+share/courier/courierwebadmin/admin-00machine.html
+share/courier/courierwebadmin/admin-00machine.pl
+share/courier/courierwebadmin/admin-05local.html
+share/courier/courierwebadmin/admin-05local.pl
+share/courier/courierwebadmin/admin-10password.html
+share/courier/courierwebadmin/admin-10password.pl
+share/courier/courierwebadmin/admin-15ldap.pl
+share/courier/courierwebadmin/admin-15ldapa.pl
+share/courier/courierwebadmin/admin-15ldap.html
+share/courier/courierwebadmin/admin-15ldapa.html
+share/courier/courierwebadmin/admin-15mysql.html
+share/courier/courierwebadmin/admin-15mysql.pl
+share/courier/courierwebadmin/admin-15pgsql.pl
+share/courier/courierwebadmin/admin-15pgsql.html
+share/courier/courierwebadmin/admin-20aliases.html
+share/courier/courierwebadmin/admin-20aliases.pl
+share/courier/courierwebadmin/admin-30esmtp.html
+share/courier/courierwebadmin/admin-30esmtp.pl
+share/courier/courierwebadmin/admin-31esmtp.pl
+share/courier/courierwebadmin/admin-31esmtp.html
+share/courier/courierwebadmin/admin-40imap.pl
+share/courier/courierwebadmin/admin-40imap.html
+share/courier/courierwebadmin/admin-45pop3.pl
+share/courier/courierwebadmin/admin-45pop3.html
+share/courier/courierwebadmin/admin-47webmail.html
+share/courier/courierwebadmin/admin-47webmail.pl
+share/courier/courierwebadmin/admin-50bofh.html
+share/courier/courierwebadmin/admin-50bofh.pl
+share/courier/courierwebadmin/admin-cancel.pl
+share/courier/courierwebadmin/admin-main.html
+share/courier/courierwebadmin/admin-main.pl
+share/courier/courierwebadmin/admin-save.pl
+share/courier/courierwebadmin/admin-save.html
+share/courier/courierwebadmin/dumpenv.pl
+share/courier/courierwebadmin/login.html
+share/courier/courierwebadmin/notsupp.html
+share/courier/courierwebadmin/unsecure.html
+share/courier/courierwebadmin/webadmin.pl
+share/courier/courierwebadmin/webadmin.pm
+@dirrm share/courier/courierwebadmin
+share/courier/esmtpd
+share/courier/filterctl
+share/courier/imapd
+share/courier/imapd-ssl
+share/courier/locale/locale.alias
+@dirrm share/courier/locale
+share/courier/makeacceptmailfor
+share/courier/makealiases
+share/courier/makedat
+share/courier/makehosteddomains
+share/courier/makepercentrelay
+share/courier/makesmtpaccess
+share/courier/makeuserdb
+share/courier/makeuucpneighbors
+share/courier/mkesmtpdcert
+share/courier/mkimapdcert
+share/courier/mkpop3dcert
+share/courier/perlfilter-example.pl
+share/courier/perlfilter-wrapper.pl
+share/courier/pop3d
+share/courier/pop3d-ssl
+share/courier/pw2userdb
+share/courier/rootcerts/0bb21872.0
+share/courier/rootcerts/0e82f83a.0
+share/courier/rootcerts/11f154d6.0
+share/courier/rootcerts/1a147d5b.0
+share/courier/rootcerts/256fd83b.0
+share/courier/rootcerts/2d047263.0
+share/courier/rootcerts/2edf7016.0
+share/courier/rootcerts/412bea73.0
+share/courier/rootcerts/54edfa5d.0
+share/courier/rootcerts/5f5e5caa.0
+share/courier/rootcerts/6166cb50.0
+share/courier/rootcerts/61f6c934.0
+share/courier/rootcerts/66ec64da.0
+share/courier/rootcerts/6c55cf77.0
+share/courier/rootcerts/6d6ec79c.0
+share/courier/rootcerts/709afd2b.0
+share/courier/rootcerts/72fa7371.0
+share/courier/rootcerts/7651b327.0
+share/courier/rootcerts/7d3cd826.0
+share/courier/rootcerts/7d453d8f.0
+share/courier/rootcerts/8efac7d4.0
+share/courier/rootcerts/9d0c2a65.0
+share/courier/rootcerts/b0f3e76e.0
+share/courier/rootcerts/b5f329fa.0
+share/courier/rootcerts/bcdd5959.0
+share/courier/rootcerts/belsign-object-publishing-ca.pem
+share/courier/rootcerts/belsign-secure-server-ca.pem
+share/courier/rootcerts/bffe8b5d.0
+share/courier/rootcerts/c19d42c7.0
+share/courier/rootcerts/c33a80d4.0
+share/courier/rootcerts/c527e4ab.0
+share/courier/rootcerts/ccf7ff0e.0
+share/courier/rootcerts/class-1-public-primary-ocsp-responder.pem
+share/courier/rootcerts/class-2-public-primary-ocsp-responder.pem
+share/courier/rootcerts/class-3-public-primary-ocsp-responder.pem
+share/courier/rootcerts/d78a75c7.0
+share/courier/rootcerts/ddc328ff.0
+share/courier/rootcerts/dfd0b044.0
+share/courier/rootcerts/e28f6bbc.0
+share/courier/rootcerts/ed049835.0
+share/courier/rootcerts/ed62f4e3.0
+share/courier/rootcerts/f10dd942.0
+share/courier/rootcerts/f4996e82.0
+share/courier/rootcerts/f73e89fd.0
+share/courier/rootcerts/globalsign-partners-ca.pem
+share/courier/rootcerts/globalsign-primary-class-1-ca.pem
+share/courier/rootcerts/globalsign-primary-class-2-ca.pem
+share/courier/rootcerts/globalsign-primary-class-3-ca.pem
+share/courier/rootcerts/globalsign-root-ca.pem
+share/courier/rootcerts/http-www-valicert-com-00.pem
+share/courier/rootcerts/http-www-valicert-com-01.pem
+share/courier/rootcerts/http-www-valicert-com-02.pem
+share/courier/rootcerts/http-www-valicert-net.pem
+share/courier/rootcerts/rsa-data-security-inc-secure-server.pem
+share/courier/rootcerts/secure-server-ocsp-responder.pem
+share/courier/rootcerts/tc-trustcenter-for-security-in-00.pem
+share/courier/rootcerts/tc-trustcenter-for-security-in-01.pem
+share/courier/rootcerts/tc-trustcenter-for-security-in-02.pem
+share/courier/rootcerts/tc-trustcenter-for-security-in-03.pem
+share/courier/rootcerts/tc-trustcenter-for-security-in-04.pem
+share/courier/rootcerts/thawte-personal-basic-ca.pem
+share/courier/rootcerts/thawte-personal-freemail-ca.pem
+share/courier/rootcerts/thawte-personal-premium-ca.pem
+share/courier/rootcerts/thawte-premium-server-ca.pem
+share/courier/rootcerts/thawte-server-ca.pem
+share/courier/rootcerts/thawte-universal-ca-root.pem
+share/courier/rootcerts/verisign-class-1-public-primary.pem
+share/courier/rootcerts/verisign-class-2-public-primary.pem
+share/courier/rootcerts/verisign-class-3-public-primary.pem
+share/courier/rootcerts/verisign-class-4-public-primary.pem
+share/courier/rootcerts/verisign-inc-class-1-public-primary.pem
+share/courier/rootcerts/verisign-inc-class-2-public-primary.pem
+share/courier/rootcerts/verisign-inc-class-3-public-primary.pem
+share/courier/rootcerts/verisign-inc-class-4-public-primary.pem
+share/courier/rootcerts/verisign-inc-verisign-trust-network-00.pem
+share/courier/rootcerts/verisign-inc-verisign-trust-network-01.pem
+share/courier/rootcerts/verisign-inc-verisign-trust-network-02.pem
+share/courier/rootcerts/verisign-inc-verisign-trust-network-03.pem
+@dirrm share/courier/rootcerts
+share/courier/sqwebmail/cleancache.pl
+share/courier/sqwebmail/html/en-us/CHARSET
+share/courier/sqwebmail/html/en-us/ISPELLDICT
+share/courier/sqwebmail/html/en-us/LANGUAGE
+share/courier/sqwebmail/html/en-us/LANGUAGE_PREF
+share/courier/sqwebmail/html/en-us/LOCALE
+share/courier/sqwebmail/html/en-us/TIMEZONELIST
+share/courier/sqwebmail/html/en-us/abooklist.html
+share/courier/sqwebmail/html/en-us/attachments.html
+share/courier/sqwebmail/html/en-us/autoresponder.html
+share/courier/sqwebmail/html/en-us/calendarlogin.inc.html
+share/courier/sqwebmail/html/en-us/empty.html
+share/courier/sqwebmail/html/en-us/eventacl.html
+share/courier/sqwebmail/html/en-us/eventdaily.html
+share/courier/sqwebmail/html/en-us/eventdelete.html
+share/courier/sqwebmail/html/en-us/eventmonthly.html
+share/courier/sqwebmail/html/en-us/eventnotifydelete.txt
+share/courier/sqwebmail/html/en-us/eventnotifynew.txt
+share/courier/sqwebmail/html/en-us/eventnotifysubject.txt
+share/courier/sqwebmail/html/en-us/eventshow.html
+share/courier/sqwebmail/html/en-us/eventweekly.html
+share/courier/sqwebmail/html/en-us/expired.html
+share/courier/sqwebmail/html/en-us/filter.html
+share/courier/sqwebmail/html/en-us/folder.html
+share/courier/sqwebmail/html/en-us/folders.html
+share/courier/sqwebmail/html/en-us/gpg.html
+share/courier/sqwebmail/html/en-us/gpgcreate.html
+share/courier/sqwebmail/html/en-us/gpgerr.html
+share/courier/sqwebmail/html/en-us/index.html
+share/courier/sqwebmail/html/en-us/invalid.html
+share/courier/sqwebmail/html/en-us/keyimport.html
+share/courier/sqwebmail/html/en-us/ldaplist.html
+share/courier/sqwebmail/html/en-us/ldapsearch.html
+share/courier/sqwebmail/html/en-us/login.html
+share/courier/sqwebmail/html/en-us/navbar.inc.html
+share/courier/sqwebmail/html/en-us/navbar2.inc.html
+share/courier/sqwebmail/html/en-us/navbar3.inc.html
+share/courier/sqwebmail/html/en-us/newevent.html
+share/courier/sqwebmail/html/en-us/newmsg.html
+share/courier/sqwebmail/html/en-us/preferences.html
+share/courier/sqwebmail/html/en-us/print.html
+share/courier/sqwebmail/html/en-us/printnocookie.html
+share/courier/sqwebmail/html/en-us/printredirect.html
+share/courier/sqwebmail/html/en-us/quickadd.html
+share/courier/sqwebmail/html/en-us/readmsg.html
+share/courier/sqwebmail/html/en-us/redirect.html
+share/courier/sqwebmail/html/en-us/spellchk.html
+@dirrm share/courier/sqwebmail/html/en-us
+@exec [ -L %D/share/courier/sqwebmail/html/en ] || ln -sf en-us %D/share/courier/sqwebmail/html/en 2>/dev/null || true
+@unexec rm -f %D/share/courier/sqwebmail/html/en 2>/dev/null || true
+@dirrm share/courier/sqwebmail/html
+share/courier/sqwebmail/images/bg.gif
+share/courier/sqwebmail/images/bluebottomleft.gif
+share/courier/sqwebmail/images/bluebottomright.gif
+share/courier/sqwebmail/images/bluetopleft.gif
+share/courier/sqwebmail/images/bluetopright.gif
+share/courier/sqwebmail/images/calendar.gif
+share/courier/sqwebmail/images/cancel.gif
+share/courier/sqwebmail/images/folder.gif
+share/courier/sqwebmail/images/folder2.gif
+share/courier/sqwebmail/images/folders.gif
+share/courier/sqwebmail/images/forward.gif
+share/courier/sqwebmail/images/forwardatt.gif
+share/courier/sqwebmail/images/fullheaders.gif
+share/courier/sqwebmail/images/graybottomright.gif
+share/courier/sqwebmail/images/graybottomleft.gif
+share/courier/sqwebmail/images/graytopleft.gif
+share/courier/sqwebmail/images/graytopright.gif
+share/courier/sqwebmail/images/left.gif
+share/courier/sqwebmail/images/left2.gif
+share/courier/sqwebmail/images/logo.gif
+share/courier/sqwebmail/images/print.gif
+share/courier/sqwebmail/images/reply.gif
+share/courier/sqwebmail/images/replyall.gif
+share/courier/sqwebmail/images/replylist.gif
+share/courier/sqwebmail/images/right.gif
+share/courier/sqwebmail/images/right2.gif
+share/courier/sqwebmail/images/sep.gif
+share/courier/sqwebmail/images/signin.gif
+share/courier/sqwebmail/images/sqwebmail.css
+share/courier/sqwebmail/images/trash2.gif
+share/courier/sqwebmail/images/uncancel.gif
+@dirrm share/courier/sqwebmail/images
+share/courier/sqwebmail/ldapsearch
+share/courier/sqwebmail/sendit.sh
+share/courier/sqwebmail/webgpg
+@dirrm share/courier/sqwebmail
+share/courier/userdb
+share/courier/vchkpw2userdb
+share/courier/webgpg
+@dirrm share/courier
+%%PORTDOCS%%share/doc/courier/AUTHORS
+%%PORTDOCS%%share/doc/courier/BENCHMARKS
+%%PORTDOCS%%share/doc/courier/BUGS.webmail
+%%PORTDOCS%%share/doc/courier/BUGS.webmail.html
+%%PORTDOCS%%share/doc/courier/FAQ.imap
+%%PORTDOCS%%share/doc/courier/FAQ.imap.html
+%%PORTDOCS%%share/doc/courier/INSTALL
+%%PORTDOCS%%share/doc/courier/NEWS
+%%PORTDOCS%%share/doc/courier/README
+%%PORTDOCS%%share/doc/courier/README.authmysql.html
+%%PORTDOCS%%share/doc/courier/README.couriertls
+%%PORTDOCS%%share/doc/courier/README.gpglib.html
+%%PORTDOCS%%share/doc/courier/README.imap
+%%PORTDOCS%%share/doc/courier/README.imap.html
+%%PORTDOCS%%share/doc/courier/README.ldap
+%%PORTDOCS%%share/doc/courier/README.maildirfilter.html
+%%PORTDOCS%%share/doc/courier/README.maildirquota.html
+%%PORTDOCS%%share/doc/courier/README.maildirquota.txt
+%%PORTDOCS%%share/doc/courier/README.maildrop.html
+%%PORTDOCS%%share/doc/courier/README.pcp.html
+%%PORTDOCS%%share/doc/courier/README.sharedfolders.html
+%%PORTDOCS%%share/doc/courier/README.sharedfolders.txt
+%%PORTDOCS%%share/doc/courier/SECURITY.webmail
+%%PORTDOCS%%share/doc/courier/SECURITY.webmail.html
+%%PORTDOCS%%share/doc/courier/html/FAQ.html
+%%PORTDOCS%%share/doc/courier/html/aliases.html
+%%PORTDOCS%%share/doc/courier/html/authlib.html
+%%PORTDOCS%%share/doc/courier/html/cancelmsg.html
+%%PORTDOCS%%share/doc/courier/html/courier.html
+%%PORTDOCS%%share/doc/courier/html/courierd.html
+%%PORTDOCS%%share/doc/courier/html/courierdsn.html
+%%PORTDOCS%%share/doc/courier/html/courierfilter.html
+%%PORTDOCS%%share/doc/courier/html/courierldapaliasd.html
+%%PORTDOCS%%share/doc/courier/html/couriermlm.html
+%%PORTDOCS%%share/doc/courier/html/courierperlfilter.html
+%%PORTDOCS%%share/doc/courier/html/courierpop3d.html
+%%PORTDOCS%%share/doc/courier/html/couriertcpd.html
+%%PORTDOCS%%share/doc/courier/html/couriertls.html
+%%PORTDOCS%%share/doc/courier/html/courieruucp.html
+%%PORTDOCS%%share/doc/courier/html/deliverquota.html
+%%PORTDOCS%%share/doc/courier/html/dot-courier.html
+%%PORTDOCS%%share/doc/courier/html/dot-forward.html
+%%PORTDOCS%%share/doc/courier/html/dotlock.html
+%%PORTDOCS%%share/doc/courier/html/draft-varshavchik-exdata-smtpext.txt
+%%PORTDOCS%%share/doc/courier/html/draft-varshavchik-security-smtpext.txt
+%%PORTDOCS%%share/doc/courier/html/draft-varshavchik-verp-smtpext.txt
+%%PORTDOCS%%share/doc/courier/html/dupfilter.html
+%%PORTDOCS%%share/doc/courier/html/esmtp.html
+%%PORTDOCS%%share/doc/courier/html/esmtpd.html
+%%PORTDOCS%%share/doc/courier/html/favicon.ico
+%%PORTDOCS%%share/doc/courier/html/history.html
+%%PORTDOCS%%share/doc/courier/html/imapd.html
+%%PORTDOCS%%share/doc/courier/html/index.html
+%%PORTDOCS%%share/doc/courier/html/install.html
+%%PORTDOCS%%share/doc/courier/html/intro.html
+%%PORTDOCS%%share/doc/courier/html/layout.html
+%%PORTDOCS%%share/doc/courier/html/links.html
+%%PORTDOCS%%share/doc/courier/html/local.html
+%%PORTDOCS%%share/doc/courier/html/localmailfilter.html
+%%PORTDOCS%%share/doc/courier/html/mailbot.html
+%%PORTDOCS%%share/doc/courier/html/maildirmake.html
+%%PORTDOCS%%share/doc/courier/html/maildirquota.html
+%%PORTDOCS%%share/doc/courier/html/maildrop.README.html
+%%PORTDOCS%%share/doc/courier/html/maildrop.html
+%%PORTDOCS%%share/doc/courier/html/maildropex.html
+%%PORTDOCS%%share/doc/courier/html/maildropfilter.html
+%%PORTDOCS%%share/doc/courier/html/maildropgdbm.html
+%%PORTDOCS%%share/doc/courier/html/maildroptips.html
+%%PORTDOCS%%share/doc/courier/html/mailq.html
+%%PORTDOCS%%share/doc/courier/html/makeacceptmailfor.html
+%%PORTDOCS%%share/doc/courier/html/makealiases.html
+%%PORTDOCS%%share/doc/courier/html/makedat.html
+%%PORTDOCS%%share/doc/courier/html/makehosteddomains.html
+%%PORTDOCS%%share/doc/courier/html/makemime.html
+%%PORTDOCS%%share/doc/courier/html/makepercentrelay.html
+%%PORTDOCS%%share/doc/courier/html/makesmtpaccess.html
+%%PORTDOCS%%share/doc/courier/html/makeuserdb.html
+%%PORTDOCS%%share/doc/courier/html/mimegpg.html
+%%PORTDOCS%%share/doc/courier/html/mkesmtpdcert.html
+%%PORTDOCS%%share/doc/courier/html/mkimapdcert.html
+%%PORTDOCS%%share/doc/courier/html/mkpop3dcert.html
+%%PORTDOCS%%share/doc/courier/html/modules.html
+%%PORTDOCS%%share/doc/courier/html/pcp_README.html
+%%PORTDOCS%%share/doc/courier/html/pop3d.html
+%%PORTDOCS%%share/doc/courier/html/preline.html
+%%PORTDOCS%%share/doc/courier/html/queue.html
+%%PORTDOCS%%share/doc/courier/html/reformail.html
+%%PORTDOCS%%share/doc/courier/html/reformime.html
+%%PORTDOCS%%share/doc/courier/html/sendmail.html
+%%PORTDOCS%%share/doc/courier/html/status.html
+%%PORTDOCS%%share/doc/courier/html/structures.html
+%%PORTDOCS%%share/doc/courier/html/submit.html
+%%PORTDOCS%%share/doc/courier/html/testmxlookup.html
+%%PORTDOCS%%share/doc/courier/html/userdb.html
+%%PORTDOCS%%share/doc/courier/html/userdbpw.html
+%%PORTDOCS%%@dirrm share/doc/courier/html
+%%PORTDOCS%%@dirrm share/doc/courier
+@exec chown courier:courier %D/bin/cancelmsg
+@exec chown root:mail %D/bin/maildrop
+@exec chown root:courier %D/bin/mailq
+@exec chown courier:courier %D/etc/courier
+@exec chown -Rh courier:courier %D/etc/courier/aliases
+@exec chown courier:courier %D/etc/courier/authdaemonrc.dist
+%%SUB_LDAP%%@exec chown root:wheel %D/etc/courier/authldaprc.dist
+@exec chown courier:courier %D/etc/courier/authmodulelist
+%%SUB_MYSQL%%@exec chown root:wheel %D/etc/courier/authmysqlrc.dist
+%%SUB_PGSQL%%@exec chown root:wheel %D/etc/courier/authpgsqlrc.dist
+@exec chown root:wheel %D/etc/courier/courierd.dist
+@exec chown courier:courier %D/etc/courier/dsndelayed.txt
+@exec chown courier:courier %D/etc/courier/dsndelivered.txt
+@exec chown courier:courier %D/etc/courier/dsnfailed.txt
+@exec chown courier:courier %D/etc/courier/dsnfooter.txt
+@exec chown courier:courier %D/etc/courier/dsnheader.txt
+@exec chown courier:courier %D/etc/courier/dsnrelayed.txt
+@exec chown courier:courier %D/etc/courier/dsnsubjectnotice.txt
+@exec chown courier:courier %D/etc/courier/dsnsubjectwarn.txt
+@exec chown root:wheel %D/etc/courier/enablefiltering
+@exec chown root:wheel %D/etc/courier/esmtp.authpam
+@exec chown courier:courier %D/etc/courier/esmtpauthclient
+@exec chown root:wheel %D/etc/courier/esmtpd-msa.dist
+@exec chown root:wheel %D/etc/courier/esmtpd.cnf
+@exec chown root:wheel %D/etc/courier/esmtpd.dist
+@exec chown root:wheel %D/etc/courier/imapd-ssl.dist
+@exec chown root:wheel %D/etc/courier/imapd.authpam
+@exec chown root:wheel %D/etc/courier/imapd.cnf
+@exec chown root:wheel %D/etc/courier/imapd.dist
+@exec chown root:wheel %D/etc/courier/ldapaddressbook.dist
+@exec chown root:wheel %D/etc/courier/locallowercase
+@exec chown root:wheel %D/etc/courier/maildrop
+@exec chown root:wheel %D/etc/courier/maildropfilter
+@exec chown courier:courier %D/etc/courier/module.dsn
+@exec chown courier:courier %D/etc/courier/module.esmtp
+@exec chown courier:courier %D/etc/courier/module.local
+@exec chown courier:courier %D/etc/courier/module.uucp
+@exec chown root:wheel %D/etc/courier/pop3d-ssl.dist
+@exec chown root:wheel %D/etc/courier/pop3d.authpam
+@exec chown root:wheel %D/etc/courier/pop3d.cnf
+@exec chown root:wheel %D/etc/courier/pop3d.dist
+@exec chown root:wheel %D/etc/courier/quotawarnmsg.example
+@exec chown root:wheel %D/etc/courier/rfcerr2045.txt
+@exec chown root:wheel %D/etc/courier/rfcerr2046.txt
+@exec chown root:wheel %D/etc/courier/rfcerr2047.txt
+@exec chown root:wheel %D/etc/courier/rfcerrheader.txt
+@exec chown root:wheel %D/etc/courier/smtpaccess/default
+@exec chown root:wheel %D/etc/courier/webmail.authpam     		
+@exec chown courier:courier %D/libexec/courier/aliascombine
+@exec chown courier:courier %D/libexec/courier/aliascreate
+@exec chown courier:courier %D/libexec/courier/aliasexp
+@exec chown courier:courier %D/libexec/courier/courierd
+@exec chown courier:courier %D/libexec/courier/modules/dsn/courierdsn
+@exec chown courier:courier %D/libexec/courier/modules/esmtp/addcr
+@exec chown root:wheel %D/libexec/courier/modules/esmtp/authend
+@exec chown root:courier %D/libexec/courier/modules/esmtp/authstart
+@exec chown courier:courier %D/libexec/courier/modules/esmtp/courieresmtp
+@exec chown courier:courier %D/libexec/courier/modules/esmtp/courieresmtpd
+@exec chown courier:courier %D/libexec/courier/modules/uucp/courieruucp
+@exec chown courier:courier %D/libexec/courier/submit
+@exec chown courier:courier %D/libexec/courier/submitmkdir
+@exec chown courier:courier %D/sbin/showmodules
+@exec install -d -o root -g wheel -m 0755 /var/spool/calendar
+@exec install -d -o %%CACHEOWNER%% -g courier -m 0700 /var/spool/calendar/localcache
+@exec install -d -o root -g courier -m 0750 /var/spool/calendar/private
+@exec install -d -o root -g courier -m 0755 /var/spool/calendar/public
+@exec install -d -o root -g wheel -m 0755 /var/spool/courier
+@exec install -d -o courier -g courier -m 0750 /var/spool/courier/allfilters
+@exec install -d -o courier -g courier -m 0770 /var/spool/courier/authdaemon
+@exec install -d -o courier -g courier -m 0750 /var/spool/courier/filters
+@exec install -d -o courier -g courier -m 0750 /var/spool/courier/msgq
+@exec install -d -o courier -g courier -m 0750 /var/spool/courier/msgs
+@exec install -d -o courier -g courier -m 0770 /var/spool/courier/tmp
+@exec install -d -o root -g wheel -m 0755 /var/spool/courier/tmp/broken
+@exec install -d -o %%CACHEOWNER%% -g mail -m 0700 /var/spool/webmail
+@exec crontab -u %%CACHEOWNER%% %D/etc/courier/crontab 2>/dev/null || true
+@unexec crontab -u %%CACHEOWNER%% -l 2>/dev/null || true
+@unexec crontab -u %%CACHEOWNER%% -r || true
+@unexec [ -d /var/spool/courier ] && chown -R courier:courier /var/spool/courier
+@unexec echo ""
+@unexec echo "Warning: Removing user courier will also delete any"
+@unexec echo "	 undelivered mail in the mail queue directories!!!"
+@unexec echo "	 Do not do it if you're upgrading and would like"
+@unexec echo "	 courier to continue trying to deliver this mail."
+@unexec echo ""
+@unexec rmuser courier 2>/dev/null || true
+@unexec [ -d /var/spool/courier ] && chown 0:0 /var/spool/courier 2>/dev/null || true
+@unexec [ -d /var/spool/courier/tmp/broken ] && chown 0:0 /var/spool/courier/tmp/broken 2>/dev/null || true
+@unexec rm -rf /var/spool/calendar 2>/dev/null || true
+@unexec rm -rf /var/spool/webmail 2>/dev/null || true

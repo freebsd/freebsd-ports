@@ -1,0 +1,112 @@
+#!/bin/sh
+#
+# $FreeBSD: /tmp/pcvs/ports/mail/courier/Attic/pkg-install,v 1.1 2002-01-15 06:17:26 dwhite Exp $
+#
+
+PKG_PREFIX=${PKG_PREFIX:=/usr/local}
+
+ask() {
+    local question default answer
+
+    question=$1
+    default=$2
+    if [ -z "${PACKAGE_BUILDING}" ]; then
+        read -p "${question} [${default}]? " answer
+    fi
+    if [ x${answer} = x ]; then
+        answer=${default}
+    fi
+    echo ${answer}
+}
+
+yesno() {
+    local question default answer
+
+    question=$1
+    default=$2
+    while :; do
+        answer=$(ask "${question}" "${default}")
+        case "${answer}" in
+        [Yy]*)	return 0;;
+        [Nn]*)	return 1;;
+        esac
+        echo "Please answer yes or no."
+    done
+}
+
+if [ x"$2" = xPRE-INSTALL ]; then
+    USER=courier;	UID=62
+    GROUP=courier;	GID=62
+
+    if /usr/sbin/pw groupshow "${GROUP}" 2>/dev/null; then
+        echo "You already have a group \"${GROUP}\", so I will use it."
+    else
+        if /usr/sbin/pw groupadd ${GROUP} -g ${GID} -h -
+	then
+	    echo "Added group \"${GROUP}\"."
+	else
+	    echo "Adding group \"${GROUP}\" failed..."
+            echo "Please create it, and try again."
+            exit 1
+        fi
+    fi
+
+    if /usr/sbin/pw user show "${USER}" 2>/dev/null; then
+        echo "You already have a user \"${USER}\", so I will use it."
+    else
+        if /usr/sbin/pw useradd ${USER} -u ${UID} -g ${GROUP} -h - \
+           -d /var/spool/courier \
+           -s /sbin/nologin \
+           -c "Courier Mail System"
+	then
+	    echo "Added user \"${USER}\"."
+	else
+	    echo "Adding user \"${USER}\" failed..."
+            echo "Please create it, and try again."
+            exit 1
+        fi
+    fi
+fi
+
+replace() {
+    local orig repl
+    
+    orig=$1
+    repl=$2
+    if [ -e ${orig} ]; then
+        mv -f ${orig} ${orig}.OFF
+        chmod 0 ${orig}.OFF
+    fi
+    if [ -e ${repl} ]; then
+        ln -s ${repl} ${orig}
+    fi
+}
+
+if [ x"$2" = xPOST-INSTALL -a -z "${PACKAGE_BUILDING}" ]; then
+    if [ -x /sbin/sysctl ]; then
+        OSVERSION=`/sbin/sysctl -n kern.osreldate`
+    else
+        OSVERSION=`/usr/sbin/sysctl -n kern.osreldate`
+    fi
+    if [ ${OSVERSION} -ge 400014 ]; then
+        if yesno "Would you like to activate Courier in /etc/mail/mailer.conf" n; then
+            mv -f /etc/mail/mailer.conf /etc/mail/mailer.conf.old
+            echo "#"						>  /etc/mail/mailer.conf
+            echo -n "# Execute the Courier sendmail program"	>> /etc/mail/mailer.conf
+            echo ", named ${PKG_PREFIX}/bin/sendmail"		>> /etc/mail/mailer.conf
+            echo "#"						>> /etc/mail/mailer.conf
+            echo "sendmail	${PKG_PREFIX}/bin/sendmail"	>> /etc/mail/mailer.conf
+            echo "send-mail	${PKG_PREFIX}/bin/sendmail"	>> /etc/mail/mailer.conf
+            echo "mailq		${PKG_PREFIX}/bin/mailq"	>> /etc/mail/mailer.conf
+            echo "newaliases	${PKG_PREFIX}/sbin/makealiases"	>> /etc/mail/mailer.conf
+            echo "Done."
+        fi
+    else
+        if yesno "Would you like to replace {sendmail,mailq,newaliases} with Courier versions" n; then
+            replace /usr/sbin/sendmail	${PKG_PREFIX}/bin/sendmail
+            replace /usr/bin/mailq	${PKG_PREFIX}/bin/mailq
+            replace /usr/bin/newaliases	${PKG_PREFIX}/sbin/makealiases
+            echo "Done."
+        fi
+    fi
+fi

@@ -1,0 +1,24 @@
+Courier is a modular multiprotocol mail server that's designed to
+strike a balance between reasonable performance, flexibility and
+features.
+
+A partial list of features:
+   
+ * Can be configured to function as an intermediate mail relay, or
+   as a mail server that receives mail for one or more domains, or
+   anything in between.
+ * Web-based administration and configuration tool.
+ * Uses an efficient maildir format as its native mail storage
+   format. Some support is provided for legacy mbox mailboxes.
+ * STARTTLS ESMTP extension (as well as IMAP/POP3/Webmail over SSL)
+   in both the client and the server (requires OpenSSL). The ESMTP
+   client can optionally require that the remote server's X.509
+   certificate is signed by a trusted root CA (a default set of
+   root CAs is provided).
+ * Mailboxes can be accessed via POP3, IMAP, and HTTP.
+ * Courier includes a mailing list manager.
+ * PAM, LDAP, PostgreSQL, or MySQL authentication. 
+ * Authenticated SMTP.
+ * Integrated mail filtering.
+
+WWW: http://www.Courier-MTA.org/
