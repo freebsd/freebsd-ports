@@ -7,11 +7,11 @@
 #
 
 PORTNAME=	e4graph
-PORTVERSION=	1.0a6
-PORTREVISION=	2
+PORTVERSION=	1.0a7
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
+EXTRACT_SUFX=	.src.tar.gz
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A C++ library that persistently stores graph like data
@@ -25,9 +25,9 @@ WRKSRC=		${WRKDIR}/${DISTNAME}/all
 
 USE_LIBTOOL=	yes
 CONFIGURE_ARGS=	--with-metakit=${LOCALBASE} \
-		--with-tcl=${LOCALBASE} --enable-tcl \
+		--with-tcl=${LOCALBASE}/lib/tcl8.3 --enable-tcl \
 		--with-expat=${LOCALBASE} --enable-xml
-CFLAGS+=	-fpermissive
+CFLAGS+=	-fpermissive -I${LOCALBASE}/include/tcl8.3
 MAKEFILE=	makefile
 INSTALLS_SHLIB=	yes
 
