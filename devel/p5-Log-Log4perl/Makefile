@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Log-Log4perl
-PORTVERSION=	0.34
+PORTVERSION=	0.35
 CATEGORIES=	devel perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Log
@@ -15,16 +15,13 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	lars@thegler.dk
 COMMENT=	Log4j implementation for Perl
 
-BUILD_DEPENDS=	${SITE_PERL}/Log/Dispatch.pm:${PORTSDIR}/devel/p5-Log-Dispatch \
-		${SITE_PERL}/Test/Simple.pm:${PORTSDIR}/devel/p5-Test-Simple
-RUN_DEPENDS=	${BUILD_DEPENDS}
-
-USE_PERL5=	yes
 PERL_CONFIGURE=	yes
 
 MAN3=		Log::Log4perl.3 \
 		Log::Log4perl::Appender.3 \
 		Log::Log4perl::Appender::DBI.3 \
+		Log::Log4perl::Appender::File.3 \
+		Log::Log4perl::Appender::Screen.3 \
 		Log::Log4perl::Appender::TestArrayBuffer.3 \
 		Log::Log4perl::Appender::TestBuffer.3 \
 		Log::Log4perl::Config.3 \
@@ -55,11 +52,4 @@ MAN3=		Log::Log4perl.3 \
 		Log::Log4perl::MDC.3 \
 		Log::Log4perl::NDC.3
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 500601
-BUILD_DEPENDS+=	${SITE_PERL}/File/Spec.pm:${PORTSDIR}/devel/p5-File-Spec
-RUN_DEPENDS+=	${SITE_PERL}/File/Spec.pm:${PORTSDIR}/devel/p5-File-Spec
-.endif # ${PERL_LEVEL} < 500601
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
