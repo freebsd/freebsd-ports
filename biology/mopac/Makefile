@@ -28,9 +28,15 @@ pre-install:
 	${RM} -rf ${PREFIX}/share/doc/mopac
 	${MKDIR} ${PREFIX}/share/doc/mopac
 
+do-install:
+	strip ${WRKDIR}/${DISTNAME}/MOPAC7
+	${INSTALL_PROGRAM} ${WRKDIR}/${DISTNAME}/MOPAC7 ${PREFIX}/bin
+	${INSTALL_SCRIPT} ${WRKDIR}/${DISTNAME}/rmopac ${PREFIX}/bin
+
 post-install:
-	${INSTALL_DATA} ${FILESDIR}/h2o.dat  ${PREFIX}/share/doc/mopac/
-	${INSTALL_DATA} ${WRKDIR}/mopac7-man/mopac.tex  ${PREFIX}/share/doc/mopac/
-	${INSTALL_DATA} ${WRKDIR}/mopac7-man/mopac.dvi  ${PREFIX}/share/doc/mopac
+	${INSTALL_DATA} ${FILESDIR}/h2o.dat  ${PREFIX}/share/doc/mopac
+	${INSTALL_DATA} ${WRKDIR}/mopac7/test_* ${PREFIX}/share/doc/mopac
+	${INSTALL_DATA} ${WRKDIR}/mopac7-man/mopac.tex ${PREFIX}/share/doc/mopac
+	${INSTALL_DATA} ${WRKDIR}/mopac7-man/mopac.dvi ${PREFIX}/share/doc/mopac
 
 .include <bsd.port.mk>
