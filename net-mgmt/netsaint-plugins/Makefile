@@ -20,6 +20,8 @@ CONFIGURE_ARGS=	--sbindir=${PREFIX}/share/netsaint/sbin \
 		--sysconfdir=${PREFIX}/etc/netsaint \
 		--localstatedir=${PREFIX}/var/netsaint
 CONFIGURE_ENV=	LOCALBASE=${LOCALBASE}
+SCRIPTS_ENV=	WRKDIRPREFIX="${WRKDIRPREFIX}" \
+		MKDIR="${MKDIR}"
 USE_AUTOMAKE=	yes
 USE_GMAKE=	yes
 
