@@ -1,10 +1,11 @@
+@comment $FreeBSD$
 bin/cam
 bin/feh
 bin/gen_cam_menu.sh
-share/doc/feh/AUTHORS
-share/doc/feh/ChangeLog
-share/doc/feh/README
-share/doc/feh/TODO
+%%PORTDOCS%%share/doc/feh/AUTHORS
+%%PORTDOCS%%share/doc/feh/ChangeLog
+%%PORTDOCS%%share/doc/feh/README
+%%PORTDOCS%%share/doc/feh/TODO
 share/feh/fonts/20thcent.ttf
 share/feh/fonts/cinema.ttf
 share/feh/fonts/droid.ttf
@@ -23,7 +24,7 @@ share/feh/images/menubg_brushed.png
 share/feh/images/menubg_chrome.png
 share/feh/images/menubg_pastel.png
 share/feh/images/menubg_wood.png
-@dirrm share/doc/feh
+%%PORTDOCS%%@dirrm share/doc/feh
 @dirrm share/feh/fonts
 @dirrm share/feh/images
 @dirrm share/feh
