@@ -1,0 +1,11 @@
+--- Makefile.orig	Wed Jul 22 15:23:12 1998
++++ Makefile	Wed Jul 22 15:24:43 1998
+@@ -98,7 +98,7 @@
+ 
+ #BSD386
+ CC = gcc -DTERMCAP $(socksflags)
+-LDADD = -ltermcap $(sockslib) 
++LDADD = -L$(SSLTOP)/lib -lssl -lcrypto -lRSAglue -lrsaref -ltermcap $(sockslib) 
+   
+ all:
+ 	@-mkdir bin 2>/dev/null
