@@ -8,6 +8,7 @@ include/libxml2/libxml/debugXML.h
 include/libxml2/libxml/encoding.h
 include/libxml2/libxml/entities.h
 include/libxml2/libxml/hash.h
+include/libxml2/libxml/list.h
 include/libxml2/libxml/nanoftp.h
 include/libxml2/libxml/nanohttp.h
 include/libxml2/libxml/parser.h

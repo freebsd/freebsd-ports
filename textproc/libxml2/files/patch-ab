@@ -1,32 +1,26 @@
-
-$FreeBSD$
-
---- configure.orig	Thu Feb  8 13:39:59 2001
-+++ configure	Fri Feb  9 23:40:58 2001
-@@ -3474,7 +3474,7 @@
- 
- 
+--- configure.orig	Thu Mar  1 11:00:11 2001
++++ configure	Thu Mar  8 22:11:26 2001
+@@ -3479,3 +3479,3 @@
  XML_LIBDIR='-L${libdir}'
 -XML_INCLUDEDIR='-I${includedir}/libxml -I${includedir}'
 +XML_INCLUDEDIR='-I${includedir}/libxml2 -I${includedir}/libxml2/libxml'
  XML_LIBS="-lxml2 $Z_LIBS $M_LIBS $LIBS"
- 
- XML_CFLAGS=""
-@@ -3871,7 +3871,7 @@
- /* Override any gcc2 internal prototype to avoid an error.  */
- /* We use char because int might match the return type of a gcc2
+@@ -3875,3 +3875,3 @@
      builtin and then its argument prototype would still apply.  */
--char $ac_func();
-+char lib$ac_func();
+-char iconv();
++char libiconv();
+ 
+@@ -3885,3 +3885,3 @@
+ #else
+-iconv();
++libiconv();
+ #endif
+@@ -3921,6 +3921,6 @@
+     builtin and then its argument prototype would still apply.  */
+-char iconv();
++char libiconv();
  
  int main() {
- 
-@@ -3881,7 +3881,7 @@
- #if defined (__stub_$ac_func) || defined (__stub___$ac_func)
- choke me
- #else
--$ac_func();
-+lib$ac_func();
- #endif
- 
+-iconv()
++libiconv()
  ; return 0; }
