@@ -3,7 +3,7 @@
 # Date created:		4 December 1996
 # Whom:			Kiriyama Kazuhiko <kiri@kiri.toba-cmt.ac.jp>
 #
-# $Id: Makefile,v 1.5 1997/02/14 05:20:11 asami Exp $
+# $Id: Makefile,v 1.6 1997/03/30 02:57:16 max Exp $
 #
 
 DISTNAME=	jp-man-1.1
@@ -13,9 +13,10 @@ MASTER_SITES=	ftp://jaz.jp.freebsd.org/pub/FreeBSD-jp/man-jp/ \
 
 MAINTAINER=	kiri@kiri.toba-cmt.ac.jp
 
+#do not run-depend on mule because dependency will be pulled in to package
+#and we don't know which one the user wants
 RUN_DEPENDS=	${PREFIX}/bin/groff:${PORTSDIR}/japanese/groff \
-		jless:${PORTSDIR}/japanese/less \
-		mule:${PORTSDIR}/editors/mule
+		jless:${PORTSDIR}/japanese/less
 
 JMANELDIR=	${PREFIX}/lib/mule/site-lisp/jman
 
