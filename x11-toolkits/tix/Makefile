@@ -3,7 +3,7 @@
 # Date created:		22 December 1996
 # Whom:			Thomas Gellekum <tg@freebsd.org>
 #
-# $Id: Makefile,v 1.6 1997/02/25 08:10:20 asami Exp $
+# $Id: Makefile,v 1.7 1997/04/20 13:19:57 wosch Exp $
 #
 
 DISTNAME=	Tix4.1.0
@@ -17,7 +17,7 @@ LIB_DEPENDS=	tk41\\.1\\.:${PORTSDIR}/x11/tk41
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/unix/tk4.1
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--enable-shared \
+CONFIGURE_ARGS=	--enable-shared --enable-sam \
 		--with-tcl=/usr/include/tcl \
 		--with-tk="${PREFIX}/include/tk4.1"
 # this should probably be added to bsd.port.mk
@@ -38,7 +38,7 @@ pre-configure:
             INSTALL="/usr/bin/install -c -o ${BINOWN} -g ${BINGRP}" \
             INSTALL_PROGRAM="${INSTALL_PROGRAM}" \
             ${CONFIGURE_ENV} ./${CONFIGURE_SCRIPT} ${CONFIGURE_ARGS})
-		
+
 post-install:
 	@(cd ${WRKDIR}/${DISTNAME}/unix && \
 	    ${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_FLAGS} ${MAKEFILE} ${INSTALL_TARGET})
