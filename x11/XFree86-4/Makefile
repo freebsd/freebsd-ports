@@ -27,8 +27,8 @@ MAINTAINER=	jmz@FreeBSD.org
 
 NO_BUILD=	yes
 LATEST_LINK=	XFree86-4
-FONT100DPI=	${X11BASE}/lib/X11/fonts/100dpi/UBTI__10-ISO8859-1.pcf.gz
-FONT75DPI=	${X11BASE}/lib/X11/fonts/75dpi/UBTI__10-ISO8859-1.pcf.gz
+FONT100DPI=	${X11BASE}/lib/X11/fonts/100dpi/UTBI__10-ISO8859-1.pcf.gz
+FONT75DPI=	${X11BASE}/lib/X11/fonts/75dpi/UTBI__10-ISO8859-1.pcf.gz
 FONTDEFAULT=	${X11BASE}/lib/X11/fonts/misc/cursor.pcf.gz
 FONTSCALE=	${X11BASE}/lib/X11/fonts/PEX/Roman.phont
 
