@@ -1,10 +1,42 @@
 # $FreeBSD$
 #
+    SUBDIR += avifile
+    SUBDIR += ffmpeg
+    SUBDIR += gstreamer
+    SUBDIR += gstreamer-player
+    SUBDIR += gstreamer-plugins
+    SUBDIR += gsubedit
     SUBDIR += gtksubtitler
     SUBDIR += ksubeditor
+    SUBDIR += libdivxdecore
+    SUBDIR += libdivxdecore-devel
+    SUBDIR += libdivxencore
+    SUBDIR += libdv
+    SUBDIR += libdvdcss
+    SUBDIR += libdvdread
+    SUBDIR += libmovtar
+    SUBDIR += libmpeg2
+    SUBDIR += linux-divx4linux
+    SUBDIR += linux-divx4linux4
+    SUBDIR += linux-divxplayer
     SUBDIR += linux-realplayer
+    SUBDIR += mjpegtools
+    SUBDIR += mpeg4ip
+    SUBDIR += mplayer
+    SUBDIR += mplayer-fonts
+    SUBDIR += mplayer-skins
     SUBDIR += mplayerxp
+    SUBDIR += ogle
+    SUBDIR += ogle-gui
+    SUBDIR += ogmtools
+    SUBDIR += okle
+    SUBDIR += openquicktime
+    SUBDIR += oqtencoder
+    SUBDIR += oqtplayer
+    SUBDIR += win32-codecs
     SUBDIR += xmms
     SUBDIR += xmms-avi
+    SUBDIR += xmps-opendivx-plugin
+    SUBDIR += xmps-win32-plugin
 
 .include <bsd.port.subdir.mk>
