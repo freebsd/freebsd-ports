@@ -1,0 +1,11 @@
+--- aclocal.in.orig	Sun Jan 10 20:35:27 1999
++++ aclocal.in	Sat Jul 15 13:59:55 2000
+@@ -103,7 +103,7 @@
+ 
+ 
+ local (@dirlist) = &parse_arguments (@ARGV);
+-&scan_m4_files ($acdir, @dirlist);
++&scan_m4_files ($acdir, '%%X11BASE%%/share/aclocal', @dirlist);
+ &scan_configure;
+ if (! $exit_status)
+ {

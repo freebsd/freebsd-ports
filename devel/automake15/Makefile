@@ -19,6 +19,9 @@ USE_PERL5=	yes
 
 STRIP=		 # none
 
+pre-configure:
+	${PERL} -pi -e "s^%%X11BASE%%^${X11BASE}^" ${WRKSRC}/aclocal.in
+
 post-install:
 	@install-info ${PREFIX}/info/automake.info ${PREFIX}/info/dir
 
