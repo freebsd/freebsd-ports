@@ -1,0 +1,8 @@
+--- programs/Xserver/Imakefile.orig	Sat May 29 14:12:45 2004
++++ programs/Xserver/Imakefile	Sat May 29 14:12:16 2004
+@@ -1095,5 +1095,3 @@
+ 
+ DEFAULTFONTPATH = DefaultFontPath
+ EXTRAMANDEFS = -D__default_font_path__="`echo $(DEFAULTFONTPATH) | sed -e 's/,/, /g'`"
+-
+-InstallManPage(Xserver,$(MANDIR))
