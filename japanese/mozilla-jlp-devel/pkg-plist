@@ -7,9 +7,6 @@
 @exec mv %D/lib/mozilla/defaults/pref/all.js %D/lib/mozilla/defaults/pref/all.js.orig
 @exec mv %D/lib/mozilla/defaults/pref/unix.js %D/lib/mozilla/defaults/pref/unix.js.orig
 @exec mv %D/lib/mozilla/defaults/profile/bookmarks.html %D/lib/mozilla/defaults/profile/bookmarks.html.orig
-@exec mv %D/lib/mozilla/defaults/profile/localstore.rdf %D/lib/mozilla/defaults/profile/localstore.rdf.orig
-@exec mv %D/lib/mozilla/defaults/profile/mimeTypes.rdf %D/lib/mozilla/defaults/profile/mimeTypes.rdf.orig
-@exec mv %D/lib/mozilla/defaults/profile/panels.rdf %D/lib/mozilla/defaults/profile/panels.rdf.orig
 @exec mv %D/lib/mozilla/defaults/profile/search.rdf %D/lib/mozilla/defaults/profile/search.rdf.orig
 @exec mv %D/lib/mozilla/searchplugins/google.gif %D/lib/mozilla/searchplugins/google.gif.orig
 @exec mv %D/lib/mozilla/searchplugins/google.src %D/lib/mozilla/searchplugins/google.src.orig
@@ -35,9 +32,6 @@ lib/mozilla/defaults/profile/JP/mimeTypes.rdf
 lib/mozilla/defaults/profile/JP/panels.rdf
 lib/mozilla/defaults/profile/JP/search.rdf
 lib/mozilla/defaults/profile/bookmarks.html
-lib/mozilla/defaults/profile/localstore.rdf
-lib/mozilla/defaults/profile/mimeTypes.rdf
-lib/mozilla/defaults/profile/panels.rdf
 lib/mozilla/defaults/profile/search.rdf
 lib/mozilla/searchplugins/AllAboutJapan.png
 lib/mozilla/searchplugins/AllAboutJapan.src
@@ -109,9 +103,6 @@ lib/mozilla/searchplugins/w3c.src
 @unexec mv %D/lib/mozilla/defaults/pref/all.js.orig %D/lib/mozilla/defaults/pref/all.js
 @unexec mv %D/lib/mozilla/defaults/pref/unix.js.orig %D/lib/mozilla/defaults/pref/unix.js
 @unexec mv %D/lib/mozilla/defaults/profile/bookmarks.html.orig %D/lib/mozilla/defaults/profile/bookmarks.html
-@unexec mv %D/lib/mozilla/defaults/profile/localstore.rdf.orig %D/lib/mozilla/defaults/profile/localstore.rdf
-@unexec mv %D/lib/mozilla/defaults/profile/mimeTypes.rdf.orig %D/lib/mozilla/defaults/profile/mimeTypes.rdf
-@unexec mv %D/lib/mozilla/defaults/profile/panels.rdf.orig %D/lib/mozilla/defaults/profile/panels.rdf
 @unexec mv %D/lib/mozilla/defaults/profile/search.rdf.orig %D/lib/mozilla/defaults/profile/search.rdf
 @unexec mv %D/lib/mozilla/searchplugins/google.gif.orig %D/lib/mozilla/searchplugins/google.gif
 @unexec mv %D/lib/mozilla/searchplugins/google.src.orig %D/lib/mozilla/searchplugins/google.src

@@ -51,8 +51,9 @@ pref("middlemouse.scrollbarPosition", true);
 // Clipboard behavior
 pref("clipboard.autocopy", true);
 
-// keyboard Mode_switch workaround
-pref("keyboard.mode_switch.enable_workaround", true);
+// autocomplete keyboard grab workaround
+pref("autocomplete.grab_during_popup", true);
+pref("autocomplete.ungrab_during_mode_switch", true);
 
 // Most Unix people think modal pref windows are stupid:
 pref("browser.prefWindowModal", false);
@@ -82,6 +83,7 @@ pref("print.print_color", true);
 pref("print.print_landscape", false);
 pref("print.print_paper_size", 0);
 
+pref("font.allow_double_byte_special_chars", true);
 // font names
 
 // ar
@@ -138,6 +140,26 @@ pref("font.name.monospace.zh-CN", "isas-song ti-gb2312.1980-0");
 
 // zh-TW
 
+// below a certian pixel size scaled fonts produce poor results
+pref("font.scale.outline.min",      6);
+pref("font.scale.bitmap.min",       12);
+pref("font.scale.bitmap.undersize", 80);
+pref("font.scale.bitmap.oversize",  120);
+
+pref("font.scale.outline.min.ja",      10);
+pref("font.scale.bitmap.min.ja",       14);
+pref("font.scale.bitmap.undersize.ja", 80);
+pref("font.scale.bitmap.oversize.ja",  120);
+
+pref("font.scale.outline.min.zh-CN",      10);
+pref("font.scale.bitmap.min.zh-CN",       14);
+pref("font.scale.bitmap.undersize.zh-CN", 80);
+pref("font.scale.bitmap.oversize.zh-CN",  120);
+
+pref("font.scale.outline.min.zh-TW",      10);
+pref("font.scale.bitmap.min.zh-TW",       14);
+pref("font.scale.bitmap.undersize.zh-TW", 80);
+pref("font.scale.bitmap.oversize.zh-TW",  120);
 
 // minimum font sizes
 
@@ -147,11 +169,11 @@ pref("font.min-size.fixed.ja", 8);
 pref("font.min-size.variable.ko", 10);
 pref("font.min-size.fixed.ko", 10);
 
-pref("font.min-size.variable.zh-CN", 16);
-pref("font.min-size.fixed.zh-CN", 16);
+pref("font.min-size.variable.zh-CN", 10);
+pref("font.min-size.fixed.zh-CN", 10);
 
-pref("font.min-size.variable.zh-TW", 16);
-pref("font.min-size.fixed.zh-TW", 16);
+pref("font.min-size.variable.zh-TW", 10);
+pref("font.min-size.fixed.zh-TW", 10);
 
 // ps font
 // this list is used by the postscript font
