@@ -40,6 +40,10 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 	<name>wu-ftpd</name>
 	<range><le>2.6.2_3</le></range>
       </package>
+      <package>
+	<name>wu-ftpd+ipv6</name>
+	<range><le>2.6.2_5</le></range>
+      </package>
     </affects>
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
@@ -71,7 +75,6 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     <affects>
       <package>
 	<name>apache</name>
-	<name>apache+ipv6</name>
 	<name>apache+ssl</name>
 	<name>apache+mod_ssl</name>
 	<range><lt>1.3.30</lt></range>
