@@ -7,6 +7,7 @@
 
 PORTNAME=	dri
 PORTVERSION=	5.1
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	graphics
 MASTER_SITES=	${MASTER_SITE_LOCAL}
@@ -23,14 +24,9 @@ USE_BZIP2=	yes
 USE_X_PREFIX=	yes
 MAKE_ENV=	FBSDCFLAGS="${CFLAGS}" FBSDCC="${CC}" FBSDCXX="${CXX}"
 
-DRILIST=	gamma/gamma_dri.so i810/i810_dri.so i830/i830_dri.so \
-		mga/mga_dri.so r128/r128_dri.so r200/r200_dri.so \
-		radeon/radeon_dri.so sis/sis_dri.so tdfx/tdfx_dri.so
+DRILIST=	ffb gamma i810 i830 mga r128 r200 radeon sis tdfx
 
 ONLY_FOR_ARCHS=	alpha i386
-
-BROKEN=		"Broken pkg-plist"
-DEPRECATED=	"Will be removed after April 7 if still broken"
 
 do-configure:
 	@${RM} -f  ${WRKSRC}/config/cf/version.def
@@ -48,8 +44,12 @@ pre-build:
 
 do-install:
 .for i in ${DRILIST}
-	${INSTALL_DATA} ${WRKSRC}/lib/GL/mesa/drivers/dri/${i} \
+	${INSTALL_DATA} ${WRKSRC}/lib/GL/mesa/drivers/dri/${i}/${i}_dri.so \
 		${PREFIX}/lib/modules/dri
 .endfor
+
+# Create package list:
+	@cd ${PREFIX} && ${FIND} lib/modules/dri -type f | ${SORT} \
+		>>${TMPPLIST}
 
 .include <bsd.port.mk>
