@@ -6,41 +6,29 @@
 #
 
 PORTNAME=	gentoo
-PORTVERSION=	0.11.16
+PORTVERSION=	0.11.17
 CATEGORIES=	x11-fm
-MASTER_SITES=	http://www.obsession.se/gentoo/ \
-		http://www.ibiblio.org/pub/linux/utils/file/managers/ \
-		ftp://ftp.nuug.no/pub/anders/distfiles/
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	anders@fix.no
+
+LIB_DEPENDS=	intl.1:${PORTSDIR}/devel/gettext
 
 USE_GTK=	yes
 
 MAN1=		gentoo.1
 
-DOCS=		BUGS CONFIG-CHANGES CREDITS FIXES-0.11 FIXES-0.9 README \
-		README.NLS README.gtkrc TODO gentoogtkrc-example
+DOCS=		BUGS CONFIG-CHANGES CREDITS NEWS README README.NLS \
+		README.gtkrc TODO
+
+GNU_CONFIGURE=	yes
 
 post-patch:
-	@ ${MV} ${WRKSRC}/gentoorc-example ${WRKSRC}/gentoorc-example.Dist
-	@ ${SED} 's#icons#${PREFIX}/share/gentoo/icons#' \
-		${WRKSRC}/gentoorc-example.Dist > ${WRKSRC}/gentoorc-example
+	${PERL} -pi -e "s@icons@${PREFIX}/share/gentoo/icons@g" \
+		${WRKSRC}/gentoorc.in
 
-	@ ${MV} ${WRKSRC}/src/Makefile ${WRKSRC}/src/Makefile.patched
-	@ ${SED} -e 's#/home/emil/data/projects/gentoo#${PREFIX}/share#' \
-	-e 's#gtk-config#${GTK_CONFIG}#' ${WRKSRC}/src/Makefile.patched \
-		> ${WRKSRC}/src/Makefile
-
-	@ ${MV} ${WRKSRC}/widgets/Makefile ${WRKSRC}/widgets/Makefile.Dist
-	@ ${SED} -e 's#gtk-config#${GTK_CONFIG}#' -e 's#^CC.*##' \
-		${WRKSRC}/widgets/Makefile.Dist > ${WRKSRC}/widgets/Makefile
-
-do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/src/gentoo ${PREFIX}/bin
-	@${INSTALL} -d -m 0755 ${PREFIX}/share/gentoo
-	${CP} -R ${WRKSRC}/icons ${PREFIX}/share/gentoo
-	${CHMOD} 0755 ${PREFIX}/share/gentoo/icons
-	${INSTALL_DATA} ${WRKSRC}/gentoorc-example ${PREFIX}/etc/gentoorc
+post-install:
 	${INSTALL_MAN} ${WRKSRC}/docs/gentoo.1x ${PREFIX}/man/man1/gentoo.1
 .if !defined(NOPORTDOCS)
 	${CP} -R ${WRKSRC}/docs ${PREFIX}/share/doc/gentoo
