@@ -1,0 +1,8 @@
+@dirrm libexec/afbackup
+@dirrm share/afbackup/lib
+@dirrm share/afbackup/locale/it/LC_MESSAGES
+@dirrm share/afbackup/locale/it
+@dirrm share/afbackup/locale/de/LC_MESSAGES
+@dirrm share/afbackup/locale/de
+@dirrm share/afbackup/locale
+@dirrm share/afbackup

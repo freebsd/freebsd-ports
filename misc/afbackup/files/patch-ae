@@ -1,0 +1,34 @@
+--- mserver.c.orig	Mon Jun 25 18:59:42 2001
++++ mserver.c	Thu Sep 13 18:51:21 2001
+@@ -122,11 +122,13 @@
+ 
+ UChar		*vardir = NULL;
+ UChar		*bindir = NULL;
++UChar		*libexecdir = NULL;
+ UChar		*libdir = NULL;
+ UChar		*confdir = NULL;
+ 
+ ReplSpec	replacements[] = {
+ 	{ "%B",	NULL, &bindir },
++	{ "%E", NULL, &libexecdir },
+ 	{ "%L",	NULL, &libdir },
+ 	{ "%V",	NULL, &vardir },
+ 	{ "%C", NULL, &confdir },
+@@ -2005,6 +2007,8 @@
+     confdir = strdup(DEFSERVCONFDIR);
+   if(!bindir)
+     bindir = strdup(DEFSERVBINDIR);
++  if(!libexecdir)
++    libexecdir = strdup(DEFSERVLIBEXECDIR);
+ #else
+   if(!vardir)
+     vardir = strapp(backuphome, FN_DIRSEPSTR "var");
+@@ -2014,6 +2018,8 @@
+     libdir = strdup(confdir);
+   if(!bindir)
+     bindir = strapp(backuphome, FN_DIRSEPSTR "bin");
++  if(!libexecdir)
++    libexecdir = strapp(backuphome, FN_DIRSEPSTR "libexec/afbackup");
+ #endif
+ 
+   if(cryptfile)

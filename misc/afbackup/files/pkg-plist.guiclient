@@ -1,0 +1,6 @@
+sbin/xafclientconfig
+@exec ln -sf %B/%f %B/xclientconfig
+@unexec rm -f %B/xclientconfig
+sbin/xafrestore
+@exec ln -sf %B/%f %B/xrestore
+@unexec rm -f %B/xrestore

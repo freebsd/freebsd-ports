@@ -1,0 +1,20 @@
+libexec/afbackup/afserver
+libexec/afbackup/afmserver
+libexec/afbackup/__mt
+libexec/afbackup/__inc_link
+libexec/afbackup/__numset
+libexec/afbackup/cartagehandler
+sbin/cartready
+@exec ln -sf %B/%f %B/changerready
+@unexec rm -f %B/changerready
+sbin/label_tape
+@exec ln -sf %B/%f %B/cart_ctl
+@unexec rm -f %B/cart_ctl
+@exec ln -sf %B/%f %B/cartis
+@unexec rm -f %B/cartis
+sbin/afserverconfig
+@exec ln -sf %B/%f %B/serverconfig
+@unexec rm -f %B/serverconfig
+share/afbackup/lib/aftcllib.tcl
+etc/afbackup/server.conf.sample
+etc/afbackup/changer.conf.sample

@@ -1,0 +1,25 @@
+sbin/afclient
+@exec ln -sf %B/%f %B/afbackup
+@unexec rm -f %B/afbackup
+sbin/full_backup
+@exec ln -sf %B/%f %B/afbackout
+@exec ln -sf %B/%f %B/afrestore
+@exec ln -sf %B/%f %B/afverify
+@exec ln -sf %B/%f %B/copy_tape
+@exec ln -sf %B/%f %B/incr_backup
+@exec ln -sf %B/%f %B/update_indexes
+@unexec rm -f %B/afbackout
+@unexec rm -f %B/afrestore
+@unexec rm -f %B/afverify
+@unexec rm -f %B/copy_tape
+@unexec rm -f %B/incr_backup
+@unexec rm -f %B/update_indexes
+sbin/afclientconfig
+@exec ln -sf %B/%f %B/clientconfig
+@unexec rm -f %B/clientconfig
+sbin/autocptapes
+libexec/afbackup/__packpats
+libexec/afbackup/__piper
+libexec/afbackup/__z
+share/afbackup/lib/aftcllib.tcl
+etc/afbackup/client.conf.sample

@@ -1,0 +1,24 @@
+--- crptauth.c.orig	Sun Feb  4 14:15:55 2001
++++ crptauth.c	Thu Aug 23 12:17:33 2001
+@@ -344,7 +344,7 @@
+   }
+ 
+ #ifndef	LIBDESBUG_COMPATIBILITY
+-  des_ede2_cbc_encrypt((des_cblock *) buf, (des_cblock *) lbuf,
++  des_ede2_cbc_encrypt(buf, lbuf,
+ 			16 * sizeof(UChar),
+ 			keys[0], keys[1], ivec, 1);
+ #else
+@@ -403,10 +403,10 @@
+   }
+ 
+ #ifndef	LIBDESBUG_COMPATIBILITY
+-  des_ede2_cbc_encrypt((des_cblock *) buf, (des_cblock *) cbuf,
++  des_ede2_cbc_encrypt(buf, cbuf,
+ 			l * sizeof(UChar),
+ 			keys[0], keys[1],
+-			ivec, en ? 1 : 0);
++			(des_cblock*) ivec, en ? 1 : 0);
+ #else
+   des_3cbc_encrypt((des_cblock *) buf, (des_cblock *) cbuf,
+ 			l * sizeof(UChar),

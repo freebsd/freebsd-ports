@@ -1,0 +1,38 @@
+--- label_tape.c.orig	Wed Jul  4 08:04:02 2001
++++ label_tape.c	Thu Sep 13 18:49:29 2001
+@@ -33,11 +33,13 @@
+ UChar		*programfile = NULL;
+ UChar		*programdir = NULL;
+ UChar		*bindir = NULL;
++UChar		*libexecdir = NULL;
+ UChar		*libdir = NULL;
+ UChar		*vardir = NULL;
+ 
+ ReplSpec	replacements[] = {
+ 	{ "%B",	NULL, &bindir },
++	{ "%E",	NULL, &libexecdir },
+ 	{ "%L",	NULL, &libdir },
+ 	{ "%V",	NULL, &vardir },
+ 	};
+@@ -1035,11 +1037,13 @@
+     if( (cptr = FN_LASTDIRDELIM(programdir)) )
+ 	*(cptr) = '\0';
+     bindir = strapp(programdir, FN_DIRSEPSTR "bin");
++    libexecdir = strapp(programdir, FN_DIRSEPSTR "libexec/afbackup");
+     libdir = strapp(programdir, FN_DIRSEPSTR "lib");
+ 
+ #else	/* defined(ORIG_DEFAULTS) */
+ 
+      bindir = strdup(DEFSERVBINDIR);
++     libexecdir = strdup(DEFSERVLIBEXECDIR);
+      libdir = strdup(DEFSERVLIBDIR);
+ 
+ #endif	/* if else defined(ORIG_DEFAULTS) */
+@@ -1049,6 +1053,7 @@
+      backuphome = strdup(backuphome);
+      /* construct file- and dirnames */
+      bindir = strapp(backuphome, FN_DIRSEPSTR "bin");
++     libexecdir = strapp(backuphome, FN_DIRSEPSTR "libexec/afbackup");
+      libdir = strapp(backuphome, FN_DIRSEPSTR "lib");
+   }
+ 

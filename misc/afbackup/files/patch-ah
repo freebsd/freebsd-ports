@@ -1,0 +1,267 @@
+--- CONFIG.in.orig	Fri Aug 24 14:54:34 2001
++++ CONFIG.in	Thu Aug 23 12:27:55 2001
+@@ -380,8 +380,8 @@
+   will be appended to it. Otherwise the file is removed before
+   writing.
+   %L will be replaced with the full path of the lib-directory
+-  of the server, %B with the bin-directory and %V with the
+-  var-directory.
++  of the server, %B with the bin-directory, %E with the libexec-
++  directory and %V with the var-directory.
+ 
+ 
+  Lock-file
+@@ -702,9 +702,10 @@
+   The name of a file error messages or other notable events
+   are written to. A dash - stands for no logging. The pattern
+   %V will be replaced with the full path to the var-directory,
+-  %B with the bin directory, %L with the lib directory, %C with
+-  the configuration directory (usually == %L) and %I with the
+-  logging directory (usually == %V)
++  %B with the bin directory, %L with the lib directory, %E with
++  the libexec directory, %C with the configuration directory,
++  (usually == %L) and %I with the logging directory (usually ==
++  %V)
+ 
+ 
+  ClientIdentifier
+--- afclient.conf.8.in.orig	Fri Aug 24 14:54:34 2001
++++ afclient.conf.8.in	Thu Aug 23 12:29:21 2001
+@@ -244,9 +244,10 @@
+ The name of a file error messages or other notable events
+ are written to. A dash - stands for no logging. The pattern
+ %V will be replaced with the full path to the var-directory,
+-%B with the bin directory, %L with the lib directory, %C with
+-the configuration directory (usually == %L) and %I with the
+-logging directory (usually == %V)
++%B with the bin directory, %L with the lib directory, %E with
++the libexec-directory, %C with the configuration directory
++(usually == %L) and %I with the logging directory (usually ==
++%V)
+ .TP
+ .B ClientIdentifier
+ The identifier for the client. Default: The official hostname.
+--- cartagehandler.orig	Sat Mar 24 17:54:49 2001
++++ cartagehandler	Thu Aug 23 12:17:33 2001
+@@ -106,6 +106,8 @@
+   set p=$p:h
+   set bindir="$p"
+   set sbindir="$p"
++  set p=$p:h
++  set libexecdir="$p/libexec/afbackup"
+ 
+   setenv BACKUP_HOME "$bindir"
+   if ($BACKUP_HOME:t == "bin" || $BACKUP_HOME:t == "sbin") then
+@@ -119,8 +121,14 @@
+ if (! $?sbindir) then
+   set sbindir="$BACKUP_HOME/sbin"
+ endif
++if (! $?libexecdir) then
++  set libexecdir="$BACKUP_HOME/libexec/afbackup"
++endif
+ 
+-set NUMSET="$bindir"/__numset
++set NUMSET="$libexecdir"/__numset
++if ( ! -x $NUMSET ) then
++  set NUMSET="$bindir"/__numset
++endif
+ if ( ! -x $NUMSET ) then
+   set NUMSET="$sbindir"/__numset
+   if ( ! -x $NUMSET ) then
+--- clientconfig.in.orig	Mon Jun 25 18:53:28 2001
++++ clientconfig.in	Thu Sep 13 20:06:21 2001
+@@ -414,7 +414,7 @@
+ helps__11=`TN_ "This flag specifies, whether the filename logging files should be processed by the configured program."`
+ helps__12=`TN_ "These patterns or filenames specify files, that no processing is attempted on. Normally this is done for all files. This might be unefficient, e.g. compressing files, that are already compressed, so their compression can be suppressed with this parameter. The value of this parameter must be a list separated by whitespace. Double quotes may enclose list elements."`
+ helps__13=`TN_ "This number determines how many log files of previous full backups are saved. These files may serve for the restore of older files than those present in the current backup. Of course there must be sufficient space to hold all the backups. It doesn't help to save all the saved filenames but not to have them available on tape."`
+-helps__14=`TN_ "The name of a file error messages or other notable events are written to. A dash - stands for no logging. The pattern %V will be replaced with the full path to the var-directory, %B with the bin directory, %L with the lib directory, %C with the configuration directory (usually == %L) and %I with the logging directory (usually == %V)"`
++helps__14=`TN_ "The name of a file error messages or other notable events are written to. A dash - stands for no logging. The pattern %V will be replaced with the full path to the var-directory, %B with the bin directory, %L with the lib directory, %E with the libexec directory, %C with the configuration directory (usually == %L) and %I with the logging directory (usually == %V)"`
+ helps__15=`TN_ "The directory, where varying files should be put in. These files must not be deleted. The information they contain is necessary for restore."`
+ helps__16=`TN_ "The identifier for the client. Default: The official hostname. This entry is required, it several afbackup clients reside on one host. In this case the multi stream server must be able to distinguish the clients to distribute the pieces of backup data on tape correctly. Otherwise the data would be mixed up and be unusable by the reading client."`
+ helps__17=`TN_ "To prevent client programs from being started several times a lock file is created and this is it's name. For pattern replacements see LoggingFile (14)."`
+--- configure.in.orig	Thu May 24 13:50:13 2001
++++ configure.in	Thu Aug 23 12:17:33 2001
+@@ -38,7 +38,7 @@
+ dnl Checks for header files.
+ 
+ if test `uname` = "FreeBSD" ; then
+-  if test -r /usr/include/values.h ; then
++  if test `uname -r` -le '2' -a -r /usr/include/values.h ; then
+     ac_cv_header_values_h=yes
+   else
+     ac_cv_header_values_h=no
+--- server.conf.changer.orig	Fri Aug 24 14:54:34 2001
++++ server.conf.changer	Fri Aug 24 14:28:47 2001
+@@ -63,10 +63,10 @@
+ # %m by the number, if the count starts with 0.
+ #
+ # Command to set the file # on tape
+-SetFile-Command:	sh -c "mt -f %d rewind && %B/__mt -f %d fsf %m"
++SetFile-Command:	sh -c "mt -f %d rewind && %E/__mt -f %d fsf %m"
+ #
+ # Command to skip to the next %n-th file on tape
+-SkipFiles-Command:	%B/__mt -f %d fsf %n
++SkipFiles-Command:	%E/__mt -f %d fsf %n
+ #
+ # If there is a command to set the cartridge directly, use it here
+ Setcart-Command:	%B/cart_ctl -F -m -C %n -D
+@@ -81,7 +81,7 @@
+ #InitMedia-Command:	
+ #
+ # Command, that is called, when a tape is full
+-#TapeFull-Command:	%B/cartagehandler %c %n %C
++#TapeFull-Command:	%E/cartagehandler %c %n %C
+ #
+ # The command to erase the tape. This is necessary on some systems.
+ #Erasetape-Command:	exit 0
+--- server.conf.dir.orig	Fri Aug 24 14:54:34 2001
++++ server.conf.dir	Thu Aug 23 12:38:11 2001
+@@ -126,7 +126,7 @@
+ # CONFIGURATION FOR REMOTE_EXECUTION
+ # 
+ # Directory, where remotely started programs must reside
+-Program-Directory:		%B/../rexec
++Program-Directory:		%E
+ # 
+ # 
+ # SERVER-STARTUP AND SHUTDOWN ACTIONS
+--- server.conf.dirsl.orig	Fri Aug 24 14:54:34 2001
++++ server.conf.dirsl	Fri Aug 24 14:28:45 2001
+@@ -69,7 +69,7 @@
+ SetFile-Command:		/bin/rm -f %d;touch %d.%m; ln -s %d.%m %d; exit 0
+ # 
+ # Command to skip to the next %n-th file on tape
+-SkipFiles-Command:		%B/__inc_link -s %d %n
++SkipFiles-Command:		%E/__inc_link -s %d %n
+ # 
+ # If there is a command to set the cartridge directly, supply it here
+ Set-Cart-Command:		/bin/rm -f /var/backup/vol; mkdir -p /var/backup/vol.%n ; ln -s vol.%n /var/backup/vol ; touch %d.0 ; /bin/rm -f %d ; ln -s data.0 %d ; exit 0
+@@ -126,7 +126,7 @@
+ # CONFIGURATION FOR REMOTE_EXECUTION
+ # 
+ # Directory, where remotely started programs must reside
+-Program-Directory:		%B/../rexec
++Program-Directory:		%E
+ # 
+ # 
+ # SERVER-STARTUP AND SHUTDOWN ACTIONS
+--- server.conf.in.orig	Fri Aug 24 14:54:34 2001
++++ server.conf.in	Fri Aug 24 14:28:43 2001
+@@ -63,10 +63,10 @@
+ # %m by the number, if the count starts with 0.
+ #
+ # Command to set the file # on tape
+-SetFile-Command:	sh -c "mt -f %d rewind && %B/__mt -f %d fsf %m"
++SetFile-Command:	sh -c "mt -f %d rewind && %E/__mt -f %d fsf %m"
+ #
+ # Command to skip to the next %n-th file on tape
+-SkipFiles-Command:	%B/__mt -f %d fsf %n
++SkipFiles-Command:	%E/__mt -f %d fsf %n
+ #
+ # If there is a command to set the cartridge directly, use it here
+ #Setcart-Command:	%B/cart_ctl -F -m -C %n -D
+@@ -81,7 +81,7 @@
+ #InitMedia-Command:	
+ #
+ # Command, that is called, when a tape is full
+-#TapeFull-Command:	%B/cartagehandler %c %n %C
++#TapeFull-Command:	%E/cartagehandler %c %n %C
+ #
+ # The command to erase the tape. This is necessary on some systems.
+ #Erasetape-Command:	exit 0
+--- server.conf.manual.orig	Fri Aug 24 14:54:34 2001
++++ server.conf.manual	Fri Aug 24 14:28:39 2001
+@@ -63,10 +63,10 @@
+ # %m by the number, if the count starts with 0.
+ #
+ # Command to set the file # on tape
+-SetFile-Command:	sh -c "mt -f %d rewind && %B/__mt -f %d fsf %m"
++SetFile-Command:	sh -c "mt -f %d rewind && %E/__mt -f %d fsf %m"
+ #
+ # Command to skip to the next %n-th file on tape
+-SkipFiles-Command:	%B/__mt -f %d fsf %n
++SkipFiles-Command:	%E/__mt -f %d fsf %n
+ #
+ # If there is a command to set the cartridge directly, use it here
+ #Setcart-Command:	%B/cart_ctl -F -m -C %n -D
+@@ -81,7 +81,7 @@
+ #InitMedia-Command:	
+ #
+ # Command, that is called, when a tape is full
+-#TapeFull-Command:	%B/cartagehandler %c %n %C
++#TapeFull-Command:	%E/cartagehandler %c %n %C
+ #
+ # The command to erase the tape. This is necessary on some systems.
+ #Erasetape-Command:	exit 0
+--- serverconfig.in.orig	Fri Aug 24 14:54:34 2001
++++ serverconfig.in	Fri Aug 24 14:27:20 2001
+@@ -425,7 +425,7 @@
+ helps__13=`TN_ "If the streaming device is not accessible (i.e. an open or a tape handling command fails) or another backup server process is still running, the server process re-tries his attempts regularly. If it fails longer than the time in minutes supplied here, an e-mail is sent to the configured user in charge (see: User To Inform). Supplying 0 means: never send mail."`
+ helps__14=`TN_ "If the streaming device is not accessible (i.e. an open or a tape handling command fails), the server process re-tries his attempts regularly. If it fails longer than the time in minutes supplied here, it exits silently leaving a warning in the log file. Supplying 0 means: try forever, never exit."`
+ helps__15=`TN_ "This is the interval in seconds, after that regularly the device is probed to be ready for reading. Thus after having ejected a cartridge it is automatically recognized, if a new cartridge has been inserted. For other media (e.g. exchangeable disks) this may not be suitable. Supply a 0 in these cases for no probing."`
+-helps__16=`TN_ "If a media changer is available and it should be used, this is the file to configure it. It must contain specifications of the commands, that are driving the media changer. %L will be replaced with the full path of the lib-directory of the server, %B with the bin-directory and %V with the var-directory. See the manual pages of cart_ctl, how to setup the media changer operation."`
++helps__16=`TN_ "If a media changer is available and it should be used, this is the file to configure it. It must contain specifications of the commands, that are driving the media changer. %L will be replaced with the full path of the lib-directory of the server, %B with the bin-directory, %E with the libexec-directory and %V with the var-directory. See the manual pages of cart_ctl, how to setup the media changer operation."`
+ helps__17=`TN_ "This is the (shell-) command to run to position the tape to a certain file. Usually this is something like a combination of: mt -f <device> rewind  and  mt -f <device> fsf <number>. If the command you are supplying here starts to count with 1 for the first file on tape, you should insert %n for the <number>. If it starts with 0, replace <number> with %m. If you don't want to type the devicename again here, you may write %d instead. For more pattern replacements see Changer-Configuration-File (16)."`
+ helps__18=`TN_ "This is the (shell-) command to run to skip over to a file later on tape. Usually this is something like\nmt -f <device> fsf <number>\nInsert %n, where the number of files to skip over must be supplied in the command, in the example instead of <number>, and %d, where the device should appear (here: <device>). For more pattern replacements see Changer-Configuration-File (16)."`
+ helps__19=`TN_ "This is the (shell-) command to run to put a certain cartridge into the device. If the command you are supplying here starts to count with 1 for the first cartridge, you should insert %n in the place, where the cartridge number must appear. If it starts with 0, replace it with %m. If you don't want to type the devicename again here, you may write %d instead. If you don't have a command to perform this task, don't supply anything here. In this case you must set your cartridge handling system to sequential mode (automatically putting the next cartridge in, when the actual one is ejected). For more pattern replacements see Changer-Configuration-File (16)."`
+--- xcc.in.orig	Mon Jun 25 19:01:35 2001
++++ xcc.in	Thu Sep 13 20:07:56 2001
+@@ -196,7 +196,7 @@
+ set helps(11) [ TN_ "This flag specifies, whether the filename logging files should be processed by the configured program." ]
+ set helps(12) [ TN_ "These patterns or filenames specify files, that no processing is attempted on. Normally this is done for all files. This might be unefficient, e.g. compressing files, that are already compressed, so their compression can be suppressed with this parameter. The value of this parameter must be a list separated by whitespace. Double quotes may enclose list elements." ]
+ set helps(13) [ TN_ "This number determines how many log files of previous full backups are saved. These files may serve for the restore of older files than those present in the current backup. Of course there must be sufficient space to hold all the backups. It doesn't help to save all the saved filenames but not to have them available on tape." ]
+-set helps(14) [ TN_ "The name of a file error messages or other notable events are written to. A dash - stands for no logging. The pattern %V will be replaced with the full path to the var-directory, %B with the bin directory, %L with the lib directory, %C with the configuration directory (usually == %L) and %I with the logging directory (usually == %V)" ]
++set helps(14) [ TN_ "The name of a file error messages or other notable events are written to. A dash - stands for no logging. The pattern %V will be replaced with the full path to the var-directory, %B with the bin directory, %E with the libexec directory, %L with the lib directory, %C with the configuration directory (usually == %L) and %I with the logging directory (usually == %V)" ]
+ set helps(15) [ TN_ "The directory, where varying files should be put in. These files must not be deleted. The information they contain is necessary for restore." ]
+ set helps(16) [ TN_ "The identifier for the client. Default: The official hostname. This entry is required, it several afbackup clients reside on one host. In this case the multi stream server must be able to distinguish the clients to distribute the pieces of backup data on tape correctly. Otherwise the data would be mixed up and be unusable by the reading client." ]
+ set helps(17) [ TN_ "To prevent client programs from being started several times a lock file is created and this is it's name. For pattern replacements see LoggingFile (14)." ]
+--- xrs.in.orig	Wed Jun 13 09:36:35 2001
++++ xrs.in	Thu Aug 23 12:17:33 2001
+@@ -17,7 +17,8 @@
+ # user settable section
+ 
+ set BACKUP_HOME_DEFAULT $env(BACKUP_HOME_DEFAULT)
+-set BINDIR "@clientbindir@"
++set BINDIR "@bindir@"
++set LIBEXECDIR "@libexecdir@"
+ 
+ set poss_binsubs { bin sbin "" }
+ 
+@@ -29,6 +30,7 @@
+       set BINDIR "$BACKUP_HOME/$binsub"
+     }
+   }
++  set LIBEXECDIR "$BACKUP_HOME/libexec/afbackup"
+ }
+ set found 0
+ set configfiles "$BACKUP_HOME_DEFAULT/lib/backup.conf /etc/buclient.conf /etc/afbuclient.conf /etc/afclient.conf /etc/afbackup/client.conf"
+@@ -44,7 +46,7 @@
+ set cmdprefixlast [ expr [ string length $CMDPREFIX ] - 1 ]
+ 
+ set restoreprog "$BINDIR/afrestore"
+-set packprog "$BINDIR/__packpats"
++set packprog "$LIBEXECDIR/__packpats"
+ 
+ source "@commonshlibdir@/aftcllib.tcl"
+ 
+--- xsc.in.orig	Fri Aug 24 14:54:34 2001
++++ xsc.in	Fri Aug 24 14:27:54 2001
+@@ -226,7 +226,7 @@
+ set helps(13) [ TN_ "If the streaming device is not accessible (i.e. an open or a tape handling command fails) or another backup server process is still running, the server process re-tries his attempts regularly. If it fails longer than the time in minutes supplied here, an e-mail is sent to the configured user in charge (see: User To Inform). Supplying 0 means: never send mail." ]
+ set helps(14) [ TN_ "If the streaming device is not accessible (i.e. an open or a tape handling command fails), the server process re-tries his attempts regularly. If it fails longer than the time in minutes supplied here, it exits silently leaving a warning in the log file. Supplying 0 means: try forever, never exit." ]
+ set helps(15) [ TN_ "This is the interval in seconds, after that regularly the device is probed to be ready for reading. Thus after having ejected a cartridge it is automatically recognized, if a new cartridge has been inserted. For other media (e.g. exchangeable disks) this may not be suitable. Supply a 0 in these cases for no probing." ]
+-set helps(16) [ TN_ "If a media changer is available and it should be used, this is the file to configure it. It must contain specifications of the commands, that are driving the media changer. %L will be replaced with the full path of the lib-directory of the server, %B with the bin-directory and %V with the var-directory. See the manual pages of cart_ctl, how to setup the media changer operation." ]
++set helps(16) [ TN_ "If a media changer is available and it should be used, this is the file to configure it. It must contain specifications of the commands, that are driving the media changer. %L will be replaced with the full path of the lib-directory of the server, %B with the bin-directory, %E with the libexec-directory and %V with the var-directory. See the manual pages of cart_ctl, how to setup the media changer operation." ]
+ set helps(17) [ TN_ "This is the (shell-) command to run to position the tape to a certain file. Usually this is something like a combination of: mt -f <device> rewind  and  mt -f <device> fsf <number>. If the command you are supplying here starts to count with 1 for the first file on tape, you should insert %n for the <number>. If it starts with 0, replace <number> with %m. If you don't want to type the devicename again here, you may write %d instead. For more pattern replacements see Changer-Configuration-File (16)." ]
+ set helps(18) [ TN_ "This is the (shell-) command to run to skip over to a file later on tape. Usually this is something like\nmt -f <device> fsf <number>\nInsert %n, where the number of files to skip over must be supplied in the command, in the example instead of <number>, and %d, where the device should appear (here: <device>). For more pattern replacements see Changer-Configuration-File (16)." ]
+ set helps(19) [ TN_ "This is the (shell-) command to run to put a certain cartridge into the device. If the command you are supplying here starts to count with 1 for the first cartridge, you should insert %n in the place, where the cartridge number must appear. If it starts with 0, replace it with %m. If you don't want to type the devicename again here, you may write %d instead. If you don't have a command to perform this task, don't supply anything here. In this case you must set your cartridge handling system to sequential mode (automatically putting the next cartridge in, when the actual one is ejected). For more pattern replacements see Changer-Configuration-File (16)." ]
+--- xss.in.orig	Fri Aug 24 14:54:34 2001
++++ xss.in	Fri Aug 24 14:28:35 2001
+@@ -81,6 +81,7 @@
+   { "%L" "libdir" "lib" "@serverlibdir@" }
+   { "%I" "logdir" "var" "@serverlogdir@" }
+   { "%B" "bindir" "bin" "@serverbindir@" }
++  { "%E" "libexecdir" "libexec" "@serverbindir@" }
+   { "%C" "confdir" "lib" "@serverconfdir@" }
+ }
+ 
