@@ -1,0 +1,12 @@
+--- work/sablevm-1.0.6/src/libsablevm/class_loader.c.orig	Thu Feb 20 13:58:04 2003
++++ work/sablevm-1.0.6/src/libsablevm/class_loader.c	Thu Feb 20 14:02:19 2003
+@@ -299,8 +299,7 @@
+     }
+ 
+   /* check version and name */
+-  if (!(class->major_version == 45 ||
+-	(class->major_version == 46 && class->minor_version == 0)))
++  if (!(class->major_version >= 45 && class->major_version <= 48))
+     {
+       _svmf_error_UnsupportedClassVersionError (env);
+       return JNI_ERR;

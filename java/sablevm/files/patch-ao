@@ -1,0 +1,20 @@
+--- work/sablevm-class-library-1.0.6/src/gnu/java/io/encode/EncoderUTF8.java.orig	Thu Feb 20 14:00:06 2003
++++ work/sablevm-class-library-1.0.6/src/gnu/java/io/encode/EncoderUTF8.java	Thu Feb 20 14:00:36 2003
+@@ -85,7 +85,7 @@
+   {
+     int num_bytes = 0;
+ 
+-    for (int i = offset; i < len; i++)
++    for (int i = offset; i < offset + len; i++)
+     {
+       if (buf[i] <= 0x007F)
+         ++num_bytes;
+@@ -107,7 +107,7 @@
+   convertToBytes(char[] buf, int buf_offset, int len, byte[] bbuf,
+                  int bbuf_offset)
+   {
+-    for (int i = buf_offset; i < len; i++)
++    for (int i = buf_offset; i < buf_offset + len; i++)
+     {
+       if (buf[i] >= 0x0000 && buf[i] <= 0x007F)
+       {

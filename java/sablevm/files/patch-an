@@ -1,0 +1,12 @@
+--- work/sablevm-1.0.6/src/sablevm/sablevm.c.orig	Thu Oct 24 07:52:16 2002
++++ work/sablevm-1.0.6/src/sablevm/sablevm.c	Thu Feb 20 13:32:59 2003
+@@ -1431,6 +1431,9 @@
+ 	    exit_status = EXIT_FAILURE;
+ 	    goto cleanup;
+ 	  }
++
++	/* free up local native reference */
++	(*env)->DeleteLocalRef (env, s);
+       }
+   }
+ 

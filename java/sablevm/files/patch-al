@@ -1,0 +1,140 @@
+#--- work/sablevm-1.0.6/src/libsablevm/instructions.m4.c.orig	Tue Sep 10 10:35:39 2002
+#+++ work/sablevm-1.0.6/src/libsablevm/instructions.m4.c	Mon Dec 16 17:28:28 2002
+#@@ -4838,10 +4838,28 @@
+# 	  }
+# 
+# 	  addr[0].jint = methodref_info->method->java_args_count;
+#-	  addr[1].offset =
+#-	    sizeof (_svmt_vtable) +
+#-	    (methodref_info->method->method_id *
+#-	     sizeof (_svmt_method_info *));
+#+
+#+	  /*
+#+	   * _svmf_resolve_CONSTANT_Methodref() may return an interface
+#+	   * method in certain situations (e.g., invoking an interface
+#+	   * method that's implemented in a subclass of an abstract class
+#+	   * not implementing the method but implementing the interface).
+#+	   */
+#+	  if (_svmf_is_set_flag
+#+	      (methodref_info->method->class_info->access_flags,
+#+	       SVM_ACC_INTERFACE))
+#+	    {
+#+	      addr[1].offset =
+#+		-((1 + methodref_info->method->method_id) *
+#+		  sizeof (_svmt_method_info *));
+#+	    }
+#+	  else
+#+	    {
+#+	      addr[1].offset =
+#+		sizeof (_svmt_vtable) +
+#+		(methodref_info->method->method_id *
+#+		 sizeof (_svmt_method_info *));
+#+	    }
+# 
+# 	  /* execute bytecode */
+# 	  {
+--- work/sablevm-1.0.6/src/libsablevm/instructions_preparation_direct_threaded.c.orig	Wed Oct 16 14:54:30 2002
++++ work/sablevm-1.0.6/src/libsablevm/instructions_preparation_direct_threaded.c	Mon Dec 16 17:28:29 2002
+@@ -17905,10 +17905,28 @@
+ 	  }
+ 
+ 	  addr[0].jint = methodref_info->method->java_args_count;
+-	  addr[1].offset =
+-	    sizeof (_svmt_vtable) +
+-	    (methodref_info->method->method_id *
+-	     sizeof (_svmt_method_info *));
++
++	  /*
++	   * _svmf_resolve_CONSTANT_Methodref() may return an interface
++	   * method in certain situations (e.g., invoking an interface
++	   * method that's implemented in a subclass of an abstract class
++	   * not implementing the method but implementing the interface).
++	   */
++	  if (_svmf_is_set_flag
++	      (methodref_info->method->class_info->access_flags,
++	       SVM_ACC_INTERFACE))
++	    {
++	      addr[1].offset =
++		-((1 + methodref_info->method->method_id) *
++		  sizeof (_svmt_method_info *));
++	    }
++	  else
++	    {
++	      addr[1].offset =
++		sizeof (_svmt_vtable) +
++		(methodref_info->method->method_id *
++		 sizeof (_svmt_method_info *));
++	    }
+ 
+ 	  /* execute bytecode */
+ 	  {
+--- work/sablevm-1.0.6/src/libsablevm/instructions_preparation_inlined_threaded.c.orig	Wed Oct 16 14:54:31 2002
++++ work/sablevm-1.0.6/src/libsablevm/instructions_preparation_inlined_threaded.c	Mon Dec 16 17:28:29 2002
+@@ -21512,10 +21512,28 @@
+ 	  }
+ 
+ 	  addr[0].jint = methodref_info->method->java_args_count;
+-	  addr[1].offset =
+-	    sizeof (_svmt_vtable) +
+-	    (methodref_info->method->method_id *
+-	     sizeof (_svmt_method_info *));
++
++	  /*
++	   * _svmf_resolve_CONSTANT_Methodref() may return an interface
++	   * method in certain situations (e.g., invoking an interface
++	   * method that's implemented in a subclass of an abstract class
++	   * not implementing the method but implementing the interface).
++	   */
++	  if (_svmf_is_set_flag
++	      (methodref_info->method->class_info->access_flags,
++	       SVM_ACC_INTERFACE))
++	    {
++	      addr[1].offset =
++		-((1 + methodref_info->method->method_id) *
++		  sizeof (_svmt_method_info *));
++	    }
++	  else
++	    {
++	      addr[1].offset =
++		sizeof (_svmt_vtable) +
++		(methodref_info->method->method_id *
++		 sizeof (_svmt_method_info *));
++	    }
+ 
+ 	  /* execute bytecode */
+ 	  {
+--- work/sablevm-1.0.6/src/libsablevm/instructions_switch.c.orig	Wed Oct 16 14:54:31 2002
++++ work/sablevm-1.0.6/src/libsablevm/instructions_switch.c	Mon Dec 16 17:28:29 2002
+@@ -15936,10 +15936,28 @@
+ 	  }
+ 
+ 	  addr[0].jint = methodref_info->method->java_args_count;
+-	  addr[1].offset =
+-	    sizeof (_svmt_vtable) +
+-	    (methodref_info->method->method_id *
+-	     sizeof (_svmt_method_info *));
++
++	  /*
++	   * _svmf_resolve_CONSTANT_Methodref() may return an interface
++	   * method in certain situations (e.g., invoking an interface
++	   * method that's implemented in a subclass of an abstract class
++	   * not implementing the method but implementing the interface).
++	   */
++	  if (_svmf_is_set_flag
++	      (methodref_info->method->class_info->access_flags,
++	       SVM_ACC_INTERFACE))
++	    {
++	      addr[1].offset =
++		-((1 + methodref_info->method->method_id) *
++		  sizeof (_svmt_method_info *));
++	    }
++	  else
++	    {
++	      addr[1].offset =
++		sizeof (_svmt_vtable) +
++		(methodref_info->method->method_id *
++		 sizeof (_svmt_method_info *));
++	    }
+ 
+ 	  /* execute bytecode */
+ 	  {
