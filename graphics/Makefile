@@ -211,6 +211,7 @@
     SUBDIR += libungif
     SUBDIR += libv3d
     SUBDIR += libwmf
+    SUBDIR += libwpcg
     SUBDIR += libxine
     SUBDIR += linplasma
     SUBDIR += linux-bmrt
