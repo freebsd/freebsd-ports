@@ -3,7 +3,7 @@
 # Date created:		22 December 1996
 # Whom:			Thomas Gellekum <tg@freebsd.org>
 #
-# $Id: Makefile,v 1.22 1999/04/07 08:44:24 obrien Exp $
+# $Id: Makefile,v 1.23 1999/04/12 08:53:11 asami Exp $
 #
 
 DISTNAME=	Tix4.1.0.006
@@ -58,7 +58,7 @@ post-install:
 	@(cd ${WRKSRC}/.. && \
 	    ${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_FLAGS} ${MAKEFILE} ${INSTALL_TARGET})
 	@${MKDIR} ${PREFIX}/man/man1
-	@mv ${PREFIX}/man/mann/tixwish.1 ${PREFIX}/man/man1
+	@${CP} ${PREFIX}/man/mann/tixwish.1 ${PREFIX}/man/man1
 	${LN} -fs ${PREFIX}/bin/tixwish4.1.8.0 ${PREFIX}/bin/tixwish
 	${LN} -fs ${TIX_LIB_FILE} ${PREFIX}/lib/${TIX_LIB}
 	${LN} -fs ${TIXSAM_LIB_FILE} ${PREFIX}/lib/${TIXSAM_LIB}
@@ -69,6 +69,6 @@ post-install:
 .endfor
 	${RM} ${PREFIX}/include/tix/generic/tix.h
 	@# These two files are the same
-	/bin/ln -sf ../../tix.h ${PREFIX}/include/tix/generic
+	${LN} -sf ../../tix.h ${PREFIX}/include/tix/generic
 
 .include <bsd.port.post.mk>
