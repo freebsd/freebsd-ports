@@ -1,12 +1,12 @@
 # New ports collection makefile for:	xlockmore
-# Version required:     4.11
+# Version required:     4.12
 # Date created:		9 November 1994
 # Whom:			smace
 #
-# $Id: Makefile,v 1.39 1998/09/17 00:33:01 asami Exp $
+# $Id: Makefile,v 1.40 1998/09/27 16:06:58 steve Exp $
 #
 
-DISTNAME=       xlockmore-4.11
+DISTNAME=       xlockmore-4.12
 CATEGORIES=	x11
 MASTER_SITES=	ftp://ftp.tux.org/pub/tux/bagleyd/xlockmore/ \
 		${MASTER_SITE_XCONTRIB}
@@ -19,7 +19,7 @@ LIB_DEPENDS=	Xpm.4:${PORTSDIR}/graphics/xpm
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS= --without-gl --without-motif --without-sx \
 		--without-editres --without-dtsaver --without-rplay \
-		--without-nas
+		--without-nas --without-gtk
 .if defined(MAKE_KERBEROS4)
 CONFIGURE_ARGS+= --enable-kerberos4
 .endif
