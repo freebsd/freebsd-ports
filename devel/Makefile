@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.71 1997/07/09 23:20:25 jfitz Exp $
+# $Id: Makefile,v 1.72 1997/07/21 16:10:50 max Exp $
 #
 
     SUBDIR += SWIG
@@ -9,6 +9,8 @@
     SUBDIR += boehm-gc
     SUBDIR += cflow
     SUBDIR += crossgo32
+    SUBDIR += crossgo32-djgpp2
+    SUBDIR += crossgo32-djgpp2-pdcurses
     SUBDIR += crosssco
     SUBDIR += cs
     SUBDIR += cutils
