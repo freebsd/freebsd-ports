@@ -23,6 +23,7 @@
     SUBDIR += gnomeutils2
     SUBDIR += gnotime
     SUBDIR += gtimer
+    SUBDIR += gucharmap
     SUBDIR += gworkspace
     SUBDIR += ical
     SUBDIR += ithought
