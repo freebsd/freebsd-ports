@@ -1,6 +1,6 @@
 diff -ru orig/Makefile ./Makefile
 --- orig/Makefile	Sun Sep 22 14:00:16 1996
-+++ Makefile	Tue Jun 17 16:36:26 1997
++++ Makefile	Mon Jul 28 11:07:04 1997
 @@ -51,11 +51,11 @@
  # Where the configuration files live.
  RADDB		= ./raddb
@@ -27,7 +27,7 @@ diff -ru orig/Makefile ./Makefile
  
  # Define SRV to hold any combination of server names you'd like to override:
  #SRV3	  = -DDEFAULT_TACACS_SERVER=\"vms.dns.name\"
-@@ -110,17 +110,21 @@
+@@ -110,17 +110,22 @@
  # radiusd -- the default
  #
  #--------------------------------------------------------------------------
@@ -45,14 +45,15 @@ diff -ru orig/Makefile ./Makefile
 -#RADLIBS	  = /usr/kerberos/lib/libkrb.a /usr/kerberos/lib/libdes.a
 -#INCS	  = -I/usr/kerberos/include
 +.if defined(MAKE_EBONES)
-+DEFS	  = -DHAVE_SETVBUF -DM_KERB -DNOSHADOW $(MERIT) $(STUFF)
++DEFS	  = -DHAVE_SETVBUF -DM_KERB -DKRB_INSTANCE=\"$(KRB_INSTANCE)\" \
++	    -DNOSHADOW $(MERIT) $(STUFF)
 +RADLIBS	  = -lkrb -ldes
 +INCS	  = -I/usr/include/kerberosIV
 +.endif
  
  #
  # akerb
-@@ -219,12 +223,12 @@
+@@ -219,12 +224,12 @@
  #
  #--------------------------------------------------------------------------
  
@@ -71,7 +72,7 @@ diff -ru orig/Makefile ./Makefile
  
  #
  # Solaris 2.x
-@@ -304,14 +308,17 @@
+@@ -304,14 +309,17 @@
  #
  #--------------------------------------------------------------------------
  
@@ -84,7 +85,7 @@ diff -ru orig/Makefile ./Makefile
 -#INSTALL	  = /usr/bin/install
 -
 +CC	  = cc
-+CFLAGS += -DRADIUS_DIR=\"${PREFIX}/lib/radius/db\" \
++CFLAGS += -DRADIUS_DIR=\"${RADDB_INSDIR}\" -DDEFAULT_DIR2=\"${RADDB_INSDIR}\" \
 +	-DRADACCT_DIR=\"${PREFIX}/lib/radius/acct\" \
 +	-DRADIUS_COMPRESS=\"/usr/bin/gzip\" \
 +	$(DEFS) $(INCS)
@@ -97,7 +98,7 @@ diff -ru orig/Makefile ./Makefile
  #
  # AIX 3.2.5 (if using xlc(1) add -D_ALL_SOURCE to CFLAGS below)
  #
-@@ -604,8 +611,6 @@
+@@ -604,8 +612,6 @@
  						$(MAN_INSDIR)/man5/clients.5
  	$(INSTALL) $(M) 644 $(O) $(RADOWN) $(G) $(RADGRP) $(MAN)/dictionary.5 \
  						$(MAN_INSDIR)/man5/dictionary.5
@@ -106,7 +107,7 @@ diff -ru orig/Makefile ./Makefile
  	$(INSTALL) $(M) 644 $(O) $(RADOWN) $(G) $(RADGRP) $(MAN)/radius.fsm.5 \
  						$(MAN_INSDIR)/man5/radius.fsm.5
  	$(INSTALL) $(M) 644 $(O) $(RADOWN) $(G) $(RADGRP) $(MAN)/users.5 \
-@@ -625,17 +630,17 @@
+@@ -625,17 +631,17 @@
  		/bin/mkdir -p $(RADDB_INSDIR) ;\
  	fi
  	$(INSTALL) $(M) 660 $(O) $(RADOWN) $(G) $(RADGRP) $(RADDB)/authfile \
@@ -130,3 +131,4 @@ diff -ru orig/Makefile ./Makefile
  	-if [ ! -d $(RADACCT_INSDIR) ] ;\
  	then \
  		/bin/mkdir -p $(RADACCT_INSDIR) ;\
+
