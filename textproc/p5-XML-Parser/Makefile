@@ -1,13 +1,13 @@
 # New ports collection makefile for:	XML::Parser
-# Version required:	2.23
+# Version required:	2.26
 # Date created:		15 Nov 1998
 # Whom:			Jun Kuriyama <kuriyama@FreeBSD.org>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	XML-Parser-2.23
-PKGNAME=	p5-XML-Parser-2.23
+DISTNAME=	XML-Parser-2.26
+PKGNAME=	p5-XML-Parser-2.26
 CATEGORIES=	textproc perl5
 MASTER_SITES=	http://wwwx.netheaven.com/~coopercc/xmlparser/
 
