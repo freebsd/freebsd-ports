@@ -29,15 +29,11 @@ MAN8=		sendmail.8 mailstats.8 makemap.8 praliases.8 smrsh.8 \
 
 # Options to define Features:
 # SENDMAIL_WITHOUT_IPV6=yes
-# SENDMAIL_WITH_MILTER=yes
+# SENDMAIL_WITHOUT_MILTER=yes
 # SENDMAIL_WITH_TLS=yes
 # SENDMAIL_WITH_SASL=yes
 # SENDMAIL_WITH_SFIO=yes
 # SENDMAIL_WITH_LDAP=yes
-.if defined(BATCH)
-# all on for package build
-SENDMAIL_WITH_MILTER=yes
-.endif
 
 .if defined(SENDMAIL_WITH_LDAP)
 PKGNAMESUFFIX?=	-ldap
@@ -79,7 +75,7 @@ SITE+=	${FILESDIR}/site.config.m4.sasl
 .if defined(SENDMAIL_WITH_LDAP)
 SITE+=	${FILESDIR}/site.config.m4.ldap
 .endif
-.if defined(SENDMAIL_WITH_MILTER)
+.if ! defined(SENDMAIL_WITHOUT_MILTER)
 SITE+=	${FILESDIR}/site.config.m4.milter
 .endif
 .if exists(${FILESDIR}/site.config.m4.local)
@@ -98,14 +94,14 @@ do-configure:
 	${SED} -e "s=%%PREFIX%%=${PREFIX}=" -e "s=%%LOCALBASE%%=${LOCALBASE}=" \
 		${SITE} > ${WCONF}/site.config.m4
 
-.if defined(SENDMAIL_WITH_MILTER)
+.if ! defined(SENDMAIL_WITHOUT_MILTER)
 post-build:
 	( cd ${WRKSRC}/libmilter && ${MAKE} )
 .endif
 
 pre-install:
 	@${CAT} ${PKGDIR}/pkg-plist >${PLIST}
-.if defined(SENDMAIL_WITH_MILTER)
+.if ! defined(SENDMAIL_WITHOUT_MILTER)
 	@${CAT} ${FILESDIR}/pkg-milter >>${PLIST}
 .endif
 .if !defined(NOPORTDOCS)
@@ -126,7 +122,7 @@ pre-install:
 post-install:
 	( cd ${WRKSRC}/mail.local && ${MAKE} force-install )
 	( cd ${WRKSRC}/rmail && ${MAKE} force-install )
-.if defined(SENDMAIL_WITH_MILTER)
+.if ! defined(SENDMAIL_WITHOUT_MILTER)
 	${MKDIR} ${PREFIX}/include/libmilter
 	${INSTALL_DATA} ${WRKSRC}/include/libmilter/mfapi.h \
 		${PREFIX}/include/libmilter/
@@ -156,7 +152,7 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/sendmail/README ${DOCSDIR}/SENDMAIL
 	${INSTALL_DATA} ${WRKSRC}/mail.local/README ${DOCSDIR}/MAIL.LOCAL
 	${INSTALL_DATA} ${WRKSRC}/smrsh/README ${DOCSDIR}/SMRSH
-.if defined(SENDMAIL_WITH_MILTER)
+.if ! defined(SENDMAIL_WITHOUT_MILTER)
 	${INSTALL_DATA} ${WRKSRC}/libmilter/README ${DOCSDIR}/MILTER
 .endif
 .endif
