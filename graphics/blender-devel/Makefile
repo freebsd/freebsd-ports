@@ -23,6 +23,7 @@ USE_BZIP2=	yes
 USE_REINPLACE=	yes
 USE_GMAKE=	yes
 USE_PYTHON=	yes
+USE_MESA=	yes
 
 .if defined(WITH_OPTIMIZED_CFLAGS)
 CFLAGS+=	-O3 -ffast-math
