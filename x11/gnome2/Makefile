@@ -47,7 +47,6 @@ RUN_DEPENDS=	${X11BASE}/libexec/cdplayer_applet2:${PORTSDIR}/x11/gnomeapplets2 \
 		gst-thumbnail:${PORTSDIR}/multimedia/nautilus-media \
 		${X11BASE}/lib/X11/fonts/bitstream-vera/Vera.ttf:${PORTSDIR}/x11-fonts/bitstream-vera \
 		gnomemeeting:${PORTSDIR}/net/gnomemeeting \
-		epiphany:${PORTSDIR}/www/epiphany \
 		gnopernicus:${PORTSDIR}/x11/gnopernicus
 
 NO_BUILD=	yes
@@ -61,4 +60,10 @@ pre-configure:
 
 do-install:	# empty
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == "i386" || ${OSVERSION} > 500035
+RUN_DEPENDS+=	epiphany:${PORTSDIR}/www/epiphany
+.endif
+
+.include <bsd.port.post.mk>
