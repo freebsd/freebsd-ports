@@ -1,7 +1,8 @@
-# $Id: Makefile,v 1.5 1999/01/31 20:58:07 vanilla Exp $
+# $Id: Makefile,v 1.6 1999/04/30 09:43:35 taoka Exp $
 #
 
     SUBDIR += asfiles
+    SUBDIR += binder
     SUBDIR += dfm
     SUBDIR += explorer
     SUBDIR += ezfm

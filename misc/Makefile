@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.204 1999/05/03 04:37:46 steve Exp $
+# $Id: Makefile,v 1.205 1999/05/06 08:15:33 taoka Exp $
 #
 
     SUBDIR += 221upgrade
@@ -70,6 +70,7 @@
     SUBDIR += rpm
     SUBDIR += screen
     SUBDIR += scriptkit
+    SUBDIR += seizedesktop
     SUBDIR += sls
     SUBDIR += sma
     SUBDIR += splitvt
