@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	calcoo
-PORTVERSION=	1.3.7
+PORTVERSION=	1.3.8
 CATEGORIES=	math
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		http://www.physics.umn.edu/~kaminski/calcoo/
