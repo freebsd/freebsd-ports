@@ -1,0 +1,48 @@
+--- configure.in.orig	Wed Oct  2 21:22:53 2002
++++ configure.in	Sat Oct 19 00:09:27 2002
+@@ -356,6 +356,9 @@
+ 
+ dnl Set the include paths
+    _gcc_include_path=`$CC -print-search-dirs | grep instal |$AWK '{ print \$2 }'`/include 
++   if test "$_gcc_include_path" = "/usr/libexec/(null)/include"; then
++	_gcc_include_path="/usr/include"
++   fi
+ fi  
+ 
+ dnl ===================================================================
+@@ -374,20 +377,20 @@
+ if test -z "$GNUMAKE"; then
+     AC_MSG_WARN([not found build may fail]) >> warn
+ else
+-    _make_version=`make --version | grep GNU | $SED -e "s@^[[^0-9]]*@@" -e "s@ .*\\$@@" -e "s@,@@"`;
++    _make_version=`gmake --version | grep GNU | $SED -e "s@^[[^0-9]]*@@" -e "s@ .*\\$@@" -e "s@,@@"`;
+     _make_major=`echo $_make_version | $AWK -F. '{print $1;}'` 
+     _make_middle=`echo $_make_version | $AWK -F. '{ print $2; }'` 
+     _make_minor=`echo $_make_version | $AWK -F. '{ print $3; }'` 
+     if test "$_make_major" -gt "3" ; then
+-       AC_MSG_RESULT([checked (make $_make_version)])
++       AC_MSG_RESULT([checked (gmake $_make_version)])
+     else
+        if test "$_make_middle" -gt "79" ; then
+-          AC_MSG_RESULT([checked (make $_make_version)])
++          AC_MSG_RESULT([checked (gmake $_make_version)])
+        else
+           if test "$_make_minor" -ge "1" ; then
+-             AC_MSG_RESULT([checked (make $_make_version)])
++             AC_MSG_RESULT([checked (gmake $_make_version)])
+           else
+-             AC_MSG_ERROR([failed (make $_make_version need 3.79.1+)])
++             AC_MSG_ERROR([failed (gmake $_make_version need 3.79.1+)])
+           fi
+        fi
+     fi
+@@ -551,6 +554,9 @@
+ dnl ===================================================================
+ if test "$GXX" = "yes"; then
+    _gxx_include_path=`$CXX -print-search-dirs | grep instal |$AWK '{ print \$2 }'`/include 
++   if test "$_gxx_include_path" = "/usr/libexec/(null)/include"; then
++	_gxx_include_path="/usr/include"
++   fi
+ fi
+ 
+ 
