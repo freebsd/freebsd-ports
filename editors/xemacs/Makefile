@@ -16,23 +16,13 @@ DIST_SUBDIR=	xemacs
 MAINTAINER?=	ports@FreeBSD.org
 COMMENT?=	This port tracks the stable version of the XEmacs text editor
 
-NOT_FOR_ARCHS=	sparc64
-
-RUN_DEPENDS+=	${LOCALBASE}/lib/xemacs/xemacs-packages/etc/enriched.doc:${PORTSDIR}/editors/xemacs-packages
-.if !defined(WITHOUT_X11)
-LIB_DEPENDS+=	jpeg.9:${PORTSDIR}/graphics/jpeg \
-		png.5:${PORTSDIR}/graphics/png \
-		tiff.4:${PORTSDIR}/graphics/tiff \
-		compface.1:${PORTSDIR}/mail/faces
-USE_XLIB=	yes
-USE_XPM=	yes
-.endif
-USE_BZIP2=	yes
-
 XEMACS_REL=	21.4
-XEMACS_VER=	21.4.16
+XEMACS_VER=	21.4.17
 XEMACS_ARCH=	${CONFIGURE_TARGET}
 
+RUN_DEPENDS+=	${LOCALBASE}/lib/xemacs/xemacs-packages/etc/enriched.doc:${PORTSDIR}/editors/xemacs-packages
+
+USE_BZIP2=	yes
 STRIP=
 USE_AUTOCONF_VER=213
 CONFIGURE_TARGET=${MACHINE_ARCH}--freebsd
@@ -44,7 +34,8 @@ CONFIGURE_ARGS?=--with-clash-detection \
 		--with-ldap=no \
 		--with-site-lisp \
 		--with-database=berkdb \
-		${WITH_XFACE} ${WITH_DIALOGS} ${WITH_OFFIX} ${WITH_GTK}
+		${WITH_SCROLLBARS} ${WITH_DIALOGS} ${WITH_WIDGETS} \
+		${WITH_XFACE} ${WITH_OFFIX}
 MAKE_ARGS=	prefix=${PREFIX}
 MAN1=		ctags.1 etags.1 gnuattach.1 gnuclient.1 gnudoit.1 \
 		gnuserv.1 xemacs.1
@@ -56,53 +47,49 @@ PLIST_SUB=	XEMACS_VER=${XEMACS_VER} XEMACS_ARCH=${XEMACS_ARCH}
 
 # Undump and malloc do not behave on amd64 at the moment
 .if ${ARCH} == amd64
-CONFIGURE_ARGS+=--with-system-malloc --pdump
+CONFIGURE_ARGS+=	--with-system-malloc --pdump
 .endif
 
-.if exists(${X11BASE}/lib/libXm.so)
-USE_MOTIF=	yes
-HAVE_MOTIF=	yes
-.endif
-
-pre-fetch:
-#.if !defined(WANT_GTK)
-#	@${ECHO_MSG} "If you want to use GTK, please set the environment variable WANT_GTK "
-#	@${ECHO_MSG} "and recompile."
-#.endif
-.if defined(HAVE_MOTIF)
-.if !defined(MOTIF_STATIC)
-	@${ECHO_MSG} ""
-	@${ECHO_MSG} "If your MOTIF library is actually lesstif, you might occasionally"
-	@${ECHO_MSG} "experience locked-up frames."
-	@${ECHO_MSG} "In this case, set the environment variable MOTIF_STATIC and recompile, "
-	@${ECHO_MSG} "which will force the use of athena widgets for dialogs."
-.endif
 .if !defined(WITHOUT_X11)
-	@${ECHO_MSG} ""
-	@${ECHO_MSG} "Set the environment variable WITHOUT_X11 if you "
-	@${ECHO_MSG} "do not want to use X11."
-CONFIG_ARGS+=	--with-png=yes --with-tiff=yes
+LIB_DEPENDS+=	png.5:${PORTSDIR}/graphics/png \
+		jpeg.9:${PORTSDIR}/graphics/jpeg \
+		tiff.4:${PORTSDIR}/graphics/tiff \
+		compface.1:${PORTSDIR}/mail/faces
+CONFIGURE_ARGS+=	--with-png --with-jpeg --with-tiff
+USE_XLIB=	yes
+USE_XPM=	yes
+.if !defined(WITHOUT_MOTIF) && !defined(MOTIF_STATIC)
+USE_MOTIF=	yes
+WITH_SCROLLBARS=	--with-scrollbars=motif
+WITH_DIALOGS=	--with-dialogs=motif
+WITH_WIDGETS=	--with-widgets=motif
+.else
+WITH_SCROLLBARS=	--with-scrollbars=athena
+WITH_DIALOGS=	--with-dialogs=athena
+WITH_WIDGETS=	--with-widgets=athena
+.if defined(WITH_XAW3D)
+LIB_DEPENDS+=	Xaw3d.${XAWVER}:${PORTSDIR}/x11-toolkits/Xaw3d
+CONFIGURE_ARGS+=	--with-athena=3d
 .endif
-.if defined(WITHOUT_X11)
+.endif
+.else
 CONFIGURE_ARGS+=	--without-x11
 .endif
 
-# hack to avoid shipping binaries linked with Motif
-.if defined(MOTIF_STATIC)
-WITH_DIALOGS=	--with-dialogs=athena
+pre-patch:
+.if !defined(WITHOUT_X11)
+.if !defined(WITHOUT_MOTIF) && !defined(MOTIF_STATIC)
+	@${ECHO_MSG} ""
+	@${ECHO_MSG} "If your MOTIF library is lesstif you might occasionally"
+	@${ECHO_MSG} "experience locked-up frames."
+	@${ECHO_MSG} "In this case, set the environment variable WITHOUT_MOTIF"
+	@${ECHO_MSG} "and recompile, which will force the use of athena for"
+	@${ECHO_MSG} "scrollbars, dialogs and widgets."
 .endif
-
-.if defined(WITH_XAW3D)
-LIB_DEPENDS+=	Xaw3d.${XAWVER}:${PORTSDIR}/x11-toolkits/Xaw3d
+	@${ECHO_MSG} ""
+	@${ECHO_MSG} "Set the environment variable WITHOUT_X11 if you do not"
+	@${ECHO_MSG} "want to use X11."
 .endif
-
-#.if defined(WANT_GTK)
-#USE_GNOME=	gtk20
-#MAKE_ARGS+=	X_LIBS="$(X_LIBS) -lXt"
-#WITH_GTK=	--with-gtk=yes \
-#		--with-xpm=no
-#USE_XPM=	no
-#.endif
 
 # Drop faces (libcompface) and offix (libDnd) if building package,
 # autodetect otherwise
@@ -110,32 +97,22 @@ LIB_DEPENDS+=	Xaw3d.${XAWVER}:${PORTSDIR}/x11-toolkits/Xaw3d
 WITH_XFACE?=	--with-xface=no
 WITH_OFFIX?=	--with-offix=no
 .endif
-.endif
-
-post-patch:
-	@${RM} ${WRKSRC}/src/s/freebsd.h.orig
 
 # fix .so references in a few man pages
 pre-configure::
-.for file in etc/ctags.1 etc/gnuattach.1 etc/gnuclient.1 etc/gnudoit.1
-	@${SED} -e 's/\.1/&.gz/' ${WRKSRC}/${file} > ${WRKDIR}/tmp_zot
-	@${MV} ${WRKDIR}/tmp_zot ${WRKSRC}/${file}
+.for f in etc/ctags.1 etc/gnuattach.1 etc/gnuclient.1 etc/gnudoit.1
+	@${SED} -e 's/\.1/&.gz/' ${WRKSRC}/${f} > ${WRKDIR}/tmp_zot
+	@${MV} ${WRKDIR}/tmp_zot ${WRKSRC}/${f}
 .endfor
 
 post-install::
-.for file in b2m ctags ellcc etags gnuclient xemacs-${XEMACS_VER}
-	${STRIP_CMD} ${PREFIX}/bin/${file}
+.for f in b2m ctags ellcc etags gnuclient xemacs-${XEMACS_VER}
+	${STRIP_CMD} ${PREFIX}/bin/${f}
 .endfor
 # For some reason install no longer makes ${PREFIX}/lib/xemacs/site-lisp.
 # Do what PLIST does for pkg_add.
 	${MKDIR} ${PREFIX}/lib/xemacs/site-lisp
 	${CHMOD} 755 ${PREFIX}/lib/xemacs/site-lisp
 	${RM} -f ${PREFIX}/bin/send-pr
-#.if defined(WANT_GTK)
-#	@${ECHO_MSG} "Please be aware that GTK support is buggy. Do not report bugs to"
-#	@${ECHO_MSG} "the maintainer."
-#	@${ECHO_MSG} "Please also be aware that the package's name was automagically changed"
-#	@${ECHO_MSG} "to ${PORTNAME}${PKGNAMESUFFIX}-${XEMACS_VER}."
-#.endif
 
 .include <bsd.port.post.mk>
