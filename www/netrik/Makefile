@@ -8,28 +8,25 @@
 #
 
 PORTNAME=	netrik
-PORTVERSION=	1.2.0
-PORTREVISION=	0
-PORTEPOCH=	0
+PORTVERSION=	1.2.1
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=${PORTNAME}
+MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
 
-LIB_DEPENDS+=	gnugetopt.1:${PORTSDIR}/devel/libgnugetopt
-
-CPPFLAGS=	-I${LOCALBASE}/include
-LDFLAGS=	-Wl,-rpath,${LOCALBASE}/lib
-LIBS=		-L${LOCALBASE}/lib -lgnugetopt
-CONFIGURE_ENV+=	CPPFLAGS="${CPPLAGS}" LIBS="${LIBS}" #LDFLAGS="${LDFLAGS}"
-
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
+CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
+CONFIGURE_ENV=	CPPFLAGS="${CPPLAGS}" LDFLAGS="${LDFLAGS}"
 
-.include "${.CURDIR}/manpages.mk"
+MAN1=		netrik.1
+MAN5=		netrikrc.5
 
-.include <bsd.port.pre.mk>
-.include <bsd.port.post.mk>
+.if !exists(/usr/include/getopt.h)
+LIB_DEPENDS+=	gnugetopt.1:${PORTSDIR}/devel/libgnugetopt
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS=	-L${LOCALBASE}/lib -lgnugetopt
+.endif
 
-#EOF
+.include <bsd.port.mk>
