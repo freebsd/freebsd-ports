@@ -1,6 +1,6 @@
 --- pbm/Makefile.orig	Thu Jun 29 01:06:06 2000
-+++ pbm/Makefile	Sat Jul 15 00:00:00 2000
-@@ -4,13 +4,12 @@
++++ pbm/Makefile	Sat Aug  5 00:00:00 2000
+@@ -4,7 +4,7 @@
  include $(SRCDIR)/Makefile.config
  
  
@@ -9,14 +9,16 @@
  
  # Shared library naming
  LIBROOT = pbm
- LIBPBM = lib$(LIBROOT).$(NETPBMLIBSUFFIX)
--MAJ = 9
--MIN = 5
-+SOVER = 1
- 
+@@ -15,6 +15,8 @@
  LIBLIBS = 
  NETPBMLIBS = $(LIBPBM)
-@@ -37,11 +36,10 @@
+ 
++SOVER = 1
++
+ PORTBINARIES =	atktopbm brushtopbm cmuwmtopbm g3topbm \
+ 		icontopbm macptopbm mdatopbm mgrtopbm \
+ 		pbmclean pbmlife pbmmake pbmmask pbmpscale \
+@@ -37,11 +39,10 @@
  
  # Library objects to be built and linked by Makefile.common:
  LIBOBJECTS = libpbm1.o libpbm2.o libpbm3.o libpbm4.o libpbm5.o 
@@ -29,7 +31,7 @@
  
  MANUALS1 =	$(BINARIES)
  MANUALS3 =	libpbm
-@@ -53,26 +51,21 @@
+@@ -53,26 +54,21 @@
  
  .PHONY: all
  all:		$(BINARIES)
@@ -56,7 +58,7 @@
  
  include $(SRCDIR)/Makefile.common
  
-@@ -80,13 +73,7 @@
+@@ -80,13 +76,7 @@
  ../compile.h: 
  	$(MAKE) -C $(SRCDIR) compile.h
  

@@ -1,14 +1,6 @@
---- pgm/Makefile.orig	Thu Jun 29 01:05:55 2000
-+++ pgm/Makefile	Sat Jul 15 00:00:00 2000
-@@ -3,14 +3,13 @@
- 
- LIBROOT = pgm
- LIBPGM = lib$(LIBROOT).$(NETPBMLIBSUFFIX)
--MAJ = 9
--MIN = 5
-+SOVER = 1
- 
- PBMDIR = $(SRCDIR)/pbm
+--- pgm/Makefile.orig	Fri Aug  4 08:45:21 2000
++++ pgm/Makefile	Sat Aug  5 00:00:00 2000
+@@ -10,11 +10,13 @@
  INCLUDEPBM = -I$(PBMDIR)
  LIBPBM = libpbm.$(NETPBMLIBSUFFIX)
  
@@ -17,7 +9,13 @@
  
  NETPBMLIBS = $(LIBPGM) $(PBMDIR)/$(LIBPBM)
  LIBLIBS = $(PBMDIR)/$(LIBPBM)
-@@ -27,6 +26,7 @@
+ 
++SOVER = 1
++
+ PORTBINARIES =	asciitopgm bioradtopgm fstopgm hipstopgm \
+ 		lispmtopgm pbmtopgm pgmbentley pgmenhance pgmhist \
+ 		pgmnoise pgmnorm pgmoil pgmramp pgmslice pgmtofs pgmtolispm \
+@@ -27,6 +29,7 @@
  MERGE_OBJECTS = $(patsubst %,%.o2, $(MERGEBINARIES))
  
  LIBOBJECTS = libpgm1.o libpgm2.o
