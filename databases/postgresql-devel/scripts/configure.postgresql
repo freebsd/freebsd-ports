@@ -15,7 +15,7 @@ if [ ! "${BATCH}" ]; then
 fi
 
 if [ "${BATCH}" ]; then
-	set \"MultiByte\" \"ODBC\" \"SSL\" \"TCL\" \"TK\"
+	set \"MultiByte\" \"ODBC\" \"SSL\" \"TCL\" \"TCLTK\"
 else
 	/usr/bin/dialog --title "configuration options" --clear \
 					--checklist "\n\
@@ -47,7 +47,7 @@ KRB5       "Kerberos 5" OFF \
 	esac
 fi
 
-${MKDIR} -p ${WRKDIRPREFIX}${CURDIR}
+${MKDIR} ${WRKDIRPREFIX}${CURDIR}
 exec > ${WRKDIRPREFIX}${CURDIR}/Makefile.inc
 
 while [ "$1" ]; do
