@@ -40,6 +40,10 @@ CONFLICTS=	btoa-5.* digest-* emboss-2.4.* oases-2.* p5-PAR-0.*
 IGNORE=	"core dumps on alpha during build"
 .endif
 
+.if ${ARCH} == "alpha" || ${ARCH} == "ia64"
+BROKEN=		"Does not compile on alpha or ia64"
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} -e "s|-pthread|${PTHREAD_LIBS}|g" \
 		${WRKSRC}/../../security/coreconf/FreeBSD.mk
