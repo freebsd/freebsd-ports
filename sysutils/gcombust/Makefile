@@ -1,12 +1,12 @@
 # New ports collection makefile for:	gcombust
-# Version required:	0.1.25
+# Version required:	0.1.28
 # Date created:		Tue Jun 22 21:17:03 MET DST 1999
 # Whom:			Juergen Lock <nox@jelal.kn-bremen.de>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	gcombust-0.1.25
+DISTNAME=	gcombust-0.1.28
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.abo.fi/~jmunsin/gcombust/
 
@@ -19,6 +19,10 @@ RUN_DEPENDS=	cdrecord:${PORTSDIR}/sysutils/cdrecord
 GNU_CONFIGURE=	yes
 USE_X_PREFIX=	yes
 CONFIGURE_ENV=	GTK_CONFIG=${PREFIX}/bin/gtk12-config
+
+# for patch-ab (/dev/cd0a -> /dev/rcd0a)
+post-configure:
+	cd ${WRKSRC}/po && ${MAKE} update-po
 
 post-install:
 	${MKDIR} ${PREFIX}/share/doc/gcombust
