@@ -1,0 +1,16 @@
+*** src/backend/postgres/PostgresBackend.orig	Mon Jul 26 17:17:45 2004
+--- src/backend/postgres/PostgresBackend.c	Mon Jul 26 17:33:16 2004
+***************
+*** 2104,2109 ****
+--- 2104,2114 ----
+           if (!strcmp (encoding, "ANSI_X3.4-1968"))
+             encoding = "SQL_ASCII";
+  
++          if (!strcmp(encoding, "US-ASCII"))
++            encoding = "SQL_ASCII";
++ 
++          printf("\nDatabase encoding is: %s.\n", encoding);
++ 
+           /* create the database */
+           p = be->buff; *p =0;
+           p = stpcpy (p, "CREATE DATABASE ");
