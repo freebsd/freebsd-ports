@@ -23,6 +23,7 @@
     SUBDIR += gsubedit
     SUBDIR += gtksubtitler
     SUBDIR += gxanim
+    SUBDIR += gxine
     SUBDIR += kdemultimedia3
     SUBDIR += kmplayer
     SUBDIR += kplayer
