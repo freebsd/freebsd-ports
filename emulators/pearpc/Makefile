@@ -20,6 +20,8 @@ GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=       --build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 PKGMESSAGE=	${WRKDIR}/pkg-message
 
+MAN1=		ppc.1
+
 .if defined(WITH_OPTIMIZED_CFLAGS)
 CFLAGS+=	-O3 -ffast-math
 .else
