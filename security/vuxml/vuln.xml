@@ -1289,7 +1289,7 @@ http_access deny Gopher</pre>
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
 	<p>A Secunia Security Advisory reports that Javier
-	  Fern&#225;ndez-Sanguino Pe&#241;a has found temporary file
+	  Fernández-Sanguino Peña has found temporary file
 	  creation vulnerabilities in the fixps and psmandup scripts
 	  which are part of a2ps.  These vulnerabilities could lead to
 	  an attacker overwriting arbitrary files with the credentials
