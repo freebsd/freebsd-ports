@@ -7,10 +7,14 @@
 
 PORTNAME=	rocksndiamonds
 PORTVERSION=	1.4.0
+PORTREVISION= 	1
 CATEGORIES=	games
 MASTER_SITES=	http://www.artsoft.org/rocksndiamonds/RELEASES/ \
 		${MASTER_SITE_XCONTRIB}
 MASTER_SITE_SUBDIR=	games
+
+PATCH_SITES=	http://www.artsoft.org/RELEASES/
+PATCHFILES=	rocksndiamonds-1.4.0pl1.diff
 
 MAINTAINER=	mwest@uct.ac.za
 
