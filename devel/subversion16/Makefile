@@ -7,7 +7,7 @@
 PORTNAME=	subversion
 PORTVERSION=	r1868
 CATEGORIES=	devel
-MASTER_SITES=	http://www.tigris.org/files/15/48/
+MASTER_SITES=	http://subversion.tigris.org/files/documents/15/196/
 
 MAINTAINER=	rooneg@electricjellyfish.net
 
