@@ -6,33 +6,62 @@
 #
 
 PORTNAME=	Sablot
-PORTVERSION=	0.81
-PORTREVISION=	1
+PORTVERSION=	0.90
 CATEGORIES=	textproc
 MASTER_SITES=	http://download-2.gingerall.cz/download/sablot/
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX} sablot-docs-0.81${EXTRACT_SUFX}
 
 MAINTAINER=	skv@FreeBSD.org
 
 LIB_DEPENDS=	iconv.3:${PORTSDIR}/converters/libiconv \
 		expat.2:${PORTSDIR}/textproc/expat2
 
+# If WITH_DISABLE_META is defined sablot will not output the META html tag
+#WITH_DISABLE_META=	yes
+
+# Define WITH_ICONV_TYPECAST to typecast the second parameter
+# of iconv to char**
+#WITH_ICONV_TYPECAST=	yes
+
 INSTALLS_SHLIB=	yes
 
-SHLIB_MAJOR=	67
-PLIST_SUB+=	SHLIB_MAJOR="${SHLIB_MAJOR}"
+SHLIB_MAJOR=	68	# API changes counter
+PLIST_SUB+=	SHLIB_MAJOR="${SHLIB_MAJOR}" DOCSDIR="share/doc/${PORTNAME}"
 
-CONFIGURE_ENV=	CPPFLAGS=-I${LOCALBASE}/include LDFLAGS=-L${LOCALBASE}/lib \
-		LIBTOOL=${LIBTOOL}
-
-USE_GMAKE=	yes
-GNU_CONFIGURE=	yes
-USE_AUTOMAKE_VER=14
+CONFIGURE_ENV=	CPPFLAGS=-I${LOCALBASE}/include LDFLAGS=-L${LOCALBASE}/lib
+USE_AUTOMAKE=	yes
 AUTOMAKE_ARGS=	-a
 USE_LIBTOOL=	yes
 
+.include <bsd.port.pre.mk>
+
+.if defined(WITH_DISABLE_META)
+CONFIGURE_ARGS+=	--disable-adding-meta
+.endif
+
+.if defined(WITH_ICONV_TYPECAST)
+CONFIGURE_ARGS+=	--enable-iconv-typecast
+.endif
+
+WRKSRCDOC=	${WRKDIR}/sablot-docs
+DOCSLIST=	README README_JS RELEASE
+
 pre-patch:
-		@${PERL} -pi -e \
-		's!(?<=libsablot_la_LDFLAGS = -version-info )(\d+):(\d+):\1!${SHLIB_MAJOR}:$$1:${SHLIB_MAJOR}!;' \
+	@${PERL} -pi -e \
+	's!(?<=libsablot_la_LDFLAGS = -version-info )(\d+):(\d+):\1!${SHLIB_MAJOR}:$$1:${SHLIB_MAJOR}!;' \
 		${WRKSRC}/src/engine/Makefile.am
 
-.include <bsd.port.mk>
+post-install:
+.ifndef(NOPORTDOCS)
+	@${ECHO_MSG} "===>   Installing documentation for ${PKGNAME}"
+	@${MKDIR} ${DOCSDIR}/jsdom-ref/apidocs
+	@${MKDIR} ${DOCSDIR}/sxp/apidocs
+	@${INSTALL_DATA} ${DOCSLIST:S!^!${WRKSRC}/!}	${DOCSDIR}
+	@${INSTALL_DATA} ${WRKSRCDOC}/*.html		${DOCSDIR}
+	@${INSTALL_DATA} ${WRKSRCDOC}/jsdom-ref/*.html	${DOCSDIR}/jsdom-ref
+	@${INSTALL_DATA} ${WRKSRCDOC}/jsdom-ref/apidocs/* ${DOCSDIR}/jsdom-ref/apidocs
+	@${INSTALL_DATA} ${WRKSRCDOC}/sxp/*.html	${DOCSDIR}/sxp
+	@${INSTALL_DATA} ${WRKSRCDOC}/sxp/apidocs/*	${DOCSDIR}/sxp/apidocs
+.endif
+
+.include <bsd.port.post.mk>
