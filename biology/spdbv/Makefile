@@ -27,7 +27,7 @@ RUN_DEPENDS=	${LINUXBASE}${X11BASE}/lib/libMesaGL.so.3:${PORTSDIR}/graphics/linu
 
 SPDBV=	SPDBV
 
-BROKEN=		"Incompatible with new x11-toolkits/linux-openmotif 2.2.4"
+IGNORE=		"Incompatible with new x11-toolkits/linux-openmotif 2.2.4"
 
 WRKSRC=		${WRKDIR}/SPDBV_DISTRIBUTION
 
