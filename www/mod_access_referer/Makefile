@@ -7,9 +7,16 @@
 
 PORTNAME=	mod_access_referer
 PORTVERSION=	1.0.2
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	accessreferer
+DIST_SUBDIR=	apache
+
+PATCH_SITES=    ${MASTER_SITE_SOURCEFORGE}
+PATCH_SITE_SUBDIR=	accessreferer
+PATCHFILES=	mod_access_referer_1.0.2_third_part_patch.txt
+PATCH_DIST_STRIP=	-l
 
 MAINTAINER=	apache@FreeBSD.org
 COMMENT=	Provides access control based on Referer HTTP header for Apache
