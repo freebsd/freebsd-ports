@@ -10,6 +10,8 @@ PORTCLASS=	slave
 
 MASTERDIR=	${.CURDIR}/../../editors/gnuserv
 
+BROKEN=		"Does not compile"
+
 # emacs port setup
 EMACS_PORT_NAME=	emacs20
 
