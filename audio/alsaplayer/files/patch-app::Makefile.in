@@ -1,0 +1,11 @@
+--- app/Makefile.in-orig	Tue Jun 17 17:33:15 2003
++++ app/Makefile.in	Tue Jun 17 17:33:33 2003
+@@ -149,7 +149,7 @@
+ LIBMIKMOD_LIBS = @LIBMIKMOD_LIBS@
+ LIBOBJS = @LIBOBJS@
+ 
+-LIBS = -lpthread -ldl $(SUN_LIBS)
++LIBS = -pthread $(SUN_LIBS)    
+ LIBTOOL = @LIBTOOL@
+ LN_S = @LN_S@
+ LTLIBOBJS = @LTLIBOBJS@

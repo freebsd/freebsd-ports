@@ -1,0 +1,10 @@
+AlsaPlayer is a new type of PCM player that supports different output systems
+including OSS, Esound, NAS (Network Audio Server), Sparc, and SGI.
+
+AlsaPlayer is heavily multi-threaded and has some very interesting features 
+unique to Linux/Unix players such as full pitch control and the possibility
+of playing music backwards.
+
+Warning: AlsaPlayer consumes a lot of CPU cycles.
+
+WWW: http://www.alsaplayer.org

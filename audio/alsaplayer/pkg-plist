@@ -1,0 +1,49 @@
+bin/alsaplayer
+include/alsaplayer/AlsaNode.h
+include/alsaplayer/AlsaPlayer.h
+include/alsaplayer/AlsaSubscriber.h
+include/alsaplayer/CorePlayer.h
+include/alsaplayer/Effects.h
+include/alsaplayer/Playlist.h
+include/alsaplayer/SampleBuffer.h
+include/alsaplayer/alsaplayer_error.h
+include/alsaplayer/control.h
+include/alsaplayer/input_plugin.h
+include/alsaplayer/interface_plugin.h
+include/alsaplayer/output_plugin.h
+include/alsaplayer/prefs.h
+include/alsaplayer/reader.h
+include/alsaplayer/scope_plugin.h
+include/alsaplayer/utilities.h
+%%AUDIOFILE%%lib/alsaplayer/input/libaf.so
+%%FLAC%%lib/alsaplayer/input/libflac_in.so
+lib/alsaplayer/input/libmad_in.so
+%%MIKMOD%%lib/alsaplayer/input/libmod.so
+lib/alsaplayer/input/libsndfile_in.so
+%%VORBIS%%lib/alsaplayer/input/libvorbis_in.so
+lib/alsaplayer/input/libwav.so
+lib/alsaplayer/interface/libdaemon_interface.so
+%%GUI%%lib/alsaplayer/interface/libgtk_interface.so
+lib/alsaplayer/interface/libtext_interface.so
+%%ESD%%lib/alsaplayer/output/libesound_out.so
+lib/alsaplayer/output/libnull_out.so
+%%OSS%%lib/alsaplayer/output/liboss_out.so
+lib/alsaplayer/reader/libfile.so
+lib/alsaplayer/reader/libhttp.so
+%%GUI%%lib/alsaplayer/scopes/libblurscope.so
+%%GUI%%lib/alsaplayer/scopes/liblevelmeter.so
+%%GUI%%lib/alsaplayer/scopes/liblogbarfft.so
+%%GUI%%lib/alsaplayer/scopes/libmonoscope.so
+%%GUI%%lib/alsaplayer/scopes/liboglspectrum.so
+%%GUI%%lib/alsaplayer/scopes/libspacescope.so
+%%GUI%%lib/alsaplayer/scopes/libsynaescope.so
+lib/libalsaplayer.a
+lib/libalsaplayer.so
+lib/libalsaplayer.so.0
+libdata/pkgconfig/alsaplayer.pc
+@dirrm lib/alsaplayer/scopes
+@dirrm lib/alsaplayer/reader
+@dirrm lib/alsaplayer/output
+@dirrm lib/alsaplayer/interface
+@dirrm lib/alsaplayer/input
+@dirrm lib/alsaplayer
