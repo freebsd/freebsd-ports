@@ -6207,6 +6207,7 @@ pinball		ports/games/pinball
 pine.language	ports/ukrainian/pine.language
 pine-pgp-filters	ports/mail/pine-pgp-filters
 pine4		ports/mail/pine4
+pinentry	ports/security/pinentry
 pinfo		ports/misc/pinfo
 ping		src/sbin/ping
 ping6		src/sbin/ping6
