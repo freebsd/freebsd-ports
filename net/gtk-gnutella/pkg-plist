@@ -1,17 +1,29 @@
 bin/gtk-gnutella
+share/gtk-gnutella/gwcache.boot
+share/gtk-gnutella/hostiles.txt
 share/gtk-gnutella/pixmaps/arrow_down.xpm
 share/gtk-gnutella/pixmaps/arrow_up.xpm
 share/gtk-gnutella/pixmaps/booklib.xpm
 share/gtk-gnutella/pixmaps/booksha.xpm
 share/gtk-gnutella/pixmaps/bookshav.xpm
+share/gtk-gnutella/pixmaps/download.xpm
 share/gtk-gnutella/pixmaps/exit.xpm
 share/gtk-gnutella/pixmaps/filter.xpm
 share/gtk-gnutella/pixmaps/firewall.xpm
 share/gtk-gnutella/pixmaps/freeze.xpm
+share/gtk-gnutella/pixmaps/icon.xpm
+share/gtk-gnutella/pixmaps/leaf.xpm
+share/gtk-gnutella/pixmaps/legacy.xpm
 share/gtk-gnutella/pixmaps/no_firewall.xpm
 share/gtk-gnutella/pixmaps/offline.xpm
 share/gtk-gnutella/pixmaps/online.xpm
 share/gtk-gnutella/pixmaps/save.xpm
+share/gtk-gnutella/pixmaps/smallserver.xpm
 share/gtk-gnutella/pixmaps/thaw.xpm
+share/gtk-gnutella/pixmaps/ultra.xpm
+share/gtk-gnutella/pixmaps/upload.xpm
+share/locale/es/LC_MESSAGES/gtk-gnutella.mo
+share/locale/fr/LC_MESSAGES/gtk-gnutella.mo
+share/locale/nl/LC_MESSAGES/gtk-gnutella.mo
 @dirrm share/gtk-gnutella/pixmaps
 @dirrm share/gtk-gnutella
