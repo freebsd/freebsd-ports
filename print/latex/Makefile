@@ -54,8 +54,10 @@ do-install:
 	@(cd ${WRKSRC}/base; ${INSTALL_DATA} *.ist ${PREFIX}/share/texmf/makeindx)
 	@(cd ${WRKSRC}/tools; for f in *.sty *.tex; do \
 	    if [ -f $$f ]; then ${INSTALL_DATA} $$f ${PREFIX}/share/texmf/tex/latex; fi; done)
-	@(cd ${WRKSRC}/graphics; for f in *.sty *.tex; do \
-	    if [ -f $$f ]; then ${INSTALL_DATA} $$f ${PREFIX}/share/texmf/tex/latex; fi; done)
+	@(cd ${WRKSRC}/graphics; for f in *.sty *.tex *.def; do \
+	    if [ -f $$f ]; then ${INSTALL_DATA} $$f ${PREFIX}/share/texmf/tex/latex; fi; done;\
+	    echo '\ExecuteOptions{dvips}' >${PREFIX}/share/texmf/tex/latex/graphics.cfg;\
+	    echo '\ExecuteOptions{dvips}' >${PREFIX}/share/texmf/tex/latex/color.cfg)
 	@(cd ${WRKSRC}/psnfss; for f in *.sty *.tex; do \
 	    if [ -f $$f ]; then ${INSTALL_DATA} $$f ${PREFIX}/share/texmf/tex/latex; fi; done)
 	@(cd ${PREFIX}/bin; ${RM} -f latex; ${LN} -s tex latex)

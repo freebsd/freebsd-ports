@@ -225,6 +225,7 @@ share/texmf/tex/latex/bookman.sty
 share/texmf/tex/latex/calc.sty
 share/texmf/tex/latex/chancery.sty
 share/texmf/tex/latex/charter.sty
+share/texmf/tex/latex/color.cfg
 share/texmf/tex/latex/color.sty
 share/texmf/tex/latex/cp1250.def
 share/texmf/tex/latex/cp1252.def
@@ -238,7 +239,14 @@ share/texmf/tex/latex/decmulti.def
 share/texmf/tex/latex/delarray.sty
 share/texmf/tex/latex/doc.sty
 share/texmf/tex/latex/docstrip.tex
+share/texmf/tex/latex/dvipdf.def
+share/texmf/tex/latex/dvipdfm.def
+share/texmf/tex/latex/dvips.def
+share/texmf/tex/latex/dvipsnam.def
+share/texmf/tex/latex/dvipsone.def
+share/texmf/tex/latex/dviwin.def
 share/texmf/tex/latex/e.tex
+share/texmf/tex/latex/emtex.def
 share/texmf/tex/latex/enumerate.sty
 share/texmf/tex/latex/epsfig.sty
 share/texmf/tex/latex/exscale.sty
@@ -250,6 +258,7 @@ share/texmf/tex/latex/fontsmpl.sty
 share/texmf/tex/latex/fontsmpl.tex
 share/texmf/tex/latex/ftnright.sty
 share/texmf/tex/latex/garamond.sty
+share/texmf/tex/latex/graphics.cfg
 share/texmf/tex/latex/graphics.sty
 share/texmf/tex/latex/graphicx.sty
 share/texmf/tex/latex/graphpap.sty
@@ -328,6 +337,11 @@ share/texmf/tex/latex/ot1lcmss.fd
 share/texmf/tex/latex/ot1lcmtt.fd
 share/texmf/tex/latex/ot4enc.def
 share/texmf/tex/latex/palatino.sty
+share/texmf/tex/latex/pctex32.def
+share/texmf/tex/latex/pctexhp.def
+share/texmf/tex/latex/pctexps.def
+share/texmf/tex/latex/pctexwin.def
+share/texmf/tex/latex/pdftex.def
 share/texmf/tex/latex/pict2e.sty
 share/texmf/tex/latex/pifont.sty
 share/texmf/tex/latex/pitest.tex
@@ -367,10 +381,12 @@ share/texmf/tex/latex/t1enc.sty
 share/texmf/tex/latex/t1lcmss.fd
 share/texmf/tex/latex/t1lcmtt.fd
 share/texmf/tex/latex/tabularx.sty
+share/texmf/tex/latex/tcidvi.def
 share/texmf/tex/latex/test0.tex
 share/texmf/tex/latex/test1.tex
 share/texmf/tex/latex/testpage.tex
 share/texmf/tex/latex/textcomp.sty
+share/texmf/tex/latex/textures.def
 share/texmf/tex/latex/thb.sty
 share/texmf/tex/latex/thc.sty
 share/texmf/tex/latex/thcb.sty
@@ -381,6 +397,7 @@ share/texmf/tex/latex/thp.sty
 share/texmf/tex/latex/times.sty
 share/texmf/tex/latex/tracefnt.sty
 share/texmf/tex/latex/trig.sty
+share/texmf/tex/latex/truetex.def
 share/texmf/tex/latex/ts1cmr.fd
 share/texmf/tex/latex/ts1cmss.fd
 share/texmf/tex/latex/ts1cmtt.fd
@@ -395,6 +412,7 @@ share/texmf/tex/latex/utopia.sty
 share/texmf/tex/latex/varioref.sty
 share/texmf/tex/latex/verbatim.sty
 share/texmf/tex/latex/verbtest.tex
+share/texmf/tex/latex/vtex.def
 share/texmf/tex/latex/x.tex
 share/texmf/tex/latex/xr.sty
 share/texmf/tex/latex/xspace.sty
