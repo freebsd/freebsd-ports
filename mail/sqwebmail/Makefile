@@ -198,7 +198,8 @@ post-patch:
 
 .if !defined(WITHOUT_AUTHDAEMON)
 post-install:
-	${INSTALL_SCRIPT} ${FILESDIR}/authdaemond.sh ${PREFIX}/etc/rc.d/
+	${INSTALL_SCRIPT} ${FILESDIR}/sqwebmail-authdaemond.sh \
+		${PREFIX}/etc/rc.d/
 .endif
 
 .include <bsd.port.mk>
