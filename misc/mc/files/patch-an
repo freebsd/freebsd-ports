@@ -1,7 +1,0 @@
---- src/main.c.orig	Wed Apr 11 07:07:49 2001
-+++ src/main.c	Fri Apr 20 12:39:44 2001
-@@ -1361,3 +1361,3 @@
- #ifdef USE_INTERNAL_EDIT
--    {' ',  N_("Menu edi&Tor edit"),		'T', edit_user_menu_cmd}
-+/* XXX: only appears in gtkedit    {' ',  N_("Menu edi&Tor edit"),		'T', edit_user_menu_cmd} */
- #endif /* USE_INTERNAL_EDIT */

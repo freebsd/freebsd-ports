@@ -1,14 +1,27 @@
---- Make.common.in.orig	Sun Oct  8 18:58:39 2000
-+++ Make.common.in	Fri Apr 20 12:26:51 2001
-@@ -18,5 +18,6 @@
- bindir     = @bindir@
-+sbindir    = $(exec_prefix)/sbin
- sysconfdir = @sysconfdir@
+
+$FreeBSD: /tmp/pcvs/ports/misc/mc/files/Attic/patch-ac,v 1.10 2002-08-05 21:26:26 fjoe Exp $
+
+--- Make.common.in.orig	Fri Jul 20 18:22:50 2001
++++ Make.common.in	Fri Dec 14 11:04:04 2001
+@@ -13,10 +13,10 @@
  datadir    = @datadir@
--libdir	   = @libdir@
-+libdir	   = @datadir@
+ libdir	   = @libdir@
  mandir     = @mandir@
-@@ -60,2 +61,3 @@
- XCPPFLAGS = @CPPFLAGS@ @MCCPPFLAGS@ -I.. \
-+	-DSBINDIR=\""$(sbindir)/"\" \
- 	-DBINDIR=\""$(bindir)/"\" \
+-mclibdir   = $(libdir)/mc
++mclibdir   = $(datadir)/mc
+ suppbindir = $(mclibdir)/bin
+ confdir    = $(sysconfdir)
+-localedir  = $(datadir)/locale
++localedir  = $(prefix)/share/locale
+ man1dir    = $(mandir)/man1
+ manext     = 1
+ man8dir    = $(mandir)/man8
+@@ -38,7 +38,7 @@
+ # No way, to make make happy (except GNU), we cannot use := to append
+ # something to these, so that's why there is a leading _
+ XCFLAGS = @CFLAGS@
+-XCPPFLAGS = -I.. @CPPFLAGS@ @MCCPPFLAGS@ @GLIB_CFLAGS@
++XCPPFLAGS = -I$(mcsrcdir) -I.. @CPPFLAGS@ @MCCPPFLAGS@ @GLIB_CFLAGS@
+ XLDFLAGS = @LDFLAGS@
+ XDEFS = @DEFS@
+ XLIBS = @LIBS@

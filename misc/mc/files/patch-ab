@@ -1,7 +1,14 @@
---- vfs/Make-mc.in.orig	Wed Apr 11 07:07:50 2001
-+++ vfs/Make-mc.in	Fri Apr 20 12:24:23 2001
-@@ -233,3 +233,3 @@
- 	$(mkinstalldirs) $(DESTDIR)$(bindir)
--	$(INSTALL_PROGRAM) mcserv $(DESTDIR)$(bindir)/$(binprefix)mcserv
-+	$(INSTALL_PROGRAM) mcserv $(DESTDIR)$(sbindir)/$(binprefix)mcserv
+
+$FreeBSD: /tmp/pcvs/ports/misc/mc/files/Attic/patch-ab,v 1.12 2002-08-05 21:26:26 fjoe Exp $
+
+--- vfs/Make-mc.in.orig	Wed Aug  1 19:15:22 2001
++++ vfs/Make-mc.in	Tue Sep 11 18:20:08 2001
+@@ -18,7 +18,7 @@
+ DEFS     = $(XDEFS)
+ LIBS     = @SHADOWLIB@ $(XLIBS) @TERMNET@ @PAMLIBS@ @LCRYPT@ $(XLIB)
+ INSTALL  = @INSTALL@
+-INSTALL_PROGRAM = @INSTALL_PROGRAM@ -m 755
++INSTALL_PROGRAM = @INSTALL_PROGRAM@
+ INSTALL_DATA = @INSTALL_DATA@
+ AR = @AR@
  

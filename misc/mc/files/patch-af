@@ -1,81 +1,25 @@
---- Makefile.in.orig	Sun Mar 18 12:20:52 2001
-+++ Makefile.in	Wed Mar 28 18:16:22 2001
-@@ -159,3 +159,3 @@
+
+$FreeBSD: /tmp/pcvs/ports/misc/mc/files/Attic/patch-af,v 1.18 2002-08-05 21:26:26 fjoe Exp $
+
+--- Makefile.in.orig	Fri Aug 24 11:05:06 2001
++++ Makefile.in	Tue Sep 11 18:25:56 2001
+@@ -155,8 +155,8 @@
+ smbfs = @smbfs@
+ undelfs_o = @undelfs_o@
  
--SUBDIRS = vfs lib doc slang gtkedit edit src gnome new_icons 	idl syntax intl doc-gnome po pc
-+SUBDIRS = vfs lib doc gtkedit edit src gnome new_icons syntax intl po
+-SUBDIRS = intl po vfs slang edit src lib doc syntax pc \
+-	gtkedit gnome new_icons idl doc-gnome
++SUBDIRS = intl po vfs edit src lib doc syntax pc \
++	gtkedit gnome new_icons idl
  
-@@ -174,3 +174,3 @@
+ 
+ ACLOCAL_AMFLAGS = -I macros
+@@ -181,7 +181,7 @@
  CONFIG_HEADER = config.h
--CONFIG_CLEAN_FILES =  Make.common mc.spec mcfn_install
-+CONFIG_CLEAN_FILES =  Make.common mc.spec
- DATA =  $(noinst_DATA)
---- doc/Makefile.in.orig	Mon Apr 16 11:53:07 2001
-+++ doc/Makefile.in	Fri Apr 20 13:41:42 2001
-@@ -159,3 +159,3 @@
- 
--man_MANS = mc.1 mcedit.1 mcserv.8
-+man_MANS = midc.1 mcedit.1 mcserv.8
- 
-@@ -185,2 +185,5 @@
- 	  && CONFIG_FILES=$(subdir)/$@ CONFIG_HEADERS= $(SHELL) ./config.status
-+
-+midc.1:	mc.1
-+	cp mc.1 midc.1
- 
---- lib/Makefile.in.orig	Mon Apr 16 11:53:06 2001
-+++ lib/Makefile.in	Fri Apr 20 13:48:32 2001
-@@ -161,4 +161,2 @@
- desktopdir = $(mclibdir)/desktop-scripts
--suppbindir = $(mclibdir)/bin
--tidir = $(mclibdir)/term
- confdir = $(sysconfdir)
-@@ -176,5 +174,3 @@
- conf_DATA = mc.global
--suppbin_SCRIPTS = mc.csh mc.sh
- desktop_DATA = startup.links README.desktop
--ti_DATA = README.xterm linux.ti xterm.ad xterm.ti ansi.ti vt100.ti xterm.tcap
- 
-@@ -188,6 +184,5 @@
- CONFIG_CLEAN_FILES =  mc.ext mc.sh mc.csh
--SCRIPTS =  $(noinst_SCRIPTS) $(suppbin_SCRIPTS)
-+SCRIPTS =  $(noinst_SCRIPTS)
- 
--DATA =  $(conf_DATA) $(desktop_DATA) $(mclib_DATA) $(noinst_DATA) \
--$(ti_DATA)
-+DATA =  $(conf_DATA) $(desktop_DATA) $(mclib_DATA) $(noinst_DATA)
- 
-@@ -340,4 +335,4 @@
- 
--install-data-am: install-suppbinSCRIPTS install-confDATA \
--		install-desktopDATA install-mclibDATA install-tiDATA
-+install-data-am: install-confDATA \
-+		install-desktopDATA install-mclibDATA
- install-data: install-data-am
-@@ -356,5 +351,4 @@
- installdirs:
--	$(mkinstalldirs)  $(DESTDIR)$(suppbindir) $(DESTDIR)$(confdir) \
--		$(DESTDIR)$(desktopdir) $(DESTDIR)$(mclibdir) \
--		$(DESTDIR)$(tidir)
-+	$(mkinstalldirs)  $(DESTDIR)$(confdir) \
-+		$(DESTDIR)$(desktopdir) $(DESTDIR)$(mclibdir)
- 
---- src/Makefile.in.orig	Wed Apr 11 07:07:47 2001
-+++ src/Makefile.in	Thu May 17 12:29:24 2001
-@@ -121,6 +121,5 @@
- 	$(mkinstalldirs) $(DESTDIR)$(mclibdir)
--	$(INSTALL_PROGRAM) mc     $(DESTDIR)$(bindir)/$(binprefix)mc
-+	$(INSTALL_PROGRAM) mc     $(DESTDIR)$(bindir)/$(binprefix)midc
- 	$(INSTALL_PROGRAM) mcmfmt $(DESTDIR)$(bindir)/$(binprefix)mcmfmt
- 	$(SEDCMD2) < $(srcdir)/mc.hlp > $(DESTDIR)$(mclibdir)/mc.hlp 
--	$(MAKE) install_mcview
- 	$(MAKE) install_@MCEDIT@
-@@ -134,6 +133,6 @@
- install_mcview:
--	cd $(DESTDIR)$(bindir)/$(binprefix) && rm -f mcview && $(LN_S) mc mcview
-+	cd $(DESTDIR)$(bindir)/$(binprefix) && rm -f mcview && $(LN_S) midc mcview
- 
- install_mcedit:
--	cd $(DESTDIR)$(bindir)/$(binprefix) && rm -f mcedit && $(LN_S) mc mcedit
-+	cd $(DESTDIR)$(bindir)/$(binprefix) && rm -f mcedit && $(LN_S) midc mcedit
+ CONFIG_CLEAN_FILES = Make.common mc.spec gnome/Makefile gnome/mc.keys.in \
+ 	src/Makefile slang/Makefile edit/Makefile gtkedit/Makefile \
+-	mcfn_install intl/Makefile
++	intl/Makefile
+ DIST_SOURCES =
+ DATA = $(noinst_DATA)
  

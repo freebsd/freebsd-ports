@@ -1,0 +1,36 @@
+--- lib/mc.lib.orig	Tue Aug  6 03:57:05 2002
++++ lib/mc.lib	Tue Aug  6 03:35:06 2002
+@@ -87,6 +87,16 @@
+ end=\e[8~
+ pgdn=\e[6~
+ pgup=\e[5~
++up=\eOA
++down=\eOB
++left=\eOD
++right=\eOC
++home=\eOH
++end=\eOF
++delete=\e[3~
++kpplus=\eOk
++kpminus=\eOm
++kpasterix=\eOj
+ 
+ [terminal:xterm-color]
+ insert=\e[2~
+@@ -119,6 +129,16 @@
+ end=\e[8~
+ pgdn=\e[6~
+ pgup=\e[5~
++up=\eOA
++down=\eOB
++left=\eOD
++right=\eOC
++home=\eOH
++end=\eOF
++delete=\e[3~
++kpplus=\eOk
++kpminus=\eOm
++kpasterix=\eOj
+ 
+ [terminal:ibmpc3]
+ f11=\e[Y

@@ -1,43 +1,14 @@
---- configure.orig	Mon Apr 16 11:40:15 2001
-+++ configure	Fri Apr 20 12:22:48 2001
-@@ -10060,3 +10060,3 @@
-   ac_save_LIBS="$LIBS"
--LIBS="-lslang  $LIBS"
-+LIBS="-lslang -ltermcap $LIBS"
- cat > conftest.$ac_ext <<EOF
-@@ -10301,3 +10301,3 @@
+
+$FreeBSD: /tmp/pcvs/ports/misc/mc/files/Attic/patch-aa,v 1.12 2002-08-05 21:26:26 fjoe Exp $
+
+--- configure.orig	Fri Aug 24 11:05:06 2001
++++ configure	Tue Sep 11 18:16:08 2001
+@@ -2552,6 +2552,8 @@
+   echo "$as_me:2552: result: no" >&5
+ echo "${ECHO_T}no" >&6
+ fi
++CPPLAGS="$save_CPPFLAGS"
++CFLAGS="$CFLAGS -I${LOCALBASE}/include"
+ rm -f conftest*
  
--	    LSLANG="-lslang"
-+	    LSLANG="-lslang -ltermcap"
- 	    screen_manager="SLang (system-installed library)"
-@@ -10749,3 +10749,3 @@
- 	    echo "$ac_t""Found ncurses on /usr/include/ncurses.h" 1>&6
-- 	    LIBS="$LIBS -lncurses"
-+ 	    LIBS="$LIBS -lncurses -lmytinfo"
- 	    CPPFLAGS="$CPPFLAGS "
-@@ -10766,3 +10766,3 @@
- 	    echo "$ac_t""Found ncurses on /usr/include/ncurses/ncurses.h" 1>&6
-- 	    LIBS="$LIBS -lncurses"
-+ 	    LIBS="$LIBS -lncurses -lmytinfo"
- 	    CPPFLAGS="$CPPFLAGS -I/usr/include/ncurses"
-@@ -11043,3 +11043,3 @@
- 
--	    LSLANG="-lslang"
-+	    LSLANG="-lslang -ltermcap"
- 	    screen_manager="SLang (system-installed library)"
-@@ -11551,3 +11551,3 @@
- 
--doc/mc.1 doc/mcedit.1 doc/mcserv.8
-+doc/mc.1 doc/mcserv.8
- 
-@@ -11834,6 +11834,6 @@
- 
--  case "$ac_given_INSTALL" in
--  [/$]*) INSTALL="$ac_given_INSTALL" ;;
--  *) INSTALL="$ac_dots$ac_given_INSTALL" ;;
--  esac
-+# case "$ac_given_INSTALL" in
-+# [/$]*) INSTALL="$ac_given_INSTALL" ;;
-+# *) INSTALL="$ac_dots$ac_given_INSTALL" ;;
-+# esac
- 
+ echo "$as_me:2557: checking for minix/config.h" >&5

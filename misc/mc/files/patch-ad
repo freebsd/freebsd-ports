@@ -1,0 +1,11 @@
+--- gnome/gtools.c.orig	Tue Feb 16 01:29:19 1999
++++ gnome/gtools.c	Fri Feb 19 01:43:53 1999
+@@ -13,7 +13,7 @@
+ #undef HAVE_LIBGPM
+ #include "mouse.h"
+ #include "key.h"
+-#include "myslang.h"
++#include "tty.h"
+ #include "widget.h"
+ #include "wtools.h"
+ #include "dialog.h"
