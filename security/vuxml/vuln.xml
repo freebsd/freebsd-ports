@@ -32,6 +32,42 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="e6f0edd8-0b40-11d9-8a8a-000c41e2cdad">
+    <topic>gnu-radius --- SNMP-related denial-of-service</topic>
+    <affects>
+      <package>
+	<name>gnu-radius</name>
+	<range><ge>0</ge></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>An iDEFENSE security advisory reports:</p>
+	<blockquote
+	  cite="http://www.idefense.com/application/poi/display?id=141&amp;type=vulnerabilities">
+          <p>Remote exploitation of an input validation error in
+            version 1.2 of GNU radiusd could allow a denial of
+            service.</p>
+          <p>The vulnerability specifically exists within
+            the asn_decode_string() function defined in
+            snmplib/asn1.c. When a very large unsigned number is
+            supplied, it is possible that an integer overflow will
+            occur in the bounds-checking code. The daemon will then
+            attempt to reference unallocated memory, resulting in an
+            access violation that causes the process to terminate.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CAN-2004-0849</cvename>
+      <url>http://www.idefense.com/application/poi/display?id=141&amp;type=vulnerabilities</url>
+    </references>
+    <dates>
+      <discovery>2004-09-15</discovery>
+      <entry>2004-09-20</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="a268ef4a-0b35-11d9-8a8a-000c41e2cdad">
     <topic>sudo --- sudoedit information disclosure</topic>
     <affects>
