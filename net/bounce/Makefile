@@ -9,7 +9,7 @@
 PORTNAME=	bounce
 PORTVERSION=	1.0
 CATEGORIES=	net security
-MASTER_SITES=	http://www.eleves.ens.fr:8080/home/espel/  \
+MASTER_SITES=	http://www.iagora.com/~espel/ \
 		${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	obrien
 DISTNAME=	bounce
