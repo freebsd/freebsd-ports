@@ -20,10 +20,7 @@ MASTER_SITES=	ftp://ftp.netscape.com/pub/netscape6/english/${PORTVERSION}/unix/l
 		ftp://ftp.fh-brandenburg.de/pub/Infosystems/Netscape/netscape6/english/${PORTVERSION}/unix/linux22/xpi/ \
 		ftp://ftp.fh-giessen.de/pub/networking/netscape/netscape6/english/${PORTVERSION}/unix/linux22/xpi/ \
 		ftp://ftp.fu-berlin.de/unix/network/www/netscape/netscape6/english/${PORTVERSION}/unix/linux22/xpi/ \
-		ftp://ftp.hh.schule.de/pub/win3/tcpip/www/infosystems/www/clients/netscape/netscape6/english/${PORTVERSION}/unix/linux22/ \
-		ftp://ftp.hi.is/pub/mirrors/ftp.netscape.com/pub/netscape6/english/${PORTVERSION}/unix/linux22/xpi/ \
 		ftp://ftp.hu-berlin.de/pub/www/netscape/netscape6/english/${PORTVERSION}/unix/linux22/xpi/ \
-		ftp://ftp.informatik.rwth-aachen.de/pub/mirror/ftp.netscape.com/pub/netscape6/english/${PORTVERSION}/unix/linux22/xpi/ \
 		ftp://ftp.informatik.uni-hamburg.de/pub/soft/infosystems/www/clients/netscape/netscape6/english/${PORTVERSION}/unix/linux22/xpi/ \
 		ftp://ftp.jaist.ac.jp/net/Netscape/netscape6/english/${PORTVERSION}/unix/linux22/xpi/ \
 		ftp://ftp.kmitl.ac.th/pub/netscape/netscape6/english/${PORTVERSION}/unix/linux22/xpi/ \
@@ -32,13 +29,9 @@ MASTER_SITES=	ftp://ftp.netscape.com/pub/netscape6/english/${PORTVERSION}/unix/l
 		ftp://ftp.nsysu.edu.tw/Netscape/netscape6/english/${PORTVERSION}/unix/linux22/xpi/ \
 		ftp://ftp.ntnu.no/pub/www/Netscape/netscape6/english/${PORTVERSION}/unix/linux22/xpi/ \
 		ftp://ftp.ruhr-uni-bochum.de/mirrors/ftp.netscape.com/pub/netscape6/english/${PORTVERSION}/unix/linux22/xpi/ \
-		ftp://ftp.rz.uni-karlsruhe.de/pub/mirror/ftp.fu-berlin.de/pub/unix/network/www/netscape/netscape6/english/${PORTVERSION}/ \
-		ftp://ftp.sektornet.dk/mirrors/ftp2.netscape.com/pub/netscape6/english/${PORTVERSION}/unix/linux22/xpi/ \
 		ftp://ftp.spin.ad.jp/pub/WWW/netscape/netscape6/english/${PORTVERSION}/unix/linux22/xpi/ \
 		ftp://ftp.sunet.se/pub/www/Netscape/netscape6/english/${PORTVERSION}/unix/linux22/xpi/ \
-		ftp://ftp.sunsite.auc.dk/disk2/netscape/netscape6/english/${PORTVERSION}/unix/linux22/xpi/ \
 		ftp://ftp.task.gda.pl/vol/d31/ftp.netscape.com/pub/netscape6/english/${PORTVERSION}/unix/linux22/xpi/ \
-		ftp://ftp.tu-darmstadt.de/pub/networking/www/netscape/netscape6/english/${PORTVERSION}/unix/linux22/xpi/ \
 		ftp://ftp.uit.no/pub/www/Netscape/netscape6/english/${PORTVERSION}/unix/linux22/xpi/ \
 		ftp://ftp.uni-bielefeld.de/pub/netscape/netscape6/english/${PORTVERSION}/unix/linux22/xpi/ \
 		ftp://ftp.uni-c.dk/mirrors/ftp2.netscape.com/pub/netscape6/english/${PORTVERSION}/unix/linux22/xpi/ \
