@@ -1,0 +1,19 @@
+*** Imakefile.orig	Wed Aug 23 21:26:39 1995
+--- Imakefile	Sat Apr 27 18:12:34 1996
+***************
+*** 30,36 ****
+  	@echo "starting it"
+  	@echo "creating the database needs about 3 - 5 hours"
+  	@echo "tell you when it is complete"
+! 	cd lib; db; cd ..
+  	@echo "Database complete"
+  
+  XGammon.ad:     xgammon.ad
+--- 30,36 ----
+  	@echo "starting it"
+  	@echo "creating the database needs about 3 - 5 hours"
+  	@echo "tell you when it is complete"
+! 	cd lib; ./db; cd ..
+  	@echo "Database complete"
+  
+  XGammon.ad:     xgammon.ad

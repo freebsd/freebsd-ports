@@ -1,0 +1,12 @@
+XGammon is a backgammon game which runs under X.
+
+Features:
+   xgammon has nice graphical interface, you move by clicking on mousebuttons.
+   You can do a maildump for a position, that means you get a file with
+      a FIBS  style board with current position in it.
+   You can do money game or tournament game.
+   You can edit positions via mouse on the board or via ascii plain text files.
+   You can turn doubling on and off.
+   You can do rollouts with doubling turned on and off.
+   The programm uses an endgame database for perfect bearing off (and for
+      reasonable running game).
