@@ -25,6 +25,8 @@ EXTRACT_ONLY=	X430src-1.tgz \
 MAINTAINER=	x11@FreeBSD.org
 COMMENT=	XFree86-4 print server
 
+CONFLICTS=	xorg-printserver-*
+
 PLIST_FILES=		bin/Xprt
 XBUILD_DIRS=		lib/font lib/lbxutil lib/Xdmcp lib/Xau programs/Xserver
 XINCLUDE_DIRS=		lib/xkbfile lib/xtrans
