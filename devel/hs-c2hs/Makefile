@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	c2hs
-PORTVERSION=	0.10.17
+PORTVERSION=	0.11.5
 CATEGORIES=	devel haskell
 MASTER_SITES=	http://www.cse.unsw.edu.au/~chak/haskell/c2hs/
 PKGNAMEPREFIX=	hs-
@@ -25,17 +25,7 @@ PLIST_SUB+=	C2HS_VERSION="${PORTVERSION}" GHC_VERSION="${GHC_VERSION}"
 
 CONFIGURE_ARGS+=	--prefix=${PREFIX} --enable-add-package
 
-.if defined(WITH_PROFILE)
-CONFIGURE_ARGS+=	--enable-prof
-.endif
-
 MAN1=	c2hs-config.1 c2hs.1
-
-.if !defined(WITH_PROFILE)
-pre-everything::
-	@${ECHO_CMD} "To enable profiling support define WITH_PROFILE."
-	@${ECHO_CMD} "This requires ghc with profiling libraries."
-.endif
 
 post-build:
 	@(cd ${WRKSRC}/doc/c2hs && ${GMAKE} man1/c2hs-config.1 man1/c2hs.1)
