@@ -1,6 +1,6 @@
---- configure.orig	Fri Feb 20 22:57:37 2004
-+++ configure	Mon Apr 19 17:01:56 2004
-@@ -4693,7 +4693,7 @@
+--- configure.orig	Thu Dec 23 00:23:48 2004
++++ configure	Thu Dec 23 00:24:04 2004
+@@ -4771,7 +4771,7 @@
    echo "$as_me: failed program was:" >&5
  sed 's/^/| /' conftest.$ac_ext >&5
  
