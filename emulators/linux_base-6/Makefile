@@ -3,10 +3,10 @@
 # Date created:         
 # Whom:                 erich@FreeBSD.org
 #
-# $Id: Makefile,v 1.13 1996/12/04 02:23:58 asami Exp $
+# $Id: Makefile,v 1.14 1996/12/11 17:46:11 erich Exp $
 #
 
-DISTNAME=	linux_lib-2.3
+DISTNAME=	linux_lib-2.4
 CATEGORIES=	emulators
 MASTER_SITES=	ftp://freefall.freebsd.org/pub/FreeBSD/LOCAL_PORTS/
 
@@ -23,5 +23,8 @@ pre-install:
 
 do-install:
 	@zcat ${DISTDIR}/${DISTNAME}.tar.gz |(cd ${PREFIX}; pax -r)
+
+post-install:
+	-/compat/linux/sbin/ldconfig
 
 .include <bsd.port.mk>
