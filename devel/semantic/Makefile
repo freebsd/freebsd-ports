@@ -7,12 +7,12 @@
 
 PORTNAME=	semantic
 PORTVERSION=	1.4.b13
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel elisp
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	cedet
 PKGNAMESUFFIX=	-${EMACS_PORT_NAME}
-DISTNAME=       ${PORTNAME}-1.4beta13
+DISTNAME=       ${PORTNAME}-${PORTVERSION:S/.b/beta/}
 
 MAINTAINER=	fuyuki@mj.0038.net
 
@@ -33,15 +33,13 @@ LISPDIR=	${PREFIX}/${EMACS_VERSION_SITE_LISPDIR}/semantic
 
 do-install:
 	${MKDIR} ${LISPDIR}
-.for i in *.el *.elc
+.for i in *.el *.elc *.bnf
 	${INSTALL_DATA} ${WRKSRC}/${i} ${LISPDIR}
 .endfor
 	${INSTALL_DATA} ${WRKSRC}/semantic.info* ${PREFIX}/info
 	install-info ${PREFIX}/info/semantic.info ${PREFIX}/info/dir
 
 post-install:
-	${MKDIR} ${EXAMPLESDIR}
-	${INSTALL_DATA} ${WRKSRC}/*.bnf ${EXAMPLESDIR}
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
 .for i in INSTALL NEWS
