@@ -1,0 +1,33 @@
+--- plugins/saver/jpeg/Makefile.in.orig	Tue Nov  2 02:01:25 1999
++++ plugins/saver/jpeg/Makefile.in	Tue Nov  2 16:38:33 1999
+@@ -92,7 +92,7 @@
+ saver_dirs = @saver_dirs@
+ 
+ lib_LTLIBRARIES = saver_jpeg.la
+-saver_jpeg_la_LDFLAGS = -module
++saver_jpeg_la_LDFLAGS = -module -version-info 1:0:0
+ libdir = @Plugins_saver_dir@
+ LIBS = -ljpeg
+ 
+--- plugins/saver/pms/Makefile.in.orig	Tue Nov  2 02:01:25 1999
++++ plugins/saver/pms/Makefile.in	Tue Nov  2 16:38:44 1999
+@@ -92,7 +92,7 @@
+ saver_dirs = @saver_dirs@
+ 
+ lib_LTLIBRARIES = saver_pms.la
+-saver_pms_la_LDFLAGS = -module
++saver_pms_la_LDFLAGS = -module -version-info 1:0:0
+ libdir = @Plugins_saver_dir@
+ # LIBS = -lpng -lz -lm
+ 
+--- plugins/saver/png/Makefile.in.orig	Tue Nov  2 02:01:26 1999
++++ plugins/saver/png/Makefile.in	Tue Nov  2 16:38:51 1999
+@@ -92,7 +92,7 @@
+ saver_dirs = @saver_dirs@
+ 
+ lib_LTLIBRARIES = saver_png.la
+-saver_png_la_LDFLAGS = -module
++saver_png_la_LDFLAGS = -module -version-info 1:0:0
+ libdir = @Plugins_saver_dir@
+ LIBS = -lpng -lz -lm
+ 

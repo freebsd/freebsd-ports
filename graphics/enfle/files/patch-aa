@@ -1,0 +1,66 @@
+--- plugins/archiver/bz2/Makefile.in.orig	Tue Nov  2 02:01:28 1999
++++ plugins/archiver/bz2/Makefile.in	Tue Nov  2 16:36:18 1999
+@@ -92,7 +92,7 @@
+ saver_dirs = @saver_dirs@
+ 
+ lib_LTLIBRARIES = archiver_bz2.la
+-archiver_bz2_la_LDFLAGS = -module
++archiver_bz2_la_LDFLAGS = -module -version-info 1:0:0
+ libdir = @Plugins_archiver_dir@
+ LIBS = -lbz2
+ 
+--- plugins/archiver/dri/Makefile.in.orig	Tue Nov  2 02:01:29 1999
++++ plugins/archiver/dri/Makefile.in	Tue Nov  2 16:36:25 1999
+@@ -92,7 +92,7 @@
+ saver_dirs = @saver_dirs@
+ 
+ lib_LTLIBRARIES = archiver_dri.la
+-archiver_dri_la_LDFLAGS = -module
++archiver_dri_la_LDFLAGS = -module -version-info 1:0:0
+ libdir = @Plugins_archiver_dir@
+ LIBS = 
+ 
+--- plugins/archiver/gz/Makefile.in.orig	Tue Nov  2 02:01:30 1999
++++ plugins/archiver/gz/Makefile.in	Tue Nov  2 16:36:34 1999
+@@ -92,7 +92,7 @@
+ saver_dirs = @saver_dirs@
+ 
+ lib_LTLIBRARIES = archiver_gz.la
+-archiver_gz_la_LDFLAGS = -module
++archiver_gz_la_LDFLAGS = -module -version-info 1:0:0
+ libdir = @Plugins_archiver_dir@
+ LIBS = -lz
+ 
+--- plugins/archiver/misc/Makefile.in.orig	Tue Nov  2 02:01:31 1999
++++ plugins/archiver/misc/Makefile.in	Tue Nov  2 16:36:41 1999
+@@ -93,7 +93,7 @@
+ 
+ EXTRA_DIST = miscfmt.txt miscloader.sample
+ lib_LTLIBRARIES = archiver_misc.la
+-archiver_misc_la_LDFLAGS = -module
++archiver_misc_la_LDFLAGS = -module -version-info 1:0:0
+ libdir = @Plugins_archiver_dir@
+ LIBS = 
+ 
+--- plugins/archiver/pak/Makefile.in.orig	Tue Nov  2 02:01:32 1999
++++ plugins/archiver/pak/Makefile.in	Tue Nov  2 16:36:49 1999
+@@ -92,7 +92,7 @@
+ saver_dirs = @saver_dirs@
+ 
+ lib_LTLIBRARIES = archiver_pak.la
+-archiver_pak_la_LDFLAGS = -module
++archiver_pak_la_LDFLAGS = -module -version-info 1:0:0
+ libdir = @Plugins_archiver_dir@
+ LIBS = 
+ 
+--- plugins/archiver/tar/Makefile.in.orig	Tue Nov  2 02:01:33 1999
++++ plugins/archiver/tar/Makefile.in	Tue Nov  2 16:36:56 1999
+@@ -92,7 +92,7 @@
+ saver_dirs = @saver_dirs@
+ 
+ lib_LTLIBRARIES = archiver_tar.la
+-archiver_tar_la_LDFLAGS = -module
++archiver_tar_la_LDFLAGS = -module -version-info 1:0:0
+ libdir = @Plugins_archiver_dir@
+ LIBS = 
+ 
