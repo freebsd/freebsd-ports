@@ -1,5 +1,5 @@
---- Makefile.in.orig	Thu May 17 08:26:28 2001
-+++ Makefile.in	Sun Jun 17 10:52:24 2001
+--- Makefile.in.orig	Sun Oct 21 16:12:26 2001
++++ Makefile.in	Fri Dec 21 17:58:09 2001
 @@ -22,7 +22,6 @@
  ### Makefile commands
  SHELL     = /bin/sh
@@ -7,8 +7,25 @@
 -CC        = gcc 
  CFLAGS    = __CFLAGS__
  # threads
- LFLAGS    = __LFLAGS__ __LFLAGS2__
-@@ -344,13 +343,13 @@
+ LFLAGS    = __LFLAGS__ __LFLAGS2__ __LFLAGS3__
+@@ -48,7 +47,7 @@
+ MAINBIN = httrack.c
+ 
+ BOUTPUT     = httrack
+-BOUTPUTSO   = libhttrack.so
++BOUTPUTSO   = libhttrack.so.1
+ DOCS      = ../HelpHtml ../httrack ../httrack-doc.html ../COPYING ../INSTALL ../README ../*.txt
+ HTSSYSTEM = htssystem.h
+ BINPATH   = __BINPATH__
+@@ -341,6 +340,7 @@
+ 
+ build_binso : $(SOBINARIES)
+ 	$(CC) $(CFLAGS) -shared -Wl,-soname,libhttrack.so.1 -o $(BOUTPUTSO) $(SOBINARIES) -lc $(LFLAGS)
++	/bin/ln -sf $(BOUTPUTSO) libhttrack.so
+ 	$(CC) -L. -lhttrack $(MAINBIN) -o $(BOUTPUT)
+ 	chmod +x $(BOUTPUT)
+ 
+@@ -371,13 +371,13 @@
  
  # Install docs
  docinstall :

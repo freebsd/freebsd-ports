@@ -1,16 +1,16 @@
---- configure.orig	Wed May  9 21:02:23 2001
-+++ configure	Sun Jun 17 10:37:56 2001
-@@ -247,11 +247,11 @@
+--- configure.orig	Sun Dec 16 21:16:05 2001
++++ configure	Fri Dec 21 17:25:40 2001
+@@ -365,11 +365,11 @@
      SEDEXEC="$SEDEXEC | sed -e 's/__DEFINEINA__/HTS_DO_NOT_REDEFINE_in_addr_t/'"
  fi
  if test "$THREADS" = 1; then
--	SEDEXEC="$SEDEXEC | sed -e \"s/__CFLAGS__/$OTYPE $WTYPE -D_REENTRANT/g\""
+-	SEDEXEC="$SEDEXEC | sed -e \"s/__CFLAGS__/$SOTYPE $OTYPE $WTYPE -D_REENTRANT/g\""
 +	SEDEXEC="$SEDEXEC | sed -e \"s/__CFLAGS__/$CFLAGS -D_REENTRANT/g\""
  	SEDEXEC="$SEDEXEC | sed -e 's/__LFLAGS__/-lpthread/g'"
  else
  	SEDEXEC="$SEDEXEC | sed -e 's/__DEFINEPTH__/HTS_DO_NOT_USE_PTHREAD/'"
--	SEDEXEC="$SEDEXEC | sed -e \"s/__CFLAGS__/$OTYPE $WTYPE/g\""
+-	SEDEXEC="$SEDEXEC | sed -e \"s/__CFLAGS__/$SOTYPE $OTYPE $WTYPE/g\""
 +	SEDEXEC="$SEDEXEC | sed -e \"s/__CFLAGS__/$CFLAGS/g\""
  	SEDEXEC="$SEDEXEC | sed -e 's/__LFLAGS__//g'"
  fi
- if test "$SOLSOCK" = 1; then
+ if test "$ZLIB" = 1; then
