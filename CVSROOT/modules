@@ -6379,6 +6379,7 @@ pound		ports/www/pound
 povchem		ports/biology/povchem
 povray		ports/graphics/povray
 povray31	ports/graphics/povray31
+powerdns	ports/net/powerdns
 powerpak	ports/games/powerpak
 powerpc-rtems-binutils	ports/devel/powerpc-rtems-binutils
 powerpc-rtems-chill	ports/devel/powerpc-rtems-chill
