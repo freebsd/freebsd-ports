@@ -6,14 +6,13 @@
 #
 
 PORTNAME=	ndtpd
-PORTVERSION=	3.1.4
-PORTREVISION=	1
+PORTVERSION=	3.1.5
 CATEGORIES=	japanese ipv6
 MASTER_SITES=	ftp://ftp.sra.co.jp/pub/net/ndtp/ndtpd/ \
 		ftp://ftp.eos.hokudai.ac.jp/pub/net/ndtp/ndtpd/
 
 PATCH_SITES=	${MASTER_SITES}
-PATCHFILES=	${DISTNAME}+.diff
+#PATCHFILES=	${DISTNAME}+.diff
 
 MAINTAINER=	takamune@avrl.mei.co.jp
 COMMENT=	Server for accessing CD-ROM books with NDTP
