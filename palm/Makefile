@@ -1,6 +1,7 @@
 # $FreeBSD$
 #
 
+    SUBDIR += bibelot
     SUBDIR += coldsync
     SUBDIR += gnomepilot
     SUBDIR += gnomepilot-conduits
