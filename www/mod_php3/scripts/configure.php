@@ -91,7 +91,7 @@ while [ "$1" ]; do
 			fi
 			;;
 		\"IMAP\")
-			echo "LIB_DEPENDS+=	c-client4.7:\${PORTSDIR}/mail/imap-uw"
+			echo "LIB_DEPENDS+=	c-client4.7:\${PORTSDIR}/mail/cclient"
 			echo "CONFIGURE_ARGS+=--with-imap=\${PREFIX}"
 			;;
 		\"MySQL\")
