@@ -42,8 +42,8 @@
  
  
  
---- INSTALL.orig	Sun Dec  6 19:37:53 1998
-+++ INSTALL	Wed Dec  9 17:34:49 1998
+--- INSTALL.orig	Thu Jan  6 01:43:13 2000
++++ INSTALL	Sat Jan 29 12:15:28 2000
 @@ -7,7 +7,8 @@
  
  3. make installall
@@ -78,7 +78,7 @@
  
 -7. Edit /etc/inetd.conf so $(BINDIR)/leafnode is executed for incoming
 -   NNTP connections.  HUP inetd.  Here is my inetd.conf line:
-+7. Edit /etc/inetd.conf so !!PREFIX!!/sbin/leafnode is executed for
++7. Edit /etc/inetd.conf so @PREFIX@/sbin/leafnode is executed for
 +   incoming NNTP connections.  HUP inetd.  Here is my inetd.conf line:
  
 -nntp    stream  tcp     nowait  news    /usr/local/sbin/leafnode
