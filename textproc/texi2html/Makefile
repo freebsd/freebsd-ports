@@ -38,4 +38,8 @@ pre-everything::
 	@${ECHO} "the texi2html program is installed as."
 	@${ECHO} ""
 
+post-patch:
+	sleep 2
+	${TOUCH} ${WRKSRC}/translations.pl
+
 .include <bsd.port.mk>
