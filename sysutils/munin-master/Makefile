@@ -44,8 +44,6 @@ pre-install:
 	@PKG_PREFIX=${PREFIX} ${SH} pkg-install ${PKGNAME} PRE-INSTALL
 
 post-install:
-	@${INSTALL_MAN} -d ${PREFIX}/man/man5
-	@${INSTALL_MAN} -d ${PREFIX}/man/man8
 	@${INSTALL_MAN} -C ${WRKSRC}/build/doc/munin.conf.5 ${PREFIX}/man/man5
 	@${INSTALL_MAN} -C ${WRKSRC}/build/doc/munin-cron.8 ${PREFIX}/man/man8
 	@${INSTALL_MAN} -C ${WRKSRC}/build/doc/munin-graph.8 ${PREFIX}/man/man8
