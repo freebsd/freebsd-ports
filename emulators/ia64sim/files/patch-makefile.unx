@@ -1,13 +1,5 @@
-$NetBSD: patch-aa,v 1.1.1.1 1999/12/10 12:59:03 agc Exp $
-
---- makefile.unx	1999/12/10 12:46:49	1.1
-+++ makefile.unx	1999/12/10 12:47:03
-@@ -18,7 +18,7 @@
- OBJDIR = obj
- INCDIR = include
- CC = gcc
+--- makefile.unx.orig	Wed Mar  8 04:58:52 2000
++++ makefile.unx	Sat Mar 10 16:42:01 2001
+@@ -21 +21 @@
 -CFLAGS = -O3 -m486 -fomit-frame-pointer -s -I$(INCDIR)
-+CFLAGS = -O3 -fomit-frame-pointer -s -I$(INCDIR)
- 
- ASMSRCS= assemble.c bundle.c asmfunc.c jumptbl.c decode.c
-  
++CFLAGS += -fomit-frame-pointer -s -I$(INCDIR)
