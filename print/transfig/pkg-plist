@@ -4,6 +4,18 @@ bin/fig2ps2tex.sh
 bin/pic2tpic
 bin/transfig
 lib/X11/fig2dev/cs_CZ.ps
+@exec ln -sf cs_CZ.ps %D/lib/X11/fig2dev/hr_HR.ps
+@exec ln -sf cs_CZ.ps %D/lib/X11/fig2dev/hu_HU.ps
+@exec ln -sf cs_CZ.ps %D/lib/X11/fig2dev/pl_PL.ps
+@exec ln -sf cs_CZ.ps %D/lib/X11/fig2dev/ro_RO.ps
+@exec ln -sf cs_CZ.ps %D/lib/X11/fig2dev/sk_SK.ps
+@exec ln -sf cs_CZ.ps %D/lib/X11/fig2dev/sl_SI.ps
+@unexec rm -f %D/lib/X11/fig2dev/sl_SI.ps
+@unexec rm -f %D/lib/X11/fig2dev/sk_SK.ps
+@unexec rm -f %D/lib/X11/fig2dev/ro_RO.ps
+@unexec rm -f %D/lib/X11/fig2dev/pl_PL.ps
+@unexec rm -f %D/lib/X11/fig2dev/hu_HU.ps
+@unexec rm -f %D/lib/X11/fig2dev/hr_HR.ps
 lib/X11/fig2dev/japanese.ps
 @exec ln -sf japanese.ps %D/lib/X11/fig2dev/ja.ps
 @exec ln -sf japanese.ps %D/lib/X11/fig2dev/ja_JP.EUC.ps

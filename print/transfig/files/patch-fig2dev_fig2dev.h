@@ -1,14 +1,11 @@
-
-$FreeBSD$
-
---- fig2dev/fig2dev.h.orig	Thu Aug 15 21:56:05 2002
-+++ fig2dev/fig2dev.h	Thu Aug 15 21:56:40 2002
-@@ -186,7 +186,7 @@
+--- fig2dev/fig2dev.h.orig	Thu Dec 19 07:45:28 2002
++++ fig2dev/fig2dev.h	Tue Jan  7 20:08:45 2003
+@@ -210,7 +210,7 @@
  #endif /* MAXPATHLEN */
  #endif /* PATH_MAX */
  
--#ifndef __NetBSD__
-+#if !defined(__FreeBSD__) && !defined(__NetBSD__)
+-#if ( !defined(__NetBSD__) && !defined(__DARWIN__))
++#if ( !defined(__NetBSD__) && !defined(__FreeBSD__) && !defined(__DARWIN__))
  extern int		sys_nerr, errno;
  #endif
  
