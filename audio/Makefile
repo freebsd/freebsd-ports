@@ -107,5 +107,6 @@
     SUBDIR += xmpeg3
     SUBDIR += xmradio
     SUBDIR += xtuner
+    SUBDIR += yamt
 
 .include <bsd.port.subdir.mk>
