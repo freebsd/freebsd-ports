@@ -39,22 +39,20 @@ Amaya/config/XKeysymDB
 Amaya/config/amaya.keyboard
 Amaya/config/de-amayadialogue
 Amaya/config/de-amayamsg
+Amaya/config/de-corrdialogue
 Amaya/config/de-libdialogue
 Amaya/config/en-amayadialogue
 Amaya/config/en-amayamsg
 Amaya/config/en-corrdialogue
 Amaya/config/en-libdialogue
-Amaya/config/en-transdialogue
 Amaya/config/fr-amayadialogue
 Amaya/config/fr-amayamsg
 Amaya/config/fr-corrdialogue
 Amaya/config/fr-libdialogue
-Amaya/config/fr-transdialogue
 Amaya/config/tr-amayadialogue
 Amaya/config/tr-amayamsg
 Amaya/config/tr-corrdialogue
 Amaya/config/tr-libdialogue
-Amaya/config/tr-transdialogue
 Amaya/config/unix-thot.rc
 Amaya/dicopar/alphabet
 Amaya/dicopar/american.ptn
@@ -91,6 +89,7 @@ Amaya/doc/Icons/Plugin.gif
 Amaya/doc/Icons/ProfilesMenu.gif
 Amaya/doc/Icons/ProxyMenu.gif
 Amaya/doc/Icons/PublishMenu.gif
+Amaya/doc/Icons/Reload.png
 Amaya/doc/Icons/SaveAs.gif
 Amaya/doc/Icons/SourceJava.gif
 Amaya/doc/Icons/Sources.gif
@@ -119,23 +118,28 @@ Amaya/doc/Icons/ui.gif
 Amaya/doc/Icons/up.gif
 Amaya/doc/Icons/warning.gif
 Amaya/doc/Icons/w3c-amaya.gif
+Amaya/doc/amaya/Access.html
 Amaya/doc/amaya/Attributes.html
-Amaya/doc/amaya/Autoconf.html
-Amaya/doc/amaya/BinDist.html
 Amaya/doc/amaya/Browsing.html
 Amaya/doc/amaya/CSS.html
 Amaya/doc/amaya/Changing.html
 Amaya/doc/amaya/Configure.html
 Amaya/doc/amaya/Creating.html
+Amaya/doc/amaya/HTML-elements/40styling.html
+Amaya/doc/amaya/HTML-elements/address.html
+Amaya/doc/amaya/HTML-elements/headings.html
+Amaya/doc/amaya/HTML-elements/infoTypes.html
+Amaya/doc/amaya/HTML-elements/inline.html
+Amaya/doc/amaya/HTML-elements/lists.html
+Amaya/doc/amaya/HTML-elements/structure.html
+Amaya/doc/amaya/HTML.html
 Amaya/doc/amaya/ImageMaps.html
 Amaya/doc/amaya/Keyboard.html
 Amaya/doc/amaya/Links.html
 Amaya/doc/amaya/MakeBook.html
 Amaya/doc/amaya/Manual.html
 Amaya/doc/amaya/Math.html
-Amaya/doc/amaya/New.html
 Amaya/doc/amaya/Numbering.html
-Amaya/doc/amaya/Plugins.html
 Amaya/doc/amaya/Printing.html
 Amaya/doc/amaya/Publishing.html
 Amaya/doc/amaya/Put.html
@@ -159,6 +163,7 @@ Amaya/fonts/icones11.fb
 @dirrm Amaya/config
 @dirrm Amaya/dicopar
 @dirrm Amaya/doc/Icons
+@dirrm Amaya/doc/amaya/HTML-elements
 @dirrm Amaya/doc/amaya
 @dirrm Amaya/doc
 @dirrm Amaya/fonts
