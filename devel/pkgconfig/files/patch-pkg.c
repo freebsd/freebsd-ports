@@ -1,9 +1,9 @@
 
 $FreeBSD$
 
---- pkg.c.orig	Wed Jan  3 11:34:49 2001
-+++ pkg.c	Tue May 15 11:48:04 2001
-@@ -40,7 +40,7 @@
+--- pkg.c.orig	Mon May 28 16:02:53 2001
++++ pkg.c	Wed Jul 11 14:42:22 2001
+@@ -71,7 +71,7 @@
   * locations, ignoring duplicates
   */
  static void
@@ -12,19 +12,17 @@ $FreeBSD$
  {
    DIR *dir = opendir (dirname);
    struct dirent *dent;
-@@ -51,8 +51,9 @@
+@@ -82,7 +82,8 @@
  
    if (!dir)
      {
--      fprintf (stderr, "Warning: cannot open directory '%s' in package search path: %s\n",
--               dirname, g_strerror (errno));
+-      debug_spew ("Cannot open directory '%s' in package search path: %s\n",
 +      if (!quiet)
-+        fprintf (stderr, "Warning: cannot open directory '%s' in package search path: %s\n",
-+                 dirname, g_strerror (errno));
++          debug_spew ("Cannot open directory '%s' in package search path: %s\n",
+                   dirname, g_strerror (errno));
        return;
      }
- 
-@@ -96,7 +97,9 @@
+@@ -141,7 +142,9 @@
        locations = g_hash_table_new (g_str_hash, g_str_equal);
        
        g_slist_foreach (search_dirs, (GFunc)scan_dir, NULL);
