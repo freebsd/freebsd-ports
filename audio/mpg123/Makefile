@@ -7,7 +7,7 @@
 
 PORTNAME=	mpg123
 PORTVERSION=	0.59r
-PORTREVISION=	9
+PORTREVISION=	10
 CATEGORIES=	audio ipv6
 MASTER_SITES=	http://www.mpg123.de/mpg123/ \
 		http://www-ti.informatik.uni-tuebingen.de/~hippm/mpg123/
@@ -52,7 +52,7 @@ MAKE_ENV+=	USE_INET6=yes
 USE_GNOME+=	esound
 ALL_TARGET=	freebsd-esd
 PKGNAMESUFFIX=	-esound
-MAKE_ENV=	HAVE_ESOUND=yes
+MAKE_ENV+=	HAVE_ESOUND=yes
 .elif defined(HAVE_NAS)
 PKGNAMESUFFIX=	-nas
 ALL_TARGET=	freebsd-nas
