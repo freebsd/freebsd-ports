@@ -1,0 +1,6 @@
+This program implements the Eudora password changing protocol. That is the
+protocol Eudora (and other programs) try to talk when you select "Change
+Password" from their menus. It should be run from inetd(8).
+
+Andrew Stevenson
+andrew@ugh.net.au
