@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ethereal
-PORTVERSION=	0.8.16
+PORTVERSION=	0.8.19
 CATEGORIES=	net ipv6
 MASTER_SITES=	ftp://ftp.ethereal.com/pub/ethereal/ \
 		ftp://gd.tuwien.ac.at/infosys/security/ethereal/ \
@@ -15,12 +15,25 @@ MASTER_SITES=	ftp://ftp.ethereal.com/pub/ethereal/ \
 
 MAINTAINER=	billf@FreeBSD.org
 
+.if defined(WITH_SNMP)
+LIB_DEPENDS=	snmp.4:${PORTSDIR}/net/net-snmp
+.endif
+
 USE_X_PREFIX=	yes
 USE_GTK=	yes
 USE_LIBTOOL=	yes
 LIBTOOLFILES=	configure epan/configure wiretap/configure
+.if defined(WITH_SNMP)
+CONFIGURE_ARGS+=	--enable-snmp=yes
+.if exists(/usr/include/openssl/crypto.h)
+CONFIGURE_ARGS+=	--with-ssl=/usr
+.endif
+.else
 CONFIGURE_ARGS+=	--enable-snmp=no
+.endif
 PLIST_SUB=	PORTVERSION=${PORTVERSION}
+
+USE_GMAKE=	yes
 
 MAN1=		ethereal.1 tethereal.1 editcap.1
 
