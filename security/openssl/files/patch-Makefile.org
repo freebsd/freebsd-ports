@@ -1,5 +1,16 @@
 --- Makefile.org.orig	Tue Sep 28 22:52:14 2004
-+++ Makefile.org	Tue Oct 26 18:08:14 2004
++++ Makefile.org	Fri Nov  5 18:21:09 2004
+@@ -175,8 +175,8 @@
+ # we might set SHLIB_MARK to '$(SHARED_LIBS)'.
+ SHLIB_MARK=
+ 
+-DIRS=   crypto fips ssl $(SHLIB_MARK) sigs apps test tools
+-SHLIBDIRS= fips crypto ssl
++DIRS=   crypto ssl $(SHLIB_MARK) sigs apps test tools
++SHLIBDIRS= crypto ssl
+ 
+ # dirs in crypto to build
+ SDIRS=  objects \
 @@ -194,7 +194,7 @@
  
  MAKEFILE= Makefile
@@ -9,17 +20,19 @@
  MAN1=1
  MAN3=3
  MANSUFFIX=
-@@ -305,8 +305,8 @@
+@@ -305,9 +305,9 @@
  		libs="$(LIBKRB5) $$libs"; \
  	fi; \
  	( set -x; ${CC} ${SHARED_LDFLAGS} \
 -		-shared -o lib$$i.so.${SHLIB_MAJOR}.${SHLIB_MINOR} \
 -		-Wl,-soname=lib$$i.so.${SHLIB_MAJOR}.${SHLIB_MINOR} \
+-		-Wl,-Bsymbolic \
++		-nodefaultlibs \
 +		-shared -o lib$$i.so.${SHLIBVER} \
 +		-Wl,-soname=lib$$i.so.${SHLIBVER} \
- 		-Wl,-Bsymbolic \
  		-Wl,--whole-archive lib$$i.a \
  		-Wl,--no-whole-archive $$libs ${EX_LIBS} -lc ) || exit 1; \
+ 	libs="-l$$i $$libs"; \
 @@ -795,7 +795,7 @@
  install_sw:
  	@$(PERL) $(TOP)/util/mkdir-p.pl $(INSTALL_PREFIX)$(INSTALLTOP)/bin \
