@@ -1,0 +1,15 @@
+*** lib/printer~	Sun Jan 25 17:27:33 1998
+--- lib/printer	Mon Jan 26 23:21:33 1998
+***************
+*** 13,17 ****
+  #
+  # Sample Entries :
+  #
+! # ps		#	Monochrome 
+  # color		#	Full Color
+--- 13,17 ----
+  #
+  # Sample Entries :
+  #
+! ps		#	Monochrome 
+  # color		#	Full Color
