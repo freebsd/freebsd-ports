@@ -8,6 +8,7 @@
 PORTNAME=	sdl
 PORTVERSION=	1.2.5
 PORTREVISION=	3
+PORTEPOCH=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://www.libsdl.org/release/
 DISTNAME=	SDL-${PORTVERSION}
@@ -74,7 +75,7 @@ LIB_DEPENDS+=	vga.1:${PORTSDIR}/graphics/svgalib
 CONFIGURE_ARGS+=--enable-video-svga
 .endif
 
-.if exists(${LOCALBASE}/bin/artsc-config) || defined(WITH_ARTS)
+.if (exists(${LOCALBASE}/bin/artsc-config) || defined(WITH_ARTS)) && !defined(WITHOUT_ARTS)
 LIB_DEPENDS+=	artsc.0:${PORTSDIR}/audio/arts
 CONFIGURE_ARGS+=--enable-arts
 .else
