@@ -3067,6 +3067,7 @@ ipex		ports/net/ipex
 ipfm		ports/net/ipfm
 ipfmeta		ports/security/ipfmeta
 ipfw-graph	ports/net/ipfw-graph
+ipgrab		ports/net/ipgrab
 iplog		ports/net/iplog
 ipsc		ports/sysutils/ipsc
 ipsorc		ports/net/ipsorc
