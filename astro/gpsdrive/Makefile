@@ -6,27 +6,30 @@
 #
 
 PORTNAME=	gpsdrive
-PORTVERSION=	1.33
-PORTREVISION=	1
+PORTVERSION=	2.07.r7
 CATEGORIES=	astro
 MASTER_SITES=	http://gpsdrive.kraftvoll.at/     \
-		http://gpsdrive.dotdeguy.de/      \
-		http://gpsdrive.spoiledmeat.net/  \
-		http://gpsdrive.flugfunk.de/      \
-		http://gpsdrive.alumnosfdi.org/   \
-		http://gpsdrive.teachlinux.com/
+		http://www.gpsdrive.cc/           \
+		http://www.kraftvoll.at/          \
+		http://www.ganter.at/             \
+		http://www.gpsdrive.de/           \
+		http://gpsdrive.teachlinux.com/   \
+		http://gpsdrive.flugfunk.de/
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/.r/pre/}
 
 MAINTAINER=	molter@gufi.org
 COMMENT=	A GPS navigation system
 
 LIB_DEPENDS=	intl.5:${PORTSDIR}/devel/gettext
+LIB_DEPENDS=	pcre.0:${PORTSDIR}/devel/pcre
 
 USE_GETOPT_LONG=yes
 USE_PERL5=	yes
 USE_GMAKE=	yes
-USE_GNOME=	gdkpixbuf
+USE_X_PREFIX=	yes
+USE_GNOME=	gtk20
 USE_LIBTOOL=	yes
+USE_GCC=	3.2
 CONFIGURE_ENV=	CPPFLAGS=-I${LOCALBASE}/include \
 		LDFLAGS=-L${LOCALBASE}/lib
 CONFIGURE_ARGS=	--disable-garmin --disable-mysql
