@@ -45,7 +45,7 @@ diff -ur --unidirectional-new-file skipsrc-1.0.orig/doc/README.FreeBSD skipsrc-1
 +  You may want to redirect this output to its own log file.
 +  This is done by the following steps:
 +
-+    1. touch /var/log/skipd
++    1. touch /var/log/skipd.log
 +    2. Edit /etc/syslog.conf and add these lines at the end:
 +
 +       !skipd
