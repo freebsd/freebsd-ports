@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Net_URL
-PORTVERSION=	1.0.12
+PORTVERSION=	1.0.13
 CATEGORIES=	net www pear
 
 MAINTAINER=	ports@FreeBSD.org
