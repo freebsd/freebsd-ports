@@ -1,6 +1,6 @@
 # New ports collection makefile for:	pbm2ppa
 # Date created:		18 November 1998
-# Whom:			ports@freebsd.org
+# Whom:			smace@freebsd.org
 #
 # $FreeBSD$
 #
