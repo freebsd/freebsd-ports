@@ -3,17 +3,18 @@
 # Date created:         Sat Nov  5 01:16:33 PST 1994
 # Whom:                 hsu
 #
-# $Id: Makefile,v 1.2 1994/11/22 09:16:22 hsu Exp $
+# $Id: Makefile,v 1.3 1995/04/01 12:44:42 jkh Exp $
 #
 
 DISTNAME=       mprof-3.0
-MASTER_SITES=   ftp://cs.colorado.edu/pub/misc/
 CATEGORIES+=	development programming
+MASTER_SITES=   ftp://cs.colorado.edu/pub/misc/
 EXTRACT_SUFX=	.tar.Z
+
 WRKSRC=		${WRKDIR}
 MAKEFILE=	Makefile.i386
 
-install:
+install: build
 	@if [ ! -e ${PREFIX}/bin ]; then mkdir -p ${PREFIX}/bin; fi
 	@if [ ! -e ${PREFIX}/lib ]; then mkdir -p ${PREFIX}/lib; fi
 	@if [ ! -e ${PREFIX}/man/man1 ]; then mkdir -p ${PREFIX}/man/man1; fi
