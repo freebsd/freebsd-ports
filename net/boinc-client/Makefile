@@ -7,6 +7,7 @@
 
 PORTNAME=	boinc-client
 PORTVERSION=	4.13
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	http://boinc.berkeley.edu/source/nightly/
 DISTNAME=	boinc_public-cvs-2004-10-14
@@ -17,7 +18,7 @@ COMMENT=	Berkeley Open Infrastructure for Network Computing client
 USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-server
-CONFIGURE_ENV=	CPPFLAGS=-I/usr/X11R6/include CXXFLAGS=-I/usr/X11R6/include
+CONFIGURE_ENV=	CPPFLAGS=-I${X11BASE}/include CXXFLAGS=-I${X11BASE}/include
 
 WRKSRC=		${WRKDIR}/boinc_public
 PKGINSTALL=	${WRKDIR}/pkg-install
@@ -25,7 +26,7 @@ PKGPLIST=	${WRKDIR}/pkg-plist
 
 MAN1=		boinc-client.1
 
-FIND_BOINC_BINARY=(cd ${WRKDIR}/boinc_public/client; make -V CLIENT_BIN_FILENAME))
+FIND_BOINC_BINARY=(cd ${WRKDIR}/boinc_public/client; make -V CLIENT_BIN_FILENAME)
 
 BOINC_USER=	boinc
 BOINC_GROUP=	nobody
@@ -34,8 +35,8 @@ BOINC_DATADIR=	${PREFIX}/boinc
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} != "i386"
-BROKEN=		Does not compile on 64-bit architectures
+.if ${OSVERSION} < 500000
+EXTRA_PATCHES+=	${FILESDIR}/extra-patch-api::boinc_api.C
 .endif
 
 post-patch:
@@ -61,17 +62,28 @@ post-build:
 		-e "s:%%BOINC_GROUP%%:${BOINC_GROUP}:g" \
 		< ${FILESDIR}/boinc-client.1 > ${WRKDIR}/boinc-client.1; \
 	${SED}  -e "s:%%BOINC_BINARY%%:$$BBIN:g" \
-		-e "s:%%BOINC_DATADIR%%:${BOINC_DATADIR}:g" \
-		-e "s:%%BOINC_HOME%%:${BOINC_HOME}:g" \
-		-e "s:%%BOINC_USER%%:${BOINC_USER}:g" \
-		-e "s:%%BOINC_GROUP%%:${BOINC_GROUP}:g" \
-		< ${FILESDIR}/boinc.sh > ${WRKDIR}/boinc.sh
-	${SED}  -e "s:%%BOINC_BINARY%%:$$BBIN:g" \
 		-e "s:%%BOINC_DATADIR%%:${PREFIX}/boinc:g" \
 		-e "s:%%BOINC_HOME%%:${BOINC_HOME}:g" \
 		-e "s:%%BOINC_USER%%:${BOINC_USER}:g" \
 		-e "s:%%BOINC_GROUP%%:${BOINC_GROUP}:g" \
 		< ${PKGDIR}/pkg-install > ${WRKDIR}/pkg-install
+.if ${OSVERSION} >= 500000
+	BBIN=`${FIND_BOINC_BINARY}`; \
+	${SED}  -e "s:%%BOINC_BINARY%%:$$BBIN:g" \
+		-e "s:%%BOINC_DATADIR%%:${BOINC_DATADIR}:g" \
+		-e "s:%%BOINC_HOME%%:${BOINC_HOME}:g" \
+		-e "s:%%BOINC_USER%%:${BOINC_USER}:g" \
+		-e "s:%%BOINC_GROUP%%:${BOINC_GROUP}:g" \
+		< ${FILESDIR}/boinc.sh > ${WRKDIR}/boinc.sh
+.else
+	BBIN=`${FIND_BOINC_BINARY}`; \
+	${SED}  -e "s:%%BOINC_BINARY%%:$$BBIN:g" \
+		-e "s:%%BOINC_DATADIR%%:${BOINC_DATADIR}:g" \
+		-e "s:%%BOINC_HOME%%:${BOINC_HOME}:g" \
+		-e "s:%%BOINC_USER%%:${BOINC_USER}:g" \
+		-e "s:%%BOINC_GROUP%%:${BOINC_GROUP}:g" \
+		< ${FILESDIR}/boinc.sh-4.x > ${WRKDIR}/boinc.sh
+.endif
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKDIR}/boinc-client ${PREFIX}/bin
@@ -90,7 +102,7 @@ do-install:
 	${MKDIR} ${PREFIX}/boinc/projects
 	${MKDIR} ${PREFIX}/etc/rc.d
 	${INSTALL_SCRIPT} ${WRKDIR}/boinc.sh ${PREFIX}/etc/rc.d
-	${CAT} pkg-message
+	${CAT} ${PKGMESSAGE}
 
 post-install:
 	${REINPLACE_CMD} \
