@@ -1,0 +1,14 @@
+*** libhtmlw/HTML-PSformat.c~	Wed Sep 14 19:53:22 1994
+--- libhtmlw/HTML-PSformat.c	Tue Oct 18 14:41:47 1994
+***************
+*** 47,53 ****
+--- 47,55 ----
+  #include <stdio.h>
+  #include <ctype.h>
+  #include <math.h>
++ #ifndef __FreeBSD__
+  #include <malloc.h>
++ #endif
+  #include "HTMLP.h"
+  
+  /* Fix thanks to robm. */
