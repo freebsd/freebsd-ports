@@ -6766,6 +6766,7 @@ pinentry	ports/security/pinentry
 pinfo		ports/misc/pinfo
 pinstall	ports/devel/pinstall
 pipebench	ports/benchmarks/pipebench
+pipemeter	ports/sysutils/pipemeter
 pipenightdreams	ports/games/pipenightdreams
 pips2200	ports/print/pips2200
 pips3000	ports/print/pips3000
