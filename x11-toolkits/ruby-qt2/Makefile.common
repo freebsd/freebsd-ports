@@ -2,6 +2,7 @@
 
 RUBY_QT2_VERSION=	0.12
 RUBY_QT2_PORTVERSION=	${RUBY_QT2_VERSION}
+RUBY_QT2_PORTREVISION=	2
 RUBY_QT2_MASTER_SITES=	http://sfns.u-shizuoka-ken.ac.jp/geneng/horie_hp/ruby/
 RUBY_QT2_DISTNAME=	ruby-qt2-${RUBY_QT2_VERSION}
 
@@ -14,7 +15,7 @@ RUBY_QT2_CONFIGURE_ARGS= \
 			--with-x11-dir=${X11BASE}
 .if ${OSVERSION} >= 500018
 RUBY_QT2_CONFIGURE_ARGS+= \
-			--with-ldflags=-lc_r \
+			--with-ldflags="${PTHREAD_LIBS}" \
 			--with-qt2=qt2-mt
 .else
 .if ${PORTNAME} == qt2gl
