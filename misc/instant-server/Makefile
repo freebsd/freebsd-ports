@@ -14,7 +14,7 @@ MASTER_SITE_SUBDIR=	pub/instant-server
 MAINTAINER=	grog@lemis.com
 
 RUN_DEPENDS=	${LOCALBASE}/sbin/postfix:${PORTSDIR}/mail/postfix \
-		cvsupd-bin:${PORTSDIR}/net/cvsupd-bin \
+		cvsupd:${PORTSDIR}/net/cvsupd-bin \
 		isc-dhcp3:${PORTSDIR}/net/isc-dhcp3 \
 		samba:${PORTSDIR}/net/samba \
 		traceroute:${PORTSDIR}/net/traceroute \
