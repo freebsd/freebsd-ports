@@ -1,3 +1,3 @@
 sbin/tircproxy
-share/doc/tircproxy/README
-@dirrm share/doc/tircproxy
+%%PORTDOCS%%share/doc/tircproxy/README
+%%PORTDOCS%%@dirrm share/doc/tircproxy
