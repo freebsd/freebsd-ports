@@ -1191,3 +1191,4 @@ net/gnomenetwork|net/gnomenettool|2004-07-05|gnomenettool replaces the unmaintai
 misc/cfe||2004-07-06|no longer exists
 devel/p5-WWW-Mechanize-FormFiller|www/p5-WWW-Mechanize-FormFiller|2004-07-09|moved to correct category (www)
 editors/moleskine||2004-07-09|project officially dead for last 1.5 years
+mail/sendmail-old|mail/sendmail811|2004-07-17|renamed
