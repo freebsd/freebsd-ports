@@ -1,0 +1,7 @@
+@comment $NetBSD: PLIST,v 1.1.1.1 2000/06/05 12:01:25 rh Exp $
+bin/uvscan
+libexec/uvscan/uvscan
+libexec/uvscan/license.dat
+libexec/uvscan/messages.dat
+share/doc/uvscan/unx47uag.pdf
+share/doc/uvscan/license.txt
