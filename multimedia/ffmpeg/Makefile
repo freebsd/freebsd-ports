@@ -15,6 +15,10 @@ MASTER_SITE_SUBDIR=	ffmpeg
 MAINTAINER=	lioux@FreeBSD.org
 COMMENT=	Hyper fast realtime audio/video encoder/converter, streaming server
 
+BROKEN=		"Does not compile"
+DEPRECATED=	${BROKEN}
+EXPIRATION_DATE=2004-04-21
+
 USE_GETOPT_LONG=	yes
 HAS_CONFIGURE=	yes
 USE_GMAKE=	yes
@@ -198,10 +202,6 @@ pre-everything::
 	@${ECHO_MSG}
 .endif
 .endif # ${ARCH} == i386
-
-.if ${OSVERSION} > 502000
-BROKEN=		"Does not compile"
-.endif
 
 post-extract:
 .if ${ARCH} == "i386"
