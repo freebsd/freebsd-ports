@@ -29,7 +29,6 @@ share/buildtool-0/licenses/apache
 share/buildtool-0/licenses/artistic
 share/buildtool-0/licenses/bsd
 share/buildtool-0/licenses/gplv2
-@dirrm etc/buildtool
 @dirrm libexec/buildtool-0
 @dirrm share/buildtool-0/bt_config
 @dirrm share/buildtool-0/mk
