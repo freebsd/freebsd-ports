@@ -13,9 +13,9 @@ MASTER_SITES=	ftp://ftp.tu-chemnitz.de/pub/Local/urz/web500gw/ \
 		ftp://ftp.ntua.gr/pub/net/ldap/web500gw/ \
 		ftp://ftp.imms.de/pub/unix/networking/ldap/
 
-MAINTAINER=	karl.dietz@triplan.com
+MAINTAINER=	Karl.Dietz@frankfurt.netsurf.de
 
-BUILD_DEPENDS=	${PREFIX}/lib/libldap.a:${PORTSDIR}/net/openldap
+BUILD_DEPENDS=	${LOCALBASE}/lib/libldap.a:${PORTSDIR}/net/openldap
 
 INSTDIR=	${PREFIX}/bin
 
