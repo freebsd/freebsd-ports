@@ -6,7 +6,7 @@
 #
 
 PORTNAME?=	postgresql
-PORTVERSION?=	7.2.4
+PORTVERSION?=	7.2.5
 PORTREVISION=	3
 CATEGORIES?=	databases
 MASTER_SITES=	${MASTER_SITE_PGSQL}
@@ -56,7 +56,7 @@ PLIST_SUB+=	GETTEXT="@comment "
 
 .if !defined(WITHOUT_SSL)
 USE_OPENSSL=	yes
-CONFIGURE_ARGS+= "--with-openssl=${OPENSSLBASE}"
+CONFIGURE_ARGS+=	"--with-openssl=${OPENSSLBASE}"
 .endif
 
 MAN1=		createdb.1 createlang.1 createuser.1 dropdb.1 droplang.1 \
