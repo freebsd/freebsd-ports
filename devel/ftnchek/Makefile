@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	ftnchek
-PORTVERSION=	3.0.4
+PORTVERSION=	3.1.1
 CATEGORIES=	devel
 MASTER_SITES=	ftp://ftp.netlib.org/fortran/
 DISTFILES=	${PORTNAME}.tgz
