@@ -1,30 +1,26 @@
 # New ports collection makefile for:	ja-mutt
-# Date created:		5 Sep 1999
+# Date created:		4 Sep 2000
 # Whom:			IWASHITA Yoji <shuna@pop16.odn.ne.jp>
 #
 # $FreeBSD$
 #
 
 PORTNAME=	mutt
-PORTVERSION=	${VERSION}.j${JP_VERSION}
+PORTVERSION=	${VERSION}.j${JP_VERSION}.b${JP_SUBVERSION}
 CATEGORIES=	japanese mail
-MASTER_SITES=	ftp://ftp.mutt.org/pub/mutt/ \
-		ftp://ftp.gbnet.net/pub/mutt-international/ \
-		ftp://ftp.guug.de/pub/mutt/ \
-		ftp://ftp.guug.de/pub/mutt/historic/ \
-		http://www.hiei.kit.ac.jp/~hitomi/mutt/
+MASTER_SITES=	http://www.ne.jp/asahi/cyber/taki/unix-mailer/mutt-dev/ \
+		http://www.hiei.kit.ac.jp/~hitomi/mutt/ \
+		ftp://ftp.mutt.org/pub/mutt/devel/ \
+		http://www2.odn.ne.jp/~aab27060/ports/distfiles/
 DISTNAME=	${PORTNAME}-${VERSION}i
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
-		manual_ja-${VERSION:R}i-1.tar.gz
-
-PATCH_SITES=	http://www.geocities.co.jp/SiliconValley-PaloAlto/2594/ \
-		http://www2.odn.ne.jp/~aab27060/ports/distfiles/
-PATCHFILES=	${DISTNAME}-jp${JP_VERSION}-diff.gz
-PATCH_DIST_STRIP=	-p1
+		${DISTNAME}-ja${JP_VERSION}-beta${JP_SUBVERSION}${EXTRACT_SUFX} \
+		manual_ja-${PRE_VERSION}i-1${EXTRACT_SUFX}
 
 MAINTAINER=	shuna@pop16.odn.ne.jp
 
-LIB_DEPENDS=	slang.2:${PORTSDIR}/japanese/libslang
+LIB_DEPENDS=	slang.2:${PORTSDIR}/japanese/libslang \
+		giconv.2:${PORTSDIR}/converters/libiconv
 .if !defined(WITH_GETTEXT)
 LIB_DEPENDS+=	intl.1:${PORTSDIR}/devel/gettext
 .endif
@@ -33,16 +29,21 @@ BUILD_DEPENDS=	${LOCALBASE}/bin/msgfmt:${PORTSDIR}/devel/gettext
 .endif
 RUN_DEPENDS=	urlview:${PORTSDIR}/textproc/urlview
 
-VERSION=	1.2.5
+PRE_VERSION=	1.2
+VERSION=	1.3.9
 JP_VERSION=	0
+JP_SUBVERSION=	0
 
 DIST_SUBDIR=	mutt
+NO_LATEST_LINK=	yes
 USE_GMAKE=	yes
 USE_AUTOMAKE=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}-${VERSION}
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LIBS="-L${LOCALBASE}/lib"
 CONFIGURE_ARGS=	--with-slang --enable-locales-fix \
+		--with-iconv=${PREFIX} \
+		--without-wc-funcs \
 		--enable-flock --disable-fcntl \
 		--sysconfdir=${PREFIX}/etc \
 		--with-docdir=${PREFIX}/share/doc/mutt \
@@ -50,16 +51,27 @@ CONFIGURE_ARGS=	--with-slang --enable-locales-fix \
 .if defined(WITH_GETTEXT)
 CONFIGURE_ARGS+=	--with-included-gettext
 .endif
-MAN1=		mutt.1 mutt_dotlock.1
-MAN5=		muttrc.5
+MAN1=		mutt.1 muttbug.1 mutt_dotlock.1
+MAN5=		muttrc.5 mbox.5
+
+DIFFDIR=	${WRKDIR}/${DISTNAME}-ja${JP_VERSION}-beta${JP_SUBVERSION}
+DIFFNAME=	${DISTNAME}-ja${JP_VERSION}-beta${JP_SUBVERSION}.diff
+DOCDIR=		${PREFIX}/share/doc/mutt
+
+pre-patch:
+	(cd ${WRKSRC}; ${PATCH} -p1 < ${DIFFDIR}/${DIFFNAME})
 
 pre-configure:
 	(cd ${WRKSRC}; aclocal -I m4)
 
 post-install:
-	${INSTALL_DATA} ${WRKDIR}/manual_ja.txt ${PREFIX}/share/doc/mutt
-	${INSTALL_DATA} ${WRKDIR}/manual_ja.tex ${PREFIX}/share/doc/mutt
-	${INSTALL_DATA} ${WRKDIR}/manual_ja.html ${PREFIX}/share/doc/mutt
-	${INSTALL_DATA} ${WRKDIR}/manual_ja.sgml ${PREFIX}/share/doc/mutt
+	${INSTALL_DATA} ${DIFFDIR}/README.JA-PATCH ${DOCDIR}
+	${INSTALL_DATA} ${DIFFDIR}/manual-ja-patch.txt ${DOCDIR}
+	${INSTALL_DATA} ${DIFFDIR}/sample.muttrc-tt ${DOCDIR}
+	${INSTALL_DATA} ${DIFFDIR}/usage-japanese.txt ${DOCDIR}
+	${INSTALL_DATA} ${WRKDIR}/manual_ja.txt ${DOCDIR}
+	${INSTALL_DATA} ${WRKDIR}/manual_ja.tex ${DOCDIR}
+	${INSTALL_DATA} ${WRKDIR}/manual_ja.html ${DOCDIR}
+	${INSTALL_DATA} ${WRKDIR}/manual_ja.sgml ${DOCDIR}
 
 .include <bsd.port.mk>

@@ -39,6 +39,10 @@ share/doc/mutt/TODO
 share/doc/mutt/applying-patches.txt
 share/doc/mutt/devel-notes.txt
 share/doc/mutt/manual.txt
+share/doc/mutt/README.JA-PATCH
+share/doc/mutt/manual-ja-patch.txt
+share/doc/mutt/sample.muttrc-tt
+share/doc/mutt/usage-japanese.txt
 share/doc/mutt/manual_ja.html
 share/doc/mutt/manual_ja.sgml
 share/doc/mutt/manual_ja.tex
@@ -54,7 +58,6 @@ share/locale/fr/LC_MESSAGES/mutt.mo
 share/locale/gl/LC_MESSAGES/mutt.mo
 share/locale/id/LC_MESSAGES/mutt.mo
 share/locale/it/LC_MESSAGES/mutt.mo
-share/locale/ja/LC_MESSAGES/mutt.mo
 share/locale/ko/LC_MESSAGES/mutt.mo
 share/locale/nl/LC_MESSAGES/mutt.mo
 share/locale/pl/LC_MESSAGES/mutt.mo
@@ -63,6 +66,7 @@ share/locale/ru/LC_MESSAGES/mutt.mo
 share/locale/sk/LC_MESSAGES/mutt.mo
 share/locale/sv/LC_MESSAGES/mutt.mo
 share/locale/uk/LC_MESSAGES/mutt.mo
+share/locale/zh_CN.GB2312/LC_MESSAGES/mutt.mo
 share/locale/zh_TW.Big5/LC_MESSAGES/mutt.mo
 @unexec rmdir %D/share/locale/cs/LC_MESSAGES 2>/dev/null || true
 @unexec rmdir %D/share/locale/da/LC_MESSAGES 2>/dev/null || true
@@ -74,7 +78,6 @@ share/locale/zh_TW.Big5/LC_MESSAGES/mutt.mo
 @unexec rmdir %D/share/locale/gl/LC_MESSAGES 2>/dev/null || true
 @unexec rmdir %D/share/locale/id/LC_MESSAGES 2>/dev/null || true
 @unexec rmdir %D/share/locale/it/LC_MESSAGES 2>/dev/null || true
-@unexec rmdir %D/share/locale/ja/LC_MESSAGES 2>/dev/null || true
 @unexec rmdir %D/share/locale/ko/LC_MESSAGES 2>/dev/null || true
 @unexec rmdir %D/share/locale/nl/LC_MESSAGES 2>/dev/null || true
 @unexec rmdir %D/share/locale/pl/LC_MESSAGES 2>/dev/null || true
@@ -83,6 +86,7 @@ share/locale/zh_TW.Big5/LC_MESSAGES/mutt.mo
 @unexec rmdir %D/share/locale/sk/LC_MESSAGES 2>/dev/null || true
 @unexec rmdir %D/share/locale/sv/LC_MESSAGES 2>/dev/null || true
 @unexec rmdir %D/share/locale/uk/LC_MESSAGES 2>/dev/null || true
+@unexec rmdir %D/share/locale/zh_CN.GB2312/LC_MESSAGES 2>/dev/null || true
 @unexec rmdir %D/share/locale/zh_TW.Big5/LC_MESSAGES 2>/dev/null || true
 @unexec rmdir %D/share/locale/cs 2>/dev/null || true
 @unexec rmdir %D/share/locale/da 2>/dev/null || true
@@ -94,7 +98,6 @@ share/locale/zh_TW.Big5/LC_MESSAGES/mutt.mo
 @unexec rmdir %D/share/locale/gl 2>/dev/null || true
 @unexec rmdir %D/share/locale/id 2>/dev/null || true
 @unexec rmdir %D/share/locale/it 2>/dev/null || true
-@unexec rmdir %D/share/locale/ja 2>/dev/null || true
 @unexec rmdir %D/share/locale/ko 2>/dev/null || true
 @unexec rmdir %D/share/locale/nl 2>/dev/null || true
 @unexec rmdir %D/share/locale/pl 2>/dev/null || true
@@ -103,5 +106,6 @@ share/locale/zh_TW.Big5/LC_MESSAGES/mutt.mo
 @unexec rmdir %D/share/locale/sk 2>/dev/null || true
 @unexec rmdir %D/share/locale/sv 2>/dev/null || true
 @unexec rmdir %D/share/locale/uk 2>/dev/null || true
+@unexec rmdir %D/share/locale/zh_CN.GB2312 2>/dev/null || true
 @unexec rmdir %D/share/locale/zh_TW.Big5 2>/dev/null || true
 @unexec rmdir %D/share/locale 2>/dev/null || true
