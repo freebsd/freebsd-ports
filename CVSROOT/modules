@@ -4855,6 +4855,7 @@ libpixman	ports/graphics/libpixman
 libprelude	ports/security/libprelude
 libpreps	ports/devel/libpreps
 libpreps-devel	ports/devel/libpreps-devel
+libpri		ports/misc/libpri
 libpst		ports/mail/libpst
 libqglviewer	ports/graphics/libqglviewer
 libquicktime	ports/multimedia/libquicktime
