@@ -105,12 +105,6 @@ PLIST_SUB+=	THREADS="@comment "
 SHARED_MODULES+= ssl
 CONFIGURE_ARGS+= --with-ssl=${OPENSSLBASE}
 PLIST_SUB+=	MODSSL=""
-_SSLBUGGY!=	${OPENSSLBASE}/bin/openssl version | \
-		${EGREP} "OpenSSL ([1-9]+)|([0\.9\.[6-9][e-z])|(0\.[1-9][0-9]+)" \
-		|| ${TRUE}
-.if empty(_SSLBUGGY)
-IGNORE=		"requires OpenSSL 0.9.6e or higher. Upgrade your base system"
-.endif
 RC_SUB+=	-e 's,@@SSL@@,ssl,g'
 .else
 PLIST_SUB+=	MODSSL="@comment "
