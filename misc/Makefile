@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.123 1997/12/15 08:47:22 tg Exp $
+# $Id: Makefile,v 1.124 1997/12/25 10:56:18 itojun Exp $
 #
 
     SUBDIR += acron
@@ -32,6 +32,7 @@
     SUBDIR += mmv
     SUBDIR += most
     SUBDIR += mshell
+    SUBDIR += na-zipcodes
     SUBDIR += nwrite
     SUBDIR += p5-Array-PrintCols
     SUBDIR += p5-Business-CreditCard
