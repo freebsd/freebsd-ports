@@ -8,33 +8,27 @@
 
 PORTNAME=	fastdep
 PORTVERSION=	0.15
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://www.irule.be/bvh/c++/fastdep/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	sergei@kolobov.com
 COMMENT=	Fast dependency generator for C/C++ files
 
-LIB_DEPENDS=	gnugetopt.1:${PORTSDIR}/devel/libgnugetopt
-
-USE_REINPLACE=	yes
 USE_GMAKE=	yes
+USE_GETOPT_LONG= 	yes
 HAS_CONFIGURE=	yes
-MAKE_ENV=	CXX="${CXX} -I${LOCALBASE}/include -DHAVE_DECL_GETOPT=1" \
-		CXXFLAGS="${CXXFLAGS}"
+CONFIGURE_ARGS= --disable-local-gnugetopt
+MAKE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 
-post-patch:
-.for file in Makefile config/link.mk build/dependencies.mk
-	@${REINPLACE_CMD} -e 's|g++|\$$\(CXX\)|g ; \
-		 s|[\$$][(]CFLAGS[)]||g ; \
-		 s|\. -l|\$$\{LOCALBASE\}/lib -l|g' ${WRKSRC}/${file}
-.endfor
-	@${REINPLACE_CMD} -e 's|PREFIX=|PREFIX?=|g' ${WRKSRC}/Makefile.options
+DOCS=		AUTHORS CHANGELOG INSTALL README \
+		doc/fastdep.html doc/fastdep.pdf doc/c*.htm
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/fastdep ${PREFIX}/bin
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/doc/*.* ${DOCSDIR}
+	cd ${WRKSRC} && ${INSTALL_DATA} ${DOCS} ${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>
