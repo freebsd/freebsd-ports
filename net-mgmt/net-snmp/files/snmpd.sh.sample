@@ -11,8 +11,8 @@
 # snmpd_enable="YES"
 #
 
-snmpd_enable="NO"
-snmpd_flags="-p /var/run/snmpd.pid"
+snmpd_enable=${snmpd_enable-"NO"}
+snmpd_flags=${snmpd_flags-"-p /var/run/snmpd.pid"}
 
 . %%RC_SUBR%%
 
