@@ -25,6 +25,7 @@ MAINTAINER=	danfe@regency.nsu.ru
 COMMENT=	Cleaned up copy of the original Quake II source code
 
 USE_GMAKE=	yes
+USE_REINPLACE=	yes
 
 .include <bsd.port.pre.mk>
 
@@ -240,6 +241,9 @@ pre-everything::
 
 TGTDIR=		${WRKSRC}/release${ARCH}
 
+post-patch:
+	@${REINPLACE_CMD} -e 's|%%%%BASEDIR%%%%|${DATADIR}|' ${WRKSRC}/src/qcommon/files.c
+
 do-build:
 	@(cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${GMAKE} \
 	${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} build_release)
@@ -274,6 +278,6 @@ do-install:
 .endif
 
 post-install:
-	@${SED} -e 's#$${PREFIX}#${PREFIX}#g' ${PKGMESSAGE}
+	@${SED} -e 's|$${DATADIR}|${DATADIR}|g' ${PKGMESSAGE}
 
 .include <bsd.port.post.mk>
