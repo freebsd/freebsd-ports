@@ -18,6 +18,20 @@ share/doc/HTML/da/kdiff3/screenshot_diff.png
 share/doc/HTML/da/kdiff3/screenshot_merge.png
 share/doc/HTML/da/kdiff3/triple_diff.png
 share/doc/HTML/da/kdiff3/white_space.png
+share/doc/HTML/de/kdiff3/common
+share/doc/HTML/de/kdiff3/dirbrowser.png
+share/doc/HTML/de/kdiff3/dirmergebig.png
+share/doc/HTML/de/kdiff3/index.cache.bz2
+share/doc/HTML/de/kdiff3/index.docbook
+share/doc/HTML/de/kdiff3/iteminfo.png
+share/doc/HTML/de/kdiff3/letter_by_letter.png
+share/doc/HTML/de/kdiff3/merge_current.png
+share/doc/HTML/de/kdiff3/new.png
+share/doc/HTML/de/kdiff3/open_dialog.png
+share/doc/HTML/de/kdiff3/screenshot_diff.png
+share/doc/HTML/de/kdiff3/screenshot_merge.png
+share/doc/HTML/de/kdiff3/triple_diff.png
+share/doc/HTML/de/kdiff3/white_space.png
 share/doc/HTML/en/kdiff3/common
 share/doc/HTML/en/kdiff3/compilation.html
 share/doc/HTML/en/kdiff3/credits.html
@@ -75,6 +89,20 @@ share/doc/HTML/et/kdiff3/screenshot_diff.png
 share/doc/HTML/et/kdiff3/screenshot_merge.png
 share/doc/HTML/et/kdiff3/triple_diff.png
 share/doc/HTML/et/kdiff3/white_space.png
+share/doc/HTML/fr/kdiff3/common
+share/doc/HTML/fr/kdiff3/dirbrowser.png
+share/doc/HTML/fr/kdiff3/dirmergebig.png
+share/doc/HTML/fr/kdiff3/index.cache.bz2
+share/doc/HTML/fr/kdiff3/index.docbook
+share/doc/HTML/fr/kdiff3/iteminfo.png
+share/doc/HTML/fr/kdiff3/letter_by_letter.png
+share/doc/HTML/fr/kdiff3/merge_current.png
+share/doc/HTML/fr/kdiff3/new.png
+share/doc/HTML/fr/kdiff3/open_dialog.png
+share/doc/HTML/fr/kdiff3/screenshot_diff.png
+share/doc/HTML/fr/kdiff3/screenshot_merge.png
+share/doc/HTML/fr/kdiff3/triple_diff.png
+share/doc/HTML/fr/kdiff3/white_space.png
 share/doc/HTML/it/kdiff3/common
 share/doc/HTML/it/kdiff3/dirbrowser.png
 share/doc/HTML/it/kdiff3/dirmergebig.png
@@ -90,6 +118,20 @@ share/doc/HTML/it/kdiff3/screenshot_merge.png
 share/doc/HTML/it/kdiff3/triple_diff.png
 share/doc/HTML/it/kdiff3/white_space.png
 share/doc/HTML/kdiff3/README
+share/doc/HTML/pt/kdiff3/common
+share/doc/HTML/pt/kdiff3/dirbrowser.png
+share/doc/HTML/pt/kdiff3/dirmergebig.png
+share/doc/HTML/pt/kdiff3/index.cache.bz2
+share/doc/HTML/pt/kdiff3/index.docbook
+share/doc/HTML/pt/kdiff3/iteminfo.png
+share/doc/HTML/pt/kdiff3/letter_by_letter.png
+share/doc/HTML/pt/kdiff3/merge_current.png
+share/doc/HTML/pt/kdiff3/new.png
+share/doc/HTML/pt/kdiff3/open_dialog.png
+share/doc/HTML/pt/kdiff3/screenshot_diff.png
+share/doc/HTML/pt/kdiff3/screenshot_merge.png
+share/doc/HTML/pt/kdiff3/triple_diff.png
+share/doc/HTML/pt/kdiff3/white_space.png
 share/doc/HTML/sv/kdiff3/common
 share/doc/HTML/sv/kdiff3/dirbrowser.png
 share/doc/HTML/sv/kdiff3/dirmergebig.png
@@ -108,33 +150,38 @@ share/icons/hicolor/16x16/apps/kdiff3.png
 share/icons/hicolor/32x32/apps/kdiff3.png
 share/icons/locolor/16x16/apps/kdiff3.png
 share/icons/locolor/32x32/apps/kdiff3.png
-share/locale/az/LC_MESSAGES/kdiff3.mo
-share/locale/ca/LC_MESSAGES/kdiff3.mo
 share/locale/da/LC_MESSAGES/kdiff3.mo
 share/locale/de/LC_MESSAGES/kdiff3.mo
 share/locale/en_GB/LC_MESSAGES/kdiff3.mo
 share/locale/es/LC_MESSAGES/kdiff3.mo
 share/locale/et/LC_MESSAGES/kdiff3.mo
 share/locale/fr/LC_MESSAGES/kdiff3.mo
+share/locale/hi/LC_MESSAGES/kdiff3.mo
 share/locale/hu/LC_MESSAGES/kdiff3.mo
 share/locale/it/LC_MESSAGES/kdiff3.mo
+share/locale/ja/LC_MESSAGES/kdiff3.mo
+share/locale/lt/LC_MESSAGES/kdiff3.mo
 share/locale/nl/LC_MESSAGES/kdiff3.mo
 share/locale/pl/LC_MESSAGES/kdiff3.mo
 share/locale/pt/LC_MESSAGES/kdiff3.mo
 share/locale/pt_BR/LC_MESSAGES/kdiff3.mo
-share/locale/ro/LC_MESSAGES/kdiff3.mo
 share/locale/ru/LC_MESSAGES/kdiff3.mo
 share/locale/sr/LC_MESSAGES/kdiff3.mo
+share/locale/sr@Latn/LC_MESSAGES/kdiff3.mo
 share/locale/sv/LC_MESSAGES/kdiff3.mo
 share/locale/ta/LC_MESSAGES/kdiff3.mo
+share/locale/tg/LC_MESSAGES/kdiff3.mo
 share/locale/tr/LC_MESSAGES/kdiff3.mo
 share/locale/zh_CN/LC_MESSAGES/kdiff3.mo
 share/services/kdiff3part.desktop
 @dirrm share/doc/HTML/sv/kdiff3
+@dirrm share/doc/HTML/pt/kdiff3
 @dirrm share/doc/HTML/kdiff3
 @dirrm share/doc/HTML/it/kdiff3
+@dirrm share/doc/HTML/fr/kdiff3
 @dirrm share/doc/HTML/et/kdiff3
 @dirrm share/doc/HTML/en/kdiff3
+@dirrm share/doc/HTML/de/kdiff3
 @dirrm share/doc/HTML/da/kdiff3
 @dirrm share/apps/kdiff3part
 @dirrm share/apps/kdiff3
