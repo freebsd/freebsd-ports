@@ -159,9 +159,13 @@ include/WUtil.h
 include/wraster.h
 lib/libWINGs.a
 lib/libWMaker.a
+lib/libWUtil.a
 lib/libwraster.a
 lib/libwraster.so
 lib/libwraster.so.3
+lib/libwmfun.a
+lib/libwmfun.so
+lib/libwmfun.so.0
 @exec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -m %B
 @unexec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -R
 share/WINGs/Images.tiff
