@@ -269,7 +269,7 @@ pre-fetch:
 	@${ECHO} "REQUIRED SYSTEM PATCHES:"
 	@${ECHO}
 .endif
-.if ${OSVERSION} < 500000
+.if ${OSVERSION} < 490100
 	@${ECHO} "OO.org can crash if you enter a non existing path"
 	@${ECHO} "or URL in the location bar. To fix these crashes"
 	@${ECHO} "you need a uncommitted system patch for rtld:"
@@ -295,7 +295,7 @@ pre-fetch:
 	@${ECHO} "http://people.freebsd.org/~mbr/ooo/rtld-deadlock.diff"
 	@${ECHO}
 .endif
-.if ${OSVERSION} < 500000
+.if ${OSVERSION} < 490100
 	@${ECHO}
 	@${ECHO} "OO.org build can deadlock in regmerge. You can work around"
 	@${ECHO} "this problem with this patch:"
