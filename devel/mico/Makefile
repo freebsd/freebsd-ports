@@ -6,70 +6,58 @@
 #
 
 PORTNAME=	mico
-PORTVERSION=	2.3.1
+PORTVERSION=	2.3.9
 CATEGORIES=	devel
-MASTER_SITES=	http://diamant-atm.vsb.cs.uni-frankfurt.de/~mico/
+MASTER_SITES=	http://www.mico.org/
 
-MAINTAINER=	scrappy@freebsd.org
+MAINTAINER=	ports@FreeBSD.org
 
-LIB_DEPENDS=	tcl82.1:${PORTSDIR}/lang/tcl82
-
-WRKSRC=		${WRKDIR}/mico
-
-MICOVER=	`${ECHO_CMD} ${DISTNAME} | ${SED} 's/mico-//'`
-
-.if defined(QT2)
-USE_QT_VER=	2
-MAKE_ENV=	QT_INCLUDES="${X11BASE}/include/qt2" \
-		QTVER="2"
-CONFIGURE_ENV=	QTVER="2"
-.else
-#USE_QT_VER=	1
-#MAKE_ENV=	QT_INCLUDES="${X11BASE}/include/X11/qt" \
-#		QTVER=""
-#CONFIGURE_ENV=	QTVER=""
-.endif
-
-BROKEN=		"Needs someone to test with Qt2 support as Qt1 is gone."
-INSTALLS_SHLIB=	yes
-USE_GMAKE=	yes
-USE_GNOMENG=	yes
-USE_GNOME=	gtk12
-USE_AUTOCONF=	yes
-CONFIGURE_ARGS=	--with-qt --with-gtk --with-tcl --disable-mini-stl \
-		--enable-static --enable-shared
-
-PLIST_SUB=	MICOVER="${MICOVER}"
+WRKSRC=			${WRKDIR}/mico
+INSTALLS_SHLIB=		yes
+GNU_CONFIGURE=		yes
+USE_REINPLACE=		yes
+USE_GMAKE=		yes
+USE_GCC=		2.95
+CONIFUGRE_ARGS+=	--enable-minimum-corba --enable-cd \
+			--disable-mini-stl \
 
 MAN1=		idl.1 imr.1 nsadmin.1
 MAN5=		micorc.5
 MAN8=		ird.8 micod.8 nsd.8
 
+post-patch:
+	${REINPLACE_CMD} -e "s,so.1.0,so, ;s,-O2,${CFLAGS}," ${WRKSRC}/configure
+
+post-configure:
+	${FIND} ${WRKSRC} -name Makefile | ${XARGS} \
+		${REINPLACE_CMD} -e "s,/doc/,/share/doc/,"
+	${REINPLACE_CMD} -e "s,/doc/,/share/doc/," ${WRKSRC}/demo/MakeVars
+
 post-install:
-	${LN} -sf ${PREFIX}/lib/libmico${MICOVER}.so.1 ${PREFIX}/lib/libmico.${MICOVER}.so
-	${LN} -sf ${PREFIX}/lib/libmicoaux${MICOVER}.so.1 ${PREFIX}/lib/libmicoaux.${MICOVER}.so
-	${LN} -sf ${PREFIX}/lib/libmicocoss${MICOVER}.so.1 ${PREFIX}/lib/libmicocoss.${MICOVER}.so
-	${LN} -sf ${PREFIX}/lib/libmicogtk${MICOVER}.so.1 ${PREFIX}/lib/libmicogtk.${MICOVER}.so
-	${LN} -sf ${PREFIX}/lib/libmicoqt${MICOVER}.so.1 ${PREFIX}/lib/libmicoqt.${MICOVER}.so
-	${LN} -sf ${PREFIX}/lib/libmicotcl${MICOVER}.so.1 ${PREFIX}/lib/libmicotcl.${MICOVER}.so
-	${LN} -sf ${PREFIX}/lib/libmicox${MICOVER}.so.1 ${PREFIX}/lib/libmicox.${MICOVER}.so
-	@strip ${PREFIX}/bin/containmentd
-	@strip ${PREFIX}/bin/eventd
-	@strip ${PREFIX}/bin/idl
-	@strip ${PREFIX}/bin/imr
-	@strip ${PREFIX}/bin/iordump
-	@strip ${PREFIX}/bin/ird
-	@strip ${PREFIX}/bin/mico-cpp
-	@strip ${PREFIX}/bin/micod
-	@strip ${PREFIX}/bin/noded
-	@strip ${PREFIX}/bin/nsadmin
-	@strip ${PREFIX}/bin/nsd
-	@strip ${PREFIX}/bin/propertyd
-	@strip ${PREFIX}/bin/proxyd
-	@strip ${PREFIX}/bin/randomd
-	@strip ${PREFIX}/bin/referenced
-	@strip ${PREFIX}/bin/timed
-	@strip ${PREFIX}/bin/traderd
-	@strip ${PREFIX}/bin/traversald
+	${LN} -sf ${PREFIX}/lib/libmico${PORTVERSION}.so.1 ${PREFIX}/lib/libmico.${PORTVERSION}.so
+	${LN} -sf ${PREFIX}/lib/libmicoaux${PORTVERSION}.so.1 ${PREFIX}/lib/libmicoaux.${PORTVERSION}.so
+	${LN} -sf ${PREFIX}/lib/libmicocoss${PORTVERSION}.so.1 ${PREFIX}/lib/libmicocoss.${PORTVERSION}.so
+	${LN} -sf ${PREFIX}/lib/libmicogtk${PORTVERSION}.so.1 ${PREFIX}/lib/libmicogtk.${PORTVERSION}.so
+	${LN} -sf ${PREFIX}/lib/libmicoqt${PORTVERSION}.so.1 ${PREFIX}/lib/libmicoqt.${PORTVERSION}.so
+	${LN} -sf ${PREFIX}/lib/libmicotcl${PORTVERSION}.so.1 ${PREFIX}/lib/libmicotcl.${PORTVERSION}.so
+	${LN} -sf ${PREFIX}/lib/libmicox${PORTVERSION}.so.1 ${PREFIX}/lib/libmicox.${PORTVERSION}.so
+	@${STRIP_CMD} ${PREFIX}/bin/containmentd
+	@${STRIP_CMD} ${PREFIX}/bin/eventd
+	@${STRIP_CMD} ${PREFIX}/bin/idl
+	@${STRIP_CMD} ${PREFIX}/bin/imr
+	@${STRIP_CMD} ${PREFIX}/bin/iordump
+	@${STRIP_CMD} ${PREFIX}/bin/ird
+	@${STRIP_CMD} ${PREFIX}/bin/mico-cpp
+	@${STRIP_CMD} ${PREFIX}/bin/micod
+	@${STRIP_CMD} ${PREFIX}/bin/noded
+	@${STRIP_CMD} ${PREFIX}/bin/nsadmin
+	@${STRIP_CMD} ${PREFIX}/bin/nsd
+	@${STRIP_CMD} ${PREFIX}/bin/propertyd
+	@${STRIP_CMD} ${PREFIX}/bin/proxyd
+	@${STRIP_CMD} ${PREFIX}/bin/randomd
+	@${STRIP_CMD} ${PREFIX}/bin/referenced
+	@${STRIP_CMD} ${PREFIX}/bin/timed
+	@${STRIP_CMD} ${PREFIX}/bin/traderd
+	@${STRIP_CMD} ${PREFIX}/bin/traversald
 
 .include <bsd.port.mk>
