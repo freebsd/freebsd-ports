@@ -8,7 +8,7 @@
 PORTNAME=	obliterate
 PORTVERSION=	0.4
 CATEGORIES=	sysutils
-MASTER_SITES=	ftp://ftp.xmission.com/pub/users/s/softweyr/pub/
+MASTER_SITES=	ftp://ftp.bsdconspiracy.net/pub/softweyr/
 
 MAINTAINER=	wes@softweyr.com
 
