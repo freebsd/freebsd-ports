@@ -3,7 +3,7 @@
 # Date created:        20 June 1997
 # Whom:                Yukihiro Nakai <Nakai@Mlab.t.u-tokyo.ac.jp>
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1997/11/17 06:31:01 fenner Exp $
 #
 
 DISTNAME=	vrweb-1.5
@@ -12,6 +12,8 @@ MASTER_SITES=	http://sunsite.unc.edu/pub/packages/infosystems/WWW/VRML/VRweb/UNI
 DISTFILES=	vrweb-src-1.5.tar.gz help-1.5.tar.gz
 
 MAINTAINER=	Nakai@Mlab.t.u-tokyo.ac.jp
+
+BROKEN=		build
 
 USE_GMAKE=	yes
 USE_X11=	yes
