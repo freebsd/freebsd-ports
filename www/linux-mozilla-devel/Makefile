@@ -1,18 +1,19 @@
-# New ports collection makefile for:	linux-mozilla
-# Date created:				2001-11-24
+# New ports collection makefile for:	linux-mozilla-devel
+# Date created:				2003-05-23
 # Whom:					trevor
-# based on ports/www/linux-netscape6
+# based on ports/www/linux-mozilla
 #
 # $FreeBSD$
 #
 
 PORTNAME=	mozilla
-PORTVERSION=	1.3.1
+PORTVERSION=	1.4b
 CATEGORIES=	www linux
 MASTER_SITES=	${MASTER_SITE_MOZILLA}
 MASTER_SITE_SUBDIR=	mozilla/releases/mozilla${PORTVERSION}/linux-xpi
 
 PKGNAMEPREFIX=	linux-
+PKGNAMESUFFIX=	-devel
 DIST_SUBDIR=	linux-mozilla/${PORTVERSION}
 
 PATCH_SITES=	${MASTER_SITE_LOCAL}
@@ -20,7 +21,7 @@ PATCH_SITE_SUBDIR=	trevor
 PATCHFILES=	linux-mozilla-${PORTVERSION}-generated-files.tar.bz2
 
 MAINTAINER=	trevor@FreeBSD.org
-COMMENT=Browser, HTML editor, MUA and newsreader for use with Linux plugins
+COMMENT=Browser, HTML editor, MUA and newsreader for Linux plugins (unstable)
 
 RUN_DEPENDS=	${LINUXBASE}/usr/lib/libgtk-1.2.so.0:${PORTSDIR}/x11-toolkits/linux-gtk
 
@@ -31,10 +32,11 @@ USE_XLIB=	yes
 USE_ZIP=	yes
 USE_LINUX=	yes
 WRKSRC=	${WRKDIR}/xpi
-INSTALL_DIR=	${PREFIX}/lib/linux-mozilla
+INSTALL_DIR=	linux-mozilla-devel
+FULL_INSTALL_DIR=	${PREFIX}/lib/linux-mozilla-devel
 PKGMESSAGE=	${WRKDIR}/pkg-message
 PLIST=		${WRKDIR}/pkg-plist
-STARTUP_CMD=	linux-mozilla
+STARTUP_CMD=	linux-mozilla-devel
 
 .if !defined(BATCH)
 IS_INTERACTIVE=	yes
@@ -121,44 +123,46 @@ do-configure:
 #	${SETENV} $DISPLAY="NONE" ${WRKSRC}/bin/mozilla file:///dev/null
 	${ECHO_CMD} "#!/bin/sh"		>${WRKDIR}/${STARTUP_CMD}
 	${ECHO_CMD} -n "cd "		>>${WRKDIR}/${STARTUP_CMD}
-	${ECHO_CMD} ${INSTALL_DIR}		>>${WRKDIR}/${STARTUP_CMD}
+	${ECHO_CMD} ${FULL_INSTALL_DIR}		>>${WRKDIR}/${STARTUP_CMD}
 	${ECHO_CMD} 'exec ./mozilla $$@'	>>${WRKDIR}/${STARTUP_CMD}
 	${ECHO_CMD} "#!/bin/sh"					>${WRKDIR}/linkfarm
 	${ECHO_CMD} "# Run this after installing Netscape plugins."	>>${WRKDIR}/linkfarm
-	${ECHO_CMD} "cd ${PREFIX}/lib/linux-mozilla/plugins"	>>${WRKDIR}/linkfarm
+	${ECHO_CMD} "cd ${PREFIX}/lib/linux-mozilla-devel/plugins"	>>${WRKDIR}/linkfarm
 	${ECHO_CMD} -n "${FIND} ../../netscape-linux/plugins/*"	>>${WRKDIR}/linkfarm
+	${ECHO_CMD} " -maxdepth 1 -exec ${LN} -s {} \; 2>/dev/null"	>>${WRKDIR}/linkfarm
+	${ECHO_CMD} -n "${FIND} ../../linux-mozilla/plugins"	>>${WRKDIR}/linkfarm
+	${ECHO_CMD} " -maxdepth 1 -exec ${LN} -s {} \; 2>/dev/null"	>>${WRKDIR}/linkfarm
+	${ECHO_CMD} -n "${FIND} ../../linux-flashplugin6"	>>${WRKDIR}/linkfarm
 	${ECHO_CMD} " -maxdepth 1 -exec ${LN} -s {} \; 2>/dev/null"	>>${WRKDIR}/linkfarm
 	${ECHO_CMD} -n "${FIND} ../../linux-netscape*/plugins"	>>${WRKDIR}/linkfarm
 	${ECHO_CMD} " -maxdepth 1 -exec ${LN} -s {} \; 2>/dev/null"	>>${WRKDIR}/linkfarm
 	${ECHO_CMD} -n "${FIND} ../../linux-beonex/plugins"	>>${WRKDIR}/linkfarm
 	${ECHO_CMD} " -maxdepth 1 -exec ${LN} -s {} \; 2>/dev/null"	>>${WRKDIR}/linkfarm
-	${ECHO_CMD} -n "${FIND} ../../linux-flashplugin6"	>>${WRKDIR}/linkfarm
-	${ECHO_CMD} " -maxdepth 1 -exec ${LN} -s {} \; 2>/dev/null"	>>${WRKDIR}/linkfarm
 
 pre-install:
 	${ECHO_CMD} bin/${STARTUP_CMD} > ${PLIST}
-	${ECHO_CMD} "@unexec ${FIND} ${PREFIX}/lib/linux-mozilla/plugins -type l \
-		-exec ${RM} {} \;" >> ${PLIST}
+	${ECHO_CMD} "@unexec ${FIND} ${FULL_INSTALL_DIR}/plugins \
+		-type l -exec ${RM} {} \;" >> ${PLIST}
 	cd ${WRKSRC}/bin; for i in `find * \! -type d | sort`; do \
-		${ECHO_CMD} lib/linux-mozilla/$${i} >> ${PLIST}; \
+		${ECHO_CMD} lib/${INSTALL_DIR}/$${i} >> ${PLIST}; \
 	done
 	cd ${WRKSRC}/bin; \
 	for i in `find -d * -type d`; do \
-		${ECHO_CMD} @dirrm lib/linux-mozilla/$${i} >> ${PLIST}; \
+		${ECHO_CMD} @dirrm lib/${INSTALL_DIR}/$${i} >> ${PLIST}; \
 	done
-	${ECHO_CMD} lib/linux-mozilla/linkfarm >> ${PLIST}
-	${ECHO_CMD} "@exec ${PREFIX}/lib/linux-mozilla/linkfarm" >> ${PLIST}
-	${ECHO_CMD} @dirrm lib/linux-mozilla >> ${PLIST}
+	${ECHO_CMD} lib/${INSTALL_DIR}/linkfarm >> ${PLIST}
+	${ECHO_CMD} "@exec ${FULL_INSTALL_DIR}/linkfarm" >> ${PLIST}
+	${ECHO_CMD} @dirrm lib/${INSTALL_DIR} >> ${PLIST}
 
 do-install:
-	${MKDIR} ${INSTALL_DIR}
-	${CP} -Rp ${WRKSRC}/bin/* ${INSTALL_DIR}
+	${MKDIR} ${FULL_INSTALL_DIR}
+	${CP} -Rp ${WRKSRC}/bin/* ${FULL_INSTALL_DIR}
 	${INSTALL_SCRIPT} ${WRKDIR}/${STARTUP_CMD} ${PREFIX}/bin
-	${INSTALL_SCRIPT} ${WRKDIR}/linkfarm ${PREFIX}/lib/linux-mozilla/
+	${INSTALL_SCRIPT} ${WRKDIR}/linkfarm ${FULL_INSTALL_DIR}/
 
 post-install:
 	${SED} -e 's:PREFIX:${PREFIX}:g' ${PKGDIR}/pkg-message > ${PKGMESSAGE}
-	- ${PREFIX}/lib/linux-mozilla/linkfarm
+	- ${FULL_INSTALL_DIR}/linkfarm
 	${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.post.mk>
