@@ -294,6 +294,7 @@ antiword	ports/textproc/antiword
 anubis		ports/mail/anubis
 aoi		ports/graphics/aoi
 aolserver	ports/www/aolserver
+ap-utils	ports/net/ap-utils
 apache-contrib	ports/www/apache-contrib
 apache-jserv	ports/www/apache-jserv
 apache13	ports/www/apache13
