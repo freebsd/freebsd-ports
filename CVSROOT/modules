@@ -7767,6 +7767,7 @@ php5-odbc	ports/databases/php5-odbc
 php5-oracle	ports/databases/php5-oracle
 php5-pcre	ports/devel/php5-pcre
 php5-pear	ports/devel/php5-pear
+php5-pgsql	ports/databases/php5-pgsql
 php5-recode	ports/converters/php5-recode
 php5-xml	ports/textproc/php5-xml
 php5-zlib	ports/archivers/php5-zlib
