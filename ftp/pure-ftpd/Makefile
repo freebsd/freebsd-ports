@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	pure-ftpd
-PORTVERSION=	0.98.6
+PORTVERSION=	0.98.7
 CATEGORIES=	ftp ipv6
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	pureftpd
@@ -33,6 +33,20 @@ CFLAGS+=	-I${LOCALBASE}/include -L${LOCALBASE}/lib
 
 MAN8=		pure-ftpd.8 pure-ftpwho.8 pure-mrtginfo.8 pure-uploadscript.8
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} > 500000
+PAM_TEMPL?=	${FILESDIR}/pam.conf.5
+.else
+. if ${OSVERSION} > 400000
+PAM_TEMPL?=	${FILESDIR}/pam.conf.4
+. endif
+.endif
+.if defined(PAM_TEMPL)
+PAM_DIR?=	${PREFIX}/share/examples/${PORTNAME}/pam
+PAM_TARGET?=	pure-ftpd
+.endif
+
 DOCS=		AUTHORS CONTACT COPYING HISTORY NEWS \
 		README README.Configuration-File README.Contrib README.LDAP \
 		README.Netfilter \
@@ -57,5 +71,11 @@ post-install:
 	@${MKDIR} ${PREFIX}/share/doc/pure-ftpd
 	(cd ${WRKSRC} && ${INSTALL_DATA} ${DOCS} ${PREFIX}/share/doc/pure-ftpd)
 .endif
+.if defined(PAM_TEMPL)
+	${MKDIR} ${PAM_DIR}
+	${INSTALL_DATA} ${PAM_TEMPL} ${PAM_DIR}/${PAM_TARGET}
+	@${ECHO} "Now you need to examine ${PAM_DIR}/${PAM_TARGET}"
+	@${ECHO} "and add the relevant PAM configuration lines to your /etc/pam.conf file."
+.endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
