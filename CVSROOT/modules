@@ -5961,6 +5961,7 @@ ocaml-mode.el	ports/lang/ocaml-mode.el
 ocaml-net	ports/www/ocaml-net
 ocaml-nox11	ports/lang/ocaml-nox11
 ocaml-ocamlgraph	ports/math/ocaml-ocamlgraph
+ocaml-ocurl	ports/ftp/ocaml-ocurl
 ocaml-pcre	ports/devel/ocaml-pcre
 ocaml-pxp	ports/textproc/ocaml-pxp
 ocaml-sdl	ports/devel/ocaml-sdl
