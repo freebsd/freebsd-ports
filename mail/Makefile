@@ -24,6 +24,7 @@
     SUBDIR += fetchmail
     SUBDIR += gbuffy
     SUBDIR += gensig
+    SUBDIR += glacier
     SUBDIR += glbiff
     SUBDIR += grepmail
     SUBDIR += hbiff
