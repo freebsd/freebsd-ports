@@ -1,0 +1,12 @@
+@comment $FreeBSD$
+bin/dnsfilter
+bin/dnsip
+bin/dnsipq
+bin/dnsmx
+bin/dnsname
+bin/dnsq
+bin/dnsqr
+bin/dnstrace
+bin/dnstracesort
+bin/dnstxt
+bin/random-ip
