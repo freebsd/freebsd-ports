@@ -14,8 +14,8 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	nobutaka@FreeBSD.org
 
 USE_X_PREFIX=	yes
-USE_IMLIB=	yes
-USE_GTK=	yes
+USE_GNOMENG=	yes
+USE_GNOME=	imlib
 USE_LIBTOOL=	yes
 USE_REINPLACE=	yes
 CONFIGURE_ARGS=	--enable-imlib --enable-utmp

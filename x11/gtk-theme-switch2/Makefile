@@ -14,7 +14,8 @@ MASTER_SITES=	http://www.muhri.net/
 MAINTAINER=	sobomax@FreeBSD.org
 
 USE_X_PREFIX=	yes
-USE_GTK=	yes
+USE_GNOMENG=	yes
+USE_GNOME=	gtk12
 USE_GMAKE=	yes
 
 MAN1=		gtk-theme-switch.1

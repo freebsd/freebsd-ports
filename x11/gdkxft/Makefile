@@ -17,9 +17,9 @@ MAINTAINER=	ports@freebsd.org
 LIB_DEPENDS=	iconv.3:${PORTSDIR}/converters/libiconv
 
 USE_X_PREFIX=	yes
-USE_GTK=	yes
-USE_REINPLACE=	yes
+USE_GNOMENG=	yes
 WANT_GNOME=	yes
+USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib -lgnuregex -liconv"
@@ -34,8 +34,9 @@ MAN8=		gdkxft_sysinstall.8
 IGNORE=		"requires XFree86-4.x or later to run"
 .endif
 
-.if defined(HAVE_GNOME)
-USE_GNOME=	yes
+.if ${HAVE_GNOME:Mgtk12}!=""
+USE_GNOME+=	gtk12
+PKGNAMESUFFIX=	-gtk
 .else
 CONFIGURE_ARGS+=	--without-gnome
 .endif

@@ -15,7 +15,8 @@ MAINTAINER=	jim@FreeBSD.org
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
 USE_X_PREFIX=	yes
-USE_GTK=	yes
+USE_GNOMENG=	yes
+USE_GNOME=	gtk12
 
 ALL_TARGET=	# empty
 

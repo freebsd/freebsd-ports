@@ -13,7 +13,8 @@ MASTER_SITES=	http://www.netchampagne.com/xbindkeys_config/
 
 MAINTAINER=	obraun@FreeBSD.org
 
-USE_GTK=	yes
+USE_GNOMENG=	yes
+USE_GNOME=	gtk12
 USE_REINPLACE=	yes
 MAKE_ENV=	CC="${CC} ${CFLAGS}"
 
