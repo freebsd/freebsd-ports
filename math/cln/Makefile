@@ -7,12 +7,9 @@
 #
 
 PORTNAME=	cln
-PORTVERSION=	1.1.6
-PORTREVISION=	1
+PORTVERSION=	1.1.8
 CATEGORIES=	math devel
-MASTER_SITES=	ftp://ftp.ilog.fr/pub/Users/haible/gnu/ \
-		ftp://ftp.santafe.edu/pub/gnu/ \
-		ftp://ftpthep.physik.uni-mainz.de/pub/gnu/
+MASTER_SITES=	ftp://ftpthep.physik.uni-mainz.de/pub/gnu/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Class Library for Numbers
@@ -20,12 +17,12 @@ COMMENT=	Class Library for Numbers
 LIB_DEPENDS=	gmp.6:${PORTSDIR}/math/libgmp4
 
 USE_BZIP2=	yes
+USE_GCC=	3.3
+USE_GNOME=	gnomehack gnometarget lthack pkgconfig
 USE_GMAKE=	yes
-USE_GNOME=	gnomehack
-USE_INC_LIBTOOL_VER=13
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
+USE_INC_LIBTOOL_VER=	13
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
-CONFIGURE_ARGS=	--infodir=${PREFIX}/info --mandir=${PREFIX}/man \
+CONFIGURE_ARGS=	--infodir=${PREFIX}/info --mandir=${MANPREFIX}/man \
 		--with-gmp
 MAKE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 INSTALLS_SHLIB=	yes
@@ -42,13 +39,6 @@ LDFLAGS=	-L${LOCALBASE}/lib
 
 .if ${ARCH} == "sparc64"
 BROKEN=		"Does not compile on sparc64"
-.endif
-
-.if ${OSVERSION} < 500035
-BUILD_DEPENDS+=	${LOCALBASE}/lib/libstlport_gcc.so:${PORTSDIR}/devel/stlport
-RUN_DEPENDS+=	${LOCALBASE}/lib/libstlport_gcc.so:${PORTSDIR}/devel/stlport
-CPPFLAGS+=	-I${LOCALBASE}/include/stlport ${PTHREAD_CFLAGS}
-LDFLAGS+=	-lstlport_gcc ${PTHREAD_LIBS}
 .endif
 
 post-install:
