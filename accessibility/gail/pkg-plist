@@ -6,5 +6,6 @@ lib/gtk-2.0/modules/libgail.so
 lib/libgailutil.so
 lib/libgailutil.so.11
 libdata/pkgconfig/gail.pc
+@dirrm lib/gtk-2.0/modules
 @dirrm include/gail-1.0/util
 @dirrm include/gail-1.0
