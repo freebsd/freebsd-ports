@@ -12,7 +12,7 @@ MASTER_SITES=	ftp://ftp.freesoftware.com/pub/X11/R5contrib/ \
 		ftp://ftp.x.org/pub/R5contrib/
 DISTFILES=	xasteroids.sh.Z
 
-MAINTAINER=	swallace@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 
 USE_IMAKE=	yes
 NO_WRKSUBDIR=	yes

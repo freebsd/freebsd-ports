@@ -11,7 +11,7 @@ CATEGORIES=	cad
 MASTER_SITES=	ftp://gatekeeper.dec.com/pub/DEC/WRL/projects/magic/6.5/
 EXTRACT_SUFX=	.tar.Z
 
-MAINTAINER=	swallace@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 
 USE_XLIB=	yes
 MAN1=		irsim.1

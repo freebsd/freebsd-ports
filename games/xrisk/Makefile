@@ -10,7 +10,7 @@ PORTVERSION=	2.15
 CATEGORIES=	games
 MASTER_SITES=	ftp://ftp.pvv.unit.no/pvv/games/
 
-MAINTAINER=	swallace@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 
 USE_IMAKE=	yes
 MAN6=		xrisk.6

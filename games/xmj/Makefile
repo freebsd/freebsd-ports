@@ -11,7 +11,7 @@ CATEGORIES=	games
 MASTER_SITES=	ftp://forte.mathematik.uni-bremen.de/pub/comp/X11/
 DISTNAME=	${PORTNAME}
 
-MAINTAINER=	swallace@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 
 USE_IMAKE=	yes
 
