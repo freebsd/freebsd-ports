@@ -1,0 +1,5 @@
+ExtUtils::ParseXS will compile XS code into C code by embedding the
+constructs necessary to let C functions manipulate Perl values and creates
+the glue necessary to let Perl access those functions.  The compiler uses
+typemaps to determine how to map C function parameters and variables to Perl
+values.
