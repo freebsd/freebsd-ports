@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	py-wxPython
-PORTVERSION=	2.1.11
+PORTVERSION=	2.1.15
 CATEGORIES=	x11-toolkits python
-MASTER_SITES=	http://alldunn.com/wxPython/dist/ \
-		http://www.nectar.com/distfiles/
+MASTER_SITES=	http://alldunn.com/wxPython/dist/
 DISTNAME=	wxPython-${PORTVERSION}
 
 MAINTAINER=	nectar@FreeBSD.ORG
@@ -39,6 +38,9 @@ do-configure:
 		${FILESDIR}/build.local > ${WRKSRC}/../build.local
 	cd ${WRKSRC} && ../distrib/build.py
 	cd ${HTMLSRC} && ../../distrib/build.py
+# XXX  The modification time on a file is wrong.  If we don't do
+# something, then we'll have to depend upon SWIG.
+	${TOUCH} ${WRKSRC}/gtk/grid.cpp ${WRKSRC}/gtk/grid.py
 
 post-build:
 	@(cd ${HTMLSRC}; \

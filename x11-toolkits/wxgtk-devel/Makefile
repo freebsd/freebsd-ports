@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	wxgtk
-PORTVERSION=	2.1.11
+PORTVERSION= 	2.1.15
 CATEGORIES=	x11-toolkits
-MASTER_SITES=	ftp://wesley.informatik.uni-freiburg.de/pub/linux/wxxt/source/ \
-		http://www.nectar.com/distfiles/
+MASTER_SITES=	ftp://wesley.informatik.uni-freiburg.de/pub/linux/wxxt/source/
 DISTNAME=	wxGTK-${PORTVERSION}
 EXTRACT_SUFX=	.tgz
 
