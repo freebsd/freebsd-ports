@@ -11,7 +11,7 @@ PORTREVISION=	1
 CATEGORIES=	x11
 MASTER_SITES=	http://ftp.us.debian.org/debian/pool/main/c/chameleon/ \
 		ftp://carroll.aset.psu.edu/pub/linux/distributions/debian/pool/main/c/chameleon/ \
-		http://www.mirror.ac.uk/sites/ftp.debian.org/debian/pool/main/c/chameleon/ \
+		http://www.mirrorservice.org/sites/ftp.debian.org/debian/pool/main/c/chameleon/ \
 		ftp://ftp.debian.org/debian/pool/main/c/chameleon/
 PKGNAMEPREFIX=	x11-
 DISTNAME=	chameleon_${PORTVERSION}.orig
