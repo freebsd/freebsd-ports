@@ -1,4 +1,5 @@
 bin/oregano
+bin/oregano_parser.pl
 bin/pspice2oregano
 share/gnome/apps/Applications/oregano.desktop
 share/gnome/help/oregano/C/legal.xml
