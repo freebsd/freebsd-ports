@@ -1,12 +1,12 @@
 # New ports collection makefile for:    wn
-# Version required:     1.14
+# Version required:     1.16
 # Date created:         4 May 1995
 # Whom:                 adam
 #
-# $Id: Makefile,v 1.13 1996/08/16 01:27:23 adam Exp $
+# $Id: Makefile,v 1.14 1996/08/29 04:17:11 adam Exp $
 #
 
-DISTNAME=       wn-1.14.6
+DISTNAME=       wn-1.16.1
 CATEGORIES+=	www
 MASTER_SITES=	ftp://ftp.acns.nwu.edu/pub/wn/
 
