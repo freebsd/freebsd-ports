@@ -14,7 +14,6 @@ share/examples/chemtool/anthocyanidine.cht
 share/examples/chemtool/atp.cht
 share/examples/chemtool/bcarotin.pdb
 share/examples/chemtool/breve.cht
-share/examples/chemtool/breve.mol
 share/examples/chemtool/bufotalin.cht
 share/examples/chemtool/byrostatin1.cht
 share/examples/chemtool/c70.cht
@@ -35,6 +34,7 @@ share/examples/chemtool/tbutylazulene.cht
 share/examples/chemtool/tcdd.cht
 share/examples/chemtool/tetracyclin.cht
 share/examples/chemtool/viagra.cht
+share/examples/chemtool/v3000.mol
 share/locale/cs/LC_MESSAGES/chemtool.mo
 share/locale/de/LC_MESSAGES/chemtool.mo
 share/locale/fr/LC_MESSAGES/chemtool.mo
