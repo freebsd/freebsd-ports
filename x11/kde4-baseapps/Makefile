@@ -23,6 +23,7 @@ USE_XPM=	yes
 USE_BZIP2=	yes
 INSTALLS_SHLIB=	yes
 GNU_CONFIGURE=	yes
+CONFIGURE_ENV+=	RUN_KAPPFINDER=no
 CONFIGURE_ARGS+=--with-xdmdir=${X11BASE}/lib/X11/xdm \
 		--with-qt-dir=${X11BASE} \
 		--without-ldap \
