@@ -8,3 +8,13 @@ lib/libxosd.so.2
 lib/xmms/General/libxmms_osd.la
 lib/xmms/General/libxmms_osd.so
 share/aclocal/libxosd.m4
+share/xosd/bottom-left.png
+share/xosd/bottom-right.png
+share/xosd/bottom.png
+share/xosd/centre.png
+share/xosd/left.png
+share/xosd/right.png
+share/xosd/top-left.png
+share/xosd/top-right.png
+share/xosd/top.png
+@dirrm share/xosd
