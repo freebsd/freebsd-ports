@@ -34,4 +34,8 @@ MANIFEST=	MANIFEST.apel
 # package documents
 APELDOCDIR=	${EMACS_PACKAGESDIR}/lisp/apel
 
+.if defined(PARALLEL_PACKAGE_BUILD)
+FORBIDDEN=	hang
+.endif
+
 .include <${MASTERDIR}/Makefile>
