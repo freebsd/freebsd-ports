@@ -67,6 +67,7 @@
     SUBDIR += clockspeed-conf
     SUBDIR += cloop-utils
     SUBDIR += cmdwatch
+    SUBDIR += coaster
     SUBDIR += cog
     SUBDIR += colorize
     SUBDIR += comconsole
