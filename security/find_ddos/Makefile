@@ -9,8 +9,8 @@
 PORTNAME=	find_ddos
 PORTVERSION=	4.2
 CATEGORIES=	security
-MASTER_SITES=	http://ftp.cert.org.tw/tools/Security_Scanner/DDOS/  \
-		http://www.fbi.gov/nipc/
+MASTER_SITES=	http://ftp.cert.org.tw/tools/Security_Scanner/DDOS/ 
+
 DISTNAME=	find_ddos_v42_linux
 EXTRACT_SUFX=	.tar.Z
 
