@@ -36,7 +36,7 @@ rm -f $F
 
 # Tk detection
 tkversion=
-for v in 42 80 81 82; do
+for v in 42 80 81 82 42jp 80jp; do
   if [ -f /usr/local/lib/libtk$v.a ]; then
     tkversion=$v
     case $tkversion in
@@ -49,6 +49,16 @@ for v in 42 80 81 82; do
         tclversion=80
         tclLversion=8.0
         tkLversion=8.0
+        ;;
+      42jp)
+        tclversion=76jp
+        tclLversion=7.6jp
+        tkLversion=4.2jp
+        ;;
+      80jp)
+        tclversion=80jp
+        tclLversion=8.0jp
+        tkLversion=8.0jp
         ;;
       81)
         tclversion=81
