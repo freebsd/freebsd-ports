@@ -20,7 +20,7 @@ MAINTAINER=    jasone@freebsd.org
 # This port only works on i386 right now.
 ONLY_FOR_ARCHS=i386
 
-.if ${OSVERSION} < 400000
+.if ${OSVERSION} < 400015
 BROKEN="Requires FreeBSD 4.0 or newer"
 .endif
 
