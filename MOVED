@@ -1434,3 +1434,4 @@ chinese/scim-chinese|chinese/scim-pinyin|2005-03-13|project renamed
 games/netpanzerdata|games/netpanzer-data|2005-03-13|port name changed
 databases/py-PySQLite|databases/py-PySQLite10|2005-03-14|renamed
 mail/sylpheed-gtk2|mail/sylpheed2|2005-03-16|obsoleted by official gtk2 version
+x11-toolkits/bakery_gnomeui||2005-03-17|obsolete/no port need this
