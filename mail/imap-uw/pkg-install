@@ -1,6 +1,10 @@
 #!/bin/sh
 TTY=/dev/tty
 
+if [ "X$PACKAGE_BUILDING" != "X" ]; then
+    exit 0
+fi
+
 case $2 in
     POST-INSTALL)
 	;;
