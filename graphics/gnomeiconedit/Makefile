@@ -8,7 +8,8 @@
 PORTNAME=	gnomeiconedit
 PORTVERSION=	1.2.0
 CATEGORIES=	graphics gnome
-MASTER_SITES=	http://www.webtribe.net/i/iain/
+MASTER_SITES=	{MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	giconedit
 DISTNAME=	gnome-iconedit-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
