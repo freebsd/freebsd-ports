@@ -10,7 +10,7 @@ PORTVERSION=	${VERSION}.j${JP_VERSION}
 PORTREVISION=	1
 CATEGORIES=	japanese editors
 MASTER_SITES=	${MASTER_SITE_LOCAL} \
-		http://kondara.sdri.co.jp/~kikutani/slang/
+		http://www.kondara.org/~g/slang/
 MASTER_SITE_SUBDIR=	knu
 DISTNAME=	${PORTNAME}-B${VERSION:R}-${VERSION:E}__J${JP_VERSION}
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
