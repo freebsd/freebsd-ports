@@ -7,8 +7,7 @@
 #
 
 PORTNAME=	xvnkb
-PORTVERSION=	0.2.8
-PORTREVISION=	1
+PORTVERSION=	0.2.9
 CATEGORIES=	vietnamese
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -16,7 +15,6 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	chinhngt@sectorb.msk.ru
 COMMENT=	A Vietnamese input method for X-Window
 
-USE_BZIP2=	yes
 USE_XLIB=	yes
 USE_GNOME=	gtk20
 
@@ -31,8 +29,10 @@ LIB_DEPENDS+=	Xft.2:${PORTSDIR}/x11-fonts/libXft
 .endif
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
+SUB_LIST=	PORTVERSION=${PORTVERSION}
+SUB_FILES=	pkg-message
 
-PLIST_FILES=	bin/xvnkb lib/libxvnkb.so lib/libxvnkb.so.0 lib/xvnkb.so.0.2.8
+PLIST_FILES=	bin/xvnkb lib/libxvnkb.so lib/libxvnkb.so.0 lib/xvnkb.so.0.2.9
 
 MAN1=		xvnkb.1
 

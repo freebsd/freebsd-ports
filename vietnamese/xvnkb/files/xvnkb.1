@@ -30,11 +30,11 @@ Supported charsets are: utf8, tcvn, viscii, vps, viqr.
 On FreeBSD 4.x, you need to install a port called utf8locale (ports/misc/utf8locale) in order to use UTF-8 charset. To enable UTF-8 locale and preload xvnkb core module, you should also add these lines at top of your .xinitrc (or profile)
 .It export GTK_IM_MODULE=xim
 .It export LANG=en_US.UTF-8
-.It export LD_PRELOAD=/usr/local/lib/xvnkb.so.0.2.8
+.It export LD_PRELOAD=/usr/local/lib/xvnkb.so.0.2.9
 .El
 .Sh FILES
 .Bl -tag -width 
-.It Pa /usr/local/lib/xvnkb.so.0.2.8
+.It Pa /usr/local/lib/xvnkb.so.0.2.9
 xvnkb core module
 .It Pa /usr/local/bin/xvnkb
 executable GUI control module
@@ -42,7 +42,7 @@ executable GUI control module
 .Sh BUGS
 There're may be some bugs. Please write the author if you catch something wrong.
 .Sh AUTHORS
-xvnkb was mostly written by 
+xvnkb was written by 
 .An Dao Hai Lam Aq lam@visc-network.com .
 Man page and freebsd ports created by 
 .An Nguyen Tam Chinh Aq chinhngt@sectorb.msk.ru .
