@@ -62,5 +62,7 @@ post-install:
 	   ${GMAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} ${INSTALL_TARGET}
 	${CHMOD} -R a-w ${PREFIX}/share/licq
 	${CHMOD} 755 ${PREFIX}/share/licq
+	${RM} -f ${PREFIX}/share/licq/qt-gui/locale/*.qm
+	${RMDIR} ${PREFIX}/share/licq/qt-gui/locale
 
 .include <bsd.port.mk>
