@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	sarah
-PORTVERSION=	0.6b
+PORTVERSION=	0.7b
 CATEGORIES=	sysutils
 MASTER_SITES=	ftp://ftp.conundrum.com/pub/sarah/
 
@@ -29,6 +29,7 @@ do-install:
 	${MKDIR} ${PREFIX}/share/doc/sarah
 	${INSTALL_MAN} ${WRKSRC}/README ${PREFIX}/share/doc/sarah
 	${INSTALL_MAN} ${WRKSRC}/CHANGES ${PREFIX}/share/doc/sarah
+	${INSTALL_MAN} ${WRKSRC}/TODO ${PREFIX}/share/doc/sarah
 .endif
 
 .include <bsd.port.mk>
