@@ -7,7 +7,7 @@
 
 PORTNAME=	fpc
 PORTVERSION=	1.0.10
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	lang
 MASTER_SITES=	ftp://ftp.freepascal.org/pub/fpc/dist/FreeBSD/ \
 		http://planetmirror.com/pub/fpc/dist/FreeBSD/ \
@@ -23,16 +23,11 @@ EXTRACT_SUFX=	.tar
 MAINTAINER=	coop9211@uidaho.edu
 COMMENT=	Free Pascal compiler with Turbo, Delphi and other extensions
 
-BROKEN=		"Install fails"
-
 .include <bsd.port.pre.mk>
 
-LIB_DEPENDS=	gds.1:${PORTSDIR}/databases/firebird
-.if ${OSVERSION} >= 500000
-LIB_DEPENDS+=   c.4:${PORTSDIR}/misc/compat4x
-.endif
+LIB_DEPENDS+=	gds.1:${PORTSDIR}/databases/firebird
 .if ${OSVERSION} < 470000
-EXTRACT_DEPENDS=	gtar:${PORTSDIR}/archivers/gtar
+EXTRACT_DEPENDS+=	gtar:${PORTSDIR}/archivers/gtar
 TAR=			${LOCALBASE}/bin/gtar
 .endif
 USE_MYSQL=	yes
@@ -71,11 +66,15 @@ have_boot!=	if [ -x ${LOCALBASE}/bin/ppc386 ]; then \
 .endif
 
 .if empty(have_boot)
-have_boot=	${WRKSRC}/boot
+have_boot=	${WRKSRC}/boot/bin
+# only need misc/compat4x if using the pre-built ppc386
+.if ${OSVERSION} >= 500000
+LIB_DEPENDS+=	c.4:${PORTSDIR}/misc/compat4x
+.endif
 .endif
 
-MAKE_ENV+=	PATH=${have_boot}/bin:$$PATH \
-		FPC=${have_boot}/bin/ppc386 \
+MAKE_ENV+=	PATH=${have_boot}:$$PATH \
+		FPC=${have_boot}/ppc386 \
 		INSTALL_BASEDIR=${PREFIX}/lib/fpc/${PORTVERSION} \
 		INSTALL_BINDIR=${PREFIX}/bin \
 		GCCLIBDIR=/usr/lib \
@@ -132,31 +131,41 @@ post-patch:
 		"Makefile*" | ${XARGS} ${REINPLACE_CMD} 's|-OG2p3|-OG2p1|g'
 
 do-build:
-	cd ${WRKSRC}/share/src/fpc-${PORTVERSION}/rtl && \
-		${GMAKE} ${MAKE_ENV} all
-	cd ${WRKSRC}/share/src/fpc-${PORTVERSION}/compiler && \
-		${GMAKE} ${MAKE_ENV} all
-	cd ${WRKSRC}/share/src/fpc-${PORTVERSION}/packages/base/libasync && \
-		${GMAKE} ${MAKE_ENV} all
-	cd ${WRKSRC}/share/src/fpc-${PORTVERSION}/fcl && \
-		${GMAKE} ${MAKE_ENV} all
+	@${SETENV} ${MAKE_ENV} ${GMAKE} -C \
+		${WRKSRC}/share/src/fpc-${PORTVERSION}/rtl \
+		all
+	@${SETENV} ${MAKE_ENV} ${GMAKE} -C \
+		${WRKSRC}/share/src/fpc-${PORTVERSION}/compiler \
+		all
+	@${SETENV} ${MAKE_ENV} ${GMAKE} -C \
+		${WRKSRC}/share/src/fpc-${PORTVERSION}/packages/base/libasync \
+		all
+	@${SETENV} ${MAKE_ENV} ${GMAKE} -C \
+		${WRKSRC}/share/src/fpc-${PORTVERSION}/fcl \
+		all
 # kludge so that bin2obj finds ZSTREAM and builds
 	cd ${WRKSRC}/share/src/fpc-${PORTVERSION} && \
 		${CP} fcl/inc/zstream.pp utils
-	cd ${WRKSRC}/share/src/fpc-${PORTVERSION}/utils && \
-		${GMAKE} ${MAKE_ENV} all
+	@${SETENV} ${MAKE_ENV} ${GMAKE} -C \
+		${WRKSRC}/share/src/fpc-${PORTVERSION}/utils \
+		all
 
 do-install:
-	cd ${WRKSRC}/share/src/fpc-${PORTVERSION}/rtl && \
-		${GMAKE} ${MAKE_ENV} install
-	cd ${WRKSRC}/share/src/fpc-${PORTVERSION}/compiler && \
-		${GMAKE} ${MAKE_ENV} install
-	cd ${WRKSRC}/share/src/fpc-${PORTVERSION}/packages/base/libasync && \
-		${GMAKE} ${MAKE_ENV} install
-	cd ${WRKSRC}/share/src/fpc-${PORTVERSION}/fcl && \
-		${GMAKE} ${MAKE_ENV} install
-	cd ${WRKSRC}/share/src/fpc-${PORTVERSION}/utils && \
-		${GMAKE} ${MAKE_ENV} install
+	@${SETENV} ${MAKE_ENV} ${GMAKE} -C \
+		${WRKSRC}/share/src/fpc-${PORTVERSION}/rtl \
+		install
+	@${SETENV} ${MAKE_ENV} ${GMAKE} -C \
+		${WRKSRC}/share/src/fpc-${PORTVERSION}/compiler \
+		install
+	@${SETENV} ${MAKE_ENV} ${GMAKE} -C \
+		${WRKSRC}/share/src/fpc-${PORTVERSION}/packages/base/libasync \
+		install
+	@${SETENV} ${MAKE_ENV} ${GMAKE} -C \
+		${WRKSRC}/share/src/fpc-${PORTVERSION}/fcl \
+		install
+	@${SETENV} ${MAKE_ENV} ${GMAKE} -C \
+		${WRKSRC}/share/src/fpc-${PORTVERSION}/utils \
+		install
 	@${MKDIR} ${PREFIX}/man/man1
 	cd ${WRKSRC}/boot/man/man1 && ${INSTALL_MAN} ${MAN1} \
 		${PREFIX}/man/man1
