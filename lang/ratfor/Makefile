@@ -9,7 +9,10 @@
 PORTNAME=	ratfor
 PORTVERSION=	1985.06
 CATEGORIES=	lang
-MASTER_SITES=	http://sepwww.stanford.edu/sep/prof/
+MASTER_SITES=	ftp://sepftp.stanford.edu/pub/sep-distr/  \
+		${MASTER_SITE_LOCAL}  \
+		http://sepwww.stanford.edu/sep/prof/
+MASTER_SITE_SUBDIR=	obrien
 DISTFILES=	ratfor.shar.2 local.ratfor77.shar
 
 MAINTAINER=     obrien@FreeBSD.org
