@@ -204,6 +204,7 @@
     SUBDIR += wmpccard
     SUBDIR += wmtop
     SUBDIR += wmzazof
+    SUBDIR += wots
     SUBDIR += x86info
     SUBDIR += xbatt
     SUBDIR += xbattbar
