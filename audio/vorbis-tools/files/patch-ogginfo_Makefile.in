@@ -1,0 +1,18 @@
+--- ogginfo/Makefile.in.orig	Tue Jul 17 01:23:50 2001
++++ ogginfo/Makefile.in	Tue Jul 17 01:24:14 2001
+@@ -28,6 +28,7 @@ sharedstatedir = @sharedstatedir@
+ localstatedir = @localstatedir@
+ libdir = @libdir@
+ infodir = @infodir@
++mandir = @mandir@
+ includedir = @includedir@
+ oldincludedir = /usr/include
+ 
+@@ -83,7 +84,6 @@ VORBIS_LIBS = @VORBIS_LIBS@
+ AUTOMAKE_OPTIONS = foreign
+ 
+ bin_PROGRAMS = ogginfo
+-mandir = $(datadir)/man
+ man_MANS = ogginfo.1
+ 
+ INCLUDES = @OGG_CFLAGS@ @VORBIS_CFLAGS@
