@@ -27,6 +27,7 @@ lib/libcurl.so.%%SHLIB_VER%%
 %%PORTDOCS%%%%DOCSDIR%%/Makefile
 %%PORTDOCS%%%%DOCSDIR%%/Makefile.am
 %%PORTDOCS%%%%DOCSDIR%%/Makefile.in
+%%PORTDOCS%%%%DOCSDIR%%/README.netware
 %%PORTDOCS%%%%DOCSDIR%%/README.win32
 %%PORTDOCS%%%%DOCSDIR%%/RESOURCES
 %%PORTDOCS%%%%DOCSDIR%%/SSLCERTS
@@ -49,9 +50,11 @@ lib/libcurl.so.%%SHLIB_VER%%
 %%PORTDOCS%%%%DOCSDIR%%/examples/curlx.c
 %%PORTDOCS%%%%DOCSDIR%%/examples/fileupload.c
 %%PORTDOCS%%%%DOCSDIR%%/examples/fopen.c
+%%PORTDOCS%%%%DOCSDIR%%/examples/ftp3rdparty.c
 %%PORTDOCS%%%%DOCSDIR%%/examples/ftpget.c
 %%PORTDOCS%%%%DOCSDIR%%/examples/ftpgetresp.c
 %%PORTDOCS%%%%DOCSDIR%%/examples/ftpupload.c
+%%PORTDOCS%%%%DOCSDIR%%/examples/getinfo.c
 %%PORTDOCS%%%%DOCSDIR%%/examples/getinmemory.c
 %%PORTDOCS%%%%DOCSDIR%%/examples/http-post.c
 %%PORTDOCS%%%%DOCSDIR%%/examples/httpput.c
@@ -71,7 +74,6 @@ lib/libcurl.so.%%SHLIB_VER%%
 %%PORTDOCS%%%%DOCSDIR%%/examples/simplepost.c
 %%PORTDOCS%%%%DOCSDIR%%/examples/simplessl.c
 %%PORTDOCS%%%%DOCSDIR%%/index.html
-%%PORTDOCS%%%%DOCSDIR%%/libcurl-the-guide
 %%PORTDOCS%%%%DOCSDIR%%/libcurl/Makefile
 %%PORTDOCS%%%%DOCSDIR%%/libcurl/Makefile.am
 %%PORTDOCS%%%%DOCSDIR%%/libcurl/Makefile.in
@@ -90,6 +92,9 @@ lib/libcurl.so.%%SHLIB_VER%%
 %%PORTDOCS%%%%DOCSDIR%%/libcurl/curl_easy_perform.3
 %%PORTDOCS%%%%DOCSDIR%%/libcurl/curl_easy_perform.html
 %%PORTDOCS%%%%DOCSDIR%%/libcurl/curl_easy_perform.pdf
+%%PORTDOCS%%%%DOCSDIR%%/libcurl/curl_easy_reset.3
+%%PORTDOCS%%%%DOCSDIR%%/libcurl/curl_easy_reset.html
+%%PORTDOCS%%%%DOCSDIR%%/libcurl/curl_easy_reset.pdf
 %%PORTDOCS%%%%DOCSDIR%%/libcurl/curl_easy_setopt.3
 %%PORTDOCS%%%%DOCSDIR%%/libcurl/curl_easy_setopt.html
 %%PORTDOCS%%%%DOCSDIR%%/libcurl/curl_easy_setopt.pdf
@@ -193,6 +198,9 @@ lib/libcurl.so.%%SHLIB_VER%%
 %%PORTDOCS%%%%DOCSDIR%%/libcurl/libcurl-share.3
 %%PORTDOCS%%%%DOCSDIR%%/libcurl/libcurl-share.html
 %%PORTDOCS%%%%DOCSDIR%%/libcurl/libcurl-share.pdf
+%%PORTDOCS%%%%DOCSDIR%%/libcurl/libcurl-tutorial.3
+%%PORTDOCS%%%%DOCSDIR%%/libcurl/libcurl-tutorial.html
+%%PORTDOCS%%%%DOCSDIR%%/libcurl/libcurl-tutorial.pdf
 %%PORTDOCS%%%%DOCSDIR%%/libcurl/libcurl.3
 %%PORTDOCS%%%%DOCSDIR%%/libcurl/libcurl.html
 %%PORTDOCS%%%%DOCSDIR%%/libcurl/libcurl.pdf
