@@ -1,5 +1,5 @@
 # Creator:  Jordan Hubbard
-# $Id$
+# $Id: LEGAL,v 1.1 1995/01/11 16:09:19 jkh Exp $
 
 Some of the ports in this directory have restrictive copyrights prohibiting
 their actual redistribution on mass media.  When creating compilations
@@ -19,5 +19,6 @@ cku190.tar.gz		ports/comms/kermit	Restrictive copyright
 rzsz3_36.zip		ports/comms/rzsz	Restrictive copyright
 xtetris-2.5.2.tar.gz	ports/games/xtetris	Possible trademark violation
 pgp262s.zip		ports/utils/pgp*	Various locality restrictions
+tkman-1.6.tar.Z		ports/x11/tkman		Restrictive copyright
 
 [please add more to this list]
