@@ -1,0 +1,8 @@
+lib/perl5/site_perl/%%PERL_VER%%/Net/IRC.pm
+lib/perl5/site_perl/%%PERL_VER%%/Net/IRC/Connection.pm
+lib/perl5/site_perl/%%PERL_VER%%/Net/IRC/DCC.pm
+lib/perl5/site_perl/%%PERL_VER%%/Net/IRC/Event.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Net/IRC/.packlist
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/Net/IRC
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/Net
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Net/IRC
