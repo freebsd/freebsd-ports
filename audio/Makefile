@@ -163,6 +163,7 @@
     SUBDIR += mpg123.el
     SUBDIR += mpg321
     SUBDIR += mpmf20
+    SUBDIR += mppdec
     SUBDIR += mpt
     SUBDIR += mq3
     SUBDIR += muse
