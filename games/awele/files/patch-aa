@@ -1,0 +1,20 @@
+--- Imakefile.orig	Fri Dec  8 16:35:38 1995
++++ Imakefile	Fri May  1 09:44:16 1998
+@@ -2,14 +2,14 @@
+ 
+ 
+ XCOMM install directory
+-    AWELE_DIR		= /user/berroir/src/awele/install
++    AWELE_DIR		= $(BINDIR)
+ XCOMM tcl/tk script
+     AWELE_SCRIPT	= xawele
+ XCOMM libs, includes
+ XCOMM TK_LIB AND TK_INCLUDE stand for tk and tcl
+-    TK_LIB		= -L/usr/local/lib -ltk -ltcl
++    TK_LIB		= -L@@LOCALBASE@@/lib -ltk80 -ltcl80
+ XCOMM    TK_LIB		= -L/usr/local/lib -ltk4.0 -ltcl7.4
+-    TK_INCLUDE 		= -I/usr/local/include
++    TK_INCLUDE 		= -I@@LOCALBASE@@/include/tcl8.0 -I@@LOCALBASE@@/include/tk8.0
+     DEFINES = $(TK_INCLUDE) 
+     LOCAL_LIBRARIES = $(TK_LIB) -lX11 -lm
+ XCOMM ANSI-C compiler

@@ -1,0 +1,8 @@
+--- xawele.orig	Fri Dec  8 16:35:38 1995
++++ xawele	Fri May  1 09:46:54 1998
+@@ -1,4 +1,4 @@
+-#!/a/air/alpha-bin/awelewish -f
++#!/usr/bin/env awelewish
+ 
+ # variables connues de C et de TCL
+ set levelname "REGULAR"
