@@ -5,7 +5,6 @@ lib/perl5/site_perl/Net/DummyInetd.pm
 lib/perl5/site_perl/Net/SNPP.pm
 lib/perl5/site_perl/Net/FTP.pm
 lib/perl5/site_perl/Net/POP3.pm
-lib/perl5/site_perl/Net/Telnet.pm
 lib/perl5/site_perl/Net/Netrc.pm
 lib/perl5/site_perl/Net/SMTP.pm
 lib/perl5/site_perl/Net/Cmd.pm
@@ -19,7 +18,6 @@ lib/perl5/man/man3/Net::SMTP.3.gz
 lib/perl5/man/man3/Net::Domain.3.gz
 lib/perl5/man/man3/Net::FTP.3.gz
 lib/perl5/man/man3/Net::Netrc.3.gz
-lib/perl5/man/man3/Net::Telnet.3.gz
 lib/perl5/man/man3/Net::Cmd.3.gz
 lib/perl5/man/man3/Net::PH.3.gz
 lib/perl5/site_perl/i386-freebsd/auto/Net/.packlist
