@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	elinks
-PORTVERSION=	0.9.0
-PORTREVISION=	1
+PORTVERSION=	0.9.1
 CATEGORIES=	www
 MASTER_SITES=	http://elinks.or.cz/download/
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${DISTNAME}${EXTRACT_SUFX}.asc
@@ -16,6 +15,8 @@ EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 MAINTAINER=	jharris@widomaker.com
 COMMENT=	Elinks - links text WWW browser with enhancements
 
+USE_GPG?=	yes
+SIG_FILES=	${DISTNAME}${EXTRACT_SUFX}.asc
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_BZIP2=	yes
