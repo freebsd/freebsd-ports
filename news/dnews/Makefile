@@ -16,6 +16,11 @@ MAINTAINER=	ports@FreeBSD.org
 
 Y2K=		http://netwinsite.com/dnews_y2k.htm
 
+# NOTE: this won't work for fetching files from the CDROM.  However since
+# we don't have permission to put this on the CDROM it shouldn't matter much.
+FETCH_CMD=		ftp
+FETCH_BEFORE_ARGS=	-a
+
 WRKSRC=		${WRKDIR}/dnews
 NO_CDROM=	"no answer yet, if we are allowed to put it onto CDROM"
 RESTRICTED=	"only free for non-profit organisations"
