@@ -3,7 +3,7 @@
 # Date created:		April 2, 1997
 # Whom:			Marc G. Fournier <scrappy@FreeBSD.ORG>
 #
-# $Id: Makefile,v 1.14 1997/09/27 21:43:48 andreas Exp $
+# $Id: Makefile,v 1.15 1997/10/03 14:13:34 andreas Exp $
 
 DISTNAME=	postgresql-6.2
 CATEGORIES=	databases
@@ -13,14 +13,22 @@ MASTER_SITES=	ftp://ftp.PostgreSQL.org/pub/ \
 
 MAINTAINER=	andreas@FreeBSD.ORG
 
+# if you want to use the tcl/tk frontend pgaccess, then you need to build
+# postgresql with tcl support by typing: make USE_TCL=yes
+.if defined(USE_TCL)
+MAKE_ENV+=	USE_TCL=true TCL_INCDIR=${PREFIX}/include/tcl8.0
+LIB_DEPENDS=	tcl80\\.1\\.:${PORTSDIR}/lang/tcl80
+.endif
+
 NO_PACKAGE=	"Requires pgsql uid"
 WRKSRC=		${WRKDIR}/${DISTNAME}/src
+
 USE_GMAKE=	YES
+MAKEFILE=	GNUmakefile
 HAS_CONFIGURE=	YES
 CONFIGURE_ARGS+=--prefix=${PREFIX}/pgsql \
 		--enable-locale \
 		--with-template=`uname -s | ${TR} '[A-Z]' '[a-z]'`
-MAKEFILE=	GNUmakefile
 
 MAN1=		cleardbdir.1 createdb.1 createuser.1 destroydb.1 \
 		destroyuser.1 initdb.1 ipcclean.1 monitor.1 pg_dump.1 \
@@ -42,6 +50,14 @@ MANL=		abort.l alter_table.l begin.l close.l cluster.l \
 		update.l vacuum.l
 
 MANPREFIX=	${PREFIX}/pgsql
+
+pre-fetch:
+.if !defined(USE_TCL)
+	@${ECHO_MSG} "To build the \"PostgreSQL to Tcl interface library\", libpgtcl, type:"
+	@${ECHO_MSG} "    make USE_TCL=yes"
+.else
+	@${ECHO_MSG} "Building PostgreSQL with \"libpgtcl\"."
+.endif
 
 post-build:
 	@ ${ECHO} "------------------------------------------------------------"

@@ -199,6 +199,11 @@ share/doc/pgsql/manual/xtypes.html
 share/doc/pgsql/spi.txt
 share/doc/pgsql/trigger.txt
 share/doc/pgsql/userguide.ps
+pgsql/lib/libpgtcl.a
+pgsql/lib/libpgtcl.so.1
+pgsql/bin/pgtclsh
+pgsql/bin/pgtksh
+pgsql/include/libpgtcl.h
 @dirrm share/doc/pgsql/manual
 @dirrm share/doc/pgsql
 @dirrm pgsql/bin
