@@ -13,7 +13,7 @@ MASTER_SITES=	ftp://ftp.demon.co.uk/pub/unix/httpd/ \
 MASTER_SITE_SUBDIR=	apps/www/servers
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	ben@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 
 USE_PERL5=	yes
 
