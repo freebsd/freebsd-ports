@@ -34,10 +34,10 @@ _EXAMPLESDIR=	docs/examples
 LATEST_LINK=	pear-Log
 OPTIONS=	PEAR_DB "PEAR::DB support" off
 
-_LOCALBASE=	/usr/local
+LOCALBASE?=	/usr/local
 
-.if exists(${_LOCALBASE}/etc/php.conf)
-.include "${_LOCALBASE}/etc/php.conf"
+.if exists(${LOCALBASE}/etc/php.conf)
+.include "${LOCALBASE}/etc/php.conf"
 .endif
 
 PHP_VERS=	${PHP_VERSION:S/.//g}
