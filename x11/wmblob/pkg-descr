@@ -1,0 +1,17 @@
+wmblob is a useless program, showing moving blobs. It's a nice dockapp
+for Window Maker (www.windowmaker.org), and it may run with other
+window mangers.
+
+How to use it:
+
+  Just start it.  There are no command line options.  You can change
+  the colors with the three mouse button.
+
+    - Left button: changes the inner color of the blobs.
+    - Middle button: changes the border color of the blobs.
+    - Right button: changes the background color.
+
+  There are 16 colors available.  But not every combination looks
+  good.
+
+WWW: http://dockapps.org/file.php/id/155
