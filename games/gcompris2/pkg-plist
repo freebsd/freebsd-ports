@@ -1,65 +1,91 @@
 bin/gcompris
 etc/sound/events/gcompris.soundlist
+info/gcompris.info
 share/gnome/apps/Games/gcompris.desktop
+share/gnome/gcompris/data/shapesgame/board1_0.xml
+share/gnome/gcompris/data/shapesgame/board2_0.xml
+share/gnome/gcompris/data/shapesgame/board3_0.xml
+share/gnome/gcompris/data/shapesgame/board4_0.xml
+share/gnome/gcompris/data/shapesgame/board5_0.xml
+share/gnome/gcompris/data/shapesgame/board6_0.xml
 share/gnome/gcompris/data/wordsgame/wordslevel1.de
 share/gnome/gcompris/data/wordsgame/wordslevel1.en
 share/gnome/gcompris/data/wordsgame/wordslevel1.es
 share/gnome/gcompris/data/wordsgame/wordslevel1.fr
 share/gnome/gcompris/data/wordsgame/wordslevel1.it
+share/gnome/gcompris/data/wordsgame/wordslevel1.pt_BR
 share/gnome/gcompris/data/wordsgame/wordslevel2.de
 share/gnome/gcompris/data/wordsgame/wordslevel2.en
 share/gnome/gcompris/data/wordsgame/wordslevel2.es
 share/gnome/gcompris/data/wordsgame/wordslevel2.fr
 share/gnome/gcompris/data/wordsgame/wordslevel2.it
+share/gnome/gcompris/data/wordsgame/wordslevel2.pt_BR
 share/gnome/gcompris/data/wordsgame/wordslevelmax.de
 share/gnome/gcompris/data/wordsgame/wordslevelmax.en
 share/gnome/gcompris/data/wordsgame/wordslevelmax.es
 share/gnome/gcompris/data/wordsgame/wordslevelmax.fr
 share/gnome/gcompris/data/wordsgame/wordslevelmax.it
 share/gnome/gcompris/data/wordsgame/wordslevelmax.nl
-share/gnome/pixmaps/gcompris/animals/baby-elephant.png
-share/gnome/pixmaps/gcompris/animals/baby-gorilla.png
-share/gnome/pixmaps/gcompris/animals/bat.png
-share/gnome/pixmaps/gcompris/animals/beta-fish.png
-share/gnome/pixmaps/gcompris/animals/black-ant.png
-share/gnome/pixmaps/gcompris/animals/black-widow-spider.png
-share/gnome/pixmaps/gcompris/animals/blue-butterfly.png
-share/gnome/pixmaps/gcompris/animals/bluebird.png
-share/gnome/pixmaps/gcompris/animals/bumblebee.png
-share/gnome/pixmaps/gcompris/animals/copper-dragon.png
-share/gnome/pixmaps/gcompris/animals/cottontail-rabbit.png
-share/gnome/pixmaps/gcompris/animals/dairy-cow.png
-share/gnome/pixmaps/gcompris/animals/desert-turtle.png
-share/gnome/pixmaps/gcompris/animals/dino-lizard.png
-share/gnome/pixmaps/gcompris/animals/fawn.png
-share/gnome/pixmaps/gcompris/animals/female-mallard.png
-share/gnome/pixmaps/gcompris/animals/giraffe.png
-share/gnome/pixmaps/gcompris/animals/green-frog.png
-share/gnome/pixmaps/gcompris/animals/hen.png
-share/gnome/pixmaps/gcompris/animals/housefly.png
-share/gnome/pixmaps/gcompris/animals/ladybug.png
-share/gnome/pixmaps/gcompris/animals/luna-moth.png
-share/gnome/pixmaps/gcompris/animals/male-deer.png
-share/gnome/pixmaps/gcompris/animals/male-lion.png
-share/gnome/pixmaps/gcompris/animals/male-mallard.png
-share/gnome/pixmaps/gcompris/animals/panda.png
-share/gnome/pixmaps/gcompris/animals/pheasant.png
-share/gnome/pixmaps/gcompris/animals/pink-moth.png
-share/gnome/pixmaps/gcompris/animals/poodle-unclipped.png
-share/gnome/pixmaps/gcompris/animals/purple-butterfly-2.png
-share/gnome/pixmaps/gcompris/animals/purple-butterfly.png
-share/gnome/pixmaps/gcompris/animals/rattlesnake.png
-share/gnome/pixmaps/gcompris/animals/red-parrot.png
-share/gnome/pixmaps/gcompris/animals/rooster.png
-share/gnome/pixmaps/gcompris/animals/salamander.png
-share/gnome/pixmaps/gcompris/animals/sea-dinosaur.png
-share/gnome/pixmaps/gcompris/animals/skunk.png
-share/gnome/pixmaps/gcompris/animals/small-butterfly.png
-share/gnome/pixmaps/gcompris/animals/small-monarch.png
-share/gnome/pixmaps/gcompris/animals/swallowtail-butterfly.png
-share/gnome/pixmaps/gcompris/animals/tiger-leaping.png
-share/gnome/pixmaps/gcompris/animals/trout-1.png
-share/gnome/pixmaps/gcompris/animals/turkey.png
+share/gnome/gcompris/data/wordsgame/wordslevelmax.pt_BR
+share/gnome/help/gcompris/C/gcompris.html
+share/gnome/help/gcompris/C/overview.jpg
+share/gnome/help/gcompris/C/topic.dat
+share/gnome/pixmaps/gcompris/animals/QueenAngel_0.png
+share/gnome/pixmaps/gcompris/animals/QueenAngel_1.png
+share/gnome/pixmaps/gcompris/animals/blueking2_0.png
+share/gnome/pixmaps/gcompris/animals/blueking2_1.png
+share/gnome/pixmaps/gcompris/animals/butfish_0.png
+share/gnome/pixmaps/gcompris/animals/butfish_1.png
+share/gnome/pixmaps/gcompris/animals/cichlid1_0.png
+share/gnome/pixmaps/gcompris/animals/cichlid1_1.png
+share/gnome/pixmaps/gcompris/animals/cichlid4_0.png
+share/gnome/pixmaps/gcompris/animals/cichlid4_1.png
+share/gnome/pixmaps/gcompris/animals/collaris_0.png
+share/gnome/pixmaps/gcompris/animals/collaris_1.png
+share/gnome/pixmaps/gcompris/animals/discus2_0.png
+share/gnome/pixmaps/gcompris/animals/discus2_1.png
+share/gnome/pixmaps/gcompris/animals/discus3_0.png
+share/gnome/pixmaps/gcompris/animals/discus3_1.png
+share/gnome/pixmaps/gcompris/animals/eel_0.png
+share/gnome/pixmaps/gcompris/animals/eel_1.png
+share/gnome/pixmaps/gcompris/animals/f00_0.png
+share/gnome/pixmaps/gcompris/animals/f00_1.png
+share/gnome/pixmaps/gcompris/animals/f01_0.png
+share/gnome/pixmaps/gcompris/animals/f01_1.png
+share/gnome/pixmaps/gcompris/animals/f02_0.png
+share/gnome/pixmaps/gcompris/animals/f02_1.png
+share/gnome/pixmaps/gcompris/animals/f03_0.png
+share/gnome/pixmaps/gcompris/animals/f03_1.png
+share/gnome/pixmaps/gcompris/animals/f04_0.png
+share/gnome/pixmaps/gcompris/animals/f04_1.png
+share/gnome/pixmaps/gcompris/animals/f05_0.png
+share/gnome/pixmaps/gcompris/animals/f05_1.png
+share/gnome/pixmaps/gcompris/animals/f06_0.png
+share/gnome/pixmaps/gcompris/animals/f06_1.png
+share/gnome/pixmaps/gcompris/animals/f07_0.png
+share/gnome/pixmaps/gcompris/animals/f07_1.png
+share/gnome/pixmaps/gcompris/animals/f08_0.png
+share/gnome/pixmaps/gcompris/animals/f08_1.png
+share/gnome/pixmaps/gcompris/animals/f09_0.png
+share/gnome/pixmaps/gcompris/animals/f09_1.png
+share/gnome/pixmaps/gcompris/animals/f10_0.png
+share/gnome/pixmaps/gcompris/animals/f10_1.png
+share/gnome/pixmaps/gcompris/animals/f11_0.png
+share/gnome/pixmaps/gcompris/animals/f11_1.png
+share/gnome/pixmaps/gcompris/animals/f12_0.png
+share/gnome/pixmaps/gcompris/animals/f12_1.png
+share/gnome/pixmaps/gcompris/animals/f13_0.png
+share/gnome/pixmaps/gcompris/animals/f13_1.png
+share/gnome/pixmaps/gcompris/animals/manta_0.png
+share/gnome/pixmaps/gcompris/animals/manta_1.png
+share/gnome/pixmaps/gcompris/animals/newf1_0.png
+share/gnome/pixmaps/gcompris/animals/newf1_1.png
+share/gnome/pixmaps/gcompris/animals/shark1_0.png
+share/gnome/pixmaps/gcompris/animals/shark1_1.png
+share/gnome/pixmaps/gcompris/animals/six_barred_0.png
+share/gnome/pixmaps/gcompris/animals/six_barred_1.png
+share/gnome/pixmaps/gcompris/animals/teeth_0.png
+share/gnome/pixmaps/gcompris/animals/teeth_1.png
 share/gnome/pixmaps/gcompris/buttons/bad.png
 share/gnome/pixmaps/gcompris/buttons/bar_bg.jpg
 share/gnome/pixmaps/gcompris/buttons/button.png
@@ -76,6 +102,8 @@ share/gnome/pixmaps/gcompris/gameicons/algebragame.png
 share/gnome/pixmaps/gcompris/gameicons/clickgame.png
 share/gnome/pixmaps/gcompris/gameicons/clockgame.png
 share/gnome/pixmaps/gcompris/gameicons/gletters.png
+share/gnome/pixmaps/gcompris/gameicons/planegame.png
+share/gnome/pixmaps/gcompris/gameicons/shapegame.png
 share/gnome/pixmaps/gcompris/gameicons/smallnumbers.png
 share/gnome/pixmaps/gcompris/gameicons/wordsgame.png
 share/gnome/pixmaps/gcompris/gcompris-about.jpg
@@ -149,23 +177,71 @@ share/gnome/pixmaps/gcompris/letters/w.png
 share/gnome/pixmaps/gcompris/letters/x.png
 share/gnome/pixmaps/gcompris/letters/y.png
 share/gnome/pixmaps/gcompris/letters/z.png
+share/gnome/pixmaps/gcompris/planegame/THANKS
+share/gnome/pixmaps/gcompris/planegame/cloud.png
+share/gnome/pixmaps/gcompris/planegame/plane.png
+share/gnome/pixmaps/gcompris/shapes/level1/bazille_rampart_1.jpg
+share/gnome/pixmaps/gcompris/shapes/level1/bazille_rampart_2.jpg
+share/gnome/pixmaps/gcompris/shapes/level1/bazille_rampart_3.jpg
+share/gnome/pixmaps/gcompris/shapes/level1/bazille_rampart_4.jpg
+share/gnome/pixmaps/gcompris/shapes/level1/bazille_rampart_5.jpg
+share/gnome/pixmaps/gcompris/shapes/level1/bazille_rampart_6.jpg
+share/gnome/pixmaps/gcompris/shapes/level2/cassat_summertime_1.jpg
+share/gnome/pixmaps/gcompris/shapes/level2/cassat_summertime_2.jpg
+share/gnome/pixmaps/gcompris/shapes/level2/cassat_summertime_3.jpg
+share/gnome/pixmaps/gcompris/shapes/level2/cassat_summertime_4.jpg
+share/gnome/pixmaps/gcompris/shapes/level2/cassat_summertime_5.jpg
+share/gnome/pixmaps/gcompris/shapes/level2/cassat_summertime_6.jpg
+share/gnome/pixmaps/gcompris/shapes/level3/gogh_auvert_1.jpg
+share/gnome/pixmaps/gcompris/shapes/level3/gogh_auvert_2.jpg
+share/gnome/pixmaps/gcompris/shapes/level3/gogh_auvert_3.jpg
+share/gnome/pixmaps/gcompris/shapes/level3/gogh_auvert_4.jpg
+share/gnome/pixmaps/gcompris/shapes/level3/gogh_auvert_5.jpg
+share/gnome/pixmaps/gcompris/shapes/level3/gogh_auvert_6.jpg
+share/gnome/pixmaps/gcompris/shapes/level4/degas_class-dance_1.png
+share/gnome/pixmaps/gcompris/shapes/level4/degas_class-dance_2.png
+share/gnome/pixmaps/gcompris/shapes/level4/degas_class-dance_3.png
+share/gnome/pixmaps/gcompris/shapes/level4/degas_class-dance_4.png
+share/gnome/pixmaps/gcompris/shapes/level4/degas_class-dance_5.png
+share/gnome/pixmaps/gcompris/shapes/level4/degas_class-dance_6.png
+share/gnome/pixmaps/gcompris/shapes/level5/renoir
+share/gnome/pixmaps/gcompris/shapes/level5/renoir-moulin_de_la_galette-1.png
+share/gnome/pixmaps/gcompris/shapes/level5/renoir-moulin_de_la_galette-2.png
+share/gnome/pixmaps/gcompris/shapes/level5/renoir-moulin_de_la_galette-3.png
+share/gnome/pixmaps/gcompris/shapes/level5/renoir-moulin_de_la_galette-4.png
+share/gnome/pixmaps/gcompris/shapes/level5/renoir-moulin_de_la_galette-5.png
+share/gnome/pixmaps/gcompris/shapes/level5/renoir-moulin_de_la_galette-6.png
+share/gnome/pixmaps/gcompris/shapes/level6/renoir-filles_piano-1.png
+share/gnome/pixmaps/gcompris/shapes/level6/renoir-filles_piano-2.png
+share/gnome/pixmaps/gcompris/shapes/level6/renoir-filles_piano-3.png
+share/gnome/pixmaps/gcompris/shapes/level6/renoir-filles_piano-4.png
+share/gnome/pixmaps/gcompris/shapes/level6/renoir-filles_piano-5.png
+share/gnome/pixmaps/gcompris/shapes/level6/renoir-filles_piano-6.png
 share/gnome/pixmaps/gnome-compris.png
-share/gnome/sounds/gcompris/bonus.wav
-share/gnome/sounds/gcompris/crash.wav
-share/gnome/sounds/gcompris/gobble.wav
-share/gnome/sounds/gcompris/life.wav
 share/locale/de/LC_MESSAGES/gcompris.mo
 share/locale/es/LC_MESSAGES/gcompris.mo
 share/locale/fr/LC_MESSAGES/gcompris.mo
 share/locale/it/LC_MESSAGES/gcompris.mo
 share/locale/nl/LC_MESSAGES/gcompris.mo
+share/locale/pt_BR/LC_MESSAGES/gcompris.mo
 @dirrm share/gnome/sounds/gcompris
+@dirrm share/gnome/pixmaps/gcompris/shapes/level6
+@dirrm share/gnome/pixmaps/gcompris/shapes/level5
+@dirrm share/gnome/pixmaps/gcompris/shapes/level4
+@dirrm share/gnome/pixmaps/gcompris/shapes/level3
+@dirrm share/gnome/pixmaps/gcompris/shapes/level2
+@dirrm share/gnome/pixmaps/gcompris/shapes/level1
+@dirrm share/gnome/pixmaps/gcompris/shapes
+@dirrm share/gnome/pixmaps/gcompris/planegame
 @dirrm share/gnome/pixmaps/gcompris/letters
 @dirrm share/gnome/pixmaps/gcompris/gameicons
 @dirrm share/gnome/pixmaps/gcompris/dice
 @dirrm share/gnome/pixmaps/gcompris/buttons
 @dirrm share/gnome/pixmaps/gcompris/animals
 @dirrm share/gnome/pixmaps/gcompris
+@dirrm share/gnome/help/gcompris/C
+@dirrm share/gnome/help/gcompris
 @dirrm share/gnome/gcompris/data/wordsgame
+@dirrm share/gnome/gcompris/data/shapesgame
 @dirrm share/gnome/gcompris/data
 @dirrm share/gnome/gcompris
