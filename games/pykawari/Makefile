@@ -21,7 +21,7 @@ PATCH_DIST_STRIP=	-p1
 MAINTAINER=	umeno@rr.iij4u.or.jp
 COMMENT=	Pykawari is a real kawari8 module for ninix-aya
 
-BUILD_DEPENDS=	lha:${PORTSDIR}/archivers/lha
+EXTRACT_DEPENDS=lha:${PORTSDIR}/archivers/lha
 RUN_DEPENDS=	ninix:${PORTSDIR}/games/ninix-aya
 
 EXTRACT_CMD=	lha
