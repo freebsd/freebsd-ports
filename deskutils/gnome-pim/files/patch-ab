@@ -5,7 +5,7 @@
  l = @l@
  
 -help_base = $(datadir)/gnome/help/cal
-+help_base = $(datadir)/help/cal
++help_base = $(datadir)/help/gnomecal
  
  CFLAGS = @CFLAGS@ -Wall
  
@@ -33,7 +33,7 @@
 +# SUBDIRS = help
  
 -xpmhelp_base = $(datadir)/gnome/help/cal
-+xpmhelp_base = $(datadir)/help/cal
++xpmhelp_base = $(datadir)/help/gnomecal
  
  CFLAGS = @CFLAGS@ -Wall
  

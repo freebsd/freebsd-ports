@@ -4,9 +4,21 @@ etc/CORBA/servers/gnomecard.gnorba
 lib/libversit.a
 share/gnome/apps/Applications/gncal.desktop
 share/gnome/apps/Applications/gnomecard.desktop
-share/gnome/help/cal/C/gnome-cal.html
-share/gnome/help/cal/C/index.html
-share/gnome/help/cal/C/topic.dat
+share/gnome/help/gnomecal/C/gnomecal.html
+share/gnome/help/gnomecal/C/topic.dat
+share/gnome/help/gnomecal/C/images/cal-props.gif
+share/gnome/help/gnomecal/C/images/calday.gif
+share/gnome/help/gnomecal/C/images/calmonth.gif
+share/gnome/help/gnomecal/C/images/calweek.gif
+share/gnome/help/gnomecal/C/images/calyear.gif
+share/gnome/help/gnomecal/C/calappoint.html
+share/gnome/help/gnomecal/C/calsetup.html
+share/gnome/help/gnomecal/C/caluse.html
+share/gnome/help/gnomecal/C/cmdline.html
+share/gnome/help/gnomecal/C/gcal.html
+share/gnome/help/gnomecal/C/ln26.html
+share/gnome/help/gnomecal/C/tech.html.html
+share/gnome/help/gnomecal/C/docbook.css
 share/gnome/idl/gnome-pim.idl
 share/gnome/mime-info/gnome-pim.keys
 share/gnome/pixmaps/gnome-card.xpm
@@ -24,5 +36,6 @@ share/locale/no/LC_MESSAGES/gnome-pim.mo
 share/locale/pt/LC_MESSAGES/gnome-pim.mo
 share/locale/sv/LC_MESSAGES/gnome-pim.mo
 share/locale/ru/LC_MESSAGES/gnome-pim.mo
-@dirrm share/gnome/help/cal/C
-@dirrm share/gnome/help/cal
+@dirrm share/gnome/help/gnomecal/C/images
+@dirrm share/gnome/help/gnomecal/C
+@dirrm share/gnome/help/gnomecal
