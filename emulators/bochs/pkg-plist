@@ -11,6 +11,8 @@ share/doc/bochs/OldWindows95.html
 share/doc/bochs/Windows31.html
 share/doc/bochs/Windows95.html
 share/doc/bochs/changelog.html
+share/doc/bochs/codingguidelines.html
+share/doc/bochs/configure.html
 share/doc/bochs/construction.html
 share/doc/bochs/cosimulation.html
 share/doc/bochs/debugger.html
@@ -18,11 +20,13 @@ share/doc/bochs/developers.html
 share/doc/bochs/faq.html
 share/doc/bochs/features.html
 share/doc/bochs/fpu.html
+share/doc/bochs/guestNT.html
 share/doc/bochs/index.html
 share/doc/bochs/install.html
 share/doc/bochs/instrumentation.html
 share/doc/bochs/licensing.html
 share/doc/bochs/mtools.html
+share/doc/bochs/sound.html
 share/doc/bochs/undercon.gif
 share/doc/bochs/whatisbochs.html
 share/doc/bochs/win32.html
