@@ -1,0 +1,18 @@
+#!/bin/sh
+FONTDIR=${PKG_PREFIX}/lib/X11/fonts/TrueType
+if [ "$2" = "PRE-INSTALL" ]; then
+  echo "Please add ${FONTDIR} to your /etc/XF86Config file"
+  exit 0
+fi
+cd ${FONTDIR}
+touch fonts.dir
+sed -e '/-Baekmuk-/d' fonts.dir > fonts.dir.tmp
+numfonts=$(echo $(cat fonts.dir.tmp fonts.dir.baekmuk | wc -l) - 2 | bc)
+echo ${numfonts} > fonts.dir
+sed -e 1d fonts.dir.tmp >> fonts.dir
+sed -e 1d fonts.dir.baekmuk >> fonts.dir
+touch fonts.alias
+sed -e '/^-Baekmuk-/d' fonts.alias > fonts.alias.tmp
+mv -f fonts.alias.tmp fonts.alias
+cat fonts.alias.baekmuk >> fonts.alias
+rm -f fonts.dir.tmp fonts.alias.tmp
