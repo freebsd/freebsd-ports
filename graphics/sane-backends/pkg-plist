@@ -35,6 +35,7 @@ etc/sane.d/sp15c.conf
 etc/sane.d/st400.conf
 etc/sane.d/tamarack.conf
 etc/sane.d/umax.conf
+etc/sane.d/umax1220u.conf
 etc/sane.d/umax_pp.conf
 include/sane/sane.h
 include/sane/saneopts.h
@@ -128,6 +129,9 @@ lib/sane/libsane-s9036.so.1
 lib/sane/libsane-sharp.a
 lib/sane/libsane-sharp.so
 lib/sane/libsane-sharp.so.1
+lib/sane/libsane-sm3600.a
+lib/sane/libsane-sm3600.so
+lib/sane/libsane-sm3600.so.1
 lib/sane/libsane-snapscan.a
 lib/sane/libsane-snapscan.so
 lib/sane/libsane-snapscan.so.1
@@ -143,12 +147,14 @@ lib/sane/libsane-tamarack.so.1
 lib/sane/libsane-umax.a
 lib/sane/libsane-umax.so
 lib/sane/libsane-umax.so.1
+lib/sane/libsane-umax1220u.a
+lib/sane/libsane-umax1220u.so
+lib/sane/libsane-umax1220u.so.1
 lib/sane/libsane-umax_pp.a
 lib/sane/libsane-umax_pp.so
 lib/sane/libsane-umax_pp.so.1
 sbin/saned
 %%PORTDOCS%%share/doc/sane/AUTHORS
-%%PORTDOCS%%share/doc/sane/COPYING
 %%PORTDOCS%%share/doc/sane/ChangeLog
 %%PORTDOCS%%share/doc/sane/LEVEL2
 %%PORTDOCS%%share/doc/sane/LICENSE
@@ -168,8 +174,6 @@ sbin/saned
 %%PORTDOCS%%share/doc/sane/canon/canon.changes
 %%PORTDOCS%%share/doc/sane/canon/canon.install2700F.txt
 %%PORTDOCS%%share/doc/sane/mustek/mustek.CHANGES
-%%PORTDOCS%%share/doc/sane/mustek_usb/mustek_usb.CHANGES
-%%PORTDOCS%%share/doc/sane/mustek_usb/mustek_usb.TODO
 %%PORTDOCS%%share/doc/sane/umax/sane-logo.jpg
 %%PORTDOCS%%share/doc/sane/umax/sane-logo2.jpg
 %%PORTDOCS%%share/doc/sane/umax/sane-umax-advanced-options-doc.html
@@ -204,7 +208,6 @@ sbin/saned
 %%PORTDOCS%%share/doc/sane/umax/umax.FAQ
 %%PORTDOCS%%share/doc/sane/umax/umax.TODO
 %%PORTDOCS%%@dirrm share/doc/sane/umax
-%%PORTDOCS%%@dirrm share/doc/sane/mustek_usb
 %%PORTDOCS%%@dirrm share/doc/sane/mustek
 %%PORTDOCS%%@dirrm share/doc/sane/canon
 %%PORTDOCS%%@dirrm share/doc/sane
