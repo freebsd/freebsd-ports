@@ -288,7 +288,7 @@
 %%MMDIR%%/templates/userpass.txt
 %%MMDIR%%/templates/verify.txt
 @exec chmod 2775 %B
-@exec chgrp -R %%MMGRP%% %%MMDIR%%
+@exec chgrp -R %%MMGRP%% %D/%%MMDIR%%
 %%PORTDOCS%%share/doc/mailman/BUGS
 %%PORTDOCS%%share/doc/mailman/FAQ
 %%PORTDOCS%%share/doc/mailman/INSTALL

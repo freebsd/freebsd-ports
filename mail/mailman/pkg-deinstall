@@ -32,7 +32,7 @@ DEINSTALL)
   zero_crontab %%USER%%
   if ps -axwU %%USER%% | grep -q python; then
     echo 'Killing all running processes belonging to user "%%USER%%".'
-    killall -u %%USER%% %%PYTHON_CMD%%
+    killall -m -u %%USER%% python
     sleep 2
   fi
   ;;
