@@ -1,0 +1,19 @@
+*** arp2ethers.orig	Tue Mar 29 11:44:52 1994
+--- arp2ethers	Tue Jul  1 02:34:40 1997
+***************
+*** 14,20 ****
+  #
+  
+  sort +2rn arp.dat | \
+!     awk -e 'NF == 4 { print }' | \
+      awk -f p.awk | \
+      egrep -v '\.[0-9][0-9]*$' | \
+      sed -e 's/	.*	/	/' | \
+--- 14,20 ----
+  #
+  
+  sort +2rn arp.dat | \
+!     awk 'NF == 4 { print }' | \
+      awk -f p.awk | \
+      egrep -v '\.[0-9][0-9]*$' | \
+      sed -e 's/	.*	/	/' | \
