@@ -5,7 +5,7 @@
 # $FreeBSD$
 #
 
-PORTVERSION=	16.1d
+PORTVERSION=	16.1e
 PORTREVISION=	0
 CATEGORIES=	net
 MASTER_SITES=	http://people.freebsd.org/~jdp/s1g/ \
