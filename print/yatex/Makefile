@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	yatex
-PORTVERSION=	1.69.e
+PORTVERSION=	1.69.k
 CATEGORIES?=	print elisp
 MASTER_SITES=	http://www.yatex.org/ \
 		http://www.gentei.org/~yuuji/tmp/
@@ -19,7 +19,7 @@ MAINTAINER=	taoka@FreeBSD.org
 PKGINSTALL=	${WRKDIR}/INSTALL
 PKGDEINSTALL=	${WRKDIR}/DEINSTALL
 PKGMESSAGE=	${WRKDIR}/MESSAGE
-VERSION=	10103091216
+VERSION=	10106111128
 TARGETNAME=	YaTeX
 DIRSECTION=	The Emacs editor and associated tools
 EMACS_PORT_NAME?=emacs20
@@ -58,9 +58,9 @@ PORTSDOCDIR=	${PREFIX}/share/doc/yatex
 .if (${EMACS_PORT_NAME} == xemacs21)
 NEW=
 HELP=		help/YATEXHLP.eng
-INFOFILES=	yatexe
-INFONODES=	YaTeX
-INFONODEEXPS=	Yet Another tex-mode for Emacs.
+INFOFILES=	yatexe:yahtmle
+INFONODES=	YaTeX:yahtml
+INFONODEEXPS=	Yet Another tex-mode for Emacs.:Yet Another HTML mode.
 .else
 NEW=		yatex.new
 HELP=		help/YATEXHLP.jp help/YATEXHLP.eng
@@ -69,11 +69,12 @@ DOCSRC=		docs/yatexj.tex \
 		docs/yahtmlj.tex docs/htmlqa \
 		docs/yatexadd.doc docs/yatexgen.doc \
 		docs/qanda
-INFOFILES=	yatexj:yatexe:yahtmlj
-INFONODES=	YaTeX-jp:YaTeX:yahtml-jp
-INFONODEEXPS=	Yet Another tex-mode for Emacs. (Japanese):Yet Another tex-mode for Emacs.:Yet Another HTML mode. (Japanese)
+INFOFILES=	yatexj:yatexe:yahtmlj:yahtmle
+INFONODES=	YaTeX-jp:YaTeX:yahtml-jp:yahtml
+INFONODEEXPS=	Yet Another tex-mode for Emacs. (Japanese):Yet Another tex-mode for Emacs.:Yet Another HTML mode. (Japanese):Yet Another HTML mode.
 .endif
 DOCSRC+=	docs/yatexe.tex \
+		docs/htmlqa.eng docs/yahtmle.tex \
 		docs/yatexref.eng \
 		docs/qanda.eng
 EL_FILES=	comment.el yatex.el yatexadd.el yatexgen.el \
