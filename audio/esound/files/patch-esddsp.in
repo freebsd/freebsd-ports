@@ -1,0 +1,11 @@
+--- esddsp.in.orig	Sun Oct  5 15:31:52 2003
++++ esddsp.in	Sun Oct  5 15:32:08 2003
+@@ -97,7 +97,7 @@
+ prefix=@prefix@
+ exec_prefix=@exec_prefix@
+ 
+-LD_PRELOAD="@libdir@/libesddsp.so.@ESD_MAJOR_VERSION@ @libdir@/libesd.so.@ESD_MAJOR_VERSION@ $LD_PRELOAD"
++LD_PRELOAD="@libdir@/libesddsp.so @libdir@/libesd.so $LD_PRELOAD"
+ export LD_PRELOAD
+ 
+ # invoke the program with the args given
