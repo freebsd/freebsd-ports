@@ -41,6 +41,7 @@
     SUBDIR += chord
     SUBDIR += chord2html
     SUBDIR += clex
+    SUBDIR += clpbar
     SUBDIR += cmatrix
     SUBDIR += colortail
     SUBDIR += compat22

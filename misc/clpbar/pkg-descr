@@ -1,0 +1,7 @@
+Bar is a simple tool to copy a stream of data and print a display for the user
+on stderr showing (a) the ammount of data passed, (b) the throughput of the
+data transfer, and (c) the transfer time, or, if the total size of the data
+stream is known, the estimated time remaining, what percentage of the data
+transfer has been completed, and a progress bar.
+
+WWW: http://clpbar.sourceforge.net/
