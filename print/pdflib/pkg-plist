@@ -1,0 +1,9 @@
+bin/imagepdf
+bin/pdfclock
+bin/pdfdemo
+bin/pdfgraph
+bin/text2pdf
+include/pdf.h
+lib/libpdf.a
+share/doc/pdflib/PDFlib-0.6.pdf
+@dirrm share/doc/pdflib

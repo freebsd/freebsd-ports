@@ -1,0 +1,12 @@
+PDFlib is a library of C routines which allow you to programmatically
+generate files in Adobe's Portable Document Format PDF.  PDFlib
+acts as a backend processor to your own programs. While you (the
+programmer) are responsible for retrieving or maintaining the data
+to be processed, PDFlib takes over the task of generating the PDF
+code which graphically represents your data. While you must still
+format and arrange your text and graphical objects, PDFlib frees
+you from the internals and intricacies of PDF. Although being far
+from complete, PDFlib already offers many useful functions for
+creating text, graphics, images and hypertext elements in PDF files.
+
+	http://www.ifconnection.de/~tm/software/pdflib/
