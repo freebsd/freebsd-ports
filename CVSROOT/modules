@@ -6450,6 +6450,7 @@ patanjali	ports/misc/patanjali
 patchutils	ports/misc/patchutils
 pathalias	ports/mail/pathalias
 pathchar	ports/net/pathchar
+pathological	ports/games/pathological
 pavuk		ports/ftp/pavuk
 pawm		ports/x11-wm/pawm
 pbasic		ports/lang/pbasic
