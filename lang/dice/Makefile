@@ -13,7 +13,7 @@ MASTER_SITES=	http://www.obviously.com/dice/
 DISTNAME=	${PORTNAME}-rel-${PORTVERSION}
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	adamw@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	DICE - The Amiga/embedded/generic 68000 C compiler
 
 USE_REINPLACE=	yes
