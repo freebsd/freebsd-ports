@@ -9006,6 +9006,7 @@ slib		ports/lang/slib
 slib-gauche	ports/lang/slib-gauche
 slib-guile	ports/lang/slib-guile
 sliderule	ports/deskutils/sliderule
+slides		ports/textproc/slides
 slideshow	ports/multimedia/slideshow
 slimserver	ports/audio/slimserver
 slingshot	ports/x11-toolkits/slingshot
