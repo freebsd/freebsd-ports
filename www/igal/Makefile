@@ -8,8 +8,7 @@
 PORTNAME=	igal
 PORTVERSION=	1.4
 CATEGORIES=	www graphics
-MASTER_SITES=	http://www.stanford.edu/~epop/igal/ \
-		http://planetmirror.com/pub/igal/
+MASTER_SITES=	http://www.stanford.edu/~epop/igal/
 
 MAINTAINER=	absinthe@pobox.com
 COMMENT=	A static html image gallery generator for *nix
