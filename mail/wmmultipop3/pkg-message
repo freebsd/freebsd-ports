@@ -1,7 +1,5 @@
-
 ------------------------------------------------------------------
 WARNING!!! - When you run wmmultipop3 and it automatically creates
 .wmmultipop3rc in your home directory, make sure you set chmod 600
 on that configuration file because passwords will be in plain text
 ------------------------------------------------------------------
-
