@@ -7,7 +7,7 @@
 
 PORTNAME=	tigcc
 PORTVERSION=	0.95
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel
 MASTER_SITES=	http://tigcc.ticalc.org/sources/\
 		http://tigcc.ticalc.org/linux/
