@@ -12,3 +12,26 @@
  #define INDEX_MAXLN 4096
  #define DB_DIR	    "/var/db/pkg"
  #define ITER_BYTES  (128 * 1024)
+@@ -183,10 +187,12 @@
+ 	if (*sp == '|')
+ 	    ++i;
+ 
+-    if (i != (PFIELD_NFIELD - 1))
++    if (i < (PFIELD_NFIELD - 1))
+     {
+ #ifdef DEBUG
+-	warnx("invalid number of fields");
++	warnx("invalid number of fields (%d should be %d)",
++		i + 1,
++		PFIELD_NFIELD);
+ #endif /* DEBUG */
+ 	return FALSE;
+     }
+@@ -320,7 +326,6 @@
+ 
+ 	if (_refresh_index_parse(ln, portdp, rdp) != TRUE)
+ 	{
+-	    _refresh_portfree(portdp);
+ #ifdef DEBUG
+ 	    warnx("%s:%u: invalid format", INDEX_FN, rdp->rd_linec);
+ #endif /* DEBUG */
