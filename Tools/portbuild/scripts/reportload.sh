@@ -1,5 +1,7 @@
 #!/bin/sh
 
+if [ "$1" != "start" ]; then exit; fi
+
 b=/a/asami/portbuild
 s=$b/scripts/reportload
 
