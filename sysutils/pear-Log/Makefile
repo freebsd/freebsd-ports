@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Log
-PORTVERSION=	1.8.4
+PORTVERSION=	1.8.5
 CATEGORIES=	sysutils www pear
 
 MAINTAINER=	ports@FreeBSD.org
@@ -24,8 +24,8 @@ EXAMPLES=	composite.php console.php display.php error_log.php file.php	\
 		mail.php null.php observer_mail.php pear_error_handler.php	\
 		php_error_handler.php sql.php sqlite.php syslog.php win.php
 TESTS=		composite.phpt console.phpt display.phpt error_log.phpt		\
-		extract.phpt factory.phpt null.phpt priority.phpt		\
-		singleton.phpt sqlite.phpt
+		extract.phpt extract2.phpt factory.phpt null.phpt priority.phpt	\
+		singleton.phpt sqlite.phpt sql_ident.phpt
 _EXAMPLESDIR=	docs/examples
 
 .include <bsd.port.pre.mk>
