@@ -1,25 +1,19 @@
-*** lib/audio/Imakefile  Tue Feb 13 12:18:13 1996
---- lib/audio/Imakefile      Tue Feb 13 10:21:19 1996
-***************
-*** 66,73 ****
-  #endif /* ProjectX < 5 */
-  
-       EDB_DEFINES = -DERRORDB=\"$(LIBDIR)/AuErrorDB\"
-  
-          DEFINES = $(MALLOC_DEFINES) $(SYSV_DEFINES)
-!    CONN_DEFINES = ConnectionFlags
-     INSTALLFLAGS += $(INSTINCFLAGS)
-  
---- 66,78 ----
-  #endif /* ProjectX < 5 */
-  
-+ #if HasBSD44Sockets
-+    SOCK_DEFINES = -DBSD44SOCKETS
-+ #endif
-+ 
-+ 
-       EDB_DEFINES = -DERRORDB=\"$(LIBDIR)/AuErrorDB\"
-  
-          DEFINES = $(MALLOC_DEFINES) $(SYSV_DEFINES)
-!    CONN_DEFINES = ConnectionFlags $(SOCK_DEFINES)
-     INSTALLFLAGS += $(INSTINCFLAGS)
+--- lib/audio/Imakefile.orig	Sat Jan  1 18:28:13 2000
++++ lib/audio/Imakefile	Sat Mar 25 14:56:19 2000
+@@ -64,10 +64,15 @@
+     COMPAT_OBJS = AuGetBest.o
+ #endif /* ProjectX < 5 */
+ 
++#if HasBSD44Sockets
++   SOCK_DEFINES = -DBSD44SOCKETS
++#endif
++
++
+      EDB_DEFINES = -DERRORDB=\"$(LIBDIR)/AuErrorDB\"
+ 
+         DEFINES = $(MALLOC_DEFINES) $(SYSV_DEFINES)
+-   CONN_DEFINES = ConnectionFlags
++   CONN_DEFINES = ConnectionFlags $(SOCK_DEFINES)
+ 
+ HEADERS = Alibint.h Alibnet.h Xtutil.h audiolib.h audioutil.h snd.h wave.h    \
+           voc.h aiff.h sound.h soundlib.h fileutil.h 8svx.h Astreams.h \

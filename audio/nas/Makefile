@@ -1,16 +1,17 @@
 # New ports collection makefile for:	nas (formerly netaudio)
-# Version required:	1.2p1
+# Version required:	1.4
 # Date created:		03 Nov 1994
 # Whom:			jkh
 #
 # $FreeBSD$
 #
 
-DISTNAME=	nas-1.2p5
-PKGNAME=	nas-1.2.5
+DISTNAME=	nas-1.4
 CATEGORIES=	audio
-MASTER_SITES=	${MASTER_SITE_XCONTRIB}
+MASTER_SITES=	${MASTER_SITE_XCONTRIB} \
+		http://radscan.com/nas/
 MASTER_SITE_SUBDIR=	audio/nas
+EXTRACT_SUFX=	.src.tar.gz
 
 MAINTAINER=	ports@FreeBSD.org
 
@@ -19,10 +20,9 @@ ALL_TARGET=	World
 # no need to "xmkmf -a" and create the Makefiles twice -- see above
 XMKMF=		xmkmf
 
-MAN1=	AUVoxConfig.1 auconvert.1 auctl.1 audemo.1 audial.1 auedit.1 auinfo.1 \
-	aupanel.1 auphone.1 auplay.1 aurecord.1 auscope.1 auserver.1 autool.1 \
-	auvoxware.1 auwave.1 checkmail.1 issndfile.1 nas.1 playbucket.1 \
-	soundtoh.1
+MAN1=	auconvert.1 auctl.1 audemo.1 audial.1 auedit.1 auinfo.1 aupanel.1 \
+	auphone.1 auplay.1 aurecord.1 auscope.1 autool.1 auvoxware.1 auwave.1 \
+	checkmail.1 issndfile.1 nas.1 playbucket.1 soundtoh.1
 MAN3=	AuAnyEvent.3 AuBucketAttributes.3 AuCloseServer.3 \
 	AuConvertDataToShort.3 AuConvertShortToData.3 AuCreateBucket.3 \
 	AuCreateFlow.3 AuDataFormats.3 AuDataTypes.3 AuDefineToFormat.3 \
@@ -68,5 +68,13 @@ MAN3=	AuAnyEvent.3 AuBucketAttributes.3 AuCloseServer.3 \
 	SoundFlushFile.3 SoundOpenFileForReading.3 SoundOpenFileForWriting.3 \
 	SoundReadFile.3 SoundRewindFile.3 SoundSeekFile.3 \
 	SoundStringToFileFormat.3 SoundTellFile.3 SoundWriteFile.3
+
+post-patch:
+	@find ${WRKSRC} -name '*.[ch]' | xargs \
+		${PERL} -pi -e "s|<malloc.h>|<stdlib.h>|g"
+
+post-install:
+	${LDCONFIG} -m ${PREFIX}/lib
+	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
