@@ -1,9 +1,9 @@
 
 $FreeBSD$
 
---- ../coreconf/FreeBSD.mk.orig	Tue Sep 19 06:53:08 2000
-+++ ../coreconf/FreeBSD.mk	Wed Dec 19 10:05:26 2001
-@@ -35,19 +35,19 @@
+--- ../coreconf/FreeBSD.mk.orig	Fri Mar  1 18:08:12 2002
++++ ../coreconf/FreeBSD.mk	Thu Aug  8 20:16:30 2002
+@@ -35,9 +35,9 @@
  
  include $(CORE_DEPTH)/coreconf/UNIX.mk
  
@@ -11,33 +11,30 @@ $FreeBSD$
 -CC			= gcc
 -CCC			= g++
 +DEFAULT_COMPILER	= $(CC)
++CC			?= gcc
 +CCC			= $(CXX)
  RANLIB			= ranlib
  
  ifeq ($(OS_TEST),alpha)
- CPU_ARCH		= alpha
- else
--OS_REL_CFLAGS		= -Di386
- CPU_ARCH		= x86
+@@ -47,6 +47,8 @@
  endif
  
--OS_CFLAGS		= $(DSO_CFLAGS) $(OS_REL_CFLAGS) -ansi -Wall -pipe $(THREAD_FLAG) -DFREEBSD -DHAVE_STRERROR -DHAVE_BSD_FLOCK
-+OS_CFLAGS		= $(DSO_CFLAGS) $(OS_REL_CFLAGS) -ansi -Wall -pipe -DFREEBSD -DHAVE_STRERROR -DHAVE_BSD_FLOCK
+ OS_CFLAGS		= $(DSO_CFLAGS) -ansi -Wall -DFREEBSD -DHAVE_STRERROR -DHAVE_BSD_FLOCK
 +OS_LIBS			= $(BSD_LDOPTS)
 +OPTIMIZER		=
  
- #
- # The default implementation strategy for FreeBSD is pthreads.
-@@ -55,7 +55,7 @@
+ DSO_CFLAGS		= -fPIC
+ DSO_LDOPTS		= -shared -Wl,-soname -Wl,$(notdir $@)
+@@ -57,7 +59,7 @@
  ifndef CLASSIC_NSPR
  USE_PTHREADS		= 1
- DEFINES			+= -D_THREAD_SAFE
--THREAD_FLAG		= -pthread
-+DSO_LDFLAGS		= -pthread
+ DEFINES			+= -D_THREAD_SAFE -D_REENTRANT
+-DSO_LDOPTS		+= -pthread
++DSO_LDOPTS		+= $(BSD_LDOPTS)
  endif
  
  ARCH			= freebsd
-@@ -63,16 +63,15 @@
+@@ -65,7 +67,7 @@
  MOZ_OBJFORMAT		:= $(shell test -x /usr/bin/objformat && /usr/bin/objformat || echo aout)
  
  ifeq ($(MOZ_OBJFORMAT),elf)
@@ -46,14 +43,3 @@ $FreeBSD$
  else
  DLL_SUFFIX		= so.1.0
  endif
- 
- DSO_CFLAGS		= -fPIC
--DSO_LDOPTS		= -Bshareable
--DSO_LDFLAGS		=
-+DSO_LDOPTS		= -shared
- 
--MKSHLIB			= $(LD) $(DSO_LDOPTS)
-+MKSHLIB			= $(CC) $(DSO_LDOPTS) $(BSD_LDOPTS)
- 
- G++INCLUDES		= -I/usr/include/g++
- 

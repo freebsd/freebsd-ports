@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	nss
-PORTVERSION=	3.3.1
+PORTVERSION=	3.4.2
 CATEGORIES=	security
 MASTER_SITES=	ftp://ftp.mozilla.org/pub/security/nss/releases/NSS_${PORTVERSION:S/./_/g}_RTM/src/
 

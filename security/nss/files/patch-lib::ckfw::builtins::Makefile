@@ -1,16 +1,16 @@
 
 $FreeBSD$
 
---- lib/ckfw/builtins/Makefile	2001/12/18 12:48:03	1.1
-+++ lib/ckfw/builtins/Makefile	2001/12/18 12:48:39
-@@ -53,8 +53,8 @@
- PLC_STATIC_LIB = $(DIST)/lib/plc4.$(LIB_SUFFIX)
- PLDS_STATIC_LIB = $(DIST)/lib/plds4.$(LIB_SUFFIX)
+--- lib/ckfw/builtins/Makefile.orig	Sat Feb 16 00:53:42 2002
++++ lib/ckfw/builtins/Makefile	Thu Aug  8 21:29:48 2002
+@@ -54,8 +54,8 @@
  else
--PLC_STATIC_LIB = $(DIST)/lib/libplc4.$(LIB_SUFFIX)
--PLDS_STATIC_LIB = $(DIST)/lib/libplds4.$(LIB_SUFFIX)
-+PLC_STATIC_LIB = -lplc4
-+PLDS_STATIC_LIB = -lplds4
- endif
  
  EXTRA_LIBS += \
+-	$(DIST)/lib/$(LIB_PREFIX)plc4.$(LIB_SUFFIX) \
+-	$(DIST)/lib/$(LIB_PREFIX)plds4.$(LIB_SUFFIX) \
++	-lplc4 \
++	-lplds4 \
+ 	$(NULL)
+ 
+ endif

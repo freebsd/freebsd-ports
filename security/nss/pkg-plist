@@ -7,6 +7,7 @@ bin/checkcert
 bin/client
 bin/cmsutil
 bin/crlutil
+bin/dbtest
 bin/derdump
 bin/digest
 bin/instinit
@@ -60,13 +61,9 @@ include/nss/security/jar-ds.h
 include/nss/security/jar.h
 include/nss/security/jarfile.h
 include/nss/security/key.h
-include/nss/security/keydbt.h
 include/nss/security/keyhi.h
-include/nss/security/keylow.h
 include/nss/security/keyt.h
-include/nss/security/keytboth.h
 include/nss/security/keythi.h
-include/nss/security/keytlow.h
 include/nss/security/nss.h
 include/nss/security/nssb64.h
 include/nss/security/nssb64t.h
@@ -80,9 +77,8 @@ include/nss/security/nssckfwc.h
 include/nss/security/nssckfwt.h
 include/nss/security/nssckg.h
 include/nss/security/nssckmdt.h
-include/nss/security/nssckp.h
 include/nss/security/nssckt.h
-include/nss/security/nsscku.h
+include/nss/security/nssilckt.h
 include/nss/security/nssilock.h
 include/nss/security/nsslocks.h
 include/nss/security/nssrwlk.h
@@ -97,6 +93,7 @@ include/nss/security/pk11pqg.h
 include/nss/security/pk11sdr.h
 include/nss/security/pkcs11.h
 include/nss/security/pkcs11f.h
+include/nss/security/pkcs11n.h
 include/nss/security/pkcs11p.h
 include/nss/security/pkcs11t.h
 include/nss/security/pkcs11u.h
@@ -125,11 +122,11 @@ include/nss/security/secpkcs5.h
 include/nss/security/secpkcs7.h
 include/nss/security/secport.h
 include/nss/security/secrng.h
-include/nss/security/secrngt.h
 include/nss/security/smime.h
 include/nss/security/ssl.h
 include/nss/security/sslerr.h
 include/nss/security/sslproto.h
+include/nss/security/sslt.h
 include/nss/security/swfort.h
 include/nss/security/swfortt.h
 include/nss/security/watcomfx.h
@@ -141,6 +138,8 @@ lib/libnssckbi.so
 lib/libnssckbi.so.1
 lib/libsmime3.so
 lib/libsmime3.so.1
+lib/libsoftokn3.so
+lib/libsoftokn3.so.1
 lib/libssl3.so
 lib/libssl3.so.1
 lib/libswft.so
