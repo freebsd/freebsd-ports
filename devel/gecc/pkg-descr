@@ -1,0 +1,6 @@
+This is the group-enabled cluster compiler, for cached, distributed compilation.
+It is intended to work like ccache, distcc, or a combination of the two (this
+port does not yet work).  Use it cautiously, because it is at an early stage of
+development.
+
+WWW:  http://gecc.sourceforge.net

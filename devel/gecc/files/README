@@ -1,0 +1,115 @@
+The group enabled cluster compiler (gecc) is a tool to make build faster.  This
+tool is inspired by distcc (<URL:http://distcc.samba.org>) and ccache
+(<URL:httpd://ccache.samba.org>).  It helps in two ways:
+
+- not doing unneeded compiles and
+- distributing builds on a cluster of hosts.
+
+These two optimizations are unrelated and both of them are optional to gecc.
+Not doing unneeded compiles means that gecc caches the build of object files
+and distributing means putting compiles on more than one host (not a big
+surprise).
+
+For a more detailed look, please refer to the Web pages at
+<URL:http://gecc.sf.net>, which are included in the CVS repository.  Take a
+look at the htdocs directory.
+
+building:
+
+I have compiled gecc with gcc 2.95.3.  Then I got a report that gecc does not
+compile with gcc-3.2 (thanks for that), so I fixed gecc to compile with both.
+There are problems using the std::string::compare member functions. They have
+changed from gcc 2.95.x to gcc 3.y (I have been told that gcc3 is correct, but
+I have not checked with the ANSI standard).  My normal CXX is gcc 2.95.3.  If I
+break compatibilty with gcc-3.x again, please drop me a note and I will fix it,
+if anybody cares.
+
+The usual commands:
+
+	./configure
+	make
+
+should build two binaries:  gecc and geccd.  The client is gecc.  It's called
+instead of your usual C/C++ compiler, which means gcc in almost every case.
+There are two ways to call it:
+
+1.) gecc gcc file.c -c -o file.o -O2 ...
+That is, prepend your usual command line with "gecc".  gecc will find out which
+C/C++ compiler you would have called. It crawls your PATH for the next token on
+the command line ("gcc" in our example).  It will take a look, which version it
+is, by calling it with "--version" as the only parameter.  The name and the
+version should identify the compiler.  There are plans to take also care of the
+architecture of your host, so cross compiles could be done (this is one of my
+needs, but not implemented now).
+
+2.) If you make a link from the name of your compiler to gecc, then gecc will
+behave as above. The advantage is that this works with libtool, which is a bit
+picky about chained tools. I have a ~/bin directory, which is the very first in
+my $PATH. There are links like this:
+
+	c++ -> gecc
+	g++ -> gecc
+	gcc -> gecc
+	cc -> gecc
+
+Also, gecc is in the path.
+
+Either way, the source file is preprocessed and a hash of the preprocessed file
+and your command line is calculated.  This hash is looked up in a
+on-disk-cache.  For a cache hit, the object file, the stderr, and the compiler
+return code of the original compiler run are taken from cache and the original
+result is "reproduced".  On a cache miss the compiler is called and the result
+is recorded for the cache.
+
+If there are nodes registered to help in the compiling than for every cache
+miss, the host to do the compilation is calculated by a scheduler algorithm
+(right now it's round robin, but there will be feedback on the basis of
+compilation speed).
+
+testing:
+To test gecc, you need to start a geccd (the gecc daemon).  For example:
+
+	geccd -C /tmp/gecc-cache --compile -d
+
+will start geccd in debugging mode (-d), that is, without forking. A Ctrl-C
+will terminate the program. Then, on another shell, you need to set some
+environment variables:
+
+either:
+	export GECCD_SOCKFILE=/tmp/geccd.sockfile
+or:
+	export GECCD_HOSTNAME=localhost
+	export GECCD_PORT=42042
+
+Now do this:
+
+	gecc gcc hello.c -o hello.o
+
+Assuming you have a hello.c, it will be compiled to hello.o.  You can see geccd
+act and print debugging stuff on stderr. If you now remove the hello.o and
+repeat the same command line, hello.o will be taken from cache.
+
+If you have a second machine available, then you could start a second geccd on
+this second machine. Let's assume the first machine is named dilbert and the
+second is named asok. Then the command line on asok will be:
+
+	geccd --compile -a dilbert -A 42042 --compile --port 42042 -d
+
+this means announce yourself to a geccd, running on dilbert (port -A 42042) and
+help him to compile. Right now it is important to start the geccd on the helper
+host _after_ the main geccd (yes, this has to change).  If you now do
+compilation of more source files, then they will be distributed on all
+machines.
+
+The compile nodes don't need the includes or libs installed, but the same
+version of the compiler.  If not all compile nodes have all needed compilers
+installed, that's OK, since they only get jobs for the compilers they announce
+to the main geccd.  For this, they scan the $PATH and collect all known compiler
+binaries, which right now is all binaries that gecc installs.
+
+If you try this out, please be so nice as to mail me your feedback (either
+positive or negative, any feedback is better than none).  You can reach me as
+<j.beyer@web.de>.
+
+	Yours,
+	Joerg
