@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	xlines
-PORTVERSION=	1.0
+PORTVERSION=	1.1
 CATEGORIES=	games
 MASTER_SITES=	ftp://ftp.trolltech.com/contrib/
 DISTNAME=	${PORTNAME}
@@ -16,9 +16,6 @@ MAINTAINER=	ports@FreeBSD.org
 USE_QT=		yes
 USE_X_PREFIX=	yes
 NO_WRKSUBDIR=	yes
-
-post-extract:
-	@${RM} ${WRKSRC}/lines.moc
 
 post-patch:
 	@${PERL} -pi -e "s|%%PREFIX%%|${PREFIX}|g" ${WRKSRC}/*.cpp
