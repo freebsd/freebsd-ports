@@ -1,0 +1,21 @@
+--- confmagic.h.orig	Sat Feb 14 11:58:57 2004
++++ confmagic.h	Sat Feb 14 11:59:07 2004
+@@ -12,18 +12,6 @@
+ #ifndef _confmagic_h_
+ #define _confmagic_h_
+ 
+-#ifndef HAS_BCOPY
+-#ifndef bcopy
+-#define bcopy(s,d,l) memcpy((d),(s),(l))
+-#endif
+-#endif
+-
+-#ifndef HAS_BZERO
+-#ifndef bzero
+-#define bzero(s,l) memset((s),0,(l))
+-#endif
+-#endif
+-
+ #ifndef HAS_INDEX
+ #ifndef index
+ #define index strchr
