@@ -1,4 +1,5 @@
 bin/dx
+dx/bin/dx
 dx/bin/dxworker
 dx/bin/mdf2c
 dx/bin_%%ARCH%%/builder
