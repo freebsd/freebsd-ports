@@ -18,8 +18,14 @@ DISTNAME=	${PORTNAME}-${PORTVERSION:S/a/-alpha/}
 
 MAINTAINER=	dwcjr@FreeBSD.org
 
+.if !defined(WITHOUT_CUPS)
+WITH_CUPS=	yes
+.endif
+
 .if defined(WITH_CUPS)
 LIB_DEPENDS=	cups.2:${PORTSDIR}/print/cups-base
+CONFIGURE_ENV+=	CPPFLAGS=-I${LOCALBASE}/include \
+		LDFLAGS=-L${LOCALBASE}/lib
 .endif
 
 # directories
@@ -47,11 +53,6 @@ CONFIGURE_ARGS=	--libdir=${SAMBA_CONFDIR} \
 CONFIGURE_ARGS+=	--with-krb5=${KRB5_HOME}
 .else
 CONFIGURE_ARGS+=	--with-krb5=no
-.endif
-
-.if defined(WITH_CUPS)
-# This enables CUPS printing support in Samba.
-CONFIGURE_ARGS+=	--with-cups=${LOCALBASE}
 .endif
 
 .if defined(WITH_ACL_SUPPORT)
