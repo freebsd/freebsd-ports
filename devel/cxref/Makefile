@@ -3,12 +3,12 @@
 # Date created:		23 October 1996
 # Whom:			Thomas Gellekum <tg@freebsd.org>
 #
-# $Id: Makefile,v 1.4 1997/01/02 10:20:33 tg Exp $
+# $Id: Makefile,v 1.5 1997/07/17 12:18:01 tg Exp $
 #
 
 DISTNAME=	cxref-1.4
 CATEGORIES=	devel
-MASTER_SITES=	ftp://ftp.demon.co.uk/pub/unix/unix/tools/
+MASTER_SITES=	ftp://ftp.demon.co.uk/pub/unix/tools/
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	tg@freebsd.org
