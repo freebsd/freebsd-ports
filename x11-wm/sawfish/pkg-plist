@@ -158,6 +158,8 @@ share/sawfish/%%VERSION%%/lisp/move-resize.jl
 share/sawfish/%%VERSION%%/lisp/move-resize.jlc
 share/sawfish/%%VERSION%%/lisp/mwm.jl
 share/sawfish/%%VERSION%%/lisp/mwm.jlc
+share/sawfish/%%VERSION%%/lisp/old-window-menu.jl
+share/sawfish/%%VERSION%%/lisp/old-window-menu.jlc
 share/sawfish/%%VERSION%%/lisp/open-look.jl
 share/sawfish/%%VERSION%%/lisp/open-look.jlc
 share/sawfish/%%VERSION%%/lisp/place-window.jl
