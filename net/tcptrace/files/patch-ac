@@ -1,0 +1,23 @@
+/usr/bin/diff --ignore-matching-lines=.*{$Id:|$Header:}.* -u print.c.orig print.c
+--- print.c.orig	Fri Mar  9 17:33:16 2001
++++ print.c	Fri Mar  9 17:34:12 2001
+@@ -110,8 +110,8 @@
+ printeth_packet(
+     struct ether_header *pep)
+ {
+-    printf("\tETH Srce: %s\n", ether_ntoa((struct ether_addr *)&pep->ether_shost));
+-    printf("\tETH Dest: %s\n", ether_ntoa((struct ether_addr *)&pep->ether_dhost));
++    printf("\tETH Srce: %s\n", shawn_ether_ntoa((struct ether_addr *)&pep->ether_shost));
++    printf("\tETH Dest: %s\n", shawn_ether_ntoa((struct ether_addr *)&pep->ether_dhost));
+ 
+     printf(
+ 	hex?"\t    Type: 0x%x %s\n":"\t    Type: %d %s\n",
+@@ -708,7 +708,7 @@
+ /* and it messes up my cross-platform testing.  I'll just do it the */
+ /* "one true" way!  :-)  */
+ char *
+-ether_ntoa (struct ether_addr *e)
++shawn_ether_ntoa (struct ether_addr *e)
+ {
+     unsigned char *pe;
+     static char buf[30];
