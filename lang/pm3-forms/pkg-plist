@@ -165,6 +165,8 @@ lib/m3/pkg/web/%%TARGET%%/libweb.a
 lib/m3/pkg/web/%%TARGET%%/libweb.m3x
 lib/m3/pkg/web/%%TARGET%%/libweb.so
 lib/m3/pkg/web/src/Web.i3
+share/pm3-forms/COPYRIGHT
+@dirrm share/pm3-forms
 @dirrm lib/m3/pkg/web/src
 @dirrm lib/m3/pkg/web/%%TARGET%%
 @dirrm lib/m3/pkg/web
