@@ -17,8 +17,18 @@ LIB_DEPENDS=	uu.3:${PORTSDIR}/converters/uulib
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib"
-CONFIGURE_ARGS=	--enable-inews=${PREFIX}/news/lib/inews \
-		--disable-tcl
+CONFIGURE_ARGS=	--disable-tcl
+
+.include <bsd.port.pre.mk>
+
+# Try and catch some of the different places that inn and cnews put inews
+.if exists(${PREFIX}/bin/inews)
+# cnews
+CONFIGURE_ARGS+=	--enable-inews=${PREFIX}/bin/inews
+.else
+# inn by default
+CONFIGURE_ARGS+=	--enable-inews=${PREFIX}/news/lib/inews
+.endif
 
 MAN1=		uudeview.1 uuenview.1
 
@@ -34,4 +44,4 @@ post-install:
 	@${ECHO_MSG} "===>  Not installing available documents"
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
