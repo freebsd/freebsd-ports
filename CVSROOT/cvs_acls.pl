@@ -75,61 +75,66 @@
 #	      third column of a single avail line.
 #
 
+use strict;
+
 use lib $ENV{CVSROOT};
 use CVSROOT::cfg;
 
-$debug = $cfg::DEBUG;
-$die = '';
-$cvsroot = $ENV{'CVSROOT'};
-$availfile = $cvsroot . "/CVSROOT/avail";
-$myname = $ENV{"USER"} if !($myname = $ENV{"LOGNAME"});
+my $debug = $cfg::DEBUG;
+my $cvsroot = $ENV{'CVSROOT'};
+my $availfile = $cvsroot . "/CVSROOT/avail";
+my $myname = $ENV{"LOGNAME"} || $ENV{"USER"};
 
+my $die = '';
 eval "print STDERR \$die='Unknown parameter $1\n' if !defined \$$1; \$$1=\$';"
     while ($ARGV[0] =~ /^(\w+)=/ && shift(@ARGV));
 exit 255 if $die;		# process any variable=value switches
 
 die "Must set CVSROOT\n" if !$cvsroot;
-($repos = shift) =~ s:^$cvsroot/::;
+
+my $repos = shift;
+$repos =~ s:^$cvsroot/::;
 grep($_ = $repos . '/' . $_, @ARGV);
 
 print "$$ Repos: $repos\n","$$ ==== ",join("\n$$ ==== ",@ARGV),"\n" if $debug;
 
-$exit_val = 0;				# Good Exit value
+my $exit_val = 0;			# Good Exit value
 
-$universal_off = 0;
+my $universal_off = 0;
 open (AVAIL, $availfile) || exit(0);	# It is ok for avail file not to exist
 while (<AVAIL>) {
     chop;
     next if /^\s*\#/;
     next if /^\s*$/;
-    ($flagstr, $u, $m) = split(/[\s,]*\|[\s,]*/, $_);
+
+    my ($flagstr, $u, $m) = split(/[\s,]*\|[\s,]*/, $_);
 
     # Skip anything not starting with "avail" or "unavail" and complain.
     (print "Bad avail line: $_\n"), next
 	if ($flagstr !~ /^avail/ && $flagstr !~ /^unavail/);
 
     # Set which bit we are playing with. ('0' is OK == Available).
-    $flag = (($& eq "avail") ? 0 : 1);
+    my $flag = (($& eq "avail") ? 0 : 1);
 
     # If we find a "universal off" flag (i.e. a simple "unavail") remember it
-    $universal_off = 1 if ($flag && !$u && !$m);
+    my $universal_off = 1 if ($flag && !$u && !$m);
 
     # $myname considered "in user list" if actually in list or is NULL
-    $in_user = (!$u || grep ($_ eq $myname, split(/[\s,]+/,$u)));
+    my $in_user = (!$u || grep ($_ eq $myname, split(/[\s,]+/,$u)));
     print "$$ \$myname($myname) in user list: $_\n" if $debug && $in_user;
 
     # Module matches if it is a NULL module list in the avail line.  If module
     # list is not null, we check every argument combination.
-    $in_repo = (!$m || 0);
+    my $in_repo = (!$m || 0);
     if (!$in_repo) {
-	@tmp = split(/[\s,]+/,$m);
-	for $j (@tmp) {
+	my @tmp = split(/[\s,]+/,$m);
+	for my $j (@tmp) {
 	    # If the repos from avail is a parent(or equal) dir of $repos, OK
 	    $in_repo = 1, last if ($repos eq $j || $repos =~ /^$j\//);
 	}
 	if (!$in_repo) {
 	    #$in_repo = 1;
-	    for $j (@ARGV) {
+	    for my $j (@ARGV) {
 		last if !($in_repo = grep ($_ eq $j, @tmp));
 	    }
 	}
