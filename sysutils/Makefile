@@ -54,6 +54,7 @@
     SUBDIR += nut
     SUBDIR += obliterate
     SUBDIR += pib
+    SUBDIR += pkg_remove
     SUBDIR += prips
     SUBDIR += psmisc
     SUBDIR += rdate
