@@ -3,6 +3,7 @@ share/linbot/config.py
 share/linbot/linbot.py
 share/linbot/myUrlLib.py
 share/linbot/robotparser.py
+share/linbot/linbot.css
 @exec ln -fs %D/share/linbot/linbot.py %D/bin/linbot
 @unexec rm -rf %D/share/linbot
 @unexec rm %D/bin/linbot
