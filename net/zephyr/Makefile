@@ -41,4 +41,10 @@ post-install:
 	    done
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} > 450000
+BROKEN=		Broken due to lack of libss since FreeBSD 4.6
+.endif
+
+.include <bsd.port.post.mk>
