@@ -16,12 +16,7 @@ DISTNAME=	AlephOne-${PORTVERSION}
 MAINTAINER=	malyn@strangeGizmo.com
 COMMENT=	The open source version of Bungie's Marathon game
 
-LIB_DEPENDS=	SDL-1.1.5:${PORTSDIR}/devel/sdl12 \
-		SDL_image.10:${PORTSDIR}/graphics/sdl_image \
-		SDL_net.0:${PORTSDIR}/net/sdl_net
-
-SDL_CONFIG?=	${LOCALBASE}/bin/sdl11-config
-
+USE_SDL=	image net sdl
 USE_PERL5_BUILD=yes
 USE_X_PREFIX=	yes
 GNU_CONFIGURE=	yes

@@ -15,10 +15,9 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	llwang@infor.org
 COMMENT=	54321 is five games in four-, three-, or two-dimensions for one player
 
-LIB_DEPENDS=	SDL-1.1.5:${PORTSDIR}/devel/sdl12 \
-		SDL_image.10:${PORTSDIR}/graphics/sdl_image \
-		png.5:${PORTSDIR}/graphics/png
+LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png
 
+USE_SDL=	image sdl
 USE_GMAKE=	yes
 MAKEFILE=	GNUmakefile
 ALL_TARGET=	all size

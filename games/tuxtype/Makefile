@@ -14,16 +14,12 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	pat@FreeBSD.org
 COMMENT=	An educational typing tutor starring Tux the Linux Penguin
 
-LIB_DEPENDS=	SDL_image.10:${PORTSDIR}/graphics/sdl_image \
-		SDL_mixer.2:${PORTSDIR}/audio/sdl_mixer
-
+USE_SDL=	image mixer sdl
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes
 USE_AUTOMAKE_VER=14
 USE_GMAKE=	yes
 USE_PERL5_BUILD=yes
-SDL_CONFIG=	${LOCALBASE}/bin/sdl11-config
-CONFIGURE_ENV=	SDL_CONFIG="${SDL_CONFIG}"
 
 pre-patch:
 .for dirs in data images sounds

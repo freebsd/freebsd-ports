@@ -15,14 +15,14 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	alexander@trull.com
 COMMENT=	Free implementation of LucasArts S.C.U.M.M. interpreter
 
-LIB_DEPENDS=	SDL-1.1.5:${PORTSDIR}/devel/sdl12 \
-		mad.2:${PORTSDIR}/audio/mad
+LIB_DEPENDS=	mad.2:${PORTSDIR}/audio/mad
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 USE_PERL5_BUILD=yes
 USE_REINPLACE=	yes
+USE_SDL=	yes
 
 MAN6=		scummvm.6
 

@@ -48,7 +48,7 @@ PLIST_SUB+=	SVGA="@comment "
 	|| exists(${LOCALBASE}/lib/libSDL-1.1.so.5)
 . if !(defined(WITHOUT_SDLCLIENT) && defined(WITHOUT_SDL) \
 	&& defined(WITHOUT_SDLGL))
-LIB_DEPENDS+=	SDL-1.1.5:${PORTSDIR}/devel/sdl12
+USE_SDL=	yes
 . endif
 . if !defined(WITHOUT_SDLCLIENT)
 MAKE_ARGS+=	BUILD_SDLQUAKE2=YES

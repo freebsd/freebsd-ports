@@ -19,17 +19,12 @@ COMMENT=	Throw colourful bubbles to build groups and destroy the groups
 
 BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/SDL_perl.pm:${PORTSDIR}/devel/p5-SDL
 RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/SDL_perl.pm:${PORTSDIR}/devel/p5-SDL
-LIB_DEPENDS=	SDL-1.1.5:${PORTSDIR}/devel/sdl12 \
-		SDL_mixer.2:${PORTSDIR}/audio/sdl_mixer \
-		SDL_image.10:${PORTSDIR}/graphics/sdl_image
 
-SDL_CONFIG?=	${LOCALBASE}/bin/sdl11-config
-
+USE_SDL=	mixer image sdl
 USE_GMAKE=	yes
 USE_REINPLACE=	yes
 USE_BZIP2=	yes
-MAKE_ENV=	SDL_CONFIG="${SDL_CONFIG}" \
-		MKDIR="${MKDIR}" \
+MAKE_ENV=	MKDIR="${MKDIR}" \
 		TAR="${TAR}"
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/c_stuff/

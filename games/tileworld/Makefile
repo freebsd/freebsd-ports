@@ -14,8 +14,7 @@ DISTNAME=	tworld-${PORTVERSION}
 MAINTAINER=	sec@42.org
 COMMENT=	An emulation of the game "Chip's Challenge"
 
-LIB_DEPENDS=	SDL-1.1.5:${PORTSDIR}/devel/sdl12
-
+USE_SDL=	yes
 GNU_CONFIGURE=	YES
 USE_GMAKE=	YES
 USE_REINPLACE=	YES

@@ -15,12 +15,10 @@ DISTNAME=	ego222
 MAINTAINER=	Jan.Stocker@t-online.de
 COMMENT=	A 3d dungeon crawling adventure in the spirit of NetHack
 
-LIB_DEPENDS=	SDL-1.1.5:${PORTSDIR}/devel/sdl12
-
 WRKSRC=		${WRKDIR}/${PORTNAME}
+USE_SDL=	yes
 USE_MESA=	yes
 USE_GMAKE=	yes
-SDL_CONFIG=	${LOCALBASE}/bin/sdl11-config
 USE_REINPLACE=	yes
 
 pre-patch:

@@ -14,15 +14,10 @@ MASTER_SITE_SUBDIR=	toppler
 MAINTAINER=	dom@happygiraffe.net
 COMMENT=	A game where you have to climb the tower and avoid the monsters
 
-LIB_DEPENDS=	SDL-1.1.5:${PORTSDIR}/devel/sdl12
-LIB_DEPENDS+=	SDL_mixer:${PORTSDIR}/audio/sdl_mixer
-
-SDL_CONFIG?=	${LOCALBASE}/bin/sdl11-config
-
+USE_SDL=	mixer sdl
 USE_GMAKE=	yes
 USE_PERL5_BUILD=yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	SDL_CONFIG="${SDL_CONFIG}"
 
 MAN6=		toppler.6
 

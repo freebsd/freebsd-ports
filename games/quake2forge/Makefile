@@ -54,9 +54,8 @@ PLIST_SUB+=	GL:="@comment "
 .endif
 
 .if !defined(WITHOUT_SDL) && defined(WITH_SDL)
-LIB_DEPENDS+=	SDL-1.1.5:${PORTSDIR}/devel/sdl12
+USE_SDL=	yes
 CONFIGURE_ARGS+=--with-sdl=${LOCALBASE}
-CONFIGURE_ENV=	"SDL_CONFIG=${LOCALBASE}/bin/sdl11-config"
 .if !defined(WITHOUT_GL)
 PLIST_SUB+=	SDLGL:=""
 .else

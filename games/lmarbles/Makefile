@@ -15,12 +15,10 @@ MASTER_SITE_SUBDIR=	lgames
 MAINTAINER=	verm@drunkmonk.net
 COMMENT=	A challenging puzzle game similar to Atomix
 
-LIB_DEPENDS=	SDL-1.1.5:${PORTSDIR}/devel/sdl12
-
+USE_SDL=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-profile-path=/var/games
-CONFIGURE_ENV=	SDL_CONFIG=${LOCALBASE}/bin/sdl11-config
 USE_REINPLACE=	yes
 
 MAN6=	marbles.6

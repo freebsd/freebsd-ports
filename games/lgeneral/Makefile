@@ -15,13 +15,10 @@ MASTER_SITE_SUBDIR=	lgeneral
 MAINTAINER=	filippo@widestore.net
 COMMENT=	A turn-based strategy engine inspired by Panzer General
 
-LIB_DEPENDS=	SDL-1.1.5:${PORTSDIR}/devel/sdl12
-
-SDL_CONFIG?=	${LOCALBASE}/bin/sdl11-config
-CONFIGURE_ENV=	SDL_CONFIG="${SDL_CONFIG}"
+USE_SDL=	yes
 
 .ifndef (WITHOUT_SOUND)
-LIB_DEPENDS+=	SDL_mixer:${PORTSDIR}/audio/sdl_mixer
+USE_SDL=	mixer
 .else
 CONFIGURE_ARGS+=--disable-sound
 .endif

@@ -15,14 +15,12 @@ MASTER_SITES=	http://www.efd.lth.se/~d00jkr/tuxpuck/
 MAINTAINER=	Jan.Stocker@t-online.de
 COMMENT=	Shufflepuck Cafe Clone
 
-LIB_DEPENDS=	SDL-1.1.5:${PORTSDIR}/devel/sdl12 \
-		jpeg.9:${PORTSDIR}/graphics/jpeg \
+LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
 		png.5:${PORTSDIR}/graphics/png \
 		vorbis.3:${PORTSDIR}/audio/libvorbis
 
-SDL_CONFIG=	${LOCALBASE}/bin/sdl11-config
+USE_SDL=	yes
 USE_GMAKE=	yes
-MAKE_ENV=	SDL_CONFIG="${SDL_CONFIG}"
 ALL_TARGET=	tuxpuck
 
 MANCOMPRESSED=	yes

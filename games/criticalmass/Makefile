@@ -16,10 +16,7 @@ DISTNAME=	CriticalMass-${PORTVERSION}
 MAINTAINER=	nbm@FreeBSD.org
 COMMENT=	An SDL/OpenGL space shoot\'em up game
 
-LIB_DEPENDS=	SDL-1.1.5:${PORTSDIR}/devel/sdl12 \
-		SDL_image.10:${PORTSDIR}/graphics/sdl_image \
-		SDL_mixer.2:${PORTSDIR}/audio/sdl_mixer
-
+USE_SDL=	image mixer sdl
 USE_BZIP2=	yes
 USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes

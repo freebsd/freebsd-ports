@@ -13,11 +13,9 @@ MASTER_SITES=	http://www.libsdl.org/projects/newvox/src/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Voxel-style landscape rendering fly-by
 
-LIB_DEPENDS=	SDL-1.1.5:${PORTSDIR}/devel/sdl12
-
+USE_SDL=	yes
 USE_X_PREFIX=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	SDL_CONFIG="${LOCALBASE}/bin/sdl11-config"
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/newvox ${PREFIX}/bin

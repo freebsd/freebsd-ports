@@ -14,12 +14,12 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	drs@rucus.ru.ac.za
 COMMENT=	A clone of Rick Dangerous
 
-LIB_DEPENDS=	SDL-1.1.5:${PORTSDIR}/devel/sdl12 \
-		jpeg.9:${PORTSDIR}/graphics/jpeg
+LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg
 
 RESTRICTED=	Copyright status of the graphics and sounds is uncertain
 USE_GMAKE=	yes
 USE_REINPLACE=	yes
+USE_SDL=	yes
 
 MAN6=		xrick.6
 MANCOMPRESSED=	yes

@@ -14,17 +14,12 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	fracture@allusion.net
 COMMENT=	A multiplayer-capable and modified version of ID's classic doom game
 
-LIB_DEPENDS=	SDL-1.1.5:${PORTSDIR}/devel/sdl12 \
-		smpeg.1:${PORTSDIR}/multimedia/smpeg \
-		SDL_mixer.2:${PORTSDIR}/audio/sdl_mixer \
-		SDL_net.0:${PORTSDIR}/net/sdl_net
+LIB_DEPENDS=	smpeg.1:${PORTSDIR}/multimedia/smpeg
 
-SDL_CONFIG=	${LOCALBASE}/bin/sdl11-config
-
+USE_SDL=	mixer net sdl
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	SDL_CONFIG="${SDL_CONFIG}" \
-		CFLAGS+="-I${LOCALBASE}/include" \
+CONFIGURE_ENV=	CFLAGS+="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
 MAN5=		boom.cfg.5

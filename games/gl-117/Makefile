@@ -16,10 +16,8 @@ EXTRACT_SUFX=	-src.tar.gz
 MAINTAINER=	erik@smluc.org
 COMMENT=	An OpenGL & SDL action flight simulator
 
-LIB_DEPENDS=	SDL_mixer.2:${PORTSDIR}/audio/sdl_mixer
-
 WRKSRC=		${WRKDIR}/${DISTNAME}-src
-USE_SDL=	yes
+USE_SDL=	mixer sdl
 USE_MESA=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--x-include=${X11BASE}/include \
