@@ -1,6 +1,6 @@
 ====
-Note that some stuff that comes with the standard Ruby distribution is
-provided as separate ports:
+Note that some of the standard libraries are provided as separate
+ports since they require extra dependencies:
 
 	databases/ruby-gdbm:	GDBM module
 
@@ -12,5 +12,5 @@ provided as separate ports:
 
 	lang/ruby-mode.el:	Emacs lisp modules
 			
-Please install them as occasion demands.
+Install them as occasion demands.
 ====
