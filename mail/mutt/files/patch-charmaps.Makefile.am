@@ -1,0 +1,14 @@
+--- charmaps/Makefile.am.orig	Mon Aug 23 22:12:09 1999
++++ charmaps/Makefile.am	Fri Dec  7 15:17:33 2001
+@@ -1,6 +1,7 @@
+ ## Process this file with automake to produce Makefile.in
+ 
+-noinst_DATA = charmap_notice
+-
+-charmap_notice:
+-	@echo ; echo "For charmap support, please read INSTALL" ; echo
++install:
++	$(top_srcdir)/mkinstalldirs $(charmaps)
++	for f in $(top_srcdir)/$(subdir)/maps/* ; do \
++		$(INSTALL) -m 644 $$f $(charmaps)/ ; \
++	done
