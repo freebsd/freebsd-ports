@@ -162,6 +162,7 @@
     SUBDIR += gnomeicu
     SUBDIR += gnomeicu2
     SUBDIR += gnomemeeting
+    SUBDIR += gnomemeeting2
     SUBDIR += gnometelnet
     SUBDIR += gnosamba
     SUBDIR += gnu-finger
