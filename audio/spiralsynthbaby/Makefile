@@ -15,10 +15,11 @@ MAINTAINER=	trevor@FreeBSD.org
 
 LIB_DEPENDS=	fltk.1:${PORTSDIR}/x11-toolkits/fltk
 
-USE_X_PREFIX=	yes
+GNU_CONFIGURE=	yes
 MAKE_ENV=	PTHREAD_LIBS="${PTHREAD_LIBS}" \
 		PTHREAD_CFLAGS="${PTHREAD_CFLAGS}"
-GNU_CONFIGURE=	yes
+PLIST=		${WRKDIR}/pkg-plist
+USE_X_PREFIX=	yes
 
 WRKSRC=		${WRKDIR}/${DISTNAME}
 
@@ -29,14 +30,42 @@ post-patch:
 			s|CFLAGS =|CFLAGS +=|g ; \
 			s|CXXFLAGS=|CXXFLAGS+=|g ; \
 			s|-lm|${PTHREAD_LIBS} -lm|g ; \
-			s|/usr/X11R6|${X11BASE}|g' ${WRKSRC}/Makefile.in
+			s|/usr/X11R6|${X11BASE}|g' ${WRKSRC}/Makefile.in \
+				${WRKSRC}/PluginLink.sh
+# Use as a plugin to SpiralLoops 2.0.0 results in "Can't open audio driver."
+.if defined(PLUGIN)
+	${PERL} -pi -e 's|^//#define PLUGIN|#define PLUGIN|g' \
+			${WRKSRC}/Synth.C
+
+post-build:
+	cd ${WRKSRC}; ${SH} ./PluginLink.sh
+.endif		# defined(PLUGIN)
+
+pre-install:
+.if defined(PLUGIN)
+	${ECHO_CMD} lib/SpiralSynth.so > ${PLIST}
+.else
+	${ECHO_CMD} bin/SpiralSynth > ${PLIST}
+.endif
+.if !defined(NOPORTDOCS)
+.for ii in ${DOC_FILES}
+	${ECHO_CMD} share/doc/spiralsynth/${ii} >> ${PLIST}
+.endfor
+	${ECHO_CMD} @dirrm share/doc/spiralsynth >> ${PLIST}
+.endif
 
 do-install:
+.if defined(PLUGIN)
+	${INSTALL_PROGRAM} ${WRKSRC}/SpiralSynth.so ${PREFIX}/lib
+.else
 	${INSTALL_PROGRAM} ${WRKSRC}/SpiralSynth ${PREFIX}/bin
+.endif
+
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${PREFIX}/share/doc/spiralsynth
-.for i in ${DOC_FILES}
-	${INSTALL_DATA} ${WRKSRC}/${i} ${PREFIX}/share/doc/spiralsynth
+	${MKDIR} ${DOCSDIR}
+.for ii in ${DOC_FILES}
+	${INSTALL_DATA} ${WRKSRC}/${ii} ${DOCSDIR}
 .endfor
 .endif
+
 .include <bsd.port.mk>
