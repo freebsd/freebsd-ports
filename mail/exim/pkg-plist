@@ -28,12 +28,11 @@ sbin/exiwhat
 %%PORTDOCS%%%%DOCSDIR%%/NewStuff
 %%PORTDOCS%%%%DOCSDIR%%/OptionLists.txt
 %%PORTDOCS%%%%DOCSDIR%%/POST-INSTALL-NOTES
-%%PORTDOCS%%%%EXISCAN_ACL%%%%DOCSDIR%%/POST-INSTALL-NOTES.clamd
+%%PORTDOCS%%%%DOCSDIR%%/POST-INSTALL-NOTES.clamd
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%%%DOCSDIR%%/README.SIEVE
 %%PORTDOCS%%%%DOCSDIR%%/dbm.discuss.txt
-%%PORTDOCS%%%%EXISCAN_ACL%%%%DOCSDIR%%/exiscan-acl-examples.txt
-%%PORTDOCS%%%%EXISCAN_ACL%%%%DOCSDIR%%/exiscan-acl-spec.txt
+%%PORTDOCS%%%%DOCSDIR%%/experimental-spec.txt
 %%PORTDOCS%%%%DOCSDIR%%/filter.txt
 %%PORTDOCS%%%%DOCSDIR%%/pcrepattern.txt
 %%PORTDOCS%%%%DOCSDIR%%/pcretest.txt
