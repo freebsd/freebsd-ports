@@ -15,6 +15,10 @@ also put some variables into your /etc/make.conf file, so that newly
 installed ports (not packages!) will use new version of perl, and the
 system upgrades from the source will not overwrite the changes made.
 
+Note that use.perl port is specific to a given perl installation.  If
+you later upgrade the perl port, run use.perl port again to update the
+symbolic links and /etc/make.conf.
+
 At any time you can also type
 
   use.perl system
