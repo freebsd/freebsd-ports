@@ -18,7 +18,7 @@ bin/tiffdither
 bin/tiffdump
 bin/tiffinfo
 bin/tiffmedian
-bin/tiffsplit 
+bin/tiffsplit
 include/tiff34.h
 include/tiffio34.h
 man/man1/fax2ps.1.gz

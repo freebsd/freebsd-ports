@@ -5,7 +5,7 @@
 #			Mikhail Teterin <mi@aldan.ziplink.net>
 #			Jun-ichiro itojun Itoh <itojun@itojun.org>
 #
-# $Id: Makefile,v 1.2 1997/01/09 12:52:52 max Exp $
+# $Id: Makefile,v 1.3 1997/05/26 02:16:32 asami Exp $
 #
 
 # NOTE:
@@ -21,7 +21,7 @@ MASTER_SITES=   ftp://ftp.sgi.com/graphics/tiff/ \
 		ftp://ftp.isri.unlv.edu/pub/mirror/tiff/
 EXTRACT_SUFX=	-tar.gz
 
-MAINTENER=	itojun@itojun.org
+MAINTAINER=	itojun@itojun.org
 
 LIB_DEPENDS=    jpeg\\.7\\.:${PORTSDIR}/graphics/jpeg
 
@@ -39,7 +39,7 @@ CONFIGURE_ARGS=	--with-ZIP --with-JPEG --with-DIR_BIN=${PREFIX}/bin \
 MAN1=	fax2ps.1 fax2tiff.1 gif2tiff.1 pal2rgb.1 ppm2tiff.1 ras2tiff.1 \
 	rgb2ycbcr.1 sgi2tiff.1 thumbnail.1 tiff2bw.1 tiff2ps.1 tiffcmp.1 \
 	tiffcp.1 tiffdither.1 tiffdump.1 tiffgt.1 tiffinfo.1 tiffmedian.1 \
-	tiffsplit.1 tiffsv.1 
+	tiffsplit.1 tiffsv.1
 MAN3=	TIFFCheckTile.3t TIFFClose.3t TIFFComputeStrip.3t TIFFComputeTile.3t \
 	TIFFCurrentDirectory.3t TIFFCurrentRow.3t TIFFCurrentStrip.3t \
 	TIFFCurrentTile.3t TIFFDefaultStripSize.3t TIFFDefaultTileSize.3t \
@@ -64,7 +64,7 @@ MAN3=	TIFFCheckTile.3t TIFFClose.3t TIFFComputeStrip.3t TIFFComputeTile.3t \
 	TIFFWriteRawTile.3t TIFFWriteScanline.3t TIFFbuffer.3t TIFFcodec.3t \
 	TIFFfree.3t TIFFmalloc.3t TIFFmemcmp.3t TIFFmemcpy.3t TIFFmemory.3t \
 	TIFFmemset.3t TIFFquery.3t TIFFrealloc.3t TIFFsize.3t TIFFstrip.3t \
-	TIFFswab.3t TIFFtile.3t libtiff.3t 
+	TIFFswab.3t TIFFtile.3t libtiff.3t
 
 DOCDIR=	${PREFIX}/share/doc/tiff34
 
@@ -74,6 +74,7 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/html/*.html ${DOCDIR}
 	${INSTALL_DATA} ${WRKSRC}/html/images/* ${DOCDIR}/images
 .endif
+	perl -pi -e 's/\"tiff.h\"/\"tiff34\.h\"/g;' ${PREFIX}/include/tiffio34.h
 	${LDCONFIG} -m ${PREFIX}/lib
 
 .include <bsd.port.mk>
