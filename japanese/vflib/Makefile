@@ -3,7 +3,7 @@
 # Date created:		10 May 1996
 # Whom:			Mita Yoshio <mita@jp.FreeBSD.org>
 #
-# $Id: Makefile,v 1.11 1997/10/15 22:15:48 max Exp $
+# $Id: Makefile,v 1.12 1998/03/20 14:54:43 itojun Exp $
 #
 
 DISTNAME=	VFlib-2.22-PL8
@@ -19,6 +19,8 @@ PATCHFILES=	VFlib-2.22-Patch9 VFlib-2.22-Patch10 VFlib-FT1.0-PL2.diff.gz
 MAINTAINER=	mita@jp.FreeBSD.org
 
 LIB_DEPENDS=	ttf\\.1\\.0:${PORTSDIR}/print/freetype
+
+BROKEN=		left behind by freetype upgrade
 
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 WRKSRC=		${WRKDIR}/VFlib-2.22pl8
