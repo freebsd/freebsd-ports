@@ -1,19 +1,19 @@
-# Ports collection makefile for:	ghc-doc
-# Date created:				26 Jul 2002
+# Ports collection makefile for:	ghc6-doc
+# Date created:				19 Jun 2003
 # Whom:					olgeni@FreeBSD.org
 #
 # $FreeBSD$
 #
 
-PORTNAME=	ghc-doc
-PORTVERSION=	5.04.3
+PORTNAME=	ghc6-doc
+PORTVERSION=	6.0.1
 CATEGORIES=	lang haskell
 MASTER_SITES=	http://www.haskell.org/ghc/docs/${PORTVERSION}/ \
 		http://www.haskell.org/ghc/docs/${PORTVERSION}/html/
 DISTFILES=      building.html.tar.gz building.ps.gz hslibs.html.tar.gz \
 		hslibs.ps.gz libraries.html.tar.gz users_guide.html.tar.gz \
 		users_guide.ps.gz index.html
-DIST_SUBDIR=	ghc
+DIST_SUBDIR=	ghc6
 EXTRACT_ONLY=
 
 MAINTAINER=	olgeni@FreeBSD.org
