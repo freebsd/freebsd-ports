@@ -20,7 +20,6 @@ RUN_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/Mail/Internet.pm:${POR
 		${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/LWP/UserAgent.pm:${PORTSDIR}/www/p5-libwww
 
 NO_BUILD=	yes
-NO_WRKSUBDIR=   yes
 PERL_CONFIGURE= yes
 
 do-configure:
