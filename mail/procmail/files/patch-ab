@@ -1,0 +1,44 @@
+*** config.h.bak	Mon Oct 30 05:09:07 1995
+--- config.h	Wed Aug 28 17:10:52 1996
+***************
+*** 45,51 ****
+  #define TRUSTED_IDS	{"root","daemon","uucp","mail","x400","network",\
+  			 "list","slist","lists","news",0}
+  
+! /*#define NO_fcntl_LOCK		/* uncomment any of these three if you	     */
+  /*#define NO_lockf_LOCK		/* definitely do not want procmail to make   */
+  /*#define NO_flock_LOCK		/* use of those kernel-locking methods	     */
+  
+--- 45,51 ----
+  #define TRUSTED_IDS	{"root","daemon","uucp","mail","x400","network",\
+  			 "list","slist","lists","news",0}
+  
+! #define NO_fcntl_LOCK         /* uncomment any of these three if you       */
+  /*#define NO_lockf_LOCK		/* definitely do not want procmail to make   */
+  /*#define NO_flock_LOCK		/* use of those kernel-locking methods	     */
+  
+***************
+*** 69,79 ****
+  	is not found, maildelivery will proceed as normal to the default
+  	system mailbox. */
+  
+! #define ETCRC	"/etc/procmailrc"	/* optional global procmailrc startup
+  					   file (will only be read if procmail
+  	is started with no rcfile on the command line). */
+  
+! #define ETCRCS	"/etc/procmailrcs/"	/* optional trusted path prefix for
+  					   rcfiles which will be executed with
+  	the uid of the owner of the rcfile (this only happens if procmail is
+  	called with the -m option, without variable assignments on the command
+--- 69,79 ----
+  	is not found, maildelivery will proceed as normal to the default
+  	system mailbox. */
+  
+! #define ETCRC   "/usr/local/etc/procmailrc"       /* optional global procmailrc startup
+  					   file (will only be read if procmail
+  	is started with no rcfile on the command line). */
+  
+! #define ETCRCS  "/usr/local/etc/procmailrcs/"     /* optional trusted path prefix for
+  					   rcfiles which will be executed with
+  	the uid of the owner of the rcfile (this only happens if procmail is
+  	called with the -m option, without variable assignments on the command
