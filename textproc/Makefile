@@ -513,6 +513,7 @@
     SUBDIR += srilm
     SUBDIR += stardict2
     SUBDIR += sv-aspell
+    SUBDIR += sw-aspell
     SUBDIR += tclExpat
     SUBDIR += tdtd.el
     SUBDIR += tei-guidelines-p3
