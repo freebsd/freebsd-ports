@@ -7,10 +7,9 @@
 #
 
 PORTNAME=	t1lib
-PORTVERSION=	1.1.0
+PORTVERSION=	1.1.1
 CATEGORIES=	devel
-MASTER_SITES=	${MASTER_SITE_SUNSITE} \
-		ftp://ftp.neuroinformatik.ruhr-uni-bochum.de/pub/software/t1lib/
+MASTER_SITES=	${MASTER_SITE_SUNSITE}
 MASTER_SITE_SUBDIR=	libs/graphics
 
 MAINTAINER=	ijliao@FreeBSD.org
