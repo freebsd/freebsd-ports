@@ -1,6 +1,9 @@
---- gimptool-1.2.in.orig	Wed Feb 20 14:04:01 2002
-+++ gimptool-1.2.in	Wed Feb 20 14:04:39 2002
-@@ -227,19 +227,19 @@
+
+$FreeBSD$
+
+--- gimptool-1.3.in.orig	Tue Jan 15 12:21:05 2002
++++ gimptool-1.3.in	Fri May 17 20:46:18 2002
+@@ -215,19 +215,19 @@
      | --uninstall-script | --uninstall-admin-script )
        case $1 in
          --*install-bin)

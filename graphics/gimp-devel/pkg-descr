@@ -16,6 +16,6 @@ major features:
       new effect filters.
    *  Multiple undo/redo.
 
-To enable I18N extensions, execute "gimp.setfont" before you use GIMP.
+This is unstable development version of the GIMP, so that use with caution.
 
 WWW: http://www.gimp.org/
