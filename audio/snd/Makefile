@@ -23,7 +23,7 @@ LIB_DEPENDS=		gsl.0:${PORTSDIR}/math/gsl \
 .if defined(WITHOUT_ESD)
 RUN_DEPENDS=		esd:${PORTSDIR}/audio/esound
 .endif
-.if defined(WITHOUT_RUBY)
+.if !defined(WITHOUT_RUBY)
 RUN_DEPENDS+=		ruby:${PORTSDIR}/lang/ruby
 .endif
 .if defined(WITHOUT_X11)
