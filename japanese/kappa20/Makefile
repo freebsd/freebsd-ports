@@ -7,7 +7,7 @@
 
 PORTNAME=	k20fonts
 PORTVERSION=	0.396
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	japanese x11-fonts
 MASTER_SITES=	http://khdd.net/20dot.fonts/:kappa20 \
 		http://downloads.sourceforge.jp/x-tt/5194/:ayu20
@@ -24,7 +24,7 @@ USE_BZIP2=	yes
 AYUDISTNAME=	ayu20gothic-1.4
 AYU_SUFFIX=	.tar.gz
 
-BUILD_DEPENDS=	mkitalic:${PORTSDIR}/x11-fonts/mkitalic \
+BUILD_DEPENDS=	mkitalic:${PORTSDIR}/x11-fonts/mkbold-mkitalic \
 		bdftopcf:${X_CLIENTS_PORT}
 RUN_DEPENDS=	mkfontdir:${X_CLIENTS_PORT}
 
