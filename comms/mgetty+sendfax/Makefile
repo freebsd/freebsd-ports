@@ -6,14 +6,14 @@
 #
 
 PORTNAME=	mgetty
-PORTVERSION=	1.1.24.01.07
+PORTVERSION=	1.1.25.02.01
 CATEGORIES=	comms
 MASTER_SITES=	ftp://alpha.greenie.net/pub/mgetty/source/1.1/
-DISTNAME=	mgetty1.1.24-Jan07
+DISTNAME=	mgetty1.1.25-Feb01
 
 MAINTAINER=	jmz@FreeBSD.org
 
-WRKSRC=		${WRKDIR}/mgetty-1.1.24
+WRKSRC=		${WRKDIR}/mgetty-1.1.25
 MAKE_FLAGS=	prefix=${PREFIX} -f
 MAN1=		coverpg.1 \
 		fax.1 \
