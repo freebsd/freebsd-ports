@@ -1,7 +1,45 @@
 XAnim  is a program that can display animations of various
 formats on systems running X11.  XAnim currently  supports
-several animation and audio types. Read the man page for details.
-XAnim also provides various options that allow the user to
-alter  colormaps,  playback  speeds, looping modes and can
-provide on-the-fly scaling of animations with the mouse.
+the following animation types:
 
+       +  FLI animations.
+       +  FLC animations.
+       +  IFF  animations. The following features are sup-
+          ported:
+            -> Compressions 3,5,7,J(movies) and l(small
+             L).
+            -> Color cycling during single images and
+             anims.
+            -> Display Modes: depth 1-8, EHB, HAM and
+             HAM8.
+       +  GIF87a and GIF89a files.
+            -> single and multiple images supported.
+            -> GIF89a animation extensions supported.
+       +  GIF89a animation extension support.
+       +  a  kludgy  text file listing gifs and what order
+          to show them in.
+       +  DL animations. Formats 1, 2 and partial 3.
+       +  Amiga PFX(PageFlipper Plus F/X) animations. TEMP
+          DISABLED
+       +  Amiga   MovieSetter  animations(For  those  Eric
+          Schwartz fans).
+       +  Utah Raster Toolkit RLE images and anims.
+       +  AVI animations. Currently supported are
+            -> IBM Ultimotion     (ULTI) depth 16.
+            -> JPEG               (JPEG) depth 24.
+                         images.
+       +  MPEG  animations.  Currently  only Type I Frames
+          are displayed. Type B and Type P frames are cur-
+          rently  ignored,  but  will  be  added in future
+          revs.
+       +  WAV audio files may have their  sound  added  to
+          any  animation  type  that  doesn't already have
+          audio, by specifying the  .wav  file  after  the
+          animation  file  on  the command line. Currently
+          only the PCM audio codec is supported.
+       +  any combination of the above on the same command
+          line.
+
+XAnim also provides various options that allow the user to
+alter colormaps, playback speeds, looping  modes  and  can
+provide on-the-fly scaling of animations with the mouse.
