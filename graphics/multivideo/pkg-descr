@@ -1,0 +1,21 @@
+MultiVideo is an image sequence viewer that is targeted to researchers in the
+image processing field. It has the following features:
+   * Display of several sequences simultaneously in multiple synchronized views.
+   * Support of many sequence formats, including formats without compression
+     that are very useful for researchers:
+     o single file YUV 4:2:0 sequence
+     o sequences made of several files (one file per image).
+     o easy extension by C++ class derivation
+   * Display very long image sequences without loading them in memory.
+   * Gobal slider for random access in sequences.
+   * Local sliders in each sequence frame for temporal adjustment with respect
+     to other sequences.
+   * Multithreaded design to allow for efficient image preloading.
+   * On the fly zooming of images.
+   * Repetitive display of the sequence in loop or ping-pong mode.
+   * Choice of sequences to display on the command line or in a GUI file
+     browser.
+   * Adjustment of the display frame rate.
+   * Saving an image of the sequence in PGM, PPM, PNG or JPEG format.
+
+WWW: http://www.lis.inpg.fr/scientifique/bonnaud/multivideo/
