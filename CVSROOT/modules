@@ -4335,6 +4335,7 @@ minicom		ports/comms/minicom
 minidom		ports/textproc/minidom
 minigzip	src/usr.bin/minigzip
 minimalist	ports/mail/minimalist
+minivmac	ports/emulators/minivmac
 mipsel-linux-binutils	ports/devel/mipsel-linux-binutils
 mipsel-linux-gcc	ports/devel/mipsel-linux-gcc
 mipsel-linux-kernel-headers	ports/devel/mipsel-linux-kernel-headers
