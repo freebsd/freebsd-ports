@@ -1,41 +1,65 @@
---- configure.orig	Sat Nov 13 11:17:25 1999
-+++ configure	Sat Nov 13 11:23:32 1999
-@@ -1141,9 +1141,9 @@
-   if test "$ac_test_CFLAGS" = set; then
-     CFLAGS="$ac_save_CFLAGS"
-   elif test $ac_cv_prog_cc_g = yes; then
+--- configure.orig	Mon Nov 29 12:37:24 1999
++++ configure	Wed Dec  1 15:35:00 1999
+@@ -1282,13 +1282,13 @@
+   CFLAGS="$ac_save_CFLAGS"
+ elif test $ac_cv_prog_cc_g = yes; then
+   if test "$GCC" = yes; then
 -    CFLAGS="-g -O2"
 +    CFLAGS="-g"
    else
--    CFLAGS="-O2"
-+    CFLAGS=""
+     CFLAGS="-g"
    fi
  else
-   GCC=
-@@ -3036,7 +3036,7 @@
+   if test "$GCC" = yes; then
+-    CFLAGS="-O2"
++    CFLAGS=""
+   else
+     CFLAGS=
+   fi
+@@ -2104,8 +2104,8 @@
+ LD="$LD" LDFLAGS="$LDFLAGS" LIBS="$LIBS" \
+ LN_S="$LN_S" NM="$NM" RANLIB="$RANLIB" \
+ DLLTOOL="$DLLTOOL" AS="$AS" OBJDUMP="$OBJDUMP" \
+-${CONFIG_SHELL-/bin/sh} $ac_aux_dir/ltconfig --no-reexec \
+-$libtool_flags --no-verify $ac_aux_dir/ltmain.sh $host \
++${CONFIG_SHELL-/bin/sh} /usr/local/share/libtool/ltconfig --no-reexec \
++$libtool_flags --no-verify --disable-ltlibs /usr/local/share/libtool/ltmain.sh $host \
+ || { echo "configure: error: libtool configure failed" 1>&2; exit 1; }
+ 
+ # Reload cache, that may have been modified by ltconfig
+@@ -2119,7 +2119,7 @@
+ 
+ 
+ # This can be used to rebuild libtool when needed
+-LIBTOOL_DEPS="$ac_aux_dir/ltconfig $ac_aux_dir/ltmain.sh"
++LIBTOOL_DEPS="/usr/local/share/libtool/ltconfig --disable-ltlibs /usr/local/share/libtool/ltmain.sh"
+ 
+ # Always use our own libtool.
+ LIBTOOL='$(SHELL) $(top_builddir)/libtool'
+@@ -3369,7 +3369,7 @@
  
  if test "$ac_cv_prog_gcc" = yes; then
  mfx_save_cflags="$CFLAGS"
--CFLAGS="$CFLAGS -O2 -fschedule-insns -fschedule-insns2"
-+CFLAGS="$CFLAGS -fschedule-insns -fschedule-insns2"
+-CFLAGS="-O2 -fschedule-insns -fschedule-insns2"
++CFLAGS="-fschedule-insns -fschedule-insns2"
  echo $ac_n "checking whether ${CC-cc} suffers the -fschedule-insns bug""... $ac_c" 1>&6
- echo "configure:3042: checking whether ${CC-cc} suffers the -fschedule-insns bug" >&5
+ echo "configure:3375: checking whether ${CC-cc} suffers the -fschedule-insns bug" >&5
  if eval "test \"`echo '$''{'mfx_cv_prog_gcc_bug_schedule_insns'+set}'`\" = set"; then
-@@ -3079,7 +3079,7 @@
+@@ -3412,7 +3412,7 @@
  
  if test "$ac_cv_prog_gcc" = yes; then
  mfx_save_cflags="$CFLAGS"
--CFLAGS="$CFLAGS -O2 -fstrength-reduce"
-+CFLAGS="$CFLAGS -fstrength-reduce"
+-CFLAGS="-O2 -fstrength-reduce"
++CFLAGS="-fstrength-reduce"
  echo $ac_n "checking whether ${CC-cc} suffers the -fstrength-reduce bug""... $ac_c" 1>&6
- echo "configure:3085: checking whether ${CC-cc} suffers the -fstrength-reduce bug" >&5
+ echo "configure:3418: checking whether ${CC-cc} suffers the -fstrength-reduce bug" >&5
  if eval "test \"`echo '$''{'mfx_cv_prog_gcc_bug_strength_reduce'+set}'`\" = set"; then
-@@ -3167,7 +3167,7 @@
- 
- if test "$GCC" = yes; then
-   M_CC="GCC"
--  CFLAGS_O="-O2"
-+  CFLAGS_O=""
+@@ -3496,7 +3496,7 @@
+   if test "$enable_debug" = yes; then
+     CFLAGS_O="-O0"
+   else
+-    CFLAGS_O="-O2"
++    CFLAGS_O=""
+   fi
    CFLAGS_W="-Wall -Wcast-align -Wwrite-strings"
    case $host in
-     i[34567]86-*)

@@ -6,7 +6,7 @@
 # $FreeBSD$
 #
 
-DISTNAME=	lzo-1.04
+DISTNAME=	lzo-1.06
 CATEGORIES=	archivers devel
 MASTER_SITES= 	${MASTER_SITE_SUNSITE} \
 		http://wildsau.idv.uni-linz.ac.at/mfx/lzo-download/
