@@ -1,5 +1,5 @@
---- driver/Makefile.in.orig	Tue Jul 22 00:19:10 2003
-+++ driver/Makefile.in	Tue Jul 22 00:26:47 2003
+--- driver/Makefile.in.orig	Mon Feb  2 14:07:14 2004
++++ driver/Makefile.in	Mon Feb  2 14:33:43 2004
 @@ -24,14 +24,14 @@
  INTLTOOL_MERGE	= @INTLTOOL_MERGE@
  
@@ -20,16 +20,16 @@
  GNOME_BINDIR	= $(bindir)
  HACK_CONF_DIR	= @HACK_CONF_DIR@
  
-@@ -239,7 +239,7 @@
+@@ -252,7 +252,7 @@
  tests: $(TEST_EXES)
  
  install:   install-program   install-ad    install-scripts \
 -	   install-gnome     install-kde   install-man   @INSTALL_PAM@
-+	   install-gnome     install-man   @INSTALL_PAM@
++	   install-gnome     install-man
  uninstall: uninstall-program uninstall-ad  \
  	   uninstall-gnome   uninstall-kde uninstall-man
  
-@@ -478,8 +478,11 @@
+@@ -485,8 +485,11 @@
  	                                                                      \
             echo $(INSTALL_DATA) screensaver-properties.desktop		      \
               $(install_prefix)$(GNOME_CCDIR_1)/screensaver-properties.desktop;\

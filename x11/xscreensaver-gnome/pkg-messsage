@@ -1,0 +1,13 @@
+================================================================================
+If you compiled WITH_PAM support on 4.X, you need to edit /etc/pam.conf and
+add the following lines:
+
+xscreensaver		auth	required	pam_nologin.so	no_warn
+xscreensaver		auth	required	pam_unix.so	no_warn try_pass_first
+
+If you compiled WITH_PAM support on 5.X, you need to create an
+/etc/pam.d/xscreensaver file with the following contents:
+
+auth		required		pam_nologin.so  no_warn
+auth		required		pam_unix.so	no_warn try_pass_first
+================================================================================

@@ -25,7 +25,7 @@ USE_GMAKE=	yes
 USE_REINPLACE=	yes
 USE_GNOME=	gnomehier libglade2 gnomehack
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--without-pam --with-gl --with-gle --with-xpm --with-xml \
+CONFIGURE_ARGS=	--with-gl --with-gle --with-xpm --with-xml \
 		--with-hackdir=${PREFIX}/bin/xscreensaver-hacks \
 		--with-configdir=${PREFIX}/share/xscreensaver/config \
 		--with-jpeg=${LOCALBASE} --without-motif \
@@ -33,9 +33,8 @@ CONFIGURE_ARGS=	--without-pam --with-gl --with-gle --with-xpm --with-xml \
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
-.if defined(XS_WITH_ALL_FORTUNES)
-CONFIGURE_ARGS+=	--with-fortune="/usr/games/fortune -sa"
-.endif
+OPTIONS=	PAM "Pluggable Authentication Module support" off \
+		ALL_FORTUNES "Enable support for all fortunes" off
 
 MAN1=	anemone.1 ant.1 apollonian.1 atlantis.1 attraction.1 blaster.1 \
 	blitspin.1 bouboule.1 boxed.1 braid.1 bsod.1 bubble3d.1 bubbles.1 \
@@ -70,6 +69,14 @@ MAN1=	anemone.1 ant.1 apollonian.1 atlantis.1 attraction.1 blaster.1 \
 	xscreensaver-getimage.1 xscreensaver-gl-helper.1 xscreensaver.1
 
 .include <bsd.port.pre.mk>
+
+.if defined(WITH_ALL_FORTUNES)
+CONFIGURE_ARGS+=	--with-fortune="/usr/games/fortune -sa"
+.endif
+
+.if !defined(WITH_PAM)
+CONFIGURE_ARGS+=	--without-pam
+.endif
 
 .if ${ARCH} == "amd64"
 CFLAGS+=	-O0
