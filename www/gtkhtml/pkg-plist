@@ -1,9 +1,11 @@
+bin/gtkhtml-properties-capplet
 bin/html-editor-control
 etc/CORBA/servers/html-component.gnorba
 etc/gtkhtmlConf.sh
 include/gtkhtml/gtkhtml-embedded.h
 include/gtkhtml/gtkhtml-keybinding.h
 include/gtkhtml/gtkhtml-private.h
+include/gtkhtml/gtkhtml-properties.h
 include/gtkhtml/gtkhtml-stream.h
 include/gtkhtml/gtkhtml.h
 include/gtkhtml/gtkhtmldebug.h
@@ -16,6 +18,7 @@ include/gtkhtml/htmlcluealigned.h
 include/gtkhtml/htmlclueflow.h
 include/gtkhtml/htmlclueh.h
 include/gtkhtml/htmlcluev.h
+include/gtkhtml/htmlcolor.h
 include/gtkhtml/htmlcolorset.h
 include/gtkhtml/htmlcursor.h
 include/gtkhtml/htmldrawqueue.h
@@ -32,7 +35,9 @@ include/gtkhtml/htmlengine-edit-images.h
 include/gtkhtml/htmlengine-edit-insert.h
 include/gtkhtml/htmlengine-edit-movement.h
 include/gtkhtml/htmlengine-edit-paste.h
+include/gtkhtml/htmlengine-edit-rule.h
 include/gtkhtml/htmlengine-edit-selection-updater.h
+include/gtkhtml/htmlengine-edit-text.h
 include/gtkhtml/htmlengine-edit.h
 include/gtkhtml/htmlengine-print.h
 include/gtkhtml/htmlengine-save.h
@@ -76,6 +81,11 @@ include/gtkhtml/htmlurl.h
 include/gtkhtml/htmlvspace.h
 lib/libgtkhtml.a
 lib/libgtkhtml.so
-lib/libgtkhtml.so.2
+lib/libgtkhtml.so.3
+share/gnome/apps/Settings/Documents/gtkhtml-properties.desktop
+share/gnome/control-center/Documents/gtkhtml-properties.desktop
+share/gnome/gtkhtml/keybindingsrc.emacs
+share/gnome/gtkhtml/keybindingsrc.ms
 share/gnome/oaf/html-editor-control.oafinfo
+@dirrm share/gnome/gtkhtml
 @dirrm include/gtkhtml
