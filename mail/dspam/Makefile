@@ -6,17 +6,17 @@
 #
 
 PORTNAME=	dspam
-PORTVERSION=	3.2.2${SNAP_DATE}
+PORTVERSION=	3.2.3${SNAP_DATE}
 CATEGORIES=	mail
 MASTER_SITES=	http://people.tecnik93.com/~itetcu/FreeBSD/ports/dspam/sources/
-DISTFILES=	dspam.3.2.2.cvs.stable.20041117.1515.tar.gz
+#DISTFILES=	dspam.3.2.3.cvs.stable${SNAP_DATE}.tar.gz
 
 MAINTAINER=	itetcu@people.tecnik93.com
 COMMENT=	Bayesian spam filter - development version
 
-WRKSRC=		${WRKDIR}/dspam-cvs-stable${SNAP_DATE}
+#WRKSRC=		${WRKDIR}/dspam-cvs-stable${SNAP_DATE}
 
-SNAP_DATE=	.20041117.1515
+#SNAP_DATE=	.20041201.0000
 
 ## debug / log / admin options
 OPTIONS=	DEBUG "Enable debugging logging" on

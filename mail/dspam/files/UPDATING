@@ -10,6 +10,16 @@ also the UPGRADING enclosed in the dspam distribution. You can see it by doing
 in the port directory:
 make extract;  more `find . -type f -maxdepth 2 -name UPGRADING`
 
+#############################################################################
+#  dspam-3.2.3
+#
+
+- important fixes from 3.2.2:
+ BUGFIX: DSPAM misreads boundary delimiter in signed Apple Mail messages
+ BUGFIX: Signature is not written to multipart blocks with no content type
+ BUGFIX: dspam_dump for a particular token fails with MySQL 4.1
+ BUGFIX: Bayesian Noise Reduction is never instantiated
+
 
 #############################################################################
 #  dspam-3.2.2.20041117.1515:
