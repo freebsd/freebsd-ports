@@ -9,7 +9,7 @@
 USERDIR=$HOME/.wargus
 DATADIR=%%PREFIX%%/share/wargus/data.wc2
 
-if [ ! -x $DATADIR ]; then
+if [ ! -d $DATADIR ]; then
 	echo "Warcraft2 data not found in $DATADIR/"
 	echo ""
 	echo "Did you run build.sh yet?"
@@ -23,7 +23,7 @@ if [ ! -x $DATADIR ]; then
 	echo "Stratagus engine from the following CDs:"
 	echo ""
 	echo "* US Expansion (both MAC/DOS)"
-	echo "* US Original (both MAC/DOS)" 
+	echo "* US Original (both MAC/DOS)"
 	echo "* UK/Australian Original"
 	echo "* UK/Australian Expansion"
 	echo "* German Original"
@@ -41,7 +41,7 @@ if [ ! -x $DATADIR ]; then
 	echo "For more information, please visit: http://wargus.sourceforge.net"
 fi
 
-if [ -x $USERDIR ]; then
+if [ -d $USERDIR ]; then
 	echo "Warcraft2 data appears to be installed/linked to $USERDIR/"
 	echo ""
 	echo "Attempting to run Stratagus with Warcraft2 data"
@@ -51,7 +51,7 @@ if [ -x $USERDIR ]; then
 	exit
 fi
 
-if [ -x $DATADIR ]; then
+if [ -d $DATADIR ]; then
 	mkdir $USERDIR
 	mkdir $USERDIR/data
 	ln -s %%PREFIX%%/share/wargus/data.wc2/* $USERDIR/data
