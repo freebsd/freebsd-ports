@@ -8,6 +8,7 @@
     SUBDIR += bbmail
     SUBDIR += biffer
     SUBDIR += bulk_mailer
+    SUBDIR += cclient
     SUBDIR += cmail
     SUBDIR += coolmail
     SUBDIR += courier-imap
