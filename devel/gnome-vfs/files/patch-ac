@@ -1,14 +1,11 @@
-
-$FreeBSD$
-
---- modules/Makefile.in	2002/02/16 13:09:49	1.1
-+++ modules/Makefile.in	2002/02/16 13:10:49
-@@ -174,7 +174,7 @@
- @HAVE_CDDA_TRUE@CDDA_LTLIBS = libcdda.la
- @HAVE_CDDA_FALSE@CDDA_LTLIBS = 
+--- modules/Makefile.in.orig	Thu Aug 29 15:57:06 2002
++++ modules/Makefile.in	Thu Aug 29 15:58:00 2002
+@@ -180,7 +180,7 @@
+ @BUILD_CDEMENU_MODULE_TRUE@CDEMENU_LTLIBS = libcdemenu-desktop.la
+ @BUILD_CDEMENU_MODULE_FALSE@CDEMENU_LTLIBS = 
  
--module_flags = -export_dynamic -avoid-version
+-module_flags = -export_dynamic -avoid-version -module
 +module_flags = -export_dynamic -avoid-version -module $(PTHREAD_LIB)
  modulesdir = $(libdir)/gnome-vfs-2.0/modules
  
- modules_LTLIBRARIES =  	$(CDDA_LTLIBS)					libdesktop.la					libvfolder-desktop.la				libextfs.la					libfile.la					libnntp.la					libvfs-test.la					$(HTTP_LTLIBS)					libbzip2.la					libgzip.la					libftp.la					libvfs-pipe.la					libvfs-translate.la				libssh.la					$(NULL)
+ modules_LTLIBRARIES =  	$(CDDA_LTLIBS)					libextfs.la					libfile.la					libnntp.la					libvfs-test.la					$(HTTP_LTLIBS)					libbzip2.la					libgzip.la					libftp.la					libvfs-pipe.la					libvfs-translate.la				$(CDEMENU_LTLIBS)                       	libssh.la					libtar.la					$(NULL)

@@ -1,6 +1,6 @@
---- configure.orig	Wed Jul 24 17:10:41 2002
-+++ configure	Wed Jul 24 17:12:02 2002
-@@ -7247,6 +7247,7 @@
+--- configure.orig	Thu Aug 29 00:11:10 2002
++++ configure	Thu Aug 29 15:56:42 2002
+@@ -7358,6 +7358,7 @@
  
  # This can be used to rebuild libtool when needed
  LIBTOOL_DEPS="$ac_aux_dir/ltmain.sh"
@@ -8,18 +8,18 @@
  
  # Always use our own libtool.
  LIBTOOL='$(SHELL) $(top_builddir)/libtool'
-@@ -12165,8 +12166,8 @@
+@@ -12275,8 +12276,8 @@
    done
  fi
  
--echo "$as_me:12168: checking for bzCompressInit in -lbz2" >&5
+-echo "$as_me:12278: checking for bzCompressInit in -lbz2" >&5
 -echo $ECHO_N "checking for bzCompressInit in -lbz2... $ECHO_C" >&6
-+echo "$as_me:12168: checking for BZ2_bzCompressInit in -lbz2" >&5
++echo "$as_me:12278: checking for BZ2_bzCompressInit in -lbz2" >&5
 +echo $ECHO_N "checking for BZ2_bzCompressInit in -lbz2... $ECHO_C" >&6
  if test "${ac_cv_lib_bz2_bzCompressInit+set}" = set; then
    echo $ECHO_N "(cached) $ECHO_C" >&6
  else
-@@ -12182,11 +12183,11 @@
+@@ -12292,11 +12293,11 @@
  #endif
  /* We use char because int might match the return type of a gcc2
     builtin and then its argument prototype would still apply.  */
@@ -33,28 +33,25 @@
    ;
    return 0;
  }
-@@ -12519,7 +12520,7 @@
+@@ -12629,7 +12630,7 @@
    echo $ECHO_N "(cached) $ECHO_C" >&6
  else
  
 -		LDFLAGS="$LDFLAGS -L$with_openssl_libs -lssl -lcrypto -ldl"
 +		LDFLAGS="$LDFLAGS -L$with_openssl_libs -lssl -lcryptofoo -ldl"
  		cat >conftest.$ac_ext <<_ACEOF
- #line 12524 "configure"
+ #line 12634 "configure"
  #include "confdefs.h"
-@@ -12570,9 +12571,9 @@
+@@ -12680,7 +12681,7 @@
  
  		msg_openssl="yes"
                  if test x$with_openssl_libs != x/usr/lib; then
 -                        OPENSSL_LIBS="-L$with_openssl_libs -lssl -lcrypto"
 +                        OPENSSL_LIBS="-L$with_openssl_libs -lssl -lcryptofoo"
                  else
--                	OPENSSL_LIBS="-lssl -lcrypto"
-+                	OPENSSL_LIBS="-lssl -lcryptofoo"
+                 	OPENSSL_LIBS="-lssl -lcrypto"
                  fi
- 
- if true; then
-@@ -13662,7 +13663,7 @@
+@@ -13875,7 +13876,7 @@
  s,@ORBIT_IDL@,$ORBIT_IDL,;t t
  s,@BONOBO_IDLDIR@,$BONOBO_IDLDIR,;t t
  s,@WARN_CFLAGS@,$WARN_CFLAGS,;t t
