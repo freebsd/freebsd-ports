@@ -16,7 +16,9 @@ MASTER_SITES=	ftp://ei5nazha.yz.yamagata-u.ac.jp/w3m/dev/ \
 
 MAINTAINER=	nobutaka@nobutaka.com
 
+.if defined(USE_SSL)
 RESTRICTED=     "Contains cryptography"
+.endif
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/libgc.a:${PORTSDIR}/devel/boehm-gc
 
