@@ -1,9 +1,9 @@
 # New ports collection makefile for:	siag (Scheme In A Grid)
 # Version required:	2.80
 # Date created:		27 Jan 1998
-# Whom:			Jun-ichiro itojun Itoh <itojun@itojun.org>
+# Whom:			ports@freebsd.org
 #
-# $Id: Makefile,v 1.6 1998/08/10 12:35:43 itojun Exp $
+# $Id: Makefile,v 1.7 1998/09/21 01:35:32 steve Exp $
 #
 
 DISTNAME=	siag-2.80
@@ -11,7 +11,7 @@ CATEGORIES=	math
 MASTER_SITES=	ftp://ftp.edu.stockholm.se/pub/siag/
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} tsiag-2.80.tar.gz
 
-MAINTAINER=	itojun@itojun.org
+MAINTAINER=	ports@freebsd.org
 
 LIB_DEPENDS=	Xaw3d.6:${PORTSDIR}/x11-toolkits/Xaw3d
 
