@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	py-MySQLdb
-PORTVERSION=	0.3.2
+PORTVERSION=	0.3.3
 CATEGORIES=	databases python
 MASTER_SITES=	http://dustman.net/andy/python/MySQLdb/${PORTVERSION}/
 DISTNAME=	MySQL-python-${PORTVERSION}
