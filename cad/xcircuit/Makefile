@@ -8,14 +8,13 @@
 
 DISTNAME=	xcircuit-2.0a11
 CATEGORIES=	cad
-MASTER_SITES=	${MASTER_SITE_SUNSITE} \
-		ftp://bach.ece.jhu.edu/pub/tim/xcircuit/
-MASTER_SITE_SUBDIR=	apps/circuits
+MASTER_SITES=	ftp://bach.ece.jhu.edu/pub/tim/xcircuit/
 
 MAINTAINER=	ports@FreeBSD.org
 
 LIB_DEPENDS=	Xpm.4:${PORTSDIR}/graphics/xpm
 
+USE_BZIP2=	yes
 USE_IMAKE=	yes
 XMKMF=		xmkmf
 
