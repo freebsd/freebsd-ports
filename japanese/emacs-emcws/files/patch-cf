@@ -1,0 +1,10 @@
+--- src/config.in.orig	Sun Jul 16 13:11:42 2000
++++ src/config.in	Sun Jul 16 13:12:48 2000
+@@ -237,6 +237,7 @@
+ #undef HAVE_GETCWD
+ #undef HAVE_SHUTDOWN
+ #undef HAVE_STRFTIME
++#undef HAVE_GETADDRINFO
+ #undef HAVE_GRANTPT
+ #undef HAVE_GETPT
+ 

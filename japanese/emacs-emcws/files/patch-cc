@@ -1,0 +1,36 @@
+--- configure.in.orig	Sat Mar 11 12:55:54 2000
++++ configure.in	Sat Mar 11 12:58:33 2000
+@@ -42,6 +42,9 @@
+ AC_ARG_WITH(hesiod,
+ [  --with-hesiod           support Hesiod to get the POP server host],
+ [AC_DEFINE(HESIOD)])
++AC_ARG_WITH(xpg4,
++[  --with-xpg4             support XPG4 library on FreeBSD system],
++[AC_DEFINE(USE_XPG)])
+ dnl
+ AC_ARG_WITH(wnn,
+ [  --with-wnn              obsolete, same as --with-wnn4])
+@@ -179,6 +182,15 @@
+ machine='' opsys='' unported=no
+ case "${canonical}" in
+ 
++  ## FreeBSD ports
++  *-*-freebsd* )
++    opsys=freebsd
++    case "${canonical}" in
++      alpha*-*-freebsd*)	machine=alpha ;;
++      i[3456]86-*-freebsd*)	machine=intel386 ;;
++    esac
++  ;;
++
+   ## NetBSD ports
+   *-*-netbsd* )
+     opsys=netbsd
+@@ -985,7 +997,6 @@
+ 				;;
+       *-sysv4.2uw* )	  	opsys=unixware; NON_GNU_CPP=/lib/cpp ;;
+       *-386bsd* )	        opsys=386bsd ;;
+-      *-freebsd* )	        opsys=freebsd ;;
+       *-nextstep* )             opsys=nextstep ;;
+       ## Otherwise, we'll fall through to the generic opsys code at the bottom.
+     esac

@@ -1,0 +1,13 @@
+--- man/gnus.texi.orig	Wed Apr  7 07:46:41 1999
++++ man/gnus.texi	Sat Jul 24 01:09:33 1999
+@@ -5,8 +5,9 @@
+ @synindex fn cp
+ @synindex vr cp
+ @synindex pg cp
++@dircategory The Emacs editor and associated tools
+ @direntry
+-* Gnus: (gnus).         The newsreader Gnus.
++* Gnus: (gnus).			The newsreader Gnus.
+ @end direntry
+ @iftex
+ @finalout

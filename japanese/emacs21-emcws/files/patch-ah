@@ -1,0 +1,29 @@
+--- lib-src/Makefile.in.orig	Sat Aug  1 20:22:55 1998
++++ lib-src/Makefile.in	Sat Feb 13 17:30:37 1999
+@@ -218,7 +218,7 @@
+ LIBMAIL=-lmail
+ #endif
+ 
+-LOADLIBES=LIBS_SYSTEM LIBS_MACHINE LIB_STANDARD_LIBSRC
++LOADLIBES=LIBS_SYSTEM LIBS_MACHINE LIB_STANDARD_LIBSRC -lcompat
+ 
+ /* We need to #define emacs to get the right versions of some files.
+    Some other files - those shared with other GNU utilities - need
+@@ -278,7 +278,7 @@
+         if [ `(cd ${archlibdir} && /bin/pwd)` \
+              != `(cd ${srcdir} && /bin/pwd)` ]; then \
+ 	  for file in ${SCRIPTS}; do \
+-	    $(INSTALL_PROGRAM) ${srcdir}/$$file ${archlibdir}/$$file; \
++	    $(INSTALL_SCRIPT) ${srcdir}/$$file ${archlibdir}/$$file; \
+ 	  done ; \
+ 	fi
+ 
+@@ -290,7 +290,7 @@
+ 	  chmod a+rx ${bindir}/$${file}; \
+ 	done
+ 	for file in ${INSTALLABLE_SCRIPTS} ; do \
+-	  $(INSTALL_PROGRAM) ${srcdir}/$${file} ${bindir}/$${file} ; \
++	  $(INSTALL_SCRIPT) ${srcdir}/$${file} ${bindir}/$${file} ; \
+ 	  chmod a+rx ${bindir}/$${file}; \
+ 	done
+ 

@@ -1,0 +1,11 @@
+--- Makefile.in.orig	Sat Apr 10 04:16:24 1999
++++ Makefile.in	Sat Jul 24 01:03:43 1999
+@@ -188,7 +188,7 @@
+ # Subdirectories to make recursively.  `lisp' is not included
+ # because the compiled lisp files are part of the distribution
+ # and you cannot remake them without installing Emacs first.
+-SUBDIR = lib-src src leim
++SUBDIR = lib-src src leim man
+ 
+ # The makefiles of the directories in $SUBDIR.
+ SUBDIR_MAKEFILES = lib-src/Makefile man/Makefile src/Makefile oldXMenu/Makefile lwlib/Makefile leim/Makefile

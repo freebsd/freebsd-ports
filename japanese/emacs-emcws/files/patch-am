@@ -1,0 +1,14 @@
+--- man/cl.texi.orig	Wed Apr  7 03:12:55 1999
++++ man/cl.texi	Sat Jul 24 01:03:42 1999
+@@ -2,9 +2,9 @@
+ @setfilename ../info/cl
+ @settitle Common Lisp Extensions
+ 
+-@dircategory Editors
++@dircategory The Emacs editor and associated tools
+ @direntry
+-* CL: (cl).		Partial Common Lisp support for Emacs Lisp.
++* CL: (cl).			Partial Common Lisp support for Emacs Lisp.
+ @end direntry
+ 
+ @iftex

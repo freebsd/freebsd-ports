@@ -1,0 +1,20 @@
+--- man/mh-e.texi.orig	Sun May 17 03:51:15 1998
++++ man/mh-e.texi	Sat Jul 24 01:03:41 1999
+@@ -4,13 +4,12 @@
+ @setfilename ../info/mh-e
+ @settitle mh-e
+ @c %**end of header
+-
+-@setchapternewpage odd
+-
+-@dircategory Editors
++@dircategory The Emacs editor and associated tools
+ @direntry
+-* MH-E: (mh-e).		Emacs interface to the MH mail system.
++* MH-E: (mh-e).			Emacs interface to the MH mail system.
+ @end direntry
++
++@setchapternewpage odd
+ 
+ @c Version variables.
+ @set EDITION 1.2
