@@ -3,10 +3,10 @@
 # Date created:        2 January 1997
 # Whom:                Yukihiro Nakai<Nakai@Mlab.t.u-tokyo.ac.jp>
 #
-# $Id: Makefile,v 1.13 1998/02/18 14:58:50 jfieber Exp $
+# $Id: Makefile,v 1.14 1998/03/05 17:04:12 jfieber Exp $
 #
 
-DISTNAME=       qvwm-1.0b9h
+DISTNAME=       qvwm-1.0b10
 CATEGORIES=     x11
 MASTER_SITES=   http://www-masuda.is.s.u-tokyo.ac.jp/~kourai/qvwm/program/
 
