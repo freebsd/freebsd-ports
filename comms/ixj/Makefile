@@ -7,6 +7,7 @@
 
 PORTNAME=	ixj
 PORTVERSION=	1.0.0
+PORTREVISION=	1
 CATEGORIES=	comms
 MASTER_SITES=	ftp://telepresence.dmem.strath.ac.uk/pub/openh323/
 DISTNAME=	ixj_freebsd-${PORTVERSION}
