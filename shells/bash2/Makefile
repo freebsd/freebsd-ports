@@ -51,6 +51,7 @@ post-patch:
 		${WRKDIR}/${PORTNAME}-${PORTVERSION:R}/doc/bash.1
 
 post-install:
+	${LN} -f ${PREFIX}/bin/bash ${PREFIX}/bin/bash2
 	${CP} /etc/shells /etc/shells.bak
 	(${GREP} -v ${PREFIX}/bin/bash /etc/shells.bak; ${ECHO_CMD} ${PREFIX}/bin/bash) >/etc/shells
 	${RM} /etc/shells.bak
