@@ -6,7 +6,7 @@
 # $FreeBSD$
 #
 
-SNAPDATE=	2002-03-04
+SNAPDATE=	2002-03-09
 SNAPVER=	${SNAPDATE:S/-//g}
 
 PORTNAME=	gcc
@@ -134,11 +134,11 @@ post-install:
 	${MV} -f ${PREFIX}/bin/gccbug ${PREFIX}/bin/gccbug-${SNAPVER}
 	# These 3 libraries are moved from PREFIX/lib to avoid conflicts
 	# 	with the stock compiler.
-	${MV} -f ${PREFIX}/lib/libiberty.a ${TARGLIB}
 .for file in libstdc++ libsupc++ libg2c libfrtbegin libobjc
 	${MV} -f ${PREFIX}/lib/${file}.* ${TARGLIB}
 .endfor
 	-${MV} -f ${PREFIX}/lib/ieee ${TARGLIB}
+	${RM} -f ${PREFIX}/lib/libiberty.a
 #.for info in cpp cppinternals g77 gcc gcj
 #	install-info ${PREFIX}/info/${info}.info ${PREFIX}/info/dir
 #.endfor
@@ -157,7 +157,7 @@ post-install:
 	${CP} -p ${TMPPLIST} ${TMPPLIST}.pre-gcc-lib
 	cd ${WRKDIR} ; ex < ex.script
 
-chklatest:
+cklatest:
 	ncftpls \
 	    ftp://mirrors.rcn.net/mirrors/sources.redhat.com/gcc/snapshots/  \
 	    | grep LATEST
