@@ -6419,7 +6419,6 @@ piddle		ports/graphics/piddle
 pidentd		ports/security/pidentd
 piewm		ports/x11-wm/piewm
 pig		src/games/pig
-pike		ports/lang/pike
 pike-gtk	ports/x11-toolkits/pike-gtk
 pike70		ports/lang/pike70
 pike72		ports/lang/pike72
