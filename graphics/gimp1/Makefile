@@ -27,6 +27,8 @@ LIB_DEPENDS=	aa.1:${PORTSDIR}/graphics/aalib \
 		png.5:${PORTSDIR}/graphics/png \
 		tiff.4:${PORTSDIR}/graphics/tiff
 
+DEPRECATED=	New stable release 2.0 can be installed via graphics/gimp port
+
 CONFLICTS=	gimp-2.* gimp-gnome-2.*
 
 #SHLIBVER?=	${PORTVERSION:S/1.2.//g}
