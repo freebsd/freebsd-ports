@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.48 1998/11/19 21:39:23 andreas Exp $
+# $Id: Makefile,v 1.49 1998/11/24 22:46:14 billf Exp $
 #
 
     SUBDIR += LPRng
@@ -16,6 +16,7 @@
     SUBDIR += gtar
     SUBDIR += gtop
     SUBDIR += idled
+    SUBDIR += libretto-config
     SUBDIR += lsof
     SUBDIR += manck
     SUBDIR += mei
