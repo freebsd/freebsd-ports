@@ -1381,6 +1381,7 @@ share/locale/zh_CN/LC_MESSAGES/evolution.mo
 @dirrm share/gnome/libical-evolution/zoneinfo/America
 @dirrm share/gnome/libical-evolution/zoneinfo/Africa
 @dirrm share/gnome/libical-evolution/zoneinfo
+@dirrm share/gnome/libical-evolution
 @dirrm share/gnome/images/evolution/conduits
 @dirrm share/gnome/images/evolution/buttons
 @dirrm share/gnome/images/evolution
