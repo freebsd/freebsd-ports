@@ -87,6 +87,7 @@
     SUBDIR += fcgi
     SUBDIR += ffproxy
     SUBDIR += fhttpd
+    SUBDIR += firefox
     SUBDIR += flashplugin
     SUBDIR += flashplugin-mozilla
     SUBDIR += flashplugin-mozilla-devel
@@ -285,7 +286,6 @@
     SUBDIR += mozilla-bonobo
     SUBDIR += mozilla-devel
     SUBDIR += mozilla-devel-gtk2
-    SUBDIR += mozilla-firebird
     SUBDIR += mozilla-gtk2
     SUBDIR += mplayer-plugin
     SUBDIR += nd
