@@ -591,3 +591,4 @@ games/smacx/smacx
 @dirrm games/smacx/data/facs
 @dirrm games/smacx/data
 @dirrm games/smacx
+@unexec rmdir %D/games 2> /dev/null || true
