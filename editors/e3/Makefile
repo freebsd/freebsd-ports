@@ -6,16 +6,18 @@
 #
 
 PORTNAME=	e3
-PORTVERSION=	2.43
-PORTREVISION=	1
+PORTVERSION=	2.60.0
 PORTEPOCH=	1
 CATEGORIES=	editors
 MASTER_SITES=	http://www.sax.de/~adlibit/
+DISTNAME=	${PORTNAME}-${PORTVERSION:S/60/6/}
 
 MAINTAINER=	joseph@randomnetworks.com
 COMMENT=	A full featured text editor written in assembler
 
 BUILD_DEPENDS=	nasm:${PORTSDIR}/devel/nasm
+
+WRKSRC=	${WRKDIR}/${PORTNAME}-2.6
 
 USE_GMAKE=	yes
 MAKE_ARGS=	OS=FREEBSD
