@@ -15,6 +15,8 @@ MAINTAINER=	will@FreeBSD.org
 
 LIB_DEPENDS=	kdecore.4:${PORTSDIR}/x11/kdelibs2
 
+BROKEN=		"Does not compile/run properly"
+
 MOC?=		${X11BASE}/bin/moc2
 USE_QT2=	yes
 USE_BZIP2=	yes

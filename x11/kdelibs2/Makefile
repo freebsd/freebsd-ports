@@ -18,6 +18,8 @@ LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
 		tiff.4:${PORTSDIR}/graphics/tiff \
 		kde-qt-addon.4:${PORTSDIR}/x11-toolkits/kde-qt-addon
 
+BROKEN=		"Does not compile/run properly"
+
 MOC?=		${X11BASE}/bin/moc2
 SOMAJOR=	4
 SOMINOR=	0

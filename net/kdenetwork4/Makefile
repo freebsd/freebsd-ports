@@ -17,6 +17,8 @@ LIB_DEPENDS=	uu.1:${PORTSDIR}/converters/uulib \
 		kdecore.4:${PORTSDIR}/x11/kdelibs2 \
 		QwSpriteField.8:${PORTSDIR}/converters/kdesupport2
 
+BROKEN=		"Does not compile/run properly"
+
 MOC?=		${X11BASE}/bin/moc2
 USE_BZIP2=	yes
 USE_QT2=	yes
