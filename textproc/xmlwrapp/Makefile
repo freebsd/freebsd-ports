@@ -22,4 +22,12 @@ HAS_CONFIGURE=	yes
 CONFIGURE_SCRIPT=	configure.pl
 INSTALLS_SHLIB=	yes
 
+.if defined(WITH_XSLT)
+LIB_DEPENDS+=	xslt.1:${PORTSDIR}/textproc/libxslt
+PLIST_SUB+=	XSLT=""
+.else
+CONFIGURE_ARGS+=	--disable-xslt
+PLIST_SUB+=	XSLT="@comment "
+.endif
+
 .include <bsd.port.mk>

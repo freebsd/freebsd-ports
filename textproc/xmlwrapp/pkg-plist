@@ -7,15 +7,15 @@ include/xmlwrapp/init.h
 include/xmlwrapp/node.h
 include/xmlwrapp/tree_parser.h
 include/xmlwrapp/xmlwrapp.h
-include/xsltwrapp/xsltwrapp.h
-include/xsltwrapp/stylesheet.h
-include/xsltwrapp/init.h
 @dirrm include/xmlwrapp
-@dirrm include/xsltwrapp
+%%XSLT%%include/xsltwrapp/xsltwrapp.h
+%%XSLT%%include/xsltwrapp/stylesheet.h
+%%XSLT%%include/xsltwrapp/init.h
+%%XSLT%%@dirrm include/xsltwrapp
 lib/libxmlwrapp.a
 lib/libxmlwrapp.so
 lib/libxmlwrapp.so.4
-lib/libxsltwrapp.a
-lib/libxsltwrapp.so
-lib/libxsltwrapp.so.1
+%%XSLT%%lib/libxsltwrapp.a
+%%XSLT%%lib/libxsltwrapp.so
+%%XSLT%%lib/libxsltwrapp.so.1
 lib/pkgconfig/xmlwrapp.pc
