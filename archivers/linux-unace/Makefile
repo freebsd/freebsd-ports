@@ -7,7 +7,7 @@
 
 PORTNAME=	unace
 PORTVERSION=	2.20
-CATEGORIES=	archivers
+CATEGORIES=	archivers linux
 MASTER_SITES=	http://ace.imptech.net/ \
 		http://www.shedz.com/winace/ \
 		http://hem.passagen.se/vanlid/winace/ \
@@ -18,16 +18,25 @@ PKGNAMEPREFIX=	linux-
 DISTNAME=	linunace22
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	fjoe@FreeBSD.org
-COMMENT=	ACE (un)archiver for Linux
+MAINTAINER=	pav@oook.cz
+COMMENT=	Extract, view & test ACE 2 archives
 
+ONLY_FOR_ARCHS=	i386
 USE_LINUX=	yes
-NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
+NO_BUILD=	yes
 STRIP=
 
+.if exists(/usr/bin/brandelf)
+BRANDELF?=	/usr/bin/brandelf
+.else
+BRANDELF?=	brandelf
+.endif
+
+do-patch:
+	@${BRANDELF} -t Linux ${WRKSRC}/unace
+
 do-install:
-	brandelf -t Linux ${WRKSRC}/unace
-	${INSTALL_PROGRAM} ${WRKSRC}/unace ${PREFIX}/bin/lunace
+	${INSTALL_PROGRAM} ${WRKSRC}/unace ${PREFIX}/bin/unace2
 
 .include <bsd.port.mk>
