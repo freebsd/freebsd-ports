@@ -6,18 +6,19 @@
 #
 
 PORTNAME=	bonnie
-PORTVERSION=	1.0
+PORTVERSION=	2.0.6
 CATEGORIES=	benchmarks
-MASTER_SITES=	ftp://ftp.sunet.se/pub/benchmark/Bonnie/
-DISTNAME=	Bonnie
-EXTRACT_SUFX=	.tar.Z
+MASTER_SITES=	http://www.acnc.com/benchmarks/ \
+		http://www.textuality.com/bonnie/
+DISTNAME=	bonnie
 
 MAINTAINER=	se@FreeBSD.org
 
+NO_WRKSUBDIR=	yes
+#CFLAGS+=	-static
+MAKE_ARGS+=	-e CFLAGS="${CFLAGS}"
+ALL_TARGET=	bsd
 MAN1=		bonnie.1
-
-CFLAGS+=	-static
-MAKE_ARGS+=	CFLAGS="${CFLAGS}"
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/Bonnie ${PREFIX}/bin/bonnie
