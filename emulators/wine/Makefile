@@ -70,12 +70,13 @@ do-install:
 .for i in README ANNOUNCE AUTHORS LICENSE
 	@${INSTALL_DATA} ${WRKSRC}/${i} ${PREFIX}/share/doc/${PORTNAME}
 .endfor
-	${INSTALL_DATA} ${WRKSRC}/programs/regapi/README \
-		${PREFIX}/share/doc/${PORTNAME}/README.regapi
+.for i in regapi wcmd winedbg
+	${INSTALL_DATA} ${WRKSRC}/programs/${i}/README \
+		${PREFIX}/share/doc/${PORTNAME}/README.${i}
+.endfor
 	${INSTALL_DATA} ${WRKSRC}/tools/winedump/README \
 		${PREFIX}/share/doc/${PORTNAME}/README.winedump
 .endif
-	-@${MKDIR} ${PREFIX}/lib/wine
 	-@${MKDIR} ${PREFIX}/lib/wine/reg
 	${INSTALL_SCRIPT} ${WRKSRC}/tools/bug_report.pl \
 		${PREFIX}/lib/wine
