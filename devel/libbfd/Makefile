@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	libbfd
-PORTVERSION=	2.14
+PORTVERSION=	2.15
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_SOURCEWARE}
 MASTER_SITE_SUBDIR=	binutils/releases
@@ -19,15 +19,15 @@ WRKSRC=		${WRKDIR}/binutils-${PORTVERSION}/bfd
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes
+GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-install-libbfd \
 		--enable-commonbfdlib \
 		--disable-nls \
+		--without-pic \
 		--enable-targets=all
 .if (${MACHINE_ARCH} == "amd64")
 CONFIGURE_ARGS+=	--host=x86_64-portbld-freebsd${OSREL}
 .endif
-
-USE_LIBTOOL_VER=13
 
 INFO=		bfd
 
