@@ -7,19 +7,20 @@
 #
 
 PORTNAME=	pipebench
-PORTVERSION=	0.20
+PORTVERSION=	0.40
 CATEGORIES=	benchmarks
 MASTER_SITES=	ftp://ftp.habets.pp.se/pub/synscan/
 
 MAINTAINER=	mich@freebsdcluster.org
 COMMENT=	Pipebench shows current throughput/amount of data through a pipe
 
-USE_REINPLACE=  yes
+CFLAGS+=	-w -pedantic
+USE_REINPLACE=	yes
 
-post-patch:
-post-patch:
-	@${REINPLACE_CMD} -e "s|^CC|#CC|g" \
-	-e "s|^CFLAGS|#CFLAGS|g" ${WRKSRC}/Makefile
+do-build:
+	cd ${WRKSRC} && \
+	${CC} ${CFLAGS} -o ${PORTNAME} ${PORTNAME}.c
+
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/pipebench ${PREFIX}/bin
 	${INSTALL_MAN} ${WRKSRC}/pipebench.1 ${PREFIX}/man/man1
