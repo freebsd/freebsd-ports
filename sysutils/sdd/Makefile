@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	sdd
-PORTVERSION=	1.22
+PORTVERSION=	1.31
 CATEGORIES=	sysutils
 MASTER_SITES=	ftp://ftp.fokus.gmd.de/pub/unix/sdd/
 
@@ -18,14 +18,14 @@ MAN1=		sdd.1
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} != i386 || ${CC} != cc
-do-configure:
-	@${CP} -f ${WRKSRC}/RULES/i386-freebsd-cc.rul \
-		${WRKSRC}/RULES/${ARCH}-freebsd-${CC}.rul
+.if ${MACHINE_ARCH} != "i386" || ${CC} != "cc"
+post-extract:
+	@${LN} -sf i386-freebsd-cc.rul \
+		${WRKSRC}/RULES/${MACHINE_ARCH}-freebsd-${CC}.rul
 .endif
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/sdd/OBJ/${ARCH}-freebsd-${CC}/sdd \
+	${INSTALL_PROGRAM} ${WRKSRC}/sdd/OBJ/${MACHINE_ARCH}-freebsd-${CC}/sdd \
 		${PREFIX}/bin
 	${INSTALL_MAN} ${WRKSRC}/sdd/sdd.1 ${PREFIX}/man/man1
 
