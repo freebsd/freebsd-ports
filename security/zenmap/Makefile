@@ -6,20 +6,21 @@
 # $FreeBSD$
 #
 
-MASTERDIR=	${.CURDIR}/../nmap
-COMMENT=	GUI frontend for the nmap scanning utility
-
 PORTNAME=	nmapfe
+
+COMMENT=	GUI frontend for the nmap scanning utility
 
 RUN_DEPENDS=	nmap:${PORTSDIR}/security/nmap
 
+MASTERDIR=	${.CURDIR}/../nmap
+PLIST=		${.CURDIR}/pkg-plist
+
 USE_GNOMENG=	yes
 USE_GNOME=	gtk12
-INSTALL_TARGET=	install-nmapfe
+
 MAN1=		nmapfe.1 xnmap.1
 
-after-install:
-	test -e ${PREFIX}/bin/nmapfe \
-	    || (cd ${PREFIX}/bin ; ${LN} -f nmapfe xnmap)
+ALL_TARGET=	nbase/libnbase.a nmapfe/nmapfe
+INSTALL_TARGET=	install-nmapfe
 
 .include "${MASTERDIR}/Makefile"

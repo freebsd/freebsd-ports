@@ -1,7 +1,6 @@
 @comment $FreeBSD$
 bin/nmapfe
 bin/xnmap
+@cwd %%X11BASE%%
 share/gnome/apps/Utilities/nmapfe.desktop
-@dirrm share/gnome/apps/Utilities
-@dirrm share/gnome/apps
-@dirrm share/gnome
+@cwd %%LOCALBASE%%
