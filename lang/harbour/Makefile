@@ -5,31 +5,26 @@
 # $FreeBSD$
 #
 
-PORTNAME=      harbour
-PORTVERSION=   0.43.2
-PORTREVISION=  1
-CATEGORIES=    lang
-MASTER_SITES=  ftp://ftp.jsd0.com/public/harbour/dgh/
+PORTNAME=	harbour
+PORTVERSION=	0.43.2
+PORTREVISION=	1
+CATEGORIES=	lang
+MASTER_SITES=	ftp://ftp.jsd0.com/public/harbour/dgh/
 
-MAINTAINER=    harbour@netfang.net
-COMMENT=       An open source Clipper-compatible compiler
+MAINTAINER=	harbour@netfang.net
+COMMENT=	An open source Clipper-compatible compiler
 
-WRKSRC=${WRKDIR}
+LIB_DEPENDS=	slang.1:${PORTSDIR}/devel/libslang
 
-USE_BISON=yes
-USE_FLEX=yes
-USE_GMAKE=yes
+# Not 64-bit clean
+ONLY_FOR_ARCHS=	i386
+WRKSRC=		${WRKDIR}
+USE_BISON=	yes
+USE_FLEX=	yes
+USE_GMAKE=	yes
 NO_INSTALL_MANPAGES=yes
 
-LIB_DEPENDS=    slang.1:${PORTSDIR}/devel/libslang
-
-HB_DIR=${WRKDIR}/${PORTNAME}
-
-.include <bsd.port.pre.mk>
-
-.if ${ARCH} != "i386"
-IGNORE=		Hangs during build on !i386
-.endif
+HB_DIR=		${WRKDIR}/${PORTNAME}
 
 .if defined(NOPORTDOCS)
 post-install:
@@ -42,19 +37,19 @@ post-install:
 	${INSTALL_DATA} ${HB_DIR}/include/hb* ${PREFIX}/include
 	${INSTALL_DATA} ${HB_DIR}/lib/*.a ${PREFIX}/lib
 	.endif
-	-@echo
-	-@echo @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
-	-@echo @
-	-@echo @ Executable files are installed in ${PREFIX}/bin.
-	-@echo @
-	-@echo @ Header files are installed in ${PREFIX}/include.
-	-@echo @
-	-@echo @ Library files are installed in ${PREFIX}/lib.
-	-@echo @
-	-@echo @ See pkg-plist for a list of all installed files.
-	-@echo @
-	-@echo @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
-	-@echo
+	-@${ECHO}
+	-@${ECHO} @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+	-@${ECHO} @
+	-@${ECHO} @ Executable files are installed in ${PREFIX}/bin.
+	-@${ECHO} @
+	-@${ECHO} @ Header files are installed in ${PREFIX}/include.
+	-@${ECHO} @
+	-@${ECHO} @ Library files are installed in ${PREFIX}/lib.
+	-@${ECHO} @
+	-@${ECHO} @ See pkg-plist for a list of all installed files.
+	-@${ECHO} @
+	-@${ECHO} @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+	-@${ECHO}
 .else
 post-install:
 	${INSTALL_PROGRAM} ${HB_DIR}/bin/harbour ${PREFIX}/bin
@@ -72,22 +67,22 @@ post-install:
 	${INSTALL_MAN} ${HB_DIR}/doc/en/*.txt ${PREFIX}/share/doc/harbour/en
 	${MKDIR} ${PREFIX}/share/doc/harbour/es
 	${INSTALL_MAN} ${HB_DIR}/doc/es/*.txt ${PREFIX}/share/doc/harbour/es
-	-@echo
-	-@echo @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
-	-@echo @
-	-@echo @ Executable files are installed in ${PREFIX}/bin.
-	-@echo @
-	-@echo @ Header files are installed in ${PREFIX}/include.
-	-@echo @
-	-@echo @ Library files are installed in ${PREFIX}/lib.
-	-@echo @
-	-@echo @ Documentation files are installed in ${PREFIX}/share/doc/harbour,
-	-@echo @ ${PREFIX}/share/doc/harbour/en, and ${PREFIX}/share/doc/harbour/es.
-	-@echo @
-	-@echo @ See pkg-plist for a list of all installed files.
-	-@echo @
-	-@echo @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
-	-@echo
+	-@${ECHO}
+	-@${ECHO} @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+	-@${ECHO} @
+	-@${ECHO} @ Executable files are installed in ${PREFIX}/bin.
+	-@${ECHO} @
+	-@${ECHO} @ Header files are installed in ${PREFIX}/include.
+	-@${ECHO} @
+	-@${ECHO} @ Library files are installed in ${PREFIX}/lib.
+	-@${ECHO} @
+	-@${ECHO} @ Documentation files are installed in ${PREFIX}/share/doc/harbour,
+	-@${ECHO} @ ${PREFIX}/share/doc/harbour/en, and ${PREFIX}/share/doc/harbour/es.
+	-@${ECHO} @
+	-@${ECHO} @ See pkg-plist for a list of all installed files.
+	-@${ECHO} @
+	-@${ECHO} @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+	-@${ECHO}
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
