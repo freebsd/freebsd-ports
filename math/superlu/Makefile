@@ -6,28 +6,42 @@
 #
 
 PORTNAME=	superlu
-PORTVERSION=	2.0.20030221
+PORTVERSION=	2.0.20030603
 CATEGORIES=	math
-MASTER_SITES=	http://www.nersc.gov/~xiaoye/SuperLU/
+MASTER_SITES=	http://www.nersc.gov/~xiaoye/SuperLU/ \
+		http://www.nersc.gov/~xiaoye/
 DISTNAME=	${PORTNAME}_2.0
+.ifndef NOPORTDOCS
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX} superlu_ug.ps.gz SLU_general.ps.gz simax95.ps.gz
+.endif
+DIST_SUBDIR=	superlu
+EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	maho@FreeBSD.org
 COMMENT=	A library of routines for performing sparse factorization
 
-BUILD_DEPENDS=	${LOCALBASE}/lib/libblas.a:${PORTSDIR}/math/blas
+BUILD_DEPENDS=	${LOCALBASE}/lib/libf77blas.a:${PORTSDIR}/math/atlas
 
+USE_REINPLACE=	yes
 WRKSRC=		${WRKDIR}/SuperLU
 ALL_TARGET=	superlulib
-#
-#	NOTE:	The Matlab interface was not built.
-#
+
+BLAS_LIBS=	${LOCALBASE}/lib/libf77blas.a ${LOCALBASE}/lib/libatlas.a
+
+post-patch:
+	@${REINPLACE_CMD} -e 's+%%BLAS_LIBS%%+${BLAS_LIBS}+' \
+	${WRKSRC}/make.inc
 
 do-install:
 	${INSTALL_DATA} ${WRKSRC}/libsuperlu.* ${PREFIX}/lib
-	${INSTALL_DATA} ${WRKSRC}/SRC/supermatrix.h ${PREFIX}/include
+	@${MKDIR} ${PREFIX}/include/superlu
+	${INSTALL_DATA} ${WRKSRC}/SRC/*.h ${PREFIX}/include/superlu
 .if !defined(NOPORTDOCS)
-	@${MKDIR} ${PREFIX}/share/doc/SuperLU
-	${INSTALL_DATA} ${WRKSRC}/INSTALL/*.ps ${PREFIX}/share/doc/SuperLU
+	@${MKDIR} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/INSTALL/*.ps ${DOCSDIR}
+	${GZIP_CMD} ${DOCSDIR}/*.ps
+	${INSTALL_DATA} ${DISTDIR}/${DIST_SUBDIR}/SLU_general.ps.gz ${DOCSDIR}
+	${INSTALL_DATA} ${DISTDIR}/${DIST_SUBDIR}/simax95.ps.gz ${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>
