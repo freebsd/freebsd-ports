@@ -1,0 +1,6 @@
+The RTSP Proxy Kit is a reference implementation of an RTSP proxy.
+
+RTSP (RFC 2326) is a client-server multimedia presentation control
+protocol, used e.g. by RealNetworks RealPlayer.
+
+WWW: http://www.rtsp.org/2001/proxy/

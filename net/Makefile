@@ -336,6 +336,7 @@
     SUBDIR += openslp
     SUBDIR += openverse
     SUBDIR += oproute
+    SUBDIR += osrtspproxy
     SUBDIR += p0f
     SUBDIR += p5-Archie
     SUBDIR += p5-BIND-Conf_Parser
