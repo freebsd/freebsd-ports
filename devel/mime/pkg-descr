@@ -1,0 +1,8 @@
+This package allows you to decode multipart mime messages. I wrote
+this so that my cgiparse libary can understand multipart/form-data.
+I was looking at the various ways of doing it with out designing an
+entire library. After thinking about the problem, there were to many
+edge cases, and designing an entire library would be better. This is
+the results of the work. It definately could use some cleaning up.
+
+WWW: http://resnet.uoregon.edu/~gurney_j/jmpc/mime.html
