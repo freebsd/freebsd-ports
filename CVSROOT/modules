@@ -9334,6 +9334,7 @@ ru-X.language	ports/russian/X.language
 ru-X11		ports/russian/X.language
 ru-apache13	ports/russian/apache13
 ru-apache13-modssl	ports/russian/apache13-modssl
+ru-artwiz-ru	ports/russian/artwiz-ru
 ru-aspell	ports/russian/aspell
 ru-bogofilter	ports/russian/bogofilter
 ru-cyrproxy	ports/russian/cyrproxy
