@@ -1,0 +1,12 @@
+"BK/Pro is a scalable configuration management system, supporting globally
+distributed development, disconnected operation, compressed repositories,
+change sets, and repositories as branches.
+
+Distributed means that every developer gets their own personal repository,
+complete with revision history, and the tool handles moving changes between
+repositories. SSH, RSH, BKD, HTTP, and/or SMTP can all be used as communication
+transports between repositories; or, if both are local, the system just uses
+the file system." 			
+							-- Bitmover, Inc.
+
+WWW: http://www.bitkeeper.com/Products.BK_Pro.html

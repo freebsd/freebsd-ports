@@ -79,6 +79,7 @@
     SUBDIR += bison
     SUBDIR += bison-devel
     SUBDIR += bison1875
+    SUBDIR += bitkeeper
     SUBDIR += bnf
     SUBDIR += boaconstructor
     SUBDIR += boehm-gc

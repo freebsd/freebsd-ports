@@ -1,0 +1,140 @@
+bin/admin
+bin/bk
+bin/delta
+bin/get
+bin/prs
+bin/rmdel
+bin/unget
+bitkeeper/RELEASE-NOTES
+bitkeeper/admin
+bitkeeper/applypatch
+bitkeeper/b64wrap
+bitkeeper/bitkeeper.config
+bitkeeper/bk
+bitkeeper/bk.script
+bitkeeper/bk_refcard.pdf
+bitkeeper/bk_refcard.ps
+bitkeeper/bkhelp.txt
+bitkeeper/bkmsg.txt
+bitkeeper/cmp
+bitkeeper/delta
+bitkeeper/diff
+bitkeeper/diff3
+bitkeeper/get
+bitkeeper/gui/bin/bkgui
+bitkeeper/gui/bin/tclsh
+@dirrm bitkeeper/gui/bin
+bitkeeper/gui/images/bklogo.gif
+bitkeeper/gui/images/ci-cset.xbm
+bitkeeper/gui/images/ci-done.xbm
+bitkeeper/gui/images/ci-exclude.xbm
+bitkeeper/gui/images/ci-modified.xbm
+bitkeeper/gui/images/ci-new.xbm
+bitkeeper/gui/images/next.gif
+bitkeeper/gui/images/previous.gif
+@dirrm bitkeeper/gui/images
+bitkeeper/gui/lib/bugform
+bitkeeper/gui/lib/citool
+bitkeeper/gui/lib/csettool
+bitkeeper/gui/lib/difftool
+bitkeeper/gui/lib/fm3tool
+bitkeeper/gui/lib/fmtool
+bitkeeper/gui/lib/helptool
+bitkeeper/gui/lib/installtool
+bitkeeper/gui/lib/msgtool
+bitkeeper/gui/lib/renametool
+bitkeeper/gui/lib/revtool
+bitkeeper/gui/lib/setuptool
+bitkeeper/gui/lib/supportform
+bitkeeper/gui/lib/tcl8.4/auto.tcl
+bitkeeper/gui/lib/tcl8.4/encoding/ascii.enc
+bitkeeper/gui/lib/tcl8.4/encoding/cp1252.enc
+bitkeeper/gui/lib/tcl8.4/encoding/iso8859-1.enc
+bitkeeper/gui/lib/tcl8.4/encoding/iso8859-2.enc
+bitkeeper/gui/lib/tcl8.4/encoding/macRoman.enc
+@dirrm bitkeeper/gui/lib/tcl8.4/encoding
+bitkeeper/gui/lib/tcl8.4/history.tcl
+bitkeeper/gui/lib/tcl8.4/http1.0/http.tcl
+bitkeeper/gui/lib/tcl8.4/http1.0/pkgIndex.tcl
+@dirrm bitkeeper/gui/lib/tcl8.4/http1.0
+bitkeeper/gui/lib/tcl8.4/http2.4/http.tcl
+bitkeeper/gui/lib/tcl8.4/http2.4/pkgIndex.tcl
+@dirrm bitkeeper/gui/lib/tcl8.4/http2.4
+bitkeeper/gui/lib/tcl8.4/init.tcl
+bitkeeper/gui/lib/tcl8.4/ldAix
+bitkeeper/gui/lib/tcl8.4/ldAout.tcl
+bitkeeper/gui/lib/tcl8.4/msgcat1.3/msgcat.tcl
+bitkeeper/gui/lib/tcl8.4/msgcat1.3/pkgIndex.tcl
+@dirrm bitkeeper/gui/lib/tcl8.4/msgcat1.3
+bitkeeper/gui/lib/tcl8.4/opt0.4/optparse.tcl
+bitkeeper/gui/lib/tcl8.4/opt0.4/pkgIndex.tcl
+@dirrm bitkeeper/gui/lib/tcl8.4/opt0.4
+bitkeeper/gui/lib/tcl8.4/package.tcl
+bitkeeper/gui/lib/tcl8.4/parray.tcl
+bitkeeper/gui/lib/tcl8.4/safe.tcl
+bitkeeper/gui/lib/tcl8.4/tclAppInit.c
+bitkeeper/gui/lib/tcl8.4/tclIndex
+bitkeeper/gui/lib/tcl8.4/tcltest2.2/pkgIndex.tcl
+bitkeeper/gui/lib/tcl8.4/tcltest2.2/tcltest.tcl
+@dirrm bitkeeper/gui/lib/tcl8.4/tcltest2.2
+bitkeeper/gui/lib/tcl8.4/word.tcl
+@dirrm bitkeeper/gui/lib/tcl8.4
+bitkeeper/gui/lib/tk8.4/bgerror.tcl
+bitkeeper/gui/lib/tk8.4/button.tcl
+bitkeeper/gui/lib/tk8.4/choosedir.tcl
+bitkeeper/gui/lib/tk8.4/clrpick.tcl
+bitkeeper/gui/lib/tk8.4/comdlg.tcl
+bitkeeper/gui/lib/tk8.4/console.tcl
+bitkeeper/gui/lib/tk8.4/dialog.tcl
+bitkeeper/gui/lib/tk8.4/entry.tcl
+bitkeeper/gui/lib/tk8.4/focus.tcl
+bitkeeper/gui/lib/tk8.4/listbox.tcl
+bitkeeper/gui/lib/tk8.4/menu.tcl
+bitkeeper/gui/lib/tk8.4/mkpsenc.tcl
+bitkeeper/gui/lib/tk8.4/msgbox.tcl
+bitkeeper/gui/lib/tk8.4/msgs/cs.msg
+bitkeeper/gui/lib/tk8.4/msgs/de.msg
+bitkeeper/gui/lib/tk8.4/msgs/el.msg
+bitkeeper/gui/lib/tk8.4/msgs/en.msg
+bitkeeper/gui/lib/tk8.4/msgs/en_gb.msg
+bitkeeper/gui/lib/tk8.4/msgs/es.msg
+bitkeeper/gui/lib/tk8.4/msgs/fr.msg
+bitkeeper/gui/lib/tk8.4/msgs/it.msg
+bitkeeper/gui/lib/tk8.4/msgs/nl.msg
+bitkeeper/gui/lib/tk8.4/msgs/ru.msg
+@dirrm bitkeeper/gui/lib/tk8.4/msgs
+bitkeeper/gui/lib/tk8.4/obsolete.tcl
+bitkeeper/gui/lib/tk8.4/optMenu.tcl
+bitkeeper/gui/lib/tk8.4/palette.tcl
+bitkeeper/gui/lib/tk8.4/panedwindow.tcl
+bitkeeper/gui/lib/tk8.4/prolog.ps
+bitkeeper/gui/lib/tk8.4/safetk.tcl
+bitkeeper/gui/lib/tk8.4/scale.tcl
+bitkeeper/gui/lib/tk8.4/scrlbar.tcl
+bitkeeper/gui/lib/tk8.4/spinbox.tcl
+bitkeeper/gui/lib/tk8.4/tclIndex
+bitkeeper/gui/lib/tk8.4/tearoff.tcl
+bitkeeper/gui/lib/tk8.4/text.tcl
+bitkeeper/gui/lib/tk8.4/tk.tcl
+bitkeeper/gui/lib/tk8.4/tkAppInit.c
+bitkeeper/gui/lib/tk8.4/tkfbox.tcl
+bitkeeper/gui/lib/tk8.4/unsupported.tcl
+bitkeeper/gui/lib/tk8.4/xmfbox.tcl
+@dirrm bitkeeper/gui/lib/tk8.4
+@dirrm bitkeeper/gui/lib
+@dirrm bitkeeper/gui
+bitkeeper/gzip_b64wrap
+bitkeeper/gzip_uuwrap
+bitkeeper/import
+bitkeeper/patch
+bitkeeper/prs
+bitkeeper/resync
+bitkeeper/rmdel
+bitkeeper/sdiff
+bitkeeper/unb64wrap
+bitkeeper/unget
+bitkeeper/ungzip_b64wrap
+bitkeeper/ungzip_uuwrap
+bitkeeper/unuuwrap
+bitkeeper/uuwrap
+@dirrm bitkeeper
