@@ -4,7 +4,7 @@
 #
 
 # If the POSTFIX_DEFAULT_MTA environment variable is set to YES, it
-# will make the port/package use defaults which makes postfix replaces
+# will make the port/package use defaults which make postfix replace
 # sendmail as much as possible.
 
 PKG_PREFIX=${PKG_PREFIX:=/usr/local}
