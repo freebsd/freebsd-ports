@@ -60,6 +60,8 @@ share/locale/ro/LC_MESSAGES/oregano.mo
 share/locale/ru/LC_MESSAGES/oregano.mo
 share/locale/sv/LC_MESSAGES/oregano.mo
 share/mime/packages/oregano.xml
+share/mime/text/netlist.xml
+share/mime/text/oregano.xml
 @dirrm share/gnome/oregano/samples
 @dirrm share/gnome/oregano/models
 @dirrm share/gnome/oregano/libraries
