@@ -1,0 +1,50 @@
+--- Makefile.orig	Wed Aug 11 22:29:02 1999
++++ Makefile	Tue Aug 27 10:23:17 2002
+@@ -1,36 +1,19 @@
+-CC     = gcc
+-CFLAGS = -O2 -Wall
+-INCDIR = -I/usr/X11R6/include/X11 -I/usr/X11R6/include
+-DESTDIR= /usr/X11R6
+-LIBDIR = -L/usr/X11R6/lib
++#
++# Makefile for xmms (FreeBSD) -bms
++#
+ 
+-# for Linux
+-LIBS   = -lXpm -lX11 -lXext
++PROG=	wmxss
+ 
+-# for Solaris
+-#LIBS   = -lXpm -lX11 -lXext -lsocket -lnsl
++SRCS=	wmxss.c xutils.c
+ 
+-OBJS   = wmxss.o \
+-         xutils.o
++CFLAGS+=	-I${X11BASE}/include -O2 -Wall
++LDADD+=	-lXpm -lX11 -lXext
++LDADD+= -L${X11BASE}/lib
+ 
++NOMAN=
+ 
+-.c.o:
+-	$(CC) $(CFLAGS) -D$(shell echo `uname -s`) -c $< -o $*.o $(INCDIR)
+-
+-
+-all:	wmxss.o wmxss
++BINDIR?=	${PREFIX}/bin
+ 
+ wmxss.o: wmxss_master.xpm wmxss_mask.xbm
+-wmxss:	$(OBJS) 
+-	$(CC) $(COPTS) $(SYSTEM) -o wmxss $^ $(INCDIR) $(LIBDIR) $(LIBS)
+-
+-clean:
+-	for i in $(OBJS) ; do \
+-		rm -f $$i; \
+-	done
+-	rm -f wmxss
+-
+-install:: wmxss
+-	install -c -s -m 0755 wmxss $(DESTDIR)/bin
+-	install -c -m 0644 wmxss.1 $(DESTDIR)/man/man1 
+ 
++.include <bsd.prog.mk>
