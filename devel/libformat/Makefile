@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	libformat
-PORTVERSION=	0.1.2
+PORTVERSION=	0.1.3
 CATEGORIES=	devel
 MASTER_SITES=	http://members.chello.at/oberzalek/development/
 DISTNAME=	Format-${PORTVERSION}
@@ -16,5 +16,7 @@ MAINTAINER=	ports@FreeBSD.org
 
 GNU_CONFIGURE=	yes
 INSTALLS_SHLIB=	yes
+
+MAN3=	Format.3
 
 .include <bsd.port.mk>
