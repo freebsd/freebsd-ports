@@ -4208,6 +4208,7 @@ libfxp		ports/ftp/libfxp
 libg++		ports/devel/libg++
 libgail-gnome	ports/x11-toolkits/libgail-gnome
 libgcrypt	ports/security/libgcrypt
+libgcrypt-devel	ports/security/libgcrypt-devel
 libgda		ports/databases/libgda
 libgda2		ports/databases/libgda2
 libgdamm	ports/databases/libgdamm
