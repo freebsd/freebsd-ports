@@ -6,8 +6,7 @@
 #
 
 PORTNAME=		freesci
-PORTVERSION=		0.3.0
-PORTREVISION=		1
+PORTVERSION=		0.3.1
 CATEGORIES=		emulators
 MASTER_SITES=		ftp://ftp.linuxgames.com/freesci/
 
@@ -21,10 +20,12 @@ GNU_CONFIGURE=		yes
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
 
-USE_GLIB=		yes
+MAN6=			freesci-tools.6 sciv.6
 
 post-install:
+.if !defined(NOPORTDOCS)
 	@${MKDIR} ${PREFIX}/share/freesci
 	@${INSTALL_DATA} ${WRKSRC}/doc/sci.sgml ${PREFIX}/share/freesci
+.endif
 
 .include <bsd.port.mk>

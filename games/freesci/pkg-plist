@@ -1,14 +1,7 @@
-bin/sciunpack
-bin/scriptdump
-bin/vocabdump
-bin/classes
 bin/sciconsole
 bin/scidisasm
-bin/listwords
+bin/sciunpack
 bin/sciv
-lib/libscicore.a
 lib/libsciengine.a
-lib/libscigraphics.a
-lib/libscisound.a
-share/freesci/sci.sgml
-@dirrm share/freesci
+%%PORTDOCS%%share/freesci/sci.sgml
+%%PORTDOCS%%@dirrm share/freesci
