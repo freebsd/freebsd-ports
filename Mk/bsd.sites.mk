@@ -166,6 +166,41 @@ MASTER_SITE_ECLIPSE+= \
 	http://www.binarycode.org/eclipse/%SUBDIR%/ \
 	http://eclipse.get-software.com/%SUBDIR%/
 
+MASTER_SITE_EXIM+=	\
+	ftp://ftp.csx.cam.ac.uk/pub/software/email/exim/%SUBDIR%/ \
+	ftp://ftp.exim.org/pub/exim/%SUBDIR%/ \
+	http://public.planetmirror.com/pub/exim/%SUBDIR%/ \
+	ftp://gd.tuwien.ac.at/infosys/mail/exim/%SUBDIR%/ \
+	ftp://ftp.easynet.be/exim/%SUBDIR%/ \
+	ftp://mirror.direct.ca/pub/exim/%SUBDIR%/ \
+	ftp://mirror.kn.vutbr.cz/pub/ftp.exim.org/%SUBDIR%/ \
+	ftp://sunsite.auc.dk/pub/mail/exim/%SUBDIR%/ \
+	ftp://ftp.doc.cs.univ-paris8.fr/mirrors/ftp.exim.org/%SUBDIR%/ \
+	ftp://ftp.fu-berlin.de/unix/mail/exim/%SUBDIR%/ \
+	ftp://ftp.tin.org/pub/mail/exim/%SUBDIR%/ \
+	ftp://ftp.freenet.de/pub/ftp.csx.cam.ac.uk/pub/software/email/exim/%SUBDIR%/ \
+	ftp://ftp.esat.net/pub/networking/mail/mta/exim/%SUBDIR%/ \
+	ftp://nagoya.linux.or.jp/mirror/exim/%SUBDIR%/ \
+	ftp://exim.stupendous.net/mirror/exim/%SUBDIR%/ \
+	http://washitake.com/mail/exim/mirror/%SUBDIR%/ \
+	http://exim.psshee.com/ftp/%SUBDIR%/ \
+	ftp://ftp.nl.uu.net/pub/unix/mail/exim/%SUBDIR%/ \
+	ftp://ftp.demon.nl/pub/mirrors/exim/%SUBDIR%/ \
+	ftp://ftp.easynet.nl/mirror/exim/%SUBDIR%/ \
+	ftp://sunsite.uio.no/pub/mail/exim/%SUBDIR%/ \
+	http://www.no.exim.org/ftp/%SUBDIR%/ \
+	http://sunsite.icm.edu.pl/pub/unix/mail/exim/%SUBDIR%/ \
+	ftp://exim.directnet.ru/pub/exim/%SUBDIR%/ \
+	ftp://ftp.smux.net/pub/exim/%SUBDIR%/ \
+	ftp://ftp.is.co.za/networking/mail/mta/exim/%SUBDIR%/ \
+	ftp://ftp.reaper.org/pub/exim/%SUBDIR%/ \
+	ftp://sunsite.cnlab-switch.ch/mirror/exim/%SUBDIR%/ \
+	http://www.mirror.ac.uk/sites/ftp.csx.cam.ac.uk/pub/software/email/exim/%SUBDIR%/ \
+	ftp://ftp.demon.co.uk/pub/mirrors/exim/%SUBDIR%/ \
+	http://www.us.exim.org/ftp/%SUBDIR%/ \
+	http://exim.stanford.edu/ftp/pub/exim/%SUBDIR%/ \
+	ftp://ftp.fsckit.net/pub/exim/%SUBDIR%/
+
 MASTER_SITE_FESTIVAL+= \
 	http://www.festvox.org/packed/festival/%SUBDIR%/ \
 	http://www.speech.cs.cmu.edu/festival/cstr/festival/%SUBDIR%/ \

@@ -9,16 +9,18 @@ PORTNAME=	exim
 PORTVERSION=	3.36
 PORTREVISION=	1
 CATEGORIES=	mail
-MASTER_SITES=	ftp://ftp.csx.cam.ac.uk/pub/software/email/exim/exim3/ \
-		http://www.exim.org/ftp/exim3/ \
-		ftp://ftp.is.co.za/networking/mail/transport/exim/exim3/
-DISTFILES=	exim-3.36.tar.bz2 exim-texinfo-3.30.tar.bz2
+MASTER_SITES=	${MASTER_SITE_EXIM}
+MASTER_SITE_SUBDIR=	exim3
+DISTFILES=	exim-${EXIM_VERSION}${EXTRACT_SUFX} exim-texinfo-${EXIM_DOCVERSION}${EXTRACT_SUFX}
 
 MAINTAINER=	sheldonh@FreeBSD.org
 COMMENT=	High performance MTA for Unix systems on the Internet
 
 USE_BZIP2=	yes
 USE_PERL5=	yes
+
+EXIM_VERSION=		3.36
+EXIM_DOCVERSION=	3.30
 
 .if defined(NOPORTDOCS)
 PKGMESSAGE=	${FILESDIR}/POST-INSTALL-NOTES
