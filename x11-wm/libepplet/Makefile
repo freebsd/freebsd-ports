@@ -8,7 +8,7 @@
 PORTNAME=	libepplet
 PORTVERSION=	0.5
 CATEGORIES=	x11-wm devel
-MASTER_SITES=	ftp://ftp.enlightenment.org/enlightenment/epplets/ \
+MASTER_SITES=	ftp://kde.planetmirror.com/pub/enlightenment/epplets/ \
 		ftp://ftp.dti.ad.jp/pub/X/enlightenment/epplets/
 
 DISTNAME=	epplet-base-${PORTVERSION}
