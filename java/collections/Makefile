@@ -14,24 +14,39 @@ EXTRACT_SUFX=	.zip
 MAINTAINER=	java@freebsd.org
 COMMENT=	JDK1.2 Collections' API for JDK1.1 environments
 
-RUN_DEPENDS=	${LOCALBASE}/jdk${JDK_VERSION}/bin/java:${PORTSDIR}/java/jdk11
+USE_JAVA=	yes
+JAVA_VERSION=	1.1
+JAVA_RUN=	jre
 
 USE_ZIP=	YES
 
 WRKSRC=		${WRKDIR}/1.1collections
-JDK_VERSION=	1.1.8
 NO_BUILD=	yes
 NO_CDROM=	"See the license"
 
+.if !defined(NOPORTDOCS)
+PORTDOCS=	LICENSE.TXT README.TXT javadoc
+.endif
+JARFILE=	collections.jar
+PLIST_FILES+=	${JAVAJARDIR:S,^${PREFIX}/,,}/${JARFILE}
+
 .include <bsd.port.pre.mk>
 .if !exists(${DISTDIR}/${DISTNAME}${EXTRACT_SUFX})
-IGNORE=	"You must manually fetch the distribution from http://java.sun.com/products/javabeans/infobus/index.html and place it in ${DISTDIR} then run make again"
+IGNORE=	"You must manually fetch ${DISTNAME}${EXTRACT_SUFX} from http://java.sun.com/products/archive/javabeans/infobus/downloads.html and place it in ${DISTDIR} then run make again"
 .endif
 
 do-install:
-	@${MKDIR} ${PREFIX}/share/java/classes/
-	@${CP} ${WRKSRC}/lib/*.jar ${PREFIX}/share/java/classes/
-	@${MKDIR} ${PREFIX}/share/java/${PKGNAME}/
-	@${CP} -R ${WRKSRC}/doc/* ${PREFIX}/share/java/${PKGNAME}/
+	@${ECHO_MSG} -n ">> Installing JAR as ${JAVAJARDIR}/${JARFILE}..."
+	@${MKDIR} ${JAVAJARDIR}
+	@${CP} ${WRKSRC}/lib/${JARFILE} ${JAVAJARDIR}/
+	@${ECHO_MSG} " [ DONE ]"
+.if !defined(NOPORTDOCS)
+	@${ECHO_MSG} -n ">> Installing documentation in ${DOCSDIR}..."
+	@${MKDIR} ${DOCSDIR}
+.for DOCFILE in ${PORTDOCS}
+	@${CP} -R ${WRKSRC}/doc/${DOCFILE} ${DOCSDIR}/
+.endfor
+	@${ECHO_MSG} " [ DONE ]"
+.endif
 
 .include <bsd.port.post.mk>
