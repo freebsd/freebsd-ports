@@ -1,13 +1,13 @@
 # New ports collection makefile for:    texinfo
-# Version required:     2.124
+# Version required:     2.218
 # Date created:         2 October 1994
 # Whom:                 jmz
 #
-# $Id: Makefile,v 1.11 1997/02/18 16:57:33 jmz Exp $
+# $Id: Makefile,v 1.12 1997/05/21 13:31:21 jmz Exp $
 #
 
 DISTNAME=	texinfo
-PKGNAME=	texinfo-2.124
+PKGNAME=	texinfo-2.218
 DISTFILES=	texinfo.tex lcircle10.tfm
 CATEGORIES=	print
 #other equivalent sites: ftp.shsu.edu ftp.dante.de
