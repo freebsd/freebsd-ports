@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.184 1999/01/18 04:43:39 steve Exp $
+# $Id: Makefile,v 1.185 1999/02/22 01:35:14 billf Exp $
 #
 
     SUBDIR += 221upgrade
@@ -18,6 +18,7 @@
     SUBDIR += cwish
     SUBDIR += deco
     SUBDIR += dejagnu
+    SUBDIR += delay
     SUBDIR += diction
     SUBDIR += display
     SUBDIR += dotfile
