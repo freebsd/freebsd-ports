@@ -7,17 +7,16 @@
 #
 
 PORTNAME=	mx-experimental
-PORTVERSION=	0.6.0
-PORTREVISION=	2
+PORTVERSION=	0.8.0
 CATEGORIES=	devel python
-MASTER_SITES=	http://www.lemburg.com/files/python/
+MASTER_SITES=	http://www.egenix.com/files/python/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	egenix-${PORTNAME}-${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	sergio@softshark.org
 COMMENT=	The eGenix mx Extensions - EXPERIMENTAL Package
 
-BUILD_DEPENDS=	${PREFIX}/include/gmp.h:${PORTSDIR}/math/libgmp4
+BUILD_DEPENDS=	${LOCALBASE}/include/gmp.h:${PORTSDIR}/math/libgmp4
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/mx/BeeBase/BeeBase.py:${PORTSDIR}/lang/py-mx-base
 
 USE_REINPLACE=	yes

@@ -1,4 +1,8 @@
-eGenix.com mx Extensions - EXPERIMENTAL Package
+eGenix.com mx Extensions for Python - EXPERIMENTAL Package
+
+The mx Extension Series(TM) is a collection of software packages which aims at
+providing professional quality add-ons for the Open Source Language Python
+(see http://www.python.org).
 
 It consists of the following packages:
 
@@ -6,3 +10,5 @@ mxNumber	- Extended Numeric Types
 mxTidy		- Interface to HTML Tidy (HTML/XML cleanup tool)
 mxURL		- A URL Datatype
 mxUID		- A UID Datatype
+
+WWW: http://www.egenix.com/
