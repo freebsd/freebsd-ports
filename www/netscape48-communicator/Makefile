@@ -13,6 +13,8 @@ DISTFILES?=	communicator-v408-export.x86-unknown-freebsd.tar.gz
 
 MAINTAINER?=	sada@FreeBSD.org
 
+RUN_DEPENDS=	${X11BASE}/lib/aout/libX11.so.6.1:${PORTSDIR}/x11/XFree86-aoutlibs
+
 Y2K=		http://home.netscape.com/products/year2000/faq/client.html
 
 .if !defined(INFILE_HEAD)
