@@ -1,0 +1,14 @@
+The GWM (Generic Window Manager) is an extensible Window Manager for the X
+Window System Version 11. It is based upon a WOOL (Window Object Oriented
+Langage) kernel, which is an interpreted dialect of Lisp with specific window
+management primitives. The user builds a window manager by writing WOOL files
+to describe objects on the screen, including a Finite State Machine triggering
+WOOL actions on response to X events (e.g. mouse buttons) on that object. These
+objects can be used as decorations around X applications windows, as pop-up
+menus or as independent windows. GWM should be able to emulate efficiently
+other window managers, and play the same role for window managers as EMACS does
+for text editors.
+
+GWM comes with already defined profiles (standard, vtwm-like, twm-like,
+mwm-like). Some screenshots are avialable on the W3 page. Or you can design
+exactly what you want.

@@ -1,0 +1,12 @@
+--- data/Imakefile.ORG	Thu Nov 14 21:32:23 1996
++++ data/Imakefile	Thu Nov 14 21:30:16 1996
+@@ -246,6 +246,9 @@
+      wallpaper.gwm \
+      timeout-win.gwm 
+ 
++rxterm.script::
++	ln -f ../contrib/rxterm/rxterm.script
++
+ MakeDirectories(install,$(GWMDIR))
+ InstallMultipleFlags($(DATA),$(GWMDIR),$(INSTDATFLAGS))
+ 
