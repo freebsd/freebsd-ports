@@ -2,6 +2,7 @@ bin/Xdialog
 share/locale/de/LC_MESSAGES/Xdialog.mo
 share/locale/es/LC_MESSAGES/Xdialog.mo
 share/locale/fr/LC_MESSAGES/Xdialog.mo
+share/locale/hu/LC_MESSAGES/Xdialog.mo
 share/locale/ru/LC_MESSAGES/Xdialog.mo
 %%PORTDOCS%%share/xdialog/2ranges.png
 %%PORTDOCS%%share/xdialog/authors.html

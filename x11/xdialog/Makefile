@@ -20,15 +20,19 @@ USE_BZIP2=	yes
 USE_GTK=	yes
 USE_X_PREFIX=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib -lgnugetopt"
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
+		LDFLAGS="-L${LOCALBASE}/lib -lgnugetopt"
 
 MAN1=	Xdialog.1
 
-.if !defined(NOPORTDOCS)
+post-patch:
+	@${PERL} -pi -e 's|-L../lib -lgetopt||g' ${WRKSRC}/src/Makefile.in
+
 post-install:
-	${MKDIR} ${DATADIR}
-	@(cd ${WRKSRC}/doc ; \
-	  ${CP} *.html *.png ${DATADIR})
+.if !defined(NOPORTDOCS)
+	@${MKDIR} ${DATADIR}
+	${INSTALL_DATA} ${WRKSRC}/doc/*.html ${DATADIR}
+	${INSTALL_DATA} ${WRKSRC}/doc/*.png ${DATADIR}
 .endif
 
 .include <bsd.port.mk>
