@@ -215,6 +215,7 @@
     SUBDIR += teTeX-base
     SUBDIR += teTeX-texmf
     SUBDIR += tex
+    SUBDIR += tex-omegaware-old
     SUBDIR += tex-texmflocal
     SUBDIR += texpower
     SUBDIR += tgif2tex
