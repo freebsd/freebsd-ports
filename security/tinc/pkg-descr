@@ -15,4 +15,4 @@ packet in its own UDP packet, instead of encapsulating all into one TCP or
 even PPP over TCP stream. This results in lower latencies, less overhead,
 and in general better responsiveness and throughput.
 
-WWW: http://tinc.nl.linux.org/
+WWW: http://www.tinc-vpn.org/
