@@ -7,6 +7,7 @@
 
 PORTNAME=		freesci
 PORTVERSION=		0.3.0
+PORTREVISION=		1
 CATEGORIES=		emulators
 MASTER_SITES=		ftp://ftp.linuxgames.com/freesci/
 
