@@ -9,7 +9,7 @@
 PORTNAME=	nInvaders
 PORTVERSION=	0.0.9
 CATEGORIES=	games
-MASTER_SITES=	http://dettus.dyndns.org/ninvaders/
+MASTER_SITES=	http://freebsdcluster.org/~mich/software/
 
 MAINTAINER=	mich@freebsdcluster.org
 COMMENT=	The nIvaders game is a Space Invaders clone for ncurses
