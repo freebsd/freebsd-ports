@@ -8,7 +8,7 @@
 #
 
 PORTNAME=	pkg_cutleaves
-PORTVERSION=	20031115
+PORTVERSION=	20031227
 CATEGORIES=	sysutils
 MASTER_SITES=	# none
 DISTFILES=	# none
@@ -42,6 +42,9 @@ post-patch:
 	  ${WRKDIR}/pkg_cutleaves
 	@${REINPLACE_CMD} -e \
 	  's,/usr/local/sbin/pkg_deinstall,${LOCALBASE}/sbin/pkg_deinstall,' \
+	  ${WRKDIR}/pkg_cutleaves
+	@${REINPLACE_CMD} -e \
+	  's,/usr/local/sbin/pkgdb,${LOCALBASE}/sbin/pkgdb,' \
 	  ${WRKDIR}/pkg_cutleaves
 	@${REINPLACE_CMD} -e \
 	  's,/var/db/pkg,${PKG_DBDIR},' \
