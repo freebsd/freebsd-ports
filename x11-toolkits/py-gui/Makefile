@@ -16,6 +16,8 @@ COMMENT=	A cross-platform pythonic GUI API
 
 BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/Pyrex/Distutils.py:${PORTSDIR}/devel/pyrex
 
+BROKEN=		"Broken dependency"
+
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
 USE_REINPLACE=	yes
