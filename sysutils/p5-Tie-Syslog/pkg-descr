@@ -1,0 +1,10 @@
+This module allows you to tie a filehandle (output only) to
+syslog. This becomes useful in general when you want to
+capture any activity that happens on STDERR and see that it
+is syslogged for later perusal. You can also create an arbitrary
+filehandle, say LOG, and send stuff to syslog by printing to
+this filehandle.
+
+WWW: http://search.cpan.org/search?dist=Tie-Syslog
+
+Seamus Venasse <svenasse@polaris.ca>
