@@ -16,6 +16,7 @@
     SUBDIR += adgali
     SUBDIR += adom
     SUBDIR += affenspiel
+    SUBDIR += afternoonstalker
     SUBDIR += alephone
     SUBDIR += alephone-data
     SUBDIR += amphetamine
