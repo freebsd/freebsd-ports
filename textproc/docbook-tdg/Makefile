@@ -6,23 +6,25 @@
 #
 
 PORTNAME=	docbook-tdg
-PORTVERSION=	2.0.4
+PORTVERSION=	2.0.6
 CATEGORIES=	textproc
 MASTER_SITES=	http://www.docbook.org/tdg/en/
 DISTNAME=	tdg-en-html-${PORTVERSION}
 
 MAINTAINER=	wjv@FreeBSD.org
 
+USE_REINPLACE=	yes
 USE_ZIP=	yes
 NO_BUILD=	yes
 WRKSRC=		${WRKDIR}/tdg/en
 CPIO=		cpio --quiet -pdum -R
 
 post-patch:
-	@ ${PERL} -pi -e \
-	  's#file:/share/projects/sourceforge/docbook/defguide/en/entities/figures/100dpi/#figures/#g; \
-	   s#file:/share/projects/sourceforge/docbook/defguide/(glyphs/100dpi/)#../$$1#g' \
+	@ ${REINPLACE_CMD} -E -e \
+	   's#file:/share/projects/sourceforge/docbook/defguide/(glyphs/100dpi/)#../\1#g' \
 	  ${WRKSRC}/html/*.html
+# XXX - hack due to REINPLACE_CMD
+	@ ${RM} -f ${WRKSRC}/html/*.html.bak
 
 do-install:
 	@ ${MKDIR} ${DOCSDIR}
