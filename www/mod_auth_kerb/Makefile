@@ -8,9 +8,10 @@
 # Shamelessly stolen from will's mod_auth_any port.
 
 PORTNAME=	mod_auth_kerb
-PORTVERSION=	4.10
+PORTVERSION=	4.11
 CATEGORIES=	www
-MASTER_SITES=	http://stonecold.unity.ncsu.edu/software/mod_auth_kerb/downloads/
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=modauthkerb
 
 MAINTAINER=	wollman@FreeBSD.org
 
