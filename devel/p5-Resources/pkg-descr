@@ -1,0 +1,15 @@
+Resources are a way to specify information of interest to program or
+packages.
+
+Applications use resource files to specify and document the values of
+quantities or attributes of interest.
+
+Resources can be loaded from or saved to resource files. Methods are
+provided to search, modify and create resources.  Packages use resources to
+hardwire in their code the default values for their attributes, along with
+documentation for the attibutes themselves.
+
+Packages inherit resources when subclassed, and the resource names are
+updated dynamically to reflect a class hierarchy.
+
+Methods are provided for interactive resource inspection and editing.
