@@ -8,26 +8,120 @@
 PORTNAME=	nvu
 PORTVERSION=	0.50
 CATEGORIES=	www
-MASTER_SITES=	http://cvs.nvu.com/download/
-DISTNAME=	${PORTNAME}-${PORTVERSION}-sources
+# vtel.rgv.net is a temp mirror, nvu.com is SLOW
+MASTER_SITES=	http://vtel.rgv.net/~ahze/ \
+		http://cvs.nvu.com/download/
+DISTNAME=	${PKGNAME}-sources
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A complete Web Authoring System
+COMMENT=	A complete Web Authoring System similar to Dreamweaver or Frontpage
 
-BUILD_DEPENDS=	${X11BASE}/lib/mozilla/libmozjs.so:${PORTSDIR}/www/mozilla
-RUN_DEPENDS=	${BUILD_DEPENDS}
-
-WRKSRC=		${WRKDIR}/mozilla
+BUILD_DEPENDS=	zip:${PORTSDIR}/archivers/zip \
+		freetype-config:${PORTSDIR}/print/freetype2
+LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
+		png.5:${PORTSDIR}/graphics/png \
+		mng.1:${PORTSDIR}/graphics/libmng \
+		freetype.9:${PORTSDIR}/print/freetype2 \
+		nspr4.1:${PORTSDIR}/devel/nspr
 
 USE_BZIP2=	yes
+USE_PERL5=	yes
+USE_GNOME=	gtk20 libidl
+USE_REINPLACE=	yes
 USE_GMAKE=	yes
-USE_PERL5_BUILD=yes
+
+OPTIONS=	XFT "Enable Xft font anti-aliasing" on \
+		DEBUG "Enable debugging (i.e. gdb) support" off \
+		OPTIMIZED_CFLAGS "Enable -O2 optimizations" off
+
+NVU=		${PORTNAME}-0.17+
+FAKEDIR=	${WRKDIR}/FAKE
+WRKSRC=		${WRKDIR}/mozilla
+PLIST=		${WRKDIR}/plist
+
 MAKEFILE=	client.mk
 ALL_TARGET=	build_all
 
-PLIST_SUB=	NVUDIR=${PORTNAME}-0.17+
+PKG_CONFIGS=	nvu-gtkmozembed.pc nvu-js.pc nvu-nspr.pc \
+		nvu-nss.pc nvu-plugin.pc nvu-xpcom.pc
 
-post-extract:
-	${CP} -p ${WRKSRC}/mozconfig.linux ${WRKSRC}/.mozconfig
+.include <bsd.port.pre.mk>
 
-.include <bsd.port.mk>
+.if !defined(WITHOUT_XFT)
+LIB_DEPENDS+=	Xft.2:${PORTSDIR}/x11-fonts/libXft
+.endif
+
+post-patch:
+	@${SED} -e 's|%%CC%%|${CC}|; s|%%CXX%%|${CXX}|; \
+		s|%%PTHREAD_LIBS%%|${PTHREAD_LIBS}|; \
+		s|%%CFLAGS%%|${CFLAGS}|; \
+		s|%%CXXFLAGS%%|${CXXFLAGS}|; \
+		s|%%PREFIX%%|${FAKEDIR}|; \
+		s|%%LOCALBASE%%|${LOCALBASE}|' \
+		${FILESDIR}/mozconfig.in >${WRKSRC}/.mozconfig
+.if defined(WITHOUT_XFT)
+	@${ECHO_CMD} "ac_add_options  --disable-xft" >> ${WRKSRC}/.mozconfig
+.else
+	@${ECHO_CMD} "ac_add_options  --enable-xft" >> ${WRKSRC}/.mozconfig
+.endif
+.if defined(WITH_DEBUG)
+	@${ECHO_CMD} "ac_add_options  --enable-debug" >> ${WRKSRC}/.mozconfig
+	@${ECHO_CMD} "ac_add_options  --disable-strip" >> ${WRKSRC}/.mozconfig
+.else
+	@${ECHO_CMD} "ac_add_options  --disable-debug" >> ${WRKSRC}/.mozconfig
+	@${ECHO_CMD} "ac_add_options  --enable-strip" >> ${WRKSRC}/.mozconfig
+.endif
+.if defined(WITH_OPTIMIZED_CFLAGS)
+	@${ECHO_CMD} "ac_add_options --enable-optimize=-O2" >> ${WRKSRC}/.mozconfig
+.endif
+	@${REINPLACE_CMD} -e 's|-lc_r|${PTHREAD_LIBS}|g ; \
+		s|-lpthread|${PTHREAD_LIBS}|g' \
+		${WRKSRC}/configure \
+		${WRKSRC}/nsprpub/configure
+	@${REINPLACE_CMD} -e 's|-pthread|${PTHREAD_LIBS}|g' \
+		${WRKSRC}/nsprpub/configure \
+		${WRKSRC}/security/coreconf/FreeBSD.mk \
+		${WRKSRC}/directory/c-sdk/config/FreeBSD.mk \
+		${WRKSRC}/js/src/Makefile.in
+
+pre-install:
+	${RM} -rf ${PLIST} ${FAKEDIR}
+	${TOUCH} -f ${PLIST}
+	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_FLAGS} \
+		 ${MAKEFILE} ${MAKE_ARGS} install
+	${ECHO_CMD} bin/nvu >> ${PLIST}
+	${ECHO_CMD} bin/nvu-config >> ${PLIST}
+	cd ${FAKEDIR}/lib/${NVU} && ${FIND} -s * -type f -o -type l | \
+		${SED} -e 's|^|lib/${NVU}/|' >> ${PLIST} \
+			&& ${FIND} -d * -type d | \
+			${SED} -e 's:^:@dirrm lib/${NVU}/:' >> ${PLIST}
+	${ECHO_CMD} @dirrm lib/${NVU} >> ${PLIST}
+.for p in ${PKG_CONFIGS}
+	${ECHO_CMD} ${p:S|^|libdata/pkgconfig/|} >> ${PLIST}
+.endfor
+	cd ${FAKEDIR}/include/${NVU} && ${FIND} -s * -type f -o -type l | \
+		${SED} -e 's|^|include/${NVU}/|' >> ${PLIST} \
+		&& ${FIND} -d * -type d | \
+		${SED} -e 's|^|@dirrm include/${NVU}/|' >> ${PLIST}
+	${ECHO_CMD} @dirrm include/${NVU} >> ${PLIST}
+
+do-install:
+	${REINPLACE_CMD} -e 's|${FAKEDIR}|${PREFIX}|' \
+		${FAKEDIR}/bin/* \
+		${FAKEDIR}/lib/pkgconfig/*
+	${RM} -f ${FAKEDIR}/bin/*.bak ${FAKEDIR}/lib/pkgconfig/*.bak
+	${MKDIR} ${PREFIX}/lib/${NVU}
+	${CHMOD} 755 ${PREFIX}/lib/${NVU}
+	${INSTALL_SCRIPT} ${FAKEDIR}/bin/* ${PREFIX}/bin
+	if [ ! -d ${PREFIX}/libdata/pkgconfig ]; then \
+		${MKDIR} ${PREFIX}/libdata/pkgconfig ; \
+	fi
+.for i in ${PKG_CONFIGS}
+	${INSTALL_DATA} ${FAKEDIR}/lib/pkgconfig/${i} ${PREFIX}/libdata/pkgconfig/
+.endfor
+	cd ${FAKEDIR}/lib/${NVU} && ${FIND} . | \
+		${CPIO} -pdm -L -R ${LIBOWN}:${LIBGRP} ${PREFIX}/lib/${NVU}
+	cd ${FAKEDIR}/include/${NVU} && ${FIND} . | \
+		${CPIO} -pdm -L -R ${LIBOWN}:${LIBGRP} ${PREFIX}/include/${NVU}
+
+.include <bsd.port.post.mk>
