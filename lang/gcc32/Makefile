@@ -6,31 +6,26 @@
 # $FreeBSD$
 #
 
-SNAPDATE=	2002-09-02
+SNAPDATE=	2002-11-19
 SNAPVER=	${SNAPDATE:S/-//g}
-#CVS_DATE=	${SNAPDATE} 23:46:00 EDT
 
 PORTNAME=	gcc
-PORTVERSION=	3.2
+PORTVERSION=	3.2.1
 PORTREVISION=	${SNAPVER}
 CATEGORIES=	lang java
 MASTER_SITES=	${MASTER_SITE_GCC}
-MASTER_SITE_SUBDIR=	snapshots/${SNAPDATE}
-.if !defined(CVS_DATE)
-DISTFILES=	\
-		gcc-core-${SNAPVER}${EXTRACT_SUFX} \
-		gcc-g++-${SNAPVER}${EXTRACT_SUFX} \
-		gcc-g77-${SNAPVER}${EXTRACT_SUFX} \
-		gcc-java-${SNAPVER}${EXTRACT_SUFX} \
-		gcc-objc-${SNAPVER}${EXTRACT_SUFX}
-.endif
+MASTER_SITE_SUBDIR=	releases/gcc-${PORTVERSION}
+DISTFILES=	gcc-core-${PORTVERSION}${EXTRACT_SUFX} \
+		gcc-g++-${PORTVERSION}${EXTRACT_SUFX} \
+		gcc-g77-${PORTVERSION}${EXTRACT_SUFX} \
+		gcc-java-${PORTVERSION}${EXTRACT_SUFX} \
+		gcc-objc-${PORTVERSION}${EXTRACT_SUFX}
 
-PATCH_SITES=	ftp://relay.nuxi.com/obrien/
-PATCHFILES=	port_gcc32_${SNAPDATE}.diff
+#PATCH_SITES=	ftp://relay.nuxi.com/obrien/
+#PATCHFILES=	port_gcc32_${SNAPDATE}.diff
 
 MAINTAINER=	ports@FreeBSD.org
 
-NO_CDROM=	'dated material'
 LATEST_LINK=	gcc32
 
 USE_BZIP2=	yes
@@ -49,10 +44,8 @@ CONFIGURE_TARGET=	${ARCH}-portbld-freebsdaout${OSREL}
 CONFIGURE_TARGET=	${ARCH}-portbld-freebsd${OSREL}
 .endif
 
-#GCC_REV=	${PORTVERSION:C/\.0$//}
-GCC_REV=	3.2.1
-#SRCDIR=		${WRKDIR}/gcc-${GCC_REV}
-SRCDIR=		${WRKDIR}/gcc-${SNAPVER}
+GCC_REV=	${PORTVERSION:C/\.0$//}
+SRCDIR=		${WRKDIR}/gcc-${GCC_REV}
 WRKSRC=		${WRKDIR}/build
 TARGLIB=	${PREFIX}/lib/gcc-lib/${CONFIGURE_TARGET}/${GCC_REV}
 PLIST_SUB=	GCC_REV=${GCC_REV} GNU_HOST=${CONFIGURE_TARGET}  \
@@ -163,11 +156,9 @@ post-install:
 	-${MV} -f ${PREFIX}/lib/libgcj.* ${TARGLIB}
 	${RM} -f ${PREFIX}/lib/libiberty.a
 	${RM} -f ${TARGLIB}/*.la
-# I am sick and tired of this .info shit, makeinfo --no-split isn't working
-	@cd ${PREFIX}/info ; ${RM} -f cpp.* cppinternals.* g77.* gcc.* gccint.* gcj.*
-#.for info in cpp cppinternals g77 gcc gcj
-#	install-info ${PREFIX}/info/${info}.info ${PREFIX}/info/dir
-#.endfor
+.for info in cpp cppinternals g77 gcc gcj
+	install-info ${PREFIX}/info/${info}.info ${PREFIX}/info/dir
+.endfor
 # I am sick and tired of the anonyance that man pages can only be generated if
 # perl 5.6 is installed.  This is becoming a royal PITA on non-5-CURRENT systems
 .for mp in ${_MANPAGES}
