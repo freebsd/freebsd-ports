@@ -7,6 +7,8 @@
 #
 
 PORTNAME=	wine
+# We will skip the 2000.06.14 snapshot of Wine as this proved to be
+# somewhat unstable (also on other platforms).
 PORTVERSION=	2000.05.26
 CATEGORIES=	emulators
 MASTER_SITES=	${MASTER_SITE_SUNSITE}
