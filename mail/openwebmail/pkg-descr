@@ -1,0 +1,10 @@
+Open WebMail is a webmail system designed to manage very large mail folder
+files in a memory efficient way. It also provides a range of features to help
+users migrate smoothly from Microsoft Outlook to Open WebMail. Open WebMail
+has the following features: multiple languages, multiple iconsets/styles,
+strong MIME support, virtual host/login alias, PAM support, online password
+changing, convenient folder/message operations, draft folder, confirmed
+reading support, full content search, a spelling checker, auto reply, mail
+filtering, POP3 support, and message count previewing.
+
+WWW: http://turtle.ee.ncku.edu.tw/openwebmail/

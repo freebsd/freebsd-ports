@@ -122,6 +122,7 @@
     SUBDIR += nmh
     SUBDIR += noattach
     SUBDIR += nullmailer
+    SUBDIR += openwebmail
     SUBDIR += p5-Email-Find
     SUBDIR += p5-Email-Valid
     SUBDIR += p5-IMAP-Admin
