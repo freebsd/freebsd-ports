@@ -25,6 +25,7 @@ DOCS=		LICENSE.txt README doc
 EXAMPLES=	examples/*
 
 BROKEN=		"Broken pkg-plist"
+DEPRECATED=	"This port will be removed after April 15 if still broken at that time."
 
 .include <bsd.port.pre.mk>
 
