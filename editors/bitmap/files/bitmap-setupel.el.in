@@ -1,0 +1,8 @@
+;;
+;; @(#)bitmap-setupel.el -- bitmap mule load-path setup elisp file.
+;;                                            --  by shige@FreeBSD.ORG
+
+(setq load-path (append '(
+	"@@PREFIX@@/@@EMACS_LIBDIR@@/site-lisp/bitmap"
+ ) load-path))
+(provide 'bitmap-setupel)
