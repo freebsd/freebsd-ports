@@ -1,6 +1,6 @@
---- Makefile.in.orig	Wed Jun 19 11:13:15 2002
-+++ Makefile.in	Mon Jun 24 02:07:45 2002
-@@ -58,17 +58,7 @@
+--- Makefile.in.orig	Mon Sep  9 16:05:39 2002
++++ Makefile.in	Wed Oct 30 20:54:40 2002
+@@ -62,15 +62,7 @@
  FOUND_ZVBI	:= @FOUND_ZVBI@
  
  # build final cflags
@@ -12,10 +12,9 @@
 -CFLAGS	+= -DCONFIGFILE='"$(config)"'
 -CFLAGS	+= -DLIBDIR='"$(libdir)"'
 -CFLAGS	+= -DVERSION='"$(VERSION)"'
--
--# shared objects need -fPIC
+-CXXFLAGS = $(CFLAGS)
++CFLAGS += @CFLAGS@ $(WARN_FLAGS) $(LFS_FLAGS) $(X11_FLAGS) $(LIB_FLAGS) -DCONFIGFILE='"$(config)"' -DLIBDIR='"$(libdir)"' -DVERSION='"$(VERSION)"' -fPIC
++CXXFLAGS += $(CFLAGS)
+ 
+ # shared objects need -fPIC
 -%.so : CFLAGS += -fPIC
-+CFLAGS	+= @CFLAGS@ $(WARN_FLAGS) $(LFS_FLAGS) $(X11_FLAGS) $(LIB_FLAGS) -DCONFIGFILE='"$(config)"' -DLIBDIR='"$(libdir)"' -DVERSION='"$(VERSION)"' -fPIC
- 
- 
- #########################################################
