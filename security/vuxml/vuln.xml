@@ -32,6 +32,37 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="6a164d84-2f7f-11d9-a9e7-0001020eed82">
+    <topic>postgresql-contrib -- insecure temporary file
+      creation</topic>
+    <affects>
+      <package>
+	<name>postgresql-contrib</name>
+	<range><lt>7.2.6</lt></range>
+	<range><gt>7.3.*</gt><lt>7.3.8</lt></range>
+	<range><gt>7.4.*</gt><lt>7.4.6</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The make_oidjoins_check script in the PostgreSQL RDBMS has
+	  insecure handling of temporary files, which could lead to an
+	  attacker overwriting arbitrary files with the credentials of
+	  the user running the make_oidjoins_check script.</p>
+      </body>
+    </description>
+    <references>
+      <cvename>CAN-2004-0977</cvename>
+      <bid>11295</bid>
+      <url>http://www.postgresql.org/news/234.html</url>
+      <url>http://www.trustix.net/errata/2004/0050/</url>
+    </references>
+    <dates>
+      <discovery>2004-09-10</discovery>
+      <entry>2004-11-06</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="62239968-2f2a-11d9-a9e7-0001020eed82">
     <topic>gd -- integer overflow</topic>
     <affects>
