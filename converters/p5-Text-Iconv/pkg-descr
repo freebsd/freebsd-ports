@@ -4,6 +4,3 @@ converts the encoding of characters in the input string from the
 fromcode codeset to the tocode codeset, and returns the result.
 
 WWW: http://search.cpan.org/dist/Text-Iconv/
-
--- Sergey Skvortsov
-skv@FreeBSD.org
