@@ -1,24 +1,18 @@
 # New ports collection makefile for:	coda-client
 # Date created:				Mon Oct  18 12:01:27 EDT 1999
 # Whom:					???
+#
 # $FreeBSD$
 #
 
-PORTNAME=	coda-client
-PORTVERSION=	5.3.2
-CATEGORIES=	net
-MASTER_SITES=	ftp://ftp.coda.cs.cmu.edu/pub/coda/src/
-DISTNAME=	coda-${PORTVERSION}
-EXTRACT_SUFX=	.tgz
+PORTNAME=	coda
+PORTVERSION=	${CODA_VERSION}
 
-MAINTAINER=	rvb@cs.cmu.edu
+CONFIGURE_ARGS=	--sysconfdir=${PREFIX}/etc
 
-BUILD_DEPENDS=	${PREFIX}/lib/libgdbm.a:${PORTSDIR}/databases/gdbm
+MASTERDIR=	${.CURDIR}/../coda5_server
+PKGDIR=		${.CURDIR}/pkg
 
-ALL_TARGET=	coda
-INSTALL_TARGET=	client-install
+CODA_SUITE=	client
 
-GNU_CONFIGURE=	yes
-USE_GMAKE=	yes
-
-.include <bsd.port.mk>
+.include "${MASTERDIR}/Makefile"
