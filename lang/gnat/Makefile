@@ -1,61 +1,99 @@
-# -*- Mode: Makefile -*-
-# Port of:              GNU Ada gnat
-# Version required:     2.03
-# Space required:       >= 23MB
+# New ports collection makefile for:	GNU Ada gnat
+# Version required:     3.09
 # Date created:         Sat Mar 18 02:16:45 1995
-# Porter:               nils@guru.ims.uni-stuttgart.de
+# Porter (original):	nils@guru.ims.uni-stuttgart.de
+# Porter (version 3):	maurice@serc.rmit.edu.au
 #
-# $Id: Makefile,v 1.10 1996/12/07 13:28:30 asami Exp $
+# $Id: Makefile,v 1.11 1997/08/11 18:02:08 fenner Exp $
 
-DISTNAME=       gnat-2.03-src
-PKGNAME=        gnat-2.03
+# Note: 
+# - FreeBSD tasking libraries created by Dan Eischen have been incorportated
+#   into this edition
+# - The default names of a number of binaries have been altered to avoid
+#   conflict with other gcc based products. Standard names can be provided using
+#   symbolic links.
+
+DISTNAME=       gnat-3.09-src
+PKGNAME=        gnat-3.09
 CATEGORIES=	lang
-MASTER_SITES=   ftp://cs.nyu.edu/pub/gnat/
+MASTER_SITES=   ftp://cs.nyu.edu/pub/gnat/ \
+		${MASTER_SITE_GNU}
+DISTFILES=      gnat-3.09-src.tar.gz gcc-2.7.2.1.tar.gz
 
-MAINTAINER=	ports@FreeBSD.ORG
+MAINTAINER=	maurice@serc.rmit.edu.au
 
-BROKEN=		"Not updated for gcc-2.7.x"
-# following three lines commented out because BROKEN is already defined
-#.if !exists(/usr/local/bin/gnatf)
-#BROKEN=		"requires existing gnat compiler"
-#.endif
-# You need a compiler who calls an existing gnat compiler:
+.if !exists(/usr/local/bin/gnatf)
+BROKEN=		"requires existing gnat compiler"
+.endif
+.if !exists(/usr/local/bin/adagcc)
+BROKEN=		"requires patched gcc compiler"
+.endif
+# You need a compiler who calls an existing gnat compiler (3.08 or greater):
 # if you have one, if you have one put it here, otherwise,
-# you will need to install from a package first, the Makefile
-# in ${SRCDIR}/ada is configured to call gcc with -B/usr/local/libexec/
-# so that the normal gcc will find gnat1 there.  Alternatively
-# you can install it in /usr and avoid the hassles.
-CC = gcc
+# you will need to install from a package first
 
-# You have to tell me where your gcc 2.6.3 source is located
-COMPILERSOURCE = /usr/src/gnu/usr.bin/cc
+# Make sure we use the patched gcc compiler
+CC = /usr/local/bin/adagcc
 
-# Which version of gcc do we have? Must be either 2.6.2 or 2.6.3.
-CCVERSION= 2.6.3
+# Which version of gcc do we have? Must be 2.7.2.1
+CCVERSION= 2.7.2.1
 
-USE_GMAKE= true
+# which language set 
+LANG = c ada
 
-pre-build:
-	@echo "===>  Building patched gcc library for ${DISTNAME}"
-	cd ${WRKSRC}/gcc && \
-	   ${MAKE} CC="${CC} -I. -I${COMPILERSOURCE}/include" \
-		   COMPILERSOURCE="${COMPILERSOURCE}" PREFIX=${PREFIX}
+pre-patch:
+	@echo "===>  Applying FreeBSD patches to gcc for ${DISTNAME}"
+	-(  cd ${WRKDIR}/gcc-2.7.2.1; \
+	   patch -s -f < ${PATCHDIR}/patch-freebsdgcc; )
+	@echo "===>  Fixing ${DISTNAME} patches to gcc"
+	-(  cd ${WRKSRC}/src; \
+	   patch -s -f < ${PATCHDIR}/patch-gnat; )
+	@echo "===>  Patching gcc for ${DISTNAME}"
+	-(  cd ${WRKDIR}/gcc-2.7.2.1; \
+	   patch -s -f < ${WRKSRC}/src/gcc-272.dif; )
+	(cd ${WRKDIR}/gcc-2.7.2.1; \
+	   cp -R ${WRKSRC}/src/ada ada; )
+
+pre-configure:
+	(cd ${WRKDIR}/gcc-2.7.2.1/ada; \
+	   touch treeprs.ads a-[es]info.h nmake.ad[bs] )
 
 do-build:
-	cd ${WRKSRC}/ada; \
-	   ${GMAKE} CC="${CC}" PREFIX=${PREFIX} COMPILERSOURCE="${COMPILERSOURCE}"
+	(cd ${WRKDIR}/gcc-2.7.2.1; ${GMAKE} CC="${CC}" CFLAGS="-O2" LANGUAGES="${LANG}" )
+	(cd ${WRKDIR}/gcc-2.7.2.1; ${GMAKE} CC="${CC}" CFLAGS="-O2" LANGUAGES="${LANG}" bootstrap )
+	(cd ${WRKDIR}/gcc-2.7.2.1; ${GMAKE} CC="${CC}" CFLAGS="-O2" gnatlib_and_tools )
+
+# patch the src that we are going to use and copy any additional files
+# required into the correct locations
+# use version specific patches where necessary
+do-patch:
+	(cd ${WRKDIR}; \
+	   FILES="${PATCHDIR}/patch-[a-z][a-z]" ; \
+	   SORTEDFILES=`echo $$FILES | tr " " "\n" | sort` ; \
+	   for i in $$SORTEDFILES ; do \
+	      echo Applying ---- $$i ;\
+	      patch -s < $$i ;\
+	   done )
+	(cd ${FILESDIR}; \
+	   for i in *.adb *.ads ; do \
+	     cp $$i ${WRKDIR}/gcc-2.7.2.1/ada; \
+	   done )
 
 do-configure:
-	@env CURDIR=${.CURDIR} DISTDIR=${DISTDIR} WRKDIR=${WRKDIR} \
-	     WRKSRC=${WRKSRC} PATCHDIR=${PATCHDIR} SCRIPTDIR=${SCRIPTDIR} \
-	     FILESDIR=${FILESDIR} PORTSDIR=${PORTSDIR} PREFIX=${PREFIX} \
-	     DEPENDS="${DEPENDS}" \
-	     COMPILERSOURCE="${COMPILERSOURCE}" CCVERSION="${CCVERSION}" \
-	       ${SHELL} ${SCRIPTDIR}/configure; 
+	(cd ${WRKDIR}/gcc-2.7.2.1; \
+	   ./configure --prefix=${PREFIX} --program-prefix=ada )
 
 do-install:
-	(cd ${WRKSRC}/ada; \
-	${MAKE} PREFIX=${PREFIX} ${MAKE_FLAGS} ${MAKEFILE} \
-		${INSTALL_TARGET})
+	(cd ${WRKDIR}/gcc-2.7.2.1; \
+	   ${GMAKE} CC="${CC}" LANGUAGES="${LANG}" install )
+
+post-install:
+	@(echo "-----------------------------------------------------------" )
+	@(echo "" )
+	@(echo "For information about using the tasking library please read" )
+	@(echo "the README.Tasking file" )
+	@(echo "" )
+	@(echo "-----------------------------------------------------------" )
+	@(echo "" )
 
 .include <bsd.port.mk>
