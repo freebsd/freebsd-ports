@@ -7,6 +7,7 @@ info/multiboot.info
 @exec install-info %D/info/grub.info %D/info/dir
 sbin/grub
 sbin/grub-install
+sbin/grub-md5-crypt
 share/grub/i386-freebsd/e2fs_stage1_5
 share/grub/i386-freebsd/fat_stage1_5
 share/grub/i386-freebsd/ffs_stage1_5
@@ -14,5 +15,6 @@ share/grub/i386-freebsd/minix_stage1_5
 share/grub/i386-freebsd/reiserfs_stage1_5
 share/grub/i386-freebsd/stage1
 share/grub/i386-freebsd/stage2
+share/grub/i386-freebsd/vstafs_stage1_5
 @dirrm share/grub/i386-freebsd
-@dirrm share/grub 
+@dirrm share/grub
