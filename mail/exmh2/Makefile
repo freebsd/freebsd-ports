@@ -1,22 +1,22 @@
 # New ports collection Makefile for:    exmh2
-# Version required:		2.0
+# Version required:		2.0.1
 # Date released:		1 Jan 97
 # Whom:				Peter Wemm <peter@freebsd.org>
 #
-# $Id: Makefile,v 1.20 1997/12/25 21:55:20 asami Exp $
+# $Id: Makefile,v 1.21 1997/12/25 21:58:08 asami Exp $
 #
 
 DISTNAME=	exmh-2.0
+PKGNAME=	exmh-2.0.1
 CATEGORIES=	mail tk80
 MASTER_SITES=	ftp://ftp.sunlabs.com/pub/tcl/exmh/
 EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=	peter@FreeBSD.org
 
-BROKEN=		updated
-
 # There are likely to be distributed patches again.
 DIST_SUBDIR=	${PKGNAME}
+WRKSRC=		${WRKDIR}/${PKGNAME}
 
 RUN_DEPENDS=	wish8.0:${PORTSDIR}/x11/tk80
 BUILD_DEPENDS=	tclsh8.0:${PORTSDIR}/lang/tcl80
