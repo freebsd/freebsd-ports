@@ -3,17 +3,15 @@
 # Date created:			30 Mar. 1996
 # Whom:				Masafumi NAKANE <max@FreeBSD.ORG>
 #
-# $Id: Makefile,v 1.10 1997/03/25 09:50:51 obrien Exp $
+# $Id: Makefile,v 1.11 1997/09/14 21:34:33 max Exp $
 #
 
 DISTNAME=	dvi2tty5.0
 PKGNAME=	ja-dvi2tty-ascii-5.0
 CATEGORIES=	japanese print
-MASTER_SITES=	ftp://ftp.ipc.chiba-u.ac.jp/misc/tex/dviwares/dvi2tty/ \
-		ftp://ftp.web.ad.jp/pub/TeX/akiu/dviwares/dvi2tty/
+MASTER_SITES=	ftp://ftp.web.ad.jp/pub/TeX/akiu/dviwares/dvi2tty/
 
-PATCH_SITES=	ftp://ftp.ipc.chiba-u.ac.jp/misc/tex/dviwares/dvi2tty/ \
-		ftp://ftp.web.ad.jp/pub/TeX/akiu/dviwares/dvi2tty/
+PATCH_SITES=	ftp://ftp.web.ad.jp/pub/TeX/akiu/dviwares/dvi2tty/
 PATCHFILES=	dvi2tty-ascii-jtex-patch dvi2tty.c-patch
 
 MAINTAINER=	max@FreeBSD.ORG
