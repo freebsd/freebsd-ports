@@ -31,7 +31,6 @@
     SUBDIR += arm-elf-gcc295
     SUBDIR += arm-elf-gcc31
     SUBDIR += arm-rtems-binutils
-    SUBDIR += arm-rtems-chill
     SUBDIR += arm-rtems-g77
     SUBDIR += arm-rtems-gcc
     SUBDIR += arm-rtems-gcj
@@ -244,7 +243,6 @@
     SUBDIR += hs-popenhs
     SUBDIR += hypersrc
     SUBDIR += i386-rtems-binutils
-    SUBDIR += i386-rtems-chill
     SUBDIR += i386-rtems-g77
     SUBDIR += i386-rtems-gcc
     SUBDIR += i386-rtems-gcj
@@ -353,7 +351,6 @@
     SUBDIR += m6811-binutils
     SUBDIR += m6811-gcc
     SUBDIR += m68k-rtems-binutils
-    SUBDIR += m68k-rtems-chill
     SUBDIR += m68k-rtems-g77
     SUBDIR += m68k-rtems-gcc
     SUBDIR += m68k-rtems-gcj
@@ -371,7 +368,6 @@
     SUBDIR += mingw-gcc
     SUBDIR += mingw-opengl-headers
     SUBDIR += mips-rtems-binutils
-    SUBDIR += mips-rtems-chill
     SUBDIR += mips-rtems-g77
     SUBDIR += mips-rtems-gcc
     SUBDIR += mips-rtems-gcj
@@ -686,7 +682,6 @@
     SUBDIR += portcheckout
     SUBDIR += portlint
     SUBDIR += powerpc-rtems-binutils
-    SUBDIR += powerpc-rtems-chill
     SUBDIR += powerpc-rtems-g77
     SUBDIR += powerpc-rtems-gcc
     SUBDIR += powerpc-rtems-gcj
@@ -820,7 +815,6 @@
     SUBDIR += semantic-emacs20
     SUBDIR += sfio
     SUBDIR += sh-rtems-binutils
-    SUBDIR += sh-rtems-chill
     SUBDIR += sh-rtems-g77
     SUBDIR += sh-rtems-gcc
     SUBDIR += sh-rtems-gcj
@@ -837,7 +831,6 @@
     SUBDIR += sip
     SUBDIR += soup
     SUBDIR += sparc-rtems-binutils
-    SUBDIR += sparc-rtems-chill
     SUBDIR += sparc-rtems-g77
     SUBDIR += sparc-rtems-gcc
     SUBDIR += sparc-rtems-gcj
