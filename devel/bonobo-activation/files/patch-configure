@@ -1,9 +1,6 @@
-
-$FreeBSD$
-
---- configure	2002/04/26 07:57:36	1.1
-+++ configure	2002/04/26 07:57:49
-@@ -6312,6 +6312,7 @@
+--- configure.orig	Tue Aug 12 04:12:52 2003
++++ configure	Tue Aug 12 14:52:01 2003
+@@ -18096,6 +18096,7 @@
  
  # This can be used to rebuild libtool when needed
  LIBTOOL_DEPS="$ac_aux_dir/ltmain.sh"
@@ -11,3 +8,12 @@ $FreeBSD$
  
  # Always use our own libtool.
  LIBTOOL='$(SHELL) $(top_builddir)/libtool'
+@@ -20969,7 +20970,7 @@
+ 
+ { echo "$as_me:$LINENO: checking for correct platform..." >&5
+ echo "$as_me: checking for correct platform..." >&6;}
+-if $PKG_CONFIG --atleast-version=2.7.0 ORBit-2.0 &> /dev/null; then
++if $PKG_CONFIG --atleast-version=2.7.0 ORBit-2.0 > /dev/null 2>&1; then
+    { { echo "$as_me:$LINENO: error:
+ ** ERROR **
+ 
