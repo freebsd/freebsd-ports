@@ -49,15 +49,12 @@ DICT_DIR=               ${PREFIX}/${INSTALLATION_BASEDIR}/share/dict/ooo/
 LANG_EXT=01
 .else
 #
-# Add pkg-comment and pkg-descr if available
+# Add pkg-descr and pkg-message if available
 #
-.if exists(${.CURDIR}/pkg-comment)
-COMMENTFILE=	${.CURDIR}/pkg-comment
-.endif
 .if exists(${.CURDIR}/pkg-descr)
 DESCR=	${.CURDIR}/pkg-descr
 .endif
-.if exists(${.CURDIR}/pkg-descr)
+.if exists(${.CURDIR}/pkg-message)
 PKGMESSAGE=	${.CURDIR}/pkg-message
 .endif
 #
@@ -109,6 +106,9 @@ CXX=		g++32
 EXTRACT_ONLY=	OOo_${PORTVERSION}_source.tar.bz2
 
 MAINTAINER=	openoffice@FreeBSD.org
+.if !defined(COMMENT)
+COMMENT=	Integrated wordprocessor/dbase/spreadheet/drawing/chart/browser
+.endif
 #.if !defined(USE_GCC)
 #BUILD_DEPENDS=	${LOCALBASE}/lib/libstlport_gcc.so:${PORTSDIR}/devel/stlport
 #.endif
@@ -406,7 +406,10 @@ extract-mozilla:
 	@${CP} -r ${PORTSDIR}/www/mozilla-vendor/files ${WRKDIR}/mozilla
 	@${CP} ${PORTSDIR}/www/mozilla-vendor/Makefile ${WRKDIR}/mozilla
 	@${CP} ${PORTSDIR}/www/mozilla-vendor/distinfo ${WRKDIR}/mozilla
+	
+if exists(${PORTSDIR}/www/mozilla-vendor/pkg-comment)
 	@${CP} ${PORTSDIR}/www/mozilla-vendor/pkg-comment ${WRKDIR}/mozilla
+.endif
 	@${CP} ${PORTSDIR}/www/mozilla-vendor/pkg-descr ${WRKDIR}/mozilla
 	@${CP} ${PORTSDIR}/www/mozilla-vendor/pkg-message ${WRKDIR}/mozilla
 .endif

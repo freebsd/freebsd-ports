@@ -12,6 +12,9 @@ MASTER_SITES+=	http://dict.progbits.com/
 DISTFILES+=	${LANGDIST}
 
 MAINTAINER=     openoffice@FreeBSD.org
+.if !definded(COMMENT)
+COMMENT=	MySpell dictionaries for OpenOffice.org
+.endif
 
 EXTRACT_ONLY=
 
@@ -46,10 +49,6 @@ PKGNAMEPREFIX=	${LANGPREFIX}-
 .endif
 .if defined(LANGSUFFIX)
 PKGNAMESUFFIX=	-${LANGSUFFIX}
-.endif
-
-.if exists(${.CURDIR}/pkg-comment)
-COMMENTFILE=	${.CURDIR}/pkg-comment
 .endif
 
 .if exists(${.CURDIR}/pkg-descr)
