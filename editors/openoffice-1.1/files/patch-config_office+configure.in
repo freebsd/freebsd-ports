@@ -1,5 +1,5 @@
 --- configure.in.orig	Wed Apr 17 22:37:42 2002
-+++ configure.in	Tue Jun  4 12:36:50 2002
++++ configure.in	Tue Jun  4 14:11:42 2002
 @@ -103,6 +103,12 @@
  
                            Usage: --with-asm-home=<path to ml.exe directory>
@@ -149,7 +149,7 @@
 +AC_MSG_CHECKING([try to compile exception code])
 +AC_LANG_SAVE
 +AC_LANG_CPLUSPLUS
-+AC_CACHE_VAL(exceptions_type, [AC_TRY_COMPILE(
++AC_CACHE_VAL(exceptions_type, [AC_TRY_LINK(
 +	[#include <iostream>
 +
 +extern "C" void __sjthrow(void) __attribute__ ((__noreturn__));
