@@ -13,7 +13,7 @@ MASTER_SITES=	http://www.firstworks.com/downloads/rudiments/
 MAINTAINER=	knu@FreeBSD.org
 
 USE_GMAKE=	yes
-USE_AUTOCONF=	yes
+USE_AUTOCONF_VER=213
 CONFIGURE_ENV=	CXX="${CXX}" CXXFLAGS="${CXXFLAGS}"
 
 INSTALLS_SHLIB=	yes
