@@ -15,6 +15,7 @@ MAINTAINER=	sergei@FreeBSD.org
 COMMENT=	Common error values for all GnuPG components
 
 USE_GPG=	yes
+USE_GMAKE=	yes
 USE_LIBTOOL_VER=13
 INSTALLS_SHLIB=	yes
 GNU_CONFIGURE=	yes
