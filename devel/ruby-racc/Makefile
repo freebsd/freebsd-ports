@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	racc
-PORTVERSION=	1.4.2
+PORTVERSION=	1.4.3
 CATEGORIES=	devel ruby
-MASTER_SITES=	http://www.loveruby.net/archive/%SUBDIR%/
+MASTER_SITES=	http://i.loveruby.net/archive/%SUBDIR%/
 MASTER_SITE_SUBDIR=	${PORTNAME}
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
-DISTNAME=	${PORTNAME}-${PORTVERSION}-all
+DISTNAME=	${PORTNAME}-${PORTVERSION}-all-2
 DIST_SUBDIR=	ruby
 
 MAINTAINER=	knu@FreeBSD.org
@@ -22,6 +22,7 @@ USE_RUBY_FEATURES=	racc-runtime
 
 CONFIGURE_ARGS=	--with=racc
 
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}-all
 WRKDIR_RACC=	${WRKSRC}/packages/racc
 
 post-extract:
