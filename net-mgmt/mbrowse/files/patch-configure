@@ -1,0 +1,20 @@
+--- configure.orig	Thu May  6 21:36:12 2004
++++ configure	Thu May  6 21:39:40 2004
+@@ -4765,7 +4765,7 @@
+ rm -f core core.* *.core gmon.out bb.out conftest$ac_exeext conftest.$ac_objext conftest.$ac_ext
+ fi
+   fi
+-
++if 0 ; then
+   if test "x$snmp_fail" != "x" ; then
+     echo
+     echo "***"
+@@ -4784,7 +4784,7 @@
+ echo "$as_me: error: SNMP checks failed" >&2;}
+    { (exit 1); exit 1; }; }
+   fi
+-
++fi
+   CFLAGS="$ac_save_CFLAGS"
+   LDFLAGS="$ac_save_LDFLAGS"
+   LIBS="$ac_save_LIBS"
