@@ -6,29 +6,18 @@
 #
 
 PORTNAME=	w3m
-PORTVERSION=	${W3M_VERSION}.p.${W3M_PATCHLEVEL}
+PORTVERSION=	0.2.1
 CATEGORIES+=	www ipv6
-MASTER_SITES=	ftp://ei5nazha.yz.yamagata-u.ac.jp/w3m/dev/ \
-		http://mi.med.tohoku.ac.jp/~satodai/w3m/src/dev/ \
-		ftp://ftp.firedrake.org/w3m/dev/ \
-		ftp://ftp.umlauf.de/pub/w3m/dev/ \
-		http://www.instinct.org/w3m/dev/ \
-		http://grilli.net/mirrors/w3m/download/dev/
-DISTNAME=	${PORTNAME}-${W3M_VERSION}-pre
-
-PATCH_SITES=	http://www2u.biglobe.ne.jp/~hsaka/w3m/patch/
-PATCHFILES=	${PORTNAME}-${W3M_VERSION}-pre-hsaka${W3M_PATCHLEVEL}.patch.gz
-PATCH_DIST_STRIP=	-p1
+MASTER_SITES=	ftp://ei5nazha.yz.yamagata-u.ac.jp/w3m/ \
+		http://mi.med.tohoku.ac.jp/~satodai/w3m/src/ \
+		ftp://ftp.firedrake.org/w3m/ \
+		ftp://ftp.umlauf.de/pub/w3m/ \
+		http://www.instinct.org/w3m/ \
+		http://grilli.net/mirrors/w3m/download/
 
 MAINTAINER=	nobutaka@nobutaka.com
 
-BUILD_DEPENDS=	${LOCALBASE}/lib/libgc.a:${PORTSDIR}/devel/boehm-gc \
-		${PATCH}:${PORTSDIR}/devel/patch
-
-PATCH=		${LOCALBASE}/bin/gpatch
-
-W3M_VERSION=	0.1.11
-W3M_PATCHLEVEL=	24
+BUILD_DEPENDS=	${LOCALBASE}/lib/libgc.a:${PORTSDIR}/devel/boehm-gc
 
 MAN1=		w3m.1
 MANLANG=	""
