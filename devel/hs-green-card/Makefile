@@ -6,11 +6,10 @@
 #
 
 PORTNAME=	green-card
-PORTVERSION=	2.04
-PORTREVISION=	1
+PORTVERSION=	2.05
 CATEGORIES=	devel haskell
 MASTER_SITES=	http://www.galois.com/~sof/
-DISTNAME=	gc-${PORTVERSION}
+DISTNAME=	gc-${PORTVERSION}-src
 PKGNAMEPREFIX=	hs-
 
 MAINTAINER=	obraun@FreeBSD.org
