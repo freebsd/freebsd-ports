@@ -1,0 +1,6 @@
+bin/direct
+bin/iter
+lib/libtaucs.a
+%%PORTDOCS%%%%DOCSDIR%%/taucs.pdf
+%%PORTDOCS%%%%DOCSDIR%%/cilk-mf.pdf
+%%PORTDOCS%%@dirrm %%DOCSDIR%%

@@ -1,0 +1,11 @@
+--- configure.orig	Sat Jan  3 02:23:57 2004
++++ configure	Sat Jan  3 02:24:07 2004
+@@ -29,7 +29,7 @@
+ # Solaris, OSTYPE=solaris but uname returns SunOS.
+ 
+ if [ ${OSTYPE:-fail} = "fail" ] ; then
+-  OSTYPE=`uname | tr "A-Z" "a-z"`
++  OSTYPE=`uname`
+ fi
+ 
+ # If nothing works, we continue, but configurator will abort
