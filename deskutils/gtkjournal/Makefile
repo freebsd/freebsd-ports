@@ -23,7 +23,7 @@ USE_X_PREFIX=	yes
 USE_OPENSSL=	yes
 USE_GMAKE=	yes
 USE_LIBTOOL_VER=13
-USE_GNOME=	gnomehack lthack
+USE_GNOME=	gnomehack lthack gnometarget
 CONFIGURE_ARGS=	--enable-gtkspell
 INSTALLS_SHLIB=	yes
 
