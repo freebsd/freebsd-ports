@@ -7,7 +7,7 @@
 
 PORTNAME=	artemis
 PORTVERSION=	6
-CATEGORIES=	biology
+CATEGORIES=	biology java
 MASTER_SITES=	http://www.sanger.ac.uk/Software/Artemis/v${PORTVERSION}/
 DISTNAME=	artemis_compiled_v${PORTVERSION}
 
@@ -18,7 +18,6 @@ WRKSRC=		${WRKDIR}/${PORTNAME}
 
 USE_JAVA=	yes
 JAVA_VERSION=	1.4+
-JAVA_RUN=	yes
 
 NO_BUILD=	yes
 PLIST_SUB=	PORTVERSION="${PORTVERSION}"
