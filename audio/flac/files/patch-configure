@@ -1,10 +1,10 @@
 
 $FreeBSD$
 
---- configure.in.orig	Sun Jul 22 19:43:15 2001
-+++ configure.in	Tue Aug 28 17:00:19 2001
-@@ -136,13 +136,13 @@
- AC_SUBST(FLaC__USIZE64)
+--- configure.orig	Thu Jan 17 15:47:34 2002
++++ configure	Thu Jan 17 15:48:42 2002
+@@ -8240,13 +8240,13 @@
+ fi
  
  SAVE_CFLAGS="$CFLAGS"
 -CFLAGS='-I$(top_builddir) -I$(srcdir)/include -I $(top_srcdir)/include -Wall -W'
