@@ -18,7 +18,7 @@ MASTER_SITES=	ftp://ftp.epicsol.org/pub/epic/EPIC4-PRODUCTION/ \
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 		${DISTFILE_HELP}
 
-MAINTAINER=	anders@andersa.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The (E)nhanced (P)rogrammable (I)RC-II (C)lient
 
 USE_OPENSSL=	yes
