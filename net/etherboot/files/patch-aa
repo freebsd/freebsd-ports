@@ -30,31 +30,20 @@
   # if your as has trouble with the data32 directive, uncomment this
   # but note that the premade start*.o will be larger than necessary because it
 ***************
-*** 166,171 ****
---- 169,175 ----
-  PRLOADER=	bin/prloader.bin
-  RZLOADER=	bin/rzloader.bin
-  PRZLOADER=	bin/przloader.bin
-+ FLOPPYLOAD=	floppyload.bin.pre
-  COMLOAD=	bin/comload.bin
-  endif
+*** 207,213 ****
+  	|| { $(RM) $@; echo "ERROR: code size exceeds limit!"; exit 1; }
   
-*** Config.orig	Sat Mar 18 00:27:39 2000
---- Config	Mon Mar 20 11:15:44 2000
-***************
-*** 114,120 ****
-  CFLAGS32+=	-DPASSWD -DUSRPARMS -DFLOPPY
+  # Make sure that the relocation address is acceptable for all ROM sizes
+! RELOCADDR=0x98000
+  # Evaluate ROMLIMIT only once - it is constant during the make run.
+  # Note that the 3K safety margin below is for the 1K extended BIOS data area
+  # and for the Etherboot runtime stack.  Under normal situations, 2K of stack
+--- 211,218 ----
+  	|| { $(RM) $@; echo "ERROR: code size exceeds limit!"; exit 1; }
   
-  # For a serial console, which can run in parallel with CRT console
-! CFLAGS32+=	-DCONSOLE_DUAL -DCOMCONSOLE=0x3f8 -DCONSPEED=57600
-  
-  # Enable generic ELF, Multiboot ELF or FreeBSD ELF/a.out boot image support
-  CFLAGS32+=	-DELF_IMAGE -DAOUT_IMAGE -DIMAGE_MULTIBOOT -DIMAGE_FREEBSD
---- 114,120 ----
-  CFLAGS32+=	-DPASSWD -DUSRPARMS -DFLOPPY
-  
-  # For a serial console, which can run in parallel with CRT console
-! #CFLAGS32+=	-DCONSOLE_DUAL -DCOMCONSOLE=0x3f8 -DCONSPEED=9600
-  
-  # Enable generic ELF, Multiboot ELF or FreeBSD ELF/a.out boot image support
-  CFLAGS32+=	-DELF_IMAGE -DAOUT_IMAGE -DIMAGE_MULTIBOOT -DIMAGE_FREEBSD
+  # Make sure that the relocation address is acceptable for all ROM sizes
+! #RELOCADDR=0x98000
+! RELOCADDR=0x8f000
+  # Evaluate ROMLIMIT only once - it is constant during the make run.
+  # Note that the 3K safety margin below is for the 1K extended BIOS data area
+  # and for the Etherboot runtime stack.  Under normal situations, 2K of stack
