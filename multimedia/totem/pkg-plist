@@ -1,7 +1,27 @@
 bin/totem
 bin/totem-video-thumbnailer
 etc/gconf/gconf.xml.defaults/apps/totem/%gconf.xml
+etc/gconf/gconf.xml.defaults/desktop/gnome/thumbnailers/application@vnd.rn-realmedia/%gconf.xml
+etc/gconf/gconf.xml.defaults/desktop/gnome/thumbnailers/application@x-ogg/%gconf.xml
+etc/gconf/gconf.xml.defaults/desktop/gnome/thumbnailers/video@mpeg/%gconf.xml
+etc/gconf/gconf.xml.defaults/desktop/gnome/thumbnailers/video@msvideo/%gconf.xml
+etc/gconf/gconf.xml.defaults/desktop/gnome/thumbnailers/video@quicktime/%gconf.xml
+etc/gconf/gconf.xml.defaults/desktop/gnome/thumbnailers/video@x-avi/%gconf.xml
+etc/gconf/gconf.xml.defaults/desktop/gnome/thumbnailers/video@x-fli/%gconf.xml
+etc/gconf/gconf.xml.defaults/desktop/gnome/thumbnailers/video@x-ms-asf/%gconf.xml
+etc/gconf/gconf.xml.defaults/desktop/gnome/thumbnailers/video@x-ms-wmv/%gconf.xml
+etc/gconf/gconf.xml.defaults/desktop/gnome/thumbnailers/video@x-msvideo/%gconf.xml
 etc/gconf/gconf.xml.defaults/schemas/apps/totem/%gconf.xml
+etc/gconf/gconf.xml.defaults/schemas/desktop/gnome/thumbnailers/application@vnd.rn-realmedia/%gconf.xml
+etc/gconf/gconf.xml.defaults/schemas/desktop/gnome/thumbnailers/application@x-ogg/%gconf.xml
+etc/gconf/gconf.xml.defaults/schemas/desktop/gnome/thumbnailers/video@mpeg/%gconf.xml
+etc/gconf/gconf.xml.defaults/schemas/desktop/gnome/thumbnailers/video@msvideo/%gconf.xml
+etc/gconf/gconf.xml.defaults/schemas/desktop/gnome/thumbnailers/video@quicktime/%gconf.xml
+etc/gconf/gconf.xml.defaults/schemas/desktop/gnome/thumbnailers/video@x-avi/%gconf.xml
+etc/gconf/gconf.xml.defaults/schemas/desktop/gnome/thumbnailers/video@x-fli/%gconf.xml
+etc/gconf/gconf.xml.defaults/schemas/desktop/gnome/thumbnailers/video@x-ms-asf/%gconf.xml
+etc/gconf/gconf.xml.defaults/schemas/desktop/gnome/thumbnailers/video@x-ms-wmv/%gconf.xml
+etc/gconf/gconf.xml.defaults/schemas/desktop/gnome/thumbnailers/video@x-msvideo/%gconf.xml
 etc/gconf/schemas/totem.schemas
 etc/gconf/schemas/totem-video-thumbnail.schemas
 share/gnome/application-registry/totem.applications
@@ -24,6 +44,52 @@ share/gnome/totem/totem.glade
 share/gnome/totem/playlist.glade
 share/gnome/totem/totem_logo.mpv
 share/gnome/totem/properties.glade
+share/locale/am/LC_MESSAGES/totem.mo
+share/locale/be/LC_MESSAGES/totem.mo
+share/locale/ca/LC_MESSAGES/totem.mo
+share/locale/cs/LC_MESSAGES/totem.mo
+share/locale/da/LC_MESSAGES/totem.mo
+share/locale/de/LC_MESSAGES/totem.mo
+share/locale/en_GB/LC_MESSAGES/totem.mo
+share/locale/es/LC_MESSAGES/totem.mo
+share/locale/et/LC_MESSAGES/totem.mo
+share/locale/fi/LC_MESSAGES/totem.mo
+share/locale/fr/LC_MESSAGES/totem.mo
+share/locale/ga/LC_MESSAGES/totem.mo
+share/locale/it/LC_MESSAGES/totem.mo
+share/locale/ja/LC_MESSAGES/totem.mo
+share/locale/ko/LC_MESSAGES/totem.mo
+share/locale/lv/LC_MESSAGES/totem.mo
+share/locale/ms/LC_MESSAGES/totem.mo
+share/locale/nl/LC_MESSAGES/totem.mo
+share/locale/no/LC_MESSAGES/totem.mo
+share/locale/pl/LC_MESSAGES/totem.mo
+share/locale/pt_BR/LC_MESSAGES/totem.mo
+share/locale/ru/LC_MESSAGES/totem.mo
+share/locale/sv/LC_MESSAGES/totem.mo
+share/locale/tr/LC_MESSAGES/totem.mo
+share/locale/uk/LC_MESSAGES/totem.mo
+share/locale/vi/LC_MESSAGES/totem.mo
 @dirrm share/gnome/totem
+@dirrm etc/gconf/gconf.xml.defaults/schemas/desktop/gnome/thumbnailers/video@x-msvideo
+@dirrm etc/gconf/gconf.xml.defaults/schemas/desktop/gnome/thumbnailers/video@x-ms-wmv
+@dirrm etc/gconf/gconf.xml.defaults/schemas/desktop/gnome/thumbnailers/video@x-ms-asf
+@dirrm etc/gconf/gconf.xml.defaults/schemas/desktop/gnome/thumbnailers/video@x-fli
+@dirrm etc/gconf/gconf.xml.defaults/schemas/desktop/gnome/thumbnailers/video@x-avi
+@dirrm etc/gconf/gconf.xml.defaults/schemas/desktop/gnome/thumbnailers/video@quicktime
+@dirrm etc/gconf/gconf.xml.defaults/schemas/desktop/gnome/thumbnailers/video@msvideo
+@dirrm etc/gconf/gconf.xml.defaults/schemas/desktop/gnome/thumbnailers/video@mpeg
+@dirrm etc/gconf/gconf.xml.defaults/schemas/desktop/gnome/thumbnailers/application@x-ogg
+@dirrm etc/gconf/gconf.xml.defaults/schemas/desktop/gnome/thumbnailers/application@vnd.rn-realmedia
 @dirrm etc/gconf/gconf.xml.defaults/schemas/apps/totem
+@dirrm etc/gconf/gconf.xml.defaults/desktop/gnome/thumbnailers/video@x-msvideo
+@dirrm etc/gconf/gconf.xml.defaults/desktop/gnome/thumbnailers/video@x-ms-wmv
+@dirrm etc/gconf/gconf.xml.defaults/desktop/gnome/thumbnailers/video@x-ms-asf
+@dirrm etc/gconf/gconf.xml.defaults/desktop/gnome/thumbnailers/video@x-fli
+@dirrm etc/gconf/gconf.xml.defaults/desktop/gnome/thumbnailers/video@x-avi
+@dirrm etc/gconf/gconf.xml.defaults/desktop/gnome/thumbnailers/video@quicktime
+@dirrm etc/gconf/gconf.xml.defaults/desktop/gnome/thumbnailers/video@msvideo
+@dirrm etc/gconf/gconf.xml.defaults/desktop/gnome/thumbnailers/video@mpeg
+@dirrm etc/gconf/gconf.xml.defaults/desktop/gnome/thumbnailers/application@x-ogg
+@dirrm etc/gconf/gconf.xml.defaults/desktop/gnome/thumbnailers/application@vnd.rn-realmedia
 @dirrm etc/gconf/gconf.xml.defaults/apps/totem
