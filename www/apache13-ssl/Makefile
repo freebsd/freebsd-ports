@@ -7,14 +7,12 @@
 #
 # $FreeBSD$
 
-APACHE= 	1.3.9
-APACHE-SSL=	1.37
-
 PORTNAME=	apache+ssl
-PORTVERSION= 	${APACHE}+${APACHE-SSL}
+PORTVERSION=	${APACHE_VERSION}.${APACHE_SSL_VERSION}
 CATEGORIES=	www security
-MASTER_SITES=   ftp://www.apache.org/dist/ \
+MASTER_SITES=	ftp://www.apache.org/dist/ \
 		ftp://ftp.ox.ac.uk/pub/crypto/SSL/Apache-SSL/ \
+		ftp://src.doc.ic.ac.uk/packages/apache/dist/ \
 		ftp://ftp.gbnet.net/pub/apache/dist/ \
 		ftp://ftp.MASTER.pgp.net/pub/crypto/SSL/Apache-SSL/ \
 		ftp://ftp.flirble.org/pub/web/apache/dist/ \
@@ -27,22 +25,41 @@ MASTER_SITES=   ftp://www.apache.org/dist/ \
 		ftp://ftp.it.net.au/mirrors/crypto/SSL/Apache-SSL/ \
 		ftp://ftp.infoscience.co.jp/pub/Crypto/SSL/Apache-SSL/Apache-SSL/ \
 		ftp://ftp.funet.fi/pub/crypt/mirrors/ftp.ox.ac.uk/SSL/Apache-SSL/ \
-		ftp://apache-ssl.raver.net/pub/ftp.apache-ssl.org/Apache-SSL/
+		ftp://apache-ssl.raver.net/pub/ftp.apache-ssl.org/Apache-SSL/ \
+		ftp://ftp.pca.dfn.de/pub/tools/net/sslapache/Apache-SSL/ \
+		ftp://ftp.sekure.net/pub/apache-ssl/ \
+		ftp://ftp.clinet.fi/mirrors/ftp.apache-ssl.org/pub/ \
+		ftp://opensores.thebunker.net/pub/mirrors/apache-ssl/ \
+		ftp://ftp.gin.cz/pub/MIRRORS/ftp.ox.ac.uk/pub/crypto/SSL/Apache-SSL/ \
+		ftp://ftp.cordef.com.pl/pub/apache-ssl/Apache-SSL/
+DISTNAME=	apache_${APACHE_VERSION}
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
+		apache_${APACHE_VERSION}+ssl_${APACHE_SSL_VERSION}${EXTRACT_SUFX}
+EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
+
+MAINTAINER=	adam@algroup.co.uk
 
 Y2K=		http://www.apache-ssl.org/#Y2K
-DISTNAME=	apache_${APACHE}
-DISTFILES=      ${DISTNAME}${EXTRACT_SUFX} \
-		apache_${APACHE}+ssl_${APACHE-SSL}${EXTRACT_SUFX}
 
-MAINTAINER=     adam@algroup.co.uk
+APACHE_VERSION=		1.3.12
+APACHE_SSL_VERSION=	1.40
 
 USE_OPENSSL=	RSA
+
 .include <bsd.port.pre.mk>
 
 HAS_CONFIGURE=	yes
+
+.if !defined(OPENSSLINC)
+OPENSSLINC=	${PREFIX}/ssl/include
+.endif
 CFLAGS+=	-I${OPENSSLINC}/openssl
-CONFIGURE_ARGS=	\
-		--prefix=${PREFIX} \
+
+.if !defined(OPENSSLLIB)
+OPENSSLLIB=	${PREFIX}/ssl/lib
+.endif
+
+CONFIGURE_ARGS=	--prefix=${PREFIX} \
 		--with-layout=GNU \
 		--sysconfdir=${PREFIX}/etc/apache \
 		--includedir=${PREFIX}/include/apache \
@@ -57,27 +74,27 @@ CONFIGURE_ARGS=	\
 		--enable-module=auth_db \
 		--disable-module=auth_dbm
 
-OPTIM=-DHARD_SERVER_LIMIT=512 \
--DDOCUMENT_LOCATION=\\"${PREFIX}/www/data/\\" \
--DDEFAULT_PATH=\\"/bin:/usr/bin:${PREFIX}/bin\\"
+OPTIM=		-DHARD_SERVER_LIMIT=512 \
+		-DDOCUMENT_LOCATION=\\"${PREFIX}/www/data/\\" \
+		-DDEFAULT_PATH=\\"/bin:/usr/bin:${PREFIX}/bin\\"
 
 .if defined(APACHE_PERF_TUNING) && ${APACHE_PERF_TUNING} == YES
-OPTIM+= -DBUFFERED_LOGS
-CFLAGS+= -O6 -fomit-frame-pointer
+OPTIM+=		-DBUFFERED_LOGS
+CFLAGS+=	-O6 -fomit-frame-pointer
 .endif
 
-CONFIGURE_ENV= OPTIM='${OPTIM}'
+CONFIGURE_ENV=	OPTIM='${OPTIM}'
 .if defined(OPENSSL_RSAREF)
-CONFIGURE_ENV+= EXTRA_SSL_LIBS="-L${OPENSSLLIB} -lRSAglue -L${LOCALBASE}/lib -lrsaref"
+CONFIGURE_ENV+=	EXTRA_SSL_LIBS="-L${OPENSSLLIB} -lRSAglue -L${LOCALBASE}/lib -lrsaref"
+.else
+CONFIGURE_ENV+=	EXTRA_SSL_LIBS="-L${OPENSSLLIB} -L${LOCALBASE}/lib"
 .endif
 
-EXTRACT_ONLY=   ${DISTNAME}${EXTRACT_SUFX}
-
-MAN1= 		dbmmanage.1 htdigest.1 htpasswd.1
-MAN8= 		ab.8 httpsdctl.8 apxs.8 httpsd.8 logresolve.8 rotatelogs.8
+MAN1=		dbmmanage.1 htdigest.1 htpasswd.1
+MAN8=		ab.8 httpsdctl.8 apxs.8 httpsd.8 logresolve.8 rotatelogs.8
 
 post-extract:
-	@cd ${WRKSRC} && tar xzf ${DISTDIR}/apache_${APACHE}+ssl_${APACHE-SSL}${EXTRACT_SUFX}
+	@cd ${WRKSRC} && tar xzf ${DISTDIR}/apache_${APACHE_VERSION}+ssl_${APACHE_SSL_VERSION}${EXTRACT_SUFX}
 
 post-patch:
 	@cd ${WRKSRC} && ${SETENV} PREFIX=${PREFIX} ./FixPatch ${OPENSSLBASE}
