@@ -95,10 +95,12 @@ post-install:
 	@ ${CAT} ${PKGMESSAGE}
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
 
-.if exists(${DESTDIR}/${LOCALBASE}/share/sendmail/cf/mailer/uucp.m4)
-CFDIR=		${DESTDIR}${LOCALBASE}/share/sendmail/cf
+.if exists(${LOCALBASE}/share/sendmail/cf/mailer/uucp.m4)
+CFDIR=		${LOCALBASE}/share/sendmail/cf
 .else
-CFDIR=		${DESTDIR}/usr/share/sendmail/cf
+CFDIR=		/usr/share/sendmail/cf
 .endif
+
+.include <bsd.port.post.mk>
