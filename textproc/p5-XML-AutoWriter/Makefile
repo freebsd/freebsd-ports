@@ -7,6 +7,7 @@
 
 PORTNAME=	XML-AutoWriter
 PORTVERSION=	0.38
+PORTREVISION=	1
 CATEGORIES=	textproc perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	XML
@@ -23,4 +24,10 @@ MAN3=		XML::AutoWriter.3 \
 		XML::Doctype::ElementDecl.3 \
 		XML::Doctype.3
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} < 500600
+RUN_DEPENDS=	${SITE_PERL}/fields.pm:${PORTSDIR}/devel/p5-base
+.endif
+
+.include <bsd.port.post.mk>
