@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gnomemimedata
-PORTVERSION=	2.4.0
+PORTVERSION=	2.4.1
 CATEGORIES=	misc gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/gnome-mime-data/2.4
@@ -24,7 +24,5 @@ USE_GNOME=	gnomehack gnomehier gnomeprefix gnometarget pkgconfig
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LIBS="-L${LOCALBASE}/lib -lintl"
-
-MAN5=	gnome-vfs-mime.5
 
 .include <bsd.port.mk>
