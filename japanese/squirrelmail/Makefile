@@ -7,6 +7,7 @@
 
 PORTNAME=	squirrelmail
 PORTVERSION=	1.4.3a
+PORTREVISION=	2
 PORTEPOCH=	2
 CATEGORIES=	japanese mail www
 
@@ -18,12 +19,15 @@ MAINTAINER=	info@otsune.com
 COMMENT=	A webmail system which accesses mail over IMAP with Japanese patch
 
 CONFLICTS=	squirrelmail-1.*
-PATCHVERSION=	20040826
+PATCHVERSION=	20041014
 
 MASTERDIR=	${.CURDIR}/../../mail/squirrelmail
 MD5_FILE=	${.CURDIR}/distinfo
 
 slaveport-post-patch:
 	@${FIND} ${WRKSRC} -name '*.orig' -delete
+
+pre-build:
+	@cd ${WRKSRC}/po && ./compilepo ja_JP
 
 .include "${MASTERDIR}/Makefile"
