@@ -77,6 +77,7 @@
     SUBDIR += bugbuddy2
     SUBDIR += bugzilla
     SUBDIR += buildtool
+    SUBDIR += buildtool-doc
     SUBDIR += byaccj
     SUBDIR += c2lib
     SUBDIR += c2man

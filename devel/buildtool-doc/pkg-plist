@@ -1,0 +1,25 @@
+@comment $FreeBSD$
+%%PORTDOCS%%%%DOCSDIR%%/CHANGES
+%%PORTDOCS%%%%DOCSDIR%%/COPYING
+%%PORTDOCS%%%%DOCSDIR%%/PEOPLE
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/bt_config.html
+%%PORTDOCS%%%%DOCSDIR%%/bt_dist.html
+%%PORTDOCS%%%%DOCSDIR%%/bt_doc.html
+%%PORTDOCS%%%%DOCSDIR%%/bt_lint.html
+%%PORTDOCS%%%%DOCSDIR%%/bt_make.html
+%%PORTDOCS%%%%DOCSDIR%%/bt_pkgflags.html
+%%PORTDOCS%%%%DOCSDIR%%/bt_swcgen.html
+%%PORTDOCS%%%%DOCSDIR%%/bt_wizard.html
+%%PORTDOCS%%%%DOCSDIR%%/buildtool.html
+%%PORTDOCS%%%%DOCSDIR%%/config.html
+%%PORTDOCS%%%%DOCSDIR%%/defs.html
+%%PORTDOCS%%%%DOCSDIR%%/docs.html
+%%PORTDOCS%%%%DOCSDIR%%/index.html
+%%PORTDOCS%%%%DOCSDIR%%/intro.html
+%%PORTDOCS%%%%DOCSDIR%%/mks.html
+%%PORTDOCS%%%%DOCSDIR%%/pt01.html
+%%PORTDOCS%%%%DOCSDIR%%/pt02.html
+%%PORTDOCS%%%%DOCSDIR%%/scripts.html
+%%PORTDOCS%%%%DOCSDIR%%/style.css
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
