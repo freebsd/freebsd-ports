@@ -16,6 +16,8 @@ COMMENT=	Z-Interpreter for X with full V6 support
 
 LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png
 
+NOT_FOR_ARCHS=	sparc64
+
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 
