@@ -3,20 +3,27 @@ diff -crP ../netatalk-1.4b2/rc.atalk.freebsd ./rc.atalk.freebsd
 --- ./rc.atalk.freebsd	Thu Jul 24 02:14:39 1997
 ***************
 *** 0 ****
---- 1,19 ----
+--- 1,26 ----
 + #
 + # AppleTalk daemons. Make sure not to start atalkd in the background:
 + # its data structures must have time to stablize before running the
 + # other processes.
 + #
++ PREFIX=/`expr $0 : '/\(.*\)/etc/rc.d/netatalk.sh'`
++ if [ "x${PREFIX}" = "x/" ]; then
++ 	printf "\nnetatalk: Cannot determine PREFIX.\n" >&2
++ 	exit 64
++ fi
++ HOSTNAME=`hostname|sed 's/\..*$//'`
 + 
 + case $1 in
 + 	start)	echo -n ' netatalk'
-+ 		:SBINDIR:/atalkd
-+ 		:BINDIR:/nbprgstr -p 4 `hostname|sed 's/\..*$//'`:Workstation
-+ 		:BINDIR:/nbprgstr -p 4 `hostname|sed 's/\..*$//'`:netatalk
-+ 		:SBINDIR:/papd
-+ 		:SBINDIR:/afpd
++ 		${PREFIX}/libexec/atalkd
++ 		${PREFIX}/bin/nbprgstr -p 4 ${HOSTNAME}:Workstation &
++ 		${PREFIX}/bin/nbprgstr -p 4 ${HOSTNAME}:netatalk &
++ 		${PREFIX}/libexec/papd
++ 		${PREFIX}/libexec/afpd -s ${PREFIX}/etc/AppleVolumes.system \
++			-f ${PREFIX}/etc/AppleVolumes.default
 + 		;;
 + 	stop)	killall afpd
 + 		killall papd
