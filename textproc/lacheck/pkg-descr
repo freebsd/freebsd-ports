@@ -1,0 +1,4 @@
+LaCheck is a general purpose consistency checker for LaTeX documents.
+It reads a LaTeX document and displays warning messages, if it finds
+bad sequences.  LaCheck is designed to help find common mistakes in
+LaTeX documents, especially those made by beginners.

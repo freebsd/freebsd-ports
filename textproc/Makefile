@@ -84,6 +84,7 @@
     SUBDIR += jrefentry
     SUBDIR += kbedic
     SUBDIR += kdoc
+    SUBDIR += lacheck
     SUBDIR += latex2html
     SUBDIR += latte
     SUBDIR += libxml
