@@ -17,6 +17,7 @@ share/aclocal/frontline.m4
 share/gnome/apps/Graphics/frontline.desktop
 share/gnome/mime-info/frontline.keys
 share/gnome/mime-info/frontline.mime
+share/gnome/pixmaps/fl-splash.png
 share/gnome/pixmaps/frontline.png
 @dirrm include/gundo
 @dirrm include/frontline

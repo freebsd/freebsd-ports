@@ -7,6 +7,7 @@
 
 PORTNAME=	frontline
 PORTVERSION=	0.5.3
+PORTREVISION=	1
 CATEGORIES=	graphics gnome
 MASTER_SITES=	http://autotrace.sourceforge.net/frontline/
 
