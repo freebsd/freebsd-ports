@@ -1,47 +1,30 @@
---- Makefile.orig	Fri Mar 28 01:08:16 2003
-+++ Makefile	Tue Apr  8 02:27:07 2003
-@@ -3,13 +3,13 @@
+--- Makefile.orig	Sun Apr 13 13:24:15 2003
++++ Makefile	Sun Apr 13 13:25:41 2003
+@@ -9,7 +9,7 @@
  
  DESTDIR =
  
 -PREFIX = $(DESTDIR)/usr/local
--DOCDIR = $(PREFIX)/share/doc
-+#PREFIX = $(DESTDIR)/usr/local
-+#DOCDIR = $(PREFIX)/share/doc
++PREFIX = /usr/X11R6
+ DOCDIR = $(PREFIX)/share/doc
  
--USE_GDKPIXBUF = 1
--#USE_GDKPIXBUF2 = 1
-+#USE_GDKPIXBUF = 1
-+USE_GDKPIXBUF2 = 1
- 
--CC = gcc
-+#CC = gcc
+ USE_GDKPIXBUF = 1
+@@ -19,14 +19,14 @@
  
  ifdef USE_GDKPIXBUF
  PIXBUF_DEF = -DUSE_GDKPIXBUF
-@@ -19,8 +19,8 @@
+-CFLAGS = -O3 -Wall `gdk-pixbuf-config --cflags`
+-LDFLAGS = `gdk-pixbuf-config --libs` -lgdk_pixbuf_xlib
++CFLAGS = -O -Wall `gdk-pixbuf-config --cflags`
++LDFLAGS = -lgnugetopt `gdk-pixbuf-config --libs` -lgdk_pixbuf_xlib
+ endif
  
  ifdef USE_GDKPIXBUF2
  PIXBUF_DEF = -DUSE_GDKPIXBUF2
 -CFLAGS = -O3  -Wall `pkg-config --cflags gdk-pixbuf-xlib-2.0` -I/usr/X11R6/include
 -LDFLAGS = `pkg-config --libs gdk-pixbuf-xlib-2.0` -rdynamic -lX11 -lXi -lXext -L/usr/X11R6/lib
-+CFLAGS += `pkg-config --cflags gdk-pixbuf-xlib-2.0` -I/usr/X11R6/include
-+LDFLAGS += `pkg-config --libs gdk-pixbuf-xlib-2.0` -rdynamic -lX11 -lXi -lXext -L/usr/X11R6/lib
++CFLAGS = -O  -Wall `pkg-config --cflags gdk-pixbuf-xlib-2.0` -I/usr/X11R6/include
++LDFLAGS = -lgnugetopt `pkg-config --libs gdk-pixbuf-xlib-2.0` -rdynamic -lX11 -lXi -lXext -L/usr/X11R6/lib
  endif
  
- PRGS = wmdrawer
-@@ -40,10 +40,10 @@
- 	$(RM) *.o $(PRGS)
- 
- install : wmdrawer
--	$(INSTALL) -m 755 wmdrawer $(PREFIX)/bin
--	$(INSTALL) -m 644 doc/wmdrawer.1x.gz $(PREFIX)/man/man1
--	$(INSTALL) -d $(DOCDIR)/wmdrawer
--	$(INSTALL) -m 644 wmdrawerrc.example AUTHORS ChangeLog COPYING INSTALL README TODO $(DOCDIR)/wmdrawer
-+	$(BSD_INSTALL_PROGRAM) -m 755 wmdrawer $(PREFIX)/bin
-+	$(BSD_INSTALL_DATA) -m 644 doc/wmdrawer.1x.gz $(PREFIX)/man/man1
-+	$(INSTALL) -d $(DOCSDIR)
-+	$(BSD_INSTALL_DATA) -m 644 wmdrawerrc.example AUTHORS ChangeLog COPYING INSTALL README TODO $(DOCSDIR)
- 
- uninstall: clean
- 	$(RM) $(PREFIX)/bin/wmdrawer
+ DEFS += $(PIXBUF_DEF)
