@@ -17,7 +17,7 @@ COMMENT=	Perl module to alter the output of previous handlers
 
 RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/mod_perl.pm:${PORTSDIR}/www/mod_perl
 BUILD_DEPENDS=	${RUN_DEPENDS} \
-		${SITE_PERL}/Apache/Test.pm:${PORTSDIR}/www/p5-Apache-Test
+		${SITE_PERL}/${PERL_ARCH}/Apache/Test.pm:${PORTSDIR}/www/p5-Apache-Test
 
 PERL_CONFIGURE=	yes
 INSTALL_TARGET=	pure_install
