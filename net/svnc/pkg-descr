@@ -17,7 +17,7 @@ from the Web page:
 If you have problems, press Ctrl+Alt+Backspace, or log in over the network and
 kill the svncviewer process.
 
-WWW:  http://www.uk.research.att.com/vnc/platforms.html
+WWW:  http://www.uk.research.att.com/vnc/platforms.html#svgalib
 
 Trevor Johnson
 trevor@FreeBSD.org
