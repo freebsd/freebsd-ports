@@ -26,6 +26,8 @@ LIB_DEPENDS=	lapack:${PORTSDIR}/math/lapack \
 		atlas:${PORTSDIR}/math/atlas
 BUILD_DEPENDS=	${LOCALBASE}/mpich/lib/libmpich.a:${PORTSDIR}/net/mpich
 
+PKGMESSAGE=	${WRKDIR}/pkg-message
+
 .include <bsd.port.pre.mk>
 
 pre-fetch:
@@ -42,7 +44,8 @@ DEBUG_LEVEL=	0
 pre-patch:
 	(${CP} ${WRKSRC}/BMAKES/Bmake.MPI-LINUX ${WRKSRC}/Bmake.inc)
 post-patch:
-	(${REINPLACE_CMD} -e 's,@WRKSRC@,${WRKSRC},g ; s,@DEBUG_LEVEL@,${DEBUG_LEVEL},g ; s,@PREFIX@,${PREFIX},g ; s,@CC@,${CC},g ; s,@CFLAGS@,${CFLAGS},g ; s,@F77@,${F77},g ; s,@FFLAGS@,${FFLAGS},g ; s,@F77EXTRAFLAGS@,${F77EXTRAFLAGS},g'  ${WRKSRC}/Bmake.inc)
+	(${REINPLACE_CMD} -e 's,@WRKSRC@,${WRKSRC},g ; s,@DEBUG_LEVEL@,${DEBUG_LEVEL},g ; s,@PREFIX@,${PREFIX},g ; s,@CC@,${CC},g ; s,@CFLAGS@,${CFLAGS},g ; s,@F77@,${F77},g ; s,@FFLAGS@,${FFLAGS},g ; s,@F77EXTRAFLAGS@,${F77EXTRAFLAGS},g ; s,   ARCH *.= ar,   ARCMD = ar,'  ${WRKSRC}/Bmake.inc)
+	${REINPLACE_CMD} -e 's|\$$(ARCH)|$$(ARCMD)|' ${WRKSRC}/SRC/MPI/Makefile
 
 do-build:
 	(cd ${WRKSRC}; make mpi; make tester)
@@ -70,6 +73,8 @@ do-install:
 .endif
 
 post-install:
-	@${SED} -e 's,/usr/local,${PREFIX},g' ${PKGMESSAGE}
+	@${SED} -e 's,/usr/local,${PREFIX},g' ${FILESDIR}/pkg-message.in \
+		> ${PKGMESSAGE}
+	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.post.mk>
