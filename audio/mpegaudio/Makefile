@@ -8,8 +8,7 @@
 PORTNAME=	mpegaudio
 PORTVERSION=	3.9
 CATEGORIES=	audio
-MASTER_SITES=	ftp://ftp.fh-wolfenbuettel.de/pub/os/openbsd/distfiles/ \
-		ftp://ftp.openbsd.org/pub/OpenBSD/distfiles/
+MASTER_SITES=	ftp://ftp.openbsd.org/pub/OpenBSD/distfiles/
 DISTNAME=	${PORTNAME}
 EXTRACT_SUFX=	.tar.Z
 
