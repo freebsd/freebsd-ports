@@ -16,6 +16,7 @@ MAINTAINER=	neuhauser@chello.cz
 COMMENT=	Unit testing, mock objects and web testing framework for PHP
 
 USE_PHP=	yes
+USE_PHP_BUILD=	yes
 
 SIMPLETESTS?=	unit
 
