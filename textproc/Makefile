@@ -67,6 +67,7 @@
     SUBDIR += html2fo
     SUBDIR += htmldoc
     SUBDIR += htmlsection
+    SUBDIR += htmltolatex
     SUBDIR += info2html
     SUBDIR += info_to_html
     SUBDIR += intltool
