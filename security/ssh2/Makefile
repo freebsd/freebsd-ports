@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ssh2
-PORTVERSION=	3.1.2
+PORTVERSION=	3.2.0
 CATEGORIES=	security ipv6
 MASTER_SITES=	ftp://ftp.ssh.com/pub/ssh/ \
 		ftp://sunsite.unc.edu/pub/packages/security/ssh/ \
@@ -19,8 +19,6 @@ MASTER_SITES=	ftp://ftp.ssh.com/pub/ssh/ \
 DISTNAME=	ssh-${PORTVERSION}
 
 MAINTAINER=	larse@ISI.EDU
-
-#RESTRICTED=	"Crypto; export-controlled"
 
 GNU_CONFIGURE=	YES
 
@@ -73,7 +71,7 @@ MLINKS=		ssh2.1 ssh.1 ssh-add2.1 ssh-add.1 ssh-agent2.1 ssh-agent.1 \
 		ssh-probe2.1 ssh-probe.1 sshd2.8 sshd.8
 MANCOMPRESSED=	no
 
-PORTDOCS=	BUG.REPORT CHANGES FAQ INSTALL LICENSE MANIFEST NEWS README \
+PORTDOCS=	CHANGES FAQ INSTALL LICENSE MANIFEST NEWS README \
 		REGEX-SYNTAX SSH2.QUICKSTART
 
 post-install: install-config-files
