@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	packit
-PORTVERSION=	0.6.0d
+PORTVERSION=	0.7
 CATEGORIES=	net
 MASTER_SITES=	http://packit.sourceforge.net/downloads/
 EXTRACT_SUFX=	.tgz
