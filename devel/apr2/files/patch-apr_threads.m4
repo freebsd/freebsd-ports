@@ -1,5 +1,5 @@
---- apr-0.9.4/build/apr_threads.m4.orig	Sun Nov 16 08:42:33 2003
-+++ apr-0.9.4/build/apr_threads.m4	Fri Jan 23 12:25:00 2004
+--- apr-0.9.4/build/apr_threads.m4.orig	Sun Nov 16 02:42:33 2003
++++ apr-0.9.4/build/apr_threads.m4	Wed Jan 28 17:52:33 2004
 @@ -110,6 +110,7 @@
  
  AC_CACHE_CHECK([for CFLAGS needed for pthreads], [apr_cv_pthreads_cflags],
@@ -28,12 +28,16 @@
    for lib in -lpthread -lpthreads -lc_r; do
      LIBS="$apr_ptc_libs $lib"
      APR_PTHREADS_TRY_RUN([
-@@ -143,6 +150,9 @@
+@@ -143,6 +150,13 @@
        break
      ])
    done
 +  else
-+    test "x$ac_cv_pthreads_lib" != "xnone" && apr_cv_pthreads_lib="-l$ac_cv_pthreads_lib"
++    case x$ac_cv_pthreads_lib in
++      x-*) apr_cv_pthreads_lib="$ac_cv_pthreads_lib" ;;
++      xnone|x) : ;;
++      *) apr_cv_pthreads_lib="-l$ac_cv_pthreads_lib"
++    esac
 +  fi
    LIBS=$apr_ptc_libs
  ])

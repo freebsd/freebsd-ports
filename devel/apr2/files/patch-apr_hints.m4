@@ -1,6 +1,6 @@
---- apr-0.9.4/build/apr_hints.m4.orig	Tue Dec 23 08:26:10 2003
-+++ apr-0.9.4/build/apr_hints.m4	Fri Jan 23 12:23:36 2004
-@@ -129,14 +129,17 @@
+--- apr-0.9.4/build/apr_hints.m4.orig	Mon Dec 22 18:26:10 2003
++++ apr-0.9.4/build/apr_hints.m4	Fri Jan 30 22:53:49 2004
+@@ -129,14 +129,19 @@
  	APR_ADDTO(CPPFLAGS, [-DNETBSD])
  	;;
      *-freebsd*)
@@ -16,11 +16,13 @@
 -	APR_ADDTO(CPPFLAGS, [-D_REENTRANT -D_THREAD_SAFE])
 +	if test $os_version -lt "500016"; then
 +		ac_cv_pthreads_cflags="-D_THREAD_SAFE -D_REENTRANT"
-+		ac_cv_pthreads_lib="none"
-+		LIBS="$LIBS -pthread"
-+	else
++		ac_cv_pthreads_lib="-pthread"
++	elif test $os_version -lt "502102"; then
 +		ac_cv_pthreads_cflags="none"
 +		ac_cv_pthreads_lib="c_r"
++	else
++		ac_cv_pthreads_cflags="none"
++		ac_cv_pthreads_lib="pthread"
 +	fi
  	;;
      *-next-nextstep*)
