@@ -58,7 +58,7 @@ post-install:
 		for dir in contrib patches; do \
 			${CP} -R $${dir} ${PREFIX}/${MEW_DOCDIR}/ ; \
 		done)
-	${CHOWN} -R ${SHAREOWN}.${SHAREGRP} ${PREFIX}/${MEW_DOCDIR}
+	${CHOWN} -R ${SHAREOWN}:${SHAREGRP} ${PREFIX}/${MEW_DOCDIR}
 .endif
 
 ############################################################
