@@ -56,6 +56,7 @@ CONFIGURE_ARGS+=	--with-ldap
 .endif
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|stdint.h|malloc.h|g' ${WRKSRC}/libbalsa/mailbox_imap.c
+	@${REINPLACE_CMD} -e 's|stdint.h|inttypes.h|g' \
+		${WRKSRC}/libbalsa/mailbox_imap.c
 
 .include <bsd.port.post.mk>
