@@ -34,6 +34,17 @@
  
  
  bonobo_audio_ulaw_LDADD =  	$(top_builddir)/bonobo/libbonobo.la		$(GTK_LIBS)					$(GNOME_LIBDIR)					$(GNOMEGNORBA_LIBS)				$(INTLLIBS)
+--- components/audio-ulaw/doc/C/Makefile.in.orig	Wed May 31 15:57:26 2000
++++ components/audio-ulaw/doc/C/Makefile.in	Thu Jun  1 14:58:56 2000
+@@ -141,7 +141,7 @@
+ cxxflags_set = @cxxflags_set@
+ l = @l@
+ 
+-audio_ulaw_helpdir = $(datadir)/gnome/bonobo/docs/audio_ulaw/C
++audio_ulaw_helpdir = $(datadir)/bonobo/docs/audio_ulaw/C
+ 
+ # 
+ # Module configuration information
 --- components/text-plain/Makefile.in.orig	Tue Feb 22 00:06:58 2000
 +++ components/text-plain/Makefile.in	Tue Feb 22 11:16:45 2000
 @@ -137,7 +137,7 @@
