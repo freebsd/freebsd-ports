@@ -1,0 +1,13 @@
+Please copy the file
+%%PREFIX%%/etc/apcpwr.conf.dist
+to
+%%PREFIX%%/etc/apcpwr.conf
+and make the appropriate changes.
+It is suggested that apcpwr.conf only be readable by root as
+it contains the read/write community strings required to
+communicate with the APC MasterSwitch.
+
+WARNING: WARNING WARNING WARNING WARNING WARNING WARNING
+
+This port is usable only by root unless the perl utility
+program /usr/bin/suidperl is installed with setuid permissions.

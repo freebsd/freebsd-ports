@@ -11,6 +11,7 @@
     SUBDIR += ah-tty
     SUBDIR += and
     SUBDIR += anteater
+    SUBDIR += apcpwr
     SUBDIR += apcupsd
     SUBDIR += arson
     SUBDIR += asapm
