@@ -342,6 +342,7 @@
     SUBDIR += p5-Sledge
     SUBDIR += p5-Sledge-Plugin-Download
     SUBDIR += p5-Sledge-Plugin-Dumper
+    SUBDIR += p5-Sledge-Plugin-HTML2HDML
     SUBDIR += p5-Sledge-Plugin-Log
     SUBDIR += p5-Sledge-Plugin-NoCache
     SUBDIR += p5-Sledge-Plugin-SaveUpload
