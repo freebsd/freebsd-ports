@@ -3842,6 +3842,7 @@ jdom		ports/java/jdom
 jdresolve	ports/www/jdresolve
 jed		ports/editors/jed
 jedit		ports/editors/jedit
+jedit-devel	ports/editors/jedit-devel
 jesred		ports/www/jesred
 jetpack		ports/games/jetpack
 jetspeed	ports/www/jetspeed
