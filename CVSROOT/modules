@@ -7758,6 +7758,7 @@ php5-dbase	ports/databases/php5-dbase
 php5-dbx	ports/databases/php5-dbx
 php5-dio	ports/devel/php5-dio
 php5-filepro	ports/databases/php5-filepro
+php5-ftp	ports/ftp/php5-ftp
 php5-gd		ports/graphics/php5-gd
 php5-gettext	ports/devel/php5-gettext
 php5-iconv	ports/converters/php5-iconv
