@@ -28,7 +28,7 @@ if [ -f $WRKDIR/.cdrom ]; then
   yesno "Is your cdrom distibution already patched? [y] ";
   if [ $answ = YES ]; then
     echo -n "What is the patchlevel of the distribution? [3] ";
-    read pl; if [ X$pl = X ]; then pl=5; fi
+    read pl; if [ X$pl = X ]; then pl=3; fi
     pl=`expr $pl + 1`
     if [ $pl -lt 10 ]; then pl=0$pl; fi
   else
