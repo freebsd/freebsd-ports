@@ -1,5 +1,5 @@
---- tsiag/window.c.orig	Wed Jan 28 02:38:18 1998
-+++ tsiag/window.c	Wed Jan 28 02:38:24 1998
+--- tsiag/window.c.orig	Tue Jul  7 01:39:45 1998
++++ tsiag/window.c	Tue Jul  7 01:39:51 1998
 @@ -27,7 +27,7 @@
  #include <string.h>
  #include <stdlib.h>

@@ -1,5 +1,5 @@
---- tsiag/tsiag.c.orig	Wed Jan 28 02:39:28 1998
-+++ tsiag/tsiag.c	Wed Jan 28 02:39:34 1998
+--- tsiag/tsiag.c.orig	Tue Jul  7 01:39:41 1998
++++ tsiag/tsiag.c	Tue Jul  7 01:39:54 1998
 @@ -2,7 +2,7 @@
  #include <stdio.h>
  #include <stdlib.h>
