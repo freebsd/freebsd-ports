@@ -3771,6 +3771,7 @@ lincity		ports/games/lincity
 lincvs		ports/devel/lincvs
 linguist	ports/devel/linguist
 links		ports/www/links
+links1		ports/www/links1
 linpack		ports/math/linpack
 linplasma	ports/graphics/linplasma
 linpopup	ports/net/linpopup
