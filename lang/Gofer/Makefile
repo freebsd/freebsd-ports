@@ -3,7 +3,7 @@
 # Date created:         Wed Feb  1 01:51:59 PST 1995
 # Whom:                 hsu
 #
-# $Id: Makefile,v 1.5 1995/04/24 11:25:09 asami Exp $
+# $Id: Makefile,v 1.6 1995/11/22 13:11:56 asami Exp $
 #
 
 DISTNAME =	gofer230a
@@ -15,20 +15,21 @@ WRKSRC = ${WRKDIR}/src
 LIBDIR = ${PREFIX}/lib/Gofer
 
 do-install:
-	-mkdir -p ${LIBDIR}
-	install -c -m 444 ${WRKDIR}/*.prelude ${LIBDIR}
-	install -c -m 444 ${WRKDIR}/src/prelude.h ${LIBDIR}
-	install -c -m 444 ${WRKDIR}/src/gofc.h ${LIBDIR}
-	perl -pi -e "s|#include \"prelude.h\"|#include \"${LIBDIR}/prelude.h\"|" ${LIBDIR}/gofc.h
-	install -c -m 444 ${WRKDIR}/src/runtime.o ${LIBDIR}
-	install -c -m 555 ${WRKDIR}/scripts/gofer ${PREFIX}/bin
-	install -c -m 555 ${WRKDIR}/scripts/goferc ${PREFIX}/bin
-	install -c -m 555 ${WRKDIR}/src/gofer ${LIBDIR}
-	install -c -m 555 ${WRKDIR}/src/gofc ${LIBDIR}
-	install -c -m 444 ${WRKDIR}/docs/gofer.1 ${PREFIX}/man/man1
-	-rm -f ${PREFIX}/man/man1/gofer.1.gz
-	gzip -9 ${PREFIX}/man/man1/gofer.1
-	-mkdir -p ${LIBDIR}/docs
-	install -c -m 444 ${WRKDIR}/docs/* ${LIBDIR}/docs
+	-/bin/mkdir -p ${LIBDIR}
+	${INSTALL_DATA} ${WRKDIR}/*.prelude ${LIBDIR}
+	${INSTALL_DATA} ${WRKDIR}/src/prelude.h ${LIBDIR}
+	${INSTALL_DATA} ${WRKDIR}/src/gofc.h ${LIBDIR}
+	/usr/bin/perl -pi -e "s|#include \"prelude.h\"|#include \"${LIBDIR}/prelude.h\"|" ${LIBDIR}/gofc.h
+	${INSTALL_DATA} ${WRKDIR}/src/runtime.o ${LIBDIR}
+	${INSTALL_SCRIPT} ${WRKDIR}/scripts/gofer ${PREFIX}/bin
+	${INSTALL_SCRIPT} ${WRKDIR}/scripts/goferc ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKDIR}/src/gofer ${LIBDIR}
+	${INSTALL_PROGRAM} ${WRKDIR}/src/gofc ${LIBDIR}
+	${INSTALL_MAN} ${WRKDIR}/docs/gofer.1 ${PREFIX}/man/man1
+.if !defined(NOMANCOMPRESS)
+	gzip -9nf ${PREFIX}/man/man1/gofer.1
+.endif
+	-/bin/mkdir -p ${LIBDIR}/docs
+	${INSTALL_DATA} ${WRKDIR}/docs/* ${LIBDIR}/docs
 
 .include <bsd.port.mk>
