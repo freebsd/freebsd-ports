@@ -1,0 +1,11 @@
+--- programs/xdm/config/Imakefile.org	Sun Nov 25 13:49:19 2001
++++ programs/xdm/config/Imakefile	Tue Mar 19 18:11:50 2002
+@@ -28,7 +28,7 @@
+ XDMPIDDIR = $(XDMDIR)
+ #endif
+ 
+-#if defined(OpenBSDArchitecture) || defined(NetBSDArchitecture)
++#if defined(OpenBSDArchitecture) || defined(NetBSDArchitecture) || defined(FreeBSDArchitecture)
+ SU = "su -m"
+ #else
+ SU = su
