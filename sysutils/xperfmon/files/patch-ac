@@ -1,0 +1,336 @@
+*** ../xperfmon++/Imakefile	Wed Jul 27 22:29:29 1994
+--- ./Imakefile	Thu Apr 30 15:03:39 1998
+***************
+*** 17,31 ****
+  SYS_MODULE=	sgi_system
+  #endif
+  
+! EXTRA_LIBRARIES =     $(SUNFLAGS) $(MIPSFLAGS) $(SGIFLAGS)
+  
+     INSTPGMFLAGS =  $(INSTKMEMFLAGS)
+! LOCAL_LIBRARIES = $(XAWLIB) $(XTOOLLIB) $(XMULIB) $(XLIB)
+         INCLUDES = -I. -I$(TOOLKITSRC) -I$(TOP) -I$(TOP)/X11
+! #       INCLUDES = -I. -I$(TOOLKITSRC) -I$(TOP) -I$(TOP)/X11 -I/usr/include/bsd
+!      CDEBUGFLAGS = -O
+!            SRCS = TimeChart.c StripChart.c misc.c $(SYS_MODULE).c xperfmon.c nfs.c
+!            OBJS = TimeChart.o StripChart.o misc.o $(SYS_MODULE).o xperfmon.o nfs.o
+  
+  ComplexProgramTarget(xperfmon++)
+  
+--- 17,38 ----
+  SYS_MODULE=	sgi_system
+  #endif
+  
+! #if defined (FreeBSDArchitecture)
+! FreeBSDFLAGS=	-lkvm
+! SYS_MODULE=     freebsd_system
+! CC=		gcc
+! EXTRA_DEFINES=  -DHAVE_SYS_PARAM_H
+! #endif
+! 
+! EXTRA_LIBRARIES =     $(SUNFLAGS) $(MIPSFLAGS) $(SGIFLAGS) $(FreeBSDFLAGS)
+  
+     INSTPGMFLAGS =  $(INSTKMEMFLAGS)
+! LOCAL_LIBRARIES = -lXaw -lXt -lXmu -lX11
+         INCLUDES = -I. -I$(TOOLKITSRC) -I$(TOP) -I$(TOP)/X11
+! #      SRCS = TimeChart.c StripChart.c misc.c $(SYS_MODULE).c xperfmon.c nfs.c
+! #      OBJS = TimeChart.o StripChart.o misc.o $(SYS_MODULE).o xperfmon.o nfs.o
+!        SRCS = TimeChart.c StripChart.c misc.c $(SYS_MODULE).c xperfmon.c
+!        OBJS = TimeChart.o StripChart.o misc.o $(SYS_MODULE).o xperfmon.o
+  
+  ComplexProgramTarget(xperfmon++)
+  
+*** ../xperfmon++/README	Wed Jul 27 22:29:30 1994
+--- ./README	Thu Apr 30 15:03:39 1998
+***************
+*** 18,20 ****
+--- 18,58 ----
+  		Research Center, rsmith@proteus.arc.nasa.gov. Imake will build for correct
+  		O/S if x11r5 is fully installed in all the right places.
+  
++ 
++ 3-15-95		Completely new port of systemdependent file (bsd_system.c) for FreeBSD-2.X
++ 		by Lars Köller @University of Rostock, Germany.
++ 		E-Mail: <lars.koeller@odie.physik2.uni-rostock.de>
++ 
++ 8-16-95		Quick and dirty workaround of -geometry option bug.
++ 		But there are still some side effects when changing the geometry.
++ 		Fix memory leak in bsd_system.c
++ 		by Lars Köller @University of Rostock, Germany.
++ 		E-Mail: <lars.koeller@odie.physik2.uni-rostock.de>
++ 
++ 30-10-95	Change 'Free Mem' graph to 'Free Swap' cause the FreeBSD memory system
++ 		tries to minimize the free unused amount of memory.
++ 		Include basic support for FreeBSD > 2.1.
++ 		Number of interrupts now independent from 'Update Intervall'
++ 		by Lars Köller @University of Rostock, Germany.
++ 		E-Mail: <Lars_Koeller@odie.physik2.uni-rostock.de>
++ 
++ 11-12-95        Fix -geometry bug! Now there is only a MIN_WIDTH of 185 pixels, and the
++ 		MIN_HEIGTH is calculates dynamically depending on the number of active
++ 		graphs.	FreeBSD-2.X only:
++ 		Change 'Free  Swap' graph from absolut into percent values.
++ 		All graphs shoud be independent of the 'Update Intervall'.
++ 		Modify graph labels and add unit of each graph.
++ 		by Lars Köller @University of Rostock, Germany.
++ 		E-Mail: <Lars_Koeller@odie.physik2.uni-rostock.de>
++ 
++ 5-4-96		Fix some event problems that consumes a lot of cpu power after resizing
++ 		(mwm) or restart of an window manager. Make xperfmon compile with
++ 		FreeBSD-current (2.2, changes in get_swapspace)
++ 		by Lars Köller @University of Rostock, Germany.
++ 		E-Mail: <Lars_Koeller@odie.physik2.uni-rostock.de>
++ 
++ 4-30-98		Add System Load graph
++ 		Add CPU Nice and Interrupt graph
++ 		Compiles on FreeBSD-2.2.X and 3.X
++ 		by Lars Köller @University of Bielefeld, Germany.
++ 		E-Mail: Lars.Koeller@Uni-Bielefeld.DE
+*** ../xperfmon++/XPerfmon++.ad	Wed Jul 27 22:29:32 1994
+--- ./XPerfmon++.ad	Thu Aug 13 18:58:32 1998
+***************
+*** 4,27 ****
+  ! commented out, the "NFS Server" graph background will be the application
+  ! default color, unless some other resource file has specified it.
+  ! *PerfChart.highAlarm:		99998
+  *perfChartIdle.lowWarn:		10
+  *perfChartIdle.lowAlarm:	5
+! *perfChartUser.highAlarm:	90
+! *perfChartUser.highWarn:	75
+! *perfChartSystem.highAlarm:	90
+! *perfChartSystem.highWarn:	75
+! *perfChartFree.lowWarn:		2000
+! *perfChartFree.lowAlarm:	1000
+! *perfChartDisk.highWarn:	25
+! *perfChartDisk.highAlarm:	50
+! *perfChartIntrpts.highWarn:	500
+! *perfChartIntrpts.highAlarm:	750
+! *perfChartInput.highWarn:	300
+! *perfChartInput.highAlarm:	500
+! *perfChartOutput.highWarn:	300
+! *perfChartOutput.highAlarm:	500
+  *perfChartCollision.highWarn:	20
+  *perfChartCollision.highAlarm:	50
+! *perfChartNFSClient.highWarn:	200
+! *perfChartNFSClient.highAlarm:	400
+  *font:				6x13
+--- 4,50 ----
+  ! commented out, the "NFS Server" graph background will be the application
+  ! default color, unless some other resource file has specified it.
+  ! *PerfChart.highAlarm:		99998
++ 
++ ! Remember Load*100 is shown in the graph!
++ *perfChartLoad.highAlarm:	800
++ *perfChartLoad.highWarn:	400
++ 
++ *perfChartUser.highAlarm:	95
++ *perfChartUser.highWarn:	75
++ 
++ *perfChartNice.highAlarm:	75
++ *perfChartNice.highWarn:	55
++ 
++ *perfChartSystem.highAlarm:	40
++ *perfChartSystem.highWarn:	25
++ 
++ *perfChartInter.highAlarm:	40
++ *perfChartInter.highWarn:	25
++ 
+  *perfChartIdle.lowWarn:		10
+  *perfChartIdle.lowAlarm:	5
+! 
+! *perfChartSwap.lowWarn:		20
+! *perfChartSwap.lowAlarm:	10
+! 
+! *perfChartDisk.highWarn:	50
+! *perfChartDisk.highAlarm:	100
+! 
+! *perfChartIntrpts.highWarn:	400
+! *perfChartIntrpts.highAlarm:	600
+! 
+! *perfChartInput.highWarn:	500
+! *perfChartInput.highAlarm:	1000
+! 
+! *perfChartOutput.highWarn:	500
+! *perfChartOutput.highAlarm:	1000
+! 
+  *perfChartCollision.highWarn:	20
+  *perfChartCollision.highAlarm:	50
+! 
+! *perfChartNFSClient.highWarn:	100
+! *perfChartNFSClient.highAlarm:	200
+! 
+! *perfChartNFSServer.highWarn:	100
+! *perfChartNFSServer.highAlarm:	200
+  *font:				6x13
+*** ../xperfmon++/xperfmon++.man	Wed Jul 27 22:29:39 1994
+--- ./xperfmon++.man	Thu Apr 30 15:03:39 1998
+***************
+*** 85,101 ****
+  default list. Specifying both "-" and "+" options will produce unpredictable
+  results.
+  .TP 26
+  .B \-usercpu | \+usercpu
+  Graph percentage of \fIUser CPU Time\fP.
+  .TP 26
+  .B \-systemcpu  | \+systemcpu
+! Graph \fISystem\fP CPU Percentage.
+  .TP 26
+  .B \-idlecpu | \+idlecpu
+! Graph \fIIdle\fP CPU Percentage.
+  .TP 26
+! .B \-freemem | \+freemem
+! Graph \fIFree Memory\fP.
+  .TP 26
+  .B \-diskxfr | \+diskxfr
+  Graph \fIDisk Transfers\fP per interval period.
+--- 85,110 ----
+  default list. Specifying both "-" and "+" options will produce unpredictable
+  results.
+  .TP 26
++ .B \-sysload | \+sysload
++ Graph percentage of \fISystem Load\fP (avaraged over 1 minute).
++ .TP 26
+  .B \-usercpu | \+usercpu
+  Graph percentage of \fIUser CPU Time\fP.
+  .TP 26
++ .B \-nicecpu | \+nicecpu
++ Graph percentage of \fINice CPU Time\fP.
++ .TP 26
+  .B \-systemcpu  | \+systemcpu
+! Graph percentage of \fISystem CPU Time\fP.
+! .TP 26
+! .B \-intercpu | \+intercpu
+! Graph percentage of \fIInterrupt CPU Time\fP.
+  .TP 26
+  .B \-idlecpu | \+idlecpu
+! Graph percentage of \fIIdle CPU Time\fP.
+  .TP 26
+! .B \-free{mem/swap} | \+free{mem/swap}
+! Graph \fIFree Memory/Swap (Operating system dependent, swap for FreeBSD in %)\fP.
+  .TP 26
+  .B \-diskxfr | \+diskxfr
+  Graph \fIDisk Transfers\fP per interval period.
+***************
+*** 167,183 ****
+  .PP 
+  Where "*" is one of the following:
+  .TP 12
+  .B user
+  Set \fIlimit\fP value for User CPU Percentage.
+  .TP 12
+  .B sys
+  Set \fIlimit\fP value for System CPU Percentage.
+  .TP 12
+  .B idle
+  Set \fIlimit\fP value for Idle CPU Percentage.
+  .TP 12
+! .B mem
+! Set \fIlimit\fP value for Free Memory.
+  .TP 12
+  .B disk
+  Set \fIlimit\fP value for Disk Transfers.
+--- 176,201 ----
+  .PP
+  Where "*" is one of the following:
+  .TP 12
++ .B load
++ Set \fIlimit\fP value for Load Average (multiplied by 100!!!).
++ .TP 12
+  .B user
+  Set \fIlimit\fP value for User CPU Percentage.
+  .TP 12
++ .B nice
++ Set \fIlimit\fP value for Nice CPU Percentage.
++ .TP 12
+  .B sys
+  Set \fIlimit\fP value for System CPU Percentage.
+  .TP 12
++ .B inter
++ Set \fIlimit\fP value for Interrupt CPU Percentage.
++ .TP 12
+  .B idle
+  Set \fIlimit\fP value for Idle CPU Percentage.
+  .TP 12
+! .B mem/swap
+! Set \fIlimit\fP value for Free Memory/Swap (OS dependent, swap for FreeBSD).
+  .TP 12
+  .B disk
+  Set \fIlimit\fP value for Disk Transfers.
+***************
+*** 304,320 ****
+  .PP
+  Where "&" is one of the following (Note: \fICase\fP IS important):
+  .TP 16
+! .B Idle
+! Set Idle CPU Percentage resource.
+  .TP 16
+  .B User
+  Set User CPU Percentage resource.
+  .TP 16
+  .B System
+  Set System CPU Percentage resource.
+  .TP 16
+! .B Free
+! Set Free Memory resource.
+  .TP 16
+  .B Disk
+  Set Disk Transfer count resource.
+--- 322,347 ----
+  .PP
+  Where "&" is one of the following (Note: \fICase\fP IS important):
+  .TP 16
+! .B Load
+! Set System Load resource.
+  .TP 16
+  .B User
+  Set User CPU Percentage resource.
+  .TP 16
++ .B Nice
++ Set Nice CPU Percentage resource.
++ .TP 16
+  .B System
+  Set System CPU Percentage resource.
+  .TP 16
+! .B Inter
+! Set Interrupt CPU Percentage resource.
+! .TP 16
+! .B Idle
+! Set Idle CPU Percentage resource.
+! .TP 16
+! .B Free/Swap
+! Set Free Memory/Swap resource.
+  .TP 16
+  .B Disk
+  Set Disk Transfer count resource.
+***************
+*** 394,398 ****
+--- 421,449 ----
+  out there would like to port this program to any other operating system or architecture I would be
+  glad to incorporate the modifications into this master copy. Send me your changes via E-Mail at the
+  above address.
++ .PP
++ .I xperfmon++ V1.2 for FreeBSD
++ was written by Lars Köller with a lot of helpful notes by Jörg Wunsch.
++ .PP
++ .I xperfmon++ V1.31 for FreeBSD
++ close some memory leaks, fix geometry (resize) bug, display free swap
++ without resizing of graph in percent.
++ .PP
++ .I xperfmon++ V1.33 for FreeBSD
++ contains some fixes due to event problems and compiles fine under
++ FreeBSD 2.2 (changes in get_swapspace).
++ Now the -geometry switch works well!
++ .PP
++ .I xperfmon++ V1.40 for FreeBSD
++ contains some fixes due to changes in the networking structs and
++ cleans up the FreeBSD version number #if's. Now it should compile fine
++ from FreeBSD 2.0 up to FreeBSD-3.0-current.
++ .PP
++ .I xperfmon++ V2.0 for FreeBSD 2.2.X and 3.0
++ added System Load, Nice and Interrupt CPU graphs.
++ Should compile fine from FreeBSD 2.2 up to FreeBSD-3.0-current.
++ .PP
++ Please E-Mail any bugs or comments with the subject
++ "xperfmon++: ..." to Lars.Koeller@Uni-Bielefeld.DE.
+  .PP
+  Enjoy!

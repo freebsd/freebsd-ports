@@ -48,10 +48,10 @@
 #include <sys/param.h>
 #endif
 
-#if (defined(BSD) && (BSD >= 199306))
+#if (defined(BSD) && (BSD >= 199506))
 # include <osreldate.h>
 #else
-# error You have to use at least a FreeBSD 2.X system
+# error You have to use at least a FreeBSD 2.2.X system
 #endif
 
 #include <X11/IntrinsicP.h>
@@ -74,12 +74,15 @@
 #include <sys/socket.h>
 #include <sys/sysctl.h>
 #include <sys/dkstat.h>
+#ifdef HAVE_DEVSTAT
+#include <devstat.h>
+#endif
 #include <sys/buf.h>
 #include <sys/vmmeter.h>
 #include <vm/vm.h>
 #include <sys/time.h>
 #include <net/if.h>
-#if defined(__FreeBSD__) && __FreeBSD__ >= 3
+#if __FreeBSD_version >= 300000
 #include <net/if_var.h>
 #endif
 #include <netinet/in.h>
@@ -128,6 +131,12 @@
 
 #define WANT_STAT(x) (poss_stats[(x)] != NO_STAT)
 
+#ifdef HAVE_DEVSTAT
+/* the old values */
+#define DK_NDRIVE 8
+#define DK_NAMELEN 8
+#endif
+
 /*
     Function Prototypes
 */
@@ -136,6 +145,11 @@ static void kread(int nlx, void *addr, size_t size);
 static void collect_stats(void);
 static int total_disk_transfers(void);
 static int get_swapspace(void);
+#ifdef HAVE_DEVSTAT
+void init_devstat(void);
+int get_devstat(void);
+#endif /* HAVE_DEVSTAT */
+
 
 /*
     Variables & Structs
@@ -146,8 +160,25 @@ static kvm_t *kd;
 static char errbuf[_POSIX2_LINE_MAX];
 static char dr_name[DK_NDRIVE][DK_NAMELEN];
 static double etime;
+#ifdef HAVE_DEVSTAT
+long generation;
+devstat_select_mode select_mode;
+struct devstat_match *matches;
+int num_matches;
+int num_selected, num_selections;
+long select_generation;
+static struct statinfo cur, last;
+int num_devices;
+struct device_selection *dev_select;
+char nodisk;
+#endif /* HAVE_DEVSTAT */
 
+
+#if __FreeBSD_version >= 220000
+float current_values[NUM_GRAPHS];
+#else
 int current_values[NUM_GRAPHS];
+#endif
 stat_type stats;
 
 extern Widget perfmon[NUM_GRAPHS];
@@ -161,6 +192,7 @@ static struct _nfsStats {
     int nfsServer, nfsClient;
 } nfsStats, old_nfsStats;
 
+/* NB that we'll have to include machine/asname.h when the kernel goes ELF */
 struct nlist nl[] = {
 #define X_CPTIME	0
 	{ "_cp_time" },
@@ -169,7 +201,11 @@ struct nlist nl[] = {
 #define X_BOOTTIME      2
 	{ "_boottime" },
 #define X_DKXFER	3
+#ifdef HAVE_DEVSTAT
+	{ "_hz" }, /* just a placeholder */
+#else
 	{ "_dk_xfer" },
+#endif
 #define X_HZ	    	4
 	{ "_hz" },
 #define N_IFNET       	5
@@ -193,7 +229,9 @@ struct nlist nl[] = {
 
 struct {
 	long    time[CPUSTATES];
+#ifndef HAVE_DEVSTAT
 	long    xfer[DK_NDRIVE];
+#endif
 	struct  vmmeter Sum;
 	struct  vmmeter Rate;
 	int interrupts;
@@ -212,6 +250,9 @@ void sys_setup()
 {
     get_namelist(getbootfile(), _PATH_KMEM);
     collect_stats();
+#ifdef HAVE_DEVSTAT
+    init_devstat();
+#endif
     /* hack to enforce a resize of the 'Free Swap' graph
        without this the left border always displays the first drawn line
        cause this field isn't resized very often due to slow change of
@@ -227,7 +268,7 @@ void sys_setup()
 void update_stats()
 {
     int state;
-    double pct, tot;;
+    double pct, tot, loadavg[3];
 
     collect_stats();
 
@@ -238,16 +279,34 @@ void update_stats()
         pct = 100 / tot;
     else
         pct = 0;
+
+#if __FreeBSD_version >= 220000
+    if (getloadavg(loadavg, sizeof(loadavg) / sizeof(loadavg[0])) == -1 ) {
+	fprintf( stderr, "xperfmon++: getloadavg returned no values\n" );
+	current_values[LOAD] = 0;
+    } else {
+	current_values[LOAD] = loadavg[0]*100;
+	/* fprintf( stderr, "loadavg: %f %f %f\n", loadavg[0], loadavg[1], loadavg[2] ); */
+    }
+#endif
+
+#if __FreeBSD_version >= 220000
+    current_values[USER_CPU_PERCENTAGE] = s.time[CP_USER] * pct;
+    current_values[NICE_CPU_PERCENTAGE] = s.time[CP_NICE] * pct;
+    current_values[SYSTEM_CPU_PERCENTAGE] = s.time[CP_SYS] * pct;
+    current_values[INTER_CPU_PERCENTAGE] = s.time[CP_INTR] * pct;
+#else
     current_values[USER_CPU_PERCENTAGE] = (s.time[CP_USER] + s.time[CP_NICE]) * pct;
     current_values[SYSTEM_CPU_PERCENTAGE] = (s.time[CP_SYS] + s.time[CP_INTR]) * pct;;
+#endif
     current_values[IDLE_CPU_PERCENTAGE] = s.time[CP_IDLE] * pct;
 
     if (perfmon[FREE_MEM]) {
 	if(!first_time_getswap)
-	  current_values[FREE_MEM] = get_swapspace();
+	    current_values[FREE_MEM] = get_swapspace();
 	else {
-	  current_values[FREE_MEM] = 100;
-	  first_time_getswap = 0;
+	    current_values[FREE_MEM] = 100;
+	    first_time_getswap = 0;
 	}
     }
     if (perfmon[DISK_TRANSFERS])
@@ -275,8 +334,12 @@ total_disk_transfers()
 {
     register int i, total_xfers = 0;
 
+#ifdef HAVE_DEVSTAT
+    total_xfers = get_devstat();
+#else
     for(i=0; i < DK_NDRIVE; i++)
 	total_xfers += s.xfer[i];
+#endif
     return(total_xfers/etime);
 }
 
@@ -292,7 +355,9 @@ collect_stats()
     int mib[3], size;
 
     kread(X_CPTIME, s.time, sizeof(s.time));
+#ifndef HAVE_DEVSTAT
     kread(X_DKXFER, s.xfer, sizeof(s.xfer));
+#endif
     kread(X_SUM, &sum, sizeof(sum) );
 
     nintr = nl[X_EINTRCNT].n_value - nl[X_INTRCNT].n_value;
@@ -307,11 +372,13 @@ collect_stats()
 
     free(intrcnt);
     etime = 0;
+#ifndef HAVE_DEVSTAT
     for (i=0; i < DK_NDRIVE; i++) {
 	tmp = s.xfer[i];
 	s.xfer[i] -= s1.xfer[i];
 	s1.xfer[i] = tmp;
     }
+#endif
     for (i=0; i < CPUSTATES; i++) {
 	tmp = s.time[i];
 	s.time[i] -= s1.time[i];
@@ -382,7 +449,11 @@ collect_stats()
 
     size = sizeof(nfsstats);
     mib[0] = CTL_FS;
-    mib[1] = MOUNT_NFS;
+#if (__FreeBSD_version >= 300003) /* ?? */
+    mib[1] = MNT_EXPORTED;
+#else
+    mib[1] = MNT_NFS;
+#endif
     mib[2] = NFS_NFSSTATS;
 
     if (sysctl( mib, 3, &nfsstats, &size, NULL, 0) < 0)
@@ -631,3 +702,164 @@ get_swapspace()
 	free(sw);
 	return((100*nfree)/avail);   /* return free swap in percent */
 }
+
+#ifdef HAVE_DEVSTAT
+/* routines which use libdevstat */
+/* this is partly taken from FreeBSD - /usr/src/usr.sbin/iostat */
+void
+init_devstat(void)
+{
+	/*
+	 * Make sure that the userland devstat version matches the kernel
+	 * devstat version.
+	 */
+	if (checkversion() < 0) {
+		nodisk++;
+		return;
+	}
+
+	/* find out how many devices we have */
+	if ((num_devices = getnumdevs()) < 0) {
+		nodisk++;
+		return;
+	}
+
+	cur.dinfo = (struct devinfo *)malloc(sizeof(struct devinfo));
+	last.dinfo = (struct devinfo *)malloc(sizeof(struct devinfo));
+	bzero(cur.dinfo, sizeof(struct devinfo));
+	bzero(last.dinfo, sizeof(struct devinfo));
+
+	/*
+	 * Grab all the devices.  We don't look to see if the list has
+	 * changed here, since it almost certainly has.  We only look for
+	 * errors.
+	 */
+	if (getdevs(&cur) == -1) {
+		nodisk++;
+		return;
+	}
+
+	num_devices = cur.dinfo->numdevs;
+	generation = cur.dinfo->generation;
+
+	dev_select = NULL;
+
+	/* only interested in disks */
+	matches = NULL;
+	if (buildmatch("da", &matches, &num_matches) != 0) {
+		nodisk++;
+		return;
+	}
+
+	if (num_matches == 0)
+		select_mode = DS_SELECT_ADD;
+	else
+		select_mode = DS_SELECT_ONLY;
+
+	/*
+	 * At this point, selectdevs will almost surely indicate that the
+	 * device list has changed, so we don't look for return values of 0
+	 * or 1.  If we get back -1, though, there is an error.
+	 */
+	if (selectdevs(&dev_select, &num_selected,
+		       &num_selections, &select_generation,
+		       generation, cur.dinfo->devices, num_devices,
+		       matches, num_matches,
+		       NULL, 0,
+		       select_mode, DK_NDRIVE, 0) == -1)
+		nodisk++;
+}
+
+int
+get_devstat(void)
+{
+	register int dn;
+	long double busy_seconds;
+	u_int64_t total_transfers;
+	struct devinfo *tmp_dinfo;
+	int total_xfers = 0;
+
+	if (nodisk == 0) {
+		/*
+		 * Here what we want to do is refresh our device stats.
+		 * getdevs() returns 1 when the device list has changed.
+		 * If the device list has changed, we want to go through
+		 * the selection process again, in case a device that we
+		 * were previously displaying has gone away.
+		 */
+		switch (getdevs(&cur)) {
+		case -1:
+			return (0);
+		case 1: {
+			int retval;
+
+			num_devices = cur.dinfo->numdevs;
+			generation = cur.dinfo->generation;
+			retval = selectdevs(&dev_select, &num_selected,
+					    &num_selections, &select_generation,
+					    generation, cur.dinfo->devices,
+					    num_devices, matches, num_matches,
+					    NULL, 0,
+					    select_mode, DK_NDRIVE, 0);
+			switch(retval) {
+			case -1:
+				return (0);
+			case 1:
+				break;
+			default:
+				break;
+			}
+			break;
+		}
+		default:
+			break;
+		}
+
+		/*
+		 * Calculate elapsed time up front, since it's the same for all
+		 * devices.
+		 */
+		busy_seconds = compute_etime(cur.busy_time, last.busy_time);
+
+		/* this is the first time thru so just copy cur to last */
+		if (last.dinfo->numdevs == 0) {
+			tmp_dinfo = last.dinfo;
+			last.dinfo = cur.dinfo;
+			cur.dinfo = tmp_dinfo;
+			last.busy_time = cur.busy_time;
+			return (0);
+		}
+
+
+		for (dn = 0; dn < num_devices; dn++) {
+			int di;
+
+			if ((dev_select[dn].selected == 0)
+			 || (dev_select[dn].selected > DK_NDRIVE))
+				continue;
+
+			di = dev_select[dn].position;
+
+			if (compute_stats(&cur.dinfo->devices[di],
+				  &last.dinfo->devices[di], busy_seconds,
+				  NULL, &total_transfers,
+				  NULL, NULL,
+				  NULL, NULL, 
+				  NULL, NULL)!= 0)
+				  break;
+			total_xfers += (int)total_transfers;
+		}
+
+		tmp_dinfo = last.dinfo;
+		last.dinfo = cur.dinfo;
+		cur.dinfo = tmp_dinfo;
+
+		last.busy_time = cur.busy_time;
+
+	} else
+		/* no disks found ? */
+		total_xfers = 0;
+
+	return (total_xfers);
+}
+#endif /* HAVE_DEVSTAT */

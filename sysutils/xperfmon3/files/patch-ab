@@ -1,477 +1,312 @@
-diff -ca ../xperfmon++/Imakefile ./Imakefile
-*** ../xperfmon++/Imakefile	Wed Jul 27 22:29:29 1994
---- ./Imakefile	Sun Dec 21 23:03:44 1997
+*** ../xperfmon++/StripCharP.h	Wed Jul 27 22:29:30 1994
+--- ./StripCharP.h	Thu Apr 30 15:03:13 1998
 ***************
-*** 17,31 ****
-  SYS_MODULE=	sgi_system
-  #endif
+*** 62,71 ****
+  #define HIGHLIGHT  1 << 1
+  #define ALL_GCS (FOREGROUND | HIGHLIGHT)
   
-! EXTRA_LIBRARIES =     $(SUNFLAGS) $(MIPSFLAGS) $(SGIFLAGS)
+  /* New fields for the PerfChart widget instance record */
   
-     INSTPGMFLAGS =  $(INSTKMEMFLAGS)
-! LOCAL_LIBRARIES = $(XAWLIB) $(XTOOLLIB) $(XMULIB) $(XLIB)
-         INCLUDES = -I. -I$(TOOLKITSRC) -I$(TOP) -I$(TOP)/X11
-! #       INCLUDES = -I. -I$(TOOLKITSRC) -I$(TOP) -I$(TOP)/X11 -I/usr/include/bsd
-!      CDEBUGFLAGS = -O
-!            SRCS = TimeChart.c StripChart.c misc.c $(SYS_MODULE).c xperfmon.c nfs.c
-!            OBJS = TimeChart.o StripChart.o misc.o $(SYS_MODULE).o xperfmon.o nfs.o
+  typedef struct {
+!     double valuedata[2048];	/* record of data points */
+      Pixel	fgpixel;	/* color index for graph */
+      Pixel	hipixel;	/* color index for lines */
+      Pixel       warnColor;
+--- 62,73 ----
+  #define HIGHLIGHT  1 << 1
+  #define ALL_GCS (FOREGROUND | HIGHLIGHT)
   
-  ComplexProgramTarget(xperfmon++)
++ #define NUM_VALUES 2048
++ 
+  /* New fields for the PerfChart widget instance record */
   
---- 17,38 ----
-  SYS_MODULE=	sgi_system
-  #endif
+  typedef struct {
+!     double valuedata[NUM_VALUES]; /* record of data points */
+      Pixel	fgpixel;	/* color index for graph */
+      Pixel	hipixel;	/* color index for lines */
+      Pixel       warnColor;
+*** ../xperfmon++/TimeChart.h	Wed Jul 27 22:29:31 1994
+--- ./TimeChart.h	Thu Apr 30 15:03:14 1998
+***************
+*** 88,99 ****
+  #define XtCFillRect "FillRect"
   
-! #if defined (FreeBSDArchitecture)
-! FreeBSDFLAGS=	-lkvm
-! SYS_MODULE=     freebsd_system
-! CC=		gcc
-! EXTRA_DEFINES=  -DHAVE_SYS_PARAM_H
+  #define XtNgetValue "getValue"
+! #define XtNhighlight "highlight"
+  #define XtNjumpScroll "jumpScroll"
+  #define XtNminScale "minScale"
+  #define XtNscale "scale"
+  #define XtNfillRect "fillRect"
+! #define XtNupdate "update"
+  #define XtNvmunix "vmunix"
+   
+  typedef struct _TimeChartRec *TimeChartWidget;
+--- 88,99 ----
+  #define XtCFillRect "FillRect"
+  
+  #define XtNgetValue "getValue"
+! /* #define XtNhighlight "highlight" */
+  #define XtNjumpScroll "jumpScroll"
+  #define XtNminScale "minScale"
+  #define XtNscale "scale"
+  #define XtNfillRect "fillRect"
+! /* #define XtNupdate "update" */
+  #define XtNvmunix "vmunix"
+   
+  typedef struct _TimeChartRec *TimeChartWidget;
+*** ../xperfmon++/system.h	Wed Jul 27 22:29:34 1994
+--- ./system.h	Thu Apr 30 22:41:43 1998
+***************
+*** 20,26 ****
+   * IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS, IN NO EVENT SHALL PCS
+   * BE LIABLE FOR ANY SPECIAL, INDIRECT OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES
+   * WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN ACTION
+!  * OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF OR IN 
+   * CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
+   *
+   * Original Author:  Emanuel Jay Berkenbilt, MIT Project Athena
+--- 20,26 ----
+   * IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS, IN NO EVENT SHALL PCS
+   * BE LIABLE FOR ANY SPECIAL, INDIRECT OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES
+   * WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN ACTION
+!  * OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF OR IN
+   * CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
+   *
+   * Original Author:  Emanuel Jay Berkenbilt, MIT Project Athena
+***************
+*** 32,38 ****
+   * documentation for any purpose and without fee is hereby granted, provided that
+   * the above copyright notice appear in all copies and that both that
+   * copyright notice and this permission notice appear in supporting
+!  * documentation, and that the name of NASA and Sterling Software (collectively 
+   * or individually) are not be used in advertising or
+   * publicity pertaining to distribution of the software without specific,
+   * written prior permission.  NASA and Sterling Software makes no representations about the
+--- 32,38 ----
+   * documentation for any purpose and without fee is hereby granted, provided that
+   * the above copyright notice appear in all copies and that both that
+   * copyright notice and this permission notice appear in supporting
+!  * documentation, and that the name of NASA and Sterling Software (collectively
+   * or individually) are not be used in advertising or
+   * publicity pertaining to distribution of the software without specific,
+   * written prior permission.  NASA and Sterling Software makes no representations about the
+***************
+*** 43,49 ****
+   * IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS, IN NO EVENT SHALL NASA & STERLING SOFTWARE
+   * BE LIABLE FOR ANY SPECIAL, INDIRECT OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES
+   * WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN ACTION
+!  * OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF OR IN 
+   * CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
+   *
+   * 1994 Revision
+--- 43,49 ----
+   * IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS, IN NO EVENT SHALL NASA & STERLING SOFTWARE
+   * BE LIABLE FOR ANY SPECIAL, INDIRECT OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES
+   * WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN ACTION
+!  * OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF OR IN
+   * CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
+   *
+   * 1994 Revision
+***************
+*** 55,61 ****
+  
+  /* This file information needed by both system.c and Perfmon.c */
+  
+! #define NUM_POSSIBLE_STATS     11
+  #define MAX_STATS NUM_POSSIBLE_STATS + 1
+  
+  #define LINES_PER_LABEL 2
+--- 55,65 ----
+  
+  /* This file information needed by both system.c and Perfmon.c */
+  
+! #if __FreeBSD_version >= 220000
+! # define NUM_POSSIBLE_STATS     14
+! #else
+! # define NUM_POSSIBLE_STATS     11
 ! #endif
-! 
-! EXTRA_LIBRARIES =     $(SUNFLAGS) $(MIPSFLAGS) $(SGIFLAGS) $(FreeBSDFLAGS)
+  #define MAX_STATS NUM_POSSIBLE_STATS + 1
   
-     INSTPGMFLAGS =  $(INSTKMEMFLAGS)
-! LOCAL_LIBRARIES = -lXaw -lXt -lXmu -lX11
-         INCLUDES = -I. -I$(TOOLKITSRC) -I$(TOP) -I$(TOP)/X11
-! #      SRCS = TimeChart.c StripChart.c misc.c $(SYS_MODULE).c xperfmon.c nfs.c
-! #      OBJS = TimeChart.o StripChart.o misc.o $(SYS_MODULE).o xperfmon.o nfs.o
-!        SRCS = TimeChart.c StripChart.c misc.c $(SYS_MODULE).c xperfmon.c
-!        OBJS = TimeChart.o StripChart.o misc.o $(SYS_MODULE).o xperfmon.o
+  #define LINES_PER_LABEL 2
+***************
+*** 77,93 ****
+      for (stat = 0; stat < num_stats; stat++)
   
-  ComplexProgramTarget(xperfmon++)
+  #define	NO_STAT			-1
+! #define USER_CPU_PERCENTAGE	0
+! #define SYSTEM_CPU_PERCENTAGE	1
+! #define IDLE_CPU_PERCENTAGE	2
+! #define FREE_MEM		3
+! #define DISK_TRANSFERS		4
+! #define INTERRUPTS		5
+! #define INPUT_PACKETS		6
+! #define OUTPUT_PACKETS		7
+! #define COLLISION_PACKETS	8
+  #define NFS_CLIENT_CALLS        9
+  #define NFS_SERVER_CALLS       10
   
-diff -ca ../xperfmon++/README ./README
-*** ../xperfmon++/README	Wed Jul 27 22:29:30 1994
---- ./README	Sun Dec 21 23:03:44 1997
-***************
-*** 18,20 ****
---- 18,52 ----
-  		Research Center, rsmith@proteus.arc.nasa.gov. Imake will build for correct
-  		O/S if x11r5 is fully installed in all the right places.
+  struct statistic {
+      int min_val, max_val;
+--- 81,114 ----
+      for (stat = 0; stat < num_stats; stat++)
   
+  #define	NO_STAT			-1
+! #if __FreeBSD_version >= 220000
+! #define LOAD                    0
+! #define USER_CPU_PERCENTAGE	1
+! #define NICE_CPU_PERCENTAGE     2
+! #define SYSTEM_CPU_PERCENTAGE	3
+! #define INTER_CPU_PERCENTAGE    4
+! #define IDLE_CPU_PERCENTAGE	5
+! #define FREE_MEM		6
+! #define DISK_TRANSFERS		7
+! #define INTERRUPTS		8
+! #define INPUT_PACKETS		9
+! #define OUTPUT_PACKETS	       10
+! #define COLLISION_PACKETS      11
+! #define NFS_CLIENT_CALLS       12
+! #define NFS_SERVER_CALLS       13
+! #else
+! #define USER_CPU_PERCENTAGE     0
+! #define SYSTEM_CPU_PERCENTAGE   1
+! #define IDLE_CPU_PERCENTAGE     2
+! #define FREE_MEM                3
+! #define DISK_TRANSFERS          4
+! #define INTERRUPTS              5
+! #define INPUT_PACKETS           6
+! #define OUTPUT_PACKETS          7
+! #define COLLISION_PACKETS       8
+  #define NFS_CLIENT_CALLS        9
+  #define NFS_SERVER_CALLS       10
++ #endif
+  
+  struct statistic {
+      int min_val, max_val;
+***************
+*** 113,118 ****
+--- 134,155 ----
+  
+  #define VALID_UPDATE(x) ((x <= MAX_TIME) && (x > 0))
+  
++ #if __FreeBSD_version >= 220000
++ #define SYS_LOAD 0
++ #define USR_CPU  1
++ #define NICE_CPU 2
++ #define SYS_CPU  3
++ #define INT_CPU  4
++ #define IDL_CPU  5
++ #define FRE_MEM  6
++ #define DSK_XFR  7
++ #define INTRPTS  8
++ #define INP_PKT  9
++ #define OUT_PKT 10
++ #define COL_PKT 11
++ #define NFS_CLT 12
++ #define NFS_SRV 13
++ #else
+  #define USR_CPU 0
+  #define SYS_CPU 1
+  #define IDL_CPU 2
+***************
+*** 124,129 ****
+--- 161,167 ----
+  #define COL_PKT 8
+  #define NFS_CLT 9
+  #define NFS_SRV 10
++ #endif
+  #define LAST_ITEM NFS_SRV	/* must equal last item above */
+  #define NUM_GRAPHS LAST_ITEM+1
+  
+***************
+*** 146,168 ****
+--- 184,238 ----
+  }AppData, *AppDataPtr;
+  
+  static char *topNames[] = {
++ #if __FreeBSD_version >= 220000
++     "Load",
++ #endif
+      "User",
++ #if __FreeBSD_version >= 220000
++     "Nice",
++ #endif
+      "System",
++ #if __FreeBSD_version >= 220000
++     "Interrpt",
++ #endif
+      "Idle",
+      "Free",
+      "Disk",
++ #if __FreeBSD_version >= 220000
++     "Inter-",
++ #else
+      "Interrupts",
++ #endif
+      "Input",
+      "Output",
++ #if __FreeBSD_version >= 220000
++     "Collis",
++     "NFS Clt",
++     "NFS Srv",
++ #else
+      "Collision",
+      "NFS Client",
+      "NFS Server",
++ #endif
+  };
+  static char *widgetLabels[] = {
++ #if __FreeBSD_version >= 220000
++     "Load",
++ #endif
+      "User",
++ #if __FreeBSD_version >= 220000
++     "Nice",
++ #endif
+      "System",
++ #if __FreeBSD_version >= 220000
++     "Inter",
++ #endif
+      "Idle",
++ #if __FreeBSD_version >= 220000
++     "Swap",
++ #else
+      "Free",
++ #endif
+      "Disk",
+      "Intrpts",
+      "Input",
+***************
+*** 171,177 ****
+--- 241,264 ----
+      "NFSClient",
+      "NFSServer",
+  };
 + 
-+ 3-15-95		Completely new port of systemdependent file (bsd_system.c) for FreeBSD-2.X
-+ 		by Lars Köller @University of Rostock, Germany.
-+ 		E-Mail: <lars.koeller@odie.physik2.uni-rostock.de>
-+ 
-+ 8-16-95		Quick and dirty workaround of -geometry option bug.
-+ 		But there are still some side effects when changing the geometry. 
-+ 		Fix memory leak in bsd_system.c
-+ 		by Lars Köller @University of Rostock, Germany.
-+ 		E-Mail: <lars.koeller@odie.physik2.uni-rostock.de>
-+ 
-+ 30-10-95	Change 'Free Mem' graph to 'Free Swap' cause the FreeBSD memory system
-+ 		tries to minimize the free unused amount of memory.
-+ 		Include basic support for FreeBSD > 2.1.
-+ 		Number of interrupts now independent from 'Update Intervall'
-+ 		by Lars Köller @University of Rostock, Germany.
-+ 		E-Mail: <Lars_Koeller@odie.physik2.uni-rostock.de>
-+ 
-+ 11-12-95        Fix -geometry bug! Now there is only a MIN_WIDTH of 185 pixels, and the
-+ 		MIN_HEIGTH is calculates dynamically depending on the number of active
-+ 		graphs.	FreeBSD-2.X only:
-+ 		Change 'Free  Swap' graph from absolut into percent values.
-+ 		All graphs shoud be independent of the 'Update Intervall'.
-+ 		Modify graph labels and add unit of each graph.
-+ 		by Lars Köller @University of Rostock, Germany.
-+ 		E-Mail: <Lars_Koeller@odie.physik2.uni-rostock.de>
-+ 
-+ 5-4-96		Fix some event problems that consumes a lot of cpu power after resizing
-+ 		(mwm) or restart of an window manager. Make xperfmon compile with
-+ 		FreeBSD-current (2.2, changes in get_swapspace)
-+ 		by Lars Köller @University of Rostock, Germany.
-+ 		E-Mail: <Lars_Koeller@odie.physik2.uni-rostock.de>
-diff -ca ../xperfmon++/XPerfmon++.ad ./XPerfmon++.ad
-*** ../xperfmon++/XPerfmon++.ad	Wed Jul 27 22:29:32 1994
---- ./XPerfmon++.ad	Sun Dec 21 23:03:45 1997
+  static char *botNames[] = {
++ #if __FreeBSD_version >= 220000
++     "(* 100)",
++     "CPU (%)",
++     "CPU (%)",
++     "CPU (%)",
++     "CPU (%)",
++     "CPU (%)",
++     "Swap (%)",
++     "Trsf/s",
++     "rupts/s",
++     "Pkts/s",
++     "Pkts/s",
++     "Pkts/s",
++     "Calls/s",
++     "Calls/s",
++ #else
+      "CPU",
+      "CPU",
+      "CPU",
 ***************
-*** 4,27 ****
-  ! commented out, the "NFS Server" graph background will be the application
-  ! default color, unless some other resource file has specified it.
-  ! *PerfChart.highAlarm:		99998
-  *perfChartIdle.lowWarn:		10
-  *perfChartIdle.lowAlarm:	5
-! *perfChartUser.highAlarm:	90
-! *perfChartUser.highWarn:	75
-! *perfChartSystem.highAlarm:	90
-! *perfChartSystem.highWarn:	75
-! *perfChartFree.lowWarn:		2000
-! *perfChartFree.lowAlarm:	1000
-! *perfChartDisk.highWarn:	25
-! *perfChartDisk.highAlarm:	50
-! *perfChartIntrpts.highWarn:	500
-! *perfChartIntrpts.highAlarm:	750
-! *perfChartInput.highWarn:	300
-! *perfChartInput.highAlarm:	500
-! *perfChartOutput.highWarn:	300
-! *perfChartOutput.highAlarm:	500
-  *perfChartCollision.highWarn:	20
-  *perfChartCollision.highAlarm:	50
-! *perfChartNFSClient.highWarn:	200
-! *perfChartNFSClient.highAlarm:	400
-  *font:				6x13
---- 4,40 ----
-  ! commented out, the "NFS Server" graph background will be the application
-  ! default color, unless some other resource file has specified it.
-  ! *PerfChart.highAlarm:		99998
-+ *perfChartUser.highAlarm:	95
-+ *perfChartUser.highWarn:	75
-+ 
-+ *perfChartSystem.highAlarm:	40
-+ *perfChartSystem.highWarn:	25
-+ 
-  *perfChartIdle.lowWarn:		10
-  *perfChartIdle.lowAlarm:	5
-! 
-! *perfChartSwap.lowWarn:		10
-! *perfChartSwap.lowAlarm:	3
-! 
-! *perfChartDisk.highWarn:	50
-! *perfChartDisk.highAlarm:	100
-! 
-! *perfChartIntrpts.highWarn:	400
-! *perfChartIntrpts.highAlarm:	600
-! 
-! *perfChartInput.highWarn:	500
-! *perfChartInput.highAlarm:	1000
-! 
-! *perfChartOutput.highWarn:	500
-! *perfChartOutput.highAlarm:	1000
-! 
-  *perfChartCollision.highWarn:	20
-  *perfChartCollision.highAlarm:	50
-! 
-! *perfChartNFSClient.highWarn:	100
-! *perfChartNFSClient.highAlarm:	200
-! 
-! *perfChartNFSServer.highWarn:	100
-! *perfChartNFSServer.highAlarm:	200
-  *font:				6x13
-+ 
- diff -ca ../xperfmon++/xperfmon++.man ./xperfmon++.man
-*** ../xperfmon++/xperfmon++.man	Wed Jul 27 22:29:39 1994
---- ./xperfmon++.man	Sun Dec 21 23:03:45 1997
-***************
-*** 20,51 ****
-  The program can produce a filled graph or a line graph and the update interval can be set in
-  seconds or 100-millisecond intervals.
-  .PP
-! While 
-  .I xperfmon++
-  is running, it is possible to perform certain tasks by pressing keys over
-  the window:
-  .PP
-  .br
-! .B Q/q: 
-  Quit... Exit gracefully
-  .br
-! .B l | L: 
-  Print out a chart of all current limit settings. This chart will appear in the
-  window from which xperfmon++ was invoked.
-  .br
-! .B s: 
-  Decrease update interval (slower) by a small amount
-  .br
-! .B S: 
-  Decrease update interval (slower) by a large amount
-  .br
-! .B f: 
-  Increase update interval (faster) by a small amount
-  .br
-! .B F: 
-  Increase update interval (faster) by a large amount
-  .br
-! .B ?: 
-  Help
-  .SH OPTIONS
-  .PP
---- 20,51 ----
-  The program can produce a filled graph or a line graph and the update interval can be set in
-  seconds or 100-millisecond intervals.
-  .PP
-! While
-  .I xperfmon++
-  is running, it is possible to perform certain tasks by pressing keys over
-  the window:
-  .PP
-  .br
-! .B Q/q:
-  Quit... Exit gracefully
-  .br
-! .B l | L:
-  Print out a chart of all current limit settings. This chart will appear in the
-  window from which xperfmon++ was invoked.
-  .br
-! .B s:
-  Decrease update interval (slower) by a small amount
-  .br
-! .B S:
-  Decrease update interval (slower) by a large amount
-  .br
-! .B f:
-  Increase update interval (faster) by a small amount
-  .br
-! .B F:
-  Increase update interval (faster) by a large amount
-  .br
-! .B ?:
-  Help
-  .SH OPTIONS
-  .PP
-***************
-*** 79,85 ****
-  .PP
-  The following options specify the list of statistics to be displayed.
-  If none are present on the command line, then all statistics are displayed.
-! If any "+" options are listed the default list is cleared and only those 
-  listed as "+" options are displayed.
-  If any "-" options are listed, then they are taken away from the
-  default list. Specifying both "-" and "+" options will produce unpredictable
---- 79,85 ----
-  .PP
-  The following options specify the list of statistics to be displayed.
-  If none are present on the command line, then all statistics are displayed.
-! If any "+" options are listed the default list is cleared and only those
-  listed as "+" options are displayed.
-  If any "-" options are listed, then they are taken away from the
-  default list. Specifying both "-" and "+" options will produce unpredictable
-***************
-*** 94,101 ****
-  .B \-idlecpu | \+idlecpu
-  Graph \fIIdle\fP CPU Percentage.
-  .TP 26
-! .B \-freemem | \+freemem
-! Graph \fIFree Memory\fP.
-  .TP 26
-  .B \-diskxfr | \+diskxfr
-  Graph \fIDisk Transfers\fP per interval period.
---- 94,101 ----
-  .B \-idlecpu | \+idlecpu
-  Graph \fIIdle\fP CPU Percentage.
-  .TP 26
-! .B \-free{mem/swap} | \+free{mem/swap}
-! Graph \fIFree Memory/Swap (Operating system dependent, swap for FreeBSD in %)\fP.
-  .TP 26
-  .B \-diskxfr | \+diskxfr
-  Graph \fIDisk Transfers\fP per interval period.
-***************
-*** 122,132 ****
-  .sp
-  \fIxperfmon++\fP will accept a number of \fIlimit\fP options. When a data point
-  exceeds a high or low limit the background of that graph changes color to visually reflect
-! the condition. The background color is an indication of the min (low limit) or max (high limit) 
-  value currently contained
-  in the graph. When no limit has been exceeded the background color is set to green. If no limits have
-! been set for that graph its background color remains the same as the applications default color, 
-! which is usually white. 
-  .PP
-  WARNING: High and Low limits are mutually exclusive, i.e., you can set high limits or low limits, but
-  not both. If both are inadvertently set, the high limits are checked first, and the low limit will be
---- 122,132 ----
-  .sp
-  \fIxperfmon++\fP will accept a number of \fIlimit\fP options. When a data point
-  exceeds a high or low limit the background of that graph changes color to visually reflect
-! the condition. The background color is an indication of the min (low limit) or max (high limit)
-  value currently contained
-  in the graph. When no limit has been exceeded the background color is set to green. If no limits have
-! been set for that graph its background color remains the same as the applications default color,
-! which is usually white.
-  .PP
-  WARNING: High and Low limits are mutually exclusive, i.e., you can set high limits or low limits, but
-  not both. If both are inadvertently set, the high limits are checked first, and the low limit will be
-***************
-*** 135,141 ****
-  There are four possible \fIlimit\fP conditions:
-  .TP 16
-  .B High Warning
-! When any value in the current graph exceeds the  \fIhigh warning\fP limit 
-  the background color of that graph is changed to \fIyellow\fP.
-  .TP 16
-  .B Low Warning
---- 135,141 ----
-  There are four possible \fIlimit\fP conditions:
-  .TP 16
-  .B High Warning
-! When any value in the current graph exceeds the  \fIhigh warning\fP limit
-  the background color of that graph is changed to \fIyellow\fP.
-  .TP 16
-  .B Low Warning
-***************
-*** 164,170 ****
-  .TP 26
-  .B \-high*Warn \fIvalue\fP
-  Set high Warning value for *.
-! .PP 
-  Where "*" is one of the following:
-  .TP 12
-  .B user
---- 164,170 ----
-  .TP 26
-  .B \-high*Warn \fIvalue\fP
-  Set high Warning value for *.
-! .PP
-  Where "*" is one of the following:
-  .TP 12
-  .B user
-***************
-*** 176,183 ****
-  .B idle
-  Set \fIlimit\fP value for Idle CPU Percentage.
-  .TP 12
-! .B mem
-! Set \fIlimit\fP value for Free Memory.
-  .TP 12
-  .B disk
-  Set \fIlimit\fP value for Disk Transfers.
---- 176,183 ----
-  .B idle
-  Set \fIlimit\fP value for Idle CPU Percentage.
-  .TP 12
-! .B mem/swap
-! Set \fIlimit\fP value for Free Memory/Swap (OS dependent, swap for FreeBSD).
-  .TP 12
-  .B disk
-  Set \fIlimit\fP value for Disk Transfers.
-***************
-*** 206,212 ****
-  Set \fIlow user Alarm\fP value to 25.
-  .PP
-  As with any X-based command line specification you only need specify the minimum number of
-! characters required to make the string unique. 
-  See below for a description of setting \fIlimit\fP values using application resource specifications.
-  .SH TOOLKIT OPTIONS
-  .PP
---- 206,212 ----
-  Set \fIlow user Alarm\fP value to 25.
-  .PP
-  As with any X-based command line specification you only need specify the minimum number of
-! characters required to make the string unique.
-  See below for a description of setting \fIlimit\fP values using application resource specifications.
-  .SH TOOLKIT OPTIONS
-  .PP
-***************
-*** 313,320 ****
-  .B System
-  Set System CPU Percentage resource.
-  .TP 16
-! .B Free
-! Set Free Memory resource.
-  .TP 16
-  .B Disk
-  Set Disk Transfer count resource.
---- 313,320 ----
-  .B System
-  Set System CPU Percentage resource.
-  .TP 16
-! .B Free/Swap
-! Set Free Memory/Swap resource.
-  .TP 16
-  .B Disk
-  Set Disk Transfer count resource.
-***************
-*** 354,366 ****
-  .SH BUGS
-  .I xperfmon++
-  requires the ability to open and read the special system file
-! .I /dev/kmem. 
-  On most systems, this requires the
-  .I suid
-  (set user id) bit to be set with root ownership, or the
-  .I sgid
-! (set group id) bit to be set and membership in the same group as 
-! .I /dev/kmem. 
-  .PP
-  Reading /dev/kmem is inherently non-portable.  Therefore, the widget upon
-  which this application is based must be ported to each new operating system.
---- 354,366 ----
-  .SH BUGS
-  .I xperfmon++
-  requires the ability to open and read the special system file
-! .I /dev/kmem.
-  On most systems, this requires the
-  .I suid
-  (set user id) bit to be set with root ownership, or the
-  .I sgid
-! (set group id) bit to be set and membership in the same group as
-! .I /dev/kmem.
-  .PP
-  Reading /dev/kmem is inherently non-portable.  Therefore, the widget upon
-  which this application is based must be ported to each new operating system.
-***************
-*** 371,377 ****
-  by fully covering the xperfmon++ window and then exposing it, or by iconifying the
-  xperfmon++ window and then de-iconifying it.
-  .SH AUTHORS
-! The X11 version of 
-  .I xperfmon
-  was written by Emanuel Jay Berkenbilt, Project Athena on
-  1/21/1988.
---- 371,377 ----
-  by fully covering the xperfmon++ window and then exposing it, or by iconifying the
-  xperfmon++ window and then de-iconifying it.
-  .SH AUTHORS
-! The X11 version of
-  .I xperfmon
-  was written by Emanuel Jay Berkenbilt, Project Athena on
-  1/21/1988.
-***************
-*** 381,387 ****
-  was modified by Thomas Bagli, PCS Computer Systeme GmbH, West Germany, to
-  be a toolkit-based client.
-  .PP
-! .I xperfmon++ 
-  was created from \fIxperfmon\fP, and the Athena StripChart Widget,
-  by Roger Smith, Sterling Software @ NASA-Ames Research Center, Moffett Field, California. Version 1.0
-  was released in January, 1994.
---- 381,387 ----
-  was modified by Thomas Bagli, PCS Computer Systeme GmbH, West Germany, to
-  be a toolkit-based client.
-  .PP
-! .I xperfmon++
-  was created from \fIxperfmon\fP, and the Athena StripChart Widget,
-  by Roger Smith, Sterling Software @ NASA-Ames Research Center, Moffett Field, California. Version 1.0
-  was released in January, 1994.
-***************
-*** 389,398 ****
-  If you like this program, or if you have difficulties, I would like to hear your comments.
-  E-Mail me at rsmith@proteus.arc.nasa.gov.
-  .PP
-! .I xperfmon++ 
-  was written for Suns running SunOs and X11R5 Windows software. If some energetic soul
-  out there would like to port this program to any other operating system or architecture I would be
-  glad to incorporate the modifications into this master copy. Send me your changes via E-Mail at the
-  above address.
-  .PP
-  Enjoy!
---- 389,418 ----
-  If you like this program, or if you have difficulties, I would like to hear your comments.
-  E-Mail me at rsmith@proteus.arc.nasa.gov.
-  .PP
-! .I xperfmon++
-  was written for Suns running SunOs and X11R5 Windows software. If some energetic soul
-  out there would like to port this program to any other operating system or architecture I would be
-  glad to incorporate the modifications into this master copy. Send me your changes via E-Mail at the
-  above address.
-+ .PP
-+ .I xperfmon++ V1.2 for FreeBSD
-+ was written by Lars Koeller with a lot of helpful notes by Joerg Wunsch.
-+ .PP
-+ .I xperfmon++ V1.31 for FreeBSD
-+ close some memory leaks, fix geometry (resize) bug, display free swap
-+ without resizing of graph in percent.
-+ .PP
-+ .I xperfmon++ V1.33 for FreeBSD
-+ contains some fixes due to event problems and compiles fine under
-+ FreeBSD 2.2 (changes in get_swapspace).
-+ Now the -geometry switch works well!
-+ .PP
-+ .I xperfmon++ V1.40 for FreeBSD
-+ contains some fixes due to changes in the networking structs and
-+ cleans up the FreeBSD version number #if's. Now it should compile fine
-+ from FreeBSD 2.0 up to FreeBSD-3.0-current.
-+ .PP
-+ Please E-Mail any bugs or comments with the subject
-+ "xperfmon++: ..." to Lars.Koeller@Uni-Bielefeld.DE.
-  .PP
-  Enjoy!
+*** 183,186 ****
+--- 270,274 ----
+      "Packets",
+      "Calls",
+      "Calls",
++ #endif
+  };
