@@ -1,0 +1,20 @@
+--- dtdformat.orig	Wed Aug  1 23:54:27 2001
++++ dtdformat	Tue Jan 29 14:38:09 2002
+@@ -122,16 +122,8 @@
+ 	require $userlib;
+     }
+ } else {
+-    my $plain = $0;
+-    $plain =~ s/\\/\//g;
+-    if ($plain =~ /\//) {
+-	$plain =~ s/^(.*)\/[^\/]+$/$1\/modules\/plain.pl/;
+-    } else {
+-	$plain = "modules/plain.pl";
+-    }
+-
+     &status("Using plain library.",1);
+-    require $plain;
++    require 'modules/plain.pl';
+ }
+
+ foreach my $key (keys %option) {
