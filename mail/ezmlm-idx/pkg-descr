@@ -1,0 +1,19 @@
+ezmlm is an easy-to-use, high-speed mailing list manager for qmail.
+
+This is an addition and patch to ezmlm-0.53 [(c) Dan J. Bernstein].
+Ezmlm-idx uses only Dan's libraries and heavily relies on ezmlm-0.53 code.
+ezmlm-idx does not function without ezmlm-0.53.
+
+ezmlm-idx-0.31 adds threaded archive retrieval, digest creation,
+subscription moderation, remote administration, message moderation,
+a fully configurable ezmlm-make list setup and editing commands and
+a large number of other options to ezmlm lists. See man pages and
+FAQ.idx for more information. It also adds support for user- or
+host-wide integration of lists with a ``majordomo@''-style interface
+(see ezmlm-request.1 and FAQ).
+
+To use ezmlm-idx with other languages, copy the correct ezmlmrc.XX file
+(where XX is the iso 639 language code) to /etc/ezmlmrc or ~/.ezmlmrc.
+If the appropriate one doesn't exist, feel free to make a translations
+(please leave comments English for the benefit of maintenance) and mail
+to lindberg@id.wustl.edu. See FAQ.idx for more info.
