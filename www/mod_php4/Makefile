@@ -6,7 +6,7 @@
 #
 
 PORTNAME?=	mod_php4
-PORTVERSION=	4.1.1
+PORTVERSION=	4.1.2
 PORTREVISION?=	0
 CATEGORIES?=	www
 MASTER_SITES=	http://us.php.net/${PHP_DISTDIR}/ \
@@ -19,8 +19,6 @@ MASTER_SITES=	http://us.php.net/${PHP_DISTDIR}/ \
 		http://www.php.cz/${PHP_DISTDIR}/ \
 		http://php3.globe.de/${PHP_DISTDIR}/
 DISTNAME=	php-${PORTVERSION}
-
-FORBIDDEN=	"Remotely exploitable."
 
 MAINTAINER=	dirk@FreeBSD.org
 
