@@ -31,6 +31,7 @@
     SUBDIR += CaribbeanStud
     SUBDIR += bzflag
     SUBDIR += cgoban
+    SUBDIR += clanbomber
     SUBDIR += columns
     SUBDIR += connect4
     SUBDIR += corewars
