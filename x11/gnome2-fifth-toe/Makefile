@@ -7,6 +7,7 @@
 
 PORTNAME=	gnome2-fifth-toe
 PORTVERSION=	2.0.2
+PORTREVISION=	1
 CATEGORIES=	x11 gnome
 MASTER_SITES=	# empty
 DISTFILES=	# empty
@@ -24,7 +25,6 @@ RUN_DEPENDS=	gnumeric:${PORTSDIR}/math/gnumeric2 \
 		gcalctool:${PORTSDIR}/math/gcalctool \
 		gthumb:${PORTSDIR}/graphics/gthumb2 \
 		${X11BASE}/lib/gtk-2.0/2.0.0/engines/libcrux-engine.so:${PORTSDIR}/x11-toolkits/crux \
-		gnome-db:${PORTSDIR}/databases/gnomedb2 \
 		mergeant:${PORTSDIR}/databases/mergeant \
 		ghex2:${PORTSDIR}/editors/ghex2
 
