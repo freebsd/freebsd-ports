@@ -1,0 +1,23 @@
+--- Makefile.orig	Thu Sep  5 09:14:22 2002
++++ Makefile	Thu May 15 16:38:06 2003
+@@ -1,15 +1,15 @@
+-INST=/usr/local
++INST=$(PREFIX)
+ 
+ TARGET=vda2fbd
+ 
+-CC    = gcc
+-YACC  = bison -b y
+-#YACC  = yacc
++CC    ?= gcc
++#YACC  = bison -b y
++YACC  = yacc
+ 
+ LEX   = flex
+ 
+ YFLAGS = -d
+-CFLAGS = -g -O2 # -ansi -Wall
++CFLAGS += -g -O2 # -ansi -Wall
+ LDFLAGS = -lm
+ 
+ LEX_OBJS = y.tab.o lex.yy.o

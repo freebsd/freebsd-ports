@@ -1,0 +1,5 @@
+This is a converter from VDA/FS format to fbd format.
+
+Usage:
+
+vda2fbd vdainputfile > fbdoutputfile

@@ -1,0 +1,68 @@
+This patch was submitted to the CalculiX mailing list so hopefully we will 
+not have to include it in future versions of the software. -- pfg 2003
+--- enqu_fbd.c.orig	Mon May  5 20:21:49 2003
++++ enqu_fbd.c	Mon May  5 20:22:08 2003
+@@ -17,7 +17,7 @@
+    Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307  USA
+  */
+ 
+-#include	<malloc.h>
++#include	<stdlib.h>
+ #include	<stdio.h>
+ #include	"fbd.h"
+ 
+--- enqu_vda.c.orig	Mon May  5 20:18:15 2003
++++ enqu_vda.c	Mon May  5 20:19:05 2003
+@@ -17,7 +17,7 @@
+    Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307  USA
+  */
+ 
+-#include	<malloc.h>
++#include	<stdlib.h>
+ #include	<stdio.h>
+ #include	"vda.h"
+ 
+--- fbd_main.c.orig	Mon May  5 20:19:35 2003
++++ fbd_main.c	Mon May  5 20:20:00 2003
+@@ -17,7 +17,7 @@
+    Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307  USA
+  */
+ 
+-#include	<malloc.h>
++#include	<stdlib.h>
+ #include	<stdio.h>
+ #include	<string.h>
+ #include	"vda.h"
+--- init_vda.c.orig	Mon May  5 20:17:32 2003
++++ init_vda.c	Mon May  5 20:17:50 2003
+@@ -19,7 +19,7 @@
+ 
+ #include	<stdio.h>
+ #include	<string.h>
+-#include	<malloc.h>
++#include	<stdlib.h>
+ #include	"vda.h"
+ 
+ extern	int   max_u_order, max_v_order;
+--- vda.y.orig	Mon May  5 20:13:57 2003
++++ vda.y	Mon May  5 20:14:20 2003
+@@ -20,7 +20,7 @@
+ %{
+ #include	<stdio.h>
+ #include	<string.h>
+-#include	<malloc.h>
++#include	<stdlib.h>
+ #include	"vda.h"
+ #include	"vda_util.h"
+ 
+--- vda2fbd.c.orig	Mon May  5 20:20:34 2003
++++ vda2fbd.c	Mon May  5 20:20:57 2003
+@@ -17,7 +17,7 @@
+    Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307  USA
+  */
+ 
+-#include	<malloc.h>
++#include	<stdlib.h>
+ #include	<stdio.h>
+ #include	<string.h>
+ #include	<math.h>
