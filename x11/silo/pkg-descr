@@ -1,0 +1,7 @@
+SiLO is a Simple Launcher Object for X, which you can (should)
+extend using you favorite programming language (from shell
+script to C).
+
+It was tested to run under twm and Enlightenment.
+
+WWW: http://doublef.nm.ru/silo/

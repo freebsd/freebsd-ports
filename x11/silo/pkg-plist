@@ -1,0 +1,12 @@
+bin/silo
+bin/pushbutton
+%%EXAMPLESDIR%%/img/audacitya.png
+%%EXAMPLESDIR%%/img/audacityi.png
+%%EXAMPLESDIR%%/img/sylpheeda.png
+%%EXAMPLESDIR%%/img/sylpheedi.png
+%%EXAMPLESDIR%%/prg/audacity
+%%EXAMPLESDIR%%/prg/sylpheed
+%%EXAMPLESDIR%%/topright.sh
+@dirrm %%EXAMPLESDIR%%/prg
+@dirrm %%EXAMPLESDIR%%/img
+@dirrm %%EXAMPLESDIR%%
