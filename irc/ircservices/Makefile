@@ -18,7 +18,7 @@ PATCHFILES!=	/usr/bin/jot -s " " -w ${DISTNAME:C/[0-9]*$//}%d.diff.gz  \
 			${PATCHLEVEL} 1 ${PATCHLEVEL}
 PATCH_DIST_STRIP=	-p1
 
-MAINTAINER=	ale@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A system of IRC services for IRC networks
 
 USE_PERL5_BUILD=yes

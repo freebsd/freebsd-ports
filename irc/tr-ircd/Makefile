@@ -13,7 +13,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 DISTNAME=	${PORTNAME:S/-//}-release-${PORTVERSION}-r
 
-MAINTAINER=	ale@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An irc daeemon based on Bahamut and hybrid-7
 
 USE_GMAKE=	yes
