@@ -49,7 +49,7 @@ NO_BUILD=	yes
 USE_PYTHON=	yes
 
 .if !defined(BATCH) && !defined(PACKAGE_BUILDING)
-pre-build:
+pre-configure:
 	@${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
 .endif
 
