@@ -3,7 +3,7 @@
 # Date created:		04 Mar 1997
 # Whom:			Makoto Matsushita <matusita@jp.freebsd.org>
 #
-# $Id: Makefile,v 1.5 1997/03/04 09:34:37 asami Exp $
+# $Id: Makefile,v 1.6 1997/06/07 11:19:57 asami Exp $
 #
 
 DISTNAME=	skk9.6
@@ -40,6 +40,6 @@ post-install:
 	  sed -ne '1,/Menu:/p' /usr/share/info/dir > ${PREFIX}/info/dir; \
 	fi
 # Our makeinfo can't handle files with Japanese characters. :<
-	install-info --section="The Emacs editor and associated tools" --entry="* Skk: (skk.info).		Yet another Japanese Inputting Method. (Japanese)" ${PREFIX}/info/skk.info ${PREFIX}/info/dir
+	install-info --section="The Emacs editor and associated tools" --entry="* Skk: (skk.info).	Yet another Japanese Inputting Method. (Japanese)" ${PREFIX}/info/skk.info ${PREFIX}/info/dir
 
 .include <bsd.port.mk>
