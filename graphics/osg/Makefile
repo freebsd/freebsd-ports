@@ -6,53 +6,45 @@
 #
 
 PORTNAME=	osg
-PORTVERSION=	0.8.38
+PORTVERSION=	0.8.44
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.openscenegraph.org/download/snapshots/
-DISTNAME=	${PORTNAME}_src-0.8-38
 
 MAINTAINER=	aa8vb@nc.rr.com
 
-LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png \
-		jpeg.9:${PORTSDIR}/graphics/jpeg
-
-WRKSRC=		${WRKDIR}/OpenSceneGraph-0.8
+LIB_DEPENDS=	freetype.9:${PORTSDIR}/print/freetype2
 
 USE_X_PREFIX=	yes
 USE_MESA=	yes
 INSTALLS_SHLIB=	yes
 USE_GMAKE=	yes
-MAKE_ENV=	CXX="${CXX}" \
-		PTHREAD_LIBS="${PTHREAD_LIBS}" \
-		PTHREAD_CFLAGS="${PTHREAD_CFLAGS}"
-
+MAKE_ENV=	OSGHOME=${WRKSRC}
 ALL_TARGET=	freebsd
 
 pre-patch:
 	@${PERL} -pi -e 's,<malloc.h>,<stdlib.h>,' \
 		${WRKSRC}/src/osgPlugins/flt/Input.cpp \
-		${WRKSRC}/src/osgPlugins/flt/Record.cpp
-
-post-patch:
-.for suf in defs rules
-	@${LN} -sf ${WRKSRC}/Make/make${suf}.linux \
-		${WRKSRC}/Make/make${suf}.freebsd
-.endfor
+		${WRKSRC}/src/osgPlugins/flt/Record.cpp \
+		${WRKSRC}/src/osgPlugins/obj/glm.cpp
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/bin/* ${PREFIX}/bin
-	${TAR} -C ${WRKSRC}/include -c -f - . | \
-		${TAR} -C ${PREFIX}/include --unlink -x -f -
-.for lib in osg osgUtil osgGLUT
-	${INSTALL_PROGRAM} ${WRKSRC}/lib/lib${lib}.so \
-		${PREFIX}/lib/lib${lib}.so.1
-	${LN} -sf lib${lib}.so.1 ${PREFIX}/lib/lib${lib}.so
-.endfor
-	${MKDIR} ${PREFIX}/lib/osgPlugins
-	${INSTALL_PROGRAM} ${WRKSRC}/lib/osgPlugins/*.so \
-		${PREFIX}/lib/osgPlugins
-	${MKDIR} ${PREFIX}/share/doc/osg
-	${TAR} -C ${WRKSRC}/doc -c -f - . | \
-		${TAR} -C ${PREFIX}/share/doc/osg --unlink -x -f -
+	${INSTALL_PROGRAM} ${WRKSRC}/bin/osgconv ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/bin/sgv ${PREFIX}/bin
+	${FIND} ${WRKSRC}/include -name '*.orig' --delete
+	${CP} -r ${WRKSRC}/include/ ${PREFIX}/include/
+	${INSTALL_DATA} ${WRKSRC}/lib/libosg.so ${PREFIX}/lib/libosg.so.1
+	${INSTALL_DATA} ${WRKSRC}/lib/libosgDB.so ${PREFIX}/lib/libosgDB.so.1
+	${INSTALL_DATA} ${WRKSRC}/lib/libosgGLUT.so ${PREFIX}/lib/libosgGLUT.so.1
+	${INSTALL_DATA} ${WRKSRC}/lib/libosgText.so ${PREFIX}/lib/libosgText.so.1
+	${INSTALL_DATA} ${WRKSRC}/lib/libosgUtil.so ${PREFIX}/lib/libosgUtil.so.1
+	${LN} -sf ${PREFIX}/lib/libosg.so.1 ${PREFIX}/lib/libosg.so
+	${LN} -sf ${PREFIX}/lib/libosgDB.so.1 ${PREFIX}/lib/libosgDB.so
+	${LN} -sf ${PREFIX}/lib/libosgGLUT.so.1 ${PREFIX}/lib/libosgGLUT.so
+	${LN} -sf ${PREFIX}/lib/libosgText.so.1 ${PREFIX}/lib/libosgText.so
+	${LN} -sf ${PREFIX}/lib/libosgUtil.so.1 ${PREFIX}/lib/libosgUtil.so
+	@${MKDIR} ${PREFIX}/lib/osgPlugins
+	${CP} -p ${WRKSRC}/lib/osgPlugins/* ${PREFIX}/lib/osgPlugins
+	@${MKDIR} ${DOCSDIR}
+	${CP} -r ${WRKSRC}/doc/ ${DOCSDIR}
 
 .include <bsd.port.mk>

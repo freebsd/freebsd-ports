@@ -1,25 +1,14 @@
-
-$FreeBSD$
-
---- Make/makedefs.linux.orig	Sun Feb 11 23:38:32 2001
-+++ Make/makedefs.linux	Thu May 31 12:46:57 2001
-@@ -6,15 +6,15 @@
- DEPFILES = $(OBJS:.o=.d)
+--- ./Make/ORIG/makedefs.freebsd	Wed Jan 16 07:08:27 2002
++++ ./Make/makedefs.freebsd	Thu Mar 14 18:32:27 2002
+@@ -17,9 +17,9 @@
+ SO_EXT = so
+ DL_EXT = so
  
+-FREEBSD_LOCALLIBS = -L/usr/local/lib -rpath /usr/local/lib
++FREEBSD_LOCALLIBS = -L/usr/local/lib -rpath /usr/local/lib -L/usr/X11R6/lib -rpath /usr/X11R6/lib
  
--C++ = g++
-+C++ = $(CXX)
- YFLAGS = -d
--LCINCS   += -I/usr/X11R6/include
-+LCINCS   += -I$(LOCALBASE)/include -I$(X11BASE)/include
- LC++INCS += ${LCINCS}
--CFLAGS   = -O2 -W -Wall $(LCINCS)
-+CFLAGS   += -W -Wall $(LCINCS) $(PTHREAD_CFLAGS)
- C++FLAGS = ${CFLAGS}
- CPPFLAGS = ${CFLAGS}
+-LDFLAGS = -O2 -W -Wall -pthread -L/usr/local/lib -L/usr/X11R6/lib
++LDFLAGS = -O2 -W -Wall -pthread $(FREEBSD_LOCALLIBS)
  
--LDFLAGS = -O2 -W -Wall
-+LDFLAGS = -L$(LOCALBASE)/lib -L$(X11BASE)/lib $(PTHREAD_LIBS)
- 
- PFLIBS = -lpfdu -lpfutil -lpf  -ldl
- 
+ DYNAMICLIBRARYLIB = 
+ PFLIBS = 
