@@ -137,7 +137,7 @@ post-install:
 .if defined(WITH_AUDIT) || defined(WITH_RECYCLE)
 	@test -d ${SAMBA_VFSDIR} || ${MKDIR} ${SAMBA_VFSDIR}
 .if defined(WITH_AUDIT)
-	${INSTALL_PROGRAM) ${WRKDIR}/${DISTNAME}/examples/VFS/audit.so ${SAMBA_VFSDIR}
+	${INSTALL_PROGRAM} ${WRKDIR}/${DISTNAME}/examples/VFS/audit.so ${SAMBA_VFSDIR}
 .endif
 .if defined(WITH_RECYCLE)
 	${INSTALL_PROGRAM} ${WRKDIR}/${DISTNAME}/examples/VFS/recycle.so ${SAMBA_VFSDIR}
@@ -147,7 +147,7 @@ post-install:
 	${CP} -rp ${WRKDIR}/${DISTNAME}/examples/* ${PREFIX}/share/examples/samba
 .if defined(WITH_AUDIT) || defined(WITH_RECYCLE)
 	@${RM} -rf ${PREFIX}/share/examples/samba/VFS/.libs
-	@for file in Makefile.orig audit.o audit.so recycle.o recycle.so skel.o skel.so ; do \
+	@for file in Makefile.orig audit.o audit.so recycle.c.orig recycle.o recycle.so skel.o skel.so ; do \
 		${RM} ${PREFIX}/share/examples/samba/VFS/$${file} ; \
 	done
 .endif
