@@ -23,7 +23,7 @@ WRKSRC=		${WRKDIR}/rar
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 503000
-IGNORE=		Systems prior to FreeBSD 5.3 currently out of support
+IGNORE=is unsupported on versions prior to FreeBSD 5.3
 .endif
 
 .if ${PORTOBJFORMAT} == "elf"
