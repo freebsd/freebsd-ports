@@ -3,11 +3,11 @@
 # Date created:		Dec 28 1998
 # Whom:			Lars Koeller <lkoeller@cc.fh-lippe.de>
 #
-# $Id: Makefile,v 1.1.1.1 1999/03/18 08:41:40 taoka Exp $
+# $Id: Makefile,v 1.2 1999/05/12 07:43:47 asami Exp $
 #
 
-DISTNAME=	grace-5.0.1
-PKGNAME=	grace-5.0.1a
+DISTNAME=	grace-5.0.2beta
+PKGNAME=	grace-5.0.2b
 CATEGORIES=	math print
 #
 # You never know when and why this caotic team moves it to ../src/old/   :-)
@@ -19,7 +19,6 @@ MASTER_SITES=	ftp://ftp.uni-bielefeld.de/pub/systems/FreeBSD/lkoeller/ \
 		ftp://abragam.med.utoronto.ca/pub/mirrors/grace/src/old/ \
 		ftp://linux.mathematik.tu-darmstadt.de/pub/linux/mirrors/misc/grace/src/old/ \
 		ftp://linux.mathematik.tu-darmstadt.de/pub/linux/mirrors/misc/grace/src/
-EXTRACT_SUFX=   alpha.tar.gz
 
 MAINTAINER=	Lars.Koeller@Uni-Bielefeld.DE
 
@@ -28,10 +27,12 @@ BUILD_DEPENDS=	${X11BASE}/lib/libhlpclient.a:${PORTSDIR}/x11/libhelp \
 		${LOCALBASE}/lib/libgd.a:${PORTSDIR}/graphics/gd \
 		${LOCALBASE}/lib/libpdf.a:${PORTSDIR}/print/pdflib
 LIB_DEPENDS=	Xbae.6:${PORTSDIR}/x11-toolkits/xbae 	\
+		Xpm.4:${PORTSDIR}/graphics/xpm		\
 		fftw.2:${PORTSDIR}/math/fftw		\
 		tiff.4:${PORTSDIR}/graphics/tiff34
 
 USE_X_PREFIX=	YES
+USE_GMAKE=	YES
 REQUIRES_MOTIF=	YES
 HAS_CONFIGURE=	YES
 CONFIGURE_ARGS=	-prefix=${X11BASE} \
