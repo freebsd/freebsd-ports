@@ -1,7 +1,7 @@
-# New ports collection makefile for:   R (a4)
-# Version required:    R-0.62.2
-# Date created:                Tue Jun 23 07:36:55 EST 1998
-# Whom:                        Maurice Castro <maurice@serc.rmit.edu.au>
+# New ports collection makefile for:	R (a4)
+# Version required:		R-0.64.2
+# Date created:			Tue Jun 23 07:36:55 EST 1998
+# Whom:				Maurice Castro <maurice@serc.rmit.edu.au>
 #
 # $FreeBSD$
 #

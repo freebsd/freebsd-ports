@@ -1,13 +1,13 @@
-# New ports collection makefile for:   R (letter)
-# Version required:    R-0.62.2
-# Date created:                Tue Jun 23 07:36:55 EST 1998
-# Whom:                        Maurice Castro <maurice@serc.rmit.edu.au>
+# New ports collection makefile for:	R (letter)
+# Version required:		R-0.64.2
+# Date created:			Tue Jun 23 07:36:55 EST 1998
+# Whom:				Maurice Castro <maurice@serc.rmit.edu.au>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	R-0.62.2
-PKGNAME=	R-${PAPERSIZE}-0.62.2
+DISTNAME=	R-0.64.2
+PKGNAME=	R-${PAPERSIZE}-0.64.2
 CATEGORIES=	math
 MASTER_SITES=	http://lib.stat.cmu.edu/R/CRAN/src/base/ \
 		ftp://ftp.biostat.washington.edu/mirrors/R/CRAN/src/base/ \
@@ -38,27 +38,11 @@ PAPERSIZE?=	letter
 
 ALL_TARGET=all help html
 
-MAN1=	R.1 Rdconv.1
+MAN1=	R.1 Rd2txt.1 Rdconv.1
+MLINKS=	Rdconv.1 Sd2Rd.1 \
+	Rdconv.1 Rdindex.1
 
 test:
 	@(cd ${WRKSRC}; make test-All)
-
-do-install:
-	${INSTALL_MAN} ${WRKSRC}/R.1 ${PREFIX}/man/man1
-	${INSTALL_MAN} ${WRKSRC}/Rdconv.1 ${PREFIX}/man/man1
-	${SED} 's:PREFIX:${PREFIX}:;s:DEFAULTPAPER:${PAPERSIZE}:' ${FILESDIR}/R > ${PREFIX}/bin/R
-	(cd ${WRKSRC}; find . -type d -exec ${CHMOD} a+rx \{\} \; )
-	(cd ${WRKSRC}; find . -type f -exec ${CHMOD} a+r \{\} \; )
-	${CHMOD} a+x ${PREFIX}/bin/R
-	${MKDIR} ${PREFIX}/share/R
-	${MKDIR} ${PREFIX}/share/R/bin
-	${INSTALL_PROGRAM} ${WRKSRC}/bin/R.binary ${PREFIX}/share/R/bin
-	(cd ${WRKSRC}; tar cpf - afm ) | (cd ${PREFIX}/share/R; tar xpf - )
-	(cd ${WRKSRC}; tar cpf - etc ) | (cd ${PREFIX}/share/R; tar xpf - )
-	(cd ${WRKSRC}; tar cpf - doc ) | (cd ${PREFIX}/share/R; tar xpf - )
-	(cd ${WRKSRC}; tar cpf - include ) | (cd ${PREFIX}/share/R; tar xpf - )
-	(cd ${WRKSRC}; tar cpf - library ) | (cd ${PREFIX}/share/R; tar xpf - )
-	(cd ${WRKSRC}; tar cpf - demos ) | (cd ${PREFIX}/share/R; tar xpf - )
-	(cd ${WRKSRC}; tar cpf - cmd ) | (cd ${PREFIX}/share/R; tar xpf - )
 
 .include <bsd.port.mk>
