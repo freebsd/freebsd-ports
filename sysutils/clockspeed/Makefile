@@ -17,7 +17,6 @@ MAINTAINER=	lioux@FreeBSD.org
 
 LIB_DEPENDS=	tai.1:${PORTSDIR}/devel/libtai
 
-ONLY_FOR_ARCHS=	i386
 ALL_TARGET=	it
 USE_REINPLACE=	yes
 INSTALL_TARGET=	setup check
@@ -30,6 +29,14 @@ CLOCKSPEED_RC_SCRIPT_SAMPLE=	${FILESDIR}/clockspeed.sh.sample
 RC_SCRIPT_STARTUP_DIR=		${PREFIX}/etc/rc.d
 
 .include <bsd.port.pre.mk>
+
+post-extract:
+# get this port working under FreeBSD non-i386
+	@${INSTALL} ${FILESDIR}/tryclock_gettime.c ${WRKSRC}
+	@${ECHO} tryclock_gettime.c >> ${WRKSRC}/FILES
+.for file in SYSDEPS TARGETS
+	@${ECHO} hasclock_gettime.h >> ${WRKSRC}/${file}
+.endfor
 
 post-patch: real-post-patch
 

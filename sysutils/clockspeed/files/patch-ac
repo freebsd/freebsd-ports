@@ -1,6 +1,20 @@
 --- clockspeed.c.orig	Tue Oct 13 15:37:28 1998
-+++ clockspeed.c	Mon Nov 20 09:06:34 2000
-@@ -83,7 +83,7 @@
++++ clockspeed.c	Sat Dec 21 15:00:32 2002
+@@ -14,11 +14,13 @@
+ 
+ #ifndef HASRDTSC
+ #ifndef HASGETHRTIME
++#ifndef HASCLOCK_GETTIME
+ 
+   Error! Need an unadjusted hardware clock.
+ 
+ #endif
+ #endif
++#endif
+ 
+ struct point {
+   timing lowlevel;
+@@ -83,7 +85,7 @@
    if (deriv <= 0) return;
    if (deriv > 200000000) return; /* 5Hz ticks? be serious */
  
@@ -9,7 +23,7 @@
    if (fd == -1) return;
  
    buf[0] = 0;
-@@ -119,7 +119,7 @@
+@@ -119,7 +121,7 @@
    if (fsync(fd) == -1) { close(fd); return; }
    if (close(fd) == -1) return; /* NFS stupidity */
  
@@ -18,7 +32,7 @@
  }
  
  void main()
-@@ -136,16 +136,16 @@
+@@ -136,16 +138,16 @@
    if (chdir(auto_home) == -1) _exit(1);
    umask(033);
  
