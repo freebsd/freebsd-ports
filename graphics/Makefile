@@ -1,10 +1,9 @@
-# $Id: Makefile,v 1.91 1998/08/24 02:00:48 steve Exp $
+# $Id: Makefile,v 1.92 1998/09/06 06:46:36 vanilla Exp $
 #
 
     SUBDIR += 4va
     SUBDIR += EZWGL
     SUBDIR += ImageMagick
-    SUBDIR += Mesa2
     SUBDIR += Mesa3
     SUBDIR += aalib
     SUBDIR += aero
