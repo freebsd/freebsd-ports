@@ -1,6 +1,6 @@
---- charset.c.orig	Sun Feb  4 21:04:05 2001
-+++ charset.c	Sun Feb  4 21:05:27 2001
-@@ -29,7 +29,7 @@
+--- charset.c.orig	Thu Feb 15 17:09:02 2001
++++ charset.c	Thu Mar  1 02:27:30 2001
+@@ -31,7 +31,7 @@
  #include <unistd.h>
  #include <errno.h>
  

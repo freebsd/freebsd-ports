@@ -1,5 +1,5 @@
---- configure.in.orig	Sun Feb  4 21:04:05 2001
-+++ configure.in	Sun Feb  4 21:04:31 2001
+--- configure.in.orig	Tue Mar  6 00:03:05 2001
++++ configure.in	Tue Mar  6 00:03:19 2001
 @@ -417,14 +417,14 @@
      [ mutt_cv_func_iconv=no
        mutt_cv_lib_iconv=no
