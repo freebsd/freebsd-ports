@@ -6,10 +6,11 @@
 #
 
 PORTNAME=	gnokii
-PORTVERSION=	0.5.6
+PORTVERSION=	0.5.7
 PORTEPOCH=	1
 CATEGORIES=	comms
 MASTER_SITES=	${MASTER_SITE_SAVANNAH} \
+		ftp://ftp.pl.gnokii.org/pub/gnokii/ \
 		ftp://ftp.gnokii.org/pub/gnokii/
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
