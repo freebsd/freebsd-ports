@@ -19,6 +19,12 @@ USE_X_PREFIX=	yes
 USE_GNOME=	gnometarget gtk20
 GNU_CONFIGURE=	yes
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 501000
+BROKEN=		"Does not compile on FreeBSD ${OSVERSION}"
+.endif
+
 post-patch:
 	@${SED} -e 's:%%PREFIX%%:${PREFIX}:g' \
 		${FILESDIR}/decurs.exec > ${WRKSRC}/decurs.exec
@@ -29,4 +35,4 @@ do-install:
 	@${MKDIR} ${DATADIR}
 	${INSTALL_DATA} ${WRKSRC}/fonts/*.bdf ${DATADIR}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
