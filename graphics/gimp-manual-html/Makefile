@@ -26,7 +26,7 @@ DOCFORMAT=HTML
 .endif
 .endif
 
-PLIST=		${PKGDIR}/PLIST_${DOCFORMAT}
+PLIST=		${PKGDIR}/pkg-plist_${DOCFORMAT}
 
 pre-fetch:
 	@${ECHO} "This manual is available in three formats: HTML, PDF, and"
