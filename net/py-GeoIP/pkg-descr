@@ -1,0 +1,4 @@
+Python API to the GeoIP library for obtaining the country, region, city,
+latitude, and longitude of any IP address.
+
+WWW: http://www.maxmind.com/app/python
