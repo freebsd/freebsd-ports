@@ -1,5 +1,5 @@
 --- src/m/ia64.h.orig	Fri Sep 29 06:00:37 2000
-+++ src/m/ia64.h	Thu Nov 20 13:44:02 2003
++++ src/m/ia64.h	Sun Sep  5 11:57:57 2004
 @@ -147,7 +147,7 @@
  
  #ifndef NOT_C_CODE
@@ -9,3 +9,11 @@
  #  include <alloca.h>
  # else
  #  include <stdlib.h>
+@@ -178,6 +178,6 @@
+ 
+ #endif /* not NOT_C_CODE */
+ 
+-#define DATA_SEG_BITS	0x6000000000000000
++#define DATA_SEG_BITS	0x2000000000000000
+ 
+ #define HAVE_TEXT_START
