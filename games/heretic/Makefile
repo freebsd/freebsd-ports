@@ -17,7 +17,7 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX} heretic_share.wad.gz
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 .endif
 
-MAINTAINER=	lehmann@ans-netz.de
+MAINTAINER=	oliver@freebsd.org
 COMMENT=	Unix source-port of the famous Heretic game by id Software
 
 USE_X_PREFIX=	yes

@@ -11,7 +11,7 @@ PORTREVISION=	0
 CATEGORIES=	mail ipv6
 MASTER_SITES=	http://sylpheed.good-day.net/sylpheed/
 
-MAINTAINER=	lehmann@ans-netz.de
+MAINTAINER=	oliver@freebsd.org
 COMMENT=	A lightweight, featureful, and fast GTK+ based e-mail client
 
 USE_BZIP2=	yes
