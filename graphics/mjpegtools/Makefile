@@ -83,7 +83,7 @@ USE_GNOME+=	gtk12
 .endif
 #
 .ifdef(WITH_LIBDV)
-LIB_DEPENDS+=	dv.1:${PORTSDIR}/graphics/libdv
+LIB_DEPENDS+=	dv.2:${PORTSDIR}/graphics/libdv
 
 CONFIGURE_ARGS+=	--with-dv=${LOCALBASE}
 .endif
