@@ -473,6 +473,7 @@
     SUBDIR += phpwiki
     SUBDIR += plone
     SUBDIR += plugger
+    SUBDIR += pnews
     SUBDIR += postnuke
     SUBDIR += pound
     SUBDIR += privoxy

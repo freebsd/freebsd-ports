@@ -1,0 +1,16 @@
+PHP News Reader is a web based News Reader. It supports the standard NNTP
+protocol (RFC 977) for reading, posting, deleting, forwarding and replying
+news articles.
+
+Features:
+    * Read/Post/Reply/Crosspost/Forward/Delete articles to/from News
+      server(s).
+    * Multiple News server and multiple catalog of news groups.
+    * Support NNTP over SSL (NNTPS) and NNTP authentication.
+    * Posting and downloading for uuencoded attachment.
+    * Easy to install, no database access and IMAP is not required.
+    * Authentication is easily configured to work with your existing system.
+    * Multiple language interface and Traditional/Simplified Chinese coding
+      conversion.
+
+WWW: http://pnews.sourceforge.net/
