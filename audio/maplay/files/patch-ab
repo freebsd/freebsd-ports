@@ -1,0 +1,31 @@
+*** work/Makefile.orig	Tue Feb 14 08:18:41 1995
+--- work/Makefile	Tue Feb 14 08:19:52 1995
+***************
+*** 39,45 ****
+  
+  .SUFFIXES:	.cc
+  
+! install:
+  		@./configuration.sh
+  
+  all:		maplay
+--- 39,45 ----
+  
+  .SUFFIXES:	.cc
+  
+! pre-install:
+  		@./configuration.sh
+  
+  all:		maplay
+***************
+*** 47,52 ****
+--- 47,55 ----
+  maplay:		$(OBJS)
+  		$(COMPILER) $(CFLAGS) $(OBJS) -o $@ $(LIBRARIES) -lm
+  		-strip $@
++ 
++ install: all
++ 		${INSTALL} -s -c -m 755 maplay ${PREFIX}/bin
+  
+  .cc.o:
+  		$(COMPILER) -c $(CFLAGS) $(INCLUDEDIRS) $*.cc -o $@
