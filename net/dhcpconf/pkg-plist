@@ -1,0 +1,3 @@
+sbin/dhcpconf
+share/dhcpconf/README
+@dirrm share/dhcpconf

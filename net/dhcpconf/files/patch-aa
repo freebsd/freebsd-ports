@@ -1,0 +1,34 @@
+--- Makefile	Wed Dec 15 12:45:24 1999
++++ Makefile.new	Wed Jan 26 23:15:10 2000
+@@ -1,23 +1,24 @@
+ TARGET = dhcp-conf
+-CC = gcc
+-LIBS = -lgdbm -lnewt
++CC ?= gcc
++CFLAGS = $(PCFLAGS) -I$(PREFIX)/include
++LIBS = -L$(PREFIX)/lib -lgdbm -lnewt
+ OBJS = main.o screen.o help.o data.o
+ #OPTS = -D__DEBUG__ -D__TRACE__
+ 
+ $(TARGET) : $(OBJS)
+-	$(CC) -o $(TARGET) $(LIBS) $(OBJS)
++	$(CC) $(CFLAGS) -o $(TARGET) $(LIBS) $(OBJS)
+ 
+ main.o : main.c includes.h main-proto.h screen-proto.h
+-	$(CC) -c main.c $(OPTS)
++	$(CC) $(CFLAGS) -c main.c $(OPTS)
+ 
+ screen.o : screen.c includes.h screen-proto.h
+-	$(CC) -c screen.c $(OPTS)
++	$(CC) $(CFLAGS) -c screen.c $(OPTS)
+ 
+ help.o : help.c includes.h help-proto.h
+-	$(CC) -c help.c $(OPTS)
++	$(CC) $(CFLAGS) -c help.c $(OPTS)
+ 
+ data.o : data.c includes.h data-proto.h
+-	$(CC) -c data.c $(OPTS)
++	$(CC) $(CFLAGS) -c data.c $(OPTS)
+ 
+ install : $(TARGET)
+ 	chown root dhcp-conf
