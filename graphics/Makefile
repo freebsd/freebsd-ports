@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.96 1998/11/05 08:03:20 tg Exp $
+# $Id: Makefile,v 1.97 1998/11/16 21:04:07 billf Exp $
 #
 
     SUBDIR += 4va
@@ -91,6 +91,7 @@
     SUBDIR += xfractint
     SUBDIR += xgrasp
     SUBDIR += xli
+    SUBDIR += xmagv
     SUBDIR += xmandel
     SUBDIR += xmfract
     SUBDIR += xmorph
@@ -98,6 +99,7 @@
     SUBDIR += xpaint
     SUBDIR += xpdf
     SUBDIR += xpm
+    SUBDIR += xpx
     SUBDIR += xv
     SUBDIR += xv-m17n
     SUBDIR += xwpick
