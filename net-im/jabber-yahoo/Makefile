@@ -1,0 +1,26 @@
+# New ports collection makefile for:	jabber-yahoo
+# Date created:			12 Oct 2002
+# Whom:				Nick Sayer <nsayer@FreeBSD.org>
+#
+# $FreeBSD$
+
+PORTNAME=	yahoo
+PORTVERSION=	2.0.1
+CATEGORIES=	net
+MASTER_SITES=	http://yahoo-transport-2.jabberstudio.org/
+PKGNAMEPREFIX=	jabber-
+DISTNAME=	yahoo-t-${PORTVERSION}
+DIST_SUBDIR=	jabber
+
+MAINTAINER=	nsayer@FreeBSD.org
+
+BUILD_DEPENDS=	${LOCALBASE}/sbin/jabberd:${PORTSDIR}/net/jabber
+LIB_DEPENDS=	iconv.3:${PORTSDIR}/converters/libiconv
+
+USE_GLIB=	yes
+USE_GMAKE=	yes
+
+do-install:
+	${INSTALL_DATA} ${WRKSRC}/yahoo-transport.so ${PREFIX}/lib/jabber/
+
+.include <bsd.port.mk>
