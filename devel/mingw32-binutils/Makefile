@@ -30,6 +30,8 @@ PATCHVERSION=	90.20040222.1
 
 WRKSRC=		${WRKDIR}/${DISTNAME:S/-src//}
 
+BROKEN=		"Incorrect pkg-plist"
+
 #USE_BZIP2=	yes
 USE_GETTEXT=	yes
 USE_GMAKE=	yes
