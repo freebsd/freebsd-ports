@@ -3,7 +3,7 @@
 # Date created:        17 March 1998
 # Whom:                Yukihiro Nakai <Nakai@technologist.com>
 #
-# $Id: Makefile,v 1.11 1999/01/14 18:55:35 vanilla Exp $
+# $Id: Makefile,v 1.12 1999/01/17 10:11:06 vanilla Exp $
 #
 
 DISTNAME=	gnome-core-0.99.3.2
@@ -21,6 +21,8 @@ LIB_DEPENDS=	gnome.1:${PORTSDIR}/x11/gnomelibs \
 		gtop.1:${PORTSDIR}/devel/libgtop \
 		esd.1:${PORTSDIR}/audio/esound \
 		ghttp.0:${PORTSDIR}/www/libghttp
+
+BROKEN=		"can't work with gtk 1.1.13, but 0.99.4 will release soon"
 
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
