@@ -7,11 +7,12 @@
 
 PORTNAME=	green-card
 PORTVERSION=	2.04
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://www.galois.com/~sof/
 DISTNAME=	gc-${PORTVERSION}
 
-MAINTAINER=	obraun@informatik.unibw-muenchen.de
+MAINTAINER=	obraun@FreeBSD.org
 
 BUILD_DEPENDS=	ghc:${PORTSDIR}/lang/ghc
 
