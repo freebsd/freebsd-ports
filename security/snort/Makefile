@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	snort
-PORTVERSION=	1.9.1
+PORTVERSION=	2.0.0
 CATEGORIES=	security
 MASTER_SITES=	http://www.snort.org/dl/
 
@@ -57,7 +57,7 @@ pre-configure:
 	@${ECHO} ""
 
 DOCS=	AUTHORS NEWS README.csv BUGS README README.database \
-	CREDITS README.SNMP README.xml README.FLEXRESP RULES.todo FAQ \
+	CREDITS README.FLEXRESP RULES.todo FAQ \
 	SnortUsersManual.pdf README.PLUGINS USAGE
 
 post-install:
