@@ -10,7 +10,7 @@ upgrades.
   AFFECTS: users of net/openldap2[12]{,-sasl}-client
 
   OpenLDAP version 2.2 is now the default. To upgrade all ports do
-    portupgrade -rfo net/openldap22-client openldap-client       
+    portupgrade -rfo net/openldap22-client openldap-client
   (or a similar command for the SASL variant). If you do not want to
   upgrade, add the line `WANT_OPENLDAP_VER?=21' to /etc/make.conf
 
@@ -381,7 +381,7 @@ upgrades.
 20040309:
   AFFECTS: users of audio/arts and x11/kdebase
   AUTHOR: kde@FreeBSD.org
- 
+
   The arts port, PORTVERSION 1.2.1 does not include artswrapper anymore.
   Instead, artswrapper is now installed by a new port audio/artswrapper.
 
