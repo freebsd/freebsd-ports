@@ -10,6 +10,9 @@ DISTNAME=	mirror-2.9
 CATEGORIES=	ftp
 MASTER_SITES=	ftp://src.doc.ic.ac.uk/computing/archiving/mirror/
 
+PATCH_SITES=	http://sunsite.org.uk/packages/mirror/
+PATCHFILES=	ftp.pl_wupatch
+
 MAINTAINER=	torstenb@FreeBSD.org
 
 USE_PERL5=	yes
