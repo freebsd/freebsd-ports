@@ -1,2 +1,10 @@
 bin/aide
 etc/aide.conf.sample
+@exec /bin/mkdir -p /var/adm/aide/databases
+@exec [ -f /var/adm/aide/aide.conf ] || /usr/sbin/chown root:wheel /var/adm/aide
+@exec [ -f /var/adm/aide/aide.conf ] || /usr/sbin/chown root:wheel /var/adm/aide/databases
+@exec [ -f /var/adm/aide/aide.conf ] || /usr/sbin/chmod 0700 /var/adm/aide
+@exec [ -f /var/adm/aide/aide.conf ] || /usr/sbin/chmod 0700 /var/adm/aide/databases
+@unexec rmdir /var/adm/aide/databases 2>/dev/null || true
+@unexec rmdir /var/adm/aide 2>/dev/null || true
+@unexec rmdir /var/adm 2>/dev/null || true

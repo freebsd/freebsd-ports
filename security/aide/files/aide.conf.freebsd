@@ -67,14 +67,13 @@
 #
 #
 # Tripwire running slowly?  Modify your tripwire.config entries to
-# ignore the (signature 2) attribute when this computationally-exorbita
-nt
+# ignore the (signature 2) attribute when this computationally-exorbitant
 # protection is not needed.  (See README and design document for further
 # details.)
 #
 
-database=file:///var/log/aide/databases/aide.db
-database_out=file:///var/log/aide/databases/aide.db.new
+database=file:///var/adm/aide/databases/aide.db
+database_out=file:///var/adm/aide/databases/aide.db.new
 
 
 #  First, root's traditional "home".  Note that FreeBSD's root's home (/root)

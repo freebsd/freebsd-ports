@@ -1,0 +1,23 @@
+--- doc/aide.1.orig	Wed Jan 19 12:11:36 2000
++++ doc/aide.1	Sat Sep  2 13:00:57 2000
+@@ -45,11 +45,17 @@
+ Prints out the standard help message.
+ .PP
+ .SH FILES
+-.B <prefix>/etc/aide.conf
++.TP
++.BI PREFIX/etc/aide.conf.sample
++Example aide configuration file.
++.TP
++.BI /var/adm/aide/aide.conf
+ Default aide configuration file.
+-.B <prefix>/etc/aide.db
++.TP
++.BI /var/adm/aide/databases/aide.db
+ Default aide database.
+-.B <prefix>/etc/aide.db.new
++.TP
++.BI /var/adm/aide/databases/aide.db.new
+ Default aide output database.
+ .SH SEE ALSO
+ .BR aide.conf (5)
