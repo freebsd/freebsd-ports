@@ -17,7 +17,7 @@ data in a configuration file, process the configuration and start making (and
 processing) objects.  If you want to add security to these objects later, it's
 easy!
 
-WWW: http://search.cpan.org/search?dist=SPOPS
+WWW: http://search.cpan.org/dist/SPOPS/
 
 -- Sergey Skvortsov
 skv@FreeBSD.org
