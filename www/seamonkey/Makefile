@@ -156,6 +156,7 @@ PKGCONFIG_FILES=mozilla-gtkmozembed mozilla-js mozilla-xpcom \
 # JPI stuff.  List paths to Java Plug-ins here in the order to try.
 JPI_LIST=\
 	${LOCALBASE}/jdk1.4.2/jre/plugin/${ARCH}/ns610/libjavaplugin_oji.so \
+	${LOCALBASE}/jdk1.4.1/jre/plugin/${ARCH}/ns610/libjavaplugin_oji.so \
 	${LOCALBASE}/diablo-jdk1.3.1/jre/plugin/${ARCH}/ns600/libjavaplugin_oji.so \
 	${LOCALBASE}/jdk1.3.1/jre/plugin/${ARCH}/ns600/libjavaplugin_oji.so
 
