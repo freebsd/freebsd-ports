@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	conserver
-PORTVERSION=	7.2.4
+PORTVERSION=	7.2.7
 CATEGORIES=	comms
 MASTER_SITES=	ftp://ftp.conserver.com/conserver/
 PKGNAMESUFFIX=	-com
@@ -35,9 +35,6 @@ CONFIGURE_ARGS+=--with-64bit
 post-patch:
 	${REINPLACE_CMD} \
 		-e 's@/usr/local/bin@${PREFIX}/sbin@' \
-		${WRKSRC}/conserver/conserver.rc
-
-post-install:
-	${LN} -sf ../conserver.rc ${PREFIX}/etc/rc.d/conserver.sh-
+		${WRKSRC}/conserver/conserver.rc.in
 
 .include <bsd.port.post.mk>
