@@ -18,6 +18,7 @@
     SUBDIR += bugs
     SUBDIR += ca-roots
     SUBDIR += calife
+    SUBDIR += ccrypt
     SUBDIR += cfs
     SUBDIR += cfv
     SUBDIR += checkpassword

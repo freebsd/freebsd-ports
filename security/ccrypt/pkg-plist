@@ -1,0 +1,6 @@
+bin/ccat
+bin/ccdecrypt
+bin/ccencrypt
+bin/ccrypt
+share/doc/ccrypt/ccrypt.html
+@dirrm share/doc/ccrypt
