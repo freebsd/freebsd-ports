@@ -11,27 +11,21 @@ CATEGORIES=	games
 MASTER_SITES=	http://support.bungie.com/ftp/pub/win/misc/
 DISTNAME=	metaserver2open
 
-MAINTAINER=	adamw@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Bungie.net MythII Metaserver Open Source
-
-BROKEN=		"Does not compile"
 
 USE_ZIP=	yes
 USE_GMAKE=	yes
-USE_REINPLACE=	yes
 WRKSRC=		${WRKDIR}/metaserver2open/spaghetti
 
 pre-everything::
 		@${ECHO_CMD} "#############################################"
 		@${ECHO_CMD} "                 IMPORTANT!"
 		@${ECHO_CMD} "    Please: Edit and modify environment.h"
-		@${ECHO_CMD} "        located at $$\{WRKSRC\}/utils/"
+		@${ECHO_CMD} "        located at ${WRKSRC}/utils/"
 		@${ECHO_CMD} "         after running make patch but"
 		@${ECHO_CMD} "         before compiling this port."
 		@${ECHO_CMD} "#############################################"
-
-post-patch:
-		@${REINPLACE_CMD} -e 's@\r@@g' ${WRKSRC}/users_new/main.c
 
 do-install:
 		@${INSTALL_PROGRAM} ${WRKSRC}/bin/game_search_server_new ${PREFIX}/bin
