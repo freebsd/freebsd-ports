@@ -18,7 +18,7 @@ MAINTAINER=	lioux@FreeBSD.org
 COMMENT=	GStreamer written collection of plugins handling several media types
 
 LIB_DEPENDS=	gstreamer-0.6.1:${PORTSDIR}/multimedia/gstreamer \
-		popt.0:${PORTSDIR}/devel/popt \
+		popt.0:${PORTSDIR}/devel/popt
 
 USE_X_PREFIX=	yes
 USE_BZIP2=	yes
@@ -258,6 +258,11 @@ WITH_PNG=yes
 # sdl
 .if exists(${LOCALBASE}/lib/libSDL-1.1.a)
 WITH_SDL=yes
+.endif
+
+# swfdec
+.if exists(${X11BASE}/lib/libswfdec.a)
+WITH_SWFDEC=yes
 .endif
 
 # vorbis
@@ -580,6 +585,17 @@ CONFIGURE_ARGS+=	--with-sdl-prefix=${LOCALBASE}  \
 			--with-sdl-exec-prefix=${LOCALBASE}
 CONFIGURE_ENV+=		SDL_CONFIG=${SDL_CONFIG}
 PLIST_SUB+=	SDL=""
+.endif
+
+# swfdec
+.ifndef(WITH_SWFDEC)
+CONFIGURE_ARGS+=	--disable-swfdec
+PLIST_SUB+=	SWFDEC="@comment "
+.else
+LIB_DEPENDS+=	swfdec.0:${PORTSDIR}/graphics/swfdec
+
+CONFIGURE_ARGS+=	--enable-swfdec
+PLIST_SUB+=	SWFDEC=""
 .endif
 
 # vorbis
