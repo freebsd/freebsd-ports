@@ -1,6 +1,5 @@
 bin/bidwatcher
 share/bidwatcher/CHANGES
-share/bidwatcher/LICENSE
 share/bidwatcher/INSTALL
 share/bidwatcher/README
 @dirrm share/bidwatcher
