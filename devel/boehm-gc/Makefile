@@ -48,8 +48,8 @@ PKGNAMESUFFIX:=		${PKGNAMESUFFIX}+fulldebug
 
 MAN3=		gc.3
 
-.if ${ARCH} != "i386" && ${ARCH} != "alpha" && ${ARCH} != "amd64" && ${ARCH} != "sparc64" 
-BROKEN=		"Does not compile on !i386 and !alpha and !amd64 and !sparc64"
+.if ${ARCH} != "i386" && ${ARCH} != "alpha" && ${ARCH} != "amd64" && ${ARCH} != "sparc64" && ${ARCH} != "powerpc"
+BROKEN=		"Does not compile on !i386 and !alpha and !amd64 and !sparc64 and !powerpc"
 .endif
 
 post-patch:
