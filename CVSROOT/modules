@@ -4032,6 +4032,7 @@ javanns		ports/math/javanns
 javavmwrapper	ports/java/javavmwrapper
 javel		ports/java/javel
 jaxen		ports/java/jaxen
+jaxup		ports/textproc/jaxup
 jbidwatcher	ports/misc/jbidwatcher
 jbigkit		ports/graphics/jbigkit
 jboss2		ports/java/jboss2
