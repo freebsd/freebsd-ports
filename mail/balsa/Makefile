@@ -3,7 +3,7 @@
 # Date created:        02 December 1998
 # Whom:                Glenn Johnson <gljohns@bellsouth.net>
 #
-# $Id: Makefile,v 1.1.1.1 1998/12/09 05:20:02 vanilla Exp $
+# $Id: Makefile,v 1.2 1999/01/17 19:59:38 vanilla Exp $
 #
 
 DISTNAME=	balsa-0.4.6.2
@@ -13,7 +13,7 @@ MASTER_SITES=	http://www.balsa.net/dist/
 MAINTAINER=	gljohns@bellsouth.net
 
 LIB_DEPENDS=	gnome.1:${PORTSDIR}/x11/gnomelibs \
-		PropListgnome.1:${PORTSDIR}/devel/libPropListgnome
+		PropList.1:${PORTSDIR}/devel/libPropList
 
 BROKEN=		"can't work with gnomelibs-0.99.3"
 
