@@ -8,806 +8,806 @@ lib/thunderbird/lib/pkgconfig/thunderbird-nspr.pc
 lib/thunderbird/lib/pkgconfig/thunderbird-nss.pc
 lib/thunderbird/lib/pkgconfig/thunderbird-plugin.pc
 lib/thunderbird/lib/pkgconfig/thunderbird-xpcom.pc
-lib/thunderbird/lib/thunderbird-%%TBVER%%/TestGtkEmbed
-lib/thunderbird/lib/thunderbird-%%TBVER%%/chrome/US.jar
-lib/thunderbird/lib/thunderbird-%%TBVER%%/chrome/chrome.rdf
-lib/thunderbird/lib/thunderbird-%%TBVER%%/chrome/chromelist.txt
-lib/thunderbird/lib/thunderbird-%%TBVER%%/chrome/classic.jar
-lib/thunderbird/lib/thunderbird-%%TBVER%%/chrome/comm.jar
-lib/thunderbird/lib/thunderbird-%%TBVER%%/chrome/embed-sample.jar
-lib/thunderbird/lib/thunderbird-%%TBVER%%/chrome/en-US.jar
-lib/thunderbird/lib/thunderbird-%%TBVER%%/chrome/en-unix.jar
-lib/thunderbird/lib/thunderbird-%%TBVER%%/chrome/icons/default/abcardWindow.xpm
-lib/thunderbird/lib/thunderbird-%%TBVER%%/chrome/icons/default/abcardWindow16.xpm
-lib/thunderbird/lib/thunderbird-%%TBVER%%/chrome/icons/default/addressbookWindow.xpm
-lib/thunderbird/lib/thunderbird-%%TBVER%%/chrome/icons/default/addressbookWindow16.xpm
-lib/thunderbird/lib/thunderbird-%%TBVER%%/chrome/icons/default/default.xpm
-lib/thunderbird/lib/thunderbird-%%TBVER%%/chrome/icons/default/messengerWindow.xpm
-lib/thunderbird/lib/thunderbird-%%TBVER%%/chrome/icons/default/messengerWindow16.xpm
-lib/thunderbird/lib/thunderbird-%%TBVER%%/chrome/icons/default/msgcomposeWindow.xpm
-lib/thunderbird/lib/thunderbird-%%TBVER%%/chrome/icons/default/msgcomposeWindow16.xpm
-lib/thunderbird/lib/thunderbird-%%TBVER%%/chrome/installed-chrome.txt
-lib/thunderbird/lib/thunderbird-%%TBVER%%/chrome/messenger.jar
-lib/thunderbird/lib/thunderbird-%%TBVER%%/chrome/offline.jar
-lib/thunderbird/lib/thunderbird-%%TBVER%%/chrome/overlayinfo/communicator/content/overlays.rdf
-lib/thunderbird/lib/thunderbird-%%TBVER%%/chrome/overlayinfo/cookie/content/overlays.rdf
-lib/thunderbird/lib/thunderbird-%%TBVER%%/chrome/overlayinfo/messenger/content/overlays.rdf
-lib/thunderbird/lib/thunderbird-%%TBVER%%/chrome/overlayinfo/navigator/content/overlays.rdf
-lib/thunderbird/lib/thunderbird-%%TBVER%%/chrome/pipnss.jar
-lib/thunderbird/lib/thunderbird-%%TBVER%%/chrome/pippki.jar
-lib/thunderbird/lib/thunderbird-%%TBVER%%/chrome/toolkit.jar
-lib/thunderbird/lib/thunderbird-%%TBVER%%/components/accessibility-atk.xpt
-lib/thunderbird/lib/thunderbird-%%TBVER%%/components/accessibility.xpt
-lib/thunderbird/lib/thunderbird-%%TBVER%%/components/addrbook.xpt
-lib/thunderbird/lib/thunderbird-%%TBVER%%/components/appshell.xpt
-lib/thunderbird/lib/thunderbird-%%TBVER%%/components/autocomplete.xpt
-lib/thunderbird/lib/thunderbird-%%TBVER%%/components/bookmarks.xpt
-lib/thunderbird/lib/thunderbird-%%TBVER%%/components/caps.xpt
-lib/thunderbird/lib/thunderbird-%%TBVER%%/components/chardet.xpt
-lib/thunderbird/lib/thunderbird-%%TBVER%%/components/commandhandler.xpt
-lib/thunderbird/lib/thunderbird-%%TBVER%%/components/composer.xpt
-lib/thunderbird/lib/thunderbird-%%TBVER%%/components/compreg.dat
-lib/thunderbird/lib/thunderbird-%%TBVER%%/components/content_base.xpt
-lib/thunderbird/lib/thunderbird-%%TBVER%%/components/content_html.xpt
-lib/thunderbird/lib/thunderbird-%%TBVER%%/components/content_htmldoc.xpt
-lib/thunderbird/lib/thunderbird-%%TBVER%%/components/content_xmldoc.xpt
-lib/thunderbird/lib/thunderbird-%%TBVER%%/components/content_xslt.xpt
-lib/thunderbird/lib/thunderbird-%%TBVER%%/components/docshell.xpt
-lib/thunderbird/lib/thunderbird-%%TBVER%%/components/dom.xpt
-lib/thunderbird/lib/thunderbird-%%TBVER%%/components/dom_base.xpt
-lib/thunderbird/lib/thunderbird-%%TBVER%%/components/dom_core.xpt
-lib/thunderbird/lib/thunderbird-%%TBVER%%/components/dom_css.xpt
-lib/thunderbird/lib/thunderbird-%%TBVER%%/components/dom_events.xpt
-lib/thunderbird/lib/thunderbird-%%TBVER%%/components/dom_html.xpt
-lib/thunderbird/lib/thunderbird-%%TBVER%%/components/dom_range.xpt
-lib/thunderbird/lib/thunderbird-%%TBVER%%/components/dom_stylesheets.xpt
-lib/thunderbird/lib/thunderbird-%%TBVER%%/components/dom_traversal.xpt
-lib/thunderbird/lib/thunderbird-%%TBVER%%/components/dom_views.xpt
-lib/thunderbird/lib/thunderbird-%%TBVER%%/components/dom_xbl.xpt
-lib/thunderbird/lib/thunderbird-%%TBVER%%/components/dom_xpath.xpt
-lib/thunderbird/lib/thunderbird-%%TBVER%%/components/dom_xul.xpt
-lib/thunderbird/lib/thunderbird-%%TBVER%%/components/downloadmanager.xpt
-lib/thunderbird/lib/thunderbird-%%TBVER%%/components/editor.xpt
-lib/thunderbird/lib/thunderbird-%%TBVER%%/components/embed_base.xpt
-lib/thunderbird/lib/thunderbird-%%TBVER%%/components/extensions.xpt
-lib/thunderbird/lib/thunderbird-%%TBVER%%/components/exthandler.xpt
-lib/thunderbird/lib/thunderbird-%%TBVER%%/components/filepicker.xpt
-lib/thunderbird/lib/thunderbird-%%TBVER%%/components/find.xpt
-lib/thunderbird/lib/thunderbird-%%TBVER%%/components/gfx.xpt
-lib/thunderbird/lib/thunderbird-%%TBVER%%/components/helperAppDlg.xpt
-lib/thunderbird/lib/thunderbird-%%TBVER%%/components/history.xpt
-lib/thunderbird/lib/thunderbird-%%TBVER%%/components/htmlparser.xpt
-lib/thunderbird/lib/thunderbird-%%TBVER%%/components/imglib2.xpt
-lib/thunderbird/lib/thunderbird-%%TBVER%%/components/impComm4xMail.xpt
-lib/thunderbird/lib/thunderbird-%%TBVER%%/components/import.xpt
-lib/thunderbird/lib/thunderbird-%%TBVER%%/components/intl.xpt
-lib/thunderbird/lib/thunderbird-%%TBVER%%/components/jar.xpt
-lib/thunderbird/lib/thunderbird-%%TBVER%%/components/jsconsole-clhandler.js
-lib/thunderbird/lib/thunderbird-%%TBVER%%/components/jsconsole.xpt
-lib/thunderbird/lib/thunderbird-%%TBVER%%/components/jsdservice.xpt
-lib/thunderbird/lib/thunderbird-%%TBVER%%/components/jsurl.xpt
-lib/thunderbird/lib/thunderbird-%%TBVER%%/components/layout_base.xpt
-lib/thunderbird/lib/thunderbird-%%TBVER%%/components/layout_xul.xpt
-lib/thunderbird/lib/thunderbird-%%TBVER%%/components/layout_xul_tree.xpt
-lib/thunderbird/lib/thunderbird-%%TBVER%%/components/libaccessibility.so
-lib/thunderbird/lib/thunderbird-%%TBVER%%/components/libappcomps.so
-lib/thunderbird/lib/thunderbird-%%TBVER%%/components/libcaps.so
-lib/thunderbird/lib/thunderbird-%%TBVER%%/components/libchrome.so
-lib/thunderbird/lib/thunderbird-%%TBVER%%/components/libcomposer.so
-lib/thunderbird/lib/thunderbird-%%TBVER%%/components/libdocshell.so
-lib/thunderbird/lib/thunderbird-%%TBVER%%/components/libeditor.so
-lib/thunderbird/lib/thunderbird-%%TBVER%%/components/libembedcomponents.so
-lib/thunderbird/lib/thunderbird-%%TBVER%%/components/libfileview.so
-lib/thunderbird/lib/thunderbird-%%TBVER%%/components/libgfx_gtk.so
-lib/thunderbird/lib/thunderbird-%%TBVER%%/components/libgfxps.so
-lib/thunderbird/lib/thunderbird-%%TBVER%%/components/libgfxxprint.so
-lib/thunderbird/lib/thunderbird-%%TBVER%%/components/libgklayout.so
-lib/thunderbird/lib/thunderbird-%%TBVER%%/components/libgkplugin.so
-lib/thunderbird/lib/thunderbird-%%TBVER%%/components/libhtmlpars.so
-lib/thunderbird/lib/thunderbird-%%TBVER%%/components/libi18n.so
-lib/thunderbird/lib/thunderbird-%%TBVER%%/components/libimglib2.so
-lib/thunderbird/lib/thunderbird-%%TBVER%%/components/libimport.so
-lib/thunderbird/lib/thunderbird-%%TBVER%%/components/libjar50.so
-lib/thunderbird/lib/thunderbird-%%TBVER%%/components/libjsd.so
-lib/thunderbird/lib/thunderbird-%%TBVER%%/components/libmail.so
-lib/thunderbird/lib/thunderbird-%%TBVER%%/components/libmork.so
-lib/thunderbird/lib/thunderbird-%%TBVER%%/components/libmozfind.so
-lib/thunderbird/lib/thunderbird-%%TBVER%%/components/libmozldap.so
-lib/thunderbird/lib/thunderbird-%%TBVER%%/components/libmsgsmime.so
-lib/thunderbird/lib/thunderbird-%%TBVER%%/components/libmyspell.so
-lib/thunderbird/lib/thunderbird-%%TBVER%%/components/libnecko.so
-lib/thunderbird/lib/thunderbird-%%TBVER%%/components/libnecko2.so
-lib/thunderbird/lib/thunderbird-%%TBVER%%/components/libnsappshell.so
-lib/thunderbird/lib/thunderbird-%%TBVER%%/components/libnsprefm.so
-lib/thunderbird/lib/thunderbird-%%TBVER%%/components/libpipboot.so
-lib/thunderbird/lib/thunderbird-%%TBVER%%/components/libpipnss.so
-lib/thunderbird/lib/thunderbird-%%TBVER%%/components/libpippki.so
-lib/thunderbird/lib/thunderbird-%%TBVER%%/components/libpref.so
-lib/thunderbird/lib/thunderbird-%%TBVER%%/components/libprofile.so
-lib/thunderbird/lib/thunderbird-%%TBVER%%/components/libprofilemigration.so
-lib/thunderbird/lib/thunderbird-%%TBVER%%/components/librdf.so
-lib/thunderbird/lib/thunderbird-%%TBVER%%/components/libspellchecker.so
-lib/thunderbird/lib/thunderbird-%%TBVER%%/components/libtxmgr.so
-lib/thunderbird/lib/thunderbird-%%TBVER%%/components/libuconv.so
-lib/thunderbird/lib/thunderbird-%%TBVER%%/components/libwallet.so
-lib/thunderbird/lib/thunderbird-%%TBVER%%/components/libwalletviewers.so
-lib/thunderbird/lib/thunderbird-%%TBVER%%/components/libwebbrwsr.so
-lib/thunderbird/lib/thunderbird-%%TBVER%%/components/libwidget_gtk2.so
-lib/thunderbird/lib/thunderbird-%%TBVER%%/components/libxmlextras.so
-lib/thunderbird/lib/thunderbird-%%TBVER%%/components/libxpcom_compat_c.so
-lib/thunderbird/lib/thunderbird-%%TBVER%%/components/libxpconnect.so
-lib/thunderbird/lib/thunderbird-%%TBVER%%/components/libxpinstall.so
-lib/thunderbird/lib/thunderbird-%%TBVER%%/components/libxremote_client.so
-lib/thunderbird/lib/thunderbird-%%TBVER%%/components/libxremoteservice.so
-lib/thunderbird/lib/thunderbird-%%TBVER%%/components/locale.xpt
-lib/thunderbird/lib/thunderbird-%%TBVER%%/components/lwbrk.xpt
-lib/thunderbird/lib/thunderbird-%%TBVER%%/components/mailnews.xpt
-lib/thunderbird/lib/thunderbird-%%TBVER%%/components/mailview.xpt
-lib/thunderbird/lib/thunderbird-%%TBVER%%/components/mdn-service.js
-lib/thunderbird/lib/thunderbird-%%TBVER%%/components/mime.xpt
-lib/thunderbird/lib/thunderbird-%%TBVER%%/components/mimetype.xpt
-lib/thunderbird/lib/thunderbird-%%TBVER%%/components/mozbrwsr.xpt
-lib/thunderbird/lib/thunderbird-%%TBVER%%/components/mozfind.xpt
-lib/thunderbird/lib/thunderbird-%%TBVER%%/components/mozldap.xpt
-lib/thunderbird/lib/thunderbird-%%TBVER%%/components/msgbase.xpt
-lib/thunderbird/lib/thunderbird-%%TBVER%%/components/msgcompose.xpt
-lib/thunderbird/lib/thunderbird-%%TBVER%%/components/msgdb.xpt
-lib/thunderbird/lib/thunderbird-%%TBVER%%/components/msgimap.xpt
-lib/thunderbird/lib/thunderbird-%%TBVER%%/components/msglocal.xpt
-lib/thunderbird/lib/thunderbird-%%TBVER%%/components/msgnews.xpt
-lib/thunderbird/lib/thunderbird-%%TBVER%%/components/msgsearch.xpt
-lib/thunderbird/lib/thunderbird-%%TBVER%%/components/msgsmime.xpt
-lib/thunderbird/lib/thunderbird-%%TBVER%%/components/myspell/en-US.aff
-lib/thunderbird/lib/thunderbird-%%TBVER%%/components/myspell/en-US.dic
-lib/thunderbird/lib/thunderbird-%%TBVER%%/components/necko.xpt
-lib/thunderbird/lib/thunderbird-%%TBVER%%/components/necko_about.xpt
-lib/thunderbird/lib/thunderbird-%%TBVER%%/components/necko_cache.xpt
-lib/thunderbird/lib/thunderbird-%%TBVER%%/components/necko_cookie.xpt
-lib/thunderbird/lib/thunderbird-%%TBVER%%/components/necko_data.xpt
-lib/thunderbird/lib/thunderbird-%%TBVER%%/components/necko_dns.xpt
-lib/thunderbird/lib/thunderbird-%%TBVER%%/components/necko_file.xpt
-lib/thunderbird/lib/thunderbird-%%TBVER%%/components/necko_ftp.xpt
-lib/thunderbird/lib/thunderbird-%%TBVER%%/components/necko_http.xpt
-lib/thunderbird/lib/thunderbird-%%TBVER%%/components/necko_jar.xpt
-lib/thunderbird/lib/thunderbird-%%TBVER%%/components/necko_res.xpt
-lib/thunderbird/lib/thunderbird-%%TBVER%%/components/necko_socket.xpt
-lib/thunderbird/lib/thunderbird-%%TBVER%%/components/necko_strconv.xpt
-lib/thunderbird/lib/thunderbird-%%TBVER%%/components/necko_viewsource.xpt
-lib/thunderbird/lib/thunderbird-%%TBVER%%/components/nsBackgroundUpdateService.js
-lib/thunderbird/lib/thunderbird-%%TBVER%%/components/nsCloseAllWindows.js
-lib/thunderbird/lib/thunderbird-%%TBVER%%/components/nsDownloadProgressListener.js
-lib/thunderbird/lib/thunderbird-%%TBVER%%/components/nsExtensionManager.js
-lib/thunderbird/lib/thunderbird-%%TBVER%%/components/nsFilePicker.js
-lib/thunderbird/lib/thunderbird-%%TBVER%%/components/nsHelperAppDlg.js
-lib/thunderbird/lib/thunderbird-%%TBVER%%/components/nsLDAPPrefsService.js
-lib/thunderbird/lib/thunderbird-%%TBVER%%/components/nsProgressDialog.js
-lib/thunderbird/lib/thunderbird-%%TBVER%%/components/nsProxyAutoConfig.js
-lib/thunderbird/lib/thunderbird-%%TBVER%%/components/offlineStartup.js
-lib/thunderbird/lib/thunderbird-%%TBVER%%/components/pipboot.xpt
-lib/thunderbird/lib/thunderbird-%%TBVER%%/components/pipnss.xpt
-lib/thunderbird/lib/thunderbird-%%TBVER%%/components/pippki.xpt
-lib/thunderbird/lib/thunderbird-%%TBVER%%/components/plugin.xpt
-lib/thunderbird/lib/thunderbird-%%TBVER%%/components/pref.xpt
-lib/thunderbird/lib/thunderbird-%%TBVER%%/components/prefetch.xpt
-lib/thunderbird/lib/thunderbird-%%TBVER%%/components/prefmigr.xpt
-lib/thunderbird/lib/thunderbird-%%TBVER%%/components/profile.xpt
-lib/thunderbird/lib/thunderbird-%%TBVER%%/components/progressDlg.xpt
-lib/thunderbird/lib/thunderbird-%%TBVER%%/components/proxyObjInst.xpt
-lib/thunderbird/lib/thunderbird-%%TBVER%%/components/rdf.xpt
-lib/thunderbird/lib/thunderbird-%%TBVER%%/components/shistory.xpt
-lib/thunderbird/lib/thunderbird-%%TBVER%%/components/sidebar.xpt
-lib/thunderbird/lib/thunderbird-%%TBVER%%/components/signonviewer.xpt
-lib/thunderbird/lib/thunderbird-%%TBVER%%/components/smime-service.js
-lib/thunderbird/lib/thunderbird-%%TBVER%%/components/spellchecker.xpt
-lib/thunderbird/lib/thunderbird-%%TBVER%%/components/toolkitprofile.xpt
-lib/thunderbird/lib/thunderbird-%%TBVER%%/components/txmgr.xpt
-lib/thunderbird/lib/thunderbird-%%TBVER%%/components/txtsvc.xpt
-lib/thunderbird/lib/thunderbird-%%TBVER%%/components/uconv.xpt
-lib/thunderbird/lib/thunderbird-%%TBVER%%/components/unicharutil.xpt
-lib/thunderbird/lib/thunderbird-%%TBVER%%/components/update.xpt
-lib/thunderbird/lib/thunderbird-%%TBVER%%/components/uriloader.xpt
-lib/thunderbird/lib/thunderbird-%%TBVER%%/components/wallet.xpt
-lib/thunderbird/lib/thunderbird-%%TBVER%%/components/walleteditor.xpt
-lib/thunderbird/lib/thunderbird-%%TBVER%%/components/walletpreview.xpt
-lib/thunderbird/lib/thunderbird-%%TBVER%%/components/webBrowser_core.xpt
-lib/thunderbird/lib/thunderbird-%%TBVER%%/components/webbrowserpersist.xpt
-lib/thunderbird/lib/thunderbird-%%TBVER%%/components/webshell_idls.xpt
-lib/thunderbird/lib/thunderbird-%%TBVER%%/components/widget.xpt
-lib/thunderbird/lib/thunderbird-%%TBVER%%/components/windowds.xpt
-lib/thunderbird/lib/thunderbird-%%TBVER%%/components/windowwatcher.xpt
-lib/thunderbird/lib/thunderbird-%%TBVER%%/components/xmlextras.xpt
-lib/thunderbird/lib/thunderbird-%%TBVER%%/components/xpcom_base.xpt
-lib/thunderbird/lib/thunderbird-%%TBVER%%/components/xpcom_components.xpt
-lib/thunderbird/lib/thunderbird-%%TBVER%%/components/xpcom_ds.xpt
-lib/thunderbird/lib/thunderbird-%%TBVER%%/components/xpcom_io.xpt
-lib/thunderbird/lib/thunderbird-%%TBVER%%/components/xpcom_obsolete.xpt
-lib/thunderbird/lib/thunderbird-%%TBVER%%/components/xpcom_threads.xpt
-lib/thunderbird/lib/thunderbird-%%TBVER%%/components/xpcom_xpti.xpt
-lib/thunderbird/lib/thunderbird-%%TBVER%%/components/xpconnect.xpt
-lib/thunderbird/lib/thunderbird-%%TBVER%%/components/xpinstall.xpt
-lib/thunderbird/lib/thunderbird-%%TBVER%%/components/xpti.dat
-lib/thunderbird/lib/thunderbird-%%TBVER%%/components/xremoteservice.xpt
-lib/thunderbird/lib/thunderbird-%%TBVER%%/components/xuldoc.xpt
-lib/thunderbird/lib/thunderbird-%%TBVER%%/components/xultmpl.xpt
-lib/thunderbird/lib/thunderbird-%%TBVER%%/defaults/messenger/US/mailViews.dat
-lib/thunderbird/lib/thunderbird-%%TBVER%%/defaults/messenger/mailViews.dat
-lib/thunderbird/lib/thunderbird-%%TBVER%%/defaults/pref/composer.js
-lib/thunderbird/lib/thunderbird-%%TBVER%%/defaults/pref/mailnews.js
-lib/thunderbird/lib/thunderbird-%%TBVER%%/defaults/pref/mdn.js
-lib/thunderbird/lib/thunderbird-%%TBVER%%/defaults/pref/smime.js
-lib/thunderbird/lib/thunderbird-%%TBVER%%/defaults/pref/thunderbird.js
-lib/thunderbird/lib/thunderbird-%%TBVER%%/defaults/profile/US/bookmarks.html
-lib/thunderbird/lib/thunderbird-%%TBVER%%/defaults/profile/US/chrome/userChrome-example.css
-lib/thunderbird/lib/thunderbird-%%TBVER%%/defaults/profile/US/chrome/userContent-example.css
-lib/thunderbird/lib/thunderbird-%%TBVER%%/defaults/profile/US/localstore.rdf
-lib/thunderbird/lib/thunderbird-%%TBVER%%/defaults/profile/US/mimeTypes.rdf
-lib/thunderbird/lib/thunderbird-%%TBVER%%/defaults/profile/US/panels.rdf
-lib/thunderbird/lib/thunderbird-%%TBVER%%/defaults/profile/US/search.rdf
-lib/thunderbird/lib/thunderbird-%%TBVER%%/defaults/profile/bookmarks.html
-lib/thunderbird/lib/thunderbird-%%TBVER%%/defaults/profile/chrome/userChrome-example.css
-lib/thunderbird/lib/thunderbird-%%TBVER%%/defaults/profile/chrome/userContent-example.css
-lib/thunderbird/lib/thunderbird-%%TBVER%%/defaults/profile/extensions/Extensions.rdf
-lib/thunderbird/lib/thunderbird-%%TBVER%%/defaults/profile/extensions/installed-extensions.txt
-lib/thunderbird/lib/thunderbird-%%TBVER%%/defaults/profile/extensions/{972ce4c6-7e08-4474-a285-3208198ce6fd}/install.rdf
-lib/thunderbird/lib/thunderbird-%%TBVER%%/defaults/profile/localstore.rdf
-lib/thunderbird/lib/thunderbird-%%TBVER%%/defaults/profile/mimeTypes.rdf
-lib/thunderbird/lib/thunderbird-%%TBVER%%/defaults/profile/panels.rdf
-lib/thunderbird/lib/thunderbird-%%TBVER%%/defaults/profile/search.rdf
-lib/thunderbird/lib/thunderbird-%%TBVER%%/defaults/wallet/DistinguishedSchema.tbl
-lib/thunderbird/lib/thunderbird-%%TBVER%%/defaults/wallet/FieldSchema.tbl
-lib/thunderbird/lib/thunderbird-%%TBVER%%/defaults/wallet/PositionalSchema.tbl
-lib/thunderbird/lib/thunderbird-%%TBVER%%/defaults/wallet/SchemaConcat.tbl
-lib/thunderbird/lib/thunderbird-%%TBVER%%/defaults/wallet/SchemaStrings.tbl
-lib/thunderbird/lib/thunderbird-%%TBVER%%/defaults/wallet/StateSchema.tbl
-lib/thunderbird/lib/thunderbird-%%TBVER%%/defaults/wallet/VcardSchema.tbl
-lib/thunderbird/lib/thunderbird-%%TBVER%%/extensions.port/Extensions.rdf
-lib/thunderbird/lib/thunderbird-%%TBVER%%/extensions/Extensions.rdf
-lib/thunderbird/lib/thunderbird-%%TBVER%%/extensions/installed-extensions-processed.txt
-lib/thunderbird/lib/thunderbird-%%TBVER%%/extensions/{972ce4c6-7e08-4474-a285-3208198ce6fd}/install.rdf
-lib/thunderbird/lib/thunderbird-%%TBVER%%/greprefs/all.js
-lib/thunderbird/lib/thunderbird-%%TBVER%%/greprefs/security-prefs.js
-lib/thunderbird/lib/thunderbird-%%TBVER%%/greprefs/xpinstall.js
-lib/thunderbird/lib/thunderbird-%%TBVER%%/icons/default.xpm
-lib/thunderbird/lib/thunderbird-%%TBVER%%/icons/mozicon16.xpm
-lib/thunderbird/lib/thunderbird-%%TBVER%%/icons/mozicon50.xpm
-lib/thunderbird/lib/thunderbird-%%TBVER%%/init.d/README
-lib/thunderbird/lib/thunderbird-%%TBVER%%/libgkgfx.so
-lib/thunderbird/lib/thunderbird-%%TBVER%%/libgtkembedmoz.so
-lib/thunderbird/lib/thunderbird-%%TBVER%%/libgtkxtbin.so
-lib/thunderbird/lib/thunderbird-%%TBVER%%/libldap50.so
-lib/thunderbird/lib/thunderbird-%%TBVER%%/libmozjs.so
-lib/thunderbird/lib/thunderbird-%%TBVER%%/libnspr4.so
-lib/thunderbird/lib/thunderbird-%%TBVER%%/libnss3.so
-lib/thunderbird/lib/thunderbird-%%TBVER%%/libnssckbi.so
-lib/thunderbird/lib/thunderbird-%%TBVER%%/libplc4.so
-lib/thunderbird/lib/thunderbird-%%TBVER%%/libplds4.so
-lib/thunderbird/lib/thunderbird-%%TBVER%%/libprldap50.so
-lib/thunderbird/lib/thunderbird-%%TBVER%%/libsmime3.so
-lib/thunderbird/lib/thunderbird-%%TBVER%%/libsoftokn3.chk
-lib/thunderbird/lib/thunderbird-%%TBVER%%/libsoftokn3.so
-lib/thunderbird/lib/thunderbird-%%TBVER%%/libssl3.so
-lib/thunderbird/lib/thunderbird-%%TBVER%%/libxlibrgb.so
-lib/thunderbird/lib/thunderbird-%%TBVER%%/libxpcom.so
-lib/thunderbird/lib/thunderbird-%%TBVER%%/libxpcom_compat.so
-lib/thunderbird/lib/thunderbird-%%TBVER%%/libxpistub.so
-lib/thunderbird/lib/thunderbird-%%TBVER%%/mozilla-xremote-client
-lib/thunderbird/lib/thunderbird-%%TBVER%%/plugins/libnullplugin.so
-lib/thunderbird/lib/thunderbird-%%TBVER%%/regchrome
-lib/thunderbird/lib/thunderbird-%%TBVER%%/regxpcom
-lib/thunderbird/lib/thunderbird-%%TBVER%%/res/EditorOverride.css
-lib/thunderbird/lib/thunderbird-%%TBVER%%/res/arrow.gif
-lib/thunderbird/lib/thunderbird-%%TBVER%%/res/arrowd.gif
-lib/thunderbird/lib/thunderbird-%%TBVER%%/res/broken-image.gif
-lib/thunderbird/lib/thunderbird-%%TBVER%%/res/builtin/htmlBindings.xml
-lib/thunderbird/lib/thunderbird-%%TBVER%%/res/builtin/platformHTMLBindings.xml
-lib/thunderbird/lib/thunderbird-%%TBVER%%/res/charsetData.properties
-lib/thunderbird/lib/thunderbird-%%TBVER%%/res/charsetalias.properties
-lib/thunderbird/lib/thunderbird-%%TBVER%%/res/cmessage.txt
-lib/thunderbird/lib/thunderbird-%%TBVER%%/res/dtd/xhtml11.dtd
-lib/thunderbird/lib/thunderbird-%%TBVER%%/res/entityTables/html40Latin1.properties
-lib/thunderbird/lib/thunderbird-%%TBVER%%/res/entityTables/html40Special.properties
-lib/thunderbird/lib/thunderbird-%%TBVER%%/res/entityTables/html40Symbols.properties
-lib/thunderbird/lib/thunderbird-%%TBVER%%/res/entityTables/htmlEntityVersions.properties
-lib/thunderbird/lib/thunderbird-%%TBVER%%/res/entityTables/transliterate.properties
-lib/thunderbird/lib/thunderbird-%%TBVER%%/res/fonts/fontEncoding.properties
-lib/thunderbird/lib/thunderbird-%%TBVER%%/res/forms.css
-lib/thunderbird/lib/thunderbird-%%TBVER%%/res/grabber.gif
-lib/thunderbird/lib/thunderbird-%%TBVER%%/res/html.css
-lib/thunderbird/lib/thunderbird-%%TBVER%%/res/html/gopher-audio.gif
-lib/thunderbird/lib/thunderbird-%%TBVER%%/res/html/gopher-binary.gif
-lib/thunderbird/lib/thunderbird-%%TBVER%%/res/html/gopher-find.gif
-lib/thunderbird/lib/thunderbird-%%TBVER%%/res/html/gopher-image.gif
-lib/thunderbird/lib/thunderbird-%%TBVER%%/res/html/gopher-menu.gif
-lib/thunderbird/lib/thunderbird-%%TBVER%%/res/html/gopher-movie.gif
-lib/thunderbird/lib/thunderbird-%%TBVER%%/res/html/gopher-sound.gif
-lib/thunderbird/lib/thunderbird-%%TBVER%%/res/html/gopher-telnet.gif
-lib/thunderbird/lib/thunderbird-%%TBVER%%/res/html/gopher-text.gif
-lib/thunderbird/lib/thunderbird-%%TBVER%%/res/html/gopher-unknown.gif
-lib/thunderbird/lib/thunderbird-%%TBVER%%/res/langGroups.properties
-lib/thunderbird/lib/thunderbird-%%TBVER%%/res/language.properties
-lib/thunderbird/lib/thunderbird-%%TBVER%%/res/loading-image.gif
-lib/thunderbird/lib/thunderbird-%%TBVER%%/res/platform-forms.css
-lib/thunderbird/lib/thunderbird-%%TBVER%%/res/quirk.css
-lib/thunderbird/lib/thunderbird-%%TBVER%%/res/rdf/dom-test-4.css
-lib/thunderbird/lib/thunderbird-%%TBVER%%/res/rdf/folder-closed.gif
-lib/thunderbird/lib/thunderbird-%%TBVER%%/res/rdf/folder-open.gif
-lib/thunderbird/lib/thunderbird-%%TBVER%%/res/rdf/ignore-test.xul
-lib/thunderbird/lib/thunderbird-%%TBVER%%/res/rdf/loading.gif
-lib/thunderbird/lib/thunderbird-%%TBVER%%/res/sample.unixpsfonts.properties
-lib/thunderbird/lib/thunderbird-%%TBVER%%/res/samples/Anieyes.gif
-lib/thunderbird/lib/thunderbird-%%TBVER%%/res/samples/aform.css
-lib/thunderbird/lib/thunderbird-%%TBVER%%/res/samples/beeptest.html
-lib/thunderbird/lib/thunderbird-%%TBVER%%/res/samples/bform.css
-lib/thunderbird/lib/thunderbird-%%TBVER%%/res/samples/bg.jpg
-lib/thunderbird/lib/thunderbird-%%TBVER%%/res/samples/cform.css
-lib/thunderbird/lib/thunderbird-%%TBVER%%/res/samples/checkboxTest.xul
-lib/thunderbird/lib/thunderbird-%%TBVER%%/res/samples/colorpicker.xul
-lib/thunderbird/lib/thunderbird-%%TBVER%%/res/samples/demoform.css
-lib/thunderbird/lib/thunderbird-%%TBVER%%/res/samples/dexopenchrome.xul
-lib/thunderbird/lib/thunderbird-%%TBVER%%/res/samples/dexparamdialog.html
-lib/thunderbird/lib/thunderbird-%%TBVER%%/res/samples/dexparamdialog.xul
-lib/thunderbird/lib/thunderbird-%%TBVER%%/res/samples/find.html
-lib/thunderbird/lib/thunderbird-%%TBVER%%/res/samples/gear1.gif
-lib/thunderbird/lib/thunderbird-%%TBVER%%/res/samples/hidetoolicon.css
-lib/thunderbird/lib/thunderbird-%%TBVER%%/res/samples/hidetoolicon.xul
-lib/thunderbird/lib/thunderbird-%%TBVER%%/res/samples/image_props.html
-lib/thunderbird/lib/thunderbird-%%TBVER%%/res/samples/mozform.css
-lib/thunderbird/lib/thunderbird-%%TBVER%%/res/samples/printsetup.html
-lib/thunderbird/lib/thunderbird-%%TBVER%%/res/samples/raptor.jpg
-lib/thunderbird/lib/thunderbird-%%TBVER%%/res/samples/rock_gra.gif
-lib/thunderbird/lib/thunderbird-%%TBVER%%/res/samples/sampleimages/bongo.gif
-lib/thunderbird/lib/thunderbird-%%TBVER%%/res/samples/sampleimages/down.gif
-lib/thunderbird/lib/thunderbird-%%TBVER%%/res/samples/sampleimages/left.gif
-lib/thunderbird/lib/thunderbird-%%TBVER%%/res/samples/sampleimages/right.gif
-lib/thunderbird/lib/thunderbird-%%TBVER%%/res/samples/sampleimages/up.gif
-lib/thunderbird/lib/thunderbird-%%TBVER%%/res/samples/scrollbarTest1.xul
-lib/thunderbird/lib/thunderbird-%%TBVER%%/res/samples/scrollbarTest2.xul
-lib/thunderbird/lib/thunderbird-%%TBVER%%/res/samples/sliderTest1.xul
-lib/thunderbird/lib/thunderbird-%%TBVER%%/res/samples/soundtest.html
-lib/thunderbird/lib/thunderbird-%%TBVER%%/res/samples/tab.xul
-lib/thunderbird/lib/thunderbird-%%TBVER%%/res/samples/test.wav
-lib/thunderbird/lib/thunderbird-%%TBVER%%/res/samples/test0.html
-lib/thunderbird/lib/thunderbird-%%TBVER%%/res/samples/test1.html
-lib/thunderbird/lib/thunderbird-%%TBVER%%/res/samples/test10.html
-lib/thunderbird/lib/thunderbird-%%TBVER%%/res/samples/test11.html
-lib/thunderbird/lib/thunderbird-%%TBVER%%/res/samples/test12.html
-lib/thunderbird/lib/thunderbird-%%TBVER%%/res/samples/test13.html
-lib/thunderbird/lib/thunderbird-%%TBVER%%/res/samples/test14.html
-lib/thunderbird/lib/thunderbird-%%TBVER%%/res/samples/test15.html
-lib/thunderbird/lib/thunderbird-%%TBVER%%/res/samples/test16.html
-lib/thunderbird/lib/thunderbird-%%TBVER%%/res/samples/test2.html
-lib/thunderbird/lib/thunderbird-%%TBVER%%/res/samples/test3.html
-lib/thunderbird/lib/thunderbird-%%TBVER%%/res/samples/test4.html
-lib/thunderbird/lib/thunderbird-%%TBVER%%/res/samples/test5.html
-lib/thunderbird/lib/thunderbird-%%TBVER%%/res/samples/test6.html
-lib/thunderbird/lib/thunderbird-%%TBVER%%/res/samples/test7.html
-lib/thunderbird/lib/thunderbird-%%TBVER%%/res/samples/test8-1.html
-lib/thunderbird/lib/thunderbird-%%TBVER%%/res/samples/test8.html
-lib/thunderbird/lib/thunderbird-%%TBVER%%/res/samples/test8dom.html
-lib/thunderbird/lib/thunderbird-%%TBVER%%/res/samples/test8sca.html
-lib/thunderbird/lib/thunderbird-%%TBVER%%/res/samples/test8siz.html
-lib/thunderbird/lib/thunderbird-%%TBVER%%/res/samples/test8tab.html
-lib/thunderbird/lib/thunderbird-%%TBVER%%/res/samples/test9.html
-lib/thunderbird/lib/thunderbird-%%TBVER%%/res/samples/test9a.html
-lib/thunderbird/lib/thunderbird-%%TBVER%%/res/samples/test9b.html
-lib/thunderbird/lib/thunderbird-%%TBVER%%/res/samples/test_ed.html
-lib/thunderbird/lib/thunderbird-%%TBVER%%/res/samples/test_form.html
-lib/thunderbird/lib/thunderbird-%%TBVER%%/res/samples/test_gfx.html
-lib/thunderbird/lib/thunderbird-%%TBVER%%/res/samples/test_lbox.html
-lib/thunderbird/lib/thunderbird-%%TBVER%%/res/samples/test_pr.html
-lib/thunderbird/lib/thunderbird-%%TBVER%%/res/samples/test_weight.html
-lib/thunderbird/lib/thunderbird-%%TBVER%%/res/samples/toolbarTest1.xul
-lib/thunderbird/lib/thunderbird-%%TBVER%%/res/samples/treeTest1.css
-lib/thunderbird/lib/thunderbird-%%TBVER%%/res/samples/treeTest1.xul
-lib/thunderbird/lib/thunderbird-%%TBVER%%/res/samples/widgets.xul
-lib/thunderbird/lib/thunderbird-%%TBVER%%/res/samples/xpmenu.xul
-lib/thunderbird/lib/thunderbird-%%TBVER%%/res/samples/xulTest.css
-lib/thunderbird/lib/thunderbird-%%TBVER%%/res/table-add-column-after-active.gif
-lib/thunderbird/lib/thunderbird-%%TBVER%%/res/table-add-column-after-hover.gif
-lib/thunderbird/lib/thunderbird-%%TBVER%%/res/table-add-column-after.gif
-lib/thunderbird/lib/thunderbird-%%TBVER%%/res/table-add-column-before-active.gif
-lib/thunderbird/lib/thunderbird-%%TBVER%%/res/table-add-column-before-hover.gif
-lib/thunderbird/lib/thunderbird-%%TBVER%%/res/table-add-column-before.gif
-lib/thunderbird/lib/thunderbird-%%TBVER%%/res/table-add-row-after-active.gif
-lib/thunderbird/lib/thunderbird-%%TBVER%%/res/table-add-row-after-hover.gif
-lib/thunderbird/lib/thunderbird-%%TBVER%%/res/table-add-row-after.gif
-lib/thunderbird/lib/thunderbird-%%TBVER%%/res/table-add-row-before-active.gif
-lib/thunderbird/lib/thunderbird-%%TBVER%%/res/table-add-row-before-hover.gif
-lib/thunderbird/lib/thunderbird-%%TBVER%%/res/table-add-row-before.gif
-lib/thunderbird/lib/thunderbird-%%TBVER%%/res/table-remove-column-active.gif
-lib/thunderbird/lib/thunderbird-%%TBVER%%/res/table-remove-column-hover.gif
-lib/thunderbird/lib/thunderbird-%%TBVER%%/res/table-remove-column.gif
-lib/thunderbird/lib/thunderbird-%%TBVER%%/res/table-remove-row-active.gif
-lib/thunderbird/lib/thunderbird-%%TBVER%%/res/table-remove-row-hover.gif
-lib/thunderbird/lib/thunderbird-%%TBVER%%/res/table-remove-row.gif
-lib/thunderbird/lib/thunderbird-%%TBVER%%/res/throbber/anim.gif
-lib/thunderbird/lib/thunderbird-%%TBVER%%/res/throbber/anims00.gif
-lib/thunderbird/lib/thunderbird-%%TBVER%%/res/throbber/anims01.gif
-lib/thunderbird/lib/thunderbird-%%TBVER%%/res/throbber/anims02.gif
-lib/thunderbird/lib/thunderbird-%%TBVER%%/res/throbber/anims03.gif
-lib/thunderbird/lib/thunderbird-%%TBVER%%/res/throbber/anims04.gif
-lib/thunderbird/lib/thunderbird-%%TBVER%%/res/throbber/anims05.gif
-lib/thunderbird/lib/thunderbird-%%TBVER%%/res/throbber/anims06.gif
-lib/thunderbird/lib/thunderbird-%%TBVER%%/res/throbber/anims07.gif
-lib/thunderbird/lib/thunderbird-%%TBVER%%/res/throbber/anims08.gif
-lib/thunderbird/lib/thunderbird-%%TBVER%%/res/throbber/anims09.gif
-lib/thunderbird/lib/thunderbird-%%TBVER%%/res/throbber/anims10.gif
-lib/thunderbird/lib/thunderbird-%%TBVER%%/res/throbber/anims11.gif
-lib/thunderbird/lib/thunderbird-%%TBVER%%/res/throbber/anims12.gif
-lib/thunderbird/lib/thunderbird-%%TBVER%%/res/throbber/anims13.gif
-lib/thunderbird/lib/thunderbird-%%TBVER%%/res/throbber/anims14.gif
-lib/thunderbird/lib/thunderbird-%%TBVER%%/res/throbber/anims15.gif
-lib/thunderbird/lib/thunderbird-%%TBVER%%/res/throbber/anims16.gif
-lib/thunderbird/lib/thunderbird-%%TBVER%%/res/throbber/anims17.gif
-lib/thunderbird/lib/thunderbird-%%TBVER%%/res/throbber/anims18.gif
-lib/thunderbird/lib/thunderbird-%%TBVER%%/res/throbber/anims19.gif
-lib/thunderbird/lib/thunderbird-%%TBVER%%/res/throbber/anims20.gif
-lib/thunderbird/lib/thunderbird-%%TBVER%%/res/throbber/anims21.gif
-lib/thunderbird/lib/thunderbird-%%TBVER%%/res/throbber/anims22.gif
-lib/thunderbird/lib/thunderbird-%%TBVER%%/res/throbber/anims23.gif
-lib/thunderbird/lib/thunderbird-%%TBVER%%/res/throbber/anims24.gif
-lib/thunderbird/lib/thunderbird-%%TBVER%%/res/throbber/anims25.gif
-lib/thunderbird/lib/thunderbird-%%TBVER%%/res/throbber/anims26.gif
-lib/thunderbird/lib/thunderbird-%%TBVER%%/res/throbber/anims27.gif
-lib/thunderbird/lib/thunderbird-%%TBVER%%/res/throbber/anims28.gif
-lib/thunderbird/lib/thunderbird-%%TBVER%%/res/throbber/anims29.gif
-lib/thunderbird/lib/thunderbird-%%TBVER%%/res/ua.css
-lib/thunderbird/lib/thunderbird-%%TBVER%%/res/unixcharset.properties
-lib/thunderbird/lib/thunderbird-%%TBVER%%/res/viewer.properties
-lib/thunderbird/lib/thunderbird-%%TBVER%%/res/viewsource.css
-lib/thunderbird/lib/thunderbird-%%TBVER%%/run-mozilla.sh
-lib/thunderbird/lib/thunderbird-%%TBVER%%/thunderbird-bin
-lib/thunderbird/lib/thunderbird-%%TBVER%%/xpcshell
-lib/thunderbird/lib/thunderbird-%%TBVER%%/xpicleanup
-lib/thunderbird/lib/thunderbird-%%TBVER%%/xpidl
-lib/thunderbird/lib/thunderbird-%%TBVER%%/xpt_dump
-lib/thunderbird/lib/thunderbird-%%TBVER%%/xpt_link
+lib/thunderbird/lib/thunderbird-0.7.3/TestGtkEmbed
+lib/thunderbird/lib/thunderbird-0.7.3/chrome/US.jar
+lib/thunderbird/lib/thunderbird-0.7.3/chrome/chrome.rdf
+lib/thunderbird/lib/thunderbird-0.7.3/chrome/chromelist.txt
+lib/thunderbird/lib/thunderbird-0.7.3/chrome/classic.jar
+lib/thunderbird/lib/thunderbird-0.7.3/chrome/comm.jar
+lib/thunderbird/lib/thunderbird-0.7.3/chrome/embed-sample.jar
+lib/thunderbird/lib/thunderbird-0.7.3/chrome/en-US.jar
+lib/thunderbird/lib/thunderbird-0.7.3/chrome/en-unix.jar
+lib/thunderbird/lib/thunderbird-0.7.3/chrome/icons/default/abcardWindow.xpm
+lib/thunderbird/lib/thunderbird-0.7.3/chrome/icons/default/abcardWindow16.xpm
+lib/thunderbird/lib/thunderbird-0.7.3/chrome/icons/default/addressbookWindow.xpm
+lib/thunderbird/lib/thunderbird-0.7.3/chrome/icons/default/addressbookWindow16.xpm
+lib/thunderbird/lib/thunderbird-0.7.3/chrome/icons/default/default.xpm
+lib/thunderbird/lib/thunderbird-0.7.3/chrome/icons/default/messengerWindow.xpm
+lib/thunderbird/lib/thunderbird-0.7.3/chrome/icons/default/messengerWindow16.xpm
+lib/thunderbird/lib/thunderbird-0.7.3/chrome/icons/default/msgcomposeWindow.xpm
+lib/thunderbird/lib/thunderbird-0.7.3/chrome/icons/default/msgcomposeWindow16.xpm
+lib/thunderbird/lib/thunderbird-0.7.3/chrome/installed-chrome.txt
+lib/thunderbird/lib/thunderbird-0.7.3/chrome/messenger.jar
+lib/thunderbird/lib/thunderbird-0.7.3/chrome/offline.jar
+lib/thunderbird/lib/thunderbird-0.7.3/chrome/overlayinfo/communicator/content/overlays.rdf
+lib/thunderbird/lib/thunderbird-0.7.3/chrome/overlayinfo/cookie/content/overlays.rdf
+lib/thunderbird/lib/thunderbird-0.7.3/chrome/overlayinfo/messenger/content/overlays.rdf
+lib/thunderbird/lib/thunderbird-0.7.3/chrome/overlayinfo/navigator/content/overlays.rdf
+lib/thunderbird/lib/thunderbird-0.7.3/chrome/pipnss.jar
+lib/thunderbird/lib/thunderbird-0.7.3/chrome/pippki.jar
+lib/thunderbird/lib/thunderbird-0.7.3/chrome/toolkit.jar
+lib/thunderbird/lib/thunderbird-0.7.3/components/accessibility-atk.xpt
+lib/thunderbird/lib/thunderbird-0.7.3/components/accessibility.xpt
+lib/thunderbird/lib/thunderbird-0.7.3/components/addrbook.xpt
+lib/thunderbird/lib/thunderbird-0.7.3/components/appshell.xpt
+lib/thunderbird/lib/thunderbird-0.7.3/components/autocomplete.xpt
+lib/thunderbird/lib/thunderbird-0.7.3/components/bookmarks.xpt
+lib/thunderbird/lib/thunderbird-0.7.3/components/caps.xpt
+lib/thunderbird/lib/thunderbird-0.7.3/components/chardet.xpt
+lib/thunderbird/lib/thunderbird-0.7.3/components/commandhandler.xpt
+lib/thunderbird/lib/thunderbird-0.7.3/components/composer.xpt
+lib/thunderbird/lib/thunderbird-0.7.3/components/compreg.dat
+lib/thunderbird/lib/thunderbird-0.7.3/components/content_base.xpt
+lib/thunderbird/lib/thunderbird-0.7.3/components/content_html.xpt
+lib/thunderbird/lib/thunderbird-0.7.3/components/content_htmldoc.xpt
+lib/thunderbird/lib/thunderbird-0.7.3/components/content_xmldoc.xpt
+lib/thunderbird/lib/thunderbird-0.7.3/components/content_xslt.xpt
+lib/thunderbird/lib/thunderbird-0.7.3/components/docshell.xpt
+lib/thunderbird/lib/thunderbird-0.7.3/components/dom.xpt
+lib/thunderbird/lib/thunderbird-0.7.3/components/dom_base.xpt
+lib/thunderbird/lib/thunderbird-0.7.3/components/dom_core.xpt
+lib/thunderbird/lib/thunderbird-0.7.3/components/dom_css.xpt
+lib/thunderbird/lib/thunderbird-0.7.3/components/dom_events.xpt
+lib/thunderbird/lib/thunderbird-0.7.3/components/dom_html.xpt
+lib/thunderbird/lib/thunderbird-0.7.3/components/dom_range.xpt
+lib/thunderbird/lib/thunderbird-0.7.3/components/dom_stylesheets.xpt
+lib/thunderbird/lib/thunderbird-0.7.3/components/dom_traversal.xpt
+lib/thunderbird/lib/thunderbird-0.7.3/components/dom_views.xpt
+lib/thunderbird/lib/thunderbird-0.7.3/components/dom_xbl.xpt
+lib/thunderbird/lib/thunderbird-0.7.3/components/dom_xpath.xpt
+lib/thunderbird/lib/thunderbird-0.7.3/components/dom_xul.xpt
+lib/thunderbird/lib/thunderbird-0.7.3/components/downloadmanager.xpt
+lib/thunderbird/lib/thunderbird-0.7.3/components/editor.xpt
+lib/thunderbird/lib/thunderbird-0.7.3/components/embed_base.xpt
+lib/thunderbird/lib/thunderbird-0.7.3/components/extensions.xpt
+lib/thunderbird/lib/thunderbird-0.7.3/components/exthandler.xpt
+lib/thunderbird/lib/thunderbird-0.7.3/components/filepicker.xpt
+lib/thunderbird/lib/thunderbird-0.7.3/components/find.xpt
+lib/thunderbird/lib/thunderbird-0.7.3/components/gfx.xpt
+lib/thunderbird/lib/thunderbird-0.7.3/components/helperAppDlg.xpt
+lib/thunderbird/lib/thunderbird-0.7.3/components/history.xpt
+lib/thunderbird/lib/thunderbird-0.7.3/components/htmlparser.xpt
+lib/thunderbird/lib/thunderbird-0.7.3/components/imglib2.xpt
+lib/thunderbird/lib/thunderbird-0.7.3/components/impComm4xMail.xpt
+lib/thunderbird/lib/thunderbird-0.7.3/components/import.xpt
+lib/thunderbird/lib/thunderbird-0.7.3/components/intl.xpt
+lib/thunderbird/lib/thunderbird-0.7.3/components/jar.xpt
+lib/thunderbird/lib/thunderbird-0.7.3/components/jsconsole-clhandler.js
+lib/thunderbird/lib/thunderbird-0.7.3/components/jsconsole.xpt
+lib/thunderbird/lib/thunderbird-0.7.3/components/jsdservice.xpt
+lib/thunderbird/lib/thunderbird-0.7.3/components/jsurl.xpt
+lib/thunderbird/lib/thunderbird-0.7.3/components/layout_base.xpt
+lib/thunderbird/lib/thunderbird-0.7.3/components/layout_xul.xpt
+lib/thunderbird/lib/thunderbird-0.7.3/components/layout_xul_tree.xpt
+lib/thunderbird/lib/thunderbird-0.7.3/components/libaccessibility.so
+lib/thunderbird/lib/thunderbird-0.7.3/components/libappcomps.so
+lib/thunderbird/lib/thunderbird-0.7.3/components/libcaps.so
+lib/thunderbird/lib/thunderbird-0.7.3/components/libchrome.so
+lib/thunderbird/lib/thunderbird-0.7.3/components/libcomposer.so
+lib/thunderbird/lib/thunderbird-0.7.3/components/libdocshell.so
+lib/thunderbird/lib/thunderbird-0.7.3/components/libeditor.so
+lib/thunderbird/lib/thunderbird-0.7.3/components/libembedcomponents.so
+lib/thunderbird/lib/thunderbird-0.7.3/components/libfileview.so
+lib/thunderbird/lib/thunderbird-0.7.3/components/libgfx_gtk.so
+lib/thunderbird/lib/thunderbird-0.7.3/components/libgfxps.so
+lib/thunderbird/lib/thunderbird-0.7.3/components/libgfxxprint.so
+lib/thunderbird/lib/thunderbird-0.7.3/components/libgklayout.so
+lib/thunderbird/lib/thunderbird-0.7.3/components/libgkplugin.so
+lib/thunderbird/lib/thunderbird-0.7.3/components/libhtmlpars.so
+lib/thunderbird/lib/thunderbird-0.7.3/components/libi18n.so
+lib/thunderbird/lib/thunderbird-0.7.3/components/libimglib2.so
+lib/thunderbird/lib/thunderbird-0.7.3/components/libimport.so
+lib/thunderbird/lib/thunderbird-0.7.3/components/libjar50.so
+lib/thunderbird/lib/thunderbird-0.7.3/components/libjsd.so
+lib/thunderbird/lib/thunderbird-0.7.3/components/libmail.so
+lib/thunderbird/lib/thunderbird-0.7.3/components/libmork.so
+lib/thunderbird/lib/thunderbird-0.7.3/components/libmozfind.so
+lib/thunderbird/lib/thunderbird-0.7.3/components/libmozldap.so
+lib/thunderbird/lib/thunderbird-0.7.3/components/libmsgsmime.so
+lib/thunderbird/lib/thunderbird-0.7.3/components/libmyspell.so
+lib/thunderbird/lib/thunderbird-0.7.3/components/libnecko.so
+lib/thunderbird/lib/thunderbird-0.7.3/components/libnecko2.so
+lib/thunderbird/lib/thunderbird-0.7.3/components/libnsappshell.so
+lib/thunderbird/lib/thunderbird-0.7.3/components/libnsprefm.so
+lib/thunderbird/lib/thunderbird-0.7.3/components/libpipboot.so
+lib/thunderbird/lib/thunderbird-0.7.3/components/libpipnss.so
+lib/thunderbird/lib/thunderbird-0.7.3/components/libpippki.so
+lib/thunderbird/lib/thunderbird-0.7.3/components/libpref.so
+lib/thunderbird/lib/thunderbird-0.7.3/components/libprofile.so
+lib/thunderbird/lib/thunderbird-0.7.3/components/libprofilemigration.so
+lib/thunderbird/lib/thunderbird-0.7.3/components/librdf.so
+lib/thunderbird/lib/thunderbird-0.7.3/components/libspellchecker.so
+lib/thunderbird/lib/thunderbird-0.7.3/components/libtxmgr.so
+lib/thunderbird/lib/thunderbird-0.7.3/components/libuconv.so
+lib/thunderbird/lib/thunderbird-0.7.3/components/libwallet.so
+lib/thunderbird/lib/thunderbird-0.7.3/components/libwalletviewers.so
+lib/thunderbird/lib/thunderbird-0.7.3/components/libwebbrwsr.so
+lib/thunderbird/lib/thunderbird-0.7.3/components/libwidget_gtk2.so
+lib/thunderbird/lib/thunderbird-0.7.3/components/libxmlextras.so
+lib/thunderbird/lib/thunderbird-0.7.3/components/libxpcom_compat_c.so
+lib/thunderbird/lib/thunderbird-0.7.3/components/libxpconnect.so
+lib/thunderbird/lib/thunderbird-0.7.3/components/libxpinstall.so
+lib/thunderbird/lib/thunderbird-0.7.3/components/libxremote_client.so
+lib/thunderbird/lib/thunderbird-0.7.3/components/libxremoteservice.so
+lib/thunderbird/lib/thunderbird-0.7.3/components/locale.xpt
+lib/thunderbird/lib/thunderbird-0.7.3/components/lwbrk.xpt
+lib/thunderbird/lib/thunderbird-0.7.3/components/mailnews.xpt
+lib/thunderbird/lib/thunderbird-0.7.3/components/mailview.xpt
+lib/thunderbird/lib/thunderbird-0.7.3/components/mdn-service.js
+lib/thunderbird/lib/thunderbird-0.7.3/components/mime.xpt
+lib/thunderbird/lib/thunderbird-0.7.3/components/mimetype.xpt
+lib/thunderbird/lib/thunderbird-0.7.3/components/mozbrwsr.xpt
+lib/thunderbird/lib/thunderbird-0.7.3/components/mozfind.xpt
+lib/thunderbird/lib/thunderbird-0.7.3/components/mozldap.xpt
+lib/thunderbird/lib/thunderbird-0.7.3/components/msgbase.xpt
+lib/thunderbird/lib/thunderbird-0.7.3/components/msgcompose.xpt
+lib/thunderbird/lib/thunderbird-0.7.3/components/msgdb.xpt
+lib/thunderbird/lib/thunderbird-0.7.3/components/msgimap.xpt
+lib/thunderbird/lib/thunderbird-0.7.3/components/msglocal.xpt
+lib/thunderbird/lib/thunderbird-0.7.3/components/msgnews.xpt
+lib/thunderbird/lib/thunderbird-0.7.3/components/msgsearch.xpt
+lib/thunderbird/lib/thunderbird-0.7.3/components/msgsmime.xpt
+lib/thunderbird/lib/thunderbird-0.7.3/components/myspell/en-US.aff
+lib/thunderbird/lib/thunderbird-0.7.3/components/myspell/en-US.dic
+lib/thunderbird/lib/thunderbird-0.7.3/components/necko.xpt
+lib/thunderbird/lib/thunderbird-0.7.3/components/necko_about.xpt
+lib/thunderbird/lib/thunderbird-0.7.3/components/necko_cache.xpt
+lib/thunderbird/lib/thunderbird-0.7.3/components/necko_cookie.xpt
+lib/thunderbird/lib/thunderbird-0.7.3/components/necko_data.xpt
+lib/thunderbird/lib/thunderbird-0.7.3/components/necko_dns.xpt
+lib/thunderbird/lib/thunderbird-0.7.3/components/necko_file.xpt
+lib/thunderbird/lib/thunderbird-0.7.3/components/necko_ftp.xpt
+lib/thunderbird/lib/thunderbird-0.7.3/components/necko_http.xpt
+lib/thunderbird/lib/thunderbird-0.7.3/components/necko_jar.xpt
+lib/thunderbird/lib/thunderbird-0.7.3/components/necko_res.xpt
+lib/thunderbird/lib/thunderbird-0.7.3/components/necko_socket.xpt
+lib/thunderbird/lib/thunderbird-0.7.3/components/necko_strconv.xpt
+lib/thunderbird/lib/thunderbird-0.7.3/components/necko_viewsource.xpt
+lib/thunderbird/lib/thunderbird-0.7.3/components/nsBackgroundUpdateService.js
+lib/thunderbird/lib/thunderbird-0.7.3/components/nsCloseAllWindows.js
+lib/thunderbird/lib/thunderbird-0.7.3/components/nsDownloadProgressListener.js
+lib/thunderbird/lib/thunderbird-0.7.3/components/nsExtensionManager.js
+lib/thunderbird/lib/thunderbird-0.7.3/components/nsFilePicker.js
+lib/thunderbird/lib/thunderbird-0.7.3/components/nsHelperAppDlg.js
+lib/thunderbird/lib/thunderbird-0.7.3/components/nsLDAPPrefsService.js
+lib/thunderbird/lib/thunderbird-0.7.3/components/nsProgressDialog.js
+lib/thunderbird/lib/thunderbird-0.7.3/components/nsProxyAutoConfig.js
+lib/thunderbird/lib/thunderbird-0.7.3/components/offlineStartup.js
+lib/thunderbird/lib/thunderbird-0.7.3/components/pipboot.xpt
+lib/thunderbird/lib/thunderbird-0.7.3/components/pipnss.xpt
+lib/thunderbird/lib/thunderbird-0.7.3/components/pippki.xpt
+lib/thunderbird/lib/thunderbird-0.7.3/components/plugin.xpt
+lib/thunderbird/lib/thunderbird-0.7.3/components/pref.xpt
+lib/thunderbird/lib/thunderbird-0.7.3/components/prefetch.xpt
+lib/thunderbird/lib/thunderbird-0.7.3/components/prefmigr.xpt
+lib/thunderbird/lib/thunderbird-0.7.3/components/profile.xpt
+lib/thunderbird/lib/thunderbird-0.7.3/components/progressDlg.xpt
+lib/thunderbird/lib/thunderbird-0.7.3/components/proxyObjInst.xpt
+lib/thunderbird/lib/thunderbird-0.7.3/components/rdf.xpt
+lib/thunderbird/lib/thunderbird-0.7.3/components/shistory.xpt
+lib/thunderbird/lib/thunderbird-0.7.3/components/sidebar.xpt
+lib/thunderbird/lib/thunderbird-0.7.3/components/signonviewer.xpt
+lib/thunderbird/lib/thunderbird-0.7.3/components/smime-service.js
+lib/thunderbird/lib/thunderbird-0.7.3/components/spellchecker.xpt
+lib/thunderbird/lib/thunderbird-0.7.3/components/toolkitprofile.xpt
+lib/thunderbird/lib/thunderbird-0.7.3/components/txmgr.xpt
+lib/thunderbird/lib/thunderbird-0.7.3/components/txtsvc.xpt
+lib/thunderbird/lib/thunderbird-0.7.3/components/uconv.xpt
+lib/thunderbird/lib/thunderbird-0.7.3/components/unicharutil.xpt
+lib/thunderbird/lib/thunderbird-0.7.3/components/update.xpt
+lib/thunderbird/lib/thunderbird-0.7.3/components/uriloader.xpt
+lib/thunderbird/lib/thunderbird-0.7.3/components/wallet.xpt
+lib/thunderbird/lib/thunderbird-0.7.3/components/walleteditor.xpt
+lib/thunderbird/lib/thunderbird-0.7.3/components/walletpreview.xpt
+lib/thunderbird/lib/thunderbird-0.7.3/components/webBrowser_core.xpt
+lib/thunderbird/lib/thunderbird-0.7.3/components/webbrowserpersist.xpt
+lib/thunderbird/lib/thunderbird-0.7.3/components/webshell_idls.xpt
+lib/thunderbird/lib/thunderbird-0.7.3/components/widget.xpt
+lib/thunderbird/lib/thunderbird-0.7.3/components/windowds.xpt
+lib/thunderbird/lib/thunderbird-0.7.3/components/windowwatcher.xpt
+lib/thunderbird/lib/thunderbird-0.7.3/components/xmlextras.xpt
+lib/thunderbird/lib/thunderbird-0.7.3/components/xpcom_base.xpt
+lib/thunderbird/lib/thunderbird-0.7.3/components/xpcom_components.xpt
+lib/thunderbird/lib/thunderbird-0.7.3/components/xpcom_ds.xpt
+lib/thunderbird/lib/thunderbird-0.7.3/components/xpcom_io.xpt
+lib/thunderbird/lib/thunderbird-0.7.3/components/xpcom_obsolete.xpt
+lib/thunderbird/lib/thunderbird-0.7.3/components/xpcom_threads.xpt
+lib/thunderbird/lib/thunderbird-0.7.3/components/xpcom_xpti.xpt
+lib/thunderbird/lib/thunderbird-0.7.3/components/xpconnect.xpt
+lib/thunderbird/lib/thunderbird-0.7.3/components/xpinstall.xpt
+lib/thunderbird/lib/thunderbird-0.7.3/components/xpti.dat
+lib/thunderbird/lib/thunderbird-0.7.3/components/xremoteservice.xpt
+lib/thunderbird/lib/thunderbird-0.7.3/components/xuldoc.xpt
+lib/thunderbird/lib/thunderbird-0.7.3/components/xultmpl.xpt
+lib/thunderbird/lib/thunderbird-0.7.3/defaults/messenger/US/mailViews.dat
+lib/thunderbird/lib/thunderbird-0.7.3/defaults/messenger/mailViews.dat
+lib/thunderbird/lib/thunderbird-0.7.3/defaults/pref/composer.js
+lib/thunderbird/lib/thunderbird-0.7.3/defaults/pref/mailnews.js
+lib/thunderbird/lib/thunderbird-0.7.3/defaults/pref/mdn.js
+lib/thunderbird/lib/thunderbird-0.7.3/defaults/pref/smime.js
+lib/thunderbird/lib/thunderbird-0.7.3/defaults/pref/thunderbird.js
+lib/thunderbird/lib/thunderbird-0.7.3/defaults/profile/US/bookmarks.html
+lib/thunderbird/lib/thunderbird-0.7.3/defaults/profile/US/chrome/userChrome-example.css
+lib/thunderbird/lib/thunderbird-0.7.3/defaults/profile/US/chrome/userContent-example.css
+lib/thunderbird/lib/thunderbird-0.7.3/defaults/profile/US/localstore.rdf
+lib/thunderbird/lib/thunderbird-0.7.3/defaults/profile/US/mimeTypes.rdf
+lib/thunderbird/lib/thunderbird-0.7.3/defaults/profile/US/panels.rdf
+lib/thunderbird/lib/thunderbird-0.7.3/defaults/profile/US/search.rdf
+lib/thunderbird/lib/thunderbird-0.7.3/defaults/profile/bookmarks.html
+lib/thunderbird/lib/thunderbird-0.7.3/defaults/profile/chrome/userChrome-example.css
+lib/thunderbird/lib/thunderbird-0.7.3/defaults/profile/chrome/userContent-example.css
+lib/thunderbird/lib/thunderbird-0.7.3/defaults/profile/extensions/Extensions.rdf
+lib/thunderbird/lib/thunderbird-0.7.3/defaults/profile/extensions/installed-extensions.txt
+lib/thunderbird/lib/thunderbird-0.7.3/defaults/profile/extensions/{972ce4c6-7e08-4474-a285-3208198ce6fd}/install.rdf
+lib/thunderbird/lib/thunderbird-0.7.3/defaults/profile/localstore.rdf
+lib/thunderbird/lib/thunderbird-0.7.3/defaults/profile/mimeTypes.rdf
+lib/thunderbird/lib/thunderbird-0.7.3/defaults/profile/panels.rdf
+lib/thunderbird/lib/thunderbird-0.7.3/defaults/profile/search.rdf
+lib/thunderbird/lib/thunderbird-0.7.3/defaults/wallet/DistinguishedSchema.tbl
+lib/thunderbird/lib/thunderbird-0.7.3/defaults/wallet/FieldSchema.tbl
+lib/thunderbird/lib/thunderbird-0.7.3/defaults/wallet/PositionalSchema.tbl
+lib/thunderbird/lib/thunderbird-0.7.3/defaults/wallet/SchemaConcat.tbl
+lib/thunderbird/lib/thunderbird-0.7.3/defaults/wallet/SchemaStrings.tbl
+lib/thunderbird/lib/thunderbird-0.7.3/defaults/wallet/StateSchema.tbl
+lib/thunderbird/lib/thunderbird-0.7.3/defaults/wallet/VcardSchema.tbl
+lib/thunderbird/lib/thunderbird-0.7.3/extensions.port/Extensions.rdf
+lib/thunderbird/lib/thunderbird-0.7.3/extensions/Extensions.rdf
+lib/thunderbird/lib/thunderbird-0.7.3/extensions/installed-extensions-processed.txt
+lib/thunderbird/lib/thunderbird-0.7.3/extensions/{972ce4c6-7e08-4474-a285-3208198ce6fd}/install.rdf
+lib/thunderbird/lib/thunderbird-0.7.3/greprefs/all.js
+lib/thunderbird/lib/thunderbird-0.7.3/greprefs/security-prefs.js
+lib/thunderbird/lib/thunderbird-0.7.3/greprefs/xpinstall.js
+lib/thunderbird/lib/thunderbird-0.7.3/icons/default.xpm
+lib/thunderbird/lib/thunderbird-0.7.3/icons/mozicon16.xpm
+lib/thunderbird/lib/thunderbird-0.7.3/icons/mozicon50.xpm
+lib/thunderbird/lib/thunderbird-0.7.3/init.d/README
+lib/thunderbird/lib/thunderbird-0.7.3/libgkgfx.so
+lib/thunderbird/lib/thunderbird-0.7.3/libgtkembedmoz.so
+lib/thunderbird/lib/thunderbird-0.7.3/libgtkxtbin.so
+lib/thunderbird/lib/thunderbird-0.7.3/libldap50.so
+lib/thunderbird/lib/thunderbird-0.7.3/libmozjs.so
+lib/thunderbird/lib/thunderbird-0.7.3/libnspr4.so
+lib/thunderbird/lib/thunderbird-0.7.3/libnss3.so
+lib/thunderbird/lib/thunderbird-0.7.3/libnssckbi.so
+lib/thunderbird/lib/thunderbird-0.7.3/libplc4.so
+lib/thunderbird/lib/thunderbird-0.7.3/libplds4.so
+lib/thunderbird/lib/thunderbird-0.7.3/libprldap50.so
+lib/thunderbird/lib/thunderbird-0.7.3/libsmime3.so
+lib/thunderbird/lib/thunderbird-0.7.3/libsoftokn3.chk
+lib/thunderbird/lib/thunderbird-0.7.3/libsoftokn3.so
+lib/thunderbird/lib/thunderbird-0.7.3/libssl3.so
+lib/thunderbird/lib/thunderbird-0.7.3/libxlibrgb.so
+lib/thunderbird/lib/thunderbird-0.7.3/libxpcom.so
+lib/thunderbird/lib/thunderbird-0.7.3/libxpcom_compat.so
+lib/thunderbird/lib/thunderbird-0.7.3/libxpistub.so
+lib/thunderbird/lib/thunderbird-0.7.3/mozilla-xremote-client
+lib/thunderbird/lib/thunderbird-0.7.3/plugins/libnullplugin.so
+lib/thunderbird/lib/thunderbird-0.7.3/regchrome
+lib/thunderbird/lib/thunderbird-0.7.3/regxpcom
+lib/thunderbird/lib/thunderbird-0.7.3/res/EditorOverride.css
+lib/thunderbird/lib/thunderbird-0.7.3/res/arrow.gif
+lib/thunderbird/lib/thunderbird-0.7.3/res/arrowd.gif
+lib/thunderbird/lib/thunderbird-0.7.3/res/broken-image.gif
+lib/thunderbird/lib/thunderbird-0.7.3/res/builtin/htmlBindings.xml
+lib/thunderbird/lib/thunderbird-0.7.3/res/builtin/platformHTMLBindings.xml
+lib/thunderbird/lib/thunderbird-0.7.3/res/charsetData.properties
+lib/thunderbird/lib/thunderbird-0.7.3/res/charsetalias.properties
+lib/thunderbird/lib/thunderbird-0.7.3/res/cmessage.txt
+lib/thunderbird/lib/thunderbird-0.7.3/res/dtd/xhtml11.dtd
+lib/thunderbird/lib/thunderbird-0.7.3/res/entityTables/html40Latin1.properties
+lib/thunderbird/lib/thunderbird-0.7.3/res/entityTables/html40Special.properties
+lib/thunderbird/lib/thunderbird-0.7.3/res/entityTables/html40Symbols.properties
+lib/thunderbird/lib/thunderbird-0.7.3/res/entityTables/htmlEntityVersions.properties
+lib/thunderbird/lib/thunderbird-0.7.3/res/entityTables/transliterate.properties
+lib/thunderbird/lib/thunderbird-0.7.3/res/fonts/fontEncoding.properties
+lib/thunderbird/lib/thunderbird-0.7.3/res/forms.css
+lib/thunderbird/lib/thunderbird-0.7.3/res/grabber.gif
+lib/thunderbird/lib/thunderbird-0.7.3/res/html.css
+lib/thunderbird/lib/thunderbird-0.7.3/res/html/gopher-audio.gif
+lib/thunderbird/lib/thunderbird-0.7.3/res/html/gopher-binary.gif
+lib/thunderbird/lib/thunderbird-0.7.3/res/html/gopher-find.gif
+lib/thunderbird/lib/thunderbird-0.7.3/res/html/gopher-image.gif
+lib/thunderbird/lib/thunderbird-0.7.3/res/html/gopher-menu.gif
+lib/thunderbird/lib/thunderbird-0.7.3/res/html/gopher-movie.gif
+lib/thunderbird/lib/thunderbird-0.7.3/res/html/gopher-sound.gif
+lib/thunderbird/lib/thunderbird-0.7.3/res/html/gopher-telnet.gif
+lib/thunderbird/lib/thunderbird-0.7.3/res/html/gopher-text.gif
+lib/thunderbird/lib/thunderbird-0.7.3/res/html/gopher-unknown.gif
+lib/thunderbird/lib/thunderbird-0.7.3/res/langGroups.properties
+lib/thunderbird/lib/thunderbird-0.7.3/res/language.properties
+lib/thunderbird/lib/thunderbird-0.7.3/res/loading-image.gif
+lib/thunderbird/lib/thunderbird-0.7.3/res/platform-forms.css
+lib/thunderbird/lib/thunderbird-0.7.3/res/quirk.css
+lib/thunderbird/lib/thunderbird-0.7.3/res/rdf/dom-test-4.css
+lib/thunderbird/lib/thunderbird-0.7.3/res/rdf/folder-closed.gif
+lib/thunderbird/lib/thunderbird-0.7.3/res/rdf/folder-open.gif
+lib/thunderbird/lib/thunderbird-0.7.3/res/rdf/ignore-test.xul
+lib/thunderbird/lib/thunderbird-0.7.3/res/rdf/loading.gif
+lib/thunderbird/lib/thunderbird-0.7.3/res/sample.unixpsfonts.properties
+lib/thunderbird/lib/thunderbird-0.7.3/res/samples/Anieyes.gif
+lib/thunderbird/lib/thunderbird-0.7.3/res/samples/aform.css
+lib/thunderbird/lib/thunderbird-0.7.3/res/samples/beeptest.html
+lib/thunderbird/lib/thunderbird-0.7.3/res/samples/bform.css
+lib/thunderbird/lib/thunderbird-0.7.3/res/samples/bg.jpg
+lib/thunderbird/lib/thunderbird-0.7.3/res/samples/cform.css
+lib/thunderbird/lib/thunderbird-0.7.3/res/samples/checkboxTest.xul
+lib/thunderbird/lib/thunderbird-0.7.3/res/samples/colorpicker.xul
+lib/thunderbird/lib/thunderbird-0.7.3/res/samples/demoform.css
+lib/thunderbird/lib/thunderbird-0.7.3/res/samples/dexopenchrome.xul
+lib/thunderbird/lib/thunderbird-0.7.3/res/samples/dexparamdialog.html
+lib/thunderbird/lib/thunderbird-0.7.3/res/samples/dexparamdialog.xul
+lib/thunderbird/lib/thunderbird-0.7.3/res/samples/find.html
+lib/thunderbird/lib/thunderbird-0.7.3/res/samples/gear1.gif
+lib/thunderbird/lib/thunderbird-0.7.3/res/samples/hidetoolicon.css
+lib/thunderbird/lib/thunderbird-0.7.3/res/samples/hidetoolicon.xul
+lib/thunderbird/lib/thunderbird-0.7.3/res/samples/image_props.html
+lib/thunderbird/lib/thunderbird-0.7.3/res/samples/mozform.css
+lib/thunderbird/lib/thunderbird-0.7.3/res/samples/printsetup.html
+lib/thunderbird/lib/thunderbird-0.7.3/res/samples/raptor.jpg
+lib/thunderbird/lib/thunderbird-0.7.3/res/samples/rock_gra.gif
+lib/thunderbird/lib/thunderbird-0.7.3/res/samples/sampleimages/bongo.gif
+lib/thunderbird/lib/thunderbird-0.7.3/res/samples/sampleimages/down.gif
+lib/thunderbird/lib/thunderbird-0.7.3/res/samples/sampleimages/left.gif
+lib/thunderbird/lib/thunderbird-0.7.3/res/samples/sampleimages/right.gif
+lib/thunderbird/lib/thunderbird-0.7.3/res/samples/sampleimages/up.gif
+lib/thunderbird/lib/thunderbird-0.7.3/res/samples/scrollbarTest1.xul
+lib/thunderbird/lib/thunderbird-0.7.3/res/samples/scrollbarTest2.xul
+lib/thunderbird/lib/thunderbird-0.7.3/res/samples/sliderTest1.xul
+lib/thunderbird/lib/thunderbird-0.7.3/res/samples/soundtest.html
+lib/thunderbird/lib/thunderbird-0.7.3/res/samples/tab.xul
+lib/thunderbird/lib/thunderbird-0.7.3/res/samples/test.wav
+lib/thunderbird/lib/thunderbird-0.7.3/res/samples/test0.html
+lib/thunderbird/lib/thunderbird-0.7.3/res/samples/test1.html
+lib/thunderbird/lib/thunderbird-0.7.3/res/samples/test10.html
+lib/thunderbird/lib/thunderbird-0.7.3/res/samples/test11.html
+lib/thunderbird/lib/thunderbird-0.7.3/res/samples/test12.html
+lib/thunderbird/lib/thunderbird-0.7.3/res/samples/test13.html
+lib/thunderbird/lib/thunderbird-0.7.3/res/samples/test14.html
+lib/thunderbird/lib/thunderbird-0.7.3/res/samples/test15.html
+lib/thunderbird/lib/thunderbird-0.7.3/res/samples/test16.html
+lib/thunderbird/lib/thunderbird-0.7.3/res/samples/test2.html
+lib/thunderbird/lib/thunderbird-0.7.3/res/samples/test3.html
+lib/thunderbird/lib/thunderbird-0.7.3/res/samples/test4.html
+lib/thunderbird/lib/thunderbird-0.7.3/res/samples/test5.html
+lib/thunderbird/lib/thunderbird-0.7.3/res/samples/test6.html
+lib/thunderbird/lib/thunderbird-0.7.3/res/samples/test7.html
+lib/thunderbird/lib/thunderbird-0.7.3/res/samples/test8-1.html
+lib/thunderbird/lib/thunderbird-0.7.3/res/samples/test8.html
+lib/thunderbird/lib/thunderbird-0.7.3/res/samples/test8dom.html
+lib/thunderbird/lib/thunderbird-0.7.3/res/samples/test8sca.html
+lib/thunderbird/lib/thunderbird-0.7.3/res/samples/test8siz.html
+lib/thunderbird/lib/thunderbird-0.7.3/res/samples/test8tab.html
+lib/thunderbird/lib/thunderbird-0.7.3/res/samples/test9.html
+lib/thunderbird/lib/thunderbird-0.7.3/res/samples/test9a.html
+lib/thunderbird/lib/thunderbird-0.7.3/res/samples/test9b.html
+lib/thunderbird/lib/thunderbird-0.7.3/res/samples/test_ed.html
+lib/thunderbird/lib/thunderbird-0.7.3/res/samples/test_form.html
+lib/thunderbird/lib/thunderbird-0.7.3/res/samples/test_gfx.html
+lib/thunderbird/lib/thunderbird-0.7.3/res/samples/test_lbox.html
+lib/thunderbird/lib/thunderbird-0.7.3/res/samples/test_pr.html
+lib/thunderbird/lib/thunderbird-0.7.3/res/samples/test_weight.html
+lib/thunderbird/lib/thunderbird-0.7.3/res/samples/toolbarTest1.xul
+lib/thunderbird/lib/thunderbird-0.7.3/res/samples/treeTest1.css
+lib/thunderbird/lib/thunderbird-0.7.3/res/samples/treeTest1.xul
+lib/thunderbird/lib/thunderbird-0.7.3/res/samples/widgets.xul
+lib/thunderbird/lib/thunderbird-0.7.3/res/samples/xpmenu.xul
+lib/thunderbird/lib/thunderbird-0.7.3/res/samples/xulTest.css
+lib/thunderbird/lib/thunderbird-0.7.3/res/table-add-column-after-active.gif
+lib/thunderbird/lib/thunderbird-0.7.3/res/table-add-column-after-hover.gif
+lib/thunderbird/lib/thunderbird-0.7.3/res/table-add-column-after.gif
+lib/thunderbird/lib/thunderbird-0.7.3/res/table-add-column-before-active.gif
+lib/thunderbird/lib/thunderbird-0.7.3/res/table-add-column-before-hover.gif
+lib/thunderbird/lib/thunderbird-0.7.3/res/table-add-column-before.gif
+lib/thunderbird/lib/thunderbird-0.7.3/res/table-add-row-after-active.gif
+lib/thunderbird/lib/thunderbird-0.7.3/res/table-add-row-after-hover.gif
+lib/thunderbird/lib/thunderbird-0.7.3/res/table-add-row-after.gif
+lib/thunderbird/lib/thunderbird-0.7.3/res/table-add-row-before-active.gif
+lib/thunderbird/lib/thunderbird-0.7.3/res/table-add-row-before-hover.gif
+lib/thunderbird/lib/thunderbird-0.7.3/res/table-add-row-before.gif
+lib/thunderbird/lib/thunderbird-0.7.3/res/table-remove-column-active.gif
+lib/thunderbird/lib/thunderbird-0.7.3/res/table-remove-column-hover.gif
+lib/thunderbird/lib/thunderbird-0.7.3/res/table-remove-column.gif
+lib/thunderbird/lib/thunderbird-0.7.3/res/table-remove-row-active.gif
+lib/thunderbird/lib/thunderbird-0.7.3/res/table-remove-row-hover.gif
+lib/thunderbird/lib/thunderbird-0.7.3/res/table-remove-row.gif
+lib/thunderbird/lib/thunderbird-0.7.3/res/throbber/anim.gif
+lib/thunderbird/lib/thunderbird-0.7.3/res/throbber/anims00.gif
+lib/thunderbird/lib/thunderbird-0.7.3/res/throbber/anims01.gif
+lib/thunderbird/lib/thunderbird-0.7.3/res/throbber/anims02.gif
+lib/thunderbird/lib/thunderbird-0.7.3/res/throbber/anims03.gif
+lib/thunderbird/lib/thunderbird-0.7.3/res/throbber/anims04.gif
+lib/thunderbird/lib/thunderbird-0.7.3/res/throbber/anims05.gif
+lib/thunderbird/lib/thunderbird-0.7.3/res/throbber/anims06.gif
+lib/thunderbird/lib/thunderbird-0.7.3/res/throbber/anims07.gif
+lib/thunderbird/lib/thunderbird-0.7.3/res/throbber/anims08.gif
+lib/thunderbird/lib/thunderbird-0.7.3/res/throbber/anims09.gif
+lib/thunderbird/lib/thunderbird-0.7.3/res/throbber/anims10.gif
+lib/thunderbird/lib/thunderbird-0.7.3/res/throbber/anims11.gif
+lib/thunderbird/lib/thunderbird-0.7.3/res/throbber/anims12.gif
+lib/thunderbird/lib/thunderbird-0.7.3/res/throbber/anims13.gif
+lib/thunderbird/lib/thunderbird-0.7.3/res/throbber/anims14.gif
+lib/thunderbird/lib/thunderbird-0.7.3/res/throbber/anims15.gif
+lib/thunderbird/lib/thunderbird-0.7.3/res/throbber/anims16.gif
+lib/thunderbird/lib/thunderbird-0.7.3/res/throbber/anims17.gif
+lib/thunderbird/lib/thunderbird-0.7.3/res/throbber/anims18.gif
+lib/thunderbird/lib/thunderbird-0.7.3/res/throbber/anims19.gif
+lib/thunderbird/lib/thunderbird-0.7.3/res/throbber/anims20.gif
+lib/thunderbird/lib/thunderbird-0.7.3/res/throbber/anims21.gif
+lib/thunderbird/lib/thunderbird-0.7.3/res/throbber/anims22.gif
+lib/thunderbird/lib/thunderbird-0.7.3/res/throbber/anims23.gif
+lib/thunderbird/lib/thunderbird-0.7.3/res/throbber/anims24.gif
+lib/thunderbird/lib/thunderbird-0.7.3/res/throbber/anims25.gif
+lib/thunderbird/lib/thunderbird-0.7.3/res/throbber/anims26.gif
+lib/thunderbird/lib/thunderbird-0.7.3/res/throbber/anims27.gif
+lib/thunderbird/lib/thunderbird-0.7.3/res/throbber/anims28.gif
+lib/thunderbird/lib/thunderbird-0.7.3/res/throbber/anims29.gif
+lib/thunderbird/lib/thunderbird-0.7.3/res/ua.css
+lib/thunderbird/lib/thunderbird-0.7.3/res/unixcharset.properties
+lib/thunderbird/lib/thunderbird-0.7.3/res/viewer.properties
+lib/thunderbird/lib/thunderbird-0.7.3/res/viewsource.css
+lib/thunderbird/lib/thunderbird-0.7.3/run-mozilla.sh
+lib/thunderbird/lib/thunderbird-0.7.3/thunderbird-bin
+lib/thunderbird/lib/thunderbird-0.7.3/xpcshell
+lib/thunderbird/lib/thunderbird-0.7.3/xpicleanup
+lib/thunderbird/lib/thunderbird-0.7.3/xpidl
+lib/thunderbird/lib/thunderbird-0.7.3/xpt_dump
+lib/thunderbird/lib/thunderbird-0.7.3/xpt_link
 lib/thunderbird/share/aclocal/nspr.m4
-@exec /bin/mkdir -p %D/lib/thunderbird/lib/thunderbird-%%TBVER%%/chrome/US/locale/US/communicator-region/wallet || true
-@exec /bin/mkdir -p %D/lib/thunderbird/lib/thunderbird-%%TBVER%%/chrome/US/locale/US/editor-region || true
-@exec /bin/mkdir -p %D/lib/thunderbird/lib/thunderbird-%%TBVER%%/chrome/US/locale/US/global-region || true
-@exec /bin/mkdir -p %D/lib/thunderbird/lib/thunderbird-%%TBVER%%/chrome/US/locale/US/messenger-region || true
-@exec /bin/mkdir -p %D/lib/thunderbird/lib/thunderbird-%%TBVER%%/chrome/US/locale/US/navigator-region || true
-@exec /bin/mkdir -p %D/lib/thunderbird/lib/thunderbird-%%TBVER%%/chrome/classic/skin/classic/communicator/alerts || true
-@exec /bin/mkdir -p %D/lib/thunderbird/lib/thunderbird-%%TBVER%%/chrome/classic/skin/classic/communicator/bookmarks || true
-@exec /bin/mkdir -p %D/lib/thunderbird/lib/thunderbird-%%TBVER%%/chrome/classic/skin/classic/communicator/brand || true
-@exec /bin/mkdir -p %D/lib/thunderbird/lib/thunderbird-%%TBVER%%/chrome/classic/skin/classic/communicator/directory || true
-@exec /bin/mkdir -p %D/lib/thunderbird/lib/thunderbird-%%TBVER%%/chrome/classic/skin/classic/communicator/icons/smileys || true
-@exec /bin/mkdir -p %D/lib/thunderbird/lib/thunderbird-%%TBVER%%/chrome/classic/skin/classic/communicator/pref || true
-@exec /bin/mkdir -p %D/lib/thunderbird/lib/thunderbird-%%TBVER%%/chrome/classic/skin/classic/communicator/profile || true
-@exec /bin/mkdir -p %D/lib/thunderbird/lib/thunderbird-%%TBVER%%/chrome/classic/skin/classic/communicator/related || true
-@exec /bin/mkdir -p %D/lib/thunderbird/lib/thunderbird-%%TBVER%%/chrome/classic/skin/classic/communicator/search || true
-@exec /bin/mkdir -p %D/lib/thunderbird/lib/thunderbird-%%TBVER%%/chrome/classic/skin/classic/communicator/sidebar || true
-@exec /bin/mkdir -p %D/lib/thunderbird/lib/thunderbird-%%TBVER%%/chrome/classic/skin/classic/communicator/taskbar || true
-@exec /bin/mkdir -p %D/lib/thunderbird/lib/thunderbird-%%TBVER%%/chrome/classic/skin/classic/communicator/xpinstall || true
-@exec /bin/mkdir -p %D/lib/thunderbird/lib/thunderbird-%%TBVER%%/chrome/classic/skin/classic/editor/icons || true
-@exec /bin/mkdir -p %D/lib/thunderbird/lib/thunderbird-%%TBVER%%/chrome/classic/skin/classic/global/arrow || true
-@exec /bin/mkdir -p %D/lib/thunderbird/lib/thunderbird-%%TBVER%%/chrome/classic/skin/classic/global/checkbox || true
-@exec /bin/mkdir -p %D/lib/thunderbird/lib/thunderbird-%%TBVER%%/chrome/classic/skin/classic/global/console || true
-@exec /bin/mkdir -p %D/lib/thunderbird/lib/thunderbird-%%TBVER%%/chrome/classic/skin/classic/global/filepicker || true
-@exec /bin/mkdir -p %D/lib/thunderbird/lib/thunderbird-%%TBVER%%/chrome/classic/skin/classic/global/icons || true
-@exec /bin/mkdir -p %D/lib/thunderbird/lib/thunderbird-%%TBVER%%/chrome/classic/skin/classic/global/menu || true
-@exec /bin/mkdir -p %D/lib/thunderbird/lib/thunderbird-%%TBVER%%/chrome/classic/skin/classic/global/progressmeter || true
-@exec /bin/mkdir -p %D/lib/thunderbird/lib/thunderbird-%%TBVER%%/chrome/classic/skin/classic/global/radio || true
-@exec /bin/mkdir -p %D/lib/thunderbird/lib/thunderbird-%%TBVER%%/chrome/classic/skin/classic/global/scrollbar || true
-@exec /bin/mkdir -p %D/lib/thunderbird/lib/thunderbird-%%TBVER%%/chrome/classic/skin/classic/global/splitter || true
-@exec /bin/mkdir -p %D/lib/thunderbird/lib/thunderbird-%%TBVER%%/chrome/classic/skin/classic/global/toolbar || true
-@exec /bin/mkdir -p %D/lib/thunderbird/lib/thunderbird-%%TBVER%%/chrome/classic/skin/classic/global/tree || true
-@exec /bin/mkdir -p %D/lib/thunderbird/lib/thunderbird-%%TBVER%%/chrome/classic/skin/classic/messenger/addressbook/icons || true
-@exec /bin/mkdir -p %D/lib/thunderbird/lib/thunderbird-%%TBVER%%/chrome/classic/skin/classic/messenger/icons || true
-@exec /bin/mkdir -p %D/lib/thunderbird/lib/thunderbird-%%TBVER%%/chrome/classic/skin/classic/messenger/messengercompose || true
-@exec /bin/mkdir -p %D/lib/thunderbird/lib/thunderbird-%%TBVER%%/chrome/classic/skin/classic/messenger/smime/icons || true
-@exec /bin/mkdir -p %D/lib/thunderbird/lib/thunderbird-%%TBVER%%/chrome/classic/skin/classic/mozapps/downloads || true
-@exec /bin/mkdir -p %D/lib/thunderbird/lib/thunderbird-%%TBVER%%/chrome/classic/skin/classic/mozapps/extensions || true
-@exec /bin/mkdir -p %D/lib/thunderbird/lib/thunderbird-%%TBVER%%/chrome/classic/skin/classic/mozapps/pref || true
-@exec /bin/mkdir -p %D/lib/thunderbird/lib/thunderbird-%%TBVER%%/chrome/classic/skin/classic/mozapps/profile || true
-@exec /bin/mkdir -p %D/lib/thunderbird/lib/thunderbird-%%TBVER%%/chrome/classic/skin/classic/mozapps/shared || true
-@exec /bin/mkdir -p %D/lib/thunderbird/lib/thunderbird-%%TBVER%%/chrome/classic/skin/classic/mozapps/update || true
-@exec /bin/mkdir -p %D/lib/thunderbird/lib/thunderbird-%%TBVER%%/chrome/classic/skin/classic/navigator/btn1 || true
-@exec /bin/mkdir -p %D/lib/thunderbird/lib/thunderbird-%%TBVER%%/chrome/classic/skin/classic/navigator/icons || true
-@exec /bin/mkdir -p %D/lib/thunderbird/lib/thunderbird-%%TBVER%%/chrome/classic/skin/classic/xpinstall || true
-@exec /bin/mkdir -p %D/lib/thunderbird/lib/thunderbird-%%TBVER%%/chrome/comm/content/communicator-platform || true
-@exec /bin/mkdir -p %D/lib/thunderbird/lib/thunderbird-%%TBVER%%/chrome/comm/content/communicator-region || true
-@exec /bin/mkdir -p %D/lib/thunderbird/lib/thunderbird-%%TBVER%%/chrome/comm/content/communicator/alerts || true
-@exec /bin/mkdir -p %D/lib/thunderbird/lib/thunderbird-%%TBVER%%/chrome/comm/content/communicator/directory || true
-@exec /bin/mkdir -p %D/lib/thunderbird/lib/thunderbird-%%TBVER%%/chrome/comm/content/communicator/downloadmanager || true
-@exec /bin/mkdir -p %D/lib/thunderbird/lib/thunderbird-%%TBVER%%/chrome/comm/content/communicator/history || true
-@exec /bin/mkdir -p %D/lib/thunderbird/lib/thunderbird-%%TBVER%%/chrome/comm/content/communicator/pref || true
-@exec /bin/mkdir -p %D/lib/thunderbird/lib/thunderbird-%%TBVER%%/chrome/comm/content/communicator/profile || true
-@exec /bin/mkdir -p %D/lib/thunderbird/lib/thunderbird-%%TBVER%%/chrome/comm/content/communicator/related || true
-@exec /bin/mkdir -p %D/lib/thunderbird/lib/thunderbird-%%TBVER%%/chrome/comm/content/communicator/search || true
-@exec /bin/mkdir -p %D/lib/thunderbird/lib/thunderbird-%%TBVER%%/chrome/comm/content/communicator/sidebar || true
-@exec /bin/mkdir -p %D/lib/thunderbird/lib/thunderbird-%%TBVER%%/chrome/comm/content/communicator/wallet || true
-@exec /bin/mkdir -p %D/lib/thunderbird/lib/thunderbird-%%TBVER%%/chrome/comm/content/communicator/xml || true
-@exec /bin/mkdir -p %D/lib/thunderbird/lib/thunderbird-%%TBVER%%/chrome/comm/content/communicator/xpinstall || true
-@exec /bin/mkdir -p %D/lib/thunderbird/lib/thunderbird-%%TBVER%%/chrome/comm/content/editor-region || true
-@exec /bin/mkdir -p %D/lib/thunderbird/lib/thunderbird-%%TBVER%%/chrome/comm/content/editor/images || true
-@exec /bin/mkdir -p %D/lib/thunderbird/lib/thunderbird-%%TBVER%%/chrome/comm/content/help || true
-@exec /bin/mkdir -p %D/lib/thunderbird/lib/thunderbird-%%TBVER%%/chrome/comm/content/mozldap || true
-@exec /bin/mkdir -p %D/lib/thunderbird/lib/thunderbird-%%TBVER%%/chrome/comm/content/navigator || true
-@exec /bin/mkdir -p %D/lib/thunderbird/lib/thunderbird-%%TBVER%%/chrome/comm/content/navigator-platform || true
-@exec /bin/mkdir -p %D/lib/thunderbird/lib/thunderbird-%%TBVER%%/chrome/comm/content/navigator-region || true
-@exec /bin/mkdir -p %D/lib/thunderbird/lib/thunderbird-%%TBVER%%/chrome/comm/content/necko || true
-@exec /bin/mkdir -p %D/lib/thunderbird/lib/thunderbird-%%TBVER%%/chrome/comm/content/wallet || true
-@exec /bin/mkdir -p %D/lib/thunderbird/lib/thunderbird-%%TBVER%%/chrome/comm/content/xbl-marquee || true
-@exec /bin/mkdir -p %D/lib/thunderbird/lib/thunderbird-%%TBVER%%/chrome/embed-sample/content/embed || true
-@exec /bin/mkdir -p %D/lib/thunderbird/lib/thunderbird-%%TBVER%%/chrome/embed-sample/locale/en-US/embed || true
-@exec /bin/mkdir -p %D/lib/thunderbird/lib/thunderbird-%%TBVER%%/chrome/embed-sample/skin/classic/embed || true
-@exec /bin/mkdir -p %D/lib/thunderbird/lib/thunderbird-%%TBVER%%/chrome/en-US/locale/en-US/communicator/directory || true
-@exec /bin/mkdir -p %D/lib/thunderbird/lib/thunderbird-%%TBVER%%/chrome/en-US/locale/en-US/communicator/dom || true
-@exec /bin/mkdir -p %D/lib/thunderbird/lib/thunderbird-%%TBVER%%/chrome/en-US/locale/en-US/communicator/downloadmanager || true
-@exec /bin/mkdir -p %D/lib/thunderbird/lib/thunderbird-%%TBVER%%/chrome/en-US/locale/en-US/communicator/history || true
-@exec /bin/mkdir -p %D/lib/thunderbird/lib/thunderbird-%%TBVER%%/chrome/en-US/locale/en-US/communicator/layout || true
-@exec /bin/mkdir -p %D/lib/thunderbird/lib/thunderbird-%%TBVER%%/chrome/en-US/locale/en-US/communicator/pref || true
-@exec /bin/mkdir -p %D/lib/thunderbird/lib/thunderbird-%%TBVER%%/chrome/en-US/locale/en-US/communicator/profile || true
-@exec /bin/mkdir -p %D/lib/thunderbird/lib/thunderbird-%%TBVER%%/chrome/en-US/locale/en-US/communicator/search || true
-@exec /bin/mkdir -p %D/lib/thunderbird/lib/thunderbird-%%TBVER%%/chrome/en-US/locale/en-US/communicator/security || true
-@exec /bin/mkdir -p %D/lib/thunderbird/lib/thunderbird-%%TBVER%%/chrome/en-US/locale/en-US/communicator/sidebar || true
-@exec /bin/mkdir -p %D/lib/thunderbird/lib/thunderbird-%%TBVER%%/chrome/en-US/locale/en-US/communicator/wallet || true
-@exec /bin/mkdir -p %D/lib/thunderbird/lib/thunderbird-%%TBVER%%/chrome/en-US/locale/en-US/communicator/xml || true
-@exec /bin/mkdir -p %D/lib/thunderbird/lib/thunderbird-%%TBVER%%/chrome/en-US/locale/en-US/communicator/xpinstall || true
-@exec /bin/mkdir -p %D/lib/thunderbird/lib/thunderbird-%%TBVER%%/chrome/en-US/locale/en-US/editor || true
-@exec /bin/mkdir -p %D/lib/thunderbird/lib/thunderbird-%%TBVER%%/chrome/en-US/locale/en-US/global || true
-@exec /bin/mkdir -p %D/lib/thunderbird/lib/thunderbird-%%TBVER%%/chrome/en-US/locale/en-US/messenger-mdn || true
-@exec /bin/mkdir -p %D/lib/thunderbird/lib/thunderbird-%%TBVER%%/chrome/en-US/locale/en-US/messenger-smime || true
-@exec /bin/mkdir -p %D/lib/thunderbird/lib/thunderbird-%%TBVER%%/chrome/en-US/locale/en-US/messenger/addressbook || true
-@exec /bin/mkdir -p %D/lib/thunderbird/lib/thunderbird-%%TBVER%%/chrome/en-US/locale/en-US/messenger/messengercompose || true
-@exec /bin/mkdir -p %D/lib/thunderbird/lib/thunderbird-%%TBVER%%/chrome/en-US/locale/en-US/mozapps/downloads || true
-@exec /bin/mkdir -p %D/lib/thunderbird/lib/thunderbird-%%TBVER%%/chrome/en-US/locale/en-US/mozapps/extensions || true
-@exec /bin/mkdir -p %D/lib/thunderbird/lib/thunderbird-%%TBVER%%/chrome/en-US/locale/en-US/mozapps/profile || true
-@exec /bin/mkdir -p %D/lib/thunderbird/lib/thunderbird-%%TBVER%%/chrome/en-US/locale/en-US/mozapps/update || true
-@exec /bin/mkdir -p %D/lib/thunderbird/lib/thunderbird-%%TBVER%%/chrome/en-US/locale/en-US/mozapps/xpinstall || true
-@exec /bin/mkdir -p %D/lib/thunderbird/lib/thunderbird-%%TBVER%%/chrome/en-US/locale/en-US/mozldap || true
-@exec /bin/mkdir -p %D/lib/thunderbird/lib/thunderbird-%%TBVER%%/chrome/en-US/locale/en-US/navigator || true
-@exec /bin/mkdir -p %D/lib/thunderbird/lib/thunderbird-%%TBVER%%/chrome/en-US/locale/en-US/necko || true
-@exec /bin/mkdir -p %D/lib/thunderbird/lib/thunderbird-%%TBVER%%/chrome/en-US/locale/en-US/pipnss || true
-@exec /bin/mkdir -p %D/lib/thunderbird/lib/thunderbird-%%TBVER%%/chrome/en-US/locale/en-US/pippki || true
-@exec /bin/mkdir -p %D/lib/thunderbird/lib/thunderbird-%%TBVER%%/chrome/en-US/locale/en-US/wallet || true
-@exec /bin/mkdir -p %D/lib/thunderbird/lib/thunderbird-%%TBVER%%/chrome/en-unix/locale/en-US/communicator-platform/pref || true
-@exec /bin/mkdir -p %D/lib/thunderbird/lib/thunderbird-%%TBVER%%/chrome/en-unix/locale/en-US/global-platform || true
-@exec /bin/mkdir -p %D/lib/thunderbird/lib/thunderbird-%%TBVER%%/chrome/en-unix/locale/en-US/navigator-platform || true
-@exec /bin/mkdir -p %D/lib/thunderbird/lib/thunderbird-%%TBVER%%/chrome/messenger/content/editor/images || true
-@exec /bin/mkdir -p %D/lib/thunderbird/lib/thunderbird-%%TBVER%%/chrome/messenger/content/messenger-mdn || true
-@exec /bin/mkdir -p %D/lib/thunderbird/lib/thunderbird-%%TBVER%%/chrome/messenger/content/messenger-region || true
-@exec /bin/mkdir -p %D/lib/thunderbird/lib/thunderbird-%%TBVER%%/chrome/messenger/content/messenger-smime || true
-@exec /bin/mkdir -p %D/lib/thunderbird/lib/thunderbird-%%TBVER%%/chrome/messenger/content/messenger-views || true
-@exec /bin/mkdir -p %D/lib/thunderbird/lib/thunderbird-%%TBVER%%/chrome/messenger/content/messenger/addressbook || true
-@exec /bin/mkdir -p %D/lib/thunderbird/lib/thunderbird-%%TBVER%%/chrome/messenger/content/messenger/messengercompose || true
-@exec /bin/mkdir -p %D/lib/thunderbird/lib/thunderbird-%%TBVER%%/chrome/offline/content/messenger-offline || true
-@exec /bin/mkdir -p %D/lib/thunderbird/lib/thunderbird-%%TBVER%%/chrome/offline/locale/en-US/messenger-offline || true
-@exec /bin/mkdir -p %D/lib/thunderbird/lib/thunderbird-%%TBVER%%/chrome/pipnss/content/pipnss || true
-@exec /bin/mkdir -p %D/lib/thunderbird/lib/thunderbird-%%TBVER%%/chrome/pippki/content/pippki || true
-@exec /bin/mkdir -p %D/lib/thunderbird/lib/thunderbird-%%TBVER%%/chrome/toolkit/content/communicator || true
-@exec /bin/mkdir -p %D/lib/thunderbird/lib/thunderbird-%%TBVER%%/chrome/toolkit/content/global-platform || true
-@exec /bin/mkdir -p %D/lib/thunderbird/lib/thunderbird-%%TBVER%%/chrome/toolkit/content/global-region || true
-@exec /bin/mkdir -p %D/lib/thunderbird/lib/thunderbird-%%TBVER%%/chrome/toolkit/content/global/bindings || true
-@exec /bin/mkdir -p %D/lib/thunderbird/lib/thunderbird-%%TBVER%%/chrome/toolkit/content/mozapps/downloads || true
-@exec /bin/mkdir -p %D/lib/thunderbird/lib/thunderbird-%%TBVER%%/chrome/toolkit/content/mozapps/extensions || true
-@exec /bin/mkdir -p %D/lib/thunderbird/lib/thunderbird-%%TBVER%%/chrome/toolkit/content/mozapps/profile || true
-@exec /bin/mkdir -p %D/lib/thunderbird/lib/thunderbird-%%TBVER%%/chrome/toolkit/content/mozapps/shared || true
-@exec /bin/mkdir -p %D/lib/thunderbird/lib/thunderbird-%%TBVER%%/chrome/toolkit/content/mozapps/update || true
-@exec /bin/mkdir -p %D/lib/thunderbird/lib/thunderbird-%%TBVER%%/chrome/toolkit/content/mozapps/xpinstall || true
-@unexec /bin/rmdir %D/lib/thunderbird/lib/thunderbird-%%TBVER%%/chrome/toolkit/content/mozapps/xpinstall || true
-@unexec /bin/rmdir %D/lib/thunderbird/lib/thunderbird-%%TBVER%%/chrome/toolkit/content/mozapps/update || true
-@unexec /bin/rmdir %D/lib/thunderbird/lib/thunderbird-%%TBVER%%/chrome/toolkit/content/mozapps/shared || true
-@unexec /bin/rmdir %D/lib/thunderbird/lib/thunderbird-%%TBVER%%/chrome/toolkit/content/mozapps/profile || true
-@unexec /bin/rmdir %D/lib/thunderbird/lib/thunderbird-%%TBVER%%/chrome/toolkit/content/mozapps/extensions || true
-@unexec /bin/rmdir %D/lib/thunderbird/lib/thunderbird-%%TBVER%%/chrome/toolkit/content/mozapps/downloads || true
-@unexec /bin/rmdir %D/lib/thunderbird/lib/thunderbird-%%TBVER%%/chrome/toolkit/content/global/bindings || true
-@unexec /bin/rmdir %D/lib/thunderbird/lib/thunderbird-%%TBVER%%/chrome/toolkit/content/global-region || true
-@unexec /bin/rmdir %D/lib/thunderbird/lib/thunderbird-%%TBVER%%/chrome/toolkit/content/global-platform || true
-@unexec /bin/rmdir %D/lib/thunderbird/lib/thunderbird-%%TBVER%%/chrome/toolkit/content/communicator || true
-@unexec /bin/rmdir %D/lib/thunderbird/lib/thunderbird-%%TBVER%%/chrome/pippki/content/pippki || true
-@unexec /bin/rmdir %D/lib/thunderbird/lib/thunderbird-%%TBVER%%/chrome/pipnss/content/pipnss || true
-@unexec /bin/rmdir %D/lib/thunderbird/lib/thunderbird-%%TBVER%%/chrome/offline/locale/en-US/messenger-offline || true
-@unexec /bin/rmdir %D/lib/thunderbird/lib/thunderbird-%%TBVER%%/chrome/offline/content/messenger-offline || true
-@unexec /bin/rmdir %D/lib/thunderbird/lib/thunderbird-%%TBVER%%/chrome/messenger/content/messenger/messengercompose || true
-@unexec /bin/rmdir %D/lib/thunderbird/lib/thunderbird-%%TBVER%%/chrome/messenger/content/messenger/addressbook || true
-@unexec /bin/rmdir %D/lib/thunderbird/lib/thunderbird-%%TBVER%%/chrome/messenger/content/messenger-views || true
-@unexec /bin/rmdir %D/lib/thunderbird/lib/thunderbird-%%TBVER%%/chrome/messenger/content/messenger-smime || true
-@unexec /bin/rmdir %D/lib/thunderbird/lib/thunderbird-%%TBVER%%/chrome/messenger/content/messenger-region || true
-@unexec /bin/rmdir %D/lib/thunderbird/lib/thunderbird-%%TBVER%%/chrome/messenger/content/messenger-mdn || true
-@unexec /bin/rmdir %D/lib/thunderbird/lib/thunderbird-%%TBVER%%/chrome/messenger/content/editor/images || true
-@unexec /bin/rmdir %D/lib/thunderbird/lib/thunderbird-%%TBVER%%/chrome/en-unix/locale/en-US/navigator-platform || true
-@unexec /bin/rmdir %D/lib/thunderbird/lib/thunderbird-%%TBVER%%/chrome/en-unix/locale/en-US/global-platform || true
-@unexec /bin/rmdir %D/lib/thunderbird/lib/thunderbird-%%TBVER%%/chrome/en-unix/locale/en-US/communicator-platform/pref || true
-@unexec /bin/rmdir %D/lib/thunderbird/lib/thunderbird-%%TBVER%%/chrome/en-US/locale/en-US/wallet || true
-@unexec /bin/rmdir %D/lib/thunderbird/lib/thunderbird-%%TBVER%%/chrome/en-US/locale/en-US/pippki || true
-@unexec /bin/rmdir %D/lib/thunderbird/lib/thunderbird-%%TBVER%%/chrome/en-US/locale/en-US/pipnss || true
-@unexec /bin/rmdir %D/lib/thunderbird/lib/thunderbird-%%TBVER%%/chrome/en-US/locale/en-US/necko || true
-@unexec /bin/rmdir %D/lib/thunderbird/lib/thunderbird-%%TBVER%%/chrome/en-US/locale/en-US/navigator || true
-@unexec /bin/rmdir %D/lib/thunderbird/lib/thunderbird-%%TBVER%%/chrome/en-US/locale/en-US/mozldap || true
-@unexec /bin/rmdir %D/lib/thunderbird/lib/thunderbird-%%TBVER%%/chrome/en-US/locale/en-US/mozapps/xpinstall || true
-@unexec /bin/rmdir %D/lib/thunderbird/lib/thunderbird-%%TBVER%%/chrome/en-US/locale/en-US/mozapps/update || true
-@unexec /bin/rmdir %D/lib/thunderbird/lib/thunderbird-%%TBVER%%/chrome/en-US/locale/en-US/mozapps/profile || true
-@unexec /bin/rmdir %D/lib/thunderbird/lib/thunderbird-%%TBVER%%/chrome/en-US/locale/en-US/mozapps/extensions || true
-@unexec /bin/rmdir %D/lib/thunderbird/lib/thunderbird-%%TBVER%%/chrome/en-US/locale/en-US/mozapps/downloads || true
-@unexec /bin/rmdir %D/lib/thunderbird/lib/thunderbird-%%TBVER%%/chrome/en-US/locale/en-US/messenger/messengercompose || true
-@unexec /bin/rmdir %D/lib/thunderbird/lib/thunderbird-%%TBVER%%/chrome/en-US/locale/en-US/messenger/addressbook || true
-@unexec /bin/rmdir %D/lib/thunderbird/lib/thunderbird-%%TBVER%%/chrome/en-US/locale/en-US/messenger-smime || true
-@unexec /bin/rmdir %D/lib/thunderbird/lib/thunderbird-%%TBVER%%/chrome/en-US/locale/en-US/messenger-mdn || true
-@unexec /bin/rmdir %D/lib/thunderbird/lib/thunderbird-%%TBVER%%/chrome/en-US/locale/en-US/global || true
-@unexec /bin/rmdir %D/lib/thunderbird/lib/thunderbird-%%TBVER%%/chrome/en-US/locale/en-US/editor || true
-@unexec /bin/rmdir %D/lib/thunderbird/lib/thunderbird-%%TBVER%%/chrome/en-US/locale/en-US/communicator/xpinstall || true
-@unexec /bin/rmdir %D/lib/thunderbird/lib/thunderbird-%%TBVER%%/chrome/en-US/locale/en-US/communicator/xml || true
-@unexec /bin/rmdir %D/lib/thunderbird/lib/thunderbird-%%TBVER%%/chrome/en-US/locale/en-US/communicator/wallet || true
-@unexec /bin/rmdir %D/lib/thunderbird/lib/thunderbird-%%TBVER%%/chrome/en-US/locale/en-US/communicator/sidebar || true
-@unexec /bin/rmdir %D/lib/thunderbird/lib/thunderbird-%%TBVER%%/chrome/en-US/locale/en-US/communicator/security || true
-@unexec /bin/rmdir %D/lib/thunderbird/lib/thunderbird-%%TBVER%%/chrome/en-US/locale/en-US/communicator/search || true
-@unexec /bin/rmdir %D/lib/thunderbird/lib/thunderbird-%%TBVER%%/chrome/en-US/locale/en-US/communicator/profile || true
-@unexec /bin/rmdir %D/lib/thunderbird/lib/thunderbird-%%TBVER%%/chrome/en-US/locale/en-US/communicator/pref || true
-@unexec /bin/rmdir %D/lib/thunderbird/lib/thunderbird-%%TBVER%%/chrome/en-US/locale/en-US/communicator/layout || true
-@unexec /bin/rmdir %D/lib/thunderbird/lib/thunderbird-%%TBVER%%/chrome/en-US/locale/en-US/communicator/history || true
-@unexec /bin/rmdir %D/lib/thunderbird/lib/thunderbird-%%TBVER%%/chrome/en-US/locale/en-US/communicator/downloadmanager || true
-@unexec /bin/rmdir %D/lib/thunderbird/lib/thunderbird-%%TBVER%%/chrome/en-US/locale/en-US/communicator/dom || true
-@unexec /bin/rmdir %D/lib/thunderbird/lib/thunderbird-%%TBVER%%/chrome/en-US/locale/en-US/communicator/directory || true
-@unexec /bin/rmdir %D/lib/thunderbird/lib/thunderbird-%%TBVER%%/chrome/embed-sample/skin/classic/embed || true
-@unexec /bin/rmdir %D/lib/thunderbird/lib/thunderbird-%%TBVER%%/chrome/embed-sample/locale/en-US/embed || true
-@unexec /bin/rmdir %D/lib/thunderbird/lib/thunderbird-%%TBVER%%/chrome/embed-sample/content/embed || true
-@unexec /bin/rmdir %D/lib/thunderbird/lib/thunderbird-%%TBVER%%/chrome/comm/content/xbl-marquee || true
-@unexec /bin/rmdir %D/lib/thunderbird/lib/thunderbird-%%TBVER%%/chrome/comm/content/wallet || true
-@unexec /bin/rmdir %D/lib/thunderbird/lib/thunderbird-%%TBVER%%/chrome/comm/content/necko || true
-@unexec /bin/rmdir %D/lib/thunderbird/lib/thunderbird-%%TBVER%%/chrome/comm/content/navigator-region || true
-@unexec /bin/rmdir %D/lib/thunderbird/lib/thunderbird-%%TBVER%%/chrome/comm/content/navigator-platform || true
-@unexec /bin/rmdir %D/lib/thunderbird/lib/thunderbird-%%TBVER%%/chrome/comm/content/navigator || true
-@unexec /bin/rmdir %D/lib/thunderbird/lib/thunderbird-%%TBVER%%/chrome/comm/content/mozldap || true
-@unexec /bin/rmdir %D/lib/thunderbird/lib/thunderbird-%%TBVER%%/chrome/comm/content/help || true
-@unexec /bin/rmdir %D/lib/thunderbird/lib/thunderbird-%%TBVER%%/chrome/comm/content/editor/images || true
-@unexec /bin/rmdir %D/lib/thunderbird/lib/thunderbird-%%TBVER%%/chrome/comm/content/editor-region || true
-@unexec /bin/rmdir %D/lib/thunderbird/lib/thunderbird-%%TBVER%%/chrome/comm/content/communicator/xpinstall || true
-@unexec /bin/rmdir %D/lib/thunderbird/lib/thunderbird-%%TBVER%%/chrome/comm/content/communicator/xml || true
-@unexec /bin/rmdir %D/lib/thunderbird/lib/thunderbird-%%TBVER%%/chrome/comm/content/communicator/wallet || true
-@unexec /bin/rmdir %D/lib/thunderbird/lib/thunderbird-%%TBVER%%/chrome/comm/content/communicator/sidebar || true
-@unexec /bin/rmdir %D/lib/thunderbird/lib/thunderbird-%%TBVER%%/chrome/comm/content/communicator/search || true
-@unexec /bin/rmdir %D/lib/thunderbird/lib/thunderbird-%%TBVER%%/chrome/comm/content/communicator/related || true
-@unexec /bin/rmdir %D/lib/thunderbird/lib/thunderbird-%%TBVER%%/chrome/comm/content/communicator/profile || true
-@unexec /bin/rmdir %D/lib/thunderbird/lib/thunderbird-%%TBVER%%/chrome/comm/content/communicator/pref || true
-@unexec /bin/rmdir %D/lib/thunderbird/lib/thunderbird-%%TBVER%%/chrome/comm/content/communicator/history || true
-@unexec /bin/rmdir %D/lib/thunderbird/lib/thunderbird-%%TBVER%%/chrome/comm/content/communicator/downloadmanager || true
-@unexec /bin/rmdir %D/lib/thunderbird/lib/thunderbird-%%TBVER%%/chrome/comm/content/communicator/directory || true
-@unexec /bin/rmdir %D/lib/thunderbird/lib/thunderbird-%%TBVER%%/chrome/comm/content/communicator/alerts || true
-@unexec /bin/rmdir %D/lib/thunderbird/lib/thunderbird-%%TBVER%%/chrome/comm/content/communicator-region || true
-@unexec /bin/rmdir %D/lib/thunderbird/lib/thunderbird-%%TBVER%%/chrome/comm/content/communicator-platform || true
-@unexec /bin/rmdir %D/lib/thunderbird/lib/thunderbird-%%TBVER%%/chrome/classic/skin/classic/xpinstall || true
-@unexec /bin/rmdir %D/lib/thunderbird/lib/thunderbird-%%TBVER%%/chrome/classic/skin/classic/navigator/icons || true
-@unexec /bin/rmdir %D/lib/thunderbird/lib/thunderbird-%%TBVER%%/chrome/classic/skin/classic/navigator/btn1 || true
-@unexec /bin/rmdir %D/lib/thunderbird/lib/thunderbird-%%TBVER%%/chrome/classic/skin/classic/mozapps/update || true
-@unexec /bin/rmdir %D/lib/thunderbird/lib/thunderbird-%%TBVER%%/chrome/classic/skin/classic/mozapps/shared || true
-@unexec /bin/rmdir %D/lib/thunderbird/lib/thunderbird-%%TBVER%%/chrome/classic/skin/classic/mozapps/profile || true
-@unexec /bin/rmdir %D/lib/thunderbird/lib/thunderbird-%%TBVER%%/chrome/classic/skin/classic/mozapps/pref || true
-@unexec /bin/rmdir %D/lib/thunderbird/lib/thunderbird-%%TBVER%%/chrome/classic/skin/classic/mozapps/extensions || true
-@unexec /bin/rmdir %D/lib/thunderbird/lib/thunderbird-%%TBVER%%/chrome/classic/skin/classic/mozapps/downloads || true
-@unexec /bin/rmdir %D/lib/thunderbird/lib/thunderbird-%%TBVER%%/chrome/classic/skin/classic/messenger/smime/icons || true
-@unexec /bin/rmdir %D/lib/thunderbird/lib/thunderbird-%%TBVER%%/chrome/classic/skin/classic/messenger/messengercompose || true
-@unexec /bin/rmdir %D/lib/thunderbird/lib/thunderbird-%%TBVER%%/chrome/classic/skin/classic/messenger/icons || true
-@unexec /bin/rmdir %D/lib/thunderbird/lib/thunderbird-%%TBVER%%/chrome/classic/skin/classic/messenger/addressbook/icons || true
-@unexec /bin/rmdir %D/lib/thunderbird/lib/thunderbird-%%TBVER%%/chrome/classic/skin/classic/global/tree || true
-@unexec /bin/rmdir %D/lib/thunderbird/lib/thunderbird-%%TBVER%%/chrome/classic/skin/classic/global/toolbar || true
-@unexec /bin/rmdir %D/lib/thunderbird/lib/thunderbird-%%TBVER%%/chrome/classic/skin/classic/global/splitter || true
-@unexec /bin/rmdir %D/lib/thunderbird/lib/thunderbird-%%TBVER%%/chrome/classic/skin/classic/global/scrollbar || true
-@unexec /bin/rmdir %D/lib/thunderbird/lib/thunderbird-%%TBVER%%/chrome/classic/skin/classic/global/radio || true
-@unexec /bin/rmdir %D/lib/thunderbird/lib/thunderbird-%%TBVER%%/chrome/classic/skin/classic/global/progressmeter || true
-@unexec /bin/rmdir %D/lib/thunderbird/lib/thunderbird-%%TBVER%%/chrome/classic/skin/classic/global/menu || true
-@unexec /bin/rmdir %D/lib/thunderbird/lib/thunderbird-%%TBVER%%/chrome/classic/skin/classic/global/icons || true
-@unexec /bin/rmdir %D/lib/thunderbird/lib/thunderbird-%%TBVER%%/chrome/classic/skin/classic/global/filepicker || true
-@unexec /bin/rmdir %D/lib/thunderbird/lib/thunderbird-%%TBVER%%/chrome/classic/skin/classic/global/console || true
-@unexec /bin/rmdir %D/lib/thunderbird/lib/thunderbird-%%TBVER%%/chrome/classic/skin/classic/global/checkbox || true
-@unexec /bin/rmdir %D/lib/thunderbird/lib/thunderbird-%%TBVER%%/chrome/classic/skin/classic/global/arrow || true
-@unexec /bin/rmdir %D/lib/thunderbird/lib/thunderbird-%%TBVER%%/chrome/classic/skin/classic/editor/icons || true
-@unexec /bin/rmdir %D/lib/thunderbird/lib/thunderbird-%%TBVER%%/chrome/classic/skin/classic/communicator/xpinstall || true
-@unexec /bin/rmdir %D/lib/thunderbird/lib/thunderbird-%%TBVER%%/chrome/classic/skin/classic/communicator/taskbar || true
-@unexec /bin/rmdir %D/lib/thunderbird/lib/thunderbird-%%TBVER%%/chrome/classic/skin/classic/communicator/sidebar || true
-@unexec /bin/rmdir %D/lib/thunderbird/lib/thunderbird-%%TBVER%%/chrome/classic/skin/classic/communicator/search || true
-@unexec /bin/rmdir %D/lib/thunderbird/lib/thunderbird-%%TBVER%%/chrome/classic/skin/classic/communicator/related || true
-@unexec /bin/rmdir %D/lib/thunderbird/lib/thunderbird-%%TBVER%%/chrome/classic/skin/classic/communicator/profile || true
-@unexec /bin/rmdir %D/lib/thunderbird/lib/thunderbird-%%TBVER%%/chrome/classic/skin/classic/communicator/pref || true
-@unexec /bin/rmdir %D/lib/thunderbird/lib/thunderbird-%%TBVER%%/chrome/classic/skin/classic/communicator/icons/smileys || true
-@unexec /bin/rmdir %D/lib/thunderbird/lib/thunderbird-%%TBVER%%/chrome/classic/skin/classic/communicator/directory || true
-@unexec /bin/rmdir %D/lib/thunderbird/lib/thunderbird-%%TBVER%%/chrome/classic/skin/classic/communicator/brand || true
-@unexec /bin/rmdir %D/lib/thunderbird/lib/thunderbird-%%TBVER%%/chrome/classic/skin/classic/communicator/bookmarks || true
-@unexec /bin/rmdir %D/lib/thunderbird/lib/thunderbird-%%TBVER%%/chrome/classic/skin/classic/communicator/alerts || true
-@unexec /bin/rmdir %D/lib/thunderbird/lib/thunderbird-%%TBVER%%/chrome/US/locale/US/navigator-region || true
-@unexec /bin/rmdir %D/lib/thunderbird/lib/thunderbird-%%TBVER%%/chrome/US/locale/US/messenger-region || true
-@unexec /bin/rmdir %D/lib/thunderbird/lib/thunderbird-%%TBVER%%/chrome/US/locale/US/global-region || true
-@unexec /bin/rmdir %D/lib/thunderbird/lib/thunderbird-%%TBVER%%/chrome/US/locale/US/editor-region || true
-@unexec /bin/rmdir %D/lib/thunderbird/lib/thunderbird-%%TBVER%%/chrome/US/locale/US/communicator-region/wallet || true
+@exec /bin/mkdir -p %D/lib/thunderbird/lib/thunderbird-0.7.3/chrome/US/locale/US/communicator-region/wallet || true
+@exec /bin/mkdir -p %D/lib/thunderbird/lib/thunderbird-0.7.3/chrome/US/locale/US/editor-region || true
+@exec /bin/mkdir -p %D/lib/thunderbird/lib/thunderbird-0.7.3/chrome/US/locale/US/global-region || true
+@exec /bin/mkdir -p %D/lib/thunderbird/lib/thunderbird-0.7.3/chrome/US/locale/US/messenger-region || true
+@exec /bin/mkdir -p %D/lib/thunderbird/lib/thunderbird-0.7.3/chrome/US/locale/US/navigator-region || true
+@exec /bin/mkdir -p %D/lib/thunderbird/lib/thunderbird-0.7.3/chrome/classic/skin/classic/communicator/alerts || true
+@exec /bin/mkdir -p %D/lib/thunderbird/lib/thunderbird-0.7.3/chrome/classic/skin/classic/communicator/bookmarks || true
+@exec /bin/mkdir -p %D/lib/thunderbird/lib/thunderbird-0.7.3/chrome/classic/skin/classic/communicator/brand || true
+@exec /bin/mkdir -p %D/lib/thunderbird/lib/thunderbird-0.7.3/chrome/classic/skin/classic/communicator/directory || true
+@exec /bin/mkdir -p %D/lib/thunderbird/lib/thunderbird-0.7.3/chrome/classic/skin/classic/communicator/icons/smileys || true
+@exec /bin/mkdir -p %D/lib/thunderbird/lib/thunderbird-0.7.3/chrome/classic/skin/classic/communicator/pref || true
+@exec /bin/mkdir -p %D/lib/thunderbird/lib/thunderbird-0.7.3/chrome/classic/skin/classic/communicator/profile || true
+@exec /bin/mkdir -p %D/lib/thunderbird/lib/thunderbird-0.7.3/chrome/classic/skin/classic/communicator/related || true
+@exec /bin/mkdir -p %D/lib/thunderbird/lib/thunderbird-0.7.3/chrome/classic/skin/classic/communicator/search || true
+@exec /bin/mkdir -p %D/lib/thunderbird/lib/thunderbird-0.7.3/chrome/classic/skin/classic/communicator/sidebar || true
+@exec /bin/mkdir -p %D/lib/thunderbird/lib/thunderbird-0.7.3/chrome/classic/skin/classic/communicator/taskbar || true
+@exec /bin/mkdir -p %D/lib/thunderbird/lib/thunderbird-0.7.3/chrome/classic/skin/classic/communicator/xpinstall || true
+@exec /bin/mkdir -p %D/lib/thunderbird/lib/thunderbird-0.7.3/chrome/classic/skin/classic/editor/icons || true
+@exec /bin/mkdir -p %D/lib/thunderbird/lib/thunderbird-0.7.3/chrome/classic/skin/classic/global/arrow || true
+@exec /bin/mkdir -p %D/lib/thunderbird/lib/thunderbird-0.7.3/chrome/classic/skin/classic/global/checkbox || true
+@exec /bin/mkdir -p %D/lib/thunderbird/lib/thunderbird-0.7.3/chrome/classic/skin/classic/global/console || true
+@exec /bin/mkdir -p %D/lib/thunderbird/lib/thunderbird-0.7.3/chrome/classic/skin/classic/global/filepicker || true
+@exec /bin/mkdir -p %D/lib/thunderbird/lib/thunderbird-0.7.3/chrome/classic/skin/classic/global/icons || true
+@exec /bin/mkdir -p %D/lib/thunderbird/lib/thunderbird-0.7.3/chrome/classic/skin/classic/global/menu || true
+@exec /bin/mkdir -p %D/lib/thunderbird/lib/thunderbird-0.7.3/chrome/classic/skin/classic/global/progressmeter || true
+@exec /bin/mkdir -p %D/lib/thunderbird/lib/thunderbird-0.7.3/chrome/classic/skin/classic/global/radio || true
+@exec /bin/mkdir -p %D/lib/thunderbird/lib/thunderbird-0.7.3/chrome/classic/skin/classic/global/scrollbar || true
+@exec /bin/mkdir -p %D/lib/thunderbird/lib/thunderbird-0.7.3/chrome/classic/skin/classic/global/splitter || true
+@exec /bin/mkdir -p %D/lib/thunderbird/lib/thunderbird-0.7.3/chrome/classic/skin/classic/global/toolbar || true
+@exec /bin/mkdir -p %D/lib/thunderbird/lib/thunderbird-0.7.3/chrome/classic/skin/classic/global/tree || true
+@exec /bin/mkdir -p %D/lib/thunderbird/lib/thunderbird-0.7.3/chrome/classic/skin/classic/messenger/addressbook/icons || true
+@exec /bin/mkdir -p %D/lib/thunderbird/lib/thunderbird-0.7.3/chrome/classic/skin/classic/messenger/icons || true
+@exec /bin/mkdir -p %D/lib/thunderbird/lib/thunderbird-0.7.3/chrome/classic/skin/classic/messenger/messengercompose || true
+@exec /bin/mkdir -p %D/lib/thunderbird/lib/thunderbird-0.7.3/chrome/classic/skin/classic/messenger/smime/icons || true
+@exec /bin/mkdir -p %D/lib/thunderbird/lib/thunderbird-0.7.3/chrome/classic/skin/classic/mozapps/downloads || true
+@exec /bin/mkdir -p %D/lib/thunderbird/lib/thunderbird-0.7.3/chrome/classic/skin/classic/mozapps/extensions || true
+@exec /bin/mkdir -p %D/lib/thunderbird/lib/thunderbird-0.7.3/chrome/classic/skin/classic/mozapps/pref || true
+@exec /bin/mkdir -p %D/lib/thunderbird/lib/thunderbird-0.7.3/chrome/classic/skin/classic/mozapps/profile || true
+@exec /bin/mkdir -p %D/lib/thunderbird/lib/thunderbird-0.7.3/chrome/classic/skin/classic/mozapps/shared || true
+@exec /bin/mkdir -p %D/lib/thunderbird/lib/thunderbird-0.7.3/chrome/classic/skin/classic/mozapps/update || true
+@exec /bin/mkdir -p %D/lib/thunderbird/lib/thunderbird-0.7.3/chrome/classic/skin/classic/navigator/btn1 || true
+@exec /bin/mkdir -p %D/lib/thunderbird/lib/thunderbird-0.7.3/chrome/classic/skin/classic/navigator/icons || true
+@exec /bin/mkdir -p %D/lib/thunderbird/lib/thunderbird-0.7.3/chrome/classic/skin/classic/xpinstall || true
+@exec /bin/mkdir -p %D/lib/thunderbird/lib/thunderbird-0.7.3/chrome/comm/content/communicator-platform || true
+@exec /bin/mkdir -p %D/lib/thunderbird/lib/thunderbird-0.7.3/chrome/comm/content/communicator-region || true
+@exec /bin/mkdir -p %D/lib/thunderbird/lib/thunderbird-0.7.3/chrome/comm/content/communicator/alerts || true
+@exec /bin/mkdir -p %D/lib/thunderbird/lib/thunderbird-0.7.3/chrome/comm/content/communicator/directory || true
+@exec /bin/mkdir -p %D/lib/thunderbird/lib/thunderbird-0.7.3/chrome/comm/content/communicator/downloadmanager || true
+@exec /bin/mkdir -p %D/lib/thunderbird/lib/thunderbird-0.7.3/chrome/comm/content/communicator/history || true
+@exec /bin/mkdir -p %D/lib/thunderbird/lib/thunderbird-0.7.3/chrome/comm/content/communicator/pref || true
+@exec /bin/mkdir -p %D/lib/thunderbird/lib/thunderbird-0.7.3/chrome/comm/content/communicator/profile || true
+@exec /bin/mkdir -p %D/lib/thunderbird/lib/thunderbird-0.7.3/chrome/comm/content/communicator/related || true
+@exec /bin/mkdir -p %D/lib/thunderbird/lib/thunderbird-0.7.3/chrome/comm/content/communicator/search || true
+@exec /bin/mkdir -p %D/lib/thunderbird/lib/thunderbird-0.7.3/chrome/comm/content/communicator/sidebar || true
+@exec /bin/mkdir -p %D/lib/thunderbird/lib/thunderbird-0.7.3/chrome/comm/content/communicator/wallet || true
+@exec /bin/mkdir -p %D/lib/thunderbird/lib/thunderbird-0.7.3/chrome/comm/content/communicator/xml || true
+@exec /bin/mkdir -p %D/lib/thunderbird/lib/thunderbird-0.7.3/chrome/comm/content/communicator/xpinstall || true
+@exec /bin/mkdir -p %D/lib/thunderbird/lib/thunderbird-0.7.3/chrome/comm/content/editor-region || true
+@exec /bin/mkdir -p %D/lib/thunderbird/lib/thunderbird-0.7.3/chrome/comm/content/editor/images || true
+@exec /bin/mkdir -p %D/lib/thunderbird/lib/thunderbird-0.7.3/chrome/comm/content/help || true
+@exec /bin/mkdir -p %D/lib/thunderbird/lib/thunderbird-0.7.3/chrome/comm/content/mozldap || true
+@exec /bin/mkdir -p %D/lib/thunderbird/lib/thunderbird-0.7.3/chrome/comm/content/navigator || true
+@exec /bin/mkdir -p %D/lib/thunderbird/lib/thunderbird-0.7.3/chrome/comm/content/navigator-platform || true
+@exec /bin/mkdir -p %D/lib/thunderbird/lib/thunderbird-0.7.3/chrome/comm/content/navigator-region || true
+@exec /bin/mkdir -p %D/lib/thunderbird/lib/thunderbird-0.7.3/chrome/comm/content/necko || true
+@exec /bin/mkdir -p %D/lib/thunderbird/lib/thunderbird-0.7.3/chrome/comm/content/wallet || true
+@exec /bin/mkdir -p %D/lib/thunderbird/lib/thunderbird-0.7.3/chrome/comm/content/xbl-marquee || true
+@exec /bin/mkdir -p %D/lib/thunderbird/lib/thunderbird-0.7.3/chrome/embed-sample/content/embed || true
+@exec /bin/mkdir -p %D/lib/thunderbird/lib/thunderbird-0.7.3/chrome/embed-sample/locale/en-US/embed || true
+@exec /bin/mkdir -p %D/lib/thunderbird/lib/thunderbird-0.7.3/chrome/embed-sample/skin/classic/embed || true
+@exec /bin/mkdir -p %D/lib/thunderbird/lib/thunderbird-0.7.3/chrome/en-US/locale/en-US/communicator/directory || true
+@exec /bin/mkdir -p %D/lib/thunderbird/lib/thunderbird-0.7.3/chrome/en-US/locale/en-US/communicator/dom || true
+@exec /bin/mkdir -p %D/lib/thunderbird/lib/thunderbird-0.7.3/chrome/en-US/locale/en-US/communicator/downloadmanager || true
+@exec /bin/mkdir -p %D/lib/thunderbird/lib/thunderbird-0.7.3/chrome/en-US/locale/en-US/communicator/history || true
+@exec /bin/mkdir -p %D/lib/thunderbird/lib/thunderbird-0.7.3/chrome/en-US/locale/en-US/communicator/layout || true
+@exec /bin/mkdir -p %D/lib/thunderbird/lib/thunderbird-0.7.3/chrome/en-US/locale/en-US/communicator/pref || true
+@exec /bin/mkdir -p %D/lib/thunderbird/lib/thunderbird-0.7.3/chrome/en-US/locale/en-US/communicator/profile || true
+@exec /bin/mkdir -p %D/lib/thunderbird/lib/thunderbird-0.7.3/chrome/en-US/locale/en-US/communicator/search || true
+@exec /bin/mkdir -p %D/lib/thunderbird/lib/thunderbird-0.7.3/chrome/en-US/locale/en-US/communicator/security || true
+@exec /bin/mkdir -p %D/lib/thunderbird/lib/thunderbird-0.7.3/chrome/en-US/locale/en-US/communicator/sidebar || true
+@exec /bin/mkdir -p %D/lib/thunderbird/lib/thunderbird-0.7.3/chrome/en-US/locale/en-US/communicator/wallet || true
+@exec /bin/mkdir -p %D/lib/thunderbird/lib/thunderbird-0.7.3/chrome/en-US/locale/en-US/communicator/xml || true
+@exec /bin/mkdir -p %D/lib/thunderbird/lib/thunderbird-0.7.3/chrome/en-US/locale/en-US/communicator/xpinstall || true
+@exec /bin/mkdir -p %D/lib/thunderbird/lib/thunderbird-0.7.3/chrome/en-US/locale/en-US/editor || true
+@exec /bin/mkdir -p %D/lib/thunderbird/lib/thunderbird-0.7.3/chrome/en-US/locale/en-US/global || true
+@exec /bin/mkdir -p %D/lib/thunderbird/lib/thunderbird-0.7.3/chrome/en-US/locale/en-US/messenger-mdn || true
+@exec /bin/mkdir -p %D/lib/thunderbird/lib/thunderbird-0.7.3/chrome/en-US/locale/en-US/messenger-smime || true
+@exec /bin/mkdir -p %D/lib/thunderbird/lib/thunderbird-0.7.3/chrome/en-US/locale/en-US/messenger/addressbook || true
+@exec /bin/mkdir -p %D/lib/thunderbird/lib/thunderbird-0.7.3/chrome/en-US/locale/en-US/messenger/messengercompose || true
+@exec /bin/mkdir -p %D/lib/thunderbird/lib/thunderbird-0.7.3/chrome/en-US/locale/en-US/mozapps/downloads || true
+@exec /bin/mkdir -p %D/lib/thunderbird/lib/thunderbird-0.7.3/chrome/en-US/locale/en-US/mozapps/extensions || true
+@exec /bin/mkdir -p %D/lib/thunderbird/lib/thunderbird-0.7.3/chrome/en-US/locale/en-US/mozapps/profile || true
+@exec /bin/mkdir -p %D/lib/thunderbird/lib/thunderbird-0.7.3/chrome/en-US/locale/en-US/mozapps/update || true
+@exec /bin/mkdir -p %D/lib/thunderbird/lib/thunderbird-0.7.3/chrome/en-US/locale/en-US/mozapps/xpinstall || true
+@exec /bin/mkdir -p %D/lib/thunderbird/lib/thunderbird-0.7.3/chrome/en-US/locale/en-US/mozldap || true
+@exec /bin/mkdir -p %D/lib/thunderbird/lib/thunderbird-0.7.3/chrome/en-US/locale/en-US/navigator || true
+@exec /bin/mkdir -p %D/lib/thunderbird/lib/thunderbird-0.7.3/chrome/en-US/locale/en-US/necko || true
+@exec /bin/mkdir -p %D/lib/thunderbird/lib/thunderbird-0.7.3/chrome/en-US/locale/en-US/pipnss || true
+@exec /bin/mkdir -p %D/lib/thunderbird/lib/thunderbird-0.7.3/chrome/en-US/locale/en-US/pippki || true
+@exec /bin/mkdir -p %D/lib/thunderbird/lib/thunderbird-0.7.3/chrome/en-US/locale/en-US/wallet || true
+@exec /bin/mkdir -p %D/lib/thunderbird/lib/thunderbird-0.7.3/chrome/en-unix/locale/en-US/communicator-platform/pref || true
+@exec /bin/mkdir -p %D/lib/thunderbird/lib/thunderbird-0.7.3/chrome/en-unix/locale/en-US/global-platform || true
+@exec /bin/mkdir -p %D/lib/thunderbird/lib/thunderbird-0.7.3/chrome/en-unix/locale/en-US/navigator-platform || true
+@exec /bin/mkdir -p %D/lib/thunderbird/lib/thunderbird-0.7.3/chrome/messenger/content/editor/images || true
+@exec /bin/mkdir -p %D/lib/thunderbird/lib/thunderbird-0.7.3/chrome/messenger/content/messenger-mdn || true
+@exec /bin/mkdir -p %D/lib/thunderbird/lib/thunderbird-0.7.3/chrome/messenger/content/messenger-region || true
+@exec /bin/mkdir -p %D/lib/thunderbird/lib/thunderbird-0.7.3/chrome/messenger/content/messenger-smime || true
+@exec /bin/mkdir -p %D/lib/thunderbird/lib/thunderbird-0.7.3/chrome/messenger/content/messenger-views || true
+@exec /bin/mkdir -p %D/lib/thunderbird/lib/thunderbird-0.7.3/chrome/messenger/content/messenger/addressbook || true
+@exec /bin/mkdir -p %D/lib/thunderbird/lib/thunderbird-0.7.3/chrome/messenger/content/messenger/messengercompose || true
+@exec /bin/mkdir -p %D/lib/thunderbird/lib/thunderbird-0.7.3/chrome/offline/content/messenger-offline || true
+@exec /bin/mkdir -p %D/lib/thunderbird/lib/thunderbird-0.7.3/chrome/offline/locale/en-US/messenger-offline || true
+@exec /bin/mkdir -p %D/lib/thunderbird/lib/thunderbird-0.7.3/chrome/pipnss/content/pipnss || true
+@exec /bin/mkdir -p %D/lib/thunderbird/lib/thunderbird-0.7.3/chrome/pippki/content/pippki || true
+@exec /bin/mkdir -p %D/lib/thunderbird/lib/thunderbird-0.7.3/chrome/toolkit/content/communicator || true
+@exec /bin/mkdir -p %D/lib/thunderbird/lib/thunderbird-0.7.3/chrome/toolkit/content/global-platform || true
+@exec /bin/mkdir -p %D/lib/thunderbird/lib/thunderbird-0.7.3/chrome/toolkit/content/global-region || true
+@exec /bin/mkdir -p %D/lib/thunderbird/lib/thunderbird-0.7.3/chrome/toolkit/content/global/bindings || true
+@exec /bin/mkdir -p %D/lib/thunderbird/lib/thunderbird-0.7.3/chrome/toolkit/content/mozapps/downloads || true
+@exec /bin/mkdir -p %D/lib/thunderbird/lib/thunderbird-0.7.3/chrome/toolkit/content/mozapps/extensions || true
+@exec /bin/mkdir -p %D/lib/thunderbird/lib/thunderbird-0.7.3/chrome/toolkit/content/mozapps/profile || true
+@exec /bin/mkdir -p %D/lib/thunderbird/lib/thunderbird-0.7.3/chrome/toolkit/content/mozapps/shared || true
+@exec /bin/mkdir -p %D/lib/thunderbird/lib/thunderbird-0.7.3/chrome/toolkit/content/mozapps/update || true
+@exec /bin/mkdir -p %D/lib/thunderbird/lib/thunderbird-0.7.3/chrome/toolkit/content/mozapps/xpinstall || true
+@unexec /bin/rmdir %D/lib/thunderbird/lib/thunderbird-0.7.3/chrome/toolkit/content/mozapps/xpinstall || true
+@unexec /bin/rmdir %D/lib/thunderbird/lib/thunderbird-0.7.3/chrome/toolkit/content/mozapps/update || true
+@unexec /bin/rmdir %D/lib/thunderbird/lib/thunderbird-0.7.3/chrome/toolkit/content/mozapps/shared || true
+@unexec /bin/rmdir %D/lib/thunderbird/lib/thunderbird-0.7.3/chrome/toolkit/content/mozapps/profile || true
+@unexec /bin/rmdir %D/lib/thunderbird/lib/thunderbird-0.7.3/chrome/toolkit/content/mozapps/extensions || true
+@unexec /bin/rmdir %D/lib/thunderbird/lib/thunderbird-0.7.3/chrome/toolkit/content/mozapps/downloads || true
+@unexec /bin/rmdir %D/lib/thunderbird/lib/thunderbird-0.7.3/chrome/toolkit/content/global/bindings || true
+@unexec /bin/rmdir %D/lib/thunderbird/lib/thunderbird-0.7.3/chrome/toolkit/content/global-region || true
+@unexec /bin/rmdir %D/lib/thunderbird/lib/thunderbird-0.7.3/chrome/toolkit/content/global-platform || true
+@unexec /bin/rmdir %D/lib/thunderbird/lib/thunderbird-0.7.3/chrome/toolkit/content/communicator || true
+@unexec /bin/rmdir %D/lib/thunderbird/lib/thunderbird-0.7.3/chrome/pippki/content/pippki || true
+@unexec /bin/rmdir %D/lib/thunderbird/lib/thunderbird-0.7.3/chrome/pipnss/content/pipnss || true
+@unexec /bin/rmdir %D/lib/thunderbird/lib/thunderbird-0.7.3/chrome/offline/locale/en-US/messenger-offline || true
+@unexec /bin/rmdir %D/lib/thunderbird/lib/thunderbird-0.7.3/chrome/offline/content/messenger-offline || true
+@unexec /bin/rmdir %D/lib/thunderbird/lib/thunderbird-0.7.3/chrome/messenger/content/messenger/messengercompose || true
+@unexec /bin/rmdir %D/lib/thunderbird/lib/thunderbird-0.7.3/chrome/messenger/content/messenger/addressbook || true
+@unexec /bin/rmdir %D/lib/thunderbird/lib/thunderbird-0.7.3/chrome/messenger/content/messenger-views || true
+@unexec /bin/rmdir %D/lib/thunderbird/lib/thunderbird-0.7.3/chrome/messenger/content/messenger-smime || true
+@unexec /bin/rmdir %D/lib/thunderbird/lib/thunderbird-0.7.3/chrome/messenger/content/messenger-region || true
+@unexec /bin/rmdir %D/lib/thunderbird/lib/thunderbird-0.7.3/chrome/messenger/content/messenger-mdn || true
+@unexec /bin/rmdir %D/lib/thunderbird/lib/thunderbird-0.7.3/chrome/messenger/content/editor/images || true
+@unexec /bin/rmdir %D/lib/thunderbird/lib/thunderbird-0.7.3/chrome/en-unix/locale/en-US/navigator-platform || true
+@unexec /bin/rmdir %D/lib/thunderbird/lib/thunderbird-0.7.3/chrome/en-unix/locale/en-US/global-platform || true
+@unexec /bin/rmdir %D/lib/thunderbird/lib/thunderbird-0.7.3/chrome/en-unix/locale/en-US/communicator-platform/pref || true
+@unexec /bin/rmdir %D/lib/thunderbird/lib/thunderbird-0.7.3/chrome/en-US/locale/en-US/wallet || true
+@unexec /bin/rmdir %D/lib/thunderbird/lib/thunderbird-0.7.3/chrome/en-US/locale/en-US/pippki || true
+@unexec /bin/rmdir %D/lib/thunderbird/lib/thunderbird-0.7.3/chrome/en-US/locale/en-US/pipnss || true
+@unexec /bin/rmdir %D/lib/thunderbird/lib/thunderbird-0.7.3/chrome/en-US/locale/en-US/necko || true
+@unexec /bin/rmdir %D/lib/thunderbird/lib/thunderbird-0.7.3/chrome/en-US/locale/en-US/navigator || true
+@unexec /bin/rmdir %D/lib/thunderbird/lib/thunderbird-0.7.3/chrome/en-US/locale/en-US/mozldap || true
+@unexec /bin/rmdir %D/lib/thunderbird/lib/thunderbird-0.7.3/chrome/en-US/locale/en-US/mozapps/xpinstall || true
+@unexec /bin/rmdir %D/lib/thunderbird/lib/thunderbird-0.7.3/chrome/en-US/locale/en-US/mozapps/update || true
+@unexec /bin/rmdir %D/lib/thunderbird/lib/thunderbird-0.7.3/chrome/en-US/locale/en-US/mozapps/profile || true
+@unexec /bin/rmdir %D/lib/thunderbird/lib/thunderbird-0.7.3/chrome/en-US/locale/en-US/mozapps/extensions || true
+@unexec /bin/rmdir %D/lib/thunderbird/lib/thunderbird-0.7.3/chrome/en-US/locale/en-US/mozapps/downloads || true
+@unexec /bin/rmdir %D/lib/thunderbird/lib/thunderbird-0.7.3/chrome/en-US/locale/en-US/messenger/messengercompose || true
+@unexec /bin/rmdir %D/lib/thunderbird/lib/thunderbird-0.7.3/chrome/en-US/locale/en-US/messenger/addressbook || true
+@unexec /bin/rmdir %D/lib/thunderbird/lib/thunderbird-0.7.3/chrome/en-US/locale/en-US/messenger-smime || true
+@unexec /bin/rmdir %D/lib/thunderbird/lib/thunderbird-0.7.3/chrome/en-US/locale/en-US/messenger-mdn || true
+@unexec /bin/rmdir %D/lib/thunderbird/lib/thunderbird-0.7.3/chrome/en-US/locale/en-US/global || true
+@unexec /bin/rmdir %D/lib/thunderbird/lib/thunderbird-0.7.3/chrome/en-US/locale/en-US/editor || true
+@unexec /bin/rmdir %D/lib/thunderbird/lib/thunderbird-0.7.3/chrome/en-US/locale/en-US/communicator/xpinstall || true
+@unexec /bin/rmdir %D/lib/thunderbird/lib/thunderbird-0.7.3/chrome/en-US/locale/en-US/communicator/xml || true
+@unexec /bin/rmdir %D/lib/thunderbird/lib/thunderbird-0.7.3/chrome/en-US/locale/en-US/communicator/wallet || true
+@unexec /bin/rmdir %D/lib/thunderbird/lib/thunderbird-0.7.3/chrome/en-US/locale/en-US/communicator/sidebar || true
+@unexec /bin/rmdir %D/lib/thunderbird/lib/thunderbird-0.7.3/chrome/en-US/locale/en-US/communicator/security || true
+@unexec /bin/rmdir %D/lib/thunderbird/lib/thunderbird-0.7.3/chrome/en-US/locale/en-US/communicator/search || true
+@unexec /bin/rmdir %D/lib/thunderbird/lib/thunderbird-0.7.3/chrome/en-US/locale/en-US/communicator/profile || true
+@unexec /bin/rmdir %D/lib/thunderbird/lib/thunderbird-0.7.3/chrome/en-US/locale/en-US/communicator/pref || true
+@unexec /bin/rmdir %D/lib/thunderbird/lib/thunderbird-0.7.3/chrome/en-US/locale/en-US/communicator/layout || true
+@unexec /bin/rmdir %D/lib/thunderbird/lib/thunderbird-0.7.3/chrome/en-US/locale/en-US/communicator/history || true
+@unexec /bin/rmdir %D/lib/thunderbird/lib/thunderbird-0.7.3/chrome/en-US/locale/en-US/communicator/downloadmanager || true
+@unexec /bin/rmdir %D/lib/thunderbird/lib/thunderbird-0.7.3/chrome/en-US/locale/en-US/communicator/dom || true
+@unexec /bin/rmdir %D/lib/thunderbird/lib/thunderbird-0.7.3/chrome/en-US/locale/en-US/communicator/directory || true
+@unexec /bin/rmdir %D/lib/thunderbird/lib/thunderbird-0.7.3/chrome/embed-sample/skin/classic/embed || true
+@unexec /bin/rmdir %D/lib/thunderbird/lib/thunderbird-0.7.3/chrome/embed-sample/locale/en-US/embed || true
+@unexec /bin/rmdir %D/lib/thunderbird/lib/thunderbird-0.7.3/chrome/embed-sample/content/embed || true
+@unexec /bin/rmdir %D/lib/thunderbird/lib/thunderbird-0.7.3/chrome/comm/content/xbl-marquee || true
+@unexec /bin/rmdir %D/lib/thunderbird/lib/thunderbird-0.7.3/chrome/comm/content/wallet || true
+@unexec /bin/rmdir %D/lib/thunderbird/lib/thunderbird-0.7.3/chrome/comm/content/necko || true
+@unexec /bin/rmdir %D/lib/thunderbird/lib/thunderbird-0.7.3/chrome/comm/content/navigator-region || true
+@unexec /bin/rmdir %D/lib/thunderbird/lib/thunderbird-0.7.3/chrome/comm/content/navigator-platform || true
+@unexec /bin/rmdir %D/lib/thunderbird/lib/thunderbird-0.7.3/chrome/comm/content/navigator || true
+@unexec /bin/rmdir %D/lib/thunderbird/lib/thunderbird-0.7.3/chrome/comm/content/mozldap || true
+@unexec /bin/rmdir %D/lib/thunderbird/lib/thunderbird-0.7.3/chrome/comm/content/help || true
+@unexec /bin/rmdir %D/lib/thunderbird/lib/thunderbird-0.7.3/chrome/comm/content/editor/images || true
+@unexec /bin/rmdir %D/lib/thunderbird/lib/thunderbird-0.7.3/chrome/comm/content/editor-region || true
+@unexec /bin/rmdir %D/lib/thunderbird/lib/thunderbird-0.7.3/chrome/comm/content/communicator/xpinstall || true
+@unexec /bin/rmdir %D/lib/thunderbird/lib/thunderbird-0.7.3/chrome/comm/content/communicator/xml || true
+@unexec /bin/rmdir %D/lib/thunderbird/lib/thunderbird-0.7.3/chrome/comm/content/communicator/wallet || true
+@unexec /bin/rmdir %D/lib/thunderbird/lib/thunderbird-0.7.3/chrome/comm/content/communicator/sidebar || true
+@unexec /bin/rmdir %D/lib/thunderbird/lib/thunderbird-0.7.3/chrome/comm/content/communicator/search || true
+@unexec /bin/rmdir %D/lib/thunderbird/lib/thunderbird-0.7.3/chrome/comm/content/communicator/related || true
+@unexec /bin/rmdir %D/lib/thunderbird/lib/thunderbird-0.7.3/chrome/comm/content/communicator/profile || true
+@unexec /bin/rmdir %D/lib/thunderbird/lib/thunderbird-0.7.3/chrome/comm/content/communicator/pref || true
+@unexec /bin/rmdir %D/lib/thunderbird/lib/thunderbird-0.7.3/chrome/comm/content/communicator/history || true
+@unexec /bin/rmdir %D/lib/thunderbird/lib/thunderbird-0.7.3/chrome/comm/content/communicator/downloadmanager || true
+@unexec /bin/rmdir %D/lib/thunderbird/lib/thunderbird-0.7.3/chrome/comm/content/communicator/directory || true
+@unexec /bin/rmdir %D/lib/thunderbird/lib/thunderbird-0.7.3/chrome/comm/content/communicator/alerts || true
+@unexec /bin/rmdir %D/lib/thunderbird/lib/thunderbird-0.7.3/chrome/comm/content/communicator-region || true
+@unexec /bin/rmdir %D/lib/thunderbird/lib/thunderbird-0.7.3/chrome/comm/content/communicator-platform || true
+@unexec /bin/rmdir %D/lib/thunderbird/lib/thunderbird-0.7.3/chrome/classic/skin/classic/xpinstall || true
+@unexec /bin/rmdir %D/lib/thunderbird/lib/thunderbird-0.7.3/chrome/classic/skin/classic/navigator/icons || true
+@unexec /bin/rmdir %D/lib/thunderbird/lib/thunderbird-0.7.3/chrome/classic/skin/classic/navigator/btn1 || true
+@unexec /bin/rmdir %D/lib/thunderbird/lib/thunderbird-0.7.3/chrome/classic/skin/classic/mozapps/update || true
+@unexec /bin/rmdir %D/lib/thunderbird/lib/thunderbird-0.7.3/chrome/classic/skin/classic/mozapps/shared || true
+@unexec /bin/rmdir %D/lib/thunderbird/lib/thunderbird-0.7.3/chrome/classic/skin/classic/mozapps/profile || true
+@unexec /bin/rmdir %D/lib/thunderbird/lib/thunderbird-0.7.3/chrome/classic/skin/classic/mozapps/pref || true
+@unexec /bin/rmdir %D/lib/thunderbird/lib/thunderbird-0.7.3/chrome/classic/skin/classic/mozapps/extensions || true
+@unexec /bin/rmdir %D/lib/thunderbird/lib/thunderbird-0.7.3/chrome/classic/skin/classic/mozapps/downloads || true
+@unexec /bin/rmdir %D/lib/thunderbird/lib/thunderbird-0.7.3/chrome/classic/skin/classic/messenger/smime/icons || true
+@unexec /bin/rmdir %D/lib/thunderbird/lib/thunderbird-0.7.3/chrome/classic/skin/classic/messenger/messengercompose || true
+@unexec /bin/rmdir %D/lib/thunderbird/lib/thunderbird-0.7.3/chrome/classic/skin/classic/messenger/icons || true
+@unexec /bin/rmdir %D/lib/thunderbird/lib/thunderbird-0.7.3/chrome/classic/skin/classic/messenger/addressbook/icons || true
+@unexec /bin/rmdir %D/lib/thunderbird/lib/thunderbird-0.7.3/chrome/classic/skin/classic/global/tree || true
+@unexec /bin/rmdir %D/lib/thunderbird/lib/thunderbird-0.7.3/chrome/classic/skin/classic/global/toolbar || true
+@unexec /bin/rmdir %D/lib/thunderbird/lib/thunderbird-0.7.3/chrome/classic/skin/classic/global/splitter || true
+@unexec /bin/rmdir %D/lib/thunderbird/lib/thunderbird-0.7.3/chrome/classic/skin/classic/global/scrollbar || true
+@unexec /bin/rmdir %D/lib/thunderbird/lib/thunderbird-0.7.3/chrome/classic/skin/classic/global/radio || true
+@unexec /bin/rmdir %D/lib/thunderbird/lib/thunderbird-0.7.3/chrome/classic/skin/classic/global/progressmeter || true
+@unexec /bin/rmdir %D/lib/thunderbird/lib/thunderbird-0.7.3/chrome/classic/skin/classic/global/menu || true
+@unexec /bin/rmdir %D/lib/thunderbird/lib/thunderbird-0.7.3/chrome/classic/skin/classic/global/icons || true
+@unexec /bin/rmdir %D/lib/thunderbird/lib/thunderbird-0.7.3/chrome/classic/skin/classic/global/filepicker || true
+@unexec /bin/rmdir %D/lib/thunderbird/lib/thunderbird-0.7.3/chrome/classic/skin/classic/global/console || true
+@unexec /bin/rmdir %D/lib/thunderbird/lib/thunderbird-0.7.3/chrome/classic/skin/classic/global/checkbox || true
+@unexec /bin/rmdir %D/lib/thunderbird/lib/thunderbird-0.7.3/chrome/classic/skin/classic/global/arrow || true
+@unexec /bin/rmdir %D/lib/thunderbird/lib/thunderbird-0.7.3/chrome/classic/skin/classic/editor/icons || true
+@unexec /bin/rmdir %D/lib/thunderbird/lib/thunderbird-0.7.3/chrome/classic/skin/classic/communicator/xpinstall || true
+@unexec /bin/rmdir %D/lib/thunderbird/lib/thunderbird-0.7.3/chrome/classic/skin/classic/communicator/taskbar || true
+@unexec /bin/rmdir %D/lib/thunderbird/lib/thunderbird-0.7.3/chrome/classic/skin/classic/communicator/sidebar || true
+@unexec /bin/rmdir %D/lib/thunderbird/lib/thunderbird-0.7.3/chrome/classic/skin/classic/communicator/search || true
+@unexec /bin/rmdir %D/lib/thunderbird/lib/thunderbird-0.7.3/chrome/classic/skin/classic/communicator/related || true
+@unexec /bin/rmdir %D/lib/thunderbird/lib/thunderbird-0.7.3/chrome/classic/skin/classic/communicator/profile || true
+@unexec /bin/rmdir %D/lib/thunderbird/lib/thunderbird-0.7.3/chrome/classic/skin/classic/communicator/pref || true
+@unexec /bin/rmdir %D/lib/thunderbird/lib/thunderbird-0.7.3/chrome/classic/skin/classic/communicator/icons/smileys || true
+@unexec /bin/rmdir %D/lib/thunderbird/lib/thunderbird-0.7.3/chrome/classic/skin/classic/communicator/directory || true
+@unexec /bin/rmdir %D/lib/thunderbird/lib/thunderbird-0.7.3/chrome/classic/skin/classic/communicator/brand || true
+@unexec /bin/rmdir %D/lib/thunderbird/lib/thunderbird-0.7.3/chrome/classic/skin/classic/communicator/bookmarks || true
+@unexec /bin/rmdir %D/lib/thunderbird/lib/thunderbird-0.7.3/chrome/classic/skin/classic/communicator/alerts || true
+@unexec /bin/rmdir %D/lib/thunderbird/lib/thunderbird-0.7.3/chrome/US/locale/US/navigator-region || true
+@unexec /bin/rmdir %D/lib/thunderbird/lib/thunderbird-0.7.3/chrome/US/locale/US/messenger-region || true
+@unexec /bin/rmdir %D/lib/thunderbird/lib/thunderbird-0.7.3/chrome/US/locale/US/global-region || true
+@unexec /bin/rmdir %D/lib/thunderbird/lib/thunderbird-0.7.3/chrome/US/locale/US/editor-region || true
+@unexec /bin/rmdir %D/lib/thunderbird/lib/thunderbird-0.7.3/chrome/US/locale/US/communicator-region/wallet || true
 @dirrm lib/thunderbird/share/aclocal
 @dirrm lib/thunderbird/share
-@dirrm lib/thunderbird/lib/thunderbird-%%TBVER%%/res/throbber
-@dirrm lib/thunderbird/lib/thunderbird-%%TBVER%%/res/samples/sampleimages
-@dirrm lib/thunderbird/lib/thunderbird-%%TBVER%%/res/samples
-@dirrm lib/thunderbird/lib/thunderbird-%%TBVER%%/res/rdf
-@dirrm lib/thunderbird/lib/thunderbird-%%TBVER%%/res/html
-@dirrm lib/thunderbird/lib/thunderbird-%%TBVER%%/res/fonts
-@dirrm lib/thunderbird/lib/thunderbird-%%TBVER%%/res/entityTables
-@dirrm lib/thunderbird/lib/thunderbird-%%TBVER%%/res/dtd
-@dirrm lib/thunderbird/lib/thunderbird-%%TBVER%%/res/builtin
-@dirrm lib/thunderbird/lib/thunderbird-%%TBVER%%/res
-@dirrm lib/thunderbird/lib/thunderbird-%%TBVER%%/plugins
-@dirrm lib/thunderbird/lib/thunderbird-%%TBVER%%/init.d
-@dirrm lib/thunderbird/lib/thunderbird-%%TBVER%%/icons
-@dirrm lib/thunderbird/lib/thunderbird-%%TBVER%%/greprefs
-@dirrm lib/thunderbird/lib/thunderbird-%%TBVER%%/extensions/{972ce4c6-7e08-4474-a285-3208198ce6fd}
-@dirrm lib/thunderbird/lib/thunderbird-%%TBVER%%/extensions.port
-@dirrm lib/thunderbird/lib/thunderbird-%%TBVER%%/extensions
-@dirrm lib/thunderbird/lib/thunderbird-%%TBVER%%/defaults/wallet
-@dirrm lib/thunderbird/lib/thunderbird-%%TBVER%%/defaults/profile/extensions/{972ce4c6-7e08-4474-a285-3208198ce6fd}
-@dirrm lib/thunderbird/lib/thunderbird-%%TBVER%%/defaults/profile/extensions
-@dirrm lib/thunderbird/lib/thunderbird-%%TBVER%%/defaults/profile/chrome
-@dirrm lib/thunderbird/lib/thunderbird-%%TBVER%%/defaults/profile/US/chrome
-@dirrm lib/thunderbird/lib/thunderbird-%%TBVER%%/defaults/profile/US
-@dirrm lib/thunderbird/lib/thunderbird-%%TBVER%%/defaults/profile
-@dirrm lib/thunderbird/lib/thunderbird-%%TBVER%%/defaults/pref
-@dirrm lib/thunderbird/lib/thunderbird-%%TBVER%%/defaults/messenger/US
-@dirrm lib/thunderbird/lib/thunderbird-%%TBVER%%/defaults/messenger
-@dirrm lib/thunderbird/lib/thunderbird-%%TBVER%%/defaults
-@dirrm lib/thunderbird/lib/thunderbird-%%TBVER%%/components/myspell
-@dirrm lib/thunderbird/lib/thunderbird-%%TBVER%%/components
-@dirrm lib/thunderbird/lib/thunderbird-%%TBVER%%/chrome/toolkit/content/mozapps
-@dirrm lib/thunderbird/lib/thunderbird-%%TBVER%%/chrome/toolkit/content/global
-@dirrm lib/thunderbird/lib/thunderbird-%%TBVER%%/chrome/toolkit/content
-@dirrm lib/thunderbird/lib/thunderbird-%%TBVER%%/chrome/toolkit
-@dirrm lib/thunderbird/lib/thunderbird-%%TBVER%%/chrome/pippki/content
-@dirrm lib/thunderbird/lib/thunderbird-%%TBVER%%/chrome/pippki
-@dirrm lib/thunderbird/lib/thunderbird-%%TBVER%%/chrome/pipnss/content
-@dirrm lib/thunderbird/lib/thunderbird-%%TBVER%%/chrome/pipnss
-@dirrm lib/thunderbird/lib/thunderbird-%%TBVER%%/chrome/overlayinfo/navigator/content
-@dirrm lib/thunderbird/lib/thunderbird-%%TBVER%%/chrome/overlayinfo/navigator
-@dirrm lib/thunderbird/lib/thunderbird-%%TBVER%%/chrome/overlayinfo/messenger/content
-@dirrm lib/thunderbird/lib/thunderbird-%%TBVER%%/chrome/overlayinfo/messenger
-@dirrm lib/thunderbird/lib/thunderbird-%%TBVER%%/chrome/overlayinfo/cookie/content
-@dirrm lib/thunderbird/lib/thunderbird-%%TBVER%%/chrome/overlayinfo/cookie
-@dirrm lib/thunderbird/lib/thunderbird-%%TBVER%%/chrome/overlayinfo/communicator/content
-@dirrm lib/thunderbird/lib/thunderbird-%%TBVER%%/chrome/overlayinfo/communicator
-@dirrm lib/thunderbird/lib/thunderbird-%%TBVER%%/chrome/overlayinfo
-@dirrm lib/thunderbird/lib/thunderbird-%%TBVER%%/chrome/offline/locale/en-US
-@dirrm lib/thunderbird/lib/thunderbird-%%TBVER%%/chrome/offline/locale
-@dirrm lib/thunderbird/lib/thunderbird-%%TBVER%%/chrome/offline/content
-@dirrm lib/thunderbird/lib/thunderbird-%%TBVER%%/chrome/offline
-@dirrm lib/thunderbird/lib/thunderbird-%%TBVER%%/chrome/messenger/content/messenger
-@dirrm lib/thunderbird/lib/thunderbird-%%TBVER%%/chrome/messenger/content/editor
-@dirrm lib/thunderbird/lib/thunderbird-%%TBVER%%/chrome/messenger/content
-@dirrm lib/thunderbird/lib/thunderbird-%%TBVER%%/chrome/messenger
-@dirrm lib/thunderbird/lib/thunderbird-%%TBVER%%/chrome/icons/default
-@dirrm lib/thunderbird/lib/thunderbird-%%TBVER%%/chrome/icons
-@dirrm lib/thunderbird/lib/thunderbird-%%TBVER%%/chrome/en-unix/locale/en-US/communicator-platform
-@dirrm lib/thunderbird/lib/thunderbird-%%TBVER%%/chrome/en-unix/locale/en-US
-@dirrm lib/thunderbird/lib/thunderbird-%%TBVER%%/chrome/en-unix/locale
-@dirrm lib/thunderbird/lib/thunderbird-%%TBVER%%/chrome/en-unix
-@dirrm lib/thunderbird/lib/thunderbird-%%TBVER%%/chrome/en-US/locale/en-US/mozapps
-@dirrm lib/thunderbird/lib/thunderbird-%%TBVER%%/chrome/en-US/locale/en-US/messenger
-@dirrm lib/thunderbird/lib/thunderbird-%%TBVER%%/chrome/en-US/locale/en-US/communicator
-@dirrm lib/thunderbird/lib/thunderbird-%%TBVER%%/chrome/en-US/locale/en-US
-@dirrm lib/thunderbird/lib/thunderbird-%%TBVER%%/chrome/en-US/locale
-@dirrm lib/thunderbird/lib/thunderbird-%%TBVER%%/chrome/en-US
-@dirrm lib/thunderbird/lib/thunderbird-%%TBVER%%/chrome/embed-sample/skin/classic
-@dirrm lib/thunderbird/lib/thunderbird-%%TBVER%%/chrome/embed-sample/skin
-@dirrm lib/thunderbird/lib/thunderbird-%%TBVER%%/chrome/embed-sample/locale/en-US
-@dirrm lib/thunderbird/lib/thunderbird-%%TBVER%%/chrome/embed-sample/locale
-@dirrm lib/thunderbird/lib/thunderbird-%%TBVER%%/chrome/embed-sample/content
-@dirrm lib/thunderbird/lib/thunderbird-%%TBVER%%/chrome/embed-sample
-@dirrm lib/thunderbird/lib/thunderbird-%%TBVER%%/chrome/comm/content/editor
-@dirrm lib/thunderbird/lib/thunderbird-%%TBVER%%/chrome/comm/content/communicator
-@dirrm lib/thunderbird/lib/thunderbird-%%TBVER%%/chrome/comm/content
-@dirrm lib/thunderbird/lib/thunderbird-%%TBVER%%/chrome/comm
-@dirrm lib/thunderbird/lib/thunderbird-%%TBVER%%/chrome/classic/skin/classic/navigator
-@dirrm lib/thunderbird/lib/thunderbird-%%TBVER%%/chrome/classic/skin/classic/mozapps
-@dirrm lib/thunderbird/lib/thunderbird-%%TBVER%%/chrome/classic/skin/classic/messenger/smime
-@dirrm lib/thunderbird/lib/thunderbird-%%TBVER%%/chrome/classic/skin/classic/messenger/addressbook
-@dirrm lib/thunderbird/lib/thunderbird-%%TBVER%%/chrome/classic/skin/classic/messenger
-@dirrm lib/thunderbird/lib/thunderbird-%%TBVER%%/chrome/classic/skin/classic/global
-@dirrm lib/thunderbird/lib/thunderbird-%%TBVER%%/chrome/classic/skin/classic/editor
-@dirrm lib/thunderbird/lib/thunderbird-%%TBVER%%/chrome/classic/skin/classic/communicator/icons
-@dirrm lib/thunderbird/lib/thunderbird-%%TBVER%%/chrome/classic/skin/classic/communicator
-@dirrm lib/thunderbird/lib/thunderbird-%%TBVER%%/chrome/classic/skin/classic
-@dirrm lib/thunderbird/lib/thunderbird-%%TBVER%%/chrome/classic/skin
-@dirrm lib/thunderbird/lib/thunderbird-%%TBVER%%/chrome/classic
-@dirrm lib/thunderbird/lib/thunderbird-%%TBVER%%/chrome/US/locale/US/communicator-region
-@dirrm lib/thunderbird/lib/thunderbird-%%TBVER%%/chrome/US/locale/US
-@dirrm lib/thunderbird/lib/thunderbird-%%TBVER%%/chrome/US/locale
-@dirrm lib/thunderbird/lib/thunderbird-%%TBVER%%/chrome/US
-@dirrm lib/thunderbird/lib/thunderbird-%%TBVER%%/chrome
-@dirrm lib/thunderbird/lib/thunderbird-%%TBVER%%
+@dirrm lib/thunderbird/lib/thunderbird-0.7.3/res/throbber
+@dirrm lib/thunderbird/lib/thunderbird-0.7.3/res/samples/sampleimages
+@dirrm lib/thunderbird/lib/thunderbird-0.7.3/res/samples
+@dirrm lib/thunderbird/lib/thunderbird-0.7.3/res/rdf
+@dirrm lib/thunderbird/lib/thunderbird-0.7.3/res/html
+@dirrm lib/thunderbird/lib/thunderbird-0.7.3/res/fonts
+@dirrm lib/thunderbird/lib/thunderbird-0.7.3/res/entityTables
+@dirrm lib/thunderbird/lib/thunderbird-0.7.3/res/dtd
+@dirrm lib/thunderbird/lib/thunderbird-0.7.3/res/builtin
+@dirrm lib/thunderbird/lib/thunderbird-0.7.3/res
+@dirrm lib/thunderbird/lib/thunderbird-0.7.3/plugins
+@dirrm lib/thunderbird/lib/thunderbird-0.7.3/init.d
+@dirrm lib/thunderbird/lib/thunderbird-0.7.3/icons
+@dirrm lib/thunderbird/lib/thunderbird-0.7.3/greprefs
+@dirrm lib/thunderbird/lib/thunderbird-0.7.3/extensions/{972ce4c6-7e08-4474-a285-3208198ce6fd}
+@dirrm lib/thunderbird/lib/thunderbird-0.7.3/extensions.port
+@dirrm lib/thunderbird/lib/thunderbird-0.7.3/extensions
+@dirrm lib/thunderbird/lib/thunderbird-0.7.3/defaults/wallet
+@dirrm lib/thunderbird/lib/thunderbird-0.7.3/defaults/profile/extensions/{972ce4c6-7e08-4474-a285-3208198ce6fd}
+@dirrm lib/thunderbird/lib/thunderbird-0.7.3/defaults/profile/extensions
+@dirrm lib/thunderbird/lib/thunderbird-0.7.3/defaults/profile/chrome
+@dirrm lib/thunderbird/lib/thunderbird-0.7.3/defaults/profile/US/chrome
+@dirrm lib/thunderbird/lib/thunderbird-0.7.3/defaults/profile/US
+@dirrm lib/thunderbird/lib/thunderbird-0.7.3/defaults/profile
+@dirrm lib/thunderbird/lib/thunderbird-0.7.3/defaults/pref
+@dirrm lib/thunderbird/lib/thunderbird-0.7.3/defaults/messenger/US
+@dirrm lib/thunderbird/lib/thunderbird-0.7.3/defaults/messenger
+@dirrm lib/thunderbird/lib/thunderbird-0.7.3/defaults
+@dirrm lib/thunderbird/lib/thunderbird-0.7.3/components/myspell
+@dirrm lib/thunderbird/lib/thunderbird-0.7.3/components
+@dirrm lib/thunderbird/lib/thunderbird-0.7.3/chrome/toolkit/content/mozapps
+@dirrm lib/thunderbird/lib/thunderbird-0.7.3/chrome/toolkit/content/global
+@dirrm lib/thunderbird/lib/thunderbird-0.7.3/chrome/toolkit/content
+@dirrm lib/thunderbird/lib/thunderbird-0.7.3/chrome/toolkit
+@dirrm lib/thunderbird/lib/thunderbird-0.7.3/chrome/pippki/content
+@dirrm lib/thunderbird/lib/thunderbird-0.7.3/chrome/pippki
+@dirrm lib/thunderbird/lib/thunderbird-0.7.3/chrome/pipnss/content
+@dirrm lib/thunderbird/lib/thunderbird-0.7.3/chrome/pipnss
+@dirrm lib/thunderbird/lib/thunderbird-0.7.3/chrome/overlayinfo/navigator/content
+@dirrm lib/thunderbird/lib/thunderbird-0.7.3/chrome/overlayinfo/navigator
+@dirrm lib/thunderbird/lib/thunderbird-0.7.3/chrome/overlayinfo/messenger/content
+@dirrm lib/thunderbird/lib/thunderbird-0.7.3/chrome/overlayinfo/messenger
+@dirrm lib/thunderbird/lib/thunderbird-0.7.3/chrome/overlayinfo/cookie/content
+@dirrm lib/thunderbird/lib/thunderbird-0.7.3/chrome/overlayinfo/cookie
+@dirrm lib/thunderbird/lib/thunderbird-0.7.3/chrome/overlayinfo/communicator/content
+@dirrm lib/thunderbird/lib/thunderbird-0.7.3/chrome/overlayinfo/communicator
+@dirrm lib/thunderbird/lib/thunderbird-0.7.3/chrome/overlayinfo
+@dirrm lib/thunderbird/lib/thunderbird-0.7.3/chrome/offline/locale/en-US
+@dirrm lib/thunderbird/lib/thunderbird-0.7.3/chrome/offline/locale
+@dirrm lib/thunderbird/lib/thunderbird-0.7.3/chrome/offline/content
+@dirrm lib/thunderbird/lib/thunderbird-0.7.3/chrome/offline
+@dirrm lib/thunderbird/lib/thunderbird-0.7.3/chrome/messenger/content/messenger
+@dirrm lib/thunderbird/lib/thunderbird-0.7.3/chrome/messenger/content/editor
+@dirrm lib/thunderbird/lib/thunderbird-0.7.3/chrome/messenger/content
+@dirrm lib/thunderbird/lib/thunderbird-0.7.3/chrome/messenger
+@dirrm lib/thunderbird/lib/thunderbird-0.7.3/chrome/icons/default
+@dirrm lib/thunderbird/lib/thunderbird-0.7.3/chrome/icons
+@dirrm lib/thunderbird/lib/thunderbird-0.7.3/chrome/en-unix/locale/en-US/communicator-platform
+@dirrm lib/thunderbird/lib/thunderbird-0.7.3/chrome/en-unix/locale/en-US
+@dirrm lib/thunderbird/lib/thunderbird-0.7.3/chrome/en-unix/locale
+@dirrm lib/thunderbird/lib/thunderbird-0.7.3/chrome/en-unix
+@dirrm lib/thunderbird/lib/thunderbird-0.7.3/chrome/en-US/locale/en-US/mozapps
+@dirrm lib/thunderbird/lib/thunderbird-0.7.3/chrome/en-US/locale/en-US/messenger
+@dirrm lib/thunderbird/lib/thunderbird-0.7.3/chrome/en-US/locale/en-US/communicator
+@dirrm lib/thunderbird/lib/thunderbird-0.7.3/chrome/en-US/locale/en-US
+@dirrm lib/thunderbird/lib/thunderbird-0.7.3/chrome/en-US/locale
+@dirrm lib/thunderbird/lib/thunderbird-0.7.3/chrome/en-US
+@dirrm lib/thunderbird/lib/thunderbird-0.7.3/chrome/embed-sample/skin/classic
+@dirrm lib/thunderbird/lib/thunderbird-0.7.3/chrome/embed-sample/skin
+@dirrm lib/thunderbird/lib/thunderbird-0.7.3/chrome/embed-sample/locale/en-US
+@dirrm lib/thunderbird/lib/thunderbird-0.7.3/chrome/embed-sample/locale
+@dirrm lib/thunderbird/lib/thunderbird-0.7.3/chrome/embed-sample/content
+@dirrm lib/thunderbird/lib/thunderbird-0.7.3/chrome/embed-sample
+@dirrm lib/thunderbird/lib/thunderbird-0.7.3/chrome/comm/content/editor
+@dirrm lib/thunderbird/lib/thunderbird-0.7.3/chrome/comm/content/communicator
+@dirrm lib/thunderbird/lib/thunderbird-0.7.3/chrome/comm/content
+@dirrm lib/thunderbird/lib/thunderbird-0.7.3/chrome/comm
+@dirrm lib/thunderbird/lib/thunderbird-0.7.3/chrome/classic/skin/classic/navigator
+@dirrm lib/thunderbird/lib/thunderbird-0.7.3/chrome/classic/skin/classic/mozapps
+@dirrm lib/thunderbird/lib/thunderbird-0.7.3/chrome/classic/skin/classic/messenger/smime
+@dirrm lib/thunderbird/lib/thunderbird-0.7.3/chrome/classic/skin/classic/messenger/addressbook
+@dirrm lib/thunderbird/lib/thunderbird-0.7.3/chrome/classic/skin/classic/messenger
+@dirrm lib/thunderbird/lib/thunderbird-0.7.3/chrome/classic/skin/classic/global
+@dirrm lib/thunderbird/lib/thunderbird-0.7.3/chrome/classic/skin/classic/editor
+@dirrm lib/thunderbird/lib/thunderbird-0.7.3/chrome/classic/skin/classic/communicator/icons
+@dirrm lib/thunderbird/lib/thunderbird-0.7.3/chrome/classic/skin/classic/communicator
+@dirrm lib/thunderbird/lib/thunderbird-0.7.3/chrome/classic/skin/classic
+@dirrm lib/thunderbird/lib/thunderbird-0.7.3/chrome/classic/skin
+@dirrm lib/thunderbird/lib/thunderbird-0.7.3/chrome/classic
+@dirrm lib/thunderbird/lib/thunderbird-0.7.3/chrome/US/locale/US/communicator-region
+@dirrm lib/thunderbird/lib/thunderbird-0.7.3/chrome/US/locale/US
+@dirrm lib/thunderbird/lib/thunderbird-0.7.3/chrome/US/locale
+@dirrm lib/thunderbird/lib/thunderbird-0.7.3/chrome/US
+@dirrm lib/thunderbird/lib/thunderbird-0.7.3/chrome
+@dirrm lib/thunderbird/lib/thunderbird-0.7.3
 @dirrm lib/thunderbird/lib/pkgconfig
 @dirrm lib/thunderbird/lib
 @dirrm lib/thunderbird/bin
