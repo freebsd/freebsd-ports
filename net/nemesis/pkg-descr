@@ -1,7 +1,16 @@
-Nemesis is a command line, portable "human IP stack".  It can be useful for
-easy injection of packet streams from simple shell scripts.  It supports
-8 protocols (ARP, DNS, ICMP, IGMP, OSPF, RIP, TCP, UDP), and packets can be
-injected on either Layer 2 or Layer 3.
+The Nemesis Project is designed to be a commandline-based, portable human IP
+stack for UNIX/Linux.  The suite is broken down by protocol, and should allow
+for useful scripting of injected packet streams from simple shell scripts.
+
+Key Features:
+
++ ARP/RARP, DNS, ICMP, IGMP, OSPF, RIP, TCP, UDP protocol support
++ Layer 2 or Layer 3 injection (by presence/absence of -d <dev> switch)
++ Packet Payload from file
++ tested on OpenBSD, NetBSD, FreeBSD, Solaris/Trusted Solaris, Linux,
+  and Mac OS X
+
+Example usage:
 
 * nemesis-tcp -v -S 192.168.1.1 -D 192.168.2.2 -fS -fA -y 22 -P foo
   send TCP packet (SYN/ACK) with payload from ascii file 'foo' to target's
@@ -19,4 +28,4 @@ injected on either Layer 2 or Layer 3.
   In other words, who-has the mac address of 10.10.15.1, tell 10.11.30.5 
   - assuming 00:01:02:03:04:05 is the source mac address of our 'ne0' device.
 
-WWW:  http://www.packetninja.net/nemesis/
+WWW:  http://www.packetfactory.net/nemesis/

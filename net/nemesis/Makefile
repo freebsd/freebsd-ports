@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	nemesis
-PORTVERSION=	1.2
+PORTVERSION=	1.32
 CATEGORIES=	net security
-MASTER_SITES=	http://www.packetninja.net/nemesis/
+MASTER_SITES=	http://jeff.wwti.com/nemesis/
 
 MAINTAINER=	ports@FreeBSD.org
 
