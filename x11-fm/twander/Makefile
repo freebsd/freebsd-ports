@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	twander
-PORTVERSION=	3.146
+PORTVERSION=	3.160
 CATEGORIES=	x11-fm
 MASTER_SITES=	http://www.tundraware.com/Software/twander/
 
