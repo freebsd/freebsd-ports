@@ -23,6 +23,12 @@ WRKSRC=		${WRKDIR}/$(DISTNAME)-2
 USE_REINPLACE=	yes
 USE_PERL5_RUN=	yes
 
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == "amd64"
+BROKEN=		"Does not compile on amd64 (missing -fPIC)"
+.endif
+
 post-patch:
 	${CP} ${FILESDIR}/add-module ${WRKSRC}
 	${CP} ${FILESDIR}/files-Makefile ${WRKSRC}/Makefile
@@ -42,4 +48,4 @@ post-install:
 	@${ECHO_MSG} "---------------------------------------"
 	@${ECHO_MSG} ""
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
