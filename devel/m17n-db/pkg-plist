@@ -1,3 +1,4 @@
+bin/m17n-db
 share/m17n/8859-10.map
 share/m17n/8859-11.map
 share/m17n/8859-13.map
@@ -12,7 +13,9 @@ share/m17n/8859-6.map
 share/m17n/8859-7.map
 share/m17n/8859-8.map
 share/m17n/8859-9.map
+share/m17n/ARABIC-OTF.flt
 share/m17n/ARABIC.flt
+share/m17n/BEN-OTF.flt
 share/m17n/BIDI.tab
 share/m17n/BIG5-HKSCS.map
 share/m17n/BIG5.map
@@ -52,6 +55,8 @@ share/m17n/GB180304.map
 share/m17n/GB2312.map
 share/m17n/GBK.map
 share/m17n/GB_1988-80.map
+share/m17n/GUJ-OTF.flt
+share/m17n/GUR-OTF.flt
 share/m17n/HEBREW-FF.flt
 share/m17n/HEBREW.flt
 share/m17n/IBM037.map
@@ -109,6 +114,7 @@ share/m17n/JISX213A.map
 share/m17n/JOHAB.map
 share/m17n/KA-ACADEMY.map
 share/m17n/KA-PS.map
+share/m17n/KAN-OTF.flt
 share/m17n/KHMER-ANLONG.flt
 share/m17n/KHMER-MULE.flt
 share/m17n/KOI-8.map
@@ -123,15 +129,20 @@ share/m17n/LOCALE.ali
 share/m17n/LOCALE.cs
 share/m17n/MLM-CDAC.flt
 share/m17n/MLM-OTF.flt
+share/m17n/Mymr-MyaZedi.flt
 share/m17n/NAME.tab
 share/m17n/NO-CTL.flt
+share/m17n/ORI-OTF.flt
 share/m17n/SCRIPT.tab
+share/m17n/TEL-OTF.flt
+share/m17n/THAANA-OTF.flt
 share/m17n/THAI-NORASI.flt
 share/m17n/THAI-TIS620.flt
 share/m17n/TIB-MTIB.flt
 share/m17n/TIB-MULE.flt
 share/m17n/TIS-620.map
 share/m17n/TML-CDAC.flt
+share/m17n/TML-OTF.flt
 share/m17n/VISCII.map
 share/m17n/VSCII.map
 share/m17n/am-sera.mim
@@ -149,6 +160,7 @@ share/m17n/hr-kbd.mim
 share/m17n/ispell.mim
 share/m17n/ja-anthy.mim
 share/m17n/ja-tcode.mim
+share/m17n/ka-kbd.mim
 share/m17n/kh-yannis.mim
 share/m17n/kk-arabic.mim
 share/m17n/kk-kbd.mim
@@ -158,8 +170,10 @@ share/m17n/latin-post.mim
 share/m17n/lo-lrt.mim
 share/m17n/mdb.dir
 share/m17n/mlm-itrans.mim
+share/m17n/my-kbd.mim
 share/m17n/ori-itrans.mim
 share/m17n/pnj-itrans.mim
+share/m17n/rfc1345.mim
 share/m17n/ru-yawerty.mim
 share/m17n/sk-kbd.mim
 share/m17n/sr-kbd.mim
