@@ -5,7 +5,7 @@ include/punycode.h
 include/stringprep.h
 lib/libidn.a
 lib/libidn.so
-lib/libidn.so.11
+lib/libidn.so.12
 lib/pkgconfig/libidn.pc
 %%EMACS%%%%EMACSDIR%%/site-lisp/idna.el
 %%EMACS%%%%EMACSDIR%%/site-lisp/punycode.el
