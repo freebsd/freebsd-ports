@@ -14,6 +14,8 @@ DISTNAME=	malloc-${PORTVERSION}
 
 MAINTAINER=	obrien@FreeBSD.org
 
+BROKEN=		"Installs malloc.h, masking system version"
+
 INSTALLS_SHLIB=	yes
 
 .include <bsd.port.pre.mk>
