@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	kdissert
-PORTVERSION=	0.3.0
+PORTVERSION=	0.3.1
 CATEGORIES=	deskutils kde
 MASTER_SITES=	http://freehackers.org/~tnagy/kdissert/
 
