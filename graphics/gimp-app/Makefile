@@ -6,12 +6,11 @@
 #
 
 PORTNAME=	gimp
-PORTVERSION=	1.1.30
+PORTVERSION=	1.2.0
 CATEGORIES=	graphics gnome
-MASTER_SITES=	ftp://ftp.gimp.org/pub/gimp/unstable/v${PORTVERSION}/ \
-		ftp://ftp.insync.net/pub/mirrors/ftp.gimp.org/gimp/unstable/v${PORTVERSION}/ \
-		ftp://ftp.ameth.org/pub/mirrors/ftp.gimp.org/gimp/unstable/v${PORTVERSION}/ \
-		ftp://ftp.gimp.org/pub/gimp/unstable/old/v${PORTVERSION}/
+MASTER_SITES=	ftp://ftp.gimp.org/pub/gimp/v1.2/v${PORTVERSION}/ \
+		ftp://ftp.insync.net/pub/mirrors/ftp.gimp.org/gimp/v1.2/v${PORTVERSION}/ \
+		ftp://ftp.ameth.org/pub/mirrors/ftp.gimp.org/gimp/v1.2/v${PORTVERSION}/
 
 MAINTAINER=	vanilla@FreeBSD.org
 
@@ -21,7 +20,7 @@ LIB_DEPENDS=	aa.1:${PORTSDIR}/graphics/aalib \
 		png.4:${PORTSDIR}/graphics/png \
 		tiff.4:${PORTSDIR}/graphics/tiff
 
-SHLIBVER?=	${PORTVERSION:S/1.//g}
+SHLIBVER?=	${PORTVERSION:S/1.2.//g}
 
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes
