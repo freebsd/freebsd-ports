@@ -14,6 +14,7 @@ MAINTAINER=	roman@xpert.com
 
 USE_AUTOCONF=	yes
 USE_GMAKE=	yes
+USE_BZIP2=	yes
 USE_LIBTOOL=	yes
 USE_NEWGCC=	yes
 INSTALLS_SHLIB=	yes
