@@ -8,13 +8,11 @@
 PORTNAME=	uppc
 PORTVERSION=	0.7
 CATEGORIES=	palm
-MASTER_SITES=	http://sam.stral.net/freebsd/
+MASTER_SITES=	http://people.tecnik93.com/~sam/ports/
 PKGNAMESUFFIX=	-kmod
 
 MAINTAINER=	boris@brooknet.com.au
 COMMENT=	USB device driver for Windows CE handhelds
-
-BROKEN=		Unfetchable
 
 MAN4=		uppc.4
 WRKSRC=		${WRKDIR}/${PORTNAME}
