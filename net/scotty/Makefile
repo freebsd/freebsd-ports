@@ -3,7 +3,7 @@
 # Date created:		18 Februar 1995
 # Whom:			Gennady Sorokopud <gena@netvision.net.il>
 #
-# $Id: Makefile,v 1.24 1998/02/18 01:10:40 asami Exp $
+# $Id: Makefile,v 1.25 1998/03/04 08:25:10 asami Exp $
 #
 
 DISTNAME=	scotty-2.1.8
@@ -17,6 +17,9 @@ LIB_DEPENDS=	tk80\\.1\\.:${PORTSDIR}/x11/tk80
 GNU_CONFIGURE=  yes
 CONFIGURE_ARGS= --with-tcl-config=/usr/local/lib/tcl8.0 \
 		--with-tk-config=/usr/local/lib/tk8.0
+
+
+BROKEN=		install
 
 WRKSRC=${WRKDIR}/${DISTNAME}/unix
 MAN1=		tkined.1 scotty.1
