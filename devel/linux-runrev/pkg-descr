@@ -1,0 +1,20 @@
+Revolution is a rapid application development environment.
+
+The main features are:
+
+o Integrated development environment
+o Visual user-interface builder
+o Object-based programming model
+o Complete onscreen documentation
+o Cross-platform compatibility
+o Single code base (Compile applications directly from a single
+  code base for Mac OS, Windows, and Linux and other popular Unix
+  flavors.)
+o Compiles to native code on all platforms
+o Multimedia support
+o Internet sockets
+
+This version is a Starter Kit Edition, which is free and allows you
+to create your own applications (with limited script lengths).
+
+WWW: http://www.runrev.com/

@@ -331,6 +331,7 @@
     SUBDIR += lincvs
     SUBDIR += linguist
     SUBDIR += linux-libglade
+    SUBDIR += linux-runrev
     SUBDIR += linux-sdl12
     SUBDIR += linux_devtools
     SUBDIR += linux_devtools-7
