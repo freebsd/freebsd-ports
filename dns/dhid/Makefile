@@ -7,7 +7,7 @@
 
 PORTNAME=		dhid
 PORTVERSION=		4.0.2
-CATEGORIES=		net
+CATEGORIES=		dns
 MASTER_SITES=		ftp://ftp.dhis.org/pub/dhis/
 DISTFILES=		${DISTNAME}${EXTRACT_SUFX} \
 			${PORTNAME}-3.1${EXTRACT_SUFX}

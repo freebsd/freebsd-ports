@@ -6,7 +6,7 @@
 
 PORTNAME=	dnstop
 PORTVERSION=	20030124
-CATEGORIES=	net
+CATEGORIES=	dns
 MASTER_SITES=	http://dnstop.measurement-factory.com/src/
 
 MAINTAINER=	fenner@FreeBSD.Org

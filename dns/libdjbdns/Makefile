@@ -7,7 +7,7 @@
 
 PORTNAME=	libdjbdns
 PORTVERSION=	1.05
-CATEGORIES=	devel
+CATEGORIES=	dns
 MASTER_SITES=	http://smarden.org/pape/djb/manpages/
 DISTNAME=	djbdns-pd-${PORTVERSION}
 

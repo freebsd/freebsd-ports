@@ -7,7 +7,7 @@
 
 PORTNAME=	pdnsd
 PORTVERSION=	1.1.7a
-CATEGORIES=	net
+CATEGORIES=	dns
 MASTER_SITES=	http://home.t-online.de/home/Moestl/
 
 MAINTAINER=	roman@xpert.com

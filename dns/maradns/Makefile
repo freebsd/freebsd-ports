@@ -8,7 +8,7 @@
 PORTNAME=	maradns
 PORTVERSION=	1.0.18
 PORTREVISION=	0
-CATEGORIES=	net
+CATEGORIES=	dns
 MASTER_SITES=	http://www.maradns.org/download/ \
 		http://maradns.glou.net/download/ \
 		http://maradns.3va.net/download/

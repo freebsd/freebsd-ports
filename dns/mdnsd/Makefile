@@ -7,7 +7,7 @@
 
 PORTNAME=	mdnsd
 PORTVERSION=	0.7G
-CATEGORIES=	net
+CATEGORIES=	dns
 MASTER_SITES=	http://dotlocal.org/${PORTNAME}/ \
 		http://web.cs.cmu.edu/~dpelleg/download/
 

@@ -7,7 +7,7 @@
 
 PORTNAME=	dnsutl
 PORTVERSION=	1.6
-CATEGORIES=	net
+CATEGORIES=	dns
 MASTER_SITES=	http://www.canb.auug.org.au/~millerp/dnsutl/ \
 		http://www.tip.net.au/~millerp/dnsutl/  \
 		http://gd.tuwien.ac.at/softeng/Aegis/dnsutl/ \

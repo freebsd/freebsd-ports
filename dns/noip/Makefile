@@ -7,7 +7,7 @@
 
 PORTNAME=	noip
 PORTVERSION=	1.6
-CATEGORIES=	net
+CATEGORIES=	dns
 MASTER_SITES=	http://www.no-ip.com/client/linux/
 DISTNAME=	noip_updater_v${PORTVERSION}
 

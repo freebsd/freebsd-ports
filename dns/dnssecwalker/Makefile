@@ -8,7 +8,7 @@
 
 PORTNAME=	dnssecwalker
 PORTVERSION=	2.0
-CATEGORIES=	net
+CATEGORIES=	dns
 MASTER_SITES=	http://josefsson.org/walker/
 DISTNAME=	walker-${PORTVERSION}
 

@@ -7,7 +7,7 @@
 
 PORTNAME=	dnswalk
 PORTVERSION=	2.0.2
-CATEGORIES=	net
+CATEGORIES=	dns
 MASTER_SITES=	http://www.visi.com/~barr/dnswalk/
 
 MAINTAINER=	mph@freebsd.org

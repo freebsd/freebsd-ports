@@ -8,7 +8,7 @@
 
 PORTNAME=	walker
 PORTVERSION=	1.0
-CATEGORIES=	net
+CATEGORIES=	dns
 MASTER_SITES=	http://josefsson.org/walker/
 
 MAINTAINER=	ports@FreeBSD.org

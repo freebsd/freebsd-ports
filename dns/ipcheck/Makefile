@@ -8,7 +8,7 @@
 PORTNAME=	ipcheck
 PORTVERSION=	0.205
 PORTEPOCH=	1
-CATEGORIES=	net
+CATEGORIES=	dns
 MASTER_SITES=	http://ipcheck.sourceforge.net/releases/
 MASTER_SITE_SUBDIR=	lioux
 DISTNAME=	${PORTNAME}.${PORTVERSION:S/^0.//}

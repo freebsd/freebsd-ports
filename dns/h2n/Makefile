@@ -7,7 +7,7 @@
 
 PORTNAME=	h2n
 PORTVERSION=	1.29
-CATEGORIES=	net
+CATEGORIES=	dns
 MASTER_SITES=	ftp://ftp.iij.ad.jp/pub/published/oreilly/nutshell/dnsbind/ \
 		ftp://ftp.uu.net/published/oreilly/nutshell/dnsbind/
 DISTNAME=	dns
