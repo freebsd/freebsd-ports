@@ -10,7 +10,7 @@ Ruby_Include=			bsd.ruby.mk
 Ruby_Include_MAINTAINER=	knu@FreeBSD.org
 
 #
-# [User variables]
+# [variables that each port can define]
 #
 # RUBY_VER		- Set to the alternative short version of ruby (see below for current value).
 # USE_RUBY		- Says that the port uses ruby for building and running.
@@ -23,13 +23,14 @@ Ruby_Include_MAINTAINER=	knu@FreeBSD.org
 # USE_RUBY_AMSTD	- Says that the port uses amstd for building and running.
 # USE_RUBY_RD		- Says that the port uses rd to generate documents.
 #
-# [Non-user variables]
+# [variables that each port should not define]
 #
 # RUBY_PKGNAMEPREFIX	- Common PKGNAMEPREFIX for ruby ports (default: ruby${RUBY_SUFFIX}-)
 # RUBY_VERSION		- Full version of ruby (see below for current value).
 # RUBY_SHLIBVER		- Major version of libruby (see below for current value).
 # RUBY_ARCH		- Directory name of architecture dependent libraries.
 # RUBY_SUFFIX		- Suffix for ruby binaries and directories.
+# _RUBY_SUFFIX		- String to be used as RUBY_SUFFIX.  Always ${RUBY_VER:S/.//}.
 # RUBY_NAME		- Ruby's name with trailing suffix.
 #
 # RUBY			- Set to full path of ruby.
@@ -53,18 +54,19 @@ Ruby_Include_MAINTAINER=	knu@FreeBSD.org
 #
 
 RUBY_VER?=		1.6
+_RUBY_SUFFIX=		${RUBY_VER:S/.//}
 
 .if ${RUBY_VER} == 1.4
-RUBY_VERSION=		1.4.6
-RUBY_SUFFIX=		${RUBY_VER:S/.//}
+RUBY_VERSION?=		1.4.6
+RUBY_SUFFIX?=		${_RUBY_SUFFIX}
 .else
-RUBY_VERSION=		1.6.0
-RUBY_SUFFIX=		# empty
+RUBY_VERSION?=		1.6.0
+RUBY_SUFFIX?=		# empty
 .endif
 
 RUBY_PKGNAMEPREFIX?=	ruby${RUBY_SUFFIX}-	# could be rb${RUBY_SUFFIX}-
 RUBY_VER=      	${RUBY_VERSION:R}
-RUBY_SHLIBVER?=		${RUBY_VER:S/.//}
+RUBY_SHLIBVER?=		${_RUBY_SUFFIX}
 RUBY_ARCH?=     	${ARCH}-freebsd${OSREL}
 RUBY_NAME?=		ruby${RUBY_SUFFIX}
 
@@ -103,6 +105,7 @@ PLIST_SUB+=		RUBY_VERSION="${RUBY_VERSION}" \
 			RUBY_VER="${RUBY_VER}" \
 			RUBY_SHLIBVER="${RUBY_SHLIBVER}" \
 			RUBY_ARCH="${RUBY_ARCH}" \
+			_RUBY_SUFFIX="${_RUBY_SUFFIX}" \
 			RUBY_SUFFIX="${RUBY_SUFFIX}" \
 			RUBY_NAME="${RUBY_NAME}" \
 			${PLIST_RUBY_DIRS:S,DIR="${LOCALBASE}/,DIR=",}
