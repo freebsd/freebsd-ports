@@ -72,6 +72,7 @@ include/gal-2.0/gal/e-table/e-tree-selection-model.h
 include/gal-2.0/gal/e-table/e-tree-sorted.h
 include/gal-2.0/gal/e-table/e-tree-table-adapter.h
 include/gal-2.0/gal/e-table/e-tree.h
+include/gal-2.0/gal/e-text/e-completion-callbacks.h
 include/gal-2.0/gal/e-text/e-completion-match.h
 include/gal-2.0/gal/e-text/e-completion-view.h
 include/gal-2.0/gal/e-text/e-completion.h
@@ -147,7 +148,7 @@ include/gal-2.0/gal/widgets/widget-pixmap-combo.h
 lib/gtk-2.0/modules/libgal-a11y-2.0.so
 lib/libgal-2.0.a
 lib/libgal-2.0.so
-lib/libgal-2.0.so.0
+lib/libgal-2.0.so.1
 libdata/pkgconfig/gal-2.0.pc
 share/doc/gal2/gal-api.sgml
 share/doc/gal2/gal-decl.txt
