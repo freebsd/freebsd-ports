@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	I18N
-PORTVERSION=	0.8.5
+PORTVERSION=	0.8.6
 CATEGORIES=	devel www
 
 MAINTAINER=	ports@FreeBSD.org
@@ -18,9 +18,11 @@ RUN_DEPENDS=	${BUILD_DEPENDS}
 .include <bsd.port.pre.mk>
 .include "${.CURDIR}/../../devel/pear-PEAR/Makefile.common"
 
-MANIFEST=	Common.php Country.php Language.php Negotiator.php
-EXAMPLES=	I18N_Currency.php I18N_DateTime.php I18N_Message.php \
-		I18N_Message_Translate.php I18N_Message_Translate.tpl \
+MANIFEST=	Common.php Country.php Currency.php DateTime.php Format.php	\
+		Language.php Negotiator.php Number.php
+SUBDIRS=	Common Messages
+EXAMPLES=	I18N_Currency.php I18N_DateTime.php I18N_Message.php		\
+		I18N_Message_Translate.php I18N_Message_Translate.tpl		\
 		I18N_Negotiator.php I18N_Number.php
 
 do-install:
@@ -28,10 +30,10 @@ do-install:
 .for FILE in ${MANIFEST}
 	@${CP} -p ${WRKSRC}/${FILE} ${PEARDIR}/I18N
 .endfor
-	@${CHMOD} a-x ${PEARDIR}/I18N/*
-	@${CP} -Rp ${WRKSRC}/Messages ${PEARDIR}/I18N
+.for FILE in ${SUBDIRS}
+	@${CP} -Rp ${WRKSRC}/${FILE} ${PEARDIR}/I18N
+.endfor
 	@${CHOWN} -R ${SHAREOWN}:${SHAREGRP} ${PEARDIR}/I18N
-	@${CHMOD} a-x ${PEARDIR}/I18N/Messages/*
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 .for FILE in ${EXAMPLES}
