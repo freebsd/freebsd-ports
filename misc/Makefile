@@ -293,6 +293,7 @@
     SUBDIR += pointless
     SUBDIR += porteasy
     SUBDIR += portell
+    SUBDIR += posixtestsuite
     SUBDIR += projectionlib
     SUBDIR += proxyper
     SUBDIR += py-distutils
