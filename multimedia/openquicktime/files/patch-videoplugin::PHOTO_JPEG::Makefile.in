@@ -1,0 +1,11 @@
+--- videoplugin/PHOTO_JPEG/Makefile.in.orig	Mon Sep 24 16:14:46 2001
++++ videoplugin/PHOTO_JPEG/Makefile.in	Mon Sep 24 16:15:16 2001
+@@ -42,7 +42,7 @@
+ # implicit rules
+ 
+ %.o: %.c
+-	$(CC) $(CFLAGS) -I../.. -I. -c $< -o $@
++	$(CC) $(CFLAGS) -I../.. -I. -I$(LOCALBASE)/include -c $< -o $@
+ 
+ 
+ all: quicktime_codec_jpeg.so
