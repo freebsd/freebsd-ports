@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	libgail-gnome
-PORTVERSION=	1.0.5
+PORTVERSION=	1.0.6
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/${PORTNAME}/1.0
@@ -19,9 +19,9 @@ USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_X_PREFIX=	yes
 INSTALLS_SHLIB=	yes
-USE_INC_LIBTOOL_VER=13
+USE_LIBTOOL_VER=15
 GNOME_DESKTOP_VERSION=2
-USE_GNOME=	gnomeprefix gnomehack gnomepanel atspi lthack
+USE_GNOME=	gnomeprefix gnomehack gnomepanel atspi
 CONFIGURE_ARGS=	--enable-static
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
