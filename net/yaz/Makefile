@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	yaz
-PORTVERSION=	2.0.30
+PORTVERSION=	2.0.32
 CATEGORIES=	net
 MASTER_SITES=	http://ftp.indexdata.dk/pub/yaz/
 
@@ -23,7 +23,7 @@ CONFIGURE_ARGS+=	--enable-shared --with-openssl=${OPENSSLBASE} \
 INSTALLS_SHLIB=	yes
 
 MAN1=		yaz-asncomp.1 yaz-client.1 yaz-marcdump.1 yaz-iconv.1 zoomsh.1
-MAN7=		yaz.7
+MAN7=		yaz.7 yaz-log.7
 MAN8=		yaz-config.8 yaz-ztest.8
 
 .include <bsd.port.mk>
