@@ -1,0 +1,8 @@
+Secure Tar (star) doesn't create encrypted tape archives (tar files)
+yet, but it can encrypt/decrypt files only using multiple blocksizes,
+and keysizes using the AES algorithm Rijndael. Once the standalone app
+is stable, then it will be encorporated with tar. The encryption is
+exported under exemption TSU 740.13.
+
+- George Reid
+greid@ukug.uk.freebsd.org
