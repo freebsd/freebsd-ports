@@ -6,11 +6,9 @@
 #
 
 PORTNAME=	quake2forge
-PORTVERSION=	0.2.1
-PORTREVISION=	2
+PORTVERSION=	0.3
 CATEGORIES=	games
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	quake
+MASTER_SITES=	ftp://ftp.quakeforge.net/quake2forge/
 DISTNAME=	quake2-${PORTVERSION}
 
 MAINTAINER=	q@uni.de
@@ -18,16 +16,16 @@ COMMENT=	First Person Shooter with many addons available
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes
-USE_LIBTOOL_VER=13
+USE_LIBTOOL_VER=15
+USE_AUTOCONF_VER=259
 USE_XLIB=	yes
-INSTALLS_SHLIB=	yes
+USE_REINPLACE=	yes
 WANT_SDL=	yes
-LDCONFIG_DIRS=	${PREFIX}/lib/quake2 ${PREFIX}/lib/quake2/baseq2 ${PREFIX}/lib/quake2/ctf
 
 .include <bsd.port.pre.mk>
 
-CONFIGURE_ARGS=	--enable-static=no --program-transform-name='s/^quake2$$/q2f/'
-CONFIGURE_TARGET=
+CONFIGURE_ARGS=	--program-transform-name='s/^quake2$$/q2f/'
+CONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 
 .if ${HAVE_SDL:Msdl}!=""
 WITH_SDL=	yes
@@ -35,6 +33,19 @@ WITH_SDL=	yes
 
 .if exists(${LOCALBASE}/lib/libvga.so.1)
 WITH_SVGALIB=	yes
+.endif
+
+.if exists(${LOCALBASE}/lib/libao.so.3)
+WITH_LIBAO=	yes
+.endif
+
+.if !defined (WITHOUT_LIBAO) && defined(WITH_LIBAO)
+LIB_DEPENDS+=	ao.3:${PORTSDIR}/audio/libao
+CONFIGURE_ARGS+=--with-ao=${LOCALBASE}
+PLIST_SUB+=	AO:=""
+.else
+CONFIGURE_ARGS+=--without-ao
+PLIST_SUB+=	AO:="@comment "
 .endif
 
 .if !defined (WITHOUT_SVGALIB) && defined(WITH_SVGALIB)
@@ -70,6 +81,9 @@ PLIST_SUB+=	SDLGL:="@comment "
 .endif
 
 pre-everything::
+.if !defined(WITH_LIBAO)
+	@${ECHO_MSG} "Define WITH_LIBAO to use libao"
+.endif
 .if !defined(WITH_SVGALIB)
 	@${ECHO_MSG} "Define WITH_SVGALIB to use svgalib"
 .endif
@@ -80,13 +94,18 @@ pre-everything::
 	@${ECHO_MSG} "Define WITHOUT_GL to disable GL"
 .endif
 
+.if ( ${OSVERSION} < 500000 )
+post-patch:
+	@${REINPLACE_CMD} -e 's/%zu/%u/g' ${WRKSRC}/src/main.c
+.endif
+
 do-install:
 	@(cd ${INSTALL_WRKSRC} && ${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} ${INSTALL_TARGET})
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${PREFIX}/share/doc/quake2
 	${MKDIR} ${PREFIX}/share/doc/quake2/ctf
 	${INSTALL_MAN} ${WRKSRC}/docs/README.* ${WRKSRC}/docs/*.txt ${PREFIX}/share/doc/quake2
-	${INSTALL_MAN} ${WRKSRC}/docs/ctf/* ${PREFIX}/share/doc/quake2/ctf
+	${INSTALL_MAN} ${WRKSRC}/docs/ctf/*.html ${WRKSRC}/docs/ctf/*.gif \
+		${WRKSRC}/docs/ctf/*.jpg ${PREFIX}/share/doc/quake2/ctf
 .endif
 
 post-install:

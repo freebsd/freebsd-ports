@@ -5,6 +5,9 @@ bin/q2f
 %%GL:%%lib/quake2/ref_glx.so
 %%SVGA:%%%%GL:%%lib/quake2/ref_tdfx.so
 lib/quake2/ref_softx.so
+lib/quake2/snd_oss.so
+%%SDL:%%lib/quake2/snd_sdl.so
+%%AO:%%lib/quake2/snd_ao.so
 lib/quake2/baseq2/game.so
 lib/quake2/ctf/game.so
 %%PORTDOCS%%share/doc/quake2/README.axp
@@ -14,6 +17,7 @@ lib/quake2/ctf/game.so
 %%PORTDOCS%%share/doc/quake2/README.sdl
 %%PORTDOCS%%share/doc/quake2/README.solaris
 %%PORTDOCS%%share/doc/quake2/README.Solaris
+%%PORTDOCS%%share/doc/quake2/README.sound
 %%PORTDOCS%%share/doc/quake2/TODO-ctf.txt
 %%PORTDOCS%%share/doc/quake2/changes-ctf.txt
 %%PORTDOCS%%share/doc/quake2/changes.txt
@@ -37,8 +41,6 @@ lib/quake2/ctf/game.so
 %%PORTDOCS%%@dirrm share/doc/quake2/ctf
 %%PORTDOCS%%@dirrm share/doc/quake2
 @dirrm lib/quake2/baseq2
-@dirrm lib/quake2/xatrix
-@dirrm lib/quake2/rogue
 @dirrm lib/quake2/ctf
 @dirrm lib/quake2
 @unexec rm %D/share/quake2/baseq2/config.cfg 2>/dev/null || true
