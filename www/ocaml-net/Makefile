@@ -7,6 +7,7 @@
 
 PORTNAME=	net
 PORTVERSION=	0.97
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	ocamlnet
@@ -19,6 +20,7 @@ COMMENT=	OCaml modules for Internet applications
 BUILD_DEPENDS=	ocamlc:${PORTSDIR}/lang/ocaml \
 		ocamlfind:${PORTSDIR}/devel/ocaml-findlib \
 		${LOCALBASE}/lib/ocaml/site-lib/pcre/pcre.a:${PORTSDIR}/devel/ocaml-pcre
+RUN_DEPENDS=	${LOCALBASE}/lib/ocaml/site-lib/pcre/pcre.a:${PORTSDIR}/devel/ocaml-pcre
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/src
 
