@@ -14,10 +14,11 @@ DISTFILES=	# none
 
 MAINTAINER=	knu@FreeBSD.org
 
-BUILD_DEPENDS=	${NONEXISTENT}:${SQLRELAY_PORTDIR}:configure
+BUILD_DEPENDS=	${NONEXISTENT}:${SQLRELAY_PORTDIR}:patch
 LIB_DEPENDS=	sqlrclient.0:${SQLRELAY_PORTDIR}
 
 USE_PYTHON=	yes
+PYTHON_VERSION?=	python2.1
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 BUILD_WRKSRC=	${WRKSRC}/src/api/python
@@ -32,5 +33,11 @@ CONFIGURE_ARGS=	${SQLRELAY_CONFIGURE_ARGS} \
 do-extract:
 	${MKDIR} ${WRKDIR}
 	${LN} -fs `${SQLRELAY_WRKSRC_CMD}` ${WRKSRC}
+	${RM} -f ${WRKSRC}/config.cache
+
+post-patch:
+	${PERL} -i -p \
+		-e 's,"1\.5" "1\.6" "2\.0" "2\.1",${PYTHON_VERSION:S/^python//},g;' \
+			${WRKSRC}/configure
 
 .include <bsd.port.mk>

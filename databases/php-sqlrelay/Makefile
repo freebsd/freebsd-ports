@@ -14,7 +14,7 @@ DISTFILES=	# none
 
 MAINTAINER=	knu@FreeBSD.org
 
-BUILD_DEPENDS=	${NONEXISTENT}:${SQLRELAY_PORTDIR}:configure \
+BUILD_DEPENDS=	${NONEXISTENT}:${SQLRELAY_PORTDIR}:patch \
 		php-config:${PORTSDIR}/www/mod_php4
 LIB_DEPENDS=	sqlrclient.0:${SQLRELAY_PORTDIR}
 RUN_DEPENDS=	${LOCALBASE}/libexec/apache/libphp4.so:${PORTSDIR}/www/mod_php4
@@ -34,6 +34,7 @@ CONFIGURE_ARGS=	${SQLRELAY_CONFIGURE_ARGS} \
 do-extract:
 	${MKDIR} ${WRKDIR}
 	${LN} -fs `${SQLRELAY_WRKSRC_CMD}` ${WRKSRC}
+	${RM} -f ${WRKSRC}/config.cache
 
 pre-install:
 	${MKDIR} `php-config --extension-dir`

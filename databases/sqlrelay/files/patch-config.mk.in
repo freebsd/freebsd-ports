@@ -1,13 +1,6 @@
---- config.mk.in.orig	Fri Aug 10 12:23:03 2001
-+++ config.mk.in	Sat Jan 12 00:49:44 2002
-@@ -2,19 +2,20 @@
- VPATH = @srcdir@
- 
- VERSION = @VERSION@
-+SOVERSION = $(basename $(VERSION))
- 
- # installation directories
- prefix = @prefix@
+--- config.mk.in.orig	Thu Oct 18 11:54:14 2001
++++ config.mk.in	Sun Feb 24 01:49:43 2002
+@@ -8,13 +8,13 @@
  exec_prefix= @exec_prefix@
  incdir = @includedir@
  libdir = @libdir@
@@ -23,12 +16,12 @@
  tmpdir = ${localstatedir}/sqlrelay/tmp
  cachedir = ${localstatedir}/sqlrelay/cache
  
-@@ -133,7 +134,7 @@
+@@ -167,7 +167,7 @@
  
  # FreeTDS stuff
  FREETDSINCLUDES = @FREETDSINCLUDES@
 -FREETDSLIBS = @FREETDSLIBS@
-+FREETDSLIBS = @FREETDSLIBS@ @ICONVLIBS@
++FREETDSLIBS = @FREETDSLIBS@ @ICONVLIB@
  FREETDSSTATIC = @FREETDSSTATIC@
  
  # Sybase stuff

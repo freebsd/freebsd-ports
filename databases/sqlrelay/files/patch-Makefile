@@ -1,6 +1,6 @@
---- Makefile.in.orig	Sat Jun 23 13:55:47 2001
-+++ Makefile.in	Mon Jul  2 21:43:00 2001
-@@ -22,9 +22,10 @@
+--- Makefile.orig	Wed Oct 17 06:20:48 2001
++++ Makefile	Sun Feb 24 01:42:57 2002
+@@ -24,9 +24,10 @@
  
  install:
  	cd bin; $(MAKE) install

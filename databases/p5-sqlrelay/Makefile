@@ -14,7 +14,7 @@ DISTFILES=	# none
 
 MAINTAINER=	knu@FreeBSD.org
 
-BUILD_DEPENDS=	${NONEXISTENT}:${SQLRELAY_PORTDIR}:configure \
+BUILD_DEPENDS=	${NONEXISTENT}:${SQLRELAY_PORTDIR}:patch \
 		${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/${PERL_ARCH}/DBI.pm:${PORTSDIR}/databases/p5-DBI
 LIB_DEPENDS=	sqlrclient.0:${SQLRELAY_PORTDIR}
 RUN_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/${PERL_ARCH}/DBI.pm:${PORTSDIR}/databases/p5-DBI
@@ -38,6 +38,7 @@ MAN3PREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 do-extract:
 	${MKDIR} ${WRKDIR}
 	${LN} -fs `${SQLRELAY_WRKSRC_CMD}` ${WRKSRC}
+	${RM} -f ${WRKSRC}/config.cache
 
 do-build:
 	for dir in ${WRKSRC}/src/api/perl/*; do \
