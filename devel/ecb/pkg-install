@@ -1,6 +1,0 @@
-#!/bin/sh
-
-if [ X$2 = XPOST-INSTALL ]; then
-        install-info --section="The Emacs editor and associated tools" \
-		${PKG_PREFIX}/info/ecb.info ${PKG_PREFIX}/info/dir
-fi
