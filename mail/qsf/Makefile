@@ -11,7 +11,7 @@ CATEGORIES=	mail
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	qsf
 
-MAINTAINER=	liamfoy@sepulcrum.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A small fast spam filter intended to be used with procmail
 
 GNU_CONFIGURE=	yes
