@@ -28,8 +28,6 @@ USE_GETTEXT=	yes
 GNU_CONFIGURE=	yes
 
 CONFIGURE_ARGS+= --without-debug \
-		 --with-double-precision \
-		 --with-long-double-precision \
 		 --disable-rpath \
 		 --without-rtldebug \
 		 --without-cdebug \
@@ -54,8 +52,8 @@ CONFIGURE_ARGS+= --without-debug \
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} != "i386"
-BROKEN=		"Build fails on !i386"
+.if ${ARCH} == "i386"
+CONFIGURE_ARGS+=	--with-long-double-precision
 .endif
 
 PLIST_SUB+=	PORTVERSION=${PORTVERSION}
