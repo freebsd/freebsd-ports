@@ -17,6 +17,7 @@ share/dopewars/pixmaps/dopewars-pill.png
 share/dopewars/pixmaps/dopewars-shot.png
 share/dopewars/pixmaps/dopewars-weed.png
 share/locale/de/LC_MESSAGES/dopewars.mo
+share/locale/fr/LC_MESSAGES/dopewars.mo
 share/locale/pl/LC_MESSAGES/dopewars.mo
 share/locale/pt_BR/LC_MESSAGES/dopewars.mo
 share/gnome/apps/Games/dopewars.desktop
