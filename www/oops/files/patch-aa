@@ -1,0 +1,73 @@
+--- src/Makefile.in.orig	Thu Sep 14 13:19:39 2000
++++ src/Makefile.in	Thu Sep 14 13:25:53 2000
+@@ -43,7 +43,7 @@
+ 			 ${OOPSPATH}/DB \
+ 			 ${OOPSPATH}/storages \
+ 			 ${OOPS_SYSCONFDIR}/tables \
+-			 ${OOPS_LIBDIR}/modules
++			 ${OOPS_LIBDIR}
+ 
+ 	if [ "X@OOPS_USER@" != "X" ]; then\
+ 		${CHOWN} @OOPS_USER@ ${OOPSPATH};\
+@@ -51,51 +51,19 @@
+ 		${CHOWN} @OOPS_USER@ ${OOPSPATH}/DB;\
+ 		${CHOWN} @OOPS_USER@ ${OOPSPATH}/storages;\
+ 		${CHOWN} @OOPS_USER@ ${OOPS_SYSCONFDIR}/tables;\
+-		${CHOWN} @OOPS_USER@ ${OOPS_LIBDIR}/modules;\
++		${CHOWN} @OOPS_USER@ ${OOPS_LIBDIR};\
+ 	fi
+ 
+ install: all mkinstalldirs
+-	$(INSTALL) oops ${OOPSPATH}
+-	if [ -f ${OOPS_SYSCONFDIR}/oops.cfg ]; then\
+-		$(INSTALL_DATA) oops.cfg ${OOPS_SYSCONFDIR}/oops.cfg.sample ;\
+-	   else\
+-		$(INSTALL_DATA) oops.cfg ${OOPS_SYSCONFDIR}/oops.cfg ;\
+-	fi
+-	if [ -f ${OOPS_SYSCONFDIR}/err_template.html ]; then\
+-		$(INSTALL_DATA) err_template.html ${OOPS_SYSCONFDIR}/err_template.html.sample ;\
+-	   else\
+-		$(INSTALL_DATA) err_template.html ${OOPS_SYSCONFDIR}/err_template.html ;\
+-	fi
+-	if [ -f ${OOPS_SYSCONFDIR}/auth_template.html ]; then\
+-		$(INSTALL_DATA) auth_template.html ${OOPS_SYSCONFDIR}/auth_template.html.sample ;\
+-	   else\
+-		$(INSTALL_DATA) auth_template.html ${OOPS_SYSCONFDIR}/auth_template.html;\
+-	fi
+-	if [ -f ${OOPS_SYSCONFDIR}/passwd ]; then\
+-		$(INSTALL_DATA) passwd ${OOPS_SYSCONFDIR}/passwd.sample ;\
+-	   else\
+-		$(INSTALL_DATA) passwd ${OOPS_SYSCONFDIR}/passwd ;\
+-	fi
+-	if [ -f ${OOPS_SYSCONFDIR}/redir_rules ]; then\
+-		$(INSTALL_DATA) redir_rules ${OOPS_SYSCONFDIR}/redir_rules.sample ;\
+-	   else\
+-		$(INSTALL_DATA) redir_rules ${OOPS_SYSCONFDIR}/redir_rules ;\
+-	fi
+-	if [ -f ${OOPS_SYSCONFDIR}/redir_template.html ]; then\
+-		$(INSTALL_DATA) redir_template.html ${OOPS_SYSCONFDIR}/redir_template.html.sample ;\
+-	   else\
+-		$(INSTALL_DATA) redir_template.html ${OOPS_SYSCONFDIR}/redir_template.html ;\
+-	fi
+-	if [ -f ${OOPS_SYSCONFDIR}/accel_maps ]; then\
+-		$(INSTALL_DATA) accel_maps ${OOPS_SYSCONFDIR}/accel_maps.sample ;\
+-	   else\
+-		$(INSTALL_DATA) accel_maps ${OOPS_SYSCONFDIR}/accel_maps ;\
+-	fi
+-	if [ -f ${OOPS_SYSCONFDIR}/acl_local_networks ]; then\
+-		$(INSTALL_DATA) acl_local_networks ${OOPS_SYSCONFDIR}/acl_local_networks.sample ;\
+-	   else\
+-		$(INSTALL_DATA) acl_local_networks ${OOPS_SYSCONFDIR}/acl_local_networks ;\
+-	fi
++	$(INSTALL) oops ${OOPS_SBINDIR}
++	$(INSTALL_DATA) oops.cfg ${OOPS_SYSCONFDIR}/oops.cfg.sample
++	$(INSTALL_DATA) err_template.html ${OOPS_SYSCONFDIR}/err_template.html.sample
++	$(INSTALL_DATA) auth_template.html ${OOPS_SYSCONFDIR}/auth_template.html.sample
++	$(INSTALL_DATA) passwd ${OOPS_SYSCONFDIR}/passwd.sample
++	$(INSTALL_DATA) redir_rules ${OOPS_SYSCONFDIR}/redir_rules.sample
++	$(INSTALL_DATA) redir_template.html ${OOPS_SYSCONFDIR}/redir_template.html.sample
++	$(INSTALL_DATA) accel_maps ${OOPS_SYSCONFDIR}/accel_maps.sample
++	$(INSTALL_DATA) acl_local_networks ${OOPS_SYSCONFDIR}/acl_local_networks.sample
+ 	if test "X@SOFLAGS@" != "X"; then \
+ 	for m in modules/*so ; do \
+ 		$(INSTALL) $$m ${OOPS_LIBDIR} ; \
