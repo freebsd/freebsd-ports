@@ -9,7 +9,7 @@
 DISTNAME=	xco
 PKGNAME=	xco-1.3
 CATEGORIES=	x11
-MASTER_SITES=	ftp://ftp.cs.purdue.edu:/pub/bingle/
+MASTER_SITES=	ftp://ftp.cs.purdue.edu/pub/bingle/
 
 MAINTAINER=	taoka@FreeBSD.org
 
