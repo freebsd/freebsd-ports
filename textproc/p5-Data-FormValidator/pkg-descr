@@ -1,0 +1,23 @@
+Data::FormValidator's main aim is to make the tedious coding of input
+validation expressible in a simple format and to let the programmer focus
+on more interesting tasks.
+
+When you are coding a web application one of the most tedious though
+crucial tasks is to validate user's input (usually submitted by way of
+an HTML form). You have to check that each required fields is present
+and that some fields have valid data. (Does the phone input looks like a
+phone number? Is that a plausible email address? Is the YY state
+valid? etc.) For a simple form, this is not really a problem but as
+forms get more complex and you code more of them this task becames
+really boring and tedious.
+
+Data::FormValidator lets you define profiles which declare the
+required fields and their format. When you are ready to validate the
+user's input, you tell Data::FormValidator the profile to apply to the
+user data and you get the valid fields, the name of the fields which
+are missing. An array is returned listing which fields are valid,
+missing, invalid and unknown in this profile.
+
+WWW: http://search.cpan.org/search?dist=Data-FormValidator
+
+Seamus Venasse <svenasse@polaris.ca>
