@@ -1,0 +1,13 @@
+$FreeBSD$
+
+--- hack/Makefile.orig	Thu Nov 20 11:06:45 2003
++++ hack/Makefile	Thu Nov 20 11:13:27 2003
+@@ -18,6 +18,8 @@
+ DPADD=	${LIBTERMCAP} ${LIBCOMPAT}
+ LDADD=	-ltermcap -lcompat
+ CFLAGS+= -fwritable-strings -I${.CURDIR} -I.
++BINGRP=	games
++BINMODE=2555
+ FILES=	rumors help hh data
+ FILESMODE_rumors=	440
+ FILESGRP=	${BINGRP}
