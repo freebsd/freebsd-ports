@@ -21,6 +21,7 @@ MANCOMPRESSED=	no
 WRKSRC=		${WRKDIR}/${PKGNAME}
 
 GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	--with-tcl-ver=8.2 --with-tk-ver=8.2
 
 ALL_TARGET=
 
