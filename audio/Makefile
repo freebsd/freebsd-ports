@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.60 1998/12/23 02:54:46 flathill Exp $
+# $Id: Makefile,v 1.61 1998/12/23 19:11:28 vanilla Exp $
 #
 
     SUBDIR += 8hz-mp3
@@ -18,6 +18,7 @@
     SUBDIR += libaudiofile
     SUBDIR += maplay
     SUBDIR += mikmod
+    SUBDIR += mp3encode
     SUBDIR += mp3info
     SUBDIR += mpegaudio
     SUBDIR += mpg123
