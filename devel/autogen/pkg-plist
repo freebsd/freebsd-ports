@@ -2,7 +2,9 @@ bin/autogen
 bin/autoopts-config
 bin/columns
 bin/getdefs
+bin/xml2ag
 include/options.h
+include/snprintfv
 @unexec install-info --delete %D/info/autogen.info %D/info/dir
 info/autogen.info
 @exec install-info %D/info/autogen.info %D/info/dir
@@ -15,6 +17,7 @@ lib/libguileopts.so.0
 lib/libopts.a
 lib/libopts.so
 lib/libopts.so.18
+lib/libsnprintfv.a
 lib/libsnprintfv.so
 lib/libsnprintfv.so.1
 share/aclocal/autoopts.m4
