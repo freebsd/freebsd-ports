@@ -15,6 +15,8 @@ MASTER_SITES=	ftp://ftp.ucolick.org/pub/users/will/  \
 
 MAINTAINER=	obrien@FreeBSD.org
 
+FORBIDDEN=	"Local root exploit. http://online.securityfocus.com/archive/1/285241"
+
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} <= 300000
