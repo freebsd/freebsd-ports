@@ -1,11 +1,47 @@
 bin/analog
-share/doc/analog/Readme.html
-share/doc/analog/Licence
-share/doc/analog/analogform.html
+etc/analog.cfg
 lib/analog/domains.tab
-lib/analog/primes.tab
-lib/analog/analog.cfg
-www/cgi-bin/analform.cgi
+lib/analog/lang/ita.lng
+lib/analog/lang/ith.lng
+lib/analog/lang/uk.lng
+lib/analog/lang/us.lng
+share/doc/analog/Licence.txt
+share/doc/analog/Readme.html
+share/doc/analog/acknow.html
+share/doc/analog/alias.html
+share/doc/analog/basiccmd.html
+share/doc/analog/bugs.html
+share/doc/analog/cache.html
+share/doc/analog/compout.html
+share/doc/analog/custom.html
+share/doc/analog/debug.html
+share/doc/analog/defns.html
+share/doc/analog/dns.html
+share/doc/analog/domfile.html
+share/doc/analog/errors.html
+share/doc/analog/faq.html
+share/doc/analog/form.html
+share/doc/analog/hierreps.html
+share/doc/analog/include.html
+share/doc/analog/indx.html
+share/doc/analog/logfile.html
+share/doc/analog/lowmem.html
+share/doc/analog/mailing.html
+share/doc/analog/map.html
+share/doc/analog/meaning.html
+share/doc/analog/othreps.html
+share/doc/analog/output.html
+share/doc/analog/start.html
+share/doc/analog/startmac.html
+share/doc/analog/startpc.html
+share/doc/analog/startux.html
+share/doc/analog/syntax.html
+share/doc/analog/timereps.html
+share/doc/analog/update.html
+share/doc/analog/wasnew1.html
+share/doc/analog/wasnew2.html
+share/doc/analog/webworks.html
+share/doc/analog/whatsnew.html
 www/data/images/analogo.gif
 www/data/images/bar1.gif
 www/data/images/bar16.gif
@@ -14,21 +50,7 @@ www/data/images/bar32.gif
 www/data/images/bar4.gif
 www/data/images/bar8.gif
 www/data/images/html2.gif
-lib/analog/lang/danisha.lng
-lib/analog/lang/danishh.lng
-lib/analog/lang/englisha.lng
-lib/analog/lang/englishh.lng
-lib/analog/lang/frencha.lng
-lib/analog/lang/frenchh.lng
-lib/analog/lang/germana.lng
-lib/analog/lang/germanh.lng
-lib/analog/lang/italiana.lng
-lib/analog/lang/italianh.lng
-lib/analog/lang/spanisha.lng
-lib/analog/lang/spanishh.lng
-lib/analog/lang/usenga.lng
-lib/analog/lang/usengh.lng
 @dirrm lib/analog/lang
 @dirrm lib/analog
-@dirrm www/data/images
 @dirrm share/doc/analog
+@dirrm www/data/images

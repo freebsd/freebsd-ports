@@ -1,25 +1,32 @@
-*** Makefile.orig	Fri Mar 14 20:33:08 1997
---- Makefile	Sat May  3 03:09:30 1997
+*** Makefile.orig	Wed Apr  8 17:37:54 1998
+--- Makefile	Wed Apr  8 19:42:19 1998
 ***************
-*** 2,8 ****
-  # Please read Readme.html, or http://www.statslab.cam.ac.uk/~sret1/analog/
+*** 2,11 ****
+  # Please read docs/Readme.html, or http://www.statslab.cam.ac.uk/~sret1/analog/
   CC = gcc           # which compiler to use: eg cc, acc, gcc. NB Different
   #                    compilers need different CFLAGS, e.g., -O instead of -O2.
 ! CFLAGS = -O2       # options, e.g. for optimisation or ANSI compilation.
-  DEFS =             # any of -DNOPIPES -DNODNS -DNODIRENT
+  #                    HP/UX cc needs -Aa
+  #                    Some Linuces might need -I/usr/src/linux/include
+! DEFS =             # any of -DNOPIPES -DNODNS -DNODIRENT
   OS = UNIX          # Operating system: UNIX, DOS, WIN32, MAC or VMS
-  LIBS = -lm         # extra libraries needed; Solaris 2 (SunOS 5) needs
---- 2,8 ----
-  # Please read Readme.html, or http://www.statslab.cam.ac.uk/~sret1/analog/
+  LIBS =             # extra libraries needed; Solaris 2 (SunOS 5) needs
+  #                    LIBS = -lnsl and SCO Unix needs LIBS = -lsocket
+--- 2,12 ----
+  # Please read docs/Readme.html, or http://www.statslab.cam.ac.uk/~sret1/analog/
   CC = gcc           # which compiler to use: eg cc, acc, gcc. NB Different
   #                    compilers need different CFLAGS, e.g., -O instead of -O2.
 ! #CFLAGS = -O2       # options, e.g. for optimisation or ANSI compilation.
-  DEFS =             # any of -DNOPIPES -DNODNS -DNODIRENT
+  #                    HP/UX cc needs -Aa
+  #                    Some Linuces might need -I/usr/src/linux/include
+! #DEFS =             # any of -DNOPIPES -DNODNS -DNODIRENT
+! DEFS = -DPREFIX=\"$(PREFIX)\"
   OS = UNIX          # Operating system: UNIX, DOS, WIN32, MAC or VMS
-  LIBS = -lm         # extra libraries needed; Solaris 2 (SunOS 5) needs
+  LIBS =             # extra libraries needed; Solaris 2 (SunOS 5) needs
+  #                    LIBS = -lnsl and SCO Unix needs LIBS = -lsocket
 ***************
-*** 22,27 ****
---- 22,29 ----
+*** 26,31 ****
+--- 27,34 ----
   FORMSRC = analform.c        # The source code for that program
   FORMHTML = analogform.html  # Where the form itself will go
   FORMOPTS =                  # Extra analog options when constructing the form

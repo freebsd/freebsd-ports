@@ -1,76 +1,66 @@
-*** analhead.h.orig	Fri Mar 14 20:33:09 1997
---- analhead.h	Wed May  7 23:27:03 1997
+*** analhead.h.orig	Wed Apr  8 17:48:58 1998
+--- analhead.h	Wed Apr  8 19:32:48 1998
 ***************
-*** 14,25 ****
-  /* the name of your organisation or WWW host. This is used for printing
-     at the top of the output */
+*** 5,10 ****
+--- 5,13 ----
   
-! #define HOSTURL "http://www.statslab.cam.ac.uk/"
+  #ifndef ANALHEAD
+  #define ANALHEAD
++ #ifndef PREFIX
++ #define PREFIX "/usr/local"
++ #endif
+  
+  /*** The first few options -- up to LOGO -- are ones that you may want to
+       change before compiling the program for the first time. However, all of
+***************
+*** 18,25 ****
   /* the URL of your host's home page, for linking to at the top of the
-     output; use "-" for no linking. */
+     output; use "none" for no linking. */
   
 ! #define HTTPDIR "/usr/local/etc/httpd/"
-! #define ANALOGDIR HTTPDIR "analog/"
+! #define ANALOGDIR HTTPDIR"analog/"
   /* The directories where your HTTP stuff lives and where your analog stuff
      lives. You don't really need these; they are just used in this file to
      build up other filenames. Note how you can stick together names by
---- 14,24 ----
-  /* the name of your organisation or WWW host. This is used for printing
-     at the top of the output */
-  
-! #define HOSTURL "-"
+--- 21,27 ----
   /* the URL of your host's home page, for linking to at the top of the
-     output; use "-" for no linking. */
+     output; use "none" for no linking. */
   
-! #define ANALOGDIR "/usr/local/lib/analog/"
+! #define ANALOGDIR PREFIX"/lib/analog/"
   /* The directories where your HTTP stuff lives and where your analog stuff
      lives. You don't really need these; they are just used in this file to
      build up other filenames. Note how you can stick together names by
 ***************
-*** 30,36 ****
-  /* the name of the file where the domain definitions live; see README.html
-     for the format of this file */
+*** 29,35 ****
+  #define DOMAINSFILE ANALOGDIR"domains.tab"
+  /* the file where the domain definitions live; see docs/domfile.html */
   
-! #define LOGFILE HTTPDIR "logs/access_log"
-  /* The name of the default logfile; use "stdin" for stdin.
-     Can be a list, separated by commas (but no spaces). */
+! #define LOGFILE HTTPDIR"logs/access_log"
+  /* The name of the default logfile. Can be a list, separated by commas
+     (but no spaces), and can include wild cards. */
   
---- 29,35 ----
-  /* the name of the file where the domain definitions live; see README.html
-     for the format of this file */
+--- 31,37 ----
+  #define DOMAINSFILE ANALOGDIR"domains.tab"
+  /* the file where the domain definitions live; see docs/domfile.html */
   
 ! #define LOGFILE "/var/log/httpd-access.log"
-  /* The name of the default logfile; use "stdin" for stdin.
-     Can be a list, separated by commas (but no spaces). */
+  /* The name of the default logfile. Can be a list, separated by commas
+     (but no spaces), and can include wild cards. */
   
 ***************
-*** 93,106 ****
-  #define CACHEFILE "none"
-  /* The default file of cached time info. Use "none" for none. */
+*** 41,47 ****
+  #define LANGDIR ANALOGDIR"lang/"
+  /* Directory where the language files live. */
   
-! #define REFERRER_LOG HTTPDIR "logs/referer_log"
-  /* The name of the default referrer log (= referer_log). Use "none" for none.
-     Can be a list, separated by commas. */
+! #define DEFAULTCONFIGFILE ANALOGDIR"analog.cfg"
+  /* the name of the default configuration file; see README.html for a
+     description of this file. Use "none" for no configuration file. */
   
-! #define BROWSER_LOG HTTPDIR "logs/agent_log"
-  /* The name of the default browser log (= agent_log) similarly. */
+--- 43,49 ----
+  #define LANGDIR ANALOGDIR"lang/"
+  /* Directory where the language files live. */
   
-! #define ERROR_LOG HTTPDIR "logs/error_log"
-  /* The name of the default error_log similarly. */
+! #define DEFAULTCONFIGFILE PREFIX"/etc/analog.cfg"
+  /* the name of the default configuration file; see README.html for a
+     description of this file. Use "none" for no configuration file. */
   
-  #define NUMLOOKUP (OFF)
---- 92,105 ----
-  #define CACHEFILE "none"
-  /* The default file of cached time info. Use "none" for none. */
-  
-! #define REFERRER_LOG "none"
-  /* The name of the default referrer log (= referer_log). Use "none" for none.
-     Can be a list, separated by commas. */
-  
-! #define BROWSER_LOG "none"
-  /* The name of the default browser log (= agent_log) similarly. */
-  
-! #define ERROR_LOG "/var/log/httpd-error.log"
-  /* The name of the default error_log similarly. */
-  
-  #define NUMLOOKUP (OFF)
