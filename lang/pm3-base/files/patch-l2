@@ -1,5 +1,5 @@
---- libs/m3core/src/runtime/FBSD_ALPHA/RTHeapDepC.c.orig	Wed May 31 13:54:24 2000
-+++ libs/m3core/src/runtime/FBSD_ALPHA/RTHeapDepC.c	Fri Nov 23 22:37:31 2001
+--- libs/m3core/src/runtime/FBSD_ALPHA/RTHeapDepC.c.orig	Wed May 31 10:54:24 2000
++++ libs/m3core/src/runtime/FBSD_ALPHA/RTHeapDepC.c	Sun Apr 20 12:21:15 2003
 @@ -98,7 +98,11 @@
  #include <sys/time.h>
  #include <nfs/rpcv2.h>
@@ -36,3 +36,15 @@
    } else if (strcmp(type, "nfs") == 0) {
      n_data = (struct nfs_args*) data;
      MAKE_READABLE(n_data);
+@@ -805,7 +813,11 @@
+ 
+ int msgsnd(msqid, msgp, msgsz, msgflg)   /* ok */
+ int msqid;
++#if __FreeBSD_version >= 500100
++const void *msgp;
++#else
+ void *msgp;
++#endif
+ size_t msgsz;
+ int msgflg;
+ { int result;
