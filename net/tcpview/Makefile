@@ -22,10 +22,6 @@ MAN1=		tcpview.1
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} >= 500113
-BROKEN=         "Does not compile"
-.endif
-
 post-patch:
 .for f in nametoaddr.c addrtoname.c print-nfs.c detail-tcp.c tv_addrtoname.c
 	@${REINPLACE_CMD} -e 's/NTOHL/ntohl/ ; s/NTOHS/ntohs/' ${WRKSRC}/${f}
