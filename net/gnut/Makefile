@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	gnut
-PORTVERSION=	0.4.18
+PORTVERSION=	0.4.20
 CATEGORIES=	net audio
-MASTER_SITES=	http://www.mrob.com/gnut/tars/
+MASTER_SITES=	http://www.gnutelliums.com/linux_unix/gnut/tars/
 
 MAINTAINER=	kris@FreeBSD.org
 
