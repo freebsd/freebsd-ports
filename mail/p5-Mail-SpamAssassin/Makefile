@@ -80,9 +80,9 @@ DOCSDIR=	${PREFIX}/share/doc/${PKGNAMEPREFIX}${PORTNAME}
 DATADIR=	${PREFIX}/share/spamassassin
 DOCS=		BUGS CREDITS Changes INSTALL LICENSE NOTICE PACKAGING README STATUS TRADEMARK UPGRADE USAGE procmailrc.example
 DOCSSQL=	README README.awl README.bayes awl_mysql.sql awl_pg.sql bayes_mysql.sql bayes_pg.sql userpref_mysql.sql userpref_pg.sql
-DOCSCONTRIB=	mbox-to-check run-corpora run-masses 
-DOCSLDAP=	README README.testing sa_test.ldif 
-PORTDOCS=	${DOCS} ${DOCSSQL:S|^|sql/|} ${DOCSCONTRIB:S|^|contrib/|} ${DOCSLDAP:S|^|ldap/|}
+DOCSCONTRIB=	mbox-to-check run-corpora run-masses
+DOCSLDAP=	README README.testing sa_test.ldif
+PORTDOCS=	${DOCS} sql contrib ldap
 
 USE_RC_SUBR=	yes
 SED_SCRIPT=	-e 's|%%PREFIX%%|${PREFIX}|g' \
