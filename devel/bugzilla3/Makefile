@@ -32,6 +32,8 @@ RUN_DEPENDS+=	${PERL_SITEDIR}/MIME/Parser.pm:${PORTSDIR}/mail/p5-MIME-Tools
 RUN_DEPENDS+=	${PERL_SITEDIR}/${PERL_ARCH}/XML/Parser.pm:${PORTSDIR}/textproc/p5-XML-Parser
 .endif
 
+USE_REINPLACE=	yes
+
 NO_BUILD=	yes
 BINMODE=	700
 PKGMESSAGE=     ${WRKDIR}/pkg-message
@@ -65,11 +67,11 @@ post-patch:
 	@find ${WRKSRC} -name README.docs -type f -exec ${RM} -f {} \;
 	@find ${WRKSRC} -name \*.orig -type f -exec ${RM} -f {} \;
 .for i in ${BONSAIPERLWC}
-	@${PERL} -pi -e 's@#!/usr/bonsaitools/bin/perl@#!/usr/bin/perl@' \
+	@${REINPLACE_CMD} -e 's@#!/usr/bonsaitools/bin/perl@#!/usr/bin/perl@' \
 		${WRKSRC}/$i
 .endfor
 .for i in ${SENDMAILWC}
-	@${PERL} -pi -e 's@/usr/lib/sendmail@/usr/sbin/sendmail@' \
+	@${REINPLACE_CMD} -e 's@/usr/lib/sendmail@/usr/sbin/sendmail@' \
 		${WRKSRC}/$i
 .endfor
 
