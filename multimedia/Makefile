@@ -40,6 +40,7 @@
     SUBDIR += kaffeine-mozilla
     SUBDIR += kdemultimedia3
     SUBDIR += kino
+    SUBDIR += kino-dvtitler
     SUBDIR += kmplayer
     SUBDIR += kplayer
     SUBDIR += ksubeditor
