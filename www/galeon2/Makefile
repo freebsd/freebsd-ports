@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	galeon2
-PORTVERSION=	1.3.11.a
+PORTVERSION=	1.3.11a
 CATEGORIES=	www gnome
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		http://osdn.dl.sourceforge.net/sourceforge/galeon/
 MASTER_SITE_SUBDIR=	${PORTNAME:S/2$//}
-DISTNAME=	${PORTNAME:S/2$//}-${PORTVERSION:S/.a$/a/}
+DISTNAME=	${PORTNAME:S/2$//}-${PORTVERSION}
 
 MAINTAINER=	gnome@freebsd.org
 COMMENT=	A GNOME 2 Web browser based on gecko (the Mozilla rendering engine)
