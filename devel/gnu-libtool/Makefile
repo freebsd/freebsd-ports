@@ -6,7 +6,7 @@
 #
 
 PORTNAME?=	libtool
-PORTVERSION=	1.5.8
+PORTVERSION=	1.5.10
 PORTREVISION?=	0
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_GNU}
@@ -25,6 +25,7 @@ CONFIGURE_ARGS+= --program-suffix=${BUILD_VERSION}
 CONFIGURE_ENV=	PREFIX=${PREFIX} PACKAGE=libtool${BUILD_VERSION}
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 USE_REINPLACE=	yes
+INFO=		libtool${BUILD_VERSION}
 
 post-patch:
 	@(cd ${WRKSRC}/doc && \
@@ -39,10 +40,12 @@ post-patch:
 .if ${PORTNAME} == "libtool"
 post-install:
 	@-${RM} -fr ${PREFIX}/libexec/libtool${BUILD_VERSION}
-	${MKDIR} ${PREFIX}/libexec/libtool${BUILD_VERSION}
+	@${MKDIR} ${PREFIX}/libexec/libtool${BUILD_VERSION}
 .for i in libtool libtoolize
-	${LN} -sf ${PREFIX}/bin/${i}${BUILD_VERSION} ${PREFIX}/libexec/libtool${BUILD_VERSION}/${i}
+	@${LN} -sf ${PREFIX}/bin/${i}${BUILD_VERSION} ${PREFIX}/libexec/libtool${BUILD_VERSION}/${i}
 .endfor
 .endif
 
+	@install-info ${PREFIX}/info/libtool${BUILD_VERSION}.info \
+		${PREFIX}/info/dir
 .include <bsd.port.mk>

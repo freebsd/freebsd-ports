@@ -1,17 +1,11 @@
---- doc/Makefile.in.orig	Sun Jan 25 13:36:36 2004
-+++ doc/Makefile.in	Fri Feb 13 14:57:56 2004
-@@ -34,7 +34,7 @@
- POST_UNINSTALL = :
- host_triplet = @host@
+--- doc/Makefile.in.orig	Sun Sep 19 12:21:58 2004
++++ doc/Makefile.in	Thu Oct 14 19:42:38 2004
+@@ -37,3 +37,3 @@
  subdir = doc
 -DIST_COMMON = $(libtool_TEXINFOS) $(srcdir)/Makefile.am \
 +DIST_COMMON = $(libtool15_TEXINFOS) $(srcdir)/Makefile.am \
  	$(srcdir)/Makefile.in $(srcdir)/stamp-vti \
- 	$(srcdir)/version.texi mdate-sh texinfo.tex
- ACLOCAL_M4 = $(top_srcdir)/aclocal.m4
-@@ -46,13 +46,13 @@
- CONFIG_CLEAN_FILES =
- SOURCES =
+@@ -49,9 +49,9 @@
  DIST_SOURCES =
 -INFO_DEPS = $(srcdir)/libtool.info
 +INFO_DEPS = $(srcdir)/libtool15.info
@@ -27,32 +21,20 @@
 +HTMLS = libtool15.html
 +TEXINFOS = libtool15.texi
  TEXI2DVI = texi2dvi
- TEXI2PDF = $(TEXI2DVI) --pdf --batch
- MAKEINFOHTML = $(MAKEINFO) --html
-@@ -116,7 +116,7 @@
- LIBTOOL = @LIBTOOL@
- LN_S = @LN_S@
+@@ -119,3 +119,3 @@
  LTLIBOBJS = @LTLIBOBJS@
 -MAKEINFO = @MAKEINFO@
 +MAKEINFO = @MAKEINFO@ --no-split
  NM = @NM@
- OBJDUMP = @OBJDUMP@
- OBJEXT = @OBJEXT@
-@@ -183,8 +183,8 @@
- sysconfdir = @sysconfdir@
- target_alias = @target_alias@
+@@ -188,4 +188,4 @@
  AUTOMAKE_OPTIONS = gnits
 -info_TEXINFOS = libtool.texi
 -libtool_TEXINFOS = PLATFORMS fdl.texi
 +info_TEXINFOS = libtool15.texi
 +libtool15_TEXINFOS = PLATFORMS fdl.texi
  all: all-am
- 
- .SUFFIXES:
-@@ -268,14 +268,14 @@
- 	 -o $@ $<
- 	if test ! -d $@ && test -d $(@:.html=); then \
- 	  mv $(@:.html=) $@; else :; fi
+@@ -276,10 +276,10 @@
+ 	fi
 -$(srcdir)/libtool.info: libtool.texi $(srcdir)/version.texi $(libtool_TEXINFOS)
 -libtool.dvi: libtool.texi $(srcdir)/version.texi $(libtool_TEXINFOS)
 -libtool.pdf: libtool.texi $(srcdir)/version.texi $(libtool_TEXINFOS)
@@ -69,11 +51,7 @@
 +	@(dir=.; test -f ./libtool15.texi || dir=$(srcdir); \
 +	set `$(SHELL) $(srcdir)/mdate-sh $$dir/libtool15.texi`; \
  	echo "@set UPDATED $$1 $$2 $$3"; \
- 	echo "@set UPDATED-MONTH $$2 $$3"; \
- 	echo "@set EDITION $(VERSION)"; \
-@@ -332,9 +332,9 @@
- 	done
- 
+@@ -340,5 +340,5 @@
  mostlyclean-aminfo:
 -	-rm -rf libtool.aux libtool.cp libtool.cps libtool.fn libtool.ky libtool.kys \
 -	  libtool.log libtool.pg libtool.tmp libtool.toc libtool.tp \
@@ -82,5 +60,3 @@
 +	  libtool15.log libtool15.pg libtool15.tmp libtool15.toc libtool15.tp \
 +	  libtool15.vr libtool15.dvi libtool15.pdf libtool15.ps libtool15.html
  
- maintainer-clean-aminfo:
- 	@list='$(INFO_DEPS)'; for i in $$list; do \
