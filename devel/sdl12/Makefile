@@ -9,8 +9,7 @@ PORTNAME=	sdl
 PORTVERSION=	1.2.5
 PORTREVISION=	2
 CATEGORIES=	devel
-MASTER_SITES=	http://www.libsdl.org/release/ \
-		http://www.devolution.com/~slouken/SDL/release/
+MASTER_SITES=	http://www.libsdl.org/release/
 DISTNAME=	SDL-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
