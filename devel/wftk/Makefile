@@ -22,6 +22,7 @@ USE_LIBTOOL=	yes
 USE_SDL=	yes
 GNU_CONFIGURE=	yes
 USE_REINPLACE=	yes
+INSTALLS_SHLIB=	yes
 
 CONFIGURE_ENV=	LIBS="-L${LOCALBASE}/lib"
 
@@ -39,7 +40,6 @@ WITH_SDL_MIXER=	yes
 .if defined(WITH_SDL_MIXER)
 LIB_DEPENDS+=	SDL_mixer.2:${PORTSDIR}/audio/sdl_mixer
 .endif
-
 
 pre-everything::
 	@${ECHO} ""

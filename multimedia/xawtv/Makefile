@@ -29,6 +29,7 @@ USE_X_PREFIX=	yes
 USE_REINPLACE=	yes
 CONFIGURE_ENV=	LIBS="-L${PREFIX}/lib -L${LOCALBASE}/lib"
 MAKE_ENV=	verbose=yes
+INSTALLS_SHLIB=	yes
 
 FILES_LIBJPEG=	console/Subdir.mk debug/Subdir.mk x11/Subdir.mk
 
@@ -42,9 +43,9 @@ MAN8=		v4l-conf.8
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 500000
-ONLY_FOR_ARCHS= i386
+ONLY_FOR_ARCHS=	i386
 .else
-ONLY_FOR_ARCHS= alpha i386 ia64
+ONLY_FOR_ARCHS=	alpha i386 ia64
 .endif
 
 .if defined(WITH_LIBDV)
