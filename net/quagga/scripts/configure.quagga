@@ -3,7 +3,7 @@
 # configure - quagga compile time option configurator
 # by Bruce M Simpson <bms@FreeBSD.org>
 #
-# $FreeBSD: /tmp/pcvs/ports/net/quagga/scripts/Attic/configure.quagga,v 1.5 2004-05-20 11:51:44 bms Exp $
+# $FreeBSD: /tmp/pcvs/ports/net/quagga/scripts/Attic/configure.quagga,v 1.6 2004-12-01 21:12:34 pav Exp $
 
 if [ -f ${WRKDIRPREFIX}${CURDIR}/Makefile.inc ]; then
 	exit
@@ -74,7 +74,7 @@ while [ "$1" ]; do
 		if [ "x${WITH_SNMP_4}" != "x" ]; then
 			echo 'LIB_DEPENDS+=snmp.4:${PORTSDIR}/net-mgmt/net-snmp4:install'
 		else
-			echo 'LIB_DEPENDS+=netsnmp.6:${PORTSDIR}/net-mgmt/net-snmp:install'
+			echo 'LIB_DEPENDS+=netsnmp.7:${PORTSDIR}/net-mgmt/net-snmp:install'
 		fi
 		;;
 	TCPMD5)
