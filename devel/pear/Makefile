@@ -24,6 +24,8 @@ PLIST_SUB=	PEARDIR=${LPHP_LIB}
 
 PEARDIR=	${LOCALBASE}/${LPHP_LIB}
 
+FORBIDDEN=	"This module is now part of mod_php4 as of 4.1.0"
+
 do-install:
 	@${ECHO} "===> Backup the original PEAR from mod_php4 into ${PEARDIR}.DIST_PHP ..."
 	${MV}	${PEARDIR} ${PEARDIR}.DIST_PHP
