@@ -2,5 +2,5 @@ bin/kon
 bin/fld
 man/ja_JP.ujis/man1/kon.1.gz
 etc/kon.cfg
-fonts/k14.bdf.gz
-fonts/7x14rk.bdf.gz
+lib/fonts/k14.bdf.gz
+lib/fonts/7x14rk.bdf.gz
