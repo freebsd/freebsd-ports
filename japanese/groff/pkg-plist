@@ -316,7 +316,7 @@ share/groff/tmac/tmac.doc
 share/groff/tmac/tmac.doc.old
 share/groff/tmac/tmac.dvi
 share/groff/tmac/tmac.e
-share/groff/tmac/tmac.groff_an
+%%TMAC_GROFF_AN:%%share/groff/tmac/tmac.groff_an
 share/groff/tmac/tmac.html
 share/groff/tmac/tmac.latin1
 share/groff/tmac/tmac.lj4
