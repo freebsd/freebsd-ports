@@ -1,11 +1,17 @@
---- libgimp/Makefile.in.orig	Fri Feb 11 10:42:12 2000
-+++ libgimp/Makefile.in	Sat Feb 19 15:18:59 2000
-@@ -211,7 +211,7 @@
+--- libgimp/Makefile.in.orig	Sat Mar  4 11:10:43 2000
++++ libgimp/Makefile.in	Sun Apr  2 22:40:29 2000
+@@ -209,11 +209,11 @@
+ gimpinclude_HEADERS =  	color_display.h			color_selector.h		gimp.h				gimpchainbutton.h		gimpcolorbutton.h		gimpcolorspace.h	        gimpcompat.h			gimpdialog.h			gimpenums.h			gimpenv.h			gimpexport.h			gimpfeatures.h			gimpfileselection.h		gimphelpui.h			gimplimits.h			gimpmath.h			gimpmatrix.h			gimpmenu.h			gimpmodule.h			gimppatheditor.h		gimppixmap.h			gimpquerybox.h			gimpsizeentry.h			gimpui.h			gimpunit.h              	gimpunitmenu.h          	gimpvector.h			gimpwidgets.h			gimpintl.h			parasite.h			parasiteF.h			parasiteP.h			parasiteio.h
  
- libgimp_la_LDFLAGS =  	-version-info $(LT_CURRENT):$(LT_REVISION):$(LT_AGE) 	-release $(LT_RELEASE)
+ 
+-libgimp_la_LDFLAGS =  	-version-info $(LT_CURRENT):$(LT_REVISION):$(LT_AGE) 	-release $(LT_RELEASE)
++libgimp_la_LDFLAGS =  	-version-info $(LT_CURRENT):$(LT_REVISION):$(LT_AGE)
  
 -libgimp_la_LIBADD = $(GLIB_LIBS) -lm
 +libgimp_la_LIBADD = $(GTK_LIBS) -lm
  
- libgimpui_la_LDFLAGS =  	-version-info $(LT_CURRENT):$(LT_REVISION):$(LT_AGE) 	-release $(LT_RELEASE)
+-libgimpui_la_LDFLAGS =  	-version-info $(LT_CURRENT):$(LT_REVISION):$(LT_AGE) 	-release $(LT_RELEASE)
++libgimpui_la_LDFLAGS =  	-version-info $(LT_CURRENT):$(LT_REVISION):$(LT_AGE)
  
+ libgimpui_la_LIBADD = $(GTK_LIBS)
+ mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs

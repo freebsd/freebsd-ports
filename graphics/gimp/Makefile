@@ -12,12 +12,14 @@ MASTER_SITES=	ftp://ftp.gimp.org/pub/gimp/unstable/v${VERSION}/ \
 		ftp://ftp.insync.net/pub/mirrors/ftp.gimp.org/gimp/unstable/v${VERSION}/ \
 		ftp://ftp.ameth.org/pub/mirrors/ftp.gimp.org/gimp/unstable/v${VERSION}/
 
-MAINTAINER=	erich@FreeBSD.org
+MAINTAINER=	vanilla@FreeBSD.org
 
+.if !defined (WITHOUT_PERL)
 BUILD_DEPENDS=	perldl:${PORTSDIR}/math/PDL \
 		${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/${PERL_ARCH}/Gtk.pm:${PORTSDIR}/x11-toolkits/p5-Gtk
 RUN_DEPENDS=	perldl:${PORTSDIR}/math/PDL \
 		${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/${PERL_ARCH}/Gtk.pm:${PORTSDIR}/x11-toolkits/p5-Gtk
+.endif
 LIB_DEPENDS=	Xpm.4:${PORTSDIR}/graphics/xpm \
 		aa.1:${PORTSDIR}/graphics/aalib \
 		jpeg.9:${PORTSDIR}/graphics/jpeg \
@@ -27,7 +29,7 @@ LIB_DEPENDS=	Xpm.4:${PORTSDIR}/graphics/xpm \
 		tiff.4:${PORTSDIR}/graphics/tiff \
 		intl.1:${PORTSDIR}/devel/gettext
 
-VERSION=	1.1.17
+VERSION=	1.1.18
 
 GLIB_CONFIG?=	${LOCALBASE}/bin/glib12-config
 GTK_CONFIG?=	${X11BASE}/bin/gtk12-config
@@ -37,6 +39,9 @@ USE_X_PREFIX=	yes
 USE_GMAKE=	yes
 USE_LIBTOOL=	yes
 LIBTOOLFLAGS=	--disable-ltlibs --release-ignore
+.if defined (WITHOUT_PERL)
+CONFIGURE_ARGS=	--disable-perl
+.endif
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		GLIB_CONFIG="${GLIB_CONFIG}" \
 		GTK_CONFIG="${GTK_CONFIG}" \
@@ -49,12 +54,22 @@ MAN5=		gimprc.5
 WITH_GNOME=	yes
 .endif
 
+.if defined(WITHOUT_PERL)
+PLISTORIG=		${WRKDIR}/PLIST
+PLIST=			${PKGDIR}/PLIST
+.else
+PLISTORIG=		${WRKDIR}/PLIST.perl
+PLIST=			${SRCDIR}/PLIST.perl
+pre-fetch:
+	@${ECHO} -n "If you want to compile without perl support "
+	@${ECHO} "'make -DWITHOUT_PERL' instead"
+.endif
+
 .if defined(WITH_GNOME) && ${WITH_GNOME} == yes
 LIB_DEPENDS+=	gtkxmhtml.3:${PORTSDIR}/x11/gnomelibs
 .else
-PLIST=		${WRKDIR}/PLIST
 pre-install:
-	@${SED} -e '/helpbrowser/d' ${PKGDIR}/PLIST > ${PLIST}
+	@${SED} -e '/helpbrowser/d' ${PLISTORIG} > ${PLIST}
 .endif
 
 post-install:
