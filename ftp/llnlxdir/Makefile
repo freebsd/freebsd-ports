@@ -4,7 +4,7 @@
 #
 # Whom: Dima Ruban <dima@FreeBSD.ORG>
 #
-# $Id: Makefile,v 1.3 1998/03/04 10:03:36 tg Exp $
+# $Id: Makefile,v 1.4 1999/02/21 21:44:27 dima Exp $
 #
 
 DISTNAME=	latest_xdir
@@ -14,6 +14,8 @@ MASTER_SITES=	ftp://ftp-lc.llnl.gov/pub/ia/llnlxdir/
 EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=	dima@FreeBSD.ORG
+
+MAN1=	xdir.1
 
 WRKSRC=		${WRKDIR}/llnlxdir2_1/sources
 REQUIRES_MOTIF=	yes
