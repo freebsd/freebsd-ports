@@ -29,7 +29,7 @@ PORTCLASS?=	master
 # emacs port setup
 .if (${PORTCLASS} == "master")
 EMACS_PORT_NAME=	emacs19
-CUSTOM_PORT_SUFFIX=	-emacs19
+CUSTOM_PORT_SUFFIX=	-emacs
 .endif
 ELIB_PORT_SUFFIX?=	-${EMACS_PORT_NAME}
 
