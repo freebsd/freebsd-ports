@@ -1,13 +1,5 @@
---- configure.orig	Mon Jun 16 17:50:24 2003
-+++ configure	Tue Sep 30 01:22:24 2003
-@@ -19316,6 +19316,7 @@
- 
- # This can be used to rebuild libtool when needed
- LIBTOOL_DEPS="$ac_aux_dir/ltmain.sh"
-+$ac_aux_dir/ltconfig $LIBTOOL_DEPS
- 
- # Always use our own libtool.
- LIBTOOL='$(SHELL) $(top_builddir)/libtool'
+--- configure.orig	Fri Mar 19 03:38:08 2004
++++ configure	Wed Apr  7 02:56:46 2004
 @@ -23732,10 +23733,6 @@
  rm -f conftest*
  
@@ -19,6 +11,15 @@
  
  cat >>confdefs.h <<\_ACEOF
  #define _XOPEN_SOURCE 1
+@@ -23942,7 +23939,7 @@
+ 
+ 
+ 
+-for ac_func in cfmakeraw getpgid getpt grantpt unlockpt ptsname ptsname_r recvmsg
++for ac_func in cfmakeraw getpgid getpt posix_openpt grantpt unlockpt ptsname ptsname_r recvmsg
+ do
+ as_ac_var=`echo "ac_cv_func_$ac_func" | $as_tr_sh`
+ echo "$as_me:$LINENO: checking for $ac_func" >&5
 @@ -25977,7 +25974,7 @@
  
  
