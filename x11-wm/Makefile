@@ -53,6 +53,7 @@
     SUBDIR += icepref
     SUBDIR += icewm
     SUBDIR += ion
+    SUBDIR += ion-2
     SUBDIR += jewel
     SUBDIR += kahakai
     SUBDIR += kappdock
