@@ -105,6 +105,7 @@
     SUBDIR += erlang_xmlrpc
     SUBDIR += etherboot
     SUBDIR += ethereal
+    SUBDIR += ethereal-lite
     SUBDIR += eudc-emacs20
     SUBDIR += fcptools
     SUBDIR += fidelio
@@ -629,6 +630,7 @@
     SUBDIR += telnetx
     SUBDIR += telserv
     SUBDIR += tethereal
+    SUBDIR += tethereal-lite
     SUBDIR += thcrut
     SUBDIR += tightvnc
     SUBDIR += tik

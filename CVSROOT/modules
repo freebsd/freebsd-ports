@@ -1707,6 +1707,7 @@ eterm-bg	ports/graphics/eterm-bg
 etherape	ports/net-mgmt/etherape
 etherboot	ports/net/etherboot
 ethereal	ports/net/ethereal
+ethereal-lite	ports/net/ethereal-lite
 etktab		ports/audio/etktab
 etlfonts	ports/x11-fonts/etlfonts
 ettercap	ports/net-mgmt/ettercap
@@ -9300,6 +9301,7 @@ termlog		ports/security/termlog
 terraform	ports/misc/terraform
 tet		ports/misc/tet
 tethereal	ports/net/tethereal
+tethereal-lite	ports/net/tethereal-lite
 tetradraw	ports/editors/tetradraw
 tetrinet	ports/games/tetrinet
 tetrinet-x	ports/games/tetrinet-x

@@ -6,71 +6,98 @@
 #
 
 PORTNAME=	ethereal
-PORTVERSION=	0.10.0a
-PORTREVISION=	2
+PORTVERSION=	0.10.3
 CATEGORIES=	net ipv6
-MASTER_SITES=	ftp://ftp.ethereal.com/pub/ethereal/%SUBDIR%/ \
-		ftp://gd.tuwien.ac.at/infosys/security/ethereal/%SUBDIR%/ \
-		ftp://ftp.sunet.se/pub/network/monitoring/ethereal/%SUBDIR%/ \
-		ftp://ftp.mirrors.wiretapped.net/pub/security/packet-capture/ethereal/%SUBDIR%/ \
-		http://www.mirrors.wiretapped.net/pub/security/packet-capture/ethereal/%SUBDIR%/
-MASTER_SITE_SUBDIR=	. old-versions
+MASTER_SITES=	ftp://ftp.ethereal.com/pub/ethereal/all-versions/ \
+		ftp://gd.tuwien.ac.at/infosys/security/ethereal/all-versions/ \
+		ftp://ftp.sunet.se/pub/network/monitoring/ethereal/all-versions/ \
+		ftp://ftp.mirrors.wiretapped.net/pub/security/packet-capture/ethereal/all-versions/ \
+		http://www.mirrors.wiretapped.net/pub/security/packet-capture/ethereal/all-versions/
 
 MAINTAINER=	billf@FreeBSD.org
-COMMENT=	An X11/GTK network analyzer/capture tool
-FORBIDDEN=	http://www.vuxml.org/freebsd/cdf18ed9-7f4a-11d8-9645-0020ed76ef5a.html
+COMMENT?=	A powerful network analyzer/capture tool
 
 USE_BZIP2=	yes
 WANT_GNOME=	yes
+GNU_CONFIGURE=	yes
+CONFIGURE_ARGS+=	--program-transform-name=""
+
+.for x in editcap idl2eth mergecap text2pcap
+.if defined(LITE)
+PLIST_SUB+=		${x:U}="@comment $x not installed"
+CONFIGURE_ARGS+=	--enable-$x=no
+.else
+PLIST_SUB+=		${x:U}=bin/$x
+MAN1+=			$x.1
+.endif
+.endfor
+
+.if !defined(WITHOUT_X11)
+USE_X_PREFIX=	yes
+.endif
 
 .include <bsd.port.pre.mk>
 
-.if !defined(WITHOUT_SNMP)
-LIB_DEPENDS=	netsnmp.6:${PORTSDIR}/net-mgmt/net-snmp
-.endif
-
-CONFIGURE_ARGS=	--program-transform-name=""
-CONFIGURE_TARGET=	--target=${MACHINE_ARCH}-unknown-freebsd${OSREL}
 .if !defined(WITHOUT_X11)
-USE_X_PREFIX=	yes
+MAN1+=		ethereal.1
+PLIST_SUB+=	ETHEREAL=bin/ethereal
 .if defined(WITH_GTK2) || (${HAVE_GNOME:Mgtk20}!="")
 USE_GNOME=	gtk20
 CONFIGURE_ARGS+=	--enable-gtk2=yes
 .else
 USE_GNOME=	gtk12
 .endif
-MAN1+=		ethereal.1
-PLIST_SUB+=	ETHEREAL=bin/ethereal
 .else
 PLIST_SUB+=	ETHEREAL="@comment ethereal not built"
 USE_GNOME=	glib12
 CONFIGURE_ARGS+=	--enable-ethereal=no \
-			--disable-gtktest
+			--disable-gtktest \
+			--with-gtk-prefix=/nonexistant \
+			--enable-gtk2=no
 .endif
 
 USE_LIBTOOL_VER=13
-LIBTOOLFILES=	configure epan/configure wiretap/configure
+LIBTOOLFILES=	configure epan/configure wiretap/configure doc/configure \
+	      	plugins/gryphon/configure
 PLIST_SUB+=	PORTVERSION=${PORTVERSION}
 
-.if !defined(WITHOUT_SNMP)
-CONFIGURE_ARGS+=	--enable-snmp=yes \
-			--with-net-snmp=${LOCALBASE}/lib \
-			--without-ucdsnmp
+.if ${OSVERSION} >= 400014 && !defined(WITHOUT_IPV6)
+CONFIGURE_ARGS+=	--enable-ipv6=yes
+.else
+CONFIGURE_ARGS+=	--enable-ipv6=no
+.endif
+
 .if exists(/usr/include/openssl/crypto.h)
 CONFIGURE_ARGS+=	--with-ssl=/usr
 .endif
-.else
-CONFIGURE_ARGS+=	--enable-snmp=no --without-ucdsnmp --without-net-snmp
+
+# XXX - untested
+.if defined(WITH_THREADS)
+CONFIGURE_ARGS+=	--enable-threads
 .endif
 
-.if defined(WITH_ADNS) || (!defined(WITHOUT_ADNS) && exists(${LOCALBASE}/lib/adns.so))
+.if !defined(WITHOUT_PCRE) && !defined(LITE)
+LIB_DEPENDS+=	pcre.0:${PORTSDIR}/devel/pcre
+CONFIGURE_ARGS+=	--with-pcre=${LOCALBASE}/lib
+.else
+CONFIGURE_ARGS+=	--with-pcre=no
+.endif
+
+.if !defined(WITHOUT_SNMP) && !defined(LITE)
+LIB_DEPENDS+=	netsnmp.6:${PORTSDIR}/net-mgmt/net-snmp
+CONFIGURE_ARGS+=	--with-net-snmp=${LOCALBASE}/bin/net-snmp-config
+.else
+CONFIGURE_ARGS+=	--enable-snmp=no --with-ucd-snmp=no --with-net-snmp=no
+.endif
+
+.if !defined(WITHOUT_ADNS) && !defined(LITE)
 LIB_DEPENDS+=	adns.1:${PORTSDIR}/dns/adns
-.include <bsd.port.post.mk>
+CONFIGURE_ARGS+=	--with-adns=${LOCALBASE}/lib
 .else
-CONFIGURE_ARGS+=	--without-adns
+CONFIGURE_ARGS+=	--with-adns=no
 .endif
 
-MAN1+=		editcap.1 idl2eth.1 mergecap.1 tethereal.1 text2pcap.1
-MAN4+=		ethereal-filter.4
+MAN1+=	tethereal.1
+MAN4+=	ethereal-filter.4
 
 .include <bsd.port.post.mk>
