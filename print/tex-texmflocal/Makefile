@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	tex-texmflocal
-PORTVERSION=	1.2
+PORTVERSION=	1.3
 CATEGORIES=	print
 MASTER_SITES=	# empty
 DISTFILES=	# empty
@@ -17,31 +17,40 @@ BUILD_DEPENDS=	mktexlsr:${PORTSDIR}/print/teTeX
 
 NO_WRKSUBDIR=	yes
 NO_BUILD=	yes
-PLIST_SUB=	TEXMFLOCAL=${TEXMFLOCAL} MKTEXLSR=${MKTEXLSR}
 PKGINSTALL=	${WRKDIR}/pkg-install.sh
 PKGDEINSTALL=	${WRKDIR}/pkg-install.sh
+PLIST=		${WRKDIR}/pkg-plist
 
 TEXMFLOCAL=	share/texmf-local
 TEXMFLOCAL_LSR=	${LOCALBASE}/${TEXMFLOCAL}/ls-R
 MKTEXLSR=	${LOCALBASE}/bin/mktexlsr
 
-DIRS=	bibtex bibtex/bib bibtex/bst \
+DIRS=	bibtex/bib bibtex/bst bibtex\
 	dvipdfm dvips \
-	fonts fonts/afm fonts/ofm fonts/ovp fonts/ovf \
+	fonts/afm fonts/ofm fonts/ovp fonts/ovf \
 	fonts/ocp fonts/pk fonts/tfm fonts/type1 \
-	fonts/source fonts/source/public fonts/vf \
+	fonts/source/public fonts/source fonts/vf fonts \
 	metafont metapost \
-	jbibtex jbibtex/bib jbibtex/bst \
-	tex tex/generic tex/jadetex tex/latex tex/plain \
-	pdftex pdftex/latex pdftex/platex \
-	ptex ptex/plain ptex/platex \
+	jbibtex/bib jbibtex/bst jbibtex\
+	tex/generic tex/jadetex tex/latex tex/plain tex\
+	pdftex/latex pdftex/platex pdftex\
+	ptex/plain ptex/platex ptex\
 	web2c
 
-do-install:
-	${MKDIR} ${DIRS:S,^,${PREFIX}/${TEXMFLOCAL}/,}
+pre-install:
+	(${ECHO_CMD} '${TEXMFLOCAL}/ls-R'; \
+		for dir in ${DIRS}; do \
+			${ECHO_CMD} "@dirrm ${TEXMFLOCAL}/$${dir}"; \
+			${ECHO_CMD} "@exec ${MKDIR} %D/${TEXMFLOCAL}/$${dir}"; \
+		done; \
+		${ECHO_CMD} '@exec ${MKTEXLSR}'; \
+		${ECHO_CMD} '@unexec ${MKTEXLSR}' ) > ${PLIST}
 	${SED} -e 's,%%TEXMFLOCAL_LSR%%,${TEXMFLOCAL_LSR},' \
 		< ${FILESDIR}/pkg-install.in > ${PKGINSTALL}
 	${CHMOD} 0555 ${PKGINSTALL}
+
+do-install:
+	${MKDIR} ${DIRS:S,^,${PREFIX}/${TEXMFLOCAL}/,}
 
 post-install:
 	@${MKTEXLSR}
