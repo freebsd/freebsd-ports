@@ -1,8 +1,8 @@
 include/AL/al.h
 include/AL/alc.h
 include/AL/alctypes.h
-include/AL/alkludge.h
-include/AL/alkludgetypes.h
+include/AL/alext.h
+include/AL/alexttypes.h
 include/AL/altypes.h
 include/AL/alu.h
 include/AL/alut.h
@@ -14,4 +14,5 @@ info/openal.info
 lib/libopenal.a
 lib/libopenal.so
 lib/libopenal.so.0
+lib/libopenal.so.0.0.6
 @dirrm include/AL

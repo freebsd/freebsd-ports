@@ -6,20 +6,23 @@
 #
 
 PORTNAME=	openal
-PORTVERSION=	20000908
+PORTVERSION=	20020217
 CATEGORIES=	audio
 MASTER_SITES=	ftp://ftp.openal.org/pub/openal/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	erik@smluc.org
 
-WRKSRC=		${WRKDIR}/${PORTNAME}/linux
+WRKSRC=		${WRKDIR}/tmp/${PORTNAME}/linux
 
-USE_GMAKE=	yes
 USE_AUTOCONF=	yes
 INSTALLS_SHLIB=	yes
 
 post-patch:
-	@find ${WRKSRC} -name 'Makefile.in' | xargs ${PERL} -pi -e 's/-g -c/-c/g'
+	@${PERL} -pi -e 's|autoconf|${AUTOCONF}|; \
+		s|autoheader|${AUTOHEADER}|' ${WRKSRC}/autogen.sh
+
+pre-configure:
+	@cd ${WRKSRC} && ${SH} autogen.sh
 
 post-install:
 	${INSTALL_DATA} ${WRKSRC}/doc/openal.info ${PREFIX}/info

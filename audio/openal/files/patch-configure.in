@@ -1,11 +1,11 @@
---- configure.in~	Sat Sep  9 00:15:48 2000
-+++ configure.in	Mon Sep 25 18:53:56 2000
-@@ -111,7 +111,7 @@
- AC_CHECK_LIB(m, sin, LIBS="$LIBS -lm", echo "I'm afraid you'll need libm."; exit 1)
+--- configure.in.orig	Wed Feb 20 11:40:35 2002
++++ configure.in	Wed Feb 20 11:40:46 2002
+@@ -734,7 +734,7 @@
  
- dnl Should be allow dlopen of extensions?
--AC_CHECK_LIB(dl, dlopen, LIBS="$LIBS -ldl", AC_DEFINE(NODLOPEN) echo "Can't dlopen extensions." )
-+AC_CHECK_FUNC(dlopen, [], AC_CHECK_LIB(dl, dlopen, LIBS="$LIBS -ldl", AC_DEFINE(NODLOPEN) echo "Can't dlopen extensions." ))
+ dnl Should we use turn warnings into errors?
+ if test x$SHOULD_USE_WERROR = xyes; then
+-	WFLAGS="$WFLAGS -Werror -pedantic-errors"
++	WFLAGS="$WFLAGS"
+ fi
  
- dnl Special OS objs for target systems
- case "$target" in
+ dnl if we are forced to live with redundant decls, turn off those errors
