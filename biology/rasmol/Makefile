@@ -8,8 +8,8 @@
 PORTNAME=	rasmol
 PORTVERSION=	2.7.2
 CATEGORIES=	biology
-MASTER_SITES=	ftp://ftp.bernstein-plus-sons.com/software/
-DISTNAME=	RasMol_2.7.2
+MASTER_SITES=	ftp://ftp.bernstein-plus-sons.com/software/RasMol_2.7.2/
+DISTNAME=	RasMol
 
 MAINTAINER=	ports@FreeBSD.org
 
