@@ -8,6 +8,7 @@ lib/libao.so
 lib/libao.so.3
 %%ARTS%%lib/ao/plugins-2/libarts.la
 %%ARTS%%lib/ao/plugins-2/libarts.so
+lib/ao/plugins-2/liboss.la
 lib/ao/plugins-2/liboss.so
 %%ESOUND%%lib/ao/plugins-2/libesd.la
 %%ESOUND%%lib/ao/plugins-2/libesd.so
