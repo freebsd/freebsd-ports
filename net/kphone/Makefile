@@ -18,12 +18,7 @@ GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_OPENSSL=	yes
 USE_REINPLACE=	yes
-
-.include <bsd.port.pre.mk>
-
-.if (${OSVERSION} > 500000 )
-BROKEN=	"Does not compile"
-.endif
+CONFIGURE_ENV=	QTDIR="${X11BASE}"
 
 post-patch:
 	${REINPLACE_CMD} -e "s,-O3,${CFLAGS} ${PTHREAD_CFLAGS}," ${WRKSRC}/configure
@@ -40,4 +35,4 @@ do-install:
 	${MKDIR} ${DATADIR}/icons
 	${INSTALL_DATA} ${WRKSRC}/icons/*.png ${DATADIR}/icons
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
