@@ -15,11 +15,7 @@ MAINTAINER=	anders@FreeBSD.org
 COMMENT=	An Apache module implementing config inclusion from MySQL databases
 
 USE_MYSQL=	yes
-DOCS=	CHANGES.txt README.txt test.sql
-
-BROKEN=		"Does not build"
-
-.include <bsd.port.pre.mk>
+DOCS=		CHANGES.txt README.txt test.sql
 
 .if defined(WITH_APACHE2) || exists(${LOCALBASE}/include/apache2/apr.h)
 IGNORE=		Sorry, mod_sqlinclude only works with Apache 1.x
@@ -40,4 +36,4 @@ do-install:
 .endfor
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
