@@ -1,3 +1,4 @@
+
 # New ports collection makefile for:	pTeX-common
 # Date created:		05 Oct 1997
 # Whom:			max
@@ -7,6 +8,7 @@
 
 PORTNAME=	ptex
 PORTVERSION=	2.1.11
+PORTREVISION=	1
 CATEGORIES=	japanese print
 MASTER_SITES=	ftp://ftp.ascii.co.jp/pub/TeX/ascii-ptex/tetex/
 PKGNAMEPREFIX=	ja-
@@ -16,7 +18,7 @@ EXTRACT_ONLY=	${TETEX_SRC}
 
 MAINTAINER=	max@FreeBSD.org
 
-LIB_DEPENDS=	png.4:${PORTSDIR}/graphics/png \
+LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png \
 		wwwcore.1:${PORTSDIR}/www/libwww
 
 USE_XLIB=	yes

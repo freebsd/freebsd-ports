@@ -11,6 +11,7 @@
 
 PORTNAME=	ghostscript
 PORTVERSION=	5.10
+PORTREVISION=	1
 CATEGORIES=	korean print
 MASTER_SITES=	ftp://ftp.pdb.sni.de/pub/utilities/misc/	\
 		http://www.ozemail.com.au/~geoffk/pdfencrypt/	\
@@ -35,7 +36,7 @@ RUN_DEPENDS=	$(LOCALBASE)/share/ghostscript/fonts:${PORTSDIR}/print/gsfonts \
 		$(X11BASE)/lib/X11/fonts/TrueType/gulim.ttf:${PORTSDIR}/korean/baekmukfonts-ttf
 BUILD_DEPENDS=	${NONEXISTENT}:${PORTSDIR}/graphics/jpeg:extract \
 		${NONEXISTENT}:${PORTSDIR}/graphics/png:extract
-LIB_DEPENDS=	png.4:${PORTSDIR}/graphics/png
+LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png
 
 USE_XLIB=	YES
 USE_FREETYPE=	YES
