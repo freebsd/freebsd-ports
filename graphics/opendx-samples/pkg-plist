@@ -194,18 +194,10 @@ dx/java/server/usermacros/optsurf.net
 dx/java/server/usermacros/pdflogn.net
 dx/java/server/usermacros/prunemac.net
 dx/java/server/usermacros/vhwymac.net
-dx/samples/callmodule/Makefile_alphax
-dx/samples/callmodule/Makefile_aviion
-dx/samples/callmodule/Makefile_hp700
-dx/samples/callmodule/Makefile_ibm6000
-dx/samples/callmodule/Makefile_intelnt
-dx/samples/callmodule/Makefile_sgi
-dx/samples/callmodule/Makefile_solaris
-dx/samples/callmodule/Makefile_sun4
 dx/samples/callmodule/Readme
 dx/samples/callmodule/Simple.c
 dx/samples/callmodule/ThunderStreamlines.c
-dx/samples/callmodule/callmodule_make
+dx/samples/callmodule/makefile
 dx/samples/callmodule/renderimage.c
 dx/samples/callmodule/xapp_supervise.c
 dx/samples/data/2D2ormorevarnotseries.data
@@ -439,16 +431,6 @@ dx/samples/outboard/watchsocket.c
 dx/samples/outboard/watchsocket.cfg
 dx/samples/outboard/watchsocket.mdf
 dx/samples/outboard/watchsocket.net
-dx/samples/program_guide/Makefile_alphax
-dx/samples/program_guide/Makefile_aviion
-dx/samples/program_guide/Makefile_hp700
-dx/samples/program_guide/Makefile_ibm6000
-dx/samples/program_guide/Makefile_ibmpvs
-dx/samples/program_guide/Makefile_intelnt
-dx/samples/program_guide/Makefile_os2
-dx/samples/program_guide/Makefile_sgi
-dx/samples/program_guide/Makefile_solaris
-dx/samples/program_guide/Makefile_sun4
 dx/samples/program_guide/Readme
 dx/samples/program_guide/add.c
 dx/samples/program_guide/add.cfg
@@ -490,6 +472,7 @@ dx/samples/program_guide/hello_errorchecking.net
 dx/samples/program_guide/hello_loadable.mdf
 dx/samples/program_guide/hello_outboard.mdf
 dx/samples/program_guide/helloerr.mdf
+dx/samples/program_guide/makefile
 dx/samples/program_guide/makex.c
 dx/samples/program_guide/makex.cfg
 dx/samples/program_guide/makex.mb
@@ -881,6 +864,8 @@ dx/samples/programs/Legend.cfg
 dx/samples/programs/Legend.net
 dx/samples/programs/Light.cfg
 dx/samples/programs/Light.net
+dx/samples/programs/LightingColorSelector.cfg
+dx/samples/programs/LightingColorSelector.net
 dx/samples/programs/MISC/CensusData.cfg
 dx/samples/programs/MISC/CensusData.net
 dx/samples/programs/MISC/ExampleSMP.cfg
@@ -1013,6 +998,8 @@ dx/samples/programs/RENDERING/FatLines.cfg
 dx/samples/programs/RENDERING/FatLines.net
 dx/samples/programs/RENDERING/Isolate.cfg
 dx/samples/programs/RENDERING/Isolate.net
+dx/samples/programs/RENDERING/LightingColorSelector.cfg
+dx/samples/programs/RENDERING/LightingColorSelector.net
 dx/samples/programs/RENDERING/SharedCamera.cfg
 dx/samples/programs/RENDERING/SharedCamera.net
 dx/samples/programs/RENDERING/TextureMapOpenGL.cfg
@@ -1370,6 +1357,14 @@ dx/samples/scripts/Verify
 dx/samples/scripts/WriteImage
 dx/samples/scripts/interop
 dx/samples/scripts/scriptexample
+dx/samples/stereo/StereoMacro.net
+dx/samples/stereo/StereoState.net
+dx/samples/stereo/TestStereo.cfg
+dx/samples/stereo/TestStereo.net
+dx/samples/stereo/src/makefile
+dx/samples/stereo/src/mycams.c
+dx/samples/stereo/src/mymodes.c
+dx/samples/stereo/stereo.html
 dx/samples/supervise/complexdemo/ReadMe
 dx/samples/supervise/complexdemo/data/frags.dx
 dx/samples/supervise/complexdemo/demo
@@ -1575,6 +1570,8 @@ dx/samples/util/plot3d/README
 @dirrm dx/samples/supervise/complexdemo/data
 @dirrm dx/samples/supervise/complexdemo
 @dirrm dx/samples/supervise
+@dirrm dx/samples/stereo/src
+@dirrm dx/samples/stereo
 @dirrm dx/samples/scripts
 @dirrm dx/samples/programs/SUPERVISE
 @dirrm dx/samples/programs/SIMPLE

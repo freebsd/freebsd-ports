@@ -1,14 +1,15 @@
 # New ports collection makefile for:	opendx-samples
 # Date created:		06 Oct 1999
 # Whom:			Thomas Gellekum <tg@FreeBSD.org>
+# Updates:              Randall Hopper <rhh@FreeBSD.org>
 #
 # $FreeBSD$
 #
 
 PORTNAME=	opendx-samples
-PORTVERSION=	4.1.3
+PORTVERSION=	4.2.0
 CATEGORIES=	graphics math
-MASTER_SITES=	http://www.research.ibm.com/dx/srcDownload/srcArchive \
+MASTER_SITES=	http://www.research.ibm.com/dx/srcDownload/srcArchive/ \
 	        http://opendx.npaci.edu/source/
 DISTNAME=	dxsamples-${PORTVERSION}
 
