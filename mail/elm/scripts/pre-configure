@@ -1,41 +1,12 @@
 #!/bin/sh -
 #
 #	pre-configure script for Elm port to FreeBSD 2.0
-#	$Id: pre-configure,v 1.4 1995/09/23 21:06:06 ache Exp $
+#	$Id: pre-configure,v 1.3 1995/09/28 16:41:56 ache Exp $
 
 PortsDir=$PORTSDIR
   CurDir=$CURDIR
   WrkSrc=$WRKSRC
 
-echo ""
-echo "Elm comes with a Configure script to help you setting things up."
-echo "Unfortunately, this  script asks for things (like locking style)"
-echo "which can be misleading."
-echo "I (the porter)  tried and  configure a general Elm (without MIME"
-echo "support), hopefully suitable for most systems."
-echo "Please note that if you will run Elm on a system with NFSmounted"
-echo "mailboxes you need to enable dot locking (see below)".
-echo ""
-
-echo ""
-echo "You now have two possible choices:"
-echo ""
-echo " 1) use my configuration as default, run Configure on top of it."
-echo " 2) run Configure from scratch."
-echo ""
-echo "Due to a check done iside the Elm Configure script, I cannot run"
-echo "it automagically.  If you want to pick up the default configura-"
-echo "tion, simply press ENTER each time the script asks you anything."
-echo ""
-echo -n "Your choice [1]: "
-read foo
-
-if [ ! ${foo} ] ; then
-	foo=1
-fi
-
-if [ ${foo} -eq 1 ] ; then
-	#DON'T ALTER INDENTATION
 	cat > ${WrkSrc}/config.sh << 'EOF'
 #!/bin/sh
 # config.sh
@@ -102,6 +73,7 @@ cpp
 date
 emacs
 execmail
+finger
 ispell
 line
 lint
@@ -213,8 +185,9 @@ d_usenls='undef'
 d_mallocvoid='define'
 d_mboxedit='undef'
 d_mime='undef'
-defencoding='7bit'
+defencoding=''
 d_8bitmime='undef'
+d_binarymime='undef'
 defcharset='US-ASCII'
 defdispcharset='US-ASCII'
 d_mmdf='undef'
@@ -274,7 +247,7 @@ i_unistd='define'
 i_utime='define'
 i_sysutime='undef'
 lib='/usr/local/lib'
-libc='/usr/lib/libc.so.2.1'
+libc='/usr/lib/libc.so.2.2'
 linepr='/usr/bin/lp'
 maildir='/var/mail'
 mailer='/usr/sbin/sendmail'
@@ -325,13 +298,13 @@ d_pgp='define'
 pgp='/usr/local/bin/pgp'
 pgp_path='/usr/local/bin/pgp'
 d_remailer='define'
+finger='/usr/bin/finger'
+finger_path='/usr/bin/finger'
 CONFIG=true
 EOF
 
-fi	# choice = 1
-
 cd ${WrkSrc}
-sh Configure
+yes "" | ./Configure
 cd ${CurDir}
 
 exit 0
