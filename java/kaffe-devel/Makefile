@@ -20,6 +20,8 @@ LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
 		png.5:${PORTSDIR}/graphics/png \
 		gmp.6:${PORTSDIR}/math/libgmp4
 
+CONFLICTS=	kaffe-1.[!1].* javavmwrapper-2.*
+
 WRKSRC=		${WRKDIR}/kaffe-${PORTVERSION}
 
 NOT_FOR_ARCHS=	amd64 alpha
