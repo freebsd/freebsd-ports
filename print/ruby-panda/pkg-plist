@@ -9,14 +9,14 @@
 %%PORTDOCS%%%%RUBY_DOCDIR%%/panda/ja/ref_ja.rd
 %%PORTDOCS%%@dirrm %%RUBY_DOCDIR%%/panda/ja
 %%PORTDOCS%%@dirrm %%RUBY_DOCDIR%%/panda
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/panda/brave-gnu.png
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/panda/RedbrushAlpha.png
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/panda/circles.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/panda/gnu-head.jpg
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/panda/gnu-head.png
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/panda/gnu.png
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/panda/gnu_box.jpg
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/panda/input-ms.tif
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/panda/input.tif
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/panda/input2.tif
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/panda/libpng.png
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/panda/main.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/panda/morecircles.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/panda/template.rb
