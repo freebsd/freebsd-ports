@@ -166,6 +166,7 @@
     SUBDIR += jpgtn
     SUBDIR += jslice
     SUBDIR += juno-2
+    SUBDIR += kalbum
     SUBDIR += kallery
     SUBDIR += kbarcode
     SUBDIR += kdc2tiff

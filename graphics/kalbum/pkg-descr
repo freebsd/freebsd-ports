@@ -1,0 +1,14 @@
+kalbum is a KDE 3 application that allows you to create albums 
+from a collection of images. 
+
+main features: 
+   o easy to use thumbnail interface
+   o export the albums as a complete web site, or .war web archive
+   o easy to edit html templates for creating a customized web site
+   o edit multiple images at once
+   o versatile gui
+   o original images remain unchanged
+   o drag'n'drop
+
+Author: Graham Morrison <kalbum@paldandy.com> 
+WWW: http://www.paldandy.com/kalbum/
