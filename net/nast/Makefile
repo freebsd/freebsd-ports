@@ -25,6 +25,7 @@ DOC_FILES=	README
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_REINPLACE=	yes
+CONFIGURE_ENV=	LIBS="${PTHREAD_LIBS}"
 
 .include <bsd.port.pre.mk>
 
@@ -38,7 +39,7 @@ pre-everything::
 	@${ECHO_MSG} ""
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|g' \
+	@${REINPLACE_CMD} -e 's|CFLAGS="-Wall -O2 -pthread"||g' \
 		${WRKSRC}/configure
 
 do-install:
