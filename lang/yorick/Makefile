@@ -16,7 +16,7 @@ PATCH_SITES=	ftp://ftp-icf.llnl.gov/pub/Yorick/
 PATCHFILES=	yorick-1.4.diff.gz
 PATCH_DIST_STRIP=-p1
 
-MAINTAINER=	giffunip@asme.org
+MAINTAINER=	ports@FreeBSD.org
 
 USE_XLIB=	yes
 HAS_CONFIGURE=	yes
