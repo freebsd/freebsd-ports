@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mozilla
-PORTREVISION=	0
+PORTREVISION=	1
 PORTEPOCH=	0
 CATEGORIES=	www
 
@@ -15,5 +15,6 @@ DESCR=		${PKGDIR}/pkg-descr.gtk1
 
 WITH_GTK1=	yes
 MOZILLA=	mozilla-gtk1
+MOZ_SUFX=	-gtk1
 
 .include "${MASTERDIR}/Makefile"

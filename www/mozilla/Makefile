@@ -30,7 +30,7 @@ LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
 MOZILLA?=	mozilla
-MOZ_SUFX=
+MOZ_SUFX?=
 
 .if defined(WITH_GTK1)
 PKGNAMESUFFIX=	-gtk1
