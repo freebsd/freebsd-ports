@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	cal.rb
-PORTVERSION=	1.17
-PORTREVISION=	1
+PORTVERSION=	1.18
 CATEGORIES=	japanese deskutils
 MASTER_SITES=	http://aglaia.c.u-tokyo.ac.jp/~yamamoto/Script/Calendar/
 DISTFILES=	cal.rb Calendar.rb era_name
@@ -15,8 +14,6 @@ DIST_SUBDIR=	${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Displays a Japanese calendar
-
-BROKEN=		Size mismatch
 
 EXTRACT_CMD=	${CP}
 EXTRACT_BEFORE_ARGS=
@@ -26,6 +23,10 @@ USE_RUBY=	yes
 RUBY_SHEBANG_FILES=	${WRKSRC}/cal.rb
 NO_WRKSUBDIR=	yes
 NO_BUILD=	yes
+
+PLIST_FILES=	bin/cal.rb %%RUBY_SITELIBDIR%%/Calendar.rb \
+		%%DATADIR%%/era_name
+PLIST_DIRS=	%%DATADIR%%
 
 post-patch:
 	${RUBY} -i -pe 'sub "./era_name", "${DATADIR}/era_name"' \

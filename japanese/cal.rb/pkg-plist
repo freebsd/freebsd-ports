@@ -1,4 +1,0 @@
-bin/cal.rb
-%%RUBY_SITELIBDIR%%/Calendar.rb
-%%DATADIR%%/era_name
-@dirrm %%DATADIR%%
