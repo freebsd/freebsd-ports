@@ -1,0 +1,326 @@
+--- post_modules/GTK/configure.orig	Thu Nov  8 13:49:17 2001
++++ post_modules/GTK/configure	Thu Nov  8 13:49:41 2001
+@@ -1269,8 +1269,8 @@
+ 
+ 
+  if test "$PKG_CONFIG" = "no" ; then
+-   # Extract the first word of "gtk-config", so it can be a program name with args.
+-set dummy gtk-config; ac_word=$2
++   # Extract the first word of "gtk12-config", so it can be a program name with args.
++set dummy gtk12-config; ac_word=$2
+ echo $ac_n "checking for $ac_word""... $ac_c" 1>&6
+ echo "configure:1276: checking for $ac_word" >&5
+ if eval "test \"`echo '$''{'ac_cv_path_GTK_CONFIG'+set}'`\" = set"; then
+@@ -1332,21 +1332,21 @@
+ 
+   if test x$gtk_config_exec_prefix != x ; then
+      gtk_config_args="$gtk_config_args --exec-prefix=$gtk_config_exec_prefix"
+-     if test -f $gtk_config_exec_prefix/bin/gtk-config-2.0; then
+-        GTK_CONFIG=$gtk_config_exec_prefix/bin/gtk-config-2.0
++     if test -f $gtk_config_exec_prefix/bin/gtk12-config-2.0; then
++        GTK_CONFIG=$gtk_config_exec_prefix/bin/gtk12-config-2.0
+      else
+        if test x${GTK_CONFIG+set} != xset ; then
+-          GTK_CONFIG=$gtk_config_exec_prefix/bin/gtk-config
++          GTK_CONFIG=$gtk_config_exec_prefix/bin/gtk12-config
+        fi
+      fi
+   fi
+   if test x$gtk_config_prefix != x ; then
+      gtk_config_args="$gtk_config_args --prefix=$gtk_config_prefix"
+-     if test -f $gtk_config_prefix/bin/gtk-config-2.0; then
+-        GTK_CONFIG=$gtk_config_prefix/bin/gtk-config-2.0
++     if test -f $gtk_config_prefix/bin/gtk12-config-2.0; then
++        GTK_CONFIG=$gtk_config_prefix/bin/gtk12-config-2.0
+      else
+        if test x${GTK_CONFIG+set} != xset ; then
+-          GTK_CONFIG=$gtk_config_prefix/bin/gtk-config
++          GTK_CONFIG=$gtk_config_prefix/bin/gtk12-config
+        fi
+      fi
+   fi
+@@ -1433,16 +1433,16 @@
+       (gtk_minor_version != $gtk_config_minor_version) ||
+       (gtk_micro_version != $gtk_config_micro_version))
+     {
+-      printf("\n*** 'gtk-config --version' returned %d.%d.%d, but GTK+ (%d.%d.%d)\n",
++      printf("\n*** 'gtk12-config --version' returned %d.%d.%d, but GTK+ (%d.%d.%d)\n",
+              $gtk_config_major_version, $gtk_config_minor_version, $gtk_config_micro_version,
+              gtk_major_version, gtk_minor_version, gtk_micro_version);
+-      printf ("*** was found! If gtk-config was correct, then it is best\n");
++      printf ("*** was found! If gtk12-config was correct, then it is best\n");
+       printf ("*** to remove the old version of GTK+. You may also be able to fix the error\n");
+       printf("*** by modifying your LD_LIBRARY_PATH enviroment variable, or by editing\n");
+       printf("*** /etc/ld.so.conf. Make sure you have run ldconfig if that is\n");
+       printf("*** required on your system.\n");
+-      printf("*** If gtk-config was wrong, set the environment variable GTK_CONFIG\n");
+-      printf("*** to point to the correct copy of gtk-config, and remove the file config.cache\n");
++      printf("*** If gtk12-config was wrong, set the environment variable GTK_CONFIG\n");
++      printf("*** to point to the correct copy of gtk12-config, and remove the file config.cache\n");
+       printf("*** before re-running configure\n");
+     }
+   else
+@@ -1484,10 +1484,10 @@
+   else
+      echo "$ac_t""no" 1>&6
+      if test "$GTK_CONFIG" = "no" ; then
+-       echo "*** The gtk-config script installed by GTK could not be found"
++       echo "*** The gtk12-config script installed by GTK could not be found"
+        echo "*** If GTK was installed in PREFIX, make sure PREFIX/bin is in"
+        echo "*** your path, or set the GTK_CONFIG environment variable to the"
+-       echo "*** full path to gtk-config."
++       echo "*** full path to gtk12-config."
+      else
+        if test -f conf.gtktest ; then
+         :
+@@ -1529,7 +1529,7 @@
+    echo "*** The test program failed to compile or link. See the file config.log for the"
+           echo "*** exact error that occured. This usually means GTK was incorrectly installed"
+           echo "*** or that you have moved GTK since it was installed. In the latter case, you"
+-          echo "*** may want to edit the gtk-config script: $GTK_CONFIG" 
++          echo "*** may want to edit the gtk12-config script: $GTK_CONFIG" 
+ fi
+ rm -f conftest*
+           CFLAGS="$ac_save_CFLAGS"
+@@ -1572,21 +1572,21 @@
+ 
+   if test x$gtk_config_exec_prefix != x ; then
+      gtk_config_args="$gtk_config_args --exec-prefix=$gtk_config_exec_prefix"
+-     if test -f $gtk_config_exec_prefix/bin/gtk-config-2.0; then
+-        GTK_CONFIG=$gtk_config_exec_prefix/bin/gtk-config-2.0
++     if test -f $gtk_config_exec_prefix/bin/gtk12-config-2.0; then
++        GTK_CONFIG=$gtk_config_exec_prefix/bin/gtk12-config-2.0
+      else
+        if test x${GTK_CONFIG+set} != xset ; then
+-          GTK_CONFIG=$gtk_config_exec_prefix/bin/gtk-config
++          GTK_CONFIG=$gtk_config_exec_prefix/bin/gtk12-config
+        fi
+      fi
+   fi
+   if test x$gtk_config_prefix != x ; then
+      gtk_config_args="$gtk_config_args --prefix=$gtk_config_prefix"
+-     if test -f $gtk_config_prefix/bin/gtk-config-2.0; then
+-        GTK_CONFIG=$gtk_config_prefix/bin/gtk-config-2.0
++     if test -f $gtk_config_prefix/bin/gtk12-config-2.0; then
++        GTK_CONFIG=$gtk_config_prefix/bin/gtk12-config-2.0
+      else
+        if test x${GTK_CONFIG+set} != xset ; then
+-          GTK_CONFIG=$gtk_config_prefix/bin/gtk-config
++          GTK_CONFIG=$gtk_config_prefix/bin/gtk12-config
+        fi
+      fi
+   fi
+@@ -1673,16 +1673,16 @@
+       (gtk_minor_version != $gtk_config_minor_version) ||
+       (gtk_micro_version != $gtk_config_micro_version))
+     {
+-      printf("\n*** 'gtk-config --version' returned %d.%d.%d, but GTK+ (%d.%d.%d)\n",
++      printf("\n*** 'gtk12-config --version' returned %d.%d.%d, but GTK+ (%d.%d.%d)\n",
+              $gtk_config_major_version, $gtk_config_minor_version, $gtk_config_micro_version,
+              gtk_major_version, gtk_minor_version, gtk_micro_version);
+-      printf ("*** was found! If gtk-config was correct, then it is best\n");
++      printf ("*** was found! If gtk12-config was correct, then it is best\n");
+       printf ("*** to remove the old version of GTK+. You may also be able to fix the error\n");
+       printf("*** by modifying your LD_LIBRARY_PATH enviroment variable, or by editing\n");
+       printf("*** /etc/ld.so.conf. Make sure you have run ldconfig if that is\n");
+       printf("*** required on your system.\n");
+-      printf("*** If gtk-config was wrong, set the environment variable GTK_CONFIG\n");
+-      printf("*** to point to the correct copy of gtk-config, and remove the file config.cache\n");
++      printf("*** If gtk12-config was wrong, set the environment variable GTK_CONFIG\n");
++      printf("*** to point to the correct copy of gtk12-config, and remove the file config.cache\n");
+       printf("*** before re-running configure\n");
+     }
+   else
+@@ -1724,10 +1724,10 @@
+   else
+      echo "$ac_t""no" 1>&6
+      if test "$GTK_CONFIG" = "no" ; then
+-       echo "*** The gtk-config script installed by GTK could not be found"
++       echo "*** The gtk12-config script installed by GTK could not be found"
+        echo "*** If GTK was installed in PREFIX, make sure PREFIX/bin is in"
+        echo "*** your path, or set the GTK_CONFIG environment variable to the"
+-       echo "*** full path to gtk-config."
++       echo "*** full path to gtk12-config."
+      else
+        if test -f conf.gtktest ; then
+         :
+@@ -1769,7 +1769,7 @@
+    echo "*** The test program failed to compile or link. See the file config.log for the"
+           echo "*** exact error that occured. This usually means GTK was incorrectly installed"
+           echo "*** or that you have moved GTK since it was installed. In the latter case, you"
+-          echo "*** may want to edit the gtk-config script: $GTK_CONFIG" 
++          echo "*** may want to edit the gtk12-config script: $GTK_CONFIG" 
+ fi
+ rm -f conftest*
+           CFLAGS="$ac_save_CFLAGS"
+@@ -1844,8 +1844,8 @@
+ 
+      WITH_GTK=2
+    else
+-     # Extract the first word of "gtk-config", so it can be a program name with args.
+-set dummy gtk-config; ac_word=$2
++     # Extract the first word of "gtk12-config", so it can be a program name with args.
++set dummy gtk12-config; ac_word=$2
+ echo $ac_n "checking for $ac_word""... $ac_c" 1>&6
+ echo "configure:1851: checking for $ac_word" >&5
+ if eval "test \"`echo '$''{'ac_cv_path_GTK_CONFIG'+set}'`\" = set"; then
+@@ -1907,21 +1907,21 @@
+ 
+   if test x$gtk_config_exec_prefix != x ; then
+      gtk_config_args="$gtk_config_args --exec-prefix=$gtk_config_exec_prefix"
+-     if test -f $gtk_config_exec_prefix/bin/gtk-config-2.0; then
+-        GTK_CONFIG=$gtk_config_exec_prefix/bin/gtk-config-2.0
++     if test -f $gtk_config_exec_prefix/bin/gtk12-config-2.0; then
++        GTK_CONFIG=$gtk_config_exec_prefix/bin/gtk12-config-2.0
+      else
+        if test x${GTK_CONFIG+set} != xset ; then
+-          GTK_CONFIG=$gtk_config_exec_prefix/bin/gtk-config
++          GTK_CONFIG=$gtk_config_exec_prefix/bin/gtk12-config
+        fi
+      fi
+   fi
+   if test x$gtk_config_prefix != x ; then
+      gtk_config_args="$gtk_config_args --prefix=$gtk_config_prefix"
+-     if test -f $gtk_config_prefix/bin/gtk-config-2.0; then
+-        GTK_CONFIG=$gtk_config_prefix/bin/gtk-config-2.0
++     if test -f $gtk_config_prefix/bin/gtk12-config-2.0; then
++        GTK_CONFIG=$gtk_config_prefix/bin/gtk12-config-2.0
+      else
+        if test x${GTK_CONFIG+set} != xset ; then
+-          GTK_CONFIG=$gtk_config_prefix/bin/gtk-config
++          GTK_CONFIG=$gtk_config_prefix/bin/gtk12-config
+        fi
+      fi
+   fi
+@@ -2008,16 +2008,16 @@
+       (gtk_minor_version != $gtk_config_minor_version) ||
+       (gtk_micro_version != $gtk_config_micro_version))
+     {
+-      printf("\n*** 'gtk-config --version' returned %d.%d.%d, but GTK+ (%d.%d.%d)\n",
++      printf("\n*** 'gtk12-config --version' returned %d.%d.%d, but GTK+ (%d.%d.%d)\n",
+              $gtk_config_major_version, $gtk_config_minor_version, $gtk_config_micro_version,
+              gtk_major_version, gtk_minor_version, gtk_micro_version);
+-      printf ("*** was found! If gtk-config was correct, then it is best\n");
++      printf ("*** was found! If gtk12-config was correct, then it is best\n");
+       printf ("*** to remove the old version of GTK+. You may also be able to fix the error\n");
+       printf("*** by modifying your LD_LIBRARY_PATH enviroment variable, or by editing\n");
+       printf("*** /etc/ld.so.conf. Make sure you have run ldconfig if that is\n");
+       printf("*** required on your system.\n");
+-      printf("*** If gtk-config was wrong, set the environment variable GTK_CONFIG\n");
+-      printf("*** to point to the correct copy of gtk-config, and remove the file config.cache\n");
++      printf("*** If gtk12-config was wrong, set the environment variable GTK_CONFIG\n");
++      printf("*** to point to the correct copy of gtk12-config, and remove the file config.cache\n");
+       printf("*** before re-running configure\n");
+     }
+   else
+@@ -2059,10 +2059,10 @@
+   else
+      echo "$ac_t""no" 1>&6
+      if test "$GTK_CONFIG" = "no" ; then
+-       echo "*** The gtk-config script installed by GTK could not be found"
++       echo "*** The gtk12-config script installed by GTK could not be found"
+        echo "*** If GTK was installed in PREFIX, make sure PREFIX/bin is in"
+        echo "*** your path, or set the GTK_CONFIG environment variable to the"
+-       echo "*** full path to gtk-config."
++       echo "*** full path to gtk12-config."
+      else
+        if test -f conf.gtktest ; then
+         :
+@@ -2104,7 +2104,7 @@
+    echo "*** The test program failed to compile or link. See the file config.log for the"
+           echo "*** exact error that occured. This usually means GTK was incorrectly installed"
+           echo "*** or that you have moved GTK since it was installed. In the latter case, you"
+-          echo "*** may want to edit the gtk-config script: $GTK_CONFIG" 
++          echo "*** may want to edit the gtk12-config script: $GTK_CONFIG" 
+ fi
+ rm -f conftest*
+           CFLAGS="$ac_save_CFLAGS"
+@@ -2147,21 +2147,21 @@
+ 
+   if test x$gtk_config_exec_prefix != x ; then
+      gtk_config_args="$gtk_config_args --exec-prefix=$gtk_config_exec_prefix"
+-     if test -f $gtk_config_exec_prefix/bin/gtk-config-2.0; then
+-        GTK_CONFIG=$gtk_config_exec_prefix/bin/gtk-config-2.0
++     if test -f $gtk_config_exec_prefix/bin/gtk12-config-2.0; then
++        GTK_CONFIG=$gtk_config_exec_prefix/bin/gtk12-config-2.0
+      else
+        if test x${GTK_CONFIG+set} != xset ; then
+-          GTK_CONFIG=$gtk_config_exec_prefix/bin/gtk-config
++          GTK_CONFIG=$gtk_config_exec_prefix/bin/gtk12-config
+        fi
+      fi
+   fi
+   if test x$gtk_config_prefix != x ; then
+      gtk_config_args="$gtk_config_args --prefix=$gtk_config_prefix"
+-     if test -f $gtk_config_prefix/bin/gtk-config-2.0; then
+-        GTK_CONFIG=$gtk_config_prefix/bin/gtk-config-2.0
++     if test -f $gtk_config_prefix/bin/gtk12-config-2.0; then
++        GTK_CONFIG=$gtk_config_prefix/bin/gtk12-config-2.0
+      else
+        if test x${GTK_CONFIG+set} != xset ; then
+-          GTK_CONFIG=$gtk_config_prefix/bin/gtk-config
++          GTK_CONFIG=$gtk_config_prefix/bin/gtk12-config
+        fi
+      fi
+   fi
+@@ -2248,16 +2248,16 @@
+       (gtk_minor_version != $gtk_config_minor_version) ||
+       (gtk_micro_version != $gtk_config_micro_version))
+     {
+-      printf("\n*** 'gtk-config --version' returned %d.%d.%d, but GTK+ (%d.%d.%d)\n",
++      printf("\n*** 'gtk12-config --version' returned %d.%d.%d, but GTK+ (%d.%d.%d)\n",
+              $gtk_config_major_version, $gtk_config_minor_version, $gtk_config_micro_version,
+              gtk_major_version, gtk_minor_version, gtk_micro_version);
+-      printf ("*** was found! If gtk-config was correct, then it is best\n");
++      printf ("*** was found! If gtk12-config was correct, then it is best\n");
+       printf ("*** to remove the old version of GTK+. You may also be able to fix the error\n");
+       printf("*** by modifying your LD_LIBRARY_PATH enviroment variable, or by editing\n");
+       printf("*** /etc/ld.so.conf. Make sure you have run ldconfig if that is\n");
+       printf("*** required on your system.\n");
+-      printf("*** If gtk-config was wrong, set the environment variable GTK_CONFIG\n");
+-      printf("*** to point to the correct copy of gtk-config, and remove the file config.cache\n");
++      printf("*** If gtk12-config was wrong, set the environment variable GTK_CONFIG\n");
++      printf("*** to point to the correct copy of gtk12-config, and remove the file config.cache\n");
+       printf("*** before re-running configure\n");
+     }
+   else
+@@ -2299,10 +2299,10 @@
+   else
+      echo "$ac_t""no" 1>&6
+      if test "$GTK_CONFIG" = "no" ; then
+-       echo "*** The gtk-config script installed by GTK could not be found"
++       echo "*** The gtk12-config script installed by GTK could not be found"
+        echo "*** If GTK was installed in PREFIX, make sure PREFIX/bin is in"
+        echo "*** your path, or set the GTK_CONFIG environment variable to the"
+-       echo "*** full path to gtk-config."
++       echo "*** full path to gtk12-config."
+      else
+        if test -f conf.gtktest ; then
+         :
+@@ -2344,7 +2344,7 @@
+    echo "*** The test program failed to compile or link. See the file config.log for the"
+           echo "*** exact error that occured. This usually means GTK was incorrectly installed"
+           echo "*** or that you have moved GTK since it was installed. In the latter case, you"
+-          echo "*** may want to edit the gtk-config script: $GTK_CONFIG" 
++          echo "*** may want to edit the gtk12-config script: $GTK_CONFIG" 
+ fi
+ rm -f conftest*
+           CFLAGS="$ac_save_CFLAGS"
+@@ -2988,7 +2988,7 @@
+   echo $ac_n "(cached) $ac_c" 1>&6
+ else
+   ac_save_LIBS="$LIBS"
+-LIBS="-lgtkdatabox `gtk-config --libs` $LIBS"
++LIBS="-lgtkdatabox `gtk12-config --libs` $LIBS"
+ cat > conftest.$ac_ext <<EOF
+ #line 2994 "configure"
+ #include "confdefs.h"
+@@ -3223,7 +3223,7 @@
+   echo $ac_n "(cached) $ac_c" 1>&6
+ else
+   ac_save_LIBS="$LIBS"
+-LIBS="-lgtkgl `gtk-config --libs` $GL_LIBS $LIBS"
++LIBS="-lgtkgl `gtk12-config --libs` $GL_LIBS $LIBS"
+ cat > conftest.$ac_ext <<EOF
+ #line 3229 "configure"
+ #include "confdefs.h"
