@@ -21,4 +21,10 @@ PLIST_SUB=	ALGAE_VERSION=${ALGAE_VERSION}
 
 MAN1=		algae.1
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == "alpha" && ${OSVERSION} > 502102
+BROKEN=		"Configure fails"
+.endif
+
+.include <bsd.port.post.mk>
