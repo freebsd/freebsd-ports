@@ -5,15 +5,16 @@
 # Whom:				  Wu Ching-hong <woju@freebsd.ee.ntu.edu.tw>
 # 				  and David O'Brien (obrien@NUXI.com)
 #
-# $Id: Makefile,v 1.2 1998/11/11 05:37:29 asami Exp $
+# $Id: Makefile,v 1.3 1998/11/12 11:50:11 obrien Exp $
 #
 
 DISTNAME=	queso-980922
 CATEGORIES=	net security
-MASTER_SITES=	ftp://apostols.org/AposTools/snapshots/  \
-		ftp://ftp.ee.lbl.gov/  \
+MASTER_SITES=	ftp://ftp.ee.lbl.gov/  \
+		${MASTER_SITE_SUNSITE} \
 		ftp://freebsd.ntu.edu.tw/freebsd/_distfiles/
 DISTFILES=	queso-980922.tar.gz
+MASTER_SITE_SUBDIR=	distributions/trinux/src/netmap
 
 MAINTAINER=	obrien@FreeBSD.org
 
