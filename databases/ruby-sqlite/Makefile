@@ -6,11 +6,9 @@
 #
 
 PORTNAME=	sqlite
-PORTVERSION=	1.0
-PORTREVISION=	1
+PORTVERSION=	2.2.2
 CATEGORIES=	databases ruby
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	${PORTNAME}-ruby
+MASTER_SITES=	http://rubyforge.org/frs/download.php/1901/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
 DISTNAME=	${PORTNAME}-ruby-${PORTVERSION}
 DIST_SUBDIR=	ruby
@@ -20,18 +18,26 @@ COMMENT=	Ruby interface to the SQLite DB engine
 
 LIB_DEPENDS=	sqlite.2:${PORTSDIR}/databases/sqlite2
 
+USE_BZIP2=	yes
 USE_RUBY=	yes
 USE_RUBY_EXTCONF=	yes
 
-WRKSRC=	${WRKDIR}/${PORTNAME}
+CONFIGURE_WRKSRC=	${WRKSRC}/ext
+BUILD_WRKSRC=		${WRKSRC}/ext
+INSTALL_WRKSRC=		${WRKSRC}/ext
 INSTALL_TARGET=	site-install
+
+DOCS=	ChangeLog LICENSE api/* doc/*
+
+post-extract:
+	${LN} -s ../lib ${WRKSRC}/ext/
 
 post-install:
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${RUBY_MODEXAMPLESDIR}/
-	${INSTALL_DATA} ${WRKSRC}/samples/* ${RUBY_MODEXAMPLESDIR}/
 	${MKDIR} ${RUBY_MODDOCDIR}
-	${INSTALL_DATA} ${WRKSRC}/README ${RUBY_MODDOCDIR}/
+.for f in ${DOCS}
+	${CP} -R ${WRKSRC}/${f} ${RUBY_MODDOCDIR}/
+.endfor
 .endif
 
 .include <bsd.port.mk>
