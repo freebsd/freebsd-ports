@@ -13,13 +13,14 @@ MASTER_SITES=   http://www.global-owl.com/ecgi/download/
 MAINTAINER=	ports@freebsd.org
 
 USE_GMAKE=	yes
+USE_REINPLACE=	yes
 
 INSTALLS_SHLIB=	yes
 
 HEADER_FILES=	ecgi.h ecgitk.h include/memfile.h
 
 pre-patch:
-	@${PERL} -pi -e 's,<malloc.h>,<stdlib.h>,' ${WRKSRC}/src/memfile.c
+	@${REINPLACE_CMD} -e 's,<malloc.h>,<stdlib.h>,' ${WRKSRC}/src/memfile.c
 
 do-install:
 	@${INSTALL_DATA} ${WRKSRC}/libecgi.a ${PREFIX}/lib
