@@ -1,4 +1,5 @@
 bin/scm
+bin/scmlit
 @unexec install-info --delete %D/info/slib.info %D/info/dir
 @unexec install-info --delete %D/info/scm.info %D/info/dir
 info/scm.info
@@ -15,6 +16,7 @@ share/scm/Transcen.scm
 share/scm/Tscript.scm
 share/scm/implcat
 share/scm/mkimpcat.scm
+share/scm/r4rstest.scm
 share/scm/require.scm
 share/scm/slib/Bev2slib.scm
 share/scm/slib/Template.scm
@@ -30,10 +32,15 @@ share/scm/slib/charplot.scm
 share/scm/slib/cltime.scm
 share/scm/slib/coerce.scm
 share/scm/slib/collect.scm
+share/scm/slib/color.scm
+share/scm/slib/colornam.scm
+share/scm/slib/colorspc.scm
 share/scm/slib/comlist.scm
 share/scm/slib/comparse.scm
 share/scm/slib/cring.scm
+share/scm/slib/daylight.scm
 share/scm/slib/db2html.scm
+share/scm/slib/dbcom.scm
 share/scm/slib/dbrowse.scm
 share/scm/slib/dbutil.scm
 share/scm/slib/debug.scm
@@ -62,6 +69,7 @@ share/scm/slib/logical.scm
 share/scm/slib/macrotst.scm
 share/scm/slib/macwork.scm
 share/scm/slib/makcrc.scm
+share/scm/slib/matfile.scm
 share/scm/slib/mbe.scm
 share/scm/slib/minimize.scm
 share/scm/slib/mklibcat.scm
@@ -72,6 +80,7 @@ share/scm/slib/mwdenote.scm
 share/scm/slib/mwexpand.scm
 share/scm/slib/mwsynrul.scm
 share/scm/slib/nclients.scm
+share/scm/slib/null.scm
 share/scm/slib/obj2str.scm
 share/scm/slib/object.scm
 share/scm/slib/paramlst.scm
@@ -119,6 +128,7 @@ share/scm/slib/scmacro.scm
 share/scm/slib/selfset.scm
 share/scm/slib/sierpinski.scm
 share/scm/slib/simetrix.scm
+share/scm/slib/solid.scm
 share/scm/slib/sort.scm
 share/scm/slib/soundex.scm
 share/scm/slib/srfi-1.scm
@@ -128,11 +138,10 @@ share/scm/slib/strcase.scm
 share/scm/slib/strport.scm
 share/scm/slib/strsrch.scm
 share/scm/slib/structure.scm
+share/scm/slib/subarray.scm
 share/scm/slib/synchk.scm
 share/scm/slib/synclo.scm
 share/scm/slib/synrul.scm
-share/scm/slib/tek40.scm
-share/scm/slib/tek41.scm
 share/scm/slib/timezone.scm
 share/scm/slib/trace.scm
 share/scm/slib/tree.scm

@@ -28,3 +28,5 @@ reason for this port.  This means test.scm will fail on 3 tests in section 6.1.
 If strict R4S compliance is important to you, recompile w/o the SICP flag.
 
 							Jeffrey Hsu
+
+WWW: http://swissnet.ai.mit.edu/~jaffer/SCM.html
