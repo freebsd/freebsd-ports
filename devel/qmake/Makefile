@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	qmake
-PORTVERSION=	3.3.1
+PORTVERSION=	3.3.2
 CATEGORIES=	devel
 MASTER_SITES=	ftp://ftp.trolltech.com/qt/source/	\
 		ftp://ftp.silug.org/pub/qt/		\
@@ -63,4 +63,10 @@ do-configure:
 	${LN} ${WRKSRC}/qconfig.h ${WRKSRC}/qmodules.h
 	${LN} -s . ${WRKDIR}/${DISTNAME}/src/tools/private
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == "alpha"
+CXXFLAGS+=	-mieee
+.endif
+
+.include <bsd.port.post.mk>
