@@ -1,0 +1,6 @@
+Console Chinese Environment - display Chinese (GB) on console
+CCE is a Console Chinese Environment like WZCE, yact & chdrv that
+lets you display and input Chinese (GB) at the console.  Input
+methods include PinYin, WuBi, ShuangPin and ZiranMa.
+
+WWW: http://programmer.lib.sjtu.edu.cn/cce/cce.html

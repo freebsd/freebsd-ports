@@ -1,0 +1,16 @@
+--- config.FreeBSD.orig	Sun Sep  5 06:36:36 1999
++++ config.FreeBSD	Fri Apr 19 22:53:55 2002
+@@ -1,9 +1,9 @@
+ INCDIR  = ../include
+ TOPDIR  =
+-BINDIR  = $(TOPDIR)/usr/bin
+-LIBDIR  = $(TOPDIR)/usr/lib/cce
+-MANDIR  = $(TOPDIR)/usr/share/man/man1
+-FONTDIR = $(TOPDIR)/usr/lib/cce
++BINDIR  = $(TOPDIR)/usr/local/bin
++LIBDIR  = $(TOPDIR)/usr/local/lib/cce
++MANDIR  = $(TOPDIR)/usr/local/man/man1
++FONTDIR = $(TOPDIR)/usr/local/lib/cce
+ CCECFG  = cce.cfg
+ 
+ OPTS    = -DHAS_MOUSE -DCONFIG_NAME=\"$(LIBDIR)/$(CCECFG)\" -I$(INCDIR) \
