@@ -1,7 +1,7 @@
 bin/jwhois
 @unexec if cmp -s %D/etc/jwhois.conf %D/etc/jwhois.conf.sample; then rm -f %D/etc/jwhois.conf; fi
 etc/jwhois.conf.sample
-@exec [ ! -f %B/jwhois.conf ] && cp %B/%f %B/jwhois.conf
+@exec if [ ! -f %B/jwhois.conf ]; then cp %B/%f %B/jwhois.conf; fi
 @unexec install-info --delete %D/info/jwhois.info %D/info/dir
 info/jwhois.info
 @exec install-info %D/info/jwhois.info %D/info/dir

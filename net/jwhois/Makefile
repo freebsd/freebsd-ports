@@ -29,6 +29,6 @@ post-install:
 	${CHOWN} :nogroup ${PREFIX}/var/jwhois
 	${CHMOD} g+w ${PREFIX}/var/jwhois
 	${INSTALL_DATA} ${WRKSRC}/example/jwhois.conf ${PREFIX}/etc/jwhois.conf.sample
-	[ ! -f ${PREFIX}/etc/jwhois.conf ] && ${INSTALL_DATA} ${PREFIX}/etc/jwhois.conf.sample ${PREFIX}/etc/jwhois.conf
+	if [ ! -f ${PREFIX}/etc/jwhois.conf ]; then ${INSTALL_DATA} ${PREFIX}/etc/jwhois.conf.sample ${PREFIX}/etc/jwhois.conf; fi
 
 .include <bsd.port.mk>
