@@ -8,10 +8,7 @@
 PORTNAME=	ytalk
 PORTVERSION=	3.1.1
 CATEGORIES=	net
-# This site is very slow, so we use sunsite instead.
-#MASTER_SITES=	http://www.eleves.ens.fr:8080/home/espel/ytalk/
-MASTER_SITES=	${MASTER_SITE_SUNSITE}
-MASTER_SITE_SUBDIR= system/network/chat
+MASTER_SITES=	http://www.iagora.com/~espel/ytalk/
 
 MAINTAINER=	dom@happygiraffe.net
 COMMENT=	A new "talk" that can talk to multiple parties at once
