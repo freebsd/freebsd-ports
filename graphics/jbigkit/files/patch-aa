@@ -16,7 +16,7 @@
 +
  
  VERSION=1.0
-@@ -46,2 +47,24 @@
+@@ -46,2 +47,25 @@
  	  $(DISTUID)@$(DISTHOST):$(DISTPATH)/jbigkit-$(VERSION)-announce.txt
  	mv ../jbigkit-$(VERSION).tar.gz $(HOME)/.www/download/
 +
@@ -28,7 +28,8 @@
 +	install -c -m 644 -o bin -g bin pbmtools/pbmtojbg.1 ${PREFIX}/man/man1
 +	install -c -m 644 -o bin -g bin pbmtools/jbgtopbm.1 ${PREFIX}/man/man1
 +	mkdir -p ${PREFIX}/man/man5
-+	install -c -m 644 -o bin -g bin pbmtools/pbm.5 ${PREFIX}/man/man5
++	# Not installing the pbm(5) man page, because BSD has its own
++	# install -c -m 644 -o bin -g bin pbmtools/pbm.5 ${PREFIX}/man/man5
 +	install -c -m 644 -o bin -g bin pbmtools/pgm.5 ${PREFIX}/man/man5
 +	mkdir -p ${PREFIX}/include
 +	install -c -m 644 -o bin -g bin libjbig/jbig.h ${PREFIX}/include
