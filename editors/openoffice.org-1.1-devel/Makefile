@@ -111,7 +111,6 @@ BUILD_DEPENDS+= ${JAVAVM}:${PORTSDIR}/java/jdk14 \
 		unzip:${PORTSDIR}/archivers/unzip \
 		gcp:${PORTSDIR}/sysutils/coreutils \
 		${ANT}:${PORTSDIR}/devel/apache-ant \
-		${X11BASE}/lib/libX11.so:${PORTSDIR}/x11/XFree86-4-libraries \
 		${X11BASE}/lib/libXft.so:${PORTSDIR}/x11-fonts/libXft
 .if !defined(DISPLAY)
 BUILD_DEPENDS+= Xvfb:${PORTSDIR}/x11-servers/XFree86-4-VirtualFramebufferServer
