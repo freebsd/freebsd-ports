@@ -409,6 +409,7 @@
     SUBDIR += xmfract
     SUBDIR += xmms-avi
     SUBDIR += xmms-blursk
+    SUBDIR += xmms-finespectrum
     SUBDIR += xmms-fishmatic
     SUBDIR += xmms-gforce
     SUBDIR += xmms-goom

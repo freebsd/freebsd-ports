@@ -1,0 +1,9 @@
+This plugin provides a nice spectrum analyzer for XMMS without being
+a CPU hog. You can even see the harmonics of a nice violin play.
+All the 256 points of the spectrum provided by XMMS API are drawn,
+no grouping is made on them.
+
+WWW: http://finespectrum.sourceforge.net/
+
+- David
+dyeske@yahoo.com
