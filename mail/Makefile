@@ -212,6 +212,7 @@
     SUBDIR += mmc
     SUBDIR += mmr
     SUBDIR += movemail
+    SUBDIR += moztraybiff
     SUBDIR += mreport
     SUBDIR += msgconvert
     SUBDIR += msmtp

@@ -1,0 +1,14 @@
+--- components/Makefile.orig	Sat Mar 19 22:30:21 2005
++++ components/Makefile	Sat Mar 19 22:32:11 2005
+@@ -17,7 +17,10 @@
+ 	$(shell pkg-config --libs $(GTK_PACKAGE))
+ 
+ MOZ_INCLUDES := \
+-	$(shell $(MOZILLA_CONFIG) --cflags)
++	$(shell $(MOZILLA_CONFIG) --cflags) \
++	$(shell for i in \
++		`find $${X11BASE}/lib/thunderbird/include/thunderbird-1.0 -type d`; \
++		do echo -n "-I$$i "; done)
+ 
+ CXXFLAGS += \
+ 	-fno-rtti \

@@ -1,0 +1,20 @@
+--- Makefile.orig	Sat Mar 19 22:29:01 2005
++++ Makefile	Sat Mar 19 22:30:04 2005
+@@ -1,7 +1,7 @@
+ SUBDIRS = components chrome
+ .PHONY: all clean subdirs ${SUBDIRS} content locale
+ VERSION = 1.0.7
+-PLATFORM := $(shell gcc -dumpmachine)
++PLATFORM := $(shell uname)
+ XPI_NAME = mozTrayBiff
+ XPI_VERSION := $(VERSION)-$(PLATFORM)
+ XPI_FILENAME = $(XPI_NAME)-$(XPI_VERSION).xpi
+@@ -15,7 +15,7 @@
+ XPI_EXTRA_FILES = install.js
+ endif
+ ifeq ($(MOZILLA_PLATFORM),tbird)
+-REAL_CONFIG = mozilla-thunderbird-config
++REAL_CONFIG = thunderbird-config
+ XPI_VERSION := $(XPI_VERSION)-tb$(shell $(REAL_CONFIG) --version)
+ XPI_EXTRA_FILES = install.rdf
+ endif
