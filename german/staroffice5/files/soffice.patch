@@ -1,0 +1,44 @@
+--- soffice.orig	Sun Dec 19 16:23:23 1999
++++ soffice	Sun Dec 19 16:22:13 1999
+@@ -15,12 +15,13 @@
+ # resolve installation directory
+ sd_platform=`uname -s`
+ case $sd_platform in
+-	SCO_SV) test=/bin/test     ;;
+-  	*)      test=/usr/bin/test ;;
++	FreeBSD) test=/bin/test && symb="-h"	;;
++	SCO_SV) test=/bin/test	&& symb="-L"	;;
++	*)	test=/usr/bin/test && symb="-L" ;;
+ esac
+ 
+ sd_cwd="`pwd`"
+-if $test -L "$0" ; then
++if $test $symb "$0" ; then
+ 	sd_basename=`basename $0`
+  	sd_script=`ls -l $0 | sed "s/.*${sd_basename} -> //g"` 
+ else
+@@ -37,9 +38,12 @@
+ sd_fonts="$sd_inst/fonts"
+ 
+ # extend the ld_library_path for java: javaldx checks the sofficerc for us
+-java_ld_library_path=`"$sd_inst/bin/javaldx" "$1" "$2" "$3" "$4" "$5" "$6" "$7" "$8" "$9"`
+-if [ "$java_ld_library_path" != "" ] ; then
+-	LD_LIBRARY_PATH=${java_ld_library_path}:${LD_LIBRARY_PATH}
++if [ -f $sd_inst/bin/javaldx ]; then
++	java_ld_library_path=`"$sd_inst/bin/javaldx" "$1" "$2" "$3" "$4" \
++	    "$5" "$6" "$7" "$8" "$9"`
++	if [ "$java_ld_library_path" != "" ] ; then
++		LD_LIBRARY_PATH=${java_ld_library_path}:${LD_LIBRARY_PATH}
++	fi
+ fi
+ 
+ # set java environment variables
+@@ -68,7 +72,7 @@
+     export LD_LIBRARYN32_PATH
+     ;;
+ 
+-  Linux)
++  Linux|FreeBSD)
+     LD_LIBRARY_PATH="$sd_inst/lib":$LD_LIBRARY_PATH
+     export LD_LIBRARY_PATH
+     ;;
