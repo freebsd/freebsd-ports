@@ -14,23 +14,23 @@ include/cons_out.h
 lib/argus_common.a
 lib/argus_parse.a
 sbin/argus
-share/doc/argus-2.0/CHANGES
-share/doc/argus-2.0/COPYING
-share/doc/argus-2.0/COPYRIGHT
-share/doc/argus-2.0/FAQ
-share/doc/argus-2.0/HOW-TO
-share/doc/argus-2.0/README
-share/doc/argus-2.0/html/man/argus.5.html
-share/doc/argus-2.0/html/man/argus.8.html
-share/doc/argus-2.0/html/man/argus.conf.5.html
-share/doc/argus-2.0/html/man/ra.1.html
-share/doc/argus-2.0/html/man/racount.1.html
-share/doc/argus-2.0/html/man/ragator.1.html
-share/doc/argus-2.0/html/man/ramon.1.html
-share/doc/argus-2.0/html/man/rarc.5.html
-share/doc/argus-2.0/html/man/rasort.1.html
-share/doc/argus-2.0/html/man/raxml.1.html
-share/doc/argus-2.0/html/man/tcpdump.1.html
+%%PORTDOCS%%share/doc/argus-2.0/CHANGES
+%%PORTDOCS%%share/doc/argus-2.0/COPYING
+%%PORTDOCS%%share/doc/argus-2.0/COPYRIGHT
+%%PORTDOCS%%share/doc/argus-2.0/FAQ
+%%PORTDOCS%%share/doc/argus-2.0/HOW-TO
+%%PORTDOCS%%share/doc/argus-2.0/README
+%%PORTDOCS%%share/doc/argus-2.0/html/man/argus.5.html
+%%PORTDOCS%%share/doc/argus-2.0/html/man/argus.8.html
+%%PORTDOCS%%share/doc/argus-2.0/html/man/argus.conf.5.html
+%%PORTDOCS%%share/doc/argus-2.0/html/man/ra.1.html
+%%PORTDOCS%%share/doc/argus-2.0/html/man/racount.1.html
+%%PORTDOCS%%share/doc/argus-2.0/html/man/ragator.1.html
+%%PORTDOCS%%share/doc/argus-2.0/html/man/ramon.1.html
+%%PORTDOCS%%share/doc/argus-2.0/html/man/rarc.5.html
+%%PORTDOCS%%share/doc/argus-2.0/html/man/rasort.1.html
+%%PORTDOCS%%share/doc/argus-2.0/html/man/raxml.1.html
+%%PORTDOCS%%share/doc/argus-2.0/html/man/tcpdump.1.html
 share/examples/argus-2.0/Archive/argusarchive
 share/examples/argus-2.0/Config/argus.conf
 share/examples/argus-2.0/Config/excel.rc
@@ -56,8 +56,8 @@ share/examples/argus-2.0/Xml/README
 @dirrm share/examples/argus-2.0/Config
 @dirrm share/examples/argus-2.0/Archive
 @dirrm share/examples/argus-2.0
-@dirrm share/doc/argus-2.0/html/man
-@dirrm share/doc/argus-2.0/html
-@dirrm share/doc/argus-2.0
+%%PORTDOCS%%@dirrm share/doc/argus-2.0/html/man
+%%PORTDOCS%%@dirrm share/doc/argus-2.0/html
+%%PORTDOCS%%@dirrm share/doc/argus-2.0
 @dirrm argus/archive
 @dirrm argus
