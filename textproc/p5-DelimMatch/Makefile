@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	DelimMatch
-PORTVERSION=	1.04
+PORTVERSION=	1.05
 CATEGORIES=	textproc perl5
 MASTER_SITES=	http://nwalsh.com/perl/delimmatch/
 PKGNAMEPREFIX=	p5-
@@ -17,9 +17,5 @@ PERL_CONFIGURE=	yes
 
 MAN3=		Text::DelimMatch.3
 MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
-
-pre-patch:
-	${MV} ${WRKSRC}/DelimMatch.pm ${WRKSRC}/DelimMatch.pm.old
-	${TR} -d "[\r]" < ${WRKSRC}/DelimMatch.pm.old > ${WRKSRC}/DelimMatch.pm
 
 .include <bsd.port.mk>
