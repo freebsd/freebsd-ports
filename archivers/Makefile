@@ -9,6 +9,7 @@
     SUBDIR += cabextract
     SUBDIR += dact
     SUBDIR += deepforest
+    SUBDIR += dpkg
     SUBDIR += fastjar
     SUBDIR += fileroller
     SUBDIR += freeze

@@ -1,0 +1,11 @@
+--- configure.in.orig	Fri Apr  4 17:55:33 2003
++++ configure.in	Fri Apr  4 17:55:41 2003
+@@ -158,7 +158,7 @@
+ } inline int foo (int x) {], AC_DEFINE(HAVE_INLINE))
+ 
+ AC_MSG_CHECKING([for __va_copy])
+-AC_TRY_COMPILE([
++AC_TRY_LINK([
+ #include <stdarg.h>
+ ],[
+ va_list v1,v2;

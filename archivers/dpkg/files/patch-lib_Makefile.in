@@ -1,0 +1,11 @@
+--- lib/Makefile.in.orig	Thu Mar  6 16:56:04 2003
++++ lib/Makefile.in	Thu Mar  6 16:57:21 2003
+@@ -21,7 +21,7 @@
+ 	set -e ; cd ../optlib ; $(MAKE) libopt.a
+ 
+ libdpkg.a: $(OBJECTS) ../optlib/libopt.a
+-	$(AR) r $@ $^
++	$(AR) r $@ $(OBJECTS) ../optlib/getopt.o ../optlib/getopt1.o ../optlib/long-options.o ../optlib/closeout.o ../optlib/obstack.o
+ 	$(RANLIB) $@
+ 
+ .PHONY: install

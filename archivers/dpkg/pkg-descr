@@ -1,0 +1,7 @@
+This package contains the programs which handle the installation
+and removal of packages on your system. The primary interface for
+the dpkg suite is the `dselect' program; a more low-level and less
+user-friendly interface is available in the form of the `dpkg'
+command.  
+
+WWW: http://packages.debian.org/stable/base/dpkg.html

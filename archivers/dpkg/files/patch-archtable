@@ -1,0 +1,14 @@
+--- archtable.orig	Fri Apr  4 20:47:59 2003
++++ archtable	Fri Apr  4 20:49:16 2003
+@@ -46,7 +46,11 @@
+ hppa1.1-linux-gnu	hppa		hppa
+ hppa2.0-linux-gnu	hppa		hppa
+ hppa64-linux-gnu	hppa		hppa
++alpha-freebsd		freebsd-alpha	freebsd-alpha
+ i386-freebsd		freebsd-i386	freebsd-i386
++ia64-freebsd		freebsd-ia64	freebsd-ia64
++powerpc-freebsd		freebsd-powerpc	freebsd-powerpc
++sparc64-freebsd		freebsd-sparc64	freebsd-sparc64
+ s390-linux-gnu		s390		s390
+ s390-ibm-linux-gnu	s390		s390
+ s390-unknown-linux-gnu	s390		s390
