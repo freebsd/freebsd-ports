@@ -325,7 +325,7 @@ RUN_DEPENDS+=	${X11BASE}/bin/gnomecc:${PORTSDIR}/sysutils/gnomecontrolcenter
 .endif
 .if defined(USE_GNOME)
 LIB_DEPENDS+=	panel_status.5:${PORTSDIR}/x11/gnomecore \
-		gtkhtml.21:${PORTSDIR}/www/gtkhtml
+		gtkhtml-1.1.3:${PORTSDIR}/www/gtkhtml
 .endif
 .if defined(WANT_GNOME) && !defined(HAVE_GNOME)
 PLIST_SUB+=		GNOME:="@comment " NOGNOME:="" DATADIR="share"
