@@ -9,9 +9,8 @@
 DISTNAME=	hobbes-icons-xpm3
 PKGNAME=	hobbes-icons-xpm3-1.0
 CATEGORIES=	graphics
-MASTER_SITES=   ftp://ftp.x.org/R5contrib/  \
-		ftp://ftp.duke.edu/pub/X11/R5contrib/  \
-		ftp://ftp.sunet.se/pub/X11/R5contrib/
+MASTER_SITES=	ftp://ftp.x.org/R5contrib/ \
+		ftp://ftp.freesoftware.com/pub/X11/R5contrib/
 
 MAINTAINER=	giffunip@asme.org
 
@@ -22,7 +21,7 @@ NO_BUILD=	yes
 LIBDIR=		${PREFIX}/include/X11/pixmaps
 
 do-install:
-	${MKDIR} ${LIBDIR}
+	@${MKDIR} ${LIBDIR}
 	${CP} -R ${WRKSRC}/* ${LIBDIR}
 	${CHOWN} -R ${BINOWN}:${BINGRP} ${LIBDIR}
 	-${RM} ${LIBDIR}/README
@@ -30,7 +29,7 @@ do-install:
 
 post-install:
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${PREFIX}/share/doc/hobbes-icons-xpm3
+	@${MKDIR} ${PREFIX}/share/doc/hobbes-icons-xpm3
 	${INSTALL_DATA} ${WRKSRC}/README ${PREFIX}/share/doc/hobbes-icons-xpm3
 	${INSTALL_SCRIPT} ${WRKSRC}/*.shar ${PREFIX}/share/doc/hobbes-icons-xpm3
 .endif
