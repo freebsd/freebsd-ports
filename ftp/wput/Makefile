@@ -14,6 +14,8 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	chip-set@mail.ru
 COMMENT=	Uploads files or directories to a ftpserver with support of resuming
 
+BROKEN=		Size mismatch
+
 PORTDOCS=	TODO ChangeLog
 
 USE_GETOPT_LONG=	yes
