@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	genius
-PORTVERSION=	0.6.1
+PORTVERSION=	0.7.1
 CATEGORIES=	deskutils gnome
 MASTER_SITES=	http://ftp.5z.com/pub/genius/
 
@@ -19,7 +19,8 @@ USE_PERL5_BUILD=	yes
 USE_X_PREFIX=	yes
 USE_GNOME=	gnomehack gnomeprefix gnometarget gtksourceview libgnomeui \
 		lthack vte
-USE_LIBTOOL_VER=	13
+USE_GMAKE=	yes
+USE_LIBTOOL_VER=	15
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
@@ -28,5 +29,8 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 .if ${OSVERSION} < 500018
 IGNORE=		"Requires readline 4.2 or newer"
 .endif
+
+post-patch:
+	@${PERL} -pi -e 's|-O3 ||g' ${WRKSRC}/configure
 
 .include <bsd.port.post.mk>
