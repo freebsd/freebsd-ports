@@ -17,6 +17,7 @@ COMMENT=	Library for building enlightenment dock applications
 
 WRKSRC=		${WRKDIR}/Epplets-${PORTVERSION}
 
+USE_REINPLACE=	yes
 USE_X_PREFIX=	yes
 USE_GNOME=	imlib
 USE_LIBTOOL=	yes
@@ -26,6 +27,6 @@ CONFIGURE_ARGS=	--enable-fsstd
 INSTALLS_SHLIB=	yes
 
 pre-patch:
-	@${PERL} -pi -e 's|api epplets|api|g' ${WRKSRC}/Makefile.in
+	@${REINPLACE_CMD} -e 's|api epplets|api|g' ${WRKSRC}/Makefile.in
 
 .include <bsd.port.mk>
