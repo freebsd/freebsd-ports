@@ -15,15 +15,20 @@ MASTER_SITE_SUBDIR=	net/mrtg
 
 MAINTAINER=	demon@FreeBSD.org
 
+.if defined(WITH_GD2)
+LIB_DEPENDS=	gd.4:${PORTSDIR}/graphics/gd2
+CONFIGURE_ARGS=	--with-gd-lib=${LOCALBASE}/lib \
+		--with-gd-inc=${LOCALBASE}/include
+.else
 LIB_DEPENDS=	gd.2:${PORTSDIR}/graphics/gd
+CONFIGURE_ARGS=	--with-gd-lib=${LOCALBASE}/lib \
+		--with-gd-inc=${LOCALBASE}/include/gd
+.endif
 
 USE_PERL5=	YES
 MAKE_ENV+=	PERL=${PERL}
 
 GNU_CONFIGURE=	YES
-
-CONFIGURE_ARGS=	--with-gd-lib=${LOCALBASE}/lib \
-		--with-gd-inc=${LOCALBASE}/include/gd
 
 CONFIGURE_ENV=	PERL=${PERL}
 
