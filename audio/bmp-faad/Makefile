@@ -34,7 +34,7 @@ USE_REINPLACE=		yes
 
 CONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS=	--with-xmms --with-mp4v2
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include ${PTHREAD_CFLAGS}" \
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include ${PTHREAD_CFLAGS} -DHAVE_GTK" \
 		LDFLAGS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}" \
 
 DESCR=		${PORTSDIR}/audio/faad/pkg-descr
@@ -50,6 +50,8 @@ pre-patch: build-depends
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|' ${WRKSRC}/plugins/xmms/src/Makefile.am
+	@${REINPLACE_CMD} -e 's|"faad.h"|<faad.h>|; s|"mp4.h"|<mp4.h>|' \
+		${WRKSRC}/plugins/xmms/src/libmp4.c
 # make sure everything is prepared prior to configure stage
 # pre-configure will not work since *AUTO* tools happen in-between
 	@cd ${WRKSRC}; ${ACLOCAL} -I ${ACLOCAL_DIR} -I .; \
