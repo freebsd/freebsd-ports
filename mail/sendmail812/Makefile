@@ -14,39 +14,37 @@ DISTNAME=	${PORTNAME}.${PORTVERSION}
 
 MAINTAINER=	dirk.meyer@dinoex.sub.org
 
-.if defined(BATCH)
-NO_PACKAGE=	"sendmail included in base system"
-.endif
-
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 WCONF=		${WRKSRC}/devtools/Site
 PLIST=		${WRKDIR}/.PLIST.more
 DOCS=		KNOWNBUGS LICENSE PGPKEYS README RELEASE_NOTES
 
 # Options to define Features:
-#
-# SENDMAIL_WITH_TLS=YES
-# SENDMAIL_WITH_SASL=YES
-# SENDMAIL_WITH_SFIO=YES
-# SENDMAIL_WITH_MILTER=YES
-# SENDMAIL_WITH_LDAP=YES
+.if defined(BATCH)
+# all on for package build
+SENDMAIL_WITH_TLS=YES
+SENDMAIL_WITH_SASL=YES
+SENDMAIL_WITH_SFIO=YES
+SENDMAIL_WITH_MILTER=YES
+SENDMAIL_WITH_LDAP=YES
+.endif
 
-.if defined(SENDMAIL_WITH_TLS)
-USE_OPENSSL=	yes
-PKGNAMESUFFIX=	-tls
+.if defined(SENDMAIL_WITH_LDAP)
+PKGNAMESUFFIX?=	-ldap
+LIB_DEPENDS+=	ldap.2:${PORTSDIR}/net/openldap2
+LIB_DEPENDS+=	lber.2:${PORTSDIR}/net/openldap2
 .endif
 .if defined(SENDMAIL_WITH_SASL)
 LIB_DEPENDS+=	sasl.8:${PORTSDIR}/security/cyrus-sasl
-PKGNAMESUFFIX=	-sasl
+PKGNAMESUFFIX?=	-sasl
+.endif
+.if defined(SENDMAIL_WITH_TLS)
+PKGNAMESUFFIX?=	-tls
+USE_OPENSSL=	yes
 .endif
 .if defined(SENDMAIL_WITH_SFIO)
+PKGNAMESUFFIX?=	-sfio
 BUILD_DEPENDS+=	${LOCALBASE}/lib/libsfio.a:${PORTSDIR}/devel/sfio
-PKGNAMESUFFIX=	-sfio
-.endif
-.if defined(SENDMAIL_WITH_LDAP)
-LIB_DEPENDS+=	ldap.2:${PORTSDIR}/net/openldap2
-LIB_DEPENDS+=	lber.2:${PORTSDIR}/net/openldap2
-PKGNAMESUFFIX=	-ldap
 .endif
 
 .if exists(${DESTDIR}/etc/mail/mailer.conf)
