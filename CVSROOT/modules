@@ -1353,6 +1353,7 @@ eclipse		ports/java/eclipse
 eclipse-examples	ports/java/eclipse-examples
 eclipse-gef	ports/java/eclipse-gef
 eclipse-gef-examples	ports/java/eclipse-gef-examples
+eclipse-langpack	ports/java/eclipse-langpack
 ecore		ports/x11/ecore
 ecu		ports/comms/ecu
 edb		ports/databases/edb
