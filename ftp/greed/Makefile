@@ -3,12 +3,12 @@
 # Date created:		13 April 1999
 # Whom:			Chris Piazza <cpiazza@home.net>
 #
-# $Id: Makefile,v 1.6 1999/05/07 01:08:27 mharo Exp $
+# $Id: Makefile,v 1.7 1999/05/09 16:26:03 steve Exp $
 #
 
 DISTNAME=	greed-0.801
 CATEGORIES=	net
-MASTER_SITES=	http://www.public.asu.edu/~arturner/
+MASTER_SITES=	http://www.public.asu.edu/~arturner/greed/
 
 MAINTAINER=	cpiazza@home.net
 
