@@ -16,6 +16,8 @@ DISTNAME=	SiteBar-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The Bookmark Server for Personal and Team Use
 
+BROKEN=		Size mismatch
+
 USE_BZIP2=	yes
 USE_PHP=	yes
 WANT_PHP_WEB=	yes
