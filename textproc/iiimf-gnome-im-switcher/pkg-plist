@@ -1,0 +1,23 @@
+bin/gnome-im-properties
+bin/gnome-im-settings-daemon
+@unexec env GCONF_CONFIG_SOURCE=xml::%D/etc/gconf/gconf.xml.defaults gconftool-2 --makefile-uninstall-rule %D/etc/gconf/schemas/gnome-im-properties.schemas >/dev/null || /usr/bin/true
+etc/gconf/schemas/gnome-im-properties.schemas
+@exec env GCONF_CONFIG_SOURCE=xml::%D/etc/gconf/gconf.xml.defaults gconftool-2 --makefile-install-rule %D/etc/gconf/schemas/gnome-im-properties.schemas >/dev/null || /usr/bin/true
+@unexec env GCONF_CONFIG_SOURCE=xml::%D/etc/gconf/gconf.xml.defaults gconftool-2 --makefile-uninstall-rule %D/etc/gconf/schemas/gnome-im-switcher.schemas >/dev/null || /usr/bin/true
+etc/gconf/schemas/gnome-im-switcher.schemas
+@exec env GCONF_CONFIG_SOURCE=xml::%D/etc/gconf/gconf.xml.defaults gconftool-2 --makefile-install-rule %D/etc/gconf/schemas/gnome-im-switcher.schemas >/dev/null || /usr/bin/true
+libdata/bonobo/servers/GNOME_IMSwitcherApplet.server
+libexec/gnome-im-switcher-applet
+share/control-center-2.0/capplets/gnome-im-properties.desktop
+share/control-center-2.0/interfaces/gnome-im-properties.glade2
+share/gnome-2.0/ui/GNOME_InputMethodSwitcherApplet.xml
+share/gnome-im-switcher/glade/gnome-im-switcher.glade2
+share/icons/hicolor/48x48/apps/gnome-settings-im.png
+share/pixmaps/gnome-settings-im.png
+@dirrm share/control-center-2.0/capplets
+@dirrm share/control-center-2.0/interfaces
+@dirrm share/control-center-2.0
+@dirrm share/gnome-2.0/ui
+@dirrm share/gnome-2.0
+@dirrm share/gnome-im-switcher/glade
+@dirrm share/gnome-im-switcher

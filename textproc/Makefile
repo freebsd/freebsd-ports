@@ -151,6 +151,7 @@
     SUBDIR += idnits
     SUBDIR += iiimf-client-lib
     SUBDIR += iiimf-csconv
+    SUBDIR += iiimf-gnome-im-switcher
     SUBDIR += iiimf-gtk
     SUBDIR += iiimf-headers
     SUBDIR += iiimf-le-unit
