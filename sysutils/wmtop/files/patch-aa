@@ -1,0 +1,21 @@
+--- Makefile.orig	Sat Apr 29 17:49:07 2000
++++ Makefile	Sun May  7 17:04:17 2000
+@@ -1,12 +1,12 @@
+ DEBUG  = -DPARANOID
+-LIBDIR = -L/usr/X11R6/lib
++LIBDIR = -L$(PREFIX)/lib
+ LIBS   = -lXpm -lXext -lX11
+-INCS   = -I/usr/X11R6/share/include -I/usr/X11R6/include
++INCS   = -I$(PREFIX)/include
+ OBJS   = wmtop.o wmgeneral/wmgeneral.o wmgeneral/misc.o wmgeneral/list.o
+-OPTS   = -O3 -g -Wall
+-FLAGS  = $(DEBUG) $(OPTS) -D$(OS)
+-MAKE   = make
+-CC     = cc
++OPTS   = -g -Wall
++FLAGS  = $(DEBUG) $(OPTS) -D$(OS) $(CFLAGS)
++MAKE  ?= make
++CC    ?= cc
+ PREFIX ?= /usr/local
+ 
+ default:

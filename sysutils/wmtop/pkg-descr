@@ -1,0 +1,9 @@
+This is a port of wmtop which is a Windowmaker dock app which
+monitors the top 3 processes (in terms of CPU usage). You can
+configure which processes are displayed and it can be used as an
+application launcher.
+
+WWW: http://www.tanelorn.demon.co.uk/Computing/
+
+- Dan Piponi
+wmtop@tanelorn.demon.co.uk
