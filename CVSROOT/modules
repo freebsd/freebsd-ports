@@ -7511,6 +7511,7 @@ p5-SQL-Abstract	ports/databases/p5-SQL-Abstract
 p5-SQL-Statement	ports/databases/p5-SQL-Statement
 p5-SQL-Translator	ports/databases/p5-SQL-Translator
 p5-SVG	ports/textproc/p5-SVG
+p5-SVG-Graph	ports/graphics/p5-SVG-Graph
 p5-SVN-Mirror	ports/devel/p5-SVN-Mirror
 p5-SVN-Simple	ports/devel/p5-SVN-Simple
 p5-SVN-Web	ports/devel/p5-SVN-Web
