@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.26 1995/12/04 09:46:10 asami Exp $
+# $Id: Makefile,v 1.27 1996/03/18 18:56:33 joerg Exp $
 #
 
     SUBDIR += axe
@@ -8,6 +8,7 @@
     SUBDIR += emacs
     SUBDIR += jove
     SUBDIR += mule
+RESTRICTED += nedit	# requires motif
     SUBDIR += uemacs
     SUBDIR += uzap
     SUBDIR += vile
