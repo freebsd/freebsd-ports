@@ -1,0 +1,114 @@
+*** Makefile.orig	Wed Aug 30 12:47:16 1995
+--- Makefile	Tue Mar 12 02:57:34 1996
+***************
+*** 4,11 ****
+  #
+  # this is the C compiler to use (on SunOS, the standard "cc" does not
+  # grok my code, so please use gcc there. On ISC 4.0, use "icc".).
+! CC=gcc
+! #CC=cc
+  #
+  #### C Compiler Flags ####
+  #
+--- 4,11 ----
+  #
+  # this is the C compiler to use (on SunOS, the standard "cc" does not
+  # grok my code, so please use gcc there. On ISC 4.0, use "icc".).
+! #CC=gcc
+! CC=cc
+  #
+  #### C Compiler Flags ####
+  #
+***************
+*** 96,102 ****
+  #	    USTAT	  - ustat(), no statfs etc.
+  #
+  #CFLAGS=-Wall -O2 -pipe -DSECUREWARE -DUSE_POLL
+! CFLAGS=-O2 -Wall -pipe
+  #CFLAGS=-O -DSVR4
+  #CFLAGS=-O -DSVR4 -DSVR42
+  #CFLAGS=-O -DUSE_POLL
+--- 96,102 ----
+  #	    USTAT	  - ustat(), no statfs etc.
+  #
+  #CFLAGS=-Wall -O2 -pipe -DSECUREWARE -DUSE_POLL
+! #CFLAGS=-O2 -Wall -pipe
+  #CFLAGS=-O -DSVR4
+  #CFLAGS=-O -DSVR4 -DSVR42
+  #CFLAGS=-O -DUSE_POLL
+***************
+*** 132,138 ****
+  # For FreeBSD, add "-lutil" if the linker complains about
+  # 	"utmp.o: unresolved symbod _login"
+  #
+! LDFLAGS=
+  #LDFLAGS=-lprot -lsocket
+  #LDFLAGS=-s -shlib
+  #LDFLAGS=-lsocket
+--- 132,138 ----
+  # For FreeBSD, add "-lutil" if the linker complains about
+  # 	"utmp.o: unresolved symbod _login"
+  #
+! LDFLAGS=-lutil
+  #LDFLAGS=-lprot -lsocket
+  #LDFLAGS=-s -shlib
+  #LDFLAGS=-lsocket
+***************
+*** 227,235 ****
+  # please use the "mg.echo" program provided in the compat/ subdirectory.
+  # Set ECHO="mg.echo" and INSTALL_MECHO to mg.echo
+  #
+! ECHO="echo"
+  #
+! # INSTALL_MECHO=mg.echo
+  
+  #
+  # for mgetty, that's it. If you want to use Klaus Weidner's voice
+--- 227,235 ----
+  # please use the "mg.echo" program provided in the compat/ subdirectory.
+  # Set ECHO="mg.echo" and INSTALL_MECHO to mg.echo
+  #
+! ECHO="mg.echo"
+  #
+! INSTALL_MECHO=mg.echo
+  
+  #
+  # for mgetty, that's it. If you want to use Klaus Weidner's voice
+***************
+*** 530,536 ****
+  
+  install: install-bin install-doc
+  
+! install-bin: mgetty sendfax login.config mgetty.config sendfax.config
+  #
+  # binaries
+  #
+--- 530,536 ----
+  
+  install: install-bin install-doc
+  
+! install-bin: mgetty sendfax login.config #mgetty.config sendfax.config
+  #
+  # binaries
+  #
+***************
+*** 547,555 ****
+  # data files + directories
+  #
+  	test -d $(LIBDIR)  || \
+! 		( mkdir `dirname $(LIBDIR)` $(LIBDIR) ; chmod 755 $(LIBDIR) )
+  	test -d $(CONFDIR) || \
+! 		( mkdir `dirname $(CONFDIR)` $(CONFDIR); chmod 755 $(CONFDIR))
+  	test -f $(CONFDIR)/login.config || \
+  		$(INSTALL) -o root -m 600 login.config $(CONFDIR)/
+  	test -f $(CONFDIR)/mgetty.config || \
+--- 547,555 ----
+  # data files + directories
+  #
+  	test -d $(LIBDIR)  || \
+! 		( mkdir -p `dirname $(LIBDIR)` $(LIBDIR) ; chmod 755 $(LIBDIR) )
+  	test -d $(CONFDIR) || \
+! 		( mkdir -p `dirname $(CONFDIR)` $(CONFDIR); chmod 755 $(CONFDIR))
+  	test -f $(CONFDIR)/login.config || \
+  		$(INSTALL) -o root -m 600 login.config $(CONFDIR)/
+  	test -f $(CONFDIR)/mgetty.config || \
