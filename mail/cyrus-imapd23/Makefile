@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	cyrus-imapd
-PORTVERSION= 	2.2.7
+PORTVERSION= 	2.2.8
 #PORTREVISION=	0
 CATEGORIES=	mail ipv6
 MASTER_SITES=	ftp://ftp.andrew.cmu.edu/pub/cyrus-mail/ \
