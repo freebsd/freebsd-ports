@@ -5917,6 +5917,7 @@ p5-Set-NestedGroups	ports/devel/p5-Set-NestedGroups
 p5-Set-Object	ports/devel/p5-Set-Object
 p5-Set-Scalar	ports/devel/p5-Set-Scalar
 p5-Set-Window	ports/math/p5-Set-Window
+p5-Shape	ports/devel/p5-Shape
 p5-Shout	ports/audio/p5-Shout
 p5-Sledge	ports/www/p5-Sledge
 p5-Sledge-Plugin-CacheContent	ports/www/p5-Sledge-Plugin-CacheContent
