@@ -15,15 +15,10 @@ EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
 
-BUILD_DEPENDS=	python:${PORTSDIR}/lang/python
-RUN_DEPENDS=	python:${PORTSDIR}/lang/python
-
+USE_PYTHON=	yes
 NO_BUILD=	yes
-PLIST_SUB=	PYVERSION=${PYVERSION}
 
-PYVERSION=	python1.5
-PYTHONSCRIPTDIR=	${PREFIX}/lib/${PYVERSION}
-REPORTLABDIR=	${PYTHONSCRIPTDIR}/site-packages/reportlab
+REPORTLABDIR=	${PYTHON_SITELIBDIR}/reportlab
 DOCDIR=		${PREFIX}/share/doc/reportlab
 EXAMPLEDIR=	${PREFIX}/share/examples/reportlab
 
@@ -33,9 +28,8 @@ do-install:
 	@${MKDIR} ${REPORTLABDIR}/${dir}
 	${INSTALL_DATA} ${WRKSRC}/${dir}/*.py ${REPORTLABDIR}/${dir}
 .endfor
-	${ECHO} 'reportlab' > ${PYTHONSCRIPTDIR}/reportlab.pth
-	@${PREFIX}/bin/python ${PYTHONSCRIPTDIR}/compileall.py ${REPORTLABDIR}
-	@${PREFIX}/bin/python -O ${PYTHONSCRIPTDIR}/compileall.py ${REPORTLABDIR}
+	@${PYTHON_CMD} ${PYTHON_LIBDIR}/compileall.py ${REPORTLABDIR}
+	@${PYTHON_CMD} -O ${PYTHON_LIBDIR}/compileall.py ${REPORTLABDIR}
 
 	@${MKDIR} ${EXAMPLEDIR}
 	cd ${WRKSRC}/demos; tar cpf - * | (cd ${EXAMPLEDIR}; tar xpf -)

@@ -16,27 +16,29 @@ DISTNAME=	Imaging-${PORTVERSION}
 
 MAINTAINER=	tg@FreeBSD.org
 
-BUILD_DEPENDS=	${PREFIX}/lib/python1.5/site-packages/_tkinter.so:${PORTSDIR}/x11-toolkits/py-tkinter
+BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/_tkinter.so:${PORTSDIR}/x11-toolkits/py-tkinter
 LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg
-RUN_DEPENDS=	${PREFIX}/lib/python1.5/site-packages/_tkinter.so:${PORTSDIR}/x11-toolkits/py-tkinter
+RUN_DEPENDS=	${PYTHON_SITELIBDIR}/_tkinter.so:${PORTSDIR}/x11-toolkits/py-tkinter
 
 DIST_SUBDIR=	python
+USE_PYTHON=	yes
 WRKSRC=		${WRKDIR}/${DISTNAME}/libImaging
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-jpeg=${PREFIX}/lib
+CONFIGURE_ENV=	PYTHON=${PYTHON_CMD}
 MAKE_FLAGS=	OPT="${CFLAGS}"
 
-PYTHONSCRIPTDIR=	${PREFIX}/lib/python1.5
-PILDIR=		${PYTHONSCRIPTDIR}/site-packages/PIL
+PILDIR=		${PYTHON_SITELIBDIR}/PIL
 PILDOCDIR=	${PREFIX}/share/doc/PIL
 PILEXDIR=	${PREFIX}/share/examples/PIL
-PILINCDIR=	${PREFIX}/include/python1.5
+PILINCDIR=	${PREFIX}/include/${PYTHON_VERSION}
 
 post-extract:
 	@${CP} ${FILESDIR}/Setup ${WRKSRC}/..
+	@${CP} ${PYTHON_LIBDIR}/config/Makefile.pre.in ${WRKSRC}/..
 
 post-configure:
-	@(cd ${WRKSRC}/..; ${SETENV} ${MAKE_ENV} ${MAKE} -f Makefile.pre.in boot)
+	@(cd ${WRKSRC}/..; ${SETENV} ${CONFIGURE_ENV} ${MAKE} -f Makefile.pre.in boot)
 
 post-build:
 	@(cd ${WRKSRC}/..; ${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_FLAGS} sharedmods)
@@ -46,8 +48,8 @@ do-install:
 	@${MKDIR} ${PILDIR}
 	${INSTALL_DATA} ${WRKSRC}/../PIL/* ${PILDIR}
 	${INSTALL_DATA} ${WRKSRC}/../PIL.pth ${PILDIR}/..
-	@${PREFIX}/bin/python ${PYTHONSCRIPTDIR}/compileall.py ${PILDIR}
-	@${PREFIX}/bin/python -O ${PYTHONSCRIPTDIR}/compileall.py ${PILDIR}
+	@${PYTHON_CMD} ${PYTHON_LIBDIR}/compileall.py ${PILDIR}
+	@${PYTHON_CMD} -O ${PYTHON_LIBDIR}/compileall.py ${PILDIR}
 	@${MKDIR} ${PILDOCDIR}
 	${INSTALL_DATA} ${WRKSRC}/../README ${PILDOCDIR}
 	${INSTALL_DATA} ${WRKSRC}/../FORMATS ${PILDOCDIR}

@@ -13,24 +13,23 @@ PKGNAMEPREFIX=	py-
 
 MAINTAINER=	tg@FreeBSD.org
 
-BUILD_DEPENDS=	python1.5:${PORTSDIR}/lang/python15
-RUN_DEPENDS=	python1.5:${PORTSDIR}/lang/python15
-
+USE_PYTHON=	yes
 USE_ZIP=	yes
 EXTRACT_BEFORE_ARGS=	-aq
 WRKSRC=		${WRKDIR}/DateTime/mxDateTime
+CONFIGURE_ENV=	PYTHON=${PYTHON_CMD}
 ALL_TARGET=	sharedmods
 
-PYTHONSCRIPTDIR=	${PREFIX}/lib/python1.5
-DATETIMEDIR=	${PYTHONSCRIPTDIR}/site-packages/DateTime
+DATETIMEDIR=	${PYTHON_SITELIBDIR}/DateTime
 DOCDIR=		${PREFIX}/share/doc/py-mxDateTime
 EXAMPLEDIR=	${PREFIX}/share/examples/py-mxDateTime
 
 post-extract:
 	@${CP} ${FILESDIR}/Setup ${WRKSRC}
+	@${CP} ${PYTHON_LIBDIR}/config/Makefile.pre.in ${WRKSRC}
 
 do-configure:
-	@(cd ${WRKSRC} && ${CONFIGURE_ENV} ${MAKE} -f Makefile.pre.in boot)
+	@(cd ${WRKSRC} && ${SETENV} ${CONFIGURE_ENV} ${MAKE} -f Makefile.pre.in boot)
 
 do-install:
 	@${MKDIR} ${DATETIMEDIR}
@@ -39,8 +38,8 @@ do-install:
 .for file in __init__.py mxDateTime.so
 	${INSTALL_DATA} ${WRKDIR}/DateTime/mxDateTime/${file} ${DATETIMEDIR}/mxDateTime
 .endfor
-	@${PREFIX}/bin/python ${PYTHONSCRIPTDIR}/compileall.py ${DATETIMEDIR}
-	@${PREFIX}/bin/python -O ${PYTHONSCRIPTDIR}/compileall.py ${DATETIMEDIR}
+	@${PYTHON_CMD} ${PYTHON_LIBDIR}/compileall.py ${DATETIMEDIR}
+	@${PYTHON_CMD} -O ${PYTHON_LIBDIR}/compileall.py ${DATETIMEDIR}
 	@${MKDIR} ${EXAMPLEDIR}
 	${INSTALL_DATA} ${WRKDIR}/DateTime/Examples/* ${EXAMPLEDIR}
 .if !defined(NOPORTDOCS)

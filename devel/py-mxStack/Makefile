@@ -13,24 +13,23 @@ PKGNAMEPREFIX=	py-
 
 MAINTAINER=	tg@FreeBSD.org
 
-BUILD_DEPENDS=	python1.5:${PORTSDIR}/lang/python15
-RUN_DEPENDS=	python1.5:${PORTSDIR}/lang/python15
-
+USE_PYTHON=	yes
 USE_ZIP=	yes
 EXTRACT_BEFORE_ARGS=	-aq
 WRKSRC=		${WRKDIR}/Stack/mxStack
+CONFIGURE_ENV=	PYTHON=${PYTHON_CMD}
 ALL_TARGET=	sharedmods
 
-PYTHONSCRIPTDIR=	${PREFIX}/lib/python1.5
-STACKDIR=	${PYTHONSCRIPTDIR}/site-packages/Stack
+STACKDIR=	${PYTHON_SITELIBDIR}/Stack
 DOCDIR=		${PREFIX}/share/doc/py-mxStack
 EXAMPLEDIR=	${PREFIX}/share/examples/py-mxStack
 
 post-extract:
 	@${CP} ${FILESDIR}/Setup ${WRKSRC}
+	@${CP} ${PYTHON_LIBDIR}/config/Makefile.pre.in ${WRKSRC}
 
 do-configure:
-	@(cd ${WRKSRC} && ${CONFIGURE_ENV} ${MAKE} -f Makefile.pre.in boot)
+	@(cd ${WRKSRC} && ${SETENV} ${CONFIGURE_ENV} ${MAKE} -f Makefile.pre.in boot)
 
 do-install:
 	@${MKDIR} ${STACKDIR}
@@ -39,8 +38,8 @@ do-install:
 .for file in __init__.py mxStack.so
 	${INSTALL_DATA} ${WRKDIR}/Stack/mxStack/${file} ${STACKDIR}/mxStack
 .endfor
-	@${PREFIX}/bin/python ${PYTHONSCRIPTDIR}/compileall.py ${STACKDIR}
-	@${PREFIX}/bin/python -O ${PYTHONSCRIPTDIR}/compileall.py ${STACKDIR}
+	@${PYTHON_CMD} ${PYTHON_LIBDIR}/compileall.py ${STACKDIR}
+	@${PYTHON_CMD} -O ${PYTHON_LIBDIR}/compileall.py ${STACKDIR}
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCDIR}
 	${INSTALL_DATA} ${WRKDIR}/Stack/Doc/* ${DOCDIR}

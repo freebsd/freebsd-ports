@@ -13,24 +13,23 @@ DISTNAME=	mxTextTools-1.1.1
 
 MAINTAINER=	tg@FreeBSD.org
 
-BUILD_DEPENDS=	python1.5:${PORTSDIR}/lang/python15
-RUN_DEPENDS=	python1.5:${PORTSDIR}/lang/python15
-
+USE_PYTHON=	yes
 USE_ZIP=	yes
 EXTRACT_BEFORE_ARGS=	-aq
 WRKSRC=		${WRKDIR}/TextTools/mxTextTools
+CONFIGURE_ENV=	PYTHON=${PYTHON_CMD}
 ALL_TARGET=	sharedmods
 
-PYTHONSCRIPTDIR=	${PREFIX}/lib/python1.5
-TEXTTOOLSDIR=	${PYTHONSCRIPTDIR}/site-packages/TextTools
+TEXTTOOLSDIR=	${PYTHON_SITELIBDIR}/TextTools
 DOCDIR=		${PREFIX}/share/doc/py-mxTextTools
 EXAMPLEDIR=	${PREFIX}/share/examples/py-mxTextTools
 
 post-extract:
 	@${CP} ${FILESDIR}/Setup ${WRKSRC}
+	@${CP} ${PYTHON_LIBDIR}/config/Makefile.pre.in ${WRKSRC}
 
 do-configure:
-	@(cd ${WRKSRC} && ${CONFIGURE_ENV} ${MAKE} -f Makefile.pre.in boot)
+	@(cd ${WRKSRC} && ${SETENV} ${CONFIGURE_ENV} ${MAKE} -f Makefile.pre.in boot)
 
 do-install:
 	@${MKDIR} ${TEXTTOOLSDIR}
@@ -41,8 +40,8 @@ do-install:
 .for file in __init__.py mxTextTools.so
 	${INSTALL_DATA} ${WRKDIR}/TextTools/mxTextTools/${file} ${TEXTTOOLSDIR}/mxTextTools
 .endfor
-	@${PREFIX}/bin/python ${PYTHONSCRIPTDIR}/compileall.py ${TEXTTOOLSDIR}
-	@${PREFIX}/bin/python -O ${PYTHONSCRIPTDIR}/compileall.py ${TEXTTOOLSDIR}
+	@${PYTHON_CMD} ${PYTHON_LIBDIR}/compileall.py ${TEXTTOOLSDIR}
+	@${PYTHON_CMD} -O ${PYTHON_LIBDIR}/compileall.py ${TEXTTOOLSDIR}
 	@${MKDIR} ${EXAMPLEDIR}
 	${INSTALL_DATA} ${WRKDIR}/TextTools/Examples/* ${EXAMPLEDIR}
 .if !defined(NOPORTDOCS)

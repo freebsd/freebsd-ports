@@ -13,11 +13,13 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
 
-BUILD_DEPENDS=	${LOCALBASE}/include/python1.5/Imaging.h:${PORTSDIR}/graphics/py-imaging
-RUN_DEPENDS=	${LOCALBASE}/lib/python1.5/site-packages/_tkinter.so:${PORTSDIR}/x11-toolkits/py-tkinter \
-		${LOCALBASE}/lib/python1.5/site-packages/_imaging.so:${PORTSDIR}/graphics/py-imaging \
-		${LOCALBASE}/lib/python1.5/site-packages/reportlab/__init__.py:${PORTSDIR}/print/py-reportlab \
-		${LOCALBASE}/lib/python1.5/site-packages/xml/__init__.py:${PORTSDIR}/textproc/py-xml
+BUILD_DEPENDS=	${LOCALBASE}/include/${PYTHON_VERSION}/Imaging.h:${PORTSDIR}/graphics/py-imaging
+RUN_DEPENDS=	${PYTHON_SITELIBDIR}/_tkinter.so:${PORTSDIR}/x11-toolkits/py-tkinter \
+		${PYTHON_SITELIBDIR}/_imaging.so:${PORTSDIR}/graphics/py-imaging \
+		${PYTHON_SITELIBDIR}/reportlab/__init__.py:${PORTSDIR}/print/py-reportlab \
+		${PYXML}
+
+USE_PYTHON=	yes
 
 SKETCHDIR=	${PREFIX}/share/sketch
 SKETCHDOCDIR=	${PREFIX}/share/doc/sketch
@@ -29,10 +31,10 @@ post-patch:
 	@${PERL} -pi -e "s;%%PORTSDIR%%;${PORTSDIR};" ${WRKSRC}/setup.py
 
 do-configure:
-	@(cd ${WRKSRC} && python setup.py configure)
+	@(cd ${WRKSRC} && ${PYTHON_CMD} setup.py configure)
 
 do-build:
-	@(cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} python setup.py build)
+	@(cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${PYTHON_CMD} setup.py build)
 
 do-install:
 	@${MKDIR} ${SKETCHDIR}
@@ -47,12 +49,15 @@ do-install:
 .endif
 	@${MKDIR} ${SKETCHEXDIR}
 	(cd ${WRKSRC}/Examples; ${TAR} cf - .) | (cd ${SKETCHEXDIR}; ${TAR} xf -)
-	(cd ${SKETCHDIR}; python finishinst.py)
-	${SED} -e "s|@PREFIX@|${PREFIX}|g" < ${FILESDIR}/sk2ps.in > ${PREFIX}/bin/sk2ps
+	(cd ${SKETCHDIR}; ${PYTHON_CMD} finishinst.py)
+	${SED} -e "s|@PREFIX@|${PREFIX}|g" -e "s|@PYTHON_CMD@|${PYTHON_CMD}|g" \
+		< ${FILESDIR}/sk2ps.in > ${PREFIX}/bin/sk2ps
 	${CHMOD} ${BINMODE} ${PREFIX}/bin/sk2ps
-	${SED} -e "s|@PREFIX@|${PREFIX}|g" < ${FILESDIR}/sketch.in > ${PREFIX}/bin/sketch
+	${SED} -e "s|@PREFIX@|${PREFIX}|g" -e "s|@PYTHON_CMD@|${PYTHON_CMD}|g" \
+		< ${FILESDIR}/sketch.in > ${PREFIX}/bin/sketch
 	${CHMOD} ${BINMODE} ${PREFIX}/bin/sketch
-	${SED} -e "s|@PREFIX@|${PREFIX}|g" < ${FILESDIR}/skshow.in > ${PREFIX}/bin/skshow
+	${SED} -e "s|@PREFIX@|${PREFIX}|g" -e "s|@PYTHON_CMD@|${PYTHON_CMD}|g" \
+		< ${FILESDIR}/skshow.in > ${PREFIX}/bin/skshow
 	${CHMOD} ${BINMODE} ${PREFIX}/bin/skshow
 
 .include <bsd.port.mk>

@@ -1,3 +1,3 @@
 #!/bin/sh
 
-exec @PREFIX@/bin/python @PREFIX@/share/sketch/sketch.py $@
+exec @PYTHON_CMD@ @PREFIX@/share/sketch/sketch.py $@
