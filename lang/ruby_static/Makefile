@@ -26,10 +26,6 @@ EXT_PORTS=	archivers/ruby-zlib \
 _PORTSDIR=	${.CURDIR}/../..
 _RUBY_PORTDIR=	${_PORTSDIR}/${RUBY_PORT}
 
-.if !defined(HAVE_FNMATCH)
-EXT_PORTS+=	devel/ruby-fnmatch
-.endif
-
 .for p in ${EXT_PORTS}
 BUILD_DEPENDS+=	${NONEXISTENT}:${_PORTSDIR}/${p}:patch
 .endfor
