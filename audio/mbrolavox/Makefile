@@ -33,7 +33,7 @@ pre-everything::
 	${SETENV} ${SCRIPTS_ENV} ${SH} ${SCRIPTDIR}/configure
 .endif
 .endif
-DISTFILES?=	us1.zip
+DISTFILES?=	us1-980512.zip
 
 .if exists(${WRKDIRPREFIX}${.CURDIR}/work/voices.conf)
 DISTFILES!=${CAT} ${WRKDIRPREFIX}${.CURDIR}/work/voices.conf

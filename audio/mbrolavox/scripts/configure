@@ -92,9 +92,11 @@ case $retval in
 esac
 
 echo $choice | tr ' ' '\012' | tr -d \" > ${WRKDIR}/voices.conf
-fi
 cut -c1-3 < ${WRKDIR}/voices.conf > ${WRKDIR}/fetchdirs.conf
 
 echo "* Your choices are saved.  You must run the \"make\" command again to"
 echo "* complete the build.  Ignore the \"Error code 1\" below."
 exit 1
+else
+exit 0
+fi
