@@ -21,4 +21,3 @@ share/sgml/iso8879/ISOtech
 share/sgml/iso8879/catalog
 @exec %%MKCATALOG%% -q install %%DTD_NAME%%
 @dirrm share/sgml/iso8879
-@unexec rmdir %D/share/sgml 2>/dev/null || true

@@ -5,4 +5,3 @@ share/sgml/otranspec/docbook-to-man.ts
 share/sgml/otranspec/roff.cmap
 share/sgml/otranspec/roff.sdata
 @dirrm share/sgml/otranspec
-@unexec rmdir %D/share/sgml 2>/dev/null || true

@@ -6,4 +6,3 @@ share/sgml/iso12083/serial.dtd
 share/sgml/iso12083/catalog
 @exec %%MKCATALOG%% -q install %%DTD_NAME%%
 @dirrm share/sgml/iso12083
-@unexec rmdir %D/share/sgml 2>/dev/null || true

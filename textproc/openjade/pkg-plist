@@ -23,5 +23,4 @@ share/sgml/openjade/extensions.dsl
 share/sgml/openjade/fot.dtd
 share/sgml/openjade/style-sheet.dtd
 @dirrm share/sgml/openjade
-@unexec rmdir %D/share/sgml 2>/dev/null || true
 @exec %%MKCATALOG%% -q install openjade
