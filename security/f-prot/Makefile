@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	f-prot
-PORTVERSION=	4.4.8
+PORTVERSION=	4.5.3
 CATEGORIES=	security
 MASTER_SITES=	ftp://ftp.i-scream.org/pub/ftp.f-prot.com/pub/bsd/ \
 		http://ftp.i-scream.org/pub/ftp.f-prot.com/pub/bsd/
@@ -53,7 +53,7 @@ post-extract:
 	@${ECHO_MSG} "check-updates.pl script provided in this port to do it for you."
 	@${ECHO_MSG} ""
 .endif
-	
+
 post-install:
 .ifndef(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
