@@ -133,7 +133,6 @@
     SUBDIR += sh-utils
     SUBDIR += shc
     SUBDIR += sls
-    SUBDIR += sma
     SUBDIR += smssend
     SUBDIR += snowflake
     SUBDIR += splitvt
