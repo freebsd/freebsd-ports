@@ -188,3 +188,4 @@ share/ghostscript/5.10/zeroline.ps
 @dirrm share/ghostscript/5.10/doc
 @dirrm share/ghostscript/5.10/examples
 @dirrm share/ghostscript/5.10
+@dirrm libexec/lpr

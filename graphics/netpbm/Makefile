@@ -33,7 +33,7 @@ MAN1=	anytopnm.1 asciitopgm.1 atktopbm.1 bioradtopgm.1 bmptoppm.1 \
 	pgmtopbm.1 pgmtoppm.1 pi1toppm.1 pi3topbm.1 picttoppm.1 pjtoppm.1 \
 	pktopbm.1 pnmalias.1 pnmarith.1 pnmcat.1 pnmcomp.1 pnmconvol.1 \
 	pnmcrop.1 pnmcut.1 pnmdepth.1 pnmenlarge.1 pnmfile.1 pnmflip.1 \
-	pnmgamma.1 pnmhistmap.1 pnmindex.1 pnminvert.1 pnmmargin.1 \
+	pnmgamma.1 pnmhisteq.1 pnmhistmap.1 pnmindex.1 pnminvert.1 pnmmargin.1 \
 	pnmnlfilt.1 pnmnoraw.1 pnmpad.1 pnmpaste.1 pnmrotate.1 pnmscale.1 \
 	pnmshear.1 pnmsmooth.1 pnmtile.1 pnmtoddif.1 pnmtofits.1 pnmtops.1 \
 	pnmtorast.1 pnmtosgi.1 pnmtosir.1 pnmtotiff.1 pnmtoxwd.1 ppm3d.1 \

@@ -15,8 +15,8 @@ lib/liblzo.so
 lib/liblzo.so.1
 @exec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -m %B
 @unexec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -R
+share/doc/lzo/LTEST.TXT
 share/doc/lzo/LZO.FAQ
 share/doc/lzo/LZO.TXT
 share/doc/lzo/LZOAPI.TXT
-share/doc/lzo/LTEST.TXT
 @dirrm share/doc/lzo
