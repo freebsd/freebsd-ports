@@ -29,6 +29,10 @@ libexec/ninix/ninix/dll/mciaudior.pyc
 libexec/ninix/ninix/dll/misaka.pyc
 libexec/ninix/ninix/dll/niseshiori.pyc
 libexec/ninix/ninix/dll/satori.pyc
+libexec/ninix/ninix/dll/saori_cpuid.py
+libexec/ninix/ninix/dll/saori_cpuid.pyc
+libexec/ninix/ninix/dll/ssu.py
+libexec/ninix/ninix/dll/ssu.pyc
 libexec/ninix/ninix/__init__.py
 libexec/ninix/ninix/alias.py
 libexec/ninix/ninix/communicate.py
