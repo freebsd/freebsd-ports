@@ -174,6 +174,11 @@ cdrom_eject() {
 	if (cdrom_fd == -1)
 		return(-1);
 
+        if (ioctl(cdrom_fd, CDIOCALLOW) == -1) {
+		perror("ioctl(cdromallow)");
+		return(-1);
+	} 
+
 	if (ioctl(cdrom_fd, CDIOCEJECT) == -1) {
 		perror("ioctl(cdromeject)");
 		return(-1);
