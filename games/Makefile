@@ -393,6 +393,7 @@
     SUBDIR += xpilot
     SUBDIR += xpilotmon
     SUBDIR += xpipeman
+    SUBDIR += xpired
     SUBDIR += xpuyo
     SUBDIR += xpuyopuyo
     SUBDIR += xpuzzletama
