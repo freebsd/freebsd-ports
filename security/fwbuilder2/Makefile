@@ -19,7 +19,8 @@ LIB_DEPENDS=	gtkmm.2:${PORTSDIR}/x11-toolkits/gtk--
 USE_GMAKE=	yes
 USE_X_PREFIX=	yes
 USE_LIBTOOL=	yes
-USE_GNOMELIBS=	yes
+USE_GNOMENG=	yes
+USE_GNOME=	gnomehack gnomeprefix gnomelibs
 WITHOUT_ESOUND=	yes
 CONFIGURE_ARGS+=	--with-iconsdir=${X11BASE}/share/gnome/fwbuilder/pixmaps/ --with-templatedir=${X11BASE}/share/gnome/fwbuilder
 
