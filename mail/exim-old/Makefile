@@ -36,6 +36,10 @@ MAKE_ENV+=	OSTYPE=${OPSYS} ARCHTYPE=${MACHINE_ARCH}
 #WITH_MYSQL=		yes
 #WITH_PGSQL=		yes
 
+# Only define WITH_IPV6 on systems with IPv6 support compiled into the
+# kernel.  Exim's IPv6 support is still experimental.
+#WITH_IPV6=		yes
+
 # If WITH_LDAP is defined, LDAP_LIB_TYPE must be one of UMICHIGAN,
 # NETSCAPE or SOLARIS7.
 LDAP_LIB_TYPE=UMICHIGAN
@@ -133,6 +137,10 @@ SEDLIST+=	-e 's,XX_PGSQL_LIBS_XX,-L${PREFIX}/pgsql/lib -lpq,' \
 SEDLIST+=	-e 's,XX_PGSQL_[^ ]*_XX,,'
 .endif
 
+.if defined(WITH_IPV6)
+SEDLIST+=	-e 's,^\# HAVE_IPV6=,HAVE_IPV6=,'
+.endif
+
 .if !defined(WITH_PGSQL) && !defined(WITH_MYSQL) && !defined(WITH_LDAP)
 SEDLIST+=	-e 's,^LOOKUP_LIBS,\#LOOKUP_LIBS,' \
 		-e 's,^LOOKUP_INCLUDE,\#LOOKUP_INCLUDE,'
@@ -166,12 +174,13 @@ do-configure:
 	done
 
 post-build:
-	${INSTALL_SCRIPT} ${FILESDIR}/exim.sh \
-		${WRKSRC}/build-${OPSYS}-${MACHINE_ARCH}
 	${TOUCH} ${WRKSRC}/build-${OPSYS}-${MACHINE_ARCH}/eximon.bin
 	${TOUCH} ${WRKSRC}/build-${OPSYS}-${MACHINE_ARCH}/eximon
 
 pre-install:
 	@PKG_PREFIX="${PREFIX}" ${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
+
+post-install:
+	${INSTALL_SCRIPT} ${FILESDIR}/exim.sh ${PREFIX}/etc/rc.d
 
 .include <bsd.port.mk>

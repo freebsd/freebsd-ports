@@ -1,22 +1,19 @@
-This patch makes four changes to the exim_install script:
+This patch makes three changes to the exim_install script:
 
-1) Changes the test used to determine whether a file should be installed
+*) Changes the test used to determine whether a file should be installed
    to cope with files which we "touch" to zero bytes for packaging
    purposes.
 
-2) Causes an exim.sh startup script to be installed in the BSD-style
-   ${PREFIX}/etc/rc.d
-
-3) Causes the configure file to be installed as a sample only.  The
+*) Causes the configure file to be installed as a sample only.  The
    administrator needs to rename this file to "activate" exim.
 
-4) Changes the invocation of make-info to be less prone to fail on
+*) Changes the invocation of make-info to be less prone to fail on
    silly errors.  XXX Check that this is still necessary from time
    to time.
 
 --- scripts/exim_install.orig	Mon Aug  2 17:43:03 1999
 +++ scripts/exim_install	Tue Aug  3 14:31:20 1999
-@@ -142,9 +142,9 @@
+@@ -146,9 +146,9 @@
      from=../util/
    fi
  
@@ -28,31 +25,13 @@ This patch makes four changes to the exim_install script:
      echo $com "*** Have you built Exim successfully?"
      echo $com "*** Exim installation ${ver}failed ***"
      exit 1
-@@ -195,25 +195,40 @@
+@@ -199,25 +199,20 @@
    fi
  done
  
-+# Install exim.sh startup script in FreeBSD's ${PREFIX}/etc/rc.d so that
-+# exim will start up on boot once sendmail is disabled and
-+# ${PREFIX}/etc/exim/configure is in place.
- 
-+echo $com ""
- 
+-
+-
 -# If there is no configuration file, install the default.
-+if [ -f ${PREFIX}/etc/rc.d/exim.sh ]; then
-+  echo $com "${PREFIX}/etc/rc.d/exim.sh exists, not overwritten"
-+else
-+  echo $com "Installing exim.sh startup script in ${PREFIX}/etc/rc.d"
-+  ${real} mkdir -p ${PREFIX}/etc/rc.d
-+  echo ${CP} -p exim.sh ${PREFIX}/etc/rc.d/
-+  ${real} ${CP} -p exim.sh ${PREFIX}/etc/rc.d/
-+  if [ $? -ne 0 ]; then
-+    echo $com ""
-+    echo $com "**** Exim installation ${ver}failed ****"
-+    exit 1
-+  fi
-+fi
-+
 +# Install only a sample configuration, which encourages the admin to look
 +# at it, since Exim won't run without a configure file.
  
@@ -78,7 +57,7 @@ This patch makes four changes to the exim_install script:
  
  # Install info files if the directory is defined and the Texinfo
  # source documentation is present.
-@@ -235,19 +250,21 @@
+@@ -239,19 +234,21 @@
    echo $com Info installation directory is ${INFO_DIRECTORY}
    echo $com ""
  

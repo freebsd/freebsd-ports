@@ -96,10 +96,18 @@
  
  # If you are running Exim as a server, note that just building it with TLS
  # support is not usually all you need to do. You normally need to set up a
-@@ -573,5 +576,6 @@
+@@ -573,5 +576,14 @@
  # chapter on building and installing Exim.
  
  # USE_TCP_WRAPPERS=yes
 +EXTRALIBS=XX_TCP_WRAPPERS_LIBS_XX XX_PAM_LIBS_XX
++
++
++# IPv6 is coming. Exim has experimental support that has been tried out on
++# one or two OS. See the file README.IPV6 for the current status of this
++# support. Do not set this option unless you are working on IPv6 and know
++# what you are doing.
++
++# HAVE_IPV6=yes
  
  # End of EDITME
