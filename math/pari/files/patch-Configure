@@ -1,0 +1,14 @@
+--- Configure	2002/05/22 08:28:37	1.1
++++ Configure	2002/05/22 08:30:16
+@@ -1005,7 +1005,10 @@
+ #    aix-*)  DLSUFFIX=a  ;; dynamic linking does not work!
+     sunos-*) sodest=$VersionMajor$VersionMinor.$patch
+              soname=$sodest;;
+-    *-alpha|solaris-*|linux-*|freebsd-*)
++    freebsd-*)
++	sodest=1
++	soname=$sodest;;
++    *-alpha|solaris-*|linux-*)
+       case $libpari_base in
+         pari) sodest=$version.$patch;; # released versions
+         *) sodest=$patch.0.0;; # unstable versions

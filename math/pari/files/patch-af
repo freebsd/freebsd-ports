@@ -1,5 +1,5 @@
---- config/Makefile.SH.orig	Thu Sep 27 19:58:38 2001
-+++ config/Makefile.SH	Thu Mar 14 11:31:40 2002
+--- config/Makefile.SH.orig	Thu Sep 27 10:58:38 2001
++++ config/Makefile.SH	Wed May 22 01:43:10 2002
 @@ -176,7 +176,7 @@
  LIBDIR = \$(DESTDIR)$libdir
  BINDIR = \$(DESTDIR)$bindir
@@ -44,7 +44,23 @@
  
  install-lib-sta: \$(LIBPARI_STA)
  	-mkdir -p \$(LIBDIR)
-@@ -457,13 +457,13 @@
+@@ -401,6 +401,7 @@
+ 	-mkdir -p \$(LIBDIR)
+ 	-\$(RM) \$(LIBDIR)/\$(LIBPARI_DYN)
+ 	\$(INSTALL_PROGRAM) \$(LIBPARI_DYN) \$(LIBDIR)/\$(LIBPARI_DYN)
++	\$(LN) \$(LIBPARI_DYN) \$(LIBDIR)/\$(LIBPARI_SO)
+ EOT
+ if test "$soname" != "$sodest"; then
+   cat >> $file << EOT
+@@ -429,6 +430,7 @@
+ \$(LIBPARI_DYN): \$(OBJS)
+ 	-\$(RM) \$(LIBPARI_DYN)
+ 	\$(DLLD) -o \$@ \$(DLLDFLAGS) \$(OBJS) \$(EXTRADLLDFLAGS)
++	\$(LN) \$(LIBPARI_DYN) \$(LIBPARI_SO)
+ EOT
+     if test "$soname" != "$sodest"; then
+       cat >> $file << EOT
+@@ -457,13 +459,13 @@
  
  if test -n "$emacs"; then
    cat >> $file << EOT
