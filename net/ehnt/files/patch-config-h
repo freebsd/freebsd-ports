@@ -1,11 +1,18 @@
---- config.h.orig	Wed Jul 18 00:47:37 2001
-+++ config.h		Fri Aug  3 19:57:51 2001
-@@ -27,3 +27,8 @@
- #define DEFAULT_UDP_PORT	4444
+
+$FreeBSD$
+
+--- config.h.orig	Thu Oct  4 22:18:29 2001
++++ config.h	Thu Nov 14 22:20:47 2002
+@@ -32,4 +32,12 @@
  /* The default mode of the client.  Can be either EM_REPORT or EM_DUMP.*/
- #define EM_DEFAULT EM_REPORT
-+
+ #define EM_DEFAULT EM_TOP
+ 
 +#ifndef ASNCDIR
 +#define ASNCDIR "."
 +#endif
-+
+ 
++/* Default size of socket buffer. FreeBSD default is Limited to 256k,
++    + * but misteriously enough maximum space available for buf is 233016 */
++#define DEFAULT_SOCKBUF                (192*1024)
++/* Reasonable minimum socket buffer size. I assume it's about 16k */
++#define MIN_SOCKBUF            (16*1024)
