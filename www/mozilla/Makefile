@@ -308,8 +308,8 @@ pre-install:
 do-install:
 	${MKDIR} ${PREFIX}/lib/${MOZILLA}
 	${CHMOD} 755 ${PREFIX}/lib/${MOZILLA}
-	${INSTALL_SCRIPT} ${FAKEDIR}/lib/mozilla ${PREFIX}/lib/${MOZILLA}
-	${INSTALL_SCRIPT} ${FAKEDIR}/lib/mozilla-config ${PREFIX}/lib/${MOZILLA}
+	${INSTALL_SCRIPT} ${FAKEDIR}/bin/mozilla ${PREFIX}/lib/${MOZILLA}
+	${INSTALL_SCRIPT} ${FAKEDIR}/bin/mozilla-config ${PREFIX}/lib/${MOZILLA}
 	${REINPLACE_CMD} -e 's|${FAKEDIR}|${PREFIX}|g' \
 		${PREFIX}/lib/${MOZILLA}/mozilla \
 		${PREFIX}/lib/${MOZILLA}/mozilla-config
