@@ -1,0 +1,21 @@
+KOrganizer is a several things. It is a calendar. It is a program to
+keep track of your appointments. It is a prioritized todo list. It
+coordinates scheduling between different people or groups. In short,
+it is a program which tries to help you keep your life organized,
+hence the simple, yet appropriate name. You may have encountered
+similar programs for both UNIX and Windows such as plan, Netscape
+Calendar, Microsoft Outlook, and Ecco Pro. All of these programs fall
+under the same general category of "PIM," or Personal Information
+Manager, and they all more or less try to do the same things, though
+often with different angles of approach.
+
+KOrganizer is the first free PIM for Unix which implements the
+vCalendar protocol for personal data interchange. This
+vendor-independent, open standard allows different programs and
+devices to share/synchronize appointment and calendar information
+without proprietary standards. The data is stored in ASCII and is
+easily human-readable. While some Windows programs have implemented a
+limited import/export ability for their native formats to vCalendar,
+KOrganizer's native file format on disk is vCalendar, so it bypasses
+this middle-step entirely. It also allows you to easily access your
+data without the program itself, in the spirit of other UNIX programs.

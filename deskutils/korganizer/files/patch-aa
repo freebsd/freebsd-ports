@@ -1,0 +1,11 @@
+--- src/Makefile.in.orig	Sat May 23 18:08:36 1998
++++ src/Makefile.in	Sat May 23 18:08:51 1998
+@@ -160,7 +160,7 @@
+ 
+ # the library search path. 
+ #korganizer_LDFLAGS = $(all_libraries) $(KDE_RPATH)
+-korganizer_LDFLAGS = $(all_libraries) -Wl,-rpath -Wl,$(KDEDIR)/lib
++korganizer_LDFLAGS = $(all_libraries)
+ 
+ # the libraries to link against. Be aware of the order. First the libraries,
+ # that depend on the following ones.
