@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	nut
-PORTVERSION=	10.14
+PORTVERSION=	10.15
 CATEGORIES=	misc
 MASTER_SITES=	http://www.lafn.org/~av832/ \
 		http://voodoo.oberon.net/download/
