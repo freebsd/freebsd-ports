@@ -1,0 +1,4 @@
+This module provides convenience methods that let you easily create
+DateTime::Set objects for common recurrences, such as "monthly" or "daily".
+
+WWW: http://datetime.perl.org/
