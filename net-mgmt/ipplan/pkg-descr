@@ -1,0 +1,8 @@
+IPplan is a free (GPL), web based, multilingual, IP address management and
+tracking tool written in php4, simplifying the administration of your IP
+address space. IPplan goes beyond IP address management including DNS
+administration, configuration file management, circuit management and
+storing of hardware information. IPplan can handle a single network or
+cater for multiple networks and customers with overlapping address space.
+
+WWW: http://iptrack.sourceforge.net/
