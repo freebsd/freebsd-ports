@@ -7,10 +7,9 @@
 #
 
 PORTNAME=	ggz-client-libs
-PORTVERSION=	0.0.8
-PORTREVISION=	1
+PORTVERSION=	0.0.9
 CATEGORIES=	games
-MASTER_SITES=	http://ggzgamingzone.org/pub/ggz/%SUBDIR%/
+MASTER_SITES=	http://ftp.ggzgamingzone.org/pub/ggz/%SUBDIR%/
 MASTER_SITE_SUBDIR=	${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
@@ -21,7 +20,7 @@ LIB_DEPENDS=	popt.0:${PORTSDIR}/devel/popt \
 		expat.5:${PORTSDIR}/textproc/expat2
 
 USE_GNOME=	gnometarget
-GNU_CONFIGURE=	yes
+USE_LIBTOOL_VER=	15
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 CONFIGURE_ARGS=	--disable-debug
 INSTALLS_SHLIB=	yes
