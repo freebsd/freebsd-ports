@@ -1,5 +1,5 @@
-# New ports collection makefile for:	ezmlm
-# Version required:     0.322
+# New ports collection makefile for:	ezmlm-idx
+# Version required:     0.40
 # Date created:		28 November 1998
 # Whom:			Neil Blakey-Milner <nbm@rucus.ru.ac.za>
 #
@@ -8,8 +8,17 @@
 DISTNAME=	ezmlm-idx-${IDX_VERSION}
 CATEGORIES=	mail
 MASTER_SITES=	ftp://ftp.ezmlm.org/pub/patches/ \
+		ftp://ftp.rivertown.net/pub/ezmlm/ \
+		ftp://ftp.crc.ca/ftp/packages/mail/ezmlm-patches-fred/ \
+		http://ftp.crc.ca/ftp/ftp/packages/mail/ezmlm-patches-fred/ \
+		ftp://ftp.win.or.jp/pub/network/mail/qmail/ezmlm-idx/ \
+		ftp://jp.ezmlm.org/ezmlm/ \
+		ftp://de.ezmlm.org/pub/ \
 		ftp://gd.tuwien.ac.at/infosys/mail/qmail/ezmlm-patches/ \
-		ftp://ftp.win.or.jp/pub/network/mail/qmail/ezmlm-idx/
+		http://gd.tuwien.ac.at/infosys/mail/qmail/ezmlm-patches/ \
+		ftp://pl.ezmlm.org/ \
+		ftp://uk.ezmlm.org/pub/ \
+		ftp://ftp.eos.hokudai.ac.jp/pub/mail/qmail/ezmlm-idx/
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 		ezmlm-${EZMLM_VERSION}${EXTRACT_SUFX}
 
@@ -35,11 +44,11 @@ NO_PACKAGE=	Unsure of djb's license
 
 WRKSRC=		${WRKDIR}/ezmlm-${EZMLM_VERSION}
 
-MAN1=	ezmlm-accept.1 ezmlm-check.1 ezmlm-clean.1 ezmlm-cron.1 \
-	ezmlm-gate.1 ezmlm-get.1 ezmlm-glconf.1 ezmlm-grant.1 \
-	ezmlm-idx.1 ezmlm-issubn.1 ezmlm-limit.1 ezmlm-list.1 \
-	ezmlm-make.1 ezmlm-manage.1 ezmlm-mktab.1 ezmlm-moderate.1 \
-	ezmlm-receipt.1 ezmlm-reject.1 ezmlm-request.1 \
+MAN1=	ezmlm-accept.1 ezmlm-archive.1 ezmlm-cgi.1 ezmlm-check.1 \
+	ezmlm-clean.1 ezmlm-cron.1 ezmlm-gate.1 ezmlm-get.1 \
+	ezmlm-glconf.1 ezmlm-idx.1 ezmlm-issubn.1 ezmlm-limit.1 \
+	ezmlm-list.1 ezmlm-make.1 ezmlm-manage.1 ezmlm-mktab.1 \
+	ezmlm-moderate.1 ezmlm-reject.1 ezmlm-request.1 \
 	ezmlm-return.1 ezmlm-send.1 ezmlm-split.1 ezmlm-store.1 \
 	ezmlm-sub.1 ezmlm-test.1 ezmlm-tstdig.1 ezmlm-unsub.1 \
 	ezmlm-warn.1 ezmlm-weed.1
@@ -47,16 +56,16 @@ MAN5=	ezmlm.5 ezmlmglrc.5 ezmlmrc.5 ezmlmsubrc.5
 
 DIFF_MSG=	Cannot Make and Install with different PREFIX or QMAIL_DIR
 
-MY_PROGRAMS=	clean cron gate get idx issubn list make manage \
-		moderate receipt request reject return send split \
-		store sub tstdig unsub warn weed
+MY_PROGRAMS=	archive cgi clean cron gate get idx issubn limit \
+		list make manage moderate request reject return \
+		send split store sub tstdig unsub warn weed
 
-MY_SCRIPTS=	accept check glconf grant mktab test
+MY_SCRIPTS=	accept check glconf mktab test
 
 MY_CONFIG=	ezmlmglrc ezmlmrc ezmlmsubrc
 
 EZMLM_VERSION=	0.53
-IDX_VERSION=	0.322
+IDX_VERSION=	0.40
 
 PLIST=		${WRKDIR}/PLIST
 
