@@ -1,0 +1,20 @@
+Use the TCL_STUBS when compiling and linking loadable TCL modules.
+The need for stubs should be detectable by configure, I guess, but
+I'm lazy today...
+
+	-mi
+
+--- lib/Makefile.in	Mon May  1 16:31:01 2000
++++ lib/Makefile.in	Sun Apr  8 16:58:09 2001
+@@ -68,2 +68,4 @@
+ DUMMYLIB = ratDummy${SHLIB_SUFFIX}
++CFLAGS+= -DUSE_TCL_STUBS
++SHLIB_LD_LIBS+=-L${prefix}/lib -ltclstub83
+ 
+--- util/Makefile.in	Mon May  1 16:31:01 2000
++++ util/Makefile.in	Sun Apr  8 17:19:49 2001
+@@ -69,2 +69,4 @@
+ BUSYLIB = blt_busy${BUSYLIB_SUFFIX}
++CFLAGS+= -DUSE_TCL_STUBS
++SHLIB_LD_LIBS+=-L${prefix}/lib -ltclstub83
+ 
