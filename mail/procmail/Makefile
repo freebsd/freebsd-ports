@@ -7,6 +7,7 @@
 
 PORTNAME=	procmail
 PORTVERSION=    3.22
+PORTREVISION=   1
 CATEGORIES=	mail
 MASTER_SITES=	ftp://ftp.procmail.org/pub/procmail/ \
 		ftp://ftp.psg.com/pub/unix/procmail/ \
