@@ -1,0 +1,11 @@
+--- Makefile.orig	Mon Sep 29 07:01:15 2003
++++ Makefile	Mon Sep 29 07:01:23 2003
+@@ -2,7 +2,7 @@
+ # Written by Stanislav Shalunov.
+ # $Id: Makefile,v 1.4 1999/08/04 18:30:02 shalunov Exp $
+ 
+-PREFIX=/usr/local
++PREFIX?=/usr/local
+ BINDIR=$(PREFIX)/sbin
+ MANDIR=$(PREFIX)/man/man8
+ 
