@@ -1,0 +1,17 @@
+PC/SC-Lite has been installed.
+Now you need to fetch a driver for your smartcard reader.
+
+Please see http://www.linuxnet.com/sourcedrivers.html
+
+After installing the driver, please update the pcscd configuration file:
+
+        %%PREFIX%%/etc/reader.conf
+
+    by using the default:
+
+        %%PREFIX%%/etc/reader.conf.sample
+
+ default start-up script for pcscd has been installed in the location
+
+        %%PREFIX%%/etc/rc.d/pcscd.sh.sample
+
