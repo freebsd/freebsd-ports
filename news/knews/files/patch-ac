@@ -1,0 +1,18 @@
+--- knews.tmpl.orig	Sat Mar 21 14:23:28 1998
++++ knews.tmpl	Sat Mar 21 14:24:52 1998
+@@ -74,12 +74,12 @@
+  *  be changed to -lz.
+  */
+ 
+-JPEG_LIB	= -ljpeg
+-PNG_LIB		= -lpng -lgz -lm
++JPEG_LIB	= -L!!LOCALBASE!!/lib -ljpeg
++PNG_LIB		= -lpng -lz -lm
+ 
+ 
+ /*
+  *  If you need to add include paths for e.g. libjpeg, libpng or libzlib
+  *  include files, do it here.
+  */
+-KNEWS_INCLUDES	=
++KNEWS_INCLUDES	= -I!!LOCALBASE!!/include
