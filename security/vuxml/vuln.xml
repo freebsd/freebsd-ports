@@ -137,12 +137,14 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     </description>
     <references>
       <url>http://marc.theaimsgroup.com/?l=bugtraq&amp;m=108023246916294&amp;w=2</url>
+      <url>http://bugs.mysql.com/bug.php?id=3284</url>
       <bid>9976</bid>
       <cvename>CAN-2004-0381</cvename>
     </references>
     <dates>
       <discovery>2004-03-25</discovery>
       <entry>2004-04-16</entry>
+      <modified>2004-04-30</modified>
     </dates>
   </vuln>
 
@@ -205,6 +207,10 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 	<name>neon</name>
 	<range><lt>0.24.5</lt></range>
       </package>
+      <package>
+	<name>tla</name>
+	<range><lt>tla-1.2_1</lt></range>
+      </package>
     </affects>
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
@@ -214,8 +220,9 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
           crafted PROPFIND or PROPPATCH responses.</p>
 	<p>Although several applications include neon, such as cadaver and
 	  subversion, the FreeBSD Ports of these applications are not
-	  affected.  They are specifically configured to NOT use the
-	  included neon.</p>
+	  impacted.  They are specifically configured to NOT use the
+	  included neon.  Only packages listed as affected in this
+	  notice are believed to be impacted.</p>
       </body>
     </description>
     <references>
@@ -225,6 +232,7 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     <dates>
       <discovery>2004-04-14</discovery>
       <entry>2004-04-15</entry>
+      <modified>2004-04-30</modified>
     </dates>
   </vuln>
 
