@@ -1,5 +1,5 @@
---- gcc/config/i386/freebsd.h.orig	Fri Apr  9 13:31:31 1999
-+++ gcc/config/i386/freebsd.h	Wed Apr 21 17:36:21 1999
+--- gcc/config/i386/freebsd.h.orig	Sun May 23 12:42:51 1999
++++ gcc/config/i386/freebsd.h	Wed May 26 02:08:55 1999
 @@ -21,6 +21,17 @@
  the Free Software Foundation, 59 Temple Place - Suite 330,
  Boston, MA 02111-1307, USA.  */
@@ -114,16 +114,14 @@
 +    %{symbolic:-Bsymbolic} \
 +    %{!shared: \
        %{!static: \
--	%{rdynamic:-export-dynamic} \
--	%{!dynamic-linker:-dynamic-linker /usr/libexec/ld-elf.so.1}} \
--	%{static:-static}}}"
-+	%{rdynamic: -export-dynamic} \
-+	%{!dynamic-linker: -dynamic-linker /usr/libexec/ld-elf.so.1}} \
+ 	%{rdynamic:-export-dynamic} \
+ 	%{!dynamic-linker:-dynamic-linker /usr/libexec/ld-elf.so.1}} \
+-	%{static:-Bstatic}}}"
 +      %{static:-Bstatic}}}"
  
- /* Get perform_* macros to build libgcc.a.  */
- 
-@@ -204,3 +226,15 @@
+ /* A C statement to output to the stdio stream FILE an assembler
+    command to advance the location counter to a multiple of 1<<LOG
+@@ -202,3 +224,15 @@
      else fprintf ((FILE), "\t.p2align %d,,%d\n", (LOG), (MAX_SKIP)); \
    }
  #endif
