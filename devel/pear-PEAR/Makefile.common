@@ -210,7 +210,7 @@ do-install-scriptfiles: do-install-scriptfiles-msg
 .  for file in ${SCRIPTFILES}
 	@${MV} ${WRKSRC}/pear-${file} ${WRKSRC}/${file}
 	@${REINPLACE_CMD} -e "s|@php_bin@|${SCRIPTFILESDIR}/php|g" ${WRKSRC}/${file}
-	@${INSTALL_DATA} ${WRKSRC}/${file} ${SCRIPTFILESDIR}/${file}
+	@${INSTALL_SCRIPTS} ${WRKSRC}/${file} ${SCRIPTFILESDIR}/${file}
 	@${CHMOD} 555 ${SCRIPTFILESDIR}/${file}
 .  endfor
 . endif
