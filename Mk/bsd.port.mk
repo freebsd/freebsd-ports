@@ -146,6 +146,7 @@ FreeBSD_MAINTAINER=	asami@FreeBSD.org
 # USE_X_PREFIX	- Says that the port installs in ${X11BASE}.  Implies USE_XLIB.
 # USE_XLIB		- Says that the port uses X libraries.
 # USE_QT		- Says that the port uses version 1 of the qt toolkit.
+#				  Implies USE_NEWGCC.
 # USE_QT2		- Says that the port uses version 2 of the qt toolkit.
 #				  Implies USE_NEWGCC.
 #
@@ -573,7 +574,8 @@ PREFIX?=		${LOCALBASE}
 
 .if defined(USE_OPENSSL)
 .if ${OSVERSION} >= 400014
-.if !exists(/usr/lib/libcrypto.a)
+.if !exists(/usr/lib/libcrypto.so)
+.BEGIN:
 	@${ECHO} "This port requires the OpenSSL library, which is part of"
 	@${ECHO} "the FreeBSD crypto distribution but not installed on your"
 	@${ECHO} "machine. Please see Chapter 6.5 in the handbook for"
@@ -581,16 +583,6 @@ PREFIX?=		${LOCALBASE}
 	@${ECHO} "OpenSSL distribution."
 	@${FALSE}
 .else
-.if ${USE_OPENSSL} == RSA
-_HASRSA= "`/usr/bin/nm /usr/lib/libcrypto.a | /usr/bin/grep RSA_free`"
-.if empty(_HASRSA)
-.BEGIN:
-	@${ECHO} "This port requires RSA crypto, which is not present in your"
-	@${ECHO} "version of OpenSSL. Please see Chapter 6.5 in the handbook"
-	@${ECHO} "for a description of the problem and alternative solutions."
-	@${FALSE}
-.endif
-.endif
 OPENSSLBASE=	/usr
 OPENSSLDIR=		/etc/ssl
 # OpenSSL in the base system doesn't include IDEA for patent reasons.
@@ -2435,23 +2427,31 @@ misc-depends:
 
 .endif
 
+# Clean dependency lists: build and runtime.  Print out directory names.
+
+clean-depends-list:
+	@${CLEAN-DEPENDS-LIST}
+
+CLEAN-DEPENDS-LIST= \
+	checked="${PARENT_CHECKED}"; \
+	for dir in $$(${ECHO} "${FETCH_DEPENDS} ${BUILD_DEPENDS} ${LIB_DEPENDS} ${RUN_DEPENDS}" | ${TR} '\040' '\012' | ${SED} -e 's/^[^:]*://' -e 's/:.*//') $$(${ECHO} ${DEPENDS} | ${TR} '\040' '\012' | ${SED} -e 's/:.*//'); do \
+		if [ -d $$dir ]; then \
+			if (${ECHO} $$checked | ${GREP} -qwv "$$dir"); then \
+				child=$$(cd $$dir; ${MAKE} PARENT_CHECKED="$$checked" clean-depends-list); \
+				for d in $$child; do ${ECHO} $$d; done; \
+				${ECHO} $$dir; \
+				checked="$$dir $$child $$checked"; \
+			fi; \
+		else \
+			${ECHO_MSG} "${PKGNAME}: \"$$dir\" non-existent -- dependency list incomplete" >&2; \
+		fi; \
+	done | sort -u
+
 .if !target(clean-depends)
 clean-depends:
-.if defined(FETCH_DEPENDS) || defined(BUILD_DEPENDS) || defined(LIB_DEPENDS) \
-	|| defined(RUN_DEPENDS)
-	@for dir in `${ECHO} "${FETCH_DEPENDS} ${BUILD_DEPENDS} ${LIB_DEPENDS} ${RUN_DEPENDS}" | ${TR} '\040' '\012' | ${SED} -e 's/^[^:]*://' -e 's/:.*//' | sort -u`; do \
-		if [ -d $$dir ] ; then \
-			(cd $$dir; ${MAKE} NOCLEANDEPENDS=yes clean clean-depends); \
-		fi \
+	@for dir in `${CLEAN-DEPENDS-LIST}`; do \
+		(cd $$dir; ${MAKE} NOCLEANDEPENDS=yes clean); \
 	done
-.endif
-.if defined(DEPENDS)
-	@for dir in `${ECHO} "${DEPENDS}" | ${TR} '\040' '\012' | ${SED} -e 's/:.*//' | sort -u`; do \
-		if [ -d $$dir ] ; then \
-			(cd $$dir; ${MAKE} NOCLEANDEPENDS=yes clean clean-depends); \
-		fi \
-	done
-.endif
 .endif
 
 # Dependency lists: build and runtime.  Print out directory names.
@@ -2480,14 +2480,29 @@ RUN-DEPENDS-LIST= \
 		fi; \
 	done | sort -u
 
-# This one does not print out directory names -- it could take a long time.
-package-depends:
-	@for dir in `${ECHO} "${LIB_DEPENDS} ${RUN_DEPENDS}" | ${TR} '\040' '\012' | ${SED} -e 's/^[^:]*://' -e 's/:.*//' | sort -u` `${ECHO} ${DEPENDS} | ${TR} '\040' '\012' | ${SED} -e 's/:.*//' | sort -u`; do \
+# Clean dependency lists: build and runtime.  Print out directory names.
+
+package-depends-list:
+	@${PACKAGE-DEPENDS-LIST}
+
+PACKAGE-DEPENDS-LIST= \
+	checked="${PARENT_CHECKED}"; \
+	for dir in $$(${ECHO} "${LIB_DEPENDS} ${RUN_DEPENDS}" | ${TR} '\040' '\012' | ${SED} -e 's/^[^:]*://' -e 's/:.*//') $$(${ECHO} ${DEPENDS} | ${TR} '\040' '\012' | ${SED} -e 's/:.*//'); do \
 		if [ -d $$dir ]; then \
-			(cd $$dir ; ${MAKE} package-name package-depends); \
+			if (${ECHO} $$checked | ${GREP} -qwv "$$dir"); then \
+				child=$$(cd $$dir; ${MAKE} PARENT_CHECKED="$$checked" package-depends-list); \
+				for d in $$child; do ${ECHO} $$d; done; \
+				${ECHO} $$dir; \
+				checked="$$dir $$child $$checked"; \
+			fi; \
 		else \
 			${ECHO_MSG} "${PKGNAME}: \"$$dir\" non-existent -- dependency list incomplete" >&2; \
 		fi; \
+	done | sort -u
+
+package-depends:
+	@for dir in `${PACKAGE-DEPENDS-LIST}`; do \
+		(cd $$dir; ${MAKE} package-name); \
 	done
 
 ################################################################
