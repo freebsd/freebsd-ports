@@ -21,7 +21,7 @@ USE_REINPLACE=	yes
 USE_SIZE=	yes
 INSTALLS_SHLIB=	yes
 
-CONFIGURE_ARGS= --enable-shared \
+CONFIGURE_ARGS=	--enable-shared \
 		--with-x
 
 MAN1=	extract_mpeg2.1 mpeg2dec.1
@@ -31,12 +31,8 @@ CONFIGURE_ARGS+=	--enable-mga
 .endif
 
 .ifdef(WITH_SDL)
-LIB_DEPENDS+=	SDL-1.1:${PORTSDIR}/devel/sdl12
-
+USE_SDL=	yes
 EXTRA_PATCHES+=	${FILESDIR}/extra-patch-libvo::configure.incl
-SDL_CONFIG?=    ${LOCALBASE}/bin/sdl11-config
-
-CONFIGURE_ENV+=  SDL_CONFIG="${SDL_CONFIG}"
 CONFIGURE_ARGS+=	--enable-sdl
 .else
 CONFIGURE_ARGS+=	--disable-sdl
