@@ -1,0 +1,48 @@
+--- src/gui/wxMApp.cpp.orig	Sat Sep 30 12:10:50 2000
++++ src/gui/wxMApp.cpp	Sun Nov 12 05:30:09 2000
+@@ -561,7 +561,11 @@
+       {
+ #ifdef OS_UNIX
+          String localePath;
++#ifdef __FreeBSD__
++         localePath << M_PREFIX << "/share/locale";
++#else
+          localePath << M_BASEDIR << "/locale";
++#endif
+ #elif defined(OS_WIN)
+          InitGlobalDir();
+          String localePath;
+@@ -835,7 +839,12 @@
+          READ_APPCONFIG(MP_HELPBROWSER),
+          READ_APPCONFIG(MP_HELPBROWSER_ISNS));
+ #endif
++#ifdef __FreeBSD__
++      helpfile = M_PREFIX;
++      helpfile += "/share/doc/Mahogany";
++#else
+       helpfile = GetGlobalDir()+"/doc";
++#endif // __FreeBSD__
+ #else // Windows
+       helpfile = GetGlobalDir()+"\\doc\\Mahogany.hlp";
+ #endif // Unix/Windows
+--- src/gui/wxMDialogs.cpp.orig	Sun Nov 12 04:24:18 2000
++++ src/gui/wxMDialogs.cpp	Sun Nov 12 05:19:40 2000
+@@ -1006,15 +1006,9 @@
+ {
+    String dir, filename;
+ 
+-   // Tips files are in @prefix@/share/Mahogany/doc/Tips/
+-   dir = mApplication->GetGlobalDir();
+-   if ( !dir )
+-   {
+-      // like this, it will work in an uninstalled copy of M too
+-      dir = "..";
+-   }
+-
+-   dir << DIR_SEPARATOR << "doc" << DIR_SEPARATOR << "Tips" << DIR_SEPARATOR;
++   // Tips files are in @prefix@/share/doc/Mahogany/Tips/
++   dir << M_PREFIX << DIR_SEPARATOR << "share" << DIR_SEPARATOR << "doc";
++   dir << DIR_SEPARATOR << "Mahogany" << DIR_SEPARATOR << "Tips" << DIR_SEPARATOR;
+ 
+    // Tips files are either Tips_LOCALENAME.txt, e.g. Tips_de.txt or
+    // simply Tips.txt

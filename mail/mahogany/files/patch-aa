@@ -1,0 +1,91 @@
+--- configure.in.orig	Wed Nov  8 10:21:36 2000
++++ configure.in	Sun Nov 12 03:40:33 2000
+@@ -309,9 +309,19 @@
+ AC_SUBST(MAKE_USE_LEAKTRACER)
+ 
+ case "$USE_THREADS" in 1)
+-	AC_CHECK_LIB(pthread,main,,AC_CHECK_LIB(pthreads,main))
++	AC_CHECK_LIB(pthread,main,threaded_lib=pthread,
++		AC_CHECK_LIB(pthreads,main,threaded_lib=pthreads,
++			AC_CHECK_LIB(c_r,pthread_self,threaded_lib=c_r,
++				threaded_lib=none)
++		)
++	)
+ 	AC_DEFINE(USE_THREADS)
+-	LIBS="$LIBS -lpthread"
++	case "$threaded_lib" in
++	none)		;;
++	pthread*)	LIBS="$LIBS -lpthread" ;;
++	c_r)		CPPFLAGS="$CPPFLAGS -D_THREAD_SAFE"
++			LIBS="-pthread $LIBS" ;;
++	esac
+ esac
+ 
+ dnl set debug/optimisation flags
+@@ -456,15 +466,16 @@
+ 
+ dnl libresolv or libbind (or simply libc under FreeBSD)
+ USE_RBL=1
+-AC_CHECK_LIB(resolv,res_query,,
+-	AC_CHECK_LIB(bind,res_query,,
+-      AC_CHECK_LIB(r,res_query,,
+-         [
+-            AC_MSG_WARN(cannot use RBL spam checker.)
+-            USE_RBL=0
+-         ]
+-      )
+-   )
++AC_CHECK_FUNC(res_query,,
++  [AC_CHECK_LIB(resolv,res_query,,
++     [AC_CHECK_LIB(bind,res_query,,
++	[AC_CHECK_LIB(r,res_query,,
++	   [AC_MSG_WARN(cannot use RBL spam checker.)
++	      USE_RBL=0
++	   ]
++	])
++     ])
++  ])
+ )
+ 
+ case "$USE_RBL" in 1) AC_DEFINE(USE_RBL) ;; esac
+--- Makefile.orig	Mon Nov  6 14:58:02 2000
++++ Makefile	Sun Nov 12 06:48:56 2000
+@@ -18,7 +18,7 @@
+ M := mahogany-$(M_VERSION_MAJOR).$(M_VERSION_MINOR)
+ 
+ doc:
+-	set -e; for i in extra doc; do $(MAKE) -C $$i doc; done
++	set -e; for i in extra; do $(MAKE) -C $$i doc; done
+ 
+ classdoc:
+ 	set -e; for i in doc; do $(MAKE) -C $$i doc; done
+@@ -63,12 +63,6 @@
+ 	   $(BINDIR) \
+ 	   $(DATADIR) \
+ 	   $(DOCDIR) \
+-	   $(DATADIR)/$(CANONICAL_HOST) \
+-	   $(DATADIR)/$(CANONICAL_HOST)/bin \
+-	   $(DATADIR)/$(CANONICAL_HOST)/lib \
+-	   $(DATADIR)/bin \
+-	   $(DATADIR)/lib \
+-	   $(DATADIR)/doc \
+ 	   $(DOCDIR)/Tips \
+ 	;do $(INSTALL) -d -m 755 $$i; \
+ 	done
+--- makeopts.in.orig	Thu Oct  5 09:48:37 2000
++++ makeopts.in	Sun Nov 12 17:22:51 2000
+@@ -95,11 +95,11 @@
+ # Directory in which to install library files.
+ DATADIR = $(DESTDIR)/share/Mahogany
+ # where to install docs
+-DOCDIR = $(DATADIR)/doc
++DOCDIR = $(DESTDIR)/share/doc/Mahogany
+ 
+ # for the dynamic linker, better than using -rpath
+-LD_RUN_PATH=$(DATADIR)/$(CANONICAL_HOST)/lib
+-MODULEDIR=$(DATADIR)/$(CANONICAL_HOST)/modules
++LD_RUN_PATH=$(DESTDIR)/lib
++MODULEDIR=$(DESTDIR)/libdata/Mahogany/modules
+ 
+ ifdef USE_LIBTOOL
+ LINK = $(LIBTOOL) --mode=link $(CXX) -Wl-r$(LD_RUN_PATH)

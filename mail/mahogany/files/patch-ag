@@ -1,0 +1,16 @@
+--- extra/install/Makefile.orig	Sun Nov 12 06:55:27 2000
++++ extra/install/Makefile	Sun Nov 12 06:56:48 2000
+@@ -16,10 +16,8 @@
+ 	done
+ 	$(INSTALL_DATA) .src/newmail.wav $(DATADIR)
+ 	$(INSTALL_DATA) .src/kylemail.wav $(DATADIR)
+-#	$(INSTALL_DATA) .src/mailcap $(DATADIR)
+-	$(INSTALL_DATA) .src/M.conf $(DATADIR)
+-	$(INSTALL) -d $(DESTDIR)/man/man1 
+-	$(INSTALL_DATA) .src/mahogany.1 $(DESTDIR)/man/man1
+-	$(INSTALL_DATA) .src/mahogany.1 $(DESTDIR)/man/man1/M.1
++	$(INSTALL_DATA) .src/M.conf $(PREFIX)/etc/mahogany.conf.sample
++	$(INSTALL) -d $(PREFIX)/man/man1 
++	$(INSTALL_DATA) .src/mahogany.1 $(PREFIX)/man/man1
+ 
+ .PHONY: install
