@@ -1,0 +1,9 @@
+B::Keywords supplies seven arrays of keywords: @Scalars, @Arrays, @Hashes,
+@Filehandles, @Symbols, @Functions and @Barewords. The @Symbols array includes
+the contents of each of @Scalars, @Arrays, @Hashes and @Filehandles. Similarly,
+@Barewords adds a few non-function keywords (like __DATA__, NULL) to the
+@Functions array.
+
+All additions and modifications are welcome. 
+
+WWW: http://search.cpan.org/dist/B-Keywords/
