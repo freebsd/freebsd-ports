@@ -17,6 +17,8 @@ COMMENT=		IPv6 Conformance Test Platform
 RUN_DEPENDS=	${SITE_PERL}/Expect.pm:${PORTSDIR}/lang/p5-Expect \
 		${SITE_PERL}/${PERL_ARCH}/Digest/MD5.pm:${PORTSDIR}/security/p5-Digest-MD5
 
+BROKEN=		Installs perllocal.pod file
+
 USE_PERL5=	yes
 USE_OPENSSL=	yes
 
