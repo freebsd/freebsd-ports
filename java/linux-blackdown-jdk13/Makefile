@@ -16,7 +16,7 @@ PKGNAMEPREFIX=	linux-blackdown-
 DISTNAME=	j2sdk-${JDK_VERSION}${JDK_VER_SUFFIX}-linux-${ARCH}
 EXTRACT_SUFX=	.bin
 
-MAINTAINER=	znerd@FreeBSD.org
+MAINTAINER=	java@FreeBSD.org
 COMMENT=	Blackdown Java Development Kit 1.3 for Linux
 
 FORBIDDEN=	Vulnerabilities in the browser plugin

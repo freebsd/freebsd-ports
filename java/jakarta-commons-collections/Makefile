@@ -13,7 +13,7 @@ MASTER_SITE_SUBDIR=	commons/collections/source/
 PKGNAMEPREFIX=	jakarta-
 DISTNAME=	${PORTNAME}-${PORTVERSION}-src
 
-MAINTAINER=	znerd@FreeBSD.org
+MAINTAINER=	hq@FreeBSD.org
 COMMENT=	Classes that extend/augment the Java Collections Framework
 
 USE_JAVA=	yes

@@ -10,7 +10,7 @@ PORTVERSION=	0.44
 CATEGORIES=	textproc java
 MASTER_SITES=	http://${PORTNAME}.sourceforge.net/
 
-MAINTAINER=	znerd@FreeBSD.org
+MAINTAINER=	hq@FreeBSD.org
 COMMENT=	Light-weight XML encoding library for Java
 
 USE_JAVA=	yes

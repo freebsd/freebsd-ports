@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_APACHE_XML}
 MASTER_SITE_SUBDIR=	${PORTNAME}/source
 DISTNAME=	${PORTNAME}_${PORTVERSION:S/./_/g}-src
 
-MAINTAINER=	znerd@FreeBSD.org
+MAINTAINER=	hq@FreeBSD.org
 COMMENT=	Apache XSLT processor for transforming XML documents
 
 RUN_DEPENDS=	${LOCALBASE}/bin/javavm:${PORTSDIR}/java/javavmwrapper \

@@ -11,7 +11,7 @@ CATEGORIES=	java net
 MASTER_SITES=	http://www.savarese.org/oro/downloads/download/
 DISTNAME=	NetComponents-${PORTVERSION}
 
-MAINTAINER=	znerd@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Java library with common network protocol implementations
 
 PLIST_FILES=	share/java/classes/NetComponents.jar

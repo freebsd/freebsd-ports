@@ -13,7 +13,7 @@ MASTER_SITE_SUBDIR=	commons/beanutils/source/
 PKGNAMEPREFIX=	jakarta-
 DISTNAME=	${PORTNAME}-${PORTVERSION}-src
 
-MAINTAINER=	znerd@FreeBSD.org
+MAINTAINER=	hq@FreeBSD.org
 COMMENT=	JavaBeans utility library
 
 BUILD_DEPENDS=	${JAR_DEPENDS}

@@ -14,7 +14,7 @@ MASTER_SITES=	http://opensores.thebunker.net/pub/mirrors/cryptix/dist/ \
 MASTER_SITE_SUBDIR=	znerd
 DISTNAME=	${PORTNAME}-${PORTVERSION}-snap
 
-MAINTAINER=	znerd@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	JCE(Java Cryptograph Extension) by Cryptix
 
 USE_JAVA=	1.1+
