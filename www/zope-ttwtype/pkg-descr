@@ -1,0 +1,11 @@
+TTWType - a product for defining new CMF types via the ZMI
+
+You can use TTWType to define new CMF portal types via
+the ZMI (without creating a new product). This is different
+to modifying existing portal types as you can also add new
+fields.
+
+WWW: http://plone.org/collective
+
+- Khairil Yusof
+kaeru@inigo-tech.com
