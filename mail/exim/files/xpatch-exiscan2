@@ -1,7 +1,7 @@
 diff -u scripts/MakeLinks scripts/MakeLinks
 --- scripts/MakeLinks	Sat Jul 17 11:12:00 2004
 +++ scripts/MakeLinks	Sat Jul 17 11:34:48 2004
-@@ -184,7 +184,7 @@
+@@ -185,7 +185,7 @@
  ln -s ../src/osfunctions.h     osfunctions.h
  ln -s ../src/spam.h            spam.h
  ln -s ../src/spf.h             spf.h
@@ -25,7 +25,7 @@ diff -u src/expand.c src/expand.c
 diff -u src/globals.c src/globals.c
 --- src/globals.c	Sat Jul 17 11:12:00 2004
 +++ src/globals.c	Sat Jul 17 11:38:52 2004
-@@ -974,9 +974,12 @@
+@@ -975,9 +975,12 @@
  uschar *spool_directory        = US SPOOL_DIRECTORY
                             "\0<--------------Space to patch spool_directory->";
  #ifdef SRS
@@ -44,7 +44,7 @@ diff -u src/globals.c src/globals.c
 diff -u src/globals.h src/globals.h
 --- src/globals.h	Sat Jul 17 11:12:00 2004
 +++ src/globals.h	Sat Jul 17 11:43:06 2004
-@@ -589,13 +589,16 @@
+@@ -590,13 +590,16 @@
  #endif
  extern uschar *spool_directory;        /* Name of spool directory */
  #ifdef SRS
@@ -88,7 +88,7 @@ diff -u src/readconf.c src/readconf.c
 diff -u src/routers/redirect.c src/routers/redirect.c
 --- src/routers/redirect.c	Sat Jul 17 11:12:00 2004
 +++ src/routers/redirect.c	Sat Jul 17 12:26:47 2004
-@@ -96,11 +96,7 @@
+@@ -98,11 +98,7 @@
        (void *)offsetof(redirect_router_options_block, skip_syntax_errors) },
  #ifdef SRS
    { "srs",                opt_stringptr,
@@ -101,7 +101,7 @@ diff -u src/routers/redirect.c src/routers/redirect.c
  #endif
    { "syntax_errors_text", opt_stringptr,
        (void *)offsetof(redirect_router_options_block, syntax_errors_text) },
-@@ -136,8 +132,6 @@
+@@ -139,8 +135,6 @@
    NULL,        /* owngroups */
  #ifdef SRS
    NULL,        /* srs */
@@ -110,7 +110,7 @@ diff -u src/routers/redirect.c src/routers/redirect.c
  #endif
    022,         /* modemask */
    RDO_REWRITE, /* bit_options */
-@@ -532,39 +526,33 @@
+@@ -535,39 +529,33 @@
    ugid.gid_set = TRUE;
    }
  
@@ -169,7 +169,7 @@ diff -u src/routers/redirect.c src/routers/redirect.c
  /* Call the function that interprets redirection data, either inline or from a
  file. This is a separate function so that the system filter can use it. It will
  run the function in a subprocess if necessary. If qualify_preserve_domain is
-@@ -792,28 +780,23 @@
+@@ -795,28 +783,23 @@
  #ifdef SRS
  /* On successful redirection, check for SRS forwarding and adjust sender */
  
@@ -217,7 +217,7 @@ diff -u src/routers/redirect.c src/routers/redirect.c
 diff -u src/routers/redirect.h src/routers/redirect.h
 --- src/routers/redirect.h	Sat Jul 17 11:12:00 2004
 +++ src/routers/redirect.h	Sat Jul 17 11:55:47 2004
-@@ -32,8 +32,6 @@
+@@ -33,8 +33,6 @@
  
  #ifdef SRS
    uschar *srs;
