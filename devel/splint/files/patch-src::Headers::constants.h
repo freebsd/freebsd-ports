@@ -5,7 +5,7 @@
  
  /*@constant observer char *DEFAULT_SYSTEMDIR; @*/
 -# define DEFAULT_SYSTEMDIR "/usr/"
-+# define DEFAULT_SYSTEMDIR "/usr/include/:/usr/lib/:/usr/local/include/:/usr/local/lib/"
++# define DEFAULT_SYSTEMDIR "/usr/include/:/usr/lib/:%%PREFIX%%/include/:%%PREFIX%%/lib/"
  
  /*@constant char DEFAULT_COMMENTCHAR; @*/
  # define DEFAULT_COMMENTCHAR '@'
