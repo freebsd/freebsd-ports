@@ -1,0 +1,7 @@
+This is a server for the linux network block device (nbd). It allows linux to
+use a partition or a file over the network as a regular block device.
+
+WWW: http://nbd.sourceforge.net/
+
+- Christian
+xi@borderworlds.dk
