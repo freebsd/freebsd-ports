@@ -16,8 +16,6 @@ MAINTAINER=	andreas@FreeBSD.org
 
 LIB_DEPENDS=	gd.0:${PORTSDIR}/graphics/gd
 
-BROKEN=		gd upgrade
-
 MAN1=		http-analyze.1
 
 .include <bsd.port.mk>
