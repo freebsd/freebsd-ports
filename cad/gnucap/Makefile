@@ -18,6 +18,8 @@ USE_REINPLACE=	yes
 USE_GMAKE=	yes
 MAKE_ENV=	CXX="${CXX}" CXXFLAGS="${CXXFLAGS}"
 
+CFLAGS+=	-DNEEDS_COPY_N
+
 post-patch:
 .for file in src/Make2.g++ src/Make.aux modelgen/Make.aux
 	@${REINPLACE_CMD} -e "s|g\+\+|\$$\{CXX\}|g" \
