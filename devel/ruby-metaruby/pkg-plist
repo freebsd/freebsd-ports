@@ -1,14 +1,23 @@
-%%RUBY_SITELIBDIR%%/ArrayMixin.rb
-%%RUBY_SITELIBDIR%%/IOMixin.rb
-%%RUBY_SITELIBDIR%%/HashMixin.rb
-%%RUBY_SITELIBDIR%%/ListMixin.rb
-%%RUBY_SITELIBDIR%%/StringMixin.rb
-%%RUBY_SITELIBDIR%%/ToSource.rb
+%%RUBY_SITELIBDIR%%/Contract.rb
+%%RUBY_SITELIBDIR%%/MainLoop.rb
+%%RUBY_SITELIBDIR%%/RubySchema.rb
+%%RUBY_SITELIBDIR%%/SProfiler.rb
+%%RUBY_SITELIBDIR%%/Type.rb
+%%RUBY_SITELIBDIR%%/UndoQueue.rb
+%%RUBY_SITELIBDIR%%/Version.rb
+%%RUBY_SITELIBDIR%%/Hollow/Array.rb
+%%RUBY_SITELIBDIR%%/Hollow/Hash.rb
+%%RUBY_SITELIBDIR%%/Hollow/List.rb
+%%RUBY_SITELIBDIR%%/Hollow/String.rb
+%%RUBY_SITELIBDIR%%/lgram/Marshal.rb
+@dirrm %%RUBY_SITELIBDIR%%/Hollow
+@dirrm %%RUBY_SITELIBDIR%%/lgram
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/metaruby/BitArray.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/metaruby/ProcAsArray.rb
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/metaruby/UndoableArray.rb
 %%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/metaruby
 %%PORTDOCS%%%%RUBY_DOCDIR%%/metaruby/ChangeLog
+%%PORTDOCS%%%%RUBY_DOCDIR%%/metaruby/Hollow.txt
+%%PORTDOCS%%%%RUBY_DOCDIR%%/metaruby/LGram.txt
 %%PORTDOCS%%%%RUBY_DOCDIR%%/metaruby/Overview
 %%PORTDOCS%%%%RUBY_DOCDIR%%/metaruby/TODO
 %%PORTDOCS%%@dirrm %%RUBY_DOCDIR%%/metaruby
