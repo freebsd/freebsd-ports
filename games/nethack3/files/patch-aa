@@ -1,15 +1,15 @@
---- ./include/config.h.orig	Sat Dec 11 00:20:49 1999
-+++ ./include/config.h	Sun Dec 12 20:28:09 1999
+--- ./include/config.h.orig	Sat Jul 22 11:13:51 2000
++++ ./include/config.h	Fri Oct 13 09:31:24 2000
 @@ -43,7 +43,7 @@
   * Some combinations make no sense.  See the installation document.
   */
  #define TTY_GRAPHICS	/* good old tty based graphics */
--/* #define X11_GRAPHICS */ /* X11 interface */
-+#define X11_GRAPHICS  /* X11 interface */
+-/* #define X11_GRAPHICS */	/* X11 interface */
++#define X11_GRAPHICS	/* X11 interface */
  /* #define QT_GRAPHICS */	/* Qt interface */
+ /* #define GNOME_GRAPHICS */	/* Gnome interface */
  
- /*
-@@ -92,7 +92,7 @@
+@@ -110,7 +110,7 @@
   * would allow:
   *  xpmtoppm <x11tiles.xpm | pnmscale 1.25 | ppmquant 90 >x11tiles_big.xpm
   */
@@ -18,7 +18,7 @@
  # ifdef USE_XPM
  #  define GRAPHIC_TOMBSTONE	/* Use graphical tombstone (rip.xpm) */
  # endif
-@@ -133,11 +133,11 @@
+@@ -151,11 +151,11 @@
  
  #ifdef UNIX
  /* path and file name extension for compression program */
@@ -34,7 +34,7 @@
  #endif
  
  #ifndef COMPRESS
-@@ -168,7 +168,7 @@
+@@ -186,7 +186,7 @@
   * otherwise it will be the current directory.
   */
  # ifndef HACKDIR

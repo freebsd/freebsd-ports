@@ -1,11 +1,12 @@
---- ./sys/unix/Makefile.top.orig	Sat Dec 11 05:21:05 1999
-+++ ./sys/unix/Makefile.top	Mon Dec 13 11:51:27 1999
-@@ -14,17 +14,16 @@
+--- ./sys/unix/Makefile.top.orig	Tue Jul  4 10:42:05 2000
++++ ./sys/unix/Makefile.top	Fri Oct 13 10:13:50 2000
+@@ -14,18 +14,17 @@
  # MAKE = make
  
  # make NetHack
 -PREFIX	 = /usr
  GAME     = nethack
+ # GAME     = nethack.prg
  GAMEUID  = games
 -GAMEGRP  = bin
 +GAMEGRP  = games
@@ -21,27 +22,16 @@
 +DIRPERM  = 0775
  
  # GAMEDIR also appears in config.h as "HACKDIR".
- #
-@@ -33,8 +32,8 @@
+ # VARDIR may also appear in unixconf.h as "VAR_PLAYGROUND" else GAMEDIR
+@@ -35,9 +34,9 @@
  # therefore there should not be anything in GAMEDIR that you want to keep
  # (if there is, you'll have to do the installation by hand or modify the
  # instructions)
 -GAMEDIR  = $(PREFIX)/games/lib/$(GAME)dir
--SHELLDIR = $(PREFIX)/games
 +GAMEDIR  = $(PREFIX)/share/$(GAME)
+ VARDIR  = $(GAMEDIR)
+-SHELLDIR = $(PREFIX)/games
 +SHELLDIR = $(PREFIX)/bin
  
  # per discussion in Install.X11 and Install.Qt
  VARDATND = 
-@@ -184,9 +183,9 @@
- 
- install: $(GAME) $(VARDAT) dungeon spec_levs
- # set up the directories
--	-mkdir $(SHELLDIR)
-+	-mkdir -p $(SHELLDIR)
- 	-rm -rf $(GAMEDIR)
--	-mkdir $(GAMEDIR) $(GAMEDIR)/save
-+	-mkdir -p $(GAMEDIR) $(GAMEDIR)/save
- 	-$(CHOWN) $(GAMEUID) $(GAMEDIR) $(GAMEDIR)/save
- 	$(CHGRP) $(GAMEGRP) $(GAMEDIR) $(GAMEDIR)/save
- 	chmod $(DIRPERM) $(GAMEDIR) $(GAMEDIR)/save
