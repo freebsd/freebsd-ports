@@ -5015,7 +5015,7 @@ libtar		ports/devel/libtar
 libtasn1	ports/security/libtasn1
 libtcp4u	ports/net/libtcp4u
 libtecla	ports/devel/libtecla
-libtheora	ports/graphics/libtheora
+libtheora	ports/multimedia/libtheora
 libticables	ports/comms/libticables
 libticalcs	ports/devel/libticalcs
 libtifiles	ports/devel/libtifiles
