@@ -174,6 +174,7 @@
     SUBDIR += jade
     SUBDIR += java2html
     SUBDIR += javacc
+    SUBDIR += jaxup
     SUBDIR += jdictionary
     SUBDIR += jdictionary-int-eng
     SUBDIR += jing

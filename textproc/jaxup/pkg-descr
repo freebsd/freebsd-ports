@@ -1,0 +1,14 @@
+Jaxup defines an interface to update XML documents, through which clients can
+work without knowledge of the exact object model that the document uses. The
+interface is called Updater, and the idea behind it is the same as with Jaxen's
+Navigator interface. In addition, an implementation of xmldb.org's proposed
+XUpdate specification is provided. The implementation is in the XUpdate class.
+
+Implementations of the Updater interface are provided for the following object
+models:
+
+  - DOM
+  - Dom4j
+  - JDom
+
+WWW: http://klomp.org/jaxup/
