@@ -3,7 +3,7 @@
 # Date created:		Tue Jun 10 21:58:54 CEST 1997
 # Whom:			Andreas Klemm <andreas@klemm.gtn.com>
 #
-# $Id: Makefile,v 1.26 1998/12/03 08:24:20 andreas Exp $
+# $Id: Makefile,v 1.27 1998/12/03 08:38:56 andreas Exp $
 #
 
 DISTNAME=	ghostscript-5.50
@@ -20,6 +20,8 @@ BUILD_DEPENDS=	/nonexistent:${PORTSDIR}/graphics/jpeg:extract \
 		/nonexistent:${PORTSDIR}/graphics/png:extract \
 		unzip:${PORTSDIR}/archivers/unzip
 LIB_DEPENDS=	png.2:${PORTSDIR}/graphics/png
+
+BROKEN=		upgrade
 
 USE_XLIB=	yes
 EXTRACT_ONLY=	${GS_SOURCES}
