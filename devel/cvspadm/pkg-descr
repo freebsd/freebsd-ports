@@ -2,7 +2,7 @@ An interface to a local CVS repository using pserver for authentication.
 This script can add, delete, suspend, or enable non-system users for read
 and write access to a CVS repository.
 
-WWW: http://hackfoo.net/projs/
+WWW: http://hackfoo.net/projs.html
 
 - Pete
 petef@databits.net
