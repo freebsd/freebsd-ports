@@ -8,6 +8,7 @@
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/bdb/log.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/bdb/queue.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/bdb/recno.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/bdb/record.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/bdb/txn.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/bdb/wordlist
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/bdb/wordtest
