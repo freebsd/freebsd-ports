@@ -3,14 +3,14 @@
 # Date created:				17 March 1998
 # Whom:					Yukihiro Nakai <Nakai@technologist.com>
 #
-# $Id: Makefile,v 1.20 1999/03/25 02:39:27 nectar Exp $
+# $Id: Makefile,v 1.21 1999/03/27 10:35:54 vanilla Exp $
 #
 
 DISTNAME=	gnome-core-1.0.3
 PKGNAME=	gnomecore-1.0.3
 CATEGORIES=	x11 gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
-MASTER_SITE_SUBDIR=	gnome-core
+MASTER_SITE_SUBDIR=	sources/gnome-core
 
 MAINTAINER=	nacai@iname.com
 
