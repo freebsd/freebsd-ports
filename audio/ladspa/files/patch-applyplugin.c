@@ -1,5 +1,5 @@
---- applyplugin.c.orig	Sat May 11 23:31:00 2002
-+++ applyplugin.c	Sat May 11 23:31:09 2002
+--- src/applyplugin.c.orig	Sat May 11 23:31:00 2002
++++ src/applyplugin.c	Sat May 11 23:31:09 2002
 @@ -6,7 +6,7 @@
  /*****************************************************************************/
  
