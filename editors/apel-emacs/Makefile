@@ -15,7 +15,7 @@ PKGNAMESUFFIX=	-${EMACS_PORT_NAME}
 MAINTAINER?=	shige@FreeBSD.org
 
 # distfile version
-APEL_VER=	10.2
+APEL_VER=	10.3
 # setupel filename
 APEL_SETUPEL=	apel-setupel.el
 # document install directory by install-doc target
@@ -79,7 +79,6 @@ post-install:
 .if !defined(NOPORTDOCS)
 	@${MAKE} doc-install
 .endif
-
 
 ###############################################################################
 #
