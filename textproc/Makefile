@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.52 1999/05/21 15:34:16 kuriyama Exp $
+# $Id: Makefile,v 1.53 1999/05/26 08:03:27 tg Exp $
 #
 
     SUBDIR += agrep
@@ -37,6 +37,7 @@
     SUBDIR += nicetext
     SUBDIR += p5-XML-Parser
     SUBDIR += par
+    SUBDIR += perl2html
     SUBDIR += prag
     SUBDIR += py-mxTextTools
     SUBDIR += py-xml
