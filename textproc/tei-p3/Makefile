@@ -17,6 +17,7 @@ COMMENT=	DTD of the Text Encoding Initiative
 
 RUN_DEPENDS=	${XMLCATMGR}:${PORTSDIR}/textproc/xmlcatmgr
 
+LATEST_LINK=	tei-p3
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
 PLIST_SUB=	XMLCATMGR=${XMLCATMGR} \
@@ -36,6 +37,6 @@ do-install:
 	@${INSTALL_DATA} ${FILESDIR}/catalog ${INSTDIR}
 
 post-install:
-	${XMLCATMGR} -sc ${CATALOG_PORTS_SGML} add CATALOG ${DTDDIR}/catalog 
+	${XMLCATMGR} -sc ${CATALOG_PORTS_SGML} add CATALOG ${DTDDIR}/catalog
 
 .include <bsd.port.mk>
