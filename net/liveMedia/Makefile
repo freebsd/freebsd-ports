@@ -7,11 +7,12 @@
 
 PORTNAME=	liveMedia
 PORTVERSION=	2004.12.29
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	net devel
 MASTER_SITES=	http://www.LIVE.COM/liveMedia/public/
-#MASTER_SITES+=	${MASTER_SITE_LOCAL}
-#MASTER_SITE_SUBDIR=	nork
+MASTER_SITES+=	${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	nork
 DISTNAME=	live.${PORTVERSION}
 
 MAINTAINER=	nork@FreeBSD.org
@@ -66,6 +67,7 @@ liveMedia=		\
 		liveMedia/include/AMRAudioRTPSink.hh \
 		liveMedia/include/AMRAudioRTPSource.hh \
 		liveMedia/include/AMRAudioSource.hh \
+		liveMedia/include/AVIFileSink.hh \
 		liveMedia/include/AudioInputDevice.hh \
 		liveMedia/include/AudioRTPSink.hh \
 		liveMedia/include/BasicUDPSink.hh \
@@ -131,6 +133,7 @@ liveMedia=		\
 		liveMedia/include/MultiFramedRTPSink.hh \
 		liveMedia/include/MultiFramedRTPSource.hh \
 		liveMedia/include/OnDemandServerMediaSubsession.hh \
+		liveMedia/include/OutputFile.hh \
 		liveMedia/include/PassiveServerMediaSubsession.hh \
 		liveMedia/include/PrioritizedRTPStreamSelector.hh \
 		liveMedia/include/QCELPAudioRTPSource.hh \
