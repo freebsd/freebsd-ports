@@ -1,4 +1,5 @@
 bin/gconfigger
+bin/gnome-bug
 bin/gnome-config
 bin/gnome-dump-metadata
 bin/gnome-gen-mimedb
@@ -200,6 +201,11 @@ share/gnome/idl/name-service.idl
 share/gnome/libartConf.sh
 share/gnome/mime-info/gnome.mime
 share/gnome/pixmaps/calculator-font.png
+share/gnome/pixmaps/gnome-default-dlg.png
+share/gnome/pixmaps/gnome-error.png
+share/gnome/pixmaps/gnome-info.png
+share/gnome/pixmaps/gnome-question.png
+share/gnome/pixmaps/gnome-warning.png
 share/gnome/pixmaps/no.xpm
 share/gnome/pixmaps/yes.xpm
 share/gnome/type-convert/type.convert
