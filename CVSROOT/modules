@@ -8096,6 +8096,7 @@ psi3		ports/science/psi3
 psi88		ports/biology/psi88
 psiconv		ports/converters/psiconv
 psim-freebsd	ports/emulators/psim-freebsd
+pslib		ports/print/pslib
 pslist		ports/sysutils/pslist
 psmark		ports/print/psmark
 psmisc		ports/sysutils/psmisc
