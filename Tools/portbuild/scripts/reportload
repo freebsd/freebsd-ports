@@ -13,7 +13,7 @@ me=$(hostname -s)
 tmpfile=${scratchdir}/${me}
 
 while true; do
-  num=$(echo $(ls -1d ${pb}/*/chroot/*/used 2>/dev/null| wc -l))
+  num=$(echo $(ls -1d ${scratchdir}/*/chroot/*/used 2>/dev/null| wc -l))
   echo -n "$num " > ${tmpfile}
   uptime >> ${tmpfile}
   scp -q ${tmpfile} $master:${pb}/loads/
