@@ -6,13 +6,13 @@
 #
 
 PORTNAME=	swi-pl
-PORTVERSION=	5.2.8
-PORTREVISION=	2
+PORTVERSION=	5.4.5
 CATEGORIES=	lang
-MASTER_SITES=	ftp://ftp.swi.psy.uva.nl/pub/SWI-Prolog/
+MASTER_SITES=	ftp://ftp.swi.psy.uva.nl/SWI-Prolog/ \
+		http://gollem.science.uva.nl/cgi-bin/nph-download/SWI-Prolog/
 DISTNAME=	pl-${PORTVERSION}
 
-MAINTAINER=	max@FreeBSD.org
+MAINTAINER=	g.gonter@ieee.org
 COMMENT=	Edinburgh-style Prolog compiler
 
 CONFLICTS=	ploticus-[0-9]* slffea-[0-9]* TenDRA-[0-9]*
@@ -43,5 +43,14 @@ BROKEN=		"Broken pkg-plist"
 post-patch:
 	${REINPLACE_CMD} -e '/edit/s/INSTALL_PROGRAM/BSD_INSTALL_SCRIPT/g' \
 		${WRKSRC}/src/Makefile.in
+
+post-configure:
+	${REINPLACE_CMD} -e '/MALLOC_H/s/^#define \(HAVE_.*_MALLOC_H\).*/\/\* #undef \1 \*\//g' \
+		${WRKSRC}/src/config.h
+
+post-install:
+.for f in pl plld plrc
+	@${STRIP_CMD} ${PREFIX}/lib/${DISTNAME}/bin/${ARCH}-${OPSYS:L}/$f
+.endfor
 
 .include <bsd.port.post.mk>
