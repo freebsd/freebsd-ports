@@ -1,0 +1,12 @@
+QGLViewer addresses people programming in OpenGL to play around with three
+dimensional scenes or to write software that uses OpenGL.
+
+QGLViewer provides a set of classes for camera control, as well as comfortable
+user interface that allows you to control your viewing parameters via mouse
+and buttons. Additionally a framework for camera paths and their interpolation,
+a light source editor and a simple scene tree are provided.
+
+All of the QGLViewer helper classes (such as vectors, points, the camera,
+etc.) are serializable using the Qt-builtin XML facility.
+
+WWW: http://www.qglviewer.de/

@@ -247,6 +247,7 @@
     SUBDIR += py-paint
     SUBDIR += qcread
     SUBDIR += qdraw
+    SUBDIR += qglviewer
     SUBDIR += qiv
     SUBDIR += quickpics
     SUBDIR += qvplay
