@@ -1,0 +1,14 @@
+The matchbox window manager is suitable for use on low-resolution
+screens, such as those on mobile computers.  It sizes most windows
+so they take up the whole screen.  All decorations are contained
+in the title bar.
+
+Besides the window manager itself, this port installs the dock and
+applets (clock, battery meter, load meter, mixer, launcher, and
+theme changer--the mbmenu and mbwave applets are omitted because
+they are Linux-specific).
+
+The dock may be used with the metacity window manager.  Matchbox
+is compatible with the GNOME and KDE panels.
+
+WWW:  http://handhelds.org/~mallum/matchbox/
