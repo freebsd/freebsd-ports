@@ -11,12 +11,4 @@ reproduce the real-world anomalies that appear on production networks
 etc.), tcpreplay allows for exact replication of real traffic seen on real
 networks. 
 
-Tcpprep is tcpreplay with patches can send traffic out two network cards,
-however it requires the calculations be done in real-time.  These calculations
-can be expensive and can significantly reduce the throughput of tcpreplay.
-
-tcpprep is a libpcap pre-processor for tcpreplay which enables this 
-feature in tcpreplay, and significantly increases throughput through 
-the use of a cache file.
-
-WWW: http://synfin.net/aturner/tcpreplay/
+WWW: http://www.sf.net/projects/tcpreplay

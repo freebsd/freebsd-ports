@@ -6,18 +6,14 @@
 #
 
 PORTNAME=	tcpreplay
-PORTVERSION=	1.0.1
-PORTREVISION=	2
+PORTVERSION=	1.3-beta2
 CATEGORIES=	net
-MASTER_SITES=	http://synfin.net/aturner/tcpreplay/
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	${PORTNAME}
 
-PATCH_SITES=	http://synfin.net/aturner/tcpreplay/
-PATCHFILES=	tcpreplay-adt9.patch.gz
-PATCH_DIST_STRIP=	-p1
+MAINTAINER=	smace@FreeBSD.org
 
-MAINTAINER=	ports@FreeBSD.org
-
-LIB_DEPENDS=	redblack:${PORTSDIR}/devel/libredblack
+LIB_DEPENDS=    redblack:${PORTSDIR}/devel/libredblack
 BUILD_DEPENDS=	${LOCALBASE}/lib/libnet.a:${PORTSDIR}/net/libnet
 
 GNU_CONFIGURE=	yes
@@ -25,6 +21,7 @@ CONFIGURE_ARGS+= --with-libnet=${PREFIX} --with-libredblack=${PREFIX}
 
 USE_AUTOCONF=	yes
 
-MAN8=		tcpreplay.8 tcpprep.8
+MAN1=		capinfo.1 tcpprep.1
+MAN8=		tcpreplay.8
 
 .include <bsd.port.mk>

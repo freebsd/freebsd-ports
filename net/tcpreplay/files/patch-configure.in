@@ -1,15 +1,40 @@
---- configure.in.orig	Mon Apr 15 14:20:18 2002
-+++ configure.in	Mon Apr 15 14:20:52 2002
-@@ -20,12 +20,6 @@
- [  --with-debug            Enable debugging code and support for the -d option],
- AC_DEFINE(DEBUG) AC_MSG_RESULT(yes), AC_MSG_RESULT(no))
+--- configure.in.orig	Wed Oct  9 17:55:34 2002
++++ configure.in	Wed Oct  9 18:27:27 2002
+@@ -91,6 +91,37 @@
+ fi
+ AC_SUBST(EXTRAS)
  
--dnl Use these compiler flags if we have gcc.
--if test $ac_cv_prog_gcc = yes; then
--    CCOPTS='-O2 -pipe -Wall'
--    CFLAGS="$CCOPTS"
--fi
--
- dnl Checks for libnet
++dnl Checks for libredblack   
++AC_ARG_WITH(libredblack,
++[  --with-libredblack=DIR  use libredblack from DIR/lib],
++[ case "$withval" in  
++  yes|no)
++	AC_MSG_ERROR(no)
++	;;
++  *)
++	AC_MSG_CHECKING(for libredblack)
++	AC_MSG_RESULT($withval)
++	if test -f $withval/lib/libredblack.a -a -f $withval/include/redblack.h; then
++		owd=`pwd`
++		if cd $withval; then withval=`pwd`; cd $owd; fi
++		REDBLACKINC="-I$withval/include"
++		REDBLACKLIB="-lredblack"
++		LDFLAGS="$LDFLAGS -L$withval/lib"
++		AC_SUBST(REDBLACKINC)
++		AC_SUBST(REDBLACKLIB)
++	else
++		AC_ERROR(unable to find $withval/lib/libredback or $withval/include/redblack.h
++Please download: http://libredblack.sourceforge.net/
++)
++	fi
++	;;
++  esac ],
++AC_CHECK_LIB(redblack, rbwalk, , AC_MSG_ERROR(redblack >= 1.1.0 not found.
++
++Please download: http://libredblack.sourceforge.net/
++))
++)
++
+ dnl Checks for libnet (shamelessly horked from dsniff)
+ AC_MSG_CHECKING(for libnet)
  AC_ARG_WITH(libnet,
- [  --with-libnet=DIR       use libnet in DIR/lib],
