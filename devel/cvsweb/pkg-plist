@@ -1,3 +1,13 @@
-%%CGIDIR%%/cvsweb.cgi
+etc/cvsweb.conf.sample
+share/doc/cvsweb/INSTALL
 share/doc/cvsweb/README
+share/doc/cvsweb/TODO
 @dirrm share/doc/cvsweb
+%%CGIDIR%%/cvsweb.cgi
+%%ICONSDIR%%/cvsweb/back.gif
+%%ICONSDIR%%/cvsweb/dir.gif
+%%ICONSDIR%%/cvsweb/miniback.gif
+%%ICONSDIR%%/cvsweb/minidir.gif
+%%ICONSDIR%%/cvsweb/minitext.gif
+%%ICONSDIR%%/cvsweb/text.gif
+@dirrm %%ICONSDIR%%/cvsweb

@@ -3,5 +3,12 @@ a CVS repository tree via web.  It can display the revision history of
 a file, as well as diffs between revisions and downloading the whole
 file.
 
-AUTHOR:	Bill Fenner <fenner@FreeBSD.org>
-WWW:	http://people.FreeBSD.org/~fenner/cvsweb/
+The cvsweb script has been written by Bill Fenner <fenner@FreeBSD.org>
+for the FreeBSD project, improved visually and functionally by Henner
+Zeller <zeller@think.de>, Henrik Nordstrom <hno@hem.passagen.se>, and
+Ken Coar <Ken.Coar@Golux.Com>, to be adopted by the NetBSD project.
+
+As space is lacking to list all the improvements over the original,
+please refer to the documents after the installation.
+
+WWW:	http://stud.fh-heilbronn.de/~zeller/cgi/cvsweb.cgi/
