@@ -9,4 +9,12 @@ in particular, it won't build on the HPsUX box i'm on.
 
 (this one needs just perl)
 
-WWW: http://www.iagora.com/~espel/
+Updated version by Sergey Babkin that doesn't slurp the entire file
+into memory and supports the newer bzip2 compressed rpms.
+
+BUGS: if the rpm contains more than one cpio file this version
+extracts only the first one. (I don't know how widespread these
+types of rpms are, i haven't yet seen one.  If you do, try the
+binary rpm2cpio that comes with the archivers/rpm port.)
+
+Now called rpm2cpio.pl so that it doesn't conflict with the binary one.

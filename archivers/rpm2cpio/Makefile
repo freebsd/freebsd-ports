@@ -6,26 +6,27 @@
 #
 
 PORTNAME=	rpm2cpio
-PORTVERSION=	1.1.20020306
+PORTVERSION=	1.2
 CATEGORIES=	archivers
-MASTER_SITES=	http://www.iagora.com/~espel/
-DISTNAME=	${PORTNAME}
-EXTRACT_SUFX=
+MASTER_SITES=	# none
+DISTFILES=	# none
 
 MAINTAINER=	nox@jelal.kn-bremen.de
 COMMENT=	Convert .rpm files for extraction with /usr/bin/cpio, needs just perl
 
 NO_WRKSUBDIR=	yes
-EXTRACT_CMD=	${CP}
-EXTRACT_BEFORE_ARGS=
-EXTRACT_AFTER_ARGS=	.
 
 USE_PERL5=	yes
+NO_BUILD=	yes
 
-do-build:
-	${PERL5} -i.bak -p -e "if (1 .. 1) {s-^#!/usr/bin/perl-#!${PERL}-;}" ${WRKDIR}/rpm2cpio
+do-fetch:
+	@${DO_NADA}
+
+do-extract:
+	@${MKDIR} ${WRKSRC}
+	${PERL5} -p -e "if (1 .. 1) {s-^#!/usr/bin/perl-#!${PERL}-;}" ${FILESDIR}/${PORTNAME} >${WRKDIR}/${PORTNAME}
 
 do-install:
-	${INSTALL_SCRIPT} ${WRKDIR}/rpm2cpio ${PREFIX}/bin
+	${INSTALL_SCRIPT} ${WRKDIR}/${PORTNAME} ${PREFIX}/bin/${PORTNAME}.pl
 
 .include <bsd.port.mk>
