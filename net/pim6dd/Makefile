@@ -11,7 +11,7 @@ PORTREVISION=	0
 CATEGORIES=	net ipv6
 MASTER_SITES=	ftp://ftp.kame.net/pub/kame/misc/
 
-MAINTAINER=	ume@FreeBSD.org
+MAINTAINER=	suz@FreeBSD.org
 
 NO_CDROM=	"Cannot be sold for profit"
 
