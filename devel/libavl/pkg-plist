@@ -1,0 +1,8 @@
+lib/libavl.a
+include/avl.h
+include/avlt.h
+include/avltr.h
+include/rb.h
+@unexec install-info --delete %D/info/avl.info %D/info/dir
+info/avl.info
+@exec install-info %D/info/avl.info %D/info/dir
