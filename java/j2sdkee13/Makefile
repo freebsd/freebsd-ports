@@ -30,8 +30,9 @@ DOWNLOAD_URL?=	http://java.sun.com/webapps/download/Display?BundleId=${SUN_BUNDL
 
 .if !exists(${DISTDIR}/${DISTNAME}${EXTRACT_SUFX}) && !defined(PACKAGE_BUILDING)
 IGNORE=		You must manually fetch the Java 2 SDK Enterprise Edition\
-		${J2SDKEEVERSION} tarball from ${DOWNLOAD_URL}; download\
-		the \"Linux Install\" into ${DISTDIR} and run ${MAKE} again
+		${J2SDKEEVERSION} tarball from ${DOWNLOAD_URL}.  Accept the\
+		license and then download ${DISTNAME}${EXTRACT_SUFX} into\
+		${DISTDIR} and run ${MAKE} again
 .endif
 
 do-install:
