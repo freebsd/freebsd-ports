@@ -1,0 +1,5 @@
+lib/perl5/site_perl/%%PERL_VER%%/BER.pm
+lib/perl5/site_perl/%%PERL_VER%%/SNMP_Session.pm
+lib/perl5/site_perl/%%PERL_VER%%/SNMP_util.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/SNMP_Session/.packlist
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/SNMP_Session

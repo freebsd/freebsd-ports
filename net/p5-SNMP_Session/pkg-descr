@@ -1,0 +1,16 @@
+This archive contains Perl 5 modules SNMP_Session.pm and BER.pm,
+which, when used together, provide rudimentary access to remote SNMP
+(v1) agents.
+
+This module differs from existing SNMP packages in that it is
+completely stand-alone, i.e. you don't need to have another SNMP
+package such as CMU SNMP.  It is also written entirely in Perl, so you
+don't have to compile any C modules.  It uses the Perl 5 Socket.pm
+module and should therefore be very portable, even to non-Unix systems.
+
+The SNMP operations currently supported are "get", "get-next", and
+"set", as well as trap generation and reception.
+
+For an excellent example of the type of application this is useful
+for, see Tobias Oetiker's ``mrtg'' (Multi Router Traffic Grapher)
+tool.
