@@ -6,15 +6,15 @@
 #
 
 PORTNAME?=	mozilla
-PORTVERSION=	1.7.r3
+PORTVERSION=	1.8.a1
 PORTREVISION?=	0
 PORTEPOCH?=	2
 CATEGORIES?=	www
 MASTER_SITES=	${MASTER_SITE_MOZILLA} \
 		${MASTER_SITE_LOCAL:S/$/:local/}
-MASTER_SITE_SUBDIR=	mozilla/releases/${PORTNAME}${PORTVERSION:S/.r3/rc3/}/src \
+MASTER_SITE_SUBDIR=	mozilla/releases/${PORTNAME}${PORTVERSION:S/.a1/a1/}/src \
 			marcus/:local
-DISTFILES=	${PORTNAME}-source-${PORTVERSION:S/.r3/rc3/}${EXTRACT_SUFX}
+DISTFILES=	${PORTNAME}-source-${PORTVERSION:S/.a1/a1/}${EXTRACT_SUFX}
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	The open source, standards compliant web browser
@@ -28,8 +28,6 @@ LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
 		nspr4.1:${PORTSDIR}/devel/nspr
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
-
-IGNORE=		"Out-of-date, use www/mozilla instead for now"
 
 MOZILLA?=	mozilla-devel
 MOZ_SUFX?=	-devel
@@ -83,6 +81,7 @@ PLIST=		${WRKDIR}/pkg-plist
 MOZ_EXTENSIONS=	default
 CONFIGURE_ENV=	MOZ_INTERNAL_LIBART_LGPL=1 \
 		LOCALBASE=${LOCALBASE}
+PKGINSTALL=	${WRKDIR}/pkg-install
 
 CONFIGURE_ARGS+=	--enable-default-toolkit=gtk2
 
@@ -251,6 +250,8 @@ post-patch:
 			s|mozilla-nspr|mozilla-nspr${MOZ_SUFX}${PKGNAMESUFFIX}|g' \
 			${WRKSRC}/build/unix/$${pcfile}.pc.in; \
 	done
+	@${SED} -e 's|%%MOZDIR%%|${PREFIX}/lib/${MOZILLA}|g' \
+		< ${MASTERDIR}/pkg-install.in > ${PKGINSTALL}
 
 pre-configure:
 	@if [ -n "`${PKG_INFO} -xI '^bind[0-9]*-base-[0-9]'`" ]; then \
@@ -261,10 +262,6 @@ pre-configure:
 post-build:
 	${SED} -e "s|%%PREFIX%%|${PREFIX}|g" -e "s|%%MOZILLA%%|${MOZILLA}|g" \
 		${FILESDIR}/mozilla.sh >${WRKSRC}/${MOZILLA}
-	(cd ${WRKSRC}/dist/bin; \
-		${SETENV} LD_LIBRARY_PATH=. MOZILLA_FIVE_HOME=. ./regxpcom; \
-		${SETENV} LD_LIBRARY_PATH=. MOZILLA_FIVE_HOME=. ./regchrome; \
-		${TOUCH} ./chrome/user-skins.rdf ./chrome/user-locales.rdf)
 	${FIND} ${WRKSRC}/dist/bin -type d | ${SORT} -r | \
 		${XARGS} ${RMDIR} 2> /dev/null || ${TRUE}
 
@@ -331,6 +328,9 @@ do-install:
 
 post-install:
 	@${CHMOD} -R u-w ${PREFIX}/lib/${MOZILLA}/components
+.if !defined(PACKAGE_BUILDING)
+	@${SETENV} PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
+.endif
 	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.post.mk>
