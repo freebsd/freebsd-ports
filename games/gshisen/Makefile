@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	gshisen
-PORTVERSION=	1.0.1
-PORTREVISION=	1
+PORTVERSION=	1.1
 CATEGORIES=	games
-MASTER_SITES=	http://www.gnustep.it/enrico/gshisen/
+# not up to date:	http://www.gnustep.it/enrico/gshisen/
+MASTER_SITES=	http://www.imago.ro/gshisen/
 
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	Mahjongg-kind of game that uses the GNUstep toolkit
