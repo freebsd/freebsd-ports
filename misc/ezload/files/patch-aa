@@ -1,0 +1,190 @@
+--- ezupload/ezupload.c.orig	Thu Oct 10 14:33:34 2002
++++ ezupload/ezupload.c	Thu Oct 10 14:34:49 2002
+@@ -179,15 +179,15 @@
+ 			l = en-at;
+ 
+ #ifdef BSD
+-		ur.request.bmRequestType= 0xC0;		/* see Anchor TRM v1.6 page 64 */
+-		ur.request.bRequest 	= 0xA0; 	/* Anchor Down/Upload */
++		ur.ucr_request.bmRequestType= 0xC0;		/* see Anchor TRM v1.6 page 64 */
++		ur.ucr_request.bRequest 	= 0xA0; 	/* Anchor Down/Upload */
+ 
+-		USETW(ur.request.wValue,at);		/* Starting Address */
+-		USETW(ur.request.wIndex,0);		/* unused */
+-		USETW(ur.request.wLength,l);		/* payload len in bytes */
++		USETW(ur.ucr_request.wValue,at);		/* Starting Address */
++		USETW(ur.ucr_request.wIndex,0);		/* unused */
++		USETW(ur.ucr_request.wLength,l);		/* payload len in bytes */
+ 	
+-		ur.flags = 0;
+-		ur.actlen = 0;
++		ur.ucr_flags = 0;
++		ur.ucr_actlen = 0;
+ #else
+                 ur.requesttype= 0xC0;           /* see Anchor TRM v1.6 page 64 */
+                 ur.request      = 0xA0;         /* Anchor Down/Upload */
+@@ -195,7 +195,7 @@
+                 ur.index = 0;           /* unused */
+                 ur.length = l;          /* payload len in bytes */
+ #endif
+-		ur.data	= (void *)d;
++		ur.ucr_data	= (void *)d;
+ 
+ #ifdef BSD
+         	if(ioctl(fd, USB_DO_REQUEST,&ur)) {
+@@ -207,7 +207,7 @@
+ 			break;
+ 		}
+ #ifdef BSD
+-		if (ur.actlen != l) {
++		if (ur.ucr_actlen != l) {
+ 			fprintf(stderr,"Failed to get full %d chunk at adr %X: %s\nAborted\n",
+ 				l,at,strerror(errno));
+ 			break;
+--- ezdownload/ezdownload.c.orig	Thu Oct 10 14:36:01 2002
++++ ezdownload/ezdownload.c	Thu Oct 10 14:51:28 2002
+@@ -268,13 +268,13 @@
+ 	int err;
+ 
+ #ifdef BSD
+-	ur.request.bmRequestType= 0x40;		/* see TRM v1.6 page 64 */
+-	ur.request.bRequest = 0xA0;		/* Anchor Download */
+-	USETW(ur.request.wValue, at);		/* Starting Address */
+-	USETW(ur.request.wIndex, 0);		/* unused */
+-	USETW(ur.request.wLength, len);		/* payload len in bytes */
+-	ur.flags = 0;
+-	ur.actlen = 0;
++	ur.ucr_request.bmRequestType= 0x40;		/* see TRM v1.6 page 64 */
++	ur.ucr_request.bRequest = 0xA0;		/* Anchor Download */
++	USETW(ur.ucr_request.wValue, at);		/* Starting Address */
++	USETW(ur.ucr_request.wIndex, 0);		/* unused */
++	USETW(ur.ucr_request.wLength, len);		/* payload len in bytes */
++	ur.ucr_flags = 0;
++	ur.ucr_actlen = 0;
+ #else
+ 	ur.requesttype= 0x40;           /* see TRM v1.6 page 64 */
+ 	ur.request = 0xA0;              /* Anchor Download */
+@@ -282,7 +282,7 @@
+ 	ur.index = 0;                   /* unused */
+ 	ur.length = len;                /* payload len in bytes */
+ #endif
+-	ur.data	= (void *) d;
++	ur.ucr_data	= (void *) d;
+ 
+ 	/* Although USB does not limit you here, the Anchor docs
+    	 * quote 64 as a limit, and Mato@activewireinc.com suggested
+@@ -304,7 +304,7 @@
+ 		return err;
+ 
+ #ifdef BSD
+-	if (ur.actlen != len)
++	if (ur.ucr_actlen != len)
+ 		return EAGAIN;			/* or too obscure ? */
+ #endif
+ 
+@@ -386,16 +386,29 @@
+ 	};
+ #define	SURE(x) (((x!=NULL) && (*x !='\0')) ? x : "<not defined>")
+ 	if (verbose)
++#ifdef BSD
++		printf("Device information: vendor %04x (%s) product %04x (%s) rev 0x%04x addr %x\n",
++			udi.udi_vendorNo, SURE(udi.udi_vendor), 
++			udi.udi_productNo, SURE(udi.udi_product),
++			udi.udi_releaseNo, udi.udi_addr);
++#else
+ 		printf("Device information: vendor %04x (%s) product %04x (%s) rev 0x%04x addr %x\n",
+ 			udi.vendorNo, SURE(udi.vendor), 
+ 			udi.productNo, SURE(udi.product),
+ 			udi.releaseNo, udi.addr);
++#endif
+ 
+ 	/* standard setup for AnchorChips ISAIK
+ 	 */
++#ifdef BSD
++        ai.uai_config_index         = 0;
++        ai.uai_interface_index      = 0;
++        ai.uai_alt_no               = 0;
++#else
+         ai.config_index         = 0;
+         ai.interface_index      = 0;
+         ai.alt_no               = 0;
++#endif
+ 
+         if ( ioctl(fd, USB_SET_ALTINTERFACE, &ai) == -1 ) {
+                 fprintf(stderr, "ioctl 1 returned: %s\n",
+@@ -425,8 +438,13 @@
+ 			/* XXX  is the revision # really hardware specific ? Is it a string
+ 			 *	or a BCD number ? 
+ 			 */
++#ifdef BSD
++			snprintf(tmp,sizeof(tmp),"%s/%04x.%04x.%04x.hex",
++				dir,udi.udi_vendorNo,udi.udi_productNo,udi.udi_releaseNo);
++#else
+ 			snprintf(tmp,sizeof(tmp),"%s/%04x.%04x.%04x.hex",
+ 				dir,udi.vendorNo,udi.productNo,udi.releaseNo);
++#endif
+ 
+ 			/* we could just do a loop through the directory
+ 			 * and slack compare ?
+@@ -439,9 +457,15 @@
+ 				printf("No %s\n",tmp);
+ 		};
+ 		if (!hexfile) {
++#ifdef BSD
++			fprintf(stderr,"No hexfile with firmware for "
++				"%04x.%04x.%04x available.\n",
++				udi.udi_vendorNo,udi.udi_productNo,udi.udi_releaseNo);
++#else
+ 			fprintf(stderr,"No hexfile with firmware for "
+ 				"%04x.%04x.%04x available.\n",
+ 				udi.vendorNo,udi.productNo,udi.releaseNo);
++#endif
+ 			if (!force) return(1);
+ 		};
+ 	} else {
+@@ -453,8 +477,13 @@
+ 		else
+ 			l++;
+ 
++#ifdef BSD
++		snprintf(tmp,sizeof(tmp),"%04x.%04x.%04x",
++			udi.udi_vendorNo,udi.udi_productNo,udi.udi_releaseNo);
++#else
+ 		snprintf(tmp,sizeof(tmp),"%04x.%04x.%04x",
+ 			udi.vendorNo,udi.productNo,udi.releaseNo);
++#endif
+ 
+ 		if (strncmp(l,tmp,strlen(tmp))) {
+ 			fprintf(stderr,"The firmware specified does not match the device: %s\n",tmp);
+--- aw/aw.c.orig	Thu Oct 10 14:51:43 2002
++++ aw/aw.c	Thu Oct 10 14:55:06 2002
+@@ -83,15 +83,26 @@
+ #define SURE(x) \
+ 	(((x!=NULL) && (*x !='\0')) ? x : "<not defined>")
+ 
++#ifdef __FreeBSD__
++        printf("Device information: vendor %04x (%s) product %04x (%s) rev %s addr %x\n",
++                        udi.udi_vendorNo, SURE(udi.udi_vendor), 
++                        udi.udi_productNo, SURE(udi.udi_product),
++                        SURE(udi.udi_release), udi.udi_addr);
++#else
+         printf("Device information: vendor %04x (%s) product %04x (%s) rev %s addr %x\n",
+                         udi.vendorNo, SURE(udi.vendor), 
+                         udi.productNo, SURE(udi.product),
+                         SURE(udi.release), udi.addr);
++#endif
+ 	close(fd);
+ 
+ 	/* vendor 0854 (ActiveWire, Inc.) product 0101 (ActiveWire USB) rev 0.00 
+ 	 */
++#ifdef __FreeBSD__
++	if ((udi.udi_vendorNo != 0x854) || (udi.udi_productNo != 0x101)) {
++#else
+ 	if ((udi.vendorNo != 0x854) || (udi.productNo != 0x101)) {
++#endif
+ 		fprintf(stderr,"Sorry, does not seem to be an ActiveWire board. Aborted\n");
+ 		exit(1);
+ 	}
+	
+
+

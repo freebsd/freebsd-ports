@@ -10,6 +10,6 @@ The input file or the produced output file is in Intel Hex format.
 An example program for the ActiveWire board is included, including the
 Hex file with firmware for it. The board is available from
 
-   http://www.ActiveWireInc.com/
+WWW:	http://www.ActiveWireInc.com/
 
 - Nick Hibma (n_hibma@freebsd.org) and Dirk van Gulik (dirkx@webweaving.org)
