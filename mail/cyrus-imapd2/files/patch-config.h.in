@@ -1,0 +1,13 @@
+Index: config.h.in
+diff -u config.h.in.orig config.h.in
+--- config.h.in.orig	Tue Aug 19 04:47:14 2003
++++ config.h.in	Tue Aug 19 04:50:46 2003
+@@ -364,7 +364,7 @@
+ #endif
+ 
+ /* sendmail configuration parameters */
+-#define DEFAULT_SENDMAIL ("/usr/lib/sendmail")
++#define DEFAULT_SENDMAIL ("/usr/sbin/sendmail")
+ #define DEFAULT_POSTMASTER ("postmaster")
+ 
+ #define SENDMAIL (config_getstring("sendmail", DEFAULT_SENDMAIL))
