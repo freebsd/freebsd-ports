@@ -1330,7 +1330,7 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     <affects>
       <package>
 	<name>pwlib</name>
-	<range><lt>1.6.0</lt></range>
+	<range><lt>1.5.0_5</lt></range>
       </package>
       <package>
 	<name>asterisk</name>
@@ -1338,7 +1338,7 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
       </package>
       <package>
 	<name>openh323</name>
-	<range><lt>1.13.0</lt></range>
+	<range><lt>1.12.0_4</lt></range>
       </package>
     </affects>
     <description>
@@ -1367,7 +1367,7 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     <dates>
       <discovery>2004-01-13</discovery>
       <entry>2004-02-22</entry>
-      <modified>2004-04-15</modified>
+      <modified>2004-06-08</modified>
     </dates>
   </vuln>
 
