@@ -1,16 +1,37 @@
 --- fping.c.orig	Mon Sep 20 13:10:23 1999
-+++ fping.c	Mon Sep 20 13:15:05 1999
-@@ -185,7 +185,9 @@
++++ fping.c	Wed Jul 19 06:08:21 2000
+@@ -185,7 +185,11 @@
  
  extern char *optarg;
  extern int optind,opterr;
++
++/* #if !defined(BSD4_4) && !((BSD - 0) >= 199103) */
 +#if !defined(__FreeBSD__) && !defined(__OpenBSD__) && !defined(__NetBSD__)
  extern char *sys_errlist[];
 +#endif
  
  
  #ifdef __cplusplus
-@@ -234,9 +236,9 @@
+@@ -195,15 +199,15 @@
+ /* constants */
+ 
+ #ifndef DEFAULT_INTERVAL
+-#define DEFAULT_INTERVAL 25        /* default time between packets (msec) */
++#define DEFAULT_INTERVAL 25000			/* default time between packets (usec) */
+ #endif
+ 
+ #ifndef DEFAULT_TIMEOUT
+-#define DEFAULT_TIMEOUT 2500       /* individual host timeouts */
++#define DEFAULT_TIMEOUT 2500000			/* individual host timeouts (usec) */
+ #endif
+ 
+ #ifndef DEFAULT_RETRY 
+-#define DEFAULT_RETRY 3            /* number of times to retry a host */
++#define DEFAULT_RETRY	3			/* number of times to retry a host */
+ #endif
+ 
+ 
+@@ -234,9 +238,9 @@
  int timeout = DEFAULT_TIMEOUT;
  int interval = DEFAULT_INTERVAL;
  
@@ -18,12 +39,44 @@
 -long min_reply=10000;
 -int total_replies=0;
 +long max_reply=0;	/* usec */
-+long min_reply=10000;	/* usec */
++long min_reply=(10*1000000);/* usec */
 +int total_replies=0;	/* usec */
  double sum_replies=0;
  
  struct timeval timeout_timeval;
-@@ -385,6 +387,7 @@
+@@ -326,7 +330,7 @@
+ 
+   setuid(getuid());
+ 
+-  prog = argv[0];
++  prog = (prog = strrchr(argv[0], '/')) ? prog + 1 : argv[0];
+   ident = getpid() & 0xFFFF;
+ 
+   verbose_flag=1;
+@@ -347,8 +351,8 @@
+ 	   case 'u': unreachable_flag = 1;                     break;
+ 	   case 'a': alive_flag = 1;                           break;
+            case 'v':
+-                     printf("%s: $Revision: 1.20 $ $Date: 1993/02/23 00:16:38 $\n",argv[0]);
+-                     printf("%s: comments to schemers@Stanford.EDU\n",argv[0]);
++                     printf("%s: FreeBSD port based on Revision: 1.20 Date: 1993/02/23 00:16:38 \n",argv[0]);
++                     printf("%s: comments to obrien@FreeBSD.org\n",argv[0]);
+                      exit(0);
+            default : fprintf(stderr,"Unknown flag: %s\n",argv[0]); 
+                      usage(); break;
+@@ -359,9 +363,9 @@
+     usage();
+   }
+ 
+-  if ( (interval<10 || retry >20 || timeout <250) && getuid()) {
++  if ( (interval<10000 || retry >20 || timeout <250000) && getuid()) {
+     fprintf(stderr,"%s: these options are too risky for mere mortals.\n",prog);
+-    fprintf(stderr,"%s: You need i >=10, retry < 20, and t >= 250\n",prog);
++    fprintf(stderr,"%s: You need i >=10000, retry < 20, and t >= 250000\n",prog);
+     exit(3);
+   }
+ 
+@@ -385,6 +389,7 @@
           }
           if (!ping_file) errno_crash_and_burn("fopen");
           while(fgets(line,132,ping_file)) {
@@ -31,7 +84,7 @@
             sscanf(line,"%s",host);
                if ((!*host) || (host[0]=='#'))  /* magic to avoid comments */
                  continue;
-@@ -411,8 +414,8 @@
+@@ -411,8 +416,8 @@
        cursor=cursor->next;
    }
  
@@ -41,7 +94,7 @@
    while (num_waiting) {  /* while pings are outstanding */
          if ( (timeval_diff(&current_time,&cursor->last_time)> timeout) ||
                                                  cursor->num_packets_sent==0)  {
-@@ -455,11 +458,11 @@
+@@ -455,11 +460,11 @@
            min_reply=0; max_reply=0; total_replies=1; sum_replies=0;
  }
  
@@ -57,7 +110,17 @@
       fprintf(stderr,"\n");
  
    }
-@@ -493,8 +496,6 @@
+@@ -489,26 +494,32 @@
+ void send_ping(int s,HOST_ENTRY *h)
+ #endif
+ {
+-  static char buffer[32];
++#define SIZE_ICMP_HDR	8
++#define SIZE_DATA	56
++#define SIZE_PACK_SENT	(sizeof(h->num_packets_sent))
++#define SIZE_LAST_TIME	(sizeof(h->last_time))
++#define SIZE_TOTAL	(SIZE_ICMP_HDR+SIZE_LAST_TIME+SIZE_PACK_SENT+SIZE_DATA)
++  static char buffer[SIZE_TOTAL];
    struct icmp *icp = (struct icmp *) buffer;
    int n,len;
  
@@ -66,24 +129,29 @@
    icp->icmp_type = ICMP_ECHO;
    icp->icmp_code = 0;
    icp->icmp_cksum = 0;
-@@ -504,12 +505,15 @@
- #define SIZE_PACK_SENT (sizeof(h->num_packets_sent))
- #define SIZE_LAST_TIME (sizeof(h->last_time))
+   icp->icmp_seq = h->i;
+   icp->icmp_id = ident;
+-#define SIZE_ICMP_HDR 8
+-#define SIZE_PACK_SENT (sizeof(h->num_packets_sent))
+-#define SIZE_LAST_TIME (sizeof(h->last_time))
  
 -  bcopy(&h->last_time,&buffer[SIZE_ICMP_HDR],SIZE_LAST_TIME);
    bcopy(&h->num_packets_sent,
               &buffer[SIZE_ICMP_HDR+SIZE_LAST_TIME], SIZE_PACK_SENT);
  
-   len = SIZE_ICMP_HDR+SIZE_LAST_TIME+SIZE_PACK_SENT;
- 
+-  len = SIZE_ICMP_HDR+SIZE_LAST_TIME+SIZE_PACK_SENT;
++  bcopy("01234567890123456789012345678901234567890123456789 FPING",
++             &buffer[SIZE_ICMP_HDR+SIZE_LAST_TIME+SIZE_PACK_SENT], SIZE_DATA);
++
++  len = sizeof(buffer);
++
 +  /* set the time at the very last possible point */
 +  gettimeofday(&h->last_time,&tz);
 +  bcopy(&h->last_time,&buffer[SIZE_ICMP_HDR],SIZE_LAST_TIME);
-+
+ 
    icp->icmp_cksum = in_cksum( (u_short *)icp, len );
  
-   n = sendto( s, buffer, len, 0, (struct sockaddr *)&h->saddr, 
-@@ -578,10 +582,12 @@
+@@ -578,10 +589,12 @@
         return 1; /* packet received, don't about it anymore */
    }
  
@@ -97,7 +165,7 @@
      bcopy(&icp->icmp_data[0],&sent_time,sizeof(sent_time));
      bcopy(&icp->icmp_data[SIZE_LAST_TIME],&the_index,  sizeof(the_index));
      this_reply = timeval_diff(&current_time,&sent_time);
-@@ -594,7 +600,7 @@
+@@ -594,7 +607,7 @@
         if (dns_flag) printf("%s",get_host_by_address(response_addr.sin_addr));
         else printf("%s",h->host);
         if (verbose_flag) printf(" is alive");
@@ -106,7 +174,7 @@
         printf("\n");
      }
      num_alive++;
-@@ -756,7 +762,7 @@
+@@ -756,7 +769,7 @@
  
  temp = 
    (((a->tv_sec*1000000)+ a->tv_usec) - 
@@ -115,3 +183,28 @@
  
  return (long) temp;
  
+@@ -781,8 +794,8 @@
+   struct timeval to;
+   fd_set readset,writeset;
+ 
+-  to.tv_sec  = timo/1000;
+-  to.tv_usec = (timo - (to.tv_sec*1000))*1000;
++  to.tv_sec  = timo/1000000;
++  to.tv_usec = (timo - (to.tv_sec*1000000));
+ 
+   FD_ZERO(&readset);
+   FD_ZERO(&writeset);
+@@ -808,11 +821,11 @@
+   fprintf(stderr,"   -d         use dns to lookup address for return ping packet\n");
+   fprintf(stderr,"   -e         show elapsed time on return packets\n");
+   fprintf(stderr,"   -f file    read list of systems from a file ( - means stdin)\n");
+-  fprintf(stderr,"   -i n       interval (between ping packets) in milliseconds (default %d)\n",interval);
++  fprintf(stderr,"   -i n       interval (between ping packets) in microseconds (default %d)\n",interval);
+   fprintf(stderr,"   -q         quiet (don't show per host results)\n");
+   fprintf(stderr,"   -r n       retry limit (default %d)\n",retry);
+   fprintf(stderr,"   -s         dump final stats\n");
+-  fprintf(stderr,"   -t n       individual host timeout in milliseconds (default %d)\n",timeout);
++  fprintf(stderr,"   -t n       individual host timeout in microseconds (default %d)\n",timeout);
+   fprintf(stderr,"   -u         show systems that are unreachable\n");
+   fprintf(stderr,"   -v         show version\n");
+   fprintf(stderr,"   systems    list of systems to check (if no -f specified)\n");
