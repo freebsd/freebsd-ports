@@ -8,7 +8,7 @@
 PORTNAME=	coreblog
 PORTVERSION=	0.70b
 CATEGORIES=	www zope
-MASTER_SITES=	http://zope.org/Members/ats/COREBlog/COREBlog%200.7/ \
+MASTER_SITES=	http://zope.org/Members/ats/COREBlog/COREBlog0.7b/ \
 		http://coreblog.org/junk/
 PKGNAMEPREFIX=	zope-
 DISTNAME=	COREBlog07b
