@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	unzip
-PORTVERSION=	5.42
+PORTVERSION=    5.50
 CATEGORIES=	archivers
-MASTER_SITES=   ftp://ftp.icce.rug.nl/infozip/src/ \
+MASTER_SITES=   ftp://ftp.info-zip.org/pub/infozip/src/ \
 		${MASTER_SITE_TEX_CTAN:S,%SUBDIR%,tools/zip/info-zip/src/,}
-DISTFILES=      ${PORTNAME}542.tar.gz
+DISTFILES=      ${PORTNAME}550.tar.gz
 
 MAINTAINER=	ache@FreeBSD.org
 
@@ -21,16 +21,16 @@ MAN1=		funzip.1 unzip.1 unzipsfx.1 zipgrep.1 zipinfo.1
 
 .if defined(WITH_UNZIP_UNREDUCE)
 DISTFILES+=     unreduce_full.zip
-EXTRACT_ONLY=   ${PORTNAME}542.tar.gz
+EXTRACT_ONLY=   ${PORTNAME}550.tar.gz
 MAKE_ENV=       LOCAL_UNZIP="${CFLAGS} -DUSE_UNSHRINK -DUSE_SMITH_CODE"
 .endif
 
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "i386"
-ALL_TARGET=	freebsd
+ALL_TARGET=     freebsd
 .else
-ALL_TARGET=	bsd
+ALL_TARGET=     bsd
 .endif
 
 .if defined(WITH_UNZIP_UNREDUCE)
