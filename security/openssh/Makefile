@@ -13,6 +13,7 @@ CATEGORIES=	security net
 MASTER_SITES=	ftp://internat.FreeBSD.org/pub/Crypto/OpenSSH/
 
 MAINTAINER=	green@FreeBSD.org
+MAINTAINER+=	sumikawa@FreeBSD.org
 
 RESTRICTED=	"One file calls external cryptographic routines."
 
