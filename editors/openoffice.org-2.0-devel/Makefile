@@ -7,7 +7,7 @@
 
 PORTNAME=	openoffice
 PORTVERSION=	644
-SNAPDATE=	20030324
+SNAPDATE=	20030412
 CATEGORIES+=	editors
 MASTER_SITES+=	http://projects.imp.ch/openoffice/%SUBDIR%/ \
 		http://ny1.mirror.openoffice.org/developer/%SUBDIR%/ \
