@@ -1,5 +1,6 @@
+@comment $FreeBSD$
 bin/treecc
-bin/treecc-0.1.4
+bin/treecc-0.1.6
 @unexec install-info --delete %D/info/treecc.info %D/info/dir
 info/treecc.info
 info/treecc.info-1
