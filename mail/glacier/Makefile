@@ -8,7 +8,7 @@
 
 DISTNAME=	glacier-0.0.2
 CATEGORIES=	mail gnome
-MASTER_SITES=	http://glacier.linuxbox.com/
+MASTER_SITES=	http://glacier.linuxave.net/
 
 MAINTAINER=	will@FreeBSD.org
 
