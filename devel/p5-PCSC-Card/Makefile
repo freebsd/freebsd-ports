@@ -17,6 +17,12 @@ COMMENT=	Perl bindings for the PC/SC Lite Framework
 
 LIB_DEPENDS=	pcsclite.0:${PORTSDIR}/devel/pcsc-lite
 
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} < 500600
+IGNORE=		Requires perl-5.6.0 or better to build correctly
+.endif
+
 PERL_CONFIGURE=	yes
 CONFIGURE_ARGS=	INSTALLDIRS=site
 MAKE_ENV=	"LOCALBASE=$(LOCALBASE)"
@@ -24,4 +30,4 @@ MAKE_ENV=	"LOCALBASE=$(LOCALBASE)"
 MAN3=		Chipcard::PCSC::Card.3 Chipcard::PCSC.3
 MAN3PREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
