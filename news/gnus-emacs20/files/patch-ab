@@ -13,7 +13,7 @@
 +@dircategory The Emacs editor and associated tools
  @direntry
 -* Gnus: (gnus).         The newsreader Gnus.
-+* Gnus: (gnus).			The newsreader Gnus.
++* Gnus: (gnus.info).			The newsreader Gnus.
  @end direntry
  @iftex
  @finalout
