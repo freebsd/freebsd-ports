@@ -6,9 +6,10 @@
 #
 
 PORTNAME=	dpsearch
-PORTVERSION=	4.25
+PORTVERSION=	4.26
 CATEGORIES=	www
-MASTER_SITES=	http://www.dataparksearch.org/
+MASTER_SITES=	http://www.dataparksearch.org/ \
+		http://dataparksearch.h0t.de/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Open source search engine for Internet and Intranet sites
