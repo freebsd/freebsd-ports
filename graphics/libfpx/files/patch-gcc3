@@ -1,0 +1,50 @@
+To make the port compile on my system using gcc30-3.0.1_1, I had
+to add the attached patches. Please see, if these are worth committing.
+
+thanks,
+--Alex.
+
+--- basics/geometry.h	Sat Dec 23 14:10:00 2000
++++ basics/geometry.h	Wed Oct 24 18:52:42 2001
+@@ -16,7 +16,7 @@
+   #define Geometrie_h
+   #ifndef Commun_h
+     #include  "common.h"
+-  #endif Commun_h
++  #endif // Commun_h
+ //  ------------------------------------------------------------------------------------------------
+ 
+ //  Includes
+--- ole/oleprops.h	Sat Dec 23 14:12:08 2000
++++ ole/oleprops.h	Wed Oct 24 18:49:11 2001
+@@ -88,7 +88,7 @@
+ 
+   class OLEPropertySection : public PToolkitObject {
+   
+-  friend OLEPropertySet; 
++  friend class OLEPropertySet; 
+   
+   public:
+                 // Use this constrctor when reading a section
+--- ole/oleprop.h	Sat Dec 23 14:12:08 2000
++++ ole/oleprop.h	Wed Oct 24 18:47:05 2001
+@@ -80,7 +80,7 @@
+ 
+   class OLEProperty : public PToolkitObject {
+ 
+-  friend OLEPropertySection; 
++  friend class OLEPropertySection; 
+   
+   public:
+                   OLEProperty (OLEPropertySet* parentPropSet, 
+--- ri_image/cp32to24.h	Sat Dec 23 14:15:34 2000
++++ ri_image/cp32to24.h	Wed Oct 24 18:09:04 2001
+@@ -16,7 +16,7 @@
+   #define Compresseur32Vers24_h
+   #ifndef Commun_h
+     #include  "common.h"
+-  #endif Commun_h
++  #endif // Commun_h
+ //  ------------------------------------------------------------------------------------------------
+ 
+ //  Includes
