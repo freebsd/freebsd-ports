@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.163 1998/08/17 03:14:46 jkoshy Exp $
+# $Id: Makefile,v 1.164 1998/08/24 01:48:07 steve Exp $
 #
 
     SUBDIR += 3dc
@@ -73,6 +73,7 @@
     SUBDIR += wmtimebomb
     SUBDIR += xabacus
     SUBDIR += xasteroids
+    SUBDIR += xataxx
     SUBDIR += xbat
     SUBDIR += xbattle
     SUBDIR += xbill
