@@ -30,16 +30,16 @@ EXTRACT_BEFORE_ARGS=	# empty
 EXTRACT_AFTER_ARGS=	# empty
 
 WRKSRC=		${WRKDIR}/j2sdk1.4.0_01
-PLIST_SUB+=	T=${TARGET_DIR:S/^${PREFIX}\///} PORTVERSION=${PORTVERSION}
+PLIST_SUB+=	T=${APP_HOME:S/^${PREFIX}\///} PORTVERSION=${PORTVERSION}
 
 NO_BUILD=	yes
 USE_LINUX=	yes
 DL_JDK_VERSION=	1.4.0_01
 INSTALL_JDK_VERSION=	${DL_JDK_VERSION:S/_/./g}
 ONLY_FOR_ARCHS=	i386
-TARGET_DIR?=	${PREFIX}/${PKGBASE}${PORTVERSION}
 DOWNLOAD_URL?=	http://java.sun.com/Download6?url=/Download6&config-file=j2sdk-${DL_JDK_VERSION:S/./_/g}.config&platform=linux-i586
 PORTTITLE=	Java 2 Development Kit ${INSTALL_JDK_VERSION} for Linux
+APP_HOME=	${PREFIX}/${PKGNAMEPREFIX}${PORTNAME}${INSTALL_JDK_VERSION:R}
 
 .include <bsd.port.pre.mk>
 
@@ -54,8 +54,8 @@ post-patch:
 	find ${WRKSRC} -name '*.orig' -print | xargs ${RM} -f
 
 do-install:
-	${MKDIR} ${PREFIX}/${PKGNAMEPREFIX}jdk${PORTVERSION}
-	${TAR} -C ${WRKSRC} -cf- . | ${TAR} -C ${PREFIX}/${PKGNAMEPREFIX}jdk${PORTVERSION} -xpf-
-	${LOCALBASE}/bin/registervm "${TARGET_DIR}/bin/java # Linux-Sun-JDK${PORTVERSION}"
+	${MKDIR} ${APP_HOME}
+	${TAR} -C ${WRKSRC} -cf- . | ${TAR} -C ${APP_HOME} -xpf-
+	${LOCALBASE}/bin/registervm "${APP_HOME}/bin/java # Linux-Sun-JDK${PORTVERSION}"
 
 .include <bsd.port.post.mk>
