@@ -1,10 +1,3 @@
-sbin/bgpd
-sbin/ospf6d
-sbin/ospfd
-sbin/ripd
-sbin/ripngd
-sbin/zebra
-sbin/zebractl
 bin/vtysh
 etc/zebra/bgpd.conf.sample
 etc/zebra/bgpd.conf.sample2
@@ -12,13 +5,25 @@ etc/zebra/ospf6d.conf.sample
 etc/zebra/ospfd.conf.sample
 etc/zebra/ripd.conf.sample
 etc/zebra/ripngd.conf.sample
-etc/zebra/zebra.conf.sample
 etc/zebra/vtysh.conf.sample
-@unexec install-info --delete %D/info/zebra.info %D/info/dir
-info/zebra.info
-info/zebra.info-1
-info/zebra.info-2
-info/zebra.info-3
-info/zebra.info-4
-@exec install-info %D/info/zebra.info %D/info/dir
+etc/zebra/zebra.conf.sample
+include/ospfd/ospf_api.h
+include/ospfd/ospf_asbr.h
+include/ospfd/ospf_dump.h
+include/ospfd/ospf_ism.h
+include/ospfd/ospf_lsa.h
+include/ospfd/ospf_lsdb.h
+include/ospfd/ospf_nsm.h
+include/ospfd/ospf_opaque.h
+include/ospfd/ospfd.h
+lib/libospf.a
+lib/libzebra.a
+sbin/bgpd
+sbin/ospf6d
+sbin/ospfd
+sbin/ripd
+sbin/ripngd
+sbin/zebra
+sbin/zebractl
 @dirrm etc/zebra
+@dirrm include/ospfd
