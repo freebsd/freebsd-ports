@@ -4,6 +4,6 @@ share/ezmlm-web/index.c
 share/ezmlm-web/htaccess.sample
 share/ezmlm-web/webusers.sample
 @dirrm share/ezmlm-web
-%%EZMLM_DIR%%/bin/ezmlm-web.cgi
-%%EZMLM_DIR%%/etc/ezmlm/ezmlmwebrc
-%%CGI_BIN%%/ezmlm-web
+%%EZMLM_DIR%%bin/ezmlm-web.cgi
+%%EZMLM_DIR%%etc/ezmlm/ezmlmwebrc.sample
+%%CGI_BIN%%ezmlm-web
