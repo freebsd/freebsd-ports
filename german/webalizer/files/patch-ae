@@ -1,0 +1,11 @@
+--- configure.orig	Wed Oct 27 18:18:41 1999
++++ configure	Wed Oct 27 18:18:52 1999
+@@ -1054,7 +1054,7 @@
+ fi
+ if eval "test \"`echo '$ac_cv_lib_'$ac_lib_var`\" = yes"; then
+   echo "$ac_t""yes" 1>&6
+-  LIBS="-lgd ${LIBS}"; HAVE_LIBGD="yes"
++  LIBS="-lgd -lpng ${LIBS}"; HAVE_LIBGD="yes"
+ else
+   echo "$ac_t""no" 1>&6
+ HAVE_LIBGD=""
