@@ -241,4 +241,17 @@ fi
 
 cat $F >>  $WRKDIR/xc/config/cf/xf86site.def
 
+if [ X${MACHINE} = X"alpha" ]; then
+    cat $PKGDIR/pkg-plist | sed -e /MATROX_GXX/d \
+	                        -e '/bin\/scanpci/d' \
+	                        -e /i810/d \
+	                        -e /vmware/d \
+	                        -e /savage/d \
+	                        -e '/fonts\/PEX\/Roman/d' \
+                                -e /libafb/d  > $WRKDIR/pkg-plist
+elif [ X${MACHINE} = X"pc98" ]; then
+    cat $PKGDIR/pkg-plist | sed -e /MATROX_GXX/d > $WRKDIR/pkg-plist
+else
+    cp $PKGDIR/pkg-plist $WRKDIR/pkg-plist
+fi
 exit 0
