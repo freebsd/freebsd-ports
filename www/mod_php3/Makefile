@@ -11,10 +11,10 @@ PKGNAME=	apache+php-${VERSION_APACHE}+${VERSION_PHP}
 CATEGORIES=	www
 MASTER_SITES=	http://www.apache.org/dist/ \
 		http://www.rge.com/pub/infosystems/apache/dist/ \
+		ftp://ftp.php.net/pub/${PHP_DISTDIR}/ \
+		http://us.php.net/${PHP_DISTDIR}/ \
 		http://www.modssl.org/source/ \
 		ftp://ftp.modssl.org/source/ \
-		http://www.php.net/${PHP_DISTDIR}/ \
-		http://us.php.net/${PHP_DISTDIR}/ \
 		http://www.apache.de/dist/ \
 		ftp://ftp.ccs.neu.edu/net/mirrors/ftp.apache.org/apache/dist/ \
 		http://php.he.net/${PHP_DISTDIR}/ \
@@ -43,7 +43,7 @@ DISTFILES=	apache_${VERSION_APACHE}.tar.gz php-${VERSION_PHP}.tar.gz
 
 PATCH_SITES=	http://www.physik.TU-Berlin.DE/~ibex/ports/distfiles/
 PATCHFILES=	php_configure.diff php_gd.c.diff php_php3_gd.h.diff \
-		php_pdf.c.diff
+		php_pdf.c.diff php_snmp.c.diff
 
 MAINTAINER=	dirk@FreeBSD.org
 
