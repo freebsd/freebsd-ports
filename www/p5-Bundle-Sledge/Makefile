@@ -43,7 +43,6 @@ PM_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/Template.pm:${PORTSDIR}/www/p5-Template-T
 PM_DEPENDS+=	${SITE_PERL}/Data/Properties.pm:${PORTSDIR}/devel/p5-Data-Properties
 PM_DEPENDS+=	${SITE_PERL}/Error.pm:${PORTSDIR}/lang/p5-Error
 PM_DEPENDS+=	${SITE_PERL}/LWP.pm:${PORTSDIR}/www/p5-libwww
-PM_DEPENDS+=	${SITE_PERL}/CGI.pm:${PORTSDIR}/www/p5-CGI.pm
 
 SITE_PERL=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}
 
@@ -55,6 +54,7 @@ MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 .include <bsd.port.pre.mk>
 
 .if ${PERL_LEVEL} < 500601
+PM_DEPENDS+=	${SITE_PERL}/CGI.pm:${PORTSDIR}/www/p5-CGI.pm
 PM_DEPENDS+=	${SITE_PERL}/File/Spec.pm:${PORTSDIR}/devel/p5-File-Spec
 .endif
 
