@@ -1,3 +1,4 @@
+@comment $FreeBSD$
 bin/getmail
 bin/getmail_maildir
 bin/getmail_mbox
