@@ -4,6 +4,8 @@ sbin/smbldap-groupmod
 sbin/smbldap-groupshow
 sbin/smbldap-migrate-accounts
 sbin/smbldap-migrate-groups
+sbin/smbldap-migrate-unix-accounts
+sbin/smbldap-migrate-unix-groups
 sbin/smbldap-passwd
 sbin/smbldap-populate
 sbin/smbldap-useradd
