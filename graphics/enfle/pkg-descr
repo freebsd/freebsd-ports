@@ -1,0 +1,9 @@
+This program aims to view many pictures easily. You cannot expect
+versatile performance, such as xv, gimp. This software is only to view
+pictures in succession. So far, this can treat JPEG, PNG, MAG, BMP, 
+XPM, PNM, and several special formats.
+
+WWW: http://enfle.fennel.org/
+
+-- 
+Yuuki SAWADA <mami@whale.cc.muroran-it.ac.jp>
