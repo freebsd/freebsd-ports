@@ -18,6 +18,10 @@ LIB_DEPENDS?=	cups.2:${.CURDIR}/../../print/cups-base
 RUN_DEPENDS?=	espgs:${.CURDIR}/../../print/cups-pstoraster \
 		${LOCALBASE}/sbin/cupsaddsmb:${.CURDIR}/../../print/cups-lpr
 
+.if make(package)
+DEPENDS_TARGET="package"
+.endif
+
 NO_BUILD=	true
 do-install:	# empty
 do-patch:	# empty
