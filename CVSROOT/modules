@@ -482,7 +482,6 @@ bash2		ports/shells/bash2
 basiliskII	ports/emulators/basiliskII
 battalion	ports/games/battalion
 battleball	ports/games/battleball
-battstat-applet ports/sysutils/battstat-applet
 baudline	ports/audio/baudline
 bayespam	ports/mail/bayespam
 bayonne		ports/comms/bayonne
@@ -659,7 +658,6 @@ bsvc		ports/emulators/bsvc
 btc		ports/audio/btc
 btoa		ports/converters/btoa
 bubblegum	ports/security/bubblegum
-bubblemon	ports/sysutils/bubblemon
 bubblemon-dockapp	ports/sysutils/bubblemon-dockapp
 buffer		ports/misc/buffer
 buffy		ports/x11-toolkits/buffy
@@ -670,7 +668,6 @@ bugseeker-demo	ports/java/bugseeker-demo
 bugsx		ports/games/bugsx
 bugzilla	ports/devel/bugzilla
 buildtool	ports/devel/buildtool
-bulb		ports/deskutils/bulb
 bulk_mailer	ports/mail/bulk_mailer
 burgerspace	ports/games/burgerspace
 buttonbox	ports/x11/buttonbox
@@ -1590,7 +1587,6 @@ fidogate	ports/news/fidogate
 figlet		ports/misc/figlet
 figlet-fonts	ports/misc/figlet-fonts
 figurine	ports/graphics/figurine
-file_menu_applet	ports/x11-fm/file_menu_applet
 filedupe	ports/sysutils/filedupe
 filepp		ports/textproc/filepp
 fileroller	ports/archivers/fileroller
@@ -1636,7 +1632,6 @@ flim113-emacs19	ports/editors/flim113-emacs19
 flim113-emacs20	ports/editors/flim113-emacs20
 flim113-mule	ports/editors/flim113-mule
 flim113-xemacs21-mule	ports/editors/flim113-xemacs21-mule
-flink		ports/mail/flink
 flip		ports/graphics/flip
 floatator	ports/misc/floatator
 flock		ports/sysutils/flock
@@ -1845,7 +1840,6 @@ gauche-gl	ports/graphics/gauche-gl
 gauche-gtk	ports/x11-toolkits/gauche-gtk
 gauche-sxml	ports/textproc/gauche-sxml
 gawk		ports/lang/gawk
-gbackground	ports/x11/gbackground
 gbase		ports/converters/gbase
 gbe		ports/emulators/gbe
 gbib		ports/databases/gbib
@@ -2043,7 +2037,6 @@ gltk		ports/graphics/gltk
 gltron		ports/games/gltron
 gltt		ports/graphics/gltt
 glui		ports/devel/glui
-glunarclock	ports/astro/glunarclock
 gm4		ports/devel/m4
 gma		ports/games/gma
 gmail		ports/mail/gmail
@@ -2082,7 +2075,6 @@ gngb		ports/emulators/gngb
 gniffel		ports/games/gniffel
 gno3dtet	ports/games/gno3dtet
 gnocatan	ports/games/gnocatan
-gnoclip		ports/x11/gnoclip
 gnofin		ports/deskutils/gnofin
 gnofract4d	ports/graphics/gnofract4d
 gnokii		ports/comms/gnokii
@@ -2122,7 +2114,6 @@ gnomefind	ports/sysutils/gnomefind
 gnomegames2	ports/games/gnomegames2
 gnomehier	ports/misc/gnomehier
 gnomeiconedit	ports/graphics/gnomeiconedit
-gnomeicu	ports/net/gnomeicu
 gnomeicu2	ports/net/gnomeicu2
 gnomekiss	ports/games/gnomekiss
 gnomelibs	ports/x11/gnomelibs
@@ -2134,8 +2125,6 @@ gnomememoryblocks	ports/games/gnomememoryblocks
 gnomemimedata	ports/misc/gnomemimedata
 gnomemm		ports/x11-toolkits/gnomemm
 gnomepanel	ports/x11/gnomepanel
-gnomepilot	ports/palm/gnomepilot
-gnomepilot-conduits	ports/palm/gnomepilot-conduits
 gnomepilot-conduits2	ports/palm/gnomepilot-conduits2
 gnomepilot2	ports/palm/gnomepilot2
 gnomepim	ports/deskutils/gnomepim
@@ -2372,7 +2361,6 @@ gtktetcolor	ports/games/gtktetcolor
 gtkwave		ports/cad/gtkwave
 gtkyahoo	ports/net/gtkyahoo
 gtl		ports/misc/gtl
-gtm		ports/ftp/gtm
 gtoaster	ports/sysutils/gtoaster
 gtoolkit	ports/x11-toolkits/gtoolkit
 gtranslator	ports/devel/gtranslator
@@ -2398,7 +2386,6 @@ gutenfetch	ports/net/gutenfetch
 gutenmark	ports/textproc/gutenmark
 gv		ports/print/gv
 gvd		ports/devel/gvd
-gvid		ports/x11/gvid
 gview		ports/graphics/gview
 gwave		ports/cad/gwave
 gwenview	ports/graphics/gwenview
@@ -3811,7 +3798,6 @@ libol		ports/devel/libol
 libole2		ports/devel/libole2
 liboop		ports/devel/liboop
 libosip		ports/net/libosip
-port_libpanel	ports/x11/libpanel
 libparanoia	ports/security/libparanoia
 libpci		ports/devel/libpci
 libpdel		ports/devel/libpdel
@@ -5961,7 +5947,6 @@ pan		ports/news/pan
 pan2		ports/news/pan2
 pancho		ports/net/pancho
 panda		ports/print/panda
-panel--		ports/x11-toolkits/panel--
 pango		ports/x11-toolkits/pango
 panorama	ports/graphics/panorama
 pantomime	ports/mail/pantomime
@@ -7366,7 +7351,6 @@ serialmail	ports/mail/serialmail
 serveez		ports/net/serveez
 service-config	ports/sysutils/service-config
 setcdboot	ports/sysutils/setcdboot
-seti_applet	ports/astro/seti_applet
 setiathome	ports/astro/setiathome
 setquota	ports/sysutils/setquota
 settitle	ports/x11/settitle
