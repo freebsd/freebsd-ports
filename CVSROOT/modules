@@ -4896,6 +4896,7 @@ libosip2	ports/net/libosip2
 libotf		ports/print/libotf
 libowfat	ports/devel/libowfat
 libpanelappletmm	ports/x11-toolkits/libpanelappletmm
+libpano12	ports/graphics/libpano12
 libpaper	ports/print/libpaper
 libparanoia	ports/security/libparanoia
 libparsifal	ports/textproc/libparsifal
