@@ -405,6 +405,7 @@
     SUBDIR += roundup
     SUBDIR += roxen
     SUBDIR += rt2
+    SUBDIR += rt3
     SUBDIR += ruboard
     SUBDIR += ruby-borges
     SUBDIR += ruby-div
