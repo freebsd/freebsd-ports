@@ -4,7 +4,7 @@
  #include <cctype>
  #include <cstring>
  
-+#if __FreeBSD__
++#ifdef __FreeBSD__
 +#  include <osreldate.h>
 +#  if __FreeBSD_version < 500035
 +#    include <stlport/iosfwd>
