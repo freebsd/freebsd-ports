@@ -1,13 +1,13 @@
---- help/Makefile.in.orig	Sat May 18 17:36:29 2002
-+++ help/Makefile.in	Sun May 19 11:13:10 2002
-@@ -51,8 +51,8 @@
+--- help/Makefile.in.orig	Sat Oct 26 10:12:16 2002
++++ help/Makefile.in	Sat Oct 26 10:13:01 2002
+@@ -53,8 +53,8 @@
  
  install:
  	@echo "Installing help files"
--	@${RM} -rf ${prefix}/help/en_us
--	@${CP} -dpR en_us ${prefix}/help/
-+	@mkdir -p ${prefix}/share/tr-ircd/help
-+	@${CP} -pR en_us ${prefix}/share/tr-ircd/help/
+-	$(INSTALL) -d ${datadir}/help
+-	${CP} -R en_us ${datadir}/help/
++	$(INSTALL) -d ${datadir}/tr-ircd/help
++	${CP} -R en_us ${datadir}/tr-ircd/help/
  
- makesums:
- 	@echo "Creating .md5sums..."
+ uninstall:
+ 	@echo "Removing help files"
