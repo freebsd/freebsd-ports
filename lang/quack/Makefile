@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	quack
-PORTVERSION=	0.26
+PORTVERSION=	0.27
 CATEGORIES=	lang scheme elisp
 MASTER_SITES=	http://www.neilvandyke.org/quack/
 DISTNAME=	${PORTNAME}
@@ -15,8 +15,6 @@ DIST_SUBDIR=	${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Enhanced support for editing and running Scheme code
-
-BROKEN=		Size mismatch
 
 RUN_DEPENDS=	wget:${PORTSDIR}/ftp/wget
 
