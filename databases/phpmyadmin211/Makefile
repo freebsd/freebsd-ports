@@ -7,6 +7,7 @@
 
 PORTNAME=	phpMyAdmin
 PORTVERSION=	2.6.0
+PORTREVISION=	1
 CATEGORIES=	databases www
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	phpmyadmin
@@ -62,8 +63,16 @@ OPTIONSFILE?=	${PORT_DBDIR}/${LATEST_LINK}/options
 .include "${OPTIONSFILE}"
 .endif
 
-.for opt in BZ2 GD MYSQLI OPENSSL PDF ZLIB
+# Options that default to on:
+.for opt in BZ2 GD OPENSSL PDF ZLIB
 .    if !defined(WITHOUT_${opt}) || defined(WITH_${opt})
+USE_PHP+=	${opt:L}
+.    endif
+.endfor
+
+# Options that default to off:
+.for opt in MYSQLI
+.    if defined(WITH_${opt}) && !defined(WITHOUT_${opt})
 USE_PHP+=	${opt:L}
 .    endif
 .endfor
