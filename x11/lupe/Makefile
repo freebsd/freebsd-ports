@@ -1,9 +1,9 @@
 # New ports collection makefile for:	lupe
-# Version required:	0.07
+# Version required:	0.08
 # Date created:		4 February 1998
 # Whom:			FURUSAWA,Kazuhisa <kazu@jp.freebsd.org>
 #
-# $Id: Makefile,v 1.5 1998/10/05 05:17:56 steve Exp $
+# $Id: Makefile,v 1.6 1998/11/17 16:45:06 flathill Exp $
 #
 
 DISTNAME=	lupe008
