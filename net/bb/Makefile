@@ -3,13 +3,12 @@
 # Date created:         So  17 Nov 1996 16:59:23 MET
 # Whom:                 Andreas Klemm <andreas@klemm.gtn.com>
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1996/11/17 20:02:09 andreas Exp $
 #
 
 DISTNAME=	bb
 PKGNAME=	bb-0.9
-CATEGORIES+=	net
-
+CATEGORIES=	net
 MASTER_SITES=	http://www.iti.qc.ca/iti/users/sean/bb-dnld/
 EXTRACT_SUFX=   -src.tgz
 
@@ -23,13 +22,13 @@ post-configure:
 	@cp ${FILESDIR}/Makefile ${WRKSRC}
 
 install:
-	@mkdir -p ${PREFIX}/${DISTNAME}/bin
-	@mkdir -p ${PREFIX}/${DISTNAME}/doc
-	@mkdir -p ${PREFIX}/${DISTNAME}/etc
-	@mkdir -p ${PREFIX}/${DISTNAME}/web
-	@mkdir -p ${PREFIX}/${DISTNAME}/www/gifs
-	@mkdir -p ${PREFIX}/${DISTNAME}/www/logs
-	@mkdir -p ${PREFIX}/${DISTNAME}/www/notes
+	@${MKDIR} ${PREFIX}/${DISTNAME}/bin
+	@${MKDIR} ${PREFIX}/${DISTNAME}/doc
+	@${MKDIR} ${PREFIX}/${DISTNAME}/etc
+	@${MKDIR} ${PREFIX}/${DISTNAME}/web
+	@${MKDIR} ${PREFIX}/${DISTNAME}/www/gifs
+	@${MKDIR} ${PREFIX}/${DISTNAME}/www/logs
+	@${MKDIR} ${PREFIX}/${DISTNAME}/www/notes
 	${INSTALL_DATA} ${WRKSRC}/README \
 				${PREFIX}/${DISTNAME}/README
 	${INSTALL_PROGRAM} ${WRKSRC}/bin/bb \
