@@ -6,11 +6,10 @@
 #
 
 PORTNAME=	e2fsprogs
-PORTVERSION=	1.35.w20040131.20040224135102
+PORTVERSION=	1.35
 CATEGORIES=	sysutils
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
-DISTNAME=	${PORTNAME}-1.35-WIP-0131
 
 MAINTAINER=	matthias.andree@gmx.de
 COMMENT=	Utilities and library to manipulate an ext2 or ext3 filesystem
@@ -18,8 +17,6 @@ COMMENT=	Utilities and library to manipulate an ext2 or ext3 filesystem
 .if !defined(DISABLE_NLS)
 USE_GETTEXT=	yes
 .endif
-
-WRKSRC=	${WRKDIR}/${PORTNAME}-1.35
 
 USE_GCC=	3.3
 PATCH_STRIP=	-p1
