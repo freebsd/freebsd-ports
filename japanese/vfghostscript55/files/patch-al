@@ -1,5 +1,5 @@
---- unix-gcc.mak.orig	Sat Sep  2 04:47:06 2000
-+++ unix-gcc.mak	Sat Sep  2 04:58:56 2000
+--- unix-gcc.mak.orig	Sat Jan  5 21:01:57 2002
++++ unix-gcc.mak	Sat Jan  5 21:49:17 2002
 @@ -57,11 +57,10 @@
  # initialization files (gs_*.ps) and the fonts.
  
@@ -50,12 +50,15 @@
  
  # Define the name of the linker for the final link step.
  # Normally this is the same as the C compiler.
-@@ -213,7 +212,7 @@
+@@ -211,9 +210,9 @@
+ # We don't include -ansi, because this gets in the way of the platform-
+ #   specific stuff that <math.h> typically needs; nevertheless, we expect
  #   gcc to accept ANSI-style function prototypes and function definitions.
- XCFLAGS=
+-XCFLAGS=
++#XCFLAGS=
  
 -CFLAGS=$(CFLAGS_STANDARD) $(GCFLAGS) $(XCFLAGS)
-+#CFLAGS=$(CFLAGS_STANDARD) $(GCFLAGS) $(XCFLAGS)
++CFLAGS+=$(XCFLAGS)
  
  # Define platform flags for ld.
  # SunOS 4.n may need -Bstatic.
