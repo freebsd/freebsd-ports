@@ -1,5 +1,5 @@
 #
-#	$FreeBSD: /tmp/pcvs/ports/Mk/bsd.emacs.mk,v 1.21 2003-01-23 15:55:36 shige Exp $
+#	$FreeBSD: /tmp/pcvs/ports/Mk/bsd.emacs.mk,v 1.22 2003-02-10 07:59:22 kris Exp $
 #
 #	bsd.emacs.mk - 19990829 Shigeyuki Fukushima.
 #
@@ -73,7 +73,7 @@ EMACS_COMMON_PORT=	NO
 EMACS_HAS_MULE=		NO
 EMACS_NO_SUBDIRSEL=	YES
 .if (${EMACS_MASTERDIR_PKGFILES} == "YES")
-COMMENT?=		${PKGDIR}/pkg-comment.emacs19
+COMMENTFILE?=		${PKGDIR}/pkg-comment.emacs19
 DESCR?=                 ${PKGDIR}/pkg-descr.emacs19
 PLIST?=                 ${PKGDIR}/pkg-plist.emacs19
 .endif
@@ -90,7 +90,7 @@ EMACS_COMMON_PORT=	NO
 EMACS_HAS_MULE=		YES
 EMACS_NO_SUBDIRSEL=	NO
 .if (${EMACS_MASTERDIR_PKGFILES} == "YES")
-COMMENT?=		${PKGDIR}/pkg-comment.${EMACS_PORT_NAME}
+COMMENTFILE?=		${PKGDIR}/pkg-comment.${EMACS_PORT_NAME}
 DESCR?=                 ${PKGDIR}/pkg-descr.${EMACS_PORT_NAME}
 PLIST?=                 ${PKGDIR}/pkg-plist.${EMACS_PORT_NAME}
 .endif
@@ -107,7 +107,7 @@ EMACS_COMMON_PORT=	NO
 EMACS_HAS_MULE=		YES
 EMACS_NO_SUBDIRSEL=	NO
 .if (${EMACS_MASTERDIR_PKGFILES} == "YES")
-COMMENT?=		${PKGDIR}/pkg-comment.${EMACS_PORT_NAME}
+COMMENTFILE?=		${PKGDIR}/pkg-comment.${EMACS_PORT_NAME}
 DESCR?=                 ${PKGDIR}/pkg-descr.${EMACS_PORT_NAME}
 PLIST?=                 ${PKGDIR}/pkg-plist.${EMACS_PORT_NAME}
 .endif
@@ -124,7 +124,7 @@ EMACS_COMMON_PORT=	YES
 EMACS_HAS_MULE=		YES
 EMACS_NO_SUBDIRSEL=	YES
 .if (${EMACS_MASTERDIR_PKGFILES} == "YES")
-COMMENT?=		${PKGDIR}/pkg-comment.${EMACS_PORT_NAME}
+COMMENTFILE?=		${PKGDIR}/pkg-comment.${EMACS_PORT_NAME}
 DESCR?=                 ${PKGDIR}/pkg-descr.${EMACS_PORT_NAME}
 PLIST?=                 ${PKGDIR}/pkg-plist.${EMACS_PORT_NAME}
 .endif
@@ -141,7 +141,7 @@ EMACS_COMMON_PORT=	NO
 EMACS_HAS_MULE=		NO
 EMACS_NO_SUBDIRSEL=	NO
 .if (${EMACS_MASTERDIR_PKGFILES} == "YES")
-COMMENT?=		${PKGDIR}/pkg-comment.${EMACS_PORT_NAME}
+COMMENTFILE?=		${PKGDIR}/pkg-comment.${EMACS_PORT_NAME}
 DESCR?=                 ${PKGDIR}/pkg-descr.${EMACS_PORT_NAME}
 PLIST?=                 ${PKGDIR}/pkg-plist.${EMACS_PORT_NAME}
 .endif
@@ -158,7 +158,7 @@ EMACS_COMMON_PORT=	YES
 EMACS_HAS_MULE=		YES
 EMACS_NO_SUBDIRSEL=	NO
 .if (${EMACS_MASTERDIR_PKGFILES} == "YES")
-COMMENT?=		${PKGDIR}/pkg-comment.${EMACS_PORT_NAME}
+COMMENTFILE?=		${PKGDIR}/pkg-comment.${EMACS_PORT_NAME}
 DESCR?=                 ${PKGDIR}/pkg-descr.${EMACS_PORT_NAME}
 PLIST?=                 ${PKGDIR}/pkg-plist.${EMACS_PORT_NAME}
 .endif
@@ -175,7 +175,7 @@ EMACS_COMMON_PORT=	NO
 EMACS_HAS_MULE=		NO
 EMACS_NO_SUBDIRSEL=	NO
 .if (${EMACS_MASTERDIR_PKGFILES} == "YES")
-COMMENT?=		${PKGDIR}/pkg-comment.${EMACS_PORT_NAME}
+COMMENTFILE?=		${PKGDIR}/pkg-comment.${EMACS_PORT_NAME}
 DESCR?=                 ${PKGDIR}/pkg-descr.${EMACS_PORT_NAME}
 PLIST?=                 ${PKGDIR}/pkg-plist.${EMACS_PORT_NAME}
 .endif
@@ -192,7 +192,7 @@ EMACS_COMMON_PORT=	NO
 EMACS_HAS_MULE=		YES
 EMACS_NO_SUBDIRSEL=	NO
 .if (${EMACS_MASTERDIR_PKGFILES} == "YES")
-COMMENT?=		${PKGDIR}/pkg-comment.${EMACS_PORT_NAME}
+COMMENTFILE?=		${PKGDIR}/pkg-comment.${EMACS_PORT_NAME}
 DESCR?=                 ${PKGDIR}/pkg-descr.${EMACS_PORT_NAME}
 PLIST?=                 ${PKGDIR}/pkg-plist.${EMACS_PORT_NAME}
 .endif
