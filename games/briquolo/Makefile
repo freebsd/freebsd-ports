@@ -27,10 +27,16 @@ CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}"
 USE_SDL=	mixer sdl
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 502000
+BROKEN=		"Configure fails"
+.endif
+
 post-patch:
 	@${FIND} ${WRKSRC} -name "*.cpp" | ${XARGS} \
 		${REINPLACE_CMD} -e 's|SDL/|SDL11/|g'
 	@${FIND} ${WRKSRC} -name "*.h" | ${XARGS} \
 		${REINPLACE_CMD} -e 's|SDL/|SDL11/|g'
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
