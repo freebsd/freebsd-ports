@@ -14,8 +14,8 @@ DISTFILES=	remote.c vroot.h
 
 MAINTAINER=	kbyanc@posi.net
 
+USE_XLIB=	yes
 FETCH_BEFORE_ARGS=	-b
-
 DIST_SUBDIR=	netscape-remote
 NO_WRKSUBDIR=   yes
 
