@@ -64,6 +64,7 @@ taginfo		CVSROOT taginfo
 3ddesktop	ports/x11/3ddesktop
 3dm		ports/sysutils/3dm
 3dpong		ports/games/3dpong
+3proxy		ports/net/3proxy
 44bsd-csh	ports/shells/44bsd-csh
 44bsd-hunt	ports/games/44bsd-hunt
 44bsd-more	ports/misc/44bsd-more
