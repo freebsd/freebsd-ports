@@ -1,0 +1,18 @@
+When you study music on high school, college or music conservatory, you
+usually have to do ear training. Some of the exercises, like sight singing
+is easy to do alone. But often you have to be at least two people, one
+making questions, the other answering.
+
+GNU Solfege tries to help out with this. Solfege is a computer program written
+to help you practise the more simple and mechanical exercises on your own.
+These are the exercises written so far:
+   * Recognise melodic and harmonic intervals
+   * Compare interval sizes
+   * Sing the intervals the computer asks for
+   * Identify chords
+   * Sing chords
+   * Scales
+   * Dictation
+   * Remembering rhythmic patterns
+
+WWW: http://www.solfege.org/
