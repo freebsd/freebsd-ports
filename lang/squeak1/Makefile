@@ -3,7 +3,7 @@
 # Date created:        			20 December 1998
 # Whom:                			jesse@cs.uni-magdeburg.de
 #
-# $Id$
+# $Id: Makefile,v 1.5 1998/12/23 04:32:27 steve Exp $
 #
 
 DISTNAME=	1.31
@@ -24,6 +24,7 @@ MAINTAINER=	jesse@cs.uni-magdeburg.de
 ALLFILES=	${DISTNAME}${EXTRACT_SUFX} ${SQUEAK_SRC}
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
+USE_XLIB=	yes
 DIST_SUBDIR=	squeak
 SQUEAK_SRC=	SqueakV1.sources
 USE_GMAKE=	yes

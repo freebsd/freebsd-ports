@@ -3,7 +3,7 @@
 # Date created:        			12/01/1998
 # Whom:                			nectar@FreeBSD.ORG
 #
-# $Id: Makefile,v 1.3 1998/11/28 02:18:44 asami Exp $
+# $Id: Makefile,v 1.5 1998/12/03 04:35:44 nectar Exp $
 #
 
 DISTNAME=	2.2
@@ -23,6 +23,7 @@ MAINTAINER=	nectar@FreeBSD.ORG
 ALLFILES=	${DISTNAME}${EXTRACT_SUFX} ${SQUEAK_SRC}
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
+USE_XLIB=	yes
 DIST_SUBDIR=	squeak
 SQUEAK_SRC=	SqueakV2.sources
 USE_GMAKE=	yes
