@@ -4,15 +4,35 @@ share/doc/xine-ui/FAQ
 share/doc/xine-ui/FAQ_es
 share/doc/xine-ui/FAQ_fr
 share/doc/xine-ui/FAQ_it
+share/doc/xine-ui/FAQ_pl
+share/doc/xine-ui/README
+share/doc/xine-ui/README.corba
+share/doc/xine-ui/README.divx4
+share/doc/xine-ui/README.dxr3
+share/doc/xine-ui/README.dxr3_pl
 share/doc/xine-ui/README.freebsd
 share/doc/xine-ui/README.irix
+share/doc/xine-ui/README.mrl
 share/doc/xine-ui/README.solaris
 share/doc/xine-ui/README.syncfb
+share/doc/xine-ui/README.xinerc
+share/doc/xine-ui/README_es
+share/doc/xine-ui/README_it
+share/doc/xine-ui/README_pl
 share/doc/xine-ui/bug_report_form
 share/idl/xine.idl
+share/xine/desktop/xine.desktop
+share/xine/desktop/xine.wmconfig
+share/xine/desktop/xine.xpm
+share/xine/desktop/xine_16x16.png
+share/xine/desktop/xine_22x22.png
+share/xine/desktop/xine_32x32.png
+share/xine/desktop/xine_48x48.png
+share/xine/scripts/xineshot
 share/xine/skins/lcd/arrowdn.png
 share/xine/skins/lcd/arrowup.png
 share/xine/skins/lcd/bg.png
+share/xine/skins/lcd/cam.png
 share/xine/skins/lcd/close.png
 share/xine/skins/lcd/ctl_bg.png
 share/xine/skins/lcd/eject.png
@@ -23,6 +43,8 @@ share/xine/skins/lcd/largebtn.png
 share/xine/skins/lcd/letters.png
 share/xine/skins/lcd/mrl.png
 share/xine/skins/lcd/mrl_bg.png
+share/xine/skins/lcd/mrl_play.png
+share/xine/skins/lcd/mute.png
 share/xine/skins/lcd/next.png
 share/xine/skins/lcd/pause.png
 share/xine/skins/lcd/pl_bg.png
@@ -37,7 +59,9 @@ share/xine/skins/lcd/pl_play.png
 share/xine/skins/lcd/pl_slidpad.png
 share/xine/skins/lcd/pl_slidv.png
 share/xine/skins/lcd/play.png
+share/xine/skins/lcd/playfast.png
 share/xine/skins/lcd/playlist.png
+share/xine/skins/lcd/playslow.png
 share/xine/skins/lcd/power.png
 share/xine/skins/lcd/prev.png
 share/xine/skins/lcd/ptdn.png
@@ -49,12 +73,15 @@ share/xine/skins/lcd/slider_bg.png
 share/xine/skins/lcd/slider_pad.png
 share/xine/skins/lcd/smallbtn.png
 share/xine/skins/lcd/stop.png
+share/xine/skins/lcd/volumebg.png
+share/xine/skins/lcd/volumepad.png
 share/xine/skins/metal/arrowdn.png
 share/xine/skins/metal/arrowdn2.png
 share/xine/skins/metal/arrowup.png
 share/xine/skins/metal/arrowup2.png
 share/xine/skins/metal/bg.png
 share/xine/skins/metal/button.png
+share/xine/skins/metal/cam.png
 share/xine/skins/metal/close.png
 share/xine/skins/metal/eject.png
 share/xine/skins/metal/exit.png
@@ -63,6 +90,8 @@ share/xine/skins/metal/largebtn.png
 share/xine/skins/metal/left.png
 share/xine/skins/metal/letters.png
 share/xine/skins/metal/mrl.png
+share/xine/skins/metal/mrl_play.png
+share/xine/skins/metal/mute.png
 share/xine/skins/metal/next.png
 share/xine/skins/metal/pause.png
 share/xine/skins/metal/pl_bg.png
@@ -77,7 +106,9 @@ share/xine/skins/metal/pl_play.png
 share/xine/skins/metal/pl_slidpad.png
 share/xine/skins/metal/pl_slidv.png
 share/xine/skins/metal/play.png
+share/xine/skins/metal/playfast.png
 share/xine/skins/metal/playlist.png
+share/xine/skins/metal/playslow.png
 share/xine/skins/metal/prev.png
 share/xine/skins/metal/right.png
 share/xine/skins/metal/setup.png
@@ -90,6 +121,7 @@ share/xine/skins/metal/stop.png
 share/xine/skins/pitt/arrowdn.png
 share/xine/skins/pitt/arrowup.png
 share/xine/skins/pitt/bg.png
+share/xine/skins/pitt/cam.png
 share/xine/skins/pitt/close.png
 share/xine/skins/pitt/eject.png
 share/xine/skins/pitt/fastb.png
@@ -98,6 +130,8 @@ share/xine/skins/pitt/fullsc.png
 share/xine/skins/pitt/largebtn.png
 share/xine/skins/pitt/letters.png
 share/xine/skins/pitt/mrl.png
+share/xine/skins/pitt/mrl_play.png
+share/xine/skins/pitt/mute.png
 share/xine/skins/pitt/next.png
 share/xine/skins/pitt/pause.png
 share/xine/skins/pitt/pl_bg.png
@@ -112,7 +146,9 @@ share/xine/skins/pitt/pl_play.png
 share/xine/skins/pitt/pl_slidpad.png
 share/xine/skins/pitt/pl_slidv.png
 share/xine/skins/pitt/play.png
+share/xine/skins/pitt/playfast.png
 share/xine/skins/pitt/playlist.png
+share/xine/skins/pitt/playslow.png
 share/xine/skins/pitt/power.png
 share/xine/skins/pitt/prev.png
 share/xine/skins/pitt/ptdn.png
@@ -123,6 +159,10 @@ share/xine/skins/pitt/slider_bg.png
 share/xine/skins/pitt/slider_pad.png
 share/xine/skins/pitt/smallbtn.png
 share/xine/skins/pitt/stop.png
+share/xine/skins/pitt/volumebg.png
+share/xine/skins/pitt/volumepad.png
+share/xine/skins/xinetic/ArrowDown.png
+share/xine/skins/xinetic/ArrowUp.png
 share/xine/skins/xinetic/BigArrowDown.png
 share/xine/skins/xinetic/BigArrowUp.png
 share/xine/skins/xinetic/CtlBg.png
@@ -134,17 +174,23 @@ share/xine/skins/xinetic/CtlSave.png
 share/xine/skins/xinetic/Letters.png
 share/xine/skins/xinetic/MainAutoButton.png
 share/xine/skins/xinetic/MainBg.png
+share/xine/skins/xinetic/MainCam.png
 share/xine/skins/xinetic/MainClose.png
+share/xine/skins/xinetic/MainDown.png
 share/xine/skins/xinetic/MainEject.png
 share/xine/skins/xinetic/MainFastB.png
 share/xine/skins/xinetic/MainFastF.png
 share/xine/skins/xinetic/MainFullScreen.png
+share/xine/skins/xinetic/MainMute.png
 share/xine/skins/xinetic/MainNext.png
 share/xine/skins/xinetic/MainPause.png
 share/xine/skins/xinetic/MainPlay.png
 share/xine/skins/xinetic/MainPower.png
 share/xine/skins/xinetic/MainPrev.png
 share/xine/skins/xinetic/MainStop.png
+share/xine/skins/xinetic/MainUp.png
+share/xine/skins/xinetic/MainVolumeBg.png
+share/xine/skins/xinetic/MainVolumePad.png
 share/xine/skins/xinetic/MrlBg.png
 share/xine/skins/xinetic/MrlBtn.png
 share/xine/skins/xinetic/MrlDismiss.png
@@ -171,6 +217,9 @@ share/xine/skins/xinetic/skinconfig
 @dirrm share/xine/skins/metal
 @dirrm share/xine/skins/pitt
 @dirrm share/xine/skins/xinetic
+@dirrm share/xine/scripts
+@dirrm share/xine/desktop
+@unexec rmdir %D/share/idl 2>/dev/null || true
 @unexec rmdir %D/share/xine/skins 2>/dev/null || true
 @unexec rmdir %D/share/xine 2>/dev/null || true
 @dirrm share/doc/xine-ui
