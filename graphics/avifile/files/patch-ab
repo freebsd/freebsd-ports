@@ -1,11 +1,23 @@
---- xmps-avi-plugin/Makefile.in.orig	Fri Oct  6 13:05:55 2000
-+++ xmps-avi-plugin/Makefile.in	Fri Oct  6 13:06:22 2000
-@@ -1,6 +1,6 @@
--LIBS = -lstdc++ -L../lib -L@libdir@ -laviplay -lpthread @XMPS_LIBS@ 
-+LIBS = -lstdc++ -L../lib -L@libdir@ -laviplay -lpthread @XMPS_LIBS@ @SDL_LIBS@
+--- lib/loader/win32.c.orig	Thu Jan  4 01:18:05 2001
++++ lib/loader/win32.c	Thu Jan  4 01:18:10 2001
+@@ -1085,6 +1085,7 @@
+ static double CPU_Freq()
+ {
+ //#ifdef USE_TSC
++#ifdef __Linux__
+ 	FILE *f = fopen ("/proc/cpuinfo", "r");
+ 	char line[200];
+ 	char model[200]="unknown";
+@@ -1121,9 +1122,9 @@
+ 	fclose(f);
+ 	if(freq<0)return old_freq();
+ 	return freq;
+-//#else
+-//	return old_freq();
+-//#endif    	
++#else
++	return old_freq();
++#endif    	
+ }
  
--INCLUDES = -I. -I../include -I@includedir@/avifile @XMPS_CFLAGS@ 
-+INCLUDES = -I. -I../include -I@includedir@/avifile @XMPS_CFLAGS@ @SDL_CFLAGS@
- 
- all: avi_configure.o avi_codec.o
- 	 $(CC) -shared avi_configure.o avi_codec.o $(LIBS) -o libavi.so
+ long WINAPI expQueryPerformanceFrequency(long long* z)

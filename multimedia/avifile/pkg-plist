@@ -4,12 +4,15 @@ include/avifile/avifile.h
 include/avifile/avifmt.h
 include/avifile/aviplay.h
 include/avifile/aviutil.h
+include/avifile/com.h
 include/avifile/config.h
 include/avifile/default.h
 include/avifile/except.h
 include/avifile/image.h
+include/avifile/infotypes.h
 include/avifile/loader.h
 include/avifile/registry.h
+include/avifile/version.h
 include/avifile/videodecoder.h
 include/avifile/videoencoder.h
 include/avifile/wine/basetsd.h
@@ -53,17 +56,24 @@ share/avifile/about.ppm
 share/avifile/test.png
 @dirrm share/avifile
 lib/win32/ativcr2.dll
+lib/win32/divx_c32.ax
 lib/win32/divxa32.acm
 lib/win32/divxc32.dll
 lib/win32/divxc32f.dll
 lib/win32/i263_32.drv
 lib/win32/iccvid.dll
+lib/win32/imc32.acm
 lib/win32/ir32_32.dll
 lib/win32/ir41_32.dll
 lib/win32/ir41_qc.dll
 lib/win32/ir50_32.dll
 lib/win32/ir50_qc.dll
+lib/win32/ir50_qcx.dll
 lib/win32/m3jpeg32.dll
 lib/win32/mpg4c32.dll
+lib/win32/msadp32.acm
+lib/win32/wmvds32.ax
 @dirrm lib/win32
+lib/libaviplay.la
 lib/libaviplay.so
+lib/libaviplay.so.%%LIB_VERSION%%

@@ -6,13 +6,14 @@
 #
 
 PORTNAME=	avifile
-PORTVERSION=	0.50
+PORTVERSION=	0.53.1
 CATEGORIES=	graphics
 MASTER_SITES=	http://ernie.eit.uni-kl.de/avifile/ \
 		http://divx.euro.ru/ \
 		http://www.toon.eu.org/divx/
 DISTFILES=	avifile-${PORTVERSION}.tar.gz \
-		binaries-${CODEC_VERSION}.zip
+		binaries-${CODEC_VERSION}.zip \
+		wmvds32.ax.gz
 EXTRACT_ONLY=	avifile-${PORTVERSION}.tar.gz
 
 MAINTAINER=	holger@eit.uni-kl.de
@@ -20,39 +21,91 @@ MAINTAINER=	holger@eit.uni-kl.de
 LIB_DEPENDS=	SDL-1.1.2:${PORTSDIR}/devel/sdl-devel
 BUILD_DEPENDS=	unzip:${PORTSDIR}/archivers/unzip
 
+WRKSRC=         ${WRKDIR}/${PORTNAME}-0.53
 RESTRICTED=	Unsure of codec\'s license
-RESTRICTED_FILES=	binaries-${CODEC_VERSION}.zip
+RESTRICTED_FILES=	binaries-${CODEC_VERSION}.zip \
+			wmvds32.ax.gz
 
 ONLY_FOR_ARCHS= i386
 USE_QT2=	yes
 USE_XLIB=	yes
 USE_GMAKE=	yes
-USE_AUTOCONF=	yes
 INSTALLS_SHLIB=	yes
 
-HAS_CONFIGURE=	yes
+USE_AUTOCONF=	yes
+USE_LIBTOOL=	yes
+GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	SDL_CONFIG="${SDL_CONFIG}" \
-		MOC="${MOC}"
-CONFIGURE_ARGS+= --enable-mmx \
-		--with-qt-includes=${X11BASE}/include/qt2 \
+		MOC="${MOC}" \
+		CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include -L${LOCALBASE}/lib"
+CONFIGURE_ARGS= --with-qt-includes=${X11BASE}/include/qt2 \
 		--with-qt-libraries=${X11BASE}/lib \
-		--with-win32-path=${LOCALBASE}/lib/win32
+		--with-win32-path=${LOCALBASE}/lib/win32 \
+		--enable-release
+PLIST_SUB=	LIB_VERSION="${LIB_VERSION}"
 
-CODEC_VERSION=	000918
+CODEC_VERSION=	001222
+LIB_VERSION=	0
+# Adhoc fix. First part.
+# qt is there but configure is not finding it
+# Therefore, it is avoiding this directories
+# At least, on lioux's homesystem with qt 2.2.3
+EXTRA_BUILD_DIR=	player samples/benchmark samples/qtrecompress
 
 SDL_CONFIG?=	${LOCALBASE}/bin/sdl11-config
 MOC?=		${X11BASE}/bin/moc2
+DIFF?=		/usr/bin/diff
+
+.include <bsd.port.pre.mk>
 
 post-extract:
 	@${LOCALBASE}/bin/unzip ${DISTDIR}/binaries-${CODEC_VERSION}.zip \
 		-d ${WRKDIR}/codecs
+	@${GZCAT} ${DISTDIR}/wmvds32.ax.gz > ${WRKDIR}/codecs/wmvds32.ax
 
-#post-build:
-#	(cd ${WRKSRC}/samples && ${SETENV} ${MAKE_ENV} ${GMAKE})
+# Libtool fix code kindly provided by Mr. Maxim Sobolev <sobomax@FreeBSD.org>
+post-configure:
+	@${PERL} -pi -e \
+		's|^deplibs_check_method=.*|deplibs_check_method=pass_all|' \
+			${WRKSRC}/libtool
+
+post-build:
+.for dir in ${EXTRA_BUILD_DIR}
+	(cd ${WRKSRC}/${dir} && ${SETENV} ${MAKE_ENV} ${GMAKE})
+.endfor
 
 post-install:
 	@${MKDIR} ${PREFIX}/lib/win32
 	@${INSTALL_DATA} ${WRKDIR}/codecs/* ${PREFIX}/lib/win32
 	@/usr/bin/fmt < ${PKGMESSAGE}
+	@${INSTALL_DATA} ${WRKSRC}/lib/libaviplay.la ${PREFIX}/lib
+	@${LN} -sf libaviplay.so.${LIB_VERSION} ${PREFIX}/lib/libaviplay.so
+# Adhoc fix. Second part.
+# Install the missed applications.
+.if exists(${PREFIX}/bin/aviplay)
+	${DIFF} ${WRKSRC}/player/.libs/aviplay ${PREFIX}/bin > /dev/null || \
+			${INSTALL_PROGRAM} ${WRKSRC}/player/.libs/aviplay \
+				${PREFIX}/bin
+.else
+	${INSTALL_PROGRAM} ${WRKSRC}/player/.libs/aviplay ${PREFIX}/bin
+.endif
+.if exists(${PREFIX}/bin/benchmark)
+	${DIFF} ${WRKSRC}/samples/benchmark/.libs/benchmark \
+		${PREFIX}/bin > /dev/null || \
+			${INSTALL_PROGRAM} \
+				${WRKSRC}/samples/benchmark/.libs/benchmark \
+					${PREFIX}/bin
+.else
+	${INSTALL_PROGRAM} ${WRKSRC}/samples/benchmark/.libs/benchmark \
+		${PREFIX}/bin
+.endif
+.if exists(${PREFIX}/bin/qtrecompress)
+	${DIFF} ${WRKSRC}/samples/qtrecompress/.libs/qtrecompress \
+		${PREFIX}/bin > /dev/null || \
+			${INSTALL_PROGRAM} ${WRKSRC}/samples/qtrecompress/.libs/qtrecompress ${PREFIX}/bin
+.else
+	${INSTALL_PROGRAM} ${WRKSRC}/samples/qtrecompress/.libs/qtrecompress \
+		${PREFIX}/bin
+.endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

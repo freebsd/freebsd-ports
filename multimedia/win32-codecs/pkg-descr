@@ -1,5 +1,22 @@
-An MPEG-4 (aka DivX) player built around the Windows binaries,
-but does not need Wine.
-There is also a xmps plugin you can build (manually).
+An AVI player and converter built around the 
+Windows binary codecs.
+Does not use Wine. It supports the following codecs:
+
+Video:
+  ATI VCR-2
+  Cinepak(R)
+  DivX ;-)
+  Indeo(R) Video 3.2, 4.1, 5.0
+  Intel v.263
+  Microsoft MPEG-4
+  Microsoft Windows Media Video 7 (ASF)
+Audio:
+  DivX ;-) Audio aka Windows Media Audio
+  Microsoft GSM 6.10
+  IMA ADPCM
+  IMC (Intel Media Coder )
+  MSN Audio
+  MPEG Layer-1,2,3 Audio
+  PCM
 
 WWW: http://divx.euro.ru/
