@@ -8,7 +8,7 @@
 PORTNAME=	amap
 PORTVERSION=	1.2.1
 CATEGORIES=	security
-MASTER_SITES=	http://www.thehackerschoice.com/releases/
+MASTER_SITES=	http://www.thc.org/releases/
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	Yonatan@xpert.com
