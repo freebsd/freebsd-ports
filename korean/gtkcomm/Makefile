@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gtkcomm
-PORTVERSION=	0.5.20
+PORTVERSION=	0.6.0
 CATEGORIES=	korean comms
 MASTER_SITES=	http://kldp.org/~namsh/tools/gtkcomm/
 
