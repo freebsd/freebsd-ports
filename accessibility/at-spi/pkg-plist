@@ -34,10 +34,10 @@ lib/libatk-bridge.so
 lib/libatk-bridge.so.0
 lib/libcspi.a
 lib/libcspi.so
-lib/libcspi.so.0
+lib/libcspi.so.1
 lib/libspi.a
 lib/libspi.so
-lib/libspi.so.0
+lib/libspi.so.1
 lib/orbit-2.0/Accessibility_module.so
 libdata/bonobo/servers/Accessibility_Registry.server
 libdata/bonobo/servers/Accessibility_Util.server
@@ -61,8 +61,7 @@ share/doc/at-spi-cspi/at-spi-cspi-registry-queries.html
 share/doc/at-spi-cspi/at-spi-cspi-spi-main-loop-and-initialization.html
 share/doc/at-spi-cspi/at-spi-cspi-state-and-statesets.html
 share/doc/at-spi-cspi/book1.html
-share/doc/at-spi-cspi/c5947.html
-share/doc/at-spi-cspi/c5951.html
+share/doc/at-spi-cspi/c6121.html
 share/doc/at-spi-cspi/index.sgml
 share/doc/at-spi-cspi/spi-accessible.html
 share/doc/at-spi-cspi/spi-application.html
