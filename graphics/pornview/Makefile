@@ -7,7 +7,7 @@
 
 PORTNAME=	pornview
 PORTVERSION=	0.2.0.p.1
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	graphics
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -16,7 +16,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION:S/.p./pre/}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	PornView is an image viewer/manager
 
-LIB_DEPENDS=	exif.10:${PORTSDIR}/graphics/libexif
+LIB_DEPENDS=	exif.12:${PORTSDIR}/graphics/libexif
 
 USE_X_PREFIX=	yes
 USE_GNOME=	gdkpixbuf gnomehack gnomeprefix
