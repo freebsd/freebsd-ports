@@ -12,6 +12,8 @@ MASTER_SITES=	http://www.sra.co.jp/people/m-kasahr/wmpccard/src/
 
 MAINTAINER=	taoka@FreeBSD.org
 
+LIB_DEPENDS=	Xpm.4:${PORTSDIR}/graphics/xpm
+
 USE_X_PREFIX=	yes
 MAN1=		wmpccard.1.gz
 NOMANCOMPRESS=	yes
