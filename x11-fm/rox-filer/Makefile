@@ -6,6 +6,7 @@
 
 PORTNAME=	rox
 PORTVERSION=	2.1.1
+PORTREVISION=	1
 CATEGORIES=	x11-fm gnome
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	rox
@@ -18,7 +19,10 @@ COMMENT=	A simple and easy to use graphical file manager
 RUN_DEPENDS=	${LOCALBASE}/share/mime/packages/freedesktop.org.xml:${PORTSDIR}/misc/shared-mime-info
 
 PLIST_SUB+=	LOCALBASE=${LOCALBASE}
+
 USE_GNOME=	gtk20 pkgconfig libxml2 gnomevfs2
+USE_AUTOCONF=	yes
+HAS_CONFIGURE=	yes
 
 MAN1=		rox.1
 
@@ -32,9 +36,10 @@ BINARIES=	FreeBSD-${ARCH}
 
 PLIST_SUB=	BINARIES="${BINARIES}"
 
-do-build:
-	# Run the custom build procedure
-	@cd ${WRKSRC} && GTK_CONFIG=${GTK_CONFIG} GLIB_CONFIG=${GLIB_CONFIG} ROX-Filer/AppRun --compile
+CONFIGURE_ARGS=		--enable-rox --with-platform=${BINARIES}
+CONFIGURE_WRKSRC=	${WRKSRC}/ROX-Filer/src
+BUILD_WRKSRC=		${CONFIGURE_WRKSRC}
+ALL_TARGET=
 
 do-install:
 	@${MKDIR} ${PREFIX}/apps/ROX-Filer
