@@ -1,0 +1,13 @@
+--- Makefile.in.orig	Fri Nov  9 00:26:32 2001
++++ Makefile.in	Fri Nov  9 00:26:39 2001
+@@ -543,10 +543,6 @@
+ 	  $(etcdir)/silcd.conf; \
+           chmod go= $(etcdir)/silcd.conf; \
+ 	fi
+-	-@if test '!' -f $(etcdir)/silc.conf ; then \
+-	  $(INSTALL_DATA) $(srcdir)/doc/example_silc.conf \
+-	  $(etcdir)/silc.conf; \
+-	fi
+ 
+ @SILC_DIST_CLIENT_TRUE@install-data-hook: install-dirs sim-install doc-install etc-install
+ @SILC_DIST_CLIENT_FALSE@install-data-hook: install-dirs generate-server-key sim-install doc-install etc-install

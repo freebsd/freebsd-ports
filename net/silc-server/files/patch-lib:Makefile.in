@@ -1,0 +1,28 @@
+--- lib/Makefile.in.orig	Fri Nov  9 00:36:48 2001
++++ lib/Makefile.in	Fri Nov  9 00:37:05 2001
+@@ -116,13 +116,12 @@
+ 	silcutil \
+ 	silcclient \
+ 	silcsftp \
+-	dotconf \
+ 	trq
+ 
+ 
+ #        zlib
+-SUBDIRS = contrib silccore silccrypt silcsim silcmath silcske silcutil trq dotconf silcsftp
+-DIST_SUBDIRS = contrib silccore silccrypt silcsim silcmath silcske silcutil trq dotconf silcsftp
++SUBDIRS = contrib silccore silccrypt silcsim silcmath silcske silcutil trq silcsftp
++DIST_SUBDIRS = contrib silccore silccrypt silcsim silcmath silcske silcutil trq silcsftp
+ 
+ # SILC Library dirs
+ SILCLIB_DIRS = \
+@@ -134,8 +133,7 @@
+ 	silcske \
+ 	silcutil \
+ 	silcsftp \
+-	trq \
+-	dotconf
++	trq
+ 
+ 
+ # SILC Client Library dirs

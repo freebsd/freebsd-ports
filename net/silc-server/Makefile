@@ -1,0 +1,66 @@
+# New ports collection makefile for:	silc server
+# Date created:				Thu Nov 8 01:50:05 BRST 2001
+# Whom:			Mario Sergio Fujikawa Ferreira <lioux@FreeBSD.org>
+#
+# $FreeBSD$
+#
+
+PORTNAME=	silc
+PORTVERSION=	0.6.2
+CATEGORIES=	net security
+MASTER_SITES=	http://www.silcnet.org/download/ \
+		ftp://ftp.silcnet.org/pub/silc/
+PKGNAMESUFFIX=	-server
+DISTNAME=	${PORTNAME}${PKGNAMESUFFIX}-${PORTVERSION}
+
+MAINTAINER=	lioux@FreeBSD.org
+
+USE_BZIP2=	yes
+GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	--with-silcd-config-file=${PREFIX}/etc/${PORTNAME}/silcd.conf \
+		--with-docdir=share/doc/${PORTNAME} \
+		--with-etcdir=${PREFIX}/etc/${PORTNAME} \
+		--with-helpdir=share/${PORTNAME}/help \
+		--with-logsdir=${PORTNAME}/logs \
+		--with-silcd-pid-file=/var/run \
+		--with-simdir=libexec/${PORTNAME}/modules
+INSTALLS_SHLIB=	yes
+PLIST_SUB=	INSTALL_DIR="${INSTALL_DIR}"
+
+INSTALL_DIR?=	${INSTALL} -d -o ${BINOWN} -g ${BINGRP} -m 755
+
+.ifdef(WITHOUT_OPTIMIZED_ASM)
+CONFIGURE_ARGS+=	--disable-asm
+.endif
+
+.ifndef(WITH_PTHREADS)
+CONFIGURE_ARGS+=	--disable-threads
+.else
+CONFIGURE_ENV+=	CFLAGS="${CFLAGS} ${PTHREAD_CFLAGS} ${PTHREAD_LIBS}"
+.endif
+
+pre-everything::
+.ifndef(WITHOUT_OPTIMIZED_ASM)
+	@${ECHO_MSG} '===> Define WITHOUT_OPTIMIZED_ASM to disable assembler optimizations'
+.endif
+.ifndef(WITH_PTHREADS)
+	@${ECHO_MSG} '===> Define WITH_PTHREADS to enable pthreads support'
+.endif
+	@${ECHO_MSG}
+.ifndef(WITH_OPTIMIZED_CFLAGS)
+	@${ECHO_MSG} '===> Define WITH_OPTIMIZED_CFLAGS to enable compilation optimizations'
+	@${ECHO_MSG} '===> which is known to break some platforms (e.g., alpha)'
+.endif
+
+post-patch:
+.ifndef(WITH_OPTIMIZED_CFLAGS)
+	@${PERL} -pi -e 's/-O2//' ${WRKSRC}/${CONFIGURE_SCRIPT}
+.endif
+
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} != "i386"
+WITHOUT_OPTIMIZED_ASM=	yes
+.endif
+
+.include <bsd.port.post.mk>
