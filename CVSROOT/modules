@@ -7373,6 +7373,7 @@ pdq		ports/print/pdq
 pdss		ports/lang/pdss
 pdtpd		ports/net/pdtpd
 pdumpfs		ports/sysutils/pdumpfs
+pdumpfs-clean	ports/sysutils/pdumpfs-clean
 peacock		ports/www/peacock
 pear-APC	ports/www/pear-APC
 pear-Archive_Tar	ports/archivers/pear-Archive_Tar
