@@ -27,6 +27,8 @@ LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
 		iconv.3:${PORTSDIR}/converters/libiconv \
 		gmp.6:${PORTSDIR}/math/libgmp4
 
+BROKEN=		"Broken pkg-plist"
+
 WRKSRC=		${WRKDIR}/kaffe-${PORTVERSION}
 
 NOT_FOR_ARCHS=	amd64
@@ -56,15 +58,9 @@ PLIST_SUB+=	PORTVER=${PORTVERSION} ARCH=${ARCH}
 
 MAN1=		kaffe.1
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 502000
-BROKEN=		"Broken pkg-plist"
-.endif
-
 post-install:
 	@${MKDIR} ${DATADIR}
 	${INSTALL_SCRIPT} ${WRKSRC}/BUILD_ENVIRONMENT ${DATADIR}
 	${INSTALL_DATA} ${WRKSRC}/license.terms ${DATADIR}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
