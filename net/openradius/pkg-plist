@@ -3,17 +3,20 @@ etc/openradius/configuration
 etc/openradius/behaviour.sample-ldap
 etc/openradius/behaviour.sample-ldap-authbind
 etc/openradius/behaviour.sample-mysql
+etc/openradius/behaviour.sample-postgres
 etc/openradius/behaviour.sample-unixpass
 etc/openradius/behaviour.sample-usersfile
 etc/openradius/configuration.sample-ldap
 etc/openradius/configuration.sample-ldap-authbind
 etc/openradius/configuration.sample-mysql
+etc/openradius/configuration.sample-postgres
 etc/openradius/configuration.sample-unixpass
 etc/openradius/configuration.sample-usersfile
 etc/openradius/dictionary
 
 etc/openradius/legacy/clients
 etc/openradius/legacy/users
+etc/openradius/legacy/realms
 @dirrm etc/openradius/legacy
 
 etc/openradius/modules/radldap.attrmap
@@ -29,17 +32,20 @@ etc/openradius/subdicts/dict.str-ldap
 etc/openradius/subdicts/dict.tunnel
 etc/openradius/subdicts/dict.usr
 etc/openradius/subdicts/dict.vendors
+etc/openradius/subdicts/dict.ascend
 @dirrm etc/openradius/subdicts
 
 @dirrm etc/openradius
 
 lib/openradius/ascfile
 lib/openradius/delay
+lib/openradius/radclient
 lib/openradius/radlogger
 lib/openradius/radsql
 lib/openradius/unixpasswd
 @dirrm lib/openradius
 
+bin/ascenddatafilter
 bin/genmd5hexpasswd
 bin/radaccttest
 bin/radclient
