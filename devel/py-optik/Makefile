@@ -15,7 +15,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	Optik-${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	perky@FreeBSD.org
 COMMENT=	A command-line parsing library for Python
 
 USE_PYTHON=	yes

@@ -13,7 +13,7 @@ MASTER_SITES=	ftp://www.python.org/pub/python/src/ \
 		ftp://ftp.cwi.nl/pub/python/src/
 DISTFILES=	${PYTHON_DISTFILE}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	perky@FreeBSD.org
 COMMENT=	An interpreted object-oriented programming language
 
 DIST_SUBDIR=	python
