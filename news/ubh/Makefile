@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ubh
-PORTVERSION=	2.1
+PORTVERSION=	2.2
 CATEGORIES=	news graphics
 MASTER_SITES=	http://ubh.sourceforge.net/download/
 
