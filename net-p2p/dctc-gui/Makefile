@@ -15,6 +15,8 @@ DISTNAME=	dc_gui-${PORTVERSION}
 
 MAINTAINER=	lioux@FreeBSD.org
 
+BROKEN=		"Does not build"
+
 BUILD_DEPENDS=	dctc:${PORTSDIR}/net/dctc
 LIB_DEPENDS=	db4.0:${PORTSDIR}/databases/db4 \
 		intl.4:${PORTSDIR}/devel/gettext
