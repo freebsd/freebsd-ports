@@ -1,0 +1,17 @@
+--- Makefile.srclist.orig	Wed Apr 30 08:51:49 2003
++++ Makefile.srclist	Tue Aug 26 04:12:30 2003
+@@ -4,12 +4,12 @@
+         fb.h fprompt.h fsd.h guiutils.h manedit.h maneditcb.h	\
+         maneditop.h messages.h mpfio.h pdialog.h pref.h		\
+         prefcb.h preffio.h prefop.h pulist.h viewer.h		\
+-        viewercb.h viewerdnd.h viewerfio.h
++        viewercb.h viewerdnd.h viewerfio.h mntent.h
+ SRC_C = aboutdialog.c cdialog.c clipboard.c csd.c editor.c	\
+         editorcb.c editordnd.c editorop.c editorfio.c		\
+         editorfip.c editorfipcb.c editorfipop.c editorundo.c	\
+         fb.c fprompt.c fsd.c guiutils.c main.c maneditcb.c	\
+         maneditop.c mpfio.c pdialog.c pref.c prefcb.c preffio.c	\
+         prefop.c pulist.c viewer.c viewercb.c viewerdnd.c	\
+-        viewerfio.c
++        viewerfio.c mntent_compat.c
+ SRC_CPP = disk.cpp fio.cpp prochandle.cpp strexp.cpp string.cpp

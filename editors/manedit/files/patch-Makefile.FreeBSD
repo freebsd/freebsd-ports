@@ -8,7 +8,7 @@ $FreeBSD$
  GTK_CONFIG ?= gtk-config
  GTK_CFLAGS = `$(GTK_CONFIG) --cflags`
 -CFLAGS += $(GTK_CFLAGS) -O2 -Wall \
-+CFLAGS += $(GTK_CFLAGS) -Wall \
++CFLAGS += -I. $(GTK_CFLAGS) \
            -DPREFIX=\"$(PREFIX)\" \
            -DLOCALBASE=\"$(LOCALBASE)\" -DX11BASE=\"$(X11BASE)\"
  

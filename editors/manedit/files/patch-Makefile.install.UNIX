@@ -1,10 +1,15 @@
 
 $FreeBSD$
 
---- Makefile.install.UNIX.orig	Sun Feb 25 01:10:47 2001
-+++ Makefile.install.UNIX	Tue Mar 20 18:55:36 2001
-@@ -28,29 +28,27 @@
+--- Makefile.install.UNIX.orig	Wed Apr 30 08:51:49 2003
++++ Makefile.install.UNIX	Tue Aug 26 04:31:24 2003
+@@ -27,11 +27,11 @@
+ MKDIR      = mkdir
+ MKDIRFLAGS = -p -m 0755
  
+-MAN        = $(BIN).1.bz2
++MAN        = $(BIN).1
+ ICON       = $(BIN).xpm
  
  BIN_DIR   = $(PREFIX)/bin
 -ICONS_DIR = $(PREFIX)/share/icons
@@ -12,32 +17,39 @@ $FreeBSD$
  DATA_DIR  = $(PREFIX)/share/$(BIN)
  MAN_DIR   = $(PREFIX)/man/man1
  
- install:
- 	$(MKDIR) $(MKDIRFLAGS) $(BIN_DIR)
--	$(INSTALL) $(INSTBINFLAGS) $(BIN) $(BIN_DIR)/$(BIN)
--	$(INSTALL) $(INSTBINFLAGS) utils/manview.sh $(BIN_DIR)/manview
--	$(INSTALL) $(INSTBINFLAGS) utils/manwrap.sh $(BIN_DIR)/manwrap
-+	$(BSD_INSTALL_PROGRAM) $(BIN) $(BIN_DIR)/$(BIN)
-+	$(BSD_INSTALL_SCRIPT) utils/manview.sh $(BIN_DIR)/manview
-+	$(BSD_INSTALL_SCRIPT) utils/manwrap.sh $(BIN_DIR)/manwrap
+@@ -42,28 +42,28 @@
+ install_bin:
+ 	@echo "Installing $(BIN) -> $(BIN_DIR)"
+ 	@$(MKDIR) $(MKDIRFLAGS) $(BIN_DIR)
+-	@$(INSTALL) $(INSTBINFLAGS) $(BIN) $(BIN_DIR)
++	@$(BSD_INSTALL_PROGRAM) $(BIN) $(BIN_DIR)
+ 	@echo "Installing manview -> $(BIN_DIR)"
+-	@$(INSTALL) $(INSTSCRFLAGS) utils/manview.sh $(BIN_DIR)/manview
++	@$(BSD_INSTALL_SCRIPT) utils/manview.sh $(BIN_DIR)/manview
+ 	@echo "Installing manwrap -> $(BIN_DIR)"
+-	@$(INSTALL) $(INSTSCRFLAGS) utils/manwrap.sh $(BIN_DIR)/manwrap
++	@$(BSD_INSTALL_SCRIPT) utils/manwrap.sh $(BIN_DIR)/manwrap
  
--	$(MKDIR) $(MKDIRFLAGS) $(DATA_DIR)
- 	$(MKDIR) $(MKDIRFLAGS) $(DATA_DIR)/help
--	$(COPY) $(COPYFLAGS) help/* $(DATA_DIR)/help
-+	$(BSD_INSTALL_MAN) help/* $(DATA_DIR)/help
+ install_data:
+ 	@echo "Installing $(MAN) -> $(MAN_DIR)"
+ 	@$(MKDIR) $(MKDIRFLAGS) $(MAN_DIR)
+ 	@-$(RM) $(RMFLAGS) $(MAN_DIR)/$(BIN).1
+ 	@-$(RM) $(RMFLAGS) $(MAN_DIR)/$(BIN).1.gz
+-	@$(INSTALL) $(INSTMANFLAGS) $(MAN) $(MAN_DIR)
++	@$(BSD_INSTALL_MAN) $(MAN).out $(MAN_DIR)/$(MAN)
+ 	@echo "Installing $(ICON) -> $(ICONS_DIR)"
+ 	@$(MKDIR) $(MKDIRFLAGS) $(ICONS_DIR)
+-	@$(INSTALL) $(INSTDATFLAGS) $(ICON) $(ICONS_DIR)
++	@$(BSD_INSTALL_DATA) $(ICON) $(ICONS_DIR)
+ 	@echo "Installing help files to $(DATA_DIR)/help"
+ 	@$(MKDIR) $(MKDIRFLAGS) $(DATA_DIR)
+ 	@$(MKDIR) $(MKDIRFLAGS) $(DATA_DIR)/help
+-	@$(COPY) $(COPYFLAGS) help/* $(DATA_DIR)/help
++	@$(BSD_INSTALL_DATA) help/* $(DATA_DIR)/help
+ 	@echo "Installing templates to $(DATA_DIR)/templates"
+ 	@$(MKDIR) $(MKDIRFLAGS) $(DATA_DIR)/templates
+-	@$(COPY) $(COPYFLAGS) templates/* $(DATA_DIR)/templates
++	@$(BSD_INSTALL_DATA) templates/* $(DATA_DIR)/templates
  
--	$(MKDIR) $(MKDIRFLAGS) $(DATA_DIR)
- 	$(MKDIR) $(MKDIRFLAGS) $(DATA_DIR)/templates
--	$(COPY) $(COPYFLAGS) templates/* $(DATA_DIR)/templates
-+	$(BSD_INSTALL_DATA) templates/* $(DATA_DIR)/templates
- 
- 	$(MKDIR) $(MKDIRFLAGS) $(MAN_DIR)
--	$(INSTALL) $(INSTMANFLAGS) $(BIN).1.out $(MAN_DIR)/$(BIN).1
-+	$(BSD_INSTALL_MAN) $(BIN).1.out $(MAN_DIR)/$(BIN).1
- 
- 	$(MKDIR) $(MKDIRFLAGS) $(ICONS_DIR)
--	$(INSTALL) $(INSTDATFLAGS) $(BIN).xpm $(ICONS_DIR)
-+	$(BSD_INSTALL_DATA) $(BIN).xpm $(ICONS_DIR)
- 
- 	@echo "-------------------------------------------------------------------------"
- 	@echo "Program $(BIN) installed in:"
+ preinstall:
+ 	@echo "Installing \"$(BIN)\"..."
