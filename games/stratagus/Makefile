@@ -45,6 +45,12 @@ LIB_DEPENDS+=	mikmod.2:${PORTSDIR}/audio/libmikmod
 
 PLIST_FILES=	bin/stratagus
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 500000
+IGNORE=		does not run properly on FreeBSD 4.x
+.endif
+
 pre-everything::
 	@${ECHO_MSG} ""
 	@${ECHO_MSG} "Stratagus has the following tunable option(s):"
@@ -63,4 +69,4 @@ post-configure:
 post-install:
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
