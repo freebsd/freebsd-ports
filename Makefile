@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.47 1999/06/01 02:55:43 billf Exp $
+# $Id: Makefile,v 1.48 1999/06/04 17:30:31 billf Exp $
 #
 
 SUBDIR += archivers
@@ -18,7 +18,9 @@ SUBDIR += emulators
 SUBDIR += games
 SUBDIR += german
 SUBDIR += graphics
+SUBDIR += irc
 SUBDIR += japanese
+SUBDIR += java
 SUBDIR += korean
 SUBDIR += lang
 SUBDIR += mail
@@ -40,6 +42,7 @@ SUBDIR += x11
 SUBDIR += x11-clocks
 SUBDIR += x11-fm
 SUBDIR += x11-fonts
+SUBDIR += x11-servers
 SUBDIR += x11-toolkits
 SUBDIR += x11-wm
 
