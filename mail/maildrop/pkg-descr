@@ -1,10 +1,15 @@
-maildrop is a replacement for your local mail delivery agent.
-maildrop reads a mail message from standard input, then delivers
-the message to your mailbox. maildrop knows how to deliver mail to
-mbox-style mailboxes and maildirs. "maildir" is the mailbox format
-used by the Qmail MTA.  maildrop is written in C++, and handles
-resources more efficiently.
+maildrop is a replacement for your local mail delivery agent,
+similar to mail/procmail.
+- maildrop reads a mail message from standard input, 
+  then delivers the message to your mailbox. 
+- maildrop will optionally read instructions from a file, 
+  which describes how to filter incoming mail. 
+  Instructions can be provided having mail delivered to 
+  alternate mailboxes, or forwarded somewhere else. 
+  Unlike procmail, maildrop uses a structured filtering language.
+- maildrop knows how to deliver mail to mbox-style mailboxes and maildirs.
+- maildrop is written in C++, and handles resources more efficiently.
 
-maildrop can be used with sendmail, Qmail, and other MTAs.
+maildrop can be used with sendmail, qmail, and other MTAs.
 
-WWW: http://www.flounder.net/~mrsam/maildrop/
+WWW:	http://www.flounder.net/~mrsam/maildrop/
