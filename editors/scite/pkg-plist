@@ -4,6 +4,7 @@ share/gnome/pixmaps/Sci48M.png
 share/gnome/scite/Embedded.properties
 share/gnome/scite/SciTE.properties
 share/gnome/scite/SciTEGlobal.properties
+share/gnome/scite/ave.properties
 share/gnome/scite/conf.properties
 share/gnome/scite/cpp.properties
 share/gnome/scite/html.properties

@@ -1,9 +1,9 @@
 
 $FreeBSD$
 
---- makefile.orig	Tue Jan 30 02:53:22 2001
-+++ makefile	Tue Jan 30 11:24:28 2001
-@@ -10,37 +10,38 @@
+--- makefile.orig	Mon Feb 26 13:19:04 2001
++++ makefile	Fri Mar  2 11:43:00 2001
+@@ -10,34 +10,35 @@
  
  # For the Gnome desktop stuff to work, prefix must point to where Gnome thinks it is.
  # "h@h@" is printed here when gnome-config unavailable. Seems harmless.
@@ -27,15 +27,12 @@ $FreeBSD$
 +vpath %.h ../src $(X11BASE)/include/scintilla
  vpath %.cxx ../src
  
- #Comment / Uncomment the next line out if you want GTK single instance support
- SINGLEINSTANCE= -DSINGLE_INSTANCE
- 
- #CXXFLAGS= -g -DGTK -DSCI_LEXER -DSYSCONF_PATH=\"$(SYSCONF_PATH)\" -Wwrite-strings 
--INCLUDEDIRS=-I ../../scintilla/include -I ../src 
--CXXBASEFLAGS= -DGTK -DSCI_LEXER -DSYSCONF_PATH=\"$(SYSCONF_PATH)\" $(SINGLEINSTANCE) -W -Wall
-+INCLUDEDIRS=-I $(X11BASE)/include/scintilla -I ../src 
-+CXXBASEFLAGS= -DGTK -DSCI_LEXER -DSYSCONF_PATH=\"$(SYSCONF_PATH)\" \
-+	      $(SINGLEINSTANCE) -W -Wall $(shell $(GTK_CONFIG) --cflags)
+ #CXXFLAGS= -g -DGTK -DSCI_LEXER -DSYSCONF_PATH=\"$(SYSCONF_PATH)\" -Wwrite-strings
+-INCLUDEDIRS=-I ../../scintilla/include -I ../src
+-CXXBASEFLAGS= -DGTK -DSCI_LEXER -DSYSCONF_PATH=\"$(SYSCONF_PATH)\" -W -Wall
++INCLUDEDIRS=-I $(X11BASE)/include/scintilla -I ../src
++CXXBASEFLAGS= -DGTK -DSCI_LEXER -DSYSCONF_PATH=\"$(SYSCONF_PATH)\" -W -Wall \
++	      $(shell $(GTK_CONFIG) --cflags)
  
  ifdef DEBUG
 -CXXFLAGS=-DDEBUG $(CXXBASEFLAGS)
@@ -51,7 +48,7 @@ $FreeBSD$
  
  all: $(PROG)
  
-@@ -57,8 +58,8 @@
+@@ -55,8 +56,8 @@
  	../../scintilla/gtk/LexVB.o
  
  $(PROG): SciTEGTK.o SciTEBase.o SciTEBuffers.o SciTEIO.o Exporters.o \
@@ -62,7 +59,7 @@ $FreeBSD$
  
  # SciTE-static no longer builds. Kept here in case of later need.
  SciTE-static: SciTEGTK.o SciTEBase.o SciTEBuffers.o SciTEIO.o Exporters.o SciTEProps.o \
-@@ -85,12 +86,12 @@
+@@ -83,12 +84,12 @@
  # This is OK - just means no SciTE in the Gnome Applications menu
  # Dead:	install -D SciTEGTK.properties $(SYSCONF_PATH)/SciTEGlobal.properties
  install:
