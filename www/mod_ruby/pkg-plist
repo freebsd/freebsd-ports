@@ -1,9 +1,11 @@
-%%RUBY_SITELIBDIR%%/apache/eruby.rb
-%%RUBY_SITELIBDIR%%/apache/ruby.rb
+%%RUBY_SITELIBDIR%%/apache/eruby-run.rb
 %%RUBY_SITELIBDIR%%/apache/rd2html.rb
+%%RUBY_SITELIBDIR%%/apache/ruby-run.rb
+%%RUBY_SITELIBDIR%%/auto-reload.rb
 @dirrm %%RUBY_SITELIBDIR%%/apache
 etc/apache/httpd.conf.mod_ruby
 libexec/apache/mod_ruby.so
+%%PORTDOCS%%%%RUBY_DOCDIR%%/mod_ruby/COPYING
 %%PORTDOCS%%%%RUBY_DOCDIR%%/mod_ruby/ChangeLog
 %%PORTDOCS%%%%RUBY_DOCDIR%%/mod_ruby/README.en
 %%PORTDOCS%%%%RUBY_DOCDIR%%/mod_ruby/ja/README.ja
