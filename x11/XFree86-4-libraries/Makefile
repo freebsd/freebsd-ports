@@ -94,6 +94,13 @@ PLIST_SUB+=	OSMESA:="@comment "
 PLIST_SUB+=	OSMESA:=""
 .endif
 
+# sparc64 doesn't have a working libc_r yet.
+.if ${MACHINE_ARCH} == "sparc64"
+PLIST_SUB+=	XTHRSTUB:="@comment "
+.else
+PLIST_SUB+=	XTHRSTUB:=""
+.endif
+
 post-extract:
 	${GUNZIP_CMD} -c ${DISTDIR}/${DIST_SUBDIR}/Wraphelp.gz > \
 		${WRKSRC}/lib/Xdmcp/Wraphelp.c

@@ -1,5 +1,5 @@
---- config/cf/FreeBSD.cf.orig	Tue Sep 17 19:33:33 2002
-+++ config/cf/FreeBSD.cf	Tue Sep 17 20:47:11 2002
+--- config/cf/FreeBSD.cf.orig	Wed Sep 18 18:18:59 2002
++++ config/cf/FreeBSD.cf	Wed Sep 18 18:19:36 2002
 @@ -43,11 +43,15 @@
  #define GccUsesGas		YES
  #define UseGas			YES
@@ -16,7 +16,17 @@
  #ifndef HasLibCrypt
  # define HasLibCrypt		YES
  #endif
-@@ -82,10 +86,6 @@
+@@ -74,18 +78,14 @@
+  * Multi-thread safe libs 
+  */	
+ /* 2.2.7 and later has libc_r (POSIX threads) */
+-#if OSMajorVersion == 2 && OSMinorVersion == 2 && OSTeenyVersion >= 7 || \
+-    OSMajorVersion >= 3
++#if (OSMajorVersion == 2 && OSMinorVersion == 2 && OSTeenyVersion >= 7) || \
++    (OSMajorVersion >= 3) && !defined(Sparc64Architecture)
+ # ifndef HasLibPthread
+ #  define HasLibPthread		NO
+ # endif
  # define HasPosixThreads	YES
  # define ThreadedX		YES
  /*
@@ -79,7 +89,17 @@
  /* 
   * This doesn't work the way it does on every other system. On FreeBSD it's
   * only a "hint, not a demand", whatever that means. Note that this is not 
-@@ -448,14 +466,14 @@
+@@ -424,6 +442,9 @@
+ #ifdef AlphaArchitecture
+ #define ServerExtraDefines GccGasOption XFree86ServerDefines -D_XSERVER64
+ #endif
++#ifdef Sparc64Architecture
++#define ServerExtraDefines GccGasOption XFree86ServerDefines -D_XSERVER64
++#endif
+ 
+ #define StandardDefines	-DCSRG_BASED
+ 
+@@ -448,14 +469,14 @@
  /* The GCC strength-reduce bug is fixed for FreeBSD 2.1.5 and later */
  #ifndef DefaultGcc2i386Opt
  #if OSMajorVersion > 2 || (OSMajorVersion == 2 && OSMinorVersion > 1) || (OSMajorVersion == 2 && OSMinorVersion == 1 && OSTeenyVersion >= 5)

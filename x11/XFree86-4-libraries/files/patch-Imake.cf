@@ -1,0 +1,13 @@
+--- config/cf/Imake.cf.orig	Wed Sep 18 18:17:14 2002
++++ config/cf/Imake.cf	Wed Sep 18 18:17:44 2002
+@@ -221,6 +221,10 @@
+ #  define AlphaArchitecture
+ #  undef __alpha__
+ # endif
++# ifdef __sparc64__
++#  define Sparc64Architecture
++#  undef __sparc64__
++# endif
+ #endif /* __FreeBSD__ */
+ 
+ #ifdef AMOEBA
