@@ -27,7 +27,7 @@ MAN3=	Video::OpenQuicktime.3
 
 .if ${PERL_LEVEL} <= 500600
 post-patch:
-	@${PERL} -pi -e "s/our $VERSION/$VERSION/g" \
+	@${PERL} -pi -e "s/our $$VERSION/$$VERSION/g" \
 		${WRKSRC}/OpenQuicktime.pm
 .endif
 
