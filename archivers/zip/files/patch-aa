@@ -1,0 +1,31 @@
+--- unix/Makefile.orig		Fri Oct 24 13:38:04 1997
++++ unix/Makefile	Thu Sep 17 22:25:33 1998
+@@ -44,6 +44,12 @@
+ LFLAGS1 =
+ LFLAGS2 = -s
+ 
++.if ${PORTOBJFORMAT} == elf
++ELFDEF = -D__ELF__
++.else
++ELFDEF =
++.endif
++
+ # object file lists
+ OBJZ = zip.o zipfile.o zipup.o fileio.o util.o globals.o crypt.o ttyio.o \
+        unix.o crc32.o crctab.o
+@@ -81,13 +87,13 @@
+ zipup.o: unix/zipup.h
+ 
+ match.o: match.S
+-	$(CPP) match.S > _match.s
++	$(CPP) $(ELFDEF) match.S > _match.s
+ 	$(AS) _match.s
+ 	mv _match.o match.o
+ 	rm -f _match.s
+ 
+ crc_i386.o: crc_i386.S
+-	$(CPP) crc_i386.S > crc_i386.s
++	$(CPP) $(ELFDEF) crc_i386.S > crc_i386.s
+ 	$(AS) crc_i386.s
+ 	rm -f crc_i386.s
+ 
