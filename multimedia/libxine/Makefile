@@ -25,6 +25,7 @@ LIB_DEPENDS=	FLAC.5:${PORTSDIR}/audio/flac \
 		speex.2:${PORTSDIR}/audio/speex \
 		aa.1:${PORTSDIR}/graphics/aalib \
 		mng.1:${PORTSDIR}/graphics/libmng \
+		png.5:${PORTSDIR}/graphics/png \
 		dvdread.3:${PORTSDIR}/multimedia/libdvdread
 
 USE_GETTEXT=	yes
