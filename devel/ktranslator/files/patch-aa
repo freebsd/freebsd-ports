@@ -1,0 +1,11 @@
+--- ktranslator/doc/Makefile.in.~1~	Fri Mar 19 16:44:10 1999
++++ ktranslator/doc/Makefile.in	Fri Mar 19 16:44:10 1999
+@@ -120,7 +120,7 @@
+ qt_libraries = @qt_libraries@
+ topdir = @topdir@
+ 
+-data_DATA = index.html logotp3.gif
++data_DATA = index.html index-1.html index-2.html logotp3.gif
+ 
+ # this is the directory, where all datas are installed
+ # you have given the datas in data_DATA

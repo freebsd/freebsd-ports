@@ -1,0 +1,9 @@
+bin/ktranslator
+share/applnk/Utilities/ktranslator.kdelnk
+share/doc/HTML/en/ktranslator/index.html
+share/doc/HTML/en/ktranslator/index-1.html
+share/doc/HTML/en/ktranslator/index-2.html
+share/doc/HTML/en/ktranslator/logotp3.gif
+share/locale/it/LC_MESSAGES/ktranslator.mo
+share/config/ktranslatorrc
+@dirrm share/doc/HTML/en/ktranslator
