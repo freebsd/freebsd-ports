@@ -611,6 +611,7 @@
     SUBDIR += p5-Carp-Datum
     SUBDIR += p5-Cdk
     SUBDIR += p5-Class-Accessor
+    SUBDIR += p5-Class-Accessor-Lvalue
     SUBDIR += p5-Class-ArrayObjects
     SUBDIR += p5-Class-Autouse
     SUBDIR += p5-Class-Base
