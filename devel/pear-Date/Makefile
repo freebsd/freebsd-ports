@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Date
-PORTVERSION=	1.4.2
+PORTVERSION=	1.4.3
 CATEGORIES=	devel www pear
 
 MAINTAINER=	ports@FreeBSD.org
@@ -23,6 +23,8 @@ TESTS=		test_calc.php test_date_methods_span.php testunit.php	\
 		bug727_4.php bug967.php weeksinmonth_4_monday.txt	\
 		weeksinmonth_4_sunday.txt weeksinmonth_rdm_monday.txt	\
 		weeksinmonth_rdm_sunday.txt
+DOCS=		TODO
+_DOCSDIR=	.
 
 .include <bsd.port.pre.mk>
 .include "${PORTSDIR}/devel/pear-PEAR/Makefile.common"
