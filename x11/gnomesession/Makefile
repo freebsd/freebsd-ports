@@ -7,6 +7,7 @@
 
 PORTNAME=	gnomesession
 PORTVERSION=	2.6.1
+PORTREVISION=	1
 CATEGORIES=	x11 gnome
 MASTER_SITES=	${MASTER_SITE_GNOME} \
 		http://people.FreeBSD.org/~marcus/:local \
@@ -26,6 +27,8 @@ USE_X_PREFIX=	yes
 USE_GNOME=	gnomeprefix gnomehack gnomehier intlhack lthack libgnomeui
 USE_GMAKE=	yes
 USE_LIBTOOL_VER=13
+CONFIGURE_ARGS=	--with-halt-command=/sbin/shutdown \
+		--with-reboot-command=/sbin/shutdown
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib"
 
