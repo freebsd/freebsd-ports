@@ -8,12 +8,10 @@
 PORTNAME=	webcheck
 PORTVERSION=	1.0
 CATEGORIES=	www python
-MASTER_SITES=	${MASTER_SITE_SUNSITE}
+MASTER_SITES=	http://www.mired.org/webcheck/
 EXTRACT_SUFX=	.bz2
 
 MAINTAINER=	mwm@mired.org
-
-BROKEN=		"Does not fetch"
 
 USE_PYTHON=	YES
 
