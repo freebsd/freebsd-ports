@@ -7,6 +7,7 @@
 
 PORTNAME=	mozart
 PORTVERSION=	1.2.3.20011201
+PORTREVISION=	1
 CATEGORIES=	lang tk83
 MASTER_SITES=	ftp://ftp.mozart-oz.org/pub/mozart/${PORTVERSION}/tar/ \
 		ftp://ftp.sics.se/pub/mozart/${PORTVERSION}/tar/
@@ -62,6 +63,11 @@ post-install:
 		-C ${PREFIX}/lib/oz
 	@${RM} -rf ${PREFIX}/lib/oz/doc
 	@${MV} ${PREFIX}/lib/oz/mozart/doc ${PREFIX}/lib/oz
+	@${CHOWN} -R ${SHAREOWN}:${SHAREGRP} ${PREFIX}/lib/oz/doc
+	@${FIND} ${PREFIX}/lib/oz -type d -print0 \
+		| ${XARGS} -0 ${CHMOD} 755
+	@${FIND} ${PREFIX}/lib/oz/doc -type f -print0 \
+		| ${XARGS} -0 ${CHMOD} ${SHAREMODE}
 	@${RM} -rf ${PREFIX}/lib/oz/mozart
 .endif
 	@cd ${PREFIX} ; ${FIND} lib/oz -type f -o -type l | sort \
