@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gtksee
-PORTVERSION=	0.5.4
+PORTVERSION=	0.5.5.1
 CATEGORIES=	graphics
 MASTER_SITES=	http://download.berlios.de/gtksee/
 
@@ -35,5 +35,8 @@ MAN1=		gtksee.1
 post-patch:
 	@${REINPLACE_CMD} -e \
 		's|^CFLAGS=""|CFLAGS="$$CFLAGS"|g' ${WRKSRC}/configure
+
+post-install:
+	${INSTALL_MAN} ${WRKSRC}/man/gtksee.1 ${MANPREFIX}/man/man1
 
 .include <bsd.port.mk>
