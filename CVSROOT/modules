@@ -4046,6 +4046,7 @@ mdbconv		ports/palm/mdbconv
 mdbtools	ports/databases/mdbtools
 mdcrack		ports/security/mdcrack
 mdk		ports/lang/mdk
+mdnsd		ports/net/mdnsd
 mdw		ports/www/mdw
 medusa		ports/sysutils/medusa
 mei		ports/sysutils/mei
