@@ -49,6 +49,7 @@ include/gaim/notify.h
 include/gaim/plugin.h
 include/gaim/pluginpref.h
 include/gaim/pounce.h
+include/gaim/prefix.h
 include/gaim/prefs.h
 include/gaim/privacy.h
 include/gaim/proxy.h
@@ -323,6 +324,7 @@ share/gnome/pixmaps/gaim/status/default/admin.png
 share/gnome/pixmaps/gaim/status/default/aim.png
 share/gnome/pixmaps/gaim/status/default/aol.png
 share/gnome/pixmaps/gaim/status/default/away.png
+share/gnome/pixmaps/gaim/status/default/blocked.png
 share/gnome/pixmaps/gaim/status/default/dnd.png
 share/gnome/pixmaps/gaim/status/default/extendedaway.png
 share/gnome/pixmaps/gaim/status/default/female.png
@@ -345,6 +347,7 @@ share/gnome/pixmaps/gaim/status/default/na.png
 share/gnome/pixmaps/gaim/status/default/napster.png
 share/gnome/pixmaps/gaim/status/default/notauthorized.png
 share/gnome/pixmaps/gaim/status/default/novell.png
+share/gnome/pixmaps/gaim/status/default/nr.png
 share/gnome/pixmaps/gaim/status/default/occupied.png
 share/gnome/pixmaps/gaim/status/default/offline.png
 share/gnome/pixmaps/gaim/status/default/op.png
@@ -399,6 +402,7 @@ share/locale/sl/LC_MESSAGES/gaim.mo
 share/locale/sr/LC_MESSAGES/gaim.mo
 share/locale/sr@Latn/LC_MESSAGES/gaim.mo
 share/locale/sv/LC_MESSAGES/gaim.mo
+share/locale/tr/LC_MESSAGES/gaim.mo
 share/locale/vi/LC_MESSAGES/gaim.mo
 share/locale/zh_CN/LC_MESSAGES/gaim.mo
 share/locale/zh_TW/LC_MESSAGES/gaim.mo
