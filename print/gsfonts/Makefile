@@ -7,7 +7,7 @@
 
 PORTNAME=	gsfonts
 PORTVERSION=	8.11
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	print x11-fonts
 MASTER_SITES=	ftp://mirror.cs.wisc.edu/pub/mirrors/ghost/fonts/
 DISTFILES=	${GS_FONTS_STD} ${GS_FONTS_OTHER}
@@ -36,24 +36,16 @@ GS_FONTS_OTHER=	ghostscript-fonts-other-6.0.tar.gz
 
 post-patch:
 	${SED} 's|%%FONTSDIR%%|${FONTSDIR}|g' ${MSG_FILE} > ${PKGMESSAGE}
-
-#
+	${CP} ${WRKSRC}/fonts/fonts.scale ${WRKSRC}/fonts/fonts.scale.urw
+	${CP} ${FILESDIR}/fonts.scale ${WRKSRC}/fonts/fonts.scale
+	${CP} ${FILESDIR}/fonts.scale ${WRKSRC}/fonts/fonts.dir
+	${CP} ${FILESDIR}/Fontmap ${WRKSRC}/fonts/Fontmap
 
 #
 # Install
 #
 
-do-install: install-foundries install-fonts install-docs
-
-install-foundries:
-	${CAT} ${WRKSRC}/fonts/fonts.scale | \
-	${SED} -e 's|-URW-|-Adobe-|g' | \
-	${SED} -e 's|-urw-|-adobe-|g' > \
-	${WRKSRC}/fonts/fonts.scale
-	${CAT} ${WRKSRC}/fonts/fonts.dir | \
-	${SED} -e 's|-URW-|-Adobe-|g' | \
-	${SED} -e 's|-urw-|-adobe-|g' > \
-	${WRKSRC}/fonts/fonts.dir
+do-install: install-fonts install-docs
 
 install-fonts:
 	${MKDIR} ${FONTSDIR}
@@ -65,7 +57,8 @@ install-fonts:
 	${INSTALL_DATA} ${WRKSRC}/fonts/*.pfm ${FONTSDIR}
 	${INSTALL_DATA} ${WRKSRC}/fonts/fonts.dir ${FONTSDIR}
 	${INSTALL_DATA} ${WRKSRC}/fonts/fonts.scale ${FONTSDIR}
-	${INSTALL_DATA} ${FILESDIR}/Fontmap ${FONTSDIR}
+	${INSTALL_DATA} ${WRKSRC}/fonts/fonts.scale.urw ${FONTSDIR}
+	${INSTALL_DATA} ${WRKSRC}/fonts/Fontmap ${FONTSDIR}
 
 install-docs:
 .if !defined(NOPORTDOCS)
