@@ -14,5 +14,6 @@ MAINTAINER=	kkonstan@daemon.gr
 
 USE_XPM=	YES
 USE_IMAKE=	YES
+MAKE_ARGS=	CC=g++
 
 .include <bsd.port.mk>
