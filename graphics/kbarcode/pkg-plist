@@ -1,20 +1,41 @@
 bin/kbarcode
-share/applnk/Applications/kbarcode.desktop
-share/icons/locolor/16x16/apps/kbarcode.png
-share/icons/locolor/32x32/apps/kbarcode.png
+share/applnk/Applications/KBarcode/kbarcode-batch.desktop
+share/applnk/Applications/KBarcode/kbarcode-editor.desktop
+share/applnk/Applications/KBarcode/kbarcode-single.desktop
+share/applnk/Applications/KBarcode/kbarcode.desktop
 share/apps/kbarcode/barcodes.html
 share/apps/kbarcode/exampledata.sql
 share/apps/kbarcode/labeldefinitions.sql
 share/apps/kbarcode/logo.png
-share/doc/HTML/en/kbarcode/common
-share/doc/HTML/en/kbarcode/index.cache.bz2
-share/doc/HTML/en/kbarcode/index.docbook
-@dirrm share/doc/HTML/en/kbarcode
+share/icons/hicolor/16x16/actions/barcode.png
+share/icons/hicolor/16x16/actions/kbarcode-ellipse.png
+share/icons/hicolor/16x16/actions/kbarcode-grid.png
+share/icons/hicolor/16x16/actions/kbarcode-linetool.png
+share/icons/hicolor/16x16/apps/kbarcode.png
+share/icons/hicolor/24x24/actions/barcode.png
+share/icons/hicolor/32x32/actions/barcode.png
+share/icons/hicolor/32x32/actions/kbarcode-rect.png
+share/icons/hicolor/32x32/apps/kbarcode.png
+share/icons/hicolor/64x64/apps/kbarcode.png
+share/locale/de/LC_MESSAGES/kbarcode.mo
+share/locale/es/LC_MESSAGES/kbarcode.mo
+share/locale/fi/LC_MESSAGES/kbarcode.mo
+share/locale/fr/LC_MESSAGES/kbarcode.mo
+share/locale/hu/LC_MESSAGES/kbarcode.mo
+share/locale/it/LC_MESSAGES/kbarcode.mo
+share/locale/sv/LC_MESSAGES/kbarcode.mo
+share/mimelnk/application/kbarcode-label.desktop
+@unexec rmdir %D/share/mimelnk/application 2>/dev/null || true
+@unexec rmdir %D/share/icons/hicolor/64x64/apps 2>/dev/null || true
+@unexec rmdir %D/share/icons/hicolor/32x32/apps 2>/dev/null || true
+@unexec rmdir %D/share/icons/hicolor/32x32/actions 2>/dev/null || true
+@unexec rmdir %D/share/icons/hicolor/24x24/actions 2>/dev/null || true
+@unexec rmdir %D/share/icons/hicolor/16x16/apps 2>/dev/null || true
+@unexec rmdir %D/share/icons/hicolor/16x16/actions 2>/dev/null || true
+@unexec rmdir %D/share/icons/hicolor 2>/dev/null || true
+@unexec rmdir %D/share/icons 2>/dev/null || true
 @dirrm share/apps/kbarcode
-@unexec rmdir %D/share/icons/locolor/32x32/apps 2>/dev/null || true
-@unexec rmdir %D/share/icons/locolor/32x32 2>/dev/null || true
-@unexec rmdir %D/share/icons/locolor 2>/dev/null || true
-@unexec rmdir %D/share/icons/locolor/16x16/apps 2>/dev/null || true
-@unexec rmdir %D/share/icons/locolor/16x16 2>/dev/null || true
-@unexec rmdir %D/share/icons/locolor 2>/dev/null || true
+@unexec rmdir %D/share/apps 2>/dev/null || true
+@dirrm share/applnk/Applications/KBarcode
 @unexec rmdir %D/share/applnk/Applications 2>/dev/null || true
+@unexec rmdir %D/share/applnk 2>/dev/null || true
