@@ -24,7 +24,7 @@ PATCHFILES=		4.2.0-4.2.1-1-freebsd.patch.gz
 
 MAINTAINER=	anholt@freebsd.org
 
-BUILD_DEPENDS=	imake:${PORTSDIR}/devel/imake-4
+BUILD_DEPENDS=	${X11BASE}/lib/X11/config/version.def:${PORTSDIR}/devel/imake-4
 LIB_DEPENDS=	freetype.9:${PORTSDIR}/print/freetype2
 RUN_DEPENDS=	mkhtmlindex:${PORTSDIR}/devel/imake-4
 
