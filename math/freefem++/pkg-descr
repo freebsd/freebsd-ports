@@ -1,0 +1,14 @@
+FreeFem++ is an implementation of a language dedicated to the finite element
+method.
+
+It provides you a way to solve Partial Differential Equations (PDE) simply.
+Problems involving partial differential equations (pde) of  several branches
+of physics such as fluid-structure interactions require interpolations of
+data on several meshes and their manipulation within one program. In this
+report we build on a fast quadtree-based interpolation algorithm, propose
+a language for the manipulation of data on multiple meshes (generated with
+bamg) and test by designing an extension of freefem and of freefem+.
+
+Suggested add-on: the port graphics/xd3d.
+
+WWW: http://www.ann.jussieu.fr/~hecht/freefem++.htm

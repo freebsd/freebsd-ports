@@ -1,0 +1,11 @@
+--- Makefile.orig	Fri Aug 22 15:23:41 2003
++++ Makefile	Sat Oct 25 17:10:47 2003
+@@ -3,7 +3,7 @@
+ # ----------------------------------------------
+ src?=./src
+ include $(src)/Makefile-$(HOSTTYPE)
+-CXXFLAGS =  $(OPTFLAGS)  $(FFFLAGS) $(includedir)  $(INCARPACKPP)
++CXXFLAGS+=  $(OPTFLAGS)  $(FFFLAGS) $(includedir)  $(INCARPACKPP)
+ CXXMPIFLAGS=   $(CXXFLAGS) $(MPIFLAGS) -DPARALLELE $(INCARPACKPP)
+ LIBS=$(LIBARPACK) $(LIBF77)
+ VERSION=1.34

@@ -38,6 +38,7 @@
     SUBDIR += fftpack
     SUBDIR += fftw
     SUBDIR += freefem
+    SUBDIR += freefem++
     SUBDIR += fudgit
     SUBDIR += fung-calc
     SUBDIR += fxt

@@ -1,0 +1,35 @@
+--- src/Makefile-linux.orig	Thu Jan  2 14:30:30 2003
++++ src/Makefile-linux	Thu Oct 23 23:42:32 2003
+@@ -1,16 +1,15 @@
+-LIBX11= -L/usr/X11R6/lib -lX11 -lm 
+-INCLUDEX11 = /usr/X11R6/include
+-CXX=g++      #C++ compiler 
+-CXXMPI=mpiCC   # compilation with mpi
+-OOPTFLAGS= -O  # compilation with optimisation
++# $FreeBSD$
++LIBX11= -L$(X11BASE)/lib -lX11 -lm 
++INCLUDEX11 = $(X11BASE)/include
++OOPTFLAGS= -Wno-deprecated
+ GOPTFLAGS= -g  # compilation with debugging 
+ #--------------------------------------------------
+ #  the flag of eigen value part with arpack++ tools
+ #-------------------------------------------------
+ EIGEN= eigenvalue.o
+-LIBARPACK= -L../../arpack/ARPACK -larpack_linux -llapack -lblas
+-LIBF77= -lg2c
+-INCARPACKPP = -DEIGENVALUE -I../../arpack/arpack++/include
++LIBARPACK= -L$(LOCALBASE)/lib ${LOCALBASE}/lib/libarpack.a -lalapack -lf77blas -lcblas -latlas
++LIBF77= -lg2c -lm
++INCARPACKPP = -DEIGENVALUE -I$(LOCALBASE)/include/ARPACK++
+ # ------------------------------
+ # compilation flags of FreeFem++ 
+ # ------------------------------
+@@ -29,7 +28,7 @@
+ # ---------------------------
+ #  install and compile dir.
+ # ----------------------
+-BIN_DIR=$(HOME)/bin-$(HOSTTYPE)
++BIN_DIR=$(PREFIX)/bin
+ COMPILE_DIR=c-$(HOSTTYPE)
+ #----------------------
+ 
