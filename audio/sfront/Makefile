@@ -15,6 +15,8 @@ DISTNAME=	${PORTNAME}${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A translator that converts MP4-SA files into efficient C programs
 
+BROKEN=		"Size mismatch"
+
 WRKSRC=		${WRKDIR}/${PORTNAME}/src
 
 USE_BISON=	yes
