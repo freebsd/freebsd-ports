@@ -32,6 +32,43 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="0f5a2b4d-694b-11d9-a9e7-0001020eed82">
+    <topic>awstats -- remote command execution vulnerability</topic>
+    <affects>
+      <package>
+	<name>awstats</name>
+	<range><lt>6.3</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>An iDEFENSE Security Advisory  reports:</p>
+	<blockquote cite="http://marc.theaimsgroup.com/?l=full-disclosure&amp;m=110600949323439">
+	  <p>Remote exploitation of an input validation vulnerability
+	    in AWStats allows attackers to execute arbitrary commands
+	    under the privileges of the web server.</p>
+	  <p>The problem specifically exists when the application is
+	    running as a CGI script on a web server. The "configdir"
+	    parameter contains unfiltered user-supplied data that is
+	    utilized in a call to the Perl routine open()...</p>
+	  <p>Successful exploitation allows remote attackers to
+	    execute arbitrary commands under the privileges of the web
+	    server. This can lead to further compromise as it provides
+	    remote attackers with local access.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <bid>12270</bid>
+      <mlist msgid="FB24803D1DF2A34FA59FC157B77C970503C8B20C@idserv04.idef.com">http://marc.theaimsgroup.com/?l=full-disclosure&amp;m=110600949323439</mlist>
+      <url>http://awstats.sourceforge.net/docs/awstats_changelog.txt</url>
+    </references>
+    <dates>
+      <discovery>2004-10-21</discovery>
+      <entry>2005-01-18</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="597e2bee-68ea-11d9-a9e7-0001020eed82">
     <topic>ImageMagick -- PSD handler heap overflow vulnerability</topic>
     <affects>
