@@ -6,13 +6,12 @@
 #
 
 PORTNAME=	gnats
-PORTVERSION=	3.113
+PORTVERSION=	3.113.1
 CATEGORIES=	databases elisp
-MASTER_SITES=	ftp://ftp.freesoftware.com/pub/sourceware/gnats/snapshots/ \
-		ftp://mirrors.rcn.net/pub/sourceware/gnats/snapshots/ \
-		ftp://sunsite.org.uk/Mirrors/sourceware.cygnus.com/pub/gnats/snapshots/
+MASTER_SITES=	${MASTER_SITE_GNU}
+MASTER_SITE_SUBDIR= gnats
 
-MAINTAINER=	pst@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 
 BUILD_DEPENDS=	gm4:${PORTSDIR}/devel/m4
 
@@ -21,7 +20,6 @@ CONFIGURE_ARGS=	--with-lispdir=${PREFIX}/share/emacs/site-lisp \
 		--with-full-gnats \
 		--with-release-based
 
-USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_BISON=	yes
 MAN1=		edit-pr.1 query-pr.1 send-pr.1
