@@ -1,0 +1,17 @@
+--- ./Imakefile.org	Mon Mar 20 05:01:34 1995
++++ ./Imakefile	Wed Mar 22 05:31:31 1995
+@@ -1,5 +1,4 @@
+-BIN_DIR=          /usr/local/bin
+-HIGH_SCORE_DIR=   /usr/local/lib
++HIGH_SCORE_DIR=   ${LIBDIR}
+ 
+ /*---------------------------------------------------------------------*/
+ 
+@@ -7,7 +6,6 @@
+ # define GLLIB -lgl_s
+ #endif
+ 
+-BINDIR=$(BIN_DIR)
+ EXTRA_DEFINES = -DHIGH_SCORE_TABLE=\"$(HIGH_SCORE_DIR)/.xemeraldia.scores\"\
+                 -D__USE_FIXED_PROTOTYPES__
+ 
