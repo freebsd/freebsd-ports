@@ -8,7 +8,7 @@
     SUBDIR += hdconv
     SUBDIR += imgvtopgm
     SUBDIR += isilo
-    SUBDIR += jconv
+    SUBDIR += jfconv
     SUBDIR += jpilot
     SUBDIR += kpilot
     SUBDIR += malsync
