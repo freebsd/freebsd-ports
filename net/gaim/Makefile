@@ -6,13 +6,15 @@
 #
 
 PORTNAME=		gaim
-PORTVERSION=		0.44
+PORTVERSION=		0.45
 CATEGORIES=		net
 MASTER_SITES=		ftp://ftp.marko.net/pub/gaim/ \
 			${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=		jim@FreeBSD.org
+
+BUILD_DEPENDS=		${X11BASE}/bin/gdk-pixbuf-config:${PORTSDIR}/graphics/gdk-pixbuf
 
 USE_BZIP2=		yes
 USE_X_PREFIX=		yes
@@ -43,8 +45,8 @@ CONFIGURE_ARGS+=	--disable-esd
 .endif
 
 pre-patch:
-	@${PERL} -pi -e 's|-lpthread|${PTHREAD_LIBS}|g ; \
-		 s|DATADIRNAME=lib|DATADIRNAME=share|g' ${WRKSRC}/configure
+	@${PERL} -pi.orig -e 's|-lpthreads|${PTHREAD_LIBS:S/"//g}|g; \
+		s|-lpthread|${PTHREAD_LIBS:S/"//g}|g' ${WRKSRC}/configure
 	@find ${WRKSRC} -name "Makefile.in" | xargs ${PERL} -pi -e \
 		's|\$$\(datadir\)/gnome/|\$$\(datadir\)/|g ; \
 		 s|\$$\(datadir\)/locale|\$$\(prefix\)/share/locale|g'

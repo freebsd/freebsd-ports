@@ -5,20 +5,14 @@ lib/gaim/autorecon.so
 lib/gaim/chatlist.so
 lib/gaim/iconaway.so
 lib/gaim/lagmeter.so
+lib/gaim/libgg.so
 lib/gaim/libicq.so
-lib/gaim/libicq.so.0
 lib/gaim/libirc.so
-lib/gaim/libirc.so.0
 lib/gaim/libjabber.so
-lib/gaim/libjabber.so.0
-lib/gaim/libnapster.so
-lib/gaim/libnapster.so.0
-lib/gaim/libyahoo.so
-lib/gaim/libyahoo.so.0
 lib/gaim/libmsn.so
-lib/gaim/libmsn.so.0
+lib/gaim/libnapster.so
+lib/gaim/libyahoo.so
 lib/gaim/libzephyr.so
-lib/gaim/libzephyr.so.0
 lib/gaim/notify.so
 lib/gaim/spellchk.so
 %%DATADIR%%/pixmaps/gaim/ab.xpm
@@ -49,6 +43,7 @@ lib/gaim/spellchk.so
 %%DATADIR%%/pixmaps/gaim/crazy4.xpm
 %%DATADIR%%/pixmaps/gaim/crossedlips.xpm
 %%DATADIR%%/pixmaps/gaim/cry.xpm
+%%DATADIR%%/pixmaps/gaim/download.xpm
 %%DATADIR%%/pixmaps/gaim/dt_icon.xpm
 %%DATADIR%%/pixmaps/gaim/embarrassed.xpm
 %%DATADIR%%/pixmaps/gaim/exit_small.xpm
@@ -57,6 +52,10 @@ lib/gaim/spellchk.so
 %%DATADIR%%/pixmaps/gaim/fontface2.xpm
 %%DATADIR%%/pixmaps/gaim/free_icon.xpm
 %%DATADIR%%/pixmaps/gaim/gaim.xpm
+%%DATADIR%%/pixmaps/gaim/gg_suncloud.xpm
+%%DATADIR%%/pixmaps/gaim/gg_sunred.xpm
+%%DATADIR%%/pixmaps/gaim/gg_sunwhitered.xpm
+%%DATADIR%%/pixmaps/gaim/gg_sunyellow.xpm
 %%DATADIR%%/pixmaps/gaim/gnomeicu-away.xpm
 %%DATADIR%%/pixmaps/gaim/gnomeicu-dnd.xpm
 %%DATADIR%%/pixmaps/gaim/gnomeicu-ffc.xpm
@@ -126,6 +125,7 @@ share/locale/de/LC_MESSAGES/gaim.mo
 share/locale/es/LC_MESSAGES/gaim.mo
 share/locale/fr/LC_MESSAGES/gaim.mo
 share/locale/ko/LC_MESSAGES/gaim.mo
+share/locale/pl/LC_MESSAGES/gaim.mo
 share/locale/ru/LC_MESSAGES/gaim.mo
 share/locale/zh_CN/LC_MESSAGES/gaim.mo
 @dirrm %%DATADIR%%/pixmaps/gaim/gnome
