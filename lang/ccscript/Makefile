@@ -6,13 +6,14 @@
 #
 
 PORTNAME=	ccscript
-PORTVERSION=	1.4.1
+PORTVERSION=	2.4.3
 CATEGORIES=	lang
-MASTER_SITES=	ftp://www.voxilla.org/pub/freebsd/tarball/
+MASTER_SITES=	${MASTER_SITE_GNU}
+MASTER_SITE_SUBDIR=	ccscript
 
-MAINTAINER=	dyfet@gnu.org
+MAINTAINER=	ports@FreeBSD.org
 
-LIB_DEPENDS=	ccstd-1.4.0:${PORTSDIR}/devel/commoncpp
+LIB_DEPENDS=	ccgnu2-1.0.0:${PORTSDIR}/devel/commoncpp
 
 USE_GMAKE=	yes
 USE_LIBTOOL=	yes
@@ -21,15 +22,11 @@ INSTALLS_SHLIB=	yes
 
 CONFIGURE_ENV=	CPPFLAGS=-I${LOCALBASE}/include LDFLAGS=-L${LOCALBASE}/lib
 
-#post-extract:
-#	@find ${WRKSRC} -name "Makefile.in" | xargs ${PERL} -pi -e \
-#		's|-release \$$\(LT_RELEASE\)||g'
+MAN3=		ScriptCommand.3cc ScriptImage.3cc ScriptInterp.3cc \
+		ScriptModule.3cc ScriptSymbol.3cc Script_Locks.3cc \
+		Script_Package.3cc Script_Property.3cc Script_Session.3cc
 
 post-install:
 	(cd ${WRKSRC} ; make man)
-.if !defined(NOPORTDOCS)
-	${MKDIR} ${PREFIX}/share/doc/ccscript
-	${INSTALL_MAN} ${WRKSRC}/doc/html/* ${PREFIX}/share/doc/ccscript
-.endif
 
 .include <bsd.port.mk>
