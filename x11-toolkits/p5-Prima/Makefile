@@ -19,7 +19,7 @@ LIB_DEPENDS=	ungif.5:${PORTSDIR}/graphics/libungif \
 
 CONFIGURE_ARGS+=	CC="${CC}" CCFLAGS="${CFLAGS}" PREFIX="${PREFIX}" \
 			INSTALL_MAN3="${PREFIX}/lib/perl5/${PERL_VERSION}/man/man3" \
-			INSTALL_MAN1="${PREFIX}/man/man1" 
+			INSTALL_MAN1="${PREFIX}/man/man1"
 CONFIGURE_SCRIPT=       Makefile.PL
 USE_PERL5=		yes
 
