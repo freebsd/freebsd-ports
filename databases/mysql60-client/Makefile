@@ -3,7 +3,7 @@
 # Date created:				28 Oct 1997
 # Whom:					Josh Tiefenbach <josh@ican.net>
 #
-# $Id: Makefile,v 1.3 1997/09/05 20:23:04 jfitz Exp $
+# $Id: Makefile,v 1.9 1997/10/29 14:43:32 jfitz Exp $
 #
 
 DISTNAME=	mysql-3.20.32a
@@ -16,7 +16,7 @@ MASTER_SITES=	http://www.tcx.se/ \
 
 MAINTAINER=	josh@ican.net
 
-RUN_DEPENDS=	perl5.00401:${PORTSDIR}/lang/perl5
+RUN_DEPENDS=	perl5.00404:${PORTSDIR}/lang/perl5
 
 USE_GMAKE=	YES
 GNU_CONFIGURE=	YES
