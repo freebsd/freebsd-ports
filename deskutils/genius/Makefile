@@ -1,43 +1,33 @@
 # New ports collection makefile for:	genius
-# Version required:			0.4.0
+# Version required:			0.4.2
 # Date created:				1 May 1999
 # Whom:					Andrey Zakhvatov
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1999/05/03 04:41:08 steve Exp $
 #
 
-DISTNAME=	genius-0.4.0
+DISTNAME=	genius-0.4.2
 CATEGORIES=	deskutils gnome
 MASTER_SITES=	http://ftp.5z.com/pub/genius/
 
 MAINTAINER=	andy@icc.surw.chel.su
 
-LIB_DEPENDS=	Xpm.4:${PORTSDIR}/graphics/xpm \
-		art_lgpl.1:${PORTSDIR}/x11/gnomelibs \
-		audiofile.0:${PORTSDIR}/audio/libaudiofile \
-		esd.1:${PORTSDIR}/audio/esound \
-		gdk_imlib.3:${PORTSDIR}/graphics/imlib \
-		gdk12.1:${PORTSDIR}/x11-toolkits/gtk12 \
-		gif.3:${PORTSDIR}/graphics/png \
-		glib12.1:${PORTSDIR}/devel/glib12 \
-		gmodule12.1:${PORTSDIR}/devel/glib12 \
-		gnome.1:${PORTSDIR}/x11/gnomelibs \
-		gnomesupport.1:${PORTSDIR}/x11/gnomelibs \
-		gnomeui.1:${PORTSDIR}/x11/gnomelibs \
-		gtk12.1:${PORTSDIR}/x11-toolkits/gtk12 \
-		intl.1:${PORTSDIR}/devel/gettext \
-		jpeg.9:${PORTSDIR}/graphics/jpeg \
-		png.3:${PORTSDIR}/graphics/png \
-		tiff.4:${PORTSDIR}/graphics/tiff34
+BUILD_DEPENDS=	panel:${PORTSDIR}/x11/gnomecore
+RUN_DEPENDS=	panel:${PORTSDIR}/x11/gnomecore
+
+GLIB_CONFIG?=	${LOCALBASE}/bin/glib12-config
+GTK_CONFIG?=	${X11BASE}/bin/gtk12-config
 
 USE_X_PREFIX=	yes
-GNU_CONFIGURE=	yes
+USE_GMAKE=	yes
+USE_LIBTOOL=	yes
 CONFIGURE_ARGS=	--localstatedir=${PREFIX}/share/gnome \
 		--datadir=${PREFIX}/share/gnome \
-		--with-gnome=${X11BASE}
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
-		GLIB_CONFIG="${LOCALBASE}/bin/glib12-config" \
-		GTK_CONFIG="${X11BASE}/bin/gtk12-config"
+		--with-gnome=${PREFIX}
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
+		GLIB_CONFIG="${GLIB_CONFIG}" \
+		GTK_CONFIG="${GTK_CONFIG}" \
+		LIBS="-L${LOCALBASE}/lib"
 
 post-install:
 .if !defined(NOPORTDOCS)
