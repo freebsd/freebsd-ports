@@ -35,5 +35,6 @@ VERSION=3.0
 .endif
 
 MAKE_ENV+=		VERSION="${VERSION}" SONAME="${SONAME}"
+CFLAGS+=	-fPIC
 
 .include <bsd.port.post.mk>
