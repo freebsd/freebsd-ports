@@ -3,7 +3,7 @@
 # Date created:         31 October 1994
 # Whom:                 ljo
 #
-# $Id: Makefile,v 1.11 1997/04/03 01:17:23 fenner Exp $
+# $Id: Makefile,v 1.12 1997/07/17 15:12:56 max Exp $
 #
 
 DISTNAME=	linpack
@@ -17,7 +17,7 @@ DIST_SUBDIR=	${DISTNAME}
 RUN_DEPENDS=    ${PREFIX}/lib/libcor.so.1.0:${PORTSDIR}/math/blas
 
 EXTRACT_CMD=	${SCRIPTDIR}/uncomp
-EXTRACT_SUFX=	.Z
+EXTRACT_SUFX=	.gz
 EXTRACT_ARGS=	${WRKDIR}
 
 NO_WRKSUBDIR=	yes
@@ -46,7 +46,7 @@ SRCS =	cchdc.f cchdd.f cchex.f cchud.f cgbco.f cgbdi.f cgbfa.f cgbsl.f \
 	zsico.f zsidi.f zsifa.f zsisl.f zspco.f zspdi.f zspfa.f zspsl.f \
 	zsvdc.f ztrco.f ztrdi.f ztrsl.f
 
-DISTFILES=	${SRCS:.f=.f.Z}
+DISTFILES=	${SRCS:.f=.f.gz}
 
 pre-build:
 	cp Makefile.lib ${WRKDIR}/Makefile
