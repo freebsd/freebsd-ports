@@ -1,0 +1,8 @@
+This port installs the jar-file (${PREFIX}/share/proguard1.5.1/lib/proguard.jar)
+which should be run with java:
+
+cd ${PREFIX}/share/proguard1.5.1/lib
+java -jar proguard.jar @options
+
+You should prepare the file with options before this. Read the documentation
+for the details.

@@ -68,6 +68,7 @@
     SUBDIR += netcomponents
     SUBDIR += netrexx
     SUBDIR += openjit
+    SUBDIR += proguard
     SUBDIR += sablevm
     SUBDIR += shujit
     SUBDIR += trove4j
