@@ -1,20 +1,21 @@
+@unexec install-info --delete %D/info/mailcrypt.info %D/info/dir
 info/mailcrypt.info
 info/mailcrypt.info-1
 info/mailcrypt.info-2
-share/emacs/site-lisp/expect.el
-share/emacs/site-lisp/expect.elc
-share/emacs/site-lisp/mailcrypt.el
-share/emacs/site-lisp/mailcrypt.elc
-share/emacs/site-lisp/mc-gpg.el
-share/emacs/site-lisp/mc-gpg.elc
-share/emacs/site-lisp/mc-pgp.el
-share/emacs/site-lisp/mc-pgp.elc
-share/emacs/site-lisp/mc-pgp5.el
-share/emacs/site-lisp/mc-pgp5.elc
-share/emacs/site-lisp/mc-remail.el
-share/emacs/site-lisp/mc-remail.elc
-share/emacs/site-lisp/mc-setversion.el
-share/emacs/site-lisp/mc-setversion.elc
-share/emacs/site-lisp/mc-toplev.el
-share/emacs/site-lisp/mc-toplev.elc
-@unexec /usr/bin/install-info --info-dir=%D/info --delete mailcrypt.info
+@exec install-info %D/info/mailcrypt.info %D/info/dir
+%%EMACS_VERSION_SITE_LISPDIR%%/mailcrypt/expect.el
+%%EMACS_VERSION_SITE_LISPDIR%%/mailcrypt/expect.elc
+%%EMACS_VERSION_SITE_LISPDIR%%/mailcrypt/mailcrypt.el
+%%EMACS_VERSION_SITE_LISPDIR%%/mailcrypt/mailcrypt.elc
+%%EMACS_VERSION_SITE_LISPDIR%%/mailcrypt/mc-gpg.el
+%%EMACS_VERSION_SITE_LISPDIR%%/mailcrypt/mc-gpg.elc
+%%EMACS_VERSION_SITE_LISPDIR%%/mailcrypt/mc-pgp.el
+%%EMACS_VERSION_SITE_LISPDIR%%/mailcrypt/mc-pgp.elc
+%%EMACS_VERSION_SITE_LISPDIR%%/mailcrypt/mc-pgp5.el
+%%EMACS_VERSION_SITE_LISPDIR%%/mailcrypt/mc-pgp5.elc
+%%EMACS_VERSION_SITE_LISPDIR%%/mailcrypt/mc-remail.el
+%%EMACS_VERSION_SITE_LISPDIR%%/mailcrypt/mc-remail.elc
+%%EMACS_VERSION_SITE_LISPDIR%%/mailcrypt/mc-setversion.el
+%%EMACS_VERSION_SITE_LISPDIR%%/mailcrypt/mc-setversion.elc
+%%EMACS_VERSION_SITE_LISPDIR%%/mailcrypt/mc-toplev.el
+%%EMACS_VERSION_SITE_LISPDIR%%/mailcrypt/mc-toplev.elc
