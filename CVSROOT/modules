@@ -4251,7 +4251,6 @@ kontact-plugins	ports/net/kontact-plugins
 konversation	ports/irc/konversation
 konverse	ports/net/konverse
 konwert		ports/converters/konwert
-kopete		ports/net/kopete
 korelib		ports/devel/korelib
 kover		ports/print/kover
 kp		ports/misc/kp
