@@ -26,6 +26,7 @@
     SUBDIR += camediaplay
     SUBDIR += chbg
     SUBDIR += claraocr
+    SUBDIR += compupic
     SUBDIR += cqcam
     SUBDIR += crw
     SUBDIR += cthumb
