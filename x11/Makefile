@@ -44,6 +44,7 @@
     SUBDIR += fixesext
     SUBDIR += fluxbg
     SUBDIR += fspanel
+    SUBDIR += gcursor
     SUBDIR += gdesklets-tasklist
     SUBDIR += gdkxft
     SUBDIR += gdm2
