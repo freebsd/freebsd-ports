@@ -30,8 +30,8 @@ BUILD_DEPENDS=	nhc98:${PORTSDIR}/lang/nhc98
 RUN_DEPENDS=	nhc98:${PORTSDIR}/lang/nhc98
 .else
 BUILD_DEPENDS=	hmake:${PORTSDIR}/devel/hs-hmake \
-		ghc:${PORTSDIR}/lang/ghc
-RUN_DEPENDS+=	ghc:${PORTSDIR}/lang/ghc
+		ghc-5.04.3:${PORTSDIR}/lang/ghc5
+RUN_DEPENDS+=	ghc-5.04.3:${PORTSDIR}/lang/ghc5
 .endif
 
 ALL_TARGET=	hat
