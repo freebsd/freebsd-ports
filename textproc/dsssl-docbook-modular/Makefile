@@ -35,7 +35,7 @@ pre-install:
 
 do-install:
 	@${CP} -Rp ${WRKDIR}/docbook/* ${INSTDIR}
-	@${CHOWN} -R ${SHAREOWN}.${SHAREGRP} ${INSTDIR}
+	@${CHOWN} -R ${SHAREOWN}:${SHAREGRP} ${INSTDIR}
 
 post-install:
 	@${CAT} ${FILESDIR}/install-note

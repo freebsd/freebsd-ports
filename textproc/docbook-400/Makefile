@@ -38,7 +38,7 @@ do-install:
 	@${INSTALL_DATA} ${FILESDIR}/catalog ${INSTDIR}/4.0/catalog
 	@${ECHO} "CATALOG \"${ISOCAT}\"" >> ${INSTDIR}/4.0/catalog
 	@${CHMOD} ${SHAREMODE} ${INSTDIR}/4.0/*
-	@${CHOWN} -R ${SHAREOWN}.${SHAREGRP} ${INSTDIR}
+	@${CHOWN} -R ${SHAREOWN}:${SHAREGRP} ${INSTDIR}
 
 post-install:
 	@${MKCATALOG} -q install ${PORTNAME}/${PORTVERSION}

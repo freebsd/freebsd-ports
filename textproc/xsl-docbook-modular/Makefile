@@ -39,7 +39,7 @@ pre-install:
 
 do-install:
 	${CP} -Rp ${WRKDIR}/docbook/* ${INSTDIR}
-	${CHOWN} -R ${SHAREOWN}.${SHAREGRP} ${INSTDIR}
+	${CHOWN} -R ${SHAREOWN}:${SHAREGRP} ${INSTDIR}
 	${CHMOD} ${BINMODE} ${INSTDIR}/dbx2a.sh
 	${LN} -sf ${INSTDIR}/dbx2a.sh ${PREFIX}/bin/dbx2a
 
