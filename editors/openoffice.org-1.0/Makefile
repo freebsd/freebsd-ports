@@ -512,10 +512,9 @@ install-user:
 
 post-install:
 	@${ECHO_MSG} "===>  Add wrapper scripts";
-	@${SED} -e 's#%%PREFIX%%#${PREFIX}#g' < ${FILESDIR}/openoffice-wrapper \
-	   > ${WRKDIR}/openoffice
-	@${SED} -e 's#%%LANG%%#${USE_LANG}#g' < ${FILESDIR}/openoffice-wrapper \
-	   > ${WRKDIR}/openoffice
+	@${CP} ${FILESDIR}/openoffice-wrapper ${WRKDIR}/openoffice
+	@${SED} -i orig -e 's#%%PREFIX%%#${PREFIX}#g' ${WRKDIR}/openoffice
+	@${SED} -i orig -e 's#%%LANG%%#${USE_LANG}#g' ${WRKDIR}/openoffice
 	@${INSTALL_SCRIPT} ${WRKDIR}/openoffice ${PREFIX}/bin/openoffice
 	@${LN} -fs ${PREFIX}/bin/openoffice ${PREFIX}/bin/openoffice-sagenda
 	@${LN} -fs ${PREFIX}/bin/openoffice ${PREFIX}/bin/openoffice-scalc
