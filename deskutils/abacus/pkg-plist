@@ -131,18 +131,18 @@ share/abacus/runlib/globals.tcl
 share/abacus/runlib/globalvars.tcl
 share/abacus/runlib/version
 share/abacus/tcl_interf/nxlc
-share/examples/abacus/allfuncs.wk1
-share/examples/abacus/desp_97.wk1
-share/examples/abacus/emprestimo.wk1
-share/examples/abacus/example.wk1
-share/examples/abacus/macro_example_1.tcl
-share/examples/abacus/notas.wk1
-share/examples/abacus/notas_plain.wk1
-share/examples/abacus/obras.wk1
-share/examples/abacus/prestacao.wk1
-share/examples/abacus/recpt197.wk1
-share/examples/abacus/tables.wk1
-@dirrm share/examples/abacus
+%%EXAMPLESDIR%%/allfuncs.wk1
+%%EXAMPLESDIR%%/desp_97.wk1
+%%EXAMPLESDIR%%/emprestimo.wk1
+%%EXAMPLESDIR%%/example.wk1
+%%EXAMPLESDIR%%/macro_example_1.tcl
+%%EXAMPLESDIR%%/notas.wk1
+%%EXAMPLESDIR%%/notas_plain.wk1
+%%EXAMPLESDIR%%/obras.wk1
+%%EXAMPLESDIR%%/prestacao.wk1
+%%EXAMPLESDIR%%/recpt197.wk1
+%%EXAMPLESDIR%%/tables.wk1
+@dirrm %%EXAMPLESDIR%%
 @dirrm share/abacus/tcl_interf
 @dirrm share/abacus/runlib/bitmaps
 @dirrm share/abacus/runlib
