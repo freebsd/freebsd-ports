@@ -15,4 +15,3 @@ share/examples/messarge/s.shtml
 share/examples/messarge/t.shtml
 share/examples/messarge/write.shtml
 @dirrm share/examples/messarge
-@unexec rmdir %D/share/examples 2>/dev/null || true
