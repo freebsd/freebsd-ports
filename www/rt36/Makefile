@@ -53,9 +53,12 @@ BUILD_DEPENDS=  ${APXS}:${APACHE_PORT} \
 		${ARCH_PERL}/Time/HiRes.pm:${PORTSDIR}/devel/p5-Time-HiRes \
 		${SITE_PERL}/Time/ParseDate.pm:${PORTSDIR}/devel/p5-Time \
 		${SITE_PERL}/WWW/Mechanize.pm:${PORTSDIR}/www/p5-WWW-Mechanize
+RUN_DEPENDS=    ${BUILD_DEPENDS}
 
 WRKSRC=         ${WRKDIR}/rt-3-0-1
 HAS_CONFIGURE=  yes
+NO_BUILD=	yes
+NO_PACKAGE=	Executes scripts in post-install phase
 
 CONFIGURE_ARGS= --prefix=${RT_PATH} \
 		--enable-layout=${LAYOUT} \
@@ -91,8 +94,6 @@ BUILD_DEPENDS+= ${LOCALBASE}/bin/mysql_config:${PORTSDIR}/databases/mysql40-serv
 TESTDEPS_ARGS+=	--with-MYSQL
 .endif
 
-RUN_DEPENDS=    ${BUILD_DEPENDS}
-
 SITE_PERL:=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}
 ARCH_PERL=	${SITE_PERL}/${PERL_ARCH}/
 USE_PERL5=      yes
@@ -103,8 +104,8 @@ DB_DBA_USER?=	root
 DB_HOST?=	localhost
 DB_DBA_PASSWORD?=
 
-WEB_USER?=	nobody
-WEB_GROUP?=	nogroup
+WEB_USER?=	www
+WEB_GROUP?=	www
 LIBS_GROUP?=	wheel
 RT_GROUP?=	rt
 
@@ -125,11 +126,8 @@ post-extract:
 	-@pw groupadd ${RT_GROUP}
 	-@cd ${WRKSRC} && chmod a+x configure
 
-do-build:
-	-@cd ${WRKSRC} && ${PERL} ./sbin/rt-test-dependencies --install ${TESTDEPS_ARGS}
-
 do-install:
-	@cd ${WRKSRC} && ${MAKE} -f ${WRKSRC}/Makefile install
+	@cd ${WRKSRC} && ${MAKE} install
 	@${INSTALL_DATA} ${WRKSRC}/README ${RT_PATH}/README
 
 post-install:
