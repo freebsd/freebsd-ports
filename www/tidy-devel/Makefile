@@ -6,7 +6,7 @@
 #
 
 PORTNAME?=	tidy
-PORTVERSION=	040801
+PORTVERSION=	040802
 CATEGORIES=	www
 MASTER_SITES=	http://tidy.sourceforge.net/src/%SUBDIR%/	\
 		http://tidy.sourceforge.net/docs/:docs
@@ -43,7 +43,7 @@ MAN1=		tidy.1
 .endif
 
 .if !defined(NOPORTDOCS)
-DOCVER=		040801
+DOCVER=		040802
 DISTFILES+=	tidy_docs_${DOCVER}${EXTRACT_SUFX}:docs
 DOCFILES=	Overview.html faq.html grid.gif pending.html	\
 		quickref.html release-notes.html tidy.css tidy.gif

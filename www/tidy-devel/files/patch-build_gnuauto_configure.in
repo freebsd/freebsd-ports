@@ -1,10 +1,10 @@
---- build/gnuauto/configure.in.orig	Sat Jan 18 15:23:43 2003
-+++ build/gnuauto/configure.in	Thu Feb 20 23:05:17 2003
-@@ -58,7 +58,7 @@
+--- build/gnuauto/configure.in.orig	Mon Aug  2 09:14:28 2004
++++ build/gnuauto/configure.in	Tue Aug  3 00:05:55 2004
+@@ -72,7 +72,7 @@
  if test $debug_build = yes; then
  	CFLAGS="$save_cflags -g"
  else
--	CFLAGS="$save_cflags -O2"
+-	CFLAGS="-O2 $save_cflags"
 +	CFLAGS="$save_cflags"
  fi
  # 
