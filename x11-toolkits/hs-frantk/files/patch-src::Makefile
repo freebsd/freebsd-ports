@@ -26,7 +26,7 @@
 -CC_INC =  -I/usr/X11/include -I/usr/local/include
 +#CC = gcc
 +CC_OPTS = ${CFLAGS}
-+CC_INC =  -I/usr/X11R6/include -I/usr/local/include/tk8.3 -I/usr/local/include/tcl8.3
++CC_INC =  -I/usr/X11R6/include -I/usr/local/include/tk8.4 -I/usr/local/include/tcl8.4
  
 -GHC = ghc-5.00.2
 -GHC-PKG=ghc-pkg-5.00.2
@@ -58,7 +58,7 @@
  
  #TCLREQ =  -ltk8.3 -ltcl8.3 -lX11 -lm -lsocket -lnsl -lintl -lw # (Solaris)
 -TCL_REQ  = -ltk8.3 -ltcl8.3 -lm -lc                   # (OSF/1+Linux)
-+TCL_REQ  = -ltk83 -ltcl83 -lm -lc                   # (OSF/1+Linux)
++TCL_REQ  = -ltk84 -ltcl84 -lm -lc                   # (OSF/1+Linux)
  
  
  hugs: TclHaskellSrc/TclPrim.so
