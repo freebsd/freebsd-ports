@@ -1,31 +1,24 @@
---- saferpay/idpapp.mk.orig	Thu Aug  8 16:15:49 2002
-+++ saferpay/idpapp.mk	Wed Feb 19 11:06:35 2003
-@@ -7,24 +7,12 @@
- 
+--- saferpay/idpapp.mk.orig	Tue Jan  6 15:33:08 2004
++++ saferpay/idpapp.mk	Tue Jan  6 15:34:28 2004
+@@ -1,17 +1,11 @@
  ####### Compiler, tools and options
  
--# new ssl
--SSLVERSION = openssl-0.9.6c
+-SSLVERSION = openssl-0.9.7b
 -SSLEAYDIR = ./ssl
 -SSLINCDIR = -I ./ssl
 +SSLINCDIR = -I /usr/include/openssl
  
--
--
--#CC	=	/project/gcc31/bin/gcc
--#CXX	=	/project/gcc31/bin/g++
 -
 -CC	=	gcc
 -CXX	=	g++
 -
 -CFLAGS	=	-pipe -DUNIX -DHAVE_UNISTD_H -DHAVE_STDLIB_H -O2 -fPIC
 -CXXFLAGS=	-pipe -DUNIX -O2 -fPIC
-+CFLAGS	+=	-DUNIX -DHAVE_UNISTD_H -DHAVE_STDLIB_H -fPIC
-+CXXFLAGS +=	-DUNIX -fPIC
++CFLAGS	+=	-pipe -DUNIX -DHAVE_UNISTD_H -DHAVE_STDLIB_H -O2 -fPIC
++CXXFLAGS+=	-pipe -DUNIX -O2 -fPIC
  INCPATH	=	-I"./xml" -I"./jni" -I"./sxfc" $(SSLINCDIR)
--#LINK	=	/project/gcc31/bin/g++
 -LINK	=	g++
-+LINK	=	${CXX}
++LINK	+=	${CXX}
  LFLAGS	=	-fPIC -shared
  LIBS	=	/usr/lib/libssl.a /usr/lib/libcrypto.a
  AR	=	ar cq
