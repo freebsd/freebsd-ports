@@ -48,7 +48,6 @@
     SUBDIR += kde-icontheme-crystal
     SUBDIR += kdeartwork3
     SUBDIR += keramik
-    SUBDIR += kwix
     SUBDIR += larswm
     SUBDIR += libdockapp
     SUBDIR += libepplet
