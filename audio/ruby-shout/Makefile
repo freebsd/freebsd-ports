@@ -19,6 +19,8 @@ COMMENT=	A Ruby binding to the libshout library
 
 LIB_DEPENDS=	shout.3:${PORTSDIR}/audio/libshout2
 
+BROKEN=		Does not compile
+
 USE_RUBY=	yes
 USE_RUBY_EXTCONF=	yes
 
