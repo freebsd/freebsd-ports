@@ -13,9 +13,13 @@ MASTER_SITES=	http://userpage.fu-berlin.de/~zeank/gtk-imonc/download/
 MAINTAINER=	steffen@vogelreuter.de
 COMMENT=	A gtk based client to control an one disc fli4l router
 
+LIB_DEPENDS=	intl.5:${PORTSDIR}/devel/gettext \
+		iconv.3:${PORTSDIR}/converters/libiconv
+
 WRKSRC=		${WRKDIR}/${DISTNAME:S/_/-/}
-ALL_TARGET=	#empty
-HAS_CONFIGURE=	yes
+GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	--with-libintl-prefix=${LOCALBASE} \
+		--with-libiconv-prefix=${LOCALBASE}
 USE_GMAKE=	yes
 USE_GNOME=	gtk12
 USE_REINPLACE=	yes
