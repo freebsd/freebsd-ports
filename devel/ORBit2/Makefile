@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	ORBit2
-PORTVERSION=	2.6.1
-PORTREVISION=	1
+PORTVERSION=	2.6.2
 CATEGORIES=	devel gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/${PORTNAME}/2.6
@@ -26,7 +25,7 @@ USE_LIBTOOL=	yes
 USE_GNOME=	gnomehack libidl linc
 CONFIGURE_ARGS= --disable-indent
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LIBS="-L${LOCALBASE}/lib"
+		LDFLAGS="-L${LOCALBASE}/lib"
 
 post-patch:
 	@${FIND} ${WRKSRC} -type f | ${XARGS} ${GREP} -l LINC_THREADSAFE | \
