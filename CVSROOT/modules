@@ -7768,6 +7768,7 @@ php5-gmp	ports/math/php5-gmp
 php5-iconv	ports/converters/php5-iconv
 php5-imap	ports/mail/php5-imap
 php5-interbase	ports/databases/php5-interbase
+php5-ldap	ports/net/php5-ldap
 php5-mbstring	ports/converters/php5-mbstring
 php5-mcve	ports/devel/php5-mcve
 php5-ming	ports/graphics/php5-ming
