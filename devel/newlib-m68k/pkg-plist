@@ -128,3 +128,12 @@ m68k-coff/include/sys/types.h
 m68k-coff/include/sys/unistd.h
 m68k-coff/include/sys/utime.h
 m68k-coff/include/sys/wait.h
+@dirrm m68k-coff/lib/msoft-float
+@dirrm m68k-coff/lib/m68000/msoft-float
+@dirrm m68k-coff/lib/m68000
+@dirrm m68k-coff/lib/m5200
+@dirrm m68k-coff/lib
+@dirrm m68k-coff/include/sys
+@dirrm m68k-coff/include/machine
+@dirrm m68k-coff/include
+@dirrm m68k-coff
