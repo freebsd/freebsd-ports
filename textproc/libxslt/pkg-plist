@@ -20,5 +20,5 @@ include/libxslt/xsltInternals.h
 include/libxslt/xsltutils.h
 lib/libxslt.a
 lib/libxslt.so
-lib/libxslt.so.0
+lib/libxslt.so.1
 @dirrm include/libxslt
