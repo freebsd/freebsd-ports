@@ -17,6 +17,7 @@ MAINTAINER=	knu@FreeBSD.org
 
 RUN_DEPENDS=	${LOCALBASE}/sbin/esecannaserver:${PORTSDIR}/japanese/esecanna
 
+USE_REINPLACE=	yes
 USE_AUTOCONF=	yes
 USE_GMAKE=	yes
 # VJE-Delta 3.0 is installed under /usr/local fixedly
@@ -25,10 +26,10 @@ CONFIGURE_ARGS=	--with-vjecfgfile="/usr/local/etc/vje30/vje.cfg"
 DIST_SUBDIR=    esecanna
 
 post-patch:
-	@cd ${WRKSRC} && perl -i -pe " \
+	${REINPLACE_CMD} -e " \
 		s,!!PREFIX!!,${PREFIX},g; \
 		" \
-		README.jp
+		${WRKSRC}/README.jp
 
 post-install:
 .if !defined(NOPORTDOCS)
