@@ -34,6 +34,7 @@
     SUBDIR += b2bua
     SUBDIR += balance
     SUBDIR += bbsnet
+    SUBDIR += bfilter
     SUBDIR += bgpq
     SUBDIR += bind8
     SUBDIR += bind9
