@@ -13,6 +13,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION:S/0$//}
 
 MAINTAINER=	markp@FreeBSD.org
 
+USE_REINPLACE=	yes
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
 USE_GNOMENG=	yes
@@ -21,10 +22,12 @@ MAKE_ARGS+=	PREFIX="${PREFIX}"
 EXAMPLESDIR=	${PREFIX}/share/examples/${PORTNAME}
 
 post-patch:
-	${PERL} -pi -e "s@CC = gcc@CC = ${CC}@g; s@-O3 -ansi -Wall@${CFLAGS} -Wall@g; \
-			s@PREFIX = /usr/local@PREFIX = ${PREFIX}@g; \
-			s@gtk-config@${GTK_CONFIG}@g; s@-lgtk@-lgtk12@g; \
-			s@-c -g kmem -m 2755 -o root@-s -c -g kmem -m 2755 -o root@g" ${WRKSRC}/Makefile
+	${REINPLACE_CMD} -e "s@CC = gcc@CC = ${CC}@g; \
+		s@-O3 -ansi -Wall@${CFLAGS} -Wall@g; \
+		s@PREFIX = /usr/local@PREFIX = ${PREFIX}@g; \
+		s@gtk-config@${GTK_CONFIG}@g; s@-lgtk@-lgtk12@g; \
+		s@-c -g kmem -m 2755 -o root@-s -c -g kmem -m 2755 -o root@g" \
+		${WRKSRC}/Makefile
 
 post-install:
 	${MKDIR} ${EXAMPLESDIR}
