@@ -1,5 +1,5 @@
 --- makefile.FreeBSD.orig	Sat Nov  6 06:57:30 1999
-+++ makefile.FreeBSD	Mon Feb 28 02:57:59 2000
++++ makefile.FreeBSD	Sat Apr 22 02:58:08 2000
 @@ -36,9 +36,9 @@
  # FBCONFIG_2, which is set to the value of IMTOOLRC in the definition of
  # the CFLAGS macro below.)
@@ -27,7 +27,7 @@
  
  #OFLAGS = -g -DDEBUG
 -OFLAGS = -O2 -m486 -pipe
-+#OFLAGS = -O2 -m486 -pipe
++OFLAGS ?= -O2 -m486 -pipe
  
  # ADFLAGS: architecture-dependent floating point flags, etc.
  
@@ -46,12 +46,3 @@
  #XLIB = -L/usr/X11R6/lib -lX11	# ATTENTION: OpenWindows users...
  #F77LIB = -lF77 -lI77 -lU77
  F77LIB = -lf2c
-@@ -106,7 +106,7 @@
- RM     = rm -f
- SHELL  = /bin/sh
- 
--CFLAGS = $(OFLAGS) $(ADFLAGS) $(MFLAGS) $(IFLAGS) -DFBCONFIG_2=\"$(IMTOOLRC)\"
-+CFLAGS += $(OFLAGS) $(ADFLAGS) $(MFLAGS) $(IFLAGS) -DFBCONFIG_2=\"$(IMTOOLRC)\"
- 
- # SAOimage libraries that live in subdirectories with their own makefiles.
- # This definition must be kept in correspondence with the DEPLIBS target.

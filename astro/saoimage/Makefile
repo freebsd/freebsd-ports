@@ -6,15 +6,17 @@
 #
 
 PORTNAME=	saoimage
-PORTVERSION=	1.26.10
+PORTVERSION=	1.27.2
 CATEGORIES=	astro
 MASTER_SITES=	ftp://cfa-ftp.harvard.edu/pub/gsc/SAOimage/
 
 MAINTAINER=	ports@FreeBSD.org
 
-MAKEFILE=	makefile
-ALL_TARGET=	${OPSYS}
 USE_X_PREFIX=	yes
+MAKEFILE=	makefile
+MAKE_ENV=	OFLAGS="${CFLAGS}"
+ALL_TARGET=	${OPSYS}
+
 MAN1=		saoimage.1
 
 do-install:
