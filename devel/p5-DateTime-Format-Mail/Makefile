@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	DateTime-Format-Mail
-PORTVERSION=	0.27
+PORTVERSION=	0.28
 CATEGORIES=	devel perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	DateTime
@@ -17,10 +17,7 @@ COMMENT=	Convert between DateTime and RFC2822/822 formats
 
 RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Params/Validate.pm:${PORTSDIR}/devel/p5-Params-Validate \
 		${SITE_PERL}/${PERL_ARCH}/DateTime.pm:${PORTSDIR}/devel/p5-DateTime
-BUILD_DEPENDS=	${RUN_DEPENDS} \
-		${SITE_PERL}/Test/Pod.pm:${PORTSDIR}/devel/p5-Test-Pod \
-		${SITE_PERL}/Test/More.pm:${PORTSDIR}/devel/p5-Test-Simple \
-		${SITE_PERL}/File/Find/Rule.pm:${PORTSDIR}/devel/p5-File-Find-Rule
+BUILD_DEPENDS=	${RUN_DEPENDS}
 
 PERL_CONFIGURE=	yes
 
