@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	xfce
-PORTVERSION=	3.8.3
+PORTVERSION=	3.8.6
 CATEGORIES=	x11-wm
 MASTER_SITES=	http://www.xfce.org/archive/
 
