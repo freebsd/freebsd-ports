@@ -6,5 +6,5 @@ lib/libtre.a
 lib/libtre.so
 lib/libtre.so.4
 libdata/pkgconfig/tre.pc
-share/locale/fi/LC_MESSAGES/tre.mo
+%%NLS%%share/locale/fi/LC_MESSAGES/tre.mo
 @dirrm include/tre
