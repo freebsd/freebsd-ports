@@ -1,10 +1,10 @@
-# ex:ts=8 
-# Ports collection makefile for:	egcs 
+# ex:ts=8
+# Ports collection makefile for:	egcs
 # Version required: 			1998-09-14
 # Date created:				9 Jan 1998
 # Whom:					John Polstra <jdp@polstra.com>
 #
-# $Id: Makefile,v 1.39 1998/12/04 11:05:05 obrien Exp $
+# $Id: Makefile,v 1.40 1998/12/05 03:40:17 obrien Exp $
 #
 
 DISTNAME=	egcs-1.1.1
@@ -14,11 +14,17 @@ MASTER_SITES=	ftp://go.cygnus.com/pub/ftp.cygnus.com/egcs/releases/egcs-1.1.1/ \
 		ftp://egcs.cygnus.com/pub/egcs/releases/egcs-1.1.1/ \
 		ftp://ftp.fu-berlin.de/unix/languages/egcs/releases/egcs-1.1.1/ \
 		ftp://cambridge.cygnus.com/pub/egcs/releases/egcs-1.1.1/
+EXTRACT_SUFX=	.tar.bz2
 
 MAINTAINER=	obrien@FreeBSD.org
 
+BUILD_DEPENDS=  bzip2:${PORTSDIR}/archivers/bzip2
+
 .include <bsd.port.pre.mk>
 
+EXTRACT_CMD=	bzip2
+EXTRACT_BEFORE_ARGS=	-dc
+EXTRACT_AFTER_ARGS=	| /usr/bin/tar -xf -
 EGCS_REV=	egcs-2.91.60
 LIBSTDCPP_REV=	2.9.0
 
@@ -48,7 +54,7 @@ pre-configure:
 
 pre-install:
 	${MKDIR} ${PREFIX}/info
-	touch ${PREFIX}/info/dir
+	${TOUCH} ${PREFIX}/info/dir
 
 post-install:
 	@${RM} -f ${PREFIX}/bin/c++
