@@ -45,5 +45,6 @@ pre-fetch:
 
 post-patch:
 	(cd ${WRKSRC}; ${TOUCH} Makefile.in */Makefile.in src/config.h.in)
+	(cd ${WRKSRC}/lib/doc; ${RM} -f *.orig)
 
 .include <bsd.port.mk>
