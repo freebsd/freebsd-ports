@@ -23,10 +23,10 @@
 +	:fc=r-kochi-gothic:
 +r-kochi-mincho|Kochi Mincho:\
 +	:ft=freetype:\
-+	:ff=/usr/X11R6/lib/X11/fonts/TrueType/kochi-mincho.ttf:
++	:ff=/usr/X11R6/lib/X11/fonts/TrueType/kochi-mincho-subst.ttf:
 +r-kochi-gothic|Kochi Gothic:\
 +	:ft=freetype:\
-+	:ff=/usr/X11R6/lib/X11/fonts/TrueType/kochi-gothic.ttf:
++	:ff=/usr/X11R6/lib/X11/fonts/TrueType/kochi-gothic-subst.ttf:
  
  ### SONY VECTOR FONTS
  r-sony-mincho|Sony Vector Font (Mincho):\
