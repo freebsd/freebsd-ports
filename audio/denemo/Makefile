@@ -28,6 +28,12 @@ USE_GETTEXT=	yes
 USE_GNOME=	gtk12
 USE_X_PREFIX=	yes
 
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == "sparc64"
+BROKEN=		"Does not compile on sparc64"
+.endif
+
 pre-patch:
 .for ii in analysis_highlighting.c easylyparser.c easylyparser.y \
 	lyparserfuncs.c lyparserfuncs.h main.c playback.c print.c
@@ -60,4 +66,4 @@ do-install:
 .endfor
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

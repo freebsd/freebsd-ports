@@ -22,4 +22,10 @@ PLIST_SUB=	STK_VERSION=${PORTVERSION} STK_ARCH=${STK_ARCH}
 
 STK_ARCH!=	${ECHO} "$$(uname)-$$(uname -r)-$$(uname -m)"
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == "sparc64"
+BROKEN=		"Does not compile on sparc64"
+.endif
+
+.include <bsd.port.post.mk>

@@ -29,6 +29,10 @@ WRKSRC=		${WRKDIR}/${PORTNAME}
 CONFIGURE_ENV+=	LDFLAGS="${LDFLAGS} -lio"
 .endif
 
+.if ${ARCH} == "sparc64"
+BROKEN=		"Does not compile on sparc64"
+.endif
+
 post-extract:
 		@${RM} -f ${WRKSRC}/config.cache
 		@${CHMOD} 750 ${WRKSRC}/missing
