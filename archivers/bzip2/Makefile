@@ -32,7 +32,7 @@ do-install:
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${PREFIX}/share/doc/bzip2
 	${INSTALL_DATA} ${WRKSRC}/manual* ${PREFIX}/share/doc/bzip2
-	${PREFIX}/bin/bzip2 ${PREFIX}/share/doc/bzip2/manual.ps
+	${PREFIX}/bin/bzip2 -f ${PREFIX}/share/doc/bzip2/manual.ps
 .endif
 
 .include <bsd.port.mk>
