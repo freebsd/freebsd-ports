@@ -9,10 +9,10 @@ PORTNAME=		pppoa
 PORTVERSION=		1.2b2
 PORTEPOCH=		1
 CATEGORIES=		net
-MASTER_SITES=		http://download.ethomson.com/download/ \
-			${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	speedtouch
-DISTFILES=		${SPEEDTOUCH}.tar.bz2 ${ALCATELDRIVER}
+MASTER_SITES=		http://download.ethomson.com/download/:mngt \
+			${MASTER_SITE_SOURCEFORGE:S/$/:src/}
+MASTER_SITE_SUBDIR=	speedtouch/:src
+DISTFILES=		${SPEEDTOUCH}.tar.bz2:src ${ALCATELDRIVER}:mngt
 EXTRACT_ONLY=		${SPEEDTOUCH}.tar.bz2
 
 MAINTAINER=		ports@FreeBSD.org
