@@ -1,0 +1,12 @@
+var/flows/bin/flowscan
+var/flows/bin/FlowScan.pm
+var/flows/bin/CampusIO.pm
+var/flows/bin/SubNetIO.pm
+var/flows/bin/locker
+var/flows/bin/add_ds.pl
+var/flows/bin/add_txrx
+var/flows/bin/event2vrule
+var/flows/bin/ip2hostname
+@dirrm var/flows/bin
+@dirrm var/flows
+@dirrm var
