@@ -1401,6 +1401,7 @@ docbook-sk	ports/textproc/docbook-sk
 docbook-tdg	ports/textproc/docbook-tdg
 docbook-to-man	ports/textproc/docbook-to-man
 docbook-xml	ports/textproc/docbook-xml
+docbook-xsd	ports/textproc/docbook-xsd
 docbook-xsl	ports/textproc/docbook-xsl
 docbookide.el	ports/textproc/docbookide.el
 docker		ports/x11/docker
