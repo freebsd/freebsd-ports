@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	vicq
-PORTVERSION=	0.4
+PORTVERSION=	0.4.1
 CATEGORIES=	net
 MASTER_SITES=	http://gonzo.kiev.ua/projects/vicq/
 
