@@ -1,15 +1,15 @@
 lib/libMesaGL.a
 @exec ranlib %D/%F
-lib/libMesaGL.so.2.1
+lib/libMesaGL.so.13.1
 lib/libMesaGLU.a
 @exec ranlib %D/%F
-lib/libMesaGLU.so.2.1
+lib/libMesaGLU.so.13.1
 lib/libMesaaux.a
 @exec ranlib %D/%F
-lib/libMesaaux.so.2.1
+lib/libMesaaux.so.13.1
 lib/libMesatk.a
 @exec ranlib %D/%F
-lib/libMesatk.so.2.1
+lib/libMesatk.so.13.1
 @exec ldconfig -m %B
 include/Mesa/glaux.h
 include/Mesa/gltk.h
