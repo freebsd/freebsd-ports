@@ -101,18 +101,26 @@
 %%ZOPEPRODUCTDIR%%/Silva/adapters/__init__.pyc
 %%ZOPEPRODUCTDIR%%/Silva/adapters/adapter.py
 %%ZOPEPRODUCTDIR%%/Silva/adapters/adapter.pyc
+%%ZOPEPRODUCTDIR%%/Silva/adapters/addables.py
+%%ZOPEPRODUCTDIR%%/Silva/adapters/addables.pyc
 %%ZOPEPRODUCTDIR%%/Silva/adapters/archivefileimport.py
 %%ZOPEPRODUCTDIR%%/Silva/adapters/archivefileimport.pyc
 %%ZOPEPRODUCTDIR%%/Silva/adapters/assetdata.py
 %%ZOPEPRODUCTDIR%%/Silva/adapters/assetdata.pyc
 %%ZOPEPRODUCTDIR%%/Silva/adapters/cleanup.py
 %%ZOPEPRODUCTDIR%%/Silva/adapters/cleanup.pyc
+%%ZOPEPRODUCTDIR%%/Silva/adapters/haunted.py
+%%ZOPEPRODUCTDIR%%/Silva/adapters/haunted.pyc
+%%ZOPEPRODUCTDIR%%/Silva/adapters/indexableadapter.py
+%%ZOPEPRODUCTDIR%%/Silva/adapters/indexableadapter.pyc
 %%ZOPEPRODUCTDIR%%/Silva/adapters/interfaces.py
 %%ZOPEPRODUCTDIR%%/Silva/adapters/interfaces.pyc
 %%ZOPEPRODUCTDIR%%/Silva/adapters/renderable.py
 %%ZOPEPRODUCTDIR%%/Silva/adapters/renderable.pyc
 %%ZOPEPRODUCTDIR%%/Silva/adapters/security.py
 %%ZOPEPRODUCTDIR%%/Silva/adapters/security.pyc
+%%ZOPEPRODUCTDIR%%/Silva/adapters/subscribable.py
+%%ZOPEPRODUCTDIR%%/Silva/adapters/subscribable.pyc
 %%ZOPEPRODUCTDIR%%/Silva/adapters/version_management.py
 %%ZOPEPRODUCTDIR%%/Silva/adapters/version_management.pyc
 %%ZOPEPRODUCTDIR%%/Silva/adapters/virtualhosting.py
@@ -127,6 +135,8 @@
 %%ZOPEPRODUCTDIR%%/Silva/assetregistry.pyc
 %%ZOPEPRODUCTDIR%%/Silva/batch.py
 %%ZOPEPRODUCTDIR%%/Silva/batch.pyc
+%%ZOPEPRODUCTDIR%%/Silva/characters.py
+%%ZOPEPRODUCTDIR%%/Silva/characters.pyc
 %%ZOPEPRODUCTDIR%%/Silva/convert.py
 %%ZOPEPRODUCTDIR%%/Silva/convert.pyc
 %%ZOPEPRODUCTDIR%%/Silva/default/content.html.pt
@@ -139,11 +149,11 @@
 %%ZOPEPRODUCTDIR%%/Silva/doc/silva-content.xml
 %%ZOPEPRODUCTDIR%%/Silva/doc/silva-extra.xml
 %%ZOPEPRODUCTDIR%%/Silva/doc/silva-publication.xml
-%%ZOPEPRODUCTDIR%%/Silva/doc/silva.xsd
-%%ZOPEPRODUCTDIR%%/Silva/doc/silva_docs.zexp
+%%ZOPEPRODUCTDIR%%/Silva/doc/silva_docs.zip
 %%ZOPEPRODUCTDIR%%/Silva/doc/silva_layout.rst
-%%ZOPEPRODUCTDIR%%/Silva/doc/title_and_index_analysis.txt
 %%ZOPEPRODUCTDIR%%/Silva/doc/xslt_renderers_howto.txt
+%%ZOPEPRODUCTDIR%%/Silva/emaillinesfield.py
+%%ZOPEPRODUCTDIR%%/Silva/emaillinesfield.pyc
 %%ZOPEPRODUCTDIR%%/Silva/fssite.py
 %%ZOPEPRODUCTDIR%%/Silva/fssite.pyc
 %%ZOPEPRODUCTDIR%%/Silva/globals/Attention_Silva_users_README.dtml
@@ -204,13 +214,25 @@
 %%ZOPEPRODUCTDIR%%/Silva/globals/xml.gif
 %%ZOPEPRODUCTDIR%%/Silva/helpers.py
 %%ZOPEPRODUCTDIR%%/Silva/helpers.pyc
-%%ZOPEPRODUCTDIR%%/Silva/homepage.stx
+%%ZOPEPRODUCTDIR%%/Silva/i18n/README.txt
+%%ZOPEPRODUCTDIR%%/Silva/i18n/__init__.py
+%%ZOPEPRODUCTDIR%%/Silva/i18n/__init__.pyc
+%%ZOPEPRODUCTDIR%%/Silva/i18n/dummymessageid.py
+%%ZOPEPRODUCTDIR%%/Silva/i18n/dummymessageid.pyc
+%%ZOPEPRODUCTDIR%%/Silva/i18n/silva-de.po
+%%ZOPEPRODUCTDIR%%/Silva/i18n/silva-en.po
+%%ZOPEPRODUCTDIR%%/Silva/i18n/silva-nl.po
+%%ZOPEPRODUCTDIR%%/Silva/i18n/silva.pot
+%%ZOPEPRODUCTDIR%%/Silva/i18n/silvamessageid.py
+%%ZOPEPRODUCTDIR%%/Silva/i18n/silvamessageid.pyc
 %%ZOPEPRODUCTDIR%%/Silva/icon.py
 %%ZOPEPRODUCTDIR%%/Silva/icon.pyc
 %%ZOPEPRODUCTDIR%%/Silva/install.py
 %%ZOPEPRODUCTDIR%%/Silva/install.pyc
 %%ZOPEPRODUCTDIR%%/Silva/interfaces.py
 %%ZOPEPRODUCTDIR%%/Silva/interfaces.pyc
+%%ZOPEPRODUCTDIR%%/Silva/layout/already_subscribed_template
+%%ZOPEPRODUCTDIR%%/Silva/layout/cancellation_confirmation_template
 %%ZOPEPRODUCTDIR%%/Silva/layout/content.html
 %%ZOPEPRODUCTDIR%%/Silva/layout/convert_to_unicode.py
 %%ZOPEPRODUCTDIR%%/Silva/layout/copyright
@@ -219,11 +241,14 @@
 %%ZOPEPRODUCTDIR%%/Silva/layout/get_metadata_element.py
 %%ZOPEPRODUCTDIR%%/Silva/layout/index_html.py
 %%ZOPEPRODUCTDIR%%/Silva/layout/layout_macro.html
+%%ZOPEPRODUCTDIR%%/Silva/layout/not_subscribed_template
 %%ZOPEPRODUCTDIR%%/Silva/layout/preview_html.py
 %%ZOPEPRODUCTDIR%%/Silva/layout/print.css
+%%ZOPEPRODUCTDIR%%/Silva/layout/publication_event_template
 %%ZOPEPRODUCTDIR%%/Silva/layout/rename-to-override.html
 %%ZOPEPRODUCTDIR%%/Silva/layout/standard_error_message
 %%ZOPEPRODUCTDIR%%/Silva/layout/standard_unauthorized_message
+%%ZOPEPRODUCTDIR%%/Silva/layout/subscription_confirmation_template
 %%ZOPEPRODUCTDIR%%/Silva/mangle.py
 %%ZOPEPRODUCTDIR%%/Silva/mangle.pyc
 %%ZOPEPRODUCTDIR%%/Silva/refresh.txt
@@ -240,13 +265,18 @@
 %%ZOPEPRODUCTDIR%%/Silva/silvaxml/xmlexport.pyc
 %%ZOPEPRODUCTDIR%%/Silva/silvaxml/xmlimport.py
 %%ZOPEPRODUCTDIR%%/Silva/silvaxml/xmlimport.pyc
+%%ZOPEPRODUCTDIR%%/Silva/subscriptionerrors.py
+%%ZOPEPRODUCTDIR%%/Silva/subscriptionerrors.pyc
+%%ZOPEPRODUCTDIR%%/Silva/subscriptionservice.py
+%%ZOPEPRODUCTDIR%%/Silva/subscriptionservice.pyc
 %%ZOPEPRODUCTDIR%%/Silva/tests/README.txt
 %%ZOPEPRODUCTDIR%%/Silva/tests/SilvaTestCase.py
 %%ZOPEPRODUCTDIR%%/Silva/tests/SilvaTestCase.pyc
 %%ZOPEPRODUCTDIR%%/Silva/tests/__init__.py
 %%ZOPEPRODUCTDIR%%/Silva/tests/__init__.pyc
 %%ZOPEPRODUCTDIR%%/Silva/tests/data/images_to_the_right_broken.xslt
-%%ZOPEPRODUCTDIR%%/Silva/tests/data/test.zip
+%%ZOPEPRODUCTDIR%%/Silva/tests/data/test1.zip
+%%ZOPEPRODUCTDIR%%/Silva/tests/data/test2.zip
 %%ZOPEPRODUCTDIR%%/Silva/tests/data/test_autotoc.xml
 %%ZOPEPRODUCTDIR%%/Silva/tests/data/test_document.xml
 %%ZOPEPRODUCTDIR%%/Silva/tests/data/test_document2.xml
@@ -254,6 +284,7 @@
 %%ZOPEPRODUCTDIR%%/Silva/tests/data/test_folder.xml
 %%ZOPEPRODUCTDIR%%/Silva/tests/data/test_ghost.xml
 %%ZOPEPRODUCTDIR%%/Silva/tests/data/test_ghost_folder.xml
+%%ZOPEPRODUCTDIR%%/Silva/tests/data/test_indexer.xml
 %%ZOPEPRODUCTDIR%%/Silva/tests/data/test_link.xml
 %%ZOPEPRODUCTDIR%%/Silva/tests/data/test_publication.xml
 %%ZOPEPRODUCTDIR%%/Silva/tests/data/testimage.gif
@@ -267,6 +298,8 @@
 %%ZOPEPRODUCTDIR%%/Silva/tests/layout_test2/template/image.gif
 %%ZOPEPRODUCTDIR%%/Silva/tests/layout_test2/test2.css.dtml
 %%ZOPEPRODUCTDIR%%/Silva/tests/layout_test2/test2.html.pt
+%%ZOPEPRODUCTDIR%%/Silva/tests/mocksmtpserver.py
+%%ZOPEPRODUCTDIR%%/Silva/tests/mocksmtpserver.pyc
 %%ZOPEPRODUCTDIR%%/Silva/tests/runalltests.py
 %%ZOPEPRODUCTDIR%%/Silva/tests/runalltests.pyc
 %%ZOPEPRODUCTDIR%%/Silva/tests/skel.py
@@ -297,6 +330,8 @@
 %%ZOPEPRODUCTDIR%%/Silva/tests/test_Versioning.pyc
 %%ZOPEPRODUCTDIR%%/Silva/tests/test_accessibility.py
 %%ZOPEPRODUCTDIR%%/Silva/tests/test_accessibility.pyc
+%%ZOPEPRODUCTDIR%%/Silva/tests/test_addables.py
+%%ZOPEPRODUCTDIR%%/Silva/tests/test_addables.pyc
 %%ZOPEPRODUCTDIR%%/Silva/tests/test_archivefileimport.py
 %%ZOPEPRODUCTDIR%%/Silva/tests/test_archivefileimport.pyc
 %%ZOPEPRODUCTDIR%%/Silva/tests/test_assetregistry.py
@@ -311,6 +346,8 @@
 %%ZOPEPRODUCTDIR%%/Silva/tests/test_file.pyc
 %%ZOPEPRODUCTDIR%%/Silva/tests/test_fileservices.py
 %%ZOPEPRODUCTDIR%%/Silva/tests/test_fileservices.pyc
+%%ZOPEPRODUCTDIR%%/Silva/tests/test_haunted.py
+%%ZOPEPRODUCTDIR%%/Silva/tests/test_haunted.pyc
 %%ZOPEPRODUCTDIR%%/Silva/tests/test_icon.py
 %%ZOPEPRODUCTDIR%%/Silva/tests/test_icon.pyc
 %%ZOPEPRODUCTDIR%%/Silva/tests/test_image.py
@@ -328,6 +365,10 @@
 %%ZOPEPRODUCTDIR%%/Silva/tests/test_renderer_registry.pyc
 %%ZOPEPRODUCTDIR%%/Silva/tests/test_securityadapters.py
 %%ZOPEPRODUCTDIR%%/Silva/tests/test_securityadapters.pyc
+%%ZOPEPRODUCTDIR%%/Silva/tests/test_subscribable.py
+%%ZOPEPRODUCTDIR%%/Silva/tests/test_subscribable.pyc
+%%ZOPEPRODUCTDIR%%/Silva/tests/test_subscriptionservice.py
+%%ZOPEPRODUCTDIR%%/Silva/tests/test_subscriptionservice.pyc
 %%ZOPEPRODUCTDIR%%/Silva/tests/test_version_management.py
 %%ZOPEPRODUCTDIR%%/Silva/tests/test_version_management.pyc
 %%ZOPEPRODUCTDIR%%/Silva/tests/test_viewcache.py
@@ -355,7 +396,10 @@
 %%ZOPEPRODUCTDIR%%/Silva/transform/renderer/images_to_the_right.xslt
 %%ZOPEPRODUCTDIR%%/Silva/transform/renderer/imagesonrightrenderer.py
 %%ZOPEPRODUCTDIR%%/Silva/transform/renderer/imagesonrightrenderer.pyc
+%%ZOPEPRODUCTDIR%%/Silva/transform/renderer/no_title.xslt
 %%ZOPEPRODUCTDIR%%/Silva/transform/renderer/normal_view.xslt
+%%ZOPEPRODUCTDIR%%/Silva/transform/renderer/notitlerenderer.py
+%%ZOPEPRODUCTDIR%%/Silva/transform/renderer/notitlerenderer.pyc
 %%ZOPEPRODUCTDIR%%/Silva/transform/renderer/xsltrendererbase.py
 %%ZOPEPRODUCTDIR%%/Silva/transform/renderer/xsltrendererbase.pyc
 %%ZOPEPRODUCTDIR%%/Silva/transform/rendererreg.py
@@ -368,8 +412,8 @@
 %%ZOPEPRODUCTDIR%%/Silva/upgrade_093.pyc
 %%ZOPEPRODUCTDIR%%/Silva/upgrade_100.py
 %%ZOPEPRODUCTDIR%%/Silva/upgrade_100.pyc
-%%ZOPEPRODUCTDIR%%/Silva/utils/ZPTPrettyPrinter.py
-%%ZOPEPRODUCTDIR%%/Silva/utils/ZPTPrettyPrinter.pyc
+%%ZOPEPRODUCTDIR%%/Silva/upgrade_120.py
+%%ZOPEPRODUCTDIR%%/Silva/upgrade_120.pyc
 %%ZOPEPRODUCTDIR%%/Silva/utils/add_folder_to_zodb.py
 %%ZOPEPRODUCTDIR%%/Silva/utils/add_folder_to_zodb.pyc
 %%ZOPEPRODUCTDIR%%/Silva/utils/call_url.py
@@ -464,6 +508,7 @@
 %%ZOPEPRODUCTDIR%%/Silva/views/edit/Container/add_object_submit.py
 %%ZOPEPRODUCTDIR%%/Silva/views/edit/Container/docma_queue.pt
 %%ZOPEPRODUCTDIR%%/Silva/views/edit/Container/download_fullmedia_selected.py
+%%ZOPEPRODUCTDIR%%/Silva/views/edit/Container/download_pdf_selected.py
 %%ZOPEPRODUCTDIR%%/Silva/views/edit/Container/download_xml_selected.py
 %%ZOPEPRODUCTDIR%%/Silva/views/edit/Container/export_delete.py
 %%ZOPEPRODUCTDIR%%/Silva/views/edit/Container/getDocmaFormatName.py
@@ -473,7 +518,6 @@
 %%ZOPEPRODUCTDIR%%/Silva/views/edit/Container/import_archive_file.py
 %%ZOPEPRODUCTDIR%%/Silva/views/edit/Container/is_item_in_ids.py
 %%ZOPEPRODUCTDIR%%/Silva/views/edit/Container/is_title_editable.py
-%%ZOPEPRODUCTDIR%%/Silva/views/edit/Container/macro_select_all.pt
 %%ZOPEPRODUCTDIR%%/Silva/views/edit/Container/tab_access_groups.pt
 %%ZOPEPRODUCTDIR%%/Silva/views/edit/Container/tab_access_groups_delete.py
 %%ZOPEPRODUCTDIR%%/Silva/views/edit/Container/tab_edit.pt
@@ -493,6 +537,7 @@
 %%ZOPEPRODUCTDIR%%/Silva/views/edit/Container/tab_edit_move_to.py
 %%ZOPEPRODUCTDIR%%/Silva/views/edit/Container/tab_edit_move_up.py
 %%ZOPEPRODUCTDIR%%/Silva/views/edit/Container/tab_edit_new.pt
+%%ZOPEPRODUCTDIR%%/Silva/views/edit/Container/tab_edit_new_link_title.py
 %%ZOPEPRODUCTDIR%%/Silva/views/edit/Container/tab_edit_paste.py
 %%ZOPEPRODUCTDIR%%/Silva/views/edit/Container/tab_edit_paste_to_ghost.py
 %%ZOPEPRODUCTDIR%%/Silva/views/edit/Container/tab_edit_rename.pt
@@ -506,8 +551,9 @@
 %%ZOPEPRODUCTDIR%%/Silva/views/edit/Container/tab_status_change_settings.py
 %%ZOPEPRODUCTDIR%%/Silva/views/edit/Container/tab_status_close.py
 %%ZOPEPRODUCTDIR%%/Silva/views/edit/Container/tab_status_export.pt
-%%ZOPEPRODUCTDIR%%/Silva/views/edit/Container/tab_status_form.form
+%%ZOPEPRODUCTDIR%%/Silva/views/edit/Container/tab_status_get_modify_title.py
 %%ZOPEPRODUCTDIR%%/Silva/views/edit/Container/tab_status_get_name.py
+%%ZOPEPRODUCTDIR%%/Silva/views/edit/Container/tab_status_get_preview_title.py
 %%ZOPEPRODUCTDIR%%/Silva/views/edit/Container/tab_status_new_version.py
 %%ZOPEPRODUCTDIR%%/Silva/views/edit/Container/tab_status_reject.py
 %%ZOPEPRODUCTDIR%%/Silva/views/edit/Container/tab_status_request_approval.py
@@ -541,30 +587,39 @@
 %%ZOPEPRODUCTDIR%%/Silva/views/edit/VersionedContent/Link/get_tabs.py
 %%ZOPEPRODUCTDIR%%/Silva/views/edit/VersionedContent/Link/submit.py
 %%ZOPEPRODUCTDIR%%/Silva/views/edit/VersionedContent/get_edit_mode.py
+%%ZOPEPRODUCTDIR%%/Silva/views/edit/VersionedContent/get_metadata_for_version.py
+%%ZOPEPRODUCTDIR%%/Silva/views/edit/VersionedContent/get_sorted_model_versions.py
 %%ZOPEPRODUCTDIR%%/Silva/views/edit/VersionedContent/kupu_content.py
 %%ZOPEPRODUCTDIR%%/Silva/views/edit/VersionedContent/kupustyles.css.dtml
+%%ZOPEPRODUCTDIR%%/Silva/views/edit/VersionedContent/macro_tab_edit.pt
 %%ZOPEPRODUCTDIR%%/Silva/views/edit/VersionedContent/properties_make_copy.py
 %%ZOPEPRODUCTDIR%%/Silva/views/edit/VersionedContent/properties_revoke_approval.py
 %%ZOPEPRODUCTDIR%%/Silva/views/edit/VersionedContent/set_edit_mode.py
 %%ZOPEPRODUCTDIR%%/Silva/views/edit/VersionedContent/set_edit_mode.pyc
 %%ZOPEPRODUCTDIR%%/Silva/views/edit/VersionedContent/tab_edit.pt
 %%ZOPEPRODUCTDIR%%/Silva/views/edit/VersionedContent/tab_edit_break_lock.py
-%%ZOPEPRODUCTDIR%%/Silva/views/edit/VersionedContent/tab_edit_bxe.pt
 %%ZOPEPRODUCTDIR%%/Silva/views/edit/VersionedContent/tab_edit_make_copy.py
+%%ZOPEPRODUCTDIR%%/Silva/views/edit/VersionedContent/tab_edit_publish.py
 %%ZOPEPRODUCTDIR%%/Silva/views/edit/VersionedContent/tab_edit_revoke_approval.py
-%%ZOPEPRODUCTDIR%%/Silva/views/edit/VersionedContent/tab_edit_xopus.pt
 %%ZOPEPRODUCTDIR%%/Silva/views/edit/VersionedContent/tab_status.pt
 %%ZOPEPRODUCTDIR%%/Silva/views/edit/VersionedContent/tab_status_approve.py
 %%ZOPEPRODUCTDIR%%/Silva/views/edit/VersionedContent/tab_status_change_settings.py
 %%ZOPEPRODUCTDIR%%/Silva/views/edit/VersionedContent/tab_status_close.py
+%%ZOPEPRODUCTDIR%%/Silva/views/edit/VersionedContent/tab_status_delete_versions.py
 %%ZOPEPRODUCTDIR%%/Silva/views/edit/VersionedContent/tab_status_form_author.form
 %%ZOPEPRODUCTDIR%%/Silva/views/edit/VersionedContent/tab_status_form_change_settings.form
 %%ZOPEPRODUCTDIR%%/Silva/views/edit/VersionedContent/tab_status_form_editor.form
+%%ZOPEPRODUCTDIR%%/Silva/views/edit/VersionedContent/tab_status_get_status_link_title.py
 %%ZOPEPRODUCTDIR%%/Silva/views/edit/VersionedContent/tab_status_macros.pt
 %%ZOPEPRODUCTDIR%%/Silva/views/edit/VersionedContent/tab_status_request.py
+%%ZOPEPRODUCTDIR%%/Silva/views/edit/VersionedContent/tab_status_revert_to_old.py
 %%ZOPEPRODUCTDIR%%/Silva/views/edit/VersionedContent/tab_status_revert_to_previous.py
 %%ZOPEPRODUCTDIR%%/Silva/views/edit/VersionedContent/tab_status_revoke.py
 %%ZOPEPRODUCTDIR%%/Silva/views/edit/VersionedContent/tab_status_silva2word.py
+%%ZOPEPRODUCTDIR%%/Silva/views/edit/VersionedContent/tab_status_view_version.pt
+%%ZOPEPRODUCTDIR%%/Silva/views/edit/VersionedContent/tab_status_view_version_content.py
+%%ZOPEPRODUCTDIR%%/Silva/views/edit/VersionedContent/tab_status_view_versions.pt
+%%ZOPEPRODUCTDIR%%/Silva/views/edit/VersionedContent/tab_status_view_versions_start.py
 %%ZOPEPRODUCTDIR%%/Silva/views/edit/VersionedContent/tab_status_withdraw.py
 %%ZOPEPRODUCTDIR%%/Silva/views/edit/access_assign_to_group.py
 %%ZOPEPRODUCTDIR%%/Silva/views/edit/access_assign_to_user.py
@@ -585,10 +640,13 @@
 %%ZOPEPRODUCTDIR%%/Silva/views/edit/get_metadata_element.py
 %%ZOPEPRODUCTDIR%%/Silva/views/edit/get_nearest_chiefeditors.py
 %%ZOPEPRODUCTDIR%%/Silva/views/edit/get_nearest_managers.py
+%%ZOPEPRODUCTDIR%%/Silva/views/edit/get_subscribable.py
+%%ZOPEPRODUCTDIR%%/Silva/views/edit/get_subscribable.pyc
 %%ZOPEPRODUCTDIR%%/Silva/views/edit/get_time_punctuation.py
 %%ZOPEPRODUCTDIR%%/Silva/views/edit/get_viewer_role_info.py
 %%ZOPEPRODUCTDIR%%/Silva/views/edit/has_change_access_permission.py
 %%ZOPEPRODUCTDIR%%/Silva/views/edit/hyperlink_lookup.pt
+%%ZOPEPRODUCTDIR%%/Silva/views/edit/is_subscribable_content.py
 %%ZOPEPRODUCTDIR%%/Silva/views/edit/kupu_imagelibraries.py
 %%ZOPEPRODUCTDIR%%/Silva/views/edit/kupu_imagelibrary.py
 %%ZOPEPRODUCTDIR%%/Silva/views/edit/lookup.py
@@ -604,6 +662,8 @@
 %%ZOPEPRODUCTDIR%%/Silva/views/edit/macro_groups_listing.pt
 %%ZOPEPRODUCTDIR%%/Silva/views/edit/macro_metadata.pt
 %%ZOPEPRODUCTDIR%%/Silva/views/edit/macro_role_options.pt
+%%ZOPEPRODUCTDIR%%/Silva/views/edit/macro_role_options_roles.py
+%%ZOPEPRODUCTDIR%%/Silva/views/edit/macro_select_all.pt
 %%ZOPEPRODUCTDIR%%/Silva/views/edit/macro_user_lookup_clipboard.pt
 %%ZOPEPRODUCTDIR%%/Silva/views/edit/macro_vein_navigation.pt
 %%ZOPEPRODUCTDIR%%/Silva/views/edit/promptWindow.pt
@@ -626,6 +686,10 @@
 %%ZOPEPRODUCTDIR%%/Silva/views/edit/tab_preview.pt
 %%ZOPEPRODUCTDIR%%/Silva/views/edit/tab_preview_iframe.pt
 %%ZOPEPRODUCTDIR%%/Silva/views/edit/tab_preview_needs_feedback.py
+%%ZOPEPRODUCTDIR%%/Silva/views/edit/tab_status_form.form
+%%ZOPEPRODUCTDIR%%/Silva/views/edit/tab_subscriptions.pt
+%%ZOPEPRODUCTDIR%%/Silva/views/edit/tab_subscriptions_form.form
+%%ZOPEPRODUCTDIR%%/Silva/views/edit/tab_subscriptions_submit.py
 %%ZOPEPRODUCTDIR%%/Silva/views/focus_editor.py
 %%ZOPEPRODUCTDIR%%/Silva/views/getBatch.py
 %%ZOPEPRODUCTDIR%%/Silva/views/get_silva_permissions.py
@@ -638,28 +702,27 @@
 %%ZOPEPRODUCTDIR%%/Silva/views/macro_no_tabs.pt
 %%ZOPEPRODUCTDIR%%/Silva/views/macro_tabs.pt
 %%ZOPEPRODUCTDIR%%/Silva/views/public/AutoTOC/get_tree.py
+%%ZOPEPRODUCTDIR%%/Silva/views/public/AutoTOC/preview/render.py
 %%ZOPEPRODUCTDIR%%/Silva/views/public/AutoTOC/render_helper.pt
-%%ZOPEPRODUCTDIR%%/Silva/views/public/AutoTOC/render_preview.py
-%%ZOPEPRODUCTDIR%%/Silva/views/public/AutoTOC/render_view.py
+%%ZOPEPRODUCTDIR%%/Silva/views/public/AutoTOC/view/render.py
 %%ZOPEPRODUCTDIR%%/Silva/views/public/AutoTOC/visible.py
-%%ZOPEPRODUCTDIR%%/Silva/views/public/File/render_preview.py
-%%ZOPEPRODUCTDIR%%/Silva/views/public/File/render_view.py
-%%ZOPEPRODUCTDIR%%/Silva/views/public/Folder/render_preview.pt
-%%ZOPEPRODUCTDIR%%/Silva/views/public/Folder/render_view.pt
-%%ZOPEPRODUCTDIR%%/Silva/views/public/Ghost/render_preview.py
-%%ZOPEPRODUCTDIR%%/Silva/views/public/Ghost/render_view.py
-%%ZOPEPRODUCTDIR%%/Silva/views/public/Image/render_preview.py
-%%ZOPEPRODUCTDIR%%/Silva/views/public/Image/render_view.py
+%%ZOPEPRODUCTDIR%%/Silva/views/public/File/render.py
+%%ZOPEPRODUCTDIR%%/Silva/views/public/Folder/preview/render.py
+%%ZOPEPRODUCTDIR%%/Silva/views/public/Folder/view/render.py
+%%ZOPEPRODUCTDIR%%/Silva/views/public/Ghost/preview/render.py
+%%ZOPEPRODUCTDIR%%/Silva/views/public/Ghost/view/render.py
+%%ZOPEPRODUCTDIR%%/Silva/views/public/Image/preview/render.py
+%%ZOPEPRODUCTDIR%%/Silva/views/public/Image/view/render.py
+%%ZOPEPRODUCTDIR%%/Silva/views/public/Indexer/render.py
 %%ZOPEPRODUCTDIR%%/Silva/views/public/Indexer/render_helper.pt
 %%ZOPEPRODUCTDIR%%/Silva/views/public/Indexer/render_links.py
-%%ZOPEPRODUCTDIR%%/Silva/views/public/Indexer/render_preview.py
-%%ZOPEPRODUCTDIR%%/Silva/views/public/Indexer/render_view.py
-%%ZOPEPRODUCTDIR%%/Silva/views/public/Link/render_preview.py
-%%ZOPEPRODUCTDIR%%/Silva/views/public/Link/render_view.py
+%%ZOPEPRODUCTDIR%%/Silva/views/public/Link/render.py
+%%ZOPEPRODUCTDIR%%/Silva/views/public/SimpleContent/render.py
 %%ZOPEPRODUCTDIR%%/Silva/views/public/SimpleContent/render_helper.pt
-%%ZOPEPRODUCTDIR%%/Silva/views/public/SimpleContent/render_preview.py
-%%ZOPEPRODUCTDIR%%/Silva/views/public/SimpleContent/render_view.py
 %%ZOPEPRODUCTDIR%%/Silva/views/public/SimpleContent/visible.py
+%%ZOPEPRODUCTDIR%%/Silva/views/public/cancellation_request.py
+%%ZOPEPRODUCTDIR%%/Silva/views/public/confirm_cancellation.py
+%%ZOPEPRODUCTDIR%%/Silva/views/public/confirm_subscription.py
 %%ZOPEPRODUCTDIR%%/Silva/views/public/get_metadata.py
 %%ZOPEPRODUCTDIR%%/Silva/views/public/get_metadata_element.py
 %%ZOPEPRODUCTDIR%%/Silva/views/public/perform_search.py
@@ -668,11 +731,14 @@
 %%ZOPEPRODUCTDIR%%/Silva/views/public/search.pt
 %%ZOPEPRODUCTDIR%%/Silva/views/public/search_form.form
 %%ZOPEPRODUCTDIR%%/Silva/views/public/search_results.pt
+%%ZOPEPRODUCTDIR%%/Silva/views/public/subscription_request.py
+%%ZOPEPRODUCTDIR%%/Silva/views/public/subscriptor.pt
 %%ZOPEPRODUCTDIR%%/Silva/views/render_form_errors.py
 %%ZOPEPRODUCTDIR%%/Silva/views/set_cache_headers.py
 %%ZOPEPRODUCTDIR%%/Silva/views/set_cache_headers.pyc
 %%ZOPEPRODUCTDIR%%/Silva/views/set_content_type.py
 %%ZOPEPRODUCTDIR%%/Silva/views/set_content_type.pyc
+%%ZOPEPRODUCTDIR%%/Silva/www/EmailField.gif
 %%ZOPEPRODUCTDIR%%/Silva/www/IPGroupAdd.zpt
 %%ZOPEPRODUCTDIR%%/Silva/www/autoTOCAdd.zpt
 %%ZOPEPRODUCTDIR%%/Silva/www/autotoc.png
@@ -723,6 +789,7 @@
 %%ZOPEPRODUCTDIR%%/Silva/www/multiViewRegistryAdd.zpt
 %%ZOPEPRODUCTDIR%%/Silva/www/publicationAdd.zpt
 %%ZOPEPRODUCTDIR%%/Silva/www/rendererRegistryServiceAdd.zpt
+%%ZOPEPRODUCTDIR%%/Silva/www/renderer_service.png
 %%ZOPEPRODUCTDIR%%/Silva/www/rootAdd.zpt
 %%ZOPEPRODUCTDIR%%/Silva/www/service.png
 %%ZOPEPRODUCTDIR%%/Silva/www/serviceDocmaAdd.zpt
@@ -752,6 +819,8 @@
 %%ZOPEPRODUCTDIR%%/Silva/www/simpleMemberAdd.zpt
 %%ZOPEPRODUCTDIR%%/Silva/www/simpleMemberServiceAdd.zpt
 %%ZOPEPRODUCTDIR%%/Silva/www/simpleMemberServiceEdit.zpt
+%%ZOPEPRODUCTDIR%%/Silva/www/subscriptionServiceAdd.pt
+%%ZOPEPRODUCTDIR%%/Silva/www/subscriptionServiceEdit.pt
 %%ZOPEPRODUCTDIR%%/Silva/www/user.png
 %%ZOPEPRODUCTDIR%%/Silva/www/virtualGroupAdd.zpt
 %%ZOPEPRODUCTDIR%%/Silva/www/virtualGroupEdit.zpt
@@ -772,7 +841,8 @@
 %%ZOPEPRODUCTDIR%%/SilvaDocument/_externalsource.pyc
 %%ZOPEPRODUCTDIR%%/SilvaDocument/externalsource.py
 %%ZOPEPRODUCTDIR%%/SilvaDocument/externalsource.pyc
-%%ZOPEPRODUCTDIR%%/SilvaDocument/homepage.stx
+%%ZOPEPRODUCTDIR%%/SilvaDocument/i18n/silva_document-nl.po
+%%ZOPEPRODUCTDIR%%/SilvaDocument/i18n/silva_document.pot
 %%ZOPEPRODUCTDIR%%/SilvaDocument/install.py
 %%ZOPEPRODUCTDIR%%/SilvaDocument/install.pyc
 %%ZOPEPRODUCTDIR%%/SilvaDocument/interfaces.py
@@ -789,7 +859,6 @@
 %%ZOPEPRODUCTDIR%%/SilvaDocument/silvaxml/xmlexport.pyc
 %%ZOPEPRODUCTDIR%%/SilvaDocument/silvaxml/xmlimport.py
 %%ZOPEPRODUCTDIR%%/SilvaDocument/silvaxml/xmlimport.pyc
-%%ZOPEPRODUCTDIR%%/SilvaDocument/tests/.cvsignore
 %%ZOPEPRODUCTDIR%%/SilvaDocument/tests/__init__.py
 %%ZOPEPRODUCTDIR%%/SilvaDocument/tests/__init__.pyc
 %%ZOPEPRODUCTDIR%%/SilvaDocument/tests/data/test_csv.csv
@@ -798,18 +867,14 @@
 %%ZOPEPRODUCTDIR%%/SilvaDocument/tests/framework.pyc
 %%ZOPEPRODUCTDIR%%/SilvaDocument/tests/print_profilestats.py
 %%ZOPEPRODUCTDIR%%/SilvaDocument/tests/print_profilestats.pyc
-%%ZOPEPRODUCTDIR%%/SilvaDocument/tests/test_BasicTransformations.py
-%%ZOPEPRODUCTDIR%%/SilvaDocument/tests/test_BasicTransformations.pyc
-%%ZOPEPRODUCTDIR%%/SilvaDocument/tests/test_EoproTransformations.py
-%%ZOPEPRODUCTDIR%%/SilvaDocument/tests/test_EoproTransformations.pyc
+%%ZOPEPRODUCTDIR%%/SilvaDocument/tests/runalltests.py
+%%ZOPEPRODUCTDIR%%/SilvaDocument/tests/runalltests.pyc
 %%ZOPEPRODUCTDIR%%/SilvaDocument/tests/test_editorsupport.py
 %%ZOPEPRODUCTDIR%%/SilvaDocument/tests/test_editorsupport.pyc
 %%ZOPEPRODUCTDIR%%/SilvaDocument/tests/test_mixedcontentsupport.py
 %%ZOPEPRODUCTDIR%%/SilvaDocument/tests/test_mixedcontentsupport.pyc
 %%ZOPEPRODUCTDIR%%/SilvaDocument/tests/test_upgrade.py
 %%ZOPEPRODUCTDIR%%/SilvaDocument/tests/test_upgrade.pyc
-%%ZOPEPRODUCTDIR%%/SilvaDocument/tests/test_widgets.py
-%%ZOPEPRODUCTDIR%%/SilvaDocument/tests/test_widgets.pyc
 %%ZOPEPRODUCTDIR%%/SilvaDocument/tests/test_xmlexport.py
 %%ZOPEPRODUCTDIR%%/SilvaDocument/tests/test_xmlexport.pyc
 %%ZOPEPRODUCTDIR%%/SilvaDocument/tests/test_xmlimport.py
@@ -849,10 +914,14 @@
 %%ZOPEPRODUCTDIR%%/SilvaDocument/views/add/Document/add_submit_helper.py
 %%ZOPEPRODUCTDIR%%/SilvaDocument/views/add/Document/form.form
 %%ZOPEPRODUCTDIR%%/SilvaDocument/views/edit/VersionedContent/Document/edit.py
+%%ZOPEPRODUCTDIR%%/SilvaDocument/views/edit/VersionedContent/Document/forms_editor_display.py
 %%ZOPEPRODUCTDIR%%/SilvaDocument/views/edit/VersionedContent/Document/get_available_sources.py
 %%ZOPEPRODUCTDIR%%/SilvaDocument/views/edit/VersionedContent/Document/get_tabs.py
-%%ZOPEPRODUCTDIR%%/SilvaDocument/views/public/Document/render_preview.py
-%%ZOPEPRODUCTDIR%%/SilvaDocument/views/public/Document/render_view.py
+%%ZOPEPRODUCTDIR%%/SilvaDocument/views/edit/VersionedContent/Document/kupu_display.py
+%%ZOPEPRODUCTDIR%%/SilvaDocument/views/edit/VersionedContent/Document/tab_edit.pt
+%%ZOPEPRODUCTDIR%%/SilvaDocument/views/public/Document/preview/render.py
+%%ZOPEPRODUCTDIR%%/SilvaDocument/views/public/Document/render.py
+%%ZOPEPRODUCTDIR%%/SilvaDocument/views/public/Document/view/render.py
 %%ZOPEPRODUCTDIR%%/SilvaDocument/widgets/cached.py
 %%ZOPEPRODUCTDIR%%/SilvaDocument/widgets/cancel.py
 %%ZOPEPRODUCTDIR%%/SilvaDocument/widgets/check_editable.py
@@ -916,7 +985,6 @@
 %%ZOPEPRODUCTDIR%%/SilvaDocument/widgets/element/doc_elements/heading/mode_view/render.pt
 %%ZOPEPRODUCTDIR%%/SilvaDocument/widgets/element/doc_elements/heading/render.pt
 %%ZOPEPRODUCTDIR%%/SilvaDocument/widgets/element/doc_elements/image/content.py
-%%ZOPEPRODUCTDIR%%/SilvaDocument/widgets/element/doc_elements/image/get_image.py
 %%ZOPEPRODUCTDIR%%/SilvaDocument/widgets/element/doc_elements/image/mode_done/exists.txt
 %%ZOPEPRODUCTDIR%%/SilvaDocument/widgets/element/doc_elements/image/mode_edit/get_start_container.py
 %%ZOPEPRODUCTDIR%%/SilvaDocument/widgets/element/doc_elements/image/mode_edit/render.pt
@@ -1169,60 +1237,72 @@
 %%ZOPEPRODUCTDIR%%/SilvaDocument/www/serviceCodeSourceCharsetAdd.zpt
 %%ZOPEPRODUCTDIR%%/SilvaDocument/www/serviceCodeSourceCharsetEditTab.zpt
 %%ZOPEPRODUCTDIR%%/SilvaDocument/www/silvadoc.gif
-%%ZOPEPRODUCTDIR%%/SilvaMetadata/Access.py
 %%ZOPEPRODUCTDIR%%/SilvaMetadata/API.txt
-%%ZOPEPRODUCTDIR%%/SilvaMetadata/Extensions/.svn/dir-wcprops
-%%ZOPEPRODUCTDIR%%/SilvaMetadata/Extensions/.svn/README
-%%ZOPEPRODUCTDIR%%/SilvaMetadata/Extensions/.svn/prop-base/Install.py.svn-base
-%%ZOPEPRODUCTDIR%%/SilvaMetadata/Extensions/.svn/empty-file
-%%ZOPEPRODUCTDIR%%/SilvaMetadata/Extensions/.svn/entries
-%%ZOPEPRODUCTDIR%%/SilvaMetadata/Extensions/.svn/format
-%%ZOPEPRODUCTDIR%%/SilvaMetadata/Extensions/.svn/props/Install.py.svn-work
-%%ZOPEPRODUCTDIR%%/SilvaMetadata/Extensions/.svn/text-base/Install.py.svn-base
-%%ZOPEPRODUCTDIR%%/SilvaMetadata/Extensions/.svn/wcprops/Install.py.svn-work
-%%ZOPEPRODUCTDIR%%/SilvaMetadata/Extensions/Install.py
-%%ZOPEPRODUCTDIR%%/SilvaMetadata/Extensions/SilvaInstall.py
-%%ZOPEPRODUCTDIR%%/SilvaMetadata/Extensions/__init__.py
-%%ZOPEPRODUCTDIR%%/SilvaMetadata/Extensions/Install.pyc
-%%ZOPEPRODUCTDIR%%/SilvaMetadata/Extensions/SilvaInstall.pyc
-%%ZOPEPRODUCTDIR%%/SilvaMetadata/Extensions/__init__.pyc
+%%ZOPEPRODUCTDIR%%/SilvaMetadata/Access.py
+%%ZOPEPRODUCTDIR%%/SilvaMetadata/Access.pyc
 %%ZOPEPRODUCTDIR%%/SilvaMetadata/Binding.py
+%%ZOPEPRODUCTDIR%%/SilvaMetadata/Binding.pyc
 %%ZOPEPRODUCTDIR%%/SilvaMetadata/CREDITS.txt
 %%ZOPEPRODUCTDIR%%/SilvaMetadata/Collection.py
+%%ZOPEPRODUCTDIR%%/SilvaMetadata/Collection.pyc
 %%ZOPEPRODUCTDIR%%/SilvaMetadata/Compatibility.py
+%%ZOPEPRODUCTDIR%%/SilvaMetadata/Compatibility.pyc
 %%ZOPEPRODUCTDIR%%/SilvaMetadata/Configuration.py
+%%ZOPEPRODUCTDIR%%/SilvaMetadata/Configuration.pyc
 %%ZOPEPRODUCTDIR%%/SilvaMetadata/Element.py
+%%ZOPEPRODUCTDIR%%/SilvaMetadata/Element.pyc
 %%ZOPEPRODUCTDIR%%/SilvaMetadata/Exceptions.py
+%%ZOPEPRODUCTDIR%%/SilvaMetadata/Exceptions.pyc
 %%ZOPEPRODUCTDIR%%/SilvaMetadata/Export.py
+%%ZOPEPRODUCTDIR%%/SilvaMetadata/Export.pyc
 %%ZOPEPRODUCTDIR%%/SilvaMetadata/Expression.py
+%%ZOPEPRODUCTDIR%%/SilvaMetadata/Expression.pyc
+%%ZOPEPRODUCTDIR%%/SilvaMetadata/Extensions/Install.py
+%%ZOPEPRODUCTDIR%%/SilvaMetadata/Extensions/Install.pyc
+%%ZOPEPRODUCTDIR%%/SilvaMetadata/Extensions/SilvaInstall.py
+%%ZOPEPRODUCTDIR%%/SilvaMetadata/Extensions/SilvaInstall.pyc
+%%ZOPEPRODUCTDIR%%/SilvaMetadata/Extensions/__init__.py
+%%ZOPEPRODUCTDIR%%/SilvaMetadata/Extensions/__init__.pyc
 %%ZOPEPRODUCTDIR%%/SilvaMetadata/FormulatorField.py
+%%ZOPEPRODUCTDIR%%/SilvaMetadata/FormulatorField.pyc
 %%ZOPEPRODUCTDIR%%/SilvaMetadata/Guard.py
+%%ZOPEPRODUCTDIR%%/SilvaMetadata/Guard.pyc
 %%ZOPEPRODUCTDIR%%/SilvaMetadata/HISTORY.txt
 %%ZOPEPRODUCTDIR%%/SilvaMetadata/INSTALL.txt
 %%ZOPEPRODUCTDIR%%/SilvaMetadata/Import.py
+%%ZOPEPRODUCTDIR%%/SilvaMetadata/Import.pyc
 %%ZOPEPRODUCTDIR%%/SilvaMetadata/Index.py
+%%ZOPEPRODUCTDIR%%/SilvaMetadata/Index.pyc
 %%ZOPEPRODUCTDIR%%/SilvaMetadata/Initialize.py
+%%ZOPEPRODUCTDIR%%/SilvaMetadata/Initialize.pyc
 %%ZOPEPRODUCTDIR%%/SilvaMetadata/Interfaces.py
+%%ZOPEPRODUCTDIR%%/SilvaMetadata/Interfaces.pyc
 %%ZOPEPRODUCTDIR%%/SilvaMetadata/LICENSE.txt
 %%ZOPEPRODUCTDIR%%/SilvaMetadata/MetadataTool.py
+%%ZOPEPRODUCTDIR%%/SilvaMetadata/MetadataTool.pyc
 %%ZOPEPRODUCTDIR%%/SilvaMetadata/Namespace.py
+%%ZOPEPRODUCTDIR%%/SilvaMetadata/Namespace.pyc
 %%ZOPEPRODUCTDIR%%/SilvaMetadata/README.txt
 %%ZOPEPRODUCTDIR%%/SilvaMetadata/ROADMAP.txt
 %%ZOPEPRODUCTDIR%%/SilvaMetadata/Set.py
+%%ZOPEPRODUCTDIR%%/SilvaMetadata/Set.pyc
 %%ZOPEPRODUCTDIR%%/SilvaMetadata/TypeMapping.py
+%%ZOPEPRODUCTDIR%%/SilvaMetadata/TypeMapping.pyc
 %%ZOPEPRODUCTDIR%%/SilvaMetadata/View.py
+%%ZOPEPRODUCTDIR%%/SilvaMetadata/View.pyc
 %%ZOPEPRODUCTDIR%%/SilvaMetadata/XMLType.py
+%%ZOPEPRODUCTDIR%%/SilvaMetadata/XMLType.pyc
 %%ZOPEPRODUCTDIR%%/SilvaMetadata/ZopeImports.py
+%%ZOPEPRODUCTDIR%%/SilvaMetadata/ZopeImports.pyc
 %%ZOPEPRODUCTDIR%%/SilvaMetadata/__init__.py
+%%ZOPEPRODUCTDIR%%/SilvaMetadata/__init__.pyc
 %%ZOPEPRODUCTDIR%%/SilvaMetadata/homepage.html
 %%ZOPEPRODUCTDIR%%/SilvaMetadata/refresh.txt
-%%ZOPEPRODUCTDIR%%/SilvaMetadata/utils.py
-%%ZOPEPRODUCTDIR%%/SilvaMetadata/version.txt
 %%ZOPEPRODUCTDIR%%/SilvaMetadata/tests/data/dublin_core.xml
 %%ZOPEPRODUCTDIR%%/SilvaMetadata/tests/data/sample_export.xml
 %%ZOPEPRODUCTDIR%%/SilvaMetadata/tests/stubs.py
-%%ZOPEPRODUCTDIR%%/SilvaMetadata/tests/test_Metadata.py
 %%ZOPEPRODUCTDIR%%/SilvaMetadata/tests/stubs.pyc
+%%ZOPEPRODUCTDIR%%/SilvaMetadata/tests/test_Metadata.py
 %%ZOPEPRODUCTDIR%%/SilvaMetadata/tests/test_Metadata.pyc
 %%ZOPEPRODUCTDIR%%/SilvaMetadata/ui/ElementAddForm.dtml
 %%ZOPEPRODUCTDIR%%/SilvaMetadata/ui/ElementGuardForm.dtml
@@ -1233,35 +1313,14 @@
 %%ZOPEPRODUCTDIR%%/SilvaMetadata/ui/SetContainerView.dtml
 %%ZOPEPRODUCTDIR%%/SilvaMetadata/ui/SetSettingsForm.dtml
 %%ZOPEPRODUCTDIR%%/SilvaMetadata/ui/TypeMappingContainerForm.dtml
+%%ZOPEPRODUCTDIR%%/SilvaMetadata/utils.py
+%%ZOPEPRODUCTDIR%%/SilvaMetadata/utils.pyc
+%%ZOPEPRODUCTDIR%%/SilvaMetadata/version.txt
 %%ZOPEPRODUCTDIR%%/SilvaMetadata/www/bottom.gif
 %%ZOPEPRODUCTDIR%%/SilvaMetadata/www/down.gif
 %%ZOPEPRODUCTDIR%%/SilvaMetadata/www/silva_metadata.png
 %%ZOPEPRODUCTDIR%%/SilvaMetadata/www/top.gif
 %%ZOPEPRODUCTDIR%%/SilvaMetadata/www/up.gif
-%%ZOPEPRODUCTDIR%%/SilvaMetadata/Access.pyc
-%%ZOPEPRODUCTDIR%%/SilvaMetadata/Binding.pyc
-%%ZOPEPRODUCTDIR%%/SilvaMetadata/Collection.pyc
-%%ZOPEPRODUCTDIR%%/SilvaMetadata/Compatibility.pyc
-%%ZOPEPRODUCTDIR%%/SilvaMetadata/Configuration.pyc
-%%ZOPEPRODUCTDIR%%/SilvaMetadata/Element.pyc
-%%ZOPEPRODUCTDIR%%/SilvaMetadata/Exceptions.pyc
-%%ZOPEPRODUCTDIR%%/SilvaMetadata/Export.pyc
-%%ZOPEPRODUCTDIR%%/SilvaMetadata/Guard.pyc
-%%ZOPEPRODUCTDIR%%/SilvaMetadata/Expression.pyc
-%%ZOPEPRODUCTDIR%%/SilvaMetadata/FormulatorField.pyc
-%%ZOPEPRODUCTDIR%%/SilvaMetadata/Import.pyc
-%%ZOPEPRODUCTDIR%%/SilvaMetadata/Index.pyc
-%%ZOPEPRODUCTDIR%%/SilvaMetadata/Initialize.pyc
-%%ZOPEPRODUCTDIR%%/SilvaMetadata/Interfaces.pyc
-%%ZOPEPRODUCTDIR%%/SilvaMetadata/MetadataTool.pyc
-%%ZOPEPRODUCTDIR%%/SilvaMetadata/Namespace.pyc
-%%ZOPEPRODUCTDIR%%/SilvaMetadata/Set.pyc
-%%ZOPEPRODUCTDIR%%/SilvaMetadata/TypeMapping.pyc
-%%ZOPEPRODUCTDIR%%/SilvaMetadata/View.pyc
-%%ZOPEPRODUCTDIR%%/SilvaMetadata/XMLType.pyc
-%%ZOPEPRODUCTDIR%%/SilvaMetadata/ZopeImports.pyc
-%%ZOPEPRODUCTDIR%%/SilvaMetadata/__init__.pyc
-%%ZOPEPRODUCTDIR%%/SilvaMetadata/utils.pyc
 %%ZOPEPRODUCTDIR%%/Sprout/HISTORY.txt
 %%ZOPEPRODUCTDIR%%/Sprout/LICENSES.txt
 %%ZOPEPRODUCTDIR%%/Sprout/README.txt
@@ -1324,72 +1383,21 @@
 %%ZOPEPRODUCTDIR%%/Sprout/test.py
 %%ZOPEPRODUCTDIR%%/Sprout/test.pyc
 %%ZOPEPRODUCTDIR%%/Sprout/version.txt
-@dirrm %%ZOPEPRODUCTDIR%%/Silva/Extensions
-@dirrm %%ZOPEPRODUCTDIR%%/Silva/adapters
-@dirrm %%ZOPEPRODUCTDIR%%/Silva/default
-@dirrm %%ZOPEPRODUCTDIR%%/Silva/doc
-@dirrm %%ZOPEPRODUCTDIR%%/Silva/globals
-@dirrm %%ZOPEPRODUCTDIR%%/Silva/layout
-@dirrm %%ZOPEPRODUCTDIR%%/Silva/resources
-@dirrm %%ZOPEPRODUCTDIR%%/Silva/silvaxml
-@dirrm %%ZOPEPRODUCTDIR%%/Silva/tests/data
-@dirrm %%ZOPEPRODUCTDIR%%/Silva/tests/layout_test1/template
-@dirrm %%ZOPEPRODUCTDIR%%/Silva/tests/layout_test1
-@dirrm %%ZOPEPRODUCTDIR%%/Silva/tests/layout_test2/template
-@dirrm %%ZOPEPRODUCTDIR%%/Silva/tests/layout_test2
-@dirrm %%ZOPEPRODUCTDIR%%/Silva/tests/test_image_data
-@dirrm %%ZOPEPRODUCTDIR%%/Silva/tests
-@dirrm %%ZOPEPRODUCTDIR%%/Silva/transform/renderer
-@dirrm %%ZOPEPRODUCTDIR%%/Silva/transform
-@dirrm %%ZOPEPRODUCTDIR%%/Silva/utils
-@dirrm %%ZOPEPRODUCTDIR%%/Silva/views/add/AutoTOC
-@dirrm %%ZOPEPRODUCTDIR%%/Silva/views/add/File
-@dirrm %%ZOPEPRODUCTDIR%%/Silva/views/add/Folder
-@dirrm %%ZOPEPRODUCTDIR%%/Silva/views/add/Ghost
-@dirrm %%ZOPEPRODUCTDIR%%/Silva/views/add/GhostFolder
-@dirrm %%ZOPEPRODUCTDIR%%/Silva/views/add/Groups/Group
-@dirrm %%ZOPEPRODUCTDIR%%/Silva/views/add/Groups/IPGroup
-@dirrm %%ZOPEPRODUCTDIR%%/Silva/views/add/Groups/VirtualGroup
-@dirrm %%ZOPEPRODUCTDIR%%/Silva/views/add/Groups
-@dirrm %%ZOPEPRODUCTDIR%%/Silva/views/add/Image
-@dirrm %%ZOPEPRODUCTDIR%%/Silva/views/add/Indexer
-@dirrm %%ZOPEPRODUCTDIR%%/Silva/views/add/Link
-@dirrm %%ZOPEPRODUCTDIR%%/Silva/views/add/Publication
-@dirrm %%ZOPEPRODUCTDIR%%/Silva/views/add/SimpleContent
-@dirrm %%ZOPEPRODUCTDIR%%/Silva/views/add
-@dirrm %%ZOPEPRODUCTDIR%%/Silva/views/edit/Asset/File
-@dirrm %%ZOPEPRODUCTDIR%%/Silva/views/edit/Asset/Groups/Group
-@dirrm %%ZOPEPRODUCTDIR%%/Silva/views/edit/Asset/Groups/IPGroup
-@dirrm %%ZOPEPRODUCTDIR%%/Silva/views/edit/Asset/Groups/VirtualGroup
-@dirrm %%ZOPEPRODUCTDIR%%/Silva/views/edit/Asset/Groups
-@dirrm %%ZOPEPRODUCTDIR%%/Silva/views/edit/Asset/Image
-@dirrm %%ZOPEPRODUCTDIR%%/Silva/views/edit/Asset
-@dirrm %%ZOPEPRODUCTDIR%%/Silva/views/edit/Container/Folder
-@dirrm %%ZOPEPRODUCTDIR%%/Silva/views/edit/Container/GhostFolder
-@dirrm %%ZOPEPRODUCTDIR%%/Silva/views/edit/Container/Publication
-@dirrm %%ZOPEPRODUCTDIR%%/Silva/views/edit/Container
-@dirrm %%ZOPEPRODUCTDIR%%/Silva/views/edit/Content/AutoTOC
-@dirrm %%ZOPEPRODUCTDIR%%/Silva/views/edit/Content/Indexer
-@dirrm %%ZOPEPRODUCTDIR%%/Silva/views/edit/Content/SimpleContent
-@dirrm %%ZOPEPRODUCTDIR%%/Silva/views/edit/Content
-@dirrm %%ZOPEPRODUCTDIR%%/Silva/views/edit/Member/SimpleMember
-@dirrm %%ZOPEPRODUCTDIR%%/Silva/views/edit/Member
-@dirrm %%ZOPEPRODUCTDIR%%/Silva/views/edit/VersionedContent/Ghost
-@dirrm %%ZOPEPRODUCTDIR%%/Silva/views/edit/VersionedContent/Link
-@dirrm %%ZOPEPRODUCTDIR%%/Silva/views/edit/VersionedContent
-@dirrm %%ZOPEPRODUCTDIR%%/Silva/views/edit
-@dirrm %%ZOPEPRODUCTDIR%%/Silva/views/public/AutoTOC
-@dirrm %%ZOPEPRODUCTDIR%%/Silva/views/public/File
-@dirrm %%ZOPEPRODUCTDIR%%/Silva/views/public/Folder
-@dirrm %%ZOPEPRODUCTDIR%%/Silva/views/public/Ghost
-@dirrm %%ZOPEPRODUCTDIR%%/Silva/views/public/Image
-@dirrm %%ZOPEPRODUCTDIR%%/Silva/views/public/Indexer
-@dirrm %%ZOPEPRODUCTDIR%%/Silva/views/public/Link
-@dirrm %%ZOPEPRODUCTDIR%%/Silva/views/public/SimpleContent
-@dirrm %%ZOPEPRODUCTDIR%%/Silva/views/public
-@dirrm %%ZOPEPRODUCTDIR%%/Silva/views
-@dirrm %%ZOPEPRODUCTDIR%%/Silva/www
-@dirrm %%ZOPEPRODUCTDIR%%/Silva
+@dirrm %%ZOPEPRODUCTDIR%%/Sprout/doc/licenses
+@dirrm %%ZOPEPRODUCTDIR%%/Sprout/doc
+@dirrm %%ZOPEPRODUCTDIR%%/Sprout/src/sprout/saxext/tests
+@dirrm %%ZOPEPRODUCTDIR%%/Sprout/src/sprout/saxext
+@dirrm %%ZOPEPRODUCTDIR%%/Sprout/src/sprout/tests
+@dirrm %%ZOPEPRODUCTDIR%%/Sprout/src/sprout
+@dirrm %%ZOPEPRODUCTDIR%%/Sprout/src
+@dirrm %%ZOPEPRODUCTDIR%%/Sprout
+@dirrm %%ZOPEPRODUCTDIR%%/SilvaMetadata/Extensions
+@dirrm %%ZOPEPRODUCTDIR%%/SilvaMetadata/tests/data
+@dirrm %%ZOPEPRODUCTDIR%%/SilvaMetadata/tests
+@dirrm %%ZOPEPRODUCTDIR%%/SilvaMetadata/ui
+@dirrm %%ZOPEPRODUCTDIR%%/SilvaMetadata/www
+@dirrm %%ZOPEPRODUCTDIR%%/SilvaMetadata
+@dirrm %%ZOPEPRODUCTDIR%%/SilvaDocument/i18n
 @dirrm %%ZOPEPRODUCTDIR%%/SilvaDocument/silvaxml
 @dirrm %%ZOPEPRODUCTDIR%%/SilvaDocument/tests/data
 @dirrm %%ZOPEPRODUCTDIR%%/SilvaDocument/tests
@@ -1403,6 +1411,8 @@
 @dirrm %%ZOPEPRODUCTDIR%%/SilvaDocument/views/edit/VersionedContent/Document
 @dirrm %%ZOPEPRODUCTDIR%%/SilvaDocument/views/edit/VersionedContent
 @dirrm %%ZOPEPRODUCTDIR%%/SilvaDocument/views/edit
+@dirrm %%ZOPEPRODUCTDIR%%/SilvaDocument/views/public/Document/preview
+@dirrm %%ZOPEPRODUCTDIR%%/SilvaDocument/views/public/Document/view
 @dirrm %%ZOPEPRODUCTDIR%%/SilvaDocument/views/public/Document
 @dirrm %%ZOPEPRODUCTDIR%%/SilvaDocument/views/public
 @dirrm %%ZOPEPRODUCTDIR%%/SilvaDocument/views
@@ -1536,22 +1546,78 @@
 @dirrm %%ZOPEPRODUCTDIR%%/SilvaDocument/widgets
 @dirrm %%ZOPEPRODUCTDIR%%/SilvaDocument/www
 @dirrm %%ZOPEPRODUCTDIR%%/SilvaDocument
-@dirrm %%ZOPEPRODUCTDIR%%/SilvaMetadata/Extensions/.svn/prop-base
-@dirrm %%ZOPEPRODUCTDIR%%/SilvaMetadata/Extensions/.svn/props
-@dirrm %%ZOPEPRODUCTDIR%%/SilvaMetadata/Extensions/.svn/text-base
-@dirrm %%ZOPEPRODUCTDIR%%/SilvaMetadata/Extensions/.svn/wcprops
-@dirrm %%ZOPEPRODUCTDIR%%/SilvaMetadata/Extensions/.svn
-@dirrm %%ZOPEPRODUCTDIR%%/SilvaMetadata/Extensions
-@dirrm %%ZOPEPRODUCTDIR%%/SilvaMetadata/tests/data
-@dirrm %%ZOPEPRODUCTDIR%%/SilvaMetadata/tests
-@dirrm %%ZOPEPRODUCTDIR%%/SilvaMetadata/ui
-@dirrm %%ZOPEPRODUCTDIR%%/SilvaMetadata/www
-@dirrm %%ZOPEPRODUCTDIR%%/SilvaMetadata
-@dirrm %%ZOPEPRODUCTDIR%%/Sprout/doc/licenses
-@dirrm %%ZOPEPRODUCTDIR%%/Sprout/doc
-@dirrm %%ZOPEPRODUCTDIR%%/Sprout/src/sprout/saxext/tests
-@dirrm %%ZOPEPRODUCTDIR%%/Sprout/src/sprout/saxext
-@dirrm %%ZOPEPRODUCTDIR%%/Sprout/src/sprout/tests
-@dirrm %%ZOPEPRODUCTDIR%%/Sprout/src/sprout
-@dirrm %%ZOPEPRODUCTDIR%%/Sprout/src
-@dirrm %%ZOPEPRODUCTDIR%%/Sprout
+@dirrm %%ZOPEPRODUCTDIR%%/Silva/Extensions
+@dirrm %%ZOPEPRODUCTDIR%%/Silva/adapters
+@dirrm %%ZOPEPRODUCTDIR%%/Silva/default
+@dirrm %%ZOPEPRODUCTDIR%%/Silva/doc
+@dirrm %%ZOPEPRODUCTDIR%%/Silva/globals
+@dirrm %%ZOPEPRODUCTDIR%%/Silva/i18n
+@dirrm %%ZOPEPRODUCTDIR%%/Silva/layout
+@dirrm %%ZOPEPRODUCTDIR%%/Silva/resources
+@dirrm %%ZOPEPRODUCTDIR%%/Silva/silvaxml
+@dirrm %%ZOPEPRODUCTDIR%%/Silva/tests/data
+@dirrm %%ZOPEPRODUCTDIR%%/Silva/tests/layout_test1/template
+@dirrm %%ZOPEPRODUCTDIR%%/Silva/tests/layout_test1
+@dirrm %%ZOPEPRODUCTDIR%%/Silva/tests/layout_test2/template
+@dirrm %%ZOPEPRODUCTDIR%%/Silva/tests/layout_test2
+@dirrm %%ZOPEPRODUCTDIR%%/Silva/tests/test_image_data
+@dirrm %%ZOPEPRODUCTDIR%%/Silva/tests
+@dirrm %%ZOPEPRODUCTDIR%%/Silva/transform/renderer
+@dirrm %%ZOPEPRODUCTDIR%%/Silva/transform
+@dirrm %%ZOPEPRODUCTDIR%%/Silva/utils
+@dirrm %%ZOPEPRODUCTDIR%%/Silva/views/add/AutoTOC
+@dirrm %%ZOPEPRODUCTDIR%%/Silva/views/add/File
+@dirrm %%ZOPEPRODUCTDIR%%/Silva/views/add/Folder
+@dirrm %%ZOPEPRODUCTDIR%%/Silva/views/add/Ghost
+@dirrm %%ZOPEPRODUCTDIR%%/Silva/views/add/GhostFolder
+@dirrm %%ZOPEPRODUCTDIR%%/Silva/views/add/Groups/Group
+@dirrm %%ZOPEPRODUCTDIR%%/Silva/views/add/Groups/IPGroup
+@dirrm %%ZOPEPRODUCTDIR%%/Silva/views/add/Groups/VirtualGroup
+@dirrm %%ZOPEPRODUCTDIR%%/Silva/views/add/Groups
+@dirrm %%ZOPEPRODUCTDIR%%/Silva/views/add/Image
+@dirrm %%ZOPEPRODUCTDIR%%/Silva/views/add/Indexer
+@dirrm %%ZOPEPRODUCTDIR%%/Silva/views/add/Link
+@dirrm %%ZOPEPRODUCTDIR%%/Silva/views/add/Publication
+@dirrm %%ZOPEPRODUCTDIR%%/Silva/views/add/SimpleContent
+@dirrm %%ZOPEPRODUCTDIR%%/Silva/views/add
+@dirrm %%ZOPEPRODUCTDIR%%/Silva/views/edit/Asset/File
+@dirrm %%ZOPEPRODUCTDIR%%/Silva/views/edit/Asset/Groups/Group
+@dirrm %%ZOPEPRODUCTDIR%%/Silva/views/edit/Asset/Groups/IPGroup
+@dirrm %%ZOPEPRODUCTDIR%%/Silva/views/edit/Asset/Groups/VirtualGroup
+@dirrm %%ZOPEPRODUCTDIR%%/Silva/views/edit/Asset/Groups
+@dirrm %%ZOPEPRODUCTDIR%%/Silva/views/edit/Asset/Image
+@dirrm %%ZOPEPRODUCTDIR%%/Silva/views/edit/Asset
+@dirrm %%ZOPEPRODUCTDIR%%/Silva/views/edit/Container/Folder
+@dirrm %%ZOPEPRODUCTDIR%%/Silva/views/edit/Container/GhostFolder
+@dirrm %%ZOPEPRODUCTDIR%%/Silva/views/edit/Container/Publication
+@dirrm %%ZOPEPRODUCTDIR%%/Silva/views/edit/Container
+@dirrm %%ZOPEPRODUCTDIR%%/Silva/views/edit/Content/AutoTOC
+@dirrm %%ZOPEPRODUCTDIR%%/Silva/views/edit/Content/Indexer
+@dirrm %%ZOPEPRODUCTDIR%%/Silva/views/edit/Content/SimpleContent
+@dirrm %%ZOPEPRODUCTDIR%%/Silva/views/edit/Content
+@dirrm %%ZOPEPRODUCTDIR%%/Silva/views/edit/Member/SimpleMember
+@dirrm %%ZOPEPRODUCTDIR%%/Silva/views/edit/Member
+@dirrm %%ZOPEPRODUCTDIR%%/Silva/views/edit/VersionedContent/Ghost
+@dirrm %%ZOPEPRODUCTDIR%%/Silva/views/edit/VersionedContent/Link
+@dirrm %%ZOPEPRODUCTDIR%%/Silva/views/edit/VersionedContent
+@dirrm %%ZOPEPRODUCTDIR%%/Silva/views/edit
+@dirrm %%ZOPEPRODUCTDIR%%/Silva/views/public/AutoTOC/preview
+@dirrm %%ZOPEPRODUCTDIR%%/Silva/views/public/AutoTOC/view
+@dirrm %%ZOPEPRODUCTDIR%%/Silva/views/public/AutoTOC
+@dirrm %%ZOPEPRODUCTDIR%%/Silva/views/public/File
+@dirrm %%ZOPEPRODUCTDIR%%/Silva/views/public/Folder/preview
+@dirrm %%ZOPEPRODUCTDIR%%/Silva/views/public/Folder/view
+@dirrm %%ZOPEPRODUCTDIR%%/Silva/views/public/Folder
+@dirrm %%ZOPEPRODUCTDIR%%/Silva/views/public/Ghost/preview
+@dirrm %%ZOPEPRODUCTDIR%%/Silva/views/public/Ghost/view
+@dirrm %%ZOPEPRODUCTDIR%%/Silva/views/public/Ghost
+@dirrm %%ZOPEPRODUCTDIR%%/Silva/views/public/Image/preview
+@dirrm %%ZOPEPRODUCTDIR%%/Silva/views/public/Image/view
+@dirrm %%ZOPEPRODUCTDIR%%/Silva/views/public/Image
+@dirrm %%ZOPEPRODUCTDIR%%/Silva/views/public/Indexer
+@dirrm %%ZOPEPRODUCTDIR%%/Silva/views/public/Link
+@dirrm %%ZOPEPRODUCTDIR%%/Silva/views/public/SimpleContent
+@dirrm %%ZOPEPRODUCTDIR%%/Silva/views/public
+@dirrm %%ZOPEPRODUCTDIR%%/Silva/views
+@dirrm %%ZOPEPRODUCTDIR%%/Silva/www
+@dirrm %%ZOPEPRODUCTDIR%%/Silva

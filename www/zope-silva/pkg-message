@@ -1,4 +1,4 @@
-Silva 1.1, SilvaDocument 1.1, SilvaMetadata 0.8, Sprout 0.5 are now installed. 
+Silva 1.2, SilvaDocument 1.2, SilvaMetadata 0.8, Sprout 0.6.1 are installed. 
 
     - Restart Zope.  This may be done from the Zope Control Panel.
 
@@ -6,3 +6,6 @@ Silva 1.1, SilvaDocument 1.1, SilvaMetadata 0.8, Sprout 0.5 are now installed.
       properly by examining them in Control_Panel/Products.
 
     - Try adding a "Silva Root" via the Zope Management Interface.
+
+    - If updating, see: http://www.infrae.com/download/Silva/HISTORY.txt
+-----------------------------------------------------------------------------
