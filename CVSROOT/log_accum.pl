@@ -54,6 +54,14 @@ $MAILADDRS = 'cvs-committers@FreeBSD.org cvs-all@FreeBSD.org';
 $MAILBANNER = "";
 
 
+# Location of temporary directory.
+$TMPDIR = "/tmp/";
+
+
+# The file prefix used for the temporary files.
+$FILE_PREFIX = "#cvs.files";
+
+
 #-------------------------------------------------------
 # FreeBSD site localisation
 # Remember to comment out if using for other purposes.
@@ -80,16 +88,16 @@ $STATE_ADDED   = 2;
 $STATE_REMOVED = 3;
 $STATE_LOG     = 4;
 
-$FILE_PREFIX   = "#cvs.files";
-$LAST_FILE     = "/tmp/#cvs.files.lastdir";
-$CHANGED_FILE  = "/tmp/#cvs.files.changed";
-$ADDED_FILE    = "/tmp/#cvs.files.added";
-$REMOVED_FILE  = "/tmp/#cvs.files.removed";
-$LOG_FILE      = "/tmp/#cvs.files.log";
-$SUMMARY_FILE  = "/tmp/#cvs.files.summary";
-$MAIL_FILE     = "/tmp/#cvs.files.mail";
-$SUBJ_FILE     = "/tmp/#cvs.files.subj";
-$TAGS_FILE     = "/tmp/#cvs.files.tags";
+$BASE_FN       = "$TMPDIR/$FILE_PREFIX";
+$LAST_FILE     = "$BASE_FN.lastdir";
+$CHANGED_FILE  = "$BASE_FN.changed";
+$ADDED_FILE    = "$BASE_FN.added";
+$REMOVED_FILE  = "$BASE_FN.removed";
+$LOG_FILE      = "$BASE_FN.log";
+$SUMMARY_FILE  = "$BASE_FN.summary";
+$MAIL_FILE     = "$BASE_FN.mail";
+$SUBJ_FILE     = "$BASE_FN.subj";
+$TAGS_FILE     = "$BASE_FN.tags";
 
 $X_BRANCH_HDR  = "X-FreeBSD-CVS-Branch:";
 
