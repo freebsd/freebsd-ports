@@ -1,0 +1,34 @@
+#!/bin/sh
+#
+# $FreeBSD$
+#
+
+ECHO_CMD=echo
+GREP=/usr/bin/grep
+ID=/usr/bin/id
+PW=/usr/sbin/pw
+FTPUSERS=/etc/ftpusers
+
+case $2 in
+PRE-INSTALL)
+  if ! ${ID} -u gnats >/dev/null 2>&1; then
+    if ${PW} add user -n gnats -u 61 -g 1 -d ${PKG_PREFIX}/share/gnats \
+        -c "GNATS database owner" -p "*"; then
+      ${GREP} -qs '^gnats$' ${FTPUSERS} || ${ECHO_CMD} gnats >>/etc/ftpusers
+    else
+      ${ECHO_CMD}
+      ${ECHO_CMD} "The FreeBSD standard userid for gnats is 61, but this system"
+      ${ECHO_CMD} "has already a different account with this userid: \``${ID} -un 61`'"
+      ${ECHO_CMD}
+      ${ECHO_CMD} "You can either delete this account (which may be dangerous) with"
+      ${ECHO_CMD} "  ${PW} userdel -u 61"
+      ${ECHO_CMD} "or add the gnats user with an other userid with"
+      ${ECHO_CMD} "  ${PW} useradd -n gnats -g 1 \\"
+      ${ECHO_CMD} "  -d ${PKG_PREFIX}/share/gnats -c 'GNATS database owner' -p '*'"        
+      ${ECHO_CMD} "and retry installing this package"
+      ${ECHO_CMD}
+      exit 1
+    fi
+  fi
+  ;;
+esac

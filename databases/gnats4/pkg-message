@@ -1,0 +1,13 @@
+************************************************************
+
+GNATS has been successfully installed.
+
+Run
+  su gnats %%PREFIX%%/libexec/gnats/mkdb default
+to create the default database.
+
+Try "man gnats" or "info gnats" or the online manual at
+  <http://www.gnu.org/software/gnats/gnats_toc.html>
+for more information
+
+************************************************************

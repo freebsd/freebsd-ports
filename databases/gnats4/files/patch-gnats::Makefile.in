@@ -1,0 +1,13 @@
+--- gnats/Makefile.in.orig	Sun Jul 27 01:23:17 2003
++++ gnats/Makefile.in	Fri Aug 22 18:41:18 2003
+@@ -371,7 +371,9 @@
+         else \
+ 	  echo "*** Warning: Must chown $(GNATS_USER) $(datadir)/gnats" ; \
+ 	fi
+-	$(INSTALL_DATA) $(srcdir)/gnats.el $(lispdir)/gnats.el
++	@if [ x"$(lispdir)" != x ]; then \
++	  $(INSTALL_DATA) $(srcdir)/gnats.el $(lispdir)/gnats.el ; \
++	fi
+ 	for i in categories submitters responsible gnatsd.user_access addresses states classes dbconfig ; do \
+ 	    if [ -f "$$i" ] ; then \
+ 		$(INSTALL_DATA) $$i $(sysconfdir)/gnats/defaults/$$i ; \

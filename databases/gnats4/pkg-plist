@@ -1,0 +1,37 @@
+@comment $FreeBSD$
+bin/edit-pr
+bin/getclose
+bin/install-sid
+bin/query-pr
+bin/send-pr
+etc/gnats/databases
+etc/gnats/defaults/addresses
+etc/gnats/defaults/categories
+etc/gnats/defaults/classes
+etc/gnats/defaults/dbconfig
+etc/gnats/defaults/gnatsd.user_access
+etc/gnats/defaults/responsible
+etc/gnats/defaults/states
+etc/gnats/defaults/submitters
+etc/gnats/gnatsd.host_access
+@dirrm etc/gnats/defaults
+@dirrm etc/gnats
+libexec/gnats/at-pr
+libexec/gnats/check-db
+libexec/gnats/delete-pr
+libexec/gnats/diff-prs
+libexec/gnats/file-pr
+libexec/gnats/gen-index
+libexec/gnats/gnats-pwconv
+libexec/gnats/gnatsd
+libexec/gnats/mail-agent
+libexec/gnats/mail-query
+libexec/gnats/mkcat
+libexec/gnats/mkdb
+libexec/gnats/pr-age
+libexec/gnats/pr-edit
+libexec/gnats/queue-pr
+libexec/gnats/rmcat
+@dirrm libexec/gnats
+%%EMACS_SITE_LISPDIR%%/gnats.el
+@unexec rmdir %D/share/gnats 2>/dev/null || true
