@@ -245,4 +245,13 @@ post-patch:
 	@${PERL} -pi -e 's|timestamp: %ld|timestamp: %d|g' \
 		${WRKSRC}/magick/xwindow.c
 
+post-install:
+.if defined(WITHOUT_IMAGEMAGICK_16BIT_PIXEL)
+	@${TOUCH} ${PREFIX}/lib/ImageMagick/modules-Q8/coders/.keep
+	@${TOUCH} ${PREFIX}/lib/ImageMagick/modules-Q8/filters/.keep
+.else
+	@${TOUCH} ${PREFIX}/lib/ImageMagick/modules-Q16/coders/.keep
+	@${TOUCH} ${PREFIX}/lib/ImageMagick/modules-Q16/filters/.keep
+.endif
+
 .include <bsd.port.mk>
