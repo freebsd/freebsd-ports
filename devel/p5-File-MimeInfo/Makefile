@@ -7,6 +7,7 @@
 
 PORTNAME=	File-MimeInfo
 PORTVERSION=	0.10
+PORTREVISION=	1
 CATEGORIES=	devel perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	../../authors/id/P/PA/PARDUS/${PORTNAME}
@@ -15,7 +16,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	rafan@infor.org
 COMMENT=	Determine file type
 
-BUILD_DEPENDS=	${SITE_PERL}/File/BaseDir.pm:${PORTSDIR}/devel/p5-File-BaseDir
+BUILD_DEPENDS=	${SITE_PERL}/File/BaseDir.pm:${PORTSDIR}/devel/p5-File-BaseDir\
+		${LOCALBASE}/share/mime/magic:${PORTSDIR}/misc/shared-mime-info
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
