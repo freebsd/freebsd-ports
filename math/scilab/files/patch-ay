@@ -1,0 +1,11 @@
+--- routines/xsci/wf_fig.h	2003/01/25 17:23:40	1.1
++++ routines/xsci/wf_fig.h	2003/01/25 17:24:04
+@@ -48,7 +48,7 @@
+ #include <errno.h>
+ 
+ #ifndef linux 
+-#if !defined(__bsdi__) && !defined(__NetBSD__)
++#if !defined(__bsdi__) && !defined(__NetBSD__) && !defined(__FreeBSD__)
+ extern int	errno;
+ extern int	sys_nerr;
+ #if (! (defined(BSD) && (BSD >= 199306))) && !defined(freebsd)
