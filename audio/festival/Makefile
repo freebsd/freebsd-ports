@@ -13,19 +13,8 @@ PORTREVISION=	1
 CATEGORIES=	audio accessibility
 MASTER_SITES=	${MASTER_SITE_FESTIVAL}
 MASTER_SITE_SUBDIR=	${PORTVERSION}
-.if defined (WITH_OGI)
-MASTER_SITES+=	${PATCH_SITES}
-PATCH_SITES=	${MASTER_SITE_FESTIVAL_OGI}
-.endif
 DISTFILES=	${DISTNAME}.tar.gz \
 		speech_tools-1.2.1.tar.gz
-.if defined (WITH_OGI)
-DISTFILES+=	OGIresLPC-2.0.4.tar.gz
-.endif
-
-.if defined (WITH_OGI)
-PATCHFILES=	OGIfestpatch-${PORTVERSION}.tar.gz
-.endif
 
 MAINTAINER=	trevor@FreeBSD.org
 COMMENT=	Multi-lingual speech synthesis system
@@ -36,16 +25,9 @@ LIB_DEPENDS=	audio.2:${PORTSDIR}/audio/nas \
 DIST_SUBDIR=	festival
 
 EXTRA_PATCHES=	${PATCHDIR}/extra-patch-aa
-.if defined (WITH_OGI)
-EXTRA_PATCHES=	${PATCHDIR}/extra-patch-aa-ogi
-RESTRICTED=	no-commercial-use
-.endif
 
 FESTIVAL_ARCH=	${MACHINE_ARCH:S/i386/ix86/}
 USE_GCC=	2.95
-.if defined (WITH_OGI)
-PLIST=		${WRKDIR}/pkg-plist
-.endif
 
 WRKSRC=		${WRKDIR}
 
@@ -76,24 +58,6 @@ MAKE_ENV+=	PKG_EST_HOME=${SPEECHTOOLS} \
 
 MAN1=		festival.1 festival_client.1
 
-.if defined (WITH_OGI)
-post-extract:
-	@${GUNZIP_CMD} -dc ${DISTDIR}/${DIST_SUBDIR}/OGIfestpatch-${PORTVERSION}.tar.gz \
-	| ${TAR} -C ${WRKSRC} -xf -
-.endif
-
-.if !defined(WITH_OGI)
-pre-fetch:
-	@${ECHO}
-	@${ECHO_MSG} "********************************************************"
-	@${ECHO_MSG} "* To build this port with the OGI enhancements, define *"
-	@${ECHO_MSG} "* \"WITH_OGI\" and restart the build.  The license for *"
-	@${ECHO_MSG} "* the OGI materials prohibits commercial use, but they *"
-	@${ECHO_MSG} "* are required by some of the voices.                  *"
-	@${ECHO_MSG} "********************************************************"
-	@${ECHO}
-.endif
-
 pre-patch:
 	${CP} ${SPEECHTOOLS}/config/config-dist ${SPEECHTOOLS}/config/config &&\
 		${CHMOD} u+w ${SPEECHTOOLS}/config/config
@@ -122,11 +86,6 @@ post-patch:
 	${SPEECHTOOLS}/config/systems/${FESTIVAL_ARCH}_FreeBSD${ii}.${jj}.mak
 .endfor
 .endfor
-
-pre-install:
-.if defined (WITH_OGI)
-	${CAT} ${PKGDIR}/pkg-plist-ogi ${PKGDIR}/pkg-plist > ${PLIST}
-.endif
 
 do-install:
 	${MKDIR} ${FHOME}/lib/voices/english/
