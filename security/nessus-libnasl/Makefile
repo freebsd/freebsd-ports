@@ -27,6 +27,7 @@ DIST_SUBDIR=	nessus
 WRKSRC=		${WRKDIR}/libnasl
 
 USE_LIBTOOL=	YES
+INSTALLS_SHLIB=	YES
 
 MAN1=		nasl.1 nasl-config.1
 
