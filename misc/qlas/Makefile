@@ -12,6 +12,7 @@ MASTER_SITES=	http://lev.serebryakov.spb.ru/download/qlas/
 
 MAINTAINER=	dsh@vlink.ru
 
+USE_PERL5=	yes
 NO_WRKSUBDIR=	yes
 NO_BUILD=	yes
 
