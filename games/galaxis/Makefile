@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	galaxis
-PORTVERSION=	1.5
+PORTVERSION=	1.6
 CATEGORIES=	games
 MASTER_SITES=	http://www.catb.org/~esr/galaxis/
 
