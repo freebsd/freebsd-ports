@@ -15,7 +15,7 @@
     SUBDIR += bubblemon-dockapp
     SUBDIR += cd-write
     SUBDIR += cd9660_unicode
-    SUBDIR += cdrecord
+    SUBDIR += cdrtools
     SUBDIR += cfengine
     SUBDIR += checkservice
     SUBDIR += clockspeed
