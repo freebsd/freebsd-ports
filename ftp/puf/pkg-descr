@@ -4,4 +4,4 @@ GNU wget (and has a partly compatible command line), but has the
 ability to do many downloads in parallel. This is very interesting,
 if you have a high-bandwidth internet connection. 
 
-WWW: http://www.inf.tu-dresden.de/~ob6/sw/puf.html
+WWW: http://puf.sourceforge.net/
