@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	uuid
-PORTVERSION=	0.9.7
+PORTVERSION=	1.0.0
 CATEGORIES=	misc devel
 MASTER_SITES=	ftp://ftp.ossp.org/pkg/lib/${PORTNAME}/
 PKGNAMEPREFIX=	ossp-
