@@ -1,7 +1,7 @@
 $FreeBSD$
 
---- Makefile.orig	Thu Dec  4 08:55:02 2003
-+++ Makefile	Tue Mar 30 16:31:45 2004
+--- Makefile.orig	Fri Dec 19 09:39:10 2003
++++ Makefile	Thu Aug  5 14:57:44 2004
 @@ -1,20 +1,19 @@
  PROJECT = powerman
  VERSION = $(shell perl -ne 'print,exit if s/^\s*VERSION:\s*(\S*).*/\1/i' META)
@@ -22,22 +22,21 @@ $FreeBSD$
 +prefix		=	${PREFIX}
  exec_prefix	=	${prefix}
  bindir		=	${exec_prefix}/bin
- sbindir		= 	${exec_prefix}/sbin
+-sbindir		= 	${exec_prefix}/sbin
 -mandir		=	$(prefix)/man
 -etcdir		=	/etc
++sbindir		=	${exec_prefix}/sbin
 +mandir		=	${prefix}/man
 +etcdir		=	${prefix}/etc
  packagedir	=	${etcdir}/${PROJECT}
  
  all: progs tests
-@@ -26,40 +25,39 @@
+@@ -26,38 +25,38 @@
  	$(MAKE) -C test
  
  install: all
 -	$(mkinstalldirs) 			$(DESTDIR)$(bindir)
 -	$(INSTALL) src/powerman			$(DESTDIR)$(bindir)/
--	ln -s $(bindir)/powerman		$(DESTDIR)$(bindir)/off
--	ln -s $(bindir)/powerman		$(DESTDIR)$(bindir)/on
 -	ln -s $(bindir)/powerman		$(DESTDIR)$(bindir)/pm
 -	$(mkinstalldirs) 			$(DESTDIR)$(sbindir)
 -	$(INSTALL) src/powermand		$(DESTDIR)$(sbindir)/
@@ -68,12 +67,10 @@ $FreeBSD$
 -	$(INSTALL) -m 644 man/powerman-devices.7 $(DESTDIR)$(mandir)/man7
 -	$(mkinstalldirs) 			$(DESTDIR)/etc/rc.d/init.d
 -	$(INSTALL) -m 755 scripts/powerman.init $(DESTDIR)/etc/rc.d/init.d/powerman
-+	$(mkinstalldirs) 				$(bindir)
++	$(mkinstalldirs)				$(bindir)
 +	${BSD_INSTALL_PROGRAM} src/powerman		$(bindir)/
-+	ln -s $(bindir)/powerman			$(bindir)/off
-+	ln -s $(bindir)/powerman			$(bindir)/on
 +	ln -s $(bindir)/powerman			$(bindir)/pm
-+	$(mkinstalldirs) 				$(sbindir)
++	$(mkinstalldirs)				$(sbindir)
 +	${BSD_INSTALL_PROGRAM} src/powermand		$(sbindir)/
 +	$(mkinstalldirs)				$(packagedir)
 +	${BSD_INSTALL_DATA} etc/baytech.dev		$(packagedir)
@@ -85,7 +82,7 @@ $FreeBSD$
 +	${BSD_INSTALL_DATA} etc/wti-rps10.dev		$(packagedir)
 +	${BSD_INSTALL_DATA} etc/apc.dev			$(packagedir)
 +	${BSD_INSTALL_DATA} etc/apcnew.dev		$(packagedir)
-+#	$(INSTALL) etc/vicebox.dev		$(packagedir)
++#	${BSD_INSTALL_DATA} etc/vicebox.dev		$(packagedir)
 +	${BSD_INSTALL_DATA} etc/vpc.dev			$(packagedir)
 +	${BSD_INSTALL_DATA} etc/ibmh8.dev		$(packagedir)
 +	${BSD_INSTALL_DATA} etc/phantom.dev		$(packagedir)
@@ -95,10 +92,11 @@ $FreeBSD$
 +	${BSD_INSTALL_DATA} etc/ipmipower.dev		$(packagedir)
 +	$(mkinstalldirs)				$(mandir)/man1
 +	${BSD_INSTALL_DATA} man/powerman.1		$(mandir)/man1
++	$(mkinstalldirs)				$(mandir)/man8
 +	${BSD_INSTALL_DATA} man/powermand.1		$(mandir)/man8/powermand.8
-+	$(mkinstalldirs) 				$(mandir)/man5
++	$(mkinstalldirs)				$(mandir)/man5
 +	${BSD_INSTALL_DATA} man/powerman.conf.5		$(mandir)/man5
-+	$(mkinstalldirs) 				$(mandir)/man7
++	$(mkinstalldirs)				$(mandir)/man7
 +	${BSD_INSTALL_DATA} man/powerman-devices.7	$(mandir)/man7
 +	${BSD_INSTALL_SCRIPT} scripts/powerman.init	$(etcdir)/rc.d/powermand.sh
  
