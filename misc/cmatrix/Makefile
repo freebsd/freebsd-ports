@@ -10,7 +10,7 @@ PORTVERSION=	1.1b
 CATEGORIES=	misc
 MASTER_SITES=	http://www.asty.org/cmatrix/dist/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	leeym@cae.ce.ntu.edu.tw
 
 MAN1=		cmatrix.1
 
