@@ -5427,6 +5427,7 @@ py-zsi		ports/net/py-zsi
 py2html		ports/textproc/py2html
 pybench		ports/benchmarks/pybench
 pybliographer	ports/misc/pybliographer
+pybook		ports/textproc/pybook
 pychecker	ports/devel/pychecker
 pyching		ports/games/pyching
 pyfind		ports/sysutils/pyfind
