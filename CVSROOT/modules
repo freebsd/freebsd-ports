@@ -3844,6 +3844,7 @@ kahakai		ports/x11-wm/kahakai
 kalbum		ports/graphics/kalbum
 kallers		ports/comms/kallers
 kallery		ports/graphics/kallery
+kanatest	ports/games/kanatest
 kannel		ports/www/kannel
 kappdock	ports/x11-wm/kappdock
 kaptain		ports/devel/kaptain
