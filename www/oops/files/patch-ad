@@ -1,0 +1,52 @@
+--- configure.orig	Wed Dec 13 20:02:46 2000
++++ configure	Wed Dec 13 20:03:33 2000
+@@ -1476,49 +1476,11 @@
+   echo "$ac_t""no" 1>&6
+ fi
+ 
+-
+ pwd=`pwd`
+ LIBDB_NAME=-ldb
+ echo $ac_n "checking for libdb.a""... $ac_c" 1>&6
+ echo "configure:1484: checking for libdb.a" >&5
+-if test "X$LIBDB_PATH" != "X" ; then
+-    LIBDB_PATH=$LIBDB_PATH
+-elif test -r "/usr/local/BerkeleyDB/lib/libdb.a"; then
+-    LIBDB_PATH="/usr/local/BerkeleyDB"
+-elif test -r "/usr/local/BerkeleyDB.3.1/lib/libdb.a"; then
+-    LIBDB_PATH="/usr/local/BerkeleyDB.3.1"
+-elif test -r "/usr/local/BerkeleyDB.3.0/lib/libdb.lib"; then
+-    LIBDB_PATH="/usr/local/BerkeleyDB.3.0"
+-elif test -r "$pwd/libdb.a"; then
+-    LIBDB_PATH="$pwd"
+-elif test -r "/usr/local/lib/libdb.a"; then
+-    LIBDB_PATH="/usr/local"
+-elif test -r "/usr/lib/libdb2.a"; then                                         
+-    LIBDB_PATH="/usr"                                                          
+-    LIBDB_NAME=-ldb2                                                           
+-elif test -r "/usr/lib/libdb.a"; then
+-    LIBDB_PATH="/usr"
+-elif test -r "/usr/local/lib/libdb2.a"; then
+-    LIBDB_PATH="/usr/local"
+-    LIBDB_NAME=-ldb2
+-elif test -r "/usr/local/BerkeleyDB/lib/libdb.lib"; then
+-    LIBDB_PATH="/usr/local/BerkeleyDB"
+-    LIBDB_NAME=-llibdb
+-elif test -r "$pwd/libdb.lib"; then
+-    LIBDB_PATH="$pwd"
+-    LIBDB_NAME=-llibdb
+-elif test -r "/usr/local/lib/libdb.lib"; then
+-    LIBDB_PATH="/usr/local"
+-    LIBDB_NAME=-llibdb
+-elif test -r "/usr/lib/libdb.lib"; then
+-    LIBDB_PATH="/usr"
+-    LIBDB_NAME=-llibdb
+-elif test -r "/usr/local/lib/libdb2.lib"; then
+-    LIBDB_PATH="/usr/local"
+-    LIBDB_NAME=-llibdb2
+-else
+-    LIBDB_PATH="no"
+-fi
++LIBDB_PATH="no"
+ 
+ echo "$ac_t""$LIBDB_PATH" 1>&6

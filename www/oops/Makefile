@@ -21,12 +21,16 @@ CONFIGURE_ARGS=	--sbindir=${PREFIX}/sbin \
 		--libdir=${PREFIX}/libexec/oops \
 		--enable-oops-user=oops
 
+MAN8=		oops.8 oopsctl.8
+
 pre-install:
 	@PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
 
 .include <bsd.port.pre.mk>
 
 post-install:
+	@${INSTALL_MAN} ${WRKSRC}/doc/oops.8 ${PREFIX}/man/man8
+	@${INSTALL_MAN} ${WRKSRC}/doc/oopsctl.8 ${PREFIX}/man/man8
 	@PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 	@ ${ECHO} "------------------------------------------------------------"
 	@ ${ECHO} "Sample of configuration file placed at ${PREFIX}/etc/oops !"
