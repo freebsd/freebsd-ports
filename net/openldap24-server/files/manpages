@@ -1,3 +1,7 @@
+#
+# $FreeBSD$
+#
+
 MAN1+=	ldapcompare.1 \
 	ldapdelete.1 \
 	ldapmodify.1 \

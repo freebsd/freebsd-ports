@@ -1,46 +1,64 @@
-# New ports collection makefile for:    OpenLDAP 2.2
-# Date created:		20 Sep 1998
-# Whom:			Lachlan O'Dea
+# New ports collection makefile for:	openldap22-server
+# Date created:				10 Jul 2003
+# Whom:					Oliver Eikemeier
 #
 # $FreeBSD$
 #
 
-PORTNAME=	openldap
-PORTVERSION=	${OPENLDAP_VERSION}.a
-PORTREVISION=	2
-CATEGORIES=	net databases
-MASTER_SITES=	ftp://ftp.OpenLDAP.org/pub/OpenLDAP/%SUBDIR%/		\
-		http://public.planetmirror.com/pub/openldap/%SUBDIR%/	\
-		ftp://gd.tuwien.ac.at/infosys/network/OpenLDAP/%SUBDIR%/\
-		ftp://ftp.matrix.com.br/pub/openldap/%SUBDIR%/		\
-		ftp://ftp.ucr.ac.cr/pub/Unix/openldap/%SUBDIR%/		\
-		ftp://ftp.ntua.gr/mirror/OpenLDAP/%SUBDIR%/		\
-		ftp://ftp.dti.ad.jp/pub/net/OpenLDAP/%SUBDIR%/		\
-		ftp://ftp.holywar.net/pub/OpenLDAP/%SUBDIR%/		\
-		ftp://ftp.nl.uu.net/pub/unix/db/openldap/%SUBDIR%/	\
-		ftp://ftp.linux.pt/pub/mirrors/OpenLDAP/%SUBDIR%/	\
-		ftp://ftp.rediris.es/mirror/OpenLDAP/%SUBDIR%/	\
-		ftp://sunsite.cnlab-switch.ch/mirror/OpenLDAP/%SUBDIR%/	\
-		http://openldap.cdpa.nsysu.edu.tw/OpenLDAP/%SUBDIR%/	\
-		ftp://ftp.u-aizu.ac.jp/pub/net/openldap/%SUBDIR%/	\
-		ftp://ftp.plig.org/pub/OpenLDAP/%SUBDIR%/
+PORTNAME=		openldap
+PORTVERSION=		${OPENLDAP_VERSION}.a
+PORTREVISION=		${OPENLDAP_PORTVERSION}
+CATEGORIES=		net databases
+MASTER_SITES=		ftp://ftp.OpenLDAP.org/pub/OpenLDAP/%SUBDIR%/ \
+			http://public.planetmirror.com/pub/openldap/%SUBDIR%/ \
+			ftp://gd.tuwien.ac.at/infosys/network/OpenLDAP/%SUBDIR%/ \
+			ftp://ftp.matrix.com.br/pub/openldap/%SUBDIR%/ \
+			ftp://ftp.ucr.ac.cr/pub/Unix/openldap/%SUBDIR%/ \
+			ftp://ftp.ntua.gr/mirror/OpenLDAP/%SUBDIR%/ \
+			ftp://ftp.dti.ad.jp/pub/net/OpenLDAP/%SUBDIR%/ \
+			ftp://ftp.u-aizu.ac.jp/pub/net/openldap/%SUBDIR%/ \
+			ftp://ftp.holywar.net/pub/OpenLDAP/%SUBDIR%/ \
+			ftp://ftp.nl.uu.net/pub/unix/db/openldap/%SUBDIR%/ \
+			ftp://ftp.linux.pt/pub/mirrors/OpenLDAP/%SUBDIR%/ \
+			ftp://ftp.rediris.es/mirror/OpenLDAP/%SUBDIR%/ \
+			ftp://sunsite.cnlab-switch.ch/mirror/OpenLDAP/%SUBDIR%/ \
+			http://openldap.cdpa.nsysu.edu.tw/OpenLDAP/%SUBDIR%/ \
+			ftp://ftp.plig.org/pub/OpenLDAP/%SUBDIR%/
 MASTER_SITE_SUBDIR=	openldap-test
-DISTNAME=	openldap-${OPENLDAP_VERSION}alpha
-EXTRACT_SUFX=	.tgz
+PKGNAMESUFFIX=		${OPENLDAP_PKGNAMESUFFIX}
+DISTNAME=		openldap-${OPENLDAP_VERSION}alpha
+EXTRACT_SUFX=		.tgz
 
-MAINTAINER=	eikemeier@fillmore-labs.com
-COMMENT=	Open source LDAP client and server implementation
+MAINTAINER=		eikemeier@fillmore-labs.com
+COMMENT?=		Open source LDAP server implementation
 
 OPENLDAP_VERSION=	2.2.0
 
-CONFLICTS=		openldap*
+LATEST_LINK=		${PKGNAMEPREFIX}openldap22${PKGNAMESUFFIX}
+CONFLICTS=		${PKGNAMEPREFIX}${PORTNAME}${PKGNAMESUFFIX}-*
 
-LATEST_LINK=		openldap2
+WANT_OPENLDAP_VER?=	22
+.if ${WANT_OPENLDAP_VER} != 22
+BROKEN=			"incompatible OpenLDAP version: ${WANT_OPENLDAP_VER}"
+.endif
+
+.if defined(CLIENT_ONLY)
+OPENLDAP_PORTVERSION=	0
+OPENLDAP_PKGNAMESUFFIX?=-client
+OPENLDAP_PKGFILESUFX?=	.client
+.else
+OPENLDAP_PORTVERSION=	0
+OPENLDAP_PKGNAMESUFFIX?=-server
+OPENLDAP_PKGFILESUFX?=
+
+LIB_DEPENDS+=		ldap.2:${PORTSDIR}/net/openldap22-client
+.endif
 
 USE_OPENSSL=		yes
 USE_REINPLACE=		yes
 USE_LIBTOOL_VER=	14
 
+DESCR=			${PKGDIR}/pkg-descr${OPENLDAP_PKGFILESUFX}
 PLIST=			${WRKDIR}/pkg-plist
 PKGINSTALL=		${WRKDIR}/pkg-install
 PKGMESSAGE=		${WRKDIR}/pkg-message
@@ -48,41 +66,56 @@ PKGMESSAGE=		${WRKDIR}/pkg-message
 LOCALSTATEDIR?=		${DESTDIR}/var/db
 LDAP_RUN_DIR?=		${DESTDIR}/var/run/openldap
 
-WITH_BDB_VER?=		41
-
-CONFIGURE_ARGS=		--enable-dynamic \
-			--with-threads \
-			--with-tls=openssl
+PLIST_SUB+=		LOCALSTATEDIR=${LOCALSTATEDIR} \
+			LDAP_RUN_DIR=${LDAP_RUN_DIR}
 
 SED_SCRIPT=		-e 's,%%PREFIX%%,${PREFIX},g' \
 			-e 's,%%LDAP_RUN_DIR%%,${LDAP_RUN_DIR},g' \
 			-e 's,%%LOCALSTATEDIR%%,${LOCALSTATEDIR},g'
 
-.if defined(CLIENT_ONLY)
-PKGNAMESUFFIX=		-client
-CONFIGURE_ARGS+=	--disable-slapd
-PLIST_SUB+=		SERVER="@comment " \
-			SLAPI="@comment "
-SED_SCRIPT+=		-e '/^%%SERVER%%/d'
+CONFIGURE_ARGS=		--with-threads \
+			--with-tls=openssl \
+			--enable-dynamic
+
+.if defined(WITH_SASL)
+LIB_DEPENDS+=		sasl2.2:${PORTSDIR}/security/cyrus-sasl2
+CONFIGURE_ARGS+=	--with-cyrus-sasl
 .else
+CONFIGURE_ARGS+=	--without-cyrus-sasl
+.endif
+
+.if defined(CLIENT_ONLY)
+# client specific configuration
+
+CONFIGURE_ARGS+=	--disable-slapd
+
+INSTALLS_SHLIB=	yes
+
+.else
+# server specific configuration
+
+EXTRA_PATCHES+=		${FILESDIR}/extrapatch-Makefile.in
+
 CONFIGURE_ARGS+=	--localstatedir=${LOCALSTATEDIR} \
-			--enable-lmpasswd \
 			--enable-ldbm \
 			--with-ldbm-api=berkeley \
+			--enable-lmpasswd \
 			--enable-ldap \
 			--enable-meta \
 			--enable-rewrite \
 			--enable-null \
 			--enable-monitor
 
+WITH_BDB_VER?=		41
+
 .if ${WITH_BDB_VER} == 41
-LIB_DEPENDS=		db41.1:${PORTSDIR}/databases/db41
+LIB_DEPENDS+=		db41.1:${PORTSDIR}/databases/db41
 CONFIGURE_ARGS+=	--enable-bdb
 .elif ${WITH_BDB_VER} == 4
-LIB_DEPENDS=		db4.0:${PORTSDIR}/databases/db4
+LIB_DEPENDS+=		db4.0:${PORTSDIR}/databases/db4
 CONFIGURE_ARGS+=	--disable-bdb
 .elif ${WITH_BDB_VER} == 3
-LIB_DEPENDS=		db3.3:${PORTSDIR}/databases/db3
+LIB_DEPENDS+=		db3.3:${PORTSDIR}/databases/db3
 CONFIGURE_ARGS+=	--disable-bdb
 .else
 .error WITH_BDB_VER must be 3, 4 or 41
@@ -100,11 +133,7 @@ CONFIGURE_ARGS+=	--enable-perl
 .endif
 
 .if defined(WITH_SASL)
-LIB_DEPENDS+=		sasl2.2:${PORTSDIR}/security/cyrus-sasl2
-CONFIGURE_ARGS+=	--with-cyrus-sasl \
-			--enable-spasswd
-.else
-CONFIGURE_ARGS+=	--without-cyrus-sasl
+CONFIGURE_ARGS+=	--enable-spasswd
 .endif
 
 .if defined(WITH_ODBC)
@@ -125,12 +154,8 @@ PLIST_SUB+=		SLAPI="@comment "
 CONFIGURE_ARGS+=	--enable-wrappers
 .endif
 
-PLIST_SUB+=		SERVER=""
-SED_SCRIPT+=		-e '/^%%SERVER%%/s,,,'
+# end of client/server specific configuration
 .endif
-
-PLIST_SUB+=		LOCALSTATEDIR=${LOCALSTATEDIR} \
-			LDAP_RUN_DIR=${LDAP_RUN_DIR}
 
 # math.h uses _REENTRANT and stdio.h uses _THREAD_SAFE, so define both.
 CPPFLAGS+=		-D_REENTRANT ${PTHREAD_CFLAGS} \
@@ -142,23 +167,28 @@ CONFIGURE_ENV=		CPPFLAGS="${CPPFLAGS}" \
 			LDFLAGS="${LDFLAGS}" \
 			LIBS="${LIBS}"
 
-INSTALLS_SHLIB=	yes
-
 .include <bsd.port.pre.mk>
+
+.if defined(CLIENT_ONLY)
 .include "${FILESDIR}/manpages"
+.endif
 
 pre-everything::
 	@${ECHO} "============================================================="
 	@${ECHO}
 	@${ECHO} "You can build ${PKGNAME} with the following options:"
 	@${ECHO}
+.if defined(CLIENT_ONLY)
+	@${ECHO} "WITH_SASL             with (Cyrus) SASL2 support"
+.else
 	@${ECHO} "WITH_BDB_VER          select BerkeleyDB version (default 4.1)"
-	@${ECHO} "WITH_SASL             with SASL2 authorization"
+	@${ECHO} "WITH_SASL             with (Cyrus) SASL2 password verification"
 	@${ECHO} "WITH_PERL             with Perl backend"
 	@${ECHO} "WITH_SHELL            with Shell backend"
 	@${ECHO} "WITH_ODBC             with SQL backend"
 	@${ECHO} "WITH_SLAPI            with Netscape SLAPI plugin API
 	@${ECHO} "WITHOUT_TCP_WRAPPERS  without tcp wrapper support"
+.endif
 	@${ECHO}
 	@${ECHO} "============================================================="
 	@${ECHO}
@@ -168,7 +198,7 @@ post-patch:
 		${WRKSRC}/servers/slapd/slapd.conf
 
 pre-configure:
-	@${REINPLACE_CMD} -e '/^LIBTOOL=/s^\$$(top_builddir)/libtool^${LIBTOOL}^g' \
+	@${REINPLACE_CMD} -e '/^LIBTOOL=/s,\$$(top_builddir)/libtool,${LIBTOOL},g' \
 		${WRKSRC}/configure
 
 post-build:
@@ -176,11 +206,21 @@ post-build:
 	@${SED} ${SED_SCRIPT} ${FILESDIR}/${script} >${WRKDIR}/${script}
 .endfor
 .for text in pkg-install pkg-message
-	@${SED} ${SED_SCRIPT} ${.CURDIR}/${text} >${WRKDIR}/${text}
+	@if [ -f ${MASTERDIR}/${text}${OPENLDAP_PKGFILESUFX} ]; then \
+		${SED} ${SED_SCRIPT} ${MASTERDIR}/${text}${OPENLDAP_PKGFILESUFX} \
+		>${WRKDIR}/${text}; \
+	fi
 .endfor
 
+.if !defined(CLIENT_ONLY)
+test: build
+	@cd ${BUILD_WRKSRC}; ${SETENV} ${MAKE_ENV} \
+		${MAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} test
+.endif
+
 pre-install:
-	@${CP} ${.CURDIR}/pkg-plist ${PLIST}
+	@${CP} ${MASTERDIR}/pkg-plist${OPENLDAP_PKGFILESUFX} ${PLIST}
+.if defined(CLIENT_ONLY)
 .if !defined(NOPORTDOCS)
 	@for dir in rfc drafts; do \
 		${FIND} ${WRKSRC}/doc/$${dir} -maxdepth 1 -type f \
@@ -190,12 +230,10 @@ pre-install:
 	done
 	@${ECHO_CMD} "@dirrm %%DOCSDIR%%" >>${PLIST}
 .endif
+.endif
 
 post-install:
-.if !defined(CLIENT_ONLY)
-	@${INSTALL_SCRIPT} ${WRKDIR}/slapd.sh ${WRKDIR}/slurpd.sh ${PREFIX}/etc/rc.d
-	@${MKDIR} ${LDAP_RUN_DIR}
-.endif
+.if defined(CLIENT_ONLY)
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 	@for dir in rfc drafts; do \
@@ -204,6 +242,13 @@ post-install:
 			-exec ${INSTALL_DATA} {} ${DOCSDIR}/$${dir} \; ; \
 	done
 .endif
+.else
+.for script in slapd.sh slurpd.sh
+	@${INSTALL_SCRIPT} ${WRKDIR}/${script} ${PREFIX}/etc/rc.d/${script}
+.endfor
+	@${MKDIR} ${LDAP_RUN_DIR}
+.endif
 	@${CAT} ${PKGMESSAGE}
 
+.include "${.CURDIR}/../openldap20-server/bsd.openldap.mk"
 .include <bsd.port.post.mk>

@@ -1,0 +1,11 @@
+#!/bin/sh
+#
+# $FreeBSD$
+#
+if [ X"$2" != X"POST-INSTALL" ]; then
+    exit 0;
+fi
+
+mkdir -p "%%LDAP_RUN_DIR%%"
+mkdir -p -m 700 "%%LOCALSTATEDIR%%/openldap-ldbm"
+mkdir -p -m 700 "%%LOCALSTATEDIR%%/openldap-slurp"

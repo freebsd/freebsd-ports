@@ -2,47 +2,57 @@
 #
 # $FreeBSD$
 
-slapd_program=@@PREFIX@@/libexec/slapd
+slapd_program=%%PREFIX%%/libexec/slapd
 
-# Uncomment one of the following:
-#
-# IPv4 Only
-#slapd_args='-h ldap://0.0.0.0'
-#
-# IPv6 and IPv4
-#slapd_ags='-h "ldap://[::] ldap://0.0.0.0"'
-#
-# IPv6 Only
-#slapd_args='-h ldap://[::]'
-#
-# Add '-u ldap -g ldap' when you do not want to run
-# slapd as root
-#
+slapd_pidfile=%%LDAP_RUN_DIR%%/slapd.pid
+
+slapd_enable="YES"
+
 slapd_args=
 
-pidfile=@@LDAP_RUN_DIR@@/slapd.pid
+# Add the following lines to /etc/rc.conf to enable slapd:
+#
+#slapd_enable="YES"
+#slapd_args='-h "ldapi://%2fvar%2frun%2fopenldap%2fldapi/ ldap://0.0.0.0/"'
+#
+# See sldap(8) for details
+#
+# Create a user 'ldap' and add '-u ldap -g ldap' to slapd_args
+# if you want to run slapd as a non-privileged user (recommended)
+#
 
-case "$1" in
-start)
-    if [ -x ${slapd_program} ]; then
-	echo -n ' slapd'
-	eval ${slapd_program} ${slapd_args}
+# Suck in the configuration variables.
+if [ -r /etc/defaults/rc.conf ]; then
+    . /etc/defaults/rc.conf
+    source_rc_confs
+elif [ -r /etc/rc.conf ]; then
+    . /etc/rc.conf
+fi
 
-    fi
-    ;;
-stop)
-    if [ -f $pidfile ]; then
-	kill `cat $pidfile`
-	telnet localhost ldap </dev/null >/dev/null 2>&1
-	echo -n ' slapd'
-	rm $pidfile
-    else
-	echo ' slapd: not running'
-    fi
+case "$slapd_enable" in
+[Yy][Ee][Ss])
+    case "$1" in
+    start)
+        if [ -x ${slapd_program} ]; then
+            echo -n ' slapd'
+            eval ${slapd_program} ${slapd_args}
+        fi
+        ;;
+    stop)
+        if [ -f $slapd_pidfile ]; then
+            kill `cat $slapd_pidfile`
+            echo -n ' slapd'
+        else
+            echo ' slapd: not running'
+        fi
+        ;;
+    *)
+        echo "Usage: `basename $0` {start|stop}" >&2
+        exit 64
+        ;;
+    esac
     ;;
 *)
-    echo "Usage: `basename $0` {start|stop}" >&2
-    exit 64
     ;;
 esac
 

@@ -1,8 +1,26 @@
-The openldap21 port now creates a ldap user an a ldap group.
+************************************************************
 
-If you use slapadd as root to populate your ldap Database please
-remember to chown the database directories and containing files
-to user ldap and group ldap.
+The OpenLDAP server package has been successfully installed.
 
-	chown -R ldap:ldap /var/db/openldap-data 
+In order to run the LDAP server, you need to edit
+  %%PREFIX%%/etc/openldap/slapd.conf
+to suit your needs and add the next lines to /etc/rc.conf:
+  slapd_enable="YES"
+  slapd_args='-h "ldapi://%2fvar%2frun%2fopenldap%2fldapi/????x-mod=0777 ldap://0.0.0.0/"'
 
+Then start the server with
+  %%PREFIX%%/etc/rc.d/slapd.sh start
+or reboot.
+
+NOTE: There is no real reason to run slapd as root. Add
+  '-u ldap -g ldap'
+to slapd_args, create a user "ldap" with
+  pw add group ldap -g 389
+  pw add user ldap -u 389 -g 389 -d /nonexistent \
+    -c "OpenLDAP Server" -s /sbin/nologin -p "*"
+and do
+  chown -R ldap:ldap %%LDAP_RUN_DIR%% \
+    %%LOCALSTATEDIR%%/openldap-data %%PREFIX%%/etc/openldap/slapd.conf
+and your server runs with a non-privileged user id.
+
+************************************************************

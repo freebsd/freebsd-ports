@@ -1,30 +1,26 @@
 ************************************************************
 
-The OpenLDAP package has been successfully installed.
+The OpenLDAP server package has been successfully installed.
 
-Edit
-  %%PREFIX%%/etc/openldap/ldap.conf
-to change the system-wide client defaults.
+In order to run the LDAP server, you need to edit
+  %%PREFIX%%/etc/openldap/slapd.conf
+to suit your needs and add the next lines to /etc/rc.conf:
+  slapd_enable="YES"
+  slapd_args='-h "ldapi://%2fvar%2frun%2fopenldap%2fldapi/????x-mod=0777 ldap://0.0.0.0/"'
 
-%%SERVER%%In order to run the OpenLDAP server, you need to edit
-%%SERVER%%  %%PREFIX%%/etc/openldap/slapd.conf
-%%SERVER%%to suit your needs and add the next lines to /etc/rc.conf:
-%%SERVER%%  slapd_enable="YES"
-%%SERVER%%  slapd_args='-h "ldapi://%2fvar%2frun%2fopenldap%2fldapi/????x-mod=0777 ldap://0.0.0.0/"'
-%%SERVER%%
-%%SERVER%%Then start the server with
-%%SERVER%%  %%PREFIX%%/etc/rc.d/slapd.sh start
-%%SERVER%%or reboot.
-%%SERVER%%
-%%SERVER%%NOTE: There is no real reason to run slapd as root. Add
-%%SERVER%%  '-u ldap -g ldap'
-%%SERVER%%to slapd_args, create a user "ldap" with
-%%SERVER%%  pw add group ldap -g 389
-%%SERVER%%  pw add user ldap -u 389 -g 389 -d /nonexistent \
-%%SERVER%%    -c "OpenLDAP Server" -s /sbin/nologin -p "*"
-%%SERVER%%and do
-%%SERVER%%  chown -R ldap:ldap %%LDAP_RUN_DIR%% \
-%%SERVER%%    %%LOCALSTATEDIR%%/openldap-data %%PREFIX%%/etc/openldap/slapd.conf
-%%SERVER%%and your server runs with a non-privileged user id.
-%%SERVER%%
+Then start the server with
+  %%PREFIX%%/etc/rc.d/slapd.sh start
+or reboot.
+
+NOTE: There is no real reason to run slapd as root. Add
+  '-u ldap -g ldap'
+to slapd_args, create a user "ldap" with
+  pw add group ldap -g 389
+  pw add user ldap -u 389 -g 389 -d /nonexistent \
+    -c "OpenLDAP Server" -s /sbin/nologin -p "*"
+and do
+  chown -R ldap:ldap %%LDAP_RUN_DIR%% \
+    %%LOCALSTATEDIR%%/openldap-data %%PREFIX%%/etc/openldap/slapd.conf
+and your server runs with a non-privileged user id.
+
 ************************************************************
