@@ -1,0 +1,17 @@
+[ from developer's site FAQ ]
+
+This is a SILC network client
+
+Q: What is SILC?
+
+A: SILC (Secure Internet Live Conferencing) is a protocol which
+provides secure conferencing services in the Internet over insecure
+channel. SILC is IRC like although internally they are very different.
+Biggest similarity between SILC and IRC is that they both provide
+conferencing services and that SILC has almost same commands as
+IRC. Other than that they are nothing alike.
+
+Biggest differences are that SILC is secure what IRC is not in any
+way.  The network model is also entirely different compared to IRC.
+
+WWW: http://www.silcnet.org/

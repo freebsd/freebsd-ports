@@ -1,0 +1,14 @@
+--- Makefile.in.orig	Fri Nov  9 00:27:10 2001
++++ Makefile.in	Fri Nov  9 00:27:16 2001
+@@ -538,11 +538,6 @@
+ 	$(INSTALL_DATA) $(srcdir)/TODO $(docdir)/
+ 
+ etc-install:
+-	-@if test '!' -f $(etcdir)/silcd.conf ; then \
+-	  $(INSTALL_DATA) $(srcdir)/doc/example_silcd.conf \
+-	  $(etcdir)/silcd.conf; \
+-          chmod go= $(etcdir)/silcd.conf; \
+-	fi
+ 	-@if test '!' -f $(etcdir)/silc.conf ; then \
+ 	  $(INSTALL_DATA) $(srcdir)/doc/example_silc.conf \
+ 	  $(etcdir)/silc.conf; \

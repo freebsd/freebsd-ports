@@ -1,0 +1,10 @@
+--- doc/Makefile.in.orig	Fri Nov  9 02:17:35 2001
++++ doc/Makefile.in	Fri Nov  9 02:17:43 2001
+@@ -118,7 +118,6 @@
+ EXTRA_DIST = \
+ 	CodingStyle \
+ 	FAQ \
+-	example_silcd.conf \
+ 	example_silc.conf \
+ 	draft-riikonen*.txt $(SILC_EXTRA_DIST)
+ 
