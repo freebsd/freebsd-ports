@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	sn
-PORTVERSION=	0.3.6
+PORTVERSION=	0.3.7
 CATEGORIES=	news
 MASTER_SITES=	http://www.infa.abo.fi/~patrik/sn/files/
 EXTRACT_SUFX=	.tar.bz2
