@@ -7,8 +7,13 @@
 #
 
 DISTNAME=       xtris-1.15
-CATEGORIES=	games
+CATEGORIES=	games ipv6
 MASTER_SITES=	http://www.iagora.com/~espel/xtris/
+
+PATCH_SITES=	ftp://ftp2.v6.linux.or.jp/pub/Linux/IPv6-2/xtris/ \
+		http://ftp2.v6.linux.or.jp/pub/Linux/IPv6-2/xtris/
+PATCHFILES=	xtris-1.15-v6-19991218.diff.gz
+PATCH_DIST_STRIP=	-p1
 
 MAINTAINER=	sec@42.org
 
@@ -18,4 +23,10 @@ WRKSRC=		${WRKDIR}/xtris
 USE_X_PREFIX=	yes
 MAN6=		xtris.6 xtserv.6 xtbot.6
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 400014
+MAKE_ENV=	IPV6_CFLAGS="-DINET6"
+.endif
+
+.include <bsd.port.post.mk>
