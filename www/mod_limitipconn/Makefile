@@ -7,6 +7,7 @@
 
 PORTNAME=	mod_limitipconn
 PORTVERSION=	0.04
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	http://dominia.org/djao/limit/
 
@@ -14,11 +15,13 @@ MAINTAINER=	gslin@ccca.nctu.edu.tw
 COMMENT=	Limit the number of simultaneous connections from a single client IP address
 
 BUILD_DEPENDS?=	${APXS}:${PORTSDIR}/www/apache13
-RUN_DEPENDS?=	${APXS}:${PORTSDIR}/www/apache13
+RUN_DEPENDS?=	${BUILD_DEPENDS}
 
 APXS?=		${LOCALBASE}/sbin/apxs
 
-do-install:
-	${APXS} -i -A -n limitipconn ${WRKSRC}/mod_limitipconn.so
+USE_REINPLACE=	yes
+
+post-patch:
+	${REINPLACE_CMD} -e 's,^APXS = .*,APXS = ${APXS},' ${WRKSRC}/Makefile
 
 .include <bsd.port.mk>
