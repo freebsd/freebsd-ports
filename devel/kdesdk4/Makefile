@@ -15,9 +15,10 @@ DIST_SUBDIR=	KDE
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	KDE Software Development Kit
 
+RUN_DEPENDS=	calltree:${PORTSDIR}/devel/calltree
 LIB_DEPENDS=	db4:${PORTSDIR}/databases/db4
 
-CONFLICTS=	umbrello-*
+CONFLICTS=	umbrello-[0-9]* kcachegrind-[0-9]*
 
 USE_KDEBASE_VER=3
 PREFIX=		${KDE_PREFIX}
