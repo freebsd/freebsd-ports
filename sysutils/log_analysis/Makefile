@@ -19,7 +19,7 @@ GNU_CONFIGURE=	yes
 MAN1=	log_analysis.1
 
 post-patch:
-	@${PERL} -pi -e 's!perldoc!pod2man!' ${WRKSRC}/Makefile.in
+	@${PERL} -pi -e 's!perldoc!pod2man!' ${WRKSRC}/configure
 
 post-install:
 	@${MKDIR} ${PREFIX}/share/examples/log_analysis
