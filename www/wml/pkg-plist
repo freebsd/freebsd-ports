@@ -17,7 +17,8 @@ bin/wml_aux_map2html
 bin/wml_aux_weblint
 lib/wml/aux/txt2html.dict
 lib/wml/aux/weblintrc
-lib/wml/aux/generated-via-wml.gif
+lib/wml/aux/generated-via-wml-1.gif
+lib/wml/aux/generated-via-wml-2.gif
 lib/wml/include/all.wml
 lib/wml/include/des/all.wml
 lib/wml/include/des/gfont.wml
