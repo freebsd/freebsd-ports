@@ -1,3 +1,4 @@
+bin/xmlwf
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/XML/Parser/Expat/Expat.bs
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/XML/Parser/Expat/Expat.so
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/XML/Parser/.packlist

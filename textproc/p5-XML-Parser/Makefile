@@ -1,13 +1,13 @@
 # New ports collection makefile for:	XML::Parser
-# Version required:	2.19
+# Version required:	2.23
 # Date created:		15 Nov 1998
 # Whom:			Jun Kuriyama <kuriyama@FreeBSD.ORG>
 #
-# $Id: Makefile,v 1.1.1.1 1998/11/14 19:44:34 kuriyama Exp $
+# $Id: Makefile,v 1.2 1999/02/11 03:35:01 kuriyama Exp $
 #
 
-DISTNAME=	XML-Parser-2.19
-PKGNAME=	p5-XML-Parser-2.19
+DISTNAME=	XML-Parser-2.23
+PKGNAME=	p5-XML-Parser-2.23
 CATEGORIES=	textproc perl5
 MASTER_SITES=	http://wwwx.netheaven.com/~coopercc/xmlparser/
 
@@ -20,5 +20,11 @@ MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 
 do-configure:
 	@cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} ${PERL5} Makefile.PL
+
+post-build:
+	@cd ${WRKSRC}/Expat/expat; ${MAKE}
+
+post-install:
+	${INSTALL_PROGRAM} ${WRKSRC}/Expat/expat/xmlwf/xmlwf ${PREFIX}/bin/
 
 .include <bsd.port.mk>
