@@ -1,0 +1,18 @@
+sbin/radiusd
+sbin/radiusd.dbm
+sbin/builddbm
+man/man1/users-file-syntax.1.gz
+man/man1/builddbm.1.gz
+share/doc/ascend-radius/ascend.doc
+share/doc/ascend-radius/draft-ietf-radius-accounting-01.txt
+share/doc/ascend-radius/draft-ietf-radius-radius-03.txt
+share/doc/ascend-radius/draft-ietf-radius-radius-04.txt
+share/doc/ascend-radius/ChangeLog
+share/doc/ascend-radius/README
+share/doc/ascend-radius/README.cexample
+share/doc/ascend-radius/README.dict
+etc/raddb/clients.example
+etc/raddb/dictionary
+etc/raddb/users.example
+@dirrm share/doc/ascend-radius
+@dirrm etc/raddb

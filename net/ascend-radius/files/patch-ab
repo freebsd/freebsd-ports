@@ -1,0 +1,24 @@
+--- cache.c.orig	Sun Sep  1 02:31:42 1996
++++ cache.c	Mon Sep 23 21:38:20 1996
+@@ -12,13 +12,21 @@
+  *	FOR A PARTICULAR PURPOSE.
+  */
+ 
++#if defined(_HAVE_PARAM_H)
++#include	<sys/param.h>
++#endif
++
+ #include	<sys/types.h>
+ #include	<ctype.h>
+ #if defined(BSDI)
+ #	include	<memory.h>
+ #	include	<stdlib.h>
+ #else
++#if defined(__FreeBSD__)
++#	include <stdlib.h>
++#else
+ #	include	<malloc.h>
++#endif
+ #endif
+ #include	<string.h>
+ #include	<sys/time.h>
