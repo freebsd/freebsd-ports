@@ -1,0 +1,9 @@
+Hydra is a high performance multi-threaded web server. Unlike traditional
+multi-threaded web servers, Hydra uses a constant, but configurable, pool
+of threads and each thread can handle several connections by multiplexing
+the connections. This may remind you of a non-blocking server, and this is
+true, but Hydra does not have the killing limitation of a non-blocking
+server, the confinement to one CPU. Hydra will take advantage of every
+available CPU in a system.
+
+WWW: http://hydra.hellug.gr/

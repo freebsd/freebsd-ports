@@ -118,6 +118,7 @@
     SUBDIR += httpgrabber
     SUBDIR += httptunnel
     SUBDIR += httrack
+    SUBDIR += hydra
     SUBDIR += hypermail
     SUBDIR += indexme
     SUBDIR += interchange
