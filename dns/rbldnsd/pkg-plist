@@ -1,6 +1,7 @@
 sbin/rbldnsd
-%%PORTDOCS%%share/doc/rbldnsd/CHANGES-0.81
-%%PORTDOCS%%share/doc/rbldnsd/NEWS
-%%PORTDOCS%%share/doc/rbldnsd/TODO
-%%PORTDOCS%%share/doc/rbldnsd/rbldnsd.html
-%%PORTDOCS%%@dirrm share/doc/rbldnsd
+%%PORTDOCS%%%%DOCSDIR%%/CHANGES-0.81
+%%PORTDOCS%%%%DOCSDIR%%/NEWS
+%%PORTDOCS%%%%DOCSDIR%%/TODO
+%%PORTDOCS%%%%DOCSDIR%%/rbldnsd.spec
+%%PORTDOCS%%%%DOCSDIR%%/rbldnsd.html
+%%PORTDOCS%%@dirrm %%DOCSDIR%%

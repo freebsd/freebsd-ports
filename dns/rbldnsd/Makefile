@@ -6,9 +6,10 @@
 #
 
 PORTNAME=	rbldnsd
-PORTVERSION=	0.96
+PORTVERSION=	0.991
 CATEGORIES=	dns
-MASTER_SITES=	http://www.it.ca/~paul/src/:0
+MASTER_SITES=	http://www.corpit.ru/mjt/rbldnsd/:0 \
+		http://www.it.ca/~paul/src/:0
 DISTFILES=	${PORTNAME}_${PORTVERSION}${EXTRACT_SUFX}:0
 
 MAINTAINER=	paul+ports@it.ca
@@ -16,11 +17,14 @@ COMMENT=	Small and fast DNS daemon especially for DNSBL zones
 
 .if !defined(NOPORTDOCS)
 EXTRACT_ONLY=	${PORTNAME}_${PORTVERSION}${EXTRACT_SUFX}
-MASTER_SITES+=	http://www.it.ca/~paul/src/:1
+MASTER_SITES+=	http://www.corpit.ru/mjt/:1 \
+		http://www.it.ca/~paul/src/:1
 DISTFILES+=	rbldnsd.html:1
 .endif
 
 MAN8=		rbldnsd.8
+
+HAS_CONFIGURE=	yes
 
 do-install:
 		@${INSTALL_PROGRAM} ${WRKSRC}/rbldnsd ${PREFIX}/sbin/
@@ -30,6 +34,7 @@ do-install:
 		@${INSTALL_DATA} ${WRKSRC}/CHANGES-0.81 ${DOCSDIR}
 		@${INSTALL_DATA} ${WRKSRC}/TODO ${DOCSDIR}
 		@${INSTALL_DATA} ${WRKSRC}/NEWS ${DOCSDIR}
+		@${INSTALL_DATA} ${WRKSRC}/rbldnsd.spec ${DOCSDIR}
 		@${INSTALL_DATA} ${DISTDIR}/rbldnsd.html ${DOCSDIR}
 .endif
 
