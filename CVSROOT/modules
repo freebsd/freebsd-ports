@@ -2860,6 +2860,7 @@ gtkhx		ports/net/gtkhx
 gtkjournal	ports/deskutils/gtkjournal
 gtklp		ports/print/gtklp
 gtkmathview	ports/x11-toolkits/gtkmathview
+gtkmm24		ports/x11-toolkits/gtkmm24
 gtkpod		ports/audio/gtkpod
 gtkportscan	ports/security/gtkportscan
 gtkscintilla	ports/x11-toolkits/gtkscintilla
