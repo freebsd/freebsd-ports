@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	wmcpuload
-PORTVERSION=	0.6.0
-PORTREVISION=	1
+PORTVERSION=	0.7.0
 CATEGORIES=	sysutils windowmaker
 MASTER_SITES=	http://www.sh.rim.or.jp/~ssato/src/
 DISTNAME=	WMCPULoad-${PORTVERSION}
