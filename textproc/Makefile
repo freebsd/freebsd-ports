@@ -345,6 +345,7 @@
     SUBDIR += ruby-text-format
     SUBDIR += ruby-xmlparser
     SUBDIR += ruby-xmlscan
+    SUBDIR += ruby-xmlscan-old
     SUBDIR += ruby-xslt
     SUBDIR += rxp
     SUBDIR += sablotron
