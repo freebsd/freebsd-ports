@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	puf
-PORTVERSION=	0.91b5
+PORTVERSION=	0.91b6
 CATEGORIES=	ftp
 MASTER_SITES=	http://www.inf.tu-dresden.de/cgi-bin/cgiwrap/ob6/get/
 DISTNAME=	${PORTNAME}
