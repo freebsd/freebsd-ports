@@ -86,8 +86,6 @@
     SUBDIR += mew
     SUBDIR += mew-emacs20
     SUBDIR += mew-mule
-    SUBDIR += mew-xemacs
-    SUBDIR += mew-xemacs20
     SUBDIR += mew-xemacs21
     SUBDIR += mew-xemacs21-mule
     SUBDIR += mew2-emacs20
@@ -210,7 +208,6 @@
     SUBDIR += wanderlust-emacs
     SUBDIR += wanderlust-emacs20
     SUBDIR += wanderlust-mule
-    SUBDIR += wanderlust-xemacs20
     SUBDIR += wanderlust-xemacs21-mule
     SUBDIR += wmbiff
     SUBDIR += wmmail
