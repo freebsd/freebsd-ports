@@ -1,0 +1,7 @@
+sbin/flow_Server.pl
+bin/TkTopNetFlows.tcl
+bin/TkTopNetFlowsHist.tcl
+etc/view_definitions.pl.example
+etc/rc.d/flow_Server.sh
+lib/TkTopNetFlows-%%PORTVERSION%%/TkTopNetFlows_lib.tcl
+@dirrm lib/TkTopNetFlows-%%PORTVERSION%%
