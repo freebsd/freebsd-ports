@@ -1,43 +1,11 @@
 bin/darcs
 %%SERVER%%%%CGIDIR%%/darcs
 %%SERVER%%sbin/darcs-createrepo
-%%SERVER%%libexec/darcs/darcs-patcher
 %%SERVER%%etc/darcs/cgi.conf.sample
 etc/darcs/bash_completion.d/darcs
 %%PORTDOCS%%%%DOCSDIR%%/examples/zsh_completion_new
 %%PORTDOCS%%%%DOCSDIR%%/examples/zsh_completion_old
-%%PORTDOCS%%%%DOCSDIR%%/manual/bigimages.aux
-%%PORTDOCS%%%%DOCSDIR%%/manual/bigimages.log
-%%PORTDOCS%%%%DOCSDIR%%/manual/bigimages.pl
-%%PORTDOCS%%%%DOCSDIR%%/manual/bigimages.tex
-%%PORTDOCS%%%%DOCSDIR%%/manual/bigimg1.png
-%%PORTDOCS%%%%DOCSDIR%%/manual/bigimg10.png
-%%PORTDOCS%%%%DOCSDIR%%/manual/bigimg11.png
-%%PORTDOCS%%%%DOCSDIR%%/manual/bigimg12.png
-%%PORTDOCS%%%%DOCSDIR%%/manual/bigimg13.png
-%%PORTDOCS%%%%DOCSDIR%%/manual/bigimg14.png
-%%PORTDOCS%%%%DOCSDIR%%/manual/bigimg15.png
-%%PORTDOCS%%%%DOCSDIR%%/manual/bigimg16.png
-%%PORTDOCS%%%%DOCSDIR%%/manual/bigimg17.png
-%%PORTDOCS%%%%DOCSDIR%%/manual/bigimg18.png
-%%PORTDOCS%%%%DOCSDIR%%/manual/bigimg19.png
-%%PORTDOCS%%%%DOCSDIR%%/manual/bigimg2.png
-%%PORTDOCS%%%%DOCSDIR%%/manual/bigimg20.png
-%%PORTDOCS%%%%DOCSDIR%%/manual/bigimg21.png
-%%PORTDOCS%%%%DOCSDIR%%/manual/bigimg22.png
-%%PORTDOCS%%%%DOCSDIR%%/manual/bigimg3.png
-%%PORTDOCS%%%%DOCSDIR%%/manual/bigimg4.png
-%%PORTDOCS%%%%DOCSDIR%%/manual/bigimg5.png
-%%PORTDOCS%%%%DOCSDIR%%/manual/bigimg6.png
-%%PORTDOCS%%%%DOCSDIR%%/manual/bigimg7.png
-%%PORTDOCS%%%%DOCSDIR%%/manual/bigimg8.png
-%%PORTDOCS%%%%DOCSDIR%%/manual/bigimg9.png
-%%PORTDOCS%%%%DOCSDIR%%/manual/biginternals.pl
-%%PORTDOCS%%%%DOCSDIR%%/manual/biglabels.pl
-%%PORTDOCS%%%%DOCSDIR%%/manual/bigpage.css
-%%PORTDOCS%%%%DOCSDIR%%/manual/bigpage.html
 %%PORTDOCS%%%%DOCSDIR%%/manual/contents.png
-%%PORTDOCS%%%%DOCSDIR%%/manual/crossref.png
 %%PORTDOCS%%%%DOCSDIR%%/manual/darcs.css
 %%PORTDOCS%%%%DOCSDIR%%/manual/darcs.html
 %%PORTDOCS%%%%DOCSDIR%%/manual/footnode.html
@@ -74,7 +42,6 @@ etc/darcs/bash_completion.d/darcs
 %%PORTDOCS%%%%DOCSDIR%%/manual/next_g.png
 %%PORTDOCS%%%%DOCSDIR%%/manual/node1.html
 %%PORTDOCS%%%%DOCSDIR%%/manual/node10.html
-%%PORTDOCS%%%%DOCSDIR%%/manual/node11.html
 %%PORTDOCS%%%%DOCSDIR%%/manual/node2.html
 %%PORTDOCS%%%%DOCSDIR%%/manual/node3.html
 %%PORTDOCS%%%%DOCSDIR%%/manual/node4.html
@@ -83,14 +50,12 @@ etc/darcs/bash_completion.d/darcs
 %%PORTDOCS%%%%DOCSDIR%%/manual/node7.html
 %%PORTDOCS%%%%DOCSDIR%%/manual/node8.html
 %%PORTDOCS%%%%DOCSDIR%%/manual/node9.html
-%%PORTDOCS%%%%DOCSDIR%%/manual/nx_grp_g.png
 %%PORTDOCS%%%%DOCSDIR%%/manual/prev.png
 %%PORTDOCS%%%%DOCSDIR%%/manual/prev_g.png
 %%PORTDOCS%%%%DOCSDIR%%/manual/up.png
 %%PORTDOCS%%%%DOCSDIR%%/manual/up_g.png
 @dirrm etc/darcs/bash_completion.d
 @dirrm etc/darcs
-%%SERVER%%@dirrm libexec/darcs
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/examples
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/manual
 %%PORTDOCS%%@dirrm %%DOCSDIR%%

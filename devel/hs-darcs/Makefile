@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	darcs
-PORTVERSION=	0.9.12
+PORTVERSION=	0.9.13
 CATEGORIES=	devel
 MASTER_SITES=	http://www.abridgegame.org/darcs/
 
@@ -26,7 +26,7 @@ MAKEFILE=	GNUmakefile
 ALL_TARGET=	darcs darcs.1
 
 .if defined(WITH_SERVER)
-ALL_TARGET+=	darcs_cgi darcs-patcher darcs-createrepo
+ALL_TARGET+=	darcs_cgi darcs-createrepo
 INSTALL_TARGET=	install installserver
 .if !exists(${PREFIX}/www) && exists(${PREFIX}/share/apache)
 CGIDIR?=	share/apache/cgi-bin
