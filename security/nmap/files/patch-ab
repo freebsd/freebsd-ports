@@ -1,25 +1,11 @@
---- nmapfe/Makefile.in.orig	Thu Apr  6 01:51:39 2000
-+++ nmapfe/Makefile.in	Thu Apr  6 14:53:11 2000
-@@ -70,7 +70,7 @@
- PROGRAMS =  $(bin_PROGRAMS)
- 
- 
--DEFS = @DEFS@ -DVERSION=\"$(VERSION)\" -I. -I$(srcdir) 
-+DEFS = @DEFS@ -DVERSION=\"$(VERSION)\" -DNMAP_PATH=\"$(bindir)/\" -I. -I$(srcdir) 
- CPPFLAGS = @CPPFLAGS@
- STATIC =
- LDFLAGS = @LDFLAGS@ $(STATIC)
-@@ -231,11 +231,11 @@
- maintainer-clean-depend:
- 	-rm -rf .deps
- 
+--- nmapfe/Makefile.in.orig	Mon Jan  1 22:22:37 2001
++++ nmapfe/Makefile.in	Fri Mar 16 16:56:47 2001
+@@ -75 +75 @@
+-DEFS = @DEFS@ -DVERSION=\"$(VERSION)\" -DHAVE_CONFIG_H=1 -I$(srcdir) 
++DEFS = @DEFS@ -DVERSION=\"$(VERSION)\" -DHAVE_CONFIG_H=1 -I$(srcdir) -DNMAP_PATH=\"$(bindir)/\"
+@@ -236 +236 @@
 -%.o: %.c
 +.c.o:
- 	@echo '$(COMPILE) -c $<'; \
- 	$(COMPILE) -c $<
- 
+@@ -240 +240 @@
 -%.lo: %.c
 +.c.lo:
- 	@echo '$(LTCOMPILE) -c $<'; \
- 	$(LTCOMPILE) -c $<
- 	@-sed -e 's/^\([^:]*\)\.o:/\1.lo \1.o:/' \
