@@ -16,6 +16,7 @@ mmcache.filter=""
 mmcache.shm_max="0"
 mmcache.shm_ttl="0"
 mmcache.shm_prune_period="0"
+mmcache.shm_only="0"
 mmcache.compress="1"
 
 *****************************************************************************
