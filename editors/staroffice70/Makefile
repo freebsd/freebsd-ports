@@ -7,25 +7,25 @@
 
 PORTNAME=	staroffice
 PORTVERSION=	7.0
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	editors linux
-MASTER_SITES=	ftp://ftp.sun.co.uk/pub/patches/:patch \
+MASTER_SITES=	ftp://patches.sun.com/patchroot/all_unsigned/:patch \
+		ftp://ftp.sun.co.uk/pub/patches/:patch \
 		ftp://ftp.sunsite.auc.dk/disk6/sun-patches/:patch \
 		ftp://ftp.math.ohio-state.edu/private/sun/.../:patch \
 		ftp://ftp.uga.edu/pub/unix/sun/patches/:patch \
 		ftp://ftp.cs.tu-berlin.de/pub/sun/sun-fixes/.../:patch
 DISTNAME=	so-7-ga-bin-linux-en.bin
 .if !defined(USE_CDROM)
-DISTFILES=      so-7-ga-bin-linux-en.bin 116518-04.zip:patch
+DISTFILES=      so-7-ga-bin-linux-en.bin 116518-06.tar:patch
 .else
-DISTFILES=	116518-04.zip:patch
+DISTFILES=	116518-06.tar:patch
 .endif
 .if defined(WITH_ADABAS)
 DISTFILES+=     soa-7-ga-bin-linux-en.bin
 .endif
 
-USE_ZIP=	YES
-EXTRACT_ONLY=	116518-04.zip
+EXTRACT_ONLY=	116518-06.tar
 
 MAINTAINER=	mbr@FreeBSD.org
 COMMENT=	Wordprocessor/dbase/spreadheet/drawing/chart
@@ -41,9 +41,9 @@ WRKSRC=		${WRKDIR}/${SOVERSION}
 TMPDIR=		${WRKDIR}/tmp
 LD_PATH=	${TMPDIR}:${WRKSRC}:${LINUXBASE}/lib:${LINUXBASE}/usr/lib
 INSTDB.INS=	${PREFIX}/${SOVERSION}/program/instdb.ins
-SUNSOLVE=	${WRKDIR}/112887-04
+SUNSOLVE=	${WRKDIR}/116518-06
 ADABAS_DIST=	soa-7-ga-bin-linux-en.bin
-PATCH_DIST=	so-7-pp3-bin-linux.bin
+PATCH_DIST=	so-7-pp4-bin-linux.bin
 
 .include <bsd.port.pre.mk>
 
@@ -120,7 +120,7 @@ pre-fetch:
 	@${FALSE}
 .endif
 .if defined(USE_CDROM)
-DLTEST=116518-04.zip
+DLTEST=116518-06.tar
 .else
 .if exists(/cdrom/linux/office7/setup)
 	@${ECHO}
@@ -253,7 +253,7 @@ install-patch:
                         ${WRKSRC}/patchsetup.resp
 	@-SAL_IGNOREXERRORS=1 PATH="/bin:${PATH}" LD_LIBRARY_PATH=${LD_PATH} \
 		TEMP=${TMPDIR} ${LINUXBASE}/bin/sh -c 'umask 022 && \
-		${WRKSRC}/../116518-04/${PATCH_DIST} -patch:${PREFIX}/${SOVERSION}\
+		${WRKSRC}/../116518-06/${PATCH_DIST} -patch:${PREFIX}/${SOVERSION}\
 		-r:${WRKSRC}/patchsetup.resp'
 
 install-update:
