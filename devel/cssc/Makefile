@@ -18,6 +18,7 @@ COMMENT=	A workalike for the source code control system SCCS
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=	--enable-binary
 MAN1=		sccs.1
+INFO=		cssc
 
 WRKSRC=		${WRKDIR}/CSSC-0.15alpha.pl0
 
