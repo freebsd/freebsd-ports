@@ -1,3 +1,3 @@
 @cwd /usr/local
 bin/rman
-man/man1/rman.1
+man/man1/rman.1.gz
