@@ -1,4 +1,8 @@
 bin/qterm
+share/applications/qterm.desktop
+share/icons/qterm.png
+share/qterm/address.cfg
+share/qterm/credits
 share/qterm/cursor/end.xpm
 share/qterm/cursor/enter.xpm
 share/qterm/cursor/exit.xpm
@@ -24,33 +28,31 @@ share/qterm/pic/mouse.png
 share/qterm/pic/paste.png
 share/qterm/pic/popwidget.png
 share/qterm/pic/pref.png
-share/qterm/pic/qterm_tray.png
 share/qterm/pic/qterm_32x32.png
 share/qterm/pic/qterm_48x48.png
+share/qterm/pic/qterm_tray.png
 share/qterm/pic/quick.png
 share/qterm/pic/reconnect.png
 share/qterm/pic/rect.png
 share/qterm/pic/refresh.png
 share/qterm/pic/sound.png
 share/qterm/pic/tabpad.png
-share/qterm/script/continuous.py
-share/qterm/script/download.py
-share/qterm/script/system.py
-share/qterm/schema/Softness.schema
-share/qterm/schema/Linux.schema
-share/qterm/schema/VIM.schema
-share/qterm/schema/XTerm.schema
-share/qterm/schema/default.schema
 share/qterm/po/qterm_chs.qm
 share/qterm/po/qterm_cht.qm
 share/qterm/qterm.cfg
-share/qterm/address.cfg
-share/qterm/credits
-share/applications/qterm.desktop
-share/icons/qterm.png
-@dirrm share/qterm/cursor
-@dirrm share/qterm/pic
+share/qterm/schema/Linux.schema
+share/qterm/schema/Softness.schema
+share/qterm/schema/VIM.schema
+share/qterm/schema/XTerm.schema
+share/qterm/schema/default.schema
+share/qterm/script/continuous.py
+share/qterm/script/download.py
+share/qterm/script/sendmsg.py
+share/qterm/script/system.py
+share/qterm/script/tools.py
 @dirrm share/qterm/script
 @dirrm share/qterm/schema
 @dirrm share/qterm/po
+@dirrm share/qterm/pic
+@dirrm share/qterm/cursor
 @dirrm share/qterm
