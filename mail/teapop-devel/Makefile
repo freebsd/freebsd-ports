@@ -21,6 +21,10 @@ LIB_DEPENDS=	pq.2:${PORTSDIR}/databases/postgresql7
 LIB_DEPENDS=	mysqlclient.10:${PORTSDIR}/databases/mysql323-client
 .endif
 
+.if defined(WITH_DRAC)
+BUILD_DEPENDS=	${PREFIX}/lib/libdrac.a:${PORTSDIR}/mail/drac
+.endif
+
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=		--enable-flock
 
@@ -38,6 +42,11 @@ CONFIGURE_ARGS+=	--with-pgsql=${PREFIX}/pgsql
 
 .if defined(WITH_MYSQL)
 CONFIGURE_ARGS+=	--with-mysql=${PREFIX}
+.endif
+
+.if defined(WITH_DRAC)
+CONFIGURE_ARGS+=	--with-drac=${PREFIX}/lib \
+			--with-dracinc=${PREFIX}/include
 .endif
 
 MAN8=		teapop.8
