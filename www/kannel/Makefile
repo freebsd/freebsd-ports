@@ -10,7 +10,7 @@ CATEGORIES=	www
 MASTER_SITES=	http://www.kannel.3glab.org/download/${PORTVERSION}/
 DISTNAME=	gateway-${PORTVERSION}
 
-MAINTAINER=	martti.kuparinen@iki.fi
+MAINTAINER=	freebsd-ports@freebsd.org
 
 LIB_DEPENDS=	xml2:${PORTSDIR}/textproc/libxml2
 
