@@ -3782,6 +3782,7 @@ libunicode	ports/devel/libunicode
 libunp		ports/net/libunp
 libunpipc	ports/net/libunpipc
 libuta		ports/devel/libuta
+libutf		ports/misc/libutf
 libutf-8	ports/converters/libutf-8
 libutils	ports/lang/libutils
 libv3d		ports/graphics/libv3d
