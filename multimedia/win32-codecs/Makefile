@@ -9,7 +9,7 @@ PORTNAME=	win32-codecs
 PORTVERSION=	${CODEC_VERSION}
 CATEGORIES=	graphics audio
 MASTER_SITES=	http://ernie.eit.uni-kl.de/avifile/ \
-		http://divx.euro.ru/ \
+		http://avifile.sourceforge.net/ \
 		http://www.toon.eu.org/divx/
 DISTFILES=	binaries-${CODEC_VERSION}.zip \
 		wmvds32.ax.gz
