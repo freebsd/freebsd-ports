@@ -1,65 +1,77 @@
-# New ports collection makefile for: mingw-gcc
-# Date created:		6 June 2000
-# Whom:			Toshihiro Inoue <tino@pa2.so-net.ne.jp>
+# New ports collection makefile for:	mingw32-gcc
+# Date created:		24 October 2002
+# Whom:			Lev Serebryakov <lev@serebryakov.spb.ru>
 #
 # $FreeBSD$
 #
 
 PORTNAME=	gcc
-PORTVERSION=	2.95.3
-PORTREVISION=	1
+PORTVERSION=	${GCCVERSION}.${PATCHVERSION}
 CATEGORIES=	devel
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	mingw
-PKGNAMEPREFIX=	mingw-
-DISTNAME=	${PORTNAME}-${PORTVERSION}-20010828-src
+MASTER_SITES=	${MASTER_SITE_SOURCEWARE}
+MASTER_SITE_SUBDIR=	${PORTNAME}/releases/${PORTNAME}-${GCCVERSION}
+PKGNAMEPREFIX=	mingw32-
+DISTFILES=	${PORTNAME}-core-${GCCVERSION}${EXTRACT_SUFX} \
+		${PORTNAME}-g++-${GCCVERSION}${EXTRACT_SUFX}  \
+		${PORTNAME}-objc-${GCCVERSION}${EXTRACT_SUFX} \
+		${PORTNAME}-g77-${GCCVERSION}${EXTRACT_SUFX} \
+		${PORTNAME}-ada-${GCCVERSION}${EXTRACT_SUFX}
 DIST_SUBDIR=	mingw
 
-MAINTAINER=	doc@hisio.safenet.pl
-COMMENT=	FSF gcc-2.95.2 for Windows cross-development
+PATCH_SITES=	${MASTER_SITE_SOURCEFORGE}
+PATCH_SITE_SUBDIR=	mingw
+PATCHFILES=	${PORTNAME}-${GCCVERSION}-${PATCHVERSION:S/./-/}.src.diff.gz
+PATCH_DIST_STRIP=	-p1
 
-BUILD_DEPENDS=	${LOCALBASE}/i386-mingw32msvc/bin/as:${PORTSDIR}/devel/mingw-binutils \
-		${LOCALBASE}/bin/mingwm10.dll:${PORTSDIR}/devel/mingw-bin-msvcrt \
-		autoheader:${PORTSDIR}/devel/autoconf
-RUN_DEPENDS=	${LOCALBASE}/i386-mingw32msvc/bin/as:${PORTSDIR}/devel/mingw-binutils \
-		${LOCALBASE}/bin/mingwm10.dll:${PORTSDIR}/devel/mingw-bin-msvcrt
+MAINTAINER=	lev@serebryakov.spb.ru
+COMMENT=	FSF gcc-3.2 for Windows cross-development
 
-WRKSRC=		${WRKDIR}/gcc-${PORTVERSION}-20010828
+BUILD_DEPENDS=	${PKGNAMEPREFIX}as:${PORTSDIR}/devel/${PKGNAMEPREFIX}binutils \
+		mingwm10.dll:${PORTSDIR}/devel/mingw32-bin-msvcrt
+RUN_DEPENDS=	${PKGNAMEPREFIX}as:${PORTSDIR}/devel/${PKGNAMEPREFIX}binutils
 
+GCCVERSION=	3.2
+PATCHVERSION=	20020817.1
+
+WRKSRC=		${WRKDIR}/${PORTNAME}-${GCCVERSION}
+
+USE_BZIP2=	yes
 USE_GMAKE=	yes
-USE_REINPLACE=	yes
-GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--target=i386-mingw32msvc \
-		--with-gxx-include-dir=${PREFIX}/lib/gcc-lib/i386-mingw32msvc/${PORTVERSION}/include/g++
+USE_LIBTOOL=	yes
+CONFIGURE_ARGS=	--target=${PKGNAMEPREFIX:S/-$//} \
+		--enable-languages=c,c++,ada,f77,objc \
+		--with-gcc --with-gnu-ld --with-gnu-as \
+		--enable-threads --disable-nls \
+		--disable-win32-registry --disable-shared
+MAKE_ENV=	PATH=${PREFIX}/bin:${PATH}
+LIBTOOLFILES=	configure gcc/configure
+MAN1=		${PKGNAMEPREFIX}gcc.1 ${PKGNAMEPREFIX}g++.1 ${PKGNAMEPREFIX}g77.1  \
+		cpp.1 gcov.1
+MAN7=		fsf-funding.7 gfdl.7 gpl.7
 
-PLIST_SUB=	PORTVERSION="${PORTVERSION}"
+PLIST_SUB+=	PORTVERSION=${PORTVERSION} GCC_TARG=${PKGNAMEPREFIX:S/-$//} \
+		GCC_REV=${GCCVERSION}
 
-MAN1=	cccp.1                 \
-	i386-mingw32msvc-g++.1 \
-	i386-mingw32msvc-g77.1 \
-	i386-mingw32msvc-gcc.1
+BINARIES	= gcc cpp g++ g77 gcov
 
-post-patch:
-	${REINPLACE_CMD} -e 's/install-libiberty//' ${WRKSRC}/Makefile.in
-	${REINPLACE_CMD} -E -e 's/([^x])str(error|signal).[co]/\1/g' \
-		${WRKSRC}/libiberty/Makefile.in ${WRKSRC}/libstdc++/Makefile.in
+# May be gcc sources was downloaded for some other port?
+pre-fetch:
+	for F in ${DISTFILES}; do \
+		${TEST} -f ${DISTDIR}/$${F} && \
+		${TEST} ! -f ${DISTDIR}/${DIST_SUBDIR}/$${F} && \
+		${LN} ${DISTDIR}/$${F} ${DISTDIR}/${DIST_SUBDIR}/$${F} || \
+		true ;\
+	done
 
-pre-install:
-	${MV} ${PREFIX}/bin/i386-mingw32msvc-c++filt \
-		${PREFIX}/bin/i386-mingw32msvc-c++filt.binutils
+post-configure:
+	@${PERL} -pi.bak -e 's,^(TARGET_CONFIGDIRS\s*=).+$$,\1,' ${WRKSRC}/Makefile
+	@${PERL} -pi.bak -e 's,^(install-info:),\1\ndonot-\1,' ${WRKSRC}/gcc/Makefile
 
 post-install:
-	@for file in \
-	  cpp gcov  \
-	  i386-mingw32msvc-c++ \
-	  i386-mingw32msvc-c++filt \
-	  i386-mingw32msvc-g++ \
-	  i386-mingw32msvc-g77 \
-	  i386-mingw32msvc-gcc \
-	  i386-mingw32msvc-protoize \
-	  i386-mingw32msvc-unprotoize; \
-	do \
-	  strip ${PREFIX}/bin/$${file}; \
-	done
+.for F in ${BINARIES}
+	@strip ${PREFIX}/bin/${PKGNAMEPREFIX}$F
+	@${LN} -f ${PREFIX}/bin/${PKGNAMEPREFIX}$F \
+		${PREFIX}/${PKGNAMEPREFIX:S/-$//}/bin/$F
+.endfor
 
 .include <bsd.port.mk>
