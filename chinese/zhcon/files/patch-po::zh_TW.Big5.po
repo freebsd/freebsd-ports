@@ -156,7 +156,7 @@
  msgid ""
  "Zhcon can use input methods from Unicon[TurboLinux],read manual for detail."
  msgstr ""
-+"zhcon能使用Unicon[TurboLinux]中的輸入法，請閱\讀手冊以獲得更詳細的資訊。"
++"zhcon能使用Unicon[TurboLinux]中的輸入法，請閱讀手冊以獲得更詳細的資訊。"
  
  #: src/zhcon.cpp:94
  msgid "Zhcon is optimized for running under Linux FrameBuffer."
@@ -202,7 +202,7 @@
  #: src/inputmanager.cpp:711
  msgid "CTRL key:"
 -msgstr ""
-+msgstr "CTRL 功\能鍵:"
++msgstr "CTRL 功能鍵:"
  
  #: src/inputmanager.cpp:712
  msgid "F1  GB2312"
@@ -262,7 +262,7 @@
  #: src/inputmanager.cpp:730
  msgid "Special Input Key:"
 -msgstr ""
-+msgstr "輸入功\能鍵:"
++msgstr "輸入功能鍵:"
  
  #: src/inputmanager.cpp:731
  msgid "CTRL-SHIFT  Next IME"
