@@ -1,5 +1,5 @@
---- vbsfilter-1.7.c.orig	Mon Aug 13 21:11:36 2001
-+++ vbsfilter-1.7.c	Mon Aug 13 21:15:05 2001
+--- vbsfilter-1.8.c.orig	Mon Aug 13 21:11:36 2001
++++ vbsfilter-1.8.c	Mon Aug 13 21:15:05 2001
 @@ -9,6 +9,10 @@
  #include <stdio.h>
  #include <string.h>
