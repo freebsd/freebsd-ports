@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	smokeping
-PORTVERSION=	1.21
+PORTVERSION=	1.23
 CATEGORIES=	net www
 MASTER_SITES=	http://people.ee.ethz.ch/~oetiker/webtools/smokeping/pub/
 
@@ -31,7 +31,7 @@ MAN1=		Curl.pm.1 DNS.pm.1 EchoPing.pm.1 EchoPingChargen.pm.1 EchoPingDiscard.pm.
 		smokeping.cgi.1 smokeping_config.1 smokeping_install.1 telnetIOSPing.pm.1
 
 PKGMESSAGE=	${WRKDIR}/pkg-message
-DOCDIR=		${PREFIX}/share/doc/smokeping
+
 DOC1=		CHANGES CONTRIBUTORS COPYING COPYRIGHT README TODO
 DOC2=		Curl.pm DNS.pm EchoPing.pm EchoPingChargen.pm EchoPingDiscard.pm \
 		EchoPingHttp.pm EchoPingHttps.pm EchoPingIcp.pm EchoPingSmtp.pm \
@@ -71,17 +71,19 @@ pre-install:
 
 do-install:
 	@${INSTALL_SCRIPT} ${WRKSRC}/bin/smokeping ${PREFIX}/bin
+.if !defined(NOPORTDOCS)
 .for file in ${MAN1}
 	@${INSTALL_MAN} ${WRKSRC}/doc/${file} ${PREFIX}/man/man1
 .endfor
-	@${MKDIR} ${DOCDIR}
+	@${MKDIR} ${DOCSDIR}
 .for file in ${DOC1}
-	@${INSTALL_DATA} ${WRKSRC}/${file} ${DOCDIR}
+	@${INSTALL_DATA} ${WRKSRC}/${file} ${DOCSDIR}
 .endfor
 .for file in ${DOC2}
-	@${INSTALL_DATA} ${WRKSRC}/doc/${file}.html ${DOCDIR}
-	@${INSTALL_DATA} ${WRKSRC}/doc/${file}.txt  ${DOCDIR}
+	@${INSTALL_DATA} ${WRKSRC}/doc/${file}.html ${DOCSDIR}
+	@${INSTALL_DATA} ${WRKSRC}/doc/${file}.txt  ${DOCSDIR}
 .endfor
+.endif
 	@${MKDIR} ${PREFIX}/etc/smokeping
 .for file in ${ETC1}
 	@${INSTALL_DATA} ${WRKSRC}/etc/${file}.dist ${PREFIX}/etc/smokeping
