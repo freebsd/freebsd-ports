@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	png
-PORTVERSION=	1.0.9
-PORTREVISION=	1
+PORTVERSION=	1.0.10
 CATEGORIES=	graphics
 MASTER_SITES=	ftp://ftp.libpng.org/pub/png/src/ \
 		${MASTER_SITE_SOURCEFORGE}
