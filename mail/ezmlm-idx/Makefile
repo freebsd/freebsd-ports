@@ -12,7 +12,7 @@ CATEGORIES=	mail
 MASTER_SITES=	ftp://ftp.ezmlm.org/pub/patches/ \
 		ftp://gd.tuwien.ac.at/infosys/mail/qmail/ezmlm-patches/ \
 		http://gd.tuwien.ac.at/infosys/mail/qmail/ezmlm-patches/ \
-		ftp://ftp.eos.hokudai.ac.jp/pub/mail/qmail/ezmlm-idx/
+		ftp://ftp.eos.hokudai.ac.jp/pub/mail/ezmlm/
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 		ezmlm-${EZMLM_VERSION}${EXTRACT_SUFX}
 
