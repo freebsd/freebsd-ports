@@ -6,7 +6,7 @@
 # $FreeBSD$
 #
 
-DISTNAME=	zebra-0.79
+DISTNAME=	zebra-0.81
 CATEGORIES=	net
 MASTER_SITES=	ftp://ftp.zebra.org/pub/zebra/
 # you might need debugging, it's a developer release !
