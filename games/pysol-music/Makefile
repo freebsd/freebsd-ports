@@ -8,7 +8,8 @@
 PORTNAME=	pysol-music
 PORTVERSION=	4.40
 CATEGORIES=	games
-MASTER_SITES=	http://pysol2.sourceforge.net/download/
+MASTER_SITES=	${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	arved
 
 MAINTAINER=	serg@tmn.ru
 COMMENT=	Collection of background music for use with PySol
