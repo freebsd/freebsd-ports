@@ -14,8 +14,8 @@ MASTER_SITES=	http://www.win.tue.nl/~stijn/grdb/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Matches Motif/Athena/Tk widgets with the current GTK theme
 
-DEPRECATED=	"Obsolete, depends on GTK1"
-EXPIRATION_DATE="2004-10-01"
+DEPRECATED=	Obsolete, depends on GTK1
+EXPIRATION_DATE=2004-10-01
 
 LIB_DEPENDS=	popt.0:${PORTSDIR}/devel/popt
 

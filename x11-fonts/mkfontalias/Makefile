@@ -15,8 +15,8 @@ EXTRACT_SUFX=
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Python script to make fonts.alias files for X
 
-DEPRECATED=	"No longer useful, master-site disappeared"
-EXPIRATION_DATE="2004-10-01"
+DEPRECATED=	No longer useful, master-site disappeared
+EXPIRATION_DATE=2004-10-01
 
 PLIST_FILES=	bin/mkfontalias
 USE_PYTHON=	yes
