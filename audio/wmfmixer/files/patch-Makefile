@@ -1,0 +1,39 @@
+--- Makefile.orig	Sun Nov 22 05:07:57 1998
++++ Makefile	Fri Jun 21 15:07:46 2002
+@@ -1,24 +1,20 @@
+-LIBDIR = -L/usr/X11R6/lib
++CC ?= gcc
++CFLAGS += -c
++INCDIR = -I${X11BASE}/include
++LIBDIR = -L${X11BASE}/lib
+ LIBS   = -lXpm -lXext -lX11
+-CFLAGS = -O2
+-OBJS  = wmfmixer.o wmgeneral.o 
++OBJS =  wmfmixer.o wmgeneral.o
+ 
+ .c.o:
+-	cc -g -c $(CFLAGS) -Wall $< -o $*.o
++	${CC} ${CFLAGS} ${INCDIR} $< -o $*.o
+ 
+ wmfmixer: $(OBJS)
+-	cc -o wmfmixer $^ -lXext $(LIBDIR) $(LIBS)
++	${CC} -o wmfmixer $^ ${LIBDIR} ${LIBS}
+ 
+-all:: wmfmixer
++all: wmfmixer
+ 
+-clean::
+-	for i in $(OBJS) ; do \
+-		rm $$i; \
++clean:
++	for i in ${OBJS}; do \
++		rm -f $$i; \
+ 	done
+-	rm wmfmixer
+-install::
+-	
+-	cp -f wmfmixer /usr/local/bin/
+-	chmod 755 /usr/local/bin/wmfmixer
+-	chown root:root /usr/local/bin/wmfmixer
+-	echo "WMFMIXER installation finished."
++	rm -f wmfmixer
