@@ -1,7 +1,14 @@
---- configure.orig	Mon Feb 11 15:20:43 2002
-+++ configure	Mon Feb 11 15:22:24 2002
-@@ -8516,3 +8516,3 @@
+
+$FreeBSD$
+
+--- configure	2002/02/15 19:11:46	1.1
++++ configure	2002/02/15 19:12:30
+@@ -7752,7 +7752,7 @@
+   echo $ECHO_N "(cached) $ECHO_C" >&6
+ else
  
--for dblib in db-3.3 db-3.2 db-3.1 db-3; do
-+for dblib in db-3.3 db-3.2 db-3.1 db-3 db3; do
-   as_ac_Lib=`echo "ac_cv_lib_$dblib''_db_env_create" | $as_tr_sh`
+-	    for db3libs in "-ldb-3.3" "-ldb-3.2" "-ldb-3.1" "-ldb-3"; do
++	    for db3libs in "-ldb-3.3" "-ldb-3.2" "-ldb-3.1" "-ldb-3" "-ldb3"; do
+ 		if test "x${with_db3_libs}" != "x"; then
+ 			LIBS="$LIBS -L$with_db3_libs $db3libs"
+ 		else

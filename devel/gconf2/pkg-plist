@@ -1,79 +1,87 @@
-bin/gconf-config
-bin/gconf-config-1
-bin/gconfd-1
+bin/gconfd-2
 bin/gconftool
-bin/gconftool-1
-etc/gconf/1/path
-etc/gconf/schemas/desktop.schemas
-include/gconf/1/gconf/gconf-changeset.h
-include/gconf/1/gconf/gconf-client.h
-include/gconf/1/gconf/gconf-engine.h
-include/gconf/1/gconf/gconf-error.h
-include/gconf/1/gconf/gconf-glib-public.h
-include/gconf/1/gconf/gconf-listeners.h
-include/gconf/1/gconf/gconf-schema.h
-include/gconf/1/gconf/gconf-value.h
-include/gconf/1/gconf/gconf.h
-lib/GConf/1/libgconfbackend-bdb.a
-lib/GConf/1/libgconfbackend-bdb.so
-lib/GConf/1/libgconfbackend-xml.a
-lib/GConf/1/libgconfbackend-xml.so
-lib/libgconf-1.a
-lib/libgconf-1.so
-lib/libgconf-1.so.1
-lib/libgconf-gtk-1.a
-lib/libgconf-gtk-1.so
-lib/libgconf-gtk-1.so.1
-libdata/pkgconfig/gconf.pc
-libdata/pkgconfig/gconfgtk.pc
-share/aclocal/gconf-1.m4
-share/locale/az/LC_MESSAGES/GConf.mo
-share/locale/ca/LC_MESSAGES/GConf.mo
-share/locale/cs/LC_MESSAGES/GConf.mo
-share/locale/da/LC_MESSAGES/GConf.mo
-share/locale/de/LC_MESSAGES/GConf.mo
-share/locale/el/LC_MESSAGES/GConf.mo
-share/locale/es/LC_MESSAGES/GConf.mo
-share/locale/eu/LC_MESSAGES/GConf.mo
-share/locale/fi/LC_MESSAGES/GConf.mo
-share/locale/fr/LC_MESSAGES/GConf.mo
-share/locale/ga/LC_MESSAGES/GConf.mo
-share/locale/gl/LC_MESSAGES/GConf.mo
-share/locale/hu/LC_MESSAGES/GConf.mo
-share/locale/it/LC_MESSAGES/GConf.mo
-share/locale/ja/LC_MESSAGES/GConf.mo
-share/locale/ko/LC_MESSAGES/GConf.mo
-share/locale/nl/LC_MESSAGES/GConf.mo
-share/locale/nn/LC_MESSAGES/GConf.mo
-share/locale/no/LC_MESSAGES/GConf.mo
-share/locale/pl/LC_MESSAGES/GConf.mo
-share/locale/pt/LC_MESSAGES/GConf.mo
-share/locale/pt_BR/LC_MESSAGES/GConf.mo
-share/locale/ru/LC_MESSAGES/GConf.mo
-share/locale/sk/LC_MESSAGES/GConf.mo
-share/locale/sl/LC_MESSAGES/GConf.mo
-share/locale/sv/LC_MESSAGES/GConf.mo
-share/locale/tr/LC_MESSAGES/GConf.mo
-share/locale/uk/LC_MESSAGES/GConf.mo
-share/locale/zh_CN.GB2312/LC_MESSAGES/GConf.mo
-@exec mkdir -p %D/etc/gconf/gconf.xml.defaults/apps
-@exec mkdir -p %D/etc/gconf/gconf.xml.defaults/schemas/apps
-@unexec rm -f %D/etc/gconf/gconf.xml.defaults/%%gconf.xml 2>/dev/null || true
-@unexec rm -f %D/etc/gconf/gconf.xml.defaults/apps/%%gconf.xml 2>/dev/null || true
-@unexec rm -f %D/etc/gconf/gconf.xml.defaults/schemas/%%gconf.xml 2>/dev/null || true
-@unexec rm -f %D/etc/gconf/gconf.xml.defaults/schemas/apps/%%gconf.xml 2>/dev/null || true
-@dirrm share/gnome/gconf/1
-@dirrm share/gnome/gconf
-@dirrm lib/GConf/1
-@dirrm lib/GConf
-@dirrm include/gconf/1/gconf
-@dirrm include/gconf/1
-@dirrm include/gconf
-@dirrm etc/gconf/schemas
-@dirrm etc/gconf/gconf.xml.mandatory
-@dirrm etc/gconf/gconf.xml.defaults/schemas/apps
-@dirrm etc/gconf/gconf.xml.defaults/schemas
-@dirrm etc/gconf/gconf.xml.defaults/apps
-@dirrm etc/gconf/gconf.xml.defaults
-@dirrm etc/gconf/1
-@dirrm etc/gconf
+bin/gconftool-2
+etc/gconf/2/path
+include/gconf/2/gconf/gconf-changeset.h
+include/gconf/2/gconf/gconf-client.h
+include/gconf/2/gconf/gconf-engine.h
+include/gconf/2/gconf/gconf-error.h
+include/gconf/2/gconf/gconf-listeners.h
+include/gconf/2/gconf/gconf-schema.h
+include/gconf/2/gconf/gconf-value.h
+include/gconf/2/gconf/gconf.h
+lib/GConf/2/libgconfbackend-bdb.so
+lib/GConf/2/libgconfbackend-xml.so
+lib/libgconf-2.a
+lib/libgconf-2.so
+lib/libgconf-2.so.3
+libdata/pkgconfig/gconf-2.0.pc
+share/aclocal/gconf-2.m4
+share/doc/gconf/c120.html
+share/doc/gconf/c21.html
+share/doc/gconf/c381.html
+share/doc/gconf/c490.html
+share/doc/gconf/conventions.html
+share/doc/gconf/gconf-client-reference.html
+share/doc/gconf/gconf-client.html
+share/doc/gconf/gconf-gconf-backend.html
+share/doc/gconf/gconf-gconf-changeset.html
+share/doc/gconf/gconf-gconf-engine.html
+share/doc/gconf/gconf-gconf-error.html
+share/doc/gconf/gconf-gconf-internals.html
+share/doc/gconf/gconf-gconf-listeners.html
+share/doc/gconf/gconf-gconf-locale.html
+share/doc/gconf/gconf-gconf-schema.html
+share/doc/gconf/gconf-gconf-sources.html
+share/doc/gconf/gconf-gconf-value.html
+share/doc/gconf/gconf-gconf.html
+share/doc/gconf/gconf-internals-reference.html
+share/doc/gconf/gconf-reference.html
+share/doc/gconf/gconfclient.html
+share/doc/gconf/gconftool.html
+share/doc/gconf/index.html
+share/doc/gconf/index.sgml
+share/doc/gconf/x184.html
+share/doc/gconf/x236.html
+share/doc/gconf/x289.html
+share/doc/gconf/x42.html
+share/doc/gconf/x462.html
+share/doc/gconf/x485.html
+share/locale/az/LC_MESSAGES/GConf2.mo
+share/locale/ca/LC_MESSAGES/GConf2.mo
+share/locale/cs/LC_MESSAGES/GConf2.mo
+share/locale/da/LC_MESSAGES/GConf2.mo
+share/locale/de/LC_MESSAGES/GConf2.mo
+share/locale/el/LC_MESSAGES/GConf2.mo
+share/locale/es/LC_MESSAGES/GConf2.mo
+share/locale/fi/LC_MESSAGES/GConf2.mo
+share/locale/fr/LC_MESSAGES/GConf2.mo
+share/locale/ga/LC_MESSAGES/GConf2.mo
+share/locale/gl/LC_MESSAGES/GConf2.mo
+share/locale/hu/LC_MESSAGES/GConf2.mo
+share/locale/it/LC_MESSAGES/GConf2.mo
+share/locale/ja/LC_MESSAGES/GConf2.mo
+share/locale/ko/LC_MESSAGES/GConf2.mo
+share/locale/nl/LC_MESSAGES/GConf2.mo
+share/locale/nn/LC_MESSAGES/GConf2.mo
+share/locale/no/LC_MESSAGES/GConf2.mo
+share/locale/pt/LC_MESSAGES/GConf2.mo
+share/locale/pt_BR/LC_MESSAGES/GConf2.mo
+share/locale/ro/LC_MESSAGES/GConf2.mo
+share/locale/ru/LC_MESSAGES/GConf2.mo
+share/locale/sk/LC_MESSAGES/GConf2.mo
+share/locale/sl/LC_MESSAGES/GConf2.mo
+share/locale/sv/LC_MESSAGES/GConf2.mo
+share/locale/tr/LC_MESSAGES/GConf2.mo
+share/locale/uk/LC_MESSAGES/GConf2.mo
+share/locale/zh_CN/LC_MESSAGES/GConf2.mo
+@dirrm share/doc/gconf
+@dirrm lib/GConf/2
+@unexec /bin/rmdir %D/lib/GConf 2>/dev/null || /usr/bin/true
+@dirrm include/gconf/2/gconf
+@dirrm include/gconf/2
+@unexec /bin/rmdir %D/include/gconf 2>/dev/null || /usr/bin/true
+@dirrm etc/gconf/2
+@unexec /bin/rmdir %D/etc/gconf/gconf.xml.mandatory 2>/dev/null || /usr/bin/true
+@unexec /bin/rmdir %D/etc/gconf/gconf.xml.defaults 2>/dev/null || /usr/bin/true
+@unexec /bin/rmdir %D/etc/gconf 2>/dev/null || /usr/bin/true

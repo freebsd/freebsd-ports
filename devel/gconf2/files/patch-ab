@@ -1,19 +1,25 @@
---- Makefile.in.orig	Mon May 14 13:07:48 2001
-+++ Makefile.in	Mon May 21 23:29:41 2001
-@@ -37,3 +37,3 @@
+
+$FreeBSD$
+
+--- Makefile.in	2002/02/15 19:08:06	1.1
++++ Makefile.in	2002/02/15 19:10:01
+@@ -35,7 +35,7 @@
+ DESTDIR =
+ 
  pkgdatadir = $(datadir)/@PACKAGE@
 -pkglibdir = $(libdir)/@PACKAGE@
 +pkglibdir = $(prefix)/libdata/pkgconfig
  pkgincludedir = $(includedir)/@PACKAGE@
-@@ -144,3 +144,3 @@
  
--pkgconfigdir = $(libdir)/pkgconfig
-+pkgconfigdir = $(pkglibdir)
- pkgconfig_DATA = gconf.pc gconfgtk.pc
-@@ -476,4 +476,4 @@
+ top_builddir = .
+@@ -450,8 +450,8 @@
+ 
+ 
  install-data-local:
 -	-mkdir -p $(DESTDIR)$(datadir)/aclocal
 -	$(INSTALL_DATA) gconf.m4 $(DESTDIR)$(datadir)/aclocal/gconf-$(MAJOR_VERSION).m4
 +	-mkdir -p $(DESTDIR)$(prefix)/share/aclocal
 +	$(INSTALL_DATA) gconf.m4 $(DESTDIR)$(prefix)/share/aclocal/gconf-$(MAJOR_VERSION).m4
- 	@echo "**** NOTE ****"
+ 	-mkdir -p $(DESTDIR)$(sysconfdir)/gconf/gconf.xml.defaults
+ 	-chmod 755 $(DESTDIR)$(sysconfdir)/gconf/gconf.xml.defaults
+ 	-mkdir -p $(DESTDIR)$(sysconfdir)/gconf/gconf.xml.mandatory

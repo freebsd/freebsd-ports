@@ -1,9 +1,9 @@
 
 $FreeBSD$
 
---- backends/bdb-backend.c	2001/08/02 17:59:13	1.1
-+++ backends/bdb-backend.c	2001/08/02 18:03:23
-@@ -25,10 +25,9 @@
+--- backends/bdb-backend.c	2002/02/15 19:10:46	1.1
++++ backends/bdb-backend.c	2002/02/15 19:11:25
+@@ -29,10 +29,9 @@
  #include <gconf/gconf-internals.h>
  #include <gconf/gconf.h>
  
