@@ -11,6 +11,7 @@ PORTVERSION=	3.0.b2.18
 CATEGORIES=	net
 MASTER_SITES=	ftp://ftp.isc.org/isc/dhcp/
 PKGNAMEPREFIX=	isc-
+PKGNAMESUFFIX=	3
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/.b/b/:R}pl${PORTVERSION:E}
 
 MAINTAINER=	clefevre@poboxes.com
