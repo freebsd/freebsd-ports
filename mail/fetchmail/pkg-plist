@@ -5,7 +5,7 @@ share/doc/fetchmail/COPYING
 share/doc/fetchmail/FAQ
 share/doc/fetchmail/NOTES
 share/doc/fetchmail/FEATURES
-share/doc/fetchmail/fetchmail.FAQ.html
+share/doc/fetchmail/fetchmail-FAQ.html
 share/doc/fetchmail/design-notes.html
 share/doc/fetchmail/fetchmail-features.html
 share/doc/fetchmail/sample.rcfile
