@@ -156,6 +156,7 @@
     SUBDIR += netatalk
     SUBDIR += netatalk-asun
     SUBDIR += netcat
+    SUBDIR += netmask
     SUBDIR += netpipes
     SUBDIR += netsaint
     SUBDIR += netsaint-plugins
