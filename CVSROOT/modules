@@ -7528,6 +7528,7 @@ thttpd		ports/www/thttpd
 thumbnail_index ports/www/thumbnail_index
 thx_1138	ports/math/thx_1138
 ticker.app	ports/sysutils/ticker.app
+tictactoe3d	ports/games/tictactoe3d
 tide		ports/devel/tide
 tidy		ports/www/tidy
 tidy-devel	ports/www/tidy-devel
