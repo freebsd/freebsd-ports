@@ -11,7 +11,9 @@ EMACS_PORT_NAME=	xemacs21-mule
 LISPDIR=		lib/xemacs/site-packages/lisp/${PORTNAME}
 EMACS_ONLY=		"@comment "
 XEMACS_ONLY=		""
-ALL_TARGET=		package
+ALL_TARGET=		package c
 INSTALL_TARGET=		install-package
+PUREBIN=		${EMACS_LIBDIR}/site-packages/etc/pure
+MAKE_ENV=		LANG=ja_JP.EUC
 
 .include <${MASTERDIR}/Makefile>
