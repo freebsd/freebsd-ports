@@ -11,7 +11,7 @@ CATEGORIES=	net
 MASTER_SITES=	http://www.gtk-papaya.org/downloads/plugins/source/
 DISTNAME=	papaya-plugins-src-${PORTVERSION}
 
-MAINTAINER=	edwin@mavetju.org
+MAINTAINER=	adam@blacktabby.org
 
 # We need the source for papaya to build the plugins.
 BUILD_DEPENDS=	${PORTSDIR}/net/papaya/work/papaya-src-${PORTVERSION}/src/h:${PORTSDIR}/net/papaya
