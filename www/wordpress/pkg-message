@@ -1,0 +1,6 @@
+
+                  **** NOTE ****
+        Before the first use of WordPress, copy wp-config-sample.php to wp-config.php
+        in ${PREFIX}/${WORDPRESS}
+        And Modify it to fit your MySQL.
+        Maybe you need 'mysqladmin create wordpress' first
