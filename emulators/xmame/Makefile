@@ -260,7 +260,7 @@ pre-everything::
 do-configure:
 	${REINPLACE_CMD} -e "s@= gcc@?=  ${CC}@g" \
 		-e "s@^TARGET.*@TARGET = ${MAMEMESS}@g" \
-		-e "s@# MAME_NET@${NETWORK}MAME_NET@g" \
+		-e "s@# XMAME_NET@${NETWORK}XMAME_NET@g" \
 		-e "s@# X86_ASM_68000 =@${ASM_COMMENT}X86_ASM_68000 =@g" \
 		-e "s@^CFLAGS.*@CFLAGS ?= ${CFLAGS}@g" \
 		-e "s@^INSTALL_GROUP.*@INSTALL_GROUP = wheel@g" \
