@@ -1,0 +1,11 @@
+--- src/Makefile.in     Wed Nov 19 15:51:19 2003
++++ src/Makefile.in.new Thu Feb 26 00:01:28 2004
+@@ -128,7 +128,7 @@
+ sharedstatedir = @sharedstatedir@
+ sysconfdir = @sysconfdir@
+ target_alias = @target_alias@
+-AM_CFLAGS = -g -O2 -Werror
++AM_CFLAGS = -g -O2
+ 
+ # Tricks to generate the traj cache at compile time
+ noinst_PROGRAMS = pathinit
