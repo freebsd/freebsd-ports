@@ -72,6 +72,7 @@
     SUBDIR += pike
     SUBDIR += ptoc
     SUBDIR += python
+    SUBDIR += python+ipv6
     SUBDIR += python-doc-html
     SUBDIR += python-doc-pdf-a4
     SUBDIR += python-doc-pdf-letter
