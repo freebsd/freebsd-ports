@@ -12,9 +12,17 @@ MASTER_SITES=	ftp://prtr-13.ucsc.edu/pub/libungif/
 
 MAINTAINER=	ports@FreeBSD.org
 
-USE_XLIB=	yes
-USE_LIBTOOL=	yes
+GNU_CONFIGURE=	yes
 INSTALLS_SHLIB=	yes
+
+.ifdef (NO_X)
+PLIST_SUB+=	X11='@comment '
+CONFIGURE_ARGS+=--with-x=no
+PKGNAMESUFFIX=	-nox11
+.else
+USE_XLIB=	yes
+PLIST_SUB+=	X11=''
+.endif
 
 DOCDIR=		${PREFIX}/share/doc/libungif
 

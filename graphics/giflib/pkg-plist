@@ -1,7 +1,7 @@
 bin/gif2epsn
 bin/gif2ps
 bin/gif2rgb
-bin/gif2x11
+%%X11%%bin/gif2x11
 bin/gifasm
 bin/gifbg
 bin/gifburst
