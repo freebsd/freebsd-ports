@@ -1,14 +1,14 @@
 
 $FreeBSD$
 
---- src/applications/tracekit/Makefile.in.orig	Sat Oct  2 17:46:14 2004
-+++ src/applications/tracekit/Makefile.in	Sat Oct  2 17:46:50 2004
-@@ -197,7 +197,7 @@
- 	$(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS)
+--- src/applications/tracekit/Makefile.in.orig
++++ src/applications/tracekit/Makefile.in
+@@ -81,7 +81,7 @@
+ 	$(AM_CFLAGS) $(CFLAGS)
  CCLD = $(CC)
  LINK = $(LIBTOOL) --mode=link $(CCLD) $(AM_CFLAGS) $(CFLAGS) \
 -	$(AM_LDFLAGS) $(LDFLAGS) -o $@
 +	$(AM_LDFLAGS) $(LDFLAGS) $(LTLIBINTL) -o $@
- CFLAGS = @CFLAGS@
- DIST_SOURCES = $(libgnunettracekit_protocol_la_SOURCES) \
+ SOURCES = $(libgnunettracekit_protocol_la_SOURCES) \
  	$(gnunet_tracekit_SOURCES)
+ DIST_SOURCES = $(libgnunettracekit_protocol_la_SOURCES) \

@@ -1,14 +1,14 @@
 
 $FreeBSD$
 
---- src/applications/stats/Makefile.in.orig	Sat Oct  2 17:02:35 2004
-+++ src/applications/stats/Makefile.in	Sat Oct  2 17:03:46 2004
-@@ -171,7 +171,7 @@
- 	$(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS)
+--- src/applications/stats/Makefile.in.orig
++++ src/applications/stats/Makefile.in
+@@ -71,7 +71,7 @@
+ 	$(AM_CFLAGS) $(CFLAGS)
  CCLD = $(CC)
  LINK = $(LIBTOOL) --mode=link $(CCLD) $(AM_CFLAGS) $(CFLAGS) \
 -	$(AM_LDFLAGS) $(LDFLAGS) -o $@
 +	$(AM_LDFLAGS) $(LDFLAGS) $(LTLIBINTL) -o $@
- CFLAGS = @CFLAGS@
+ SOURCES = $(gnunet_stats_SOURCES)
  DIST_SOURCES = $(gnunet_stats_SOURCES)
- DIST_COMMON = Makefile.am Makefile.in
+ ETAGS = etags

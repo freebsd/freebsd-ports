@@ -6,6 +6,7 @@ bin/gnunet-dht-join
 bin/gnunet-dht-query
 bin/gnunet-directory
 bin/gnunet-download
+bin/gnunet-download-manager.scm
 bin/gnunet-gtk
 bin/gnunet-insert
 bin/gnunet-peer-info
@@ -29,8 +30,6 @@ include/gnunet_dht_service.h
 include/gnunet_rpc_service.h
 include/gnunet_transport.h
 include/gnunet_util.h
-include/platform.h
-include/winproc.h
 lib/libgnunet_afs_esed2.a
 lib/libgnunet_afs_esed2.so
 lib/libgnunet_afs_esed2.so.0
@@ -63,6 +62,7 @@ share/GNUnet/gnunet_logo.png
 share/locale/de/LC_MESSAGES/GNUnet.mo
 %%WITH_GDBM%%lib/libgnunetafs_database_gdbm.so
 %%WITH_TDB%%lib/libgnunetafs_database_tdb.so
+%%WITH_SQLITE%%lib/libgnunetafs_database_sqlite.so
 %%WITH_IPV6%%lib/libgnunettransport_tcp6.so
 %%WITH_IPV6%%lib/libgnunettransport_udp6.so
 @dirrm share/GNUnet
