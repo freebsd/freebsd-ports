@@ -1,4 +1,5 @@
 bin/ggv
+etc/CORBA/servers/application-ps.gnorba
 share/gnome/apps/Graphics/ggv.desktop
 share/locale/de/LC_MESSAGES/ggv.mo
 share/locale/es/LC_MESSAGES/ggv.mo
@@ -7,4 +8,8 @@ share/locale/fr/LC_MESSAGES/ggv.mo
 share/locale/hu/LC_MESSAGES/ggv.mo
 share/locale/ko/LC_MESSAGES/ggv.mo
 share/locale/no/LC_MESSAGES/ggv.mo
+share/locale/pl/LC_MESSAGES/ggv.mo
 share/locale/pt/LC_MESSAGES/ggv.mo
+share/locale/pt_BR/LC_MESSAGES/ggv.mo
+share/locale/ru/LC_MESSAGES/ggv.mo
+share/locale/sv/LC_MESSAGES/ggv.mo
