@@ -1,5 +1,8 @@
---- sdl-config.in.orig	Mon May 22 21:01:18 2000
-+++ sdl-config.in	Fri Aug 11 15:01:30 2000
+
+$FreeBSD$
+
+--- sdl-config.in.orig	Wed Feb 28 17:53:18 2001
++++ sdl-config.in	Fri Mar 30 17:30:06 2001
 @@ -5,7 +5,7 @@
  exec_prefix_set=no
  
@@ -9,17 +12,17 @@
  
  if test $# -eq 0; then
        echo "${usage}" 1>&2
-@@ -42,11 +42,11 @@
-       if test @includedir@ != /usr/include ; then
-         includes=-I@includedir@
+@@ -45,11 +45,11 @@
+ 
+           includes=-I@includedir@
        fi
 -      echo $includes -I@includedir@/SDL @SDL_CFLAGS@
 +      echo $includes -I@includedir@/SDL11 @SDL_CFLAGS@
        ;;
-     --libs)
-       libdirs="-L@libdir@ @SDL_RLD_FLAGS@"
--      echo $libdirs @SDL_LIBS@
-+      echo $libdirs @SDL_LIBS@ @SYSTEM_LIBS@
-       ;;
-     --static-libs)
-       libdirs="-L@libdir@ @SDL_RLD_FLAGS@"
+ @ENABLE_SHARED_TRUE@    --libs)
+ @ENABLE_SHARED_TRUE@      libdirs="-L@libdir@ @SDL_RLD_FLAGS@"
+-@ENABLE_SHARED_TRUE@      echo $libdirs @SDL_LIBS@
++@ENABLE_SHARED_TRUE@      echo $libdirs @SDL_LIBS@ @SYSTEM_LIBS@
+ @ENABLE_SHARED_TRUE@      ;;
+ @ENABLE_STATIC_TRUE@@ENABLE_SHARED_TRUE@    --static-libs)
+ @ENABLE_STATIC_TRUE@@ENABLE_SHARED_FALSE@    --libs|--static-libs)

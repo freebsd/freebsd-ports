@@ -59,7 +59,9 @@ SDL_GL_SwapBuffers.3
 SDL_GLattr.3
 SDL_GetAppState.3
 SDL_GetAudioStatus.3
+SDL_GetClipRect.3
 SDL_GetCursor.3
+SDL_GetEventFilter.3
 SDL_GetGamma.3
 SDL_GetGammaRamp.3
 SDL_GetKeyName.3
@@ -120,6 +122,7 @@ SDL_PushEvent.3
 SDL_Quit.3
 SDL_QuitEvent.3
 SDL_QuitSubSystem.3
+SDL_RWFromFile.3
 SDL_Rect.3
 SDL_RemoveTimer.3
 SDL_ResizeEvent.3
@@ -151,6 +154,7 @@ SDL_UnlockYUVOverlay.3
 SDL_UpdateRect.3
 SDL_UpdateRects.3
 SDL_UserEvent.3
+SDL_VideoDriverName.3
 SDL_VideoInfo.3
 SDL_VideoModeOK.3
 SDL_WM_GetCaption.3
