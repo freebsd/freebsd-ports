@@ -1,2 +1,1 @@
-lib/perl5/man/man3/File::BasicFlock.3.gz
-lib/perl5/site_perl/File/BasicFlock.pm
+lib/perl5/site_perl/%%PERL_VER%%/File/BasicFlock.pm

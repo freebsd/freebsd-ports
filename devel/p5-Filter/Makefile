@@ -3,7 +3,7 @@
 # Date created:				June 26th 1997
 # Whom:	      				James FitzGibbon <jfitz@FreeBSD.ORG>
 #
-# $Id: Makefile,v 1.1.1.1 1997/06/27 01:37:45 jfitz Exp $
+# $Id: Makefile,v 1.2 1998/02/18 18:21:36 vanilla Exp $
 #
 
 DISTNAME=	Filter-1.14
@@ -16,7 +16,7 @@ MAINTAINER=	jfitz@FreeBSD.ORG
 
 USE_PERL5=	YES
 
-MANPREFIX=	${PREFIX}/lib/perl5
+MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 MAN3=		Filter::Util::Call.3 Filter::Util::Exec.3 Filter::cpp.3 \
 		Filter::decrypt.3 Filter::exec.3 Filter::sh.3 Filter::tee.3
 

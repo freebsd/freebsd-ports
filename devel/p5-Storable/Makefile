@@ -3,7 +3,7 @@
 # Date created:				July 7th 1997
 # Whom:	      				James FitzGibbon <jfitz@FreeBSD.org>
 #
-# $Id: Makefile,v 1.9 1998/06/26 01:41:19 asami Exp $
+# $Id: Makefile,v 1.10 1998/06/26 11:50:40 vanilla Exp $
 #
 
 DISTNAME=	Storable-0.6@2
@@ -16,7 +16,7 @@ MAINTAINER=	jfitz@FreeBSD.ORG
 
 USE_PERL5=	YES
 
-MANPREFIX=	${PREFIX}/lib/perl5
+MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 MAN3=		Storable.3
 
 do-configure:

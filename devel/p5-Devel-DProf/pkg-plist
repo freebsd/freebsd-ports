@@ -1,8 +1,6 @@
 bin/dprofpp
-man/man1/dprofpp.1.gz
-lib/perl5/man/man3/Devel::DProf.3.gz
-lib/perl5/site_perl/Devel/DProf.pm
-lib/perl5/site_perl/i386-freebsd/auto/Devel/DProf/DProf.bs
-lib/perl5/site_perl/i386-freebsd/auto/Devel/DProf/DProf.so
-lib/perl5/site_perl/i386-freebsd/auto/Devel/DProf/.packlist
-@dirrm lib/perl5/site_perl/i386-freebsd/auto/Devel/DProf
+lib/perl5/site_perl/%%PERL_VER%%/i386-freebsd/Devel/DProf.pm
+lib/perl5/site_perl/%%PERL_VER%%/i386-freebsd/auto/Devel/DProf/DProf.bs
+lib/perl5/site_perl/%%PERL_VER%%/i386-freebsd/auto/Devel/DProf/DProf.so
+lib/perl5/site_perl/%%PERL_VER%%/i386-freebsd/auto/Devel/DProf/.packlist
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/i386-freebsd/auto/Devel/DProf

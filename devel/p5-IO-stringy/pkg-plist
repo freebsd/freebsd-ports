@@ -1,16 +1,9 @@
-lib/perl5/5.00501/man/man3/IO::AtomicFile.3.gz
-lib/perl5/5.00501/man/man3/IO::Lines.3.gz
-lib/perl5/5.00501/man/man3/IO::Scalar.3.gz
-lib/perl5/5.00501/man/man3/IO::ScalarArray.3.gz
-lib/perl5/5.00501/man/man3/IO::Stringy.3.gz
-lib/perl5/5.00501/man/man3/IO::Wrap.3.gz
-lib/perl5/5.00501/man/man3/IO::WrapTie.3.gz
-lib/perl5/site_perl/5.005/IO/AtomicFile.pm
-lib/perl5/site_perl/5.005/IO/Lines.pm
-lib/perl5/site_perl/5.005/IO/Scalar.pm
-lib/perl5/site_perl/5.005/IO/ScalarArray.pm
-lib/perl5/site_perl/5.005/IO/Stringy.pm
-lib/perl5/site_perl/5.005/IO/Wrap.pm
-lib/perl5/site_perl/5.005/IO/WrapTie.pm
-lib/perl5/site_perl/5.005/i386-freebsd/auto/IO-stringy/.packlist
-@dirrm lib/perl5/site_perl/5.005/i386-freebsd/auto/IO-stringy
+lib/perl5/site_perl/%%PERL_VER%%/IO/AtomicFile.pm
+lib/perl5/site_perl/%%PERL_VER%%/IO/Lines.pm
+lib/perl5/site_perl/%%PERL_VER%%/IO/Scalar.pm
+lib/perl5/site_perl/%%PERL_VER%%/IO/ScalarArray.pm
+lib/perl5/site_perl/%%PERL_VER%%/IO/Stringy.pm
+lib/perl5/site_perl/%%PERL_VER%%/IO/Wrap.pm
+lib/perl5/site_perl/%%PERL_VER%%/IO/WrapTie.pm
+lib/perl5/site_perl/%%PERL_VER%%/i386-freebsd/auto/IO-stringy/.packlist
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/i386-freebsd/auto/IO-stringy

@@ -3,7 +3,7 @@
 # Date created:				June 26th 1997
 # Whom:	      				James FitzGibbon <jfitz@FreeBSD.ORG>
 #
-# $Id: Makefile,v 1.1.1.1 1997/06/27 01:56:01 jfitz Exp $
+# $Id: Makefile,v 1.2 1998/03/11 03:02:53 vanilla Exp $
 #
 
 DISTNAME=	TermReadKey-2.12
@@ -16,7 +16,7 @@ MAINTAINER=	jfitz@FreeBSD.ORG
 
 USE_PERL5=	YES
 
-MANPREFIX=	${PREFIX}/lib/perl5
+MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 MAN3=		Term::ReadKey.3
 
 do-configure:

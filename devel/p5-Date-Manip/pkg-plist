@@ -1,5 +1,4 @@
-lib/perl5/man/man3/Date::Manip.3.gz
-lib/perl5/site_perl/Date/Manip.pm
-lib/perl5/site_perl/Date/Manip.pod
-lib/perl5/site_perl/i386-freebsd/auto/Date/Manip/.packlist
-@dirrm lib/perl5/site_perl/i386-freebsd/auto/Date/Manip
+lib/perl5/site_perl/%%PERL_VER%%/Date/Manip.pm
+lib/perl5/site_perl/%%PERL_VER%%/Date/Manip.pod
+lib/perl5/site_perl/%%PERL_VER%%/i386-freebsd/auto/Date/Manip/.packlist
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/i386-freebsd/auto/Date/Manip

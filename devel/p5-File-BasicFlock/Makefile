@@ -3,7 +3,7 @@
 # Date created:				
 # Whom:	      				James FitzGibbon <jfitz@FreeBSD.org>
 #
-#   $Id: Makefile,v 1.5 1997/05/24 13:17:02 jfitz Exp $
+#   $Id: Makefile,v 1.6 1997/06/24 18:43:17 jfitz Exp $
 #
 
 DISTNAME=	File-BasicFLock-96.072401
@@ -17,7 +17,7 @@ MAINTAINER=	jfitz@FreeBSD.ORG
 USE_PERL5=	YES
 
 MAN3=		File::BasicFlock.3
-MANPREFIX=	${PREFIX}/lib/perl5
+MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 
 do-configure:
 		@ cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} ${PREFIX}/bin/perl Makefile.PL

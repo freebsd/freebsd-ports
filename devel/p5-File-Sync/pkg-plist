@@ -1,8 +1,5 @@
-lib/perl5/man/man3/File::Sync.3.gz
-lib/perl5/site_perl/File/Sync.pm
-lib/perl5/site_perl/auto/File/Sync/autosplit.ix
-lib/perl5/site_perl/i386-freebsd/auto/File/Sync/Sync.so
-lib/perl5/site_perl/i386-freebsd/auto/File/Sync/Sync.bs
-lib/perl5/site_perl/i386-freebsd/auto/File/Sync/.packlist
-@dirrm lib/perl5/site_perl/auto/File/Sync
-@dirrm lib/perl5/site_perl/i386-freebsd/auto/File/Sync
+lib/perl5/site_perl/%%PERL_VER%%/i386-freebsd/auto/File/Sync/autosplit.ix
+lib/perl5/site_perl/%%PERL_VER%%/i386-freebsd/auto/File/Sync/Sync.so
+lib/perl5/site_perl/%%PERL_VER%%/i386-freebsd/auto/File/Sync/Sync.bs
+lib/perl5/site_perl/%%PERL_VER%%/i386-freebsd/auto/File/Sync/.packlist
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/i386-freebsd/auto/File/Sync

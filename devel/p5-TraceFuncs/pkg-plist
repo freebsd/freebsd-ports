@@ -1,3 +1,2 @@
-lib/perl5/man/man3/Devel::TraceFuncs.3.gz
-lib/perl5/site_perl/Devel/TraceFuncs.pm
-lib/perl5/site_perl/i386-freebsd/auto/Devel/.packlist
+lib/perl5/site_perl/%%PERL_VER%%/Devel/TraceFuncs.pm
+lib/perl5/site_perl/%%PERL_VER%%/i386-freebsd/auto/Devel/.packlist

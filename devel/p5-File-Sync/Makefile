@@ -3,7 +3,7 @@
 # Date created:		6 March 1998
 # Whom:			Jun Kuriyama <kuriyama@opt.phys.waseda.ac.jp>
 #
-# $Id: Makefile,v 1.1.1.1 1998/03/15 20:17:58 steve Exp $
+# $Id: Makefile,v 1.2 1998/03/21 02:06:11 asami Exp $
 #
 
 DISTNAME=	File-Sync-0.06
@@ -18,7 +18,7 @@ USE_PERL5=	YES
 
 MAN3=		File::Sync.3
 
-MANPREFIX=	${PREFIX}/lib/perl5
+MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 
 do-configure:
 	@ cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} ${PREFIX}/bin/perl Makefile.PL

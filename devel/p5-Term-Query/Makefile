@@ -3,7 +3,7 @@
 # Date created:				21 May 1998
 # Whom:	      				Garrett Wollman <wollman@lcs.mit.edu>
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1998/05/22 02:07:30 mph Exp $
 #
 
 DISTNAME=	Term-Query-2.0
@@ -14,11 +14,11 @@ MASTER_SITE_SUBDIR=	Term
 
 MAINTAINER=	ports@FreeBSD.ORG
 
-RUN_DEPENDS=	${PREFIX}/lib/perl5/site_perl/Array/PrintCols.pm:${PORTSDIR}/misc/p5-Array-PrintCols
+RUN_DEPENDS=	${PREFIX}/lib/perl5/site_perl/${PERL_VER}/Array/PrintCols.pm:${PORTSDIR}/misc/p5-Array-PrintCols
 
 USE_PERL5=	YES
 
-MANPREFIX=	${PREFIX}/lib/perl5
+MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 MAN3=		Term::Query.3
 
 do-configure:
