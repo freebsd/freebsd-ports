@@ -32,6 +32,7 @@ USE_X_PREFIX=	yes
 GNU_CONFIGURE=	yes
 USE_GNOMENG=	yes
 WANT_GNOME=	yes
+USE_GNOME=	gnomehack
 USE_GMAKE=	yes
 USE_MESA=	yes
 USE_REINPLACE=	yes
