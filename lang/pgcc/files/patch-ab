@@ -1,0 +1,20 @@
+--- Makefile.in.orig	Wed Dec 18 00:15:45 1996
++++ Makefile.in	Wed Dec 18 00:24:31 1996
+@@ -53,7 +53,7 @@
+ # TCFLAGS is used for compilations with the GCC just built.
+ XCFLAGS =
+ TCFLAGS =
+-CFLAGS = -g
++CFLAGS = -pipe -O2
+ BOOT_CFLAGS = -O $(CFLAGS)
+ # These exists to be overridden by the x-* and t-* files, respectively.
+ X_CFLAGS =
+@@ -460,7 +460,7 @@
+ # Both . and srcdir are used, in that order,
+ # so that tm.h and config.h will be found in the compilation
+ # subdirectory rather than in the source directory.
+-INCLUDES = -I. -I$(srcdir) -I$(srcdir)/config
++INCLUDES = -I. -I$(srcdir) -I$(srcdir)/config -I$(srcdir)/cp/inc
+ 
+ # Always use -I$(srcdir)/config when compiling.
+ .c.o:

@@ -1,0 +1,24 @@
+		The Pentium Compiler GROUP
+
+Mail me at marc@cerebro.inka.de for anything concerning this FAQ. 
+
+                     What is the Pentium GCC Workgroup for?
+
+The PCG was created because all the patched GCC's are somewhat unstable 
+(i.e. they cannot compile some programs) and somewhat insecure (they 
+sometimes generate wrong code, although this goes unnoticed in many cases!). 
+
+The PWG wants to 
+
+	o improve the stability of the compiler 
+	o enhance the quality of the generated code (better optimizations) 
+	o get cygnus and/or gnu to include some optimizations in the 
+	  "official" GNU cc 
+
+More Info: 
+
+	http://www-iss.mach.uni-karlsruhe.de/pcg/
+
+--
+Andreas Klemm <andreas@klemm.gtn.com>
+   Wed Jan 31 00:55:04 MET 1996
