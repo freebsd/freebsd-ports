@@ -1,5 +1,1 @@
 bin/blender
-bin/blenderplayer
-%%PLUGIN_DIR%%/npBlender3DPlugin.so
-@unexec rmdir %D/lib/mozilla/plugins 2>/dev/null || true
-@unexec rmdir %D/lib/mozilla 2>/dev/null || true
