@@ -1,0 +1,34 @@
+#!/bin/sh
+
+# Start or stop jabber-pymsn
+# $FreeBSD: /tmp/pcvs/ports/net/jabber-pymsn/files/Attic/jabber-pymsn-transport.sh.in,v 1.1 2005-03-19 00:27:52 flz Exp $
+
+# PROVIDE: jabber_pymsn
+# REQUIRE: DAEMON
+# BEFORE: LOGIN
+# KEYWORD: FreeBSD shutdown
+#
+# Define these jabber_pymsn_* variables in one of these files:
+#       /etc/rc.conf
+#       /etc/rc.conf.local
+#
+# DO NOT CHANGE THESE DEFAULT VALUES HERE
+#
+jabber_pymsn_dir=${jabberd_pymsn_dir-"%%PREFIX%%/lib/jabber/pymsn"}
+jabber_pymsn_piddir=${jabberd_pymsn_piddir-"/var/jabberd/pid"}
+jabber_pymsn_enable=${jabberd_pymsn_enable-"NO"}
+
+
+. %%RC_SUBR%%
+
+name="jabber_pymsn"
+rcvar=`set_rcvar`
+command_interpreter="%%PYTHON_CMD%%"
+command="${jabber_pymsn_dir}/main.py"
+command_args="&"
+
+#procname="${PYTHON} ${jabber_pymsn_dir}/main.py"
+pidfile="${jabber_pymsn_piddir}/pymsn.pid"
+
+load_rc_config $name
+run_rc_command "$1"

@@ -1,0 +1,22 @@
+******************************************************************************
+Remember to edit %%PREFIX%%/etc/jabber-pymsn.xml to suit your needs.
+
+* The 'jid' setting should be what ID you want PyMSNt to take on the network.
+* The 'mainServer' setting should be the IP address or DNS of the main Jabberd
+  server.
+* The 'secret' setting should match the secret specified for component
+  connections in your main Jabberd server.
+* The 'port' setting is the port that PyMSNt is to connect to (more details on
+  this below.
+* You can also turn on debugging options, and customise some of the text that
+  is sent to the users in this file.
+
+If you are using Jabberd2 then you shouldn't have to do much configuration.
+Make sure the 'mainServer' setting is the IP or DNS of your Jabber server, and
+leave the 'port' setting alone. Double-check that the secret for legacy
+components in router.xml (for Jabberd2) is the same as the secret setting in
+config.py. That should be all. You don't even need to restart Jabberd2.
+
+If you are using Jabberd1.4.x,  it's a bit more complicated. Follow the setup
+instructions at http://msn-transport.jabberstudio.org/docs/server.html.
+******************************************************************************
