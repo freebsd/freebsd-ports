@@ -35,6 +35,28 @@ cyrus_conf() {
 	fi
 }
 
+#
+# Modify the 'cyrus' user created from the cyrus-sasl port
+#
+
+modify_cyrus_user() {
+	USER=cyrus
+	PW=/usr/sbin/pw
+	if [ -x /sbin/nologin ]; then
+		shell=/sbin/nologin
+	else
+		shell=/nonexistent
+	fi
+	uhome=/nonexistent
+
+	if ! ${PW} mod user ${USER} -d "${uhome}" -s "${shell}" \ ; then
+		e=$?
+		echo "*** Failed to update user \`${USER}'."
+		exit ${e}
+	fi
+	echo "*** Updated user \`${USER}'."
+}
+
 case $2 in
 	DEINSTALL)
 		cd ${PKG_PREFIX}
@@ -42,6 +64,7 @@ case $2 in
 		checkfile ${PKG_PREFIX}/etc/imapd.conf
 		;;
 	POST-DEINSTALL)
+		modify_cyrus_user
 		;;
 
 esac
