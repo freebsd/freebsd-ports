@@ -1,0 +1,13 @@
+ish is a format to encode binary files to text file, or decode text
+files into binary file.  ish has strong error correction/detection
+functionality using CRC and checksum.
+This format is popular in Japanese BBS'es.
+
+To non-Japanese people:
+	To produce non-Japanese text a user should use "-s7" option.
+	Other options such as "-ss" may produce Japanese text.
+To Japanese people:
+	To use ish over NetNews newsgroups (such as fj.*), use "-s7" option.
+	Use of "-ss" will not give you the optimal performance.
+	"-ss" option is just for BBSes that use Shift-JIS as their native
+	Japanese encoding.
