@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gnubiff
-PORTVERSION=	1.2.0
+PORTVERSION=	1.4.0
 CATEGORIES=	mail
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE_EXTENDED}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -16,6 +16,7 @@ COMMENT=	A mail notification program for Gnome
 
 LIB_DEPENDS=	popt.0:${PORTSDIR}/devel/popt
 
+USE_BZIP2=	yes
 USE_X_PREFIX=	yes
 USE_GNOME=	libglade2 esound
 USE_GMAKE=	yes
@@ -37,12 +38,12 @@ WANT_GNOME=	yes
 .include <bsd.port.pre.mk>
 
 .if ${HAVE_GNOME:Mgnomepanel}!=""
-CONFIGURE_ARGS+=	--with-gnome
 USE_GNOME+=		gnomepanel gconf2 gnomeprefix gnomehack
 PKGNAMESUFFIX=		-gnome
 PLIST_SUB+=		SHAREDIR="share/gnome"
 PLIST_SUB+=		WITH_GNOME=""
 .else
+CONFIGURE_ARGS+=	--disable-gnome
 PLIST_SUB+=		SHAREDIR="share"
 PLIST_SUB+=		WITH_GNOME="@comment "
 .endif
