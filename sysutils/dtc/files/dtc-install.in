@@ -1,0 +1,648 @@
+#!/bin/sh
+
+# This is the DTC's BSD interactive install configuration script
+# called by the make install
+# made by Thomas Goirand <thomas@goirand.fr> and Frederic Cambus
+
+
+PREFIX=%%PREFIX%%
+LOCALBASE=%%LOCALBASE%%
+QMAIL_DIR=%%QMAIL_DIR%%
+
+UNIX_TYPE=freebsd
+
+echo "###############################################################"
+echo "### Welcome to DTC config script for automatic installation ###"
+echo "###############################################################"
+
+# DATABASE CONFIGURATION
+echo "### MYSQL CONFIGURATION ###"
+echo ""
+echo "WARNING: Your MySQL Server MUST be running."
+echo "If not, please issue the following cmd:"
+echo "/usr/local/etc/rc.d/mysql-server.sh start"
+echo ""
+echo "DTC needs to access to your mysql database"
+echo "Please give your mysql account information"
+echo "If you didn't setup a root password before,"
+echo "DTC can do it of you (later on this script)."
+echo -n 'MySQL hostname [localhost]: '
+read conf_mysql_host
+if [ $conf_mysql_host == ""];
+then
+	conf_mysql_host="localhost"
+fi
+
+echo -n 'MySQL root login [root]: '
+read conf_mysql_login
+if [ $conf_mysql_login == ""];
+then
+	conf_mysql_login="root"
+fi
+
+echo -n 'MySQL root password []: '
+read conf_mysql_pass
+
+echo ""
+echo "Do you want that DTC setup this password"
+echo "for you ? (eg: UPDATE user SET Password...)"
+echo -n 'Setup the mysql password [Ny]: '
+read conf_mysql_change_root
+if [ $conf_mysql_change_root == ""];
+then
+	echo "Skinping MySQL password root change!"
+else
+	echo "===> Changing MySQL Root password"
+	echo "If you didn't setup a root pass for mysqld, just hit ENTER."
+	mysql -u$conf_mysql_login -p -h$conf_mysql_host -Dmysql --execute="UPDATE user SET Password=PASSWORD('"$conf_mysql_pass"') WHERE User='root'; FLUSH PRIVILEGES;";
+fi
+
+echo -n 'Choose a DB name for DTC [dtc]: '
+read conf_mysql_db
+if [ $conf_mysql_db == ""];
+then
+	conf_mysql_db="dtc"
+fi
+
+# Host configuration
+# cur_ip_addr=`ifconfig | head -n 2 | tail -n 1 | cut -f2 -d":" | cut -f1 -d" "`
+echo "### YOUR SERVER CONFIGURATION ###"
+echo ""
+echo "Please enter the main domain name you will use."
+echo "DTC will install the root admin panel on that host."
+echo -n "Domain name (example: toto.com): "
+read main_domain_name
+
+echo ""
+echo "DTC will install a root admin panel on a subdomain"
+echo "of the domain you just provided. The default subdomain"
+echo "is dtc, which leeds you to http://dtc."$main_domain_name"/"
+echo "You can enter another subdomain name if you want."
+echo -n 'Subdomain for DTC admin panel [dtc]: '
+read dtc_admin_subdomain
+
+
+if [ $dtc_admin_subdomain == ""];
+then
+	dtc_admin_subdomain="dtc"
+fi
+
+echo ""
+echo "I need now your host information for apache !"
+echo -n "What is your IP addresse ? [ 127.0.0.1 ]: "
+read conf_ip_addr
+
+if [ $conf_ip_addr == ""];
+then
+	conf_ip_addr="127.0.0.1"
+fi
+
+echo ""
+echo "Where will you keep your files for hosting ?"
+echo -n "Hosting path [/var/www/sites]: "
+read conf_hosting_path
+if [ $conf_hosting_path == ""];
+then
+	conf_hosting_path="/var/www/sites"
+fi
+
+echo ""
+echo "What admin login/pass do you want for the administration of "$main_domain_name "?"
+echo -n "Login [dtc]: "
+read conf_adm_login
+if [ $conf_adm_login == ""];
+then
+	conf_adm_login="dtc"
+fi
+echo -n "Password: "
+read conf_adm_pass
+
+# Deamon path configuration
+
+echo "### DEAMON PATH CONFIGURATION ###"
+PATH_HTTPD_CONF="${LOCALBASE}/etc/apache/httpd.conf"
+PATH_NAMED_CONF="/etc/namedb/named.conf"
+# Copy default conf if no conf exists (BSD specific)
+if [ ! -f ${LOCALBASE}/etc/proftpd.conf ];
+then
+	cp ${LOCALBASE}/etc/proftpd.conf.default ${LOCALBASE}/etc/proftpd.conf
+fi
+PATH_PROFTPD_CONF="${LOCALBASE}/etc/proftpd.conf"
+PATH_QMAIL_CTRL="${QMAIL_DIR}/control"
+PATH_PHP_CGI="${LOCALBASE}/bin/php"
+PATH_DTC_SHARED="${PREFIX}/www/dtc"
+
+PATH_DTC_ETC=$PATH_DTC_SHARED"/etc"
+PATH_DTC_ADMIN=$PATH_DTC_SHARED"/admin"
+PATH_DTC_CLIENT=$PATH_DTC_SHARED"/client"
+
+echo ""
+echo ""
+echo ""
+echo ""
+echo ""
+echo "### Last confirmation before installation !!! ###"
+echo ""
+echo "Here are the given informations:"
+echo ""
+echo "MySQL host: "$conf_mysql_host
+echo "MySQL login: "$conf_mysql_login
+echo "MySQL pass: "$conf_mysql_pass
+echo "MySQL db: "$conf_mysql_db
+echo "Addresse of dtc panel: http://"$dtc_admin_subdomain"."$main_domain_name"/"
+echo "IP addr: "$conf_ip_addr
+echo "Hosting path: "$conf_hosting_path
+echo "DTC login: "$conf_adm_login
+echo "DTC pass: "$conf_adm_pass
+echo "httpd.conf: "$PATH_HTTPD_CONF
+echo "named.conf: "$PATH_NAMED_CONF
+echo "proftpd.conf: "$PATH_PROFTPD_CONF
+echo "qmail control: "$PATH_QMAIL_CTRL
+echo "php4 cgi: "$PATH_PHP_CGI
+echo "generated files: "$PATH_DTC_ETC
+echo ""
+echo ""
+echo ""
+echo -n 'Confirm and install DTC ? [Ny]:'
+read valid_infos
+
+read valid_infos1
+if [ "$valid_infos1" =  "y" ];
+then
+	echo "Installation has started..."
+else
+	echo "Configuration not validated : exiting !"
+	exit 1
+fi
+
+echo "===> Checking BSD type"
+kernel=`uname -a | awk '{print $1}'`;
+echo "Kernel: $kernel"
+
+if [ $kernel = "FreeBSD" ] || [ $kernel = "NetBSD" ];
+then
+	named=`grep  named_enable /etc/rc.conf`
+	nonamed=`cat /etc/rc.conf | grep named  | awk '{print $1}' | grep NO`
+	if [ "$named" = "" ] || [ "$nonamed" != "" ]; 
+	then
+		echo "===> FreeBSD or NetBSD: Backing up /etc/rc.conf and insterting named_enamble=YES"
+		cp /etc/rc.conf /etc/rc.conf.old
+		echo "/etc/rc.conf /etc/rc.conf.old saved"
+		cat /etc/rc.conf | grep -v "named" >> /etc/rc.tmp
+		echo 'named_enable="YES"              # Run named, the DNS server (or NO).' >> /etc/rc.tmp
+		echo 'named_program="/usr/sbin/named" # path to named, if you want a different one.' >> /etc/rc.tmp
+		echo '#named_flags="-u bind -g bind"  # Flags for named' >> /etc/rc.tmp
+		mv /etc/rc.tmp /etc/rc.conf
+		echo "named /etc/rc.conf injected"
+	else
+		echo "===> /etc/rc.conf is already configured: leaving..."
+	fi
+fi
+
+if [ $kernel = "OpenBSD" ];
+then
+	flag=`grep named_flags=\"-c /etc/rc.conf`	
+	echo "conf $flag"
+	if [ "$flag" == "" ];
+	then
+		echo "===> OpenBSD: Backing up /etc/rc.conf and insterting named_flags=\"-c /etc/named.conf\""
+		echo "/etc/rc.conf no named"
+		cp /etc/rc.conf /etc/rc.conf.old
+		echo "/etc/rc.conf /etc/rc.conf.old saved"
+		cat /etc/rc.conf | grep -v "named_flags=NO" >> /etc/rc.tmp
+		echo 'named_flags="-c /etc/named.conf"' >> /etc/rc.tmp
+		mv /etc/rc.tmp /etc/rc.conf
+		echo "named /etc/rc.conf injected"
+		if [ ! -f /etc/named.conf ];
+		then
+			echo "no /etc/named.conf"
+			if ! [ ! -f /var/named/etc/named.conf ];
+			then
+				cp /var/named/etc/named.conf /etc/named.conf 
+				echo "/var/named/etc/named.conf /etc/named.conf copied" 
+			else
+				mv	/etc/rc.conf.old /etc/rc.conf
+				echo 	"/etc/rc.conf.old /etc/rc.conf replaced"
+				echo	"set named at your own configuration in /etc/rc.conf and in your named.conf"
+			fi
+			echo "conf named.conf done"
+		fi
+		echo "conf /etc/rc.conf done"
+	fi
+	echo "conf done"
+fi
+
+
+# Multi OS (Unix system) DATABASE setup sh script for DTC
+# Written by Thomas GOIRAND <thomas@goirand.fr>
+# under LGPL Licence
+
+# The configuration for all thoses variables must be written BEFORE this
+# script. Do the start of the script for your operating system.
+# I did mine for debian in debian/postinst
+
+# Please note this script
+# doeas not start with a :
+
+#!/bin/sh
+
+# because it's up to you to write it ! :)
+# Do a "cat setup_mysql_db.sh >>your_os_setup_script"
+
+# This is the setup script for
+# MYSQL database initialisation procedure
+# Written by Thomas Goirand <thomas@goirand.fr>
+
+
+# Uses the following variables :
+# "MySQL host: "$conf_mysql_host
+# "MySQL login: "$conf_mysql_login
+# "MySQL pass: "$conf_mysql_pass
+# "MySQL db: "$conf_mysql_db
+# "vhost: http://"$dtc_admin_subdomain"."$main_domain_name"/"
+# "IP addr: "$conf_ip_addr
+# "DTC login: "$conf_adm_login
+# "DTC pass: "$conf_adm_pass
+# "Hosting path: "$conf_hosting_path
+# $PATH_DTC_ETC & $PATH_DTC_SHARED
+
+echo "==> Creating directory for hosting "$main_domain_name
+mkdir -p $conf_hosting_path"/"$conf_adm_login"/"$main_domain_name"/"$dtc_admin_subdomain"/www/html"
+mkdir -p $conf_hosting_path"/"$conf_adm_login"/"$main_domain_name"/"$dtc_admin_subdomain"/www/logs"
+mkdir -p $conf_hosting_path"/"$conf_adm_login"/"$main_domain_name"/"$dtc_admin_subdomain"/www/cgi-bin"
+mkdir -p $conf_hosting_path"/"$conf_adm_login"/"$main_domain_name"/subdomains/www/html"
+mkdir -p $conf_hosting_path"/"$conf_adm_login"/"$main_domain_name"/subdomains/www/logs"
+mkdir -p $conf_hosting_path"/"$conf_adm_login"/"$main_domain_name"/subdomains/www/cgi-bin"
+mkdir -p $conf_hosting_path"/"$conf_adm_login"/"$main_domain_name"/Mailboxs"
+mkdir -p $conf_hosting_path"/"$conf_adm_login"/"$main_domain_name"/mysql"
+mkdir -p $conf_hosting_path"/"$conf_adm_login"/"$main_domain_name"/subdomains/dtc/html"
+mkdir -p $conf_hosting_path"/"$conf_adm_login"/"$main_domain_name"/subdomains/dtc/logs"
+mkdir -p $conf_hosting_path"/"$conf_adm_login"/"$main_domain_name"/subdomains/dtc/cgi-bin"
+
+chown -R nobody:nogroup $conf_hosting_path
+
+echo "==> DTC is now creating it's database:"
+if [ $conf_mysql_pass == ""];
+then
+        MYSQL="mysql"
+else
+	MYSQL="mysql -p${conf_mysql_pass}"
+fi
+
+
+create_tables=$PATH_DTC_SHARED"/admin/tables"
+curdir=`pwd`
+
+echo "If not exists, create DTC's database name: "$conf_mysql_db
+$MYSQL -u$conf_mysql_login -h$conf_mysql_host --execute="CREATE DATABASE IF NOT EXISTS "$conf_mysql_db
+echo "Creating apachelogs database: apachelogs"
+$MYSQL -u$conf_mysql_login -h$conf_mysql_host --execute="CREATE DATABASE IF NOT EXISTS apachelogs"
+cd $create_tables
+echo -n "DTC is now creating table if not exists: "
+for i in $( ls *.sql );
+do
+	table_name=`echo $i | cut -f1 -d"."`
+	echo -n $table_name" "
+	table_create=`cat $i`
+#	$MYSQL -u$conf_mysql_login -h$conf_mysql_host -D$conf_mysql_db --execute="DROP TABLE IF EXISTS "$table_name
+	$MYSQL -u$conf_mysql_login -h$conf_mysql_host -D$conf_mysql_db <$i
+done
+echo "done."
+
+echo "Inserting values in mysql for hosting "$main_domain_name
+$MYSQL -u$conf_mysql_login -h$conf_mysql_host -D$conf_mysql_db --execute="INSERT IGNORE INTO groups (members) VALUES ('zigo')"
+$MYSQL -u$conf_mysql_login -h$conf_mysql_host -D$conf_mysql_db --execute="INSERT IGNORE INTO admin (adm_login,adm_pass,path) VALUES ('"$conf_adm_login"','"$conf_adm_pass"','"$conf_hosting_path"/"$conf_adm_login"')"
+$MYSQL -u$conf_mysql_login -h$conf_mysql_host -D$conf_mysql_db --execute="INSERT IGNORE INTO domain (name,owner,default_subdomain,generate_flag,ip_addr) VALUES ('"$main_domain_name"','"$conf_adm_login"','www','yes','"$conf_ip_addr"')"
+$MYSQL -u$conf_mysql_login -h$conf_mysql_host -D$conf_mysql_db --execute="INSERT IGNORE INTO subdomain (domain_name,subdomain_name,path) VALUES ('"$main_domain_name"','www','www')"
+$MYSQL -u$conf_mysql_login -h$conf_mysql_host -D$conf_mysql_db --execute="INSERT IGNORE INTO subdomain(domain_name,subdomain_name,ip) VALUES ('"$main_domain_name"','ns1','$conf_ip_addr')"
+$MYSQL -u$conf_mysql_login -h$conf_mysql_host -D$conf_mysql_db --execute="INSERT IGNORE INTO subdomain(domain_name,subdomain_name,ip) VALUES ('"$main_domain_name"','mx','$conf_ip_addr')"
+$MYSQL -u$conf_mysql_login -h$conf_mysql_host -D$conf_mysql_db --execute="INSERT IGNORE INTO subdomain (domain_name,subdomain_name,path) VALUES ('"$main_domain_name"','"$dtc_admin_subdomain"','www')"
+$MYSQL -u$conf_mysql_login -h$conf_mysql_host -D$conf_mysql_db --execute="INSERT IGNORE INTO config (unicrow,demo_version,main_site_ip,site_addrs,addr_mail_server,webmaster_email_addr,addr_primary_dns,administrative_site,site_root_host_path,generated_file_path,dtcshared_path,dtcadmin_path,dtcclient_path) VALUES('1','no','"$conf_ip_addr"','"$conf_ip_addr"','mx."$main_domain_name"','webmaster@"$main_domain_name"','ns1."$main_domain_name"','"$dtc_admin_subdomain"."$main_domain_name"','"$conf_hosting_path"','"$PATH_DTC_ETC"','"$PATH_DTC_SHARED"','"$PATH_DTC_ADMIN"','"$PATH_DTC_CLIENT"')"
+$MYSQL -u$conf_mysql_login -h$conf_mysql_host -D$conf_mysql_db --execute="INSERT IGNORE INTO cron_job (unicrow,reload_named,restart_apache,gen_vhosts,gen_named) VALUES ('1','yes','yes','yes','yes')"
+
+echo "<?php" > $PATH_DTC_SHARED"/shared/mysql_config.php"
+echo "\$conf_mysql_host=\""$conf_mysql_host"\";" >> $PATH_DTC_SHARED"/shared/mysql_config.php"
+echo "\$conf_mysql_login=\""$conf_mysql_login"\";" >> $PATH_DTC_SHARED"/shared/mysql_config.php"
+echo "\$conf_mysql_pass=\""$conf_mysql_pass"\";" >> $PATH_DTC_SHARED"/shared/mysql_config.php"
+echo "\$conf_mysql_db=\""$conf_mysql_db"\";" >> $PATH_DTC_SHARED"/shared/mysql_config.php"
+echo "\$conf_mysql_conf_ok=\"yes\";" >> $PATH_DTC_SHARED"/shared/mysql_config.php"
+echo "?>" >> $PATH_DTC_SHARED"/shared/mysql_config.php"
+
+cd $curdir
+
+# Multi OS (Unix system) install sh script for DTC
+# Written by Thomas GOIRAND <thomas@goirand.fr>
+# under LGPL Licence
+
+# The configuration for all thoses variables must be written BEFORE this
+# script. Do the start of the script for your operating system.
+# I did mine for debian in debian/postinst
+
+# Please note this script
+# doeas not start with a :
+
+#!/bin/sh
+
+# because it's up to you to write it ! :)
+# Do a "cat configure_deamons.sh >>your_os_setup_script"
+
+# This script modify named, profptd, apache and qmail configuration
+# files so that it uses the DTC genated files.
+
+#
+# First, copy our RENAME_ME_paiement_config.php to paiement_config.php
+# so it works automaticaly even without Tucows API
+#
+
+if ! [ -f $PATH_DTC_SHARED/securepay/paiement_config.php ]
+then
+	cp -v $PATH_DTC_SHARED/shared/securepay/RENAME_ME_paiement_config.php $PATH_DTC_SHARED/shared/securepay/paiement_config.php
+fi
+
+#
+# Include $PATH_DTC_ETC/vhosts.conf in $PATH_HTTPD_CONF
+#
+
+TMP_FILE=/tmp/DTC_install.httpd.conf
+
+echo "===> Modifying httpd.conf"
+if grep "Configured by DTC" $PATH_HTTPD_CONF
+then
+	echo "httpd.conf has been configured before : skiping include inssertion !"
+else
+	if ! [ -f $PATH_HTTPD_CONF.DTC.backup ]
+	then
+		echo "===> Backuping "$PATH_HTTPD_CONF
+		cp -f "$PATH_HTTPD_CONF" "$PATH_HTTPD_CONF.DTC.backup"
+	fi
+	echo "=> Verifying User and Group directive"
+	if grep "User www-data" $PATH_HTTPD_CONF >/dev/null 2>&1
+	then
+		echo "User www-data -> User nobody"
+		sed "s/User www-data/User nobody/" $PATH_HTTPD_CONF >$TMP_FILE
+		cat <$TMP_FILE >$PATH_HTTPD_CONF
+	fi
+	if grep "Group www-data" $PATH_HTTPD_CONF >/dev/null 2>&1
+	then
+		echo "Group www-data -> Group nogroup"
+		sed "s/Group www-data/Group nogroup/" $PATH_HTTPD_CONF >$TMP_FILE
+		cat <$TMP_FILE >$PATH_HTTPD_CONF
+	fi
+
+	if grep "User www" $PATH_HTTPD_CONF >/dev/null 2>&1
+	then
+		echo "User www -> User nobody"
+		sed "s/User www/User nobody/" $PATH_HTTPD_CONF >$TMP_FILE
+		cat <$TMP_FILE >$PATH_HTTPD_CONF
+	fi
+	if grep "Group www" $PATH_HTTPD_CONF >/dev/null 2>&1
+	then
+		echo "Group www -> Group nobody"
+		sed "s/Group www/Group nobody/" $PATH_HTTPD_CONF >$TMP_FILE
+		cat <$TMP_FILE >$PATH_HTTPD_CONF
+	fi
+
+	echo "=> Checking apache modules"
+	echo -n "Checking for php4..."
+	if grep -i "# LoadModule php4_module" $PATH_HTTPD_CONF >/dev/null 2>&1
+	then
+		echo "found commented: activating php4 module!"
+		sed "s/# LoadModule php4_module/LoadModule php4_module/" $PATH_HTTPD_CONF >$TMP_FILE
+		cat <$TMP_FILE >$PATH_HTTPD_CONF
+	else
+		if grep -i "LoadModule php4_module" $PATH_HTTPD_CONF >/dev/null 2>&1
+		then
+			echo " ok!"
+		else
+			echo "php4 missing! please install it or run apacheconfig!!!"
+			exit 1
+		fi
+	fi
+
+	echo -n "Checking for ssl..."
+	if grep -i "# LoadModule ssl_module" $PATH_HTTPD_CONF >/dev/null 2>&1
+	then
+		echo "found commented: activating ssl module!"
+		sed "s/# LoadModule ssl_module/LoadModule ssl_module/" $PATH_HTTPD_CONF >$TMP_FILE
+		cat <$TMP_FILE >$PATH_HTTPD_CONF
+	else
+		if grep -i "LoadModule ssl_module" $PATH_HTTPD_CONF >/dev/null 2>&1
+		then
+			echo " ok!"
+		else
+			echo "!!! Warning: ssl_module for apache not present !!!"
+		fi
+	fi
+
+	echo -n "Checking for sql_log..."
+	if grep -i "# LoadModule sql_log_module" $PATH_HTTPD_CONF >/dev/null 2>&1
+	then
+		echo "found commented: ativating sql_log module!"
+		sed "s/# LoadModule sql_log_module/LoadModule sql_log_module/" $PATH_HTTPD_CONF >$TMP_FILE
+		cat <$TMP_FILE >$PATH_HTTPD_CONF
+	else
+		if grep -i "LoadModule log_sql_module" $PATH_HTTPD_CONF >/dev/null 2>&1
+		then
+			echo " ok!"
+		else
+			if grep -i "# LoadModule log_sql_module" $PATH_HTTPD_CONF >/dev/null 2>&1
+			then
+				echo "found commented: ativating sql_log module!"
+				sed "s/# LoadModule log_sql_module/LoadModule log_sql_module/" $PATH_HTTPD_CONF >$TMP_FILE
+				cat <$TMP_FILE >$PATH_HTTPD_CONF
+			else
+				if grep -i "LoadModule sql_log_module" $PATH_HTTPD_CONF >/dev/null 2>&1
+				then
+					echo " ok!"
+				else
+					echo "!!! sql_log_module for apache not present !!!"
+					echo "please install it or run apacheconfig"
+					echo "or add the following type directive"
+					echo "(matching your path) to httpd.conf:"
+					echo "LoadModule sql_log_module /usr/lib/apache/1.3/mod_log_sql.so (debian)"
+					echo "LoadModule log_sql_module /usr/local/libexec/apache/mod_log_sql.so (bsd)"
+					exit 1
+				fi
+			fi
+		fi
+	fi
+
+	echo -n "Checking for AllowOverride..."
+	if grep "AllowOverride None" $PATH_HTTPD_CONF
+	then
+		echo "AllowOverride None -> AllowOverride AuthConfig FileInfo Limit Indexes"
+		sed "s/AllowOverride None/AllowOverride AuthConfig FileInfo Limit Indexes/" $PATH_HTTPD_CONF >$TMP_FILE
+		cat <$TMP_FILE >$PATH_HTTPD_CONF
+	else
+		echo "ok!"
+	fi
+
+	echo "=> Adding DTC's directives to httpd.conf end"
+	echo "# Configured by DTC v0.12 : please do not touch this line !
+Include $PATH_DTC_ETC/vhosts.conf
+Listen 80
+Listen 443
+
+LogSQLLoginInfo localhost "$conf_mysql_login" "$conf_mysql_pass"
+LogSQLSocketFile /var/run/mysqld/mysqld.sock
+LogSQLDatabase apachelogs
+LogSQLCreateTables On
+LogSQLTransferLogFormat IAbhRrSsU
+# End of DTC configuration v0.12 : please don't touch this line !" >>$PATH_HTTPD_CONF
+	if [ -f $TMP_FILE ]
+	then
+		rm -f $TMP_FILE
+	fi
+fi
+
+#
+# include $PATH_DTC_ETC/named.zones in $PATH_NAMED_CONF
+#
+echo "===> Adding inclusion to named.conf"
+if grep "Configured by DTC" $PATH_NAMED_CONF
+then
+	echo "named.conf has been configured before : skiping include inssertion !"
+else
+	echo "Including named.conf in $PATH_NAMED_CONF"
+	if ! [ -f $PATH_NAMED_CONF.DTC.backup ]
+	then
+		cp -f $PATH_NAMED_CONF $PATH_NAMED_CONF.DTC.backup
+	fi
+	echo "// Configured by DTC v0.10 : please don't touch this line !" >/tmp/DTC_install_named.conf
+	echo "include \"$PATH_DTC_ETC/named.conf\";" >>/tmp/DTC_install_named.conf
+	touch $PATH_DTC_ETC/named.conf
+	cat </tmp/DTC_install_named.conf >>$PATH_NAMED_CONF
+fi
+
+#
+# Install the qmail links in the /etc/qmail
+#
+echo "===> Linking qmail control files to DTC generated files"
+if ! [ -f $PATH_QMAIL_CTRL/rcpthosts.DTC.backup ]
+then
+	cp -f $PATH_QMAIL_CTRL/rcpthosts $PATH_QMAIL_CTRL/rcpthosts.DTC.backup
+fi
+rm -f $PATH_QMAIL_CTRL/rcpthosts
+touch $PATH_DTC_ETC/rcpthosts
+ln -s $PATH_DTC_ETC/rcpthosts $PATH_QMAIL_CTRL/rcpthosts
+
+touch $PATH_QMAIL_CTRL/virtualdomains
+if ! [ -f $PATH_QMAIL_CTRL/virtualdomains.DTC.backup ]
+then
+	cp -f $PATH_QMAIL_CTRL/virtualdomains $PATH_QMAIL_CTRL/virtualdomains.DTC.backup
+fi
+rm -f $PATH_QMAIL_CTRL/virtualdomains
+touch $PATH_DTC_ETC/virtualdomains
+ln -s $PATH_DTC_ETC/virtualdomains $PATH_QMAIL_CTRL/virtualdomains
+
+if ! [ -f /var/qmail/users/assign.DTC.backup ]
+then
+	cp -f /var/qmail/users/assign /var/qmail/users/assign.DTC.backup
+fi
+rm -f /var/qmail/users/assign
+touch $PATH_DTC_ETC/assign
+ln -s $PATH_DTC_ETC/assign /var/qmail/users/assign
+
+# Complete mistake ! Please forgive me !
+#
+#if ! [ -f $PATH_QMAIL_CTRL/locals.DTC.backup ]
+#then
+#	touch $PATH_QMAIL_CTRL/locals
+#        cp -f $PATH_QMAIL_CTRL/locals $PATH_QMAIL_CTRL/locals.DTC.backup
+#fi
+#rm -f $PATH_QMAIL_CTRL/locals
+#touch $PATH_DTC_ETC/rcpthosts
+#ln -s $PATH_DTC_ETC/rcpthosts $PATH_QMAIL_CTRL/locals
+
+touch /etc/poppasswd
+if ! [ -f /etc/poppasswd.DTC.backup ]
+then
+	cp -f /etc/poppasswd /etc/poppasswd.DTC.backup
+fi
+rm -f /etc/poppasswd
+touch $PATH_DTC_ETC/poppasswd
+ln -s $PATH_DTC_ETC/poppasswd /etc/poppasswd
+
+#
+# Install proftpd.conf to access to the database
+#
+echo "===> Adding directives to proftpd.conf"
+if grep "Configured by DTC" $PATH_PROFTPD_CONF
+then
+	echo "proftpd.conf has been configured before : skiping include inssertion !"
+else
+	echo "Inserting DTC configuration inside "$PATH_PROFTPD_CONF
+	if ! [ -f $PATH_PROFTPD_CONF.DTC.backup ]
+	then
+		cp -f $PATH_PROFTPD_CONF $PATH_PROFTPD_CONF.DTC.backup
+	fi
+	echo "# Configured by DTC v0.10 : Please don't touch this line !" >/tmp/DTC_config_proftpd.conf
+# This directive is not used anymore in newer version of proftpd
+#	echo "#UserReverseDNS	off" >>/tmp/DTC_config_proftpd.conf
+	echo "IdentLookups	off" >>/tmp/DTC_config_proftpd.conf
+	echo "SQLAuthenticate	on" >>/tmp/DTC_config_proftpd.conf
+	echo "SQLConnectInfo	"$conf_mysql_db"@"$conf_mysql_host" "$conf_mysql_login" "$conf_mysql_pass >>/tmp/DTC_config_proftpd.conf
+	echo "SQLAuthTypes	Plaintext" >>/tmp/DTC_config_proftpd.conf
+	echo "SQLUserInfo	ftp_access login password uid gid homedir shell" >>/tmp/DTC_config_proftpd.conf
+	echo "# // Transfer Log to Proftpd
+SQLLog RETR,STOR transfer1
+SQLNamedQuery transfer1 INSERT \"'%u', '%f', '%b', '%h', '%a', '%m', '%T',now(), 'c', NULL\" ftp_logs
+
+# // Count Logins per User
+SQLLog                PASS logincount
+SQLNamedQuery         logincount UPDATE \"count=count+1 WHERE login='%u'\" ftp_access
+
+# // Remember the last login time
+SQLLog                PASS lastlogin
+SQLNamedQuery         lastlogin UPDATE \"last_login=now() WHERE login='%u'\" ftp_access
+
+# // Count the downloaded bytes
+SQLLog RETR           dlbytescount
+SQLNamedQuery         dlbytescount UPDATE \"dl_bytes=dl_bytes+%b WHERE login='%u'\" ftp_access
+
+# // Count the downloaded files
+SQLLog RETR           dlcount
+SQLNamedQuery         dlcount UPDATE \"dl_count=dl_count+1 WHERE login='%u'\" ftp_access
+
+# // Count the uploaded bytes
+SQLLog STOR           ulbytescount
+SQLNamedQuery         ulbytescount UPDATE \"ul_bytes=ul_bytes+%b WHERE login='%u'\" ftp_access
+
+# // Count the uploaded files
+SQLLog STOR           ulcount
+SQLNamedQuery         ulcount UPDATE \"ul_count=ul_count+1 WHERE login='%u'\" ftp_access
+
+# End of DTC configuration v0.10 : please don't touch this line !" >>/tmp/DTC_config_proftpd.conf
+	cat </tmp/DTC_config_proftpd.conf >>$PATH_PROFTPD_CONF
+	rm /tmp/DTC_config_proftpd.conf
+fi
+
+#
+# Install the cron php4 script in the /etc/crontab
+#
+echo "===> Installing cron script in /etc/crontab"
+if grep "Configured by DTC" /etc/crontab
+then
+	echo "/etc/crontab has been configured before : skinping include inssertion"
+else
+	echo "Inserting DTC cronjob in /etc/crontab"
+	if ! [ -f /etc/crontab.DTC.backup ]
+	then
+		cp -f /etc/crontab /etc/crontab.DTC.backup
+	fi
+	echo "# Configured by DTC v0.10 : Please don't touch this line !" >/tmp/DTC_config_crontab
+	echo "00,10,20,30,40,50 * * * * root cd $PATH_DTC_ADMIN; $PATH_PHP_CGI $PATH_DTC_ADMIN/cron.php >>/var/log/dtc.log" >>/tmp/DTC_config_crontab
+	cat </tmp/DTC_config_crontab >>/etc/crontab
+	rm /tmp/DTC_config_crontab
+fi
+
+cd $PATH_DTC_ADMIN; $PATH_PHP_CGI $PATH_DTC_ADMIN/cron.php
+
+echo "--- --- --- INSTALLATION FINISHED --- --- ---"
+echo "DTC has finished to install. You can point your favorite"
+echo "browser to: http(s)://"$dtc_admin_subdomain"."$main_domain_name"/dtcadmin/"
+echo "Dont forget to edit the forwarders part of your bind"
+echo "configuration if not done already !"
+echo ""
+echo "Please visit DTC home:"
+echo "http://www.gplhost.com/?rub=softwares&sousrub=dtc"
