@@ -1,11 +1,11 @@
 --- Makefile.orig	Fri Apr 28 13:11:32 2000
-+++ Makefile	Thu May 11 01:52:23 2000
-@@ -30,10 +30,10 @@
++++ Makefile	Mon Jul  3 01:49:47 2000
+@@ -30,15 +30,15 @@
  endif
  
  # common definition
 -LD=gcc
-+#LD=gcc
++LD=$(CC)
  #LD=gcc -Wl,-Map,gogo.map
  LIBS=-lm
 -CC=gcc -c -m486 -O3 -finline-functions -fomit-frame-pointer -funroll-loops
@@ -13,3 +13,29 @@
  # This option is available for gcc-2.8.x
  #CC=gcc -c -mcpu=pentiumpro -malign-double -O6 -fstrength-reduce -fexpensive-optimizations  -finline-functions -fomit-frame-pointer -funroll-loops
  # This option is available for gcc-2.95.1, gcc-2.95.2, gcc-2.95.3,...
+ #CC=gcc -c -mcpu=pentiumpro -march=pentiumpro -O9 -fstrength-reduce -fexpensive-optimizations -finline-functions -fomit-frame-pointer -funroll-loops -ffast-math -foptimize-register-move -fdefer-pop -mfancy-math-387
+-CFLAGS=-Wall $(PROF) -DNDEBUG $(E3DN) $(VBR) -DRAW_INPUT
++CFLAGS+=-Wall $(PROF) -DNDEBUG $(E3DN) $(VBR) -DRAW_INPUT
+ 
+ 
+ # OS specific definition
+@@ -62,8 +62,8 @@
+ ifeq ($(OS),FreeBSD)
+ 	CFLAGS+= -DDISPLAY_REALTIME
+ 	ifeq ($(USE_MT),yes)
+-		LIBS+= -L/usr/local/lib -llthread -llgcc_r
+-		CFLAGS+= -DUSE_PTHREAD -D_THREAD_SAFE -I/usr/local/include/pthread/linuxthreads
++		LIBS+= -L${LOCALBASE}/lib -llthread -llgcc_r
++		CFLAGS+= -DUSE_PTHREAD -D_THREAD_SAFE -I${LOCALBASE}/include/pthread/linuxthreads
+ 	endif
+ endif
+ ifeq ($(OS),OpenBSD)
+@@ -110,7 +110,7 @@
+ #	$(AS) $(ASFLAGS) $< -o $@
+ 
+ .c.o:
+-	$(CC) $(CFLAGS) $<
++	$(CC) -c $(CFLAGS) $<
+ 
+ 
+ clean:

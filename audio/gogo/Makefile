@@ -25,9 +25,7 @@ ONLY_FOR_ARCHS=	i386
 
 # A sample of heavily optimized CFLAGS(typically used with pgcc).
 # Recommended ONLY for benchmarks.
-# CFLAGS=-march=pentiumpro -O6 -finline-functions -fomit-frame-pointer -funrol
-
-MAKE_ENV=	"CC=$(CC) -c $(CFLAGS)" "LD=$(CC)"
+# CFLAGS=-march=pentiumpro -O6 -finline-functions -fomit-frame-pointer -funroll-loops -fexpensive-optimizations -foptimize-register-move -ffast-math -fdefer-pop -mfancy-math-387
 
 pre-fetch:
 .if !defined(USE_MT)
