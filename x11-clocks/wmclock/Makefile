@@ -8,10 +8,10 @@
 PORTNAME=	wmclock
 PORTVERSION=	1.0.12.2
 CATEGORIES=	x11-clocks windowmaker
-MASTER_SITES=	http://www.ntrnet.net/~jmknoble/WindowMaker/wmclock/
+MASTER_SITES=	http://www.jmknoble.net/WindowMaker/wmclock/
 
 MAINTAINER=	pelle@fukt.bth.se
-COMMENT=	A dockable clock applet for Windowmaker
+COMMENT=	A dockable clock applet for Window Maker
 
 USE_IMAKE=	yes
 USE_XPM=	yes
