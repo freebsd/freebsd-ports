@@ -1,11 +1,11 @@
-bin/gensig
 bin/gtkmm-config
+bin/gtkmmconvert
 include/gdk--.h
 include/gdk--/bitmap.h
 include/gdk--/color.h
 include/gdk--/colormap.h
+include/gdk--/cursor.h
 include/gdk--/drawable.h
-include/gdk--/extra/imlib.h
 include/gdk--/font.h
 include/gdk--/gc.h
 include/gdk--/image.h
@@ -21,7 +21,6 @@ include/gtk--/accelgroup.h
 include/gtk--/accellabel.h
 include/gtk--/adjustment.h
 include/gtk--/alignment.h
-include/gtk--/arg.h
 include/gtk--/arrow.h
 include/gtk--/aspectframe.h
 include/gtk--/base.h
@@ -50,20 +49,19 @@ include/gtk--/fontselection.h
 include/gtk--/frame.h
 include/gtk--/handlebox.h
 include/gtk--/image.h
+include/gtk--/imageloader.h
 include/gtk--/inputdialog.h
 include/gtk--/invisible.h
 include/gtk--/item.h
-include/gtk--/itemfactory.h
 include/gtk--/label.h
 include/gtk--/layout.h
 include/gtk--/list.h
 include/gtk--/listitem.h
 include/gtk--/main.h
+include/gtk--/marshal.h
 include/gtk--/menu.h
 include/gtk--/menubar.h
-include/gtk--/menufactory.h
 include/gtk--/menuitem.h
-include/gtk--/menupath.h
 include/gtk--/menushell.h
 include/gtk--/misc.h
 include/gtk--/notebook.h
@@ -78,7 +76,6 @@ include/gtk--/private/accelgroup_p.h
 include/gtk--/private/accellabel_p.h
 include/gtk--/private/adjustment_p.h
 include/gtk--/private/alignment_p.h
-include/gtk--/private/arg_p.h
 include/gtk--/private/arrow_p.h
 include/gtk--/private/aspectframe_p.h
 include/gtk--/private/base_p.h
@@ -110,7 +107,6 @@ include/gtk--/private/image_p.h
 include/gtk--/private/inputdialog_p.h
 include/gtk--/private/invisible_p.h
 include/gtk--/private/item_p.h
-include/gtk--/private/itemfactory_p.h
 include/gtk--/private/label_p.h
 include/gtk--/private/layout_p.h
 include/gtk--/private/list_p.h
@@ -118,9 +114,7 @@ include/gtk--/private/listitem_p.h
 include/gtk--/private/main_p.h
 include/gtk--/private/menu_p.h
 include/gtk--/private/menubar_p.h
-include/gtk--/private/menufactory_p.h
 include/gtk--/private/menuitem_p.h
-include/gtk--/private/menupath_p.h
 include/gtk--/private/menushell_p.h
 include/gtk--/private/misc_p.h
 include/gtk--/private/notebook_p.h
@@ -136,7 +130,6 @@ include/gtk--/private/progressbar_p.h
 include/gtk--/private/radiobutton_p.h
 include/gtk--/private/radiomenuitem_p.h
 include/gtk--/private/range_p.h
-include/gtk--/private/rc_p.h
 include/gtk--/private/ruler_p.h
 include/gtk--/private/scale_p.h
 include/gtk--/private/scrollbar_p.h
@@ -147,6 +140,7 @@ include/gtk--/private/spinbutton_p.h
 include/gtk--/private/statusbar_p.h
 include/gtk--/private/style_p.h
 include/gtk--/private/table_p.h
+include/gtk--/private/tearoffmenuitem_p.h
 include/gtk--/private/text_p.h
 include/gtk--/private/tipsquery_p.h
 include/gtk--/private/togglebutton_p.h
@@ -159,10 +153,10 @@ include/gtk--/private/widget_p.h
 include/gtk--/private/window_p.h
 include/gtk--/progress.h
 include/gtk--/progressbar.h
+include/gtk--/proxy.h
 include/gtk--/radiobutton.h
 include/gtk--/radiomenuitem.h
 include/gtk--/range.h
-include/gtk--/rc.h
 include/gtk--/ruler.h
 include/gtk--/scale.h
 include/gtk--/scrollbar.h
@@ -173,6 +167,7 @@ include/gtk--/spinbutton.h
 include/gtk--/statusbar.h
 include/gtk--/style.h
 include/gtk--/table.h
+include/gtk--/tearoffmenuitem.h
 include/gtk--/text.h
 include/gtk--/tipsquery.h
 include/gtk--/togglebutton.h
@@ -183,26 +178,26 @@ include/gtk--/treeitem.h
 include/gtk--/viewport.h
 include/gtk--/widget.h
 include/gtk--/window.h
-include/gtk--sig.h
-include/gtk--sigcommon.h
-include/gtk--sigconn.h
-include/gtk--sigcpp.h
-include/gtk--sigproxy.h
-include/gtk--sigslot.h
-lib/Gtk--/include/gdk--config.h
-lib/Gtk--/include/gtk--config.h
+lib/gtkmm/include/gdk--config.h
+lib/gtkmm/include/gtk--config.h
+lib/gtkmm/proc/convert.m4
+lib/gtkmm/proc/doc1.m4
+lib/gtkmm/proc/gtkconvert.m4
+lib/gtkmm/proc/gtkmmproc
+lib/gtkmm/proc/list.m4
+lib/gtkmm/proc/stage1.m4
+lib/libgdkmm-1.2.so.0
 lib/libgdkmm.a
-lib/libgdkmm-1.0.so.1
 lib/libgdkmm.so
+lib/libgtkmm-1.2.so.0
 lib/libgtkmm.a
-lib/libgtkmm-1.0.so.7
 lib/libgtkmm.so
 @exec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -m %B
 @unexec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -R
 share/aclocal/gtk--.m4
-@dirrm lib/Gtk--/include
-@dirrm lib/Gtk--
+@dirrm include/gdk--
 @dirrm include/gtk--/private
 @dirrm include/gtk--
-@dirrm include/gdk--/extra
-@dirrm include/gdk--
+@dirrm lib/gtkmm/include
+@dirrm lib/gtkmm/proc
+@dirrm lib/gtkmm
