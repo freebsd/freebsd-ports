@@ -34,11 +34,8 @@ LIB_DATA=	alpi bfct bgk const cyclic defs.h dfff dmul fctrdata fctrtest \
 		fff gr ifplot katsura launch mat nf num primdec \
 		ratint robot solve sp sturm xm
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 502000
 BROKEN=		"Does not compile"
-.endif
+DEPRECATED=	"Will be removed after April 7 if still broken"
 
 pre-install:
 	@${MKDIR} ${DATADIR}
@@ -58,4 +55,4 @@ post-install:
 	@${TAR} xfz ${DISTDIR}/${ASIR_DOC} -C ${DOCSDIR}
 	@${INSTALL_MAN} ${DOCSDIR}/${MAN1} ${PREFIX}/man/man1
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
