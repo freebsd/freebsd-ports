@@ -1,5 +1,4 @@
 bin/crlf
-share/gmat/bin/lowres
 share/gmat/bin/bookfiles
 share/gmat/bin/bookpage
 share/gmat/bin/dbtohtml
@@ -23,6 +22,7 @@ share/gmat/bin/gmat.sgmls
 share/gmat/bin/gmat.troff
 share/gmat/bin/gnct
 share/gmat/bin/inx
+share/gmat/bin/lowres
 share/gmat/bin/memototxt
 share/gmat/bin/memototxt.cls
 share/gmat/bin/memototxt.sup
@@ -51,44 +51,49 @@ share/gmat/lib/longopts5.pl
 share/gmat/lib/memototxt.tag
 share/gmat/lib/oragetopts.pl
 share/gmat/lib/oratoolsrc
+share/gmat/lib/oratoolsrc.orig
 share/gmat/lib/parsecfg5.pl
 share/gmat/lib/psgmls.pl
-share/gmat/lib/sparser.pl
 share/gmat/lib/sgmlesis.pl
 share/gmat/lib/sgmlpars.pl
 share/gmat/lib/sgmls3l.pl
+share/gmat/lib/sparser.pl
 share/gmat/lib/xdbto3l.ent
 share/gmat/lib/xdbto3l.tag
-share/gmat/macros/tmac.G
-share/gmat/macros/tmac.Gdraft
-share/gmat/macros/tmac.Ginit
-share/gmat/macros/tmac.sgmlmacs
-share/gmat/macros/tmac.paras
 share/gmat/macros/sgmlmacs
-share/gmat/macros/tmac.gs
+share/gmat/macros/tmac.G
+share/gmat/macros/tmac.G.orig
+share/gmat/macros/tmac.Gdraft
 share/gmat/macros/tmac.Ginanut
 share/gmat/macros/tmac.Ginanut.old
-share/gmat/macros/tmac.G.orig
+share/gmat/macros/tmac.Ginit
+share/gmat/macros/tmac.gs
+share/gmat/macros/tmac.paras
+share/gmat/macros/tmac.sgmlmacs
+share/gmat/sed/gcleanup-d.sed
+share/gmat/sed/gcleanup.sed
+share/gmat/sed/gcleanup.sed.gr
+share/gmat/sgml/CATALOG
+share/gmat/sgml/ECAT
+share/gmat/sgml/ISO_8879-1986/entities/Added_Latin_1
+share/gmat/sgml/ISO_8879-1986/entities/Added_Latin_2
+share/gmat/sgml/ISO_8879-1986/entities/Added_Math_Symbols_Arrow_Relations
 share/gmat/sgml/ISO_8879-1986/entities/Added_Math_Symbols_Binary_Operators
 share/gmat/sgml/ISO_8879-1986/entities/Added_Math_Symbols_Delimiters
 share/gmat/sgml/ISO_8879-1986/entities/Added_Math_Symbols_Negated_Relations
-share/gmat/sgml/ISO_8879-1986/entities/Added_Math_Symbols_Relations
-share/gmat/sgml/ISO_8879-1986/entities/Box_and_Line_Drawing
-share/gmat/sgml/ISO_8879-1986/entities/Russian_Cyrillic
-share/gmat/sgml/ISO_8879-1986/entities/Non-Russian_Cyrillic
-share/gmat/sgml/ISO_8879-1986/entities/Diacritical_Marks
-share/gmat/sgml/ISO_8879-1986/entities/Greek_Letters
-share/gmat/sgml/ISO_8879-1986/entities/Monotoniko_Greek
-share/gmat/sgml/ISO_8879-1986/entities/Greek_Symbols
-share/gmat/sgml/ISO_8879-1986/entities/Alternative_Greek_Symbols
-share/gmat/sgml/ISO_8879-1986/entities/Added_Latin_1
-share/gmat/sgml/ISO_8879-1986/entities/Publishing
-share/gmat/sgml/ISO_8879-1986/entities/Added_Latin_2
-share/gmat/sgml/ISO_8879-1986/entities/Numeric_and_Special_Graphic
-share/gmat/sgml/ISO_8879-1986/entities/General_Technical
 share/gmat/sgml/ISO_8879-1986/entities/Added_Math_Symbols_Ordinary
-share/gmat/sgml/ISO_8879-1986/entities/Added_Math_Symbols_Arrow_Relations
-share/gmat/sgml/ISO_8879-1986/entities/iso-lat2.gml
+share/gmat/sgml/ISO_8879-1986/entities/Added_Math_Symbols_Relations
+share/gmat/sgml/ISO_8879-1986/entities/Alternative_Greek_Symbols
+share/gmat/sgml/ISO_8879-1986/entities/Box_and_Line_Drawing
+share/gmat/sgml/ISO_8879-1986/entities/Diacritical_Marks
+share/gmat/sgml/ISO_8879-1986/entities/General_Technical
+share/gmat/sgml/ISO_8879-1986/entities/Greek_Letters
+share/gmat/sgml/ISO_8879-1986/entities/Greek_Symbols
+share/gmat/sgml/ISO_8879-1986/entities/Monotoniko_Greek
+share/gmat/sgml/ISO_8879-1986/entities/Non-Russian_Cyrillic
+share/gmat/sgml/ISO_8879-1986/entities/Numeric_and_Special_Graphic
+share/gmat/sgml/ISO_8879-1986/entities/Publishing
+share/gmat/sgml/ISO_8879-1986/entities/Russian_Cyrillic
 share/gmat/sgml/ISO_8879-1986/entities/iso-amsa.gml
 share/gmat/sgml/ISO_8879-1986/entities/iso-amsb.gml
 share/gmat/sgml/ISO_8879-1986/entities/iso-amsc.gml
@@ -104,55 +109,125 @@ share/gmat/sgml/ISO_8879-1986/entities/iso-grk2.gml
 share/gmat/sgml/ISO_8879-1986/entities/iso-grk3.gml
 share/gmat/sgml/ISO_8879-1986/entities/iso-grk4.gml
 share/gmat/sgml/ISO_8879-1986/entities/iso-lat1.gml
+share/gmat/sgml/ISO_8879-1986/entities/iso-lat2.gml
 share/gmat/sgml/ISO_8879-1986/entities/iso-num.gml
 share/gmat/sgml/ISO_8879-1986/entities/iso-pub.gml
 share/gmat/sgml/ISO_8879-1986/entities/iso-tech.gml
-share/gmat/sgml/ISO_9573-13-1991/entities/Math_Alphabets_Script
 share/gmat/sgml/ISO_9573-13-1991/entities/Math_Alphabets_Fraktur
 share/gmat/sgml/ISO_9573-13-1991/entities/Math_Alphabets_Open_Face
-share/gmat/sgml/ORA/dtds/orahtml.dtd
+share/gmat/sgml/ISO_9573-13-1991/entities/Math_Alphabets_Script
 share/gmat/sgml/ORA/dtds/memo.dtd
-share/gmat/sgml/ORA/dtds/oraprod.2.2.1.dtd
-share/gmat/sgml/ORA/dtds/oraprod.2.4.dtd
-share/gmat/sgml/ORA/dtds/oraprod.3.1.dtd
 share/gmat/sgml/ORA/dtds/nutshell.1.1.dtd
 share/gmat/sgml/ORA/dtds/nutshell.dtd
+share/gmat/sgml/ORA/dtds/orahtml.dtd
+share/gmat/sgml/ORA/dtds/oraprod.2.2.1.dtd
+share/gmat/sgml/ORA/dtds/oraprod.2.4.dtd
 share/gmat/sgml/ORA/dtds/oraprod.3.0.dtd
+share/gmat/sgml/ORA/dtds/oraprod.3.1.dtd
 share/gmat/sgml/ORA/entities/Common_Entities
-share/gmat/sgml/ORA/entities/Managing_NFS_and_NIS
-share/gmat/sgml/ORA/entities/ORA_X_Books
-share/gmat/sgml/ORA/entities/iso-lat2
-share/gmat/sgml/ORA/entities/orachars
-share/gmat/sgml/ORA/entities/X_Legal_Notice_1
-share/gmat/sgml/ORA/entities/ORA_Entities
-share/gmat/sgml/ORA/entities/bulksales
-share/gmat/sgml/ORA/entities/System_Entities
-share/gmat/sgml/ORA/entities/X_Legal_Notice_2
-share/gmat/sgml/ORA/entities/oraxrelated
-share/gmat/sgml/ORA/entities/xreqforcomments
-share/gmat/sgml/ORA/entities/iso-lat1.gml
-share/gmat/sgml/ORA/entities/oraxbooks
 share/gmat/sgml/ORA/entities/DNS_and_Bind
 share/gmat/sgml/ORA/entities/Essential_System_Administration
-share/gmat/sgml/ORA/entities/Nutshell_Legal_Notice
 share/gmat/sgml/ORA/entities/MIF_Entities
-share/gmat/sgml/cdtds/orahtml
+share/gmat/sgml/ORA/entities/Managing_NFS_and_NIS
+share/gmat/sgml/ORA/entities/Nutshell_Legal_Notice
+share/gmat/sgml/ORA/entities/ORA_Entities
+share/gmat/sgml/ORA/entities/ORA_X_Books
+share/gmat/sgml/ORA/entities/System_Entities
+share/gmat/sgml/ORA/entities/X_Legal_Notice_1
+share/gmat/sgml/ORA/entities/X_Legal_Notice_2
+share/gmat/sgml/ORA/entities/bulksales
+share/gmat/sgml/ORA/entities/iso-lat1.gml
+share/gmat/sgml/ORA/entities/iso-lat2
+share/gmat/sgml/ORA/entities/orachars
+share/gmat/sgml/ORA/entities/oraxbooks
+share/gmat/sgml/ORA/entities/oraxrelated
+share/gmat/sgml/ORA/entities/xreqforcomments
 share/gmat/sgml/cdtds/html
 share/gmat/sgml/cdtds/memo
+share/gmat/sgml/cdtds/orahtml
 share/gmat/sgml/cdtds/oraprod.2.2.1
-share/gmat/sgml/CATALOG
-share/gmat/sgml/ECAT
-share/gmat/sgml/doctype.open
 share/gmat/sgml/doctype.close
+share/gmat/sgml/doctype.open
+share/gmat/sgml/foo.len
 share/gmat/sgml/html.sdecl
 share/gmat/sgml/sdecl
-share/gmat/sgml/foo.len
-share/gmat/sed/gcleanup-d.sed
-share/gmat/sed/gcleanup.sed
-share/gmat/sed/gcleanup.sed.gr
+share/gmat/test/BOOKFILES
+share/gmat/test/BOOKFILES~
+share/gmat/test/BOOKIDS
+share/gmat/test/CATALOG
+share/gmat/test/ch00.sgm
+share/gmat/test/ch01.sgm
+share/gmat/test/ch02.sgm
+share/gmat/test/fmt/exlist/ch00.3l
+share/gmat/test/fmt/exlist/ch01-new.3l
+share/gmat/test/fmt/exlist/ch01.3l
+share/gmat/test/fmt/exlist/ch02.3l
+share/gmat/test/fmt/exlist/ch03.3l
+share/gmat/test/fmt/exlist/ch05.3l
+share/gmat/test/fmt/exlist/ch06.3l
+share/gmat/test/fmt/exlist/ch07.3l
+share/gmat/test/fmt/exlist/fptest
+share/gmat/test/fmt/exlist/toc
+share/gmat/test/fmt/figlist/ch00.3l
+share/gmat/test/fmt/figlist/ch01-new.3l
+share/gmat/test/fmt/figlist/ch01.3l
+share/gmat/test/fmt/figlist/ch02.3l
+share/gmat/test/fmt/figlist/ch03.3l
+share/gmat/test/fmt/figlist/ch05.3l
+share/gmat/test/fmt/figlist/ch06.3l
+share/gmat/test/fmt/figlist/ch07.3l
+share/gmat/test/fmt/figlist/fptest
+share/gmat/test/fmt/figlist/toc
+share/gmat/test/fmt/index/ch00.3l
+share/gmat/test/fmt/index/ch01-new.3l
+share/gmat/test/fmt/index/ch01.3l
+share/gmat/test/fmt/index/ch02.3l
+share/gmat/test/fmt/index/ch03.3l
+share/gmat/test/fmt/index/ch05.3l
+share/gmat/test/fmt/index/ch06.3l
+share/gmat/test/fmt/index/ch07.3l
+share/gmat/test/fmt/index/fptest
+share/gmat/test/fmt/index/toc
+share/gmat/test/fmt/tablist/ch00.3l
+share/gmat/test/fmt/tablist/ch01-new.3l
+share/gmat/test/fmt/tablist/ch01.3l
+share/gmat/test/fmt/tablist/ch02.3l
+share/gmat/test/fmt/tablist/ch03.3l
+share/gmat/test/fmt/tablist/ch05.3l
+share/gmat/test/fmt/tablist/ch06.3l
+share/gmat/test/fmt/tablist/ch07.3l
+share/gmat/test/fmt/tablist/fptest
+share/gmat/test/fmt/tablist/toc
+share/gmat/test/fmt/toc/Se.ch00.3l
+share/gmat/test/fmt/toc/Se.ch00.3l.flag
+share/gmat/test/fmt/toc/Se.ch01-new.3l
+share/gmat/test/fmt/toc/Se.ch01-new.3l.flag
+share/gmat/test/fmt/toc/Se.ch01.3l
+share/gmat/test/fmt/toc/Se.ch01.3l.flag
+share/gmat/test/fmt/toc/Se.ch02.3l
+share/gmat/test/fmt/toc/Se.ch02.3l.flag
+share/gmat/test/fmt/toc/Se.ch03.3l
+share/gmat/test/fmt/toc/Se.ch03.3l.flag
+share/gmat/test/fmt/toc/Se.ch05.3l.flag
+share/gmat/test/fmt/toc/Se.ch06.3l
+share/gmat/test/fmt/toc/Se.ch06.3l.flag
+share/gmat/test/fmt/toc/Se.ch07.3l
+share/gmat/test/fmt/toc/Se.ch07.3l.flag
+share/gmat/test/fmt/toc/ch00.3l
+share/gmat/test/fmt/toc/ch01-new.3l
+share/gmat/test/fmt/toc/ch01.3l
+share/gmat/test/fmt/toc/ch02.3l
+share/gmat/test/fmt/toc/ch03.3l
+share/gmat/test/fmt/toc/ch05.3l
+share/gmat/test/fmt/toc/ch06.3l
+share/gmat/test/fmt/toc/ch07.3l
+share/gmat/test/fmt/toc/fptest
+share/gmat/test/fmt/toc/toc
+share/gmat/test/nsgmls.err
 @dirrm share/gmat/bin
 @dirrm share/gmat/lib
 @dirrm share/gmat/macros
+@dirrm share/gmat/sed
 @dirrm share/gmat/sgml/ISO_8879-1986/entities
 @dirrm share/gmat/sgml/ISO_8879-1986
 @dirrm share/gmat/sgml/ISO_9573-13-1991/entities
@@ -162,5 +237,12 @@ share/gmat/sed/gcleanup.sed.gr
 @dirrm share/gmat/sgml/ORA
 @dirrm share/gmat/sgml/cdtds
 @dirrm share/gmat/sgml
-@dirrm share/gmat/sed
+@dirrm share/gmat/test/fmt/toc
+@dirrm share/gmat/test/fmt/index
+@dirrm share/gmat/test/fmt/exlist
+@dirrm share/gmat/test/fmt/figlist
+@dirrm share/gmat/test/fmt/tablist
+@dirrm share/gmat/test/fmt
+@dirrm share/gmat/test/tools-debug
+@dirrm share/gmat/test
 @dirrm share/gmat
