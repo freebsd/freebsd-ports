@@ -8,7 +8,8 @@
 PORTNAME=	gnomepilot
 PORTVERSION=	0.1.52
 CATEGORIES=	palm comms gnome
-MASTER_SITES=	http://www.gnome.org/gnome-pilot/download/
+MASTER_SITES=	${MASTER_SITE_GNOME}
+MASTER_SITE_SUBDIR=	unstable/sources/gnome-pilot
 DISTNAME=	gnome-pilot-${PORTVERSION}
 
 MAINTAINER=	ade@FreeBSD.org
