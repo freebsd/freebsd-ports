@@ -1,0 +1,27 @@
+bin/jgraph
+share/jgraph/acc.jgr
+share/jgraph/ad.jgr
+share/jgraph/alb.jgr
+share/jgraph/bailey.jgr
+share/jgraph/cube.jgr
+share/jgraph/data.txt
+share/jgraph/disk.jgr
+share/jgraph/ebars.jgr
+share/jgraph/ex1.jgr
+share/jgraph/ex2.jgr
+share/jgraph/g8.jgr
+share/jgraph/g8col.jgr
+share/jgraph/g9n10.jgr
+share/jgraph/gpaper.jgr
+share/jgraph/hypercube.jgr
+share/jgraph/mab2.jgr
+share/jgraph/mab2.times
+share/jgraph/nr.jgr
+share/jgraph/sin.pts
+share/jgraph/sin1.jgr
+share/jgraph/sin2.jgr
+share/jgraph/sin2.pts
+share/jgraph/sin3.jgr
+share/jgraph/sin3.pts
+share/jgraph/wortman.jgr
+@dirrm share/jgraph
