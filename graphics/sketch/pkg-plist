@@ -1,4 +1,6 @@
+bin/sk2ppm
 bin/sk2ps
+bin/skconvert
 bin/sketch
 bin/skshow
 %%PORTDOCS%%share/doc/sketch/BUGS
@@ -113,6 +115,10 @@ share/sketch/Pax/X.py
 share/sketch/Pax/X.pyc
 share/sketch/Pax/paxmodule.so
 share/sketch/Pax/paxtkinter.so
+share/sketch/Plugins/Filters/Lib/drawfile.py
+share/sketch/Plugins/Filters/Lib/drawfile.pyc
+share/sketch/Plugins/Filters/Lib/spritefile.py
+share/sketch/Plugins/Filters/Lib/spritefile.pyc
 share/sketch/Plugins/Filters/ailoader.py
 share/sketch/Plugins/Filters/ailoader.pyc
 share/sketch/Plugins/Filters/aisaver.py
@@ -121,6 +127,8 @@ share/sketch/Plugins/Filters/bziploader.py
 share/sketch/Plugins/Filters/bziploader.pyc
 share/sketch/Plugins/Filters/cmxloader.py
 share/sketch/Plugins/Filters/cmxloader.pyc
+share/sketch/Plugins/Filters/drawinput.py
+share/sketch/Plugins/Filters/drawinput.pyc
 share/sketch/Plugins/Filters/gziploader.py
 share/sketch/Plugins/Filters/gziploader.pyc
 share/sketch/Plugins/Filters/pdfgensaver.py
@@ -137,8 +145,20 @@ share/sketch/Plugins/Filters/wmfloader.py
 share/sketch/Plugins/Filters/wmfloader.pyc
 share/sketch/Plugins/Filters/xfigloader.py
 share/sketch/Plugins/Filters/xfigloader.pyc
+share/sketch/Plugins/Objects/Lib/multilinetext/TextEditor.py
+share/sketch/Plugins/Objects/Lib/multilinetext/TextEditor.pyc
+share/sketch/Plugins/Objects/Lib/multilinetext/__init__.py
+share/sketch/Plugins/Objects/Lib/multilinetext/__init__.pyc
+share/sketch/Plugins/Objects/Lib/multilinetext/chunker.py
+share/sketch/Plugins/Objects/Lib/multilinetext/chunker.pyc
+share/sketch/Plugins/Objects/Lib/multilinetext/iterator.py
+share/sketch/Plugins/Objects/Lib/multilinetext/iterator.pyc
+share/sketch/Plugins/Objects/Lib/multilinetext/styletext.py
+share/sketch/Plugins/Objects/Lib/multilinetext/styletext.pyc
 share/sketch/Plugins/Objects/lcdtext.py
 share/sketch/Plugins/Objects/lcdtext.pyc
+share/sketch/Plugins/Objects/multilinetext.py
+share/sketch/Plugins/Objects/multilinetext.pyc
 share/sketch/Plugins/Objects/regpoly.py
 share/sketch/Plugins/Objects/regpoly.pyc
 share/sketch/Resources/Fontmetrics/alias.sfd
@@ -211,6 +231,8 @@ share/sketch/Script/save_selection.py
 share/sketch/Script/select_same_fill_color.py
 share/sketch/Script/select_same_line_color.py
 share/sketch/Script/inspect_beziers.py
+share/sketch/Script/reload_image.py
+share/sketch/Script/simple_separation.py
 share/sketch/Script/spread.py
 share/sketch/Script/unit.py
 share/sketch/Script/usersguide.py
@@ -544,7 +566,9 @@ share/sketch/Sketch/VERSION
 share/sketch/Sketch/__init__.py
 share/sketch/Sketch/__init__.pyc
 share/sketch/finishinst.py
+share/sketch/sk2ppm.py
 share/sketch/sk2ps.py
+share/sketch/skconvert.py
 share/sketch/sketch.py
 share/sketch/skshow.py
 @dirrm share/sketch/Sketch/UI
@@ -571,7 +595,10 @@ share/sketch/skshow.py
 @dirrm share/sketch/Resources/Messages
 @dirrm share/sketch/Resources/Fontmetrics
 @dirrm share/sketch/Resources
+@dirrm share/sketch/Plugins/Objects/Lib/multilinetext
+@dirrm share/sketch/Plugins/Objects/Lib
 @dirrm share/sketch/Plugins/Objects
+@dirrm share/sketch/Plugins/Filters/Lib
 @dirrm share/sketch/Plugins/Filters
 @dirrm share/sketch/Plugins
 @dirrm share/sketch/Pax/Generate
