@@ -36,7 +36,5 @@ share/noweb/toroff
 share/noweb/unmarkup
 share/noweb/tex/noweb.sty
 share/noweb/tex/nwmac.tex
-man/man1/nountangle.1.gz
-man/man1/noweave.1.gz
 @dirrm share/noweb/tex
 @dirrm share/noweb
