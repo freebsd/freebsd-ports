@@ -2,3 +2,4 @@ include/hash.h
 lib/libhash.so.1
 lib/libhash.so
 lib/libhash.a
+lib/libhash_p.a
