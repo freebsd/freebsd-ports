@@ -29,6 +29,7 @@ include/apache/ap_config.h
 include/apache/ap_config_auto.h
 include/apache/ap_ctype.h
 include/apache/ap_md5.h
+include/apache/ap_mmn.h
 include/apache/buff.h
 include/apache/compat.h
 include/apache/conf.h
@@ -62,7 +63,6 @@ libexec/apache/mod_info.so
 libexec/apache/mod_mime_magic.so
 libexec/apache/mod_rewrite.so
 libexec/apache/mod_speling.so
-libexec/apache/mod_status.so
 libexec/apache/mod_unique_id.so
 libexec/apache/mod_usertrack.so
 sbin/ab
