@@ -46,9 +46,9 @@ pre-patch:
 	  ${GZCAT} ${DISTDIR}/${DIST_SUBDIR}/950923.02.Z | uudecode ; \
 	  ${GZCAT} ${DISTDIR}/${DIST_SUBDIR}/951109.04.Z | uudecode ; \
 	  uudecode ${DISTDIR}/${DIST_SUBDIR}/xdvi18-okagawa-patch ; \
-	  gzip -d xdvi18.vflib.patch.gz ; \
+	  ${GUNZIP_CMD} xdvi18.vflib.patch.gz ; \
 	  ${PATCH} < ${FILESDIR}/xdvi18.vflib.patch.of.patch >/dev/null 2>&1; \
-	  gzip -d xdvi-17+ptex.fixed.patch.gz ; \
+	  ${GUNZIP_CMD} xdvi-17+ptex.fixed.patch.gz ; \
 	  ${PATCH} < ${FILESDIR}/xdvi-17+ptex.fixed.patch.of.patch >/dev/null 2>&1; \
 	  ${MKDIR} tmp; \
 	  cd tmp; \

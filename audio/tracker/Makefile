@@ -26,7 +26,7 @@ MAKE_FLAGS=     MACHINE=freebsd CC=$(CC) INSTALL="$(INSTALL)" \
 post-install:
 	cd ${WRKSRC}/Docs && \
 	makeinfo --no-split tracker.texinfo -o tracker.info && \
-	gzip -f tracker.info && \
+	${GZIP_CMD} tracker.info && \
 	$(INSTALL_MAN) tracker.info.gz ${PREFIX}/info && \
 	${RM} -f tracker.info.gz *.orig
 	-${MKDIR} ${PREFIX}/share/doc/tracker

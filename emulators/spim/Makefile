@@ -42,7 +42,7 @@ post-install:
 		${PREFIX}/share/doc/spim
 	${INSTALL_DATA} ${WRKSRC}/Documentation/cycle.ps  \
 		${PREFIX}/share/doc/spim
-	gzip -9nf ${PREFIX}/share/doc/spim/*.ps
+	${GZIP_CMD} ${PREFIX}/share/doc/spim/*.ps
 .endif
 
 .include <bsd.port.mk>
