@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	metatheme
-PORTVERSION= 	0.5.0
+PORTVERSION=	0.5.0
 CATEGORIES=	misc gnome
 MASTER_SITES=	ftp://ftp.helixcode.com/pub/metatheme/
 
