@@ -9,9 +9,8 @@
 PORTNAME=	staroffice
 PORTVERSION=	5.2
 CATEGORIES=	french editors linux
-MASTER_SITES=	ftp://ftp.unilim.fr/pub/unix/bureautique/ \
+MASTER_SITES=	ftp://sunsite.cnlab-switch.ch/mirror/staroffice/francais/ \
 		ftp://ftp.math.u-bordeaux.fr/pub/StarOffice/Linux-Intel/ \
-		ftp://sunsite.cnlab-switch.ch/mirror/staroffice/francais/ \
 		ftp://ftp.be.embnet.org/pub/tools/StarOffice/Linux/ \
 		ftp://ftp.medasys-digital-systems.fr/pub1/linux/staroffice/
 DISTNAME=	so-5_2-ga-bin-linux-fr.bin
