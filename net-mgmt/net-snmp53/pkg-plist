@@ -13,14 +13,23 @@ bin/snmptable
 bin/snmpcheck
 bin/tkmib
 etc/rc.d/snmpd.sh.sample
+include/ucd-snmp/acl.h
 include/ucd-snmp/asn1.h
+include/ucd-snmp/context.h
+include/ucd-snmp/int64.h
+include/ucd-snmp/mib.h
+include/ucd-snmp/parse.h
+include/ucd-snmp/party.h
 include/ucd-snmp/snmp_api.h
 include/ucd-snmp/snmp_client.h
+include/ucd-snmp/snmp_debug.h
 include/ucd-snmp/snmp_impl.h
 include/ucd-snmp/snmp.h
-include/ucd-snmp/parse.h
-include/ucd-snmp/mib.h
+include/ucd-snmp/system.h
 include/ucd-snmp/ucd-snmp-config.h
+include/ucd-snmp/ucd-snmp-includes.h
+include/ucd-snmp/version.h
+include/ucd-snmp/view.h
 @dirrm include/ucd-snmp
 lib/libsnmp.so
 lib/libsnmp.so.3.5
@@ -32,6 +41,7 @@ share/examples/ucd-snmp/context.conf
 share/examples/ucd-snmp/party.conf
 share/examples/ucd-snmp/view.conf
 @dirrm share/examples/ucd-snmp
+share/snmp/mibs/DLMOD-MIB.txt
 share/snmp/mibs/RFC1155-SMI.txt
 share/snmp/mibs/RFC1213-MIB.txt
 share/snmp/mibs/SNMPv2-CONF.txt

@@ -1,6 +1,6 @@
---- agent/mibgroup/ucd-snmp/disk.c.orig	Mon Mar 22 20:16:32 1999
-+++ agent/mibgroup/ucd-snmp/disk.c	Mon Mar 22 20:20:36 1999
-@@ -76,6 +76,7 @@
+--- agent/mibgroup/ucd-snmp/disk.c~	Fri Mar  5 08:45:00 1999
++++ agent/mibgroup/ucd-snmp/disk.c	Sat Apr  3 13:33:11 1999
+@@ -79,6 +79,7 @@
  #define statvfs statfs
  #endif
  #if HAVE_VM_SWAP_PAGER_H
@@ -8,9 +8,9 @@
  #include <vm/swap_pager.h>
  #endif
  #if HAVE_SYS_FIXPOINT_H
---- agent/mibgroup/ucd-snmp/errormib.c.orig	Mon Mar 22 20:22:21 1999
-+++ agent/mibgroup/ucd-snmp/errormib.c	Mon Mar 22 20:22:38 1999
-@@ -90,6 +90,7 @@
+--- agent/mibgroup/ucd-snmp/errormib.c~	Tue Mar  2 05:27:30 1999
++++ agent/mibgroup/ucd-snmp/errormib.c	Sat Apr  3 13:33:44 1999
+@@ -93,6 +93,7 @@
  #define statvfs statfs
  #endif
  #if HAVE_VM_SWAP_PAGER_H
@@ -18,9 +18,9 @@
  #include <vm/swap_pager.h>
  #endif
  #if HAVE_SYS_FIXPOINT_H
---- agent/mibgroup/ucd-snmp/extensible.c.orig	Mon Mar 22 20:21:49 1999
-+++ agent/mibgroup/ucd-snmp/extensible.c	Mon Mar 22 20:22:02 1999
-@@ -78,6 +78,7 @@
+--- agent/mibgroup/ucd-snmp/extensible.c~	Fri Mar  5 08:45:01 1999
++++ agent/mibgroup/ucd-snmp/extensible.c	Sat Apr  3 13:34:13 1999
+@@ -81,6 +81,7 @@
  #define statvfs statfs
  #endif
  #if HAVE_VM_SWAP_PAGER_H
@@ -28,9 +28,9 @@
  #include <vm/swap_pager.h>
  #endif
  #if HAVE_SYS_FIXPOINT_H
---- agent/mibgroup/ucd-snmp/loadave.c.orig	Mon Mar 22 20:21:05 1999
-+++ agent/mibgroup/ucd-snmp/loadave.c	Mon Mar 22 20:21:21 1999
-@@ -77,6 +77,7 @@
+--- agent/mibgroup/ucd-snmp/loadave.c~	Tue Mar 16 08:21:02 1999
++++ agent/mibgroup/ucd-snmp/loadave.c	Sat Apr  3 13:34:39 1999
+@@ -80,6 +80,7 @@
  #define statvfs statfs
  #endif
  #if HAVE_VM_SWAP_PAGER_H
