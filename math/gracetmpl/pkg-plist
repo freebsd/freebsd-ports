@@ -2,8 +2,8 @@ bin/gracetmpl-config
 bin/gracetmpldemo
 include/gracetmpl.h
 lib/libgracetmpl.a
-include/python2.3/graceTMPL/gracetmpl.h
-@dirrm include/python2.3/graceTMPL
+%%PYTHON_INCLUDEDIR%%/graceTMPL/gracetmpl.h
+@dirrm %%PYTHON_INCLUDEDIR%%/graceTMPL
 %%PYTHON_SITELIBDIR%%/graceTMPL/graceTMPL.so
 %%PYTHON_SITELIBDIR%%/graceTMPL.pth
 @dirrm %%PYTHON_SITELIBDIR%%/graceTMPL
