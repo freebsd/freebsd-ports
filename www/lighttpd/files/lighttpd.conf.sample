@@ -2,7 +2,7 @@
 # 
 # use a it as base for lighttpd 1.0.0 and above
 #
-# $Id: lighttpd.conf,v 1.3 2004/02/07 21:15:05 weigon Exp $
+# $Id: lighttpd.conf,v 1.5 2004/08/01 07:01:29 weigon Exp $
 
 ############ Options you really have to take care of ####################
 
@@ -13,6 +13,7 @@
 # - saves memory
 server.modules              = ( 
 #                               "mod_rewrite", 
+#                               "mod_redirect", 
 			        "mod_access", 
 #				"mod_auth", 
 #                               "mod_status", 
@@ -21,14 +22,16 @@ server.modules              = (
 #				"mod_evhost",
 #				"mod_cgi",
 #				"mod_compress",
+#                               "mod_ssi",
+#                               "mod_usertrack",
 				"mod_accesslog" )
 
 ## a static document-root, for virtual-hosting take look at the 
 ## server.virtual-* options
-server.document-root             = "/var/www/"
+server.document-root             = "/usr/local/www/data/"
 
 ## where to send error-messages to
-server.errorlog            = "/var/log/lighttpd/error.log"
+server.errorlog            = "/var/log/lighttpd.error.log"
 
 # files to check for if .../ is requested
 server.indexfiles          = ( "index.php", "index.html", 
@@ -49,10 +52,38 @@ mimetype.assign            = ( ".png"  => "image/png",
                                 ".tgz"  => "application/x-tgz",
                                 ".gz"   => "application/x-gzip",
 				".c"    => "text/plain",
-				".conf" => "text/plain" )
+				".conf" => "text/plain",
+			        ".css"  => "text/css",
+                                ".js"   => "text/javascript",
+				".asc" =>       "text/plain",
+				".dvi" =>       "application/x-dvi" ,
+				".ps" =>        "application/postscript" ,
+				".gif" =>       "image/gif" ,
+				".mpeg" =>      "video/mpeg" ,
+				".mpg" =>       "video/mpeg" ,
+				".avi" =>       "video/x-msvideo" ,
+				".mov" =>       "video/quicktime" ,
+				".qt"  =>       "video/quicktime" ,
+				".mp3" =>       "audio/mpeg" ,
+				".ogg" =>       "audio/x-wav" ,
+				".wav" =>       "audio/x-wav" ,
+				".pac" =>       "application/x-ns-proxy-autoconfig" ,
+				".sig" =>       "application/pgp-signature" ,
+				".torrent"  =>  "application/x-bittorrent" ,
+				".class" =>     "application/octet-stream" ,
+				".tar" =>       "application/x-tar" ,
+				".zip" =>       "application/zip" ,
+				".dtd" =>       "text/xml" ,
+				".xml" =>       "text/xml" ,
+				".xbm" =>       "image/x-xbitmap" ,
+				".xpm" =>       "image/x-xpixmap" ,
+				".xwd" =>       "image/x-xwindowdump" ,
+				".text" =>      "text/plain" ,
+				".m3u"  =>      "audio/x-mpegurl"
+ )
 
 #### accesslog module
-accesslog.filename          = "/var/log/lighttpd/access.log"
+accesslog.filename          = "/var/log/lighttpd.access.log"
 
 ## deny access the file-extensions
 #
@@ -100,20 +131,21 @@ url.access-deny             = ( "~", ".inc" )
 ### only root can use these options
 #
 # chroot() to directory (default: no chroot() )
-#server.chroot             = "/"
+#server.chroot            = "/"
 
 ## change uid to <uid> (default: don't care)
-server.username            = "www-data"
+server.username            = "www"
 
 ## change uid to <uid> (default: don't care)
-server.groupname           = "www-data"
+server.groupname           = "www"
 
-server.pid-file		   = "/var/run/lighttpd.pid" 
+server.pid-file		   = "/var/run/lighttpd.pid"
 #### compress module
-#compress.cache-dir          = "/var/tmp/lighttpd/cache/compress/"
+#compress.cache-dir          = "/tmp/lighttpd/cache/compress/"
 #compress.filetype           = ("text/plain", "text/html")
 
 #### fastcgi module
+## read fastcgi.txt for more info
 #fastcgi.server              = ( ".php" =>
 #				( "grisu" => 
 #				  ( 
@@ -137,9 +169,14 @@ server.pid-file		   = "/var/run/lighttpd.pid"
 #status.rrd-dir              = "/home/weigon/wwwroot/logs/"
 
 #### auth module
+## read authentification.txt for more info
 #auth.backend                = "plain"
 #auth.backend.plain.userfile = "lighttpd.user"
 #auth.backend.plain.groupfile = "lighttpd.group"
+
+#auth.backend.ldap.hostname = "localhost"
+#auth.backend.ldap.base-dn  = "dc=my-domain,dc=com"
+#auth.backend.ldap.filter   = "(uid=$)"
 
 #auth.require                = ( "/server-status" => 
 #                                ( 
@@ -159,3 +196,19 @@ server.pid-file		   = "/var/run/lighttpd.pid"
 #url.rewrite                 = ( "^/$"             => "/server-status" )
 #url.redirect                = ( "^/wishlist/(.+)" => "http://www.123.org/$1" )
 
+#
+# define a pattern for the host url finding
+# %% => % sign
+# %0 => domain name + tld
+# %1 => tld
+# %2 => domain name without tld
+# %3 => subdomain 1 name
+# %4 => subdomain 2 name
+#
+# evhost.path-pattern = "/home/storage/dev/www/%3/htdocs/"
+
+#### expire module
+#expire.url                  = ( "/buggy/" => "access 2 hours", "/asdhas/" => "access plus 1 seconds 2 minutes")
+
+#### ssi
+# ssi.extension              = ( ".shtml" )
