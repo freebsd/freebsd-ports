@@ -3,7 +3,7 @@
 # Date created:		9 August 1996
 # Whom:			chuckr@freebsd.org
 #
-# $Id: Makefile,v 1.20 1998/09/15 11:46:04 asami Exp $
+# $Id: Makefile,v 1.21 1998/09/17 00:32:53 asami Exp $
 #
 
 DISTNAME=	transfig.3.2
@@ -21,6 +21,7 @@ RUN_DEPENDS=	ppmtogif:${PORTSDIR}/graphics/netpbm
 
 USE_IMAKE=	yes
 EXTRACT_ONLY=	transfig.3.2.tar.gz
+MAN1=		fig2dev.1 fig2ps2tex.1 pic2tpic.1 transfig.1
 
 post-install:
 	@${MKDIR} ${PREFIX}/lib/X11/fig2dev

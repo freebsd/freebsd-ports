@@ -4,8 +4,4 @@ bin/fig2ps2tex
 bin/fig2ps2tex.sh
 bin/pic2tpic
 lib/X11/fig2dev/ja_JP.EUC.ps
-man/man1/transfig.1.gz
-man/man1/fig2ps2tex.1.gz
-man/man1/pic2tpic.1.gz
-man/man1/fig2dev.1.gz
 @dirrm lib/X11/fig2dev
