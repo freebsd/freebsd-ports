@@ -1,5 +1,11 @@
 etc/periodic/daily/accounting
 etc/periodic/monthly/accounting
+etc/tas/AcctLog.conf
+etc/tas/AcctLog.conf.default
+etc/tas/accounting.conf
+etc/tas/accounting.conf.default
+etc/tas/tas.conf
+etc/tas/tas.conf.default
 sbin/AcctFetch
 sbin/AcctJoin
 sbin/AcctLog
@@ -8,3 +14,8 @@ sbin/AcctMax
 sbin/AcctSendmail
 sbin/AcctSquid
 share/doc/tas/TAS.html
+@dirrm share/doc/tas
+@dirrm etc/tas
+@dirrm etc/periodic/monthly
+@dirrm etc/periodic/daily
+@dirrm etc/periodic

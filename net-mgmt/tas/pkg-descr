@@ -1,6 +1,8 @@
 TAS is a traffic accounting system that picks up ip and application level
-traffic statistics, stores it and builds reports. Report is a set of
-user-defined tables. Table columns and rows are groups of hosts (traffic
-sources or destinations) aggregated according to the rules defined by user.
+traffic statistics, stores it and processes to build reports. Report is a
+set of user-defined tables. Table columns and rows are groups of hosts
+(traffic sources or destinations) aggregated according to the rules defined
+by user.
 
-WWW: http://rnoc.urc.ac.ru/~anton/projects/tas/TAS.html
+WWW:	http://tas.net-conex.com
+	http://rnoc.urc.ac.ru/~anton/projects/tas/TAS.html
