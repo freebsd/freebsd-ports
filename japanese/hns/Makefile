@@ -1,22 +1,22 @@
 # New ports collection makefile for:    hns
-# Version required:             2.00-pl3
 # Date created:                 10 Jun 1999
 # Whom:                         Hyper NIKKI System Project <hnsmaster@h14m.org>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	hns-2.00-pl3
-PKGNAME=	ja-hns-2.00.3
+PORTNAME=	hns
+PORTVERSION=	2.00.3
 CATEGORIES=	japanese www perl5
 MASTER_SITES=	http://www.h14m.org/dist/
+DISTNAME=	${PORTNAME}-${PORTVERSION:R}-pl${PORTVERSION:E}
 
 MAINTAINER=	hnsmaster@h14m.org
 
 USE_PERL5=	yes
 NO_BUILD=	yes
 
-WRKSRC=		${WRKDIR}/hns-2.00
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:R}
 
 do-install:
 	${MKDIR} ${PREFIX}/share/hns

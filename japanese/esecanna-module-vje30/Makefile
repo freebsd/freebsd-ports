@@ -1,16 +1,16 @@
 # New ports collection Makefile for: esecanna module for VJE-Delta 3.0
-# Version required:	0.14.3
 # Date created:		24 February 2000
 # Whom:			Akinori MUSHA aka knu <knu@idaemons.org>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	esecanna-module-vje30_0.14.3
-PKGNAME=	ja-esecanna-module-vje30-0.14.3
+PORTNAME=	esecanna-module-vje30
+PORTVERSION=	0.14.3
 CATEGORIES=	japanese
 MASTER_SITES=	http://esecanna.netfort.gr.jp/ \
 		http://people.FreeBSD.org/~knu/ports/distfiles/
+DISTNAME=	${PORTNAME}_${PORTVERSION}
 
 MAINTAINER=	knu@idaemons.org
 

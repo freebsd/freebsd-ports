@@ -1,5 +1,4 @@
 # New ports collection makefile for: Netscape browser with Japanese resources
-# Version required:	4.7x
 # Date created:		24 Mar 2000
 # Whom:			imura@FreeBSD.org
 #

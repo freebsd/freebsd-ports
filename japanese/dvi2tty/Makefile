@@ -1,18 +1,19 @@
 # New ports collection makefile for:	dvi2tty
-# Version required:		5.0
 # Date created:			30 Mar. 1996
 # Whom:				Masafumi NAKANE <max@FreeBSD.org>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	dvi2tty5.0
-PKGNAME=	ja-dvi2tty-ascii-5.0
+PORTNAME=	dvi2tty-ascii
+PORTVERSION=	5.0
 CATEGORIES=	japanese print
 MASTER_SITES=	ftp://ftp.web.ad.jp/pub/TeX/akiu/dviwares/dvi2tty/
+DISTNAME=	dvi2tty${PORTVERSION}
 
 PATCH_SITES=	ftp://ftp.web.ad.jp/pub/TeX/akiu/dviwares/dvi2tty/
-PATCHFILES=	dvi2tty-ascii-jtex-patch dvi2tty.c-patch
+PATCHFILES=	${PORTNAME}-jtex-patch \
+		dvi2tty.c-patch
 
 MAINTAINER=	max@FreeBSD.org
 

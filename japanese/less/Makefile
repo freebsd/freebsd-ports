@@ -1,13 +1,12 @@
 # New ports collection makefile for:	jless
-# Version required:	332
 # Date created:		7 March 1995
 # Whom:			Nobuhiro Yasutomi <nobu@psrc.isac.co.jp>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	less-332
-PKGNAME=	ja-less-332
+PORTNAME=	less
+PORTVERSION=	332
 CATEGORIES=	japanese
 MASTER_SITES=	${MASTER_SITE_GNU} \
 		ftp://ftp.big.or.jp/pub/usr2/jam/less/contrib/
@@ -17,13 +16,12 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 PATCH_SITES=	ftp://ftp.big.or.jp/pub/usr2/jam/less/
-PATCHFILES=	less-332-iso242.patch.gz \
-		less-332-iso242-243.patch.gz \
-		less-332-iso243-244.patch.gz \
-		less-332-iso244-245.patch.gz \
-		less-332-iso245-247.patch.gz \
-		less-332-iso247-248.patch.gz
-
+PATCHFILES=	${DISTNAME}-iso242.patch.gz \
+		${DISTNAME}-iso242-243.patch.gz \
+		${DISTNAME}-iso243-244.patch.gz \
+		${DISTNAME}-iso244-245.patch.gz \
+		${DISTNAME}-iso245-247.patch.gz \
+		${DISTNAME}-iso247-248.patch.gz
 PATCH_DIST_STRIP=	-p1
 
 MAINTAINER=	nobu@psrc.isac.co.jp

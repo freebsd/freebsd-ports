@@ -1,19 +1,19 @@
 # New ports collection makefile for: ee
-# Version required:	1.0
 # Date created:		20 Jan 1999
 # Whom:			KIRIYAMA Kazuhiko <kiri@kiri.toba-cmt.ac.jp>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	jee-1.0
-PKGNAME=	ja-jee-1.0
+PORTNAME=	jee
+PORTVERSION=	1.0
 CATEGORIES=	japanese editors
 MASTER_SITES=	ftp://ftp.mogami-wire.co.jp/pub/beta/ \
 		ftp://ports.jp.freebsd.org/pub/FreeBSD-jp/ports-jp/LOCAL_PORTS/
-DISTFILES=	jee.tar.gz \
-		libncurses-3.0.tar.gz \
-		ee-3.0.tar.gz
+DISTFILES=	${PORTNAME}.tar.gz \
+		ee-3.0.tar.gz \
+		libncurses-3.0.tar.gz
+EXTRACT_ONLY=	ee-3.0.tar.gz
 
 MAINTAINER=	kiri@pis.toba-cmt.ac.jp
 
@@ -23,14 +23,11 @@ MANLANG=	ja
 MAN1=		jee.1
 WRKSRC=		${WRKDIR}/ee
 
-do-extract:
-	@${MKDIR} ${WRKSRC}
-	${EXTRACT_CMD} ${EXTRACT_BEFORE_ARGS} ${DISTDIR}/jee.tar.gz \
+post-extract:
+.for f in ${PORTNAME}.tar.gz libncurses-3.0.tar.gz
+	${EXTRACT_CMD} ${EXTRACT_BEFORE_ARGS} ${DISTDIR}/${f} \
 		${EXTRACT_AFTER_ARGS} -C ${WRKSRC}
-	${EXTRACT_CMD} ${EXTRACT_BEFORE_ARGS} ${DISTDIR}/ee-3.0.tar.gz \
-		${EXTRACT_AFTER_ARGS} -C ${WRKDIR}
-	${EXTRACT_CMD} ${EXTRACT_BEFORE_ARGS} ${DISTDIR}/libncurses-3.0.tar.gz \
-		${EXTRACT_AFTER_ARGS} -C ${WRKSRC}
+.endfor
 	${MV} ${WRKSRC}/libncurses ${WRKSRC}/curses
 
 post-patch:

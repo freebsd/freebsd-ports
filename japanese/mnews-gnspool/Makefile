@@ -1,12 +1,11 @@
 # New ports collection makefile for:	mnews-gnspool
-# Version required:		1.22
 # Date created:			23 Sep 1996
 # Whom:				Masafumi NAKANE <max@FreeBSD.org>
 #
 # $FreeBSD$
 #
 
-PKGNAME=	ja-mnews-gnspool-1.22
+PKGNAMESUFFIX=	-gnspool
 
 RUN_DEPENDS=	gnspool:${PORTSDIR}/japanese/gn-gnspool
 

@@ -1,12 +1,12 @@
 # New ports collection makefile for: netscape3.language
-# Version required:	3.04
 # Date created:		17 November 1997
 # Whom:			SADA Kenji <sada@FreeBSD.org>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	ja-netscape-3.04
+PORTNAME=	netscape
+PORTVERSION=	3.04
 CATEGORIES=	japanese www
 MASTER_SITES=	http://www.bpel.tutics.tut.ac.jp/~take/Netscape/etc/ \
 		http://www.bpel.tutics.tut.ac.jp/~take/Netscape/resources/
@@ -16,9 +16,8 @@ DISTFILES=	NLS.tar.gz \
 
 MAINTAINER=	sada@FreeBSD.org
 
-RUN_DEPENDS= \
-	${PREFIX}/bin/netscape:${PORTSDIR}/www/netscape3 \
-	${PKG_DBDIR}/ja-netscape-fonts-1.0:${PORTSDIR}/japanese/netscape-fonts
+RUN_DEPENDS=	${LOCALBASE}/bin/netscape:${PORTSDIR}/www/netscape3 \
+		${PKG_DBDIR}/ja-netscape-fonts-1.0:${PORTSDIR}/japanese/netscape-fonts
 
 DIST_SUBDIR=	netscape3
 NO_WRKSUBDIR=	YES

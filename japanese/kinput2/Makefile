@@ -1,15 +1,16 @@
 # New ports collection makefile for:	kinput2-wnn4
-# Version required:	3.0
 # Date created:		19 Dec 1997
 # Whom:			Satoshi TAOKA <taoka@FreeBSD.org>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	kinput2-v3
-PKGNAME=	ja-kinput2${INPUT_METHOD}-3.0
+PORTNAME=	kinput2
+PORTVERSION=	3.0
+PKGNAMESUFFIX=	${INPUT_METHOD}
 CATEGORIES=	japanese x11
 MASTER_SITES=	ftp://ftp.sra.co.jp/pub/x11/kinput2/ 
+DISTNAME=	kinput2-v3
 
 MAINTAINER=	taoka@FreeBSD.org
 

@@ -1,17 +1,17 @@
 # New ports collection makefile for:   makejvf-fkr-1.0
-# Version required:    1.0
 # Date created:        6 Oct 1999
 # Whom:                Kentaro Inagaki <inagaki@tg.rim.or.jp>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	makejvf-1.0-fkr
-PKGNAME=	ja-makejvf-fkr-1.0
+PORTNAME=	makejvf-fkr
+PORTVERSION=	1.0
 CATEGORIES=	japanese print
 MASTER_SITES=	ftp://ftp.tooyoo.l.u-tokyo.ac.jp/pub/TeX/ \
 		ftp://ftp.ascii.co.jp/pub/TeX/ascii-ptex/jvf/ \
 		${MASTER_SITE_LOCAL}
+DISTNAME=	makejvf-${PORTVERSION}-fkr
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 		standard${EXTRACT_SUFX} nmin-ngoth${EXTRACT_SUFX} \
 		jis${EXTRACT_SUFX} morisawa${EXTRACT_SUFX}

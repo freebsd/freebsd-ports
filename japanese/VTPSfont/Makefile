@@ -1,16 +1,15 @@
 # New ports collection makefile for:	VTPSfont
-# Version required:	1.3
 # Date created:		99/06/15
 # Whom:			Satoshi TAOKA <taoka@FreeBSD.org>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	VTPSfont-1.3
-PKGNAME=	ja-VTPSfont-1.3
+PORTNAME=	VTPSfont
+PORTVERSION=	1.3
 CATEGORIES=	japanese print
 MASTER_SITES=	http://ftp.infonets.hiroshima-u.ac.jp/~taoka/FreeBSD/tt/
-EXTRACT_SUFX=	''
+EXTRACT_SUFX=	# none
 
 MAINTAINER=	taoka@FreeBSD.org
 

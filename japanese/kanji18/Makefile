@@ -1,16 +1,17 @@
 # New ports collection makefile for:	kanji18
-# Version required:	1.0
 # Date created:		23 November 1999
 # Whom:			Yoshiro MIHIRA <sanpei@sanpei.org>
 #
 # $FreeBSD$
 #
 
-DISTNAME?=	kanji18
-PKGNAME=	ja-${DISTNAME}-1.0
+PORTNAME=	kanji
+PORTVERSION?=	1.0
+PKGNAMESUFFIX?=	18
 CATEGORIES=	japanese x11-fonts
 MASTER_SITES=   ${MASTER_SITE_PORTS_JP}
 MASTER_SITE_SUBDIR=	${DISTNAME}
+DISTNAME=	${PORTNAME}
 DISTFILES?=	573.z 574.z 575.z 576.z 577.z 578.z 579.z 580.z 581.z
 
 MAINTAINER=     sanpei@sanpei.org

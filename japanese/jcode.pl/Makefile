@@ -1,17 +1,16 @@
 # New ports collection makefile for:	jcode.pl
-# Version required:	2.10
 # Date created:		20 February 1998
 # Whom:			sada
 #
 # $FreeBSD$
 #
 
-DISTNAME=	jcode.pl-2.10
-PKGNAME=	ja-jcode.pl-2.10
+PORTNAME=	jcode.pl
+PORTVERSION=	2.10
 CATEGORIES=	japanese
 MASTER_SITES=	ftp://ftp.iij.ad.jp/pub/IIJ/dist/utashiro/perl/ \
 		ftp://ftp.sra.co.jp/pub/lang/perl/sra-scripts/
-EXTRACT_SUFX=
+EXTRACT_SUFX=	# none
 
 MAINTAINER=	sada@e-mail.ne.jp
 

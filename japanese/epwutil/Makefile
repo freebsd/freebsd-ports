@@ -1,13 +1,12 @@
 # New ports collection makefile for:	epwutil
-# Version required:	1.0
 # Date created:		22 January 1999
 # Whom:			Kazutoki TAKAMUNE <takamune@avrl.mei.co.jp>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	epwutil-1.0
-PKGNAME=	ja-epwutil-1.0
+PORTNAME=	epwutil
+PORTVERSION=	1.0
 CATEGORIES=	japanese
 MASTER_SITES=	ftp://ftp.nerimadors.or.jp/pub/epwutil/
 

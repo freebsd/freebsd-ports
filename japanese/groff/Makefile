@@ -1,20 +1,21 @@
 # New ports collection makefile for:	ja-groff
-# Version required:	1.11.1+0.99.1
 # Date created:		14 April 1995
 # Whom:			Nobuhiro Yasutomi <nobu@psrc.isac.co.jp>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	groff-1.11.1
-PKGNAME=	ja-groff-0.99.1.1
+PORTNAME=	groff
+PORTVERSION=	0.99.1.1
 CATEGORIES=	japanese print
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	groff
+DISTNAME=	${PORTNAME}-1.11.1
 
 PATCH_SITES=	${MASTER_SITE_PORTS_JP} \
 		http://www.tg.rim.or.jp/~inagaki/
-PATCHFILES=	jgroff-0.99.1.diff.gz jgroff-0.99.1-0.99.1.1.diff.gz
+PATCHFILES=	j${PORTNAME}-${PORTVERSION:R}.diff.gz \
+		j${PORTNAME}-${PORTVERSION:R}-${PORTVERSION}.diff.gz
 PATCH_DIST_STRIP=	-p1
 
 MAINTAINER=	okazaki@be.to

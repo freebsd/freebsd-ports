@@ -1,25 +1,26 @@
 # New ports collection makefile for:	EDICT - SDICT format version
-# Version required:	19981007
 # Date created:        	00/01/14
 # Whom:			Satoshi Taoka <taoka@FreeBSD.org>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	edict-19981007
-PKGNAME=	ja-edict-sdic-19981007
+PORTNAME=	edict-sdic
+PORTVERSION=	19981007
 CATEGORIES=	japanese
 MASTER_SITES=	ftp://pine.kuee.kyoto-u.ac.jp/pub/tsuchiya/sdic/ \
 		ftp://ftp.cc.monash.edu.au/pub/nihongo/ \
 		ftp://ftp.cdrom.com/pub/japanese/monash/ \
 		ftp://ftp.sedl.org/pub/mirrors/nihongo/ \
 		ftp://ftp.u-aizu.ac.jp/pub/SciEng/nihongo/ftp.cc.monash.edu.au/
-DISTFILES=	sdic-2.1.2.tar.gz edict.gz edict.doc
+DISTNAME=	sdic-2.1.2
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
+		edict.gz \
+		edict.doc
+EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=    	taoka@FreeBSD.org
 
-WRKSRC=		${WRKDIR}/sdic-2.1.2
-EXTRACT_ONLY=	sdic-2.1.2.tar.gz
 ALL_TARGET=	jedict.sdic eedict.sdic
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-emacs=mule \

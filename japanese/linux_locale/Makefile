@@ -1,16 +1,16 @@
 # New ports collection makefile for:    ja-linux_locale
-# Version required:	13
 # Date created:         March 20 2000
 # Whom:                 imura@FreeBSD.org
 #
 # $FreeBSD$
 #
 
-DISTNAME=	locale-ja_${VERSION}
-PKGNAME=	ja-linux_locale-13.0
+PORTNAME=	linux_locale
+PORTVERSION=	${VERSION}.0
 CATEGORIES=	japanese emulators linux
 MASTER_SITES=	ftp://ftp.debian.org/debian/dists/potato/main/source/admin/ \
 		http://people.FreeBSD.org/~imura/distfiles/
+DISTNAME=	locale-ja_${VERSION}
 
 MAINTAINER=	imura@FreeBSD.org
 

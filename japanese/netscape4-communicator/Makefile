@@ -1,16 +1,16 @@
 # New ports collection makefile for: Netscape browser with Japanese resources
-# Version required:	4.08
 # Date created:		13 Mar 1998
 # Whom:			sada@FreeBSD.org
 #
 # $FreeBSD$
 #
 
-DISTNAME?=	communicator-ja-euc-v407-export.generic-generic-generic
-PKGNAME=	ja-netscape-${BROWSER_ARC}-${BROWSER_VERSION}
+PORTNAME=	netscape-${BROWSER_ARC}
+PORTVERSION=	${BROWSER_VERSION}
 CATEGORIES=	japanese www
 MASTER_SITES=	${MASTER_SITE_PORTS_JP} \
 		http://www.bres.tsukuba.ac.jp/~yohta/netscape/
+DISTNAME?=	communicator-ja-euc-v407-export.generic-generic-generic
 
 MAINTAINER=	sada@FreeBSD.org
 

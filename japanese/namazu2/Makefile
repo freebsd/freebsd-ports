@@ -5,7 +5,7 @@
 # $FreeBSD$
 #
 
-PORTNAME=	ja-namazu2
+PORTNAME=	namazu2
 PORTVERSION=	2.0.3
 CATEGORIES=	japanese textproc
 MASTER_SITES=	http://www.namazu.org/stable/

@@ -1,18 +1,17 @@
 # New ports collection makefile for:	diclookup-mule
-# Version required:	2.3.1beta2
 # Date created:		31 Jan 1998
 # Whom:			Mita Yoshio <mita@jp.FreeBSD.org>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	diclookup-mule-2.3.3
-PKGNAME=	ja-diclookup-mule-2.3.3
+PORTNAME=	diclookup-mule
+PORTVERSION=	2.3.3
 CATEGORIES=	japanese elisp
 MASTER_SITES=	ftp://ftp.math.s.chiba-u.ac.jp/tools/diclookup-mule/
 
 PATCH_SITES=	${MASTER_SITES}
-PATCHFILES=	diclookup-mule-2.3.3-wave-patch.gz
+PATCHFILES=	diclookup-mule-${PORTVERSION}-wave-patch.gz
 
 MAINTAINER=	mita@jp.FreeBSD.org
 

@@ -1,5 +1,4 @@
 # New ports collection makefile for:	Canna
-# Version required:	3.2p2
 # Date created:		3 November 1995
 # Whom:			Nobuhiro Yasutomi <nobu@psrc.isac.co.jp>
 #			NIIMI Satoshi <sa2c@and.or.jp>
@@ -7,10 +6,11 @@
 # $FreeBSD$
 #
 
-DISTNAME=	Canna32p2
-PKGNAME=	ja-Canna-3.2.2
+PORTNAME=	Canna
+PORTVERSION=	3.2.2
 CATEGORIES=	japanese
 MASTER_SITES=	ftp://ftp.nec.co.jp/pub/Canna/Canna32/
+DISTNAME=	${PORTNAME}${PORTVERSION:S/.//:S/./p/}
 
 MAINTAINER=	max@FreeBSD.org
 

@@ -1,5 +1,4 @@
 # New ports collection makefile for:	 ja-latex2html
-# Version required:	98.1jpatch-2.1
 # Date created:		3 Apr 1999
 # Whom:			Sugimoto Sadahiro <ixtl@utmc.or.jp>
 #
@@ -8,13 +7,15 @@
 # Default image format is GIF.
 # If you prefer PNG to GIF, define USE_PNG (`make -DUSE_PNG`).
 
-DISTNAME=	latex2html-98.1p1
-PKGNAME= 	ja-latex2html-98.1j2.1
+PORTNAME=	latex2html
+PORTVERSION=	${VERSION}j${JP_VERSION}
 CATEGORIES=	japanese textproc
 MASTER_SITES=	http://www-dsed.llnl.gov/files/programs/unix/latex2html/sources/ \
 		ftp://ftp.mpn.com/pub/nikos/latex2html-mirror/sources/ \
 		http://www.topstudio.co.jp/~kmuto/software/latex2html/patch/98-1/
-DISTFILES=	latex2html-98.1p1.tar.gz latex2html-98.1jpatch-2.1.tar.gz
+DISTNAME=	${PORTNAME}-${VERSION}p1
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
+		${PORTNAME}-${VERSION}jpatch-${JP_VERSION}.tar.gz
 
 MAINTAINER=	ixtl@utmc.or.jp
 
@@ -26,6 +27,9 @@ RUN_DEPENDS=	${PREFIX}/bin/latex:${PORTSDIR}/print/latex \
 .ifdef USE_PNG
 RUN_DEPENDS +=	${X11BASE}/bin/pnmtopng:${PORTSDIR}/graphics/pnmtopng
 .endif
+
+VERSION=	98.1
+JP_VERSION=	2.1
 
 WRKSRC=	${WRKDIR}/latex2html
 USE_PERL5=	yes

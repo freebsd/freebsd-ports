@@ -1,19 +1,20 @@
 # New ports collection makefile for:	kon2 with 16dot font
-# Version required:     0.3
 # Date created:         11 Apr 1997
 # Whom:                 Makoto Matsushita <matusita@jp.freebsd.org>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	kon2-0.3
-PKGNAME=	ja-kon2-${KONFONT}-0.3
+PORTNAME=	kon2
+PORTVERSION=	0.3
+PKGNAMESUFFIX=	-${KONFONT}
 CATEGORIES=	japanese
 # note kon is only in first directory and fonts are only in second directory
 MASTER_SITES=	ftp://ftp.tut.ac.jp/Linux/Packages/Utils/ \
 		ftp://ftp.xfree86.org/pub/XFree86/3.3.3/untarred/xc/fonts/bdf/misc/ \
 		ftp://ftp.iij.ad.jp/pub/X/XFree86/3.3.3/untarred/xc/fonts/bdf/misc/
-DISTFILES=	kon2-0.3.tar.gz \
+DISTNAME=	kon2-${PORTVERSION}
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 		k14.bdf 7x14rk.bdf \
 		jiskan16.bdf 8x16rk.bdf
 
@@ -23,7 +24,7 @@ ONLY_FOR_ARCHS=	i386
 
 MAN1=		kon.1
 MANLANG=	ja
-EXTRACT_ONLY=	kon2-0.3.tar.gz
+EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 DOCDIR=		${PREFIX}/share/doc/kon2
 

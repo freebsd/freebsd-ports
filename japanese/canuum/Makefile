@@ -1,17 +1,17 @@
 # New ports collection makefile for: canuum
-# Version required:	1.0
 # Date created:		20 Jan 1999
 # Whom:			KIRIYAMA Kazuhiko <kiri@kiri.toba-cmt.ac.jp>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	canuum-1.0
-PKGNAME=	ja-canuum-1.0
+PORTNAME=	canuum
+PORTVERSION=	1.0
 CATEGORIES=	japanese
 MASTER_SITES=	ftp://ftp.nec.co.jp/pub/Canna/Canna22/ \
 		ftp://ftp.nec.co.jp/pub/Canna/Canna32/
-DISTFILES=	Uum4.109.tar.gz  Canna32p2.tar.gz
+DISTFILES=	Uum4.109.tar.gz \
+		Canna32p2.tar.gz
 EXTRACT_ONLY=	Uum4.109.tar.gz
 
 MAINTAINER=	kiri@pis.toba-cmt.ac.jp

@@ -1,21 +1,24 @@
 # New ports collection makefile for:	ja-lynx
-# Version required:     2.8.2 release 1
 # Date created:         10 August 1998
 # Whom:                 Shigeyuki FUKUSHIMA <shige@FreeBSD.org>
 #
 # $FreeBSD$
 #
 
-DISTNAME=       lynx2.8.2rel.1
-PKGNAME=        ja-lynx-2.8.2.rel1
+PORTNAME=	lynx
+PORTVERSION=	${VERSION}.${MINOR_VERSION:S/.//}
 CATEGORIES=	japanese www
 MASTER_SITES=   http://sol.slcc.edu/lynx/current/
+DISTNAME=	${PORTNAME}${VERSION}${MINOR_VERSION}
 
 MAINTAINER=	shige@FreeBSD.org
 
 FORBIDDEN=  "Riddled with buffer overflows exploitable by a malicious server to execute code as the local user."
 
-WRKSRC=		${WRKDIR}/lynx2-8-2
+WRKSRC=		${WRKDIR}/${PORTNAME}${VERSION:S/./-/g}
+
+VERSION=	2.8.2
+MINOR_VERSION=	rel.1
 
 USE_BZIP2?=	YES
 GNU_CONFIGURE=  YES

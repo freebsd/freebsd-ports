@@ -1,17 +1,17 @@
 # New ports collection makefile for:    dvi2dvi
-# Version required:     1.1
 # Date created:         25 Dec 1997
 # Whom:                 Makoto WATANABE <watanabe@zlab.phys.nagoya-u.ac.jp>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	dvi2dvi-1.1
-PKGNAME=	ja-dvi2dvi-1.1
+PORTNAME=	dvi2dvi
+PORTVERSION=	1.1
 CATEGORIES=	japanese print
 MASTER_SITES=	ftp://ftp.math.s.chiba-u.ac.jp/tex/ \
 		ftp://ftp.math.s.chiba-u.ac.jp/tex/tex/
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX} web2c-7.2a${EXTRACT_SUFX}
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
+		web2c-7.2a.tar.gz
 
 MAINTAINER=	watanabe@zlab.phys.nagoya-u.ac.jp
 

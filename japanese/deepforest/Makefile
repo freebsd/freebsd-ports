@@ -1,5 +1,4 @@
 # New ports collection makefile for:	JDE's DeepForest for ja-TkStep
-# Version required:	1.0
 # Date created:		25 March 1999
 # Whom:			KIRIYAMA Kazuhiko <kiri@pis.toba-cmt.ac.jp>
 #

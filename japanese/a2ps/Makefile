@@ -1,17 +1,16 @@
 # New ports collection makefile for:	a2ps-j
-# Version required:	1.44
 # Date created:		16 Nov 1996
 # Whom:			SAITO Itsuro <saito@miv.t.u-tokyo.ac.jp>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	a2ps.pl-1.44
-PKGNAME=	ja-a2ps-1.44
+PORTNAME=	a2ps
+PORTVERSION=	1.44
 CATEGORIES=	japanese print
 MASTER_SITES=	ftp://ftp.iij.ad.jp/pub/IIJ/dist/utashiro/perl/ \
 		ftp://ftp.sra.co.jp/pub/lang/perl/sra-scripts/
-EXTRACT_SUFX=	# None
+DISTFILES=	${PORTNAME}.pl-${PORTVERSION}
 
 MAINTAINER=	saito@miv.t.u-tokyo.ac.jp
 

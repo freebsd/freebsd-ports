@@ -1,22 +1,25 @@
 # New ports collection makefile for:	mh (Japanese)
-# Version required:	6.8.4
 # Date created:		28 March 1995
 # Whom:			Akito FUJITA <fujita@zoo.ncl.omron.co.jp>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	mh-6.8.4-JP-3.03
-PKGNAME=	ja-mh-6.8.4.3.03
+PORTNAME=	mh
+PORTVERSION=	${VERSION}.j${JP_VERSION}
 CATEGORIES=	japanese mail
 MASTER_SITES=	${MASTER_SITE_PORTS_JP} \
 		ftp://komadori.planet.sci.kobe-u.ac.jp/pub/MH/ \
 		ftp://ftp.chem.eng.himeji-tech.ac.jp/pub/net/mh/
+DISTNAME=	${PORTNAME}-${VERSION}-JP-${JP_VERSION}
 
 MAINTAINER=	motoyuki@freebsd.org
 
 BUILD_DEPENDS=	jless:${PORTSDIR}/japanese/less
 RUN_DEPENDS=	jless:${PORTSDIR}/japanese/less
+
+VERSION=	6.8.4
+JP_VERSION=	3.03
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-batchmode \

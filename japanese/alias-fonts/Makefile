@@ -1,12 +1,12 @@
 # Ports collection makefile for: Japanese Font Setup for Netscape browsers
-# Version required:	1.0
 # Date created:		22 Jun 1998
 # Whom:                 sada
 #
 # $FreeBSD$
 #
 
-DISTNAME=	ja-netscape-fonts-1.0
+PORTNAME=	netscape-fonts
+PORTVERSION=	1.0
 CATEGORIES=	japanese www x11-fonts
 DISTFILES=	# empty
 
