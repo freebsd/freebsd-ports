@@ -9,5 +9,8 @@ ftp://ftp.ora.com/pub/davenport/).
 
 This port contains DocBook versions 2.4.1 and 3.0.
 
+The DocBook documentation is available in ASCII and PDF
+at http://www.freebsd.org/~wosch/docbook/
+
 John Fieber
 jfieber@FreeBSD.org
