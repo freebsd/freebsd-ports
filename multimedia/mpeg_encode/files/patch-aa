@@ -1,15 +1,11 @@
---- ./headers/libpnmrw.h~	Thu Aug  1 08:52:25 1996
-+++ ./headers/libpnmrw.h	Thu Aug  1 08:51:16 1996
-@@ -19,7 +19,12 @@
- ** malloc.h at all.  A sad situation.  If you have compilation problems
+--- headers/libpnmrw.h.orig	Wed Aug  9 11:17:41 1995
++++ headers/libpnmrw.h	Tue Jul 23 17:06:15 2002
+@@ -20,7 +20,7 @@
  ** that point here, feel free to tweak or remove these declarations.
  */
-+#ifdef __FreeBSD__
-+#include <stdlib.h>
-+#else
  #include <malloc.h>
-+#endif
-+
- #if !defined(sco)  &&  !defined(sgi) && !defined(IRIX)
+-#if !defined(sco)  &&  !defined(sgi) && !defined(IRIX)
++#if !defined(sco)  &&  !defined(sgi) && !defined(IRIX) && !defined(__FreeBSD__)
  extern char* malloc();
  #endif
+ /* End of configurable definitions. */
