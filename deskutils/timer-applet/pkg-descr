@@ -1,0 +1,14 @@
+[From WebPage]
+
+Timer Applet is a countdown timer applet for the GNOME panel.
+
+Highlights:
+ * Quickly set a time and the applet will notify you when time's up
+ * Create presets for quick access to frequently-used times
+ * Small and unobtrusive. Choose to either view the remaining time right in
+   the panel or hide it so you don't get distracted by the countdown.
+   You can still view the remaining time by hovering your mouse over the
+   timer icon
+ * User interface follows the GNOME Human Interface Guidelines
+
+WWW:	http://timerapplet.sourceforge.net/

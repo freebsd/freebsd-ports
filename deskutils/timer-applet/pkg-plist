@@ -1,0 +1,5 @@
+bin/timer-applet
+libdata/bonobo/servers/timer-applet.server
+share/gnome/gnome-2.0/ui/timer-applet.xml
+share/gnome/pixmaps/timer-applet/timer-applet-icon.png
+@dirrm share/gnome/pixmaps/timer-applet
