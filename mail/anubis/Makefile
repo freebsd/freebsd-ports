@@ -17,23 +17,21 @@
 #
 ###########################################################################
 
-PORTNAME=	anubis
-PORTVERSION=	3.6.2
-CATEGORIES=	mail
-MASTER_SITES=	${MASTER_SITE_GNU}
+PORTNAME=		anubis
+PORTVERSION=		3.6.2
+CATEGORIES=		mail
+MASTER_SITES=		${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	sergei@kolobov.com
-COMMENT=	Outgoing SMTP mail processor
+MAINTAINER=		sergei@kolobov.com
+COMMENT=		Outgoing SMTP mail processor
 
-LIB_DEPENDS=	gnugetopt:${PORTSDIR}/devel/libgnugetopt
-
-USE_REINPLACE=	yes
-GNU_CONFIGURE=	yes
+USE_REINPLACE=		yes
+USE_GETOPT_LONG=	yes
+GNU_CONFIGURE=		yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib -lgnugetopt" \
-		MAKEINFO="makeinfo --no-split"
+CONFIGURE_ENV=		MAKEINFO="makeinfo --no-split" LDFLAGS="${LDFLAGS}"
+LDFLAGS+=		-L${LOCALBASE}/lib
 
 # Select TLS/SSL API: either OpenSSL (default), GnuTLS, or none
 .if defined(WITH_GNUTLS)
@@ -118,9 +116,7 @@ post-install:
 .endif
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
-.for file in ${DOCS}
-	${INSTALL_DATA} ${WRKSRC}/${file} ${DOCSDIR}
-.endfor
+	cd ${WRKSRC} && ${INSTALL_DATA} ${DOCS} ${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>
