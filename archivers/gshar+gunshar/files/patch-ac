@@ -1,0 +1,11 @@
+--- shar.c.dist	Fri Aug 16 22:19:04 1996
++++ shar.c	Fri Aug 16 22:19:36 1996
+@@ -589,7 +589,7 @@
+ static int
+ generate_one_header_line (const char *local_name, const char *restore_name)
+ {
+-  fprintf (output, "# %6ld %s %s\n", struct_stat.st_size,
++  fprintf (output, "# %6ld %s %s\n", (long)struct_stat.st_size,
+ 	   mode_string (struct_stat.st_mode), restore_name);
+   return 0;
+ }
