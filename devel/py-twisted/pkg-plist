@@ -52,6 +52,15 @@ lib/%%PYTHON_VERSION%%/site-packages/twisted/internet/tcp.pyo
 lib/%%PYTHON_VERSION%%/site-packages/twisted/internet/tkinternet.py
 lib/%%PYTHON_VERSION%%/site-packages/twisted/internet/tkinternet.pyc
 lib/%%PYTHON_VERSION%%/site-packages/twisted/internet/tkinternet.pyo
+lib/%%PYTHON_VERSION%%/site-packages/twisted/mail/__init__.py
+lib/%%PYTHON_VERSION%%/site-packages/twisted/mail/__init__.pyc
+lib/%%PYTHON_VERSION%%/site-packages/twisted/mail/__init__.pyo
+lib/%%PYTHON_VERSION%%/site-packages/twisted/mail/mail.py
+lib/%%PYTHON_VERSION%%/site-packages/twisted/mail/mail.pyc
+lib/%%PYTHON_VERSION%%/site-packages/twisted/mail/mail.pyo
+lib/%%PYTHON_VERSION%%/site-packages/twisted/mail/maildir.py
+lib/%%PYTHON_VERSION%%/site-packages/twisted/mail/maildir.pyc
+lib/%%PYTHON_VERSION%%/site-packages/twisted/mail/maildir.pyo
 lib/%%PYTHON_VERSION%%/site-packages/twisted/persisted/__init__.py
 lib/%%PYTHON_VERSION%%/site-packages/twisted/persisted/__init__.pyc
 lib/%%PYTHON_VERSION%%/site-packages/twisted/persisted/__init__.pyo
@@ -200,6 +209,27 @@ lib/%%PYTHON_VERSION%%/site-packages/twisted/spread/jelly.pyo
 lib/%%PYTHON_VERSION%%/site-packages/twisted/spread/pb.py
 lib/%%PYTHON_VERSION%%/site-packages/twisted/spread/pb.pyc
 lib/%%PYTHON_VERSION%%/site-packages/twisted/spread/pb.pyo
+lib/%%PYTHON_VERSION%%/site-packages/twisted/tap/__init__.py
+lib/%%PYTHON_VERSION%%/site-packages/twisted/tap/__init__.pyc
+lib/%%PYTHON_VERSION%%/site-packages/twisted/tap/__init__.pyo
+lib/%%PYTHON_VERSION%%/site-packages/twisted/tap/mail.py
+lib/%%PYTHON_VERSION%%/site-packages/twisted/tap/mail.pyc
+lib/%%PYTHON_VERSION%%/site-packages/twisted/tap/mail.pyo
+lib/%%PYTHON_VERSION%%/site-packages/twisted/tap/reality.py
+lib/%%PYTHON_VERSION%%/site-packages/twisted/tap/reality.pyc
+lib/%%PYTHON_VERSION%%/site-packages/twisted/tap/reality.pyo
+lib/%%PYTHON_VERSION%%/site-packages/twisted/tap/telnet.py
+lib/%%PYTHON_VERSION%%/site-packages/twisted/tap/telnet.pyc
+lib/%%PYTHON_VERSION%%/site-packages/twisted/tap/telnet.pyo
+lib/%%PYTHON_VERSION%%/site-packages/twisted/tap/toc.py
+lib/%%PYTHON_VERSION%%/site-packages/twisted/tap/toc.pyc
+lib/%%PYTHON_VERSION%%/site-packages/twisted/tap/toc.pyo
+lib/%%PYTHON_VERSION%%/site-packages/twisted/tap/web.py
+lib/%%PYTHON_VERSION%%/site-packages/twisted/tap/web.pyc
+lib/%%PYTHON_VERSION%%/site-packages/twisted/tap/web.pyo
+lib/%%PYTHON_VERSION%%/site-packages/twisted/tap/words.py
+lib/%%PYTHON_VERSION%%/site-packages/twisted/tap/words.pyc
+lib/%%PYTHON_VERSION%%/site-packages/twisted/tap/words.pyo
 lib/%%PYTHON_VERSION%%/site-packages/twisted/test/__init__.py
 lib/%%PYTHON_VERSION%%/site-packages/twisted/test/__init__.pyc
 lib/%%PYTHON_VERSION%%/site-packages/twisted/test/__init__.pyo
@@ -314,14 +344,29 @@ lib/%%PYTHON_VERSION%%/site-packages/twisted/web/vhost.pyo
 lib/%%PYTHON_VERSION%%/site-packages/twisted/web/weblog.py
 lib/%%PYTHON_VERSION%%/site-packages/twisted/web/weblog.pyc
 lib/%%PYTHON_VERSION%%/site-packages/twisted/web/weblog.pyo
+lib/%%PYTHON_VERSION%%/site-packages/twisted/words/__init__.py
+lib/%%PYTHON_VERSION%%/site-packages/twisted/words/__init__.pyc
+lib/%%PYTHON_VERSION%%/site-packages/twisted/words/__init__.pyo
+lib/%%PYTHON_VERSION%%/site-packages/twisted/words/ircservice.py
+lib/%%PYTHON_VERSION%%/site-packages/twisted/words/ircservice.pyc
+lib/%%PYTHON_VERSION%%/site-packages/twisted/words/ircservice.pyo
+lib/%%PYTHON_VERSION%%/site-packages/twisted/words/service.py
+lib/%%PYTHON_VERSION%%/site-packages/twisted/words/service.pyc
+lib/%%PYTHON_VERSION%%/site-packages/twisted/words/service.pyo
+lib/%%PYTHON_VERSION%%/site-packages/twisted/words/webwords.py
+lib/%%PYTHON_VERSION%%/site-packages/twisted/words/webwords.pyc
+lib/%%PYTHON_VERSION%%/site-packages/twisted/words/webwords.pyo
+@dirrm lib/%%PYTHON_VERSION%%/site-packages/twisted/words
 @dirrm lib/%%PYTHON_VERSION%%/site-packages/twisted/web
 @dirrm lib/%%PYTHON_VERSION%%/site-packages/twisted/test
+@dirrm lib/%%PYTHON_VERSION%%/site-packages/twisted/tap
 @dirrm lib/%%PYTHON_VERSION%%/site-packages/twisted/spread
 @dirrm lib/%%PYTHON_VERSION%%/site-packages/twisted/reality
 @dirrm lib/%%PYTHON_VERSION%%/site-packages/twisted/python
 @dirrm lib/%%PYTHON_VERSION%%/site-packages/twisted/protocols
 @dirrm lib/%%PYTHON_VERSION%%/site-packages/twisted/pim
 @dirrm lib/%%PYTHON_VERSION%%/site-packages/twisted/persisted
+@dirrm lib/%%PYTHON_VERSION%%/site-packages/twisted/mail
 @dirrm lib/%%PYTHON_VERSION%%/site-packages/twisted/internet
 @dirrm lib/%%PYTHON_VERSION%%/site-packages/twisted
 %%PORTDOCS%%@dirrm share/examples/twisted
