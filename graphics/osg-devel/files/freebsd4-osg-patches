@@ -1,0 +1,688 @@
+diff -urN ../OpenSceneGraph.orig/examples/osgtesselate/osgtesselate.cpp ./examples/osgtesselate/osgtesselate.cpp
+--- ../OpenSceneGraph.orig/examples/osgtesselate/osgtesselate.cpp	Sun Oct 24 20:03:59 2004
++++ ./examples/osgtesselate/osgtesselate.cpp	Tue Feb  8 01:28:23 2005
+@@ -562,7 +562,7 @@
+     setTesselateVisitor():osg::NodeVisitor(osg::NodeVisitor::TRAVERSE_ALL_CHILDREN) {
+     }
+     virtual void apply(osg::Geode& geode) {
+-        if (geode.getName().compare(0,9,"tesselate")==0) {
++        if (geode.getName().compare("tesselate",0,9)==0) {
+             for(unsigned int i=0;i<geode.getNumDrawables();++i)
+             {
+                 osg::Geometry* geom = dynamic_cast<osg::Geometry*>(geode.getDrawable(i));
+diff -urN ../OpenSceneGraph.orig/examples/osgunittests/osgunittests.cpp ./examples/osgunittests/osgunittests.cpp
+--- ../OpenSceneGraph.orig/examples/osgunittests/osgunittests.cpp	Wed Nov 10 21:28:06 2004
++++ ./examples/osgunittests/osgunittests.cpp	Tue Feb  8 01:28:23 2005
+@@ -113,9 +113,6 @@
+   std::cout<<"sizeof(float)=="<<sizeof(float)<<std::endl;
+   std::cout<<"sizeof(double)=="<<sizeof(double)<<std::endl;
+ 
+-  std::cout<<"sizeof(std::istream::pos_type)=="<<sizeof(std::istream::pos_type)<<std::endl;
+-  std::cout<<"sizeof(std::istream::off_type)=="<<sizeof(std::istream::off_type)<<std::endl;
+-
+ }
+ 
+ 
+diff -urN ../OpenSceneGraph.orig/include/osg/AnimationPath ./include/osg/AnimationPath
+--- ../OpenSceneGraph.orig/include/osg/AnimationPath	Wed Sep  1 08:34:49 2004
++++ ./include/osg/AnimationPath	Tue Feb  8 01:28:24 2005
+@@ -15,7 +15,7 @@
+ #define OSG_ANIMATIONPATH 1
+ 
+ #include <map>
+-#include <istream>
++#include <istream.h>
+ #include <float.h>
+ 
+ #include <osg/Matrixf>
+diff -urN ../OpenSceneGraph.orig/include/osg/ApplicationUsage ./include/osg/ApplicationUsage
+--- ../OpenSceneGraph.orig/include/osg/ApplicationUsage	Mon Oct 25 19:16:56 2004
++++ ./include/osg/ApplicationUsage	Tue Feb  8 01:28:24 2005
+@@ -18,7 +18,7 @@
+ 
+ #include <map>
+ #include <string>
+-#include <ostream>
++#include <ostream.h>
+ 
+ namespace osg {
+ 
+diff -urN ../OpenSceneGraph.orig/include/osg/ArgumentParser ./include/osg/ArgumentParser
+--- ../OpenSceneGraph.orig/include/osg/ArgumentParser	Tue Sep 28 09:14:03 2004
++++ ./include/osg/ArgumentParser	Tue Feb  8 01:28:24 2005
+@@ -18,7 +18,7 @@
+ 
+ #include <map>
+ #include <string>
+-#include <ostream>
++#include <ostream.h>
+ 
+ namespace osg {
+ 
+diff -urN ../OpenSceneGraph.orig/include/osg/Matrixd ./include/osg/Matrixd
+--- ../OpenSceneGraph.orig/include/osg/Matrixd	Tue Aug 31 13:19:30 2004
++++ ./include/osg/Matrixd	Tue Feb  8 01:28:24 2005
+@@ -23,7 +23,7 @@
+ 
+ #include <string.h>
+ 
+-#include <ostream>
++#include <ostream.h>
+ #include <algorithm>
+ 
+ namespace osg {
+diff -urN ../OpenSceneGraph.orig/include/osg/Matrixf ./include/osg/Matrixf
+--- ../OpenSceneGraph.orig/include/osg/Matrixf	Tue Aug 31 13:19:30 2004
++++ ./include/osg/Matrixf	Tue Feb  8 01:28:24 2005
+@@ -23,7 +23,7 @@
+ 
+ #include <string.h>
+ 
+-#include <ostream>
++#include <ostream.h>
+ #include <algorithm>
+ 
+ namespace osg {
+diff -urN ../OpenSceneGraph.orig/include/osg/Notify ./include/osg/Notify
+--- ../OpenSceneGraph.orig/include/osg/Notify	Thu Sep  2 19:10:33 2004
++++ ./include/osg/Notify	Tue Feb  8 01:28:24 2005
+@@ -16,7 +16,7 @@
+ 
+ #include <osg/Export>
+ 
+-#include <ostream>
++#include <ostream.h>
+ 
+ namespace osg {
+ 
+diff -urN ../OpenSceneGraph.orig/include/osg/UByte4 ./include/osg/UByte4
+--- ../OpenSceneGraph.orig/include/osg/UByte4	Mon Sep 13 15:14:11 2004
++++ ./include/osg/UByte4	Tue Feb  8 01:28:24 2005
+@@ -16,7 +16,7 @@
+ 
+ #include <osg/Vec3>
+ 
+-#include <ostream>
++#include <ostream.h>
+ 
+ namespace osg {
+ 
+diff -urN ../OpenSceneGraph.orig/include/osg/Vec2f ./include/osg/Vec2f
+--- ../OpenSceneGraph.orig/include/osg/Vec2f	Wed Sep 15 19:10:15 2004
++++ ./include/osg/Vec2f	Tue Feb  8 01:28:24 2005
+@@ -14,7 +14,7 @@
+ #ifndef OSG_VEC2F
+ #define OSG_VEC2F 1
+ 
+-#include <ostream>
++#include <ostream.h>
+ 
+ #include <osg/Math>
+ 
+diff -urN ../OpenSceneGraph.orig/include/osg/Vec3f ./include/osg/Vec3f
+--- ../OpenSceneGraph.orig/include/osg/Vec3f	Mon Oct 18 18:36:40 2004
++++ ./include/osg/Vec3f	Tue Feb  8 01:28:24 2005
+@@ -14,7 +14,7 @@
+ #ifndef OSG_VEC3F
+ #define OSG_VEC3F 1
+ 
+-#include <ostream>
++#include <ostream.h>
+ 
+ #include <osg/Vec2f>
+ #include <osg/Math>
+diff -urN ../OpenSceneGraph.orig/include/osgDB/FieldReader ./include/osgDB/FieldReader
+--- ../OpenSceneGraph.orig/include/osgDB/FieldReader	Wed Mar  3 13:27:18 2004
++++ ./include/osgDB/FieldReader	Tue Feb  8 01:28:24 2005
+@@ -19,7 +19,7 @@
+ #include <string.h>
+ #include <stdlib.h>
+ 
+-#include <istream>
++#include <istream.h>
+ 
+ namespace osgDB {
+ 
+diff -urN ../OpenSceneGraph.orig/include/osgSim/GeographicLocation ./include/osgSim/GeographicLocation
+--- ../OpenSceneGraph.orig/include/osgSim/GeographicLocation	Tue Mar  2 16:12:11 2004
++++ ./include/osgSim/GeographicLocation	Tue Feb  8 01:28:24 2005
+@@ -17,7 +17,7 @@
+ #include <osg/Math>
+ #include <osg/Referenced>
+ 
+-#include <ostream>
++#include <ostream.h>
+ 
+ namespace osgSim {
+ 
+diff -urN ../OpenSceneGraph.orig/src/osgDB/Archive.cpp ./src/osgDB/Archive.cpp
+--- ../OpenSceneGraph.orig/src/osgDB/Archive.cpp	Thu Nov 25 15:09:56 2004
++++ ./src/osgDB/Archive.cpp	Tue Feb  8 01:28:24 2005
+@@ -18,7 +18,7 @@
+ #include <osgDB/FileNameUtils>
+ #include <osgDB/Archive>
+ 
+-#include <streambuf>
++#include <streambuf.h>
+ 
+ using namespace osgDB;
+ 
+diff -urN ../OpenSceneGraph.orig/src/osgDB/FileNameUtils.cpp ./src/osgDB/FileNameUtils.cpp
+--- ../OpenSceneGraph.orig/src/osgDB/FileNameUtils.cpp	Wed Oct  6 13:11:04 2004
++++ ./src/osgDB/FileNameUtils.cpp	Tue Feb  8 01:28:23 2005
+@@ -16,8 +16,6 @@
+     #include <ctype.h>
+ #elif defined(__GNUC__) || !defined(WIN32) || defined(__MWERKS__)
+     #include <cctype>
+-    using std::tolower;
+-    using std::strlen;    
+ #endif
+ 
+ using namespace std;
+@@ -119,13 +117,13 @@
+ {
+     // need to check for http://
+     if (filename.size()<7) return false;
+-    if (filename.compare(0,7,"http://")==0) return true;
++    if (filename.compare("http://",0,7)==0) return true;
+     return false;
+ }
+ 
+ std::string osgDB::getServerAddress(const std::string& filename)
+ {
+-    if (filename.size()>=7 && filename.compare(0,7,"http://")==0)
++    if (filename.size()>=7 && filename.compare("http://",0,7)==0)
+     {
+         std::string::size_type pos_slash = filename.find_first_of('/',7);
+         if (pos_slash!=std::string::npos)
+@@ -142,7 +140,7 @@
+ 
+ std::string osgDB::getServerFileName(const std::string& filename)
+ {
+-    if (filename.size()>=7 && filename.compare(0,7,"http://")==0)
++    if (filename.size()>=7 && filename.compare("http://",0,7)==0)
+     {
+         std::string::size_type pos_slash = filename.find_first_of('/',7);
+         if (pos_slash!=std::string::npos)
+diff -urN ../OpenSceneGraph.orig/src/osgPlugins/ac3d/Geode.cpp ./src/osgPlugins/ac3d/Geode.cpp
+--- ../OpenSceneGraph.orig/src/osgPlugins/ac3d/Geode.cpp	Thu Nov 18 10:08:29 2004
++++ ./src/osgPlugins/ac3d/Geode.cpp	Tue Feb  8 01:28:23 2005
+@@ -12,7 +12,7 @@
+ #include <osg/Texture2D>
+ #include <osg/Drawable>
+ #include <osg/Geometry>
+-#include <limits>
++#include <limits.h>
+ #include <iomanip>
+ 
+ #include "Exception.h"
+@@ -796,8 +796,8 @@
+ 								if (NULL != pTexCoords)
+ 								{
+ 									// Find max min s coords
+-									float fMin = std::numeric_limits<float>::max();
+-									float fMax = std::numeric_limits<float>::min();
++									float fMin = FLT_MAX;
++									float fMax = FLT_MIN;
+ 									unsigned int iNumTexCoords = pGeometry->getTexCoordArray(0)->getNumElements();
+ 									
+ 									for (j = 0; j < iNumTexCoords; j++)
+@@ -809,8 +809,8 @@
+ 									}
+ 									fRep_s = fMax - fMin;
+ 									fOffset_s = fMin;
+-									fMin = std::numeric_limits<float>::max();
+-									fMax = std::numeric_limits<float>::min();
++									fMin = FLT_MAX;
++									fMax = FLT_MIN;
+ 									for (j = 0; j < iNumTexCoords; j++)
+ 									{
+ 										if (pTexCoords[j][1] > fMax)
+diff -urN ../OpenSceneGraph.orig/src/osgPlugins/ac3d/ac3d.cpp ./src/osgPlugins/ac3d/ac3d.cpp
+--- ../OpenSceneGraph.orig/src/osgPlugins/ac3d/ac3d.cpp	Tue Nov 23 15:29:51 2004
++++ ./src/osgPlugins/ac3d/ac3d.cpp	Tue Feb  8 01:28:25 2005
+@@ -6,9 +6,9 @@
+ 
+ 
+ #include <stdio.h>
+-// Where is malloc.h really needed?
++// Where is stdlib.h really needed?
+ #if !defined(__APPLE__) && !defined(macintosh) && !defined(__FreeBSD__)
+-#include <malloc.h>
++#include <stdlib.h>
+ #endif
+ #include <math.h>
+ 
+diff -urN ../OpenSceneGraph.orig/src/osgPlugins/flt/Input.cpp ./src/osgPlugins/flt/Input.cpp
+--- ../OpenSceneGraph.orig/src/osgPlugins/flt/Input.cpp	Mon Nov 22 23:54:44 2004
++++ ./src/osgPlugins/flt/Input.cpp	Tue Feb  8 01:28:25 2005
+@@ -1,7 +1,7 @@
+ // Input.cpp
+ 
+ #include <string>
+-// #include <malloc.h>
++// #include <stdlib.h>
+ #include <assert.h>
+ 
+ #include <osg/Notify>
+diff -urN ../OpenSceneGraph.orig/src/osgPlugins/lib3ds/camera.cpp ./src/osgPlugins/lib3ds/camera.cpp
+--- ../OpenSceneGraph.orig/src/osgPlugins/lib3ds/camera.cpp	Fri Jan 24 15:12:52 2003
++++ ./src/osgPlugins/lib3ds/camera.cpp	Tue Feb  8 01:28:25 2005
+@@ -28,7 +28,7 @@
+ #include <string.h>
+ #include "config.h"
+ #ifdef WITH_DMALLOC
+-#include <dmalloc.h>
++#include <dstdlib.h>
+ #endif
+ 
+ 
+diff -urN ../OpenSceneGraph.orig/src/osgPlugins/lib3ds/file.cpp ./src/osgPlugins/lib3ds/file.cpp
+--- ../OpenSceneGraph.orig/src/osgPlugins/lib3ds/file.cpp	Fri Jan 24 15:12:53 2003
++++ ./src/osgPlugins/lib3ds/file.cpp	Tue Feb  8 01:28:25 2005
+@@ -34,7 +34,7 @@
+ #include <math.h>
+ #include "config.h"
+ #ifdef WITH_DMALLOC
+-#include <dmalloc.h>
++#include <dstdlib.h>
+ #endif
+ 
+ 
+diff -urN ../OpenSceneGraph.orig/src/osgPlugins/lib3ds/light.cpp ./src/osgPlugins/lib3ds/light.cpp
+--- ../OpenSceneGraph.orig/src/osgPlugins/lib3ds/light.cpp	Fri Jan 24 15:12:53 2003
++++ ./src/osgPlugins/lib3ds/light.cpp	Tue Feb  8 01:28:25 2005
+@@ -28,7 +28,7 @@
+ #include <string.h>
+ #include "config.h"
+ #ifdef WITH_DMALLOC
+-#include <dmalloc.h>
++#include <dstdlib.h>
+ #endif
+ 
+ 
+diff -urN ../OpenSceneGraph.orig/src/osgPlugins/lib3ds/material.cpp ./src/osgPlugins/lib3ds/material.cpp
+--- ../OpenSceneGraph.orig/src/osgPlugins/lib3ds/material.cpp	Fri Jan 24 15:12:53 2003
++++ ./src/osgPlugins/lib3ds/material.cpp	Tue Feb  8 01:28:25 2005
+@@ -28,7 +28,7 @@
+ #include <string.h>
+ #include "config.h"
+ #ifdef WITH_DMALLOC
+-#include <dmalloc.h>
++#include <dstdlib.h>
+ #endif
+ 
+ 
+diff -urN ../OpenSceneGraph.orig/src/osgPlugins/lib3ds/mesh.cpp ./src/osgPlugins/lib3ds/mesh.cpp
+--- ../OpenSceneGraph.orig/src/osgPlugins/lib3ds/mesh.cpp	Fri Jan 24 15:12:53 2003
++++ ./src/osgPlugins/lib3ds/mesh.cpp	Tue Feb  8 01:28:25 2005
+@@ -30,7 +30,7 @@
+ #include <math.h>
+ #include "config.h"
+ #ifdef WITH_DMALLOC
+-#include <dmalloc.h>
++#include <dstdlib.h>
+ #endif
+ 
+ 
+diff -urN ../OpenSceneGraph.orig/src/osgPlugins/lib3ds/node.cpp ./src/osgPlugins/lib3ds/node.cpp
+--- ../OpenSceneGraph.orig/src/osgPlugins/lib3ds/node.cpp	Fri Jan 24 15:12:54 2003
++++ ./src/osgPlugins/lib3ds/node.cpp	Tue Feb  8 01:28:25 2005
+@@ -30,7 +30,7 @@
+ #include <math.h>
+ #include "config.h"
+ #ifdef WITH_DMALLOC
+-#include <dmalloc.h>
++#include <dstdlib.h>
+ #endif
+ 
+ 
+diff -urN ../OpenSceneGraph.orig/src/osgPlugins/lib3ds/tracks.cpp ./src/osgPlugins/lib3ds/tracks.cpp
+--- ../OpenSceneGraph.orig/src/osgPlugins/lib3ds/tracks.cpp	Thu Aug  5 13:41:52 2004
++++ ./src/osgPlugins/lib3ds/tracks.cpp	Tue Feb  8 01:28:25 2005
+@@ -31,7 +31,7 @@
+ #include <math.h>
+ #include "config.h"
+ #ifdef WITH_DMALLOC
+-#include <dmalloc.h>
++#include <dstdlib.h>
+ #endif
+ 
+ 
+diff -urN ../OpenSceneGraph.orig/src/osgPlugins/lwo/Converter.cpp ./src/osgPlugins/lwo/Converter.cpp
+--- ../OpenSceneGraph.orig/src/osgPlugins/lwo/Converter.cpp	Mon Nov 22 23:54:44 2004
++++ ./src/osgPlugins/lwo/Converter.cpp	Tue Feb  8 01:28:23 2005
+@@ -246,7 +246,7 @@
+ 	std::string file = osgDB::findDataFile(filename, options);
+ 	if (file.empty()) return 0;
+ 
+-	std::ifstream ifs(file.c_str(), std::ios_base::in | std::ios_base::binary);
++	std::ifstream ifs(file.c_str(), std::ios::in | std::ios::binary);
+ 	if (!ifs.is_open()) return 0;
+ 
+ 	std::vector<char> buffer;
+diff -urN ../OpenSceneGraph.orig/src/osgPlugins/lwo/Object.cpp ./src/osgPlugins/lwo/Object.cpp
+--- ../OpenSceneGraph.orig/src/osgPlugins/lwo/Object.cpp	Mon Jun 28 14:18:48 2004
++++ ./src/osgPlugins/lwo/Object.cpp	Tue Feb  8 01:28:23 2005
+@@ -135,7 +135,7 @@
+ 				}
+ 				VertexMap *new_map = current_layer.units().back().weight_maps()->getOrCreate(vmap->name);
+ 				for (lwo2::FORM::VMAP::Mapping_list::const_iterator i=vmap->mapping.begin(); i!=vmap->mapping.end(); ++i) {
+-					(*new_map)[i->vert.index] = osg::Vec4(i->value.at(0), 0, 0, 0);
++					(*new_map)[i->vert.index] = osg::Vec4(i->value[0], 0, 0, 0);
+ 				}
+ 			}
+ 			if (type == "MNVW") {
+@@ -145,7 +145,7 @@
+ 				}
+ 				VertexMap *new_map = current_layer.units().back().subpatch_weight_maps()->getOrCreate(vmap->name);
+ 				for (lwo2::FORM::VMAP::Mapping_list::const_iterator i=vmap->mapping.begin(); i!=vmap->mapping.end(); ++i) {
+-					(*new_map)[i->vert.index] = osg::Vec4(i->value.at(0), 0, 0, 0);
++					(*new_map)[i->vert.index] = osg::Vec4(i->value[0], 0, 0, 0);
+ 				}
+ 			}
+ 			if (type == "TXUV") {
+@@ -155,7 +155,7 @@
+ 				}
+ 				VertexMap *new_map = current_layer.units().back().texture_maps()->getOrCreate(vmap->name);
+ 				for (lwo2::FORM::VMAP::Mapping_list::const_iterator i=vmap->mapping.begin(); i!=vmap->mapping.end(); ++i) {
+-					(*new_map)[i->vert.index] = osg::Vec4(i->value.at(0), i->value.at(1), 0, 0);
++					(*new_map)[i->vert.index] = osg::Vec4(i->value[0], i->value[1], 0, 0);
+ 				}
+ 			}
+ 			if (type == "RGB ") {
+@@ -165,7 +165,7 @@
+ 				}
+ 				VertexMap *new_map = current_layer.units().back().rgb_maps()->getOrCreate(vmap->name);
+ 				for (lwo2::FORM::VMAP::Mapping_list::const_iterator i=vmap->mapping.begin(); i!=vmap->mapping.end(); ++i) {
+-					(*new_map)[i->vert.index] = osg::Vec4(i->value.at(0), i->value.at(1), i->value.at(2), 1);
++					(*new_map)[i->vert.index] = osg::Vec4(i->value[0], i->value[1], i->value[2], 1);
+ 				}
+ 			}
+ 			if (type == "RGBA") {
+@@ -175,7 +175,7 @@
+ 				}
+ 				VertexMap *new_map = current_layer.units().back().rgba_maps()->getOrCreate(vmap->name);
+ 				for (lwo2::FORM::VMAP::Mapping_list::const_iterator i=vmap->mapping.begin(); i!=vmap->mapping.end(); ++i) {
+-					(*new_map)[i->vert.index] = osg::Vec4(i->value.at(0), i->value.at(1), i->value.at(2), i->value.at(3));
++					(*new_map)[i->vert.index] = osg::Vec4(i->value[0], i->value[1], i->value[2], i->value[3]);
+ 				}
+ 			}
+ 			if (type == "MORF") {
+@@ -185,7 +185,7 @@
+ 				}
+ 				VertexMap *new_map = current_layer.units().back().displacement_maps()->getOrCreate(vmap->name);
+ 				for (lwo2::FORM::VMAP::Mapping_list::const_iterator i=vmap->mapping.begin(); i!=vmap->mapping.end(); ++i) {
+-					(*new_map)[i->vert.index] = osg::Vec4(i->value.at(0), i->value.at(1), i->value.at(2), 0);
++					(*new_map)[i->vert.index] = osg::Vec4(i->value[0], i->value[1], i->value[2], 0);
+ 				}
+ 			}
+ 			if (type == "SPOT") {
+@@ -195,7 +195,7 @@
+ 				}
+ 				VertexMap *new_map = current_layer.units().back().spot_maps()->getOrCreate(vmap->name);
+ 				for (lwo2::FORM::VMAP::Mapping_list::const_iterator i=vmap->mapping.begin(); i!=vmap->mapping.end(); ++i) {
+-					(*new_map)[i->vert.index] = osg::Vec4(csf_->fix_point(osg::Vec3(i->value.at(0), i->value.at(1), i->value.at(2))), 0);
++					(*new_map)[i->vert.index] = osg::Vec4(csf_->fix_point(osg::Vec3(i->value[0], i->value[1], i->value[2])), 0);
+ 				}
+ 			}
+ 		}
+@@ -223,15 +223,15 @@
+ 
+ 				if (must_invert_winding) {
+ 					for (unsigned j=0; j<i->numvert; ++j) {
+-						int index = i->vert.at((i->numvert-j)%i->numvert).index;
++						int index = i->vert[(i->numvert-j)%i->numvert].index;
+ 						polygon.indices().push_back(index);
+-						current_layer.units().back().shares().at(index).push_back(current_layer.units().back().polygons().size());
++						current_layer.units().back().shares()[index].push_back(current_layer.units().back().polygons().size());
+ 					}
+ 				} else {
+ 					for (unsigned j=0; j<i->numvert; ++j) {
+-						int index = i->vert.at(j).index;
++						int index = i->vert[j].index;
+ 						polygon.indices().push_back(index);
+-						current_layer.units().back().shares().at(index).push_back(current_layer.units().back().polygons().size());
++						current_layer.units().back().shares()[index].push_back(current_layer.units().back().polygons().size());
+ 					}
+ 				}
+ 				current_layer.units().back().polygons().push_back(polygon);
+@@ -248,17 +248,17 @@
+ 			std::string type(ptag->type.id, 4);
+ 			if (type == "SURF") {
+ 				for (lwo2::FORM::PTAG::Mapping_list::const_iterator i=ptag->mapping.begin(); i!=ptag->mapping.end(); ++i) {
+-					current_layer.units().back().polygons().at(i->poly.index).set_surface(&surfaces_[tag_strings.at(i->tag)]);
++					current_layer.units().back().polygons()[i->poly.index].set_surface(&surfaces_[tag_strings[i->tag]]);
+ 				}
+ 			}
+ 			if (type == "PART") {
+ 				for (lwo2::FORM::PTAG::Mapping_list::const_iterator i=ptag->mapping.begin(); i!=ptag->mapping.end(); ++i) {
+-					current_layer.units().back().polygons().at(i->poly.index).set_part_name(tag_strings.at(i->tag));
++					current_layer.units().back().polygons()[i->poly.index].set_part_name(tag_strings[i->tag]);
+ 				}
+ 			}
+ 			if (type == "SMGP") {
+ 				for (lwo2::FORM::PTAG::Mapping_list::const_iterator i=ptag->mapping.begin(); i!=ptag->mapping.end(); ++i) {
+-					current_layer.units().back().polygons().at(i->poly.index).set_smoothing_group(tag_strings.at(i->tag));
++					current_layer.units().back().polygons()[i->poly.index].set_smoothing_group(tag_strings[i->tag]);
+ 				}
+ 			}
+ 		}
+@@ -272,8 +272,8 @@
+ 					continue;
+ 				}
+ 				for (lwo2::FORM::VMAD::Mapping_list::const_iterator i=vmad->mapping.begin(); i!=vmad->mapping.end(); ++i) {
+-					VertexMap *this_map = current_layer.units().back().polygons().at(i->poly.index).weight_maps()->getOrCreate(vmad->name);
+-					(*this_map)[i->vert.index] = osg::Vec4(i->value.at(0), 0, 0, 0);
++					VertexMap *this_map = current_layer.units().back().polygons()[i->poly.index].weight_maps()->getOrCreate(vmad->name);
++					(*this_map)[i->vert.index] = osg::Vec4(i->value[0], 0, 0, 0);
+ 				}				
+ 			}
+ 			if (type == "TXUV") {
+@@ -282,8 +282,8 @@
+ 					continue;
+ 				}
+ 				for (lwo2::FORM::VMAD::Mapping_list::const_iterator i=vmad->mapping.begin(); i!=vmad->mapping.end(); ++i) {
+-					VertexMap *this_map = current_layer.units().back().polygons().at(i->poly.index).texture_maps()->getOrCreate(vmad->name);
+-					(*this_map)[i->vert.index] = osg::Vec4(i->value.at(0), i->value.at(1), 0, 0);
++					VertexMap *this_map = current_layer.units().back().polygons()[i->poly.index].texture_maps()->getOrCreate(vmad->name);
++					(*this_map)[i->vert.index] = osg::Vec4(i->value[0], i->value[1], 0, 0);
+ 				}				
+ 			}
+ 			if (type == "RGB ") {
+@@ -292,8 +292,8 @@
+ 					continue;
+ 				}
+ 				for (lwo2::FORM::VMAD::Mapping_list::const_iterator i=vmad->mapping.begin(); i!=vmad->mapping.end(); ++i) {
+-					VertexMap *this_map = current_layer.units().back().polygons().at(i->poly.index).rgb_maps()->getOrCreate(vmad->name);
+-					(*this_map)[i->vert.index] = osg::Vec4(i->value.at(0), i->value.at(1), i->value.at(2), 1);
++					VertexMap *this_map = current_layer.units().back().polygons()[i->poly.index].rgb_maps()->getOrCreate(vmad->name);
++					(*this_map)[i->vert.index] = osg::Vec4(i->value[0], i->value[1], i->value[2], 1);
+ 				}				
+ 			}
+ 			if (type == "RGBA") {
+@@ -302,8 +302,8 @@
+ 					continue;
+ 				}
+ 				for (lwo2::FORM::VMAD::Mapping_list::const_iterator i=vmad->mapping.begin(); i!=vmad->mapping.end(); ++i) {
+-					VertexMap *this_map = current_layer.units().back().polygons().at(i->poly.index).rgba_maps()->getOrCreate(vmad->name);
+-					(*this_map)[i->vert.index] = osg::Vec4(i->value.at(0), i->value.at(1), i->value.at(2), i->value.at(3));
++					VertexMap *this_map = current_layer.units().back().polygons()[i->poly.index].rgba_maps()->getOrCreate(vmad->name);
++					(*this_map)[i->vert.index] = osg::Vec4(i->value[0], i->value[1], i->value[2], i->value[3]);
+ 				}				
+ 			}
+ 		}
+diff -urN ../OpenSceneGraph.orig/src/osgPlugins/lwo/Polygon.h ./src/osgPlugins/lwo/Polygon.h
+--- ../OpenSceneGraph.orig/src/osgPlugins/lwo/Polygon.h	Sat Jan  3 15:20:32 2004
++++ ./src/osgPlugins/lwo/Polygon.h	Tue Feb  8 01:28:23 2005
+@@ -95,9 +95,9 @@
+ 		if (last_used_points_ != points) {
+ 			normal_.set(0, 0, 0);
+ 			if (indices_.size() >= 3) {
+-				const osg::Vec3 &A = points->at(indices_.front());
+-				const osg::Vec3 &B = points->at(indices_[1]);
+-				const osg::Vec3 &C = points->at(indices_.back());
++				const osg::Vec3 &A = (*points)[indices_.front()];
++				const osg::Vec3 &B = (*points)[indices_[1]];
++				const osg::Vec3 &C = (*points)[indices_.back()];
+ 				if (invert_normal_) {
+ 					normal_ = (C - A) ^ (B - A);
+ 				} else {
+diff -urN ../OpenSceneGraph.orig/src/osgPlugins/lwo/ReaderWriterLWO.cpp ./src/osgPlugins/lwo/ReaderWriterLWO.cpp
+--- ../OpenSceneGraph.orig/src/osgPlugins/lwo/ReaderWriterLWO.cpp	Tue Nov 23 15:29:51 2004
++++ ./src/osgPlugins/lwo/ReaderWriterLWO.cpp	Tue Feb  8 01:28:23 2005
+@@ -18,6 +18,7 @@
+ #include <string>
+ #include <sstream>
+ #include <algorithm>
++#include <memory>
+ 
+ #include <osg/Notify>
+ #include <osg/Node>
+diff -urN ../OpenSceneGraph.orig/src/osgPlugins/lwo/Unit.cpp ./src/osgPlugins/lwo/Unit.cpp
+--- ../OpenSceneGraph.orig/src/osgPlugins/lwo/Unit.cpp	Sat Jan  3 15:20:32 2004
++++ ./src/osgPlugins/lwo/Unit.cpp	Tue Feb  8 01:28:23 2005
+@@ -75,11 +75,11 @@
+ 			osg::Vec4 N(poly.face_normal(points_.get()), 0);
+ 			unsigned num_smoothed = 1;
+ 
+-			const Index_list &shared_polys = shares_.at(*j);
++			const Index_list &shared_polys = shares_[*j];
+ 
+ 			for (unsigned k=0; k<shared_polys.size(); ++k) {
+ 				if (shared_polys[k] != pn) {
+-					const Polygon &shared_poly = polygons_.at(shared_polys[k]);
++					const Polygon &shared_poly = polygons_[shared_polys[k]];
+ 					float angle = angle_between_polygons(poly, shared_poly);
+ 					if (angle <= max_smoothing_angle && (poly.get_smoothing_group() == shared_poly.get_smoothing_group())) {
+ 						N += osg::Vec4(shared_poly.face_normal(points_.get()), 0);
+@@ -157,7 +157,7 @@
+ 			if (poly.dup_vertices()[j] == 0) {
+ 
+ 				// duplicate point
+-				points_->push_back(points_->at(*i));
++				points_->push_back((*points_)[*i]);
+ 
+ 				int new_index = static_cast<int>(points_->size())-1;
+ 
+@@ -165,7 +165,7 @@
+ 				(*normals_.get())[new_index] = (*normals_.get())[*i];
+ 
+ 				// duplicate share
+-				shares_.push_back(shares_.at(*i));
++				shares_.push_back(shares_[*i]);
+ 
+ 				VertexMap_map::iterator vm;
+ 
+diff -urN ../OpenSceneGraph.orig/src/osgPlugins/lwo/VertexMap.cpp ./src/osgPlugins/lwo/VertexMap.cpp
+--- ../OpenSceneGraph.orig/src/osgPlugins/lwo/VertexMap.cpp	Sat Jan  3 15:20:32 2004
++++ ./src/osgPlugins/lwo/VertexMap.cpp	Tue Feb  8 01:28:23 2005
+@@ -21,7 +21,7 @@
+ 		value.y() *= modulator.y();
+ 		value.z() *= modulator.z();
+ 		value.w() *= modulator.w();
+-		array->at(i->first) = value;
++		(*array)[i->first] = value;
+ 	}
+ 	return array.take();
+ }
+@@ -34,7 +34,7 @@
+ 		osg::Vec4 value = i->second;
+ 		value.x() *= modulator.x();
+ 		value.y() *= modulator.y();
+-		array->at(i->first) = osg::Vec2(value.x(), value.y());
++		(*array)[i->first] = osg::Vec2(value.x(), value.y());
+ 	}
+ 	return array.take();
+ }
+@@ -48,7 +48,7 @@
+ 		value.x() *= modulator.x();
+ 		value.y() *= modulator.y();
+ 		value.z() *= modulator.z();
+-		array->at(i->first) = osg::Vec3(value.x(), value.y(), value.z());
++		(*array)[i->first] = osg::Vec3(value.x(), value.y(), value.z());
+ 	}
+ 	return array.take();
+ }
+diff -urN ../OpenSceneGraph.orig/src/osgPlugins/lwo/iffparser.h ./src/osgPlugins/lwo/iffparser.h
+--- ../OpenSceneGraph.orig/src/osgPlugins/lwo/iffparser.h	Wed Jun  9 16:28:51 2004
++++ ./src/osgPlugins/lwo/iffparser.h	Tue Feb  8 01:28:23 2005
+@@ -10,6 +10,7 @@
+ 
+ #include <vector>
+ #include <iostream>
++#include <string>
+ 
+ namespace iff
+ {
+diff -urN ../OpenSceneGraph.orig/src/osgPlugins/obj/obj.cpp ./src/osgPlugins/obj/obj.cpp
+--- ../OpenSceneGraph.orig/src/osgPlugins/obj/obj.cpp	Mon Nov 22 23:54:45 2004
++++ ./src/osgPlugins/obj/obj.cpp	Tue Feb  8 01:28:23 2005
+@@ -15,6 +15,8 @@
+ 
+ #include "obj.h"
+ 
++#include <cstdio>
++
+ #include <osg/Notify>
+ 
+ #include <osgDB/FileUtils>
+@@ -75,7 +77,7 @@
+             // need to keep return;
+             skipNewline = true;   
+         }
+-        else if (c!=std::ifstream::traits_type::eof()) // don't copy eof.
++        else if (c!=EOF) // don't copy eof.
+         {
+             skipNewline = false;
+ 
+diff -urN ../OpenSceneGraph.orig/src/osgPlugins/obj/obj.h ./src/osgPlugins/obj/obj.h
+--- ../OpenSceneGraph.orig/src/osgPlugins/obj/obj.h	Mon Nov 22 23:54:45 2004
++++ ./src/osgPlugins/obj/obj.h	Tue Feb  8 01:28:24 2005
+@@ -17,7 +17,7 @@
+ #include <string>
+ #include <vector>
+ #include <map>
+-#include <istream>
++#include <istream.h>
+ 
+ #include <osg/ref_ptr>
+ #include <osg/Referenced>
+diff -urN ../OpenSceneGraph.orig/src/osgPlugins/osga/OSGA_Archive.cpp ./src/osgPlugins/osga/OSGA_Archive.cpp
+--- ../OpenSceneGraph.orig/src/osgPlugins/osga/OSGA_Archive.cpp	Tue Nov 23 15:29:52 2004
++++ ./src/osgPlugins/osga/OSGA_Archive.cpp	Tue Feb  8 01:28:23 2005
+@@ -235,7 +235,7 @@
+     if (status==READ)
+     {
+         _status = status;
+-        _input.open(filename.c_str(), std::ios_base::binary | std::ios_base::in);
++        _input.open(filename.c_str(), std::ios::binary | std::ios::in);
+ 
+         return _open(_input);
+     }
+@@ -246,7 +246,7 @@
+             _input.close();
+             _status = WRITE;
+ 
+-            _output.open(filename.c_str(), std::ios_base::binary | std::ios_base::in | std::ios_base::out);
++            _output.open(filename.c_str(), std::ios::binary | std::ios::in | std::ios::out);
+             
+             osg::notify(osg::INFO)<<"File position after open = "<<(int)_output.tellp()<<" is_open "<<_output.is_open()<<std::endl;
+ 
+@@ -264,7 +264,7 @@
+             osg::notify(osg::INFO)<<"OSGA_Archive::open("<<filename<<"), archive being created."<<std::endl;
+ 
+             _status = WRITE;
+-            _output.open(filename.c_str(), std::ios_base::out | std::ios_base::binary | std::ios_base::trunc);
++            _output.open(filename.c_str(), std::ios::out | std::ios::binary | std::ios::trunc);
+             _output<<"osga";
+             _output.write(reinterpret_cast<const char*>(&ENDIAN_TEST_NUMBER),4);
+             _output.write(reinterpret_cast<char*>(&s_currentSupportedVersion),sizeof(float));
+@@ -475,6 +475,7 @@
+ class proxy_streambuf : public std::streambuf
+ {
+    public:
++      typedef int int_type;
+    
+       proxy_streambuf(std::streambuf* streambuf, unsigned int numChars):
+         _streambuf(streambuf),
