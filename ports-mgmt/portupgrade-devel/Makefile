@@ -21,8 +21,7 @@ MAINTAINER=	knu@FreeBSD.org
 RUN_DEPENDS=	${RUBY_SITELIBDIR}/optparse.rb:${PORTSDIR}/devel/ruby-optparse \
 		${RUBY_SITEARCHLIBDIR}/fnmatch.so:${PORTSDIR}/devel/ruby-fnmatch \
 		${RUBY_SITELIBDIR}/uri.rb:${PORTSDIR}/net/ruby-uri \
-		${LOCALBASE}/sbin/pkg_tarup:${PORTSDIR}/misc/pkg_tarup \
-		${LOCALBASE}/bin/ruby_s:${PORTSDIR}/lang/ruby_static
+		${LOCALBASE}/sbin/pkg_tarup:${PORTSDIR}/misc/pkg_tarup
 
 USE_RUBY=	yes
 
