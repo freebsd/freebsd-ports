@@ -10,7 +10,7 @@ PORTVERSION=	1.1.2
 CATEGORIES=	devel
 MASTER_SITES=	ftp://ftp.cvstrac.org/cvstrac/
 
-MAINTAINER=	bms@spc.org
+MAINTAINER=	bms@FreeBSD.org
 COMMENT=	Web-Based Bug And Patch-Set Tracking System For CVS
 
 LIB_DEPENDS=	sqlite.2:${PORTSDIR}/databases/sqlite
