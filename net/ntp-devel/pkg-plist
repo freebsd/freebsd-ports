@@ -5,6 +5,8 @@ bin/ntpq
 bin/ntptime
 bin/ntptimeset
 bin/ntptrace
+bin/ntp-genkeys
+bin/ntp-wait
 bin/tickadj
 share/doc/ntp/Oncore-SHMEM.htm
 share/doc/ntp/accopt.htm
