@@ -13,7 +13,7 @@
 # bsd.port.mk.  There are significant differences in those so you'll have
 # hard time upgrading this...
 #
-# $Id: portlint.pl,v 1.7 1999/07/24 14:24:46 itojun Exp $
+# $FreeBSD$
 #
 
 $err = $warn = 0;
