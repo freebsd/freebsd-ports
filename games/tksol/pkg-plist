@@ -53,10 +53,39 @@ share/games/tksol/cardbitmaps/s6
 share/games/tksol/cardbitmaps/s7
 share/games/tksol/cardbitmaps/s8
 share/games/tksol/cardbitmaps/s9
-share/games/tksol/downbitmaps/bk_circles
-share/games/tksol/downbitmaps/bk_darts
-share/games/tksol/downbitmaps/bk_lines
-@dirrm share/games/tksol/cardbitmaps
+share/games/tksol/downbitmaps/bucky.xbm
+share/games/tksol/downbitmaps/circles.xbm
+share/games/tksol/downbitmaps/darts.xbm
+share/games/tksol/downbitmaps/default
+share/games/tksol/downbitmaps/gnu.xbm
+share/games/tksol/downbitmaps/leopard.xbm
+share/games/tksol/downbitmaps/lines.xbm
+share/games/tksol/downbitmaps/linux.xbm
+share/games/tksol/downbitmaps/rock.xbm
+share/games/tksol/downbitmaps/x.xbm
+share/games/tksol/downbitmaps/xx.xbm
+share/games/tksol/pictures/armidillo.xbm
+share/games/tksol/pictures/butterfly.xbm
+share/games/tksol/pictures/chess.xbm
+share/games/tksol/pictures/default
+share/games/tksol/pictures/extra/bosch7a.xbm
+share/games/tksol/pictures/extra/deer.xbm
+share/games/tksol/pictures/extra/dugong.xbm
+share/games/tksol/pictures/extra/fruit.xbm
+share/games/tksol/pictures/extra/mensetmanus.xbm
+share/games/tksol/pictures/extra/squirrel.xbm
+share/games/tksol/pictures/flower.xbm
+share/games/tksol/pictures/frog.xbm
+share/games/tksol/pictures/grapes.xbm
+share/games/tksol/pictures/grypheura.xbm
+share/games/tksol/pictures/halloween.xbm
+share/games/tksol/pictures/hwowl.xbm
+share/games/tksol/pictures/kittyt.xbm
+share/games/tksol/pictures/rooster.xbm
+share/games/tksol/pictures/snake.xbm
+@dirrm share/games/tksol/pictures/extra
+@dirrm share/games/tksol/pictures
 @dirrm share/games/tksol/downbitmaps
+@dirrm share/games/tksol/cardbitmaps
 @dirrm share/games/tksol
 @dirrm share/games
