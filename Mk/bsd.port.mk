@@ -4041,7 +4041,7 @@ generate-plist:
 	@for i in $$(${ECHO} ${__MANPAGES} ${_TMLINKS:M${_PREFIX}*:S,^${_PREFIX}/,,:S,//,/,g} ' ' | ${SED} -E -e 's,man([1-9ln])/([^/ ]+) ,cat\1/\2 ,g'); do \
 		${ECHO} "@unexec rm -f %D/$${i%.gz} %D/$${i%.gz}.gz" >> ${TMPPLIST}; \
 	done
-.if ${XFREE86_HTML_MAN} == "yes"
+.if ${XFREE86_HTML_MAN:L} == "yes"
 .for mansect in 1 2 3 4 5 6 7 8 9 L N
 .for man in ${MAN${mansect}}
 	@echo lib/X11/doc/html/${man}.html >> ${TMPPLIST}
