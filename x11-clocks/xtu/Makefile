@@ -18,6 +18,7 @@ USE_IMAKE=	yes
 WANT_GNOME=	yes
 MAKE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 NO_INSTALL_MANPAGES=	yes
+PLIST_FILES=	bin/xtu
 
 .include <bsd.port.pre.mk>
 

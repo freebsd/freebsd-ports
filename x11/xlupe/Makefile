@@ -16,4 +16,6 @@ COMMENT=	Magnifying glass for X. like xmag but with continously updates
 USE_IMAKE=	yes
 USE_XPM=	yes
 
+PLIST_FILES=	bin/xlupe
+
 .include <bsd.port.mk>

@@ -21,6 +21,7 @@ CONFIGURE_ARGS=	--enable-default-8bit
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include/db4" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
+PLIST_FILES=	bin/spamprobe
 MAN1=	spamprobe.1
 
 .include <bsd.port.mk>

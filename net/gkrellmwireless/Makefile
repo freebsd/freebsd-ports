@@ -22,4 +22,6 @@ NO_LATEST_LINK=	yes
 USE_X_PREFIX=	yes
 USE_GNOME=	imlib
 
+PLIST_FILES=	libexec/gkrellm/plugins/wireless.so
+
 .include <bsd.port.mk>
