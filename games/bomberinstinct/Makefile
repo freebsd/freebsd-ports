@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	bomberinstinct
-PORTVERSION=	0.8.21
-PORTREVISION=	1
+PORTVERSION=	0.8.7
 CATEGORIES=	games
 MASTER_SITES=	http://harpe.dptmaths.ens-cachan.fr/U/gesbert/dl/
 DISTNAME=	BomberInstinct-${PORTVERSION}
@@ -16,23 +15,17 @@ MAINTAINER=	sobomax@FreeBSD.org
 
 LIB_DEPENDS=	SDL_mixer.2:${PORTSDIR}/audio/sdl_mixer
 
-WRKSRC=		${WRKDIR}/BomberInstinct
+WRKSRC=		${WRKDIR}/${DISTNAME}
 
 SDL_CONFIG?=	${LOCALBASE}/bin/sdl11-config
 
 USE_GMAKE=	yes
-MAKE_ENV=	SDL_CONFIG="${SDL_CONFIG}"
+USE_LIBTOOL=	yes
+CONFIGURE_ENV=	SDL_CONFIG="${SDL_CONFIG}" \
+		CPPFLAGS="-I${LOCALBASE}/include" \
+		LDFLAGS="-L${LOCALBASE}/lib"
 
 pre-patch:
 	@find ${WRKSRC} -name "*.[ch]" | xargs ${PERL} -pi -e 's|<SDL/|<|g'
-
-do-install:
-	@${INSTALL_PROGRAM} ${WRKSRC}/bi ${PREFIX}/bin
-	@${INSTALL_PROGRAM} ${WRKSRC}/Nived/nived ${PREFIX}/bin
-	@${INSTALL_PROGRAM} ${WRKSRC}/Spred/spred ${PREFIX}/bin
-	@${MKDIR} ${PREFIX}/share/BomberInstinct
-	@${INSTALL_DATA} ${WRKSRC}/bi.cfg ${PREFIX}/share/BomberInstinct
-	@cd ${WRKSRC}; tar cf - Decors Sprites Niveaux Bruitages | \
-		(cd ${PREFIX}/share/BomberInstinct; ${TAR} --unlink -xf - )
 
 .include <bsd.port.mk>
