@@ -1,8 +1,7 @@
-# New ports collection makefile for: djgpp2 cross compiler kit
+# New ports collection makefile for:	djgpp2 cross compiler kit
 # Version required:	2.01
 # Date created:		Sun Jun 22 16:57:39 EST 1997
 # Whom:			Joel Sutton <sutton@aardvark.apana.org.au>
-# FreeBSD Version:	2.2.1-RELEASE
 #
 # $FreeBSD$
 #
@@ -10,12 +9,13 @@
 DISTNAME=	djcrx201
 PKGNAME=	crossgo32-djgpp2-2.01
 CATEGORIES=	devel
-MASTER_SITES=	ftp://ftp.tas.gov.au/pc/simtelnet/gnu/djgpp/v2/ \
-		ftp://ftp.cdrom.com/pub/simtelnet/gnu/djgpp/v2/
+MASTER_SITES=	ftp://ftp.simtel.net/pub/simtelnet/gnu/djgpp/v2/old/ \
+		ftp://ftp.cdrom.com/pub/simtelnet/gnu/djgpp/v2/old/
 
+MAINTAINER=	ports@FreeBSD.org
+
+BUILD_DEPENDS=	i386-go32-gcc:${PORTSDIR}/devel/crossgo32
 RUN_DEPENDS=	i386-go32-gcc:${PORTSDIR}/devel/crossgo32
-
-BROKEN=		install
 
 USE_ZIP=	yes
 EXTRACT_BEFORE_ARGS=	-qLa
@@ -46,7 +46,7 @@ post-patch:
 do-build:
 	@${ECHO_MSG} "===>  Building stub utilities"
 	@cd ${STUBSRC} ;\
-	 make all
+	 ${MAKE} all
 
 pre-install:
 	@${ECHO_MSG} "===>  Moving old crossgo libs away"
@@ -78,7 +78,7 @@ do-install:
 	${MKDIR} ${DOCDIR}
 	${INSTALL_DATA} ${DJGPPDOC}/install ${DOCDIR}/
 	${INSTALL_DATA} ${DJGPPDOC}/readme ${DOCDIR}/
-	${INSTALL_DATA} ${PKGDIR}/DESCR ${DOCDIR}/Readme.FreeBSD
+	${INSTALL_DATA} ${PKGDIR}/DESCR ${DOCDIR}/README.FreeBSD
 .endif
 
 .include <bsd.port.mk>

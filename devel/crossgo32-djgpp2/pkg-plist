@@ -1,23 +1,11 @@
-@exec mv %D/i386-go32/lib %D/i386-go32/lib-newlib
 @exec mv %D/i386-go32/include %D/i386-go32/include-newlib
+@exec mv %D/i386-go32/lib %D/i386-go32/lib-newlib
 @exec mkdir -p %D/lib/gcc-lib/i386-go32/2.7.2.2/old-newlib
 @exec mv %D/lib/gcc-lib/i386-go32/2.7.2.2/include %D/lib/gcc-lib/i386-go32/2.7.2.2/old-newlib/
 @exec mv %D/lib/gcc-lib/i386-go32/2.7.2.2/libgcc.a %D/lib/gcc-lib/i386-go32/2.7.2.2/old-newlib/
 @exec mv %D/lib/gcc-lib/i386-go32/2.7.2.2/specs %D/lib/gcc-lib/i386-go32/2.7.2.2/old-newlib/
-bin/i386-go32-stubify
 bin/i386-go32-stubedit
-i386-go32/lib/crt0.o
-i386-go32/lib/djgpp.djl
-i386-go32/lib/dxe.ld
-i386-go32/lib/gcrt0.o
-i386-go32/lib/libc.a
-i386-go32/lib/libdbg.a
-i386-go32/lib/libemu.a
-i386-go32/lib/libg.a
-i386-go32/lib/libgcc.a
-i386-go32/lib/libm.a
-i386-go32/lib/libpc.a
-i386-go32/lib/specs
+bin/i386-go32-stubify
 i386-go32/include/_ansi
 i386-go32/include/ar.h
 i386-go32/include/assert.h
@@ -139,15 +127,27 @@ i386-go32/include/unistd.h
 i386-go32/include/utime.h
 i386-go32/include/values.h
 i386-go32/include/varargs.h
+i386-go32/lib/crt0.o
+i386-go32/lib/djgpp.djl
+i386-go32/lib/dxe.ld
+i386-go32/lib/gcrt0.o
+i386-go32/lib/libc.a
+i386-go32/lib/libdbg.a
+i386-go32/lib/libemu.a
+i386-go32/lib/libg.a
+i386-go32/lib/libgcc.a
+i386-go32/lib/libm.a
+i386-go32/lib/libpc.a
+i386-go32/lib/specs
 info/libc.info
+share/doc/djgpp2/README.FreeBSD
 share/doc/djgpp2/install
 share/doc/djgpp2/readme
-share/doc/djgpp2/Readme.FreeBSD
 @dirrm share/doc/djgpp2
 @unexec rm -rf %D/i386-go32/lib
 @unexec rm -rf %D/i386-go32/include
 @unexec mv %D/i386-go32/lib-newlib %D/i386-go32/lib
 @unexec mv %D/i386-go32/include-newlib %D/i386-go32/include
-@unexec mv %D/lib/gcc-lib/i386-go32/2.7.2.2/old-newlib/include %D/lib/gcc-lib/i386-go32/2.7.2.2/
-@unexec mv %D/lib/gcc-lib/i386-go32/2.7.2.2/old-newlib/libgcc.a %D/lib/gcc-lib/i386-go32/2.7.2.2/
 @unexec mv %D/lib/gcc-lib/i386-go32/2.7.2.2/old-newlib/specs %D/lib/gcc-lib/i386-go32/2.7.2.2/
+@unexec mv %D/lib/gcc-lib/i386-go32/2.7.2.2/old-newlib/libgcc.a %D/lib/gcc-lib/i386-go32/2.7.2.2/
+@unexec mv %D/lib/gcc-lib/i386-go32/2.7.2.2/old-newlib/include %D/lib/gcc-lib/i386-go32/2.7.2.2/
