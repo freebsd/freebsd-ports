@@ -22,6 +22,7 @@ MAN8=	sftp-server.8 sshd.8 ssh-keysign.8
 
 CRYPTOLIBS=	-L${OPENSSLLIB} -lcrypto
 GNU_CONFIGURE=	yes
+CONFIGURE_ENV+=		LDFLAGS=${LDFLAGS}
 USE_PERL5_BUILD=	yes
 CONFIGURE_ARGS+=	--prefix=${PREFIX} --with-md5-passwords
 PRECIOUS=	ssh_config sshd_config \
