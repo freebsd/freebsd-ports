@@ -1,0 +1,5 @@
+A nilsimsa signature is a statistic of n-gram occurance in a piece of text.
+It is a 256 bit value usually represented in hex. This module is a wrapper
+around nilsimsa implementation in C by cmeclax. 
+
+WWW: http://search.cpan.org/dist/Digest-Nilsimsa/
