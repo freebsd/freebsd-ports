@@ -7,6 +7,7 @@
 
 PORTNAME=	jmeter
 PORTVERSION=	1.8
+PORTREVISION=	1
 CATEGORIES=	www benchmarks java
 MASTER_SITES=	http://jakarta.apache.org/builds/jakarta-jmeter/release/v${PORTVERSION}/ \
 		http://www.metaverse.nl/~ernst/ \
@@ -48,6 +49,11 @@ do-install:
 .for f in ${REPLACE_FILES}
 	@${CP} ${WRKDIR}/`basename $f` ${APP_HOME}/bin
 .endfor
+	@${ECHO_CMD} " [ DONE ]"
+
+	@${ECHO_CMD} -n ">> Fixing permissions..."
+	@${CHMOD} 755 `find ${APP_HOME} -type d`
+	@${CHMOD} 755 ${APP_HOME}/bin/jmeter
 	@${ECHO_CMD} " [ DONE ]"
 
 	@${ECHO_CMD} -n ">> Creating symlink ${PREFIX}/bin/jmeter..."
