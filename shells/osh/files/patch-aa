@@ -1,9 +1,9 @@
---- makefile.orig	Mon Nov 27 19:32:14 2000
-+++ makefile		Fri Dec 29 15:31:35 2000
-@@ -7,11 +7,10 @@
- #CPPFLAGS   =
- #LDFLAGS    =
- #LIBS       = -lefence
+--- makefile.orig	Wed May  8 03:24:49 2002
++++ makefile	Wed May  8 03:25:01 2002
+@@ -2,11 +2,10 @@
+ 
+ # CONFIGURATION
+ 
 -PREFIX     = /usr/local
  BINDIR     = $(PREFIX)/bin
  MANDIR     = $(PREFIX)/man
@@ -13,9 +13,3 @@
  
  # CONFIGURATION ENDS
  
-@@ -41,4 +40,4 @@
- install:
- 	$(MAKE)
- 	$(INSTALL) -c -s $(EXE) $(BINDIR)
--	$(INSTALL) -c -m 644 $(MAN) $(MANSECT)
-+	$(INSTALL) -c -m 444 $(MAN) $(MANSECT)
