@@ -18,6 +18,8 @@ COMMENT=	A Ruby module to access to SQL Relay
 EXTRACT_DEPENDS=	${NONEXISTENT}:${SQLRELAY_PORTDIR}:patch
 LIB_DEPENDS=	sqlrclient.0:${SQLRELAY_PORTDIR}
 
+BROKEN=		"Does not install"
+
 PLIST_FILES=	%%RUBY_SITEARCHLIBDIR%%/sqlrelay.so
 USE_RUBY=	yes
 USE_GMAKE=	yes
