@@ -9,28 +9,3 @@
  TARGET =	all
  target:		$(TARGET)
  libx:		Makefile.go
-@@ -60,7 +60,7 @@
- DGDIR =		../src/
- #endif #############
- 
--INSTDIR =	/usr/local
-+INSTDIR =	${PREFIX}
- 
- LOCALFILES =	README \
- 		README.LIB \
-@@ -163,11 +163,11 @@
- 		enMime deMime bench.o test.out sample.out
- 
- install:	deMime enMime $(LIBFILE)
--		install -o bin -g bin -m 755 deMime $(INSTDIR)/bin
--		install -o bin -g bin -m 755 enMime $(INSTDIR)/bin
-+		${BSD_INSTALL_PROGRAM} deMime $(INSTDIR)/bin
-+		${BSD_INSTALL_PROGRAM} enMime $(INSTDIR)/bin
- 
--#		install -o root -g staff -m 644 $(LIBFILE) $(INSTDIR)/lib
--#		-$(RANLIB) $(INSTDIR)/lib/$(LIBFILE)
-+		${BSD_INSTALL_DATA} $(LIBFILE) $(INSTDIR)/lib
-+		-$(RANLIB) $(INSTDIR)/lib/$(LIBFILE)
- 
- ystring.h:;	$(LKFILE) ../include/ystring.h
- html.c:;	$(LKFILE) ../rary/html.c .
