@@ -14,8 +14,6 @@ EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=	jooji@nickelkid.com
 
-FORBIDDEN=	"unconfirmed report of remote security hole--see <URL:ftp://ftp.nndev.org/pub/nn-6.6/README>"
-
 MAN1=		nn.1 nncheck.1 nngoback.1 nngrab.1  nngrep.1 nnpost.1 \
 		nntidy.1 nnview.1 nnacct.1m nnadmin.1m nnstats.1m nnusage.1m
 MAN8=		nnmaster.8 nnspew.8
