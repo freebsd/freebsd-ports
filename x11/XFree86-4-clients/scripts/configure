@@ -67,6 +67,7 @@ echo "#define StandardIncludes -I$PREFIX/include" >> $LOCALDEF
 echo "#define DontUseLibPathVar YES"		>> $LOCALDEF
 echo "#define PreloadSetup"			>> $LOCALDEF
 echo "#define UseInstalledPrograms YES"		>> $LOCALDEF
+echo "#define UseInstalledLibraries YES"	>> $LOCALDEF
 
 # Copy ORIGDEF to DESTDEF
 rm -f $DESTDEF
