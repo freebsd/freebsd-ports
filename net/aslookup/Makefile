@@ -8,7 +8,7 @@
 PORTNAME=	aslookup
 PORTVERSION=	0.12
 CATEGORIES=	net
-MASTER_SITES=	http://www.kk.iij4u.or.jp/~kuniaki/aslookup/
+MASTER_SITES=	http://www.bugest.net/software/aslookup/
 DISTNAME=	aslookup-alpha${PORTVERSION}
 
 MAINTAINER=	janos.mohacsi@bsd.hu
