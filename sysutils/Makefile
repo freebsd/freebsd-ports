@@ -127,6 +127,7 @@
     SUBDIR += wmtop
     SUBDIR += xbatt
     SUBDIR += xbattbar
+    SUBDIR += xcdroast
     SUBDIR += xcpustate
     SUBDIR += xdu
     SUBDIR += xfsm

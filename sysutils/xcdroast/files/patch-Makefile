@@ -1,0 +1,26 @@
+--- Makefile.orig	Sun Nov 26 15:03:56 2000
++++ Makefile	Tue Jan 16 18:02:52 2001
+@@ -5,7 +5,7 @@
+ 
+ # Installation prefix directory:
+ 
+-PREFIX=/usr
++PREFIX?=/usr/X11R6
+ #PREFIX=/usr/local
+ PRE_LIBDIR=$(PREFIX)/lib/xcdroast-0.98
+ 
+@@ -13,10 +13,10 @@
+ 
+ #---
+ 
+-CFLAGS=-Wall `gtk-config --cflags` `imlib-config --cflags` -DPRE_PREFIX="\"$(PREFIX)\"" -DPRE_LIBDIR="\"$(PRE_LIBDIR)\""
+-LIBS=`gtk-config --libs` `imlib-config --libs` -lgdk_imlib 
+-TOOLLIBS=`gtk-config --libs`
+-CC=gcc
++CFLAGS+=-Wall `${GTK_CONFIG} --cflags` `imlib-config --cflags` -DPRE_PREFIX="\"$(PREFIX)\"" -DPRE_LIBDIR="\"$(PRE_LIBDIR)\""
++LIBS=`${GTK_CONFIG} --libs` `imlib-config --libs` -lgdk_imlib
++TOOLLIBS=`${GTK_CONFIG} --libs`
++CC?=gcc
+ 
+ OBJ = main.o language.o init.o tools.o xtools.o menus.o setup.o io.o duplicate.o wav_frontend.o wav_id.o create.o
+ 
