@@ -3,7 +3,7 @@
 # Date created:		8 Mar 1999
 # Whom:			asami
 #
-# $Id: Makefile,v 1.1.1.1 1999/03/08 09:06:48 asami Exp $
+# $Id: Makefile,v 1.2 1999/03/09 20:57:23 asami Exp $
 #
 
 DISTNAME=	31upgrade-1999.03.08
@@ -15,7 +15,7 @@ MAINTAINER=	asami@Freebsd.ORG
 .include <bsd.port.pre.mk>
 
 .if !defined(PACKAGE_BUILDING)
-BROKEN=		this \"port\" is for building packages for distribution only
+BROKEN=		this \"port\" is for building packages for distribution only, please get the package from http://www.freebsd.org/ports/ if you need an upgrade
 .elif ${OSVERSION} < 310000
 IGNORE=		this needs to be built on a 3.1-stable system
 .endif
