@@ -15,8 +15,8 @@
     SUBDIR += alevt
     SUBDIR += amanda
     SUBDIR += amanda24
-    SUBDIR += astrolog
     SUBDIR += asbutton
+    SUBDIR += astrolog
     SUBDIR += bb
     SUBDIR += bbjd
     SUBDIR += bidwatcher
