@@ -19,11 +19,14 @@ smlnj/lib/SMLNJ-MLRISC/.cm/%%MLARCH%%-unix/ALPHA.cm
 smlnj/lib/SMLNJ-MLRISC/.cm/%%MLARCH%%-unix/Control.cm
 smlnj/lib/SMLNJ-MLRISC/.cm/%%MLARCH%%-unix/Graphs.cm
 smlnj/lib/SMLNJ-MLRISC/.cm/%%MLARCH%%-unix/HPPA.cm
+smlnj/lib/SMLNJ-MLRISC/.cm/%%MLARCH%%-unix/IA32-Peephole.cm
 smlnj/lib/SMLNJ-MLRISC/.cm/%%MLARCH%%-unix/IA32.cm
 smlnj/lib/SMLNJ-MLRISC/.cm/%%MLARCH%%-unix/Lib.cm
 smlnj/lib/SMLNJ-MLRISC/.cm/%%MLARCH%%-unix/MLRISC.cm
 smlnj/lib/SMLNJ-MLRISC/.cm/%%MLARCH%%-unix/MLTREE.cm
 smlnj/lib/SMLNJ-MLRISC/.cm/%%MLARCH%%-unix/PPC.cm
+smlnj/lib/SMLNJ-MLRISC/.cm/%%MLARCH%%-unix/Peephole.cm
+smlnj/lib/SMLNJ-MLRISC/.cm/%%MLARCH%%-unix/RA.cm
 smlnj/lib/SMLNJ-MLRISC/.cm/%%MLARCH%%-unix/SPARC.cm
 smlnj/lib/SMLNJ-MLRISC/.cm/%%MLARCH%%-unix/Visual.cm
 smlnj/lib/basis.cm/.cm/%%MLARCH%%-unix/basis.cm
@@ -95,6 +98,7 @@ smlnj/lib/smlnj/internal/.cm/%%MLARCH%%-unix/cm-lib.cm
 smlnj/lib/smlnj/internal/.cm/%%MLARCH%%-unix/cm-sig-lib.cm
 smlnj/lib/smlnj/internal/.cm/%%MLARCH%%-unix/cm0.cm
 smlnj/lib/smlnj/internal/.cm/%%MLARCH%%-unix/intsys.cm
+smlnj/lib/smlnj/internal/.cm/%%MLARCH%%-unix/smlnj-version.cm
 smlnj/lib/smlnj/internal/.cm/%%MLARCH%%-unix/srcpath-lib.cm
 smlnj/lib/smlnj/viscomp/.cm/%%MLARCH%%-unix/alpha32.cm
 smlnj/lib/smlnj/viscomp/.cm/%%MLARCH%%-unix/basics.cm
@@ -109,6 +113,9 @@ smlnj/lib/smlnj/viscomp/.cm/%%MLARCH%%-unix/ppc.cm
 smlnj/lib/smlnj/viscomp/.cm/%%MLARCH%%-unix/sparc.cm
 smlnj/lib/smlnj/viscomp/.cm/%%MLARCH%%-unix/x86.cm
 smlnj/lib/smlnj-lib.cm/.cm/%%MLARCH%%-unix/smlnj-lib.cm
+smlnj/lib/smlnj-tdp/.cm/%%MLARCH%%-unix/back-trace.cm
+smlnj/lib/smlnj-tdp/.cm/%%MLARCH%%-unix/coverage.cm
+smlnj/lib/smlnj-tdp/.cm/%%MLARCH%%-unix/plugins.cm
 smlnj/lib/unix-lib.cm/.cm/%%MLARCH%%-unix/unix-lib.cm
 @dirrm smlnj/bin/.heap
 @dirrm smlnj/bin/.run
@@ -215,6 +222,9 @@ smlnj/lib/unix-lib.cm/.cm/%%MLARCH%%-unix/unix-lib.cm
 @dirrm smlnj/lib/smlnj-lib.cm/.cm/%%MLARCH%%-unix
 @dirrm smlnj/lib/smlnj-lib.cm/.cm
 @dirrm smlnj/lib/smlnj-lib.cm
+@dirrm smlnj/lib/smlnj-tdp/.cm/%%MLARCH%%-unix
+@dirrm smlnj/lib/smlnj-tdp/.cm
+@dirrm smlnj/lib/smlnj-tdp
 @dirrm smlnj/lib/unix-lib.cm/.cm/%%MLARCH%%-unix
 @dirrm smlnj/lib/unix-lib.cm/.cm
 @dirrm smlnj/lib/unix-lib.cm
