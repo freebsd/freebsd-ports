@@ -9,24 +9,23 @@
 
 PORTNAME=	ex
 PORTVERSION=	1.0.2
-PORTREVISION=	1
-PORTEPOCH=	0
+PORTREVISION=	2
 CATEGORIES=	devel
 MASTER_SITES=	ftp://ftp.ossp.org/pkg/lib/ex/
 PKGNAMEPREFIX=	ossp-
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	me@davidyu.org
 COMMENT=	OSSP ex is a small exception handling library for use in C
 
 USE_GMAKE=	yes
-GNU_CONFIGURE=  yes
+GNU_CONFIGURE=	yes
 USE_LIBTOOL_VER=	13
-INSTALLS_SHLIB= yes
+INSTALLS_SHLIB=	yes
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} == "alpha" || ${ARCH} == "amd64"
-BROKEN=		"Does not compile on alpha or amd64"
+.if ${ARCH} == "alpha"
+BROKEN=		"Does not compile on alpha"
 .endif
 
 .include "${FILESDIR}/manpages.mk"
