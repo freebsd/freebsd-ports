@@ -1,0 +1,9 @@
+bin/xml-i18n-extract
+bin/xml-i18n-toolize
+bin/xml-i18n-update
+share/aclocal/xml-i18n-tools.m4
+share/xml-i18n-tools/xml-i18n-extract
+share/xml-i18n-tools/xml-i18n-merge
+share/xml-i18n-tools/xml-i18n-tools.Makefile.patch
+share/xml-i18n-tools/xml-i18n-update
+@dirrm share/xml-i8n-tools
