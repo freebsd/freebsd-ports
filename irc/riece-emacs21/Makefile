@@ -5,8 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	riece
-PORTVERSION=	1.0.4
-PORTREVISION=	1
+PORTVERSION=	1.0.5
 PORTEPOCH=	1
 CATEGORIES=	irc elisp
 MASTER_SITES=	http://wiliki.designflaw.org/riece/
@@ -21,7 +20,7 @@ CONFIGURE_ARGS=	--with-emacs=${EMACS_CMD} \
 		--with-lispdir=${PREFIX}/${EMACS_VERSION_SITE_LISPDIR}
 USE_GMAKE=	yes
 
-INFO=	riece-ja
+INFO=	riece-en riece-ja
 
 post-install:
 	@${CAT} ${PKGMESSAGE}

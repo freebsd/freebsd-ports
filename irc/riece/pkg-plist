@@ -105,6 +105,8 @@
 %%EMACS_VERSION_SITE_LISPDIR%%/riece/riece-version.elc
 %%EMACS_VERSION_SITE_LISPDIR%%/riece/riece-xface.el
 %%EMACS_VERSION_SITE_LISPDIR%%/riece/riece-xface.elc
+%%EMACS_VERSION_SITE_LISPDIR%%/riece/riece-yank.el
+%%EMACS_VERSION_SITE_LISPDIR%%/riece/riece-yank.elc
 %%EMACS_VERSION_SITE_LISPDIR%%/riece/riece.el
 %%EMACS_VERSION_SITE_LISPDIR%%/riece/riece.elc
 @dirrm %%EMACS_VERSION_SITE_LISPDIR%%/riece
