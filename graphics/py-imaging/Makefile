@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	imaging
-PORTVERSION=	1.1.2
+PORTVERSION=	1.1.3
 CATEGORIES=	graphics python
 MASTER_SITES=	http://www.pythonware.com/downloads/ \
 		ftp://www.python.org/pub/python/src/ \
@@ -51,7 +51,6 @@ do-install:
 	@${PYTHON_CMD} -O ${PYTHON_LIBDIR}/compileall.py ${PILDIR}
 	@${MKDIR} ${PILDOCDIR}
 	${INSTALL_DATA} ${WRKSRC}/../README ${PILDOCDIR}
-	${INSTALL_DATA} ${WRKSRC}/../FORMATS ${PILDOCDIR}
 	@${MKDIR} ${PILEXDIR}
 	${INSTALL_DATA} ${WRKSRC}/../Scripts/* ${PILEXDIR}
 .for file in ImConfig.h ImPlatform.h Imaging.h
