@@ -1,5 +1,0 @@
---- configure.orig	Sun Nov 14 05:23:12 1999
-+++ configure	Sat Feb 12 18:13:09 2000
-@@ -2684 +2684 @@
--   i*86-unknown-freebsd* )
-+   *-*-freebsd* )
