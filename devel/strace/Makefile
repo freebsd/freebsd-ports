@@ -6,27 +6,27 @@
 #
 
 PORTNAME=	strace
-PORTVERSION=	4.4
+PORTVERSION=	4.4.94
 CATEGORIES=	devel sysutils
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
-DISTNAME=	${PORTNAME}_${PORTVERSION}-1
 
+USE_BZIP2=	yes
 MAINTAINER=	alex@rinet.ru
 COMMENT=	A portable process tracer
-
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 GNU_CONFIGURE=	yes
 ONLY_FOR_ARCHS=	i386
 
 MAN1=		strace.1
 
+check-umask:
+
 do-install:
+	-${MKDIR} ${PREFIX}/bin
 	${INSTALL_PROGRAM} ${WRKSRC}/strace ${PREFIX}/bin
 	${INSTALL_SCRIPT} ${WRKSRC}/strace-graph ${PREFIX}/bin
+	-${MKDIR} ${PREFIX}/man/man1
 	${INSTALL_MAN} ${WRKSRC}/strace.1 ${PREFIX}/man/man1
-	${MKDIR} ${PREFIX}/share/strace
-	${INSTALL_DATA} ${WRKSRC}/xlate.el ${PREFIX}/share/strace
 
 .include <bsd.port.mk>
