@@ -11,6 +11,8 @@ MAINTAINER=	knu@FreeBSD.org
 
 COMMENT=	${.CURDIR}/pkg-comment
 
+BROKEN=		yes
+
 WITH_XUNICODE=	yes
 
 .include "${MASTERDIR}/Makefile"
