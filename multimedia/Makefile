@@ -78,6 +78,7 @@
     SUBDIR += linux-realplayer
     SUBDIR += linux-xmovie
     SUBDIR += lsdvd
+    SUBDIR += lxdvdrip
     SUBDIR += mjpegtools
     SUBDIR += mkvtoolnix
     SUBDIR += mkxvcd

@@ -1,0 +1,16 @@
+bin/lxdvdrip
+etc/lxdvdrip.conf.DE
+etc/lxdvdrip.conf.EN
+etc/lxdvdrip.conf.FR
+%%PORTDOCS%%%%DOCSDIR%%/Changelog.de
+%%PORTDOCS%%%%DOCSDIR%%/Changelog.en
+%%PORTDOCS%%%%DOCSDIR%%/Changelog.fr
+%%PORTDOCS%%%%DOCSDIR%%/README.de
+%%PORTDOCS%%%%DOCSDIR%%/README.dvdwizard.DE
+%%PORTDOCS%%%%DOCSDIR%%/README.dvdwizard.EN
+%%PORTDOCS%%%%DOCSDIR%%/README.dvdwizard.FR
+%%PORTDOCS%%%%DOCSDIR%%/README.en
+%%PORTDOCS%%%%DOCSDIR%%/README.fr
+%%PORTDOCS%%%%DOCSDIR%%/TODO
+%%PORTDOCS%%%%DOCSDIR%%/freebsd.doc
+%%PORTDOCS%%@dirrm %%DOCSDIR%%

@@ -1,0 +1,24 @@
+dvdrip is a Command Line Tool to make a copy from a Video DVD for private Use.
+It automates the process of Ripping, Authoring, Preview and Burning of a DVD.
+
+Features:
+- Automatic Selection of the longest Title
+- Automatic Calculation of Factor to Requant
+- Automatic Read of Volume-ID
+- Automatic Chapter Separation from Original
+- Ripping of Audiotracks in every Language
+- Selection of dts-Audiotracks as Default
+- Selection of two Subpicture-Tracks possible
+- Ripping and Re-Authoring
+- Preview of VOB-Files with mplayer or xine
+- Burning with growisofs or cdrecord-prodvd
+- All Program Parameters could be stored in a Config File as Program Defaults
+- All Paramaters can be overwritten on the fly at the Command Line
+- Program with english, french or german Messages
+- Rip of Subpicture-Tracks
+- Copy DVD < 4.7 GB with Menus; > 4.7 GB with vamps, without Menus.
+- Partial Copy: Copy selected Titles from a DVD (dvdunauthor/vamps)
+- High Quality Backup (1 DVD9 => 2 DVD5)
+- DVD with Menus for Title-, Audio- and Chapter Selection (dvdwizard)
+
+WWW: http://developer.berlios.de/projects/lxdvdrip/
