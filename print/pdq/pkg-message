@@ -1,6 +1,6 @@
-*******************************************************
-*                                                     *
-*     Please copy /usr/local/etc/printrc.sample to    *
-*     /usr/local/etc/printrc by yourself, thanks.     *
-*                                                     *
-*******************************************************
+***********************************************************
+                                                          
+     Please copy %%PREFIX%%/etc/pdq/printrc.example to    
+     %%PREFIX%%/etc/pdq/printrc by yourself, thanks.      
+                                                          
+***********************************************************
