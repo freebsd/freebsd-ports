@@ -1484,6 +1484,9 @@ System/Tools/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu/wopen
 @exec mkdir -p %D/System/Applications/GWorkspace.app/Resources/BrowserViewer.viewer/Resources/Resources/Dutch.lproj
 @cwd /root
 GNUstep/Defaults/.GNUstepDefaults
+%%GNUSTEP_DEVEL%%GNUstep/Services/.GNUstepServices
+%%GNUSTEP_DEVEL%%GNUstep/Services/.GNUstepAppList
 @dirrm GNUstep/Defaults
 @dirrm GNUstep/Library
+%%GNUSTEP_DEVEL%%@dirrm GNUstep/Services
 @dirrm GNUstep
