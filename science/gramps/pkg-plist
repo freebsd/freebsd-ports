@@ -1,4 +1,3 @@
-share/pixmaps/gramps.png
 share/locale/zh_CN/LC_MESSAGES/gramps.mo
 share/locale/sv/LC_MESSAGES/gramps.mo
 share/locale/ru/LC_MESSAGES/gramps.mo
@@ -672,10 +671,10 @@ share/gnome/gramps/AddSpouse.pyo
 share/gnome/gramps/AddSpouse.py
 share/gnome/gramps/AddMedia.pyo
 share/gnome/gramps/AddMedia.py
-share/applications/gramps.desktop
+share/gnome/pixmaps/gramps.png
+share/gnome/applications/gramps.desktop
 lib/gramps/grampslib.so
 bin/gramps
-@dirrm share/pixmaps
 @dirrm share/gnome/omf/gramps
 @dirrm share/gnome/gramps/plugins
 @dirrm share/gnome/gramps/help/gramps/C/figures
@@ -700,13 +699,3 @@ bin/gramps
 @dirrm share/gnome/gramps/data
 @dirrm share/gnome/gramps
 @dirrm lib/gramps
-@exec scrollkeeper-install -q %D/share/gnome/omf/gramps/gramps-manual-ru.omf 2>/dev/null || /usr/bin/true
-@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gramps/gramps-manual-ru.omf 2>/dev/null || /usr/bin/true
-@exec scrollkeeper-install -q %D/share/gnome/omf/gramps/gramps-manual-hu.omf 2>/dev/null || /usr/bin/true
-@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gramps/gramps-manual-hu.omf 2>/dev/null || /usr/bin/true
-@exec scrollkeeper-install -q %D/share/gnome/omf/gramps/gramps-manual-fr.omf 2>/dev/null || /usr/bin/true
-@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gramps/gramps-manual-fr.omf 2>/dev/null || /usr/bin/true
-@exec scrollkeeper-install -q %D/share/gnome/omf/gramps/gramps-manual-de.omf 2>/dev/null || /usr/bin/true
-@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gramps/gramps-manual-de.omf 2>/dev/null || /usr/bin/true
-@exec scrollkeeper-install -q %D/share/gnome/omf/gramps/gramps-manual-C.omf 2>/dev/null || /usr/bin/true
-@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gramps/gramps-manual-C.omf 2>/dev/null || /usr/bin/true
