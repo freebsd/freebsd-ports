@@ -7,6 +7,7 @@
 
 PORTNAME=	netbeans
 PORTVERSION=	3.4.1
+PORTREVISION=	1
 CATEGORIES=	java devel
 MASTER_SITES=	# http://www.netbeans.org/download/release341/night/build200301202341/
 DISTNAME=	NetBeansIDE-release341
