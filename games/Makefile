@@ -89,6 +89,7 @@
     SUBDIR += eboard
     SUBDIR += editss
     SUBDIR += egoboo
+    SUBDIR += eif
     SUBDIR += eights
     SUBDIR += empire
     SUBDIR += enigma

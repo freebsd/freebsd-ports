@@ -1,0 +1,14 @@
+bin/eif
+lib/eif/eifrc.include
+lib/eif/ex
+lib/eif/mov
+lib/eif/with
+lib/eif/mob.sh
+lib/eif/edu0.sh
+lib/eif/edu1.sh
+lib/eif/edu2.sh
+lib/eif/edu3.pl
+lib/eif/luse.sh
+lib/eif/genconf.sector
+lib/eif/genconf.version
+@dirrm lib/eif
