@@ -7245,6 +7245,7 @@ pear-PEAR	ports/devel/pear-PEAR
 pear-PHPUnit	ports/devel/pear-PHPUnit
 pear-Spreadsheet_Excel_Writer ports/textproc/pear-Spreadsheet_Excel_Writer
 pear-Text_Password	ports/security/pear-Text_Password
+pear-VFS	ports/devel/pear-VFS
 pear-XML_Parser	ports/devel/pear-XML_Parser
 pear-XML_RPC	ports/devel/pear-XML_RPC
 pear-XML_RSS	ports/devel/pear-XML_RSS
