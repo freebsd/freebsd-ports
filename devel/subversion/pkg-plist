@@ -88,6 +88,103 @@ lib/libsvn_wc-1.so.0
 %%MOD_DAV_SVN%%libexec/apache2/mod_authz_svn.so
 %%MOD_DAV_SVN%%@exec %D/sbin/apxs -e -S LIBEXECDIR=%D/libexec/apache2 -a -n dav libexec/apache2/mod_dav.so
 %%MOD_DAV_SVN%%@exec %D/sbin/apxs -e -S LIBEXECDIR=%D/libexec/apache2 -a -n dav_svn libexec/apache2/mod_dav_svn.so
+%%WITH_PERL%%lib/libsvn_swig_perl-1.a
+%%WITH_PERL%%lib/libsvn_swig_perl-1.la
+%%WITH_PERL%%lib/libsvn_swig_perl-1.so
+%%WITH_PERL%%lib/libsvn_swig_perl-1.so.0
+%%WITH_PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/SVN/Base.pm
+%%WITH_PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/SVN/Client.pm
+%%WITH_PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/SVN/Core.pm
+%%WITH_PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/SVN/Delta.pm
+%%WITH_PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/SVN/Fs.pm
+%%WITH_PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/SVN/Ra.pm
+%%WITH_PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/SVN/Repos.pm
+%%WITH_PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/SVN/Wc.pm
+%%WITH_PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/auto/SVN/_Client/_Client.bs
+%%WITH_PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/auto/SVN/_Client/_Client.so
+%%WITH_PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/auto/SVN/_Core/.packlist
+%%WITH_PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/auto/SVN/_Core/_Core.bs
+%%WITH_PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/auto/SVN/_Core/_Core.so
+%%WITH_PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/auto/SVN/_Delta/_Delta.bs
+%%WITH_PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/auto/SVN/_Delta/_Delta.so
+%%WITH_PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/auto/SVN/_Fs/_Fs.bs
+%%WITH_PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/auto/SVN/_Fs/_Fs.so
+%%WITH_PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/auto/SVN/_Ra/_Ra.bs
+%%WITH_PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/auto/SVN/_Ra/_Ra.so
+%%WITH_PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/auto/SVN/_Repos/_Repos.bs
+%%WITH_PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/auto/SVN/_Repos/_Repos.so
+%%WITH_PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/auto/SVN/_Wc/_Wc.bs
+%%WITH_PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/auto/SVN/_Wc/_Wc.so
+%%WITH_PERL%%@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/SVN/_Wc
+%%WITH_PERL%%@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/SVN/_Repos
+%%WITH_PERL%%@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/SVN/_Ra
+%%WITH_PERL%%@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/SVN/_Fs
+%%WITH_PERL%%@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/SVN/_Delta
+%%WITH_PERL%%@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/SVN/_Client
+%%WITH_PERL%%@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/SVN/_Core
+%%WITH_PERL%%@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/SVN
+%%WITH_PERL%%@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/SVN
+%%WITH_PYTHON%%lib/libsvn_swig_py-1.a
+%%WITH_PYTHON%%lib/libsvn_swig_py-1.la
+%%WITH_PYTHON%%lib/libsvn_swig_py-1.so
+%%WITH_PYTHON%%lib/libsvn_swig_py-1.so.0
+%%WITH_PYTHON%%%%PYTHON_SITELIBDIR%%/libsvn/__init__.py
+%%WITH_PYTHON%%%%PYTHON_SITELIBDIR%%/libsvn/__init__.pyc
+%%WITH_PYTHON%%%%PYTHON_SITELIBDIR%%/libsvn/_client.a
+%%WITH_PYTHON%%%%PYTHON_SITELIBDIR%%/libsvn/_client.la
+%%WITH_PYTHON%%%%PYTHON_SITELIBDIR%%/libsvn/_client.so
+%%WITH_PYTHON%%%%PYTHON_SITELIBDIR%%/libsvn/_core.a
+%%WITH_PYTHON%%%%PYTHON_SITELIBDIR%%/libsvn/_core.la
+%%WITH_PYTHON%%%%PYTHON_SITELIBDIR%%/libsvn/_core.so
+%%WITH_PYTHON%%%%PYTHON_SITELIBDIR%%/libsvn/_delta.a
+%%WITH_PYTHON%%%%PYTHON_SITELIBDIR%%/libsvn/_delta.la
+%%WITH_PYTHON%%%%PYTHON_SITELIBDIR%%/libsvn/_delta.so
+%%WITH_PYTHON%%%%PYTHON_SITELIBDIR%%/libsvn/_fs.a
+%%WITH_PYTHON%%%%PYTHON_SITELIBDIR%%/libsvn/_fs.la
+%%WITH_PYTHON%%%%PYTHON_SITELIBDIR%%/libsvn/_fs.so
+%%WITH_PYTHON%%%%PYTHON_SITELIBDIR%%/libsvn/_ra.a
+%%WITH_PYTHON%%%%PYTHON_SITELIBDIR%%/libsvn/_ra.la
+%%WITH_PYTHON%%%%PYTHON_SITELIBDIR%%/libsvn/_ra.so
+%%WITH_PYTHON%%%%PYTHON_SITELIBDIR%%/libsvn/_repos.a
+%%WITH_PYTHON%%%%PYTHON_SITELIBDIR%%/libsvn/_repos.la
+%%WITH_PYTHON%%%%PYTHON_SITELIBDIR%%/libsvn/_repos.so
+%%WITH_PYTHON%%%%PYTHON_SITELIBDIR%%/libsvn/_wc.a
+%%WITH_PYTHON%%%%PYTHON_SITELIBDIR%%/libsvn/_wc.la
+%%WITH_PYTHON%%%%PYTHON_SITELIBDIR%%/libsvn/_wc.so
+%%WITH_PYTHON%%%%PYTHON_SITELIBDIR%%/libsvn/client.py
+%%WITH_PYTHON%%%%PYTHON_SITELIBDIR%%/libsvn/client.pyc
+%%WITH_PYTHON%%%%PYTHON_SITELIBDIR%%/libsvn/core.py
+%%WITH_PYTHON%%%%PYTHON_SITELIBDIR%%/libsvn/core.pyc
+%%WITH_PYTHON%%%%PYTHON_SITELIBDIR%%/libsvn/delta.py
+%%WITH_PYTHON%%%%PYTHON_SITELIBDIR%%/libsvn/delta.pyc
+%%WITH_PYTHON%%%%PYTHON_SITELIBDIR%%/libsvn/fs.py
+%%WITH_PYTHON%%%%PYTHON_SITELIBDIR%%/libsvn/fs.pyc
+%%WITH_PYTHON%%%%PYTHON_SITELIBDIR%%/libsvn/ra.py
+%%WITH_PYTHON%%%%PYTHON_SITELIBDIR%%/libsvn/ra.pyc
+%%WITH_PYTHON%%%%PYTHON_SITELIBDIR%%/libsvn/repos.py
+%%WITH_PYTHON%%%%PYTHON_SITELIBDIR%%/libsvn/repos.pyc
+%%WITH_PYTHON%%%%PYTHON_SITELIBDIR%%/libsvn/wc.py
+%%WITH_PYTHON%%%%PYTHON_SITELIBDIR%%/libsvn/wc.pyc
+%%WITH_PYTHON%%%%PYTHON_SITELIBDIR%%/svn/__init__.py
+%%WITH_PYTHON%%%%PYTHON_SITELIBDIR%%/svn/__init__.pyc
+%%WITH_PYTHON%%%%PYTHON_SITELIBDIR%%/svn/client.py
+%%WITH_PYTHON%%%%PYTHON_SITELIBDIR%%/svn/client.pyc
+%%WITH_PYTHON%%%%PYTHON_SITELIBDIR%%/svn/core.py
+%%WITH_PYTHON%%%%PYTHON_SITELIBDIR%%/svn/core.pyc
+%%WITH_PYTHON%%%%PYTHON_SITELIBDIR%%/svn/delta.py
+%%WITH_PYTHON%%%%PYTHON_SITELIBDIR%%/svn/delta.pyc
+%%WITH_PYTHON%%%%PYTHON_SITELIBDIR%%/svn/fs.py
+%%WITH_PYTHON%%%%PYTHON_SITELIBDIR%%/svn/fs.pyc
+%%WITH_PYTHON%%%%PYTHON_SITELIBDIR%%/svn/ra.py
+%%WITH_PYTHON%%%%PYTHON_SITELIBDIR%%/svn/ra.pyc
+%%WITH_PYTHON%%%%PYTHON_SITELIBDIR%%/svn/repos.py
+%%WITH_PYTHON%%%%PYTHON_SITELIBDIR%%/svn/repos.pyc
+%%WITH_PYTHON%%%%PYTHON_SITELIBDIR%%/svn/util.py
+%%WITH_PYTHON%%%%PYTHON_SITELIBDIR%%/svn/util.pyc
+%%WITH_PYTHON%%%%PYTHON_SITELIBDIR%%/svn/wc.py
+%%WITH_PYTHON%%%%PYTHON_SITELIBDIR%%/svn/wc.pyc
+%%WITH_PYTHON%%@dirrm %%PYTHON_SITELIBDIR%%/libsvn
+%%WITH_PYTHON%%@dirrm %%PYTHON_SITELIBDIR%%/svn
 %%PORTDOCS%%share/doc/subversion/BUGS
 %%PORTDOCS%%share/doc/subversion/CHANGES
 %%PORTDOCS%%share/doc/subversion/COMMITTERS
