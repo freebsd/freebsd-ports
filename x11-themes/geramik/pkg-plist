@@ -3,7 +3,7 @@ lib/gtk/themes/engines/libqtpixmap.so
 %%GTK2%%lib/gtk-2.0/%%GTK2_VERSION%%/engines/libqtpixmap2.so
 @unexec /bin/rmdir %D/lib/gtk-2.0/%%GTK2_VERSION%%/engines | /usr/bin/true
 share/themes/Geramik/README.html
-share/themes/Geramik/gtk-2.0/gtkrc-2.0
+share/themes/Geramik/gtk-2.0/gtkrc
 share/themes/Geramik/gtk/arr_d_clk.png
 share/themes/Geramik/gtk/arr_d_clk2.png
 share/themes/Geramik/gtk/arr_d_dis.png
