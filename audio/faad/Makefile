@@ -41,13 +41,6 @@ INSTALLS_SHLIB=	yes
 
 .include <bsd.port.pre.mk>
 
-# mpeg4ip is broke for now, disable it.
-.if ${OSVERSION} >= 502126
-.if !exists(${LOCALBASE}/lib/libmp4v2.so)
-WITHOUT_MPEG4IP=yes
-.endif
-.endif
-
 pre-patch: build-depends
 
 post-patch:
