@@ -1,4 +1,5 @@
 bin/gtop
+share/gnome/apps/Utilities/gtop.desktop
 share/gnome/gtoprc
 share/locale/cs/LC_MESSAGES/gtop.mo
 share/locale/de/LC_MESSAGES/gtop.mo
