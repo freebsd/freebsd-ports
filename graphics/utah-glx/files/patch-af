@@ -1,5 +1,30 @@
---- configure.in.orig	Fri Jun 23 12:23:13 2000
-+++ configure.in	Fri Jun 23 12:30:06 2000
+--- configure.in.orig	Thu Aug 24 09:53:45 2000
++++ configure.in	Mon Oct  9 21:39:56 2000
+@@ -846,19 +846,19 @@
+ AC_HEADER_STDC
+ AC_CHECK_HEADERS(fcntl.h limits.h sys/ioctl.h unistd.h floatingpoint.h \
+        sys/types.h sys/mman.h sys/perm.h asm/sigcontext.h)
+-AC_CHECK_HEADER(asm/mtrr.h,
++AC_CHECK_HEADER(sys/memrange.h,
+ [
+   if test "$enable_mtrr" = "no"
+    then
+     echo "disabling mtrr (manual override)"
+     cflags="$cflags -DNO_MTRR"
+    else
+-    dnl For some reason, some <asm/mtrr.h> files are incomplete
++    dnl For some reason, some <sys/memrange.h> files are incomplete
+     dnl Verify the validity of the file here
+-    AC_MSG_CHECKING(validity of asm/mtrr.h)
++    AC_MSG_CHECKING(validity of sys/memrange.h)
+     AC_EGREP_CPP([GLX_maGiC_VALID],[
+-#include <asm/mtrr.h>
+-#ifdef MTRRIOC_ADD_ENTRY
++#include <sys/memrange.h>
++#ifdef MDF_WRITECOMBINE
+ GLX_maGiC_VALID
+ #endif
+     ],
 @@ -879,7 +879,7 @@
  ])
  
