@@ -290,6 +290,7 @@
     SUBDIR += pwd_unmkdb
     SUBDIR += pwg
     SUBDIR += pwgen
+    SUBDIR += pwsafe
     SUBDIR += pyfind
     SUBDIR += qlogtools
     SUBDIR += qtpkg
