@@ -7,7 +7,7 @@
 
 PORTNAME=	sformat
 PORTVERSION=	3.5
-PORTREVISON=	1
+PORTREVISON=	2
 CATEGORIES=	sysutils
 MASTER_SITES=	ftp://ftp.zeist.de/pub/distfiles/ \
 		ftp://ftp.berlios.de/pub/sformat/
@@ -20,12 +20,12 @@ USE_REINPLACE=	yes
 
 MAN1=		sformat.1
 
-MAKE_ENV=	COPTX="-DBSD_SCSI_SENSE_BUG"
+MAKE_ENV=	CCOM=${CC} COPTX="-DBSD_SCSI_SENSE_BUG"
 
 post-extract:
-.if ${MACHINE_ARCH} != "i386"
+.if ${MACHINE_ARCH} != "i386" || ${CC} != "cc"
 	@${LN} -s ${WRKSRC}/RULES/i386-freebsd-cc.rul \
-		${WRKSRC}/RULES/${MACHINE_ARCH}-freebsd-cc.rul
+		${WRKSRC}/RULES/${MACHINE_ARCH}-freebsd-${CC}.rul
 .endif
 
 post-patch:
