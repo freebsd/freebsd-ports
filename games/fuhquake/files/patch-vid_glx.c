@@ -1,5 +1,5 @@
---- vid_glx.c.orig	Wed May 21 17:18:37 2003
-+++ vid_glx.c	Mon Jun  2 20:04:34 2003
+--- vid_glx.c.orig	Thu Aug 28 18:08:22 2003
++++ vid_glx.c	Thu Aug 28 18:08:03 2003
 @@ -20,7 +20,9 @@
  #include <termios.h>
  #include <sys/ioctl.h>
@@ -10,6 +10,17 @@
  #include <stdarg.h>
  #include <stdio.h>
  #include <signal.h>
+@@ -284,8 +286,8 @@
+ 	case MotionNotify:
+ #ifdef WITH_DGA
+ 		if (dgamouse && _windowed_mouse.value) {
+-			mouse_x = event.xmotion.x_root;
+-			mouse_y = event.xmotion.y_root;
++			mouse_x += event.xmotion.x_root;
++			mouse_y += event.xmotion.y_root;
+ 		} else
+ #endif
+ 		{
 @@ -601,8 +603,9 @@
  #ifdef WITH_VMODE
  	// fullscreen

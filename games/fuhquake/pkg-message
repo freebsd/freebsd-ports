@@ -1,6 +1,15 @@
 ================================================
 
     Install models, skins, maps, and mods in
-    ${PREFIX}/share/fuhquake/
+    ${DATADIR}/ directory.
+
+    You must also have registered version of
+    Quake per to be able to legally copy the
+    PAK files (pak*.pak) from id1/ directory
+    to ${DATADIR}/id1/ from CDROM or Windows
+    installation.  In case it is not an opt-
+    ion, you can rebuild the port with "make
+    -DWITH_SHAREWARE_DATA", and thus install
+    demo version (shareware) data files.
 
 ================================================

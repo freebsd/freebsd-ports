@@ -1,21 +1,23 @@
 %%X11%%bin/fuhquake-x11
 %%GLX%%bin/fuhquake-glx
 %%SVGA%%bin/fuhquake-svga
-%%PORTDOCS%%share/doc/fuhquake/benchmark.txt
-%%PORTDOCS%%share/doc/fuhquake/config_manager.txt
-%%PORTDOCS%%share/doc/fuhquake/crosshairs.txt
-%%PORTDOCS%%share/doc/fuhquake/fuhquake.txt
-%%PORTDOCS%%share/doc/fuhquake/linux.txt
-%%PORTDOCS%%share/doc/fuhquake/logitech.txt
-%%PORTDOCS%%share/doc/fuhquake/mp3.txt
-%%PORTDOCS%%share/doc/fuhquake/particles.txt
-%%PORTDOCS%%share/doc/fuhquake/pointing.txt
-%%PORTDOCS%%share/doc/fuhquake/rulesets.txt
-%%PORTDOCS%%share/doc/fuhquake/track.txt
-%%PORTDOCS%%@dirrm share/doc/fuhquake
+%%PORTDOCS%%%%DOCSDIR%%/benchmark.txt
+%%PORTDOCS%%%%DOCSDIR%%/config_manager.txt
+%%PORTDOCS%%%%DOCSDIR%%/crosshairs.txt
+%%PORTDOCS%%%%DOCSDIR%%/fuhquake.txt
+%%PORTDOCS%%%%DOCSDIR%%/linux.txt
+%%PORTDOCS%%%%DOCSDIR%%/logitech.txt
+%%PORTDOCS%%%%DOCSDIR%%/mp3.txt
+%%PORTDOCS%%%%DOCSDIR%%/particles.txt
+%%PORTDOCS%%%%DOCSDIR%%/pointing.txt
+%%PORTDOCS%%%%DOCSDIR%%/rulesets.txt
+%%PORTDOCS%%%%DOCSDIR%%/track.txt
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
 share/fuhquake/fuhquake/pak0.pak
+%%SHAREWARE%%share/fuhquake/id1/pak0.pak
 share/fuhquake/qw/qwprogs.dat
 share/fuhquake/qw/spprogs.dat
 @dirrm share/fuhquake/qw
+%%SHAREWARE%%@dirrm share/fuhquake/id1
 @dirrm share/fuhquake/fuhquake
 @dirrm share/fuhquake
