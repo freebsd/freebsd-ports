@@ -1,0 +1,7 @@
+FSPLIB is a set of routines that implement the FSP protocol. They allow
+applications to work with files on FSP server with the same style
+used to work with local files via libc.
+
+Note: GFTP prefers this package over its built in FSP stack.
+
+WWW: http://fsp.sourceforge.net/fsplib.html
