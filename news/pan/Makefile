@@ -6,16 +6,17 @@
 #
 
 PORTNAME=	pan
-PORTVERSION=	0.8.1b3
+PORTVERSION=	0.8.1b5
 CATEGORIES=	news gnome
 MASTER_SITES=	http://download.superpimp.org/pan/${PORTVERSION}/
-DISTNAME=	pan-0.8.1beta3
+DISTNAME=	pan-0.8.1beta5
 
 MAINTAINER=	ade@FreeBSD.org
 
 LIB_DEPENDS=	gnome.4:${PORTSDIR}/x11/gnomelibs \
 		gnomeprint.9:${PORTSDIR}/print/gnomeprint \
-		uu.1:${PORTSDIR}/converters/uulib
+		uu.1:${PORTSDIR}/converters/uulib \
+		unicode.0:${PORTSDIR}/devel/libunicode
 RUN_DEPENDS=	gnomecc:${PORTSDIR}/sysutils/gnomecontrolcenter
 
 GLIB_CONFIG?=	${LOCALBASE}/bin/glib12-config
