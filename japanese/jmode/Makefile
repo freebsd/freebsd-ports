@@ -10,7 +10,7 @@ PORTVERSION=	0.6.6
 CATEGORIES=	japanese
 MASTER_SITES=	http://downloads.sourceforge.jp/anthy/4445/
 
-MAINTAINER=	nakai@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	XIM server for Anthy input method
 
 LIB_DEPENDS=	anthy.0:${PORTSDIR}/japanese/anthy
