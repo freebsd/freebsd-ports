@@ -6,13 +6,12 @@
 #
 
 PORTNAME=	ethereal
-PORTVERSION=	0.8.12
+PORTVERSION=	0.8.13
 CATEGORIES=	net ipv6
-MASTER_SITES=	http://alpha1.linuxberg.com/files/x11/network/ \
-		http://www.linuxberg.com/files/x11/network/ \
-		http://jefnet.linuxberg.com/files/x11/network/ \
-		http://ethereal.zing.org/distribution/ \
-		http://ethereal.boehm.org/distribution/
+MASTER_SITES=	ftp://ftp.ethereal.com/pub/ethereal/ \
+		ftp://gd.tuwien.ac.at/infosys/security/ethereal/ \
+		ftp://ftp.sunet.se/pub/network/monitoring/ethereal/ \
+		ftp://the.wiretapped.net/pub/security/packet-sniffing/ethereal/
 
 MAINTAINER=	billf@FreeBSD.org
 FORBIDDEN=	"Remotely exploitable buffer overflow; identical to Security Advisory 00:61"
