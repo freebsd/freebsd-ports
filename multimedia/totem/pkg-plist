@@ -4,8 +4,6 @@ libdata/bonobo/servers/Totem_properties.server
 libexec/totem-properties-page
 share/gnome/application-registry/totem.applications
 share/gnome/applications/totem.desktop
-@exec update-desktop-database > /dev/null || /usr/bin/true
-@unexec update-desktop-database > /dev/null || /usr/bin/true
 share/gnome/help/totem/C/figures/totem_next_button.png
 share/gnome/help/totem/C/figures/totem_pause_button.png
 share/gnome/help/totem/C/figures/totem_play_button.png
@@ -38,16 +36,13 @@ share/gnome/help/totem/es/legal.xml
 share/gnome/help/totem/es/totem.xml
 share/gnome/mime-info/totem.keys
 share/gnome/omf/totem/totem-C.omf
-@exec scrollkeeper-install -q %D/share/gnome/omf/totem/totem-C.omf 2>/dev/null || /usr/bin/true
 share/gnome/omf/totem/totem-de.omf
-@exec scrollkeeper-install -q %D/share/gnome/omf/totem/totem-de.omf 2>/dev/null || /usr/bin/true
 share/gnome/omf/totem/totem-es.omf
-@exec scrollkeeper-install -q %D/share/gnome/omf/totem/totem-es.omf 2>/dev/null || /usr/bin/true
 share/gnome/pixmaps/media-player-48.png
 share/gnome/pixmaps/vanity.png
-share/gnome/totem/filmholes.png
 share/gnome/totem/filmholes-big-left.png
 share/gnome/totem/filmholes-big-right.png
+share/gnome/totem/filmholes.png
 share/gnome/totem/media-player-48.png
 share/gnome/totem/mozilla-viewer.glade
 share/gnome/totem/playlist-16.png
@@ -92,8 +87,8 @@ share/locale/gu/LC_MESSAGES/totem.mo
 share/locale/he/LC_MESSAGES/totem.mo
 share/locale/hr/LC_MESSAGES/totem.mo
 share/locale/hu/LC_MESSAGES/totem.mo
-share/locale/it/LC_MESSAGES/totem.mo
 share/locale/is/LC_MESSAGES/totem.mo
+share/locale/it/LC_MESSAGES/totem.mo
 share/locale/ja/LC_MESSAGES/totem.mo
 share/locale/ko/LC_MESSAGES/totem.mo
 share/locale/lt/LC_MESSAGES/totem.mo
@@ -120,15 +115,14 @@ share/locale/vi/LC_MESSAGES/totem.mo
 share/locale/wa/LC_MESSAGES/totem.mo
 share/locale/zh_CN/LC_MESSAGES/totem.mo
 share/locale/zh_TW/LC_MESSAGES/totem.mo
-@dirrm share/gnome/help/totem/de/figures
-@dirrm share/gnome/help/totem/de
+@dirrm share/gnome/totem
+@dirrm share/gnome/omf/totem
 @dirrm share/gnome/help/totem/es/figures
 @dirrm share/gnome/help/totem/es
+@dirrm share/gnome/help/totem/de/figures
+@dirrm share/gnome/help/totem/de
 @dirrm share/gnome/help/totem/C/figures
 @dirrm share/gnome/help/totem/C
 @dirrm share/gnome/help/totem
-@dirrm share/gnome/omf/totem
-@dirrm share/gnome/totem
-@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/totem/totem-de.omf 2>/dev/null || /usr/bin/true
-@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/totem/totem-es.omf 2>/dev/null || /usr/bin/true
-@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/totem/totem-C.omf 2>/dev/null || /usr/bin/true
+@exec update-desktop-database > /dev/null || /usr/bin/true
+@unexec update-desktop-database > /dev/null || /usr/bin/true

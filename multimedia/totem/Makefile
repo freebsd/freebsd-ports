@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	totem
-PORTVERSION=	0.99.19
+PORTVERSION=	0.99.22
 CATEGORIES=	multimedia gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/${PORTNAME}/${PORTVERSION:C/...$//}
@@ -23,6 +23,7 @@ USE_X_PREFIX=	yes
 USE_GNOME=	gnomeprefix intlhack gnomehack gnomedesktop desktopfileutils
 USE_GMAKE=	yes
 USE_LIBTOOL_VER=15
+INSTALLS_OMF=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
 	       	LIBS="-L${LOCALBASE}/lib -L${X11BASE}/lib -lXrandr"
 

@@ -1,8 +1,8 @@
---- src/totem-disc.c.orig	Mon Oct 18 14:00:05 2004
-+++ src/totem-disc.c	Mon Oct 18 14:00:14 2004
-@@ -26,12 +26,34 @@
+--- src/totem-disc.c.orig	Tue Nov 23 04:03:19 2004
++++ src/totem-disc.c	Tue Nov 23 04:05:27 2004
+@@ -25,12 +25,35 @@
+ #include <stdio.h>
  #include <stdlib.h>
- #include <unistd.h>
  #include <errno.h>
 -#include <mntent.h>
  #include <string.h>
@@ -27,23 +27,13 @@
 +#define CDS_DISC_OK             4
 +#define CDS_XA_2_1              103
 +#define CDS_XA_2_2              104
++#define CDC_DVD                 0x8000
 +#define ENOMEDIUM ENODEV
 +#define CDROM_GET_CAPABILITY CDIOCCLRDEBUG
 +#else
- #include <linux/cdrom.h>
 +#include <mntent.h>
+ #include <linux/cdrom.h>
 +#endif
  
  #include <glib.h>
  #include <glib/gi18n.h>
-@@ -395,8 +417,10 @@
-   /* open disc, check capabilities and open mount */
-   if (!cd_cache_open_device (cache, error))
-     return MEDIA_TYPE_ERROR;
-+#ifdef __linux__
-   if (!(cache->cap & CDC_DVD))
-     return MEDIA_TYPE_DATA;
-+#endif
-   if (!(dir = cd_cache_open_mountpoint (cache, error)))
-     return MEDIA_TYPE_ERROR;
- 
