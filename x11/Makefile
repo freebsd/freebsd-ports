@@ -1,8 +1,9 @@
-# $Id: Makefile,v 1.104 1996/11/03 21:09:33 jfitz Exp $
+# $Id: Makefile,v 1.105 1996/11/07 12:28:22 asami Exp $
 #
 
     SUBDIR += FWF
     SUBDIR += XFree86
+    SUBDIR += XFree86-contrib
     SUBDIR += Xaw3d
     SUBDIR += afterstep
     SUBDIR += auis
