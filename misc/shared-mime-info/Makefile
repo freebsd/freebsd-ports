@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	shared-mime-info
-PORTVERSION=	0.8
+PORTVERSION=	0.9
 CATEGORIES=	misc
 MASTER_SITES=	http://www.freedesktop.org/standards/shared-mime-info/
 DISTNAME=	shared-mime-info-${PORTVERSION}
