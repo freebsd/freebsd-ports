@@ -338,6 +338,7 @@
     SUBDIR += rxvt
     SUBDIR += ryaku-fpw
     SUBDIR += samba
+    SUBDIR += sazanami-ttf
     SUBDIR += sdic
     SUBDIR += sed
     SUBDIR += seizedesktop
