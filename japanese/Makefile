@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.146 1998/09/15 22:00:23 kuriyama Exp $
+# $Id: Makefile,v 1.147 1998/09/18 22:47:56 kuriyama Exp $
 #
 
     SUBDIR += Canna
@@ -19,6 +19,7 @@
     SUBDIR += dvipsk-vflib
     SUBDIR += ebw3
     SUBDIR += edict
+    SUBDIR += elisa10x8
     SUBDIR += elisa8x8
     SUBDIR += elvis
     SUBDIR += escpf
@@ -50,7 +51,6 @@
     SUBDIR += jvim-wnn6
     SUBDIR += k10
     SUBDIR += k12
-    SUBDIR += k8
     SUBDIR += kakasi
     SUBDIR += kappa20
     SUBDIR += kcc
