@@ -1,6 +1,6 @@
---- window.c.orig	Tue Aug 11 03:10:29 1998
-+++ window.c	Tue Aug 11 03:07:12 1998
-@@ -104,7 +104,7 @@
+--- src/window.c.orig	Sun Jan 27 18:57:13 2002
++++ src/window.c	Sun Jan 27 18:57:25 2002
+@@ -110,7 +110,7 @@
  
  int useattr = 1;
  int dirflush = 1;

@@ -1,14 +1,14 @@
---- windiv.c.orig	Mon Mar  2 14:28:51 1998
-+++ windiv.c	Tue Aug 11 02:48:32 1998
-@@ -12,6 +12,7 @@
-  *
-  * hgk+jl 02.98 File selection window
-  */
+--- src/windiv.c.orig	Mon Jan 31 21:12:08 2000
++++ src/windiv.c	Sun Jan 27 19:05:05 2002
+@@ -19,6 +19,7 @@
+ #include "rcsid.h"
+ RCSID("$Id: windiv.c,v 1.2 2000/01/27 11:25:31 misiek Exp $")
+ 
 +#include <sys/types.h>
  #include <dirent.h>
  #include <sys/stat.h>
  #include "port.h"
-@@ -244,8 +245,14 @@
+@@ -251,8 +252,14 @@
  
        /* get regular files */
        dirlist[nCnt].d_ino    = dirent->d_ino;

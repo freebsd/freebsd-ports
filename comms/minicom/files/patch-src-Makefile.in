@@ -1,0 +1,14 @@
+--- src/Makefile.in.orig	Sun Jan 27 19:22:40 2002
++++ src/Makefile.in	Sun Jan 27 19:23:19 2002
+@@ -108,9 +108,9 @@
+ 
+ AUTOMAKE_OPTIONS = dist-tarZ no-dependencies 1.0
+ 
+-minicom_LDADD = @INTLLIBS@
++minicom_LDADD = @INTLLIBS@ ../lib/getopt.o ../lib/getopt_long.o
+ 
+-runscript_LDADD = @INTLLIBS@
++runscript_LDADD = @INTLLIBS@ ../lib/getopt.o ../lib/getopt_long.o
+ 
+ LDADD = $(top_builddir)/lib/libport.a
+ CPPFLAGS = @CPPFLAGS@  -I$(top_srcdir)/lib
