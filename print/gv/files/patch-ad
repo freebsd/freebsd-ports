@@ -1,0 +1,10 @@
+--- doc/gv.man.orig	Sun Oct 20 07:50:47 2002
++++ doc/gv.man	Sun Oct 20 07:50:58 2002
+@@ -3,7 +3,6 @@
+ .if n .ds U \&"
+ .if t .ds U ''
+ .TH "gv" 1 
+-.tr \&
+ .nr bi 0
+ .nr ll 0
+ .nr el 0
