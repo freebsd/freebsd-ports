@@ -1,0 +1,12 @@
+#!/bin/sh
+
+PATH=${PATH}:/usr/bin:/usr/local/bin
+
+MODEL=BJF%%PRTYPE%%
+RESOLUTION=600
+PAGESIZE=a4
+GS="gs -r${RESOLUTION} -q -dNOPROMPT -dSAFER \
+      -sPAPERSIZE=${PAGESIZE} -sDEVICE=bmp16m -sOutputFile=- -"
+BJFILTER="bjfilter --model ${MODEL} --imageres ${RESOLUTION}"
+
+psselect -r | ${GS} | ${BJFILTER}
