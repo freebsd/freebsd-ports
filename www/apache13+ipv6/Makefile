@@ -7,7 +7,7 @@
 
 PORTNAME=	apache+ipv6
 PORTVERSION=	1.3.29
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www ipv6
 MASTER_SITES=	${MASTER_SITE_APACHE_HTTPD}
 DISTNAME=	apache_${PORTVERSION}
@@ -25,10 +25,25 @@ CONFLICTS=	apache+mod_ssl-1.* apache+mod_ssl+ipv6-1.* apache+mod_ssl+modsnmp-1.*
 		caudium-devel-1.* caudium10-1.* caudium12-* \
 		ru-apache+mod_ssl-1.* ru-apache-1.* thttpd-2.*
 USE_PERL5=	yes
+USE_RC_SUBR=	yes
 
-DATADIR=${PREFIX}/www
-DOCUMENT_ROOT=${DATADIR}/data
+.if defined(APACHE_DATADIR)
+DATADIR=		${APACHE_DATADIR}
+.else
+DATADIR=		${PREFIX}/www
+.endif
+.if defined(APACHE_DOCUMENT_ROOT)
+DOCUMENT_ROOT=	${APACHE_DOCUMENT_ROOT}
+.else
+DOCUMENT_ROOT=	${DATADIR}/data
+.endif
+.if defined(APACHE_CGIBIN_ROOT)
+CGIBIN_ROOT=	${APACHE_CGIBIN_ROOT}
+.else
+CGIBIN_ROOT=	${DATADIR}/cgi-bin
+.endif
 DEFAULT_PATH=/bin:/usr/bin:${PREFIX}/bin
+RC_SCRIPTS_SUB=	PREFIX=${PREFIX} RC_SUBR=${RC_SUBR}
 
 .if defined(WITHOUT_APACHE_EXPAT) && ${WITHOUT_APACHE_EXPAT} == yes
 EXPAT_CONF+=	--disable-rule=EXPAT
@@ -82,6 +97,9 @@ CONFIGURE_ARGS+=	\
 		--server-gid=www \
 		--with-perl=${PERL} \
 		--with-layout=FreeBSD \
+		--datadir=${DATADIR} \
+		--htdocsdir=${DOCUMENT_ROOT} \
+		--cgidir=${CGIBIN_ROOT} \
 		--without-confadjust \
 		--enable-rule=INET6 \
 		--enable-module=most \
@@ -127,18 +145,16 @@ MAN8=		ab.8 apachectl.8 apxs.8 httpd.8 logresolve.8 rotatelogs.8 \
 		${SUEXEC_MAN}
 
 post-extract:
-	@${SED} -e "s=%%PREFIX%%=${PREFIX}=g" ${FILESDIR}/apache.sh \
-		> ${WRKSRC}/apache.sh
+	@${SED}	${RC_SCRIPTS_SUB:S/$/!g/:S/^/ -e s!%%/:S/=/%%!/} \
+		${FILESDIR}/apache.sh > ${WRKSRC}/apache.sh
 
 pre-install:
 	PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
 
 post-install:
-	${INSTALL_DATA} ${WRKSRC}/apache.sh ${PREFIX}/etc/rc.d/apache.sh-dist
-	@if [ ! -f ${PREFIX}/etc/rc.d/apache.sh ]; then \
-		${ECHO} "Installing ${PREFIX}/etc/rc.d/apache.sh startup file."; \
-		${INSTALL_SCRIPT} ${WRKSRC}/apache.sh ${PREFIX}/etc/rc.d/apache.sh; \
-	fi
+	${INSTALL_SCRIPT} ${WRKSRC}/apache.sh ${PREFIX}/etc/rc.d/apache.sh
+	@${TOUCH} ${DOCUMENT_ROOT}-dist/EXAMPLE_DIRECTORY-DONT_ADD_OR_TOUCH_ANYTHING
+	@${TOUCH} ${CGIBIN_ROOT}-dist/EXAMPLE_DIRECTORY-DONT_ADD_OR_TOUCH_ANYTHING
 	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>

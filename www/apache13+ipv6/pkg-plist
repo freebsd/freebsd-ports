@@ -1,4 +1,4 @@
-@comment $FreeBSD: /tmp/pcvs/ports/www/apache13+ipv6/Attic/pkg-plist,v 1.19 2004-06-09 06:16:00 kris Exp $
+@comment $FreeBSD: /tmp/pcvs/ports/www/apache13+ipv6/Attic/pkg-plist,v 1.20 2004-06-09 17:04:00 sumikawa Exp $
 bin/checkgid
 bin/dbmmanage
 bin/htdigest
@@ -18,9 +18,7 @@ etc/apache/mime.types-dist
 @unexec if cmp -s %D/etc/apache/srm.conf %D/etc/apache/srm.conf-dist; then rm -f %D/etc/apache/srm.conf; fi
 etc/apache/srm.conf-dist
 @exec [ -f %B/srm.conf ] || cp %B/%f %B/srm.conf
-@unexec if cmp -s %D/etc/rc.d/apache.sh %D/etc/rc.d/apache.sh-dist; then rm -f %D/etc/rc.d/apache.sh; fi
-etc/rc.d/apache.sh-dist
-@exec [ -f %B/apache.sh ] || ( cp %B/%f %B/apache.sh; chmod 755 %B/apache.sh )
+etc/rc.d/apache.sh
 include/apache/ap.h
 include/apache/ap_alloc.h
 include/apache/ap_compat.h
@@ -108,8 +106,9 @@ sbin/httpd
 sbin/logresolve
 sbin/rotatelogs
 %%SUB_SUEXEC%%sbin/suexec
-www/data-dist/apache_pb.gif
+www/data-dist/EXAMPLE_DIRECTORY-DONT_ADD_OR_TOUCH_ANYTHING
 @exec [ -d %D/www/data/ ] || ln -fs %B %D/www/data
+www/data-dist/apache_pb.gif
 www/data-dist/index.html.ca
 www/data-dist/index.html.cz
 www/data-dist/index.html.de
@@ -427,8 +426,9 @@ share/doc/apache/win_service.html.html
 share/doc/apache/win_service.html.ja.jis
 share/doc/apache/windows.html.en
 share/doc/apache/windows.html.ja.jis
-www/cgi-bin-dist/printenv
+www/cgi-bin-dist/EXAMPLE_DIRECTORY-DONT_ADD_OR_TOUCH_ANYTHING
 @exec [ -d %D/www/cgi-bin/ ] || ln -fs %B %D/www/cgi-bin
+www/cgi-bin-dist/printenv
 www/cgi-bin-dist/test-cgi
 www/icons/README
 www/icons/a.gif
