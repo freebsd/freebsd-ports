@@ -40,7 +40,7 @@ USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-sdl_mixer=${LOCALBASE}
 CONFIGURE_ENV=	SDL_CONFIG="${SDL_CONFIG}" \
-		LIBS="-L${LOCALBASE}/lib -lgnugetopt -pthread -lsmpeg -lgcc_r" \
+		LIBS="-L${LOCALBASE}/lib -lgnugetopt -pthread -lsmpeg" \
 		CPPFLAGS="-I${LOCALBASE}/include"
 CONFIGURE_TARGET=	--target=${MACHINE_ARCH}-unknown-freebsd${OSREL}
 
