@@ -41,6 +41,7 @@ lib/libalsaplayer.a
 lib/libalsaplayer.so
 lib/libalsaplayer.so.0
 libdata/pkgconfig/alsaplayer.pc
+@dirrm include/alsaplayer
 @dirrm lib/alsaplayer/scopes
 @dirrm lib/alsaplayer/reader
 @dirrm lib/alsaplayer/output
