@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	cons-test
-PORTVERSION=	2.0.2
+PORTVERSION=	2.2.0
 CATEGORIES=	devel
 MASTER_SITES=	http://www.dsmit.com/cons/stable/ \
 		http://www.gnu.org/software/cons/stable/ \
@@ -26,7 +26,7 @@ PLIST_SUB=	CONS_VER=${PORTVERSION} CONS_TEST=${CONS_TEST}
 
 MAN1=		cons-test.1
 DOCS=		CHANGES COPYING COPYRIGHT README TODO Tests.txt
-TESTS=		1..71,101..147
+TESTS=		1..83,101..147
 TEST_LIBS=	Cmd.pm Cons.pm
 do-install:
 #
