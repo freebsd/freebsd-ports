@@ -137,6 +137,7 @@
     SUBDIR += tr2latex
     SUBDIR += transfig
     SUBDIR += trueprint
+    SUBDIR += ttf2pt1
     SUBDIR += ttftot42
     SUBDIR += virtualpaper
     SUBDIR += wmlpq

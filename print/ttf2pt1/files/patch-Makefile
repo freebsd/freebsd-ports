@@ -1,0 +1,50 @@
+--- Makefile.orig	Mon May 28 10:38:17 2001
++++ Makefile	Sun Aug 12 01:07:51 2001
+@@ -20,7 +20,7 @@
+ #
+ # Default
+ 
+-CFLAGS_SYS= -O
++#CFLAGS_SYS= -O
+ 
+ # For GNU C
+ #
+@@ -54,7 +54,7 @@
+ # This WON'T BUILD with FT2-beta8, use the FreeType release 2.0.
+ # http://download.sourceforge.net/freetype/freetype-2.0.tar.gz
+ 
+-CFLAGS_FT= 
++CFLAGS_FT= `${FREETYPE_CONFIG} --cflags`
+ 
+ # To enable use of the FreeType-2 library
+ # (if the include and lib directory do not match your installation,
+@@ -65,7 +65,7 @@
+ # 
+ # The FreeType-2 library flags (disabled by default)
+ 
+-LIBS_FT=
++LIBS_FT= `${FREETYPE_CONFIG} --libs`
+ 
+ # To enable use of the FreeType-2 library
+ # (if the include and lib directory do not match your installation,
+@@ -87,17 +87,17 @@
+ CFLAGS_EXTT1ASM=
+ #CFLAGS_EXTT1ASM= -DEXTERNAL_T1ASM
+ 
+-CFLAGS= $(CFLAGS_SYS) $(CFLAGS_FT) $(CFLAGS_PREF)
++CFLAGS+= $(CFLAGS_SYS) $(CFLAGS_FT) $(CFLAGS_PREF)
+ LIBS= $(LIBS_SYS) $(LIBS_FT)
+ 
+ # Installation-related stuff
+ # 
+ # The base dir for installation and subdirs in it
+-INSTDIR = /usr/local
++INSTDIR = ${PREFIX}
+ # for binaries
+ BINDIR = $(INSTDIR)/bin
+ # for binaries of little general interest
+-LIBXDIR = $(INSTDIR)/libexec/ttf2pt1
++LIBXDIR = $(INSTDIR)/bin
+ # for scripts, maps/encodings etc.
+ SHAREDIR = $(INSTDIR)/share/ttf2pt1
+ MANDIR = $(INSTDIR)/man

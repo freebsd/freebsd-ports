@@ -1,0 +1,7 @@
+TTF2PT1 is a modification of Andrew Weeks TTF2PFA True Type to Postscript
+Type 3 converter. Which will convert Most True Type Fonts to and Adobe
+Type 1 .pfa file. The files produced are in human readable form, which
+further needs to be encrypted with the t1utilities, to work with most
+software requiring type 1 fonts.
+
+WWW: http://ttf2pt1.sourceforge.net/
