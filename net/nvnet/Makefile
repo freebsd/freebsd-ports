@@ -21,11 +21,15 @@ DISTFILES=	NVIDIA_nforce-1.0-${NVVERSION}${EXTRACT_SUFX}:nvidia \
 MAINTAINER=	q@onthenet.com.au
 COMMENT=	Driver for NVIDIA MCP Ethernet adapter
 
-NVVERSION=	0261
-NVNETVERSION=	20031214
+NVNETVERSION=	20040813
 
-ONLY_FOR_ARCHS=	i386
+NO_PACKAGE=	Depends on kernel
+ONLY_FOR_ARCHS=	amd64 i386
+MD5_FILE=	${MASTERDIR}/distinfo.${ARCH}
 WRKSRC=		${WRKDIR}/nvnet
+MODULES_WITH_WORLD=
+PLIST_SUB=	KMODDIR=${KMODDIR}
+PORTDOCS=	README nvidia_pci.c.diff
 MAN4=		nvnet.4
 
 .include <bsd.port.pre.mk>
@@ -34,10 +38,12 @@ MAN4=		nvnet.4
 BROKEN=		"Systems prior to FreeBSD 4.9 & 5.1 are not supported"
 .endif
 
-.if ${OSVERSION} < 500000
-PLIST_SUB+=	FREEBSD5="@comment " FREEBSD4=""
+.if ${ARCH} == "i386"
+NVVERSION=	0274
+.elif ${ARCH} == "amd64"
+NVVERSION=	0275
 .else
-PLIST_SUB+=	FREEBSD5="" FREEBSD4="@comment "
+NVVERSION=	0
 .endif
 
 pre-fetch:
@@ -48,13 +54,15 @@ pre-fetch:
 	exit 1
 .endif
 
-port-install:
-.if !defined(NOPORTSDOCS)
+do-install:
+	${INSTALL_SCRIPT} ${WRKSRC}/module/if_nv.ko ${KMODDIR}
+	${INSTALL_MAN} ${WRKSRC}/man/nvnet.4 ${PREFIX}/man/man4
+.if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
-	${INSTALLMAN} ${WRKSRC}/doc/README ${WRKSRC}/doc/nvidia_pci.c.diff \
-	    ${DOCSDIR}
+.for i in ${PORTDOCS}
+	${INSTALL_MAN} ${WRKSRC}/doc/${i} ${DOCSDIR}
+.endfor
 .endif
-	${INSTALLMAN} ${WRKSRC}/man/nvnet.4 ${PREFIX}/man/man4
 	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.post.mk>
