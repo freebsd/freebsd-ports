@@ -115,6 +115,9 @@ share/locale/zh_TW/LC_MESSAGES/gnome-utils-2.0.mo
 @dirrm share/gnome/help/gnome-calculator/C/figures
 @dirrm share/gnome/help/gnome-calculator/C
 @dirrm share/gnome/help/gnome-calculator
+@dirrm share/gnome/help/archive-generator/C/figures
+@dirrm share/gnome/help/archive-generator/C
+@dirrm share/gnome/help/archive-generator
 @dirrm share/gnome/gnome-system-log
 @dirrm etc/gconf/gconf.xml.defaults/schemas/apps/gnome-dictionary
 @dirrm etc/gconf/gconf.xml.defaults/apps/gnome-dictionary
