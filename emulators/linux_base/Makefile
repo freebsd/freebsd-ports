@@ -117,8 +117,11 @@ REMOVE_FILES=		bin/df bin/su etc/exports etc/group etc/localtime \
 			etc/motd etc/passwd etc/printcap etc/services \
 			etc/protocols
 BRAND_FILES=		bin/rpm sbin/ldconfig sbin/sln
-
+.if (${ARCH} == "amd64")
+FALLBACK_ELF_MIB=	kern.elf32.fallback_brand
+.else
 FALLBACK_ELF_MIB=	kern.fallback_elf_brand
+.endif
 LINUX_ELF=		3
 PREVIOUS_ELF!=		/sbin/sysctl -n ${FALLBACK_ELF_MIB}
 
