@@ -6,9 +6,10 @@
 #
 
 PORTNAME=	xnee
-PORTVERSION=	1.07
+PORTVERSION=	1.08
 CATEGORIES=	x11
-MASTER_SITES=	${MASTER_SITE_GNU}
+MASTER_SITES=	http://www.sandklef.com/xnee/tars/ \
+		${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
@@ -27,7 +28,8 @@ INFO=		xnee xnee_develop
 post-patch:
 	@${FIND} ${WRKSRC} -name "Makefile.in" | ${XARGS} ${PERL} -pi -e \
 		's| -g | \@CFLAGS\@ |g ; \
-		 s|-lpthread|${PTHREAD_LIBS:S/"//g}|g'
+		 s|-lpthread|${PTHREAD_LIBS:S/"//g}|g ; \
+		 s|-ldl||g'
 
 post-install:
 	${INSTALL_MAN} ${WRKSRC}/xnee/doc/xnee.1 ${MANPREFIX}/man/man1
