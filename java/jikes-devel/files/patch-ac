@@ -1,6 +1,6 @@
---- configure.in.orig	Tue Aug 27 12:55:18 2002
-+++ configure.in	Tue Aug 27 12:54:39 2002
-@@ -108,7 +108,7 @@
+--- configure.in	Tue Jul  9 23:16:00 2002
++++ configure.in	Mon Aug  5 11:03:39 2002
+@@ -113,7 +113,7 @@
  AC_CHECK_ICONV()
  
  dnl	Check if "IBM Classes for UNICODE library" is present
