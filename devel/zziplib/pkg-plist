@@ -1,0 +1,13 @@
+bin/zzcat
+bin/zzdir
+bin/zzip-config
+include/zzip-conf.h
+include/zzip-config.h
+include/zzip-file.h
+include/zzip-stdint.h
+include/zzip.h
+include/zzipformat.h
+include/zziplib.h
+lib/libzzip-0.10.11.so
+lib/libzzip.a
+lib/libzzip.so
