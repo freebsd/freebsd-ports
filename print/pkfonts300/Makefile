@@ -1,9 +1,9 @@
 # New ports collection makefile for: English PK fonts
 # Version required:	?
 # Date created:		16 Mar 1996
-# Whom:			Hideaki Ohmon <ohmon@sfc.keio.ac.jp>
+# Whom:			Hideaki Ohmon <ohmon@tom.sfc.keio.ac.jp>
 #
-# $Id: Makefile,v 1.1.1.1 1996/03/21 17:25:01 asami Exp $
+# $Id: Makefile,v 1.2 1996/07/10 10:13:16 asami Exp $
 #
 
 DISTNAME=	pkfonts
@@ -13,7 +13,7 @@ MASTER_SITES=	ftp://ftp.eos.hokudai.ac.jp/pub/TeX/fonts/
 DISTFILES=	pk${RESOLUTION}.tar.gz
 # see below for RESOLUTION definition
 
-MAINTAINER=	ohmon@sfc.keio.ac.jp
+MAINTAINER=	ohmon@tom.sfc.keio.ac.jp
 
 DIST_SUBDIR=	pkfonts
 EXTRACT_CMD=	/usr/bin/true # extracted directly in install target
