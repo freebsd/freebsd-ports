@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	supertux
-PORTVERSION=	0.1.1
+PORTVERSION=	0.1.2
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	super-tux
@@ -16,7 +16,6 @@ COMMENT=	Super Tux is a side-scroller similar to Super Mario Brothers
 
 USE_X_PREFIX=	yes
 USE_BZIP2=	yes
-WANT_SDL=	yes
 USE_SDL=	image mixer
 USE_GL=		yes
 USE_GMAKE=	yes
