@@ -7,6 +7,7 @@
 
 PORTNAME=	fbsd-icons
 PORTVERSION=	1.0
+PORTREVISION=	1
 CATEGORIES=	x11
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	trevor
@@ -21,6 +22,6 @@ NO_WRKSUBDIR=	yes
 
 do-install:
 		${MKDIR} ${X11BASE}/icons
-		( cd ${X11BASE}/icons; ${TAR} -xzf ${DISTDIR}/fbsd-icons.tar.gz )
+		( cd ${X11BASE}/icons; ${TAR} --no-same-owner --no-same-permissions -xzf ${DISTDIR}/fbsd-icons.tar.gz )
 
 .include <bsd.port.mk>
