@@ -1,60 +1,61 @@
---- configure.orig	Fri Jun 23 09:40:05 2000
-+++ configure	Tue Dec 19 21:17:39 2000
-@@ -1140,7 +1140,7 @@
+--- configure.orig	Thu Aug 28 15:41:03 2003
++++ configure	Thu Aug 28 15:49:25 2003
+@@ -1202,7 +1202,7 @@
  #
  #  1. command line (--with-cflags)
  #  2. cached variable ($blt_cv_prog_cflags)
--#  3. set to "-O6" if using gcc ($BLT_HAVE_GCC)
-+#  3. set to "-O2" if using gcc ($BLT_HAVE_GCC)
+-#  3. set to "-O6" if using gcc ($blt_have_gcc)
++#  3. set to "-O2" if using gcc ($blt_have_gcc)
  #  4. otherwise, default to "-O"
  #
  echo $ac_n "checking default compiler flags""... $ac_c" 1>&6
-@@ -1150,7 +1150,7 @@
+@@ -1212,7 +1212,7 @@
  elif test "x${blt_cv_prog_cflags}" != "x" ; then
    CFLAGS=${blt_cv_prog_cflags}
- elif test "${BLT_HAVE_GCC}" = "yes" ; then
+ elif test "${blt_have_gcc}" = "yes" ; then
 -  CFLAGS=-O6
 +  CFLAGS=-O2
  else
    CFLAGS=-O
  fi
-@@ -2572,6 +2572,7 @@
-   if test "x$tclConfigFile" = "x" ; then
+@@ -3197,6 +3197,7 @@
+   if test "x$tcl_config_sh" = "x" ; then
      for dir in \
       `ls -dr /usr/local/tcl/tcl[7-9].[0-9]* 2>/dev/null` \
 +     `ls -dr /usr/local/lib/tcl[7-9].[0-9]* 2>/dev/null` \
       /usr/local/tcl \
       /usr/local \
       /usr
-@@ -2672,6 +2673,7 @@
-   if test "x$tkConfigFile" = "x" ; then
+@@ -3295,6 +3296,7 @@
+   if test "x$tk_config_sh" = "x" ; then
      for dir in \
       `ls -dr /usr/local/tcl/tcl[7-9].[0-9]* 2>/dev/null` \
 +     `ls -dr /usr/local/lib/tk[7-9].[0-9]* 2>/dev/null` \
       /usr/local/tcl \
       /usr/local \
       ${x_libraries} \
-@@ -2776,7 +2778,7 @@
+@@ -3379,7 +3381,7 @@
  fi
  
  case $target in
--  *-sunos4*|*-*-netbsd|NetBSD-*|FreeBSD-*|OpenBSD-*)
-+  *-sunos4*|*-*-netbsd|NetBSD-*|*-*-freebsd*|OpenBSD-*)
+-  *-sunos4*|*-*-netbsd|NetBSD-*|FreeBSD-*|OpenBSD-*|*-*-cygwin*|*-*-mingw*)
++  *-sunos4*|*-*-netbsd|NetBSD-*|*-*-freebsd*|OpenBSD-*|*-*-cygwin*|*-*-mingw*)
      TCL_LIB_NAME="tcl${TCL_MAJOR_VERSION}${TCL_MINOR_VERSION}"
      TK_LIB_NAME="tk${TK_MAJOR_VERSION}${TK_MINOR_VERSION}"
      ;;
-@@ -3597,7 +3599,13 @@
+@@ -4111,7 +4113,14 @@
      if test "$test_ok" = yes; then
        SHLIB_CFLAGS="-fpic"
        SHLIB_LD="ld"
 -      SHLIB_LD_FLAGS="-Bshareable -x"
 +      if test `objformat` = "elf"; then
 +        SHLIB_LD_FLAGS="-Bshareable -x -soname \$@"
-+        SHLIB_SUFFIX=".so.${BLT_MAJOR_VERSION}"
++        SHLIB_SUFFIX=".so.3"
 +      else
 +        SHLIB_LD_FLAGS="-Bshareable -x"
-+        SHLIB_SUFFIX=".so.${BLT_MAJOR_VERSION}.${BLT_MINOR_VERSION}"
++        SHLIB_SUFFIX=".so.3.0"
 +      fi
++
      fi
      ;;
  
