@@ -1,6 +1,6 @@
---- Rules.make.orig	Wed Apr 30 11:42:37 2003
-+++ Rules.make	Wed Apr 30 11:52:50 2003
-@@ -4,42 +4,42 @@
+--- Rules.make.orig	Thu Jul 24 15:21:01 2003
++++ Rules.make	Thu Jul 24 15:27:58 2003
+@@ -4,22 +4,22 @@
  #
  #- Building ----------------------------------------------------------
  #--- Tell "make" how to get to PyMOL 
@@ -19,32 +19,23 @@
 +PYTHON_EXE = $(PYMOL_PATH)/bin/python
  PYTHON_LIB =
  PYTHON_LIB_DIR = 
--PYTHON_INC_DIR = -I$(PYMOL_PATH)/ext/include/python2.1 \
--	-I$(PYMOL_PATH)/ext/include/python2.1/Numeric
+-PYTHON_INC_DIR = -I$(PYMOL_PATH)/ext/include/python2.2 \
+-	-I$(PYMOL_PATH)/ext/include/python2.2/Numeric
 +PYTHON_INC_DIR = -I$(PYMOL_PATH)/include/@PYTHON_VERSION@ \
 +	-I$(PYMOL_PATH)/include/@PYTHON_VERSION@/Numeric
  #--- Other external dependencies
 -EXT_INC_DIR = -I$(PYMOL_PATH)/ext/include
 -EXT_LIB_DIR = -L$(PYMOL_PATH)/ext/lib
-+EXT_INC_DIR = -I$(PYMOL_PATH)/include -I.
++EXT_INC_DIR = -I$(PYMOL_PATH)/include
 +EXT_LIB_DIR = -L$(PYMOL_PATH)/lib
  #---------------------------------------------------------------------
  #
--#- Build for LINUX as an importable module ---------------------------
-+#- Build for FreeBSD as an importable module ---------------------------
- #--- System libraries
--LIBS = $(PYTHON_LIB) -lglut -lGL -lGLU -ldl -lpng -lXmu $(ZLIB) -lm
-+LIBS = $(PYTHON_LIB) -lglut -lGL -lGLU -lpng -lXmu $(ZLIB) -lm
- #--- PyMOL configuration
- DEFS = -D_PYMOL_MODULE -D_PYMOL_NUMPY 
- #--- How we build shared libraries
- BUILD = -shared 
+ #- Build for LINUX as an importable module ---------------------------
+@@ -32,14 +32,14 @@
  #--- What are we trying to build?
--DEST = -o modules/pymol/_cmd.so
--#--- Gcc Options for Linux
+ DEST = -o modules/pymol/_cmd.so
+ #--- Gcc Options for Linux
 -CCOPT1 = -march=i486 -D__i686__ -ffast-math -Wall -ansi -Wmissing-prototypes
-+DEST = -o modules/_cmd.so
-+#--- Gcc Options for FreeBSD
 +CCOPT1 = #-march=i486 -D__i686__ -ffast-math -Wall -ansi -Wmissing-prototypes
  #--- libraries for PyOpenGL 
  PYOGL_LIB =  -lglut -lGL -lGLU -lXmu -lXi
@@ -57,15 +48,6 @@
  #--- GCC Profiling
  #CCOPT2 = -pg -O3 -funroll-loops
  #--- Debugging
-@@ -47,7 +47,7 @@
- #---------------------------------------------------------------------
- #
- #- Choose One --------------------------------------------------------
--#--- Workaround for XFree86/DRI linux dll problem for module build
-+#--- Workaround for XFree86/DRI FreeBSD dll problem for module build
- BUGS = -D_DRI_WORKAROUND
- #---
- #BUGS =
 @@ -69,18 +69,19 @@
  # No changes normally required below here
  #---------------------------------------------------------------------
