@@ -24,6 +24,7 @@ MAKE_ARGS=	CFLAGS="${CFLAGS}"
 OPTIONS=	RETVALUE "Return value patch" on \
 		MALLOCSIZE "Improve malloc size" on
 
+PLIST_FILES=	bin/${PORTNAME}
 PORTDOCS=	COPYRIGHT README
 
 .include <bsd.port.pre.mk>
