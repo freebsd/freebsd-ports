@@ -8975,6 +8975,7 @@ xscavenger	ports/games/xscavenger
 xscorch		ports/games/xscorch
 xscrabble	ports/games/xscrabble
 xscreensaver	ports/x11/xscreensaver
+xsel		ports/x11/xsel
 xshipwars-client	ports/games/xshipwars-client
 xshisen		ports/games/xshisen
 xshogi		ports/games/xshogi
