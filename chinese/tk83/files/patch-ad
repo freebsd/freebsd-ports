@@ -1,0 +1,34 @@
+--- tkUnixEvent.c.orig	Fri Apr 16 01:51:46 1999
++++ tkUnixEvent.c	Wed Feb 21 22:51:52 2001
+@@ -161,7 +161,12 @@
+         (void) XSync(dispPtr->display, False);
+         (void) XCloseDisplay(dispPtr->display);
+     }
+-    
++#ifdef I18N_IMPROVE
++    if (displayPtr->imEncoding != NULL) {
++	Tcl_FreeEncoding(displayPtr->imEncoding);
++    }
++#endif /* I18N_IMPROVE */    
++
+     ckfree((char *) dispPtr);
+ }
+ 
+@@ -246,6 +251,17 @@
+ 
+     while (numFound > 0) {
+ 	XNextEvent(display, &event);
++#ifdef I18N_IMPROVE
++	/*
++	 * To avoid Tk freezing by IM server's protocol bugs,
++	 * Re-check queued event after an event is filterd.
++	 *
++	 */
++	if (XFilterEvent(&event, None) == True) {
++	    numFound = XEventsQueued(display, QueuedAlready);
++	    continue;
++	}
++#endif /* I18N_IMPROVE */
+ 	Tk_QueueWindowEvent(&event, TCL_QUEUE_TAIL);
+ 	numFound--;
+     }

@@ -1,0 +1,16 @@
+--- ../library/text.tcl.orig	Thu Feb 10 08:52:50 2000
++++ ../library/text.tcl	Wed Feb 21 21:27:44 2001
+@@ -378,6 +378,13 @@
+     }
+ }
+ 
++# UNIX only bindings:
++
++if {[string equal $tcl_platform(platform) "unix"] &&
++	[string compare [info commands imconfigure] {}]} {
++    bind Text <FocusIn> {catch {imconfigure %W}}
++}
++
+ # Macintosh only bindings:
+ 
+ # if text black & highlight black -> text white, other text the same

@@ -1,0 +1,22 @@
+#! /bin/sh
+#
+# Remove the ${PREFIX}/bin/wish script that gets installed by INSTALL.wish
+# if we are the last wish installation to be pkg_delete'd.
+#
+# $FreeBSD: /tmp/pcvs/ports/chinese/tk83/Attic/pkg-deinstall.wish,v 1.1 2001-02-22 04:09:52 kevlo Exp $
+#
+
+#
+# Explicitly listing /usr/X11R6/bin here is debatable.
+#
+BINDIR="${PKG_PREFIX}/bin /usr/X11R6/bin"
+WISH=${PKG_PREFIX}/bin/wish
+
+wishes=$(/bin/ls ${BINDIR} 2> /dev/null | \
+    egrep '^o?wish(step)?(x|([0-9]+\.[0-9]+))([a-z][a-z])?$')
+
+if [ "$wishes" = "" -a -f ${WISH} ] && \
+    (head -3 ${WISH} | grep awieYJFnsuILOnfsYEW) > /dev/null 2>&1
+then
+	rm -f ${PKG_PREFIX}/bin/wish
+fi

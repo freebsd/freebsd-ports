@@ -1,0 +1,91 @@
+--- tkUnixKey.c.orig	Wed Feb  9 02:13:54 2000
++++ tkUnixKey.c	Wed Feb 21 21:27:46 2001
+@@ -50,6 +50,10 @@
+     int len;
+     Tcl_DString buf;
+     Status status;
++#if defined(I18N_IMPROVE) && defined(TK_USE_INPUT_METHODS)
++    Bool validString = False;
++    Bool usePreviousComposed = False;
++#endif /* I18N_IMPROVE && TK_USE_INPUT_METHODS */
+ 
+     /*
+      * Overallocate the dstring to the maximum stack amount.
+@@ -59,8 +63,18 @@
+     Tcl_DStringSetLength(&buf, TCL_DSTRING_STATIC_SIZE-1);
+     
+ #ifdef TK_USE_INPUT_METHODS
++#ifdef I18N_IMPROVE
++    /*
++     * If there is a valid XIC, must fetch strings here since some
++     * garbages still remain. After the fetching, if
++     * dispPtr->useInputMethods == 0, just trash the strings.
++     *	m-hirano
++     */
++    if ((winPtr->inputContext != NULL)
++#else
+     if (winPtr->dispPtr->useInputMethods
+ 	    && (winPtr->inputContext != NULL)
++#endif /* I18N_IMPROVE */
+ 	    && (eventPtr->type == KeyPress)) {
+ 	len = XmbLookupString(winPtr->inputContext, &eventPtr->xkey,
+ 		Tcl_DStringValue(&buf), Tcl_DStringLength(&buf),
+@@ -75,12 +89,27 @@
+ 		    Tcl_DStringValue(&buf), len, (KeySym *) NULL, &status);
+ 	}
+ 	if ((status != XLookupChars) && (status != XLookupBoth)) {
++#ifdef I18N_IMPROVE
++	    if (winPtr->dispPtr->isComposed == 1 &&
++		Tcl_DStringLength(&(winPtr->composedDStr)) > 0 &&
++		winPtr->dispPtr->useInputMethods == 1) {
++		usePreviousComposed = True;
++	    }
++#endif /* I18N_IMPROVE */
+ 	    len = 0;
+ 	}
++#ifdef I18N_IMPROVE
++	if (winPtr->dispPtr->useInputMethods == 1) {
++	    validString = True;
++	}
++#endif /* I18N_IMPROVE */
+     } else {
+ 	len = XLookupString(&eventPtr->xkey, Tcl_DStringValue(&buf),
+ 		Tcl_DStringLength(&buf), (KeySym *) NULL,
+ 		(XComposeStatus *) NULL);
++#ifdef I18N_IMPROVE
++	validString = True;
++#endif /* I18N_IMPROVE */
+     }
+ #else /* TK_USE_INPUT_METHODS */
+     len = XLookupString(&eventPtr->xkey, Tcl_DStringValue(&buf),
+@@ -89,7 +118,30 @@
+ #endif /* TK_USE_INPUT_METHODS */
+     Tcl_DStringSetLength(&buf, len);
+ 
++#if defined(I18N_IMPROVE) && defined(TK_USE_INPUT_METHODS)
++    if (validString == True) {
++	if (usePreviousComposed == False) {
++	    Tcl_ExternalToUtfDString(winPtr->dispPtr->imEncoding,
++				     Tcl_DStringValue(&buf), len, dsPtr);
++	    Tcl_DStringFree(&(winPtr->composedDStr));
++	    Tcl_DStringInit(&(winPtr->composedDStr));
++	    Tcl_DStringAppend(&(winPtr->composedDStr),
++			      Tcl_DStringValue(dsPtr),
++			      Tcl_DStringLength(dsPtr));
++	} else {
++	    Tcl_DStringFree(dsPtr);
++	    Tcl_DStringInit(dsPtr);
++	    Tcl_DStringAppend(dsPtr,
++			      Tcl_DStringValue(&(winPtr->composedDStr)),
++			      Tcl_DStringLength(&(winPtr->composedDStr)));
++	}
++    } else {
++	Tcl_DStringFree(dsPtr);
++	Tcl_DStringInit(dsPtr);
++    }
++#else
+     Tcl_ExternalToUtfDString(NULL, Tcl_DStringValue(&buf), len, dsPtr);
++#endif /* I18N_IMPROVE && TK_USE_INPUT_METHODS */
+     Tcl_DStringFree(&buf);
+ 
+     return Tcl_DStringValue(dsPtr);

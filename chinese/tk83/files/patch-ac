@@ -1,0 +1,20 @@
+--- tkConfig.sh.in.orig	Thu Feb 10 11:11:02 2000
++++ tkConfig.sh.in	Wed Feb 21 21:27:46 2001
+@@ -20,13 +20,16 @@
+ TK_PATCH_LEVEL='@TK_PATCH_LEVEL@'
+ 
+ # -D flags for use with the C compiler.
+-TK_DEFS='@DEFS@'
++TK_DEFS='@DEFS@ @X11_IMAKE_FLAGS@ @I18N_FLAGS@'
+ 
+ # Flag, 1: we built a shared lib, 0 we didn't
+ TK_SHARED_BUILD=@TK_SHARED_BUILD@
+ 
+ # This indicates if Tk was build with debugging symbols
+ TK_DBGX=@TK_DBGX@
++
++# I18n improvement flags
++TK_I18N_IMPROVE_FLAGS='@I18N_FLAGS@'
+ 
+ # The name of the Tk library (may be either a .a file or a shared library):
+ TK_LIB_FILE='@TK_LIB_FILE@'

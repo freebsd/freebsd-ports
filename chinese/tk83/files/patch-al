@@ -1,0 +1,73 @@
+--- ../generic/tkInt.h.orig	Fri Jan 21 03:54:41 2000
++++ ../generic/tkInt.h	Wed Feb 21 21:27:44 2001
+@@ -499,6 +499,24 @@
+     int warpX;
+     int warpY;
+     int useInputMethods;	/* Whether to use input methods */
++#ifdef TK_USE_INPUT_METHODS
++#ifdef I18N_IMPROVE
++    Tcl_Encoding imEncoding;	/* Tcl encoding when the first Tcl
++				 * interp was created.
++				 * For encoding conversion from
++				 * XmbLookupString() to UTF.
++				 */
++    XIC lastFocusedIC;		/* The last focused input context on
++				 * the display.
++				 */
++    int isComposed;             /* 1 if the latest KeyPress event is a
++                                 * "Compose message" from IM server,
++                                 * otherwise 0. */
++#ifdef XNDestroyCallback
++    XIMCallback destroyCallback;
++#endif /* XNDestroyCallback */
++#endif /* I18N_IMPROVE */
++#endif /* TK_USE_INPUT_METHODS */
+ } TkDisplay;
+ 
+ /*
+@@ -790,6 +808,13 @@
+      */
+ 
+     struct TkWindowPrivate *privatePtr;
++#ifdef TK_USE_INPUT_METHODS
++#ifdef I18N_IMPROVE
++    Tcl_DString composedDStr;	/* To prepare successive "%A" in bind
++				 * script, save a string from IM
++				 * server. */
++#endif /* I18N_IMPROVE */
++#endif /* TK_USE_INPUT_METHODS */
+ } TkWindow;
+ 
+ /*
+@@ -999,9 +1024,6 @@
+ EXTERN int		Tk_WmCmd _ANSI_ARGS_((ClientData clientData,
+ 			    Tcl_Interp *interp, int argc, char **argv));
+ 
+-void	TkConsolePrint _ANSI_ARGS_((Tcl_Interp *interp,
+-			    int devId, char *buffer, long size));
+-
+ EXTERN void		TkEventInit _ANSI_ARGS_((void));
+ 
+ EXTERN int		TkCreateMenuCmd _ANSI_ARGS_((Tcl_Interp *interp));
+@@ -1080,6 +1102,21 @@
+  */
+ EXTERN int		TkUnsupported1Cmd _ANSI_ARGS_((ClientData clientData,
+ 			    Tcl_Interp *interp, int argc, char **argv));
++
++#if defined(TK_USE_INPUT_METHODS) && defined(I18N_IMPROVE)
++EXTERN XIC		TkpCreateIC _ANSI_ARGS_((TkWindow *winPtr));
++EXTERN void		TkpDestroyIC _ANSI_ARGS_((TkWindow *winPtr, int needDestroy));
++EXTERN int		Tk_ImconfigureObjCmd _ANSI_ARGS_((ClientData clientData,
++			    Tcl_Interp *interp, int objc,
++			    Tcl_Obj *CONST objv[]));
++#endif /* TK_USE_INPUT_METHODS && I18N_IMPROVE */
++
++# undef TCL_STORAGE_CLASS
++# define TCL_STORAGE_CLASS
++
++EXTERN int	TkConsoleInit _ANSI_ARGS_((Tcl_Interp *interp));
++EXTERN void	TkConsolePrint _ANSI_ARGS_((Tcl_Interp *interp,
++			    int devId, char *buffer, long size));
+ 
+ # undef TCL_STORAGE_CLASS
+ # define TCL_STORAGE_CLASS DLLIMPORT
