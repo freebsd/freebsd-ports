@@ -15,6 +15,7 @@ MAINTAINER=	.@babolo.ru
 SCRIPTS=	flow-mirror flow-rsync flow-search
 
 USE_GMAKE=	yes
+USE_REINPLACE=	yes
 
 GNU_CONFIGURE=	yes
 
@@ -28,8 +29,8 @@ MAN1=	flow-capture.1 flow-gen.1 flow-split.1 flow-cat.1	\
 post-patch:
 	${TOUCH} -r ${WRKSRC}/configure.in.orig ${WRKSRC}/configure.in
 	${TOUCH} -r ${WRKSRC}/configure.orig ${WRKSRC}/configure
-	${PERL} -pi -e 's|/usr/local|${PREFIX}|' ${WRKSRC}/docs/flow-print.1 \
-		${WRKSRC}/docs/flow-tag.1
+	${REINPLACE_CMD} -e 's|/usr/local|${PREFIX}|' \
+		${WRKSRC}/docs/flow-print.1 ${WRKSRC}/docs/flow-tag.1
 
 pre-build:
 	${RM} ${WRKSRC}/src/ftbuild.h
