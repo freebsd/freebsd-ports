@@ -77,9 +77,9 @@ CONFIGURE_ARGS+=	--enable-ldap --enable-mailnews
 .endif
 
 .if !defined(WITHOUT_CHATZILLA)
-CONFIGURE_ARGS+=	--enable-extensions=default,irc,xmlterm
+CONFIGURE_ARGS+=	--enable-extensions=cookie,wallet,content-packs,pref,transformiix,irc,spellcheck,xmlterm
 .else
-CONFIGURE_ARGS+=	--enable-extensions=default,xmlterm
+CONFIGURE_ARGS+=	--enable-extensions=cookie,wallet,content-packs,pref,transformiix,spellcheck,xmlterm
 .endif
 CONFIGURE_ENV=	MOZ_INTERNAL_LIBART_LGPL=1 ${CC}=${CXX}
 
