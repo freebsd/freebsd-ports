@@ -30,61 +30,315 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
-  <vuln vid="73ea0706-9c57-11d8-9366-0020ed76ef5a">
-    <topic>rsync path traversal issue</topic>
+  <vuln vid="0792e7a7-8e37-11d8-90d1-0020ed76ef5a">
+    <topic>CVS path validation errors</topic>
     <affects>
       <package>
-	<name>rsync</name>
-	<range><lt>2.6.1</lt></range>
+	<name>cvs+ipv6</name>
+	<range><le>1.11.5_1</le></range>
       </package>
+      <system>
+	<name>FreeBSD</name>
+	<range><ge>5.2</ge><lt>5.2.1_5</lt></range>
+	<range><ge>4.9</ge><lt>4.9_5</lt></range>
+	<range><ge>4.8</ge><lt>4.8_18</lt></range>
+      </system>
     </affects>
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
-	<p>When running rsync in daemon mode, no checks were made
-	  to prevent clients from writing outside of a module's
-	`path' setting.</p>
+        <p>Two programming errors were discovered in which path names
+          handled by CVS were not properly validated.  In one case,
+          the CVS client accepts absolute path names from the server
+          when determining which files to update.  In another case,
+          the CVS server accepts relative path names from the client
+          when determining which files to transmit, including those
+          containing references to parent directories (`../').</p>
+        <p>These programming errors generally only have a security
+	  impact when dealing with remote CVS repositories.</p>
+        <p>A malicious CVS server may cause a CVS client to overwrite
+	  arbitrary files on the client's system.</p>
+        <p>A CVS client may request RCS files from a remote system
+          other than those in the repository specified by $CVSROOT.
+          These RCS files need not be part of any CVS repository
+          themselves.</p>
       </body>
     </description>
     <references>
-      <cvename>CAN-2004-0426</cvename>
-      <url>http://rsync.samba.org/#security_apr04</url>
+      <cvename>CAN-2004-0180</cvename>
+      <cvename>CAN-2004-0405</cvename>
+      <url>http://ccvs.cvshome.org/servlets/NewsItemView?newsID=102</url>
+      <freebsdsa>SA-04:07.cvs</freebsdsa>
     </references>
     <dates>
-      <discovery>2004-04-26</discovery>
-      <entry>2004-05-02</entry>
+      <discovery>2004-04-14</discovery>
+      <entry>2004-04-14</entry>
+      <modified>2004-05-05</modified>
     </dates>
   </vuln>
 
-  <vuln vid="e50b04e8-9c55-11d8-9366-0020ed76ef5a">
-    <topic>xine-lib arbitrary file overwrite</topic>
+  <vuln vid="7229d900-88af-11d8-90d1-0020ed76ef5a">
+    <topic>mksnap_ffs clears file system options</topic>
     <affects>
-      <package>
-	<name>libxine</name>
-	<range><gt>0.9</gt><lt>1.0.r3_5</lt></range>
-      </package>
+      <system>
+	<name>FreeBSD</name>
+	<range><ge>5.2</ge><lt>5.2_1</lt></range>
+	<range><ge>5.1</ge><lt>5.1_12</lt></range>
+      </system>
     </affects>
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
-	<p>From the xinehq advisory:</p>
-	<blockquote
-	  cite="http://www.xinehq.de/index.php/security/XSA-2004-1">
-          <p>By opening a malicious MRL in any xine-lib based media
-            player, an attacker can write arbitrary content to an
-            arbitrary file, only restricted by the permissions of the
-            user running the application.</p>
-	</blockquote>
-	<p>The flaw is a result of a feature that allows MRLs (media
-	  resource locator URIs) to specify arbitrary configuration
-	  options.</p>
+        <p>The kernel interface for creating a snapshot of a
+          filesystem is the same as that for changing the flags on
+	  that filesystem.  Due to an oversight, the <a href="http://www.freebsd.org/cgi/man.cgi?query=mksnap_ffs">mksnap_ffs(8)</a>
+          command called that interface with only the snapshot flag
+          set, causing all other flags to be reset to the default
+	  value.</p>
+        <p>A regularly scheduled backup of a live filesystem, or
+          any other process that uses the mksnap_ffs command
+          (for instance, to provide a rough undelete functionality
+          on a file server), will clear any flags in effect on the
+          filesystem being snapshot.  Possible consequences depend
+          on local usage, but can include disabling extended access
+          control lists or enabling the use of setuid executables
+	  stored on an untrusted filesystem.</p>
+        <p>The mksnap_ffs command is normally only available to
+          the superuser and members of the `operator' group.  There
+          is therefore no risk of a user gaining elevated privileges
+          directly through use of the mksnap_ffs command unless
+          it has been intentionally made available to unprivileged
+          users.</p>
       </body>
     </description>
     <references>
-      <bid>10193</bid>
-      <url>http://www.xinehq.de/index.php/security/XSA-2004-1</url>
+      <cvename>CAN-2004-0099</cvename>
+      <freebsdsa>SA-04:01.mksnap_ffs</freebsdsa>
     </references>
     <dates>
-      <discovery>2004-04-20</discovery>
-      <entry>2004-05-02</entry>
+      <discovery>2004-01-30</discovery>
+      <entry>2004-04-07</entry>
+      <modified>2004-05-05</modified>
+    </dates>
+  </vuln>
+
+  <vuln vid="f95a9005-88ae-11d8-90d1-0020ed76ef5a">
+    <topic>shmat reference counting bug</topic>
+    <affects>
+      <system>
+	<name>FreeBSD</name>
+	<range><ge>5.2</ge><lt>5.2_2</lt></range>
+	<range><ge>5.1</ge><lt>5.1_14</lt></range>
+	<range><ge>5.0</ge><lt>5.0_20</lt></range>
+	<range><ge>4.9</ge><lt>4.9_2</lt></range>
+	<range><ge>4.8</ge><lt>4.8_15</lt></range>
+	<range><lt>4.7_25</lt></range>
+      </system>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>A programming error in the <a href="http://www.freebsd.org/cgi/man.cgi?query=shmat">shmat(2)</a> system call can result
+          in a shared memory segment's reference count being erroneously
+	  incremented.</p>
+        <p>It may be possible to cause a shared memory segment to
+          reference unallocated kernel memory, but remain valid.
+          This could allow a local attacker to gain read or write
+          access to a portion of kernel memory, resulting in sensitive
+          information disclosure, bypass of access control mechanisms,
+          or privilege escalation. </p>
+      </body>
+    </description>
+    <references>
+      <cvename>CAN-2004-0114</cvename>
+      <freebsdsa>SA-04:02.shmat</freebsdsa>
+      <url>http://www.pine.nl/press/pine-cert-20040201.txt</url>
+    </references>
+    <dates>
+      <discovery>2004-02-01</discovery>
+      <entry>2004-04-07</entry>
+      <modified>2004-05-05</modified>
+    </dates>
+  </vuln>
+
+  <vuln vid="9082a85a-88ae-11d8-90d1-0020ed76ef5a">
+    <topic>jailed processes can attach to other jails</topic>
+    <affects>
+      <system>
+	<name>FreeBSD</name>
+	<range><ge>5.1</ge><lt>5.1_14</lt></range>
+	<range><ge>5.2</ge><lt>5.2.1</lt></range>
+      </system>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>A programming error has been found in the <a href="http://www.freebsd.org/cgi/man.cgi?query=jail_attach">jail_attach(2)</a>
+          system call which affects the way that system call verifies
+          the privilege level of the calling process.  Instead of
+          failing immediately if the calling process was already
+          jailed, the jail_attach system call would fail only after
+	  changing the calling process's root directory.</p>
+        <p>A process with superuser privileges inside a jail could
+          change its root directory to that of a different jail,
+          and thus gain full read and write access to files and
+          directories within the target jail. </p>
+      </body>
+    </description>
+    <references>
+      <cvename>CAN-2004-0126</cvename>
+      <freebsdsa>SA-04:03.jail</freebsdsa>
+    </references>
+    <dates>
+      <discovery>2004-02-19</discovery>
+      <entry>2004-04-07</entry>
+      <modified>2004-05-05</modified>
+    </dates>
+  </vuln>
+
+  <vuln vid="e289f7fd-88ac-11d8-90d1-0020ed76ef5a">
+    <topic>many out-of-sequence TCP packets denial-of-service</topic>
+    <affects>
+      <system>
+	<name>FreeBSD</name>
+	<range><ge>5.2</ge><lt>5.2.1_2</lt></range>
+	<range><ge>5.0</ge><lt>5.1_15</lt></range>
+	<range><ge>4.9</ge><lt>4.9_3</lt></range>
+	<range><ge>4.8</ge><lt>4.8_16</lt></range>
+	<range><lt>4.7_26</lt></range>
+      </system>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+        <p>FreeBSD does not limit the number of TCP segments that
+        may be held in a reassembly queue.  A remote attacker may
+        conduct a low-bandwidth denial-of-service attack against
+        a machine providing services based on TCP (there are many
+        such services, including HTTP, SMTP, and FTP).  By sending
+        many out-of-sequence TCP segments, the attacker can cause
+        the target machine to consume all available memory buffers
+        (``mbufs''), likely leading to a system crash. </p>
+      </body>
+    </description>
+    <references>
+      <cvename>CAN-2004-0171</cvename>
+      <freebsdsa>SA-04:04.tcp</freebsdsa>
+      <url>http://www.idefense.com/application/poi/display?id=78&amp;type=vulnerabilities</url>
+    </references>
+    <dates>
+      <discovery>2004-02-18</discovery>
+      <entry>2004-04-07</entry>
+      <modified>2004-05-05</modified>
+    </dates>
+  </vuln>
+
+  <vuln vid="2c6acefd-8194-11d8-9645-0020ed76ef5a">
+    <topic>setsockopt(2) IPv6 sockets input validation error</topic>
+    <affects>
+      <system>
+	<name>FreeBSD</name>
+	<range><ge>5.2</ge><lt>5.2.1_4</lt></range>
+      </system>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>From the FreeBSD Security Advisory:</p>
+	<blockquote>
+          <p>A programming error in the handling of some IPv6 socket
+	    options within the <a href="http://www.freebsd.org/cgi/man.cgi?query=setsockopt">setsockopt(2)</a> system call may result
+            in memory locations being accessed without proper
+            validation.</p>
+          <p>It may be possible for a local attacker to read portions
+            of kernel memory, resulting in disclosure of sensitive
+            information.  A local attacker can cause a system
+            panic.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CAN-2004-0370</cvename>
+      <freebsdsa>SA-04:06.ipv6</freebsdsa>
+    </references>
+    <dates>
+      <discovery>2004-03-29</discovery>
+      <entry>2004-03-29</entry>
+      <modified>2004-05-05</modified>
+    </dates>
+  </vuln>
+
+  <vuln vid="68233cba-7774-11d8-89ed-0020ed76ef5a">
+    <topic>OpenSSL ChangeCipherSpec denial-of-service vulnerability</topic>
+    <affects>
+      <package>
+	<name>openssl</name>
+	<name>openssl-beta</name>
+	<range><lt>0.9.7d</lt></range>
+      </package>
+      <system>
+        <name>FreeBSD</name>
+	<range><ge>4.0</ge><lt>4.8_17</lt></range>
+	<range><ge>4.9</ge><lt>4.9_4</lt></range>
+	<range><ge>5.0</ge><lt>5.1_16</lt></range>
+	<range><ge>5.2</ge><lt>5.2.1_3</lt></range>
+      </system>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>A remote attacker could cause an application using OpenSSL to
+	  crash by performing a specially crafted SSL/TLS handshake.</p>
+      </body>
+    </description>
+    <references>
+      <cvename>CAN-2004-0079</cvename>
+      <url>http://www.openssl.org/news/secadv_20040317.txt</url>
+      <freebsdsa>SA-04:05.openssl</freebsdsa>
+      <certvu>288574</certvu>
+      <bid>9899</bid>
+    </references>
+    <dates>
+      <discovery>2004-03-17</discovery>
+      <entry>2004-03-17</entry>
+      <modified>2004-05-05</modified>
+    </dates>
+  </vuln>
+
+  <vuln vid="f04cc5cb-2d0b-11d8-beaf-000a95c4d922">
+    <topic>bind8 negative cache poison attack</topic>
+    <affects>
+      <package>
+        <name>bind</name>
+        <range><ge>8.3</ge><lt>8.3.7</lt></range>
+        <range><ge>8.4</ge><lt>8.4.3</lt></range>
+      </package>
+      <system>
+        <name>FreeBSD</name>
+        <range><ge>5.1</ge><lt>5.1_11</lt></range>
+        <range><ge>5.0</ge><lt>5.0_19</lt></range>
+        <range><ge>4.9</ge><lt>4.9_1</lt></range>
+        <range><ge>4.8</ge><lt>4.8_14</lt></range>
+        <range><ge>4.7</ge><lt>4.7_24</lt></range>
+        <range><ge>4.6</ge><lt>4.6.2_27</lt></range>
+        <range><ge>4.5</ge><lt>4.5_37</lt></range>
+        <range><lt>4.4_47</lt></range>
+      </system>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+        <p>A programming error in BIND 8 named can result in a DNS
+        message being incorrectly cached as a negative response.  As
+        a result, an attacker may arrange for malicious DNS messages
+        to be delivered to a target name server, and cause that name
+        server to cache a negative response for some target domain
+        name.  The name server would thereafter respond negatively
+        to legitimate queries for that domain name, resulting in a
+        denial-of-service for applications that require DNS.</p>
+      </body>
+    </description>
+    <references>
+      <cvename>CAN-2003-0914</cvename>
+      <freebsdsa>SA-03:19.bind</freebsdsa>
+      <certvu>734644</certvu>
+    </references>
+    <dates>
+      <discovery>2003-11-28</discovery>
+      <entry>2003-12-12</entry>
+      <modified>2004-05-05</modified>
     </dates>
   </vuln>
 
@@ -146,37 +400,6 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     </dates>
   </vuln>
 
-  <vuln vid="0c6f3fde-9c51-11d8-9366-0020ed76ef5a">
-    <topic>Midnight Commander buffer overflows, format string bugs, and
-      insecure temporary file handling</topic>
-    <affects>
-      <package>
-	<name>mc</name>
-	<range><le>4.6.0_10</le></range>
-      </package>
-    </affects>
-    <description>
-      <body xmlns="http://www.w3.org/1999/xhtml">
-	<p>Jakub Jelinek reports several security related bugs in
-	  Midnight Commander, including:</p>
-	<ul>
-	  <li>Multiple buffer overflows (CAN-2004-0226)</li>
-	  <li>Insecure temporary file handling (CAN-2004-0231)</li>
-	  <li>Format string bug (CAN-2004-0232)</li>
-	</ul>
-      </body>
-    </description>
-    <references>
-      <cvename>CAN-2004-0226</cvename>
-      <cvename>CAN-2004-0231</cvename>
-      <cvename>CAN-2004-0232</cvename>
-    </references>
-    <dates>
-      <discovery>2004-04-29</discovery>
-      <entry>2004-05-02</entry>
-    </dates>
-  </vuln>
-
   <vuln vid="cb6c6c29-9c4f-11d8-9366-0020ed76ef5a">
     <topic>proftpd IP address access control list breakage</topic>
     <affects>
@@ -201,39 +424,6 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
       <discovery>2004-11-04</discovery>
       <entry>2004-05-02</entry>
       <modified>2004-05-03</modified>
-    </dates>
-  </vuln>
-
-  <vuln vid="fb521119-9bc4-11d8-9366-0020ed76ef5a">
-    <topic>pound remotely exploitable vulnerability</topic>
-    <affects>
-      <package>
-	<name>pound</name>
-	<range><lt>1.6</lt></range>
-      </package>
-    </affects>
-    <description>
-      <body xmlns="http://www.w3.org/1999/xhtml">
-	<p>An unknown remotely exploitable vulnerability was disclosed.
-	  Robert Segall writes:</p>
-	<blockquote
-	  cite="http://www.apsis.ch/pound/pound_list/archive/2003/2003-12/1070234315000">
-          <p>a security vulnerability was brought to my attention
-            (many thanks to Akira Higuchi).  Everyone running any
-            previous version should upgrade to 1.6 immediately - the
-            vulnerability may allow a remote exploit. No exploits are
-            currently known and none have been observed in the wild
-            till now. The danger is minimised if you run Pound in a
-            root jail and/or you run Pound as non-root user.</p>
-	</blockquote>
-      </body>
-    </description>
-    <references>
-      <url>http://www.apsis.ch/pound/pound_list/archive/2003/2003-12/1070234315000</url>
-    </references>
-    <dates>
-      <discovery>2003-12-01</discovery>
-      <entry>2004-05-02</entry>
     </dates>
   </vuln>
 
@@ -265,6 +455,193 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
       <discovery>2004-04-05</discovery>
       <entry>2004-04-23</entry>
       <modified>2004-05-03</modified>
+    </dates>
+  </vuln>
+
+  <vuln vid="73ea0706-9c57-11d8-9366-0020ed76ef5a">
+    <topic>rsync path traversal issue</topic>
+    <affects>
+      <package>
+	<name>rsync</name>
+	<range><lt>2.6.1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>When running rsync in daemon mode, no checks were made
+	  to prevent clients from writing outside of a module's
+	`path' setting.</p>
+      </body>
+    </description>
+    <references>
+      <cvename>CAN-2004-0426</cvename>
+      <url>http://rsync.samba.org/#security_apr04</url>
+    </references>
+    <dates>
+      <discovery>2004-04-26</discovery>
+      <entry>2004-05-02</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="e50b04e8-9c55-11d8-9366-0020ed76ef5a">
+    <topic>xine-lib arbitrary file overwrite</topic>
+    <affects>
+      <package>
+	<name>libxine</name>
+	<range><gt>0.9</gt><lt>1.0.r3_5</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>From the xinehq advisory:</p>
+	<blockquote cite="http://www.xinehq.de/index.php/security/XSA-2004-1">
+          <p>By opening a malicious MRL in any xine-lib based media
+            player, an attacker can write arbitrary content to an
+            arbitrary file, only restricted by the permissions of the
+            user running the application.</p>
+	</blockquote>
+	<p>The flaw is a result of a feature that allows MRLs (media
+	  resource locator URIs) to specify arbitrary configuration
+	  options.</p>
+      </body>
+    </description>
+    <references>
+      <bid>10193</bid>
+      <url>http://www.xinehq.de/index.php/security/XSA-2004-1</url>
+    </references>
+    <dates>
+      <discovery>2004-04-20</discovery>
+      <entry>2004-05-02</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="0c6f3fde-9c51-11d8-9366-0020ed76ef5a">
+    <topic>Midnight Commander buffer overflows, format string bugs, and insecure temporary file handling</topic>
+    <affects>
+      <package>
+	<name>mc</name>
+	<range><le>4.6.0_10</le></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Jakub Jelinek reports several security related bugs in
+	  Midnight Commander, including:</p>
+	<ul>
+	  <li>Multiple buffer overflows (CAN-2004-0226)</li>
+	  <li>Insecure temporary file handling (CAN-2004-0231)</li>
+	  <li>Format string bug (CAN-2004-0232)</li>
+	</ul>
+      </body>
+    </description>
+    <references>
+      <cvename>CAN-2004-0226</cvename>
+      <cvename>CAN-2004-0231</cvename>
+      <cvename>CAN-2004-0232</cvename>
+    </references>
+    <dates>
+      <discovery>2004-04-29</discovery>
+      <entry>2004-05-02</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="fb521119-9bc4-11d8-9366-0020ed76ef5a">
+    <topic>pound remotely exploitable vulnerability</topic>
+    <affects>
+      <package>
+	<name>pound</name>
+	<range><lt>1.6</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>An unknown remotely exploitable vulnerability was disclosed.
+	  Robert Segall writes:</p>
+	<blockquote cite="http://www.apsis.ch/pound/pound_list/archive/2003/2003-12/1070234315000">
+          <p>a security vulnerability was brought to my attention
+            (many thanks to Akira Higuchi).  Everyone running any
+            previous version should upgrade to 1.6 immediately - the
+            vulnerability may allow a remote exploit. No exploits are
+            currently known and none have been observed in the wild
+            till now. The danger is minimised if you run Pound in a
+            root jail and/or you run Pound as non-root user.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://www.apsis.ch/pound/pound_list/archive/2003/2003-12/1070234315000</url>
+    </references>
+    <dates>
+      <discovery>2003-12-01</discovery>
+      <entry>2004-05-02</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="2e129846-8fbb-11d8-8b29-0020ed76ef5a">
+    <topic>MySQL insecure temporary file creation (mysqlbug)</topic>
+    <affects>
+      <package>
+        <name>mysql-client</name>
+	<range><gt>3.2</gt></range>
+      </package>
+    </affects>
+    <description>
+       <body xmlns="http://www.w3.org/1999/xhtml">
+	 <p>Shaun Colley reports that the script `mysqlbug' included
+	   with MySQL sometimes creates temporary files in an unsafe
+	   manner.  As a result, an attacker may create a symlink in
+	   /tmp so that if another user invokes `mysqlbug' and <em>quits
+	   without making <strong>any</strong> changes</em>, an
+	   arbitrary file may be overwritten with the bug report
+	   template.</p>
+       </body>
+    </description>
+    <references>
+      <url>http://marc.theaimsgroup.com/?l=bugtraq&amp;m=108023246916294&amp;w=2</url>
+      <url>http://bugs.mysql.com/bug.php?id=3284</url>
+      <bid>9976</bid>
+      <cvename>CAN-2004-0381</cvename>
+    </references>
+    <dates>
+      <discovery>2004-03-25</discovery>
+      <entry>2004-04-16</entry>
+      <modified>2004-04-30</modified>
+    </dates>
+  </vuln>
+
+  <vuln vid="84237895-8f39-11d8-8b29-0020ed76ef5a">
+    <topic>neon format string vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>neon</name>
+	<range><lt>0.24.5</lt></range>
+      </package>
+      <package>
+	<name>tla</name>
+	<range><lt>tla-1.2_1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+        <p>Greuff reports that the neon WebDAV client library contains
+          several format string bugs within error reporting code.  A
+          malicious server may exploit these bugs by sending specially
+          crafted PROPFIND or PROPPATCH responses.</p>
+	<p>Although several applications include neon, such as cadaver and
+	  subversion, the FreeBSD Ports of these applications are not
+	  impacted.  They are specifically configured to NOT use the
+	  included neon.  Only packages listed as affected in this
+	  notice are believed to be impacted.</p>
+      </body>
+    </description>
+    <references>
+      <cvename>CAN-2004-0179</cvename>
+      <url>http://www.webdav.org/neon/</url>
+    </references>
+    <dates>
+      <discovery>2004-04-14</discovery>
+      <entry>2004-04-15</entry>
+      <modified>2004-04-30</modified>
     </dates>
   </vuln>
 
@@ -324,38 +701,6 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     </dates>
   </vuln>
 
-  <vuln vid="2e129846-8fbb-11d8-8b29-0020ed76ef5a">
-    <topic>MySQL insecure temporary file creation (mysqlbug)</topic>
-    <affects>
-      <package>
-        <name>mysql-client</name>
-	<range><gt>3.2</gt></range>
-      </package>
-    </affects>
-    <description>
-       <body xmlns="http://www.w3.org/1999/xhtml">
-	 <p>Shaun Colley reports that the script `mysqlbug' included
-	   with MySQL sometimes creates temporary files in an unsafe
-	   manner.  As a result, an attacker may create a symlink in
-	   /tmp so that if another user invokes `mysqlbug' and <em>quits
-	   without making <strong>any</strong> changes</em>, an
-	   arbitrary file may be overwritten with the bug report
-	   template.</p>
-       </body>
-    </description>
-    <references>
-      <url>http://marc.theaimsgroup.com/?l=bugtraq&amp;m=108023246916294&amp;w=2</url>
-      <url>http://bugs.mysql.com/bug.php?id=3284</url>
-      <bid>9976</bid>
-      <cvename>CAN-2004-0381</cvename>
-    </references>
-    <dates>
-      <discovery>2004-03-25</discovery>
-      <entry>2004-04-16</entry>
-      <modified>2004-04-30</modified>
-    </dates>
-  </vuln>
-
   <vuln vid="99230277-8fb4-11d8-8b29-0020ed76ef5a">
     <topic>ident2 double byte buffer overflow</topic>
     <affects>
@@ -405,88 +750,6 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     <dates>
       <discovery>2004-01-14</discovery>
       <entry>2004-04-15</entry>
-    </dates>
-  </vuln>
-
-  <vuln vid="84237895-8f39-11d8-8b29-0020ed76ef5a">
-    <topic>neon format string vulnerabilities</topic>
-    <affects>
-      <package>
-	<name>neon</name>
-	<range><lt>0.24.5</lt></range>
-      </package>
-      <package>
-	<name>tla</name>
-	<range><lt>tla-1.2_1</lt></range>
-      </package>
-    </affects>
-    <description>
-      <body xmlns="http://www.w3.org/1999/xhtml">
-        <p>Greuff reports that the neon WebDAV client library contains
-          several format string bugs within error reporting code.  A
-          malicious server may exploit these bugs by sending specially
-          crafted PROPFIND or PROPPATCH responses.</p>
-	<p>Although several applications include neon, such as cadaver and
-	  subversion, the FreeBSD Ports of these applications are not
-	  impacted.  They are specifically configured to NOT use the
-	  included neon.  Only packages listed as affected in this
-	  notice are believed to be impacted.</p>
-      </body>
-    </description>
-    <references>
-      <cvename>CAN-2004-0179</cvename>
-      <url>http://www.webdav.org/neon/</url>
-    </references>
-    <dates>
-      <discovery>2004-04-14</discovery>
-      <entry>2004-04-15</entry>
-      <modified>2004-04-30</modified>
-    </dates>
-  </vuln>
-
-  <vuln vid="0792e7a7-8e37-11d8-90d1-0020ed76ef5a">
-    <topic>CVS path validation errors</topic>
-    <affects>
-      <package>
-	<name>cvs+ipv6</name>
-	<range><le>1.11.5_1</le></range>
-      </package>
-      <system>
-	<name>FreeBSD</name>
-	<range><ge>5.2</ge><lt>5.2.1_5</lt></range>
-	<range><ge>4.9</ge><lt>4.9_5</lt></range>
-	<range><ge>4.8</ge><lt>4.8_18</lt></range>
-      </system>
-    </affects>
-    <description>
-      <body xmlns="http://www.w3.org/1999/xhtml">
-        <p>Two programming errors were discovered in which path names
-          handled by CVS were not properly validated.  In one case,
-          the CVS client accepts absolute path names from the server
-          when determining which files to update.  In another case,
-          the CVS server accepts relative path names from the client
-          when determining which files to transmit, including those
-          containing references to parent directories (`../').</p>
-        <p>These programming errors generally only have a security
-	  impact when dealing with remote CVS repositories.</p>
-        <p>A malicious CVS server may cause a CVS client to overwrite
-	  arbitrary files on the client's system.</p>
-        <p>A CVS client may request RCS files from a remote system
-          other than those in the repository specified by $CVSROOT.
-          These RCS files need not be part of any CVS repository
-          themselves.</p>
-      </body>
-    </description>
-    <references>
-      <cvename>CAN-2004-0180</cvename>
-      <cvename>CAN-2004-0405</cvename>
-      <url>http://ccvs.cvshome.org/servlets/NewsItemView?newsID=102</url>
-      <freebsdsa>SA-04:07.cvs</freebsdsa>
-    </references>
-    <dates>
-      <discovery>2004-04-14</discovery>
-      <entry>2004-04-14</entry>
-      <modified>2004-05-05</modified>
     </dates>
   </vuln>
 
@@ -663,158 +926,6 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
       <discovery>2003-09-19</discovery>
       <entry>2004-04-03</entry>
       <modified>2004-04-13</modified>
-    </dates>
-  </vuln>
-
-  <vuln vid="7229d900-88af-11d8-90d1-0020ed76ef5a">
-    <topic>mksnap_ffs clears file system options</topic>
-    <affects>
-      <system>
-	<name>FreeBSD</name>
-	<range><ge>5.2</ge><lt>5.2_1</lt></range>
-	<range><ge>5.1</ge><lt>5.1_12</lt></range>
-      </system>
-    </affects>
-    <description>
-      <body xmlns="http://www.w3.org/1999/xhtml">
-        <p>The kernel interface for creating a snapshot of a
-          filesystem is the same as that for changing the flags on
-	  that filesystem.  Due to an oversight, the <a href="http://www.freebsd.org/cgi/man.cgi?query=mksnap_ffs">mksnap_ffs(8)</a>
-          command called that interface with only the snapshot flag
-          set, causing all other flags to be reset to the default
-	  value.</p>
-        <p>A regularly scheduled backup of a live filesystem, or
-          any other process that uses the mksnap_ffs command
-          (for instance, to provide a rough undelete functionality
-          on a file server), will clear any flags in effect on the
-          filesystem being snapshot.  Possible consequences depend
-          on local usage, but can include disabling extended access
-          control lists or enabling the use of setuid executables
-	  stored on an untrusted filesystem.</p>
-        <p>The mksnap_ffs command is normally only available to
-          the superuser and members of the `operator' group.  There
-          is therefore no risk of a user gaining elevated privileges
-          directly through use of the mksnap_ffs command unless
-          it has been intentionally made available to unprivileged
-          users.</p>
-      </body>
-    </description>
-    <references>
-      <cvename>CAN-2004-0099</cvename>
-      <freebsdsa>SA-04:01.mksnap_ffs</freebsdsa>
-    </references>
-    <dates>
-      <discovery>2004-01-30</discovery>
-      <entry>2004-04-07</entry>
-      <modified>2004-05-05</modified>
-    </dates>
-  </vuln>
-
-  <vuln vid="f95a9005-88ae-11d8-90d1-0020ed76ef5a">
-    <topic>shmat reference counting bug</topic>
-    <affects>
-      <system>
-	<name>FreeBSD</name>
-	<range><ge>5.2</ge><lt>5.2_2</lt></range>
-	<range><ge>5.1</ge><lt>5.1_14</lt></range>
-	<range><ge>5.0</ge><lt>5.0_20</lt></range>
-	<range><ge>4.9</ge><lt>4.9_2</lt></range>
-	<range><ge>4.8</ge><lt>4.8_15</lt></range>
-	<range><lt>4.7_25</lt></range>
-      </system>
-    </affects>
-    <description>
-      <body xmlns="http://www.w3.org/1999/xhtml">
-	<p>A programming error in the <a href="http://www.freebsd.org/cgi/man.cgi?query=shmat">shmat(2)</a> system call can result
-          in a shared memory segment's reference count being erroneously
-	  incremented.</p>
-        <p>It may be possible to cause a shared memory segment to
-          reference unallocated kernel memory, but remain valid.
-          This could allow a local attacker to gain read or write
-          access to a portion of kernel memory, resulting in sensitive
-          information disclosure, bypass of access control mechanisms,
-          or privilege escalation. </p>
-      </body>
-    </description>
-    <references>
-      <cvename>CAN-2004-0114</cvename>
-      <freebsdsa>SA-04:02.shmat</freebsdsa>
-      <url>http://www.pine.nl/press/pine-cert-20040201.txt</url>
-    </references>
-    <dates>
-      <discovery>2004-02-01</discovery>
-      <entry>2004-04-07</entry>
-      <modified>2004-05-05</modified>
-    </dates>
-  </vuln>
-
-  <vuln vid="9082a85a-88ae-11d8-90d1-0020ed76ef5a">
-    <topic>jailed processes can attach to other jails</topic>
-    <affects>
-      <system>
-	<name>FreeBSD</name>
-	<range><ge>5.1</ge><lt>5.1_14</lt></range>
-	<range><ge>5.2</ge><lt>5.2.1</lt></range>
-      </system>
-    </affects>
-    <description>
-      <body xmlns="http://www.w3.org/1999/xhtml">
-	<p>A programming error has been found in the <a href="http://www.freebsd.org/cgi/man.cgi?query=jail_attach">jail_attach(2)</a>
-          system call which affects the way that system call verifies
-          the privilege level of the calling process.  Instead of
-          failing immediately if the calling process was already
-          jailed, the jail_attach system call would fail only after
-	  changing the calling process's root directory.</p>
-        <p>A process with superuser privileges inside a jail could
-          change its root directory to that of a different jail,
-          and thus gain full read and write access to files and
-          directories within the target jail. </p>
-      </body>
-    </description>
-    <references>
-      <cvename>CAN-2004-0126</cvename>
-      <freebsdsa>SA-04:03.jail</freebsdsa>
-    </references>
-    <dates>
-      <discovery>2004-02-19</discovery>
-      <entry>2004-04-07</entry>
-      <modified>2004-05-05</modified>
-    </dates>
-  </vuln>
-
-  <vuln vid="e289f7fd-88ac-11d8-90d1-0020ed76ef5a">
-    <topic>many out-of-sequence TCP packets denial-of-service</topic>
-    <affects>
-      <system>
-	<name>FreeBSD</name>
-	<range><ge>5.2</ge><lt>5.2.1_2</lt></range>
-	<range><ge>5.0</ge><lt>5.1_15</lt></range>
-	<range><ge>4.9</ge><lt>4.9_3</lt></range>
-	<range><ge>4.8</ge><lt>4.8_16</lt></range>
-	<range><lt>4.7_26</lt></range>
-      </system>
-    </affects>
-    <description>
-      <body xmlns="http://www.w3.org/1999/xhtml">
-        <p>FreeBSD does not limit the number of TCP segments that
-        may be held in a reassembly queue.  A remote attacker may
-        conduct a low-bandwidth denial-of-service attack against
-        a machine providing services based on TCP (there are many
-        such services, including HTTP, SMTP, and FTP).  By sending
-        many out-of-sequence TCP segments, the attacker can cause
-        the target machine to consume all available memory buffers
-        (``mbufs''), likely leading to a system crash. </p>
-      </body>
-    </description>
-    <references>
-      <cvename>CAN-2004-0171</cvename>
-      <freebsdsa>SA-04:04.tcp</freebsdsa>
-      <url>http://www.idefense.com/application/poi/display?id=78&amp;type=vulnerabilities</url>
-    </references>
-    <dates>
-      <discovery>2004-02-18</discovery>
-      <entry>2004-04-07</entry>
-      <modified>2004-05-05</modified>
     </dates>
   </vuln>
 
@@ -1187,40 +1298,6 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     </dates>
   </vuln>
 
-  <vuln vid="2c6acefd-8194-11d8-9645-0020ed76ef5a">
-    <topic>setsockopt(2) IPv6 sockets input validation error</topic>
-    <affects>
-      <system>
-	<name>FreeBSD</name>
-	<range><ge>5.2</ge><lt>5.2.1_4</lt></range>
-      </system>
-    </affects>
-    <description>
-      <body xmlns="http://www.w3.org/1999/xhtml">
-	<p>From the FreeBSD Security Advisory:</p>
-	<blockquote>
-          <p>A programming error in the handling of some IPv6 socket
-	    options within the <a href="http://www.freebsd.org/cgi/man.cgi?query=setsockopt">setsockopt(2)</a> system call may result
-            in memory locations being accessed without proper
-            validation.</p>
-          <p>It may be possible for a local attacker to read portions
-            of kernel memory, resulting in disclosure of sensitive
-            information.  A local attacker can cause a system
-            panic.</p>
-	</blockquote>
-      </body>
-    </description>
-    <references>
-      <cvename>CAN-2004-0370</cvename>
-      <freebsdsa>SA-04:06.ipv6</freebsdsa>
-    </references>
-    <dates>
-      <discovery>2004-03-29</discovery>
-      <entry>2004-03-29</entry>
-      <modified>2004-05-05</modified>
-    </dates>
-  </vuln>
-
   <vuln vid="3e9be8c4-8192-11d8-9645-0020ed76ef5a">
     <topic>ecartis buffer overflows and input validation bugs</topic>
     <affects>
@@ -1407,42 +1484,6 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
       <discovery>2004-01-13</discovery>
       <entry>2004-03-25</entry>
       <modified>2004-03-29</modified>
-    </dates>
-  </vuln>
-
-  <vuln vid="68233cba-7774-11d8-89ed-0020ed76ef5a">
-    <topic>OpenSSL ChangeCipherSpec denial-of-service vulnerability</topic>
-    <affects>
-      <package>
-	<name>openssl</name>
-	<name>openssl-beta</name>
-	<range><lt>0.9.7d</lt></range>
-      </package>
-      <system>
-        <name>FreeBSD</name>
-	<range><ge>4.0</ge><lt>4.8_17</lt></range>
-	<range><ge>4.9</ge><lt>4.9_4</lt></range>
-	<range><ge>5.0</ge><lt>5.1_16</lt></range>
-	<range><ge>5.2</ge><lt>5.2.1_3</lt></range>
-      </system>
-    </affects>
-    <description>
-      <body xmlns="http://www.w3.org/1999/xhtml">
-	<p>A remote attacker could cause an application using OpenSSL to
-	  crash by performing a specially crafted SSL/TLS handshake.</p>
-      </body>
-    </description>
-    <references>
-      <cvename>CAN-2004-0079</cvename>
-      <url>http://www.openssl.org/news/secadv_20040317.txt</url>
-      <freebsdsa>SA-04:05.openssl</freebsdsa>
-      <certvu>288574</certvu>
-      <bid>9899</bid>
-    </references>
-    <dates>
-      <discovery>2004-03-17</discovery>
-      <entry>2004-03-17</entry>
-      <modified>2004-05-05</modified>
     </dates>
   </vuln>
 
@@ -2748,50 +2789,6 @@ misc.c:
     <dates>
       <discovery>2003-09-23</discovery>
       <entry>2004-01-05</entry>
-    </dates>
-  </vuln>
-
-  <vuln vid="f04cc5cb-2d0b-11d8-beaf-000a95c4d922">
-    <topic>bind8 negative cache poison attack</topic>
-    <affects>
-      <package>
-        <name>bind</name>
-        <range><ge>8.3</ge><lt>8.3.7</lt></range>
-        <range><ge>8.4</ge><lt>8.4.3</lt></range>
-      </package>
-      <system>
-        <name>FreeBSD</name>
-        <range><ge>5.1</ge><lt>5.1_11</lt></range>
-        <range><ge>5.0</ge><lt>5.0_19</lt></range>
-        <range><ge>4.9</ge><lt>4.9_1</lt></range>
-        <range><ge>4.8</ge><lt>4.8_14</lt></range>
-        <range><ge>4.7</ge><lt>4.7_24</lt></range>
-        <range><ge>4.6</ge><lt>4.6.2_27</lt></range>
-        <range><ge>4.5</ge><lt>4.5_37</lt></range>
-        <range><lt>4.4_47</lt></range>
-      </system>
-    </affects>
-    <description>
-      <body xmlns="http://www.w3.org/1999/xhtml">
-        <p>A programming error in BIND 8 named can result in a DNS
-        message being incorrectly cached as a negative response.  As
-        a result, an attacker may arrange for malicious DNS messages
-        to be delivered to a target name server, and cause that name
-        server to cache a negative response for some target domain
-        name.  The name server would thereafter respond negatively
-        to legitimate queries for that domain name, resulting in a
-        denial-of-service for applications that require DNS.</p>
-      </body>
-    </description>
-    <references>
-      <cvename>CAN-2003-0914</cvename>
-      <freebsdsa>SA-03:19.bind</freebsdsa>
-      <certvu>734644</certvu>
-    </references>
-    <dates>
-      <discovery>2003-11-28</discovery>
-      <entry>2003-12-12</entry>
-      <modified>2004-05-05</modified>
     </dates>
   </vuln>
 
