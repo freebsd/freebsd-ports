@@ -58,10 +58,10 @@ include/openssl/x509v3.h
 lib/libRSAglue.a
 lib/libcrypto.a
 lib/libcrypto.so
-lib/libcrypto.so.2
+lib/libcrypto.so.%%SHLIBVER%%
 lib/libssl.a
 lib/libssl.so
-lib/libssl.so.2
+lib/libssl.so.%%SHLIBVER%%
 openssl/misc/CA.pl
 openssl/misc/CA.sh
 openssl/misc/c_hash

@@ -7,6 +7,7 @@
 
 PORTNAME=	openssl
 PORTVERSION=	0.9.6c
+PORTREVISION=	1
 CATEGORIES=	security devel
 MASTER_SITES=	http://www.openssl.org/source/ \
 		ftp://ftp.openssl.org/source/ \
@@ -31,8 +32,9 @@ USE_PERL5=	yes
 PLIST=		${PKGDIR}/pkg-plist.noshared
 .else
 ALL_TARGET=	freebsd-shared all
-SHLIBVER=	2
+SHLIBVER=	3
 MAKE_ENV+=	SHLIBVER=${SHLIBVER}
+PLIST_SUB+=	SHLIBVER=${SHLIBVER}
 INSTALLS_SHLIB=	yes
 .endif
 
