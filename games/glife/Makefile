@@ -15,8 +15,6 @@ DISTNAME=	gLife-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 
-BROKEN=		"Does not patch"
-
 USE_REINPLACE=	yes
 USE_X_PREFIX=	yes
 USE_LIBTOOL=	yes
