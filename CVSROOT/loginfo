@@ -14,31 +14,18 @@
 # If the name "ALL" appears as a regular expression it is always used
 # in addition to the first matching regex or "DEFAULT".
 #
-# The filter program may use one and only one "%s" modifier (ala printf).  If
-# such a "%s" is specified in the filter program, a brief title is included
-# (as one argument, enclosed in single quotes) showing the relative directory
-# name and listing the modified file names.
+# You may specify a format string as part of the
+# filter.  The string is composed of a `%' followed
+# by a single format character, or followed by a set of format
+# characters surrounded by `{' and `}' as separators.  The format
+# characters are:
 #
-# NOTE: contrib/log usage:  (currently requires perl)
-#	-d		- turn debugging on....
-#	-m mailto	- send mail to "mailto" (multiple -m's permitted)
-#	-f logfile	- required arg:  save messages to logfile
-#	%s		- may follow other options at the end of the line
+#   s = file name
+#   V = old version number (pre-checkin)
+#   v = new version number (post-checkin)
 #
-# NOTE: contrib/log_accum usage:  (currently requires perl)
-# (must have 'commit_prep -r' in commitinfo)
-#	-d		- turn debugging on....
-#	-M modulename	- use this as the module name (necessary for sub-dirs)
-#	-m mailto	- send mail to "mailto" (multiple -m's permitted) [optional]
-#	-f logfile	- save messages to logfile [optional]
-#	%s		- must follow other options at the end of the line
-#
-# without perl you could do this:
-#DEFAULT		(echo ""; who am i; date; cat) >> $CVSROOT/CVSROOT/commitlog
-#
-#DEFAULT		$CVSROOT/CVSROOT/log -f $CVSROOT/CVSROOT/commitlog  %s
-#
-# NB: For FreeBSD 2.X, the following line is the ONLY one which should
-# ever appear.  If you want to do something extra to the log output, learn
-# Perl.
+# For example:
+#DEFAULT (echo ""; id; echo %s; date; cat) >> $CVSROOT/CVSROOT/commitlog
+# or
+#DEFAULT (echo ""; id; echo %{sVv}; date; cat) >> $CVSROOT/CVSROOT/commitlog
 DEFAULT		$CVSROOT/CVSROOT/log_accum.pl %s
