@@ -25,4 +25,7 @@ CONFIGURE_ARGS=	--with-skey \
 MAN5=		sudoers.5
 MAN8=		sudo.8 visudo.8
 
+post-install:
+	${INSTALL_DATA} ${WRKSRC}/sample.sudoers ${PREFIX}/etc/sudoers.sample
+
 .include <bsd.port.mk>
