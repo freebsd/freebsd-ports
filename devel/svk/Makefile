@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	svk
-PORTVERSION=	0.22
+PORTVERSION=	0.23
 PORTREVISION=	0
 CATEGORIES=	devel perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
@@ -29,12 +29,14 @@ BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/SVN/Core.pm:${PORTSDIR}/devel/subversio
 		${SITE_PERL}/IO/Digest.pm:${PORTSDIR}/devel/p5-IO-Digest \
 		${SITE_PERL}/Locale/Maketext/Lexicon.pm:${PORTSDIR}/devel/p5-Locale-Maketext-Lexicon \
 		${SITE_PERL}/Locale/Maketext/Simple.pm:${PORTSDIR}/devel/p5-Locale-Maketext-Simple \
+		${SITE_PERL}/PerlIO/eol/eol.pm:${PORTSDIR}/devel/p5-PerlIO-eol \
 		${SITE_PERL}/PerlIO/via/dynamic.pm:${PORTSDIR}/devel/p5-PerlIO-via-dynamic \
 		${SITE_PERL}/PerlIO/via/symlink.pm:${PORTSDIR}/devel/p5-PerlIO-via-symlink \
 		${SITE_PERL}/Pod/Escapes.pm:${PORTSDIR}/textproc/p5-Pod-Escapes \
 		${SITE_PERL}/Pod/Simple.pm:${PORTSDIR}/textproc/p5-Pod-Simple \
 		${SITE_PERL}/Regexp/Shellish.pm:${PORTSDIR}/devel/p5-Regexp-Shellish \
 		${SITE_PERL}/SVN/Simple/Edit.pm:${PORTSDIR}/devel/p5-SVN-Simple \
+		${SITE_PERL}/URI.pm:${PORTSDIR}/net/p5-URI \
 		${SITE_PERL}/YAML.pm:${PORTSDIR}/textproc/p5-YAML
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
@@ -92,6 +94,8 @@ MAN3=		SVK.3 \
 		SVK::Editor::Rename.3 \
 		SVK::Editor::Translate.3 \
 		SVK::Editor::XD.3 \
+		SVK::Help::Index.3 \
+		SVK::Help::zh_tw::Index.3 \
 		SVK::Merge.3 \
 		SVK::Notify.3 \
 		SVK::Patch.3 \
@@ -123,6 +127,7 @@ pre-everything::
 
 post-patch:
 	@${REINPLACE_CMD} -e "s,%%PPERL%%,${PPERL}," ${WRKSRC}/bin/svk
+	@${FIND} ${WRKSRC} -name "*.orig" -a -exec ${RM} -f {} \;
 
 post-install:
 	@${ECHO}
