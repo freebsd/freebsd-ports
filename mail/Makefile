@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.61 1998/05/06 08:11:51 obrien Exp $
+# $Id: Makefile,v 1.62 1998/05/21 22:37:46 mph Exp $
 #
 
     SUBDIR += adcomplain
@@ -47,6 +47,7 @@
     SUBDIR += smtpd
     SUBDIR += smtpfeed
     SUBDIR += tkrat
+    SUBDIR += wmmail
     SUBDIR += xfaces
     SUBDIR += xfmail
     SUBDIR += xlbiff
