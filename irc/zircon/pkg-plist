@@ -119,6 +119,12 @@ lib/zircon/plugins/NoticeOps/setup.tcl
 lib/zircon/plugins/Sed/decrypt.tcl
 lib/zircon/plugins/Sed/pkgIndex.tcl
 lib/zircon/samples/zircon.ad
+@exec mkdir -p %D/lib/zircon/help/Channels
+@exec mkdir -p %D/lib/zircon/help/Servers
+@exec mkdir -p %D/lib/zircon/help/Services
+@exec mkdir -p %D/lib/zircon/help/Users
+@exec mkdir -p %D/lib/zircon/scripts
+@exec mkdir -p %D/lib/zircon/sounds
 @dirrm lib/zircon/help/Zircon/Windows
 @dirrm lib/zircon/help/Channels
 @dirrm lib/zircon/help/Servers
