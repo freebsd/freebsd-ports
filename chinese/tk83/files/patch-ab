@@ -1,0 +1,174 @@
+--- Makefile.in.orig	Thu Feb 10 11:11:01 2000
++++ Makefile.in	Wed Feb 21 23:12:17 2001
+@@ -56,7 +56,9 @@
+ BIN_DIR =		$(exec_prefix)/bin
+ 
+ # Directory in which to install the include file tk.h:
+-INCLUDE_INSTALL_DIR =	$(INSTALL_ROOT)$(prefix)/include
++INCLUDE_INSTALL_DIR =  $(INSTALL_ROOT)$(prefix)/include/tk$(VERSION)
++GENERIC_INCLUDE_INSTALL_DIR = $(INCLUDE_INSTALL_DIR)/generic
++UNIX_INCLUDE_INSTALL_DIR = $(INCLUDE_INSTALL_DIR)/unix
+ 
+ # Top-level directory for manual entries:
+ MAN_INSTALL_DIR =	$(INSTALL_ROOT)$(prefix)/man
+@@ -94,6 +96,9 @@
+ CFLAGS_DEBUG =		@CFLAGS_DEBUG@
+ CFLAGS_OPTIMIZE =	@CFLAGS_OPTIMIZE@
+ 
++# I18n improvement flags
++I18N_FLAGS		= @I18N_FLAGS@
++
+ # To change the compiler switches, for example to change from optimization to
+ # debugging symbols, change the following line:
+ #CFLAGS = 		$(CFLAGS_DEBUG)
+@@ -153,7 +158,7 @@
+ # "install" around;  better to use the install-sh script that comes
+ # with the distribution, which is slower but guaranteed to work.
+ 
+-INSTALL = @srcdir@/install-sh -c
++INSTALL = install -c
+ INSTALL_PROGRAM =	${INSTALL}
+ INSTALL_DATA =		${INSTALL} -m 644
+ 
+@@ -190,7 +195,7 @@
+ # Libraries to use when linking.  This definition is determined by the
+ # configure script.
+ LIBS = @LIBS@ $(X11_LIB_SWITCHES) @DL_LIBS@ @MATH_LIBS@ -lc
+-WISH_LIBS = $(TCL_LIB_SPEC) @LIBS@ $(X11_LIB_SWITCHES) @DL_LIBS@ @MATH_LIBS@ -lc
++WISH_LIBS = -L${PREFIX}/lib -ltcl${SHORT_TK_VER} @LIBS@ $(X11_LIB_SWITCHES) @DL_LIBS@ @MATH_LIBS@ -lc
+ 
+ # The symbol below provides support for dynamic loading and shared
+ # libraries.  See configure.in for a description of what it means.
+@@ -211,7 +216,8 @@
+ # modify any of this stuff by hand.
+ #----------------------------------------------------------------
+ 
+-AC_FLAGS =		@EXTRA_CFLAGS@ @DEFS@
++AC_FLAGS =		@EXTRA_CFLAGS@ @DEFS@ @CPPFLAGS@ \
++	@X11_IMAKE_FLAGS@ @I18N_FLAGS@
+ RANLIB =		@RANLIB@
+ SRC_DIR =		@srcdir@/..
+ TOP_DIR =		@srcdir@/..
+@@ -268,7 +274,8 @@
+ 	tkUnixCursor.o tkUnixDraw.o tkUnixEmbed.o tkUnixEvent.o \
+ 	tkUnixFocus.o tkUnixFont.o tkUnixInit.o tkUnixKey.o tkUnixMenu.o \
+ 	tkUnixMenubu.o tkUnixScale.o tkUnixScrlbr.o tkUnixSelect.o \
+-	tkUnixSend.o tkUnixWm.o tkUnixXId.o tkStubInit.o tkStubLib.o
++	tkUnixSend.o tkUnixWm.o tkUnixXId.o tkStubInit.o tkStubLib.o \
++	tkUnixIm.o
+ 
+ STUB_LIB_OBJS = tkStubLib.o tkStubImg.o
+ 
+@@ -330,6 +337,7 @@
+ 	$(UNIX_DIR)/tkUnixEmbed.c $(UNIX_DIR)/tkUnixEvent.c \
+ 	$(UNIX_DIR)/tkUnixFocus.c \
+ 	$(UNIX_DIR)/tkUnixFont.c $(UNIX_DIR)/tkUnixInit.c \
++	$(UNIX_DIR)/tkUnixIm.c \
+ 	$(UNIX_DIR)/tkUnixKey.c \
+ 	$(UNIX_DIR)/tkUnixMenu.c $(UNIX_DIR)/tkUnixMenubu.c \
+ 	$(UNIX_DIR)/tkUnixScale.c $(UNIX_DIR)/tkUnixScrlbr.c \
+@@ -361,8 +369,14 @@
+ ${TK_LIB_FILE}: ${OBJS}
+ 	rm -f ${TK_LIB_FILE}
+ 	@MAKE_LIB@
++	ln -sf @TK_LIB_FILE@ libtk${SHORT_TK_VER}.so
+ 	$(RANLIB) ${TK_LIB_FILE}
+ 
++libtk${SHORT_TK_VER}.a: ${OBJS}
++	rm -f libtk${SHORT_TK_VER}.a
++	ar cr libtk${SHORT_TK_VER}.a ${OBJS}
++	$(RANLIB) libtk${SHORT_TK_VER}.a
++
+ ${STUB_LIB_FILE}: ${STUB_LIB_OBJS}
+ 	rm -f ${STUB_LIB_FILE}
+ 	@MAKE_STUB_LIB@
+@@ -424,7 +438,7 @@
+ # some ranlibs write to current directory, and this might not always be
+ # possible (e.g. if installing as root).
+ 
+-install-binaries: $(TK_LIB_FILE) $(TK_STUB_LIB_FILE) $(TK_BUILD_EXP_FILE) wish
++install-binaries: $(TK_LIB_FILE) $(TK_STUB_LIB_FILE) $(TK_BUILD_EXP_FILE) libtk${SHORT_TK_VER}.a wish
+ 	@for i in $(LIB_INSTALL_DIR) $(BIN_INSTALL_DIR) ; \
+ 	    do \
+ 	    if [ ! -d $$i ] ; then \
+@@ -442,12 +456,18 @@
+ 	    fi
+ 	@echo "Installing $(TK_LIB_FILE) to $(LIB_INSTALL_DIR)/"
+ 	@$(INSTALL_DATA) $(TK_LIB_FILE) $(LIB_INSTALL_DIR)/$(TK_LIB_FILE)
++	@ln -sf $(LIB_INSTALL_DIR)/$(TK_LIB_FILE) $(LIB_INSTALL_DIR)/libtk${SHORT_TK_VER}.so
+ 	@(cd $(LIB_INSTALL_DIR); $(RANLIB) $(TK_LIB_FILE))
+ 	@chmod 555 $(LIB_INSTALL_DIR)/$(TK_LIB_FILE)
++	@echo "Installing libtk${SHORT_TK_VER}.a"
++	@$(INSTALL_DATA) libtk${SHORT_TK_VER}.a $(LIB_INSTALL_DIR)/libtk${SHORT_TK_VER}.a
++	@(cd $(LIB_INSTALL_DIR); $(RANLIB) libtk${SHORT_TK_VER}.a)
++	@chmod 555 $(LIB_INSTALL_DIR)/libtk${SHORT_TK_VER}.a
+ 	@echo "Installing wish as $(BIN_INSTALL_DIR)/wish$(VERSION)"
+ 	@$(INSTALL_PROGRAM) wish $(BIN_INSTALL_DIR)/wish$(VERSION)
+ 	@echo "Installing tkConfig.sh to $(LIB_INSTALL_DIR)/"
+-	@$(INSTALL_DATA) tkConfig.sh $(LIB_INSTALL_DIR)/tkConfig.sh
++	@mkdir -p $(LIB_INSTALL_DIR)/tk$(VERSION)
++	@$(INSTALL_DATA) tkConfig.sh $(LIB_INSTALL_DIR)/tk$(VERSION)/tkConfig.sh
+ 	@if test "$(TK_BUILD_EXP_FILE)" != ""; then \
+ 	    echo "Installing $(TK_EXP_FILE) to $(LIB_INSTALL_DIR)/"; \
+ 	    $(INSTALL_DATA) $(TK_BUILD_EXP_FILE) \
+@@ -461,6 +481,7 @@
+ 
+ install-libraries:
+ 	@for i in $(INSTALL_ROOT)$(prefix)/lib $(INCLUDE_INSTALL_DIR) \
++		$(GENERIC_INCLUDE_INSTALL_DIR) $(UNIX_INCLUDE_INSTALL_DIR) \
+ 		$(SCRIPT_INSTALL_DIR) $(SCRIPT_INSTALL_DIR)/images; \
+ 	    do \
+ 	    if [ ! -d $$i ] ; then \
+@@ -474,10 +495,16 @@
+ 	    chmod +x $(UNIX_DIR)/install-sh; \
+ 	    fi
+ 	@echo "Installing header files";
+-	@for i in $(GENERIC_DIR)/tk.h $(GENERIC_DIR)/tkDecls.h ; \
++	@for i in $(GENERIC_DIR)/*.h ; \
+ 	    do \
+-	    $(INSTALL_DATA) $$i $(INCLUDE_INSTALL_DIR); \
++	    $(INSTALL_DATA) $$i $(GENERIC_INCLUDE_INSTALL_DIR); \
+ 	    done;
++	@for i in $(UNIX_DIR)/*.h ; \
++	    do \
++	    $(INSTALL_DATA) $$i $(UNIX_INCLUDE_INSTALL_DIR); \
++	    done;
++	@ln -sf $(GENERIC_INCLUDE_INSTALL_DIR)/tk.h $(INCLUDE_INSTALL_DIR)/tk.h
++	@ln -sf $(GENERIC_INCLUDE_INSTALL_DIR)/tkDecls.h $(INCLUDE_INSTALL_DIR)/tkDecls.h
+ 	@echo "Installing library files to $(SCRIPT_INSTALL_DIR)";
+ 	@for i in $(SRC_DIR)/library/*.tcl $(GENERIC_DIR)/prolog.ps \
+ 	        $(SRC_DIR)/library/tclIndex $(UNIX_DIR)/tkAppInit.c; \
+@@ -543,7 +570,6 @@
+ 	    chmod 444 $(MAN1_INSTALL_DIR)/$$i; \
+ 	    done;
+ 	@echo "Cross-linking top-level (.1) docs";
+-	@$(UNIX_DIR)/mkLinks $(MAN1_INSTALL_DIR)
+ 	@echo "Installing C API (.3) docs";
+ 	@cd $(SRC_DIR)/doc; for i in *.3; \
+ 	    do \
+@@ -553,7 +579,6 @@
+ 	    chmod 444 $(MAN3_INSTALL_DIR)/$$i; \
+ 	    done;
+ 	@echo "Cross-linking top-level (.3) docs";
+-	@$(UNIX_DIR)/mkLinks $(MAN3_INSTALL_DIR)
+ 	@echo "Installing command (.n) docs";
+ 	@cd $(SRC_DIR)/doc; for i in *.n; \
+ 	    do \
+@@ -563,7 +588,6 @@
+ 	    chmod 444 $(MANN_INSTALL_DIR)/$$i; \
+ 	    done;
+ 	@echo "Cross-linking command (.n) docs";
+-	@$(UNIX_DIR)/mkLinks $(MANN_INSTALL_DIR)
+ 
+ Makefile: $(UNIX_DIR)/Makefile.in
+ 	$(SHELL) config.status
+@@ -843,6 +867,9 @@
+ 
+ tkUnixFont.o: $(UNIX_DIR)/tkUnixFont.c
+ 	$(CC) -c $(CC_SWITCHES) $(UNIX_DIR)/tkUnixFont.c
++
++tkUnixIm.o: $(UNIX_DIR)/tkUnixIm.c
++	$(CC) -c $(CC_SWITCHES) $(UNIX_DIR)/tkUnixIm.c
+ 
+ tkUnixInit.o: $(UNIX_DIR)/tkUnixInit.c $(GENERIC_DIR)/tkInitScript.h tkConfig.sh
+ 	$(CC) -c $(CC_SWITCHES) -DTK_LIBRARY=\"${TK_LIBRARY}\" \

@@ -1,0 +1,26 @@
+--- ../generic/tkBind.c.orig	Wed Feb  9 02:13:50 2000
++++ ../generic/tkBind.c	Wed Feb 21 21:27:44 2001
+@@ -1443,6 +1443,11 @@
+      */
+ 
+     if (winPtr->pathName == NULL) {
++#ifdef TK_USE_INPUT_METHODS
++#ifdef I18N_IMPROVE
++	winPtr->dispPtr->isComposed = 0;
++#endif /* I18N_IMPROVE */
++#endif /* TK_USE_INPUT_METHODS */
+ 	return;
+     }
+ 
+@@ -1678,6 +1683,11 @@
+ 	    Tcl_DStringAppend(&scripts, "", 1);
+ 	}
+     }
++#ifdef TK_USE_INPUT_METHODS
++#ifdef I18N_IMPROVE
++    winPtr->dispPtr->isComposed = 0;
++#endif /* I18N_IMPROVE */
++#endif /* TK_USE_INPUT_METHODS */
+     if (Tcl_DStringLength(&scripts) == 0) {
+ 	return;
+     }

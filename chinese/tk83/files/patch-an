@@ -1,0 +1,16 @@
+--- ../library/entry.tcl.orig	Thu Jan  6 02:22:24 2000
++++ ../library/entry.tcl	Wed Feb 21 21:27:44 2001
+@@ -214,6 +214,13 @@
+     }
+ }
+ 
++# input method configuration binding (unix only)
++if {![string compare $tcl_platform(platform) "unix"]} {
++    if {[string compare [info commands imconfigure] {}]} {
++	bind Entry <FocusIn> {catch {imconfigure %W}}
++    }
++}
++
+ # Additional emacs-like bindings:
+ 
+ bind Entry <Control-a> {

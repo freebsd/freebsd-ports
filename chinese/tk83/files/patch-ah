@@ -1,0 +1,136 @@
+--- configure.in.orig	Thu Feb 10 11:11:02 2000
++++ configure.in	Wed Feb 21 21:27:45 2001
+@@ -60,6 +60,12 @@
+ SC_LOAD_TCLCONFIG
+ 
+ #--------------------------------------------------------------------
++# i18n improvement (also check it is specified in Tcl)
++#--------------------------------------------------------------------
++
++SC_ENABLE_I18N_IMPROVE
++
++#--------------------------------------------------------------------
+ # Recompute the necessary flags to run the compiler
+ #--------------------------------------------------------------------
+ 
+@@ -372,6 +378,113 @@
+ TK_SHARED_BUILD=${SHARED_BUILD}
+ 
+ #--------------------------------------------------------------------
++#	Checking X lib for i18n related things.
++#--------------------------------------------------------------------
++
++X11_IMAKE_FLAGS=""
++tk_oldCflags=$CFLAGS
++tk_oldLibs=$LIBS
++CFLAGS="$CFLAGS $XINCLUDES"
++LIBS="$XLIBSW $LIBS"
++
++AC_MSG_CHECKING([XRegisterIMInstantiateCallback])
++AC_TRY_LINK([
++#include <X11/Xlib.h>
++], [
++XRegisterIMInstantiateCallback(0, 0, 0, 0, 0, 0);
++], [
++AC_MSG_RESULT(yes)
++X11_IMAKE_FLAGS="-DHAVE_XIMREGINSTCB"
++], [
++AC_MSG_RESULT(no)
++])
++
++AC_MSG_CHECKING([XIDProc])
++AC_TRY_COMPILE([
++#include <X11/Xlib.h>
++], [
++XIDProc *a;
++], [
++AC_MSG_RESULT(yes)
++], [
++AC_MSG_RESULT(no)
++X11_IMAKE_FLAGS="$X11_IMAKE_FLAGS -DNO_XIDPROC"
++])
++
++HAVE_XMKMF=""
++AC_PATH_PROG(HAVE_XMKMF, xmkmf, "", ${PATH}:/usr/X11R6/bin:/usr/X11R5/bin:/usr/local/X11R6/bin:/usr/local/X11R5/bin:/usr/openwin/bin:/usr/X11/bin:/usr/X386/bin:/usr/sww/bin:/usr/unsupported/bin)
++if test "X$HAVE_XMKMF" != "X"; then
++    IMAKE_FLAGS=""
++    if test -d ImakeCheck; then
++        rm -rf ImakeCheck
++    fi
++    mkdir ImakeCheck
++    cat << EOF > ImakeCheck/Imakefile
++SRCS = dummy.c
++OBJS = dummy.o
++
++ComplexProgramTarget(dummy)
++EOF
++    cat << EOF > ImakeCheck/dummy.c
++static int justAnInt = 0;
++EOF
++    (cd ./ImakeCheck; rm -f Makefile Makefile.*; eval $HAVE_XMKMF) > /dev/null 2>&1
++    for i in `(cd ./ImakeCheck; make -n dummy.o)`
++    do
++        case $i in -D*) IMAKE_FLAGS="$IMAKE_FLAGS $i";; esac
++    done
++    if test "X$IMAKE_FLAGS" != "X"; then
++        AC_MSG_RESULT(Add these flags for proper compile: $IMAKE_FLAGS)
++        X11_IMAKE_FLAGS="$X11_IMAKE_FLAGS $IMAKE_FLAGS"
++    fi
++    rm -rf ImakeCheck
++fi
++
++# At last check FreeBSD and have -lxpg4.
++AC_MSG_CHECKING([system version (for additional locale library)])
++if test -f /usr/lib/NextStep/software_version; then
++    system=NEXTSTEP-`awk '/3/,/3/' /usr/lib/NextStep/software_version`
++else
++    system=`uname -s`-`uname -r`
++    if test "$?" -ne 0 ; then
++        system=unknown
++    else
++        # Special check for weird MP-RAS system (uname returns weird
++        # results, and the version is kept in special file).
++    
++        if test -r /etc/.relid -a "X`uname -n`" = "X`uname -s`" ; then
++            system=MP-RAS-`awk '{print $3}' /etc/.relid'`
++        fi
++        if test "`uname -s`" = "AIX" ; then
++            system=AIX-`uname -v`.`uname -r`
++        fi
++    fi
++fi
++
++case $system in
++    FreeBSD-*)
++	LIBS="$XLIBSW -lxpg4 $tk_oldLibs"
++	CFLAGS="$CFLAGS $X11_IMAKE_FLAGS"
++	AC_TRY_COMPILE([
++#include <locale.h>
++], [
++(void)setlocale(LC_ALL, "");
++], [
++AC_MSG_RESULT(use xpg4 library.)
++XLIBSW="$XLIBSW -lxpg4"
++], [
++AC_MSG_RESULT(no need other libraries.)
++])
++	;;
++    *)
++	AC_MSG_RESULT(No additional library is needed.)
++	;;
++esac
++
++CFLAGS=$tk_oldCflags
++LIBS=$tk_oldLibs
++
++#--------------------------------------------------------------------
+ # The statements below define various symbols relating to creating
+ # the stub'd version of the Tk library
+ #
+@@ -453,5 +566,5 @@
+ AC_SUBST(XINCLUDES)
+ AC_SUBST(XLIBSW)
+ AC_SUBST(TK_SHARED_BUILD)
+-
++AC_SUBST(X11_IMAKE_FLAGS)
+ AC_OUTPUT(Makefile tkConfig.sh)

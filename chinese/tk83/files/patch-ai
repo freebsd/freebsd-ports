@@ -1,0 +1,14 @@
+--- ../generic/tk.h.orig	Tue Feb  8 11:31:32 2000
++++ ../generic/tk.h	Wed Feb 21 21:27:44 2001
+@@ -688,6 +688,11 @@
+     char *dummy17;
+     ClientData dummy18;
+     char *dummy19;
++#ifdef TK_USE_INPUT_METHODS
++#ifdef I18N_IMPROVE
++    Tcl_DString dummy20DStr;
++#endif /* I18N_IMPROVE */
++#endif /* TK_USE_INPUT_METHODS */
+ } Tk_FakeWin;
+ 
+ /*

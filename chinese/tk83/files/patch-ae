@@ -1,0 +1,261 @@
+--- tkUnixIm.c.orig	Thu Feb 22 12:00:09 2001
++++ tkUnixIm.c	Thu Feb 22 12:01:30 2001
+@@ -0,0 +1,258 @@
++/* 
++ * tkUnixIm.c --
++ *
++ *      This file contains modules to implement the XIM protocol session.
++ *	This is the shrinked version of tkXIM.c, worte for tk8.0jp.
++ *
++ *
++ * Copyright 1999, 2000 Software Research Associates, Inc.
++ *
++ * Permission to use, copy, modify, and distribute this software and its
++ * documentation for any purpose and without fee is hereby granted, provided
++ * that the above copyright notice appear in all copies and that both that
++ * copyright notice and this permission notice appear in supporting
++ * documentation, and that the name of Software Research Associates not be
++ * used in advertising or publicity pertaining to distribution of the
++ * software without specific, written prior permission.  Software Research
++ * Associates makes no representations about the suitability of this software
++ * for any purpose.  It is provided "as is" without express or implied
++ * warranty.
++ */
++
++#include "tkPort.h"
++#include "tkInt.h"
++
++#ifdef TK_USE_INPUT_METHODS
++#ifdef I18N_IMPROVE
++
++static void		TkpIMGenericHandler _ANSI_ARGS_((ClientData clientData, XEvent *eventPtr));
++static TkWindow *	GetToplevel _ANSI_ARGS_((TkWindow *winPtr));
++static void		TkpCreateIMGenericHandler _ANSI_ARGS_((Tk_Window tkwin));
++static void		TkpDeleteIMGenericHandler _ANSI_ARGS_((Tk_Window tkwin));
++
++static TkWindow *
++GetToplevel(winPtr)
++     TkWindow *winPtr;
++{
++    while (!(winPtr->flags & TK_TOP_LEVEL)) {
++	winPtr = winPtr->parentPtr;
++	if (winPtr == NULL) {
++	    return NULL;
++	}
++    }
++    return winPtr;
++}
++
++
++static void
++TkpIMGenericHandler(clientData, eventPtr)
++     ClientData clientData;
++     XEvent *eventPtr;
++{
++    Tk_Window tkwin = (Tk_Window)clientData;
++    TkWindow *winPtr = (TkWindow *)clientData;
++    
++    if (eventPtr->xany.window != Tk_WindowId(tkwin) ||
++	winPtr->inputContext == NULL ||
++	!(winPtr->flags & TK_CHECKED_IC)) {
++	/*
++	 * Why ME ???
++	 */
++	return;
++    }
++
++    /*
++     * Well, should I care about Enter/Leave ?
++     */
++
++    switch (eventPtr->type) {
++        case KeyPress:
++        case FocusIn: {
++	    Window root, child;
++	    int rootX, rootY;
++	    int wX, wY;
++	    unsigned int mask;
++
++	    /*
++	     * Care about case mouse pointer is not on winPtr->window.
++	     * In such a case, IM server can't fetch any events from Tk.
++	     */
++
++	    if (XQueryPointer(winPtr->display,
++			      RootWindow(winPtr->display, winPtr->screenNum),
++			      &root, &child, &rootX, &rootY, &wX, &wY, &mask) == True) {
++		TkWindow *pWin = (TkWindow *)Tk_CoordsToWindow(rootX, rootY,
++							       (Tk_Window)winPtr);
++		if (pWin != NULL && (pWin->window != winPtr->window)) {
++#if 0
++		    /*
++		     * Code belows are what I REALLY want to do. But,
++		     * in XIMPreeditPosition mode, IM server use the
++		     * focus window as key event source window and as
++		     * PreeditArea window by X11 specification. I want
++		     * IM server to use this focus window ONLY as key
++		     * event source. Means:
++		     *
++		     * 	o PreeditArea and PreeditPosition take place
++		     * 	  within client window (winPtr->window).
++		     *	o KeyPress event source is the window in which
++		     *	  mouse pointer is (pWin->window).
++		     */
++
++		    if (XSetICValues(winPtr->inputContext, XNFocusWindow,
++				     pWin->window, NULL) != NULL) {
++			fprintf(stderr, "debugIC: can't set IC focus to pointer window 0x%08x\n",
++				pWin->window);
++		    } else {
++			fprintf(stderr, "debugIC: set IC focus to pointer window 0x%08x\n",
++				pWin->window);
++		    }
++#endif
++		    /*
++		     * Check pWin and winPtr are in same toplevel.
++		     * If they are NOT, don't change focus. 
++		     */
++		    TkWindow *pTop = GetToplevel(pWin);
++		    TkWindow *wTop = GetToplevel(winPtr);
++		    if (pTop == wTop) {
++			TkpChangeFocus(winPtr, 1);
++		    }
++		}
++	    }
++	    /*
++	     * Get current focused window.
++	     */
++	    if (winPtr->dispPtr->lastFocusedIC != winPtr->inputContext) {
++		winPtr->dispPtr->lastFocusedIC = winPtr->inputContext;
++		XSetICFocus(winPtr->inputContext);
++	    }
++	    break;
++	}
++
++        case FocusOut: {
++	    winPtr->dispPtr->lastFocusedIC = None;
++	    XUnsetICFocus(winPtr->inputContext);
++	    break;
++	}
++
++	case DestroyNotify: {
++	    winPtr->dispPtr->lastFocusedIC = NULL;
++	    XUnsetICFocus(winPtr->inputContext);
++	    TkpDeleteIMGenericHandler(tkwin);
++	    break;
++	}
++    }
++}
++
++
++static void
++TkpCreateIMGenericHandler(tkwin)
++     Tk_Window tkwin;
++{
++    Tk_CreateEventHandler(tkwin, FocusChangeMask|StructureNotifyMask|KeyPressMask
++#if 0
++			  EnterWindowMask|LeaveWindowMask,
++#else
++			  ,
++#endif
++			  (Tk_EventProc *)TkpIMGenericHandler,
++			  (ClientData)tkwin);
++}
++
++
++static void
++TkpDeleteIMGenericHandler(tkwin)
++     Tk_Window tkwin;
++{
++    Tk_DeleteEventHandler(tkwin, FocusChangeMask|StructureNotifyMask|KeyPressMask
++#if 0
++			  EnterWindowMask|LeaveWindowMask,
++#else
++			  ,
++#endif
++			  (Tk_EventProc *)TkpIMGenericHandler,
++			  (ClientData)tkwin);
++}
++
++
++XIC
++TkpCreateIC(winPtr)
++     TkWindow *winPtr;
++{
++    if (winPtr->dispPtr->inputMethod != NULL &&
++	!(winPtr->flags & TK_CHECKED_IC)) {
++	winPtr->inputContext =
++		XCreateIC(winPtr->dispPtr->inputMethod,
++			  XNInputStyle, XIMPreeditNothing|XIMStatusNothing,
++			  XNClientWindow, winPtr->window,
++			  XNFocusWindow, winPtr->window,
++			  NULL);
++	if (winPtr->inputContext != NULL) {
++	    TkpCreateIMGenericHandler((Tk_Window)winPtr);
++	}
++    }
++    winPtr->flags |= TK_CHECKED_IC;
++    return winPtr->inputContext;
++}
++
++
++void
++TkpDestroyIC(winPtr, needDestroy)
++     TkWindow *winPtr;
++     int needDestroy;
++{
++    TkpDeleteIMGenericHandler((Tk_Window)winPtr);
++    if (winPtr->inputContext == winPtr->dispPtr->lastFocusedIC) {
++	winPtr->dispPtr->lastFocusedIC = None;
++    }
++    if (needDestroy == 1 &&
++	winPtr->inputContext != NULL) {
++	XDestroyIC(winPtr->inputContext);
++    }
++    winPtr->flags &= ~(TK_CHECKED_IC);
++    winPtr->inputContext = NULL;
++}
++
++
++int
++Tk_ImconfigureObjCmd(clientData, interp, objc, objv)
++     ClientData clientData;	/* Main window associated with
++				 * interpreter. */
++     Tcl_Interp *interp;	/* Current interpreter. */
++     int objc;			/* Number of arguments. */
++     Tcl_Obj *CONST objv[];	/* Argument objects. */
++{
++    Tk_Window tkwin = (Tk_Window)clientData;
++    Tcl_Obj *resultPtr = Tcl_GetObjResult(interp);
++
++    if (objc < 2) {
++	Tcl_WrongNumArgs(interp, 1, objv, "path ?option? ?arg? ...");
++	return TCL_ERROR;
++    }
++
++    tkwin = Tk_NameToWindow(interp, Tcl_GetStringFromObj(objv[1], NULL), tkwin);
++    if (tkwin == NULL) {
++	return TCL_ERROR;
++    }
++
++    if (((TkWindow *)tkwin)->dispPtr->useInputMethods == 0) {
++	/*
++	 * Destroy XIC and leave.
++	 */
++	TkpDestroyIC((TkWindow *)tkwin, 1);
++	return TCL_OK;
++    }
++
++    if (((TkWindow *)tkwin)->dispPtr->inputMethod == NULL) {
++	Tcl_AppendStringsToObj(resultPtr, "No IM server is available.", NULL);
++	return TCL_ERROR;
++    }
++
++    Tcl_AppendStringsToObj(resultPtr,
++			  (TkpCreateIC((TkWindow *)tkwin) != NULL) ? "1" : "0",
++			  NULL);
++    return TCL_OK;
++}
++
++#endif /* I18N_IMPROVE */
++#endif /* TK_USE_INPUT_METHODS */

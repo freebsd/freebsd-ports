@@ -1,0 +1,47 @@
+--- ../generic/tkEvent.c.orig	Thu Dec 16 21:57:36 1999
++++ ../generic/tkEvent.c	Wed Feb 21 23:18:43 2001
+@@ -663,6 +663,17 @@
+     }
+ 
+ #ifdef TK_USE_INPUT_METHODS
++#ifdef I18N_IMPROVE
++      /*
++       * No need to create an input context for each and every window.
++       *
++       * Futhermore, XFilterEvent() should be called just after the
++       * event is fetched, since some IM server have protocol bugs that
++       * causes Tk freezing, so events EXCEPT THE INPUT METHODS THINGS
++       * should only be queued into Tcl event queue.
++       *
++       */
++#else
+     /*
+      * Pass the event to the input method(s), if there are any, and
+      * discard the event if the input method(s) insist.  Create the
+@@ -684,6 +695,7 @@
+ 	    goto done;
+ 	}
+     }
++#endif /* I18N_IMPROVE */
+ #endif /* TK_USE_INPUT_METHODS */
+ 
+     /*
+@@ -936,6 +948,18 @@
+ 	    break;
+ 	}
+     }
++
++#if defined(TK_USE_INPUT_METHODS) && defined(I18N_IMPROVE)
++    if (eventPtr->type == KeyPress && eventPtr->xkey.keycode == 0) {
++        /*
++         * No doubt this is a composed message from IM server.
++         * Tk can handle KeyPress event with zero keycode value 
++         * if state of the event is zero.
++         */
++        eventPtr->xkey.state = 0;
++	dispPtr->isComposed = 1;
++    }
++#endif /* TK_USE_INPUT_METHODS && I18N_IMPROVE */
+ 
+     if ((dispPtr->delayedMotionPtr != NULL) && (position == TCL_QUEUE_TAIL)) {
+ 	if ((eventPtr->type == MotionNotify) && (eventPtr->xmotion.window

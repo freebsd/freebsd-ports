@@ -1,0 +1,306 @@
+--- ../generic/tkWindow.c.orig	Thu Dec 16 21:57:36 1999
++++ ../generic/tkWindow.c	Wed Feb 21 23:20:48 2001
+@@ -155,6 +155,9 @@
+ #ifdef MAC_TCL
+     {"unsupported1",	TkUnsupported1Cmd,	NULL,			1, 1},
+ #endif
++#if defined(TK_USE_INPUT_METHODS) && defined(I18N_IMPROVE)
++    {"imconfigure",	NULL,			Tk_ImconfigureObjCmd,	1, 1},
++#endif /* TK_USE_INPUT_METHODS && I18N_IMPROVE */
+     {(char *) NULL,	(int (*) _ANSI_ARGS_((ClientData, Tcl_Interp *, int, char **))) NULL, NULL, 0}
+ };
+ 
+@@ -209,6 +212,15 @@
+ 			    char *name));
+ static void		OpenIM _ANSI_ARGS_((TkDisplay *dispPtr));
+ static void		UnlinkWindow _ANSI_ARGS_((TkWindow *winPtr));
++#ifdef TK_USE_INPUT_METHODS
++#ifdef I18N_IMPROVE
++static int		CanInitiateIm _ANSI_ARGS_((void));
++static void		IMInstantiateCallback _ANSI_ARGS_ ((Display *display,
++				XPointer clientData, XPointer callData));
++static void		IMDestroyCallback _ANSI_ARGS_ ((XIM im, XPointer clientData, 
++				XPointer callData));
++#endif /* I18N_IMPROVE */
++#endif /* TK_USE_INPUT_METHODS */
+ 
+ /*
+  *----------------------------------------------------------------------
+@@ -631,6 +643,9 @@
+     winPtr->handlerList = NULL;
+ #ifdef TK_USE_INPUT_METHODS
+     winPtr->inputContext = NULL;
++#ifdef I18N_IMPROVE
++    Tcl_DStringInit(&(winPtr->composedDStr));
++#endif /* I18N_IMPROVE */
+ #endif /* TK_USE_INPUT_METHODS */
+     winPtr->tagPtr = NULL;
+     winPtr->numTags = 0;
+@@ -1275,8 +1290,16 @@
+     TkBindDeadWindow(winPtr);
+ #ifdef TK_USE_INPUT_METHODS
+     if (winPtr->inputContext != NULL) {
+-	XDestroyIC(winPtr->inputContext);
++#ifdef I18N_IMPROVE
++	TkpDestroyIC(winPtr, 1);
++#else
++  	XDestroyIC(winPtr->inputContext);
++#endif /* I18N_IMPROVE */
+     }
++#ifdef I18N_IMPROVE
++    Tcl_DStringFree(&(winPtr->composedDStr));
++    Tcl_DStringInit(&(winPtr->composedDStr));
++#endif /* I18N_IMPROVE */
+ #endif /* TK_USE_INPUT_METHODS */
+     if (winPtr->tagPtr != NULL) {
+ 	TkFreeBindingTags(winPtr);
+@@ -2427,6 +2450,180 @@
+ {
+     return ((TkWindow *) tkwin)->mainPtr->strictMotif;
+ }
++#ifdef TK_USE_INPUT_METHODS
++#ifdef I18N_IMPROVE
++
++static int
++CanInitiateIm()
++{
++    static int inited = 0;
++    static int ret = 0;
++    char *locale;
++
++    /*
++     * Determine the current encoding from the LC_* or LANG environment
++     * variables.  We previously used setlocale() to determine the locale,
++     * but this does not work on some systems (e.g. Linux/i386 RH 5.0).
++     */
++
++    locale = getenv("LC_ALL");
++
++    if (locale == NULL || locale[0] == '\0') {
++	locale = getenv("LC_CTYPE");
++    }
++    if (locale == NULL || locale[0] == '\0') {
++	locale = getenv("LANG");
++    }
++    if (locale == NULL || locale[0] == '\0') {
++	return False;
++    }
++
++    if (inited == 0) {
++	char *curSpec = setlocale(LC_ALL, NULL);
++
++	inited = 1;
++
++	if (strcmp(locale, "C") == 0 ||
++	    strcmp(locale, "POSIX") == 0) {
++	    goto Checked;
++	}
++
++	/*
++	 * setlocale(3)/_Xsetlocale() VERY HERE. This is what the X
++	 * input method wants.
++	 * Note that X11's i18n implementation should be ONLY governed
++	 * by LC_CTYPE. This is clearly/explicitly specified in X11
++	 * documente Chapter 13. Thus, If there are some X11
++	 * implementation that need using LC_ALL to initialize i18n
++	 * subsystem, I won't care about such a X library.
++	 * But, we are still on edge of darkside. ctype(3) routines
++	 * are governed by LC_CTYPE.... Need to create "Locale
++	 * independent ctype libraries" for Tcl/Tk...
++	 *
++	 */
++
++	/*
++	 * OK, First of all, setting WHOLE locale to "C".
++	 */
++	(void)setlocale(LC_ALL, "C");
++	if (setlocale(LC_CTYPE, locale) == NULL) {
++	    /*
++	     * Reset to old locale.
++	     */
++	    if (setlocale(LC_ALL, curSpec) == NULL) {
++		(void)setlocale(LC_ALL, "C");
++	    }
++	    goto Checked;
++	} else {
++	    /*
++	     * For insurance, reset LC_NUMERIC to "C" for Tcl numeric parsing.
++	     */
++	    (void)setlocale(LC_NUMERIC, "C");
++	}
++	if (XSupportsLocale() != True) {
++	    goto Checked;
++	}
++
++	ret = True;
++	/*
++	 * At last, Setting the locale modifiers.
++	 */
++	(void)XSetLocaleModifiers("");
++    }
++
++    Checked:
++    return ret;
++}
++
++/*
++ *----------------------------------------------------------------------
++ *
++ * IMInstantiateCallback
++ *
++ *	Whenever IM server become available, this function will be called.
++ *
++ * Results:
++ *	OpenIM() is called.
++ *
++ * Side effects:
++ *	None.
++ *
++ *----------------------------------------------------------------------
++ */
++
++void
++IMInstantiateCallback(display, clientData, callData)
++     Display *display;
++     XPointer clientData;
++     XPointer callData;
++{
++    TkDisplay *dispPtr = (TkDisplay *)clientData;
++
++    if (display == dispPtr->display &&
++	dispPtr->inputMethod == NULL) {
++	OpenIM(dispPtr);
++    }
++}
++
++/*
++ *----------------------------------------------------------------------
++ *
++ * IMDestroyCallback
++ *
++ *	Whenever IM server stops the service, this function will be called.
++ *
++ * Results:
++ *	the XIM opened before is marked as unusable.
++ *
++ * Side effects:
++ *	XIC using this XIM will be useless.
++ *
++ *----------------------------------------------------------------------
++ */
++void
++IMDestroyCallback(im, clientData, callData)
++     XIM im;
++     XPointer clientData;
++     XPointer callData;
++{
++    TkDisplay *dispPtr = (TkDisplay *)clientData;
++    if (im == dispPtr->inputMethod) {
++	Tcl_HashTable winTable = dispPtr->winTable;
++	Tcl_HashEntry *entry = NULL;
++	Tcl_HashSearch search;
++	TkWindow *winPtr;
++
++	/*
++	 * We must not call XCloseIM() or XDestroyIC().
++	 * because the XIM and XIC are destroyed by Xlib 
++	 * automatically.
++	 */
++	for (entry = Tcl_FirstHashEntry(&winTable, &search); entry != NULL;
++	     entry = Tcl_NextHashEntry(&search)) {
++	    winPtr = (TkWindow *)Tcl_GetHashValue(entry);
++	    if (winPtr->dispPtr->display == dispPtr->display &&
++		winPtr->dispPtr->inputMethod == im &&
++		winPtr->inputContext != NULL) {
++		TkpDestroyIC(winPtr, 0);
++	    }
++	    Tcl_DStringFree(&(winPtr->composedDStr));
++	    Tcl_DStringInit(&(winPtr->composedDStr));
++	}
++	dispPtr->inputMethod = NULL;
++	dispPtr->lastFocusedIC = NULL;
++#ifdef HAVE_XIMREGINSTCB
++#ifdef NO_XIDPROC
++	XRegisterIMInstantiateCallback(dispPtr->display, NULL, NULL, NULL,
++				       (XIMProc)IMInstantiateCallback, (XPointer *)dispPtr);
++#else
++	XRegisterIMInstantiateCallback(dispPtr->display, NULL, NULL, NULL,
++				       (XIDProc)IMInstantiateCallback, (XPointer)dispPtr);
++#endif /* NO_XIDPROC */
++#endif /* HAVE_XIMREGINSTCB */
++    }
++}
++#endif /* I18N_IMPROVE */
++#endif /* TK_USE_INPUT_METHODS */
+ 
+ /* 
+  *--------------------------------------------------------------
+@@ -2457,8 +2654,35 @@
+     unsigned short i;
+     XIMStyles *stylePtr;
+ 
++#ifdef I18N_IMPROVE
++    int styleFound = 0;
++
++    dispPtr->inputMethod = NULL;
++    dispPtr->imEncoding = NULL;
++    dispPtr->lastFocusedIC = NULL;
++    dispPtr->isComposed = 0;
++
++    if (CanInitiateIm() == False) {
++	return;
++    }
++#endif /* I18N_IMPROVE */
+     dispPtr->inputMethod = XOpenIM(dispPtr->display, NULL, NULL, NULL);
+     if (dispPtr->inputMethod == NULL) {
++#ifdef I18N_IMPROVE
++#ifdef HAVE_XIMREGINSTCB
++	/*
++	 * Maybe no IM server is available right now.
++	 * Try to register instantiate callback.
++	 */
++#ifdef NO_XIDPROC
++	XRegisterIMInstantiateCallback(dispPtr->display, NULL, NULL, NULL,
++				       (XIMProc)IMInstantiateCallback, (XPointer *)dispPtr);
++#else
++	XRegisterIMInstantiateCallback(dispPtr->display, NULL, NULL, NULL,
++				       (XIDProc)IMInstantiateCallback, (XPointer)dispPtr);
++#endif /* NO_XIDPROC */
++#endif /* HAVE_XIMREGINSTCB */
++#endif /* I18N_IMPROVE */
+ 	return;
+     }
+ 
+@@ -2469,11 +2693,30 @@
+     for (i = 0; i < stylePtr->count_styles; i++) {
+ 	if (stylePtr->supported_styles[i]
+ 		== (XIMPreeditNothing|XIMStatusNothing)) {
+-	    XFree(stylePtr);
+-	    return;
++#ifdef I18N_IMPROVE
++	    styleFound = 1;
++#else
++  	    XFree(stylePtr);
++  	    return;
++#endif /* I18N_IMPROVE */
+ 	}
+     }
+     XFree(stylePtr);
++#ifdef I18N_IMPROVE
++    if (styleFound == 1) {
++	/*
++	 * Create a Tcl_Encoding for XmbLookupString() conversion.
++	 */
++	dispPtr->imEncoding = Tcl_GetEncoding(NULL, Tcl_GetEncodingName(NULL));
++#ifdef XNDestroyCallback
++	dispPtr->destroyCallback.client_data = (XPointer)dispPtr;
++	dispPtr->destroyCallback.callback = (XIMProc)IMDestroyCallback;
++	(void)XSetIMValues(dispPtr->inputMethod,
++			   XNDestroyCallback, &(dispPtr->destroyCallback), NULL);
++#endif /* XNDestroyCallback */	
++	return;
++    }
++#endif /* I18N_IMPROVE */
+ 
+     error:
+ 

@@ -59,6 +59,7 @@
     SUBDIR += telnet
     SUBDIR += tin
     SUBDIR += tintin++
+    SUBDIR += tk83
     SUBDIR += tocps
     SUBDIR += ttfm
     SUBDIR += ve
