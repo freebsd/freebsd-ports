@@ -38,3 +38,7 @@ CONFLICTS?=		gcc-3.3*
 .endif
 
 .include "${MASTERDIR}/Makefile"
+
+.if ${OSVERSION} >= 502122
+BROKEN=		new ld: linker refuses to find shared libs
+.endif
