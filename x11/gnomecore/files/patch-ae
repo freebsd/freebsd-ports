@@ -421,50 +421,6 @@
  
  
  LDADD =  	-lgnorba                                        	$(GNOMEUI_LIBS)						$(GNOME_LIBDIR)						$(ORBIT_LIBS)                                           $(INTLLIBS)
---- po/POTFILES.in.orig	Thu Jan 21 05:31:21 1999
-+++ po/POTFILES.in	Tue Feb  2 06:29:30 1999
-@@ -1,10 +1,8 @@
- applets/asclock/asclock.c
- applets/asclock/dialogs.c
--applets/batmon/batmon.c
- applets/battery/battery.c
- applets/battery/properties.c
- applets/battery/read-battery.c
--applets/bussign/bussign.c
- applets/cdplayer/cdplayer.c
- applets/charpick/charpick.c
- applets/clockmail/clockmail.c
-@@ -17,18 +15,14 @@
- applets/esd-manager/esdmanager_applet.c
- applets/fifteen/fifteen.c
- applets/fish/fish.c
--applets/freshapp/freshapp.c
- applets/fvwm-pager/fvwm-pager.c
- applets/fvwm-pager/properties.c
- applets/gen_util/clock.c
- applets/gen_util/mailcheck.c
- applets/gen_util/printer.c
--applets/gkb/gkb.c
- applets/gnome-pager/gnomepager_applet.c
- applets/gticker/gticker.c
- applets/gticker/properties.c
--applets/icewm-pager/wmpager_applet.c
--applets/jbc/jbc.c
- applets/mini-commander/src/about.c
- applets/mini-commander/src/cmd_completion.c
- applets/mini-commander/src/command_line.c
-@@ -52,11 +46,9 @@
- applets/slashapp/properties.c
- applets/slashapp/slashapp.c
- applets/webcontrol/webcontrol.c
--gemvt/getopt.c
- gmenu/dialogs.c
- gmenu/edit.c
- gmenu/gmenu.c
--gmenu/order.c
- gmenu/tree.c
- gnome-terminal/gnome-terminal.c
- gsm/main.c
 --- gnome-terminal/C/Makefile.in.orig	Tue Feb  2 07:21:51 1999
 +++ gnome-terminal/C/Makefile.in	Tue Feb  2 07:22:07 1999
 @@ -150,7 +150,7 @@
