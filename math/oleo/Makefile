@@ -1,12 +1,12 @@
 # New ports collection makefile for:	oleo
-# Version required:	1.99.5
 # Date created:		3 September 1994
 # Whom:			mr
 #
 # $FreeBSD$
 #
 
-DISTNAME=	oleo-1.99.5
+PORTNAME=	oleo
+PORTVERSION=	1.99.5
 CATEGORIES=	math
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	oleo

@@ -1,16 +1,15 @@
 # New ports collection makefile for:	netcdf
-# Version required:	3.5-beta2
 # Date created:		29 July 1999
 # Whom:			Thomas Gellekum <tg@FreeBSD.org>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	netcdf-3.5-beta2
-PKGNAME=	netcdf-3.5b2
+PORTNAME=	netcdf
+PORTVERSION=	3.5b2
 CATEGORIES=	math
 MASTER_SITES=	ftp://unidata.ucar.edu/pub/netcdf/
-EXTRACT_SUFX=	.tar.Z
+DISTFILES=	netcdf-3.5-beta2.tar.Z
 
 MAINTAINER=	ports@FreeBSD.org
 

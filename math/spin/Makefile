@@ -1,12 +1,12 @@
 # Ports collection makefile for: spin
-# Version required:	3.3.9
 # Date created:		Oct 23, 1997
 # Whom:			jhanna@home.com
 #
 # $FreeBSD$
 #
 
-DISTNAME=	spin-3.39
+PORTNAME=	spin
+PORTVERSION=	3.39
 CATEGORIES=	math
 MASTER_SITES=	ftp://netlib.bell-labs.com/netlib/spin/ \
 		ftp://www.netlib.org/spin/ \

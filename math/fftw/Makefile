@@ -1,12 +1,12 @@
 # New ports collection makefile for: fftw
-# Version required:	2.1.2
 # Date created:		Dec 28 1998
 # Whom:			Lars Koeller <Lars.Koeller@Uni-Bielefeld.DE>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	fftw-2.1.3
+PORTNAME=	fftw
+PORTVERSION=	2.1.3
 CATEGORIES=	math
 MASTER_SITES=	ftp://ftp.fftw.org/pub/fftw/ \
 		ftp://theory.lcs.mit.edu/pub/fftw/	\

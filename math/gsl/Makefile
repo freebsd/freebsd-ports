@@ -1,12 +1,12 @@
 # New ports collection makefile for:   gsl
-# Version required:                    0.5
 # Date created:                        15 Feb 2000
 # Whom:                                Andrew L. Neporada <andrew@chg.ru>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	gsl-0.5
+PORTNAME=	gsl
+PORTVERSION=	0.5
 CATEGORIES=	math
 MASTER_SITES=	ftp://sourceware.cygnus.com/pub/gsl/ \
 		ftp://ftp.funet.fi/pub/mirrors/sourceware.cygnus.com/pub/gsl/ \

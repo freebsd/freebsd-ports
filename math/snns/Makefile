@@ -1,15 +1,16 @@
 # New ports collection makefile for:	snns
-# Version required:	4.2
 # Date created:		2 Febuary 1997
 # Whom:			reg@shale.csir.co.za
 #
 # $FreeBSD$
 #
 
-DISTNAME=	SNNSv4.2
-PKGNAME=	snns-4.2
+PORTNAME=	snns
+PORTVERSION=	4.2
 CATEGORIES=	math
 MASTER_SITES=	ftp://ftp.informatik.uni-stuttgart.de/pub/SNNS/
+DISTNAME=	SNNSv${PORTVERSION}
+DISTNAME=	SNNSv${PORTVERSION}
 
 MAINTAINER=	reg@FreeBSD.org
 

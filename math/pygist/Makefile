@@ -1,15 +1,16 @@
 # New ports collection makefile for:	pygist
-# Version required:	1.5
 # Date created:		30 May 1998
 # Whom:			Thomas Gellekum <tg@FreeBSD.org>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	LLNLDistribution11
-PKGNAME=	py-gist-1.5
+PORTNAME=	gist
+PORTVERSION=	1.5
 CATEGORIES=	math python
 MASTER_SITES=	ftp://ftp-icf.llnl.gov/pub/python/
+PKGNAMEPREFIX=	py-
+DISTNAME=	LLNLDistribution11
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	tg@FreeBSD.org

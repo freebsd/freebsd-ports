@@ -1,15 +1,15 @@
 # New ports collection makefile for:    lapack
-# Version required:     3.0
 # Date created:         2 July 1994
 # Whom:                 jmz
 #
 # $FreeBSD$
 #
 
-DISTNAME=	LAPACK
-PKGNAME=	lapack-3.0
+PORTNAME=	lapack
+PORTVERSION=	3.0
 CATEGORIES=	math
 MASTER_SITES=	ftp://ftp.netlib.org/lapack/
+DISTNAME=	LAPACK
 DISTFILES=	lapack.tgz manpages.tgz
 
 MAINTAINER=	jmz@FreeBSD.org

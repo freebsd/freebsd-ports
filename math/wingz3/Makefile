@@ -1,12 +1,12 @@
 # New ports collection makefile for:    wingz
-# Version required:	142
 # Date created:         Wed Nov 27 09:15:10 CST 1996
 # Whom:                 erich@rrnet.com
 #
 # $FreeBSD$
 #
 
-DISTNAME=	Wingz-142
+PORTNAME=	Wingz
+PORTVERSION=	142
 CATEGORIES=	math linux
 MASTER_SITES=	${MASTER_SITE_SUNSITE}
 MASTER_SITE_SUBDIR=	apps/financial/spreadsheet

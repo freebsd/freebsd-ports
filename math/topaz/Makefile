@@ -1,15 +1,15 @@
 # New ports collection makefile for:	topaz
-# Version required:			3.22
 # Date created:				29 July 1997
 # Whom:					Issei Suzuki <issei@jp.FreeBSD.ORG>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	topaz-3_25-src
-PKGNAME=	topaz-3.25
+PORTNAME=	topaz
+PORTVERSION=	3.25
 CATEGORIES=	math
 MASTER_SITES=	http://hp.vector.co.jp/authors/VA007663/topaz/bin/
+DISTNAME=	topaz-3_25-src
 
 MAINTAINER=	issei@jp.FreeBSD.ORG
 

@@ -1,12 +1,12 @@
 # New ports collection makefile for:	xplot
-# Version required:	0.90
 # Date created:		3 March 1997
 # Whom:			fenner
 #
 # $FreeBSD$
 #
 
-DISTNAME=	xplot-0.90
+PORTNAME=	xplot
+PORTVERSION=	0.90
 CATEGORIES=	math graphics net
 MASTER_SITES=	ftp://mercury.lcs.mit.edu/pub/shep/
 

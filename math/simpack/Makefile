@@ -1,12 +1,12 @@
 # new ports collection Makefile for: SimPack
-# Version required:    3.0
 # Date created:        5 June 1997
 # Whom:                Ruslan Shevchenko <rssh@cki.ipri.kiev.ua>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	simpack-3.0
+PORTNAME=	simpack
+PORTVERSION=	3.0
 CATEGORIES=	math
 MASTER_SITES=	ftp://ftp.cis.ufl.edu/pub/simdigest/tools/
 DISTFILES=	SimPack3.tar.Z

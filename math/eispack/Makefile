@@ -1,13 +1,12 @@
 # New ports collection makefile for:	eispack
-# Version required:	?
 # Date created:		31 October 1994
 # Whom:			ljo
 #
 # $FreeBSD$
 #
 
-DISTNAME=	eispack
-PKGNAME=	eispack-1.0
+PORTNAME=	eispack
+PORTVERSION=	1.0
 CATEGORIES=	math
 MASTER_SITES=	ftp://ftp.netlib.org/eispack/ \
 		ftp://netlib.bell-labs.com/netlib/eispack/ \
@@ -18,7 +17,7 @@ MAINTAINER=	ports@FreeBSD.org
 
 LIB_DEPENDS=	blas.1:${PORTSDIR}/math/blas
 
-DIST_SUBDIR=	${DISTNAME}
+DIST_SUBDIR=	${PORTNAME}
 NO_WRKSUBDIR=	yes
 
 SRCS =	csroot.f epslon.f pythag.f bakvec.f balanc.f balbak.f bandr.f \

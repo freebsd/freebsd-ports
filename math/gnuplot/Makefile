@@ -1,12 +1,12 @@
 # New ports collection makefile for:    gnuplot
-# Version required:     3.7.1
 # Date created:         19 April 1998
 # Whom:                 chuckr
 #
 # $FreeBSD$
 #
 
-DISTNAME=	gnuplot-3.7.1
+PORTNAME=	gnuplot
+PORTVERSION=	3.7.1
 CATEGORIES=	math graphics
 MASTER_SITES=	ftp://ftp.gnuplot.vt.edu/pub/gnuplot/
 

@@ -1,12 +1,12 @@
 # New ports collection makefile for:	apc
-# Version required:	1.0
 # Date created:		May 1 1997
 # Whom:			Eric A. Griff <eagriff@global2000.net>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	apc-1.0
+PORTNAME=	apc
+PORTVERSION=	1.0
 CATEGORIES= 	math
 MASTER_SITES= 	http://members.global2000.net/~eagriff/
 

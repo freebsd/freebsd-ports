@@ -1,12 +1,12 @@
 # New ports collection makefile for:    gnuplot
-# Version required:     3.7.1
 # Date created:         May 18, 1999
 # Whom:                 NAKAJI Hiroyuki
 #
 # $FreeBSD$
 #
 
-DISTNAME=	gnuplot371+-1.1.9
+PORTNAME=	gnuplot371+
+PORTVERSION=	1.1.9
 CATEGORIES=	math japanese graphics
 MASTER_SITES=	ftp://ftp.ipc.chiba-u.ac.jp/pub/pub.yamaga/gnuplot+/3.7base/ \
 		ftp://ftp.hipecs.hokudai.ac.jp/pub/GNU/jp/pub.yamaga/gnuplot+/3.7base/ \

@@ -1,15 +1,15 @@
 # New ports collection makefile for:    fftpack
-# Version required:     ?
 # Date created:         31 October 1996
 # Whom:			Pedro Giffuni S.
 #
 # $FreeBSD$
 #
 
-DISTNAME=	bihar
-PKGNAME=	fftpack-1.0
+PORTNAME=	fftpack
+PORTVERSION=	1.0
 CATEGORIES=	math
 MASTER_SITES=	ftp://netlib.bell-labs.com/netlib/
+DISTNAME=	bihar
 EXTRACT_SUFX=	.tar
 
 MAINTAINER=	giffunip@asme.org

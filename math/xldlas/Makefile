@@ -1,12 +1,12 @@
 # New ports collection makefile for:	xldlas
-# Version required:	0.85
 # Date created:         20 Dec 97
 # Whom:                 Pedro Giffuni <giffunip@asme.org>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	xldlas-0.85
+PORTNAME=	xldlas
+PORTVERSION=	0.85
 CATEGORIES=	math
 MASTER_SITES=	http://a42.com/~thor/xldlas/			\
 		http://sunsite.math.klte.hu/mirrors/xldlas/	\

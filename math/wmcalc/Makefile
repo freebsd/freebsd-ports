@@ -1,12 +1,12 @@
 # New ports collection makefile for:	wmcalc
-# Version required:			0.1
 # Date created:				28 March 2000
 # Whom:					Chris D. Faulhaber <jedgar@FreeBSD.org>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	wmcalc-0.1
+PORTNAME=	wmcalc
+PORTVERSION=	0.1
 CATEGORIES=	math windowmaker
 MASTER_SITES=	http://members.access1.net/ehflora/wmcalc/
 

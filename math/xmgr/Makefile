@@ -1,12 +1,12 @@
 # New ports collection makefile for:	xmgr
-# Version required:	4.1.1
 # Date created:		So   2 Mär 1997 12:11:43 MET
 # Whom:			Andreas Klemm <andreas@klemm.gtn.com>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	xmgr-4.1.1
+PORTNAME=	xmgr
+PORTVERSION=	4.1.1
 CATEGORIES=	math print
 MASTER_SITES=	ftp://ftp.uni-bielefeld.de/pub/systems/FreeBSD/lkoeller/ \
 		ftp://plasma-gate.weizmann.ac.il/pub/xmgr4/src/old/ \
