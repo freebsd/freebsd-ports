@@ -1,0 +1,32 @@
+*** src/database.c.orig	Tue Apr 21 12:17:17 1998
+--- src/database.c	Tue Mar  9 09:09:06 1999
+***************
+*** 73,78 ****
+--- 73,85 ----
+  
+  #include        "database.h"
+  
++ #if (defined(__unix__) || defined(unix)) && !defined(USG)
++ #include <sys/param.h>
++ #endif
++ 
++ #if defined(BSD)
++ #include <math.h>
++ #endif
+  
+  #ifndef	TRUE
+  #define	TRUE	1
+***************
+*** 985,991 ****
+--- 992,1002 ----
+  
+      sDBRemoveLeadingSpaces( sLine );
+      sDBRemoveFirstString( sLine, sHead );
++ #if defined(linux) || defined(BSD)
++     sscanf( sHead, "%lg", dPDbl );
++ #else
+      sscanf( sHead, "%lG", dPDbl );
++ #endif
+  
+  }
+  

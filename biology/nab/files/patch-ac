@@ -1,0 +1,13 @@
+*** cccp/Makefile.orig	Thu Jan 14 16:20:38 1999
+--- cccp/Makefile	Thu Jan 14 16:21:08 1999
+***************
+*** 4,9 ****
+--- 4,11 ----
+  ######### no configuration should be needed beyond this line #################
+  ##############################################################################
+  
++ all: cpp$(SFX)
++ 
+  cpp$(SFX): cppmain.o cpplib.o cpphash.o cppalloc.o cpperror.o cppexp.o version.o \
+  		obstack.o alloca.o
+  	$(CC) $(CFLAGS) -o cpp$(SFX) cppmain.o cpplib.o cpphash.o \

@@ -1,0 +1,19 @@
+*** semantics/Makefile.orig	Fri Mar 10 20:08:16 2000
+--- semantics/Makefile	Sun Sep 10 18:47:44 2000
+***************
+*** 43,49 ****
+  SYM_UPARROW_ASSIGN.rules
+  
+  checkexpr.c: $(RULES) attribute.tab parse ../src/nab.h ../src/nabgrm.y
+! 	./parse *.rules
+  
+  parse: parse.c
+  	$(CC) -o parse parse.c
+--- 43,49 ----
+  SYM_UPARROW_ASSIGN.rules
+  
+  checkexpr.c: $(RULES) attribute.tab parse ../src/nab.h ../src/nabgrm.y
+! 	env NABHOME=.. ./parse *.rules
+  
+  parse: parse.c
+  	$(CC) -o parse parse.c

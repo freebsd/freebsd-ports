@@ -1,0 +1,23 @@
+*** src/reslib.c.orig	Tue Apr 21 14:10:50 1998
+--- src/reslib.c	Mon Feb  1 09:50:35 1999
+***************
+*** 610,618 ****
+  		fclose( cfp );
+  	}
+  
+! 	fclose( pfp );
+  
+! 	fclose( bfp );
+  
+  	return( rlp );
+  }
+--- 610,618 ----
+  		fclose( cfp );
+  	}
+  
+! 	if( pfp ) {fclose( pfp );}
+  
+! 	if( bfp ) {fclose( bfp );}
+  
+  	return( rlp );
+  }
