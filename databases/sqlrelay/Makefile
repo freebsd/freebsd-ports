@@ -56,6 +56,8 @@ CONFIGURE_ARGS+=	--with-gdbm-prefix="${LOCALBASE}" \
 			--with-sqlite-prefix="${LOCALBASE}"
 IF_SQLITE=	""
 .else
+CONFIGURE_ARGS+=	--without-gdbm-prefix \
+			--without-sqlite-prefix
 IF_SQLITE=	"@comment "
 .endif
 
@@ -64,6 +66,7 @@ LIB_DEPENDS+=		mysqlclient.10:${PORTSDIR}/databases/mysql323-client
 CONFIGURE_ARGS+=	--with-mysql-prefix="${LOCALBASE}"
 IF_MYSQL=	""
 .else
+CONFIGURE_ARGS+=	--without-mysql-prefix
 IF_MYSQL=	"@comment "
 .endif
 
@@ -72,6 +75,7 @@ LIB_DEPENDS+=		msql.1:${PORTSDIR}/databases/msql
 CONFIGURE_ARGS+=	--with-msql-prefix="${LOCALBASE}"
 IF_MSQL=	""
 .else
+CONFIGURE_ARGS+=	--without-msql-prefix
 IF_MSQL=	"@comment "
 .endif
 
@@ -80,6 +84,7 @@ LIB_DEPENDS+=		pq.2:${PORTSDIR}/databases/postgresql7
 CONFIGURE_ARGS+=	--with-postgresql-prefix="${LOCALBASE}"
 IF_POSTGRESQL=	""
 .else
+CONFIGURE_ARGS+=	--without-postgresql-prefix
 IF_POSTGRESQL=	"@comment "
 .endif
 
@@ -88,6 +93,7 @@ LIB_DEPENDS+=		odbc.1:${PORTSDIR}/databases/unixODBC
 CONFIGURE_ARGS+=	--with-odbc-prefix="${LOCALBASE}"
 IF_ODBC=	""
 .else
+CONFIGURE_ARGS+=	--without-odbc-prefix
 IF_ODBC=	"@comment "
 .endif
 
@@ -96,6 +102,7 @@ LIB_DEPENDS+=		tds.0:${PORTSDIR}/databases/freetds
 CONFIGURE_ARGS+=	--with-freetds-prefix="${LOCALBASE}"
 IF_FREETDS=	""
 .else
+CONFIGURE_ARGS+=	--without-freetds-prefix
 IF_FREETDS=	"@comment "
 .endif
 
@@ -104,6 +111,7 @@ USE_GTK=		yes
 CONFIGURE_ARGS+=	--with-gtk-prefix="${X11BASE}"
 IF_GTK=		""
 .else
+CONFIGURE_ARGS+=	--without-gtk-prefix
 IF_GTK=		"@comment "
 .endif
 
