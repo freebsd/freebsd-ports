@@ -4567,6 +4567,7 @@ libnids		ports/net/libnids
 libnova		ports/astro/libnova
 libnss-mysql	ports/net/libnss-mysql
 libntlm		ports/security/libntlm
+libodbc++	ports/databases/libodbc++
 liboe		ports/mail/liboe
 libofx		ports/finance/libofx
 libogg		ports/audio/libogg
