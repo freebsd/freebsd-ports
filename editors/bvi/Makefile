@@ -14,8 +14,8 @@ EXTRACT_SUFX=	.src.tar.gz
 MAINTAINER=	jedgar@fxp.org
 
 GNU_CONFIGURE=	yes
-USE_GMAKE=	yes
 
 MAN1=		bvi.1
+MLINKS=		bvi.1 bview.1
 
 .include <bsd.port.mk>
