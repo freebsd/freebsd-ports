@@ -31,6 +31,12 @@ USE_LINUX=	yes
 
 .include <bsd.port.pre.mk>
 
+.if ${OSVERSION} < 500000
+PLIST_SUB+=	FREEBSD5="@comment " FREEBSD4=""
+.else
+PLIST_SUB+=	FREEBSD5="" FREEBSD4="@comment "
+.endif
+
 .if ${OSVERSION} > 500000 && ${OSVERSION} < 500105
 IGNORE=		"You need a more recent version of -CURRENT for this driver"
 .endif
