@@ -6,29 +6,33 @@
 #
 
 PORTNAME=	add
-PORTVERSION=	1.0
+PORTVERSION=	20021229
 CATEGORIES=	math
 MASTER_SITES=	ftp://dickey.his.com/add/
-DISTNAME=	${PORTNAME}
+EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Full-screen editing calculator
 
-WRKSRC=		${WRKDIR}/add-970526
+WRKSRC=		${WRKDIR}/${PORTNAME}-t${PORTVERSION}
 
 GNU_CONFIGURE=	yes
 MAKEFILE=	makefile
+
 MAN1=		add.1
+PORTDOCS=	CHANGES README
+PLIST_FILES=	bin/add %%DATADIR%%/add.hlp
+PLIST_DIRS=	%%DATADIR%%
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/add ${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/add.1 ${PREFIX}/man/man1
-	@${MKDIR} ${PREFIX}/share/add
-	${INSTALL_DATA} ${WRKSRC}/add.hlp ${PREFIX}/share/add
+	${INSTALL_MAN} ${WRKSRC}/add.1 ${MANPREFIX}/man/man1
+	@${MKDIR} ${DATADIR}
+	${INSTALL_DATA} ${WRKSRC}/add.hlp ${DATADIR}
 .if !defined(NOPORTDOCS)
-	@${MKDIR} ${PREFIX}/share/doc/add
-.for file in CHANGES COPYING README
-	${INSTALL_DATA} ${WRKSRC}/${file} ${PREFIX}/share/doc/add
+	@${MKDIR} ${DOCSDIR}
+.for file in CHANGES README
+	${INSTALL_DATA} ${WRKSRC}/${file} ${DOCSDIR}
 .endfor
 .endif
 

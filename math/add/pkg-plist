@@ -1,7 +1,0 @@
-bin/add
-share/add/add.hlp
-%%PORTDOCS%%share/doc/add/CHANGES
-%%PORTDOCS%%share/doc/add/COPYING
-%%PORTDOCS%%share/doc/add/README
-@dirrm share/add
-%%PORTDOCS%%@dirrm share/doc/add
