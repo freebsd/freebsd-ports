@@ -19,7 +19,8 @@ WRKSRC=		${WRKDIR}/mpegdir
 MAN1=		mpeg.1
 
 pre-build:
-	@${MV} ${WRKSRC}/makefile ${WRKSRC}/Makefile
+	@-${MV} ${WRKSRC}/makefile ${WRKSRC}/Makefile
+	cd ${WRKSRC} && lex -lt lexer.l >lexer.c
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/mpeg ${PREFIX}/bin
