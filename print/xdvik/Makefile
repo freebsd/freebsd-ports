@@ -3,7 +3,7 @@
 # Date created:        26 Feb 1998
 # Whom:                Kentaro Inagaki <JBD01226@niftyserve.ne.jp>
 #
-# $Id: Makefile,v 1.2 1998/10/12 17:23:04 jseger Exp $
+# $Id: Makefile,v 1.3 1998/10/13 04:07:18 jseger Exp $
 #
 
 DISTNAME=	xdvik-20a
@@ -15,6 +15,7 @@ MAINTAINER=	JBD01226@niftyserve.ne.jp
 
 RUN_DEPENDS=    mf:${PORTSDIR}/print/tex
 
+USE_XLIB=	yes
 GNU_CONFIGURE=YES
 #CONFIGURE_ARGS=--enable-shared=yes
 USE_GMAKE=YES
