@@ -859,7 +859,7 @@
     SUBDIR += ucpp
     SUBDIR += uds
     SUBDIR += uisp
-    SUBDIR += uml
+    SUBDIR += umbrello
     SUBDIR += understand_ada
     SUBDIR += understand_c
     SUBDIR += upnp
