@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	apache
-PORTVERSION=	1.3.12
+PORTVERSION=	1.3.14
 CATEGORIES=	russian www
 MASTER_SITES=	http://www.apache.org/dist/ \
 		ftp://ftp.ccs.neu.edu/net/mirrors/ftp.apache.org/apache/dist/ \
@@ -31,7 +31,7 @@ PATCHFILES=	patches_${PORTVERSION}rusPL${RA_VERSION}.tar.gz
 
 MAINTAINER=	vns@delta.odessa.ua
 
-RA_VERSION=	29.4
+RA_VERSION=	30.0
 Y2K=		http://www.apache.org/docs/misc/FAQ.html#year2000
 
 #
