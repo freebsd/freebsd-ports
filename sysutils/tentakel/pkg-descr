@@ -1,0 +1,13 @@
+Tentakel is a simple program for executing the same command on many
+hosts in parallel using ssh or rsh. It can make use of several sets of
+hosts that are defined in files called "hostlists".
+
+Tentakel tries to be as portable as possible - it uses plain bourne
+shell code. It is also rather self-contained. Except the few external
+programs it makes use of it should need almost no configuration or
+setup on your system.
+
+WWW: http://tentakel.sourceforge.net
+
+- Munish Chopra
+<mchopra@engmail.uwaterloo.ca>
