@@ -20,7 +20,7 @@ include/neon/ne_redirect.h
 include/neon/ne_auth.h
 include/neon/ne_compress.h
 include/neon/ne_acl.h
-lib/libneon.so.17
+lib/libneon.so.18
 lib/libneon.so
 lib/libneon.la
 lib/libneon.a
