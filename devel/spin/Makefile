@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	spin
-PORTVERSION=	3.5.2
+PORTVERSION=	4.0.3
 CATEGORIES=	devel
 MASTER_SITES=	http://spinroot.com/spin/Src/ \
 		ftp://netlib.bell-labs.com/netlib/spin/ \
@@ -17,8 +17,8 @@ MAINTAINER=	jhanna@shaw.ca
 COMMENT=	An on-the-fly verification system for asynchronous concurrent systems
 
 DIST_SUBDIR=	spin
-WRKSRC=		${WRKDIR}/Src3.5.2
-MAKEFILE=	makefile
+WRKSRC=		${WRKDIR}/Src${PORTVERSION}
+MAKEFILE=	make_unix
 ALL_TARGET=	spin
 USE_REINPLACE=	yes
 
@@ -30,16 +30,12 @@ post-patch:
 	if [ -z "$$WISH" ] ; then WISH=wish8.0 ; fi ; \
 	${REINPLACE_CMD} \
 		-e "s|%%LOCALBASE%%|${LOCALBASE}|g;" \
-		-e "s|%%WISH%%|$$WISH|g" ${WRKDIR}/Xspin3.5/xspin351.tcl
-
-pre-build:
-	cd ${WRKSRC} && ${MAKE} clean
+		-e "s|%%WISH%%|$$WISH|g" ${WRKDIR}/Xspin4.0/xspin402.tcl
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/spin ${PREFIX}/bin
-	${INSTALL_SCRIPT} ${WRKDIR}/Xspin3.5/xspin351.tcl ${PREFIX}/bin
 	${RM} -f ${PREFIX}/bin/xspin
-	${LN} -s ${PREFIX}/bin/xspin351.tcl ${PREFIX}/bin/xspin
+	${INSTALL_SCRIPT} ${WRKDIR}/Xspin4.0/xspin402.tcl ${PREFIX}/bin/xspin
 
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${PREFIX}/share/doc/spin/Doc

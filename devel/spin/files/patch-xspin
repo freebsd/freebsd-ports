@@ -1,0 +1,24 @@
+--- ../Xspin4.0/xspin402.tcl.orig	Mon Apr  7 20:37:27 2003
++++ ../Xspin4.0/xspin402.tcl	Mon Apr  7 20:40:10 2003
+@@ -1,20 +1,4 @@
+-#!/bin/sh
+-# the next line restarts using wish \
+-exec wish c:/cygwin/bin/xspin -- $*
+-
+-# on PCs:
+-# adjust the first argument to wish above with the name and
+-# location of this tcl/tk file on your system, if different.
+-#
+-# Cygwin:
+-# if you use cygwin, do not refer to the file as /usr/bin/xspin
+-# /usr/bin is a symbolic link to /bin, which really
+-# lives in c:/cygwin, hence the contortions above
+-#
+-# on Unix/Linux/Solaris systems
+-# replace the first line with something like
+-#	#!/usr/bin/wish -f
+-# using the pathname for the wish executable on your system
++#!%%LOCALBASE%%/bin/%%WISH%% -f
+ 
+ #======================================================================#
+ # Tcl/Tk Spin Controller, Gerard J. Holzmann, Bell Laboratories, USA.  #
