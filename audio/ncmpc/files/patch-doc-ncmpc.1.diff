@@ -1,0 +1,25 @@
+--- doc/ncmpc.1	Mon Mar  7 03:02:10 2005
++++ doc/ncmpc.1	Mon Mar  7 03:26:54 2005
+@@ -54,6 +54,12 @@
+ .B \-P, \-\-key\-file=FILE
+ Read key bindings from FILE.
+ .TP 
++.B \-m, \-\-mouse
++Enable ncurses mouse events.
++.TP
++.B \-M, \-\-no\-mouse 
++Disable ncurses mouse events.
++.TP
+ Mandatory or optional arguments to long options are also mandatory or optional for any corresponding short options.
+ .SH "CONFIGURATION"
+ When ncmpc start it tries to read user setting from the ~/ncmpc/config file. If no user configuration is found ncmpc tries to load global settings from $SYSCONFDIR/ncmpc/config (the actual path is displayed on the help screen). An example configuration file (config.sample) should be provided with ncmpc.
+@@ -72,6 +78,9 @@
+ .B wide\-cursor = yes|no
+ Make the cursor as wide as the screen.
+ .TP 
++.B enable\-mouse = yes|no
++Ncurses mouse events.
++.TP
+ .B wrap\-around = yes|no
+ Wrapped cursor movement.
+ .TP 
