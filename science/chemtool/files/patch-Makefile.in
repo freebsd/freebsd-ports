@@ -1,8 +1,8 @@
 
 $FreeBSD$
 
---- Makefile.in.orig	Thu Apr 11 21:41:37 2002
-+++ Makefile.in	Fri Aug 30 01:25:01 2002
+--- Makefile.in.orig	Sun May 11 22:02:15 2003
++++ Makefile.in	Sun Jul 20 22:49:21 2003
 @@ -5,7 +5,7 @@
  mandir=@mandir@
  kdedir=@kdemimedir@
@@ -13,11 +13,11 @@ $FreeBSD$
  CC=@CC@
  CP=/bin/cp
 @@ -16,7 +16,7 @@
- SRCS = main.c chemproc.c graph.c draw.c inout.c gtkfilesel.c undo.c 
- OBJS = main.o chemproc.o graph.o draw.o inout.o gtkfilesel.o undo.o
+ SRCS = main.c chemproc.c graph.c draw.c inout.c undo.c @MYGTKSRCS@
+ OBJS = main.o chemproc.o graph.o draw.o inout.o undo.o @MYGTKOBJS@
  
--SYS_LIBRARIES = `gtk-config --libs` -lm
-+SYS_LIBRARIES = `${GTK_CONFIG} --libs` -lm
+-SYS_LIBRARIES = `gtk-config --libs` @EMFLIBS@ -lm
++SYS_LIBRARIES = `${GTK_CONFIG} --libs` @EMFLIBS@ -lm
+  
  
  all: chemtool cht
- 

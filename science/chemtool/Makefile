@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	chemtool
-PORTVERSION=	1.5
+PORTVERSION=	1.6
 CATEGORIES=	science
 MASTER_SITES=	http://ruby.chemie.uni-freiburg.de/~martin/chemtool/
 
@@ -15,13 +15,28 @@ COMMENT=	Draw organic molecules easily and store them
 RUN_DEPENDS=	transfig:${PORTSDIR}/print/transfig
 
 USE_GNOME=	gtk12
-GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
+GNU_CONFIGURE=	yes
+CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
+		LDFLAGS="-L${LOCALBASE}/lib"
 
 MAN1=	chemtool.1 cht.1
 
-post-install:
-	${MKDIR} ${PREFIX}/share/examples/chemtool
-	${INSTALL_DATA} ${WRKSRC}/examples/* ${PREFIX}/share/examples/chemtool
+do-install:
+	${INSTALL_PROGRAM} ${WRKSRC}/chemtool ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/src-cht/cht ${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/chemtool.1 ${MANPREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/cht.1 ${MANPREFIX}/man/man1
+.for lang in cs de fr pl pt_BR ru
+	@${MKDIR} ${PREFIX}/share/locale/${lang}/LC_MESSAGES
+	${INSTALL_DATA} ${WRKSRC}/locales/${lang}/chemtool.mo \
+		${PREFIX}/share/locale/${lang}/LC_MESSAGES
+.endfor
+.if !defined(NOPORTDOCS)
+	@${MKDIR} ${EXAMPLESDIR}
+	cd ${WRKSRC}/examples && ${FIND} . | \
+		cpio -pdm -L -R ${SHAREOWN}:${SHAREGRP} ${EXAMPLESDIR}
+.endif
 
 .include <bsd.port.mk>
