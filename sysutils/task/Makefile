@@ -7,6 +7,7 @@
 
 PORTNAME=	task
 PORTVERSION=	1.52
+PORTREVISION=	1
 CATEGORIES=	sysutils security
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		${MASTER_SITE_PACKETSTORM:S:%SUBDIR%:UNIX/utilities:}
@@ -23,8 +24,8 @@ MAN1=		blockcalc.1 dcalc.1 dcat.1 dls.1 dstat.1 ffind.1 \
 
 do-install:
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${PREFIX}/share/doc/task
-	cd ${WRKSRC} && ${INSTALL_DATA} ${DOCS} ${PREFIX}/share/doc/task
+	${MKDIR} ${DOCSDIR}
+	cd ${WRKSRC} && ${INSTALL_DATA} ${DOCS} ${DOCSDIR}
 .endif
 	${INSTALL_SCRIPT} ${WRKSRC}/bin/mactime ${PREFIX}/bin
 	cd ${WRKSRC}/bin && ${INSTALL_PROGRAM} dcalc dcat dls dstat ffind \

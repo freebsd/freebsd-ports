@@ -10,14 +10,15 @@ bin/fsstat
 bin/ifind
 bin/ils
 bin/istat
-%%PORTDOCS%%share/doc/task/README
-%%PORTDOCS%%share/doc/task/fat.README
-%%PORTDOCS%%share/doc/task/filesystem.README
-%%PORTDOCS%%share/doc/task/ntfs.README
-%%PORTDOCS%%share/doc/task/timeline.README
-%%PORTDOCS%%share/doc/task/README.FIRST
-%%PORTDOCS%%share/doc/task/additional-resources
-%%PORTDOCS%%share/doc/task/bibliography
-%%PORTDOCS%%share/doc/task/help-recovering-file
-%%PORTDOCS%%share/doc/task/help-when-broken-into
-%%PORTDOCS%%@dirrm share/doc/task
+%%PORTDOCS%%%%DOCSDIR%%/CHANGES.FROM.TCT
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/README.FIRST
+%%PORTDOCS%%%%DOCSDIR%%/additional-resources
+%%PORTDOCS%%%%DOCSDIR%%/bibliography
+%%PORTDOCS%%%%DOCSDIR%%/fat.README
+%%PORTDOCS%%%%DOCSDIR%%/filesystem.README
+%%PORTDOCS%%%%DOCSDIR%%/help-recovering-file
+%%PORTDOCS%%%%DOCSDIR%%/help-when-broken-into
+%%PORTDOCS%%%%DOCSDIR%%/ntfs.README
+%%PORTDOCS%%%%DOCSDIR%%/timeline.README
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
