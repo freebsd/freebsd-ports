@@ -20,19 +20,18 @@ share/libfwbuilder/migration/0.10.3/FWObjectDatabase.xslt
 share/libfwbuilder/migration/0.10.2/FWObjectDatabase.xslt
 share/libfwbuilder/migration/0.10.1/FWObjectDatabase.xslt
 share/libfwbuilder/migration/0.10.0/FWObjectDatabase.xslt
+share/libfwbuilder/migration/1.0.0/FWObjectDatabase.xslt
 share/libfwbuilder/fwbuilder.dtd
-share/doc/libfwbuilder-1.0.0/README
-share/doc/libfwbuilder-1.0.0/INSTALL
-share/doc/libfwbuilder-1.0.0/Credits
-share/doc/libfwbuilder-1.0.0/ChangeLog
-share/doc/libfwbuilder-1.0.0/COPYING
-share/doc/libfwbuilder-1.0.0/AUTHORS
+share/doc/libfwbuilder-1.0.1/README
+share/doc/libfwbuilder-1.0.1/INSTALL
+share/doc/libfwbuilder-1.0.1/Credits
+share/doc/libfwbuilder-1.0.1/ChangeLog
+share/doc/libfwbuilder-1.0.1/COPYING
+share/doc/libfwbuilder-1.0.1/AUTHORS
 lib/libfwcompiler.so.5
 lib/libfwcompiler.so
-lib/libfwcompiler.a
 lib/libfwbuilder.so.5
 lib/libfwbuilder.so
-lib/libfwbuilder.a
 include/fwcompiler/manifest.hh
 include/fwcompiler/RuleProcessor.hh
 include/fwcompiler/PolicyCompiler.hh
@@ -111,8 +110,9 @@ bin/libfwbuilder-config
 @dirrm share/libfwbuilder/migration/0.10.2
 @dirrm share/libfwbuilder/migration/0.10.1
 @dirrm share/libfwbuilder/migration/0.10.0
+@dirrm share/libfwbuilder/migration/1.0.0
 @dirrm share/libfwbuilder/migration
 @dirrm share/libfwbuilder
-@dirrm share/doc/libfwbuilder-1.0.0
+@dirrm share/doc/libfwbuilder-1.0.1
 @dirrm include/fwcompiler
 @dirrm include/fwbuilder
