@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	gnomemedia2
-PORTVERSION=	2.4.0
-PORTREVISION=	1
+PORTVERSION=	2.4.1
 CATEGORIES=	audio gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/gnome-media/2.4
@@ -25,9 +24,14 @@ USE_X_PREFIX=	yes
 USE_GMAKE=	yes
 USE_LIBTOOL=	yes
 INSTALLS_SHLIB=	yes
+USE_REINPLACE=	yes
 GNOME_DESKTOP_VERSION=2
 USE_GNOME=	gnomeprefix gnomehack gnomehier gnomedesktop gail
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|[$$][(]CDROM_HOST[)]|freebsd|g' \
+		${WRKSRC}/gnome-cd/Makefile.in
 
 .include <bsd.port.mk>
