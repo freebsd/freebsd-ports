@@ -7,6 +7,7 @@
 
 PORTNAME=		rox-pager
 PORTVERSION=		1.0.0
+PORTREVISION=		1
 CATEGORIES=		x11-wm
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	rox
@@ -17,6 +18,8 @@ MAINTAINER=		olgeni@FreeBSD.org
 COMMENT=		Pager for the ROX desktop
 
 USE_GNOME=		gtk20 pkgconfig libxml2 libwnck
+USE_AUTOCONF=		yes
+HAS_CONFIGURE=		yes
 
 .include <bsd.port.pre.mk>
 
@@ -28,8 +31,10 @@ BINARIES=	FreeBSD-${ARCH}
 
 PLIST_SUB=	BINARIES="${BINARIES}"
 
-do-build:
-	@cd ${WRKSRC} && Pager/AppRun --compile
+CONFIGURE_ARGS=		--enable-rox --with-platform=${BINARIES}
+CONFIGURE_WRKSRC=	${WRKSRC}/Pager/src
+BUILD_WRKSRC=		${CONFIGURE_WRKSRC}
+ALL_TARGET=
 
 do-install:
 	@${MKDIR} ${PREFIX}/apps/Pager
