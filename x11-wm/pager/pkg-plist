@@ -1,0 +1,4 @@
+bin/pager
+share/sawfish/%%SAWFISH_VERSION%%/lisp/sawfish/wm/ext/pager.jl
+@comment share/sawfish/%%SAWFISH_VERSION%%/lisp/sawfish/wm/ext/pager.jlc
+@comment doesn't work correct with the compiled .jl file at the moment
