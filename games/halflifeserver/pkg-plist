@@ -1,250 +1,253 @@
-usr/games/hlds_l/engine_i386.so
-usr/games/hlds_l/hlds_run
-usr/games/hlds_l/hlds_run.dat
-usr/games/hlds_l/kver.kp
-usr/games/hlds_l/libhlwon.so
-usr/games/hlds_l/linuxreadme.txt
-usr/games/hlds_l/sierra.inf
-usr/games/hlds_l/tfc/cached.wad
-usr/games/hlds_l/tfc/cl_dlls/client.dll
-usr/games/hlds_l/tfc/decals.wad
-usr/games/hlds_l/tfc/delta.lst
-usr/games/hlds_l/tfc/dlls/tfc_i386.so
-usr/games/hlds_l/tfc/events/door/doorgodown.sc
-usr/games/hlds_l/tfc/events/door/doorgoup.sc
-usr/games/hlds_l/tfc/events/door/doorhitbottom.sc
-usr/games/hlds_l/tfc/events/door/doorhittop.sc
-usr/games/hlds_l/tfc/events/explode/tf_burn.sc
-usr/games/hlds_l/tfc/events/explode/tf_concuss.sc
-usr/games/hlds_l/tfc/events/explode/tf_emp.sc
-usr/games/hlds_l/tfc/events/explode/tf_engrgren.sc
-usr/games/hlds_l/tfc/events/explode/tf_fire.sc
-usr/games/hlds_l/tfc/events/explode/tf_gas.sc
-usr/games/hlds_l/tfc/events/explode/tf_gren.sc
-usr/games/hlds_l/tfc/events/explode/tf_mirv.sc
-usr/games/hlds_l/tfc/events/explode/tf_mirvmain.sc
-usr/games/hlds_l/tfc/events/explode/tf_nailgren.sc
-usr/games/hlds_l/tfc/events/explode/tf_ng.sc
-usr/games/hlds_l/tfc/events/explode/tf_normalgren.sc
-usr/games/hlds_l/tfc/events/explode/tf_pipe.sc
-usr/games/hlds_l/tfc/events/misc/benchmark.sc
-usr/games/hlds_l/tfc/events/misc/gibs.sc
-usr/games/hlds_l/tfc/events/wpn/tf_acfire.sc
-usr/games/hlds_l/tfc/events/wpn/tf_acspin.sc
-usr/games/hlds_l/tfc/events/wpn/tf_acstart.sc
-usr/games/hlds_l/tfc/events/wpn/tf_acwd.sc
-usr/games/hlds_l/tfc/events/wpn/tf_acwu.sc
-usr/games/hlds_l/tfc/events/wpn/tf_ar.sc
-usr/games/hlds_l/tfc/events/wpn/tf_axe.sc
-usr/games/hlds_l/tfc/events/wpn/tf_axedecal.sc
-usr/games/hlds_l/tfc/events/wpn/tf_flame.sc
-usr/games/hlds_l/tfc/events/wpn/tf_gl.sc
-usr/games/hlds_l/tfc/events/wpn/tf_ic.sc
-usr/games/hlds_l/tfc/events/wpn/tf_knife.sc
-usr/games/hlds_l/tfc/events/wpn/tf_mednormal.sc
-usr/games/hlds_l/tfc/events/wpn/tf_medsteam.sc
-usr/games/hlds_l/tfc/events/wpn/tf_medsuper.sc
-usr/games/hlds_l/tfc/events/wpn/tf_nail.sc
-usr/games/hlds_l/tfc/events/wpn/tf_pipel.sc
-usr/games/hlds_l/tfc/events/wpn/tf_rail.sc
-usr/games/hlds_l/tfc/events/wpn/tf_rpg.sc
-usr/games/hlds_l/tfc/events/wpn/tf_sg.sc
-usr/games/hlds_l/tfc/events/wpn/tf_sgpump.sc
-usr/games/hlds_l/tfc/events/wpn/tf_sgreload.sc
-usr/games/hlds_l/tfc/events/wpn/tf_snail.sc
-usr/games/hlds_l/tfc/events/wpn/tf_sniper.sc
-usr/games/hlds_l/tfc/events/wpn/tf_sniperhit.sc
-usr/games/hlds_l/tfc/events/wpn/tf_ssg.sc
-usr/games/hlds_l/tfc/events/wpn/tf_tranq.sc
-usr/games/hlds_l/tfc/liblist.gam
-usr/games/hlds_l/tfc/manual/background.jpg
-usr/games/hlds_l/tfc/manual/bullet.gif
-usr/games/hlds_l/tfc/manual/bullet1.gif
-usr/games/hlds_l/tfc/manual/note.jpg
-usr/games/hlds_l/tfc/manual/regexp.html
-usr/games/hlds_l/tfc/manual/tfcclasses.htm
-usr/games/hlds_l/tfc/manual/tfccontents.htm
-usr/games/hlds_l/tfc/manual/tfcmaps.htm
-usr/games/hlds_l/tfc/manual/tfcserver.htm
-usr/games/hlds_l/tfc/manual/tfcstarting.htm
-usr/games/hlds_l/tfc/manual/tflogo.gif
-usr/games/hlds_l/tfc/manual/tfstats.htm
-usr/games/hlds_l/tfc/manual/tip.jpg
-usr/games/hlds_l/tfc/manual/tips.jpg
-usr/games/hlds_l/tfc/mapcycle.txt
-usr/games/hlds_l/tfc/maps/2fort.bsp
-usr/games/hlds_l/tfc/maps/2fort.txt
-usr/games/hlds_l/tfc/maps/avanti.bsp
-usr/games/hlds_l/tfc/maps/avanti.txt
-usr/games/hlds_l/tfc/maps/badlands.bsp
-usr/games/hlds_l/tfc/maps/badlands.txt
-usr/games/hlds_l/tfc/maps/casbah.bsp
-usr/games/hlds_l/tfc/maps/casbah.txt
-usr/games/hlds_l/tfc/maps/crossover2.bsp
-usr/games/hlds_l/tfc/maps/crossover2.txt
-usr/games/hlds_l/tfc/maps/cz2.bsp
-usr/games/hlds_l/tfc/maps/cz2.txt
-usr/games/hlds_l/tfc/maps/dustbowl.bsp
-usr/games/hlds_l/tfc/maps/dustbowl.txt
-usr/games/hlds_l/tfc/maps/epicenter.bsp
-usr/games/hlds_l/tfc/maps/epicenter.txt
-usr/games/hlds_l/tfc/maps/flagrun.bsp
-usr/games/hlds_l/tfc/maps/flagrun.txt
-usr/games/hlds_l/tfc/maps/hunted.bsp
-usr/games/hlds_l/tfc/maps/hunted.txt
-usr/games/hlds_l/tfc/maps/push.bsp
-usr/games/hlds_l/tfc/maps/push.txt
-usr/games/hlds_l/tfc/maps/rock2.bsp
-usr/games/hlds_l/tfc/maps/rock2.txt
-usr/games/hlds_l/tfc/maps/warpath.bsp
-usr/games/hlds_l/tfc/maps/warpath.txt
-usr/games/hlds_l/tfc/maps/well.bsp
-usr/games/hlds_l/tfc/maps/well.txt
-usr/games/hlds_l/tfc/models/player/civilian/civilian.mdl
-usr/games/hlds_l/tfc/models/player/demo/demo.mdl
-usr/games/hlds_l/tfc/models/player/demo/demo2.mdl
-usr/games/hlds_l/tfc/models/player/engineer/engineer.mdl
-usr/games/hlds_l/tfc/models/player/engineer/engineer2.mdl
-usr/games/hlds_l/tfc/models/player/hvyweapon/hvyweapon.mdl
-usr/games/hlds_l/tfc/models/player/hvyweapon/hvyweapon2.mdl
-usr/games/hlds_l/tfc/models/player/medic/medic.mdl
-usr/games/hlds_l/tfc/models/player/medic/medic2.mdl
-usr/games/hlds_l/tfc/models/player/pyro/pyro.mdl
-usr/games/hlds_l/tfc/models/player/pyro/pyro2.mdl
-usr/games/hlds_l/tfc/models/player/scout/scout.mdl
-usr/games/hlds_l/tfc/models/player/scout/scout2.mdl
-usr/games/hlds_l/tfc/models/player/sniper/sniper.mdl
-usr/games/hlds_l/tfc/models/player/sniper/sniper2.mdl
-usr/games/hlds_l/tfc/models/player/soldier/soldier.mdl
-usr/games/hlds_l/tfc/models/player/soldier/soldier2.mdl
-usr/games/hlds_l/tfc/models/player/spy/spy.mdl
-usr/games/hlds_l/tfc/models/player/spy/spy2.mdl
-usr/games/hlds_l/tfc/models/p_9mmhandgun.mdl
-usr/games/hlds_l/tfc/models/p_9mmhandgun2.mdl
-usr/games/hlds_l/tfc/models/p_crowbar.mdl
-usr/games/hlds_l/tfc/models/p_crowbar2.mdl
-usr/games/hlds_l/tfc/models/p_egon.mdl
-usr/games/hlds_l/tfc/models/p_egon2.mdl
-usr/games/hlds_l/tfc/models/p_glauncher.mdl
-usr/games/hlds_l/tfc/models/p_glauncher2.mdl
-usr/games/hlds_l/tfc/models/p_grenade.mdl
-usr/games/hlds_l/tfc/models/p_grenade2.mdl
-usr/games/hlds_l/tfc/models/p_knife.mdl
-usr/games/hlds_l/tfc/models/p_knife2.mdl
-usr/games/hlds_l/tfc/models/p_medkit.mdl
-usr/games/hlds_l/tfc/models/p_medkit2.mdl
-usr/games/hlds_l/tfc/models/p_mini.mdl
-usr/games/hlds_l/tfc/models/p_mini2.mdl
-usr/games/hlds_l/tfc/models/p_nailgun.mdl
-usr/games/hlds_l/tfc/models/p_nailgun2.mdl
-usr/games/hlds_l/tfc/models/p_rpg.mdl
-usr/games/hlds_l/tfc/models/p_rpg2.mdl
-usr/games/hlds_l/tfc/models/p_shotgun.mdl
-usr/games/hlds_l/tfc/models/p_shotgun2.mdl
-usr/games/hlds_l/tfc/models/p_smallshotgun.mdl
-usr/games/hlds_l/tfc/models/p_snailgun.mdl
-usr/games/hlds_l/tfc/models/p_snailgun2.mdl
-usr/games/hlds_l/tfc/models/p_sniper.mdl
-usr/games/hlds_l/tfc/models/p_sniper2.mdl
-usr/games/hlds_l/tfc/models/p_spanner.mdl
-usr/games/hlds_l/tfc/models/p_spanner2.mdl
-usr/games/hlds_l/tfc/models/p_spygun.mdl
-usr/games/hlds_l/tfc/models/p_srpg.mdl
-usr/games/hlds_l/tfc/models/p_umbrella.mdl
-usr/games/hlds_l/tfc/models/p_umbrella2.mdl
-usr/games/hlds_l/tfc/models/sentry1.mdl
-usr/games/hlds_l/tfc/models/v_tfc_spanner.mdl
-usr/games/hlds_l/tfc/motd.txt
-usr/games/hlds_l/tfc/pak0.pak
-usr/games/hlds_l/tfc/server.cfg
-usr/games/hlds_l/tfc/sound/misc/endgame.wav
-usr/games/hlds_l/tfc/sound/vox/endgame.wav
-usr/games/hlds_l/tfc/sound/vox/stolen.wav
-usr/games/hlds_l/tfc/sound/weapons/asscan2.wav
-usr/games/hlds_l/tfc/sound/weapons/asscan4.wav
-usr/games/hlds_l/tfc/tfc.wad
-usr/games/hlds_l/tfc/tfc2.wad
-usr/games/hlds_l/tfc/tfstats/readme.txt
-usr/games/hlds_l/tfc/tfstats/tfc.2fort.rul
-usr/games/hlds_l/tfc/tfstats/tfc.cz2.rul
-usr/games/hlds_l/tfc/tfstats/tfc.rock2.rul
-usr/games/hlds_l/tfc/tfstats/tfc.rul
-usr/games/hlds_l/tfc/tfstats/tfc.well.rul
-usr/games/hlds_l/tfc/tfstats/tfstats.txt
-usr/games/hlds_l/tfc/tfstats/tfstats_l
-usr/games/hlds_l/valve/cached.wad
-usr/games/hlds_l/valve/cl_dlls/client.dll
-usr/games/hlds_l/valve/credits.txt
-usr/games/hlds_l/valve/decals.wad
-usr/games/hlds_l/valve/default.cfg
-usr/games/hlds_l/valve/delta.lst
-usr/games/hlds_l/valve/dlls/hl_i386.so
-usr/games/hlds_l/valve/events/gauss.sc
-usr/games/hlds_l/valve/events/gaussspin.sc
-usr/games/hlds_l/valve/events/glock1.sc
-usr/games/hlds_l/valve/events/glock2.sc
-usr/games/hlds_l/valve/events/mp5.sc
-usr/games/hlds_l/valve/events/python.sc
-usr/games/hlds_l/valve/events/shotgun1.sc
-usr/games/hlds_l/valve/events/shotgun2.sc
-usr/games/hlds_l/valve/events/train.sc
-usr/games/hlds_l/valve/fonts.wad
-usr/games/hlds_l/valve/gfx.wad
-usr/games/hlds_l/valve/halflife.wad
-usr/games/hlds_l/valve/liblist.gam
-usr/games/hlds_l/valve/liquids.wad
-usr/games/hlds_l/valve/mapcycle.txt
-usr/games/hlds_l/valve/maps/boot_camp.bsp
-usr/games/hlds_l/valve/maps/bounce.bsp
-usr/games/hlds_l/valve/maps/crossfire.bsp
-usr/games/hlds_l/valve/maps/datacore.bsp
-usr/games/hlds_l/valve/maps/frenzy.bsp
-usr/games/hlds_l/valve/maps/gasworks.bsp
-usr/games/hlds_l/valve/maps/lambda_bunker.bsp
-usr/games/hlds_l/valve/maps/rapidcore.bsp
-usr/games/hlds_l/valve/maps/snark_pit.bsp
-usr/games/hlds_l/valve/maps/stalkyard.bsp
-usr/games/hlds_l/valve/maps/subtransit.bsp
-usr/games/hlds_l/valve/maps/undertow.bsp
-usr/games/hlds_l/valve/pak0.pak
-usr/games/hlds_l/valve/server.cfg
-usr/games/hlds_l/valve/skill.cfg
-usr/games/hlds_l/valve/valve.rc
-usr/games/hlds_l/valve/woncomm.lst
-usr/games/hlds_l/valve/xeno.wad
-usr/games/hlds_l/vgui.dll
-usr/games/hlds_l/wonauth.dll
-usr/games/hlds_l/woncrypt.dll
-@dirrm usr/games/hlds_l/valve/dlls
-@dirrm usr/games/hlds_l/valve/maps/
-@dirrm usr/games/hlds_l/valve/events/
-@dirrm usr/games/hlds_l/valve/cl_dlls/
-@dirrm usr/games/hlds_l/valve/
-@dirrm usr/games/hlds_l/tfc/tfstats/
-@dirrm usr/games/hlds_l/tfc/sound/weapons/
-@dirrm usr/games/hlds_l/tfc/sound/vox/
-@dirrm usr/games/hlds_l/tfc/sound/misc/
-@dirrm usr/games/hlds_l/tfc/sound/
-@dirrm usr/games/hlds_l/tfc/models/player/spy/
-@dirrm usr/games/hlds_l/tfc/models/player/soldier/
-@dirrm usr/games/hlds_l/tfc/models/player/sniper/
-@dirrm usr/games/hlds_l/tfc/models/player/scout/
-@dirrm usr/games/hlds_l/tfc/models/player/pyro/
-@dirrm usr/games/hlds_l/tfc/models/player/medic/
-@dirrm usr/games/hlds_l/tfc/models/player/hvyweapon/
-@dirrm usr/games/hlds_l/tfc/models/player/engineer/
-@dirrm usr/games/hlds_l/tfc/models/player/demo/
-@dirrm usr/games/hlds_l/tfc/models/player/civilian/
-@dirrm usr/games/hlds_l/tfc/models/player/
-@dirrm usr/games/hlds_l/tfc/models/
-@dirrm usr/games/hlds_l/tfc/maps/
-@dirrm usr/games/hlds_l/tfc/manual/
-@dirrm usr/games/hlds_l/tfc/events/wpn/
-@dirrm usr/games/hlds_l/tfc/events/misc/
-@dirrm usr/games/hlds_l/tfc/events/explode/
-@dirrm usr/games/hlds_l/tfc/events/door/
-@dirrm usr/games/hlds_l/tfc/events/
-@dirrm usr/games/hlds_l/tfc/dlls/
-@dirrm usr/games/hlds_l/tfc/cl_dlls/
-@dirrm usr/games/hlds_l/tfc/
-@dirrm usr/games/hlds_l/
+%%HLDSDIR%%engine_i386.so
+%%HLDSDIR%%hlds_run
+%%HLDSDIR%%hlds_run.dat
+%%HLDSDIR%%kver.kp
+%%HLDSDIR%%libhlwon.so
+%%HLDSDIR%%linuxreadme.txt
+%%HLDSDIR%%sierra.inf
+%%HLDSDIR%%tfc/cached.wad
+%%HLDSDIR%%tfc/cl_dlls/client.dll
+%%HLDSDIR%%tfc/decals.wad
+%%HLDSDIR%%tfc/delta.lst
+%%HLDSDIR%%tfc/dlls/tfc_i386.so
+%%HLDSDIR%%tfc/events/door/doorgodown.sc
+%%HLDSDIR%%tfc/events/door/doorgoup.sc
+%%HLDSDIR%%tfc/events/door/doorhitbottom.sc
+%%HLDSDIR%%tfc/events/door/doorhittop.sc
+%%HLDSDIR%%tfc/events/explode/tf_burn.sc
+%%HLDSDIR%%tfc/events/explode/tf_concuss.sc
+%%HLDSDIR%%tfc/events/explode/tf_emp.sc
+%%HLDSDIR%%tfc/events/explode/tf_engrgren.sc
+%%HLDSDIR%%tfc/events/explode/tf_fire.sc
+%%HLDSDIR%%tfc/events/explode/tf_gas.sc
+%%HLDSDIR%%tfc/events/explode/tf_gren.sc
+%%HLDSDIR%%tfc/events/explode/tf_mirv.sc
+%%HLDSDIR%%tfc/events/explode/tf_mirvmain.sc
+%%HLDSDIR%%tfc/events/explode/tf_nailgren.sc
+%%HLDSDIR%%tfc/events/explode/tf_ng.sc
+%%HLDSDIR%%tfc/events/explode/tf_normalgren.sc
+%%HLDSDIR%%tfc/events/explode/tf_pipe.sc
+%%HLDSDIR%%tfc/events/misc/benchmark.sc
+%%HLDSDIR%%tfc/events/misc/gibs.sc
+%%HLDSDIR%%tfc/events/wpn/tf_acfire.sc
+%%HLDSDIR%%tfc/events/wpn/tf_acspin.sc
+%%HLDSDIR%%tfc/events/wpn/tf_acstart.sc
+%%HLDSDIR%%tfc/events/wpn/tf_acwd.sc
+%%HLDSDIR%%tfc/events/wpn/tf_acwu.sc
+%%HLDSDIR%%tfc/events/wpn/tf_ar.sc
+%%HLDSDIR%%tfc/events/wpn/tf_axe.sc
+%%HLDSDIR%%tfc/events/wpn/tf_axedecal.sc
+%%HLDSDIR%%tfc/events/wpn/tf_flame.sc
+%%HLDSDIR%%tfc/events/wpn/tf_gl.sc
+%%HLDSDIR%%tfc/events/wpn/tf_ic.sc
+%%HLDSDIR%%tfc/events/wpn/tf_knife.sc
+%%HLDSDIR%%tfc/events/wpn/tf_mednormal.sc
+%%HLDSDIR%%tfc/events/wpn/tf_medsteam.sc
+%%HLDSDIR%%tfc/events/wpn/tf_medsuper.sc
+%%HLDSDIR%%tfc/events/wpn/tf_nail.sc
+%%HLDSDIR%%tfc/events/wpn/tf_pipel.sc
+%%HLDSDIR%%tfc/events/wpn/tf_rail.sc
+%%HLDSDIR%%tfc/events/wpn/tf_rpg.sc
+%%HLDSDIR%%tfc/events/wpn/tf_sg.sc
+%%HLDSDIR%%tfc/events/wpn/tf_sgpump.sc
+%%HLDSDIR%%tfc/events/wpn/tf_sgreload.sc
+%%HLDSDIR%%tfc/events/wpn/tf_snail.sc
+%%HLDSDIR%%tfc/events/wpn/tf_sniper.sc
+%%HLDSDIR%%tfc/events/wpn/tf_sniperhit.sc
+%%HLDSDIR%%tfc/events/wpn/tf_ssg.sc
+%%HLDSDIR%%tfc/events/wpn/tf_tranq.sc
+%%HLDSDIR%%tfc/liblist.gam
+%%HLDSDIR%%tfc/manual/background.jpg
+%%HLDSDIR%%tfc/manual/bullet.gif
+%%HLDSDIR%%tfc/manual/bullet1.gif
+%%HLDSDIR%%tfc/manual/note.jpg
+%%HLDSDIR%%tfc/manual/regexp.html
+%%HLDSDIR%%tfc/manual/tfcclasses.htm
+%%HLDSDIR%%tfc/manual/tfccontents.htm
+%%HLDSDIR%%tfc/manual/tfcmaps.htm
+%%HLDSDIR%%tfc/manual/tfcserver.htm
+%%HLDSDIR%%tfc/manual/tfcstarting.htm
+%%HLDSDIR%%tfc/manual/tflogo.gif
+%%HLDSDIR%%tfc/manual/tfstats.htm
+%%HLDSDIR%%tfc/manual/tip.jpg
+%%HLDSDIR%%tfc/manual/tips.jpg
+%%HLDSDIR%%tfc/mapcycle.txt
+%%HLDSDIR%%tfc/maps/2fort.bsp
+%%HLDSDIR%%tfc/maps/2fort.txt
+%%HLDSDIR%%tfc/maps/avanti.bsp
+%%HLDSDIR%%tfc/maps/avanti.txt
+%%HLDSDIR%%tfc/maps/badlands.bsp
+%%HLDSDIR%%tfc/maps/badlands.txt
+%%HLDSDIR%%tfc/maps/casbah.bsp
+%%HLDSDIR%%tfc/maps/casbah.txt
+%%HLDSDIR%%tfc/maps/crossover2.bsp
+%%HLDSDIR%%tfc/maps/crossover2.txt
+%%HLDSDIR%%tfc/maps/cz2.bsp
+%%HLDSDIR%%tfc/maps/cz2.txt
+%%HLDSDIR%%tfc/maps/dustbowl.bsp
+%%HLDSDIR%%tfc/maps/dustbowl.txt
+%%HLDSDIR%%tfc/maps/epicenter.bsp
+%%HLDSDIR%%tfc/maps/epicenter.txt
+%%HLDSDIR%%tfc/maps/flagrun.bsp
+%%HLDSDIR%%tfc/maps/flagrun.txt
+%%HLDSDIR%%tfc/maps/hunted.bsp
+%%HLDSDIR%%tfc/maps/hunted.txt
+%%HLDSDIR%%tfc/maps/push.bsp
+%%HLDSDIR%%tfc/maps/push.txt
+%%HLDSDIR%%tfc/maps/rock2.bsp
+%%HLDSDIR%%tfc/maps/rock2.txt
+%%HLDSDIR%%tfc/maps/warpath.bsp
+%%HLDSDIR%%tfc/maps/warpath.txt
+%%HLDSDIR%%tfc/maps/well.bsp
+%%HLDSDIR%%tfc/maps/well.txt
+%%HLDSDIR%%tfc/models/player/civilian/civilian.mdl
+%%HLDSDIR%%tfc/models/player/demo/demo.mdl
+%%HLDSDIR%%tfc/models/player/demo/demo2.mdl
+%%HLDSDIR%%tfc/models/player/engineer/engineer.mdl
+%%HLDSDIR%%tfc/models/player/engineer/engineer2.mdl
+%%HLDSDIR%%tfc/models/player/hvyweapon/hvyweapon.mdl
+%%HLDSDIR%%tfc/models/player/hvyweapon/hvyweapon2.mdl
+%%HLDSDIR%%tfc/models/player/medic/medic.mdl
+%%HLDSDIR%%tfc/models/player/medic/medic2.mdl
+%%HLDSDIR%%tfc/models/player/pyro/pyro.mdl
+%%HLDSDIR%%tfc/models/player/pyro/pyro2.mdl
+%%HLDSDIR%%tfc/models/player/scout/scout.mdl
+%%HLDSDIR%%tfc/models/player/scout/scout2.mdl
+%%HLDSDIR%%tfc/models/player/sniper/sniper.mdl
+%%HLDSDIR%%tfc/models/player/sniper/sniper2.mdl
+%%HLDSDIR%%tfc/models/player/soldier/soldier.mdl
+%%HLDSDIR%%tfc/models/player/soldier/soldier2.mdl
+%%HLDSDIR%%tfc/models/player/spy/spy.mdl
+%%HLDSDIR%%tfc/models/player/spy/spy2.mdl
+%%HLDSDIR%%tfc/models/p_9mmhandgun.mdl
+%%HLDSDIR%%tfc/models/p_9mmhandgun2.mdl
+%%HLDSDIR%%tfc/models/p_crowbar.mdl
+%%HLDSDIR%%tfc/models/p_crowbar2.mdl
+%%HLDSDIR%%tfc/models/p_egon.mdl
+%%HLDSDIR%%tfc/models/p_egon2.mdl
+%%HLDSDIR%%tfc/models/p_glauncher.mdl
+%%HLDSDIR%%tfc/models/p_glauncher2.mdl
+%%HLDSDIR%%tfc/models/p_grenade.mdl
+%%HLDSDIR%%tfc/models/p_grenade2.mdl
+%%HLDSDIR%%tfc/models/p_knife.mdl
+%%HLDSDIR%%tfc/models/p_knife2.mdl
+%%HLDSDIR%%tfc/models/p_medkit.mdl
+%%HLDSDIR%%tfc/models/p_medkit2.mdl
+%%HLDSDIR%%tfc/models/p_mini.mdl
+%%HLDSDIR%%tfc/models/p_mini2.mdl
+%%HLDSDIR%%tfc/models/p_nailgun.mdl
+%%HLDSDIR%%tfc/models/p_nailgun2.mdl
+%%HLDSDIR%%tfc/models/p_rpg.mdl
+%%HLDSDIR%%tfc/models/p_rpg2.mdl
+%%HLDSDIR%%tfc/models/p_shotgun.mdl
+%%HLDSDIR%%tfc/models/p_shotgun2.mdl
+%%HLDSDIR%%tfc/models/p_smallshotgun.mdl
+%%HLDSDIR%%tfc/models/p_snailgun.mdl
+%%HLDSDIR%%tfc/models/p_snailgun2.mdl
+%%HLDSDIR%%tfc/models/p_sniper.mdl
+%%HLDSDIR%%tfc/models/p_sniper2.mdl
+%%HLDSDIR%%tfc/models/p_spanner.mdl
+%%HLDSDIR%%tfc/models/p_spanner2.mdl
+%%HLDSDIR%%tfc/models/p_spygun.mdl
+%%HLDSDIR%%tfc/models/p_srpg.mdl
+%%HLDSDIR%%tfc/models/p_umbrella.mdl
+%%HLDSDIR%%tfc/models/p_umbrella2.mdl
+%%HLDSDIR%%tfc/models/sentry1.mdl
+%%HLDSDIR%%tfc/models/v_tfc_spanner.mdl
+%%HLDSDIR%%tfc/motd.txt
+%%HLDSDIR%%tfc/pak0.pak
+%%HLDSDIR%%tfc/server.cfg
+%%HLDSDIR%%tfc/sound/misc/endgame.wav
+%%HLDSDIR%%tfc/sound/vox/endgame.wav
+%%HLDSDIR%%tfc/sound/vox/stolen.wav
+%%HLDSDIR%%tfc/sound/weapons/asscan2.wav
+%%HLDSDIR%%tfc/sound/weapons/asscan4.wav
+%%HLDSDIR%%tfc/tfc.wad
+%%HLDSDIR%%tfc/tfc2.wad
+%%HLDSDIR%%tfc/tfstats/readme.txt
+%%HLDSDIR%%tfc/tfstats/tfc.2fort.rul
+%%HLDSDIR%%tfc/tfstats/tfc.cz2.rul
+%%HLDSDIR%%tfc/tfstats/tfc.rock2.rul
+%%HLDSDIR%%tfc/tfstats/tfc.rul
+%%HLDSDIR%%tfc/tfstats/tfc.well.rul
+%%HLDSDIR%%tfc/tfstats/tfstats.txt
+%%HLDSDIR%%tfc/tfstats/tfstats_l
+%%HLDSDIR%%valve/cached.wad
+%%HLDSDIR%%valve/cl_dlls/client.dll
+%%HLDSDIR%%valve/credits.txt
+%%HLDSDIR%%valve/decals.wad
+%%HLDSDIR%%valve/default.cfg
+%%HLDSDIR%%valve/delta.lst
+%%HLDSDIR%%valve/dlls/hl_i386.so
+%%HLDSDIR%%valve/events/gauss.sc
+%%HLDSDIR%%valve/events/gaussspin.sc
+%%HLDSDIR%%valve/events/glock1.sc
+%%HLDSDIR%%valve/events/glock2.sc
+%%HLDSDIR%%valve/events/mp5.sc
+%%HLDSDIR%%valve/events/python.sc
+%%HLDSDIR%%valve/events/shotgun1.sc
+%%HLDSDIR%%valve/events/shotgun2.sc
+%%HLDSDIR%%valve/events/train.sc
+%%HLDSDIR%%valve/fonts.wad
+%%HLDSDIR%%valve/gfx.wad
+%%HLDSDIR%%valve/halflife.wad
+%%HLDSDIR%%valve/liblist.gam
+%%HLDSDIR%%valve/liquids.wad
+%%HLDSDIR%%valve/mapcycle.txt
+%%HLDSDIR%%valve/maps/boot_camp.bsp
+%%HLDSDIR%%valve/maps/bounce.bsp
+%%HLDSDIR%%valve/maps/crossfire.bsp
+%%HLDSDIR%%valve/maps/datacore.bsp
+%%HLDSDIR%%valve/maps/frenzy.bsp
+%%HLDSDIR%%valve/maps/gasworks.bsp
+%%HLDSDIR%%valve/maps/lambda_bunker.bsp
+%%HLDSDIR%%valve/maps/rapidcore.bsp
+%%HLDSDIR%%valve/maps/snark_pit.bsp
+%%HLDSDIR%%valve/maps/stalkyard.bsp
+%%HLDSDIR%%valve/maps/subtransit.bsp
+%%HLDSDIR%%valve/maps/undertow.bsp
+%%HLDSDIR%%valve/pak0.pak
+%%HLDSDIR%%valve/server.cfg
+%%HLDSDIR%%valve/skill.cfg
+%%HLDSDIR%%valve/valve.rc
+%%HLDSDIR%%valve/woncomm.lst
+%%HLDSDIR%%valve/xeno.wad
+%%HLDSDIR%%vgui.dll
+%%HLDSDIR%%wonauth.dll
+%%HLDSDIR%%woncrypt.dll
+@dirrm %%HLDSDIR%%valve/maps
+@dirrm %%HLDSDIR%%valve/events
+@dirrm %%HLDSDIR%%valve/dlls
+@dirrm %%HLDSDIR%%valve/cl_dlls
+@dirrm %%HLDSDIR%%valve
+@dirrm %%HLDSDIR%%tfc/tfstats
+@dirrm %%HLDSDIR%%tfc/sound/weapons
+@dirrm %%HLDSDIR%%tfc/sound/vox
+@dirrm %%HLDSDIR%%tfc/sound/misc
+@dirrm %%HLDSDIR%%tfc/sound
+@dirrm %%HLDSDIR%%tfc/models/player/spy
+@dirrm %%HLDSDIR%%tfc/models/player/soldier
+@dirrm %%HLDSDIR%%tfc/models/player/sniper
+@dirrm %%HLDSDIR%%tfc/models/player/scout
+@dirrm %%HLDSDIR%%tfc/models/player/pyro
+@dirrm %%HLDSDIR%%tfc/models/player/medic
+@dirrm %%HLDSDIR%%tfc/models/player/hvyweapon
+@dirrm %%HLDSDIR%%tfc/models/player/engineer
+@dirrm %%HLDSDIR%%tfc/models/player/demo
+@dirrm %%HLDSDIR%%tfc/models/player/civilian
+@dirrm %%HLDSDIR%%tfc/models/player
+@dirrm %%HLDSDIR%%tfc/models
+@dirrm %%HLDSDIR%%tfc/maps
+@dirrm %%HLDSDIR%%tfc/manual
+@dirrm %%HLDSDIR%%tfc/events/wpn
+@dirrm %%HLDSDIR%%tfc/events/misc
+@dirrm %%HLDSDIR%%tfc/events/explode
+@dirrm %%HLDSDIR%%tfc/events/door
+@dirrm %%HLDSDIR%%tfc/events
+@dirrm %%HLDSDIR%%tfc/dlls
+@dirrm %%HLDSDIR%%tfc/cl_dlls
+@dirrm %%HLDSDIR%%tfc
+@dirrm %%HLDSDIR%%
+@mode 0444
+@exec grep -E "^/%%HLDSDIR%%$" %D/etc/ld.so.conf >/dev/null || ( echo /%%HLDSDIR%% >> %D/etc/ld.so.conf ; %%LDCONFIG%% )
+@unexec grep -v -E "^/%%HLDSDIR%%$" %D/etc/ld.so.conf > %D/etc/ld.so.conf.bak; cmp -s %D/etc/ld.so.conf %D/etc/ld.so.conf.bak || ( cp %D/etc/ld.so.conf.bak %D/etc/ld.so.conf ; %%LDCONFIG%% ) ; rm %D/etc/ld.so.conf.bak
