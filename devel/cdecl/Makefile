@@ -9,11 +9,8 @@
 PORTNAME=	cdecl
 PORTVERSION=	2.5
 CATEGORIES=	devel
-MASTER_SITES=	ftp://ftp.netsw.org/softeng/lang/c/tools/cdecl/  \
-		ftp://ftp.cc.gatech.edu/ac121/linux/devel/lang/c/  \
-		ftp://ftp.deva.net/pub/sources/programming/  \
-		ftp://ftp.bitcon.no//pub/linux/linuxberg/files/console/dev/  \
-		ftp://ftp.uakom.sk/pub/linux/devel/lang/c/
+MASTER_SITES=	ftp://ftp.netsw.org/softeng/lang/c/tools/cdecl/ \
+		ftp://metalab.unc.edu/pub/linux/devel/lang/c/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Explains complicated C/C++ declarations in plain English
