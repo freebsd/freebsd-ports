@@ -6,28 +6,25 @@
 #
 
 PORTNAME=	memtest
-PORTVERSION=	2.93.1
-PORTREVISION=	1
+PORTVERSION=	4.0.4
 CATEGORIES=	sysutils
-MASTER_SITES=	http://www.qcc.sk.ca/~charlesc/software/memtester/
+MASTER_SITES=	http://pyropus.ca/software/${PORTNAME}er/
 DISTNAME=	${PORTNAME}er-${PORTVERSION}
 
 MAINTAINER=	lioux@FreeBSD.org
 COMMENT=	Utility to test for faulty memory subsystem
 
-USE_BZIP2=	yes
-USE_GMAKE=	yes
 USE_REINPLACE=	yes
 
-MAN1=		${PORTNAME}.1
+MAN8=		${PORTNAME}.8
 PLIST_FILES=	bin/memtest
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|gcc|${CC}|' \
-		${WRKSRC}/${MAKEFILE}
+	@${REINPLACE_CMD} -e 's|cc|${CC}|' \
+		${WRKSRC}/conf-cc
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/${MAN1} ${PREFIX}/man/man1
+	@${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME}er ${PREFIX}/bin/${PORTNAME}
+	@${INSTALL_MAN} ${WRKSRC}/${MAN8:S/./er./g} ${PREFIX}/man/man8/${MAN8}
 
 .include <bsd.port.mk>
