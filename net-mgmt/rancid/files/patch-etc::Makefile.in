@@ -1,10 +1,14 @@
---- etc/Makefile.in.orig	Sun Jan 18 02:37:08 2004
-+++ etc/Makefile.in	Sun Jan 18 02:38:03 2004
-@@ -342,24 +342,8 @@
+
+$FreeBSD$
+
+--- etc/Makefile.in.orig	Fri Feb  6 16:56:50 2004
++++ etc/Makefile.in	Wed May  5 16:40:00 2004
+@@ -347,26 +347,8 @@
  
  
  install-data-local: all
--	@if test -f $(sysconfdir)/rancid.conf ; then \
+-	@if test "$(DO_CONF_INSTALL)" = "yes"; then \
+-	if test -f $(sysconfdir)/rancid.conf ; then \
 -	    echo ""; \
 -	    echo "WARNING: *** $(sysconfdir)/rancid.conf exists.  See "; \
 -	    echo "         *** $(pkgdatadir)/rancid.conf.sample for new"; \
@@ -21,8 +25,9 @@
 -	    echo ""; \
 -	else \
 -	    $(INSTALL_DATA) lg.conf.sample $(sysconfdir)/lg.conf; \
--	fi;
-+	    $(INSTALL_DATA) rancid.conf.sample $(sysconfdir)/; \
+-	fi; \
+-	fi
++	    $(INSTALL_DATA) rancid.conf.sample $(sysconfdir)/
 +	    $(INSTALL_DATA) lg.conf.sample $(sysconfdir)/
  
  lg.conf.sample: Makefile $(srcdir)/lg.conf.sample.in
