@@ -4,7 +4,7 @@
 # Date created:         17 Nov 1996
 # Whom:                 ache
 #
-# $Id: Makefile,v 1.6 1998/02/02 11:47:35 jseger Exp $
+# $Id: Makefile,v 1.7 1998/06/16 16:04:51 ache Exp $
 #
 
 DISTNAME=       timidity-0.2i
@@ -15,6 +15,8 @@ TIINS=          dgguspat.zip
 DISTFILES=      ${TIINS} ${DISTNAME}.tar.gz
 
 MAINTAINER=     ache@FreeBSD.ORG
+
+BROKEN=		fetch
 
 NO_CDROM=       "Uses copyrighted patches"
 
