@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	conglomerate
-PORTVERSION=	0.7.15
+PORTVERSION=	0.7.16
 CATEGORIES=	editors
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -15,8 +15,8 @@ COMMENT=	GNOME2 visual XML editor with emphasis on DocBook editing
 
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
-USE_GNOME=	libgnomeui gtksourceview gnomeprefix gnomehack intlhack lthack
-USE_LIBTOOL_VER=	13
+USE_GNOME=	libgnomeui gtksourceview gnomeprefix gnomehack intlhack
+USE_LIBTOOL_VER=	15
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
