@@ -156,6 +156,7 @@
     SUBDIR += rxvt-devel
     SUBDIR += settitle
     SUBDIR += silo
+    SUBDIR += sisctrl
     SUBDIR += startup-notification
     SUBDIR += sxpc
     SUBDIR += temperature.app
