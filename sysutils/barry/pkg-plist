@@ -1,0 +1,23 @@
+bin/barry
+share/applnk/Utilities/barry.desktop
+share/apps/barry/background.png
+share/apps/barry/barryui.rc
+share/apps/barry/bgtable.png
+share/apps/barry/eventsrc
+share/apps/barry/kdelogo2.png
+share/apps/barry/khelpcenter.png
+share/apps/barry/konq.css
+share/apps/barry/lines.png
+share/apps/barry/lines2.png
+share/apps/barry/pointers.png
+share/apps/barry/shadow1.png
+share/apps/barry/splashscreen.html
+share/icons/hicolor/16x16/apps/barry.png
+share/icons/hicolor/32x32/apps/barry.png
+share/icons/hicolor/48x48/apps/barry.png
+share/locale/de/LC_MESSAGES/barry.mo
+share/locale/es/LC_MESSAGES/barry.mo
+share/locale/ko/LC_MESSAGES/barry.mo
+share/locale/nl/LC_MESSAGES/barry.mo
+share/locale/sv/LC_MESSAGES/barry.mo
+@dirrm share/apps/barry
