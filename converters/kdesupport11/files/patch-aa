@@ -1,0 +1,13 @@
+*** rdb/rdb.c.ORIG	Sat Dec 19 21:56:32 1998
+--- rdb/rdb.c	Wed Dec 30 23:28:50 1998
+***************
+*** 40,43 ****
+--- 40,47 ----
+  }
+  
++ #ifndef O_SYNC
++ #define O_SYNC O_FSYNC
++ #endif
++ 
+  /* Muﬂ Datenbank mit cdb laden.
+   * Muﬂ Log einlesen und in Hash tun.

@@ -1,15 +1,58 @@
-*** krn/Makefile.in.orig	Fri Jul 17 00:35:57 1998
---- krn/Makefile.in	Fri Jul 17 00:36:04 1998
+*** kppp/opener.cpp~	Sat Dec 19 22:28:22 1998
+--- kppp/opener.cpp	Thu Dec 31 00:39:47 1998
 ***************
-*** 142,146 ****
+*** 71,75 ****
+    struct iovec iov;
   
-  kdecode_LDADD = -lkfile -lkfm -lkdeui -lkdecore -lqt -lXext \
-! 	-lX11 -luulib $(KDE_RPATH) $(LIBCOMPAT) $(LIBSOCKET)
+!   iov.iov_base = (void *) &request;
+    iov.iov_len = sizeof(request);
+    
+--- 71,75 ----
+    struct iovec iov;
   
-  ICONDIR = $(kde_icondir)
---- 142,146 ----
+!   iov.iov_base = (char *) &request;
+    iov.iov_len = sizeof(request);
+    
+***************
+*** 233,239 ****
   
-  kdecode_LDADD = -lkfile -lkfm -lkdeui -lkdecore -lqt -lXext \
-! 	-lX11 -luu $(KDE_RPATH) $(LIBCOMPAT) $(LIBSOCKET)
+    // Send data
+!   iov[0].iov_base = (void *) response;
+    iov[0].iov_len = sizeof(struct ResponseHeader);
+!   iov[1].iov_base = (void *) path;
+    iov[1].iov_len = strlen(path) + 1;
   
-  ICONDIR = $(kde_icondir)
+--- 233,239 ----
+  
+    // Send data
+!   iov[0].iov_base = (char *) response;
+    iov[0].iov_len = sizeof(struct ResponseHeader);
+!   iov[1].iov_base = (char *) path;
+    iov[1].iov_len = strlen(path) + 1;
+  
+***************
+*** 243,247 ****
+    control.cmsg.cmsg_type = MY_SCM_RIGHTS;
+  
+!   msg.msg_control = &control;
+    msg.msg_controllen = control.cmsg.cmsg_len;
+  
+--- 243,247 ----
+    control.cmsg.cmsg_type = MY_SCM_RIGHTS;
+  
+!   msg.msg_control = (char *) &control;
+    msg.msg_controllen = control.cmsg.cmsg_len;
+  
+***************
+*** 277,281 ****
+  
+    // Send data
+!   iov.iov_base = (void *) response;
+    iov.iov_len = sizeof(struct ResponseHeader);
+  
+--- 277,281 ----
+  
+    // Send data
+!   iov.iov_base = (char *) response;
+    iov.iov_len = sizeof(struct ResponseHeader);
+  

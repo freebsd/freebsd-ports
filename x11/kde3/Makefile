@@ -6,16 +6,14 @@
 # $Id: Makefile,v 1.15 1998/10/01 19:49:10 brian Exp $
 #
 
-DISTNAME=	kde-1.0
+DISTNAME=	kde-1.1a1
 CATEGORIES=	x11 kde
 MASTER_SITES=	# empty
 DISTFILES=	# empty
 
 MAINTAINER=	se@freebsd.org
 
-BROKEN=		upgrade
-
-LIB_DEPENDS=	kdecore.1:${PORTSDIR}/x11/kdelibs
+LIB_DEPENDS=	kdecore.2:${PORTSDIR}/x11/kdelibs
 RUN_DEPENDS=	kwm:${PORTSDIR}/x11/kdebase \
 		kcalc:${PORTSDIR}/misc/kdeutils \
 		kmahjongg:${PORTSDIR}/games/kdegames \

@@ -6,26 +6,28 @@
 # $Id: Makefile,v 1.22 1998/10/01 18:35:37 brian Exp $
 #
 
-DISTNAME=	kdenetwork-1.0
+DISTNAME=	kdenetwork
+PKGNAME=	kdenetwork-1.1a1
 CATEGORIES=	net news kde
 MASTER_SITES=	$(MASTER_SITE_KDE)
-MASTER_SITE_SUBDIR= stable/1.0/distribution/tar/generic/source
+MASTER_SITE_SUBDIR= stable/1.1pre1/distribution/tar/generic/source
+EXTRACT_SUFX=	-1.1-alpha1.src.tar.bz2
 
 MAINTAINER=	se@freebsd.org
 
-BROKEN=		upgrade
-
-BUILD_DEPENDS=	${PREFIX}/lib/libgdbm.a:${PORTSDIR}/databases/gdbm
+BUILD_DEPENDS=	bzip2:${PORTSDIR}/archivers/bzip2 \
+		${PREFIX}/lib/libgdbm.a:${PORTSDIR}/databases/gdbm
 LIB_DEPENDS=	gif.3:${PORTSDIR}/graphics/giflib \
 		jpeg.9:${PORTSDIR}/graphics/jpeg \
 		uu.1:${PORTSDIR}/converters/uulib \
-		kdecore.1:${PORTSDIR}/x11/kdelibs \
-		kdeui.1:${PORTSDIR}/x11/kdelibs \
-		jscript.0:${PORTSDIR}/x11/kdelibs \
-		khtmlw.1:${PORTSDIR}/x11/kdelibs \
-		kfm.1:${PORTSDIR}/x11/kdelibs \
-		mediatool.1:${PORTSDIR}/x11/kdelibs \
-		mimelib.1:${PORTSDIR}/converters/kdesupport
+		kdecore.2:${PORTSDIR}/x11/kdelibs \
+		QwSpriteField.6:${PORTSDIR}/converters/kdesupport \
+		js.2:${PORTSDIR}/converters/kdesupport \
+		mimelib.1:${PORTSDIR}/converters/kdesupport \
+		rdb.55:${PORTSDIR}/converters/kdesupport
+EXTRACT_CMD=	bzip2
+EXTRACT_BEFORE_ARGS= -cd
+EXTRACT_AFTER_ARGS= | tar xf -
 
 USE_QT=		yes
 HAS_CONFIGURE=	yes
