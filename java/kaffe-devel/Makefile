@@ -24,42 +24,77 @@ COMMENT=	Multi-platform Java virtual machine with JIT compiler and AWT package
 LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
 		ungif.5:${PORTSDIR}/graphics/libungif \
 		png.5:${PORTSDIR}/graphics/png \
-		iconv.3:${PORTSDIR}/converters/libiconv \
 		gmp.6:${PORTSDIR}/math/libgmp4
 
 WRKSRC=		${WRKDIR}/kaffe-${PORTVERSION}
 
-ONLY_FOR_ARCHS=	i386
+NOT_FOR_ARCHS=	amd64
 
-USE_GNOME=	esound
 USE_LIBTOOL=	yes
 USE_GMAKE=	yes
+USE_ICONV=	yes
 LIBTOOLFLAGS=
 INSTALLS_SHLIB=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	CPPFLAGS=-I${LOCALBASE}/include LDFLAGS=-L${LOCALBASE}/lib --with-iconv-prefix=${LOCALBASE}
 
-.if defined(KAFFE_AWT)
-.if ${KAFFE_AWT} == "X"
+WANT_GNOME=	esound
+
+MAN1=		kaffe.1
+
+OPTIONS=	KAFFE_AWT_X "Use AWT widgets with X" On \
+		KAFFE_AWT_QT "Use AWT widgets with Qt" Off \
+		KAFFE_AWT_NO "Do not use AWT widgets" Off
+
+.include <bsd.port.pre.mk>
+
+.if !defined(WITH_KAFFE_AWT_X) && !defined(WITH_KAFFE_AWT_QT) && !defined(WITH_KAFFE_AWT_NO)
+BROKEN=	"Choose one of the options in 'make config'"
+.endif
+
+.if defined(WITH_KAFFE_AWT_X)
+. if defined(WITH_KAFFE_AWT_QT) || defined(WITH_KAFFE_AWT_NO)
+    BROKEN=	"Choose only one of the options in 'make config'"
+. endif
   CONFIGURE_ARGS+=	--with-awt=X
   USE_XLIB=		yes
+  AWT=			yes
+  WITH_ESOUND=		yes
 .endif
-.if ${KAFFE_AWT} == "QT"
+.if defined(WITH_KAFFE_AWT_QT)
+. if defined(WITH_KAFFE_AWT_X) || defined(WITH_KAFFE_AWT_NO)
+    BROKEN=	"Choose only one of the options in 'make config'"
+. endif
   CONFIGURE_ARGS+=	--with-awt=qt --with-qtdir=${X11BASE}
+  AWT=			yes
   USE_QT_VER=		3
+  WITH_ESOUND=		yes
 .endif
-.if ${KAFFE_AWT} == "no"
+.if defined(WITH_KAFFE_AWT_NO)
+. if defined(WITH_KAFFE_AWT_X) || defined(WITH_KAFFE_AWT_QT)
+    BROKEN=	"Choose only one of the options in 'make config'"
+. endif
   CONFIGURE_ARGS+=	--with-awt=no
 .endif
+
+.if defined(AWT)
+  PLIST_SUB+=	SUB_AWT=""
+.else
+  PLIST_SUB+=	SUB_AWT="@comment "
+.endif
+
+.if defined(WITH_ESOUND)
+  USE_GNOME+=	esound
+  PLIST_SUB+=	SUB_ESOUND=""
+.else
+  PLIST_SUB+=	SUB_ESOUND="@comment "
 .endif
 
 PLIST_SUB+=	PORTVER=${PORTVERSION} ARCH=${ARCH}
-
-MAN1=		kaffe.1
 
 post-install:
 	@${MKDIR} ${DATADIR}
 	${INSTALL_SCRIPT} ${WRKSRC}/BUILD_ENVIRONMENT ${DATADIR}
 	${INSTALL_DATA} ${WRKSRC}/license.terms ${DATADIR}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

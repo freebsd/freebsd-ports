@@ -32,9 +32,9 @@ jre/bin/java
 jre/bin/kaffe
 jre/bin/kaffe-bin
 jre/bin/rmiregistry
-jre/lib/%%ARCH%%/libawt-%%PORTVER%%.so
-jre/lib/%%ARCH%%/libawt.la
-jre/lib/%%ARCH%%/libawt.so
+%%SUB_AWT%%jre/lib/%%ARCH%%/libawt-%%PORTVER%%.so
+%%SUB_AWT%%jre/lib/%%ARCH%%/libawt.la
+%%SUB_AWT%%jre/lib/%%ARCH%%/libawt.so
 jre/lib/%%ARCH%%/libio-%%PORTVER%%.so
 jre/lib/%%ARCH%%/libio.la
 jre/lib/%%ARCH%%/libio.so
@@ -62,9 +62,9 @@ jre/lib/%%ARCH%%/libsecurity.so
 jre/lib/%%ARCH%%/libzip-%%PORTVER%%.so
 jre/lib/%%ARCH%%/libzip.la
 jre/lib/%%ARCH%%/libzip.so
-jre/lib/%%ARCH%%/libtritonusesd-%%PORTVER%%.so
-jre/lib/%%ARCH%%/libtritonusesd.la
-jre/lib/%%ARCH%%/libtritonusesd.so
+%%SUB_ESOUND%%jre/lib/%%ARCH%%/libtritonusesd-%%PORTVER%%.so
+%%SUB_ESOUND%%jre/lib/%%ARCH%%/libtritonusesd.la
+%%SUB_ESOUND%%jre/lib/%%ARCH%%/libtritonusesd.so
 jre/lib/security/java.security
 jre/lib/rt.jar
 lib/kjc.jar
