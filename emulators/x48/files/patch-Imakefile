@@ -1,5 +1,14 @@
 --- src/Imakefile.orig	Sun Jul  4 17:04:21 1999
 +++ src/Imakefile	Sat Jun 28 19:01:04 2003
+@@ -26,7 +26,7 @@
+           UTILS = $(TOP)/utils
+        READLINE = $(TOP)/readline
+     READLINELIB = $(READLINE)/libreadline.a
+-EXTRA_LIBRARIES =
++EXTRA_LIBRARIES = -lutil
+ 
+ #ifdef HAVE_XSHM
+ # define XSHM_DEF -DHAVE_XSHM
 @@ -60,7 +60,7 @@
        LDOPTIONS = LDOPTIONS_DEF
  #endif
