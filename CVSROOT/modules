@@ -5391,6 +5391,7 @@ qcl		ports/emulators/qcl
 qcread		ports/graphics/qcread
 qdecoder	ports/www/qdecoder
 qdraw		ports/graphics/qdraw
+qglviewer	ports/graphics/qglviewer
 qhacc		ports/misc/qhacc
 qico		ports/comms/qico
 qident		ports/security/qident
