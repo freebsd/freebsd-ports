@@ -332,3 +332,22 @@ diff -ur --unidirectional-new-file skipsrc-1.0.orig/skip/freebsd/skip_es.c work.
      
  	s = splimp();
  	if (IF_QFULL(&ipintrq)) {
+@@ -2240,7 +2287,8 @@
+ 	unsigned short		len;
+ 	struct ip		*hptr;
+ 	struct rtentry		*rtp;
++	struct mbuf		*n;
+ 	
+ 	/*
+ 	 * recover the route pointer
+ 	 */
+@@ -2263,6 +2311,9 @@
+ 	hptr->ip_len = htons(len); /* total length */
+ 
+ 	skip_ipsum(hptr);
++
++	for (m->m_pkthdr.len = 0, n = m; n != NULL; n = n->m_next)
++		m->m_pkthdr.len += n->m_len;
+ 
+ 	(*skip_if->if_output)(skip_if->ifp, m, dst, rtp);
+ 	RTFREE(rtp);
