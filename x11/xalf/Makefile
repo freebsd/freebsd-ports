@@ -9,12 +9,9 @@ PORTNAME=	xalf
 PORTVERSION=	0.12
 PORTREVISION=	1
 CATEGORIES=	x11 gnome
-MASTER_SITES=	${MASTER_SITE_GNOME} \
-		http://www.lysator.liu.se/~astrand/projects/xalf/ \
-		http://www.lysator.liu.se/~astrand/projects/xalf/old/
+MASTER_SITES=	http://www.lysator.liu.se/~astrand/projects/xalf/
 MASTER_SITE_SUBDIR=	sources/xalf/0.12
 EXTRACT_SUFX=	.tgz
-#DIST_SUBDIR=	gnome
 
 MAINTAINER=	gnome@FreeBSD.org
 
