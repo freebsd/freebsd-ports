@@ -9,6 +9,7 @@
     SUBDIR += bsh
     SUBDIR += bugseeker
     SUBDIR += bugseeker-demo
+    SUBDIR += classpath
     SUBDIR += collections
     SUBDIR += cos
     SUBDIR += cryptix-jce
