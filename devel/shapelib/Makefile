@@ -18,14 +18,11 @@ ALL_TARGET=	lib
 INSTALLS_SHLIB=	yes
 
 do-install:
-	${INSTALL_DATA} ${WRKSRC}/.libs/libshp.la ${PREFIX}/lib/
-	${INSTALL_DATA} ${WRKSRC}/.libs/libshp.so.1 ${PREFIX}/lib/
+	${INSTALL_PROGRAM} ${WRKSRC}/.libs/libshp.so.1 ${PREFIX}/lib
 	${LN} -sf libshp.so.1 ${PREFIX}/lib/libshp.so
 	${INSTALL_DATA} ${WRKSRC}/.libs/libshp.a ${PREFIX}/lib/
 	${INSTALL_DATA} ${WRKSRC}/shapefil.h ${PREFIX}/include
 	${MKDIR} ${PREFIX}/share/doc/shapelib
-	${INSTALL_DATA} ${WRKSRC}/shapelib.html ${PREFIX}/share/doc/shapelib
-	${INSTALL_DATA} ${WRKSRC}/shp_api.html ${PREFIX}/share/doc/shapelib
-	${INSTALL_DATA} ${WRKSRC}/dbf_api.html ${PREFIX}/share/doc/shapelib
+	${INSTALL_DATA} ${WRKSRC}/*.html ${PREFIX}/share/doc/shapelib
 
 .include <bsd.port.mk>
