@@ -1,24 +1,25 @@
---- Makefile.in.orig	Thu Feb 14 08:46:36 2002
-+++ Makefile.in	Thu Feb 14 08:47:08 2002
-@@ -62,9 +62,6 @@
+--- Makefile.in.orig	Thu Jun 27 19:27:33 2002
++++ Makefile.in	Wed Jul 17 17:06:29 2002
+@@ -70,10 +70,7 @@
  	$(INSTALL) -m 644 ./etter.filter.ssh $(DESTDIR)$(DATADIR)
  	$(INSTALL) -m 644 ./etter.passive.os.fp $(DESTDIR)$(DATADIR)
  	$(INSTALL) -m 644 ./etter.ssl.crt $(DESTDIR)$(DATADIR)
 -	$(INSTALL) -d $(DESTDIR)$(DOCDIR)
 -	$(INSTALL) -m 644 $(DOC) $(DESTDIR)$(DOCDIR)
--	$(INSTALL) -m 644 ./docs/[a-z]*/[a-z]* $(DESTDIR)$(DOCDIR)
+ 	-$(INSTALL) -m 644 ./share/[a-z]* $(DESTDIR)$(DATADIR)
+-	-$(INSTALL) -m 644 ./docs/[a-z]*/[a-z]* $(DESTDIR)$(DOCDIR)
  	$(INSTALL) -d $(DESTDIR)$(MANDIR)/man8
  	$(INSTALL) -m 644 $(PROG).8 $(DESTDIR)$(MANDIR)/man8/$(PROG).8
  	@echo
-@@ -77,7 +74,10 @@
+@@ -86,6 +83,11 @@
  	@echo
  	@echo "=============================================================="
  	@echo
--
++
 +install-doc:
 +	$(INSTALL) -d $(DESTDIR)$(DOCDIR)
 +	$(INSTALL) -m 644 $(DOC) $(DESTDIR)$(DOCDIR)
-+	$(INSTALL) -m 644 ./docs/[a-z]*/[a-z]* $(DESTDIR)$(DOCDIR)
- plug-ins: path
- 	cd plugins && make && cd ..
- 	cp -f ./plugins/[a-zH]*/ec_*.so ./
++	-$(INSTALL) -m 644 ./docs/[a-z]*/[a-z]* $(DESTDIR)$(DOCDIR)
+ 
+ plug-ins: src/include/ec_install_path.h
+ 	@if test "@MAKEPLUG@" = "0"; then \
