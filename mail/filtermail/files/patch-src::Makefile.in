@@ -1,5 +1,5 @@
---- src/Makefile.in.orig	Sun Feb 15 02:36:23 2004
-+++ src/Makefile.in	Fri Mar 19 22:58:12 2004
+--- src/Makefile.in.orig	Sat Nov 27 22:29:44 2004
++++ src/Makefile.in	Mon Mar  7 22:54:36 2005
 @@ -198,7 +198,6 @@
  			i18n.hh                                 \
  			rcfile.ll rcfile.hh                     \
@@ -8,7 +8,7 @@
  			filtermail.hh filtermail.cc             \
  			header.hh header.cc                     \
  			weeder.hh weeder.cc                     \
-@@ -231,7 +230,7 @@
+@@ -232,7 +231,7 @@
  PROGRAMS = $(bin_PROGRAMS)
  
  am_filtermail_OBJECTS = md5c.$(OBJEXT) rcfile.$(OBJEXT) rfc822.$(OBJEXT) \
@@ -17,24 +17,24 @@
  	header.$(OBJEXT) weeder.$(OBJEXT) preferences.$(OBJEXT) \
  	feedback.$(OBJEXT) filter.$(OBJEXT) score.$(OBJEXT) \
  	account.$(OBJEXT) protocol.$(OBJEXT) socket.$(OBJEXT) \
-@@ -246,7 +245,6 @@
+@@ -247,7 +246,6 @@
  am__depfiles_maybe = depfiles
  @AMDEP_TRUE@DEP_FILES = ./$(DEPDIR)/account.Po ./$(DEPDIR)/apop.Po \
  @AMDEP_TRUE@	./$(DEPDIR)/feedback.Po ./$(DEPDIR)/filter.Po \
 -@AMDEP_TRUE@	./$(DEPDIR)/getopt.Po ./$(DEPDIR)/getopt1.Po \
- @AMDEP_TRUE@	./$(DEPDIR)/header.Po ./$(DEPDIR)/filtermail.Po \
- @AMDEP_TRUE@	./$(DEPDIR)/md5c.Po ./$(DEPDIR)/pop3.Po \
- @AMDEP_TRUE@	./$(DEPDIR)/preferences.Po ./$(DEPDIR)/protocol.Po \
-@@ -315,8 +313,6 @@
+ @AMDEP_TRUE@	./$(DEPDIR)/header.Po ./$(DEPDIR)/imap.Po \
+ @AMDEP_TRUE@	./$(DEPDIR)/filtermail.Po ./$(DEPDIR)/md5c.Po \
+ @AMDEP_TRUE@	./$(DEPDIR)/pop3.Po ./$(DEPDIR)/preferences.Po \
+@@ -317,8 +315,6 @@
  @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/apop.Po@am__quote@
  @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/feedback.Po@am__quote@
  @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/filter.Po@am__quote@
 -@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/getopt.Po@am__quote@
 -@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/getopt1.Po@am__quote@
  @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/header.Po@am__quote@
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/imap.Po@am__quote@
  @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/filtermail.Po@am__quote@
- @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/md5c.Po@am__quote@
-@@ -568,8 +564,8 @@
+@@ -571,8 +567,8 @@
  rcparser.hh: y.tab.c
  y.tab.c: rcfile.yy
  	   $(YACC) -p rc $(YFLAGS) -o$@ $^;   \
@@ -45,12 +45,12 @@
  	   $(CXXCOMPILE) -c rcparser.cc;      \
  	   touch y.tab.c
  
-@@ -580,7 +576,7 @@
+@@ -583,7 +579,7 @@
  rfc822parser.hh: rfc822parser.cc
  rfc822parser.cc: rfc822.yy
- 		   $(YACC) $(YFLAGS) -p rfc -o$@ $^; \
--		   mv --force y.tab.h rcparser.hh;   \
-+		   mv -f y.tab.h rcparser.hh;   \
- 		   $(CXXCOMPILE) -c rfc822parser.cc; \
+ 		   $(YACC) $(YFLAGS) -p rfc -o$@ $^;  \
+-		   mv --force y.tab.h rfc822parser.hh;\
++		   mv -f y.tab.h rfc822parser.hh;\
+ 		   $(CXXCOMPILE) -c rfc822parser.cc;  \
  		   touch y.tab.c
  
