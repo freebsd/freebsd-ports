@@ -1,31 +1,17 @@
---- configure.in.orig	Fri Feb 23 14:53:13 2001
-+++ configure.in	Sat Feb 24 18:58:31 2001
-@@ -11,18 +11,18 @@
- 
- dnl Extra libraries 'with'-options
- AC_ARG_WITH(gd,[  --with-gd=DIR           location of the gd lib/inc],
--		[LDFLAGS="${LDFLAGS} -L${withval}"
--		CFLAGS="${CFLAGS} -I${withval}"
-+		[LDFLAGS="${LDFLAGS} -L${withval}/lib"
-+		CFLAGS="${CFLAGS} -I${withval}/include/gd"
- 		])
- 
- AC_ARG_WITH(z,[  --with-z=DIR            location of zlib lib/inc],
--		[LDFLAGS="${LDFLAGS} -L${withval}"
--		CFLAGS="${CFLAGS} -I${withval}"
-+		[LDFLAGS="${LDFLAGS} -L${withval}/lib"
-+		CFLAGS="${CFLAGS} -I${withval}/include"
+--- configure.in.orig	Sun Mar  4 10:24:10 2001
++++ configure.in	Thu Mar 15 03:19:00 2001
+@@ -30,8 +30,8 @@
  		])
  
  AC_ARG_WITH(png,[  --with-png=DIR          location of png lib/inc],
--		[LDFLAGS="${LDFLAGS} -L${withval}"
+-		[LDFLAGS="${LDFLAGS} -L${withval} -lpng"
 -		CFLAGS="${CFLAGS} -I${withval}"
-+		[LDFLAGS="${LDFLAGS} -L${withval}/lib"
++		[LDFLAGS="${LDFLAGS} -L${withval}/lib -lpng"
 +		CFLAGS="${CFLAGS} -I${withval}/include"
  		])
  
- LDFLAGS="${LDFLAGS} -lgd"
-@@ -73,7 +73,7 @@
+ AC_ARG_ENABLE(speed,[  --disable-speed         Turn off lex table optimization reducing speed and size of executable],
+@@ -90,7 +90,7 @@
  dnl Make sure the header is here
  AC_CHECK_HEADER( gd.h,[ have_gd_h="yes" ],[ have_gd_h="no" ])
  

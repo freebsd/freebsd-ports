@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	cvsgraph
-PORTVERSION=	1.0.1
+PORTVERSION=	1.1.1
 CATEGORIES=	devel graphics
-MASTER_SITES=	http://www.akhphd.au.dk/~bertho/cvsgraph/
+MASTER_SITES=	http://www.akhphd.au.dk/~bertho/cvsgraph/release/
 
 MAINTAINER=	trevor@FreeBSD.org
 
@@ -17,15 +17,22 @@ LIB_DEPENDS=	gd.2:${PORTSDIR}/graphics/gd \
 		jpeg.9:${PORTSDIR}/graphics/jpeg \
 		png.4:${PORTSDIR}/graphics/png
 
+WRKSRC=		${WRKDIR}/${PORTNAME}
+
+MAN1=		cvsgraph.1
+MAN5=		cvsgraph.conf.5
+
 ALL_TARGET=	cvsgraph
 DOCDIR=		share/doc/${PORTNAME}
 DOCS=		ChangeLog LICENCE README
 PLIST=		${WRKDIR}/pkg-plist
 USE_AUTOCONF=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS= --with-gd=${LOCALBASE} \
+CONFIGURE_ARGS=	--with-gd-inc=${LOCALBASE}/include/gd \
+		--with-gd-lib=${LOCALBASE}/lib \
 		--with-png=${LOCALBASE} \
-		--with-z=/usr
+		--with-z-inc=/usr/include \
+		--with-z-lib=/usr/lib
 
 post-configure:
 	${PERL} -pi -e \
@@ -46,6 +53,8 @@ pre-install:
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
 	${INSTALL_DATA} ${WRKSRC}/cvsgraph.conf ${PREFIX}/etc
+	${INSTALL_MAN} ${WRKSRC}/cvsgraph.1 ${PREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/cvsgraph.conf.5 ${PREFIX}/man/man5
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${PREFIX}/${DOCDIR}
 .for i in ${DOCS}
