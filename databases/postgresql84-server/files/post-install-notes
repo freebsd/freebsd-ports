@@ -1,5 +1,8 @@
 The PostgreSQL port has a collection of "side orders":
 
+postgresql-doc
+  For all of the html documentation
+
 p5-Pg
   A perl5 API for client access to PostgreSQL databases.
 

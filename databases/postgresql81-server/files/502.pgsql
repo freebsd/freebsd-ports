@@ -1,6 +1,6 @@
 #!/bin/sh
 #
-# $Id: 502.pgsql.in,v 1.17 2001/10/29 10:12:32 henrik Exp $
+# $FreeBSD$
 #
 # Maintenance shell script to vacuum and backup database
 # Put this in /usr/local/etc/periodic/daily, and it will be run 
@@ -11,20 +11,13 @@
 # In public domain, do what you like with it,
 # and use it at your own risk... :)
 #
-############################
-
-# arguments to pg_dump
-PGDUMP_ARGS="-b -F c"
-
-# the directory where the backups will reside
-# ${HOME} is pgsql's home directory
-PGBACKUPDIR=${HOME}/backups
-
-# some data is amazingly more compressed with bzip2, esp. blobs, it seems
-# if your're short on diskspace, give it a try and set USEBZIP=yes
-USEBZIP=no
-
-############################
+######################################################################
+#
+# If you like to tweak the settings of the variables PGBACKUPDIR and
+# PGDUMP_ARGS, you should preferably set them in ~pgsql/.profile.
+# If set there, that setting will override the defaults here.
+#
+######################################################################
 
 DIR=`dirname $0`
 progname=`basename $0`
@@ -36,11 +29,13 @@ if [ `id -un` != pgsql ]; then
     exit $?
 fi
 
-if [ X${USEBZIP} = Xyes ]; then
-    BZIP=`which bzip2 || echo true`
-else
-    BZIP=true
-fi
+# arguments to pg_dump
+PGDUMP_ARGS=${PGDUMP_ARGS:-"-b -F c"}
+
+# The directory where the backups will reside.
+# ${HOME} is pgsql's home directory
+# 
+PGBACKUPDIR=${PGBACKUPDIR:-${HOME}/backups}
 
 # PGBACKUPDIR must be writeable by user pgsql
 # ~pgsql is just that under normal circumstances,
@@ -63,7 +58,6 @@ for db in ${dbnames}; do
     file=${PGBACKUPDIR}/pgdump_${db}_`date "+%Y%m%d"`
     pg_dump ${PGDUMP_ARGS} -d $db -f ${file}
     [ $? -gt 0 ] && rc=3
-    ${BZIP} ${file}
 done
 
 if [ $rc -gt 0 ]; then
@@ -77,12 +71,11 @@ vacuumdb -a -z -q
 if [ $? -gt 0 ]
 then
     echo
-    echo "Errors were reported vacuum."
+    echo "Errors were reported during vacuum."
     rc=3
 fi
 
 # cleaning up old data
-find ${PGBACKUPDIR} \( -name 'pgdump_*'.${GZIPEXT} -o -name 'pgdumpall_*'.${GZIPEXT} \) \
-		    -a -atime +7 -delete
+find ${PGBACKUPDIR} -name 'pgdump_*' -a -atime +7 -delete
 
 exit $rc

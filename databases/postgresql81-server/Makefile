@@ -6,8 +6,7 @@
 #
 
 PORTNAME?=	postgresql
-PORTVERSION?=	7.2.1
-PORTREVISION?=	1
+PORTVERSION?=	7.2.2
 CATEGORIES?=	databases
 MASTER_SITES=	ftp://ftp.postgresql.org/pub/%SUBDIR%/ \
 		ftp://ftp.se.postgresql.org/pub/database/relational/postgresql/%SUBDIR%/ \
@@ -21,13 +20,8 @@ MASTER_SITES=	ftp://ftp.postgresql.org/pub/%SUBDIR%/ \
 MASTER_SITE_SUBDIR=	source/v${PORTVERSION}
 DISTFILES=	postgresql-base-${PORTVERSION}${EXTRACT_SUFX} \
 		postgresql-opt-${PORTVERSION}${EXTRACT_SUFX}
-.if !defined(POSTGRESQL_SUBPORT) && !defined(NOPORTDOCS)
-DISTFILES+=	postgresql-docs-${PORTVERSION}${EXTRACT_SUFX}
-.endif
 
 MAINTAINER?=	girgen@partitur.se
-
-FORBIDDEN=	"buffer overruns acknowledged by authors--see <URL:http://www3.us.postgresql.org/news.html>"
 
 WRKSRC=		${WRKDIR}/postgresql-${PORTVERSION}
 DIST_SUBDIR=	postgresql
@@ -174,10 +168,6 @@ do-install:
 	${GMAKE} -C src/bin install ;\
 	${GMAKE} -C src/include install ;\
 	${GMAKE} -C src/interfaces install
-.if !defined(NOPORTDOCS)
-	@ cd ${WRKSRC}; \
-	${GMAKE} -C doc install
-.endif
 .endif
 
 post-clean:
