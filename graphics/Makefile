@@ -253,6 +253,7 @@
     SUBDIR += vertex
     SUBDIR += vid
     SUBDIR += view3ds
+    SUBDIR += vterrain-sdk
     SUBDIR += whirlgif
     SUBDIR += win32-codecs
     SUBDIR += wmgrabimage
