@@ -1,5 +1,5 @@
 # Creator:  Jordan Hubbard
-# $Id: LEGAL,v 1.87 1997/10/23 12:30:11 max Exp $
+# $Id: LEGAL,v 1.88 1997/10/23 15:39:45 max Exp $
 
 Some of the ports in this directory have restrictive copyrights prohibiting
 their actual redistribution on mass media.  When creating compilations
@@ -85,11 +85,12 @@ rkive3.1.tar.gz		ports/news/rkive	Restrictive copyright
 rman-2.4.tar.Z		ports/misc/rman		Restrictive copyright
 rsaref*			ports/security/{rsaref,ssh} Crypto; export-controlled
 rzsz3_36.zip		ports/comms/rzsz	Restrictive copyright
+Scilab-*		ports/math/Scilab	Don't sell for profit.
 sdr-2.3*		ports/mbone/sdr		Crypto; export-controlled
 socks5-*		ports/net/socks5	No commercial use
 ssh-*			ports/security/ssh	Crypto; export-controlled
-Scilab-*		ports/math/Scilab	Don't sell for profit.
 SSLeay-0.5.1b.tar.gz	ports/security/SSLeay	Crypto; export-controlled
+stonx-*			ports/emulators/stonx	Contains ROM (C) by Atari
 su2-1.3.tar.gz		ports/sysutils/su2	Don't sell for profit.
 taipei16.bdf.gz		ports/chinese/big5con	font is transformed from
 						a font with restrictive
