@@ -1,6 +1,6 @@
---- configure.orig	Thu Aug 19 19:58:54 2004
-+++ configure	Thu Aug 19 20:08:09 2004
-@@ -3009,7 +3009,7 @@
+--- configure.orig	Sat Nov  6 18:47:15 2004
++++ configure	Sat Nov  6 18:51:40 2004
+@@ -2985,7 +2985,7 @@
  
  test -z "$INSTALL_DATA" && INSTALL_DATA='${INSTALL} -m 644'
  
@@ -9,7 +9,7 @@
  do
    # Extract the first word of "$ac_prog", so it can be a program name with args.
  set dummy $ac_prog; ac_word=$2
-@@ -35756,7 +35756,7 @@
+@@ -36132,7 +36132,7 @@
  
  _ACEOF
  if (eval "$ac_cpp conftest.$ac_ext") 2>&5 |

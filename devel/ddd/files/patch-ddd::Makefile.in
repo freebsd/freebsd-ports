@@ -1,6 +1,6 @@
---- ddd/Makefile.in.orig	Thu Aug 19 20:39:55 2004
-+++ ddd/Makefile.in	Thu Aug 19 20:40:10 2004
-@@ -469,7 +469,7 @@
+--- ddd/Makefile.in.orig	Sat Nov  6 18:53:54 2004
++++ ddd/Makefile.in	Sat Nov  6 18:54:32 2004
+@@ -369,7 +369,7 @@
  LPR = @LPR@
  LTLIBOBJS = @LTLIBOBJS@
  M4 = @M4@
