@@ -7,7 +7,7 @@
 
 PORTNAME=	w3m
 PORTVERSION=	0.2.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES+=	www ipv6
 MASTER_SITES=	ftp://ei5nazha.yz.yamagata-u.ac.jp/w3m/ \
 		http://mi.med.tohoku.ac.jp/~satodai/w3m/src/ \
@@ -31,6 +31,10 @@ DOCS=		FAQ.html HISTORY MANUAL.html README \
 SED_CMD=	-e "s,%%PREFIX%%,${PREFIX},g" \
 		-e "s,%%LOCALBASE%%,${LOCALBASE},g"
 
+.if !defined(WITHOUT_SSL) && exists(/usr/lib/libcrypto.so)
+USE_OPENSSL=	yes
+.endif
+
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} >= 400014
@@ -42,6 +46,10 @@ SED_CMD+=	-e "s,undef JAPANESE,define JAPANESE,g"
 MANLANG+=	ja
 DOCS_JP=	${DOCS} HISTORY.kokb README.SSL README.cookie \
 		README.keymap README.mailcap README.menu
+
+PLIST_SUB=	JAPANESE_ONLY=""
+.else
+PLIST_SUB=	JAPANESE_ONLY="@comment "
 .endif
 
 .if defined(USE_OPENSSL)
@@ -54,6 +62,30 @@ MAKE_FLAGS+=	DEFS="${SSL_CFLAGS} -I${LOCALBASE}/include" \
 		LIBS="${SSL_LIBS} ${EXTRA_SSL_LIBS} -L${LOCALBASE}/lib"
 .else
 MAKE_FLAGS+=	DEFS="-I${LOCALBASE}/include" LIBS="-L${LOCALBASE}/lib"
+.endif
+
+.if defined(INLINE_IMAGE)
+PATCH_SITES=	http://www2u.biglobe.ne.jp/~hsaka/w3m/patch/
+PATCHFILES=	w3m-0.2.1-img-1.3.patch
+EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-XMakefile
+
+USE_IMLIB=	yes
+
+DOCS_JP+=	README.img
+PLIST_SUB+=	INLINE_IMAGE_ONLY=""
+.else
+EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-XMakefile.noimg
+PLIST_SUB+=	INLINE_IMAGE_ONLY="@comment "
+.endif
+
+pre-extract:
+.if !defined(WITHOUT_SSL)
+	@${ECHO_MSG} "You can disable support for SSL by defining WITHOUT_SSL."
+.endif
+
+.if defined(INLINE_IMAGE)
+post-patch:
+	@${CP} ${WRKSRC}/README.img ${WRKSRC}/doc-jp/
 .endif
 
 post-configure:

@@ -1,5 +1,5 @@
---- config.h.orig	Fri Mar 23 11:49:44 2001
-+++ config.h	Fri Mar 23 15:20:22 2001
+--- config.h.orig	Mon Jul 16 11:23:48 2001
++++ config.h	Mon Jul 16 11:24:21 2001
 @@ -18,7 +18,7 @@
     goto-next-mark (ESC p), goto-next-mark (ESC n) and
     mark-by-regexp (").
@@ -63,7 +63,7 @@
  RANLIB=ranlib
  MKDIR=mkdir -p
  VERSION=0.2.1
-@@ -120,26 +115,36 @@
+@@ -120,26 +115,39 @@
  
  #define JA 0
  #define EN 1
@@ -101,6 +101,9 @@
 +#define DEF_EDITOR "/usr/bin/vi"
 +#define DEF_MAILER "/usr/bin/mail"
 +#define DEF_EXT_BROWSER "%%PREFIX%%/bin/netscape"
++
++#define IMGSIZE "w3mimgsize"
++#define IMGDISPLAY "w3mimgdisplay"
 +
 +#define LIB_DIR      "%%PREFIX%%/libexec/w3m"
 +#ifdef JAPANESE
