@@ -380,8 +380,6 @@
     SUBDIR += opendchub
     SUBDIR += opengk
     SUBDIR += openh323
-    SUBDIR += openldap20-client
-    SUBDIR += openldap20-server
     SUBDIR += openldap21-client
     SUBDIR += openldap21-sasl-client
     SUBDIR += openldap21-sasl-server
