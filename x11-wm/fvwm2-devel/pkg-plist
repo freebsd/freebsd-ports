@@ -421,9 +421,17 @@ share/fvwm/perllib/FVWM/Module/Gtk2.pm
 share/fvwm/perllib/FVWM/Module/Tk.pm
 share/fvwm/perllib/FVWM/Module/Toolkit.pm
 share/fvwm/perllib/FVWM/Module.pm
+share/fvwm/perllib/FVWM/Tracker.pm
+share/fvwm/perllib/FVWM/Tracker/Colorsets.pm
+share/fvwm/perllib/FVWM/Tracker/GlobalConfig.pm
+share/fvwm/perllib/FVWM/Tracker/ModuleConfig.pm
+share/fvwm/perllib/FVWM/Tracker/PageInfo.pm
+share/fvwm/perllib/FVWM/Tracker/Scheduler.pm
+share/fvwm/perllib/FVWM/Tracker/WindowList.pm
 share/fvwm/perllib/General/FileSystem.pm
 share/fvwm/perllib/General/Parse.pm
 @dirrm share/fvwm/perllib/General
+@dirrm share/fvwm/perllib/FVWM/Tracker
 @dirrm share/fvwm/perllib/FVWM/Module
 @dirrm share/fvwm/perllib/FVWM
 @dirrm share/fvwm/perllib
