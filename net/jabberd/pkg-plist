@@ -4,14 +4,23 @@ bin/resolver
 bin/router
 bin/s2s
 bin/sm
+@unexec if cmp -s %D/etc/jabberd/c2s.xml %D/etc/jabberd/c2s.xml.dist; then rm -f %D/etc/jabberd/c2s.xml; fi
 etc/jabberd/c2s.xml.dist
+@unexec if cmp -s %D/etc/jabberd/jabberd.cfg %D/etc/jabberd/jabberd.cfg.dist; then rm -f %D/etc/jabberd/jabberd.cfg; fi
 etc/jabberd/jabberd.cfg.dist
+@unexec if cmp -s %D/etc/jabberd/resolver.xml %D/etc/jabberd/resolver.xml.dist; then rm -f %D/etc/jabberd/resolver.xml; fi
 etc/jabberd/resolver.xml.dist
+@unexec if cmp -s %D/etc/jabberd/router-users.xml %D/etc/jabberd/router-users.xml.dist; then rm -f %D/etc/jabberd/router-users.xml; fi
 etc/jabberd/router-users.xml.dist
+@unexec if cmp -s %D/etc/jabberd/router.xml %D/etc/jabberd/router.xml.dist; then rm -f %D/etc/jabberd/router.xml; fi
 etc/jabberd/router.xml.dist
+@unexec if cmp -s %D/etc/jabberd/s2s.xml %D/etc/jabberd/s2s.xml.dist; then rm -f %D/etc/jabberd/s2s.xml; fi
 etc/jabberd/s2s.xml.dist
+@unexec if cmp -s %D/etc/jabberd/sm.xml %D/etc/jabberd/sm.xml.dist; then rm -f %D/etc/jabberd/sm.xml; fi
 etc/jabberd/sm.xml.dist
+@unexec if cmp -s %D/etc/jabberd/templates/roster.xml %D/etc/jabberd/templates/roster.xml.dist; then rm -f %D/etc/jabberd/templates/roster.xml; fi
 etc/jabberd/templates/roster.xml.dist
+@unexec if cmp -s %D/etc/rc.d/jabberd.sh %D/etc/rc.d/jabberd.sh-dist; then rm -f %D/etc/rc.d/jabberd.sh; fi
 etc/rc.d/jabberd.sh-dist
 @dirrm etc/jabberd/templates
 @dirrm etc/jabberd
