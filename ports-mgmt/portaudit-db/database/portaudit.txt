@@ -61,3 +61,4 @@ gnutls<1.0.17|http://www.hornik.sk/SA/SA-20040802.txt http://secunia.com/advisor
 gnutls-devel>=1.1.*<1.1.12|http://www.hornik.sk/SA/SA-20040802.txt http://secunia.com/advisories/12156|GnuTLS certificate chain verification DoS|84ab58cf-e4ac-11d8-9b0a-000347a4fa7d
 ripmime<1.3.2.3|http://www.osvdb.org/8287 http://secunia.com/advisories/12201|ripMIME attachment extraction bypass|85e19dff-e606-11d8-9b0a-000347a4fa7d
 squid<2.5.5_11|http://www.osvdb.org/6791|Squid NTLM authentication helper overflow|f72ccf7c-e607-11d8-9b0a-000347a4fa7d
+acroread<5.09|http://www.osvdb.org/7429 http://freshmeat.net/projects/acrobatreader/?branch_id=92&release_id=164883|Acrobat Reader handling of malformed uuencoded pdf files|ab166a60-e60a-11d8-9b0a-000347a4fa7d
