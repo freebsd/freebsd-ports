@@ -1,0 +1,241 @@
+# Makefile.modules
+# Author:			Clement Laforet <sheepkiller@cultdeadsheep.org>
+#
+# This file is used to build modules list, DBM dependencies and MPM selection.
+# I hope it can easily handle external modules (such as mod_perl) or MPMs, like
+# muxmpm.
+#
+# Note to myself: (to generate PLIST_SUB entries for modules)
+#	gsed 's/^\(.*\)mod\(.*\)\.so/%%\MOD\U\2%%\L\1mod\2\.so/' pkg-plist > tmp
+#	mv tmp pkg-plist
+#
+# $FreeBSD$
+#
+
+# MPM section:
+# << TO BE WRITTEN >>
+.if defined (SLAVE_PORT_MPM)
+PLIST_SUB+=	PREFORK="@comment " WORKER="@comment "
+PKGNAMESUFFIX=	-${SLAVE_PORT_MPM}
+.else
+.   if ${WITH_MPM} != "prefork"
+PKGNAMESUFFIX=		-${WITH_MPM:L}
+WITH_THREADS=		yes
+.      if ${WITH_MPM:L} == "worker"
+PLIST_SUB+=	PREFORK="@comment " WORKER=""
+.      elif  ${WITH_MPM:L} == "perchild"
+PLIST_SUB+=	PREFORK="@comment " WORKER="@comment "
+.      else
+BROKEN=		"Unknown MPM: ${WITH_MPM}"
+.      endif
+.   else
+PLIST_SUB+=	PREFORK="@comment " WORKER="@comment "
+.   endif
+.else
+PLIST_SUB+=	PREFORK="@comment " WORKER="@comment "
+.endif
+
+# xDBM section
+#
+.if !defined(WITH_DBM) && defined(WITH_BERKELEYDB)
+WITH_DBM=db
+.endif
+
+.if defined(WITH_DBM)
+.   if ${WITH_DBM:L} == "sdbm"
+CONFIGURE_ARGS+=	--with-dbm=sdbm
+.   elif ${WITH_DBM:L} == "gdbm"
+LIB_DEPENDS+=		gdbm.3:${PORTSDIR}/databases/gdbm
+CONFIGURE_ARGS+=	--with-gdbm=${LOCALBASE}
+.   elif ${WITH_DBM:L} == "db" || defined(WITH_BERKELEYDB)
+.       if !defined(WITH_BERKELEYDB)
+LIB_DEPENDS=		db4:${PORTSDIR}/databases/db4
+CONFIGURE_ARGS+=	--with-dbm=db4 \
+			--with-berkeley-db=${LOCALBASE}
+.       elif ${WITH_BERKELEYDB} == "db2"
+LIB_DEPENDS=		db2:${PORTSDIR}/databases/db2
+CONFIGURE_ARGS+=	--with-dbm=db2 \
+			--with-berkeley-db=${LOCALBASE}
+.       elif ${WITH_BERKELEYDB} == "db3"
+LIB_DEPENDS=		db2:${PORTSDIR}/databases/db3
+CONFIGURE_ARGS+=	--with-dbm=db3 \
+			--with-berkeley-db=${LOCALBASE}
+.       elif ${WITH_BERKELEYDB} == "db4"
+LIB_DEPENDS=		db4:${PORTSDIR}/databases/db4
+CONFIGURE_ARGS+=	--with-dbm=db4 \
+			--with-berkeley-db=${LOCALBASE}
+.       else
+BROKEN=		"Unknown Berkeley DB version"
+.       endif
+.   else
+BROKEN=		"Unknown DBM"
+.   endif
+.else
+CONFIGURE_ARGS+=	--with-dbm=sdbm
+.endif
+
+# Modules section:
+# How does it works ?
+# << TO BE WRITTEN >>
+# All supported modules
+AUTH_MODULES=		auth auth_anon auth_dbm auth_digest
+DAV_MODULES=		dav dav_fs
+EXPERIMENTAL_MODULES=	bucketeer case_filter case_filter_in ext_filter charset_lite \
+			optional_hook_export optional_hook_import \
+			optional_fn_import optional_fn_export
+LDAP_MODULES=		ldap auth_ldap
+MISC_MODULES=		access actions alias asis autoindex cache cern_meta \
+			cgi cgid charset_lite  deflate dir disk_cache env expires \
+			file_cache headers imap include info log_config logio mime \
+			mime_magic negotiation rewrite setenvif speling status \
+			unique_id userdir usertrack vhost_alias
+PROXY_MODULES=		proxy proxy_connect proxy_ftp proxy_http
+SSL_MODULE=		ssl
+SUEXEC_MODULES=		suexec
+THREADS_MODULES=	cache file_cache disk_cache mem_cache
+
+# Work in progress
+SLAVE_PORT_MODULES?=	# If you are porting a slave port for apache2 please define SLAVE_PORT_MODULES
+
+DEFAULT_MODULES=	${AUTH_MODULES} ${DAV_MODULES} ${MISC_MODULES} \
+			${PROXY_MODULES} ${SLAVE_PORT_MODULES}
+
+AVAILABLE_MODULES=	${DEFAULT_MODULES} ${EXPERIMENTAL_MODULES} ${LDAP_MODULES} ${THREADS_MODULES} \
+			${SSL_MODULE} ${SUEXEC_MODULES}
+
+# Setting "@comment " as default.
+.for module in ${AVAILABLE_MODULES}
+${module}_PLIST_SUB=	"@comment "
+.endfor
+
+# Configure
+
+.if defined(WITH_MODULES) && ( defined(WITHOUT_MODULES) || defined(WITH_EXTRA_MODULES))
+BROKEN=		"WITH_MODULES and WITHOUT_MODULES are mutually exclusive"
+.endif
+
+.if defined(WITHOUT_AUTH) || defined(WITH_CUSTOM_AUTH) || \
+    defined(WITHOUT_PROXY) || defined(WITH_CUSTOM_PROXY) || \
+    defined(WITHOUT_DAV)
+CUSTOM=		YES
+.endif
+
+.if !defined(WITH_STATIC_APACHE)
+# FYI
+#DYNAMIC_MODULES=	so
+CONFIGURE_ARGS+=	--enable-so
+.else
+CONFIGURE_ARGS+=	--disable-so
+WITH_ALL_STATIC_MODULES=	YES
+.endif
+
+### This part is not processed if WITH_MODULES is defined
+.if defined(WITH_MODULES)
+_APACHE_MODULES+=		${WITH_MODULES}
+.elif !defined(CUSTOM)
+_APACHE_MODULES+=	${DEFAULT_MODULES}
+.else
+.    if defined(WITH_CUSTOM_AUTH)
+_APACHE_MODULES+=		${WITH_CUSTOM_AUTH}
+.    elif !defined(WITHOUT_AUTH)
+_APACHE_MODULES+=		${AUTH_MODULE}
+.   endif
+.   if defined(WITH_CUSTOM_PROXY)
+_APACHE_MODULES+=		${WITH_CUSTOM_PROXY}
+.   elif !defined(WITHOUT_PROXY)
+_APACHE_MODULES+=		${PROXY_MODULES}
+.   endif
+.   if !defined(WITHOUT_DAV)
+_APACHE_MODULES+=		dav dav_fs
+.   endif
+_APACHE_MODULES+=	${MISC_MODULES} ${SLAVE_PORT_MODULES}
+.endif # end of module selection
+
+.if defined (WITH_LDAP)
+_APACHE_MODULES+=	${LDAP_MODULES}
+.endif
+
+.if defined(WITH_THREADS)
+CONFIGURE_ARGS+=	--enable-threads
+CFLAGS+=		-DFREEBSD_THREAD_HACK
+.   if !defined(WITH_CUSTOM_THREADS)
+_APACHE_MODULES+=	${THREAD_MODULES}
+.   else
+_APACHE_MODULES+=	${WITH_CUSTOM_THREADS}
+.   endif
+.endif # endif of module selection
+
+.if !defined(WITHOUT_SSL)
+_APACHE_MODULES+=	${SSL_MODULE}
+CONFIGURE_ARGS+=	--with-ssl=${OPENSSLBASE}
+RC_SUB+=		-e 's,@@SSL@@,ssl,g'
+.else
+RC_SUB+=		-e 's,@@SSL@@,,g'
+.endif
+
+.if defined(WITH_SUEXEC)
+SUEXEC_DOCROOT?=	${PREFIX_RELDEST}/www/data
+SUEXEC_USERDIR?=	public_html
+SUEXEC_SAFEPATH?=	${PREFIX_RELDEST}/bin:${LOCALBASE}/bin:/usr/bin:/bin
+_APACHE_MODULES+=	${SUEXEC_MODULES}
+CONFIGURE_ARGS+=	--with-suexec-caller=www \
+			--with-suexec-uidmin=1000 --with-suexec-gidmin=1000 \
+			--with-suexec-userdir="${SUEXEC_USERDIR}" \
+			--with-suexec-docroot="${SUEXEC_DOCROOT}" \
+			--with-suexec-safepath="${SUEXEC_SAFEPATH}" \
+			--with-suexec-logfile="/var/log/httpd-suexec.log" \
+			--with-suexec-bin="${PREFIX_RELDEST}/sbin/suexec"
+.endif
+.if defined(WITH_EXTRA_MODULES)
+_APACHE_MODULES+=	${WITH_EXTRA_MODULES}
+.endif
+
+.if defined(WITH_EXPERIMENTAL)
+_APACHE_MODULES+=	${EXPERIMENTAL_MODULES}
+.endif
+
+.if !defined(WITHOUT_MODULES)
+APACHE_MODULES=		${_APACHE_MODULES}
+.else
+APACHE_MODULES!=	\
+			for module in ${_APACHE_MODULES}; do \
+				${ECHO_CMD} ${WITHOUT_MODULES} | ${GREP} -wq $${module} 2> /dev/null || \
+				${ECHO_CMD} $${module}; \
+			done
+.endif
+
+.if defined(WITH_STATIC_MODULES)
+_CONFIGURE_ARGS!=	\
+			for module in ${APACHE_MODULES} ; do \
+				${ECHO_CMD} ${WITH_STATIC_MODULES} | \
+					${GREP} -wq $${module} 2> /dev/null ; \
+				if [ "$${?}" = "0" ] ; then \
+						${ECHO_CMD} "--enable-$${module}"; \
+					else \
+						${ECHO_CMD} "--enable-$${module}=shared"; \
+					fi; done
+CONFIGURE_ARGS+=	${_CONFIGURE_ARGS}
+.elif defined(WITH_STATIC_APACHE) || defined(WITH_ALL_STATIC_MODULES)
+CONFIGURE_ARGS+=	--enable-modules="${APACHE_MODULES}"
+.else
+CONFIGURE_ARGS+=	--enable-mods-shared="${APACHE_MODULES}"
+.endif
+
+.if defined(WITH_STATIC_MODULES)
+_SHARED_MODULES!=	\
+			for module in ${APACHE_MODULES} ; do \
+				${ECHO_CMD} ${WITH_STATIC_MODULES} | ${GREP} -wq $${module} 2> /dev/null || \
+				${ECHO_CMD} $${module}; \
+			done
+SHARED_MODULES=		${_SHARED_MODULES}
+.elif !defined(WITH_ALL_STATIC_MODULES)
+SHARED_MODULES=		${APACHE_MODULES}
+.endif
+
+.  for module in ${SHARED_MODULES}
+${module}_PLIST_SUB=	""
+.  endfor
+
+.for module in ${AVAILABLE_MODULES}
+PLIST_SUB+=	MOD_${module:U}=${${module}_PLIST_SUB}
+.endfor
