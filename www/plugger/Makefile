@@ -11,6 +11,7 @@ PORTREVISION=	1
 CATEGORIES=	www audio graphics
 MASTER_SITES=	http://fredrik.hubbe.net/plugger/ \
 		${MASTER_SITE_NETSCAPE}
+MASTER_SITE_SUBDIR=	sdk/plugin/unix
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} unix-sdk-3.0b5.tar.Z
 
 MAINTAINER=	coop9211@uidaho.edu
@@ -35,7 +36,6 @@ USE_REINPLACE=	yes
 MAN7=		plugger.7
 MANCOMPRESSED=	no
 ALL_TARGET=	freebsd-elf
-MASTER_SITE_SUBDIR=	sdk/plugin/unix
 
 .include <bsd.port.pre.mk>
 
@@ -82,6 +82,6 @@ do-install:
 	@${INSTALL_DATA} -b ${WRKSRC}/pluggerrc ${PREFIX}/etc
 
 post-install:
-	@${CAT} ${PKGMESSAGE} | sed -e 's|%%PREFIX%%|${PREFIX}|g'
+	@${CAT} ${PKGMESSAGE} | ${SED} -e 's|%%PREFIX%%|${PREFIX}|g'
 
 .include <bsd.port.post.mk>
