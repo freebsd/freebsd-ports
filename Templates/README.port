@@ -1,0 +1,30 @@
+<html>
+<title> The FreeBSD Ports Collection (%%PORT%%)</title>
+<head><h1> The FreeBSD Ports Collection ("%%PORT%%")</h1> </head> <hr>
+<body>
+
+<p>You are now in the directory for the port "%%PORT%%" (package name "%%PKG%%").
+
+<p>This is the one-line description for this port:
+
+<p><hr><p>
+%%COMMENT%%
+<p><hr>
+
+<p>Please read the file "<a href="pkg/DESCR">pkg/DESCR</a>" for a
+longer description.
+
+<p>Go to the <a href="../../README.html">top of the ports tree</a> for
+a summary on how to use the ports collection.
+
+<p>
+%%BUILD_DEPENDS%%
+<p>
+%%RUN_DEPENDS%%
+
+<p><hr><p>
+<a href="../README.html"> Go up one level</a>
+|
+<a href="../../README.html"> Go to top of ports tree</a>
+</body>
+</html>

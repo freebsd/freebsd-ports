@@ -1,0 +1,18 @@
+<html>
+<title> The FreeBSD Ports Collection</title>
+<head><h1> The FreeBSD Ports Collection </h1> </head> <hr>
+<body>
+
+<p>You are at the top of the ports tree.
+
+<p>
+%%DESCR%%
+
+<p>Here are the one-line descriptions for each of the directories:
+
+<p><hr>
+<p><pre>
+%%SUBDIR%%
+</pre><p><hr>
+</body>
+</html>
