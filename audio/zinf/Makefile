@@ -13,7 +13,6 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
 
-BUILD_DEPENDS=	nasm:${PORTSDIR}/devel/nasm
 LIB_DEPENDS=	musicbrainz.2:${PORTSDIR}/audio/musicbrainz \
 		id3:${PORTSDIR}/audio/id3lib
 
@@ -35,6 +34,7 @@ LDFLAGS=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "i386"
+BUILD_DEPENDS+=	nasm:${PORTSDIR}/devel/nasm
 CPPFLAGS+=	"-D_M_IX86"
 .elif ${ARCH} == "alpha"
 CPPFLAGS+=	"-D_M_ALPHA"
