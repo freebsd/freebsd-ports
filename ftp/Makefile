@@ -6,6 +6,7 @@
     SUBDIR += curl
     SUBDIR += downloader
     SUBDIR += ftpfind
+    SUBDIR += ftplocate
     SUBDIR += ftpmirror
     SUBDIR += ftpsearch
     SUBDIR += ftptool
