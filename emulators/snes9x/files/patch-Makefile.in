@@ -1,5 +1,5 @@
---- Makefile.in.orig	Wed Aug 13 06:27:16 2003
-+++ Makefile.in	Sun Oct 12 14:13:49 2003
+--- Makefile.in.orig	Tue Aug 12 17:27:16 2003
++++ Makefile.in	Mon Oct 20 22:23:13 2003
 @@ -74,8 +74,6 @@
          CHEATS.O cheats2.o data.o unix/unix.o unix/config.o GLOBALS.O \
  	$(SPC7110OBJ) $(OBC1OBJ) $(SETAOBJ) $(KREEDOBJ)
@@ -17,6 +17,15 @@
  endif
  
  ifdef GLIDE
+@@ -112,7 +109,7 @@
+ ifdef OPENGL
+ OPENGLOBJS = unix/opengl.o
+ OPENGLDEFINES = -DUSE_OPENGL
+-OPENGLLIBS = -lGL -lGLU -ldl
++OPENGLLIBS = -lGL -lGLU
+ OPENGLDEPENDS=use_opengl
+ OPENGLNO_DEPENDS=no_opengl
+ else
 @@ -132,7 +129,7 @@
  CC = @CC@
  NASM = @NASM@
