@@ -1,0 +1,14 @@
+
+$FreeBSD$
+
+--- contrib/Makefile	2002/12/18 08:31:42	1.1
++++ contrib/Makefile	2002/12/18 08:32:44
+@@ -26,7 +26,7 @@
+ 
+ INSTALL = install
+ 
+-CODE_DEPENDS = libxml
++CODE_DEPENDS = 
+ 
+ ifeq ($(OSTYPE),FreeBSD)
+ CODE_DEPENDS += libcext_bsd libcext_lgpl

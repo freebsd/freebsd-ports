@@ -1,0 +1,41 @@
+
+$FreeBSD$
+
+--- build/Makefile.pkg.orig	Thu Apr 25 23:18:34 2002
++++ build/Makefile.pkg	Sun Jan 19 17:28:26 2003
+@@ -415,13 +415,13 @@
+ 	cd $(ROOT)/proxies/fs/cpl;$(MAKE) 
+ 
+ LIBXML_INCLUDEDIRS := $(ROOT)/contrib/libxml2.$(OS_ARCH)
+-LIBXML_LIBDIRS := $(ROOT)/contrib/libxml2.$(OS_ARCH)/.libs 
++LIBXML_LIBDIRS := $(LOCALBASE)/lib
+ ifeq ($(OSTYPE),Linux)
+ LIBXML_LIBNAME :=
+ endif
+ 
+ ifeq ($(OSTYPE),FreeBSD)
+- LIBXML_LDLIBS_LAST := $(LD_STATIC) -lxml $(LD_DYNAMIC)
++ LIBXML_LDLIBS_LAST := -lxml2
+ endif
+ 
+ ifeq ($(OSTYPE),Linux)
+@@ -435,7 +435,7 @@
+ LIBXML_DEPENDS := $(ROOT)/contrib/libxml2.$(OS_ARCH)/.libs/libxml.a
+ 
+ $(LIBXML_DEPENDS):
+-	cd $(ROOT)/contrib ;$(MAKE) libxml
++#	cd $(ROOT)/contrib ;$(MAKE) libxml
+ 
+ ENUM_INCLUDEDIRS := $(ROOT)/contrib/enum.$(OS_ARCH)/include
+ #ENUM_LIBDIRS := $(ROOT)/contrib/enum.$(OS_ARCH)/lib /usr/local/bind-8.2.2p7/src/lib
+@@ -627,8 +627,8 @@
+ ifneq ($(OSTYPE),FreeBSD)
+ PTHREAD_LIBNAME := pthread
+ else
+-PTHREAD_LDFLAGS := -pthread
+-PTHREAD_LIBNAME := c_r
++PTHREAD_LDFLAGS ?= -pthread
++PTHREAD_LIBNAME ?= c_r
+ endif
+ 
+ ifeq ($(OSTYPE),IRIX64)

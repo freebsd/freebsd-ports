@@ -1,0 +1,7 @@
+bin/b2bua
+etc/b2bConfig.xml.sample
+share/doc/b2bua/B2BUA.pdf
+share/doc/b2bua/HOWTO
+share/doc/b2bua/README
+share/doc/b2bua/b2bdesign.pdf
+@dirrm share/doc/b2bua

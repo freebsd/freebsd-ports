@@ -1,0 +1,14 @@
+
+$FreeBSD$
+
+--- sip/b2b/Makefile	2002/12/18 17:03:43	1.1
++++ sip/b2b/Makefile	2002/12/18 17:49:16
+@@ -19,6 +19,8 @@
+ PACKAGES += PROXYBASE RADIUS SIP SDP2 PTHREAD UTIL LIBXML
+ endif
+ 
++PACKAGES += LIBCEXT
++
+ INCDIRS += $(ROOT)/sip/b2b $(ROOT)//sip/b2b/controlState \
+            $(ROOT)//sip/b2b/uaState
+ 
