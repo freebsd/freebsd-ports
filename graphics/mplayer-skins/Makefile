@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mplayer
-PORTVERSION=	1.0.2
+PORTVERSION=	1.0.3
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.mplayerhq.hu/MPlayer/Skin/ \
 		http://ftp.mplayerhq.hu/MPlayer/Skin/ \
@@ -82,6 +82,7 @@ WITH_SKIN_PHONY=yes
 WITH_SKIN_PLASTIC=yes
 WITH_SKIN_PROTON=yes
 WITH_SKIN_SLIM=yes
+WITH_SKIN_TRIUM=yes
 WITH_SKIN_WINDOWSMEDIAPLAYER6=yes
 WITH_SKIN_XANIM=yes
 WITH_SKIN_XINE_LCD=yes
@@ -241,6 +242,15 @@ EXTRACT_ONLY+=	slim.tar.bz2
 PLIST_SUB+=	SLIM=""
 .else
 PLIST_SUB+=	SLIM="@comment "
+.endif
+
+DISTFILES+=	trium.tar.bz2
+.ifdef(WITH_SKIN_TRIUM)
+EXTRACT_ONLY+=	trium.tar.bz2
+
+PLIST_SUB+=	TRIUM=""
+.else
+PLIST_SUB+=	TRIUM="@comment "
 .endif
 
 DISTFILES+=	WindowsMediaPlayer6.tar.bz2

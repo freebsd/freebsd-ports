@@ -441,6 +441,34 @@
 %%SLIM%%%%myDATADIR%%slim/symbols.fnt
 %%SLIM%%%%myDATADIR%%slim/symbols.png
 %%SLIM%%%%myDATADIR%%slim/volume.png
+%%TRIUM%%%%myDATADIR%%/trium/README
+%%TRIUM%%%%myDATADIR%%/trium/VERSION
+%%TRIUM%%%%myDATADIR%%/trium/about.png
+%%TRIUM%%%%myDATADIR%%/trium/back.png
+%%TRIUM%%%%myDATADIR%%/trium/eqb.png
+%%TRIUM%%%%myDATADIR%%/trium/exit.png
+%%TRIUM%%%%myDATADIR%%/trium/font.fnt
+%%TRIUM%%%%myDATADIR%%/trium/font.png
+%%TRIUM%%%%myDATADIR%%/trium/forward.png
+%%TRIUM%%%%myDATADIR%%/trium/fsb.png
+%%TRIUM%%%%myDATADIR%%/trium/iconify.png
+%%TRIUM%%%%myDATADIR%%/trium/load.png
+%%TRIUM%%%%myDATADIR%%/trium/main.png
+%%TRIUM%%%%myDATADIR%%/trium/menu.png
+%%TRIUM%%%%myDATADIR%%/trium/menus.png
+%%TRIUM%%%%myDATADIR%%/trium/next.png
+%%TRIUM%%%%myDATADIR%%/trium/pause.png
+%%TRIUM%%%%myDATADIR%%/trium/play.png
+%%TRIUM%%%%myDATADIR%%/trium/plb.png
+%%TRIUM%%%%myDATADIR%%/trium/pos.png
+%%TRIUM%%%%myDATADIR%%/trium/prev.png
+%%TRIUM%%%%myDATADIR%%/trium/skin
+%%TRIUM%%%%myDATADIR%%/trium/stop.png
+%%TRIUM%%%%myDATADIR%%/trium/sub.png
+%%TRIUM%%%%myDATADIR%%/trium/subt.png
+%%TRIUM%%%%myDATADIR%%/trium/symbols.fnt
+%%TRIUM%%%%myDATADIR%%/trium/symbols.png
+%%TRIUM%%%%myDATADIR%%/trium/volume.png
 %%XANIM%%%%myDATADIR%%xanim/README
 %%XANIM%%%%myDATADIR%%xanim/back.png
 %%XANIM%%%%myDATADIR%%xanim/back2.png
@@ -495,6 +523,7 @@
 %%XINE_LCD%%@dirrm %%myDATADIR%%xine-lcd
 %%XANIM%%@dirrm %%myDATADIR%%xanim
 %%SLIM%%@dirrm %%myDATADIR%%slim
+%%TRIUM%%@dirrm %%myDATADIR%%trium
 %%PROTON%%@dirrm %%myDATADIR%%proton
 %%PLASTIC%%@dirrm %%myDATADIR%%plastic
 %%PHONY%%@dirrm %%myDATADIR%%phony
