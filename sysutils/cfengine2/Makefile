@@ -7,6 +7,7 @@
 
 PORTNAME=	cfengine
 PORTVERSION=	1.6.3
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	ftp://ftp.iu.hioslo.no/pub/cfengine/ \
 		${MASTER_SITE_GNU}
@@ -14,8 +15,9 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	gordont@bluemtn.net
 
+LIB_DEPENDS=	db3:${PORTSDIR}/databases/db3
 .if defined(PACKAGE_BUILDING) && !exists(/usr/include/tcpd.h)
-LIB_DEPENDS=	wrap.7:${PORTSDIR}/security/tcp_wrapper
+LIB_DEPENDS+=	wrap.7:${PORTSDIR}/security/tcp_wrapper
 .endif
 
 USE_GMAKE=	yes
@@ -27,11 +29,11 @@ pre-configure:
 	@cd ${WRKSRC} && aclocal && autoheader
 
 post-install:
-.if !defined(NOPORTDOCS)
-	@${MKDIR} ${PREFIX}/share/doc/${PORTNAME}
-.for docfile in cf-security.html cfengine-Reference.html cfengine-Tutorial.html
-	${INSTALL_MAN} ${WRKSRC}/doc/${docfile} ${PREFIX}/share/doc/${PORTNAME}
-.endfor
+.if defined(NOPORTDOCS)
+	@${RM} -rf ${PREFIX}/share/doc/${PORTNAME}
 .endif
+.for binary in cfd cfengine cfrun cfkey
+	@strip ${PREFIX}/sbin/${binary}
+.endfor
 
 .include <bsd.port.mk>

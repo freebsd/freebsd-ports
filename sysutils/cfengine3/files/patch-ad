@@ -1,3 +1,6 @@
+This moves the documentation out of /usr/local/share/cfengine/{doc,html} into
+/usr/local/shared/doc/cfengine to keep it inline with the rest of the ports.
+
 --- doc/Makefile.am.orig	Fri Dec  1 19:24:39 2000
 +++ doc/Makefile.am	Tue Jan 23 02:07:04 2001
 @@ -2,7 +2,7 @@
@@ -5,7 +8,7 @@
  
  # Info used in building and installing HTML files
 -htmldir = $(pkgdatadir)/html
-+htmldir = # $(pkgdatadir)/html
++htmldir = $(datadir)/doc/cfengine
  htmlfiles = cfengine-Reference.html cfengine-Tutorial.html 
  html_DATA = $(htmlfiles) cf-security.html
  
@@ -14,7 +17,7 @@
  psfiles = $(ps1)	# $(ps2)
  
 -psdir = $(pkgdatadir)/doc
-+psdir = # $(pkgdatadir)/doc
++psdir = $(datadir)/doc/cfengine
  ps_DATA = $(psfiles)
  
  # Make sure these get distributed with everything else.
