@@ -1,48 +1,34 @@
 # New ports collection makefile for:	slnr
-# Version required:	2.13
+# Version required:	2.3.0
 # Date created:		21 July 1996
 # Whom:			Tim Vanderhoek <ac199@freenet.hamilton.on.ca>
 #
-# $Id: Makefile,v 1.2 1996/11/13 12:41:30 asami Exp $
+# $Id: Makefile,v 1.3 1996/11/18 11:38:06 asami Exp $
 #
 
-DISTNAME=	slnr
-PKGNAME=	slnr-2.13
+DISTNAME=	slnr-2.3.0
 CATEGORIES=	news
-MASTER_SITES=	ftp://ftp.uu.net/networking/news/readers/off-line/slnr/ \
-		ftp://ftp.adelaide.edu.au/pub/news/readers/off-line/slnr/
-DISTFILES=	part1.Z part2.Z part3.Z
+MASTER_SITES=	http://www3.sympatico.ca/john.vanderhoek/tim/src/slnr/
 
 MAINTAINER=	ac199@freenet.hamilton.on.ca
 
 RUN_DEPENDS=	zip:${PORTSDIR}/archivers/zip
 
-DIST_SUBDIR=	slnr
-NO_WRKSUBDIR=	yes
-ALL_TARGET=	slnr
-EXTRACT_CMD=		${GZCAT}
-EXTRACT_BEFORE_ARGS=	
-EXTRACT_AFTER_ARGS=	| sed -ne '/^\#!\/bin\/sh/,$$p' | sh
 MAN1=		slnr.1
 
-EXTRAFILES=	default.dot.slnrrc \
- 		porting.notes slnr.1 LICENSE
+MAKEFILE=	src/Makefile
 
-DOCFILES=	porting.notes soup12.doc slnr.doc LICENSE
-DOCFILES+=	default.dot.slnrrc
-
-post-extract:
-.for l in ${EXTRAFILES}
-		@cp ${FILESDIR}/${l} ${WRKSRC}
-.endfor
+DOCFILES=	${FILESDIR}/porting.notes other/soup12.doc other/slnr.doc \
+		LICENSE other/default.dot.slnrrc
 
 do-install:
 .if !defined{NOPORTDOCS}
-	mkdir -p ${PREFIX}/share/doc/slnr
-	cd ${WRKSRC}; \
+	@${ECHO_MSG} "===>  Copying documents to ${PREFIX}/share/doc/slnr"
+	@${MKDIR} -p ${PREFIX}/share/doc/slnr
+	@cd ${WRKSRC}; \
 		${INSTALL_DATA} ${DOCFILES} ${PREFIX}/share/doc/slnr
 .endif
-	${INSTALL_MAN} ${WRKSRC}/slnr.1 ${PREFIX}/man/man1/slnr.1
+	${INSTALL_MAN} ${WRKSRC}/other/slnr.1 ${PREFIX}/man/man1/slnr.1
 	${INSTALL_PROGRAM} ${WRKSRC}/slnr ${PREFIX}/bin
 
 .include <bsd.port.mk>
