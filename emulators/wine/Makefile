@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	wine
-PORTVERSION=	2001.05.10
+PORTVERSION=	2001.06.29
 CATEGORIES=	emulators
 MASTER_SITES=	${MASTER_SITE_SUNSITE}
 MASTER_SITE_SUBDIR=	ALPHA/wine/development
@@ -69,8 +69,8 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/documentation/samples/config ${PREFIX}/etc/wine.conf.sample
 	[ -f ${PREFIX}/etc/wine.conf ] \
 		|| ${INSTALL_DATA} ${PREFIX}/etc/wine.conf.sample ${PREFIX}/etc/wine.conf
-	${INSTALL_DATA} ${WRKSRC}/documentation/wine.man ${PREFIX}/man/man1/wine.1
-	${INSTALL_DATA} ${WRKSRC}/documentation/wine.conf.man ${PREFIX}/man/man5/wine.conf.5
+	${INSTALL_MAN} ${WRKSRC}/documentation/wine.man ${PREFIX}/man/man1/wine.1
+	${INSTALL_MAN} ${WRKSRC}/documentation/wine.conf.man ${PREFIX}/man/man5/wine.conf.5
 .if !defined(NOPORTDOCS)
 	-@${MKDIR} ${PREFIX}/lib/wine/documentation
 .for i in README ANNOUNCE AUTHORS LICENSE WARRANTY documentation/psdrv.reg
