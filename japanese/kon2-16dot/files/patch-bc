@@ -1,0 +1,12 @@
+diff -ur src/main.c.old src/main.c
+--- src/main.c.old	Tue Jan 25 20:16:57 2000
++++ src/main.c	Tue Jan 25 20:32:52 2000
+@@ -34,7 +34,7 @@
+ #include <version.h>
+ #include <term.h>
+ 
+-void main(int argc, const char *argv[])
++int main(int argc, const char *argv[])
+ {
+     char	*p;
+ 

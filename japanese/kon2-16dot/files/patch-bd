@@ -1,0 +1,25 @@
+diff -ur src/vc.c.old src/vc.c
+--- src/vc.c.old	Tue Jan 25 20:16:57 2000
++++ src/vc.c	Tue Jan 25 20:32:35 2000
+@@ -100,8 +100,8 @@
+ 	    "\t andb %%bl, (%%eax)\n"
+ 	    "\t incl %%eax\n"
+ 	    "\t loop 1b\n"
+-	    :
+-	    : "eax" ((long)head), "bl" (0x7F), "c" (n)
++	    : "=bl" (head), "=c" (n)
++	    : "eax" ((long)head), "0" (0x7F), "1" (n)
+ 	    : "bl", "cx" );
+ }
+ 
+@@ -114,8 +114,8 @@
+ 	    "\t andl %%ebx, (%%eax)\n"
+ 	    "\t addl $4, %%eax\n"
+ 	    "\t loop 1b\n"
+-	    :
+-	    : "eax" ((long)head), "ebx" (0x7F7F7F7F), "c" (n>>2)
++	    : "=ebx" (head), "=c" (n)
++	    : "eax" ((long)head), "0" (0x7F7F7F7F), "1" (n>>2)
+ 	    : "ebx", "cx" );
+ }
+ 
