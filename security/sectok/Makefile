@@ -15,7 +15,7 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	bms@FreeBSD.org
 COMMENT=	ISO 7816 Smartcard Utility
 
-LIB_DEPENDS=	libsectok.3:${PORTSDIR}/security/libsectok
+LIB_DEPENDS=	sectok.3:${PORTSDIR}/security/libsectok
 
 USE_OPENSSL=	yes
 
