@@ -376,6 +376,7 @@
     SUBDIR += mprof
     SUBDIR += msp430-binutils
     SUBDIR += msp430-gcc
+    SUBDIR += msp430-gdb
     SUBDIR += msrc0
     SUBDIR += nana
     SUBDIR += nasm

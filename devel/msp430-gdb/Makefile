@@ -1,0 +1,51 @@
+# New ports collection makefile for:	msp430-gdb
+# Date created:		16 October 2002
+# Whom:			Lev Serebryakov <lev@serebryakov.spb.ru>
+#
+# $FreeBSD$
+#
+
+PORTNAME=	gdb
+PORTVERSION=	${GDBVERSION}.${PATCHVERSION}
+CATEGORIES=	devel
+MASTER_SITES=	${MASTER_SITE_SOURCEWARE} \
+		http://lev.serebryakov.spb.ru/download/msp430/:patches
+MASTER_SITE_SUBDIR=	${PORTNAME}/old-releases
+PKGNAMEPREFIX=	msp430-
+DISTFILES=	${PORTNAME}-${GDBVERSION}${EXTRACT_SUFX} \
+		${PKGNAMEPREFIX}${PORTNAME}-${GDBVERSION}.${PATCHVERSION}${EXTRACT_SUFX}:patches
+
+MAINTAINER=	lev@serebryakov.spb.ru
+
+GDBVERSION=	5.1.1
+PATCHVERSION=	20021016
+
+WRKSRC=		${WRKDIR}/${PORTNAME}-${GDBVERSION}
+
+USE_BZIP2=	yes
+USE_GMAKE=	yes
+USE_LIBTOOL=	yes
+CONFIGURE_ARGS=	--target=${PKGNAMEPREFIX:S/-$//}
+MAKE_ENV=	PATH=${PREFIX}/bin:${PATH}
+LIBTOOLFILES=	configure opcodes/configure bfd/configure
+MAN1=		${PKGNAMEPREFIX}gdb.1 ${PKGNAMEPREFIX}run.1
+
+PLIST_SUB+=	PORTVERSION=${PORTVERSION} GDB_TARG=${PKGNAMEPREFIX:S/-$//} \
+		GDB_REV=${GDBVERSION}
+
+BINARIES	= gdb:gdb run:sim/msp430
+MANPAGES	= gdb.1:gdb run.1:sim/common
+
+do-install:
+	@${MKDIR} ${PREFIX}/${PKGNAMEPREFIX:S/-$//}/bin
+.for F in ${BINARIES}
+	${INSTALL_PROGRAM} ${WRKSRC}/${F:C/^.+://}/${F:C/:.+$//} ${PREFIX}/bin/${PKGNAMEPREFIX}${F:C/:.+$//}
+	@${LN} -f ${PREFIX}/bin/${PKGNAMEPREFIX}${F:C/:.+$//} \
+		${PREFIX}/${PKGNAMEPREFIX:S/-$//}/bin/${F:C/:.+$//}
+.endfor
+.for F in ${MANPAGES}
+	${INSTALL_MAN} ${WRKSRC}/${F:C/^.+://}/${F:C/:.+$//} ${PREFIX}/man/man${F:C/^.+\.([0-9]).+$/\1/}/${PKGNAMEPREFIX}${F:C/:.+$//}
+.endfor
+	${INSTALL_DATA} ${WRKSRC}/sim/msp430/libsim.a ${PREFIX}/lib/libmsp430-sim.a
+
+.include <bsd.port.mk>

@@ -1,0 +1,5 @@
+bin/%%GDB_TARG%%-gdb
+bin/%%GDB_TARG%%-run
+%%GDB_TARG%%/bin/gdb
+%%GDB_TARG%%/bin/run
+lib/lib%%GDB_TARG%%-sim.a
