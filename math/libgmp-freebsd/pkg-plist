@@ -1,5 +1,0 @@
-include/gmp.h
-info/gmp.info.gz
-lib/libgmp.a
-lib/libgmp.so
-lib/libgmp.so.3

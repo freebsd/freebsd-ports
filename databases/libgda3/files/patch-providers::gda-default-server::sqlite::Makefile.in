@@ -1,7 +1,0 @@
---- providers/gda-default-server/sqlite/Makefile.in.orig	Fri Apr 27 20:17:17 2001
-+++ providers/gda-default-server/sqlite/Makefile.in	Tue Jun 19 00:54:45 2001
-@@ -99,3 +99,3 @@
- 	$(TCC) $(READLINE_FLAGS) -o sqlite $(TOP)/src/shell.c \
--		libsqlite.a $(LIBGDBM) $(LIBREADLINE)
-+		libsqlite.a $(LIBGDBM) $(LIBREADLINE) -L/usr/local/lib -lgdbm
- 

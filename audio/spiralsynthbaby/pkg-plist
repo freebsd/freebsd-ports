@@ -1,5 +1,0 @@
-bin/SpiralSynth
-%%PORTDOCS%%share/doc/spiralsynth/CHANGES
-%%PORTDOCS%%share/doc/spiralsynth/COPYING
-%%PORTDOCS%%share/doc/spiralsynth/README
-%%PORTDOCS%%@dirrm share/doc/spiralsynth

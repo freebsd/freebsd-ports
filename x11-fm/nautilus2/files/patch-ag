@@ -1,9 +1,0 @@
---- src/Makefile.in.orig	Tue Nov  7 08:30:29 2000
-+++ src/Makefile.in	Fri Jan 12 10:05:21 2001
-@@ -661,4 +661,4 @@
- 	  if test -f $$p; then \
--	    echo "  $(INSTALL_PROGRAM) $(srcdir)/$$p $(DESTDIR)/$(prefix)/bin/$$p"; \
--	    $(INSTALL_PROGRAM) $$p $(DESTDIR)/$(prefix)/bin/$$p; \
-+	    echo "  $(INSTALL_SCRIPT) $(srcdir)/$$p $(DESTDIR)/$(prefix)/bin/$$p"; \
-+	    $(INSTALL_SCRIPT) $$p $(DESTDIR)/$(prefix)/bin/$$p; \
- 	  else :; fi; \

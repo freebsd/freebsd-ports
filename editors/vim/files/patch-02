@@ -1,8 +1,0 @@
---- auto/configure.orig	Tue Oct 31 13:03:47 2000
-+++ auto/configure	Mon Nov  6 11:26:36 2000
-@@ -3171 +3171 @@
--    GTK_CONFIG=$gtk_config_prefix/bin/gtk-config
-+    GTK_CONFIG=${GTK_CONFIG}
-@@ -3175 +3175 @@
--    GTK_CONFIG=$gtk_config_exec_prefix/bin/gtk-config
-+    GTK_CONFIG=${GTK_CONFIG}

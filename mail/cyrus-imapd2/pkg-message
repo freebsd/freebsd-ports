@@ -1,6 +1,0 @@
-****************************************************************************
-
-To setup mail spool, modify /usr/local/etc/imapd.conf appropriately,
-then run /usr/local/cyrus/bin/mkimap.
-
-****************************************************************************

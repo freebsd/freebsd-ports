@@ -1,7 +1,0 @@
-If we use iconv -- link pisock with it, so others don't have to:
-
---- libsock/Makefile.in	Tue Jun 19 12:25:26 2001
-+++ libsock/Makefile.in	Fri Aug 24 10:09:20 2001
-@@ -57,1 +57,1 @@
--		-o libpisock.la $(OBJS)
-+		-o libpisock.la $(OBJS) @ICONV_LIBS@

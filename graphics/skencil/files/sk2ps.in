@@ -1,3 +1,0 @@
-#!/bin/sh
-
-exec @PYTHON_CMD@ @PREFIX@/share/sketch/sk2ps.py $@

@@ -1,4 +1,0 @@
-bin/nat
-share/nat/passlist.txt
-share/nat/userlist.txt
-@dirrm share/nat

@@ -1,6 +1,0 @@
---- configure.orig	Thu Mar 15 11:59:13 2001
-+++ configure	Mon Mar 19 10:00:53 2001
-@@ -3503,2 +3503,3 @@
- *solaris*) CDROM_HOST=solaris;;
-+*freebsd*) CDROM_HOST=freebsd;;
- esac

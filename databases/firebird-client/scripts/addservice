@@ -1,9 +1,0 @@
-#!/bin/sh
-
-cat >>/etc/services <<EOF
-gds_db		 3050/tcp  #InterBase Database Remote Protocol
-EOF
-cat >>/etc/inetd.conf <<EOF
-gds_db	stream	tcp	nowait	firebird	/usr/interbase/bin/gds_inet_server  gds_inet_server
-EOF
-kill -HUP `cat /var/run/inetd.pid`

@@ -1,7 +1,0 @@
-include/gtkgl/gdkgl.h
-include/gtkgl/gtkglarea.h
-lib/libgtkgl.a
-lib/libgtkgl.so
-lib/libgtkgl.so.5
-share/aclocal/gtkgl.m4
-@dirrm include/gtkgl

@@ -1,9 +1,0 @@
-FElt is a free system for introductory level finite element analysis in the 
-mechanical/structural/civil fields. In a command line environment, FElt 
-uses an intuitive, straightforward input syntax to describe problems. It 
-also includes a graphical user interface for workstations that allows the 
-user to set-up, solve and post-process the problem in a single CAD-like 
-environment. 
-
-WWW: http://felt.sourceforge.net/
-http://crunch.inf.bi.ruhr-uni-bochum.de/FAR/ (FElt Application Repository)

@@ -1,9 +1,0 @@
-bin/everybuddy
-bin/update.pl
-bin/contact-update.pl
-share/sounds/everybuddy/BuddyArrive.au
-share/sounds/everybuddy/BuddyLeave.au
-share/sounds/everybuddy/Send.au
-share/sounds/everybuddy/Receive.au
-@dirrm share/sounds/everybuddy
-@dirrm share/sounds

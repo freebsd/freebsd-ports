@@ -1,9 +1,0 @@
---- lisp/dgnushack.el.orig	Thu Mar  1 15:35:02 2001
-+++ lisp/dgnushack.el	Sat Apr 14 09:21:25 2001
-@@ -445,5 +445,5 @@
- 	      (set-buffer-modified-p nil)
- 	      (message "texinfo formatting %s..." file)
--	      (texinfo-format-buffer nil)
-+	      (texinfo-format-buffer t)
- 	      (if (buffer-modified-p)
- 		  (progn (message "Saving modified %s" (buffer-file-name))

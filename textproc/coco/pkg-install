@@ -1,9 +1,0 @@
-#!/bin/sh
-
-if [ "$2" != "POST-INSTALL" ]; then exit 0; fi
-echo "############################################################"
-echo "You must install one of packages, mule-2.3, ja-mule-*-2.3"
-echo "(ja-mule-canna-2.3, ja-mule-canna+sj3-2.3, etc.),"
-echo "zh-mule-freewnn-2.3 and ko-mule-freewnn-2.3, each of"
-echo "which contains only the executables for mule-2.3"
-echo "############################################################"
