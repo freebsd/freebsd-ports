@@ -3,7 +3,7 @@
 # Date created:		19 November 1996
 # Whom:			Pedro Giffuni
 #
-# $Id: Makefile,v 1.7 1998/12/09 20:47:38 billf Exp $
+# $Id: Makefile,v 1.8 1999/03/15 01:27:19 steve Exp $
 #
 
 DISTNAME=	freeWAIS-sf-2.2.11
@@ -17,12 +17,20 @@ MAINTAINER=	ports@FreeBSD.org
 
 HAS_CONFIGURE=	yes
 CONFIGURE_SCRIPT=Configure
-CONFIGURE_ARGS= < ${FILESDIR}/configure.ans
+CONFIGURE_ARGS= < ${WRKDIR}/configure.ans
 INSTALL_TARGET=	install install.man
 
 MAN1=	catalog.1 dictionary.1 inverted_file.1 makedb.1 mkfmt.1 waisindex.1 \
 	waisq.1 waissearch.1 xwais.1 xwaisq.1
 MAN3=	ftw.3 scandir.3
+
+pre-configure:
+	sed "s,PREFIX,${PREFIX},g" \
+	${FILESDIR}/configure.ans.skel > ${WRKDIR}/configure.ans
+	mkdir -p ${PREFIX}
+	mkdir -p ${PREFIX}/bin
+	mkdir -p ${PREFIX}/lib
+	mkdir -p ${PREFIX}/man/man1
 
 pre-install:
 	${MKDIR} ${PREFIX}/lib/freeWAIS-sf
