@@ -10,6 +10,7 @@
     SUBDIR += cos
     SUBDIR += cryptix-jce
     SUBDIR += eclipse
+    SUBDIR += eclipse-examples
     SUBDIR += forte
     SUBDIR += gnu-regexp
     SUBDIR += guavac
