@@ -6,31 +6,32 @@
 #
 
 PORTNAME=	ccaudio
-PORTVERSION=	1.0.6
-PORTREVISION=	1
+PORTVERSION=	1.1.1
+PORTREVISION=	0
 CATEGORIES=	audio
-MASTER_SITES=	${MASTER_SITE_GNU}
-MASTER_SITE_SUBDIR=	ccaudio
+MASTER_SITES=	${MASTER_SITE_GNU:S/$/:gnu/} \
+		${MASTER_SITE_SOURCEFORGE:S/$/:sf/}
+MASTER_SITE_SUBDIR=	ccaudio/:gnu \
+			bayonne/:sf
+DISTFILES=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX}:gnu \
+		${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX}:sf
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	"C++ class framework for manipulating audio files"
+COMMENT=	C++ class framework for manipulating audio files
 
 BUILD_DEPENDS=	ccgnu2-config:${PORTSDIR}/devel/commoncpp
 
-USE_GMAKE=	yes
-USE_LIBTOOL=	yes
-USE_AUTOCONF=	yes
-USE_REINPLACE=	yes
+USE_GNOME=	gnometarget
+GNU_CONFIGURE=	yes
 INSTALLS_SHLIB=	yes
 
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include"
-
 MAN3=		Audio.3cc AudioCodec.3cc AudioCopy.3cc AudioFile.3cc \
-		AudioRegisterCodec.3cc AudioSample.3cc AudioTone.3cc \
-		CDAudio.3cc
+		AudioSample.3cc AudioTone.3cc CDAudio.3cc DTMFDetect.3cc \
+		LinearSample.3cc
 
-post-extract:
-	@${FIND} ${WRKSRC} -name "Makefile.in" | \
-		${XARGS} ${REINPLACE_CMD} -e 's|-release \@LT_RELEASE\@||g'
+post-install:
+.for m in ${MAN3}
+	@${INSTALL_MAN} ${WRKSRC}/doc/man3/${m} ${MAN3PREFIX}/man/man3
+.endfor
 
 .include <bsd.port.mk>
