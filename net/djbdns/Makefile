@@ -18,6 +18,8 @@ RUN_DEPENDS=	setuidgid:${PORTSDIR}/sysutils/daemontools
 ALL_TARGET=	it
 INSTALL_TARGET=	setup check
 
+NO_PACKAGE=	Forbidden - we have patches to the distribution.
+
 post-patch:
 	@echo "${CC} ${CFLAGS}" > ${WRKSRC}/conf-cc
 	@echo "${CC} -s" > ${WRKSRC}/conf-ld
