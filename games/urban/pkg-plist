@@ -1,0 +1,11 @@
+bin/urban
+share/urban/intro.dat
+share/urban/levels.dat
+share/urban/urban.dat
+%%PORTDOCS%%%%DOCSDIR%%/AUTHORS
+%%PORTDOCS%%%%DOCSDIR%%/CHEAT
+%%PORTDOCS%%%%DOCSDIR%%/NEWS
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/README.swe
+@dirrm share/urban
+%%PORTDOCS%%@dirrm %%DOCSDIR%%

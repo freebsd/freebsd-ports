@@ -424,6 +424,7 @@
     SUBDIR += uhexen
     SUBDIR += uox3
     SUBDIR += uqm
+    SUBDIR += urban
     SUBDIR += utserver
     SUBDIR += utserver-asu
     SUBDIR += utserver-to
