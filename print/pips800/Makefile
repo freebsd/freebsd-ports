@@ -10,7 +10,11 @@ PORTVERSION?=	1.3.1
 #PORTREVISION=	1
 CATEGORIES?=	print linux
 .if defined(INTERNATIONAL_PRODUCTS)
-.if ${PORTVERSION} == 2.0 || ${PORTVERSION} == 2.1
+.if ${PRTYPE} == -sc20s
+MASTER_SITES?=	http://www.epkowa.on.arena.ne.jp/pips/data/sc20/
+.elif ${PRTYPE} == -sc40s
+MASTER_SITES?=	http://www.epkowa.on.arena.ne.jp/pips/data/sc40/
+.elif ${PORTVERSION} == 2.0 || ${PORTVERSION} == 2.1
 MASTER_SITES?=	http://www.epkowa.on.arena.ne.jp/pips/data/${PRTYPE:S/^-//}_${PORTVERSION:S/.//}/
 .else
 MASTER_SITES?=	http://www.epkowa.on.arena.ne.jp/pips/data/${PRTYPE:S/^-//}/
