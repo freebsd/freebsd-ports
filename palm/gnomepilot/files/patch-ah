@@ -1,0 +1,11 @@
+--- Makefile.in.orig	Fri Mar 31 11:05:19 2000
++++ Makefile.in	Wed Apr  5 17:16:05 2000
+@@ -156,7 +156,7 @@
+ 
+ bin_SCRIPTS = gnome-pilot-config
+ 
+-confexecdir = $(libdir)
++confexecdir = $(sysconfdir)
+ confexec_DATA = gpilotConf.sh
+ 
+ EXTRA_DIST =  	gnome-pilot.spec 		gpilotConf.sh.in

@@ -1,0 +1,10 @@
+--- gpilotd/gpilotd.c.orig	Tue Mar 28 17:44:17 2000
++++ gpilotd/gpilotd.c	Wed Apr  5 17:08:46 2000
+@@ -6,6 +6,7 @@
+ 
+ #include <pthread.h>
+ #include <sys/types.h>
++#include <sys/stat.h>
+ #include <pwd.h>
+ #include <errno.h>
+ #include <sys/time.h>

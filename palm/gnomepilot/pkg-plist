@@ -14,6 +14,7 @@ bin/memo_file_capplet
 bin/pilot_applet
 etc/CORBA/servers/gpilotd.gnorba
 etc/CORBA/servers/pilot_applet.gnorba
+etc/gpilotConf.sh
 include/gpilotd/gnome-pilot-client.h
 include/gpilotd/gnome-pilot-conduit-backup.h
 include/gpilotd/gnome-pilot-conduit-file.h
@@ -53,9 +54,6 @@ lib/libgpilotdcm.so.0
 lib/libgpilotdconduit.a
 lib/libgpilotdconduit.so
 lib/libgpilotdconduit.so.0
-lib/libgpilotdconduitmgmtOLD.a
-lib/libgpilotdconduitmgmtOLD.so
-lib/libgpilotdconduitmgmtOLD.so.0
 @exec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -m %B
 @unexec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -R
 share/gnome/applets/Utility/pilot_applet.desktop
@@ -87,6 +85,7 @@ share/gnome/pixmaps/sync_broken.png
 share/gnome/pixmaps/sync_icon.png
 share/gnome/pixmaps/syncing_icon.png
 share/locale/da/LC_MESSAGES/gnome-pilot.mo
+share/locale/el/LC_MESSAGES/gnome-pilot.mo
 share/locale/es/LC_MESSAGES/gnome-pilot.mo
 share/locale/fr/LC_MESSAGES/gnome-pilot.mo
 share/locale/ja/LC_MESSAGES/gnome-pilot.mo
