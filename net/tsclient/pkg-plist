@@ -2,7 +2,7 @@ bin/tsclient
 libdata/bonobo/servers/GNOME_TSClientApplet.server
 libexec/tsclient-applet
 share/gnome/application-registry/tsclient.applications
-share/gnome/apps/Internet/tsclient.desktop
+share/gnome/applications/tsclient.desktop
 share/gnome/mime-info/tsclient.keys
 share/gnome/mime-info/tsclient.mime
 share/gnome/pixmaps/tsclient.png
@@ -41,40 +41,42 @@ share/locale/ru/LC_MESSAGES/tsclient.mo
 share/locale/se/LC_MESSAGES/tsclient.mo
 share/locale/zh_CN/LC_MESSAGES/tsclient.mo
 share/locale/zh_TW/LC_MESSAGES/tsclient.mo
-@unexec rmdir share/locale/zh_TW/LC_MESSAGES 2>/dev/null || true
-@unexec rmdir share/locale/zh_TW 2>/dev/null || true
-@unexec rmdir share/locale/zh_CN/LC_MESSAGES 2>/dev/null || true
-@unexec rmdir share/locale/zh_CN 2>/dev/null || true
-@unexec rmdir share/locale/se/LC_MESSAGES 2>/dev/null || true
-@unexec rmdir share/locale/se 2>/dev/null || true
-@unexec rmdir share/locale/ru/LC_MESSAGES 2>/dev/null || true
-@unexec rmdir share/locale/ru 2>/dev/null || true
-@unexec rmdir share/locale/pt_PT/LC_MESSAGES 2>/dev/null || true
-@unexec rmdir share/locale/pt_PT 2>/dev/null || true
-@unexec rmdir share/locale/pt_BR/LC_MESSAGES 2>/dev/null || true
-@unexec rmdir share/locale/pt_BR 2>/dev/null || true
-@unexec rmdir share/locale/pl_PL/LC_MESSAGES 2>/dev/null || true
-@unexec rmdir share/locale/pl_PL 2>/dev/null || true
-@unexec rmdir share/locale/no_bb/LC_MESSAGES 2>/dev/null || true
-@unexec rmdir share/locale/no_bb 2>/dev/null || true
-@unexec rmdir share/locale/nl_NL/LC_MESSAGES 2>/dev/null || true
-@unexec rmdir share/locale/nl_NL 2>/dev/null || true
-@unexec rmdir share/locale/ms/LC_MESSAGES 2>/dev/null || true
-@unexec rmdir share/locale/ms 2>/dev/null || true
-@unexec rmdir share/locale/it/LC_MESSAGES 2>/dev/null || true
-@unexec rmdir share/locale/it 2>/dev/null || true
-@unexec rmdir share/locale/hu/LC_MESSAGES 2>/dev/null || true
-@unexec rmdir share/locale/hu 2>/dev/null || true
-@unexec rmdir share/locale/gr/LC_MESSAGES 2>/dev/null || true
-@unexec rmdir share/locale/gr 2>/dev/null || true
-@unexec rmdir share/locale/fr/LC_MESSAGES 2>/dev/null || true
-@unexec rmdir share/locale/fr 2>/dev/null || true
-@unexec rmdir share/locale/fi/LC_MESSAGES 2>/dev/null || true
-@unexec rmdir share/locale/fi 2>/dev/null || true
-@unexec rmdir share/locale/es/LC_MESSAGES 2>/dev/null || true
-@unexec rmdir share/locale/es 2>/dev/null || true
-@unexec rmdir share/locale/da_DK/LC_MESSAGES 2>/dev/null || true
-@unexec rmdir share/locale/da_DK 2>/dev/null || true
-@unexec rmdir share/locale/ar/LC_MESSAGES 2>/dev/null || true
-@unexec rmdir share/locale/ar 2>/dev/null || true
+@unexec rmdir %D/share/locale/zh_TW/LC_MESSAGES 2>/dev/null || true
+@unexec rmdir %D/share/locale/zh_TW 2>/dev/null || true
+@unexec rmdir %D/share/locale/zh_CN/LC_MESSAGES 2>/dev/null || true
+@unexec rmdir %D/share/locale/zh_CN 2>/dev/null || true
+@unexec rmdir %D/share/locale/se/LC_MESSAGES 2>/dev/null || true
+@unexec rmdir %D/share/locale/se 2>/dev/null || true
+@unexec rmdir %D/share/locale/ru/LC_MESSAGES 2>/dev/null || true
+@unexec rmdir %D/share/locale/ru 2>/dev/null || true
+@unexec rmdir %D/share/locale/pt_PT/LC_MESSAGES 2>/dev/null || true
+@unexec rmdir %D/share/locale/pt_PT 2>/dev/null || true
+@unexec rmdir %D/share/locale/pt_BR/LC_MESSAGES 2>/dev/null || true
+@unexec rmdir %D/share/locale/pt_BR 2>/dev/null || true
+@unexec rmdir %D/share/locale/pl_PL/LC_MESSAGES 2>/dev/null || true
+@unexec rmdir %D/share/locale/pl_PL 2>/dev/null || true
+@unexec rmdir %D/share/locale/no_bb/LC_MESSAGES 2>/dev/null || true
+@unexec rmdir %D/share/locale/no_bb 2>/dev/null || true
+@unexec rmdir %D/share/locale/nl_NL/LC_MESSAGES 2>/dev/null || true
+@unexec rmdir %D/share/locale/nl_NL 2>/dev/null || true
+@unexec rmdir %D/share/locale/ms/LC_MESSAGES 2>/dev/null || true
+@unexec rmdir %D/share/locale/ms 2>/dev/null || true
+@unexec rmdir %D/share/locale/it/LC_MESSAGES 2>/dev/null || true
+@unexec rmdir %D/share/locale/it 2>/dev/null || true
+@unexec rmdir %D/share/locale/hu/LC_MESSAGES 2>/dev/null || true
+@unexec rmdir %D/share/locale/hu 2>/dev/null || true
+@unexec rmdir %D/share/locale/gr/LC_MESSAGES 2>/dev/null || true
+@unexec rmdir %D/share/locale/gr 2>/dev/null || true
+@unexec rmdir %D/share/locale/fr/LC_MESSAGES 2>/dev/null || true
+@unexec rmdir %D/share/locale/fr 2>/dev/null || true
+@unexec rmdir %D/share/locale/fi/LC_MESSAGES 2>/dev/null || true
+@unexec rmdir %D/share/locale/fi 2>/dev/null || true
+@unexec rmdir %D/share/locale/es/LC_MESSAGES 2>/dev/null || true
+@unexec rmdir %D/share/locale/es 2>/dev/null || true
+@unexec rmdir %D/share/locale/da_DK/LC_MESSAGES 2>/dev/null || true
+@unexec rmdir %D/share/locale/da_DK 2>/dev/null || true
+@unexec rmdir %D/share/locale/ar/LC_MESSAGES 2>/dev/null || true
+@unexec rmdir %D/share/locale/ar 2>/dev/null || true
+@unexec rmdir %D/share/nls/POSIX 2>/dev/null || true
+@unexec rmdir %D/share/nls/en_US.US-ASCII 2>/dev/null || true
 @dirrm share/gnome/pixmaps/tsclient
