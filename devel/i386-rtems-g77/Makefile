@@ -7,7 +7,7 @@
 
 PORTNAME=	g77
 PORTVERSION=	3.2.3
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_SOURCEWARE} \
 		${MASTER_SITE_GNU:S/$/:gcc/}
@@ -57,7 +57,7 @@ PATCH_WRKSRC=		${WRKDIR}
 PATCH_STRIP=		-p
 
 NO_CPU_FLAGS=	true
-MAKE_FLAGS=	LANGUAGES="c c++ java"
+MAKE_FLAGS=	LANGUAGES="f77"
 MAKE_ENV=	MACHINE_ARCH=${RTEMS_ARCH} NO_CPU_CFLAGS=true
 # Since once mk/bsd.cpu.mk adds the _CPUCFLAGS they can't be removed
 # by NO_CPU_FLAGS, and since they are added long before here we are
