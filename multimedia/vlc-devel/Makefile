@@ -254,6 +254,12 @@ HEADERS_SUFX=
 
 .include <bsd.port.pre.mk>
 
+.if ${OSVERSION} < 500000 && defined(WITH_MOZILLA_PLUGIN)
+.if ${WITH_MOZILLA}=="mozilla-devel"
+USE_GCC=	3.4
+.endif
+.endif
+
 .if ${HAVE_GNOME:Mesound}!="" && !defined(WITHOUT_ESOUND)
 WITH_ESOUND=	yes
 .endif
