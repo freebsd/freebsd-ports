@@ -12,6 +12,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	jos@catnook.com
+COMMENT=	A set of portable software build utilities
 
 MAN1=		buildtool.1
 

@@ -11,6 +11,7 @@ CATEGORIES=	devel
 MASTER_SITES=	http://www.tamacom.com/global/
 
 MAINTAINER=	jos@catnook.com
+COMMENT=	A source code tag system
 
 GNU_CONFIGURE=	yes
 USE_PERL5=	yes

@@ -11,6 +11,7 @@ CATEGORIES=	textproc
 MASTER_SITES=	http://www.math.polytechnique.fr/cmat/auroux/prog/
 
 MAINTAINER=	jos@catnook.com
+COMMENT=	The Generic Preprocessor
 
 USE_REINPLACE=	yes
 
