@@ -18,7 +18,6 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	HTTP, FTP and Gopher mirroring tool
 
-USE_GETTEXT=	yes
 USE_OPENSSL=	yes
 WANT_GNOME=	yes
 USE_REINPLACE=	yes
@@ -26,6 +25,14 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 CONFIGURE_ARGS=	--with-locale-dir=${LOCALBASE}/share/locale \
 		--disable-debug --disable-gnome --enable-threads
+
+.if !defined(WITHOUT_NLS)
+USE_GETTEXT=	yes
+PLIST_SUB+=	NLS=""
+.else
+CONFIGURE_ARGS+=--disable-nls
+PLIST_SUB+=	NLS="@comment "
+.endif
 
 MAN1=		pavuk.1
 
