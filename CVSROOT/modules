@@ -1130,6 +1130,7 @@ deepforest	ports/archivers/deepforest
 defendguin	ports/games/defendguin
 deft		ports/biology/deft
 dejagnu		ports/misc/dejagnu
+dekagen		ports/audio/dekagen
 delay		ports/misc/delay
 delegate	ports/net/delegate
 deleted		ports/sysutils/deleted
