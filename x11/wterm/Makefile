@@ -13,7 +13,7 @@ MASTER_SITES= 	http://wm.current.nu/files/ \
 		ftp://ftp.vision.net.au/ftp7/linuxberg/files/x11/system/ \
 		ftp://ftp.cadvision.com/pub/linuxberg/files/x11/system/
 
-MAINTAINER=	cpiazza@FreeBSD.org
+MAINTAINER=	treif@mayn.de
 
 BUILD_DEPENDS=	${X11BASE}/lib/libWINGs.a:${PORTSDIR}/x11-wm/windowmaker
 
