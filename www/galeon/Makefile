@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	galeon
-PORTVERSION=	1.2.13
-PORTREVISION=	2
+PORTVERSION=	1.2.14
 CATEGORIES=	www gnome
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -18,21 +17,10 @@ COMMENT=	A GNOME Web browser based on gecko (the Mozilla rendering engine)
 BUILD_DEPENDS=	${X11BASE}/lib/${MOZILLA}/libgtkembedmoz.so:${PORTSDIR}/www/${MOZILLA}
 RUN_DEPENDS=	${X11BASE}/lib/${MOZILLA}/libgtkembedmoz.so:${PORTSDIR}/www/${MOZILLA}
 
-MOZ_CONFIGURE_ARGS=--with-mozilla-snapshot="trunk"
+MOZ_CONFIGURE_ARGS=--with-mozilla-snapshot="1.7"
 
-.if !defined(WITH_MOZILLA)
 MOZILLA=	mozilla-gtk1
 HEADERS_SUFX=
-.else
-.if ${WITH_MOZILLA}=="mozilla-devel-gtk1"
-MOZILLA=	${WITH_MOZILLA}
-HEADERS_SUFX=	-devel-gtk1
-MOZ_CONFIGURE_ARGS=	--with-mozilla-snapshot="trunk"
-.else
-MOZILLA=	mozilla-gtk1
-HEADERS_SUFX=
-.endif
-.endif
 
 USE_X_PREFIX=	yes
 USE_GNOME=	gnomeprefix gnomehack bonobo libglade gnomevfs gnometarget
@@ -59,14 +47,6 @@ NO_WERROR=	yes
 .if defined(NO_WERROR)
 CONFIGURE_ARGS+=	--disable-werror
 .endif
-
-pre-everything::
-	@${ECHO_MSG} ""
-	@${ECHO_MSG} " By default the port uses www/mozilla-gtk1 for html rendering, but you can"
-	@${ECHO_MSG} " change this by defining WITH_MOZILLA to one of the following values:"
-	@${ECHO_MSG}
-	@${ECHO_MSG} "  mozilla-devel-gtk1 "
-	@${ECHO_MSG} ""
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|%%PTHREAD_CFLAGS%%|${PTHREAD_CFLAGS}|' \
