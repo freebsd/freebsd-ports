@@ -1,5 +1,5 @@
 @cwd /usr/local
 bin/rdist6
 bin/rdistd
-man/man1/rdist6.1
-man/man8/rdistd.8
+man/man1/rdist6.1.gz
+man/man8/rdistd.8.gz
