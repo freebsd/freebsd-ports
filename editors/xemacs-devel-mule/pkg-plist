@@ -176,6 +176,8 @@ lib/xemacs-%%XEMACS_VER%%/etc/photos/dv.png
 lib/xemacs-%%XEMACS_VER%%/etc/photos/dvm.png
 lib/xemacs-%%XEMACS_VER%%/etc/photos/fabrice.png
 lib/xemacs-%%XEMACS_VER%%/etc/photos/fabricem.png
+lib/xemacs-%%XEMACS_VER%%/etc/photos/golubev.png
+lib/xemacs-%%XEMACS_VER%%/etc/photos/golubevm.png
 lib/xemacs-%%XEMACS_VER%%/etc/photos/hniksic.png
 lib/xemacs-%%XEMACS_VER%%/etc/photos/hniksicm.png
 lib/xemacs-%%XEMACS_VER%%/etc/photos/jan.png
@@ -647,6 +649,7 @@ lib/xemacs-%%XEMACS_VER%%/%%XEMACS_ARCH%%/include/s/bsdos3.h
 lib/xemacs-%%XEMACS_VER%%/%%XEMACS_ARCH%%/include/s/bsdos4.h
 lib/xemacs-%%XEMACS_VER%%/%%XEMACS_ARCH%%/include/s/cxux.h
 lib/xemacs-%%XEMACS_VER%%/%%XEMACS_ARCH%%/include/s/cxux7.h
+lib/xemacs-%%XEMACS_VER%%/%%XEMACS_ARCH%%/include/s/cygwin.sc
 lib/xemacs-%%XEMACS_VER%%/%%XEMACS_ARCH%%/include/s/cygwin32.h
 lib/xemacs-%%XEMACS_VER%%/%%XEMACS_ARCH%%/include/s/darwin.h
 lib/xemacs-%%XEMACS_VER%%/%%XEMACS_ARCH%%/include/s/decosf1-2.h

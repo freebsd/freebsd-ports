@@ -1,10 +1,10 @@
 This is a package containing only the executables for development
-version(gamma) of XEmacs with Mule(version 21.4.10), the next
+version(gamma) of XEmacs with Mule(version 21.4.12), the next
 generation of Emacs.
 
-You need to install a full package, xemacs-devel-mule-21.4.10, containing emacs
+You need to install a full package, xemacs-devel-mule-21.4.12, containing emacs
 executables, lisp files, info pages, and so on for XEmacs with Mule
-(version 21.4.10).
+(version 21.4.12).
 
 This package is built with Japanese support by using SKK, SJ3, Canna,
 FreeWnn or Wnn6 as an external input engine. Each input method would be
@@ -20,7 +20,7 @@ If you use with SJ3 or SKK, you should be installed sj3serv or skkserv
 in advance. SKK is supported as already builtin. Also it will
 support several input methods under leim. 
 
-This package and the package xemacs-devel-mule-21.4.10, might clobber any
+This package and the package xemacs-devel-mule-21.4.12, might clobber any
 existing emacs installation.  In particular, the executables and man
 pages of etags/ctags are installed, and the info pages that come with
 the original emacs will be overwritten too.

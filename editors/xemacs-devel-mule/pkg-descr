@@ -1,5 +1,5 @@
 This is a package containing only the executables for development
-version(gamma) of XEmacs with Mule(version 21.4.9), the next
+version(gamma) of XEmacs with Mule(version 21.4.12), the next
 generation of Emacs.
 
 This package is not built with any particular language support except for
