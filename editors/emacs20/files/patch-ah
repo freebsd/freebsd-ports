@@ -1,5 +1,14 @@
 --- lib-src/Makefile.in.orig	Sat Aug  1 20:22:55 1998
-+++ lib-src/Makefile.in	Mon Aug 31 21:11:22 1998
++++ lib-src/Makefile.in	Sat Feb 13 17:30:37 1999
+@@ -218,7 +218,7 @@
+ LIBMAIL=-lmail
+ #endif
+ 
+-LOADLIBES=LIBS_SYSTEM LIBS_MACHINE LIB_STANDARD_LIBSRC
++LOADLIBES=LIBS_SYSTEM LIBS_MACHINE LIB_STANDARD_LIBSRC -lcompat
+ 
+ /* We need to #define emacs to get the right versions of some files.
+    Some other files - those shared with other GNU utilities - need
 @@ -278,7 +278,7 @@
          if [ `(cd ${archlibdir} && /bin/pwd)` \
               != `(cd ${srcdir} && /bin/pwd)` ]; then \
