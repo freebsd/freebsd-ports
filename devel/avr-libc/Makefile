@@ -19,25 +19,34 @@ COMMENT=	A C and math library for the Atmel AVR controller family
 BUILD_DEPENDS=	avr-as:${PORTSDIR}/devel/avr-binutils \
 		avr-ld:${PORTSDIR}/devel/avr-binutils \
 		avr-gcc:${PORTSDIR}/devel/avr-gcc \
-		${GMAKE}:${PORTSDIR}/devel/gmake \
-		doxygen:${PORTSDIR}/devel/doxygen \
-		latex:${PORTSDIR}/print/teTeX \
-		fig2dev:${PORTSDIR}/print/transfig
+		${GMAKE}:${PORTSDIR}/devel/gmake
 RUN_DEPENDS=	avr-as:${PORTSDIR}/devel/avr-binutils \
 		avr-ld:${PORTSDIR}/devel/avr-binutils \
 		avr-gcc:${PORTSDIR}/devel/avr-gcc
+.if !defined(NOPORTDOCS)
+BUILD_DEPENDS+=	doxygen:${PORTSDIR}/devel/doxygen \
+		latex:${PORTSDIR}/print/teTeX \
+		fig2dev:${PORTSDIR}/print/transfig
+.endif
 
 USE_BZIP2=	yes
 HAS_CONFIGURE=	yes
 CONFIGURE_ENV=	CC=avr-gcc PREFIX=${PREFIX}
 CONFIGURE_SCRIPT= doconf
+.if !defined(NOPORTDOCS)
 CONFIGURE_ARGS=	--enable-doc --disable-versioned-doc
+.endif
 # Work around the braind***ness introduced by <bsd.cpu.mk> in freebsd-5.
 # Sorry, the user is no longer be able to override the optimization and
 # debugging settings now.
 MAKE_ENV=	NO_CPU_CFLAGS=true
 CFLAGS=		-O
 CXXFLAGS=	-O
+
+DEMOFILES=	Makefile demo.c
+.if !defined(NOPORTDOCS)
+DEMOFILES+=	demo.bin demo.hex demo.pdf demo.srec
+.endif
 
 do-build:
 		(cd ${BUILD_WRKSRC}; ${SETENV} ${MAKE_ENV} ./domake MAKE=${GMAKE})
@@ -58,8 +67,7 @@ do-install:
 			${INSTALL_DATA} ${WRKDIR}/${DISTNAME}/doc/examples/$$f \
 				${PREFIX}/share/doc/avr-libc/examples; \
 		done
-		@for f in Makefile demo.bin demo.c demo.hex demo.pdf \
-			demo.srec;\
+		@for f in ${DEMOFILES};\
 		do \
 			${INSTALL_DATA} ${WRKDIR}/${DISTNAME}/doc/examples/demo/$$f \
 				${PREFIX}/share/doc/avr-libc/examples/demo; \
