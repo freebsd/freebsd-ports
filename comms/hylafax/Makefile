@@ -13,37 +13,17 @@ MASTER_SITES=	ftp://ftp.sgi.com/sgi/fax/source/
 EXTRACT_SUFX=	-tar.gz
 HAS_CONFIGURE=	yes
 
-INSTALL= "sh port/install.sh"
-#	By default, FreeBSD make of ports sets INSTALL=install,
-#	<bsd.port.mk> says make wont allow variables to be unset.
-#	Hylafax ${WRKSRC}/configure needs a special (supplied) install
-#	(To quote ${WRKSRC}/config.site:
-#	   Beware of changing the INSTALL definition; you *must* have an
-# 	   install script that emulates the Silicon Graphics install program!
-#	) which it assumes you dont want if you set INSTALL.
-#	I would prefer to unset the INSTALL from the FreeBSD ports mechanism,
-#	but instead I reset it to what Hylafax wants.
-#	As this is still insufficient, See also patches/patch-ad.
-
 MAINTAINER=	jhs@FreeBSD.org
 
 .if !exists(patches/patch-ab)
 IS_INTERACTIVE= yes
 #	patches/patch-ab makes this BATCH compilable,
-#	( If you need interactive config, mv patch-ab patch-ab.mv )
+#	( If you need interactive config, rm patch-ab )
 .endif
 
-# EXEC_DEPENDS?=	ghostview:${PORTSDIR}/print/ghostview
-#	For viewing faxes, not essential for compiling.
-
+EXEC_DEPENDS+=	ghostview:${PORTSDIR}/print/ghostview
 EXEC_DEPENDS+=	gs:${PORTSDIR}/print/ghostscript
-#	ghostscript is called by faxcover & sendfax.
-#	FreeBSD ports does not come with ghostscript-3 (the license is
-#	restrictive), FreeBSD ports comes with ghostscript-2.6.2, which
-#	is what I'm currently using. Sam Leffler wrote:
-#	Ghostscript versions since 3.12 have had a working tiffg32d
-#		driver, but beware of versions before 3.12 that have a
-#		tiffg32d driver; those drivers generate invalid 2D-encoded data.
+EXEC_DEPENDS+=	bash:${PORTSDIR}/shells/bash
 
 # Someone with more time & less space than me can investigate merging these.
 # LIB_DEPENDS=		something:${PORTSDIR}/graphics/tiff
@@ -60,6 +40,11 @@ FAXCOVER?= /etc/faxcover.ps
 #	as that wont work in `exists' below.
 
 # ------------------------------------------------------------------------------
+
+# We don't want INSTALL to be passed to configure
+do-configure:
+	@(cd ${WRKSRC}; CC="${CC}" ac_cv_path_CC="${CC}" CFLAGS="${CFLAGS}" \
+	    ./${CONFIGURE_SCRIPT} ${CONFIGURE_ARGS})
 
 post-configure:
 .if exists(${FAXCOVER})
@@ -78,13 +63,34 @@ post-configure:
 .endif
 .if exists(patches/patch-ab)
 	@echo "patches/patch-ab has supressed interactive configuration."
-	@# If you need interactive config, mv patch-ab patch-ab.mv
+	@# If you need interactive config, rm patch-ab
 .endif
 
 post-install:
 	cd ${PREFIX}/bin ; strip \
 		fax2ps faxalter faxcover faxmail faxrm faxstat sendfax sendpage
 	cd ${PREFIX}/sbin ; strip faxd.recv faxgetty faxq
+	cd ${PREFIX}/man/man1; \
+	    for man in fax2ps.1 faxalter.1 faxcover.1 faxmail.1 \
+		faxrm.1 faxstat.1 hylafax.1 sendfax.1 sendpage.1 \
+		sgi2fax.1 textfmt.1; do \
+	        gzip -9nf $$man; \
+	    done
+	cd ${PREFIX}/man/man5; \
+	    for man in pagesizes.5f typerules.5f cid.5f config.5f \
+		destctrls.5f dialrules.5f hosts.5f hylafax.5f info.5f \
+		log.5f recvq.5f sendq.5f status.5f tsi.5f xferlog.5f; do \
+		gzip -9nf $$man; \
+	    done
+	cd ${PREFIX}/man/man8; \
+	    for man in dialtest.8c faxabort.8c faxaddmodem.8c \
+		faxanswer.8c faxcron.8c faxd.recv.8c faxgetty.8c \
+		faxq.8c faxquit.8c faxrcvd.8c faxsend.8c mkcover.8c \
+		notify.8c pagesend.8c pollrcvd.8c ps2fax.8c \
+		recvstats.8c tagtest.8c transcript.8c tsitest.8c \
+		xferstats.8c; do \
+		gzip -9nf $$man; \
+	    done
 	@echo "Hylafax by default only does this sete[gu]id 0 stuff:"
 	@echo "	-u uucp -m 4755  faxq faxgetty"
 	@echo "If you, like I, think it needs more, run 'make suid'"
@@ -116,26 +122,5 @@ suid:
 	@echo "	n=1"
 	@echo '	all="ttyd$$n ttyid$$n ttyld$$n cua0$$n cuai0$$n cual0$$n"'
 	@echo '	chown uucp $$all; chgrp dialer $$all; chmod 660 $$all'
-
-post-clean:
-	rm -f \
-		fax2ps/fax2ps		\
-		faxalter/faxalter	\
-		faxcover/faxcover	\
-		faxd/faxd		\
-		faxgetty/faxgetty	\
-		faxmail/faxmail		\
-		faxq/faxq		\
-		faxrm/faxrm		\
-		faxstat/faxstat		\
-		recvfax/recvfax		\
-		sendfax/sendfax		\
-		sendpage/sendpage	\
-		sgi2fax/sgi2fax
-	@# Sam Leffler (author of Hylafax) has a non standard view of
-	@# `make clean': he leaves binaries intact - deliberately !
-	@# One cannot use /usr/share/mk/bsd.port.mk re-clean: to invoke
-	@# `make clobber' before `make clean'
-	@# as it results in	`"rules", ... Could not find Makedepend'
 
 .include <bsd.port.mk>
