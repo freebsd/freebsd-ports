@@ -37,8 +37,7 @@ PLIST_SUB+=	HUGS="@comment "
 .if !defined(WITHOUT_GHC)
 ALL_TARGET+=	all
 INSTALL_TARGET+=install_ghc pkg
-GHC_VERSION=	`${PREFIX}/bin/ghc --version 2>&1 | \
-			${SED} 's/^.*version[ ]*\([0-9.]*\).*/\1/'`
+GHC_VERSION=	`${LOCALBASE}/bin/ghc --numeric-version`
 PLIST_SUB+=	GHC="" GHC_VERSION="${GHC_VERSION}"
 .else
 PLIST_SUB+=	GHC="@comment "
