@@ -1,5 +1,3 @@
 Perl extension interface to James Clark's XML parser, expat.
 
-WWW: http://www.netheaven.com/~coopercc/xmlparser/intro.html
-
-- Jun
+WWW: http://search.cpan.org/search?dist=XML-Parser
