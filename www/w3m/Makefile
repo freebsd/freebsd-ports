@@ -48,9 +48,6 @@ SSL_LIBS=	-L${OPENSSLLIB} -lssl -lcrypto
 
 SED_CMD+=	-e "s,undef USE_SSL,define USE_SSL,g" \
 		-e "s,undef USE_SSL_VERIFY, define USE_SSL_VERIFY,g"
-.if defined(OPENSSL_RSAREF)
-EXTRA_SSL_LIBS=	-lRSAglue -lrsaref
-.endif
 MAKE_FLAGS+=	DEFS="${SSL_CFLAGS} -I${LOCALBASE}/include" \
 		LIBS="${SSL_LIBS} ${EXTRA_SSL_LIBS} -L${LOCALBASE}/lib"
 .else

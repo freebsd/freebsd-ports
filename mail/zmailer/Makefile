@@ -15,7 +15,7 @@ MAINTAINER=	veers@disturbed.net
 GNU_CONFIGURE=	yes
 
 .if defined(WITH_SSL)
-USE_OPENSSL=	RSA
+USE_OPENSSL=	YES
 CONFIGURE_ARGS= --with-openssl
 .else
 CONFIGURE_ARGS= --without-openssl

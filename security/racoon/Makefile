@@ -16,7 +16,7 @@ MAINTAINER=	sumikawa@FreeBSD.org
 BROKEN=		"You must upgrade the OS"
 .endif
 
-USE_OPENSSL=	RSA
+USE_OPENSSL=	YES
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/racoon
 GNU_CONFIGURE=	yes

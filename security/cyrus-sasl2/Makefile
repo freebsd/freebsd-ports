@@ -16,7 +16,7 @@ MASTER_SITE_SUBDIR=	stb/mirror/ftp.andrew.cmu.edu/pub/cyrus-mail
 
 MAINTAINER=	hetzels@westbend.net
 
-USE_OPENSSL=	RSA
+USE_OPENSSL=	YES
 
 INSTALLS_SHLIB=	yes
 

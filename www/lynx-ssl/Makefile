@@ -11,7 +11,7 @@ CATEGORIES=	www
 MASTER_SITES=   ftp://lynx.isc.org/current/
 DISTNAME=	lynx2.8.3rel.1
 
-USE_OPENSSL=	RSA
+USE_OPENSSL=	YES
 
 .include <bsd.port.pre.mk>
 

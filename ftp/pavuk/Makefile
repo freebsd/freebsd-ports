@@ -30,16 +30,9 @@ USE_XPM=		yes
 USE_GMAKE=		yes
 
 .if defined(WITH_SSL)
-USE_OPENSSL=	RSA
+USE_OPENSSL=		YES
 .else
 CONFIGURE_ARGS+=	--disable-ssl
-.endif
-
-.include <bsd.port.pre.mk>
-
-.if defined(OPENSSL_RSAREF)
-CONFIGURE_ENV+=		EXTRA_SSL_LIBS="-L${OPENSSLLIB} -lRSAglue -L${LOCALBASE}/lib -lrsaref" \
-			OPENSSLLIB=${OPENSSLLIB}
 .endif
 
 MAN1=			pavuk.1
@@ -64,4 +57,4 @@ do-install:
 .endfor
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

@@ -16,14 +16,11 @@ EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	green@FreeBSD.org
 
-USE_OPENSSL=	RSA
+USE_OPENSSL=	YES
 
 .include <bsd.port.pre.mk>
 
 CRYPTOLIBS=	-L${OPENSSLLIB} -lcrypto
-.if defined(OPENSSL_RSAREF)
-CRYPTOLIBS+=	-lRSAglue -L${LOCALBASE}/lib -lrsaref
-.endif
 # Here, MANDIR is concetenated to DESTDIR which all forms the man install dir...
 MAKE_ENV+=	DESTDIR=${PREFIX} MANDIR=/man/man CRYPTOLIBS="${CRYPTOLIBS}"
 .if ${OSVERSION} < 400014

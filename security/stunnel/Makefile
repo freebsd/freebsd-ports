@@ -17,7 +17,7 @@ EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	martti.kuparinen@ericsson.com
 
-USE_OPENSSL=	RSA
+USE_OPENSSL=	YES
 
 USE_AUTOCONF=	yes
 CONFIGURE_ARGS=	--localstatedir=/var/run

@@ -26,19 +26,12 @@ SHLIB_VER=	0
 MAKE_ENV=	SHLIB_VER="${SHLIB_VER}"
 PLIST_SUB=	SHLIB_VER="${SHLIB_VER}"
 
-.if defined(WITH_SSL)
-USE_OPENSSL=	RSA
-.endif
-
 .include <bsd.port.pre.mk>
 
-.if defined(USE_OPENSSL)
+.if defined(WITH_SSL)
+USE_OPENSSL=	YES
 CONFIGURE_ENV+=	CPPFLAGS='-I${OPENSSLINC} -I${OPENSSLINC}/openssl' \
 		LDFLAGS='-L${OPENSSLLIB}'
-.endif
-
-.if defined(OPENSSL_RSAREF)
-CONFIGURE_ENV+=	LIBS="-L${OPENSSLLIB} -lcrypto -lRSAglue -L${LOCALBASE}/lib -lrsaref"
 .endif
 
 GNU_CONFIGURE=	yes

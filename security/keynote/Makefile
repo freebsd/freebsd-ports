@@ -12,7 +12,7 @@ MASTER_SITES=	http://www.cis.upenn.edu/~angelos/Code/
 
 MAINTAINER=	kris@FreeBSD.org
 
-USE_OPENSSL=	RSA
+USE_OPENSSL=	YES
 GNU_CONFIGURE=	yes
 
 .include <bsd.port.pre.mk>

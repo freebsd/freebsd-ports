@@ -29,7 +29,7 @@ MAINTAINER=	dima@Chg.RU
 BUILD_DEPENDS=	mm-config:${PORTSDIR}/devel/mm \
 		${LOCALBASE}/lib/libmm.a:${PORTSDIR}/devel/mm
 
-USE_OPENSSL=	RSA
+USE_OPENSSL=	YES
 
 .include <bsd.port.pre.mk>
 

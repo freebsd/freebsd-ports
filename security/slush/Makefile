@@ -15,7 +15,7 @@ MAINTAINER=	shipley@dis.org
 
 GNU_CONFIGURE=	yes
 
-USE_OPENSSL=	RSA
+USE_OPENSSL=	YES
 
 .include <bsd.port.pre.mk>
 .if ${OSVERSION} <= 300000
