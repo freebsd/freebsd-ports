@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	achievo
-PORTVERSION=	1.0.2
+PORTVERSION=	1.0.3
 CATEGORIES=	misc www
 MASTER_SITES=	http://ftp.achievo.org/pub/achievo/
 DISTNAME=	${PORTNAME}-stable-${PORTVERSION}
