@@ -14,7 +14,7 @@ PKGNAMESUFFIX=	-kmod
 MAINTAINER=	jon@witchspace.com
 COMMENT=	A graphical screensaver kernel module
 
-SYSDIR?=	/usr/src/sys
+SYSDIR?=	${SRC_BASE}/sys
 .if !exists(${SYSDIR}/dev/syscons/syscons.h)
 IGNORE=		Requires kernel source (/usr/src/sys) to build
 .endif
