@@ -6,9 +6,10 @@
 #
 
 PORTNAME=	jakarta-oro
-PORTVERSION=	2.0.6
+PORTVERSION=	2.0.7
 CATEGORIES=	java
-MASTER_SITES=	http://jakarta.apache.org/builds/${PORTNAME}/release/v${PORTVERSION}/
+MASTER_SITES=	http://jakarta.apache.org/builds/${PORTNAME}/release/v${PORTVERSION}/ \
+		http://ftp.epix.net/apache/jakarta/oro/binaries/
 
 MAINTAINER=	dglo@ssec.wisc.edu
 COMMENT=	Perl/awk/sh regular expressions for Java
