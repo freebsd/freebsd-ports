@@ -8894,6 +8894,7 @@ zodb		ports/databases/zodb
 zodb3		ports/databases/zodb3
 zombiezapper	ports/security/zombiezapper
 zoo		ports/archivers/zoo
+zoom		ports/games/zoom
 zope		ports/www/zope
 zope-cmf	ports/www/zope-cmf
 zope-cmfforum	ports/www/zope-cmfforum
