@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	qt
-PORTVERSION=	2.1.0b4
+PORTVERSION=	2.1.0
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	ftp://ftp.trolltech.com/qt/source/
-DISTNAME=	qt-x11-2.1.0-beta4
+DISTNAME=	${PORTNAME}-x11-${PORTVERSION}
 
 MAINTAINER=	imura@FreeBSD.org
 
@@ -27,7 +27,7 @@ CONFIGURE_ARGS=	-system-zlib -system-libpng -system-jpeg -sm \
 CONFIGURE_ENV=	QTDIR=${WRKSRC}
 MAKE_ENV=	QTDIR=${WRKSRC}
 
-WRKSRC=		${WRKDIR}/qt-2.1.0-beta4
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 CONFIG=		${WRKSRC}/configs/freebsd-g++-shared
 
 .if defined(QT_GIF_AVAILABLE)
