@@ -1,5 +1,5 @@
---- makefile.orig	Wed Feb 27 17:58:44 2002
-+++ makefile	Thu Feb 28 14:45:44 2002
+--- makefile.orig	Thu Feb 28 12:44:12 2002
++++ makefile	Wed Mar 13 11:50:31 2002
 @@ -10,14 +10,12 @@
  # Set this for where to store the man pages and executables.
  # If you want to store this as part of an official distribution,
@@ -24,7 +24,7 @@
  MAN_DIR_MAN1=$(MAN_DIR)/man1
  DOC_DIR=$(PREFIX)/share/doc/$(VERSIONEDNAME)-$(RPM_VERSION)
  POSTED_DIR=/home/dwheeler/dwheeler.com/sloccount
-@@ -85,7 +83,7 @@
+@@ -86,7 +84,7 @@
     sql_count \
     tcl_count
  
@@ -33,7 +33,7 @@
  
  MYDOCS=sloccount.html README TODO ChangeLog
  
-@@ -93,13 +91,13 @@
+@@ -94,13 +92,13 @@
  all: lexcount1$(EXE_SUFFIX) c_count$(EXE_SUFFIX) java_count$(EXE_SUFFIX) php_count$(EXE_SUFFIX)
  
  lexcount1$(EXE_SUFFIX): lexcount1.c
@@ -50,7 +50,7 @@
  
  sloccount.1.gz: sloccount.1
  	gzip -c sloccount.1 > sloccount.1.gz
-@@ -110,18 +108,17 @@
+@@ -111,25 +109,23 @@
  
  # This is USC's code counter, not built by default:
  c_lines: C_LINES.C
@@ -72,3 +72,11 @@
  
  uninstall_man:
  	cd $(MAN_DIR_MAN1) && rm -f $(MANPAGES)
+ 
+ install_docs: install_man
+-	$(INSTALL_A_DIR) $(DOC_DIR)
+-	$(INSTALL) $(MYDOCS) $(DOC_DIR)
++	${BSD_INSTALL_DATA} $(MYDOCS) $(DOC_DIR)
+ 
+ uninstall_docs:
+ 	cd $(DOC_DIR) && rm -f $(MYDOCS) && rmdir $(DOC_DIR)

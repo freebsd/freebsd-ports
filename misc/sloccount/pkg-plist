@@ -14,6 +14,7 @@ bin/fortran_count
 bin/generic_count
 bin/get_sloc
 bin/get_sloc_details
+bin/haskell_count
 bin/java_count
 bin/lex_count
 bin/lexcount1
