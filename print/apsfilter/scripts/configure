@@ -159,5 +159,5 @@ then
  echo "	@\${ECHO} \"    chmod 555 /usr/bin/grog                             \""
  echo "	@\${ECHO} \"--------------------------------------------------------\""
 fi
- echo "	@\${ECHO} \"*** Printer installation ***               \""
+ echo "	@\${ECHO} \"*** Printer installation / apsfilter setup ***          \""
  echo "	@\${ECHO} \"    cd ${PREFIX}/apsfilter; ./SETUP        \""

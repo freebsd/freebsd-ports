@@ -25,7 +25,7 @@ RUN_DEPENDS+=	psnup:${PORTSDIR}/print/psutils-letter
 RUN_DEPENDS+=	smbclient:${PORTSDIR}/net/samba
 .endif
 
-VERSION=	5.3.0
+VERSION=	5.3.1
 USE_BZIP2=	yes
 WRKSRC=		${WRKDIR}/apsfilter
 
