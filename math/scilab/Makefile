@@ -44,6 +44,12 @@ CONFIGURE_ARGS=	--with-tk \
 CONFIGURE_ENV=	PVM_ROOT=${PVM_ROOT} X11BASE=${X11BASE}
 MAKE_ENV=	PVM_INCLUDE=${LOCALBASE}/include
 
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == "alpha" && ${OSVERSION} >= 502102
+BROKEN=		"Does not compile on alpha 5.x"
+.endif
+
 post-patch:
 	# malloc.h -> stdlib.h conversions
 	${GREP} -lr "<malloc.h>" ${WRKSRC} \
@@ -54,4 +60,4 @@ pre-install:
 	${FIND} ${WRKSRC} -name \*.orig -delete
 	${FIND} ${WRKSRC} -name \*.bak -delete
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
