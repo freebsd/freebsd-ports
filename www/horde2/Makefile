@@ -48,7 +48,8 @@ COMMENT=	A common code-base used by Horde applications, written in PHP
 RUN_DEPENDS=	${PEARDIR}/Date.php:${PORTSDIR}/devel/pear-Date			\
 		${PEARDIR}/HTML/Common.php:${PORTSDIR}/devel/pear-HTML_Common	\
 		${PEARDIR}/Log.php:${PORTSDIR}/sysutils/pear-Log		\
-		${PEARDIR}/Mail/mime.php:${PORTSDIR}/mail/pear-Mail_Mime
+		${PEARDIR}/Mail/mime.php:${PORTSDIR}/mail/pear-Mail_Mime	\
+		${PEARDIR}/DB.php:${PORTSDIR}/databases/pear-DB
 
 NO_BUILD=	yes
 USE_PHP=	domxml gettext session
