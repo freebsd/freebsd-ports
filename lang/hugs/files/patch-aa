@@ -1,0 +1,13 @@
+--- MkInstal.in.ORIG	Sun Apr 30 01:09:58 2000
++++ MkInstal.in	Sun Apr 30 01:10:23 2000
+@@ -10,8 +10,8 @@
+ # multiple files at once.
+ ################################################################
+ 
+-INSTALL		= unix/install-sh
+-INSTALL_DATA	= /bin/cp
++INSTALL		= $(HACK_INSTALL_DIR)
++INSTALL_DATA	= $(BSD_INSTALL_DATA)
+ 
+ install		:: install_bin install_lib            # the bare minimum
+ install		:: install_libs                       # lotsa libraries
