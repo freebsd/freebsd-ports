@@ -8,8 +8,9 @@
 
 CATEGORIES=	chinese
 
+PORTREVISION=	7
 MASTERDIR=	${.CURDIR}/../../mail/mutt-devel
-REVISEDATE=	20030614
+REVISEDATE=	20030807
 
 MAINTAINER=	clive@FreeBSD.org
 COMMENT=	The Mongrel of Mail User Agents with Chinese support
