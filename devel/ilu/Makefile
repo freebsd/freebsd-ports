@@ -3,7 +3,7 @@
 # Date created:         29.9.1997
 # Whom:                 cracauer@cons.org "Martin Cracauer"
 #
-# $Id: Makefile,v 1.11 1998/08/22 04:45:03 hoek Exp $
+# $Id: Makefile,v 1.12 1998/10/08 16:37:18 cracauer Exp $
 #
 
 DISTNAME=	ilu-2.0alpha12
@@ -70,11 +70,11 @@ SHLIBPATCH=files/shlib-elf.patch
 # The FreeBSD Java Development Kit is still in aout object format.
 # You might want to enable it if you have an ELF JDK and/or build
 # a seperate aout ILU runtime to use with Java.
-CONFIGURE_ARGS+=	--disable-java-support 
+CONFIGURE_ARGS+=	--disable-java-support
 .else
 SHLIBPATCH=files/shlib-aout.patch
 # Java support on -stable does not work (ILU runtime dumps core).
 # You might want to enable it if you know what you are doing.
 # Maybe taking -O out of patches/patch-1-cra-cflags help.
-CONFIGURE_ARGS+=	--disable-java-support 
+CONFIGURE_ARGS+=	--disable-java-support
 .endif
