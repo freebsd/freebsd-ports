@@ -1,0 +1,12 @@
+include/libgnomecups-1/libgnomecups/gnome-cups-init.h
+include/libgnomecups-1/libgnomecups/gnome-cups-printer.h
+include/libgnomecups-1/libgnomecups/gnome-cups-queue.h
+include/libgnomecups-1/libgnomecups/gnome-cups-request.h
+include/libgnomecups-1/libgnomecups/gnome-cups-util.h
+lib/libgnomecups-1.0.a
+lib/libgnomecups-1.0.so
+lib/libgnomecups-1.0.so.1
+libdata/pkgconfig/libgnomecups-1.0.pc
+share/locale/ja/LC_MESSAGES/libgnomecups.mo
+@dirrm include/libgnomecups-1/libgnomecups
+@dirrm include/libgnomecups-1

@@ -86,6 +86,7 @@
     SUBDIR += latex2rtf
     SUBDIR += latex2slides
     SUBDIR += lgrind
+    SUBDIR += libgnomecups
     SUBDIR += libgnomeprint
     SUBDIR += libgnomeprint20
     SUBDIR += libijs
