@@ -6,12 +6,11 @@
 #
 
 PORTNAME=	Config-Tiny
-PORTVERSION=	1.0
+PORTVERSION=	1.3
 CATEGORIES=	devel perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Config
 PKGNAMEPREFIX=	p5-
-DISTNAME=	${PORTNAME}-1
 
 MAINTAINER=	skv@FreeBSD.org
 COMMENT=	Read/Write .ini style files with as little code as possible
