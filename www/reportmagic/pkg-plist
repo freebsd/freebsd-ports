@@ -33,23 +33,30 @@ reportmagic/lang/it/cdata.ini
 reportmagic/lang/it/lang.ini
 reportmagic/lang/it/rdata.ini
 reportmagic/lang/it/rmagic.ini
+reportmagic/lang/pl/cdata.ini
+reportmagic/lang/pl/lang.ini
+reportmagic/lang/pl/rdata.ini
 reportmagic/lang/pt/cdata.ini
 reportmagic/lang/pt/lang.ini
 reportmagic/lang/pt/rdata.ini
+reportmagic/lang/pt-BR/lang.ini
+reportmagic/lang/pt-BR/cdata.ini
+reportmagic/lang/pt-BR/rdata.ini
+reportmagic/lang/ru/cdata.ini
 reportmagic/lang/sv/cdata.ini
 reportmagic/lang/sv/lang.ini
 reportmagic/lang/sv/rdata.ini
 reportmagic/lang/sv/rmagic.ini
 reportmagic/samples/corpimg.ini
 reportmagic/samples/fineprint.html
-reportmagic/samples/images/back.jpg
-reportmagic/samples/images/bullet.gif
-reportmagic/samples/images/bullet2.gif
-reportmagic/samples/images/layout.gif
 reportmagic/samples/manyfile.ini
 reportmagic/samples/noframes.ini
 reportmagic/samples/onefile.ini
 reportmagic/samples/report.dat
+reportmagic/samples/images/back.jpg
+reportmagic/samples/images/bullet.gif
+reportmagic/samples/images/bullet2.gif
+reportmagic/samples/images/layout.gif
 reportmagic/wadg/Errors.pm
 reportmagic/wadg/Formatter.pm
 reportmagic/wadg/HTMLWriter.pm
@@ -73,11 +80,15 @@ share/doc/reportmagic/config.html
 share/doc/reportmagic/datefmts.html
 share/doc/reportmagic/faq.html
 share/doc/reportmagic/filefmts.html
+share/doc/reportmagic/FTL.txt
 share/doc/reportmagic/index.html
 share/doc/reportmagic/inst_mac.html
 share/doc/reportmagic/inst_osx.html
 share/doc/reportmagic/inst_src.html
 share/doc/reportmagic/inst_win.html
+share/doc/reportmagic/jpeg.txt
+share/doc/reportmagic/libgd.txt
+share/doc/reportmagic/libpng.txt
 share/doc/reportmagic/license.html
 share/doc/reportmagic/map.html
 share/doc/reportmagic/overview.html
@@ -87,6 +98,7 @@ share/doc/reportmagic/samples.html
 share/doc/reportmagic/siteindex.html
 share/doc/reportmagic/thanks.html
 share/doc/reportmagic/whatsnew.html
+share/doc/reportmagic/zlib.txt
 share/doc/reportmagic/images/logo.gif
 share/doc/reportmagic/images/title.gif
 @dirrm reportmagic/samples/images
@@ -98,6 +110,10 @@ share/doc/reportmagic/images/title.gif
 @dirrm reportmagic/lang/fr
 @dirrm reportmagic/lang/hu
 @dirrm reportmagic/lang/it
+@dirrm reportmagic/lang/pl
+@dirrm reportmagic/lang/pt
+@dirrm reportmagic/lang/pt-BR
+@dirrm reportmagic/lang/ru
 @dirrm reportmagic/lang/sv
 @dirrm reportmagic/lang
 @dirrm reportmagic/wadg/rm/Report

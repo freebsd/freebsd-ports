@@ -1,6 +1,6 @@
---- Install.PL.orig	Sun Dec  3 17:30:27 2000
-+++ Install.PL	Sun Dec  3 17:30:54 2000
-@@ -50,13 +50,13 @@
+--- Install.PL.orig	Fri Jan 18 04:13:00 2002
++++ Install.PL	Mon Feb 25 16:40:33 2002
+@@ -56,13 +56,13 @@
  # example to use the version number in your path. 
  # Make sure this remains in single quotes.
  #
@@ -16,17 +16,19 @@
  
  
  #
-@@ -257,7 +257,6 @@
- } else {
+@@ -266,7 +266,6 @@
+ 	$DOC = 'docs/' if defined $args{only_modules};
  	print "\nInstallation complete.\n";
  	print "For help on using Report Magic see $DOC"."index.html.\n";
 -	print "You must agree to the license agreement at $DOC"."license.html before using Report Magic.\n";
  } # end if
  
  
-@@ -299,4 +298,4 @@
+@@ -302,7 +301,6 @@
+ 			chmod( $mode, $dest );
+ 		} else {
+ 			print "\t***Error: Can not copy $src to $dest. $!.\n";
+-			$rc = 0;
+ 		} # end if
+ 	} # end if
  	return $rc;
- } # end install
- 
--
-+
