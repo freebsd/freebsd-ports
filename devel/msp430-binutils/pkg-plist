@@ -1,9 +1,8 @@
-@comment $FreeBSD: /tmp/pcvs/ports/devel/msp430-binutils/pkg-plist,v 1.2 2002-11-11 01:13:27 sada Exp $
+@comment $FreeBSD: /tmp/pcvs/ports/devel/msp430-binutils/pkg-plist,v 1.3 2003-06-25 11:16:23 lev Exp $
 %%BINUTILS_TARG%%/bin/addr2line
 %%BINUTILS_TARG%%/bin/ar
 %%BINUTILS_TARG%%/bin/as
 %%BINUTILS_TARG%%/bin/c++filt
-%%BINUTILS_TARG%%/bin/gasp
 %%BINUTILS_TARG%%/bin/ld
 %%BINUTILS_TARG%%/bin/nm
 %%BINUTILS_TARG%%/bin/objcopy
@@ -13,9 +12,6 @@
 %%BINUTILS_TARG%%/bin/strip
 %%BINUTILS_TARG%%/bin/size
 %%BINUTILS_TARG%%/bin/strings
-include/ansidecl.h
-include/bfd.h
-include/bfdlink.h
 %%BINUTILS_TARG%%/lib/ldscripts/msp430x110.x
 %%BINUTILS_TARG%%/lib/ldscripts/msp430x110.xbn
 %%BINUTILS_TARG%%/lib/ldscripts/msp430x110.xn
@@ -41,6 +37,16 @@ include/bfdlink.h
 %%BINUTILS_TARG%%/lib/ldscripts/msp430x1121.xn
 %%BINUTILS_TARG%%/lib/ldscripts/msp430x1121.xr
 %%BINUTILS_TARG%%/lib/ldscripts/msp430x1121.xu
+%%BINUTILS_TARG%%/lib/ldscripts/msp430x1122.x
+%%BINUTILS_TARG%%/lib/ldscripts/msp430x1122.xbn
+%%BINUTILS_TARG%%/lib/ldscripts/msp430x1122.xn
+%%BINUTILS_TARG%%/lib/ldscripts/msp430x1122.xr
+%%BINUTILS_TARG%%/lib/ldscripts/msp430x1122.xu
+%%BINUTILS_TARG%%/lib/ldscripts/msp430x1132.x
+%%BINUTILS_TARG%%/lib/ldscripts/msp430x1132.xbn
+%%BINUTILS_TARG%%/lib/ldscripts/msp430x1132.xn
+%%BINUTILS_TARG%%/lib/ldscripts/msp430x1132.xr
+%%BINUTILS_TARG%%/lib/ldscripts/msp430x1132.xu
 %%BINUTILS_TARG%%/lib/ldscripts/msp430x122.x
 %%BINUTILS_TARG%%/lib/ldscripts/msp430x122.xbn
 %%BINUTILS_TARG%%/lib/ldscripts/msp430x122.xn
@@ -211,13 +217,11 @@ include/bfdlink.h
 %%BINUTILS_TARG%%/lib/ldscripts/msp430x449.xn
 %%BINUTILS_TARG%%/lib/ldscripts/msp430x449.xr
 %%BINUTILS_TARG%%/lib/ldscripts/msp430x449.xu
-lib/lib%%BINUTILS_TARG%%-bfd.a
-lib/lib%%BINUTILS_TARG%%-opcodes.a
+lib/libiberty.a
 bin/%%BINUTILS_TARG%%-addr2line
 bin/%%BINUTILS_TARG%%-ar
 bin/%%BINUTILS_TARG%%-as
 bin/%%BINUTILS_TARG%%-c++filt
-bin/%%BINUTILS_TARG%%-gasp
 bin/%%BINUTILS_TARG%%-ld
 bin/%%BINUTILS_TARG%%-nm
 bin/%%BINUTILS_TARG%%-objcopy
@@ -227,7 +231,39 @@ bin/%%BINUTILS_TARG%%-readelf
 bin/%%BINUTILS_TARG%%-strip
 bin/%%BINUTILS_TARG%%-size
 bin/%%BINUTILS_TARG%%-strings
+@unexec install-info --delete %D/%%BINUTILS_TARG%%/info/bfd.info %D/info/dir
+@unexec install-info --delete %D/%%BINUTILS_TARG%%/info/binutils.info %D/info/dir
+@unexec install-info --delete %D/%%BINUTILS_TARG%%/info/as.info %D/info/dir
+@unexec install-info --delete %D/%%BINUTILS_TARG%%/info/ld.info %D/info/dir
+@unexec install-info --delete %D/%%BINUTILS_TARG%%/info/standards.info %D/info/dir
+@unexec install-info --delete %D/%%BINUTILS_TARG%%/info/configure.info %D/info/dir
+%%BINUTILS_TARG%%/info/bfd.info
+%%BINUTILS_TARG%%/info/bfd.info-1
+%%BINUTILS_TARG%%/info/bfd.info-2
+%%BINUTILS_TARG%%/info/bfd.info-3
+%%BINUTILS_TARG%%/info/bfd.info-4
+%%BINUTILS_TARG%%/info/bfd.info-5
+%%BINUTILS_TARG%%/info/bfd.info-6
+%%BINUTILS_TARG%%/info/bfd.info-7
+%%BINUTILS_TARG%%/info/bfd.info-8
+%%BINUTILS_TARG%%/info/bfd.info-9
+%%BINUTILS_TARG%%/info/binutils.info
+%%BINUTILS_TARG%%/info/as.info
+%%BINUTILS_TARG%%/info/ld.info
+%%BINUTILS_TARG%%/info/standards.info
+%%BINUTILS_TARG%%/info/configure.info
+%%BINUTILS_TARG%%/info/configure.info-1
+%%BINUTILS_TARG%%/info/configure.info-2
+%%BINUTILS_TARG%%/info/configure.info-3
+%%BINUTILS_TARG%%/info/dir
+@exec install-info %D/%%BINUTILS_TARG%%/info/bfd.info %D/info/dir
+@exec install-info %D/%%BINUTILS_TARG%%/info/binutils.info %D/info/dir
+@exec install-info %D/%%BINUTILS_TARG%%/info/as.info %D/info/dir
+@exec install-info %D/%%BINUTILS_TARG%%/info/ld.info %D/info/dir
+@exec install-info %D/%%BINUTILS_TARG%%/info/standards.info %D/info/dir
+@exec install-info %D/%%BINUTILS_TARG%%/info/configure.info %D/info/dir
 @dirrm %%BINUTILS_TARG%%/bin
 @dirrm %%BINUTILS_TARG%%/lib/ldscripts
 @dirrm %%BINUTILS_TARG%%/lib
+@dirrm %%BINUTILS_TARG%%/info
 @dirrm %%BINUTILS_TARG%%
