@@ -11,6 +11,8 @@ share/xscorch/images/xscorch-icon.xpm
 share/xscorch/images/xscorch-logo.xpm
 share/xscorch/copying.txt
 share/xscorch/xscorch.txt
+share/xscorch/tankprofiles
+share/xscorch/tankprofiles~
 @dirrm share/xscorch/sounds
 @dirrm share/xscorch/images
 @dirrm share/xscorch
