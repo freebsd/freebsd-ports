@@ -20,13 +20,13 @@ ONLY_FOR_ARCHS=	i386
 BUILD_DEPENDS=  ${LOCALBASE}/lib/mysql/libmysqlclient.a:${PORTSDIR}/databases/mysql40-client \
 		${NONEXISTENT}:${PORTSDIR}/devel/pwlib:build \
 		${NONEXISTENT}:${PORTSDIR}/net/openh323:build
-LIB_DEPENDS=	speex.2:${PORTSDIR}/audio/speex \
-		ldap.2:${PORTSDIR}/net/openldap20-client
+LIB_DEPENDS=	speex.2:${PORTSDIR}/audio/speex
 RUN_DEPENDS=    ${LOCALBASE}/lib/mysql/libmysqlclient.a:${PORTSDIR}/databases/mysql40-client
 
 GNU_CONFIGURE=	yes
 CONFIGURE_WRKSRC=	${WRKSRC}/editline
 USE_GMAKE=	yes
+USE_OPENLDAP=	yes
 MAKE_ENV=	PTHREAD_CFLAGS="${PTHREAD_CFLAGS}" \
 		PTHREAD_LIBS="${PTHREAD_LIBS}" \
 		MKDIR="${MKDIR}" \

@@ -1,7 +1,7 @@
-lib/perl5/site_perl/%%PERL_VER%%/mach/Math/GSL.pm
-lib/perl5/site_perl/%%PERL_VER%%/mach/auto/Math/GSL/.packlist
-lib/perl5/site_perl/%%PERL_VER%%/mach/auto/Math/GSL/GSL.bs
-lib/perl5/site_perl/%%PERL_VER%%/mach/auto/Math/GSL/GSL.so
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/mach/auto/Math/GSL
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/mach/auto/Math
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/mach/Math
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Math/GSL.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Math/GSL/.packlist
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Math/GSL/GSL.bs
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Math/GSL/GSL.so
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Math/GSL
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Math
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Math
