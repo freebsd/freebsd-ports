@@ -1,0 +1,8 @@
+--- pkgIndex.in.ORIG	Wed Jul  8 09:44:14 1998
++++ pkgIndex.in	Wed Jul  8 09:49:02 1998
+@@ -7,4 +7,4 @@
+ # script is sourced, the variable $dir must contain the
+ # full path name of this file's directory.
+ 
+-package ifneeded Expect @EXP_VERSION_FULL@ [list load [file join $dir .. @EXP_SHARED_LIB_FILE@]]
++package ifneeded Expect @EXP_VERSION_PKG@ [list load [file join $dir .. @EXP_SHARED_LIB_FILE@]]
