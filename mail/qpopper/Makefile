@@ -7,7 +7,7 @@
 
 PORTNAME=	qpopper
 PORTVERSION=	4.0.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	mail ipv6
 MASTER_SITES=	ftp://ftp.qualcomm.com/eudora/servers/unix/popper/%SUBDIR%/ \
 		ftp://sunsite.doc.ic.ac.uk/Mirrors/ftp.qualcomm.com/eudora/servers/unix/popper/%SUBDIR%/
@@ -72,6 +72,7 @@ pre-everything::
 	@${ECHO_MSG} "				Control support"
 	@${ECHO_MSG} "WITH_FULL_POPD_DEBUG=yes	buils with more verbose debugging"
 	@${ECHO_MSG} "WITH_POPPASSD=yes		builds the poppassd daemon"
+	@${ECHO_MSG} "WITHOUT_QPOPAUTH_SETUID=yes  does not install qpopauth setuid to pop user"
 	@${ECHO_MSG} "WITH_SAMPLE_POPUSERS_FILE=yes	builds a default (otherwise,"
 	@${ECHO_MSG} "				use an empty file) reject file"
 
@@ -129,6 +130,13 @@ pre-configure:
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/popper/popauth ${PREFIX}/bin/qpopauth
+# If WITHOUT_QPOPAUTH_SETUID variable present in the environment,
+# qpopper does not install qpopauth setuid to pop user so that
+# anyone can access the pop.auth database.
+.if !defined(WITHOUT_QPOPAUTH_SETUID)
+	@${CHOWN} pop ${PREFIX}/bin/qpopauth
+	@${CHMOD} u+s ${PREFIX}/bin/qpopauth
+.endif
 	${INSTALL_PROGRAM} ${WRKSRC}/popper/popper ${PREFIX}/libexec/qpopper
 	${INSTALL_MAN} ${WRKSRC}/man/popauth.8 ${MANPREFIX}/man/man8/qpopauth.8
 	${INSTALL_MAN} ${WRKSRC}/man/popper.8 ${MANPREFIX}/man/man8/qpopper.8
