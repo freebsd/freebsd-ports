@@ -1,5 +1,5 @@
 *** Makefile.orig	Mon Jan 30 21:51:43 1995
---- Makefile	Tue Oct 10 19:15:46 1995
+--- Makefile	Thu Jan 25 05:46:39 1996
 ***************
 *** 46,52 ****
   #REAL_DAEMON_DIR=/usr/sbin
@@ -138,26 +138,130 @@
   ########################################
   # Optional: turning off hostname lookups
 ***************
-*** 605,610 ****
---- 606,626 ----
-  LIB	= libwrap.a
+*** 575,583 ****
+  # Protection against weird shells or weird make programs.
   
-  all other: config-check tcpd tcpdmatch try-from safe_finger tcpdchk
-+ 
-+ install:
-+ 	install -o bin -g bin -c tcpd.h ${PREFIX}/include/tcpd.h
-+ 	install -o bin -g bin -c libwrap.a ${PREFIX}/lib/libwrap.a
-+ 	install -o bin -g bin -cs tcpd ${PREFIX}/libexec/tcpd
-+ 	install -o bin -g bin -cs tcpdchk ${PREFIX}/sbin/tcpdchk
-+ 	install -o bin -g bin -cs tcpdmatch ${PREFIX}/sbin/tcpdmatch
-+ 	install -o bin -g bin -cs safe_finger ${PREFIX}/bin/safe_finger
-+ 	install -o bin -g bin -c tcpd.8 ${PREFIX}/man/man8/tcpd.8
-+ 	install -o bin -g bin -c tcpdchk.8 ${PREFIX}/man/man8/tcpdchk.8
-+ 	install -o bin -g bin -c tcpdmatch.8 ${PREFIX}/man/man8/tcpdmatch.8
-+ 	install -o bin -g bin -c hosts_access.3 ${PREFIX}/man/man3/hosts_access.3
-+ 	install -o bin -g bin -c hosts_access.5 ${PREFIX}/man/man5/hosts_access.5
-+ 	install -o bin -g bin -c hosts_options.5 ${PREFIX}/man/man5/hosts_options.5
-+ 
+  SHELL	= /bin/sh
+- .c.o:;	$(CC) $(CFLAGS) -c $*.c
+  
+! CFLAGS	= -O -DFACILITY=$(FACILITY) $(ACCESS) $(PARANOID) $(NETGROUP) \
+  	$(BUGS) $(SYSTYPE) $(AUTH) $(UMASK) \
+  	-DREAL_DAEMON_DIR=\"$(REAL_DAEMON_DIR)\" $(STYLE) $(KILL_OPT) \
+  	-DSEVERITY=$(SEVERITY) -DRFC931_TIMEOUT=$(RFC931_TIMEOUT) \
+--- 576,588 ----
+  # Protection against weird shells or weird make programs.
+  
+  SHELL	= /bin/sh
+  
+! .SUFFIXES: .c .so .o
+!   
+! .c.so:
+! 	${CC} -fpic -DPIC ${CFLAGS} -c ${.IMPSRC} -o ${.TARGET}
+! 
+! CFLAGS  += -DFACILITY=$(FACILITY) $(ACCESS) $(PARANOID) $(NETGROUP) \
+  	$(BUGS) $(SYSTYPE) $(AUTH) $(UMASK) \
+  	-DREAL_DAEMON_DIR=\"$(REAL_DAEMON_DIR)\" $(STYLE) $(KILL_OPT) \
+  	-DSEVERITY=$(SEVERITY) -DRFC931_TIMEOUT=$(RFC931_TIMEOUT) \
+***************
+*** 602,610 ****
+  	refuse.c tcpdchk.8 setenv.c inetcf.c inetcf.h scaffold.c \
+  	scaffold.h tcpdmatch.8 README.NIS
+  
+! LIB	= libwrap.a
+  
+- all other: config-check tcpd tcpdmatch try-from safe_finger tcpdchk
   
   # Invalidate all object files when the compiler options (CFLAGS) have changed.
   
+--- 607,636 ----
+  	refuse.c tcpdchk.8 setenv.c inetcf.c inetcf.h scaffold.c \
+  	scaffold.h tcpdmatch.8 README.NIS
+  
+! LIB     = libwrap.a
+! SLIB    = libwrap.so.7.2
+! 
+! all other: config-check $(LIB) $(SLIB) tcpd tcpdmatch try-from safe_finger tcpdchk
+! 
+! install:
+! 	${INSTALL} -o ${BINOWN} -g ${BINGRP} -c -m 644 \
+! 		tcpd.h ${PREFIX}/include
+! 	${INSTALL} -o ${BINOWN} -g ${BINGRP} -c -m 644 \
+! 		$(LIB) $(SLIB) ${PREFIX}/lib
+! 	ranlib ${PREFIX}/lib/$(LIB)
+! 	${INSTALL} -o ${BINOWN} -g ${BINGRP} -cs -m ${BINMODE} \
+! 		tcpd ${PREFIX}/libexec
+! 	${INSTALL} -o ${BINOWN} -g ${BINGRP} -cs -m ${BINMODE} \
+! 		tcpdchk tcpdmatch ${PREFIX}/sbin
+! 	${INSTALL} -o ${BINOWN} -g ${BINGRP} -cs -m ${BINMODE} \
+! 		try-from safe_finger ${PREFIX}/bin
+! 	${INSTALL} -o ${MANOWN} -g ${MANGRP} -c -m ${MANMODE} \
+! 		tcpd.8 tcpdchk.8 tcpdmatch.8 ${PREFIX}/man/man8
+! 	${INSTALL} -o ${MANOWN} -g ${MANGRP} -c -m ${MANMODE} \
+! 		hosts_access.3 ${PREFIX}/man/man3
+! 	${INSTALL} -o ${MANOWN} -g ${MANGRP} -c -m ${MANMODE} \
+! 		hosts_access.5 hosts_options.5 ${PREFIX}/man/man5
+  
+  
+  # Invalidate all object files when the compiler options (CFLAGS) have changed.
+  
+***************
+*** 621,647 ****
+  	ar $(ARFLAGS) $(LIB) $(LIB_OBJ)
+  	-$(RANLIB) $(LIB)
+  
+! tcpd:	tcpd.o $(LIB)
+! 	$(CC) $(CFLAGS) -o $@ tcpd.o $(LIB) $(LIBS)
+  
+! miscd:	miscd.o $(LIB)
+! 	$(CC) $(CFLAGS) -o $@ miscd.o $(LIB) $(LIBS)
+  
+! safe_finger: safe_finger.o $(LIB)
+! 	$(CC) $(CFLAGS) -o $@ safe_finger.o $(LIB) $(LIBS)
+  
+  TCPDMATCH_OBJ = tcpdmatch.o fakelog.o inetcf.o scaffold.o
+  
+! tcpdmatch: $(TCPDMATCH_OBJ) $(LIB)
+! 	$(CC) $(CFLAGS) -o $@ $(TCPDMATCH_OBJ) $(LIB) $(LIBS)
+  
+! try-from: try-from.o fakelog.o $(LIB)
+! 	$(CC) $(CFLAGS) -o $@ try-from.o fakelog.o $(LIB) $(LIBS)
+  
+  TCPDCHK_OBJ = tcpdchk.o fakelog.o inetcf.o scaffold.o
+  
+! tcpdchk: $(TCPDCHK_OBJ) $(LIB)
+! 	$(CC) $(CFLAGS) -o $@ $(TCPDCHK_OBJ) $(LIB) $(LIBS)
+  
+  shar:	$(KIT)
+  	@shar $(KIT)
+--- 647,677 ----
+  	ar $(ARFLAGS) $(LIB) $(LIB_OBJ)
+  	-$(RANLIB) $(LIB)
+  
+! $(SLIB): $(LIB_OBJ:S/o$/so/g)
+! 	rm -f $(SLIB)
+! 	ld -Bshareable -o $(SLIB) $(LIB_OBJ:S/o$/so/g)
+! 
+! tcpd:   tcpd.o $(SLIB)
+! 	$(CC) $(CFLAGS) -o $@ tcpd.o -L. -lwrap $(LIBS)
+  
+! miscd:  miscd.o $(SLIB)
+! 	$(CC) $(CFLAGS) -o $@ miscd.o -L. -lwrap $(LIBS)
+  
+! safe_finger: safe_finger.o $(SLIB)
+! 	$(CC) $(CFLAGS) -o $@ safe_finger.o -L. -lwrap $(LIBS)
+  
+  TCPDMATCH_OBJ = tcpdmatch.o fakelog.o inetcf.o scaffold.o
+  
+! tcpdmatch: $(TCPDMATCH_OBJ) $(SLIB)
+! 	$(CC) $(CFLAGS) -o $@ $(TCPDMATCH_OBJ) -L. -lwrap $(LIBS)
+  
+! try-from: try-from.o fakelog.o $(SLIB)
+! 	$(CC) $(CFLAGS) -o $@ try-from.o fakelog.o -L. -lwrap $(LIBS)
+  
+  TCPDCHK_OBJ = tcpdchk.o fakelog.o inetcf.o scaffold.o
+  
+! tcpdchk: $(TCPDCHK_OBJ) $(SLIB)
+! 	$(CC) $(CFLAGS) -o $@ $(TCPDCHK_OBJ) -L. -lwrap $(LIBS)
+  
+  shar:	$(KIT)
+  	@shar $(KIT)
