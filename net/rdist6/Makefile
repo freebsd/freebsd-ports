@@ -3,7 +3,7 @@
 # Date created:		19 August 1995
 # Whom:			peter
 #
-# $Id: Makefile,v 1.12 1998/01/21 02:39:56 peter Exp $
+# $Id: Makefile,v 1.13 1998/06/22 12:14:09 peter Exp $
 #
 
 DISTNAME=	rdist-6.1.4
@@ -15,13 +15,13 @@ MASTER_SITES=	http://www.magnicomp.com/download/rdist/ \
 MAINTAINER=	peter@FreeBSD.org
 
 # To avoid confusion with /usr/bin/rdist, you may prefer otherwise.
-# Do not forget to deal with pkg/PLIST if you change this.
-RDIST_NAME=	rdist6
+RDIST_NAME?=	rdist6
 
 INSTALL_TARGET=	install install.man
-MAKE_ENV+=	BUILD_OPT="${CFLAGS}" BUILD_CLIENT=${RDIST_NAME}
+MAKE_ENV=	BUILD_OPT="${CFLAGS}" BUILD_CLIENT=${RDIST_NAME}
 MAN1=		${RDIST_NAME}.1
 MAN8=		rdistd.8
+PLIST_SUB=	RDIST_NAME=${RDIST_NAME}
 
 post-install:
 	@strip ${PREFIX}/bin/${RDIST_NAME}
