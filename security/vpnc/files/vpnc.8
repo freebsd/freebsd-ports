@@ -1,0 +1,131 @@
+.\" Process this file with
+.\" groff -man -Tascii vpnc.8
+.\"
+.TH VPNC 8 "December 2003" FreeBSD "vpnc"
+.SH NAME
+vpnc \- Client for Cisco 3000 VPN Concentrator
+.SH SYNOPSIS
+.B vpnc  [ --gateway 
+.I IP-or-hostname
+.B ] [ --id 
+.I IPSec group Id
+.B ] [ --username
+.I name
+.B ] [ --ifname 
+.I name
+.B ] [ --local-port
+.I port number
+.B ] [ --pid-file
+.I filename
+.B ] [ --dh 
+.I IKE DH group
+.B ] [ --pfs 
+.I PFS group
+.B ] [ --non-inter ] [ --debug ] [ --no-detach ] [ --print-config ]
+.SH DESCRIPTION
+.B vpnc
+is a VPN client for the Cisco 3000 VPN Concentrator,
+creating a IPSec-like connection as a tunneling
+network device for the local system. It uses the
+TUN/TAP driver in Linux kernel 2.4 and above and
+device 
+.BR tun (4)
+on BSD.
+
+The vpnc daemon by it self does not set any routes. The user
+has to do it on its own, e.g. for a full tunnel under FreeBSD
+
+.RS
+.PD 0
+route add -host VPNGATEWAY ROUTER
+.P
+route delete default
+.P
+route add default -interface tun0
+.PD
+.RE
+.SH CONFIGURATION
+The daemon reads configuration data from the following places:
+.PD 0
+.IP "- command line options"
+.IP "- config file(s) specified on the command line"
+.IP "- PREFIX/etc/vpnc.conf"
+.IP "- prompting the user if not found above"
+.PD
+.SH OPTIONS
+.IP "--gateway IP-or-hostname"
+IP address or hostname of the VPN gateway
+.IP "--id IPSec group Id"
+ID of the IPSec group
+.IP "--username name"
+your user credentials
+.IP "--ifname name"
+name of the tun-interface to use
+.IP "--local-port port number"
+use this port for the connection <0-65535>, use 0 for random
+.IP "--pid-file filename"
+store the pid of background process there
+.IP "--dh IKE DH group"
+name of the IKE DH Group <dh1/dh2/dh5>
+.IP "--pfs PFS group"
+Perfect Forward Secrecy <nopfs/dh1/dh2/dh5>
+.IP "--non-inter"
+non interactive mode, don't ask any questions
+.IP "--debug nr"
+set debugging level <0/1/2/3/99>
+.IP "--no-detach"
+do not send daemon to background
+.IP "--print-config"
+prints your configuration; output can be used as vpnc.conf
+
+.SH FILES
+.I PREFIX/etc/vpnc.conf
+.RS
+The default configuration file. See
+.BR EXAMPLES
+for further details.
+.RE
+
+.SH EXAMPLES
+This is an example vpnc.conf:
+
+.RS
+.PD 0
+IKE DH Group dh2
+.P
+Perfect Forward Secrecy nopfs
+.P
+IPSec gateway vpn.rwth-aachen.de
+.P
+IPSec ID MoPS
+.P
+IPSec secret mopsWLAN
+.P
+Xauth username abcdef
+.P
+Xauth passwort 123456
+.PD
+.RE
+
+The values start exactly one space after the keywords, and run to the end of
+line. This lets you put any kind of weird character (except EOL and NUL) in
+your strings, but it does mean you can't add comments after a string, or spaces
+before them.
+
+See also the
+.B --print-config
+option to generate a config file.
+
+.SH TODO
+Re-keying is no implemented yet (default rekey-intervall is 8 hours).
+
+.SH AUTHOR
+This man-page has been written by Christian Lackas <delta(at)lackas.net>,
+based on the Debian man-page 
+by Eduard Bloch <blade(at)debian.org> and the vpnc README by
+Maurice Massar <vpnc(at)unix-ag.uni-kl.de>
+
+.SH "SEE ALSO"
+.BR tun (4),
+.BR route (1),
+.BR http://www.unix-ag.uni-kl.de/~massar/vpnc/

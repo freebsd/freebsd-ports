@@ -1,14 +1,15 @@
 --- Makefile.orig	Sun Nov  2 01:21:39 2003
-+++ Makefile	Wed Dec 17 13:08:35 2003
++++ Makefile	Wed Dec 17 09:56:14 2003
 @@ -15,14 +15,14 @@
  # along with this program; if not, write to the Free Software
  # Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
  
 -CC=gcc
 -CFLAGS=-W -Wall -O -g '-DVERSION="$(shell cat VERSION)"' $(shell libgcrypt-config --cflags)
-+CC?=gcc
-+CFLAGS+=-W -Wall -O -g '-DVERSION="$(shell cat VERSION)"' $(shell libgcrypt-config --cflags)
- LDFLAGS=-g $(shell libgcrypt-config --libs)
+-LDFLAGS=-g $(shell libgcrypt-config --libs)
++CC=%%CC%%
++CFLAGS=-W -Wall %%CFLAGS%% '-DVERSION="$(shell cat VERSION)"' $(shell libgcrypt-config --cflags)
++LDFLAGS=$(shell libgcrypt-config --libs)
  
  ifeq ($(shell uname -s), Linux)
  SYSDEP=sysdep-linux.o
