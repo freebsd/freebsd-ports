@@ -20,6 +20,7 @@
     SUBDIR += fontconfig
     SUBDIR += freefonts
     SUBDIR += geminifonts
+    SUBDIR += gentium
     SUBDIR += getbdf
     SUBDIR += gfe
     SUBDIR += intlfonts
