@@ -24,7 +24,7 @@ USE_X_PREFIX=	yes
 USE_LIBTOOL=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
-	
+
 .include <bsd.port.pre.mk>
 
 .if defined(WITH_EXIF) || exists(${LOCALBASE}/lib/libexif.so.10)
