@@ -3,7 +3,7 @@
 # Date created:		19 Nov 1997
 # Whom:			Thomas Gellekum <tg@FreeBSD.ORG>
 #
-# $Id: Makefile,v 1.5 1998/10/28 09:37:29 tg Exp $
+# $Id: Makefile,v 1.6 1998/10/28 23:17:16 asami Exp $
 #
 
 DISTNAME=	bzip2-0.9.0c
@@ -11,8 +11,6 @@ CATEGORIES=	archivers
 MASTER_SITES=	http://www.muraroa.demon.co.uk/
 
 MAINTAINER=	ports@FreeBSD.org
-
-BROKEN=		fetch
 
 FETCH_BEFORE_ARGS=	-b
 MAN1=		bzip2.1
