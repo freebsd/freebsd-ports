@@ -3,7 +3,7 @@
 # Date created:         31 October 1994
 # Whom:                 ljo
 #
-# $Id: Makefile,v 1.14 1998/07/07 19:21:06 scrappy Exp $
+# $Id: Makefile,v 1.15 1998/09/27 05:39:33 steve Exp $
 #
 
 DISTNAME=	eispack
@@ -15,7 +15,7 @@ MASTER_SITES=	ftp://netlib.bell-labs.com/netlib/eispack/ \
 
 DIST_SUBDIR=	${DISTNAME}
 
-RUN_DEPENDS=	${PREFIX}/lib/libblas.so.1:${PORTSDIR}/math/blas
+LIB_DEPENDS=	blas.1:${PORTSDIR}/math/blas
 
 EXTRACT_CMD=	${SCRIPTDIR}/uncomp
 EXTRACT_SUFX=	.gz
@@ -44,5 +44,8 @@ pre-extract:
 
 post-install:
 	${LDCONFIG} -m ${PREFIX}/lib
+	if [ "${PORTOBJFORMAT}" = "aout" ]; then \
+		${LN} -sf libeispack.so.1.0 ${PREFIX}/lib/libeispack.so; \
+	fi
 
 .include <bsd.port.mk>
