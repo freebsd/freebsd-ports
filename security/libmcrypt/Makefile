@@ -13,8 +13,6 @@ MASTER_SITES=	ftp://mcrypt.hellug.gr/pub/mcrypt/libmcrypt/ \
 
 MAINTAINER=	ports@FreeBSD.org
 
-RESTRICTED=	"yes - cryptography"
-
 USE_PERL5=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
