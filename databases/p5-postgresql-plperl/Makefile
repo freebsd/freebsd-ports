@@ -1,4 +1,4 @@
-# New ports collection makefile for:	PostgreSQL JDBC
+# New ports collection makefile for:	PostgreSQL PL/Perl 
 # Date created:		January 14, 2002
 # Whom:			Palle Girgensohn <girgen@partitur.se>
 #
@@ -9,7 +9,7 @@ PORTNAME=	postgresql-plperl
 CATEGORIES=	databases perl5
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	girgen@partitur.se
+MAINTAINER=	girgen@pingpong.net
 
 POSTGRESQL_SUBPORT=YES
 .include <${.CURDIR}/../postgresql7/Makefile>
