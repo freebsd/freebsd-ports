@@ -629,6 +629,7 @@
     SUBDIR += py-xmlrpclib
     SUBDIR += py-zsi
     SUBDIR += pygopherd
+    SUBDIR += pypvm
     SUBDIR += pyslsk
     SUBDIR += pythondirector
     SUBDIR += qadsl

@@ -1,0 +1,9 @@
+pypvm is a Python module which allows interaction with the Parallel
+Virtual Machine (PVM) package. PVM allows a collection of computers
+connected by a network to serve as a single parallel computer. More
+information about the PVM package can be found at
+http://www.epm.ornl.gov/pvm.
+
+Pypvm is intended to be an educational and prototyping tool.
+
+WWW: http://pypvm.sourceforge.net/
