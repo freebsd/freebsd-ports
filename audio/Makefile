@@ -51,6 +51,7 @@
     SUBDIR += festvox-rab8
     SUBDIR += festvox-tll
     SUBDIR += flac
+    SUBDIR += fmio
     SUBDIR += freeamp
     SUBDIR += gdcd
     SUBDIR += gdrdao
