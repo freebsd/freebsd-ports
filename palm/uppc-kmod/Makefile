@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	uppc
-PORTVERSION=	0.6
+PORTVERSION=	0.7
 CATEGORIES=	palm
 MASTER_SITES=	http://sam.stral.net/freebsd/
 PKGNAMESUFFIX=	-kmod
@@ -14,7 +14,7 @@ PKGNAMESUFFIX=	-kmod
 MAINTAINER=	boris@brooknet.com.au
 COMMENT=	USB device driver for Windows CE handhelds
 
-MAN4=	uppc.4
+MAN4=		uppc.4
 WRKSRC=		${WRKDIR}/${PORTNAME}
 USE_REINPLACE=	yes
 
