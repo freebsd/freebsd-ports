@@ -1,85 +1,6 @@
---- configure.orig	Sat Jul 18 10:57:31 1998
-+++ configure	Mon Aug 24 10:04:27 1998
-@@ -1482,18 +1482,18 @@
-   if test x$gtk_config_exec_prefix != x ; then
-      gtk_config_args="$gtk_config_args --exec-prefix=$gtk_config_exec_prefix"
-      if test x${GTK_CONFIG+set} != xset ; then
--        GTK_CONFIG=$gtk_config_exec_prefix/bin/gtk-config
-+        GTK_CONFIG=$gtk_config_exec_prefix/bin/gtk11-config
-      fi
-   fi
-   if test x$gtk_config_prefix != x ; then
-      gtk_config_args="$gtk_config_args --prefix=$gtk_config_prefix"
-      if test x${GTK_CONFIG+set} != xset ; then
--        GTK_CONFIG=$gtk_config_prefix/bin/gtk-config
-+        GTK_CONFIG=$gtk_config_prefix/bin/gtk11-config
-      fi
-   fi
- 
--  # Extract the first word of "gtk-config", so it can be a program name with args.
--set dummy gtk-config; ac_word=$2
-+  # Extract the first word of "gtk11-config", so it can be a program name with args.
-+set dummy gtk11-config; ac_word=$2
- echo $ac_n "checking for $ac_word""... $ac_c" 1>&6
- echo "configure:1499: checking for $ac_word" >&5
- if eval "test \"`echo '$''{'ac_cv_path_GTK_CONFIG'+set}'`\" = set"; then
-@@ -1574,16 +1574,16 @@
-       (gtk_minor_version != $gtk_config_minor_version) ||
-       (gtk_micro_version != $gtk_config_micro_version))
-     {
--      printf("\n*** 'gtk-config --version' returned %d.%d.%d, but GTK+ (%d.%d.%d)\n", 
-+      printf("\n*** 'gtk11-config --version' returned %d.%d.%d, but GTK+ (%d.%d.%d)\n", 
-              $gtk_config_major_version, $gtk_config_minor_version, $gtk_config_micro_version,
-              gtk_major_version, gtk_minor_version, gtk_micro_version);
--      printf ("*** was found! If gtk-config was correct, then it is best\n");
-+      printf ("*** was found! If gtk11-config was correct, then it is best\n");
-       printf ("*** to remove the old version of GTK+. You may also be able to fix the error\n");
-       printf("*** by modifying your LD_LIBRARY_PATH enviroment variable, or by editing\n");
-       printf("*** /etc/ld.so.conf. Make sure you have run ldconfig if that is\n");
-       printf("*** required on your system.\n");
--      printf("*** If gtk-config was wrong, set the environment variable GTK_CONFIG\n");
--      printf("*** to point to the correct copy of gtk-config, and remove the file config.cache\n");
-+      printf("*** If gtk11-config was wrong, set the environment variable GTK_CONFIG\n");
-+      printf("*** to point to the correct copy of gtk11-config, and remove the file config.cache\n");
-       printf("*** before re-running configure\n");
-     } 
-   else
-@@ -1603,10 +1603,10 @@
-         printf("*** GTK+ is always available from ftp://ftp.gtk.org.\n");
-         printf("***\n");
-         printf("*** If you have already installed a sufficiently new version, this error\n");
--        printf("*** probably means that the wrong copy of the gtk-config shell script is\n");
-+        printf("*** probably means that the wrong copy of the gtk11-config shell script is\n");
-         printf("*** being found. The easiest way to fix this is to remove the old version\n");
-         printf("*** of GTK+, but you can also set the GTK_CONFIG environment to point to the\n");
--        printf("*** correct copy of gtk-config. (In this case, you will have to\n");
-+        printf("*** correct copy of gtk11-config. (In this case, you will have to\n");
-         printf("*** modify your LD_LIBRARY_PATH enviroment variable, or edit /etc/ld.so.conf\n");
-         printf("*** so that the correct libraries are found at run-time))\n");
-       }
-@@ -1637,10 +1637,10 @@
-   else
-      echo "$ac_t""no" 1>&6
-      if test "$GTK_CONFIG" = "no" ; then
--       echo "*** The gtk-config script installed by GTK could not be found"
-+       echo "*** The gtk11-config script installed by GTK could not be found"
-        echo "*** If GTK was installed in PREFIX, make sure PREFIX/bin is in"
-        echo "*** your path, or set the GTK_CONFIG environment variable to the"
--       echo "*** full path to gtk-config."
-+       echo "*** full path to gtk11-config."
-      else
-        if test -f conf.gtktest ; then
-         :
-@@ -1682,7 +1682,7 @@
-    echo "*** The test program failed to compile or link. See the file config.log for the"
-           echo "*** exact error that occured. This usually means GTK was incorrectly installed"
-           echo "*** or that you have moved GTK since it was installed. In the latter case, you"
--          echo "*** may want to edit the gtk-config script: $GTK_CONFIG" 
-+          echo "*** may want to edit the gtk11-config script: $GTK_CONFIG" 
- fi
- rm -f conftest*
-           CFLAGS="$ac_save_CFLAGS"
-@@ -1699,143 +1699,6 @@
+--- configure.orig	Thu Sep 24 02:15:00 1998
++++ configure	Sat Sep 26 20:57:55 1998
+@@ -1702,143 +1702,6 @@
    rm -f conf.gtktest
  
  
@@ -88,7 +9,7 @@
 -# Extract the first word of "djpeg", so it can be a program name with args.
 -set dummy djpeg; ac_word=$2
 -echo $ac_n "checking for $ac_word""... $ac_c" 1>&6
--echo "configure:1708: checking for $ac_word" >&5
+-echo "configure:1711: checking for $ac_word" >&5
 -if eval "test \"`echo '$''{'ac_cv_path_DJPEG_PROG'+set}'`\" = set"; then
 -  echo $ac_n "(cached) $ac_c" 1>&6
 -else
@@ -119,7 +40,7 @@
 -# Extract the first word of "cjpeg", so it can be a program name with args.
 -set dummy cjpeg; ac_word=$2
 -echo $ac_n "checking for $ac_word""... $ac_c" 1>&6
--echo "configure:1739: checking for $ac_word" >&5
+-echo "configure:1742: checking for $ac_word" >&5
 -if eval "test \"`echo '$''{'ac_cv_path_CJPEG_PROG'+set}'`\" = set"; then
 -  echo $ac_n "(cached) $ac_c" 1>&6
 -else
@@ -151,7 +72,7 @@
 -# Extract the first word of "convert", so it can be a program name with args.
 -set dummy convert; ac_word=$2
 -echo $ac_n "checking for $ac_word""... $ac_c" 1>&6
--echo "configure:1771: checking for $ac_word" >&5
+-echo "configure:1774: checking for $ac_word" >&5
 -if eval "test \"`echo '$''{'ac_cv_path_CONVERT_PROG'+set}'`\" = set"; then
 -  echo $ac_n "(cached) $ac_c" 1>&6
 -else
@@ -187,7 +108,7 @@
 -# Extract the first word of "giftopnm", so it can be a program name with args.
 -set dummy giftopnm; ac_word=$2
 -echo $ac_n "checking for $ac_word""... $ac_c" 1>&6
--echo "configure:1807: checking for $ac_word" >&5
+-echo "configure:1810: checking for $ac_word" >&5
 -if eval "test \"`echo '$''{'ac_cv_path_GIFTOPNM_PROG'+set}'`\" = set"; then
 -  echo $ac_n "(cached) $ac_c" 1>&6
 -else
@@ -221,47 +142,47 @@
 -
 -
  echo $ac_n "checking how to run the C preprocessor""... $ac_c" 1>&6
- echo "configure:1841: checking how to run the C preprocessor" >&5
+ echo "configure:1844: checking how to run the C preprocessor" >&5
  # On Suns, sometimes $CPP names a directory.
-@@ -3770,16 +3633,16 @@
+@@ -3773,16 +3636,16 @@
  fi
  if eval "test \"`echo '$ac_cv_lib_'$ac_lib_var`\" = yes"; then
    echo "$ac_t""yes" 1>&6
 -  ac_safe=`echo "tiffio.h" | sed 'y%./+-%__p_%'`
 -echo $ac_n "checking for tiffio.h""... $ac_c" 1>&6
--echo "configure:3776: checking for tiffio.h" >&5
+-echo "configure:3779: checking for tiffio.h" >&5
 +  ac_safe=`echo "tiff34/tiffio.h" | sed 'y%./+-%__p_%'`
 +echo $ac_n "checking for tiff34/tiffio.h""... $ac_c" 1>&6
-+echo "configure:3776: checking for tiff34/tiffio.h" >&5
++echo "configure:3779: checking for tiff34/tiffio.h" >&5
  if eval "test \"`echo '$''{'ac_cv_header_$ac_safe'+set}'`\" = set"; then
    echo $ac_n "(cached) $ac_c" 1>&6
  else
    cat > conftest.$ac_ext <<EOF
- #line 3781 "configure"
+ #line 3784 "configure"
  #include "confdefs.h"
 -#include <tiffio.h>
 +#include <tiff34/tiffio.h>
  EOF
  ac_try="$ac_cpp conftest.$ac_ext >/dev/null 2>conftest.out"
- { (eval echo configure:3786: \"$ac_try\") 1>&5; (eval $ac_try) 2>&5; }
-@@ -3818,16 +3681,16 @@
+ { (eval echo configure:3789: \"$ac_try\") 1>&5; (eval $ac_try) 2>&5; }
+@@ -3821,16 +3684,16 @@
  
  
  
 -ac_safe=`echo "gif_lib.h" | sed 'y%./+-%__p_%'`
 -echo $ac_n "checking for gif_lib.h""... $ac_c" 1>&6
--echo "configure:3824: checking for gif_lib.h" >&5
+-echo "configure:3827: checking for gif_lib.h" >&5
 +ac_safe=`echo "giflib/gif_lib.h" | sed 'y%./+-%__p_%'`
 +echo $ac_n "checking for giflib/gif_lib.h""... $ac_c" 1>&6
-+echo "configure:3824: checking for giflib/gif_lib.h" >&5
++echo "configure:3827: checking for giflib/gif_lib.h" >&5
  if eval "test \"`echo '$''{'ac_cv_header_$ac_safe'+set}'`\" = set"; then
    echo $ac_n "(cached) $ac_c" 1>&6
  else
    cat > conftest.$ac_ext <<EOF
- #line 3829 "configure"
+ #line 3832 "configure"
  #include "confdefs.h"
 -#include <gif_lib.h>
 +#include <giflib/gif_lib.h>
  EOF
  ac_try="$ac_cpp conftest.$ac_ext >/dev/null 2>conftest.out"
- { (eval echo configure:3834: \"$ac_try\") 1>&5; (eval $ac_try) 2>&5; }
+ { (eval echo configure:3837: \"$ac_try\") 1>&5; (eval $ac_try) 2>&5; }
