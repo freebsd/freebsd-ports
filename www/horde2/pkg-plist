@@ -89,7 +89,9 @@
 %%HORDEDIR%%/lib/Auth/krb5.php
 %%HORDEDIR%%/lib/Auth/ldap.php
 %%HORDEDIR%%/lib/Auth/mcal.php
+%%HORDEDIR%%/lib/Auth/radius.php
 %%HORDEDIR%%/lib/Auth/sql.php
+%%HORDEDIR%%/lib/Auth/smb.php
 %%HORDEDIR%%/lib/Browser.php
 %%HORDEDIR%%/lib/Cache.php
 %%HORDEDIR%%/lib/Cache/file.php
@@ -110,6 +112,7 @@
 %%HORDEDIR%%/lib/Help.php
 %%HORDEDIR%%/lib/Horde.php
 %%HORDEDIR%%/lib/Identity.php
+%%HORDEDIR%%/lib/Image.php
 %%HORDEDIR%%/lib/Lang.php
 %%HORDEDIR%%/lib/MIME.php
 %%HORDEDIR%%/lib/MIME/Magic.php
@@ -168,6 +171,7 @@
 %%HORDEDIR%%/lib/version.php
 %%HORDEDIR%%/locale/.htaccess
 %%HORDEDIR%%/locale/bg_BG/LC_MESSAGES/horde.mo
+%%HORDEDIR%%/locale/ca_ES/LC_MESSAGES/horde.mo
 %%HORDEDIR%%/locale/cs_CZ/LC_MESSAGES/horde.mo
 %%HORDEDIR%%/locale/da_DK/LC_MESSAGES/horde.mo
 %%HORDEDIR%%/locale/de_DE/LC_MESSAGES/horde.mo
@@ -188,6 +192,7 @@
 %%HORDEDIR%%/locale/nb_NO/LC_MESSAGES/horde.mo
 %%HORDEDIR%%/locale/nn_NO/LC_MESSAGES/horde.mo
 %%HORDEDIR%%/locale/pl_PL/LC_MESSAGES/horde.mo
+%%HORDEDIR%%/locale/pl_PL/help.xml
 %%HORDEDIR%%/locale/pt_BR/LC_MESSAGES/horde.mo
 %%HORDEDIR%%/locale/pt_PT/LC_MESSAGES/horde.mo
 %%HORDEDIR%%/locale/ro_RO/LC_MESSAGES/horde.mo
@@ -202,11 +207,13 @@
 %%HORDEDIR%%/login.php
 %%HORDEDIR%%/maintenance.php
 %%HORDEDIR%%/menu.php
+%%HORDEDIR%%/navbar.php
 %%HORDEDIR%%/po/.htaccess
 %%HORDEDIR%%/po/Makefile
 %%HORDEDIR%%/po/README
 %%HORDEDIR%%/po/wintokoi.pl
 %%HORDEDIR%%/po/bg_BG.po
+%%HORDEDIR%%/po/ca_ES.po
 %%HORDEDIR%%/po/cs_CZ.po
 %%HORDEDIR%%/po/da_DK.po
 %%HORDEDIR%%/po/de_DE.po
@@ -258,6 +265,7 @@
 %%HORDEDIR%%/scripts/db/prefs.sql
 %%HORDEDIR%%/scripts/db/sessionhandler.sql
 %%HORDEDIR%%/scripts/db/sessionhandler_sapdb.sql
+%%HORDEDIR%%/scripts/db/vfs.sql
 %%HORDEDIR%%/scripts/horde-rsync.sh
 %%HORDEDIR%%/scripts/ldap/horde.schema
 %%HORDEDIR%%/scripts/mime_mapping/Makefile
@@ -292,6 +300,7 @@
 %%HORDEDIR%%/templates/maintenance/confirm_middle.inc
 %%HORDEDIR%%/templates/maintenance/confirm_top.inc
 %%HORDEDIR%%/templates/maintenance/javascript.inc
+%%HORDEDIR%%/templates/navbar/menu.inc
 %%HORDEDIR%%/templates/prefs/begin.inc
 %%HORDEDIR%%/templates/prefs/checkbox.inc
 %%HORDEDIR%%/templates/prefs/end.inc
@@ -324,7 +333,6 @@ etc/horde/httpd.conf.horde
 %%PORTDOCS%%share/doc/horde/README
 %%PORTDOCS%%share/doc/horde/TRANSLATIONS
 %%PORTDOCS%%@dirrm share/doc/horde
-@dirrm %%HORDEDIR%%/config
 @dirrm %%HORDEDIR%%/graphics/alerts
 @dirrm %%HORDEDIR%%/graphics/mime
 @dirrm %%HORDEDIR%%/graphics/tree
@@ -344,6 +352,8 @@ etc/horde/httpd.conf.horde
 @dirrm %%HORDEDIR%%/lib
 @dirrm %%HORDEDIR%%/locale/bg_BG/LC_MESSAGES
 @dirrm %%HORDEDIR%%/locale/bg_BG
+@dirrm %%HORDEDIR%%/locale/ca_ES/LC_MESSAGES
+@dirrm %%HORDEDIR%%/locale/ca_ES
 @dirrm %%HORDEDIR%%/locale/cs_CZ/LC_MESSAGES
 @dirrm %%HORDEDIR%%/locale/cs_CZ
 @dirrm %%HORDEDIR%%/locale/da_DK/LC_MESSAGES
@@ -415,7 +425,8 @@ etc/horde/httpd.conf.horde
 @dirrm %%HORDEDIR%%/templates/index
 @dirrm %%HORDEDIR%%/templates/javascript
 @dirrm %%HORDEDIR%%/templates/login
-@dirrm %%HORDEDIR%%/templates/maintenance/
+@dirrm %%HORDEDIR%%/templates/maintenance
+@dirrm %%HORDEDIR%%/templates/navbar
 @dirrm %%HORDEDIR%%/templates/prefs
 @dirrm %%HORDEDIR%%/templates/problem
 @dirrm %%HORDEDIR%%/templates/wml/login
@@ -423,5 +434,6 @@ etc/horde/httpd.conf.horde
 @dirrm %%HORDEDIR%%/templates
 @dirrm %%HORDEDIR%%/util
 @dirrm %%HORDEDIR%%/po
-@dirrm %%HORDEDIR%%
+@unexec rmdir %D/%%HORDEDIR%%/config 2>/dev/null || true
+@unexec rmdir %D/%%HORDEDIR%% 2>/dev/null || true
 @dirrm etc/horde

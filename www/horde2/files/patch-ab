@@ -1,15 +1,15 @@
---- config/horde.php.dist.orig	Tue Oct 29 22:21:36 2002
-+++ config/horde.php.dist	Thu Jan  9 21:37:31 2003
-@@ -86,7 +86,7 @@
- 
+--- config/horde.php.dist.orig	Tue Apr 22 20:45:22 2003
++++ config/horde.php.dist	Tue Apr 22 23:35:10 2003
+@@ -94,7 +94,7 @@
  // What backend should we use for authenticating users to Horde? Valid
- // options are currently 'imap', 'ldap', 'mcal', 'sql', 'ftp' and 'krb5'.
+ // options are currently 'imap', 'ldap', 'mcal', 'sql', 'ftp', 'smb',
+ // 'krb5' and 'radius'.
 -$conf['auth']['driver'] = '';
 +$conf['auth']['driver'] = 'imap';
  
  // An array holding any parameters that the Auth object will need to
  // function correctly.
-@@ -145,7 +145,7 @@
+@@ -159,7 +159,7 @@
  // (meaning use system defaults and don't save any user preferences),
  // 'session' (preferences only persist during the login), 'ldap',
  // and 'sql'.
@@ -18,7 +18,7 @@
  
  // Any parameters that the preferences driver needs. This includes
  // database or ldap server, username/password to connect with, etc.
-@@ -154,12 +154,12 @@
+@@ -168,12 +168,12 @@
  // This is an example configuration for a MySQL preference backend.
  // The SQL script to setup the preference database is placed in
  // horde/scripts/db/prefs.sql.
@@ -37,7 +37,7 @@
  
  // This is an example configuration for an LDAP preference backend.
  // The schemas needed for ldap are in horde/scripts/ldap.  For more
-@@ -209,7 +209,7 @@
+@@ -223,7 +223,7 @@
  // SMTP authentication can be enabled by setting the 'auth' parameter
  // to true.
  $conf['mailer']['params'] = array();
@@ -46,7 +46,7 @@
  // $conf['mailer']['params'] = array('host' => 'smtp.example.com');
  
  
-@@ -267,3 +267,9 @@
+@@ -328,3 +328,9 @@
  // Should we use DHTML to display a floating menu of Horde appliation
  // links, instead of a frame?
  $conf['menu']['floating_bar'] = false;
