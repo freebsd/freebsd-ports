@@ -4,7 +4,7 @@
  /* Needed by RSAREF */
  
 -#ifdef __alpha
-+#if defined(__alpha) || defined(__sparc64__)
++#if defined(__alpha) || defined(__sparc64__) || defined(__ia64__)
  typedef unsigned UINT4;
  #else
  typedef unsigned long UINT4;
