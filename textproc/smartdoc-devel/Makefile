@@ -24,7 +24,7 @@ WRKSRC=		${WRKDIR}/sdoc
 NO_BUILD=	yes
 USE_ZIP=	yes
 USE_JAVA=	1.3+
-NO_RUN_DEPENDS_JAVA=	yes
+JAVA_EXTRACT=	yes
 EXTRACT_CMD=	${JAVA}
 EXTRACT_BEFORE_ARGS=	-jar ${DISTDIR}/${DIST_SUBDIR}/${DISTFILES} \
 			-batch -bindir:${WRKSRC}/bin -installbasedir:${WRKSRC}
