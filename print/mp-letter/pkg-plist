@@ -1,10 +1,12 @@
-bin/mp
-bin/mailp
 bin/digestp
 bin/filep
 bin/filofaxp
 bin/franklinp
+bin/mailp
+bin/mp
+bin/newsp
 bin/timemanp
+bin/timesysp
 share/mp/mp.common.ps
 share/mp/mp.pro.alt.ps
 share/mp/mp.pro.altl.ps
