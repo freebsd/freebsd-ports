@@ -1,0 +1,6 @@
+SVN::Simple::Edit wraps the subversion delta editor with a perl
+friendly interface and then you could easily drive it for describing
+changes to a tree.
+
+A common usage is to wrap the commit editor, so you could make commits
+to a subversion repository easily.
