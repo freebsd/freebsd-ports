@@ -8,7 +8,7 @@
 PORTNAME=	tramp
 PORTVERSION=	2.0.15
 CATEGORIES=	net elisp
-MASTER_SITES=	http://freesoftware.fsf.org/download/tramp/
+MASTER_SITES=	http://savannah.nongnu.org/download/tramp/
 PKGNAMESUFFIX=	-${EMACS_PORT_NAME}
 
 MAINTAINER=	yoichi@FreeBSD.org
