@@ -6,20 +6,19 @@
 #
 
 PORTNAME=	Chart
-PORTVERSION=	1.0.1
+PORTVERSION=	2.2
 CATEGORIES=	graphics perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Chart
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	ports@freebsd.org
+MAINTAINER=	m@absolight.net
 COMMENT=	A perl5 interface to build chart graphics
 
-BUILD_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/${PERL_ARCH}/GD.pm:${PORTSDIR}/graphics/p5-GD
+BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/GD.pm:${PORTSDIR}/graphics/p5-GD2
 
 PERL_CONFIGURE=	yes
 
-MAN3=		Chart.3
-MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
+#MAN3=		Chart.3
 
 .include <bsd.port.mk>
