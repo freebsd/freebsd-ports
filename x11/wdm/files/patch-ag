@@ -1,29 +1,6 @@
 --- configure.in.orig	Tue Sep 21 23:16:21 1999
-+++ configure.in	Wed Feb 23 21:26:13 2000
-@@ -50,9 +50,9 @@
- AM_CONDITIONAL(INSTALLPAM, test x$enable_pam = xyes)
- 
- if test "$enable_pam" = yes; then
--	AC_CHECK_LIB(pam, main, [PASSWDLIB="-lpam -ldl"
-+	AC_CHECK_LIB(pam, main, [PASSWDLIB="-lpam"
- 		AC_DEFINE_UNQUOTED(HAVE_PAM_LIB)],
--		[],-ldl)
-+		[],)
- fi
- 
- AC_ARG_WITH(pamdir,
-@@ -66,6 +66,10 @@
-     AC_MSG_CHECKING(for pam directory $PAM_DIR_PATH)
-     if test -d "$PAM_DIR_PATH"; then
- 	AC_MSG_RESULT(exists)
-+    elif test -f "/etc/pam.conf"; then
-+	AC_MSG_RESULT(using /etc/pam.conf)
-+	PAMDIR=none
-+	PAM_DIR_PATH=none
-     else
- 	AC_MSG_RESULT(does not exist)
- 	AC_MSG_WARN([this may not be a pam system <<--------------])
-@@ -183,7 +187,7 @@
++++ configure.in	Mon Nov  1 05:26:32 1999
+@@ -183,7 +183,7 @@
  
  XLFLAGS="$X_LIBS"
  
@@ -32,7 +9,7 @@
  
  XDM_EXTRA_LIBS="-lXmu -lXau -lXdmcp"
  
-@@ -504,7 +508,7 @@
+@@ -504,7 +504,7 @@
  AC_DEFINE_UNQUOTED(WDMDIR,"$DMDIR")
  AC_DEFINE_UNQUOTED(DEF_XDM_CONFIG,"$DMDIR/wdm-config")
  AC_DEFINE_UNQUOTED(DEF_CHOOSER,"$DMDIR/chooser")
