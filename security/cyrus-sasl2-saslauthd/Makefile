@@ -40,7 +40,6 @@ CONFIGURE_ARGS=	--sysconfdir=${PREFIX}/etc \
 		--enable-static \
 		--enable-login \
 		--enable-auth-sasldb \
-		--with-openssl=${OPENSSLBASE} \
 		--with-rc4=openssl \
 		--with-saslauthd=${SASLAUTHD_RUNPATH}
 
@@ -104,6 +103,12 @@ LIB_DEPENDS+=	krb.2:${PORTSDIR}/security/krb4
 CONFIGURE_ARGS+=--enable-krb4=${LOCALBASE}/krb4
 .else
 CONFIGURE_ARGS+=--disable-krb4
+.endif
+
+.if ${OPENSSLBASE} == /usr
+CONFIGURE_ARGS+=--with-openssl=yes
+.else
+CONFIGURE_ARGS+=--with-openssl=${OPENSSLBASE}
 .endif
 
 CONFIGURE_ENV+=	LOCALBASE=${LOCALBASE} \

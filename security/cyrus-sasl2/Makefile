@@ -50,7 +50,6 @@ CONFIGURE_ARGS=	--sysconfdir=${PREFIX}/etc \
 		--mandir=${MANPREFIX}/man \
 		--enable-static \
 		--enable-auth-sasldb \
-		--with-openssl=${OPENSSLBASE} \
 		--with-rc4=openssl \
 		--with-saslauthd=${SASLAUTHD_RUNPATH}
 
@@ -186,6 +185,12 @@ CONFIGURE_ARGS+=--enable-krb4=${LOCALBASE}/krb4
 .else
 CONFIGURE_ARGS+=--disable-krb4
 EBONES=	"@comment "
+.endif
+
+.if ${OPENSSLBASE} == /usr
+CONFIGURE_ARGS+=--with-openssl=yes
+.else
+CONFIGURE_ARGS+=--with-openssl=${OPENSSLBASE}
 .endif
 
 CONFIGURE_ENV+=	LOCALBASE=${LOCALBASE} \
