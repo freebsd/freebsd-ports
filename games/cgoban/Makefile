@@ -1,15 +1,14 @@
 # New ports collection makefile for:   cgoban
-# Version required:    1.9.2
+# Version required:    1.9.8
 # Date created:        28 October 1996
 # Whom:                simonm@dcs.gla.ac.uk
 #
 # $FreeBSD$
 #
 
-DISTNAME=	cgoban-1.9.5
+DISTNAME=	cgoban-1.9.8
 CATEGORIES=	games
-MASTER_SITES=	http://www.hevanet.com/wms/comp/cgoban/ \
-		ftp://igs.joyjoy.net/Go/igs_clients/Unix/
+MASTER_SITES=	http://www.inetarena.com/~wms/comp/cgoban/
 
 MAINTAINER=	simonm@dcs.gla.ac.uk
 
