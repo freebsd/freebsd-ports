@@ -1,0 +1,43 @@
+# Ports collection makefile for:	potrace
+# Date created:				24 September 2003
+# Whom:					Piotr Smyrak <smyru@heron.pl>
+#
+# $FreeBSD$
+#
+
+PORTNAME=	potrace
+PORTVERSION=	1.1
+CATEGORIES=	graphics
+MASTER_SITES=	http://potrace.sourceforge.net/download/
+
+MAINTAINER=	smyru@heron.pl
+COMMENT=	Transforms bitmaps into vector graphics
+
+GNU_CONFIGURE=	yes
+
+MAN1=		potrace.1
+
+.if defined(A4)
+CONFIGURE_ARGS+=	--enable-a4
+.endif
+
+.if defined(WITH_LZW) || defined(HAVE_UNISYS_LICENSE) || defined(WITH_GIF_LZW_COMPRESSION)
+CONFIGURE_ARGS+=	--enable-compress
+.else
+CONFIGURE_ARGS+=	--disable-compress
+.endif
+
+.if defined(WITH_METRIC)
+CONFIGURE_ARGS+=	--enable-metric
+.endif
+
+pre-everything::
+	@${ECHO} ""
+	@${ECHO} "You may define the following build options:"
+	@${ECHO} ""
+	@${ECHO} "    WITH_LZW         Enable patented external LZW compression"
+	@${ECHO} "    WITH_METRIC      Enable use of metric units (centimeters) as default"
+	@${ECHO} "    A4               Enable use of A4 as the default papersize"
+	@${ECHO} ""
+
+.include <bsd.port.mk>
