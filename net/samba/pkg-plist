@@ -434,7 +434,7 @@ share/swat/using_samba/gifs/txtpreva.gif
 @dirrm share/swat/using_samba/gifs
 @dirrm share/swat/using_samba
 @dirrm share/swat
-@exec mkdir %D/private ; if [ ! -f %D/private/smbpasswd ] ; then chown -R root.wheel %D/private ;  cat /etc/passwd | %D/bin/make_smbpasswd > %D/private/smbpasswd ; chmod 500 %D/private ; chmod 600 %D/private/smbpasswd ; fi
+@exec mkdir %D/private ; if [ ! -f %D/private/smbpasswd ] ; then chown -R root.wheel %D/private ;  cat /etc/passwd | grep -v "^#" | %D/bin/make_smbpasswd > %D/private/smbpasswd ; chmod 500 %D/private ; chmod 600 %D/private/smbpasswd ; fi
 @exec mkdir -p /var/spool/samba ; chmod 1777 /var/spool/samba
 @exec cat %D/share/doc/samba/README.FreeBSD
 @unexec rm -rf /var/spool/samba
