@@ -1,16 +1,68 @@
---- configure.orig	Fri Dec 21 11:11:50 2001
-+++ configure	Sun Jan  6 15:25:08 2002
-@@ -64,6 +64,9 @@
+--- configure.orig	Tue Feb 12 17:52:58 2002
++++ configure	Fri Mar 29 13:23:17 2002
+@@ -53,19 +53,22 @@
+     shift
+     ;;
+   -prefix=*|--prefix=*)
+-    prefix=`expr "$1" : "-*prefix=\(.*\)"`
++    prefix=`expr \( "$1" : "-*prefix=\(.*\)" \)`
+     ;;
+   -bindir=*|--bindir=*)
+-    bindir=`expr "$1" : "-*bindir=\(.*\)"`
++    bindir=`expr \( "$1" : "-*bindir=\(.*\)" \)`
+     ;;
+   -libdir=*|--libdir=*)
+-    libdir=`expr "$1" : "-*libdir=\(.*\)"`
++    libdir=`expr \( "$1" : "-*libdir=\(.*\)" \)`
+     ;;
    -helpdir=*|--helpdir=*)
-     helpdir=`expr "$1" : "-*helpdir=\(.*\)"`
-     ;;
-+  -helpdir-ja=*|--helpdir-ja=*)
-+    helpdir_ja=`expr "$1" : "-*helpdir-ja=\(.*\)"`
+-    helpdir=`expr "$1" : "-*helpdir=\(.*\)"`
++    helpdir=`expr \( "$1" : "-*helpdir=\(.*\)" \)`
 +    ;;
-   -sysconfdir=*|--sysconfdir=*)
-     sysconfdir=`expr "$1" : "-*sysconfdir=\(.*\)"`
++  -helpdir-ja=*|--helpdir-ja=*)
++    helpdir_ja=`expr \( "$1" : "-*helpdir-ja=\(.*\)" \)`
      ;;
-@@ -513,6 +516,16 @@
+   -sysconfdir=*|--sysconfdir=*)
+-    sysconfdir=`expr "$1" : "-*sysconfdir=\(.*\)"`
++    sysconfdir=`expr \( "$1" : "-*sysconfdir=\(.*\)" \)`
+     ;;
+   -lang=en|--lang=en|-lang=EN|--lang=EN)
+     lang=EN
+@@ -92,7 +95,7 @@
+     dmodel=6
+     ;;
+   -code=*|--code=*)
+-    display_code=`expr "$1" : "-*code=\(.*\)"`
++    display_code=`expr \( "$1" : "-*code=\(.*\)" \)`
+     ;;
+   -cflags=*|--cflags=*)
+     dcflags=`echo $1 | sed -e 's/-*cflags=//'`
+@@ -101,19 +104,19 @@
+     dldflags=`echo $1 | sed -e 's/-*ldflags=//'`
+     ;;
+   --ssl-includedir=*)
+-    ssl_includedir=`expr "$1" : "--ssl-includedir=\(.*\)"`
++    ssl_includedir=`expr \( "$1" : "--ssl-includedir=\(.*\)" \)`
+     ;;
+   --ssl-libdir=*)
+-    ssl_libdir=`expr "$1" : "--ssl-libdir=\(.*\)"`
++    ssl_libdir=`expr \( "$1" : "--ssl-libdir=\(.*\)" \)`
+     ;;
+   --gc-includedir=*)
+-    gc_includedir=`expr "$1" : "--gc-includedir=\(.*\)"`
++    gc_includedir=`expr \( "$1" : "--gc-includedir=\(.*\)" \)`
+     ;;
+   --gc-libdir=*)
+-    gc_libdir=`expr "$1" : "--gc-libdir=\(.*\)"`
++    gc_libdir=`expr \( "$1" : "--gc-libdir=\(.*\)" \)`
+     ;;
+   --mimetypes=*)
+-    mimetypes=`expr "$1" : "--mimetypes=\(.*\)"`
++    mimetypes=`expr \( "$1" : "--mimetypes=\(.*\)" \)`
+     ;;
+ 
+   -help|--help)
+@@ -541,6 +544,16 @@
  helpdir=$_dir
  echo "helpdir='$helpdir'" >> config.param
  
@@ -27,15 +79,33 @@
  d_sysconfdir=$sysconfdir
  if [ -z "$d_sysconfdir" ]; then
    d_sysconfdir="$topdir/etc/w3m"
-@@ -1948,6 +1961,7 @@
+@@ -1189,7 +1202,7 @@
+ 
+ ####### perl
+ perl=`./which perl`
+-if [ `expr "$perl" : 'not found'` != 0 ]; then
++if [ `expr \( "$perl" : 'not found' \)` != 0 ]; then
+   echo "You don't have perl."
+   perl=/usr/local/bin/perl
+   have_perl=n
+@@ -1976,7 +1989,7 @@
+ cur_ver=`sed -n 's/^#define CURRENT_VERSION *"w3m\/\([^"]*\)".*$/\1/p' version.c`
+ for h_in in w3mhelp-*_*.html.in
+ do
+-  h=`expr "$h_in" : '\(.*\)\.in'`
++  h=`expr \( "$h_in" : '\(.*\)\.in' \)`
+   sed -e 's/@CURRENT_VERSION@/'$cur_ver'/' $h_in > $h
+ done
+ 
+@@ -2067,6 +2080,7 @@
  
  BIN_DIR = $bindir
  HELP_DIR = $helpdir
 +HELP_DIR_JA = $helpdir_ja
  LIB_DIR = $libdir
  ETC_DIR = $sysconfdir
- HELP_FILE = $helpfile
-@@ -2007,6 +2021,7 @@
+ RC_DIR = ~/.w3m
+@@ -2140,6 +2154,7 @@
  
  #define LIB_DIR      "$libdir"
  #define HELP_DIR     "$helpdir"
