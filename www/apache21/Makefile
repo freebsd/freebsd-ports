@@ -3,7 +3,7 @@
 # Date created:         Fri Aug 25 16:42:36 CDT 1995
 # Whom:                 ache@nagual.pp.ru
 #
-# $Id: Makefile,v 1.62 1998/09/24 01:24:04 ache Exp $
+# $Id: Makefile,v 1.63 1998/10/19 12:48:55 smace Exp $
 #
 
 DISTNAME=       apache_1.3.3
@@ -15,6 +15,7 @@ MASTER_SITES=   ftp://www.apache.org/apache/dist/
 
 MAINTAINER=     ache@freebsd.org
 
+Y2K=		http://www.apache.org/docs/misc/FAQ.html#year2000
 #
 # Set APACHE_PERF_TUNING env. variable to YES to get maximum performance
 #
