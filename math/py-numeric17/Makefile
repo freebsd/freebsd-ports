@@ -18,6 +18,7 @@ MAINTAINER=	tg@FreeBSD.org
 BUILD_DEPENDS=	${PYDISTUTILS}
 
 USE_PYTHON=	yes
+NO_LATEST_LINK=	yes
 
 DOCDIR=		${PREFIX}/share/doc/py-numeric
 EXAMPLEDIR=	${PREFIX}/share/examples/py-numeric
