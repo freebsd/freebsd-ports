@@ -1,0 +1,41 @@
+@comment $FreeBSD$
+bin/vcp
+%%SITE_PERL%%/RevML/Doctype.pm
+%%SITE_PERL%%/RevML/Doctype/v0_26.pm
+%%SITE_PERL%%/RevML/Doctype/v0_27.pm
+%%SITE_PERL%%/RevML/Doctype/v0_28.pm
+%%SITE_PERL%%/RevML/Doctype/v0_29.pm
+@unexec rmdir %D/%%SITE_PERL%%/RevML/Doctype 2>/dev/null || true
+%%SITE_PERL%%/RevML/Writer.pm
+@unexec rmdir %D/%%SITE_PERL%%/RevML 2>/dev/null || true
+%%SITE_PERL%%/VCP.pm
+%%SITE_PERL%%/VCP/Debug.pm
+%%SITE_PERL%%/VCP/Dest.pm
+%%SITE_PERL%%/VCP/Dest/cvs.pm
+%%SITE_PERL%%/VCP/Dest/p4.pm
+%%SITE_PERL%%/VCP/Dest/revml.pm
+%%SITE_PERL%%/VCP/Dest/vss.pm
+@unexec rmdir %D/%%SITE_PERL%%/VCP/Dest 2>/dev/null || true
+%%SITE_PERL%%/VCP/DiffFormat.pm
+%%SITE_PERL%%/VCP/License.pod
+%%SITE_PERL%%/VCP/Maintenance.pod
+%%SITE_PERL%%/VCP/Newlines.pod
+%%SITE_PERL%%/VCP/Patch.pm
+%%SITE_PERL%%/VCP/Plugin.pm
+%%SITE_PERL%%/VCP/Process.pod
+%%SITE_PERL%%/VCP/Rev.pm
+%%SITE_PERL%%/VCP/Revs.pm
+%%SITE_PERL%%/VCP/Source.pm
+%%SITE_PERL%%/VCP/Source/cvs.pm
+%%SITE_PERL%%/VCP/Source/p4.pm
+%%SITE_PERL%%/VCP/Source/revml.pm
+%%SITE_PERL%%/VCP/Source/vss.pm
+@unexec rmdir %D/%%SITE_PERL%%/VCP/Source 2>/dev/null || true
+%%SITE_PERL%%/VCP/TestUtils.pm
+%%SITE_PERL%%/VCP/Utils/cvs.pm
+%%SITE_PERL%%/VCP/Utils/p4.pm
+%%SITE_PERL%%/VCP/Utils/vss.pm
+@unexec rmdir %D/%%SITE_PERL%%/VCP/Utils 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/VCP 2>/dev/null || true
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/VCP/.packlist
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/VCP 2>/dev/null || true
