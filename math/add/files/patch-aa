@@ -1,0 +1,19 @@
+--- makefile.in.orig	Tue Dec 26 16:59:01 1995
++++ makefile.in	Fri Aug 28 12:57:09 1998
+@@ -32,7 +32,7 @@
+ 
+ SHELL		= /bin/sh
+ 
+-DEFINES		= -DHAVE_CONFIG_H -DRELEASE=$(RELEASE) @DEFINES@
++DEFINES		= -DHAVE_CONFIG_H -DADD_HELPFILE=\"@prefix@/share/add/add.hlp\" -DRELEASE=$(RELEASE) @DEFINES@
+ INCLUDES	= -I. -I$(srcdir) @INCLUDES@
+ CPPFLAGS	= $(DEFINES) $(INCLUDES) @CPPFLAGS@
+ 
+@@ -52,7 +52,6 @@
+ all:	$(THIS)
+ 
+ $(THIS): $(OBJ)
+-	-mv $(THIS) o$(THIS)
+ 	$(LINK) $(CFLAGS) $(LDFLAGS) -o $(THIS) $(OBJ) $(LIBS)
+ 
+ $(OBJ): $(THIS).h screen.h
