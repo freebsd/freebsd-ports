@@ -1,6 +1,18 @@
 FreeBSD's port ChangeLog for mail/bogofilter
 ------------------------
 
+0.92.3
+- regression tests for %A, %I and %Q revised
+- internal cleanups
+- no longer depend on a particular gsl version, to avoid chasing the
+  GSL library after future GSL updates
+
+0.92.2
+- drop patch-ac, merged upstream
+- %I is now really the Message-ID
+- %Q is the queue idea
+- %A is the message injector's IP address
+
 2004-07-07
 - add patch-ac to fix bogus test failure in bogofilter-tdb and bogofilter-qdbm
 
