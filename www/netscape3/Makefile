@@ -42,8 +42,9 @@ pre-install:
 
 post-install:
 .if defined(USE_128BIT)
-	cd ${WRKDIR}/${FORTIFY} && \
-		(${ECHO} yes ; ${ECHO} no ; ${ECHO} no) | ./Fortify.sh ${PREFIX}/lib/netscape/netscape.bin
+	cd ${WRKDIR}/${FORTIFY} \
+	&& (${ECHO}; ${ECHO} yes; ${ECHO} no; ${ECHO} no) \
+	| ./Fortify.sh ${PREFIX}/lib/netscape/netscape.bin
 .endif
 	@${CAT} ${PKGDIR}/DESCR
 
