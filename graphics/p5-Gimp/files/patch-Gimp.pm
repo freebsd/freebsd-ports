@@ -3,8 +3,8 @@
 @@ -200,6 +200,7 @@
     if ($gtk_init) {
        require Gtk;
-       Gtk->init;
 +      Gtk->set_locale;
+       Gtk->init;
        Gtk::Rc->parse (Gimp->gtkrc);
        Gtk::Gdk->set_use_xshm (Gimp->use_xshm);
        Gtk::Preview->set_gamma (Gimp->gamma);
