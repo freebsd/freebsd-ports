@@ -7,7 +7,7 @@
 
 PORTNAME=	zebra
 PORTVERSION=	${ZEBRAVERSION}.${ZEBRADATE}
-PORTREVISION?=	0
+PORTREVISION?=	1
 CATEGORIES=	net ipv6
 MASTER_SITES=	${MASTER_SITE_LOCAL} \
 		ftp://ftp7.ua.freebsd.org/pub/local-distfiles/ \
@@ -19,6 +19,8 @@ COMMENT=	Free RIPv1, RIPv2, OSPFv2, BGP4 route software (server/reflector)
 
 ZEBRAVERSION=	0.94
 ZEBRADATE=	20030620
+
+LATEST_LINK=	${PORTNAME}-devel
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${ZEBRAVERSION}
 
