@@ -40,8 +40,8 @@ post-extract:
 	${LN} -sf ../ming.i ${WRKSRC}/
 
 pre-configure:
-	cd ${WRKSRC}; \
-	${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_FLAGS} depend SWIG="${SWIG}" ming_wrap.c; \
+	cd ${CONFIGURE_WRKSRC}; \
+	${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_FLAGS} depend ${MAKE_ARGS} ming_wrap.c; \
 	${RM} -f depend
 
 post-install:
