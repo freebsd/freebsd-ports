@@ -6,12 +6,11 @@
 #
 
 PORTNAME=	gnugadu2
-PORTVERSION=	2.0.p8
-PORTREVISION=	1
+PORTVERSION=	2.0.2
 CATEGORIES=	polish net
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	ggadu
-DISTNAME=	gg2-${PORTVERSION:S/.p/pre/}
+DISTNAME=	gg2-${PORTVERSION}
 
 MAINTAINER=	smyru@heron.pl
 COMMENT=	GTK2 based Gadu-Gadu client for X11
@@ -145,6 +144,10 @@ pre-everything::
 
 post-patch:
 	@${REINPLACE_CMD} -e 's,%%PREFIX%%,${PREFIX},' ${WRKSRC}/gg2.desktop
+	@${REINPLACE_CMD} -e 's| -ldl|| ; s|(libdir)/pkgconfig|(prefix)/libdata/pkgconfig|' ${WRKSRC}/lib/Makefile.in
+.if ${OSVERSION} < 500000
+	@${REINPLACE_CMD} -e 's|stdint.h|inttypes.h|' ${WRKSRC}/src/plugins/gadu_gadu/libgadu/lib/libgadu-config.h.in
+.endif
 
 post-install:
 .if (${HAVE_GNOME:Mgnomehier}!="")

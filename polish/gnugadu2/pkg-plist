@@ -16,7 +16,7 @@ lib/gg2/libupdate_plugin.so
 lib/libgg2_core.a
 lib/libgg2_core.so
 lib/libgg2_core.so.2
-lib/pkgconfig/gg2_core.pc
+libdata/pkgconfig/gg2_core.pc
 share/gg2/pixmaps/arrow.png
 share/gg2/pixmaps/away.png
 share/gg2/pixmaps/emoticon.gif
@@ -255,7 +255,9 @@ share/gg2/pixmaps/jabber.png
 share/gg2/pixmaps/new-msg.png
 share/gg2/pixmaps/offline.png
 share/gg2/pixmaps/online.png
+share/gg2/pixmaps/push-pin.png
 share/gg2/pixmaps/send-im.png
+share/gg2/pixmaps/show-hide-descriptions.png
 share/gg2/pixmaps/show-hide-inactive.png
 share/gg2/pixmaps/sms.png
 share/gg2/pixmaps/sms_i.png
