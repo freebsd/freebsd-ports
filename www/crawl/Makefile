@@ -19,6 +19,7 @@ LIB_DEPENDS=	md5.1:${PORTSDIR}/www/libwww \
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
+USE_REINPLACE=	yes
 USE_AUTOCONF=	yes
 CONFIGURE_ARGS=	--with-libevent=${LOCALBASE}
 CONFIGURE_ENV=	LIBS="${LDFLAGS} -L${LOCALBASE}/lib -lmd5"
@@ -26,6 +27,7 @@ CONFIGURE_ENV=	LIBS="${LDFLAGS} -L${LOCALBASE}/lib -lmd5"
 MAN1=	crawl.1
 
 post-patch:
-	@${PERL} -pi -e 's,-ldb,-ldb3,g' ${WRKSRC}/configure.in
+	@${REINPLACE_CMD} -e 's,-ldb,-ldb3,g' ${WRKSRC}/configure.in
+	${CHMOD} u+w ${WRKSRC}/*
 
 .include <bsd.port.mk>
