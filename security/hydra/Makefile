@@ -7,12 +7,12 @@
 #
 
 PORTNAME=	hydra
-PORTVERSION=	4.0
+PORTVERSION=	4.5
 CATEGORIES=	security
 MASTER_SITES=	http://www.thc.org/releases/ \
 		${MASTER_SITE_PACKETSTORM}
-EXTRACT_SUFX=	-src.tar.gz
 MASTER_SITE_SUBDIR=	groups/thc
+EXTRACT_SUFX=	-src.tar.gz
 
 MAINTAINER=	llevier@argosnet.com
 COMMENT=	Brute force attack utility working on multiple network services
@@ -22,6 +22,7 @@ PLIST_FILES=	bin/hydra
 USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 USE_OPENSSL=	yes
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}-src
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|CC = gcc||; \
