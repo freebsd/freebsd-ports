@@ -17,7 +17,7 @@ that you can use to build amulet programs. This is an adaption
 of the Makefiles that come with amulet, which does not require the 
 AMULET_DIR and AMULET_VARS_FILE to be set.
 
-http://pecan.srv.cs.cmu.edu/afs/cs/project/amulet/www/
+WWW: http://pecan.srv.cs.cmu.edu/afs/cs/project/amulet/www/
 
 Filip Bovyn
 bovynf@awe.be
