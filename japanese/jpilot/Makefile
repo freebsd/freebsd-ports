@@ -1,5 +1,5 @@
 # New ports collection makefile for:   jpilot (japanized)
-# Version required:    0.96
+# Version required:    0.97
 # Date created:        Tue Aug 31 23:23:00 JST 1999
 # Whom:                sumikawa
 #
@@ -9,7 +9,7 @@
 MASTERDIR=	${.CURDIR}/../../palm/jpilot
 COMMENT=	${.CURDIR}/pkg/COMMENT
 
-PKGNAME=	ja-jpilot-0.96
+PKGNAME=	ja-jpilot-0.97
 CATEGORIES=	japanese
 
 MAINTAINER=	sumikawa@kame.net
