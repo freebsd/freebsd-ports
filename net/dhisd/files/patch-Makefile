@@ -1,15 +1,24 @@
---- Makefile.orig	Sat Feb 24 02:59:57 2001
-+++ Makefile	Sat Feb 24 03:01:42 2001
-@@ -28,9 +28,11 @@
+--- Makefile.orig	Wed Mar  7 11:53:58 2001
++++ Makefile	Mon Mar 19 17:43:57 2001
+@@ -26,16 +26,16 @@
+ #      DHIS(c)  Dynamic Host Information System Release 4.0
+ 
  CC=gcc
- CFLAGS=-I/usr/local/include
- LFLAGS=-L/usr/local/lib
--LIBS=-lbind -lgmp 
+-CFLAGS=-I/usr/local/include -I/usr/bind/include \
+-       -I/usr/local/bind/include # -DBIND821
+-LFLAGS=-L/usr/local/lib -L/usr/bind/lib -L/usr/local/bind/lib
+-LIBS=-lnsl -lsocket -lbind -lgmp 
++CFLAGS=-I/usr/local/include -DHAVE_SYS_PARAM_H
++LFLAGS=-L/usr/local/lib
 +LIBS=-lgmp 
  OBJS=log.o network.o misc.o db.o online.o nsupdate.o main.o
  RM=rm -f
-+
-+all:	dhisd
  
++all:	dhisd
++
  dhisd:	$(OBJS)
  	$(CC) $(LFLAGS) -o dhisd $(OBJS) $(LIBS)
+-	strip dhisd
+ 
+ clean:
+ 	$(RM) *.core core dhisd *.o
