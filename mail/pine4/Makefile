@@ -26,6 +26,7 @@ RUN_DEPENDS=	ispell:${PORTSDIR}/textproc/ispell
 #
 .if defined(WITH_LDAP)
 USE_OPENLDAP=	yes
+LDAP_PREFIX?=	${LOCALBASE}
 .endif
 
 .if defined(WITHOUT_SSL)
