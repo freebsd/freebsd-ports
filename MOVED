@@ -1375,4 +1375,5 @@ benchmarks/bytebench|benchmarks/unixbench|2005-01-08|revived under new name
 audio/trm|audio/libtunepimp|2005-01-09|trm is now part of libtunepimp
 java/kaffe-devel|java/kaffe|2005-01-10|merge kaffe-devel into kaffe
 audio/gqmpeg|audio/gqmpeg-devel|2005-01-12|finished repocopy
-graphics/libtheora|multimedia/libtheora|2005-01-12|finished repocopy
+graphics/libtheora|multimedia/libtheora|2005-01-13|finished repocopy
+www/bluefish-devel|www/bluefish|2005-01-13|devel port no long needed after update
