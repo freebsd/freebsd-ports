@@ -80,6 +80,7 @@
     SUBDIR += oqtplayer
     SUBDIR += ppm2fli
     SUBDIR += recmpeg
+    SUBDIR += ruby-gst
     SUBDIR += slideshow
     SUBDIR += smpeg
     SUBDIR += smpeg-xmms
