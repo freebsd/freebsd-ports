@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	orion
-PORTVERSION=	2.0.1
+PORTVERSION=	2.0.2
 CATEGORIES=	www java
 MASTER_SITES=	http://www.orionserver.com/distributions/ \
 		http://www.atlassian.com/software/orion/downloads/

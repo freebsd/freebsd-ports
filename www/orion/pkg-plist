@@ -1,415 +1,351 @@
 bin/orionctl
 etc/rc.d/020.orion.sh
 man/man1/orionctl.1
-%%T%%/applications/news.ear
-%%T%%/applications/atm.ear
-%%T%%/applications/estore-bugs.txt
-%%T%%/applications/estore-install.txt
-%%T%%/applications/estore-orionadapter.jar
-%%T%%/applications/estore-patched.ear
-%%T%%/applications/news-install.txt
-%%T%%/applications/atm-install.txt
-%%T%%/demo/ejb/cart/META-INF/application-client.xml
-%%T%%/demo/ejb/cart/META-INF/ejb-jar.xml
-%%T%%/demo/ejb/cart/META-INF/MANIFEST.MF
-%%T%%/demo/ejb/cart/Cart.class
-%%T%%/demo/ejb/cart/Cart.java
-%%T%%/demo/ejb/cart/CartClient.class
-%%T%%/demo/ejb/cart/CartClient.java
-%%T%%/demo/ejb/cart/CartEJB.class
-%%T%%/demo/ejb/cart/CartEJB.java
-%%T%%/demo/ejb/cart/CartHome.class
-%%T%%/demo/ejb/cart/CartHome.java
-%%T%%/demo/ejb/cart/jndi.properties
-%%T%%/demo/ejb/cart/NotInCartException.class
-%%T%%/demo/ejb/cart/NotInCartException.java
-%%T%%/demo/ejb/cart/orion-cart.jar
-%%T%%/demo/ejb/META-INF/application.xml
-%%T%%/demo/ejb/product/META-INF/application-client.xml
-%%T%%/demo/ejb/product/META-INF/ejb-jar.xml
-%%T%%/demo/ejb/product/META-INF/MANIFEST.MF
-%%T%%/demo/ejb/product/jndi.properties
-%%T%%/demo/ejb/product/orion-product.jar
-%%T%%/demo/ejb/product/Product.class
-%%T%%/demo/ejb/product/Product.java
-%%T%%/demo/ejb/product/product.skeleton
-%%T%%/demo/ejb/product/ProductClient.class
-%%T%%/demo/ejb/product/ProductClient.java
-%%T%%/demo/ejb/product/ProductEJB.class
-%%T%%/demo/ejb/product/ProductEJB.java
-%%T%%/demo/ejb/product/ProductHome.class
-%%T%%/demo/ejb/product/ProductHome.java
-%%T%%/demo/ejb/product/ProductServlet.class
-%%T%%/demo/ejb/product/ProductServlet.java
-%%T%%/demo/ejb/usermanager/META-INF/ejb-jar.xml
-%%T%%/demo/ejb/install.txt
-%%T%%/demo/jms/coffeemaker/META-INF/application-client.xml
-%%T%%/demo/jms/coffeemaker/META-INF/MANIFEST.MF
-%%T%%/demo/jms/coffeemaker/META-INF/orion-application-client.xml
-%%T%%/demo/jms/coffeemaker/CoffeeMachine.class
-%%T%%/demo/jms/coffeemaker/CoffeeMachine.java
-%%T%%/demo/jms/coffeemaker/CoffeeMaker.class
-%%T%%/demo/jms/coffeemaker/CoffeeMaker.java
-%%T%%/demo/jms/coffeemaker/jndi.properties
-%%T%%/demo/jms/jmschat/META-INF/application-client.xml
-%%T%%/demo/jms/jmschat/META-INF/MANIFEST.MF
-%%T%%/demo/jms/jmschat/META-INF/orion-application-client.xml
-%%T%%/demo/jms/jmschat/JMSChat$1.class
-%%T%%/demo/jms/jmschat/JMSChat.class
-%%T%%/demo/jms/jmschat/JMSChat.java
-%%T%%/demo/jms/jmschat/jndi.properties
-%%T%%/demo/jms/coffeemaker.jar
-%%T%%/demo/jms/jmschat.jar
-%%T%%/demo/jms/jmsdemo-readme.txt
-%%T%%/demo/news-app/news-client-source/com/evermind/ejb/NewsClient.class
-%%T%%/demo/news-app/news-client-source/com/evermind/ejb/NewsClient.java
-%%T%%/demo/news-app/news-client-source/com/evermind/ejb/NewsItemClient.class
-%%T%%/demo/news-app/news-client-source/META-INF/application-client.xml
-%%T%%/demo/news-app/news-client-source/META-INF/MANIFEST.MF
-%%T%%/demo/news-app/news-ejb-source/com/evermind/ejb/NewsView.java
-%%T%%/demo/news-app/news-ejb-source/com/evermind/ejb/NewsItem.java
-%%T%%/demo/news-app/news-ejb-source/com/evermind/ejb/NewsItemClient.class
-%%T%%/demo/news-app/news-ejb-source/com/evermind/ejb/NewsItemEJB.class
-%%T%%/demo/news-app/news-ejb-source/com/evermind/ejb/NewsItemEJB.java
-%%T%%/demo/news-app/news-ejb-source/com/evermind/ejb/NewsItemHome.class
-%%T%%/demo/news-app/news-ejb-source/com/evermind/ejb/NewsItemHome.java
-%%T%%/demo/news-app/news-ejb-source/com/evermind/ejb/NewsItemServlet.class
-%%T%%/demo/news-app/news-ejb-source/com/evermind/ejb/NewsItemServlet.java
-%%T%%/demo/news-app/news-ejb-source/com/evermind/ejb/NewsSession.class
-%%T%%/demo/news-app/news-ejb-source/com/evermind/ejb/NewsSession.java
-%%T%%/demo/news-app/news-ejb-source/com/evermind/ejb/NewsSessionEJB.class
-%%T%%/demo/news-app/news-ejb-source/com/evermind/ejb/NewsSessionEJB.java
-%%T%%/demo/news-app/news-ejb-source/com/evermind/ejb/NewsSessionHome.class
-%%T%%/demo/news-app/news-ejb-source/com/evermind/ejb/NewsSessionHome.java
-%%T%%/demo/news-app/news-ejb-source/com/evermind/ejb/NewsView.class
-%%T%%/demo/news-app/news-ejb-source/com/evermind/ejb/NewsItem.class
-%%T%%/demo/news-app/news-ejb-source/META-INF/ejb-jar.xml
-%%T%%/demo/news-app/news-web/WEB-INF/lib/ejbtags.jar
-%%T%%/demo/news-app/news-web/WEB-INF/lib/utiltags.jar
-%%T%%/demo/news-app/news-web/WEB-INF/web.xml
-%%T%%/demo/news-app/news-web/admin/editnews.jsp
-%%T%%/demo/news-app/news-web/admin/editnews_done.jsp
-%%T%%/demo/news-app/news-web/addnews_done.jsp
-%%T%%/demo/news-app/news-web/border.html
-%%T%%/demo/news-app/news-web/checks.jsp
-%%T%%/demo/news-app/news-web/index.html
-%%T%%/demo/news-app/news-web/initviews.jsp
-%%T%%/demo/news-app/news-web/login-error.html
-%%T%%/demo/news-app/news-web/login.html
-%%T%%/demo/news-app/news-web/loginbox.jsp
-%%T%%/demo/news-app/news-web/logout.jsp
-%%T%%/demo/news-app/news-web/news-body.jsp
-%%T%%/demo/news-app/news-web/news.jsp
-%%T%%/demo/news-app/news-web/newsdetail.jsp
-%%T%%/demo/news-app/news-web/newssearch.jsp
-%%T%%/demo/news-app/news-web/usertest.jsp
-%%T%%/demo/news-app/news-web/addnews.jsp
-%%T%%/demo/news-app/META-INF/application.xml
-%%T%%/demo/news-app/news-web.war
-%%T%%/demo/news-app/counter.jar
-%%T%%/demo/news-app/news-client.jar
-%%T%%/demo/news-app/news-ejb.jar
-%%T%%/demo/rmi/RMIApp.class
-%%T%%/demo/rmi/RMIApp.java
-%%T%%/demo/ssl/ssl-sample.ear
-%%T%%/demo/messagelogger.ear
-%%T%%/default-web-app/examples/cal/TableBean.txt
-%%T%%/default-web-app/examples/cal/cal1.txt
-%%T%%/default-web-app/examples/cal/cal2.jsp
-%%T%%/default-web-app/examples/cal/cal2.txt
-%%T%%/default-web-app/examples/cal/calendar.html
-%%T%%/default-web-app/examples/cal/Entries.txt
-%%T%%/default-web-app/examples/cal/Entry.txt
-%%T%%/default-web-app/examples/cal/JspCalendar.txt
-%%T%%/default-web-app/examples/cal/login.html
-%%T%%/default-web-app/examples/cal/cal1.jsp
-%%T%%/default-web-app/examples/images/code.gif
-%%T%%/default-web-app/examples/images/execute.gif
-%%T%%/default-web-app/examples/images/return.gif
-%%T%%/default-web-app/examples/jsp/jsptoserv/hello.jsp
-%%T%%/default-web-app/examples/jsp/jsptoserv/jsptoservlet.jsp
-%%T%%/default-web-app/examples/jsp/jsptoserv/jts.html
-%%T%%/default-web-app/examples/jsp/jsptoserv/jts.txt
-%%T%%/default-web-app/examples/jsp/jsptoserv/stj.txt
-%%T%%/default-web-app/examples/jsp/checkbox/check.html
-%%T%%/default-web-app/examples/jsp/checkbox/checkresult.jsp
-%%T%%/default-web-app/examples/jsp/checkbox/checkresult.txt
-%%T%%/default-web-app/examples/jsp/checkbox/CheckTest.html
-%%T%%/default-web-app/examples/jsp/checkbox/cresult.html
-%%T%%/default-web-app/examples/jsp/colors/clr.html
-%%T%%/default-web-app/examples/jsp/colors/ColorGameBean.html
-%%T%%/default-web-app/examples/jsp/colors/colors.html
-%%T%%/default-web-app/examples/jsp/colors/colors.txt
-%%T%%/default-web-app/examples/jsp/colors/colrs.jsp
-%%T%%/default-web-app/examples/jsp/dates/date.html
-%%T%%/default-web-app/examples/jsp/dates/date.jsp
-%%T%%/default-web-app/examples/jsp/dates/date.txt
-%%T%%/default-web-app/examples/jsp/error/er.html
-%%T%%/default-web-app/examples/jsp/error/err.jsp
-%%T%%/default-web-app/examples/jsp/error/err.txt
-%%T%%/default-web-app/examples/jsp/error/error.html
-%%T%%/default-web-app/examples/jsp/error/errorpge.jsp
-%%T%%/default-web-app/examples/jsp/forward/forward.jsp
-%%T%%/default-web-app/examples/jsp/forward/forward.txt
-%%T%%/default-web-app/examples/jsp/forward/fwd.html
-%%T%%/default-web-app/examples/jsp/forward/one.jsp
-%%T%%/default-web-app/examples/jsp/forward/two.html
-%%T%%/default-web-app/examples/jsp/include/foo.html
-%%T%%/default-web-app/examples/jsp/include/foo.jsp
-%%T%%/default-web-app/examples/jsp/include/inc.html
-%%T%%/default-web-app/examples/jsp/include/include.jsp
-%%T%%/default-web-app/examples/jsp/include/include.txt
-%%T%%/default-web-app/examples/jsp/cal/TableBean.txt
-%%T%%/default-web-app/examples/jsp/cal/cal1.txt
-%%T%%/default-web-app/examples/jsp/cal/cal2.jsp
-%%T%%/default-web-app/examples/jsp/cal/cal2.txt
-%%T%%/default-web-app/examples/jsp/cal/calendar.html
-%%T%%/default-web-app/examples/jsp/cal/Entries.txt
-%%T%%/default-web-app/examples/jsp/cal/Entry.txt
-%%T%%/default-web-app/examples/jsp/cal/JspCalendar.txt
-%%T%%/default-web-app/examples/jsp/cal/login.html
-%%T%%/default-web-app/examples/jsp/cal/cal1.jsp
-%%T%%/default-web-app/examples/jsp/num/numguess.html
-%%T%%/default-web-app/examples/jsp/num/numguess.jsp
-%%T%%/default-web-app/examples/jsp/num/numguess.txt
-%%T%%/default-web-app/examples/jsp/plugin/applet/Clock2.class
-%%T%%/default-web-app/examples/jsp/plugin/applet/Clock2.java
-%%T%%/default-web-app/examples/jsp/plugin/plugin.html
-%%T%%/default-web-app/examples/jsp/plugin/plugin.jsp
-%%T%%/default-web-app/examples/jsp/plugin/plugin.txt
-%%T%%/default-web-app/examples/jsp/sessions/carts.html
-%%T%%/default-web-app/examples/jsp/sessions/carts.jsp
-%%T%%/default-web-app/examples/jsp/sessions/carts.txt
-%%T%%/default-web-app/examples/jsp/sessions/crt.html
-%%T%%/default-web-app/examples/jsp/sessions/DummyCart.html
-%%T%%/default-web-app/examples/jsp/snp/snoop.html
-%%T%%/default-web-app/examples/jsp/snp/snoop.jsp
-%%T%%/default-web-app/examples/jsp/snp/snoop.txt
-%%T%%/default-web-app/examples/jsp/taglib/loop/META-INF/taglib.tld
-%%T%%/default-web-app/examples/jsp/taglib/loop/taglib/LoopTag.class
-%%T%%/default-web-app/examples/jsp/taglib/loop/taglib/LoopTag.java
-%%T%%/default-web-app/examples/jsp/taglib/loop/index.html
-%%T%%/default-web-app/examples/jsp/taglib/loop/looptag.jsp
-%%T%%/default-web-app/examples/jsp/taglib/loop/looptag.jsp.txt
-%%T%%/default-web-app/examples/jsp/taglib/loop/looptags.jar
-%%T%%/default-web-app/examples/jsp/index.html
-%%T%%/default-web-app/examples/perl/helloworld.pl
-%%T%%/default-web-app/examples/perl/post.html
-%%T%%/default-web-app/examples/perl/post.pl
-%%T%%/default-web-app/examples/ssi/other.txt
-%%T%%/default-web-app/examples/ssi/real.txt
-%%T%%/default-web-app/examples/ssi/ssi.shtml
-%%T%%/default-web-app/examples/xsl/data.xml
-%%T%%/default-web-app/examples/xsl/data.xsl
-%%T%%/default-web-app/examples/xsl/doc.dtd
-%%T%%/default-web-app/examples/xsl/doc.jsp
-%%T%%/default-web-app/examples/xsl/doc.xml
-%%T%%/default-web-app/examples/xsl/doc.xsl
-%%T%%/default-web-app/WEB-INF/classes/num/NumberGuessBean.class
-%%T%%/default-web-app/WEB-INF/classes/num/NumberGuessBean.java
-%%T%%/default-web-app/WEB-INF/classes/dates/JspCalendar.class
-%%T%%/default-web-app/WEB-INF/classes/dates/JspCalendar.java
-%%T%%/default-web-app/WEB-INF/classes/error/Smart.class
-%%T%%/default-web-app/WEB-INF/classes/error/Smart.java
-%%T%%/default-web-app/WEB-INF/classes/colors/ColorGameBean.class
-%%T%%/default-web-app/WEB-INF/classes/colors/ColorGameBean.java
-%%T%%/default-web-app/WEB-INF/classes/sessions/DummyCart.class
-%%T%%/default-web-app/WEB-INF/classes/sessions/DummyCart.java
-%%T%%/default-web-app/WEB-INF/classes/checkbox/CheckTest.class
-%%T%%/default-web-app/WEB-INF/classes/checkbox/CheckTest.java
-%%T%%/default-web-app/WEB-INF/classes/cal/TableBean.java
-%%T%%/default-web-app/WEB-INF/classes/cal/Entries.java
-%%T%%/default-web-app/WEB-INF/classes/cal/Entry.class
-%%T%%/default-web-app/WEB-INF/classes/cal/Entry.java
-%%T%%/default-web-app/WEB-INF/classes/cal/JspCalendar.class
-%%T%%/default-web-app/WEB-INF/classes/cal/JspCalendar.java
-%%T%%/default-web-app/WEB-INF/classes/cal/TableBean.class
-%%T%%/default-web-app/WEB-INF/classes/cal/Entries.class
-%%T%%/default-web-app/WEB-INF/classes/Counter.class
-%%T%%/default-web-app/WEB-INF/classes/Counter.java
-%%T%%/default-web-app/WEB-INF/classes/DateServlet.class
-%%T%%/default-web-app/WEB-INF/classes/DateServlet.java
-%%T%%/default-web-app/WEB-INF/classes/FingerServlet.class
-%%T%%/default-web-app/WEB-INF/classes/FingerServlet.java
-%%T%%/default-web-app/WEB-INF/classes/HelloWorldExample.class
-%%T%%/default-web-app/WEB-INF/classes/HelloWorldExample.java
-%%T%%/default-web-app/WEB-INF/classes/HelloWorldServlet.class
-%%T%%/default-web-app/WEB-INF/classes/HelloWorldServlet.java
-%%T%%/default-web-app/WEB-INF/classes/LinkCheckerServlet.class
-%%T%%/default-web-app/WEB-INF/classes/LinkCheckerServlet.java
-%%T%%/default-web-app/WEB-INF/classes/LocalStrings.properties
-%%T%%/default-web-app/WEB-INF/classes/ParameterBean.class
-%%T%%/default-web-app/WEB-INF/classes/ParameterBean.java
-%%T%%/default-web-app/WEB-INF/classes/RedirectServlet.class
-%%T%%/default-web-app/WEB-INF/classes/RedirectServlet.java
-%%T%%/default-web-app/WEB-INF/classes/RequestHeaderExample.class
-%%T%%/default-web-app/WEB-INF/classes/RequestHeaderExample.java
-%%T%%/default-web-app/WEB-INF/classes/RequestInfoExample.class
-%%T%%/default-web-app/WEB-INF/classes/RequestInfoExample.java
-%%T%%/default-web-app/WEB-INF/classes/RequestParamExample.class
-%%T%%/default-web-app/WEB-INF/classes/RequestParamExample.java
-%%T%%/default-web-app/WEB-INF/classes/SessionExample.class
-%%T%%/default-web-app/WEB-INF/classes/SessionExample.java
-%%T%%/default-web-app/WEB-INF/classes/SessionServlet.class
-%%T%%/default-web-app/WEB-INF/classes/SessionServlet.java
-%%T%%/default-web-app/WEB-INF/classes/SimpleServlet.class
-%%T%%/default-web-app/WEB-INF/classes/SimpleServlet.java
-%%T%%/default-web-app/WEB-INF/classes/SnoopServlet.class
-%%T%%/default-web-app/WEB-INF/classes/SnoopServlet.java
-%%T%%/default-web-app/WEB-INF/classes/SurveyServlet.class
-%%T%%/default-web-app/WEB-INF/classes/SurveyServlet.java
-%%T%%/default-web-app/WEB-INF/classes/ToJSPServlet.class
-%%T%%/default-web-app/WEB-INF/classes/ToJSPServlet.java
-%%T%%/default-web-app/WEB-INF/classes/UpperCaseFilter.class
-%%T%%/default-web-app/WEB-INF/classes/UpperCaseFilter.java
-%%T%%/default-web-app/WEB-INF/classes/URLInfo.class
-%%T%%/default-web-app/WEB-INF/classes/BBoardServlet.class
-%%T%%/default-web-app/WEB-INF/classes/BBoardServlet.java
-%%T%%/default-web-app/WEB-INF/classes/ConfigServlet.class
-%%T%%/default-web-app/WEB-INF/classes/ConfigServlet.java
-%%T%%/default-web-app/WEB-INF/classes/CookieExample.class
-%%T%%/default-web-app/WEB-INF/classes/CookieExample.java
-%%T%%/default-web-app/WEB-INF/web.xml
-%%T%%/default-web-app/index.html
-%%T%%/docs/license/hsqldb_lic.txt
-%%T%%/docs/license/Copyright.txt
-%%T%%/docs/license/license.txt
-%%T%%/docs/Readme.txt
-%%T%%/log/stdout.log
-%%T%%/log/stderr.log
-%%T%%/persistence/transaction.state
-%%T%%/config/database-schemas/mimer.xml
-%%T%%/config/database-schemas/ms-access.xml
-%%T%%/config/database-schemas/ms-sql.xml
-%%T%%/config/database-schemas/oracle.xml
-%%T%%/config/database-schemas/postgresql.xml
-%%T%%/config/database-schemas/sapdb.xml
-%%T%%/config/database-schemas/sybase.xml
-%%T%%/config/database-schemas/cloudscape.xml
-%%T%%/config/database-schemas/mckoi.xml
-%%T%%/config/database-schemas/hypersonic.xml
-%%T%%/config/application.xml
-%%T%%/config/data-sources.xml
-%%T%%/config/default-web-site.xml
-%%T%%/config/global-web-application.xml
-%%T%%/config/jms.xml
-%%T%%/config/mime.types
-%%T%%/config/principals.xml
-%%T%%/config/rmi.xml
-%%T%%/config/server.xml
-%%T%%/lib/hsqldb.jar
-%%T%%/mail.jar
-%%T%%/loadbalancer.jar
-%%T%%/jta.jar
-%%T%%/jsse.jar
-%%T%%/jnet.jar
-%%T%%/jndi.jar
-%%T%%/jdbc.jar
-%%T%%/jcert.jar
-%%T%%/jaxp.jar
-%%T%%/jaas.jar
-%%T%%/ejbmaker.jar
-%%T%%/ejbassembler.jar
-%%T%%/ejb.jar
-%%T%%/crimson.jar
-%%T%%/earassembler.jar
-%%T%%/connector.jar
-%%T%%/clientassembler.jar
-%%T%%/changes.txt
-%%T%%/autoupdate.properties
-%%T%%/autoupdate.jar
-%%T%%/assemblerlauncher.jar
-%%T%%/applicationlauncher.jar
-%%T%%/admin.jar
-%%T%%/activation.jar
-%%T%%/xerces.jar
-%%T%%/Readme.txt
-%%T%%/xalan.jar
-%%T%%/webappassembler.jar
-%%T%%/taglibassembler.jar
-%%T%%/parser.jar
-%%T%%/orionembedded.jar
-%%T%%/orionconsole.jar
-%%T%%/orionclient.jar
-%%T%%/orion.jar
-%%T%%/orion.properties
-%%T%%/tools.jar
-@dirrm %%T%%/application-deployments
-@dirrm %%T%%/applications
-@dirrm %%T%%/demo/ejb/cart/META-INF
-@dirrm %%T%%/demo/ejb/cart
-@dirrm %%T%%/demo/ejb/META-INF
-@dirrm %%T%%/demo/ejb/product/META-INF
-@dirrm %%T%%/demo/ejb/product
-@dirrm %%T%%/demo/ejb/usermanager/META-INF
-@dirrm %%T%%/demo/ejb/usermanager
-@dirrm %%T%%/demo/ejb
-@dirrm %%T%%/demo/jms/coffeemaker/META-INF
-@dirrm %%T%%/demo/jms/coffeemaker
-@dirrm %%T%%/demo/jms/jmschat/META-INF
-@dirrm %%T%%/demo/jms/jmschat
-@dirrm %%T%%/demo/jms
-@dirrm %%T%%/demo/news-app/news-client-source/com/evermind/ejb
-@dirrm %%T%%/demo/news-app/news-client-source/com/evermind
-@dirrm %%T%%/demo/news-app/news-client-source/com
-@dirrm %%T%%/demo/news-app/news-client-source/META-INF
-@dirrm %%T%%/demo/news-app/news-client-source
-@dirrm %%T%%/demo/news-app/news-ejb-source/com/evermind/ejb
-@dirrm %%T%%/demo/news-app/news-ejb-source/com/evermind
-@dirrm %%T%%/demo/news-app/news-ejb-source/com
-@dirrm %%T%%/demo/news-app/news-ejb-source/META-INF
-@dirrm %%T%%/demo/news-app/news-ejb-source
-@dirrm %%T%%/demo/news-app/news-web/WEB-INF/classes
-@dirrm %%T%%/demo/news-app/news-web/WEB-INF/lib
-@dirrm %%T%%/demo/news-app/news-web/WEB-INF
-@dirrm %%T%%/demo/news-app/news-web/admin
-@dirrm %%T%%/demo/news-app/news-web
-@dirrm %%T%%/demo/news-app/META-INF
-@dirrm %%T%%/demo/news-app
-@dirrm %%T%%/demo/rmi
-@dirrm %%T%%/demo/ssl
-@dirrm %%T%%/demo
-@dirrm %%T%%/default-web-app/examples/cal
-@dirrm %%T%%/default-web-app/examples/images
-@dirrm %%T%%/default-web-app/examples/jsp/jsptoserv
-@dirrm %%T%%/default-web-app/examples/jsp/checkbox
-@dirrm %%T%%/default-web-app/examples/jsp/colors
-@dirrm %%T%%/default-web-app/examples/jsp/dates
-@dirrm %%T%%/default-web-app/examples/jsp/error
-@dirrm %%T%%/default-web-app/examples/jsp/forward
-@dirrm %%T%%/default-web-app/examples/jsp/include
-@dirrm %%T%%/default-web-app/examples/jsp/cal
-@dirrm %%T%%/default-web-app/examples/jsp/num
-@dirrm %%T%%/default-web-app/examples/jsp/plugin/applet
-@dirrm %%T%%/default-web-app/examples/jsp/plugin
-@dirrm %%T%%/default-web-app/examples/jsp/sessions
-@dirrm %%T%%/default-web-app/examples/jsp/snp
-@dirrm %%T%%/default-web-app/examples/jsp/taglib/loop/META-INF
-@dirrm %%T%%/default-web-app/examples/jsp/taglib/loop/taglib
-@dirrm %%T%%/default-web-app/examples/jsp/taglib/loop
-@dirrm %%T%%/default-web-app/examples/jsp/taglib
-@dirrm %%T%%/default-web-app/examples/jsp
-@dirrm %%T%%/default-web-app/examples/perl
-@dirrm %%T%%/default-web-app/examples/ssi
-@dirrm %%T%%/default-web-app/examples/xsl
-@dirrm %%T%%/default-web-app/examples
-@dirrm %%T%%/default-web-app/WEB-INF/classes/num
-@dirrm %%T%%/default-web-app/WEB-INF/classes/dates
-@dirrm %%T%%/default-web-app/WEB-INF/classes/error
-@dirrm %%T%%/default-web-app/WEB-INF/classes/colors
-@dirrm %%T%%/default-web-app/WEB-INF/classes/sessions
-@dirrm %%T%%/default-web-app/WEB-INF/classes/checkbox
-@dirrm %%T%%/default-web-app/WEB-INF/classes/cal
-@dirrm %%T%%/default-web-app/WEB-INF/classes
-@dirrm %%T%%/default-web-app/WEB-INF
-@dirrm %%T%%/default-web-app
-@dirrm %%T%%/database
-@dirrm %%T%%/docs/license
-@dirrm %%T%%/docs
-@dirrm %%T%%/log
-@dirrm %%T%%/persistence/ejb
-@dirrm %%T%%/persistence
-@dirrm %%T%%/config/database-schemas
-@dirrm %%T%%/config
-@dirrm %%T%%/lib
-@dirrm %%T%%
+orion2/applications/atm-install.txt
+orion2/applications/atm.ear
+orion2/applications/estore-bugs.txt
+orion2/applications/estore-install.txt
+orion2/applications/estore-orionadapter.jar
+orion2/applications/estore-patched.ear
+orion2/demo/ejb/cart/META-INF/application-client.xml
+orion2/demo/ejb/cart/META-INF/ejb-jar.xml
+orion2/demo/ejb/cart/META-INF/MANIFEST.MF
+orion2/demo/ejb/cart/Cart.class
+orion2/demo/ejb/cart/Cart.java
+orion2/demo/ejb/cart/CartClient.class
+orion2/demo/ejb/cart/CartClient.java
+orion2/demo/ejb/cart/CartEJB.class
+orion2/demo/ejb/cart/CartEJB.java
+orion2/demo/ejb/cart/CartHome.class
+orion2/demo/ejb/cart/CartHome.java
+orion2/demo/ejb/cart/jndi.properties
+orion2/demo/ejb/cart/NotInCartException.class
+orion2/demo/ejb/cart/NotInCartException.java
+orion2/demo/ejb/cart/orion-cart.jar
+orion2/demo/ejb/META-INF/application.xml
+orion2/demo/ejb/product/META-INF/application-client.xml
+orion2/demo/ejb/product/META-INF/ejb-jar.xml
+orion2/demo/ejb/product/META-INF/MANIFEST.MF
+orion2/demo/ejb/product/jndi.properties
+orion2/demo/ejb/product/orion-product.jar
+orion2/demo/ejb/product/Product.class
+orion2/demo/ejb/product/Product.java
+orion2/demo/ejb/product/product.skeleton
+orion2/demo/ejb/product/ProductClient.class
+orion2/demo/ejb/product/ProductClient.java
+orion2/demo/ejb/product/ProductEJB.class
+orion2/demo/ejb/product/ProductEJB.java
+orion2/demo/ejb/product/ProductHome.class
+orion2/demo/ejb/product/ProductHome.java
+orion2/demo/ejb/product/ProductServlet.class
+orion2/demo/ejb/product/ProductServlet.java
+orion2/demo/ejb/usermanager/META-INF/ejb-jar.xml
+orion2/demo/ejb/install.txt
+orion2/demo/jms/coffeemaker/META-INF/application-client.xml
+orion2/demo/jms/coffeemaker/META-INF/MANIFEST.MF
+orion2/demo/jms/coffeemaker/META-INF/orion-application-client.xml
+orion2/demo/jms/coffeemaker/CoffeeMachine.class
+orion2/demo/jms/coffeemaker/CoffeeMachine.java
+orion2/demo/jms/coffeemaker/CoffeeMaker.class
+orion2/demo/jms/coffeemaker/CoffeeMaker.java
+orion2/demo/jms/coffeemaker/jndi.properties
+orion2/demo/jms/jmschat/META-INF/application-client.xml
+orion2/demo/jms/jmschat/META-INF/MANIFEST.MF
+orion2/demo/jms/jmschat/META-INF/orion-application-client.xml
+orion2/demo/jms/jmschat/JMSChat$1.class
+orion2/demo/jms/jmschat/JMSChat.class
+orion2/demo/jms/jmschat/JMSChat.java
+orion2/demo/jms/jmschat/jndi.properties
+orion2/demo/jms/coffeemaker.jar
+orion2/demo/jms/jmschat.jar
+orion2/demo/jms/jmsdemo-readme.txt
+orion2/demo/news-app/news-install.txt
+orion2/demo/news-app/news.ear
+orion2/demo/rmi/RMIApp.class
+orion2/demo/rmi/RMIApp.java
+orion2/demo/ssl/ssl-sample.ear
+orion2/demo/messagelogger.ear
+orion2/default-web-app/examples/cal/TableBean.txt
+orion2/default-web-app/examples/cal/cal1.txt
+orion2/default-web-app/examples/cal/cal2.jsp
+orion2/default-web-app/examples/cal/cal2.txt
+orion2/default-web-app/examples/cal/calendar.html
+orion2/default-web-app/examples/cal/Entries.txt
+orion2/default-web-app/examples/cal/Entry.txt
+orion2/default-web-app/examples/cal/JspCalendar.txt
+orion2/default-web-app/examples/cal/login.html
+orion2/default-web-app/examples/cal/cal1.jsp
+orion2/default-web-app/examples/images/code.gif
+orion2/default-web-app/examples/images/execute.gif
+orion2/default-web-app/examples/images/return.gif
+orion2/default-web-app/examples/jsp/jsptoserv/hello.jsp
+orion2/default-web-app/examples/jsp/jsptoserv/jsptoservlet.jsp
+orion2/default-web-app/examples/jsp/jsptoserv/jts.html
+orion2/default-web-app/examples/jsp/jsptoserv/jts.txt
+orion2/default-web-app/examples/jsp/jsptoserv/stj.txt
+orion2/default-web-app/examples/jsp/checkbox/check.html
+orion2/default-web-app/examples/jsp/checkbox/checkresult.jsp
+orion2/default-web-app/examples/jsp/checkbox/checkresult.txt
+orion2/default-web-app/examples/jsp/checkbox/CheckTest.html
+orion2/default-web-app/examples/jsp/checkbox/cresult.html
+orion2/default-web-app/examples/jsp/colors/clr.html
+orion2/default-web-app/examples/jsp/colors/ColorGameBean.html
+orion2/default-web-app/examples/jsp/colors/colors.html
+orion2/default-web-app/examples/jsp/colors/colors.txt
+orion2/default-web-app/examples/jsp/colors/colrs.jsp
+orion2/default-web-app/examples/jsp/dates/date.html
+orion2/default-web-app/examples/jsp/dates/date.jsp
+orion2/default-web-app/examples/jsp/dates/date.txt
+orion2/default-web-app/examples/jsp/error/er.html
+orion2/default-web-app/examples/jsp/error/err.jsp
+orion2/default-web-app/examples/jsp/error/err.txt
+orion2/default-web-app/examples/jsp/error/error.html
+orion2/default-web-app/examples/jsp/error/errorpge.jsp
+orion2/default-web-app/examples/jsp/forward/forward.jsp
+orion2/default-web-app/examples/jsp/forward/forward.txt
+orion2/default-web-app/examples/jsp/forward/fwd.html
+orion2/default-web-app/examples/jsp/forward/one.jsp
+orion2/default-web-app/examples/jsp/forward/two.html
+orion2/default-web-app/examples/jsp/include/foo.html
+orion2/default-web-app/examples/jsp/include/foo.jsp
+orion2/default-web-app/examples/jsp/include/inc.html
+orion2/default-web-app/examples/jsp/include/include.jsp
+orion2/default-web-app/examples/jsp/include/include.txt
+orion2/default-web-app/examples/jsp/cal/TableBean.txt
+orion2/default-web-app/examples/jsp/cal/cal1.txt
+orion2/default-web-app/examples/jsp/cal/cal2.jsp
+orion2/default-web-app/examples/jsp/cal/cal2.txt
+orion2/default-web-app/examples/jsp/cal/calendar.html
+orion2/default-web-app/examples/jsp/cal/Entries.txt
+orion2/default-web-app/examples/jsp/cal/Entry.txt
+orion2/default-web-app/examples/jsp/cal/JspCalendar.txt
+orion2/default-web-app/examples/jsp/cal/login.html
+orion2/default-web-app/examples/jsp/cal/cal1.jsp
+orion2/default-web-app/examples/jsp/num/numguess.html
+orion2/default-web-app/examples/jsp/num/numguess.jsp
+orion2/default-web-app/examples/jsp/num/numguess.txt
+orion2/default-web-app/examples/jsp/plugin/applet/Clock2.class
+orion2/default-web-app/examples/jsp/plugin/applet/Clock2.java
+orion2/default-web-app/examples/jsp/plugin/plugin.html
+orion2/default-web-app/examples/jsp/plugin/plugin.jsp
+orion2/default-web-app/examples/jsp/plugin/plugin.txt
+orion2/default-web-app/examples/jsp/sessions/carts.html
+orion2/default-web-app/examples/jsp/sessions/carts.jsp
+orion2/default-web-app/examples/jsp/sessions/carts.txt
+orion2/default-web-app/examples/jsp/sessions/crt.html
+orion2/default-web-app/examples/jsp/sessions/DummyCart.html
+orion2/default-web-app/examples/jsp/snp/snoop.html
+orion2/default-web-app/examples/jsp/snp/snoop.jsp
+orion2/default-web-app/examples/jsp/snp/snoop.txt
+orion2/default-web-app/examples/jsp/taglib/loop/META-INF/taglib.tld
+orion2/default-web-app/examples/jsp/taglib/loop/taglib/LoopTag.class
+orion2/default-web-app/examples/jsp/taglib/loop/taglib/LoopTag.java
+orion2/default-web-app/examples/jsp/taglib/loop/index.html
+orion2/default-web-app/examples/jsp/taglib/loop/looptag.jsp
+orion2/default-web-app/examples/jsp/taglib/loop/looptag.jsp.txt
+orion2/default-web-app/examples/jsp/taglib/loop/looptags.jar
+orion2/default-web-app/examples/jsp/index.html
+orion2/default-web-app/examples/perl/helloworld.pl
+orion2/default-web-app/examples/perl/post.html
+orion2/default-web-app/examples/perl/post.pl
+orion2/default-web-app/examples/ssi/other.txt
+orion2/default-web-app/examples/ssi/real.txt
+orion2/default-web-app/examples/ssi/ssi.shtml
+orion2/default-web-app/examples/xsl/data.xml
+orion2/default-web-app/examples/xsl/data.xsl
+orion2/default-web-app/examples/xsl/doc.dtd
+orion2/default-web-app/examples/xsl/doc.jsp
+orion2/default-web-app/examples/xsl/doc.xml
+orion2/default-web-app/examples/xsl/doc.xsl
+orion2/default-web-app/WEB-INF/classes/num/NumberGuessBean.class
+orion2/default-web-app/WEB-INF/classes/num/NumberGuessBean.java
+orion2/default-web-app/WEB-INF/classes/dates/JspCalendar.class
+orion2/default-web-app/WEB-INF/classes/dates/JspCalendar.java
+orion2/default-web-app/WEB-INF/classes/error/Smart.class
+orion2/default-web-app/WEB-INF/classes/error/Smart.java
+orion2/default-web-app/WEB-INF/classes/colors/ColorGameBean.class
+orion2/default-web-app/WEB-INF/classes/colors/ColorGameBean.java
+orion2/default-web-app/WEB-INF/classes/sessions/DummyCart.class
+orion2/default-web-app/WEB-INF/classes/sessions/DummyCart.java
+orion2/default-web-app/WEB-INF/classes/checkbox/CheckTest.class
+orion2/default-web-app/WEB-INF/classes/checkbox/CheckTest.java
+orion2/default-web-app/WEB-INF/classes/cal/TableBean.java
+orion2/default-web-app/WEB-INF/classes/cal/Entries.java
+orion2/default-web-app/WEB-INF/classes/cal/Entry.class
+orion2/default-web-app/WEB-INF/classes/cal/Entry.java
+orion2/default-web-app/WEB-INF/classes/cal/JspCalendar.class
+orion2/default-web-app/WEB-INF/classes/cal/JspCalendar.java
+orion2/default-web-app/WEB-INF/classes/cal/TableBean.class
+orion2/default-web-app/WEB-INF/classes/cal/Entries.class
+orion2/default-web-app/WEB-INF/classes/Counter.class
+orion2/default-web-app/WEB-INF/classes/Counter.java
+orion2/default-web-app/WEB-INF/classes/DateServlet.class
+orion2/default-web-app/WEB-INF/classes/DateServlet.java
+orion2/default-web-app/WEB-INF/classes/FingerServlet.class
+orion2/default-web-app/WEB-INF/classes/FingerServlet.java
+orion2/default-web-app/WEB-INF/classes/HelloWorldExample.class
+orion2/default-web-app/WEB-INF/classes/HelloWorldExample.java
+orion2/default-web-app/WEB-INF/classes/HelloWorldServlet.class
+orion2/default-web-app/WEB-INF/classes/HelloWorldServlet.java
+orion2/default-web-app/WEB-INF/classes/LinkCheckerServlet.class
+orion2/default-web-app/WEB-INF/classes/LinkCheckerServlet.java
+orion2/default-web-app/WEB-INF/classes/LocalStrings.properties
+orion2/default-web-app/WEB-INF/classes/ParameterBean.class
+orion2/default-web-app/WEB-INF/classes/ParameterBean.java
+orion2/default-web-app/WEB-INF/classes/RedirectServlet.class
+orion2/default-web-app/WEB-INF/classes/RedirectServlet.java
+orion2/default-web-app/WEB-INF/classes/RequestHeaderExample.class
+orion2/default-web-app/WEB-INF/classes/RequestHeaderExample.java
+orion2/default-web-app/WEB-INF/classes/RequestInfoExample.class
+orion2/default-web-app/WEB-INF/classes/RequestInfoExample.java
+orion2/default-web-app/WEB-INF/classes/RequestParamExample.class
+orion2/default-web-app/WEB-INF/classes/RequestParamExample.java
+orion2/default-web-app/WEB-INF/classes/SessionExample.class
+orion2/default-web-app/WEB-INF/classes/SessionExample.java
+orion2/default-web-app/WEB-INF/classes/SessionServlet.class
+orion2/default-web-app/WEB-INF/classes/SessionServlet.java
+orion2/default-web-app/WEB-INF/classes/SimpleServlet.class
+orion2/default-web-app/WEB-INF/classes/SimpleServlet.java
+orion2/default-web-app/WEB-INF/classes/SnoopServlet.class
+orion2/default-web-app/WEB-INF/classes/SnoopServlet.java
+orion2/default-web-app/WEB-INF/classes/SurveyServlet.class
+orion2/default-web-app/WEB-INF/classes/SurveyServlet.java
+orion2/default-web-app/WEB-INF/classes/ToJSPServlet.class
+orion2/default-web-app/WEB-INF/classes/ToJSPServlet.java
+orion2/default-web-app/WEB-INF/classes/UpperCaseFilter.class
+orion2/default-web-app/WEB-INF/classes/UpperCaseFilter.java
+orion2/default-web-app/WEB-INF/classes/URLInfo.class
+orion2/default-web-app/WEB-INF/classes/BBoardServlet.class
+orion2/default-web-app/WEB-INF/classes/BBoardServlet.java
+orion2/default-web-app/WEB-INF/classes/ConfigServlet.class
+orion2/default-web-app/WEB-INF/classes/ConfigServlet.java
+orion2/default-web-app/WEB-INF/classes/CookieExample.class
+orion2/default-web-app/WEB-INF/classes/CookieExample.java
+orion2/default-web-app/WEB-INF/web.xml
+orion2/default-web-app/index.html
+orion2/docs/license/hsqldb_lic.txt
+orion2/docs/license/Copyright.txt
+orion2/docs/license/license.txt
+orion2/docs/Readme.txt
+orion2/log/stdout.log
+orion2/log/stderr.log
+orion2/persistence/transaction.state
+orion2/config/database-schemas/mimer.xml
+orion2/config/database-schemas/ms-access.xml
+orion2/config/database-schemas/ms-sql.xml
+orion2/config/database-schemas/oracle.xml
+orion2/config/database-schemas/postgresql.xml
+orion2/config/database-schemas/sapdb.xml
+orion2/config/database-schemas/sybase.xml
+orion2/config/database-schemas/cloudscape.xml
+orion2/config/database-schemas/mckoi.xml
+orion2/config/database-schemas/hypersonic.xml
+orion2/config/application.xml
+orion2/config/data-sources.xml
+orion2/config/default-web-site.xml
+orion2/config/global-web-application.xml
+orion2/config/jms.xml
+orion2/config/mime.types
+orion2/config/principals.xml
+orion2/config/rmi.xml
+orion2/config/server.xml
+orion2/lib/hsqldb.jar
+orion2/mail.jar
+orion2/loadbalancer.jar
+orion2/jta.jar
+orion2/jsse.jar
+orion2/jnet.jar
+orion2/jndi.jar
+orion2/jdbc.jar
+orion2/jcert.jar
+orion2/jaxp.jar
+orion2/jaas.jar
+orion2/ejbmaker.jar
+orion2/ejbassembler.jar
+orion2/ejb.jar
+orion2/crimson.jar
+orion2/earassembler.jar
+orion2/connector.jar
+orion2/clientassembler.jar
+orion2/changes.txt
+orion2/autoupdate.properties
+orion2/autoupdate.jar
+orion2/assemblerlauncher.jar
+orion2/applicationlauncher.jar
+orion2/admin.jar
+orion2/activation.jar
+orion2/xerces.jar
+orion2/Readme.txt
+orion2/xalan.jar
+orion2/webappassembler.jar
+orion2/taglibassembler.jar
+orion2/parser.jar
+orion2/orionembedded.jar
+orion2/orionconsole.jar
+orion2/orionclient.jar
+orion2/orion.jar
+orion2/orion.properties
+orion2/tools.jar
+@dirrm orion2/application-deployments
+@dirrm orion2/applications
+@dirrm orion2/demo/ejb/cart/META-INF
+@dirrm orion2/demo/ejb/cart
+@dirrm orion2/demo/ejb/META-INF
+@dirrm orion2/demo/ejb/product/META-INF
+@dirrm orion2/demo/ejb/product
+@dirrm orion2/demo/ejb/usermanager/META-INF
+@dirrm orion2/demo/ejb/usermanager
+@dirrm orion2/demo/ejb
+@dirrm orion2/demo/jms/coffeemaker/META-INF
+@dirrm orion2/demo/jms/coffeemaker
+@dirrm orion2/demo/jms/jmschat/META-INF
+@dirrm orion2/demo/jms/jmschat
+@dirrm orion2/demo/jms
+@dirrm orion2/demo/news-app
+@dirrm orion2/demo/rmi
+@dirrm orion2/demo/ssl
+@dirrm orion2/demo
+@dirrm orion2/default-web-app/examples/cal
+@dirrm orion2/default-web-app/examples/images
+@dirrm orion2/default-web-app/examples/jsp/jsptoserv
+@dirrm orion2/default-web-app/examples/jsp/checkbox
+@dirrm orion2/default-web-app/examples/jsp/colors
+@dirrm orion2/default-web-app/examples/jsp/dates
+@dirrm orion2/default-web-app/examples/jsp/error
+@dirrm orion2/default-web-app/examples/jsp/forward
+@dirrm orion2/default-web-app/examples/jsp/include
+@dirrm orion2/default-web-app/examples/jsp/cal
+@dirrm orion2/default-web-app/examples/jsp/num
+@dirrm orion2/default-web-app/examples/jsp/plugin/applet
+@dirrm orion2/default-web-app/examples/jsp/plugin
+@dirrm orion2/default-web-app/examples/jsp/sessions
+@dirrm orion2/default-web-app/examples/jsp/snp
+@dirrm orion2/default-web-app/examples/jsp/taglib/loop/META-INF
+@dirrm orion2/default-web-app/examples/jsp/taglib/loop/taglib
+@dirrm orion2/default-web-app/examples/jsp/taglib/loop
+@dirrm orion2/default-web-app/examples/jsp/taglib
+@dirrm orion2/default-web-app/examples/jsp
+@dirrm orion2/default-web-app/examples/perl
+@dirrm orion2/default-web-app/examples/ssi
+@dirrm orion2/default-web-app/examples/xsl
+@dirrm orion2/default-web-app/examples
+@dirrm orion2/default-web-app/WEB-INF/classes/num
+@dirrm orion2/default-web-app/WEB-INF/classes/dates
+@dirrm orion2/default-web-app/WEB-INF/classes/error
+@dirrm orion2/default-web-app/WEB-INF/classes/colors
+@dirrm orion2/default-web-app/WEB-INF/classes/sessions
+@dirrm orion2/default-web-app/WEB-INF/classes/checkbox
+@dirrm orion2/default-web-app/WEB-INF/classes/cal
+@dirrm orion2/default-web-app/WEB-INF/classes
+@dirrm orion2/default-web-app/WEB-INF
+@dirrm orion2/default-web-app
+@dirrm orion2/database
+@dirrm orion2/docs/license
+@dirrm orion2/docs
+@dirrm orion2/log
+@dirrm orion2/persistence/ejb
+@dirrm orion2/persistence
+@dirrm orion2/config/database-schemas
+@dirrm orion2/config
+@dirrm orion2/lib
+@dirrm orion2
