@@ -13,6 +13,7 @@ PATCHFILES+=	${DISTNAME}-pinmame-${PINMAMEVERSION}.patch.gz
 
 MAINTAINER=	stijn@win.tue.nl
 COMMENT=	X11 emulator for pinball ROMs
+BROKEN=		"Patch file out of date."
 
 MASTERDIR=	${.CURDIR}/../xmame
 DESCR=		${.CURDIR}/pkg-descr
