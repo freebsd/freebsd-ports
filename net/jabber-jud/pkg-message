@@ -1,0 +1,32 @@
+To activate JUD for your Jabber server, add the following (around line 36 in
+the sample configuration file) to your configuration file
+(${LOCALBASE}/etc/jabber.xml):
+
+
+  <!--
+  If you want this service to be accessible from other servers,
+  change 'jud.localhost' to the server's fully qualified domain name!
+  Also note that ${LOCALBASE} should be changed to your local base
+  (ex: /usr/local).
+  -->
+  <service id="jud">
+    <host>jud.localhost</host>
+    <load><jud>${LOCALBASE}/lib/jabber/jud.so</jud></load>
+    <jud xmlns="jabber:config:jud">
+      <vCard>
+        <FN>Local Organization's User Directory</FN>
+        <DESC>This service provides a simple user directory service.</DESC>
+        <URL>http://foo.bar/</URL>
+      </vCard>                    
+    </jud>   
+  </service>
+
+Add this section to the browse area of the jsm service to advertise it to
+your users (around line 245 of the sample config):
+
+	<service type="jud" jid="jud.localhost" name="My Organization's User Directory">
+	  <ns>jabber:iq:search</ns>
+	  <ns>jabber:iq:register</ns>
+	</service>
+
+Be sure to restart your server after reconfiguring.
