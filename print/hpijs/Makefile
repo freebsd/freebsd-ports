@@ -6,14 +6,14 @@
 #
 
 PORTNAME=	hpijs
-PORTVERSION=	1.3.1
+PORTVERSION=	1.4.1
 CATEGORIES=	print
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	hpinkjet
 DIST_SUBDIR=	ghostscript
 
-MAINTAINER=	ports@FreeBSD.org
-COMMENT=	The drivers and support resources for the HP Inkjet Printers
+MAINTAINER=	DougB@FreeBSD.org
+COMMENT=	Drivers and support resources for HP Inkjet Printers
 
 LIB_DEPENDS=	ijs.1:${PORTSDIR}/print/libijs
 
@@ -23,15 +23,17 @@ USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
+CONFIGURE_ARGS=	--disable-foomatic-install
 
 CPPFLAGS=	`${IJS_CONFIG} --cflags`
 LDFLAGS=	`${IJS_CONFIG} --libs`
 
+CFLAGS+=	-DTRACE="printf"
+
 post-patch:
 	@${REINPLACE_CMD} -e 's|CFLAGS="-O2 -Wall"|CFLAGS="\$$CFLAGS"|g ; \
-		 s|<malloc.h>|<stdlib.h>|g ; \
-		 s|CXXFLAGS="-O2 -Wall"|CXXFLAGS="\$$CXXFLAGS"|g' \
-			${WRKSRC}/configure
+		 s|CXXFLAGS="-O2 -Wall"|CXXFLAGS="\$$CXXFLAGS"|g ; \
+		 s|<malloc\.h>|<stdlib.h>|g' ${WRKSRC}/configure
 	@${REINPLACE_CMD} -e 's| ijs.[cho]||g ; \
 		 s| ijs_client.h||g ; \
 		 s| ijs_server.[cho]||g ; \
@@ -44,5 +46,8 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/gs_hpijs.png ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/hpijs_readme.html ${DOCSDIR}
 .endif
+
+post-install:
+	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
