@@ -56,9 +56,8 @@ HasPam?=		DEFAULT
 
 .if ${HasXdmAuth} == DEFAULT || ${HasXdmAuth} == YES
 .if defined(USA_RESIDENT) && ${USA_RESIDENT} == YES
-pre-fetch:
-	@${ECHO}
-	@${ECHO} Assuming that you have fetched a USA-Legal Wraphelp.c.
+pre-everything::
+	@${ECHO_MSG} "Assuming that you have fetched a USA-Legal Wraphelp.c."
 .else
 MASTER_SITES+=	ftp://psych.psy.uq.oz.au/pub/X11R5/ \
 		ftp://ftp.internat.freebsd.org/pub/FreeBSD/X11-Crypto/ \
@@ -66,11 +65,8 @@ MASTER_SITES+=	ftp://psych.psy.uq.oz.au/pub/X11R5/ \
 EXTRACT_ONLY=	X410src-1.tgz
 DISTFILES+=	Wraphelp.c
 IGNOREFILES=	Wraphelp.c
-.endif
-.endif
-
-.include <bsd.port.pre.mk>
-.include "${FILESDIR}/manpages"
+.endif	# USA_RESIDENT
+.endif	# HasXdmAuth
 
 post-extract:
 	( cd ${WRKDIR} && \
@@ -81,4 +77,6 @@ post-extract:
 do-configure:
 	cd ${.CURDIR} && ${SETENV} ${SCRIPTS_ENV} ${SH} ${SCRIPTDIR}/configure
 
+.include <bsd.port.pre.mk>
+.include "${FILESDIR}/manpages"
 .include <bsd.port.post.mk>

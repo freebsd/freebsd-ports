@@ -25,9 +25,6 @@ DIST_SUBDIR=		xc
 WRKSRC=			${WRKDIR}/xc/doc/man
 INSTALL_TARGET=		install.man
 
-.include <bsd.port.pre.mk>
-.include <${FILESDIR}/manpages>
-
 do-configure:
 	(cd ${WRKSRC} && \
 	 imake -DUseInstalled ${PROJECTROOT} -I${PREFIX}/lib/X11/config \
@@ -36,4 +33,6 @@ do-configure:
 	 ${MAKE} includes ; \
 	 ${MAKE} depend)
 
+.include <bsd.port.pre.mk>
+.include "${FILESDIR}/manpages"
 .include <bsd.port.post.mk>
