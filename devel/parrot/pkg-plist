@@ -1,0 +1,15 @@
+lib/%%PYTHON_VERSION%%/site-packages/HtmlBackend.py
+lib/%%PYTHON_VERSION%%/site-packages/PaxoBackend.py
+lib/%%PYTHON_VERSION%%/site-packages/PytkBackend.py
+lib/%%PYTHON_VERSION%%/site-packages/backend.py
+lib/%%PYTHON_VERSION%%/site-packages/generic.py
+lib/%%PYTHON_VERSION%%/site-packages/inrep.py
+lib/%%PYTHON_VERSION%%/site-packages/makbacl.py
+lib/%%PYTHON_VERSION%%/site-packages/parrot.py
+lib/%%PYTHON_VERSION%%/site-packages/pparser.py
+lib/%%PYTHON_VERSION%%/site-packages/tokpos.py
+lib/%%PYTHON_VERSION%%/site-packages/util.py
+%%PORTDOCS%%share/doc/parrot/INTRO
+%%PORTDOCS%%share/doc/parrot/README
+%%PORTDOCS%%share/doc/parrot/SPEC
+%%PORTDOCS%%@dirrm share/doc/parrot

@@ -561,6 +561,7 @@
     SUBDIR += p5-VCS
     SUBDIR += p5-VCS-CVS
     SUBDIR += p65
+    SUBDIR += parrot
     SUBDIR += patch
     SUBDIR += pccts
     SUBDIR += pcl-cvs-emacs
