@@ -59,7 +59,7 @@ DOC_FILES=	COPYING ChangeLog INSTALL README \
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} >= 502000
+.if ${OSVERSION} >= 502000 && ${OSVERSION} < 502105
 BROKEN=		"Does not compile"
 .endif
 
