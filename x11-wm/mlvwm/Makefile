@@ -22,6 +22,9 @@ MAN1=		mlvwm.1
 
 MLVWMLIBDIR=	${PREFIX}/lib/X11/mlvwm
 
+post-extract:
+	@${TAR} -C ${WRKSRC}/pixmap -xzf ${DISTDIR}/mini-icons.tar.gz
+
 post-patch:
 	@${PERL} -pi -e "s|%%PREFIX%%|${PREFIX}|g" ${WRKSRC}/sample_rc/Mlvwmrc*
 
@@ -30,6 +33,5 @@ post-install:
 	@${MKDIR} ${MLVWMLIBDIR}/pixmap
 	${INSTALL_DATA} ${WRKSRC}/pixmap/*.xpm ${MLVWMLIBDIR}/pixmap
 	${INSTALL_DATA} ${WRKSRC}/sample_rc/Mlvwmrc* ${MLVWMLIBDIR}
-	(cd ${MLVWMLIBDIR}/pixmap; ${TAR} xzf ${DISTDIR}/mini-icons.tar.gz)
 
 .include <bsd.port.mk>

@@ -44,7 +44,6 @@ lib/X11/mlvwm/pixmap/mini-lock.xpm
 lib/X11/mlvwm/pixmap/mini-lower.xpm
 lib/X11/mlvwm/pixmap/mini-mail.xpm
 lib/X11/mlvwm/pixmap/mini-manual.xpm
-lib/X11/mlvwm/pixmap/mini-sh.xpm
 lib/X11/mlvwm/pixmap/mini-max1.xpm
 lib/X11/mlvwm/pixmap/mini-maze.xpm
 lib/X11/mlvwm/pixmap/mini-modules.xpm
@@ -64,8 +63,8 @@ lib/X11/mlvwm/pixmap/mini-rball.xpm
 lib/X11/mlvwm/pixmap/mini-resize.xpm
 lib/X11/mlvwm/pixmap/mini-roach.xpm
 lib/X11/mlvwm/pixmap/mini-run.xpm
+lib/X11/mlvwm/pixmap/mini-sh.xpm
 lib/X11/mlvwm/pixmap/mini-sh1.xpm
-lib/X11/mlvwm/pixmap/mini-x.xpm
 lib/X11/mlvwm/pixmap/mini-slon.xpm
 lib/X11/mlvwm/pixmap/mini-start.xpm
 lib/X11/mlvwm/pixmap/mini-stop.xpm
@@ -73,6 +72,7 @@ lib/X11/mlvwm/pixmap/mini-term.xpm
 lib/X11/mlvwm/pixmap/mini-tetris.xpm
 lib/X11/mlvwm/pixmap/mini-turn.xpm
 lib/X11/mlvwm/pixmap/mini-windows.xpm
+lib/X11/mlvwm/pixmap/mini-x.xpm
 lib/X11/mlvwm/pixmap/mini-x2.xpm
 lib/X11/mlvwm/pixmap/mini-xmahjongg.xpm
 lib/X11/mlvwm/pixmap/mini-xv.xpm
@@ -86,7 +86,6 @@ lib/X11/mlvwm/pixmap/mini.destroy.xpm
 lib/X11/mlvwm/pixmap/mini.excl.xpm
 lib/X11/mlvwm/pixmap/mini.exit.xpm
 lib/X11/mlvwm/pixmap/mini.eye.xpm
-lib/X11/mlvwm/pixmap/mini.xpm
 lib/X11/mlvwm/pixmap/mini.fvwm.xpm
 lib/X11/mlvwm/pixmap/mini.iconify.xpm
 lib/X11/mlvwm/pixmap/mini.letter.xpm
@@ -110,6 +109,7 @@ lib/X11/mlvwm/pixmap/mini.xlock.xpm
 lib/X11/mlvwm/pixmap/mini.xmag.xpm
 lib/X11/mlvwm/pixmap/mini.xman.xpm
 lib/X11/mlvwm/pixmap/mini.xpaint.xpm
+lib/X11/mlvwm/pixmap/mini.xpm
 lib/X11/mlvwm/pixmap/mini.xterm.xpm
 lib/X11/mlvwm/pixmap/mini.zircon.xpm
 @dirrm lib/X11/mlvwm/pixmap
