@@ -1,0 +1,15 @@
+*** instdb.ins.orig	Wed Oct 27 12:40:34 1999
+--- instdb.ins	Wed Oct 27 12:40:48 1999
+***************
+*** 1,5 ****
+  Installation INSTALLATION
+! 	DefaultDestPath = "/usr/local/Office51";
+  	SourcePath	 = "/usr/ports/editors/staroffice51a/work/so51inst/office51";
+  	Mode		 = NETWORK;
+  	InstallFromNet = NO;
+--- 1,5 ----
+  Installation INSTALLATION
+! 	DefaultDestPath = "~/Office51";
+  	SourcePath	 = "/usr/ports/editors/staroffice51a/work/so51inst/office51";
+  	Mode		 = NETWORK;
+  	InstallFromNet = NO;

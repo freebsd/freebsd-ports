@@ -1,0 +1,19 @@
+*** setup.orig	Mon Aug 23 23:11:00 1999
+--- setup	Tue Oct 26 16:48:18 1999
+***************
+*** 25,31 ****
+  	 LD_LIBRARY_PATH=.:/usr/openwin/lib:../lib
+  	 export LD_LIBRARY_PATH
+  	 ;;
+!   Linux)
+       LD_LIBRARY_PATH=.:../lib:$LD_LIBRARY_PATH
+       export LD_LIBRARY_PATH
+       ;;
+--- 25,31 ----
+  	 LD_LIBRARY_PATH=.:/usr/openwin/lib:../lib
+  	 export LD_LIBRARY_PATH
+  	 ;;
+!   Linux|FreeBSD)
+       LD_LIBRARY_PATH=.:../lib:$LD_LIBRARY_PATH
+       export LD_LIBRARY_PATH
+       ;;
