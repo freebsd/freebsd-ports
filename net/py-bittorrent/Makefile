@@ -21,6 +21,8 @@ USE_PYDISTUTILS=	yes
 USE_REINPLACE=	yes
 USE_SIZE=	yes
 
+CONFLICTS=	py??-*bittorrent*
+
 DOC_FILES=	BUILD.windows.txt INSTALL.unix.txt LICENSE.txt \
 		README.txt credits.txt
 
