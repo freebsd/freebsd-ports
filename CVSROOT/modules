@@ -180,6 +180,7 @@ abcache		ports/www/abcache
 abcde		ports/audio/abcde
 abck		ports/sysutils/abck
 abclock		ports/x11-clocks/abclock
+abcmidi		ports/audio/abcmidi
 abcselect	ports/audio/abcselect
 abook		ports/mail/abook
 abs		ports/math/abs
