@@ -6,15 +6,15 @@
 #
 
 PORTNAME=	pwlib
-PORTVERSION=	1.5.0
-PORTREVISION=	5
+PORTVERSION=	1.6.5
 CATEGORIES=	devel
-MASTER_SITES=	http://www.openh323.org/bin/ \
-		http://www.de.openh323.org/bin/ \
-		http://www.gnomemeeting.org/downloads/0.98.0/sources/
-DISTNAME=	${PORTNAME}_${PORTVERSION}
+MASTER_SITES=	http://www.gnomemeeting.org/admin/downloads/latest/sources/sources/ \
+		http://www.gnomemeeting.org/downloads/1.0/sources/sources/ \
+		http://www.openh323.org/bin/ \
+		http://www.de.openh323.org/bin/
+DISTNAME=	${PORTNAME}-v${PORTVERSION:C/\./_/g}-src
 
-MAINTAINER=	roger@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A cross platform C++ library, used by OpenH323
 
 LIB_DEPENDS=	expat.5:${PORTSDIR}/textproc/expat2

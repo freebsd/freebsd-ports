@@ -14,7 +14,7 @@ MASTER_SITES=	http://www.openh323.org/bin/ \
 		http://www.ru.openh323.org/bin/
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
-MAINTAINER=	roger@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	H323 Video Conferencing Program, compatible with NetMeeting
 
 BUILD_DEPENDS=	${NONEXISTENT}:${PORTSDIR}/net/openh323:build

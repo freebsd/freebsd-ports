@@ -14,7 +14,7 @@ MASTER_SITES=	http://www.openh323.org/bin/ \
 		http://www.gnomemeeting.org/downloads/0.98.0/sources/
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
-MAINTAINER=	roger@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A H323 Video Conferencing library
 
 BUILD_DEPENDS=	${NONEXISTENT}:${PORTSDIR}/devel/pwlib:build

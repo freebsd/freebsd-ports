@@ -14,7 +14,7 @@ MASTER_SITES=		${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	roger
 DISTNAME=		bttv-0.6.4
 
-MAINTAINER=		roger@freebsd.org
+MAINTAINER=		ports@freebsd.org
 COMMENT=	Get Videotext/Teletext (.vtx) and other VBI data from TV channels
 
 PLIST_FILES=		bin/vbidecode

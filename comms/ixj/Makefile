@@ -1,6 +1,6 @@
 # New ports collection makefile for:	ixj
 # Date Created:				Mon Jan 14 2002
-# Whom:					Roger Hardiman <roger@freebsd.org>
+# Whom:					Roger Hardiman <noger@freebsd.org>
 #
 # $FreeBSD$
 #
@@ -11,7 +11,7 @@ CATEGORIES=	comms
 MASTER_SITES=	ftp://telepresence.dmem.strath.ac.uk/pub/openh323/
 DISTNAME=	ixj_freebsd-${PORTVERSION}
 
-MAINTAINER=	roger@freebsd.org
+MAINTAINER=	ports@freebsd.org
 COMMENT=	Driver for Quicknet Internet PhoneJack and LineJack. Used by OpenH323
 
 ONLY_FOR_ARCHS=	i386
