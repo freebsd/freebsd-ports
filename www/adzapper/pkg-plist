@@ -12,11 +12,13 @@ share/adzapper/doc/THANKS
 share/adzapper/doc/TODO
 share/adzapper/doc/about-adzapper.html
 share/adzapper/doc/adzapper-bolt4.gif
+share/adzapper/doc/adzapper-icon.gif
 share/adzapper/doc/description.txt
 share/adzapper/doc/index.html
 share/adzapper/doc/install.html
 share/adzapper/doc/sourceforge-description.txt
 share/adzapper/doc/template.html
+share/adzapper/doc/updates.html
 share/adzapper/doc/zaplet-0.9.dtd
 share/adzapper/doc/zaplet-file-format.html
 share/adzapper/doc/zaplets.html
@@ -188,6 +190,8 @@ share/adzapper/src/zaplet/zaplet_object.py
 share/adzapper/src/zaplet/zaplet_object.pyc
 share/adzapper/src/zaplet/zaplet_sax_handler.py
 share/adzapper/src/zaplet/zaplet_sax_handler.pyc
+share/adzapper/zaplets/.zaplets_modified
+share/adzapper/zaplets/.zupdate_cache
 share/adzapper/zaplets/199.172.144.25.zap
 share/adzapper/zaplets/206.41.20.7.zap
 share/adzapper/zaplets/207.87.18.zap
@@ -287,6 +291,8 @@ share/adzapper/zaplets/lycos.com.zap
 share/adzapper/zaplets/mercurycenter.com.zap
 share/adzapper/zaplets/money.pagecount.com.zap
 share/adzapper/zaplets/msnbc.com.zap
+share/adzapper/zaplets/my.yahoo.com.zap
+share/adzapper/zaplets/napigator.com.zap
 share/adzapper/zaplets/netg.vitaminshoppe.com.zap
 share/adzapper/zaplets/newshub.com.zap
 share/adzapper/zaplets/ngadcenter.net.zap
