@@ -139,6 +139,7 @@
     SUBDIR += htmltolatex
     SUBDIR += ia-aspell
     SUBDIR += id-aspell
+    SUBDIR += idnits
     SUBDIR += iiimf-client-lib
     SUBDIR += iiimf-csconv
     SUBDIR += iiimf-gtk
