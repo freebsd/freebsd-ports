@@ -1,7 +1,9 @@
 bin/vobcopy
 %%PORTDOCS%%share/doc/vobcopy/COPYING
 %%PORTDOCS%%share/doc/vobcopy/Changelog
+%%PORTDOCS%%share/doc/vobcopy/FAQ
 %%PORTDOCS%%share/doc/vobcopy/README
 %%PORTDOCS%%share/doc/vobcopy/Release-Notes
+%%PORTDOCS%%share/doc/vobcopy/TODO
 %%PORTDOCS%%share/doc/vobcopy/alternative_programs.txt
 @dirrm share/doc/vobcopy

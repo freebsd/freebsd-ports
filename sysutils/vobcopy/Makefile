@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	vobcopy
-PORTVERSION=	0.5.3
+PORTVERSION=	0.5.5
 CATEGORIES=	sysutils
 MASTER_SITES=	http://lpn.rnbhq.org/download/
 
@@ -23,6 +23,7 @@ ALL_TARGET=	${PORTNAME}
 MAN1=	vobcopy.1
 
 DOC_FILES=      COPYING Changelog README Release-Notes \
+		FAQ TODO \
 		alternative_programs.txt
 
 post-patch:
