@@ -8,7 +8,9 @@
 PORTNAME=	strscan
 PORTVERSION=	0.5.8
 CATEGORIES=	devel ruby
-MASTER_SITES=	http://www1.u-netsurf.ne.jp/~brew/mine/soft/
+MASTER_SITES=	${MASTER_SITE_LOCAL} \
+		http://www1.u-netsurf.ne.jp/~brew/mine/soft/
+MASTER_SITE_SUBDIR=	knu
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
 DIST_SUBDIR=	ruby
 
