@@ -3,7 +3,7 @@
 # Date created:         5 January 1995
 # Whom:                 jmz
 #
-# $Id: Makefile,v 1.45 1998/09/21 00:03:21 steve Exp $
+# $Id: Makefile,v 1.46 1998/09/22 06:08:34 asami Exp $
 #
 
 DISTNAME=	xc
@@ -34,6 +34,10 @@ PATCH_DIST_ARGS=-p0 -E -d ${WRKDIR} --quiet
 # can't use USE_X_PREFIX here -- it will cause a circular dependency
 PREFIX=		${X11BASE}
 MTREE_FILE=	/etc/mtree/BSD.x11.dist
+.if (${MACHINE} == "pc98")
+SCRIPTS_ENV+=	MACHINE=pc98
+PLIST=		${PKGDIR}/PLIST.pc98
+.endif
 
 .if defined(XDM_DES) && (${USA_RESIDENT} != YES && ${USA_RESIDENT} != NO)
 pre-fetch:
