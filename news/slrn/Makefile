@@ -3,7 +3,7 @@
 # Date created:        28 March 1997
 # Whom:                Carey Jones <mcj@acquiesce.org>
 #
-# $Id: Makefile,v 1.5 1997/07/15 01:17:22 obrien Exp $
+# $Id: Makefile,v 1.6 1998/02/26 04:15:42 steve Exp $
 #
 
 DISTNAME=	slrn0.9.4.3
@@ -11,7 +11,7 @@ PKGNAME=	slrn-0.9.4.3
 CATEGORIES=	news
 MASTER_SITES=	ftp://ftp.clara.net/pub/unix/Usenet/
 
-MAINTAINER=	mcj@acquiesce.org
+MAINTAINER=	ports@freebsd.org
 
 LIB_DEPENDS=	slang\\.0\\.99[0-9][0-9]:${PORTSDIR}/devel/libslang
 
