@@ -1,5 +1,5 @@
 --- Makefile.in	Wed Apr 26 16:35:29 2000
-+++ Makefile.in	Thu Apr 27 16:24:39 2000
++++ Makefile.in	Thu Jun 14 17:02:56 2001
 @@ -124,3 +124,3 @@
  SERVER_ROOT = @SERVER_ROOT@
 -htdocsdir = $(SERVER_ROOT)/htdocs
@@ -25,6 +25,9 @@
 -install: all install-binaries install-libraries install-doc
 +install: all install-libraries install-doc
  
+@@ -330,1 +330,1 @@
+-	$(INSTALL_DATA) $(srcdir)/doc/httpd.1 $(mandir)/man1/httpd.1
++	$(INSTALL_DATA) $(srcdir)/doc/httpd.1 $(mandir)/man1/tclhttpd.1
 @@ -335,3 +335,3 @@
  installdirs:
 -	$(mkinstalldirs) $(pkglibdir) $(cryptlibdir) $(prefix)/bin $(htdocsdir) $(customdir)
