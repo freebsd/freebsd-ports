@@ -1,0 +1,4 @@
+bin/dbview
+share/doc/dbview/README
+share/doc/dbview/dBASE
+@dirrm share/doc/dbview
