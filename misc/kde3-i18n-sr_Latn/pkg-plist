@@ -272,6 +272,7 @@ share/locale/sr@Latn/LC_MESSAGES/khtmlsettingsplugin.mo
 share/locale/sr@Latn/LC_MESSAGES/kicker.mo
 share/locale/sr@Latn/LC_MESSAGES/kiconedit.mo
 share/locale/sr@Latn/LC_MESSAGES/kig.mo
+share/locale/sr@Latn/LC_MESSAGES/kimagemapeditor.mo
 share/locale/sr@Latn/LC_MESSAGES/kinetd.mo
 share/locale/sr@Latn/LC_MESSAGES/kio.mo
 share/locale/sr@Latn/LC_MESSAGES/kio_audiocd.mo
@@ -310,6 +311,7 @@ share/locale/sr@Latn/LC_MESSAGES/kleopatra.mo
 share/locale/sr@Latn/LC_MESSAGES/klettres.mo
 share/locale/sr@Latn/LC_MESSAGES/klickety.mo
 share/locale/sr@Latn/LC_MESSAGES/klines.mo
+share/locale/sr@Latn/LC_MESSAGES/klinkstatus.mo
 share/locale/sr@Latn/LC_MESSAGES/klipper.mo
 share/locale/sr@Latn/LC_MESSAGES/klock.mo
 share/locale/sr@Latn/LC_MESSAGES/kmag.mo
@@ -349,6 +351,7 @@ share/locale/sr@Latn/LC_MESSAGES/kodo.mo
 share/locale/sr@Latn/LC_MESSAGES/kolf.mo
 share/locale/sr@Latn/LC_MESSAGES/kolourpaint.mo
 share/locale/sr@Latn/LC_MESSAGES/kolourpicker.mo
+share/locale/sr@Latn/LC_MESSAGES/kommander.mo
 share/locale/sr@Latn/LC_MESSAGES/kompare.mo
 share/locale/sr@Latn/LC_MESSAGES/konq_smbmounterplugin.mo
 share/locale/sr@Latn/LC_MESSAGES/konqsidebar_mediaplayer.mo

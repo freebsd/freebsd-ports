@@ -133,29 +133,6 @@ share/doc/HTML/nl/common/web-docbottom.png
 share/doc/HTML/nl/common/web-doctop.png
 share/doc/HTML/nl/common/x11-license.html
 share/doc/HTML/nl/common/xml.dcl
-share/doc/HTML/nl/faq/about.docbook
-share/doc/HTML/nl/faq/common
-share/doc/HTML/nl/faq/configkde.docbook
-share/doc/HTML/nl/faq/contrib.docbook
-share/doc/HTML/nl/faq/desktop.docbook
-share/doc/HTML/nl/faq/filemng.docbook
-share/doc/HTML/nl/faq/getkde.docbook
-share/doc/HTML/nl/faq/index.cache.bz2
-share/doc/HTML/nl/faq/index.docbook
-share/doc/HTML/nl/faq/install.docbook
-share/doc/HTML/nl/faq/intro.docbook
-share/doc/HTML/nl/faq/kdeapps.docbook
-share/doc/HTML/nl/faq/misc.docbook
-share/doc/HTML/nl/faq/moreinfo.docbook
-share/doc/HTML/nl/faq/nonkdeapps.docbook
-share/doc/HTML/nl/faq/notrelated.docbook
-share/doc/HTML/nl/faq/panel.docbook
-share/doc/HTML/nl/faq/tips.docbook
-share/doc/HTML/nl/faq/winmng.docbook
-share/doc/HTML/nl/glossary/common
-share/doc/HTML/nl/glossary/index.cache.bz2
-share/doc/HTML/nl/glossary/index.docbook
-share/doc/HTML/nl/glossary/kdeprintingglossary.docbook
 share/doc/HTML/nl/juk/common
 share/doc/HTML/nl/juk/index.cache.bz2
 share/doc/HTML/nl/juk/index.docbook
@@ -327,6 +304,9 @@ share/doc/HTML/nl/kcontrol/kthememgr/index.docbook
 share/doc/HTML/nl/kcontrol/kwindecoration/common
 share/doc/HTML/nl/kcontrol/kwindecoration/index.cache.bz2
 share/doc/HTML/nl/kcontrol/kwindecoration/index.docbook
+share/doc/HTML/nl/kcontrol/lanbrowser/common
+share/doc/HTML/nl/kcontrol/lanbrowser/index.cache.bz2
+share/doc/HTML/nl/kcontrol/lanbrowser/index.docbook
 share/doc/HTML/nl/kcontrol/laptop/common
 share/doc/HTML/nl/kcontrol/laptop/index.cache.bz2
 share/doc/HTML/nl/kcontrol/laptop/index.docbook
@@ -365,6 +345,12 @@ share/doc/HTML/nl/kdat/index.docbook
 share/doc/HTML/nl/kdebugdialog/common
 share/doc/HTML/nl/kdebugdialog/index.cache.bz2
 share/doc/HTML/nl/kdebugdialog/index.docbook
+share/doc/HTML/nl/kdelirc/irkick/common
+share/doc/HTML/nl/kdelirc/irkick/index.cache.bz2
+share/doc/HTML/nl/kdelirc/irkick/index.docbook
+share/doc/HTML/nl/kdelirc/kcmlirc/common
+share/doc/HTML/nl/kdelirc/kcmlirc/index.cache.bz2
+share/doc/HTML/nl/kdelirc/kcmlirc/index.docbook
 share/doc/HTML/nl/kdeprint/add-printer-wiz.docbook
 share/doc/HTML/nl/kdeprint/common
 share/doc/HTML/nl/kdeprint/cups-config.docbook
@@ -422,11 +408,84 @@ share/doc/HTML/nl/khangman/index.cache.bz2
 share/doc/HTML/nl/khangman/index.docbook
 share/doc/HTML/nl/khelpcenter/common
 share/doc/HTML/nl/khelpcenter/contact.docbook
+share/doc/HTML/nl/khelpcenter/faq/about.docbook
+share/doc/HTML/nl/khelpcenter/faq/common
+share/doc/HTML/nl/khelpcenter/faq/configkde.docbook
+share/doc/HTML/nl/khelpcenter/faq/contrib.docbook
+share/doc/HTML/nl/khelpcenter/faq/desktop.docbook
+share/doc/HTML/nl/khelpcenter/faq/filemng.docbook
+share/doc/HTML/nl/khelpcenter/faq/getkde.docbook
+share/doc/HTML/nl/khelpcenter/faq/index.cache.bz2
+share/doc/HTML/nl/khelpcenter/faq/index.docbook
+share/doc/HTML/nl/khelpcenter/faq/install.docbook
+share/doc/HTML/nl/khelpcenter/faq/intro.docbook
+share/doc/HTML/nl/khelpcenter/faq/kdeapps.docbook
+share/doc/HTML/nl/khelpcenter/faq/misc.docbook
+share/doc/HTML/nl/khelpcenter/faq/moreinfo.docbook
+share/doc/HTML/nl/khelpcenter/faq/nonkdeapps.docbook
+share/doc/HTML/nl/khelpcenter/faq/notrelated.docbook
+share/doc/HTML/nl/khelpcenter/faq/panel.docbook
+share/doc/HTML/nl/khelpcenter/faq/tips.docbook
+share/doc/HTML/nl/khelpcenter/faq/winmng.docbook
+share/doc/HTML/nl/khelpcenter/glossary/common
+share/doc/HTML/nl/khelpcenter/glossary/index.cache.bz2
+share/doc/HTML/nl/khelpcenter/glossary/index.docbook
+share/doc/HTML/nl/khelpcenter/glossary/kdeprintingglossary.docbook
 share/doc/HTML/nl/khelpcenter/help.docbook
 share/doc/HTML/nl/khelpcenter/index.cache.bz2
 share/doc/HTML/nl/khelpcenter/index.docbook
 share/doc/HTML/nl/khelpcenter/links.docbook
+share/doc/HTML/nl/khelpcenter/quickstart/common
+share/doc/HTML/nl/khelpcenter/quickstart/index.cache.bz2
+share/doc/HTML/nl/khelpcenter/quickstart/index.docbook
 share/doc/HTML/nl/khelpcenter/support.docbook
+share/doc/HTML/nl/khelpcenter/userguide/about-desktop.docbook
+share/doc/HTML/nl/khelpcenter/userguide/common
+share/doc/HTML/nl/khelpcenter/userguide/first-impressions.docbook
+share/doc/HTML/nl/khelpcenter/userguide/getting-started.docbook
+share/doc/HTML/nl/khelpcenter/userguide/history.docbook
+share/doc/HTML/nl/khelpcenter/userguide/index.cache.bz2
+share/doc/HTML/nl/khelpcenter/userguide/index.docbook
+share/doc/HTML/nl/khelpcenter/userguide/installation.docbook
+share/doc/HTML/nl/khelpcenter/userguide/intro.docbook
+share/doc/HTML/nl/khelpcenter/userguide/kdeadmin-apps.docbook
+share/doc/HTML/nl/khelpcenter/userguide/kdebase-apps.docbook
+share/doc/HTML/nl/khelpcenter/userguide/kdeedu-apps.docbook
+share/doc/HTML/nl/khelpcenter/userguide/kdegames-apps.docbook
+share/doc/HTML/nl/khelpcenter/userguide/kdegraphics-apps.docbook
+share/doc/HTML/nl/khelpcenter/userguide/kdemultimedia-apps.docbook
+share/doc/HTML/nl/khelpcenter/userguide/kdenetwork-apps.docbook
+share/doc/HTML/nl/khelpcenter/userguide/kdepim-apps.docbook
+share/doc/HTML/nl/khelpcenter/userguide/kdetoys-apps.docbook
+share/doc/HTML/nl/khelpcenter/userguide/kdeutils-apps.docbook
+share/doc/HTML/nl/khelpcenter/userguide/more-help.docbook
+share/doc/HTML/nl/khelpcenter/userguide/notices-trademarks.docbook
+share/doc/HTML/nl/khelpcenter/userguide/shortcuts.docbook
+share/doc/HTML/nl/khelpcenter/userguide/staff.docbook
+share/doc/HTML/nl/khelpcenter/userguide/ug-faq.docbook
+share/doc/HTML/nl/khelpcenter/visualdict/common
+share/doc/HTML/nl/khelpcenter/visualdict/index.cache.bz2
+share/doc/HTML/nl/khelpcenter/visualdict/index.docbook
+share/doc/HTML/nl/khelpcenter/visualdict/pict1.png
+share/doc/HTML/nl/khelpcenter/visualdict/pict10.png
+share/doc/HTML/nl/khelpcenter/visualdict/pict11.png
+share/doc/HTML/nl/khelpcenter/visualdict/pict12.png
+share/doc/HTML/nl/khelpcenter/visualdict/pict13.png
+share/doc/HTML/nl/khelpcenter/visualdict/pict14.png
+share/doc/HTML/nl/khelpcenter/visualdict/pict15.png
+share/doc/HTML/nl/khelpcenter/visualdict/pict16.png
+share/doc/HTML/nl/khelpcenter/visualdict/pict17.png
+share/doc/HTML/nl/khelpcenter/visualdict/pict18.png
+share/doc/HTML/nl/khelpcenter/visualdict/pict19.png
+share/doc/HTML/nl/khelpcenter/visualdict/pict2.png
+share/doc/HTML/nl/khelpcenter/visualdict/pict20.png
+share/doc/HTML/nl/khelpcenter/visualdict/pict3.png
+share/doc/HTML/nl/khelpcenter/visualdict/pict4.png
+share/doc/HTML/nl/khelpcenter/visualdict/pict5.png
+share/doc/HTML/nl/khelpcenter/visualdict/pict6.png
+share/doc/HTML/nl/khelpcenter/visualdict/pict7.png
+share/doc/HTML/nl/khelpcenter/visualdict/pict8.png
+share/doc/HTML/nl/khelpcenter/visualdict/pict9.png
 share/doc/HTML/nl/khelpcenter/welcome.docbook
 share/doc/HTML/nl/khelpcenter/whatiskde.docbook
 share/doc/HTML/nl/kicker-applets/common
@@ -473,6 +532,9 @@ share/doc/HTML/nl/kinfocenter/memory/index.docbook
 share/doc/HTML/nl/kinfocenter/nics/common
 share/doc/HTML/nl/kinfocenter/nics/index.cache.bz2
 share/doc/HTML/nl/kinfocenter/nics/index.docbook
+share/doc/HTML/nl/kinfocenter/opengl/common
+share/doc/HTML/nl/kinfocenter/opengl/index.cache.bz2
+share/doc/HTML/nl/kinfocenter/opengl/index.docbook
 share/doc/HTML/nl/kinfocenter/partitions/common
 share/doc/HTML/nl/kinfocenter/partitions/index.cache.bz2
 share/doc/HTML/nl/kinfocenter/partitions/index.docbook
@@ -602,6 +664,11 @@ share/doc/HTML/nl/kmessedwords/kmw1bis.png
 share/doc/HTML/nl/kmessedwords/kmw2.png
 share/doc/HTML/nl/kmessedwords/kmw3.png
 share/doc/HTML/nl/kmessedwords/kmw4.png
+share/doc/HTML/nl/kmines/common
+share/doc/HTML/nl/kmines/index.cache.bz2
+share/doc/HTML/nl/kmines/index.docbook
+share/doc/HTML/nl/kmines/kmines1.png
+share/doc/HTML/nl/kmines/kmines2.png
 share/doc/HTML/nl/kmix/common
 share/doc/HTML/nl/kmix/index.cache.bz2
 share/doc/HTML/nl/kmix/index.docbook
@@ -971,65 +1038,9 @@ share/doc/HTML/nl/kworldclock/index.docbook
 share/doc/HTML/nl/kxkb/common
 share/doc/HTML/nl/kxkb/index.cache.bz2
 share/doc/HTML/nl/kxkb/index.docbook
-share/doc/HTML/nl/lanbrowser/common
-share/doc/HTML/nl/lanbrowser/index.cache.bz2
-share/doc/HTML/nl/lanbrowser/index.docbook
 share/doc/HTML/nl/noatun/common
 share/doc/HTML/nl/noatun/index.cache.bz2
 share/doc/HTML/nl/noatun/index.docbook
-share/doc/HTML/nl/opengl/common
-share/doc/HTML/nl/opengl/index.cache.bz2
-share/doc/HTML/nl/opengl/index.docbook
-share/doc/HTML/nl/quickstart/common
-share/doc/HTML/nl/quickstart/index.cache.bz2
-share/doc/HTML/nl/quickstart/index.docbook
-share/doc/HTML/nl/userguide/about-desktop.docbook
-share/doc/HTML/nl/userguide/common
-share/doc/HTML/nl/userguide/first-impressions.docbook
-share/doc/HTML/nl/userguide/getting-started.docbook
-share/doc/HTML/nl/userguide/history.docbook
-share/doc/HTML/nl/userguide/index.cache.bz2
-share/doc/HTML/nl/userguide/index.docbook
-share/doc/HTML/nl/userguide/installation.docbook
-share/doc/HTML/nl/userguide/intro.docbook
-share/doc/HTML/nl/userguide/kdeadmin-apps.docbook
-share/doc/HTML/nl/userguide/kdebase-apps.docbook
-share/doc/HTML/nl/userguide/kdeedu-apps.docbook
-share/doc/HTML/nl/userguide/kdegames-apps.docbook
-share/doc/HTML/nl/userguide/kdegraphics-apps.docbook
-share/doc/HTML/nl/userguide/kdemultimedia-apps.docbook
-share/doc/HTML/nl/userguide/kdenetwork-apps.docbook
-share/doc/HTML/nl/userguide/kdepim-apps.docbook
-share/doc/HTML/nl/userguide/kdetoys-apps.docbook
-share/doc/HTML/nl/userguide/kdeutils-apps.docbook
-share/doc/HTML/nl/userguide/more-help.docbook
-share/doc/HTML/nl/userguide/notices-trademarks.docbook
-share/doc/HTML/nl/userguide/shortcuts.docbook
-share/doc/HTML/nl/userguide/staff.docbook
-share/doc/HTML/nl/userguide/ug-faq.docbook
-share/doc/HTML/nl/visualdict/common
-share/doc/HTML/nl/visualdict/index.cache.bz2
-share/doc/HTML/nl/visualdict/index.docbook
-share/doc/HTML/nl/visualdict/pict1.png
-share/doc/HTML/nl/visualdict/pict10.png
-share/doc/HTML/nl/visualdict/pict11.png
-share/doc/HTML/nl/visualdict/pict12.png
-share/doc/HTML/nl/visualdict/pict13.png
-share/doc/HTML/nl/visualdict/pict14.png
-share/doc/HTML/nl/visualdict/pict15.png
-share/doc/HTML/nl/visualdict/pict16.png
-share/doc/HTML/nl/visualdict/pict17.png
-share/doc/HTML/nl/visualdict/pict18.png
-share/doc/HTML/nl/visualdict/pict19.png
-share/doc/HTML/nl/visualdict/pict2.png
-share/doc/HTML/nl/visualdict/pict20.png
-share/doc/HTML/nl/visualdict/pict3.png
-share/doc/HTML/nl/visualdict/pict4.png
-share/doc/HTML/nl/visualdict/pict5.png
-share/doc/HTML/nl/visualdict/pict6.png
-share/doc/HTML/nl/visualdict/pict7.png
-share/doc/HTML/nl/visualdict/pict8.png
-share/doc/HTML/nl/visualdict/pict9.png
 share/locale/nl/LC_MESSAGES/alarmdaemonctrl.mo
 share/locale/nl/LC_MESSAGES/alsaplayerui.mo
 share/locale/nl/LC_MESSAGES/amor.mo
@@ -1581,12 +1592,7 @@ share/locale/nl/LC_MESSAGES/webarchiver.mo
 share/locale/nl/charset
 share/locale/nl/entry.desktop
 share/locale/nl/flag.png
-@dirrm share/doc/HTML/nl/visualdict
-@dirrm share/doc/HTML/nl/userguide
-@dirrm share/doc/HTML/nl/quickstart
-@dirrm share/doc/HTML/nl/opengl
 @dirrm share/doc/HTML/nl/noatun
-@dirrm share/doc/HTML/nl/lanbrowser
 @dirrm share/doc/HTML/nl/kxkb
 @dirrm share/doc/HTML/nl/kworldclock
 @dirrm share/doc/HTML/nl/kwordquiz
@@ -1644,6 +1650,7 @@ share/locale/nl/flag.png
 @dirrm share/doc/HTML/nl/kmousetool
 @dirrm share/doc/HTML/nl/kmoon
 @dirrm share/doc/HTML/nl/kmix
+@dirrm share/doc/HTML/nl/kmines
 @dirrm share/doc/HTML/nl/kmessedwords
 @dirrm share/doc/HTML/nl/kmenuedit
 @dirrm share/doc/HTML/nl/kmathtool
@@ -1667,6 +1674,7 @@ share/locale/nl/flag.png
 @dirrm share/doc/HTML/nl/kinfocenter/pcmcia
 @dirrm share/doc/HTML/nl/kinfocenter/pci
 @dirrm share/doc/HTML/nl/kinfocenter/partitions
+@dirrm share/doc/HTML/nl/kinfocenter/opengl
 @dirrm share/doc/HTML/nl/kinfocenter/nics
 @dirrm share/doc/HTML/nl/kinfocenter/memory
 @dirrm share/doc/HTML/nl/kinfocenter/ioports
@@ -1677,6 +1685,11 @@ share/locale/nl/flag.png
 @dirrm share/doc/HTML/nl/kinfocenter
 @dirrm share/doc/HTML/nl/kig
 @dirrm share/doc/HTML/nl/kicker-applets
+@dirrm share/doc/HTML/nl/khelpcenter/visualdict
+@dirrm share/doc/HTML/nl/khelpcenter/userguide
+@dirrm share/doc/HTML/nl/khelpcenter/quickstart
+@dirrm share/doc/HTML/nl/khelpcenter/glossary
+@dirrm share/doc/HTML/nl/khelpcenter/faq
 @dirrm share/doc/HTML/nl/khelpcenter
 @dirrm share/doc/HTML/nl/khangman
 @dirrm share/doc/HTML/nl/kget
@@ -1689,6 +1702,9 @@ share/locale/nl/flag.png
 @dirrm share/doc/HTML/nl/kdf
 @dirrm share/doc/HTML/nl/kdesu
 @dirrm share/doc/HTML/nl/kdeprint
+@dirrm share/doc/HTML/nl/kdelirc/kcmlirc
+@dirrm share/doc/HTML/nl/kdelirc/irkick
+@dirrm share/doc/HTML/nl/kdelirc
 @dirrm share/doc/HTML/nl/kdebugdialog
 @dirrm share/doc/HTML/nl/kdat
 @dirrm share/doc/HTML/nl/kcron
@@ -1701,6 +1717,7 @@ share/locale/nl/flag.png
 @dirrm share/doc/HTML/nl/kcontrol/netpref
 @dirrm share/doc/HTML/nl/kcontrol/mouse
 @dirrm share/doc/HTML/nl/kcontrol/laptop
+@dirrm share/doc/HTML/nl/kcontrol/lanbrowser
 @dirrm share/doc/HTML/nl/kcontrol/kwindecoration
 @dirrm share/doc/HTML/nl/kcontrol/kthememgr
 @dirrm share/doc/HTML/nl/kcontrol/kmixcfg
@@ -1749,8 +1766,6 @@ share/locale/nl/flag.png
 @dirrm share/doc/HTML/nl/kaddressbook
 @dirrm share/doc/HTML/nl/kaboodle
 @dirrm share/doc/HTML/nl/juk
-@dirrm share/doc/HTML/nl/glossary
-@dirrm share/doc/HTML/nl/faq
 @dirrm share/doc/HTML/nl/common
 @dirrm share/doc/HTML/nl/atlantik
 @dirrm share/doc/HTML/nl/artsbuilder

@@ -74,6 +74,10 @@ share/doc/HTML/ro/khelpcenter/background.png
 share/doc/HTML/ro/khelpcenter/bgtable.png
 share/doc/HTML/ro/khelpcenter/common
 share/doc/HTML/ro/khelpcenter/contact.docbook
+share/doc/HTML/ro/khelpcenter/glossary/common
+share/doc/HTML/ro/khelpcenter/glossary/index.cache.bz2
+share/doc/HTML/ro/khelpcenter/glossary/index.docbook
+share/doc/HTML/ro/khelpcenter/glossary/kdeprintingglossary.docbook
 share/doc/HTML/ro/khelpcenter/help.docbook
 share/doc/HTML/ro/khelpcenter/index.cache.bz2
 share/doc/HTML/ro/khelpcenter/index.docbook
@@ -157,10 +161,6 @@ share/doc/HTML/ro/kioslave/telnet.docbook
 share/doc/HTML/ro/kioslave/thumbnail.docbook
 share/doc/HTML/ro/kioslave/webdav.docbook
 share/doc/HTML/ro/kioslave/webdavs.docbook
-share/doc/glossary/common
-share/doc/glossary/index.cache.bz2
-share/doc/glossary/index.docbook
-share/doc/glossary/kdeprintingglossary.docbook
 share/locale/ro/LC_MESSAGES/alarmdaemonctrl.mo
 share/locale/ro/LC_MESSAGES/alsaplayerui.mo
 share/locale/ro/LC_MESSAGES/amor.mo
@@ -706,10 +706,10 @@ share/locale/ro/LC_MESSAGES/webarchiver.mo
 share/locale/ro/charset
 share/locale/ro/entry.desktop
 share/locale/ro/flag.png
-@dirrm share/doc/glossary
 @dirrm share/doc/HTML/ro/kioslave
 @dirrm share/doc/HTML/ro/kinfocenter
 @dirrm share/doc/HTML/ro/khelpcenter/visualdict
+@dirrm share/doc/HTML/ro/khelpcenter/glossary
 @dirrm share/doc/HTML/ro/khelpcenter
 @dirrm share/doc/HTML/ro/common
 @dirrm share/doc/HTML/ro
