@@ -78,7 +78,6 @@ share/nab/examples/rna_pseudoknot.pdb
 share/nab/examples/test.pdb
 share/nab/examples/test.sup.pdb
 share/nab/fd_data/abdna.dat
-share/nab/fd_data/abdna.dat.old
 share/nab/fd_data/adna.dat
 share/nab/fd_data/aprna.dat
 share/nab/fd_data/arna.dat
@@ -171,6 +170,7 @@ share/nab/reslib/leap/dna.amberua.lib
 share/nab/reslib/leap/dna.amberua.redch.lib
 share/nab/reslib/leap/ions91.lib
 share/nab/reslib/leap/ions94.lib
+share/nab/reslib/leap/parm94.dat.istvan
 share/nab/reslib/leap/leap.log
 share/nab/reslib/leap/leaprc.dna.amberua
 share/nab/reslib/leap/leaprc.dna.amberua.redch
@@ -270,13 +270,11 @@ share/nab/test/2.pdb
 share/nab/test/5pti.obs
 share/nab/test/5pti.pdb
 share/nab/test/5pti.shifts.check
-share/nab/test/a.exe
 share/nab/test/d01.lin.check
 share/nab/test/d01.pdb.check
 share/nab/test/dg_gyrate.nab
 share/nab/test/dg_gyrate.out.check
 share/nab/test/dna.circle.nab
-share/nab/test/duplex.exe
 share/nab/test/duplex.in
 share/nab/test/duplex.nab
 share/nab/test/fd.nab
@@ -285,9 +283,8 @@ share/nab/test/gbrna.nab
 share/nab/test/gbrna.out.check
 share/nab/test/gbrna.pdb
 share/nab/test/gbrna.prmtop
-share/nab/test/gbrna_long.exe
 share/nab/test/gbrna_long.nab
-share/nab/test/gbrna_long.out
+share/nab/test/gbrna_sa.nab
 share/nab/test/gbtrx.nab
 share/nab/test/gbtrx.out.check
 share/nab/test/get_pep_info.nab
@@ -301,9 +298,11 @@ share/nab/test/ico.sym
 share/nab/test/ico.sym.out.check
 share/nab/test/ltest.nab
 share/nab/test/ltest.out.check
+share/nab/test/msurf.nab
 share/nab/test/pointplane.nab
 share/nab/test/prmtop
 share/nab/test/prmtop.gb2
+share/nab/test/prmtop.new
 share/nab/test/rattle_md.nab
 share/nab/test/rattle_md.out.check
 share/nab/test/rattle_min.nab
@@ -322,6 +321,18 @@ share/nab/test/tbv.com.pdb
 share/nab/test/trxox.2.4ns.pdb
 share/nab/test/trxox.2.4ns.x
 share/nab/test/write_sander_inp.nab
+share/nab/test/lCmd
+share/nab/test/1ubq/1ubq.pdb
+share/nab/test/1ubq/5pti.pdb
+share/nab/test/1ubq/leap.log
+share/nab/test/1ubq/out.1
+share/nab/test/1ubq/prmtop
+share/nab/test/1ubq/prmtop.1
+share/nab/test/1ubq/rattle_min.nab
+share/nab/test/1ubq/runleap.nab
+share/nab/test/2strand.nab
+share/nab/test/2strand.pdb
+@dirrm share/nab/test/1ubq
 @dirrm share/nab/test
 @dirrm share/nab/suppose
 @dirrm share/nab/reslib/rna.amberua

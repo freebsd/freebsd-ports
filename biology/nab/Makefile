@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	nab
-PORTVERSION=	4.5.1
+PORTVERSION=	4.5.2
 CATEGORIES=	biology
 MASTER_SITES=	ftp://ftp.scripps.edu/pub/case/ \
 		http://www.scripps.edu/case/
@@ -14,8 +14,6 @@ MASTER_SITES=	ftp://ftp.scripps.edu/pub/case/ \
 MAINTAINER=	bdodson@scms.utmb.edu
 COMMENT=	\
  "This is nab (nucleic acid builder), a language for macromolecules"
-
-BROKEN=		Does not fetch
 
 BUILD_DEPENDS=	ucpp:${PORTSDIR}/devel/ucpp
 
@@ -43,7 +41,19 @@ pre-patch:
 		${WRKSRC}/cifparse/cifparse.c
 
 post-patch:
-	@rm -f ${WRKSRC}/examples/program_7.nab.orig
+	@${RM} -f ${WRKSRC}/examples/program_7.nab.orig
+	@${RM} -f ${WRKSRC}/examples/program_1.c \
+		${WRKSRC}/examples/program_1.exe
+	@${RM} -f ${WRKSRC}/test/1ubq/a.exe
+	@${RM} -f ${WRKSRC}/test/1ubq/rattle_min.c
+	@${RM} -f ${WRKSRC}/test/1ubq/runleap.c
+	@${RM} -f ${WRKSRC}/test/*.exe
+	@${RM} -f ${WRKSRC}/tleap/utilMakeHelp.exe
+	@${RM} -f ${WRKSRC}/fd_data/abdna.dat.old
+	@${RM} -f ${WRKSRC}/reslib/leap/parm94.dat~
+	@(cd ${WRKSRC}/reslib/leap && \
+		${FIND} . -type f -print | ${GREP} -v '\./[a-zA-Z0-9]' | \
+			${XARGS} ${RM} -f)
 
 pre-install:
 	@cd ${WRKSRC}/src && \
