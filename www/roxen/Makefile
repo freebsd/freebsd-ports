@@ -1,23 +1,21 @@
-# New ports collection makefile for:	Roxen Challenger
-# Date created:		26 February 1999
-# Whom:			Kai Voigt (k@123.org)
+# New ports collection makefile for:	Roxen WebServer
+# Date created:				07 April 2001
+# Whom:					Kai Voigt (k@123.org)
 #
 # $FreeBSD$
 #
 
 PORTNAME=	roxen
-PORTVERSION=	1.3.111
+PORTVERSION=	2.1.231
 CATEGORIES=	www
-MASTER_SITES=	ftp://ftp.roxen.com/roxen/source/
-DISTNAME=	roxen_1.3.111-0.6-40bit
-
+MASTER_SITES=	http://download.roxen.com/2.1/lzw/dl.html/
+FETCH_CMD=	/usr/bin/fetch
+DISTNAME=	roxen-dist-2.1.231
+WRKSRC=		${WRKDIR}/roxen-${PORTVERSION}-src
 MAINTAINER=	k@123.org
-
-WRKSRC=		${WRKDIR}/roxen_1.3.111
-GNU_CONFIGURE=	yes
-PKGMESSAGE=	${WRKSRC}/MESSAGE
-
-STARTUP_SCRIPT=	${PREFIX}/etc/rc.d/roxen.sh
+HAS_CONFIGURE=	yes
+PKGMESSAGE=     ${WRKSRC}/MESSAGE
+STARTUP_SCRIPT= ${PREFIX}/etc/rc.d/roxen.sh
 
 post-patch:
 	@${SED} -e "s|%%PREFIX%%|${PREFIX}|g" ${FILESDIR}/roxen.sh.in > \
