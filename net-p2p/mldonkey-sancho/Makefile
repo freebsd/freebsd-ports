@@ -39,6 +39,7 @@ USE_JAVA=	yes
 JAVA_VERSION=	1.4+
 JAVA_OS=	native
 USE_ANT=	yes
+USE_JIKES=	no
 
 USE_BZIP2=	yes
 NO_WRKSUBDIR=	yes
