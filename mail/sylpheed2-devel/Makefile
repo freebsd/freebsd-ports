@@ -6,11 +6,10 @@
 #
 
 PORTNAME=	sylpheed
-PORTVERSION=	0.9.0.p1
+PORTVERSION=	0.9.0
 PORTREVISION=	0
 CATEGORIES=	mail ipv6
 MASTER_SITES=	http://sylpheed.good-day.net/sylpheed/
-DISTNAME=	${PORTNAME}-${PORTVERSION:S/.p/pre/}
 
 MAINTAINER=	oliver@freebsd.org
 COMMENT=	A lightweight, featureful, and fast GTK+ based e-mail client
@@ -88,7 +87,7 @@ pre-everything::
 	@${ECHO} ""
 
 post-patch:
-	${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS:S/"//g}|g; \
+	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS:S/"//g}|g; \
 		s|-lresolv||g; s|-lpisock\"|-liconv &|g' ${WRKSRC}/configure
 
 .if defined(NOPORTDOCS)
