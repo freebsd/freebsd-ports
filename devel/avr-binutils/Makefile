@@ -42,5 +42,6 @@ MAN1=	\
 		avr-strings.1 \
 		avr-strip.1 \
 		avr-windres.1
+INFO=		as binutils ld
 
 .include <bsd.port.mk>
