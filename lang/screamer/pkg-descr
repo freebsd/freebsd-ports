@@ -1,0 +1,16 @@
+Screamer is an extension of Common Lisp that adds support for
+nondeterministic programming. Screamer consists of two levels. The
+basic nondeterministic level adds support for backtracking and
+undoable side effects. On top of this nondeterministic substrate,
+Screamer provides a comprehensive constraint programming language in
+which one can formulate and solve mixed systems of numeric and
+symbolic constraints.
+
+WWW: http://www.cis.upenn.edu/~screamer-tools/
+
+Built to run with CMU Common Lisp.
+Installed in CMUCL's subsystem directory.
+
+/usr/local/share/screamer contains lisp source and documentation.
+
+- Scott Flatman <sf@dsinw.com>

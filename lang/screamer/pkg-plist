@@ -1,0 +1,22 @@
+lib/cmucl/lib/subsystems/screamer-library.x86f
+share/screamer/FAQ
+share/screamer/README
+share/screamer/aaai93.dvi
+share/screamer/aaai93.ps
+share/screamer/bug-5511.hbin
+share/screamer/bug-5511.mbin
+share/screamer/bug-6920-dbcs.sbin
+share/screamer/bug-6920-non-dbcs.sbin
+share/screamer/equations.lisp
+share/screamer/ircs-93-03.dvi
+share/screamer/ircs-93-03.ps
+share/screamer/iscream.el
+share/screamer/iterate.lisp
+share/screamer/mbmfe.sbin
+share/screamer/not-so-trivial-patch.fasl.hqx
+share/screamer/primordial.lisp
+share/screamer/screamer.dvi
+share/screamer/screamer.lisp
+share/screamer/screamer.ps
+share/screamer/screams.lisp
+@dirrm share/screamer
