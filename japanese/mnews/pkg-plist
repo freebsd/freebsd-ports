@@ -4,12 +4,15 @@ lib/mnews/default-domain
 man/ja_JP.EUC/man1/mnews.1.gz
 share/doc/mnews/FAQ.doc
 share/doc/mnews/board.doc
+share/doc/mnews/gnspool.doc
 share/doc/mnews/mnews.doc
 share/doc/mnews/prerel.doc
 share/doc/mnews/present.doc
 share/doc/mnews/read1ST.doc
 share/doc/mnews/readme.doc
 share/doc/mnews/update.doc
+share/doc/mnews/youbin.doc
+share/examples/mnews/_mnews.smp
 share/examples/mnews/jnames.fj
 share/examples/mnews/jnames.jp
 share/examples/mnews/jnames.smp
