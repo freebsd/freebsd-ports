@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	iperf
-PORTVERSION= 	1.6.4
+PORTVERSION= 	1.6.5
 CATEGORIES=	net
 MASTER_SITES=	http://dast.nlanr.net/Projects/Iperf/
-DISTNAME=	iperf-1.6.4-source
+DISTNAME=	iperf-1.6.5-source
 
 MAINTAINER=	smace@FreeBSD.org
 
