@@ -1,0 +1,19 @@
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Finance/Quote/.packlist
+lib/perl5/site_perl/%%PERL_VER%%/Finance/Quote.pm
+lib/perl5/site_perl/%%PERL_VER%%/Finance/Quote/ASX.pm
+lib/perl5/site_perl/%%PERL_VER%%/Finance/Quote/DWS.pm
+lib/perl5/site_perl/%%PERL_VER%%/Finance/Quote/Fidelity.pm
+lib/perl5/site_perl/%%PERL_VER%%/Finance/Quote/Tiaacref.pm
+lib/perl5/site_perl/%%PERL_VER%%/Finance/Quote/Troweprice.pm
+lib/perl5/site_perl/%%PERL_VER%%/Finance/Quote/Trustnet.pm
+lib/perl5/site_perl/%%PERL_VER%%/Finance/Quote/UserAgent.pm
+lib/perl5/site_perl/%%PERL_VER%%/Finance/Quote/VWD.pm
+lib/perl5/site_perl/%%PERL_VER%%/Finance/Quote/Yahoo/Australia.pm
+lib/perl5/site_perl/%%PERL_VER%%/Finance/Quote/Yahoo/Base.pm
+lib/perl5/site_perl/%%PERL_VER%%/Finance/Quote/Yahoo/Europe.pm
+lib/perl5/site_perl/%%PERL_VER%%/Finance/Quote/Yahoo/USA.pm
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/Finance/Quote/Yahoo
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/Finance/Quote
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Finance/Quote
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/Finance 2>/dev/null || true
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Finance 2>/dev/null || true
