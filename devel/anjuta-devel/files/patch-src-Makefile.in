@@ -1,133 +1,34 @@
---- src/Makefile.in.orig	Fri Aug 24 12:05:50 2001
-+++ src/Makefile.in	Fri Aug 24 12:09:03 2001
-@@ -128,7 +128,7 @@
- cxxflags_set = @cxxflags_set@
- l = @l@
+
+$FreeBSD$
+
+--- src/Makefile.in.orig	Fri Jan  4 15:15:40 2002
++++ src/Makefile.in	Fri Jan  4 15:15:54 2002
+@@ -139,10 +139,10 @@
  
--INCLUDES =  	-I$(top_srcdir)/intl 	$(GNOME_INCLUDEDIR) 	 -I$(srcdir)/../scintilla/include 	 -I$(srcdir)/../widgets 	 -I$(srcdir)/../ccview 	 -I$(srcdir)/../pixmaps 	 -I.. -I. 	 -DHAVE_CONFIG_H 	 -Wall -Wimplicit -Wreturn-type -Wunused -Wswitch -Wcomment -Wuninitialized -Wparentheses -Wtraditional -Wpointer-arith -Wmissing-prototypes 	 -O1 	 -g
-+INCLUDES =  	-I$(top_srcdir)/intl 	$(GNOME_INCLUDEDIR) 	 -I$(prefix)/include/scintilla 	 -I$(srcdir)/../widgets 	 -I$(srcdir)/../ccview 	 -I$(srcdir)/../pixmaps 	 -I.. -I. 	 -DHAVE_CONFIG_H 	 -Wall -Wimplicit -Wreturn-type -Wunused -Wswitch -Wcomment -Wuninitialized -Wparentheses -Wtraditional -Wpointer-arith -Wmissing-prototypes
+ EXTRA_DIST = glades.h Prj-skelimpl.c Prj-skels.c Prj-stubs.c
+ 
+-INCLUDES =  	-I$(top_srcdir)/intl 	$(GNOME_INCLUDEDIR) 	$(EXTRA_GNOME_CFLAGS) 	$(EXTRA_ORBIT_CFLAGS) 	-I$(srcdir)/../scintilla/include 	-I$(srcdir)/../tagmanager/include 	-I$(srcdir)/../widgets 	-I$(srcdir)/../ccview 	-I$(srcdir)/../pixmaps 	-I.. -I. 	-Wall -Wimplicit -Wreturn-type -Wunused -Wswitch -Wcomment 	-Wuninitialized -Wparentheses -Wpointer-arith 	-Wmissing-prototypes  	-O1  	-g
++INCLUDES =  	-I$(top_srcdir)/intl 	$(GNOME_INCLUDEDIR) 	$(EXTRA_GNOME_CFLAGS) 	$(EXTRA_ORBIT_CFLAGS) 	-I$(prefix)/include/scintilla 	-I$(srcdir)/../tagmanager/include 	-I$(srcdir)/../widgets 	-I$(srcdir)/../ccview 	-I$(srcdir)/../pixmaps 	-I.. -I. 	-Wall -Wimplicit -Wreturn-type -Wunused -Wswitch -Wcomment 	-Wuninitialized -Wparentheses -Wpointer-arith 	-Wmissing-prototypes
+ 
+ 
+-SCILEXERS =      ../scintilla/StyleContext.o 	../scintilla/LexCPP.o 	../scintilla/LexConf.o 	../scintilla/LexHTML.o 	../scintilla/LexLua.o 	../scintilla/LexOthers.o 	../scintilla/LexPerl.o 	../scintilla/LexPython.o 	../scintilla/LexSQL.o 	../scintilla/LexVB.o 	../scintilla/LexPascal.o 	../scintilla/LexAVE.o 	../scintilla/LexCrontab.o 	../scintilla/LexEiffel.o 	../scintilla/LexLisp.o 	../scintilla/LexRuby.o 	../scintilla/LexBullant.o 	../scintilla/LexAda.o
++SCILEXERS =      -lscintilla_lexers
  
  
  bin_PROGRAMS = anjuta
-@@ -136,7 +136,7 @@
- anjuta_SOURCES =  	aneditor.cxx 	aneditor.h 	anjuta.h 	anjuta_cbs.c 	anjuta_dirs.c 	anjuta_dirs.h 	anjuta_info.c 	anjuta_info.h 	appwiz_page1.c 	appwiz_page2.c 	appwiz_page3.c 	appwizard.c 	appwizard.h 	appwizard_cbs.c 	appwizard_cbs.h 	appwizard_gui.c 	attach_process.c 	attach_process.h 	attach_process_cbs.c 	attach_process_cbs.h 	attach_process_gui.c 	breakpoints.c 	breakpoints.h 	breakpoints_cbs.c 	breakpoints_cbs.h 	breakpoints_gui.c 	build_file.c 	build_file.h 	build_project.c 	build_project.h 	clean_project.c 	clean_project.h 	commands.c 	commands.h 	compile.c 	compile.h 	compiler_options.c 	compiler_options.h 	compiler_options_cbs.c 	compiler_options_cbs.h 	compiler_options_gui.c 	configurer.c 	configurer.h 	controls.c 	controls.h 	debugger.c 	debugger.h 	executer.c 	executer.h 	fileselection.c 	fileselection.h 	find_in_files.c 	find_in_files.h 	find_in_files_cbs.c 	find_in_files_cbs.h 	find_in_files_gui.c 	find_replace.c 	find_replace.h 	find_text.c 	find_text.h 	global.h 	gnome_project.c 	gnome_project.h 	goto_line.c 	goto_line.h 	help.c 	help.h 	launcher.c 	launcher.h 	lexer.h 	main.c 	main_menubar.c 	main_menubar.h 	main_menubar_def.h 	mainmenu_callbacks.c 	mainmenu_callbacks.h 	messagebox.c 	messagebox.h 	messages.c 	messages.h 	pixmaps.h 	preferences.c 	preferences.h 	preferences_gui.c 	project_dbase.c 	project_dbase.h 	project_config.c 	project_config.h 	project_dbase_gui.c 	properties.cxx 	properties.h 	registers.c 	registers.h 	registers_cbs.c 	registers_cbs.h 	registers_gui.c 	sharedlib.c 	sharedlib.h 	sharedlib_cbs.c 	sharedlib_cbs.h 	sharedlib_gui.c 	signals.c 	signals.h 	signals_cbs.c 	signals_cbs.h 	signals_gui.c 	splash.c 	splash.h 	src_paths.c 	src_paths.h 	src_paths_cbs.c 	src_paths_cbs.h 	src_paths_gui.c 	stack_trace.c 	stack_trace.h 	stack_trace_cbs.c 	stack_trace_cbs.h 	stack_trace_gui.c 	syntax.h 	tags_manager.c 	tags_manager.h 	text_editor.c 	text_editor.h 	text_editor_cbs.c 	text_editor_cbs.h 	text_editor_gui.c 	text_editor_gui.h 	text_editor_menu.c 	text_editor_menu.h 	toolbar.c 	toolbar.h 	toolbar_callbacks.c 	toolbar_callbacks.h 	utilities.c 	utilities.h 	watch.c 	watch.h 	watch_cbs.c 	watch_cbs.h 	watch_gui.c 	about.c 	appwiz_page4.c 	source.c 	anjuta.c 	anjuta_gui.c 	source.h 	glade_iface.c 	glade_iface.h 	compatibility_0.c 	compatibility_0.h 	defaults.c 	defaults.h 	about.h 	resources.c 	resources.h 	notebook.c 	notebook.h
- 
- 
--anjuta_LDADD =  	$(INTLLIBS) 	$(GNOME_LIBDIR) $(GNOMEUI_LIBS) 	 -L../scintilla -L../widgets -L../ccview 	 ../scintilla/LexCPP.o ../scintilla/LexConf.o ../scintilla/LexHTML.o ../scintilla/LexLua.o ../scintilla/LexOthers.o ../scintilla/LexPerl.o ../scintilla/LexPython.o ../scintilla/LexSQL.o ../scintilla/LexVB.o ../scintilla/LexPascal.o ../scintilla/LexAVE.o -lwidgets -lccview -lxml -lscintilla
-+anjuta_LDADD =  	$(INTLLIBS) 	$(GNOME_LIBDIR) $(GNOMEUI_LIBS) 	 -L../widgets -L../ccview -lwidgets -lccview -lxml -lscintilla
- 
- mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs
- CONFIG_HEADER = ../config.h
-@@ -168,10 +168,7 @@
- watch_cbs.o watch_gui.o about.o appwiz_page4.o source.o anjuta.o \
- anjuta_gui.o glade_iface.o compatibility_0.o defaults.o resources.o \
- notebook.o
--anjuta_DEPENDENCIES =  ../scintilla/LexCPP.o ../scintilla/LexConf.o \
--../scintilla/LexHTML.o ../scintilla/LexLua.o ../scintilla/LexOthers.o \
--../scintilla/LexPerl.o ../scintilla/LexPython.o ../scintilla/LexSQL.o \
--../scintilla/LexVB.o ../scintilla/LexPascal.o ../scintilla/LexAVE.o
+@@ -198,14 +198,7 @@
+ defaults.$(OBJEXT) resources.$(OBJEXT) notebook.$(OBJEXT) \
+ CORBA-Server.$(OBJEXT) Gladen-common.$(OBJEXT) glades.$(OBJEXT) \
+ Prj-common.$(OBJEXT) Gladen-stubs.$(OBJEXT) session.$(OBJEXT)
+-anjuta_DEPENDENCIES =  ../scintilla/StyleContext.o ../scintilla/LexCPP.o \
+-../scintilla/LexConf.o ../scintilla/LexHTML.o ../scintilla/LexLua.o \
+-../scintilla/LexOthers.o ../scintilla/LexPerl.o \
+-../scintilla/LexPython.o ../scintilla/LexSQL.o ../scintilla/LexVB.o \
+-../scintilla/LexPascal.o ../scintilla/LexAVE.o \
+-../scintilla/LexCrontab.o ../scintilla/LexEiffel.o \
+-../scintilla/LexLisp.o ../scintilla/LexRuby.o ../scintilla/LexBullant.o \
+-../scintilla/LexAda.o
 +anjuta_DEPENDENCIES =
  anjuta_LDFLAGS = 
  CXXFLAGS = @CXXFLAGS@
  CXXCOMPILE = $(CXX) $(DEFS) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS)
-@@ -297,14 +294,7 @@
- 	  fi; \
- 	done
- about.o: about.c ../config.h utilities.h resources.h about.h
--aneditor.o: aneditor.cxx ../config.h ../scintilla/include/Platform.h \
--	../scintilla/include/PropSet.h ../scintilla/include/SString.h \
--	../scintilla/include/Accessor.h \
--	../scintilla/include/WindowAccessor.h \
--	../scintilla/include/KeyWords.h \
--	../scintilla/include/Scintilla.h \
--	../scintilla/include/ScintillaWidget.h \
--	../scintilla/include/SciLexer.h lexer.h properties.h aneditor.h
-+aneditor.o: aneditor.cxx ../config.h lexer.h properties.h aneditor.h
- anjuta_cbs.o: anjuta_cbs.c ../config.h text_editor.h global.h \
- 	text_editor_menu.h preferences.h properties.h aneditor.h \
- 	anjuta.h toolbar.h messagebox.h compiler_options.h src_paths.h \
-@@ -333,9 +323,7 @@
- 	anjuta_dirs.h executer.h configurer.h utilities.h \
- 	main_menubar.h help.h fileselection.h resources.h launcher.h \
- 	debugger.h watch.h registers.h stack_trace.h signals.h \
--	sharedlib.h attach_process.h controls.h anjuta_info.h \
--	../scintilla/include/Scintilla.h \
--	../scintilla/include/ScintillaWidget.h
-+	sharedlib.h attach_process.h controls.h anjuta_info.h
- appwizard_cbs.o: appwizard_cbs.c ../config.h anjuta.h toolbar.h \
- 	text_editor.h global.h text_editor_menu.h preferences.h \
- 	properties.h aneditor.h messagebox.h compiler_options.h \
-@@ -501,8 +489,7 @@
- 	find_text.h find_in_files.h messages.h project_dbase.h \
- 	tags_manager.h project_config.h commands.h anjuta_dirs.h \
- 	executer.h configurer.h utilities.h main_menubar.h help.h \
--	controls.h ../scintilla/include/Scintilla.h \
--	../scintilla/include/ScintillaWidget.h
-+	controls.h
- debugger.o: debugger.c ../config.h anjuta.h toolbar.h text_editor.h \
- 	global.h text_editor_menu.h preferences.h properties.h \
- 	aneditor.h messagebox.h compiler_options.h src_paths.h \
-@@ -557,9 +544,7 @@
- 	src_paths.h find_replace.h find_text.h find_in_files.h \
- 	messages.h project_dbase.h tags_manager.h project_config.h \
- 	commands.h breakpoints.h anjuta_dirs.h executer.h configurer.h \
--	utilities.h main_menubar.h help.h resources.h \
--	../scintilla/include/Scintilla.h \
--	../scintilla/include/ScintillaWidget.h
-+	utilities.h main_menubar.h help.h resources.h
- find_text.o: find_text.c ../config.h anjuta.h toolbar.h text_editor.h \
- 	global.h text_editor_menu.h preferences.h properties.h \
- 	aneditor.h messagebox.h compiler_options.h src_paths.h \
-@@ -622,8 +607,7 @@
- 	compile.h launcher.h appwizard.h debugger.h watch.h registers.h \
- 	stack_trace.h signals.h sharedlib.h attach_process.h \
- 	breakpoints_cbs.h goto_line.h resources.h controls.h \
--	signals_cbs.h watch_cbs.h ../scintilla/include/Scintilla.h \
--	../scintilla/include/ScintillaWidget.h
-+	signals_cbs.h watch_cbs.h
- main.o: main.c ../config.h splash.h anjuta.h toolbar.h text_editor.h \
- 	global.h text_editor_menu.h preferences.h properties.h \
- 	aneditor.h messagebox.h compiler_options.h src_paths.h \
-@@ -685,8 +669,7 @@
- 	../pixmaps/file_cpp.xpm ../pixmaps/file_h.xpm \
- 	../pixmaps/file_pix.xpm ../pixmaps/file_icon.xpm \
- 	../pixmaps/file_html.xpm ../pixmaps/file_i18n.xpm
--properties.o: properties.cxx ../scintilla/include/PropSet.h \
--	../scintilla/include/SString.h properties.h
-+properties.o: properties.cxx
- registers_cbs.o: registers_cbs.c ../config.h registers.h properties.h \
- 	registers_cbs.h debugger.h global.h breakpoints.h text_editor.h \
- 	text_editor_menu.h preferences.h aneditor.h watch.h \
-@@ -791,8 +774,7 @@
- 	messages.h project_dbase.h tags_manager.h project_config.h \
- 	commands.h breakpoints.h anjuta_dirs.h executer.h configurer.h \
- 	utilities.h main_menubar.h help.h controls.h text_editor_cbs.h \
--	text_editor_gui.h mainmenu_callbacks.h resources.h \
--	../scintilla/include/Scintilla.h
-+	text_editor_gui.h mainmenu_callbacks.h resources.h
- text_editor_gui.o: text_editor_gui.c ../config.h anjuta.h toolbar.h \
- 	text_editor.h global.h text_editor_menu.h preferences.h \
- 	properties.h aneditor.h messagebox.h compiler_options.h \
-@@ -800,9 +782,7 @@
- 	messages.h project_dbase.h tags_manager.h project_config.h \
- 	commands.h breakpoints.h anjuta_dirs.h executer.h configurer.h \
- 	utilities.h main_menubar.h help.h text_editor_cbs.h \
--	text_editor_gui.h mainmenu_callbacks.h pixmaps.h resources.h \
--	../scintilla/include/Scintilla.h \
--	../scintilla/include/ScintillaWidget.h
-+	text_editor_gui.h mainmenu_callbacks.h pixmaps.h resources.h
- text_editor_menu.o: text_editor_menu.c ../config.h resources.h \
- 	text_editor_menu.h anjuta.h toolbar.h text_editor.h global.h \
- 	preferences.h properties.h aneditor.h messagebox.h \
-@@ -820,10 +800,7 @@
- 	messages.h project_dbase.h tags_manager.h project_config.h \
- 	commands.h breakpoints.h anjuta_dirs.h executer.h configurer.h \
- 	utilities.h main_menubar.h help.h text_editor_gui.h \
--	text_editor_cbs.h syntax.h launcher.h \
--	../scintilla/include/Scintilla.h \
--	../scintilla/include/SciLexer.h \
--	../scintilla/include/ScintillaWidget.h lexer.h controls.h
-+	text_editor_cbs.h syntax.h launcher.h lexer.h controls.h
- toolbar_callbacks.o: toolbar_callbacks.c ../config.h anjuta.h toolbar.h \
- 	text_editor.h global.h text_editor_menu.h preferences.h \
- 	properties.h aneditor.h messagebox.h compiler_options.h \

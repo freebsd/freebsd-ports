@@ -1,15 +1,28 @@
---- Makefile.in.orig	Sun Aug 12 11:01:09 2001
-+++ Makefile.in	Sun Aug 12 11:02:14 2001
-@@ -128,10 +128,10 @@
+
+$FreeBSD$
+
+--- Makefile.in.orig	Fri Jan  4 16:09:11 2002
++++ Makefile.in	Fri Jan  4 16:26:58 2002
+@@ -137,11 +137,11 @@
  cxxflags_set = @cxxflags_set@
  l = @l@
  
--SUBDIRS = intl po macros scintilla ccview widgets manuals omf-install src pixmaps data doc launcher
-+SUBDIRS = intl po macros ccview widgets manuals omf-install src pixmaps data doc launcher
+-SUBDIRS = intl po macros tagmanager global-tags scintilla ccview 	widgets manuals omf-install src pixmaps data 	doc launcher
++SUBDIRS = intl po macros tagmanager global-tags ccview 	widgets manuals omf-install src pixmaps data 	launcher
+ 
  
  anjutadocdir = ${prefix}/doc/anjuta
--anjutadoc_DATA =  	README 	COPYING 	AUTHORS 	ChangeLog 	INSTALL 	NEWS 	TODO 	ABOUT-NLS
-+anjutadoc_DATA =
+-anjutadoc_DATA =  	README 	COPYING 	AUTHORS 	ChangeLog 	INSTALL 	NEWS 	TODO 	ABOUT-NLS 	FUTURE
++anjutadoc_DATA = # 	README 	COPYING 	AUTHORS 	ChangeLog 	INSTALL 	NEWS 	TODO 	ABOUT-NLS 	FUTURE
  
  
- EXTRA_DIST =  	anjuta.desktop.in.in 	anjuta.prj 	anjuta.spec.in 	xml-i18n-extract.in 	xml-i18n-merge.in 	xml-i18n-update.in 	$(anjutadoc_DATA)
+ EXTRA_DIST =  	anjuta.desktop.in.in 	anjuta.spec.in 	xml-i18n-extract.in 	xml-i18n-merge.in 	xml-i18n-update.in 	$(anjutadoc_DATA)
+@@ -416,7 +416,7 @@
+ install-exec-am:
+ install-exec: install-exec-recursive
+ 
+-install-data-am: install-anjutadocDATA install-gnomemenuDATA
++install-data-am: install-gnomemenuDATA
+ install-data: install-data-recursive
+ 
+ install-am: all-am

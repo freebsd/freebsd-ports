@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	anjuta
-PORTVERSION=	0.1.7
+PORTVERSION=	0.1.8
 CATEGORIES=	devel gnome
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	anjuta
@@ -24,8 +24,8 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 
 pre-patch:
 	@${PERL} -pi -e 's#-lpthread#-pthread#g ; \
-		s#DATADIRNAME=lib#DATADIRNAME=share#g' ${WRKSRC}/configure
+		 s#DATADIRNAME=lib#DATADIRNAME=share#g' ${WRKSRC}/configure
 	@find ${WRKSRC} -name "Makefile.in" | xargs ${PERL} -pi -e \
-		 's#\$\(datadir\)/locale#\$\(prefix\)/share/locale#g'
+		's#\$\(datadir\)/locale#\$\(prefix\)/share/locale#g'
 
 .include <bsd.port.mk>
