@@ -9,11 +9,13 @@
 PORTNAME=	mawk
 PORTVERSION=	1.3.3
 CATEGORIES=	lang
-MASTER_SITES=	ftp://ftp.whidbey.net/pub/brennan/
-DISTFILES=	${PORTNAME}${PORTVERSION}.tar.gz
+MASTER_SITES=	ftp://ftp.fu-berlin.de/pub/unix/languages/mawk/ \
+		http://dl.droso.net/ports/
+DISTNAME=	${PORTNAME}${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	erwin@lansing.dk
 
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 GNU_CONFIGURE=	yes
 ALL_TARGET=
 
