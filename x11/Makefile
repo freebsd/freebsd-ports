@@ -203,6 +203,7 @@
     SUBDIR += xkbset
     SUBDIR += xkeycaps
     SUBDIR += xkeywrap
+    SUBDIR += xlibs
     SUBDIR += xloadimage
     SUBDIR += xlockmore
     SUBDIR += xlogout
