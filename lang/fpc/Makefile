@@ -54,7 +54,7 @@ TEMP_EXMPDIR=	${TEMP_PREFIX}/share/examples
 PLIST_SUB=	LIBDIR=${LIBDIR}
 
 # install staging area
-pre-install:
+post-extract:
 	@${TAR} xf ${WRKSRC}/binary.tar --directory ${WRKSRC}
 	@${TAR} xf ${WRKSRC}/sources.tar --directory ${WRKSRC}
 	@${MKDIR} ${TEMP_PREFIX}
@@ -66,7 +66,6 @@ pre-install:
 	@${TAR} zxf ${WRKSRC}/basefreebsd.tar.gz \
 		--files-from ${FILESDIR}/tar-xlist \
 		--directory ${TEMP_PREFIX}/share
-	@${RM} -f ${TEMP_EXECDIR}/ppc386
 #unpack units
 	@${TAR} zxf ${WRKSRC}/utilfreebsd.tar.gz --directory ${TEMP_PREFIX}
 	@${TAR} zxf ${WRKSRC}/unitsfclfreebsd.tar.gz --directory ${TEMP_PREFIX}
@@ -97,8 +96,9 @@ pre-install:
 	@${TAR} zxf ${WRKSRC}/demo.tar.gz --directory ${TEMP_EXMPDIR}
 	@${MV} ${TEMP_EXMPDIR}/src/fpc-${PORTVERSION} \
 		${TEMP_PREFIX}/share/examples
-	@${RM} -rfd ${TEMP_EXMPDIR}/src
 .endif
+
+do-patch:
 #unpack and patch sample (working) configuration file
 	@${PATCH} --dir ${TEMP_LIBDIR} < ${FILESDIR}/fix-samplecfg
 

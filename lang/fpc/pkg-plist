@@ -8,15 +8,12 @@ bin/fprcp
 bin/h2pas
 bin/plex
 bin/postw32
-bin/ppc386
 bin/ppdep
 bin/ppudump
 bin/ppufiles
 bin/ppumove
 bin/ptop
 bin/pyacc
-bin/rstconv
-etc/ppc386.cfg
 lib/fpc/1.0.4/msg/errord.msg
 lib/fpc/1.0.4/msg/errore.msg
 lib/fpc/1.0.4/msg/errores.msg
