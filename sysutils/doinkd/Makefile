@@ -7,6 +7,7 @@
 
 PORTNAME=	idled
 PORTVERSION=	1.16
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.darkwing.com/idled/download/	\
 		ftp://ftp.cs.hope.edu/pub/idled/
