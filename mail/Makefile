@@ -63,6 +63,7 @@
     SUBDIR += postilion
     SUBDIR += premail
     SUBDIR += procmail
+    SUBDIR += prom-mew
     SUBDIR += prom-wl
     SUBDIR += qmail
     SUBDIR += qmail-contrib
