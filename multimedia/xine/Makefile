@@ -61,7 +61,8 @@ WITHOUT_XFT=	yes
 .endif
 
 .if ${OSVERSION} < 502000
-LIB_DEPENDS+=	readline.4:${PORTSDIR}/devel/readline
+BUILD_DEPENDS+=	${LOCALBASE}/lib/libreadline.so.4:${PORTSDIR}/devel/readline
+RUN_DEPENDS+=	${LOCALBASE}/lib/libreadline.so.4:${PORTSDIR}/devel/readline
 CONFIGURE_ARGS+=	--with-readline=${LOCALBASE}
 .endif
 
