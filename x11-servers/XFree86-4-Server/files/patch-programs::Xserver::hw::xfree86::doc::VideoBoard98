@@ -1,0 +1,45 @@
+Index: programs/Xserver/hw/xfree86/doc/VideoBoard98
+===================================================================
+RCS file: /cvs/xc/programs/Xserver/hw/xfree86/doc/VideoBoard98,v
+retrieving revision 1.5
+retrieving revision 1.6
+diff -u -r1.5 -r1.6
+--- programs/Xserver/hw/xfree86/doc/VideoBoard98	20 Jun 2000 20:07:58 -0000	1.5
++++ programs/Xserver/hw/xfree86/doc/VideoBoard98	8 Jun 2004 01:28:56 -0000	1.6
+@@ -156,9 +156,9 @@
+ |PC9821Nb7/C,D           |CLGD7543       | B/I   |  B/I   |1|   X   | |
+ |PC9821Nb10              |CLGD7548       | B/I   |  B/I   |1|   X   | |
+ |PC9821Nx/3,C7           |Cyber9320      | B/I   |  B/I   |1|   X   | |
+-|PC9821Nr12              |CLGD7555       | B/I   |  B/I   |2|   X   | |
+-|PC9821Nr13/D10          |CLGD7555       | B/I   |  B/I   |2|   X   | |
+-|PC9821Nr13/D14,S14      |CLGD7556       | B/I   |  B/I   |2|   X   | |
++|PC9821Nr12              |CLGD7555       | B/I   |  B/I   |2|  o?   |O|
++|PC9821Nr13/D10          |CLGD7555       | B/I   |  B/I   |2|  o?   |O|
++|PC9821Nr13/D14,S14      |CLGD7556       | B/I   |  B/I   |2|  o?   |O|
+ |PC9821Nr15              |Cyber9385      | B/I   |  B/I   |2|   X   | |
+ |PC9821Nr150             |Cyber9385      | B/I   |  B/I   |2|   X   | |
+ |PC9821Nr150/S20         |Cyber9385-1    | B/I   |  B/I   |2|   X   | |
+@@ -169,12 +169,12 @@
+ |PC9821Lt2               |Cyber9320      | B/I   |  B/I   |1|   X   | |
+ |PC9821La7               |Cyber9320      | B/I   |  B/I   |1|   X   | |
+ |PC9821La10              |Cyber9320      | B/I   |  B/I   |1|   X   | |
+-|PC9821La13              |CLGD7555       | B/I   |  B/I   |2|   X   | |
++|PC9821La13              |CLGD7555       | B/I   |  B/I   |2|   o   |O|
+ +------------------------+---------------+-------+--------+-+-------+-+
+-|PC9821Ls12              |CLGD7555       | B/I   |  B/I   |2|   X   | |
+-|PC9821Ls13              |CLGD7555       | B/I   |  B/I   |2|   X   | |
+-|PC9821Ls13              |CLGD7556       | B/I   |  B/I   |2|   X   | |
+-|PC9821Ls150             |CLGD7555       | B/I   |  B/I   |2|   X   | |
++|PC9821Ls12              |CLGD7555       | B/I   |  B/I   |2|  o?   |O|
++|PC9821Ls13              |CLGD7555       | B/I   |  B/I   |2|  o?   |O|
++|PC9821Ls13              |CLGD7556       | B/I   |  B/I   |2|  o?   |O|
++|PC9821Ls150             |CLGD7555       | B/I   |  B/I   |2|  o?   |O|
+ +------------------------+---------------+-------+--------+-+-------+-+
+   
+ 
+@@ -384,4 +384,4 @@
+ |WinFrame928             |S3-928         |       |        |2|   X   | |
+ +------------------------+---------------+-------+--------+-+-------+-+
+ 
+-/* $XFree86: xc/programs/Xserver/hw/xfree86/doc/VideoBoard98,v 1.5 2000/06/20 20:07:58 dawes Exp $ */
++/* $XFree86: xc/programs/Xserver/hw/xfree86/doc/VideoBoard98,v 1.6 2004/06/08 01:28:56 dawes Exp $ */
