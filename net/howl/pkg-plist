@@ -23,31 +23,29 @@ include/howl-%%VERSION%%/salt/salt.h
 include/howl-%%VERSION%%/salt/signal.h
 include/howl-%%VERSION%%/salt/socket.h
 include/howl-%%VERSION%%/salt/time.h
-lib/libhowl-%%VERSION%%.so.1
-lib/libhowl-%%VERSION%%.so
 lib/libhowl.a
 lib/libhowl.so
-lib/libmDNSResponder-%%VERSION%%.so
-lib/libmDNSResponder-%%VERSION%%.so.0
+lib/libhowl.so.0
 lib/libmDNSResponder.a
 lib/libmDNSResponder.so
+lib/libmDNSResponder.so.0
 libdata/pkgconfig/howl.pc
-share/howl/help/address-summary.html
-share/howl/help/address.html
-share/howl/help/discovery-summary.html
-share/howl/help/discovery.html
-share/howl/help/index.html
-share/howl/help/overall.html
-share/howl/help/salt-summary.html
-share/howl/help/salt.html
-share/howl/help/txt_rec-summary.html
-share/howl/help/txt_rec.html
-share/howl/help/txt_rec_iter-summary.html
-share/howl/help/txt_rec_iter.html
-share/howl/help/txt_rec_str_iter-summary.html
-share/howl/help/txt_rec_str_iter.html
-@dirrm share/howl/help
-@dirrm share/howl
+%%DATADIR%%/help/address-summary.html
+%%DATADIR%%/help/address.html
+%%DATADIR%%/help/discovery-summary.html
+%%DATADIR%%/help/discovery.html
+%%DATADIR%%/help/index.html
+%%DATADIR%%/help/overall.html
+%%DATADIR%%/help/salt-summary.html
+%%DATADIR%%/help/salt.html
+%%DATADIR%%/help/txt_rec-summary.html
+%%DATADIR%%/help/txt_rec.html
+%%DATADIR%%/help/txt_rec_iter-summary.html
+%%DATADIR%%/help/txt_rec_iter.html
+%%DATADIR%%/help/txt_rec_str_iter-summary.html
+%%DATADIR%%/help/txt_rec_str_iter.html
+@dirrm %%DATADIR%%/help
+@dirrm %%DATADIR%%
 @dirrm include/howl-%%VERSION%%/salt
 @dirrm include/howl-%%VERSION%%/rendezvous
 @dirrm include/howl-%%VERSION%%/discovery
