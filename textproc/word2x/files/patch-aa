@@ -1,0 +1,25 @@
+--- Makefile.in.orig	Tue Apr 21 02:38:00 1998
++++ Makefile.in	Wed Jun 10 11:32:12 1998
+@@ -6,10 +6,10 @@
+ CPP=@CXX@
+ 
+ #seek_set_hdr is a hack for Sun OS (and others? I hope not)
+-CPPFLAGS=-g -Wall @DEFS@ @seek_set_hdr@
++CPPFLAGS=@CXXFLAGS@ @DEFS@ @seek_set_hdr@
+ LD=@ld@
+ 
+-CCFLAGS=-O3 @DEFS@
++CCFLAGS=@CFLAGS@ @DEFS@
+ LIBOBJS=wordwrap.o nullproc.o tblock.o scan_num.o map_chars.o col-align.o \
+ 	compat.o ukdate.o usdate.o num_unit_probe.o part_num_probe.o
+ AR=ar
+@@ -89,7 +89,7 @@
+ 	$(CPP) -o $@ $(PROGOBJS)
+ 
+ install: $(TARGETS) $(MANP)
+-	@INSTALL@ $(MANP) -m 644 @mandir@/man1
++	@INSTALL_DATA@ $(MANP) @mandir@/man1
+ 	for I in $(TARGETS); do \
+-		@INSTALL@ $${I} -m 755 @bindir@; \
++		@INSTALL_PROGRAM@ $${I} @bindir@; \
+ 	done
