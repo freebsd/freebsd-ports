@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	PPerl
-PORTVERSION=	0.23
+PORTVERSION=	0.24
 CATEGORIES=	devel perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	../../authors/id/M/MS/MSERGEANT
@@ -20,7 +20,6 @@ USE_PERL5=	yes
 PERL_CONFIGURE=	yes
 
 MAN1=	pperl.1
-MAN3PREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 MAN3=	PPerl.3
 
 .include <bsd.port.mk>
