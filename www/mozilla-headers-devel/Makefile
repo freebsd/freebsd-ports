@@ -37,7 +37,7 @@ pre-install:
 	${TOUCH} -f ${PLIST}
 	cd ${WRKSRC}/dist/include && ${FIND} -s * -type f -o -type l | \
 		${SED} -e 's:^:include/mozilla-devel/:' >> ${PLIST} \
-		&& ${FIND} -d * -type f | \
+		&& ${FIND} -d * -type d | \
 		${SED} -e 's:^:@dirrm include/mozilla-devel/:' >> ${PLIST}
 	${ECHO_CMD} @dirrm include/mozilla-devel >> ${PLIST}
 

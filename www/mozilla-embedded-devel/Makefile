@@ -45,7 +45,7 @@ pre-install:
 	${TOUCH} -f ${PLIST}
 	cd ${WRKSRC}/dist/Embed && ${FIND} -s * -type f -o -type l | \
 		${SED} -e 's:^:lib/mozilla-embedded-devel/:' >> ${PLIST} \
-		&& ${FIND} -d * -type f | \
+		&& ${FIND} -d * -type d | \
 		${SED} -e 's:^:@dirrm lib/mozilla-embedded-devel/:' >> ${PLIST}
 	${ECHO_CMD} @dirrm lib/mozilla-embedded-devel >> ${PLIST}
 
