@@ -102,13 +102,13 @@ lib/graphviz/libtclpathplan.so.0
 lib/graphviz/libtkspline.so
 lib/graphviz/libtkspline.so.0
 lib/graphviz/pkgIndex.tcl
-share/doc/graphviz/dotguide.ps
-share/doc/graphviz/dotty.ps
-share/doc/graphviz/gd.html
-share/doc/graphviz/lefty.ps
-share/doc/graphviz/neatoguide.ps
-share/doc/graphviz/tcldot.html
-@dirrm share/doc/graphviz
+%%PORTDOCS%%share/doc/graphviz/dotguide.pdf
+%%PORTDOCS%%share/doc/graphviz/dottyguide.pdf
+%%PORTDOCS%%share/doc/graphviz/gd.html
+%%PORTDOCS%%share/doc/graphviz/leftyguide.pdf
+%%PORTDOCS%%share/doc/graphviz/neatoguide.pdf
+%%PORTDOCS%%share/doc/graphviz/tcldot.html
+%%PORTDOCS%%@dirrm share/doc/graphviz
 @dirrm lib/graphviz/lefty
 @dirrm lib/graphviz/graphs/undirected
 @dirrm lib/graphviz/graphs/directed

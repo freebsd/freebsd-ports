@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	graphviz
-PORTVERSION=	1.7b
+PORTVERSION=	1.7c
 CATEGORIES=	graphics tk83
 MASTER_SITES=	http://www.research.att.com/sw/tools/graphviz/
-DISTNAME=	gviz17b
+DISTNAME=	gviz${PORTVERSION:S/.//}
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
@@ -33,11 +33,26 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${LOCALBASE}/include/tcl8.3 -I
 INSTALLS_SHLIB=	yes
 LDCONFIG_DIRS=	${PREFIX}/lib/graphviz
 
-MAN1=	dot.1 dotty.1 lefty.1 neato.1
-MAN3=	agraph.3 cdt.3 graph.3 pathplan.3
-MANN=	gdtclft.n tcldgl.n tcldgr.n tcldot.n tkspline.n
+MAN1=		dot.1 dotty.1 lefty.1 neato.1
+MAN3=		agraph.3 cdt.3 graph.3 pathplan.3
+MANN=		gdtclft.n tcldgl.n tcldgr.n tcldot.n tkspline.n
+
+PORTDOCS=	dotguide.pdf dottyguide.pdf gd.html leftyguide.pdf \
+		neatoguide.pdf tcldot.html
 
 post-patch:
 	@cd ${WRKSRC} && aclocal && autoheader && libtoolize --force
+
+pre-build:
+	@cd ${WRKSRC}/cdt && ./iffe - set cc ${CC} ${CFLAGS} : run \
+		features/common > ast_common.h
+
+post-install:
+.if !defined(NOPORTDOCS)
+	@${MKDIR} ${PREFIX}/share/doc/graphviz
+.for file in ${PORTDOCS} 
+	${INSTALL_DATA} ${WRKSRC}/doc/${file} ${PREFIX}/share/doc/graphviz
+.endfor
+.endif
 
 .include <bsd.port.mk>
