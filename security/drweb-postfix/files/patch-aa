@@ -1,0 +1,11 @@
+--- dw_options.c.bak	Thu Aug 22 18:35:50 2002
++++ dw_options.c	Sat Aug 24 19:19:13 2002
+@@ -92,7 +92,7 @@
+ 
+ #if defined(__UNIX_DW)
+ #if !defined(EMX_DW)
+-#define OS_SPEC_CONFNAME            "/usr/local/drweb/"CONF_FNAME
++#define OS_SPEC_CONFNAME            "%PREFIX%/etc/drweb/"CONF_FNAME
+ #else /* EMX */
+ #define OS_SPEC_CONFNAME            "./"CONF_FNAME
+ #endif /* EMX */

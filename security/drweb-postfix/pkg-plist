@@ -1,0 +1,72 @@
+@comment $FreeBSD$
+@unexec if [ -f %D/etc/drweb/drweb_postfix.conf ] && cmp -s %D/etc/drweb/drweb_postfix.conf %D/etc/drweb/drweb_postfix.conf-dist; then rm -f %D/etc/drweb/drweb_postfix.conf; fi
+etc/drweb/drweb_postfix.conf-dist
+@exec [ -f %B/drweb_postfix.conf ] || cp %B/%f %B/drweb_postfix.conf
+@unexec if [ -f %D/etc/drweb/templates/en-ru/postfix/error-admin.msg ] && cmp -s %D/etc/drweb/templates/en-ru/postfix/error-admin.msg %D/etc/drweb/templates/en-ru/postfix/error-admin.msg-dist; then rm -f %D/etc/drweb/templates/en-ru/postfix/error-admin.msg; fi
+etc/drweb/templates/en-ru/postfix/error-admin.msg-dist
+@exec [ -f %B/error-admin.msg ] || cp %B/%f %B/error-admin.msg
+@unexec if [ -f %D/etc/drweb/templates/en-ru/postfix/error-sender.msg ] && cmp -s %D/etc/drweb/templates/en-ru/postfix/error-sender.msg %D/etc/drweb/templates/en-ru/postfix/error-sender.msg-dist; then rm -f %D/etc/drweb/templates/en-ru/postfix/error-sender.msg; fi
+etc/drweb/templates/en-ru/postfix/error-sender.msg-dist
+@exec [ -f %B/error-sender.msg ] || cp %B/%f %B/error-sender.msg
+@unexec if [ -f %D/etc/drweb/templates/en-ru/postfix/mailbomb-admin.msg ] && cmp -s %D/etc/drweb/templates/en-ru/postfix/mailbomb-admin.msg %D/etc/drweb/templates/en-ru/postfix/mailbomb-admin.msg-dist; then rm -f %D/etc/drweb/templates/en-ru/postfix/mailbomb-admin.msg; fi
+etc/drweb/templates/en-ru/postfix/mailbomb-admin.msg-dist
+@exec [ -f %B/mailbomb-admin.msg ] || cp %B/%f %B/mailbomb-admin.msg
+@unexec if [ -f %D/etc/drweb/templates/en-ru/postfix/mailbomb-sender.msg ] && cmp -s %D/etc/drweb/templates/en-ru/postfix/mailbomb-sender.msg %D/etc/drweb/templates/en-ru/postfix/mailbomb-sender.msg-dist; then rm -f %D/etc/drweb/templates/en-ru/postfix/mailbomb-sender.msg; fi
+etc/drweb/templates/en-ru/postfix/mailbomb-sender.msg-dist
+@exec [ -f %B/mailbomb-sender.msg ] || cp %B/%f %B/mailbomb-sender.msg
+@unexec if [ -f %D/etc/drweb/templates/en-ru/postfix/skip-sender.msg ] && cmp -s %D/etc/drweb/templates/en-ru/postfix/skip-sender.msg %D/etc/drweb/templates/en-ru/postfix/skip-sender.msg-dist; then rm -f %D/etc/drweb/templates/en-ru/postfix/skip-sender.msg; fi
+etc/drweb/templates/en-ru/postfix/skip-sender.msg-dist
+@exec [ -f %B/skip-sender.msg ] || cp %B/%f %B/skip-sender.msg
+@unexec if [ -f %D/etc/drweb/templates/en-ru/postfix/virus-admin.msg ] && cmp -s %D/etc/drweb/templates/en-ru/postfix/virus-admin.msg %D/etc/drweb/templates/en-ru/postfix/virus-admin.msg-dist; then rm -f %D/etc/drweb/templates/en-ru/postfix/virus-admin.msg; fi
+etc/drweb/templates/en-ru/postfix/virus-admin.msg-dist
+@exec [ -f %B/virus-admin.msg ] || cp %B/%f %B/virus-admin.msg
+@unexec if [ -f %D/etc/drweb/templates/en-ru/postfix/virus-rcpts.msg ] && cmp -s %D/etc/drweb/templates/en-ru/postfix/virus-rcpts.msg %D/etc/drweb/templates/en-ru/postfix/virus-rcpts.msg-dist; then rm -f %D/etc/drweb/templates/en-ru/postfix/virus-rcpts.msg; fi
+etc/drweb/templates/en-ru/postfix/virus-rcpts.msg-dist
+@exec [ -f %B/virus-rcpts.msg ] || cp %B/%f %B/virus-rcpts.msg
+@unexec if [ -f %D/etc/drweb/templates/en-ru/postfix/virus-sender.msg ] && cmp -s %D/etc/drweb/templates/en-ru/postfix/virus-sender.msg %D/etc/drweb/templates/en-ru/postfix/virus-sender.msg-dist; then rm -f %D/etc/drweb/templates/en-ru/postfix/virus-sender.msg; fi
+etc/drweb/templates/en-ru/postfix/virus-sender.msg-dist
+@exec [ -f %B/virus-sender.msg ] || cp %B/%f %B/virus-sender.msg
+@unexec if [ -f %D/etc/drweb/templates/en-es/postfix/error-admin.msg ] && cmp -s %D/etc/drweb/templates/en-es/postfix/error-admin.msg %D/etc/drweb/templates/en-es/postfix/error-admin.msg-dist; then rm -f %D/etc/drweb/templates/en-es/postfix/error-admin.msg; fi
+etc/drweb/templates/en-es/postfix/error-admin.msg-dist
+@exec [ -f %B/error-admin.msg ] || cp %B/%f %B/error-admin.msg
+@unexec if [ -f %D/etc/drweb/templates/en-es/postfix/error-sender.msg ] && cmp -s %D/etc/drweb/templates/en-es/postfix/error-sender.msg %D/etc/drweb/templates/en-es/postfix/error-sender.msg-dist; then rm -f %D/etc/drweb/templates/en-es/postfix/error-sender.msg; fi
+etc/drweb/templates/en-es/postfix/error-sender.msg-dist
+@exec [ -f %B/error-sender.msg ] || cp %B/%f %B/error-sender.msg
+@unexec if [ -f %D/etc/drweb/templates/en-es/postfix/mailbomb-admin.msg ] && cmp -s %D/etc/drweb/templates/en-es/postfix/mailbomb-admin.msg %D/etc/drweb/templates/en-es/postfix/mailbomb-admin.msg-dist; then rm -f %D/etc/drweb/templates/en-es/postfix/mailbomb-admin.msg; fi
+etc/drweb/templates/en-es/postfix/mailbomb-admin.msg-dist
+@exec [ -f %B/mailbomb-admin.msg ] || cp %B/%f %B/mailbomb-admin.msg
+@unexec if [ -f %D/etc/drweb/templates/en-es/postfix/mailbomb-sender.msg ] && cmp -s %D/etc/drweb/templates/en-es/postfix/mailbomb-sender.msg %D/etc/drweb/templates/en-es/postfix/mailbomb-sender.msg-dist; then rm -f %D/etc/drweb/templates/en-es/postfix/mailbomb-sender.msg; fi
+etc/drweb/templates/en-es/postfix/mailbomb-sender.msg-dist
+@exec [ -f %B/mailbomb-sender.msg ] || cp %B/%f %B/mailbomb-sender.msg
+@unexec if [ -f %D/etc/drweb/templates/en-es/postfix/skip-sender.msg ] && cmp -s %D/etc/drweb/templates/en-es/postfix/skip-sender.msg %D/etc/drweb/templates/en-es/postfix/skip-sender.msg-dist; then rm -f %D/etc/drweb/templates/en-es/postfix/skip-sender.msg; fi
+etc/drweb/templates/en-es/postfix/skip-sender.msg-dist
+@exec [ -f %B/skip-sender.msg ] || cp %B/%f %B/skip-sender.msg
+@unexec if [ -f %D/etc/drweb/templates/en-es/postfix/virus-admin.msg ] && cmp -s %D/etc/drweb/templates/en-es/postfix/virus-admin.msg %D/etc/drweb/templates/en-es/postfix/virus-admin.msg-dist; then rm -f %D/etc/drweb/templates/en-es/postfix/virus-admin.msg; fi
+etc/drweb/templates/en-es/postfix/virus-admin.msg-dist
+@exec [ -f %B/virus-admin.msg ] || cp %B/%f %B/virus-admin.msg
+@unexec if [ -f %D/etc/drweb/templates/en-es/postfix/virus-rcpts.msg ] && cmp -s %D/etc/drweb/templates/en-es/postfix/virus-rcpts.msg %D/etc/drweb/templates/en-es/postfix/virus-rcpts.msg-dist; then rm -f %D/etc/drweb/templates/en-es/postfix/virus-rcpts.msg; fi
+etc/drweb/templates/en-es/postfix/virus-rcpts.msg-dist
+@exec [ -f %B/virus-rcpts.msg ] || cp %B/%f %B/virus-rcpts.msg
+@unexec if [ -f %D/etc/drweb/templates/en-es/postfix/virus-sender.msg ] && cmp -s %D/etc/drweb/templates/en-es/postfix/virus-sender.msg %D/etc/drweb/templates/en-es/postfix/virus-sender.msg-dist; then rm -f %D/etc/drweb/templates/en-es/postfix/virus-sender.msg; fi
+etc/drweb/templates/en-es/postfix/virus-sender.msg-dist
+@exec [ -f %B/virus-sender.msg ] || cp %B/%f %B/virus-sender.msg
+@unexec if [ -f %D/etc/drweb/users.conf ] && cmp -s %D/etc/drweb/users.conf %D/etc/drweb/users.conf-dist; then rm -f %D/etc/drweb/users.conf; fi
+etc/drweb/users.conf-dist
+@exec [ -f %B/users.conf ] || cp %B/%f %B/users.conf
+sbin/drweb-postfix
+sbin/drwebdc
+share/doc/drweb-postfix/readme
+share/doc/drweb-postfix/notify.rus.txt
+share/doc/drweb-postfix/users_list.rus.txt
+share/doc/drweb-postfix/conf_file.rus.txt
+share/doc/drweb-postfix/notify.txt
+share/doc/drweb-postfix/users_list.txt
+share/doc/drweb-postfix/conf_file.txt
+share/doc/drweb-postfix/readme.rus
+@dirrm share/doc/drweb-postfix
+@dirrm etc/drweb/templates/en-es/postfix
+@dirrm etc/drweb/templates/en-es
+@dirrm etc/drweb/templates/en-ru/postfix
+@dirrm etc/drweb/templates/en-ru
+@dirrm etc/drweb/templates
+@dirrm etc/drweb

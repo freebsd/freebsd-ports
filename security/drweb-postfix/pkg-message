@@ -1,0 +1,21 @@
+1. Add the following lines into Postfix master file (master.cf).
+    
+filter    unix  -   n   n   -   -   pipe
+    flags=R user=drweb argv={drweb-directory}/drweb-postfix -f ${sender} -- ${recipient}
+    
+    or   
+
+filter    unix  -   n   n   -   -   pipe
+   flags=R user=drweb argv={drweb-directory}/drweb-postfix --conf={/path/to/your/conf/file} -f ${sender} -- ${recipient}
+
+    attention: {path/to/conf/file} should contain filename too        
+
+2. Give Postfix a direction to check all the letters incoming through SMTP.
+For that you should find the following record in Postfix master file
+(parameters n - n - - may be different):
+
+smtp          inet  n       -       n       -       -       smtpd 
+
+and change it into:
+
+smtp          inet  n       -       n       -       -       smtpd -o content_filter=filter:dummy

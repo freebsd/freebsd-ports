@@ -45,6 +45,7 @@
     SUBDIR += digest
     SUBDIR += donkey
     SUBDIR += drweb
+    SUBDIR += drweb-postfix
     SUBDIR += drweb-sendmail
     SUBDIR += drwebd
     SUBDIR += dsniff
