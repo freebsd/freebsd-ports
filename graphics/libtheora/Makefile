@@ -11,7 +11,7 @@ CATEGORIES=	graphics
 MASTER_SITES=	http://www.theora.org/files/
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/.a3/alpha3/}
 
-MAINTAINER=	kwm@rainbow-runner.nl
+MAINTAINER=	kwm@FreeBSD.org
 COMMENT=	Theora video codec for the Ogg multimedia streaming system
 
 LIB_DEPENDS=	vorbis.3:${PORTSDIR}/audio/libvorbis
