@@ -1,0 +1,6 @@
+This is 0.3 of xmms_ladspa, an Effect for XMMS that provides (some of)
+the power of the Linux Audio Developer's Simple Plugin API to your
+everyday MP3 and all-around media player.
+
+Author: njl195@zepler.org.uk
+WWW: http://www.ecs.soton.ac.uk/~njl98r/code/ladspa/

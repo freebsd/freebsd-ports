@@ -270,6 +270,7 @@
     SUBDIR += xmms-fc
     SUBDIR += xmms-gdancer
     SUBDIR += xmms-kde
+    SUBDIR += xmms-ladspa
     SUBDIR += xmms-liveice
     SUBDIR += xmms-musepack
     SUBDIR += xmms-quix3dn
