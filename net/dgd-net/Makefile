@@ -1,12 +1,12 @@
 # New ports collection makefile for:	dgd-net
-# Version required:	1.0.63
+# Version required:	1.0.82
 # Date created:		17 June 1996
 # Whom:			adam
 #
-# $Id: Makefile,v 1.5 1996/08/13 05:45:17 adam Exp $
+# $Id: Makefile,v 1.1.1.1 1996/06/18 11:15:43 adam Exp $
 #
 
-DISTNAME=	dgd-net-1.0.63
+DISTNAME=	dgd-net-1.0.83
 DISTFILES=	dgd-1.0.37.tar.gz
 CATEGORIES=	net lang
 MASTER_SITES=	ftp.lysator.liu.se:/pub/lpmud/drivers/dgd/
@@ -17,8 +17,34 @@ PATCH_SITES=	ftp.lysator.liu.se:/pub/lpmud/drivers/dgd/patches/ \
 PATCHFILES=	1.0.37-1.0.39.gz \
 		1.0.39-1.0.40.gz \
 		1.0.40-1.0.56.gz \
-		1.0.56-1.0.63.gz \
-		net-10.dgd-63.gz
+		1.0.56-1.0.57.gz \
+		1.0.57-1.0.58.gz \
+		1.0.58-1.0.59.gz \
+		1.0.59-1.0.60.gz \
+		1.0.60-1.0.61.gz \
+		1.0.61-1.0.62.gz \
+		1.0.62-1.0.63.gz \
+		1.0.63-1.0.64.gz \
+		1.0.64-1.0.65.gz \
+		1.0.65-1.0.66.gz \
+		1.0.66-1.0.67.gz \
+		1.0.67-1.0.68.gz \
+		1.0.68-1.0.69.gz \
+		1.0.69-1.0.70.gz \
+		1.0.70-1.0.71.gz \
+		1.0.71-1.0.72.gz \
+		1.0.72-1.0.73.gz \
+		1.0.73-1.0.74.gz \
+		1.0.74-1.0.75.gz \
+		1.0.75-1.0.76.gz \
+		1.0.76-1.0.77.gz \
+		1.0.77-1.0.78.gz \
+		1.0.78-1.0.79.gz \
+		1.0.79-1.0.80.gz \
+		1.0.80-1.0.81.gz \
+		1.0.81-1.0.82.gz \
+		net-10.dgd-82.gz \
+		1.0.82-1.0.83.gz
 
 MAINTAINER=	adam@veda.is
 
