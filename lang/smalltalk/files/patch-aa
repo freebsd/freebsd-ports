@@ -1,15 +1,18 @@
---- lib/gst.h.orig	Fri Nov 28 21:37:24 1997
-+++ lib/gst.h	Fri Nov 28 21:38:09 1997
-@@ -135,10 +135,12 @@
-  * define __STDC__ */
- #if (defined (__STDC__) && __STDC__) || defined(_ANSI_C_SOURCE) || defined (__cplusplus)  || defined(_WIN32)
- 
-+#ifndef __FreeBSD__
- #define	__P(args)	args
- #define	__const		const
- #define	__signed	signed
- #define	__volatile	volatile
-+#endif
- #define	__DOTS		, ...
- 
- #else	/* Not ANSI C or C++.  */
+--- lib/lex.c.old	Sun Dec 26 10:56:37 1999
++++ lib/lex.c	Sun Dec 26 10:57:50 1999
+@@ -48,6 +48,7 @@
+ #include "sysdep.h"
+ #include <stdio.h>
+ #include <math.h>
++#include <floatingpoint.h>
+ #ifdef HAVE_READLINE
+ #include <readline/readline.h>
+ #include <readline/history.h>
+@@ -693,6 +694,7 @@
+   if (isNegative) {
+     num = -num;
+   }
++  fpsetmask(0);
+     
+   if (dotSeen) {
+     lvalp->fval = num;

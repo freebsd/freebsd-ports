@@ -1,19 +1,11 @@
---- lib/Makefile.in.orig	Fri Nov 28 22:28:12 1997
-+++ lib/Makefile.in	Fri Nov 28 23:19:37 1997
-@@ -73,7 +73,7 @@
- LIB=@LIB_EXTENSION@
- 
- # optimization flag -- may become host dependent
--OPT_FLAG = -O
-+#OPT_FLAG = -O
- CDEBUG = @CDEBUG@
- USER_OBJECTS = @USER_OBJECTS@
- 
-@@ -195,7 +195,6 @@
- 	$(INSTALL_DATA) libgst.$(LIB) $(smlibdir)/libgst.$(LIB)
- 	$(INSTALL_DATA) gst.h $(includedir)/gst.h
- 	$(INSTALL_DATA) gstpub.h $(includedir)/gstpub.h
--	$(INSTALL_DATA) config.h $(includedir)/config.h
- 
- uninstall:
- 
+--- Makefile.rules.old	Sun Dec 26 11:51:47 1999
++++ Makefile.rules	Sun Dec 26 11:51:32 1999
+@@ -82,7 +82,7 @@
+ 	-$(INSTALL_DATA) lib/gstpub.h $(oldincludedir)/gstpub.h
+ 	$(INSTALL_DATA) lib/libgst.$(LIB) $(smlibdir)/libgst.$(LIB)
+ 	(cd $(srcdir)/docs; $(MAKE) install; cd ..)
+-	ln -s $(bindir)/gst $(stdir)/gst    # for regression testing
++	-ln -s $(bindir)/gst $(stdir)/gst    # for regression testing
+ 	for file in $(INSTALLED_FILES); do				\
+ 	  $(INSTALL_DATA) $$file $(stdir)/$$file;			\
+ 	done
