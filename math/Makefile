@@ -141,6 +141,7 @@
     SUBDIR += p5-Math-BigIntFast
     SUBDIR += p5-Math-Calc-Units
     SUBDIR += p5-Math-Currency
+    SUBDIR += p5-Math-Derivative
     SUBDIR += p5-Math-Expr
     SUBDIR += p5-Math-FFT
     SUBDIR += p5-Math-FixedPrecision
