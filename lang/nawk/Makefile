@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	nawk
-PORTVERSION=	20020101
+PORTVERSION=	20020210
 CATEGORIES=	lang
 MASTER_SITES=	http://cm.bell-labs.com/who/bwk/
 DISTNAME=	awk
