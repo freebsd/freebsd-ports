@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.162 1999/03/20 05:42:24 taoka Exp $
+# $Id: Makefile,v 1.163 1999/03/24 14:16:17 rse Exp $
 #
 
     SUBDIR += ElectricFence
@@ -120,6 +120,7 @@
     SUBDIR += portcheckout
     SUBDIR += portlint
     SUBDIR += prcs
+    SUBDIR += py-kjbuckets
     SUBDIR += qtarch
     SUBDIR += qtez
     SUBDIR += re2c
