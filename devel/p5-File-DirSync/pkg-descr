@@ -1,0 +1,10 @@
+File::DirSync will make two directories exactly the same. The goal
+is to perform this synchronization process as quickly as possible
+with as few stats and reads and writes as possible. It usually can
+perform the synchronization process within a few milliseconds - even
+for gigabytes or more of information.
+
+WWW: http://freeware.roobik.com/filedirsync/
+
+- Seamus Venasse
+svenasse@polaris.ca
