@@ -1,0 +1,50 @@
+--- Makefile.orig	Thu Jun 18 19:44:09 1998
++++ Makefile	Thu Nov 26 12:36:44 1998
+@@ -1,17 +1,18 @@
+ OBJ     = libapm.o bios.o smi.o
+ PROGRAM = libapm
+-OWNER = -g root
+-GROUP = -o root
+-MODE  = -m 755
+-#MODE  = -m 4755
+-BINDIR  = /usr/local/bin
+-MANSECT = l
+-MANDIR  = /usr/local/man/ja_JP.ujis
+-MANLANG = j
+-#MANDIR  = /usr/local/man
+-#MANLANG = e
++PROGRAM_NAME = libretto-config
++OWNER = -o root
++GROUP = -g operator
++MODE  = -m 4550
++BINDIR  = /usr/local/sbin
++MANSECT = 8
++MANDIR  = /usr/local/man
++MANLANG = e
+ 
+-CFLAGS = -O2 #-DLIBRETTO -DDEBUG
++#DEFS= -DLIBRETTO -DDEBUG
++CFLAGS = -pipe -O $(DEFS)
++
++all:	$(PROGRAM)
+ 
+ $(PROGRAM): $(OBJ)
+ 	$(CC) $(CFLAGS) -o $(PROGRAM) $(OBJ)
+@@ -19,12 +20,12 @@
+ clean:
+ 	/bin/rm -f $(OBJ) $(PROGRAM) *~ 
+ 
+-install: install.bin
++install: install.bin install.man
+ 
+ install.bin:
+-	install -c -s $(OWNER) $(GROUP) $(MODE) $(PROGRAM) $(BINDIR)
++	install -c -s $(OWNER) $(GROUP) $(MODE) $(PROGRAM) $(BINDIR)/$(PROGRAM_NAME)
+ 
+ install.man:
+-	- mkdir $(MANDIR)/man$(MANSECT)
+-	install -c -m 644 libapm-${MANLANG}.man $(MANDIR)/man$(MANSECT)/libapm.$(MANSECT)
+-	
++	${BSD_INSTALL_MAN} libapm-${MANLANG}.man $(MANDIR)/man$(MANSECT)/$(PROGRAM_NAME).$(MANSECT)
++
++libapm.o: libapm.h libapm.c

@@ -1,0 +1,110 @@
+--- libapm-j.man.orig	Thu Jun  4 13:16:43 1998
++++ libapm-j.man	Thu Nov 26 12:40:28 1998
+@@ -1,38 +1,38 @@
+ .\" Written Tue May 12 19:30:00 1998 by ISHIOKA Takashi
+ .\"         Changes Thu Jun  3 12:10:28 1998 
+ .\" (ishioka@ppp01.infopepper.or.jp )
+-.TH libapm l "" "TOSHIBA Libretto only"  ""
++.TH libretto-config 8 "" "TOSHIBA Libretto only"  ""
+ .SH 名前
+-libapm \- 東芝Librettoの電源管理プログラム
++libretto-config \- 東芝Librettoの電源管理プログラム
+ .SH 書式
+ 
+-.B libapm
+-{\-v,\-\-Version}
+-{\-h,\-\-Help}
++.B libretto-config
++{\-v}
++{\-h}
+ 
+-.B libapm
+-{\-P,\-\-PowerUp (boot,hibernation)}
+-{\-T,\-\-StandbyTime (0,5,10,15,30,45,60,unlimit)}
+-{\-a,\-\-AutoOff (disable,10,20,30,40,50,60)}
+-{\-S,\-\-PanelSwitch (disable,enable)}
+-{\-A,\-\-AlarmOn (disable,<time>)}
+-{\-L,\-\-LcdPower (0,1,2,3)}
+-{\-V,\-\-Volume (0,1,2,3)}
+-{\-O,\-\-Off (suspend|hibernation)}
++.B libretto-config
++{\-P (boot,hibernation)}
++{\-T (0,5,10,15,30,45,60,unlimit)}
++{\-a (disable,10,20,30,40,50,60)}
++{\-S (disable,enable)}
++{\-A (disable,<time>)}
++{\-L (0,1,2,3)}
++{\-V (0,1,2,3)}
++{\-O (suspend|hibernation)}
+ 
+ .SH 説明
+-.B libapm
++.B libretto-config
+ は東芝Libretto のシステム設定を変更します。
+ 変更は即座に反映されリブートの必要はありません。
+ 
+ .SH オプション
+ .TP
+-.B \-P,\-\-PowerUp (boot,hibernation)
++.B \-P (boot,hibernation)
+ は ハイバネーション機能を設定します。
+ hibernationを指定するとハイバネーション機能が有効になり、
+ bootを指定するとそれが無効になります。
+ .TP 
+-.B \-T,\-\-StandbyTime (0,5,10,15,30,45,60,unlimit)
++.B \-T (0,5,10,15,30,45,60,unlimit)
+ は、スタンバイ時間(単位は分)を設定します。
+ スタンバイ時間とは、サスペンドによってハードディスクへの保存処理を
+ 終了した後、完全に電源を切るまでの時間です。
+@@ -40,43 +40,43 @@
+ unlimit を指定した場合は、完全に電源を切らなくなります。
+ この機能は、ハイバネーション機能が有効な場合のみ動作します。
+ .TP
+-.B \-a,\-\-AutoOff (disable,10,20,30,40,50,60)
++.B \-a (disable,10,20,30,40,50,60)
+ システム自動オフ時間(単位は分)を設定します。
+ 指定できる時間は disable,10,20,30,40,50,60 です.
+ この機能は、ハイバネーション機能が有効な場合のみ動作します。
+ .TP
+-.B \-S,\-\-PanelSwitch (disable,enable)
++.B \-S (disable,enable)
+ は、パネルを閉じたときにハイバネーションし、開いたときにレジュームする
+ パネルスイッチの機能を設定します。
+ enable を指定するとパネルスイッチの機能が有効になり、
+ disable を指定するとその機能は無効になります。
+ この機能はハイバネーション機能が有効な場合のみ動作します。
+ .TP
+-.B \-A,\-\-AlarmOn (disable,<time>)
++.B \-A (disable,<time>)
+ は、タイマオン機能を設定します。
+ <time> として hh:mm の形で時刻を与えると、その時刻に自動的に電源が入り
+ ます。disable を指定するとその機能が無効になります。
+ .TP
+-.B \-L,\-\-LcdPower (0,1,2,3)
++.B \-L (0,1,2,3)
+ は、LCD の輝度を設定します。
+ 0,1,2,3 の値が指定できます。
+ 0 が最も暗く、数字が大きくなるに従い、
+ より明るくなります。
+ .TP
+-.B \-V,\-\-Volume (0,1,2,3)
++.B \-V (0,1,2,3)
+ は、ビープ音の設定をします。
+ 0,1,2,3 の値が指定できます。
+ 0でオフ、1が最も小さな音で、数字が大きくなるに従い、
+ より大きな音になります。
+ .TP
+-.B \-O,\-\-Off (suspend|hibernation)
++.B \-O (suspend|hibernation)
+ 電源を切るときに suspend状態にするか、ハイバネーション機能を使うかを
+ 設定します。このオプションは Libretto100以降の機種のみで有効です。
+ .TP
+-.B \-v,\-\-Version 
++.B \-v
+ バージョンを表示して終了します。
+ .TP
+-.B \-h,\-\-Help 
++.B \-h
+ 簡単なヘルプを表示して終了します。
+ 
+ .SH バグ
