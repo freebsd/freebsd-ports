@@ -15,9 +15,9 @@ MAINTAINER=		greid@ukug.uk.freebsd.org
 LIB_DEPENDS=		ggi.2:${PORTSDIR}/graphics/libggi \
 			png.4:${PORTSDIR}/graphics/png
 
-HAS_CONFIGURE=		yes
+GNU_CONFIGURE=		yes
 
-CONFIGURE_ENV=		CFLAGS="-I${LOCALBASE}/include" \
+CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
 
 USE_GLIB=		yes
