@@ -6,23 +6,23 @@
 #
 
 PORTNAME=	python
-PORTVERSION=	1.5.2
+PORTVERSION=	1.6
 CATEGORIES=	lang python
-MASTER_SITES=	ftp://www.python.org/pub/python/src/ \
-		ftp://ftp.cwi.nl/pub/python/src/
-DISTNAME=	py152
-EXTRACT_SUFX=	.tgz
+MASTER_SITES=	http://www.python.org/1.6/
+DISTNAME=	Python-${PORTVERSION}
 
 MAINTAINER=	tg@FreeBSD.org
 
 DIST_SUBDIR=	python
-WRKSRC=		${WRKDIR}/Python-1.5.2
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-fpectl
 CONFIGURE_ENV=	OPT="${CFLAGS}"
 INSTALL_TARGET=	install
 PLIST=		${WRKDIR}/PLIST
 MAN1=		python.1
+
+PYTHON_VERSION=	python1.6
+PYTHON_NO_DEPENDS=	yes
 
 #
 # The standard setup file
@@ -31,13 +31,20 @@ SETUP_FILE=	Setup
 
 #
 # If you don't want to use Python's thread module, you need to set
-# WITHOUT_THREADS. libc_r should be installed on nowadays' systems.
+# WITHOUT_THREADS.
 #
 LIBC_R!=	/sbin/ldconfig -r | grep c_r || true
 .if (${LIBC_R} != "") && !defined(WITHOUT_THREADS)
 CONFIGURE_ARGS+=	--with-thread
 CFLAGS+=		-D_THREAD_SAFE
 CONFIGURE_ENV+=		LDFLAGS="-pthread ${LDFLAGS}"
+.endif
+
+#
+# OpenSSL support is built on machines that have it
+#
+.if exists(/etc/ssl/openssl.cnf)
+SETUP_LOCAL+=	Setup.OpenSSL
 .endif
 
 #
@@ -88,22 +95,22 @@ PLATFORMS=plat-freebsd3 plat-freebsd4 plat-freebsd5
 
 pre-install:
 .for platform in ${PLATFORMS}
-	${MKDIR} ${PREFIX}/lib/python1.5/${platform}
+	${MKDIR} ${PREFIX}/lib/${PYTHON_VERSION}/${platform}
 	${INSTALL_DATA} ${WRKSRC}/Lib/${platform}/*                    \
-		${PREFIX}/lib/python1.5/${platform}/
+		${PREFIX}/lib/${PYTHON_VERSION}/${platform}/
 .endfor
-	@sort -r -o ${PLIST} ${PLIST_TK} ${PLIST_GMP} ${PLIST_TOOLS} ${PKGDIR}/PLIST
+	@sort -r -o ${PLIST} ${PLIST_GMP} ${PLIST_TOOLS} ${PKGDIR}/PLIST
 
 post-install:
 	strip ${PREFIX}/bin/python
 	@${MKDIR} ${PREFIX}/share/doc/python
 	@${MKDIR} ${PREFIX}/share/emacs/site-lisp
 	${INSTALL_DATA} ${WRKSRC}/Misc/python-mode.el ${PREFIX}/share/emacs/site-lisp
-	${INSTALL_DATA} ${WRKSRC}/Misc/COPYRIGHT ${PREFIX}/share/doc/python
-	@${MKDIR} ${PREFIX}/lib/python1.5/site-packages
+	${INSTALL_DATA} ${WRKSRC}/LICENSE ${PREFIX}/share/doc/python
+	@${MKDIR} ${PREFIX}/lib/${PYTHON_VERSION}/site-packages
 .if !defined(WITHOUT_TOOLS)
 	@cd ${WRKSRC}; tar cf - Tools | \
-		(cd ${PREFIX}/lib/python1.5; tar xf -)
+		(cd ${PREFIX}/lib/${PYTHON_VERSION}; tar xf -)
 .endif
 
 .include <bsd.port.post.mk>
