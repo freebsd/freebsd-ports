@@ -62,7 +62,7 @@ RESTRICTED=     "Contains strong cryptography"
 .if (${ARCH} == "i386") && !defined(USE_LINUX_LIB)
 USE_AOUT_LIB=	yes
 PKGREQ=		${MASTERDIR}/pkg/REQ.aout
-RUN_DEPENDS=	${X11BASE}/lib/aout/libX11.so.6.1:${PORTSDIR}/x11/XFree86-aoutlibs
+RUN_DEPENDS+=	${X11BASE}/lib/aout/libX11.so.6.1:${PORTSDIR}/x11/XFree86-aoutlibs
 .endif
 
 .SILENT:
