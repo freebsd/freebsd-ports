@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	HTML_TreeMenu
-PORTVERSION=	1.1.9
+PORTVERSION=	1.2.0
 CATEGORIES=	devel www pear
 
 MAINTAINER=	antonio@php.net
@@ -30,8 +30,8 @@ DATA=		TreeMenu.js images/branch.gif images/branchbottom.gif \
 		imagesAlt2/branchtop.gif imagesAlt2/folder.gif \
 		imagesAlt2/folder-expanded.gif imagesAlt2/line.gif \
 		imagesAlt2/linebottom.gif imagesAlt2/minus.gif \
-		imagesAlt2/minusbottom.gif imagesAlt2/minustop.gif \
-		imagesAlt2/plus.gif imagesAlt2/plusbottom.gif imagesAlt2/plustop.gif
+		imagesAlt2/minusbottom.gif imagesAlt2/minustop.gif imagesAlt2/plus.gif \
+		imagesAlt2/plusbottom.gif imagesAlt2/plustop.gif
 DOCS=		HTML_TreeMenu.doc HTML_TreeMenu.pdf example.php map_fs.php
 _DATADIR=	.
 
