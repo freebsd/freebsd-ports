@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	argparse
-PORTVERSION=	1.0.0
+PORTVERSION=	1.0.1
 CATEGORIES=	misc
 MASTER_SITES=	http://home.pages.at/kingleo/development/
 
