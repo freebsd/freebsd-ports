@@ -7,7 +7,7 @@
 
 PORTNAME?=	${MASTERPORTNAME}
 PORTVERSION=	2.4.3b2
-PORTREVISION?=	0
+PORTREVISION?=	1
 CATEGORIES=	misc
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	amanda
@@ -34,6 +34,7 @@ pre-fetch:
 	@${ECHO} ""
 	@${ECHO} "    -DWITH_PLOT to enable ploting, requires X11 libraries"
 	@${ECHO} "    -DWITH_SAMBA to enable the use of smbclient"
+	@${ECHO} "    -DWITH_MTX to enable the use of mtx changer scripts"
 	@${ECHO} "    -DWITHOUT_GNUTAR to NOT use GNUTar and use the"
 	@${ECHO} "        native FreeBSD version"
 	@${ECHO} "    AMANDA_SERVER=server to specify a server name"
@@ -44,8 +45,8 @@ pre-fetch:
 	@${ECHO} "        The default is user"
 	@${ECHO} ""
 
-RUN_DEPENDS=	${PREFIX}/sbin/amrecover:${PORTSDIR}/misc/amanda-client
-BUILD_DEPENDS=	${PREFIX}/sbin/amrecover:${PORTSDIR}/misc/amanda-client
+RUN_DEPENDS=	amrecover:${PORTSDIR}/misc/amanda-client
+BUILD_DEPENDS=	amrecover:${PORTSDIR}/misc/amanda-client
 
 CONFIGURE_ARGS=	--libexecdir=${PREFIX}/libexec/amanda \
 		--with-amandahosts --with-fqdn \
@@ -71,6 +72,11 @@ PLIST_SUB+=	PLOT='@comment '
 BUILD_DEPENDS+=	smbclient:${PORTSDIR}/net/samba
 RUN_DEPENDS+=	smbclient:${PORTSDIR}/net/samba
 CONFIGURE_ARGS+=	--with-smbclient=${PREFIX}/bin/smbclient
+.endif
+
+.if defined (WITH_MTX)
+BUILD_DEPENDS+=	mtx:${PORTSDIR}/misc/mtx
+RUN_DEPENDS+=	mtx:${PORTSDIR}/misc/mtx
 .endif
 
 .if !defined (WITHOUT_GNUTAR)
