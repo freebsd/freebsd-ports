@@ -9,6 +9,7 @@ bin/pure-pwconvert
 sbin/pure-config.pl
 etc/pureftpd-ldap.conf.sample
 etc/pureftpd-mysql.conf.sample
+etc/pureftpd-pgsql.conf.sample
 etc/pure-ftpd.conf.sample
 %%PORTDOCS%%share/doc/pure-ftpd/AUTHORS
 %%PORTDOCS%%share/doc/pure-ftpd/CONTACT
