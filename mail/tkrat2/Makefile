@@ -6,10 +6,11 @@
 #
 
 PORTNAME=	tkrat
-PORTVERSION=	2.0.1
+PORTVERSION=	2.0.2
 CATEGORIES=	mail tk83
 MASTER_SITES=	ftp://ftp.md.chalmers.se/pub/tkrat/ \
-		ftp://ftp.sunet.se/pub/unix/mail/tkrat/
+		ftp://ftp.sunet.se/pub/unix/mail/tkrat/ \
+		http://www.tkrat.org/downloads/stable/
 
 MAINTAINER=	ports@FreeBSD.org
 
