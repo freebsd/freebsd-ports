@@ -7,7 +7,8 @@
 -START-INFO-DIR-ENTRY
 +@dircategory The Emacs editor and associated tools
 +@direntry
- * Speedbar: (speedbar).	File/Tag summarizing utility.
+-* Speedbar: (speedbar).	File/Tag summarizing utility.
++* Speedbar: (speedbar.info).	File/Tag summarizing utility.
 -END-INFO-DIR-ENTRY
 +@end direntry
  @end format
