@@ -7,7 +7,8 @@
 
 PORTNAME=	gatling
 PORTVERSION=	0.5
-CATEGORIES=	www benchmarks
+PORTREVISION=	1
+CATEGORIES=	www benchmarks ftp ipv6
 MASTER_SITES=	http://dl.fefe.de/
 
 MAINTAINER=	tmseck@netcologne.de
@@ -17,13 +18,13 @@ BUILD_DEPENDS=	${LOCALBASE}/lib/libowfat.a:${PORTSDIR}/devel/libowfat
 
 USE_BZIP2=	yes
 
-CFLAGS+=	-I${LOCALBASE}/include/libowfat
 MAKE_ENV+=	LDFLAGS="-L${LOCALBASE}/lib -lowfat" \
 		PTHREAD_LIBS="${PTHREAD_LIBS}"
 
 bin=		dl gatling
 examples=	run-gatling
 examplesdir=	${EXAMPLESDIR:S,^${PREFIX}/,,}
+MAN8=		gatling.8
 .if !defined(NOPORTDOCS)
 PORTDOCS=	CHANGES README README.ftp README.http README.performance \
 		README.prefetch README.proxy README.redirect
@@ -44,10 +45,14 @@ examples+=	prep run-bench
 PLIST_DIRS=	${examplesdir}
 PLIST_FILES=	${bin:S,^,bin/,} ${examples:S,^,${examplesdir}/,}
 
+pre-install:
+	@cd ${WRKSRC} && ${CP} gatling.1 gatling.8
+
 do-install:
 	cd ${WRKSRC} && ${INSTALL_PROGRAM} ${bin} ${PREFIX}/bin
 	${MKDIR} ${EXAMPLESDIR}
 	cd ${WRKSRC} && ${INSTALL_SCRIPT} ${examples} ${EXAMPLESDIR}
+	cd ${WRKSRC} && ${INSTALL_MAN} ${MAN8} ${MAN8PREFIX}/man/man8
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
 	cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR}

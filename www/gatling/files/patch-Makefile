@@ -1,6 +1,13 @@
 --- Makefile.orig	Sat May  8 02:26:21 2004
-+++ Makefile	Fri Jul 30 11:06:07 2004
-@@ -8,10 +8,6 @@
++++ Makefile	Thu Aug 12 11:37:25 2004
+@@ -2,16 +2,13 @@
+ BINDIR=${prefix}/bin
+ MANDIR=${prefix}/man
+ man1dir=$(MANDIR)/man1
++CFLAGS+=-I${LOCALBASE}/include/libowfat
+ 
+ TARGET=gatling httpbench dl bindbench mmapbench forkbench pthreadbench \
+ mktestdata manymapbench ioerr forksbench
  
  all: $(TARGET)
  
@@ -11,7 +18,7 @@
  gatling: gatling.o libsocket libiconv
  	$(CC) -o $@ gatling.o $(LDFLAGS) `cat libsocket libiconv`
  
-@@ -34,7 +30,7 @@
+@@ -34,7 +31,7 @@
  	$(CC) -static -o $@ forkbench.o $(LDFLAGS)
  
  pthreadbench: pthreadbench.o
