@@ -1,5 +1,5 @@
---- fixline1.ORIG	Mon Mar 10 18:13:33 1997
-+++ fixline1	Mon Mar 10 18:15:06 1997
+--- fixline1.ORIG	Fri Oct 17 10:10:12 1997
++++ fixline1	Fri Oct 17 10:10:41 1997
 @@ -1,4 +1,4 @@
 -#!expect --
 +#!expectjp --
