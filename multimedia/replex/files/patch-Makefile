@@ -14,7 +14,7 @@
  
  replex: libreplex.a replex.o
 -	$(CC) -o replex replex.o -L. -lreplex
-+	$(CC) $(LDFLAGS) -o replex replex.o -L. -lreplex
++	$(CC) -o replex replex.o -L. -lreplex $(LDFLAGS)
  
  dist: $(SRC) $(HEADERS) Makefile
  	mkdir $(DISTNAME)
