@@ -13,7 +13,7 @@
 
 - Running the Demo :
 
-	$JETTY_HOME/bin/jetty.sh run
+	$JETTY_HOME/bin/jetty.sh demo
   	
   Use a browser to access the Jetty demo site at :
 
