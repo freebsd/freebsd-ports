@@ -5087,6 +5087,7 @@ midimountain	ports/audio/midimountain
 mifluz		ports/textproc/mifluz
 migrate		ports/biology/migrate
 mikmod		ports/audio/mikmod
+milter-greylist	ports/mail/milter-greylist
 milter-regex	ports/mail/milter-regex
 milter-sender	ports/mail/milter-sender
 mime		ports/devel/mime
