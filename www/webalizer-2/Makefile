@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	webalizer
-PORTVERSION=    2.01.02
+PORTVERSION=    2.1.3
 CATEGORIES=	www
 MASTER_SITES=   ftp://ftp.mrunix.net/pub/webalizer/pre-release/
-DISTNAME=       ${PORTNAME}-2.01-02-src
+DISTNAME=       ${PORTNAME}-2.01-03-src
 
 MAINTAINER=     ache@FreeBSD.org
 
