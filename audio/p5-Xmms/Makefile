@@ -24,11 +24,21 @@ BUILD_DEPENDS=	xmms:${PORTSDIR}/multimedia/xmms \
 site_perl=	${SITE_PERL}
 
 PERL_CONFIGURE=	YES
+USE_REINPLACE=	yes
 
-MAN3=		Xmms::Config.3 \
-		Xmms::Remote.3 \
+MAN3=		Xmms::Remote.3 \
 		Xmms::SongChange.3 \
 		Xmms.3 \
 		Bundle::Xmms.3
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} >= 500800
+MAN3+=		Xmms::Config.3
+.endif
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|' \
+		${WRKSRC}/SongChange/Makefile.PL
+
+.include <bsd.port.post.mk>
