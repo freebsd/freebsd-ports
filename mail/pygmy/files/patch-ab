@@ -1,11 +1,11 @@
---- msg.py	2000/08/15 07:46:28	1.1
-+++ msg.py	2000/08/15 07:47:14
-@@ -54,7 +54,7 @@
-         
-         # Font styles
+--- msg.py.orig	Tue Aug 29 14:59:10 2000
++++ msg.py	Wed Aug 30 10:05:33 2000
+@@ -55,7 +55,7 @@
+        
+ 	# Font styles
          self.bold_font = load_font('-*-helvetica-bold-r-normal--12-120-75-75-p-70-iso8859-1')
 -        self.normal_font = load_font('-*-helvetica-medium-r-normal--12-120-75-75-p-70-iso8859-1')
 +        self.normal_font = load_font('-*-helvetica-bold-r-normal--12-120-75-75-p-70-iso8859-1')
- 
+        
          # Make a separate window to play in
          self.vbox = GtkVBox()

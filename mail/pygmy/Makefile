@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	pygmy
-PORTVERSION=	0.4.0
+PORTVERSION=	0.4.2
 CATEGORIES=	mail python gnome
 MASTER_SITES=	http://www.cs.uit.no/~kjetilja/Pygmy/
 
