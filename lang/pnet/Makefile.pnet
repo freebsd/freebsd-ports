@@ -1,0 +1,21 @@
+PNET_VERSION=   0.6.0
+PNET_REVISION=  0
+PNET_PORTVER=   ${PNET_VERSION}.${PNET_REVISION}
+PNET_PORTREV=   0
+PNET_PORTEPOCH= 0
+
+PNET_MASTER_SITES=	http://www.southern-storm.com.au/download/
+
+ILSTRIP_CMD=	${LOCALBASE}/bin/ilstrip
+
+.if defined(WITH_OPTIMIZED_CSFLAGS)
+CSFLAGS=-02
+.endif
+
+pre-everything:: post-everything
+.if !defined(WITH_OPTIMIZED_CSFLAGS)
+	@${ECHO_MSG} "Define optimized CSLAGS with"
+	@${ECHO_MSG} "WITH_OPTIMIZED_CSFLAGS=yes"
+.endif
+
+post-everything::

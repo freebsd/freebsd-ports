@@ -1,0 +1,7 @@
+Meta-port package for pnet.
+
+DotGNU Portable.NET contains a runtime engine, C# compiler, and a host of
+useful development tools, all written in C. This package is generally
+referred to as "pnet".
+
+WWW: http://www.southern-storm.com.au/portable_net.html
