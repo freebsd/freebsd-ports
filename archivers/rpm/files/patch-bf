@@ -1,0 +1,20 @@
+--- lib/Makefile.am.orig	Mon Jul 17 03:49:43 2000
++++ lib/Makefile.am	Wed Oct  4 05:32:09 2000
+@@ -2,7 +2,7 @@
+ 
+ AUTOMAKE_OPTIONS = 1.4 foreign
+ 
+-INCLUDES = -I$(top_srcdir) -I$(top_srcdir)/build -I$(top_srcdir)/popt @INCPATH@
++INCLUDES = -I$(top_srcdir) -I$(top_srcdir)/build @INCPATH@
+ 
+ pkgincdir = $(pkgincludedir)
+ pkginc_HEADERS = \
+@@ -12,7 +12,7 @@
+ 	lookup.h md5.h rpm_malloc.h \
+ 	rpmdb.h rpmlead.h signature.h
+ 
+-mylibpaths= -L$(top_builddir)/lib -L$(top_builddir)/popt
++mylibpaths= -L$(top_builddir)/lib
+ mylibs=	-lrpm -lpopt @INTLLIBS@ @LIBMISC@
+ 
+ lib_LTLIBRARIES = librpm.la

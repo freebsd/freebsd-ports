@@ -1,7 +1,6 @@
 bin/gendiff
 bin/rpm
 bin/rpm2cpio
-include/popt.h
 include/rpm/dbindex.h
 include/rpm/header.h
 include/rpm/misc.h
@@ -18,10 +17,6 @@ lib/librpm.so.0
 lib/librpmbuild.a
 lib/librpmbuild.so
 lib/librpmbuild.so.0
-lib/libpopt.a
-lib/libpopt.la
-lib/libpopt.so
-lib/libpopt.so.0
 lib/rpm/brp-compress
 lib/rpm/brp-redhat
 lib/rpm/brp-sparc64-linux
@@ -66,9 +61,7 @@ share/locale/fr/LC_MESSAGES/rpm.mo
 share/locale/ja/LC_MESSAGES/rpm.mo
 share/locale/pl/LC_MESSAGES/rpm.mo
 share/locale/pt_BR/LC_MESSAGES/rpm.mo
-share/locale/ro/LC_MESSAGES/popt.mo
 share/locale/ru/LC_MESSAGES/rpm.mo
-share/locale/sk/LC_MESSAGES/popt.mo
 share/locale/sk/LC_MESSAGES/rpm.mo
 share/locale/sl/LC_MESSAGES/rpm.mo
 share/locale/sr/LC_MESSAGES/rpm.mo
