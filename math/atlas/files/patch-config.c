@@ -5,8 +5,8 @@
     if (CmndOneLine(NULL, ln, ln2) == 0)
     {
 -      *major = GetIntVers(ln2, &j);
-+      j=0; if(isalpha(ln2[0])){for(i=0;!isspace(ln2[i]);i++)j++;} /* skip gccXXX ; XXX is number */
-+      for (i=0; !isdigit(ln2[i]); i++) j++;
++      j=0;if(isalpha(ln2[0])){for(i=0;!isspace(ln2[i]);i++)j++;} /*skip gccXXX ; XXX is number*/
++      for (i=j; !isdigit(ln2[i]); i++) j++;
 +      *major = GetIntVers(ln2+j, &i); j += i;
        if (*major != -1)
        {
