@@ -271,6 +271,7 @@
     SUBDIR += p5-Resources
     SUBDIR += p5-Set-NestedGroups
     SUBDIR += p5-Set-Object
+    SUBDIR += p5-Set-Scalar
     SUBDIR += p5-Sort-Versions
     SUBDIR += p5-Storable
     SUBDIR += p5-String-Approx
