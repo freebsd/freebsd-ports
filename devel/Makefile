@@ -44,6 +44,7 @@
     SUBDIR += f77flow
     SUBDIR += fastcrc
     SUBDIR += flick
+    SUBDIR += fortran-utils
     SUBDIR += fpp
     SUBDIR += freelibiberty
     SUBDIR += ftnchek
