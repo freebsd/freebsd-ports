@@ -10,7 +10,7 @@ DISTNAME=	aumix-1.30.1
 CATEGORIES=	audio
 MASTER_SITES=	http://jpj.net/~trevor/aumix/ \
 		http://jpj.net/~trevor/aumix/old/ \
-		ftp://aumix.sourceforge.net/pub/aumix/ \
+		ftp://aumix.sourceforge.net/pub/aumix/stable/ \
 		${MASTER_SITE_SUNSITE}
 MASTER_SITE_SUBDIR=	apps/sound/mixers
 
