@@ -7,7 +7,7 @@
 
 PORTNAME=	reminder
 PORTVERSION=	2.0.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	deskutils
 MASTER_SITES=	http://web.wt.net/~billw/gkrellm/Plugins/ \
 		http://depot.fsck.ch/mirror/distfiles/

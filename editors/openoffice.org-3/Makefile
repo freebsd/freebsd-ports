@@ -7,6 +7,7 @@
 
 PORTNAME=	openoffice
 PORTVERSION=	2.0.${SNAPDATE}
+PORTREVISION=	1
 CATEGORIES+=	editors
 MASTER_SITES+=	ftp://ooopackages.good-day.net/pub/OpenOffice.org/sources/ \
 		ftp://ftp.cs.man.ac.uk/pub/toby/gpc/:gpc \

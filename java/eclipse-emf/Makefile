@@ -7,7 +7,7 @@
 
 PORTNAME=	emf
 PORTVERSION=	2.0.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	java devel
 MASTER_SITES=	http://download.eclipse.org/tools/emf/downloads/drops/2.0.1/R200409171617/
 PKGNAMEPREFIX=	eclipse-

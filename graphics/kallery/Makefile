@@ -7,7 +7,7 @@
 
 PORTNAME=	kallery
 PORTVERSION=	1.0.7a
-PORTREVISION=	1
+PORTREVISION=	3
 CATEGORIES=	graphics www kde
 MASTER_SITES=	http://kallery.kdewebdev.org/releases/
 

@@ -7,7 +7,7 @@
 
 PORTNAME=	fgkicker
 PORTVERSION=	0.9
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	games
 MASTER_SITES=	http://users.pandora.be/ceppe/projects/files/fgkicker/
 EXTRACT_SUFX=	.tgz

@@ -7,7 +7,7 @@
 
 PORTNAME=	xchat
 PORTVERSION=	0.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	irc gnome ipv6
 MASTER_SITES=	http://flapjack.navi.cx/releases/xchat-gnome/ \
 		http://members.chello.nl/~g.mast/distfiles/

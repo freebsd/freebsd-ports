@@ -7,6 +7,7 @@
 
 PORTNAME=	kmenc15
 PORTVERSION=	0.02
+PORTREVISION=	1
 CATEGORIES=	multimedia kde
 MASTER_SITES=	http://dividedsky.net/~ods15/kmenc15/
 

@@ -7,6 +7,7 @@
 
 PORTNAME=	e-uae
 PORTVERSION=	0.8.27
+PORTREVISION=	1
 CATEGORIES=	emulators
 MASTER_SITES=	http://www.rcdrummond.net/uae/${PORTNAME}-${PORTVERSION}/ \
 		http://www.energyhq.es.eu.org/files/

@@ -7,7 +7,7 @@
 
 PORTNAME=	gef
 PORTVERSION=	3.0.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	java devel
 MASTER_SITES=	http://download.eclipse.org/tools/gef/downloads/drops/R-3.0.1-200408311615/
 PKGNAMEPREFIX=	eclipse-

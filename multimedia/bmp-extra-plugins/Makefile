@@ -7,6 +7,7 @@
 
 PORTNAME=	bmp-extra-plugins
 PORTVERSION=	0.2.2
+PORTREVISION=	1
 CATEGORIES=	multimedia audio
 MASTER_SITES=	http://www.t17.ikarnet.pl/~wiget/bmp-extra-plugins/download/
 

@@ -7,6 +7,7 @@
 
 PORTNAME=	kdissert
 PORTVERSION=	0.3.5
+PORTREVISION=	1
 CATEGORIES=	deskutils kde
 MASTER_SITES=	http://www.freehackers.org/~tnagy/kdissert/ \
 		ftp://ftp.fasta.fh-dortmund.de/mirror/gentoo/distfiles/

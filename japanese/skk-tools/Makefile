@@ -7,7 +7,7 @@
 
 PORTNAME=	skk-tools
 PORTVERSION=	1.1
-PORTREVISION=	3
+PORTREVISION=	4
 PORTEPOCH=	1
 CATEGORIES=	japanese
 MASTER_SITES=	http://openlab.ring.gr.jp/skk/tools/ \

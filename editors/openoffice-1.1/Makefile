@@ -7,6 +7,7 @@
 
 PORTNAME=	openoffice
 PORTVERSION=	1.1.4
+PORTREVISION=	1
 CATEGORIES+=	editors
 MASTER_SITES+=	${MASTER_SITE_RINGSERVER:S,%SUBDIR%,misc/openoffice/&,} \
 		${MASTER_SITE_LOCAL:S,%SUBDIR%,maho/openoffice.org/&,}:moz \

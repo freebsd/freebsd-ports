@@ -7,7 +7,7 @@
 
 PORTNAME=	lomboz
 PORTVERSION=	3.0.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	java
 MASTER_SITES=	http://download.forge.objectweb.org/lomboz/ \
 		http://download.us.forge.objectweb.org/lomboz/ \

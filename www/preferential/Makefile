@@ -7,7 +7,7 @@
 
 PORTNAME?=	preferential
 PORTVERSION=	0.6.1a
-PORTREVISION?=	1
+PORTREVISION?=	2
 CATEGORIES=	www
 MASTER_SITES=	http://downloads.mozdev.org/preferential/versions/	\
 		http://mozdev.mirrors.nyphp.org/preferential/versions/

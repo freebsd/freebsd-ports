@@ -7,6 +7,7 @@
 
 PORTNAME=mp-random
 PORTVERSION=	1.0
+PORTREVISION=	1
 CATEGORIES=	net python
 MASTER_SITES=	http://mirrorproject.com/widget/
 PKGNAMEPREFIX=	py-

@@ -7,7 +7,7 @@
 
 PORTNAME=	groundhog
 PORTVERSION=	1.4
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	games
 MASTER_SITES=	http://home-2.tiscali.nl/~cb007736/
 

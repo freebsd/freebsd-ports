@@ -7,6 +7,7 @@
 
 PORTNAME=	gruler
 PORTVERSION=	0.6
+PORTREVISION=	1
 CATEGORIES=	deskutils
 MASTER_SITES=	http://linuxadvocate.org/projects/gruler/downloads/
 

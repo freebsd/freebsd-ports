@@ -7,7 +7,7 @@
 
 PORTNAME=	handbrake
 PORTVERSION=	0.6.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	multimedia
 MASTER_SITES=	http://people.via.ecp.fr/~titer/handbrake/
 DISTNAME=	HandBrake-${PORTVERSION}-src

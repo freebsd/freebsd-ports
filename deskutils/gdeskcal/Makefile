@@ -7,7 +7,7 @@
 
 PORTNAME=	gdeskcal
 PORTVERSION=	0.57.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	deskutils python gnome
 MASTER_SITES=	http://www.pycage.de/download/
 DISTNAME=	gDeskCal-${PORTVERSION:S/./_/g}

@@ -6,6 +6,7 @@
 
 PORTNAME=	klog
 PORTVERSION=	0.2.8
+PORTREVISION=	1
 CATEGORIES=	comms
 MASTER_SITES=	http://download.berlios.de/klog/
 

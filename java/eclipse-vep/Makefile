@@ -7,7 +7,7 @@
 
 PORTNAME=	vep
 PORTVERSION=	1.0
-PORTREVISION=	2
+PORTREVISION=	3
 PORTEPOCH=	1
 CATEGORIES=	java devel
 MASTER_SITES=	http://download.eclipse.org/tools/ve/downloads/drops/R-1.0-200409191449/

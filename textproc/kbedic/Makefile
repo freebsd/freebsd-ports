@@ -7,6 +7,7 @@
 
 PORTNAME=	kbedic
 PORTVERSION=	4.0
+PORTREVISION=	1
 CATEGORIES=	textproc kde
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		http://kbedic.search.bg/download/

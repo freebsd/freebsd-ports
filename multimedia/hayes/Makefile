@@ -6,7 +6,7 @@
 
 PORTNAME=		hayes
 PORTVERSION=		1.4
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=		multimedia kde
 MASTER_SITES=		http://www.hakubi.us/hayes/
 

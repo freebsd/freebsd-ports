@@ -7,7 +7,7 @@
 
 PORTNAME=	ump
 PORTVERSION=	1.10
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	www
 MASTER_SITES=	http://www.timidity.jp/dist/	\
 		http://www.geocities.com/SiliconValley/Lab/2826/1-10/	\
