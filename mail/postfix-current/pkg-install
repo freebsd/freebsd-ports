@@ -1,4 +1,9 @@
 #!/bin/sh
+#
+#	$FreeBSD$
+#
+
+PKG_PREFIX=${PKG_PREFIX:=/usr/local}
 
 user=postfix
 group=postfix
