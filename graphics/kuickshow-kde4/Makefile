@@ -6,23 +6,25 @@
 #
 
 PORTNAME=	kuickshow
-PORTVERSION=	0.8.1
+PORTVERSION=	0.8.2
 CATEGORIES=	graphics
-MASTER_SITES=	http://master.kde.org/~pfeiffer/kuickshow/ \
-		ftp://ftp.nuug.no/pub/anders/distfiles/
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	${PORTNAME}
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	anders@fix.no
 
 GNU_CONFIGURE=	yes
 
+USE_IMLIB=	yes
 USE_KDELIBS_VER=	2
 USE_GMAKE=	yes
 
-CONFIGURE_ENV+=	LIBQT="-lqt2" MOC="moc2" KDEDIR="${LOCALBASE}"
-CONFIGURE_ARGS+=	--with-qt-includes=${X11BASE}/include/qt2 \
-			--with-qt-libraries=${X11BASE}/lib \
-			--with-imlib-config=${X11BASE}/bin
+CONFIGURE_ENV+=	KDEDIR="${LOCALBASE}"
+CONFIGURE_ARGS+=	--with-imlib-config=${X11BASE}/bin
+
+post-patch:
+	@${PERL} -pi -e 's,-O2,,g' ${WRKSRC}/configure
 
 .if !defined(NOPORTDOCS)
 post-install:
