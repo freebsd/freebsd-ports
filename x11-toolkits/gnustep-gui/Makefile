@@ -13,7 +13,9 @@ PORTVERSION=	0.7.6
 .endif
 CATEGORIES=	x11-toolkits
 .if defined(GNUSTEP_GUI_DEVEL)
-MASTER_SITES=	ftp://ftp.gnustep.org/pub/gnustep/core/
+MASTER_SITES=	${MASTER_SITE_GNUSTEP} \
+		ftp://ftp.gnustep.org/pub/gnustep/%SUBDIR%/
+MASTER_SITE_SUBDIR=	core
 PKGNAMESUFFIX?=	-devel
 .else
 MASTER_SITES=	${MASTER_SITE_LOCAL}
@@ -49,12 +51,14 @@ GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=
 USE_GMAKE=	yes
 MAKEFILE=
-MAKE_FLAGS=	OPTFLAG="${CFLAGS}"
+MAKE_FLAGS+=	OPTFLAG="${CFLAGS}"
+MAKE_FLAGS+=	ADDITIONAL_LIB_DIRS=/usr/local/lib to core/gui/Source/GNUmakefile.preamble
 NO_MTREE=	yes
 CONFIGURE_ARGS+=	--with-tiff-library=${LOCALBASE}/lib
 CONFIGURE_ARGS+=	--with-tiff-include=${LOCALBASE}/include
 CONFIGURE_ARGS+=	--with-jpeg-library=${LOCALBASE}/lib
 CONFIGURE_ARGS+=	--with-jpeg-include=${LOCALBASE}/include
+EXTRA_FIX=		${WRKSRC}/Tools/gsnd/portaudio/pa_unix_oss/Makefile
 
 .if ${MACHINE_ARCH} == "i386"
 GNU_ARCH=	ix86
@@ -70,6 +74,12 @@ post-extract:
 .for file in config.guess config.sub install-sh
 	@${CP} ${PREFIX}/System/Makefiles/${file} ${WRKSRC}
 .endfor
+
+pre-configure:
+	@ ${MV} ${EXTRA_FIX} ${EXTRA_FIX}.sed
+	${SED} -e "s=-lphread=${PTHREAD_LIBS}=" -e "s;CFLAGS =;CFLAGS+=;" \
+		-e "s;-Wall;-Wall ${PTHREAD_CFLAGS:S=""==};" \
+		${EXTRA_FIX}.sed > ${EXTRA_FIX}
 
 do-configure:
 	@(cd ${WRKSRC}; . ${PREFIX}/System/Makefiles/GNUstep.sh; \
@@ -94,10 +104,8 @@ do-install:
 	@(cd ${WRKSRC}; . ${PREFIX}/System/Makefiles/GNUstep.sh; \
 		${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_FLAGS} ${MAKEFILE} ${INSTALL_TARGET})
 
-.if defined(GNUSTEP_GUI_DEVEL)
-.if ${OSVERSION} > 500030
-CONFIGURE_ARGS+=	--disable-gsnd
-.endif
-.endif
+test:
+	@(cd ${WRKSRC}/Tools/gsnd/portaudio/pa_unix_oss && \
+		${GMAKE} && ./patest)
 
 .include <bsd.port.post.mk>
