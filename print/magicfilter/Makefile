@@ -15,13 +15,27 @@ MAINTAINER=	cjh@FreeBSD.org
 COMMENT=	Customizable, extensible automatic printer filter
 
 # at least, gs must exist in many case
-BUILD_DEPENDS=	${PREFIX}/bin/gs:${PORTSDIR}/print/ghostscript-gnu
+.if defined(WITH_GHOSTSCRIPT_AFPL) && ${WITH_GHOSTSCRIPT_AFPL} == yes
+GSPORT?=	print/ghostscript-afpl
+.else
+GSPORT?=	print/ghostscript-gnu
+.endif
+
+BUILD_DEPENDS=	${PREFIX}/bin/gs:${PORTSDIR}/${GSPORT}
 # to give freedom to choose your favor gs..
 #RUN_DEPENDS=	gs:${PORTSDIR}/print/ghostscript-gnu
 
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 MAN8=		magicfilter.8
+
+pre-fetch:
+.if !defined(WITH_GHOSTSCRIPT_AFPL) || ${WITH_GHOSTSCRIPT_AFPL} != yes
+	@${ECHO} ""
+	@${ECHO} "      Define WITH_GHOSTSCRIPT_AFPL=yes to use"
+	@${ECHO} "      AFPL Postscript interpreter instead of GNU one"
+	@${ECHO} ""
+.endif
 
 # install filters and examples
 post-install:
