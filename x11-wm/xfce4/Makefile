@@ -59,6 +59,8 @@ do-install:	# empty
 
 post-install:
 .if defined(WITH_GDM)
+	@${TEST} -d ${X11BASE}/etc/gdm/Sessions || \
+		${MKDIR} -p ${X11BASE}/etc/gdm/Sessions
 	@${INSTALL_SCRIPT} ${FILESDIR}/XFce4 ${X11BASE}/etc/gdm/Sessions
 	@${INSTALL_DATA} ${FILESDIR}/XFce4.desktop ${X11BASE}/etc/dm/Sessions
 .endif
