@@ -4047,6 +4047,7 @@ loadd		ports/net/loadd
 locate		src/usr.bin/locate
 lock		src/usr.bin/lock
 lockf		src/usr.bin/lockf
+lodju		ports/graphics/lodju
 log4c		ports/devel/log4c
 log4cpp		ports/devel/log4cpp
 log_analysis	ports/sysutils/log_analysis
