@@ -93,6 +93,7 @@
     SUBDIR += mc
     SUBDIR += metatheme
     SUBDIR += mgp-mode.el
+    SUBDIR += misterproper
     SUBDIR += mmv
     SUBDIR += most
     SUBDIR += moviedb
