@@ -1,11 +1,18 @@
---- Makefile.in.orig	Mon Dec 17 00:21:35 2001
-+++ Makefile.in	Mon Dec 17 00:21:46 2001
-@@ -109,7 +109,7 @@
+--- Makefile.in.orig	Mon Dec 24 06:47:10 2001
++++ Makefile.in	Tue Jan 15 16:30:53 2002
+@@ -109,14 +109,11 @@
  cflags_set = @cflags_set@
  cxxflags_set = @cxxflags_set@
  
--SUBDIRS = src include po intl data pixmaps
+-SUBDIRS = src include po intl data pixmaps doc
 +SUBDIRS = src include po data pixmaps
  
- EXTRA_DIST = spacechartrc
+-EXTRA_DIST = spacechartrc README
+ 
+-docsdir = $(prefix)/share/doc/spacechart
+ confdir = $(sysconfdir)
+ 
+-docs_DATA = README
+ conf_DATA = spacechartrc
  ACLOCAL_M4 = $(top_srcdir)/aclocal.m4
+ mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs

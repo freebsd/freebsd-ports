@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	spacechart
-PORTVERSION=	0.9.3
+PORTVERSION=	0.9.4
 CATEGORIES=	astro
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -27,5 +27,13 @@ post-patch:
 
 pre-build:
 	@${RM} -Rf ${WRKSRC}/intl
+
+post-install:
+	@${INSTALL_DATA} ${WRKSRC}/doc/sample-spacechartrc ${PREFIX}/etc
+.ifndef(NOPORTDOCS)
+	@${MKDIR} ${DOCSDIR}
+	@${INSTALL_DATA} ${WRKSRC}/doc/coordinates.txt \
+		${WRKSRC}/README ${DOCSDIR}
+.endif
 
 .include <bsd.port.mk>
