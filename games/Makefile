@@ -1,9 +1,10 @@
-# $Id: Makefile,v 1.64 1997/04/27 14:28:49 max Exp $
+# $Id: Makefile,v 1.65 1997/05/07 07:45:48 tg Exp $
 #
 
     SUBDIR += acm
     SUBDIR += an
     SUBDIR += angband
+    SUBDIR += block
     SUBDIR += cgoban
     SUBDIR += crossfire
     SUBDIR += dontspace
