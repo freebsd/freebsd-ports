@@ -9,7 +9,9 @@ PORTNAME=	nvi
 PORTVERSION=	1.81.5
 PORTREVISION=	1
 CATEGORIES=	editors
-MASTER_SITES=	http://www.kotnet.org/~skimo/nvi/devel/
+MASTER_SITES=	http://www.kotnet.org/~skimo/nvi/devel/ \
+		${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	dd
 
 MAINTAINER=	dd@FreeBSD.org
 
