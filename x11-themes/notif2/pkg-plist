@@ -1,0 +1,7 @@
+@comment $FreeBSD$
+lib/gtk/themes/engines/libnotif2.so
+share/themes/Notif2/ICON.png
+share/themes/Notif2/README.html
+share/themes/Notif2/gtk/gtkrc
+@dirrm share/themes/Notif2/gtk
+@dirrm share/themes/Notif2

@@ -1,0 +1,26 @@
+# New ports collection makefile for:	notif2
+# Date Created:				31 August 2001
+# Whom:				 	Cyrille Lefevre <clefevre@citeweb.net>
+#
+# $FreeBSD$
+#
+
+PORTNAME=	notif2
+PORTVERSION=	1.0
+CATEGORIES=	x11-toolkits
+MASTER_SITES=	${MASTER_SITE_THEMES}
+MASTER_SITE_SUBDIR=	gtk
+DISTNAME=	Notif2-${PORTVERSION}-${GTKVERSION}
+
+MAINTAINER=	ports@FreeBSD.org
+
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
+
+USE_X_PREFIX=	yes
+USE_GTK=	yes
+USE_LIBTOOL=	yes
+USE_GMAKE=	yes
+
+GTKVERSION=	1.2
+
+.include <bsd.port.mk>
