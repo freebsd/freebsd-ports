@@ -1,0 +1,11 @@
+--- Makefile.in.orig	Fri Apr 25 20:20:55 2003
++++ Makefile.in	Wed May 14 11:51:27 2003
+@@ -58,7 +58,7 @@
+ 	$(INSTALL_PROGRAM) sarg $(BINDIR)/sarg
+ 	chmod 755 $(BINDIR)/sarg
+ 	$(INSTALL_PROGRAM) sarg.1 $(MANDIR)/sarg.1
+-	chmod 755 $(MANDIR)/sarg.1
++	chmod 644 $(MANDIR)/sarg.1
+ 	@if test ! -f $(SYSCONFDIR)/sarg.conf; then \
+ 		echo "cp $(SYSCONFDIR)/sarg.conf"; \
+ 		cp sarg.conf $(SYSCONFDIR)/sarg.conf; \

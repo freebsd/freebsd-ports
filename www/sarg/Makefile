@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	sarg
-PORTVERSION=	1.2.2.1
+PORTVERSION=	1.4.1
 CATEGORIES=	www
 MASTER_SITES=	http://web.onda.com.br/orso/
 
@@ -15,5 +15,7 @@ COMMENT=	Squid log analyzer and HTML report generator
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=	--prefix=${PREFIX} --exec-prefix=${PREFIX} --enable-bindir="${PREFIX}/bin" --enable-sysconfdir="${PREFIX}/etc/${PORTNAME}" --with-gcc
+
+MAN1=		sarg.1
 
 .include <bsd.port.mk>
