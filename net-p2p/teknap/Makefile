@@ -11,7 +11,7 @@ CATEGORIES=	audio
 MASTER_SITES=	ftp://ftp.bitchx.com/pub/BWap/ \
 		ftp://ukug.uk.freebsd.org/pub/lord_cj/
 
-MAINTAINER=	calle.madestrand@norrgarden.se
+MAINTAINER=	cj@vallcom.net
 
 WRKSRC=		${WRKDIR}/BWap
 GNU_CONFIGURE=	yes
