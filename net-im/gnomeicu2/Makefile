@@ -10,6 +10,7 @@ PORTVERSION=		0.90.b
 CATEGORIES=		net gnome
 MASTER_SITES=		ftp://gnomeicu.gdev.net/pub/gnomeicu/          \
 			http://www.nectar.cc/distfiles/
+DISTNAME=		${PORTNAME}-0.90b
 
 MAINTAINER=		nectar@FreeBSD.org
 
