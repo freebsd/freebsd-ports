@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.113 1999/01/10 18:55:30 steve Exp $
+# $Id: Makefile,v 1.114 1999/01/16 00:27:19 nik Exp $
 #
 
     SUBDIR += Mosaic         # requires Motif
@@ -19,6 +19,7 @@
     SUBDIR += aswedit
     SUBDIR += boa
     SUBDIR += cgihtml
+    SUBDIR += calamaris
     SUBDIR += cgiparse
     SUBDIR += cgiwrap
     SUBDIR += checkbot
