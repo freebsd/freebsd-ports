@@ -3,22 +3,20 @@
 # Date created:		12 October 1996
 # Whom:			markm
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1996/10/31 19:53:40 markm Exp $
 #
 
 DISTNAME=	dejagnu-1.3
-PKGNAME=	dejagnu-1.3
-CATEGORIES+=	devel
+CATEGORIES+=	misc
 MASTER_SITES=	ftp://prep.ai.mit.edu/pub/gnu/
-
-WRKSRC=		${WRKDIR}/${DISTNAME}/dejagnu
 
 MAINTAINER=	markm@FreeBSD.ORG
 
 RUN_DEPENDS=	expect:${PORTSDIR}/lang/expect
 
+WRKSRC=		${WRKDIR}/${DISTNAME}/dejagnu
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	i386-freebsd --prefix=${PREFIX}
+CONFIGURE_ARGS=	i386-freebsd
 STRIP=
 
 post-install:
