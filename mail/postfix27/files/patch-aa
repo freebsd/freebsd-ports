@@ -1,69 +1,141 @@
-*** ./conf/main.cf.orig	Fri Jan 28 09:44:47 2000
---- ./conf/main.cf	Thu Jun  1 22:01:21 2000
+*** conf/main.cf.ORIG	Tue Jan 15 09:51:32 2002
+--- conf/main.cf	Tue Jan 15 09:51:36 2002
 ***************
-*** 19,21 ****
+*** 31,44 ****
+  # The command_directory parameter specifies the location of all
+  # postXXX commands.  The default value is $program_directory.
   #
 ! command_directory = /usr/sbin
   
---- 19,21 ----
-  #
-! command_directory = !!PREFIX!!/sbin
-  
-***************
-*** 26,28 ****
+  # The daemon_directory parameter specifies the location of all Postfix
+  # daemon programs (i.e. programs listed in the master.cf file). The
+  # default value is $program_directory. This directory must be owned
+  # by root.
   #
 ! daemon_directory = /usr/libexec/postfix
   
---- 26,28 ----
+  # QUEUE AND PROCESS OWNERSHIP
+  #
+--- 31,44 ----
+  # The command_directory parameter specifies the location of all
+  # postXXX commands.  The default value is $program_directory.
+  #
+! command_directory = !!PREFIX!!/sbin
+  
+  # The daemon_directory parameter specifies the location of all Postfix
+  # daemon programs (i.e. programs listed in the master.cf file). The
+  # default value is $program_directory. This directory must be owned
+  # by root.
   #
 ! daemon_directory = !!PREFIX!!/libexec/postfix
   
+  # QUEUE AND PROCESS OWNERSHIP
+  #
 ***************
-*** 43,45 ****
+*** 55,61 ****
+  # These rights are used in the absence of a recipient user context.
+  # DO NOT SPECIFY A PRIVILEGED USER OR THE POSTFIX OWNER.
   #
 ! #default_privs = nobody
   
---- 43,45 ----
+  # INTERNET HOST AND DOMAIN NAMES
+  # 
+--- 55,61 ----
+  # These rights are used in the absence of a recipient user context.
+  # DO NOT SPECIFY A PRIVILEGED USER OR THE POSTFIX OWNER.
   #
 ! default_privs = nobody
   
+  # INTERNET HOST AND DOMAIN NAMES
+  # 
 ***************
-*** 180,182 ****
+*** 285,291 ****
+  # tables that are not necessarily all under control by Postfix.
+  #
   #alias_database = dbm:/etc/aliases
 ! #alias_database = dbm:/etc/mail/aliases
   #alias_database = hash:/etc/aliases
---- 180,182 ----
+  #alias_database = hash:/etc/aliases, hash:/opt/majordomo/aliases
+  
+--- 285,291 ----
+  # tables that are not necessarily all under control by Postfix.
+  #
   #alias_database = dbm:/etc/aliases
 ! #alias_database = dbm:/etc/aliases
   #alias_database = hash:/etc/aliases
+  #alias_database = hash:/etc/aliases, hash:/opt/majordomo/aliases
+  
 ***************
-*** 199,202 ****
+*** 304,311 ****
+  #
+  # The home_mailbox parameter specifies the optional pathname of a
   # mailbox file relative to a user's home directory. The default
 ! # mailbox file is /var/spool/mail/user or /var/mail/user.  Specify
 ! # "Maildir/" for qmail-style delivery (the / is required).
   #
---- 199,202 ----
+  #home_mailbox = Mailbox
+  #home_mailbox = Maildir/
+--- 304,311 ----
+  #
+  # The home_mailbox parameter specifies the optional pathname of a
   # mailbox file relative to a user's home directory. The default
 ! # mailbox file is /var/mail/user.  Specify "Maildir/" for 
 ! # qmail-style delivery (the / is required).
   #
+  #home_mailbox = Mailbox
+  #home_mailbox = Maildir/
 ***************
-*** 209,211 ****
+*** 314,320 ****
+  # UNIX-style mailboxes are kept. The default setting depends on the
+  # system type.
   #
 ! # mail_spool_directory = /var/mail
   # mail_spool_directory = /var/spool/mail
---- 209,211 ----
+  
+  # The mailbox_command parameter specifies the optional external
+--- 314,320 ----
+  # UNIX-style mailboxes are kept. The default setting depends on the
+  # system type.
   #
 ! mail_spool_directory = /var/mail
   # mail_spool_directory = /var/spool/mail
+  
+  # The mailbox_command parameter specifies the optional external
 ***************
-*** 274,277 ****
+*** 395,402 ****
+  # IGNORE (silently discard this header). Patterns ending in OK are
+  # mostly a waste of cycles.
   #
 ! #header_checks = regexp:/etc/postfix/filename
 ! #header_checks = pcre:/etc/postfix/filename
   
---- 274,277 ----
+  # FAST ETRN SERVICE
+  #
+--- 395,402 ----
+  # IGNORE (silently discard this header). Patterns ending in OK are
+  # mostly a waste of cycles.
   #
 ! #header_checks = regexp:!!PREFIX!!/etc/postfix/filename
 ! #header_checks = pcre:!!PREFIX!!/etc/postfix/filename
   
+  # FAST ETRN SERVICE
+  #
+***************
+*** 470,477 ****
+  # the process marches on. If you use an X-based debugger, be sure to
+  # set up your XAUTHORITY environment variable before starting Postfix.
+  #
+! debugger_command =
+! 	 PATH=/usr/bin:/usr/X11R6/bin
+! 	 xxgdb $daemon_directory/$process_name $process_id & sleep 5
+  
+  # Other configurable parameters.
+--- 470,477 ----
+  # the process marches on. If you use an X-based debugger, be sure to
+  # set up your XAUTHORITY environment variable before starting Postfix.
+  #
+! # debugger_command =
+! # 	 PATH=/usr/bin:/usr/X11R6/bin
+! # 	 xxgdb $daemon_directory/$process_name $process_id & sleep 5
+  
+  # Other configurable parameters.
