@@ -174,7 +174,7 @@ post-clean:
 
 .if defined(WITH_OPENSSL)
 .if !defined(WITHOUT_OPENSSL)
-.include "${PORTSDIR}/security/openssl/Makefile.ssl"
+.include "${PORTSDIR}/security/openssl/bsd.openssl.mk"
 CONFIGURE_ARGS+=	--with-openssl=${OPENSSLBASE}
 .endif
 .endif

@@ -226,7 +226,7 @@ ${DESTDIR}/etc/mail/submit.cf:	${DESTDIR}/etc/mail/submit.mc
 install-sasldb:
 	@${ECHO_CMD} "# Links:"
 	@${ECHO_CMD} "#"
-	@${ECHO_CMD} "# http://www.sendmail.org/~gshapiro/
+	@${ECHO_CMD} "# http://www.sendmail.org/~gshapiro/"
 	@${ECHO_CMD} "# http://www.sendmail.org/~ca/email/auth.html"
 	@${ECHO_CMD} "# http://www.asp.ogi.edu/people/paja/linux/sendmail/"
 	@${ECHO_CMD} "# http://blue-labs.org/clue/sendmail.php"
@@ -242,7 +242,7 @@ tls-install:
 .include <bsd.port.pre.mk>
 
 .if defined(SENDMAIL_WITH_TLS) || defined(WITH_TLS)
-.include "${PORTSDIR}/security/openssl/Makefile.ssl"
+.include "${PORTSDIR}/security/openssl/bsd.openssl.mk"
 .endif
 
 .if exists(${FILESDIR}/site.config.m4.local)
