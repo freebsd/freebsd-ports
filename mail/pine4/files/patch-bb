@@ -1,12 +1,13 @@
---- pine/init.c.orig	Fri May 23 09:10:06 2003
-+++ pine/init.c	Fri Sep  5 01:44:21 2003
-@@ -1485,6 +1485,9 @@
-     GLO_NORM_FORE_COLOR		= cpystr(colorx(DEFAULT_NORM_FORE));
-     GLO_NORM_BACK_COLOR		= cpystr(colorx(DEFAULT_NORM_BACK));
- #endif
+--- pine/init.c.orig	Thu Jul 15 10:37:24 2004
++++ pine/init.c	Mon Aug  9 01:23:53 2004
+@@ -1547,6 +1547,10 @@
+      * having a global fixedprc, since we don't need it anymore after this.
+      */
+     fixedprc = new_pinerc_s(SYSTEM_PINERC_FIXED);
++#endif
++
 +#ifdef DF_SPELLER
 +    GLO_SPELLER			= cpystr(DF_SPELLER);
-+#endif
+ #endif
  
      /*
-      * Default first value for addrbook list if none set.
