@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	rdtool
-PORTVERSION=	0.6.7
-PORTREVISION=	1
+PORTVERSION=	0.6.8
 CATEGORIES=	textproc ruby
 MASTER_SITES=	http://www2.pos.to/~tosh/ruby/rdtool/archive/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
@@ -39,6 +38,7 @@ do-configure:
 
 post-patch:
 	${RUBY} -i -pe 'gsub %r"/usr/local\b", "${PREFIX}"' ${WRKSRC}/utils/rdswap.rb
+	${RUBY} -i -pe 'gsub %r"(\(\(<URL:.*[^)])$$", "\\1>))"' ${WRKSRC}/doc/rd-draft.rd*
 
 pre-build:
 	@cd ${WRKSRC}; \
@@ -46,24 +46,20 @@ pre-build:
 
 .if !defined(NOPORTDOCS)
 post-build:
-	@cd ${WRKSRC}; \
-	${RUBY} -I. rd2 -r rd/rd2html-lib.rb README.rd.ja > README.ja.html; \
-	${RUBY} -I. rd2 -r rd/rd2html-lib.rb doc/dev-note.rd.ja > doc/dev-note.ja.html; \
-	${RUBY} -I. rd2 -r rd/rd2html-lib.rb doc/rd-draft.rd > doc/rd-draft.html; \
-	${RUBY} -I. rd2 -r rd/rd2html-lib.rb doc/rd-draft.rd.ja > doc/rd-draft.ja.html
+.for f in README.rd.ja doc/dev-note.rd.ja doc/rd-draft.rd doc/rd-draft.rd.ja
+	cd ${WRKSRC} && ${RUBY} -I. rd2 -r rd/rd2html-lib.rb ${f} \
+		> ${f:S/.rd.ja$/.ja.html/:S/.rd$/.html/}
+.endfor
 .endif
 
 post-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/rmi2html.rb ${PREFIX}/bin/
 	${LN} -sf rmi2html.rb ${PREFIX}/bin/rmi2html
 	${INSTALL_DATA} ${WRKSRC}/rd/rd2rmi-lib.rb ${RUBY_SITELIBDIR}/rd/
-	${MKDIR} ${XEMACSLISPDIR}
-	${INSTALL_DATA} ${WRKSRC}/utils/rd-mode.el ${XEMACSLISPDIR}/
-	${LN} -sf ${XEMACSLISPDIR}/rd-mode.el ${EMACSLISPDIR}/
 	${INSTALL_SCRIPT} ${WRKSRC}/utils/rdswap.rb ${PREFIX}/bin/rdswap
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${RUBY_EXAMPLESDIR}/rd
-	${CP} ${RUBY_SITELIBDIR}/rd/dot.rd2rc ${RUBY_EXAMPLESDIR}/rd/
+	${CP} ${WRKSRC}/rd/dot.rd2rc ${RUBY_EXAMPLESDIR}/rd/
 	${MKDIR} ${RUBY_DOCDIR}/rd/ja
 .for f in ${DOCS_EN}
 	${INSTALL_DATA} ${WRKSRC}/${f} ${RUBY_DOCDIR}/rd/
