@@ -1,6 +1,6 @@
---- Makefile.orig	Wed Sep  8 22:54:44 2004
-+++ Makefile	Wed Sep  8 22:54:54 2004
-@@ -258,7 +258,7 @@
+--- config/Makefile.in.orig	Wed Sep  8 22:54:44 2004
++++ config/Makefile.in	Wed Sep  8 22:54:54 2004
+@@ -280,7 +280,7 @@
  all: Makefile config/Makefile.config $(TARGET_TYPE)
  
  config/configure: config/configure.in

@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	mldonkey
-PORTVERSION=	2.5.28.s1
-PORTREVISION=	2
+PORTVERSION=	2.5.30.b
 CATEGORIES+=	net
 MASTER_SITES=	http://download.berlios.de/pub/mldonkey/spiralvoice/cvs/
 PKGNAMESUFFIX=	-devel
@@ -27,15 +26,13 @@ NO_LATEST_LINK=	yes
 CONFLICTS=	mldonkey-[0-9]* mldonkey-{core,gui}-[0.9]*
 
 USE_BZIP2=	yes
-USE_AUTOCONF_VER=	213
+WANT_AUTOCONF_VER=	213
 USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 ALL_TARGET=	opt
 
 CONFIGURE_ARGS=	--disable-pthread --enable-ocamlver=3
-CONFIGURE_WRKSRC=	${WRKSRC}/config
-MAKE_ENV=	OCAMLRUNPARAM="l=256M"
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${DOWNLOADVERSION}
 
@@ -53,6 +50,8 @@ BUILD_DEPENDS+=	lablgtk:${PORTSDIR}/x11-toolkits/ocaml-lablgtk \
 		${LOCALBASE}/lib/ocaml/jabbr.cma:${PORTSDIR}/net/ocaml-jabbr
 # we don't need lablgtk as RUN dependency, but we need gtk+glib
 USE_GNOME=	gtk12
+
+MAKE_ENV+=	OCAMLRUNPARAM="l=256M"
 .if defined(WITHOUT_CORE)
 PKGNAMESUFFIX=	-gui-devel
 PLIST_SUB+=	CORE="@comment " GUICORE="@comment "
@@ -78,7 +77,10 @@ post-patch:
 		${WRKDIR}/wrapper.sh
 	@${REINPLACE_CMD} -E \
 		-e 's|%%AUTOCONF%%|${AUTOCONF}|' \
-		${BUILD_WRKSRC}/${MAKEFILE}
+		${BUILD_WRKSRC}/config/Makefile.in
+
+pre-configure:
+	cd ${WRKSRC}/config && ${AUTOCONF}
 
 do-install:
 .ifndef(WITHOUT_CORE)
