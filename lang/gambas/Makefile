@@ -13,7 +13,6 @@ MAINTAINER=		thierry@FreeBSD.org
 COMMENT=		Gambas Almost Means BASic
 
 LIB_DEPENDS=		curl.3:${PORTSDIR}/ftp/curl
-RUN_DEPENDS=		pgrep:${PORTSDIR}/sysutils/pkill
 
 USE_LIBLTDL=		yes
 USE_KDELIBS_VER=	3
@@ -51,6 +50,10 @@ PLIST_SUB+=		SDL="@comment "
 
 .if ${OSVERSION} < 500000
 BROKEN=	"Does not compile with gcc-2.95"
+.endif
+
+.if ${OSVERSION} < 502110
+RUN_DEPENDS+=		pgrep:${PORTSDIR}/sysutils/pkill
 .endif
 
 .for lib in ${LIBS2FIX}
