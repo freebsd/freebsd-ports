@@ -20,7 +20,7 @@ BUILD_DEPENDS=	rpm2cpio:${PORTSDIR}/archivers/rpm2cpio
 
 ONLY_FOR_ARCHS=	i386
 
-NOTICE=		 -- please manually download ${DISTNAME}${EXTRACT_SUFX} from the HP site and put it in ${DISTDIR} first.
+NOTICE=		 -- please manually download ${DISTNAME}${EXTRACT_SUFX} from the HP site (http://www.software.hp.com/products/LIA64/overview1a.htm) and put it in ${DISTDIR} first. License restrictions disallow automatic downloads and redistribution of the software.
 NO_PACKAGE=	${NOTICE}
 NO_CDROM=	${NOTICE}
 
