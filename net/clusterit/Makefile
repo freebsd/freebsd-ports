@@ -10,7 +10,7 @@ PORTVERSION=	2.0
 PORTREVISION=	1
 CATEGORIES=	net devel parallel
 MASTER_SITES=	http://www.garbled.net/download/ \
-		ftp://ftp.chg.ru/pub/prog/parallel/tools/clusterit/
+		ftp://ftp.chg.ru/pub/prog/parallel/clusterit/
 
 MAINTAINER=	demon@FreeBSD.org
 COMMENT=	A collection of clustering tools
