@@ -71,7 +71,6 @@
     SUBDIR += boaconstructor
     SUBDIR += boehm-gc
     SUBDIR += bonobo
-    SUBDIR += bonobo-activation
     SUBDIR += bonobo-conf
     SUBDIR += boost
     SUBDIR += bugbuddy2
