@@ -24,7 +24,8 @@ USE_GTK=	yes
 WANT_ESOUND=	yes
 USE_GMAKE=	yes
 USE_AUTOCONF_VER=213
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include ${PTHREAD_CFLAGS}" \
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include ${PTHREAD_CFLAGS} \
+			-I${LOCALBASE}/include/freetype1" \
 		LDFLAGS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}"
 
 .include <bsd.port.pre.mk>
@@ -69,6 +70,12 @@ pre-everything::
 	@${ECHO_MSG}
 	@${ECHO_MSG} "WITH_ALL_PLUGINS=yes  build with all plugins"
 	@${ECHO_MSG}
+
+# Stop a flood of complaints and PRs from people who can't be bothered 
+# to keep their ports and packages up to date.
+pre-extract:
+	@test -d ${LOCALBASE}/include/freetype1/freetype && true \
+	  || { echo '===> UPGRADE print/freetype TO CURRENT VERSION!';false; }
 
 post-install:
 	@${MKDIR} ${PREFIX}/etc/sdr/plugins
