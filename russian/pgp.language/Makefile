@@ -3,17 +3,14 @@
 # Date created:         4 May 1995
 # Whom:                 ache
 #
-# $Id: Makefile,v 1.1.1.1 1995/05/01 11:47:15 ache Exp $
+# $Id: Makefile,v 1.1.1.1 1995/05/04 14:47:56 ache Exp $
 #
 
 DISTNAME=       pgp26ru
-EXTRACT_SUFX=   .zip
+PKGNAME=	pgp-2.6.ru
 CATEGORIES+=    utilities
 MASTER_SITES=   ftp://ftp.kiae.su/unix/crypto/pgp/
-NO_WRKSUBDIR=   YES
-NO_CONFIGURE=   YES
-NO_PATCH=       YES
-NO_BUILD=       YES
+EXTRACT_SUFX=   .zip
 
 MAINTAINER=	ache@FreeBSD.ORG
 
@@ -21,11 +18,16 @@ EXEC_DEPENDS=   unzip:${PORTSDIR}/archivers/unzip \
 		pgp:${PORTSDIR}/utils/pgp.non-usa_only
 EXTRACT_CMD=    unzip
 EXTRACT_ARGS=   -q
+NO_WRKSUBDIR=   YES
+NO_CONFIGURE=   YES
+NO_PATCH=       YES
+NO_BUILD=       YES
 
 PGPLIB=         ${PREFIX}/lib/pgp
 OBJS=           language.txt ru.hlp
 
 do-install:
+	[ -d ${PGPLIB} ] || mkdir -p ${PGPLIB}
 	cd ${WRKSRC}; install -c -o bin -g bin -m 444 ${OBJS} ${PGPLIB}
 	cd ${WRKSRC}; tr -d '\015' < NOTES.ru > ${PGPLIB}/NOTES.ru
 	cd ${PGPLIB}; grep -l -q '^Language.*=.*ru' config.txt || { \
