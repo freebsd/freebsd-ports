@@ -17,32 +17,3 @@ bipolar design.
 
 In batch mode it is mostly Spice compatible, so it is often possible
 to use the same file for both ACS and Spice.
-
-The analog simulation is based on traditional nodal analysis with
-iteration by Newton's method and LU decomposition.  An event queue
-and incremental matrix update speed up the solution for large
-circuits.
-
-It also has digital devices for mixed signal simulation.  The
-digital devices may be implemented as either analog subcircuits or
-as true digital models.  The simulator will automatically determine
-which to use.  Networks of digital devices are simulated as digital,
-with no conversions to analog between gates.  This results in
-digital circuits being simulated faster than on a typical analog
-simulator, even with behavioral models.  The digital mode is
-experimental and needs work.  There will be substantial improvements
-in future releases.
-
-ACS also has a simple behavioral modeling language that allows
-simple behavioral descriptions of most components including capacitors
-and inductors.  Unfortunately, it is not well documented.
-
-ACS uses an object oriented approach to modeling.  Complex models
-like MOSFETS are made of simpler ones like resistors, capacitors,
-diodes, and any other models that may already exist.  The model
-designer does not need to worry about details like convergence
-checking, bypass checking, integration, or how the new device plugs
-into the solution matrix because these are already taken care of
-by the basic models.  This results in a dramatic improvement in
-the time it takes a researcher or model designer to install a new
-model, compared to Spice.

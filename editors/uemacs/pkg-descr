@@ -15,15 +15,3 @@ word processing documents are all possible at the same time.
 editing easier. These include commands for string searching and
 replacing, paragraph reformatting and deleting, automatic word wrapping,
 word move and deletes, easy case controlling, and automatic word counts.
-
-	For complex and repetitive editing tasks editing macroes can be
-written. These macroes allow the user a great degree of flexibility in
-determining how MicroEMACS behaves. Also, any and all the commands can
-be used by any keystroke by changing, or rebinding, what commands
-various keys invoke.
-
-	Special features are also available to perform a diverse set of
-operations such as file encryption, automatic backup file generation,
-entabbing and detabbing lines, executing operating system commands and
-filtering of text through other programs (like SORT to allow sorting
-text).
