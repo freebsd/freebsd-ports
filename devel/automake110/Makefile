@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	automake17
-PORTVERSION=	1.7
+PORTVERSION=	1.7.1
 PORTEPOCH=	1
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_GNU}
@@ -36,11 +36,10 @@ pre-everything:
 	@${FALSE}
 .endif # defined(USE_AUTOMAKE) || defined(USE_AUTOMAKE_VER)
 
-pre-configure:
-	${PERL} -pi -e "s^%%X11BASE%%^${X11BASE}^" ${WRKSRC}/aclocal.in
+do-build:
+	${ECHO_MSG} This port is not ready yet.
 
-post-install:
-	@install-info ${PREFIX}/info/automake.info \
-		${PREFIX}/info/dir
+do-install:
+	${ECHO_MSG} I told you this port is not ready yet. Now go away.
 
 .include <bsd.port.mk>

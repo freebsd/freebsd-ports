@@ -1,8 +1,14 @@
-Automake is an experimental Makefile generator.  It was inspired by
-the 4.4BSD make and include files, but aims to be portable and to
-conform to the GNU standards for Makefile variables and targets.
+Automake is a tool for automatically generating Makefiles compliant with
+the GNU Coding Standards. It was inspired by the 4.4BSD make and include
+files, but aims to be portable and to conform to the GNU standards for
+Makefile variables and targets. Automake is a Perl script. The input files
+are called Makefile.am. The output files are called Makefile.in; They are
+intended for use with Autoconf. Automake requires certain things to be done
+in your configure.in. This package also includes the "aclocal"
+program. aclocal is a program to generate an 'aclocal.m4' based on the
+contents of 'configure.in'. It is useful as an extensible, maintainable
+mechanism for augmenting autoconf.
 
-Automake assumes the project uses autoconf.  If you want automatic
-dependency tracking support, the use of GNU make is also required.
+WWW: http://www.gnu.org/software/automake/
 
-WWW: http://sources.redhat.com/automake/
+-- AlanE <alane@freebsd.org>
