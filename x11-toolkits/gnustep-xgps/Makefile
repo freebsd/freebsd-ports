@@ -10,12 +10,14 @@ PORTVERSION=	0.7.6
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	ftp://ftp.gnustep.org/pub/gnustep/core/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	dinoex@FreeBSD.org
 
-BUILD_DEPENDS=	${SYSLIBDIR}/${GNU_ARCH}/${OPSYS:L}/gnu-gnu-gnu/libgnustep-gui.so:${PORTSDIR}/x11-toolkits/gnustep-gui
-RUN_DEPENDS=	${SYSLIBDIR}/${GNU_ARCH}/${OPSYS:L}/gnu-gnu-gnu/libgnustep-gui.so:${PORTSDIR}/x11-toolkits/gnustep-gui
+BUILD_DEPENDS=	${COMBOLIBDIR}/libgnustep-gui.so:${PORTSDIR}/x11-toolkits/gnustep-gui
+RUN_DEPENDS=	${COMBOLIBDIR}/libgnustep-gui.so:${PORTSDIR}/x11-toolkits/gnustep-gui
 LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
 		tiff.4:${PORTSDIR}/graphics/tiff
+
+BREAKS_IF_PEDANTIC=	yes
 
 .include <bsd.port.pre.mk>
 
@@ -44,7 +46,7 @@ GNU_ARCH=	${MACHINE_ARCH}
 .endif
 PLIST_SUB+=	GNU_ARCH=${GNU_ARCH} OPSYS=${OPSYS:L} VERSION=${PORTVERSION}
 
-SYSLIBDIR=	${PREFIX}/System/Libraries
+COMBOLIBDIR=	${PREFIX}/System/Libraries/${GNU_ARCH}/${OPSYS:L}/gnu-gnu-gnu
 
 do-configure:
 	@(cd ${WRKSRC}; . ${PREFIX}/System/Makefiles/GNUstep.sh; \

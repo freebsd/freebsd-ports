@@ -13,7 +13,7 @@ MASTER_SITES=	http://www.collaboration-world.com/mirror/ \
 		ftp://ftp.tuwien.ac.at/z6/publishing/gnustep/libs/
 DISTNAME=	Pantomime-${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	dinoex@FreeBSD.org
 
 BUILD_DEPENDS=	${XGPSBUNDLEDIR}/libgnustep-xgps:${PORTSDIR}/x11-toolkits/gnustep-xgps
 RUN_DEPENDS=	${XGPSBUNDLEDIR}/libgnustep-xgps:${PORTSDIR}/x11-toolkits/gnustep-xgps

@@ -10,7 +10,7 @@ PORTVERSION=	0.9.4
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	ftp://ftp.inf.uos.de/pub/elmar/gtk/objc-gtoolkit/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	dinoex@FreeBSD.org
 
 BUILD_DEPENDS=  ${COMBOLIBDIR}/libgnustep-base.so:${PORTSDIR}/lang/gnustep-base
 RUN_DEPENDS=    ${COMBOLIBDIR}/libgnustep-base.so:${PORTSDIR}/lang/gnustep-base
