@@ -81,4 +81,12 @@ pre-extract:
 	@${ECHO_MSG}
 .endif
 
+post-extract:
+	(cd ${WRKSRC}/Input/mpg123 && ${MV} decode_i586.s decode_i586.S && \
+	  ${MV} getbits.s getbits.S && cd ${WRKSRC}/Visualization/blur_scope && \
+	  ${MV} blur_8.s blur_8.S);
+	${PERL} -pi.bak -e 's:\.s :\.S :g' ${WRKSRC}/Input/mpg123/Makefile.in
+	${PERL} -pi.bak -e 's:blur_8.s:blur_8.S:g' \
+	  ${WRKSRC}/Visualization/blur_scope/Makefile.in
+
 .include <bsd.port.mk>
