@@ -1,5 +1,5 @@
---- install.sh.orig	Sun Mar 10 07:32:20 1996
-+++ install.sh	Mon Dec  9 16:59:43 1996
+--- install.sh.orig	Sat Sep 27 10:21:12 1997
++++ install.sh	Sat Jan  3 02:48:51 1998
 @@ -47,8 +47,8 @@
  	echo "Installing minicom in $2"
  	cp minicom $2/minicom
@@ -16,7 +16,7 @@
  	chmod 755 $2/$i
  	chown root $2/$i
 -	chgrp root $2/$i
-+	chgrp dialer $2/$i
++	chgrp bin $2/$i
    fi
  done
  
@@ -47,7 +47,7 @@
  	chmod 644 $1/minicom.users
  fi
  
-@@ -98,15 +98,16 @@
+@@ -98,7 +98,7 @@
  		cp ../demos/$i $4/$i
  		chmod 644 $4/$i
  		chown root $4/$i
@@ -56,6 +56,8 @@
  	done
  else
  	echo "You don't have a $4 directory - script examples not installed."
+@@ -109,9 +109,10 @@
+     rm minicom.o
  fi
  	
 -echo "Minicom is NOT setuid yet - you must do this yourself by entering:"
