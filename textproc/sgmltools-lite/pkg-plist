@@ -34,3 +34,4 @@ share/sgml/misc/sgmltools/python/backends/iSilo.py
 @dirrm share/sgml/misc/sgmltools/python
 @dirrm share/sgml/misc/sgmltools/site-backends
 @dirrm share/sgml/misc/sgmltools
+@unexec rmdir %D/etc/sgml 2>/dev/null || true
