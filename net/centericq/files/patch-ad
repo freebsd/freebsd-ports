@@ -1,0 +1,23 @@
+--- po/Makefile.in.orig	Thu Nov 30 11:23:18 2000
++++ po/Makefile.in	Sun Apr 15 16:58:35 2001
+@@ -17,16 +17,16 @@
+ includedir = @includedir@
+ oldincludedir = /usr/include
+ 
+-LANGS = ru de zh_TW.Big5
++LANGS = ru de zh_TW.Big5 uk
+ 
+ all:
+ 	for i in $(LANGS); do msgfmt -o $$i.mo $$i.po; done
+ 
+-install:
+-	for i in $(LANGS); do install -D -m 644 $$i.mo ${datadir}/locale/$$i/LC_MESSAGES/centericq.mo; done
++install: all
++	for i in $(LANGS); do install -d -m 755 ${datadir}/locale/$$i/LC_MESSAGES; install -C -D -m 644 $$i.mo ${datadir}/locale/$$i/LC_MESSAGES/centericq.mo; done
+ 
+ clean:
+-#	for i in $(LANGS); do $(RM) $$i.mo; done
++	for i in $(LANGS); do rm -r $$i.mo; done
+ 
+ merge: extract
+ 	for i in $(LANGS); do msgmerge -o $$i.po $$i.po centericq.pot; done

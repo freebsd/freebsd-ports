@@ -1,5 +1,0 @@
-#! /bin/sh
-
-exec %%PREFIX%%/bin/javavm -cp "%%PREFIX%%/share/java/classes/jfc-%%JFC_VERSION%%/swingall.jar:%%PREFIX%%/share/airport/AirportBaseStationConfig.jar" AirportBaseStationConfigurator
-
-exit 1

@@ -1,7 +1,0 @@
-bin/httperf
-share/doc/httperf/COPYRIGHT
-share/doc/httperf/ChangeLog
-share/doc/httperf/NEWS
-share/doc/httperf/README
-share/doc/httperf/TODO
-@dirrm share/doc/httperf

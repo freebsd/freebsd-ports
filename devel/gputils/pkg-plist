@@ -1,5 +1,0 @@
-bin/gpasm
-share/gpasm/special.inc
-share/doc/gpasm/gpasm.ps
-@dirrm share/gpasm
-@dirrm share/doc/gpasm

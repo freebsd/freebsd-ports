@@ -1,9 +1,0 @@
-! Additional resources, FreeBSD specific
-!  2000/7/15 CHOI Junho <cjh@freebsd.org>
-!
-! These fonts is available from korean/ftghostscript* ports.
-!  and korean/baekmukfonts-ttf.
-!
-*documentFonts.EUC-KR*psname:	Gulim-Medium-KSC-EUC-H
-*documentFonts.EUC-KR*pswidth:	1000
-*documentFonts.EUC-KR*psascent:	880

@@ -1,9 +1,0 @@
-Excerpt from the README:
-
- PyGNOME -- Python bindings for GNOME
- ====================================
- Author: James Henstridge <james@daa.com.au>
-
- This is a set of bindings for the GNOME libraries for use with python.
-
--- Jacques Vidrine <nectar@FreeBSD.ORG>

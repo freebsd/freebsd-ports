@@ -1,9 +1,0 @@
-bin/airport
-share/airport/AUTHORS
-share/airport/COPYING
-share/airport/AirportBaseStationConfig.jar
-share/airport/helpdocs/ReadMe.txt
-share/airport/helpdocs/mainscreen.jpg
-share/airport/helpdocs/manual.html
-@dirrm share/airport/helpdocs
-@dirrm share/airport

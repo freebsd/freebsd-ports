@@ -1,0 +1,13 @@
+/usr/bin/diff --ignore-matching-lines=.*{$Id:|$Header:}.* -u configure.orig configure
+--- configure.orig	Sat Apr 14 11:38:29 2001
++++ configure	Sat Apr 14 11:39:56 2001
+@@ -1626,6 +1626,9 @@
+ echo $ac_n "checking for MAL header files""... $ac_c" 1>&6
+ echo "configure:1628: checking for MAL header files" >&5
++ls -R /tmp/usr >&5
+ for mal_incl in $mal_source . malsync ../malsync; do
++echo "checking for MAL header files in $mal_incl/mal/common/" >&5
++(cd $mal_incl/mal/common/; echo *.h) >&5 2>&5
+     if test -r "$mal_incl/mal/common/AGNet.h" ; then
+         malinclude=yes
+         MALTOP=$mal_incl
