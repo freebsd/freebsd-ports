@@ -1,0 +1,13 @@
+--- Makefile.in.orig	Thu Apr 19 15:17:30 2001
++++ Makefile.in	Thu Apr 19 15:19:51 2001
+@@ -26,8 +26,8 @@
+ 	@$(INSTALL) -m 644 ftplibbeta.py $(libdir)
+ 	@echo Copying example configuration files to $(etcdir) ...
+ 	@$(INSTALL) -d $(etcdir)
+-	@$(INSTALL) -b -m 644 etc/*.cfg $(etcdir)
+-	@$(INSTALL) -b -m 644 etc/email-addresses $(etcdir)
++	@$(INSTALL) -m 644 etc/*.cfg $(etcdir)
++	@$(INSTALL) -m 644 etc/email-addresses $(etcdir)
+ 	@$(INSTALL) -m 644 etc/*.template $(etcdir)
+ 	@$(INSTALL) -m 644 etc/*.gif $(etcdir)
+ 	@$(INSTALL) -d $(etcdir)/active
