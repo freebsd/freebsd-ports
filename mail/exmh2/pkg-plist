@@ -37,6 +37,7 @@ lib/exmh-%%EXMH_VERSION%%/bitmaps/send.xbm
 lib/exmh-%%EXMH_VERSION%%/bitmaps/sign.xbm
 lib/exmh-%%EXMH_VERSION%%/bitmaps/unmark.xbm
 lib/exmh-%%EXMH_VERSION%%/bitmaps/write.xbm
+lib/exmh-%%EXMH_VERSION%%/bogo.tcl
 lib/exmh-%%EXMH_VERSION%%/busy.tcl
 lib/exmh-%%EXMH_VERSION%%/buttons.tcl
 lib/exmh-%%EXMH_VERSION%%/clink.au
