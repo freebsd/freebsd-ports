@@ -1,0 +1,14 @@
+%%PEARDIR%%/I18N/Common.php
+%%PEARDIR%%/I18N/Country.php
+%%PEARDIR%%/I18N/Language.php
+%%PEARDIR%%/I18N/Negotiator.php
+%%PEARDIR%%/I18N/Messages/Common.php
+%%PEARDIR%%/I18N/Messages/File.php
+%%PEARDIR%%/I18N/Messages/Translate.php
+%%PEARDIR%%/I18N/Messages/determineLanguage.inc.php
+%%PORTDOCS%%%%EXAMPLESDIR%%/I18N_Message.php
+%%PORTDOCS%%%%EXAMPLESDIR%%/I18N_Message_Translate.php
+%%PORTDOCS%%%%EXAMPLESDIR%%/I18N_Message_Translate.tpl
+%%PORTDOCS%%%%EXAMPLESDIR%%/I18N_Negotiator.php
+@dirrm %%PEARDIR%%/I18N/Messages
+@dirrm %%PEARDIR%%/I18N

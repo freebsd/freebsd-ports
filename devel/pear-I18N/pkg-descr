@@ -1,0 +1,8 @@
+This package supports you to localize your applications.
+
+Multiple ways of supporting translation are implemented and methods to
+determine the current users (browser-)language.
+
+Localizing Numbers, DateTime and currency is also possible.
+
+WWW: http://pear.php.net/package-info.php?pacid=129

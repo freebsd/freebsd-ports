@@ -652,6 +652,7 @@
     SUBDIR += pear-Date
     SUBDIR += pear-HTML_Common
     SUBDIR += pear-HTML_Select
+    SUBDIR += pear-I18N
     SUBDIR += pear-PEAR
     SUBDIR += pear-install
     SUBDIR += pedisassem
