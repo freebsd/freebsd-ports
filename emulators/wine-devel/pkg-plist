@@ -102,6 +102,7 @@ include/wine/windows/comcat.h
 include/wine/windows/commctrl.h
 include/wine/windows/commdlg.h
 include/wine/windows/compobj.h
+include/wine/windows/control.h
 include/wine/windows/cpl.h
 include/wine/windows/custcntl.h
 include/wine/windows/d3d.h
@@ -150,6 +151,10 @@ include/wine/windows/imm.h
 include/wine/windows/initguid.h
 include/wine/windows/instance.h
 include/wine/windows/ipexport.h
+include/wine/windows/iphlpapi.h
+include/wine/windows/ipifcons.h
+include/wine/windows/iprtrmib.h
+include/wine/windows/iptypes.h
 include/wine/windows/lm.h
 include/wine/windows/lmaccess.h
 include/wine/windows/lmapibuf.h
@@ -222,6 +227,7 @@ include/wine/windows/sql.h
 include/wine/windows/sqlext.h
 include/wine/windows/sqltypes.h
 include/wine/windows/storage.h
+include/wine/windows/strmif.h
 include/wine/windows/tapi.h
 include/wine/windows/tchar.h
 include/wine/windows/tlhelp32.h
@@ -320,6 +326,7 @@ lib/wine/imaadp32.acm.so
 lib/wine/imagehlp.dll.so
 lib/wine/imm.dll.so
 lib/wine/imm32.dll.so
+lib/wine/iphlpapi.dll.so
 lib/wine/joystick.drv.so
 lib/wine/kernel32.dll.so
 lib/wine/keyboard.dll.so
@@ -361,6 +368,7 @@ lib/wine/libglu32.def
 lib/wine/libicmp.def
 lib/wine/libimagehlp.def
 lib/wine/libimm32.def
+lib/wine/libiphlpapi.def
 lib/wine/libkernel32.def
 lib/wine/liblz32.def
 lib/wine/libmapi32.def
@@ -529,6 +537,7 @@ lib/wine/winejack.drv.so
 lib/wine/winemine.exe.so
 lib/wine/winemp3.acm.so
 lib/wine/wineoss.drv.so
+lib/wine/winemenubuilder.exe.so
 lib/wine/winenas.drv.so
 lib/wine/winepath.exe.so
 lib/wine/wineps.dll.so
