@@ -71,7 +71,7 @@ lib/%%DISTNAME%%/library/system.pl
 lib/%%DISTNAME%%/library/threadutil.pl
 lib/%%DISTNAME%%/library/tty.pl
 lib/%%DISTNAME%%/library/url.pl
-lib/%%DISTNAME%%/runtime/%%ARCH%%-%%OS%%/libplmt.a
+lib/%%DISTNAME%%/runtime/%%ARCH%%-%%OS%%/libpl.a
 lib/%%DISTNAME%%/swipl
 @dirrm lib/%%DISTNAME%%/runtime/%%ARCH%%-%%OS%%
 @dirrm lib/%%DISTNAME%%/runtime
@@ -85,4 +85,3 @@ lib/%%DISTNAME%%/swipl
 @dirrm lib/%%DISTNAME%%/bin/%%ARCH%%-%%OS%%
 @dirrm lib/%%DISTNAME%%/bin
 @dirrm lib/%%DISTNAME%%
-

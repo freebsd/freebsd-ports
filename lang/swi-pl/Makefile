@@ -7,6 +7,7 @@
 
 PORTNAME=	swi-pl
 PORTVERSION=	5.2.8
+PORTREVISION=	1
 CATEGORIES=	lang
 MASTER_SITES=	ftp://ftp.swi.psy.uva.nl/pub/SWI-Prolog/
 DISTNAME=	pl-${PORTVERSION}
@@ -17,7 +18,7 @@ COMMENT=	Edinburgh-style Prolog compiler
 CONFLICTS=	ploticus-* slffea-*
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--host=${MACHINE_ARCH}-${OPSYS:L}
+CONFIGURE_ARGS=	--host=${MACHINE_ARCH}-${OPSYS:L} --disable-mt
 STRIP=
 MAN1=		pl.1 plrc.1 plld.1
 PLIST_SUB=	DISTNAME=${DISTNAME} ARCH=${ARCH} OS=${OPSYS:L}
