@@ -1,9 +1,12 @@
 bin/es
+bin/esd
 bin/genguid
 bin/ns
 bin/nsc
+bin/nsd
 bin/pyroc
 bin/rns
+bin/wxnsc
 bin/xnsc
 %%PYTHON_SITELIBDIR%%/Pyro/EventService/Clients.py
 %%PYTHON_SITELIBDIR%%/Pyro/EventService/Clients.pyc
@@ -29,9 +32,24 @@ bin/xnsc
 %%PYTHON_SITELIBDIR%%/Pyro/errors.py
 %%PYTHON_SITELIBDIR%%/Pyro/errors.pyc
 %%PYTHON_SITELIBDIR%%/Pyro/errors.pyo
+%%PYTHON_SITELIBDIR%%/Pyro/ext/BasicNTService.py
+%%PYTHON_SITELIBDIR%%/Pyro/ext/BasicNTService.pyc
+%%PYTHON_SITELIBDIR%%/Pyro/ext/BasicNTService.pyo
+%%PYTHON_SITELIBDIR%%/Pyro/ext/ES_NtService.py
+%%PYTHON_SITELIBDIR%%/Pyro/ext/ES_NtService.pyc
+%%PYTHON_SITELIBDIR%%/Pyro/ext/ES_NtService.pyo
+%%PYTHON_SITELIBDIR%%/Pyro/ext/NS_NtService.py
+%%PYTHON_SITELIBDIR%%/Pyro/ext/NS_NtService.pyc
+%%PYTHON_SITELIBDIR%%/Pyro/ext/NS_NtService.pyo
+%%PYTHON_SITELIBDIR%%/Pyro/ext/ServiceTest.py
+%%PYTHON_SITELIBDIR%%/Pyro/ext/ServiceTest.pyc
+%%PYTHON_SITELIBDIR%%/Pyro/ext/ServiceTest.pyo
 %%PYTHON_SITELIBDIR%%/Pyro/ext/__init__.py
 %%PYTHON_SITELIBDIR%%/Pyro/ext/__init__.pyc
 %%PYTHON_SITELIBDIR%%/Pyro/ext/__init__.pyo
+%%PYTHON_SITELIBDIR%%/Pyro/ext/daemonizer.py
+%%PYTHON_SITELIBDIR%%/Pyro/ext/daemonizer.pyc
+%%PYTHON_SITELIBDIR%%/Pyro/ext/daemonizer.pyo
 %%PYTHON_SITELIBDIR%%/Pyro/ext/remote.py
 %%PYTHON_SITELIBDIR%%/Pyro/ext/remote.pyc
 %%PYTHON_SITELIBDIR%%/Pyro/ext/remote.pyo
@@ -53,185 +71,198 @@ bin/xnsc
 %%PYTHON_SITELIBDIR%%/Pyro/util.py
 %%PYTHON_SITELIBDIR%%/Pyro/util.pyc
 %%PYTHON_SITELIBDIR%%/Pyro/util.pyo
+%%PYTHON_SITELIBDIR%%/Pyro/wxnsc.py
+%%PYTHON_SITELIBDIR%%/Pyro/wxnsc.pyc
+%%PYTHON_SITELIBDIR%%/Pyro/wxnsc.pyo
 %%PYTHON_SITELIBDIR%%/Pyro/xnsc.py
 %%PYTHON_SITELIBDIR%%/Pyro/xnsc.pyc
 %%PYTHON_SITELIBDIR%%/Pyro/xnsc.pyo
 @dirrm %%PYTHON_SITELIBDIR%%/Pyro/ext
 @dirrm %%PYTHON_SITELIBDIR%%/Pyro/EventService
 @dirrm %%PYTHON_SITELIBDIR%%/Pyro
-%%PORTDOCS%%share/doc/py-ro/1-intro.html
-%%PORTDOCS%%share/doc/py-ro/10-errors.html
-%%PORTDOCS%%share/doc/py-ro/11-services.html
-%%PORTDOCS%%share/doc/py-ro/12-changes-archive.html
-%%PORTDOCS%%share/doc/py-ro/12-changes.html
-%%PORTDOCS%%share/doc/py-ro/2-concepts.html
-%%PORTDOCS%%share/doc/py-ro/3-install.html
-%%PORTDOCS%%share/doc/py-ro/4-usage.html
-%%PORTDOCS%%share/doc/py-ro/5-nameserver.html
-%%PORTDOCS%%share/doc/py-ro/6-implementation.html
-%%PORTDOCS%%share/doc/py-ro/7-features.html
-%%PORTDOCS%%share/doc/py-ro/8-example.html
-%%PORTDOCS%%share/doc/py-ro/9-security.html
-%%PORTDOCS%%share/doc/py-ro/LICENSE
-%%PORTDOCS%%share/doc/py-ro/PyroManual.html
-%%PORTDOCS%%share/doc/py-ro/index.html
-%%PORTDOCS%%share/examples/py-ro/Bank2/BankServer.py
-%%PORTDOCS%%share/examples/py-ro/Bank2/Readme.txt
-%%PORTDOCS%%share/examples/py-ro/Bank2/banks.py
-%%PORTDOCS%%share/examples/py-ro/Bank2/client.py
-%%PORTDOCS%%share/examples/py-ro/BankExample/BankServer.py
-%%PORTDOCS%%share/examples/py-ro/BankExample/Readme.txt
-%%PORTDOCS%%share/examples/py-ro/BankExample/banks.py
-%%PORTDOCS%%share/examples/py-ro/BankExample/client.py
-%%PORTDOCS%%share/examples/py-ro/NS_sec_plugins/NSSecEx.py
-%%PORTDOCS%%share/examples/py-ro/NS_sec_plugins/Readme.txt
-%%PORTDOCS%%share/examples/py-ro/Readme.txt
-%%PORTDOCS%%share/examples/py-ro/agent/Readme.txt
-%%PORTDOCS%%share/examples/py-ro/agent/ShoppingAgent.py
-%%PORTDOCS%%share/examples/py-ro/agent/client.py
-%%PORTDOCS%%share/examples/py-ro/agent/server.py
-%%PORTDOCS%%share/examples/py-ro/agent/shop.py
-%%PORTDOCS%%share/examples/py-ro/agent2/Readme.txt
-%%PORTDOCS%%share/examples/py-ro/agent2/agent/ShoppingAgent.py
-%%PORTDOCS%%share/examples/py-ro/agent2/agent/__init__.py
-%%PORTDOCS%%share/examples/py-ro/agent2/client.py
-%%PORTDOCS%%share/examples/py-ro/agent2/serv/server.py
-%%PORTDOCS%%share/examples/py-ro/agent2/serv/shop.py
-%%PORTDOCS%%share/examples/py-ro/attributes/Person.py
-%%PORTDOCS%%share/examples/py-ro/attributes/Readme.txt
-%%PORTDOCS%%share/examples/py-ro/attributes/client.py
-%%PORTDOCS%%share/examples/py-ro/attributes/server.py
-%%PORTDOCS%%share/examples/py-ro/authenticate/NSSecEx.py
-%%PORTDOCS%%share/examples/py-ro/authenticate/Readme.txt
-%%PORTDOCS%%share/examples/py-ro/authenticate/client.py
-%%PORTDOCS%%share/examples/py-ro/authenticate/server.py
-%%PORTDOCS%%share/examples/py-ro/autoreconnect/Readme.txt
-%%PORTDOCS%%share/examples/py-ro/autoreconnect/client.py
-%%PORTDOCS%%share/examples/py-ro/autoreconnect/server.py
-%%PORTDOCS%%share/examples/py-ro/benchmark/Readme.txt
-%%PORTDOCS%%share/examples/py-ro/benchmark/bench.py
-%%PORTDOCS%%share/examples/py-ro/benchmark/client.py
-%%PORTDOCS%%share/examples/py-ro/benchmark/server.py
-%%PORTDOCS%%share/examples/py-ro/callback/Readme.txt
-%%PORTDOCS%%share/examples/py-ro/callback/b2_client.py
-%%PORTDOCS%%share/examples/py-ro/callback/b2_server.py
-%%PORTDOCS%%share/examples/py-ro/callback/bounce_client.py
-%%PORTDOCS%%share/examples/py-ro/callback/bounce_server.py
-%%PORTDOCS%%share/examples/py-ro/callback/bouncer.py
-%%PORTDOCS%%share/examples/py-ro/callback/bouncer2.py
-%%PORTDOCS%%share/examples/py-ro/callback/bouncer_cberror.py
-%%PORTDOCS%%share/examples/py-ro/callback/cberror_client.py
-%%PORTDOCS%%share/examples/py-ro/callback/shout.py
-%%PORTDOCS%%share/examples/py-ro/callback/shout_client.py
-%%PORTDOCS%%share/examples/py-ro/callback/shout_server.py
-%%PORTDOCS%%share/examples/py-ro/chatbox-ES/Readme.txt
-%%PORTDOCS%%share/examples/py-ro/chatbox-ES/client.py
-%%PORTDOCS%%share/examples/py-ro/chatbox-ES/server.py
-%%PORTDOCS%%share/examples/py-ro/chatbox-non-ES/Readme.txt
-%%PORTDOCS%%share/examples/py-ro/chatbox-non-ES/client.py
-%%PORTDOCS%%share/examples/py-ro/chatbox-non-ES/server.py
-%%PORTDOCS%%share/examples/py-ro/circle/Readme.txt
-%%PORTDOCS%%share/examples/py-ro/circle/chain.py
-%%PORTDOCS%%share/examples/py-ro/circle/client.py
-%%PORTDOCS%%share/examples/py-ro/circle/servA.py
-%%PORTDOCS%%share/examples/py-ro/circle/servB.py
-%%PORTDOCS%%share/examples/py-ro/circle/servC.py
-%%PORTDOCS%%share/examples/py-ro/countingcars/Client.py
-%%PORTDOCS%%share/examples/py-ro/countingcars/Readme.txt
-%%PORTDOCS%%share/examples/py-ro/countingcars/Server.py
-%%PORTDOCS%%share/examples/py-ro/denyhosts/Readme.txt
-%%PORTDOCS%%share/examples/py-ro/denyhosts/client.py
-%%PORTDOCS%%share/examples/py-ro/denyhosts/server.py
-%%PORTDOCS%%share/examples/py-ro/exceptions/Readme.txt
-%%PORTDOCS%%share/examples/py-ro/exceptions/client.py
-%%PORTDOCS%%share/examples/py-ro/exceptions/excep.py
-%%PORTDOCS%%share/examples/py-ro/exceptions/server.py
-%%PORTDOCS%%share/examples/py-ro/factory/Readme.txt
-%%PORTDOCS%%share/examples/py-ro/factory/client.py
-%%PORTDOCS%%share/examples/py-ro/factory/factory.py
-%%PORTDOCS%%share/examples/py-ro/factory/server.py
-%%PORTDOCS%%share/examples/py-ro/hugetransfer/Readme.txt
-%%PORTDOCS%%share/examples/py-ro/hugetransfer/client.py
-%%PORTDOCS%%share/examples/py-ro/hugetransfer/server.py
-%%PORTDOCS%%share/examples/py-ro/inheritance/Readme.txt
-%%PORTDOCS%%share/examples/py-ro/inheritance/client.py
-%%PORTDOCS%%share/examples/py-ro/inheritance/inherit.py
-%%PORTDOCS%%share/examples/py-ro/inheritance/server.py
-%%PORTDOCS%%share/examples/py-ro/logging/Readme.txt
-%%PORTDOCS%%share/examples/py-ro/logging/testlogging.py
-%%PORTDOCS%%share/examples/py-ro/maxclients/Readme.txt
-%%PORTDOCS%%share/examples/py-ro/maxclients/client.py
-%%PORTDOCS%%share/examples/py-ro/maxclients/server.py
-%%PORTDOCS%%share/examples/py-ro/multithread/Readme.txt
-%%PORTDOCS%%share/examples/py-ro/multithread/client.py
-%%PORTDOCS%%share/examples/py-ro/multithread/server.py
-%%PORTDOCS%%share/examples/py-ro/naming/Readme.txt
-%%PORTDOCS%%share/examples/py-ro/naming/nametest.py
-%%PORTDOCS%%share/examples/py-ro/noNS/Readme.txt
-%%PORTDOCS%%share/examples/py-ro/noNS/client.py
-%%PORTDOCS%%share/examples/py-ro/noNS/client2.py
-%%PORTDOCS%%share/examples/py-ro/noNS/server.py
-%%PORTDOCS%%share/examples/py-ro/quickstart-noNS/Readme.txt
-%%PORTDOCS%%share/examples/py-ro/quickstart-noNS/client.py
-%%PORTDOCS%%share/examples/py-ro/quickstart-noNS/object.py
-%%PORTDOCS%%share/examples/py-ro/quickstart-noNS/server.py
-%%PORTDOCS%%share/examples/py-ro/quickstart/Readme.txt
-%%PORTDOCS%%share/examples/py-ro/quickstart/client.py
-%%PORTDOCS%%share/examples/py-ro/quickstart/object.py
-%%PORTDOCS%%share/examples/py-ro/quickstart/pyrorun
-%%PORTDOCS%%share/examples/py-ro/quickstart/server.py
-%%PORTDOCS%%share/examples/py-ro/simple/Readme.txt
-%%PORTDOCS%%share/examples/py-ro/simple/client.py
-%%PORTDOCS%%share/examples/py-ro/simple/server.py
-%%PORTDOCS%%share/examples/py-ro/simple/tst.py
-%%PORTDOCS%%share/examples/py-ro/ssl/Readme.txt
-%%PORTDOCS%%share/examples/py-ro/ssl/certs/ca.pem
-%%PORTDOCS%%share/examples/py-ro/ssl/certs/client.pem
-%%PORTDOCS%%share/examples/py-ro/ssl/certs/server.pem
-%%PORTDOCS%%share/examples/py-ro/ssl/client.py
-%%PORTDOCS%%share/examples/py-ro/ssl/server.py
-%%PORTDOCS%%share/examples/py-ro/stockquotes/Client.py
-%%PORTDOCS%%share/examples/py-ro/stockquotes/MClient.py
-%%PORTDOCS%%share/examples/py-ro/stockquotes/Readme.txt
-%%PORTDOCS%%share/examples/py-ro/stockquotes/Server.py
-%%PORTDOCS%%share/examples/py-ro/stresstest/Readme.txt
-%%PORTDOCS%%share/examples/py-ro/stresstest/consumer.py
-%%PORTDOCS%%share/examples/py-ro/stresstest/naming.py
-%%PORTDOCS%%share/examples/py-ro/stresstest/producer.py
-%%PORTDOCS%%share/examples/py-ro/testclient.py
-%%PORTDOCS%%share/examples/py-ro/testserver.py
-%%PORTDOCS%%@dirrm share/examples/py-ro/stresstest
-%%PORTDOCS%%@dirrm share/examples/py-ro/stockquotes
-%%PORTDOCS%%@dirrm share/examples/py-ro/ssl/certs
-%%PORTDOCS%%@dirrm share/examples/py-ro/ssl
-%%PORTDOCS%%@dirrm share/examples/py-ro/simple
-%%PORTDOCS%%@dirrm share/examples/py-ro/quickstart-noNS
-%%PORTDOCS%%@dirrm share/examples/py-ro/quickstart
-%%PORTDOCS%%@dirrm share/examples/py-ro/noNS
-%%PORTDOCS%%@dirrm share/examples/py-ro/naming
-%%PORTDOCS%%@dirrm share/examples/py-ro/multithread
-%%PORTDOCS%%@dirrm share/examples/py-ro/maxclients
-%%PORTDOCS%%@dirrm share/examples/py-ro/logging
-%%PORTDOCS%%@dirrm share/examples/py-ro/inheritance
-%%PORTDOCS%%@dirrm share/examples/py-ro/hugetransfer
-%%PORTDOCS%%@dirrm share/examples/py-ro/factory
-%%PORTDOCS%%@dirrm share/examples/py-ro/exceptions
-%%PORTDOCS%%@dirrm share/examples/py-ro/denyhosts
-%%PORTDOCS%%@dirrm share/examples/py-ro/countingcars
-%%PORTDOCS%%@dirrm share/examples/py-ro/circle
-%%PORTDOCS%%@dirrm share/examples/py-ro/chatbox-non-ES
-%%PORTDOCS%%@dirrm share/examples/py-ro/chatbox-ES
-%%PORTDOCS%%@dirrm share/examples/py-ro/callback
-%%PORTDOCS%%@dirrm share/examples/py-ro/benchmark
-%%PORTDOCS%%@dirrm share/examples/py-ro/autoreconnect
-%%PORTDOCS%%@dirrm share/examples/py-ro/authenticate
-%%PORTDOCS%%@dirrm share/examples/py-ro/attributes
-%%PORTDOCS%%@dirrm share/examples/py-ro/agent2/serv
-%%PORTDOCS%%@dirrm share/examples/py-ro/agent2/agent
-%%PORTDOCS%%@dirrm share/examples/py-ro/agent2
-%%PORTDOCS%%@dirrm share/examples/py-ro/agent
-%%PORTDOCS%%@dirrm share/examples/py-ro/NS_sec_plugins
-%%PORTDOCS%%@dirrm share/examples/py-ro/BankExample
-%%PORTDOCS%%@dirrm share/examples/py-ro/Bank2
-%%PORTDOCS%%@dirrm share/examples/py-ro
-%%PORTDOCS%%@dirrm share/doc/py-ro
+%%PORTDOCS%%%%DOCSDIR%%/1-intro.html
+%%PORTDOCS%%%%DOCSDIR%%/10-errors.html
+%%PORTDOCS%%%%DOCSDIR%%/11-implementation.html
+%%PORTDOCS%%%%DOCSDIR%%/12-changes-archive.html
+%%PORTDOCS%%%%DOCSDIR%%/12-changes.html
+%%PORTDOCS%%%%DOCSDIR%%/2-concepts.html
+%%PORTDOCS%%%%DOCSDIR%%/3-install.html
+%%PORTDOCS%%%%DOCSDIR%%/4-usage.html
+%%PORTDOCS%%%%DOCSDIR%%/5-nameserver.html
+%%PORTDOCS%%%%DOCSDIR%%/6-eventserver.html
+%%PORTDOCS%%%%DOCSDIR%%/7-features.html
+%%PORTDOCS%%%%DOCSDIR%%/8-example.html
+%%PORTDOCS%%%%DOCSDIR%%/9-security.html
+%%PORTDOCS%%%%DOCSDIR%%/LICENSE
+%%PORTDOCS%%%%DOCSDIR%%/PyroManual.html
+%%PORTDOCS%%%%DOCSDIR%%/index.html
+%%PORTDOCS%%%%EXAMPLESDIR%%/Bank2/BankServer.py
+%%PORTDOCS%%%%EXAMPLESDIR%%/Bank2/Readme.txt
+%%PORTDOCS%%%%EXAMPLESDIR%%/Bank2/banks.py
+%%PORTDOCS%%%%EXAMPLESDIR%%/Bank2/client.py
+%%PORTDOCS%%%%EXAMPLESDIR%%/BankExample/BankServer.py
+%%PORTDOCS%%%%EXAMPLESDIR%%/BankExample/Readme.txt
+%%PORTDOCS%%%%EXAMPLESDIR%%/BankExample/banks.py
+%%PORTDOCS%%%%EXAMPLESDIR%%/BankExample/client.py
+%%PORTDOCS%%%%EXAMPLESDIR%%/NS_sec_plugins/NSSecEx.py
+%%PORTDOCS%%%%EXAMPLESDIR%%/NS_sec_plugins/Readme.txt
+%%PORTDOCS%%%%EXAMPLESDIR%%/Readme.txt
+%%PORTDOCS%%%%EXAMPLESDIR%%/agent2/Readme.txt
+%%PORTDOCS%%%%EXAMPLESDIR%%/agent2/agent/ShoppingAgent.py
+%%PORTDOCS%%%%EXAMPLESDIR%%/agent2/agent/__init__.py
+%%PORTDOCS%%%%EXAMPLESDIR%%/agent2/client.py
+%%PORTDOCS%%%%EXAMPLESDIR%%/agent2/serv/objects/__init__.py
+%%PORTDOCS%%%%EXAMPLESDIR%%/agent2/serv/objects/apples.py
+%%PORTDOCS%%%%EXAMPLESDIR%%/agent2/serv/objects/bananas.py
+%%PORTDOCS%%%%EXAMPLESDIR%%/agent2/serv/objects/bindings.py
+%%PORTDOCS%%%%EXAMPLESDIR%%/agent2/serv/objects/boots.py
+%%PORTDOCS%%%%EXAMPLESDIR%%/agent2/serv/objects/cd.py
+%%PORTDOCS%%%%EXAMPLESDIR%%/agent2/serv/objects/computer.py
+%%PORTDOCS%%%%EXAMPLESDIR%%/agent2/serv/objects/goggles.py
+%%PORTDOCS%%%%EXAMPLESDIR%%/agent2/serv/objects/mouse.py
+%%PORTDOCS%%%%EXAMPLESDIR%%/agent2/serv/objects/shoes.py
+%%PORTDOCS%%%%EXAMPLESDIR%%/agent2/serv/objects/snowboard.py
+%%PORTDOCS%%%%EXAMPLESDIR%%/agent2/serv/objects/spices.py
+%%PORTDOCS%%%%EXAMPLESDIR%%/agent2/serv/objects/tomatoes.py
+%%PORTDOCS%%%%EXAMPLESDIR%%/agent2/serv/objects/tv.py
+%%PORTDOCS%%%%EXAMPLESDIR%%/agent2/serv/objects/wax.py
+%%PORTDOCS%%%%EXAMPLESDIR%%/agent2/serv/server.py
+%%PORTDOCS%%%%EXAMPLESDIR%%/agent2/serv/shop.py
+%%PORTDOCS%%%%EXAMPLESDIR%%/attributes/Person.py
+%%PORTDOCS%%%%EXAMPLESDIR%%/attributes/Readme.txt
+%%PORTDOCS%%%%EXAMPLESDIR%%/attributes/client.py
+%%PORTDOCS%%%%EXAMPLESDIR%%/attributes/server.py
+%%PORTDOCS%%%%EXAMPLESDIR%%/authenticate/NSSecEx.py
+%%PORTDOCS%%%%EXAMPLESDIR%%/authenticate/Readme.txt
+%%PORTDOCS%%%%EXAMPLESDIR%%/authenticate/client.py
+%%PORTDOCS%%%%EXAMPLESDIR%%/authenticate/server.py
+%%PORTDOCS%%%%EXAMPLESDIR%%/autoreconnect/Readme.txt
+%%PORTDOCS%%%%EXAMPLESDIR%%/autoreconnect/client.py
+%%PORTDOCS%%%%EXAMPLESDIR%%/autoreconnect/server.py
+%%PORTDOCS%%%%EXAMPLESDIR%%/benchmark/Readme.txt
+%%PORTDOCS%%%%EXAMPLESDIR%%/benchmark/bench.py
+%%PORTDOCS%%%%EXAMPLESDIR%%/benchmark/client.py
+%%PORTDOCS%%%%EXAMPLESDIR%%/benchmark/server.py
+%%PORTDOCS%%%%EXAMPLESDIR%%/callback/Readme.txt
+%%PORTDOCS%%%%EXAMPLESDIR%%/callback/b2_client.py
+%%PORTDOCS%%%%EXAMPLESDIR%%/callback/b2_server.py
+%%PORTDOCS%%%%EXAMPLESDIR%%/callback/bounce_client.py
+%%PORTDOCS%%%%EXAMPLESDIR%%/callback/bounce_server.py
+%%PORTDOCS%%%%EXAMPLESDIR%%/callback/bouncer.py
+%%PORTDOCS%%%%EXAMPLESDIR%%/callback/bouncer2.py
+%%PORTDOCS%%%%EXAMPLESDIR%%/callback/bouncer_cberror.py
+%%PORTDOCS%%%%EXAMPLESDIR%%/callback/cberror_client.py
+%%PORTDOCS%%%%EXAMPLESDIR%%/callback/shout.py
+%%PORTDOCS%%%%EXAMPLESDIR%%/callback/shout_client.py
+%%PORTDOCS%%%%EXAMPLESDIR%%/callback/shout_server.py
+%%PORTDOCS%%%%EXAMPLESDIR%%/chatbox-ES/Readme.txt
+%%PORTDOCS%%%%EXAMPLESDIR%%/chatbox-ES/client.py
+%%PORTDOCS%%%%EXAMPLESDIR%%/chatbox-ES/server.py
+%%PORTDOCS%%%%EXAMPLESDIR%%/chatbox-non-ES/Readme.txt
+%%PORTDOCS%%%%EXAMPLESDIR%%/chatbox-non-ES/client.py
+%%PORTDOCS%%%%EXAMPLESDIR%%/chatbox-non-ES/server.py
+%%PORTDOCS%%%%EXAMPLESDIR%%/circle/Readme.txt
+%%PORTDOCS%%%%EXAMPLESDIR%%/circle/chain.py
+%%PORTDOCS%%%%EXAMPLESDIR%%/circle/client.py
+%%PORTDOCS%%%%EXAMPLESDIR%%/circle/servA.py
+%%PORTDOCS%%%%EXAMPLESDIR%%/circle/servB.py
+%%PORTDOCS%%%%EXAMPLESDIR%%/circle/servC.py
+%%PORTDOCS%%%%EXAMPLESDIR%%/countingcars/Client.py
+%%PORTDOCS%%%%EXAMPLESDIR%%/countingcars/Readme.txt
+%%PORTDOCS%%%%EXAMPLESDIR%%/countingcars/Server.py
+%%PORTDOCS%%%%EXAMPLESDIR%%/denyhosts/Readme.txt
+%%PORTDOCS%%%%EXAMPLESDIR%%/denyhosts/client.py
+%%PORTDOCS%%%%EXAMPLESDIR%%/denyhosts/server.py
+%%PORTDOCS%%%%EXAMPLESDIR%%/exceptions/Readme.txt
+%%PORTDOCS%%%%EXAMPLESDIR%%/exceptions/client.py
+%%PORTDOCS%%%%EXAMPLESDIR%%/exceptions/excep.py
+%%PORTDOCS%%%%EXAMPLESDIR%%/exceptions/server.py
+%%PORTDOCS%%%%EXAMPLESDIR%%/factory/Readme.txt
+%%PORTDOCS%%%%EXAMPLESDIR%%/factory/client.py
+%%PORTDOCS%%%%EXAMPLESDIR%%/factory/factory.py
+%%PORTDOCS%%%%EXAMPLESDIR%%/factory/server.py
+%%PORTDOCS%%%%EXAMPLESDIR%%/hugetransfer/Readme.txt
+%%PORTDOCS%%%%EXAMPLESDIR%%/hugetransfer/client.py
+%%PORTDOCS%%%%EXAMPLESDIR%%/hugetransfer/server.py
+%%PORTDOCS%%%%EXAMPLESDIR%%/inheritance/Readme.txt
+%%PORTDOCS%%%%EXAMPLESDIR%%/inheritance/client.py
+%%PORTDOCS%%%%EXAMPLESDIR%%/inheritance/inherit.py
+%%PORTDOCS%%%%EXAMPLESDIR%%/inheritance/server.py
+%%PORTDOCS%%%%EXAMPLESDIR%%/logging/Readme.txt
+%%PORTDOCS%%%%EXAMPLESDIR%%/logging/testlogging.py
+%%PORTDOCS%%%%EXAMPLESDIR%%/maxclients/Readme.txt
+%%PORTDOCS%%%%EXAMPLESDIR%%/maxclients/client.py
+%%PORTDOCS%%%%EXAMPLESDIR%%/maxclients/server.py
+%%PORTDOCS%%%%EXAMPLESDIR%%/multithread/Readme.txt
+%%PORTDOCS%%%%EXAMPLESDIR%%/multithread/client.py
+%%PORTDOCS%%%%EXAMPLESDIR%%/multithread/server.py
+%%PORTDOCS%%%%EXAMPLESDIR%%/naming/Readme.txt
+%%PORTDOCS%%%%EXAMPLESDIR%%/naming/nametest.py
+%%PORTDOCS%%%%EXAMPLESDIR%%/noNS/Readme.txt
+%%PORTDOCS%%%%EXAMPLESDIR%%/noNS/client.py
+%%PORTDOCS%%%%EXAMPLESDIR%%/noNS/client2.py
+%%PORTDOCS%%%%EXAMPLESDIR%%/noNS/server.py
+%%PORTDOCS%%%%EXAMPLESDIR%%/quickstart-noNS/Readme.txt
+%%PORTDOCS%%%%EXAMPLESDIR%%/quickstart-noNS/client.py
+%%PORTDOCS%%%%EXAMPLESDIR%%/quickstart-noNS/object.py
+%%PORTDOCS%%%%EXAMPLESDIR%%/quickstart-noNS/server.py
+%%PORTDOCS%%%%EXAMPLESDIR%%/quickstart/Readme.txt
+%%PORTDOCS%%%%EXAMPLESDIR%%/quickstart/client.py
+%%PORTDOCS%%%%EXAMPLESDIR%%/quickstart/object.py
+%%PORTDOCS%%%%EXAMPLESDIR%%/quickstart/pyrorun
+%%PORTDOCS%%%%EXAMPLESDIR%%/quickstart/server.py
+%%PORTDOCS%%%%EXAMPLESDIR%%/simple/Readme.txt
+%%PORTDOCS%%%%EXAMPLESDIR%%/simple/client.py
+%%PORTDOCS%%%%EXAMPLESDIR%%/simple/server.py
+%%PORTDOCS%%%%EXAMPLESDIR%%/simple/tst.py
+%%PORTDOCS%%%%EXAMPLESDIR%%/ssl/Readme.txt
+%%PORTDOCS%%%%EXAMPLESDIR%%/ssl/certs/ca.pem
+%%PORTDOCS%%%%EXAMPLESDIR%%/ssl/certs/client.pem
+%%PORTDOCS%%%%EXAMPLESDIR%%/ssl/certs/server.pem
+%%PORTDOCS%%%%EXAMPLESDIR%%/ssl/client.py
+%%PORTDOCS%%%%EXAMPLESDIR%%/ssl/server.py
+%%PORTDOCS%%%%EXAMPLESDIR%%/stockquotes/Client.py
+%%PORTDOCS%%%%EXAMPLESDIR%%/stockquotes/MClient.py
+%%PORTDOCS%%%%EXAMPLESDIR%%/stockquotes/Readme.txt
+%%PORTDOCS%%%%EXAMPLESDIR%%/stockquotes/Server.py
+%%PORTDOCS%%%%EXAMPLESDIR%%/stresstest/Readme.txt
+%%PORTDOCS%%%%EXAMPLESDIR%%/stresstest/consumer.py
+%%PORTDOCS%%%%EXAMPLESDIR%%/stresstest/naming.py
+%%PORTDOCS%%%%EXAMPLESDIR%%/stresstest/producer.py
+%%PORTDOCS%%%%EXAMPLESDIR%%/testclient.py
+%%PORTDOCS%%%%EXAMPLESDIR%%/testserver.py
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/stresstest
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/stockquotes
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/ssl/certs
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/ssl
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/simple
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/quickstart-noNS
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/quickstart
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/noNS
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/naming
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/multithread
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/maxclients
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/logging
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/inheritance
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/hugetransfer
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/factory
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/exceptions
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/denyhosts
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/countingcars
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/circle
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/chatbox-non-ES
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/chatbox-ES
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/callback
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/benchmark
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/autoreconnect
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/authenticate
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/attributes
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/agent2/serv/objects
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/agent2/serv
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/agent2/agent
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/agent2
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/NS_sec_plugins
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/BankExample
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/Bank2
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
