@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	libgeda
-PORTVERSION=	20020825
+PORTVERSION=	20030223
 CATEGORIES=	cad
 MASTER_SITES=	ftp://ftp.geda.seul.org/pub/geda/devel/${PORTVERSION}/ \
 		http://geda.seul.org/devel/${PORTVERSION}/ \
@@ -15,11 +15,11 @@ MASTER_SITES=	ftp://ftp.geda.seul.org/pub/geda/devel/${PORTVERSION}/ \
 MAINTAINER=	bruno@tinkerbox.org
 COMMENT=	gEDA tools base utility library
 
-LIB_DEPENDS=	gdgeda.4:${PORTSDIR}/graphics/libgdgeda \
+LIB_DEPENDS=	gdgeda.5:${PORTSDIR}/graphics/libgdgeda \
 		guile.15:${PORTSDIR}/lang/guile
 
 USE_LIBTOOL=		yes
-USE_AUTOCONF_VER=	253
+#USE_AUTOCONF_VER=	253
 
 USE_GNOME=	gtk12
 INSTALLS_SHLIB=	yes

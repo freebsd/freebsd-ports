@@ -5,18 +5,15 @@
 # $FreeBSD$
 #
 
-PORTNAME=	symbols
-PORTVERSION=	20020825
+PORTNAME=	geda-symbols
+PORTVERSION=	20030223
 CATEGORIES=	cad
 MASTER_SITES=	ftp://ftp.geda.seul.org/pub/geda/devel/${PORTVERSION}/ \
 		http://geda.seul.org/devel/${PORTVERSION}/ \
 		http://www.tinkerbox.org/projects/files/gEDA/
-DISTNAME=	geda-${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	bruno@tinkerbox.org
 COMMENT=	gEDA symbols
-
-#USE_AUTOCONF=	yes
 
 GNU_CONFIGURE=	yes
 AUTOCONF=	autoconf

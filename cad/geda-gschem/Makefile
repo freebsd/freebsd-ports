@@ -6,22 +6,22 @@
 #
 
 PORTNAME=	gschem
-PORTVERSION=	20020825
+PORTVERSION=	20030223
 CATEGORIES=	cad
 MASTER_SITES=	ftp://ftp.geda.seul.org/pub/geda/devel/${PORTVERSION}/ \
 		http://geda.seul.org/devel/${PORTVERSION}/ \
 		http://www.tinkerbox.org/projects/files/gEDA/
-DISTNAME=	geda-${PORTNAME}-${PORTVERSION}
+
+DISTNAME=       geda-${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	bruno@tinkerbox.org
 COMMENT=	gEDA electronic schematic capture tools
 
 BUILD_DEPENDS=	gesym-config:${PORTSDIR}/cad/geda-symbols
-LIB_DEPENDS=	geda.16:${PORTSDIR}/cad/libgeda \
+LIB_DEPENDS=	geda.18:${PORTSDIR}/cad/libgeda \
 		guile.15:${PORTSDIR}/lang/guile
 
 USE_LIBTOOL=	yes
-#USE_AUTOCONF=	yes
 
 GNU_CONFIGURE=	yes
 AUTOCONF=	autoconf

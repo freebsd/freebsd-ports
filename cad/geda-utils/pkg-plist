@@ -2,6 +2,10 @@ bin/gmk_sym
 bin/smash_megafile
 bin/convert_sym
 bin/sarlacc_schem
+bin/olib
+bin/gschlas
 bin/sarlacc_sym
 bin/gschupdate
 bin/gsymupdate
+bin/gschemdoc
+bin/refdes_renum

@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	libgdgeda
-PORTVERSION=	1.8
+PORTVERSION=	2.0.9
 CATEGORIES=	graphics cad
 MASTER_SITES=	ftp://ftp.geda.seul.org/pub/geda/dist/ \
 		http://www.geda.seul.org/devel/support/ \
