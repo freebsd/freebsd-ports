@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	nqxml
-PORTVERSION=	1.0.2
+PORTVERSION=	1.1.0
 CATEGORIES=	textproc ruby
 MASTER_SITES=	http://www.io.com/~jimm/downloads/nqxml/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
@@ -23,8 +23,9 @@ DOCS=		ChangeLog README Credits TODO
 do-install:
 	cd ${WRKSRC} && ${RUBY} install.rb
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${RUBY_EXAMPLESDIR}/${PORTNAME}
+	${MKDIR} ${RUBY_EXAMPLESDIR}/${PORTNAME}/dispatcher
 	${INSTALL_DATA} ${WRKSRC}/examples/* ${RUBY_EXAMPLESDIR}/${PORTNAME}/
+	${INSTALL_DATA} ${WRKSRC}/contrib/* ${RUBY_EXAMPLESDIR}/${PORTNAME}/dispatcher/
 	${MKDIR} ${RUBY_DOCDIR}/${PORTNAME}
 .for f in ${DOCS}
 	${INSTALL_DATA} ${WRKSRC}/${f} ${RUBY_DOCDIR}/${PORTNAME}/

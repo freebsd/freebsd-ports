@@ -1,3 +1,4 @@
+%%RUBY_SITELIBDIR%%/nqxml/dispatcher.rb
 %%RUBY_SITELIBDIR%%/nqxml/document.rb
 %%RUBY_SITELIBDIR%%/nqxml/entities.rb
 %%RUBY_SITELIBDIR%%/nqxml/error.rb
@@ -20,6 +21,9 @@
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/nqxml/write.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/nqxml/writeManualDoc.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/nqxml/writeParsedDoc.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/nqxml/dispatcher/autodis_1.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/nqxml/dispatcher/autodis_2.rb
+%%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/nqxml/dispatcher
 %%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/nqxml
 %%PORTDOCS%%%%RUBY_DOCDIR%%/nqxml/ChangeLog
 %%PORTDOCS%%%%RUBY_DOCDIR%%/nqxml/Credits
