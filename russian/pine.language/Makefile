@@ -15,6 +15,8 @@ COMMENT=	Tune Pine for Russian (KOI8-R) defaults
 
 RUN_DEPENDS=	pine:${PORTSDIR}/mail/pine4
 
+BROKEN=		Removes pine.conf at deinstallation
+
 NO_WRKSUBDIR=	YES
 NO_BUILD=	YES
 PLIST_FILES=	etc/pine.conf
