@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	adns
-PORTVERSION=	0.7
+PORTVERSION=	1.0
 CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_GNU} \
 		ftp://ftp.chiark.greenend.org.uk/users/ian/adns/
@@ -18,7 +18,11 @@ GNU_CONFIGURE=	yes
 INSTALLS_SHLIB=	yes
 USE_GMAKE=	yes
 
+LIBVERSION=	1
+PLIST_SUB+=	LIBVERSION="${LIBVERSION}"
+
 post-install:
-	strip ${PREFIX}/bin/adnstest ${PREFIX}/bin/adnslogres ${PREFIX}/bin/adnshost
+	@${LN} -sf libadns.so.${LIBVERSION} ${PREFIX}/lib/libadns.so
+	strip ${PREFIX}/bin/adnslogres ${PREFIX}/bin/adnshost
 
 .include <bsd.port.mk>
