@@ -7,7 +7,7 @@
 
 PORTNAME?=	ispell
 PORTVERSION?=	3.2.06
-PORTREVISION?=	10
+PORTREVISION?=	11
 CATEGORIES+=	textproc
 MASTER_SITES=	http://fmg-www.cs.ucla.edu/geoff/tars/
 DISTNAME=	ispell-3.2.06		# needed for slave ports / options
@@ -205,6 +205,7 @@ post-patch:
 .endif
 .if defined(ISPELL_NO)
 	@cd ${WRKDIR}/norsk && ${PATCH} < ${FILESDIR}/NO.patch 2>/dev/null
+	@${MKDIR} ${WRKDIR}/bin && ${CP} ${FILESDIR}/unsq.pl ${WRKDIR}/bin && ${CHMOD} +x ${WRKDIR}/bin/unsq.pl
 .endif
 .if defined(ISPELL_NL)
 	@cd ${WRKDIR} && ${PATCH} < ${FILESDIR}/NL.patch 2>/dev/null
