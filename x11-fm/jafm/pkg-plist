@@ -1,30 +1,30 @@
 bin/jafm
-lib/jafm/appl/Applications
-lib/jafm/zic/core.zic
-lib/jafm/zic/trash.zic
-lib/jafm/zic/targz.zic
-lib/jafm/zic/skip.zic
-lib/jafm/zic/rubbish.zic
-lib/jafm/zic/printer2.zic
-lib/jafm/zic/printer.zic
-lib/jafm/zic/print.zic
-lib/jafm/zic/people.zic
-lib/jafm/zic/pencil.zic
-lib/jafm/zic/old-exec.zic
-lib/jafm/zic/object.zic
-lib/jafm/zic/null.zic
-lib/jafm/zic/netscape.zic
-lib/jafm/zic/netsc.zic
-lib/jafm/zic/nav.zic
-lib/jafm/zic/mail.zic
-lib/jafm/zic/folder.zic
-lib/jafm/zic/exec.zic
-lib/jafm/zic/edit.zic
-lib/jafm/zic/doc.zic
-lib/jafm/zic/dir.zic
-lib/jafm/zic/cswap.zic
-lib/jafm/zic/try.zic
-lib/jafm/system.jafmrules
-@dirrm lib/jafm/zic
-@dirrm lib/jafm/appl
-@dirrm lib/jafm
+share/jafm/appl/Applications
+share/jafm/zic/core.zic
+share/jafm/zic/trash.zic
+share/jafm/zic/targz.zic
+share/jafm/zic/skip.zic
+share/jafm/zic/rubbish.zic
+share/jafm/zic/printer2.zic
+share/jafm/zic/printer.zic
+share/jafm/zic/print.zic
+share/jafm/zic/people.zic
+share/jafm/zic/pencil.zic
+share/jafm/zic/old-exec.zic
+share/jafm/zic/object.zic
+share/jafm/zic/null.zic
+share/jafm/zic/netscape.zic
+share/jafm/zic/netsc.zic
+share/jafm/zic/nav.zic
+share/jafm/zic/mail.zic
+share/jafm/zic/folder.zic
+share/jafm/zic/exec.zic
+share/jafm/zic/edit.zic
+share/jafm/zic/doc.zic
+share/jafm/zic/dir.zic
+share/jafm/zic/cswap.zic
+share/jafm/zic/try.zic
+share/jafm/system.jafmrules
+@dirrm share/jafm/zic
+@dirrm share/jafm/appl
+@dirrm share/jafm
