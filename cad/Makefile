@@ -29,6 +29,7 @@
     SUBDIR += gschem
     SUBDIR += gtkwave
     SUBDIR += gwave
+    SUBDIR += impact
     SUBDIR += irsim
     SUBDIR += iverilog
     SUBDIR += leocad
