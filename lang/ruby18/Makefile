@@ -31,9 +31,6 @@ PLIST_SUB+=	ONIGURUMA=""
 PLIST_SUB+=	ONIGURUMA="@comment "
 .endif
 
-# Ruby 1.8 does not support IA64 yet.
-ONLY_FOR_ARCHS=	i386 alpha sparc64 amd64
-
 #USE_BZIP2=	yes
 USE_OPENSSL=	yes
 
