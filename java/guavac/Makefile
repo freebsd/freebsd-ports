@@ -9,7 +9,8 @@ PORTNAME=	guavac
 PORTVERSION=	1.2
 PORTREVISION=	1
 CATEGORIES=	java
-MASTER_SITES=	ftp://ftp.yggdrasil.com/pub/dist/devel/compilers/guavac/
+MASTER_SITES=	ftp://ftp.unicamp.br/pub/languages/java/guavac/ \
+		http://www.netsw.org/softeng/lang/java/compiler/guavac/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Java compiler and decompiler developed under GPL
