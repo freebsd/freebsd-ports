@@ -2366,6 +2366,7 @@ hs-hmake		ports/devel/hs-hmake
 hs-hpl		ports/devel/hs-hpl
 hs-idoc		ports/devel/hs-idoc
 hs-popenhs	ports/devel/hs-popenhs
+hs-tclhaskell-ghc	ports/devel/hs-tclhaskell-ghc
 hsftp		ports/ftp/hsftp
 htdig		ports/textproc/htdig
 htdump		ports/www/htdump
