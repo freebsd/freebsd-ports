@@ -1,10 +1,12 @@
 bin/mlv
+etc/gconf/gconf.xml.defaults/apps/mlview/colours/%gconf.xml
 etc/gconf/gconf.xml.defaults/apps/mlview/%gconf.xml
+etc/gconf/gconf.xml.defaults/schemas/apps/mlview/colours/%gconf.xml
 etc/gconf/gconf.xml.defaults/schemas/apps/mlview/%gconf.xml
 etc/gconf/schemas/mlview.schemas
 lib/libmlview.a
 lib/libmlview.so
-lib/libmlview.so.3
+lib/libmlview.so.4
 share/gnome/applications/mlview.desktop
 share/gnome/mlview/mlview-dtd-choice.glade
 share/gnome/mlview/mlview-dtd-choice-dtd-not-resolved.glade
@@ -22,6 +24,7 @@ share/gnome/pixmaps/xml-text-node.png
 share/locale/az/LC_MESSAGES/mlview.mo
 share/locale/ca/LC_MESSAGES/mlview.mo
 share/locale/cs/LC_MESSAGES/mlview.mo
+share/locale/de/LC_MESSAGES/mlview.mo
 share/locale/es/LC_MESSAGES/mlview.mo
 share/locale/fr/LC_MESSAGES/mlview.mo
 share/locale/ja/LC_MESSAGES/mlview.mo
@@ -36,5 +39,7 @@ share/locale/sr/LC_MESSAGES/mlview.mo
 share/locale/sr@Latn/LC_MESSAGES/mlview.mo
 share/locale/sv/LC_MESSAGES/mlview.mo
 @dirrm share/gnome/mlview
+@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/mlview/colours
 @dirrm etc/gconf/gconf.xml.defaults/schemas/apps/mlview
+@dirrm etc/gconf/gconf.xml.defaults/apps/mlview/colours
 @dirrm etc/gconf/gconf.xml.defaults/apps/mlview
