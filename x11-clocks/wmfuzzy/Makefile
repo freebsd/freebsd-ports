@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	wmfuzzy
-PORTVERSION=	0.5
+PORTVERSION=	0.6
 CATEGORIES=	x11-clocks windowmaker
 MASTER_SITES=	http://www.manicai.net/comp/wmfuzzy/
 EXTRACT_SUFX=	.tgz
@@ -18,6 +18,9 @@ WRKSRC=		${WRKDIR}/${DISTNAME}/src
 
 USE_X_PREFIX=	yes
 USE_XPM=	yes
+
+PORTDOCS=	README
+PLIST_FILES=	bin/wmfuzzy
 
 do-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/wmfuzzy ${PREFIX}/bin
