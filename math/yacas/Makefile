@@ -32,9 +32,6 @@ CONFIGURE_ARGS+=	--with-numlib=gmp
 PLIST_SUB+=	GMP="" NOGMP="@comment "
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
-.    if ${OSVERSION} >= 500035
-BROKEN=		"Does not compile on 5.x with libgmp"
-.    endif
 .else
 CONFIGURE_ARGS+=	--with-numlib=native
 PLIST_SUB+=	GMP="@comment " NOGMP=""
@@ -50,5 +47,9 @@ LDFLAGS+=	-L${X11BASE}/lib
 CONFIGURE_ARGS+=	--without-x
 PLIST_SUB+=	X11="@comment "
 .endif
+
+test:	build
+	@cd ${WRKSRC}/manmake && ${GMAKE} wester-1994.ys
+	@cd ${WRKSRC}/tests && ${GMAKE} check
 
 .include <bsd.port.post.mk>

@@ -1,0 +1,11 @@
+--- scripts/compile.rep/compilecpp.ys.orig	Sun Aug 24 14:35:27 2003
++++ scripts/compile.rep/compilecpp.ys	Thu Jul 29 15:48:30 2004
+@@ -312,7 +312,7 @@
+ {
+     return NEW <?WriteString(\"Plugin_\":pluginName);?>;
+ }
+-};
++}
+ ";
+ //{cname,fname,nrargs}
+ 
