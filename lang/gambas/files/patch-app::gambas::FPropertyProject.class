@@ -1,0 +1,20 @@
+--- app/gambas/FPropertyProject.class.orig	Sat Jan 24 01:36:08 2004
++++ app/gambas/FPropertyProject.class	Wed Jan 28 21:09:18 2004
+@@ -497,7 +497,7 @@
+   $sTemp = Temp$
+   
+   SHELL "(cd " & Project.Quote(Project.Dir) & "; wc -l *.module *.class *.form 2> /dev/null | tail -n1 > " & $sTemp & 
+-    "; du -b | tail -n1 >> " & $sTemp & ")" AS $hProcess
++    "; du -k | tail -n1 >> " & $sTemp & ")" AS $hProcess
+   
+ END
+ 
+@@ -552,7 +552,7 @@
+ '   TRY nLine = Val(File.Load(sTemp))
+ '   TRY KILL sTemp
+ '   
+-'   SHELL "(cd " & Project.Quote(Project.Dir) & "; du -b | tail -n1 > " & sTemp & ")" WAIT
++'   SHELL "(cd " & Project.Quote(Project.Dir) & "; du -k | tail -n1 > " & sTemp & ")" WAIT
+ '   TRY iSize = Val(File.Load(sTemp))
+ '   TRY KILL sTemp
+   

@@ -1,0 +1,11 @@
+--- app/gambas/FPropertyFile.class.orig	Wed Feb 11 14:30:02 2004
++++ app/gambas/FPropertyFile.class	Thu Feb 12 22:05:37 2004
+@@ -41,7 +41,7 @@
+ 
+     sTemp = Temp$
+ 
+-    SHELL "(cd " & Project.Quote($sPath) & "; du -b | tail -n1 > " & sTemp & ")" WAIT
++    SHELL "(cd " & Project.Quote($sPath) & "; du -k | tail -n1 > " & sTemp & ")" WAIT
+     iSize = Val(File.Load(sTemp))
+ 
+   ELSE

@@ -1,0 +1,114 @@
+--- configure.orig	Sun Mar 14 15:20:47 2004
++++ configure	Thu Mar 25 10:38:38 2004
+@@ -287,7 +287,7 @@
+ bindir='${exec_prefix}/bin'
+ sbindir='${exec_prefix}/sbin'
+ libexecdir='${exec_prefix}/libexec'
+-datadir='${prefix}/share'
++datadir='${prefix}/../share'
+ sysconfdir='${prefix}/etc'
+ sharedstatedir='${prefix}/com'
+ localstatedir='${prefix}/var'
+@@ -504,7 +504,7 @@
+   -prefix | --prefix | --prefi | --pref | --pre | --pr | --p)
+     ac_prev=prefix ;;
+   -prefix=* | --prefix=* | --prefi=* | --pref=* | --pre=* | --pr=* | --p=*)
+-    prefix="$ac_optarg" ;;
++    prefix="$ac_optarg"/gambas ;;
+ 
+   -program-prefix | --program-prefix | --program-prefi | --program-pref \
+   | --program-pre | --program-pr | --program-p)
+@@ -6877,6 +6877,7 @@
+ 
+ # This can be used to rebuild libtool when needed
+ LIBTOOL_DEPS="$ac_aux_dir/ltmain.sh"
++$ac_aux_dir/ltconfig $LIBTOOL_DEPS
+ 
+ # Always use our own libtool.
+ LIBTOOL='$(SHELL) $(top_builddir)/libtool'
+@@ -7068,10 +7069,10 @@
+ 
+   case "${host}" in
+     *-*-freebsd* )
+-      THREAD_LIB=""
+-      THREAD_INC="-pthread -D_REENTRANT"
+-      GBX_THREAD_LIB=""
+-      GBX_THREAD_INC="-pthread -D_REENTRANT"
++      THREAD_LIB="${PTHREAD_LIBS}"
++      THREAD_INC="${PTHREAD_CFLAGS}"
++      GBX_THREAD_LIB="${PTHREAD_LIBS}"
++      GBX_THREAD_INC="${PTHREAD_CFLAGS}"
+       ;;
+     *)
+       THREAD_LIB="-lpthread"
+@@ -10222,7 +10223,7 @@
+       fi
+     done
+ 
+-    SQLITE_LIB="$SQLITE_LIB $C_LIB -lsqlite -lc -lstdc++"
++    SQLITE_LIB="$SQLITE_LIB $C_LIB -lsqlite -lc -lstdc++ -lpub"
+ 
+   fi
+ 
+@@ -10352,20 +10353,7 @@
+ 
+     echo "$ac_t""$gb_cv_header_sdl" 1>&6
+ 
+-    SDL_INC=""
+-
+-    for gb_dir in $gb_cv_header_sdl; do
+-      if test "$gb_dir" != "/usr/include"; then
+-        if test "$gb_dir" != "/usr/include/"; then
+-          SDL_INC="$SDL_INC -I$gb_dir"
+-        fi
+-      fi
+-    done
+-
+-    if test "x$THREAD_INC" != "x"; then
+-      SDL_INC="$SDL_INC $THREAD_INC"
+-    fi
+-
++    SDL_INC="`$SDL_CONFIG --cflags`"
+     if test "$gb_cv_header_sdl" = no; then
+       have_inc_sdl="no"
+       SDL_INC=""
+@@ -10468,16 +10456,7 @@
+     SDL_LIB=""
+     SDL_PATH=""
+ 
+-    for gb_dir in $gb_cv_lib_sdl; do
+-      if test "x$SDL_PATH" = "x"; then
+-        SDL_PATH="$gb_dir/.."
+-      fi
+-      if test "$gb_dir" != "/lib"  && test "$gb_dir" != "/lib/"&& test "$gb_dir" != "/usr/lib" && test "$gb_dir" != "/usr/lib/"; then
+-        SDL_LIB="$SDL_LIB -L$gb_dir"
+-      fi
+-    done
+-
+-    SDL_LIB="$SDL_LIB $C_LIB $THREAD_LIB -lSDL -lSDL_mixer"
++    SDL_LIB="`$SDL_CONFIG --libs` -lSDL_mixer"
+ 
+   fi
+ 
+@@ -10725,8 +10704,8 @@
+ fi
+ 
+ 
+-CFLAGS="$CFLAGS -pipe -Wall"
+-CXXFLAGS="$CXXFLAGS -pipe -Wall -fno-exceptions"
++CFLAGS="$CFLAGS -Wall"
++CXXFLAGS="$CXXFLAGS -Wall -fno-exceptions"
+ 
+ if test "$gambas_prof" = "yes"; then
+   CFLAGS="$CFLAGS -pg"
+@@ -10756,8 +10735,8 @@
+   CFLAGS="$CFLAGS -Os"
+   CXXFLAGS="$CXXFLAGS -Os"
+ else
+-  CFLAGS="$CFLAGS -O0"
+-  CXXFLAGS="$CXXFLAGS -O0"
++  CFLAGS="$CFLAGS"
++  CXXFLAGS="$CXXFLAGS"
+ fi
+ 
+ 
