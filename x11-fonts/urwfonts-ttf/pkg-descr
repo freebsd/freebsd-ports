@@ -1,0 +1,5 @@
+Extended TrueType version of free URW fonts distributed under GPL license.
+These fonts were made from the free URW fonts distributed with ghostcript.
+Cyrillic glyphs as well as ones for several "Eastern" languages were added
+by copying suitable latin glyphs and painting oulines of unique new glyphs
+in same style as the others.
