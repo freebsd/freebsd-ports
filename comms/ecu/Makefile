@@ -12,13 +12,15 @@ MASTER_SITES=  ftp://tsx-11.mit.edu/pub/linux/sources/usr.bin/Communications/
 
 MAINTAINER=	ache@FreeBSD.org
 
+USE_REINPLACE=	yes
+
 do-configure:
 	cd ${WRKSRC}; yes "" | ./Configure
 
 pre-patch:
-	@${PERL} -pi.orig -e "s@#include +<malloc.h>@@g" \
-	${WRKSRC}/ecu.h ${WRKSRC}/ecunumrev.c ${WRKSRC}/ptyfork.c \
-	${WRKSRC}/qmake.c ${WRKSRC}/unsupported/tts/tts.c
+	@${REINPLACE_CMD} -e "s@#include +<malloc.h>@@g" \
+	    ${WRKSRC}/ecu.h ${WRKSRC}/ecunumrev.c ${WRKSRC}/ptyfork.c \
+	    ${WRKSRC}/qmake.c ${WRKSRC}/unsupported/tts/tts.c
 
 post-install:
 	cd ${WRKSRC}/doc; \
