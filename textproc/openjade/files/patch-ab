@@ -1,0 +1,27 @@
+--- configure.orig	Wed Sep  1 16:25:58 1999
++++ configure	Tue May 16 15:39:23 2000
+@@ -1943,15 +1943,15 @@
+ rm -f conftest*
+ fi
+ 
+-if eval "test \"`echo '$ac_cv_func_'setlocale`\" = yes"; then
+-  echo "$ac_t""yes" 1>&6
+-  cat >> confdefs.h <<\EOF
+-#define SP_HAVE_LOCALE 1
+-EOF
+-
+-else
+-  echo "$ac_t""no" 1>&6
+-fi
++# if eval "test \"`echo '$ac_cv_func_'setlocale`\" = yes"; then
++#   echo "$ac_t""yes" 1>&6
++#   cat >> confdefs.h <<\EOF
++# #define SP_HAVE_LOCALE 1
++# EOF
++#
++# else
++#   echo "$ac_t""no" 1>&6
++# fi
+ 
+ echo $ac_n "checking for gettext""... $ac_c" 1>&6
+ echo "configure:1958: checking for gettext" >&5
