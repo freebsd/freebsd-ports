@@ -38,6 +38,10 @@ MAN1=		harch.1 hmake.1 hp2graph.1 nhc98.1
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|-O3|${CFLAGS}|' ${WRKSRC}/Makefile.inc
+.for file in Decl FillIn Process
+	@${REINPLACE_CMD} -e '/^import PrelBase/d' \
+		${WRKSRC}/src/greencard/${file}.lhs
+.endfor
 
 post-configure:
 	@${ECHO} "LIBDIR=${PREFIX}/lib/nhc98" \
