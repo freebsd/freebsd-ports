@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.23 1999/03/16 19:42:33 nectar Exp $
+# $Id: Makefile,v 1.24 1999/04/05 22:47:14 jseger Exp $
 #
 
     SUBDIR += FWF
@@ -37,6 +37,7 @@
     SUBDIR += xbae
     SUBDIR += xforms
     SUBDIR += xg
+    SUBDIR += xmhtml
     SUBDIR += xview-clients
     SUBDIR += xview-config
     SUBDIR += xview-lib

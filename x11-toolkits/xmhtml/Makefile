@@ -3,11 +3,11 @@
 # Date created:		18 Feb 1999
 # Whom:			Peter Hawkins <thepish@freebsd.org>
 #
-# $Id: Makefile,v 1.1.1.1 1999/02/21 03:22:20 thepish Exp $
+# $Id: Makefile,v 1.2 1999/02/22 07:35:20 asami Exp $
 #
 
 DISTNAME=	XmHTML-1.1.0
-CATEGORIES=	x11 www
+CATEGORIES=	x11-toolkits www
 MASTER_SITES=	ftp://crl.nmsu.edu/pub/XmHTML/ \
 		ftp://ftp.ist.co.uk/pub/motif/XmHTML/ \
 		ftp://ftp.nerdnet.nl/pub/X11/Widgets/XmHTML/
