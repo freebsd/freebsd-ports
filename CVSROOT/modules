@@ -6655,6 +6655,7 @@ wanderlust-mule	ports/mail/wanderlust-mule
 wanderlust-xemacs21-mule	ports/mail/wanderlust-xemacs21-mule
 wapsh		ports/shells/wapsh
 wargames	src/games/wargames
+washerdryer	ports/x11-clocks/washerdryer
 watch		src/usr.sbin/watch
 waveplay	ports/audio/waveplay
 wavplay		ports/audio/wavplay
