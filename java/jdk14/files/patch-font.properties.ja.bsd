@@ -1,0 +1,308 @@
+$FreeBSD$
+
+diff -u -r1.3 -r1.4
+--- ../src/solaris/classes/sun/awt/motif/font.properties.ja.bsd	25 Aug 2001 04:39:08 -0000	1.3
++++ ../src/solaris/classes/sun/awt/motif/font.properties.ja.bsd	5 Aug 2002 04:30:35 -0000	1.4
+@@ -13,99 +13,99 @@
+ #
+ 
+ #
+-# AWT Font default Properties for Japanese Redhat Linux 6.1 and higher
++# AWT Font default Properties for FreeBSD
+ #
+ 
+ # Serif font definition
+ #
+ serif.0=-b&h-lucidabright-medium-r-normal--*-%d-*-*-p-*-iso8859-1
+-serif.1=-wadalab-mincho-medium-r-normal--*-%d-*-*-c-*-jisx0201.1976-0
+-serif.2=-wadalab-mincho-medium-r-normal--*-%d-*-*-c-*-jisx0208.1983-0
++serif.1=-aliastt-mincho-medium-r-normal--*-%d-*-*-p-*-jisx0201.1976-0
++serif.2=-aliastt-mincho-medium-r-normal--*-%d-*-*-p-*-jisx0208.1983-0
+ 
+ serif.italic.0=-b&h-lucidabright-medium-i-normal--*-%d-*-*-p-*-iso8859-1
+-serif.italic.1=-wadalab-mincho-medium-r-normal--*-%d-*-*-c-*-jisx0201.1976-0
+-serif.italic.2=-wadalab-mincho-medium-r-normal--*-%d-*-*-c-*-jisx0208.1983-0
++serif.italic.1=-aliastt-mincho-medium-r-normal--*-%d-*-*-p-*-jisx0201.1976-0
++serif.italic.2=-aliastt-mincho-medium-r-normal--*-%d-*-*-p-*-jisx0208.1983-0
+ 
+ serif.bold.0=-b&h-lucidabright-demibold-r-normal--*-%d-*-*-p-*-iso8859-1
+-serif.bold.1=-wadalab-mincho-medium-r-normal--*-%d-*-*-c-*-jisx0201.1976-0
+-serif.bold.2=-wadalab-mincho-medium-r-normal--*-%d-*-*-c-*-jisx0208.1983-0
++serif.bold.1=-aliastt-mincho-medium-r-normal--*-%d-*-*-p-*-jisx0201.1976-0
++serif.bold.2=-aliastt-mincho-medium-r-normal--*-%d-*-*-p-*-jisx0208.1983-0
+ 
+ serif.bolditalic.0=-b&h-lucidabright-demibold-i-normal--*-%d-*-*-p-*-iso8859-1
+-serif.bolditalic.1=-wadalab-mincho-medium-r-normal--*-%d-*-*-c-*-jisx0201.1976-0
+-serif.bolditalic.2=-wadalab-mincho-medium-r-normal--*-%d-*-*-c-*-jisx0208.1983-0
++serif.bolditalic.1=-aliastt-mincho-medium-r-normal--*-%d-*-*-p-*-jisx0201.1976-0
++serif.bolditalic.2=-aliastt-mincho-medium-r-normal--*-%d-*-*-p-*-jisx0208.1983-0
+ 
+ # SansSerif font definition
+ #
+ 
+ sansserif.0=-b&h-lucidasans-medium-r-normal-sans-*-%d-*-*-p-*-iso8859-1
+-sansserif.1=-wadalab-gothic-medium-r-normal--*-%d-*-*-c-*-jisx0201.1976-0
+-sansserif.2=-wadalab-gothic-medium-r-normal--*-%d-*-*-c-*-jisx0208.1983-0
++sansserif.1=-aliastt-gothic-medium-r-normal--*-%d-*-*-p-*-jisx0201.1976-0
++sansserif.2=-aliastt-gothic-medium-r-normal--*-%d-*-*-p-*-jisx0208.1983-0
+ 
+ sansserif.italic.0=-b&h-lucidasans-medium-i-normal-sans-*-%d-*-*-p-*-iso8859-1
+-sansserif.italic.1=-wadalab-gothic-medium-r-normal--*-%d-*-*-c-*-jisx0201.1976-0
+-sansserif.italic.2=-wadalab-gothic-medium-r-normal--*-%d-*-*-c-*-jisx0208.1983-0
++sansserif.italic.1=-aliastt-gothic-medium-r-normal--*-%d-*-*-p-*-jisx0201.1976-0
++sansserif.italic.2=-aliastt-gothic-medium-r-normal--*-%d-*-*-p-*-jisx0208.1983-0
+ 
+ sansserif.bold.0=-b&h-lucidasans-bold-r-normal-sans-*-%d-*-*-p-*-iso8859-1
+-sansserif.bold.1=-wadalab-gothic-medium-r-normal--*-%d-*-*-c-*-jisx0201.1976-0
+-sansserif.bold.2=-wadalab-gothic-medium-r-normal--*-%d-*-*-c-*-jisx0208.1983-0
++sansserif.bold.1=-aliastt-gothic-medium-r-normal--*-%d-*-*-p-*-jisx0201.1976-0
++sansserif.bold.2=-aliastt-gothic-medium-r-normal--*-%d-*-*-p-*-jisx0208.1983-0
+ 
+ sansserif.bolditalic.0=-b&h-lucidasans-bold-i-normal-sans-*-%d-*-*-p-*-iso8859-1
+-sansserif.bolditalic.1=-wadalab-gothic-medium-r-normal--*-%d-*-*-c-*-jisx0201.1976-0
+-sansserif.bolditalic.2=-wadalab-gothic-medium-r-normal--*-%d-*-*-c-*-jisx0208.1983-0
++sansserif.bolditalic.1=-aliastt-gothic-medium-r-normal--*-%d-*-*-p-*-jisx0201.1976-0
++sansserif.bolditalic.2=-aliastt-gothic-medium-r-normal--*-%d-*-*-p-*-jisx0208.1983-0
+ 
+ # Monospaced font definition
+ #
+ monospaced.0=-b&h-lucidatypewriter-medium-r-normal-sans-*-%d-*-*-m-*-iso8859-1
+-monospaced.1=-wadalab-mincho-medium-r-normal--*-%d-*-*-c-*-jisx0201.1976-0
+-monospaced.2=-wadalab-mincho-medium-r-normal--*-%d-*-*-c-*-jisx0208.1983-0
++monospaced.1=-aliastt-gothic-medium-r-normal--*-%d-*-*-p-*-jisx0201.1976-0
++monospaced.2=-aliastt-gothic-medium-r-normal--*-%d-*-*-p-*-jisx0208.1983-0
+ 
+ monospaced.italic.0=-b&h-lucidatypewriter-medium-r-normal-sans-*-%d-*-*-m-*-iso8859-1
+-monospaced.italic.1=-wadalab-mincho-medium-r-normal--*-%d-*-*-c-*-jisx0201.1976-0
+-monospaced.italic.2=-wadalab-mincho-medium-r-normal--*-%d-*-*-c-*-jisx0208.1983-0
++monospaced.italic.1=-aliastt-gothic-medium-r-normal--*-%d-*-*-p-*-jisx0201.1976-0
++monospaced.italic.2=-aliastt-gothic-medium-r-normal--*-%d-*-*-p-*-jisx0208.1983-0
+ 
+ monospaced.bold.0=-b&h-lucidatypewriter-bold-r-normal-sans-*-%d-*-*-m-*-iso8859-1
+-monospaced.bold.1=-wadalab-mincho-medium-r-normal--*-%d-*-*-c-*-jisx0201.1976-0
+-monospaced.bold.2=-wadalab-mincho-medium-r-normal--*-%d-*-*-c-*-jisx0208.1983-0
++monospaced.bold.1=-aliastt-gothic-medium-r-normal--*-%d-*-*-p-*-jisx0201.1976-0
++monospaced.bold.2=-aliastt-gothic-medium-r-normal--*-%d-*-*-p-*-jisx0208.1983-0
+ 
+ monospaced.bolditalic.0=-b&h-lucidatypewriter-bold-r-normal-sans-*-%d-*-*-m-*-iso8859-1
+-monospaced.bolditalic.1=-wadalab-mincho-medium-r-normal--*-%d-*-*-c-*-jisx0201.1976-0
+-monospaced.bolditalic.2=-wadalab-mincho-medium-r-normal--*-%d-*-*-c-*-jisx0208.1983-0
++monospaced.bolditalic.1=-aliastt-gothic-medium-r-normal--*-%d-*-*-p-*-jisx0201.1976-0
++monospaced.bolditalic.2=-aliastt-gothic-medium-r-normal--*-%d-*-*-p-*-jisx0208.1983-0
+ 
+ # Dialog font definition
+ #
+ dialog.0=-b&h-lucidasans-medium-r-normal-sans-*-%d-*-*-p-*-iso8859-1
+-dialog.1=-wadalab-gothic-medium-r-normal--*-%d-*-*-c-*-jisx0201.1976-0
+-dialog.2=-wadalab-gothic-medium-r-normal--*-%d-*-*-c-*-jisx0208.1983-0
++dialog.1=-aliastt-gothic-medium-r-normal--*-%d-*-*-p-*-jisx0201.1976-0
++dialog.2=-aliastt-gothic-medium-r-normal--*-%d-*-*-p-*-jisx0208.1983-0
+ 
+ dialog.italic.0=-b&h-lucidasans-medium-i-normal-sans-*-%d-*-*-p-*-iso8859-1
+-dialog.italic.1=-wadalab-gothic-medium-r-normal--*-%d-*-*-c-*-jisx0201.1976-0
+-dialog.italic.2=-wadalab-gothic-medium-r-normal--*-%d-*-*-c-*-jisx0208.1983-0
++dialog.italic.1=-aliastt-gothic-medium-r-normal--*-%d-*-*-p-*-jisx0201.1976-0
++dialog.italic.2=-aliastt-gothic-medium-r-normal--*-%d-*-*-p-*-jisx0208.1983-0
+ 
+ dialog.bold.0=-b&h-lucidasans-bold-r-normal-sans-*-%d-*-*-p-*-iso8859-1
+-dialog.bold.1=-wadalab-gothic-medium-r-normal--*-%d-*-*-c-*-jisx0201.1976-0
+-dialog.bold.2=-wadalab-gothic-medium-r-normal--*-%d-*-*-c-*-jisx0208.1983-0
++dialog.bold.1=-aliastt-gothic-medium-r-normal--*-%d-*-*-p-*-jisx0201.1976-0
++dialog.bold.2=-aliastt-gothic-medium-r-normal--*-%d-*-*-p-*-jisx0208.1983-0
+ 
+ dialog.bolditalic.0=-b&h-lucidasans-bold-i-normal-sans-*-%d-*-*-p-*-iso8859-1
+-dialog.bolditalic.1=-wadalab-gothic-medium-r-normal--*-%d-*-*-c-*-jisx0201.1976-0
+-dialog.bolditalic.2=-wadalab-gothic-medium-r-normal--*-%d-*-*-c-*-jisx0208.1983-0
++dialog.bolditalic.1=-aliastt-gothic-medium-r-normal--*-%d-*-*-p-*-jisx0201.1976-0
++dialog.bolditalic.2=-aliastt-gothic-medium-r-normal--*-%d-*-*-p-*-jisx0208.1983-0
+ 
+ # DialogInput font definition
+ #
+ dialoginput.0=-b&h-lucidatypewriter-medium-r-normal-sans-*-%d-*-*-m-*-iso8859-1
+-dialoginput.1=-wadalab-mincho-medium-r-normal--*-%d-*-*-c-*-jisx0201.1976-0
+-dialoginput.2=-wadalab-mincho-medium-r-normal--*-%d-*-*-c-*-jisx0208.1983-0
++dialoginput.1=-aliastt-gothic-medium-r-normal--*-%d-*-*-p-*-jisx0201.1976-0
++dialoginput.2=-aliastt-gothic-medium-r-normal--*-%d-*-*-p-*-jisx0208.1983-0
+ 
+ dialoginput.italic.0=-b&h-lucidatypewriter-medium-r-normal-sans-*-%d-*-*-m-*-iso8859-1
+-dialoginput.italic.1=-wadalab-mincho-medium-r-normal--*-%d-*-*-c-*-jisx0201.1976-0
+-dialoginput.italic.2=-wadalab-mincho-medium-r-normal--*-%d-*-*-c-*-jisx0208.1983-0
++dialoginput.italic.1=-aliastt-gothic-medium-r-normal--*-%d-*-*-p-*-jisx0201.1976-0
++dialoginput.italic.2=-aliastt-gothic-medium-r-normal--*-%d-*-*-p-*-jisx0208.1983-0
+ 
+ dialoginput.bold.0=-b&h-lucidatypewriter-bold-r-normal-sans-*-%d-*-*-m-*-iso8859-1
+-dialoginput.bold.1=-wadalab-mincho-medium-r-normal--*-%d-*-*-c-*-jisx0201.1976-0
+-dialoginput.bold.2=-wadalab-mincho-medium-r-normal--*-%d-*-*-c-*-jisx0208.1983-0
++dialoginput.bold.1=-aliastt-gothic-medium-r-normal--*-%d-*-*-p-*-jisx0201.1976-0
++dialoginput.bold.2=-aliastt-gothic-medium-r-normal--*-%d-*-*-p-*-jisx0208.1983-0
+ 
+ dialoginput.bolditalic.0=-b&h-lucidatypewriter-bold-r-normal-sans-*-%d-*-*-m-*-iso8859-1
+-dialoginput.bolditalic.1=-wadalab-mincho-medium-r-normal--*-%d-*-*-c-*-jisx0201.1976-0
+-dialoginput.bolditalic.2=-wadalab-mincho-medium-r-normal--*-%d-*-*-c-*-jisx0208.1983-0
++dialoginput.bolditalic.1=-aliastt-gothic-medium-r-normal--*-%d-*-*-p-*-jisx0201.1976-0
++dialoginput.bolditalic.2=-aliastt-gothic-medium-r-normal--*-%d-*-*-p-*-jisx0208.1983-0
+ 
+ # Default font definition
+ #
+@@ -168,117 +168,117 @@
+ # Serif font definition 
+ #
+ fontset.serif.plain=\
+--sony-fixed-medium-r-normal--*-%d-*-*-c-*-jisx0201.1976-0,\
+ -b&h-lucidabright-medium-r-normal--*-%d-*-*-p-*-iso8859-1,\
+--wadalab-mincho-medium-r-normal--*-%d-*-*-c-*-jisx0208.1983-0
++-aliastt-mincho-medium-r-normal--*-%d-*-*-p-*-jisx0201.1976-0,\
++-aliastt-mincho-medium-r-normal--*-%d-*-*-p-*-jisx0208.1983-0
+ 
+ fontset.serif.italic=\
+--sony-fixed-medium-r-normal--*-%d-*-*-c-*-jisx0201.1976-0,\
+ -b&h-lucidabright-medium-i-normal--*-%d-*-*-p-*-iso8859-1,\
+--wadalab-mincho-medium-r-normal--*-%d-*-*-c-*-jisx0208.1983-0
++-aliastt-mincho-medium-r-normal--*-%d-*-*-p-*-jisx0201.1976-0,\
++-aliastt-mincho-medium-r-normal--*-%d-*-*-p-*-jisx0208.1983-0
+ 
+ fontset.serif.bold=\
+--sony-fixed-medium-r-normal--*-%d-*-*-c-*-jisx0201.1976-0,\
+ -b&h-lucidabright-demibold-r-normal--*-%d-*-*-p-*-iso8859-1,\
+--wadalab-mincho-medium-r-normal--*-%d-*-*-c-*-jisx0208.1983-0
++-aliastt-mincho-medium-r-normal--*-%d-*-*-p-*-jisx0201.1976-0,\
++-aliastt-mincho-medium-r-normal--*-%d-*-*-p-*-jisx0208.1983-0
+ 
+ fontset.serif.bolditalic=\
+--sony-fixed-medium-r-normal--*-%d-*-*-c-*-jisx0201.1976-0,\
+ -b&h-lucidabright-demibold-i-normal--*-%d-*-*-p-*-iso8859-1,\
+--wadalab-mincho-medium-r-normal--*-%d-*-*-c-*-jisx0208.1983-0
++-aliastt-mincho-medium-r-normal--*-%d-*-*-p-*-jisx0201.1976-0,\
++-aliastt-mincho-medium-r-normal--*-%d-*-*-p-*-jisx0208.1983-0
+ 
+ # SansSerif font definition 
+ #
+ 
+ fontset.sansserif.plain=\
+--sony-fixed-medium-r-normal--*-%d-*-*-c-*-jisx0201.1976-0,\
+ -b&h-lucida-medium-i-normal-sans-*-%d-*-*-p-*-iso8859-1,\
+--wadalab-gothic-medium-r-normal--*-%d-*-*-c-*-jisx0208.1983-0
++-aliastt-gothic-medium-r-normal--*-%d-*-*-p-*-jisx0201.1976-0,\
++-aliastt-gothic-medium-r-normal--*-%d-*-*-p-*-jisx0208.1983-0
+ 
+ fontset.sansserif.italic=\
+--sony-fixed-medium-r-normal--*-%d-*-*-c-*-jisx0201.1976-0,\
+ -b&h-lucida-medium-i-normal-sans-*-%d-*-*-p-*-iso8859-1,\
+--wadalab-gothic-medium-r-normal--*-%d-*-*-c-*-jisx0208.1983-0
++-aliastt-gothic-medium-r-normal--*-%d-*-*-p-*-jisx0201.1976-0,\
++-aliastt-gothic-medium-r-normal--*-%d-*-*-p-*-jisx0208.1983-0
+ 
+ fontset.sansserif.bold=\
+--sony-fixed-medium-r-normal--*-%d-*-*-c-*-jisx0201.1976-0,\
+ -b&h-lucida-bold-r-normal-sans-*-%d-*-*-p-*-iso8859-1,\
+--wadalab-gothic-medium-r-normal--*-%d-*-*-c-*-jisx0208.1983-0
++-aliastt-gothic-medium-r-normal--*-%d-*-*-p-*-jisx0201.1976-0,\
++-aliastt-gothic-medium-r-normal--*-%d-*-*-p-*-jisx0208.1983-0
+ 
+ fontset.sansserif.bolditalic=\
+--sony-fixed-medium-r-normal--*-%d-*-*-c-*-jisx0201.1976-0,\
+ -b&h-lucida-bold-i-normal-sans-*-%d-*-*-p-*-iso8859-1,\
+--wadalab-gothic-medium-r-normal--*-%d-*-*-c-*-jisx0208.1983-0
++-aliastt-gothic-medium-r-normal--*-%d-*-*-p-*-jisx0201.1976-0,\
++-aliastt-gothic-medium-r-normal--*-%d-*-*-p-*-jisx0208.1983-0
+ 
+ # Monospaced font definition 
+ #
+ fontset.monospaced.plain=\
+--sony-fixed-medium-r-normal--*-%d-*-*-c-*-jisx0201.1976-0,\
+ -b&h-lucidatypewriter-medium-r-normal-sans-*-%d-*-*-m-*-iso8859-1,\
+--wadalab-mincho-medium-r-normal--*-%d-*-*-c-*-jisx0208.1983-0
++-aliastt-gothic-medium-r-normal--*-%d-*-*-p-*-jisx0201.1976-0,\
++-aliastt-gothic-medium-r-normal--*-%d-*-*-p-*-jisx0208.1983-0
+ 
+ fontset.monospaced.italic=\
+--sony-fixed-medium-r-normal--*-%d-*-*-c-*-jisx0201.1976-0,\
+ -b&h-lucidatypewriter-medium-r-normal-sans-*-%d-*-*-m-*-iso8859-1,\
+--wadalab-mincho-medium-r-normal--*-%d-*-*-c-*-jisx0208.1983-0
++-aliastt-gothic-medium-r-normal--*-%d-*-*-p-*-jisx0201.1976-0,\
++-aliastt-gothic-medium-r-normal--*-%d-*-*-p-*-jisx0208.1983-0
+ 
+ fontset.monospaced.bold=\
+--sony-fixed-medium-r-normal--*-%d-*-*-c-*-jisx0201.1976-0,\
+ -b&h-lucidatypewriter-bold-r-normal-sans-*-%d-*-*-m-*-iso8859-1,\
+--wadalab-mincho-medium-r-normal--*-%d-*-*-c-*-jisx0208.1983-0
++-aliastt-gothic-medium-r-normal--*-%d-*-*-p-*-jisx0201.1976-0,\
++-aliastt-gothic-medium-r-normal--*-%d-*-*-p-*-jisx0208.1983-0
+ 
+ fontset.monospaced.bolditalic=\
+--sony-fixed-medium-r-normal--*-%d-*-*-c-*-jisx0201.1976-0,\
+ -b&h-lucidatypewriter-bold-r-normal-sans-*-%d-*-*-m-*-iso8859-1,\
+--wadalab-mincho-medium-r-normal--*-%d-*-*-c-*-jisx0208.1983-0
++-aliastt-gothic-medium-r-normal--*-%d-*-*-p-*-jisx0201.1976-0,\
++-aliastt-gothic-medium-r-normal--*-%d-*-*-p-*-jisx0208.1983-0
+ 
+ # Dialog font definition 
+ #
+ fontset.dialog.italic=\
+--sony-fixed-medium-r-normal--*-%d-*-*-c-*-jisx0201.1976-0,\
+ -b&h-lucida-medium-i-normal-sans-*-%d-*-*-p-*-iso8859-1,\
+--wadalab-gothic-medium-r-normal--*-%d-*-*-c-*-jisx0208.1983-0
++-aliastt-gothic-medium-r-normal--*-%d-*-*-p-*-jisx0201.1976-0,\
++-aliastt-gothic-medium-r-normal--*-%d-*-*-p-*-jisx0208.1983-0
+ 
+ fontset.dialog.bold=\
+--sony-fixed-medium-r-normal--*-%d-*-*-c-*-jisx0201.1976-0,\
+ -b&h-lucida-bold-r-normal-sans-*-%d-*-*-p-*-iso8859-1,\
+--wadalab-gothic-medium-r-normal--*-%d-*-*-c-*-jisx0208.1983-0
++-aliastt-gothic-medium-r-normal--*-%d-*-*-p-*-jisx0201.1976-0,\
++-aliastt-gothic-medium-r-normal--*-%d-*-*-p-*-jisx0208.1983-0
+ 
+ fontset.dialog.bolditalic=\
+--sony-fixed-medium-r-normal--*-%d-*-*-c-*-jisx0201.1976-0,\
+ -b&h-lucida-bold-i-normal-sans-*-%d-*-*-p-*-iso8859-1,\
+--wadalab-gothic-medium-r-normal--*-%d-*-*-c-*-jisx0208.1983-0
++-aliastt-gothic-medium-r-normal--*-%d-*-*-p-*-jisx0201.1976-0,\
++-aliastt-gothic-medium-r-normal--*-%d-*-*-p-*-jisx0208.1983-0
+ 
+ fontset.dialog.plain=\
+--sony-fixed-medium-r-normal--*-%d-*-*-c-*-jisx0201.1976-0,\
+ -b&h-lucida-medium-r-normal-sans-*-%d-*-*-p-*-iso8859-1,\
+--wadalab-gothic-medium-r-normal--*-%d-*-*-c-*-jisx0208.1983-0
++-aliastt-gothic-medium-r-normal--*-%d-*-*-p-*-jisx0201.1976-0,\
++-aliastt-gothic-medium-r-normal--*-%d-*-*-p-*-jisx0208.1983-0
+ 
+ # DialogInput font definition 
+ #
+ fontset.dialoginput.italic=\
+--sony-fixed-medium-r-normal--*-%d-*-*-c-*-jisx0201.1976-0,\
+ -b&h-lucidatypewriter-medium-r-normal-sans-*-%d-*-*-m-*-iso8859-1,\
+--wadalab-mincho-medium-r-normal--*-%d-*-*-c-*-jisx0208.1983-0
++-aliastt-gothic-medium-r-normal--*-%d-*-*-p-*-jisx0201.1976-0,\
++-aliastt-gothic-medium-r-normal--*-%d-*-*-p-*-jisx0208.1983-0
+ 
+ fontset.dialoginput.bold=\
+--sony-fixed-medium-r-normal--*-%d-*-*-c-*-jisx0201.1976-0,\
+ -b&h-lucidatypewriter-bold-r-normal-sans-*-%d-*-*-m-*-iso8859-1,\
+--wadalab-mincho-medium-r-normal--*-%d-*-*-c-*-jisx0208.1983-0
++-aliastt-gothic-medium-r-normal--*-%d-*-*-p-*-jisx0201.1976-0,\
++-aliastt-gothic-medium-r-normal--*-%d-*-*-p-*-jisx0208.1983-0
+ 
+ fontset.dialoginput.bolditalic=\
+--sony-fixed-medium-r-normal--*-%d-*-*-c-*-jisx0201.1976-0,\
+ -b&h-lucidatypewriter-bold-r-normal-sans-*-%d-*-*-m-*-iso8859-1,\
+--wadalab-mincho-medium-r-normal--*-%d-*-*-c-*-jisx0208.1983-0
++-aliastt-gothic-medium-r-normal--*-%d-*-*-p-*-jisx0201.1976-0,\
++-aliastt-gothic-medium-r-normal--*-%d-*-*-p-*-jisx0208.1983-0
+ 
+ fontset.dialoginput.plain=\
+--sony-fixed-medium-r-normal--*-%d-*-*-c-*-jisx0201.1976-0,\
+ -b&h-lucidatypewriter-medium-r-normal-sans-*-%d-*-*-m-*-iso8859-1,\
+--wadalab-mincho-medium-r-normal--*-%d-*-*-c-*-jisx0208.1983-0
++-aliastt-gothic-medium-r-normal--*-%d-*-*-p-*-jisx0201.1976-0,\
++-aliastt-gothic-medium-r-normal--*-%d-*-*-p-*-jisx0208.1983-0
+ 
+ #
+ fontset.default=\
+--sony-fixed-medium-r-normal--*-%d-*-*-c-*-jisx0201.1976-0,\
+ -b&h-lucida-medium-r-normal-sans-*-%d-*-*-p-*-iso8859-1,\
+--wadalab-mincho-medium-r-normal--*-%d-*-*-c-*-jisx0208.1983-0
+-#
++-aliastt-gothic-medium-r-normal--*-%d-*-*-p-*-jisx0201.1976-0,\
++-aliastt-gothic-medium-r-normal--*-%d-*-*-p-*-jisx0208.1983-0
++#
+\ No newline at end of file
