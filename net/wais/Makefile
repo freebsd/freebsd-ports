@@ -7,6 +7,7 @@
 
 PORTNAME=	freeWAIS
 PORTVERSION=	0.5
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	ftp://ftp.cnidr.org/software/freewais/ \
 		ftp://ftp.icm.edu.pl/vol/wojsyl/freewais/ \
