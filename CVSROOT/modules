@@ -4005,6 +4005,7 @@ libgnomedb	ports/databases/libgnomedb
 libgnomeprint	ports/print/libgnomeprint
 libgnomeprint20	ports/print/libgnomeprint20
 libgnomeprintui	ports/x11-toolkits/libgnomeprintui
+libgnomeprintui20	ports/x11-toolkits/libgnomeprintui20
 libgnomeui	ports/x11-toolkits/libgnomeui
 libgnugetopt	ports/devel/libgnugetopt
 libgnumalloc	src/lib/libgnumalloc
