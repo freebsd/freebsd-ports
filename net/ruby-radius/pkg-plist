@@ -1,0 +1,77 @@
+%%RUBY_SITELIBDIR%%/radius/auth.rb
+%%RUBY_SITELIBDIR%%/radius/dictionary.rb
+%%RUBY_SITELIBDIR%%/radius/packet.rb
+@dirrm %%RUBY_SITELIBDIR%%/radius
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/README
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/classes/Radius.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/classes/Radius/Auth.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/classes/Radius/Auth.src/M000003.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/classes/Radius/Auth.src/M000004.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/classes/Radius/Dict.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/classes/Radius/Dict.src/M000005.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/classes/Radius/Dict.src/M000006.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/classes/Radius/Dict.src/M000007.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/classes/Radius/Dict.src/M000008.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/classes/Radius/Dict.src/M000009.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/classes/Radius/Dict.src/M000010.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/classes/Radius/Dict.src/M000011.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/classes/Radius/Dict.src/M000012.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/classes/Radius/Dict.src/M000013.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/classes/Radius/Dict.src/M000014.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/classes/Radius/Dict.src/M000015.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/classes/Radius/Dict.src/M000016.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/classes/Radius/Dict.src/M000017.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/classes/Radius/Dict.src/M000018.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/classes/Radius/Dict.src/M000019.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/classes/Radius/Dict.src/M000020.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/classes/Radius/Dict.src/M000021.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/classes/Radius/Dict.src/M000022.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/classes/Radius/Packet.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/classes/Radius/Packet.src/M000023.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/classes/Radius/Packet.src/M000024.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/classes/Radius/Packet.src/M000025.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/classes/Radius/Packet.src/M000026.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/classes/Radius/Packet.src/M000027.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/classes/Radius/Packet.src/M000028.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/classes/Radius/Packet.src/M000029.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/classes/Radius/Packet.src/M000030.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/classes/Radius/Packet.src/M000031.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/classes/Radius/Packet.src/M000032.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/classes/Radius/Packet.src/M000033.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/classes/Radius/Packet.src/M000034.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/classes/Radius/Packet.src/M000035.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/classes/Radius/Packet.src/M000036.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/classes/Radius/Packet.src/M000037.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/classes/Radius/Packet.src/M000038.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/classes/Radius/Packet.src/M000039.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/classes/Radius/Packet.src/M000040.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/classes/Radius/Packet.src/M000041.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/created.rid
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/files/examples/radiusclient_rb.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/files/examples/radiusclient_rb.src/M000001.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/files/examples/rclient_rb.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/files/install_rb.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/files/install_rb.src/M000002.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/files/radius/auth_rb.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/files/radius/dictionary_rb.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/files/radius/packet_rb.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/files/test_rb.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/fr_class_index.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/fr_file_index.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/fr_method_index.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/index.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/rdoc-style.css
+%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/files/radius
+%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/files/install_rb.src
+%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/files/examples/radiusclient_rb.src
+%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/files/examples
+%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/files
+%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/classes/Radius/Packet.src
+%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/classes/Radius/Dict.src
+%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/classes/Radius/Auth.src
+%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/classes/Radius
+%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/classes
+%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/radiusclient.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/rclient.rb
+%%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%
