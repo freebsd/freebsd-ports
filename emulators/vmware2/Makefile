@@ -81,6 +81,12 @@ SCRIPTS_ENV+=	LINUXBASE="${LINUXBASE}" \
 MAKE_ARGS=	KMODDIR="${VMDIR}/lib/modules"
 PLIST_SUB=	LINUXBASE="${LINUXBASE}" VMNET1_MINOR="${VMNET1_MINOR}"
 
+.if ${OSVERSION} < 500000
+PLIST_SUB+=	FREEBSD5="@comment "
+.else
+PLIST_SUB+=	FREEBSD5=""
+.endif
+
 post-extract:
 .for m in ${MODULES}
 	${TAR} -xf ${WRKSRC}/lib/modules/source/${m}.tar -C ${WRKSRC}
