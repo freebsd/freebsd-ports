@@ -1,0 +1,7 @@
+@cwd ${PREFIX}
+@mode 755
+bin/grep
+bin/egrep
+bin/fgrep
+@mode 644
+man/man1/grep.1.gz
