@@ -1,5 +1,14 @@
 --- dhisd.h.orig	Sun Nov  4 20:50:14 2001
 +++ dhisd.h	Sun Nov  4 20:51:05 2001
+@@ -47,7 +47,7 @@
+ #include<sys/signal.h>
+ #include<sys/wait.h>
+ #include<syslog.h>
+-#include<varargs.h>
++#include<stdarg.h>
+ #include<gmp.h>
+ 
+ #define	BOURNE_SHELL		"/bin/sh"
 @@ -64,10 +64,10 @@
  #define	CHECK_FAILS	3		/* maximum check fails */
  

@@ -1,7 +1,15 @@
 --- Makefile.orig	Sun Nov  4 20:48:12 2001
 +++ Makefile	Sun Nov  4 20:49:08 2001
-@@ -30,7 +30,7 @@
- LFLAGS=-L/usr/local/lib 
+@@ -25,12 +25,12 @@
+ #
+ #      DHIS(c)  Dynamic Host Information System Release 5.1
+ 
+-CC=gcc
+-CFLAGS=-Wall -Wformat -I/usr/local/include # -DDONT_FORK
+-LFLAGS=-L/usr/local/lib 
++CC?=gcc
++#CFLAGS=-Wall -Wformat -I/usr/local/include # -DDONT_FORK
++#LDFLAGS=-L/usr/local/lib 
  CP=cp
  
 -INSTALLDIR=/etc/dhis/bin
@@ -9,3 +17,17 @@
  MODE=700
  OWNER=root
  MKDIR=mkdir -p
+@@ -46,11 +46,11 @@
+ all: dhisd genkeys
+ 
+ dhisd:	$(OBJS)
+-	$(CC) $(LFLAGS) -o dhisd $(OBJS) $(LIBS)
++	$(CC) $(LDFLAGS) -o dhisd $(OBJS) $(LIBS)
+ 	strip dhisd
+ 
+ genkeys:
+-	$(CC) $(CFLAGS) $(LFLAGS) genkeys.c -DQRC=1 -o genkeys -lgmp
++	$(CC) $(CFLAGS) $(LDFLAGS) genkeys.c -DQRC=1 -o genkeys -lgmp
+ 
+ install: dhisd genkeys
+ 	$(MKDIR) $(INSTALLDIR)
