@@ -18,4 +18,10 @@ GNU_CONFIGURE=		yes
 CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
 INSTALLS_SHLIB=		yes
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 502126
+BROKEN=			"Does not compile on FreeBSD >= 5.x"
+.endif
+
+.include <bsd.port.post.mk>

@@ -42,6 +42,10 @@ USE_GNOME=	orbit gtk12
 
 .include <bsd.port.pre.mk>
 
+.if ${OSVERSION} >= 502126
+BROKEN=		"Does not compile on FreeBSD >= 5.x"
+.endif
+
 INSTALLATION_BASEDIR=	OpenOffice.org1.0
 BUILD_NR=		641
 DIST_SUBDIR=		openoffice1.0

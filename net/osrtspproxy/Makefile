@@ -17,8 +17,14 @@ COMMENT=	The RTSP Proxy Kit is a reference implementation of an RTSP proxy
 
 HAS_CONFIGURE=	YES
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 502126
+BROKEN=		"Does not compile on FreeBSD >= 5.x"
+.endif
+
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/rtspproxy/rtspproxy ${PREFIX}/sbin
 	${INSTALL_SCRIPT} ${FILESDIR}/rtspproxy.sh ${PREFIX}/etc/rc.d/rtspproxy.sh.sample
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

@@ -23,6 +23,12 @@ USE_X_PREFIX=	yes
 PLIST=		${WRKDIR}/pkg-plist
 WRKSRC=		${WRKDIR}/opmixer
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 502126
+BROKEN=		"Does not compile on FreeBSD >= 5.x"
+.endif
+
 pre-install:
 	${ECHO_CMD} "bin/opmixer" > ${PLIST}
 	${ECHO_CMD} "bin/opmixer-load" >> ${PLIST}
@@ -40,4 +46,4 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
