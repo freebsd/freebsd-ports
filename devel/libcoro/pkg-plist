@@ -1,4 +1,3 @@
-lib/libcoro.so
-lib/libcoro.so.1
+lib/libcoro.a
 include/coro.h
 
