@@ -1,5 +1,5 @@
 --- Makefile.in.orig	Thu Dec  2 08:34:20 2004
-+++ Makefile.in	Mon Dec 13 19:35:54 2004
++++ Makefile.in	Sat Dec 18 11:51:59 2004
 @@ -31,15 +31,22 @@
  	if [ ! -d $(DESTDIR)$(sysconfdir) ]; then \
  	    $(MKINSTALLDIRS) $(DESTDIR)$(sysconfdir) ; \
@@ -33,7 +33,7 @@
  	    				if test $$j != "^EOL^"; then \
  	    					echo "LoadModule $${j}_module $(rel_libexecdir)/mod_$${j}.so"; \
  	    				fi; \
-@@ -70,14 +80,15 @@
+@@ -70,23 +80,18 @@
  	    				-e 's#@@Port@@#$(PORT)#g' \
  	    				< $$i; \
  	    		fi \
@@ -52,8 +52,18 @@
 +	    		$(INSTALL_DATA) $(DESTDIR)$(EXAMPLESDIR)/$$i $(DESTDIR)$(sysconfdir)/$$file; \
  	    	fi; \
  	    done ; \
- 	done ; \
-@@ -108,44 +119,40 @@
+-	done ; \
+-	if test -f "$(builddir)/envvars-std"; then \
+-	    cp -p envvars-std $(DESTDIR)$(sbindir); \
+-	    if test ! -f $(DESTDIR)$(sbindir)/envvars; then \
+-	        cp -p envvars-std $(DESTDIR)$(sbindir)/envvars ; \
+-	    fi ; \
+-	fi
++	done ;
+ 
+ install-build:
+ 	@echo Installing build system files 
+@@ -108,44 +113,40 @@
  	doxygen $(top_srcdir)/docs/doxygen.conf
  
  install-htdocs:
@@ -126,7 +136,7 @@
  
  install-other:
  	@test -d $(DESTDIR)$(logfiledir) || $(MKINSTALLDIRS) $(DESTDIR)$(logfiledir)
-@@ -189,11 +196,13 @@
+@@ -189,11 +190,13 @@
  	@test -d $(DESTDIR)$(mandir)      || $(MKINSTALLDIRS) $(DESTDIR)$(mandir)
  	@test -d $(DESTDIR)$(mandir)/man1 || $(MKINSTALLDIRS) $(DESTDIR)$(mandir)/man1
  	@test -d $(DESTDIR)$(mandir)/man8 || $(MKINSTALLDIRS) $(DESTDIR)$(mandir)/man8

@@ -193,7 +193,7 @@ post-patch:
 	@${RM} -f ${WRKSRC}/docs/conf/highperformance-std.conf
 	@${REINPLACE_CMD} -e 's," PLATFORM ",FreeBSD,' \
 			${WRKSRC}/server/core.c
-	@${REINPLACE_CMD} -e 's,freebsd\[2345\],freebsd\[23456\],' \
+	@${REINPLACE_CMD} -e "s,%%OSVERSION%%,${OSVERSION}," \
 			${WRKSRC}/srclib/apr/build/apr_hints.m4
 	@${INSTALL_DATA} ${WRKSRC}/NOTICE ${WRKSRC}/docs/manual
 
