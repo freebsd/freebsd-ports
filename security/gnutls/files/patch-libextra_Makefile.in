@@ -1,0 +1,11 @@
+--- libextra/Makefile.in.orig	Fri Jan 28 16:38:05 2005
++++ libextra/Makefile.in	Fri Jan 28 16:38:25 2005
+@@ -306,7 +306,7 @@ m4datadir = $(datadir)/aclocal
+ m4data_DATA = libgnutls-extra.m4
+ 
+ # Pkg-config script.
+-pkgconfigdir = $(libdir)/pkgconfig
++pkgconfigdir = $(prefix)/libdata/pkgconfig
+ pkgconfig_DATA = gnutls-extra.pc
+ DISTCLEANFILES = $(pkgconfig_DATA)
+ LIBGNUTLS_EXTRA_EXPORTS = -export-symbols-regex '^gnutls.*'
