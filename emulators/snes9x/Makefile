@@ -14,7 +14,6 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}-src
 MAINTAINER=	green@FreeBSD.org
 COMMENT=	Super Nintendo Entertainment System(SNES) Emulator
 
-PLIST_FILES=	bin/snes9x
 WRKSRC=		${WRKDIR}/${DISTNAME}/${PORTNAME}
 
 USE_X_PREFIX=	YES
@@ -24,6 +23,8 @@ CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 MAKE_ARGS=	INCLUDES="-I${X11BASE}/include ${PTHREAD_CFLAGS}" \
 		LDLIBS="-L${X11BASE}/lib ${PTHREAD_LIBS}" \
 		OPTIMISE="${CXXFLAGS}"
+
+PLIST_FILES=	bin/${SNES9X_BIN}
 
 .include <bsd.port.pre.mk>
 
