@@ -6,14 +6,17 @@ bin/txcm
 bin/txdump
 bin/txpc
 bin/txprint
+bin/txsum
 bin/txx
 man/cat7/t3x.0
 t3x/r6/bin/s86
 t3x/r6/bin/thelp
 t3x/r6/bin/tx
+t3x/r6/bin/tx45
 t3x/r6/bin/txcg386
 t3x/r6/bin/txcg386e
 t3x/r6/bin/txcg86
+t3x/r6/bin/txcgc
 t3x/r6/bin/txcgexe
 t3x/r6/bin/txcm
 t3x/r6/bin/txdpf
@@ -22,6 +25,7 @@ t3x/r6/bin/txld
 t3x/r6/bin/txopt
 t3x/r6/bin/txpc
 t3x/r6/bin/txprint
+t3x/r6/bin/txsum
 t3x/r6/bin/txtrn
 t3x/r6/bin/txx
 t3x/r6/classes/CLASSNDX
@@ -51,10 +55,10 @@ t3x/r6/doc/LICENSE
 t3x/r6/doc/README
 t3x/r6/doc/README.docs
 t3x/r6/doc/T3X.html
-t3x/r6/doc/cgdesc.sd
 t3x/r6/doc/classes.sd
 t3x/r6/doc/compiler.sd
 t3x/r6/doc/formats.sd
+t3x/r6/doc/mdesc.sd
 t3x/r6/doc/s86.sd
 t3x/r6/doc/sd.sd
 t3x/r6/doc/sdv-config
@@ -71,7 +75,7 @@ t3x/r6/lib/ttyctl.so
 t3x/r6/lib/xmem.so
 t3x/r6/system.txrc
 t3x/r6/txprint.rules
-@unexec rm -f %D/t3x/r6/classes/CLASSNDX-
+@unexec rm -f %D/t3x/r6/classes/CLASSND-
 @dirrm t3x/r6/bin
 @dirrm t3x/r6/classes
 @dirrm t3x/r6/lib
