@@ -7,6 +7,7 @@
 
 PORTNAME=	portupgrade
 PORTVERSION=	20041226
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	ftp://ftp.iDaemons.org/pub/distfiles/ \
 		${MASTER_SITE_LOCAL}
@@ -29,6 +30,7 @@ RUN_DEPENDS=	${RUBY_SITEARCHLIBDIR}/bdb1.so:${PORTSDIR}/databases/ruby-bdb1
 # For PKG_DBDRIVER={bdb_btree,bdb_hash,bdb}
 #		${RUBY_SITEARCHLIBDIR}/bdb.so:${PORTSDIR}/databases/ruby-bdb
 
+USE_RC_SUBR=	yes
 USE_BZIP2=	yes
 USE_RUBY=	yes
 USE_RUBY_FEATURES=	optparse ruby18
