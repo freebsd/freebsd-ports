@@ -6,17 +6,17 @@
 #
 
 PORTNAME=	smlnj
-PORTVERSION=	110.9.1
+PORTVERSION=	110.0.6
 CATEGORIES=	lang
-MASTER_SITES=	ftp://ftp.research.bell-labs.com/dist/smlnj/working/110.9.1/ \
-		ftp://ftp.diku.dk/pub/smlnj/working/110.9.1/ \
-		ftp://sunsite.doc.ic.ac.uk/computing/programming/languages/ml/smlnj/working/110.9.1/ \
-		ftp://compiler.kaist.ac.kr/pub/sml/working/110.9.1/
-DISTFILES=	110.9.1-bin.x86-unix.tar.Z 110.9.1-cm.tar.Z 110.9.1-cml.tar.Z \
-		110.9.1-config.tar.Z 110.9.1-eXene.tar.Z \
-		110.9.1-ml-burg.tar.Z 110.9.1-ml-lex.tar.Z \
-		110.9.1-ml-yacc.tar.Z 110.9.1-runtime.tar.Z \
-		110.9.1-smlnj-c.tar.Z 110.9.1-smlnj-lib.tar.Z
+MASTER_SITES=	ftp://ftp.research.bell-labs.com/dist/smlnj/release/110.0.6/ \
+		ftp://rodin.stanford.edu/pub/smlnj/release/110.0.6/ \
+		ftp://ftp.ntua.gr//pub/lang/smlnj/release/110.0.6/
+DISTFILES=	110-bin.x86-unix.tar.Z 110-cm.tar.Z 110-cml.tar.Z \
+		110-config.tar.Z 110-eXene.tar.Z \
+		110-ml-burg.tar.Z 110-ml-lex.tar.Z \
+		110-ml-yacc.tar.Z 110-runtime.tar.Z \
+		110-smlnj-c.tar.Z 110-smlnj-lib.tar.Z
+EXTRACT_ONLY=	110-config.tar.Z
 
 MAINTAINER=	jkoshy@freebsd.org
 
@@ -25,18 +25,17 @@ MAINTAINER=	jkoshy@freebsd.org
 # 	ftp://ftp.cl.cam.ac.uk/MIRRORED/smlnj/release/
 # 	ftp://ftp.ntua.gr/pub/lang/smlnj/release/
 # Mirror sites that keep files around in gzipped format
-# 	ftp://flint.cs.yale.edu/pub/smlnj/working/110.9.1/
+# 	ftp://flint.cs.yale.edu/pub/smlnj/release/110.0.6/
 
 DIST_SUBDIR=	sml-nj
 NO_WRKSUBDIR=	yes
-EXTRACT_ONLY=	110.9.1-config.tar.Z
 USE_GMAKE=	yes
 
 SML_BASE=	${PREFIX}/lib/sml-nj
 SML_LIBDIR=	${SML_BASE}/lib
 SML_BINDIR=	${SML_BASE}/bin
 SML_SRCDIR=	${SML_BASE}/src
-SML_EXES=	ml-burg ml-lex ml-yacc sml
+SML_EXES=	ml-burg ml-lex ml-yacc sml sml-cm
 
 # make symlinks to the dist files
 post-extract:
@@ -52,7 +51,7 @@ do-build:
 # 1. create installation directories
 # 2. copy the ./bin directory across
 # 3. edit bin/.run_sml to override BIN_DIR
-# 4. copy all .stable files in CM/ directories
+# 4. copy all x86-unix directories
 # 5. find all .cm files reachable from $WRKDIR/lib and copy them across
 # 6. copy the aliases in ./lib changing WRKDIR to SML_LIBDIR
 # 7. install links to executables in $PREFIX/bin
@@ -63,7 +62,7 @@ do-install:
 	${SED} -e "s,^BIN_DIR=.*\$$,BIN_DIR=${SML_BINDIR}," \
 		< ${WRKDIR}/bin/.run-sml > ${SML_BINDIR}/.run-sml
 	${CHMOD} 755 ${SML_BINDIR}/.run-sml
-	cd ${WRKDIR} && tar -cf - `find . -name '*.stable' | ${GREP} CM` | \
+	cd ${WRKDIR} && tar -cf - `find . -name x86-unix` | \
 		tar -C ${SML_BASE} -xf -
 	cd ${WRKDIR} && tar -cf - `${SCRIPTDIR}/get-cm ${WRKDIR}` | \
 		tar -C ${SML_BASE} -xf -
