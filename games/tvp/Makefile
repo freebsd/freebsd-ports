@@ -43,4 +43,10 @@ post-install:
 		${PREFIX}/man/man6/tvp.6
 	${STRIP_CMD} ${PREFIX}/bin/aprez ${PREFIX}/bin/prez ${PREFIX}/bin/xpwish
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 500113
+BROKEN=		"Does not compile on FreeBSD ${OSVERSION}"
+.endif
+
+.include <bsd.port.post.mk>
