@@ -6,7 +6,9 @@
 #
 
 PORTNAME=	gimp
-PORTVERSION=	1.2.2
+PORTVERSION=	1.2.1
+PORTREVISION=	2
+PORTEPOCH=	1
 CATEGORIES=	graphics gnome
 MASTER_SITES=	ftp://ftp.gimp.org/pub/%SUBDIR%/ \
 		ftp://ftp.insync.net/pub/mirrors/ftp.gimp.org/%SUBDIR%/ \
@@ -22,7 +24,7 @@ LIB_DEPENDS=	aa.1:${PORTSDIR}/graphics/aalib \
 		png.4:${PORTSDIR}/graphics/png \
 		tiff.4:${PORTSDIR}/graphics/tiff
 
-SHLIBVER?=	1
+SHLIBVER?=	${PORTVERSION:S/1.2.//g}
 
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes

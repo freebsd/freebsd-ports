@@ -1,14 +1,11 @@
-
-$FreeBSD$
-
---- plug-ins/Makefile.in.orig	Fri Jul 27 16:36:22 2001
-+++ plug-ins/Makefile.in	Mon Aug 13 19:12:32 2001
-@@ -113,7 +113,7 @@
- HAVE_FINITE = @HAVE_FINITE@
+--- plug-ins/Makefile.in.orig	Mon Nov 13 08:16:29 2000
++++ plug-ins/Makefile.in	Mon Nov 13 08:16:45 2000
+@@ -111,7 +111,7 @@
+ GT_NO = @GT_NO@
+ GT_YES = @GT_YES@
  HAVE_GTK_DOC = @HAVE_GTK_DOC@
- HAVE_ISFINITE = @HAVE_ISFINITE@
 -HELPBROWSER = @HELPBROWSER@
 +#HELPBROWSER = @HELPBROWSER@
  HTML_DIR = @HTML_DIR@
+ INCLUDE_LOCALE_H = @INCLUDE_LOCALE_H@
  INSTOBJEXT = @INSTOBJEXT@
- INTLBISON = @INTLBISON@
