@@ -17,6 +17,6 @@ COMMENT=	Chemistry file translation program
 
 GNU_CONFIGURE=	yes
 
-MAN1=	babel.1
+MAN1=	openbabel.1
 
 .include <bsd.port.mk>
