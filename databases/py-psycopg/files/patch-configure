@@ -1,18 +1,18 @@
---- configure.orig	Wed Sep  4 16:16:18 2002
-+++ configure	Wed Sep  4 16:16:59 2002
+--- configure.orig	Mon Jan  6 02:06:33 2003
++++ configure	Mon Jan  6 02:07:07 2003
 @@ -1316,11 +1316,11 @@
  
  echo $ac_n "checking PostgreSQL type catalog""... $ac_c" 1>&6
  echo "configure:1319: checking PostgreSQL type catalog" >&5
 -if test -d $PGSQLDIR/catalog ; then
 -  PGSQLTYPES="$PGSQLDIR/catalog/pg_type.h"
-+if test -d $PGSQLDIR/pgsql/catalog ; then
-+  PGSQLTYPES="$PGSQLDIR/psql/catalog/pg_type.h"
++if test -d $PGSQLDIR/postgresql/catalog ; then
++  PGSQLTYPES="$PGSQLDIR/postgresql/catalog/pg_type.h"
  else
 -  if test -d $PGSQLDIR/server/catalog ; then
 -    PGSQLTYPES="$PGSQLDIR/server/catalog/pg_type.h"
-+  if test -d $PGSQLDIR/psql/server/catalog ; then
-+    PGSQLTYPES="$PGSQLDIR/psql/server/catalog/pg_type.h"
++  if test -d $PGSQLDIR/postgresql/server/catalog ; then
++    PGSQLTYPES="$PGSQLDIR/postgresql/server/catalog/pg_type.h"
    fi
  fi
  test -z "$PGSQLTYPES" && { echo "configure: error: pg_type.h not found" 1>&2; exit 1; }
