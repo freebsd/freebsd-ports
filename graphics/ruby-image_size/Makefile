@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	image_size
-PORTVERSION=	0.0.20020105
+PORTVERSION=	0.0.20030420
 CATEGORIES=	graphics ruby
 MASTER_SITES=	http://www.rubycgi.org/archive/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
@@ -23,14 +23,15 @@ WRKSRC=		${WRKDIR}/${PORTNAME}
 
 NO_BUILD=	yes
 
-RUBY_RD_FILES=	image_size.rb readme.ja.rd
+RUBY_RD_FILES=	readme.ja.rd readme.rd
 
-DOCS_EN=	${RUBY_RD_HTML_FILES:N*.ja.html}
+DOCS_EN=	${RUBY_RD_FILES:N*.ja.rd} \
+		${RUBY_RD_HTML_FILES:N*.ja.html}
 DOCS_JA=	${RUBY_RD_FILES:M*.ja.rd} \
 		${RUBY_RD_HTML_FILES:M*.ja.html}
 
 do-install:
-	${INSTALL_DATA} ${WRKSRC}/image_size.rb ${RUBY_SITELIBDIR}/
+	${INSTALL_DATA} ${WRKSRC}/lib/image_size.rb ${RUBY_SITELIBDIR}/
 
 post-install: doc-install
 
