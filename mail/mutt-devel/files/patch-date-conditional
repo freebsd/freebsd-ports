@@ -78,9 +78,9 @@ Index: muttlib.c
  
        if (flags & M_FORMAT_OPTIONAL)
        {
---- hdrline.c.orig	Thu Jun 24 11:16:36 2004
-+++ hdrline.c	Thu Jun 24 11:43:28 2004
-@@ -316,6 +316,63 @@
+--- hdrline.c.orig	Tue Jun 29 15:01:28 2004
++++ hdrline.c	Tue Jun 29 15:02:59 2004
+@@ -316,6 +316,64 @@
  	const char *cp;
  	struct tm *tm; 
  	time_t T;
@@ -90,7 +90,8 @@ Index: muttlib.c
 +	  char *is;
 +          int d;
 +	  T = time(NULL);
-+	  d = T % 86400;
++	  tm = localtime(&T);
++	  d = (T + tm->tm_gmtoff) % 86400;
 +	  T -= (op == '(') ? hdr->received : hdr->date_sent;
 +
 +	  is = (char *)prefix;
