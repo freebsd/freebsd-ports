@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	firebird
-PORTVERSION=	1.5
+PORTVERSION=	1.5.1
 CATEGORIES=	databases
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=firebird
-DISTNAME=	firebird-1.5.0.4290
+DISTNAME=	firebird-1.5.1.4481
 
 MAINTAINER=	chris@e-easy.com.au
 COMMENT=	The open-source InterBase(tm) 6.0 spin-off (Classic version)
@@ -19,16 +19,18 @@ USE_BISON=	yes
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-USE_LIBTOOL_VER=	13
-USE_AUTOCONF_VER=	253
+USE_LIBTOOL_VER=	15
+USE_AUTOCONF_VER=	259
 USE_GCC=	3.3
+
+PLIST_SUB=	FIREBIRD_VERSION=${PORTVERSION}
 
 # Don't use ld for linking, use gcc
 LD=	gcc
 
 CONFLICTS=	firebird-devel-*
 
-WRKSRC=		${WRKDIR}/firebird-1.5.0.4290
+WRKSRC=		${WRKDIR}/firebird-1.5.1.4481
 INSTALLS_SHLIB=	yes
 LDCONFIG_DIRS=	%%PREFIX%%/firebird/lib
 MSG_FILE=	${PKGDIR}/pkg-message

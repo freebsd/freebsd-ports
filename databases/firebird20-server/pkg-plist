@@ -107,10 +107,10 @@ firebird/intl/fbintl
 @unexec rm -f %D/firebird/isc_lock1.`hostname`
 firebird/lib/libfbclient.so
 firebird/lib/libfbclient.so.1
-firebird/lib/libfbclient.so.1.5.0
+firebird/lib/libfbclient.so.%%FIREBIRD_VERSION%%
 firebird/lib/libfbembed.so
 firebird/lib/libfbembed.so.1
-firebird/lib/libfbembed.so.1.5.0
+firebird/lib/libfbembed.so.%%FIREBIRD_VERSION%%
 firebird/lib/libgds.so
 firebird/lib/libgds.so.1
 firebird/lib/libib_util.so
