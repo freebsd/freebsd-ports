@@ -5905,7 +5905,6 @@ mod_zap		ports/www/mod_zap
 mode-info	ports/editors/mode-info
 modlogan	ports/textproc/modlogan
 modplugplay	ports/audio/modplugplay
-modules		ports/sysutils/modules
 moftpd		ports/ftp/moftpd
 moinmoin	ports/www/moinmoin
 molden		ports/biology/molden
@@ -8989,6 +8988,7 @@ ports_math	ports/math
 ports_mbone	ports/mbone
 ports_misc	ports/misc
 ports_mk	ports/devel/mk
+ports_modules	ports/sysutils/modules
 ports_multimedia	ports/multimedia
 ports_net	ports/net
 ports_net_mgmt	ports/net-mgmt
