@@ -1,0 +1,38 @@
+@cwd /usr/local
+bin/elm
+bin/answer
+bin/checkalias
+bin/elmalias
+bin/fastmail
+bin/frm
+@exec ln -f %D/%F %D/bin/nfrm
+bin/listalias
+bin/messages
+bin/newalias
+bin/newmail
+@exec ln -f %D/%F %D/bin/wnewmail
+bin/printmail
+bin/readmsg
+lib/prlong
+bin/filter
+lib/elmrc-info
+lib/elm-help.0
+lib/elm-help.1
+lib/elm-help.2
+lib/elm-help.3
+man/man1/answer.1
+man/man1/checkalias.1
+man/man1/elm.1
+man/man1/elmalias.1
+man/man1/fastmail.1
+man/man1/filter.1
+man/man1/frm.1
+@exec ln -f %D/%F %D/man/man1/nfrm.1
+man/man1/listalias.1
+man/man1/messages.1
+man/man1/newalias.1
+man/man1/newmail.1
+@exec ln -f %D/%F %D/man/man1/wnewmail.1
+man/man1/printmail.1
+man/man1/readmsg.1
+share/nls/C/elm2.4.cat
