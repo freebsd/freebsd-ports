@@ -1,0 +1,11 @@
+--- Makefile.orig	Fri Sep  1 00:12:53 2000
++++ Makefile	Fri Sep  1 00:13:02 2000
+@@ -2,7 +2,7 @@
+ 
+ M4=m4
+ 
+-it:	Makefile2
++all:	Makefile2
+ 	$(MAKE) -f Makefile2 $(TARGET)
+ 
+ .PRECIOUS: Makefile2

@@ -1,0 +1,5 @@
+bin/snobol4
+lib/snobol4/snolib.a
+lib/snobol4/bq.sno
+lib/snobol4/load.doc
+@dirrm lib/snobol4

@@ -1,0 +1,10 @@
+--- configure.orig	Fri Sep  1 00:13:51 2000
++++ configure	Fri Sep  1 00:14:00 2000
+@@ -1,6 +1,6 @@
+ #!/bin/sh
+ 
+-if autoconf "$@" > config.m4.tmp; then
++if ./autoconf "$@" > config.m4.tmp; then
+ 	rm -f config.m4
+ 	mv config.m4.tmp config.m4
+ else
