@@ -66,7 +66,7 @@ pre-configure:
 		${WRKSRC}/rsync.h ${WRKSRC}/zlib/zutil.h
 
 post-install:
-	@{STRIP_CMD} ${PREFIX}/bin/rsync
+	@${STRIP_CMD} ${PREFIX}/bin/rsync
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/README          ${DOCSDIR}
