@@ -20,9 +20,7 @@ BUILD_DEPENDS=	rdoc:${PORTSDIR}/textproc/ruby-rdoc
 
 USE_RUBY=	yes
 USE_RUBY_EXTCONF=	yes
-.if !defined(NOPORTDOCS)
-USE_RUBY_RD=	yes
-.endif
+USE_RUBY_RDTOOL=	yes
 
 INSTALL_TARGET=	site-install
 
@@ -32,7 +30,7 @@ EXAMPLES=	b.rb
 
 post-build:
 .if !defined(NOPORTDOCS)
-	cd ${WRKSRC}; ${RUBY_RD} mmap.rd > mmap.html
+	cd ${WRKSRC}; ${RUBY_RD2} mmap.rd > mmap.html
 	cd ${WRKSRC}/docs; ${RUBY} b.rb mmap; rdoc mmap.rb
 .endif
 

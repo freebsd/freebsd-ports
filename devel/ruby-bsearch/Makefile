@@ -16,9 +16,7 @@ DIST_SUBDIR=	ruby
 MAINTAINER=	knu@FreeBSD.org
 
 USE_RUBY=	yes
-.if !defined(NOPORTDOCS)
-USE_RUBY_RD=	yes
-.endif
+USE_RUBY_RDTOOL=	yes
 
 DOCS_EN=	ChangeLog bsearch.en.html bsearch.en.rd
 DOCS_JA=	bsearch.ja.html bsearch.ja.rd
@@ -27,7 +25,7 @@ do-build:
 .if !defined(NOPORTDOCS)
 .for f in bsearch.en.rd bsearch.ja.rd
 	@cd ${WRKSRC}; \
-	${RUBY_RD} ${f} > ${f:R}.html
+	${RUBY_RD2} ${f} > ${f:R}.html
 .endfor
 .endif
 

@@ -22,9 +22,7 @@ LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png
 
 USE_RUBY=	yes
 USE_RUBY_EXTCONF=	yes
-.if !defined(NOPORTDOCS)
-USE_RUBY_RD=	yes
-.endif
+USE_RUBY_RDTOOL=	yes
 
 INSTALL_TARGET=	site-install
 
@@ -37,7 +35,7 @@ EXAMPLES_EN=	es.png		png.rb		pngtest.rb	pngtest.sh	\
 .if !defined(NOPORTDOCS)
 post-build:
 	@cd ${WRKSRC}; \
-	${RUBY_RD} readme.ja.rd > readme.ja.html
+	${RUBY_RD2} readme.ja.rd > readme.ja.html
 .endif
 
 post-install:

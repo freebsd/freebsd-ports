@@ -26,9 +26,7 @@ RUBY_OPENGL_WRKSRC_CMD=	cd ${RUBY_OPENGL_PORTDIR}; ${MAKE} -V WRKSRC
 
 USE_RUBY=	yes
 USE_RUBY_EXTCONF=	yes
-.if !defined(NOPORTDOCS)
-USE_RUBY_RD=	yes
-.endif
+USE_RUBY_RDTOOL=	yes
 RUBY_WITH_PTHREAD=	yes
 
 CONFIGURE_ARGS=	--with-sdl-config="sdl11-config" \
@@ -57,7 +55,7 @@ post-patch:
 post-build:
 .if !defined(NOPORTDOCS)
 .for f in ${RD_DOCS_EN} ${RD_DOCS_JA}
-	@cd ${WRKSRC}; ${RUBY_RD} ${f} > ${f:S/.rd$/.html/}
+	@cd ${WRKSRC}; ${RUBY_RD2} ${f} > ${f:S/.rd$/.html/}
 .endfor
 .endif
 

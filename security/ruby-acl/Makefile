@@ -15,16 +15,13 @@ DIST_SUBDIR=	ruby
 MAINTAINER=	knu@FreeBSD.org
 
 USE_RUBY=	yes
-
-.if !defined(NOPORTDOCS)
-USE_RUBY_RD=	yes
-.endif
+USE_RUBY_RDTOOL=	yes
 
 do-build:
 .if !defined(NOPORTDOCS)
 .for f in acl.rd acl.rd.ja
 	@cd ${WRKSRC}/doc; \
-	${RUBY_RD} ${f} > ${f:S/.rd/.html/}
+	${RUBY_RD2} ${f} > ${f:S/.rd/.html/}
 .endfor
 .endif
 

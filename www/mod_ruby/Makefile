@@ -18,9 +18,7 @@ LIB_DEPENDS=	eruby.09:${PORTSDIR}/textproc/eruby
 RUN_DEPENDS=	${APXS}:${APACHE_PORT}
 
 USE_RUBY=	yes
-.if !defined(NOPORTDOCS)
-USE_RUBY_RD=	yes
-.endif
+USE_RUBY_RDTOOL=	yes
 
 APXS?=		${LOCALBASE}/sbin/apxs
 APACHE_PORT?=	${PORTSDIR}/www/apache13

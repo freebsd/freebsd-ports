@@ -22,9 +22,7 @@ LIB_DEPENDS=	gd.2:${PORTSDIR}/graphics/gd \
 
 USE_RUBY=	yes
 USE_RUBY_EXTCONF=	yes
-.if !defined(NOPORTDOCS)
-USE_RUBY_RD=	yes
-.endif
+USE_RUBY_RDTOOL=	yes
 
 CONFIGURE_ARGS=	--with-gd-include="${LOCALBASE}/include/gd" \
 		--with-gd-lib="${LOCALBASE}/lib" \

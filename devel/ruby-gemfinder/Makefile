@@ -18,10 +18,7 @@ MAINTAINER=	knu@FreeBSD.org
 RUN_DEPENDS=	${RUBY_LIBDIR}/tk.rb:${PORTSDIR}/x11-toolkits/ruby-tk
 
 USE_RUBY=	yes
-
-.if !defined(NOPORTDOCS)
-USE_RUBY_RD=	yes
-.endif
+USE_RUBY_RDTOOL=	yes
 
 RUBY_SHEBANG_FILES=	${WRKSRC}/gemfinder
 
@@ -29,7 +26,7 @@ DOCS=		README		gemfinder.html	gemfinder.rd
 
 do-build:
 .if !defined(NOPORTDOCS)
-	${RUBY_RD} < ${WRKSRC}/gemfinder.rd \
+	${RUBY_RD2} < ${WRKSRC}/gemfinder.rd \
 		| ${SED} -e 's/<BODY>/<body bgcolor="#ffffff">/' \
 		> ${WRKSRC}/gemfinder.html
 .endif
