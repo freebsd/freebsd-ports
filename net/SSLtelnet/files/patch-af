@@ -77,4 +77,3 @@
 +	termbuf.c_iflag &= ~ISTRIP;
  #endif
  }
- 
