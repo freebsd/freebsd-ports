@@ -15,16 +15,13 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}
 MAINTAINER=	krion@FreeBSD.org
 COMMENT=	Destroy as many targets as possible
 
-LIB_DEPENDS=	SDL_mixer.2:${PORTSDIR}/audio/sdl_mixer
-
 USE_GMAKE=	yes
-USE_SDL=	yes
+USE_SDL=	sdl mixer
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-profile-path=/var/games
 USE_REINPLACE=	yes
 
-CONFIGURE_ENV=	SDL_CONFIG="${SDL_CONFIG}" \
-		CPPFLAGS="-I${X11BASE}/include"
+CONFIGURE_ENV=	CPPFLAGS="-I${X11BASE}/include"
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|applications|applnk/Applications|g' \

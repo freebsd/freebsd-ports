@@ -13,8 +13,7 @@ MASTER_SITES=	http://briquolo.free.fr/download/
 MAINTAINER=	krion@FreeBSD.org
 COMMENT=	Breakout clone with an OpenGL 3D representation
 
-LIB_DEPENDS=	SDL_mixer.2:${PORTSDIR}/audio/sdl_mixer \
-		GUI.0:${PORTSDIR}/graphics/guilib \
+LIB_DEPENDS=	GUI.0:${PORTSDIR}/graphics/guilib \
 		png.5:${PORTSDIR}/graphics/png
 
 USE_BZIP2=	yes
@@ -24,7 +23,7 @@ GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}"
-USE_SDL=	yes
+USE_SDL=	mixer sdl
 
 post-patch:
 	@${FIND} ${WRKSRC} -name "*.cpp" | ${XARGS} \

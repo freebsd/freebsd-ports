@@ -15,11 +15,8 @@ DISTNAME=	Shaaft-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Shaaft is an OpenGL 3D falling block game similar to Blockout
 
-LIB_DEPENDS=	SDL_mixer.2:${PORTSDIR}/audio/sdl_mixer \
-		SDL_image.10:${PORTSDIR}/graphics/sdl_image
-
 USE_BZIP2=	yes
-USE_SDL=	yes
+USE_SDL=	mixer image sdl
 GNU_CONFIGURE=	yes
 
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
