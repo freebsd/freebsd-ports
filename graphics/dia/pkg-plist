@@ -1,5 +1,6 @@
 bin/dia
 bin/dia-bin
+bin/dia-embedd
 lib/dia/libcgm_filter.so
 lib/dia/libchronogram_objects.so
 lib/dia/libcustom_objects.so
@@ -19,7 +20,7 @@ lib/dia/libsvg_filter.so
 lib/dia/libuml_objects.so
 lib/dia/libwpg_filter.so
 lib/dia/libxfig_filter.so
-%%GNOME:%%share/gnome/apps/Applications/dia.desktop
+share/gnome/apps/Applications/dia.desktop
 share/gnome/dia/dia_logo.png
 share/gnome/dia/shapes/Circuit/ground.shape
 share/gnome/dia/shapes/Circuit/ground.xpm
@@ -467,13 +468,13 @@ share/gnome/dia/sheets/civil.sheet
 share/gnome/dia/sheets/jigsaw.sheet
 share/gnome/dia/sheets/network.sheet
 share/gnome/dia/sheets/sybase.sheet
-share/gnome/%%DIAHELP%%/C
-share/gnome/%%DIAHELP%%/en/topic.dat
-share/gnome/%%DIAHELP%%/pl/topic.dat
-%%GNOME:%%share/gnome/mime-info/dia.keys
-%%GNOME:%%share/gnome/mime-info/dia.mime
-%%GNOME:%%share/gnome/pixmaps/dia-diagram.png
-%%GNOME:%%share/gnome/pixmaps/dia_gnome_icon.png
+share/gnome/help/dia/C
+share/gnome/help/dia/en/topic.dat
+share/gnome/help/dia/pl/topic.dat
+share/gnome/mime-info/dia.keys
+share/gnome/mime-info/dia.mime
+share/gnome/pixmaps/dia-diagram.png
+share/gnome/pixmaps/dia_gnome_icon.png
 share/locale/az/LC_MESSAGES/dia.mo
 share/locale/ca/LC_MESSAGES/dia.mo
 share/locale/da/LC_MESSAGES/dia.mo
@@ -503,9 +504,9 @@ share/locale/uk/LC_MESSAGES/dia.mo
 share/locale/vi/LC_MESSAGES/dia.mo
 share/locale/zh_CN/LC_MESSAGES/dia.mo
 share/locale/zh_TW/LC_MESSAGES/dia.mo
-@dirrm share/gnome/%%DIAHELP%%/pl
-@dirrm share/gnome/%%DIAHELP%%/en
-@dirrm share/gnome/%%DIAHELP%%
+@dirrm share/gnome/help/dia/pl
+@dirrm share/gnome/help/dia/en
+@dirrm share/gnome/help/dia
 @dirrm share/gnome/dia/sheets/UML
 @dirrm share/gnome/dia/sheets/GRAFCET
 @dirrm share/gnome/dia/sheets/ER
