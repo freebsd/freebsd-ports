@@ -7,6 +7,7 @@
 %%PORTDOCS%%share/doc/amavisd-new/README.exim_v3
 %%PORTDOCS%%share/doc/amavisd-new/README.exim_v4
 %%PORTDOCS%%share/doc/amavisd-new/README.exim_v4_app
+%%PORTDOCS%%share/doc/amavisd-new/README.exim_v4_app2
 %%PORTDOCS%%share/doc/amavisd-new/README.lookups
 %%PORTDOCS%%share/doc/amavisd-new/README.milter
 %%PORTDOCS%%share/doc/amavisd-new/README.old.scanners
