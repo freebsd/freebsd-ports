@@ -31,6 +31,12 @@ MAN1=		pmake.1
 #
 #WANT_CUSTOMS=	yes
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 502126
+BROKEN=		"Broken by changes to make(1) on FreeBSD >= 5.x"
+.endif
+
 do-install::
 	@(cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} ${MAKE} install)
 
@@ -51,4 +57,4 @@ do-install::
 	${INSTALL_MAN} ${WRKSRC}/doc/pmake.1 ${PREFIX}/man/man1
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
