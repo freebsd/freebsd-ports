@@ -1,0 +1,134 @@
+--- configure.in.orig	Mon Mar  5 00:45:40 2001
++++ configure.in	Thu Mar  8 19:04:18 2001
+@@ -9,20 +9,6 @@
+ 
+ echo Configuring gnetlist version $VERSION
+ 
+-dnl --disable-strokes : turn off stroke support
+-AC_ARG_ENABLE(strokes,
+-    [  --disable-strokes       Disable stroke support (don't use LibStroke at all)],
+-    [
+-	no_strokes=yes
+-    ])
+-
+-dnl --disable-gdgeda : turn off libgdgeda support
+-AC_ARG_ENABLE(gdgeda,
+-    [  --disable-gdgeda        Disable libgdgeda support (don't use libgdgeda at all)],
+-    [
+-	no_gdgeda=yes
+-    ])
+-
+ dnl --enable-debug : turn on debugging support (normally off)
+ AC_ARG_ENABLE(debug,
+     [  --enable-debug          Enable debugging support],
+@@ -34,7 +20,7 @@
+ AC_ARG_WITH(gtk-config, [  --with-gtk-config=path  Change where gtk-config is located], [opt_gtkconfig=$withval])
+ 
+ dnl Change default location of glib-config
+-AC_ARG_WITH(glib-config, [  --with-glib-config=path  Change where glib-config is located], [opt_libconfig=$withval])
++AC_ARG_WITH(glib-config, [  --with-glib-config=path  Change where glib-config is located], [opt_glibconfig=$withval])
+ 
+ dnl Change default location for rc files
+ AC_ARG_WITH(rcdir, [  --with-rcdir=path       Change where the system-*rc files are installed], [opt_rcdir=$withval])
+@@ -147,49 +133,8 @@
+    	  AC_MSG_ERROR(Cannot find glib-config -- be sure that gtk >= 1.2.3 is installed)
+ fi
+ 
+-LDFLAGS="$saved_ldflags $LDEXTRA"
+-CFLAGS="$saved_cflags $CFEXTRA"
+-
+-# search for libgdgeda-config
+-AC_PATH_PROG(LIBGDGEDACONFIG, libgdgeda-config, no, ${PATH})
+-
+-if test $LIBGDGEDACONFIG = "no"; then
+-         libgdgeda_ldflags=""
+-         libgdgeda_cflags=""
+-else
+-         libgdgeda_ldflags=`$LIBGDGEDACONFIG --libs`
+-         libgdgeda_cflags=`$LIBGDGEDACONFIG --cflags`
+-         GD_EXTRA="$libgdgeda_cflags $libgdgeda_ldflags -lm"
+-fi
+-
+-AC_CHECK_LIB(gdgeda, gdImageColorAllocate, GDGEDA_LIB="-lgdgeda", GDGEDA_LIB=no, $GD_EXTRA)
+-
+-if test $GDGEDA_LIB = no; then
+-        GDGEDA_LIB=""
+-else
+-        if test "$no_gdgeda" = "yes"; then
+-                echo found libgdgeda, but disabling gdgeda
+-                GDGEDA_LIB=""
+-		libgdgeda_ldflags=""
+-		libgdgeda_cflags=""
+-        else
+-                AC_CHECK_LIB(z, zlibVersion, Z_LIB="-lz", Z_LIB=no)
+-                if test $Z_LIB = no; then
+-                        AC_MSG_ERROR(Cannot find libz (zlib), be sure to install zlib; it is required for libgdgeda)
+-               	fi 
+-
+-		PNG_EXTRA="-lz -lm"
+-                AC_CHECK_LIB(png, png_read_init, PNG_LIB="-lpng", PNG_LIB=no, $PNG_EXTRA)
+-                if test $PNG_LIB = no; then
+-                        AC_MSG_ERROR(Cannot find libpng, be sure to install png; it is required for libgdgeda)
+-               	fi 
+-
+-                AC_DEFINE(HAS_LIBZ)
+-                AC_DEFINE(HAS_LIBPNG)
+-                AC_DEFINE(HAS_LIBGDGEDA)
+-        fi
+-fi
+-
++dnl LDFLAGS="$saved_ldflags $LDEXTRA"
++dnl CFLAGS="$saved_cflags $CFEXTRA"
+ 
+ # search for libgeda-config
+ AC_PATH_PROG(LIBGEDACONFIG, libgeda-config, no, ${PATH})
+@@ -221,8 +166,8 @@
+ GTK=
+ GDK=
+ GLIB=
+-X_LDFLAGS="`$LIBGEDACONFIG --libs` $libgdgeda_ldflags `$GLIB_CONFIG --libs`"
+-X_CFLAGS="`$GTK_CONFIG --cflags` $libgdgeda_cflags `$LIBGEDACONFIG --cflags`"
++X_LDFLAGS="`$LIBGEDACONFIG --libs` `$GLIB_CONFIG --libs`"
++X_CFLAGS="`$GTK_CONFIG --cflags` `$LIBGEDACONFIG --cflags`"
+ gtkversion=`$GTK_CONFIG --version | cut -d. -f1,2`
+ 
+ AC_DEFINE_UNQUOTED(GTKVERSION, "$gtkversion")
+@@ -231,7 +176,7 @@
+ dnl CFLAGS="$CFLAGS $CFEXTRA `$GTK_CONFIG --cflags`"
+ 
+ CFLAGS="`$GTK_CONFIG --cflags` $CFLAGS $CFEXTRA"
+-LDFLAGS="$LDEXTRA `$GTK_CONFIG --libs` -lgtk -lgdk -lglib $LDFLAGS -lm"
++LDFLAGS="$LDEXTRA `$GTK_CONFIG --libs` $LDFLAGS -lm"
+ 
+ AC_MSG_CHECKING([for the rest of gtk])
+ AC_TRY_COMPILE(
+@@ -245,20 +190,6 @@
+ 	AC_MSG_ERROR(Cannot include/link gtk/gdk/glib--check CFLAGS/LDFLAGS)
+ fi
+ 
+-AC_CHECK_LIB(stroke, stroke_init, STROKE_LIB="-lstroke", STROKE_LIB=no)
+-
+-if test $STROKE_LIB = no; then
+-	STROKE_LIB=""
+-else 
+-	if test "$no_strokes" = "yes"; then
+-		echo found libstroke, but disabling strokes
+-		STROKE_LIB=""
+-	else 
+-		AC_DEFINE(HAS_LIBSTROKE)
+-	fi
+-fi
+-
+-
+ if ! test "$CYGWIN"x = x; then
+         echo Including -fnative-struct in CFLAGS for CYGWIN port
+         CFLAGS="$CFLAGS -fnative-struct"
+@@ -360,8 +291,6 @@
+ AC_SUBST(X_CFLAGS)
+ AC_SUBST(X_LDFLAGS)
+ AC_SUBST(X_LIBS)
+-AC_SUBST(STROKE_LIB)
+-dnl AC_SUBST(TCL_LIB)
+ AC_SUBST(GUILE_LIB)
+ AC_SUBST(GUILE_INCLUDE)
+ AC_SUBST(DL_LIB)

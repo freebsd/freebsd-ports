@@ -1,0 +1,79 @@
+--- /usr/ports/cad/gschem/work/gschem/configure.in	Mon Mar  5 00:45:50 2001
++++ configure.in	Thu Mar  8 19:04:23 2001
+@@ -142,44 +142,41 @@
+ # search for libgdgeda-config
+ AC_PATH_PROG(LIBGDGEDACONFIG, libgdgeda-config, no, ${PATH})
+ 
+-if test $LIBGDGEDACONFIG = "no"; then
++if test $LIBGDGEDACONFIG = "no" -o no_gdgeda = yes; then
++	 GDGEDA_LIB=""
+          libgdgeda_ldflags=""
+          libgdgeda_cflags=""
+ else
+          libgdgeda_ldflags=`$LIBGDGEDACONFIG --libs`
+          libgdgeda_cflags=`$LIBGDGEDACONFIG --cflags`
+          GD_EXTRA="$libgdgeda_cflags $libgdgeda_ldflags -lm"
+-fi
+-
+-AC_CHECK_LIB(gdgeda, gdImageColorAllocate, GDGEDA_LIB="-lgdgeda", GDGEDA_LIB=no, $GD_EXTRA)
+-
++         X_CFLAGS="$libgdgeda_cflags"
+ 
+-
+-if test $GDGEDA_LIB = no; then
+-        GDGEDA_LIB=""
+-else
+-        if test "$no_gdgeda" = "yes"; then
+-                echo found libgdgeda, but disabling gdgeda
+-                GDGEDA_LIB=""
+-         	libgdgeda_ldflags=""
+-         	libgdgeda_cflags=""
+-        else
+-                AC_CHECK_LIB(z, zlibVersion, Z_LIB="-lz", Z_LIB=no)
+-                if test $Z_LIB = no; then
+-                        AC_MSG_ERROR(Cannot find libz (zlib), be sure to install zlib; it is required for libgdgeda)
+-                fi
++         AC_CHECK_LIB(z, uncompress, Z_LIB="-lz", Z_LIB=no)
++         if test $Z_LIB = no; then
++	 	AC_MSG_ERROR(Cannot find libz (zlib), be sure to install zlib; it is required for libgdgeda)
++	 else
+ 
+ 		PNG_EXTRA="-lz -lm"
+                 AC_CHECK_LIB(png, png_read_init, PNG_LIB="-lpng", PNG_LIB=no, $PNG_EXTRA)
++
+                 if test $PNG_LIB = no; then
+                         AC_MSG_ERROR(Cannot find libpng, be sure to install png; it is required for libgdgeda)
+-                fi
+-
+-
+-                AC_DEFINE(HAS_LIBZ)
+-                AC_DEFINE(HAS_LIBPNG)
+-                AC_DEFINE(HAS_LIBGDGEDA)
+-        fi
++                else
++                        GD_EXTRA="-lpng"
++			AC_CHECK_LIB(gdgeda, gdImageColorAllocate, GDGEDA_LIB="-lgdgeda", GDGEDA_LIB=no, $GD_EXTRA)
++
++			if test $GDGEDA_LIB = no; then
++			        GDGEDA_LIB=""
++		         	libgdgeda_ldflags=""
++         			libgdgeda_cflags=""
++			else
++		                AC_DEFINE(HAS_LIBZ)
++                		AC_DEFINE(HAS_LIBPNG)
++		                AC_DEFINE(HAS_LIBGDGEDA)
++		        fi
++		fi
++	fi
+ fi
+ 
+ # search for gtkextra-config
+@@ -240,7 +237,7 @@
+ dnl CFLAGS="$CFLAGS $CFEXTRA `$GTK_CONFIG --cflags`"
+ 
+ CFLAGS="`$GTK_CONFIG --cflags` $CFLAGS $CFEXTRA"
+-LDFLAGS="$LDEXTRA `$GTK_CONFIG --libs` -lgtk -lgdk -lglib $LDFLAGS -lm"
++LDFLAGS="$LDEXTRA `$GTK_CONFIG --libs` $LDFLAGS -lm"
+ 
+ AC_MSG_CHECKING([for the rest of gtk])
+ AC_TRY_COMPILE(
