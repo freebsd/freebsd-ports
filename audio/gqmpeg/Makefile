@@ -3,7 +3,7 @@
 # Date Created:		28 Oct 1998
 # Whom:			Vanilla Pooh Shu <vanilla@FreeBSD.ORG>
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1998/11/16 15:47:10 vanilla Exp $
 #
 
 DISTNAME=	gqmpeg-0.4.1.src
@@ -17,6 +17,8 @@ MAINTAINER=	Nakai@technologist.com
 RUN_DEPENDS=	mpg123:${PORTSDIR}/audio/mpg123
 LIB_DEPENDS=	gtk11.1:${PORTSDIR}/x11-toolkits/gtk11 \
 		Imlib.1:${PORTSDIR}/graphics/imlib
+
+BROKEN=		fetch
 
 USE_X_PREFIX=	yes
 WRKSRC=		${WRKDIR}/gqmpeg-0.4.1
