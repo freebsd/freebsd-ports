@@ -8,7 +8,7 @@
 PORTNAME=	gridpix
 PORTVERSION=	2.1
 CATEGORIES=	graphics
-MASTER_SITES=	ftp://stampede.cs.berkeley.edu/pub/GridPix/
+MASTER_SITES=	http://people.FreeBSD.org/~asami/distfiles/GridPix/
 DISTNAME=	GridPix-${PORTVERSION}
 
 MAINTAINER=	asami@FreeBSD.org
