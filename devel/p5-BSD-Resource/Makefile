@@ -1,16 +1,16 @@
 # New ports collection makefile for:	p5-BSD-Resource
-# Version required:			1.0701
 # Date created:				October 20th 1996
 # Whom:	      				James FitzGibbon <jfitz@FreeBSD.org>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	BSD-Resource-1.0701
-PKGNAME=	p5-BSD-Resource-1.0701
+PORTNAME=	BSD-Resource
+PORTVERSION=	1.0701
 CATEGORIES=	devel perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	BSD
+PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	jfitz@FreeBSD.org
 

@@ -1,12 +1,12 @@
 # New ports collection makefile for:	pharmacy
-# Version required:			0.2.1
 # Date created:				02 October 1999
 # Whom:					Chris D. Faulhaber <jedgar@fxp.org>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	pharmacy-0.2.1
+PORTNAME=	pharmacy
+PORTVERSION=	0.2.1
 CATEGORIES=	devel gnome
 MASTER_SITES=	http://home.earthlink.net/~nawalker/pharmacy/
 

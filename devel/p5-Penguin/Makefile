@@ -1,16 +1,16 @@
 # New ports collection makefile for:	p5-Penguin
-# Version required:			3.00
 # Date created:				May 28th 1997
 # Whom:	      				James FitzGibbon <jfitz@FreeBSD.org>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	Penguin-3.00
-PKGNAME=	p5-Penguin-3.00
+PORTNAME=	Penguin
+PORTVERSION=	3.00
 CATEGORIES=	devel security perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Penguin
+PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	jfitz@FreeBSD.org
 

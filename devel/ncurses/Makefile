@@ -1,12 +1,12 @@
 # New ports collection makefile for:	ncurses
-# Version required:			4.2
 # Date created:				23 September 1997
 # Whom:					Andrey Zakhvatov
 #
 # $FreeBSD$
 #
 
-DISTNAME=		ncurses-4.2
+PORTNAME=		ncurses
+PORTVERSION=		4.2
 CATEGORIES=		devel
 MASTER_SITES=		${MASTER_SITE_GNU} \
 			ftp://ftp.clark.net/pub/dickey/ncurses/4.2/

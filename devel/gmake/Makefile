@@ -1,16 +1,16 @@
 # New ports collection makefile for:	GNU make
-# Version required:     3.78.1
 # Date created:		11 September 1994
 # Whom:			jkh
 #
 # $FreeBSD$
 #
 
-DISTNAME=       make-3.78.1
-PKGNAME=        g${DISTNAME}
+PORTNAME=	gmake
+PORTVERSION=	3.78.1
 CATEGORIES=	devel
 MASTER_SITES=   ${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	make
+DISTNAME=       make-${PORTVERSION}
 
 MAINTAINER=	jseger@FreeBSD.org
 

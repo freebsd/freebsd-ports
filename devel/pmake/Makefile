@@ -1,12 +1,12 @@
 # New ports collection makefile for:	pmake
-# Version required:	2.1.33
 # Date created:		12 November 1998
 # Whom:			steve
 #
 # $FreeBSD$
 #
 
-DISTNAME=	pmake-2.1.33
+PORTNAME=	pmake
+PORTVERSION=	2.1.33
 CATEGORIES=	devel
 MASTER_SITES=	ftp://ftp.icsi.berkeley.edu/pub/ai/stolcke/software/
 EXTRACT_SUFX=	.tar.Z

@@ -1,17 +1,17 @@
 # New ports collection makefile for:	gIDE
-# Version required:			0.1.7
 # Date created:				29 Jul 1998
 # Whom:					rom
 #
 # $FreeBSD$
 #
 
-DISTNAME= 	gIDE-0.1.7
-PKGNAME= 	gide-0.1.7
+PORTNAME= 	gide
+PORTVERSION= 	0.1.7
 CATEGORIES=	devel gnome
 MASTER_SITES=	${MASTER_SITE_GNOME} \
 		http://gide.pn.org/
 MASTER_SITE_SUBDIR=	unstable/sources/gIDE
+DISTNAME= 	gIDE-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 

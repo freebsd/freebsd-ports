@@ -1,16 +1,16 @@
 # New ports collection makefile for:	p5-gettext
-# Version required:		1.01
 # Date created:			1 February 2000
 # Whom:				Dmitry Sivachenko <dima@Chg.RU>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	gettext-1.01
-PKGNAME=	p5-gettext-1.01
+PORTNAME=	gettext
+PORTVERSION=	1.01
 CATEGORIES=	devel perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Locale
+PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	dima@Chg.RU
 

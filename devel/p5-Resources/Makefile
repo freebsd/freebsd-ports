@@ -1,16 +1,16 @@
 # New ports collection makefile for:	p5-Resources
-# Version required:			1.04
 # Date created:				October 24th 1996
 # Whom:	      				James FitzGibbon <jfitz@FreeBSD.org>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	Resources-1.04
-PKGNAME=	p5-Resources-1.04
+PORTNAME=	Resources
+PORTVERSION=	1.04
 CATEGORIES=	devel perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Resources
+PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	jfitz@FreeBSD.org
 

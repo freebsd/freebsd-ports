@@ -1,12 +1,12 @@
 # New ports collection makefile for:	popt
-# Version required:			1.4
 # Date Created:				29 Dec 1999
 # Whom:					Yuan-Chen Cheng <ycheng@sinica.edu.tw>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	popt-1.4
+PORTNAME=	popt
+PORTVERSION=	1.4
 CATEGORIES=	devel
 MASTER_SITES=	ftp://ftp.redhat.com/pub/redhat/current/SRPMS/SRPMS/ \
 		ftp://ftp.cdrom.com/pub/linux/redhat/current/SRPMS/SRPMS/

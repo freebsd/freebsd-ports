@@ -1,17 +1,16 @@
 # New ports collection makefile for:	Code Crusader
-# Version required:	2.1.3
 # Date created:		30 July 1999
 # Whom:			Davec <davec@unforgettable.com>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	code_crusader_source-2.1.4
-PKGNAME=	code_crusader-2.1.4
+PORTNAME=	code_crusader
+PORTVERSION=	2.1.4
 CATEGORIES=	devel
 MASTER_SITES=	ftp://ftp.its.caltech.edu/pub/jafl/programs/jcc/source/ \
 		ftp://ftp.its.caltech.edu/pub/jafl/jx/source-1.5.3/
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
+DISTFILES=	${PORTNAME}_source-${PORTVERSION}${EXTRACT_SUFX} \
 		JTree_source-1.1.7.tar.gz \
 		JX_source-1.5.3.tar.gz \
 		JToolBar_source-0.5.4.tar.gz

@@ -1,12 +1,12 @@
 # New ports collection makefile for:   libsigc++
-# Version required:    0.8.6
 # Date created:        27 January 2000
 # Whom:                Joe Lu <JoeLu@JoeLu.m8.ntu.edu.tw>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	libsigc++-0.8.6
+PORTNAME=	libsigc++
+PORTVERSION=	0.8.6
 CATEGORIES=	devel
 MASTER_SITES=	ftp://ftp.ece.ucdavis.edu/pub/kenelson/libsigc++/
 

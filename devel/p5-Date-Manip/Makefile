@@ -1,16 +1,16 @@
 # New ports collection makefile for:	p5-Date-Manip
-# Version required:                     5.*
 # Date created:				April 28th 1996
 # Whom:	      				James FitzGibbon <jfitz@FreeBSD.org>
 #
 # $FreeBSD$
 #
 
-DISTNAME=       DateManip-5.35
-PKGNAME=        p5-Date-Manip-5.35
+PORTNAME=	DateManip
+PORTVERSION=	5.35
 CATEGORIES=	devel perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Date
+PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	jfitz@FreeBSD.org
 

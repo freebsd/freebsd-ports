@@ -1,12 +1,12 @@
 # New ports collection makefile for:	asl
-# Version required:	1.41r8
 # Date created:		18 June 1997
 # Whom:			Thomas Gellekum <tg@freebsd.org>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	asl-1.41r8
+PORTNAME=	asl
+PORTVERSION=	1.41r8
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_SUNSITE} \
 		ftp://john.ccac.rwth-aachen.de/pub/as/source/c_version/

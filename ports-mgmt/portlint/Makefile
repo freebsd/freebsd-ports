@@ -6,7 +6,8 @@
 # $FreeBSD$
 #
 
-DISTNAME=       portlint-2.1.3
+PORTNAME=	portlint
+PORTVERSION=	2.1.3
 CATEGORIES=	devel
 DISTFILES=	# empty
 

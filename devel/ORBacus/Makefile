@@ -1,15 +1,15 @@
 # New ports collection makefile for:	ORBacus
 # Date created:		22 June 1998
 # Whom:			ejc@bazzle.com
-# Version required:	3.0
 #
 # $FreeBSD$
 #
 
-DISTNAME=	OB-3.2.1
-PKGNAME=	ORBacus-3.2.1
+PORTNAME=	ORBacus
+PORTVERSION=	3.2.1
 CATEGORIES=	devel
 MASTER_SITES=	ftp://ftp.ooc.com/pub/OB/3.2/
+DISTNAME=	OB-${PORTVERSION}
 
 MAINTAINER=	ejc@bazzle.com
 

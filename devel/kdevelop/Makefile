@@ -1,12 +1,12 @@
 # New ports collection makefile for:	kdevelop
-# Version required:	1.1 (final)
 # Date created:		12 Aug 1999
 # Whom:			Will Andrews <andrews@technologist.com>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	kdevelop-1.1
+PORTNAME=	kdevelop
+PORTVERSION=	1.1
 CATEGORIES=	devel
 MASTER_SITES=	ftp://fara.cs.uni-potsdam.de/pub/kdevelop/ \
 		ftp://129.187.206.68/pub/unix/ide/KDevelop/ \

@@ -1,16 +1,16 @@
 # New ports collection makefile for:	djgpp2 cross compiler kit
-# Version required:	2.01
 # Date created:		Sun Jun 22 16:57:39 EST 1997
 # Whom:			Joel Sutton <sutton@aardvark.apana.org.au>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	djcrx201
-PKGNAME=	crossgo32-djgpp2-2.01
+PORTNAME=	crossgo32-djgpp2
+PORTVERSION=	2.01
 CATEGORIES=	devel
 MASTER_SITES=	ftp://ftp.simtel.net/pub/simtelnet/gnu/djgpp/v2/old/ \
 		ftp://ftp.cdrom.com/pub/simtelnet/gnu/djgpp/v2/old/
+DISTNAME=	djcrx201
 
 MAINTAINER=	ports@FreeBSD.org
 

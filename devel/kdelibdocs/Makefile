@@ -1,17 +1,17 @@
 # New ports collection makefile for:   kdelibdocs
-# Version required:    1.1
 # Date created:        8 Feb 2000
 # Whom:                imura@FreeBSD.org
 #
 # $FreeBSD$
 #
 
-DISTNAME=	kdelibdocs-1.1
-PKGNAME?=	kdelibdocs-1.1
+PORTNAME?=	kdelibdocs
+PORTVERSION?=	1.1
 CATEGORIES=	devel kde
 MASTER_SITES=	ftp://129.187.206.68/pub/unix/ide/KDevelop/documentation/ \
 		ftp://gd.tuwien.ac.at/hci/KDevelop/documentation/ \
 		ftp://fara.cs.uni-potsdam.de/pub/kdevelop/documentation/
+DISTNAME=	kdelibdocs-1.1
 
 MAINTAINER=	imura@FreeBSD.org
 

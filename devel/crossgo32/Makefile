@@ -1,5 +1,4 @@
 # New ports collection makefile for:	crossgo32
-# Version required:	1.3
 # Date created:		6 Mar 97
 # Whom:			Pedro Giffuni <giffunip@asme.org>
 # Date updated: 	Sun Jun 22 16:11:40 EST 1997
@@ -8,12 +7,13 @@
 # $FreeBSD$
 #
 
-DISTNAME=	crosstree-1.3
-PKGNAME=	crossgo32-1.3
+PORTNAME=	crossgo32
+PORTVERSION=	1.3
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_LOCAL} \
 		ftp://sourceware.cygnus.com/pub/crossgcc/
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX} dosrel-1.0${EXTRACT_SUFX}
+DISTFILES=	crosstree-${PORTVERSION}${EXTRACT_SUFX} \
+		dosrel-1.0${EXTRACT_SUFX}
 
 MAINTAINER=	ports@FreeBSD.org
 

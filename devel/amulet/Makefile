@@ -1,14 +1,14 @@
 # New ports collection makefile for: amulet
-# Version required:   3.0
 # Date created:       26 July 1997
 # Whom:               Filip Bovyn (bovynf@awe.be)
 #
 # $FreeBSD$
 
-DISTNAME=	amulet
-PKGNAME=	amulet-3.0
+PORTNAME=	amulet
+PORTVERSION=	3.0
 CATEGORIES=	devel x11
 MASTER_SITES=	http://www.cs.cmu.edu/afs/cs/project/amulet/amulet3/
+DISTNAME=	${PORTNAME}
 EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=	bovynf@awe.be

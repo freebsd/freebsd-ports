@@ -1,12 +1,12 @@
 # New ports collection makefile for: mkcmd
-# Version required:    8.13d
 # Date created:        17 November 1999
 # Whom:                ajk@waterspout.com
 #
 # $FreeBSD$
 #
 
-DISTNAME=	mkcmd-8.13d
+PORTNAME=	mkcmd
+PORTVERSION=	8.13d
 CATEGORIES=	devel
 MASTER_SITES=	ftp://ftp.physics.purdue.edu/pub/pundits/
 EXTRACT_SUFX=	.tgz

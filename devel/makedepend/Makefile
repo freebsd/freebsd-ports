@@ -1,15 +1,15 @@
 # New ports collection makefile for:	makedepend
-# Version required:			95.07.05
 # Date created:				August 15th 1997
 # Whom:					Ian Vaudrey <i.vaudrey@bigfoot.com>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	cyrus-imapd-v1.5.14
-PKGNAME=	makedepend-95.07.05
+PORTNAME=	makedepend
+PORTVERSION=	1995.07.05
 CATEGORIES=	devel
 MASTER_SITES=	ftp://ftp.andrew.cmu.edu/pub/cyrus-mail/
+DISTNAME=	cyrus-imapd-v1.5.14
 
 MAINTAINER=	i.vaudrey@bigfoot.com
 

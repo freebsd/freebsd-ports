@@ -1,13 +1,13 @@
 # ex:ts=8
 # Ports collection makefile for:  cdecl
-# Version required: 0.0
 # Date created:			  Sat Sep 04, 1999
 # Whom:				  David O'Brien (obrien@NUXI.com)
 #
 # $FreeBSD$
 #
 
-DISTNAME=	cdecl-2.5
+PORTNAME=	cdecl
+PORTVERSION=	2.5
 CATEGORIES=	devel
 MASTER_SITES=	ftp://ftp.netsw.org/netsw/SoftEng/Lang/C/Tools/cdecl/  \
 		ftp://ftp.cc.gatech.edu/ac121/linux/devel/lang/c/  \

@@ -1,15 +1,15 @@
 # New ports collection makefile for:	lincvs
-# Version required:			0.2.3
 # Date created:				03 December 1999
 # Whom:					Chris D. Faulhaber <jedgar@fxp.org>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	lincvs_0.2.3
-PKGNAME=	lincvs-0.2.3
+PORTNAME=	lincvs
+PORTVERSION=	0.2.3
 CATEGORIES=	devel kde
 MASTER_SITES=	http://ppprs1.phy.tu-dresden.de/~trogisch/lincvs/download/
+DISTNAME=	${PORTNAME}_${PORTVERSION}
 
 MAINTAINER=	jedgar@FreeBSD.org
 

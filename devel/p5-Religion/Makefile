@@ -1,16 +1,16 @@
 # New ports collection makefile for:	p5-Religion
-# Version required:			1.04
 # Date created:				October 24th 1996
 # Whom:	      				James FitzGibbon <jfitz@FreeBSD.org>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	Religion-1.04
-PKGNAME=	p5-Religion-1.04
+PORTNAME=	Religion
+PORTVERSION=	1.04
 CATEGORIES=	devel perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Religion
+PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	jfitz@FreeBSD.org
 

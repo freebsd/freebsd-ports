@@ -1,12 +1,12 @@
 # New ports collection makefile for:	DOC++
 # Date created:		20 Dec 1998
 # Whom:			Ruslan@Shevchenko.Kiev.UA
-# Version required:	3.3.15
 #
 # $FreeBSD$
 #
 
-DISTNAME=	doc++-3.3.15
+PORTNAME=	doc++
+PORTVERSION=	3.3.15
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_SUNSITE} \
 		http://www.imaginator.com/doc++/

@@ -1,12 +1,12 @@
 # New ports collection makefile for:    linux_kdump
-# Version required:	1.2
 # Date created:         Nov 26 1997
 # Whom:                 msmith@FreeBSD.org
 #
 # $FreeBSD$
 #
 
-DISTNAME=	linux_kdump-1.4
+PORTNAME=	linux_kdump
+PORTVERSION=	1.4
 CATEGORIES=	devel linux
 MASTER_SITES=	http://people.FreeBSD.org/~marcel/			\
 		ftp://ftp.scc.nl/pub/FreeBSD/distfiles/

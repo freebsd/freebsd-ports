@@ -1,13 +1,12 @@
 # New ports collection makefile for:    linux_devtools
-# Version required:     6.1
 # Date created:         Jul 9, 1999
 # Whom:                 marcel@FreeBSD.org
 #
 # $FreeBSD$
 #
 
-DISTNAME=		linux_devtools
-PKGNAME=		linux_devtools-6.1
+PORTNAME=		linux_devtools
+PORTVERSION=		6.1
 CATEGORIES=		devel emulators linux
 MASTER_SITES=		${RPM_MIRRORS:S/__DIR__/${STDDIR}/g}
 DISTFILES=		${RPM_KERNEL_HEADERS} \

@@ -1,24 +1,24 @@
 # New ports collection makefile for: linuxthreads
-# Version required:	2.1.2
 # Date created:		14 Jan 1999
 # Whom:			Richard Seaman, Jr. <dick@tar.com>
 #
 # $FreeBSD$
 #
 
-DISTNAME=      glibc-linuxthreads-2.1.2
-PKGNAME=       linuxthreads-2.1.2
-CATEGORIES=    devel
-MASTER_SITES=  ${MASTER_SITE_GNU}
-MASTER_SITE_SUBDIR= glibc
-ONLY_FOR_ARCHS= i386
+PORTNAME=	linuxthreads
+PORTVERSION=	2.1.2
+CATEGORIES=	devel
+MASTER_SITES=	${MASTER_SITE_GNU}
+MASTER_SITE_SUBDIR=	glibc
+DISTNAME=	glibc-linuxthreads-${PORTVERSION}
 
 MAINTAINER=    jasone@freebsd.org
+
 
 .include <bsd.port.pre.mk>
 
 # This port only works on i386 right now.
-ONLY_FOR_ARCHS=i386
+ONLY_FOR_ARCHS=	i386
 
 .if ${OSVERSION} < 400015
 BROKEN="Requires FreeBSD 4.0 or newer"

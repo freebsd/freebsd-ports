@@ -1,16 +1,17 @@
 # New ports collection makefile for:	p5-PV
-# Version required:			1.0
 # Date created:				April 18th 1997
 # Whom:	      				James FitzGibbon <jfitz@FreeBSD.org>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	perlvision
-PKGNAME=	p5-PV-1.0
+PORTNAME=	PV
+PORTVERSION=	1.0
 CATEGORIES=	net perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	PV
+PKGNAMEPREFIX=	p5-
+DISTNAME=	perlvision
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	jfitz@FreeBSD.org

@@ -1,15 +1,15 @@
 # New ports collection makefile for:	libshhopt
-# Version required:			1.1.6
 # Date created:				11 April 1998
 # Whom:					Andrey Zakhvatov
 #
 # $FreeBSD$
 #
 
-DISTNAME=		shhopt-1.1.6
-PKGNAME=		libshhopt-1.1.6
+PORTNAME=		libshhopt
+PORTVERSION=		1.1.6
 CATEGORIES=		devel
 MASTER_SITES=		http://home.sol.no/~sverrehu/pub-unix/files/
+DISTNAME=		shhopt-${PORTVERSION}
 
 MAINTAINER=		obrien@FreeBSD.org
 

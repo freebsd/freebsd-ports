@@ -1,12 +1,12 @@
 # New ports collection makefile for:	fortran-utils
-# Version required:	1.1
 # Date created:		19 Dec 1999
 # Whom:			kris@FreeBSD.org
 #
 # $FreeBSD$
 #
 
-DISTNAME=	fortran-utils-1.1
+PORTNAME=	fortran-utils
+PORTVERSION=	1.1
 CATEGORIES=	devel
 MASTER_SITES=	http://people.FreeBSD.org/~kris/distfiles/
 

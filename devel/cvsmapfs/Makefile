@@ -1,12 +1,12 @@
 # New ports collection makefile for:	cvsmapfs
-# Version required:	1.3
 # Date created:		17 January 2000
 # Whom:			rip@pinetec.co.za
 #
 # $FreeBSD$
 #
 
-DISTNAME=	cvsmapfs-1.3
+PORTNAME=	cvsmapfs
+PORTVERSION=	1.3
 CATEGORIES=	devel
 MASTER_SITES=	ftp://ftp.pn.com/pub/bb/cvsmapfs/
 

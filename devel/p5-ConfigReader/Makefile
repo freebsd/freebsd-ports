@@ -1,16 +1,16 @@
 # New ports collection makefile for:	p5-ConfigReader
-# Version required:			0.5
 # Date created:				October 20th 1996
 # Whom:	      				James FitzGibbon <jfitz@FreeBSD.org>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	ConfigReader-0.5
-PKGNAME=	p5-ConfigReader-0.5
+PORTNAME=	ConfigReader
+PORTVERSION=	0.5
 CATEGORIES=	devel perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	ConfigReader
+PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	jfitz@FreeBSD.org
 

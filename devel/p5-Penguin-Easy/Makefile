@@ -1,16 +1,16 @@
 # New ports collection makefile for:	p5-Penguin-Easy
-# Version required:			1.1
 # Date created:				May 28th 1997
 # Whom:	      				James FitzGibbon <jfitz@FreeBSD.org>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	Penguin-Easy-1.1
-PKGNAME=	p5-Penguin-Easy-1.1
+PORTNAME=	Penguin-Easy
+PORTVERSION=	1.1
 CATEGORIES=	devel security perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Penguin
+PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	jfitz@FreeBSD.org
 

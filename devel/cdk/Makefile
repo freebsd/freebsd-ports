@@ -1,12 +1,12 @@
 # New ports collection makefile for:	cdk
-# Version required:			4.9.1
 # Date created:				6 May 1999
 # Whom:					Andrey Zakhvatov
 #
 # $FreeBSD$
 #
 
-DISTNAME=		cdk-4.9.1
+PORTNAME=		cdk
+PORTVERSION=		4.9.1
 CATEGORIES=		devel
 MASTER_SITES=		${MASTER_SITE_SUNSITE}
 MASTER_SITE_SUBDIR=	libs/ui

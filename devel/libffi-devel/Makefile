@@ -1,12 +1,12 @@
 # New ports collection makefile for:	libffi
-# Version required:		1.20
 # Date created:			14, June, 1998
 # Whom:				Horance Chou <horance@freedom.ie.cycu.edu.tw>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	libffi-1.20
+PORTNAME=	libffi
+PORTVERSION=	1.20
 CATEGORIES=	devel
 MASTER_SITES=	ftp://sourceware.cygnus.com/pub/libffi/
 

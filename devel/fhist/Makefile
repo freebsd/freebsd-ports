@@ -1,12 +1,12 @@
 # New ports collection makefile for: 	fhist
-# Version required: 			1.6
 # Date created:				Jan 05 2000
 # Whom: 				<jkoshy@freebsd.org>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	fhist-1.6
+PORTNAME=	fhist
+PORTVERSION=	1.6
 CATEGORIES=	devel
 MASTER_SITES=	http://www.canb.auug.org.au/~millerp/		\
 		ftp://ftp.agso.gov.au/pub/Aegis/ 		\
