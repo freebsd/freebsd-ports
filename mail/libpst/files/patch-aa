@@ -1,0 +1,11 @@
+--- libpst.c.orig      Fri Dec 13 20:32:35 2002
++++ libpst.c   Fri Dec 13 20:32:40 2002
+@@ -3,8 +3,6 @@
+ #include <time.h>
+ #include <string.h>
+ #include <ctype.h>
+-#include <getopt.h>
+-//#include <values.h>
+ #include <limits.h>
+
+ #include <errno.h>

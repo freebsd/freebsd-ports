@@ -1,0 +1,10 @@
+--- readpst.c.orig     Fri Dec 13 20:26:53 2002
++++ readpst.c  Fri Dec 13 20:27:06 2002
+@@ -3,7 +3,6 @@
+ #include <time.h>
+ #include <string.h>
+ #include <ctype.h>
+-#include <getopt.h>
+ #include <limits.h>
+
+ #ifndef WIN32

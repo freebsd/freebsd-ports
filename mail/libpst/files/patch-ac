@@ -1,0 +1,24 @@
+--- Makefile.orig	Fri Jan 17 18:09:52 2003
++++ Makefile	Fri Jan 17 18:11:11 2003
+@@ -1,3 +1,6 @@
++EPREFIX= $(PREFIX)
++BINDIR=	$(EPREFIX)/bin
++
+ all: readpst getidblock
+ 
+ libpst.o: libpst.c libpst.h define.h
+@@ -19,6 +22,14 @@
+ 
+ getidblock: getidblock.c define.h libpst.o common.h debug.o
+ 	gcc -Wall -Werror getidblock.c -g -o getidblock libpst.o debug.o timeconv.o
++
++install: installbin
++
++installbin: readpst
++	mkdir -p $(BINDIR)
++	cp readpst $(BINDIR)
++	strip $(BINDIR)/readpst
++	chmod 755 $(BINDIR)/readpst
+ 
+ clean: 
+ 	rm -f core readpst libpst.o timeconv.o libstrfunc.o debug.o getidblock *~ 
