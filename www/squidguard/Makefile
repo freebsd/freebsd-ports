@@ -6,43 +6,104 @@
 #
 
 PORTNAME=	squidGuard
-PORTVERSION=	1.1.4
+PORTVERSION=	1.2.0
 CATEGORIES=	www
 MASTER_SITES=	http://ftp.ost.eltele.no/pub/www/proxy/squidGuard/ \
 		ftp://ftp.ost.eltele.no/pub/www/proxy/squidGuard/
 
 MAINTAINER=	ports@tyfon.net
 
-BUILD_DEPENDS=	${LOCALBASE}/lib/libdb2.a:${PORTSDIR}/databases/db
+BUILD_DEPENDS=	${LOCALBASE}/lib/libdb3.so.2:${PORTSDIR}/databases/db3
 RUN_DEPENDS=	${LOCALBASE}/sbin/squid:${PORTSDIR}/www/squid24
 
 HAS_CONFIGURE=	yes
-CONFIGURE_ARGS=	--with-db-inc=${PREFIX}/include/db2 \
+CONFIGURE_ARGS=	--with-db-inc=${PREFIX}/include/db3 \
 		--with-db-lib=${PREFIX}/lib \
-		--with-sg-config=${PREFIX}/etc/squid/squidguard.conf \
+		--with-sg-config=${PREFIX}/etc/squid/${PORTNAME}.conf \
 		--with-sg-dbhome=${DATADIR} \
 		--with-sg-logdir=${LOGDIR}
 
-###	To change any of the below paths add it to your make arg
-.if !defined(DATADIR)
-DATADIR=	/var/db/${PORTNAME}
-.endif
-.if !defined(LOGDIR)
-LOGDIR=		/var/log
-.endif
+CFGINPUT=	files/sgcfg.in
 
+SQUID_UID?=	nobody
+SQUID_GID?=	nogroup
+
+DATADIR?=	/var/db/${PORTNAME}
+LOGDIR?=	/var/log
+
+PLIST:=		${WRKDIR}/PLIST
 PLIST_SUB=	DATADIR=${DATADIR}
 
-###	To optimize squidGuard add OPTIMIZE=YES to your make arg
+pre-fetch:
+	@if [ ${SQUID_UID} = "nobody" -o ${SQUID_GID} = "nogroup" ] ; then \
+		${ECHO_MSG} "===>  SQUID_UID is set to \"${SQUID_UID}\" and SQUID_GID is set to \"${SQUID_GID}\"." ; \
+		${ECHO_MSG} "      To change this specify them with your make arguments, e.g." ; \
+		${ECHO_MSG} "      make SQUID_UID=squid SQUID_GID=squid" ; \
+	fi
 
-.if defined(OPTIMIZE) && ${OPTIMIZE} == YES
-CC=		gcc
-CFLAGS=		-pipe -O6 -Wall -fomit-frame-pointer
+pre-install:
+	@${CP} ${PKGDIR}/pkg-plist ${PLIST}
+
+### 	Install blacklists
+
+.if !exists(${DATADIR})
+	@${ECHO_MSG} "===>   Installing blacklists"
+	@${MKDIR} -p ${DATADIR}
+	@${TAR} -C ${DATADIR} --exclude *.diff -pxzf ${WRKSRC}/samples/dest/blacklists.tar.gz
+	@${MV} -f ${DATADIR}/blacklists/README ${WRKDIR}/README.blacklists
+	@${MV} -f ${DATADIR}/blacklists/* ${DATADIR}/
+	@${RM} -r ${DATADIR}/blacklists
+	@${CHOWN} -R ${SQUID_UID}:${SQUID_GID} ${DATADIR}
+	@${CHMOD} -R 550 ${DATADIR}
+	@${CAT} ${PKGDIR}/pkg-plist.blacklist >> ${PLIST}
+	@${ECHO_MSG} "       -> Blacklists installed in: ${DATADIR}"
+.else
+	@${ECHO_MSG} "===>   Found existing datadirectory - skipping blacklist installation"
 .endif
+
+###     Create sample configuration file
+
+	@if [ ! -f "${PREFIX}/etc/squid/${PORTNAME}.conf" ] ; then \
+		${ECHO_MSG} "===>   Installing sample configuration file" ; \
+		BLACKLIST_DIRS=`(cd ${DATADIR} && ${FIND} . -type d | ${SED} '/^\.$$/d; s/^\.\//!/' | ${XARGS} ${ECHO_CMD})`; \
+		for I in `${ECHO_CMD} $${BLACKLIST_DIRS} | ${SED} 's/!//g'`; do \
+			${ECHO_CMD} "dest $${I} {"; \
+			${TEST} -f ${DATADIR}/$${I}/domains && \
+				${ECHO_CMD} "	domainlist $${I}/domains"; \
+			${TEST} -f ${DATADIR}/$${I}/urls && \
+				${ECHO_CMD} "	urllist $${I}/urls"; \
+			${TEST} -f ${DATADIR}/$${I}/expressions && \
+				${ECHO_CMD} "	expressionlist $${I}/expressions"; \
+			${ECHO_CMD} "}"; \
+		done > ${WRKDIR}/${PORTNAME}.conf.dests ; \
+		${SED} "s|DATADIR|${DATADIR}|;s|LOGDIR|${LOGDIR}|;s|BLACKLIST_DIRS|$${BLACKLIST_DIRS}|;/DEST_CLASSES/r ${WRKDIR}/${PORTNAME}.conf.dests" \
+			${CFGINPUT} | \
+			${SED} "/DEST_CLASSES/d" > \
+			${PREFIX}/etc/squid/${PORTNAME}.conf.sample ; \
+		${CHOWN} ${SQUID_UID}:${SQUID_GID} ${PREFIX}/etc/squid/${PORTNAME}.conf.sample ; \
+		${ECHO_MSG} "       -> Sample configuration file installed in: ${PREFIX}/etc/squid" ; \
+	else \
+		${ECHO_MSG} "===>   Existing configuration file found - sample not installed" ; \
+	fi
+
+###	Create blacklist databases (assume fresh install if we only have a sample config)
+
+	@if [ ! -f "${PREFIX}/etc/squid/${PORTNAME}.conf" -a \
+		-f "${PREFIX}/etc/squid/${PORTNAME}.conf.sample" ] ; then \
+		${ECHO_MSG} "===>   Creating blacklist databases" ; \
+		${WRKSRC}/src/${PORTNAME} -d -c ${PREFIX}/etc/squid/${PORTNAME}.conf.sample -C all ; \
+		${CHOWN} -R ${SQUID_UID}:${SQUID_GID} ${DATADIR} ; \
+		${FIND} ${DATADIR} -type f -name *.db -exec ${CHMOD} 660 {} \; ; \
+		${ECHO_MSG} "       -> Blacklist databases installed in: ${DATADIR}" ; \
+		${ECHO_MSG} "       -> Be sure to check \"${LOGDIR}/${PORTNAME}.log\" for any errors" ; \
+		${CHOWN} ${SQUID_UID}:${SQUID_GID} ${LOGDIR}/${PORTNAME}.log ; \
+	else \
+		${ECHO_MSG} "===>   Existing configuration file found - blacklist databases not created" ; \
+	fi
 
 post-install:
 
-###	Install documentation
+###     Install documentation
 
 .if !defined(NOPORTDOCS)
 	@${ECHO_MSG} "===>   Installing ${PORTNAME} documentation"
@@ -50,61 +111,20 @@ post-install:
 .for i in ${WRKSRC}/doc/*.txt ${WRKSRC}/doc/*.html ${WRKSRC}/doc/*.gif ${WRKSRC}/doc/README
 	@${INSTALL_DATA} ${WRKSRC}$i ${PREFIX}/share/doc/${PORTNAME}
 .endfor
+	@if [ -f ${WRKDIR}/README.blacklists ] ; then \
+		${INSTALL_DATA} ${WRKDIR}/README.blacklists ${PREFIX}/share/doc/${PORTNAME} ; \
+	fi
 	@${ECHO_MSG} "       -> Documentation installed in: ${PREFIX}/share/doc/${PORTNAME}"
 .endif
 
-### 	Install blacklist databases
-
-.if !exists(${DATADIR})
-	@${ECHO_MSG} "===>   Installing blacklist databases"
-	@${MKDIR} ${DATADIR}
-	@cd ${DATADIR} ; \
-	${TAR} fpxz ${WRKSRC}/samples/dest/blacklists.tar.gz ; \
-	for f in blacklists/* ; do \
-		${MV} $$f ${DATADIR} ; \
-	done
-	@if [ -d ${PREFIX}/share/doc/${PORTNAME} ] ; then \
-		${MV} -f ${DATADIR}/README \
-		${PREFIX}/share/doc/${PORTNAME}/README.blacklists ; \
-	else \
-		${RM} -f ${DATADIR}/README ; \
-	fi
-	@for d in ${DATADIR}/ads ${DATADIR}/agressive ${DATADIR}/drugs \
-			${DATADIR}/hacking ${DATADIR}/porn ; do \
-		cd $$d ; \
-		${RM} -f newdomains.* newurls.* ; \
-		${CHOWN} root:nobody * ; \
-		${CHMOD} 640 * ; \
-		cd ${DATADIR} ; \
-	done
-	@${RM} -rf ${DATADIR}/blacklists*
-	@${CHOWN} root:nobody ${DATADIR}/* ${DATADIR}
-	@${CHMOD} 750 ${DATADIR}/* ${DATADIR}
-	@${ECHO_MSG} "       -> Blacklists installed in: ${DATADIR}"
-.else
-	@${ECHO_MSG} "===>   Found existing datadirectory - skipping blacklist installation"
-.endif
-
-###	Install sample configuration file
-
-	@if [ ! -f ${PREFIX}/etc/squid/squidguard.conf ] ; then \
-		${ECHO_MSG} "===>   Installing sample configuration file" ; \
-		${SED} -e 's!%%DATADIR%%!${DATADIR}!' -e 's!%%LOGDIR%%!${LOGDIR}!' \
-			${WRKSRC}/samples/sample.conf > \
-			${PREFIX}/etc/squid/squidguard.conf.sample ; \
-		${CHOWN} root:nobody ${PREFIX}/etc/squid/squidguard.conf.sample ; \
-		${CHMOD} 640 ${PREFIX}/etc/squid/squidguard.conf.sample ; \
-		${ECHO_MSG} "       -> Sample configuration file installed in: ${PREFIX}/etc/squid" ; \
-	else \
-		${ECHO_MSG} "===>   Existing configuration file found - sample not installed" ; \
-	fi
-
 .if !exists(${LOGDIR})
 	@${MKDIR} ${LOGDIR}
+	@${CHOWN} -R ${SQUID_UID}:${SQUID_GID} ${LOGDIR}
 .endif
 
 ###	View short howto message
 
+	@${ECHO_MSG} " "
 	@${ECHO_MSG} "==================================================================="
 	@${ECHO_MSG} "= In order to activate ${PORTNAME} you have to edit squid.conf"
 	@${ECHO_MSG} "= To the contain \"redirect_program	${PREFIX}/bin/${PORTNAME}\""

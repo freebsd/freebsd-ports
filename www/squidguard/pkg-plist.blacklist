@@ -1,0 +1,58 @@
+@cwd %%DATADIR%%
+ads/domains
+ads/domains.db
+ads/urls
+ads/urls.db
+aggressive/domains
+aggressive/domains.db
+aggressive/urls
+aggressive/urls.db
+audio-video/domains
+audio-video/domains.db
+audio-video/urls
+audio-video/urls.db
+drugs/domains
+drugs/domains.db
+drugs/urls
+drugs/urls.db
+gambling/domains
+gambling/domains.db
+gambling/urls
+gambling/urls.db
+hacking/domains
+hacking/domains.db
+hacking/urls
+hacking/urls.db
+mail/domains
+mail/domains.db
+porn/domains
+porn/domains.db
+porn/urls
+porn/urls.db
+porn/expressions
+proxy/domains
+proxy/domains.db
+proxy/urls
+proxy/urls.db
+violence/domains
+violence/domains.db
+violence/urls
+violence/urls.db
+violence/expressions
+warez/domains
+warez/domains.db
+warez/urls
+warez/urls.db
+@dirrm ads
+@dirrm aggressive
+@dirrm audio-video
+@dirrm drugs
+@dirrm gambling
+@dirrm hacking
+@dirrm mail
+@dirrm porn
+@dirrm proxy
+@dirrm violence
+@dirrm warez
+@cwd /
+@dirrm %%DATADIR%%

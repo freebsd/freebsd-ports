@@ -1,38 +1,28 @@
---- configure.orig	Wed Mar 29 11:40:54 2000
-+++ configure		Fri Jun  2 08:44:14 2000
-@@ -1085,7 +1085,7 @@
-     fi
-   done
-   IFS="$ac_save_ifs"
--  test -z "$ac_cv_path_LYNX" && ac_cv_path_LYNX="/bin/false"
-+  test -z "$ac_cv_path_LYNX" && ac_cv_path_LYNX="/usr/bin/false"
-   ;;
- esac
- fi
-@@ -1217,14 +1217,14 @@
+--- configure.orig	Tue Dec 18 11:16:53 2001
++++ configure	Thu Dec 27 01:46:53 2001
+@@ -2402,13 +2402,13 @@
+ CPPFLAGS="$CPPFLAGS $db_inc"
  LDFLAGS="$LDFLAGS $db_lib"
  
- 
--echo $ac_n "checking for db_version in -ldb""... $ac_c" 1>&6
--echo "configure:1222: checking for db_version in -ldb" >&5
-+echo $ac_n "checking for db_version in -ldb2""... $ac_c" 1>&6
-+echo "configure:1222: checking for db_version in -ldb2" >&5
- ac_lib_var=`echo db'_'db_version | sed 'y%./+-%__p_%'`
- if eval "test \"`echo '$''{'ac_cv_lib_$ac_lib_var'+set}'`\" = set"; then
-   echo $ac_n "(cached) $ac_c" 1>&6
+-echo "$as_me:2405: checking for db_version in -ldb" >&5
+-echo $ECHO_N "checking for db_version in -ldb... $ECHO_C" >&6
++echo "$as_me:2405: checking for db_version in -ldb3" >&5
++echo $ECHO_N "checking for db_version in -ldb3... $ECHO_C" >&6
+ if test "${ac_cv_lib_db_db_version+set}" = set; then
+   echo $ECHO_N "(cached) $ECHO_C" >&6
  else
-   ac_save_LIBS="$LIBS"
+   ac_check_lib_save_LIBS=$LIBS
 -LIBS="-ldb  $LIBS"
-+LIBS="-ldb2  $LIBS"
- cat > conftest.$ac_ext <<EOF
- #line 1230 "configure"
++LIBS="-ldb3  $LIBS"
+ cat >conftest.$ac_ext <<_ACEOF
+ #line 2413 "configure"
  #include "confdefs.h"
-@@ -1258,7 +1258,7 @@
- #define $ac_tr_lib 1
+@@ -2456,7 +2456,7 @@
+ #define HAVE_LIBDB 1
  EOF
  
 -  LIBS="-ldb $LIBS"
-+  LIBS="-ldb2 $LIBS"
++  LIBS="-ldb3 $LIBS"
  
  else
-   echo "$ac_t""no" 1>&6
+ 
