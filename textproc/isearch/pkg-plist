@@ -1,8 +1,8 @@
 bin/Iindex
 bin/Isearch
 bin/Iutil
-share/doc/Isearch/QuickStart.html
-share/doc/Isearch/IsearchFeatures.html
-share/doc/Isearch/IsearchTutorial.html
-share/doc/Isearch/Isearch-cgi-tutorial.html
-@dirrm share/doc/Isearch
+%%PORTDOCS%%share/doc/isearch/QuickStart.html
+%%PORTDOCS%%share/doc/isearch/IsearchFeatures.html
+%%PORTDOCS%%share/doc/isearch/IsearchTutorial.html
+%%PORTDOCS%%share/doc/isearch/Isearch-cgi-tutorial.html
+%%PORTDOCS%%@dirrm share/doc/isearch
