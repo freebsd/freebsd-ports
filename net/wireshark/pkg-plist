@@ -1,9 +1,17 @@
 bin/editcap
 bin/ethereal
+bin/idl2eth
 bin/mergecap
 bin/tethereal
 bin/text2pcap
 etc/manuf
+etc/dictionary.dtd
+etc/dictionary.xml
+etc/mobileipv4.xml
+etc/nasreq.xml
+etc/sunping.xml
+lib/ethereal/plugins/%%PORTVERSION%%/coseventcomm.so
+lib/ethereal/plugins/%%PORTVERSION%%/cosnaming.so
 lib/ethereal/plugins/%%PORTVERSION%%/gryphon.so
 lib/ethereal/plugins/%%PORTVERSION%%/mgcp.so
 @dirrm lib/ethereal/plugins/%%PORTVERSION%%

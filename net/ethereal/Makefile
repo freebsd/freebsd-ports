@@ -6,13 +6,13 @@
 #
 
 PORTNAME=	ethereal
-PORTVERSION=	0.8.19
-PORTREVISION=	1
+PORTVERSION=	0.9.0
 CATEGORIES=	net ipv6
-MASTER_SITES=	ftp://ftp.ethereal.com/pub/ethereal/ \
-		ftp://gd.tuwien.ac.at/infosys/security/ethereal/ \
-		ftp://ftp.sunet.se/pub/network/monitoring/ethereal/ \
-		ftp://the.wiretapped.net/pub/security/packet-sniffing/ethereal/
+MASTER_SITES=	ftp://ftp.ethereal.com/pub/ethereal/%SUBDIR%/ \
+		ftp://gd.tuwien.ac.at/infosys/security/ethereal/%SUBDIR%/ \
+		ftp://ftp.sunet.se/pub/network/monitoring/ethereal/%SUBDIR%/ \
+		ftp://the.wiretapped.net/pub/security/packet-sniffing/ethereal/%SUBDIR%/
+MASTER_SITE_SUBDIR=	. old-versions
 
 MAINTAINER=	billf@FreeBSD.org
 
@@ -34,7 +34,8 @@ CONFIGURE_ARGS+=	--enable-snmp=no
 .endif
 PLIST_SUB=	PORTVERSION=${PORTVERSION}
 
-MAN1=		ethereal.1 tethereal.1 editcap.1 mergecap.1 text2pcap.1
+MAN1=		editcap.1 ethereal.1 idl2eth.1 mergecap.1 tethereal.1 \
+		text2pcap.1
 
 pre-install:
 .for i in ${MAN1}
