@@ -19,7 +19,7 @@ TCL_STUB_LIB_SPEC!=	. ${PREFIX}/lib/tcl${TCL_VER}/tclConfig.sh; \
 TCL_STUB_LIB_SPEC=	-L${PREFIX}/lib -ltclstub${TCL_VER:S/.//}
 .endif
 
-LDADD		= -L${PREFIX}/lib -lgd -lttf -lpng -lz -lm ${TCL_STUB_LIB_SPEC}
+LDADD		= -L${PREFIX}/lib -lgd -lpng -lz -lm ${TCL_STUB_LIB_SPEC}
 
 CFLAGS		+=-I${PREFIX}/include/tcl${TCL_VER} -I${PREFIX}/include/gd
 CFLAGS		+=-DNDEBUG -Wall -I. -DUSE_TCL_STUBS -I${PREFIX}/include
