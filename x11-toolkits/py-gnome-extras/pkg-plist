@@ -62,10 +62,15 @@ share/pygtk/2.0/defs/print.defs
 share/pygtk/2.0/defs/printui.defs
 share/pygtk/2.0/defs/trayicon.defs
 share/pygtk/2.0/defs/wnck.defs
+%%PORTDOCS%%@dirrm share/examples/py-gnome/nautilusburn
 %%PORTDOCS%%@dirrm share/examples/py-gnome/gtksourceview
+%%PORTDOCS%%@dirrm share/examples/py-gnome/gtkspell
 %%PORTDOCS%%@dirrm share/examples/py-gnome/gtkhtml2
 %%PORTDOCS%%@dirrm share/examples/py-gnome/gnomeprint
+%%PORTDOCS%%@dirrm share/examples/py-gnome/gdl
 %%PORTDOCS%%@dirrm share/examples/py-gnome/egg/recent
 %%PORTDOCS%%@dirrm share/examples/py-gnome/egg
 %%PORTDOCS%%@dirrm share/examples/py-gnome/applet
 @dirrm %%PYTHON_SITELIBDIR%%/gtk-2.0/totem
+@dirrm %%PYTHON_SITELIBDIR%%/gtk-2.0/gnomeprint
+@dirrm %%PYTHON_SITELIBDIR%%/gtk-2.0/egg

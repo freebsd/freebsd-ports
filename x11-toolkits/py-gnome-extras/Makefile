@@ -7,7 +7,7 @@
 
 PORTNAME=	gnome
 PORTVERSION=	2.10.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	x11-toolkits python gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/gnome-python-extras/${PORTVERSION:C/..$//}
@@ -73,8 +73,6 @@ post-install:
 	${MKDIR} ${EG_DST_DIR}
 	${TAR} -C ${EG_SRC_DIR} -cf - . | ${TAR} -C ${EG_DST_DIR} -xf -
 	${CHOWN} -R ${BINOWN}:${BINGRP} ${EG_DST_DIR}
-	${FIND} ${EG_DST_DIR} -type d -print | ${XARGS} ${CHMOD} 0555
-	${FIND} ${EG_DST_DIR} -type f -print | ${XARGS} ${CHMOD} 0444
 .endif
 
 pre-everything::
