@@ -10,7 +10,7 @@ PORTVERSION?=	${ACE_VERSION}+${TAO_VERSION}
 CATEGORIES=	devel
 MASTER_SITES=	http://deuce.doc.wustl.edu/old_distribution/ \
 		http://www.navicon.dk/mirrors/ace/deuce.doc.wustl.edu/old_distribution/
-DISTNAME?=	ACE-${ACE_VERSION}+TAO-${TAO_VERSION}
+DISTNAME=	ACE-${ACE_VERSION}+TAO-${TAO_VERSION}
 
 MAINTAINER=	sem@ciam.ru
 COMMENT?=	The Adaptive Communication Environment (ACE) with The ACE ORB (TAO)
@@ -27,7 +27,7 @@ INSTALLS_SHLIB=	yes
 
 TESTS=		"@comment "
 .if defined(WITH_TESTS)
-USE_PERL5=	yes
+USE_PERL5_BUILD=	yes
 ACE_TESTS_COOKIE=	${WRKDIR}/.ace_tests_done
 TAO_TESTS_COOKIE=	${WRKDIR}/.tao_tests_done
 TESTS=		""
@@ -150,8 +150,13 @@ do-install:
 
 	@${ECHO_MSG} "Installing libraries into ${PREFIX}/lib"; \
 	cd ${ACE_ROOT}/ace; \
-	${FIND} . -maxdepth 1 -name "lib*.so" -not -name "*Test*" \
-		-exec ${INSTALL_DATA} \{\} ${PREFIX}/lib \;
+	for f in `${FIND} . -maxdepth 1 -name "lib*.so.${ACE_VERSION}" -o \
+		-name "lib*.so.${TAO_VERSION}" -not -name "*Test*"`; do \
+			${INSTALL_DATA} $${f} ${PREFIX}/lib; \
+			${LN} -fs ${PREFIX}/lib/$${f} \
+				`${ECHO_CMD} ${PREFIX}/lib/$${f} | \
+				 ${SED} -e 's/.${ACE_VERSION}//;s/.${TAO_VERSION}//'`; \
+	done
 
 	@${ECHO_MSG} "Installing executables into ${PREFIX}/bin"; \
 	${INSTALL_PROGRAM} ${ACE_ROOT}/bin/gperf ${PREFIX}/bin
