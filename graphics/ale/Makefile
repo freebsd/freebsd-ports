@@ -18,6 +18,9 @@ PLIST_FILES=	bin/ale
 USE_GMAKE=	yes
 USE_REINPLACE=	yes
 
+OPTIONS=	IMAGEMAGICK "ImageMagick Support" on \
+		FFTW3 "FFTW3 Support" on
+
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 500000
@@ -32,14 +35,6 @@ MAKE_ARGS+=	IMAGEMAGICK=1
 .if !defined(WITHOUT_FFTW3)
 LIB_DEPENDS+=	fftw3.3:${PORTSDIR}/math/fftw3
 MAKE_ARGS+=	FFTW=1
-.endif
-
-pre-everything::
-.if !defined(WITHOUT_IMAGEMAGICK)
-	@${ECHO_MSG} "===> Disable ImageMagick Support by defining WITHOUT_IMAGEMAGICK"
-.endif
-.if !defined(WITHOUT_FFTW3)
-	@${ECHO_MSG} "===> Disable FFTW3 Support by defining WITHOUT_FFTW3"
 .endif
 
 post-patch:
