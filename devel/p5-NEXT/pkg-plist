@@ -1,0 +1,3 @@
+%%SITE_PERL%%/NEXT.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/NEXT/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/NEXT
