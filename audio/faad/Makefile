@@ -14,7 +14,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	faac
 
 MAINTAINER=	ahze@FreeBSD.org
-COMMENT=	A LC, MAIN and LTP profile, MPEG2 and MPEG-4 AAC decoder
+COMMENT=	MPEG-2 and MPEG-4 AAC audio decoder
 
 LIB_DEPENDS=	mp4v2.0:${PORTSDIR}/multimedia/mpeg4ip-libmp4v2 \
 		sndfile.1:${PORTSDIR}/audio/libsndfile
