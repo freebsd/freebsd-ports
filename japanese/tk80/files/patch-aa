@@ -1,14 +1,14 @@
---- configure.in.ORIG	Tue Jan  6 13:23:19 1998
-+++ configure.in	Tue Jan  6 13:24:45 1998
-@@ -9,6 +9,7 @@
+--- configure.in.ORIG	Fri Sep 25 13:59:42 1998
++++ configure.in	Fri Sep 25 14:07:23 1998
+@@ -10,6 +10,7 @@
  TK_MINOR_VERSION=0
- TK_PATCH_LEVEL="p2"
+ TK_PATCH_LEVEL=".3"
  VERSION=${TK_VERSION}
 +TCL_L10N=jp
  
  if test "${prefix}" = "NONE"; then
      prefix=/usr/local
-@@ -40,8 +41,8 @@
+@@ -51,8 +52,8 @@
  if test ! -d $TCL_BIN_DIR; then
      AC_MSG_ERROR(Tcl directory $TCL_BIN_DIR doesn't exist)
  fi
@@ -19,20 +19,34 @@
  fi
  
  #--------------------------------------------------------------------
-@@ -60,6 +61,8 @@
- DL_LIBS=$TCL_DL_LIBS
- LD_FLAGS=$TCL_LD_FLAGS
+@@ -86,6 +87,8 @@
+ CFLAGS_DEBUG=$TCL_CFLAGS_DEBUG
+ CFLAGS_OPTIMIZE=$TCL_CFLAGS_OPTIMIZE
  
 +TCL_SRC_DIR=${prefix}/include/tcl${TCL_VERSION}
 +
  LIB_RUNTIME_DIR='${LIB_RUNTIME_DIR}'
  
  # If Tcl and Tk are installed in different places, adjust the library
-@@ -387,8 +390,10 @@
+@@ -535,7 +538,11 @@
+     TK_SHARED_BUILD=1
+     TK_SHLIB_CFLAGS="${SHLIB_CFLAGS}"
+     TK_LIB_FILE=libtk${TCL_SHARED_LIB_SUFFIX}
++    if test "X$PORTOBJFORMAT" = "Xelf"; then
++    MAKE_LIB="\${SHLIB_LD} -o \${TK_LIB_FILE} -Wl,-soname,\${TK_LIB_FILE} \${OBJS} \$(TK_LD_SEARCH_FLAGS) ${SHLIB_LD_LIBS}"
++    else
+     MAKE_LIB="\${SHLIB_LD} -o \${TK_LIB_FILE} \${OBJS} \$(TK_LD_SEARCH_FLAGS) ${SHLIB_LD_LIBS}"
++    fi
+     RANLIB=":"
+ else
+     TK_SHARED_BUILD=0
+@@ -576,10 +583,12 @@
  AC_SUBST(SHLIB_VERSION)
  AC_SUBST(TCL_BIN_DIR)
  AC_SUBST(TCL_BUILD_LIB_SPEC)
 +AC_SUBST(TCL_LIB_SPEC)
+ AC_SUBST(TCL_DBGX)
+ AC_SUBST(TCL_LIB_FLAG)
  AC_SUBST(TCL_SRC_DIR)
  AC_SUBST(TCL_VERSION)
 +AC_SUBST(TCL_L10N)
