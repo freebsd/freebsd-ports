@@ -1,0 +1,16 @@
+AWStats is a short for Advanced Web Statistics. It's a free tool that 
+generates advanced web server access statistics graphically. 
+
+This web server log analyzer works as a CGI or from command line and 
+shows you all possible information your log contains, in few graphical 
+web pages. It uses a partial information file to be able to process 
+large log files, often and quickly. 
+
+It can analyze log files from IIS (W3C log format), Apache log files 
+(NCSA combined/XLF/ELF log format or common/CLF log format), WebStar 
+and some other web, proxy or WAP servers (and even some FTP servers).
+
+WWW: http://awstats.sourceforge.net
+
+- Munish Chopra
+mchopra@engmail.uwaterloo.ca

@@ -25,6 +25,7 @@
     SUBDIR += aswedit
     SUBDIR += august
     SUBDIR += auth_ldap
+    SUBDIR += awstats
     SUBDIR += bacon
     SUBDIR += bk2site
     SUBDIR += bkmrkconv
