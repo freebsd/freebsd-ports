@@ -240,7 +240,6 @@
     SUBDIR += openam
     SUBDIR += opengatekeeper
     SUBDIR += openh323
-    SUBDIR += openh323_1.1
     SUBDIR += openh323proxy
     SUBDIR += openldap
     SUBDIR += openldap2
