@@ -1,0 +1,19 @@
+@comment $FreeBSD$
+@unexec if cmp -s %D/etc/gnatsweb/gnatsweb-site.pl %D/etc/gnatsweb/gnatsweb-site.pl.default; then rm -f %D/etc/gnatsweb/gnatsweb-site.pl; fi
+etc/gnatsweb/gnatsweb-site.pl.default
+@exec [ -f %B/gnatsweb-site.pl ] || cp %B/%f %B/gnatsweb-site.pl
+@unexec rmdir %D/etc/gnatsweb 2>/dev/null || true
+%%CGI_DIR%%/gnatsweb.pl
+%%CGI_DIR%%/gnatsweb-site.pl
+%%CGI_DIR%%/gnatsweb.html
+%%PORTDOCS%%%%DOCSDIR%%/CUSTOMIZE
+%%PORTDOCS%%%%DOCSDIR%%/CUSTOMIZE.cb
+%%PORTDOCS%%%%DOCSDIR%%/CUSTOMIZE.vars
+%%PORTDOCS%%%%DOCSDIR%%/ChangeLog
+%%PORTDOCS%%%%DOCSDIR%%/INSTALL
+%%PORTDOCS%%%%DOCSDIR%%/NEWS
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/TROUBLESHOOTING
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
+%%PORTDOCS%%%%EXAMPLESDIR%%/gnatsweb-site-example.pl
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%
