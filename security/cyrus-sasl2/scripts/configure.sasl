@@ -21,8 +21,7 @@ if [ "${BATCH}" ]; then
 		set ${OPTIONS}
 	fi
 else
-
-	if [ "x${ENABLE_DB3}" = "xYES" -o -f ${PREFIX}/lib/libdb3.so.1 ] ; then
+	if [ "x${ENABLE_DB3}" = "xYES" -o -f ${PREFIX}/lib/libdb3.so ] ; then
 		SET_DB3="ON"
 	else
 		SET_DB3="OFF"
