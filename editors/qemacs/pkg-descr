@@ -1,0 +1,24 @@
+QEmacs has features other big editors lack:
+* Full screen editor with an Emacs look and feel with all Emacs common features:
+multi-buffer, multi-window, command mode, universal argument, keyboard macros, 
+config file with C like syntax, minibuffer with completion and history. 
+* Can edit files of hundreds of Megabytes without being slow by using a highly 
+optimized internal representation and by mmaping the file. 
+* Full Unicode support, including multi charset handling (8859-x, UTF8, SJIS, 
+EUC-JP, ...) and bidirectional editing respecting the Unicode bidi algorithm. 
+Arabic and Indic scripts handling (in progress). 
+* WYSIWYG HTML/XML/CSS2 mode graphical editing. Also supports lynx like 
+rendering on VT100 terminals. 
+* WYSIWYG DocBook mode based on XML/CSS2 renderer. 
+* C mode: coloring with immediate update. Emacs like auto-indent. 
+* Shell mode: colorized VT100 emulation so that your shell work exactly as you 
+expect. Compile mode with next/prev error. 
+* Input methods for most languages, including Chinese (input methods come from 
+the Yudit editor). 
+* Hexadecimal editing mode with insertion and block commands. Unicode hexa 
+editing is also supported. 
+* Works on any VT100 terminals without termcap. UTF8 VT100 support included 
+with double width glyphs. 
+* Small! Full version (including HTML/XML/CSS2/DocBook rendering and all 
+charsets): 200KB big. Basic version (without bidir/unicode 
+scripts/input/X11/C/Shell/HTML/dired): 49KB. 
