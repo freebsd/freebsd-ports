@@ -8,7 +8,8 @@
 PORTNAME=	libcache
 PORTVERSION=	1.1.0
 CATEGORIES=	devel
-MASTER_SITES=	http://www.afro-productions.com/libcache/
+# mastersite disappeared in August 2003
+MASTER_SITES=	# http://www.afro-productions.com/libcache/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	C library that allows a programmer to parse sentences easier
