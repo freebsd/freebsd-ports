@@ -30,6 +30,7 @@ USE_BISON=	yes
 USE_GMAKE=	yes
 HAS_CONFIGURE=	yes
 USE_XLIB=	yes
+USE_AUTOCONF_VER=	213
 # magic wand: set INSTALL to some absurd value, or else
 # mozart's configure will not find the right install
 # when configuring as root.
@@ -52,9 +53,12 @@ pre-extract:
 	@${ECHO}
 
 post-patch:
-	cd ${WRKSRC}/contrib/gtk && autoconf213 -l ${WRKSRC}
-	cd ${WRKSRC}/platform/emulator && autoconf213 -l ${WRKSRC}
-	cd ${WRKSRC}/platform/tools/gump/ozflex && autoconf213 -l ${WRKSRC}
+	cd ${WRKSRC}/contrib/gtk \
+		&& ${AUTOCONF} ${AUTOCONF_ARGS} -l ${WRKSRC}
+	cd ${WRKSRC}/platform/emulator \
+		&& ${AUTOCONF} ${AUTOCONF_ARGS} -l ${WRKSRC}
+	cd ${WRKSRC}/platform/tools/gump/ozflex \
+		&& ${AUTOCONF} ${AUTOCONF_ARGS} -l ${WRKSRC}
 
 post-install:
 .if !defined(NOPORTDOCS)
