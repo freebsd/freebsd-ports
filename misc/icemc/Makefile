@@ -6,26 +6,26 @@
 #
 
 PORTNAME=	icemc
-PORTVERSION=	0.2.3
+PORTVERSION=	0.2.4
 CATEGORIES=	x11-wm
 MASTER_SITES=	http://www.algorithm.at/comp/icemc/
 
 MAINTAINER=	adamw@FreeBSD.org
 COMMENT=	QT-based menu editor for IceWM
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 500113
-BROKEN=         "Does not compile"
-.endif
-
 USE_X_PREFIX=	yes
 USE_QT_VER=	3
 
-MAKE_ENV=	QTCPPFLAGS="${QTCPPFLAGS} ${PTHREAD_CFLAGS}" \
-		QTCFGLIBS="${QTCFGLIBS} ${PTHREAD_LIBS}" MOC="${MOC}" LIBQT="-lqt-mt"
+MAKE_ARGS=     QTDIR="${X11BASE}" DESTDIR="${PREFIX}" \
+               INCPATH="${QTCPPFLAGS} ${PTHREAD_CFLAGS}" \
+               LFLAGS="${QTCFGLIBS} ${PTHREAD_LIBS}" \
+               CC="${CC}" CXX="${CXX}" \
+               CFLAGS="${CFLAGS} -DNO_DEBUG" \
+               CXXFLAGS="${CXXFLAGS} -DNO_DEBUG" \
+               LINK="${CXX}" LIBS="-lqt-mt" MOC="${MOC}"
+
 
 do-install:
-	@${INSTALL_PROGRAM} ${WRKSRC}/icemc ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/icemc ${PREFIX}/bin
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
