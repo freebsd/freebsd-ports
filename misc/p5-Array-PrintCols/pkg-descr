@@ -1,0 +1,5 @@
+Array::PrintCols is a Perl 5 module which defines a subroutine to
+print arrays of elements in alphabetically, vertically sorted columns. 
+Optional arguments can be given to control either the width or number of
+the columns, the total width of the output, and the amount of
+indentation. 
