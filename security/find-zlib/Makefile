@@ -18,7 +18,7 @@ COMMENT=	Scans files for statically linked zlib (libz) code
 
 PLIST_FILES=	bin/find-zlib
 NO_BUILD=	none
-USE_PERL5=	yes
+USE_PERL5_RUN=	yes
 
 do-install:
 	${INSTALL_SCRIPT} ${DISTDIR}/${DISTNAME} ${PREFIX}/bin
