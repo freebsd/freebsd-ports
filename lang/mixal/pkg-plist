@@ -6,3 +6,4 @@ share/doc/mix/opcodes
 share/doc/mix/elevator.mix
 share/doc/mix/mystery.mix
 share/doc/mix/prime.mix
+@dirrm share/doc/mix
