@@ -8,9 +8,10 @@
 PORTNAME=	axyftp
 PORTVERSION=	0.5.1
 CATEGORIES=	ftp
-MASTER_SITES=	ftp://ftp.wxftp.seul.org/pub/wxftp/${PORTVERSION}/ \
-		ftp://ftp.sunsite.auc.dk/disk2/linuxberg.com/files/x11/network/ \
-		ftp://ftp.bitcon.no/.10/linux/linuxberg/files/x11/network/
+MASTER_SITES=	ftp://ftp.bitchx.com/pub/shareware/ \
+		ftp://ftp.netsw.org/net/ip/filetrans/ftp/axyftp/ \
+		ftp://ftp.mayn.de/pub/unix/network/ftp/ \
+#		ftp://ftp.wxftp.seul.org/pub/wxftp/ # distfile changed there (md5sum)
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	X Window System FTP client, with WSftp-like UI
