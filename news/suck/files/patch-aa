@@ -1,5 +1,5 @@
---- Makefile.in.orig	Tue Aug 19 11:33:09 1997
-+++ Makefile.in	Sun Oct  5 13:59:33 1997
+--- Makefile.in.orig	Sun Oct 19 03:31:18 1997
++++ Makefile.in	Wed Oct 29 17:51:26 1997
 @@ -7,7 +7,7 @@
  
  # Step1: Define the location of the History file(s)
@@ -9,7 +9,7 @@
  
  # Step 2: Define ONE of the CHKHISTORY 
  CHKHISTORY=chkhistory.o	# use flat file history routine
-@@ -128,7 +128,7 @@
+@@ -129,7 +129,7 @@
  
  install_bin: suck rpost testhost lmove
  	- mkdir -p $(bindir)
@@ -18,12 +18,12 @@
  	$(INSTALL_PROGRAM) suck $(bindir)/suck
  	$(INSTALL_PROGRAM) rpost $(bindir)/rpost
  	$(INSTALL_PROGRAM) testhost $(bindir)/testhost
-@@ -152,7 +152,7 @@
+@@ -153,7 +153,7 @@
  	$(MAKE) -C $(IMAN)
  
- install_lpost: lpost
+ install_lpost: lpost $(MAN)/lpost.1
 -	- strip -s lpost
 +	- strip -x lpost
  	$(INSTALL_PROGRAM) lpost $(bindir)/lpost
+ 	$(INSTALL_DATA) $(MAN)/lpost.1 $(mandir)/lpost.$(manext)
  
- installall: install lpost
