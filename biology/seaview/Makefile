@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	seaview
-PORTVERSION=	2003.01.21
+PORTVERSION=	2003.11.17
 CATEGORIES=	biology
 MASTER_SITES=	ftp://pbil.univ-lyon1.fr/pub/mol_phylogeny/seaview/
 DISTNAME=	${PORTNAME}
@@ -17,25 +17,20 @@ COMMENT=	Multiple DNA/protein sequence alignment editor
 
 LIB_DEPENDS=	fltk.1:${PORTSDIR}/x11-toolkits/fltk
 
-BROKEN=		Bad checksum
-
-USE_X_PREFIX=	YES
-NO_WRKSUBDIR=	YES
+USE_X_PREFIX=	yes
+NO_WRKSUBDIR=	yes
 EXTRACT_CMD=		${TAR}
 EXTRACT_BEFORE_ARGS=	-xf
 EXTRACT_AFTER_ARGS=	# empty
-MAKEFILE=	makefile
+ALL_TARGET=	${PORTNAME}
 
 CFLAGS+=	-D HAVE_DIRENT_H \
 		-D DEFAULT_HELPFILE=${PREFIX}/lib/X11/seaview/seaview.help
 
 do-install:
-	@ ${INSTALL_PROGRAM} ${WRKSRC}/${DISTNAME} ${PREFIX}/bin
-	@ ${INSTALL_SCRIPT} ${WRKSRC}/seaview_align.sh ${PREFIX}/bin
-	@ (${MKDIR} ${PREFIX}/lib/X11/seaview)
-	@ ${INSTALL_DATA} ${WRKSRC}/seaview.help ${PREFIX}/lib/X11/seaview
-
-post-install:
-	@ ${CAT} ${DESCR}
+	@${INSTALL_PROGRAM} ${WRKSRC}/${DISTNAME} ${PREFIX}/bin
+	@${INSTALL_SCRIPT} ${WRKSRC}/seaview_align.sh ${PREFIX}/bin
+	@${MKDIR} ${PREFIX}/lib/X11/seaview
+	@${INSTALL_DATA} ${WRKSRC}/seaview.help ${PREFIX}/lib/X11/seaview
 
 .include <bsd.port.mk>
