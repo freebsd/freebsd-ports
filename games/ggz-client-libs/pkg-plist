@@ -1,11 +1,10 @@
-etc/ggz.modules
 bin/ggz-config
 include/ggzcore.h
-include/ggzmod.h
 include/ggzmod-ggz.h
+include/ggzmod.h
 lib/libggzcore.a
 lib/libggzcore.so
-lib/libggzcore.so.3
+lib/libggzcore.so.4
 lib/libggzmod.a
 lib/libggzmod.so
 lib/libggzmod.so.1
