@@ -17,6 +17,7 @@ COMMENT=	Utilities and library to manipulate NTFS partitions
 GNU_CONFIGURE=	yes
 USE_GCC=	3.3
 USE_REINPLACE=	yes
+USE_GETOPT_LONG=	yes
 
 MAN8=		mkntfs.8	\
 		ntfscat.8	\
