@@ -1,5 +1,5 @@
---- coss/lifecycle/Makefile.orig	Fri Feb 14 13:55:55 2003
-+++ coss/lifecycle/Makefile	Fri Jul  4 12:33:15 2003
+--- coss/lifecycle/Makefile.orig	Mon Oct 13 13:49:23 2003
++++ coss/lifecycle/Makefile	Sun Feb 15 21:15:07 2004
 @@ -101,6 +101,8 @@
  	$(CXX) $(CXXFLAGS) $(LDFLAGS) genericfactory.o $(LDLIBS) -o genericfactory
  	$(POSTLD) $@
@@ -9,6 +9,19 @@
  CosLifeCycle.h CosLifeCycle.cc: \
  		../../include/coss/CosLifeCycle.idl $(IDL)
  	$(IDL) $(IDLFLAGS) --name CosLifeCycle \
+@@ -149,6 +151,12 @@
+ 	$(IBINCMD) lifecontainmentd $(INSTDIR)/bin
+ 	$(IDIRCMD) $(INSTDIR)/bin
+ 	$(IBINCMD) lifereferenced $(INSTDIR)/bin
++	$(IDIRCMD) $(INSTDIR)/bin
++	$(IBINCMD) lifecriteriad $(INSTDIR)/bin
++	$(IDIRCMD) $(INSTDIR)/bin
++	$(IBINCMD) factoryfinderd $(INSTDIR)/bin
++	$(IDIRCMD) $(INSTDIR)/bin
++	$(IBINCMD) genericfactory $(INSTDIR)/bin
+ 
+ 
+ ifeq (.depend, $(wildcard .depend))
 --- coss/lifecycle/FactoryFinder_impl.cc.orig	Fri Jul  4 14:44:09 2003
 +++ coss/lifecycle/FactoryFinder_impl.cc	Fri Jul  4 16:44:03 2003
 @@ -28,6 +28,8 @@

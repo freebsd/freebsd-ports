@@ -7,7 +7,7 @@
 
 PORTNAME=	mico
 PORTVERSION=	2.3.11
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel
 MASTER_SITES=	http://www.mico.org/:src \
 		http://www.ciam.ru/~sem/FreeBSD/:docs
@@ -23,12 +23,38 @@ GNU_CONFIGURE=		yes
 USE_REINPLACE=		yes
 USE_GMAKE=		yes
 USE_AUTOCONF_VER=	253
+CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
+
+OPTIONS=	SERVICES "Build with all services, not only ORB" on \
+		SSL "Build with SSL" on \
+		X11 "Build with X11 support" off \
+		QT "Build with QT support" off \
+		GTK "Build with GTK support" off \
+		SYSTEM_GCC "Build with system gcc. (Only for 4.x)" off \
+		DEBUG "Build debug version" off
+
+# stolen from bsd.port.mk (for OPTIONS works)
+PORT_DBDIR?=	/var/db/ports
+
+OPTIONSFILE?=	${PORT_DBDIR}/${PORTNAME}/options
+.if exists(${OPTIONSFILE}) && !make(rmconfig)
+.include "${OPTIONSFILE}"
+.endif
+.if exists(${OPTIONSFILE}.local)
+.include "${OPTIONSFILE}.local"
+.endif
+# ================
+
 .if !defined(WITH_SYSTEM_GCC)
 USE_GCC=		3.3
 .endif
 
 CONFIGURE_ARGS=		--enable-cd --disable-mini-stl --enable-threads
-.if !defined(WITHOUT_SERVICES)
+
+.if defined(WITH_DEBUG)
+CONFIGURE_ARGS+=	--enable-debug
+.endif
+.if defined(WITH_SERVICES)
 CONFIGURE_ARGS+=	--enable-ccm --enable-life --enable-externalize
 .else
 CONFIGURE_ARGS+=	--disable-coss
@@ -74,8 +100,6 @@ CONFIGURE_ARGS+=	--enable-ssl=${OPENSSLBASE}
 CONFIGURE_ARGS+=	--enable-csiv2 --enable-csl2
 .endif
 
-.include <bsd.port.pre.mk>
-
 PLIST_SUB+=	MICO_X11=${MICO_X11} MICO_QT=${MICO_QT} MICO_GTK=${MICO_GTK} \
 		MICO_TCL=${MICO_TCL} MICO_SSL=${MICO_SSL} \
 		MICO_SERVICE=${MICO_SERVICE}
@@ -84,18 +108,7 @@ MAN1=		idl.1 imr.1 nsadmin.1
 MAN5=		micorc.5
 MAN8=		ird.8 micod.8 nsd.8
 
-pre-fetch:
-	@${ECHO_MSG} "============================================================================"
-.if ${OSVERSION} < 500035
-	@${ECHO_MSG} "Use WITH_SYSTEM_GCC=yes to build Mico with system gcc."
-	@${ECHO_MSG} ""
-.endif
-	@${ECHO_MSG} "Following options are allowed:"
-	@${ECHO_MSG} ""
-	@${ECHO_MSG} "WITHOUT_SERVICES=yes  - build without services, only ORB"
-	@${ECHO_MSG} "WITHOUT_SSL=yes       - build without SSL and security services"
-	@${ECHO_MSG} "WITH_X11=yes, WITH_QT=yes, WITH_GTK=yes, WITH_TCL=yes"
-	@${ECHO_MSG} "============================================================================"
+.include <bsd.port.pre.mk>
 
 post-extract:
 	@${TAR} xzf ${DISTDIR}/doc-html.tar.gz -C ${WRKDIR}
