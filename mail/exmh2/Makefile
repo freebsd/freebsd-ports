@@ -8,21 +8,21 @@
 
 # "?=" lines are for sharing this Makefile with japanese/exmh2.
 DISTNAME=	exmh-2.1.1
-CATEGORIES?=	mail tk80
+CATEGORIES?=	mail tk82
 MASTER_SITES=	ftp://ftp.scriptics.com/pub/tcl/exmh/
 
 MAINTAINER?=	markm@FreeBSD.org
 
 .if defined(JAPANESE_EXMH)
-RUN_DEPENDS=	wish8.0jp:${PORTSDIR}/japanese/tk80
-BUILD_DEPENDS=	tclsh8.0jp:${PORTSDIR}/japanese/tcl80
-WISH=		wish8.0jp
-TCLSH=		tclsh8.0jp
+RUN_DEPENDS=	wish8.2jp:${PORTSDIR}/japanese/tk82
+BUILD_DEPENDS=	tclsh8.2jp:${PORTSDIR}/japanese/tcl82
+WISH=		wish8.2jp
+TCLSH=		tclsh8.2jp
 .else
-RUN_DEPENDS=	wish8.0:${PORTSDIR}/x11-toolkits/tk80
-BUILD_DEPENDS=	tclsh8.0:${PORTSDIR}/lang/tcl80
-WISH=		wish8.0
-TCLSH=		tclsh8.0
+RUN_DEPENDS=	wish8.2:${PORTSDIR}/x11-toolkits/tk82
+BUILD_DEPENDS=	tclsh8.2:${PORTSDIR}/lang/tcl82
+WISH=		wish8.2
+TCLSH=		tclsh8.2
 .endif
 
 # exmh is pretty useless without this, but it's not needed to build it.
