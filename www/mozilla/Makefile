@@ -6,8 +6,7 @@
 #
 
 PORTNAME?=	mozilla
-PORTVERSION=	1.3
-PORTREVISION?=	1
+PORTVERSION=	1.3.1
 PORTEPOCH?=	2
 CATEGORIES?=	www
 MASTER_SITES=	${MASTER_SITE_MOZILLA} \
@@ -256,6 +255,7 @@ do-install:
 .endif
 
 post-install:
+	@${CHMOD} -R u-w ${PREFIX}/lib/${MOZILLA}/components
 	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.post.mk>
