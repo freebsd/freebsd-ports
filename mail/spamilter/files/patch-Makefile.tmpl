@@ -1,5 +1,14 @@
---- Makefile.tmpl.orig	Sun Apr 11 01:53:56 2004
-+++ Makefile.tmpl	Wed Apr 21 17:48:38 2004
+--- Makefile.tmpl.orig	Thu Apr 29 15:46:00 2004
++++ Makefile.tmpl	Mon Aug 23 16:23:03 2004
+@@ -27,7 +27,7 @@
+ <ALL>
+ <ALL>INCLUDEDIR=	-I. -I${SMDIR}/include
+ <ALL>
+-<BSD>CFLAGS=		-pthread
++#<BSD>CFLAGS=		-pthread
+ <SunOS>CFLAGS=		
+ <Linux>CFLAGS=		-pthread
+ <ALL>#CFLAGS+=	-ggdb -g3
 @@ -68,7 +68,7 @@
  <Linux>	rm -f *.o *core spamilter dnsblchk dnsblupd mxlookup iflookup
  <ALL>	cd libspf; ${MAKE} $@
