@@ -1,0 +1,6 @@
+%%RUBY_SITELIBDIR%%/dbi/dbd_mysql.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/dbi/dbd_mysql/test1.rb
+%%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/dbi/dbd_mysql
+%%PORTDOCS%%%%RUBY_DOCDIR%%/dbi/dbd_mysql/HISTORY
+%%PORTDOCS%%%%RUBY_DOCDIR%%/dbi/dbd_mysql/README
+%%PORTDOCS%%@dirrm %%RUBY_DOCDIR%%/dbi/dbd_mysql
