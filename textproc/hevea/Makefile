@@ -17,7 +17,7 @@ DISTFILES=		${PORTNAME}-${PORTVERSION}.tar.gz \
 EXTRACT_ONLY=		${PORTNAME}-${PORTVERSION}.tar.gz
 
 MAINTAINER=		stephen@math.missouri.edu
-COMMENT=	Convert LaTeX to HTML
+COMMENT=		Convert LaTeX to HTML
 
 BUILD_DEPENDS=		ocamlc:${PORTSDIR}/lang/ocaml
 
@@ -25,6 +25,12 @@ PLIST_SUB=		HEVEAVERSION=${PORTVERSION}
 
 TEX_DIR=		${PREFIX}/share/texmf/tex/latex
 TEXHASH=		${PREFIX}/bin/texhash
+
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == "amd64"
+IGNORE=			"Infinite loop during build on amd64"
+.endif
 
 post-install:
 	${STRIP_CMD} ${PREFIX}/bin/hevea
@@ -39,4 +45,4 @@ post-install:
 .endif
 	${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
