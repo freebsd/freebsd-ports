@@ -1,6 +1,7 @@
 %%RUBY_SITELIBDIR%%/apache/erb-run.rb
 %%RUBY_SITELIBDIR%%/apache/eruby-run.rb
 %%RUBY_SITELIBDIR%%/apache/rd2html.rb
+%%RUBY_SITELIBDIR%%/apache/ruby-debug.rb
 %%RUBY_SITELIBDIR%%/apache/ruby-run.rb
 %%RUBY_SITELIBDIR%%/auto-reload.rb
 @dirrm %%RUBY_SITELIBDIR%%/apache
