@@ -321,6 +321,7 @@
     SUBDIR += pp
     SUBDIR += prboom
     SUBDIR += ptkei
+    SUBDIR += py-sgflib
     SUBDIR += pyching
     SUBDIR += pydance
     SUBDIR += pysol
