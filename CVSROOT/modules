@@ -3867,6 +3867,7 @@ mplex		ports/graphics/mplex
 mpmf20		ports/audio/mpmf20
 mpqc		ports/science/mpqc
 mprof		ports/devel/mprof
+mpt		ports/audio/mpt
 mptable		src/usr.sbin/mptable
 mq3		ports/audio/mq3
 mreport		ports/mail/mreport
