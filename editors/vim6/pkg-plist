@@ -59,6 +59,8 @@ share/vim/%%VIM_VER%%/doc/os_unix.txt
 share/vim/%%VIM_VER%%/doc/os_vms.txt
 share/vim/%%VIM_VER%%/doc/os_win32.txt
 share/vim/%%VIM_VER%%/doc/pattern.txt
+share/vim/%%VIM_VER%%/doc/pi_expl.txt
+share/vim/%%VIM_VER%%/doc/pi_gzip.txt
 share/vim/%%VIM_VER%%/doc/pi_netrw.txt
 share/vim/%%VIM_VER%%/doc/quickfix.txt
 share/vim/%%VIM_VER%%/doc/quickref.txt
@@ -111,6 +113,7 @@ share/vim/%%VIM_VER%%/ftplugin/xs/default.vim
 share/vim/%%VIM_VER%%/ftplugof.vim
 share/vim/%%VIM_VER%%/gvimrc_example.vim
 share/vim/%%VIM_VER%%/indent.vim
+share/vim/%%VIM_VER%%/indent/config.vim
 share/vim/%%VIM_VER%%/indent/fortran.vim
 share/vim/%%VIM_VER%%/indent/html.vim
 share/vim/%%VIM_VER%%/indent/make.vim
@@ -122,7 +125,6 @@ share/vim/%%VIM_VER%%/indoff.vim
 share/vim/%%VIM_VER%%/macros/README.txt
 share/vim/%%VIM_VER%%/macros/diffwin.vim
 share/vim/%%VIM_VER%%/macros/dvorak
-share/vim/%%VIM_VER%%/macros/explorer.vim
 share/vim/%%VIM_VER%%/macros/hanoi/click.me
 share/vim/%%VIM_VER%%/macros/hanoi/hanoi.vim
 share/vim/%%VIM_VER%%/macros/hanoi/poster
@@ -146,6 +148,8 @@ share/vim/%%VIM_VER%%/macros/urm/urm.vim
 share/vim/%%VIM_VER%%/menu.vim
 share/vim/%%VIM_VER%%/optwin.vim
 share/vim/%%VIM_VER%%/plugin/README.txt
+share/vim/%%VIM_VER%%/plugin/explorer.vim
+share/vim/%%VIM_VER%%/plugin/gzip.vim
 share/vim/%%VIM_VER%%/plugin/netrw.vim
 share/vim/%%VIM_VER%%/scripts.vim
 share/vim/%%VIM_VER%%/syntax/2html.vim
@@ -297,7 +301,6 @@ share/vim/%%VIM_VER%%/syntax/pcap.vim
 share/vim/%%VIM_VER%%/syntax/pccts.vim
 share/vim/%%VIM_VER%%/syntax/perl.vim
 share/vim/%%VIM_VER%%/syntax/php.vim
-share/vim/%%VIM_VER%%/syntax/php3.vim
 share/vim/%%VIM_VER%%/syntax/phtml.vim
 share/vim/%%VIM_VER%%/syntax/pic.vim
 share/vim/%%VIM_VER%%/syntax/pike.vim
