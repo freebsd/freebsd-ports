@@ -18,6 +18,7 @@ RUN_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/Palm/PDB.pm:${PORTSDIR
 
 GNU_CONFIGURE=	yes
 USE_REINPLACE=	yes
+REINPLACE_ARGS=	-i.bak -E
 
 # The ColdSync.3 man page describes a Perl package. That's why it goes
 # in the Perl manpage directory.
