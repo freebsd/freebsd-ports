@@ -7,13 +7,13 @@
 
 PORTNAME=	BitTorrent
 PORTVERSION=	3.3
-CATEGORIES=	net python
+CATEGORIES?=	net python
 MASTER_SITES=	http://bitconjurer.org/BitTorrent/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 #DISTNAME=	${PORTNAME}-${PORTVERSION:C/\.(.)$/\1/}
 
 MAINTAINER=	lioux@FreeBSD.org
-COMMENT=	A peer-to-peer tool for distributing files written in Python
+COMMENT?=	A peer-to-peer tool for distributing files written in Python
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
