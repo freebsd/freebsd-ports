@@ -9,7 +9,9 @@ PORTNAME=	libpng
 PORTVERSION=	0.3.3
 PORTREVISION=	2
 CATEGORIES=	graphics ruby
-MASTER_SITES=	http://www.isc.meiji.ac.jp/~ee77038/ruby/program/
+MASTER_SITES=	${MASTER_SITE_LOCAL}
+#		http://www.isc.meiji.ac.jp/~ee77038/ruby/program/
+MASTER_SITE_SUBDIR=	knu
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
 DISTNAME=	ruby-${PORTNAME}-${PORTVERSION}
 DIST_SUBDIR=	ruby
