@@ -23,7 +23,7 @@ LIB_DEPENDS=	sasl2:${PORTSDIR}/security/cyrus-sasl2 \
 		smbclient:${PORTSDIR}/net/samba-libsmbclient \
 		usb:${PORTSDIR}/devel/libusb
 
-CONFLICTS=	kdelibs-3.[0-3]* kdeutils-3.[0-2]*
+CONFLICTS=	kdeartwork-3.[2-3]* kdelibs-3.[0-3]* kdeutils-3.[0-2]*
 
 USE_KDELIBS_VER=3
 PREFIX=		${KDE_PREFIX}
