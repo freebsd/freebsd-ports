@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	libstrfunc
-PORTVERSION=	7.2.6
+PORTVERSION=	7.2.7
 CATEGORIES=	devel www
 MASTER_SITES=	http://www.spelio.net.ru/soft/
 
@@ -16,9 +16,9 @@ INSTALL_TARGET=	install install-man
 INSTALLS_SHLIB=	yes
 
 MANCOMPRESSED=	no
-MAN3=	strfunc.3 sf_slist.3 sinit.3 slist.3 sadd.3 sadd2.3 sadd_attach.3 \
-	sdel.3 sins.3 simport.3 sfree.3 sclear.3 sarray.3 mkarray.3 \
-	charize.3 sfind.3 scfind.3 find.3 cfind.3 count_values.3 \
+MAN3=	strfunc.3 libstrfunc.3 sf_slist.3 sinit.3 slist.3 sadd.3 sadd2.3 \
+	sadd_attach.3 sdel.3 sins.3 simport.3 sfree.3 sclear.3 sarray.3 \
+	mkarray.3 charize.3 sfind.3 scfind.3 find.3 cfind.3 count_values.3 \
 	copy_values.3 free_values.3 sget.3 scget.3 sgetp.3 scgetp.3 scopy.3 \
 	sf_split.3 split.3 splitf.3 splitquotable.3 split_network.3 sjoin.3 \
 	join.3 sf_cgi.3 param.3 param2.3 params.3 set_cookie.3 cookie.3 \
@@ -35,9 +35,6 @@ MAN3=	strfunc.3 sf_slist.3 sinit.3 slist.3 sadd.3 sadd2.3 sadd_attach.3 \
 	countstr.3 replace.3 replace_detach.3 limittextwidth.3 sf_mem.3 \
 	strndup.3 sf_strdup.3 sf_malloc.3 sf_calloc.3 sf_realloc.3 \
 	strfunc_ctl.3
-
-post-patch:
-	@${PERL} -pi -e "s,cat,man,g" ${WRKSRC}/man/Makefile.in
 
 post-install:
 	@strip ${PREFIX}/bin/timetostr
