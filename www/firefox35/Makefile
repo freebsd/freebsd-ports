@@ -50,9 +50,9 @@ PLUGINSDIR=		${LOCAL_PREFIX}/lib/mozilla-${MOZVER}/plugins/
 
 .if ${PERL_LEVEL} < 500601
 .undef NO_IGNORE
-BROKEN=	"Phoenix only supports the ports versions of Perl."
-BROKEN+="If you have installed a Perl port, and are getting this message,"
-BROKEN+="please make sure you have issued the command 'use.perl port'"
+BROKEN=	Phoenix only supports the ports versions of Perl.
+BROKEN+=If you have installed a Perl port, and are getting this message,
+BROKEN+=please make sure you have given the command \'use.perl port\'.
 .endif # ${PERL_LEVEL} < 500601
 
 SORT?=/usr/bin/sort
@@ -88,14 +88,13 @@ BAD_FONTS=yes
 
 .if defined(BAD_FONTS) && !defined(WITHOUT_XFT)
 .undef NO_IGNORE
-BROKEN=	"You have X fonts installed (lfpfonts*) that cause breakage unless"
-BROKEN+="WITHOUT_XFT is set, which  turns off AntiAliasing. Blease either"
-BROKEN+="uninstall the fonts or restart the make with 'make -DWITHOUT_XFT'."
-BROKEN+="There may be other third party font packages that also cause this"
-BROKEN+="breakage; they will be tested for as they are identified. If you"
-BROKEN+="find a font port that verifiably causes this breakage, please"
-BROKEN+="let us know by mailing ${MAINTAINER}. Thank you."
-BROKEN+="NOTE: The Microsoft webfonts port is known to be safe."
+BROKEN=	You have X fonts installed [lfpfonts*] that cause breakage unless
+BROKEN+=WITHOUT_XFT is set, which turns off AntiAliasing. Please either
+BROKEN+=uninstall the fonts or restart the make with \'make -DWITHOUT_XFT\'.
+BROKEN+=There may be other third party font packages that also cause this
+BROKEN+=breakage. If you find a font port that verifiably causes breakage,
+BROKEN+=please let us know by mailing ${MAINTAINER}. Thank you.
+BROKEN+=NOTE: The Microsoft webfonts port is known to be safe.
 .endif # defined(BAD_FONTS) && !defined(WITHOUT_XFT)
 
 CPPFLAGS+=		-I${X11BASE}/include
