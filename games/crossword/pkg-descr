@@ -1,0 +1,6 @@
+Crossword Generator generates crosswords from scratch to PostScript. It just
+needs the board and a dictionary and it fills it up. It uses an optimized
+branch and bound algorithm to try all the posible combinations. There is also
+an optional heuristic to speed up the process. This heuristic is not exhastive,
+but it gives much better time that the normal one. When the crossword is ready
+it can translate it into TeX format so that it can be compiled using LaTeX.
