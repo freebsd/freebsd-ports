@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	libsidplay
-PORTVERSION=	1.36.46
+PORTVERSION=	1.36.47
 CATEGORIES=	audio emulators
 MASTER_SITES=	http://www.geocities.com/SiliconValley/Lakes/5147/sidplay/packages/
 DISTFILES=	${PORTNAME}-${PORTVERSION}.tgz
