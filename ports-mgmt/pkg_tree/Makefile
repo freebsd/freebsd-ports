@@ -7,6 +7,7 @@
 
 PORTNAME=	pkg_tree
 PORTVERSION=	1.1
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.mavetju.org/download/
 
