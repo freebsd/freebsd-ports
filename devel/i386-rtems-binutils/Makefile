@@ -6,27 +6,24 @@
 #
 
 PORTNAME=	binutils
-PORTVERSION=	2.10
-PORTREVISION=	2
+PORTVERSION=	2.11
 CATEGORIES=	devel
-MASTER_SITES=	${MASTER_SITE_GNU}
-MASTER_SITE_SUBDIR= binutils
-DISTFILES=	${BINNAME}.tar.gz
-PATCHFILES=	${BINNAME}-rtems-20000726.diff.gz
+MASTER_SITES=	${MASTER_SITE_SOURCEWARE}
+MASTER_SITE_SUBDIR=	binutils/releases
+PATCHFILES=	${BINNAME}-rtems-20010409.diff
 PATCH_SITES=	ftp://ftp.oarcorp.com/pub/rtems/snapshots/c_tools/source/ \
 		http://rtems.thehousleys.net/
 
 MAINTAINER=	jeh@FreeBSD.org
 
-DIST_SUBDIR=	rtems
-
 LCLTARGET?=	i386-rtems
 
-BINNAME=	binutils-2.10
+BINNAME=	binutils-2.11
 MASTERDIR=	${.CURDIR}/../i386-rtems-binutils
 PLIST=		${PKGDIR}/pkg-plist.${LCLTARGET}
 
 PKGNAMEPREFIX=	${LCLTARGET}-
+USE_BZIP2=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 ALL_TARGET=	all info
