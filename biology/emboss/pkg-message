@@ -14,10 +14,8 @@ to suit your site and its requirements.
 A .embossrc in a user's home directory overrides settings in the
 system-wide emboss.default.
 
-Further EMBOSS documentation is available at:
+Online EMBOSS documentation is available at:
+	http://www.uk.embnet.org/Software/EMBOSS/general.html
 	http://www.uk.embnet.org/Software/EMBOSS/Doc/
-
-The EMBOSS administrator's guide is available in various formats at:
-	ftp://ftp.no.embnet.org/pub/EMBOSS-extras/
 
 --------------------------------------------------------------------------
