@@ -3,20 +3,19 @@
 # Date created:         09 December 1998
 # Whom:                 Matthew Dillon <dillon@backplane.com>
 #
-# $Id: Makefile,v 1.7 1998/12/23 13:13:21 asami Exp $
+# $Id: Makefile,v 1.8 1999/03/01 01:03:07 archie Exp $
 #
 
-DISTNAME=	jikes-0.45
+DISTNAME=	jikes-0.46
 CATEGORIES=	lang
 MASTER_SITES=	ftp://ftp.whistle.com/pub/archie/misc/
 
 MAINTAINER=	dillon@backplane.com
 
-WRKSRC=		${WRKDIR}/jikes
+WRKSRC=		${WRKDIR}/jikes/src
 MAN1=		jikes.1
 MAKE_ENV=	FILESDIR=${FILESDIR}
-SCRIPTS_ENV=	FILESDIR=${FILESDIR} PKGDIR=${PKGDIR}
-PATCH_STRIP=	-p1
+PATCH_STRIP=	-p2
 
 # 	(sufficiently handled by pkg/MESSAGE, but if IBM has an issue then
 #	uncomment this section)
