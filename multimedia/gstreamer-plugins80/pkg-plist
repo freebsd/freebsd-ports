@@ -96,6 +96,7 @@ lib/gstreamer-%%VERSION%%/libgstspeed.so
 lib/gstreamer-%%VERSION%%/libgststereo.so
 lib/gstreamer-%%VERSION%%/libgststereo2mono.so
 lib/gstreamer-%%VERSION%%/libgststereosplit.so
+%%SWFDEC%%lib/gstreamer-%%VERSION%%/libgstswfdec.so
 lib/gstreamer-%%VERSION%%/libgstsynaesthesia.so
 lib/gstreamer-%%VERSION%%/libgstudp.so
 lib/gstreamer-%%VERSION%%/libgstvbidec.so
