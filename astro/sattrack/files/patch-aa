@@ -131,7 +131,7 @@
   #
 ! CPU		= i386/FreeBSD
 ! CC_CMACH	= -DFREEBSD -DIOCTL ${CFLAGS}
-! CC_LMACH	= ${LFLAGS}
+! CC_LMACH	= ${LDFLAGS}
 ! CC		= gcc
   
   #
