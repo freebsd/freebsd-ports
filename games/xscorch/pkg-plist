@@ -1,13 +1,13 @@
 bin/xscorch
 bin/xscorch-server
-share/xscorch/accessories.def
-share/xscorch/copying.txt
-share/xscorch/images/xscorch-icon.xpm
-share/xscorch/images/xscorch-logo.xpm
-share/xscorch/profiles.def
-share/xscorch/sounds/README
-share/xscorch/weapons.def
-share/xscorch/xscorch.txt
-@dirrm share/xscorch/sounds
-@dirrm share/xscorch/images
-@dirrm share/xscorch
+share/%%GNOME%%/xscorch/accessories.def
+share/%%GNOME%%/xscorch/copying.txt
+share/%%GNOME%%/xscorch/images/xscorch-icon.xpm
+share/%%GNOME%%/xscorch/images/xscorch-logo.xpm
+share/%%GNOME%%/xscorch/profiles.def
+share/%%GNOME%%/xscorch/sounds/README
+share/%%GNOME%%/xscorch/weapons.def
+share/%%GNOME%%/xscorch/xscorch.txt
+@dirrm share/%%GNOME%%/xscorch/sounds
+@dirrm share/%%GNOME%%/xscorch/images
+@dirrm share/%%GNOME%%/xscorch
