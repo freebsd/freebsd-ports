@@ -1,0 +1,5 @@
+sbin/twoftpd-anon 
+sbin/twoftpd-anon-conf
+sbin/twoftpd-auth
+sbin/twoftpd-conf
+sbin/twoftpd-xfer
