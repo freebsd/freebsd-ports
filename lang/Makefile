@@ -116,6 +116,7 @@
     SUBDIR += rexx-imc
     SUBDIR += rotfl
     SUBDIR += ruby
+    SUBDIR += ruby-devel
     SUBDIR += ruby-man
     SUBDIR += ruby-mode.el
     SUBDIR += ruby-perl
