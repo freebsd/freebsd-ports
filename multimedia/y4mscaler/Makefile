@@ -25,15 +25,16 @@ WRKSRC=		${WRKDIR}/${PKGNAME}
 PORTDOCS=	COPYING ChangeLog INSTALL README TODO
 MAN1=		y4mscaler.1
 PLIST_FILES=	bin/y4mscaler
+MAKE_ENV=	CXX="${CXX}"
 
 .include <bsd.port.pre.mk>
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|' \
 		${WRKSRC}/Makefile
-	@${REINPLACE_CMD} -e 's|-march=i686 -mcpu=i686|${CFLAGS}|' \
-		${WRKSRC}/Makefile
 	@${REINPLACE_CMD} -e 's|COPT = -O2|#|' \
+		${WRKSRC}/Makefile
+	@${REINPLACE_CMD} -e 's|CXXFLAGS =|CXXFLAGS = ${CXXFLAGS} |' \
 		${WRKSRC}/Makefile
 .if ${OSVERSION} < 500000
 	@${REINPLACE_CMD} -e 's|#define HAVE_STDINT_H 1|#undef HAVE_STDINT_H 1|' \
