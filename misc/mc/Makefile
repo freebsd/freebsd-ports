@@ -3,7 +3,7 @@
 # Date created:		15 Jul 1995
 # Whom:			torstenb@FreeBSD.ORG
 #
-# $Id: Makefile,v 1.22 1998/06/04 04:04:29 vanilla Exp $
+# $Id: Makefile,v 1.23 1998/09/18 02:29:28 vanilla Exp $
 #
 
 DISTNAME=	mc-4.1.35
@@ -12,6 +12,11 @@ MASTER_SITES=	${MASTER_SITE_SUNSITE}
 MASTER_SITE_SUBDIR=	utils/file/managers/mc
 
 MAINTAINER=	ports@FreeBSD.ORG
+
+VERSION!=	sysctl -n kern.osreldate
+.if ${VERSION} < 300000
+BROKEN=		mountlist.c
+.endif
 
 GNU_CONFIGURE=	YES
 CONFIGURE_ARGS=	--with-ncurses --without-edit --with-dusum --disable-nls
