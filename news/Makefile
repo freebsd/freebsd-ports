@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.48 1999/06/09 00:37:44 steve Exp $
+# $Id: Makefile,v 1.49 1999/08/02 03:32:42 cpiazza Exp $
 #
 
     SUBDIR += atp
@@ -25,6 +25,7 @@
     SUBDIR += p5-Gateway
     SUBDIR += p5-News-Article
     SUBDIR += p5-News-Newsrc
+    SUBDIR += pan
     SUBDIR += pgpmoose
     SUBDIR += plor
     SUBDIR += rkive
