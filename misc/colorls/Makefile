@@ -3,13 +3,14 @@
 # Date created:		8 March 1995
 # Whom:			Satoshi Asami
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1995/03/09 00:49:22 asami Exp $
 #
 DISTNAME=	colorls
 DISTFILES=	ls.tar.gz
 FTP_SITE=	ftp.freebsd.org
 FTP_DIR=	/pub/FreeBSD/FreeBSD-current/src/bin/
 MASTER_SITES=	ftp://ftp.freebsd.org/pub/FreeBSD/FreeBSD-current/src/bin/
+MAINTAINER=	asami@FreeBSD.ORG
 WRKSRC=		${WRKDIR}/ls
 
 .if !defined(MASTER_SITE_OVERRIDE)

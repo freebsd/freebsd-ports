@@ -3,11 +3,12 @@
 # Date created:		5 February 1995
 # Whom:			asami
 #
-# $Id: Makefile,v 1.4 1994/11/25 18:20:48 asami Exp $
+# $Id: Makefile,v 1.2 1995/03/16 02:24:39 asami Exp $
 #
 
 DISTNAME=	nkf-1.5pl1
 MASTER_SITES=	ftp://www.hitachi-sk.co.jp/pub/Japanese/filter/
+MAINTAINER=	asami@FreeBSD.ORG
 
 pre-patch: ${PATCH_COOKIE}
 	@echo "===>  Installing custom Makefile for ${DISTNAME}"

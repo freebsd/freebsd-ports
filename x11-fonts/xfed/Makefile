@@ -3,7 +3,7 @@
 # Date created:         7 December 1994
 # Whom:                 asami
 #
-# $Id: Makefile,v 1.3 1995/02/12 17:48:25 jmz Exp $
+# $Id: Makefile,v 1.4 1995/02/12 23:22:13 ats Exp $
 #
 
 USE_IMAKE=	yes
@@ -18,6 +18,7 @@ SOURCEFILES=	Epistle,README,Imakefile,xfed.man \
 #MASTER_SITES=	ftp://me10.lbl.gov/pub/hp_X11R3_tape/source/app/
 SOURCESITE=	ftp://ftp.cs.orst.edu/pub/src/X11R4/contrib/clients/xfed/
 #EXTRACT_SUFX=	.tar.Z
+MAINTAINER=	asami@FreeBSD.ORG
 
 fetch:	pre-fetch
 	@if [ ! -d ${DISTDIR} ]; then mkdir -p ${DISTDIR}; fi
