@@ -11,7 +11,7 @@ PKGNAME=        momspider-1.00
 CATEGORIES=	www
 MASTER_SITES=   ftp://www.ics.uci.edu/pub/websoft/libwww-perl/ \
 		ftp://www.ics.uci.edu/pub/websoft/MOMspider/ \
-		http://www.freebsd.org/~wosch/src/
+		http://www.de.freebsd.org/~wosch/src/
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} libwww-perl-0.40.tar.gz
 
 MAINTAINER=	wosch@FreeBSD.org

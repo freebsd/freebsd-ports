@@ -8,7 +8,7 @@
 
 DISTNAME=       manck-1.2
 CATEGORIES=	sysutils
-MASTER_SITES=   http://www.freebsd.org/~wosch/src/
+MASTER_SITES=   http://www.de.freebsd.org/~wosch/src/
 
 MAINTAINER=     wosch@FreeBSD.org
 

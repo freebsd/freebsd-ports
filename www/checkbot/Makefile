@@ -9,7 +9,7 @@
 DISTNAME=	checkbot-1.54
 CATEGORIES=	www perl5
 MASTER_SITES=	http://www.xs4all.nl/~graaff/checkbot/ \
-		http://www.freebsd.org/~wosch/src/
+		http://www.de.freebsd.org/~wosch/src/
 
 MAINTAINER=	wosch@FreeBSD.org
 

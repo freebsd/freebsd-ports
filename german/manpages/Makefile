@@ -8,7 +8,7 @@
 
 DISTNAME=       de-manpages-1.0
 CATEGORIES=	german
-MASTER_SITES=   http://www.freebsd.org/~wosch/src/ \
+MASTER_SITES=   http://www.de.freebsd.org/~wosch/src/ \
 		ftp://ftp.Infodrom.North.DE/pub/Linux/Devel/manpages-de/
 DISTFILES=	${manpages}.tgz
 

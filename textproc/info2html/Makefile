@@ -8,7 +8,7 @@
 
 DISTNAME=       info2html-1.1
 CATEGORIES=	textproc
-MASTER_SITES=   http://www.freebsd.org/~wosch/src/
+MASTER_SITES=   http://www.de.freebsd.org/~wosch/src/
 
 MAINTAINER=     wosch@FreeBSD.org
 

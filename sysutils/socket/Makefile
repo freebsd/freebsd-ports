@@ -8,7 +8,7 @@
 
 DISTNAME=       socket-1.1
 CATEGORIES=	sysutils net
-MASTER_SITES=   http://www.freebsd.org/~wosch/src/
+MASTER_SITES=   http://www.de.freebsd.org/~wosch/src/
 
 MAINTAINER=     wosch@FreeBSD.org
 
