@@ -33,6 +33,8 @@ CONFIGURE_ARGS=	--with-python=${PYTHON_CMD}				\
 EG_SRC_DIR=	${WRKSRC}/pygnome/examples
 EG_DST_DIR=	${PREFIX}/share/examples/py-gnome
 
+CONFLICTS=	py*-gnome-2*
+
 .if !defined(NOPORTDOCS)
 post-install:
 	${MKDIR} ${EG_DST_DIR}
