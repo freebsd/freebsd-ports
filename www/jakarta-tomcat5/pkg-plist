@@ -29,8 +29,6 @@ etc/rc.d/020.jakarta-tomcat50.sh
 %%T%%/common/lib/commons-pool-1.1.jar
 %%T%%/common/lib/jasper-compiler.jar
 %%T%%/common/lib/jasper-runtime.jar
-%%T%%/common/lib/jmx-remote-tools.jar
-%%T%%/common/lib/jmx-remote.jar
 %%T%%/common/lib/jmx.jar
 %%T%%/common/lib/jsp-api.jar
 %%T%%/common/lib/naming-common.jar
@@ -287,6 +285,18 @@ etc/rc.d/020.jakarta-tomcat50.sh
 %%T%%/webapps/jsp-examples/WEB-INF/classes/org/apache/jsp/tag/web/helloWorld_tag.class
 %%T%%/webapps/jsp-examples/WEB-INF/classes/org/apache/jsp/tag/web/panel_tag.class
 %%T%%/webapps/jsp-examples/WEB-INF/classes/org/apache/jsp/tag/web/xhtmlbasic_tag.class
+%%T%%/webapps/jsp-examples/WEB-INF/classes/org/apache/jsp/tagplugin/choose_jsp.class
+%%T%%/webapps/jsp-examples/WEB-INF/classes/org/apache/jsp/tagplugin/foreach_jsp$1.class
+%%T%%/webapps/jsp-examples/WEB-INF/classes/org/apache/jsp/tagplugin/foreach_jsp$2.class
+%%T%%/webapps/jsp-examples/WEB-INF/classes/org/apache/jsp/tagplugin/foreach_jsp$3.class
+%%T%%/webapps/jsp-examples/WEB-INF/classes/org/apache/jsp/tagplugin/foreach_jsp$4.class
+%%T%%/webapps/jsp-examples/WEB-INF/classes/org/apache/jsp/tagplugin/foreach_jsp$5.class
+%%T%%/webapps/jsp-examples/WEB-INF/classes/org/apache/jsp/tagplugin/foreach_jsp$6.class
+%%T%%/webapps/jsp-examples/WEB-INF/classes/org/apache/jsp/tagplugin/foreach_jsp$7.class
+%%T%%/webapps/jsp-examples/WEB-INF/classes/org/apache/jsp/tagplugin/foreach_jsp$8.class
+%%T%%/webapps/jsp-examples/WEB-INF/classes/org/apache/jsp/tagplugin/foreach_jsp$9.class
+%%T%%/webapps/jsp-examples/WEB-INF/classes/org/apache/jsp/tagplugin/foreach_jsp.class
+%%T%%/webapps/jsp-examples/WEB-INF/classes/org/apache/jsp/tagplugin/if_jsp.class
 %%T%%/webapps/jsp-examples/WEB-INF/classes/org/apache/jsp/xml/xml_jsp.class
 %%T%%/webapps/jsp-examples/WEB-INF/classes/servletToJsp.class
 %%T%%/webapps/jsp-examples/WEB-INF/classes/servletToJsp.java
@@ -302,6 +312,7 @@ etc/rc.d/020.jakarta-tomcat50.sh
 %%T%%/webapps/jsp-examples/WEB-INF/jsp2/jsp2-example-taglib.tld
 %%T%%/webapps/jsp-examples/WEB-INF/lib/jstl.jar
 %%T%%/webapps/jsp-examples/WEB-INF/lib/standard.jar
+%%T%%/webapps/jsp-examples/WEB-INF/tagPlugins.xml
 %%T%%/webapps/jsp-examples/WEB-INF/tags/displayProducts.tag
 %%T%%/webapps/jsp-examples/WEB-INF/tags/helloWorld.tag
 %%T%%/webapps/jsp-examples/WEB-INF/tags/panel.tag
@@ -447,6 +458,17 @@ etc/rc.d/020.jakarta-tomcat50.sh
 %%T%%/webapps/jsp-examples/snp/snoop.jsp
 %%T%%/webapps/jsp-examples/snp/snoop.jsp.html
 %%T%%/webapps/jsp-examples/source.jsp
+%%T%%/webapps/jsp-examples/tagplugin/choose.html
+%%T%%/webapps/jsp-examples/tagplugin/choose.jsp
+%%T%%/webapps/jsp-examples/tagplugin/choose.jsp.html
+%%T%%/webapps/jsp-examples/tagplugin/foreach.html
+%%T%%/webapps/jsp-examples/tagplugin/foreach.jsp
+%%T%%/webapps/jsp-examples/tagplugin/foreach.jsp.html
+%%T%%/webapps/jsp-examples/tagplugin/howto.html
+%%T%%/webapps/jsp-examples/tagplugin/if.html
+%%T%%/webapps/jsp-examples/tagplugin/if.jsp
+%%T%%/webapps/jsp-examples/tagplugin/if.jsp.html
+%%T%%/webapps/jsp-examples/tagplugin/notes.html
 %%T%%/webapps/jsp-examples/xml/xml.html
 %%T%%/webapps/jsp-examples/xml/xml.jsp
 %%T%%/webapps/jsp-examples/xml/xml.jsp.html
@@ -826,6 +848,7 @@ etc/rc.d/020.jakarta-tomcat50.sh
 %%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/startup/Catalina.html
 %%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/startup/CatalinaProperties.html
 %%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/startup/ClassLoaderFactory.html
+%%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/startup/ClusterRuleSet.html
 %%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/startup/Constants.html
 %%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/startup/ContextConfig.html
 %%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/startup/ContextRuleSet.html
@@ -1145,12 +1168,6 @@ etc/rc.d/020.jakarta-tomcat50.sh
 %%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/tomcat/util/compat/package-frame.html
 %%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/tomcat/util/compat/package-summary.html
 %%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/tomcat/util/compat/package-tree.html
-%%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/tomcat/util/handler/HandlerManager.html
-%%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/tomcat/util/handler/TcHandler.html
-%%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/tomcat/util/handler/TcHandlerCtx.html
-%%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/tomcat/util/handler/package-frame.html
-%%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/tomcat/util/handler/package-summary.html
-%%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/tomcat/util/handler/package-tree.html
 %%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/tomcat/util/http/AcceptLanguage.html
 %%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/tomcat/util/http/BaseRequest.html
 %%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/tomcat/util/http/ContentType.html
@@ -1175,18 +1192,10 @@ etc/rc.d/020.jakarta-tomcat50.sh
 %%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/tomcat/util/http/package-frame.html
 %%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/tomcat/util/http/package-summary.html
 %%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/tomcat/util/http/package-tree.html
-%%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/tomcat/util/log/CommonLogHandler.html
-%%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/tomcat/util/log/Log.html
-%%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/tomcat/util/log/LogHandler.html
-%%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/tomcat/util/log/LogManager.html
 %%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/tomcat/util/log/SystemLogHandler.html
 %%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/tomcat/util/log/package-frame.html
 %%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/tomcat/util/log/package-summary.html
 %%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/tomcat/util/log/package-tree.html
-%%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/tomcat/util/mx/DynamicMBeanProxy.html
-%%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/tomcat/util/mx/package-frame.html
-%%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/tomcat/util/mx/package-summary.html
-%%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/tomcat/util/mx/package-tree.html
 %%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/tomcat/util/net/PoolTcpEndpoint.html
 %%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/tomcat/util/net/SSLImplementation.html
 %%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/tomcat/util/net/SSLSupport.CipherData.html
@@ -1226,7 +1235,6 @@ etc/rc.d/020.jakarta-tomcat50.sh
 %%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/tomcat/util/threads/ThreadPool.MonitorRunnable.html
 %%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/tomcat/util/threads/ThreadPool.ThreadPoolListener.html
 %%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/tomcat/util/threads/ThreadPool.html
-%%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/tomcat/util/threads/ThreadPoolMX.html
 %%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/tomcat/util/threads/ThreadPoolRunnable.html
 %%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/tomcat/util/threads/ThreadWithAttributes.html
 %%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/tomcat/util/threads/package-frame.html
@@ -1716,10 +1724,16 @@ etc/rc.d/020.jakarta-tomcat50.sh
 %%T%%/webapps/tomcat-docs/ssi-howto.html
 %%T%%/webapps/tomcat-docs/ssl-howto.html
 %%T%%/webapps/tomcat-docs/status.html
+%%T%%/webapps/webdav/WEB-INF/web.xml
+%%T%%/webapps/webdav/index.html
+%%T%%/webapps/webdav/tomcat-power.gif
+%%T%%/webapps/webdav/tomcat.gif
 @exec mkdir %D/%%T%%/work || true
 @exec mkdir %D/%%T%%/common/classes ||true
 @exec chown -R %%WWWOWN%%:%%WWWGRP%% %D/%%T%%/
 @dirrm %%T%%/work
+@dirrm %%T%%/webapps/webdav/WEB-INF
+@dirrm %%T%%/webapps/webdav
 @dirrm %%T%%/webapps/tomcat-docs/servletapi/resources
 @dirrm %%T%%/webapps/tomcat-docs/servletapi/javax/servlet/http/class-use
 @dirrm %%T%%/webapps/tomcat-docs/servletapi/javax/servlet/http
@@ -1766,11 +1780,9 @@ etc/rc.d/020.jakarta-tomcat50.sh
 @dirrm %%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/tomcat/util/net/puretls
 @dirrm %%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/tomcat/util/net/jsse
 @dirrm %%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/tomcat/util/net
-@dirrm %%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/tomcat/util/mx
 @dirrm %%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/tomcat/util/log
 @dirrm %%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/tomcat/util/http/mapper
 @dirrm %%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/tomcat/util/http
-@dirrm %%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/tomcat/util/handler
 @dirrm %%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/tomcat/util/compat
 @dirrm %%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/tomcat/util/collections
 @dirrm %%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/tomcat/util/buf
@@ -1847,6 +1859,7 @@ etc/rc.d/020.jakarta-tomcat50.sh
 @dirrm %%T%%/webapps/servlets-examples/WEB-INF
 @dirrm %%T%%/webapps/servlets-examples
 @dirrm %%T%%/webapps/jsp-examples/xml
+@dirrm %%T%%/webapps/jsp-examples/tagplugin
 @dirrm %%T%%/webapps/jsp-examples/snp
 @dirrm %%T%%/webapps/jsp-examples/simpletag
 @dirrm %%T%%/webapps/jsp-examples/sessions
@@ -1880,6 +1893,7 @@ etc/rc.d/020.jakarta-tomcat50.sh
 @dirrm %%T%%/webapps/jsp-examples/WEB-INF/classes/util
 @dirrm %%T%%/webapps/jsp-examples/WEB-INF/classes/sessions
 @dirrm %%T%%/webapps/jsp-examples/WEB-INF/classes/org/apache/jsp/xml
+@dirrm %%T%%/webapps/jsp-examples/WEB-INF/classes/org/apache/jsp/tagplugin
 @dirrm %%T%%/webapps/jsp-examples/WEB-INF/classes/org/apache/jsp/tag/web
 @dirrm %%T%%/webapps/jsp-examples/WEB-INF/classes/org/apache/jsp/tag
 @dirrm %%T%%/webapps/jsp-examples/WEB-INF/classes/org/apache/jsp/snp
