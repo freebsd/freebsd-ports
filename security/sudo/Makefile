@@ -10,6 +10,7 @@ PORTVERSION=	1.6.7.5
 PORTREVISION?=	0
 CATEGORIES=	security
 MASTER_SITES=	http://www.sudo.ws/sudo/dist/ \
+		http://probsd.org/sudoftp/ \
 		ftp://ftp.cs.colorado.edu/pub/sysadmin/sudo/ \
 		ftp://ftp.stikman.com/pub/sudo/ \
 		ftp://ftp.uu.net/pub/security/sudo/
