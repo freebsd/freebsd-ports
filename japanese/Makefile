@@ -224,6 +224,7 @@
     SUBDIR += ptex-sjis
     SUBDIR += qkc
     SUBDIR += recjis
+    SUBDIR += rogue_s
     SUBDIR += rubytk
     SUBDIR += rxvt
     SUBDIR += samba
