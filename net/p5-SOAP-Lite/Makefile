@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	SOAP-Lite
-PORTVERSION=	0.55
-PORTREVISION=	1
+PORTVERSION=	0.60a
 CATEGORIES=	net perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	SOAP
@@ -21,16 +20,17 @@ BUILD_DEPENDS=	${SITE_PERL}/MIME/Lite.pm:${PORTSDIR}/mail/p5-MIME-Lite \
 		${SITE_PERL}/LWP.pm:${PORTSDIR}/www/p5-libwww \
 		${SITE_PERL}/${PERL_ARCH}/Compress/Zlib.pm:${PORTSDIR}/archivers/p5-Compress-Zlib \
 		${SITE_PERL}/${PERL_ARCH}/Crypt/SSLeay.pm:${PORTSDIR}/security/p5-Crypt-SSLeay \
+		${SITE_PERL}/IO/Socket/SSL.pm:${PORTSDIR}/security/p5-IO-Socket-SSL \
 		${SITE_PERL}/${PERL_ARCH}/XML/Parser.pm:${PORTSDIR}/textproc/p5-XML-Parser
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
+WRKSRC=		${WRKDIR}/${PORTNAME}-0.60
 PERL_CONFIGURE=	yes
 CONFIGURE_ARGS+=	--noprompt
 INSTALL_TARGET=	pure_install
 USE_REINPLACE=	yes
 
 MAN1=		SOAPsh.pl.1 XMLRPCsh.pl.1
-MAN3PREFIX=	${LOCALBASE}/lib/perl5/${PERL_VERSION}
 MAN3=		Apache::SOAP.3 \
 		Apache::XMLRPC::Lite.3 \
 		SOAP::Lite.3 \
