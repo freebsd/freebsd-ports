@@ -31,7 +31,7 @@ PLIST_SUB+=	WITH_PROXY=""
 PLIST_SUB+=	WITH_PROXY="@comment "
 .endif
 
-if defined(WITH_IPV6)
+.if defined(WITH_IPV6)
 .if ${OSVERSION} >= 400014
 CONFIGURE_ARGS+= --enable-ipv6
 CATEGORIES+=	ipv6
