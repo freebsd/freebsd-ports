@@ -259,6 +259,7 @@
     SUBDIR += uvscan-dat
     SUBDIR += vlock
     SUBDIR += vlog
+    SUBDIR += vncrypt
     SUBDIR += vpnd
     SUBDIR += vscan
     SUBDIR += whisker

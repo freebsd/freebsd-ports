@@ -1,0 +1,8 @@
+This is cryptographic disk driver for FreeBSD.  It provides transparent
+encryption and decryption of selected devices.  It is based on vn(4).
+
+Author:	Andrey Sverdlichenko <rblaze@users.sourceforge.net>
+WWW:	http://sourceforge.net/projects/vncrypt/
+
+-- Sergey Skvortsov
+skv@FreeBSD.org
