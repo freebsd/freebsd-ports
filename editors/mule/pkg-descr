@@ -6,8 +6,7 @@ files, info pages, and so on (except executables) for mule-2.3.
 
 This package is not built with any particular language support.  If
 you want a built-in input method, look into the mule ports in
-language- specific directories.  Currently only Japanese (Canna, SJ3,
-Wnn4 and Wnn6) is available.
+language- specific directories.
 
 This package and the package, mule-common-2.3 are designed *not* to
 clobber any existing emacs installation.  In particular, the

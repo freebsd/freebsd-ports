@@ -1,4 +1,4 @@
-# New ports collection makefile for:	mule 2.3@19.34
+# New ports collection makefile for:	mule
 # Date created:		6 July 1997
 # Whom:			Satoshi Taoka <taoka@FreeBSD.org>
 #
@@ -28,7 +28,7 @@ BUILD_DEPENDS=	${BUILD_INPUT_METHOD}
 MULE_VERSION=	2.3
 EMACS_VERSION=	19.34
 
-SLAVEDIRS=	chinese/mule-wnn4
+SLAVEDIRS=	chinese/mule-freewnn
 
 USE_XLIB=	yes
 EXTRACT_ONLY=	emacs-${EMACS_VERSION}b${EXTRACT_SUFX}
@@ -64,22 +64,22 @@ WITH_INPUT_METHOD+=	--with-canna --with-canna-libraries=${PREFIX}/lib \
 BUILD_INPUT_METHOD+=sj3serv:${PORTSDIR}/japanese/sj3
 WITH_INPUT_METHOD+= --with-sj3
 .endif
-.if defined(WNN4)
-BUILD_INPUT_METHOD+=${PREFIX}/bin/Wnn4/jserver:${PORTSDIR}/japanese/Wnn
-WITH_INPUT_METHOD+=	--with-wnn4 --with-wnn-libraries=${X11BASE}/lib \
-		--with-wnn-includes=${X11BASE}/include/wnn
-.elif defined(CWNN4)
-BUILD_INPUT_METHOD+=${PREFIX}/bin/cWnn4/cserver:${PORTSDIR}/chinese/Wnn
-WITH_INPUT_METHOD+=	--with-wnn4 --with-wnn-libraries=${X11BASE}/lib/libcwnn.a \
-		--with-wnn-includes=${X11BASE}/include/cwnn
-.elif defined(KWNN4)
-BUILD_INPUT_METHOD+=${PREFIX}/bin/kWnn4/kserver:${PORTSDIR}/korean/Wnn
-WITH_INPUT_METHOD+=	--with-wnn4 --with-wnn-libraries=${X11BASE}/lib/libkwnn.a \
-		--with-wnn-includes=${X11BASE}/include/kwnn
+.if defined(FREEWNN)
+LIB_INPUT_METHOD+=wnn.0:${PORTSDIR}/japanese/FreeWnn-lib
+WITH_INPUT_METHOD+=	--with-wnn4 --with-wnn-libraries=${LOCALBASE}/lib \
+		--with-wnn-includes=${LOCALBASE}/include/wnn
+.elif defined(CFREEWNN)
+LIB_INPUT_METHOD+=cwnn.0:${PORTSDIR}/chinese/FreeWnn-lib
+WITH_INPUT_METHOD+=	--with-wnn4 --with-cwnn4 --with-wnn-libraries=${LOCALBASE}/lib \
+		--with-wnn-includes=${LOCALBASE}/include/cwnn
+.elif defined(KFREEWNN)
+LIB_INPUT_METHOD+=kwnn.0:${PORTSDIR}/korean/FreeWnn-lib
+WITH_INPUT_METHOD+=	--with-wnn4 --with-kwnn4 --with-wnn-libraries=${LOCALBASE}/lib \
+		--with-wnn-includes=${LOCALBASE}/include/kwnn
 .elif defined(WNN6)
-BUILD_INPUT_METHOD+=${PREFIX}/include/wnn/jlib.h:${PORTSDIR}/japanese/Wnn6-lib
-WITH_INPUT_METHOD+=	--with-wnn6 --with-wnn-libraries=${PREFIX}/lib/libwnn.a \
-		--with-wnn-includes=${PREFIX}/include/wnn
+LIB_INPUT_METHOD+=wnn6.1:${PORTSDIR}/japanese/Wnn6-lib
+WITH_INPUT_METHOD+=	--with-wnn6 --with-wnn-libraries=${LOCALBASE}/lib \
+		--with-wnn-includes=${LOCALBASE}/include/wnn6/wnn
 .endif
 COMP_ELC=	egg.elc wnn-egg.elc sj3-client.elc sj3-egg.elc canna.elc
 ELC_DIR=	../lisp
@@ -143,19 +143,19 @@ pre-install:
 
 post-install:
 	strip ${PREFIX}/bin/${EMACS_EXECUTABLE}-${EMACS_VERSION}
-# for wnn4+sj3 or wnn6+sj3
+# for freewnn+sj3 or wnn6+sj3
 	@if [ -e ${PKGDIR}/INSTALL ]; then \
 		${SH} ${PKGDIR}/INSTALL ${PKGNAME} POST-INSTALL; \
 	fi
 # Installing site-start.el
 #   (we redefun set-korean-environment etc)
-.if defined(CWNN4)
+.if defined(CFREEWNN)
 	 ${SED} -e 's/;;\(.*\);;CHINESE$$/\1;;CHINESE/' \
 		-e 's/;;\(.*\);;not KOREAN$$/\1;;not KOREAN/' \
 		-e 's,%%X11BASE%%,${X11BASE},' \
 		-e 's,%%LOCALBASE%%,${LOCALBASE},' \
 		 ${FILESDIR}/site-start.el.tmpl >> ${SITE_START}
-.elif defined(KWNN4)
+.elif defined(KFREEWNN)
 	 ${SED} -e 's/;;\(.*\);;KOREAN$$/\1;;KOREAN/' \
 		-e 's,%%X11BASE%%,${X11BASE},' \
 		-e 's,%%LOCALBASE%%,${LOCALBASE},' \
