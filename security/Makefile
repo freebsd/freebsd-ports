@@ -313,6 +313,7 @@
     SUBDIR += pear-Crypt_CBC
     SUBDIR += pear-Text_Password
     SUBDIR += pf
+    SUBDIR += pft
     SUBDIR += pgp
     SUBDIR += pgp6
     SUBDIR += pgpdump
