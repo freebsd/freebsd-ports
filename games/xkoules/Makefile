@@ -16,7 +16,7 @@ EXTRACT_SUFX=	-src.tar.gz
 MAINTAINER=	ports@FreeBSD.org
 
 .if ${MACHINE_ARCH} == "alpha"
-PLIST=		${PKGDIR}/PLIST.alpha
+PLIST=		${PKGDIR}/pkg-plist.alpha
 .endif
 
 USE_IMAKE=	yes
