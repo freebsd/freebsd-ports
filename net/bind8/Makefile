@@ -1,9 +1,9 @@
 # New ports collection makefile for:	bind
-# Version required:	8.1.1
+# Version required:	8.1.2
 # Date created:		18 July 1997
 # Whom:			jseger@scds.com
 #
-# $Id: Makefile,v 1.4 1998/04/14 21:44:27 jseger Exp $
+# $Id: Makefile,v 1.5 1998/05/21 00:42:19 jseger Exp $
 #
 
 DISTNAME=	bind-8.1.2
