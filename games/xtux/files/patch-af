@@ -1,0 +1,14 @@
+--- src/common/timing.c.orig	Fri May  9 15:21:25 2003
++++ src/common/timing.c	Fri May  9 15:35:10 2003
+@@ -1,6 +1,11 @@
+ #include <sys/time.h>
+ #include <unistd.h>
++#if __FreeBSD_version >= 500000
+ #include <stdint.h>
++#else
++#include <limits.h>
++#define INT32_MAX INT_MAX
++#endif
+ #include "timing.h"
+ 
+ static msec_t tvtol(struct timeval t);
