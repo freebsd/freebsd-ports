@@ -12,7 +12,7 @@ MASTER_SITES=	http://users.aber.ac.uk/tpm01/ed2k_tools/
 PKGNAMESUFFIX=	-tool-slist
 DISTNAME=	ed2k_slist-${PORTVERSION}
 
-MAINTAINER=	lioux@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Checks which servers are either dead or alive in server.met
 
 WRKSRC=	${WRKDIR}/ed2k_slist

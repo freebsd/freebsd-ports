@@ -16,7 +16,7 @@ DISTNAME=	ed2k_recovermet
 EXTRACT_SUFX=	.gz
 EXTRACT_ONLY=
 
-MAINTAINER=	lioux@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Tool that tries to re-create x.part.met files compromised due to crash
 
 ONLY_FOR_ARCHS=	i386

@@ -14,7 +14,7 @@ MASTER_SITE_SUBDIR=	ed2k-gtk-gui
 PKGNAMESUFFIX=	-gui-gtk
 DISTNAME=	ed2k-gtk-gui-${PORTVERSION}
 
-MAINTAINER=	lioux@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GTK GUI to eDonkey2000 'core' command line client
 
 LIB_DEPENDS=	gnet-2.0:${PORTSDIR}/net/gnet2

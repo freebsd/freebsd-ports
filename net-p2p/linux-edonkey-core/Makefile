@@ -15,7 +15,7 @@ PKGNAMEPREFIX=	linux-
 PKGNAMESUFFIX=	-core
 DISTNAME=	donkey${PORTVERSION}
 
-MAINTAINER=	lioux@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	eDonkey2000 'core' command line client
 
 ONLY_FOR_ARCHS=	i386

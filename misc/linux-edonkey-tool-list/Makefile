@@ -16,7 +16,7 @@ DISTNAME=	ed2k_list
 EXTRACT_SUFX=	.gz
 EXTRACT_ONLY=
 
-MAINTAINER=	lioux@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Creates a web page with ed2k:// links to all your shared files
 
 ONLY_FOR_ARCHS=	i386
