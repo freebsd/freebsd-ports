@@ -15,6 +15,8 @@ EXTRACT_SUFX=	.tar.Z
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Scheme-to-C, a compiler and interpreter for compiling scheme into C
 
+BROKEN=		"last distfile dates from 1993.  Does not work on 5.x or non-i386"
+
 USE_REINPLACE=	yes
 USE_XLIB=	yes
 INSTALLS_SHLIB=	yes
