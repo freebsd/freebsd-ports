@@ -1,5 +1,5 @@
---- Makefile.orig	Sun Nov 17 10:37:18 2002
-+++ Makefile	Tue Nov 19 07:54:45 2002
+--- Makefile.orig	Thu Nov 21 06:09:41 2002
++++ Makefile	Sat Nov 23 17:40:57 2002
 @@ -1,17 +1,17 @@
 -prefix     = /usr/local
 +prefix     = ${PREFIX}
@@ -10,7 +10,7 @@
 +CC         ?= gcc
  LIBNAME    = mba
 -MAJVERSION = 0.4
--MINVERSION = 0.4.5
+-MINVERSION = 0.4.6
 +MAJVERSION = ${SHLIB_MAJOR}
 +MINVERSION = ${SHLIB_MAJOR}
  ARNAME     = lib$(LIBNAME).a
@@ -22,7 +22,7 @@
 +CFLAGS     += -DMSGNO -I${LOCALBASE}/include
  #CFLAGS     = -Wall -W -DMSGNO -I$(includedir) -L$(libdir) $(RPM_OPT_FLAGS) -ansi -pedantic -Wbad-function-cast -Wcast-align -Wcast-qual -Wchar-subscripts -Winline -Wmissing-prototypes -Wnested-externs -Wpointer-arith -Wredundant-decls -Wshadow -Wstrict-prototypes -Wwrite-strings -Wtraditional -Wconversion -Waggregate-return -Wno-parentheses
  OBJS       = src/stack.o src/linkedlist.o src/hashmap.o src/profile.o src/hexdump.o src/msgno.o src/domnode.o src/mbs.o src/cfg.o
- HDRS       = src/msgno.h src/stack.h src/linkedlist.h src/hashmap.h src/hexdump.h src/domnode.h src/profile.h src/mbs.h src/cfg.h
+ HDRS       = src/mba/msgno.h src/mba/stack.h src/mba/linkedlist.h src/mba/hashmap.h src/mba/hexdump.h src/mba/domnode.h src/mba/profile.h src/mba/mbs.h src/mba/cfg.h
 @@ -20,7 +20,7 @@
  all: $(ARNAME)($(OBJS)) $(SONAME)
  
@@ -41,18 +41,17 @@
 -	install -d $(mandir)/man3
 -	install -m 644 $(ARNAME) $(libdir)
 -	install -m 755 $(SONAME) $(libdir)
--	cd $(libdir) && ln -sf $(SONAME) $(SOVERSION) && ln -sf $(SONAME) lib$(LIBNAME).so
--	install -m 444 $(HDRS) $(includedir)/mba
--	-install -m 444 docs/man/*.3m.gz $(mandir)/man3
--	-/sbin/ldconfig $(libdir)
 +	mkdir -p $(libdir)
 +	mkdir -p $(includedir)/mba
 +	mkdir -p $(mandir)/man3
 +	${BSD_INSTALL_DATA} $(ARNAME) $(libdir)
 +	${BSD_INSTALL_DATA} $(SONAME) $(libdir)
-+	cd $(libdir) && ln -sf $(SONAME) lib$(LIBNAME).so
+ 	cd $(libdir) && ln -sf $(SONAME) $(SOVERSION) && ln -sf $(SONAME) lib$(LIBNAME).so
+-	install -m 444 $(HDRS) $(includedir)/mba
+-	-install -m 444 docs/man/*.3m.gz $(mandir)/man3
+-	-/sbin/ldconfig $(libdir)
 +	${BSD_INSTALL_DATA} $(HDRS) $(includedir)/mba
-+	${BSD_INSTALL_DATA} docs/man/*.3m.gz $(mandir)/man3
++	${BSD_INSTALL_MAN} docs/man/*.3m.gz $(mandir)/man3
  
  zip:
  	cd .. && zip -lr $(DISTRO)/.$(DISTRO).zip $(DISTRO) -x $(DISTRO)/.* $(DISTRO)/docs/man/* $(DISTRO)/tests/data* $(DISTRO)/libmba.lib $(DISTRO)/libmba.dll $(DISTRO)/libmba_s.lib
