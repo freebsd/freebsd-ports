@@ -17,9 +17,10 @@ COMMENT=	Enhanced ftp server from NetBSD
 
 USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
+PKGMESSAGE=	${WRKDIR}/pkg-message
 
 .if defined(WITH_SOCKS5)
-BUILD_DEPENDS=	${LOCALBASE}/lib/libsocks5.a:${PORTSDIR}/net/socks5
+BUILD_DEPENDS+=	${LOCALBASE}/lib/libsocks5.a:${PORTSDIR}/net/socks5
 CONFIGURE_ARGS+=	--with-socks5
 .endif
 
@@ -49,6 +50,9 @@ pre-patch:
 		"s@^#define	_DEFAULT_CONFDIR	\"/etc\"@#define	_DEFAULT_CONFDIR	\"${PREFIX}/etc\"@" \
 	${WRKSRC}/src/pathnames.h
 
+post-build:
+	@${CAT} pkg-message | ${SED} -e 's|%%PREFIX%%|${PREFIX}|' > ${PKGMESSAGE}
+
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/src/tnftpd ${PREFIX}/libexec
 	${INSTALL_MAN} ${WRKSRC}/src/ftpd.8 ${PREFIX}/man/man8/tnftpd.8
@@ -62,14 +66,6 @@ do-install:
 .endif
 
 post-install:
-	@${ECHO} "================================================================================"
-	@${ECHO} "This port relies on a number of configuration files in ${PREFIX}/etc."
-	@${ECHO} "At the very least, create a ftpusers file with the usernams of users you don't"
-	@${ECHO} "want to connect (root, toor, etc.). This will allow non-listed users to log in."
-	@${ECHO} "Copying /etc/ftpusers to ${PREFIX}/etc/ftpusers should be sufficient."
-	@${ECHO}
-	@${ECHO} "See the man files for more information. The man- and configuration files for"
-	@${ECHO} "FreeBSD's built-in ftpd can also be of use as examples/additional info."
-	@${ECHO} "================================================================================"
+	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
