@@ -18,7 +18,10 @@ DISTFILES=	X335src-1.tgz X335src-2.tgz
 
 MAINTAINER=	jmz@FreeBSD.org
 
-BROKEN=		"Defines their own version of putenv(), which we don't override properly."
+.include <bsd.port.pre.mk>
+.if ${OSVERSION} > 400011
+BROKEN=                problem with /usr/libexec/cpp
+.endif
 
 IS_INTERACTIVE=	yes	# configure script asks questions
 .if (${MACHINE} != "alpha")
