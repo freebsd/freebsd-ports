@@ -32,10 +32,16 @@ BROKEN=	You need to upgrade you system
 MAKE_ENV=	PREFIX=${LOCALBASE} USE_GTK=0
 .endif
 
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} != "i386" || ${OSVERSION} < 500000
+BROKEN=		"Does not compile on !i386 or 4.x"
+.endif
+
 pre-everything::
 	@${ECHO} "You may specify the following on the command line:"
 	@${ECHO} ""
 	@${ECHO} " NO_X=yes  Disable The X(GTK2) Support."
 	@${ECHO} ""
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
