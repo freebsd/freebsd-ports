@@ -1,4 +1,6 @@
-etc/rc.d/drwebsmf.sh
+@unexec if [ -f %D/etc/rc.d/drwebsmf.sh ] && cmp -s %D/etc/rc.d/drwebsmf.sh %D/etc/rc.d/drwebsmf.sh-dist; then rm -f %D/etc/rc.d/drwebsmf.sh; fi
+etc/rc.d/drwebsmf.sh-dist
+@exec if [ ! -f %D/etc/rc.d/drwebsmf.sh ] ; then cp -p %D/%F %B/drwebsmf.sh; fi
 sbin/drweb-smf
 share/doc/drweb-sendmail/readme.sendmail
 share/doc/drweb-sendmail/readme.sendmail.rus
