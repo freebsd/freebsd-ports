@@ -6,7 +6,7 @@
 #
 
 PORTNAME=		tea
-PORTVERSION=		0.9.1
+PORTVERSION=		2.0
 CATEGORIES=		editors
 MASTER_SITES=		http://tea.linux.kiev.ua/
 DISTNAME=		${PORTNAME}
@@ -18,18 +18,16 @@ WRKSRC=			${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 USE_X_PREFIX=		yes
 USE_BZIP2=		yes
+USE_REINPLACE=		yes
 GNU_CONFIGURE=		yes
 USE_GCC=		3.3
 USE_GNOME=		gtk20
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
 
-.if !defined(NOPORTDOCS)
-post-install:
-	${MKDIR} ${DOCSDIR}/en
-	${MKDIR} ${DOCSDIR}/ru
-	${INSTALL_DATA} ${WRKSRC}/doc/EN/index.html ${DOCSDIR}/en
-	${INSTALL_DATA} ${WRKSRC}/doc/RU/index.html ${DOCSDIR}/ru
-.endif
+post-patch:
+	@${REINPLACE_CMD} -e 's|/usr/share/doc/tea|${DOCSDIR}|g' \
+		${WRKSRC}/Makefile.in \
+		${WRKSRC}/src/tea_funx.c
 
 .include <bsd.port.mk>
