@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_SUNSITE}
 MASTER_SITE_SUBDIR=	games/arcade/invaders
 DISTNAME=	${PORTNAME}
 
-MAINTAINER=	swallace@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 
 NO_CDROM=	"don't sell for profit"
 USE_IMAKE=	yes

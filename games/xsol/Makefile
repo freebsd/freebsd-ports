@@ -13,7 +13,7 @@ MASTER_SITES=	ftp://ftp.freebsd.org/pub/FreeBSD/ports/distfiles/ \
 		ftp://ftp.tu-clausthal.de/pub/unix.new/games/
 DISTNAME=	xsol-new
 
-MAINTAINER=	swallace@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 
 USE_IMAKE=	yes
 MAN6=		xsol.6
