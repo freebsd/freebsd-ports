@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	pcre++
-PORTVERSION=	0.9.2
+PORTVERSION=	0.9.3
 CATEGORIES=	devel
 MASTER_SITES=	ftp://ftp.daemon.de/scip/Apps/pcre++/
 
@@ -26,7 +26,7 @@ CONFIGURE_ENV=	CPPFLAGS="`${PCRE_CONFIG} --cflags`" \
 INSTALLS_SHLIB=	yes
 
 MAN3=	Pcre.3
-PLIST_SUB=	VERSION=0.9.2
+PLIST_SUB=	VERSION=${PORTVERSION}
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|-O -g|\@CXXFLAGS\@|g' ${WRKSRC}/Makefile.in
