@@ -1,0 +1,14 @@
+atlc is a program designed for finding the properties (characteristic
+impedance, inductance per meter, capacitance per meter, velocity
+factor, electric field distribution) of any transmission line with
+2 or 3 conductors (i.e. a normal line or coupler). It uses the
+finite difference method to determine these properties, and can
+handle any cross section.
+
+The program atlc needs to know shape of the transmission line's
+cross section. This cross section is stored in a data file, which
+happens to be a Windows bitmap file. The bitmap file is read by
+atlc, following which the program performs the analysis. Look in
+/usr/local/share/examples/atlc for some examples.
+
+WWW: http://atlc.sourceforge.net/
