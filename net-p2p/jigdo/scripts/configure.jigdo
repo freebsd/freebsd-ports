@@ -10,7 +10,7 @@ tempfile=`mktemp -t checklist`
 if [ "${BATCH}" = "yes" ]; then
 	set \"DB3\"
 else
-	/usr/bin/dialog --title "Jigsaw Download configuration options" \
+	dialog --title "Jigsaw Download configuration options" \
 	--clear --checklist "\n\
 Please select desired options:" -1 -1 16 \
 GUI		"Graphical User Interface (experimental)" OFF \
@@ -47,19 +47,19 @@ while [ "$1" ]; do
 	case $1 in
 		\"GUI\")
 			echo "CONFIGURE_ARGS+= --with-gui"
-			echo "LIB_DEPENDS+= gtk-x11-2.0.200:\${PORTSDIR}/x11-toolkits/gtk20"
-			echo "MAN+= jigdo.1"
+			echo "LIB_DEPENDS+= gtk-x11-2.0:\${PORTSDIR}/x11-toolkits/gtk20"
+			echo "MAN1+= jigdo.1"
 			SUB_GUI=""
 			;;
 		\"DB3\")
 			echo "CONFIGURE_ARGS+= --with-libdb=-ldb3"
 			echo "CONFIGURE_ENV+= \
 			  CPPFLAGS=\"-I\${LOCALBASE}/include/db3\" \
-			  LIBS=\"-L\${LOCALBASE}/lib\" LDFLAGS=\"-ldb3\""
+			  LIBS=\"-L\${LOCALBASE}/lib\" LDFLAGS+=\"-ldb3\""
 			echo "LIB_DEPENDS= db3:\${PORTSDIR}/databases/db3"
 			;;
 		\"NLS\")
-			echo "CONFIGURE_ARGS+= --enable-nls=/usr/local/include"
+			echo "CONFIGURE_ARGS+= --enable-nls=${LOCALBASE}/include"
 			;;
 		*)
 			echo "Invalid option(s): $*" > /dev/stderr

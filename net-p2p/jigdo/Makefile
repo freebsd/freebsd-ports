@@ -6,18 +6,15 @@
 #
 
 PORTNAME=	jigdo
-PORTVERSION=	0.7.0
-PORTREVISION=	1
+PORTVERSION=	0.7.1
 CATEGORIES=	ftp
 MASTER_SITES=	http://atterer.net/jigdo/
 
 MAINTAINER=	bra@fsn.hu
 COMMENT=	A utility used to retrieve very large files over the Internet
 
-BUILD_DEPENDS=	libwww-config:${PORTSDIR}/www/libwww
-RUN_DEPENDS=	${LOCALBASE}/bin/wget:${PORTSDIR}/ftp/wget
-
-BROKEN=		Does not compile
+BUILD_DEPENDS=	libwww-config:${PORTSDIR}/www/libwww \
+		${LOCALBASE}/bin/wget:${PORTSDIR}/ftp/wget
 
 MAN1=		jigdo-file.1 jigdo-lite.1 jigdo-mirror.1
 
