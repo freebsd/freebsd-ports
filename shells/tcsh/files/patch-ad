@@ -1,6 +1,6 @@
---- host.defs.orig	Mon Jun 21 20:11:51 1999
-+++ host.defs	Mon Jun 21 20:14:16 1999
-@@ -494,10 +494,12 @@
+--- host.defs.old	Fri Jul 21 14:49:18 2000
++++ host.defs	Fri Jul 21 14:50:28 2000
+@@ -499,10 +499,12 @@
  
  newdef	: defined(__FreeBSD__) 
  comment	: FreeBSD
