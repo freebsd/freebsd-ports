@@ -1,5 +1,5 @@
 *** Makefile.orig	Mon Jan 30 21:51:43 1995
---- Makefile	Fri Feb 10 00:11:43 1995
+--- Makefile	Tue May 16 13:30:07 1995
 ***************
 *** 46,52 ****
   #REAL_DAEMON_DIR=/usr/sbin
@@ -103,6 +103,23 @@
   
   # The syslog priority at which successful connections are logged.
   
+***************
+*** 470,476 ****
+  # still do selective username lookups as documented in the hosts_access.5
+  # and hosts_options.5 manual pages (`nroff -man' format).
+  #
+! #AUTH	= -DALWAYS_RFC931
+  #
+  # The default username lookup timeout is 10 seconds. This may not be long
+  # enough for slow hosts or networks, but is enough to irritate PC users.
+--- 471,477 ----
+  # still do selective username lookups as documented in the hosts_access.5
+  # and hosts_options.5 manual pages (`nroff -man' format).
+  #
+! AUTH   = -DALWAYS_RFC931
+  #
+  # The default username lookup timeout is 10 seconds. This may not be long
+  # enough for slow hosts or networks, but is enough to irritate PC users.
 ***************
 *** 509,515 ****
   # look for access control information. Watch out for the quotes and
