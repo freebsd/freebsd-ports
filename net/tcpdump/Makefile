@@ -49,10 +49,7 @@ CONFIGURE_ARGS+=	--without-crypto
 .endif
 
 .if defined(WITH_RADIOTAP)
-EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-Makefile.in \
-		${PATCHDIR}/extra-patch-cpack.c \
-		${PATCHDIR}/extra-patch-cpack.h \
-		${PATCHDIR}/extra-patch-extract.h \
+EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-extract.h \
 		${PATCHDIR}/extra-patch-ieee802_11_radio.h \
 		${PATCHDIR}/extra-patch-print-802_11.c
 .endif

@@ -1,7 +1,7 @@
---- ieee802_11_radio.h.orig	Wed Mar 31 01:03:41 2004
-+++ ieee802_11_radio.h	Wed Mar 31 01:03:41 2004
-@@ -0,0 +1,201 @@
-+/* $FreeBSD: /tmp/pcvs/ports/net/tcpdump/files/Attic/extra-patch-ieee802_11_radio.h,v 1.2 2004-03-31 00:14:06 bms Exp $ */
+--- ieee802_11_radio.h.orig	Tue Mar 30 20:38:35 2004
++++ ieee802_11_radio.h	Wed Mar 31 10:51:15 2004
+@@ -0,0 +1,203 @@
++/* $FreeBSD: /tmp/pcvs/ports/net/tcpdump/files/Attic/extra-patch-ieee802_11_radio.h,v 1.3 2004-04-03 06:24:17 bms Exp $ */
 +/* $NetBSD: ieee80211_radiotap.h,v 1.3 2003/11/16 09:02:42 dyoung Exp $ */
 +/* $Header$ */
 +
@@ -184,6 +184,8 @@
 +#define IEEE80211_CHAN_2GHZ     0x0080  /* 2 GHz spectrum channel. */
 +#define IEEE80211_CHAN_5GHZ     0x0100  /* 5 GHz spectrum channel */
 +#define IEEE80211_CHAN_PASSIVE  0x0200  /* Only passive scan allowed */
++#define	IEEE80211_CHAN_DYN	0x0400	/* Dynamic CCK-OFDM channel */
++#define	IEEE80211_CHAN_GFSK	0x0800	/* GFSK channel (FHSS PHY) */
 +#endif /* !_KERNEL */
 +
 +/* For IEEE80211_RADIOTAP_FLAGS */
