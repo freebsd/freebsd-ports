@@ -6,7 +6,7 @@
 # $FreeBSD$
 #
 
-SNAPDATE=	2003-02-05
+SNAPDATE=	2003-03-26
 SNAPVER=	${SNAPDATE:S/-//g}
 
 PORTNAME=	gcc
@@ -58,7 +58,6 @@ CONFIGURE_ARGS=	--disable-nls --with-gnu-as --with-gnu-ld \
 		--with-gxx-include-dir=${TARGLIB}/include/g++-v3
 #CONFIGURE_ARGS+=	--program-suffix=32
 CONFIGURE_ARGS+=	--with-system-zlib --includedir=${TARGLIB}/include/Java
-CONFIGURE_ARGS+=	--disable-libgcj	# does not bootstrap now
 CONFIGURE_ENV=	MAKEINFO="makeinfo --no-split"
 .if defined(WANT_SHAREDLIBS)
 CONFIGURE_ARGS+= --enable-shared
