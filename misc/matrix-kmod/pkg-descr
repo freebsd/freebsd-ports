@@ -1,0 +1,7 @@
+Screensaver for console in style film "Matrix"
+For compile with support hierogliphs: make -DWITH_FONT
+
+Note: for FreeBSD 4.0 or above (if you patching this - say me ;)
+
+- Oleg
+strijar@urai.ru
