@@ -1,43 +1,17 @@
---- src/os.c~	Wed Dec 11 15:24:29 1996
-+++ src/os.c	Wed Dec 11 15:25:06 1996
-@@ -42,7 +42,7 @@
- #  include <sys/stat.h>
- #  include <unistd.h>
- #endif
--#ifdef __linux__
-+#if defined( __linux__ ) || defined( __FreeBSD__ )
- #	include <sys/file.h>
- #	define F_TLOCK	LOCK_NB
- #	define F_LOCK	LOCK_EX
---- src/unix.c~	Wed Dec 11 15:26:04 1996
-+++ src/unix.c	Wed Dec 11 15:26:20 1996
-@@ -50,7 +50,7 @@
- #include <stdio.h>
- #include <errno.h>
- #include <typhoon.h>
--#ifdef __linux__
-+#if defined( __linux__ ) || defined( __FreeBSD__ )
- #	include <sys/file.h>
- #	define F_TLOCK	LOCK_NB
- #	define F_LOCK	LOCK_EX
---- src/Makefile.in.orig	Sun May 21 11:47:27 1995
-+++ src/Makefile.in	Wed Dec 11 16:09:00 1996
-@@ -6,15 +6,20 @@
+--- src/Makefile.in.orig	Mon May 22 01:47:27 1995
++++ src/Makefile.in	Sat Nov 18 03:21:22 2000
+@@ -6,15 +6,15 @@
  CC		= @cc@
  CFLAGS		= @cflags@
  RANLIB		= @ranlib@
 -PREFIX		= /usr/local
 -DESTLIB		= $(PREFIX)/lib
-+SHLIB_MAJOR	= 1
-+SHLIB_MINOR	= 10
-+DESTDIR		= 
-+LIBDIR		= $(PREFIX)/lib
-+MANDIR		= ${PREFIX}/man/man
-+NOMANCOMPRESS=	yup
- DESTHDR		= $(PREFIX)/include
+-DESTHDR		= $(PREFIX)/include
 -DESTOWN		= root
 -DESTGRP		= local
-+DESTHDR		= $(PREFIX)/include
++SHLIB_MAJOR	= 1
++SHLIB_MINOR	= 10
++LIBDIR		= $(PREFIX)/lib
 +LIBOWN		= bin
 +LIBGRP		= bin
  SHELL		= /bin/sh
@@ -49,7 +23,7 @@
  SRCS		= bt_del.c bt_funcs.c bt_io.c bt_open.c cmpfuncs.c os.c \
  		  readdbd.c record.c ty_auxfn.c ty_find.c ty_ins.c \
  		  ty_io.c ty_log.c ty_open.c ty_refin.c ty_repl.c \
-@@ -27,67 +31,30 @@
+@@ -27,67 +27,4 @@
  		  ty_repl.o ty_util.o unix.o vlr.o ansi.o sequence.o
  UNUSED		= dos.c os2.c ty_lock.c
  
@@ -96,32 +70,7 @@
 -		-rcsclean -u
 -		-rm -f $(LIBRARY) $(OBJS)
 -		-rm -f Makefile lib.a tags made *.o
-+MAN3=../man/d_close.3 \
-+	  ../man/d_crget.3 \
-+	  ../man/d_crread.3 \
-+	  ../man/d_crset.3 \
-+	  ../man/d_dbdpath.3 \
-+	  ../man/d_dbfpath.3 \
-+	  ../man/d_dbget.3 \
-+	  ../man/d_dbset.3 \
-+	  ../man/d_delete.3 \
-+	  ../man/d_fillnew.3 \
-+	  ../man/d_getsequence.3 \
-+	  ../man/d_keyfind.3 \
-+	  ../man/d_keyfrst.3 \
-+	  ../man/d_keylast.3 \
-+	  ../man/d_keynext.3 \
-+	  ../man/d_keyprev.3 \
-+	  ../man/d_keyread.3 \
-+	  ../man/d_open.3 \
-+	  ../man/d_recfrst.3 \
-+	  ../man/d_reclast.3 \
-+	  ../man/d_recnext.3 \
-+	  ../man/d_recprev.3 \
-+	  ../man/d_recread.3 \
-+	  ../man/d_recwrite.3 \
-+	  ../man/d_setfiles.3
- 
+-
 -### Do NOT edit this or the following lines.
 -bt_del.o:	ty_dbd.h ty_type.h ty_prot.h ty_glob.h btree.h
 -bt_funcs.o:	ty_dbd.h ty_type.h ty_prot.h ty_glob.h btree.h

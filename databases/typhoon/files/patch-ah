@@ -1,0 +1,11 @@
+--- src/unix.c.orig	Mon May 22 01:47:40 1995
++++ src/unix.c	Sat Nov 18 02:11:18 2000
+@@ -50,7 +50,7 @@
+ #include <stdio.h>
+ #include <errno.h>
+ #include <typhoon.h>
+-#ifdef __linux__
++#if defined( __linux__ ) || defined( __FreeBSD__ )
+ #	include <sys/file.h>
+ #	define F_TLOCK	LOCK_NB
+ #	define F_LOCK	LOCK_EX

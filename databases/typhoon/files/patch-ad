@@ -1,0 +1,25 @@
+--- Makefile.orig	Mon May 22 01:47:05 1995
++++ Makefile	Sat Nov 18 02:11:18 2000
+@@ -1,11 +1,10 @@
+ # Makefile for:  typhoon - top level makefile
+ 
+ MANEXT		= l
+-PREFIX		= /usr/local
+ DESTMAN		= $(PREFIX)/man/man$(MANEXT)
+ DESTCAT		= $(PREFIX)/man/cat$(MANEXT)
+-DESTOWN		= root
+-DESTGRP		= local
++DESTOWN		= bin
++DESTGRP		= bin
+ SHELL		= /bin/sh
+ MAKE		= make
+ 
+@@ -14,8 +13,6 @@
+ all install uninstall: include/ansi.h include/environ.h
+ 		cd src; $(MAKE) $@
+ 		cd util; $(MAKE) $@
+-		cd examples; $(MAKE) $@
+-		cd man; $(MAKE) $@
+ 
+ include/ansi.h include/environ.h:
+ 		configure
