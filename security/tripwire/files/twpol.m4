@@ -1,7 +1,7 @@
 #
 #                       Policy file for FreeBSD
 #
-$FreeBSD$
+# $FreeBSD$
 
 
 #
