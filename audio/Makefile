@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.74 1999/04/02 00:15:42 taoka Exp $
+# $Id: Makefile,v 1.75 1999/04/02 04:24:56 steve Exp $
 #
 
     SUBDIR += 8hz-mp3
@@ -40,6 +40,7 @@
     SUBDIR += rplay
     SUBDIR += rsynth
     SUBDIR += s3mod
+    SUBDIR += shorten
     SUBDIR += sidplay
     SUBDIR += sox
     SUBDIR += splay
