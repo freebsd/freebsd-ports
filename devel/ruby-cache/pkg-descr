@@ -1,0 +1,5 @@
+Ruby/Cache is a library for caching objects based on the LRU algorithm
+for Ruby.
+
+Author:	Yoshinori K. Okuji <okuji@enbug.org>
+WWW:	http://www.nongnu.org/pupa/ruby-cache.html
