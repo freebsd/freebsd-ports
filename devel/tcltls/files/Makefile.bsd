@@ -1,0 +1,50 @@
+PACKAGE		= tls
+VERSION		?= ${PORTVERSION}
+LIB		= ${PACKAGE}
+SHLIB_MAJOR	= ${VERSION:R}
+SHLIB_MINOR	= ${VERSION:E}
+
+SRCS		= tls.c tlsIO.c tlsBIO.c tlsX509.c # fixstrtod.c strncasecmp.c
+
+PREFIX		?=/usr/local
+TCL_VER		?=8.3
+
+.if exists(${PREFIX}/lib/tcl${TCL_VER}/tclConfig.sh)
+# If for some reason  the file does not exist -- make the best guess. In
+# reality, it will exist by the time we are actually doing the build, so
+# the quality of the guess does not matter. But we still try well. -mi
+TCL_STUB_LIB_SPEC!=	. ${PREFIX}/lib/tcl${TCL_VER}/tclConfig.sh; \
+		echo $$TCL_STUB_LIB_SPEC
+.else
+TCL_STUB_LIB_SPEC=	-L${PREFIX}/lib -ltclstub${TCL_VER:S/.//}
+.endif
+
+LDADD		+= ${TCL_STUB_LIB_SPEC} -L${OPENSSLLIB} -lcrypto -lssl
+
+CFLAGS		+=-I${PREFIX}/include/tcl${TCL_VER} -I${OPENSSLINC}
+CFLAGS		+=-DNDEBUG -I. -DUSE_TCL_STUBS -I${PREFIX}/include
+CFLAGS		+=-DVERSION=\"${VERSION}\" -DPACKAGE=\"${PACKAGE}\"
+
+INTERNALLIB	= don't build the useless static version
+
+all: ${SHLIB_NAME} pkgIndex.tcl
+
+pkgIndex.tcl: ${.CURDIR}/pkgIndex.tcl.in
+	${SED} -e "s#@RELPATH@#..#" -e "s#@tls_LIB_FILE@#${SHLIB_NAME}#" \
+		< ${.CURDIR}/pkgIndex.tcl.in > pkgIndex.tcl
+
+SCRIPTDIR	= lib/tls
+SCRIPTPATH	= ${PREFIX}/${SCRIPTDIR}
+SHLIBDIR	= ${PREFIX}/lib
+
+${SCRIPTPATH}:
+	${MKDIR} ${SCRIPTPATH}
+
+environ:
+	@${ECHO} SHLIB_NAME="${SHLIB_NAME}" SHLIB_LINK="${SHLIB_LINK}" \
+		SCRIPTDIR="${SCRIPTDIR}"
+
+beforeinstall: ${SCRIPTPATH}
+	${INSTALL_DATA} pkgIndex.tcl ${.CURDIR}/tls.tcl ${SCRIPTPATH}
+
+.include <bsd.lib.mk>
