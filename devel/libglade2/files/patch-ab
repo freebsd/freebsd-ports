@@ -1,8 +1,8 @@
 
 $FreeBSD$
 
---- Makefile.in.orig	Fri Sep  7 06:00:35 2001
-+++ Makefile.in	Tue Sep 11 15:11:04 2001
+--- Makefile.in.orig	Thu Jan 31 03:44:13 2002
++++ Makefile.in	Thu Feb 14 11:53:48 2002
 @@ -34,7 +34,7 @@
  includedir = @includedir@
  oldincludedir = /usr/include
@@ -12,23 +12,12 @@ $FreeBSD$
  pkgincludedir = $(includedir)/@PACKAGE@
  top_builddir = .
  
-@@ -167,15 +167,15 @@
- bin_SCRIPTS = libglade-config libglade-xgettext
- noinst_PROGRAMS = test-libglade
- test_libglade_LDADD = $(THE_LIBS) $(XML_LIBS)
--SUBDIRS = intl macros glade doc
-+SUBDIRS = intl macros glade
+@@ -100,7 +100,7 @@
+ am__quote = @am__quote@
+ install_sh = @install_sh@
  
--m4datadir = $(datadir)/aclocal
-+m4datadir = $(prefix)/share/aclocal
- m4data_DATA = libglade.m4
+-SUBDIRS = glade doc tests
++SUBDIRS = glade doc
  
--confexecdir = $(libdir)
-+confexecdir = $(sysconfdir)
- confexec_DATA = libgladeConf.sh
- 
--pkgconfigdir = $(libdir)/pkgconfig
-+pkgconfigdir = $(prefix)/libdata/pkgconfig
- pkgconfig_DATA = libglade.pc $(libglade_gnome_pc) $(libglade_bonobo_pc) \
-   $(libglade_gnomedb_pc)
+ INCLUDES = $(LIBGLADE_CFLAGS)
  
