@@ -5,7 +5,9 @@ bin/dns_cfg
 bin/lr
 bin/ltrace
 bin/lx
+bin/pgl2acl
 bin/pgl2eng
+bin/pgl2ldif
 bin/pgl_test
 bin/polyclt
 bin/polymon
@@ -14,46 +16,34 @@ bin/polypxy
 bin/polyrrd
 bin/polysrv
 bin/pop_test
+bin/reporter
 bin/rng_test
+bin/tcp2xmld
 bin/udp2tcpd
-share/polygraph/ReportGen/Globs.pm
-share/polygraph/ReportGen/Line.pm
-share/polygraph/ReportGen/ObjDbase.pm
-share/polygraph/ReportGen/ObjManip.pm
-share/polygraph/ReportGen/Opts.pm
-share/polygraph/ReportGen/Plot.pm
-share/polygraph/ReportGen/RepFormat.pm
-share/polygraph/ReportGen/label_results
-share/polygraph/ReportGen/make_card
-share/polygraph/ReportGen/make_report
-share/polygraph/ReportGen/plot_table
-share/polygraph/ReportGen/plot_traces
-share/polygraph/ReportGen/reportgen.cfg
-share/polygraph/workloads/datacomm-1.pg
-share/polygraph/workloads/downtime-2.pg
-share/polygraph/workloads/include/benches.pg
-share/polygraph/workloads/include/contents.pg
-share/polygraph/workloads/include/phases.pg
-share/polygraph/workloads/include/pipes.pg
-share/polygraph/workloads/include/polymix-3-guts.pg
-share/polygraph/workloads/include/polymix-4-guts.pg
-share/polygraph/workloads/include/webaxe-4-guts.pg
-share/polygraph/workloads/nolb-l4-4.pg
-share/polygraph/workloads/polyfill-2.pg
-share/polygraph/workloads/polymix-1.pg
-share/polygraph/workloads/polymix-2.pg
-share/polygraph/workloads/polymix-3.pg
-share/polygraph/workloads/polymix-4.pg
-share/polygraph/workloads/pxylb-4.pg
-share/polygraph/workloads/simple.pg
-share/polygraph/workloads/srvlb-l4-4.pg
-share/polygraph/workloads/srvlb-l7-4.pg
-share/polygraph/workloads/test_csm.pg
-share/polygraph/workloads/test_polypxy.pg
-share/polygraph/workloads/webaxe-1.pg
-share/polygraph/workloads/webaxe-3.pg
-share/polygraph/workloads/webaxe-4.pg
-@dirrm share/polygraph/workloads/include
-@dirrm share/polygraph/workloads
-@dirrm share/polygraph/ReportGen
-@dirrm share/polygraph
+%%DATADIR%%/workloads/datacomm-1.pg
+%%DATADIR%%/workloads/downtime-2.pg
+%%DATADIR%%/workloads/include/benches.pg
+%%DATADIR%%/workloads/include/contents.pg
+%%DATADIR%%/workloads/include/phases.pg
+%%DATADIR%%/workloads/include/pipes.pg
+%%DATADIR%%/workloads/include/polymix-3-guts.pg
+%%DATADIR%%/workloads/include/polymix-4-guts.pg
+%%DATADIR%%/workloads/include/webaxe-4-guts.pg
+%%DATADIR%%/workloads/nolb-l4-4.pg
+%%DATADIR%%/workloads/polyfill-2.pg
+%%DATADIR%%/workloads/polymix-1.pg
+%%DATADIR%%/workloads/polymix-2.pg
+%%DATADIR%%/workloads/polymix-3.pg
+%%DATADIR%%/workloads/polymix-4.pg
+%%DATADIR%%/workloads/pxylb-4.pg
+%%DATADIR%%/workloads/simple.pg
+%%DATADIR%%/workloads/srvlb-l4-4.pg
+%%DATADIR%%/workloads/srvlb-l7-4.pg
+%%DATADIR%%/workloads/test_csm.pg
+%%DATADIR%%/workloads/test_polypxy.pg
+%%DATADIR%%/workloads/webaxe-1.pg
+%%DATADIR%%/workloads/webaxe-3.pg
+%%DATADIR%%/workloads/webaxe-4.pg
+@dirrm %%DATADIR%%/workloads/include
+@dirrm %%DATADIR%%/workloads
+@dirrm %%DATADIR%%

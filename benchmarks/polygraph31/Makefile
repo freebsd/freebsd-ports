@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	polygraph
-PORTVERSION=	2.7.6
+PORTVERSION=	2.8.0
 CATEGORIES=	benchmarks www
 MASTER_SITES=	http://www.web-polygraph.org/downloads/srcs/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-src
@@ -15,14 +15,10 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	adrian@FreeBSD.org
 COMMENT=	A benchmarking tool for Web proxies
 
-
 IS_INTERACTIVE=	yes
 
 GNU_CONFIGURE=	YES
+CONFIGURE_ENV+=	CPPFLAGS="${CPPFLAGS} -Wno-deprecated"
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
-.include <bsd.port.pre.mk>
-
-BROKEN=		"Does not compile"
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
