@@ -6,7 +6,7 @@
 #
 
 PORTNAME=		openldap
-PORTVERSION=		2.2.15
+PORTVERSION=		2.2.17
 PORTREVISION=		${OPENLDAP_PORTREVISION}
 CATEGORIES=		net databases
 MASTER_SITES=		ftp://ftp.OpenLDAP.org/pub/OpenLDAP/%SUBDIR%/ \
@@ -62,7 +62,7 @@ PORTDOCS=		CHANGES drafts rfc
 .endif
 
 .if defined(USE_OPENLDAP)
-.error You have `USE_OPENLDAP' defined either in your environment or in make(1) arguments.
+IGNORE=			: You have \`USE_OPENLDAP' defined either in your environment or in make(1) arguments
 .endif
 .else
 OPENLDAP_PORTREVISION=	${PORTREVISION_SERVER}
@@ -213,7 +213,7 @@ PLIST_SUB+=		BACK_BDB="@comment " \
 			BACK_HDB="@comment "
 BDBLIB=			db3.3
 .else
-.error WITH_BDB_VER must be 3, 4, 41 or 42
+IGNORE=			: WITH_BDB_VER must be 3, 4, 41 or 42
 .endif
 
 LIB_DEPENDS+=		${BDBLIB}:${PORTSDIR}/databases/db${WITH_BDB_VER}
@@ -252,7 +252,7 @@ LIB_DEPENDS+=		iodbc.3:${PORTSDIR}/databases/libiodbc
 .elif ${WITH_ODBC_TYPE:L} == unixodbc
 LIB_DEPENDS+=		odbc.1:${PORTSDIR}/databases/unixODBC
 .else
-.error WITH_ODBC_TYPE must be iODBC or unixODBC
+IGNORE=			: WITH_ODBC_TYPE must be iODBC or unixODBC
 .endif
 .else
 PLIST_SUB+=		BACK_SQL="@comment "
@@ -264,6 +264,10 @@ PLIST_SUB+=		SLAPI=""
 INSTALLS_SHLIB=		yes
 .else
 PLIST_SUB+=		SLAPI="@comment "
+.endif
+
+.if defined(WITH_CLDAP)
+CPPFLAGS+=		-DLDAP_CONNECTIONLESS
 .endif
 
 # Include tcp-wrapper support
