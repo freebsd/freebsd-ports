@@ -48,6 +48,8 @@ lib/gauche/site/%%VERSION%%/%%TARGET%%/example.so
 lib/libgauche.a
 lib/libgauche.so
 share/gauche/%%VERSION%%/aclocal.m4
+share/gauche/%%VERSION%%/lib/compat/jfilter.scm
+share/gauche/%%VERSION%%/lib/compat/stk.scm
 share/gauche/%%VERSION%%/lib/dbm.scm
 share/gauche/%%VERSION%%/lib/dbm/ndbm.scm
 share/gauche/%%VERSION%%/lib/file/filter.scm
@@ -58,12 +60,14 @@ share/gauche/%%VERSION%%/lib/gauche/auxsys.scm
 share/gauche/%%VERSION%%/lib/gauche/charconv.scm
 share/gauche/%%VERSION%%/lib/gauche/collection.scm
 share/gauche/%%VERSION%%/lib/gauche/common-macros.scm
+share/gauche/%%VERSION%%/lib/gauche/config.scm
 share/gauche/%%VERSION%%/lib/gauche/defvalues.scm
 share/gauche/%%VERSION%%/lib/gauche/fcntl.scm
 share/gauche/%%VERSION%%/lib/gauche/interactive.scm
 share/gauche/%%VERSION%%/lib/gauche/interactive/info.scm
 share/gauche/%%VERSION%%/lib/gauche/interpolate.scm
 share/gauche/%%VERSION%%/lib/gauche/let-opt.scm
+share/gauche/%%VERSION%%/lib/gauche/listener.scm
 share/gauche/%%VERSION%%/lib/gauche/logger.scm
 share/gauche/%%VERSION%%/lib/gauche/logical.scm
 share/gauche/%%VERSION%%/lib/gauche/macroutil.scm
@@ -76,10 +80,11 @@ share/gauche/%%VERSION%%/lib/gauche/numerical.scm
 share/gauche/%%VERSION%%/lib/gauche/object.scm
 share/gauche/%%VERSION%%/lib/gauche/parameter.scm
 share/gauche/%%VERSION%%/lib/gauche/parseopt.scm
-share/gauche/%%VERSION%%/lib/gauche/port.scm
+share/gauche/%%VERSION%%/lib/gauche/portutil.scm
 share/gauche/%%VERSION%%/lib/gauche/procedure.scm
 share/gauche/%%VERSION%%/lib/gauche/process.scm
 share/gauche/%%VERSION%%/lib/gauche/regexp.scm
+share/gauche/%%VERSION%%/lib/gauche/reload.scm
 share/gauche/%%VERSION%%/lib/gauche/selector.scm
 share/gauche/%%VERSION%%/lib/gauche/sequence.scm
 share/gauche/%%VERSION%%/lib/gauche/serializer.scm
@@ -89,8 +94,8 @@ share/gauche/%%VERSION%%/lib/gauche/singleton.scm
 share/gauche/%%VERSION%%/lib/gauche/syslog.scm
 share/gauche/%%VERSION%%/lib/gauche/termios.scm
 share/gauche/%%VERSION%%/lib/gauche/test.scm
-share/gauche/%%VERSION%%/lib/gauche/time.scm
 share/gauche/%%VERSION%%/lib/gauche/threads.scm
+share/gauche/%%VERSION%%/lib/gauche/time.scm
 share/gauche/%%VERSION%%/lib/gauche/uvector.scm
 share/gauche/%%VERSION%%/lib/gauche/validator.scm
 share/gauche/%%VERSION%%/lib/gauche/version.scm
@@ -98,14 +103,12 @@ share/gauche/%%VERSION%%/lib/gauche/vm/debugger.scm
 share/gauche/%%VERSION%%/lib/gauche/vm/disasm.scm
 share/gauche/%%VERSION%%/lib/gauche/with.scm
 share/gauche/%%VERSION%%/lib/genstub
-share/gauche/%%VERSION%%/lib/japanize-euc.scm
 share/gauche/%%VERSION%%/lib/math/const.scm
 share/gauche/%%VERSION%%/lib/math/mt-random.scm
-share/gauche/%%VERSION%%/lib/port/jfilter.scm
-share/gauche/%%VERSION%%/lib/port/stk.scm
 share/gauche/%%VERSION%%/lib/rfc/822.scm
 share/gauche/%%VERSION%%/lib/rfc/base64.scm
 share/gauche/%%VERSION%%/lib/rfc/cookie.scm
+share/gauche/%%VERSION%%/lib/rfc/http.scm
 share/gauche/%%VERSION%%/lib/rfc/quoted-printable.scm
 share/gauche/%%VERSION%%/lib/rfc/uri.scm
 share/gauche/%%VERSION%%/lib/slib.scm
@@ -173,7 +176,6 @@ share/gauche/site/lib/example.scm
 @dirrm share/gauche/%%VERSION%%/lib/srfi-13
 @dirrm share/gauche/%%VERSION%%/lib/srfi-1
 @dirrm share/gauche/%%VERSION%%/lib/rfc
-@dirrm share/gauche/%%VERSION%%/lib/port
 @dirrm share/gauche/%%VERSION%%/lib/math
 @dirrm share/gauche/%%VERSION%%/lib/gauche/vm
 @dirrm share/gauche/%%VERSION%%/lib/gauche/serializer
@@ -181,6 +183,7 @@ share/gauche/site/lib/example.scm
 @dirrm share/gauche/%%VERSION%%/lib/gauche/interactive
 @dirrm share/gauche/%%VERSION%%/lib/gauche
 @dirrm share/gauche/%%VERSION%%/lib/file
+@dirrm share/gauche/%%VERSION%%/lib/compat
 @dirrm share/gauche/%%VERSION%%/lib/dbm
 @dirrm share/gauche/%%VERSION%%/lib
 @dirrm share/gauche/%%VERSION%%

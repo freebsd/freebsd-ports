@@ -1,6 +1,8 @@
---- doc/gauche-refj.texi.orig	Tue Sep  3 09:36:47 2002
-+++ doc/gauche-refj.texi	Tue Sep 10 01:08:59 2002
-@@ -8,2 +8,10 @@
+--- doc/gauche-refj.texi.orig	Tue Nov 19 07:45:01 2002
++++ doc/gauche-refj.texi	Tue Nov 19 07:45:43 2002
+@@ -10,6 +10,17 @@
+ 
+ @c $Id: gauche-ref.texi,v 1.304 2002/11/15 04:27:06 shirok Exp $
  
 +@ifinfo
 +@format
@@ -10,4 +12,9 @@
 +@end format
 +@end ifinfo
 +
++@c module and class index
++
++
  @c module and class index
+ @defcodeindex md
+ @defcodeindex cl
