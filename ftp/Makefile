@@ -75,6 +75,7 @@
     SUBDIR += vsftpd
     SUBDIR += wget
     SUBDIR += wget+ipv6
+    SUBDIR += wput
     SUBDIR += wu-ftpd
     SUBDIR += wu-ftpd+ipv6
     SUBDIR += xrmftp

@@ -1,0 +1,4 @@
+bin/wput
+%%PORTDOCS%%%%DOCSDIR%%/TODO
+%%PORTDOCS%%%%DOCSDIR%%/USAGE.examples
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
