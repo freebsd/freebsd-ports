@@ -5,22 +5,3 @@
  # asciiview - an ascii art image browser script. Front end for aview/aaflip
  clear()
  {
---- image.c.orig	Wed Apr  8 16:34:02 1998
-+++ image.c	Wed Apr  8 16:34:43 1998
-@@ -1,5 +1,5 @@
- #include <stdio.h>
--#include <malloc.h>
-+#include <stdlib.h>
- 
- int imgwidth, imgheight;
- unsigned char *imgdata;
---- ui.c.orig	Wed Apr  8 16:34:09 1998
-+++ ui.c	Wed Apr  8 16:34:26 1998
-@@ -1,6 +1,6 @@
- #include <stdio.h>
- #include <ctype.h>
--#include <malloc.h>
-+#include <stdlib.h>
- #include <string.h>
- #include <aalib.h>
- #include "shrink.h"
