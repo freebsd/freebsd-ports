@@ -1,39 +1,3 @@
 %%RUBY_SITEARCHLIBDIR%%/qt2gl.so
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/qt2gl/box/README.orig
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/qt2gl/box/box.rb
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/qt2gl/box/glbox.rb
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/qt2gl/box/globjwin.rb
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/qt2gl/gear/README.orig
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/qt2gl/gear/gear.rb
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/qt2gl/gear/gear2.rb
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/qt2gl/glpixmap/README.orig
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/qt2gl/glpixmap/glbox.rb
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/qt2gl/glpixmap/globjwin.rb
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/qt2gl/glpixmap/glpixmap.rb
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/qt2gl/sharedbox/README.orig
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/qt2gl/sharedbox/glbox.rb
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/qt2gl/sharedbox/globjwin.rb
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/qt2gl/sharedbox/sharedbox.rb
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/qt2gl/texture/README.orig
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/qt2gl/texture/gllogo.bmp
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/qt2gl/texture/globjwin.rb
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/qt2gl/texture/gltexobj.rb
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/qt2gl/texture/qtlogo.bmp
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/qt2gl/texture/texture.rb
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/qt2gl/texture/texture_rb/book.bmp
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/qt2gl/texture/texture_rb/book.gif
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/qt2gl/texture/texture_rb/book.xpm
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/qt2gl/texture/texture_rb/gllogo.bmp
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/qt2gl/texture/texture_rb/globjwin.rb
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/qt2gl/texture/texture_rb/gltexobj.rb
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/qt2gl/texture/texture_rb/qtlogo.bmp
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/qt2gl/texture/texture_rb/texture.rb
-%%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/qt2gl/texture/texture_rb
-%%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/qt2gl/texture
-%%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/qt2gl/sharedbox
-%%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/qt2gl/glpixmap
-%%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/qt2gl/gear
-%%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/qt2gl/box
-%%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/qt2gl
 %%PORTDOCS%%%%RUBY_DOCDIR%%/qt2gl/README
 %%PORTDOCS%%@dirrm %%RUBY_DOCDIR%%/qt2gl

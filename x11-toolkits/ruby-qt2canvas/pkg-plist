@@ -1,14 +1,1 @@
 %%RUBY_SITEARCHLIBDIR%%/qt2canvas.so
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/qt2canvas/canvas/in.png
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/qt2canvas/canvas/butterfly.png
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/qt2canvas/canvas/out.png
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/qt2canvas/canvas/outshade.png
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/qt2canvas/canvas/blend.png
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/qt2canvas/canvas/qt-trans.xpm
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/qt2canvas/canvas/qtlogo.png
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/qt2canvas/canvas/blendshadow.rb
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/qt2canvas/canvas/canvas.rb
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/qt2canvas/canvas/canvas_lib.rb
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/qt2canvas/canvas/makeimg.rb
-%%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/qt2canvas/canvas
-%%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/qt2canvas
