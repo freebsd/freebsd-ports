@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	rudiments
-PORTVERSION=	0.21
+PORTVERSION=	0.23
 CATEGORIES=	devel
 MASTER_SITES=	http://www.firstworks.com/downloads/rudiments/
 
@@ -15,6 +15,7 @@ MAINTAINER=	knu@FreeBSD.org
 USE_GMAKE=	yes
 USE_AUTOCONF_VER=213
 CONFIGURE_ENV=	CXX="${CXX}" CXXFLAGS="${CXXFLAGS}"
+MAKE_ARGS=	VERSION="${PORTVERSION:R}"
 
 INSTALLS_SHLIB=	yes
 
