@@ -18,6 +18,7 @@ lib/buddha-%%BUDDHA_VERSION%%/IO.i
 lib/buddha-%%BUDDHA_VERSION%%/IOPrims_B.p_hi
 lib/buddha-%%BUDDHA_VERSION%%/IO_B.p_hi
 lib/buddha-%%BUDDHA_VERSION%%/Internals.h
+lib/buddha-%%BUDDHA_VERSION%%/IsException.p_hi
 lib/buddha-%%BUDDHA_VERSION%%/IsIO.p_hi
 lib/buddha-%%BUDDHA_VERSION%%/IsThunk.p_hi
 lib/buddha-%%BUDDHA_VERSION%%/Ix.i
