@@ -1,1 +1,1 @@
-GNU Standards-compliant Makefile generator
+GNU automake generates (not-quite-makefile) input files for GNU autoconf
