@@ -7,7 +7,7 @@
 
 PORTNAME=	apcupsd
 PORTVERSION=	3.10.15
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	sysutils
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -101,7 +101,7 @@ post-install:
 	${INSTALL_DATA} ${FILESDIR}/apcupsd.conf.net-master.sample ${PREFIX}/etc/apcupsd/
 	${INSTALL_DATA} ${FILESDIR}/apcupsd.conf.net-slave.sample ${PREFIX}/etc/apcupsd/
 	# If there is already an config file it is installed as ...new
-	for na in apcupsd.conf apcupsd.css; do \
+	for na in apcupsd.conf apcupsd.css hosts.conf multimon.conf; do \
 		if [ -f ${PREFIX}/etc/apcupsd/$$na ]; then \
 			if [ -f ${PREFIX}/etc/apcupsd/$$na.new ]; then \
 				${MV} ${PREFIX}/etc/apcupsd/$$na.new ${PREFIX}/etc/apcupsd/$$na.sample; \
