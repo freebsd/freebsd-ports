@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	lftp
-PORTVERSION=	2.6.5
+PORTVERSION=	2.6.6
 CATEGORIES=	ftp ipv6
 MASTER_SITES=	ftp://ftp.phear.org/pub/linux/networking/ftp/client/lftp/ \
 		ftp://ftp.phear.org/pub/linux/networking/ftp/client/lftp/old/ \
@@ -31,7 +31,7 @@ MASTER_SITES=	ftp://ftp.phear.org/pub/linux/networking/ftp/client/lftp/ \
 		ftp://ftp.yars.free.net/pub/software/unix/net/ftp/client/lftp/ \
 		ftp://ftp.yars.free.net/pub/software/unix/net/ftp/client/lftp/old/
 
-MAINTAINER=	fm@astral.ntu-kpi.kiev.ua
+MAINTAINER=	fm@code.org.ua
 COMMENT=	Shell-like command line ftp client
 
 LIB_DEPENDS=	intl.4:${PORTSDIR}/devel/gettext
