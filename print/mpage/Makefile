@@ -10,8 +10,7 @@
 # "Legal" (8.5" x 14").
 
 PORTNAME=	mpage
-PORTVERSION=	2.5.3
-PORTREVISION=	1
+PORTVERSION=	2.5.4
 CATEGORIES=	print
 MASTER_SITES=	ftp://ftp.mesa.nl/pub/mpage/
 EXTRACT_SUFX=	.tgz
@@ -19,7 +18,12 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Print multiple pages per sheet of paper
 
-MAN1=		mpage.1
 ALL_TARGET=	default
+
+MAN1=		mpage.1
+PLIST_FILES=	bin/mpage %%DATADIR%%/CP850.PC %%DATADIR%%/ISO+STD+OTH \
+		%%DATADIR%%/ISO-8859.1 %%DATADIR%%/ISO-8859.15 \
+		%%DATADIR%%/ISO-Latin.1 %%DATADIR%%/ISO-Latin.2
+PLIST_DIRS=	%%DATADIR%%
 
 .include <bsd.port.mk>
