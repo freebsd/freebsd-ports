@@ -43,6 +43,7 @@ JDK_VERSION=	1.3.1
 RELEASE_VERSION=0
 PLIST_SUB+=	JDK_VERSION=${JDK_VERSION}
 DOWNLOAD_URL=	http://www.FreeBSDFoundation.org/cgi-bin/download.cgi?package=${DISTNAME}${EXTRACT_SUFX}
+LATEST_LINK=	${PKGNAMEPREFIX}${PORTNAME}13
 
 WRKSRC=		${WRKDIR}/${PKGNAMEPREFIX}jdk${JDK_VERSION}
 NO_BUILD=	yes
@@ -73,7 +74,7 @@ manually.  Please access\n\
   ${DOWNLOAD_URL}\n\
 \n\
 with a web browser and \"Accept\" the End User License Agreement for\n\
-\"Caffe Diablo ${JRE_VERSION}\".  Please place the downloaded\n\
+\"Caffe Diablo ${JDK_VERSION}\".  Please place the downloaded\n\
 ${DISTNAME}${EXTRACT_SUFX} in ${DISTDIR}.\n
 .endif
 
