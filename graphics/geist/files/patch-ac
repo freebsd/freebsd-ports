@@ -1,0 +1,13 @@
+--- src/geist_document_xml.h.orig	Sat Mar 30 22:00:55 2002
++++ src/geist_document_xml.h	Sat Mar 30 22:01:01 2002
+@@ -34,8 +34,8 @@
+ #include "geist_line.h"
+ #include "geist_poly.h"
+ 
+-#include <parser.h>
+-#include <xmlmemory.h>
++#include <libxml/parser.h>
++#include <libxml/xmlmemory.h>
+ 
+ enum xml_load_err {ERR_NO_FILE, ERR_EMPTY_FILE, ERR_WRONG_TYPE};
+ 
