@@ -1,0 +1,23 @@
+bin/cgicc-config
+include/cgicc/CgiDefs.h
+include/cgicc/CgiEnvironment.h
+include/cgicc/CgiUtils.h
+include/cgicc/Cgicc.h
+include/cgicc/FormEntry.h
+include/cgicc/FormFile.h
+include/cgicc/HTMLAttributes.h
+include/cgicc/HTMLClasses.h
+include/cgicc/HTMLElements.h
+include/cgicc/HTMLGeneric.h
+include/cgicc/HTTPHeaders.h
+include/cgicc/MStreamable.h
+@dirrm include/cgicc
+@unexec install-info --delete %D/info/cgicc.info %D/info/dir
+info/cgicc.info
+info/cgicc.info-1
+info/cgicc.info-2
+info/cgicc.info-3
+@exec install-info %D/info/cgicc.info %D/info/dir
+lib/libcgicc.a
+lib/libcgicc.so
+lib/libcgicc.so.2

@@ -32,6 +32,7 @@
     SUBDIR += calamaris
     SUBDIR += cgi-lib
     SUBDIR += cgic
+    SUBDIR += cgicc
     SUBDIR += cgihtml
     SUBDIR += cgiparse
     SUBDIR += cgiwrap
