@@ -26,10 +26,6 @@ do-extract:
 	@cd ${WRKDIR}; rpm2cpio ${DISTDIR}/${DIST_SUBDIR}/${DISTFILES} \
 		| cpio --extract --no-preserve-owner \
 		--preserve-modification-time --unconditional --quiet
-	@cd ${WRKDIR}; \
-		cpio --extract --no-preserve-owner \
-		--preserve-modification-time --unconditional --quiet \
-		< ${WRKDIR}/sgifonts.cpio
 	@${TAR} -C ${WRKDIR} -xf ${WRKDIR}/sgi-fonts.tar.gz
 
 pre-install:
