@@ -7,16 +7,12 @@
 
 PORTNAME=	libpng
 PORTVERSION=	0.3.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics ruby
 MASTER_SITES=	http://www.isc.meiji.ac.jp/~ee77038/ruby/program/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
 DISTNAME=	ruby-${PORTNAME}-${PORTVERSION}
 DIST_SUBDIR=	ruby
-
-PATCH_SITES=	${MASTER_SITE_LOCAL}
-PATCH_SITE_SUBDIR=	knu
-PATCHFILES=	ruby-libpng-0.3.3.patch.gz
 
 MAINTAINER=	knu@FreeBSD.org
 
@@ -28,12 +24,10 @@ USE_RUBY_EXTCONF=	yes
 USE_RUBY_RD=	yes
 .endif
 
-WRKSRC=		${WRKDIR}/${PORTNAME}
 INSTALL_TARGET=	site-install
 
 DOCS_JA=	readme.ja.html	readme.ja.rd	readme.ja.txt
 EXAMPLES_EN=	es.png		png.rb		pngtest.rb	pngtest.sh	\
-		test.rb	\
 		sample/0.png	sample/1.png	sample/2.png	sample/3.png	\
 		sample/4.png	sample/5.png	sample/6.png	sample/7.png	\
 		sample/8.png	sample/9.png	sample/pngcat.rb

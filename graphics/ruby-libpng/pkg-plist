@@ -3,7 +3,6 @@
 %%RUBY_EXAMPLESDIR%%/libpng/png.rb
 %%RUBY_EXAMPLESDIR%%/libpng/pngtest.rb
 %%RUBY_EXAMPLESDIR%%/libpng/pngtest.sh
-%%RUBY_EXAMPLESDIR%%/libpng/test.rb
 %%RUBY_EXAMPLESDIR%%/libpng/0.png
 %%RUBY_EXAMPLESDIR%%/libpng/1.png
 %%RUBY_EXAMPLESDIR%%/libpng/2.png
