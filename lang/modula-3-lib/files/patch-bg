@@ -43,9 +43,9 @@ Index: m3/m3core/src/runtime/FreeBSD2/m3makefile
  %% s_source (RTStackASM)
  
 Index: m3/m3core/src/runtime/FreeBSD2/malloc.c
---- malloc.c.orig	Thu May  8 17:39:18 1997
-+++ malloc.c	Sat Jun 28 10:59:29 1997
-@@ -0,0 +1,1140 @@
+--- malloc.c.orig	Fri Jul  4 08:51:34 1997
++++ malloc.c	Fri Jul  4 08:53:21 1997
+@@ -0,0 +1,1142 @@
 +/*
 + * ----------------------------------------------------------------------------
 + * "THE BEER-WARE LICENSE" (Revision 42):
@@ -58,6 +58,8 @@ Index: m3/m3core/src/runtime/FreeBSD2/malloc.c
 + * Modified for Modula-3 thread safety by jdp@polstra.com (John Polstra).
 + *
 + */
++
++#define _THREAD_SAFE	1	/* Turn on thread safety for Modula-3 */
 +
 +/*
 + * Defining EXTRA_SANITY will enable extra checks which are related
