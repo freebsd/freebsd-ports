@@ -1,6 +1,6 @@
-Doxygen is a documentation system for C and C++. It can generate an on-line
-class browser (in HTML) and/or an off-line reference manual (in LaTeX) from a
-set of documented source files. The documentation is extracted directly from
-the sources.
+Doxygen is a documentation system for C and C++, Java, IDL and to some extent C#
+and PHP. It can generate an on-line class browser (in HTML) and/or an off-line 
+reference manual (in LaTeX/ps/pdf) from a set of documented source files. The 
+documentation is extracted directly from the sources.
 
 WWW: http://www.doxygen.org/
