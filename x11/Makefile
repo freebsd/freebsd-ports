@@ -16,6 +16,7 @@
     SUBDIR += bricons
     SUBDIR += dgs
     SUBDIR += dxpc
+    SUBDIR += dynamag
     SUBDIR += ebuttons
     SUBDIR += efancylauncher
     SUBDIR += emu
