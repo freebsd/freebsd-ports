@@ -14,9 +14,15 @@ MASTER_SITE_SUBDIR=	mod-blosxom
 MAINTAINER=	gslin@ccca.nctu.edu.tw
 COMMENT=	Apache module to build the extremely lightweight Weblog environment
 
-BROKEN=		"Does not compile"
+APXS?=		${LOCALBASE}/sbin/apxs
+APACHE_PORT?=	${PORTSDIR}/www/apache13
 
 BUILD_DEPENDS=	${APXS}:${APACHE_PORT}
 RUN_DEPENDS=	${BUILD_DEPENDS}
+
+USE_REINPLACE=	yes
+
+post-patch:
+	${REINPLACE_CMD} -e 's,^APXS=.*,APXS=${APXS},' ${WRKSRC}/Makefile
 
 .include <bsd.port.mk>
