@@ -1,0 +1,216 @@
+--- src/LyXView.C.orig	Thu Jul  4 18:26:33 2002
++++ src/LyXView.C	Thu Jul  4 18:28:28 2002
+@@ -19,7 +19,7 @@
+ 
+ #include "LyXView.h"
+ #include "lyx_main.h"
+-#if FL_REVISION < 89 || (FL_REVISION == 89 && FL_FIXLEVEL < 5)
++#if (FL_VERSION == 0 && FL_REVISION < 89) || (FL_REVISION == 89 && FL_FIXLEVEL < 5)
+ #include "lyxlookup.h"
+ #endif
+ #include "minibuffer.h"
+@@ -214,7 +214,7 @@
+ {
+ 	fl_show_form(form_, place, border, title.c_str());
+ 	minibuffer->Init();
+-#if FL_REVISION < 89 || (FL_REVISION == 89 && FL_FIXLEVEL < 5)
++#if (FL_VERSION == 0 && FL_REVISION < 89) || (FL_REVISION == 89 && FL_FIXLEVEL < 5)
+ 	InitLyXLookup(fl_get_display(), form_->window);
+ #endif
+ }
+--- src/WorkArea.C.orig2	Thu Jul  4 18:33:22 2002
++++ src/WorkArea.C	Thu Jul  4 18:36:02 2002
+@@ -24,7 +24,7 @@
+ #include "LyXView.h"
+ #include "lyxfunc.h"
+ 
+-#if FL_REVISION < 89 || (FL_REVISION == 89 && FL_FIXLEVEL < 5)
++#if (FL_VERSION == 0 && FL_REVISION < 89) || (FL_REVISION == 89 && FL_FIXLEVEL < 5)
+ #include "lyxlookup.h"
+ #endif
+ 
+@@ -323,7 +323,7 @@
+ 				      ev->xbutton.y - ob->y,
+ 				      ev->xbutton.button);
+ 		break;
+-#if FL_REVISION < 89
++#if (FL_VERSION == 0 && FL_REVISION < 89)
+ 	case FL_MOUSE:
+ #else
+ 	case FL_DRAG:
+@@ -339,7 +339,7 @@
+ 					     ev->xbutton.state);
+ 		}
+ 		break;
+-#if FL_REVISION < 89
++#if (FL_VERSION == 0 && FL_REVISION < 89)
+ 	case FL_KEYBOARD:
+ #else
+ 	case FL_KEYPRESS:
+@@ -350,7 +350,7 @@
+ 		KeySym keysym = 0;
+ 		char dummy[1];
+ 		XKeyEvent * xke = reinterpret_cast<XKeyEvent *>(ev);
+-#if FL_REVISION < 89 || (FL_REVISION == 89 && FL_FIXLEVEL < 5)
++#if (FL_VERSION == 0 && FL_REVISION < 89) || (FL_REVISION == 89 && FL_FIXLEVEL < 5)
+ 		// XForms < 0.89.5 does not have compose support
+ 		// so we are using our own compose support
+ 		LyXLookupString(ev, dummy, 1, &keysym);
+@@ -369,7 +369,7 @@
+ 			       << keysym << "]" << endl;
+ 		}
+ 
+-#if FL_REVISION < 89
++#if (FL_VERSION == 0 && FL_REVISION < 89)
+ 		if (keysym == NoSymbol) {
+ 			lyxerr[Debug::KEY]
+ 				<< "Empty kdb action (probably composing)"
+@@ -446,7 +446,7 @@
+ 	}
+ 	break;
+ 
+-#if FL_REVISION >= 89
++#if (FL_VERSION > 0 || FL_REVISION >= 89)
+ 	case FL_KEYRELEASE:
+ 		lyxerr << "Workarea event: KEYRELEASE" << endl;
+ 		break;
+--- src/lyx_gui.C.orig2	Thu Jul  4 18:36:45 2002
++++ src/lyx_gui.C	Thu Jul  4 18:39:42 2002
+@@ -36,7 +36,7 @@
+ #include "lyxrc.h"
+ #include "gettext.h"
+ #include "lyx_gui_misc.h"
+-#if FL_REVISION < 89 || (FL_REVISION == 89 && FL_FIXLEVEL < 5)
++#if (FL_VERSION == 0 && FL_REVISION < 89) || (FL_REVISION == 89 && FL_FIXLEVEL < 5)
+ #include "lyxlookup.h"
+ #endif
+ #include "bufferlist.h"
+@@ -171,7 +171,7 @@
+ 	delete lyxserver;
+ 	lyxserver = 0;
+ 	delete lyxViews;
+-#if FL_REVISION < 89 || (FL_REVISION == 89 && FL_FIXLEVEL < 5)
++#if (FL_VERSION == 0 && FL_REVISION < 89) || (FL_REVISION == 89 && FL_FIXLEVEL < 5)
+ 	CloseLyXLookup();
+ #endif
+ }
+--- src/insets/figinset.C.orig2	Thu Jul  4 18:40:17 2002
++++ src/insets/figinset.C	Thu Jul  4 18:42:08 2002
+@@ -933,7 +933,7 @@
+ 					    tmpfig->inset->form->OkBtn);
+ 			fl_hide_form(tmpfig->inset->form->Figure);
+ 		}
+-#if FL_REVISION == 89
++#if (FL_VERSION == 0 && FL_REVISION == 89)
+ 		// CHECK Reactivate this free_form calls
+ #else
+ 		fl_free_form(tmpfig->inset->form->Figure);
+@@ -1769,7 +1769,7 @@
+ 			if (arg == 8) {
+ 				fl_set_focus_object(form->Figure, form->OkBtn);
+ 				fl_hide_form(form->Figure);
+-#if FL_REVISION == 89
++#if (FL_VERSION == 0 && FL_REVISION == 89)
+ 				// CHECK Reactivate this free_form calls
+ #else
+ 				fl_free_form(form->Figure);
+@@ -1786,7 +1786,7 @@
+ 	case 9:				/* cancel = restore and close */
+ 		fl_set_focus_object(form->Figure, form->OkBtn);
+ 		fl_hide_form(form->Figure);
+-#if FL_REVISION == 89
++#if (FL_VERSION == 0 && FL_REVISION == 89)
+ 		// CHECK Reactivate this free_form calls
+ 		// Jug, is this still a problem?
+ #else
+--- src/frontends/kde/GUIRunTime.C.orig	Thu Jul  4 18:43:25 2002
++++ src/frontends/kde/GUIRunTime.C	Thu Jul  4 18:44:57 2002
+@@ -26,7 +26,7 @@
+ 
+ // I keep these here so that it will be processed as early in
+ // the compilation process as possible.
+-#if !defined(FL_REVISION) || FL_REVISION < 88 || FL_VERSION != 0
++#if !defined(FL_REVISION) || (FL_REVISION < 88 && FL_VERSION == 0)
+ #error LyX will not compile with this version of XForms.\
+        Please get version 0.89.\
+        If you want to try to compile anyway, delete this test in src/frontends/kde/GUIRunTime.C.
+--- src/frontends/gnome/GUIRunTime.C.orig	Thu Jul  4 18:46:08 2002
++++ src/frontends/gnome/GUIRunTime.C	Thu Jul  4 18:47:23 2002
+@@ -25,7 +25,7 @@
+ 
+ // I keep these here so that it will be processed as early in
+ // the compilation process as possible.
+-#if !defined(FL_REVISION) || FL_REVISION < 88 || FL_VERSION != 0
++#if !defined(FL_REVISION) || (FL_REVISION < 88 && FL_VERSION == 0)
+ #error LyX will not compile with this version of XForms.\
+        Please get version 0.89.\
+        If you want to try to compile anyway, delete this test in src/frontends/gnome/GUIRunTime.C.
+--- src/frontends/xforms/GUIRunTime.C.orig	Thu Jul  4 18:47:48 2002
++++ src/frontends/xforms/GUIRunTime.C	Thu Jul  4 18:48:18 2002
+@@ -19,7 +19,7 @@
+ 
+ // I keep these here so that it will be processed as early in
+ // the compilation process as possible.
+-#if !defined(FL_REVISION) || FL_REVISION < 88 || FL_VERSION != 0
++#if !defined(FL_REVISION) || (FL_REVISION < 88 && FL_VERSION == 0)
+ #error LyX will not compile with this version of XForms.\
+        Please get version 0.89.\
+        If you want to try to compile anyway, delete this test in src/frontends/xforms/GUIRunTime.C.
+--- src/frontends/xforms/Menubar_pimpl.C.orig	Thu Jul  4 18:49:05 2002
++++ src/frontends/xforms/Menubar_pimpl.C	Thu Jul  4 18:50:18 2002
+@@ -219,7 +219,7 @@
+ static inline
+ string const fixlabel(string const & str)
+ {
+-#if FL_REVISION < 89
++#if (FL_VERSION == 0 && FL_REVISION < 89)
+ 	return subst(str, '%', '?');
+ #else
+ 	return subst(str, "%", "%%");
+--- src/frontends/xforms/Toolbar_pimpl.C.orig	Thu Jul  4 18:50:40 2002
++++ src/frontends/xforms/Toolbar_pimpl.C	Thu Jul  4 18:52:37 2002
+@@ -84,13 +84,13 @@
+ 	: owner(o), sxpos(x), sypos(y)
+ {
+ 	combox = 0;
+-#if FL_REVISION < 89
++#if (FL_VERSION == 0 && FL_REVISION < 89)
+ 	bubble_timer = 0;
+ #endif
+ }
+ 
+ 
+-#if FL_REVISION < 89
++#if (FL_VERSION == 0 && FL_REVISION < 89)
+ // timer-cb for bubble-help (Matthias)
+ static 
+ void BubbleTimerCB(FL_OBJECT *, long data)
+@@ -339,7 +339,7 @@
+ 		fl_addto_form(owner->getForm());
+ 	}
+ 
+-#if FL_REVISION < 89
++#if (FL_VERSION == 0 && FL_REVISION < 89)
+ 	// add the time if it don't exist
+ 	if (bubble_timer == 0)
+ 		bubble_timer = fl_add_timer(FL_HIDDEN_TIMER,
+@@ -383,7 +383,7 @@
+ 			fl_set_pixmapbutton_focus_outline(obj, 0);
+ 
+ 			// Set the tooltip
+-#if FL_REVISION >= 89
++#if (FL_VERSION > 0 || FL_REVISION >= 89)
+ 			string help = _(lyxaction.helpText(item->action));
+ 			fl_set_object_helper(obj, help.c_str());	
+ #else
+--- src/frontends/xforms/Toolbar_pimpl.h.orig	Thu Jul  4 18:52:55 2002
++++ src/frontends/xforms/Toolbar_pimpl.h	Thu Jul  4 18:53:40 2002
+@@ -93,7 +93,7 @@
+ 	ToolbarList toollist;
+ 	///
+ 	LyXView * owner;
+-#if FL_REVISION < 89
++#if (FL_VERSION == 0 && FL_REVISION < 89)
+ 	///
+ 	FL_OBJECT * bubble_timer;
+ #endif
