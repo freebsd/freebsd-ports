@@ -1,5 +1,5 @@
 arch is yet another source code management and revision control system
-inteded to address deficiences in CVS(1).  Some of its claimed features are:
+intended to address deficiencies in CVS(1).  Some of its claimed features are:
 
 - atomic commits
 - file renames handled cleanly
