@@ -3,7 +3,7 @@
 # Date created:		Nov 28 ,1997
 # Whom:			Yen-Shuo Su <yssu@CCCA.NCTU.edu.tw>
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1997/12/15 17:57:48 vanilla Exp $
 #
 
 DISTNAME=       xcin-2.3.01
@@ -18,19 +18,18 @@ RUN_DEPENDS=	${X11BASE}/lib/X11/fonts/chinese/kc15.pcf.gz:${PORTSDIR}/chinese/kc
 
 USE_X11=	yes
 HAS_CONFIGURE=	yes
-CONFIGURE_ARGS+=-prefix="${X11BASE}" \
+CONFIGURE_ARGS	=-prefix="${X11BASE}" \
 		-x-font-prefix="${X11BASE}/lib/X11/fonts"
 MAN1=		xcin.1 cin2tab.1
 
-.if !defined(USE_24_FONT)
+.if defined(USE_24_FONT)
+CONFIGURE_ARGS+=-use-24-fonts
+.else
 pre-fetch:
 	@echo
 	@echo You can set USE_24_FONT=YES if you want to use 24 fonts
 	@echo as default when xcin is running.
 	@echo
-.else
-pre-configure:
-CONFIGURE_ARGS+=-use-24-fonts
 .endif
 
 .include <bsd.port.mk>
