@@ -1,0 +1,12 @@
+#!/bin/sh
+# Try to restore httpd.conf when deinstalling IMP
+
+if [ x$2 != xDEINSTALL ]; then
+    exit
+fi
+
+if [ -f ${PKG_PREFIX}/etc/apache/httpd.conf.beforeIMP ] ; then
+	echo "Restoring httpd.conf..."
+	cp ${PKG_PREFIX}/etc/apache/httpd.conf ${PKG_PREFIX}/etc/apache/httpd.conf.deinstIMP
+	mv ${PKG_PREFIX}/etc/apache/httpd.conf.beforeIMP ${PKG_PREFIX}/etc/apache/httpd.conf
+fi

@@ -729,6 +729,29 @@
 %%IMPDIR%%/locale/sl/select.lang
 %%IMPDIR%%/locale/sl/spelling.lang
 %%IMPDIR%%/locale/sl/status.lang
+%%IMPDIR%%/locale/zh/compose.help
+%%IMPDIR%%/locale/zh/compose.lang
+%%IMPDIR%%/locale/zh/contacts.help
+%%IMPDIR%%/locale/zh/contacts.lang
+%%IMPDIR%%/locale/zh/folders.help
+%%IMPDIR%%/locale/zh/folders.lang
+%%IMPDIR%%/locale/zh/help.lang
+%%IMPDIR%%/locale/zh/horde.lang
+%%IMPDIR%%/locale/zh/login.help
+%%IMPDIR%%/locale/zh/login.lang
+%%IMPDIR%%/locale/zh/mailbox.lang
+%%IMPDIR%%/locale/zh/menu.lang
+%%IMPDIR%%/locale/zh/message.lang
+%%IMPDIR%%/locale/zh/newuser.entro.txt
+%%IMPDIR%%/locale/zh/newuser.intro.txt
+%%IMPDIR%%/locale/zh/newuser.lang
+%%IMPDIR%%/locale/zh/newuser.start.txt
+%%IMPDIR%%/locale/zh/openwin.lang
+%%IMPDIR%%/locale/zh/passwd.lang
+%%IMPDIR%%/locale/zh/prefs.lang
+%%IMPDIR%%/locale/zh/select.lang
+%%IMPDIR%%/locale/zh/spelling.lang
+%%IMPDIR%%/locale/zh/status.lang
 %%IMPDIR%%/locale/zh-tw/compose.help
 %%IMPDIR%%/locale/zh-tw/compose.lang
 %%IMPDIR%%/locale/zh-tw/contacts.help
@@ -850,6 +873,7 @@
 @dirrm %%IMPDIR%%/templates
 @dirrm %%IMPDIR%%/scripts
 @dirrm %%IMPDIR%%/locale/zh-tw
+@dirrm %%IMPDIR%%/locale/zh
 @dirrm %%IMPDIR%%/locale/sl
 @dirrm %%IMPDIR%%/locale/sk
 @dirrm %%IMPDIR%%/locale/se

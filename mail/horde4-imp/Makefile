@@ -7,8 +7,7 @@
 #
 
 PORTNAME=	imp
-PORTVERSION=	2.2.6
-PORTREVISION=	1
+PORTVERSION=	2.2.7
 CATEGORIES=	mail www
 MASTER_SITES=	ftp://ftp.horde.org/pub/imp/tarballs/
 
@@ -42,7 +41,7 @@ MAINTAINER=	thierry@thomas.as
 #
 # - WITH_COURIER-IMAP	: IMP will work with courier-imap.
 #
-# These choice are mutually exclusive, and cyrus-imapd is the default.
+# These choice are mutually exclusive, and imap-uw is the default.
 #
 #-----------------------------------------------------------------------
 
@@ -58,25 +57,25 @@ LIB_DEPENDS+=	ldap.1:${PORTSDIR}/net/openldap \
 .endif
 .endif
 
-RUN_DEPENDS+=	${LOCALBASE}/www/horde/:${PORTSDIR}/www/horde
+RUN_DEPENDS+=	${LOCALBASE}/www/horde/index.php3:${PORTSDIR}/www/horde
 
 # I have no report about the support of dkimap4 by IMP,
 # but I shall be happy to add it if somebody report success with it.
 # If an IMAP server is already installed, we just record the dependence,
-# else we shall install cyrus-imapd.
+# else we shall install imap-uw.
 # IMAP servers are ordered according to my tastes, if several are
 # installed, we just record the first one.
 .if !defined(WITHOUT_IMAPSERVER)
-.if defined(WITH_CYRUS-IMAPD)
-RUN_DEPENDS+=	${LOCALBASE}/lib/libacap.a:${PORTSDIR}/mail/cyrus-imapd
-.elif defined(WITH_IMAP-UW)
+.if defined(WITH_IMAP-UW)
 RUN_DEPENDS+=	${LOCALBASE}/libexec/imapd:${PORTSDIR}/mail/imap-uw
+.elif defined(WITH_CYRUS-IMAPD)
+RUN_DEPENDS+=	${LOCALBASE}/lib/libacap.a:${PORTSDIR}/mail/cyrus-imapd
 .elif defined(WITH_CYRUS)
 RUN_DEPENDS+=	${LOCALBASE}/cyrus/:${PORTSDIR}/mail/cyrus
 .elif defined(WITH_COURIER-IMAP)
 RUN_DEPENDS+=	${LOCALBASE}/libexec/courier-imap/:${PORTSDIR}/mail/courier-imap
 .else
-RUN_DEPENDS+=	${LOCALBASE}/lib/libacap.a:${PORTSDIR}/mail/cyrus-imapd
+RUN_DEPENDS+=	${LOCALBASE}/libexec/imapd:${PORTSDIR}/mail/imap-uw
 .endif
 .endif
 
@@ -100,11 +99,15 @@ DOCS=		COPYING README docs/CHANGES docs/CREDITS docs/DATABASE \
 
 LHORDEDIR?=	www/horde
 LIMPDIR?=	${LHORDEDIR}/imp
+HORDESBIN?=	${PREFIX}/sbin
 
 PLIST_SUB=	HORDEDIR=${LHORDEDIR} IMPDIR=${LIMPDIR}
 
 HORDEDIR=	${PREFIX}/${LHORDEDIR}
 IMPDIR=		${PREFIX}/${LIMPDIR}
+
+APACHE_CNFDIR?=	${LOCALBASE}/etc/apache
+APACHE_CONF=	${APACHE_CNFDIR}/httpd.conf
 
 pre-everything::
 .if !defined(WITHOUT_IMAPSERVER)
@@ -116,6 +119,12 @@ pre-everything::
 
 pre-install:
 # N.B.: database dependencies are binded with mod_php#, neither by Horde nor IMP.
+	@if [ -f ${IMPDIR}/index.php ]; then \
+	    ${ECHO_MSG} "" ; \
+	    ${ECHO_MSG} "Please deinstall the port mail/imp-devel." ; \
+	    ${ECHO_MSG} "" ; \
+	    ${FALSE} ; \
+	fi
 	@if ! ${LDCONFIG} -r | ${GREP} -q -e "c-client4.8"; then \
 	    ${ECHO_MSG} "" ; \
 	    ${ECHO_MSG} "Please configure PHP with IMAP support." ; \
@@ -173,6 +182,12 @@ do-install:
 	${PERL} -pi -e "s:/bin/tar:/usr/bin/tar:g" ${IMPDIR}/config/defaults.php3.dist
 	${PERL} -pi -e "s:/usr/bin/zipinfo:${LOCALBASE}/bin/zipinfo:g" \
 			${IMPDIR}/config/defaults.php3.dist
+	${PERL} -pi -e "s:sh ./secure.sh:${HORDESBIN}/horde_secure.sh:g" \
+			${IMPDIR}/templates/index/imp_notconfigured.inc
+	${PERL} -pi -e "s:sh ./install.sh:${HORDESBIN}/horde_setup.sh:g" \
+			${IMPDIR}/templates/index/imp_notconfigured.inc
+	${PERL} -pi -e "s:sh ./secure.sh:${HORDESBIN}/horde_secure.sh:g" \
+			${HORDEDIR}/templates/setup/imp/write_file.inc
 	@if [ ! -f ${IMPDIR}/config/defaults.php3 ]; then \
 	    ${CP}     ${IMPDIR}/config/defaults.php3.dist ${IMPDIR}/config/defaults.php3; \
 	fi
@@ -186,8 +201,21 @@ do-install:
 	@if [ ! -f ${IMPDIR}/config/servers.php3 ]; then \
 	    ${CP}     ${IMPDIR}/config/servers.php3.dist ${IMPDIR}/config/servers.php3; \
 	fi
+	${CHOWN} -R www:www ${IMPDIR}
 	${CHMOD}  444 ${HORDEDIR}/setup.php3
+	@(if [ -f ${APACHE_CONF} ] ; then \
+	   (if [ ! -f ${APACHE_CONF}.beforeIMP ] ; then \
+		${ECHO} "===> Updating ${APACHE_CONF}..." ; \
+		${CP} -p ${.CURDIR}/httpd.conf.imp ${WRKDIR}/httpd.conf.imp ; \
+		${PERL} -pi -e "s:/home/httpd/html/horde/imp:${IMPDIR}:g" \
+			${WRKDIR}/httpd.conf.imp ; \
+		${CP} -p ${APACHE_CONF} ${APACHE_CONF}.beforeIMP ; \
+		${GREP} -qw 'Added for IMP' ${APACHE_CONF} || ${CAT} ${WRKDIR}/httpd.conf.imp \
+			>> ${APACHE_CONF} ; \
+	    fi) ; \
+	fi)
 .if !defined(NOPORTDOCS)
+	${PERL} -pi -e "s:/home/httpd/html/horde/imp:${IMPDIR}:g" ${WRKSRC}/docs/SECURITY
 	${MKDIR} ${DOCSDIR}
 .for FILE in ${DOCS}
 	${INSTALL_DATA} ${WRKSRC}/${FILE} ${DOCSDIR}
@@ -208,8 +236,11 @@ post-install:
 	@${ECHO} "In order to end IMP's configuration, please read the"
 	@${ECHO} "file ${DOCSDIR}/INSTALL."
 	@${ECHO} ""
+	@${ECHO} "If ${APACHE_CONF} has been updated,"
+	@${ECHO} "you have to restart Apache."
+	@${ECHO} ""
 	@${ECHO} "The configuration utitility is located at"
-	@${ECHO} "<URL:http://localhost/horde/imp/setup.php3>".
+	@${ECHO} "<URL:http://localhost/horde/setup.php3>".
 	@${ECHO} ""
 	@${ECHO} "IMP requires an IMAP server. If you want to install one on this"
 	@${ECHO} "machine, you may install the ports mail/cyrus-imapd, or"
