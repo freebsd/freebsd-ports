@@ -5,7 +5,7 @@ libexec/deliverquota
 libexec/logger
 libexec/imapd.rc
 libexec/authlib/authuserdb
-libexec/authlib/authpam
+libexec/authlib/authpwd
 @unexec rmdir %D/libexec/authlib
 sbin/imaplogin
 sbin/vchkpw2userdb
