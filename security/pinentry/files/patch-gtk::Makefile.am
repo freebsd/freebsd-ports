@@ -1,0 +1,11 @@
+--- gtk/Makefile.am.orig	Thu Jan 30 07:49:55 2003
++++ gtk/Makefile.am	Thu Jan 30 07:50:41 2003
+@@ -32,7 +32,7 @@
+ AM_CPPFLAGS = $(GLIB_CFLAGS) $(GTK_CFLAGS) $(ncurses_include) \
+ 	-I$(top_srcdir)/secmem -I$(top_srcdir)/pinentry
+ LDADD = ../pinentry/libpinentry.a ../assuan/libassuan.a ../secmem/libsecmem.a \
+-	$(LIBCAP) $(GTK_LIBS) $(libcurses)
++	../common/libcommon.a $(LIBCAP) $(GTK_LIBS) $(libcurses) -lgnugetopt
+ 
+ pinentry_gtk_SOURCES = pinentry-gtk.c \
+ 	gtksecentry.c gtksecentry.h

@@ -1,0 +1,57 @@
+--- configure.ac.orig	Thu Jan 30 07:49:12 2003
++++ configure.ac	Thu Jan 30 07:50:41 2003
+@@ -59,14 +59,6 @@
+ AC_CHECK_FUNCS(seteuid stpcpy)
+ GNUPG_CHECK_MLOCK
+ 
+-dnl Checks for libassuan.
+-AC_CHECK_FUNCS(fopencookie,,[
+-    AC_MSG_ERROR([[
+-***
+-*** fopencookie(3) is needed to build this package.
+-*** We will provide an replacement in a later release.
+-***]])])
+-
+ dnl Checks for libsecmem.
+ GNUPG_CHECK_TYPEDEF(byte, HAVE_BYTE_TYPEDEF)
+ GNUPG_CHECK_TYPEDEF(ulong, HAVE_ULONG_TYPEDEF)
+@@ -217,9 +209,39 @@
+ dnl dnl End of checks for Qt pinentry.
+ dnl fi
+ 
++# Checks for typedefs, structures, and compiler characteristics.
++AC_C_CONST
++AC_C_INLINE
++AC_TYPE_SIZE_T
++AC_TYPE_SIGNAL
++AC_DECL_SYS_SIGLIST
++
++GNUPG_CHECK_TYPEDEF(byte, HAVE_BYTE_TYPEDEF)
++GNUPG_CHECK_TYPEDEF(ushort, HAVE_USHORT_TYPEDEF)
++GNUPG_CHECK_TYPEDEF(ulong, HAVE_ULONG_TYPEDEF)
++
++GNUPG_SYS_SO_PEERCRED
++
++# Checks for library functions.
++
++# These are needed by libjnlib - fixme: we should have a macros for them
++AC_CHECK_FUNCS(memicmp stpcpy strlwr strtoul memmove stricmp strtol)
++AC_CHECK_FUNCS(getrusage setrlimit stat setlocale)
++AC_CHECK_FUNCS(flockfile funlockfile)
++
++AC_CHECK_FUNCS(sigaction sigprocmask)
++
++AC_REPLACE_FUNCS(vasprintf)
++AC_REPLACE_FUNCS(fopencookie)
++# FIXME: Print a warning when fopencookie is not available.
++AC_REPLACE_FUNCS(mkdtemp)
++AC_REPLACE_FUNCS(fseeko ftello)
++AC_REPLACE_FUNCS(isascii)
+ 
+ AC_CONFIG_FILES([
++jnlib/Makefile
+ assuan/Makefile
++common/Makefile
+ secmem/Makefile
+ pinentry/Makefile
+ curses/Makefile

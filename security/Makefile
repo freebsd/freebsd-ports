@@ -231,6 +231,7 @@
     SUBDIR += pgpgpg
     SUBDIR += pgpin
     SUBDIR += pidentd
+    SUBDIR += pinentry
     SUBDIR += pks
     SUBDIR += pktsuckers
     SUBDIR += poc
