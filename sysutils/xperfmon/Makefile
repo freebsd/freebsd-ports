@@ -3,7 +3,7 @@
 # Date created:		14 March 97
 # Whom:			Lars Koeller <Lars.Koeller@Uni-Bielefeld.DE>
 #
-# $Id: Makefile,v 1.20 1998/10/23 16:47:00 fenner Exp $
+# $Id: Makefile,v 1.21 1998/11/21 07:27:41 steve Exp $
 #
 
 DISTNAME=	xperfmon++
@@ -13,7 +13,6 @@ CATEGORIES=     sysutils
 MASTER_SITES=	ftp://ftp.uni-bielefeld.de/pub/systems/FreeBSD/lkoeller/ \
 		ftp://ftp.u-aizu.ac.jp/pub/misc/tools/xperfmon/ \
 		ftp://ftp.ibank.ru/pub/unix_src/benchmarks/
-
 DISTFILES=	xperfmon++v1.1.tar.Z
 
 MAINTAINER=	Lars.Koeller@Uni-Bielefeld.DE
