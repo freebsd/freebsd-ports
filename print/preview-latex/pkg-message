@@ -1,9 +1,11 @@
-*********************************************************
-* Before using preview-laetex, you should add following *
-* to your own .emacs file. It adds autoload setting to  *
-* LaTeX-mode-hook.                                      *
-*                                                       *
-* (require 'tex-site)                                   *
-* (load "preview-latex")                                *
-*                                                       *
-*********************************************************
+====================================================
+To preview, dviware (dvips) must be installed.
+You can use print/teTeX or japanese/teTeX.
+
+Before using preview-latex, you should add following
+to your own .emacs file. It adds autoload setting to
+LaTeX-mode-hook.
+
+ (require 'tex-site)
+ (load "preview-latex")
+====================================================
