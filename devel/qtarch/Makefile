@@ -9,7 +9,7 @@
 DISTNAME=	qtarch-1.4-4
 PKGNAME=	qtarch-1.4.4
 CATEGORIES=	devel
-MASTER_SITES=	http://www.primenet.com/~jtharris/qtarch/
+MASTER_SITES=	http://www.qtarch.intranova.net/
 
 MAINTAINER=	elwood@mc5sys.in-berlin.de
 
