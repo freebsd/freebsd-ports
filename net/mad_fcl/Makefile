@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mad_fcl
-PORTVERSION=	0.5
+PORTVERSION=	0.6
 CATEGORIES=	net ipv6
 MASTER_SITES=	http://www.atm.tut.fi/mad/download/
 DISTNAME=	${PORTNAME}_v${PORTVERSION}_src
@@ -17,6 +17,7 @@ COMMENT=	FLUTE - File Delivery over Unidirectional Transport implementation
 LIB_DEPENDS=	expat.4:${PORTSDIR}/textproc/expat2
 
 USE_GMAKE=	yes
+USE_REINPLACE=	yes
 
 DOC_FILES=	fdt-example.xml flute-sdp-example.sdp
 
@@ -25,6 +26,10 @@ pre-patch:
 	for f in `${FIND} ${WRKSRC}/.. -type f` ; do \
 		${TR} -d '\015' < $$f > $$f.noms && \
 			${CAT} $$f.noms > $$f && ${RM} $$f.noms; done
+
+post-patch:
+	${REINPLACE_CMD} -e 's|-pthread|${PTHREAD_LIBS}|g' \
+		${WRKSRC}/flute/Makefile
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/bin/flute ${PREFIX}/bin
