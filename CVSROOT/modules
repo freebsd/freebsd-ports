@@ -2378,6 +2378,7 @@ gtkgraph	ports/graphics/gtkgraph
 gtkgrepmail	ports/mail/gtkgrepmail
 gtkhtml		ports/www/gtkhtml
 gtkhx		ports/net/gtkhx
+gtkmathview	ports/x11-toolkits/gtkmathview
 gtkportscan	ports/security/gtkportscan
 gtkscintilla	ports/x11-toolkits/gtkscintilla
 gtksee		ports/graphics/gtksee
