@@ -15,19 +15,13 @@ DISTNAME=	LeoArg-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A class for parsing command lines
 
-USE_REINPLACE=	yes
-GNU_CONFIGURE=	yes
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
+USE_GNOME=	gnometarget lthack
+USE_LIBTOOL_VER=	13
 INSTALLS_SHLIB=	yes
-
-BROKEN=		"Configure fails"
 
 MAN3=	LeoArg.3 LeoArg__InvalidOption.3 LeoArg__InvalidSetting.3 \
 	LeoArg__Option.3 LeoArg__Setting.3 LeoArg_cpp.3 LeoArg_hh.3 \
 	StringUtils_cpp.3 StringUtils_hh.3 namespace_StringUtils.3
-
-post-extract:
-	@${RM} -rf ${WRKSRC}/debian
 
 post-patch:
 .for file in Makefile.in doc/Makefile.in
