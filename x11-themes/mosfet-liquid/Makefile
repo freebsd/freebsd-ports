@@ -18,6 +18,7 @@ MAINTAINER=	kde@freebsd.org
 BUILD_DEPENDS=	automake:${PORTSDIR}/devel/automake \
 		autoconf:${PORTSDIR}/devel/autoconf
 
+BROKEN=	It breaks some KDE 3.1 functionality
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_KDEBASE_VER=3
