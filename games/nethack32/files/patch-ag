@@ -1,10 +1,13 @@
 $FreeBSD$
 
 --- sys/unix/Makefile.top.orig	Tue Dec 10 13:20:10 1996
-+++ sys/unix/Makefile.top	Thu Apr  8 16:57:27 2004
-@@ -16,14 +16,14 @@
++++ sys/unix/Makefile.top	Sun Apr 11 23:25:22 2004
+@@ -14,16 +14,16 @@
+ # MAKE = make
+ 
  # make NetHack
- GAME     = nethack
+-GAME     = nethack
++GAME     = %%HACKNAME%%
  GAMEUID  = games
 -GAMEGRP  = bin
 +GAMEGRP  = games
@@ -27,7 +30,7 @@ $FreeBSD$
  # instructions)
 -GAMEDIR  = /usr/games/lib/$(GAME)dir
 -SHELLDIR = /usr/games
-+GAMEDIR  = ${PREFIX}/share/$(GAME)
++GAMEDIR  = %%HACKDIR%%
 +SHELLDIR = ${PREFIX}/bin
  
  # per discussion in Install.X11
@@ -57,10 +60,12 @@ $FreeBSD$
  
  dofiles:
  	target=`sed -n					\
-@@ -136,15 +138,17 @@
+@@ -135,16 +137,18 @@
+ 		-e '}' 					\
  	  	-e '$$s/.*/nodlb/p' < dat/options` ;	\
  	$(MAKE) dofiles-$${target-nodlb}
- 	cp src/$(GAME) $(GAMEDIR)
+-	cp src/$(GAME) $(GAMEDIR)
++	cp src/nethack $(GAMEDIR)/$(GAME) 
 +	cp util/recover $(GAMEDIR)
  	-rm -f $(SHELLDIR)/$(GAME)
  	sed -e 's;/usr/games/lib/nethackdir;$(GAMEDIR);' \

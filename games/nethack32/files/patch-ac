@@ -1,6 +1,7 @@
-diff -ruN ./include/config.h ../nethack-3.2.2/include/config.h
---- ./include/config.h	Wed Dec 11 05:20:07 1996
-+++ ../nethack-3.2.2/include/config.h	Sun Mar 21 17:25:02 1999
+$FreeBSD$
+
+--- include/config.h.orig	Tue Dec 10 13:20:07 1996
++++ include/config.h	Sat Apr 10 01:01:28 2004
 @@ -211,7 +211,7 @@
   * Some combinations make no sense.  See the installation document.
   */
@@ -41,7 +42,7 @@ diff -ruN ./include/config.h ../nethack-3.2.2/include/config.h
   */
  # ifndef HACKDIR
 -#  define HACKDIR "/usr/games/lib/nethackdir"	/* nethack directory */
-+#  define HACKDIR "/usr/local/share/nethack"	/* nethack directory */
++#  define HACKDIR "%%HACKDIR%%"	/* nethack directory */
  # endif
  
  /*
