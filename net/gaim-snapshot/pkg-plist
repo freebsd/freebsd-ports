@@ -31,6 +31,7 @@ share/locale/ko/LC_MESSAGES/gaim.mo
 share/locale/nl/LC_MESSAGES/gaim.mo
 share/locale/pl/LC_MESSAGES/gaim.mo
 share/locale/ru/LC_MESSAGES/gaim.mo
+share/locale/sk/LC_MESSAGES/gaim.mo
 share/locale/sv/LC_MESSAGES/gaim.mo
 share/locale/zh_CN/LC_MESSAGES/gaim.mo
 %%GNOME:%%@dirrm share/gnome/pixmaps/gaim
