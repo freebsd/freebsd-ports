@@ -39,7 +39,7 @@
 @@ -15,16 +15,11 @@
  LIBFILES_IN = mc.ext.in mc-gnome.ext.in
  LIBFILES_OUT = mc.ext mc-gnome.ext mc.csh mc.sh
- LIBFILES_CONST = mc.hint mc.hint.es mc.lib mc.menu
+ LIBFILES_CONST = mc.hint mc.hint.es mc.hint.cs mc.lib mc.menu
 -SUPPBIN_IN = mc.csh.in mc.sh.in
 -SUPPBIN_OUT =  mc.csh mc.sh
  DESKTOP_FILES = startup.links README.desktop

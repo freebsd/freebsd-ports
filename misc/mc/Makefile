@@ -1,12 +1,12 @@
 # New ports collection makefile for:	mc
-# Version required:	4.5.40
+# Version required:	4.5.42
 # Date created:		15 Jul 1995
 # Whom:			torstenb@FreeBSD.org
 #
 # $FreeBSD$
 #
 
-DISTNAME=	mc-4.5.40
+DISTNAME=	mc-4.5.42
 CATEGORIES=	misc
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	stable/sources/mc
@@ -15,7 +15,6 @@ MAINTAINER=	reg@shale.csir.co.za
 
 LIB_DEPENDS=	glib12.3:${PORTSDIR}/devel/glib12 \
 		intl.1:${PORTSDIR}/devel/gettext
-
 .if defined(USE_NCURSES_PORT)
 LIB_DEPENDS+=	ncurses.4:${PORTSDIR}/devel/ncurses
 .endif
