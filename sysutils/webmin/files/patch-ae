@@ -1,0 +1,14 @@
+--- /dev/null	Sun Feb  6 18:54:21 2000
++++ pap/config-freebsd	Sun Feb  6 18:55:15 2000
+@@ -0,0 +1,2 @@
++pap_file=/etc/ppp/pap-secrets
++encrypt_pass=0
+--- pap/module.info.orig	Sun Feb  6 18:55:28 2000
++++ pap/module.info	Sun Feb  6 18:55:38 2000
+@@ -4,5 +4,5 @@
+ desc_es=Nombres y Claves de Acceso de Usuarios PPP
+ desc_de=PPP Benutzer und Passw&ouml;rter
+ desc_fr=Usagers et mots de passes PPP
+-os_support=redhat-linux suse-linux slackware-linux debian-linux open-linux turbo-linux corel-linux
++os_support=redhat-linux suse-linux slackware-linux debian-linux open-linux turbo-linux corel-linux freebsd
+ category=servers
