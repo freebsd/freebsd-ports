@@ -5116,6 +5116,7 @@ p5-Crypt-DES_EDE3	ports/security/p5-Crypt-DES_EDE3
 p5-Crypt-DH	ports/security/p5-Crypt-DH
 p5-Crypt-DSA	ports/security/p5-Crypt-DSA
 p5-Crypt-ECB	ports/security/p5-Crypt-ECB
+p5-Crypt-GeneratePassword	ports/security/p5-Crypt-GeneratePassword
 p5-Crypt-HCE_SHA	ports/security/p5-Crypt-HCE_SHA
 p5-Crypt-IDEA	ports/security/p5-Crypt-IDEA
 p5-Crypt-OTP	ports/security/p5-Crypt-OTP
