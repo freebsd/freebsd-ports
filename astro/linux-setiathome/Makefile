@@ -5,6 +5,7 @@
 # $FreeBSD$
 
 CATEGORIES=	astro linux
+PKGNAMEPREFIX=	linux-
 
 MAINTAINER=	cyrille.lefevre@laposte.net
 
