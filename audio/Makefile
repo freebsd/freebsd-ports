@@ -253,6 +253,7 @@
     SUBDIR += splay
     SUBDIR += splaytk
     SUBDIR += streamripper
+    SUBDIR += streamtuner
     SUBDIR += sweep
     SUBDIR += swhplugins
     SUBDIR += tclmidi
