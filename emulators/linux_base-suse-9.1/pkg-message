@@ -1,3 +1,6 @@
+This software is based in part on the work of the FreeType Team.
+See <URL:http://www.freetype.org/>.
+
 Installation of the Linux base system is
 finished. The Linux kernel mode, which
 must be enabled for Linux binaries to run,
