@@ -1,7 +1,7 @@
 bin/pfe
-lib/pfe/help/showhelp
-lib/pfe/help/helpidx
-lib/pfe/help/floating.hlp
-lib/pfe/help/forth-83.hlp
-lib/pfe/help/index
-lib/pfe/help/misc.hlp
+share/pfe/help/dpans.hlp
+share/pfe/help/forth-83.hlp
+share/pfe/help/helpidx
+share/pfe/help/index
+share/pfe/help/misc.hlp
+share/pfe/help/showhelp
