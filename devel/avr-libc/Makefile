@@ -34,6 +34,9 @@ CONFIGURE_ENV=	CC=avr-gcc PREFIX=${PREFIX}
 CONFIGURE_SCRIPT= doconf
 .if !defined(NOPORTDOCS)
 CONFIGURE_ARGS=	--enable-doc --disable-versioned-doc
+PLIST_DOC=	${PKGDIR}/pkg-plist.doc
+.else
+PLIST_DOC=
 .endif
 # Work around the braind***ness introduced by <bsd.cpu.mk> in freebsd-5.
 # Sorry, the user is no longer be able to override the optimization and
@@ -51,6 +54,7 @@ do-build:
 		(cd ${BUILD_WRKSRC}; ${SETENV} ${MAKE_ENV} ./domake MAKE=${GMAKE})
 
 do-install:
+		rm -f ${TMPPLIST}; cat ${PLIST_DOC} ${PLIST} > ${TMPPLIST}
 		(cd ${BUILD_WRKSRC}; ${SETENV} ${MAKE_ENV} ./domake MAKE=${GMAKE} install)
 		${MKDIR} ${PREFIX}/share/doc/avr-libc
 		${MKDIR} ${PREFIX}/share/doc/avr-libc/examples
