@@ -8,7 +8,7 @@
 PORTNAME=	actx
 PORTVERSION=	1.23
 CATEGORIES=	games
-MASTER_SITES=	http://kurumi.sakura.ne.jp/~chimari/ActX/
+MASTER_SITES=	http://rosegray.sakura.ne.jp/ActX/
 
 MAINTAINER=	esu@yk.rim.or.jp
 COMMENT=	Window sitter for X11
