@@ -14,6 +14,7 @@ EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	plambert@plambert.net
 
+IS_INTERACTIVE=	yes
 ALL_TARGET=	heyu
 WRKSRC=		${WRKDIR}/heyu.dir
 
