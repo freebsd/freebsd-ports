@@ -5,3 +5,5 @@ PDF software.)  Xpdf runs under UNIX and the X Window System.
 Xpdf is designed to be small and efficient.  It does not use the Motif
 or Xt libraries.  It uses standard X fonts.  Xpdf is quite usable on a
 486-66 PC running FreeBSD.
+
+WWW: http://www.foolabs.com/xpdf/
