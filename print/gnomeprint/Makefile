@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gnomeprint
-PORTVERSION=	0.36
+PORTVERSION=	0.37
 CATEGORIES=	print gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	stable/sources/gnome-print
@@ -28,7 +28,7 @@ USE_PERL5=	yes
 USE_GNOMENG=	yes
 USE_GNOME=	gnomehack gnomeprefix gnomehier gnomelibs gnomecanvas
 INSTALLS_SHLIB=	yes
-GNU_CONFIGURE=	yes
+USE_LIBTOOL=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LIBS="-L${LOCALBASE}/lib"
 
