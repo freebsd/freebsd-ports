@@ -10,7 +10,7 @@
 
 PORTNAME=	isakmpd
 PORTVERSION=	20021118
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	security net
 MASTER_SITES=	${MASTER_SITE_NETBSD}
 MASTER_SITE_SUBDIR=	LOCAL_PORTS
@@ -34,7 +34,7 @@ WRKSRC=		${WRKDIR}/isakmpd
 MAKE_ENV+=	BINDIR=${PREFIX}/sbin MANDIR=${PREFIX}/man/man
 
 MAN5=		isakmpd.conf.5 isakmpd.policy.5
-MAN8=		isakmpd.8
+MAN8=		certpatch.8 isakmpd.8
 MANCOMPRESSED=	yes
 
 post-patch:

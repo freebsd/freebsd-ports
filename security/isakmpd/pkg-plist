@@ -1,3 +1,4 @@
+sbin/certpatch
 sbin/isakmpd
 share/examples/isakmpd/VPN-3way-template.conf
 share/examples/isakmpd/VPN-east.conf

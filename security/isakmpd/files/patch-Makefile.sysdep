@@ -15,3 +15,13 @@ $FreeBSD$
  		-I${.CURDIR}/sysdep/common -I/usr/include \
  		-I/usr/local/include -I/usr/local/include/openssl
  
+@@ -60,9 +60,6 @@
+ GENERATED+=	sysdep-target
+ sysdep-target:
+ 		cd ${.CURDIR}/sysdep/common/libsysdep; ${MAKE} ${.MAKEFLAGS}
+-
+-# Kludge around much strange behaviour in /usr/share/mk/bsd.*/mk, don't build certpatch
+-SUBDIR=		
+ 
+ .if make(clean)
+ SUBDIR+=	sysdep/common/libsysdep
