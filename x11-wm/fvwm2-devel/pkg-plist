@@ -5,8 +5,6 @@ bin/fvwm-menu-directory
 bin/fvwm-menu-headlines
 bin/fvwm-menu-xlock
 bin/fvwm2
-bin/fvwm24_convert
-bin/fvwmbug
 bin/xpmroot
 @unexec if cmp -s %D/etc/system.fvwm2rc %D/etc/system.fvwm2rc.dist; then rm -f %D/etc/system.fvwm2rc; fi
 etc/system.fvwm2rc.dist
@@ -35,6 +33,7 @@ libexec/fvwm/%%FVWM_VERSION%%/FvwmIconMan
 libexec/fvwm/%%FVWM_VERSION%%/FvwmIdent
 libexec/fvwm/%%FVWM_VERSION%%/FvwmM4
 libexec/fvwm/%%FVWM_VERSION%%/FvwmPager
+libexec/fvwm/%%FVWM_VERSION%%/FvwmPerl
 libexec/fvwm/%%FVWM_VERSION%%/FvwmRearrange
 libexec/fvwm/%%FVWM_VERSION%%/FvwmSave
 libexec/fvwm/%%FVWM_VERSION%%/FvwmSaveDesk
@@ -399,6 +398,16 @@ share/fvwm2/pixmaps/xview.xpm
 %%GNOMEDATADIR%%/fvwm-script-ComExample.pl
 %%GNOMEDATADIR%%/fvwm-script-setup95.pl
 %%GNOMEDATADIR%%/system.fvwm2rc-sample-95
+%%GNOMEDATADIR%%/perllib/FVWM/Constants.pm
+%%GNOMEDATADIR%%/perllib/FVWM/Module/Gtk.pm
+%%GNOMEDATADIR%%/perllib/FVWM/Module/Tk.pm
+%%GNOMEDATADIR%%/perllib/FVWM/Module.pm
+%%GNOMEDATADIR%%/perllib/General/FileSystem.pm
+%%GNOMEDATADIR%%/perllib/General/Parse.pm
+@dirrm %%GNOMEDATADIR%%/perllib/General
+@dirrm %%GNOMEDATADIR%%/perllib/FVWM/Module
+@dirrm %%GNOMEDATADIR%%/perllib/FVWM
+@dirrm %%GNOMEDATADIR%%/perllib
 @dirrm %%GNOMEDATADIR%%
 @dirrm share/fvwm2/pixmaps
 @dirrm share/fvwm2
