@@ -7,10 +7,9 @@ bin/InfoAudio
 bin/LPanal
 bin/LPsyn
 bin/ResampAudio
-lib/libAO.a
-lib/libtsp.a
 include/AD.h
 include/AO.h
+include/AObase.h
 include/libtsp.h
 include/libtsp/AFdataio.h
 include/libtsp/AFheader.h
@@ -33,4 +32,6 @@ include/libtsp/VRmsg.h
 include/libtsp/WVpar.h
 include/libtsp/nucleus.h
 include/libtsp/sysOS.h
+lib/libAO.a
+lib/libtsp.a
 @dirrm include/libtsp
