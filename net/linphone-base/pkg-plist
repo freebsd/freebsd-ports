@@ -101,5 +101,7 @@ share/locale/pl/LC_MESSAGES/linphone.mo
 @dirrm %%DOCSDIR%%/osipua
 @dirrm %%DOCSDIR%%/ortp
 @dirrm %%DOCSDIR%%/mediastreamer
+@dirrm %%DOCSDIR%%
+@dirrm include/linphone
 @dirrm include/osipua
 @dirrm include/ortp
