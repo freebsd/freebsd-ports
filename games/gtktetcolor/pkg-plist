@@ -1,6 +1,6 @@
 bin/gtktetcolor
 etc/sound/events/gtktetcolor.soundlist
-share/gnome/apps/Games/gtktetcolor.desktop
+share/gnome/applications/gtktetcolor.desktop
 share/gnome/games/gtktetcolor.scores
 share/gnome/pixmaps/gtktetcolor.xpm
 share/gnome/sounds/gtktetcolor/bonus.wav
