@@ -173,7 +173,6 @@
     SUBDIR += xgraph
     SUBDIR += xldlas
     SUBDIR += xlispstat
-    SUBDIR += xmgr
     SUBDIR += xplot
     SUBDIR += xspread
     SUBDIR += xwpl
