@@ -49,6 +49,7 @@
     SUBDIR += logjam2
     SUBDIR += loserjabber
     SUBDIR += mcal
+    SUBDIR += mdh
     SUBDIR += mencal
     SUBDIR += mhc
     SUBDIR += mhc-emacs20
