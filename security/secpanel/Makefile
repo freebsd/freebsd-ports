@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	secpanel
-PORTVERSION=	0.4.2
+PORTVERSION=	0.4.3
 PORTEPOCH=	1
 CATEGORIES=	security tcl84 tk84
 MASTER_SITES=	http://www.pingx.net/secpanel/
