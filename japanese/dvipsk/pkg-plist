@@ -1,0 +1,105 @@
+bin/dvips
+bin/afm2tfm
+@unexec install-info --delete %D/info/dvips.info %D/info/dir
+info/dvips.info
+info/dvips.info-1
+info/dvips.info-2
+info/dvips.info-3
+info/dvips.info-4
+info/dvips.info-5
+@exec [ -f %D/info/dir ] || sed -ne '1,/Menu:/p' /usr/share/info/dir > %D/info/dir
+@exec install-info %D/info/dvips.info %D/info/dir
+man/man1/dvips.1.gz
+man/man1/afm2tfm.1.gz
+share/texmf/dvips/tex.pro
+share/texmf/dvips/texps.pro
+share/texmf/dvips/texc.pro
+share/texmf/dvips/special.pro
+share/texmf/dvips/finclude.pro
+share/texmf/dvips/color.pro
+share/texmf/dvips/crop.pro
+share/texmf/dvips/hps.pro
+share/texmf/dvips/8a.enc
+share/texmf/dvips/8r.enc
+share/texmf/dvips/ad.enc
+share/texmf/dvips/asex.enc
+share/texmf/dvips/asexp.enc
+share/texmf/dvips/cork.enc
+share/texmf/dvips/dc.enc
+share/texmf/dvips/dvips.enc
+share/texmf/dvips/funky.enc
+share/texmf/dvips/texmext.enc
+share/texmf/dvips/texmital.enc
+share/texmf/dvips/texmsym.enc
+share/texmf/dvips/xl2.enc
+share/texmf/dvips/xt2.enc
+share/texmf/dvips/config.ps
+share/texmf/dvips/psfonts.map
+share/texmf/dvips/contrib/2a4.ps
+share/texmf/dvips/contrib/bb.ps
+share/texmf/dvips/contrib/bbfig
+share/texmf/dvips/contrib/config.fax
+share/texmf/dvips/contrib/config.lino
+share/texmf/dvips/contrib/config.lj2p
+share/texmf/dvips/contrib/config.post3x3
+share/texmf/dvips/contrib/config.proto
+share/texmf/dvips/contrib/config.rokicki
+share/texmf/dvips/contrib/loop.ps
+share/texmf/dvips/contrib/mkdvipspapers
+share/texmf/dvips/contrib/oneline.tex
+share/texmf/dvips/contrib/papersize.level2
+share/texmf/dvips/contrib/papersize.simple
+share/texmf/dvips/contrib/prepipe.ps
+share/texmf/dvips/contrib/ptmr.ed
+share/texmf/dvips/contrib/ptmro.ed
+share/texmf/dvips/contrib/rotsample.tex
+share/texmf/dvips/contrib/showpage.ps
+share/texmf/dvips/contrib/treen.sh
+share/texmf/dvips/contrib/treen2.sh
+share/texmf/dvips/contrib/volker/README
+share/texmf/dvips/contrib/volker/config.a3
+share/texmf/dvips/contrib/volker/config.duplong
+share/texmf/dvips/contrib/volker/config.dupshort
+share/texmf/dvips/contrib/volker/config.inv
+share/texmf/dvips/contrib/volker/config.screen100
+share/texmf/dvips/contrib/volker/config.screen100-0
+share/texmf/dvips/contrib/volker/config.screen110
+share/texmf/dvips/contrib/volker/config.screen120
+share/texmf/dvips/contrib/volker/config.screen130
+share/texmf/dvips/contrib/volker/config.screen140
+share/texmf/dvips/contrib/volker/config.screen150
+share/texmf/dvips/contrib/volker/config.screen70
+share/texmf/dvips/contrib/volker/config.screen80
+share/texmf/dvips/contrib/volker/config.screen85
+share/texmf/dvips/contrib/volker/config.screen90
+share/texmf/dvips/contrib/volker/config.simplex
+share/texmf/tex/plain/dvips/blackdvi.tex
+share/texmf/tex/plain/dvips/colordvi.tex
+share/texmf/tex/plain/dvips/epsf.tex
+share/texmf/tex/plain/dvips/rotate.tex
+share/texmf/tex/latex209/dvips/avantgarde.sty
+share/texmf/tex/latex209/dvips/blackdvi.sty
+share/texmf/tex/latex209/dvips/bookman.sty
+share/texmf/tex/latex209/dvips/chancery.sty
+share/texmf/tex/latex209/dvips/colordvi.sty
+share/texmf/tex/latex209/dvips/epsf.sty
+share/texmf/tex/latex209/dvips/lucida.sty
+share/texmf/tex/latex209/dvips/ncs.sty
+share/texmf/tex/latex209/dvips/palatino.sty
+share/texmf/tex/latex209/dvips/psfonts.sty
+share/texmf/tex/latex209/dvips/psgreek.sty
+share/texmf/tex/latex209/dvips/rotate.sty
+share/texmf/tex/latex209/dvips/times.sty
+share/doc/dvips/README
+share/doc/dvips/README.jpatch
+share/doc/dvips/dvips.texi
+share/doc/dvips/dvips.help
+share/doc/dvips/dvips.cps
+@exec ln -fs %D/share/texmf/dvips/contrib %D/share/doc/dvips/contrib
+@unexec rm %D/share/doc/dvips/contrib
+@dirrm share/texmf/dvips/contrib/volker
+@dirrm share/texmf/dvips/contrib
+@dirrm share/texmf/dvips
+@dirrm share/texmf/tex/plain/dvips
+@dirrm share/texmf/tex/latex209/dvips
+@dirrm share/doc/dvips

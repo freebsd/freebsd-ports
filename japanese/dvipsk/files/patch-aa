@@ -1,0 +1,11 @@
+--- dvipsk/output.c.orig	Sun May  3 06:42:35 1998
++++ dvipsk/output.c	Sun May  3 06:42:46 1998
+@@ -90,6 +90,8 @@
+ static Boolean popened = 0 ;
+ int lastfont ; /* exported to dospecial to fix rotate.tex problem */
+ static void chrcmd();                   /* just a forward declaration */
++void cmdout();                          /* just a forward declaration */
++void numout();                          /* just a forward declaration */
+ static char strbuffer[LINELENGTH + 20], *strbp = strbuffer ;
+ static struct papsiz *finpapsiz ;
+ struct papsiz defpapsiz = {
