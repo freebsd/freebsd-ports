@@ -1,2 +1,4 @@
-MD5 (postfix/postfix-2.0.14-20030717.tar.gz) = 82709b0742d886f345d718aa941b154d
+MD5 (postfix/postfix-2.0.14-20030812.tar.gz) = 7e78521f7c7241dd7c442924804ef10d
+MD5 (postfix/tls+ipv6-1.17-pf-2.0.14-20030812.patch.gz) = 671a9792c9296d644b006e16c1c31a6c
+MD5 (postfix/ipv6-1.17-pf-2.0.14-20030812.patch.gz) = 00ecc0be7dcbcc4dc8a5b5e4352b8036
 MD5 (postfix/pfixtls-0.8.15a-2.0.14-20030715-0.9.7b.tar.gz) = b7572506f62cd5c64614128a5f0491e3
