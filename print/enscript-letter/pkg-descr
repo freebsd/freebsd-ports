@@ -6,4 +6,3 @@ enscript processes  standard  input.   enscript
 can be extended to handle different output media  
 and it has many options which can be used to 
 customize printouts.
-

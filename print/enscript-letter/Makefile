@@ -3,7 +3,7 @@
 # Date created:			24 Jul, 1997
 # Whom:				kline
 #
-# $Id: Makefile,v 1.2 1997/08/05 06:37:19 asami Exp $
+# $Id: Makefile,v 1.3 1997/11/10 11:23:19 asami Exp $
 #
 
 DISTNAME=       enscript-1.5.0
@@ -16,7 +16,7 @@ MAINTAINER=	kline@thought.org
 MANUAL_PACKAGE_BUILD=	PAPERSIZE has to be set to Letter A4
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
-CONFIGURE_ARGS=	--disable-nls
+CONFIGURE_ARGS=	--disable-nls --with-media=${PAPERSIZE}
 MAKE_FLAGS=     WIDTH=${WIDTH} HEIGHT=${HEIGHT} A4_PAPERSIZE=${A4_PAPERSIZE} -f
 
 MAN1=		enscript.1 sliceprint.1 states.1
@@ -26,18 +26,18 @@ STRIP=
 #LDFLAGS+=-static
 
 .if !defined(PAPERSIZE)
-PAPERSIZE=a4     # set default
+PAPERSIZE=A4     # set default
 WIDTH=8.27
 HEIGHT=11.64
 A4_PAPERSIZE=1
 PAPERSIZE_UNSPECIFIED=  yes
 .elif ${PAPERSIZE} == A4 || ${PAPERSIZE} == a4
-PAPERSIZE=a4
+PAPERSIZE=A4
 WIDTH=8.27
 HEIGHT=11.64
 A4_PAPERSIZE=1
 .elif ${PAPERSIZE} == letter || ${PAPERSIZE} == LETTER || ${PAPERSIZE} == Letter
-PAPERSIZE=letter
+PAPERSIZE=Letter
 WIDTH=8.5
 HEIGHT=11.0
 A4_PAPERSIZE=0
