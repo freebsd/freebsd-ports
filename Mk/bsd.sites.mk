@@ -210,12 +210,14 @@ MASTER_SITE_FEDORA_LINUX+= \
 MASTER_SITE_FESTIVAL+= \
 	http://www.festvox.org/packed/festival/%SUBDIR%/ \
 	http://www.speech.cs.cmu.edu/festival/cstr/festival/%SUBDIR%/ \
-	ftp://ftp.leb.net/pub/blinux/festival/mirror.festival_home/%SUBDIR%/ \
+	ftp://rpmfind.net/linux/blinux/festival/mirror.festival_home/%SUBDIR%/ \
+	ftp://speakeasy.rpmfind.net/linux/blinux/festival/mirror.festival_home/%SUBDIR%/\
 	ftp://ftp.mayn.de/pub/linux/BLinux/festival/mirror.festival_home/%SUBDIR%/ \
 	ftp://ftp.tuwien.ac.at/opsys/linux/blinux/festival/mirror.festival_home/%SUBDIR%/
 
 MASTER_SITE_FESTIVAL_OGI+= \
-	ftp://ftp.leb.net/pub/blinux/festival/mirror.ogi-synth_home/ \
+	ftp://rpmfind.net/linux/blinux/festival/mirror.ogi-synth_home/%SUBDIR%/\
+	ftp://speakeasy.rpmfind.net/linux/blinux/festival/mirror.ogi-synth_home/%SUBDIR%/\
 	ftp://ftp.mayn.de/pub/linux/BLinux/festival/mirror.ogi-synth_home/ \
 	ftp://ftp.tuwien.ac.at/opsys/linux/blinux/festival/mirror.ogi-synth_home/ \
 	ftp://cslu.cse.ogi.edu/pub/tts/
