@@ -24,9 +24,6 @@ bin/nicotine-import-winconfig
 %%PYTHON_SITELIBDIR%%/pynicotine/gtkgui/checklatest.py
 %%PYTHON_SITELIBDIR%%/pynicotine/gtkgui/checklatest.pyc
 %%PYTHON_SITELIBDIR%%/pynicotine/gtkgui/checklatest.pyo
-%%PYTHON_SITELIBDIR%%/pynicotine/gtkgui/gtkexcepthook.py
-%%PYTHON_SITELIBDIR%%/pynicotine/gtkgui/gtkexcepthook.pyc
-%%PYTHON_SITELIBDIR%%/pynicotine/gtkgui/gtkexcepthook.pyo
 %%PYTHON_SITELIBDIR%%/pynicotine/gtkgui/dirchooser.py
 %%PYTHON_SITELIBDIR%%/pynicotine/gtkgui/dirchooser.pyc
 %%PYTHON_SITELIBDIR%%/pynicotine/gtkgui/dirchooser.pyo
@@ -57,6 +54,9 @@ bin/nicotine-import-winconfig
 %%PYTHON_SITELIBDIR%%/pynicotine/gtkgui/settingswindow.py
 %%PYTHON_SITELIBDIR%%/pynicotine/gtkgui/settingswindow.pyc
 %%PYTHON_SITELIBDIR%%/pynicotine/gtkgui/settingswindow.pyo
+%%PYTHON_SITELIBDIR%%/pynicotine/gtkgui/ticker.py
+%%PYTHON_SITELIBDIR%%/pynicotine/gtkgui/ticker.pyc
+%%PYTHON_SITELIBDIR%%/pynicotine/gtkgui/ticker.pyo
 %%PYTHON_SITELIBDIR%%/pynicotine/gtkgui/transferlist.py
 %%PYTHON_SITELIBDIR%%/pynicotine/gtkgui/transferlist.pyc
 %%PYTHON_SITELIBDIR%%/pynicotine/gtkgui/transferlist.pyo

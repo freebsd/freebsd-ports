@@ -6,20 +6,15 @@
 #
 
 PORTNAME=	nicotine
-PORTVERSION=	1.0.6
-PORTREVISION=	1
+PORTVERSION=	1.0.7
 CATEGORIES=	net
 MASTER_SITES=	http://nicotine.thegraveyard.org/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	sw@gegenunendlich.de
 COMMENT=	GTK2 SoulSeek filesharing client
 
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/gtk-2.0/gtk/__init__.py:${PORTSDIR}/x11-toolkits/py-gtk2 \
-		${PYTHON_SITELIBDIR}/bsddb3/__init__.py:${PORTSDIR}/databases/py-bsddb
-
-BROKEN=		"Broken dependency"
-DEPRECATED=	${BROKEN}
-EXPIRATION_DATE=2004-04-17
+		${PYTHON_SITELIBDIR}/_bsddb.so:${PORTSDIR}/databases/py-bsddb
 
 USE_BZIP2=		yes
 USE_PYTHON=		yes
