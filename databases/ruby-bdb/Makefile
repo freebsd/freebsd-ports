@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	bdb
-PORTVERSION=	0.3.8
+PORTVERSION=	0.3.9
 CATEGORIES=	databases ruby
 MASTER_SITES=	ftp://moulon.inra.fr/pub/ruby/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
@@ -17,7 +17,9 @@ DIST_SUBDIR=	ruby
 
 MAINTAINER=	knu@FreeBSD.org
 
-.if defined(WITH_BDB4)
+.if defined(WITH_BDB41)
+LIB_DEPENDS=	db41.1:${PORTSDIR}/databases/db41
+.elif defined(WITH_BDB4)
 LIB_DEPENDS=	db4.0:${PORTSDIR}/databases/db4
 .else
 LIB_DEPENDS=	db3.3:${PORTSDIR}/databases/db3

@@ -326,10 +326,10 @@
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/env.rd
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/hashlike.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/hashlike.rd
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/log.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/log.rd
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/lock.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/lock.rd
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/log.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/log.rd
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/transaction.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/transaction.rd
 %%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/doc/files
