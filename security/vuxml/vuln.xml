@@ -351,7 +351,7 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 	<name>samba</name>
 	<name>ja-samba</name>
 	<range><lt>2.2.12</lt></range>
-	<range><ge>3</ge><lt>3.0.6</lt></range>
+	<range><ge>3.a</ge><lt>3.0.6,1</lt></range>
       </package>
     </affects>
     <description>
