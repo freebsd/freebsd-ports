@@ -12,7 +12,7 @@ CATEGORIES=	dns misc
 MASTER_SITES=	http://www.staticcling.org/clients/
 DISTNAME=	ChargeGTK-${PORTVERSION}
 
-MAINTAINER=	mahlon@martini.nu
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A GTK client for the StaticCling dynamic DNS service
 
 BUILD_DEPENDS=	wget:${PORTSDIR}/ftp/wget
