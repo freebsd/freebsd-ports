@@ -14,6 +14,8 @@
     SUBDIR += koffice-i18n
     SUBDIR += linux-netscape6
     SUBDIR += manpages
+    SUBDIR += ooodict-de_CH
+    SUBDIR += ooodict-de_DE
     SUBDIR += openoffice
     SUBDIR += phone
     SUBDIR += php_doc
