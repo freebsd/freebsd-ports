@@ -546,11 +546,16 @@ package-rename:
 
 sdk:
 	@${ECHO_MSG} "===>   Make SDK of OpenOffice.org"
-	@(cd ${WRKSRC}/../odk/unxfbsd.pro/bin ; \
-	${CP} -r odk${BUILD_NR} OpenOffice.org${RELEASE_NR}_SDK ;\
-	${TAR} cfz OOo_${FRELEASE_NR}_${OPSYS}${SIMPLEOSVER}Intel_sdk.tar.gz OpenOffice.org${RELEASE_NR}_SDK ;\
-	${RM} -r OpenOffice.org${RELEASE_NR}_SDK ;\
-	${MV} OOo_${FRELEASE_NR}_${OPSYS}${SIMPLEOSVER}Intel_sdk.tar.gz ${WRKDIR}/..)
+.if !defined(DISPLAY)
+	@cd ${WRKSRC}/.. && DISPLAY=${DISPLAYHACK} PATH="${PATH}:${LOCALBASE}/bin:${LOCALBASE}/sbin" && \
+		${TCSH} -c 'source FreeBSDEnv.Set && unsetenv TOP && cd sdk_oo && build.pl && deliver.pl'
+	@-${CAT} ${WRKDIR}/.Xvfb.pid | ${XARGS} kill
+	@${RM} -f ${WRKDIR}/.Xvfb.pid
+.else
+	@cd ${WRKSRC}/.. && DISPLAY=${DISPLAY} PATH="${PATH}:${LOCALBASE}/bin:${LOCALBASE}/sbin" && \
+		${TCSH} -c 'source FreeBSDEnv.Set && unsetenv TOP && cd sdk_oo && build.pl && deliver.pl'
+.endif
+	${MV} ${WRKSRC}/../solver/${BUILD_NR}/unxfbsd.pro/bin/OpenOffice.org${FRELEASE_NR}_SDK.tar.gz ${WRKDIR}/../OOo_${FRELEASE_NR}_${OPSYS}${SIMPLEOSVER}Intel_sdk.tar.gz 
 
 update:
 	@${MAKE} fetch
