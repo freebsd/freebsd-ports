@@ -6,7 +6,6 @@ include/scintilla/SString.h
 include/scintilla/SciLexer.h
 include/scintilla/Scintilla.h
 include/scintilla/ScintillaWidget.h
-include/scintilla/WinDefs.h
 include/scintilla/WindowAccessor.h
 lib/libscintilla.so
 lib/libscintilla.so.1

@@ -14,11 +14,13 @@ share/gnome/scite/html.properties
 share/gnome/scite/latex.properties
 share/gnome/scite/lisp.properties
 share/gnome/scite/lua.properties
+share/gnome/scite/nncrontab.properties
 share/gnome/scite/others.properties
 share/gnome/scite/pascal.properties
 share/gnome/scite/perl.properties
 share/gnome/scite/python.properties
 share/gnome/scite/ruby.properties
 share/gnome/scite/sql.properties
+share/gnome/scite/tcl.properties
 share/gnome/scite/vb.properties
 @dirrm share/gnome/scite

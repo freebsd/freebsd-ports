@@ -1,8 +1,8 @@
 
 $FreeBSD$
 
---- makefile.orig	Sat May 19 01:57:10 2001
-+++ makefile	Thu Jun  7 11:19:46 2001
+--- makefile.orig	Wed Sep 19 16:33:24 2001
++++ makefile	Thu Oct 18 18:15:16 2001
 @@ -5,10 +5,11 @@
  # GNU make does not like \r\n line endings so should be saved to CVS in binary form.
  
@@ -22,8 +22,8 @@ $FreeBSD$
  CXXBASEFLAGS=-W -Wall -DGTK -DSCI_LEXER $(INCLUDEDIRS)
  
  ifdef DEBUG
--CXXFLAGS=-DDEBUG $(CXXBASEFLAGS)
-+CXXFLAGS+=-DDEBUG $(CXXBASEFLAGS)
+-CXXFLAGS=-DDEBUG -g $(CXXBASEFLAGS)
++CXXFLAGS+=-DDEBUG -g $(CXXBASEFLAGS)
  else
 -CXXFLAGS=-DNDEBUG $(CXXBASEFLAGS)
 +CXXFLAGS+=-DNDEBUG $(CXXBASEFLAGS)
@@ -33,7 +33,7 @@ $FreeBSD$
 -	$(CC) `gtk-config --cflags` $(CXXFLAGS) -c $<
 +	$(CC) -DPIC -fpic $(shell $(GTK_CONFIG) --cflags) $(CXXFLAGS) -c $<
  
- LEXOBJS=LexAda.o LexAVE.o LexConf.o LexCPP.o LexEiffel.o LexHTML.o \
+ LEXOBJS=LexAda.o LexAVE.o LexConf.o LexCPP.o LexCrontab.o LexEiffel.o LexHTML.o \
  	LexLisp.o LexLua.o LexOthers.o LexPascal.o LexPerl.o \
 @@ -31,7 +32,7 @@
  

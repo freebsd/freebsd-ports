@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	scite
-PORTVERSION=	1.38
+PORTVERSION=	1.40
 CATEGORIES=	editors gnome
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		http://www.scintilla.org/
@@ -25,5 +25,8 @@ USE_GMAKE=	yes
 USE_GNOME=	yes
 MAKEFILE=	makefile
 MAKE_ENV=	MKDIR="${MKDIR}"
+
+post-extract:
+	@${PERL} -pi -e  's|\x0d||' ${WRKSRC}/makefile
 
 .include <bsd.port.mk>
