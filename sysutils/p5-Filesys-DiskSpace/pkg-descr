@@ -1,0 +1,9 @@
+This routine displays information on a file system such as its type,
+the amount of disk space occupied, the total disk space and the number
+of inodes.
+
+It tries C<syscall(SYS_statfs)> and C<syscall(SYS_statvfs)> in several
+ways. If all fails, it C<croak>s.
+
+-Anton
+<tobez@tobez.org>
