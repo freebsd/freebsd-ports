@@ -1,8 +1,5 @@
 --- xagm	Wed Mar 18 01:02:29 1998
 +++ /home/andy/tmp/wrk/xagm	Sun Mar 22 10:57:38 1998
-@@ -1,4 +1,4 @@
+@@ -1,1 +1,1 @@
 -#!/usr/bin/wish
 +#!/usr/local/bin/wish8.0
- # $Id: xagm,v 1.1 1998/03/08 22:46:24 fraserm Exp $
- # $Log: xagm,v $
- # Revision 1.1  1998/03/08 22:46:24  fraserm
