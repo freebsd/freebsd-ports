@@ -1,0 +1,11 @@
+--- loadsave.c.orig	Thu Dec 11 12:32:40 2003
++++ loadsave.c	Fri Dec 12 11:54:55 2003
+@@ -853,7 +853,7 @@
+ {
+ 	bool ok = FALSE;
+ 	int fd = -1;
+-	int mode = 0644;
++	int mode = 0664;
+ 
+ 	/* No file yet */
+ 	fff = NULL;

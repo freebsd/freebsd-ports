@@ -1,0 +1,9 @@
+--- config.h.orig	Thu Dec 11 12:32:40 2003
++++ config.h	Fri Dec 12 11:54:58 2003
+@@ -582,5 +582,5 @@
+  * Allow makefiles to override the default file mode
+  */
+ #ifndef FILE_MODE
+-#define FILE_MODE 0644
++#define FILE_MODE 0664
+ #endif
