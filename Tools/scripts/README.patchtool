@@ -78,7 +78,8 @@ this tool.
 $ cd /somewhere/foo ; make
 [compilation blows with error in src/bar/baz.c]
 $ cd work/foo-1.0/src/bar
-[digged here and there and finally have found a solution]
+[digged here and there and finally have found that the problem in baz.c]
+$ cp baz.c baz.c.orig
 $ vi baz.c
 [fixing it]
 $ patchtool baz.c
