@@ -1,5 +1,5 @@
---- src/process.c-dist	Fri Aug 14 22:51:44 1998
-+++ src/process.c	Fri Jul 30 12:21:11 1999
+--- src/process.c.orig	Wed May 24 04:10:16 2000
++++ src/process.c	Sat Jul  1 20:37:08 2000
 @@ -1,7 +1,18 @@
 +/*
 + * Locally hacked process.c to add ipv6 support. -wsr
@@ -19,7 +19,7 @@
  This file is part of GNU Emacs.
  
  GNU Emacs is free software; you can redistribute it and/or modify
-@@ -1808,15 +1819,22 @@
+@@ -1810,15 +1821,22 @@
  {
    Lisp_Object proc;
    register int i;
@@ -45,7 +45,7 @@
    struct gcpro gcpro1, gcpro2, gcpro3, gcpro4;
    int retry = 0;
    int count = specpdl_ptr - specpdl;
-@@ -1829,6 +1847,22 @@
+@@ -1831,6 +1849,22 @@
    GCPRO4 (name, buffer, host, service);
    CHECK_STRING (name, 0);
    CHECK_STRING (host, 0);
@@ -68,7 +68,7 @@
    if (INTEGERP (service))
      port = htons ((unsigned short) XINT (service));
    else
-@@ -1839,6 +1873,8 @@
+@@ -1841,6 +1875,8 @@
  	error ("Unknown service \"%s\"", XSTRING (service)->data);
        port = svc_info->s_port;
      }
@@ -77,11 +77,11 @@
  
    /* Slow down polling to every ten seconds.
       Some kernels have a bug which causes retrying connect to fail
-@@ -1848,6 +1884,62 @@
+@@ -1850,6 +1886,62 @@
  #endif
  
  #ifndef TERM
-+#ifdef HAVE_GETADDRINFO		/* We have a modern OS. -wsr */
++#ifdef HAVE_GETADDRINFO               /* We have a modern OS. -wsr */
 +  {
 +      immediate_quit = 1;
 +      QUIT;
@@ -92,8 +92,8 @@
 +      hints.ai_protocol = 0;
 +      ret = getaddrinfo(XSTRING (host)->data, portstring, &hints, &res);
 +      if (ret){
-+	  error("%s/%s %s", XSTRING (host)->data, portstring,
-+		gai_strerror(ret));
++        error("%s/%s %s", XSTRING (host)->data, portstring,
++              gai_strerror(ret));
 +      }
 +      immediate_quit = 0;
 +  }
@@ -101,25 +101,25 @@
 +  for (lres = res; lres ; lres = lres->ai_next) { /* address loop */
 +      s = socket(lres->ai_family, lres->ai_socktype, lres->ai_protocol);
 +      if (s < 0) 
-+	  continue;
++        continue;
 +
 +      /* Kernel bugs (on Ultrix at least) cause lossage (not just EINTR)
-+	 when connect is interrupted.  So let's not let it get interrupted.
-+	 Note we do not turn off polling, because polling is only used
-+	 when not interrupt_input, and thus not normally used on the systems
-+	 which have this bug.  On systems which use polling, there's no way
-+	 to quit if polling is turned off.  */
++       when connect is interrupted.  So let's not let it get interrupted.
++       Note we do not turn off polling, because polling is only used
++       when not interrupt_input, and thus not normally used on the systems
++       which have this bug.  On systems which use polling, there's no way
++       to quit if polling is turned off.  */
 +      if (interrupt_input)
-+	  unrequest_sigio ();
++        unrequest_sigio ();
 +
 +      immediate_quit = 1;
 +      QUIT;
 +
 +      ret = connect(s, lres->ai_addr, lres->ai_addrlen);
 +      if (ret){
-+	  close(s);
-+	  s= -1;
-+	  continue;
++        close(s);
++        s= -1;
++        continue;
 +      }
 +
 +      break;
@@ -129,21 +129,22 @@
 +  if (s < 0)
 +  {
 +      if (interrupt_input)
-+	  request_sigio ();
++        request_sigio ();
 +
 +      errno = xerrno;
 +      report_file_error ("connection failed",
-+			 Fcons (host, Fcons (name, Qnil)));
++                       Fcons (host, Fcons (name, Qnil)));
 +  }
 +#else /* HAVE_GETADDRINFO */
 +
    while (1)
      {
  #ifdef TRY_AGAIN
-@@ -1938,6 +2030,7 @@
+@@ -1940,6 +2032,7 @@
        report_file_error ("connection failed",
  			 Fcons (host, Fcons (name, Qnil)));
      }
 +#endif /* HAVE_GETADDRINFO */
  
    immediate_quit = 0;
+ 

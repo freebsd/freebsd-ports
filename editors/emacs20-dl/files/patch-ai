@@ -1,6 +1,6 @@
---- src/unexelf.c.orig	Mon Aug 10 11:33:12 1998
-+++ src/unexelf.c	Sun Jan  3 20:54:08 1999
-@@ -512,6 +512,14 @@
+--- src/unexelf.c.orig	Mon May 15 17:14:02 2000
++++ src/unexelf.c	Sat Jul  1 18:17:15 2000
+@@ -506,6 +506,14 @@
  # include <link.h>	/* get ElfW etc */
  #endif
  
@@ -14,4 +14,4 @@
 +
  #ifndef ElfW
  # ifdef __STDC__
- #  define ElfW(type)	Elf32_##type
+ #  define ElfBitsW(bits, type) Elf##bits##_##type

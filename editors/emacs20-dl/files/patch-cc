@@ -1,5 +1,5 @@
---- configure.in.orig	Sun May 30 04:26:03 1999
-+++ configure.in	Sat Jul 24 01:33:18 1999
+--- configure.in.orig	Tue Jun  6 00:42:49 2000
++++ configure.in	Sat Jul  1 20:46:31 2000
 @@ -42,6 +42,9 @@
  AC_ARG_WITH(hesiod,
  [  --with-hesiod           support Hesiod to get the POP server host],
@@ -26,7 +26,7 @@
    ## NetBSD ports
    *-*-netbsd* )
      opsys=netbsd
-@@ -943,7 +955,6 @@
+@@ -958,7 +970,6 @@
  				;;
        *-sysv4.2uw* )	  	opsys=unixware; NON_GNU_CPP=/lib/cpp ;;
        *-386bsd* )	        opsys=386bsd ;;
@@ -34,3 +34,12 @@
        *-nextstep* )             opsys=nextstep ;;
        ## Otherwise, we'll fall through to the generic opsys code at the bottom.
      esac
+@@ -1639,7 +1650,7 @@
+ rename closedir mkdir rmdir sysinfo \
+ random lrand48 bcopy bcmp logb frexp fmod rint cbrt ftime res_init setsid \
+ strerror fpathconf select mktime euidaccess getpagesize tzset setlocale \
+-utimes setrlimit setpgid getcwd shutdown strftime)
++utimes setrlimit setpgid getcwd shutdown strftime getaddrinfo)
+ 
+ # UNIX98 PTYs.
+ AC_CHECK_FUNCS(grantpt)

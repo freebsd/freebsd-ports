@@ -1,17 +1,6 @@
---- src/Makefile.in.orig	Fri Jan 14 23:02:09 2000
-+++ src/Makefile.in	Fri Jan 14 23:02:43 2000
-@@ -126,6 +126,10 @@
- #define LIBS_MACHINE
- #endif
- 
-+#ifndef LIBS_XPG
-+#define LIBS_XPG
-+#endif
-+
- #ifndef LIB_MATH
- # ifdef LISP_FLOAT_TYPE
- #  define LIB_MATH -lm
-@@ -418,7 +422,11 @@
+--- src/Makefile.in.orig	Sun Jul  2 12:44:43 2000
++++ src/Makefile.in	Sun Jul  2 12:44:44 2000
+@@ -418,7 +418,11 @@
  libexecdir=${exec_prefix}/libexec
  archlibdir=${libexecdir}/emacs/${version}/${configuration}
  #ifdef __FreeBSD__
@@ -23,21 +12,3 @@
  #else
  #define LINKER $(CC) -nostdlib -rdynamic -Wl,-rpath,${archlibdir}
  #endif
-@@ -569,7 +577,7 @@
- #define LIBS_TERMCAP
- termcapobj = termcap.o tparam.o
- #else /* LIBS_TERMCAP */
--termcapobj = tparam.o
-+termcapobj = terminfo.o
- #endif /* LIBS_TERMCAP */
- #endif /* ! defined (TERMINFO) */
- 
-@@ -814,7 +822,7 @@
-    duplicated symbols.  If the standard libraries were compiled
-    with GCC, we might need gnulib again after them.  */
- LIBES = $(LOADLIBES) $(LDLIBS) $(LIBX) $(LIBDL) LIBS_SYSTEM LIBS_MACHINE LIBS_TERMCAP \
--   LIBS_DEBUG $(GNULIB_VAR) LIB_MATH LIB_STANDARD $(GNULIB_VAR)
-+   LIBS_XPG LIBS_DEBUG $(GNULIB_VAR) LIB_MATH LIB_STANDARD $(GNULIB_VAR)
- 
- /* Enable recompilation of certain other files depending on system type.  */
- 
