@@ -10,11 +10,10 @@ PORTVERSION=	1.14
 CATEGORIES=	x11
 MASTER_SITES=	http://www.ultranet.com/~jjohnson/ \
 		${MASTER_SITE_SUNSITE}
+MASTER_SITE_SUBDIR=	apps/graphics/hacks/X
 DISTNAME=	${PORTNAME}114
 
 MAINTAINER=	matt@bdd.net
-
-BROKEN=		"Distfile no longer on MASTER_SITES"
 
 USE_IMAKE=	yes
 MAN1=		xtacy.1
