@@ -6845,7 +6845,6 @@ vn		src/sys/dev/vn
 vnc		ports/net/vnc
 vnconfig	src/usr.sbin/vnconfig
 vomit		ports/net/vomit
-vorbis		ports/audio/vorbis
 vorbis-tools	ports/audio/vorbis-tools
 vp		ports/graphics/vp
 vpb2		ports/comms/vpb2
