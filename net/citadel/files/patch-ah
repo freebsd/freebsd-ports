@@ -1,0 +1,18 @@
+*** sysdep.c.orig	Tue Sep  5 14:35:25 2000
+--- sysdep.c	Wed Jun 13 09:32:44 2001
+***************
+*** 35,42 ****
+--- 35,47 ----
+  #include <stdarg.h>
+  #include <syslog.h>
+  #include <grp.h>
++ #if (defined(__unix__) || defined(unix)) && !defined(USG)
++ #include <sys/param.h>
++ #endif
++ #if !defined(BSD)
+  #ifdef __GNUC__
+  #include <malloc.h>
++ #endif
+  #endif
+  #ifdef HAVE_PTHREAD_H
+  #include <pthread.h>

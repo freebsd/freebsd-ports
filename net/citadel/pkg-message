@@ -1,0 +1,20 @@
+
+Citadel/UX Communications Server 5.74 been installed
+on your computer.  You may start the Server now by
+typing:
+
+  ${PREFIX}/bin/citserver -t/var/log/citadel.log -d
+
+and you can connect to your server by using:
+
+  ${PREFIX}/bin/citadel
+
+To start the server up with your computer, rename
+/usr/local/etc/rc.d/citadel.sh.example to
+/usr/local/etc/rc.d/citadel.sh
+
+Please refer to ${PREFIX}/share/doc/citadel/ for
+more information about configuring and using your
+new Citadel/UX Server.  Documentation can also be
+found at http://uncensored.citadel.org/citadel/
+

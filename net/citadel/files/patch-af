@@ -1,0 +1,14 @@
+*** sysdep.h.in.orig	Tue Jun 12 19:32:04 2001
+--- sysdep.h.in	Tue Jun 12 19:32:28 2001
+***************
+*** 36,41 ****
+--- 36,44 ----
+  /* define this to the bbs home directory */
+  #undef BBSDIR
+  
++ /* define this to the Citadel/UX binaries directory */
++ #undef BINDIR
++ 
+  /* define this to enable the autologin feature */
+  #undef ENABLE_AUTOLOGIN
+  

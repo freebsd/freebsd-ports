@@ -38,6 +38,7 @@
     SUBDIR += cidr
     SUBDIR += cisco_conf
     SUBDIR += ciscoconf
+    SUBDIR += citadel
     SUBDIR += citrix_ica
     SUBDIR += click
     SUBDIR += clog

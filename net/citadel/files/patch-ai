@@ -1,0 +1,55 @@
+*** netmailer.c.orig	Wed Jun 13 09:37:35 2001
+--- netmailer.c	Wed Jun 13 09:39:48 2001
+***************
+*** 201,212 ****
+  	char subject[256];
+  	time_t mid_buf;
+  	time_t now;
+  	int mlist = 0;
+  
+  	openlog("netmailer", LOG_PID, LOG_USER);
+  	get_config();
+  	LoadInternetConfig();
+! 	strcpy(temp, tmpnam(NULL));	/* temp file name */
+  
+  	if ((argc < 2) || (argc > 3)) {
+  		fprintf(stderr, "netmailer: usage: "
+--- 201,213 ----
+  	char subject[256];
+  	time_t mid_buf;
+  	time_t now;
++ 	int fh;
+  	int mlist = 0;
+  
+  	openlog("netmailer", LOG_PID, LOG_USER);
+  	get_config();
+  	LoadInternetConfig();
+! /*	strcpy(temp, tmpnam(NULL));	/* temp file name */
+  
+  	if ((argc < 2) || (argc > 3)) {
+  		fprintf(stderr, "netmailer: usage: "
+***************
+*** 223,231 ****
+  		mlist = 1;
+  	}
+  	/* convert to ASCII & get info */
+! 	fp = fopen(temp, "w");
+  	msgform(argv[1], fp, sbuf, rbuf, nbuf, pbuf, &mid_buf, rmname, subject);
+  	fclose(fp);
+  
+  	strcpy(buf, rmname);
+  	strcpy(rmname, "room_");
+--- 224,236 ----
+  		mlist = 1;
+  	}
+  	/* convert to ASCII & get info */
+! /*	fp = fopen(temp, "w"); */
+! 	fh = mkstemp( "/tmp/netmailer.XXXXXXXX" );
+! 	fp = fdopen( fh, "w" );
+! 
+  	msgform(argv[1], fp, sbuf, rbuf, nbuf, pbuf, &mid_buf, rmname, subject);
+  	fclose(fp);
++ 	close(fh);
+  
+  	strcpy(buf, rmname);
+  	strcpy(rmname, "room_");

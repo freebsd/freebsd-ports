@@ -1,0 +1,113 @@
+@group 3
+@mode 755
+@name citadel-5.80
+@owner 0
+bin/aidepost
+bin/base64
+bin/chkpwd
+bin/citadel
+bin/citmail
+bin/citserver
+bin/citsetup
+bin/dnetsetup
+bin/mailinglist
+bin/msgform
+bin/netmailer
+bin/netpoll
+bin/netproc
+bin/netsetup
+bin/qpdecode
+bin/rcit
+bin/readlog
+bin/sendcommand
+bin/stats
+bin/userlist
+bin/utilsmenu
+bin/weekly
+bin/whobbs
+etc/rc.d/citadel.sh.example
+share/citadel/citadel.rc
+share/citadel/files/README
+share/citadel/help/?
+share/citadel/help/aide
+share/citadel/help/floors
+share/citadel/help/hours
+share/citadel/help/intro
+share/citadel/help/mail
+share/citadel/help/network
+share/citadel/help/nice
+share/citadel/help/policy
+share/citadel/help/software
+share/citadel/help/summary
+share/citadel/messages/aideopt
+share/citadel/messages/changepw
+share/citadel/messages/dotopt
+share/citadel/messages/entermsg
+share/citadel/messages/entopt
+share/citadel/messages/goodbye
+share/citadel/messages/hello
+share/citadel/messages/help
+share/citadel/messages/mainmenu
+share/citadel/messages/newuser
+share/citadel/messages/readopt
+share/citadel/messages/register
+share/citadel/messages/roomaccess
+share/citadel/messages/unlisted
+share/citadel/modules/serv_bio.so
+share/citadel/modules/serv_chat.so
+share/citadel/modules/serv_expire.so
+share/citadel/modules/serv_imap.so
+share/citadel/modules/serv_inetcfg.so
+share/citadel/modules/serv_moderate.so
+share/citadel/modules/serv_network.so
+share/citadel/modules/serv_pas2.so
+share/citadel/modules/serv_pop3.so
+share/citadel/modules/serv_rwho.so
+share/citadel/modules/serv_smtp.so
+share/citadel/modules/serv_upgrade.so
+share/citadel/modules/serv_vandelay.so
+share/citadel/modules/serv_vcard.so
+share/citadel/public_clients
+share/doc/citadel/techdoc/PAM.txt
+share/doc/citadel/techdoc/build.txt
+share/doc/citadel/techdoc/chat.txt
+share/doc/citadel/techdoc/citadelapi.txt
+share/doc/citadel/techdoc/delivery-list.txt
+share/doc/citadel/techdoc/developers.txt
+share/doc/citadel/techdoc/hack.txt
+share/doc/citadel/techdoc/moderation.txt
+share/doc/citadel/techdoc/netconfigs.txt
+share/doc/citadel/techdoc/session.txt
+share/doc/citadel/docs/COPYING.txt
+share/doc/citadel/docs/chat.txt
+share/doc/citadel/docs/copyright.txt
+share/doc/citadel/docs/inetmailsetup.txt
+share/doc/citadel/docs/inetmailsetupmx.txt
+share/doc/citadel/docs/inetsiteconfig.txt
+share/doc/citadel/docs/install.txt
+share/doc/citadel/docs/mailinglists.txt
+share/doc/citadel/docs/netsetup.txt
+share/doc/citadel/docs/network.txt
+share/doc/citadel/docs/room-sharing-howto.txt
+share/doc/citadel/docs/siteconfig.txt
+share/doc/citadel/docs/sysop.txt
+share/doc/citadel/docs/upgrading.txt
+share/doc/citadel/docs/utils.txt
+share/doc/citadel/docs/import-export.txt
+@dirrm share/citadel/bio
+@dirrm share/citadel/bitbucket
+@dirrm share/citadel/data
+@dirrm share/citadel/files
+@dirrm share/citadel/help
+@dirrm share/citadel/images
+@dirrm share/citadel/info
+@dirrm share/citadel/messages
+@dirrm share/citadel/modules
+@dirrm share/citadel/netconfigs
+@dirrm share/citadel/network/spoolin
+@dirrm share/citadel/network
+@dirrm share/citadel/userpics
+@dirrm share/citadel
+@dirrm share/doc/citadel/docs
+@dirrm share/doc/citadel/techdoc
+@dirrm share/doc/citadel
