@@ -8802,6 +8802,7 @@ xmms-gdancer	ports/graphics/xmms-gdancer
 xmms-gforce	ports/graphics/xmms-gforce
 xmms-goom	ports/graphics/xmms-goom
 xmms-infinity	ports/graphics/xmms-infinity
+xmms-infopipe	ports/audio/xmms-infopipe
 xmms-iris	ports/graphics/xmms-iris
 xmms-jess	ports/graphics/xmms-jess
 xmms-kde	ports/audio/xmms-kde
