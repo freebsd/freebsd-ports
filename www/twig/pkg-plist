@@ -136,6 +136,7 @@
 %%TWIG%%/features/common.inc.php3
 %%TWIG%%/features/contacts/.htaccess
 %%TWIG%%/features/contacts/contacts.edit.inc.php3
+%%TWIG%%/features/contacts/contacts.export.inc.php3
 %%TWIG%%/features/contacts/contacts.feature.php3
 %%TWIG%%/features/contacts/contacts.import.inc.php3
 %%TWIG%%/features/contacts/contacts.inc.php3
@@ -145,6 +146,7 @@
 %%TWIG%%/features/contacts/contacts.prefs.inc.php3
 %%TWIG%%/features/contacts/contacts.vcard.inc.php3
 %%TWIG%%/features/contacts/contacts.view.inc.php3
+%%TWIG%%/features/contacts/export.inc.php3
 %%TWIG%%/features/contacts/help/.htaccess
 %%TWIG%%/features/contacts/help/english/.htaccess
 %%TWIG%%/features/contacts/help/english/contacts.edit.help.inc.php3
@@ -184,6 +186,7 @@
 %%TWIG%%/features/contacts/import.defs/OutlookExpress.def.php3
 %%TWIG%%/features/contacts/import.defs/OutlookExpressComplete.def.php3
 %%TWIG%%/features/contacts/import.defs/PegasusMail.def.php3
+%%TWIG%%/features/contacts/import.defs/ThunderBird.def.php3
 %%TWIG%%/features/contacts/import.defs/vCard21.def.php3
 %%TWIG%%/features/contacts/import.defs/vCard30.def.php3
 %%TWIG%%/features/contacts/import.inc.php3
@@ -853,6 +856,7 @@
 %%TWIG%%/images/menus-nt/contacts/compose.gif
 %%TWIG%%/images/menus-nt/contacts/delete.gif
 %%TWIG%%/images/menus-nt/contacts/edit.gif
+%%TWIG%%/images/menus-nt/contacts/export.gif
 %%TWIG%%/images/menus-nt/contacts/import.gif
 %%TWIG%%/images/menus-nt/contacts/newlist.gif
 %%TWIG%%/images/menus-nt/contacts/prefs.gif
@@ -942,6 +946,7 @@
 %%TWIG%%/images/menus-nt2/contacts/compose.gif
 %%TWIG%%/images/menus-nt2/contacts/delete.gif
 %%TWIG%%/images/menus-nt2/contacts/edit.gif
+%%TWIG%%/images/menus-nt2/contacts/export.gif
 %%TWIG%%/images/menus-nt2/contacts/import.gif
 %%TWIG%%/images/menus-nt2/contacts/newlist.gif
 %%TWIG%%/images/menus-nt2/contacts/prefs.gif
@@ -1059,6 +1064,7 @@
 %%TWIG%%/images/menus/contacts/czech/compose.gif
 %%TWIG%%/images/menus/contacts/czech/delete.gif
 %%TWIG%%/images/menus/contacts/czech/edit.gif
+%%TWIG%%/images/menus/contacts/czech/export.gif
 %%TWIG%%/images/menus/contacts/czech/import.gif
 %%TWIG%%/images/menus/contacts/czech/newlist.gif
 %%TWIG%%/images/menus/contacts/czech/prefs.gif
@@ -1066,6 +1072,7 @@
 %%TWIG%%/images/menus/contacts/english/compose.gif
 %%TWIG%%/images/menus/contacts/english/delete.gif
 %%TWIG%%/images/menus/contacts/english/edit.gif
+%%TWIG%%/images/menus/contacts/english/export.gif
 %%TWIG%%/images/menus/contacts/english/import.gif
 %%TWIG%%/images/menus/contacts/english/newlist.gif
 %%TWIG%%/images/menus/contacts/english/prefs.gif
@@ -1073,6 +1080,7 @@
 %%TWIG%%/images/menus/contacts/french/compose.gif
 %%TWIG%%/images/menus/contacts/french/delete.gif
 %%TWIG%%/images/menus/contacts/french/edit.gif
+%%TWIG%%/images/menus/contacts/french/export.gif
 %%TWIG%%/images/menus/contacts/french/import.gif
 %%TWIG%%/images/menus/contacts/french/newlist.gif
 %%TWIG%%/images/menus/contacts/french/prefs.gif
@@ -1080,6 +1088,7 @@
 %%TWIG%%/images/menus/contacts/german/compose.gif
 %%TWIG%%/images/menus/contacts/german/delete.gif
 %%TWIG%%/images/menus/contacts/german/edit.gif
+%%TWIG%%/images/menus/contacts/german/export.gif
 %%TWIG%%/images/menus/contacts/german/import.gif
 %%TWIG%%/images/menus/contacts/german/newlist.gif
 %%TWIG%%/images/menus/contacts/german/prefs.gif
@@ -1087,6 +1096,7 @@
 %%TWIG%%/images/menus/contacts/italian/compose.gif
 %%TWIG%%/images/menus/contacts/italian/delete.gif
 %%TWIG%%/images/menus/contacts/italian/edit.gif
+%%TWIG%%/images/menus/contacts/italian/export.gif
 %%TWIG%%/images/menus/contacts/italian/import.gif
 %%TWIG%%/images/menus/contacts/italian/newlist.gif
 %%TWIG%%/images/menus/contacts/italian/prefs.gif
@@ -1541,6 +1551,7 @@
 %%TWIG%%/images/menus2/contacts/english/compose.gif
 %%TWIG%%/images/menus2/contacts/english/delete.gif
 %%TWIG%%/images/menus2/contacts/english/edit.gif
+%%TWIG%%/images/menus2/contacts/english/export.gif
 %%TWIG%%/images/menus2/contacts/english/import.gif
 %%TWIG%%/images/menus2/contacts/english/newlist.gif
 %%TWIG%%/images/menus2/contacts/english/prefs.gif
