@@ -13,7 +13,3 @@ Please take a look at docs in
 If you encounter strange problems, please have a look at
 http://www.rrr.de/~riggs/mplayer/faq_en.html
 before throwing stones at me :-)
-
-CAUTION: Please please please don't use
--funroll-loops in your CFLAGS when compiling this port.
-It WILL NOT WORK for many CPUs.

@@ -1,8 +1,8 @@
---- Makefile.orig	Sat Sep 27 15:26:46 2003
-+++ Makefile	Sat Sep 27 15:29:55 2003
-@@ -254,47 +254,11 @@
- ifeq ($(SHARED_PP),yes)
- 	$(MAKE) install -C postproc 
+--- Makefile.orig	Sat Jan 24 20:33:40 2004
++++ Makefile	Sat Jan 24 20:49:23 2004
+@@ -252,53 +252,10 @@
+ ifeq ($(VIDIX),yes)
+ 	$(DO_MAKE)
  endif
 -	if test ! -d $(BINDIR) ; then mkdir -p $(BINDIR) ; fi
 -	$(INSTALL) -m 755 $(INSTALLSTRIP) $(PRG) $(BINDIR)/$(PRG)
@@ -10,13 +10,25 @@
 -	-ln -sf $(PRG) $(BINDIR)/gmplayer
 -endif
 -	if test ! -d $(MANDIR)/man1 ; then mkdir -p $(MANDIR)/man1; fi
--	$(INSTALL) -c -m 644 DOCS/mplayer.1 $(MANDIR)/man1/mplayer.1
+-	for i in $(LANGUAGES); do \
+-		if test "$$i" = en ; then \
+-			$(INSTALL) -c -m 644 DOCS/man/en/mplayer.1 $(MANDIR)/man1/mplayer.1 ; \
+-		else \
+-			mkdir -p $(MANDIR)/$$i/man1 ; \
+-			$(INSTALL) -c -m 644 DOCS/man/$$i/mplayer.1 $(MANDIR)/$$i/man1/mplayer.1 ; \
+-		fi ; \
+-	done
 +	@${BSD_INSTALL_PROGRAM} $(PRG) $(BINDIR)/$(PRG)
-+	@${BSD_INSTALL_MAN} DOCS/mplayer.1 $(MANDIR)/man1/mplayer.1
++	@${BSD_INSTALL_MAN} DOCS/man/en/mplayer.1 $(MANDIR)/man1/mplayer.1
  ifeq ($(MENCODER),yes)
 -	$(INSTALL) -m 755 $(INSTALLSTRIP) $(PRG_MENCODER) $(BINDIR)/$(PRG_MENCODER)
-+	@${BSD_INSTALL_PROGRAM} $(PRG_MENCODER) $(BINDIR)/$(PRG_MENCODER)
- 	-ln -sf mplayer.1 $(MANDIR)/man1/mencoder.1
+-	for i in $(LANGUAGES); do \
+-		if test "$$i" = en ; then \
+-			ln -sf mplayer.1 $(MANDIR)/man1/mencoder.1 ; \
+-		else \
+-			ln -sf mplayer.1 $(MANDIR)/$$i/man1/mencoder.1 ; \
+-		fi ; \
+-	done
 -endif
 -	@if test ! -d $(DATADIR) ; then mkdir -p $(DATADIR) ; fi
 -	@if test ! -d $(DATADIR)/font ; then mkdir -p $(DATADIR)/font ; fi
@@ -41,13 +53,7 @@
 -	$(INSTALL) -m 755 $(INSTALLSTRIP) libmpdvdkit/libmpdvdkit.so $(LIBDIR)/libmpdvdkit.so
 -endif
 -endif
--endif
--ifeq ($(CSS_USE),yes)
--	@echo "The following task requires root privileges. If it fails don't panic,"
--	@echo "however it means you can't use fibmap_mplayer."
--	@echo "Without this (or without running mplayer as root) you won't be"
--	@echo "able to play encrypted DVDs."
--	-$(INSTALL) -o 0 -g 0 -m 4755 $(INSTALLSTRIP) $(PRG_FIBMAP) $(BINDIR)/$(PRG_FIBMAP)
++	@${BSD_INSTALL_PROGRAM} $(PRG_MENCODER) $(BINDIR)/$(PRG_MENCODER)
  endif
  
  uninstall:
