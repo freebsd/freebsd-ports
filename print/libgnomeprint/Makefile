@@ -7,9 +7,15 @@
 
 PORTNAME=	libgnomeprint
 PORTVERSION=	2.4.1
+PORTREVISION=	1
 CATEGORIES=	print gnome
-MASTER_SITES=	${MASTER_SITE_GNOME}
-MASTER_SITE_SUBDIR=	sources/${PORTNAME}/2.4
+MASTER_SITES=	${MASTER_SITE_GNOME} \
+		${MASTER_SITE_LOCAL:S/$/:local/} \
+		http://people.FreeBSD.org/~marcus/:local
+MASTER_SITE_SUBDIR=	sources/${PORTNAME}/2.4 \
+			marcus/:local
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
+		gpa-xml-${PORTVERSION}${EXTRACT_SUFX}:local
 DIST_SUBDIR=	gnome2
 
 MAINTAINER=	gnome@FreeBSD.org
@@ -26,6 +32,10 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
 PLIST_SUB=	VERSION=${PORTVERSION}
+
+GPA_XML=	globals.xml
+GPA_PRINTERS=	GENERIC.xml META.xml PDF-WRITER.xml
+GPA_MODELS=	GNOME-GENERIC-PS.xml GNOME-META.xml GNOME-PDF-WRITER.xml
 
 .include <bsd.port.pre.mk>
 
@@ -50,5 +60,17 @@ post-patch:
 post-install:
 	@${MKDIR} ${PREFIX}/etc/gnome/libgnomeprint-2.0/fonts
 	@${TOUCH} ${PREFIX}/etc/gnome/libgnomeprint-2.0/fonts/gnome-print.fontmap
+.for xml in ${GPA_XML}
+	${INSTALL_DATA} ${WRKDIR}/gpa-xml-${PORTVERSION}/${xml} \
+		${PREFIX}/share/gnome/${PORTNAME}/${PORTVERSION}
+.endfor
+.for printer in ${GPA_PRINTERS}
+	${INSTALL_DATA} ${WRKDIR}/gpa-xml-${PORTVERSION}/${printer} \
+		${PREFIX}/share/gnome/${PORTNAME}/${PORTVERSION}/printers
+.endfor
+.for model in ${GPA_MODELS}
+	${INSTALL_DATA} ${WRKDIR}/gpa-xml-${PORTVERSION}/${model} \
+		${PREFIX}/share/gnome/${PORTNAME}/${PORTVERSION}/models
+.endfor
 
 .include <bsd.port.post.mk>
