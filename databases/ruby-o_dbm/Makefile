@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	o_dbm
-PORTVERSION=	0.3.1
+PORTVERSION=	0.5.1
 CATEGORIES=	databases ruby
-MASTER_SITES=	${MASTER_SITE_RUBY}
-MASTER_SITE_SUBDIR=	contrib in.coming
+MASTER_SITES=	http://www.ruby-lang.org/~keiju/src/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
 EXTRACT_SUFX=	.tgz
 DIST_SUBDIR=	ruby
