@@ -1,0 +1,39 @@
+%%PORTDOCS%%%%DOCSDIR%%/edoc-info
+%%PORTDOCS%%%%DOCSDIR%%/epp_dodger.html
+%%PORTDOCS%%%%DOCSDIR%%/erl_comment_scan.html
+%%PORTDOCS%%%%DOCSDIR%%/erl_prettypr.html
+%%PORTDOCS%%%%DOCSDIR%%/erl_recomment.html
+%%PORTDOCS%%%%DOCSDIR%%/erl_syntax.html
+%%PORTDOCS%%%%DOCSDIR%%/erl_syntax_lib.html
+%%PORTDOCS%%%%DOCSDIR%%/erl_tidy.html
+%%PORTDOCS%%%%DOCSDIR%%/index.html
+%%PORTDOCS%%%%DOCSDIR%%/modules-frame.html
+%%PORTDOCS%%%%DOCSDIR%%/overview-summary.html
+%%PORTDOCS%%%%DOCSDIR%%/overview.edoc
+%%PORTDOCS%%%%DOCSDIR%%/packages-frame.html
+%%PORTDOCS%%%%DOCSDIR%%/prettypr.html
+%%PORTDOCS%%%%DOCSDIR%%/stylesheet.css
+lib/erlang/lib/syntax_tools-%%VERSION%%/ebin/epp_dodger.beam
+lib/erlang/lib/syntax_tools-%%VERSION%%/ebin/erl_comment_scan.beam
+lib/erlang/lib/syntax_tools-%%VERSION%%/ebin/erl_prettypr.beam
+lib/erlang/lib/syntax_tools-%%VERSION%%/ebin/erl_recomment.beam
+lib/erlang/lib/syntax_tools-%%VERSION%%/ebin/erl_syntax.beam
+lib/erlang/lib/syntax_tools-%%VERSION%%/ebin/erl_syntax_lib.beam
+lib/erlang/lib/syntax_tools-%%VERSION%%/ebin/erl_tidy.beam
+lib/erlang/lib/syntax_tools-%%VERSION%%/ebin/prettypr.beam
+lib/erlang/lib/syntax_tools-%%VERSION%%/src/epp_dodger.erl
+lib/erlang/lib/syntax_tools-%%VERSION%%/src/erl_comment_scan.erl
+lib/erlang/lib/syntax_tools-%%VERSION%%/src/erl_prettypr.erl
+lib/erlang/lib/syntax_tools-%%VERSION%%/src/erl_recomment.erl
+lib/erlang/lib/syntax_tools-%%VERSION%%/src/erl_syntax.erl
+lib/erlang/lib/syntax_tools-%%VERSION%%/src/erl_syntax_lib.erl
+lib/erlang/lib/syntax_tools-%%VERSION%%/src/erl_tidy.erl
+lib/erlang/lib/syntax_tools-%%VERSION%%/src/prettypr.erl
+%%PORTDOCS%%@exec ln -sf %D/%%DOCSDIR%% %D/lib/erlang/lib/syntax_tools-%%VERSION%%/doc
+%%PORTDOCS%%@unexec rm -f %D/lib/erlang/lib/syntax_tools-%%VERSION%%/doc
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
+@dirrm lib/erlang/lib/syntax_tools-%%VERSION%%/src
+@dirrm lib/erlang/lib/syntax_tools-%%VERSION%%/ebin
+@dirrm lib/erlang/lib/syntax_tools-%%VERSION%%
+@exec ln -sf syntax_tools-%%VERSION%% %D/lib/erlang/lib/syntax_tools
+@unexec rm -f %D/lib/erlang/lib/syntax_tools
