@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	usermin
-PORTVERSION=	0.970
+PORTVERSION=	0.980
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.webmin.com/uupdates/ \
 		${MASTER_SITE_SOURCEFORGE}
@@ -23,7 +23,7 @@ NO_BUILD=	yes
 USE_PERL5=	yes
 SCRIPTS_ENV+=	WRKDIR="${WRKDIR}"
 
-USERMIN_MODULES=	mysql-0.970-1.wbm.gz
+USERMIN_MODULES=	fetchmail-0.980-2.wbm.gz
 
 USERMIN_THEMES=
 
