@@ -3,7 +3,7 @@
 # Date created:			23 Sep 1996
 # Whom:				Masafumi NAKANE <max@FreeBSD.ORG>
 #
-# $Id: Makefile,v 1.19 1997/07/13 18:49:23 max Exp $
+# $Id: Makefile,v 1.20 1997/09/16 01:03:26 max Exp $
 #
 
 DISTNAME=		mailagent-3.0@58
@@ -38,5 +38,12 @@ pre-extract:
 	  echo "Please set umask to 022 before running make,"; \
 	  echo "or mailagent will not build successfully."; \
 	  false; fi
+	@if [ `id -u` = 0 ]; then \
+	  echo "Do not build mailagent as root or it won't pass the sanity tests."; \
+	  false; fi
+
+post-install:
+	@${MKDIR} ${PREFIX}/share/examples/mailagent
+	${INSTALL_DATA} ${WRKSRC}/agent/examples/* ${PREFIX}/share/examples/mailagent
 
 .include <bsd.port.mk>
