@@ -153,6 +153,7 @@
     SUBDIR += gkrellmqst
     SUBDIR += gkrellmwireless
     SUBDIR += gkrellmwireless2
+    SUBDIR += gmdns
     SUBDIR += gnet
     SUBDIR += gnet-glib2
     SUBDIR += gnet2

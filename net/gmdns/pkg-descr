@@ -1,0 +1,2 @@
+Gmdns is a GNU implementation of the multicast DNS protocol, a component of
+Zerconf (aka Rendezvous by Apple).
