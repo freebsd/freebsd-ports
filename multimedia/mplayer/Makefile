@@ -207,7 +207,7 @@
 
 PORTNAME=	mplayer
 PORTVERSION=	0.99.4
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	multimedia audio ipv6
 MASTER_SITES=	http://www1.mplayerhq.hu/MPlayer/releases/ \
 		http://www2.mplayerhq.hu/MPlayer/releases/ \
@@ -220,6 +220,10 @@ MASTER_SITES=	http://www1.mplayerhq.hu/MPlayer/releases/ \
 		ftp://mirrors.xmission.com/MPlayer/releases/ \
 		http://www.rrr.de/~riggs/mplayer/
 DISTNAME=	MPlayer-1.0pre4
+
+PATCH_SITES=	http://www.mplayerhq.hu/MPlayer/patches/
+PATCHFILES=	vuln04-fix.diff
+PATCH_DIST_STRIP=	-p0
 
 MAINTAINER=	riggs@rrr.de
 COMMENT=	High performance media player/encoder supporting many formats
