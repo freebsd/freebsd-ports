@@ -14,7 +14,7 @@ MASTER_SITES=	ftp://nntpcache.org/pub/nntpcache/ \
 
 MAINTAINER=	ports@FreeBSD.org
 
-#BUILD_DEPENDS=	pgp:${PORTSDIR}/security/pgp
+BUILD_DEPENDS=	automake14:${PORTSDIR}/devel/automake14
 
 # This may be set interactively at install-time.  NNTPCache will
 # cache news articles and related data in ${SPOOLDIR}/nntpcache.
@@ -30,6 +30,10 @@ CPIO=		cpio --quiet -pdum -R
 MAN8=		nntpcached.8 newshound.8
 DOCS=		AUTHORS ChangeLog FAQ FAQ.html HACKING HTML \
 		INSTALL LICENSING NEWS README README.INN VERSION
+
+post-patch:
+	@${PERL} -pi -e 's,AUTOMAKE=automake,AUTOMAKE=automake14,' \
+		${WRKSRC}/configure
 
 post-install:
 	@ ${MKDIR} ${PREFIX}/etc/rc.d
