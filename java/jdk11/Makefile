@@ -33,6 +33,7 @@ DISTFILES=	jdk${JDK_VERSION}_ELF.V1999-11-9.tar.gz
 .endif
 
 do-install:
+	@${RM} -f ${WRKSRC}/include/freebsd/typedefs_md.h.orig
 	${MKDIR} ${PREFIX}/jdk${JDK_VERSION}
 	(cd ${WRKSRC} && ${TAR} -c -f - .) \
 		| (cd ${PREFIX}/jdk${JDK_VERSION} && ${TAR} --unlink -x -f -)
