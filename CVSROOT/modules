@@ -5399,6 +5399,7 @@ nautilus-media	ports/multimedia/nautilus-media
 nautilus2	ports/x11-fm/nautilus2
 nauty		ports/math/nauty
 nawk		ports/lang/nawk
+nb-aspell	ports/textproc/nb-aspell
 nbaudit		ports/security/nbaudit
 nbd-server	ports/net/nbd-server
 nbench		ports/benchmarks/nbench
