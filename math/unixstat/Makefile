@@ -32,18 +32,15 @@ IGNORE="Gary Perlman requires that users agree to his license"\
 .endif
 
 post-patch:
-	@{MV} ${WRKSRC}/man/intro.1 ${WRKSRC}/man/unixstat.1
-	@{RM} ${WRKSRC}/man/cat.1
+	@${MV} ${WRKSRC}/man/intro.1 ${WRKSRC}/man/unixstat.1
+	@${RM} ${WRKSRC}/man/cat.1
 
 do-build:
 	@(cd ${WRKSRC}/src; ${SETENV} ${MAKE_ENV} make ${MAKE_ARGS})
 
 do-install:
-	@${STRIP_CMD} ${WRKSRC}/bin/*
 	@${INSTALL_PROGRAM} ${WRKSRC}/bin/* ${PREFIX}/bin
 	@${INSTALL_MAN} ${WRKSRC}/man/*.1 ${PREFIX}/man/man1
-
-post-install:
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 	@${INSTALL_DATA} ${WRKSRC}/handbook/* ${DOCSDIR}
