@@ -3,12 +3,12 @@
 # Date released:		1 Jan 97
 # Whom:				Peter Wemm <peter@freebsd.org>
 #
-# $Id: Makefile,v 1.16 1997/08/21 08:09:54 peter Exp $
+# $Id: Makefile,v 1.17 1997/10/06 06:49:45 peter Exp $
 #
 
 DISTNAME=	exmh-2.0zeta
 PKGNAME=	exmh-2.0z
-CATEGORIES=	mail tk41
+CATEGORIES=	mail tk80
 MASTER_SITES=	ftp://ftp.sunlabs.com/pub/tcl/exmh/
 EXTRACT_SUFX=	.tar.Z
 
