@@ -2,3 +2,6 @@
 
 mv ${WRKSRC}/cucipop.8 ${WRKSRC}/cucipop.8.bak
 sed <${WRKSRC}/cucipop.8.bak >${WRKSRC}/cucipop.8 s+!!PREFIX!!+$PREFIX+g
+
+mv ${WRKSRC}/makevpopdb.8 ${WRKSRC}/makevpopdb.8.bak
+sed <${WRKSRC}/makevpopdb.8.bak >${WRKSRC}/makevpopdb.8 s+!!PREFIX!!+$PREFIX+g

@@ -1,5 +1,5 @@
---- cucipop.8.orig	Tue May 12 00:35:19 1998
-+++ cucipop.8	Tue Aug 25 17:41:00 1998
+--- cucipop.8.orig	Mon May 11 20:35:19 1998
++++ cucipop.8	Mon Mar 29 01:58:05 1999
 @@ -48,12 +48,12 @@
  .SH NAME
  cucipop \- Cubic Circle POP3 daemon
@@ -30,12 +30,12 @@
  .Ex
  In order to start cucipop from within
  .BR inetd (8),
-@@ -145,16 +145,16 @@
+@@ -145,46 +145,46 @@
  .BR inetd.conf (5)
  would be suitable:
  .Sx 1
 -pop-3   stream  tcp     nowait  root    /usr/sbin/cucipop cucipop -Y
-+pop3   stream  tcp     nowait  root    /usr/sbin/cucipop cucipop -Y
++pop3   stream  tcp     nowait  root    !!PREFIX!!/libexec/cucipop cucipop -Y
  .Ex
  If your site gets many hits from popclients, it would be preferable
  to start cucipop standalone as in:
@@ -50,16 +50,21 @@
  .Ex
  .SH FILES
  .TP 2.3i
-@@ -166,25 +166,25 @@
+ .B /etc/passwd
+ the default authentication
+ .TP
+-.B /etc/mail/vpop.db
++.B !!PREFIX!!/etc/vpop.db
+ virtual host authentication, see the
  .BR makevpopdb (8)
  man page on how this file is created
  .TP
 -.B /var/lib/cucipop/state.db
-+.B !!PREFIX!!/lib/cucipop/state.db
++.B /var/spool/cucipop/state.db
  AI state information and bulletin history
  .TP
 -.B "/var/lib/cucipop/bulletins/\fInn\fP"
-+.B "!!PREFIX!!/lib/cucipop/bulletins/\fInn\fP"
++.B "/var/spool/cucipop/bulletins/\fInn\fP"
  .B 00
  through
  .B 63
