@@ -6711,6 +6711,7 @@ pear-HTML_Select_Common	ports/devel/pear-HTML_Select_Common
 pear-HTML_Template_IT	ports/devel/pear-HTML_Template_IT
 pear-HTML_Template_PHPLIB	ports/devel/pear-HTML_Template_PHPLIB
 pear-HTTP	ports/www/pear-HTTP
+pear-HTTP_Header	ports/www/pear-HTTP_Header
 pear-I18N	ports/devel/pear-I18N
 pear-Log	ports/sysutils/pear-Log
 pear-Mail	ports/mail/pear-Mail
