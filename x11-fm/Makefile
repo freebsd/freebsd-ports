@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.2 1998/08/10 00:24:57 steve Exp $
+# $Id: Makefile,v 1.3 1998/08/10 00:28:47 steve Exp $
 #
 
     SUBDIR += asfiles
@@ -11,6 +11,7 @@
     SUBDIR += q3dmenu
     SUBDIR += tkdesk
     SUBDIR += workplace
+    SUBDIR += x-files
     SUBDIR += xfm
 
 .include <bsd.port.subdir.mk>
