@@ -81,6 +81,20 @@ if [ x"$2" = xPRE-INSTALL ]; then
             exit 1
         fi
     fi
+
+    if /usr/sbin/pw show group mail | grep -q "${USER}" 2>/dev/null; then
+        echo "You already have user \"${USER}\" in group \"mail\", so I will use it."
+    else
+        echo "You need user \"${USER}\" added to group \"mail\"."
+        if yesno "Would you like me to add it" y; then
+            /usr/sbin/pw groupmod mail -m ${USER} || exit
+            echo "Done."
+        else
+            echo "Please create it, and try again."
+            exit 1
+        fi
+    fi
+
 fi
 
 if [ x"$2" = xPOST-INSTALL ]; then
