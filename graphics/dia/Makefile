@@ -28,7 +28,8 @@ MAN1=		dia.1
 
 .include <bsd.port.pre.mk>
 
-.if exists(${X11BASE}/bin/panel) || defined(WITH_GNOME)
+.if exists(${X11BASE}/bin/panel) || defined(WITH_GNOME) || defined(PACKAGE_BUILDING)
+.undef WITHOUT_GNOME
 USE_GNOME=	yes
 PKGNAMESUFFIX=	-gnome
 CONFIGURE_ARGS=	--enable-gnome \
