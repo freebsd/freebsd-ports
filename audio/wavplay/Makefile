@@ -8,7 +8,8 @@
 PORTNAME=	wavplay
 PORTVERSION=	1.4
 CATEGORIES=	audio
-MASTER_SITES=	http://metalab.unc.edu/pub/Linux/apps/sound/players/
+MASTER_SITES=	${MASTER_SITE_SUNSITE}
+MASTER_SITE_SUBDIR=	apps/sound/players
 
 MAINTAINER=	greg@rosevale.com.au
 

@@ -8,9 +8,9 @@
 PORTNAME=	xnc
 PORTVERSION= 	4.2.1
 CATEGORIES=	x11-fm
-MASTER_SITES=	http://www.xnc.dubna.su/src/ \
-		ftp://ftp.chg.ru/pub/Linux/sunsite/X11/desktop/	\
-		ftp://sunsite.unx.edu/pub/Linux/X11/desktop/
+MASTER_SITES=	${MASTER_SITE_SUNSITE} \
+		http://www.xnc.dubna.su/src/
+MASTER_SITE_SUBDIR=	X11/desktop
 DISTNAME=	${PKGNAME}.src
 
 MAINTAINER=	dima@Chg.RU

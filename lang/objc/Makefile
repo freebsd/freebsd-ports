@@ -8,8 +8,9 @@
 PORTNAME=	objc
 PORTVERSION=	3.1.5
 CATEGORIES=	lang
-MASTER_SITES=	http://metalab.unc.edu/pub/Linux/devel/lang/objc/ \
+MASTER_SITES=	${MASTER_SITE_SUNSITE} \
 		http://people.FreeBSD.org/~chuckr/
+MASTER_SITE_SUBDIR=	devel/lang/objc
 DISTFILES=	objc-3.1.5-bootstrap.tar.gz objc-3.1.5.tar.gz
 
 MAINTAINER=	chuckr@freebsd.org
@@ -34,7 +35,7 @@ CONFIGURE_ARGS=	--prefix=$(PREFIX)
 .include <bsd.port.pre.mk>
 
 pre-configure:
-	(cd $(WRKDIR)/$(DISTNAME)-bootstrap;./configure --prefix=$(WRKDIR);make;make install)
+	(cd $(WRKDIR)/$(DISTNAME)-bootstrap;./configure --prefix=$(WRKDIR);${MAKE};${MAKE} install)
 
 post-build:
 	$(ECHO) "Building additional libraries (boehm-gc compatibility)"
@@ -44,7 +45,7 @@ pre-install:
 	$(MKDIR) $(PREFIX)/share/doc/objc
 	$(MKDIR) $(PREFIX)/share/doc/objc/examples
 	$(MKDIR) $(PREFIX)/share/doc/objc/html
-	tar -cf - -C $(WRKSRC)/examples . | tar xpf - -C $(PREFIX)/share/doc/objc/examples
-	tar -cf - -C $(WRKSRC)/html . | tar xpf - -C $(PREFIX)/share/doc/objc/html
+	${TAR} -cf - -C $(WRKSRC)/examples . | ${TAR} xpf - -C $(PREFIX)/share/doc/objc/examples
+	${TAR} -cf - -C $(WRKSRC)/html . | ${TAR} xpf - -C $(PREFIX)/share/doc/objc/html
 
 .include <bsd.port.post.mk>

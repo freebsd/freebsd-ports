@@ -8,8 +8,9 @@
 PORTNAME=	alevt
 PORTVERSION=	1.5.1
 CATEGORIES=	misc
-MASTER_SITES=	http://user.exit.de/froese/alevt/  \
-		ftp://metalab.unc.edu/pub/Linux/apps/video/
+MASTER_SITES=	${MASTER_SITE_SUNSITE} \
+		http://user.exit.de/froese/alevt/
+MASTER_SITE_SUBDIR=	apps/video
 
 MAINTAINER=	roger@freebsd.org
 

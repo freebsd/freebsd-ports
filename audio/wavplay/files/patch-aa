@@ -1,5 +1,5 @@
---- Makefile.orig	Sat Dec  4 02:06:42 1999
-+++ Makefile	Fri May 19 17:52:28 2000
+--- Makefile.orig	Sat Dec  4 09:06:42 1999
++++ Makefile	Thu Jun 22 01:50:48 2000
 @@ -38,7 +38,7 @@
  #----------------------------------------------------------------------
  # If you are running a 386 you should comment this line out.
@@ -23,7 +23,7 @@
  # placed (wavplay, wavrec, and xltwavplay)
  #
 -INSTDIR=/usr/local/bin
-+PREFIX=/usr/local
++PREFIX?=/usr/local
 +INSTDIR=$(PREFIX)/bin
 +MANDIR=$(PREFIX)/man/man1
  
@@ -70,21 +70,12 @@
  
  #----------------------------------------------------------------------
  # Semaphore IPC Key for the Play & Record locks (Default is 0x33333333)
-@@ -155,7 +163,7 @@
- # Only for unusual sites would you change this: the name of the
- # install program. (has no impact if you choose to manually install)
- #
--INSTALL=install
-+INSTALL=install -c
- 
- #----------------------------------------------------------------------
- # If you have any custom include directories, like for X or
 @@ -163,19 +171,19 @@
  # this should be unecessary if the appropriate symlinks are
  # installed).
  #
 -#CUSTINCL= -I/usr/X11R6/include/X11 -I/usr/local/lesstif/include/Xm
-+#CUSTINCL= -I/usr/X11R6/include/X11 -I/usr/local/lesstif/include/Xm -I/usr/X11R6/include
++#CUSTINCL= -I${X11BASE}/include/X11 -I${X11BASE}/include/Xm -I/${X11BASE}/include
  
  #----------------------------------------------------------------------
  # Normally, you shouldn't need to change anything beyond this point:
@@ -130,7 +121,7 @@
 -	@[ ! -d "$(INSTDIR)" ] && echo "You do not have a directory $(INSTDIR); Check INSTDIR in make file." && exit 13 || :
 -	$(INSTALL) -o root -g root -m 555 wavplay $(INSTDIR)
 +	mkdir -p $(INSTDIR)
-+	$(INSTALL) -s -o root -g wheel -m 555 wavplay $(INSTDIR)
++	${BSD_INSTALL_PROGRAM} wavplay $(INSTDIR)
  	rm -f $(INSTDIR)/wavrec
  	ln $(INSTDIR)/wavplay $(INSTDIR)/wavrec
 -	@[ ! -z "$(SCHED_PRIORITY)" ] && echo "*** DO 'make setuid_root' IF YOU WANT REAL TIME SCHEDULING ***" || :
@@ -138,7 +129,7 @@
  
 +install_man: wavplay.1
 +	mkdir -p $(MANDIR)
-+	$(INSTALL) -o root -g wheel -m 444 wavplay.1 $(MANDIR)
++	${BSD_INSTALL_MAN} wavplay.1 $(MANDIR)
 +
  xltwavplay_test: wavplay xltwavplay
  	WAVPLAYPATH=./wavplay ./xltwavplay
@@ -148,10 +139,10 @@
  
  install_xltwavplay: xltwavplay
 -	$(INSTALL) -o root -g root -m 555 xltwavplay $(INSTDIR)
-+	$(INSTALL) -o root -g wheel -m 555 xltwavplay $(INSTDIR)
++	${BSD_INSTALL_PROGRAM} xltwavplay $(INSTDIR)
  	@[ ! -z "$(USERES)" ] \
 -		&& $(INSTALL) -o root -g root -m 555 xltwavplay.res $(RESDIR)/xltwavplay \
-+		&& $(INSTALL) -o root -g wheel -m 555 xltwavplay.res $(RESDIR)/xltwavplay \
++		&& ${BSD_INSTALL_DATA} xltwavplay.res $(RESDIR)/xltwavplay \
  		&& ls -dlL $(RESDIR)/xltwavplay/xltwavplay.res \
  		|| rm -f $(RESDIR)/xltwavplay
  
