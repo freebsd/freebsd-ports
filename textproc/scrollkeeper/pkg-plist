@@ -1,0 +1,243 @@
+bin/scrollkeeper-config
+bin/scrollkeeper-get-cl
+bin/scrollkeeper-get-content-list
+bin/scrollkeeper-get-extended-content-list
+bin/scrollkeeper-get-toc-from-docpath
+bin/scrollkeeper-get-toc-from-id
+bin/scrollkeeper-install
+bin/scrollkeeper-preinstall
+bin/scrollkeeper-rebuilddb
+bin/scrollkeeper-uninstall
+bin/scrollkeeper-update
+bin/scrollkeeper_toc
+lib/libscrollkeeper.a
+lib/libscrollkeeper.so
+lib/libscrollkeeper.so.0
+share/doc/scrollkeeper/COPYING-DOCS
+share/locale/da/LC_MESSAGES/scrollkeeper.mo
+share/locale/de/LC_MESSAGES/scrollkeeper.mo
+share/locale/el/LC_MESSAGES/scrollkeeper.mo
+share/locale/es/LC_MESSAGES/scrollkeeper.mo
+share/locale/fr/LC_MESSAGES/scrollkeeper.mo
+share/locale/hu/LC_MESSAGES/scrollkeeper.mo
+share/locale/ja/LC_MESSAGES/scrollkeeper.mo
+share/locale/ko/LC_MESSAGES/scrollkeeper.mo
+share/locale/nl/LC_MESSAGES/scrollkeeper.mo
+share/locale/no/LC_MESSAGES/scrollkeeper.mo
+share/locale/pt_BR/LC_MESSAGES/scrollkeeper.mo
+share/locale/ru/LC_MESSAGES/scrollkeeper.mo
+share/locale/sk/LC_MESSAGES/scrollkeeper.mo
+share/locale/sl/LC_MESSAGES/scrollkeeper.mo
+share/locale/sv/LC_MESSAGES/scrollkeeper.mo
+share/locale/tr/LC_MESSAGES/scrollkeeper.mo
+share/locale/uk/LC_MESSAGES/scrollkeeper.mo
+share/omf/scrollkeeper/scrollkeeper_manual-C.omf
+share/scrollkeeper/Templates/C/scrollkeeper_cl.xml
+share/scrollkeeper/Templates/af/scrollkeeper_cl.xml
+share/scrollkeeper/Templates/ar/scrollkeeper_cl.xml
+share/scrollkeeper/Templates/az/scrollkeeper_cl.xml
+share/scrollkeeper/Templates/bg/scrollkeeper_cl.xml
+share/scrollkeeper/Templates/bg_BG
+share/scrollkeeper/Templates/bg_BG.cp1251
+share/scrollkeeper/Templates/bo/scrollkeeper_cl.xml
+share/scrollkeeper/Templates/br/scrollkeeper_cl.xml
+share/scrollkeeper/Templates/bs/scrollkeeper_cl.xml
+share/scrollkeeper/Templates/ca/scrollkeeper_cl.xml
+share/scrollkeeper/Templates/cs/scrollkeeper_cl.xml
+share/scrollkeeper/Templates/cy/scrollkeeper_cl.xml
+share/scrollkeeper/Templates/da/scrollkeeper_cl.xml
+share/scrollkeeper/Templates/de/scrollkeeper_cl.xml
+share/scrollkeeper/Templates/de_AT
+share/scrollkeeper/Templates/el/scrollkeeper_cl.xml
+share/scrollkeeper/Templates/en
+share/scrollkeeper/Templates/en_AU
+share/scrollkeeper/Templates/en_GB
+share/scrollkeeper/Templates/en_SE
+share/scrollkeeper/Templates/en_UK
+share/scrollkeeper/Templates/en_US
+share/scrollkeeper/Templates/eo/scrollkeeper_cl.xml
+share/scrollkeeper/Templates/es/scrollkeeper_cl.xml
+share/scrollkeeper/Templates/es_DO
+share/scrollkeeper/Templates/es_ES
+share/scrollkeeper/Templates/es_GT
+share/scrollkeeper/Templates/es_HN
+share/scrollkeeper/Templates/es_MX
+share/scrollkeeper/Templates/es_PA
+share/scrollkeeper/Templates/es_PE
+share/scrollkeeper/Templates/es_SV
+share/scrollkeeper/Templates/et/scrollkeeper_cl.xml
+share/scrollkeeper/Templates/eu/scrollkeeper_cl.xml
+share/scrollkeeper/Templates/fi/scrollkeeper_cl.xml
+share/scrollkeeper/Templates/fr/scrollkeeper_cl.xml
+share/scrollkeeper/Templates/ga/scrollkeeper_cl.xml
+share/scrollkeeper/Templates/gd/scrollkeeper_cl.xml
+share/scrollkeeper/Templates/gl/scrollkeeper_cl.xml
+share/scrollkeeper/Templates/gu/scrollkeeper_cl.xml
+share/scrollkeeper/Templates/gv/scrollkeeper_cl.xml
+share/scrollkeeper/Templates/he/scrollkeeper_cl.xml
+share/scrollkeeper/Templates/hi/scrollkeeper_cl.xml
+share/scrollkeeper/Templates/hr/scrollkeeper_cl.xml
+share/scrollkeeper/Templates/hs/scrollkeeper_cl.xml
+share/scrollkeeper/Templates/hu/scrollkeeper_cl.xml
+share/scrollkeeper/Templates/id/scrollkeeper_cl.xml
+share/scrollkeeper/Templates/is/scrollkeeper_cl.xml
+share/scrollkeeper/Templates/it/scrollkeeper_cl.xml
+share/scrollkeeper/Templates/ja/scrollkeeper_cl.xml
+share/scrollkeeper/Templates/ja_JP.eucJP
+share/scrollkeeper/Templates/km/scrollkeeper_cl.xml
+share/scrollkeeper/Templates/ko/scrollkeeper_cl.xml
+share/scrollkeeper/Templates/kw/scrollkeeper_cl.xml
+share/scrollkeeper/Templates/li/scrollkeeper_cl.xml
+share/scrollkeeper/Templates/lt/scrollkeeper_cl.xml
+share/scrollkeeper/Templates/mi/scrollkeeper_cl.xml
+share/scrollkeeper/Templates/mk/scrollkeeper_cl.xml
+share/scrollkeeper/Templates/mr/scrollkeeper_cl.xml
+share/scrollkeeper/Templates/nb/scrollkeeper_cl.xml
+share/scrollkeeper/Templates/nl/scrollkeeper_cl.xml
+share/scrollkeeper/Templates/nn/scrollkeeper_cl.xml
+share/scrollkeeper/Templates/no
+share/scrollkeeper/Templates/no_NY
+share/scrollkeeper/Templates/oc/scrollkeeper_cl.xml
+share/scrollkeeper/Templates/pl/scrollkeeper_cl.xml
+share/scrollkeeper/Templates/pt/scrollkeeper_cl.xml
+share/scrollkeeper/Templates/pt_BR/scrollkeeper_cl.xml
+share/scrollkeeper/Templates/pt_PT
+share/scrollkeeper/Templates/ro/scrollkeeper_cl.xml
+share/scrollkeeper/Templates/ru/scrollkeeper_cl.xml
+share/scrollkeeper/Templates/se/scrollkeeper_cl.xml
+share/scrollkeeper/Templates/sk/scrollkeeper_cl.xml
+share/scrollkeeper/Templates/sl/scrollkeeper_cl.xml
+share/scrollkeeper/Templates/sp/scrollkeeper_cl.xml
+share/scrollkeeper/Templates/sr/scrollkeeper_cl.xml
+share/scrollkeeper/Templates/sr_YU
+share/scrollkeeper/Templates/sv/scrollkeeper_cl.xml
+share/scrollkeeper/Templates/sv_SE
+share/scrollkeeper/Templates/ta/scrollkeeper_cl.xml
+share/scrollkeeper/Templates/th/scrollkeeper_cl.xml
+share/scrollkeeper/Templates/tr/scrollkeeper_cl.xml
+share/scrollkeeper/Templates/uk/scrollkeeper_cl.xml
+share/scrollkeeper/Templates/wa/scrollkeeper_cl.xml
+share/scrollkeeper/Templates/zh/scrollkeeper_cl.xml
+share/scrollkeeper/Templates/zh_CN
+share/scrollkeeper/Templates/zh_CN.GB2312
+share/scrollkeeper/Templates/zh_TW
+share/scrollkeeper/Templates/zh_TW.Big5
+share/scrollkeeper/doc/scrollkeeper_manual/C/aboutthisdoc.html
+share/scrollkeeper/doc/scrollkeeper_manual/C/administration.html
+share/scrollkeeper/doc/scrollkeeper_manual/C/authors.html
+share/scrollkeeper/doc/scrollkeeper_manual/C/contents-tree.html
+share/scrollkeeper/doc/scrollkeeper_manual/C/docbook.css
+share/scrollkeeper/doc/scrollkeeper_manual/C/exampleomffiles.html
+share/scrollkeeper/doc/scrollkeeper_manual/C/fdl.html
+share/scrollkeeper/doc/scrollkeeper_manual/C/glossary.html
+share/scrollkeeper/doc/scrollkeeper_manual/C/index.html
+share/scrollkeeper/doc/scrollkeeper_manual/C/indexapi.html
+share/scrollkeeper/doc/scrollkeeper_manual/C/installbyhand.html
+share/scrollkeeper/doc/scrollkeeper_manual/C/installingdocsandomf.html
+share/scrollkeeper/doc/scrollkeeper_manual/C/intro.html
+share/scrollkeeper/doc/scrollkeeper_manual/C/ln15.html
+share/scrollkeeper/doc/scrollkeeper_manual/C/makingthingseasier.html
+share/scrollkeeper/doc/scrollkeeper_manual/C/packaging.html
+share/scrollkeeper/doc/scrollkeeper_manual/C/packagingdeb.html
+share/scrollkeeper/doc/scrollkeeper_manual/C/packagingrpm.html
+share/scrollkeeper/doc/scrollkeeper_manual/C/postinstallationscript.html
+share/scrollkeeper/doc/scrollkeeper_manual/C/scrollkeeper-contents-list.html
+share/scrollkeeper/doc/scrollkeeper_manual/C/scrollkeeper-docs.html
+share/scrollkeeper/doc/scrollkeeper_manual/C/scrollkeeper-extended-contents-list.html
+share/scrollkeeper/doc/scrollkeeper_manual/C/scrollkeeper_manual.sgml
+share/scrollkeeper/doc/scrollkeeper_manual/C/scrollkeeperapi.html
+share/scrollkeeper/doc/scrollkeeper_manual/C/scrollkeeperfiles.html
+share/scrollkeeper/doc/scrollkeeper_manual/C/scrollkeeperlicense.html
+share/scrollkeeper/doc/scrollkeeper_manual/C/stylesheet-images/caution.gif
+share/scrollkeeper/doc/scrollkeeper_manual/C/stylesheet-images/home.gif
+share/scrollkeeper/doc/scrollkeeper_manual/C/stylesheet-images/important.gif
+share/scrollkeeper/doc/scrollkeeper_manual/C/stylesheet-images/next.gif
+share/scrollkeeper/doc/scrollkeeper_manual/C/stylesheet-images/note.gif
+share/scrollkeeper/doc/scrollkeeper_manual/C/stylesheet-images/prev.gif
+share/scrollkeeper/doc/scrollkeeper_manual/C/stylesheet-images/tip.gif
+share/scrollkeeper/doc/scrollkeeper_manual/C/stylesheet-images/toc-blank.gif
+share/scrollkeeper/doc/scrollkeeper_manual/C/stylesheet-images/toc-minus.gif
+share/scrollkeeper/doc/scrollkeeper_manual/C/stylesheet-images/toc-plus.gif
+share/scrollkeeper/doc/scrollkeeper_manual/C/stylesheet-images/up.gif
+share/scrollkeeper/doc/scrollkeeper_manual/C/stylesheet-images/warning.gif
+share/scrollkeeper/doc/scrollkeeper_manual/C/tableofcontentsapi.html
+share/scrollkeeper/doc/scrollkeeper_manual/C/theomf.html
+share/scrollkeeper/doc/scrollkeeper_manual/C/theomfspecification.html
+share/scrollkeeper/doc/scrollkeeper_manual/C/toc-file.html
+share/scrollkeeper/doc/scrollkeeper_manual/C/uninstallbyhand.html
+share/scrollkeeper/doc/scrollkeeper_manual/C/uninstalling.html
+share/scrollkeeper/doc/scrollkeeper_manual/C/writingomffiles.html
+@exec mkdir -p -m 0755 %D/share/scrollkeeper/doc/scrollkeeper_manual/C/figures
+@dirrm share/scrollkeeper/doc/scrollkeeper_manual/C/stylesheet-images
+@dirrm share/scrollkeeper/doc/scrollkeeper_manual/C/figures
+@dirrm share/scrollkeeper/doc/scrollkeeper_manual/C
+@dirrm share/scrollkeeper/doc/scrollkeeper_manual
+@dirrm share/scrollkeeper/doc
+@dirrm share/scrollkeeper/Templates/zh
+@dirrm share/scrollkeeper/Templates/wa
+@dirrm share/scrollkeeper/Templates/uk
+@dirrm share/scrollkeeper/Templates/tr
+@dirrm share/scrollkeeper/Templates/th
+@dirrm share/scrollkeeper/Templates/ta
+@dirrm share/scrollkeeper/Templates/sv
+@dirrm share/scrollkeeper/Templates/sr
+@dirrm share/scrollkeeper/Templates/sp
+@dirrm share/scrollkeeper/Templates/sl
+@dirrm share/scrollkeeper/Templates/sk
+@dirrm share/scrollkeeper/Templates/se
+@dirrm share/scrollkeeper/Templates/ru
+@dirrm share/scrollkeeper/Templates/ro
+@dirrm share/scrollkeeper/Templates/pt_BR
+@dirrm share/scrollkeeper/Templates/pt
+@dirrm share/scrollkeeper/Templates/pl
+@dirrm share/scrollkeeper/Templates/oc
+@dirrm share/scrollkeeper/Templates/nn
+@dirrm share/scrollkeeper/Templates/nl
+@dirrm share/scrollkeeper/Templates/nb
+@dirrm share/scrollkeeper/Templates/mr
+@dirrm share/scrollkeeper/Templates/mk
+@dirrm share/scrollkeeper/Templates/mi
+@dirrm share/scrollkeeper/Templates/lt
+@dirrm share/scrollkeeper/Templates/li
+@dirrm share/scrollkeeper/Templates/kw
+@dirrm share/scrollkeeper/Templates/ko
+@dirrm share/scrollkeeper/Templates/km
+@dirrm share/scrollkeeper/Templates/ja
+@dirrm share/scrollkeeper/Templates/it
+@dirrm share/scrollkeeper/Templates/is
+@dirrm share/scrollkeeper/Templates/id
+@dirrm share/scrollkeeper/Templates/hu
+@dirrm share/scrollkeeper/Templates/hs
+@dirrm share/scrollkeeper/Templates/hr
+@dirrm share/scrollkeeper/Templates/hi
+@dirrm share/scrollkeeper/Templates/he
+@dirrm share/scrollkeeper/Templates/gv
+@dirrm share/scrollkeeper/Templates/gu
+@dirrm share/scrollkeeper/Templates/gl
+@dirrm share/scrollkeeper/Templates/gd
+@dirrm share/scrollkeeper/Templates/ga
+@dirrm share/scrollkeeper/Templates/fr
+@dirrm share/scrollkeeper/Templates/fi
+@dirrm share/scrollkeeper/Templates/eu
+@dirrm share/scrollkeeper/Templates/et
+@dirrm share/scrollkeeper/Templates/es
+@dirrm share/scrollkeeper/Templates/eo
+@dirrm share/scrollkeeper/Templates/el
+@dirrm share/scrollkeeper/Templates/de
+@dirrm share/scrollkeeper/Templates/da
+@dirrm share/scrollkeeper/Templates/cy
+@dirrm share/scrollkeeper/Templates/cs
+@dirrm share/scrollkeeper/Templates/ca
+@dirrm share/scrollkeeper/Templates/bs
+@dirrm share/scrollkeeper/Templates/br
+@dirrm share/scrollkeeper/Templates/bo
+@dirrm share/scrollkeeper/Templates/bg
+@dirrm share/scrollkeeper/Templates/az
+@dirrm share/scrollkeeper/Templates/ar
+@dirrm share/scrollkeeper/Templates/af
+@dirrm share/scrollkeeper/Templates/C
+@dirrm share/scrollkeeper/Templates
+@dirrm share/scrollkeeper
+@dirrm share/omf/scrollkeeper
+@dirrm share/omf
+@dirrm share/doc/scrollkeeper
