@@ -7,7 +7,7 @@
 
 PORTNAME=	gtk
 PORTVERSION=	1.2.10
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	stable/sources/gtk+
@@ -24,16 +24,13 @@ USE_GNOME=	glib12
 USE_LIBTOOL=	yes
 INSTALLS_SHLIB=	yes
 LIBTOOLFLAGS=	--disable-ltlibs --release-suffix
-CONFIGURE_ARGS=	--includedir=${PREFIX}/include/gtk12 --with-native-locale
+CONFIGURE_ARGS=	--includedir=${PREFIX}/include/gtk12 --with-native-locale \
+		--with-xinput=xfree
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		X_CFLAGS="-I${LOCALBASE}/include" \
 		LIBS="-L${LOCALBASE}/lib"
 
 MAN1=		gtk12-config.1
-
-.if defined(WITH_XINPUT)
-CONFIGURE_ARGS+=	--with-xinput=xfree
-.endif
 
 pre-extract:
 .if !defined(WITH_XINPUT)
