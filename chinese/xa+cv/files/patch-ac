@@ -1,0 +1,200 @@
+--- wrap.c.orig	Wed Jul 28 15:19:02 1999
++++ wrap.c	Wed Sep  8 17:00:52 1999
+@@ -272,168 +272,168 @@
+   
+ int load_all_syms(void *handle)
+ {
+-  char *error;
+-
++  char const *error;
++  FILE * nullfp = fopen("/dev/null", "w") ;
+   real_XOpenDisplay=dlsym(handle,"XOpenDisplay");
+   p_log(-1, " XOpenDisplay loaded...\n");  
+   if ((error = dlerror()) != NULL)  {
+-    fputs(error, stderr);
++    fputs(error, nullfp);
+     exit(1);
+   }
+   real_XCloseDisplay=dlsym(handle,"XCloseDisplay");
+   p_log(-1, " XCloseDisplay loaded...\n");  
+   if ((error = dlerror()) != NULL)  {
+-    fputs(error, stderr);
++    fputs(error, nullfp);
+     exit(1);
+   }
+   real_XGetFontProperty=dlsym(handle,"XGetFontProperty");
+   p_log(-1, " XGetFontProperty loaded...\n");  
+   if ((error = dlerror()) != NULL)  {
+-    fputs(error, stderr);
++    fputs(error, nullfp);
+     exit(1);
+   }
+   real_XFreeFont=dlsym(handle,"XFreeFont");
+   p_log(-1, " XFreeFont loaded...\n");  
+   if ((error = dlerror()) != NULL)  {
+-    fputs(error, stderr);
++    fputs(error, nullfp);
+     exit(1);
+   }
+   real_XFreeFontInfo=dlsym(handle,"XFreeFontInfo");
+   p_log(-1, " XFreeFontInfo loaded...\n");  
+   if ((error = dlerror()) != NULL)  {
+-    fputs(error, stderr);
++    fputs(error, nullfp);
+     exit(1);
+   }
+   real_XQueryFont=dlsym(handle,"XQueryFont");
+   p_log(-1, " XQueryFont loaded...\n");  
+   if ((error = dlerror()) != NULL)  {
+-    fputs(error, stderr);
++    fputs(error, nullfp);
+     exit(1);
+   }
+   real_XLoadQueryFont=dlsym(handle,"XLoadQueryFont");
+   p_log(-1, " XLoadQueryFont loaded...\n");  
+   if ((error = dlerror()) != NULL)  {
+-    fputs(error, stderr);
++    fputs(error, nullfp);
+     exit(1);
+   }
+   real_XTextWidth=dlsym(handle,"XTextWidth");
+   p_log(-1, " XTextWidth loaded...\n");  
+   if ((error = dlerror()) != NULL)  {
+-    fputs(error, stderr);
++    fputs(error, nullfp);
+     exit(1);
+   }
+   real_XTextWidth16=dlsym(handle,"XTextWidth16");
+   p_log(-1, " XTextWidth16 loaded...\n");  
+   if ((error = dlerror()) != NULL)  {
+-    fputs(error, stderr);
++    fputs(error, nullfp);
+     exit(1);
+   }
+   real_XTextExtents=dlsym(handle,"XTextExtents");
+   p_log(-1, " XTextExtents loaded...\n");  
+   if ((error = dlerror()) != NULL)  {
+-    fputs(error, stderr);
++    fputs(error, nullfp);
+     exit(1);
+   }
+   real_XTextExtents16=dlsym(handle,"XTextExtents16");
+   p_log(-1, " XTextExtents16 loaded...\n");  
+   if ((error = dlerror()) != NULL)  {
+-    fputs(error, stderr);
++    fputs(error, nullfp);
+     exit(1);
+   }
+   real_XQueryTextExtents=dlsym(handle,"XQueryTextExtents");
+   p_log(-1, " XQueryTextExtents loaded...\n");  
+   if ((error = dlerror()) != NULL)  {
+-    fputs(error, stderr);
++    fputs(error, nullfp);
+     exit(1);
+   }
+   real_XQueryTextExtents16=dlsym(handle,"XQueryTextExtents16");
+   p_log(-1, " XQueryTextExtents16 loaded...\n");  
+   if ((error = dlerror()) != NULL)  {
+-    fputs(error, stderr);
++    fputs(error, nullfp);
+     exit(1);
+   }
+   real_XDrawString=dlsym(handle,"XDrawString");
+   p_log(-1, " XDrawString loaded...\n");  
+   if ((error = dlerror()) != NULL)  {
+-    fputs(error, stderr);
++    fputs(error, nullfp);
+     exit(1);
+   }
+   real_XDrawString16=dlsym(handle,"XDrawString16");
+   p_log(-1, " XDrawString16 loaded...\n");  
+   if ((error = dlerror()) != NULL)  {
+-    fputs(error, stderr);
++    fputs(error, nullfp);
+     exit(1);
+   }
+   real_XDrawImageString=dlsym(handle,"XDrawImageString");
+   p_log(-1, " XDrawImageString loaded...\n");  
+   if ((error = dlerror()) != NULL)  {
+-    fputs(error, stderr);
++    fputs(error, nullfp);
+     exit(1);
+   }
+   real_XDrawImageString16=dlsym(handle,"XDrawImageString16");
+   p_log(-1, " XDrawImageString16 loaded...\n");  
+   if ((error = dlerror()) != NULL)  {
+-    fputs(error, stderr);
++    fputs(error, nullfp);
+     exit(1);
+   }
+   real_XChangeGC=dlsym(handle,"XChangeGC");
+   p_log(-1, " XChangeGC loaded...\n");  
+   if ((error = dlerror()) != NULL)  {
+-    fputs(error, stderr);
++    fputs(error, nullfp);
+     exit(1);
+   }
+   real_XGetGCValues=dlsym(handle,"XGetGCValues");
+   p_log(-1, " XGetGCValues loaded...\n");  
+   if ((error = dlerror()) != NULL)  {
+-    fputs(error, stderr);
++    fputs(error, nullfp);
+     exit(1);
+   }
+   real_XChangeProperty=dlsym(handle,"XChangeProperty");
+   p_log(-1, " XChangeProperty loaded...\n");  
+   if ((error = dlerror()) != NULL)  {
+-    fputs(error, stderr);
++    fputs(error, nullfp);
+     exit(1);
+   }
+   real_XNextEvent=dlsym(handle,"XNextEvent");
+   p_log(-1, " XNextEvent loaded...\n");  
+   if ((error = dlerror()) != NULL)  {
+-    fputs(error, stderr);
++    fputs(error, nullfp);
+     exit(1);
+   }
+   real_XPeekEvent=dlsym(handle,"XPeekEvent");
+   p_log(-1, " XPeekEvent loaded...\n");  
+   if ((error = dlerror()) != NULL)  {
+-    fputs(error, stderr);
++    fputs(error, nullfp);
+     exit(1);
+   }
+   real_XPutBackEvent=dlsym(handle,"XPutBackEvent");
+   p_log(-1, " XPutBackEvent loaded...\n");  
+   if ((error = dlerror()) != NULL)  {
+-    fputs(error, stderr);
++    fputs(error, nullfp);
+     exit(1);
+   }
+   real_XLookupString=dlsym(handle,"XLookupString");
+   p_log(-1, " XLookupString loaded...\n");  
+   if ((error = dlerror()) != NULL)  {
+-    fputs(error, stderr);
++    fputs(error, nullfp);
+     exit(1);
+   }
+   real_XSetSelectionOwner=dlsym(handle,"XSetSelectionOwner");
+   p_log(-1, " XSetSelectionOwner loaded...\n");  
+   if ((error = dlerror()) != NULL)  {
+-    fputs(error, stderr);
++    fputs(error, nullfp);
+     exit(1);
+   }
+   real_XGetSelectionOwner=dlsym(handle,"XGetSelectionOwner");
+   p_log(-1, " XGetSelectionOwner loaded...\n");  
+   if ((error = dlerror()) != NULL)  {
+-    fputs(error, stderr);
++    fputs(error, nullfp);
+     exit(1);
+   }
+   real_XInternAtom=dlsym(handle,"XInternAtom");
+   p_log(-1, " XInternAtom loaded...\n");  
+   if ((error = dlerror()) != NULL)  {
+-    fputs(error, stderr);
++    fputs(error, nullfp);
+     exit(1);
+   }
+   

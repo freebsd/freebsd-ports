@@ -1,0 +1,22 @@
+lib/wrap.so
+etc/chinese/xa+cv/config
+share/doc/xa+cv/FAQ
+share/doc/xa+cv/NEW
+share/doc/xa+cv/README.+CV
+share/doc/xa+cv/README.XA
+share/doc/xa+cv/README.XA+CV-0.5
+share/doc/xa+cv/USE.Big5
+share/doc/xa+cv/USE.GB
+share/examples/xa+cv/README
+share/examples/xa+cv/cnetscape
+share/examples/xa+cv/cxcoral
+share/examples/xa+cv/cxemacs
+share/examples/xa+cv/cxterm
+share/examples/xa+cv/dot.fvwm2rc95
+share/examples/xa+cv/et24
+share/examples/xa+cv/et24r
+share/examples/xa+cv/ns
+@dirrm etc/chinese/xa+cv
+@dirrm etc/chinese
+@dirrm share/doc/xa+cv
+@dirrm share/examples/xa+cv
