@@ -5,21 +5,21 @@
 # $FreeBSD$
 #
 
-PORTNAME=		esh
-PORTVERSION= 		0.8
-CATEGORIES=		shells
-MASTER_SITES=		http://esh.netpedia.net/                       \
-			http://www.nectar.cc/distfiles/
+PORTNAME=	esh
+PORTVERSION=	0.8
+CATEGORIES=	shells
+MASTER_SITES=	http://esh.netpedia.net/ \
+		http://www.nectar.cc/distfiles/
 
-MAINTAINER=		nectar@FreeBSD.org
+MAINTAINER=	nectar@FreeBSD.org
 
-WRKSRC=			${WRKDIR}/esh
+WRKSRC=		${WRKDIR}/esh
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/esh ${PREFIX}/bin/esh
 	@${ECHO} "updating /etc/shells"
 	@${CP} /etc/shells /etc/shells.bak
-	@(${GREP} -v ${PREFIX}/bin/esh /etc/shells.bak;                \
+	@(${GREP} -v ${PREFIX}/bin/esh /etc/shells.bak; \
 	  ${ECHO} ${PREFIX}/bin/esh) > /etc/shells
 	@${RM} /etc/shells.bak
 .if !defined(NOPORTDOCS)
