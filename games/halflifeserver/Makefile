@@ -44,8 +44,11 @@ HL_PROGRAM=	hlds_run
 
 pre-patch:
 # remove trailing ^M
-.for file in */*.cfg */*.lst *.txt */*.txt */*.htm */*.gam
-	@${PERL} -pi -ne 's!\r\n!\n!' ${WRKSRC}/${file}
+.for file in
+.for file in *.cfg */*.cfg *.gam */*.gam *.htm */*.htm \
+	*.inf */*.inf *.lst */*.lst *.sc */*.sc \
+	*.scr */*.scr *.txt */*.txt
+	@${PERL} -pi -ne 's!\r\n!\n!' ${WRKSRC}/${file} >/dev/null 2>/dev/null
 .endfor
 
 do-install: install-files scan-libs
