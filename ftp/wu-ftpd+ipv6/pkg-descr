@@ -13,3 +13,17 @@ features:
     o  directory alias
     o  cdpath
     o  filename filter
+
+
+CONFIGURATION NOTES
+
+The configuration files are located in /usr/local/etc  This package includes
+a basic working configuration.  The config files are:
+
+  ftpaccess - controls who, what, and how many can access the server
+  ftpconversions - controls the on-the-fly compression/archiving
+  ftpusers - users who, for security reasons, may never use the server
+
+You will also need to change /etc/inetd.conf to point to the new server 
+located at /usr/local/libexec/ftpd
+

@@ -1,3 +1,6 @@
+etc/ftpaccess
+etc/ftpconversions
+etc/ftpusers
 libexec/ftpd
 man/man1/ftpcount.1.gz
 man/man1/ftpwho.1.gz
@@ -10,3 +13,4 @@ man/man8/ftpshut.8.gz
 bin/ftpshut
 bin/ftpcount
 bin/ftpwho
+bin/ftpckconfig
