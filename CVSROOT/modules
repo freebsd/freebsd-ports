@@ -2918,6 +2918,7 @@ ipsvd		ports/net/ipsvd
 ipv6calc	ports/net/ipv6calc
 ipv6socket_scrub	ports/net/ipv6socket_scrub
 ipw		ports/net/ipw
+ipython		ports/devel/ipython
 irc		ports/irc/irc
 ircII		ports/irc/ircII
 ircatlite	ports/irc/ircatlite
