@@ -1303,6 +1303,7 @@ doscmd		src/usr.bin/doscmd
 dosunix		ports/converters/dosunix
 dotconf		ports/devel/dotconf
 dotfile		ports/misc/dotfile
+dovecot		ports/mail/dovecot
 downloader	ports/ftp/downloader
 doxygen		ports/devel/doxygen
 dpt		src/usr.sbin/dpt
