@@ -1,0 +1,56 @@
+--- layer3.c.xx	Wed Oct 22 19:19:01 2003
++++ layer3.c	Wed Oct 22 19:20:30 2003
+@@ -608,7 +608,7 @@
+  * Dequantize samples (includes huffman decoding)
+  */
+ /* 24 is enough because tab13 has max. a 19 bit huffvector */
+-#ifdef __alpha
++#ifndef __i386__
+ #define BITSHIFT ((sizeof(int)-1)*8)
+ #define REFRESH_MASK \
+   while(num < BITSHIFT) { \
+@@ -634,7 +634,7 @@
+   int *me;
+ 
+   int num=getbitoffset();
+-#ifdef __alpha
++#ifndef __i386__
+   int mask = (int) getbits(num)<<(BITSHIFT+8-num);
+ #else
+   long mask = (long) getbits(num)<<(BITSHIFT+8-num);
+@@ -722,7 +722,7 @@
+         if(x == 15 && h->linbits) {
+           max[lwin] = cb;
+           REFRESH_MASK;
+-#ifdef __alpha
++#ifndef __i386__
+           x += ((unsigned int) mask) >> (BITSHIFT+8-h->linbits);
+ #else
+           x += ((unsigned long) mask) >> (BITSHIFT+8-h->linbits);
+@@ -750,7 +750,7 @@
+         if(y == 15 && h->linbits) {
+           max[lwin] = cb;
+           REFRESH_MASK;
+-#ifdef __alpha
++#ifndef __i386__
+           y += ((unsigned int) mask) >> (BITSHIFT+8-h->linbits);
+ #else
+           y += ((unsigned long) mask) >> (BITSHIFT+8-h->linbits);
+@@ -904,7 +904,7 @@
+         if (x == 15 && h->linbits) {
+           max = cb;
+ 	  REFRESH_MASK;
+-#ifdef __alpha
++#ifndef __i386__
+           x += ((unsigned int) mask) >> (BITSHIFT+8-h->linbits);
+ #else
+           x += ((unsigned long) mask) >> (BITSHIFT+8-h->linbits);
+@@ -932,7 +932,7 @@
+         if (y == 15 && h->linbits) {
+           max = cb;
+ 	  REFRESH_MASK;
+-#ifdef __alpha
++#ifndef __i386__
+           y += ((unsigned int) mask) >> (BITSHIFT+8-h->linbits);
+ #else
+           y += ((unsigned long) mask) >> (BITSHIFT+8-h->linbits);
