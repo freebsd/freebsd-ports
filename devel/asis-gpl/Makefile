@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	asis
-PORTVERSION=	3.12p
+PORTVERSION=	3.13p
 CATEGORIES=	devel
 MASTER_SITES=	\
 	ftp://ftp.lip6.fr/pub/gnat/${PORTVERSION}/asis/ \
@@ -37,10 +37,10 @@ post-install:
 .if !defined(NOPORTDOCS)
 	@ ${MKDIR} ${PREFIX}/share/doc/asis || true
 	@ ${INSTALL_DATA} ${WRKSRC}/documentation/* ${PREFIX}/share/doc/asis
-	@ ${INSTALL_DATA} ${WRKSRC}/asistant/asistant.ug ${PREFIX}/share/doc/asis/README.asistant
 	@ ${INSTALL_DATA} ${WRKSRC}/examples/ds/README ${PREFIX}/share/doc/asis/README.ds
-	@ ${INSTALL_DATA} ${WRKSRC}/examples/gnatelim/README ${PREFIX}/share/doc/asis/README.gnatelim
-	@ ${INSTALL_DATA} ${WRKSRC}/examples/gnatstub/README ${PREFIX}/share/doc/asis/README.gnatstub
+	@ ${INSTALL_DATA} ${WRKSRC}/tools/asistant/asistant.ug ${PREFIX}/share/doc/asis/README.asistant
+	@ ${INSTALL_DATA} ${WRKSRC}/tools/gnatelim/README ${PREFIX}/share/doc/asis/README.gnatelim
+	@ ${INSTALL_DATA} ${WRKSRC}/tools/gnatstub/README ${PREFIX}/share/doc/asis/README.gnatstub
 .endif
 
 .include <bsd.port.mk>

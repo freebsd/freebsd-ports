@@ -7,13 +7,13 @@ all:
 	${LN} -sf libasis-${PORTVERSION}.so.1 libasis-${PORTVERSION}.so
 	${GMAKE} -C obj clean libasis.a CFLAGS="${CFLAGS}" CC=adagcc
 	chmod a-w obj/*.ali
-	cd asistant && \
-	gnatmake ${CFLAGS} -o ../asistant.prg asistant-driver -I../asis -I../gnat -I../obj -largs -L.. -lasis-${PORTVERSION}
 	cd examples/ds && \
 	gnatmake ${CFLAGS} -o ../../display_source display_source ${ASISPROGFLAGS}
-	cd examples/gnatelim && \
+	cd tools/asistant && \
+	gnatmake ${CFLAGS} -o ../../asistant.prg asistant-driver ${ASISPROGFLAGS}
+	cd tools/gnatelim && \
 	gnatmake ${CFLAGS} -o ../../gnatelim gnatelim-driver ${ASISPROGFLAGS}
-	cd examples/gnatstub && \
+	cd tools/gnatstub && \
 	gnatmake ${CFLAGS} -o ../../gnatstub gnatstub-driver ${ASISPROGFLAGS}
 
 clean:
