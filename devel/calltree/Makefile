@@ -17,6 +17,7 @@ COMMENT=	Valgrind skin for cache simulation and call tracing
 RUN_DEPENDS=	valgrind:${PORTSDIR}/devel/valgrind
 BUILD_DEPENDS=	valgrind:${PORTSDIR}/devel/valgrind
 
+ONLY_FOR_ARCHS=	i386
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 

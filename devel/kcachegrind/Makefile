@@ -14,9 +14,9 @@ MASTER_SITE_SUBDIR=	kcachegrind
 MAINTAINER=	barner@gmx.de
 COMMENT=	Profiling Visualization Tool
 
-BUILD_DEPENDS=	mcopidl:${PORTSDIR}/audio/arts
 RUN_DEPENDS=	calltree:${PORTSDIR}/devel/calltree
 
+ONLY_FOR_ARCHS=	i386
 CONFLICTS=	kdesdk3-[0-9]*
 
 GNU_CONFIGURE=	yes
