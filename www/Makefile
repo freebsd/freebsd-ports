@@ -585,6 +585,7 @@
     SUBDIR += rt2
     SUBDIR += rt3
     SUBDIR += rt3-elixus
+    SUBDIR += rt32
     SUBDIR += ruboard
     SUBDIR += ruby-amazon
     SUBDIR += ruby-asp
