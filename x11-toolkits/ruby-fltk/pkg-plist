@@ -41,6 +41,7 @@
 %%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/fltk
 %%PORTDOCS%%%%RUBY_DOCDIR%%/fltk/Changes
 %%PORTDOCS%%%%RUBY_DOCDIR%%/fltk/README
+%%PORTDOCS%%%%RUBY_DOCDIR%%/fltk/ToDo
 %%PORTDOCS%%%%RUBY_DOCDIR%%/fltk/faq.txt
 %%PORTDOCS%%%%RUBY_DOCDIR%%/fltk/guide.txt
 %%PORTDOCS%%%%RUBY_DOCDIR%%/fltk/reference.txt
