@@ -1,0 +1,12 @@
+GDIS is a GTK based program for the display and manipulation of isolated
+molecules and periodic systems. It is in development, but is nonetheless
+fairly functional. It has the following features:
+   - Support for several file types (CIF, BIOSYM, XYZ, XTL, MARVIN, and GULP)
+   - A simple molecular creation and manipulation tool
+   - A dialogue for creating starting configurations for molecular dynamics
+     simulations
+   - Assorted tools for visualization (geometry information, region
+     highlighting, etc.)
+   - Animation of BIOSYM files
+
+WWW: http://gdis.seul.org/

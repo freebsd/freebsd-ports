@@ -1,0 +1,3 @@
+bin/gdis
+share/gdis/gdis.lib
+@dirrm share/gdis
