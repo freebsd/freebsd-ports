@@ -15,6 +15,10 @@ MAINTAINER?=	sada@FreeBSD.org
 
 RUN_DEPENDS+=	netscape:${PORTSDIR}/www/netscape-wrapper
 
+.if (${PORTVERSION} == "4.76")
+BROKEN=		"has a serious security hole, use 4.77 instead"
+.endif
+
 .if !defined(INFILE_HEAD)
 # not included from master ports
 NO_LATEST_LINK=	yes
