@@ -172,6 +172,10 @@ MASTER_SITE_RUBY+= \
 	ftp://ftp.krnet.ne.jp/pub/ruby/%SUBDIR%/ \
 	ftp://mirror.nucba.ac.jp/mirror/ruby/%SUBDIR%/
 
+MASTER_SITE_THEMES+= \
+	ftp://ftp.themes.org/pub/themes/%SUBDIR%/ \
+	ftp://ftp.tuwien.ac.at/opsys/linux/themes.org/%SUBDIR%/
+
 # Where to put distfiles that don't have any other master site
 MASTER_SITE_LOCAL?= \
 	ftp://ftp.FreeBSD.org/pub/FreeBSD/ports/local-distfiles/%SUBDIR%/ \
