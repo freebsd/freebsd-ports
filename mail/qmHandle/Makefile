@@ -7,6 +7,7 @@
 
 PORTNAME=	qmHandle
 PORTVERSION=	1.0.0
+PORTREVISION=	1
 CATEGORIES=	mail
 MASTER_SITES=	http://www.italpro.net/mb/soft/
 
@@ -17,6 +18,7 @@ RUN_DEPENDS=	${QMAIL_DIR}/bin/qmail-qstat:${PORTSDIR}/mail/qmail
 NO_WRKSUBDIR=	yes
 NO_BUILD=	yes
 USE_BZIP2=	yes
+USE_PERL5=	yes
 
 .if exists(${LOCALBASE}/qmail/bin/qmail-qstat)
 QMAIL_DIR?=	${LOCALBASE}/qmail
@@ -25,7 +27,8 @@ QMAIL_DIR?=	/var/qmail
 .endif
 
 post-patch:
-	@${PERL} -pi -e 's,^#!/usr/bin/perl,#!${PERL},' ${WRKSRC}/qmHandle
+	@${PERL} -pi -e 's,^#!/usr/bin/perl,#!${PERL},; \
+		s,%%LOCALBASE%%,${LOCALBASE},g' ${WRKSRC}/qmHandle
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/qmHandle ${PREFIX}/bin
