@@ -553,7 +553,7 @@ misc.c:
     <references>
       <cvename>CAN-2004-0158</cvename>
       <url>http://www.debian.org/security/2004/dsa-445</url>
-      <url>http://www.securityfocus.com/archive/1/354760/2004-02-21/2004-02-27/0</url>
+      <url>http://www.securityfocus.com/archive/1/354760</url>
     </references>
     <dates>
       <discovery>2004-02-21</discovery>
@@ -656,7 +656,7 @@ misc.c:
     </description>
     <references>
       <cvename>CAN-2004-0129</cvename>
-      <url>http://marc.theaimsgroup.com/?l=bugtraq&amp;m=107582619125932&amp;w=2</url>
+      <url>http://www.securityfocus.com/archive/1/352378</url>
       <url>http://cvs.sourceforge.net/viewcvs.py/phpmyadmin/phpMyAdmin/export.php#rev2.3.2.1</url>
     </references>
     <dates>
@@ -985,7 +985,7 @@ misc.c:
       </body>
     </description>
     <references>
-      <url>http://marc.theaimsgroup.com/?l=bugtraq&amp;m=103668430620531&amp;w=2</url>
+      <url>http://www.securityfocus.com/archive/1/298782</url>
       <cvename>CAN-2002-1320</cvename>
     </references>
     <dates>
@@ -1042,7 +1042,7 @@ misc.c:
     </description>
     <references>
       <cvename>CAN-2003-0962</cvename>
-      <url>http://marc.theaimsgroup.com/?l=bugtraq&amp;m=107055681311602&amp;w=2</url>
+      <url>http://lists.samba.org/archive/rsync-announce/2003/000011.html</url>
       <url>http://rsync.samba.org/#security</url>
     </references>
     <dates>
@@ -1242,7 +1242,7 @@ misc.c:
       <cvename>CAN-2003-0989</cvename>
       <cvename>CAN-2003-1029</cvename>
       <cvename>CAN-2004-0057</cvename>
-      <url>http://marc.theaimsgroup.com/?l=tcpdump-workers&amp;m=107228187124962&amp;w=2</url>
+      <url>http://www.tcpdump.org/lists/workers/2003/12/msg00083.html</url>
       <url>http://marc.theaimsgroup.com/?l=tcpdump-workers&amp;m=107325073018070&amp;w=2</url>
     </references>
     <dates>
@@ -1544,7 +1544,7 @@ misc.c:
       </body>
     </description>
     <references>
-      <url>http://seclists.org/lists/bugtraq/2003/Jan/0022.html</url>
+      <url>http://www.securityfocus.com/archive/1/305162</url>
       <cvename>CAN-2003-0031</cvename>
       <cvename>CAN-2003-0032</cvename>
     </references>
