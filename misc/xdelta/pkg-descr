@@ -1,0 +1,24 @@
+From the README:
+  I propose this delta generator as a replacement for "diff" in applications
+  where the insert/delete delta is not required.  Since the copy/insert delta
+  is easier to compute, it does not have to make the reduction in input size
+  by breaking the file into lines.  The delta generator works well on binary
+  files.
+
+  The next question is whether it is actually desirable to compute deltas
+  between binary files.  The answer is certainly yes, even though some binary
+  file formats will not have a great degree of similarity between versions
+  which were generated between minor modifications to their sources.  First, I
+  have evidence that some file formats (notably FrameMaker documents) work
+  very well.  Machine-dependant object files and executables don't work very
+  well, but it is still worth doing.  The reason it is still worthwhile is
+  that compression takes longer than finding these deltas, so any space
+  savings the delta generator produces it very likely to reduce the total
+  archival time.  Even if the delta generator saves no space, the total time
+  well end up less than twice the time of compression.  I will include some
+  measurements at the end of this writing.
+
+  Please send any comments, questions, thoughts, or interest to me,
+  jmacd@cs.berkeley.edu.
+
+Eric. <erich@FreeBSD.org>
