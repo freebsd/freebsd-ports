@@ -7,23 +7,25 @@
 #
 
 PORTNAME=	bash
-PORTVERSION=	2.05b
-PORTREVISION?=	1
+PORTVERSION=	2.05b.004
+PORTREVISION?=	0
 CATEGORIES=	shells
 MASTER_SITES=	${MASTER_SITE_GNU} \
 		ftp://ftp.cwru.edu/pub/bash/
 MASTER_SITE_SUBDIR=	bash
 .if !defined(NOPORTDOCS)
-DISTFILES=	bash-${PORTVERSION}.tar.gz bash-doc-${PORTVERSION}.tar.gz
+DISTFILES=	bash-${PORTVERSION:C/\....$//}.tar.gz \
+		bash-doc-${PORTVERSION:C/\....$//}.tar.gz
 .endif
 
 PATCH_SITES=	ftp://ftp.cwru.edu/pub/bash/bash-2.05b-patches/
-PATCHFILES=	bash205b-003
+PATCHFILES=	bash205b-001 bash205b-002 bash205b-003 bash205b-004
 
 MAINTAINER=	obrien@FreeBSD.org
 
 .include <bsd.port.pre.mk>
 
+WRKSRC=		${WRKDIR}/bash-${PORTVERSION:C/\....$//}
 GNU_CONFIGURE=	Yes
 CONFIGURE_ARGS=	--with-installed-readline
 CONFIGURE_ENV=	LDFLAGS=-static
