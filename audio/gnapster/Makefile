@@ -1,4 +1,4 @@
-# New ports collection makefile for:	gnapster	
+# New ports collection makefile for:	gnapster
 # Version required:	1.3.7
 # Date created:		24 December 1999
 # Whom:			Chris Piazza <cpiazza@FreeBSD.org>
