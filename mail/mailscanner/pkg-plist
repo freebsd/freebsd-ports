@@ -80,6 +80,8 @@ libexec/MailScanner/rav-autoupdate.sample
 libexec/MailScanner/rav-wrapper.sample
 libexec/MailScanner/sophos-autoupdate.sample
 libexec/MailScanner/sophos-wrapper.sample
+libexec/MailScanner/symscanengine-wrapper.sample
+libexec/MailScanner/symscanengine-autoupdate.sample
 libexec/MailScanner/trend-autoupdate.sample
 libexec/MailScanner/trend-wrapper.sample
 libexec/MailScanner/vexira-wrapper.sample
