@@ -468,6 +468,7 @@ lib/iconv/ces/x0201.so
 lib/libiconv.a
 lib/libiconv.so
 lib/libiconv.so.0
+lib/libiconv_p.a
 @exec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -m %B
 @unexec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -R
 @dirrm lib/iconv/ces
