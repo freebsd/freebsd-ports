@@ -6,7 +6,7 @@ supported. One known implementation of the javax.xml.transform
 hierarchy is Xalan 2, which is available as a separate port in
 java/xalan.
 
-More info about JAXP:
+ More info about JAXP:
 
 WWW: http://www.javasoft.com/xml/
 
