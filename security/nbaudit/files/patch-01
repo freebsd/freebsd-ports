@@ -1,0 +1,22 @@
+--- Makefile.orig	Sun Feb 16 19:18:04 1997
++++ Makefile	Wed Jan 21 03:02:33 1998
+@@ -189,8 +189,8 @@
+ # This is for FreeBSD
+ # contributed by kuku@acds.physik.rwth-aachen.de
+ # NOTE: You may need to add -DBSD44 if you have password problems
+-# FLAGSM = -DFreeBSD
+-# LIBSM = -lcrypt 
++FLAGSM = -DFreeBSD
++LIBSM = -lcrypt 
+ 
+ 
+ # This is for NEXTSTEP Release 2.X
+@@ -366,7 +366,7 @@
+ OBJS = nat.o client.o util.o system.o nmb.o charset.o parse_ip.o
+ CFLAGS1 = -DSTEPPING -DSCANNER -DVERBOSE
+ CFLAGS2 = -DWORKGROUP=\"$(WORKGROUP)\" -DGUEST_ACCOUNT=\"$(GUESTACCOUNT)\" 
+-CFLAGS = $(CFLAGS1) $(CFLAGS2) $(FLAGSM)
++CFLAGS += $(CFLAGS1) $(CFLAGS2) $(FLAGSM)
+ LIBS = $(LIBSM)
+ 
+ all : nat
