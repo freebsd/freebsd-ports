@@ -1,3 +1,13 @@
-a sound library for enlightenment package
+[From the EsounD website:]
+
+[W]hen two or more applications want to play sounds at the same time,
+it's on a first-come, first-served basis. Whoever gets to the audio
+device first wins. EsounD changes all of that...
+
+The Enlightened Sound Daemon mixes several audio streams for playback by
+a single audio device. You can also pre-load samples, and play them back
+without having to send all the data for the sound. Network transparency
+is also built in, so you can play sounds on one machine, and listen to
+them on another.
 
 WWW: http://www.tux.org/~ricdude/EsounD.html
