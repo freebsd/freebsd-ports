@@ -11,6 +11,25 @@ etc/gconf/gconf.xml.defaults/schemas/apps/epiphany/directories/%gconf.xml
 etc/gconf/gconf.xml.defaults/schemas/apps/epiphany/general/%gconf.xml
 etc/gconf/gconf.xml.defaults/schemas/apps/epiphany/web/%gconf.xml
 etc/gconf/schemas/epiphany.schemas
+include/epiphany-1.0/epiphany/ephy-bookmarks.h
+include/epiphany-1.0/epiphany/ephy-dialog.h
+include/epiphany-1.0/epiphany/ephy-embed-event.h
+include/epiphany-1.0/epiphany/ephy-embed-persist.h
+include/epiphany-1.0/epiphany/ephy-embed-prefs.h
+include/epiphany-1.0/epiphany/ephy-embed-shell.h
+include/epiphany-1.0/epiphany/ephy-embed-single.h
+include/epiphany-1.0/epiphany/ephy-embed-types.h
+include/epiphany-1.0/epiphany/ephy-embed.h
+include/epiphany-1.0/epiphany/ephy-history.h
+include/epiphany-1.0/epiphany/ephy-langs.h
+include/epiphany-1.0/epiphany/ephy-node-db.h
+include/epiphany-1.0/epiphany/ephy-node.h
+include/epiphany-1.0/epiphany/ephy-notebook.h
+include/epiphany-1.0/epiphany/ephy-shell.h
+include/epiphany-1.0/epiphany/ephy-tab.h
+include/epiphany-1.0/epiphany/ephy-types.h
+include/epiphany-1.0/epiphany/ephy-window.h
+include/epiphany-1.0/epiphany/session.h
 libdata/bonobo/servers/GNOME_Epiphany_Automation.server
 libdata/bonobo/servers/GNOME_Epiphany_NautilusView.server
 share/gnome/application-registry/epiphany.applications
@@ -44,8 +63,8 @@ share/gnome/help/epiphany/C/legal.xml
 share/gnome/omf/epiphany/epiphany-C.omf
 @exec scrollkeeper-install -q %D/share/gnome/omf/epiphany/epiphany-C.omf 2>/dev/null || /usr/bin/true
 share/gnome/pixmaps/epiphany-bookmarks.png
-share/gnome/pixmaps/epiphany.png
 share/locale/am/LC_MESSAGES/epiphany.mo
+share/locale/ar/LC_MESSAGES/epiphany.mo
 share/locale/be/LC_MESSAGES/epiphany.mo
 share/locale/ca/LC_MESSAGES/epiphany.mo
 share/locale/cs/LC_MESSAGES/epiphany.mo
@@ -72,6 +91,7 @@ share/locale/sr@Latn/LC_MESSAGES/epiphany.mo
 share/locale/sv/LC_MESSAGES/epiphany.mo
 share/locale/tr/LC_MESSAGES/epiphany.mo
 share/locale/vi/LC_MESSAGES/epiphany.mo
+share/locale/zh_CN/LC_MESSAGES/epiphany.mo
 share/locale/zh_TW/LC_MESSAGES/epiphany.mo
 @dirrm share/gnome/omf/epiphany
 @dirrm share/gnome/help/epiphany/C/figures
