@@ -3,13 +3,12 @@
 # Whom:					Autrijus Tang <autrijus@autrijus.org>
 #
 # $FreeBSD$
-#
 
 PORTNAME=	IPC-Run3
 PORTVERSION=	0.01
 CATEGORIES=	devel perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
-MASTER_SITE_SUBDIR=	../../authors/id/R/RB/RBS
+MASTER_SITE_SUBDIR=	IPC
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	autrijus@autrijus.org
