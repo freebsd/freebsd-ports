@@ -1,19 +1,14 @@
-*** Config.orig	Fri Oct 22 09:20:07 1999
---- Config	Fri Oct 22 09:20:40 1999
+*** linux-asm-string.h.orig	Sat Mar 18 20:15:54 2000
+--- linux-asm-string.h	Sat Mar 18 20:40:49 2000
 ***************
-*** 82,88 ****
-  CFLAGS+=	-DMOTD -DIMAGE_MENU
+*** 19,27 ****
+   *		consider these trivial functions to be PD.
+   */
   
-  # Enable for FreeBSD boot image support
-! # CFLAGS+=	-DAOUT_IMAGE -DELF_IMAGE
+- #ifndef		__FreeBSD__
+  typedef int	size_t;
+- #endif
   
-  # For prompting and default on timeout
-  # CFLAGS+=	-DASK_BOOT=2 -DANS_DEFAULT=ANS_NETWORK
---- 82,88 ----
-  CFLAGS+=	-DMOTD -DIMAGE_MENU
-  
-  # Enable for FreeBSD boot image support
-! CFLAGS+=	-DAOUT_IMAGE -DELF_IMAGE
-  
-  # For prompting and default on timeout
-  # CFLAGS+=	-DASK_BOOT=2 -DANS_DEFAULT=ANS_NETWORK
+  extern void *__memcpy(void * to, const void * from, size_t n);
+  extern void *__constant_memcpy(void * to, const void * from, size_t n);
+--- 19,25 ----

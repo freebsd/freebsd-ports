@@ -1,46 +1,60 @@
-*** Makefile.orig	Thu Nov 25 00:34:35 1999
---- Makefile	Mon Nov 29 14:25:36 1999
+*** Makefile.orig	Sat Mar 18 00:30:20 2000
+--- Makefile	Sat Mar 18 19:46:12 2000
 ***************
-*** 74,79 ****
---- 74,80 ----
-  CFLAGS+=	-DVERSION=\"$(VERSION)\"
-  CFLAGS+=	-DRELOC=$(RELOCADDR)
-  #AS=		/usr/ports/net/etherboot/work/binutils-2.9.1.0.25/gas/as-new
+*** 90,95 ****
+--- 90,98 ----
+  IDENT16=		'Etherboot/16 $(VERSION) (GPL) $@'
+  IDENT32=		'Etherboot/32 $(VERSION) (GPL) $@'
+  
 + AS=          `echo ../../bin*/gas/as-new`
-  
-  IDENT=		'Etherboot/$(BITS) $(VERSION) (GPL) $@'
-  # Stack must be below 640kb so we have real memory there
++ LD32=          `echo ../../bin*/ld/ld-new`
++ 
+  # Find out if we're using binutils 2.9.5 which uses a different syntax in some
+  # places (most prominently in the opcode prefix area).
+  NEWGAS:=	$(shell $(AS) --version | grep -q '2\.9\.1' || echo -DGAS295)
 ***************
-*** 102,108 ****
-  
-  # Exactly one of the following definitions for AS86 should be uncommented
-  # If you have not made any changes to the *.asm files (most people)
-! AS86=		none
-  # If you have made changes to the *.asm files
-  # and you want to rebuild *loader.bin and floppyload.bin and you have as86
-  # from the ELKS Dev86 package (not the one that normally comes with Linux)
---- 103,109 ----
-  
-  # Exactly one of the following definitions for AS86 should be uncommented
-  # If you have not made any changes to the *.asm files (most people)
-! #AS86=		none
-  # If you have made changes to the *.asm files
-  # and you want to rebuild *loader.bin and floppyload.bin and you have as86
-  # from the ELKS Dev86 package (not the one that normally comes with Linux)
-***************
-*** 111,117 ****
-  # If you have made changes to the *.asm files
-  # and you want to rebuild *loader.bin and floppyload.bin and you have nasm
-  # (not most people)
+*** 142,148 ****
+  #AS86=		as86
+  # If you have made changes to the *.S files and you want to rebuild *loader.bin
+  # and {floppy,com}load.bin and you have nasm (not most people)
 ! #AS86=		nasm
   
   # if your as has trouble with the data32 directive, uncomment this
   # but note that the premade start*.o will be larger than necessary because it
---- 112,118 ----
-  # If you have made changes to the *.asm files
-  # and you want to rebuild *loader.bin and floppyload.bin and you have nasm
-  # (not most people)
+--- 145,151 ----
+  #AS86=		as86
+  # If you have made changes to the *.S files and you want to rebuild *loader.bin
+  # and {floppy,com}load.bin and you have nasm (not most people)
 ! AS86=		nasm
   
   # if your as has trouble with the data32 directive, uncomment this
   # but note that the premade start*.o will be larger than necessary because it
+***************
+*** 166,171 ****
+--- 169,175 ----
+  PRLOADER=	bin/prloader.bin
+  RZLOADER=	bin/rzloader.bin
+  PRZLOADER=	bin/przloader.bin
++ FLOPPYLOAD=	floppyload.bin.pre
+  COMLOAD=	bin/comload.bin
+  endif
+  
+*** Config.orig	Sat Mar 18 00:27:39 2000
+--- Config	Mon Mar 20 11:15:44 2000
+***************
+*** 114,120 ****
+  CFLAGS32+=	-DPASSWD -DUSRPARMS -DFLOPPY
+  
+  # For a serial console, which can run in parallel with CRT console
+! CFLAGS32+=	-DCONSOLE_DUAL -DCOMCONSOLE=0x3f8 -DCONSPEED=57600
+  
+  # Enable generic ELF, Multiboot ELF or FreeBSD ELF/a.out boot image support
+  CFLAGS32+=	-DELF_IMAGE -DAOUT_IMAGE -DIMAGE_MULTIBOOT -DIMAGE_FREEBSD
+--- 114,120 ----
+  CFLAGS32+=	-DPASSWD -DUSRPARMS -DFLOPPY
+  
+  # For a serial console, which can run in parallel with CRT console
+! #CFLAGS32+=	-DCONSOLE_DUAL -DCOMCONSOLE=0x3f8 -DCONSPEED=9600
+  
+  # Enable generic ELF, Multiboot ELF or FreeBSD ELF/a.out boot image support
+  CFLAGS32+=	-DELF_IMAGE -DAOUT_IMAGE -DIMAGE_MULTIBOOT -DIMAGE_FREEBSD
