@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.69 1998/03/01 00:46:11 obrien Exp $
+# $Id: Makefile,v 1.70 1998/04/11 13:54:50 vanilla Exp $
 #
 
     SUBDIR += ImageMagick
@@ -51,6 +51,7 @@
     SUBDIR += pnmtopng
     SUBDIR += povray
     SUBDIR += ppm2fli
+    SUBDIR += qgl
     SUBDIR += qvplay
     SUBDIR += sane
     SUBDIR += sced
