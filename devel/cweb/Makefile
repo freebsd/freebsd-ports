@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	cweb
-PORTVERSION=	3.63
+PORTVERSION=	3.64
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_TEX_CTAN}
 MASTER_SITE_SUBDIR=	web/c_cpp/cweb
@@ -14,20 +14,27 @@ MASTER_SITE_SUBDIR=	web/c_cpp/cweb
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Literate programming tools for the C language
 
-USE_REINPLACE=	yes
 NO_WRKSUBDIR=	yes
+USE_REINPLACE=	yes
+
 MAN1=		cweb.1
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|cc|${CC}|' ${WRKSRC}/${MAKEFILE}
+	@${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|g' ${WRKSRC}/cweb.1
 
-pre-install:
-	@${MKDIR} ${PREFIX}/share/cweb
+do-install:
+	${INSTALL_PROGRAM} ${WRKSRC}/ctangle ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/cweave ${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/cweb.1 ${MANPREFIX}/man/man1
+	@${MKDIR} ${DATADIR}
+	${INSTALL_DATA} ${WRKSRC}/c++lib.w ${DATADIR}
+	${INSTALL_DATA} ${WRKSRC}/cweb.el ${PREFIX}/share/emacs/site-lisp
 	@${MKDIR} ${PREFIX}/share/texmf/tex/generic/misc
-
+	${INSTALL_DATA} ${WRKSRC}/cwebmac.tex \
+		${PREFIX}/share/texmf/tex/generic/misc
 .if !defined(NOPORTDOCS)
-	@${MKDIR} ${PREFIX}/share/doc/cweb
-	@${INSTALL_DATA} ${WRKDIR}/cwebman.tex ${PREFIX}/share/doc/cweb
+	@${MKDIR} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKDIR}/cwebman.tex ${DOCSDIR}
 .endif
 	@${CAT} ${PKGMESSAGE}
 
