@@ -8,7 +8,7 @@
 PORTNAME=	zephyr
 PORTVERSION=	2.0.4
 CATEGORIES=	net
-MASTER_SITES=	ftp://athena-dist.mit.edu/pub/ATHENA/zephyr/dist/
+MASTER_SITES=	ftp://athena-dist.mit.edu/pub/ATHENA/zephyr/old/
 
 MAINTAINER=	ports@FreeBSD.org
 
