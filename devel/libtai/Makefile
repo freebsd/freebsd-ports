@@ -8,7 +8,9 @@
 PORTNAME=	libtai
 PORTVERSION=	0.60
 CATEGORIES=	devel
-MASTER_SITES=	http://cr.yp.to/libtai/
+MASTER_SITES=	http://cr.yp.to/libtai/ \
+		ftp://mirror.pipex.net/pub/qmail/ \
+		ftp://ftp.rifkin.technion.ac.il/pub/qmail/
 
 MAINTAINER=	lioux@FreeBSD.org
 
