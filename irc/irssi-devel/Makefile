@@ -7,6 +7,7 @@
 
 PORTNAME=	irssi
 PORTVERSION=	0.8.8
+PORTREVISION=	1
 CATEGORIES=	irc
 MASTER_SITES=	http://irssi.org/files/
 
@@ -50,13 +51,23 @@ WITH_IPV6=	yes
 WITH_SSL=	yes
 .endif
 
+.if ! defined(WITH_BOEHM_GC)
+WITH_BOEHM_GC=	no
+.endif
+
+.if ! defined(WITH_BOT)
+WITH_BOT=	no
+.endif
+
 # Process options.
 
 .if ${WITH_GLIB} == "2"
 USE_GNOME=	glib20
+.if ${WITH_BOEHM_GC:L} == "yes"
 LIB_DEPENDS+=	gc.1:${PORTSDIR}/devel/boehm-gc
 CONFIGURE_ENV+=	CPPFLAGS=-I${PREFIX}/include
 CONFIGURE_ARGS+=	--with-gc
+.endif
 .elif ${WITH_GLIB} == "1"
 CONFIGURE_ARGS+=	--with-glib1
 USE_GNOME=	glib12
@@ -99,6 +110,10 @@ USE_OPENSSL=	yes
 CONFIGURE_ARGS+=	--disable-ssl
 .endif
 
+.if ${WITH_BOT:L} == "yes"
+CONFIGURE_ARGS+=	--with-bot
+.endif
+
 pre-extract:
 	@${ECHO} ""
 	@${ECHO} "You may use the following build options:"
@@ -109,6 +124,8 @@ pre-extract:
 	@${ECHO} "	WITH_SOCKS=yes|no	Enable Socks support [no]"
 	@${ECHO} "	WITH_IPV6=yes|no	Enable IPv6 support [yes]"
 	@${ECHO} "	WITH_SSL=yes|no		Enable SSL support [yes]"
+	@${ECHO} "	WITH_BOEHM_GC=yes|no	Enable GC support [no]"
+	@${ECHO} "	WITH_BOT=yes|no		Enable BOT support [no]"
 	@${ECHO} ""
 
 pre-configure:
