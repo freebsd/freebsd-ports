@@ -2,7 +2,6 @@ Input method module `Canna' for Emacs with dynamic loading enhancement.
 
 This is an input method module Canna for Emacs.
 
-
 *** Setting for Fontset on Emacs20 ***
 
 To use japanese fonts on emacs20, put in your $HOME/.emacs as follows:

@@ -8,7 +8,4 @@ Usage:
 
 	cat JAPANESE_TEXT | nkf -e | osaka
 
-HomePage:
-	See 
-
-	http://www.power.co.jp/tm/tanaka/unix.html
+WWW: http://www.power.co.jp/tm/tanaka/unix.html

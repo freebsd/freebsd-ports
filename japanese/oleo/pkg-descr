@@ -39,8 +39,7 @@
 
 bind-key generic-main backward-delete-char ^H
 
-* Related URL
-	http://www.hh.iij4u.or.jp/%7Ehayasida/oleo/
+WWW: http://www.hh.iij4u.or.jp/%7Ehayasida/oleo/
 
 ** Acknowledgements to this ports file **
         Special thanks to:

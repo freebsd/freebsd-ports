@@ -7,7 +7,7 @@ package-style for FreeBSD, so you can pkg_add it directly. That is, it
 is not necessary to use this port if yours is the newer version.
 
 +------------------------------------------+
-| URL:	   http://www.omronsoft.co.jp      |
+| WWW:	   http://www.omronsoft.co.jp      |
 | E-mail:  wnn-info@omronsoft.co.jp        |
 | TEL:     +81-44-246-6006                 |
 | FAX:     +81-44-246-6011                 |
