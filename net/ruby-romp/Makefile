@@ -1,0 +1,52 @@
+# New ports collection makefile for:	ROMP
+# Date created:		24 August 2001
+# Whom:			Akinori MUSHA aka knu <knu@idaemons.org>
+#
+# $FreeBSD$
+#
+
+PORTNAME=	romp
+PORTVERSION=	0.1
+CATEGORIES=	net ruby
+MASTER_SITES=	http://rm-f.net/~cout/ruby/romp/
+PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX} romp.html
+DIST_SUBDIR=	ruby
+EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
+
+MAINTAINER=	knu@FreeBSD.org
+
+IGNOREFILES=	romp.html
+
+USE_RUBY=	yes
+USE_RUBY_EXTCONF=	yes
+
+INSTALL_TARGET=	site-install
+
+EXAMPLES=	client.rb server.rb
+DOCS=		romp.html
+
+post-extract:
+	${MKDIR} ${WRKSRC}/lib
+.for f in druby4.rb romp.rb
+	${MV} ${WRKSRC}/${f} ${WRKSRC}/lib/
+.endfor
+	${CP} ${_DISTDIR}/romp.html ${WRKSRC}/
+
+post-patch:
+	${RUBY} -i~ -pe 'sub /^(#include\s*<stdint\.h>)/, "/*\\1*/"' ${WRKSRC}/*.c
+	${RUBY} -i~ -pe 'sub /(.*CFLAGS)/, "#\\1/"' ${WRKSRC}/extconf.rb
+
+post-install:
+.if !defined(NOPORTDOCS)
+	${MKDIR} ${RUBY_EXAMPLESDIR}/${PORTNAME}
+.for f in ${EXAMPLES}
+	${INSTALL_DATA} ${WRKSRC}/${f} ${RUBY_EXAMPLESDIR}/${PORTNAME}/
+.endfor
+	${MKDIR} ${RUBY_DOCDIR}/${PORTNAME}
+.for f in ${DOCS}
+	${INSTALL_DATA} ${WRKSRC}/${f} ${RUBY_DOCDIR}/${PORTNAME}/
+.endfor
+.endif
+
+.include <bsd.port.mk>

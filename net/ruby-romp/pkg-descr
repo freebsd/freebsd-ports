@@ -1,0 +1,22 @@
+ROMP is the Ruby Object Message Proxy.  It is sort of like drb
+(distributed Ruby) in that it allows a Ruby client program to
+seamlessly talk to an object that is sitting on a server. However, it
+has many distinct advantages over drb:
+
+- Much faster, up to 40000 messages per second (compare to 50 messages
+  per second for drb).
+
+- Allows more than one object to reside on the server; supports a form
+  for naming service for retriving references to objects.
+
+- Fully thread-safe, provided the object sitting on the server is
+  thread-safe.
+
+- Supports oneway calls, so the client does not have to block waiting
+  for a response from the server.
+
+- Allows exceptions to be propogated from server to client; massages
+  the backtrace to make debugging easier.
+
+Author:	Paul Brannan (cout at rm-f.net)
+WWW:	http://rm-f.net/~cout/ruby/romp/

@@ -338,6 +338,7 @@
     SUBDIR += ruby-ldap
     SUBDIR += ruby-nis
     SUBDIR += ruby-pcap
+    SUBDIR += ruby-romp
     SUBDIR += ruby-snmp
     SUBDIR += ruby-soap
     SUBDIR += ruby-tcpsocketpipe
