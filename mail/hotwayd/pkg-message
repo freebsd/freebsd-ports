@@ -1,15 +1,18 @@
+
 ********************
-hotwayd should normally be run from inetd (or xinetd).
-To use the standard ports for pop3 and smtp, add lines
-like the following to /etc/inetd.conf:
+hotwayd and hotsmtpd should normally be run from inetd (or xinetd).
+To use the standard ports for pop3 and smtp, add lines like the
+following to /etc/inetd.conf:
 
 pop3	stream	tcp	nowait	root	/usr/local/sbin/hotwayd	hotwayd
+smtp	stream	tcp	nowait	root	/usr/local/sbin/hotsmtpd hotsmtpd
 
-Alternatively, you may specify an arbitrary port for hotwayd.
-Define them in /etc/services, and then add a line like the following to
+Alternatively, you may specify arbitrary ports for hotwayd and hotsmtpd.
+Define them in /etc/services, and then add lines like the following to
 /etc/inetd.conf:
 
 hotwayd	stream	tcp	nowait	root	/usr/local/sbin/hotwayd	hotwayd
+hotsmtpd stream	tcp	nowait	root	/usr/local/sbin/hotsmtpd hotsmtpd
 
 After making your changes, restart inetd. e.g.:
 
@@ -20,6 +23,7 @@ hotmail (or similar) e-mail. The username should be your full e-mail
 address (e.g. example@hotmail.com), and the password is your your
 password for hotmail (or whichever service you use).
 
-For more detailed information see hotwayd(1) and the port
+For more detailed information see hotwayd(1), hotsmtpd(1), and the port
 documentation in ${PREFIX}/share/doc/hotwayd.
 ********************
+
