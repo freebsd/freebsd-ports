@@ -3,7 +3,7 @@
 # Date created:		19 October 1996
 # Whom:			
 #
-# $Id: Makefile,v 1.1.1.1 1997/01/15 07:19:43 tg Exp $
+# $Id: Makefile,v 1.2 1997/01/18 23:55:39 asami Exp $
 #
 
 DISTNAME=	felt-3.01
@@ -23,6 +23,6 @@ MAN4=		corduroy.4 felt.4
 #DOCS= 		ftp://cs.ucsd.edu/pub/felt/felt-3.00.ps.gz
 
 post-patch:
-	rm -f $(WRKSRC)/lib/Geompack/*.c
+	${RM} -f $(WRKSRC)/lib/Geompack/*.c
 
 .include <bsd.port.mk>
