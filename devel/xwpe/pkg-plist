@@ -1,11 +1,11 @@
 bin/we
+bin/wpe
 bin/xwe
 bin/xwpe
-bin/wpe
+man/man1/xwpe.1.gz
 man/man1/xwe.1.gz
 man/man1/wpe.1.gz
 man/man1/we.1.gz
-@unexec /bin/rm -rf %D/share/wpe
-share/wpe
-@unexec /bin/rm -rf %D/share/doc/xwpe
-share/doc/xwpe
+share/wpe/help.key
+share/wpe/help.xwpe
+share/wpe/syntax_def 
