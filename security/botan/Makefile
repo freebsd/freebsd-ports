@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	botan
-PORTVERSION=	1.0.2
+PORTVERSION=	1.2.0
 PORTREVISION=	0
 CATEGORIES=	security
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
@@ -24,13 +24,14 @@ HAS_CONFIGURE=	yes
 CONFIGURE_SCRIPT=	configure.pl
 CONFIGURE_ARGS=	gcc-freebsd-generic
 USE_GMAKE=	yes
-MAKE_ARGS=	LANG_FLAGS="-fpermissive -ansi"
+MAKE_ARGS=	CXX="${CXX}" LIB_OPT="${CXXFLAGS}" \
+		LANG_FLAGS="-fpermissive -ansi"
 INSTALLS_SHLIB=	yes
 
 PLIST_SUB=	PORTVERSION=${PORTVERSION}
 
 post-patch:
-	@${REINPLACE_CMD} -e "s,%%PREFIX%%,${PREFIX},g ; \
+	@${REINPLACE_CMD} -e "s,/usr/local,${PREFIX},g ; \
 		s,%%CFLAGS%%,${CFLAGS},g" ${WRKSRC}/${CONFIGURE_SCRIPT}
 	@${RM} -f ${WRKSRC}/src/pipe_io.cpp.orig
 
