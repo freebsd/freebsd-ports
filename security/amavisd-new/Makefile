@@ -8,6 +8,7 @@
 
 PORTNAME=	amavisd-new
 PORTVERSION=	20021227.p2
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	http://www.ijs.si/software/amavisd/
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/.p/-p/}
