@@ -1,5 +1,5 @@
---- mxEXPERIMENTAL.py.orig	Sat Aug 21 20:34:49 2004
-+++ mxEXPERIMENTAL.py	Sat Aug 21 20:38:15 2004
+--- mxEXPERIMENTAL.py.orig	Wed Dec  8 07:11:42 2004
++++ mxEXPERIMENTAL.py	Wed Dec  8 07:12:40 2004
 @@ -133,7 +133,7 @@
  
              mx_Extension('mx.Number.mxNumber.mxNumber',
