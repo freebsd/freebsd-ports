@@ -3,8 +3,9 @@ bin/toast
 @exec ln -f %D/%F %B/tcat
 @unexec rm %D/bin/untoast
 @unexec rm %D/bin/tcat
-lib/libgsm.so.1.0.10
-@exec /sbin/ldconfig -m %B
-@unexec /sbin/ldconfig -R
+lib/libgsm.so.1.1
+lib/libgsm.so
+@exec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -m %B
+@unexec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -R
 lib/libgsm.a
 include/gsm.h
