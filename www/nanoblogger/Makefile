@@ -7,9 +7,10 @@
 #
 
 PORTNAME=	nanoblogger
-PORTVERSION=	2.9
+PORTVERSION=	3.0
 CATEGORIES=	www
-MASTER_SITES=	http://home.columbus.rr.com/n1xt3r/downloads/nanoblogger/
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Small weblog engine for the UNIX command line
