@@ -7,12 +7,12 @@
 #
 
 PORTNAME=	xmlindent
-PORTVERSION=	0.2.12
+PORTVERSION=	0.2.13
 CATEGORIES=	textproc
 MASTER_SITES=	http://www.cs.helsinki.fi/u/penberg/xmlindent/src/
 
-MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A XML stream reformatter
+MAINTAINER=	david@dyn-ns.net
+COMMENT=	XML stream reformatter
 
 MAN1=	xmlindent.1
 MANCOMPRESSED=	maybe
