@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.35 1998/02/22 00:24:13 steve Exp $
+# $Id: Makefile,v 1.36 1998/02/28 03:49:19 itojun Exp $
 #
 
     SUBDIR += Scilab
@@ -27,6 +27,7 @@
     SUBDIR += ss
     SUBDIR += umatrix
     SUBDIR += wingz
+    SUBDIR += xgfe
     SUBDIR += xgraph
     SUBDIR += xlispstat
     SUBDIR += xplot
