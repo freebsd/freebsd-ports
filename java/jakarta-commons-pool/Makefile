@@ -16,7 +16,8 @@ DIST_SUBDIR=	jakarta
 MAINTAINER=	toha@toha.org.ua
 COMMENT=	Jakarta Object-pooling API
 
-BUILD_DEPENDS=	${ANT}:${PORTSDIR}/devel/apache-ant
+BUILD_DEPENDS=	${ANT}:${PORTSDIR}/devel/apache-ant \
+		${JAVAJARDIR}/commons-collections.jar:${PORTSDIR}/java/jakarta-commons-collections
 
 USE_JAVA=	1.2+
 
@@ -27,6 +28,7 @@ ANT?=		${LOCALBASE}/bin/ant
 ANT_TARGET=	build-jar
 .else
 ANT_TARGET=	build-jar javadoc
+PORTDOCS=	*
 .endif
 JAVASHAREDIR=	${PREFIX}/share/java
 JARDIR=		${JAVASHAREDIR}/classes
