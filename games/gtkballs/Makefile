@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	gtkballs
-PORTVERSION=	3.1.4
-PORTREVISION=	1
+PORTVERSION=	3.1.5
 CATEGORIES=	games
 MASTER_SITES=	http://gtkballs.antex.ru/dist/
 
@@ -15,7 +14,6 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Lines-like simple logic game for X Window System
 
 USE_GNOME=	gnometarget gtk20
-USE_REINPLACE=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
@@ -23,10 +21,6 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 CONFIGURE_ARGS=	--localstatedir=${DATADIR}
 
 MAN6=		gtkballs.6x
-
-post-patch:
-	@${REINPLACE_CMD} -e 's|^install-data-local|#install-data-local|g' \
-		${WRKSRC}/Makefile.in
 
 post-install:
 	${CHMOD} 2755 ${PREFIX}/bin/gtkballs
