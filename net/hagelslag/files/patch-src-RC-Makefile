@@ -1,0 +1,21 @@
+--- src/RC/Makefile.orig	Mon Nov  4 21:30:53 2002
++++ src/RC/Makefile	Mon Nov  4 21:31:16 2002
+@@ -1,7 +1,7 @@
+ # Don't change this...
+-CXX=g++
++CXX?=g++
+ LFLAGS=
+-CXXFLAGS=-Wall -O2 -g
++#CXXFLAGS=-Wall -O2 -g
+ 
+ RC_H =	RCEntry.h RCParameters.h RCPattern.h RCPacket.h RCQPacket.h \
+ 	RCQRPacket.h RCMesgID.h RCPacketStorage.h RCSpam.h RCConnectionID.h \
+@@ -23,7 +23,7 @@
+ all: clean depend remotecachelib
+ 
+ depend:
+-	makedepend -Y -- $(RC_CPP)
++	makedepend -- $(RC_CPP)
+ 
+ clean:
+ 	rm -f *.o *.a
