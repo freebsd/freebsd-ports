@@ -8,6 +8,7 @@
 
 PORTNAME=	grabc
 PORTVERSION=	1.1
+PORTREVISION=	1
 CATEGORIES=	x11
 MASTER_SITES=	http://muquit.com/muquit/software/grabc/
 DISTNAME=	${PORTNAME}${PORTVERSION}
@@ -15,6 +16,7 @@ DISTNAME=	${PORTNAME}${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Grab a color from screen
 
+USE_XLIB=	yes
 CFLAGS+=	-I${X11BASE}/include
 LIBS+=		-L${X11BASE}/lib -lX11
 
