@@ -1,0 +1,13 @@
+--- im.h.orig	Tue Mar  3 21:08:33 1998
++++ im.h	Fri Mar 19 14:10:22 1999
+@@ -148,6 +148,10 @@
+     XIMStyle input_style ;
+     Window client ;			/* client window */
+     Window focus ;			/* focus window */
++#ifndef	ORIGINAL
++#define ATTR_MASK_FILTER_EVENTS	(1<<3)
++    unsigned long filter_events;	/* Event mask that IM need */
++#endif
+ } IMCommonAttributes;
+ 
+ typedef struct {
