@@ -1,9 +1,10 @@
-# $Id: Makefile,v 1.89 1997/02/02 04:16:28 jdp Exp $
+# $Id: Makefile,v 1.90 1997/02/12 15:51:39 max Exp $
 #
 
     SUBDIR += archie
     SUBDIR += ascend-radius
     SUBDIR += bb
+    SUBDIR += bing
     SUBDIR += cap
     SUBDIR += cvsup
     SUBDIR += cvsup-mirror
@@ -22,6 +23,7 @@
     SUBDIR += isc-dhcp
     SUBDIR += ivs
     SUBDIR += ldap
+    SUBDIR += libsocket++
     SUBDIR += mirror
     SUBDIR += moxftp
     SUBDIR += ncftp
