@@ -1,0 +1,35 @@
+--- Makefile.orig	Tue Mar 27 16:51:41 2001
++++ Makefile	Wed Oct 23 20:19:27 2002
+@@ -18,7 +18,7 @@
+ 
+ DEBUG=-g
+ 
+-OPTFLAGS=-O2 -fomit-frame-pointer
++OPTFLAGS=
+ 
+ BASE_CFLAGS=-Wall $(DEBUG) $(OPTFLAGS) $(C_ONLY) $(BYTE_ORDER) $(MACH_TYPES)
+ BASE_SFLAGS=-Wall $(DEBUG) $(OPTFLAGS)
+@@ -85,15 +85,14 @@
+ #
+ # fixup command variables
+ #
+-LOCAL_CC?=gcc
+-LOCAL_CXX?=g++
+-LOCAL_AS?=gcc
+-LOCAL_LD?=gcc
+-
+-CC=$(LOCAL_CC)
+-CXX=$(LOCAL_CC)
+-AS=$(LOCAL_AS)
+-LD=$(LOCAL_LD)
++CC?=cc
++LOCAL_CC=$(CC)
++CXX?=c++
++LOCAL_CXX=$(CXX)
++AS=$(CC)
++LOCAL_AS=$(AS)
++LD=$(CC)
++LOCAL_LD=$(LD)
+ 
+ ifndef CROSS_COMPILING
+ TARGET_CC=$(LOCAL_CC)
