@@ -1,0 +1,80 @@
+*** src/Imakefile.orig	Sat Nov 25 12:55:35 1995
+--- src/Imakefile	Wed Mar  5 16:18:39 1997
+***************
+*** 22,29 ****
+  # 4.) specify, if you want sound (must copy the appropriate sound module)
+  #     SOUNDOBJ should be one module of X-sound_*.o if USE_SOUND is on, else empty
+  #     Note: for X-sound_SUN.o, /dev/audio must have 666 permissions */
+! #define USE_SOUND	/* doesn't harm if you don't have a sound card */
+! SOUNDOBJ = X-sound_SUN.o
+  
+  # 5.) specify, if you want the antialiased card construction set (SLOW!)
+  #define USE_CARD_CONSTRUCTION
+--- 22,29 ----
+  # 4.) specify, if you want sound (must copy the appropriate sound module)
+  #     SOUNDOBJ should be one module of X-sound_*.o if USE_SOUND is on, else empty
+  #     Note: for X-sound_SUN.o, /dev/audio must have 666 permissions */
+! #undef USE_SOUND	/* doesn't harm if you don't have a sound card */
+! SOUNDOBJ = 
+  
+  # 5.) specify, if you want the antialiased card construction set (SLOW!)
+  #define USE_CARD_CONSTRUCTION
+***************
+*** 37,49 ****
+  # BINDIR and LIBDIR should be predefined by the templates
+  # BINDIR = /usr/bin/X11
+  # LIBDIR = /usr/lib/X11
+! XPATLIBDIR = /usr/games/lib/xpat
+  APPDEFSDIR = $(LIBDIR)
+! XPATMANDIR = /usr/man/man6
+  
+  # This is the name of the log-file, where solved games are stored:
+  # an alternative path would be $(XPATLIBDIR)/xpat.log
+! SCOREFILE = /var/games/xpat.log
+  
+  
+  # paths for installation in user's home-directory.
+--- 37,49 ----
+  # BINDIR and LIBDIR should be predefined by the templates
+  # BINDIR = /usr/bin/X11
+  # LIBDIR = /usr/lib/X11
+! XPATLIBDIR = $(LIBDIR)/xpat
+  APPDEFSDIR = $(LIBDIR)
+! XPATMANDIR = $(PREFIX)/man/man6
+  
+  # This is the name of the log-file, where solved games are stored:
+  # an alternative path would be $(XPATLIBDIR)/xpat.log
+! SCOREFILE = $(XPATLIBDIR)/xpat.log
+  
+  
+  # paths for installation in user's home-directory.
+***************
+*** 55,60 ****
+--- 55,62 ----
+  XPMLIB 			= -L$(USRLIBDIR) -lXpm
+  XPMINCLUDE		= -I $(INCDIR)
+  
++ CFLAGS += -DNO_CUSERID
++ 
+  # *****************************************************************************
+  # I hope you don't need to change anything below this point
+  # *****************************************************************************
+***************
+*** 181,188 ****
+  	    chmod 755 $(XPATLIBDIR)/$$f; \
+  	done
+  	mkdirhier $(XPATMANDIR)
+! 	cp xpat2.man $(XPATMANDIR)/xpat2.6x
+! 	chmod 644 $(XPATMANDIR)/xpat2.6x
+  
+  ComplexProgramTarget($(MYPROG))
+  InstallAppDefaults(XPat)
+--- 183,190 ----
+  	    chmod 755 $(XPATLIBDIR)/$$f; \
+  	done
+  	mkdirhier $(XPATMANDIR)
+! 	cp xpat2.man $(XPATMANDIR)/xpat2.6
+! 	chmod 644 $(XPATMANDIR)/xpat2.6
+  
+  ComplexProgramTarget($(MYPROG))
+  InstallAppDefaults(XPat)
