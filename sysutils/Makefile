@@ -329,6 +329,7 @@
     SUBDIR += pmap
     SUBDIR += port-authoring-tools
     SUBDIR += port-maintenance-tools
+    SUBDIR += portbrowser
     SUBDIR += portdowngrade
     SUBDIR += portmanager
     SUBDIR += portsman
