@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.20 1996/03/06 11:05:08 asami Exp $
+# $Id: Makefile,v 1.21 1996/04/12 08:28:52 asami Exp $
 #
 
     SUBDIR += ImageMagick
@@ -8,6 +8,8 @@
     SUBDIR += hpscan
     SUBDIR += jpeg
     SUBDIR += mpeg-lib
+    SUBDIR += mpeg2codec
+    SUBDIR += mpeg2play
     SUBDIR += mpeg_play
     SUBDIR += netpbm
     SUBDIR += pixmap
