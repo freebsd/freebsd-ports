@@ -317,7 +317,6 @@
     SUBDIR += seizedesktop
     SUBDIR += sh-utils
     SUBDIR += shared-mime-info
-    SUBDIR += shc
     SUBDIR += shuffle
     SUBDIR += since
     SUBDIR += sloccount
