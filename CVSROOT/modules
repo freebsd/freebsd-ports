@@ -4320,6 +4320,7 @@ mlan		ports/comms/mlan
 mlan3		ports/comms/mlan3
 mlclock		ports/x11-clocks/mlclock
 mld6query	src/usr.sbin/mld6query
+mldonkey	ports/net/mldonkey
 mlterm		ports/x11/mlterm
 mlvwm		ports/x11-wm/mlvwm
 mlx		src/sys/dev/mlx
