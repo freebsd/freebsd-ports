@@ -1,0 +1,15 @@
+An image gallery generator for KDE
+
+Features:
+* load a set of images (from different directories)
+* convert them to another format, resize them and insert copyright text on 
+them
+* create thumbnails for them
+* add descriptions for the images
+* create a gallery html file, which contains the thumbnails
+* this gallery format can have different look and feel (by using templates)
+* insert navigation buttons, text descriptions near the fullsize images
+* save the project, so you can use later to regenerate the same or slightly
+  different (eg. descriptions in other languages) image gallery
+
+WWW: http://www.virtualartisans.com/kde/andras/en/kallery.htm
