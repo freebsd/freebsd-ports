@@ -21,11 +21,11 @@ sbin/portversion
 %%RUBY_SITELIBDIR%%/pkginfo.rb
 %%RUBY_SITELIBDIR%%/pkgmisc.rb
 %%RUBY_SITELIBDIR%%/pkgtools.rb
+%%RUBY_SITELIBDIR%%/pkgtsort.rb
 %%RUBY_SITELIBDIR%%/pkgversion.rb
 %%RUBY_SITELIBDIR%%/portinfo.rb
 %%RUBY_SITELIBDIR%%/ports.rb
 %%RUBY_SITELIBDIR%%/portsdb.rb
-%%RUBY_SITELIBDIR%%/tsort.rb
 @unexec if cmp -s %D/etc/pkgtools.conf %D/etc/pkgtools.conf.sample; then rm -f %D/etc/pkgtools.conf; fi
 etc/pkgtools.conf.sample
 @exec [ -f %B/pkgtools.conf ] || cp %B/%f %B/pkgtools.conf
