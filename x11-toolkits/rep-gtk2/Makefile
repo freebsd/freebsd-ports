@@ -7,6 +7,7 @@
 
 PORTNAME=	rep-gtk2
 PORTVERSION=	0.17
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	${MASTER_SITE_GNOME}
@@ -17,7 +18,7 @@ DIST_SUBDIR=	gnome2
 MAINTAINER=	gnome@FreeBSD.org
 
 LIB_DEPENDS=	rep.12:${PORTSDIR}/lang/librep \
-		gnomeui-2.0:${PORTSDIR}/x11-toolkits/libgnomeui
+		gnomeui-2.200:${PORTSDIR}/x11-toolkits/libgnomeui
 
 PLIST_SUB=	GNUHOST=${ARCH}-pc-freebsd${OSREL:C/\..*//}
 

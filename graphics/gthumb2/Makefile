@@ -7,6 +7,7 @@
 
 PORTNAME=	gthumb2
 PORTVERSION=	2.0.1
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	gthumb
@@ -14,7 +15,7 @@ DISTNAME=	gthumb-${PORTVERSION}
 
 MAINTAINER=	verbophobe@hotmail.com
 
-LIB_DEPENDS=	gnomeui-2.0:${PORTSDIR}/x11-toolkits/libgnomeui
+LIB_DEPENDS=	gnomeui-2.200:${PORTSDIR}/x11-toolkits/libgnomeui
 
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
