@@ -1,5 +1,5 @@
---- Makefile.orig	Sun Jan 21 05:32:48 2001
-+++ Makefile	Sat Jun 16 14:40:48 2001
+--- Makefile.orig	Sun Jan 21 14:32:48 2001
++++ Makefile	Tue Jan 22 23:55:05 2002
 @@ -4,6 +4,15 @@
  include platform-settings
  
@@ -16,7 +16,7 @@
  
  all: all-recursive
  
-@@ -13,8 +22,33 @@
+@@ -13,8 +22,35 @@
  
  single: single-recursive
  
@@ -27,6 +27,8 @@
 +	@install -c jabber.xml ${PREFIX}/etc/jabber.xml.sample
 +	@install -d ${LIBDIR}/jsm
 +	@install -c jsm/jsm.so ${LIBDIR}/jsm
++	@install -d ${LIBDIR}/jud
++	@install -c jud/jud.so ${LIBDIR}/jud
 +	@install -d ${LIBDIR}/xdb_file
 +	@install -c xdb_file/xdb_file.so ${LIBDIR}/xdb_file
 +	@install -d ${LIBDIR}/pthsock

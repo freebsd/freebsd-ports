@@ -9,6 +9,7 @@ lib/jabber/dnsrv/dnsrv.so
 lib/jabber/icq-transport/icqtrans.so
 lib/jabber/irc-transport/irc_transport.so
 lib/jabber/jsm/jsm.so
+lib/jabber/jud/jud.so
 lib/jabber/msn-transport/msntrans.so
 lib/jabber/pthsock/pthsock_client.so
 lib/jabber/xdb_file/xdb_file.so
@@ -20,6 +21,7 @@ lib/jabber/yahoo-transport/yahootrans.so
 @dirrm lib/jabber/icq-transport
 @dirrm lib/jabber/irc-transport
 @dirrm lib/jabber/jsm
+@dirrm lib/jabber/jud
 @dirrm lib/jabber/msn-transport
 @dirrm lib/jabber/pthsock
 @dirrm lib/jabber/xdb_file
