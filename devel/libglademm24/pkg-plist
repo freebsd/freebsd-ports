@@ -171,11 +171,14 @@ libdata/pkgconfig/libglademm-%%API_VERSION%%.pc
 %%PORTDOCS%%share/doc/gnomemm-2.6/libglademm-%%API_VERSION%%/docs/reference/html/namespaces.html
 %%PORTDOCS%%share/doc/gnomemm-2.6/libglademm-%%API_VERSION%%/docs/reference/html/variablesmap_8h.html
 %%PORTDOCS%%share/doc/gnomemm-2.6/libglademm-%%API_VERSION%%/docs/reference/html/xml_8h.html
-@dirrm share/doc/gnomemm-2.6/libglademm-%%API_VERSION%%/docs/reference/html
-@dirrm share/doc/gnomemm-2.6/libglademm-%%API_VERSION%%/docs/reference
-@dirrm share/doc/gnomemm-2.6/libglademm-%%API_VERSION%%/docs
-@dirrm share/doc/gnomemm-2.6/libglademm-%%API_VERSION%%
-@dirrm share/devhelp/books/libglademm-%%API_VERSION%%
+%%PORTDOCS%%@dirrm share/doc/gnomemm-2.6/libglademm-%%API_VERSION%%/docs/reference/html
+%%PORTDOCS%%@dirrm share/doc/gnomemm-2.6/libglademm-%%API_VERSION%%/docs/reference
+%%PORTDOCS%%@dirrm share/doc/gnomemm-2.6/libglademm-%%API_VERSION%%/docs
+%%PORTDOCS%%@dirrm share/doc/gnomemm-2.6/libglademm-%%API_VERSION%%
+%%PORTDOCS%%@unexec /bin/rmdir %D/share/doc/gnomemm-2.6 2> /dev/null || /usr/bin/true
+%%PORTDOCS%%@dirrm share/devhelp/books/libglademm-%%API_VERSION%%
+%%PORTDOCS%%@unexec /bin/rmdir %D/share/devhelp/books 2> /dev/null || /usr/bin/true
+%%PORTDOCS%%@unexec /bin/rmdir %D/share/devhelp 2> /dev/null || /usr/bin/true
 @dirrm lib/libglademm-%%API_VERSION%%/proc/m4
 @dirrm lib/libglademm-%%API_VERSION%%/proc
 @dirrm lib/libglademm-%%API_VERSION%%/include
