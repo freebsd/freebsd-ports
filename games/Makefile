@@ -266,6 +266,7 @@
     SUBDIR += oonsoo
     SUBDIR += openglad
     SUBDIR += p5-Games-Bingo
+    SUBDIR += p5-Games-Bingo-Bot
     SUBDIR += pengpong
     SUBDIR += penguin-command
     SUBDIR += pentix
