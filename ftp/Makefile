@@ -43,6 +43,7 @@
     SUBDIR += junglemonkey
     SUBDIR += kasablanca
     SUBDIR += kbear
+    SUBDIR += kpum
     SUBDIR += kwebget
     SUBDIR += lftp
     SUBDIR += llnlxdir

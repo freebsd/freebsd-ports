@@ -1,0 +1,17 @@
+bin/kpum
+share/applnk/System/kpum.desktop
+share/apps/kpum/kpumui.rc
+share/doc/HTML/en/kpum/common
+share/doc/HTML/en/kpum/index.cache.bz2
+share/doc/HTML/en/kpum/index.docbook
+share/icons/hicolor/16x16/apps/kpum.png
+share/icons/hicolor/22x22/apps/kpum.png
+share/icons/hicolor/32x32/apps/kpum.png
+share/icons/hicolor/48x48/apps/kpum.png
+share/icons/hicolor/64x64/apps/kpum.png
+share/icons/locolor/16x16/apps/kpum.png
+share/icons/locolor/22x22/apps/kpum.png
+share/icons/locolor/32x32/apps/kpum.png
+share/locale/de/LC_MESSAGES/kpum.mo
+@dirrm share/apps/kpum
+@dirrm share/doc/HTML/en/kpum
