@@ -1440,6 +1440,7 @@ enscriptfonts	ports/print/enscriptfonts
 enteruser	ports/sysutils/enteruser
 entice		ports/graphics/entice
 entity		ports/devel/entity
+entropy		ports/math/entropy
 env		src/usr.bin/env
 envelope	ports/print/envelope
 eog		ports/graphics/eog
