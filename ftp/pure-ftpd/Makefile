@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	pure-ftpd
-PORTVERSION=	0.99.1
+PORTVERSION=	0.99.1b
 CATEGORIES=	ftp ipv6
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	pureftpd
@@ -27,18 +27,35 @@ LIB_DEPENDS+=	mysqlclient:${PORTSDIR}/databases/mysql323-client
 
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS+=	--with-pam --with-everything --with-paranoidmsg
+CONFIGURE_ARGS+=	--with-everything --with-paranoidmsg
 # language support requested?
 .if defined(WITH_LANG)
 CONFIGURE_ARGS+=	--with-language="${WITH_LANG}"
 .endif
+
+# ldap support requested ?
+.if defined(WITH_LDAP)
+CONFIGURE_ARGS+=	--with-ldap
+.endif
+
+# mysql support requested ?
+.if defined(WITH_MYSQL)
+CONFIGURE_ARGS+=	--with-mysql
+.endif
+
+# if mysql or ldap are disabled, enable pam
+.if !defined(WITH_LDAP) && !defined(WITH_MYSQL)
+CONFIGURE_ARGS+=	--with-pam
+.endif
+
 # use of dmalloc requested?
 .if defined(WITH_DMALLOC)
 CONFIGURE_ARGS+=	--with-dmalloc
 CFLAGS+=	-I${LOCALBASE}/include -L${LOCALBASE}/lib
 .endif
 
-MAN8=		pure-ftpd.8 pure-ftpwho.8 pure-mrtginfo.8 pure-uploadscript.8
+MAN8=		pure-ftpd.8 pure-ftpwho.8 pure-mrtginfo.8 pure-statsdecode.8 \
+		pure-uploadscript.8
 
 .include <bsd.port.pre.mk>
 
@@ -63,11 +80,12 @@ CONTRIB=	xml_python_processors.txt
 
 pre-fetch:
 	@${ECHO} "You can use the following additional options:"
-	@${ECHO} "WITH_DMALLOC=1	- enable use of the dmalloc library;"
-	@${ECHO} "WITH_LDAP=1		- Store users in LDAP directories;"	
-	@${ECHO} "WITH_MYSQL=1		- Store users in MySQL databases;"		
-	@${ECHO} "WITH_LANG=lang	- enable compilation of language support, lang is one of"
+	@${ECHO} "WITH_DMALLOC=1        - enable use of the dmalloc library;"
+	@${ECHO} "WITH_LDAP=1           - Store users in LDAP directories;"	
+	@${ECHO} "WITH_MYSQL=1          - Store users in MySQL databases;"		
+	@${ECHO} "WITH_LANG=lang        - enable compilation of language support, lang is one of"
 	@${ECHO} "  english, german, romanian, french, polish, spanish or danish."
+	@${ECHO}
 
 post-install:
 	${INSTALL_DATA} ${WRKSRC}/pureftpd-ldap.conf ${PREFIX}/etc/pureftpd-ldap.conf.sample
