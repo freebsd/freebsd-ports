@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	libgtop2
-PORTVERSION=	2.0.2
+PORTVERSION=	2.0.3
 CATEGORIES=	devel gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/${PORTNAME:S/2$//}/2.0
@@ -26,10 +26,9 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
+INFO=		libgtop2
+
 post-install:
-	install-info --section="Programming \& development tools" \
-	--entry="* libgtop2: (libgtop2).	libgtop2 programming manual" \
-	${PREFIX}/info/libgtop2.info ${PREFIX}/info/dir
 	@${CHGRP} kmem ${PREFIX}/bin/libgtop_server2
 	@${CHMOD} 2555 ${PREFIX}/bin/libgtop_server2
 
