@@ -25,10 +25,7 @@ MAINTAINER=	obrien@FreeBSD.org
 
 NO_CDROM=	'dated material'
 
-PATCH_ARGS=	-d ${SRCDIR} -E ${PATCH_STRIP}
-.if !defined(PATCH_DEBUG)
-PATCH_ARGS+=	--forward --quiet
-.endif
+PATCH_WRKDIR=	${SRCDIR}
 CONFIGURE_SCRIPT=	../gcc-${SNAPVER}/configure
 
 .include <bsd.port.pre.mk>
