@@ -1,0 +1,11 @@
+--- makefile.orig	Thu Dec 31 21:01:58 1998
++++ makefile	Thu Dec 31 21:02:04 1998
+@@ -6,7 +6,7 @@
+ #
+ # Installation prefix
+ #
+-PREFIX=/usr/local
++PREFIX?=/usr/local
+ 
+ #
+ # C options
