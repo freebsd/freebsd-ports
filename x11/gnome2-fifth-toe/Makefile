@@ -7,7 +7,7 @@
 
 PORTNAME=	gnome2-fifth-toe
 PORTVERSION=	2.2.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11 gnome
 MASTER_SITES=	# empty
 DISTFILES=	# empty
@@ -44,7 +44,8 @@ RUN_DEPENDS=	gnumeric:${PORTSDIR}/math/gnumeric2 \
 		zenity:${PORTSDIR}/x11/zenity \
 		gucharmap:${PORTSDIR}/misc/gucharmap \
 		regexxer:${PORTSDIR}/devel/regexxer \
-		galeon:${PORTSDIR}/www/galeon2
+		galeon:${PORTSDIR}/www/galeon2 \
+		streamtuner:${PORTSDIR}/audio/streamtuner
 
 NO_BUILD=	yes
 
