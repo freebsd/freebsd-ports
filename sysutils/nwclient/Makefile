@@ -63,7 +63,7 @@ post-patch:
 		${CHMOD} -w ${WRKSRC}/networker.sh
 
 do-install:
-	@${MKDIR} -p ${PREFIX}/nsr/bin ${PREFIX}/man/man8 ${LOCALBASE}/etc/rc.d
+	@${MKDIR} ${PREFIX}/nsr/bin ${PREFIX}/man/man8 ${LOCALBASE}/etc/rc.d
 	@cd ${WRKSRC} && ${TAR} cf - gls | \
 		(cd ${PREFIX}/nsr && ${TAR} --unlink -xpf -)
 	@cd ${WRKSRC}/${ARCH} && ${TAR} cf - . | \
@@ -81,7 +81,7 @@ do-install:
 
 post-install:
 	@${SED} -e "s,ROOTDIR,${PREFIX}," < ${PKGMESSAGE}
-#	@cd / && rm -f nsr && ${LN} -s ${PREFIX}/nsr
+	@cd / && ${RM} -f nsr && ${LN} -s ${PREFIX}/nsr
 
 pre-deinstall:
 	${RM} -f /nsr
