@@ -1,6 +1,6 @@
 bin/sysconftoolize
 bin/sysconftoolcheck
-share/automake14/aclocal/sysconftool.m4
+share/aclocal14/sysconftool.m4
 share/sysconftool/sysconftool
 share/sysconftool/sysconftoolize.pl
 share/sysconftool/sysconftoolcheck
