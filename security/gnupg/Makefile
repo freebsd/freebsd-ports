@@ -6,16 +6,12 @@
 #
 
 PORTNAME=	gnupg
-PORTVERSION=	1.0.4
-PORTREVISION=	3
+PORTVERSION=	1.0.5
 CATEGORIES=	security
 MASTER_SITES=	ftp://ftp.gnupg.org/pub/gcrypt/%SUBDIR%/ \
 		ftp://pgp.iijlab.net/pub/%SUBDIR%/ \
 		${MASTER_SITE_RINGSERVER:S,%SUBDIR%,net/gnupg/&,}
 MASTER_SITE_SUBDIR=	gnupg
-PATCHFILES=	gnupg-1.0.4.security-patch1.diff
-PATCH_SITES=	${MASTER_SITES}
-PATCH_DIST_STRIP=	-p1
 
 MAINTAINER=	kuriyama@FreeBSD.org
 
