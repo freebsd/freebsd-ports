@@ -966,6 +966,7 @@ lib/%%PYTHON_VERSION%%/idlelib/Icons/folder.gif
 lib/%%PYTHON_VERSION%%/idlelib/Icons/idle.icns
 lib/%%PYTHON_VERSION%%/idlelib/Icons/minusnode.gif
 lib/%%PYTHON_VERSION%%/idlelib/Icons/openfolder.gif
+%%X86_ONLY%%lib/%%PYTHON_VERSION%%/lib-dynload/ossaudiodev.so
 lib/%%PYTHON_VERSION%%/idlelib/Icons/plusnode.gif
 lib/%%PYTHON_VERSION%%/idlelib/Icons/python.gif
 lib/%%PYTHON_VERSION%%/idlelib/Icons/tk.gif
