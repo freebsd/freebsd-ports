@@ -1,0 +1,33 @@
+--- src/runtime/config/gen-posix-names.sh.orig	Tue Oct 10 21:26:35 2000
++++ src/runtime/config/gen-posix-names.sh	Tue Mar 11 22:50:21 2003
+@@ -36,17 +36,20 @@
+   /lib/cpp > $INCLFILE <<XXX
+ #include <unistd.h>
+ XXX
+-elif [ -r "/usr/include/sys/unistd.h" ]; then
+-  INCLFILE=/usr/include/sys/unistd.h
+-elif [ -r "/usr/include/confname.h" ]; then
+-  INCLFILE=/usr/include/confname.h
+-elif [ -r "/usr/include/unistd.h" ]; then
+-  INCLFILE=/usr/include/unistd.h
+-elif [ -r "/usr/include/bsd/unistd.h" ]; then
+-  INCLFILE=/usr/include/bsd/unistd.h
+ else
+-  echo "gen-posix-names.sh: unable to find <unistd.h>"
+-  exit 1
++  INCLFILE=""
++  for f in "/usr/include/sys/unistd.h" \
++	"/usr/include/confname.h"      \
++	"/usr/include/unistd.h"        \
++	"/usr/include/bsd/unistd.h"; do
++    if [ -r "$f" ]; then
++      INCLFILE="$INCLFILE $f"
++    fi
++  done
++  if [ -z "$INCLFILE" ];  then
++    echo "gen-posix-names.sh: unable to find <unistd.h>"
++    exit 1
++  fi
+ fi
+ 
+ echo "/* $OUTF" >> $OUTF
