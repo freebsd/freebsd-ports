@@ -14,9 +14,9 @@ DISTNAME=	${PORTNAME}_gui-${PORTVERSION}
 
 MAINTAINER=	lioux@FreeBSD.org
 
-BUILD_DEPENDS=	automake:${PORTSDIR}/devel/automake
-LIB_DEPENDS=	dvdcontrol.4:${PORTSDIR}/graphics/ogle \
-		intl.1:${PORTSDIR}/devel/gettext \
+BUILD_DEPENDS=	automake:${PORTSDIR}/devel/automake \
+		${LOCALBASE}/lib/ogle/libdvdcontrol.so.4
+LIB_DEPENDS=	intl.1:${PORTSDIR}/devel/gettext \
 		jpeg.9:${PORTSDIR}/graphics/jpeg
 RUN_DEPENDS=	ogle:${PORTSDIR}/graphics/ogle
 
