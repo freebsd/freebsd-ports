@@ -1,5 +1,5 @@
---- Makefile.orig	Thu Mar 30 17:59:16 2000
-+++ Makefile	Sat Apr 15 11:09:28 2000
+--- Makefile.orig	Thu Feb  1 08:58:17 2001
++++ Makefile	Sun Feb 11 16:06:14 2001
 @@ -7,7 +7,7 @@
  #                    -Ae (HP/UX 10);       BS2000/OSD requires -XLLML -XLLMK;
  #                    NeXTSTEP apparently needs...
@@ -7,20 +7,20 @@
 -DEFS =             # any of -DNOPIPES -DNODNS -DNODIRENT -DNOOPEN ...
 +#DEFS =             # any of -DNOPIPES -DNODNS -DNODIRENT -DNOOPEN ...
  #                    ... -DEBCDIC -DNOGMTIME -DNEED_STRCMP -DNEED_MEMMOVE ...
- #                    ... -DNEED_STRTOUL -DNEED_DIFFTIME -DNEED_FLOATINGPOINT_H
- #                    Solaris 2 (SunOS 5) might need DEFS = -DNEED_STRCMP
-@@ -15,6 +15,10 @@
- #   DEFS = -DNEED_MEMMOVE -DNEED_STRTOUL -DNEED_DIFFTIME -DNEED_FLOATINGPOINT_H
+ #                    ... -DNEED_STRTOUL -DNEED_DIFFTIME -DHAVE_ADDR_T ...
+ #                    ... -DNEED_FLOATINGPOINT_H
+@@ -18,6 +18,10 @@
  #                    DYNIX/ptx reportedly needs -D_SOCKET_VERSION=11
+ #                    MPE/iX needs -D_POSIX_SOURCE -D_SOCKET_SOURCE
  #                    All the options are explained at the bottom of this file.
 +DEFS =  -DANALOGDIR=\"$(PREFIX)/lib/analog/\" \
 +	-DLOGFILE=\"/var/log/httpd-access.log\" \
 +	-DIMAGEDIR=\"/images/\" \
 +	-DDEFAULTCONFIGFILE=\"$(PREFIX)/etc/analog.cfg\"
- OS = UNIX          # Operating system: UNIX, DOS, WIN32, MAC, OS2, VMS
- #                    RISCOS, BEOS, NEXTSTEP, BS2000
+ OS = UNIX          # Operating system: UNIX, DOS, WIN32, MAC, OS2, OSX, VMS,
+ #                    RISCOS, BEOS, NEXTSTEP, MPEIX, BS2000, AS400
  LIBS =       # extra libraries needed; Solaris 2 (SunOS 5) needs
-@@ -29,7 +33,7 @@
+@@ -33,7 +37,7 @@
  	input.o macinput.o macstuff.o output.o output2.o pcre.o process.o \
  	settings.o sort.o tree.o utils.o win32.o
  HEADERS = anlghead.h anlghea2.h anlghea3.h anlghea4.h macdir.h pcre.h
@@ -28,4 +28,4 @@
 +CFLAGS += $(DEFS) -D$(OS)
  
  $(PROGRAM): $(OBJS) $(HEADERS) Makefile
- 	$(CC) $(CEXTRAFLAGS) $(OBJS) -o $(PROGRAM) $(LIBS)
+ 	$(CC) $(CEXTRAFLAGS) -o $(PROGRAM) $(OBJS) $(LIBS)
