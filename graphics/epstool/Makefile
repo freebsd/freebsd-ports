@@ -13,7 +13,7 @@ DISTNAME=	gsv40src
 
 MAINTAINER=	ports@FreeBSD.org
 
-RUN_DEPENDS=	gs:${PORTSDIR}/print/ghostscript6
+RUN_DEPENDS=	gs:${PORTSDIR}/print/ghostscript-gnu
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 

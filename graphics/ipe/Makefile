@@ -14,7 +14,7 @@ MASTER_SITES=	ftp://ftp.cs.uni-magdeburg.de/pub/ipe/ \
 
 MAINTAINER=	bremner@unb.ca
 
-RUN_DEPENDS= 	gs:${PORTSDIR}/print/ghostscript6 \
+RUN_DEPENDS= 	gs:${PORTSDIR}/print/ghostscript-gnu \
 		latex:${PORTSDIR}/print/teTeX
 
 USE_XLIB=	yes

@@ -13,7 +13,7 @@ MASTER_SITE_SUBDIR=	stable/sources/ggv
 
 MAINTAINER=	gnome@FreeBSD.org
 
-RUN_DEPENDS=	gs:${PORTSDIR}/print/ghostscript6
+RUN_DEPENDS=	gs:${PORTSDIR}/print/ghostscript-gnu
 
 USE_X_PREFIX=	yes
 USE_GNOME=	yes

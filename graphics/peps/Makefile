@@ -12,7 +12,7 @@ MASTER_SITES=	http://www.whizkidtech.net/peps/
 
 MAINTAINER=	petef@FreeBSD.org
 
-RUN_DEPENDS=	gs:${PORTSDIR}/print/ghostscript6 \
+RUN_DEPENDS=	gs:${PORTSDIR}/print/ghostscript-gnu \
 		pnmtopng:${PORTSDIR}/graphics/netpbm
 
 post-patch:

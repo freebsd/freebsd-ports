@@ -14,7 +14,7 @@ MASTER_SITE_SUBDIR=	../../authors/Johan_Vromans
 
 MAINTAINER=	nik@freebsd.org
 
-RUN_DEPENDS=	gs:${PORTSDIR}/print/ghostscript6
+RUN_DEPENDS=	gs:${PORTSDIR}/print/ghostscript-gnu
 
 PERL_CONFIGURE=	yes
 
