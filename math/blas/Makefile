@@ -18,15 +18,10 @@ MAINTAINER=	ports@FreeBSD.org
 
 NO_WRKSUBDIR=	yes
 
-.include <bsd.port.pre.mk>
-
 pre-build:
 	${CP} ${FILESDIR}/makefile.lib ${WRKSRC}/Makefile
 
 post-install:
-	${SETENV} OBJFORMAT=${PORTOBJFORMAT} ${LDCONFIG} -m ${PREFIX}/lib
-.if ${PORTOBJFORMAT} == "aout"
-	${LN} -sf libblas.so.1.0 ${PREFIX}/lib/libblas.so
-.endif
+	${LDCONFIG} -m ${PREFIX}/lib
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
