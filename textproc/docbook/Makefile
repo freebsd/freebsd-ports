@@ -5,7 +5,7 @@
 #
 # Based heavily on work by jfieber
 #
-# $Id: Makefile,v 1.5 1999/04/14 22:36:01 nik Exp $
+# $Id: Makefile,v 1.6 1999/04/18 10:32:13 asami Exp $
 #
 
 DISTNAME=       docbook
@@ -16,7 +16,8 @@ DISTFILES=      # empty
 
 MAINTAINER=     nik@freebsd.org
 
-BUILD_DEPENDS=  ${PREFIX}/share/sgml/docbook/2.4.1:${PORTSDIR}/textproc/docbook-241 \
+BUILD_DEPENDS=  ${PREFIX}/share/sgml/iso8879:${PORTSDIR}/textproc/iso8879 \
+		${PREFIX}/share/sgml/docbook/2.4.1:${PORTSDIR}/textproc/docbook-241 \
 		${PREFIX}/share/sgml/docbook/3.0:${PORTSDIR}/textproc/docbook-300 \
 		${PREFIX}/share/sgml/docbook/3.1:${PORTSDIR}/textproc/docbook-310
 
