@@ -1,0 +1,9 @@
+This module adds lightweight hooks into the inner workings of POE.
+Currently, one can add hooks into POE that get called before/after an
+event is dispatched and/or before/after a Session is created.  These
+callbacks receive the exact same argument list as their Kernel/Session
+counterpart.  For event dispatch related callbacks, see _dispatch_event
+in POE::Kernel.  For session related callbacks, see create in
+POE::Session.
+
+WWW: http://search.cpan.org/dist/POE-API-Hooks/
