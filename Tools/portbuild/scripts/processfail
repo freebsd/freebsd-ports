@@ -51,7 +51,12 @@ IFS='|'
 while read dir name ver date last count; do
     echo "<tr>" >> $of
     echo "<td><a href=\"http://cvsweb.freebsd.org/ports/$dir\">$dir</a></td>" >> $of
-    echo "<td><a href=\"${arch}-${branch}-latest/$ver.log\">$ver</a></td>" >> $of
+    if [ -L ${pb}/${arch}/${branch}/latest/${dir} ]; then
+      err=$(readlink ${pb}/${arch}/${branch}/latest/${dir})
+      echo "<td><a href=\"${arch}-errorlogs/$(basename $(dirname ${err}))/$(basename ${err})\">$ver</a></td>" >> $of
+    else
+      echo "<td><a href=\"${arch}-${branch}-latest/$ver.log\">$ver</a></td>" >> $of
+    fi
 
 #    echo "<td align=\"right\">$affby</td><td align=\"right\">$4 Kb</td>" >> $of
 #    echo "<td><a href=\"http://www.FreeBSD.org/cgi/cvsweb.cgi/ports/$5\">$5</a></td>" >> $of
