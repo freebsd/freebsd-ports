@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.47 1999/04/14 22:43:39 nik Exp $
+# $Id: Makefile,v 1.48 1999/04/16 23:31:20 steve Exp $
 #
 
     SUBDIR += agrep
@@ -36,6 +36,7 @@
     SUBDIR += p5-XML-Parser
     SUBDIR += par
     SUBDIR += prag
+    SUBDIR += py-xml
     SUBDIR += rman
     SUBDIR += sar
     SUBDIR += sgmlformat
