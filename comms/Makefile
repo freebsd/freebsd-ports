@@ -26,6 +26,7 @@
     SUBDIR += mwavem
     SUBDIR += plp
     SUBDIR += pr
+    SUBDIR += py-serial
     SUBDIR += qico
     SUBDIR += qpage
     SUBDIR += ruby-termios

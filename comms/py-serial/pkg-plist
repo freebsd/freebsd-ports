@@ -1,0 +1,11 @@
+%%PYTHON_SITELIBDIR%%/serial/__init__.py
+%%PYTHON_SITELIBDIR%%/serial/__init__.pyc
+%%PYTHON_SITELIBDIR%%/serial/serialjava.py
+%%PYTHON_SITELIBDIR%%/serial/serialjava.pyc
+%%PYTHON_SITELIBDIR%%/serial/serialposix.py
+%%PYTHON_SITELIBDIR%%/serial/serialposix.pyc
+%%PYTHON_SITELIBDIR%%/serial/serialutil.py
+%%PYTHON_SITELIBDIR%%/serial/serialutil.pyc
+%%PYTHON_SITELIBDIR%%/serial/serialwin32.py
+%%PYTHON_SITELIBDIR%%/serial/serialwin32.pyc
+@dirrm %%PYTHON_SITELIBDIR%%/serial
