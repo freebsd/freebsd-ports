@@ -3,13 +3,14 @@
 # Date created:         Feb 13 1995
 # Whom:                 jkh
 #
-# $Id: Makefile,v 1.1.1.1 1995/02/14 08:32:41 jkh Exp $
+# $Id: Makefile,v 1.2 1995/04/01 12:43:49 jkh Exp $
 #
 
 DISTNAME=       maplay1_2
-EXTRACT_SUFX=	.tar.Z
-MASTER_SITES=   ftp://ftp.iuma.com/audio_utils/mpeg_players/Workstations/
+PKGNAME=	maplay-1.2
 CATEGORIES+=	audio
+MASTER_SITES=   ftp://ftp.iuma.com/audio_utils/mpeg_players/Workstations/
+EXTRACT_SUFX=	.tar.Z
 
 NO_WRKSUBDIR=	yes
 PATCH_STRIP=	-p2
