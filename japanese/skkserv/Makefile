@@ -3,7 +3,7 @@
 # Date created:		31 Oct 1998
 # Whom:			Shigeyuki FUKUSHIMA <shige@kuis.kyoto-u.ac.jp>
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1998/12/15 15:22:46 kuriyama Exp $
 #
 
 DISTNAME=	skk9.6
@@ -13,6 +13,7 @@ MASTER_SITES=	ftp://skk.kuis.kyoto-u.ac.jp/skk/9.6/
 
 MAINTAINER=	matusita@jp.freebsd.org
 
+BUILD_DEPENDS=	/nonexistent:${SKK_MASTERDIR}:configure
 RUN_DEPENDS=	${PREFIX}/share/skk/${SKKJISYO}:${SKK_MASTERDIR}
 
 SKKJISYO_SIZE?=	L
@@ -22,16 +23,6 @@ WRKSRC=		${SKK_MASTERDIR}/work/skk-9.6
 MAKE_ARGS=	SUBDIRS='skkserv'
 
 STARTUP_SCRIPT= ${PREFIX}/etc/rc.d/skkserv.sh
-
-do-extract:
-	@${ECHO} "===>  Extracting depends on ${SKK_MASTERDIR}"
-	@[ -d ${WRKDIR} ] || ${MKDIR} ${WRKDIR}
-	@if [ ! -f ${SKK_MASTERDIR}/work/.extract_done ]; then \
-		(cd ${SKK_MASTERDIR}; make extract) ;\
-	fi
-	@if [ ! -f ${SKK_MASTERDIR}/work/.configure_done ]; then \
-		(cd ${SKK_MASTERDIR}; PREFIX=${PREFIX} make configure) ;\
-	fi
 
 post-install:
 	@if [ ! -f ${STARTUP_SCRIPT} ]; then \
