@@ -3401,3 +3401,5 @@ share/idl/mozilla-1.2b/xpcjsid.idl
 @dirrm include/mozilla-1.2b/appcomps
 @dirrm include/mozilla-1.2b/accessibility
 @dirrm include/mozilla-1.2b
+@unexec /bin/rm %%X11BASE%%/bin/phoenix || true
+@unexec /bin/rm %%X11BASE%%/bin/phoenix-config || true
