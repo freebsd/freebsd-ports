@@ -20,7 +20,7 @@ case $2 in
 				else
 					echo "[NO]"
 					echo "     Installing ${f} to ${REALFILE}"
-					cp ${f} ${REALFILE}
+					cp -p ${f} ${REALFILE}
 			fi
 		done
 	;;
