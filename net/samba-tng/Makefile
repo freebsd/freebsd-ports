@@ -14,6 +14,8 @@ DISTNAME=	${PORTNAME}${PKGNAMESUFFIX}-0.${PORTVERSION:S,c,cvs,}
 MAINTAINER=	dwcjr@FreeBSD.org
 COMMENT=	A free SMB and CIFS client and server for UNIX
 
+BROKEN=		"Broken pkg-plist"
+
 #FORBIDDEN=	'Remote root compromise, http://www.digitaldefense.net/labs/advisories/DDI-1013.txt'
 
 LIB_DEPENDS=	iconv.3:${PORTSDIR}/converters/libiconv

@@ -14,6 +14,8 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}Ea
 MAINTAINER=	ambrisko@freebsd.org
 COMMENT=	Cross compile 8051 code
 
+BROKEN=		"Broken pkg-plist"
+
 WRKSRC=		${WRKDIR}/sdcc219Ea
 GNU_CONFIGURE=	yes
 USE_BISON=	yes
