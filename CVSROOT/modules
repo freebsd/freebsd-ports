@@ -6851,6 +6851,7 @@ regexxer	ports/devel/regexxer
 regm		ports/mail/regm
 relate		ports/mbone/relate
 relay		ports/net/relay
+relaydb		ports/mail/relaydb
 remarp		ports/net/remarp
 render		ports/x11-toolkits/render
 renderpark	ports/graphics/renderpark
