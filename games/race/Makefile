@@ -18,7 +18,7 @@ COMMENT=	OpenGL Racing Game
 USE_SDL=	mixer image sdl
 USE_BZIP2=	yes
 USE_REINPLACE=	yes
-USE_MESA=	yes
+USE_GL=		yes
 CFLAGS+=	"-I${X11BASE}/include"
 MAKE_ENV=	CC="${CC} ${CFLAGS}" LDFLAGS="-L${X11BASE}/lib ${PTHREAD_LIBS}"
 
