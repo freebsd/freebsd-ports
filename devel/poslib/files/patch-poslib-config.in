@@ -1,0 +1,29 @@
+--- poslib-config.in.orig	Thu Oct  9 09:59:25 2003
++++ poslib-config.in	Thu Oct  9 10:01:29 2003
+@@ -23,6 +23,8 @@ if test $# -eq 0; then
+ 	usage 1 1>&2
+ fi
+ 
++CMD=
++
+ while test $# -gt 0; do
+   case "$1" in
+   -*=*) optarg=`echo "$1" | sed 's/[-_a-zA-Z0-9]*=//'` ;;
+@@ -31,7 +33,7 @@ while test $# -gt 0; do
+ 
+   case $1 in
+     --version)
+-      echo @VERSION@
++      CMD="@VERSION@"
+       ;;
+     --cflags)
+       echo_cflags=yes
+@@ -48,8 +50,6 @@ while test $# -gt 0; do
+   esac
+   shift
+ done
+-
+-CMD=
+ 
+ if test "$echo_cflags" = "yes"; then
+       CMD="$CMD -I@includedir@/poslib-@VERSION@ -I@libdir@/poslib-@VERSION@/include/ -funsigned-char @THREAD_CFLAGS@"
