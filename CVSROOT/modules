@@ -7687,6 +7687,7 @@ py-xlib		ports/x11-toolkits/py-xlib
 py-xml		ports/textproc/py-xml
 py-xmlrpc	ports/net/py-xmlrpc
 py-xmlrpclib	ports/net/py-xmlrpclib
+py-xmlsec	ports/security/py-xmlsec
 py-xmltools	ports/textproc/py-xmltools
 py-xmms		ports/audio/py-xmms
 py-xoltar-toolkit	ports/devel/py-xoltar-toolkit
