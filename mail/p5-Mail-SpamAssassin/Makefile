@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	Mail-SpamAssassin
-PORTVERSION=    2.11
-PORTREVISION=   2
+PORTVERSION=    2.20
 CATEGORIES=	mail perl5
 MASTER_SITES=   http://spamassassin.org/released/ \
 		${MASTER_SITE_PERL_CPAN}
