@@ -1,5 +1,8 @@
 lib/perl5/site_perl/%%PERL_VER%%/Mail/IMAPClient.pm
+lib/perl5/site_perl/%%PERL_VER%%/Mail/IMAPClient/BodyStructure.pm
+lib/perl5/site_perl/%%PERL_VER%%/Mail/IMAPClient/Parse.pm
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Mail/IMAPClient/.packlist
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/Mail/IMAPClient
 @dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Mail/IMAPClient
 @unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Mail 2>/dev/null || true
 @unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/Mail 2>/dev/null || true
