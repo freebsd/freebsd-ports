@@ -1,0 +1,5 @@
+@cwd ${PREFIX}
+@mode 755
+bin/gawk
+@mode 644
+man/man1/gawk.1.gz
