@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	timer-applet
-PORTVERSION=	0.3
-PORTREVISION=	1
+PORTVERSION=	0.4
 CATEGORIES=	deskutils
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE_EXTENDED}
 MASTER_SITE_SUBDIR=	timerapplet
@@ -17,12 +16,17 @@ COMMENT=	Timer applet for the Gnome panel
 
 RUN_DEPENDS=	${X11BASE}/share/gnome/sounds/gtk-events/clicked.wav:${PORTSDIR}/audio/gnomeaudio2
 
-USE_GNOME=	gnomehack gnomeprefix gnometarget gnomepanel
+USE_GNOME=	gnomehack gnomeprefix gnomepanel
 GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	--bindir=${PREFIX}/libexec	# applets belong to libexec
 USE_X_PREFIX=	yes
 USE_REINPLACE=	yes
 
 post-patch:
+	@${REINPLACE_CMD} -e \
+		's|/usr/share/pixmaps/||; \
+		 s|location="timer-applet"|location="${PREFIX}/libexec/timer-applet"|' \
+		${WRKSRC}/timer-applet.server
 	@${REINPLACE_CMD} -e 's|/usr/share/sounds|${X11BASE}/share/gnome/sounds|' \
 		${WRKSRC}/src/timer-applet.c
 
