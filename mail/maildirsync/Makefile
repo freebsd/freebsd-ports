@@ -21,7 +21,7 @@ PLIST_FILES=	bin/maildirsync
 .include <bsd.port.pre.mk>
 
 .if ${PERL_LEVEL} < 500600
-BROKEN=	This port requires Perl 5.6.0 or higher.
+IGNORE=		requires Perl 5.6.0 or higher
 .endif
 
 do-build:
