@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.36 1998/02/28 03:49:19 itojun Exp $
+# $Id: Makefile,v 1.37 1998/04/10 05:05:16 hoek Exp $
 #
 
     SUBDIR += Scilab
@@ -32,6 +32,5 @@
     SUBDIR += xlispstat
     SUBDIR += xplot
     SUBDIR += xspread
-    SUBDIR += xvgr
 
 .include <bsd.port.subdir.mk>
