@@ -185,6 +185,7 @@
     SUBDIR += tgd
     SUBDIR += tgif
     SUBDIR += tgif-nls
+    SUBDIR += threeDS
     SUBDIR += tiff
     SUBDIR += tiff2png
     SUBDIR += tifmerge

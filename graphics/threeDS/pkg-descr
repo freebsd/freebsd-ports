@@ -1,0 +1,5 @@
+ThreeDS is a Python module for loading and displaying 3D models in the
+3DStudio Max 3DS format. It comes with view3DS, a simple model viewer written
+in Python.
+
+WWW: http://www.demonseed.net/~jp/code/threeDS/index.html

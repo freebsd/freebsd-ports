@@ -1,0 +1,6 @@
+bin/view3ds
+lib/%%PYTHON_VERSION%%/site-packages/threeDS.py
+lib/%%PYTHON_VERSION%%/site-packages/threeDS.pyc
+share/threeDS/view3ds.py
+share/threeDS/view3ds.pyc
+@dirrm share/threeDS
