@@ -5,11 +5,11 @@
 # $FreeBSD$
 
 PORTNAME=	rox-session
-PORTVERSION=	0.1.11
+PORTVERSION=	0.1.13
 CATEGORIES=	x11-fm
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	rox
-DISTNAME=	ROX-Session
+DISTNAME=	ROX-Session-${PORTVERSION}
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	olgeni@FreeBSD.org
@@ -20,23 +20,25 @@ RUN_DEPENDS=	${LOCALBASE}/share/Choices:${PORTSDIR}/x11-fm/rox-base \
 USE_GLIB=	yes
 USE_GTK=	yes
 
+WRKSRC=		${WRKDIR}/ROX-Session-${PORTVERSION}
+
 post-extract:
 	# Hopefully gtk-config and glib-config will become
 	# configurable, so don't bother to add patch-* files
 
-	${PERL} -pi -e "s/gtk-config/gtk12-config/g" \
+	@${PERL} -pi -e "s/gtk-config/gtk12-config/g" \
 		${WRKSRC}/src/Makefile.in
-	${PERL} -pi -e "s/glib-config/glib12-config/g" \
+	@${PERL} -pi -e "s/glib-config/glib12-config/g" \
 		${WRKSRC}/src/configure
 
 do-build:
 	# Run the custom build procedure
-	cd ${WRKSRC} && GTK_CONFIG=${GTK_CONFIG} GLIB_CONFIG=${GLIB_CONFIG} ./AppRun --compile
+	@cd ${WRKSRC} && GTK_CONFIG=${GTK_CONFIG} GLIB_CONFIG=${GLIB_CONFIG} ./AppRun --compile
 
 do-install:
-	${MKDIR} ${PREFIX}/apps/ROX-Session
-	cd ${WRKSRC} && ${CP} -r AppIcon.xpm AppMenu AppRun FreeBSD-ix86 Help Login MakeDefault.sh Setup Styles ${PREFIX}/apps/ROX-Session
-	${CAT} ${FILESDIR}/rox-session | ${SED} -e "s|%%PREFIX%%|${PREFIX}|" > ${PREFIX}/bin/rox-session
-	${CHMOD} 775 ${PREFIX}/bin/rox-session
+	@${MKDIR} ${PREFIX}/apps/ROX-Session
+	@cd ${WRKSRC} && ${CP} -r AppIcon.xpm AppInfo.xml AppRun FreeBSD-ix86 Help Login MakeDefault.sh Setup Styles WindowMans ${PREFIX}/apps/ROX-Session
+	@${CAT} ${FILESDIR}/rox-session | ${SED} -e "s|%%PREFIX%%|${PREFIX}|" > ${PREFIX}/bin/rox-session
+	@${CHMOD} 775 ${PREFIX}/bin/rox-session
 
 .include <bsd.port.mk>
