@@ -8,8 +8,7 @@
 PORTNAME=	nethirc
 PORTVERSION=	0.04
 CATEGORIES=	irc
-# broken - MASTER_SITES=	ftp://ftp.nog.net/pub/tony/nethirc/
-MASTER_SITES=	http://people.FreeBSD.org/~cpiazza/distfiles/
+MASTER_SITES=	ftp://ftp.nog.net/pub/tony/nethirc/
 EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=	will@FreeBSD.org
