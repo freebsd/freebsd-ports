@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	aria
-PORTVERSION=	0.9.1.1
+PORTVERSION=	0.10.1
 CATEGORIES=	www
 MASTER_SITES=	http://aria.rednoah.com/storage/sources/
-DISTNAME=	${PORTNAME}-0.9.1pl1
+DISTNAME=	${PORTNAME}-0.10.1test9
 
 MAINTAINER=	nakai@FreeBSD.org
 

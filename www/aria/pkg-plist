@@ -1,3 +1,14 @@
 bin/aria
+share/aria/command.aria
+share/aria/command.aria.template.gz
+share/aria/rc.aria
+share/aria/server.aria
+share/aria/server.aria.template.euc.gz
+share/aria/server.aria.template.gz
+share/aria/useragent.aria
+share/locale/cs/LC_MESSAGES/aria.mo
 share/locale/de/LC_MESSAGES/aria.mo
+share/locale/fr/LC_MESSAGES/aria.mo
 share/locale/ja/LC_MESSAGES/aria.mo
+share/locale/ru/LC_MESSAGES/aria.mo
+@dirrm share/aria
