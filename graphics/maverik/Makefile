@@ -7,9 +7,9 @@
 #
 
 PORTNAME=	maverik
-PORTVERSION=	6.1
+PORTVERSION=	6.2
 CATEGORIES=	graphics
-MASTER_SITES=	ftp://aig.cs.man.ac.uk/pub/Maverik/
+MASTER_SITES=	http://aig.cs.man.ac.uk/maverik/
 
 MAINTAINER=	ports@FreeBSD.org
 
@@ -32,13 +32,16 @@ MANCOMPRESSED=	no
 .if defined(WITH_PNG)
 LIB_DEPENDS+=	png:${PORTSDIR}/graphics/png
 
-CONFIGURE_ARGS+=	--PNGLIBS="${LOCALBASE}/lib -lpng" \
-			--PNGINCL="${LOCALBASE}/include"
+CONFIGURE_ARGS+=	--PNGLIBS="-L${LOCALBASE}/lib -lpng" \
+			--PNGINCL="-I${LOCALBASE}/include"
 .endif
 
 .if defined(HAVE_GTK)
 USE_GTK=	yes
 CONFIGURE_ARGS+=	--GTK
+PLIST_SUB+=	GTK=""
+.else
+PLIST_SUB+=	GTK="@comment "
 .endif
 
 post-extract:
@@ -46,6 +49,8 @@ post-extract:
 
 post-patch:
 	@${PERL} -pi -e "s,%%X11BASE%%,${X11BASE},g ; \
+		s,%%CC%%,${CC},g ; \
+		s,%%CXX%%,${CXX},g ; \
 		s,%%CFLAGS%%,${CFLAGS},g ; \
 		s,%%CXXFLAGS%%,${CXXFLAGS},g ; \
 		s,%%PTHREAD_CFLAGS%%,${PTHREAD_CFLAGS},g ; \
@@ -54,16 +59,23 @@ post-patch:
 	@${PERL} -pi -e "s,gtk-config,${GTK_CONFIG},g" ${WRKSRC}/examples/misc/GTK/Makefile
 
 do-install:
-	${CP} ${WRKSRC}/lib/* ${PREFIX}/lib
+	${INSTALL_DATA} ${WRKSRC}/lib/*.* ${PREFIX}/lib
 	@${MKDIR} ${PREFIX}/include/maverik
-	${CP} ${WRKSRC}/incl/* ${PREFIX}/include/maverik
-	@${CP} ${WRKSRC}/doc/MFS/man3/* ${MAN3PREFIX}/man/man3
-
+	${INSTALL_DATA} ${WRKSRC}/incl/*.* ${PREFIX}/include/maverik
+	${FIND} ${WRKSRC}/doc/MFS/man3 -name '*.3' -exec \
+		${INSTALL_MAN} \{} ${MAN3PREFIX}/man/man3 \;
 .if !defined(NOPORTDOCS)
-post-install:
-	@${MKDIR} ${DOCSDIR}
-	${CP} -R ${WRKSRC}/doc/* ${DOCSDIR}
-	@${RM} -rf ${DOCSDIR}/MFS/man3
+	@${MKDIR} ${DOCSDIR}/MFS/html
+	${FIND} ${WRKSRC}/doc/MFS/html -name '*.html' -exec \
+		${INSTALL_DATA} \{} ${DOCSDIR}/MFS/html \;
+	@${MKDIR} ${DOCSDIR}/MFS/pdf
+	${INSTALL_DATA} ${WRKSRC}/doc/MFS/pdf/*.* ${DOCSDIR}/MFS/pdf
+	@${MKDIR} ${DOCSDIR}/MFS/ps
+	${INSTALL_DATA} ${WRKSRC}/doc/MFS/ps/*.* ${DOCSDIR}/MFS/ps
+	@${MKDIR} ${DOCSDIR}/MPG/pdf
+	${INSTALL_DATA} ${WRKSRC}/doc/MPG/pdf/*.* ${DOCSDIR}/MPG/pdf
+	@${MKDIR} ${DOCSDIR}/MPG/ps
+	${INSTALL_DATA} ${WRKSRC}/doc/MPG/ps/*.* ${DOCSDIR}/MPG/ps
 .endif
 
 post-clean:

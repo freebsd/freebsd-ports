@@ -7,18 +7,18 @@ include/maverik/mav_lwo.h
 include/maverik/mav_navigation.h
 include/maverik/mav_objects.h
 include/maverik/mav_sms.h
+include/maverik/mav_sr.h
 include/maverik/mav_tdm.h
 include/maverik/mav_tr.h
 include/maverik/mav_vrad.h
 include/maverik/mav_vrml97.h
 include/maverik/mav_windows.h
 include/maverik/maverik.h
-@dirrm include/maverik
 lib/libmav_avatar.so
 lib/libmav_callbacks.so
 lib/libmav_gfx.so
 lib/libmav_gfxNone.so
-lib/libmav_gfxOpenGLGTK.so
+%%GTK%%lib/libmav_gfxOpenGLGTK.so
 lib/libmav_gfxOpenGLX11.so
 lib/libmav_hud.so
 lib/libmav_kernel.so
@@ -33,7 +33,7 @@ lib/libmav_vrml97.so
 lib/libmav_windows.so
 lib/libmaverik.so
 lib/libmaverikNone.so
-lib/libmaverikOpenGLGTK.so
+%%GTK%%lib/libmaverikOpenGLGTK.so
 lib/libmaverikOpenGLX11.so
 %%PORTDOCS%%share/doc/maverik/MFS/html/MAV_BB.html
 %%PORTDOCS%%share/doc/maverik/MFS/html/MAV_HBB.html
@@ -380,6 +380,8 @@ lib/libmaverikOpenGLX11.so
 %%PORTDOCS%%share/doc/maverik/MFS/html/mav_frameFn4Add.html
 %%PORTDOCS%%share/doc/maverik/MFS/html/mav_frameFn4Rmv.html
 %%PORTDOCS%%share/doc/maverik/MFS/html/mav_free.html
+%%PORTDOCS%%share/doc/maverik/MFS/html/mav_getPID.html
+%%PORTDOCS%%share/doc/maverik/MFS/html/mav_getTempDir.html
 %%PORTDOCS%%share/doc/maverik/MFS/html/mav_gfx.html
 %%PORTDOCS%%share/doc/maverik/MFS/html/mav_gfx3DfxBoardSet.html
 %%PORTDOCS%%share/doc/maverik/MFS/html/mav_gfx3DfxModeSet.html
@@ -543,6 +545,7 @@ lib/libmaverikOpenGLX11.so
 %%PORTDOCS%%share/doc/maverik/MFS/html/mav_moduleNew.html
 %%PORTDOCS%%share/doc/maverik/MFS/html/mav_mouseDraw.html
 %%PORTDOCS%%share/doc/maverik/MFS/html/mav_mouseGet.html
+%%PORTDOCS%%share/doc/maverik/MFS/html/mav_mouseSet.html
 %%PORTDOCS%%share/doc/maverik/MFS/html/mav_mouseSurfaceParamsSet.html
 %%PORTDOCS%%share/doc/maverik/MFS/html/mav_navigate.html
 %%PORTDOCS%%share/doc/maverik/MFS/html/mav_navigateForwards.html
@@ -553,6 +556,7 @@ lib/libmaverikOpenGLX11.so
 %%PORTDOCS%%share/doc/maverik/MFS/html/mav_navigateRight.html
 %%PORTDOCS%%share/doc/maverik/MFS/html/mav_navigateRightFixedUp.html
 %%PORTDOCS%%share/doc/maverik/MFS/html/mav_navigateRoll.html
+%%PORTDOCS%%share/doc/maverik/MFS/html/mav_navigateRotFixedUp.html
 %%PORTDOCS%%share/doc/maverik/MFS/html/mav_navigateRotRight.html
 %%PORTDOCS%%share/doc/maverik/MFS/html/mav_navigateRotUp.html
 %%PORTDOCS%%share/doc/maverik/MFS/html/mav_navigateTransX.html
@@ -752,7 +756,11 @@ lib/libmaverikOpenGLX11.so
 %%PORTDOCS%%share/doc/maverik/MFS/html/mav_vectorSet.html
 %%PORTDOCS%%share/doc/maverik/MFS/html/mav_vectorSub.html
 %%PORTDOCS%%share/doc/maverik/MFS/html/mav_vectorWorldPos.html
+%%PORTDOCS%%share/doc/maverik/MFS/html/mav_viewParamsAnimate.html
+%%PORTDOCS%%share/doc/maverik/MFS/html/mav_viewParamsAnimateToObject.html
+%%PORTDOCS%%share/doc/maverik/MFS/html/mav_viewParamsAnimateToSMS.html
 %%PORTDOCS%%share/doc/maverik/MFS/html/mav_viewParamsFixed.html
+%%PORTDOCS%%share/doc/maverik/MFS/html/mav_viewParamsInterpolate.html
 %%PORTDOCS%%share/doc/maverik/MFS/html/mav_viewParamsPrint.html
 %%PORTDOCS%%share/doc/maverik/MFS/html/mav_windowBackfaceCullGet.html
 %%PORTDOCS%%share/doc/maverik/MFS/html/mav_windowBackfaceCullSet.html
@@ -778,10 +786,12 @@ lib/libmaverikOpenGLX11.so
 %%PORTDOCS%%share/doc/maverik/MFS/ps/mfs.ps
 %%PORTDOCS%%share/doc/maverik/MPG/pdf/mpg.pdf
 %%PORTDOCS%%share/doc/maverik/MPG/ps/mpg.ps
-%%PORTDOCS%%@dirrm share/doc/maverik/MFS/html
-%%PORTDOCS%%@dirrm share/doc/maverik/MFS/pdf
-%%PORTDOCS%%@dirrm share/doc/maverik/MFS/ps
-%%PORTDOCS%%@dirrm share/doc/maverik/MFS
-%%PORTDOCS%%@dirrm share/doc/maverik/MPG/pdf
 %%PORTDOCS%%@dirrm share/doc/maverik/MPG/ps
+%%PORTDOCS%%@dirrm share/doc/maverik/MPG/pdf
 %%PORTDOCS%%@dirrm share/doc/maverik/MPG
+%%PORTDOCS%%@dirrm share/doc/maverik/MFS/ps
+%%PORTDOCS%%@dirrm share/doc/maverik/MFS/pdf
+%%PORTDOCS%%@dirrm share/doc/maverik/MFS/html
+%%PORTDOCS%%@dirrm share/doc/maverik/MFS
+%%PORTDOCS%%@dirrm share/doc/maverik
+@dirrm include/maverik
