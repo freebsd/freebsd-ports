@@ -1,27 +1,27 @@
---- Makefile.orig	Thu Jan 16 06:20:29 1997
-+++ Makefile	Sat Oct  3 20:01:54 1998
-@@ -1,10 +1,13 @@
+--- Makefile.orig	Fri Mar 21 20:12:30 1997
++++ Makefile	Wed Sep 22 23:55:40 1999
+@@ -1,9 +1,12 @@
  
- # if you want pixmaps you'll need Xpm, so add -lXpm to the next line
 -LIBS	=  -L/usr/X11/lib -lXext -lX11 -lXmu -lm
-+LIBS	=  -L$(X11BASE)/lib -lXext -lX11 -lXmu -lm
++LIBS	=  -L$(PREFIX)/lib -lXext -lX11 -lXmu -lm
 +.if $(PORTOBJFORMAT) == "elf"
-+LIBS	+= -Wl,-rpath,$(X11BASE)/lib
++LIBS	+= -Wl,-rpath,$(PREFIX)/lib
 +.endif
  
- CC	= gcc
- CCC	= gcc
+-CC	= gcc
+-CCC	= gcc
 -CFLAGS	= -O2
-+CFLAGS	+= -O2 -I$(X11BASE)/include
- OBJECTS	= Border.o Buttons.o Client.o Events.o Main.o Manager.o Rotated.o listimpl.o
++CC	?= gcc
++CCC	= $(CC)
++CFLAGS	+= -I$(PREFIX)/include
+ OBJECTS	= Border.o Buttons.o Client.o Events.o Main.o Manager.o Rotated.o
  
  .c.o:
-@@ -14,7 +17,7 @@
+@@ -13,7 +16,6 @@
  	$(CCC) -c $(CFLAGS) $<
  
  wm2:	$(OBJECTS)
 -	mv -f wm2 wm2.old >& /dev/null || true
-+	mv -f wm2 wm2.old 2> /dev/null || true
  	$(CCC) -o wm2 $(OBJECTS) $(LIBS)
  
  depend:
