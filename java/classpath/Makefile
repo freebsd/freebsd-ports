@@ -15,6 +15,8 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A GNU project to create free core class libraries
 
+BUILD_DEPENDS=	zip:${PORTSDIR}/archivers/zip
+
 USE_GNOME=	gtk20 libartlgpl2 pkgconfig
 USE_JAVA=	yes
 USE_JIKES=	yes
@@ -25,10 +27,6 @@ INFO=	hacking vmintegration
 PLIST_FILES=	lib/security/classpath.security
 
 .include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 502126
-BROKEN=		"Configure fails on FreeBSD >= 5.x"
-.endif
 
 post-install:
 .for dir in ${PREFIX}/share/classpath ${PREFIX}/lib/classpath
