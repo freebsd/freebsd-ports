@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.141 1998/08/24 01:43:42 steve Exp $
+# $Id: Makefile,v 1.142 1998/08/26 14:15:05 kuriyama Exp $
 #
 
     SUBDIR += Canna
@@ -141,6 +141,13 @@
     SUBDIR += tcl76
     SUBDIR += tcl80
     SUBDIR += tcsh
+    SUBDIR += tcsh-nls-asuka
+    SUBDIR += tcsh-nls-ayanami
+    SUBDIR += tcsh-nls-generic
+    SUBDIR += tcsh-nls-koshiki
+    SUBDIR += tcsh-nls-multi
+    SUBDIR += tcsh-nls-roomi
+    SUBDIR += tcsh-nls-ruri2
     SUBDIR += tgif
     SUBDIR += tk42
     SUBDIR += tk80
