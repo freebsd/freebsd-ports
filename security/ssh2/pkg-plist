@@ -39,16 +39,16 @@ sbin/sshd2
 sbin/sshd-check-conf
 sbin/sshd
 @exec if [ ! -f %D/etc/ssh2/hostkey ]; then umask 022; echo "Generating host key."; %D/bin/ssh-keygen2 -P -t dsa "DSA hostkey" %D/etc/ssh2/hostkey;  fi
-%%PORTDOCS%%%%DATADIR%%/CHANGES
-%%PORTDOCS%%%%DATADIR%%/FAQ
-%%PORTDOCS%%%%DATADIR%%/INSTALL
-%%PORTDOCS%%%%DATADIR%%/LICENSE
-%%PORTDOCS%%%%DATADIR%%/MANIFEST
-%%PORTDOCS%%%%DATADIR%%/NEWS
-%%PORTDOCS%%%%DATADIR%%/README
-%%PORTDOCS%%%%DATADIR%%/REGEX-SYNTAX
-%%PORTDOCS%%%%DATADIR%%/SSH2.QUICKSTART
-%%PORTDOCS%%@dirrm %%DATADIR%%
+%%PORTDOCS%%%%DOCSDIR%%/CHANGES
+%%PORTDOCS%%%%DOCSDIR%%/FAQ
+%%PORTDOCS%%%%DOCSDIR%%/INSTALL
+%%PORTDOCS%%%%DOCSDIR%%/LICENSE
+%%PORTDOCS%%%%DOCSDIR%%/MANIFEST
+%%PORTDOCS%%%%DOCSDIR%%/NEWS
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/REGEX-SYNTAX
+%%PORTDOCS%%%%DOCSDIR%%/SSH2.QUICKSTART
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
 @unexec rmdir %D/etc/ssh2/hostkeys 2> /dev/null || true
 @unexec rmdir %D/etc/ssh2/knownhosts 2> /dev/null || true
 @unexec rmdir %D/etc/ssh2/subconfig 2> /dev/null || true
