@@ -48,9 +48,6 @@ include/rtbl.h
 include/sl.h
 include/ss/ss.h
 include/xdbm.h
-@unexec install-info --delete %D/info/kth-krb.info %D/info/dir
-info/kth-krb.info
-@exec install-info %D/info/kth-krb.info %D/info/dir
 lib/libacl.a
 lib/libacl.so
 lib/libacl.so.1
@@ -100,4 +97,18 @@ sbin/kdb_init
 sbin/kdb_util
 sbin/ksrvutil
 sbin/kstash
+@dirrm bin
 @dirrm include/ss
+@dirrm include
+@dirrm lib
+@dirrm libexec
+@dirrm man/cat1
+@dirrm man/cat3
+@dirrm man/cat5
+@dirrm man/cat8
+@dirrm man/man1
+@dirrm man/man3
+@dirrm man/man5
+@dirrm man/man8
+@dirrm man
+@dirrm sbin
