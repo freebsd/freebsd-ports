@@ -9014,6 +9014,7 @@ vim-lite	ports/editors/vim-lite
 vim5		ports/editors/vim5
 vim6+ruby	ports/editors/vim6+ruby
 vipec		ports/cad/vipec
+vips		ports/graphics/vips
 virt		ports/games/virt
 virtualmin	ports/sysutils/virtualmin
 virtualpaper	ports/print/virtualpaper
