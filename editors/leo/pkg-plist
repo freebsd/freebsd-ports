@@ -34,6 +34,7 @@ bin/leo
 %%PORTDOCS%%%%PYTHON_SITELIBDIR%%/leo/doc/LeoDocs.leo
 %%PORTDOCS%%@dirrm %%PYTHON_SITELIBDIR%%/leo/doc
 %%PYTHON_SITELIBDIR%%/leo/plugins/__overrideClasses.py
+%%PYTHON_SITELIBDIR%%/leo/plugins/__wx_gui.py
 %%PYTHON_SITELIBDIR%%/leo/plugins/add_directives.py
 %%PYTHON_SITELIBDIR%%/leo/plugins/arrows.py
 %%PYTHON_SITELIBDIR%%/leo/plugins/at_folder.py
@@ -43,10 +44,11 @@ bin/leo
 %%PYTHON_SITELIBDIR%%/leo/plugins/enable_gc.py
 %%PYTHON_SITELIBDIR%%/leo/plugins/french.py
 %%PYTHON_SITELIBDIR%%/leo/plugins/french_fm.py
-%%PYTHON_SITELIBDIR%%/leo/plugins/gnx_code.py
 %%PYTHON_SITELIBDIR%%/leo/plugins/image.py
 %%PYTHON_SITELIBDIR%%/leo/plugins/import_cisco_config.py
 %%PYTHON_SITELIBDIR%%/leo/plugins/leoPlugins.leo
+%%PYTHON_SITELIBDIR%%/leo/plugins/leopm_client.py
+%%PYTHON_SITELIBDIR%%/leo/plugins/leopm_server.py
 %%PYTHON_SITELIBDIR%%/leo/plugins/mod_autosave.ini
 %%PYTHON_SITELIBDIR%%/leo/plugins/mod_autosave.py
 %%PYTHON_SITELIBDIR%%/leo/plugins/mod_spelling.ini
