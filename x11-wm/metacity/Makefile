@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	metacity
-PORTVERSION=	2.4.0
+PORTVERSION=	2.4.1
 CATEGORIES=	x11-wm
 MASTER_SITES=	http://people.redhat.com/~hp/metacity/
 DIST_SUBDIR=	gnome2
@@ -26,6 +26,7 @@ USE_GNOME=	gnomeprefix gnomehack gnomehier
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
 		LIBS="-L${LOCALBASE}/lib"
 CONFIGURE_TARGET=	--target=${MACHINE_ARCH}-unknown-freebsd${OSREL}
+MAKE_ENV=	G_CHARSET_ALIAS="${LOCALBASE}/libdata/charset.alias"
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|g ; \
