@@ -1,12 +1,11 @@
---- nfbtrans.c.orig	Sun Nov 14 10:58:34 1999
-+++ nfbtrans.c	Fri Feb 18 15:00:00 2000
+--- nfbtrans.c.orig	Sat Sep 23 20:45:38 2000
++++ nfbtrans.c	Thu Nov 30 04:15:53 2000
 @@ -2,7 +2,9 @@
  #define LINT_ARGS
  #define DOS
  #else
--#define UNIX_PATH "/usr/local/lib/"
 +#ifndef UNIX_PATH
-+#define UNIX_PATH "/usr/local/lib/nfbtrans/"
+ #define UNIX_PATH "/usr/local/lib/"
 +#endif
  #endif		   /* unix */
  #ifndef lint
@@ -20,23 +19,3 @@
  #define max(a,b)  (((a) > (b)) ? (a) : (b))
  #define min(a,b)  (((a) < (b)) ? (a) : (b))
  #endif
-@@ -4904,7 +4906,8 @@
-   for (;;)
-   {
-     fprintf(stderr, "Enter dictionary word <RETURN> to skip: ");
--    gets(temp);
-+    fgets(temp, sizeof(temp), stdin);
-+    temp[strlen(temp)-1] = '\0';
-     if (!temp[0])
-       break;	   /* skip, don't store as rejected */
-     strupr(temp);
-@@ -5437,7 +5440,8 @@
- 	for (;;)
- 	{
- 	  fprintf(stderr, "enter word <RETURN> to exit: ");
--	  gets(field);
-+          fgets(field, (sizeof(field_) - (field - field_)), stdin);
-+          field[strlen(field-1)] = '\0';
- 	  if (strlen(field) < 2)
- 	    break;
- 	  strupr(field);

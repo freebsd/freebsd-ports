@@ -6,11 +6,10 @@
 #
 
 PORTNAME=	nfbtrans
-PORTVERSION=	7.55
+PORTVERSION=	7.58
 CATEGORIES=	textproc
-MASTER_SITES=	ftp://nfb.org/braille/nfbtrans/
-DISTNAME=	nfbtr755
-EXTRACT_SUFX=	.exe
+MASTER_SITES=	http://www.nfb.org/braille/nfbtrans/
+DISTNAME=	nfbtr${PORTVERSION:S/.//}
 
 MAINTAINER=	max@FreeBSD.org
 
@@ -23,12 +22,12 @@ ALL_TARGET=		freebsd
 MAKEFILE=		makefile
 
 do-install:
-	${MKDIR} ${PREFIX}/lib/nfbtrans/tables
+	${MKDIR} ${PREFIX}/share/nfbtrans/tables
 	${INSTALL_PROGRAM} ${WRKSRC}/nfbtrans ${PREFIX}/bin
 .for f in braille.tab back.tab english.dic nfbtrans.cnf menu.cnf
-	${INSTALL_DATA} ${WRKSRC}/$f ${PREFIX}/lib/nfbtrans
+	${INSTALL_DATA} ${WRKSRC}/$f ${PREFIX}/share/nfbtrans
 .endfor
-	@unzip -q -L -a -o ${WRKSRC}/tables.zip -d ${PREFIX}/lib/nfbtrans/tables
+	unzip -q -L -a -o ${WRKSRC}/tables.zip -d ${PREFIX}/share/nfbtrans/tables
 .if !defined(NOPORTDOCS)
 	@${ECHO} '~0 ~-pw=80 ~-ls=99 ~-pl=56 ~-if=12 ~-fc=. ~o5 ~p- ~-ip=0 ~-oc=1' \
 	  | ${CAT} - ${WRKSRC}/nfbtrans.fmt > ${WRKSRC}/nfbprint.fmt
