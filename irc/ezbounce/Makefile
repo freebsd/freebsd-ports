@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	ezbounce
-PORTVERSION=	1.0
+PORTVERSION=	1.02
 CATEGORIES=	irc
 MASTER_SITES=  	http://druglord.freelsd.org/ezbounce/
-DISTFILES=	${DISTNAME}-release${EXTRACT_SUFX}
 
 MAINTAINER=	ports@FreeBSD.org
 
