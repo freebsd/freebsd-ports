@@ -1,0 +1,7 @@
+property.rb - simple properties scheme
+
+This library, developed after java.util.Properties class of Java
+Language, provides simple properties scheme for application
+configurations, resources, locale data, etc.
+
+WWW:	http://www.ueda.info.waseda.ac.jp/~igarashi/ruby/index.html

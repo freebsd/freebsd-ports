@@ -1,0 +1,26 @@
+lib/ruby/%%RUBY_VER%%/%%RUBY_ARCH%%/python.so
+share/doc/ruby/python/examples/Lib/BaseHTTPServer.rb
+share/doc/ruby/python/examples/Lib/README
+share/doc/ruby/python/examples/Lib/base64.rb
+share/doc/ruby/python/examples/Lib/rfc822.rb
+share/doc/ruby/python/examples/Lib/urllib.rb
+share/doc/ruby/python/examples/hello.rb
+share/doc/ruby/python/examples/html.py
+share/doc/ruby/python/examples/html.rb
+share/doc/ruby/python/ja/README.ja
+share/doc/ruby/python/ja/Mapping.html
+share/doc/ruby/python/ja/Object.html
+share/doc/ruby/python/ja/Py.html
+share/doc/ruby/python/ja/Sequence.html
+share/doc/ruby/python/ja/index.html
+share/doc/ruby/python/ChangeLog
+share/doc/ruby/python/README
+share/doc/ruby/python/Mapping.html
+share/doc/ruby/python/Object.html
+share/doc/ruby/python/Py.html
+share/doc/ruby/python/Sequence.html
+share/doc/ruby/python/index.html
+@dirrm share/doc/ruby/python/examples/Lib
+@dirrm share/doc/ruby/python/examples
+@dirrm share/doc/ruby/python/ja
+@dirrm share/doc/ruby/python

@@ -1,0 +1,6 @@
+lib/ruby/%%RUBY_VER%%/%%RUBY_ARCH%%/BigFloat.so
+share/doc/ruby/bigfloat/ja/bigfloat.html
+share/doc/ruby/bigfloat/README
+share/doc/ruby/bigfloat/bigfloat_en.html
+@dirrm share/doc/ruby/bigfloat/ja
+@dirrm share/doc/ruby/bigfloat

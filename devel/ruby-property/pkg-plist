@@ -1,0 +1,10 @@
+lib/ruby/%%RUBY_VER%%/property.rb
+share/doc/ruby/property/property-example.rb
+share/doc/ruby/property/test.default
+share/doc/ruby/property/property.README
+share/doc/ruby/property/Properties.html
+share/doc/ruby/property/rubyapi.css
+share/doc/ruby/property/ja/property.README.ja
+share/doc/ruby/property/ja/Properties-ja.html
+@dirrm share/doc/ruby/property/ja
+@dirrm share/doc/ruby/property
