@@ -1,0 +1,21 @@
+--- Makefile.in.orig	Sat May 26 23:22:08 2001
++++ Makefile.in	Tue Jun 26 12:55:12 2001
+@@ -178,6 +178,9 @@
+ 	  rm -f $(DESTDIR)$(bindir)/`echo $$p|sed 's/$(EXEEXT)$$//'|sed '$(transform)'|sed 's/$$/$(EXEEXT)/'`; \
+ 	done
+ 
++.c.o:
++	$(COMPILE) -c $<
++
+ .s.o:
+ 	$(COMPILE) -c $<
+ 
+@@ -290,7 +293,7 @@
+ 
+ DEPS_MAGIC := $(shell mkdir .deps > /dev/null 2>&1 || :)
+ 
+--include $(DEP_FILES)
++#-include $(DEP_FILES)
+ 
+ mostlyclean-depend:
+ 
