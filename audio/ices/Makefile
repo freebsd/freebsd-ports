@@ -7,13 +7,14 @@
 
 PORTNAME=	ices
 PORTVERSION=	2.0.1
+PORTREVISION=	1
 CATEGORIES=	audio net
 MASTER_SITES=	http://svn.xiph.org/releases/ices/
 
 MAINTAINER=	lofi@freebsd.org
 COMMENT=	A streaming source client for icecast 2
 
-LIB_DEPENDS=	shout.3:${PORTSDIR}/audio/libshout2 \
+LIB_DEPENDS=	shout.4:${PORTSDIR}/audio/libshout2 \
 		vorbis.3:${PORTSDIR}/audio/libvorbis \
 		xml2.5:${PORTSDIR}/textproc/libxml2
 

@@ -7,6 +7,7 @@
 
 PORTNAME=	shout
 PORTVERSION=	2.0
+PORTREVISION=	1
 CATEGORIES=	audio ruby
 MASTER_SITES=	http://www.dingoskidneys.com/~jaredj/downloads/
 MASTER_SITE_SUBDIR=	ruby-${PORTNAME}
@@ -17,7 +18,7 @@ DIST_SUBDIR=	ruby
 MAINTAINER=	knu@FreeBSD.org
 COMMENT=	A Ruby binding to the libshout library
 
-LIB_DEPENDS=	shout.3:${PORTSDIR}/audio/libshout2
+LIB_DEPENDS=	shout.4:${PORTSDIR}/audio/libshout2
 
 USE_RUBY=	yes
 USE_RUBY_EXTCONF=	yes

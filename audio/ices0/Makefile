@@ -7,7 +7,7 @@
 
 PORTNAME=	ices
 PORTVERSION=	0.4
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	audio net
 MASTER_SITES=	http://svn.xiph.org/releases/ices/
 
@@ -17,7 +17,7 @@ COMMENT=	A streaming source client for icecast 2
 LIB_DEPENDS=	FLAC.7:${PORTSDIR}/audio/flac \
 		faad:${PORTSDIR}/audio/faad \
 		mp3lame:${PORTSDIR}/audio/lame \
-		shout.3:${PORTSDIR}/audio/libshout2 \
+		shout.4:${PORTSDIR}/audio/libshout2 \
 		vorbis.3:${PORTSDIR}/audio/libvorbis \
 		xml2.5:${PORTSDIR}/textproc/libxml2
 

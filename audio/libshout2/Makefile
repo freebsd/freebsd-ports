@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	libshout2
-PORTVERSION=	2.0
-PORTREVISION=	5
+PORTVERSION=	2.1
 PORTEPOCH=	1
 CATEGORIES=	audio net
 MASTER_SITES=	http://www.icecast.org/files/libshout/
@@ -16,14 +15,15 @@ DISTNAME=	libshout-${PORTVERSION}
 MAINTAINER=	lofi@freebsd.org
 COMMENT=	Routines for connecting and transmitting data to the icecast server
 
-LIB_DEPENDS=	vorbis.3:${PORTSDIR}/audio/libvorbis
+LIB_DEPENDS=	theora:${PORTSDIR}/multimedia/libtheora \
+		vorbis:${PORTSDIR}/audio/libvorbis
 
 CONFIGURE_ENV=	CFLAGS="${CFLAGS} ${PTHREAD_CFLAGS} -I${LOCALBASE}/include" \
 		LDFLAGS="${PTHREAD_LIBS} -L${LOCALBASE}/lib"
 INSTALLS_SHLIB=	yes
 USE_GMAKE=	yes
 USE_GNOME+=	pkgconfig
-USE_INC_LIBTOOL_VER=13
+USE_LIBTOOL_VER=15
 CONFLICTS=	libshout-1.0.7
 USE_REINPLACE=	yes
 

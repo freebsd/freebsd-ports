@@ -7,6 +7,7 @@
 
 PORTNAME=	Shout
 PORTVERSION=	2.0.1
+PORTREVISION=	1
 CATEGORIES=	audio perl5
 MASTER_SITES=	http://www.icecast.org/releases/libshout/
 PKGNAMEPREFIX=	p5-
@@ -14,7 +15,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	mat@FreeBSD.org
 COMMENT=	Perl glue for libshout MP3 streaming source library
 
-LIB_DEPENDS=	shout.3:${PORTSDIR}/audio/libshout2
+LIB_DEPENDS=	shout.4:${PORTSDIR}/audio/libshout2
 
 PERL_CONFIGURE=	yes
 

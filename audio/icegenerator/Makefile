@@ -7,6 +7,7 @@
 
 PORTNAME=		icegenerator
 PORTVERSION=		0.5.4
+PORTREVISION=		1
 CATEGORIES=		audio net
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -14,7 +15,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=		funkblaster@n11.bmstu.ru
 COMMENT=		Direct streaming generator for Icecast/Shoutcast
 
-LIB_DEPENDS=		shout.3:${PORTSDIR}/audio/libshout2
+LIB_DEPENDS=		shout.4:${PORTSDIR}/audio/libshout2
 
 INSTALLS_SHLIB=		yes
 GNU_CONFIGURE=		yes
