@@ -194,3 +194,37 @@
   
   static int apop (vec)
   register char  **vec;
+--- conf/config/mts.c	Mon Sep 22 10:44:37 1997
++++ conf/config/mts.c	Mon Sep 22 10:40:14 1997
+@@ -13,6 +13,7 @@
+ #include "../h/strings.h"
+ #include <ctype.h>
+ #include <stdio.h>
++#include <paths.h>
+ #include "mts.h"
+ #ifdef	NETWORK
+ #if	defined(BSD42) || defined(SOCKETS)
+@@ -119,7 +120,7 @@
+ 
+ #ifdef	SENDMTS
+ char   *hostable = "@(MHETCPATH)/hosts";
+-char   *sendmail = "/usr/lib/sendmail";
++char   *sendmail = _PATH_SENDMAIL;
+ #endif /* SENDMTS */
+ 
+ 
+--- conf/doc/slocal.rf	Tue Nov 30 20:00:20 1993
++++ conf/doc/slocal.rf	Mon Sep 22 10:41:16 1997
+@@ -294,9 +294,9 @@
+ .Uh "Duplicate Message Suppression"
+ \fIslocal\fR is able to detect and supress duplicate messages.
+ To enable this,
+-create two empty files in your $HOME directory:
+-\&.maildelivery.pag and \&.maildelivery.dir.
+-These are ndbm files which are used to store the Message-IDs of
++create an empty file in your $HOME directory:
++\&.maildelivery.db.
++These is a db files which are used to store the Message-IDs of
+ incoming messages.
+ @END: MSGID
+ .Fi
