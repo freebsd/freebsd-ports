@@ -7,7 +7,7 @@
 
 PORTNAME=	boinc-client
 PORTVERSION=	4.13
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net
 MASTER_SITES=	http://boinc.berkeley.edu/source/nightly/
 DISTNAME=	boinc_public-cvs-2004-10-14
@@ -62,7 +62,7 @@ post-build:
 		-e "s:%%BOINC_GROUP%%:${BOINC_GROUP}:g" \
 		< ${FILESDIR}/boinc-client.1 > ${WRKDIR}/boinc-client.1; \
 	${SED}  -e "s:%%BOINC_BINARY%%:$$BBIN:g" \
-		-e "s:%%BOINC_DATADIR%%:${PREFIX}/boinc:g" \
+		-e "s:%%BOINC_DATADIR%%:${BOINC_DATADIR}:g" \
 		-e "s:%%BOINC_HOME%%:${BOINC_HOME}:g" \
 		-e "s:%%BOINC_USER%%:${BOINC_USER}:g" \
 		-e "s:%%BOINC_GROUP%%:${BOINC_GROUP}:g" \
