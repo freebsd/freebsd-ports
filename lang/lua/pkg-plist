@@ -9,6 +9,7 @@ lib/liblua.so.5
 lib/liblualib.a
 lib/liblualib.so
 lib/liblualib.so.5
+%%DOCSDIR%%/contents.html
 %%DOCSDIR%%/logo.gif
 %%DOCSDIR%%/lua.html
 %%DOCSDIR%%/luac.html
