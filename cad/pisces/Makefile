@@ -14,8 +14,13 @@ EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=	masini@uniroma3.it
 
-BUILD_DEPENDS=	f2c:${PORTSDIR}/lang/f2c \
-		imake:${PORTSDIR}/devel/imake-4
+BUILD_DEPENDS=	f2c:${PORTSDIR}/lang/f2c
+
+.include <bsd.port.pre.mk>
+
+.if ${XFREE86_VERSION} != 3
+BUILD_DEPENDS+=	imake:${PORTSDIR}/devel/imake-4
+.endif
 
 NO_WRKSUBDIR=	yes
 USE_XLIB=	yes
@@ -38,4 +43,4 @@ post-install:
 	${CP} -R ${WRKSRC}/pisces/9009/test_suite ${PREFIX}/share/doc/pisces
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
