@@ -55,7 +55,6 @@
     SUBDIR += p5-NNTPClient
     SUBDIR += p5-News-Article
     SUBDIR += p5-News-Newsrc
-    SUBDIR += pan
     SUBDIR += pan2
     SUBDIR += papercut
     SUBDIR += pgpmoose
