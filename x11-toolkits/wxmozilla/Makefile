@@ -14,7 +14,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	Embedding Mozilla in wxWindows
+COMMENT=	Embedding Mozilla in wxWidgets
 
 BUILD_DEPENDS=	${X11BASE}/lib/firefox/lib/pkgconfig/mozilla-nspr.pc:${PORTSDIR}/www/firefox \
 		${PYTHON_SITELIBDIR}/wxPython/__init__.py:${PORTSDIR}/x11-toolkits/py-wxPython

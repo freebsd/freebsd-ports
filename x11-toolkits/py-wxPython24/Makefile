@@ -15,7 +15,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	${PORTNAME}Src-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	Python bindings for the wxWindows/GTK GUI toolkit
+COMMENT=	Python bindings for the wxWidgets/GTK GUI toolkit
 
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/OpenGL/__init__.py:${PORTSDIR}/graphics/py-opengl
 
