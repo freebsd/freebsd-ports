@@ -53,8 +53,8 @@ DISTFILES=	browser.xpi \
 		mail.xpi \
 		psm.xpi \
 		regus.xpi \
-		talkback.xpi \
 		spellcheck.xpi \
+		talkback.xpi \
 		venkman.xpi \
 		xpcom.xpi
 .if exists(${WRKDIRPREFIX}${.CURDIR}/work/xpi/components.conf)
@@ -64,9 +64,9 @@ DISTFILES!=	${CAT} ${WRKDIRPREFIX}${.CURDIR}/work/xpi/components.conf
 do-extract:
 	${MKDIR} ${WRKSRC}
 .for i in ${DISTFILES}
-	unzip -qo ${DISTDIR}/${DIST_SUBDIR}/${i} -d ${WRKSRC}
-	${CHMOD} -R a-w ${WRKDIR}
-	${CHOWN} -R 0:0 ${WRKDIR}
+	${UNZIP_CMD} -qo ${DISTDIR}/${DIST_SUBDIR}/${i} -d ${WRKSRC}
+	${CHMOD} -R a-w ${WRKSRC}
+	${CHOWN} -R 0:0 ${WRKSRC}
 .endfor
 
 do-configure:
