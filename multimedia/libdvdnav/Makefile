@@ -14,7 +14,7 @@ MASTER_SITE_SUBDIR=	dvd
 MAINTAINER=	nobutaka@FreeBSD.org
 COMMENT=	The library for the xine-dvdnav plugin
 
-LIB_DEPENDS=	dvdread.2:${PORTSDIR}/multimedia/libdvdread
+LIB_DEPENDS=	dvdread.3:${PORTSDIR}/multimedia/libdvdread
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	THREAD_CFLAGS="${PTHREAD_CFLAGS}" \

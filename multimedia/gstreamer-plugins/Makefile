@@ -453,7 +453,7 @@ PLIST_SUB+=	LIBDVDNAV=""
 CONFIGURE_ARGS+=	--disable-dvdread
 PLIST_SUB+=	LIBDVDREAD="@comment "
 .else
-LIB_DEPENDS+=	dvdread.2:${PORTSDIR}/multimedia/libdvdread
+LIB_DEPENDS+=	dvdread.3:${PORTSDIR}/multimedia/libdvdread
 
 PLIST_SUB+=	LIBDVDREAD=""
 .endif

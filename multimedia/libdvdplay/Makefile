@@ -14,7 +14,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}/${PORTVERSION}
 MAINTAINER=	lioux@FreeBSD.org
 COMMENT=	Portable abstraction library for DVD navigation
 
-LIB_DEPENDS=	dvdread.2:${PORTSDIR}/multimedia/libdvdread
+LIB_DEPENDS=	dvdread.3:${PORTSDIR}/multimedia/libdvdread
 
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
