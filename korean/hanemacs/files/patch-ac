@@ -1,0 +1,38 @@
+--- src/s/freebsd.h.orig	Sun Jun  9 13:14:32 1996
++++ src/s/freebsd.h	Wed Dec  3 17:36:40 1997
+@@ -33,9 +33,16 @@
+ 
+ #define LIBS_DEBUG
+ #define LIBS_SYSTEM -lutil
+-#define LIBS_TERMCAP -ltermcap
+ #define LIB_GCC -lgcc
+ 
++#ifdef HAVE_LIBNCURSES
++#define TERMINFO
++#define LIBS_TERMCAP -lncurses
++#else
++#define LIBS_TERMCAP -ltermcap
++#endif
++
++
+ #define SYSV_SYSTEM_DIR
+ 
+ /* freebsd has POSIX-style pgrp behavior. */
+@@ -46,7 +53,7 @@
+ #define LD_SWITCH_SYSTEM -e start -dc -dp
+ #define HAVE_TEXT_START		/* No need to define `start_of_text'. */
+ #define START_FILES pre-crt0.o /usr/lib/crt0.o
+-#define UNEXEC unexsunos4.o
++#define UNEXEC unexfreebsd.o
+ #define RUN_TIME_REMAP
+ 
+ #ifndef N_TRELOFF
+@@ -80,6 +87,8 @@
+ #define BSD 199103
+ #elif __FreeBSD__ == 2
+ #define BSD 199306
++#elif __FreeBSD__ == 3
++#define BSD 199506
+ #endif
+ 
+ #define WAITTYPE int
