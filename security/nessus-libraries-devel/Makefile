@@ -6,7 +6,7 @@
 # $FreeBSD$
 #
 
-DISTNAME=	nessus-libraries-0.99.2
+DISTNAME=	nessus-libraries-0.99.3
 CATEGORIES=	security
 MASTER_SITES=	ftp://ftp.cis.fed.gov/pub/nessus/nessus-${NESSUS_REV}/ \
 		ftp://ftp.nessus.org/pub/nessus/nessus-${NESSUS_REV}/ \
@@ -26,6 +26,9 @@ DIST_SUBDIR=	nessus
 WRKSRC=		${WRKDIR}/nessus-libraries
 
 GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	--enable-cipher
+
+MAN1=		nessus-config.1
 
 .include <bsd.port.pre.mk>
 

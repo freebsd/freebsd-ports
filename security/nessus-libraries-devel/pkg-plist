@@ -13,6 +13,7 @@ lib/libpcap-nessus.so.99
 lib/libpeks.a
 lib/libpeks.so
 lib/libpeks.so.0
+include/nessus/getopt.h
 include/nessus/pcap.h
 include/nessus/pcap-namedb.h
 include/nessus/libnessus.h
@@ -21,4 +22,7 @@ include/nessus/harglists.h
 include/nessus/net/bpf.h
 @dirrm include/nessus/net
 @dirrm include/nessus
+include/peks/messages.h
+include/peks/peks.h
+@dirrm include/peks
 bin/nessus-config

@@ -6,8 +6,8 @@
 # $FreeBSD$
 #
 
-DISTNAME=	libnasl-0.99.2
-PKGNAME=	nessus-libnasl-0.99.2
+DISTNAME=	libnasl-0.99.3
+PKGNAME=	nessus-libnasl-0.99.3
 CATEGORIES=	security
 MASTER_SITES=	ftp://ftp.cis.fed.gov/pub/nessus/nessus-${NESSUS_REV}/ \
 		ftp://ftp.nessus.org/pub/nessus/nessus-${NESSUS_REV}/ \
@@ -29,6 +29,8 @@ DIST_SUBDIR=	nessus
 WRKSRC=		${WRKDIR}/libnasl
 
 GNU_CONFIGURE=	yes
+
+MAN1=		nasl-config.1
 
 .include <bsd.port.pre.mk>
 
