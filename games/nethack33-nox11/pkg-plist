@@ -2,8 +2,10 @@ bin/nethack
 lib/nethackdir/nethack
 @exec mkdir %D/lib/nethackdir/save
 @exec chmod -R 775 %D/lib/nethackdir
+@exec chmod 2755 %D/lib/nethackdir/nethack
 @exec chown games.games %D/lib/nethackdir/save
 @unexec rm -rf %D/lib/nethackdir/save
+share/doc/nethack/Guidebook.txt
 lib/nethackdir/A-filla.lev
 lib/nethackdir/A-fillb.lev
 lib/nethackdir/A-goal.lev
@@ -116,3 +118,4 @@ lib/nethackdir/logfile
 lib/nethackdir/record
 lib/nethackdir/perm
 @dirrm lib/nethackdir
+@dirrm share/doc/nethack
