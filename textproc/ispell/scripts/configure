@@ -4,6 +4,10 @@ if [ "`echo a|sed -e P`" = "aa" ]; then
   echo You need a newer version of sed. Use sed from -current or gnu sed
   exit 1
 fi
+if [ ! -f /usr/share/dict/words ]; then
+  echo "you need to install /usr/share/dict/words from the 'dict' distribution first"
+  exit 1
+fi
 cd $WRKSRC || exit 1;
 
 if [ -f $WRKDIR/extra_dict ]; then
@@ -41,7 +45,6 @@ echo "#undef WORDS"  >> local.h
 echo '#define WORDS   "/usr/share/dict/words"'  >> local.h 
 echo '#undef ELISPDIR'  >> local.h
 echo "#define ELISPDIR \"$PREFIX/share/emacs/site-lisp\"" >> local.h
-echo '#define CFLAGS "-O2 -fno-strength-reduce"' >>local.h
 
 mv Makefile Makefile.orig
 sed -e 's/^[ 	]*$/\
