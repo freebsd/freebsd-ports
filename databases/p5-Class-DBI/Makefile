@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Class-DBI
-PORTVERSION=	0.93
+PORTVERSION=	0.94
 CATEGORIES=	databases perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Class
@@ -18,15 +18,16 @@ COMMENT=	Simple Database Abstraction
 BUILD_DEPENDS=	${SITE_PERL}/Class/Accessor.pm:${PORTSDIR}/devel/p5-Class-Accessor \
 		${SITE_PERL}/Class/Data/Inheritable.pm:${PORTSDIR}/devel/p5-Class-Data-Inheritable \
 		${SITE_PERL}/Ima/DBI.pm:${PORTSDIR}/databases/p5-Ima-DBI \
-		${SITE_PERL}/protected.pm:${PORTSDIR}/devel/p5-Class-Fields \
 		${SITE_PERL}/File/Temp.pm:${PORTSDIR}/devel/p5-File-Temp \
 		${SITE_PERL}/${PERL_ARCH}/Storable.pm:${PORTSDIR}/devel/p5-Storable \
+		${SITE_PERL}/UNIVERSAL/moniker.pm:${PORTSDIR}/devel/p5-UNIVERSAL-moniker \
+		${SITE_PERL}/${PERL_ARCH}/List/Util.pm:${PORTSDIR}/lang/p5-Scalar-List-Utils \
 		${SITE_PERL}/Class/Trigger.pm:${PORTSDIR}/devel/p5-Class-Trigger
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
 
-MAN3=		Class::DBI.3 Class::DBI::ColumnGrouper.3 \
+MAN3=		Class::DBI.3 Class::DBI::Column.3 Class::DBI::ColumnGrouper.3 \
 		Class::DBI::Iterator.3 Class::DBI::Query.3
 
 post-configure:
