@@ -56,6 +56,10 @@ NOT_FOR_ARCHS+=	alpha
 
 .include <bsd.port.pre.mk>
 
+.if ${ARCH} == "sparc64"
+BROKEN=		"Does not build on sparc64"
+.endif
+
 post-patch:
 	@${SED} -e "s#%%CFLAGS%%#${CFLAGS}#;s#%%PREFIX%%#${PREFIX}#; \
 	           s#%%PTHREAD_CFLAGS%%#${PTHREAD_CFLAGS}#; \
