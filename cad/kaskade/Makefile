@@ -14,6 +14,8 @@ EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=	giffunip@asme.org
 
+USE_X_PREFIX=	yes
+
 .include <bsd.port.pre.mk>
 .if ${OSVERSION} >= 400004
 MAKE_ENV+=	HAVE_G2C=yes
@@ -23,7 +25,6 @@ DIST_SUBDIR=	kaskade
 WRKSRC=         ${WRKDIR}/3.1
 MAKEFILE=	makefile
 ALL_TARGET=	k6
-USE_X_PREFIX=	yes
 
 do-install:
 	$(INSTALL_PROGRAM) $(WRKSRC)/k6 $(PREFIX)/bin
