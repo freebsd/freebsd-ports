@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	vamos
-PORTVERSION=	0.4.1
+PORTVERSION=	0.4.2
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -19,9 +19,10 @@ BUILD_DEPENDS=	${X11BASE}/lib/libsgmisc.a:${PORTSDIR}/devel/simgear \
 		${X11BASE}/lib/libplibul.a:${PORTSDIR}/x11-toolkits/plib
 LIB_DEPENDS=	sigc-1.2.5:${PORTSDIR}/devel/libsigc++12 \
 		sigc.1:${PORTSDIR}/devel/libsigc++ \
+		glut.3:${PORTSDIR}/graphics/libglut \
 		png.5:${PORTSDIR}/graphics/png
 
-USE_MESA=	yes
+USE_GL=		yes
 USE_GETOPT_LONG=	yes
 USE_REINPLACE=	yes
 USE_GMAKE=	yes
@@ -42,7 +43,6 @@ post-extract:
 	@${RM} -f ${WRKSRC}/doc/*.info*
 
 post-patch:
-	@${REINPLACE_CMD} -e '/^CXXFLAGS/d' ${WRKSRC}/configure
 	@${FIND} ${WRKSRC} -name "Makefile.in" | ${XARGS} ${REINPLACE_CMD} -e \
 		'/^AM_CXXFLAGS/d'
 
