@@ -1,17 +1,17 @@
 # New ports collection makefile for:	rman
-# Version required:     3.0.2a9
+# Version required:     3.0.3a11
 # Date created:         27 Dec 1994
-# Whom:                 thomas@ghpc8.ihf.rwth-aachen.de
+# Whom:                 Thomas Gellekum <tg@FreeBSD.org>
 #
-# $Id: Makefile,v 1.13 1997/04/27 00:11:48 asami Exp $
+# $Id: Makefile,v 1.14 1997/05/30 19:59:34 max Exp $
 #
 
-DISTNAME=       rman-3.0.2a9
+DISTNAME=       rman-3.0.3a11
 CATEGORIES=	textproc
 MASTER_SITES=   ftp://ftp.cs.berkeley.edu/ucb/people/phelps/tcltk/
 EXTRACT_SUFX=	.tar.Z
 
-MAINTAINER=	thomas@ghpc8.ihf.rwth-aachen.de
+MAINTAINER=	tg@FreeBSD.org
 
 NO_CDROM=	"Don't sell for profit"
 MAN1=		rman.1
