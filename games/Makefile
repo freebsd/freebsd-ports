@@ -224,6 +224,7 @@
     SUBDIR += knights
     SUBDIR += kobodeluxe
     SUBDIR += kpacman
+    SUBDIR += kpicframer
     SUBDIR += kpictorial
     SUBDIR += krosswordplayer
     SUBDIR += kslide
