@@ -3,12 +3,6 @@ include/X11/fonts/codeconv/xttcap.h
 include/X11/fonts/codeconv/xttcconv.h
 include/X11/fonts/codeconv/xttcconvP.h
 include/X11/fonts/codeconv/xttcommon.h
-lib/X11/config/Imake.rules
-lib/X11/config/Imake.tmpl
-lib/X11/config/X11.tmpl
-lib/X11/config/bsdLib.rules
-lib/X11/config/ibmLib.rules
-lib/X11/config/linux.cf
 lib/X11/config/xtt.tmpl
 lib/X11/config/xttMod.tmpl
 lib/X11/config/xttsite.def
@@ -54,5 +48,6 @@ share/doc/Xtt/INSTALL.eng
 share/doc/Xtt/INSTALL.jis
 share/doc/Xtt/MISCNOTES.eng
 share/doc/Xtt/MISCNOTES.jis
+@dirrm lib/modules/codeconv
 @dirrm share/doc/Xtt
 @dirrm include/X11/fonts/codeconv
