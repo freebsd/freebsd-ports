@@ -28,7 +28,7 @@
  # This is for cc on SunOS with debug
 -CCOPTIONS= -g -I/usr/include
 -LDOPTIONS= -L/usr/lib -lXaw -lXmu -lXt -lXext -lX11
-+CCOPTIONS= -g -O2 -m486 -pipe -fno-strength-reduce \
++CCOPTIONS= -g ${CFLAGS} -fno-strength-reduce \
 +	-I/usr/include -I$(PREFIX)/include 
 +LDOPTIONS= -L/usr/lib -L$(PREFIX)/lib -lXaw -lXmu -lXt -lXext -lX11
 +.if ${PORTOBJFORMAT} == "elf"
