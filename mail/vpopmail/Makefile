@@ -21,7 +21,7 @@ RUN_DEPENDS=	${QMAIL_DIR}/bin/qmail-send:${PORTSDIR}/mail/qmail \
 GNU_CONFIGURE=	YES
 USE_GMAKE=	YES
 
-CONFIGURE_ARGS=	--enable-qmail-dir=${QMAIL_DIR} \
+CONFIGURE_ARGS=	--enable-qmaildir=${QMAIL_DIR} \
 		--enable-tcprules-bin=${LOCALBASE}/bin/tcprules \
 		--enable-tcpserver-file=${PREFIX}/vpopmail/etc/tcp.smtp
 
