@@ -3,7 +3,7 @@
 # Date created:		23 September 1998
 # Whom:			Shigeyuki FUKUSHIMA <shige@FreeBSD.ORG>
 #
-# $Id: Makefile,v 1.7 1999/05/09 16:39:50 shige Exp $
+# $Id: Makefile,v 1.8 1999/08/06 16:56:19 shige Exp $
 #
 
 MAINTAINER=	shige@FreeBSD.ORG
@@ -16,7 +16,7 @@ MASTERDIR=	${.CURDIR}/../../editors/flim-emacs-current
 # emacs port setup
 EMACS_NAME=	emacs
 EMACS_PORT=	emacs20
-EMACS_VER=	20.3
+EMACS_VER=	20.4
 EMACS_LIBDIR=		share/${EMACS_NAME}
 EMACS_LIBDIR_WITH_VER=	${EMACS_LIBDIR}/${EMACS_VER}
 
