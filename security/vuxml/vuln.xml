@@ -32,12 +32,39 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
   "http://www.vuxml.org/dtd/vuxml-1/vuxml-10.dtd">
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
 
+  <vuln vid="739bb51d-7e82-11d8-9645-0020ed76ef5a">
+    <topic>racoon security association deletion vulnerability</topic>
+    <affects>
+      <package>
+	<name>racoon</name>
+	<range><lt>20040116a</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+        <p>A remote attacker may use specially crafted IKE/ISAKMP
+          messages to cause racoon to delete security associations.
+          This could result in denial-of-service or possibly cause
+          sensitive traffic to be transmitted in plaintext, depending
+          upon configuration.</p>
+      </body>
+    </description>
+    <references>
+      <url>http://marc.theaimsgroup.com/?l=bugtraq&amp;m=107403331309838</url>
+    </references>
+    <dates>
+      <discovery>2004-01-13</discovery>
+      <entry>2004-03-25</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="6c7661ff-7912-11d8-9645-0020ed76ef5a">
     <topic>uudeview buffer overflows</topic>
     <affects>
       <package>
 	<name>uulib</name>
 	<name>uudeview</name>
+	<name>xdeview</name>
 	<range><lt>0.5.20</lt></range>
       </package>
     </affects>
@@ -53,6 +80,7 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     <dates>
       <discovery>2004-03-01</discovery>
       <entry>2004-03-18</entry>
+      <modified>2004-03-25</modified>
     </dates>
   </vuln>
 
