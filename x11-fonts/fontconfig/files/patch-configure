@@ -1,6 +1,14 @@
---- configure.orig	Thu Mar 13 17:21:08 2003
-+++ configure	Thu Mar 13 17:21:15 2003
-@@ -611,7 +611,7 @@
+--- configure.orig	Fri Mar  7 16:06:13 2003
++++ configure	Mon Mar 31 13:31:40 2003
+@@ -5452,6 +5452,7 @@
+ 
+ # This can be used to rebuild libtool when needed
+ LIBTOOL_DEPS="$ac_aux_dir/ltmain.sh"
++$ac_aux_dir/ltconfig $LIBTOOL_DEPS
+ 
+ # Always use our own libtool.
+ LIBTOOL='$(SHELL) $(top_builddir)/libtool'
+@@ -6402,7 +6403,7 @@
  # Check whether --with-default_fonts or --without-default_fonts was given.
  if test "${with_default_fonts+set}" = set; then
    withval="$with_default_fonts"
