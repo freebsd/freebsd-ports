@@ -1,0 +1,34 @@
+bin/jamboree
+etc/gconf/gconf.xml.defaults/apps/jamboree/%gconf.xml
+etc/gconf/gconf.xml.defaults/apps/jamboree/columns/%gconf.xml
+etc/gconf/gconf.xml.defaults/schemas/apps/jamboree/%gconf.xml
+etc/gconf/gconf.xml.defaults/schemas/apps/jamboree/columns/%gconf.xml
+etc/gconf/schemas/jamboree.schemas
+share/gnome/applications/jamboree.desktop
+share/gnome/jamboree/column-chooser.glade
+share/gnome/jamboree/jamboree-next.png
+share/gnome/jamboree/jamboree-note.png
+share/gnome/jamboree/jamboree-pause.png
+share/gnome/jamboree/jamboree-play.png
+share/gnome/jamboree/jamboree-playlist-library.png
+share/gnome/jamboree/jamboree-playlist-regular.png
+share/gnome/jamboree/jamboree-playlist-smart.png
+share/gnome/jamboree/jamboree-prev.png
+share/gnome/jamboree/jamboree-shuffle.png
+share/gnome/jamboree/jamboree-small-blank.png
+share/gnome/jamboree/jamboree-small-pause.png
+share/gnome/jamboree/jamboree-stop.png
+share/gnome/jamboree/jamboree-volume-max.png
+share/gnome/jamboree/jamboree-volume-medium.png
+share/gnome/jamboree/jamboree-volume-min.png
+share/gnome/jamboree/jamboree-volume-zero.png
+share/gnome/jamboree/jamboree.glade
+share/gnome/jamboree/master-out.png
+share/gnome/jamboree/smart-playlist-dialog.glade
+share/gnome/pixmaps/jamboree.png
+share/locale/sv/LC_MESSAGES/jamboree.mo
+@dirrm etc/gconf/gconf.xml.defaults/apps/jamboree/columns
+@dirrm etc/gconf/gconf.xml.defaults/apps/jamboree
+@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/jamboree/columns
+@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/jamboree
+@dirrm share/gnome/jamboree
