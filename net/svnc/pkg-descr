@@ -1,0 +1,23 @@
+This is a VNC viewer for SVGAlib.
+
+from the Web page:
+
+   The viewer doesn't do any scaling or scrolling, so the desktop you
+   connect to must be of a resolution supported by your SVGALIB setup.
+   Try creating servers of different geometries and connecting to them -
+   if your svgalib setup doesn't work for one resolution it may work for
+   another.  Persevere - this has a lot of potential. You can use it to
+   make a very lightweight graphics terminal with reasonable performance
+   on low-end hardware.
+
+   The current version will not generally be able to connect to Windows
+   servers, because it requests a palette-based display which the Windows
+   server cannot generate.
+
+If you have problems, press Ctrl+Alt+Backspace, or log in over the network and
+kill the svncviewer process.
+
+WWW:  http://www.uk.research.att.com/vnc/platforms.html
+
+Trevor Johnson
+trevor@FreeBSD.org
