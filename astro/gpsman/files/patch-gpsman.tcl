@@ -1,24 +1,24 @@
 diff -ruN gpsman.tcl gpsman.tcl
---- gpsman.tcl	Mon Nov 26 03:34:12 2001
-+++ gpsman.tcl	Mon Nov 26 16:48:56 2001
+--- gpsman.tcl	Fri Mar  7 07:16:40 2003
++++ gpsman.tcl	Mon Mar 10 17:28:28 2003
 @@ -1,6 +1,6 @@
  #!/bin/sh
- # This is a Tcl/Tk script to be interpreted by wish (Tk8.2 or better): \
+ # This is a Tcl/Tk script to be interpreted by wish (Tk8.3 or better): \
 -exec wish "$0" "$@"
 +exec wish8.3 "$0" "$@"
  
  #
  #  gpsman --- GPS Manager: a manager for GPS receiver data
-@@ -103,7 +103,7 @@
- 	# on Unix systems the path may be passed as an argument
- 	set SERIALPORT [lindex $argv 0]
+@@ -159,7 +159,7 @@
+ 	    set CMDLINE 1
+ 	}
  	# otherwise the default is
 -	set DEFSPORT /dev/ttyS0
 +	set DEFSPORT /dev/cuaa0
  	# path to directory containing user data
  	set USERDIR ~/.gpsman-dir
  	# name of user preferences file
-@@ -121,7 +121,7 @@
+@@ -182,7 +182,7 @@
  }
  
   # path to directory containing program files
