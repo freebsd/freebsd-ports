@@ -6,17 +6,17 @@
 #
 
 PORTNAME=	blt
-PORTVERSION= 	2.4s
-CATEGORIES=	x11-toolkits tk82
-MASTER_SITES=	ftp://ftp.tcltk.com/aa004735/pub/blt/ \
+PORTVERSION= 	2.4u
+CATEGORIES=	x11-toolkits tk83
+MASTER_SITES=	ftp://tcltk.sourceforge.net/pub/tcltk/blt/ \
 		ftp://ftp.csl.sony.co.jp/pub/kjc/ttt-libs/
 DISTNAME=	BLT${PORTVERSION}
 
 MAINTAINER=	kjc@csl.sony.co.jp
 
-LIB_DEPENDS=	tk82.1:${PORTSDIR}/x11-toolkits/tk82
+LIB_DEPENDS=	tk83.1:${PORTSDIR}/x11-toolkits/tk83
 
-WRKSRC=		${WRKDIR}/blt2.4s
+WRKSRC=		${WRKDIR}/blt2.4u
 GNU_CONFIGURE=	yes
 INSTALLS_SHLIB=	yes
 

@@ -88,6 +88,7 @@ lib/blt2.4/demos/bitmaps/xbob.xbm
 lib/blt2.4/demos/busy1.tcl
 lib/blt2.4/demos/busy2.tcl
 lib/blt2.4/demos/dnd1.tcl
+lib/blt2.4/demos/dnd2.tcl
 lib/blt2.4/demos/dragdrop1.tcl
 lib/blt2.4/demos/dragdrop2.tcl
 lib/blt2.4/demos/eps.tcl
