@@ -1,0 +1,19 @@
+*** misc/Imakefile.orig	Fri Jan 28 14:36:42 1994
+--- misc/Imakefile	Sun Aug 11 09:02:42 1996
+***************
+*** 37,43 ****
+  #endif /* nec_ews_svr4 */
+  
+  InstallNamedNonExec(default.ca,default.canna,$(cannaLibDir))
+! InstallNamedNonExec(Readme,Readme,$(LockDir))
+  InstallNonExec(is.c,$(cannaLibDir)/sample/src)
+  InstallNonExec(premountdics,$(DicDir))
+  
+--- 37,43 ----
+  #endif /* nec_ews_svr4 */
+  
+  InstallNamedNonExec(default.ca,default.canna,$(cannaLibDir))
+! /* InstallNamedNonExec(Readme,Readme,$(LockDir)) */
+  InstallNonExec(is.c,$(cannaLibDir)/sample/src)
+  InstallNonExec(premountdics,$(DicDir))
+  
