@@ -3,6 +3,7 @@ bin/canlisp
 bin/cannacheck
 bin/cannastat
 bin/catdic
+bin/chmoddic
 bin/cpdic
 bin/crfreq
 bin/crxdic
@@ -114,6 +115,11 @@ sbin/cannakill
 @dirrm share/canna/sample
 @dirrm share/canna/dic/canna
 @dirrm include/canna
+@dirrm lib/canna/dic/user/user
+@dirrm lib/canna/dic/user
+@dirrm lib/canna/dic/group
+@dirrm lib/canna/dic
+@dirrm lib/canna
 @unexec rmdir %D/share/canna/dic/user/user 2>/dev/null || true
 @unexec rmdir %D/share/canna/dic/user      2>/dev/null || true
 @unexec rmdir %D/share/canna/dic/group     2>/dev/null || true
