@@ -8742,6 +8742,7 @@ zh-rxvt		ports/chinese/rxvt
 zh-rxvt-big5	ports/chinese/rxvt-big5
 zh-rxvt-gb		ports/chinese/rxvt-gb
 zh-stardict	ports/chinese/stardict
+zh-stardict2	ports/chinese/stardict2
 zh-tcl		ports/chinese/tcl83
 zh-tcl83	ports/chinese/tcl83
 zh-telnet	ports/chinese/telnet
