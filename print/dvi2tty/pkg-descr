@@ -1,0 +1,15 @@
+dvi2tty is a simple utility which displays a dvi file on a text only
+device, say a terminal or a line printer. 
+
+The output is not perfect but it does give you a basic idea of what
+the final text would look like. I personally use this utility for the
+first step in converting a dvi file into a text file.
+
+This program comes from the CTAN archive and it not currently being
+maintained by anyone. Please see the README files in the distribution
+for more information.
+
+Share and enjoy,
+
+Joel...
+suttonj@interconnect.com.au

@@ -1,0 +1,26 @@
+The following are patches against the standard dvi2tty distribution (at
+least as of March of 1996, but it doesn't look like it's going to be
+changing any time in the near future).  The original code doesn't
+null-terminate a string at several points, apparently relying on the
+assumption that all memory will be zeroed.  This is not the case on
+several systems, most notably Linux.  These patches will also clean up the
+Makefile and add a make clean target.
+
+To apply these patches, use:
+
+	patch < dvi2tty.patch
+
+If you don't have patch on your system, you can obtain it from
+prep.ai.mit.edu (or any mirror) in /pub/gnu; I highly recommend you
+install it.  Alternately, you can just make the below changes by hand
+(there aren't very many).
+
+Feel free to send me questions, other problems, corrections, and the like,
+but please be aware that I am not the official maintainer of this package,
+and although I use it I do not know a lot about the internals.  I'll try
+to help, but don't expect too much.
+
+					Russ Allbery
+					rra@cs.stanford.edu
+
+--------------------------------------------------------------------------
