@@ -7,7 +7,7 @@
 
 PORTNAME=	ruby_static
 PORTVERSION=	${RUBY_PORTVERSION}
-PORTREVISION?= 1
+PORTREVISION?=	1
 CATEGORIES=	lang ruby ipv6
 MASTER_SITES=	# none
 DISTFILES=	# none
@@ -47,10 +47,8 @@ NEWAUTOCONF=	yes
 
 .if defined(NEWAUTOCONF)
 BUILD_DEPENDS+=	autoconf:${PORTSDIR}/devel/autoconf
-GNU_CONFIGURE=	yes
-.else
-USE_AUTOCONF=	yes
 .endif
+GNU_CONFIGURE=	yes
 
 WRKSRC=		${RUBY_WRKSRC}
 
