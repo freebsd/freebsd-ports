@@ -13,6 +13,8 @@ MASTER_SITE_SUBDIR=	pkfonts
 DISTFILES=	pk${RESOLUTION}.tar.gz
 # see below for RESOLUTION definition
 
+MAINTAINER=	ports@freebsd.org
+
 DIST_SUBDIR=	pkfonts
 EXTRACT_ONLY=	# extracted directly in install target
 NO_BUILD=	yes

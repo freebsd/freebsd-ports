@@ -10,6 +10,8 @@ PORTVERSION=	1.9
 CATEGORIES=	devel
 MASTER_SITES=	ftp://ftp.coda.cs.cmu.edu/pub/lwp/src/
 
+MAINTAINER=	ports@freebsd.org
+
 PORTCOMMENT=	A userspace thread library
 
 USE_GMAKE=	yes
