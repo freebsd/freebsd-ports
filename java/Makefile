@@ -16,6 +16,7 @@
     SUBDIR += jad
     SUBDIR += jaf
     SUBDIR += jakarta-bcel
+    SUBDIR += jakarta-commons-collections
     SUBDIR += jakarta-commons-lang
     SUBDIR += jakarta-log4j
     SUBDIR += jakarta-oro
