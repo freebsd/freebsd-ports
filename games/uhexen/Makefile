@@ -35,6 +35,8 @@ PLIST_SUB=	WAD:="@comment "
 PLIST_SUB=	WAD:=""
 .endif
 
+BROKEN=		"Broken pkg-plist"
+
 pre-everything::
 	@${ECHO} ""
 	@${ECHO} "You may use the following build options:"
