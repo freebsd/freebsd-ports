@@ -56,8 +56,9 @@ LIB_DEPENDS=	gnugetopt:${PORTSDIR}/devel/libgnugetopt
 # libpq.so, including for example mod_php and tcl.
 .if defined(WITH_GETTEXT)
 CONFIGURE_ARGS+=--enable-nls
+CONFIGURE_ENV+=	"LIBS=-lintl"
 LDFLAGS+=	-L${LOCALBASE}/lib -lintl
-BUILD_DEPENDS+= ${LOCALBASE}/bin/msgfmt:${PORTSDIR}/devel/gettext-old
+LIB_DEPENDS+=	intl:${PORTSDIR}/devel/gettext-old
 PLIST_SUB+=	GETTEXT=""
 .else
 PLIST_SUB+=	GETTEXT="@comment "
