@@ -7,5 +7,3 @@
 -#include <SDL/SDL_keysym.h>
 +#include <SDL11/SDL_keysym.h>
  #endif
- 
- 
