@@ -2,7 +2,7 @@
 +++ Makefile	Thu Aug 23 10:06:34 2001
 @@ -1,12 +1,11 @@
 -CC = gcc
- GLASS_VERSION = 1.1.2
+ GLASS_VERSION = 1.1.5
 -CFLAGS = -g -O3 -Wall -DVERSION_STRING=\"$(GLASS_VERSION)\"
 -LIBS = -lGL
 +CFLAGS += -Wall -I/usr/X11R6/include -DVERSION_STRING=\"$(GLASS_VERSION)\"
