@@ -25,7 +25,7 @@ do-extract:
 	@${RM} -rf ${WRKDIR}
 	@${MKDIR} ${WRKDIR}
 	@rpm2cpio ${_DISTDIR}${DISTFILES} | (cd ${WRKDIR}; cpio -i)
-	@tar -xzf ${WRKDIR}/${DISTNAME}.tar.gz -C ${WRKDIR}
+	@${TAR} -xzf ${WRKDIR}/${DISTNAME}.tar.gz -C ${WRKDIR}
 
 post-install:
 	@${MKDIR} ${PREFIX}/etc/logrotate.d
