@@ -426,6 +426,7 @@
     SUBDIR += ruby-sdl
     SUBDIR += ruby-slang
     SUBDIR += ruby-strscan
+    SUBDIR += ruby-sysvipc
     SUBDIR += ruby-textbuf
     SUBDIR += ruby-unit
     SUBDIR += rvm

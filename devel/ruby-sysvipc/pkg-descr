@@ -1,0 +1,6 @@
+Ruby-sysvipc is the extension library to use System V IPC system calls
+from Ruby.  It provides a simple object interface to message queues,
+semaphore sets, and shared memory segments.
+
+Author:	Daiki Ueno <ueno@unixuser.org>
+WWW:	http://deisui.bug.org/~ueno/ruby/sysvipc.html
