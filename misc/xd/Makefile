@@ -3,7 +3,7 @@
 # Date created:		17 October 1997
 # Whom:			KIRIYAMA Kazuhiko <kiri@kiri.toba-cmt.ac.jp>
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1998/03/16 13:29:05 tg Exp $
 #
 
 DISTNAME=	xd-8087
@@ -12,5 +12,8 @@ CATEGORIES=	misc
 MASTER_SITES=	http://spock.vector.co.jp/authors/VA004959/xd/
 
 MAINTAINER=	kiri@kiri.toba-cmt.ac.jp
+
+MAN1=		xd.1
+MANCOMPRESSED=	maybe
 
 .include <bsd.port.mk>
