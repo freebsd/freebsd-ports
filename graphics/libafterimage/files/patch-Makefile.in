@@ -1,6 +1,17 @@
---- Makefile.in.orig	Thu Jan 10 15:42:13 2002
-+++ Makefile.in	Sat Jan 12 02:44:01 2002
-@@ -47,7 +47,7 @@
+--- Makefile.in.orig	Tue Jan 15 21:53:17 2002
++++ Makefile.in	Mon Mar 22 15:04:58 2004
+@@ -14,6 +14,10 @@
+ 		blender.o export.o import.o transform.o \
+ 		ungif.o xcf.o ximage.o xpm.o
+ 
++SOLIB_OBJS= @AFTERBASE_C@ ascmap.So asfont.So asimage.So asvisual.So \
++		blender.So export.So import.So transform.So \
++		ungif.So xcf.So ximage.So xpm.So
++
+ LIB_DOCS= afterimage.h ascmap.h asfont.h asimage.h asvisual.h \
+ 		  blender.h export.h import.h transform.h ximage.h
+ 
+@@ -47,7 +51,7 @@
  MV		= @MV@
  RM		= @RM@
  RMF		= @RM@ -f
@@ -9,7 +20,7 @@
  FIND		= @FIND@
  XARGS		= @XARGS@
  LDCONFIG	= @LDCONFIG@
-@@ -59,11 +59,11 @@
+@@ -59,11 +63,11 @@
  LEXFLAGS	=
  
  INSTALL		= @INSTALL@
@@ -26,7 +37,7 @@
  
  INCS_EXTRA	= @XPM_CFLAGS@ @JPEG_CFLAGS@ @PNG_CFLAGS@ @GIF_CFLAGS@ @TIFF_CFLAGS@ @TTF_INCLUDES@
  INCS_X		= @X_CFLAGS@
-@@ -79,7 +79,7 @@
+@@ -79,7 +83,7 @@
  AFTER_MAN_DIR	= @mandir@/man3
  AFTER_APP_MAN_DIR	= @mandir@/man1
  AFTER_SHAREDIR	= @datadir@/libAfterImage
@@ -35,7 +46,7 @@
  
  all:            @LIBPROG@ $(INSTALLONBUILD) apps
  
-@@ -111,10 +111,9 @@
+@@ -111,10 +115,9 @@
  install.script:
  
  install.dyn:
@@ -48,7 +59,25 @@
  		ln -sf $(LIB_SHARED).$(LIBVERMAJOR) $(LIBDIR)/$(LIB_SHARED)
  		@( \
  		 if test `uname` = "Linux"; then \
-@@ -257,11 +256,8 @@
+@@ -239,12 +242,17 @@
+ 		$(AR) $(LIB_STATIC) $(LIB_OBJS)
+ 		$(RANLIB) $(LIB_STATIC)
+ 
++.SUFFIXES: .o .So
++
+ .c.o:
+ 		$(CC) $(CCFLAGS) $(EXTRA_DEFINES) $(INCLUDES) $(EXTRA_INCLUDES) -c $*.c
+ 
+ .c.s:
+ 		$(CC) $(CCFLAGS) $(EXTRA_DEFINES) $(INCLUDES) $(EXTRA_INCLUDES) -S $*.c
+ 
++.c.So:
++		$(CC) $(CCFLAGS) -fPIC $(EXTRA_DEFINES) $(INCLUDES) $(EXTRA_INCLUDES) -c $*.c -o $*.So
++
+ #
+ # include dependency files if they exist
+ #
+@@ -257,12 +265,9 @@
  $(LIB_SHARED): $(LIB_SHARED).$(LIBVERMAJOR)
  	ln -sf $(LIB_SHARED).$(LIBVERMAJOR) $(LIB_SHARED)
  
@@ -57,12 +86,14 @@
 -
 -$(LIB_SHARED).$(LIBVER): $(LIB_OBJS) $(LIB_INCS) config.h
 -	$(CC) -shared -Wl,-soname,$(LIB_SHARED).$(LIBVERMAJOR) -o $(LIB_SHARED).$(LIBVER) \
-+$(LIB_SHARED).$(LIBVERMAJOR): $(LIB_OBJS) $(LIB_INCS) config.h
+-	 $(LIB_OBJS)
++$(LIB_SHARED).$(LIBVERMAJOR): $(SOLIB_OBJS) $(LIB_INCS) config.h
 +	$(CC) -shared -Wl,-soname,$(LIB_SHARED).$(LIBVERMAJOR) -o $(LIB_SHARED).$(LIBVERMAJOR) \
- 	 $(LIB_OBJS)
++	 $(SOLIB_OBJS)
  
  doc.xref: $(LIB_DOCS)
-@@ -307,8 +303,6 @@
+ 	SRCS=`echo "$(LIB_DOCS) " | sed "s/.h / /g"`; \
+@@ -307,8 +312,6 @@
  
  install.doc:
  	SRCS=`echo "$(LIB_DOCS) " | sed "s/.h / /g"`; cd doc/html; \
@@ -71,7 +102,7 @@
  	    echo "$(MKDIR) $(AFTER_DOC_DIR)"; \
  		$(MKDIR) $(AFTER_DOC_DIR); \
  	    echo "$(MKDIR) $(AFTER_DOC_DIR)/html"; \
-@@ -318,7 +312,7 @@
+@@ -318,7 +321,7 @@
  		  $(INSTALL_DATA) $$f $(AFTER_DOC_DIR)/html/$$f; \
  		done; cd ../..;
  
