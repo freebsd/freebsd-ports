@@ -2,9 +2,10 @@ bin/linphone
 bin/linphonec
 bin/osipua_tester
 bin/sipomatic
-bin/speexdec
-bin/speexenc
 bin/test_sdphandler
+include/linphone/config.h
+include/linphone/linphonecore.h
+include/linphone/sndcard.h
 include/ortp/ortp-config.h
 include/ortp/ortp.h
 include/ortp/payloadtype.h
@@ -30,11 +31,12 @@ include/osipua/resolver.h
 include/osipua/sdpcontext.h
 include/osipua/sdphandler.h
 include/osipua/utils.h
-include/speex.h
-include/speex_bits.h
-include/speex_callbacks.h
-include/speex_header.h
-include/speex_stereo.h
+lib/liblinphone.a
+lib/liblinphone.so
+lib/liblinphone.so.0
+lib/liblinphonegnome.a
+lib/liblinphonegnome.so
+lib/liblinphonegnome.so.0
 lib/libmediastreamer.a
 lib/libmediastreamer.so
 lib/libmediastreamer.so.0
@@ -50,10 +52,8 @@ lib/libosipalloc.so.0
 lib/libosipua.a
 lib/libosipua.so
 lib/libosipua.so.2
-lib/libspeex.a
-lib/libspeex.so
-lib/libspeex.so.1
 libdata/bonobo/servers/GNOME_LinphoneApplet.server
+libdata/pkgconfig/linphone.pc
 libexec/linphone_applet
 share/doc/mediastreamer/book1.html
 share/doc/mediastreamer/coreapi.html
@@ -69,14 +69,9 @@ share/doc/ortp/index.sgml
 share/doc/ortp/ortp-multiplexing-sessions-(in-a-one-thread-design).html
 share/doc/ortp/ortp-rtp-payloads-and-profiles.html
 share/doc/ortp/ortp-rtpsession-api.html
-share/doc/ortp/ortp-stack-initialisation.html
 share/doc/ortp/ortp-stack-management-functions.html
 share/doc/ortp/ortp-telephone-events-(rfc2833)-.html
-share/doc/ortp/ortp-telephony-events-(rfc2833)-.html
 share/doc/ortp/ortpapi.html
-share/doc/ortp/rtpsession.html
-share/doc/ortp/stackinit.html
-share/doc/ortp/startup.html
 share/doc/osipua/book1.html
 share/doc/osipua/index.sgml
 share/doc/osipua/osipcallleg.html
@@ -87,7 +82,6 @@ share/doc/osipua/osipua-osipua-private-api.html
 share/doc/osipua/osipua-osipua-public-api.html
 share/doc/osipua/osipua.html
 share/doc/osipua/registrationctxt.html
-share/doc/speex/manual.pdf
 share/gnome/apps/Internet/linphone.desktop
 share/gnome/gnome-2.0/ui/GNOME_LinphoneApplet.xml
 share/gnome/help/linphone/C/manual/CVS/Entries
@@ -149,18 +143,6 @@ share/gnome/help/linphone/ja/manual/CVS/Entries
 share/gnome/help/linphone/ja/manual/CVS/Repository
 share/gnome/help/linphone/ja/manual/CVS/Root
 share/gnome/help/linphone/ja/manual/params.html
-share/gnome/help/linphone/ja/manual/stylesheet-images/caution.gif
-share/gnome/help/linphone/ja/manual/stylesheet-images/home.gif
-share/gnome/help/linphone/ja/manual/stylesheet-images/important.gif
-share/gnome/help/linphone/ja/manual/stylesheet-images/next.gif
-share/gnome/help/linphone/ja/manual/stylesheet-images/note.gif
-share/gnome/help/linphone/ja/manual/stylesheet-images/prev.gif
-share/gnome/help/linphone/ja/manual/stylesheet-images/tip.gif
-share/gnome/help/linphone/ja/manual/stylesheet-images/toc-blank.gif
-share/gnome/help/linphone/ja/manual/stylesheet-images/toc-minus.gif
-share/gnome/help/linphone/ja/manual/stylesheet-images/toc-plus.gif
-share/gnome/help/linphone/ja/manual/stylesheet-images/up.gif
-share/gnome/help/linphone/ja/manual/stylesheet-images/warning.gif
 share/gnome/help/linphone/ja/manual/t1.html
 share/gnome/help/linphone/ja/manual/x112.html
 share/gnome/help/linphone/ja/manual/x115.html
@@ -175,17 +157,18 @@ share/gnome/linphonec/linphonec
 share/gnome/pixmaps/linphone/linphone.png
 share/gnome/pixmaps/linphone/linphone2.png
 share/gnome/pixmaps/linphone/linphone2.xpm
-share/gnome/sounds/linphone/hello.wav
+share/gnome/sounds/linphone/hello16000.wav
+share/gnome/sounds/linphone/hello8000.wav
 share/gnome/sounds/linphone/ring.wav
 share/gnome/sounds/linphone/ringback.wav
 share/locale/de/LC_MESSAGES/linphone.mo
+share/locale/es/LC_MESSAGES/linphone.mo
 share/locale/fr/LC_MESSAGES/linphone.mo
 share/locale/it/LC_MESSAGES/linphone.mo
 share/locale/ja/LC_MESSAGES/linphone.mo
 @dirrm share/gnome/sounds/linphone
 @dirrm share/gnome/pixmaps/linphone
 @dirrm share/gnome/linphonec
-@dirrm share/gnome/help/linphone/ja/manual/stylesheet-images
 @dirrm share/gnome/help/linphone/ja/manual/CVS
 @dirrm share/gnome/help/linphone/ja/manual
 @dirrm share/gnome/help/linphone/ja
@@ -205,7 +188,6 @@ share/locale/ja/LC_MESSAGES/linphone.mo
 @dirrm share/gnome/help/linphone/C/manual
 @dirrm share/gnome/help/linphone/C
 @dirrm share/gnome/help/linphone
-@dirrm share/doc/speex
 @dirrm share/doc/osipua
 @dirrm share/doc/ortp
 @dirrm share/doc/mediastreamer
