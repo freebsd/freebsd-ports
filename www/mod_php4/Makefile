@@ -20,6 +20,10 @@ MASTER_SITES=	http://us.php.net/${PHP_DISTDIR}/ \
 		http://php3.globe.de/${PHP_DISTDIR}/
 DISTNAME=	php-${PORTVERSION}
 
+PATCHFILES=	php_configure.3.diff
+PATCH_SITES=	http://www.physik.tu-berlin.de/~ibex/ports/distfiles/ \
+		${MASTER_SITE_LOCAL}/dirk/
+
 MAINTAINER=	dirk@FreeBSD.org
 
 .if !defined(STANDALONE)
