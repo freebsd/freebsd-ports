@@ -231,6 +231,7 @@
     SUBDIR += tund
     SUBDIR += ucd-snmp
     SUBDIR += vnc
+    SUBDIR += vtun
     SUBDIR += wais
     SUBDIR += wide-dhcp
     SUBDIR += wmnet
