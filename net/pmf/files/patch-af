@@ -1,0 +1,11 @@
+--- misc.c.orig	Sat Feb 19 21:56:34 2000
++++ misc.c	Sat Feb 19 21:56:43 2000
+@@ -16,7 +16,7 @@
+ #include "config.h"
+ #include "globals.h"
+ 
+-extern long time();
++extern time_t time();
+ extern char *ctime();
+ 
+ /*---------------------------------------------------------------------------*/
