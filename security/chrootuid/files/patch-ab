@@ -1,0 +1,11 @@
+--- Makefile.orig	Sat Jan 22 15:59:52 2000
++++ Makefile	Sat Jan 22 16:01:26 2000
+@@ -1,7 +1,7 @@
+ # @(#) Makefile 1.2 93/08/12 16:09:29
+ 
+ FILES	= README Makefile chrootuid.c chrootuid.1
+-CFLAGS	= -O 
++CFLAGS	?= -O 
+ 
+ all:	chrootuid chrootuid.1
+ 
