@@ -25,6 +25,9 @@ USE_FREETYPE=	yes
 WRKSRC=		${WRKDIR}/cjk-current
 ARPHICDIR=	${PREFIX}/share/texmf/fonts/truetype/arphic
 
+MAN1=		bg5conv.1 cef5conv.1 cefconv.1 cefsconv.1 extconv.1 \
+		hbf2gf.1 sjisconv.1 ttf2pk.1 ttf2tfm.1
+
 post-install:
 .if !defined(NOPORTDOCS)
 	${RM} -fr ${PREFIX}/share/doc/CJK
@@ -38,8 +41,5 @@ post-install:
 	@${LN} -s ${PREFIX}/share/fonts/TrueType/gbsn00lp.ttf ${ARPHICDIR}/argb_sung.ttf
 	@${LN} -s ${PREFIX}/share/fonts/TrueType/gkai00mp.ttf ${ARPHICDIR}/argb_kai.ttf
 	@${LN} -s ttf2pk ${PREFIX}/share/texmf/ttf2tfm
-
-MAN1=		bg5conv.1 cef5conv.1 cefconv.1 cefsconv.1 extconv.1 \
-		hbf2gf.1 sjisconv.1 ttf2pk.1 ttf2tfm.1
 
 .include <bsd.port.mk>

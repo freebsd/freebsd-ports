@@ -15,36 +15,36 @@ bin/sjisconv
 bin/sjislatex
 bin/ttf2pk
 bin/ttf2tfm
-share/doc/CJK/CEF.doc
-share/doc/CJK/CJK.doc
-share/doc/CJK/COPYING
-share/doc/CJK/INSTALL
-share/doc/CJK/TDS.doc
-share/doc/CJK/chinese/README
-share/doc/CJK/chinese/READMEb5.tex
-share/doc/CJK/chinese/READMEgb.tex
-share/doc/CJK/chinese/emTeXb5.doc
-share/doc/CJK/chinese/teTeXb5.doc
-share/doc/CJK/cjk-enc.doc
-share/doc/CJK/commands.doc
-share/doc/CJK/dvidrv.doc
-share/doc/CJK/fonts.doc
-share/doc/CJK/hbf2gf.doc
-share/doc/CJK/history.2_5
-share/doc/CJK/history.txt
-share/doc/CJK/japanese/README
-share/doc/CJK/japanese/ascii.doc
-share/doc/CJK/japanese/japanese.doc
-share/doc/CJK/japanese/japanese.jis
-share/doc/CJK/japanese/jp-fonts.doc
-share/doc/CJK/japanese/jp-tex.doc
-share/doc/CJK/japanese/preview.doc
-share/doc/CJK/japanese/shibuaki.doc
-share/doc/CJK/pinyin.doc
-share/doc/CJK/pyhyphen.doc
-share/doc/CJK/ruby.doc
-share/doc/CJK/thaifont.doc
-share/doc/CJK/vertical.doc
+%%PORTDOCS%%share/doc/CJK/CEF.doc
+%%PORTDOCS%%share/doc/CJK/CJK.doc
+%%PORTDOCS%%share/doc/CJK/COPYING
+%%PORTDOCS%%share/doc/CJK/INSTALL
+%%PORTDOCS%%share/doc/CJK/TDS.doc
+%%PORTDOCS%%share/doc/CJK/chinese/README
+%%PORTDOCS%%share/doc/CJK/chinese/READMEb5.tex
+%%PORTDOCS%%share/doc/CJK/chinese/READMEgb.tex
+%%PORTDOCS%%share/doc/CJK/chinese/emTeXb5.doc
+%%PORTDOCS%%share/doc/CJK/chinese/teTeXb5.doc
+%%PORTDOCS%%share/doc/CJK/cjk-enc.doc
+%%PORTDOCS%%share/doc/CJK/commands.doc
+%%PORTDOCS%%share/doc/CJK/dvidrv.doc
+%%PORTDOCS%%share/doc/CJK/fonts.doc
+%%PORTDOCS%%share/doc/CJK/hbf2gf.doc
+%%PORTDOCS%%share/doc/CJK/history.2_5
+%%PORTDOCS%%share/doc/CJK/history.txt
+%%PORTDOCS%%share/doc/CJK/japanese/README
+%%PORTDOCS%%share/doc/CJK/japanese/ascii.doc
+%%PORTDOCS%%share/doc/CJK/japanese/japanese.doc
+%%PORTDOCS%%share/doc/CJK/japanese/japanese.jis
+%%PORTDOCS%%share/doc/CJK/japanese/jp-fonts.doc
+%%PORTDOCS%%share/doc/CJK/japanese/jp-tex.doc
+%%PORTDOCS%%share/doc/CJK/japanese/preview.doc
+%%PORTDOCS%%share/doc/CJK/japanese/shibuaki.doc
+%%PORTDOCS%%share/doc/CJK/pinyin.doc
+%%PORTDOCS%%share/doc/CJK/pyhyphen.doc
+%%PORTDOCS%%share/doc/CJK/ruby.doc
+%%PORTDOCS%%share/doc/CJK/thaifont.doc
+%%PORTDOCS%%share/doc/CJK/vertical.doc
 share/emacs/site-lisp/CJK/cjkspace.el
 share/emacs/site-lisp/CJK/cjktilde.el
 share/emacs/site-lisp/CJK/emacs-20.3/cjk-enc.el
@@ -468,9 +468,9 @@ share/texmf/ttf2pk/UKS.sfd
 share/texmf/ttf2pk/Unicode.sfd
 share/texmf/ttf2pk/VPS.rpl
 share/texmf/ttf2pk/ttfonts.map
-@dirrm share/doc/CJK/chinese
-@dirrm share/doc/CJK/japanese
-@dirrm share/doc/CJK
+%%PORTDOCS%%@dirrm share/doc/CJK/chinese
+%%PORTDOCS%%@dirrm share/doc/CJK/japanese
+%%PORTDOCS%%@dirrm share/doc/CJK
 @dirrm share/emacs/site-lisp/CJK/emacs-20.3
 @dirrm share/emacs/site-lisp/CJK/mule-2.3
 @dirrm share/emacs/site-lisp/CJK
