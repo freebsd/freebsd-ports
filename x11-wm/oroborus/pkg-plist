@@ -79,6 +79,40 @@ share/oroborus/themes/agua/top-left-active.xpm
 share/oroborus/themes/agua/top-left-inactive.xpm
 share/oroborus/themes/agua/top-right-active.xpm
 share/oroborus/themes/agua/top-right-inactive.xpm
+share/oroborus/themes/beos/bottom-active.xpm
+share/oroborus/themes/beos/bottom-inactive.xpm
+share/oroborus/themes/beos/bottom-left-active.xpm
+share/oroborus/themes/beos/bottom-left-inactive.xpm
+share/oroborus/themes/beos/bottom-right-active.xpm
+share/oroborus/themes/beos/bottom-right-inactive.xpm
+share/oroborus/themes/beos/close-active.xpm
+share/oroborus/themes/beos/close-inactive.xpm
+share/oroborus/themes/beos/close-pressed.xpm
+share/oroborus/themes/beos/hide-active.xpm
+share/oroborus/themes/beos/hide-inactive.xpm
+share/oroborus/themes/beos/hide-pressed.xpm
+share/oroborus/themes/beos/left-active.xpm
+share/oroborus/themes/beos/left-inactive.xpm
+share/oroborus/themes/beos/maximize-active.xpm
+share/oroborus/themes/beos/maximize-inactive.xpm
+share/oroborus/themes/beos/maximize-pressed.xpm
+share/oroborus/themes/beos/right-active.xpm
+share/oroborus/themes/beos/right-inactive.xpm
+share/oroborus/themes/beos/themerc
+share/oroborus/themes/beos/title-1-active.xpm
+share/oroborus/themes/beos/title-1-inactive.xpm
+share/oroborus/themes/beos/title-2-active.xpm
+share/oroborus/themes/beos/title-2-inactive.xpm
+share/oroborus/themes/beos/title-3-active.xpm
+share/oroborus/themes/beos/title-3-inactive.xpm
+share/oroborus/themes/beos/title-4-active.xpm
+share/oroborus/themes/beos/title-4-inactive.xpm
+share/oroborus/themes/beos/title-5-active.xpm
+share/oroborus/themes/beos/title-5-inactive.xpm
+share/oroborus/themes/beos/top-left-active.xpm
+share/oroborus/themes/beos/top-left-inactive.xpm
+share/oroborus/themes/beos/top-right-active.xpm
+share/oroborus/themes/beos/top-right-inactive.xpm
 share/oroborus/themes/cruxish/bottom-active.xpm
 share/oroborus/themes/cruxish/bottom-inactive.xpm
 share/oroborus/themes/cruxish/bottom-left-active.xpm
@@ -424,6 +458,7 @@ share/oroborus/themes/windows/top-right-inactive.xpm
 @dirrm share/oroborus/themes/gorillaworm
 @dirrm share/oroborus/themes/e017
 @dirrm share/oroborus/themes/cruxish
+@dirrm share/oroborus/themes/beos
 @dirrm share/oroborus/themes/agua
 @dirrm share/oroborus/themes/QNX
 @dirrm share/oroborus/themes
