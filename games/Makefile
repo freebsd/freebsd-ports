@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.213 1999/06/27 18:09:07 cpiazza Exp $
+# $Id: Makefile,v 1.214 1999/06/30 16:35:33 sada Exp $
 #
 
     SUBDIR += 3dc
@@ -39,6 +39,7 @@
     SUBDIR += drm
     SUBDIR += empire
     SUBDIR += fkiss
+    SUBDIR += flightgear
     SUBDIR += flying
     SUBDIR += freeciv
     SUBDIR += frotz
