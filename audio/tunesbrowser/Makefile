@@ -15,6 +15,8 @@ COMMENT=	Gnome frontend DAAP client
 
 LIB_DEPENDS=	opendaap.0:${PORTSDIR}/devel/libopendaap
 
+BROKEN=		Incomplete pkg-plist
+
 USE_BZIP2=	yes
 USE_INC_LIBTOOL_VER=15
 USE_X_PREFIX=	yes
