@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	doscan
-PORTVERSION=	0.2.5
-PORTREVISION=	1
+PORTVERSION=	0.2.6
 CATEGORIES=	security net
 MASTER_SITES=	http://static.enyo.de/fw/releases/doscan/
 
@@ -25,7 +24,7 @@ MAN1=		doscan.1
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 500000
-BROKEN=		"Does not compile"
+EXTRA_PATCHES=	${PATCHDIR}/freebsd4.diff
 .endif
 
 post-install:
