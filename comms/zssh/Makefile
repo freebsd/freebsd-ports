@@ -13,7 +13,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	zssh
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	gslin@ccca.nctu.edu.tw
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Interactively transferring files to a remote machine while using ssh
 
 RUN_DEPENDS=	lrz:${PORTSDIR}/comms/lrzsz

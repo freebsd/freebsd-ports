@@ -10,7 +10,7 @@ PORTVERSION=	0.6.3
 CATEGORIES=	net
 MASTER_SITES=	http://network.terramail.pl/
 
-MAINTAINER=	gslin@ccca.nctu.edu.tw
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A console chat application written with ncurse
 
 do-build:

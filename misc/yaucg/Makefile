@@ -11,7 +11,7 @@ PORTREVISION=	1
 CATEGORIES=	misc
 MASTER_SITES=	http://home.balcab.ch/joelle.wiesmann/secuserv/
 
-MAINTAINER=	gslin@ccca.nctu.edu.tw
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A bash Script which will get you the today's Userfriendly.org Picture
 
 RUN_DEPENDS=	wget:${PORTSDIR}/ftp/wget \

@@ -11,7 +11,7 @@ PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	http://shum.huji.ac.il/~schapiro/linux/pam_pop3/
 
-MAINTAINER=	gslin@ccca.nctu.edu.tw
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	This module authenticates a user against a POP3 server
 
 WRKSRC=		${WRKDIR}/${PORTNAME}

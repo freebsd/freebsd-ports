@@ -10,7 +10,7 @@ PORTVERSION=	0.3.0
 CATEGORIES=	net
 MASTER_SITES=	http://www.raggle.org/files/
 
-MAINTAINER=	gslin@ccca.nctu.edu.tw
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A console RSS aggregator written in Ruby
 
 RUN_DEPENDS=	${RUBY_SITELIBDIR}/ncurses.rb:${PORTSDIR}/devel/ruby-ncurses
