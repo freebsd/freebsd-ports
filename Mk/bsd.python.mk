@@ -107,7 +107,7 @@ _PYTHON_VERSION!=	${PYTHON_CMD} -c 'import sys; print sys.version[:3]'
 .elif defined(USE_ZOPE)
 _PYTHON_VERSION=	2.1
 .else
-_PYTHON_VERSION!=	(python -c 'import sys; print sys.version[:3]') 2> /dev/null \
+_PYTHON_VERSION!=	(${LOCALBASE}/bin/python -c 'import sys; print sys.version[:3]') 2> /dev/null \
 					|| echo 2.2
 .endif
 PYTHON_VERSION?=	python${_PYTHON_VERSION}
@@ -119,8 +119,20 @@ PYTHON_PORTVERSION!=	(${PYTHON_CMD} -c 'import string, sys; \
 PYTHONBASE!=		(${PYTHON_CMD} -c 'import sys; print sys.prefix') \
 						2> /dev/null || echo ${LOCALBASE}
 
+# Python-2.3
+.if ${PYTHON_VERSION} == "python2.3"
+PYDISTUTILS=	${PYTHON_LIBDIR}/distutils/core.py:${PYTHON_PORTSDIR}
+PYNUMERIC=		${PYTHON_SITELIBDIR}/Numeric/Numeric.py:${PORTSDIR}/math/py-numeric
+PYXML=			${PYTHON_SITELIBDIR}/_xmlplus/__init__.py:${PORTSDIR}/textproc/py-xml
+
+PYTHON_DISTFILE=	Python-2.3b2.tgz
+PYTHON_PORTSDIR=	${PORTSDIR}/lang/python-devel
+PYTHON_REL=			230
+PYTHON_SUFFIX=		23
+PYTHON_WRKSRC=		${WRKDIR}/Python-2.3b2
+
 # Python-2.2
-.if ${PYTHON_VERSION} == "python2.2"
+.elif ${PYTHON_VERSION} == "python2.2"
 PYDISTUTILS=	${PYTHON_LIBDIR}/distutils/core.py:${PYTHON_PORTSDIR}
 PYNUMERIC=		${PYTHON_SITELIBDIR}/Numeric/Numeric.py:${PORTSDIR}/math/py-numeric
 PYXML=			${PYTHON_SITELIBDIR}/_xmlplus/__init__.py:${PORTSDIR}/textproc/py-xml
@@ -206,7 +218,8 @@ PYTHON_WRKSRC=		${WRKDIR}/Python-${_PYTHON_PORTVERSION}
 	@${ECHO} "  python1.6"
 	@${ECHO} "  python2.0"
 	@${ECHO} "  python2.1"
-	@${ECHO} "  python2.2 (default)."
+	@${ECHO} "  python2.2 (default)"
+	@${ECHO} "  python2.3"
 	@${FALSE}
 .endif
 

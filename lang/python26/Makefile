@@ -1,17 +1,18 @@
-# New ports collection makefile for:    python
-# Date created:         08 August 1995
-# Whom:                 jkh
+# New ports collection makefile for:    python-devel
+# Date created:         3 July 2003
+# Whom:                 Hye-Shik Chang <perky@FreeBSD.org>
 #
 # $FreeBSD$
-#
 
 PORTNAME=	python
-PORTVERSION=	2.2.3
+PORTVERSION=	2.3.b2
 CATEGORIES=	lang python ipv6
-MASTER_SITES=	http://www.python.org/ftp/python/${PORTVERSION}/ \
-		${MASTER_SITE_SOURCEFORGE} \
-		http://SunSITE.Informatik.RWTH-Aachen.DE/python/ftp/python/${PORTVERSION}/
-MASTER_SITE_SUBDIR=	python
+MASTER_SITES=	http://www.python.org/%SUBDIR%/ \
+		http://python.mirrors.pair.com/%SUBDIR%/ \
+		http://mirrors.ccs.neu.edu/Python/pub/www.python.org/%SUBDIR%/ \
+		http://python.planetmirror.com/%SUBDIR%/ \
+		http://SunSITE.Informatik.RWTH-Aachen.DE/python/%SUBDIR%/
+MASTER_SITE_SUBDIR=	ftp/python/${PORTVERSION:S/.b2//}
 DISTFILES=	${PYTHON_DISTFILE}
 
 MAINTAINER=	perky@FreeBSD.org
@@ -26,8 +27,9 @@ INSTALL_TARGET=	install
 MAN1=		python.1
 
 USE_PYTHON=	yes
-PYTHON_VERSION=	python2.2
+PYTHON_VERSION=	python2.3
 PYTHON_NO_DEPENDS=	yes
+LATEST_LINK=	${PYTHON_VERSION:S/.//}
 
 #
 # If you don't want to use Python's thread module, you need to set
@@ -44,9 +46,29 @@ CONFIGURE_ENV+=		LDFLAGS="${LDFLAGS}"
 .endif # defined(LDFLAGS)
 .endif # !defined(WITHOUT_THREADS)
 
+.if !defined(WITH_UCS2)
+CONFIGURE_ARGS+=	--enable-unicode=ucs4
+.endif
+
+.if !defined(BUILD_STATIC)
+CONFIGURE_ARGS+=	--enable-shared
+INSTALLS_SHLIB=		yes
+PLIST_SUB+=		SHARED_ONLY=""
+.else
+PLIST_SUB+=		SHARED_ONLY="@comment "
+.endif
+
 DEMODIR=	${PREFIX}/share/examples/${PYTHON_VERSION}
+TOOLSDIR=	${PREFIX}/share/${PYTHON_VERSION}
+CFLAGS+=	-D__BSD_VISIBLE # see python/configure.in rev 1.409
 
 .include <bsd.port.pre.mk>
+
+.if ${ARCH} == i386
+PLIST_SUB+=	X86_ONLY=""
+.else
+PLIST_SUB+=	X86_ONLY="@comment "
+.endif
 
 .if ${OSVERSION} < 400000
 LIB_DEPENDS+=	ncurses.5:${PORTSDIR}/devel/ncurses
@@ -89,19 +111,13 @@ pre-install:
 post-install:
 	${INSTALL_DATA} ${WRKSRC}/Misc/python-mode.el \
 		${PREFIX}/share/emacs/site-lisp
-	@${MKDIR} ${PYTHONPREFIX_SITELIBDIR}
 .if !defined(NOPORTDOCS)
+	@${MKDIR} ${TOOLSDIR}
 	@cd ${WRKSRC}; tar -c --exclude='*CVS*' -f - Tools | \
-		(cd ${PYTHONPREFIX_LIBDIR}; tar xf -)
+		(cd ${TOOLSDIR}; tar xf -)
 	@${MKDIR} ${DEMODIR}
 	@cd ${WRKSRC}/Demo; tar -c --exclude='*CVS*' -f - * | \
 		(cd ${DEMODIR}; tar xf -)
-.endif
-
-.if ${ARCH} == i386
-PLIST_SUB+=	X86_ONLY=""
-.else
-PLIST_SUB+=	X86_ONLY="@comment "
 .endif
 
 .include <bsd.port.post.mk>
