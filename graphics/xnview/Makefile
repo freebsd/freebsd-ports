@@ -15,13 +15,17 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	petr@petrovich.kiev.ua
 COMMENT=	An easy graphics viewer / converter
 
-LIB_DEPENDS=	c.4:${PORTSDIR}/misc/compat4x
-
 ONLY_FOR_ARCHS=	i386
 NO_BUILD=	yes
 USE_X_PREFIX=	yes
 WRKSRC=		${WRKDIR}/XnView-1.50-x86-unknown-FreeBSD4.x-static
 INSTALL_SLIB=	yes
+
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 500000
+LIB_DEPENDS+=	c.4:${PORTSDIR}/misc/compat4x
+.endif
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/bin/xnview ${PREFIX}/bin/xnview
@@ -37,4 +41,4 @@ do-install:
 		${DOCSDIR}
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
