@@ -56,6 +56,10 @@ WITH_BOCHS_CPU_LEVEL=	6
 CONFIGURE_ARGS+=	--enable-cpu-level=${WITH_BOCHS_CPU_LEVEL}
 .endif
 
+.if defined(WITH_BOCHS_AMD64)
+CONFIGURE_ARGS+=	--enable-x86-64
+.endif
+
 .if defined(WITH_BOCHS_DEBUGGER)
 CONFIGURE_ARGS+=	--enable-debugger --enable-disasm
 .endif
@@ -110,6 +114,11 @@ pre-everything::
 .if !defined(WITH_BOCHS_X86_DEBUGGER)
 	@${ECHO_MSG} "If you want to compile with x86 hardware debugger support."
 	@${ECHO_MSG} "hit Ctrl-C right now and use \"make WITH_BOCHS_X86_DEBUGGER=yes\""
+	@${ECHO_MSG}
+.endif
+.if !defined(WITH_BOCHS_AMD64)
+	@${ECHO_MSG} "If you want to compile with AMD x86-64 support."
+	@${ECHO_MSG} "hit Ctrl-C right now and use \"make WITH_BOCHS_AMD64=yes\""
 	@${ECHO_MSG}
 .endif
 .if !defined(WITH_NE2000)
