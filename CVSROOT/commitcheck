@@ -3,10 +3,9 @@
 # $FreeBSD$
 
 #
-# BEWARE:  If you are "borrowing" this code for use on another cvs
-# repository, please make sure you change all references to '@FreeBSD.org'
-# in the log_accum script.  Otherwise your commit messages will be sent
-# to 'cvs-committers@freebsd.org' etc.  This could be highly embarrassing. :-)
+# This script is the first thing that is run at commit time
+# to determine whether the committer has commit priviledges.
+# (See CVSROOT/commitinfo).
 #
 
 use strict;
