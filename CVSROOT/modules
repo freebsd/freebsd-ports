@@ -1735,6 +1735,7 @@ flim113-xemacs21-mule	ports/editors/flim113-xemacs21-mule
 flink		ports/mail/flink
 flip		ports/graphics/flip
 floatator	ports/misc/floatator
+flock		ports/sysutils/flock
 flog		ports/sysutils/flog
 flounder	ports/science/flounder
 flow-tools	ports/net/flow-tools
