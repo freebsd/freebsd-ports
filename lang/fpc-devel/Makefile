@@ -22,7 +22,7 @@ EXTRACT_SUFX=	.tar
 MAINTAINER=	coop9211@uidaho.edu
 COMMENT=	Free Pascal beta compiler with Turbo, Delphi and other extensions
 
-BUILD_DEPENDS=	${LOCALBASE}/bin/gtar:${PORTSDIR}/archivers/gtar
+EXTRACT_DEPENDS= ${LOCALBASE}/bin/gtar:${PORTSDIR}/archivers/gtar
 RUN_DEPENDS=	${LOCALBASE}/bin/nasm:${PORTSDIR}/devel/nasm
 .if !defined(NOPORTDOCS)
 RUN_DEPENDS+=	${LOCALBASE}/bin/acroread4:${PORTSDIR}/print/acroread4
