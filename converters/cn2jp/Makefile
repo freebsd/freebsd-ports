@@ -7,7 +7,7 @@
 
 PORTNAME=	cn2jp
 PORTVERSION=	1.4b
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	converters chinese japanese
 MASTER_SITES=	http://w3.sys.es.osaka-u.ac.jp/~seke/software/cn2jp/
 DISTNAME=	${PORTNAME}${PORTVERSION}
@@ -28,5 +28,7 @@ do-install:
 	@${INSTALL_DATA} ${WRKSRC}/libcn2jp.a ${PREFIX}/lib
 	@${INSTALL_DATA} ${WRKSRC}/libcn2jp.so ${PREFIX}/lib/libcn2jp.so.1
 	@cd ${PREFIX}/lib/; ${LN} -sf libcn2jp.so.1 libcn2jp.so
+	@${INSTALL_DATA} ${WRKSRC}/lib/jp-util.h ${PREFIX}/include
+	@${INSTALL_DATA} ${WRKSRC}/lib/lang-util.h ${PREFIX}/include
 
 .include <bsd.port.mk>
