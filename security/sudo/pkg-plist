@@ -1,4 +1,6 @@
 @unexec if cmp -s %D/etc/sudoers %D/etc/sudoers.sample; then rm -f %D/etc/sudoers; fi
 bin/sudo
+bin/sudoedit
 etc/sudoers.sample
+libexec/sudo_noexec.so
 sbin/visudo

@@ -6,8 +6,8 @@
 #
 
 PORTNAME=	sudo
-PORTVERSION=	1.6.7.5
-PORTREVISION=	2
+PORTVERSION=	1.6.8
+PORTREVISION=	0
 CATEGORIES=	security
 MASTER_SITES=	http://www.sudo.ws/sudo/dist/ \
 		http://probsd.org/sudoftp/ \
@@ -19,7 +19,7 @@ MASTER_SITES=	http://www.sudo.ws/sudo/dist/ \
 		http://pluto.cdpa.nsysu.edu.tw/sudo/ \
 		ftp://ftp.cs.colorado.edu/pub/sysadmin/sudo/ \
 		ftp://ftp.stikman.com/pub/sudo/
-DISTNAME=	${PORTNAME}-1.6.7p5
+DISTNAME=	${PORTNAME}-1.6.8
 
 MAINTAINER=	mharo@FreeBSD.org
 COMMENT=	Allow others to run commands as root
@@ -50,11 +50,13 @@ CONFIGURE_ARGS+=--enable-shell-sets-home
 
 MAN5=		sudoers.5
 MAN8=		sudo.8 visudo.8
+MLINKS=		sudo.8 sudoedit.8
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|^|#|g' ${WRKSRC}/sample.sudoers
 
 post-install:
 	${INSTALL_DATA} ${WRKSRC}/sample.sudoers ${PREFIX}/etc/sudoers.sample
+	${RM} ${PREFIX}/libexec/sudo_noexec.la
 
 .include <bsd.port.post.mk>
