@@ -1,0 +1,61 @@
+--- Makefile.in.orig	Mon Jul 26 21:30:12 1999
++++ Makefile.in	Thu Jul 29 02:56:55 1999
+@@ -23,9 +23,9 @@
+ #   disclean            - remove all files geneated by compilation/installation.
+ 
+ prefix = @prefix@
+-exec_prefix = @exec_prefix@
+-bindir = @bindir@
+-datadir = @datadir@
++exec_prefix = ${prefix}
++bindir = ${exec_prefix}/bin
++datadir = ${prefix}/share/blackened
+ 
+ VERSION = @VERSION@
+ 
+@@ -34,12 +34,12 @@
+ INSTALL_IRC = $(bindir)/blackened-$(VERSION)
+ 
+ # Name of the symbolic link to be created.
+-INSTALL_LINK = $(bindir)/@IRCLINK@
++INSTALL_LINK = $(bindir)/blackened
+ 
+ # Where the ircII library will be.  Generally this is the place that
+ # you put the scripts, help pages and translation tables.  It is
+ # very important that you set this correctly.
+-IRCLIB = @IRCLIB@/$(VERSION)
++IRCLIB = $(datadir)/$(VERSION)
+ 
+ # Set this to the lex you want to use, and if they lex uses a library.
+ 
+@@ -119,16 +119,16 @@
+ 
+ # Set the next line to the full path for installation of the ircserv program
+ # if you wish to use it. 
+-INSTALL_IRCSERV = $(bindir)/ircserv
++INSTALL_IRCSERV = $(bindir)/blackened-ircserv
+ 
+ # This little program is necessary to have an interactive shell
+ # in a window of ircII. The 'shell' script uses it, so also update
+ # the path in there, if you want to enable this.
+-INSTALL_IRCFLUSH = $(bindir)/ircflush
++INSTALL_IRCFLUSH = $(bindir)/blackened-ircflush
+ 
+ # This program allows you to use screen/xterm's to put new irc windows
+ # on new screen/xterm windows.
+-INSTALL_WSERV = $(bindir)/wserv
++INSTALL_WSERV = $(bindir)/blackened-wserv
+ 
+ ## You shouldn't have to change anything below here
+ 
+@@ -246,8 +246,8 @@
+ 	$(INSTALL_LIB) lib/help.blackened $(HELP_FILE)
+ 
+ installdirs:
+-#	umask 022; ./mkinstalldirs $(IRCLIB) $(bindir) $(TRANS_PATH) $(INSTALL_SCRIPT) $(HELP_DIR)
+-	umask 022; ./mkinstalldirs $(IRCLIB) $(bindir) $(TRANS_PATH) $(INSTALL_SCRIPT)
++#	umask 022; ./mkinstalldirs $(IRCLIB) $(bindir) $(TRANS_PATH) $(INSTALL_SCRIPT) $(HELP_DIR) 2>&1
++	umask 022; ./mkinstalldirs $(IRCLIB) $(bindir) $(TRANS_PATH) $(INSTALL_SCRIPT) 2>&1
+ 
+ helpclean:
+ 	$(RM) lib/help.blackened
