@@ -27,10 +27,10 @@ do-install:
 	${INSTALL_MAN} ${WRKSRC}/raproxy.man ${PREFIX}/man/man8/raproxy.8
 
 .if !defined(NOPORTDOCS)
-	-${MKDIR} ${PREFIX}/share/doc/raproxy
-	${INSTALL_DATA} ${WRKSRC}/*.html ${WRKSRC}/*.pdf \
+	@${MKDIR} ${PREFIX}/share/doc/raproxy
+	@${INSTALL_DATA} ${WRKSRC}/*.html ${WRKSRC}/*.pdf \
 		${PREFIX}/share/doc/raproxy
 .endif
-	-cat ${PKGMESSAGE}
+	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
