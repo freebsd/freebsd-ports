@@ -19,7 +19,7 @@ BUILD_DEPENDS=	${SITE_PERL}/Net/Config.pm:${PORTSDIR}/net/p5-Net \
 		${SITE_PERL}/Mail/Internet.pm:${PORTSDIR}/mail/p5-Mail-Tools \
 	     	${SITE_PERL}/MIME/Parser.pm:${PORTSDIR}/mail/p5-MIME-Tools \
 		${SITE_PERL}/Mail/ListDetector.pm:${PORTSDIR}/mail/p5-Mail-ListDetector \
-		${SITE_PERL}/Razor2/Client/Agent.pm:${PORTSDIR}/mail/razor-agents
+		${SITE_PERL}/${PERL_ARCH}/Razor2/Client/Agent.pm:${PORTSDIR}/mail/razor-agents
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 SITE_PERL=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}
