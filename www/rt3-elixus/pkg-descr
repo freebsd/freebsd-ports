@@ -1,0 +1,19 @@
+RT is an industrial-grade ticketing system. It lets a group of people
+intelligently and efficiently manage requests submitted by a community
+of users. RT is used by systems administrators, customer support
+staffs, NOCs, developers and even marketing departments at over a
+thousand sites around the world.
+
+RT3 significantly revamped the RT codebase, featuring standard-compliant
+Web UI, approval-based workflow system, REST-powered RPC mail gateway,
+recursive group membership with delegates, autoconf, custom field support,
+I18N and L10N framework, web-editable scrips, better documentation and
+regression test suite, and more.
+
+Developed by elixus.org and supported by OurInternet, Inc, rt3-elixus is
+a beefed-up branch based on the latest -pre/-rc/-final release of RT3.
+It features an alternate Tabbed UI, Workflow editor, many more custom field
+types (including multiple-entry fields), Object Attributes, and has been
+ported to Microsoft Windows.  
+
+WWW: http://www.bestpractical.com/rt/
