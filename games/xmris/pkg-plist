@@ -1,12 +1,10 @@
 @cd /usr/local
 @owner bin
 @group bin
-@mode 444
+@mode a+r
 man/man6/xmris.6
 man/man6/xmsit.6
 man/man6/xmred.6
-@chmod a+x %D/man
-@chmod a+x %D/man/man6
 @owner games
 @mode 4755
 bin/xmris
@@ -14,7 +12,7 @@ bin/xmsit
 @mode 755
 bin/xmred
 @cd /usr/X386
-@mode 444
+@mode a+r
 lib/X11/app-defaults/Xmris
 lib/X11/app-defaults/xmris/alphabet.gdn
 lib/X11/app-defaults/xmris/digits.gdn
