@@ -56,6 +56,7 @@
     SUBDIR += pecl-fribidi
     SUBDIR += php4-iconv
     SUBDIR += php4-mbstring
+    SUBDIR += php4-recode
     SUBDIR += psiconv
     SUBDIR += py-cjkcodecs
     SUBDIR += py-iconv

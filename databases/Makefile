@@ -205,6 +205,7 @@
     SUBDIR += pgbash
     SUBDIR += pgcluster
     SUBDIR += php-sqlrelay
+    SUBDIR += php4-dba
     SUBDIR += phpmyadmin
     SUBDIR += phppgadmin
     SUBDIR += postgis
