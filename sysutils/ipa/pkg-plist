@@ -2,3 +2,8 @@ bin/ipa
 bin/ipastat
 etc/ipa.conf.default
 etc/rc.d/ipa.sh.sample
+share/ipa/examples/README
+share/ipa/examples/example-1
+share/ipa/examples/example-2
+@dirrm share/ipa/examples
+@dirrm share/ipa
