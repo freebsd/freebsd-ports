@@ -35,31 +35,31 @@ use Sys::Hostname;	# get hostname() function
 # 1 = in mail only,
 # 2 = rcsids in both mail and logs.
 #
-$RCSIDINFO = 2;
+my $RCSIDINFO = 2;
 
 # Debug level, 0 = off
-$DEBUG = 0;
+my $DEBUG = 0;
 
 # The command used to mail the log messages.  Usually something
 # like '/usr/sbin/sendmail'.  
-$MAILCMD = "/usr/local/bin/mailsend -H";
+my $MAILCMD = "/usr/local/bin/mailsend -H";
 
 
 # Email addresses of recipients of commit mail.
-$MAILADDRS = 'cvs-committers@FreeBSD.org cvs-all@FreeBSD.org';
+my $MAILADDRS = 'cvs-committers@FreeBSD.org cvs-all@FreeBSD.org';
 
 
 # Extra banner to add to top of commit messages.
 # i.e. $MAILBANNER = "Project X CVS Repository";
-$MAILBANNER = "";
+my $MAILBANNER = "";
 
 
 # Location of temporary directory.
-$TMPDIR = "/tmp/";
+my $TMPDIR = "/tmp/";
 
 
 # The file prefix used for the temporary files.
-$FILE_PREFIX = "#cvs.files";
+my $FILE_PREFIX = "#cvs.files";
 
 
 #-------------------------------------------------------
@@ -82,26 +82,26 @@ if (hostname() =~ /^(freefall|internat)\.freebsd\.org$/i) {
 # Constants
 #
 ############################################################
-$STATE_NONE    = 0;
-$STATE_CHANGED = 1;
-$STATE_ADDED   = 2;
-$STATE_REMOVED = 3;
-$STATE_LOG     = 4;
+my $STATE_NONE    = 0;
+my $STATE_CHANGED = 1;
+my $STATE_ADDED   = 2;
+my $STATE_REMOVED = 3;
+my $STATE_LOG     = 4;
 
-$BASE_FN       = "$TMPDIR/$FILE_PREFIX";
-$LAST_FILE     = "$BASE_FN.lastdir";
-$CHANGED_FILE  = "$BASE_FN.changed";
-$ADDED_FILE    = "$BASE_FN.added";
-$REMOVED_FILE  = "$BASE_FN.removed";
-$LOG_FILE      = "$BASE_FN.log";
-$SUMMARY_FILE  = "$BASE_FN.summary";
-$MAIL_FILE     = "$BASE_FN.mail";
-$SUBJ_FILE     = "$BASE_FN.subj";
-$TAGS_FILE     = "$BASE_FN.tags";
+my $BASE_FN       = "$TMPDIR/$FILE_PREFIX";
+my $LAST_FILE     = "$BASE_FN.lastdir";
+my $CHANGED_FILE  = "$BASE_FN.changed";
+my $ADDED_FILE    = "$BASE_FN.added";
+my $REMOVED_FILE  = "$BASE_FN.removed";
+my $LOG_FILE      = "$BASE_FN.log";
+my $SUMMARY_FILE  = "$BASE_FN.summary";
+my $MAIL_FILE     = "$BASE_FN.mail";
+my $SUBJ_FILE     = "$BASE_FN.subj";
+my $TAGS_FILE     = "$BASE_FN.tags";
 
-$X_BRANCH_HDR  = "X-FreeBSD-CVS-Branch:";
+my $X_BRANCH_HDR  = "X-FreeBSD-CVS-Branch:";
 
-$CVSROOT       = $ENV{'CVSROOT'} || "/home/ncvs";
+my $CVSROOT       = $ENV{'CVSROOT'} || "/home/ncvs";
 
 ############################################################
 #
