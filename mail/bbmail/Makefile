@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	bbmail
-PORTVERSION=	0.6.8
+PORTVERSION=	0.6.9
 CATEGORIES=	mail
 MASTER_SITES=	http://bbtools.thelinuxcommunity.org/sources/
 
