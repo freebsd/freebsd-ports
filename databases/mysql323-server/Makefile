@@ -34,6 +34,9 @@ CONFIGURE_ARGS=	--localstatedir=${DB_DIR} \
 .if ${MACHINE_ARCH} == "i386"
 CONFIGURE_ARGS+=--enable-assembler
 .endif
+.if ${MACHINE_ARCH} == "alpha"
+CONFIGURE_ARGS+=--without-berkeley-db
+.endif
 .if defined(WITH_CHARSET) && ${WITH_CHARSET} != ""
 CONFIGURE_ARGS+=--with-charset=${WITH_CHARSET}
 .if defined(WITH_XCHARSET) && ${WITH_XCHARSET} != ""
