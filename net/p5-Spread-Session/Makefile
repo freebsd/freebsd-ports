@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	Spread-Session
-PORTVERSION=	0.2
+PORTVERSION=	0.4
 CATEGORIES=	net perl5
-MASTER_SITES=	${MASTER_SITE_PERL_CPAN} \
-		http://www.roughtrade.net/distfiles/
+MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	../by-authors/id/J/JM/JMAY
 PKGNAMEPREFIX=	p5-
 
