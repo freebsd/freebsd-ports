@@ -13,6 +13,7 @@ www/data.default/phpPgAdmin/chinese_big5.inc.php
 www/data.default/phpPgAdmin/chinese_gb.inc.php
 www/data.default/phpPgAdmin/config.inc.php-dist
 www/data.default/phpPgAdmin/danish.inc.php
+www/data.default/phpPgAdmin/dutch.inc.php
 www/data.default/phpPgAdmin/db_create.php
 www/data.default/phpPgAdmin/db_details.php
 www/data.default/phpPgAdmin/db_dump.php
@@ -80,5 +81,5 @@ www/data.default/phpPgAdmin/user_admin.php
 www/data.default/phpPgAdmin/view_create.php
 @dirrm www/data.default/phpPgAdmin/images
 @dirrm www/data.default/phpPgAdmin
-@dirrm www/data.default
-@dirrm www
+@unexec if [ -L %D/www/data.default ]; then rm -f %D/www/data.default; fi
+@unexec if [ -L %D/www ]; then rm -f %D/www; fi
