@@ -7,7 +7,7 @@
 
 PORTNAME=	gnome-fifth-toe
 PORTVERSION=	1.4.1b2
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	x11 gnome
 MASTER_SITES=	# empty
 DISTFILES=	# empty
@@ -23,7 +23,6 @@ RUN_DEPENDS=	gabber:${PORTSDIR}/net/gabber \
 		atomix:${PORTSDIR}/games/atomix \
 		balsa:${PORTSDIR}/mail/balsa \
 		bombermaze:${PORTSDIR}/games/bombermaze \
-		dia:${PORTSDIR}/graphics/dia \
 		eog:${PORTSDIR}/graphics/eog \
 		gedit:${PORTSDIR}/editors/gedit \
 		gimp:${PORTSDIR}/graphics/gimp1 \
