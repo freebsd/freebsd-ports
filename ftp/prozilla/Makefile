@@ -14,8 +14,6 @@ MASTER_SITES=	http://prozilla.genesys.ro/downloads/prozilla/tarballs/
 MAINTAINER=	rael@vectorstar.net
 COMMENT=	ProZilla is a fast download accelerator
 
-LIB_DEPENDS=	ncurses.5:${PORTSDIR}/devel/ncurses
-
 USE_GETOPT_LONG=yes
 USE_REINPLACE=	yes
 USE_GMAKE=	yes
