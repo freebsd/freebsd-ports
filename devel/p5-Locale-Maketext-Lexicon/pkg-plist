@@ -1,8 +1,13 @@
 bin/xgettext.pl
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Locale/Maketext/Lexicon/.packlist
 %%SITE_PERL%%/Locale/Maketext/Lexicon.pm
-%%SITE_PERL%%/Locale/Maketext/Lexicon/Gettext.pm
 %%SITE_PERL%%/Locale/Maketext/Lexicon/Auto.pm
+%%SITE_PERL%%/Locale/Maketext/Lexicon/Gettext.pm
 %%SITE_PERL%%/Locale/Maketext/Lexicon/Msgcat.pm
 %%SITE_PERL%%/Locale/Maketext/Lexicon/Tie.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Locale/Maketext/Lexicon/.packlist
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Locale/Maketext/Lexicon
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Locale/Maketext 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Locale 2>/dev/null || true
+@dirrm %%SITE_PERL%%/Locale/Maketext/Lexicon
+@unexec rmdir %D/%%SITE_PERL%%/Locale/Maketext 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/Locale 2>/dev/null || true
