@@ -21,4 +21,6 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 
 CFLAGS+=	-I${PREFIX}/include
 
+MAN1=		mpc.1
+
 .include <bsd.port.mk>

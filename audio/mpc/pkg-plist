@@ -1,6 +1,6 @@
 bin/mpc
-man/man1/mpc.1
 %%DOCSDIR%%/AUTHORS
 %%DOCSDIR%%/README
 %%DOCSDIR%%/mpc-bashrc
 @dirrm %%DOCSDIR%%
+@dirrm share/mpc
