@@ -3,7 +3,7 @@ Quick Setup:
   Take the following step all as root.
     1) Install one of the esecanna-module ports
     2) Edit `/usr/local/etc/esecannarc'
-    3) Run `/usr/local/etc/rc.d/zz.esecanna.sh'
+    3) Run `/usr/local/etc/rc.d/esecanna.sh'
 
   Each user may want to configure the behavior by editing
 `~/.esecannarc', copied after `/usr/local/etc/esecannarc'.

@@ -1,28 +1,35 @@
 # New ports collection Makefile for: esecanna module for Wnn6
-# Version required:	0.13.0
+# Version required:	0.14.2
 # Date created:		26 February 2000
 # Whom:			Akinori MUSHA aka knu <knu@idaemons.org>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	esecanna-module-wnn6_0.13.0
-PKGNAME=	ja-esecanna-module-wnn6-0.13.0
+DISTNAME=	esecanna-module-wnn6_0.14.2
+PKGNAME=	ja-esecanna-module-wnn6-0.14.2
 CATEGORIES=	japanese
-MASTER_SITES=	http://people.FreeBSD.org/~knu/ports/distfiles/ \
-		http://esecanna.netfort.gr.jp/
+MASTER_SITES=	http://esecanna.netfort.gr.jp/ \
+		http://people.FreeBSD.org/~knu/ports/distfiles/
 
 MAINTAINER=	knu@idaemons.org
 
-LIB_DEPENDS=	esecanna.1:${PORTSDIR}/japanese/esecanna \
-		wnn6.1:${PORTSDIR}/japanese/Wnn6-lib
+LIB_DEPENDS=	wnn6.1:${PORTSDIR}/japanese/Wnn6-lib
+RUN_DEPENDS=	${LOCALBASE}/sbin/esecannaserver:${PORTSDIR}/japanese/esecanna
 
-MAKE_ENV=	RCDIR="${PREFIX}/etc"
+USE_AUTOCONF=	yes
+USE_GMAKE=	yes
+CONFIGURE_ENV=	CFLAGS="${CFLAGS} -I${PREFIX}/include" \
+		LDFLAGS="${LDFLAGS} -L${PREFIX}/lib"
+
+DIST_SUBDIR=    esecanna
 
 post-install:
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${PREFIX}/share/doc/esecanna
-	${INSTALL_DATA} ${WRKSRC}/README.jp ${PREFIX}/share/doc/esecanna/README.wnn6.jp
+.for i in README CHANGES
+	${INSTALL_DATA} ${WRKSRC}/${i}.jp ${PREFIX}/share/doc/esecanna/${i}.wnn6.jp
+.endfor
 .endif
 
 .include <bsd.port.mk>
