@@ -1,0 +1,39 @@
+--- Axe.tmpl.orig	Thu Apr  7 01:07:33 1994
++++ Axe.tmpl	Mon Nov 13 01:33:05 2000
+@@ -8,7 +8,7 @@
+ Mandir = ${MANDIR}
+ 
+ /* Where do you want the ancilliary files to be installed */
+-AxeLibdir = ${LIBDIR}
++AxeLibdir = ${LIBDIR}/axe
+ 
+ /* As of aXe 6.0 the help is presented using a separate application called   */
+ /* axinfo. Repeat the above exercise for it.                                 */
+@@ -47,10 +47,10 @@
+ 
+ /* Uncomment the next but one line if you want to build an Xaw3d version */
+ /* Please read the file INSTALL for essential information in this area */
+-/* #define ThreeD */
++#define ThreeD
+ 
+ /* ... and state the pathname of the directory containing the Xaw3d headers */
+-/* #define Xaw3dIncDir /usr/local/Xaw3d/include/X11/Xaw3d */
++#define Xaw3dIncDir $(INCROOT)/X11/Xaw3d
+ 
+ /* ... and where the Xaw3d library is to be found. This can be omitted */
+ /* if the library is in the standard place in the installed X tree */
+@@ -121,7 +121,7 @@
+ #else
+  XAW3D_LDFLAGS = -L/**/Xaw3dLibDir
+ #endif
+-    XAW3D_LIBS = -lXaw3d
++        XAWLIB = -lXaw3d
+          XAW3D = -DXAW3D
+ #endif
+     XAW3D_DEPS = AxeCommand.o AxeMenuBtn.o AxeSmeBSB.o
+@@ -131,4 +131,4 @@
+   SCANDIR_OBJS = scandir.o
+ #endif
+ 
+-DEFINES = ${EXTENSION} ${XAW3D} ${HAVEX11R5PL20} ${MAXPATHLEN}
++DEFINES = ${EXTENSION} ${XAW3D} ${HAVEX11R5PL20} ${MAXPATHLEN} -D__BSD_4_4__
