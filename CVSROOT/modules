@@ -5949,6 +5949,7 @@ ng_daphne	ports/net/ng_daphne
 ng_netflow	ports/net/ng_netflow
 nget		ports/news/nget
 ngircd		ports/irc/ngircd
+nginx		ports/www/nginx
 ngpt		ports/devel/ngpt
 ngraph		ports/math/ngraph
 ngrep		ports/net/ngrep
