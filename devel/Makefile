@@ -479,6 +479,7 @@
     SUBDIR += ruby-dialogs
     SUBDIR += ruby-dl
     SUBDIR += ruby-filelock
+    SUBDIR += ruby-fileutils
     SUBDIR += ruby-flex_rb
     SUBDIR += ruby-fnmatch
     SUBDIR += ruby-gemfinder
