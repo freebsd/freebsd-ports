@@ -1,23 +1,30 @@
-bugs-2.0.1/bcrypt
-bugs-2.0.1/bhide
-bugs-2.0.1/bkey
-bugs-2.0.1/blogin
-bugs-2.0.1/bpass
-bugs-2.0.1/bpassdel
-bugs-2.0.1/libcrypt.a
-bugs-2.0.1/doc/HOWTO
-bugs-2.0.1/doc/README
-bugs-2.0.1/doc/html/README
-bugs-2.0.1/doc/txt/english/explanations.english
-bugs-2.0.1/doc/txt/english/functions.english
-bugs-2.0.1/doc/txt/french/EXPLICATIONS.french
-bugs-2.0.1/doc/txt/french/bugs_fonctions.french
-bugs-2.0.1/include/extra.h
-bugs-2.0.1/include/libcrypt.h
-@dirrm bugs-2.0.1/doc/txt/english
-@dirrm bugs-2.0.1/doc/txt/french
-@dirrm bugs-2.0.1/doc/html
-@dirrm bugs-2.0.1/doc/txt
-@dirrm bugs-2.0.1/doc
-@dirrm bugs-2.0.1/include
-@dirrm bugs-2.0.1
+bugs-3.3.2/bchat
+bugs-3.3.2/bcrypt
+bugs-3.3.2/bhide
+bugs-3.3.2/bkey
+bugs-3.3.2/block
+bugs-3.3.2/blogin
+bugs-3.3.2/bmore
+bugs-3.3.2/bpass
+bugs-3.3.2/bpassdel
+bugs-3.3.2/bunlock
+bugs-3.3.2/libcrypt.a
+bugs-3.3.2/doc/HOWTO
+bugs-3.3.2/doc/README
+bugs-3.3.2/doc/dev_english.txt
+bugs-3.3.2/doc/dev_french.txt
+bugs-3.3.2/doc/index.html
+bugs-3.3.2/doc/techbugs.html
+bugs-3.3.2/doc/cv/cv_fr.html
+bugs-3.3.2/doc/cv/cv_uk.html
+bugs-3.3.2/doc/cv/note_fr.html
+bugs-3.3.2/doc/cv/note_uk.html
+bugs-3.3.2/doc/history/old_french.txt
+bugs-3.3.2/include/extra.h
+bugs-3.3.2/include/isaac.h
+bugs-3.3.2/include/libcrypt.h
+@dirrm bugs-3.3.2/doc/cv
+@dirrm bugs-3.3.2/doc/history
+@dirrm bugs-3.3.2/doc
+@dirrm bugs-3.3.2/include
+@dirrm bugs-3.3.2
