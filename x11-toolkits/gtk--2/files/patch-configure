@@ -1,10 +1,22 @@
---- configure.orig	Sat Oct 12 00:36:53 2002
-+++ configure	Sat Oct 12 00:37:15 2002
-@@ -6823,6 +6823,7 @@
+--- configure.orig	Wed Mar 24 14:29:14 2004
++++ configure	Wed Mar 24 14:37:06 2004
+@@ -21358,10 +21358,6 @@
+       std::cout << "Traits<Foo<const int >> --> "
+                 << cfit.whoami() << std::endl;
  
- # This can be used to rebuild libtool when needed
- LIBTOOL_DEPS="$ac_aux_dir/ltmain.sh"
-+$ac_aux_dir/ltconfig $LIBTOOL_DEPS
+-      return 0;
+-      }
+-
+-  ;
+   return 0;
+ }
+ _ACEOF
+@@ -21404,7 +21400,7 @@
+   if test "x${gtkmm_cv_cxx_can_disambiguate_const_template_specializations}" = "xyes"; then
+   {
+     cat >>confdefs.h <<\_ACEOF
+-#define GLIBMM_HAVE_DISAMBIGUOUS_CONST_TEMPLATE_SPECIALIZATIONS 1, Defined if the compiler does not find it ambiguous to have both const and non-const template specializations
++#define GLIBMM_HAVE_DISAMBIGUOUS_CONST_TEMPLATE_SPECIALIZATIONS 1
+ _ACEOF
  
- # Always use our own libtool.
- LIBTOOL='$(SHELL) $(top_builddir)/libtool'
+   }

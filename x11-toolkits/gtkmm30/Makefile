@@ -7,6 +7,7 @@
 
 PORTNAME=	gtkmm
 PORTVERSION=	2.2.10
+PORTREVISION=	1
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	${MASTER_SITE_GNOME} \
 		${MASTER_SITE_SOURCEFORGE}
@@ -27,7 +28,7 @@ USE_GMAKE=	yes
 USE_LIBTOOL_VER=13
 INSTALLS_SHLIB=	yes
 USE_REINPLACE=	yes
-USE_GNOME=	gnomehack gtk20
+USE_GNOME=	gnomehack lthack gtk20
 CONFIGURE_ARGS=	--enable-static=yes \
 		--with-sigc-prefix=${LOCALBASE}
 
