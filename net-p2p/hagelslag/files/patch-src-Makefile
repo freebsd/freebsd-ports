@@ -1,12 +1,14 @@
 --- src/Makefile.orig	Sun Apr  8 19:58:59 2001
-+++ src/Makefile	Mon May  7 12:18:41 2001
-@@ -1,5 +1,4 @@
++++ src/Makefile	Mon Nov  4 21:24:23 2002
+@@ -1,13 +1,13 @@
  # Don't change this...
 -CXX=g++
++CXX?=g++
  LFLAGS=
- COMMONFLAGS=-Wall -O2 -g
+-COMMONFLAGS=-Wall -O2 -g
++#COMMONFLAGS=-Wall -O2 -g
  ROUTER_FLAGS=$(COMMONFLAGS) -DROUTER
-@@ -7,7 +6,7 @@
+ DAEMON_FLAGS=$(COMMONFLAGS) -DDAEMON
  CONSOLE_FLAGS=$(COMMONFLAGS) -DCONSOLE
  
  # Change this instead.
@@ -15,7 +17,7 @@
  
  # Nothing below here should be changed
  
-@@ -98,7 +97,7 @@
+@@ -98,7 +98,7 @@
  	cp -f UserLib.a ../lib
  
  depend:
