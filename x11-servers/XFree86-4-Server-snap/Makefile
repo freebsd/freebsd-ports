@@ -3,7 +3,7 @@
 # Date created:         5 January 1995
 # Whom:                 jmz
 #
-# $Id: Makefile,v 1.15 1995/10/06 22:11:25 asami Exp $
+# $Id: Makefile,v 1.16 1996/01/16 14:08:19 jmz Exp $
 #
 
 #######################################################################
@@ -34,6 +34,20 @@ CATEGORIES      =	x11
 IS_INTERACTIVE=		yes
 
 MAINTAINER=		jmz@FreeBSD.ORG
+
+.if defined(DISTDIR)
+.if exists (${DISTDIR}/xc-1.tar.gz)
+X11_VIA_FTP = yes
+.endif
+.elif defined(PORTSDIR)
+.if exists (${PORTSDIR}/distfiles/xc/xc-1.tar.gz)
+X11_VIA_FTP = yes
+.endif
+.else
+.if exists (/usr/ports/distfiles/xc/xc-1.tar.gz)
+X11_VIA_FTP = yes
+.endif
+.endif
 
 .if defined(X11_ON_CDROM) || defined(X11_VIA_FTP)
 
