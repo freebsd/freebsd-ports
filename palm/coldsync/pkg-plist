@@ -10,4 +10,8 @@ libexec/coldsync/todo-text
 etc/sample.coldsync.rc
 @unexec install-info --delete %D/info/conduits.info %D/info/dir
 info/conduits.info
+info/conduits.info-1
+info/conduits.info-2
 @exec install-info %D/info/conduits.info %D/info/dir
+share/locale/fr/LC_MESSAGES/coldsync.mo
+share/locale/de/LC_MESSAGES/coldsync.mo
