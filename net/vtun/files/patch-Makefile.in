@@ -1,0 +1,14 @@
+
+$FreeBSD$
+
+--- Makefile.in.orig	Sun Jun  1 23:56:26 2003
++++ Makefile.in	Sun Jun  1 23:56:37 2003
+@@ -54,7 +54,7 @@
+ 
+ CONFIGURE_FILES = Makefile config.status config.cache config.h config.log 
+ 
+-%.o: %.c vtun.h lib.h
++.c.o:
+ 	$(CC) $(CFLAGS) $(DEFS) -c $<
+ 
+ vtund: $(OBJS)
