@@ -3,7 +3,7 @@
 # Date created:				9 Dec 1997
 # Whom:					Andrey Zakhvatov
 #
-# $Id: Makefile,v 1.2 1998/03/28 14:33:26 steve Exp $
+# $Id: Makefile,v 1.3 1998/03/28 19:19:25 asami Exp $
 #
 
 DISTNAME=		aalib-1.2
@@ -11,8 +11,6 @@ CATEGORIES=		graphics
 MASTER_SITES=		ftp://ftp.ta.jcu.cz/pub/aa/
 
 MAINTAINER=		andy@icc.surw.chel.su
-
-BROKEN=			build
 
 GNU_CONFIGURE=		yes
 
