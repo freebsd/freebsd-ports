@@ -1,0 +1,11 @@
+--- plugins-scripts/check_ntp.pl.orig	Mon Aug 28 17:00:59 2000
++++ plugins-scripts/check_ntp.pl	Mon Apr  9 19:37:32 2001
+@@ -153,7 +153,7 @@
+ ###
+ ###
+ 
+-if (#open(NTPDC,"/usr/sbin/ntpdc -c $host 2>&1 |") ||
++if (open(NTPDC,"/usr/sbin/ntpdc -c $host 2>&1 |") ||
+     open(NTPDC,"/usr/sbin/xntpdc -c $host 2>&1 |") ) {
+ 	while (<NTPDC>) {
+ 		print if ($verbose);
