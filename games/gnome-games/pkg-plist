@@ -13,6 +13,8 @@ lib/libgdkcardimage.a
 lib/libgdkcardimage.la
 lib/libgdkcardimage.so
 lib/libgdkcardimage.so.0.30
+@exec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -m %D/lib
+@unexec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -R
 share/gnome/apps/Games/freecell.desktop
 share/gnome/apps/Games/gnobots.desktop
 share/gnome/apps/Games/gnome-stones.desktop
