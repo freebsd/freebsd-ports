@@ -14,17 +14,17 @@ if [ -f $lock ]; then exit; fi
 touch $lock
 
 for ver in latest full; do
-  for num in 3 4 5; do
+  for num in 4 4-exp 5; do
     cd $home/$num-$ver && ${scripts}/processlogs
   done
-  for num in 3 4 5; do
+  for num in 4 4-exp 5; do
     cd $home/$num-$ver-logs && ${scripts}/processlogs2
   done
-  for num in 3 5; do
+  for num in 4-exp 5; do
     cd $home && ${scripts}/comparelogs $num-$ver 4-$ver
     cd $home && ${scripts}/comparelogs 4-$ver $num-$ver
   done
-  cd $home && ${scripts}/bothlogs [3-5]-$ver
+  cd $home && ${scripts}/bothlogs [45]-$ver
 done
 
 rm -f $lock
