@@ -1,0 +1,11 @@
+--- src/bin/Makefile.old	Thu Nov 11 00:27:59 1999
++++ src/bin/Makefile	Thu Nov 11 00:28:10 1999
+@@ -58,7 +58,7 @@
+ 	"VER=${VER}" "STRIP=${STRIP}" "PS=${PS}" "INSTALL_LIB=${INSTALL_LIB}" \
+ 	"INSTALL_EXEC=${INSTALL_EXEC}" "BOUNDS=${BOUNDS}"
+ 
+-CFLAGS=	${CDEBUG} -I${PORTINCL} -I${INCL}
++CFLAGS+=	-I${PORTINCL} -I${INCL}
+ 
+ SUBDIRS = addr nslookup dig dnsquery host named named-xfer ndc nsupdate \
+ 	mkservdb irpd dnskeygen named-bootconf
