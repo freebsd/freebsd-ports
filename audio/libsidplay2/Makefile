@@ -1,21 +1,21 @@
-# New ports collection makefile for:   sidplay
+# New ports collection makefile for:   libsidplay
 # Date created:        31 October 1996
 # Whom:                Stefan Zehl <sec@42.org>
 #
 # $FreeBSD$
 #
 
-PORTNAME=	sidplay
-PORTVERSION=	1.36.38
+PORTNAME=	libsidplay
+PORTVERSION=	1.36.40
 CATEGORIES=	audio emulators
 MASTER_SITES=	http://www.geocities.com/SiliconValley/Lakes/5147/sidplay/packages/
-DISTNAME=	lib${PORTNAME}-${PORTVERSION:S/./_/g}
+DISTNAME=	${PORTNAME}-${PORTVERSION:S/./_/g}
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	sec@42.org
 
-WRKSRC=		${WRKDIR}/lib${PKGNAME}
-USE_XLIB=	yes
+WRKSRC=		${WRKDIR}/${PKGNAME}
+#USE_XLIB=	yes
 USE_LIBTOOL=	yes
 INSTALLS_SHLIB=	yes
 USE_GMAKE=	yes
