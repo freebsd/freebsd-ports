@@ -2742,7 +2742,7 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     <topic>Remote code injection in phpMyAdmin</topic>
     <affects>
       <package>
-	<name>phpmyadmin</name>
+	<name>phpMyAdmin</name>
 	<range><lt>2.5.7.1</lt></range>
       </package>
     </affects>
@@ -2763,6 +2763,7 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     <dates>
       <discovery>2004-06-29</discovery>
       <entry>2004-07-02</entry>
+      <modified>2004-09-28</modified>
     </dates>
   </vuln>
 
