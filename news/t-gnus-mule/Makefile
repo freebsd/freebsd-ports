@@ -5,7 +5,7 @@
 # $FreeBSD$
 #
 
-MASTERDIR=	${.CURDIR}/../t-gnus-emacs20
+MASTERDIR=	${.CURDIR}/../t-gnus
 
 EMACS_PORT_NAME=	mule
 

@@ -5,10 +5,8 @@
 # $FreeBSD$
 #
 
-MASTERDIR=	${.CURDIR}/../t-gnus-emacs20
+MASTERDIR=	${.CURDIR}/../t-gnus
 
 EMACS_PORT_NAME=	xemacs21-mule
-EMACS_PACKAGESDIR=	lib/xemacs/site-packages
-MANIFEST=		MANIFEST.t-gnus
 
 .include "${MASTERDIR}/Makefile"

@@ -141,8 +141,6 @@
 %%EMACS_VERSION_SITE_LISPDIR%%/t-gnus/mail-source.elc
 %%EMACS_VERSION_SITE_LISPDIR%%/t-gnus/mailheader.el
 %%EMACS_VERSION_SITE_LISPDIR%%/t-gnus/mailheader.elc
-%%EMACS_VERSION_SITE_LISPDIR%%/t-gnus/md5.el
-%%EMACS_VERSION_SITE_LISPDIR%%/t-gnus/md5.elc
 %%EMACS_VERSION_SITE_LISPDIR%%/t-gnus/message-utils.el
 %%EMACS_VERSION_SITE_LISPDIR%%/t-gnus/message-utils.elc
 %%EMACS_VERSION_SITE_LISPDIR%%/t-gnus/message.el
@@ -225,6 +223,8 @@
 %%EMACS_VERSION_SITE_LISPDIR%%/t-gnus/nnnil.elc
 %%EMACS_VERSION_SITE_LISPDIR%%/t-gnus/nnoo.el
 %%EMACS_VERSION_SITE_LISPDIR%%/t-gnus/nnoo.elc
+%%EMACS_VERSION_SITE_LISPDIR%%/t-gnus/nnrss.el
+%%EMACS_VERSION_SITE_LISPDIR%%/t-gnus/nnrss.elc
 %%SHIMBUN%%%%EMACS_VERSION_SITE_LISPDIR%%/t-gnus/nnshimbun.el
 %%SHIMBUN%%%%EMACS_VERSION_SITE_LISPDIR%%/t-gnus/nnshimbun.elc
 %%EMACS_VERSION_SITE_LISPDIR%%/t-gnus/nnslashdot.el
@@ -269,6 +269,8 @@
 %%EMACS_VERSION_SITE_LISPDIR%%/t-gnus/sieve-mode.elc
 %%EMACS_VERSION_SITE_LISPDIR%%/t-gnus/sieve.el
 %%EMACS_VERSION_SITE_LISPDIR%%/t-gnus/sieve.elc
+%%EMACS_VERSION_SITE_LISPDIR%%/t-gnus/smiley.el
+%%EMACS_VERSION_SITE_LISPDIR%%/t-gnus/smiley.elc
 %%EMACS_VERSION_SITE_LISPDIR%%/t-gnus/smime.el
 %%EMACS_VERSION_SITE_LISPDIR%%/t-gnus/smime.elc
 %%EMACS_VERSION_SITE_LISPDIR%%/t-gnus/spam.el
