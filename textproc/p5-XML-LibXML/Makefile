@@ -7,6 +7,7 @@
 
 PORTNAME=	XML-LibXML
 PORTVERSION=	1.58
+PORTREVISION=	1
 CATEGORIES=	textproc perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	XML/PHISH
@@ -24,6 +25,8 @@ RUN_DEPENDS=	${BUILD_DEPENDS}
 PERL_CONFIGURE=	yes
 CONFIGURE_ENV=	XMLPREFIX=${LOCALBASE}
 
+PKGDEINSTALL=	${PKGINSTALL}
+
 MAN3=		XML::LibXML.3 XML::LibXML::Attr.3 XML::LibXML::Boolean.3 \
 		XML::LibXML::CDATASection.3 XML::LibXML::Comment.3 \
 		XML::LibXML::DOM.3 XML::LibXML::Document.3 \
@@ -35,9 +38,8 @@ MAN3=		XML::LibXML.3 XML::LibXML::Attr.3 XML::LibXML::Boolean.3 \
 		XML::LibXML::SAX::Builder.3 XML::LibXML::SAX::Generator.3 \
 		XML::LibXML::Text.3
 
-post-patch:
-	@${PERL} -pi -e 's,(-MXML::SAX),-I${PREFIX}/${SITE_PERL_REL}/${PERL_ARCH} \1,g' \
-		${WRKSRC}/Makefile.PL
+post-install:
+	@PKG_PREFIX=${PREFIX} ${PERL} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 
 .include <bsd.port.pre.mk>
 
