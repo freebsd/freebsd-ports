@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	gnomemimedata
-PORTVERSION=	2.2.0
-PORTREVISION=	1
+PORTVERSION=	2.2.1
 CATEGORIES=	misc gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/gnome-mime-data/2.2
@@ -23,11 +22,10 @@ RUN_DEPENDS=	pkg-config:${PORTSDIR}/devel/pkgconfig
 
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes
-USE_GNOME=	gnomehack gnomehier gnomeprefix
+USE_GNOME=	gnomehack gnomehier gnomeprefix gnometarget
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LIBS="-L${LOCALBASE}/lib -lintl"
-CONFIGURE_TARGET=	--target=${MACHINE_ARCH}-unknown-freebsd${OSREL}
 
 MAN5=	gnome-vfs-mime.5
 
