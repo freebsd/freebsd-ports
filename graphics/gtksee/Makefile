@@ -8,7 +8,7 @@
 PORTNAME=	gtksee
 PORTVERSION=	0.5.0
 CATEGORIES=	graphics
-MASTER_SITES=	http://hotaru.clinuxworld.com/gtksee/ \
+MASTER_SITES=	http://www.linux.tucows.com/files/x11/graphics/ \
 		http://www.physik.TU-Berlin.DE/~ibex/ports/distfiles/
 
 MAINTAINER=	dirk@FreeBSD.org
