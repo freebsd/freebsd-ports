@@ -1,12 +1,12 @@
 # New ports collection makefile for:	WindowMaker
-# Version required:	0.61.1
+# Version required:	0.62.0
 # Date created:		August 13, 1997
 # Whom:			handy@physics.montana.edu
 #
 # $FreeBSD$
 
-DISTNAME=	WindowMaker-0.61.1
-PKGNAME=	windowmaker-0.61.1
+DISTNAME=	WindowMaker-0.62.0
+PKGNAME=	windowmaker-0.62.0
 CATEGORIES=	x11-wm windowmaker
 MASTER_SITES=	${MASTER_SITE_WINDOWMAKER} \
 		http://jgo.local.net/cool_downloads/wm/
@@ -60,7 +60,7 @@ pre-extract:
 
 post-extract:
 	@cd ${WRKSRC} && \
-	${TAR} xfz libwmfun-0.0.2.tar.gz
+	${TAR} xfz libwmfun-0.0.3.tar.gz
 
 post-patch:
 	@perl -pi -e "s|%%PREFIX%%|${PREFIX}|g" ${WRKSRC}/WPrefs.app/Paths.c \
