@@ -4164,6 +4164,7 @@ mplayer-skins	ports/multimedia/mplayer-skins
 mplayerxp	ports/multimedia/mplayerxp
 mplex		ports/graphics/mplex
 mpmf20		ports/audio/mpmf20
+mppdec		ports/audio/mppdec
 mpqc		ports/science/mpqc
 mpqc-mpich	ports/science/mpqc-mpich
 mprof		ports/devel/mprof
