@@ -2848,6 +2848,7 @@ gnome2wmaker	ports/x11-wm/gnome2wmaker
 gnomeapplets2	ports/x11/gnomeapplets2
 gnomeattacks	ports/games/gnomeattacks
 gnomeaudio2	ports/audio/gnomeaudio2
+gnomebaker	ports/sysutils/gnomebaker
 gnomebasic	ports/lang/gnomebasic
 gnomeblog	ports/deskutils/gnomeblog
 gnomebreakout	ports/games/gnomebreakout
