@@ -7,6 +7,7 @@
 
 PORTNAME=	gnome
 PORTVERSION=	1.2
+PORTREVISION=	1
 CATEGORIES=	japanese x11 gnome
 MASTER_SITES=	# empty
 DISTFILES=	# empty
@@ -18,7 +19,7 @@ LIB_DEPENDS=	gnome.4:${PORTSDIR}/japanese/gnomelibs \
 		panel_applet.4:${PORTSDIR}/japanese/gnomecore \
 		gal.1:${PORTSDIR}/japanese/gal
 
-RUN_DEPENDS=	gnumeric:${PORTSDIR}/math/gnumeric \
+RUN_DEPENDS=	gnumeric:${PORTSDIR}/gnumeric/gnumeric \
 
 NO_BUILD=	yes
 
