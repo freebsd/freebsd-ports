@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	jedit
-PORTVERSION=	4.2.0pre8
+PORTVERSION=	4.2.0pre13
 CATEGORIES=	editors java
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -24,6 +24,7 @@ USE_XLIB=	yes
 NO_BUILD=	yes
 
 MAN1=		jedit.1
+# The complete PLIST is generated in post-install
 PLIST_FILES=	bin/jedit
 
 do-configure:
