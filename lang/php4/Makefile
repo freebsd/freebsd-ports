@@ -7,7 +7,7 @@
 
 PORTNAME=	php4
 PORTVERSION=	4.3.8
-PORTREVISION?=	1
+PORTREVISION?=	2
 CATEGORIES?=	lang devel www
 MASTER_SITES=	${MASTER_SITE_PHP:S,$,:release,} \
 		http://downloads.php.net/ilia/:rc \
@@ -30,6 +30,7 @@ USE_REINPLACE=	yes
 CONFIGURE_ARGS=	--enable-versioning \
 		--enable-memory-limit \
 		--with-layout=GNU \
+		--with-config-file-scan-dir=${PREFIX}/etc/php \
 		--disable-all
 
 .if !defined(WITH_REGEX_TYPE) || ${WITH_REGEX_TYPE} == "php"
@@ -190,7 +191,6 @@ post-install:
 	@${INSTALL_DATA} ${WRKSRC}/php.ini-dist ${PREFIX}/etc
 	@${INSTALL_DATA} ${WRKSRC}/php.ini-recommended ${PREFIX}/etc
 	@${INSTALL_DATA} ${WRKDIR}/php.conf ${PREFIX}/etc
-	@${TOUCH} ${PREFIX}/etc/php.ini
 	@${TOUCH} ${PREFIX}/include/php/ext/php_config.h
 .if defined(WITH_APACHE)
 	@${CAT} ${PKGMESSAGE}

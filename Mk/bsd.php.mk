@@ -197,8 +197,9 @@ do-install:
 		> ${PREFIX}/include/php/ext/${PHP_MODNAME}/config.h
 	@${ECHO_CMD} \#include \"ext/${PHP_MODNAME}/config.h\" \
 		>> ${PREFIX}/include/php/ext/php_config.h
+	@${MKDIR} ${PREFIX}/etc/php
 	@${ECHO_CMD} extension=${PHP_MODNAME}.so \
-		>> ${PREFIX}/etc/php.ini
+		>> ${PREFIX}/etc/php/extensions.ini
 
 add-plist-info: add-plist-phpext
 add-plist-phpext:
@@ -218,13 +219,19 @@ add-plist-phpext:
 		>> ${TMPPLIST}
 	@${ECHO_CMD} "@unexec rm %D/include/php/ext/php_config.h.orig" \
 		>> ${TMPPLIST}
-	@${ECHO_CMD} "@exec echo extension=${PHP_MODNAME}.so >> %D/etc/php.ini" \
+	@${ECHO_CMD} "@exec mkdir -p %D/etc/php" \
 		>> ${TMPPLIST}
-	@${ECHO_CMD} "@unexec cp %D/etc/php.ini %D/etc/php.ini.orig" \
+	@${ECHO_CMD} "@exec echo extension=${PHP_MODNAME}.so >> %D/etc/php/extensions.ini" \
 		>> ${TMPPLIST}
-	@${ECHO_CMD} "@unexec grep -v ${PHP_MODNAME}\\\.so %D/etc/php.ini.orig > %D/etc/php.ini || true" \
+	@${ECHO_CMD} "@unexec cp %D/etc/php/extensions.ini %D/etc/php/extensions.ini.orig" \
 		>> ${TMPPLIST}
-	@${ECHO_CMD} "@unexec rm %D/etc/php.ini.orig" \
+	@${ECHO_CMD} "@unexec grep -v ${PHP_MODNAME}\\\.so %D/etc/php/extensions.ini.orig > %D/etc/php/extensions.ini || true" \
+		>> ${TMPPLIST}
+	@${ECHO_CMD} "@unexec rm %D/etc/php/extensions.ini.orig" \
+		>> ${TMPPLIST}
+	@${ECHO_CMD} "@unexec [ -s %D/etc/php/extensions.ini ] || rm %D/etc/php/extensions.ini" \
+		>> ${TMPPLIST}
+	@${ECHO_CMD} "@unexec rmdir %D/etc/php 2> /dev/null || true" \
 		>> ${TMPPLIST}
 
 security-check: php-ini
@@ -232,7 +239,7 @@ security-check: php-ini
 php-ini:
 	@${ECHO_CMD} "****************************************************************************"
 	@${ECHO_CMD} ""
-	@${ECHO_CMD} "The following line has been added to your ${PREFIX}/etc/php.ini"
+	@${ECHO_CMD} "The following line has been added to your ${PREFIX}/etc/php/extensions.ini"
 	@${ECHO_CMD} "configuration file to automatically load the installed extension:"
 	@${ECHO_CMD} ""
 	@${ECHO_CMD} "extension=${PHP_MODNAME}.so"
