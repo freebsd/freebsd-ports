@@ -44,17 +44,17 @@ lib/%%PYTHON_VERSION%%/site-packages/_mysql.so
 lib/%%PYTHON_VERSION%%/site-packages/_mysql_exceptions.py
 lib/%%PYTHON_VERSION%%/site-packages/_mysql_exceptions.pyc
 lib/%%PYTHON_VERSION%%/site-packages/_mysql_exceptions.pyo
-%%PORTDOCS%%share/doc/py-MySQLdb/MANIFEST
-%%PORTDOCS%%share/doc/py-MySQLdb/MySQLdb-1.html
-%%PORTDOCS%%share/doc/py-MySQLdb/MySQLdb-2.html
-%%PORTDOCS%%share/doc/py-MySQLdb/MySQLdb-3.html
-%%PORTDOCS%%share/doc/py-MySQLdb/MySQLdb-4.html
-%%PORTDOCS%%share/doc/py-MySQLdb/MySQLdb-FAQ-1.html
-%%PORTDOCS%%share/doc/py-MySQLdb/MySQLdb-FAQ-2.html
-%%PORTDOCS%%share/doc/py-MySQLdb/MySQLdb-FAQ-3.html
-%%PORTDOCS%%share/doc/py-MySQLdb/MySQLdb-FAQ.html
-%%PORTDOCS%%share/doc/py-MySQLdb/MySQLdb.html
-%%PORTDOCS%%share/doc/py-MySQLdb/README
-%%PORTDOCS%%@dirrm share/doc/py-MySQLdb
+%%PORTDOCS%%%%DOCSDIR%%/MANIFEST
+%%PORTDOCS%%%%DOCSDIR%%/MySQLdb-1.html
+%%PORTDOCS%%%%DOCSDIR%%/MySQLdb-2.html
+%%PORTDOCS%%%%DOCSDIR%%/MySQLdb-3.html
+%%PORTDOCS%%%%DOCSDIR%%/MySQLdb-4.html
+%%PORTDOCS%%%%DOCSDIR%%/MySQLdb-FAQ-1.html
+%%PORTDOCS%%%%DOCSDIR%%/MySQLdb-FAQ-2.html
+%%PORTDOCS%%%%DOCSDIR%%/MySQLdb-FAQ-3.html
+%%PORTDOCS%%%%DOCSDIR%%/MySQLdb-FAQ.html
+%%PORTDOCS%%%%DOCSDIR%%/MySQLdb.html
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm lib/%%PYTHON_VERSION%%/site-packages/MySQLdb/constants
 @dirrm lib/%%PYTHON_VERSION%%/site-packages/MySQLdb
