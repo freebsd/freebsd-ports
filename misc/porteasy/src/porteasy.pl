@@ -1,6 +1,6 @@
 #!/usr/bin/perl -w
 #-
-# Copyright (c) 2000 Dag-Erling Coïdan Smørgrav
+# Copyright (c) 2000-2002 Dag-Erling Coïdan Smørgrav
 # All rights reserved.
 #
 # Redistribution and use in source and binary forms, with or without
@@ -33,8 +33,9 @@ use strict;
 use Fcntl;
 use Getopt::Long;
 
-my $VERSION	= "2.6.4";
-my $COPYRIGHT	= "Copyright (c) 2000 Dag-Erling Smørgrav. All rights reserved.";
+my $VERSION	= "2.7.0";
+my $COPYRIGHT	= "Copyright (c) 2000-2002 Dag-Erling Smørgrav. " +
+		  "All rights reserved.";
 
 # Constants
 sub ANONCVS_ROOT	{ ":pserver:anoncvs\@anoncvs.FreeBSD.org:/home/ncvs" }
@@ -75,6 +76,7 @@ my $verbose   = 0;		# Verbose mode
 my $website   = 0;		# Show website URL
 
 # Global variables
+my $need_deps;			# Need dependency information
 my $have_index;			# Index has been read
 my %ports;			# Maps ports to their directory.
 my %pkgname;			# Inverse of the above map
@@ -82,6 +84,7 @@ my %portname;			# Port names (including prefix, but no version)
 my %masterport;			# Maps ports to their master ports
 my %reqd;			# Ports that need to be installed
 my %have_dep;			# Dependencies that are already present
+my %port_dep;			# Map ports to their dependency lists
 my %installed;			# Installed ports
 my $capture;			# Capture output
 
@@ -547,6 +550,10 @@ sub find_dependencies($) {
     my $item;			# Iterator
     my %depends;		# Hash of dependencies
     my ($lhs, $rhs);		# Left, right hand side of dependency spec
+    my $target;			# Dependency target
+
+    return () unless $need_deps;
+    return keys(%{$port_dep{$port}}) if exists($port_dep{$port});
 
     $dependvars = capture(\&make, ($port,
 				   "-VFETCH_DEPENDS",
@@ -564,7 +571,8 @@ sub find_dependencies($) {
 	    bsd::warnx("invalid dependency: %s", $item);
 	    next;
 	}
-	($lhs, $rhs) = ($1, $2);
+	($lhs, $rhs, $target) = ($1, $2, $3);
+	next if ($depends{$rhs});
 	# XXX this isn't quite right; lhs-less dependencies should be
 	# XXX checked against /var/db/pkg or something.
 	if ($exclude && defined($lhs)) {
@@ -582,8 +590,9 @@ sub find_dependencies($) {
 	    $have_dep{$rhs} = -1;
 	}
 	info("Adding $rhs as a dependency for $port");
-	$depends{$rhs} = 1;
+	$depends{$rhs} = $target || 'install';
     }
+    $port_dep{$port} = \%depends;
     return keys(%depends);
 }
 
@@ -904,7 +913,13 @@ sub build_port($) {
     my @makeargs;		# Arguments to make()
 
     if ($packages) {
-	push(@makeargs, "package", "DEPENDS_TARGET=package clean", "-DNOCLEANDEPENDS");
+	push(@makeargs, "package", "DEPENDS_TARGET=package clean");
+	foreach (values(%{$port_dep{$port}})) {
+	    if ($_ ne 'install') {
+		push(@makeargs, "-DNOCLEANDEPENDS");
+		last;
+	    }
+	}
     } else {
 	push(@makeargs, "install");
     }
@@ -1080,6 +1095,7 @@ MAIN:{
     }
 
     # Step 3: update port directories and discover dependencies
+    $need_deps = ($update || $build || $fetch || $list || $packages);
     update_ports_tree(keys(%reqd));
 
     # Step 4: deselect ports which are already installed
