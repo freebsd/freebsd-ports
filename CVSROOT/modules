@@ -5098,6 +5098,7 @@ manck		ports/sysutils/manck
 manedit		ports/editors/manedit
 mangband	ports/games/mangband
 mango		ports/misc/mango
+manipulate_data	ports/security/manipulate_data
 mantis		ports/databases/mantis
 manued.el	ports/textproc/manued.el
 mapagi		ports/print/mapagi
