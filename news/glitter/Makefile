@@ -14,6 +14,8 @@ DISTNAME=	${PORTNAME}-1.0beta1
 
 MAINTAINER=	greg@gregnet.net
 
+BROKEN=		"Does not package correctly"
+
 USE_X_PREFIX=	yes
 USE_GTK=	yes
 WANT_GNOME=	yes
