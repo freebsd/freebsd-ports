@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	libevent
-PORTVERSION=	1.0
+PORTVERSION=	1.0b
 CATEGORIES=	devel
 MASTER_SITES=	http://monkey.org/~provos/
-DISTNAME=	${PORTNAME}-${PORTVERSION:S/.c$/c/}
 
 MAINTAINER=	petef@FreeBSD.org
 COMMENT=	Provides an API to execute callback functions on certain events
