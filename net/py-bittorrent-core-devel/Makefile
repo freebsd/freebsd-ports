@@ -6,7 +6,6 @@
 #
 
 PKGNAMESUFFIX=	-core
-CATEGORIES=	net python
 
 COMMENT=	Client 'core' for the BitTorrent peer-to-peer network
 
