@@ -2,6 +2,7 @@
 #
     SUBDIR += xtel
 
+    SUBDIR += cups
     SUBDIR += ispell
     SUBDIR += kde2-i18n
     SUBDIR += kde3-i18n
