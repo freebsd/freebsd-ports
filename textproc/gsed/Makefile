@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	sed
-PORTVERSION=	4.0.7
-PKGNAMEPREFIX=	g
+PORTVERSION=	4.0.9
 CATEGORIES=	textproc
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	${PORTNAME}
+PKGNAMEPREFIX=	g
 
 MAINTAINER=	cyrille.lefevre@laposte.net
 COMMENT=	The GNU stream editor
@@ -25,15 +25,17 @@ CONFIGURE_ENV=	MAKEINFO="makeinfo --no-split"
 CONFIGURE_ARGS=	--disable-nls
 USE_GMAKE=	yes
 
+INFO=		sed
 MAN1=		gsed.1
 
 # Local variables
 #
 
 PATCH_SUBDIRS=	. doc lib sed
+DATADIR=	${PREFIX}/share/${PKGBASE}
 
-SAMP_FILES=	dc.sed
-SAMP_DIR=	${PREFIX}/share/examples/${PKGBASE}
+SAMP_FILES=	binary*.sed dc.sed
+EXAMPLESDIR=	${PREFIX}/share/examples/${PKGBASE}
 
 DOC_FILES=	AUTHORS BUGS COPYING COPYING.DOC NEWS README THANKS
 DOCSDIR=	${PREFIX}/share/doc/${PKGBASE}
@@ -54,9 +56,9 @@ patch-makefiles:
 post-install: install-sample-files install-doc-files
 
 install-sample-files:
-	@${MKDIR} ${SAMP_DIR}
+	@${MKDIR} ${EXAMPLESDIR}
 .for file in ${SAMP_FILES}
-	@${INSTALL_DATA} ${WRKSRC}/testsuite/${file} ${SAMP_DIR}
+	@${INSTALL_DATA} ${WRKSRC}/testsuite/${file} ${EXAMPLESDIR}
 .endfor
 
 install-doc-files:
