@@ -6,10 +6,11 @@
 #
 
 PORTNAME=	phylip
-PORTVERSION=	3.5
+PORTVERSION=	3.6
 CATEGORIES=	biology
-MASTER_SITES=	ftp://evolution.genetics.washington.edu/pub/phylip/
+MASTER_SITES=	ftp://evolution.genetics.washington.edu/pub/phylip/phylip36/
 DISTNAME=	${PORTNAME}
+WRKSRC=		${WRKDIR}/${DISTNAME}/src
 EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=	dbader@eece.unm.edu
@@ -19,16 +20,18 @@ NO_WRKSUBDIR=	yes
 BINARIES=	clique consense contml contrast dnacomp dnadist dnainvar \
 		dnaml dnamlk dnamove dnapars dnapenny dolmove dollop \
 		dolpenny drawgram drawtree factor fitch gendist kitsch \
-		mix move neighbor penny protdist protpars restml retree \
-		seqboot
-DOCFILES=	README clique.doc consense.doc contchar.doc contml.doc \
-		contrast.doc discrete.doc distance.doc dnacomp.doc dnadist.doc \
-		dnainvar.doc dnaml.doc dnamlk.doc dnamove.doc dnapars.doc \
-		dnapenny.doc dollop.doc dolmove.doc dolpenny.doc draw.doc \
-		drawgram.doc drawtree.doc factor.doc fitch.doc gendist.doc \
-		kitsch.doc main.doc makeinf.doc mix.doc move.doc neighbor.doc \
-		penny.doc protdist.doc protml.doc protpars.doc restml.doc \
-		retree.doc seqboot.doc sequence.doc
+		mix move neighbor pars penny proml protdist protpars \
+		restdist restml retree seqboot treedist
+DOCFILES=	clique.html consense.html contchar.html contml.html \
+		contrast.html discrete.html distance.html dnacomp.html \
+		dnadist.html dnainvar.html dnaml.html dnamlk.html \
+		dnamove.html dnapars.html dnapenny.html dollop.html \
+		dolmove.html dolpenny.html draw.html drawgram.html \
+		drawtree.html factor.html fitch.html gendist.html \
+		kitsch.html main.html mix.html move.html neighbor.html \
+		pars.html penny.html phylip.gif proml.html protdist.html \
+		protpars.html restdist.html restml.html retree.html \
+		seqboot.html sequence.html treedist.html
 
 do-install:
 .for f in ${BINARIES}
@@ -37,7 +40,8 @@ do-install:
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${PREFIX}/share/doc/${PORTNAME}
 .for f in ${DOCFILES}
-	${INSTALL_DATA} ${WRKSRC}/${f} ${PREFIX}/share/doc/${PORTNAME}
+	${INSTALL_DATA} ${WRKDIR}/${DISTNAME}/doc/${f} \
+	${PREFIX}/share/doc/${PORTNAME}
 .endfor
 .endif
 
