@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.69 1999/02/26 19:21:18 shige Exp $
+# $Id: Makefile,v 1.70 1999/03/29 11:40:48 obrien Exp $
 #
 
     SUBDIR += apel-emacs
@@ -22,6 +22,7 @@
     SUBDIR += jove
     SUBDIR += le
     SUBDIR += leim20
+    SUBDIR += lpe
     SUBDIR += mule
     SUBDIR += mule-common
     SUBDIR += nedit
