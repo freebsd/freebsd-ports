@@ -11743,6 +11743,7 @@ xmms-real-random	ports/audio/xmms-real-random
 xmms-scrobbler	ports/audio/xmms-scrobbler
 xmms-shn	ports/audio/xmms-shn
 xmms-sid	ports/audio/xmms-sid
+xmms-skins	ports/multimedia/xmms-skins
 xmms-sndfile	ports/audio/xmms-sndfile
 xmms-sndstretch	ports/audio/xmms-sndstretch
 xmms-speex	ports/audio/xmms-speex
