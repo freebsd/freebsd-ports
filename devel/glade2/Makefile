@@ -6,11 +6,10 @@
 #
 
 PORTNAME=	glade2
-PORTVERSION=	2.0.1
-PORTREVISION=	2
+PORTVERSION=	2.6.0
 CATEGORIES=	devel gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
-MASTER_SITE_SUBDIR=	sources/${PORTNAME:S/2$//}/2.0
+MASTER_SITE_SUBDIR=	sources/${PORTNAME:S/2$//}/2.6
 DISTNAME=	glade-${PORTVERSION}
 DIST_SUBDIR=	gnome2
 
@@ -20,9 +19,9 @@ COMMENT=	A user interface builder for GTK+/GNOME
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes
 USE_LIBTOOL_VER=	13
-USE_GNOME=	gnomeprefix gnomehack libgnomedb libgnomeui
+USE_GNOME=	gnomeprefix intlhack gnomehack lthack libgnomedb libgnomeui
 USE_GMAKE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LIBS="-L${LOCALBASE}/lib"
+		LDFLAGS="-L${LOCALBASE}/lib"
 
 .include <bsd.port.mk>
