@@ -13,7 +13,6 @@ bin/gslj
 bin/gslp
 bin/gsnd
 %%SHLIB%%bin/gsx
-bin/hpijs
 bin/lprsetup.sh
 bin/pcl3opts
 bin/pdf2dsc
@@ -48,8 +47,6 @@ bin/wftopfa
 %%PORTDOCS%%share/doc/ghostscript/%%GS_VERSION%%/gimp-print/README
 %%PORTDOCS%%share/doc/ghostscript/%%GS_VERSION%%/hpdj/NEWS
 %%PORTDOCS%%share/doc/ghostscript/%%GS_VERSION%%/hpdj/hpdj.html
-%%PORTDOCS%%share/doc/ghostscript/%%GS_VERSION%%/hpijs/gs_hpijs.png
-%%PORTDOCS%%share/doc/ghostscript/%%GS_VERSION%%/hpijs/hpijs_readme.html
 %%PORTDOCS%%share/doc/ghostscript/%%GS_VERSION%%/lips/Gdevlips.htm
 %%PORTDOCS%%share/doc/ghostscript/%%GS_VERSION%%/md2k/README.jis
 %%PORTDOCS%%share/doc/ghostscript/%%GS_VERSION%%/mjc/MJ700V2C.FAQ
@@ -531,7 +528,6 @@ share/ghostscript/fonts/z003034l.pfm
 %%PORTDOCS%%@dirrm share/doc/ghostscript/%%GS_VERSION%%/mjc
 %%PORTDOCS%%@dirrm share/doc/ghostscript/%%GS_VERSION%%/md2k
 %%PORTDOCS%%@dirrm share/doc/ghostscript/%%GS_VERSION%%/lips
-%%PORTDOCS%%@dirrm share/doc/ghostscript/%%GS_VERSION%%/hpijs
 %%PORTDOCS%%@dirrm share/doc/ghostscript/%%GS_VERSION%%/hpdj
 %%PORTDOCS%%@dirrm share/doc/ghostscript/%%GS_VERSION%%/gimp-print
 %%PORTDOCS%%@dirrm share/doc/ghostscript/%%GS_VERSION%%/eplaser

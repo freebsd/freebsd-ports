@@ -7,9 +7,10 @@
 
 PORTNAME=	ghostscript
 PORTVERSION=	7.05
+PORTREVISION=	1
 CATEGORIES=	print
-MASTER_SITES=	${MASTER_SITE_GNU:S/$/:DEFAULT,fonts/} \
-		${MASTER_SITE_SOURCEFORGE:S/$/:DEFAULT,gprint,hpijs/} \
+MASTER_SITES=	${MASTER_SITE_GNU:S/$/:fonts/} \
+		${MASTER_SITE_SOURCEFORGE:S/$/:DEFAULT,gprint/} \
 		http://www.gelhaus.net/hp880c/1.4beta/:hp8xx \
 		http://home.t-online.de/home/Martin.Lottermoser/pcl3dist/:hpdj_pcl3 \
 		http://www.harsch.net/Download/:dj970 \
@@ -21,10 +22,8 @@ MASTER_SITES=	${MASTER_SITE_GNU:S/$/:DEFAULT,fonts/} \
 		http://www.linuxprinting.org/download/printing/samsung-gdi/:gdi \
 		ftp://mirror.cs.wisc.edu/pub/mirrors/ghost/gnu/fonts/:fonts \
 		ftp://mirror.cs.wisc.edu/pub/mirrors/ghost/gnu/gs705/
-MASTER_SITE_SUBDIR=	${PORTNAME} \
-			gimp-print/:gprint \
-			hpinkjet/:hpijs \
-			ghostscript/:ports_jp
+MASTER_SITE_SUBDIR=	ghostscript/:DEFAULT,fonts,ports_jp \
+			gimp-print/:gprint
 PKGNAMESUFFIX=	-gnu
 DISTFILES=	${GS_SRCS}:DEFAULT \
 		${GS_FONTS_STD}:fonts \
@@ -34,7 +33,6 @@ DISTFILES=	${GS_SRCS}:DEFAULT \
 		${PCL3_SRCS}:hpdj_pcl3 \
 		${DJ970_SRCS}:dj970 \
 		${GPRINT_SRCS}:gprint \
-		${HPIJS_SRCS}:hpijs \
 		${MD2K_SRCS}:md2k \
 		${ALPS_SRCS}:ports_jp \
 		${BJ10V_SRCS}:ports_jp \
@@ -143,13 +141,6 @@ GPRINT_VERS=	4.2.1
 GPRINT_NAME=	${GPRINT}-${GPRINT_VERS}
 GPRINT_SRCS=	${GPRINT_NAME}.tar.gz
 
-# HPinkjet - additional driver for PhotoSmart/DeskJet series (HP developed)
-# http://hpinkjet.sourceforge.net/
-HPIJS=		hpijs
-HPIJS_VERS=	1.0.4
-HPIJS_NAME=	${HPIJS}-${HPIJS_VERS}
-HPIJS_SRCS=	${HPIJS_NAME}.tar.gz
-
 # MD2K - additional driver for Alps MD-2000/2010/4000/1300/1500/5000
 # http://plaza26.mbn.or.jp/~higamasa/gdevmd2k/
 MD2K=		md2k
@@ -251,9 +242,6 @@ post-extract:
 # for Gimp-Print driver
 	${ECHO_MSG} ">>>   extracting ${GPRINT_SRCS} ..."
 	${TAR} -C ${WRKSRC} -xzf ${DISTDIR}/${DIST_SUBDIR}/${GPRINT_SRCS}
-# for HPinkjet driver
-	${ECHO_MSG} ">>>   extracting ${HPIJS_SRCS} ..."
-	${TAR} -C ${WRKSRC} -xzf ${DISTDIR}/${DIST_SUBDIR}/${HPIJS_SRCS}
 # for MD2K driver
 	${ECHO_MSG} ">>>   extracting ${MD2K_SRCS} ..."
 	${TAR} -C ${WRKSRC} -xzf ${DISTDIR}/${DIST_SUBDIR}/${MD2K_SRCS}
@@ -297,12 +285,6 @@ post-patch:
 		${WRKSRC}/src/unixinst.mak
 	${PERL} -pi -e 's|%%DATADIR%%|${DATADIR}|g' \
 		${WRKSRC}/lib/gs_res.ps
-# for HPinkjet driver
-	${PERL} -pi -e 's|CFLAGS="-O2 -Wall"|CFLAGS="\$$CFLAGS"|g ; \
-		 s|CXXFLAGS="-O2 -Wall"|CXXFLAGS="\$$CXXFLAGS"|g' \
-			${WRKSRC}/${HPIJS_NAME}/configure
-	${PERL} -pi -e 's|#include <malloc.h>||g' \
-		${WRKSRC}/${HPIJS_NAME}/platform.h
 # for DMPRT driver
 	${PERL} -pi -e 's|%%DATADIR%%|${DATADIR}|g ; \
 		 s|%%GS_VERSION%%|${PORTVERSION}|g' \
@@ -382,11 +364,6 @@ post-configure:
 			--without-user-guide --disable-escputil \
 			--disable-nls --disable-shared \
 			--prefix=${PREFIX}
-# for HPinkjet driver
-	${ECHO_MSG} ">>>   running configure script for ${HPIJS} server ..."
-	cd ${WRKSRC}/${HPIJS_NAME} ; \
-		${SETENV} ${MAKE_ENV} ${SH} ./configure \
-			--prefix=${PREFIX}
 
 pre-build:
 	${ECHO_MSG} ">>> in pre-build ..."
@@ -404,10 +381,6 @@ pre-build:
 		${WRKSRC}/${GPRINT}/gimp-print
 	${LN} -sf ${WRKSRC}/${GPRINT_NAME}/src/main/.libs/libgimpprint.a \
 		${WRKSRC}/${GPRINT}/libgimpprint.a
-# for HPinkjet driver
-	${ECHO_MSG} ">>>   building ${HPIJS} server ..."
-	cd ${WRKSRC}/${HPIJS_NAME} ; \
-		${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_FLAGS} Makefile
 # for MD2K driver
 	${ECHO_MSG} ">>>   creating symlinks for ${MD2K} ..."
 .for i in gdevmd2k.c
@@ -502,9 +475,6 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/${PCL3_NAME}/${i} \
 		${DATADIR}/${PORTVERSION}/${PCL3}
 .endfor
-# for HPinkjet driver
-	${ECHO_MSG} ">>>   installing ${HPIJS} server in bindir ..."
-	${INSTALL_PROGRAM} ${WRKSRC}/${HPIJS_NAME}/hpijs ${PREFIX}/bin
 # for DMPRT driver
 	${ECHO_MSG} ">>>   installing ${DMPRT} resources ..."
 .for i in dmp_init.ps dmp_site.ps escp_24.src
@@ -546,13 +516,6 @@ post-install:
 .for i in README
 	${INSTALL_DATA} ${WRKSRC}/${GPRINT_NAME}/src/ghost/${i} \
 		${DOCSDIR}/${PORTVERSION}/${GPRINT}
-.endfor
-# for HPinkjet driver
-	${ECHO_MSG} ">>>   installing ${HPIJS} docs ..."
-	${MKDIR} ${DOCSDIR}/${PORTVERSION}/${HPIJS}
-.for i in hpijs_readme.html gs_hpijs.png
-	${INSTALL_DATA} ${WRKSRC}/${HPIJS_NAME}/${i} \
-		${DOCSDIR}/${PORTVERSION}/${HPIJS}
 .endfor
 # for MD2K driver
 	${ECHO_MSG} ">>>   installing ${MD2K} docs ..."
