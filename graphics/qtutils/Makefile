@@ -15,10 +15,6 @@ MASTER_SITES=	http://www.flyn.org/projects/qtutils/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	QuickTime Utilities
 
-BROKEN=         libquicktime API changed
-EXPIRATION_DATE=2005-06-01
-DEPRECATED=	"${BROKEN}"
-
 LIB_DEPENDS=	vorbis.3:${PORTSDIR}/audio/libvorbis \
 		quicktime.0:${PORTSDIR}/multimedia/libquicktime
 
