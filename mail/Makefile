@@ -211,6 +211,7 @@
     SUBDIR += sonicmail
     SUBDIR += spambnc
     SUBDIR += spruce
+    SUBDIR += squirrelmail
     SUBDIR += sqwebmail
     SUBDIR += ssmtp
     SUBDIR += stuphead

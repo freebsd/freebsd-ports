@@ -1,0 +1,12 @@
+SquirrelMail is a standards-based webmail package written in PHP4. It
+includes built-in pure PHP support for the IMAP and SMTP protocols, and
+all pages render in pure HTML 4.0 (with no Javascript) for maximum
+compatibility across browsers. It has very few requirements and is very
+easy to configure and install. SquirrelMail has a all the functionality
+you would want from an email client, including strong MIME support,
+address books, and folder manipulation
+
+WWW: http://www.squirrelmail.org/
+
+- Simon Dick
+simond@irrelevant.org

@@ -1,0 +1,561 @@
+squirrelmail/config/conf.pl
+squirrelmail/config/config_default.php
+squirrelmail/config/index.php
+squirrelmail/config/ri_once.pl
+squirrelmail/src/webmail.php
+squirrelmail/src/addrbook_search.php
+squirrelmail/src/addrbook_search_html.php
+squirrelmail/src/addressbook.php
+squirrelmail/src/compose.php
+squirrelmail/src/delete_message.php
+squirrelmail/src/download.php
+squirrelmail/src/draft_actions.php
+squirrelmail/src/empty_trash.php
+squirrelmail/src/folders.php
+squirrelmail/src/folders_create.php
+squirrelmail/src/folders_delete.php
+squirrelmail/src/folders_rename_do.php
+squirrelmail/src/folders_rename_getname.php
+squirrelmail/src/folders_subscribe.php
+squirrelmail/src/help.php
+squirrelmail/src/image.php
+squirrelmail/src/index.php
+squirrelmail/src/login.php
+squirrelmail/src/left_main.php
+squirrelmail/src/load_prefs.php
+squirrelmail/src/move_messages.php
+squirrelmail/src/options.php
+squirrelmail/src/options_display.php
+squirrelmail/src/options_folder.php
+squirrelmail/src/options_highlight.php
+squirrelmail/src/options_identities.php
+squirrelmail/src/options_order.php
+squirrelmail/src/options_personal.php
+squirrelmail/src/printer_friendly_bottom.php
+squirrelmail/src/printer_friendly_main.php
+squirrelmail/src/printer_friendly_top.php
+squirrelmail/src/read_body.php
+squirrelmail/src/redirect.php
+squirrelmail/src/retrievalerror.php
+squirrelmail/src/right_main.php
+squirrelmail/src/search.php
+squirrelmail/src/signout.php
+squirrelmail/src/validate.php
+squirrelmail/src/vcard.php
+squirrelmail/src/addrbook_popup.php
+squirrelmail/po/charsetconvert.pl
+squirrelmail/po/compilepo
+squirrelmail/po/index.php
+squirrelmail/po/mergepo
+squirrelmail/po/squirrelmail.po
+squirrelmail/po/xgetpo
+squirrelmail/plugins/spamcop/options.php
+squirrelmail/plugins/spamcop/README
+squirrelmail/plugins/spamcop/setup.php
+squirrelmail/plugins/spamcop/spamcop.php
+squirrelmail/plugins/translate/index.php
+squirrelmail/plugins/translate/INSTALL
+squirrelmail/plugins/translate/README
+squirrelmail/plugins/translate/options.php
+squirrelmail/plugins/translate/setup.php
+squirrelmail/plugins/squirrelspell/js/WHATISTHIS
+squirrelmail/plugins/squirrelspell/js/check_me.js
+squirrelmail/plugins/squirrelspell/js/crypto_settings.js
+squirrelmail/plugins/squirrelspell/js/decrypt_error.js
+squirrelmail/plugins/squirrelspell/js/index.php
+squirrelmail/plugins/squirrelspell/js/init.js
+squirrelmail/plugins/squirrelspell/doc/ChangeLog
+squirrelmail/plugins/squirrelspell/doc/CRYPTO
+squirrelmail/plugins/squirrelspell/doc/UPGRADING
+squirrelmail/plugins/squirrelspell/doc/PRIVACY
+squirrelmail/plugins/squirrelspell/doc/README
+squirrelmail/plugins/squirrelspell/doc/index.php
+squirrelmail/plugins/squirrelspell/modules/check_me.mod
+squirrelmail/plugins/squirrelspell/modules/crypto.mod
+squirrelmail/plugins/squirrelspell/modules/crypto_badkey.mod
+squirrelmail/plugins/squirrelspell/modules/edit_dic.mod
+squirrelmail/plugins/squirrelspell/modules/enc_setup.mod
+squirrelmail/plugins/squirrelspell/modules/forget_me.mod
+squirrelmail/plugins/squirrelspell/modules/forget_me_not.mod
+squirrelmail/plugins/squirrelspell/modules/index.php
+squirrelmail/plugins/squirrelspell/modules/init.mod
+squirrelmail/plugins/squirrelspell/modules/lang_change.mod
+squirrelmail/plugins/squirrelspell/modules/lang_setup.mod
+squirrelmail/plugins/squirrelspell/modules/options_main.mod
+squirrelmail/plugins/squirrelspell/modules/WHATISTHIS
+squirrelmail/plugins/squirrelspell/index.php
+squirrelmail/plugins/squirrelspell/sqspell_functions.php
+squirrelmail/plugins/squirrelspell/sqspell_interface.php
+squirrelmail/plugins/squirrelspell/sqspell_options.php
+squirrelmail/plugins/squirrelspell/sqspell_config.php
+squirrelmail/plugins/squirrelspell/INSTALL
+squirrelmail/plugins/squirrelspell/setup.php
+squirrelmail/plugins/sent_subfolders/setup.php
+squirrelmail/plugins/filters/index.php
+squirrelmail/plugins/filters/CHANGES
+squirrelmail/plugins/filters/README
+squirrelmail/plugins/filters/filters.php
+squirrelmail/plugins/filters/options.php
+squirrelmail/plugins/filters/setup.php
+squirrelmail/plugins/filters/spamoptions.php
+squirrelmail/plugins/bug_report/setup.php
+squirrelmail/plugins/bug_report/INSTALL
+squirrelmail/plugins/bug_report/README
+squirrelmail/plugins/bug_report/bug_report.php
+squirrelmail/plugins/newmail/sounds/FanFair.wav
+squirrelmail/plugins/newmail/sounds/Friends.wav
+squirrelmail/plugins/newmail/sounds/MontyPython.wav
+squirrelmail/plugins/newmail/sounds/Notify.wav
+squirrelmail/plugins/newmail/HISTORY
+squirrelmail/plugins/newmail/README
+squirrelmail/plugins/newmail/newmail.php
+squirrelmail/plugins/newmail/newmail_opt.php
+squirrelmail/plugins/newmail/setup.php
+squirrelmail/plugins/newmail/testsound.php
+squirrelmail/plugins/mail_fetch/functions.php
+squirrelmail/plugins/mail_fetch/README
+squirrelmail/plugins/mail_fetch/class.POP3.php
+squirrelmail/plugins/mail_fetch/fetch.php
+squirrelmail/plugins/mail_fetch/mailfetch.po
+squirrelmail/plugins/mail_fetch/options.php
+squirrelmail/plugins/mail_fetch/setup.php
+squirrelmail/plugins/make_archive.pl
+squirrelmail/plugins/index.php
+squirrelmail/plugins/README.plugins
+squirrelmail/locale/ko_KR/LC_MESSAGES/squirrelmail.mo
+squirrelmail/locale/ko_KR/LC_MESSAGES/squirrelmail.po
+squirrelmail/locale/zh_TW/LC_MESSAGES/squirrelmail.mo
+squirrelmail/locale/zh_TW/LC_MESSAGES/squirrelmail.po
+squirrelmail/locale/ca_ES/LC_MESSAGES/squirrelmail.mo
+squirrelmail/locale/ca_ES/LC_MESSAGES/squirrelmail.po
+squirrelmail/locale/cs_CZ/LC_MESSAGES/squirrelmail.mo
+squirrelmail/locale/cs_CZ/LC_MESSAGES/squirrelmail.po
+squirrelmail/locale/da_DK/LC_MESSAGES/squirrelmail.mo
+squirrelmail/locale/da_DK/LC_MESSAGES/squirrelmail.po
+squirrelmail/locale/de_DE/LC_MESSAGES/squirrelmail.mo
+squirrelmail/locale/de_DE/LC_MESSAGES/squirrelmail.po
+squirrelmail/locale/es_ES/LC_MESSAGES/squirrelmail.mo
+squirrelmail/locale/es_ES/LC_MESSAGES/squirrelmail.po
+squirrelmail/locale/et_EE/LC_MESSAGES/squirrelmail.mo
+squirrelmail/locale/et_EE/LC_MESSAGES/squirrelmail.po
+squirrelmail/locale/fi_FI/LC_MESSAGES/squirrelmail.mo
+squirrelmail/locale/fi_FI/LC_MESSAGES/squirrelmail.po
+squirrelmail/locale/fr_FR/LC_MESSAGES/squirrelmail.mo
+squirrelmail/locale/fr_FR/LC_MESSAGES/squirrelmail.po
+squirrelmail/locale/hr_HR/LC_MESSAGES/squirrelmail.mo
+squirrelmail/locale/hr_HR/LC_MESSAGES/squirrelmail.po
+squirrelmail/locale/hu_HU/LC_MESSAGES/squirrelmail.mo
+squirrelmail/locale/hu_HU/LC_MESSAGES/squirrelmail.po
+squirrelmail/locale/id_ID/LC_MESSAGES/squirrelmail.mo
+squirrelmail/locale/id_ID/LC_MESSAGES/squirrelmail.po
+squirrelmail/locale/is_IS/LC_MESSAGES/squirrelmail.mo
+squirrelmail/locale/is_IS/LC_MESSAGES/squirrelmail.po
+squirrelmail/locale/it_IT/LC_MESSAGES/squirrelmail.mo
+squirrelmail/locale/it_IT/LC_MESSAGES/squirrelmail.po
+squirrelmail/locale/tr_TR/LC_MESSAGES/squirrelmail.mo
+squirrelmail/locale/tr_TR/LC_MESSAGES/squirrelmail.po
+squirrelmail/locale/bg_BG/LC_MESSAGES/squirrelmail.mo
+squirrelmail/locale/bg_BG/LC_MESSAGES/squirrelmail.po
+squirrelmail/locale/nl_NL/LC_MESSAGES/squirrelmail.mo
+squirrelmail/locale/nl_NL/LC_MESSAGES/squirrelmail.po
+squirrelmail/locale/nn_NO/LC_MESSAGES/squirrelmail.mo
+squirrelmail/locale/nn_NO/LC_MESSAGES/squirrelmail.po
+squirrelmail/locale/no_NO/LC_MESSAGES/squirrelmail.mo
+squirrelmail/locale/no_NO/LC_MESSAGES/squirrelmail.po
+squirrelmail/locale/pl_PL/LC_MESSAGES/squirrelmail.mo
+squirrelmail/locale/pl_PL/LC_MESSAGES/squirrelmail.po
+squirrelmail/locale/pt_BR/LC_MESSAGES/squirrelmail.mo
+squirrelmail/locale/pt_BR/LC_MESSAGES/squirrelmail.po
+squirrelmail/locale/pt_PT/LC_MESSAGES/squirrelmail.mo
+squirrelmail/locale/pt_PT/LC_MESSAGES/squirrelmail.po
+squirrelmail/locale/ro_RO/LC_MESSAGES/squirrelmail.mo
+squirrelmail/locale/ro_RO/LC_MESSAGES/squirrelmail.po
+squirrelmail/locale/ru_RU/LC_MESSAGES/squirrelmail.mo
+squirrelmail/locale/ru_RU/LC_MESSAGES/squirrelmail.po
+squirrelmail/locale/sk_SK/LC_MESSAGES/squirrelmail.mo
+squirrelmail/locale/sk_SK/LC_MESSAGES/squirrelmail.po
+squirrelmail/locale/sl_SI/LC_MESSAGES/squirrelmail.mo
+squirrelmail/locale/sl_SI/LC_MESSAGES/squirrelmail.po
+squirrelmail/locale/sr_YU/LC_MESSAGES/squirrelmail.mo
+squirrelmail/locale/sr_YU/LC_MESSAGES/squirrelmail.po
+squirrelmail/locale/sv_SE/LC_MESSAGES/squirrelmail.mo
+squirrelmail/locale/sv_SE/LC_MESSAGES/squirrelmail.po
+squirrelmail/locale/th_TH/LC_MESSAGES/squirrelmail.mo
+squirrelmail/locale/th_TH/LC_MESSAGES/squirrelmail.po
+squirrelmail/locale/lt_LT/LC_MESSAGES/squirrelmail.mo
+squirrelmail/locale/lt_LT/LC_MESSAGES/squirrelmail.po
+squirrelmail/locale/index.php
+squirrelmail/themes/css/sans-08.css
+squirrelmail/themes/css/sans-10.css
+squirrelmail/themes/css/sans-12.css
+squirrelmail/themes/css/serif-10.css
+squirrelmail/themes/css/serif-12.css
+squirrelmail/themes/README.themes
+squirrelmail/themes/black_bean_burrito_theme.php
+squirrelmail/themes/blue_grey_theme.php
+squirrelmail/themes/bluesnews_theme.php
+squirrelmail/themes/bluesteel_theme.php
+squirrelmail/themes/christmas.php
+squirrelmail/themes/dark_grey_theme.php
+squirrelmail/themes/darkness.php
+squirrelmail/themes/deepocean2_theme.php
+squirrelmail/themes/deepocean_theme.php
+squirrelmail/themes/default_theme.php
+squirrelmail/themes/dompie_theme.php
+squirrelmail/themes/forest_theme.php
+squirrelmail/themes/greenhouse_effect.php
+squirrelmail/themes/high_contrast_theme.php
+squirrelmail/themes/ice_theme.php
+squirrelmail/themes/index.php
+squirrelmail/themes/in_the_pink.php
+squirrelmail/themes/kind_of_blue.php
+squirrelmail/themes/maize_theme.php
+squirrelmail/themes/methodical_theme.php
+squirrelmail/themes/midnight.php
+squirrelmail/themes/monostochastic.php
+squirrelmail/themes/plain_blue_theme.php
+squirrelmail/themes/purple_theme.php
+squirrelmail/themes/random.php
+squirrelmail/themes/sandstorm_theme.php
+squirrelmail/themes/seaspray_theme.php
+squirrelmail/themes/servery_theme.php
+squirrelmail/themes/shades_of_grey.php
+squirrelmail/themes/slashdot_theme.php
+squirrelmail/themes/spice_of_life.php
+squirrelmail/themes/spice_of_life_dark.php
+squirrelmail/themes/spice_of_life_lite.php
+squirrelmail/images/sm_logo.jpg
+squirrelmail/images/index.php
+squirrelmail/images/sec_remove_eng.png
+squirrelmail/images/down_pointer.png
+squirrelmail/images/sm_logo.png
+squirrelmail/images/sort_none.png
+squirrelmail/images/up_pointer.png
+squirrelmail/help/it_IT/search.hlp
+squirrelmail/help/it_IT/FAQ.hlp
+squirrelmail/help/it_IT/addresses.hlp
+squirrelmail/help/it_IT/compose.hlp
+squirrelmail/help/it_IT/folders.hlp
+squirrelmail/help/it_IT/main_folder.hlp
+squirrelmail/help/it_IT/options.hlp
+squirrelmail/help/it_IT/read_mail.hlp
+squirrelmail/help/it_IT/basic.hlp
+squirrelmail/help/th_TH/search.hlp
+squirrelmail/help/th_TH/FAQ.hlp
+squirrelmail/help/th_TH/addresses.hlp
+squirrelmail/help/th_TH/compose.hlp
+squirrelmail/help/th_TH/folders.hlp
+squirrelmail/help/th_TH/main_folder.hlp
+squirrelmail/help/th_TH/options.hlp
+squirrelmail/help/th_TH/read_mail.hlp
+squirrelmail/help/th_TH/basic.hlp
+squirrelmail/help/cs_CZ/search.hlp
+squirrelmail/help/cs_CZ/FAQ.hlp
+squirrelmail/help/cs_CZ/addresses.hlp
+squirrelmail/help/cs_CZ/compose.hlp
+squirrelmail/help/cs_CZ/folders.hlp
+squirrelmail/help/cs_CZ/main_folder.hlp
+squirrelmail/help/cs_CZ/options.hlp
+squirrelmail/help/cs_CZ/read_mail.hlp
+squirrelmail/help/cs_CZ/basic.hlp
+squirrelmail/help/en_US/search.hlp
+squirrelmail/help/en_US/FAQ.hlp
+squirrelmail/help/en_US/addresses.hlp
+squirrelmail/help/en_US/compose.hlp
+squirrelmail/help/en_US/folders.hlp
+squirrelmail/help/en_US/main_folder.hlp
+squirrelmail/help/en_US/options.hlp
+squirrelmail/help/en_US/read_mail.hlp
+squirrelmail/help/en_US/basic.hlp
+squirrelmail/help/es_ES/search.hlp
+squirrelmail/help/es_ES/FAQ.hlp
+squirrelmail/help/es_ES/addresses.hlp
+squirrelmail/help/es_ES/compose.hlp
+squirrelmail/help/es_ES/folders.hlp
+squirrelmail/help/es_ES/main_folder.hlp
+squirrelmail/help/es_ES/options.hlp
+squirrelmail/help/es_ES/read_mail.hlp
+squirrelmail/help/es_ES/basic.hlp
+squirrelmail/help/fi_FI/search.hlp
+squirrelmail/help/fi_FI/FAQ.hlp
+squirrelmail/help/fi_FI/addresses.hlp
+squirrelmail/help/fi_FI/compose.hlp
+squirrelmail/help/fi_FI/folders.hlp
+squirrelmail/help/fi_FI/main_folder.hlp
+squirrelmail/help/fi_FI/options.hlp
+squirrelmail/help/fi_FI/read_mail.hlp
+squirrelmail/help/fi_FI/basic.hlp
+squirrelmail/help/fr_FR/search.hlp
+squirrelmail/help/fr_FR/FAQ.hlp
+squirrelmail/help/fr_FR/addresses.hlp
+squirrelmail/help/fr_FR/compose.hlp
+squirrelmail/help/fr_FR/folders.hlp
+squirrelmail/help/fr_FR/main_folder.hlp
+squirrelmail/help/fr_FR/options.hlp
+squirrelmail/help/fr_FR/read_mail.hlp
+squirrelmail/help/fr_FR/basic.hlp
+squirrelmail/help/id_ID/search.hlp
+squirrelmail/help/id_ID/FAQ.hlp
+squirrelmail/help/id_ID/addresses.hlp
+squirrelmail/help/id_ID/compose.hlp
+squirrelmail/help/id_ID/folders.hlp
+squirrelmail/help/id_ID/main_folder.hlp
+squirrelmail/help/id_ID/options.hlp
+squirrelmail/help/id_ID/read_mail.hlp
+squirrelmail/help/id_ID/basic.hlp
+squirrelmail/help/sv_SE/search.hlp
+squirrelmail/help/sv_SE/FAQ.hlp
+squirrelmail/help/sv_SE/addresses.hlp
+squirrelmail/help/sv_SE/compose.hlp
+squirrelmail/help/sv_SE/folders.hlp
+squirrelmail/help/sv_SE/main_folder.hlp
+squirrelmail/help/sv_SE/options.hlp
+squirrelmail/help/sv_SE/read_mail.hlp
+squirrelmail/help/sv_SE/basic.hlp
+squirrelmail/help/ca_ES/search.hlp
+squirrelmail/help/ca_ES/FAQ.hlp
+squirrelmail/help/ca_ES/addresses.hlp
+squirrelmail/help/ca_ES/compose.hlp
+squirrelmail/help/ca_ES/folders.hlp
+squirrelmail/help/ca_ES/main_folder.hlp
+squirrelmail/help/ca_ES/options.hlp
+squirrelmail/help/ca_ES/read_mail.hlp
+squirrelmail/help/ca_ES/basic.hlp
+squirrelmail/help/lt_LT/search.hlp
+squirrelmail/help/lt_LT/FAQ.hlp
+squirrelmail/help/lt_LT/addresses.hlp
+squirrelmail/help/lt_LT/compose.hlp
+squirrelmail/help/lt_LT/folders.hlp
+squirrelmail/help/lt_LT/main_folder.hlp
+squirrelmail/help/lt_LT/options.hlp
+squirrelmail/help/lt_LT/read_mail.hlp
+squirrelmail/help/lt_LT/basic.hlp
+squirrelmail/help/nl_NL/search.hlp
+squirrelmail/help/nl_NL/FAQ.hlp
+squirrelmail/help/nl_NL/addresses.hlp
+squirrelmail/help/nl_NL/compose.hlp
+squirrelmail/help/nl_NL/folders.hlp
+squirrelmail/help/nl_NL/main_folder.hlp
+squirrelmail/help/nl_NL/options.hlp
+squirrelmail/help/nl_NL/read_mail.hlp
+squirrelmail/help/nl_NL/basic.hlp
+squirrelmail/help/pl_PL/search.hlp
+squirrelmail/help/pl_PL/FAQ.hlp
+squirrelmail/help/pl_PL/addresses.hlp
+squirrelmail/help/pl_PL/compose.hlp
+squirrelmail/help/pl_PL/folders.hlp
+squirrelmail/help/pl_PL/main_folder.hlp
+squirrelmail/help/pl_PL/options.hlp
+squirrelmail/help/pl_PL/read_mail.hlp
+squirrelmail/help/pl_PL/basic.hlp
+squirrelmail/help/pt_BR/search.hlp
+squirrelmail/help/pt_BR/FAQ.hlp
+squirrelmail/help/pt_BR/addresses.hlp
+squirrelmail/help/pt_BR/compose.hlp
+squirrelmail/help/pt_BR/folders.hlp
+squirrelmail/help/pt_BR/main_folder.hlp
+squirrelmail/help/pt_BR/options.hlp
+squirrelmail/help/pt_BR/read_mail.hlp
+squirrelmail/help/pt_BR/basic.hlp
+squirrelmail/help/pt_PT/search.hlp
+squirrelmail/help/pt_PT/FAQ.hlp
+squirrelmail/help/pt_PT/addresses.hlp
+squirrelmail/help/pt_PT/compose.hlp
+squirrelmail/help/pt_PT/folders.hlp
+squirrelmail/help/pt_PT/main_folder.hlp
+squirrelmail/help/pt_PT/options.hlp
+squirrelmail/help/pt_PT/read_mail.hlp
+squirrelmail/help/pt_PT/basic.hlp
+squirrelmail/help/ru_RU/search.hlp
+squirrelmail/help/ru_RU/FAQ.hlp
+squirrelmail/help/ru_RU/addresses.hlp
+squirrelmail/help/ru_RU/compose.hlp
+squirrelmail/help/ru_RU/folders.hlp
+squirrelmail/help/ru_RU/main_folder.hlp
+squirrelmail/help/ru_RU/options.hlp
+squirrelmail/help/ru_RU/read_mail.hlp
+squirrelmail/help/ru_RU/basic.hlp
+squirrelmail/help/sl_SI/search.hlp
+squirrelmail/help/sl_SI/FAQ.hlp
+squirrelmail/help/sl_SI/addresses.hlp
+squirrelmail/help/sl_SI/compose.hlp
+squirrelmail/help/sl_SI/folders.hlp
+squirrelmail/help/sl_SI/main_folder.hlp
+squirrelmail/help/sl_SI/options.hlp
+squirrelmail/help/sl_SI/read_mail.hlp
+squirrelmail/help/sl_SI/basic.hlp
+squirrelmail/help/ko_KR/search.hlp
+squirrelmail/help/ko_KR/FAQ.hlp
+squirrelmail/help/ko_KR/addresses.hlp
+squirrelmail/help/ko_KR/compose.hlp
+squirrelmail/help/ko_KR/folders.hlp
+squirrelmail/help/ko_KR/main_folder.hlp
+squirrelmail/help/ko_KR/options.hlp
+squirrelmail/help/ko_KR/read_mail.hlp
+squirrelmail/help/ko_KR/basic.hlp
+squirrelmail/help/index.php
+squirrelmail/functions/url_parser.php
+squirrelmail/functions/abook_global_file.php
+squirrelmail/functions/abook_ldap_server.php
+squirrelmail/functions/abook_local_file.php
+squirrelmail/functions/addressbook.php
+squirrelmail/functions/array.php
+squirrelmail/functions/attachment_common.php
+squirrelmail/functions/auth.php
+squirrelmail/functions/constants.php
+squirrelmail/functions/date.php
+squirrelmail/functions/db_prefs.php
+squirrelmail/functions/display_messages.php
+squirrelmail/functions/gettext.php
+squirrelmail/functions/i18n.php
+squirrelmail/functions/imap.php
+squirrelmail/functions/imap_general.php
+squirrelmail/functions/imap_mailbox.php
+squirrelmail/functions/imap_messages.php
+squirrelmail/functions/imap_search.php
+squirrelmail/functions/index.php
+squirrelmail/functions/mailbox_display.php
+squirrelmail/functions/mime.php
+squirrelmail/functions/options.php
+squirrelmail/functions/page_header.php
+squirrelmail/functions/plugin.php
+squirrelmail/functions/prefs.php
+squirrelmail/functions/smtp.php
+squirrelmail/functions/strings.php
+squirrelmail/functions/tree.php
+squirrelmail/functions/abook_database.php
+squirrelmail/doc/ReleaseNotes/1.2/Notes-1.2.0.txt
+squirrelmail/doc/ReleaseNotes/1.2/Notes-1.2.1.txt
+squirrelmail/doc/ReleaseNotes/1.2/Notes-1.2.2.txt
+squirrelmail/doc/ReleaseNotes/1.2/Notes-1.2.3.txt
+squirrelmail/doc/README.russian_apache
+squirrelmail/doc/addressbook.txt
+squirrelmail/doc/db-backend.txt
+squirrelmail/doc/ie_ssl.txt
+squirrelmail/doc/index.html
+squirrelmail/doc/mime.txt
+squirrelmail/doc/plugin.txt
+squirrelmail/doc/rfc_documents.txt
+squirrelmail/doc/themes.txt
+squirrelmail/doc/translating.txt
+squirrelmail/doc/translating_help.txt
+squirrelmail/doc/tree.txt
+squirrelmail/data/default_pref
+squirrelmail/data/index.php
+squirrelmail/AUTHORS
+squirrelmail/index.php
+squirrelmail/UPGRADE
+squirrelmail/ReleaseNotes
+squirrelmail/README
+squirrelmail/MIRRORS
+squirrelmail/INSTALL
+squirrelmail/ChangeLog
+squirrelmail/COPYING
+squirrelmail/configure
+@dirrm squirrelmail/config
+@dirrm squirrelmail/src
+@dirrm squirrelmail/po
+@dirrm squirrelmail/plugins/spamcop
+@dirrm squirrelmail/plugins/translate
+@dirrm squirrelmail/plugins/squirrelspell/js
+@dirrm squirrelmail/plugins/squirrelspell/doc
+@dirrm squirrelmail/plugins/squirrelspell/modules
+@dirrm squirrelmail/plugins/squirrelspell
+@dirrm squirrelmail/plugins/sent_subfolders
+@dirrm squirrelmail/plugins/filters
+@dirrm squirrelmail/plugins/bug_report
+@dirrm squirrelmail/plugins/newmail/sounds
+@dirrm squirrelmail/plugins/newmail
+@dirrm squirrelmail/plugins/mail_fetch
+@dirrm squirrelmail/plugins
+@dirrm squirrelmail/locale/ko_KR/LC_MESSAGES
+@dirrm squirrelmail/locale/ko_KR
+@dirrm squirrelmail/locale/zh_TW/LC_MESSAGES
+@dirrm squirrelmail/locale/zh_TW
+@dirrm squirrelmail/locale/ca_ES/LC_MESSAGES
+@dirrm squirrelmail/locale/ca_ES
+@dirrm squirrelmail/locale/cs_CZ/LC_MESSAGES
+@dirrm squirrelmail/locale/cs_CZ
+@dirrm squirrelmail/locale/da_DK/LC_MESSAGES
+@dirrm squirrelmail/locale/da_DK
+@dirrm squirrelmail/locale/de_DE/LC_MESSAGES
+@dirrm squirrelmail/locale/de_DE
+@dirrm squirrelmail/locale/es_ES/LC_MESSAGES
+@dirrm squirrelmail/locale/es_ES
+@dirrm squirrelmail/locale/et_EE/LC_MESSAGES
+@dirrm squirrelmail/locale/et_EE
+@dirrm squirrelmail/locale/fi_FI/LC_MESSAGES
+@dirrm squirrelmail/locale/fi_FI
+@dirrm squirrelmail/locale/fr_FR/LC_MESSAGES
+@dirrm squirrelmail/locale/fr_FR
+@dirrm squirrelmail/locale/hr_HR/LC_MESSAGES
+@dirrm squirrelmail/locale/hr_HR
+@dirrm squirrelmail/locale/hu_HU/LC_MESSAGES
+@dirrm squirrelmail/locale/hu_HU
+@dirrm squirrelmail/locale/id_ID/LC_MESSAGES
+@dirrm squirrelmail/locale/id_ID
+@dirrm squirrelmail/locale/is_IS/LC_MESSAGES
+@dirrm squirrelmail/locale/is_IS
+@dirrm squirrelmail/locale/it_IT/LC_MESSAGES
+@dirrm squirrelmail/locale/it_IT
+@dirrm squirrelmail/locale/tr_TR/LC_MESSAGES
+@dirrm squirrelmail/locale/tr_TR
+@dirrm squirrelmail/locale/bg_BG/LC_MESSAGES
+@dirrm squirrelmail/locale/bg_BG
+@dirrm squirrelmail/locale/nl_NL/LC_MESSAGES
+@dirrm squirrelmail/locale/nl_NL
+@dirrm squirrelmail/locale/nn_NO/LC_MESSAGES
+@dirrm squirrelmail/locale/nn_NO
+@dirrm squirrelmail/locale/no_NO/LC_MESSAGES
+@dirrm squirrelmail/locale/no_NO
+@dirrm squirrelmail/locale/pl_PL/LC_MESSAGES
+@dirrm squirrelmail/locale/pl_PL
+@dirrm squirrelmail/locale/pt_BR/LC_MESSAGES
+@dirrm squirrelmail/locale/pt_BR
+@dirrm squirrelmail/locale/pt_PT/LC_MESSAGES
+@dirrm squirrelmail/locale/pt_PT
+@dirrm squirrelmail/locale/ro_RO/LC_MESSAGES
+@dirrm squirrelmail/locale/ro_RO
+@dirrm squirrelmail/locale/ru_RU/LC_MESSAGES
+@dirrm squirrelmail/locale/ru_RU
+@dirrm squirrelmail/locale/sk_SK/LC_MESSAGES
+@dirrm squirrelmail/locale/sk_SK
+@dirrm squirrelmail/locale/sl_SI/LC_MESSAGES
+@dirrm squirrelmail/locale/sl_SI
+@dirrm squirrelmail/locale/sr_YU/LC_MESSAGES
+@dirrm squirrelmail/locale/sr_YU
+@dirrm squirrelmail/locale/sv_SE/LC_MESSAGES
+@dirrm squirrelmail/locale/sv_SE
+@dirrm squirrelmail/locale/th_TH/LC_MESSAGES
+@dirrm squirrelmail/locale/th_TH
+@dirrm squirrelmail/locale/lt_LT/LC_MESSAGES
+@dirrm squirrelmail/locale/lt_LT
+@dirrm squirrelmail/locale
+@dirrm squirrelmail/themes/css
+@dirrm squirrelmail/themes
+@dirrm squirrelmail/images
+@dirrm squirrelmail/help/it_IT
+@dirrm squirrelmail/help/th_TH
+@dirrm squirrelmail/help/cs_CZ
+@dirrm squirrelmail/help/en_US
+@dirrm squirrelmail/help/es_ES
+@dirrm squirrelmail/help/fi_FI
+@dirrm squirrelmail/help/fr_FR
+@dirrm squirrelmail/help/id_ID
+@dirrm squirrelmail/help/sv_SE
+@dirrm squirrelmail/help/ca_ES
+@dirrm squirrelmail/help/lt_LT
+@dirrm squirrelmail/help/nl_NL
+@dirrm squirrelmail/help/pl_PL
+@dirrm squirrelmail/help/pt_BR
+@dirrm squirrelmail/help/pt_PT
+@dirrm squirrelmail/help/ru_RU
+@dirrm squirrelmail/help/sl_SI
+@dirrm squirrelmail/help/ko_KR
+@dirrm squirrelmail/help
+@dirrm squirrelmail/functions
+@dirrm squirrelmail/doc/ReleaseNotes/1.2
+@dirrm squirrelmail/doc/ReleaseNotes
+@dirrm squirrelmail/doc
+@dirrm squirrelmail/data
+@dirrm squirrelmail
