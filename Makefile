@@ -13,6 +13,7 @@ SUBDIR += converters
 SUBDIR += databases
 SUBDIR += deskutils
 SUBDIR += devel
+SUBDIR += dns
 SUBDIR += editors
 SUBDIR += emulators
 SUBDIR += finance
