@@ -24,11 +24,11 @@ share/Apache-Gallery/templates/slideshowoff.tpl
 share/Apache-Gallery/css/gallery.css
 www/icons/agfolder.png
 www/icons/application-doc.png
-www/icons/application-mp3.png
-www/icons/application-ogg.png
 www/icons/application-pdf.png
 www/icons/application-rtf.png
-www/icons/application-wav.png
+www/icons/sound-mp3.png
+www/icons/sound-ogg.png
+www/icons/sound-wav.png
 www/icons/video-asf.png
 www/icons/video-avi.png
 www/icons/video-mov.png
