@@ -27,13 +27,13 @@ USE_XLIB=	yes
 USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib" \
-	CFLAGS="-I${LOCALBASE}/include -I${LOCALBASE}/include/freetype2"
+	CFLAGS="$(CFLAGS) -I${LOCALBASE}/include -I${LOCALBASE}/include/freetype2"
 WRKSRC=		${WRKDIR}/${PORTNAME}
 ALL_TARGET=	pfaedit
 
 MAN1=		pfaedit.1 sfddiff.1
 
-DIST_VER=	020722
+DIST_VER=	020728
 EXTRACT_ONLY=	${PORTNAME}_full-${DIST_VER}.tgz cidmaps.tgz
 
 .if !defined(NOPORTDOCS)
