@@ -24,14 +24,14 @@ USE_GTK=	yes
 PLIST=		${WRKDIR}/PLIST
 
 DATAFILES=	${WRKDIR}/kjv/kjv
-PLISTS=		${PKGDIR}/PLIST
+PLISTS=		${PKGDIR}/pkg-plist
 .if defined(WITH_TRANSLATIONS)
 DATAFILES+= 	${WRKDIR}/asv/asv ${WRKDIR}/darby/darby
-PLISTS+= 	${PKGDIR}/PLIST.translations
+PLISTS+= 	${PKGDIR}/pkg-plist.translations
 .endif
 .if defined(WITH_SUPPLEMENTS)
 DATAFILES+= 	${WRKDIR}/easton/easton.dict ${WRKDIR}/mhc/mhc
-PLISTS+= 	${PKGDIR}/PLIST.supplements
+PLISTS+= 	${PKGDIR}/pkg-plist.supplements
 .endif
 
 .if !defined(WITH_TRANSLATIONS)
