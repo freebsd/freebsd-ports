@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	drweb
-PORTVERSION=    4.26
-PORTREVISION=   6
+PORTVERSION=    4.26b
 CATEGORIES=	security
 MASTER_SITES=	http://www.drweb.ru/ftp/web_pub/
 DISTNAME=	${PORTNAME}d-${PORTVERSION}-freebsd4
