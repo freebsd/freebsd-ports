@@ -1,0 +1,188 @@
+bin/wml
+bin/wml_p1_ipp
+bin/wml_p2_mhc
+bin/wml_p3_eperl
+bin/wml_p4_gm4
+bin/wml_p5_divert
+bin/wml_p6_asubst
+bin/wml_p7_htmlfix
+bin/wml_p8_htmlstrip
+bin/wml_p9_slice
+bin/wml_aux_linklint
+bin/wml_aux_txt2html
+bin/wml_aux_wwwtable
+bin/wml_aux_gfont
+bin/wml_aux_htmlinfo
+bin/wml_aux_map2html
+bin/wml_aux_weblint
+lib/wml/aux/gfont/mkgdf
+lib/wml/aux/gfont/pktopx
+lib/wml/aux/gfont/pxtogdf
+lib/wml/aux/gfont/Fontmap
+lib/wml/aux/txt2html.dict
+lib/wml/aux/weblintrc
+lib/wml/include/all.wml
+lib/wml/include/app/all.wml
+lib/wml/include/app/javascript.wml
+lib/wml/include/app/navbar.wml
+lib/wml/include/app/toc.wml
+lib/wml/include/des/all.wml
+lib/wml/include/des/box.wml
+lib/wml/include/des/gfont.wml
+lib/wml/include/des/grid.wml
+lib/wml/include/des/imgdot.wml
+lib/wml/include/des/imgsize.wml
+lib/wml/include/des/rollover.wml
+lib/wml/include/des/space.wml
+lib/wml/include/des/typography.wml
+lib/wml/include/fmt/all.wml
+lib/wml/include/fmt/isolatin.wml
+lib/wml/include/fmt/verbatim.wml
+lib/wml/include/imp/all.wml
+lib/wml/include/imp/csmap.wml
+lib/wml/include/imp/generic.wml
+lib/wml/include/imp/pod.wml
+lib/wml/include/imp/remote.wml
+lib/wml/include/imp/sdf.wml
+lib/wml/include/imp/text.wml
+lib/wml/include/imp/view.wml
+lib/wml/include/imp/wwwtable.wml
+lib/wml/include/msc/all.wml
+lib/wml/include/msc/hextriple.wml
+lib/wml/include/msc/m4.wml
+lib/wml/include/msc/path.wml
+lib/wml/include/std/all.wml
+lib/wml/include/std/divert.wml
+lib/wml/include/std/fileinfo.wml
+lib/wml/include/std/headfoot.wml
+lib/wml/include/std/stack.wml
+lib/wml/include/std/symbol.wml
+lib/wml/include/std/tags.wml
+lib/wml/include/std/url.wml
+lib/wml/include/sys/boot.wml
+lib/wml/perl/lib/site_perl/i386-freebsd/auto/Getopt/Long/.packlist
+lib/wml/perl/lib/site_perl/i386-freebsd/auto/Bit/Vector/Vector.so
+lib/wml/perl/lib/site_perl/i386-freebsd/auto/Bit/Vector/Vector.bs
+lib/wml/perl/lib/site_perl/i386-freebsd/auto/Bit/Vector/.packlist
+lib/wml/perl/lib/site_perl/i386-freebsd/auto/File/PathConvert/.packlist
+lib/wml/perl/lib/site_perl/i386-freebsd/auto/Image/Size/.packlist
+lib/wml/perl/lib/site_perl/i386-freebsd/auto/GD/GD.so
+lib/wml/perl/lib/site_perl/i386-freebsd/auto/GD/GD.bs
+lib/wml/perl/lib/site_perl/i386-freebsd/auto/GD/.packlist
+lib/wml/perl/lib/site_perl/i386-freebsd/auto/IO/IO.so
+lib/wml/perl/lib/site_perl/i386-freebsd/auto/IO/IO.bs
+lib/wml/perl/lib/site_perl/i386-freebsd/auto/IO/.packlist
+lib/wml/perl/lib/site_perl/Getopt/Long.pm
+lib/wml/perl/lib/site_perl/Bit/Vector.pm
+lib/wml/perl/lib/site_perl/File/PathConvert.pm
+lib/wml/perl/lib/site_perl/Image/Size.pm
+lib/wml/perl/lib/site_perl/auto/Image/Size/gifsize.al
+lib/wml/perl/lib/site_perl/auto/Image/Size/xbmsize.al
+lib/wml/perl/lib/site_perl/auto/Image/Size/xpmsize.al
+lib/wml/perl/lib/site_perl/auto/Image/Size/pngsize.al
+lib/wml/perl/lib/site_perl/auto/Image/Size/jpegsize.al
+lib/wml/perl/lib/site_perl/auto/Image/Size/ppmsize.al
+lib/wml/perl/lib/site_perl/auto/Image/Size/autosplit.ix
+lib/wml/perl/lib/site_perl/auto/GD/autosplit.ix
+lib/wml/perl/lib/site_perl/GD.pm
+lib/wml/perl/lib/site_perl/IO/Pipe.pm
+lib/wml/perl/lib/site_perl/IO/File.pm
+lib/wml/perl/lib/site_perl/IO/Select.pm
+lib/wml/perl/lib/site_perl/IO/Socket.pm
+lib/wml/perl/lib/site_perl/IO/Handle.pm
+lib/wml/perl/lib/site_perl/IO/Seekable.pm
+lib/wml/perl/lib/site_perl/IO.pm
+man/man1/wml.1.gz
+man/man1/wml_p1_ipp.1.gz
+man/cat1/wml_p2_mhc.1.gz
+man/man1/wml_p3_eperl.1.gz
+man/cat1/wml_p4_gm4.1.gz
+man/man1/wml_p5_divert.1.gz
+man/man1/wml_p6_asubst.1.gz
+man/man1/wml_p7_htmlfix.1.gz
+man/man1/wml_p8_htmlstrip.1.gz
+man/man1/wml_p9_slice.1.gz
+man/cat1/wml_aux_linklint.1.gz
+man/cat1/wml_aux_txt2html.1.gz
+man/cat1/wml_aux_wwwtable.1.gz
+man/man1/wml_aux_gfont.1.gz
+man/man1/wml_aux_htmlinfo.1.gz
+man/man1/wml_aux_map2html.1.gz
+man/man1/wml_aux_weblint.1.gz
+man/man3/wml::all.3.gz
+man/man3/wml::app::all.3.gz
+man/man3/wml::app::javascript.3.gz
+man/man3/wml::app::navbar.3.gz
+man/man3/wml::app::toc.3.gz
+man/man3/wml::des::all.3.gz
+man/man3/wml::des::box.3.gz
+man/man3/wml::des::gfont.3.gz
+man/man3/wml::des::grid.3.gz
+man/man3/wml::des::imgdot.3.gz
+man/man3/wml::des::imgsize.3.gz
+man/man3/wml::des::rollover.3.gz
+man/man3/wml::des::space.3.gz
+man/man3/wml::des::typography.3.gz
+man/man3/wml::fmt::all.3.gz
+man/man3/wml::fmt::isolatin.3.gz
+man/man3/wml::fmt::verbatim.3.gz
+man/man3/wml::imp::all.3.gz
+man/man3/wml::imp::csmap.3.gz
+man/man3/wml::imp::generic.3.gz
+man/man3/wml::imp::pod.3.gz
+man/man3/wml::imp::remote.3.gz
+man/man3/wml::imp::sdf.3.gz
+man/man3/wml::imp::text.3.gz
+man/man3/wml::imp::view.3.gz
+man/man3/wml::imp::wwwtable.3.gz
+man/man3/wml::msc::all.3.gz
+man/man3/wml::msc::hextriple.3.gz
+man/man3/wml::msc::m4.3.gz
+man/man3/wml::msc::path.3.gz
+man/man3/wml::std::all.3.gz
+man/man3/wml::std::divert.3.gz
+man/man3/wml::std::fileinfo.3.gz
+man/man3/wml::std::headfoot.3.gz
+man/man3/wml::std::stack.3.gz
+man/man3/wml::std::symbol.3.gz
+man/man3/wml::std::tags.3.gz
+man/man3/wml::std::url.3.gz
+man/man3/wml::sys::boot.3.gz
+@comment PREFIX/lib/wml/gdf is a empty directory
+@exec mkdir %D/lib/wml/gdf
+@dirrm lib/wml/gdf
+@dirrm lib/wml/aux/gfont
+@dirrm lib/wml/aux
+@dirrm lib/wml/include/app
+@dirrm lib/wml/include/des
+@dirrm lib/wml/include/fmt
+@dirrm lib/wml/include/imp
+@dirrm lib/wml/include/msc
+@dirrm lib/wml/include/std
+@dirrm lib/wml/include/sys
+@dirrm lib/wml/include
+@dirrm lib/wml/perl/lib/site_perl/i386-freebsd/auto/Getopt/Long
+@dirrm lib/wml/perl/lib/site_perl/i386-freebsd/auto/Getopt
+@dirrm lib/wml/perl/lib/site_perl/i386-freebsd/auto/Bit/Vector
+@dirrm lib/wml/perl/lib/site_perl/i386-freebsd/auto/Bit
+@dirrm lib/wml/perl/lib/site_perl/i386-freebsd/auto/File/PathConvert
+@dirrm lib/wml/perl/lib/site_perl/i386-freebsd/auto/File
+@dirrm lib/wml/perl/lib/site_perl/i386-freebsd/auto/Image/Size
+@dirrm lib/wml/perl/lib/site_perl/i386-freebsd/auto/Image
+@dirrm lib/wml/perl/lib/site_perl/i386-freebsd/auto/GD
+@dirrm lib/wml/perl/lib/site_perl/i386-freebsd/auto/IO
+@dirrm lib/wml/perl/lib/site_perl/i386-freebsd/auto
+@dirrm lib/wml/perl/lib/site_perl/i386-freebsd
+@dirrm lib/wml/perl/lib/site_perl/Getopt
+@dirrm lib/wml/perl/lib/site_perl/Bit
+@dirrm lib/wml/perl/lib/site_perl/File
+@dirrm lib/wml/perl/lib/site_perl/Image
+@dirrm lib/wml/perl/lib/site_perl/auto/Image/Size
+@dirrm lib/wml/perl/lib/site_perl/auto/Image
+@dirrm lib/wml/perl/lib/site_perl/auto/GD
+@dirrm lib/wml/perl/lib/site_perl/auto
+@dirrm lib/wml/perl/lib/site_perl/IO
+@dirrm lib/wml/perl/lib/site_perl
+@dirrm lib/wml/perl/lib
+@dirrm lib/wml/perl
+@dirrm lib/wml
