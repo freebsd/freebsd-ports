@@ -1,5 +1,5 @@
 bin/aish
 bin/aishmv
 bin/ishcat
-share/doc/ja/aish/aish.txt
-@dirrm share/doc/ja/aish
+%%PORTDOCS%%share/doc/ja/aish/aish.txt
+%%PORTDOCS%%@dirrm share/doc/ja/aish
