@@ -1,0 +1,43 @@
+%%SITE_PERL%%/Heap/Simple/Any.pm
+%%SITE_PERL%%/Heap/Simple/Array.pm
+%%SITE_PERL%%/Heap/Simple/Function.pm
+%%SITE_PERL%%/Heap/Simple/Hash.pm
+%%SITE_PERL%%/Heap/Simple/Less.pm
+%%SITE_PERL%%/Heap/Simple/Method.pm
+%%SITE_PERL%%/Heap/Simple/Number.pm
+%%SITE_PERL%%/Heap/Simple/NumberReverse.pm
+%%SITE_PERL%%/Heap/Simple/Object.pm
+%%SITE_PERL%%/Heap/Simple/Perl.pm
+%%SITE_PERL%%/Heap/Simple/Scalar.pm
+%%SITE_PERL%%/Heap/Simple/String.pm
+%%SITE_PERL%%/Heap/Simple/StringReverse.pm
+%%SITE_PERL%%/Heap/Simple/Wrapper.pm
+%%SITE_PERL%%/auto/Heap/Simple/Perl/_absorb.al
+%%SITE_PERL%%/auto/Heap/Simple/Perl/_e_recover.al
+%%SITE_PERL%%/auto/Heap/Simple/Perl/_i_recover.al
+%%SITE_PERL%%/auto/Heap/Simple/Perl/_key_absorb.al
+%%SITE_PERL%%/auto/Heap/Simple/Perl/autosplit.ix
+%%SITE_PERL%%/auto/Heap/Simple/Perl/extract_first.al
+%%SITE_PERL%%/auto/Heap/Simple/Perl/extract_min.al
+%%SITE_PERL%%/auto/Heap/Simple/Perl/extract_top.al
+%%SITE_PERL%%/auto/Heap/Simple/Perl/extract_upto.al
+%%SITE_PERL%%/auto/Heap/Simple/Perl/first.al
+%%SITE_PERL%%/auto/Heap/Simple/Perl/first_key.al
+%%SITE_PERL%%/auto/Heap/Simple/Perl/infinity.al
+%%SITE_PERL%%/auto/Heap/Simple/Perl/insert.al
+%%SITE_PERL%%/auto/Heap/Simple/Perl/key.al
+%%SITE_PERL%%/auto/Heap/Simple/Perl/keys.al
+%%SITE_PERL%%/auto/Heap/Simple/Perl/min_key.al
+%%SITE_PERL%%/auto/Heap/Simple/Perl/top.al
+%%SITE_PERL%%/auto/Heap/Simple/Perl/top_key.al
+%%SITE_PERL%%/auto/Heap/Simple/Perl/user_data.al
+%%SITE_PERL%%/auto/Heap/Simple/Perl/values.al
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Heap/Simple/Perl/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Heap/Simple/Perl
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Heap/Simple 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Heap 2>/dev/null || true
+@dirrm %%SITE_PERL%%/auto/Heap/Simple/Perl
+@unexec rmdir %D/%%SITE_PERL%%/auto/Heap/Simple 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/auto/Heap 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/Heap/Simple 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/Heap 2>/dev/null || true
