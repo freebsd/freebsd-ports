@@ -2600,6 +2600,7 @@ interchange	ports/www/interchange
 intlfonts	ports/x11-fonts/intlfonts
 intltool	ports/textproc/intltool
 invitation_to_ruby	ports/devel/invitation_to_ruby
+iog		ports/net/iog
 ion		ports/x11-wm/ion
 iozone		ports/benchmarks/iozone
 iozone21	ports/benchmarks/iozone21
