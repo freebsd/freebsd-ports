@@ -1,6 +1,6 @@
---- texi/gnus.texi~	Thu Jan  4 08:16:16 2001
-+++ texi/gnus.texi	Mon Jan 29 13:32:45 2001
-@@ -1,11 +1,11 @@
+--- texi/gnus.texi.orig	Thu Jan  4 08:16:16 2001
++++ texi/gnus.texi	Sat Feb 10 14:10:09 2001
+@@ -1,13 +1,13 @@
  \input texinfo                  @c -*-texinfo-*-  -*- coding: iso-latin-1 -*-
  
 -@setfilename gnus
@@ -12,5 +12,8 @@
 -@dircategory Editors
 +@dircategory The Emacs editor and associated tools
  @direntry
- * Gnus: (gnus).         The newsreader Gnus.
+-* Gnus: (gnus).         The newsreader Gnus.
++* Gnus: (gnus).			The newsreader Gnus.
  @end direntry
+ @iftex
+ @finalout
