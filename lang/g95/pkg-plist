@@ -1,6 +1,5 @@
 @comment $FreeBSD$
 bin/cpptree-ssa
-bin/g95
 bin/gccbugtree-ssa
 bin/gcctree-ssa
 bin/gcovtree-ssa
