@@ -3,7 +3,7 @@
 # Date created:         6 November 1994
 # Whom:                 jmz & David O'Brien (obrien@cs.ucdavis.edu)
 #
-# $Id: Makefile,v 1.15 1998/02/25 02:35:23 obrien Exp $
+# $Id: Makefile,v 1.16 1998/04/04 07:36:44 asami Exp $
 #
 
 DISTNAME=	a2ps
@@ -15,7 +15,8 @@ DISTFILES=	a2ps.V4.3.tar.gz
 MAINTAINER=	obrien@FreeBSD.org
 
 NO_LATEST_LINK=	yes
-MANUAL_PACKAGE_BUILD=	PAPERSIZE has to be set to Letter A4
+LOOP_VAR=	PAPERSIZE
+LOOP_OPTIONS=	letter a4
 MAKE_FLAGS?=	WIDTH=${WIDTH} HEIGHT=${HEIGHT} A4_PAPERSIZE=${A4_PAPERSIZE} -f
 NO_WRKSUBDIR=	yes
 MAN1=		a2ps.1
@@ -33,12 +34,16 @@ a4-install::
 	${MAKE} PAPERSIZE=a4 install
 
 
-.if !defined(PAPERSIZE) || ${PAPERSIZE} == letter || ${PAPERSIZE} == LETTER || ${PAPERSIZE} == Letter
+.if !defined(PAPERSIZE)
+PAPERSIZE_UNSPECIFIED=	yes
+PAPERSIZE=letter
+.endif
+
+.if ${PAPERSIZE} == letter || ${PAPERSIZE} == LETTER || ${PAPERSIZE} == Letter
 PAPERSIZE=letter
 WIDTH=8.5
 HEIGHT=11.0
 A4_PAPERSIZE=0
-PAPERSIZE_UNSPECIFIED=	yes
 .elif ${PAPERSIZE} == A4 || ${PAPERSIZE} == a4 
 PAPERSIZE=a4
 WIDTH=8.27
@@ -46,7 +51,7 @@ HEIGHT=11.64
 A4_PAPERSIZE=1
 .else
 PAPERSIZE_INVALID= yes
-.endif	# not defined PAPERSIZE
+.endif
 
 
 pre-fetch:

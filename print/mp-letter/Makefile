@@ -3,7 +3,7 @@
 # Date created:         11 July 1996
 # Whom:                 David O'Brien <obrien@cs.ucdavis.edu>
 #
-# $Id: Makefile,v 1.7 1998/07/30 04:36:46 obrien Exp $
+# $Id: Makefile,v 1.8 1998/09/19 01:40:37 hoek Exp $
 #
 
 DISTNAME=	mp-3.0.1
@@ -14,7 +14,8 @@ MASTER_SITES=	ftp://ftp.NUXI.com/pub/misc/ \
 
 MAINTAINER=	obrien@FreeBSD.org
 
-MANUAL_PACKAGE_BUILD=	PAPERSIZE has to be set to letter a4
+LOOP_VAR=	PAPERSIZE
+LOOP_OPTIONS=	letter a4
 WRKSRC=		${WRKDIR}/mp
 MAN1=		mp.1
 MLINKS=		mp.1 digestp.1	- filep.1	- filofaxp.1 \
