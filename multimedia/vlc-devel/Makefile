@@ -31,10 +31,18 @@ LIB_DEPENDS=	dvdcss.2:${PORTSDIR}/multimedia/libdvdcss \
 # After libmpeg2 release 0.3.2
 #		mpeg2.0:${PORTSDIR}/multimedia/libmpeg2 \
 
+USE_GETOPT_LONG=yes
+USE_GMAKE=	yes
+USE_GNOME=	gtk12
+USE_REINPLACE=	yes
+USE_SDL=	yes
 USE_XLIB=	yes
-GNU_CONFIGURE=	yes
+
 INSTALLS_SHLIB=	yes
-CONFIGURE_ENV=	PATH_GTKCONFIG="${GTK_CONFIG}"
+GNU_CONFIGURE=	yes
+CONFIGURE_ENV=	PATH_GTKCONFIG="${GTK_CONFIG}" \
+		CPPFLAGS="${PTHREAD_CFLAGS} -I${LOCALBASE}/include" \
+		LDFLAGS=-L${LOCALBASE}/lib
 CONFIGURE_ARGS+=--with-dvdcss=${LOCALBASE} \
 		--with-dvdread=${LOCALBASE} \
 		--with-mad=${LOCALBASE} \
@@ -44,14 +52,11 @@ CONFIGURE_ARGS+=--with-dvdcss=${LOCALBASE} \
 		--enable-ffmpeg \
 		--with-ffmpeg=${LOCALBASE} \
 		--disable-libmpeg2 \
+		--program-prefix="" \
 		--without-libintl-prefix \
 		--without-libiconv-prefix
 
-# dirty
-CFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
-
-USE_GNOME=	gtk12
-USE_GMAKE=	yes
+post-patch:
+	@${REINPLACE_CMD} -e 's/-lc_r/${PTHREAD_LIBS}/' ${WRKSRC}/configure
 
 .include <bsd.port.mk>

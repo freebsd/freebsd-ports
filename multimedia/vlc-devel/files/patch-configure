@@ -1,6 +1,14 @@
---- configure.orig	Mon Jun 30 18:06:22 2003
-+++ configure	Mon Jun 30 18:07:02 2003
-@@ -14017,7 +14017,7 @@
+--- configure.orig	Mon Jun 23 04:24:14 2003
++++ configure	Fri Sep 12 14:30:22 2003
+@@ -4501,7 +4501,6 @@
+     ;;
+   *bsd*)
+     SYS="${target_os}"
+-    CFLAGS_save="${CFLAGS_save} -pthread"; CFLAGS="${CFLAGS_save}"
+     ;;
+   darwin*)
+     SYS=darwin
+@@ -14017,7 +14016,7 @@
  fi
  
  
