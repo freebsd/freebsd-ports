@@ -4,7 +4,7 @@ Exchange.  There are two methods of using this module -- a functional
 interface that is depreciated, and an object-orientated method that
 provides greater flexibility and stability.
 
-WWW: http://search.cpan.org/search?dist=Finance-Quote
+WWW: http://search.cpan.org/dist/Finance-Quote/
 
 -- Sergey Skvortsov
 skv@FreeBSD.org

@@ -2,10 +2,13 @@
 %%SITE_PERL%%/Finance/Quote.pm
 %%SITE_PERL%%/Finance/Quote/AEX.pm
 %%SITE_PERL%%/Finance/Quote/ASX.pm
+%%SITE_PERL%%/Finance/Quote/BMONesbittBurns.pm
 %%SITE_PERL%%/Finance/Quote/Cdnfundlibrary.pm
 %%SITE_PERL%%/Finance/Quote/DWS.pm
+%%SITE_PERL%%/Finance/Quote/FTPortfolios.pm
 %%SITE_PERL%%/Finance/Quote/Fidelity.pm
 %%SITE_PERL%%/Finance/Quote/Fool.pm
+%%SITE_PERL%%/Finance/Quote/IndiaMutual.pm
 %%SITE_PERL%%/Finance/Quote/Tdwaterhouse.pm
 %%SITE_PERL%%/Finance/Quote/Tiaacref.pm
 %%SITE_PERL%%/Finance/Quote/Troweprice.pm
