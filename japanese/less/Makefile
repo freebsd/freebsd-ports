@@ -1,22 +1,23 @@
 # New ports collection makefile for:	jless
-# Version required:	290
+# Version required:	332
 # Date created:		7 March 1995
 # Whom:			Nobuhiro Yasutomi <nobu@psrc.isac.co.jp>
 #
-# $Id: Makefile,v 1.7 1996/11/11 10:12:22 max Exp $
+# $Id: Makefile,v 1.8 1996/11/18 10:23:58 asami Exp $
 #
 
-DISTNAME=	less-290
-PKGNAME=	jp-less-290
+DISTNAME=	less-332
+PKGNAME=	jp-less-332
 CATEGORIES=	japanese
 MASTER_SITES=	${MASTER_SITE_GNU}
 
 PATCH_SITES=	ftp://ftp.aist-nara.ac.jp/pub/misc/less/
-PATCHFILES=	less-290-iso2.pl1.gz
+PATCHFILES=	less-332-iso221.patch.gz
 PATCH_DIST_STRIP=	-p1
 
-MAINTAINER=	asami@FreeBSD.ORG
+MAINTAINER=	nobu@psrc.isac.co.jp
 
-HAS_CONFIGURE=	yes
+GNU_CONFIGURE=	yes
+MAN1=		jless.1 jlesskey.1
 
 .include <bsd.port.mk>
