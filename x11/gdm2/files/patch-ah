@@ -1,9 +1,0 @@
---- config/PreSession.orig	Mon May 20 23:54:34 2002
-+++ config/PreSession	Mon May 20 23:55:03 2002
-@@ -1,4 +1,4 @@
- #!/bin/sh
--if [ -x /usr/bin/X11/sessreg ]; then
--	/usr/bin/X11/sessreg -a -w /var/log/wtmp -u none -l $DISPLAY $USER
-+if [ -x /usr/X11R6/bin/sessreg ]; then
-+	/usr/X11R6/bin/sessreg -a -w /var/log/wtmp -u none -l $DISPLAY -x /usr/X11R6/lib/X11/xdm/Xservers $USER
- fi
