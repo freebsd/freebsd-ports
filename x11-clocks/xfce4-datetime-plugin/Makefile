@@ -6,8 +6,8 @@
 #
 
 PORTNAME=	xfce4-datetime-plugin
-PORTVERSION=	0.3.0
-PORTREVISION=	4
+PORTVERSION=	0.3.1
+PORTREVISION=	0
 CATEGORIES=	x11-clocks xfce
 MASTER_SITES=	http://download.berlios.de/xfce-goodies/ \
 		http://matt.nerim.net/xfce-goodies/ \
@@ -26,7 +26,7 @@ RUN_DEPENDS=	xfce4-panel:${PORTSDIR}/x11-wm/xfce4-panel
 
 USE_GNOME=	gtk20
 USE_X_PREFIX=	yes
-USE_LIBTOOL_VER=13
+USE_LIBTOOL_VER=15
 INSTALLS_SHLIB=	yes
 CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
 
