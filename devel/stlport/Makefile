@@ -7,8 +7,8 @@
 #
 
 PORTNAME=	stlport
-PORTVERSION=	4.5.3
-PORTREVISION?=	2
+PORTVERSION=	4.6.2
+PORTREVISION?=	0
 CATEGORIES=	devel
 MASTER_SITES=	http://www.stlport.com/archive/
 PKGNAMESUFFIX=	-${COMPILER}
@@ -40,10 +40,6 @@ PLIST_SUB+=	COMPILER=${COMPILER}
 INSTALL_TARGET=	install_unix
 INSTALLS_SHLIB=	yes
 
-.if ${OSVERSION} >= 502126 && ${COMPILER}!="icc"
-BROKEN=	"Does not compile on FreeBSD >= 5.x"
-.endif
-
 .if ${OSVERSION} < 440000
 BROKEN=		"Not supported on systems prior to FreeBSD 4.4"
 .endif
@@ -65,6 +61,13 @@ pre-everything::
 	@${ECHO_MSG} "There may be a bug in your version of gcc's exception"
 	@${ECHO_MSG} "handling code.  Consider upgrading to FreeBSD 4.6"
 	@${ECHO_MSG} "or above."
+.elif ${COMPILER} == gcc && ${OSVERSION} >= 502126
+pre-everything::
+	@${ECHO_MSG}
+	@${ECHO_MSG} "If you have encounted a compiler internal error"
+	@${ECHO_MSG} "during building, do NOT 'make clean', simply continue"
+	@${ECHO_MSG} "building by type 'make ${.TARGET}' again."
+	@${ECHO_MSG}
 .endif
 
 post-patch:

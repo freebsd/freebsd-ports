@@ -1,5 +1,5 @@
---- stlport/stl/c_locale.h.orig	Wed Jul 24 03:17:57 2002
-+++ stlport/stl/c_locale.h	Wed Jul 24 03:19:25 2002
+--- stlport/stl/c_locale.h.orig	Sun Nov  2 16:59:03 2003
++++ stlport/stl/c_locale.h	Sat Nov  6 15:44:22 2004
 @@ -178,7 +178,7 @@
                             _Locale_SPACE ) /* Printable */
  # endif /* __Lynx__ */
