@@ -1,6 +1,7 @@
 Canna is a Kana-Kanji conversion server.
-Support Mule(Multi-lingal extention Emacs), kinput2 X11 input method,
-cannum front end and some others.
+Supports Mule(Multi-lingual extention Emacs), kinput2 X11 input
+method, etc.
+
 
   To use from Mule (CANNA version), add the following to your .emacs file:
 
@@ -11,5 +12,7 @@ cannum front end and some others.
 
   Then use the `C-o' key to begin kana-kanji conversion.  Refer to the
 Info file and the documents for more detail.
+
+WWW: http://canna.sourceforge.jp/
 
 - Max

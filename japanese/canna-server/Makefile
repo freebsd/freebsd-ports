@@ -7,20 +7,10 @@
 #
 
 PORTNAME=	Canna
-PORTVERSION=	3.5b2
-PORTREVISION=	4
+PORTVERSION=	3.6
 CATEGORIES=	japanese
-MASTER_SITES=	ftp://ftp.tokyonet.ad.jp/pub/misc/Canna/Canna35/ \
-		ftp://ftp.biglobe.ne.jp/pub/tool/Canna/Canna35/ \
-		ftp://ftp.sra.co.jp/pub/misc/canna/ \
-		ftp://ftp.habi.or.jp/pub/Tools/Canna/Canna35/ \
-		ftp://ftp.hans.or.jp/pub/Tools/Canna/Canna35/
+MASTER_SITES=	http://downloads.sourceforge.jp/canna/1425/
 DISTNAME=	${PORTNAME}${PORTVERSION:S/.//g}
-
-PATCH_SITES=	http://www.jaist.ac.jp/~fujieda/canna/
-PATCHFILES=	Canna35b2-unoff1.patch.gz Canna35b2-unoff2.patch.gz \
-		Canna35b2-hack1.patch.gz
-PATCH_DIST_STRIP=	-p1
 
 MAINTAINER=	max@FreeBSD.org
 
@@ -29,6 +19,7 @@ USE_X_PREFIX=	no
 ALL_TARGET=	canna
 INSTALLS_SHLIB=	yes
 
+MANLANG=ja ""
 MAN1=	addwords.1 cannacheck.1 cannakill.1 cannaserver.1 cannastat.1 \
 	catdic.1 cpdic.1 cshost.1 ctow.1 delwords.1 dicar.1 \
 	dpbindic.1 dpromdic.1 lsdic.1 mkbindic.1 mkdic.1 mkromdic.1 \
@@ -46,23 +37,20 @@ XFREE86_HTML_MAN=	no
 MLINKS=		uilib.3 XKanjiControl.3  uilib.3 XLookupKanjiString.3 \
 		uilib.3 jrKanjiControl.3  uilib.3 jrKanjiString.3
 
-STARTUP_SCRIPT=	${PREFIX}/etc/rc.d/canna.sh
-
 post-build:
 	@${SED} -e "s,@RM@,${RM},g; s,@TOUCH@,${TOUCH},g; \
 		s,@CHOWN@,${CHOWN},g" ${FILESDIR}/canna.sh.in \
-		> ${WRKDIR}/canna.sh
+		> ${WRKDIR}/canna.sh.sample
 
 post-install:
 .for f in user user/user group
-	${MKDIR} ${PREFIX}/lib/canna/dic/$f
-	${CHOWN} bin:bin ${PREFIX}/lib/canna/dic/$f
-	${CHMOD} 775 ${PREFIX}/lib/canna/dic/$f
+	@${MKDIR} ${PREFIX}/lib/canna/dic/$f
+	@${CHOWN} bin:bin ${PREFIX}/lib/canna/dic/$f
+	@${CHMOD} 775 ${PREFIX}/lib/canna/dic/$f
 .endfor
-	if [ ! -f ${STARTUP_SCRIPT} ]; then 				\
-		${ECHO} "Installing ${STARTUP_SCRIPT} startup file."; 	\
-		${INSTALL_SCRIPT} ${WRKDIR}/canna.sh ${STARTUP_SCRIPT};	\
-	fi
+	@${ECHO} "Installing a sample startup script as ${PREFIX}/etc/rc.d/canna.sh.sample."
+	@${INSTALL_SCRIPT} ${WRKDIR}/canna.sh.sample ${PREFIX}/etc/rc.d/canna.sh.sample
 	@${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
+	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>

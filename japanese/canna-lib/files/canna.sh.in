@@ -1,5 +1,10 @@
 #!/bin/sh
 
+OPTIONS=
+# Uncomment the following if you want to use a TCP connection
+# instead of a UNIX domain socket.
+#OPTIONS="-inet"
+
 if ! PREFIX=$(expr $0 : "\(/.*\)/etc/rc\.d/${0##*/}\$"); then
     echo "$0: Cannot determine the PREFIX" >&2
     exit 64
@@ -12,7 +17,7 @@ start)
 		@RM@ -f /tmp/.iroha_unix/IROHA
 		@TOUCH@ /var/log/CANNA0msgs
 		@CHOWN@ bin:bin /var/log/CANNA0msgs
-		${PREFIX}/sbin/cannaserver && echo -n ' canna'
+		${PREFIX}/sbin/cannaserver ${OPTIONS} && echo -n ' canna'
 	fi
 	;;
 stop)

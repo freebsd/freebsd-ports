@@ -27,7 +27,7 @@ bin/rmdic
 bin/splitword
 bin/syncdic
 bin/wtoc
-etc/rc.d/canna.sh
+etc/rc.d/canna.sh.sample
 include/canna/RK.h
 include/canna/jrkanji.h
 include/canna/keydef.h
@@ -63,7 +63,6 @@ lib/canna/dic/sokuon.cbp
 lib/canna/dic/tut.cbp
 lib/canna/dic/vje.cbp
 lib/canna/dic/wx2+.cbp
-lib/canna/engine.cf
 lib/canna/sample/1.1.canna
 lib/canna/sample/1.2.canna
 lib/canna/sample/default.canna

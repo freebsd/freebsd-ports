@@ -1,34 +1,36 @@
---- Canna.conf.orig	Thu Nov 28 19:27:01 1996
-+++ Canna.conf	Tue Apr  2 05:36:35 2002
-@@ -128,14 +128,15 @@
-  * $Id: Canna.conf,v 3.13 1996/11/28 10:27:01 kon Exp $
-  */
+--- Canna.conf.orig	Thu Oct 24 23:37:25 2002
++++ Canna.conf	Thu Nov  7 09:14:12 2002
+@@ -132,11 +132,12 @@
  
--cannaBinDir = /usr/local/canna/bin
--cannaSrvDir = /usr/local/canna/bin
--cannaLibDir = /usr/local/canna/lib
--cannaManDir = /usr/local/canna/man
--cannaIncDir = /usr/local/canna/include/canna
--libCannaDir = /usr/lib
+ /* rootにならずにインストールする時はこれを定義して下さい */
+ /* #define InstallAsUser */
+-cannaPrefix = /usr/local/canna
 +PREFIX?= /usr/local
-+cannaBinDir = ${PREFIX}/bin
-+cannaSrvDir = ${PREFIX}/sbin
-+cannaLibDir = ${PREFIX}/lib/canna
-+cannaManDir = ${PREFIX}/man
-+cannaIncDir = ${PREFIX}/include/canna
-+libCannaDir = ${PREFIX}/lib
++cannaPrefix = $(PREFIX)
+ cannaExecPrefix = $(cannaPrefix)
+ cannaBinDir = $(cannaExecPrefix)/bin
+-cannaSrvDir = $(cannaExecPrefix)/bin
+-cannaLibDir = $(cannaPrefix)/lib
++cannaSrvDir = $(cannaExecPrefix)/sbin
++cannaLibDir = $(cannaPrefix)/lib/canna
+ cannaManDir = $(cannaPrefix)/man
+ cannaIncDir = $(cannaPrefix)/include/canna
  
+@@ -144,8 +145,8 @@
+ libCannaDir = $(cannaExecPrefix)/lib
+ ErrDir  = $(cannaExecPrefix)/log
+ #else
+-libCannaDir = /usr/lib
 -ErrDir  = /usr/spool/canna
++libCannaDir = $(cannaPrefix)/lib
 +ErrDir  = /var/log
+ #endif
  
- wcharDefinition = -DCANNA_WCHAR
- Wlib =
-@@ -143,12 +144,12 @@
- 
- cannaOwner = bin
- cannaGroup = bin
--
+ /* 次の3行は変更しないでください */
+@@ -161,10 +162,11 @@
+ #else
  cannaOwnerGroup = -o $(cannaOwner) -g $(cannaGroup)
+ #endif
 +cannaOwnerDefinition = -DcannaOwner="\"$(cannaOwner)\""
  
  pointerIntegerDef =
@@ -38,16 +40,7 @@
      /* SunOS 4.x をお使いの方で shared object を利用する場合には
              cannaDsoRev = 1.1
      と指定してください。また、FreeBSD を利用する場合は、
-@@ -167,7 +168,7 @@
- CHMOD = chmod
- 
- /* 日本語マニュアルを使わないのであればコメントアウト */
--#define JAPANESEMAN
-+/* #define JAPANESEMAN */
- 
- /* locale ディレクトリを持っている場合は以下を記述する */
- /* #define LOCALE_DIR /usr/lib/locale */
-@@ -273,7 +274,7 @@
+@@ -308,7 +310,7 @@
   * ここから下は変更しないようにしてください。
   */
  
@@ -56,8 +49,8 @@
            RK_DEFINES = $(pointerIntegerDef)
           RKC_DEFINES = $(wcharDefinition)
         UILIB_DEFINES = $(wcharDefinition) $(pointerIntegerDef) \
-@@ -378,6 +379,15 @@
- 		set +x; else (set -x; $(MKDIRHIER) $(DESTDIR)$$i;$(CHOWN) owner $(DESTDIR)$$i;$(CHGRP) group $(DESTDIR)$$i); fi \	@@\
+@@ -461,6 +463,15 @@
+ 		set +x; else (set -x; $(MKDIRHIER) $(DESTDIR)$$i;$(CHOWN) owner $(DESTDIR)$$i;$(CHGRP) group $(DESTDIR)$$i); fi; \	@@\
  	done
  #endif /* MakeDirectories */
 +
@@ -70,5 +63,5 @@
 +	echo "	cd" dir; cd dir && \					@@\
 +	for i in list; do (set -x; $(LN) -f sub/$$i .); done
  
- /* 以下は IBM 基礎研の古畑さん(furuhata@trl.ibm.co.jp)により書かれました */
- #if defined(RsArchitecture) && DoSharedLib
+ /* libname-def.cppを作るのが面倒なのでXのSharedLibraryTargetを上書き */
+ #ifdef CYGWIN_DLL
