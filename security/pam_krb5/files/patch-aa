@@ -1,36 +1,46 @@
 --- Makefile.orig	Tue Jan  4 19:08:51 2000
-+++ Makefile	Mon Nov  6 13:44:54 2000
-@@ -1,46 +1,49 @@
++++ Makefile	Tue Jan 23 15:38:42 2001
+@@ -1,46 +1,56 @@
  #
  # Makefile for pam_krb5
  #
 +CC = cc
 +CFLAGS = -O -fPIC -Wall
-+LDFLAGS = -shared
++# WHAT? shared and static?  are you mad?  
++# No, this allows us to make a shared object that has minimal undefined
++# references.
++LDFLAGS = -shared -Wl,-Bstatic
++
++OSLIBS = -lpam
++
++# We have to specify full paths to some of these libraries so that we
++# are sure we get the right version... in most cases, we don't want the
++# version in the base system.  Version numbers don't help us, because we
++# are not looking for shared libraries.
++
++# HEIMDAL
++LIBS_heimdal =	${KRB5BASE}/lib/libkrb5.a ${KRB5BASE}/lib/libgssapi.a \
++		${KRB5BASE}/lib/libasn1.a ${KRB5BASE}/lib/libroken.a \
++		-lcrypto -lcrypt
++# MIT
++LIBS_mit = ${KRB5BASE}/lib/libkrb5.a ${KRB5BASE}/lib/libcom_err.a \
++	${KRB5BASE}/lib/libk5crypto.a
  
 -CC = gcc
 -CFLAGS = -O2 -fPIC
 -#LDFLAGS = -shared
 -LDFLAGS = -G
-+OSLIBS = -lpam
- 
--DESTDIR = /usr/lib/security
--MANDIR = /opt/local/man/man5
-+# HEIMDAL
-+LIBS_heimdal = ${KRB5BASE}/lib/libkrb5.a ${KRB5BASE}/lib/libasn1.a   \
-+	${KRB5BASE}/lib/libcom_err.a ${KRB5BASE}/lib/libroken.a  \
-+	${KRB5BASE}/lib/libgssapi.a ${KRB5BASE}/lib/libdes.a 
- 
--OSLIBS = -lpam -lnsl -lsocket
--KRB5LIBS = -L/opt/local/lib -lkrb5 -lk5crypto -lcom_err
-+# MIT
-+LIBS_mit = ${KRB5BASE}/lib/libkrb5.a ${KRB5BASE}/lib/libcom_err.a \
-+	${KRB5BASE}/lib/libk5crypto.a
- 
--LIBS = $(OSLIBS) $(KRB5LIBS)
 +LIBS = $(OSLIBS) ${LIBS_${KRB5_IMPL}}
 +COMPAT = compat_${KRB5_IMPL}.c
  
+-DESTDIR = /usr/lib/security
+-MANDIR = /opt/local/man/man5
+-
+-OSLIBS = -lpam -lnsl -lsocket
+-KRB5LIBS = -L/opt/local/lib -lkrb5 -lk5crypto -lcom_err
+-
+-LIBS = $(OSLIBS) $(KRB5LIBS)
+-
 -INC = -I/opt/local/include
 +INC = -I${KRB5BASE}/include
  
@@ -50,8 +60,9 @@
 +all: pam_krb5.so
  
 -pam_krb5.so.1: $(OBJS)
+-	$(CC) -o $@ $(LDFLAGS) $(OBJS) $(LIBS)
 +pam_krb5.so: $(OBJS)
- 	$(CC) -o $@ $(LDFLAGS) $(OBJS) $(LIBS)
++	$(CC) -o $@ $(LDFLAGS) $(OBJS) -L${KRB5BASE}/lib $(LIBS)
  
  install:
 -	cp pam_krb5.so.1 $(DESTDIR)
@@ -70,7 +81,7 @@
  
  pam_krb5_auth.o: pam_krb5_auth.c pam_krb5.h
  	$(CC) -c $(CFLAGS) $(INC) $<
-@@ -55,5 +58,11 @@
+@@ -55,5 +65,11 @@
  	$(CC) -c $(CFLAGS) $(INC) $<
  
  support.o: support.c pam_krb5.h
