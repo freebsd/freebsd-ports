@@ -1,0 +1,87 @@
+#!/usr/bin/perl
+#
+
+@groups = ("vchkpw");
+%users = ('vpopmail', "vchkpw");
+# daemon, local, pop, queue, remote, deliver, respectively.
+# alias is a special case above...
+%gids = ("vchkpw", 89);
+%uids = ('vpopmail', 89);
+
+if ($ENV{PACKAGE_BUILDING} || $ARGV[1] eq "PRE-INSTALL") {
+	$doguid=1;  # Make sure we get the assigned guids.
+}
+
+foreach $group (@groups) {
+	if (! getgrnam ($group)) {
+		do checkrpw;  # May exit
+
+		$x = "-g $gids{$group}";
+		$result = system ("/usr/sbin/pw groupadd $group $x");
+		if ($result) {
+			die "Failed to add group $group as gid $gids{$group}\n";
+		}
+	}
+}
+
+if (! getpwnam ("alias")) {
+	do checkrpw;  # May exit
+
+	$x = "-u $uids{'alias'}";
+	$result = system ("/usr/sbin/pw useradd alias -g qnofiles -d \"$ENV{PKG_PREFIX}/alias\" -s /nonexistent $x");
+	if ($result) {
+		die "Failed to add user alias as uid $uids{'alias'}\n";
+	}
+}
+
+foreach $user (keys %users) {
+	if (! getpwnam ($user)) {
+		do checkrpw;  # May exit
+
+		$x = "-u $uids{$user}";
+		$result = system ("/usr/sbin/pw useradd $user -g $users{$user} -d \"$ENV{PKG_PREFIX}\" -s /nonexistent $x");
+		if ($result) {
+			die "Failed to add user $user as uid $uids{$user}\n";
+		}
+	}
+}
+
+# Check that all gids/uids are as they should be...
+# If we are being installed as a package...
+if ($doguid) {
+	foreach $group (@groups) {
+		if (getgrnam($group) != $gids{$group}) {
+			die "Group $group should have gid $gids{$group}\n";
+		}
+	}
+
+	foreach $user (keys %users) {
+		if (getpwnam($user) != $uids{$user}) {
+			die "User $user should have uid $uids{$user}\n";
+		}
+	}
+}
+
+exit 0;
+
+sub checkrpw {
+	if (! -x "/usr/sbin/pw") {
+		print <<'EOM';
+This system looks like a pre-2.2 version of FreeBSD.  We see that it
+is missing the "pw" utility.  We need this utility.  Please get and
+install it, and try again.  You can get the source from:
+
+  ftp://ftp.freebsd.org/pub/FreeBSD/FreeBSD-current/src/usr.sbin/pw.tar.gz
+
+EOM
+		die "No /usr/sbin/pw";
+	}
+
+	if ($> != 0) {
+		print "It is necessary to add missing vpopmail users/groups at";
+		print "this stage.  Please either add them manually or retry";
+		print "as root.";
+		# Let pw(1) signal the failure so the user can see which
+		# group/user is actually missing.
+	}
+}
