@@ -33,18 +33,24 @@
 %%EMACS_VERSION_SITE_LISPDIR%%/riece/riece-ctcp.elc
 %%EMACS_VERSION_SITE_LISPDIR%%/riece/riece-ctlseq.el
 %%EMACS_VERSION_SITE_LISPDIR%%/riece/riece-ctlseq.elc
+%%EMACS_VERSION_SITE_LISPDIR%%/riece/riece-debug.el
+%%EMACS_VERSION_SITE_LISPDIR%%/riece/riece-debug.elc
 %%EMACS_VERSION_SITE_LISPDIR%%/riece/riece-display.el
 %%EMACS_VERSION_SITE_LISPDIR%%/riece/riece-display.elc
 %%EMACS_VERSION_SITE_LISPDIR%%/riece/riece-doctor.el
 %%EMACS_VERSION_SITE_LISPDIR%%/riece/riece-doctor.elc
 %%EMACS_VERSION_SITE_LISPDIR%%/riece/riece-emacs.el
 %%EMACS_VERSION_SITE_LISPDIR%%/riece/riece-emacs.elc
+%%EMACS_VERSION_SITE_LISPDIR%%/riece/riece-eval.el
+%%EMACS_VERSION_SITE_LISPDIR%%/riece/riece-eval.elc
 %%EMACS_VERSION_SITE_LISPDIR%%/riece/riece-filter.el
 %%EMACS_VERSION_SITE_LISPDIR%%/riece/riece-filter.elc
 %%EMACS_VERSION_SITE_LISPDIR%%/riece/riece-foolproof.el
 %%EMACS_VERSION_SITE_LISPDIR%%/riece/riece-foolproof.elc
 %%EMACS_VERSION_SITE_LISPDIR%%/riece/riece-globals.el
 %%EMACS_VERSION_SITE_LISPDIR%%/riece/riece-globals.elc
+%%EMACS_VERSION_SITE_LISPDIR%%/riece/riece-google.el
+%%EMACS_VERSION_SITE_LISPDIR%%/riece/riece-google.elc
 %%EMACS_VERSION_SITE_LISPDIR%%/riece/riece-guess.el
 %%EMACS_VERSION_SITE_LISPDIR%%/riece/riece-guess.elc
 %%EMACS_VERSION_SITE_LISPDIR%%/riece/riece-handle.el
@@ -65,6 +71,8 @@
 %%EMACS_VERSION_SITE_LISPDIR%%/riece/riece-irc.elc
 %%EMACS_VERSION_SITE_LISPDIR%%/riece/riece-kakasi.el
 %%EMACS_VERSION_SITE_LISPDIR%%/riece/riece-kakasi.elc
+%%EMACS_VERSION_SITE_LISPDIR%%/riece/riece-keepalive.el
+%%EMACS_VERSION_SITE_LISPDIR%%/riece/riece-keepalive.elc
 %%EMACS_VERSION_SITE_LISPDIR%%/riece/riece-keyword.el
 %%EMACS_VERSION_SITE_LISPDIR%%/riece/riece-keyword.elc
 %%EMACS_VERSION_SITE_LISPDIR%%/riece/riece-layout.el
@@ -95,6 +103,8 @@
 %%EMACS_VERSION_SITE_LISPDIR%%/riece/riece-signal.elc
 %%EMACS_VERSION_SITE_LISPDIR%%/riece/riece-skk-kakutei.el
 %%EMACS_VERSION_SITE_LISPDIR%%/riece/riece-skk-kakutei.elc
+%%EMACS_VERSION_SITE_LISPDIR%%/riece/riece-toolbar.el
+%%EMACS_VERSION_SITE_LISPDIR%%/riece/riece-toolbar.elc
 %%EMACS_VERSION_SITE_LISPDIR%%/riece/riece-unread.el
 %%EMACS_VERSION_SITE_LISPDIR%%/riece/riece-unread.elc
 %%EMACS_VERSION_SITE_LISPDIR%%/riece/riece-url.el
@@ -109,4 +119,7 @@
 %%EMACS_VERSION_SITE_LISPDIR%%/riece/riece-yank.elc
 %%EMACS_VERSION_SITE_LISPDIR%%/riece/riece.el
 %%EMACS_VERSION_SITE_LISPDIR%%/riece/riece.elc
+%%EMACS_VERSION_SITE_LISPDIR%%/riece/riece-command-next-channel.xpm
+%%EMACS_VERSION_SITE_LISPDIR%%/riece/riece-command-previous-channel.xpm
+%%EMACS_VERSION_SITE_LISPDIR%%/riece/riece-submit-bug-report.xpm
 @dirrm %%EMACS_VERSION_SITE_LISPDIR%%/riece
