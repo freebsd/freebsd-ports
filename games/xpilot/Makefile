@@ -6,14 +6,14 @@
 #
 
 PORTNAME=	xpilot
-PORTVERSION=	4.3.1
+PORTVERSION=	4.3.2
 CATEGORIES=	games
 MASTER_SITES=	ftp://ftp.xpilot.org/pub/xpilot/ \
 		ftp://ftp.xpilot.org/pub/xpilot/old/ \
 		${MASTER_SITE_XCONTRIB}
 MASTER_SITE_SUBDIR=	games/multiplayer
 
-MAINTAINER=	sheldonh@FreeBSD.org
+MAINTAINER=	goranrunfeldt@home.se
 
 USE_IMAKE=	yes
 MAN6=		xpilot.6 xpilots.6 xp-replay.6
