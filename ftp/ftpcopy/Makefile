@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	ftpcopy
-PORTVERSION=	0.6.2
+PORTVERSION=	0.6.4
 CATEGORIES=	ftp ipv6
 MASTER_SITES=	http://www.ohse.de/uwe/ftpcopy/
 
-MAINTAINER=	matthias.andree@web.de
+MAINTAINER=	matthias.andree@gmx.de
 COMMENT=	Command line ftp tools for listing and mirroring
 
 WRKSRC=		${WRKDIR}/web/${DISTNAME}
@@ -26,7 +26,7 @@ do-install:
 	${MKDIR} ${DOCSDIR} && \
 	cd ${WRKSRC}/compile && \
 		${INSTALL_DATA} ChangeLog NEWS \
-			README THANKS ${DOCSDIR}
+			README THANKS ftpcopy.html ftpls.html ${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>

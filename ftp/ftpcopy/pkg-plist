@@ -5,4 +5,6 @@ bin/ftpls
 %%PORTDOCS%%share/doc/ftpcopy/NEWS
 %%PORTDOCS%%share/doc/ftpcopy/README
 %%PORTDOCS%%share/doc/ftpcopy/THANKS
+%%PORTDOCS%%share/doc/ftpcopy/ftpcopy.html
+%%PORTDOCS%%share/doc/ftpcopy/ftpls.html
 %%PORTDOCS%%@dirrm share/doc/ftpcopy
