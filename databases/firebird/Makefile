@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=firebird
 DISTNAME=	firebird-1.5.1.4481
 
-MAINTAINER=	chris@e-easy.com.au
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The open-source InterBase(tm) 6.0 spin-off (Classic version)
 
 USE_BISON=	yes
