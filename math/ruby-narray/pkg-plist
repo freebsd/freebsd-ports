@@ -1,0 +1,21 @@
+%%RUBY_SITEARCHLIBDIR%%/narray.so
+%%RUBY_SITELIBDIR%%/narray_ext.rb
+%%RUBY_SITELIBDIR%%/nmatrix.rb
+%%RUBY_DOCDIR%%/narray/ja/README.jp
+%%RUBY_DOCDIR%%/narray/ja/SPEC.jp
+%%RUBY_DOCDIR%%/narray/ChangeLog
+%%RUBY_DOCDIR%%/narray/README.en
+%%RUBY_DOCDIR%%/narray/SPEC.en
+@dirrm %%RUBY_DOCDIR%%/narray/ja
+@dirrm %%RUBY_DOCDIR%%/narray
+%%RUBY_EXAMPLESDIR%%/narray/add.rb
+%%RUBY_EXAMPLESDIR%%/narray/add_int.rb
+%%RUBY_EXAMPLESDIR%%/narray/lu.rb
+%%RUBY_EXAMPLESDIR%%/narray/mat.rb
+%%RUBY_EXAMPLESDIR%%/narray/mul.rb
+%%RUBY_EXAMPLESDIR%%/narray/mul2.rb
+%%RUBY_EXAMPLESDIR%%/narray/mul_comp.rb
+%%RUBY_EXAMPLESDIR%%/narray/mul_int.rb
+%%RUBY_EXAMPLESDIR%%/narray/mybench.rb
+%%RUBY_EXAMPLESDIR%%/narray/solve.rb
+@dirrm %%RUBY_EXAMPLESDIR%%/narray
