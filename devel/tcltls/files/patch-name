@@ -1,0 +1,9 @@
+--- tlsIO.c	Fri Aug 18 15:17:36 2000
++++ tlsIO.c	Tue May 15 15:44:45 2001
+@@ -148,5 +148,6 @@
+ 	 * Common elements of the structure (no changes in location or name)
+ 	 * close2Proc, seekProc, setOptionProc stay NULL.
+ 	 */
+ 
++	tlsChannelType->typeName         = "tls";
+ 	tlsChannelType->closeProc        = TlsCloseProc;
