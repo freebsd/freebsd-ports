@@ -249,7 +249,7 @@ TKPATH=:$(DESTLIB)/tkinter
 #_tkinter _tkinter.c -I/usr/openwin/include -I/usr/local/include -L/usr/openwin/lib -L/usr/local/lib -ltk4.1 -ltcl7.5 -lX11
 # For generic system (may have to add -I/-L options to find X11):
 #_tkinter _tkinter.c -I/usr/local/include -L/usr/local/lib -ltk4.1 -ltcl7.5 -lX11
-_tkinter _tkinter.c -I/usr/local/include -I/usr/X11R6/include -L/usr/local/lib -L/usr/X11R6/lib -ltk41 -ltcl75 -lX11
+_tkinter _tkinter.c -I/usr/local/include -I/usr/X11R6/include -L/usr/local/lib -L/usr/X11R6/lib -ltix4141 -ltk41 -ltcl75 -lX11
 
 
 # Lance Ellinghaus's modules:

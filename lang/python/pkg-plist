@@ -371,6 +371,8 @@ share/python1.4/test/test_select.py
 share/python1.4/test/test_select.pyc
 share/python1.4/test/test_signal.py
 share/python1.4/test/test_signal.pyc
+share/python1.4/test/test_strop.py
+share/python1.4/test/test_strop.pyc
 share/python1.4/test/test_support.py
 share/python1.4/test/test_support.pyc
 share/python1.4/test/test_thread.py
@@ -390,6 +392,8 @@ share/python1.4/tkinter/ScrolledText.py
 share/python1.4/tkinter/ScrolledText.pyc
 share/python1.4/tkinter/SimpleDialog.py
 share/python1.4/tkinter/SimpleDialog.pyc
+share/python1.4/tkinter/Tix.py
+share/python1.4/tkinter/Tix.pyc
 share/python1.4/tkinter/Tkconstants.py
 share/python1.4/tkinter/Tkconstants.pyc
 share/python1.4/tkinter/Tkinter.py
