@@ -1,66 +1,649 @@
+bin/ascd
 bin/afterstep
 bin/asclock
-lib/X11/afterstep/Animate
-lib/X11/afterstep/Audio
-lib/X11/afterstep/Auto
-lib/X11/afterstep/Banner
-lib/X11/afterstep/Pager
-lib/X11/afterstep/Wharf
-lib/X11/afterstep/system.steprc
-lib/X11/afterstep/backgrounds/bark.jpg
-lib/X11/afterstep/backgrounds/brick.jpg
-lib/X11/afterstep/backgrounds/carpet.green.jpg
-lib/X11/afterstep/backgrounds/coins.jpg
-lib/X11/afterstep/backgrounds/darkwood.jpg
-lib/X11/afterstep/backgrounds/eyes.jpg
-lib/X11/afterstep/backgrounds/glass.jpg
-lib/X11/afterstep/backgrounds/parquet.jpg
-lib/X11/afterstep/backgrounds/pebbles.jpg
-lib/X11/afterstep/backgrounds/rock.tile.jpg
-lib/X11/afterstep/backgrounds/rope.weave.jpg
-lib/X11/afterstep/backgrounds/stucco.jpg
-lib/X11/afterstep/backgrounds/tile.check.jpg
-lib/X11/afterstep/backgrounds/volcanic.jpg
-lib/X11/afterstep/backgrounds/wood.jpg
-lib/X11/afterstep/doc/CHANGES
-lib/X11/afterstep/doc/CREDITS
-lib/X11/afterstep/doc/README
-lib/X11/afterstep/doc/README.8bit
-lib/X11/afterstep/doc/FAQ
-lib/X11/afterstep/doc/INSTALL
-lib/X11/afterstep/doc/module-interface.txt
-lib/X11/afterstep/sounds/bong.au
-lib/X11/afterstep/sounds/clink.au
-lib/X11/afterstep/sounds/cowbell.au
-lib/X11/afterstep/sounds/crash.au
-lib/X11/afterstep/sounds/drip.au
-lib/X11/afterstep/sounds/gong.au
-lib/X11/afterstep/sounds/meepmeep.au
-lib/X11/afterstep/sounds/small-step.au
-lib/X11/afterstep/sounds/train.au
+bin/asmail
+bin/xiterm
+bin/ASSound
+bin/Animate
+bin/Audio
+bin/Auto
+bin/Banner
+bin/Clean
+bin/Form
+bin/Ident
+bin/Save
+bin/Scroll
+bin/Pager
+bin/WPager
+bin/XPager
+bin/YPager
+bin/ZPager
+bin/Pager-noxpm
+bin/WPager-noxpm
+bin/XPager-noxpm
+bin/YPager-noxpm
+bin/ZPager-noxpm
+bin/Wharf
+bin/WinList
+bin/Zharf
+bin/afterstepdoc
 include/X11/pixmaps/monitor_bsd.xpm
-include/X11/pixmaps/3dpaint.xpm
-include/X11/pixmaps/AFstep.xpm
-include/X11/pixmaps/FileFolders.xpm
-include/X11/pixmaps/KeysOnChain.xpm
-include/X11/pixmaps/YellowBlueRedGeometry.xpm
-include/X11/pixmaps/interface.xpm
-include/X11/pixmaps/monalisa.xpm
-include/X11/pixmaps/monitor.xpm
-include/X11/pixmaps/netscape3.xpm
-include/X11/pixmaps/penguin.xpm
-include/X11/pixmaps/shutdown.xpm
-include/X11/pixmaps/text.xpm
-include/X11/pixmaps/writeletter.xpm
-man/man1/afterstep.1.gz
-man/man1/asclock.1.gz
-man/man1/Animate.1.gz
+man/man1/ascd.1.gz
 man/man1/Audio.1.gz
 man/man1/Auto.1.gz
+man/man1/asclock.1.gz
+man/man1/asmail.1.gz
+man/man1/xiterm.1.gz
+man/man1/Clean.1.gz
+man/man1/ASSound.1.gz
+man/man1/Animate.1.gz
 man/man1/Banner.1.gz
+man/man1/Form.1.gz
+man/man1/Ident.1.gz
+man/man1/Save.1.gz
 man/man1/Pager.1.gz
+man/man1/Pager-noxpm.1.gz
+man/man1/Scroll.1.gz
 man/man1/Wharf.1.gz
-@dirrm lib/X11/afterstep/doc
-@dirrm lib/X11/afterstep/backgrounds
-@dirrm lib/X11/afterstep/sounds
-@dirrm lib/X11/afterstep
+man/man1/Zharf.1.gz
+man/man1/WinList.1.gz
+man/man1/afterstep.1.gz
+share/afterstep/looks/look.Wouter
+share/afterstep/looks/look.Nextish
+share/afterstep/looks/look.Black
+share/afterstep/looks/look.purenext
+share/afterstep/looks/look.DEFAULT
+share/afterstep/looks/look.redish
+share/afterstep/looks/look.red
+share/afterstep/looks/look.Neptho
+share/afterstep/looks/look.Dark
+share/afterstep/looks/look.orchid
+share/afterstep/looks/look.turquoise
+share/afterstep/looks/look.lightgrey
+share/afterstep/looks/look.lightblue
+share/afterstep/looks/look.greyblue
+share/afterstep/looks/look.DeepBlue
+share/afterstep/looks/look.Stone
+share/afterstep/looks/look.nogradient
+share/afterstep/looks/look.James
+share/afterstep/looks/look.AfterStep
+share/afterstep/looks/look.NewFeatures
+share/afterstep/looks/look.Guylhem
+share/afterstep/non-configurable/desk1/look.16bpp
+share/afterstep/non-configurable/desk1/look.8bpp
+share/afterstep/non-configurable/desk1/background
+share/afterstep/non-configurable/desk1/feel.16bpp
+share/afterstep/non-configurable/desk1/feel.24bpp
+share/afterstep/non-configurable/desk1/look.24bpp
+share/afterstep/non-configurable/desk1/feel.8bpp
+share/afterstep/non-configurable/desk0/feel.8bpp
+share/afterstep/non-configurable/desk0/look.8bpp
+share/afterstep/non-configurable/desk0/look.16bpp
+share/afterstep/non-configurable/desk0/background
+share/afterstep/non-configurable/desk0/feel.24bpp
+share/afterstep/non-configurable/desk0/look.24bpp
+share/afterstep/non-configurable/desk0/feel.16bpp
+share/afterstep/non-configurable/desk3/feel.8bpp
+share/afterstep/non-configurable/desk3/look.8bpp
+share/afterstep/non-configurable/desk3/look.16bpp
+share/afterstep/non-configurable/desk3/background
+share/afterstep/non-configurable/desk3/feel.24bpp
+share/afterstep/non-configurable/desk3/look.24bpp
+share/afterstep/non-configurable/desk3/feel.16bpp
+share/afterstep/non-configurable/desk2/feel.16bpp
+share/afterstep/non-configurable/desk2/look.8bpp
+share/afterstep/non-configurable/desk2/feel.8bpp
+share/afterstep/non-configurable/desk2/background
+share/afterstep/non-configurable/desk2/feel.24bpp
+share/afterstep/non-configurable/desk2/look.24bpp
+share/afterstep/non-configurable/desk2/look.16bpp
+share/afterstep/non-configurable/tmp/startmenu
+share/afterstep/non-configurable/Make8bitXPMs
+share/afterstep/non-configurable/Xpm2Jpg
+share/afterstep/start/Quit/Exit ?
+share/afterstep/start/Quit/Close this session
+share/afterstep/start/Quit/Restart this session
+share/afterstep/start/Quit/Restart with twm
+share/afterstep/start/Quit/Restart with wmaker
+share/afterstep/start/Quit/ReRead configuration
+share/afterstep/start/Modules/- XLock with ...
+share/afterstep/start/Modules/Ident
+share/afterstep/start/Modules/Clean
+share/afterstep/start/Modules/Banner
+share/afterstep/start/Modules/Audio
+share/afterstep/start/Modules/Zharf
+share/afterstep/start/Modules/WinList
+share/afterstep/start/Modules/Pager
+share/afterstep/start/Modules/- Help about ...
+share/afterstep/start/Modules/Animate
+share/afterstep/start/Modules/Auto
+share/afterstep/start/Modules/Wharf
+share/afterstep/start/Modules/- Find a file ...
+share/afterstep/start/Modules/Scroll
+share/afterstep/start/Modules/- Quit ...
+share/afterstep/start/Modules/- Run a command ...
+share/afterstep/start/Modules/- Take screenshot ...
+share/afterstep/start/Modules/- Take windowshot ...
+share/afterstep/start/Modules/- FTP to ...
+share/afterstep/start/Screen savers/Without password/Stop animation
+share/afterstep/start/Screen savers/Without password/Forest
+share/afterstep/start/Screen savers/Without password/Laser
+share/afterstep/start/Screen savers/Without password/Mountain
+share/afterstep/start/Screen savers/Without password/Qix
+share/afterstep/start/Screen savers/Without password/Shape
+share/afterstep/start/Screen savers/Without password/Spermatozoid
+share/afterstep/start/Screen savers/Without password/Spline
+share/afterstep/start/Screen savers/Without password/Star Trek
+share/afterstep/start/Screen savers/Without password/Firework
+share/afterstep/start/Screen savers/With password/Star Trek
+share/afterstep/start/Screen savers/With password/Forest
+share/afterstep/start/Screen savers/With password/Laser
+share/afterstep/start/Screen savers/With password/Mountain
+share/afterstep/start/Screen savers/With password/Qix
+share/afterstep/start/Screen savers/With password/Shape
+share/afterstep/start/Screen savers/With password/Spermatozoid
+share/afterstep/start/Screen savers/With password/Spline
+share/afterstep/start/Screen savers/With password/Firework
+share/afterstep/start/Applications/Office/Invest
+share/afterstep/start/Applications/Office/Ps viewer
+share/afterstep/start/Applications/Office/XEmacs
+share/afterstep/start/Applications/Office/Lyx
+share/afterstep/start/Applications/Office/HP 48
+share/afterstep/start/Applications/Office/XEphemeride
+share/afterstep/start/Applications/Office/Dvi viewer
+share/afterstep/start/Applications/Office/File manager
+share/afterstep/start/Applications/Office/Plot
+share/afterstep/start/Applications/Office/Finance
+share/afterstep/start/Applications/Office/RPN calculator
+share/afterstep/start/Applications/Games/Asteroids
+share/afterstep/start/Applications/Games/X Eyes
+share/afterstep/start/Applications/Games/Tetris
+share/afterstep/start/Applications/Games/Patience
+share/afterstep/start/Applications/Games/X Boing
+share/afterstep/start/Applications/Games/Invaders
+share/afterstep/start/Applications/Games/Galaga
+share/afterstep/start/Applications/Games/Block Out
+share/afterstep/start/Applications/KDE/KDE-Games/Minehunt
+share/afterstep/start/Applications/KDE/KDE-Games/Patience
+share/afterstep/start/Applications/KDE/KDE-Games/Tetris
+share/afterstep/start/Applications/KDE/Calculator
+share/afterstep/start/Applications/KDE/Display manager
+share/afterstep/start/Applications/KDE/Help
+share/afterstep/start/Applications/KDE/Find a file
+share/afterstep/start/Applications/KDE/Editor
+share/afterstep/start/Applications/KDE/View picture
+share/afterstep/start/Applications/KDE/File manager
+share/afterstep/start/Applications/KDE/Font manager
+share/afterstep/start/Applications/KDE/Screen lock
+share/afterstep/start/Applications/KDE/Paintbrush
+share/afterstep/start/Applications/KDE/Command prompt
+share/afterstep/start/Applications/KDE/Editor (hex)
+share/afterstep/start/Applications/Accessories/Color name
+share/afterstep/start/Applications/Accessories/Colors
+share/afterstep/start/Applications/Accessories/X logo
+share/afterstep/start/Applications/Accessories/Help
+share/afterstep/start/Applications/Accessories/Notepad
+share/afterstep/start/Applications/Accessories/Clock
+share/afterstep/start/Applications/Accessories/Calculator
+share/afterstep/start/Applications/Accessories/System load
+share/afterstep/start/Applications/Accessories/Screen magnify
+share/afterstep/start/Applications/Accessories/Battery
+share/afterstep/start/Applications/Accessories/Keyboard leds
+share/afterstep/start/Applications/Accessories/Change defaults
+share/afterstep/start/Applications/Accessories/Change keyboard
+share/afterstep/start/Applications/Accessories/Change screen
+share/afterstep/start/Applications/Accessories/X pirate logo
+share/afterstep/start/Applications/Accessories/System charge
+share/afterstep/start/Applications/Accessories/Grab screen
+share/afterstep/start/Applications/Accessories/Reset color map
+share/afterstep/start/Applications/Accessories/Color map
+share/afterstep/start/Applications/Accessories/Window infos
+share/afterstep/start/Applications/StEP applications/Volume
+share/afterstep/start/Applications/StEP applications/System load
+share/afterstep/start/Applications/StEP applications/File system
+share/afterstep/start/Applications/StEP applications/Sound mixer
+share/afterstep/start/Applications/StEP applications/Mail checker
+share/afterstep/start/Applications/StEP applications/Modem checker
+share/afterstep/start/Applications/StEP applications/Printer
+share/afterstep/start/Applications/StEP applications/PPP checker
+share/afterstep/start/Applications/StEP applications/Radio Tuner
+share/afterstep/start/Applications/StEP applications/Trash
+share/afterstep/start/Applications/StEP applications/CD player
+share/afterstep/start/Applications/StEP applications/File manager
+share/afterstep/start/Applications/StEP applications/Clock
+share/afterstep/start/Applications/Network/Connect to internet
+share/afterstep/start/Applications/Network/Netscape
+share/afterstep/start/Applications/Network/Lynx
+share/afterstep/start/Applications/Network/Mail
+share/afterstep/start/Applications/Network/Ftp
+share/afterstep/start/Applications/Network/Telnet
+share/afterstep/start/Applications/Network/Irc
+share/afterstep/start/Applications/Network/Connect to a BBS
+share/afterstep/start/Applications/Network/X ftp
+share/afterstep/start/Applications/Network/News
+share/afterstep/start/Applications/Network/Connect by ppp
+share/afterstep/start/Applications/Medias/CD Player
+share/afterstep/start/Applications/Medias/Modules
+share/afterstep/start/Applications/Medias/Midi
+share/afterstep/start/Applications/Medias/Pictures
+share/afterstep/start/Applications/Medias/Mixer
+share/afterstep/start/Applications/Medias/MPEG-3
+share/afterstep/start/Applications/Medias/The gimp
+share/afterstep/start/Decorations/Animations/Spermatozoid
+share/afterstep/start/Decorations/Animations/Qix
+share/afterstep/start/Decorations/Animations/Star Trek
+share/afterstep/start/Decorations/Animations/Laser
+share/afterstep/start/Decorations/Animations/Spline
+share/afterstep/start/Decorations/Animations/Mountain
+share/afterstep/start/Decorations/Animations/Shape
+share/afterstep/start/Decorations/Animations/Firework
+share/afterstep/start/Decorations/Animations/Forest
+share/afterstep/start/Decorations/Cursors/xterm
+share/afterstep/start/Decorations/Cursors/num_glyphs
+share/afterstep/start/Decorations/Cursors/arrow
+share/afterstep/start/Decorations/Cursors/based_arrow_down
+share/afterstep/start/Decorations/Cursors/based_arrow_up
+share/afterstep/start/Decorations/Cursors/boat
+share/afterstep/start/Decorations/Cursors/bogosity
+share/afterstep/start/Decorations/Cursors/bottom_left_corner
+share/afterstep/start/Decorations/Cursors/bottom_right_corner
+share/afterstep/start/Decorations/Cursors/bottom_side
+share/afterstep/start/Decorations/Cursors/bottom_tee
+share/afterstep/start/Decorations/Cursors/box_spiral
+share/afterstep/start/Decorations/Cursors/center_ptr
+share/afterstep/start/Decorations/Cursors/circle
+share/afterstep/start/Decorations/Cursors/clock
+share/afterstep/start/Decorations/Cursors/coffee_mug
+share/afterstep/start/Decorations/Cursors/cross
+share/afterstep/start/Decorations/Cursors/cross_reverse
+share/afterstep/start/Decorations/Cursors/crosshair
+share/afterstep/start/Decorations/Cursors/diamond_cross
+share/afterstep/start/Decorations/Cursors/dot
+share/afterstep/start/Decorations/Cursors/dotbox
+share/afterstep/start/Decorations/Cursors/double_arrow
+share/afterstep/start/Decorations/Cursors/draft_large
+share/afterstep/start/Decorations/Cursors/draft_small
+share/afterstep/start/Decorations/Cursors/draped_box
+share/afterstep/start/Decorations/Cursors/exchange
+share/afterstep/start/Decorations/Cursors/fleur
+share/afterstep/start/Decorations/Cursors/gobbler
+share/afterstep/start/Decorations/Cursors/gumby
+share/afterstep/start/Decorations/Cursors/hand1
+share/afterstep/start/Decorations/Cursors/hand2
+share/afterstep/start/Decorations/Cursors/heart
+share/afterstep/start/Decorations/Cursors/icon
+share/afterstep/start/Decorations/Cursors/iron_cross
+share/afterstep/start/Decorations/Cursors/left_ptr
+share/afterstep/start/Decorations/Cursors/left_side
+share/afterstep/start/Decorations/Cursors/left_tee
+share/afterstep/start/Decorations/Cursors/leftbutton
+share/afterstep/start/Decorations/Cursors/ll_angle
+share/afterstep/start/Decorations/Cursors/lr_angle
+share/afterstep/start/Decorations/Cursors/man
+share/afterstep/start/Decorations/Cursors/middlebutton
+share/afterstep/start/Decorations/Cursors/mouse
+share/afterstep/start/Decorations/Cursors/pencil
+share/afterstep/start/Decorations/Cursors/pirate
+share/afterstep/start/Decorations/Cursors/plus
+share/afterstep/start/Decorations/Cursors/question_arrow
+share/afterstep/start/Decorations/Cursors/right_ptr
+share/afterstep/start/Decorations/Cursors/right_side
+share/afterstep/start/Decorations/Cursors/right_tee
+share/afterstep/start/Decorations/Cursors/shuttle
+share/afterstep/start/Decorations/Cursors/rightbutton
+share/afterstep/start/Decorations/Cursors/rtl_logo
+share/afterstep/start/Decorations/Cursors/sailboat
+share/afterstep/start/Decorations/Cursors/sb_down_arrow
+share/afterstep/start/Decorations/Cursors/sb_h_double_arrow
+share/afterstep/start/Decorations/Cursors/sb_left_arrow
+share/afterstep/start/Decorations/Cursors/sb_right_arrow
+share/afterstep/start/Decorations/Cursors/sb_up_arrow
+share/afterstep/start/Decorations/Cursors/sb_v_double_arrow
+share/afterstep/start/Decorations/Cursors/spider
+share/afterstep/start/Decorations/Cursors/sizing
+share/afterstep/start/Decorations/Cursors/spraycan
+share/afterstep/start/Decorations/Cursors/star
+share/afterstep/start/Decorations/Cursors/target
+share/afterstep/start/Decorations/Cursors/tcross
+share/afterstep/start/Decorations/Cursors/top_left_arrow
+share/afterstep/start/Decorations/Cursors/top_left_corner
+share/afterstep/start/Decorations/Cursors/top_right_corner
+share/afterstep/start/Decorations/Cursors/top_side
+share/afterstep/start/Decorations/Cursors/top_tee
+share/afterstep/start/Decorations/Cursors/trek
+share/afterstep/start/Decorations/Cursors/ul_angle
+share/afterstep/start/Decorations/Cursors/umbrella
+share/afterstep/start/Decorations/Cursors/ur_angle
+share/afterstep/start/Decorations/Cursors/watch
+share/afterstep/start/Decorations/Cursors/X_cursor
+share/afterstep/start/Decorations/Mouse/Left Handed (3 2 1)
+share/afterstep/start/Decorations/Mouse/Ultra Fastest
+share/afterstep/start/Decorations/Mouse/Faster
+share/afterstep/start/Decorations/Mouse/Fast
+share/afterstep/start/Decorations/Mouse/Normal
+share/afterstep/start/Decorations/Mouse/Slower
+share/afterstep/start/Decorations/Mouse/No acceleration
+share/afterstep/start/Decorations/Mouse/Right Handed (1 2 3)
+share/afterstep/start/Decorations/Mouse/Next Fastest
+share/afterstep/start/Decorations/X earth
+share/afterstep/start/Decorations/Stop animation
+share/afterstep/start/Decorations/X fishtank
+share/afterstep/start/AfterStepDoc
+share/afterstep/start/Help about ...
+share/afterstep/start/Find a file ...
+share/afterstep/start/X terminal (big)
+share/afterstep/start/Run a command ...
+share/afterstep/start/X terminal (pixmap)
+share/afterstep/start/Screen saver
+share/afterstep/start/X terminal
+share/afterstep/start/X terminal (no sb)
+share/afterstep/feels/feel.Windowish
+share/afterstep/feels/feel.ICCCM
+share/afterstep/feels/feel.AutoRaise
+share/afterstep/feels/feel.ClickToFocus
+share/afterstep/feels/feel.PureNeXT
+share/afterstep/feels/feel.DEFAULT
+share/afterstep/desktop/backgrounds/wheat.xpm
+share/afterstep/desktop/backgrounds/Wave.xpm
+share/afterstep/desktop/backgrounds/red.xpm
+share/afterstep/desktop/backgrounds/midnightblue.xpm
+share/afterstep/desktop/backgrounds/darkgreen.xpm
+share/afterstep/desktop/backgrounds/black.xpm
+share/afterstep/desktop/backgrounds/aquamarine.xpm
+share/afterstep/desktop/backgrounds/darkblue.xpm
+share/afterstep/desktop/backgrounds/purple.xpm
+share/afterstep/desktop/backgrounds/Back.xpm
+share/afterstep/desktop/icons/8bpp/ASBBlockConvexBlue.xpm
+share/afterstep/desktop/icons/8bpp/ASBBlockGreen.xpm
+share/afterstep/desktop/icons/8bpp/ASBBlockMarble.xpm
+share/afterstep/desktop/icons/8bpp/ASBBlockRed.xpm
+share/afterstep/desktop/icons/8bpp/ASBBlockSlate.xpm
+share/afterstep/desktop/icons/8bpp/ASBBlockWater.xpm
+share/afterstep/desktop/icons/8bpp/3dpaint.xpm
+share/afterstep/desktop/icons/8bpp/Eyecon.xpm
+share/afterstep/desktop/icons/8bpp/Paint.xpm
+share/afterstep/desktop/icons/8bpp/Plasma.xpm
+share/afterstep/desktop/icons/8bpp/ShutDown.xpm
+share/afterstep/desktop/icons/8bpp/Folder.xpm
+share/afterstep/desktop/icons/8bpp/interface.xpm
+share/afterstep/desktop/icons/8bpp/linux-penguin.xpm
+share/afterstep/desktop/icons/8bpp/monalisa.xpm
+share/afterstep/desktop/icons/8bpp/netscape.xpm
+share/afterstep/desktop/icons/8bpp/wharf.xpm
+share/afterstep/desktop/icons/8bpp/writeletter.xpm
+share/afterstep/desktop/icons/8bpp/FileFolders.xpm
+share/afterstep/desktop/icons/8bpp/ASBBlockWhite.xpm
+share/afterstep/desktop/icons/8bpp/Text.xpm
+share/afterstep/desktop/icons/8bpp/Monitor.xpm
+share/afterstep/desktop/icons/8bpp/shutdown.xpm
+share/afterstep/desktop/icons/8bpp/CDrom.xpm
+share/afterstep/desktop/icons/8bpp/Recycler.xpm
+share/afterstep/desktop/icons/8bpp/ASBBlockDefault.xpm
+share/afterstep/desktop/icons/8bpp/ASBBlockClear.xpm
+share/afterstep/desktop/icons/8bpp/OldFashionedRadio.xpm
+share/afterstep/desktop/icons/8bpp/YellowBlueRedGeometry.xpm
+share/afterstep/desktop/icons/8bpp/AfterStep2.xpm
+share/afterstep/desktop/icons/8bpp/KeysOnChain.xpm
+share/afterstep/desktop/icons/8bpp/AfterStep.xpm
+share/afterstep/desktop/icons/8bpp/AfterStep4.xpm
+share/afterstep/desktop/icons/8bpp/ComputerPC.xpm
+share/afterstep/desktop/icons/8bpp/Bookshelf.xpm
+share/afterstep/desktop/icons/8bpp/Brush.xpm
+share/afterstep/desktop/icons/8bpp/CDrom2.xpm
+share/afterstep/desktop/icons/8bpp/Computer.xpm
+share/afterstep/desktop/icons/8bpp/Publish.xpm
+share/afterstep/desktop/icons/8bpp/WWW.xpm
+share/afterstep/desktop/icons/8bpp/cpuchip.xpm
+share/afterstep/desktop/icons/8bpp/Database.xpm
+share/afterstep/desktop/icons/8bpp/Debug.xpm
+share/afterstep/desktop/icons/8bpp/DeskGlobe.xpm
+share/afterstep/desktop/icons/8bpp/disk.builder.xpm
+share/afterstep/desktop/icons/8bpp/draw.xpm
+share/afterstep/desktop/icons/8bpp/hostmanager.xpm
+share/afterstep/desktop/icons/8bpp/Install.xpm
+share/afterstep/desktop/icons/8bpp/KeyPower.xpm
+share/afterstep/desktop/icons/8bpp/RayTracedGear.xpm
+share/afterstep/desktop/icons/8bpp/Start.xpm
+share/afterstep/desktop/icons/8bpp/Network.xpm
+share/afterstep/desktop/icons/8bpp/workshop.xpm
+share/afterstep/desktop/icons/8bpp/widget.xpm
+share/afterstep/desktop/icons/8bpp/spreadsheet.xpm
+share/afterstep/desktop/icons/8bpp/spreadsheet2.xpm
+share/afterstep/desktop/icons/8bpp/e-no.xpm
+share/afterstep/desktop/icons/8bpp/e0.xpm
+share/afterstep/desktop/icons/8bpp/BookArrows.xpm
+share/afterstep/desktop/icons/8bpp/GNUSpace.xpm
+share/afterstep/desktop/icons/8bpp/Info.xpm
+share/afterstep/desktop/icons/8bpp/e1.xpm
+share/afterstep/desktop/icons/8bpp/e10.xpm
+share/afterstep/desktop/icons/8bpp/NetworkInfoManager.xpm
+share/afterstep/desktop/icons/8bpp/e11.xpm
+share/afterstep/desktop/icons/8bpp/e2.xpm
+share/afterstep/desktop/icons/8bpp/e3.xpm
+share/afterstep/desktop/icons/8bpp/e4.xpm
+share/afterstep/desktop/icons/8bpp/e5.xpm
+share/afterstep/desktop/icons/8bpp/e6.xpm
+share/afterstep/desktop/icons/8bpp/e7.xpm
+share/afterstep/desktop/icons/8bpp/author.xpm
+share/afterstep/desktop/icons/8bpp/AfterStep3.xpm
+share/afterstep/desktop/icons/8bpp/e8.xpm
+share/afterstep/desktop/icons/8bpp/e9.xpm
+share/afterstep/desktop/icons/8bpp/AfterStep5.xpm
+share/afterstep/desktop/icons/8bpp/RedFire.xpm
+share/afterstep/desktop/icons/8bpp/ASBBlockBlue.xpm
+share/afterstep/desktop/icons/common/fr.xpm
+share/afterstep/desktop/icons/common/xiterm.xpm
+share/afterstep/desktop/icons/common/Earth.xpm
+share/afterstep/desktop/icons/common/arrow.xpm
+share/afterstep/desktop/icons/common/World.xpm
+share/afterstep/desktop/icons/common/monitor-e0.xpm
+share/afterstep/desktop/icons/common/monitor-e1.xpm
+share/afterstep/desktop/icons/common/monitor-e10.xpm
+share/afterstep/desktop/icons/common/monitor-e11.xpm
+share/afterstep/desktop/icons/common/monitor-e2.xpm
+share/afterstep/desktop/icons/common/monitor-e3.xpm
+share/afterstep/desktop/icons/common/monitor-e4.xpm
+share/afterstep/desktop/icons/common/monitor-e5.xpm
+share/afterstep/desktop/icons/common/monitor-e6.xpm
+share/afterstep/desktop/icons/common/monitor-e7.xpm
+share/afterstep/desktop/icons/common/monitor-e8.xpm
+share/afterstep/desktop/icons/common/monitor-e9.xpm
+share/afterstep/desktop/icons/common/monitor-no.xpm
+share/afterstep/desktop/icons/common/Mail1.xpm
+share/afterstep/desktop/icons/common/Mail2.xpm
+share/afterstep/desktop/icons/common/Mail3.xpm
+share/afterstep/desktop/icons/common/98.xpm
+share/afterstep/desktop/icons/common/AfterStep7.xpm
+share/afterstep/desktop/icons/common/AfterStep8.xpm
+share/afterstep/desktop/icons/common/dk.xpm
+share/afterstep/desktop/icons/16bpp/ASBBlockClear.xpm
+share/afterstep/desktop/icons/16bpp/ASBBlockConvexBlue.xpm
+share/afterstep/desktop/icons/16bpp/ASBBlockDefault.xpm
+share/afterstep/desktop/icons/16bpp/ASBBlockGreen.xpm
+share/afterstep/desktop/icons/16bpp/ASBBlockMarble.xpm
+share/afterstep/desktop/icons/16bpp/ASBBlockRed.xpm
+share/afterstep/desktop/icons/16bpp/ASBBlockSlate.xpm
+share/afterstep/desktop/icons/16bpp/ASBBlockWater.xpm
+share/afterstep/desktop/icons/16bpp/ASBBlockWhite.xpm
+share/afterstep/desktop/icons/16bpp/CDrom.xpm
+share/afterstep/desktop/icons/16bpp/Eyecon.xpm
+share/afterstep/desktop/icons/16bpp/Folder.xpm
+share/afterstep/desktop/icons/16bpp/KeysOnChain.xpm
+share/afterstep/desktop/icons/16bpp/Monitor.xpm
+share/afterstep/desktop/icons/16bpp/Paint.xpm
+share/afterstep/desktop/icons/16bpp/Plasma.xpm
+share/afterstep/desktop/icons/16bpp/Recycler.xpm
+share/afterstep/desktop/icons/16bpp/ShutDown.xpm
+share/afterstep/desktop/icons/16bpp/WWW.xpm
+share/afterstep/desktop/icons/16bpp/Text.xpm
+share/afterstep/desktop/icons/16bpp/interface.xpm
+share/afterstep/desktop/icons/16bpp/linux-penguin.xpm
+share/afterstep/desktop/icons/16bpp/monalisa.xpm
+share/afterstep/desktop/icons/16bpp/netscape.xpm
+share/afterstep/desktop/icons/16bpp/wharf.xpm
+share/afterstep/desktop/icons/16bpp/writeletter.xpm
+share/afterstep/desktop/icons/16bpp/3dpaint.xpm
+share/afterstep/desktop/icons/16bpp/OldFashionedRadio.xpm
+share/afterstep/desktop/icons/16bpp/YellowBlueRedGeometry.xpm
+share/afterstep/desktop/icons/16bpp/AfterStep2.xpm
+share/afterstep/desktop/icons/16bpp/shutdown.xpm
+share/afterstep/desktop/icons/16bpp/FileFolders.xpm
+share/afterstep/desktop/icons/16bpp/AfterStep.xpm
+share/afterstep/desktop/icons/16bpp/AfterStep3.xpm
+share/afterstep/desktop/icons/16bpp/AfterStep4.xpm
+share/afterstep/desktop/icons/16bpp/BookArrows.xpm
+share/afterstep/desktop/icons/16bpp/Bookshelf.xpm
+share/afterstep/desktop/icons/16bpp/Brush.xpm
+share/afterstep/desktop/icons/16bpp/CDrom2.xpm
+share/afterstep/desktop/icons/16bpp/Computer.xpm
+share/afterstep/desktop/icons/16bpp/Info.xpm
+share/afterstep/desktop/icons/16bpp/ComputerPC.xpm
+share/afterstep/desktop/icons/16bpp/Database.xpm
+share/afterstep/desktop/icons/16bpp/Debug.xpm
+share/afterstep/desktop/icons/16bpp/DeskGlobe.xpm
+share/afterstep/desktop/icons/16bpp/GNUSpace.xpm
+share/afterstep/desktop/icons/16bpp/Install.xpm
+share/afterstep/desktop/icons/16bpp/KeyPower.xpm
+share/afterstep/desktop/icons/16bpp/Network.xpm
+share/afterstep/desktop/icons/16bpp/NetworkInfoManager.xpm
+share/afterstep/desktop/icons/16bpp/e-no.xpm
+share/afterstep/desktop/icons/16bpp/Publish.xpm
+share/afterstep/desktop/icons/16bpp/RayTracedGear.xpm
+share/afterstep/desktop/icons/16bpp/author.xpm
+share/afterstep/desktop/icons/16bpp/cpuchip.xpm
+share/afterstep/desktop/icons/16bpp/disk.builder.xpm
+share/afterstep/desktop/icons/16bpp/draw.xpm
+share/afterstep/desktop/icons/16bpp/hostmanager.xpm
+share/afterstep/desktop/icons/16bpp/e0.xpm
+share/afterstep/desktop/icons/16bpp/spreadsheet.xpm
+share/afterstep/desktop/icons/16bpp/spreadsheet2.xpm
+share/afterstep/desktop/icons/16bpp/e1.xpm
+share/afterstep/desktop/icons/16bpp/e10.xpm
+share/afterstep/desktop/icons/16bpp/widget.xpm
+share/afterstep/desktop/icons/16bpp/workshop.xpm
+share/afterstep/desktop/icons/16bpp/Start.xpm
+share/afterstep/desktop/icons/16bpp/e11.xpm
+share/afterstep/desktop/icons/16bpp/e2.xpm
+share/afterstep/desktop/icons/16bpp/e3.xpm
+share/afterstep/desktop/icons/16bpp/e4.xpm
+share/afterstep/desktop/icons/16bpp/e5.xpm
+share/afterstep/desktop/icons/16bpp/e6.xpm
+share/afterstep/desktop/icons/16bpp/e7.xpm
+share/afterstep/desktop/icons/16bpp/e8.xpm
+share/afterstep/desktop/icons/16bpp/e9.xpm
+share/afterstep/desktop/icons/16bpp/AfterStep5.xpm
+share/afterstep/desktop/icons/16bpp/RedFire.xpm
+share/afterstep/desktop/icons/16bpp/ASBBlockBlue.xpm
+share/afterstep/desktop/buttons/1p-e.xpm
+share/afterstep/desktop/buttons/1.xpm
+share/afterstep/desktop/buttons/as-iconize-pressed.xpm
+share/afterstep/desktop/buttons/as-iconize.xpm
+share/afterstep/desktop/buttons/as-kill-pressed.xpm
+share/afterstep/desktop/buttons/as-kill.xpm
+share/afterstep/desktop/buttons/as-maximize-a-pressed.xpm
+share/afterstep/desktop/buttons/as-maximize-a.xpm
+share/afterstep/desktop/buttons/as-menu-a-pressed.xpm
+share/afterstep/desktop/buttons/as-menu-a.xpm
+share/afterstep/desktop/buttons/as-menu-b-pressed.xpm
+share/afterstep/desktop/buttons/as-menu-b.xpm
+share/afterstep/desktop/buttons/as-minimize-a-pressed.xpm
+share/afterstep/desktop/buttons/as-minimize-a.xpm
+share/afterstep/desktop/buttons/as-shade-a-pressed.xpm
+share/afterstep/desktop/buttons/as-shade-a.xpm
+share/afterstep/desktop/buttons/1p.xpm
+share/afterstep/desktop/buttons/as-switchwindow-a.xpm
+share/afterstep/desktop/buttons/as-switchwindow-a-pressed.xpm
+share/afterstep/desktop/buttons/as-switchwindow-b-pressed.xpm
+share/afterstep/desktop/buttons/as-switchwindow-b.xpm
+share/afterstep/desktop/buttons/as-switchwindow-c-pressed.xpm
+share/afterstep/desktop/buttons/as-switchwindow-c.xpm
+share/afterstep/desktop/buttons/2.xpm
+share/afterstep/desktop/buttons/2p.xpm
+share/afterstep/desktop/buttons/3.xpm
+share/afterstep/desktop/buttons/3p.xpm
+share/afterstep/desktop/buttons/4.xpm
+share/afterstep/desktop/buttons/4p.xpm
+share/afterstep/desktop/buttons/5.xpm
+share/afterstep/desktop/buttons/5p.xpm
+share/afterstep/desktop/buttons/2-e.xpm
+share/afterstep/desktop/buttons/2p-e.xpm
+share/afterstep/desktop/buttons/3-e.xpm
+share/afterstep/desktop/buttons/3p-e.xpm
+share/afterstep/desktop/buttons/4-e.xpm
+share/afterstep/desktop/buttons/4p-e.xpm
+share/afterstep/desktop/buttons/5-e.xpm
+share/afterstep/desktop/buttons/5p-e.xpm
+share/afterstep/desktop/buttons/1-e.xpm
+share/afterstep/desktop/sounds/train.au
+share/afterstep/desktop/sounds/clink.au
+share/afterstep/desktop/sounds/cowbell.au
+share/afterstep/desktop/sounds/crash.au
+share/afterstep/desktop/sounds/drip.au
+share/afterstep/desktop/sounds/gong.au
+share/afterstep/desktop/sounds/meepmeep.au
+share/afterstep/desktop/sounds/bong.au
+share/afterstep/audio
+share/afterstep/autoexec
+share/afterstep/base.16bpp
+share/afterstep/base.24bpp
+share/afterstep/base.8bpp
+share/afterstep/clean
+share/afterstep/database
+share/afterstep/forms
+share/afterstep/ident
+share/afterstep/pager
+share/afterstep/scroll
+share/afterstep/wharf
+share/afterstep/winlist
+share/afterstep/compatibility
+share/afterstep/zharf
+share/afterstep/.workspace_state
+share/afterstep/animate
+share/afterstep/asmail
+share/doc/afterstep/afterstep.html
+share/doc/afterstep/afterstep-1.html
+share/doc/afterstep/afterstep-2.html
+share/doc/afterstep/afterstep-3.html
+share/doc/afterstep/afterstep-4.html
+share/doc/afterstep/afterstep-5.html
+share/doc/afterstep/afterstep-6.html
+share/doc/afterstep/afterstep-7.html
+share/doc/afterstep/afterstep-8.html
+share/doc/afterstep/afterstep-9.html
+@dirrm share/afterstep/looks
+@dirrm share/afterstep/non-configurable/desk1
+@dirrm share/afterstep/non-configurable/desk0
+@dirrm share/afterstep/non-configurable/desk2
+@dirrm share/afterstep/non-configurable/desk3
+@dirrm share/afterstep/non-configurable/tmp
+@dirrm share/afterstep/non-configurable
+@dirrm share/afterstep/start/Quit
+@dirrm share/afterstep/start/Modules
+@dirrm share/afterstep/start/Screen savers/Without password
+@dirrm share/afterstep/start/Screen savers/With password
+@dirrm share/afterstep/start/Screen savers
+@dirrm share/afterstep/start/Applications/Office
+@dirrm share/afterstep/start/Applications/Games
+@dirrm share/afterstep/start/Applications/KDE/KDE-Games
+@dirrm share/afterstep/start/Applications/KDE
+@dirrm share/afterstep/start/Applications/Accessories
+@dirrm share/afterstep/start/Applications/StEP applications
+@dirrm share/afterstep/start/Applications/Network
+@dirrm share/afterstep/start/Applications/Medias
+@dirrm share/afterstep/start/Applications
+@dirrm share/afterstep/start/Decorations/Animations
+@dirrm share/afterstep/start/Decorations/Cursors
+@dirrm share/afterstep/start/Decorations/Mouse
+@dirrm share/afterstep/start/Decorations
+@dirrm share/afterstep/start
+@dirrm share/afterstep/feels
+@dirrm share/afterstep/desktop/backgrounds
+@dirrm share/afterstep/desktop/icons/8bpp
+@dirrm share/afterstep/desktop/icons/common
+@dirrm share/afterstep/desktop/icons/16bpp
+@dirrm share/afterstep/desktop/icons
+@dirrm share/afterstep/desktop/buttons
+@dirrm share/afterstep/desktop/sounds
+@dirrm share/afterstep/desktop
+@dirrm share/doc/afterstep
+@dirrm share/afterstep
