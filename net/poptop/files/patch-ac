@@ -1,0 +1,11 @@
+--- Makefile.am.orig	Wed Sep 22 17:01:28 1999
++++ Makefile.am	Tue Oct  5 19:25:56 1999
+@@ -11,7 +11,7 @@
+ ##  warning with -Wmissing-prototypes).
+ ## -Wmissing-prototypes removed (eg, Linux 2.2.6 headers
+ ##  aren't up to it).
+-CFLAGS = -O2 -fno-builtin -Wall -ansi -DSBINDIR='"$(sbindir)"'
++CFLAGS = -O2 -fno-builtin -Wall -ansi -DSBINDIR='"$(sbindir)"' -DETCDIR='"$(sysconfdir)'"
+ #CFLAGS = -O2 -fno-builtin -Wall -ansi -pedantic -Wmissing-prototypes -Werror -DSBINDIR='"$(sbindir)"'
+ 
+ man_MANS = pptpctrl.8 pptpd.8 pptpd.conf.5

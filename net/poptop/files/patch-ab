@@ -1,0 +1,11 @@
+--- Makefile.in.orig	Tue Oct  5 19:26:04 1999
++++ Makefile.in	Tue Oct  5 19:26:21 1999
+@@ -74,7 +74,7 @@
+ AUTOMAKE_OPTIONS = no-dependencies foreign
+ 
+ INCLUDES = -I.
+-CFLAGS = -O2 -fno-builtin -Wall -ansi -DSBINDIR='"$(sbindir)"'
++CFLAGS = -O2 -fno-builtin -Wall -ansi -DSBINDIR='"$(sbindir)"' -DETCDIR='"$(sysconfdir)"'
+ #CFLAGS = -O2 -fno-builtin -Wall -ansi -pedantic -Wmissing-prototypes -Werror -DSBINDIR='"$(sbindir)"'
+ 
+ man_MANS = pptpctrl.8 pptpd.8 pptpd.conf.5

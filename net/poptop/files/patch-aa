@@ -1,0 +1,11 @@
+--- defaults.h.orig	Wed Sep 22 17:01:28 1999
++++ defaults.h	Tue Oct  5 19:24:12 1999
+@@ -40,7 +40,7 @@
+ #endif
+ 
+ #define PPP_SPEED_DEFAULT		"115200"
+-#define PPTPD_CONFIG_FILE_DEFAULT	"/etc/pptpd.conf"
++#define PPTPD_CONFIG_FILE_DEFAULT	ETCDIR "/pptpd.conf"
+ #define PIDFILE_DEFAULT			"/var/run/pptpd.pid"
+ 
+ /* Location of binaries */
