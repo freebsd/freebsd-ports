@@ -1,17 +1,11 @@
 bin/oleo
-@unexec install-info --delete %D/info/oleo.info %D/info/dir
-info/oleo.info
-@exec install-info %D/info/oleo.info %D/info/dir
-share/doc/Oleo/AUTHORS
-share/doc/Oleo/FAQ
-share/locale/en/LC_MESSAGES/oleo.mo
-share/locale/fr/LC_MESSAGES/oleo.mo
-share/locale/nl/LC_MESSAGES/oleo.mo
-share/oleo/Oleo
-share/oleo/fr/Oleo
-share/oleo/nl/Oleo
-share/oleo/oleo.html
-@dirrm share/oleo/nl
-@dirrm share/oleo/fr
-@dirrm share/oleo
-@dirrm share/doc/Oleo
+%%NLS%%share/locale/en/LC_MESSAGES/oleo.mo
+%%NLS%%share/locale/fr/LC_MESSAGES/oleo.mo
+%%NLS%%share/locale/nl/LC_MESSAGES/oleo.mo
+%%DATADIR%%/Oleo
+%%DATADIR%%/fr/Oleo
+%%DATADIR%%/nl/Oleo
+%%PORTDOCS%%%%DOCSDIR%%/oleo.html
+@dirrm %%DATADIR%%/nl
+@dirrm %%DATADIR%%/fr
+@dirrm %%DATADIR%%

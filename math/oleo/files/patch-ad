@@ -13,7 +13,7 @@
  EXTRA_DIST = oleobug.in FAQ oleo.spec.in oleo.spec
  
 -docdir = $(prefix)/Oleo
-+docdir = $(datadir)/doc/Oleo
++docdir = $(datadir)/doc/oleo
  doc_DATA = AUTHORS FAQ
  ACLOCAL_M4 = $(top_srcdir)/aclocal.m4
  mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs

@@ -1,5 +1,5 @@
---- doc/Makefile.in.orig	Sat Jul 22 18:51:35 2000
-+++ doc/Makefile.in	Fri Jul 28 03:02:45 2000
+--- doc/Makefile.in.orig	Sat Mar 10 15:32:46 2001
++++ doc/Makefile.in	Mon Jun  7 21:52:58 2004
 @@ -87,7 +87,7 @@
  LIBOBJS = @LIBOBJS@
  LN_S = @LN_S@
@@ -9,3 +9,12 @@
  MKINSTALLDIRS = @MKINSTALLDIRS@
  MOTIF_CFLAGS = @MOTIF_CFLAGS@
  MOTIF_LIBS = @MOTIF_LIBS@
+@@ -125,7 +125,7 @@
+ EXTRA_DIST = $(TEXIS) oleo_web.html texi2html oleo1.png
+ noinst_DATA = oleo_web.html $(TEXIS)
+ 
+-@HavePerl_TRUE@htmldir = $(prefix)/share/oleo
++@HavePerl_TRUE@htmldir = $(prefix)/share/doc/oleo
+ @HavePerl_TRUE@html_DATA = oleo.html
+ 
+ DISTCLEANFILES = $(html_DATA)
