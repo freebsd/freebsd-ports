@@ -3,7 +3,7 @@
 # Date created:				October 19th 1996
 # Whom:	      				James FitzGibbon <jfitz@FreeBSD.org>
 #
-#   $Id: Makefile,v 1.10 1997/06/24 18:43:30 jfitz Exp $
+#   $Id: Makefile,v 1.11 1997/09/14 03:59:53 jfitz Exp $
 #
 
 DISTNAME=	pgsql_perl5-1.6.1
@@ -19,7 +19,7 @@ BUILD_DEPENDS= 	${PREFIX}/pgsql/lib/libpq.a:${PORTSDIR}/databases/postgresql
 USE_PERL5=	YES
 
 MAN3=		Pg.3
-MANPREFIX=	${PREFIX}/lib/perl5
+MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 
 do-configure:
 		@ cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} ${PREFIX}/bin/perl Makefile.PL
