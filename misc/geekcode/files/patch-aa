@@ -1,7 +1,7 @@
---- Makefile.orig	Sun Aug 29 11:02:52 1999
-+++ Makefile	Mon Aug 30 00:42:38 1999
+--- Makefile.orig	Mon Aug 30 15:33:00 1999
++++ Makefile	Thu Sep  2 18:42:00 1999
 @@ -1,6 +1,6 @@
--CFLAGS=-O3 -Wall -s
+-CFLAGS=-O3 -s
 +CFLAGS?=-O3 -Wall -s
  TARGET=geekcode
 -CC=gcc
