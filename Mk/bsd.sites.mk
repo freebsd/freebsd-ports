@@ -234,6 +234,85 @@ MASTER_SITE_GCC+=	\
 	ftp://ftp.iij.ad.jp/pub/gcc/%SUBDIR%/ \
 	ftp://ftp.dti.ad.jp/pub/lang/gcc/%SUBDIR%/
 
+MASTER_SITE_GENTOO+=	\
+	http://www.ibiblio.org/pub/Linux/distributions/gentoo/%SUBDIR%/ \
+	http://csociety-ftp.ecn.purdue.edu/pub/gentoo/%SUBDIR%/ \
+	http://gentoo.mirrors.pair.com/%SUBDIR%/ \
+	http://gentoo.seren.com/gentoo/%SUBDIR%/ \
+	http://gentoo.noved.org/%SUBDIR%/ \
+	http://gentoo.chem.wisc.edu/gentoo/%SUBDIR%/ \
+	http://adelie.polymtl.ca/%SUBDIR%/ \
+	http://cudlug.cudenver.edu/gentoo/%SUBDIR%/ \
+	http://gentoo.ccccom.com/%SUBDIR%/ \
+	http://oss.redundant.com/pub/gentoo/%SUBDIR%/ \
+	http://mirrors.tds.net/gentoo/%SUBDIR%/ \
+	http://www.mirror.ac.uk/sites/www.ibiblio.org/gentoo/%SUBDIR%/ \
+	http://ftp.gentoo.skynet.be/pub/gentoo/%SUBDIR%/ \
+	http://ftp.belnet.be/mirror/rsync.gentoo.org/gentoo/%SUBDIR%/ \
+	http://ftp.easynet.nl/mirror/gentoo/%SUBDIR%/ \
+	http://ftp.snt.utwente.nl/pub/os/linux/gentoo/%SUBDIR%/ \
+	http://gentoo.linux.no/%SUBDIR%/ \
+	http://trumpetti.atm.tut.fi/gentoo/%SUBDIR%/ \
+	http://ds.thn.htu.se/linux/gentoo/%SUBDIR%/ \
+	http://mirror.pudas.net/gentoo/%SUBDIR%/ \
+	http://sunsite.cnlab-switch.ch/ftp/mirror/gentoo/%SUBDIR%/ \
+	http://www.fhh.opensource-mirror.de/gentoo.org/%SUBDIR%/ \
+	http://linux.rz.ruhr-uni-bochum.de/download/gentoo-mirror/%SUBDIR%/ \
+	http://mirrors.sec.informatik.tu-darmstadt.de/gentoo/%SUBDIR%/ \
+	http://ftp.uni-erlangen.de/pub/mirrors/gentoo/%SUBDIR%/ \
+	http://ftp6.uni-erlangen.de/pub/mirrors/gentoo/%SUBDIR%/ \
+	http://darkstar.ist.utl.pt/gentoo/%SUBDIR%/ \
+	http://ftp.caliu.info/pub/gentoo/%SUBDIR%/ \
+	http://gentoo.inode.at/%SUBDIR%/ \
+	http://ftp.rhnet.is/pub/gentoo/%SUBDIR%/ \
+	http://gentoo.mirror.sdv.fr/%SUBDIR%/ \
+	http://planetmirror.com/pub/gentoo/%SUBDIR%/ \
+	http://www.zentek-international.com/mirrors/gentoo/%SUBDIR%/ \
+	http://ftp.gentoo.or.kr/%SUBDIR%/ \
+	http://mirror.gentoo.gr.jp/%SUBDIR%/ \
+	http://gentoo.gg3.net/%SUBDIR%/ \
+	http://gentoo.kems.net/%SUBDIR%/ \
+	ftp://ftp.gtlib.cc.gatech.edu/pub/gentoo/%SUBDIR%/ \
+	ftp://csociety-ftp.ecn.purdue.edu/pub/gentoo/%SUBDIR%/ \
+	ftp://mirror.iawnet.sandia.gov/pub/gentoo/%SUBDIR%/ \
+	ftp://ftp.ussg.iu.edu/pub/linux/gentoo/%SUBDIR%/ \
+	ftp://ftp.ucsb.edu/pub/mirrors/linux/gentoo/%SUBDIR%/ \
+	ftp://gentoo.mirrors.pair.com/%SUBDIR%/ \
+	ftp://gentoo.noved.org/%SUBDIR%/ \
+	ftp://cs.ubishops.ca/pub/gentoo/%SUBDIR%/ \
+	ftp://sunsite.ualberta.ca/pub/unix/Linux/gentoo/%SUBDIR%/ \
+	ftp://cudlug.cudenver.edu/pub/mirrors/distributions/gentoo/%SUBDIR%/ \
+	ftp://gentoo.ccccom.com/%SUBDIR%/ \
+	ftp://oss.redundant.com/pub/gentoo/%SUBDIR%/ \
+	ftp://mirrors.tds.net/gentoo/%SUBDIR%/ \
+	ftp://ftp.gentoo.skynet.be/pub/gentoo/%SUBDIR%/ \
+	ftp://ftp.belnet.be/mirror/rsync.gentoo.org/gentoo/%SUBDIR%/ \
+	ftp://ftp.easynet.nl/mirror/gentoo/%SUBDIR%/ \
+	ftp://ftp.snt.utwente.nl/pub/os/linux/gentoo/%SUBDIR%/ \
+	ftp://gentoo.linux.no/pub/gentoo/%SUBDIR%/ \
+	ftp://ftp.uninett.no/pub/linux/Gentoo/%SUBDIR%/ \
+	ftp://trumpetti.atm.tut.fi/gentoo/%SUBDIR%/ \
+	ftp://mirror.pudas.net/gentoo/%SUBDIR%/ \
+	ftp://sunsite.cnlab-switch.ch/mirror/gentoo/%SUBDIR%/ \
+	ftp://ftp.join.uni-muenster.de/pub/linux/distributions/gentoo/%SUBDIR%/\
+	ftp://ftp6.uni-muenster.de/pub/linux/distributions/gentoo/%SUBDIR%/ \
+	ftp://ftp.ipv6.uni-muenster.de/pub/linux/distributions/gentoo/%SUBDIR%/\
+	ftp://ftp.tu-clausthal.de/pub/linux/gentoo/%SUBDIR%/ \
+	ftp://sunsite.informatik.rwth-aachen.de/pub/Linux/gentoo/%SUBDIR%/ \
+	ftp://ftp.fhh.opensource-mirror.de/pub/gentoo.org/%SUBDIR%/ \
+	ftp://linux.rz.ruhr-uni-bochum.de/gentoo-mirror/%SUBDIR%/ \
+	ftp://ftp.uni-erlangen.de/pub/mirrors/gentoo/%SUBDIR%/ \
+	ftp://ftp6.uni-erlangen.de/pub/mirrors/gentoo/%SUBDIR%/ \
+	ftp://darkstar.ist.utl.pt/pub/gentoo/%SUBDIR%/ \
+	ftp://ftp.caliu.info/pub/gentoo/%SUBDIR%/ \
+	ftp://gentoo.inode.at/source/%SUBDIR%/ \
+	ftp://ftp.rhnet.is/pub/gentoo/%SUBDIR%/ \
+	ftp://files.gentoo.gr/%SUBDIR%/ \
+	ftp://planetmirror.com/pub/gentoo/%SUBDIR%/ \
+	ftp://gg3.net/pub/linux/gentoo/%SUBDIR%/ \
+	ftp://ftp.ecc.u-tokyo.ac.jp/GENTOO/%SUBDIR%/ \
+	ftp://gentoo.kems.net/%SUBDIR%/
+
 MASTER_SITE_GNOME+=	\
 	ftp://ftp.mirror.ac.uk/sites/ftp.gnome.org/pub/GNOME/%SUBDIR%/ \
 	http://ftp.linux.org.uk/mirrors/ftp.gnome.org/%SUBDIR%/ \
