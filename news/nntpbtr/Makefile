@@ -3,12 +3,12 @@
 # Date created:         1 July 1996
 # Whom:                 dk
 #
-# $Id: Makefile,v 1.2 1996/11/18 11:38:01 asami Exp $
+# $Id: Makefile,v 1.3 1997/01/11 14:23:38 max Exp $
 #
 
 DISTNAME=       nntpbtr-1.7
 CATEGORIES=	news
-MASTER_SITES=   ftp://ftp.kiae.su/unix/news/
+MASTER_SITES=   ftp://ftp.kiae.su/pub/unix/news/
 EXTRACT_SUFX=   .tar.Z
 
 MAINTAINER=	dk@farm.org
