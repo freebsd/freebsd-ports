@@ -106,8 +106,7 @@
 +		# Absurd hack to find out device major number
 +		# Check for devfs first
 +		if [ -z "`mount | grep /dev | grep devfs`" ]; then
-+			DEV_MAJOR=`/sbin/dmesg | grep 'skip: device major=' | tail -1 | sed 's/^.*=\
-([0-9]\{1,\}\),.*$/\1/g'`
++			DEV_MAJOR=`/sbin/dmesg | grep 'skip: device major=' | tail -1 | sed 's/^.*=\([0-9]\{1,\}\),.*$/\1/g'`
 +			if [ "${DEV_MAJOR}" = "" ]; then
 +				echo ""
 +				echo "skip: can't determine skip device major number"
