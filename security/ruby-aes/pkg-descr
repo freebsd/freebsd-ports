@@ -1,0 +1,8 @@
+AESCrypt - aes-rb:
+
+This is an all-C (for performance) implementation of the AES
+(Rijndael) encryption algorithm for Ruby, implementing ECB and CFB-128
+modes.
+
+Author:	Eric Lee Green <eric@badtux.org>
+WWW:	http://aescrypt.sourceforge.net/
