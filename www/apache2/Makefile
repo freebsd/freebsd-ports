@@ -102,7 +102,7 @@ BROKEN=			"You can't set WITH_BDB or WITH_BERKELEYDB when WITH_APR_FROM_PORTS is
 .endif
 LIB_DEPENDS+=		apr-0.9:${PORTSDIR}/devel/apr
 CONFIGURE_ARGS+=	--with-apr=${LOCALBASE}/bin/apr-config \
-					--with-apr-util=${LOCALBASE}/bin/apr-config
+			--with-apr-util=${LOCALBASE}/bin/apu-config
 .else
 .   if exists(${LOCALBASE}/lib/libapr-0.so)
 BROKEN=				"apr is installed and may conflict with apache one\

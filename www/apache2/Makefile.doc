@@ -22,7 +22,7 @@
 ##      WITHOUT_AUTH:             Disable auth modules
 ##          WITH_CUSTOM_AUTH:     Let you choose which auth modules you wish
 ##      WITHOUT_DAV:              Disable DAV support
-##      WITH_IPV6_V6ONLY:         Disable IPv4 support
+##      WITH_IPV6_V6ONLY:         Don't allow IPv6 sockets to handle IPv4 connections
 ##      WITHOUT_SSL:              Disable SSL support
 ##      WITH_THREADS:             Enable threads support !! USE IT WITH CARE !!
 ##           WITH_CUSTOM_THREADS: Let you choose which threaded modules you want
