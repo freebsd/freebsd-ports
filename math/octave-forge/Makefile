@@ -15,9 +15,8 @@ MAINTAINER=	maho@FreeBSD.org
 COMMENT=	Many additional features to math/octave
 
 BUILD_DEPENDS=	${LOCALBASE}/bin/qhull:${PORTSDIR}/math/qhull \
+		${LOCALBASE}/bin/octave:${PORTSDIR}/math/octave \
 		${LOCALBASE}/bin/gcsplit:${PORTSDIR}/sysutils/coreutils
-#		${LOCALBASE}/bin/octave:${PORTSDIR}/math/octave \
-
 RUN_DEPENDS=	${LOCALBASE}/bin/octave:${PORTSDIR}/math/octave \
 		${LOCALBASE}/bin/qhull:${PORTSDIR}/math/qhull
 
