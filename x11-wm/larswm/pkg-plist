@@ -1,3 +1,5 @@
+bin/larsclock
+bin/larsremote
 bin/larswm
 share/doc/larswm/README
 share/doc/larswm/README.9wm

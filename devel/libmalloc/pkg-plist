@@ -7,3 +7,4 @@ lib/libmalloc_d.so
 lib/libmalloc_d.so.1.18
 share/doc/libmalloc/malloc.doc
 share/doc/libmalloc/NOTE
+@dirrm share/doc/libmalloc

@@ -17,6 +17,8 @@ USE_IMAKE=	yes
 
 XFREE86_HTML_MAN=	no
 
+MAN1=		larsclock.1 larsremote.1 larswm.1
+
 post-install:
 .if !defined(NOPORTDOCS)
 	$(MKDIR) $(PREFIX)/share/doc/$(PORTNAME)
