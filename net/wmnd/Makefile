@@ -16,6 +16,7 @@ MAINTAINER=	flag@gufi.org
 WRKSRC= 	${WRKDIR}/wmnd
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
+USE_XPM=	yes
 
 MAN1=		wmnd.1
 
