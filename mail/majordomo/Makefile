@@ -3,7 +3,7 @@
 # Date created:		23 October 1996
 # Whom:			jfitz@FreeBSD.ORG
 #
-# $Id: Makefile,v 1.14 1999/04/21 00:39:27 scrappy Exp $
+# $Id: Makefile,v 1.15 1999/07/04 21:20:21 steve Exp $
 #
 
 DISTNAME=	majordomo-1.94.4
@@ -33,6 +33,13 @@ pre-install:
 		@ ${CP} ${WRKSRC}/sample.cf ${WRKSRC}/majordomo.cf
 
 post-install:
+.for file in ${MAN1}
+	@ ${INSTALL_MAN} ${WRKSRC}/Doc/man/${file} ${PREFIX}/man/man1
+.endfor
+.for file in ${MAN8}
+	@ ${INSTALL_MAN} ${WRKSRC}/Doc/man/${file} ${PREFIX}/man/man8
+.endfor
+
 		@ ln -sf archive2.pl ${PREFIX}/majordomo/archive
 		@ for dir in tmp lists/test-l.archive lists/test-l-digest.archive digests/test-l-digest doc; do \
 			${MKDIR} ${PREFIX}/majordomo/$$dir; \
