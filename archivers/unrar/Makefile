@@ -6,20 +6,19 @@
 #
 
 PORTNAME=	unrar
-PORTVERSION=    3.10b1
+PORTVERSION=    3.10
+PORTEPOCH=      1
 CATEGORIES=	archivers
 MASTER_SITES=	http://files2.rarlab.com/rar/
-DISTNAME=       unrarsrc-3.1.0
+DISTNAME=       unrarsrc-3.1.3
 
 MAINTAINER=	ache@FreeBSD.org
 
 WRKSRC=         ${WRKDIR}/unrar
 
-ALL_TARGET=	makeunrar
-
 post-patch:
 	@${SED} -e 's|c++|${CXX}|g' -e 's|-O2|${CXXFLAGS}|g' \
-		${WRKSRC}/makefile.gcc > ${WRKSRC}/Makefile
+		${WRKSRC}/makefile.unix > ${WRKSRC}/Makefile
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/unrar ${PREFIX}/bin
