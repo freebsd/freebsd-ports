@@ -1,6 +1,4 @@
 This is a collection of simple PIN or passphrase entry dialogs which
 utilize the Assuan protocol as described by the aegypten project.
 
-WWW: http://www.gnupg.org/aegypten
-
-michaelnottebrock@gmx.net
+WWW: http://www.gnupg.org/aegypten2
