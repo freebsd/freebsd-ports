@@ -1,6 +1,6 @@
 diff -rc ../old/xview3.2p1-X11R6/clients/cmdtool/cmdtool.c cmdtool/cmdtool.c
 *** ../old/xview3.2p1-X11R6/clients/cmdtool/cmdtool.c	Tue Jun 29 01:12:08 1993
---- cmdtool/cmdtool.c	Sun Nov 20 13:38:56 1994
+--- clients/cmdtool/cmdtool.c	Sun Nov 20 13:38:56 1994
 ***************
 *** 123,129 ****
   	int     cmdline_count = 0;
@@ -34,7 +34,7 @@ diff -rc ../old/xview3.2p1-X11R6/clients/cmdtool/cmdtool.c cmdtool/cmdtool.c
   	if ((tmp_label1 = (char *)xv_get(base_frame, FRAME_LABEL)) == NULL) {
 diff -rc ../old/xview3.2p1-X11R6/clients/olwm/cmdstream.c olwm/cmdstream.c
 *** ../old/xview3.2p1-X11R6/clients/olwm/cmdstream.c	Tue Jun 29 01:11:43 1993
---- olwm/cmdstream.c	Sun Nov 20 13:38:56 1994
+--- clients/olwm/cmdstream.c	Sun Nov 20 13:38:56 1994
 ***************
 *** 51,60 ****
    *      Local Forward Declarations
@@ -58,9 +58,8 @@ diff -rc ../old/xview3.2p1-X11R6/clients/olwm/cmdstream.c olwm/cmdstream.c
   
   /* ----------------------------------------------------------------------
    *      SetCmdStream
-diff -rc ../old/xview3.2p1-X11R6/clients/olwm/gettext.h olwm/gettext.h
-*** ../old/xview3.2p1-X11R6/clients/olwm/gettext.h	Tue Jun 29 01:11:46 1993
---- olwm/gettext.h	Sun Nov 20 13:38:57 1994
+*** clients/olwm/gettext.h.orig	Tue Jun 29 00:11:46 1993
+--- clients/olwm/gettext.h	Mon Jan 25 19:35:08 1999
 ***************
 *** 27,33 ****
   #include <stdio.h>
@@ -75,8 +74,8 @@ diff -rc ../old/xview3.2p1-X11R6/clients/olwm/gettext.h olwm/gettext.h
   #include <sys/types.h>
   #include <sys/param.h>
 ! 
-! #ifndef LC_MESSAGES
-! #define LC_MESSAGES 0
+! #if !defined(LC_MESSAGES) && defined(LC_RESPONSE)
+! #define LC_MESSAGES LC_RESPONSE
 ! #endif
 ! 
   struct domain_binding {
@@ -84,15 +83,15 @@ diff -rc ../old/xview3.2p1-X11R6/clients/olwm/gettext.h olwm/gettext.h
       char    *binding;
 diff -rc ../old/xview3.2p1-X11R6/clients/olwm/i18n.h olwm/i18n.h
 *** ../old/xview3.2p1-X11R6/clients/olwm/i18n.h	Tue Jun 29 01:11:48 1993
---- olwm/i18n.h	Sun Nov 20 13:38:57 1994
+--- clients/olwm/i18n.h	Sun Nov 20 13:38:57 1994
 ***************
 *** 35,40 ****
 --- 35,44 ----
   
   #endif /* OW_I18N_L4 */
   
-+ #ifndef LC_MESSAGES
-+ #define LC_MESSAGES 0
++ #if !defined(LC_MESSAGES) && defined(LC_RESPONSE)
++ #define LC_MESSAGES LC_RESPONSE
 + #endif
 + 
   /*
@@ -100,7 +99,7 @@ diff -rc ../old/xview3.2p1-X11R6/clients/olwm/i18n.h olwm/i18n.h
    *	we introduce two 'types'; string and text.
 diff -rc ../old/xview3.2p1-X11R6/clients/olwm/mem.c olwm/mem.c
 *** ../old/xview3.2p1-X11R6/clients/olwm/mem.c	Tue Jun 29 01:11:45 1993
---- olwm/mem.c	Sun Nov 20 13:38:57 1994
+--- clients/olwm/mem.c	Sun Nov 20 13:38:57 1994
 ***************
 *** 14,21 ****
    *
@@ -126,7 +125,7 @@ diff -rc ../old/xview3.2p1-X11R6/clients/olwm/mem.c olwm/mem.c
   #include <sys/types.h>
 diff -rc ../old/xview3.2p1-X11R6/clients/olwm/menu.c olwm/menu.c
 *** ../old/xview3.2p1-X11R6/clients/olwm/menu.c	Tue Jun 29 01:11:50 1993
---- olwm/menu.c	Sun Nov 20 13:38:57 1994
+--- clients/olwm/menu.c	Sun Nov 20 13:38:57 1994
 ***************
 *** 52,57 ****
 --- 52,59 ----
@@ -140,7 +139,7 @@ diff -rc ../old/xview3.2p1-X11R6/clients/olwm/menu.c olwm/menu.c
    * REMIND: perhaps this should be dynamically allocated.
 diff -rc ../old/xview3.2p1-X11R6/clients/olwm/olwm.c olwm/olwm.c
 *** ../old/xview3.2p1-X11R6/clients/olwm/olwm.c	Tue Jun 29 01:11:52 1993
---- olwm/olwm.c	Sun Nov 20 13:38:57 1994
+--- clients/olwm/olwm.c	Sun Nov 20 13:38:57 1994
 ***************
 *** 23,28 ****
 --- 23,32 ----
@@ -189,27 +188,9 @@ diff -rc ../old/xview3.2p1-X11R6/clients/olwm/olwm.c olwm/olwm.c
   #endif
   
   	if (!deadChildren)
-diff -rc ../old/xview3.2p1-X11R6/clients/olwm/screen.c olwm/screen.c
-*** ../old/xview3.2p1-X11R6/clients/olwm/screen.c	Tue Jun 29 01:11:56 1993
---- olwm/screen.c	Sun Nov 20 13:38:58 1994
-***************
-*** 111,116 ****
---- 111,122 ----
-  static XrmQuark stippledRubberBandsCQ;
-  static XrmQuark stippledRubberBandsIQ;
-  
-+ static updateScreenWorkspaceColor();
-+ static updateScreenWindowColor();
-+ static updateScreenForegroundColor();
-+ static updateScreenBackgroundColor();
-+ static updateScreenBorderColor();
-+ static updateScreenGlyphFont();
-  
-  /*-------------------------------------------------------------------------
-   *	Local Functions
 diff -rc ../old/xview3.2p1-X11R6/clients/olwm/slave.c olwm/slave.c
 *** ../old/xview3.2p1-X11R6/clients/olwm/slave.c	Tue Jun 29 01:11:57 1993
---- olwm/slave.c	Sun Nov 20 13:38:58 1994
+--- clients/olwm/slave.c	Sun Nov 20 13:38:58 1994
 ***************
 *** 22,27 ****
 --- 22,29 ----
@@ -223,7 +204,7 @@ diff -rc ../old/xview3.2p1-X11R6/clients/olwm/slave.c olwm/slave.c
   
 diff -rc ../old/xview3.2p1-X11R6/clients/olwm/winicon.c olwm/winicon.c
 *** ../old/xview3.2p1-X11R6/clients/olwm/winicon.c	Tue Jun 29 01:12:04 1993
---- olwm/winicon.c	Sun Nov 20 13:38:58 1994
+--- clients/olwm/winicon.c	Sun Nov 20 13:38:58 1994
 ***************
 *** 32,37 ****
 --- 32,41 ----
@@ -239,7 +220,7 @@ diff -rc ../old/xview3.2p1-X11R6/clients/olwm/winicon.c olwm/winicon.c
   ***************************************************************************/
 diff -rc ../old/xview3.2p1-X11R6/clients/olwmslave/Imakefile olwmslave/Imakefile
 *** ../old/xview3.2p1-X11R6/clients/olwmslave/Imakefile	Tue Jun 29 01:12:14 1993
---- olwmslave/Imakefile	Sun Nov 20 13:38:58 1994
+--- clients/olwmslave/Imakefile	Sun Nov 20 13:38:58 1994
 ***************
 *** 38,55 ****
           mem.c \
@@ -281,7 +262,7 @@ diff -rc ../old/xview3.2p1-X11R6/clients/olwmslave/Imakefile olwmslave/Imakefile
   ALLFILES = \
 diff -rc ../old/xview3.2p1-X11R6/clients/olwmslave/cmdstream.c olwmslave/cmdstream.c
 *** ../old/xview3.2p1-X11R6/clients/olwmslave/cmdstream.c	Tue Jun 29 01:12:10 1993
---- olwmslave/cmdstream.c	Sun Nov 20 13:38:58 1994
+--- clients/olwmslave/cmdstream.c	Sun Nov 20 13:38:58 1994
 ***************
 *** 50,59 ****
    *      Local Forward Declarations
@@ -305,9 +286,27 @@ diff -rc ../old/xview3.2p1-X11R6/clients/olwmslave/cmdstream.c olwmslave/cmdstre
   
   /* ----------------------------------------------------------------------
    *      SetCmdStream
-diff -rc ../old/xview3.2p1-X11R6/clients/olwmslave/helpwin.c olwmslave/helpwin.c
-*** ../old/xview3.2p1-X11R6/clients/olwmslave/helpwin.c	Tue Jun 29 01:12:11 1993
---- olwmslave/helpwin.c	Sun Nov 20 13:38:58 1994
+*** clients/olwmslave/help_file.c.orig	Mon Jan 25 20:14:43 1999
+--- clients/olwmslave/help_file.c	Mon Jan 25 20:15:42 1999
+***************
+*** 24,30 ****
+  #include <xview_private/i18n_impl.h>
+  #endif
+  
+! #define DEFAULT_HELP_DIRECTORY "/usr/lib/help"
+  #define MAX_MORE_HELP_CMD 128
+  
+  static FILE    *help_file;
+--- 24,30 ----
+  #include <xview_private/i18n_impl.h>
+  #endif
+  
+! #define DEFAULT_HELP_DIRECTORY "/usr/X11R6/lib/help"
+  #define MAX_MORE_HELP_CMD 128
+  
+  static FILE    *help_file;
+*** clients/olwmslave/helpwin.c.orig	Tue Jun 29 00:12:11 1993
+--- clients/olwmslave/helpwin.c	Mon Jan 25 20:07:04 1999
 ***************
 *** 136,141 ****
 --- 136,142 ----
@@ -318,9 +317,20 @@ diff -rc ../old/xview3.2p1-X11R6/clients/olwmslave/helpwin.c olwmslave/helpwin.c
   
   /* ----------------------------------------------------------------------
    *	ShowHelpWindow
+***************
+*** 493,498 ****
+--- 494,501 ----
+  	xv_set(hw->hwMGlassItem,
+  		PANEL_LABEL_IMAGE,	hw->hwMGlassRender,
+  		NULL);
++ 
++ 	return True;
+  }
+  
+  /* ----------------------------------------------------------------------
 diff -rc ../old/xview3.2p1-X11R6/clients/olwmslave/mem.c olwmslave/mem.c
 *** ../old/xview3.2p1-X11R6/clients/olwmslave/mem.c	Tue Jun 29 01:12:12 1993
---- olwmslave/mem.c	Sun Nov 20 13:38:58 1994
+--- clients/olwmslave/mem.c	Sun Nov 20 13:38:58 1994
 ***************
 *** 16,22 ****
 --- 16,27 ----
@@ -336,8 +346,8 @@ diff -rc ../old/xview3.2p1-X11R6/clients/olwmslave/mem.c olwmslave/mem.c
   #include <memory.h>
   #include <stdio.h>
   #include <sys/types.h>
-*** olwm/defaults.c.orig	Tue Jun 29 07:11:43 1993
---- olwm/defaults.c	Mon Feb 27 00:59:03 1995
+*** clients/olwm/defaults.c.orig	Tue Jun 29 07:11:43 1993
+--- clients/olwm/defaults.c	Mon Feb 27 00:59:03 1995
 ***************
 *** 25,33 ****
   #include <X11/Xutil.h>

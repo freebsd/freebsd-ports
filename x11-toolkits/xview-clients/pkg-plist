@@ -7,8 +7,4 @@ lib/help/clock.info
 lib/help/olwm.info
 lib/help/workspace.info
 lib/openwin-menu
-man/man1/clock.1.gz
-man/man1/cmdtool.1.gz
-man/man1/olwm.1.gz
-man/man1/olwmslave.1.gz
-man/man1/shelltool.1.gz
+lib/openwin-menu-programs

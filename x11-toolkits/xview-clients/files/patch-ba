@@ -1,0 +1,19 @@
+*** clients/olwm/Imakefile.orig	Mon Jan 25 21:17:50 1999
+--- clients/olwm/Imakefile	Mon Jan 25 21:19:18 1999
+***************
+*** 39,45 ****
+  MANPAGES = olwm.man
+  BITMAPS = iconbitmap.h
+  SCRIPTS = 
+! MISC 	= openwin-menu
+  
+  
+  SRCS	= atom.c client.c cmdstream.c \
+--- 39,45 ----
+  MANPAGES = olwm.man
+  BITMAPS = iconbitmap.h
+  SCRIPTS = 
+! MISC 	= openwin-menu openwin-menu-programs
+  
+  
+  SRCS	= atom.c client.c cmdstream.c \
