@@ -11,7 +11,7 @@ PORTVERSION=	1.0.19
 CATEGORIES=	print
 MASTER_SITES=	http://www.xs4all.nl/~hanwen/mftrace/
 
-MAINTAINER=	trevor@FreeBSD.org
+MAINTAINER=	atamaniuk-ports@frobs.net
 COMMENT=	Scalable PostScript (Type1) Fonts for MetaFont
 
 RUN_DEPENDS=	mktextfm:${PORTSDIR}/print/teTeX \
