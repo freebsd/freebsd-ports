@@ -6,14 +6,13 @@
 #
 
 PORTNAME=	openh323
-PORTVERSION=	1.1
-PORTREVISION=	1
+PORTVERSION=	1.1pl1
 CATEGORIES=	net
 MASTER_SITES=	http://www.openh323.org/bin/ \
 		http://www.de.openh323.org/bin/ \
 		http://www.ru.openh323.org/bin/
-DISTFILES=	openh323_1.1.tar.gz \
-		pwlib_min_1.1pl18.tar.gz
+DISTFILES=	openh323_1.1pl1.tar.gz \
+		pwlib_min_1.1pl19.tar.gz
 
 MAINTAINER=	roger@freebsd.org
 
