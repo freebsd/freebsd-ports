@@ -6,18 +6,18 @@
 #
 
 PORTNAME=	png
-PORTVERSION=	1.0.14
-PORTREVISION=	2
+PORTVERSION=	1.2.2
+PORTREVISION=	0
 CATEGORIES=	graphics linux
 MASTER_SITES=	${RPM_MIRRORS:S/__DIR__/${UPDDIR}/g}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	RPM of the PNG lib
 
-.if (${MACHINE_ARCH} == "i386")
-RPM_SET=	libpng-${PORTVERSION}-0.7x.4.${MACHINE_ARCH}.rpm
-.elif (${MACHINE_ARCH} == "alpha")
-RPM_SET=	libpng-${PORTVERSION}-0.7x.3.${MACHINE_ARCH}.rpm
-.endif
+# no alpha rpm is available
+ONLY_FOR_ARCHS=	i386
+
+BASEVERSION=	8.0
+RPM_SET=	libpng-${PORTVERSION}-8.${MACHINE_ARCH}.rpm
 
 .include "../../x11-toolkits/linux-gtk/Makefile"
