@@ -1,5 +1,5 @@
---- ../sal/osl/unx/nlsupport.c.orig	Wed Aug 14 18:22:49 2002
-+++ ../sal/osl/unx/nlsupport.c	Wed Aug 14 19:07:18 2002
+--- ../sal/osl/unx/nlsupport.c.orig	Tue May 21 15:22:11 2002
++++ ../sal/osl/unx/nlsupport.c	Tue Sep  3 12:58:48 2002
 @@ -63,7 +63,7 @@
  #include <osl/diagnose.h>
  #include <osl/process.h>
@@ -31,7 +31,7 @@
   * from nl_langinfo(CODESET) to rtl_textencoding defines. 
 - * nl_langinfo() is supported only on Linux, Solaris and IRIX. 
 + * nl_langinfo() is supported only on Linux, Solaris and IRIX,
-+ * >= NetBSD 1.5 and >= FreeBSD 4.4
++ * >= NetBSD 1.6 and >= FreeBSD 4.4
   *
   * This routine is SLOW because of the setlocale call, so
   * grab the result and cache it.
@@ -87,7 +87,7 @@
  
  const _pair _nl_language_list[] = {
      { "ANSI_X3.110-1983",           RTL_TEXTENCODING_DONTKNOW   },  /* ISO-IR-99 NAPLPS */
-@@ -496,7 +502,58 @@
+@@ -496,7 +502,59 @@
      { "WIN-SAMI-2",                 RTL_TEXTENCODING_DONTKNOW }     /* WS2 */
  };
  
@@ -112,7 +112,8 @@
 +   { "KOI-U",		RTL_TEXTENCODING_DONTKNOW	}, /* Not supported at the moment */
 +   { "KOI8-R",		RTL_TEXTENCODING_KOI8_R		}, /* KOI8 */
 +   { "SJIS",		RTL_TEXTENCODING_SHIFT_JIS	}, /* Japan */
-+   { "US-ASCII",	RTL_TEXTENCODING_ASCII_US	}  /* US-ASCII */
++   { "US-ASCII",	RTL_TEXTENCODING_ASCII_US	}, /* US-ASCII */
++   { "UTF-8",		RTL_TEXTENCODING_UTF8		}  /* ISO-10646/UTF-8 */
 +};
 +
 +#elif defined(NETBSD)
@@ -147,7 +148,7 @@
  
  static pthread_mutex_t aLocalMutex = PTHREAD_MUTEX_INITIALIZER;
  
-@@ -618,7 +675,7 @@
+@@ -618,7 +676,7 @@
      return ret;
  }
  
@@ -156,7 +157,7 @@
  
  /*
   * FIXME: the MacOS X implemetation is missing
-@@ -651,7 +708,7 @@
+@@ -651,7 +709,7 @@
      return 0;
  }
  
@@ -165,7 +166,7 @@
  
  /*
   * This implementation of osl_getTextEncodingFromLocale maps 
-@@ -887,6 +944,6 @@
+@@ -887,6 +945,6 @@
      return 0;
  }
  
