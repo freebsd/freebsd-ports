@@ -1,9 +1,23 @@
 #!/bin/sh
 
+# configurable variables
 pb=/a/asami/portbuild
+mailto=asami@freebsd.org
+
+lock=${pb}/lock
+
+if [ -e ${lock} ]; then
+  echo "Skipped since lock file exists" | sendmail asami@freebsd.org
+  exit 1
+fi
+
+touch ${lock}
+
 ${pb}/scripts/dopackages 4 2>&1 \
 	| tee /a/asami/portbuild/4/build.log \
-	| sendmail asami@freebsd.org
+	| sendmail $mailto
 ${pb}/scripts/dopackages -nocvsup 3 2>&1 \
 	| tee /a/asami/portbuild/3/build.log \
-	| sendmail asami@freebsd.org
+	| sendmail $mailto
+
+rm -f ${lock}
