@@ -1,6 +1,6 @@
 bin/vrflash
-%%PORTDOCS%%share/doc/vrflash/agenda-flashing-overview.txt
-%%PORTDOCS%%share/doc/vrflash/troubleshooting.txt
-%%PORTDOCS%%share/doc/vrflash/pmon-protect-unprotect.txt
-%%PORTDOCS%%share/doc/vrflash/usage.txt
-%%PORTDOCS%%@dirrm share/doc/vrflash
+%%PORTDOCS%%%%DOCSDIR%%/agenda-flashing-overview.txt
+%%PORTDOCS%%%%DOCSDIR%%/troubleshooting.txt
+%%PORTDOCS%%%%DOCSDIR%%/pmon-protect-unprotect.txt
+%%PORTDOCS%%%%DOCSDIR%%/usage.txt
+%%PORTDOCS%%@dirrm %%DOCSDIR%%

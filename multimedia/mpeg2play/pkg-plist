@@ -1,4 +1,4 @@
 bin/mpeg2play
 lib/X11/app-defaults/Mpeg2play
-%%PORTDOCS%%share/doc/mpeg2play/README
-%%PORTDOCS%%@dirrm share/doc/mpeg2play
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%@dirrm %%DOCSDIR%%

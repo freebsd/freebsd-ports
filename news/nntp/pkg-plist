@@ -4,16 +4,16 @@ sbin/nntpd
 %%NEWSBIN%%/nntpxfer
 @comment     just in case anyone wants it
 %%NEWSBIN%%/shlock
-%%PORTDOCS%%share/doc/nntp/AUTHORIZE
-%%PORTDOCS%%share/doc/nntp/CHANGES
-%%PORTDOCS%%share/doc/nntp/README
-%%PORTDOCS%%share/doc/nntp/README-conf.h
-%%PORTDOCS%%share/doc/nntp/SYSLOG
-%%PORTDOCS%%share/doc/nntp/rfc977
-%%PORTDOCS%%share/doc/nntp/server-README
-%%PORTDOCS%%share/doc/nntp/support-README
-%%PORTDOCS%%share/doc/nntp/xfer-README
-%%PORTDOCS%%share/doc/nntp/xmit-README
-%%PORTDOCS%%@dirrm share/doc/nntp
+%%PORTDOCS%%%%DOCSDIR%%/AUTHORIZE
+%%PORTDOCS%%%%DOCSDIR%%/CHANGES
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/README-conf.h
+%%PORTDOCS%%%%DOCSDIR%%/SYSLOG
+%%PORTDOCS%%%%DOCSDIR%%/rfc977
+%%PORTDOCS%%%%DOCSDIR%%/server-README
+%%PORTDOCS%%%%DOCSDIR%%/support-README
+%%PORTDOCS%%%%DOCSDIR%%/xfer-README
+%%PORTDOCS%%%%DOCSDIR%%/xmit-README
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
 @cwd %%VARBASE%%
 %%NEWSCTL%%/overview.fmt
