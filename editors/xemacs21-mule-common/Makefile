@@ -25,6 +25,7 @@ MAINTAINER=	kiri@kiri.toba-cmt.ac.jp
 LIB_DEPENDS=	Xpm.4:${PORTSDIR}/graphics/xpm \
 		jpeg.9:${PORTSDIR}/graphics/jpeg \
 		png.3:${PORTSDIR}/graphics/png \
+		tiff.4:${PORTSDIR}/graphics/tiff \
 		compface.1:${PORTSDIR}/mail/faces
 USE_AUTOCONF=	yes
 
@@ -95,7 +96,7 @@ pre-install:
 post-install:
 # install xemacs-mule.sh into ${PREFIX}/etc/rc.d
 	@${MKDIR} /var/run/emacs/lock
-	chmod 1777 /var/run/emacs/lock
+	${CHMOD} 1777 /var/run/emacs/lock
 	@${MKDIR} ${PREFIX}/etc/rc.d
 	@${INSTALL_SCRIPT} ${FILESDIR}/xemacs-mule.sh ${PREFIX}/etc/rc.d
 	@${TOUCH} ${TOUCH_FLAGS} ${INSTALL_COOKIE}
