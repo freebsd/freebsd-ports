@@ -12,11 +12,12 @@ PKGNAME=        webglimpse-1.6
 CATEGORIES=     www textproc
 MASTER_SITES=   ftp://ftp.cs.arizona.edu/glimpse/
 
-RUN_DEPENDS+=   ${PREFIX}/etc/apache/httpd.conf:${PORTSDIR}/www/apache13
-RUN_DEPENDS+=   glimpse:${PORTSDIR}/textproc/glimpse
-WRKSRC=         ${WRKDIR}/webglimpse-1.6.edu
-
 MAINTAINER=     ache@freebsd.org
+
+RUN_DEPENDS+=   ${LOCALBASE}/etc/apache/httpd.conf:${PORTSDIR}/www/apache13
+RUN_DEPENDS+=   glimpse:${PORTSDIR}/textproc/glimpse
+
+WRKSRC=         ${WRKDIR}/webglimpse-1.6.edu
 
 NO_CDROM=	depends on glimpse
 USE_PERL5=      YES
