@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_LOCAL} \
 		http://www.iDaemons.org/distfiles/
 MASTER_SITE_SUBDIR=	knu
 
-MAINTAINER=	knu@FreeBSD.org
+MAINTAINER=	freebsd-cvsweb@FreeBSD.org
 
 NO_BUILD=	yes
 
