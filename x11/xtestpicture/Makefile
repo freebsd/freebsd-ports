@@ -3,7 +3,7 @@
 # Date created:         11 March 1997
 # Whom:                 joerg
 #
-# $Id: Makefile,v 1.3 1998/05/26 09:37:27 joerg Exp $
+# $Id: Makefile,v 1.4 1998/07/23 13:03:54 joerg Exp $
 #
 
 DISTNAME=       xtestpicture-1.2
@@ -13,5 +13,6 @@ MASTER_SITES=   ftp://ftp.interface-business.de/pub/outgoing/
 MAINTAINER=     joerg@FreeBSD.org
 
 USE_IMAKE=	yes
+MAN1=		xtestpicture.1
 
 .include <bsd.port.mk>

@@ -3,7 +3,7 @@
 # Date created:		20 Jul 1996
 # Whom:			Eric Blood <eblood@cs.unr.edu>
 #
-# $Id: Makefile,v 1.5 1998/08/19 00:50:53 asami Exp $
+# $Id: Makefile,v 1.6 1998/08/30 15:38:57 steve Exp $
 #
 
 DISTNAME=	xautolock-pl11
@@ -17,5 +17,6 @@ MAINTAINER=	eblood@cs.unr.edu
 
 USE_IMAKE=	yes
 WRKSRC=		${WRKDIR}/xautolock-pl11
+MAN1=		xautolock.1
 
 .include <bsd.port.mk>

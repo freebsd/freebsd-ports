@@ -3,7 +3,7 @@
 # Date created:		22nd March 1995
 # Whom:			jkh@FreeBSD.org
 #
-# $Id: Makefile,v 1.4 1996/11/18 11:43:43 asami Exp $
+# $Id: Makefile,v 1.5 1997/01/06 12:14:56 jkh Exp $
 #
 
 DISTNAME=	sxpc-1.4
@@ -16,5 +16,6 @@ EXTRACT_CMD=		zcat
 EXTRACT_BEFORE_ARGS=
 EXTRACT_AFTER_ARGS=	|sh
 USE_IMAKE=	yes
+MAN1=		sxpc.1
 
 .include <bsd.port.mk>

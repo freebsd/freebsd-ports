@@ -3,7 +3,7 @@
 # Date created:		10 May 1995
 # Whom:			asami
 #
-# $Id: Makefile,v 1.8 1997/12/25 22:29:51 asami Exp $
+# $Id: Makefile,v 1.9 1998/01/22 00:41:36 fenner Exp $
 #
 
 DISTNAME=	xcolors
@@ -16,5 +16,6 @@ MAINTAINER=	ports@FreeBSD.ORG
 WRKSRC=		${WRKDIR}/xcolors
 USE_IMAKE=	yes
 IGNOREFILES=	${DISTFILES}
+MAN1=		xcolors.1
 
 .include <bsd.port.mk>

@@ -3,7 +3,7 @@
 # Date created:		30 June 1997
 # Whom:			Yukihiro Nakai <Nakai@Mlab.t.u-tokyo.ac.jp>
 #
-# $Id: Makefile,v 1.5 1998/09/17 00:33:01 asami Exp $
+# $Id: Makefile,v 1.6 1998/09/26 23:18:08 steve Exp $
 #
 
 DISTNAME=	xfce-1.2.4
@@ -22,5 +22,6 @@ WRKSRC=		${WRKDIR}/XFCE-1.2.4
 USE_GMAKE=	yes
 USE_IMAKE=	yes
 XMKMF=		xmkmf
+MAN1=		XFCE.1
 
 .include <bsd.port.mk>

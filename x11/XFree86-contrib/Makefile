@@ -3,7 +3,7 @@
 # Date created:         7 November 1996
 # Whom:                 asami
 #
-# $Id: Makefile,v 1.9 1998/04/13 14:32:13 markm Exp $
+# $Id: Makefile,v 1.10 1998/04/13 14:33:17 markm Exp $
 #
 
 DISTNAME=	X332contrib
@@ -23,8 +23,8 @@ NO_PACKAGE=	"Binary package distributed by XFree86 already"
 USE_IMAKE=	yes
 DIST_SUBDIR=	xc
 WRKSRC=		${WRKDIR}/contrib
-
-post-install:
-	${LDCONFIG} -m ${PREFIX}/lib
+MAN1=		ico.1 listres.1 showfont.1 viewres.1 xbiff.1 xcalc.1 \
+		xditview.1 xedit.1 xev.1 xeyes.1 xfontsel.1 xgc.1 xload.1 \
+		xman.1 xmessage.1
 
 .include <bsd.port.mk>

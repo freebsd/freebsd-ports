@@ -1,3 +1,2 @@
 bin/xcb
-man/man1/xcb.1.gz
 lib/X11/app-defaults/Xcb

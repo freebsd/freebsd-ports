@@ -3,7 +3,7 @@
 # Date created:		13 September 1994
 # Whom:			jkh
 #
-# $Id: Makefile,v 1.11 1997/03/06 04:50:09 asami Exp $
+# $Id: Makefile,v 1.12 1998/08/20 07:35:23 asami Exp $
 #
 
 DISTNAME=	emu-1.31
@@ -19,6 +19,7 @@ BROKEN=         Requires an X Display to build
 .endif
 USE_IMAKE=	yes
 WRKSRC=		${WRKDIR}/emu
+MAN1=		emu.1
 
 pre-configure:
 	cd ${WRKSRC}/client ; ln -s ../doc/emu.man .

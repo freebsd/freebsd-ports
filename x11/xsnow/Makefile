@@ -3,7 +3,7 @@
 # Date created:         12 November 1994
 # Whom:                 jmz
 #
-# $Id: Makefile,v 1.6 1995/11/26 09:51:30 asami Exp $
+# $Id: Makefile,v 1.7 1996/11/18 09:56:45 asami Exp $
 #
 
 DISTNAME=	xsnow-1.40
@@ -15,6 +15,7 @@ EXTRACT_SUFX=	.tar.Z
 MAINTAINER=	jmz@FreeBSD.org
 
 USE_IMAKE=	yes
+MAN6=		xsnow.6
 
 pre-install:
 	@mkdir -p ${PREFIX}/bin
