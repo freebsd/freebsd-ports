@@ -25,6 +25,10 @@ WRKSRC=		${WRKDIR}/cd-write
 BROKEN=		CAM
 .endif
 
+.if ${OSVERSION} >= 501000
+BROKEN=         "Does not compile"
+.endif
+
 pre-build:
 	@cd ${WRKSRC}; ${MV} Makefile Makefile~; \
 		${SED} -e s:/usr/local:${PREFIX}:g -e s/CFL/CXXFL/ <Makefile~ >Makefile;\

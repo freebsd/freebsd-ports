@@ -27,6 +27,12 @@ WRKSRC=		${WRKDIR}
 MAKE_ENV+=	BSD_INSTALL_DIR="${INSTALL_DIR}"
 SCRIPTS_ENV+=	BSD_INSTALL_DIR="${INSTALL_DIR}"
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 501000
+BROKEN=		"Does not compile"
+.endif
+
 do-configure:
 	@${CP} ${FILESDIR}/Makefile.bsd ${WRKSRC}/Makefile
 .for f in pdsscmp emulator/config.h emacs/pdss-init.el
@@ -45,4 +51,4 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/emacs/${f} ${DATADIR}/emacs
 .endfor
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

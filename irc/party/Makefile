@@ -16,6 +16,12 @@ COMMENT=	Simple multi-user chat system
 
 MAN1=	party.1
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 501000
+BROKEN=		"Does not compile"
+.endif
+
 do-install:
 	${INSTALL_SCRIPT} -g nobody -o nobody -m 4711 ${WRKSRC}/party ${PREFIX}/bin
 	${MKDIR} ${PREFIX}/lib/party
@@ -29,4 +35,4 @@ do-install:
 post-extract:
 	@(cd ${WRKSRC}; ${RM} -f .depend)
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

@@ -23,9 +23,15 @@ INSTALLS_SHLIB=	yes
 MAKE_ENV=	PTHREAD_LIBS="${PTHREAD_LIBS}" \
 		PTHREAD_CFLAGS="${PTHREAD_CFLAGS}"
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 501000
+BROKEN=		"Does not compile"
+.endif
+
 do-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/crystality-stdio ${PREFIX}/bin
 	@${INSTALL_PROGRAM} ${WRKSRC}/libcrystality.so \
 		${PREFIX}/lib/xmms/Effect
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
