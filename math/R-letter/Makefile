@@ -1,6 +1,6 @@
 # New ports collection makefile for:	R (letter)
 # Version required:		R-0.99.0a
-# Date created:			Wed Feb 23 13:39:51 EST 2000
+# Date created:			Tue Jun 23 07:36:55 EST 1998
 # Whom:				Maurice Castro <maurice@serc.rmit.edu.au>
 #
 # $FreeBSD$
