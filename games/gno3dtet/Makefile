@@ -17,17 +17,15 @@ MAINTAINER=	ports@FreeBSD.org
 USE_REINPLACE=	yes
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
-USE_GNOME=	yes
+USE_GNOMENG=	yes
+USE_GNOME=	gnomeprefix gnomehack gnomelibs 
 USE_LIBTOOL=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LIBS="-L${LOCALBASE}/lib"
 
-pre-patch:
+post-patch:
 	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|g ; \
 		 s|DATADIRNAME=lib|DATADIRNAME=share|g' ${WRKSRC}/configure
-	@${FIND} ${WRKSRC} -name "Makefile.in" | ${XARGS} ${REINPLACE_CMD} -e \
-		's|\$$(datadir)/gnome/|\$$(datadir)/|g ; \
-		 s|\$$(datadir)/locale|\$$(prefix)/share/locale|g'
 
 post-install:
 	${CHOWN} root:games ${PREFIX}/bin/gno3dtet
