@@ -5925,6 +5925,7 @@ p5-DateTime-TimeZone-LMT	ports/devel/p5-DateTime-TimeZone-LMT
 p5-DelimMatch	ports/textproc/p5-DelimMatch
 p5-Devel-Constants	ports/devel/p5-Devel-Constants
 p5-Devel-Cover	ports/devel/p5-Devel-Cover
+p5-Devel-Cycle	ports/devel/p5-Devel-Cycle
 p5-Devel-DProf	ports/devel/p5-Devel-DProf
 p5-Devel-Leak	ports/devel/p5-Devel-Leak
 p5-Devel-Modlist	ports/devel/p5-Devel-Modlist
