@@ -17,6 +17,9 @@ EXTRACT_SUFX=	-unix-src.tar.gz
 MAINTAINER=	markm@FreeBSD.org
 COMMENT=	Public-Key encryption for the masses
 
+# Begin de-orbit burn
+BROKEN=		"Old and unmaintained"
+
 WRKSRC=		${WRKDIR}/${DISTNAME}/src
 GNU_CONFIGURE=	yes
 USE_PERL5=	yes
