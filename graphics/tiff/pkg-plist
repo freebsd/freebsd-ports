@@ -8,6 +8,7 @@ bin/raw2tiff
 bin/rgb2ycbcr
 bin/thumbnail
 bin/tiff2bw
+bin/tiff2pdf
 bin/tiff2ps
 bin/tiff2rgba
 bin/tiffcmp
