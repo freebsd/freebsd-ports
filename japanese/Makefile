@@ -302,6 +302,7 @@
     SUBDIR += xfig
     SUBDIR += xjman
     SUBDIR += xklock
+    SUBDIR += xmsgsaver
     SUBDIR += xnetmaj
     SUBDIR += xshodo
     SUBDIR += xshodou
