@@ -17,6 +17,10 @@ MAINTAINER=	shanee@augusta.de
 
 USE_IMAKE=	yes
 USE_XPM=	yes
+USE_REINPLACE=yes
 MAN1=		xed.1
 
+pre-build:
+	@${FIND} ${WRKSRC} -type f | ${XARGS} ${REINPLACE_CMD} -e \
+		's|extern char \*malloc();|/\* extern char \*malloc(); \*/|g'
 .include <bsd.port.mk>
