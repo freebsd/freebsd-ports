@@ -748,6 +748,10 @@ share/themes/HighContrastLargePrint/pixmaps/stock_new.png
 share/themes/HighContrastLargePrint/pixmaps/stock_no.png
 share/themes/HighContrastLargePrint/pixmaps/stock_ok.png
 share/themes/HighContrastLargePrint/pixmaps/stock_open.png
+share/themes/HighContrastLargePrint/pixmaps/stock_panel_hide_down.png
+share/themes/HighContrastLargePrint/pixmaps/stock_panel_hide_left.png
+share/themes/HighContrastLargePrint/pixmaps/stock_panel_hide_right.png
+share/themes/HighContrastLargePrint/pixmaps/stock_panel_hide_up.png
 share/themes/HighContrastLargePrint/pixmaps/stock_paste.png
 share/themes/HighContrastLargePrint/pixmaps/stock_preferences.png
 share/themes/HighContrastLargePrint/pixmaps/stock_print-preview.png
@@ -877,6 +881,10 @@ share/themes/HighContrastLargePrintInverse/pixmaps/stock_new.png
 share/themes/HighContrastLargePrintInverse/pixmaps/stock_no.png
 share/themes/HighContrastLargePrintInverse/pixmaps/stock_ok.png
 share/themes/HighContrastLargePrintInverse/pixmaps/stock_open.png
+share/themes/HighContrastLargePrintInverse/pixmaps/stock_panel_hide_down.png
+share/themes/HighContrastLargePrintInverse/pixmaps/stock_panel_hide_left.png
+share/themes/HighContrastLargePrintInverse/pixmaps/stock_panel_hide_right.png
+share/themes/HighContrastLargePrintInverse/pixmaps/stock_panel_hide_up.png
 share/themes/HighContrastLargePrintInverse/pixmaps/stock_paste.png
 share/themes/HighContrastLargePrintInverse/pixmaps/stock_preferences.png
 share/themes/HighContrastLargePrintInverse/pixmaps/stock_print-preview.png
@@ -1006,6 +1014,10 @@ share/themes/LargePrint/pixmaps/stock_new.png
 share/themes/LargePrint/pixmaps/stock_no.png
 share/themes/LargePrint/pixmaps/stock_ok.png
 share/themes/LargePrint/pixmaps/stock_open.png
+share/themes/LargePrint/pixmaps/stock_panel_hide_down.png
+share/themes/LargePrint/pixmaps/stock_panel_hide_left.png
+share/themes/LargePrint/pixmaps/stock_panel_hide_right.png
+share/themes/LargePrint/pixmaps/stock_panel_hide_up.png
 share/themes/LargePrint/pixmaps/stock_paste.png
 share/themes/LargePrint/pixmaps/stock_preferences.png
 share/themes/LargePrint/pixmaps/stock_print-preview.png
@@ -1137,6 +1149,10 @@ share/themes/LowContrastLargePrint/pixmaps/stock_new.png
 share/themes/LowContrastLargePrint/pixmaps/stock_no.png
 share/themes/LowContrastLargePrint/pixmaps/stock_ok.png
 share/themes/LowContrastLargePrint/pixmaps/stock_open.png
+share/themes/LowContrastLargePrint/pixmaps/stock_panel_hide_down.png
+share/themes/LowContrastLargePrint/pixmaps/stock_panel_hide_left.png
+share/themes/LowContrastLargePrint/pixmaps/stock_panel_hide_right.png
+share/themes/LowContrastLargePrint/pixmaps/stock_panel_hide_up.png
 share/themes/LowContrastLargePrint/pixmaps/stock_paste.png
 share/themes/LowContrastLargePrint/pixmaps/stock_preferences.png
 share/themes/LowContrastLargePrint/pixmaps/stock_print-preview.png
