@@ -16,6 +16,9 @@ COMMENT=	A simple tool for doing everyday things with PDF documents
 # needs gcj
 BUILD_DEPENDS=	gcj33:${PORTSDIR}/lang/gcc33
 
+# gcj don't exist on
+NOT_FOR_ARCHS=	ia64 sparc64
+
 USE_GCC=	3.3
 USE_GMAKE=	yes
 USE_ICONV=	yes
