@@ -40,7 +40,6 @@ HEADERS_SUFX=
 .endif
 
 USE_X_PREFIX=	yes
-USE_GNOMENG=	yes
 USE_GNOME=	gnomeprefix gnomehack libgnomeui
 WANT_GNOME=	yes
 USE_LIBTOOL=	yes
