@@ -1,0 +1,5 @@
+bin/mgstat
+%%PORTDOCS%%share/doc/mgstat/Copyright
+%%PORTDOCS%%share/doc/mgstat/README
+%%PORTDOCS%%share/doc/mgstat/USAGE
+%%PORTDOCS%%@dirrm share/doc/mgstat

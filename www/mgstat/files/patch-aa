@@ -1,0 +1,11 @@
+--- Makefile.in.orig	Fri May 11 15:21:02 2001
++++ Makefile.in	Sun Apr  1 20:56:31 2001
+@@ -19,7 +19,7 @@
+ prefix = @prefix@
+ exec_prefix = @exec_prefix@
+ 
+-bindir = /usr/bin
++bindir = @bindir@
+ sbindir = @sbindir@
+ libexecdir = @libexecdir@
+ datadir = @datadir@
