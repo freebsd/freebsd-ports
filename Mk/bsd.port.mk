@@ -205,8 +205,10 @@ FreeBSD_MAINTAINER=	asami@FreeBSD.org
 #
 # X11BASE		- Where X11 ports install things (default: /usr/X11R6).
 # LOCALBASE		- Where non-X11 ports install things (default: /usr/local).
+# LINUXBASE		- Where Linux ports install things (default: /compat/linux).
 # PREFIX		- Where *this* port installs its files (default: ${X11BASE}
-#				  if USE_X_PREFIX is set, otherwise ${LOCALBASE}).
+#				  if USE_X_PREFIX is set, ${LINUXBASE} if USE_LINUX_PREFIX
+#				  is set, otherwise ${LOCALBASE}).
 # MASTERDIR		- Where the port finds patches, package files, etc.  Define
 #				  this is you have two or more ports that share most of the
 #				  files (default: ${.CURDIR}).
@@ -288,7 +290,11 @@ FreeBSD_MAINTAINER=	asami@FreeBSD.org
 #
 # fetch			- Retrieves ${DISTFILES} (and ${PATCHFILES} if defined)
 #				  into ${DISTDIR} as necessary.
-# fetch-list	- Show list of files that would be retrieved by fetch
+# fetch-list	- Show list of files that would be retrieved by fetch.
+# fetch-recursive - Retrieves ${DISTFILES} (and ${PATCHFILES} if defined),
+#				  for port and dependencies into ${DISTDIR} as necessary.
+# fetch-recursive-list  - Show list of files that would be retrieved by
+#				  fetch-recursive.
 # extract		- Unpacks ${DISTFILES} into ${WRKDIR}.
 # patch			- Apply any provided patches to the source.
 # configure		- Runs either GNU configure, one or more local configure
@@ -305,7 +311,10 @@ FreeBSD_MAINTAINER=	asami@FreeBSD.org
 #				  give incorrect results if multiple patches deal with
 #				  the same file.
 # checksum		- Use files/md5 to ensure that your distfiles are valid.
+# checksum-recursive - Run checksum in this port and all dependencies.
 # makesum		- Generate files/md5 (only do this for your own ports!).
+# clean		    - Remove ${WRKDIR} and other temporary files used for building.
+# clean-depends	- Do a "make clean" for all dependencies.
 #
 # Default sequence for "all" is:  fetch checksum extract patch configure build
 #
@@ -535,7 +544,18 @@ MASTERDIR?=	${.CURDIR}
 	@${ECHO} " your bsd.port.mk.)"
 	@${FALSE}
 .endif
-PKGNAME=	${PKGNAMEPREFIX}${PORTNAME}${PKGNAMESUFFIX}-${PORTVERSION}
+
+PORTREVISION?=	0
+.if ${PORTREVISION} != 0
+_SUF1=	_${PORTREVISION}
+.endif
+
+PORTEPOCH?=		0
+.if ${PORTEPOCH} != 0
+_SUF2=	,${PORTEPOCH}
+.endif
+
+PKGNAME=	${PKGNAMEPREFIX}${PORTNAME}${PKGNAMESUFFIX}-${PORTVERSION}${_SUF1}${_SUF2}
 DISTNAME?=	${PORTNAME}-${PORTVERSION}
 
 # These need to be absolute since we don't know how deep in the ports
@@ -548,6 +568,7 @@ PORTSDIR?=		/usr/ports
 .endif
 LOCALBASE?=		${DESTDIR}/usr/local
 X11BASE?=		${DESTDIR}/usr/X11R6
+LINUXBASE?=		${DESTDIR}/compat/linux
 DISTDIR?=		${PORTSDIR}/distfiles
 _DISTDIR?=		${DISTDIR}/${DIST_SUBDIR}
 .if defined(USE_BZIP2)
@@ -606,8 +627,14 @@ USE_X_PREFIX=	yes
 .if defined(USE_X_PREFIX)
 USE_XLIB=		yes
 .endif
+.if defined(USE_LINUX_PREFIX)
+USE_LINUX=		yes
+.endif
 .if defined(USE_X_PREFIX)
 PREFIX?=		${X11BASE}
+.elif defined(USE_LINUX_PREFIX)
+PREFIX?=		${LINUXBASE}
+NO_MTREE=		yes
 .else
 PREFIX?=		${LOCALBASE}
 .endif
@@ -659,6 +686,10 @@ MAKE_ENV+=		OPENSSLLIB=${OPENSSLLIB} OPENSSLINC=${OPENSSLINC} \
 
 .if defined(EMACS_PORT_NAME)
 .include "${PORTSDIR}/Mk/bsd.emacs.mk"
+.endif
+
+.if defined(USE_PYTHON) || defined(PYTHON_VERSION)
+.include "${PORTSDIR}/Mk/bsd.python.mk"
 .endif
 
 # defaults to 3.3.6; will be changed to 4.0 when it is ready
@@ -751,6 +782,10 @@ BUILD_DEPENDS+=	gcc295:${PORTSDIR}/lang/egcs
 MAKE_ENV+=		CC=${CC} CXX=${CXX}
 .endif
 
+.if defined(USE_LINUX)
+RUN_DEPENDS=	${LINUXBASE}/etc/redhat-release:${PORTSDIR}/emulators/linux_base
+.endif
+
 .if defined(REQUIRES_MOTIF)
 USE_XPM=			yes
 .if defined(PARALLEL_PACKAGE_BUILD)
@@ -760,6 +795,10 @@ LIB_DEPENDS+=		Xm.2:${PORTSDIR}/x11-toolkits/open-motif
 BUILD_DEPENDS+=		${X11BASE}/lib/libXm.a:${PORTSDIR}/x11-toolkits/Motif-dummy
 .endif
 .endif
+.endif
+
+.if defined(USE_FREETYPE)
+LIB_DEPENDS+=			ttf.4:${PORTSDIR}/print/freetype
 .endif
 
 .if ${XFREE86_VERSION} == 3
@@ -772,17 +811,17 @@ LIB_DEPENDS+=			dps.0:${PORTSDIR}/x11/dgs
 .if defined(USE_MESA)
 LIB_DEPENDS+=			GL.14:${PORTSDIR}/graphics/Mesa3
 .endif
-.if defined(USE_FREETYPE)
-LIB_DEPENDS+=			ttf.4:${PORTSDIR}/print/freetype
-.endif
 XAWVER=					6
 PKG_IGNORE_DEPENDS?=	'(XFree86-3\.3\.6|Motif-2\.1\.10)'
 .else
 .if defined(USE_IMAKE)
 BUILD_DEPENDS+=			imake:${PORTSDIR}/devel/imake-4
 .endif
-.if defined(USE_XPM) || defined(USE_DGS) || defined(USE_MESA) || defined(USE_FREETYPE)
+.if defined(USE_XPM) || defined(USE_DGS)
 USE_XLIB=				yes
+.endif
+.if defined(USE_MESA)
+LIB_DEPENDS+=			GLU.1:${PORTSDIR}/graphics/Mesa3
 .endif
 XAWVER=					7
 PKG_IGNORE_DEPENDS?=	'Motif-2\.1\.10'
@@ -877,7 +916,7 @@ MD5?=			/usr/bin/md5
 .else
 MD5?=			md5
 .endif
-MD5_FILE=		${FILESDIR}/md5
+MD5_FILE?=		${FILESDIR}/md5
 
 MAKE_FLAGS?=	-f
 MAKEFILE?=		Makefile
@@ -1308,6 +1347,16 @@ __MANPAGES:=	${_MANPAGES:S^${PREFIX}/^^:S/""//:S^//^/^g:S/$/.gz/}
 _MANPAGES:=	${_MANPAGES:S/$/.gz/}
 .endif
 
+.if ${XFREE86_VERSION} == 3
+XFREE86_HTML_MAN=	no
+.else
+.if defined(USE_IMAKE)
+XFREE86_HTML_MAN?=	yes
+.else
+XFREE86_HTML_MAN?=	no
+.endif
+.endif
+
 # Put this for down as possible so it will catch all PLIST_SUB definitions.
 
 .if defined(INSTALLS_SHLIB)
@@ -1593,7 +1642,7 @@ do-fetch:
 					exit 1; \
 				fi; \
 			fi; \
-			${ECHO_MSG} ">> $$file doesn't seem to exist on this system."; \
+			${ECHO_MSG} ">> $$file doesn't seem to exist in ${_DISTDIR}."; \
 			for site in `${SORTED_MASTER_SITES_CMD}`; do \
 			    ${ECHO_MSG} ">> Attempting to fetch from $${site}."; \
 				DIR=${DIST_SUBDIR}; \
@@ -1622,7 +1671,7 @@ do-fetch:
 				${ECHO_MSG} ">> Please correct this problem and try again."; \
 				exit 1; \
 			fi ; \
-			${ECHO_MSG} ">> $$file doesn't seem to exist on this system."; \
+			${ECHO_MSG} ">> $$file doesn't seem to exist in ${_DISTDIR}."; \
 			for site in `${SORTED_PATCH_SITES_CMD}`; do \
 			    ${ECHO_MSG} ">> Attempting to fetch from $${site}."; \
 				DIR=${DIST_SUBDIR}; \
@@ -2009,6 +2058,37 @@ ${BUILD_COOKIE}:
 ${INSTALL_COOKIE}:
 	@cd ${.CURDIR} && ${MAKE} ${__softMAKEFLAGS} build
 	@cd ${.CURDIR} && ${MAKE} ${__softMAKEFLAGS} real-install
+# Scan PLIST for setugid files and startup scripts
+	-@for i in `${GREP} -v '^@' ${TMPPLIST}`; do \
+		/usr/bin/find ${PREFIX}/$$i -prune -type f \( -perm -4000 -o -perm -2000 \) \( -perm -0010 -o -perm -0001 \) -ls 2>/dev/null; \
+	done > ${WRKDIR}/.PLIST.setuid; \
+	${GREP} '^etc/rc.d/' ${TMPPLIST} > ${WRKDIR}/.PLIST.startup; \
+	if [ -s ${WRKDIR}/.PLIST.setuid -o -s ${WRKDIR}/.PLIST.startup ]; then \
+		echo "===>  SECURITY NOTE: "; \
+		if [ -s ${WRKDIR}/.PLIST.setuid ] ; then \
+			echo "      This port has installed the following binaries which execute with"; \
+			echo "      increased privileges."; \
+			${CAT} ${WRKDIR}/.PLIST.setuid; \
+			echo; \
+		fi; \
+		if [ -s ${WRKDIR}/.PLIST.startup ] ; then \
+			echo "      This port has installed the following startup scripts which may cause"; \
+			echo "      network services to be started at boot time."; \
+			${SED} s,^,$$PREFIX/, < ${WRKDIR}/.PLIST.startup; \
+			echo; \
+		fi; \
+		echo "      If there are vulnerabilities in these programs there may be a security"; \
+		echo "      risk to the system. FreeBSD makes no guarantee about the security of"; \
+		echo "      ports included in the Ports Collection. Please type 'make deinstall'"; \
+		echo "      to deinstall the port if this is a concern."; \
+	    if [ ! -z "`make www-site`" ]; then \
+			echo; \
+			echo "      For more information, and contact details about the security"; \
+			echo "      status of this software, see the following webpage: "; \
+			${MAKE} www-site; \
+		fi; \
+	fi
+
 ${PACKAGE_COOKIE}:
 	@cd ${.CURDIR} && ${MAKE} ${__softMAKEFLAGS} install
 	@cd ${.CURDIR} && ${MAKE} ${__softMAKEFLAGS} real-package
@@ -2219,7 +2299,7 @@ fetch-list:
 	@(cd ${_DISTDIR}; \
 	 for file in ${PATCHFILES}; do \
 		if [ ! -f $$file -a ! -f `${BASENAME} $$file` ]; then \
-			for site in ${SORTED_PATCH_SITES_CMD}; do \
+			for site in `${SORTED_PATCH_SITES_CMD}`; do \
 				DIR=${DIST_SUBDIR}; \
 				CKSIZE=`${GREP} "^SIZE ($${DIR:+$$DIR/}$$file)" ${MD5_FILE} | ${AWK} '{print $$4}'`; \
 				case $${file} in \
@@ -2492,17 +2572,17 @@ misc-depends:
 
 .endif
 
-# Clean dependency lists: build and runtime.  Print out directory names.
+# Dependency lists: both build and runtime, recursive.  Print out directory names.
 
-clean-depends-list:
-	@${CLEAN-DEPENDS-LIST}
+all-depends-list:
+	@${ALL-DEPENDS-LIST}
 
-CLEAN-DEPENDS-LIST= \
+ALL-DEPENDS-LIST= \
 	checked="${PARENT_CHECKED}"; \
 	for dir in $$(${ECHO} "${FETCH_DEPENDS} ${BUILD_DEPENDS} ${LIB_DEPENDS} ${RUN_DEPENDS}" | ${TR} '\040' '\012' | ${SED} -e 's/^[^:]*://' -e 's/:.*//') $$(${ECHO} ${DEPENDS} | ${TR} '\040' '\012' | ${SED} -e 's/:.*//'); do \
 		if [ -d $$dir ]; then \
 			if (${ECHO} $$checked | ${GREP} -qwv "$$dir"); then \
-				child=$$(cd $$dir; ${MAKE} PARENT_CHECKED="$$checked" clean-depends-list); \
+				child=$$(cd $$dir; ${MAKE} PARENT_CHECKED="$$checked" all-depends-list); \
 				for d in $$child; do ${ECHO} $$d; done; \
 				${ECHO} $$dir; \
 				checked="$$dir $$child $$checked"; \
@@ -2514,15 +2594,38 @@ CLEAN-DEPENDS-LIST= \
 
 .if !target(clean-depends)
 clean-depends:
-	@for dir in $$(${CLEAN-DEPENDS-LIST}); do \
+	@for dir in $$(${ALL-DEPENDS-LIST}); do \
 		(cd $$dir; ${MAKE} NOCLEANDEPENDS=yes clean); \
 	done
 .endif
 
 .if !target(deinstall-depends)
 deinstall-depends:
-	@for dir in $$(${CLEAN-DEPENDS-LIST}); do \
-		(cd $$dir; ${MAKE} NOCLEANDEPENDS=yes deinstall); \
+	@for dir in $$(${ALL-DEPENDS-LIST}); do \
+		(cd $$dir; ${MAKE} deinstall); \
+	done
+.endif
+
+.if !target(fetch-recursive)
+fetch-recursive:
+	@${ECHO_MSG} "===> Fetching all distfiles for ${PKGNAME} and dependencies"
+	@for dir in ${.CURDIR} $$(${ALL-DEPENDS-LIST}); do \
+		(cd $$dir; ${MAKE} fetch); \
+	done
+.endif
+
+.if !target(fetch-recursive-list)
+fetch-recursive-list:
+	@for dir in ${.CURDIR} $$(${ALL-DEPENDS-LIST}); do \
+		(cd $$dir; ${MAKE} fetch-list); \
+	done
+.endif
+
+.if !target(checksum-recursive)
+checksum-recursive:
+	@${ECHO_MSG} "===> Fetching and checking checksums for ${PKGNAME} and dependencies"
+	@for dir in ${.CURDIR} $$(${ALL-DEPENDS-LIST}); do \
+		(cd $$dir; ${MAKE} checksum); \
 	done
 .endif
 
@@ -2552,7 +2655,7 @@ RUN-DEPENDS-LIST= \
 		fi; \
 	done | sort -u
 
-# Clean dependency lists: build and runtime.  Print out directory names.
+# Package (recursive runtime) dependency list.  Print out directory names.
 
 package-depends-list:
 	@${PACKAGE-DEPENDS-LIST}
@@ -2571,6 +2674,8 @@ PACKAGE-DEPENDS-LIST= \
 			${ECHO_MSG} "${PKGNAME}: \"$$dir\" non-existent -- dependency list incomplete" >&2; \
 		fi; \
 	done | sort -u
+
+# Print out package names.
 
 package-depends:
 	@for dir in $$(${PACKAGE-DEPENDS-LIST}); do \
@@ -2737,6 +2842,13 @@ generate-plist:
 		${ECHO} "$$i" >> ${TMPPLIST}; \
 	done
 	@${ECHO} '@cwd ${PREFIX}' >> ${TMPPLIST}
+.endif
+.if ${XFREE86_HTML_MAN} == "yes"
+.for mansect in MAN1 MAN2 MAN3 MAN4 MAN5 MAN6 MAN7 MAN8 MAN9 MANL MANN
+.for man in ${${mansect}}
+	@echo lib/X11/doc/html/${man}.html >> ${TMPPLIST}
+.endfor
+.endfor
 .endif
 .endfor
 	@${SED} ${PLIST_SUB:S/$/!g/:S/^/ -e s!%%/:S/=/%%!/} ${PLIST} >> ${TMPPLIST}
