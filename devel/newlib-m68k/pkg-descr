@@ -1,0 +1,8 @@
+Cygnus newlib-1.8.1 for embedded Motorola M68K and Coldfire cross-development
+
+This port is used by devel/crossm68k-devel to generate a cross-development
+environment for embedded Motorola 68xxx and Coldfire applications.
+
+--------------------------------------------------------------------------
+Jerry Hicks
+jhicks@glenatl.glenayre.com
