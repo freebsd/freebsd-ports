@@ -1,0 +1,6 @@
+bin/barcode
+include/barcode.h
+@unexec install-info --delete %D/info/barcode.info %D/info/dir
+info/barcode.info
+@exec install-info %D/info/barcode.info %D/info/dir
+lib/libbarcode.a
