@@ -1,0 +1,21 @@
+--- medusa-idled/medusa-idled-client.c.orig	Fri Jan 12 18:23:43 2001
++++ medusa-idled/medusa-idled-client.c	Mon Jan 29 13:36:20 2001
+@@ -33,5 +33,5 @@
+ #include <string.h>
++#include <sys/types.h>
+ #include <sys/socket.h>
+ #include <sys/time.h>
+-#include <sys/types.h>
+ #include <sys/un.h>
+
+--- indexer/medusa-file-index-daemon.c.orig	Wed Jan 17 21:55:16 2001
++++ indexer/medusa-file-index-daemon.c	Mon Jan 29 13:42:35 2001
+@@ -44,3 +44,8 @@
+ #include <sys/un.h>
++#ifdef __FreeBSD__
++#include <sys/param.h>
++#include <sys/mount.h>
++#else
+ #include <sys/vfs.h>
++#endif
+ #include <time.h>

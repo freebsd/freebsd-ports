@@ -1,0 +1,7 @@
+--- Makefile.in.orig	Sat Jan 27 02:29:09 2001
++++ Makefile.in	Mon Jan 29 13:53:26 2001
+@@ -124,3 +124,3 @@
+ 
+-SUBDIRS = libmedusa medusa-idled libmedusa-internal indexer msearch search-service gnome-vfs-module doc index-configuration tests
++SUBDIRS = libmedusa medusa-idled libmedusa-internal indexer msearch search-service gnome-vfs-module doc tests
+ 
