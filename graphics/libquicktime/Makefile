@@ -17,7 +17,7 @@ MAINTAINER=	ports@FreeBSD.org
 
 LIB_DEPENDS=	vorbis.2:${PORTSDIR}/audio/libvorbis \
 		jpeg.9:${PORTSDIR}/graphics/jpeg \
-		dv.1:${PORTSDIR}/graphics/libdv \
+		dv.2:${PORTSDIR}/graphics/libdv \
 		png.5:${PORTSDIR}/graphics/png
 
 USE_MESA=	yes

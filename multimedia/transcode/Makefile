@@ -134,7 +134,7 @@ PLIST_SUB+=	WITH_FFMPEG="@comment "
 .endif
 
 .if defined(WITH_LIBDV)
-LIB_DEPENDS+=	dv.1:${PORTSDIR}/graphics/libdv
+LIB_DEPENDS+=	dv.2:${PORTSDIR}/graphics/libdv
 PLIST_SUB+=	WITH_LIBDV=""
 .else
 CONFIGURE_ARGS+=	--with-dv=no
