@@ -31,7 +31,7 @@ do-install:
 .endfor
 	${INSTALL_DATA} ${WRKSRC}/icons/*.xpm ${PREFIX}/share/pygmy/icons
 	${INSTALL_DATA} ${WRKSRC}/pygmy ${PREFIX}/share/pygmy
-	@printf "#!/bin/sh\n${PYTHON_CMD} ${PREFIX}/share/pygmy/pygmy" > \
+	@printf "#!/bin/sh\nexec ${PYTHON_CMD} ${PREFIX}/share/pygmy/pygmy" > \
 		${WRKDIR}/pygmy.sh
 	${INSTALL_SCRIPT} ${WRKDIR}/pygmy.sh ${PREFIX}/bin/pygmy
 
