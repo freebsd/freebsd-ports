@@ -1,0 +1,12 @@
+--- term/Makefile.in.orig	Sat Jun 15 17:11:32 1996
++++ term/Makefile.in	Sat Jun 15 17:11:57 1996
+@@ -42,7 +42,8 @@
+ 
+ GIT_TERMS	= .gitrc.thix .gitrc.linux .gitrc.vt100 .gitrc.vt102\
+ 		  .gitrc.xterm .gitrc.hpterm .gitrc.ansi .gitrc.generic\
+-		  .gitrc.common .gitrc.minix .gitrc.aixterm .gitrc.hft
++		  .gitrc.common .gitrc.minix .gitrc.aixterm .gitrc.hft\
++		  .gitrc.cons25
+ 
+ GIT_GENERICS	= .gitrc.sun .gitrc.sun-cmd
+ 
