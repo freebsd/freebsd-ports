@@ -14,7 +14,7 @@ MASTER_SITES=	ftp://argeas.cs-net.gr/pub/unix/mcrypt/ \
 		ftp://ftp.ntua.gr/pub/security/mcrypt/
 #		http://mcrypt.hellug.gr/mcrypt/
 
-MAINTAINER=	Trevor Johnson <trevor@FreeBSD.org>
+MAINTAINER=	trevor@FreeBSD.org
 
 LIB_DEPENDS=	mcrypt.4:${PORTSDIR}/security/libmcrypt/ \
 		mhash.2:${PORTSDIR}/security/mhash/ \
