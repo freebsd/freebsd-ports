@@ -1,8 +1,0 @@
-This is the i386 binary for the md5crk client.  The md5crk project aims to find
-pairs of different, printable, textual strings with identical MD5 hashes,
-thereby demonstrating that stronger hashing algorithms should be used when
-checking for maliciously altered data.
-
-A version for the Pentium 4 is available, but is not installed by this port.
-
-WWW:  http://www.md5crk.com

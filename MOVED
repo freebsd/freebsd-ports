@@ -1302,3 +1302,4 @@ net/dcgui|net/valknut|2004-10-31|renamed
 japanese/lookup-mule||2004-11-05|no longer supported
 emulators/linux-mupen64|emulators/mupen64|2004-11-08|replaced with native port
 math/fftpack|math/bihar|2004-11-08|more suitable name
+security/md5crk||2004-11-08|project shut down

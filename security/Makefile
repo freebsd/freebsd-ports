@@ -186,7 +186,6 @@
     SUBDIR += makepasswd
     SUBDIR += manipulate_data
     SUBDIR += mcrypt
-    SUBDIR += md5crk
     SUBDIR += md5deep
     SUBDIR += mdcrack
     SUBDIR += mhash
