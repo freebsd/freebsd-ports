@@ -68,4 +68,7 @@ post-configure:
 			 s|%%X11BASE%%|${X11BASE}|g ; \
 			 s|%%MOZILLA%%|${MOZILLA}|g' ${WRKSRC}/src/galeon
 
+pre-install:
+	@-${X11BASE}/bin/gconftool --shutdown
+
 .include <bsd.port.mk>
