@@ -1,0 +1,17 @@
+bksh is a simple (some would say trivial) program designed to be used
+as a shell by ssh or rsh-like programs. All it does it to copy its
+input to a restricted set of backup files.
+
+It was made to allow administrators to create backup servers in
+potentially hostile environments without allowing full shell access to
+the server or the client.
+
+Features:
+- tape only or file & tape backups (compile-time config)
+- automatic file rotation allows keeping a history of backups
+- configurable number of files kept (static compile-time or dynamic)
+- allows naming of backup files on command line
+- works as a restricted shell to limit access to server
+- very simple and short ANSI C code, easy to audit
+
+WWW: http://anarcat.ath.cx/software/bksh
