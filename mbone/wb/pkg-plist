@@ -3,3 +3,4 @@ share/doc/wb/README
 share/doc/wb/CHANGES
 share/doc/wb/NOTES
 share/doc/wb/lblwb.ps
+@dirrm share/doc/wb
