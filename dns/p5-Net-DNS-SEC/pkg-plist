@@ -1,15 +1,20 @@
-lib/perl5/site_perl/%%PERL_VER%%/Net/DNS/SEC.pm
-lib/perl5/site_perl/%%PERL_VER%%/Net/DNS/Keyset.pm
-lib/perl5/site_perl/%%PERL_VER%%/Net/DNS/RR/DS.pm
-lib/perl5/site_perl/%%PERL_VER%%/Net/DNS/RR/KEY.pm
-lib/perl5/site_perl/%%PERL_VER%%/Net/DNS/RR/NXT.pm
-lib/perl5/site_perl/%%PERL_VER%%/Net/DNS/RR/SIG.pm
-lib/perl5/site_perl/%%PERL_VER%%/Net/DNS/RR/SIG/Private.pm
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Net/DNS/SEC/.packlist
-@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Net/DNS/SEC 2>/dev/null || true
-@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Net/DNS     2>/dev/null || true
-@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Net         2>/dev/null || true
-@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/Net/DNS/RR/SIG		 2>/dev/null || true
-@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/Net/DNS/RR                     2>/dev/null || true
-@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/Net/DNS                        2>/dev/null || true
-@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/Net                            2>/dev/null || true
+%%SITE_PERL%%/Net/DNS/SEC.pm
+%%SITE_PERL%%/Net/DNS/Keyset.pm
+%%SITE_PERL%%/Net/DNS/RR/DS.pm
+%%SITE_PERL%%/Net/DNS/RR/DNSKEY.pm
+%%SITE_PERL%%/Net/DNS/RR/KEY.pm
+%%SITE_PERL%%/Net/DNS/RR/NSEC.pm
+%%SITE_PERL%%/Net/DNS/SEC/Private.pm
+%%SITE_PERL%%/Net/DNS/RR/NXT.pm
+%%SITE_PERL%%/Net/DNS/RR/RRSIG.pm
+%%SITE_PERL%%/Net/DNS/RR/SIG.pm
+%%SITE_PERL%%/Net/DNS/RR/SIG/Private.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/DNS/SEC/.packlist
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/DNS/SEC 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/DNS     2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Net         2>/dev/null || true
+@dirrm %%SITE_PERL%%/Net/DNS/SEC
+@unexec rmdir %D/%%SITE_PERL%%/Net/DNS/RR/SIG		 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/Net/DNS/RR                     2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/Net/DNS                        2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/Net                            2>/dev/null || true
