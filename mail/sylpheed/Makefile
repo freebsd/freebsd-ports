@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	sylpheed
-PORTVERSION=	0.8.10
+PORTVERSION=	0.8.11
 PORTREVISION=	0
 CATEGORIES=	mail ipv6
 MASTER_SITES=	http://sylpheed.good-day.net/sylpheed/
@@ -21,8 +21,8 @@ USE_GTK=	yes
 USE_LIBTOOL=	yes
 USE_REINPLACE=	yes
 
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
-		LIBS="-L${LOCALBASE}/lib -L${X11BASE}/lib"
+CONFIGURE_ENV=	CPPFLAGS="-I${PREFIX}/include -I${LOCALBASE}/include -I${X11BASE}/include" \
+		LIBS="-L${PREFIX}/lib -L${LOCALBASE}/lib -L${X11BASE}/lib"
 CONFIGURE_ARGS=	--enable-ipv6 --prefix=${PREFIX} --with-included-gettext \
 		--program-transform-name=''
 
@@ -88,7 +88,7 @@ pre-everything::
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS:S/"//g}|g; \
-		s|-lresolv||g' ${WRKSRC}/configure
+		s|-lresolv||g; s|-lpisock\"|-liconv &|g' ${WRKSRC}/configure
 
 .if defined(NOPORTDOCS)
 	@${REINPLACE_CMD} -e 's|^SUBDIRS = ac po intl src manual faq$$|SUBDIRS = ac po intl src|g' \
