@@ -12,7 +12,7 @@ CATEGORIES=	security
 MASTER_SITES=	${MASTER_SITE_GNUPG}
 MASTER_SITE_SUBDIR=	alpha/aegypten
 
-MAINTAINER=	michaelnottebrock@gmx.net
+MAINTAINER=	lofi@freebsd.org
 COMMENT=	Prerelease package of GnuPG extensions for GnuPG 2.0
 
 LIB_DEPENDS=	gcrypt.6:${PORTSDIR}/security/libgcrypt \
@@ -34,6 +34,7 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 CPPFLAGS+=	-I${LOCALBASE}/include
 CONFIGURE_ENV+=	CFLAGS="${CFLAGS}" LDFLAGS="${LDFLAGS}" CPPFLAGS="${CPPFLAGS}"
 CONFIGURE_ARGS+=--with-included-gettext=no
+INFO=		gnupg
 
 .include <bsd.port.pre.mk>
 

@@ -2,11 +2,5 @@ bin/gpg-agent
 bin/gpgsm
 bin/kbxutil
 %%WITH_OPENSC%%bin/scdaemon
-@unexec install-info --delete %D/info/gnupg.info %D/info/dir
-info/gnupg.info
-info/gnupg.info-1
-info/gnupg.info-2
-info/gnupg.info-3
-@exec install-info %D/info/gnupg.info  %D/info/dir
 lib/newpg/gpg-protect-tool
 share/locale/de/LC_MESSAGES/newpg.mo
