@@ -16,4 +16,6 @@ COMMENT=	${.CURDIR}/pkg-comment
 
 WITH_XUNICODE=	yes
 
+BROKEN=		Does not work with latest fox version
+
 .include "${MASTERDIR}/Makefile"
