@@ -41,6 +41,7 @@ echo "#undef WORDS"  >> local.h
 echo '#define WORDS   "/usr/share/dict/words"'  >> local.h 
 echo '#undef ELISPDIR'  >> local.h
 echo "#define ELISPDIR \"$PREFIX/share/emacs/site-lisp\"" >> local.h
+echo '#define CFLAGS "-O2 -fno-strength-reduce"' >>local.h
 
 mv Makefile Makefile.orig
 sed -e 's/^[ 	]*$/\
