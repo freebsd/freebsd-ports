@@ -3,10 +3,11 @@ $FreeBSD$
 
 --- spam/config-freebsd.orig
 +++ spam/config-freebsd
-@@ -1,6 +1,6 @@
+@@ -1,7 +1,7 @@
 -local_cf=/usr/local/etc/mail/spamassassin/local.cf
 +local_cf=%%PREFIX%%/etc/mail/spamassassin/local.cf
  spamassassin=spamassassin
+ sa_learn=sa-learn
 -procmailrc=/usr/local/etc/procmailrc
 +procmailrc=%%PREFIX%%/etc/procmailrc
  warn_procmail=1
