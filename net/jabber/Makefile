@@ -21,7 +21,7 @@ DISTFILES+=	jabber-1.4.1.tar.gz \
 
 MAINTAINER=	joe@FreeBSD.org
 
-BUILD_DEPENDS=	pth-config:${PORTSDIR}/devel/pth
+LIB_DEPENDS=	pth:${PORTSDIR}/devel/pth
 
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
