@@ -25,7 +25,7 @@
  44.95,		34.1,		"phantom"			# Simferopol, Ukraine
  50.4,		30.5,		"sobomax"			# Kiev, Ukraine
  52.14,		21.03,		"abial"				# Warsaw, Poland
--34,		18,		"markm, sheldonh"		# Cape Town, South Africa
+-34,		18,		"sheldonh"			# Cape Town, South Africa
  51.0383,	13.7206,	"joerg"				# Dresden, Germany
  52.51,		13.33,		" dirk"				# Berlin, Germany
  52.56,		13.27,		"chm"		align=left	# Berlin, Germany
@@ -49,7 +49,7 @@
  51.25,		5.30,		"guido"		align=left	# Eindhoven, the Netherlands
  48.36,		2.99		"charnier"	align=left	# Cannes Ecluse, France
  48.7,		2.17,		"roberto"			# Les Ulis, France
- 51.67,		0.61,		" brian"			# Amersham, Bucks, UK
+ 51.67,		0.61,		" brian,markm"			# Amersham, Bucks, UK
  50.84121667,	0.128383333,	"joe"				# Brighton, East Sussex, UK
  51.5,		0.0,		" dfr"				# (CORE) London, UK
  51.0,		0.0,		"greid"		align=left	# Farnborough, Hampshire, UK
