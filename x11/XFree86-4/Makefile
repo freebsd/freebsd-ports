@@ -86,6 +86,7 @@ pre-fetch:
 .endif # ${USA_RESIDENT}
 .endif
 
+.include "Makefile.man"
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 410000
