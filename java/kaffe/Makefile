@@ -3,7 +3,7 @@
 # Date created:         20 February 1995
 # Whom:                 Tim Wilkinson <tim@sarc.city.ac.uk>
 #
-# $Id: Makefile,v 1.32 1998/07/31 20:10:10 steve Exp $
+# $Id: Makefile,v 1.33 1998/08/04 21:39:58 asami Exp $
 #
 
 DISTNAME=	kaffe-1.0.b1
@@ -13,7 +13,7 @@ DISTFILES=	${DISTNAME}.tar.gz
 
 MAINTAINER=	xaa@xaa.iae.nl
 
-LIB_DEPENDS=	jpeg\\.9\\.0:${PORTSDIR}/graphics/jpeg
+LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg
 
 GNU_CONFIGURE=	yes
 MAN1=		kaffe.1

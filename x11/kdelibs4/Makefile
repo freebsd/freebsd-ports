@@ -3,7 +3,7 @@
 # Date created:        28 October 1997
 # Whom:                Stefan Eßer <se@freebsd.org>
 #
-# $Id: Makefile,v 1.15 1998/08/07 23:56:54 asami Exp $
+# $Id: Makefile,v 1.16 1998/08/12 06:29:36 asami Exp $
 #
 
 DISTNAME=	kdelibs-1.0
@@ -14,7 +14,7 @@ MASTER_SITE_SUBDIR= stable/1.0/distribution/tar/generic/source
 MAINTAINER=	se@freebsd.org
 
 LIB_DEPENDS=	gif\\.[23]\\.:${PORTSDIR}/graphics/giflib \
-		jpeg\\.9\\.:${PORTSDIR}/graphics/jpeg
+		jpeg.9:${PORTSDIR}/graphics/jpeg
 
 USE_QT=		yes
 HAS_CONFIGURE=	yes

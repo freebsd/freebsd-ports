@@ -5,7 +5,7 @@
 #			Mikhail Teterin <mi@aldan.ziplink.net>
 #			Jun-ichiro itojun Itoh <itojun@itojun.org>
 #
-# $Id: Makefile,v 1.7 1998/04/15 21:39:25 jseger Exp $
+# $Id: Makefile,v 1.8 1998/05/04 20:23:10 jseger Exp $
 #
 
 DISTNAME=	tiff-v3.4
@@ -16,7 +16,7 @@ EXTRACT_SUFX=	-tar.gz
 
 MAINTAINER=	itojun@itojun.org
 
-LIB_DEPENDS=    jpeg\\.9\\.:${PORTSDIR}/graphics/jpeg
+LIB_DEPENDS=    jpeg.9:${PORTSDIR}/graphics/jpeg
 
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-ZIP --with-JPEG --with-DIR_BIN=${PREFIX}/bin \

@@ -3,7 +3,7 @@
 # Date created:         Mon Nov 18 21:28:43 CST 1996
 # Whom:                 erich@FreeBSD.org
 #
-# $Id: Makefile,v 1.37 1998/08/07 23:56:25 asami Exp $
+# $Id: Makefile,v 1.38 1998/09/15 11:13:22 asami Exp $
 #
 
 DISTNAME=	gimp-1.0.0
@@ -17,7 +17,7 @@ MAINTAINER=	erich@FreeBSD.org
 
 LIB_DEPENDS+=	Xpm.5:${PORTSDIR}/graphics/xpm
 LIB_DEPENDS+=	aa\\.1\\.:${PORTSDIR}/graphics/aalib
-LIB_DEPENDS+=	jpeg\\.9\\.:${PORTSDIR}/graphics/jpeg
+LIB_DEPENDS+=	jpeg.9:${PORTSDIR}/graphics/jpeg
 LIB_DEPENDS+=	gtk\\.1\\.5:${PORTSDIR}/x11-toolkits/gtk
 LIB_DEPENDS+=	mpeg\\.1\\.2:${PORTSDIR}/graphics/mpeg-lib
 LIB_DEPENDS+=	png\\.2\\.:${PORTSDIR}/graphics/png

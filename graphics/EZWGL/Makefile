@@ -3,7 +3,7 @@
 # Date created:				4 May 1998
 # Whom:					Andrey Zakhvatov
 #
-# $Id: Makefile,v 1.6 1998/08/05 09:31:05 asami Exp $
+# $Id: Makefile,v 1.7 1998/08/09 23:51:05 steve Exp $
 #
 
 DISTNAME=	EZWGL-1.39
@@ -13,7 +13,7 @@ DISTFILES=	${DISTNAME}-src.tgz ${DISTNAME}-doc.tgz
 
 MAINTAINER=	andy@icc.surw.chel.su
 
-LIB_DEPENDS=	jpeg\\.9\\.:${PORTSDIR}/graphics/jpeg
+LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg
 
 ALL_TARGET=	shared clean static
 USE_X_PREFIX=	yes
