@@ -72,7 +72,9 @@ lib/gst/libgstspider.so
 lib/gst/libgststaticautoplug.so
 lib/gst/libgststaticautoplugrender.so
 lib/gst/libgsttypes.so
+lib/libgstcontrol.a
 lib/libgstcontrol.so
+lib/libgstcontrol.so.0
 lib/libgstreamer.a
 lib/libgstreamer.so
 lib/libgstreamer.so.0

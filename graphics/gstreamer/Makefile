@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gstreamer
-PORTVERSION=	0.4.1
+PORTVERSION=	0.4.2
 CATEGORIES=	graphics
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -14,9 +14,8 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	lioux@FreeBSD.org
 
 BUILD_DEPENDS=	pkg-config:${PORTSDIR}/devel/pkgconfig
-LIB_DEPENDS=	glib-2.0.0:${PORTSDIR}/devel/glib20 \
-		popt.0:${PORTSDIR}/devel/popt \
-		xml2.5:${PORTSDIR}/textproc/libxml2
+LIB_DEPENDS=	gnomeui-2.0:${PORTSDIR}/x11-toolkits/libgnomeui \
+		popt.0:${PORTSDIR}/devel/popt
 
 IGNORE=		Needs help fixing scheduling code under FreeBSD
 
@@ -25,6 +24,8 @@ USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_LIBTOOL=	yes
 USE_REINPLACE=	yes
+USE_GNOMENG=	yes
+USE_GNOME=	gnomehack
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS= --disable-tests \
 		--disable-failing-tests
@@ -42,9 +43,6 @@ PKG_CONFIG?="${LOCALBASE}/bin/pkg-config"
 
 post-patch:
 # use proper dir
-	@${REINPLACE_CMD} -E -e \
-		's|^(pkgconfigdir).*$$|\1=${PREFIX}/libdata/pkgconfig|' \
-		${WRKSRC}/Makefile.in
 # remove version number from include dir name
 	@${FIND} ${WRKSRC} -type f -name Makefile.in | \
 		${XARGS} -n 10 ${REINPLACE_CMD} -E \
@@ -55,14 +53,11 @@ post-patch:
 		's|-@VERSION@||; \
 		s|(-I\$${includedir})|\1 -I${LOCALBASE}/include|' \
 		${WRKSRC}/gstreamer.pc.in
-# XXX - remove in release 0.4.1 since this is fixed in CVS
-	@${REINPLACE_CMD} -e 's|MAP_ANONYMOUS|MAP_ANON|' \
-		${WRKSRC}/gst/cothreads.c
 
 post-configure:
 # remove version number postfix from library names
 	@${REINPLACE_CMD} -E -e 's|-release ${PORTVERSION}||' \
-		${WRKSRC}/gst/Makefile
+		${WRKSRC}/gst/Makefile ${WRKSRC}/libs/gst/control/Makefile
 
 post-install:
 # register plugins
