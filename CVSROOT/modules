@@ -3884,6 +3884,7 @@ ja-ryaku-fpw	ports/japanese/ryaku-fpw
 ja-samba	ports/japanese/samba
 ja-sazanami-ttf	ports/japanese/sazanami-ttf
 ja-scim-tables	ports/japanese/scim-tables
+ja-scim-uim	ports/japanese/scim-uim
 ja-sed		ports/japanese/sed
 ja-seizedesktop	ports/japanese/seizedesktop
 ja-shinonome	ports/japanese/shinonome
