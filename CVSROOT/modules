@@ -3589,6 +3589,7 @@ libc_db		src/lib/libc/db
 libc_gen	src/lib/libc/gen
 libc_gmon	src/lib/libc/gmon
 libc_i386	src/lib/libc/i386
+libc_include	src/lib/libc/include
 libc_locale	src/lib/libc/locale
 libc_net	src/lib/libc/net
 libc_nls	src/lib/libc/nls
