@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gl2ps
-PORTVERSION=	1.2.2
+PORTVERSION=	1.2.3
 CATEGORIES=	print graphics
 MASTER_SITES=	http://www.geuz.org/gl2ps/src/
 EXTRACT_SUFX=	.tgz
