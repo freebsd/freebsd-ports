@@ -6,17 +6,18 @@
 #
 
 PORTNAME=	vtk
-PORTVERSION=	3.1.2
+PORTVERSION=	3.2
 CATEGORIES=	math
-MASTER_SITES=	ftp://public.kitware.com/pub/vtk/
-DISTNAME=	vtk312Unix
+MASTER_SITES=	ftp://public.kitware.com/pub/vtk/vtk${PORTVERSION}/
+DISTNAME=	vtk32-src-unix
+EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
 
-LIB_DEPENDS=	tk82.1:${PORTSDIR}/x11-toolkits/tk82
+LIB_DEPENDS=	tk83.1:${PORTSDIR}/x11-toolkits/tk83
 
 USE_MESA=	yes
-WRKSRC=		${WRKDIR}/vtk31
+WRKSRC=		${WRKDIR}/vtk${PORTVERSION}
 INSTALLS_SHLIB=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-mesa --with-shared --with-tcl --with-bsdmake
@@ -25,8 +26,7 @@ CONFIGURE_ARGS+=	--with-contrib --with-tkwidget
 # Support for Python is compiled in by default.
 .if !defined(WITHOUT_PYTHON)
 CONFIGURE_ARGS+=	--with-python
-BUILD_DEPENDS+=	python:${PORTSDIR}/lang/python
-RUN_DEPENDS+=	python:${PORTSDIR}/lang/python
+USE_PYTHON=	yes
 .endif
 
 .if defined(WITH_PATENTED)
@@ -34,10 +34,14 @@ CONFIGURE_ARGS+=	--with-patented
 PLIST=		${PKGDIR}/pkg-plist.with_patented
 .endif
 
+post-patch:
+	${PERL} -pi -e "s|%%PYTHON_INCLUDEDIR%%|${PYTHON_INCLUDEDIR}|g" \
+		${WRKSRC}/user.make
+
 post-install:
 .if !defined(WITHOUT_PYTHON)
-	${PREFIX}/bin/python  -c "import compileall; compileall.compile_dir( '${PREFIX}/lib/vtk/python' );"
-	${PREFIX}/bin/python -Oc "import compileall; compileall.compile_dir( '${PREFIX}/lib/vtk/python' );"
+	${PYTHON_CMD}  -c "import compileall; compileall.compile_dir( '${PREFIX}/lib/vtk/python' );"
+	${PYTHON_CMD} -Oc "import compileall; compileall.compile_dir( '${PREFIX}/lib/vtk/python' );"
 .endif
 
 .include <bsd.port.mk>

@@ -1,16 +1,16 @@
 bin/vtk
 lib/libVTKCommon.so
-lib/libVTKCommonTcl.so
 lib/libVTKCommonPython.so
-lib/libVTKGraphics.so
-lib/libVTKGraphicsTcl.so
-lib/libVTKGraphicsPython.so
-lib/libVTKImaging.so
-lib/libVTKImagingTcl.so
-lib/libVTKImagingPython.so
+lib/libVTKCommonTcl.so
 lib/libVTKContrib.so
-lib/libVTKContribTcl.so
 lib/libVTKContribPython.so
+lib/libVTKContribTcl.so
+lib/libVTKGraphics.so
+lib/libVTKGraphicsPython.so
+lib/libVTKGraphicsTcl.so
+lib/libVTKImaging.so
+lib/libVTKImagingPython.so
+lib/libVTKImagingTcl.so
 lib/vtk/python/VTK.py
 lib/vtk/python/VTK.pyc
 lib/vtk/python/VTK.pyo
@@ -50,9 +50,12 @@ lib/vtk/python/vtkImageWindowWidget.pyo
 lib/vtk/python/vtkRenderWidget.py
 lib/vtk/python/vtkRenderWidget.pyc
 lib/vtk/python/vtkRenderWidget.pyo
-lib/vtk/python/vtkpython.so
 lib/vtk/python/vtkTkImageViewerWidget
 lib/vtk/python/vtkTkImageWindowWidget
 lib/vtk/python/vtkTkRenderWidget
+lib/vtk/python/vtkpython.so
+lib/vtkTkImageViewerWidget
+lib/vtkTkImageWindowWidget
+lib/vtkTkRenderWidget
 @dirrm lib/vtk/python
 @dirrm lib/vtk
