@@ -1328,6 +1328,7 @@ devel-replay	ports/devel/replay
 devhelp		ports/devel/devhelp
 devtodo		ports/devel/devtodo
 dfm		ports/x11-fm/dfm
+dft++		ports/science/dft++
 dgd		ports/net/dgd
 dgd-lpmud	ports/net/dgd-lpmud
 dgd-net		ports/net/dgd-net
