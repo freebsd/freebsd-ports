@@ -1,6 +1,6 @@
 bin/ocamlweb
 share/texmf/tex/latex/misc/ocamlweb.sty
-%%PORTDOCS%%share/doc/ocamlweb/ocamlweb-1.32-man.ps.gz
+%%PORTDOCS%%share/doc/ocamlweb/ocamlweb-%%PORTVERSION%%-man.ps.gz
 %%PORTDOCS%%@dirrm share/doc/ocamlweb
 @exec %D/bin/mktexlsr
 @unexec %D/bin/mktexlsr

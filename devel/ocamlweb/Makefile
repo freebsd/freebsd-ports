@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ocamlweb
-PORTVERSION=	1.32
+PORTVERSION=	1.34
 CATEGORIES=	devel
 MASTER_SITES=	http://www.lri.fr/~filliatr/ftp/ocamlweb/
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${DOCFILES}
@@ -22,6 +22,7 @@ GNU_CONFIGURE= yes
 
 .if !defined(NOPORTDOCS)
 DOCFILES=	${PORTNAME}-${PORTVERSION}-man.ps.gz
+PLIST_SUB+=	PORTVERSION=${PORTVERSION}
 .endif
 
 MAN1=		ocamlweb.1
