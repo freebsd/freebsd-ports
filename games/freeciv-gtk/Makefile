@@ -7,6 +7,6 @@
 
 MASTERDIR=	${.CURDIR}/../freeciv
 
-USE_GTK=	yes
+WITH_GTK=	yes
 
 .include "${MASTERDIR}/Makefile"
