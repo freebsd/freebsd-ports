@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	libtabe
-PORTVERSION=	0.1.2
+PORTVERSION=	0.1.4
 CATEGORIES=	chinese
 MASTER_SITES=	ftp://xcin.linux.org.tw/pub/xcin/libtabe/devel/
-DISTNAME=	libtabe-0.1-2
+DISTNAME=	libtabe-0.1-4
 
 MAINTAINER=	keith@freebsd.sinica.edu.tw
 
@@ -30,12 +30,14 @@ CONFIGURE_ARGS=	--prefix=${PREFIX} \
 post-install:
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${PREFIX}/share/doc/tabe
-	${INSTALL_DATA} ${WRKSRC}/src/tsi-src/README ${PREFIX}/share/doc/tabe
+	${INSTALL_DATA} ${WRKSRC}/src/tsi-src/README ${PREFIX}/share/doc/tabe/README.tsi
+	${INSTALL_DATA} ${WRKSRC}/src/supports/bims/README ${PREFIX}/share/doc/tabe/README.bims
 .for DOC in BoPoMoFo.shtml Changes Changes.pre-0.1 TODO ZuYinCode.txt \
 		et26.txt libtabe.sgml
 	${INSTALL_DATA} ${WRKSRC}/doc/${DOC} ${PREFIX}/share/doc/tabe
 .endfor
 .endif
+	${TOUCH} ${PREFIX}/share/tabe/libtabe-0.1-4
 .if ${PORTOBJFORMAT} == "elf"
 	${RM} -f ${PREFIX}/lib/libbims.so ${PREFIX}/lib/libbims.so.0
 	${MV} ${PREFIX}/lib/libbims.so.0.1 ${PREFIX}/lib/libbims.so.0

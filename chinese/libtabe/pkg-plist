@@ -15,11 +15,13 @@ lib/libtabe.so.0.1
 share/doc/tabe/BoPoMoFo.shtml
 share/doc/tabe/Changes
 share/doc/tabe/Changes.pre-0.1
-share/doc/tabe/README
+share/doc/tabe/README.bims
+share/doc/tabe/README.tsi
 share/doc/tabe/TODO
 share/doc/tabe/ZuYinCode.txt
 share/doc/tabe/et26.txt
 share/doc/tabe/libtabe.sgml
+share/tabe/libtabe-0.1-4
 share/tabe/tsiyin/tsi.db
 share/tabe/tsiyin/yin.db
 @dirrm include/tabe
