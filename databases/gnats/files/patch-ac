@@ -1,0 +1,10 @@
+--- gnats/getdate.y.orig	Thu Nov  5 21:54:10 1998
++++ gnats/getdate.y	Sun Sep 26 08:40:31 1999
+@@ -483,6 +483,7 @@
+     { "sst",	tDAYZONE,  -HOUR (1) },	/* Swedish Summer */
+     { "fwt",	tZONE,     -HOUR (1) },	/* French Winter */
+     { "fst",	tDAYZONE,  -HOUR (1) },	/* French Summer */
++    { "eest",	tZONE,     -HOUR (2) },	/* Eastern European Standard Time */
+     { "eet",	tZONE,     -HOUR (2) },	/* Eastern Europe, USSR Zone 1 */
+     { "bt",	tZONE,     -HOUR (3) },	/* Baghdad, USSR Zone 2 */
+ #if 0
