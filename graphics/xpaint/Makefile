@@ -8,7 +8,7 @@
 PORTNAME=	xpaint
 PORTVERSION=	2.6.2
 CATEGORIES=	graphics
-MASTER_SITES=	http://home.worldonline.dk/~torsten/xpaint/ \
+MASTER_SITES=	http://home.worldonline.dk/torsten/xpaint/ \
 		ftp://ftp.win.ne.jp/pub/graphics/
 
 MAINTAINER=	ports@FreeBSD.org
