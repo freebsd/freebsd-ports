@@ -6,11 +6,12 @@
 #
 
 PORTNAME=	shorten
-PORTVERSION=	3.5.0
+PORTVERSION=	3.5.1
 CATEGORIES=	audio archivers
 MASTER_SITES=	http://shnutils.freeshell.org/shorten/source/
 
 MAINTAINER=	sec@42.org
+COMMENT=	Fast and optionally lossless compression for waveform files
 
 RESTRICTED=	"May not be sold, may not be used commercially."
 
