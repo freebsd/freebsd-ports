@@ -16,6 +16,6 @@
 %%PORTDOCS%%@dirrm share/doc/amavisd-new
 etc/amavisd.conf-dist
 etc/rc.d/amavisd.sh
-sbin/amavis
-sbin/amavis-milter
+%%AMAVIS_NOMILTER%%sbin/amavis
+%%AMAVIS_NOMILTER%%sbin/amavis-milter
 sbin/amavisd

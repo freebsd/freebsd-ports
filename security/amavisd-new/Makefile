@@ -7,7 +7,7 @@
 # Based on amavisd ports makefile.
 
 PORTNAME=	amavisd-new
-PORTVERSION=	20021227.p1
+PORTVERSION=	20021227.p2
 CATEGORIES=	security
 MASTER_SITES=	http://www.ijs.si/software/amavisd/
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/.p/-p/}
@@ -45,10 +45,22 @@ AMAVISDIR?=	/var/amavis
 AMAVISQUARANTINE?=	/var/virusmails
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:C/\.p.+//}
+
+.if !exists(/usr/lib/libmilter.so) && !exists(${PREFIX}/lib/libmilter.so)
+AMAVIS_NOMILTER="@comment "
+.endif
+
+PLIST_SUB+=	AMAVIS_NOMILTER=${AMAVIS_NOMILTER}
+
+.if defined(AMAVIS_NOMILTER)
+do-build:
+	@${ECHO} libmilter not available, not building amavis-milter and amavis
+.else
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-user=${AMAVISUSER} --with-runtime-dir=${AMAVISDIR}
 CONFIGURE_WRKSRC=	${WRKSRC}/helper-progs
 BUILD_WRKSRC=	${WRKSRC}/helper-progs
+.endif
 
 pre-build:
 	for file in amavisd.sh INSTALL DEINSTALL MESSAGE; do \
@@ -70,8 +82,10 @@ pre-install:
 	@${SH} ${PKGINSTALL} ${DISTNAME} PRE-INSTALL
 
 do-install:
+.if !defined(AMAVIS_NOMILTER)
 	${INSTALL_PROGRAM} ${WRKSRC}/helper-progs/amavis ${PREFIX}/sbin
 	${INSTALL_PROGRAM} ${WRKSRC}/helper-progs/amavis-milter ${PREFIX}/sbin
+.endif
 	${INSTALL_SCRIPT} ${WRKSRC}/amavisd ${PREFIX}/sbin
 	${INSTALL_SCRIPT} ${WRKDIR}/amavisd.conf ${PREFIX}/etc/amavisd.conf-dist
 	${INSTALL_SCRIPT} ${WRKDIR}/amavisd.sh ${PREFIX}/etc/rc.d
