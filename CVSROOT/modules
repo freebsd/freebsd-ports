@@ -2046,6 +2046,7 @@ gmime		ports/mail/gmime
 gmime2		ports/mail/gmime2
 gmixer		ports/audio/gmixer
 gmrun		ports/x11/gmrun
+gmsh		ports/cad/gmsh
 gmt		ports/graphics/gmt
 gmysql		ports/databases/gmysql
 gn		ports/www/gn
