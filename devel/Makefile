@@ -247,6 +247,7 @@
     SUBDIR += p5-Term-ANSIColor
     SUBDIR += p5-Term-Query
     SUBDIR += p5-Term-ReadKey
+    SUBDIR += p5-Term-Size
     SUBDIR += p5-Tie-DB_FileLock
     SUBDIR += p5-Time
     SUBDIR += p5-Time-HiRes
