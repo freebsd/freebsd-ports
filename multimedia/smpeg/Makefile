@@ -21,8 +21,9 @@ LIB_DEPENDS=  	SDL-1.1.5:${PORTSDIR}/devel/sdl12
 
 SDL_CONFIG=	${LOCALBASE}/bin/sdl11-config
 
+WANT_GNOME=	yes
+USE_REINPLACE=	yes
 USE_GMAKE=	yes
-USE_GNOME=	gtk12
 USE_LIBTOOL=	yes
 INSTALLS_SHLIB=	yes
 CONFIGURE_ENV=	SDL_CONFIG="${SDL_CONFIG}" \
@@ -37,8 +38,16 @@ CONFIGURE_ARGS=	--disable-opengl-player \
 
 MAN1=		gtv.1 plaympeg.1
 
+.include <bsd.port.pre.mk>
+
+.if ${HAVE_GNOME:Mgtk12}!=""
+USE_GNOME+=	gtk12
+.else
+CONFIGURE_ARGS+=	--disable-gtk-player
+.endif
+
 post-configure:
-	@${PERL} -pi -e 's|^deplibs_check_method=.*|deplibs_check_method=pass_all|' \
+	@${REINPLACE_CMD} -e 's|^deplibs_check_method=.*|deplibs_check_method=pass_all|' \
 		${WRKSRC}/libtool
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
