@@ -3,7 +3,7 @@
 # Date created:         
 # Whom:                 erich@FreeBSD.org
 #
-# $Id: Makefile,v 1.11 1996/11/26 23:09:12 erich Exp $
+# $Id: Makefile,v 1.12 1996/11/27 12:04:32 asami Exp $
 #
 
 DISTNAME=	linux_lib-2.2
@@ -22,6 +22,6 @@ pre-install:
 	@[ -d ${PREFIX} ] || ${MKDIR} ${PREFIX}
 
 do-install:
-	@zcat ${DISTDIR}${DISTNAME}.tar.gz |(cd ${PREFIX}; pax -r)
+	@zcat ${DISTDIR}/${DISTNAME}.tar.gz |(cd ${PREFIX}; pax -r)
 
 .include <bsd.port.mk>
