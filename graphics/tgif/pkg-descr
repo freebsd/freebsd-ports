@@ -1,11 +1,19 @@
-Tgif 3.0-p17
+Tgif 4.0.2
 
-Tgif is an X-based interactive drawing tool that allows the user to draw
-and manipulate objects; as of version 2.16, it is also a "hyper-structured-
-graphics (or hyper-graphics) editor/browser on the World-Wide-Web".  Tgif
-drawings can be converted to a variety of formats, including GIF,
-encapsulated PostScript and XBM.  Tgif depends on the `netpbm' package,
-available from the `ports' collection.
+Tgif is an interactive drawing tool that allows the user to draw and
+manipulate objects in the X Window System. It's also a hyper-graphics (or
+hyper-structured-graphics) browser on the World-Wide-Web. Its hyper-text
+home page is http://bourbon.cs.umd.edu:8001/tgif/ and its hyper-graphics
+home page is http://bourbon.cs.umd.edu:8001/tgif/index.obj.
 
-Tgif was written and is maintained and enhanced by
-William Chia-Wei Cheng (william@cs.ucla.edu)
+Tgif drawings can be converted to a variety of formats, including GIF,
+encapsulated PostScript and XBM.
+
+Version 4 has a completely revamped 3-D user interface, as well as a host
+of new features.
+
+Tgif depends on the `netpbm' package, available from the `ports'
+collection.
+
+Tgif is written, maintained and enhanced by
+William Chia-Wei Cheng (william@cs.umd.edu)

@@ -1,0 +1,19 @@
+*** tgif.man.orig	Fri Jan  8 18:54:23 1999
+--- tgif.man	Fri Jan  8 18:54:36 1999
+***************
+*** 8,14 ****
+  .\"
+  .\"
+  .\"
+! .TH TGIF n "Version 4.0 Patchlevel 2 and Above" "Tgif"
+  .\"
+  .SH NAME
+  .\"
+--- 8,14 ----
+  .\"
+  .\"
+  .\"
+! .TH TGIF 1L "Version 4.0 Patchlevel 2 and Above" "Tgif"
+  .\"
+  .SH NAME
+  .\"

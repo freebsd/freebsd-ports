@@ -1,40 +1,19 @@
-*** Imakefile.orig	Thu Mar 13 12:19:25 1997
---- Imakefile	Thu Mar 13 12:20:39 1997
+*** xprtfltr.c.orig	Fri Jan  8 17:58:37 1999
+--- xprtfltr.c	Fri Jan  8 17:58:50 1999
 ***************
-*** 48,56 ****
-  PROGRAMS	= tgif prtgif XCOMM frontend11.o testdrive
-  XCOMM CDEBUGFLAGS= -g
-  XCOMM INSTPGMFLAGS= -s
-! XCOMM BINDIR	= /u/halfmoon/bin
-! XCOMM MANPATH	= /u/halfmoon/man
-! XCOMM TGIFDIR	= /u/halfmoon/lib/X11/tgif
-  TGIFDIR		= $(LIBDIR)/tgif
-  DEFINES		= -DTGIF_PATH=\"$(TGIFDIR)\" -DPSFILE_MOD=0664 \@@\
-                    -DEPSF_FILE_EXT=\"eps\" -DPS_FILE_EXT=\"ps\" \@@\
---- 48,56 ----
-  PROGRAMS	= tgif prtgif XCOMM frontend11.o testdrive
-  XCOMM CDEBUGFLAGS= -g
-  XCOMM INSTPGMFLAGS= -s
-! XCOMM BINDIR	= $(X11BASE)
-! XCOMM MANPATH	= $(X11BASE)
-! XCOMM TGIFDIR	= $(X11BASE)
-  TGIFDIR		= $(LIBDIR)/tgif
-  DEFINES		= -DTGIF_PATH=\"$(TGIFDIR)\" -DPSFILE_MOD=0664 \@@\
-                    -DEPSF_FILE_EXT=\"eps\" -DPS_FILE_EXT=\"ps\" \@@\
-***************
-*** 73,79 ****
-  XCOMM    FreeBSD: 
-  XCOMM    SCO:     -D_NO_EXTERN -DPRINT_CMD=\""lp -o raw -o nobanner"\"
-  
-! LOCAL_LIBRARIES	= $(XLIB)
-  XCOMM LOCAL_LIBRARIES	= $(XMULIB) $(XTOOLLIB) $(XLIB)
-  DEPLIBS		= $(DEPXLIB)
-  SYS_LIBRARIES	= -lm
---- 73,79 ----
-  XCOMM    FreeBSD: 
-  XCOMM    SCO:     -D_NO_EXTERN -DPRINT_CMD=\""lp -o raw -o nobanner"\"
-  
-! LOCAL_LIBRARIES	= $(XLIB) -lcompat
-  XCOMM LOCAL_LIBRARIES	= $(XMULIB) $(XTOOLLIB) $(XLIB)
-  DEPLIBS		= $(DEPXLIB)
-  SYS_LIBRARIES	= -lm
+*** 187,193 ****
+        return FALSE;
+     }
+     pTgEFInfo->pSharedLibHandle = OPEN_DL(pszSharedLibPath,
+!          RTLD_NOW|RTLD_GLOBAL);
+     if (pTgEFInfo->pSharedLibHandle == NULL) {
+        sprintf(gszMsgBox, "Fail to load shared lib '%s'.", pszSharedLibPath);
+        MsgBox(gszMsgBox, TOOL_NAME, INFO_MB);
+--- 187,193 ----
+        return FALSE;
+     }
+     pTgEFInfo->pSharedLibHandle = OPEN_DL(pszSharedLibPath,
+!          RTLD_NOW);
+     if (pTgEFInfo->pSharedLibHandle == NULL) {
+        sprintf(gszMsgBox, "Fail to load shared lib '%s'.", pszSharedLibPath);
+        MsgBox(gszMsgBox, TOOL_NAME, INFO_MB);
