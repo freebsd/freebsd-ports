@@ -6,7 +6,7 @@
 #
 
 PORTNAME=		xchat
-PORTVERSION=		1.5.2
+PORTVERSION=		1.5.3
 CATEGORIES=		irc gnome
 MASTER_SITES=		http://xchat.org/files/source/1.5/ \
 			http://xchat.linuxpower.org/files/source/1.5/
@@ -22,8 +22,13 @@ LIB_DEPENDS=		gtk12.2:${PORTSDIR}/x11-toolkits/gtk12 \
 LIB_DEPENDS+=		gnome.4:${PORTSDIR}/x11/gnomelibs
 .endif
 
+.if defined(WITH_GDK_PIXBUF)
+LIB_DEPENDS+=		gdk_pixbuf.2:${PORTSDIR}/graphics/gdk-pixbuf
+.endif
+
 GTK_CONFIG?=		${X11BASE}/bin/gtk12-config
 GLIB_CONFIG?=		${LOCALBASE}/bin/glib12-config
+GDK_PIXBUF_CONFIG?=	${X11BASE}/bin/gdk-pixbuf-config
 
 USE_X_PREFIX=		yes
 USE_BZIP2=		yes
@@ -47,8 +52,15 @@ CONFIGURE_ARGS+=	--disable-panel
 CONFIGURE_ARGS+=	--disable-gnome
 .endif
 
+.if defined(WITH_GDK_PIXBUF)
+CONFIGURE_ARGS+=	--enable-gdk-pixbuf
+.else
+CONFIGURE_ARGS+=	--disable-gdk-pixbuf
+.endif
+
 CONFIGURE_ENV=		GTK_CONFIG="${GTK_CONFIG}" \
-			GLIB_CONFIG="${GLIB_CONFIG}"
+			GLIB_CONFIG="${GLIB_CONFIG}" \
+			GDK_PIXBUF_CONFIG="${GDK_PIXBUF_CONFIG}"
 
 .if defined(WITH_GNOME)
 PLIST=			${PKGDIR}/PLIST.gnome
