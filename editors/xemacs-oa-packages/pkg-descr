@@ -2,8 +2,10 @@ Starting with release 21, xemacs does not come with lisp packages
 any more. Instead, they are distributed separately from the main
 sources.
 
-This port attempts to provide a subset of the available packages that
-should be useful for most users.
+    This port provides a set of the oa category packages provided by
+xemacs.org(www.xemacs.org) except for basic and mule-basic packages(those are
+editors/xemacs-packages and editors/xemacs-mule-basic-packages ports
+respectively).
 
-To install additional packages, use the "Manage Packages" menu
-in the "Options" menu of your xemacs' menubar.
+To install other categories' packages, use editors/xemacs-*-packages
+ports/packages.
