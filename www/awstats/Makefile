@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	awstats
-PORTVERSION=	6.0
-PORTREVISION=	1
+PORTVERSION=	6.1
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -16,12 +15,16 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	webmaster@lightningfire.net
 COMMENT=	Free real-time logfile analyzer to get advanced web statistics
 
+RUN_DEPENDS=	${SITE_PERL}/Net/XWhois.pm:${PORTSDIR}/net/p5-Net-XWhois
+
 NO_BUILD=	yes
 USE_PERL5_RUN=	yes
-RUN_DEPENDS+=	${SITE_PERL}/Net/XWhois.pm:${PORTSDIR}/net/p5-Net-XWhois
 
 do-install:
 	@${MKDIR} ${PREFIX}/www/cgi-bin/lang
+	@${MKDIR} ${PREFIX}/www/cgi-bin/lang/tooltips_f
+	@${MKDIR} ${PREFIX}/www/cgi-bin/lang/tooltips_m
+	@${MKDIR} ${PREFIX}/www/cgi-bin/lang/tooltips_w
 	@${MKDIR} ${PREFIX}/www/cgi-bin/lib
 	@${MKDIR} ${PREFIX}/www/cgi-bin/plugins
 	@${MKDIR} ${PREFIX}/www/cgi-bin/plugins/example
@@ -41,20 +44,23 @@ do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/tools/logresolvemerge.pl ${PREFIX}/bin/awstats_logresolvemerge.pl
 	${INSTALL_SCRIPT} ${WRKSRC}/tools/maillogconvert.pl ${PREFIX}/bin/awstats_maillogconvert.pl
 	${INSTALL_SCRIPT} ${WRKSRC}/tools/urlaliasbuilder.pl ${PREFIX}/bin/awstats_urlaliasbuilder.pl
-	${INSTALL_SCRIPT} ${WRKSRC}/tools/webmin/awstats-1.21.wbm ${PREFIX}/bin/awstats-1.21.wbm
+	${INSTALL_SCRIPT} ${WRKSRC}/tools/webmin/awstats-1.3.wbm ${PREFIX}/bin/awstats-1.3.wbm
 	${INSTALL_SCRIPT} ${WRKSRC}/wwwroot/cgi-bin/awredir.pl ${PREFIX}/www/cgi-bin
 	${INSTALL_DATA} ${WRKSRC}/wwwroot/cgi-bin/awstats.model.conf ${PREFIX}/www/cgi-bin
 	${INSTALL_SCRIPT} ${WRKSRC}/wwwroot/cgi-bin/awstats.pl ${PREFIX}/www/cgi-bin
-	${INSTALL_DATA} ${WRKSRC}/wwwroot/cgi-bin/lang/* ${PREFIX}/www/cgi-bin/lang
+	${INSTALL_DATA} ${WRKSRC}/wwwroot/cgi-bin/lang/tooltips_f/*.txt ${PREFIX}/www/cgi-bin/lang/tooltips_f
+	${INSTALL_DATA} ${WRKSRC}/wwwroot/cgi-bin/lang/tooltips_m/*.txt ${PREFIX}/www/cgi-bin/lang/tooltips_m
+	${INSTALL_DATA} ${WRKSRC}/wwwroot/cgi-bin/lang/tooltips_w/*.txt ${PREFIX}/www/cgi-bin/lang/tooltips_w
+	${INSTALL_DATA} ${WRKSRC}/wwwroot/cgi-bin/lang/*.txt ${PREFIX}/www/cgi-bin/lang
 	${INSTALL_DATA} ${WRKSRC}/wwwroot/cgi-bin/lib/* ${PREFIX}/www/cgi-bin/lib
 	${INSTALL_DATA} ${WRKSRC}/wwwroot/cgi-bin/plugins/decodeutfkeys.pm ${PREFIX}/www/cgi-bin/plugins
 	${INSTALL_DATA} ${WRKSRC}/wwwroot/cgi-bin/plugins/geoip.pm ${PREFIX}/www/cgi-bin/plugins
 	${INSTALL_DATA} ${WRKSRC}/wwwroot/cgi-bin/plugins/geoipfree.pm ${PREFIX}/www/cgi-bin/plugins
 	${INSTALL_DATA} ${WRKSRC}/wwwroot/cgi-bin/plugins/graphapplet.pm ${PREFIX}/www/cgi-bin/plugins
 	${INSTALL_DATA} ${WRKSRC}/wwwroot/cgi-bin/plugins/hashfiles.pm ${PREFIX}/www/cgi-bin/plugins
-	${INSTALL_DATA}	${WRKSRC}/wwwroot/cgi-bin/plugins/hostinfo.pm ${PREFIX}/www/cgi-bin/plugins
+	${INSTALL_DATA} ${WRKSRC}/wwwroot/cgi-bin/plugins/hostinfo.pm ${PREFIX}/www/cgi-bin/plugins
 	${INSTALL_DATA} ${WRKSRC}/wwwroot/cgi-bin/plugins/ipv6.pm ${PREFIX}/www/cgi-bin/plugins
-	${INSTALL_DATA}	${WRKSRC}/wwwroot/cgi-bin/plugins/rawlog.pm ${PREFIX}/www/cgi-bin/plugins
+	${INSTALL_DATA} ${WRKSRC}/wwwroot/cgi-bin/plugins/rawlog.pm ${PREFIX}/www/cgi-bin/plugins
 	${INSTALL_DATA} ${WRKSRC}/wwwroot/cgi-bin/plugins/timehires.pm ${PREFIX}/www/cgi-bin/plugins
 	${INSTALL_DATA} ${WRKSRC}/wwwroot/cgi-bin/plugins/timezone.pm ${PREFIX}/www/cgi-bin/plugins
 	${INSTALL_DATA} ${WRKSRC}/wwwroot/cgi-bin/plugins/tooltips.pm ${PREFIX}/www/cgi-bin/plugins
