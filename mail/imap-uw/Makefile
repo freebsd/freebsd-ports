@@ -3,7 +3,7 @@
 # Date created:		9 Jan 1997
 # Whom:			pst
 #
-# $Id: Makefile,v 1.10 1997/12/09 07:12:44 asami Exp $
+# $Id: Makefile,v 1.11 1997/12/31 16:50:59 pst Exp $
 #
 
 DISTNAME=	imap-4.1.BETA
@@ -12,7 +12,7 @@ CATEGORIES=	mail
 MASTER_SITES=	ftp://ftp.cac.washington.edu/imap/
 EXTRACT_SUFX=	.tar.Z
 
-MAINTAINER=	ports@freebsd.org
+MAINTAINER=	imap-uw@freebsd.ady.ro
 
 ALL_TARGET=	bsf
 MAN8=		ipopd.8 imapd.8
