@@ -1,8 +1,6 @@
-@cwd ${X11BASE}
-@mode 644
 lib/libXaw3d.a
-lib/libXaw3d.so.6.0
-@exec ldconfig -m %B
+lib/libXaw3d.so.6.1
+@exec /sbin/ldconfig -m %B
 include/X11/Xaw3d/AllWidgets.h
 include/X11/Xaw3d/AsciiSink.h
 include/X11/Xaw3d/AsciiSinkP.h
