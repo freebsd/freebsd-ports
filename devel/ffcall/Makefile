@@ -18,9 +18,17 @@ COMMENT=	Foreign function call libraries
 
 USE_GMAKE=	yes
 USE_LIBTOOL_VER=	13
-ONLY_FOR_ARCHS=	i386 alpha ia64
+NOT_FOR_ARCHS=	sparc64
 
 MAN3=		avcall.3 callback.3 trampoline.3 trampoline_r.3 vacall.3
 MANCOMPRESSED=	no
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == "amd64"
+CONFIGURE_TARGET=	x86_64-portbld-freebsd${OSREL}
+.else
+CONFIGURE_TARGET=	${ARCH}-portbld-freebsd${OSREL}
+.endif
+
+.include <bsd.port.post.mk>
