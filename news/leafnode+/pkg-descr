@@ -1,15 +1,13 @@
 Leafnode+ is a simple NNTP server designed for small sites, derived from
 the Leafnode package.
 
-Leafnode+ only downloads those newsgroups which have been recently
-accessed by users, reducing the amount of bandwidth required
-considerably.
+Leafnode+ only downloads the contents of newsgroups that users have
+accessed recently, considerably reducing bandwidth requirements.
 
-Leafnode+ contains several enhancements from the original Leafnode.
-
-You can setenv `LEAFNODE_SETUP_WRKDIRS' variable to `yes' before
-you make install or pkg_add and needed working directiries
-(typically PREFIX/lib/leafnode and /var/spool/leafnode)
-are setup automatically.
+When installing Leafnode+ for the first time, set the
+LEAFNODE_SETUP_WRKDIRS environment variable to "yes" before running make
+install or pkg_add.  This creates the configuration files and a working
+directory required to run Leafnode+, typically PREFIX/lib/leafnode and
+/var/spool/leafnode.
 
 WWW: http://www.io.com/~kazushi/leafnode+/
