@@ -106,6 +106,7 @@ lib/gnumeric/%%VERSION%%/plugins/xml_sax/plugin.xml
 lib/gnumeric/%%VERSION%%/plugins/xml_sax/xml_sax.so
 libdata/bonobo/servers/GNOME_Gnumeric.server
 share/gnome/applications/gnumeric.desktop
+@exec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
 share/gnome/gnumeric/%%VERSION%%/GNOME_Gnumeric-gtk.xml
 share/gnome/gnumeric/%%VERSION%%/autoformat-templates/3D/.category
 share/gnome/gnumeric/%%VERSION%%/autoformat-templates/3D/autoformat.3D.button.xml
@@ -827,3 +828,4 @@ share/locale/zh_TW/LC_MESSAGES/gnumeric.mo
 @dirrm lib/gnumeric/%%VERSION%%/plugins
 @dirrm lib/gnumeric/%%VERSION%%
 @dirrm lib/gnumeric
+@unexec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
