@@ -11,7 +11,9 @@ CATEGORIES=	security ipv6
 MASTER_SITES=	ftp://ftp.lysator.liu.se/pub/ident/servers/ \
 		ftp://ftp.fu-berlin.de/unix/security/ident/servers/
 
-PATCH_SITES=	http://www.imasy.or.jp/~ume/ipv6/ ${MASTER_SITE_LOCAL}
+PATCH_SITES=	http://www.imasy.or.jp/~ume/ipv6/ \
+		http://home.jp.FreeBSD.org/~ume/ipv6/ \
+		${MASTER_SITE_LOCAL}
 PATCH_SITE_SUBDIR=	dinoex
 PATCHFILES=	pidentd-2.8.5-ipv6-1.5.diff.gz
 PATCH_DIST_STRIP=	-p2
