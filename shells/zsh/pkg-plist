@@ -5,4 +5,3 @@ bin/zsh-%%ZSH_VERSION%%
 @unexec install-info --delete %D/info/zsh.info %D/info/dir
 info/zsh.info
 @exec install-info %D/info/zsh.info %D/info/dir
-info/dir
