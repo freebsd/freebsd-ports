@@ -6,13 +6,13 @@
 #
 
 PORTNAME=	Net-CIDR
-PORTVERSION=	0.08
+PORTVERSION=	0.09
 CATEGORIES=	net perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Net
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	spadger@best.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Perl module to manipulate IPv4/IPv6 netblocks in CIDR notation
 
 PERL_CONFIGURE=	yes
