@@ -29,8 +29,8 @@ EXAMPLES_EN=	../../examples/test1.rb
 DOCS_EN=	doc/*
 
 do-install:
-.if !defined(NOPORTDOCS)
 	${INSTALL_DATA} ${WRKSRC}/*.rb ${RUBY_SITELIBDIR}/dbi/
+.if !defined(NOPORTDOCS)
 	${MKDIR} ${RUBY_EXAMPLESDIR}/dbi/${PORTNAME}
 .for f in ${EXAMPLES_EN}
 	${INSTALL_DATA} ${WRKSRC}/${f} ${RUBY_EXAMPLESDIR}/dbi/${PORTNAME}/
