@@ -1,0 +1,22 @@
+--- Makefile.orig	Sun Sep  7 23:24:33 2003
++++ Makefile	Fri Jan 16 00:39:58 2004
+@@ -51,7 +51,7 @@
+ 	mkdir -p doc
+ 	$(HADDOCK) -h -o doc $(HS_PPS)
+ 
+-install: libHSsql.a $(HI_SRC) docs
++install: libHSsql.a $(HI_SRC)
+ 	$(INSTALL) libHSsql.a $(prefix)/libHSsql.a
+ 	$(INSTALL) -d $(prefix)/imports/Database
+ 	for i in $(HI_SRC); do \
+@@ -61,8 +61,8 @@
+ 	rm -f $(prefix)/HSsql.o
+ 	$(GHC_PKG) -u -g -i hsql.pkg
+ 	if test -f doc/index.html; then  \
+-	   $(INSTALL) -d $(prefix)/doc/html/hsql; \
+-	   $(INSTALL) -c doc/* $(prefix)/doc/html/hsql; \
++	   $(INSTALL) -d ${DOCSDIR}; \
++	   $(INSTALL) -c doc/* ${DOCSDIR}; \
+ 	fi
+ 
+ ODBC/HSQL.hs : ODBC/HSQLStructs.h

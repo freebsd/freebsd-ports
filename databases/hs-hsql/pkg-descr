@@ -1,0 +1,8 @@
+HSQL is intended to give access to PostgresSQL, MySQL and ODBC databases. The
+HSQL is a part of HToolkit project but it is also distributed as separate
+bundle.
+
+WWW: http://htoolkit.sourceforge.net/
+
+-- Oliver Braun
+obraun@FreeBSD.org
