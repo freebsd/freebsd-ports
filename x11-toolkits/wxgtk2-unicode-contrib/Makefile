@@ -11,6 +11,6 @@ MAINTAINER=	fjoe@FreeBSD.org
 COMMENT=	The wxWindows GUI toolkit contributed libraries (Unicode version)
 
 WXGTK_FLAVOR=	gtk2-unicode-contrib
-MASTERDIR=	${.CURDIR}/../wxgtk-devel
+MASTERDIR=	${.CURDIR}/../wxgtk
 
 .include "${MASTERDIR}/Makefile"
