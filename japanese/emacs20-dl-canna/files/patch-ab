@@ -1,0 +1,10 @@
+--- configure.orig	Wed Mar  3 04:11:42 1999
++++ configure	Tue Mar 16 15:06:02 1999
+@@ -1,5 +1,5 @@
+ #!/bin/sh
+ 
+-EMACS=emacs
++[ "X${EMACS}" = "X" ] && EMACS=emacs
+ 
+-eval $EMACS -batch -q -no-site-file -l CANNA-CONFIG -f config-canna
++eval $EMACS -batch -q -no-site-file -l CANNA-CONFIG -f config-canna $*

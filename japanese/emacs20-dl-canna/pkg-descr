@@ -27,6 +27,15 @@ To use Canna, put in your $HOME/.emacs as follows:
 	(load "canna")
 	(canna)
 
+This input-method toggle key-binding is C-o.
+
+or if you want to use canna-leim, as follows:
+
+	(require 'canna-leim)
+	(set-input-method "japanese-canna")
+
+This input-method toggle key-binding is C-\.
+
 And you must use emacs-dl-20.3 (not emacs-20.3!).
 
 This dynamic loading module sources and emacs20 dynamic loading patch
