@@ -6,43 +6,16 @@
 #
 
 PORTNAME=	big5con
-PORTVERSION=	0.92e
-PORTREVISION=	1
+PORTVERSION=	0.92h
 CATEGORIES=	chinese
-MASTER_SITES=	ftp://freebsd.csie.nctu.edu.tw/pub/taiwan/NTU/woju/source/ \
-		ftp://freebsd.csie.nctu.edu.tw/pub/taiwan/NTU/woju/binary/
-DISTFILES=	big5con-0.92e.tgz b5cbin-pa.tgz
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	statue@freebsd.sinica.edu.tw
 
 ONLY_FOR_ARCHS=	i386
-
-EXTRACT_ONLY=	${DISTNAME}.tgz
-USE_REINPLACE=	yes
-REINPLACE_ARGS=	# empty
-
-# With the help from pa@freebsd.ee.ntu.edu.tw
-# +0.92d use kc-fonts, whcih can be included in cdrom, instead of taipei-fonts.
-# Note: 0.92c is restricted due to the taipei-fonts-copyright.
-# 
-# 1999/02/12: 0.92d -> 0.92e
-# Fix some bugs
-# ftp://bsd.sinica.edu.tw/pub/FreeBSD/taiwan/users/woju/source/b5c-d2e.patch
-
-.include <bsd.port.pre.mk>
-post-patch:
-.if ${OSVERSION} > 500012
-.for i in include/ksymdef.h src/term.c src/vc.c src/vga.c
-	@${REINPLACE_CMD} 's,machine/console.h>,sys/consio.h>@#include <sys/kbio.h>@,' ${WRKSRC}/${i} | tr '@' '\n' > ${WRKSRC}/${i}.bak && \
-	${MV} ${WRKSRC}/${i}.bak ${WRKSRC}/${i}
-.endfor
-.endif
-pre-install:
-	@if [ ! -f ${PREFIX}/lib/fonts/kc16.smf ]; then \
-		tar xvfzp ${DISTDIR}/b5cbin-pa.tgz -C ${PREFIX}; \
-	fi
 
 post-install:
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
