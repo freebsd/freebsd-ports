@@ -1,0 +1,5 @@
+xcolorsel is a X-Utility based on this widget that allows you to display such
+files ( /usr/lib/X11/rgb.txt by default ) together with tiles showing how the
+color  looks on your screen.  Also a programmer may  (like with xfontsel) cut
+the color names/definitions in various  formats (Colorformats and formats for
+resourcefiles or C-sources) und paste them directly in his source codes.

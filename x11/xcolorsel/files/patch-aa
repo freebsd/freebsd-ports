@@ -1,0 +1,25 @@
+diff -ruN ./Imakefile ../xcolorsel/Imakefile
+--- ./Imakefile	Wed Dec 14 05:31:19 1994
++++ ../xcolorsel/Imakefile	Sat Dec 12 00:52:04 1998
+@@ -82,9 +82,9 @@
+ DependTarget()
+ 
+ appdef-c.h: Xcolorsel-color.ad
+-	app2head Xcolorsel-color.ad > appdef-c.h
++	./app2head Xcolorsel-color.ad > appdef-c.h
+ appdef.h: Xcolorsel.ad
+-	app2head Xcolorsel.ad > appdef.h
++	./app2head Xcolorsel.ad > appdef.h
+ purge:
+ 	$(RM) xcolorsel *.o appdef.h appdef-c.h Xcolorsel.help *.tar.Z Makefile Makefile.bak makefile *.tar *.tar.gz
+ Xcolorsel.help: xcolorsel.man
+diff -ruN ./Xcolorsel.ad ../xcolorsel/Xcolorsel.ad
+--- ./Xcolorsel.ad	Mon Nov 14 07:08:36 1994
++++ ../xcolorsel/Xcolorsel.ad	Sat Dec 12 00:52:04 1998
+@@ -71,3 +71,6 @@
+ 
+ ! You can set an explicit helpfile location here ("" switches this off)
+ !*.helpFile:	""
++
++! Set the location of the rgb.txt file for FreeBSD
++*.file: /usr/X11R6/lib/X11/rgb.txt
