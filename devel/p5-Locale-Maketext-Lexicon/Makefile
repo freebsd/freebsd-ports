@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Locale-Maketext-Lexicon
-PORTVERSION=	0.35
+PORTVERSION=	0.36
 CATEGORIES=	devel perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Locale
@@ -16,7 +16,6 @@ MAINTAINER=	mat@FreeBSD.org
 COMMENT=	Use other catalog formats in Locale::Maketext
 
 BUILD_DEPENDS=	${SITE_PERL}/Regexp/Common.pm:${PORTSDIR}/textproc/p5-Regexp-Common \
-		${SITE_PERL}/Test/More.pm:${PORTSDIR}/devel/p5-Test-Simple \
 		${SITE_PERL}/Pod/Usage.pm:${PORTSDIR}/textproc/p5-PodParser \
 		${SITE_PERL}/Locale/Maketext.pm:${PORTSDIR}/devel/p5-Locale-Maketext
 RUN_DEPENDS=	${BUILD_DEPENDS}
@@ -32,4 +31,12 @@ MAN3=		Locale::Maketext::Extract.3 \
 
 MAN1=		xgettext.pl.1
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} < 500600
+post-patch:
+	@${PERL} -pi -e '$$_ = "" if /no warnings/;' \
+          ${WRKSRC}/lib/Locale/Maketext/Lexicon.pm
+.endif
+
+.include <bsd.port.post.mk>
