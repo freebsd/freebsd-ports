@@ -7,7 +7,7 @@
 PORTNAME=	xquote
 PORTVERSION=	1.1
 CATEGORIES=	misc
-MASTER_SITES=	http://sunsite.auc.dk/xinvest/	\
+MASTER_SITES=	http://sunsite.dk/xinvest/	\
 		${MASTER_SITE_XCONTRIB}
 MASTER_SITE_SUBDIR= applications
 
