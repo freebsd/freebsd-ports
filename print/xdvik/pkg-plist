@@ -1,7 +1,5 @@
 bin/xdvi
 bin/gsftopk
-man/man1/gsftopk.1.gz
-man/man1/xdvi.1.gz
 share/texmf/dvips/render.ps
 share/doc/xdvi/ChangeLog
 share/doc/xdvi/README

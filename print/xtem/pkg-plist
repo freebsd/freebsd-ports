@@ -1,6 +1,5 @@
 bin/changecode
 bin/xtem
-man/man1/xtem.1.gz
 share/xtem/COPYING
 share/xtem/Changelog
 share/xtem/Installation.Reply

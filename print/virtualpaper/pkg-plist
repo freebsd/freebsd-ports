@@ -6,8 +6,4 @@ lib/m3/www/BuildLectern.1.html
 lib/m3/www/EditLectern.1.html
 lib/m3/www/Lectern.1.html
 lib/m3/www/LecternClient.1.html
-man/man1/BuildLectern.1.gz
-man/man1/EditLectern.1.gz
-man/man1/Lectern.1.gz
-man/man1/LecternClient.1.gz
 share/virtualpaper/COPYRIGHT
