@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	latex-pgf
-PORTVERSION=	0.50
+PORTVERSION=	0.60
 CATEGORIES=	print
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	latex-beamer
@@ -14,41 +14,29 @@ DISTNAME=	${PORTNAME:S/^latex-//}-${PORTVERSION}
 MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	A LaTeX package for TeX Portable Graphic Format
 
-BUILD_DEPENDS=	mktexlsr:${PORTSDIR}/print/teTeX
-RUN_DEPENDS=	latex:${PORTSDIR}/print/teTeX
+BUILD_DEPENDS=	mktexlsr:${PORTSDIR}/print/teTeX \
+		${TEXMFLOCAL_LSR}:${PORTSDIR}/print/tex-texmflocal
+RUN_DEPENDS=	latex:${PORTSDIR}/print/teTeX \
+		${TEXMFLOCAL_LSR}:${PORTSDIR}/print/tex-texmflocal
 
 NO_BUILD=	YES
-PLIST_SUB=	TEXMF=${TEXMF} MKTEXLSR=${MKTEXLSR}
-PLIST_SUB+=	CLASSDIR=${CLASSDIR}
+PLIST_SUB=	MKTEXLSR=${MKTEXLSR} CLASSDIR=${CLASSDIR}
 
-TEXMF=		share/texmf
+TEXMFLOCAL=	share/texmf-local
+TEXMFLOCAL_LSR=	${LOCALBASE}/${TEXMFLOCAL}/ls-R
 MKTEXLSR=	${LOCALBASE}/bin/mktexlsr
-CLASSDIR=	${TEXMF}/tex/latex/${PORTNAME:S/^latex-//}
+CLASSDIR=	${TEXMFLOCAL}/tex/latex/${PORTNAME:S/^latex-//}
 WRKSRC=		${WRKDIR}/${PORTNAME:S/^latex-//}
 
-CLASS_FILES=	pgf.sty
-CLASS_FILES+=	pgfarrows.sty
-CLASS_FILES+=	pgfautomata.sty
-CLASS_FILES+=	pgfheaps.sty
-CLASS_FILES+=	pgfnodes.sty
-CLASS_FILES+=	pgfshade.sty
-CLASS_FILES+=	xxcolor.sty
+CLASS_FILES=	pgf.sty pgfarrows.sty pgfautomata.sty pgfheaps.sty \
+		pgfnodes.sty pgfshade.sty xxcolor.sty
 
-DOC_FILES=	AUTHORS
-DOC_FILES+=	ChangeLog
-DOC_FILES+=	FILES
-DOC_FILES+=	INSTALL
-DOC_FILES+=	README
-DOC_FILES+=	TODO
-DOC_FILES+=	apple.jpg
-DOC_FILES+=	apple.mask.jpg
-DOC_FILES+=	pgfuserguide.pdf
-DOC_FILES+=	pgfuserguide.tex
-DOC_FILES+=	tu-logo.25.eps
-DOC_FILES+=	tu-logo.25.jpg
-DOC_FILES+=	tu-logo.eps
-DOC_FILES+=	tu-logo.jpg
-DOC_FILES+=	tu-logo.mask.jpg
+DOC_FILES=	AUTHORS ChangeLog FILES INSTALL README TODO \
+		apple.jpg apple.mask.jpg \
+		pgfuserguide.pdf pgfuserguide.tex \
+		tu-logo.25.eps tu-logo.25.jpg \
+		tu-logo.eps tu-logo.jpg \
+		tu-logo.mask.jpg \
 
 do-install:
 	${MKDIR} ${PREFIX}/${CLASSDIR}
