@@ -1,5 +1,4 @@
 @comment $FreeBSD$
-bin/xml++-config
 include/libxml++-1.0/libxml++/attribute.h
 include/libxml++-1.0/libxml++/document.h
 include/libxml++-1.0/libxml++/dtd.h
@@ -22,9 +21,8 @@ include/libxml++-1.0/libxml++/parsers/parser.h
 include/libxml++-1.0/libxml++/parsers/saxparser.h
 lib/libxml++-0.1.a
 lib/libxml++-0.1.so
-lib/libxml++-0.1.so.10
+lib/libxml++-0.1.so.11
 libdata/pkgconfig/libxml++-1.0.pc
-share/aclocal/libxml++.m4
 @dirrm include/libxml++-1.0/libxml++/exceptions
 @dirrm include/libxml++-1.0/libxml++/nodes
 @dirrm include/libxml++-1.0/libxml++/parsers
