@@ -1,19 +1,22 @@
-bin/ebdump
 bin/ebview
-bin/ebview-client
 %%PORTDOCS%%%%DOCSDIR%%/ChangeLog
 %%PORTDOCS%%%%DOCSDIR%%/README
-share/ebview/about.en
-share/ebview/about.jp
-share/ebview/endinglist-ja.xml
-share/ebview/endinglist.xml
-share/ebview/help/en/index.html
-share/ebview/help/ja/index.html
-share/ebview/searchengines.xml
-share/ebview/shortcut.xml
+%%DATADIR%%/about.en
+%%DATADIR%%/about.jp
+%%DATADIR%%/endinglist-ja.xml
+%%DATADIR%%/endinglist.xml
+%%DATADIR%%/filter.xml
+%%DATADIR%%/help/en/index.html
+%%DATADIR%%/help/en/body.html
+%%DATADIR%%/help/en/menu.html
+%%DATADIR%%/help/ja/index.html
+%%DATADIR%%/help/ja/body.html
+%%DATADIR%%/help/ja/menu.html
+%%DATADIR%%/searchengines.xml
+%%DATADIR%%/shortcut.xml
 share/locale/ja/LC_MESSAGES/ebview.mo
-@dirrm share/ebview/help/ja
-@dirrm share/ebview/help/en
-@dirrm share/ebview/help
-@dirrm share/ebview
+@dirrm %%DATADIR%%/help/ja
+@dirrm %%DATADIR%%/help/en
+@dirrm %%DATADIR%%/help
+@dirrm %%DATADIR%%
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
