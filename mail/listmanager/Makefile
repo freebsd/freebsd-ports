@@ -16,6 +16,8 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX} help.tar.gz listmanager.8 ack
 
 MAINTAINER=	gshapiro@FreeBSD.org
 
+FORBIDDEN=	"Security problem.  New version due shortly."
+
 EXTRACT_CMD=	${CP}
 EXTRACT_BEFORE_ARGS=
 EXTRACT_AFTER_ARGS=	${WRKDIR}
