@@ -26,6 +26,7 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-utmp --enable-wtmp --enable-languages \
 		--with-xpm --enable-xpm-background --enable-transparency \
 		--enable-shared
+USE_GMAKE=	yes
 USE_LIBTOOL=	yes
 INSTALLS_SHLIB=	yes
 USE_BZIP2=	yes
