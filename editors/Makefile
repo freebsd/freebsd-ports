@@ -171,7 +171,6 @@
     SUBDIR += vim5
     SUBDIR += vim6+ruby
     SUBDIR += wily
-    SUBDIR += wordperfect
     SUBDIR += xcoral
     SUBDIR += xed
     SUBDIR += xemacs
