@@ -12,8 +12,13 @@ MASTER_SITES=	${MASTER_SITE_LOCAL}					\
 		http://green.bikeshed.org/~green/
 MASTER_SITE_SUBDIR=	green
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 500000
+BROKEN=	"only works on systems with OpenPAM (5.0-CURRENT)"
+.endif
 MAINTAINER=	green@FreeBSD.org
 
 MAN8=		pam_alreadyloggedin.8
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
