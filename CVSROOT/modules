@@ -5232,6 +5232,7 @@ p5-POE-Component-JobQueue	ports/devel/p5-POE-Component-JobQueue
 p5-POE-Component-Logger	ports/devel/p5-POE-Component-Logger
 p5-POE-Component-Pcap	ports/devel/p5-POE-Component-Pcap
 p5-POE-Component-RSS	ports/devel/p5-POE-Component-RSS
+p5-POE-Session-Cascading	ports/devel/p5-POE-Session-Cascading
 p5-PV		ports/devel/p5-PV
 p5-Palm		ports/palm/p5-Palm
 p5-ParallelUA	ports/www/p5-ParallelUA
