@@ -1,5 +1,5 @@
---- configure.old	Wed Jun 14 18:04:30 2000
-+++ configure	Tue Sep  5 19:26:25 2000
+--- configure.orig	Wed Jun 14 18:04:30 2000
++++ configure	Mon Dec 11 05:52:29 2000
 @@ -2070,29 +2070,6 @@
    cat conftest.$ac_ext >&5
    rm -rf conftest*
@@ -48,3 +48,12 @@
  }
  EOF
  if { (eval echo configure:2172: \"$ac_link\") 1>&5; (eval $ac_link) 2>&5; } && test -s conftest && (./conftest; exit) 2>/dev/null
+@@ -2270,7 +2245,7 @@
+ p0=`echo $ptys | tr ' ' '\012' | sed -e 's/^.*\(.\).$/\1/g' | sort -u | tr -d '\012'`
+ p1=`echo $ptys | tr ' ' '\012' | sed -e 's/^.*\(.\)$/\1/g'  | sort -u | tr -d '\012'`
+ cat >> confdefs.h <<EOF
+-#define PTYRANGE0 "$p0"
++#define PTYRANGE0 "pqrsPQRS"
+ EOF
+ 
+ cat >> confdefs.h <<EOF
