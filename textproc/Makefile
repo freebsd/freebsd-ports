@@ -116,6 +116,7 @@
     SUBDIR += rand
     SUBDIR += rman
     SUBDIR += ruby-html-parser
+    SUBDIR += ruby-qt2xml
     SUBDIR += ruby-rdtool
     SUBDIR += ruby-xmlparser
     SUBDIR += rxp
