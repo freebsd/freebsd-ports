@@ -6,11 +6,9 @@
 #
 
 PORTNAME=	asp2php
-PORTVERSION=	0.76.17
-PORTREVISION=	1
+PORTVERSION=	0.76.22
 CATEGORIES=	www
-MASTER_SITES=	http://www.mikekohn.com/asp2php/ \
-		http://dl.droso.net/ports/
+MASTER_SITES=	http://downloads.mikekohn.net/asp2php/
 
 MAINTAINER=	erwin@FreeBSD.org
 COMMENT=	Converts ASP scripts to PHP
@@ -21,17 +19,18 @@ WANT_GNOME=	yes
 MAKE_ENV=	FLAGS="${CFLAGS}"
 USE_REINPLACE=	yes
 
+PLIST_FILES=	bin/asp2php
+
 .include <bsd.port.pre.mk>
 
 .if ${HAVE_GNOME:Mgtk12}!=""
 USE_GNOME+=	gtk12
 PKGNAMESUFFIX=	-gtk
 ALL_TARGET=	default gui
-PLIST_SUB+=	WANT_GTK=""
+PLIST_FILES+=	bin/gtkasp2php
 HAVE_GTK=	yes
 .else
 ALL_TARGET=	default
-PLIST_SUB+=	WANT_GTK="@comment "
 .endif
 
 post-patch:
