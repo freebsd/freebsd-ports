@@ -7,6 +7,7 @@
 
 PORTNAME=	rudiments
 PORTVERSION=	0.27
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -14,6 +15,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A utility C++ class library for daemons, clients, servers and more
 
+USE_GNOME=		pkgconfig
 USE_GMAKE=		yes
 GNU_CONFIGURE=		yes
 CONFIGURE_ARGS=		--disable-ssl --disable-pcre
