@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mm
-PORTVERSION=	1.2.0
+PORTVERSION=	1.2.1
 CATEGORIES=	devel
 MASTER_SITES=	ftp://ftp.ossp.org/pkg/lib/mm/
 
