@@ -96,9 +96,15 @@ TARGETS+=	tags
 
 .for __target in ${TARGETS}
 .if !target(${__target})
+.if defined(SUBDIR) && !empty(SUBDIR)
 ${__target}: ${SUBDIR:S/$/.${__target}/}
+.else
+${__target}:
+.endif
 .endif
 .endfor
+
+.if defined(SUBDIR) && !empty(SUBDIR)
 
 .for __target in ${TARGETS} checksubdirs readmes
 ${SUBDIR:S/$/.${__target}/}: _SUBDIRUSE
@@ -128,6 +134,8 @@ _SUBDIRUSE: .USE
 	fi
 
 ${SUBDIR}:: ${SUBDIR:S/$/.all/}
+
+.endif
 
 .if !target(install)
 .if !target(beforeinstall)
