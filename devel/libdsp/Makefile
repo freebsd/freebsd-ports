@@ -7,30 +7,23 @@
 #
 
 PORTNAME=	libdsp
-PORTVERSION=	3.3.8
+PORTVERSION=	4.0.0
 CATEGORIES=	devel audio
-MASTER_SITES=	http://www.pp.clinet.fi/~visitor/dlbins/
-DISTNAME=	libdsp-src
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	${PORTNAME}
+DISTNAME=	libdsp-src-${PORTVERSION}
 
 MAINTAINER=	ijliao@FreeBSD.org
 
 # dont use "USE_LIBTOOL=yes" because there's no configure script
 BUILD_DEPENDS=	libtool:${PORTSDIR}/devel/libtool
 
-INSTALLS_SHLIB=	yes
-
 WRKSRC=		${WRKDIR}/libdsp-src/${PORTNAME:S/dsp/DSP/}-${PORTVERSION}
-MAKEFILE=	Makefile.FreeBSD
-INLINE_VER=	1.2.1
-
+INLINE_VER=	1.2.2
 USE_GMAKE=	yes
-
 INSTALLS_SHLIB=	yes
 
 post-patch:
 	@${PERL} -pi -e "s|%%INLINE_VER%%|${INLINE_VER}|g" ${WRKSRC}/${MAKEFILE}
-
-post-install:
-	@${RM} ${PREFIX}/lib/libdsp.la
 
 .include <bsd.port.mk>
