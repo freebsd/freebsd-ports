@@ -1,0 +1,8 @@
+#! /bin/sh
+
+XGUILOADPATH=%prefix%/snns
+export XGUILOADPATH
+PATH=${PATH}:%prefix%/snns/bin
+export PATH
+
+%prefix%/snns/bin/xgui
