@@ -16,6 +16,7 @@ COMMENT=	Jabber MSN-Transport module
 BUILD_DEPENDS=	${LOCALBASE}/sbin/jabberd:${PORTSDIR}/net/jabber
 
 USE_GMAKE=	yes
+USE_AUTOHEADER=	yes
 USE_AUTOMAKE=	yes
 AUTOMAKE_ARGS+=	--include-deps --add-missing --foreign
 USE_AUTOMAKE_VER=	14
