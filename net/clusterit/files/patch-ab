@@ -1,0 +1,11 @@
+--- barrier/Makefile.orig	Mon Dec 14 20:51:56 1998
++++ barrier/Makefile	Thu Feb  4 16:36:04 1999
+@@ -4,7 +4,7 @@
+ # Some options need to be uncommented for Solaris
+ 
+ #CC=		/usr/local/bin/gcc
+-CFLAGS?=	-Wall -O2
++CFLAGS?=	${CFLAGS} -Wall -O2
+ PROGS= 		barrierd barrier
+ #LIBS=		-lsocket -lnsl
+ #
