@@ -32,6 +32,31 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="323784cf-48a6-11d9-a9e7-0001020eed82">
+    <topic>viewcvs -- information leakage</topic>
+    <affects>
+      <package>
+	<name>viewcvs</name>
+	<range><lt>0.9.2_2</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The <code>hide_cvsroot</code> and <code>forbidden</code>
+	  configuration options are not properly honored by viewcvs
+	  when exporting to a tar file which can lead to information
+	  leakage.</p>
+      </body>
+    </description>
+    <references>
+      <cvename>CAN-2004-0915</cvename>
+    </references>
+    <dates>
+      <discovery>2004-11-25</discovery>
+      <entry>2004-12-08</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="a7bfd423-484f-11d9-a9e7-0001020eed82">
     <topic>cscope -- symlink attack vulnerability</topic>
     <affects>
