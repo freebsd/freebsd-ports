@@ -1,3 +1,4 @@
+# $FreeBSD$
 all: oconv hname
 
 oconv: oconv.c
