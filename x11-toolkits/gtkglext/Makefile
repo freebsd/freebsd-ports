@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gtkglext
-PORTVERSION=	1.0.4
+PORTVERSION=	1.0.5
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -17,14 +17,9 @@ COMMENT=	An OpenGL extension to GTK
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes
 USE_GNOME=	gnomeprefix gnomehack gtk20
+USE_GL=		yes
 USE_LIBTOOL=	yes
 USE_GMAKE=	yes
 INSTALLS_SHLIB=	yes
 
-.include <bsd.port.pre.mk>
-
-.if ${XFREE86_VERSION} == 3
-USE_MESA=	yes
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
