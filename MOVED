@@ -156,3 +156,4 @@ devel/uml|devel/umbrello|2003-01-26|project renamed
 x11-toolkits/qt30|x11-toolkits/qt31|2003-01-28|qt30 replaced by qt31
 misc/kde3-i18n-pt|portuguese/kde3-i18n|2003-01-28|new category
 misc/kde3-i18n-pt_BR|portuguese/kde3-i18n-pt_BR|2003-01-28|new category
+lang/php4||2003-01-29|integrated into www/mod_php4
