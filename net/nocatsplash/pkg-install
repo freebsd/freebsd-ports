@@ -1,0 +1,36 @@
+#!/bin/sh
+
+PATH=/bin:/usr/sbin
+
+if [ -z "${WRAP_USER}" ]; then
+	WRAP_USER=nocat
+fi
+
+case $2 in
+    PRE-INSTALL)
+	UID=181
+	GID=${UID}
+	if [ ! -d "${NOCAT_DIR}" ]; then
+		mkdir -p ${NOCAT_DIR}
+	fi
+	if pw user show "${WRAP_USER}" 2>/dev/null; then
+		echo "You already have a user \"${WRAP_USER}\", so I will use it."
+		if pw usermod ${WRAP_USER} -d ${NOCAT_DIR}
+		then
+			echo "Changed home directory of \"${WRAP_USER}\" to \"${NOCAT_DIR}\""
+		else
+			"${NOCAT_DIR}\" failed..."
+			exit 1
+		fi
+		else
+		if pw useradd ${WRAP_USER} -u ${UID} \
+			-d ${NOCAT_DIR} -s /sbin/nologin -c "NoCat Daemon"
+		then
+			echo "Added user \"${WRAP_USER}\"."
+		else
+			echo "Adding user \"${WRAP_USER}\" failed..."
+			exit 1
+		fi
+	fi
+	;;
+esac
