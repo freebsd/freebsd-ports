@@ -6,15 +6,13 @@
 #
 
 PORTNAME=	scm
-PORTVERSION=	5d5
-PORTREVISION=	1
+PORTVERSION=	5d6
 CATEGORIES=	lang
 MASTER_SITES=	http://swissnet.ai.mit.edu/ftpdir/scm/
-DISTFILES=	scm5d5.zip slib2d3.zip slib-psd1-3.tar.gz
+DISTFILES=	scm5d6.zip slib2d4.zip slib-psd1-3.tar.gz
+EXTRACT_ONLY=	scm5d6.zip slib2d4.zip
 
 MAINTAINER=	ports@FreeBSD.org
-
-EXTRACT_ONLY=	scm5d5.zip slib2d3.zip
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
