@@ -29,7 +29,9 @@ share/gnome/galeon/myportal.css
 share/gnome/galeon/new_folder.xpm
 share/gnome/galeon/new_item.xpm
 share/gnome/galeon/new_separator.xpm
+share/gnome/galeon/small-close.xpm
 share/gnome/pixmaps/galeon.png
+share/locale/ca/LC_MESSAGES/galeon.mo
 share/locale/cs/LC_MESSAGES/galeon.mo
 share/locale/da/LC_MESSAGES/galeon.mo
 share/locale/de/LC_MESSAGES/galeon.mo
@@ -52,4 +54,5 @@ share/locale/ro/LC_MESSAGES/galeon.mo
 share/locale/ru/LC_MESSAGES/galeon.mo
 share/locale/sv/LC_MESSAGES/galeon.mo
 share/locale/tr/LC_MESSAGES/galeon.mo
+share/locale/uk/LC_MESSAGES/galeon.mo
 @dirrm share/gnome/galeon
