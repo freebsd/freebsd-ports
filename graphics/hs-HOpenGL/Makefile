@@ -40,6 +40,7 @@ pre-configure:
 
 CONFIGURE_ARGS+=--with-library-dir=${LIB_DIR} --with-import-dir=${IMPORT_DIR} --enable-Mesa
 PLIST_SUB=	LIB_DIR=${LIB_DIR_REL} IMPORT_DIR=${IMPORT_DIR_REL}
+PLIST_SUB+=	GHC_VERSION="${GHC_VERSION}"
 
 ALL_TARGET=	depend all
 
@@ -92,5 +93,7 @@ post-install:
 	${INSTALL_DATA} ${GFXSRC}/UI/GLUT.hi ${GFXDIR}/UI
 	${INSTALL_DATA} ${GFXSRC}/UI/GLUT/*.hi ${GFXDIR}/UI/GLUT
 	${INSTALL_DATA} ${GFXSRC}/UI/GLUT/Callbacks/*.hi ${GFXDIR}/UI/GLUT/Callbacks
+
+	@${RM} -f ${PREFIX}/lib/ghc-${GHC_VERSION}/package.conf.old
 
 .include <bsd.port.mk>

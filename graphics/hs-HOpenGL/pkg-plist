@@ -374,4 +374,6 @@ share/examples/HOpenGL/redbook_HS/Wrap.hs
 share/examples/HOpenGL/00Contents
 @dirrm share/examples/HOpenGL
 @exec %D/bin/ghc-pkg -ai %D/share/HOpenGL/HOpenGL.conf
+@exec /bin/rm -f %D/lib/ghc-%%GHC_VERSION%%/package.conf.old
 @unexec %D/bin/ghc-pkg -r HOpenGL
+@unexec /bin/rm -f %D/lib/ghc-%%GHC_VERSION%%/package.conf.old
