@@ -1,0 +1,4 @@
+bin/gensig
+bin/cattag
+share/gensig/taglines
+@dirrm share/gensig
