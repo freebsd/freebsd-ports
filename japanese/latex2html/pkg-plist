@@ -396,8 +396,11 @@ share/latex2html/versions/html2_1.pl
 share/latex2html/versions/html2_2.pl
 share/latex2html/versions/html3_0.pl
 share/latex2html/versions/html3_1.pl
+share/latex2html/versions/html3_1.pl.orig
 share/latex2html/versions/html3_2.pl
+share/latex2html/versions/html3_2.pl.orig
 share/latex2html/versions/html4_0.pl
+share/latex2html/versions/html4_0.pl.orig
 share/latex2html/versions/i18n.pl
 share/latex2html/versions/lang.pl
 share/latex2html/versions/latin1.pl
@@ -407,6 +410,7 @@ share/latex2html/versions/latin4.pl
 share/latex2html/versions/latin5.pl
 share/latex2html/versions/latin6.pl
 share/latex2html/versions/math.pl
+share/latex2html/versions/math.pl.orig
 share/latex2html/versions/table.pl
 share/latex2html/versions/unicode.pl
 share/texmf/tex/latex/latex2html/floatflt.ins

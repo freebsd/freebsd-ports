@@ -1,0 +1,11 @@
+--- versions/math.pl	Tue Jul 18 09:25:39 2000
++++ versions/math.pl.new	Tue Jul 18 09:26:05 2000
+@@ -1731,7 +1731,7 @@
+ 		    ($this, $_) = &$ctmp($_);
+ 		    $this = &parse_math_toks($mode,$style,$face,$slevel,1,$this);
+ 		    @open_tags = @save_open_tags;
+-		    undef ($color_env, $inside_math, @save_open_tags);
++		    undef $color_env; undef $inside_math; undef @save_open_tags;
+ 		};
+ 	    } elsif ($cmd eq 'left') {
+ 		#expandable delimiter: make an image
