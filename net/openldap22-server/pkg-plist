@@ -22,34 +22,34 @@ etc/openldap/slapd.conf.default
 @exec [ ! -f %B/slapd.conf ] && cp %B/%f %B/slapd.conf
 @unexec if cmp -s %D/etc/openldap/schema/corba.schema %D/etc/openldap/schema/corba.schema.default; then rm -f %D/etc/openldap/schema/corba.schema; fi
 etc/openldap/schema/corba.schema.default
-@exec [ ! -f %B/schema/corba.schema ] && cp %B/%f %B/schema/corba.schema
+@exec [ ! -f %B/corba.schema ] && cp %B/%f %B/corba.schema
 @unexec if cmp -s %D/etc/openldap/schema/core.schema %D/etc/openldap/schema/core.schema.default; then rm -f %D/etc/openldap/schema/core.schema; fi
 etc/openldap/schema/core.schema.default
-@exec [ ! -f %B/schema/core.schema ] && cp %B/%f %B/schema/core.schema
+@exec [ ! -f %B/core.schema ] && cp %B/%f %B/core.schema
 @unexec if cmp -s %D/etc/openldap/schema/cosine.schema %D/etc/openldap/schema/cosine.schema.default; then rm -f %D/etc/openldap/schema/cosine.schema; fi
 etc/openldap/schema/cosine.schema.default
-@exec [ ! -f %B/schema/cosine.schema ] && cp %B/%f %B/schema/cosine.schema
+@exec [ ! -f %B/cosine.schema ] && cp %B/%f %B/cosine.schema
 @unexec if cmp -s %D/etc/openldap/schema/inetorgperson.schema %D/etc/openldap/schema/inetorgperson.schema.default; then rm -f %D/etc/openldap/schema/inetorgperson.schema; fi
 etc/openldap/schema/inetorgperson.schema.default
-@exec [ ! -f %B/schema/inetorgperson.schema ] && cp %B/%f %B/schema/inetorgperson.schema
+@exec [ ! -f %B/inetorgperson.schema ] && cp %B/%f %B/inetorgperson.schema
 @unexec if cmp -s %D/etc/openldap/schema/java.schema %D/etc/openldap/schema/java.schema.default; then rm -f %D/etc/openldap/schema/java.schema; fi
 etc/openldap/schema/java.schema.default
-@exec [ ! -f %B/schema/java.schema ] && cp %B/%f %B/schema/java.schema
+@exec [ ! -f %B/java.schema ] && cp %B/%f %B/java.schema
 @unexec if cmp -s %D/etc/openldap/schema/krb5-kdc.schema %D/etc/openldap/schema/krb5-kdc.schema.default; then rm -f %D/etc/openldap/schema/krb5-kdc.schema; fi
 etc/openldap/schema/krb5-kdc.schema.default
-@exec [ ! -f %B/schema/krb5-kdc.schema ] && cp %B/%f %B/schema/krb5-kdc.schema
+@exec [ ! -f %B/krb5-kdc.schema ] && cp %B/%f %B/krb5-kdc.schema
 @unexec if cmp -s %D/etc/openldap/schema/misc.schema %D/etc/openldap/schema/misc.schema.default; then rm -f %D/etc/openldap/schema/misc.schema; fi
 etc/openldap/schema/misc.schema.default
-@exec [ ! -f %B/schema/misc.schema ] && cp %B/%f %B/schema/misc.schema
+@exec [ ! -f %B/misc.schema ] && cp %B/%f %B/misc.schema
 @unexec if cmp -s %D/etc/openldap/schema/nadf.schema %D/etc/openldap/schema/nadf.schema.default; then rm -f %D/etc/openldap/schema/nadf.schema; fi
 etc/openldap/schema/nadf.schema.default
-@exec [ ! -f %B/schema/nadf.schema ] && cp %B/%f %B/schema/nadf.schema
+@exec [ ! -f %B/nadf.schema ] && cp %B/%f %B/nadf.schema
 @unexec if cmp -s %D/etc/openldap/schema/nis.schema %D/etc/openldap/schema/nis.schema.default; then rm -f %D/etc/openldap/schema/nis.schema; fi
 etc/openldap/schema/nis.schema.default
-@exec [ ! -f %B/schema/nis.schema ] && cp %B/%f %B/schema/nis.schema
+@exec [ ! -f %B/nis.schema ] && cp %B/%f %B/nis.schema
 @unexec if cmp -s %D/etc/openldap/schema/openldap.schema %D/etc/openldap/schema/openldap.schema.default; then rm -f %D/etc/openldap/schema/openldap.schema; fi
 etc/openldap/schema/openldap.schema.default
-@exec [ ! -f %B/schema/openldap.schema ] && cp %B/%f %B/schema/openldap.schema
+@exec [ ! -f %B/openldap.schema ] && cp %B/%f %B/openldap.schema
 @dirrm etc/openldap/schema
 @dirrm etc/openldap
 etc/rc.d/slapd.sh.sample
