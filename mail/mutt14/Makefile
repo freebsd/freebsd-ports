@@ -68,7 +68,7 @@ CONFIGURE_ENV=	CC="${CC} -I${LOCALBASE}/include" LDFLAGS="${LDFLAGS}"
 CONFIGURE_ARGS=	--enable-pop --enable-imap --enable-flock --disable-fcntl \
 		--with-ssl=${OPENSSLBASE} --sysconfdir=${PREFIX}/etc \
 		--with-sharedir=${PREFIX}/share/mutt \
-		--with-docdir=${PREFIX}/share/doc/mutt --with-charmaps \
+		--with-docdir=${DOCSDIR} --with-charmaps \
 		--with-libiconv-prefix=${PREFIX} \
 		--enable-compressed
 .if defined(MUTT_CONFIGURE_ARGS)
@@ -130,14 +130,14 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/Muttrc ${PREFIX}/etc/Muttrc.dist
 .if !defined(NOPORTDOCS)
 	@${ECHO} "===>   Installing Mutt documentation"
-	@${MKDIR} ${PREFIX}/share/doc/mutt && ${CHMOD} a+rx ${PREFIX}/share/doc/mutt
+	@${MKDIR} ${DOCSDIR} && ${CHMOD} a+rx ${DOCSDIR}
 	@cd ${WRKSRC}/doc ; ${INSTALL_MAN} manual.txt PGP-Notes.txt \
-		${PREFIX}/share/doc/mutt
+		${DOCSDIR}
 .if defined(WITH_SGML_DOCS) && ${WITH_SGML_DOCS} != "no"
 	${INSTALL} ${COPY} -o ${MANOWN} -g ${MANGRP} -m 0755 \
-	    -d ${PREFIX}/share/doc/mutt/html
-	${INSTALL_MAN} ${WRKSRC}/doc/*.html ${PREFIX}/share/doc/mutt/html
-	${INSTALL_MAN} ${WRKSRC}/doc/*.latin1 ${PREFIX}/share/doc/mutt
+	    -d ${DOCSDIR}/html
+	${INSTALL_MAN} ${WRKSRC}/doc/*.html ${DOCSDIR}/html
+	${INSTALL_MAN} ${WRKSRC}/doc/*.latin1 ${DOCSDIR}
 .endif
 .endif
 
