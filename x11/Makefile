@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.133 1997/05/05 12:38:41 tg Exp $
+# $Id: Makefile,v 1.134 1997/05/20 04:44:33 chuckr Exp $
 #
 
     SUBDIR += FWF
@@ -7,6 +7,7 @@
     SUBDIR += Xaw3d
     SUBDIR += afterstep
     SUBDIR += auis
+    SUBDIR += bclock
     SUBDIR += blast
     SUBDIR += blt
     SUBDIR += bricons
