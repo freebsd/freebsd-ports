@@ -1,0 +1,14 @@
+
+$FreeBSD$
+
+--- Makefile.orig	Sun Aug  3 18:18:42 2003
++++ Makefile	Thu Aug 14 18:08:45 2003
+@@ -14,7 +14,7 @@
+ 	$(MAKE) -C $(@D) all
+ 
+ libspeex.so: libspeex.c libspeex.h $(OBJS) $(GUIOBJS)
+-	$(CC) -shared -logg -lspeex -lgtk -lpthread -lxmms $(INCDIRS) $(CFLAGS) -DVERSION=$(VERSION) -DPACKAGE=\"libspeex\" -o libspeex.so libspeex.c $(OBJS) $(GUIOBJS)
++	$(CC) -shared $(INCDIRS) $(CFLAGS) -DVERSION=$(VERSION) -DPACKAGE=\"libspeex\" -o libspeex.so libspeex.c $(OBJS) $(GUIOBJS) `xmms-config --libs` -logg -lspeex
+ 
+ #utf8.o: utf8.c utf8.h
+ #	$(CC) -c $(INCDIRS) $(CFLAGS) -DHAVE_ICONV -DICONV_CONST= -o utf8.o utf8.c

@@ -6,19 +6,16 @@
 #
 
 PORTNAME=	xmms-speex
-PORTVERSION=	0.6.0
-PORTREVISION=	1
+PORTVERSION=	0.9.1
 CATEGORIES=	audio
-MASTER_SITES=	http://jzb.rapanden.dk/speex/
+MASTER_SITES=	http://jzb.rapanden.dk/pub/
 DISTNAME=	speex-xmms-${PORTVERSION}
 
 MAINTAINER=	dyeske@yahoo.com
 COMMENT=	XMMS input plugin to play speex files
 
-BROKEN=		Broken dependency
-
 BUILD_DEPENDS=	xmms-config:${PORTSDIR}/multimedia/xmms
-LIB_DEPENDS=	speex.1:${PORTSDIR}/audio/speex
+LIB_DEPENDS=	speex.2:${PORTSDIR}/audio/speex
 RUN_DEPENDS=	xmms:${PORTSDIR}/multimedia/xmms
 
 WRKSRC=		${WRKDIR}/speex-xmms
@@ -26,17 +23,7 @@ WRKSRC=		${WRKDIR}/speex-xmms
 USE_X_PREFIX=	yes
 USE_GNOME=	gtk12
 USE_GMAKE=	yes
-USE_REINPLACE=	yes
 
-pre-build:
-	@${REINPLACE_CMD} -e 's|^main|all|; \
-		s|-lgtk|${CFLAGS} `${GTK_CONFIG} --cflags` `${GTK_CONFIG} --libs` |; \
-		s|-I/usr/include/xmms||; \
-		s|^install: libspeex.o|install:|; \
-		s|-I/usr/lib/glib/include||; \
-		s|-I/usr/include/glib-1.2||; \
-		s|-I/usr/include/gtk-1.2||; \
-		s|/usr/lib/xmms/Input|${X11BASE}/lib/xmms/Input|' \
-		${WRKSRC}/Makefile
+MAKE_FLAGS=	CC="${CC}" CFLAGS="${CFLAGS}"
 
 .include <bsd.port.mk>
