@@ -21,8 +21,8 @@ BUILD_DEPENDS=	fc-cache:${PORTSDIR}/x11-fonts/fontconfig \
 RUN_DEPENDS=	fc-cache:${PORTSDIR}/x11-fonts/fontconfig \
 		ttfm.sh:${PORTSDIR}/chinese/ttfm
 
+NO_WRKSUBDIR=	yes
 NO_BUILD=	yes
-WRKSRC=		${WRKDIR}
 USE_XLIB=	yes
 FONTDIR=	${PREFIX}/share/fonts/TrueType
 XFONTDIR=	${X11BASE}/lib/X11/fonts/TrueType

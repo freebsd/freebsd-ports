@@ -24,8 +24,7 @@ RESTRICTED=	No resale, contact author for commercial usage
 F77?=		f77
 FFLAGS?=	-O2	# Note: FFLAGS is set to -O in /usr/share/mk/sys.mk
 
-WRKSRC=		${WRKDIR}
-
+NO_WRKSUBDIR=	yes
 MAKEFILE=	makefile
 ALL_TARGET=	NSC2KE
 MAKE_ENV=	F77="${F77}" FFLAGS="${FFLAGS}"

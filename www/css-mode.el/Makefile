@@ -21,7 +21,6 @@ DIST_SUBDIR=	css-mode
 EXTRACT_ONLY=	# empty
 NO_WRKSUBDIR=	yes
 NO_BUILD=	yes
-WRKSRC=		${WRKDIR}
 
 # install-directory for Emacs
 ELISP_SUBDIR=	share/emacs/site-lisp

@@ -14,8 +14,8 @@ DISTNAME=	SIMLIB-${PORTVERSION:S/.200/-200/}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	SIMulation LIBrary for C++ programming language
 
+NO_WRKSUBDIR=	yes
 USE_GMAKE=	yes
-WRKSRC=		${WRKDIR}
 MAKEFILE=	Makefile.FreeBSD
 INSTALL_TARGET=	_install
 

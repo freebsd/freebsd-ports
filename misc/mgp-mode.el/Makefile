@@ -19,7 +19,6 @@ COMMENT=	A mode of Emacs for editing MagicPoint files
 EXTRACT_ONLY=	# empty
 NO_WRKSUBDIR=	yes
 NO_BUILD=	yes
-WRKSRC=		${WRKDIR}
 
 ELISPDIR=	${PREFIX}/share/emacs/site-lisp
 XELISPDIR=	${PREFIX}/lib/xemacs/site-lisp
