@@ -1,0 +1,21 @@
+IIIMF stands for Internet/Intranet Input Method Framework.
+IIIMF is designed to be the next generation of input method framework
+
+This port provides two input method utility applications for GNOME desktop
+environments.
+
+  GIMLET - GNOME Input Method Language Enabling Tool
+
+As a gnome-panel applet, this UI is used to select input languages for IIIM
+client applications (IIIMGCF and IIIMXCF).
+
+  GIMPET - GNOME Input Method Property Edittingggg Tool
+
+As a gnome capplet, this UI is to allow user to customize input methods,
+for enabling/disabling input method infrastucuture itself, and
+enabling/disabling input method statur bar and candidate choice window.
+
+WWW: http://www.openi18n.org/subgroups/im/IIIMF/
+
+- Kuang-che Wu
+  kcwu@csie.org
