@@ -1,0 +1,101 @@
+#!/bin/sh
+#Sample startup file for Bittornado sites
+
+#PATH to be used. To be safe
+PATH=/usr/local/bin:/bin:/usr/bin
+#tracker daemon
+DAEMON=/usr/local/bin/bttrack.py
+#seed daemon
+LAUNCH=/usr/local/bin/btlaunchmany.py
+#mate file creator
+MAKEMETA=/usr/local/bin/btmakemetafile.py
+#state file of the Bittornado tracker (inside TORRENTSDIR)
+DFILE=connected.txt
+#ports to be used by tracker
+PORT=6969
+#description strings
+DESC1="bittornado tracker"
+DESC2="bittornado launcher"
+#Owner of the torrent files to be served by web server
+TORRENTOWNER="www:www"
+#TORRENTSWWWDIR - the directory served by Web server
+TORRENTSWWWDIR=/usr/local/www/torrent/
+#TORRENTSDIR - the directory where you store served files and torrents
+TORRENTSDIR=/home/iso/
+#URL of TRACKER
+#change it to your server
+SERVER=http://6net.niif.hu:${PORT}
+#Configuration file where you can store your local changes
+CONFIG_FILE=/usr/local/etc/bittornado.conf
+#options to be used by the tracker
+#if you want experimental IPv6 support add --ipv6_enabled 1
+#TRACKEROPTIONS="--dfile ./$DFILE --port $PORT --ipv6_enabled 1"
+TRACKEROPTIONS="--dfile ./$DFILE --port $PORT"
+#options to be used by seeders
+#if you want experimental IPv6 support add --ipv6_enabled 1
+#DOWNLOADOPTIONS="--ipv6_enabled 1"
+DOWNLOADOPTIONS=""
+#log file to be used by tracker and seeder
+TORRENTLOG="/tmp/torrent.log"
+
+if [ -s $CONFIG_FILE ]; then
+    . $CONFIG_FILE
+fi
+test -f $DAEMON || exit 0
+cd $TORRENTSDIR
+set -e
+
+case "$1" in
+  make)
+  echo "Making torrents: "
+    rm -f ${TORRENTSDIR}/*.torrent
+    for file in ${TORRENTSDIR}/*
+    do
+      base=`basename $file`
+      if [ "$base" = "." ]; then
+        continue;
+      fi
+      if [ "$base" = "$DFILE" ]; then
+        continue;
+      fi
+      echo $MAKEMETA $SERVER/announce $file
+      $MAKEMETA $SERVER/announce $file
+    done
+    #copy to be able to serve via WWW interface
+    cp ${TORRENTSDIR}/*.torrent $TORRENTSWWWDIR
+  chown ${TORRENTOWNER} ${TORRENTSWWWDIR}/*
+  echo "."
+  ;;
+ start)
+  echo "Starting $DESC1: $DAEMON"
+  echo "Starting $DESC1: $DAEMON" >>${TORRENTLOG}
+  nohup $DAEMON $TRACKEROPTIONS >> ${TORRENTLOG} &
+  echo "Starting $DESC2: $LAUNCH"
+  nohup $LAUNCH $TORRENTSDIR $DOWNLOADOPTIONS >> ${TORRENTLOG} &
+  echo "."
+  ;;
+  stop)
+  echo "Stopping $DESC1: $DAEMON"
+  pkill -f `basename $DAEMON`
+  echo "Stopping $DESC1: $LAUNCH"
+  pkill -f `basename $LAUNCH`
+  echo "."
+  ;;
+  restart|force-reload)
+  echo "Stopping $DESC1: $DAEMON"
+  pkill -f `basename $DAEMON`
+  echo "Stopping $DESC1: $LAUNCH"
+  pkill -f `basename $LAUNCH`
+  echo "Starting $DESC1: $DAEMON"
+  nohup $DAEMON $TRACKEROPTIONS >> ${TORRENTLOG} &
+  echo "Starting $DESC2: $LAUNCH"
+  nohup $LAUNCH $TORRENTSDIR $DOWNLOADOPTIONS >> ${TORRENTLOG} &
+  echo "."
+  ;;
+  *)
+  echo "Usage: $0 {start|stop|restart|force-reload|make}" >&2
+  exit 1
+  ;;
+esac
+
+exit 0

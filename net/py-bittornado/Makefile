@@ -7,6 +7,7 @@
 
 PORTNAME=	BitTornado
 PORTVERSION=	0.3.7
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES?=	net python ipv6
 MASTER_SITES=	http://e.scarywater.net/bt/download/ \
@@ -30,6 +31,11 @@ DOC_FILES=	BUILD.windows.txt FAQ.txt IMPORTANT-multitracker-readme.txt \
 		README-experimental.txt credits.txt multitracker-spec.txt \
 		README-Psyco.txt todo.txt webseed-spec.txt
 EXTRA_DOC_FILES=	multitracker/README.txt
+MAN1=		bittorrent-downloader.1 bittorrent-multi-downloader.1 \
+		btcompletedir.1 btcopyannounce.1 btdownloadcurses.1 \
+		btdownloadheadless.1 btlaunchmany.1 btlaunchmanycurses.1 \
+		btmakemetafile.1 btreannounce.1 btrename.1 btsethttpseeds.1 \
+		btshowmetainfo.1 bttrack.1
 
 # required for GUI
 .ifndef(WITHOUT_GUI)
@@ -39,6 +45,11 @@ EXTRA_PATCHES+=	${FILESDIR}/extra-gui-patch-setup.py
 .else
 EXTRA_PATCHES+=	${FILESDIR}/extra-nogui-patch-setup.py
 PLIST_SUB+=	GUI='@comment '
+.endif
+.ifdef(WITH_IPV6)
+#disable compact announcement that is incompatible with IPv6
+#tracker does not patched to honor compact announcements
+EXTRA_PATCHES+=	${FILESDIR}/extra-patch-BitTornado_BT1_Rerequester.py
 .endif
 
 .ifdef(WITH_PSYCO)
@@ -55,6 +66,10 @@ pre-everything::
 .ifndef(WITH_PSYCO)
 	@${ECHO_MSG} '===> Define WITH_PSYCO to enable the optimizing Python compiler'
 .endif
+.ifndef(WITH_IPV6)
+	@${ECHO_MSG} '===> Define WITH_IPV6 to enable IPv6 support properly'
+	@${ECHO_MSG} 'with trade-off of more memory usage'
+.endif
 
 post-install:
 .ifndef(NOPORTDOCS)
@@ -64,6 +79,13 @@ post-install:
 .endfor
 .for file in ${EXTRA_DOC_FILES}
 	${INSTALL_DATA} ${WRKSRC}/${file} ${DOCSDIR}/`${ECHO} ${file} | ${SED} -e 's|/|_|g'`
+.endfor
+	${MKDIR} ${EXAMPLESDIR}
+	${INSTALL_DATA} ${FILESDIR}/bittornado.sh.sample ${EXAMPLESDIR}
+.endif
+.ifndef(NO_INSTALL_MANPAGES)
+.for file in ${MAN1}
+	${INSTALL_MAN} ${FILESDIR}/${file} ${PREFIX}/man/man1
 .endfor
 .endif
 
