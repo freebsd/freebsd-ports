@@ -3623,6 +3623,7 @@ libaux		ports/graphics/libaux
 libavl		ports/devel/libavl
 libbf		ports/security/libbf
 libbonobo	ports/devel/libbonobo
+libbonobomm	ports/devel/libbonobomm
 libbonoboui	ports/x11-toolkits/libbonoboui
 libcabinet	ports/archivers/libcabinet
 libcache	ports/devel/libcache
