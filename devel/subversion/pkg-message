@@ -1,0 +1,14 @@
+
+                              WARNING!!!
+
+Subversion is still pre-alpha software and should not be used in anything
+even approaching a production environment.  The working copy and repository
+formats are almost certainly going to change in ways that are not backwards
+compatable, and Murphy's Law says that you will be the one that runs into
+the nasty bug that munges all your data in a completely non-recoverable way.
+
+If this hasn't scared you off yet, please use this port to download the most
+recent development code from the main Subversion repository located at
+http://svn.collab.net/repos/svn/trunk, and report any bugs you encounter to
+the development mailing list at dev@subversion.tigris.org.
+
