@@ -31,6 +31,10 @@ TARGET_DIR=	${PREFIX}/bin/
 CFLAGS+=	-O0
 .endif
 
+.if ${OSVERSION} < 500000
+BROKEN=		"Does not compile on 4.x"
+.endif
+
 .ifndef(PROFILING)
 CONFIGURE_ARGS+=	--without-profiling
 .endif
