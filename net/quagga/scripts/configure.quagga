@@ -3,7 +3,7 @@
 # configure - quagga compile time option configurator
 # by Bruce M Simpson <bms@FreeBSD.org>
 #
-# $FreeBSD$
+# $FreeBSD: /tmp/pcvs/ports/net/quagga/scripts/Attic/configure.quagga,v 1.1 2003-11-05 15:19:55 bms Exp $
 
 if [ -f ${WRKDIRPREFIX}${CURDIR}/Makefile.inc ]; then
 	exit
