@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	fbdesk
-PORTVERSION=	1.1.5
+PORTVERSION=	1.2.1
 CATEGORIES=	x11-wm
 MASTER_SITES=	http://fluxbox.sourceforge.net/download/
 
@@ -23,10 +23,6 @@ GNU_CONFIGURE=	yes
 PORTDOCS=	COPYING ChangeLog INSTALL README
 
 .include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 502126
-BROKEN=		"Does not compile on FreeBSD >= 5.x"
-.endif
 
 .if ${OSVERSION} >= 500000
 USE_REINPLACE=	yes
