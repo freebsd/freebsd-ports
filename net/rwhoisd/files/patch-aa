@@ -1,0 +1,78 @@
+--- Makefile.in.orig	Thu Aug  8 20:37:37 1996
++++ Makefile.in	Fri May 23 03:06:12 1997
+@@ -2,7 +2,7 @@
+ @SET_MAKE@
+ 
+ # set install program
+-INSTALL = @INSTALL@
++INSTALL = /usr/bin/install -c -s -o bin -g bin
+ 
+ # set prefix values
+ prefix      = @prefix@
+@@ -25,12 +25,12 @@
+ PARSER_DIR  = $(TOOLS_DIR)/rwhoisparse
+ LIBWRAP_DIR = tools/tcpd_wrapper
+ CLIENT_DIR  = client
+-SAMPLE_DATA_DIR = @SAMPLE_DATA_DIR@
++SAMPLE_DATA_DIR = ${RWHOIS_ROOT_DIR}
+ LIBRWHOIS   = librwhois.a
+ LIBMKDB     = libmkdb.a
+ LIBWRAP     = libwrap.a
+ 
+-all: librwhois libmkdb libwrap make-server indexer parser make-client
++all: librwhois libmkdb make-server indexer parser make-client
+ 
+ librwhois:
+ 	@echo "Making $(LIBRWHOIS)"
+@@ -77,7 +77,7 @@
+ 
+ install-chroot:
+ 	@echo "Setup chroot stuff"
+-	chroot.sh $(RWHOIS_ROOT_DIR)
++	./chroot.sh $(RWHOIS_ROOT_DIR)
+ 
+ install-client:
+ 	@echo "Installing RWhois Client"
+@@ -86,21 +86,13 @@
+ install-sample-data: sample-data-install
+ 
+ sample-data-install:
+-	@echo "Setting up for quickie install with sample data"
+-	@echo "This is located in `pwd`/sample.data"
+-	@echo "Setting up RWhois default data directory (data will reside here)"
++	if [ -d ${.CURDIR}/sample.data/bin ]; then rm -r ${.CURDIR}/sample.data/bin; fi 
++	if [ -d ${.CURDIR}/sample.data/etc ]; then rm -r ${.CURDIR}/sample.data/etc; fi
++	cp -r ${.CURDIR}/sample.data/ ${SAMPLE_DATA_DIR}
+ 	(sh tools/install/setup_rwhois_conf $(SAMPLE_DATA_DIR))
+-	@echo "Setting up index scripts"
+ 	(sh tools/install/setup_index_scripts $(SAMPLE_DATA_DIR))
+-	@echo "Copying the indexer into the sample data area"
+-	if [ $(SAMPLE_DATA_DIR) != $(RWHOIS_ROOT_DIR) ]; then \
+-		if [ ! -d $(SAMPLE_DATA_DIR)/bin ]; then \
+-			mkdir $(SAMPLE_DATA_DIR)/bin; \
+-        fi; \
+-		cp $(RWHOIS_ROOT_DIR)/bin/rmkdbindex $(SAMPLE_DATA_DIR)/bin; \
+-	fi
+-	@echo "Running index scripts"
+ 	(sh tools/install/run_index_scripts $(SAMPLE_DATA_DIR))
++	/usr/sbin/chown -R nobody ${SAMPLE_DATA_DIR}/data ${SAMPLE_DATA_DIR}/rwhois.log
+ 
+ clean:
+ 	@echo "Cleaning Server"
+@@ -109,8 +101,6 @@
+ 	(cd $(COMMON_DIR); $(MAKE) clean)
+ 	@echo "Cleaning MKDB"
+ 	(cd $(MKDB_DIR); $(MAKE) clean)
+-	@echo "Cleaning TCPD stuff"
+-	(cd $(LIBWRAP_DIR); $(MAKE) clean)
+ 	@echo "Cleaning RWhois Indexer"
+ 	(cd $(INDEXER_DIR); $(MAKE) clean)
+ 	@echo "Cleaning RWhois Parser"
+@@ -133,7 +123,6 @@
+ 	(cd $(MKDB_DIR); $(MAKE) distclean)
+ 	(cd $(INDEXER_DIR); $(MAKE) distclean)
+ 	(cd $(PARSER_DIR); $(MAKE) distclean)
+-	(cd $(LIBWRAP_DIR); $(MAKE) clean)
+ 	(cd $(CLIENT_DIR); $(MAKE) distclean)
+ 
+ dist:
