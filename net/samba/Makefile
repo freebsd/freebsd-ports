@@ -6,26 +6,33 @@
 #
 
 PORTNAME=	samba
-PORTVERSION=	2.2.6.p2
-PORTREVISION=	1
+PORTVERSION=	2.2.6.r2
 CATEGORIES=	net
 MASTER_SITES=	http://us4.samba.org/samba/ftp/%SUBDIR%/
 MASTER_SITE_SUBDIR=	pre old-versions .
-DISTNAME=	${PORTNAME}-${PORTVERSION:S/.p/pre/}
+DISTNAME=	${PORTNAME}-${PORTVERSION:S/.r/rc/}
 
 MAINTAINER=	dwcjr@FreeBSD.org
 
 USE_BZIP2=	YES
-USE_REINPLACE=	YES
 USE_SUBMAKE=	YES
 USE_GMAKE=	YES
 USE_LIBTOOL=	YES
 USE_AUTOCONF=	YES
 
-AUDIT=		"@comment "
-RECYCLE=	"@comment "
-LIBSAMBA=	"@comment "
-BUILD_VFS=	"@comment "
+# directories
+.if !defined(BATCH) && !defined(PACKAGE_BUILDING)
+IS_INTERACTIVE=	yes
+.endif
+
+.if exists(${WRKDIRPREFIX}${.CURDIR}/Makefile.inc)
+.include "${WRKDIRPREFIX}${.CURDIR}/Makefile.inc"
+.endif
+
+AUDIT?=         "@comment "
+RECYCLE?=       "@comment "
+LIBSAMBA?=      "@comment "
+BUILD_VFS?=     "@comment "
 
 .if defined(WITH_AUDIT)
 AUDIT=		""
@@ -39,14 +46,6 @@ LIBSAMBA=	""
 BUILD_VFS=	""
 .endif
 
-# directories
-.if !defined(BATCH) && !defined(PACKAGE_BUILDING)
-IS_INTERACTIVE=	yes
-.endif
-
-.if exists(${WRKDIRPREFIX}${.CURDIR}/Makefile.inc)
-.include "${WRKDIRPREFIX}${.CURDIR}/Makefile.inc"
-.endif
 
 VARDIR=		/var
 SAMBA_SPOOL=	${VARDIR}/spool/samba
@@ -165,9 +164,6 @@ post-build:
 		./configure;${GMAKE}; \
 		${RM} -f config.cache config.log config.status
 .endif
-
-pre-configure:
-	${REINPLACE_CMD} -e 's/DYNEXP="-Wl,-Bdynamic"/DYNEXP="-Wl,--export-dynamic"/' ${WRKSRC}/configure.in
 
 pre-build:
 	${RM} -fr ${WRKSRC}/include/proto.h

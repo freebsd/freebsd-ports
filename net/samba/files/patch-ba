@@ -1,14 +1,5 @@
 --- source/configure.in.orig	Thu Aug 29 07:05:30 2002
 +++ source/configure.in	Sat Sep  7 20:54:21 2002
-@@ -884,7 +884,7 @@
- 			LDSHFLAGS="-shared"
- 			DYNEXP="-Wl,--export-dynamic"
- 			SONAMEFLAG="-Wl,-soname,"
--			PICFLAG="-fPIC"
-+			PICFLAG="-fPIC -DPIC"
- 			AC_DEFINE(STAT_ST_BLOCKSIZE,512)
- 		;;
- 		*openbsd*)  BLDSHARED="true"
 @@ -1914,7 +1914,7 @@
    yes)
      AC_MSG_RESULT(yes)
@@ -18,12 +9,3 @@
      CFLAGS="$CFLAGS -I$withval/include"
      LDFLAGS="$LDFLAGS -L$withval/lib"
      ;;
-@@ -2090,7 +2090,7 @@
-     AC_DEFINE(WITH_LDAP_SAM)
-     LDAPLIBS="-lldap"
-     AC_CHECK_LIB(lber, ber_bvfree, [LDAPLIBS="$LDAPLIBS -llber"])
--    LDAPLIBS="-lresolv $LDAPLIBS"
-+    LDAPLIBS="$LDAPLIBS"
-     old_LDFLAGS="$LDFLAGS"
-     LDFLAGS="$LDFLAGS $LDAPLIBS"
-     AC_CHECK_FUNCS(ldap_start_tls_s)

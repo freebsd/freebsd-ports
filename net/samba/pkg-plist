@@ -150,6 +150,7 @@ sbin/swat
 %%PORTDOCS%%share/doc/samba/textdocs/BROWSING-Config.txt
 %%PORTDOCS%%share/doc/samba/textdocs/BROWSING.txt
 %%PORTDOCS%%share/doc/samba/textdocs/BUGS.txt
+%%PORTDOCS%%share/doc/samba/textdocs/CUPS-PrintingInfo.txt
 %%PORTDOCS%%share/doc/samba/textdocs/DHCP-Server-Configuration.txt
 %%PORTDOCS%%share/doc/samba/textdocs/DIAGNOSIS.txt
 %%PORTDOCS%%share/doc/samba/textdocs/DNIX.txt
@@ -186,6 +187,7 @@ share/examples/samba/LDAP/export_smbpasswd.pl
 share/examples/samba/LDAP/import_smbpasswd.pl
 share/examples/samba/LDAP/ldapchpasswd
 share/examples/samba/LDAP/ldapsync.pl
+share/examples/samba/LDAP/samba-nds.schema
 share/examples/samba/LDAP/samba.schema
 share/examples/samba/LDAP/samba-schema-netscapeds4.x
 share/examples/samba/LDAP/samba-schema-netscapeds5.x
@@ -227,6 +229,7 @@ share/examples/samba/LDAP/smbldap-tools/smbldap_conf.pm
 share/examples/samba/LDAP/smbldap-tools/smbldap_tools.pm
 share/examples/samba/README
 share/examples/samba/VFS/.cvsignore
+share/examples/samba/VFS/Makefile
 share/examples/samba/VFS/README
 share/examples/samba/VFS/block/block.c
 %%BUILD_VFS%%share/examples/samba/VFS/block/block.o
