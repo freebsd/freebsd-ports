@@ -109,7 +109,7 @@ Have fun with this new configuration style !     -andreas \n\n\
    "ljet3"    "HP LaserJet III* with Delta Row compression" ON \
    "ljet3d"   "HP LaserJet IIID with duplex capability" OFF \
    "ljet4"    "HP LaserJet 4 (defaults to 600 dpi)" ON \
-   "lj4dith"  "HP LaserJet 4 with Floyd-Steinberg dithering" OFF \
+   "lj4dith"  "HP LaserJet 4 with Floyd-Steinberg dithering" ON \
    "ljetplus" "HP LaserJet Plus" ON \
    "lp2563"   "HP 2563B line printer" OFF \
    "lp8000"   "Epson LP8000 laser printer" OFF \
