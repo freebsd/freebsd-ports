@@ -55,7 +55,7 @@ MAN1=		mutt.1 mutt_dotlock.1
 MAN5=		muttrc.5
 
 pre-configure:
-	(cd ${WRKSRC}; aclocal -I m4)
+	(cd ${WRKSRC}; ${ACLOCAL} -I m4)
 
 post-install:
 	${INSTALL_DATA} ${WRKDIR}/manual_ja.txt ${PREFIX}/share/doc/mutt
