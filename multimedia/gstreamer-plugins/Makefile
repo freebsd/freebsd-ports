@@ -7,6 +7,7 @@
 
 PORTNAME=	gstreamer
 PORTVERSION=	0.8.5
+PORTREVISION=	1
 CATEGORIES=	multimedia audio
 MASTER_SITES=	http://gstreamer.freedesktop.org/src/gst-plugins/ \
 		${MASTER_SITE_GNOME}
@@ -95,6 +96,10 @@ post-extract:
 	@${CP} ${FILESDIR}/bsdi_dvd.h ${WRKSRC}/sys/vcd/
 
 post-patch:
+# Fix gst-register when using -O -march=athlon-xp
+	@${REINPLACE_CMD} -e 's|@CXXF|-fgcse @CXXF|g' \
+		${WRKSRC}/gst/modplug/Makefile.in \
+		${WRKSRC}/gst/modplug/libmodplug/Makefile.in
 # as of this writing, FreeBSD does not support lrint* C99 math functions
 	@${REINPLACE_CMD} -E -e \
 		's|^#define.*LRINT.*$$||' \
