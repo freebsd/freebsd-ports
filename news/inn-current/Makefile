@@ -7,6 +7,7 @@
 
 PORTNAME=	inn
 PORTVERSION=	2.4.0
+PORTREVISION=	1
 CATEGORIES=	news ipv6
 MASTER_SITES=	${MASTER_SITE_ISC}
 MASTER_SITE_SUBDIR=	inn
@@ -29,18 +30,34 @@ INN_NEWSSPOOL?=${PREFIX}/news/spool
 INN_NEWSLOG?=/var/log/news
 
 HAS_CONFIGURE=		yes
-CONFIGURE_ARGS+=	--mandir=${PREFIX}/man
-CONFIGURE_ARGS+=	--prefix=${PREFIX}/news
-CONFIGURE_ARGS+=	--with-spool-dir=${INN_NEWSSPOOL}
-CONFIGURE_ARGS+=	--with-log-dir=${INN_NEWSLOG}
-CONFIGURE_ARGS+=	--with-perl
-CONFIGURE_ARGS+=	--with-tmp-path=${INN_NEWSSPOOL}/tmp
-CONFIGURE_ARGS+=	--enable-largefiles
-CONFIGURE_ARGS+=	--with-openssl
-CONFIGURE_ARGS+=	--enable-ipv6
+CONFIGURE_ARGS+=	--mandir=${PREFIX}/man \
+			--prefix=${PREFIX}/news \
+			--with-spool-dir=${INN_NEWSSPOOL} \
+			--with-log-dir=${INN_NEWSLOG} \
+			--with-perl \
+			--with-tmp-path=${INN_NEWSSPOOL}/tmp \
+			--with-openssl \
+			--enable-ipv6
 
-EXTRA=	CONTRIBUTORS HACKING INSTALL LICENSE MANIFEST NEWS README TODO
-HEADERS=clibrary.h config.h dbz.h libinn.h storage.h
+.if defined(WITH_PYTHON)
+USE_PYTHON=		YES
+CONFIGURE_ARGS+=	--with-python
+.endif
+
+.if defined(WITH_TAGGED_HASH)
+CONFIGURE_ARGS+=	--enable-tagged-hash
+DBZ_FILES=		dir pag
+PLIST_SUB=		SUB_WITH_TAGGED_HASH=""
+PLIST_SUB+=		SUB_WITHOUT_TAGGED_HASH="@comment "
+.else
+CONFIGURE_ARGS+=	--enable-largefiles
+DBZ_FILES=		dir hash index
+PLIST_SUB=		SUB_WITH_TAGGED_HASH="@comment "
+PLIST_SUB+=		SUB_WITHOUT_TAGGED_HASH=""
+.endif
+
+EXTRA=		CONTRIBUTORS HACKING INSTALL LICENSE MANIFEST NEWS README TODO
+HEADERS=	clibrary.h config.h dbz.h libinn.h storage.h
 
 MAN1=	convdate.1 fastrm.1 getlist.1 grephistory.1 inews.1 innconfval.1 \
 	innfeed.1 innmail.1 nntpget.1 pgpverify.1 rnews.1 shlock.1 \
@@ -64,9 +81,8 @@ MAN8=	actsync.8 actsyncd.8 archive.8 auth_smb.8 batcher.8 buffchan.8 \
 	radius.8 rc.news.8 scanlogs.8 send-nntp.8 send-uucp.8 sendinpaths.8 \
 	tally.control.8 tdx-util.8 writelog.8
 
-do-install:
+post-install:
 	${MKDIR} ${INN_NEWSSPOOL}
-	(cd ${WRKSRC} && ${GMAKE} install)
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
 .for FILE in ${EXTRA}
@@ -79,8 +95,6 @@ do-install:
 .endfor
 	@${SED} <${FILESDIR}/innd.sh >${PREFIX}/etc/rc.d/innd.sh \
 	    s+!!PREFIX!!+${PREFIX}+g && ${CHMOD} +x ${PREFIX}/etc/rc.d/innd.sh
-
-post-install:
 	@${CHOWN} root:news ${PREFIX}/news/bin/auth/passwd/ckpasswd
 	@${CHMOD} 4755 ${PREFIX}/news/bin/auth/passwd/ckpasswd
 	@(if [ ! -f ${PREFIX}/news/db/history ] ; then \
@@ -90,7 +104,7 @@ post-install:
 	    ${CHMOD} 644 history ; \
 	    ${CHOWN} news:news history ; \
 	    su -fm news -c "../bin/makedbz -i" ; \
-	    for s in dir hash index ; do \
+	    for s in ${DBZ_FILES}  ; do \
 		${MV} history.n.$${s} history.$${s} ; \
 	    done ; \
 	fi)
