@@ -3,7 +3,7 @@
 # Date created:        17 March 1998
 # Whom:                Yukihiro Nakai <Nakai@technologist.com>
 #
-# $Id: Makefile,v 1.4 1998/10/01 22:28:32 vanilla Exp $
+# $Id: Makefile,v 1.5 1998/10/23 14:36:24 vanilla Exp $
 #
 
 DISTNAME=	gnome-core-0.30
@@ -16,6 +16,8 @@ MAINTAINER=	Nakai@technologist.com
 
 LIB_DEPENDS=	gnome.0:${PORTSDIR}/x11/gnomelibs \
 		gtop.0:${PORTSDIR}/devel/libgtop
+
+BROKEN=		build
 
 USE_X_PREFIX=	yes
 GNU_CONFIGURE=	yes
