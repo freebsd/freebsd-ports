@@ -1,10 +1,10 @@
---- orbitcpp/orb-cpp/orbitcpp_compound_seq.h.orig	Fri May 30 02:10:38 2003
-+++ orbitcpp/orb-cpp/orbitcpp_compound_seq.h	Wed Jul 23 10:56:18 2003
+--- orbitcpp/orb-cpp/orbitcpp_compound_seq.h.orig	Mon Aug 25 15:16:07 2003
++++ orbitcpp/orb-cpp/orbitcpp_compound_seq.h	Mon Aug 25 15:16:55 2003
 @@ -70,6 +70,7 @@
  	typename SeqTraits::c_value_t,
          typename SeqTraits::c_seq_t>
      {
-+    public:
++    protected:
  	typedef SeqTraits  traits_t;
  	typedef typename traits_t::value_t   value_t;
  	typedef typename traits_t::c_value_t c_value_t;
@@ -23,4 +23,4 @@
 +    public:
  	typedef SeqTraits traits_t;
  	typedef typename traits_t::value_t  value_t;
- 	typedef typename traits_t::c_elem_t c_value_t;
+ 	typedef typename traits_t::c_value_t c_value_t;
