@@ -24,7 +24,7 @@ EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX} ${MODSSL_FILE} \
 .if defined(WITH_APACHE_IPV6) || defined(APACHE_WITH_IPV6) || make(makesum) || defined(FETCH_ALL)
 PATCH_SITES+=	ftp://ftp.42.org/pub/orphan/ ${MASTER_SITE_LOCAL}
 PATCH_SITE_SUBDIR=	dinoex
-PATCHFILES+=	apache-1.3.31modssl-v6-20040514.diff.gz
+PATCHFILES+=	apache-1.3.32modssl-v6-20041023.diff.gz
 .endif
 
 MAINTAINER=	dinoex@FreeBSD.org
@@ -36,9 +36,9 @@ PATCH_DEPENDS=	${BUILD_DEPENDS}
 CONFLICTS?=	apache+ipv6-1.* apache+ssl-1.* apache-1.* apache-2.* \
 		apache_fp-1.* caudium-devel-1.* caudium10-1.* caudium12-* \
 		ru-apache+mod_ssl-1.* ru-apache-1.* thttpd-2.* w3c-httpd-3.*
-VERSION_APACHE=	1.3.31
-VERSION_MODSSL=	2.8.20
-VERSION_MODSNMP=	1.3.14.12
+VERSION_APACHE=	1.3.32
+VERSION_MODSSL=	2.8.21
+VERSION_MODSNMP=	1.3.14.13
 VERSION_MODACCEL=	1.0.31
 VERSION_MODDEFLATE=	1.0.21
 USE_OPENSSL=	yes
@@ -171,6 +171,7 @@ CFLAGS+=	-O3
 MODSNMP_DISTFILE=	${MODSNMP_FILE}:mod_snmp
 .endif
 .if defined(WITH_APACHE_MODSNMP) || defined(APACHE_WITH_MODSNMP)
+BROKEN=		"must wait for next release of mod_snmp"
 CONFLICTS+=	apache+mod_ssl-1.* \
 		apache+mod_ssl+ipv6-1.* \
 		apache+mod_ssl+mod_accel-1.* \
@@ -178,7 +179,7 @@ CONFLICTS+=	apache+mod_ssl-1.* \
 		apache+mod_ssl+mod_accel+mod_deflate-1.* \
 		apache+mod_ssl+mod_accel+mod_deflate+ipv6-1.* \
 		apache+mod_ssl+mod_deflate-1.* \
-		apache+mod_ssl+mod_deflate+ipv6-1.* \
+		apache+mod_ssl+mod_deflate+ipv6-1.*
 MODSNMP_SUFFIX=	+mod_snmp
 CONFIGURE_ARGS+=	--activate-module=src/modules/snmp_agt/libsnmp_agt.a
 CFLAGS+=	-DSNMP -DUSE_DB -DSNMP_CONFIG_H -DHARD_VIRTUAL_HOST_MAX=1000 \
@@ -193,7 +194,7 @@ PLIST_FILES+=	%%DOCSDIR%%/mod/mod_snmp.html \
 		%%DOCSDIR%%/snmp_agt/apache-config-mib.txt
 PLIST_DIRS+=	%%DOCSDIR%%/snmp_agt %%DOCSDIR%% www/buckets www
 .else
-CONFLICTS+=	apache+mod_snmp*-1.*
+CONFLICTS+=	apache+*mod_snmp*-1.*
 .endif
 
 .if defined(WITH_APACHE_MODACCEL) || defined(APACHE_WITH_MODACCEL) || make(makesum) || defined(FETCH_ALL)
@@ -222,7 +223,7 @@ PLIST_FILES+=	libexec/apache/libaccel.so \
 		libexec/apache/mod_randban.so \
 		%%DOCSDIR%%/mod/mod_accel.html
 .else
-CONFLICTS+=	apache+mod_accel*-1.*
+CONFLICTS+=	apache+*mod_accel*-1.*
 .endif
 
 .if defined(WITH_APACHE_MODDEFLATE) || defined(APACHE_WITH_MODDEFLATE) || make(makesum) || defined(FETCH_ALL)
@@ -242,7 +243,7 @@ MODDEFLATE_SUFFIX=	+mod_deflate
 CONFIGURE_ARGS+=	--activate-module=src/modules/extra/mod_deflate.o
 PLIST_FILES+=	%%DOCSDIR%%/mod/mod_deflate.html
 .else
-CONFLICTS+=	apache+mod_deflate*-1.*
+CONFLICTS+=	apache+*mod_deflate*-1.*
 .endif
 
 .if defined(WITH_APACHE_IPV6) || defined(APACHE_WITH_IPV6)
