@@ -21,7 +21,7 @@ RUN_DEPENDS=	${PREFIX}/${OPENOFFICE}/program/soffice:${PORTSDIR}/japanese/openof
 
 OPENOFFICE=	OpenOffice.org1.1.0
 
-TEMPLATES=	Black-cyan-yellow.ja.sti	\
+OOTEMPLATES=	Black-cyan-yellow.ja.sti	\
 		Black-orange.ja.sti		\
 		Blue-yellow-white.ja.sti	\
 		BlueBoxes_ja_11.sti		\
@@ -70,12 +70,12 @@ TEMPLATES=	Black-cyan-yellow.ja.sti	\
 		sun4.sti
 
 do-build:
-.for FILE in ${TEMPLATES}
+.for FILE in ${OOTEMPLATES}
 	@${ECHO_CMD} ${OPENOFFICE}/share/template/japanese/layout/${FILE} >> ${PLIST}
 .endfor
 
 do-install:
-.for FILE in ${TEMPLATES}
+.for FILE in ${OOTEMPLATES}
 	@${INSTALL_DATA} ${WRKSRC}/${FILE} ${PREFIX}/${OPENOFFICE}/share/template/japanese/layout/${FILE}
 .endfor
 
