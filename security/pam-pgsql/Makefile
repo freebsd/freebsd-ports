@@ -6,25 +6,28 @@
 #
 
 PORTNAME=	pam-pgsql
-PORTVERSION=	0.5.1
+PORTVERSION=	0.5.2
 CATEGORIES=	security databases
 MASTER_SITES=	${MASTER_SITE_DEBIAN}
-MASTER_SITE_SUBDIR=	pool/main/p/pam-pgsql
-DISTFILES=	${PORTNAME}_${PORTVERSION}${EXTRACT_SUFX}
+MASTER_SITE_SUBDIR=	pool/non-US/main/p/pam-pgsql
+DISTFILES=	${PORTNAME}_${PORTVERSION}.orig${EXTRACT_SUFX}
+PATCHFILES=	pam-pgsql_0.5.2-1.diff.gz
+PATCH_SITES=	${MASTER_SITES}
 
 MAINTAINER=	mi@aldan.algebra.com
 
 LIB_DEPENDS=	pq:${PORTSDIR}/databases/postgresql7
 
+PATCH_DIST_STRIP=	-p1
 # When the family of Debian mirrors is added to bsd.port.mk,
 # this will suddenly start making sense:
-MASTER_SITE_DEBIAN?= http://ftp.debian.org/debian/%SUBDIR%/
+MASTER_SITE_DEBIAN?= http://debian.yorku.ca/debian/non-US/%SUBDIR%/
 # This should help the users of MASTER_SORT_REGEX:
 .for c in at bg br cz de ee es fi fr hu it jp kr nl no nz pl se si tr uk
-MASTER_SITES_DEBIAN+=	http://ftp.$c.debian.org/debian/%SUBDIR%/
+MASTER_SITES_DEBIAN+=	http://ftp.$c.debian.org/debian-non-US/%SUBDIR%/
 .endfor
-MASTER_SITES_DEBIAN+=	http://ftp.au.debian.org/pub/debian/%SUBDIR%/ \
-	ftp://ftp.bora.net/pub/linux/debian/%SUBDIR%/
+MASTER_SITES_DEBIAN+=	http://ftp.au.debian.org/pub/debian-non-US/%SUBDIR%/ \
+	ftp://ftp.bora.net/pub/linux/debian-non-US/%SUBDIR%/
 
 MAKEFILE=	${FILESDIR}/Makefile.bsd
 MAKE_ARGS+=	-j 2 FILESDIR=${FILESDIR}
