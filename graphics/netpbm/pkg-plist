@@ -32,6 +32,7 @@ bin/palmtopnm
 bin/pamchannel
 bin/pamcut
 bin/pamfile
+bin/pamoil
 bin/pamtopnm
 bin/pbmclean
 bin/pbmlife
@@ -60,10 +61,12 @@ bin/pbmtolps
 bin/pbmtomacp
 bin/pbmtomda
 bin/pbmtomgr
+bin/pbmtonokia
 bin/pbmtopgm
 bin/pbmtopi3
 bin/pbmtopk
 bin/pbmtoplot
+bin/pbmtopsg3
 bin/pbmtoptx
 bin/pbmtowbmp
 bin/pbmtox10bm
@@ -82,7 +85,6 @@ bin/pgmkernel
 bin/pgmmerge
 bin/pgmnoise
 bin/pgmnorm
-bin/pgmoil
 bin/pgmramp
 bin/pgmslice
 bin/pgmtexture
@@ -165,6 +167,7 @@ bin/ppmpat
 bin/ppmquant
 bin/ppmquantall
 bin/ppmqvga
+bin/ppmrainbow
 bin/ppmrelief
 bin/ppmshadow
 bin/ppmshift
