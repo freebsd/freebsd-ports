@@ -1,0 +1,37 @@
+--- ../nmh-0.19.ORIG/configure	Sun Dec 28 12:19:27 1997
++++ configure	Mon Jan  5 20:34:08 1998
+@@ -967,6 +967,8 @@
+ # It thinks the first close brace ends the variable substitution.
+ test -z "$INSTALL_PROGRAM" && INSTALL_PROGRAM='${INSTALL}'
+ 
++test -z "$INSTALL_SCRIPT" && INSTALL_SCRIPT='${INSTALL} -m 755'
++
+ test -z "$INSTALL_DATA" && INSTALL_DATA='${INSTALL} -m 644'
+ 		# Extract the first word of "ranlib", so it can be a program name with args.
+ set dummy ranlib; ac_word=$2
+@@ -3449,6 +3451,7 @@
+ s%@CC@%$CC%g
+ s%@SET_MAKE@%$SET_MAKE%g
+ s%@INSTALL_PROGRAM@%$INSTALL_PROGRAM%g
++s%@INSTALL_SCRIPT@%$INSTALL_SCRIPT%g
+ s%@INSTALL_DATA@%$INSTALL_DATA%g
+ s%@RANLIB@%$RANLIB%g
+ s%@AWK@%$AWK%g
+@@ -3692,7 +3695,7 @@
+ 
+ eval "nmhbin=${bindir}";         eval "nmhbin2=${nmhbin}"
+ eval "nmhsysconf=${sysconfdir}"; eval "nmhsysconf2=${nmhsysconf}"
+-eval "nmhlib=${libdir}";         eval "nmhlib2=${nmhlib}"
++eval "nmhlib=${libexecdir}";     eval "nmhlib2=${nmhlib}"
+ eval "nmhman=${mandir}"
+ 
+ echo "
+@@ -3705,7 +3708,7 @@
+ linker flags              : ${LDFLAGS}
+ source code location      : ${srcdir}
+ binary install path       : ${nmhbin2}
+-libary install path       : ${nmhlib2}
++libexec install path      : ${nmhlib2}
+ config files install path : ${nmhsysconf2}
+ man page install path     : ${nmhman}"
+ echo ""

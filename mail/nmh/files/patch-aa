@@ -1,5 +1,5 @@
---- ../nmh-0.18.ORIG/acconfig.h	Mon Dec  1 07:52:31 1997
-+++ acconfig.h	Sun Dec 28 14:22:34 1997
+--- ../nmh-0.19.ORIG/acconfig.h	Mon Dec  1 07:52:31 1997
++++ acconfig.h	Mon Jan  5 20:03:43 1998
 @@ -36,9 +36,9 @@
   *  OpenBSD 2.x
   *  BSD/OS 2.x
@@ -7,12 +7,21 @@
 -/* #define BIND     1 */
 -/* #define BSD42    1 */
 -/* #define BSD44    1 */
-+#define BIND     1 /**/
-+#define BSD42    1 /**/
-+#define BSD44    1 /**/
++#define BIND     1
++#define BSD42    1
++#define BSD44    1
  
  /*
   *  SCO 4.x
+@@ -58,7 +58,7 @@
+  * group and add the setgid bit to `inc' manually after
+  * installation.
+  */
+-/* #define MAILGROUP  1 */
++#define MAILGROUP  1
+ 
+ /*
+  * Turn on locale (setlocale) support
 @@ -71,10 +71,10 @@
   * other programs which may modify your maildrops.
   * Currently you can only use one type.
