@@ -1,0 +1,54 @@
+--- Makefile.orig	Tue Apr  3 13:41:51 2001
++++ Makefile	Sat Apr 14 21:38:55 2001
+@@ -6,11 +6,11 @@
+ 
+ # set INSTALLROOT to the installation base; it is used to set the
+ # other directory variables below
+-INSTALLROOT = /usr/local
++INSTALLROOT = ${PREFIX}
+ #INSTALLROOT = /usr
+ 
+ # set LIBDIR to where you will keep the datafiles, fontspecs, and "hanwin.tcl"
+-LIBDIR = $(INSTALLROOT)/lib/Hanzim
++LIBDIR = $(INSTALLROOT)/lib/hanzim
+ #LIBDIR = /usr/local/lib/Hanzim
+ # for debugging
+ #LIBDIR = ./Data
+@@ -24,7 +24,7 @@
+ #MANDIR = /usr/local/man
+ 
+ # set DOCDIR to where you want the documentation files to reside
+-DOCDIR = $(INSTALLROOT)/doc
++DOCDIR = $(INSTALLROOT)/share/doc/hanzim
+ #DOCDIR = $(INSTALLROOT)/share/doc
+ #DOCDIR = /usr/local/share/doc
+ #DOCDIR = /usr/share/doc
+@@ -41,13 +41,13 @@
+ #OS=WINDOWS
+ 
+ # location of Tcl and Tk libraries
+-LIBTCLDIR = -L /usr/lib
++LIBTCLDIR = -L${LOCALBASE}/lib
+ 
+ # location of x library
+-LIBXDIR = -L /usr/X11/lib
++LIBXDIR = -L${X11BASE}/lib
+ 
+ # you might need to change "libtcl" and "libtk" to "libtcl8.x" and "libtk8.x"
+-LIBS = $(LIBXDIR) $(LIBTCLDIR) -ltk -ltcl -lX11 -lm -ldl
++LIBS = $(LIBXDIR) $(LIBTCLDIR) -ltk83 -ltcl83 -lX11 -lm
+ 
+ INSTALL = install
+ RM = rm -f
+@@ -55,9 +55,8 @@
+ # End of configuration.
+ ###############################################################################
+ 
+-CC = cc
+-DEFINES = -D$(OS) -DLIBDIR=\"$(LIBDIR)\"
+-CFLAGS = -O2 $(DEFINES)
++DEFINES = -D$(OS) -DLIBDIR=\"$(LIBDIR)\" -I${LOCALBASE}/include/tk8.3 -I${LOCALBASE}/include/tcl8.3 -I${X11BASE}/include
++CFLAGS += $(DEFINES)
+ #CFLAGS = -O2 -Wall -pedantic -ansi $(DEFINES)
+ LFLAGS = $(LIBS)  -s
+ 
