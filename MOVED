@@ -338,3 +338,4 @@ chinese/rxvt||2003-05-20|no longer needed
 chinese/rxvt-big5||2003-05-20|no longer needed
 chinese/rxvt-gb||2003-05-20|no longer needed
 misc/p5-DataCash||2003-05-20|No longer available
+net/p5-Net-BGP4|net/p5-Net-BGP|module was renamed
