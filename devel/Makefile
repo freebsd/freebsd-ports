@@ -337,6 +337,7 @@
     SUBDIR += py-mxStack
     SUBDIR += py-mxTools
     SUBDIR += qtarch
+    SUBDIR += qt-designer
     SUBDIR += qtez
     SUBDIR += qtk
     SUBDIR += re2c
