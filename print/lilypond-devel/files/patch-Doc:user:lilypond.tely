@@ -1,0 +1,19 @@
+--- Documentation/user/lilypond.tely.orig	Sat Sep 27 11:16:47 2003
++++ Documentation/user/lilypond.tely	Mon Oct  6 16:04:34 2003
+@@ -17,16 +17,6 @@
+ @direntry
+ @c    ;; prepend GNU for dir, must be unique
+ * GNU LilyPond: (lilypond).                    The GNU music typesetter.
+-* lilypond: (lilypond)Invoking lilypond::      Titling LilyPond scores.
+-* Glossary: (music-glossary).                  Glossary of music terms.
+-* convert-ly: (lilypond)Invoking convert-ly::  Older LilyPond versions.
+-* midi2ly: (lilypond)Invoking midi2ly::        Importing MIDI.
+-* etf2ly: (lilypond)Invoking etf2ly::          Importing Finale.
+-* abc2ly: (lilypond)Invoking abc2ly::          Importing ABC.          
+-* pmx2ly: (lilypond)Invoking pmx2ly::          Importing PMX.
+-* musedata2ly: (lilypond)Invoking musedata2ly::
+-                                               Importing Musedata.
+-* mup2ly: (lilypond)Invoking mup2ly::          Importing MUP. 
+ @end direntry
+ 
+ 

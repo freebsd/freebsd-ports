@@ -1,0 +1,13 @@
+--- Documentation/user/GNUmakefile.orig	Sat Sep 20 00:36:19 2003
++++ Documentation/user/GNUmakefile	Sat Sep 20 00:36:30 2003
+@@ -24,9 +24,7 @@
+ INFO_DOCS = lilypond lilypond-internals music-glossary
+ INFO_FILES = $(INFO_DOCS:%=$(outdir)/%.info)
+ 
+-STEPMAKE_TEMPLATES=tex texinfo omf documentation
+-
+-OMF_FILES += $(outdir)/lilypond-internals.html.omf
++STEPMAKE_TEMPLATES=tex texinfo documentation
+ 
+ LOCALSTEPMAKE_TEMPLATES=lilypond ly
+ LILYPOND_BOOK_FLAGS=--extra-options '-e "(ly:set-option (quote internal-type-checking) \#t)"'

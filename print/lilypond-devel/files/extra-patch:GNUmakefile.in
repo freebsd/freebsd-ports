@@ -1,0 +1,16 @@
+--- GNUmakefile.in.orig	Wed Oct 15 15:53:47 2003
++++ GNUmakefile.in	Wed Oct 15 15:54:18 2003
+@@ -9,12 +9,11 @@
+ # descent order into subdirectories
+ # 
+ SUBDIRS = buildscripts python scripts \
+-	elisp \
+ 	flower lily \
+ 	mf ly tex ps scm \
+ 	po make \
+ 	cygwin debian stepmake \
+-	Documentation input
++	input
+ #
+ 
+ SCRIPTS = configure aclocal.m4 autogen.sh lexer-gcc-3.1.sh

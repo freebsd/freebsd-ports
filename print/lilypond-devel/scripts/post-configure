@@ -1,0 +1,14 @@
+#!/bin/sh
+outdir=out
+cd ${WRKSRC} || exit 2
+    file=lily/$outdir/lexer.cc
+    echo -n "Generating and fixing $file... "
+    rm -f $file
+    gmake conf=$CONF -C lily $outdir/lexer.cc || true
+
+    mv $file $file.orig
+    sed -e 's/istream\*/std::istream*/g' \
+        -e 's/ostream\*/std::ostream*/g' \
+        -e 's/class istream;/#include \<iostream\>/g' \
+        $file.orig > $file
+    echo "done"

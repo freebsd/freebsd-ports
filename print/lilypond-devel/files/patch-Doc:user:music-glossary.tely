@@ -1,0 +1,21 @@
+--- Documentation/user/music-glossary.tely.orig	Mon Oct  6 16:04:06 2003
++++ Documentation/user/music-glossary.tely	Mon Oct  6 16:04:24 2003
+@@ -2,6 +2,18 @@
+ @settitle Music Glossary
+ @setfilename music-glosssary.info
+ 
++@ignore
++Distributions will want to install lilypond.info doing:
++
++    ./install-info --info-dir=/usr/share/info out/lilypond.info
++
++@end ignore
++@dircategory GNU music project
++@direntry
++@c    ;; prepend GNU for dir, must be unique
++* Music Glossary: (music-glossary).                  Glossary of music terms.
++@end direntry
++
+ 
+ @ifhtml
+ This document is also available in @uref{music-glossary.ps.gz,gzipped
