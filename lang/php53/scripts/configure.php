@@ -54,6 +54,7 @@ NCURSES		"ncurses support (CLI only)" ${WITH_NCURSES:-OFF} \
 OPENLDAP	"OpenLDAP support" ${WITH_OPENLDAP:-OFF} \
 OPENSSL		"OpenSSL support" ${WITH_OPENSSL:-OFF} \
 ORACLE		"Oracle support" ${WITH_ORACLE:-OFF} \
+OVERLOAD	"user-space object overloading support" ${WITH_OVERLOAD:-OFF} \
 PCNTL		"pcntl support (CLI only)" ${WITH_PCNTL:-OFF} \
 PCRE		"Perl Compatible Regular Expression support" ${WITH_PCRE:-OFF} \
 PDFLIB		"PDFlib support" ${WITH_PDFLIB:-OFF} \
@@ -72,7 +73,7 @@ SYSVSEM		"System V semaphore support" ${WITH_SYSVSEM:-OFF} \
 SYSVSHM		"System V shared memory support" ${WITH_SYSVSHM:-OFF} \
 TOKENIZER	"tokenizer support" ${WITH_TOKENIZER:-OFF} \
 UNIXODBC	"unixODBC support" ${WITH_UNIXODBC:-OFF} \
-WDDX		"WDDX support" ${WITH_WDDX:-OFF} \
+WDDX		"WDDX support (implies XML)" ${WITH_WDDX:-OFF} \
 XML		"XML support" ${WITH_XML:-OFF} \
 XMLRPC		"XMLRPC-EPI support" ${WITH_XMLRPC:-OFF} \
 XSLT		"XSLT Sablotron support" ${WITH_XSLT:-OFF} \
