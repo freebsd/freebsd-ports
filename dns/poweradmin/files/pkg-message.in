@@ -1,0 +1,9 @@
+*******************************************************************************
+A sample config file is located in %%INSTALLDIR%%/inc/config.inc.php.sample
+You now need to add an alias to apache's httpd.conf pointing to
+${INSTALLDIR} in order to access PowerAdmin from your web brower,
+or create a VirtualHost with DocumentRoot set to that directory.
+	Alias /poweradmin/	%%INSTALLDIR%%/
+		or
+	DocumentRoot		%%INSTALLDIR%%/
+*******************************************************************************

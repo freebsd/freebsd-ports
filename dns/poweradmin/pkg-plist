@@ -1,0 +1,39 @@
+www/poweradmin/add_record.php
+www/poweradmin/delete_domain.php
+www/poweradmin/delete_record.php
+www/poweradmin/delete_user.php
+www/poweradmin/docs/ChangeLog
+www/poweradmin/docs/README
+www/poweradmin/docs/README-Sequence
+www/poweradmin/docs/REDHAT-README
+www/poweradmin/docs/TODO
+www/poweradmin/edit.php
+www/poweradmin/edit_record.php
+www/poweradmin/edit_user.php
+www/poweradmin/images/background.jpg
+www/poweradmin/images/delete.gif
+www/poweradmin/images/edit.gif
+www/poweradmin/inc/auth.inc.php
+www/poweradmin/inc/config.inc.php.sample
+www/poweradmin/inc/dal.inc.php
+www/poweradmin/inc/database.inc.php
+www/poweradmin/inc/dns.inc.php
+www/poweradmin/inc/error.inc.php
+www/poweradmin/inc/footer.inc.php
+www/poweradmin/inc/header.inc.php
+www/poweradmin/inc/record.inc.php
+www/poweradmin/inc/toolkit.inc.php
+www/poweradmin/inc/users.inc.php
+www/poweradmin/index.php
+www/poweradmin/install.php
+www/poweradmin/migrator.php-pa
+www/poweradmin/search.php
+www/poweradmin/seq_update.php
+www/poweradmin/style/style.css.php
+www/poweradmin/test_setup.php
+www/poweradmin/users.php
+@dirrm www/poweradmin/style
+@dirrm www/poweradmin/inc
+@dirrm www/poweradmin/images
+@dirrm www/poweradmin/docs
+@dirrm www/poweradmin
