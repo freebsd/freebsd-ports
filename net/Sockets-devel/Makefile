@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Sockets
-PORTVERSION=	1.7.1
+PORTVERSION=	1.8.1
 CATEGORIES=	net ipv6
 MASTER_SITES=	http://www.alhem.net/Sockets/
 
