@@ -1,5 +1,6 @@
 lib/perl5/site_perl/%%PERL_VER%%/Apache/Mason.pm
 lib/perl5/site_perl/%%PERL_VER%%/Bundle/HTML/Mason.pm
+lib/perl5/site_perl/%%PERL_VER%%/HTML/Mason.pm
 lib/perl5/site_perl/%%PERL_VER%%/HTML/Mason/Admin.pod
 lib/perl5/site_perl/%%PERL_VER%%/HTML/Mason/ApacheHandler.pm
 lib/perl5/site_perl/%%PERL_VER%%/HTML/Mason/Buffer.pm
@@ -25,10 +26,12 @@ lib/perl5/site_perl/%%PERL_VER%%/HTML/Mason/Subclassing.pod
 lib/perl5/site_perl/%%PERL_VER%%/HTML/Mason/Tests.pm
 lib/perl5/site_perl/%%PERL_VER%%/HTML/Mason/Tools.pm
 lib/perl5/site_perl/%%PERL_VER%%/HTML/Mason/Utils.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/HTML/Mason/.packlist
 @dirrm lib/perl5/site_perl/%%PERL_VER%%/HTML/Mason/Compiler
 @dirrm lib/perl5/site_perl/%%PERL_VER%%/HTML/Mason/Component
 @dirrm lib/perl5/site_perl/%%PERL_VER%%/HTML/Mason/Resolver
 @dirrm lib/perl5/site_perl/%%PERL_VER%%/HTML/Mason
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/HTML/Mason
 @unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/HTML 2>/dev/null || true
 @unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/Bundle/HTML 2>/dev/null || true
 @unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/Bundle 2>/dev/null || true
