@@ -15,7 +15,7 @@ DISTFILES=	src-${DISTNAME}${EXTRACT_SUFX}
 MAINTAINER=	janos.mohacsi@bsd.hu
 COMMENT=	An IP network performance tests and measurements
 
-BROKEN=		Does not respect PTHREAD_LIBS
+IGNORE=		does not respect PTHREAD_LIBS
 
 USE_GMAKE=	yes
 USE_REINPLACE=	yes
