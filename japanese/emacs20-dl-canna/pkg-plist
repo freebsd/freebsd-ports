@@ -6,4 +6,5 @@ libexec/emacs/%%EMACS_VER%%/%%EMACS_ARCH%%/canna.so
 %%LISPDIR%%/canna/canna-leim.elc
 %%DOCDIR%%/README.ja
 %%DOCDIR%%/ChangeLog
+@dirrm %%LISPDIR%%/canna
 @dirrm %%DOCDIR%%
