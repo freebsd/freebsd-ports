@@ -1,0 +1,23 @@
+bin/vlc
+include/videolan/dvdcss.h
+lib/libdvdcss.a
+lib/libdvdcss.so.0.0.1
+lib/videolan/vlc/dsp.so
+lib/videolan/vlc/x11.so
+lib/videolan/vlc/xvideo.so
+share/videolan/default8x16.psf
+share/videolan/default8x9.psf
+share/videolan/gnome-vlc.png
+share/videolan/gvlc.png
+share/videolan/kvlc.png
+share/videolan/qvlc.png
+share/videolan/vlc.png
+share/videolan/gnome-vlc.xpm
+share/videolan/gvlc.xpm
+share/videolan/kvlc.xpm
+share/videolan/qvlc.xpm
+share/videolan/vlc.xpm
+@dirrm lib/videolan/vlc
+@dirrm lib/videolan
+@dirrm include/videolan
+@dirrm share/videolan
