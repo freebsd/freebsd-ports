@@ -47,6 +47,7 @@
     SUBDIR += movemail
     SUBDIR += mutt
     SUBDIR += nmh
+    SUBDIR += p5-IMAP-Admin
     SUBDIR += p5-MIME-Lite
     SUBDIR += p5-MIME-Tools
     SUBDIR += p5-Mail-Folder
