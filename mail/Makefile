@@ -35,12 +35,12 @@
     SUBDIR += mbx2mbox
     SUBDIR += metamail
     SUBDIR += mew
-    SUBDIR += mew-common
     SUBDIR += mew-emacs20
     SUBDIR += mew-mule
     SUBDIR += mew-xemacs
-    SUBDIR += mew-xemacs20
     SUBDIR += mew-xemacs-mule
+    SUBDIR += mew-xemacs20
+    SUBDIR += mew-xemacs21
     SUBDIR += mh
     SUBDIR += ml
     SUBDIR += mmr
