@@ -1,0 +1,15 @@
+@comment $FreeBSD$
+bin/t-prot
+%%PORTDOCS%%%%DOCSDIR%%/BUGS
+%%PORTDOCS%%%%DOCSDIR%%/ChangeLog
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/TODO
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
+%%EXAMPLESDIR%%/README.examples
+%%EXAMPLESDIR%%/README.patches
+%%EXAMPLESDIR%%/filter_innd.pl
+%%EXAMPLESDIR%%/muttrc.t-prot
+%%EXAMPLESDIR%%/t-prot-r1.190-gpg125.diff
+%%EXAMPLESDIR%%/t-prot-r1.191-gpg124.diff
+%%EXAMPLESDIR%%/t-prot-r1.199-mutt156.diff
+%%EXAMPLESDIR%%/t-prot.sl
