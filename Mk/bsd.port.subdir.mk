@@ -1,5 +1,5 @@
 #	from: @(#)bsd.subdir.mk	5.9 (Berkeley) 2/1/91
-#	$Id: bsd.port.subdir.mk,v 1.29 1999/04/12 09:03:41 asami Exp $
+#	$Id: bsd.port.subdir.mk,v 1.30 1999/04/28 06:20:15 asami Exp $
 #
 # The include file <bsd.port.subdir.mk> contains the default targets
 # for building ports subdirectories. 
@@ -42,55 +42,88 @@
 STRIP?=	-s
 .endif
 
-.if !defined(OPSYS)	# XXX !!
-OPSYS!=	uname -s
+.if !defined(NOPRECIOUSMAKEVARS)
+.if !defined(ARCH)
+ARCH!=	/usr/bin/uname -m
+.endif
+.if !defined(OSREL)
+OSREL!=	/usr/bin/uname -r | sed -e 's/[-(].*//'
+.endif
+.if !defined(OSVERSION)
+.if exists(/sbin/sysctl)
+OSVERSION!= /sbin/sysctl -n kern.osreldate
+.else
+OSVERSION!= /usr/sbin/sysctl -n kern.osreldate
+.endif
+.endif
+.if !defined(PORTOBJFORMAT)
+PORTOBJFORMAT!= test -x /usr/bin/objformat && /usr/bin/objformat || echo aout
+.endif
+.endif
+
+.if !defined(OPSYS)
+OPSYS!=	/usr/bin/uname -s
 .endif
 
 ECHO_MSG?=	echo
 
-_SUBDIRUSE: .USE
-	@for entry in ${SUBDIR}; do \
-		OK=""; \
-		for dud in $$DUDS; do \
-			if [ $${dud} = $${entry} ]; then \
-				OK="false"; \
-				${ECHO_MSG} "===> ${DIRPRFX}$${entry} skipped"; \
-			fi; \
-		done; \
-		if test -d ${.CURDIR}/$${entry}.${MACHINE}; then \
-			edir=$${entry}.${MACHINE}; \
-		elif test -d ${.CURDIR}/$${entry}; then \
-			edir=$${entry}; \
-		else \
-			OK="false"; \
-			${ECHO_MSG} "===> ${DIRPRFX}$${entry} non-existent"; \
-		fi; \
-		if [ "$$OK" = "" ]; then \
-			${ECHO_MSG} "===> ${DIRPRFX}$${edir}"; \
-			cd ${.CURDIR}/$${edir}; \
-			${MAKE} ${.TARGET:realinstall=install} \
-				DIRPRFX=${DIRPRFX}$$edir/; \
-		fi; \
-	done
+TARGETS+=	all
+TARGETS+=	build
+TARGETS+=	checksum
+TARGETS+=	clean
+TARGETS+=	clean-for-cdrom
+TARGETS+=	clean-for-cdrom-list
+TARGETS+=	clean-restricted
+TARGETS+=	clean-restricted-list
+TARGETS+=	configure
+TARGETS+=	deinstall
+TARGETS+=	depend
+TARGETS+=	depends
+TARGETS+=	describe
+TARGETS+=	distclean
+TARGETS+=	extract
+TARGETS+=	fetch
+TARGETS+=	fetch-list
+TARGETS+=	ignorelist
+TARGETS+=	package
+TARGETS+=	package-loop
+TARGETS+=	reinstall
+TARGETS+=	tags
 
-${SUBDIR}::
-	@if test -d ${.TARGET}.${MACHINE}; then \
-		cd ${.CURDIR}/${.TARGET}.${MACHINE}; \
-	else \
-		cd ${.CURDIR}/${.TARGET}; \
-	fi; \
-	${MAKE} all
-
-.for __target in all fetch fetch-list package package-loop extract configure \
-		 build clean clean-for-cdrom clean-restricted \
-		 clean-for-cdrom-list clean-restricted-list \
-		 deinstall depend depends describe distclean \
-		 reinstall tags checksum \
-		 ignorelist
+.for __target in ${TARGETS}
 .if !target(${__target})
-${__target}: _SUBDIRUSE
+${__target}: ${SUBDIR:S/$/.${__target}/}
 .endif
 .endfor
+
+.for __target in ${TARGETS} checksubdirs readmes
+${SUBDIR:S/$/.${__target}/}: _SUBDIRUSE
+.endfor
+
+_SUBDIRUSE: .USE
+	@OK=""; sub=${.TARGET:R}; \
+	for dud in $$DUDS; do \
+		if [ $${dud} = $$sub ]; then \
+			OK="false"; \
+			${ECHO_MSG} "===> ${DIRPRFX}$$sub skipped"; \
+		fi; \
+	done; \
+	if test -d ${.CURDIR}/${.TARGET:R}.${MACHINE}; then \
+		edir=$${sub}.${MACHINE}; \
+	elif test -d ${.CURDIR}/$${sub}; then \
+		edir=$${sub}; \
+	else \
+		OK="false"; \
+		${ECHO_MSG} "===> ${DIRPRFX}$${sub} non-existent"; \
+	fi; \
+	if [ "$$OK" = "" ]; then \
+		${ECHO_MSG} "===> ${DIRPRFX}$${edir}"; \
+		cd ${.CURDIR}/$${edir}; \
+		${MAKE} -B ${.TARGET:E:realinstall=install} \
+			DIRPRFX=${DIRPRFX}$$edir/; \
+	fi
+
+${SUBDIR}:: ${SUBDIR:S/$/.all/}
 
 .if !target(install)
 .if !target(beforeinstall)
@@ -101,14 +134,14 @@ afterinstall:
 .endif
 install: afterinstall
 afterinstall: realinstall
-realinstall: beforeinstall _SUBDIRUSE
+realinstall: beforeinstall ${SUBDIR:S/$/.realinstall/}
 .endif
 
 IGNOREDIR=	CVS Mk Templates Tools distfiles packages pkg
 
 .if !target(checksubdirs)
 .if defined(PORTSTOP)
-checksubdirs: checksubdir _SUBDIRUSE
+checksubdirs: checksubdir ${SUBDIR:S/$/.checksubdirs/}
 .else
 checksubdirs: checksubdir
 .endif
@@ -130,15 +163,15 @@ checksubdir:
 	    fi; \
 	  fi; \
 	done
-.for s in ${SUBDIR}
-.if !exists(${.CURDIR}/$s/)
-	@${ECHO} "Warning: directory $s in SUBDIR does not exist"
-.endif
-.endfor
+	@for s in ${SUBDIR}; do \
+	  if ! [ -d ${.CURDIR}/$$s ]; then \
+	    ${ECHO} "Warning: directory $s in SUBDIR does not exist"; \
+	  fi \
+	done
 .endif
 
 .if !target(readmes)
-readmes: readme _SUBDIRUSE
+readmes: readme ${SUBDIR:S/$/.readmes/}
 .endif
 
 .if !target(readme)
@@ -190,3 +223,12 @@ README.html:
 			-e '/%%SUBDIR%%/d' \
 		> $@
 	@rm -f $@.tmp $@.tmp2 $@.tmp3
+
+.if !defined(NOPRECIOUSMAKEVARS)
+.MAKEFLAGS: \
+	ARCH="${ARCH:S/"/"'"'"/g:S/\$/\$\$/g:S/\\/\\\\/g}" \
+	OPSYS="${OPSYS:S/"/"'"'"/g:S/\$/\$\$/g:S/\\/\\\\/g}" \
+	OSREL="${OSREL:S/"/"'"'"/g:S/\$/\$\$/g:S/\\/\\\\/g}" \
+	OSVERSION="${OSVERSION:S/"/"'"'"/g:S/\$/\$\$/g:S/\\/\\\\/g}" \
+	PORTOBJFORMAT="${PORTOBJFORMAT:S/"/"'"'"/g:S/\$/\$\$/g:S/\\/\\\\/g}"
+.endif
