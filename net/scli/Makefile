@@ -12,6 +12,8 @@ MASTER_SITES=	ftp://ftp.ibr.cs.tu-bs.de/pub/local/${PORTNAME}/
 
 MAINTAINER=	lyngbol@wheel.dk
 
+BROKEN=		"Cannot find libxml2 dependency"
+
 LIB_DEPENDS=	xml2:${PORTSDIR}/textproc/libxml2
 
 GNU_CONFIGURE=	yes
