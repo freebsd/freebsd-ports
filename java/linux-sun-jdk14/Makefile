@@ -10,8 +10,7 @@ PORTVERSION=	${JDK_VERSION:S/-//g}
 CATEGORIES=	java devel
 MASTER_SITES=	#
 PKGNAMEPREFIX=	linux-
-DISTNAME=	j2sdk-${JDK_VERSION:S/./_/g}-linux-i386
-EXTRACT_SUFX=	.bin
+DISTFILES=	j2sdk-${JDK_VERSION:S/./_/g}-linux-i386.bin
 
 MAINTAINER=	ernst@jollem.com
 
@@ -21,7 +20,7 @@ NO_CDROM=	"License doesn\'t allow distribution with fee"
 RESTRICTED=	"Redistribution of repackaged binaries not permitted"
 
 .if defined(BATCH) || defined(PACKAGE_BUILDING)
-IGNORE=		"You can not legally distribute binaries"
+IGNORE="You can not legally distribute binaries"
 .endif
 
 EXTRACT_CMD=		# empty
@@ -41,7 +40,7 @@ TARGET_PREFIX?=	${PREFIX}/${PKGBASE}${PORTVERSION}
 
 .for file in ${DISTFILES}
 .if !exists(${DISTDIR}/${file})
-IGNORE=You must manually fetch the Java 2 Development Kit ${JDK_VERSION} for Linux archive (${DISTFILES}) from http://java.sun.com/j2se/1.3/download-linux.html, place it in ${DISTDIR} and then run make again.
+IGNORE=You must manually fetch the Java 2 Development Kit ${JDK_VERSION} for Linux archive (${DISTFILES}) from http://java.sun.com/j2se/1.3/download-linux.html, place it in ${DISTDIR} and then run make again
 .endif
 .endfor
 

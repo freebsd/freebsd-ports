@@ -1165,3 +1165,4 @@
 @dirrm %%TARGET_PREFIX%%/man/ja_JP.eucJP
 @dirrm %%TARGET_PREFIX%%/man
 @dirrm %%TARGET_PREFIX%%
+@unexec %%LOCALBASE%%/bin/unregistervm "%D/%%TARGET_PREFIX%%/bin/java"
