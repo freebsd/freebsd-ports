@@ -1,16 +1,13 @@
---- Makefile.in	Tue Oct  7 07:55:21 1997
-+++ Makefile.in	Mon Nov 24 00:13:27 1997
-@@ -15,11 +15,11 @@
- PURIFY =
- 
- # Libraries needed to link with Tcl & (optionally) Tk
--TCLTK_LIBS = @TCLTKLIBS@
-+TCLTK_LIBS = -L/usr/lib @TCLTKLIBS@
- # Include directives needed to compile with Tcl & Tk, and
- # -DTCL if Tcl is available, and
- # -DTK if Tk is available.
--TCLTK_FLAGS = @TCLTKFLAGS@
-+TCLTK_FLAGS = @TCLTKFLAGS@ -I/usr/X11R6/include
- 
- # Libraries needed to link with GNU readline
- RLLIBS = @RLLIBS@
+--- Makefile.in.orig	Thu Mar 21 07:31:21 2002
++++ Makefile.in	Wed Mar 27 12:33:16 2002
+@@ -100,8 +100,8 @@
+ TCLLIBS = @TCLLIBS@
+ TCLTKFLAGS = @TCLTKFLAGS@
+ TCLTKLIBS = @TCLTKLIBS@
+-TCLTK_FLAGS = @TCLTK_FLAGS@
+-TCLTK_LIBS = @TCLTK_LIBS@
++TCLTK_FLAGS = @TCLTK_FLAGS@ -I/usr/X11R6/include
++TCLTK_LIBS = -L/usr/lib @TCLTK_LIBS@
+ TCL_BIN = @TCL_BIN@
+ TCL_INC = @TCL_INC@
+ TCL_LIBS = @TCL_LIBS@
