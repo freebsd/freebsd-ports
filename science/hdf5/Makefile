@@ -26,6 +26,12 @@ CONFIGURE_ARGS=	--enable-cxx --enable-production \
 ALL_TARGET=	lib progs
 INSTALLS_SHLIB=	yes
 
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == "sparc64"
+BROKEN=		"Configure fails on sparc64"
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|g' ${WRKSRC}/configure
 	@${REINPLACE_CMD} -e 's|-D_THREAD_SAFE|${PTHREAD_CFLAGS}|g ; \
@@ -41,4 +47,4 @@ post-install:
 	@${STRIP_CMD} ${PREFIX}/bin/${i}
 .endfor
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
