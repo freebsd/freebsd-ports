@@ -1,8 +1,14 @@
 sbin/htshd
 etc/rc.d/htshd.sh
-etc/wapsh/htsh_profile
-etc/wapsh/htshd.conf
-etc/wapsh/loginhosts
+@unexec if cmp -s %D/etc/wapsh/htsh_profile %D/etc/wapsh/htsh_profile.dist; then rm -f %D/etc/wapsh/htsh_profile; fi
+etc/wapsh/htsh_profile.dist
+@exec [ -f %B/htsh_profile ] || cp %B/%f %B/htsh_profile
+@unexec if cmp -s %D/etc/wapsh/htshd.conf %D/etc/wapsh/htshd.conf.dist; then rm -f %D/etc/wapsh/htshd.conf; fi
+etc/wapsh/htshd.conf.dist
+@exec [ -f %B/htshd.conf ] || cp %B/%f %B/htshd.conf
+@unexec if cmp -s %D/etc/wapsh/loginhosts %D/etc/wapsh/loginhosts.dist; then rm -f %D/etc/wapsh/loginhosts; fi
+etc/wapsh/loginhosts.dist
+@exec [ -f %B/loginhosts ] || cp %B/%f %B/loginhosts
 share/wapsh/htdocs/command.php
 share/wapsh/htdocs/command_html.inc
 share/wapsh/htdocs/command_wml.inc
