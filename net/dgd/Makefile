@@ -3,23 +3,22 @@
 # Date created:		23 August 1994
 # Whom:			adam
 #
-# $Id: Makefile,v 1.35 1996/02/08 00:30:29 adam Exp $
+# $Id: Makefile,v 1.36 1996/02/08 02:13:38 asami Exp $
 #
 
-DISTNAME=	dgd-1.0.37
+DISTNAME=	dgd-1.0.41
+DISTFILES=	dgd-1.0.37.tar.gz
 CATEGORIES=	net lang
 MASTER_SITES=	ftp.lysator.liu.se:/pub/lpmud/drivers/dgd/
 
-#PATCH_SITES=	ftp.veda.is:/pub/mud/dgd/patches/
-#PATCHFILES=	1.0.9-1.0.9.1.gz
+PATCH_SITES=	ftp.veda.is:/pub/mud/dgd/patches/
+PATCHFILES=	1.0.37-1.0.41.gz
 
 MAINTAINER=	adam@veda.is
 
 .ifdef PATCHFILES
 .if ${PATCHFILES} != ""
-PATCH_PRFX=	${DISTNAME}/
-PATCHLEVEL!=	echo ${PATCHFILES} | sed 's/^.*\.\(.*\)\.gz$$/\1/'
-PKGNAME=	${DISTNAME}.${PATCHLEVEL}
+PATCH_PRFX!=	echo ${DISTFILES} | sed 's/^\(.*\)\.tar\.gz$$/\1\//'
 .endif
 .endif
 WRKSRC=		${WRKDIR}/dgd/src
@@ -35,6 +34,7 @@ post-build:
 	@sed '/^@srcdir/s|\.|${WRKDIR}/\.|' <${PKGDIR}/PLIST >${WRKDIR}/PLIST
 
 do-install:
+	@-mv ${PREFIX}/dgd/bin/driver ${PREFIX}/dgd/bin/driver.old
 	@tar -C ${WRKDIR} -cf - `grep '^dgd/' pkg/PLIST` \
 		| tar -C ${PREFIX} -xpf -
 
