@@ -4,10 +4,10 @@
 # Date created:         Thur July 25, 1996
 # Whom:                 David O'Brien (obrien@cs.ucdavis.edu)
 #
-# $Id: Makefile,v 1.11 1996/12/08 06:33:38 obrien Exp $
+# $Id: Makefile,v 1.12 1996/12/18 05:06:26 obrien Exp $
 
 DISTNAME=	${PKGNAME}-export
-PKGNAME=	mutt-0.54
+PKGNAME=	mutt-0.55
 CATEGORIES=	mail
 MASTER_SITES=	ftp://cs.hmc.edu/pub/me/mutt/  \
 		ftp://ftp.ibp.fr/pub/unix/mail/mutt/  \
@@ -20,20 +20,9 @@ PATCH_SITES=	ftp://nuxi.cs.ucdavis.edu/pub/mutt/${PKGNAME:S/^mutt-//}/  \
 		http://www.math.fu-berlin.de/~leitner/mutt/${PKGNAME:S/^mutt-//}/  \
 		http://www.efrei.fr/~parmelan/mutt/${PKGNAME:S/^mutt-//}/  \
 		ftp://www.frmug.org/pub/mutt/mutt/${PKGNAME:S/^mutt-//}/
-PATCHFILES=	02.control.PATCH  \
-		03.fileio.PATCH  \
-		04.parse.PATCH  \
-		05.url.PATCH  \
-		06.init.PATCH  \
-		08.dirlist.PATCH  \
-		09.complete.PATCH  \
-		10.prefix.PATCH  \
-		11.batchmode.PATCH  \
-		12.folderrecog.PATCH  \
-		14.savename.PATCH  \
-		15.postponed.PATCH
-#		don't apply cleanly:
-#		13.pagercontext.PATCH  \
+PATCHFILES=	02.externally.PATCH  \
+		03.ispell.PATCH  \
+		04.savename.PATCH
 
 MAINTAINER=     obrien@cs.ucdavis.edu
 
