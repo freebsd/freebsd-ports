@@ -1,5 +1,5 @@
 *** Imakefile.orig	Sat Apr  8 20:47:18 1995
---- Imakefile	Sun Aug 18 09:49:53 1996
+--- Imakefile	Fri Nov  3 00:51:09 2000
 ***************
 *** 17,31 ****
    */
@@ -11,9 +11,9 @@
 ! BINDIR = /usr/local/bin
   
   /* Select one of them.
-   * If you want to use on-line manual written in Japanese, use DOCDIR_JP. */
-  MANSRC_DIR = $(DOCDIR)
-  /* MANSRC_DIR = $(DOCDIR_JP) */
+!  * If you want to use on-line manual written in Japanese, use DOCDIR_JP. */
+! MANSRC_DIR = $(DOCDIR)
+! /* MANSRC_DIR = $(DOCDIR_JP) */
   
   /* 
    * Architectur depedent configurations.
@@ -27,10 +27,10 @@
 ! BINDIR = ${PREFIX}/bin
   
   /* Select one of them.
-   * If you want to use on-line manual written in Japanese, use DOCDIR_JP. */
-  MANSRC_DIR = $(DOCDIR)
-  /* MANSRC_DIR = $(DOCDIR_JP) */
-+ MANPATH = ${PREFIX}/man
+!  * If you want to use on-line manual written in Japanese, use YOUBIN_DOCDIR_JP. */
+! MANSRC_DIR = $(YOUBIN_DOCDIR)
+! /* MANSRC_DIR = $(YOUBIN_DOCDIR_JP) */
+! MANPATH = ${PREFIX}/man
   
   /* 
    * Architectur depedent configurations.
@@ -90,6 +90,35 @@
   
   /* 
 ***************
+*** 112,124 ****
+  XYOUBIN_OBJS = base.o sound.o xyoubin.o $(XPM_LIBS)
+  YOUBIN_OBJS = base.o client.o youbin_sub.o
+  
+! DOCDIR = Doc
+! DOCDIR_JP = Doc.Japanese
+  
+! MANS = $(DOCDIR)/youbin.man $(DOCDIR)/youbind.man \
+!         $(DOCDIR)/youbin_sub.man 
+! MANS_JP = $(DOCDIR_JP)/youbin.man $(DOCDIR_JP)/youbind.man \
+!         $(DOCDIR_JP)/youbin_sub.man 
+  
+  /* BITMAPS = */
+  
+--- 113,125 ----
+  XYOUBIN_OBJS = base.o sound.o xyoubin.o $(XPM_LIBS)
+  YOUBIN_OBJS = base.o client.o youbin_sub.o
+  
+! YOUBIN_DOCDIR = Doc
+! YOUBIN_DOCDIR_JP = Doc.Japanese
+  
+! MANS = $(YOUBIN_DOCDIR)/youbin.man $(YOUBIN_DOCDIR)/youbind.man \
+!         $(YOUBIN_DOCDIR)/youbin_sub.man 
+! MANS_JP = $(YOUBIN_DOCDIR_JP)/youbin.man $(YOUBIN_DOCDIR_JP)/youbind.man \
+!         $(YOUBIN_DOCDIR_JP)/youbin_sub.man 
+  
+  /* BITMAPS = */
+  
+***************
 *** 151,157 ****
    * Target entries.
    */
@@ -107,19 +136,22 @@
   SingleProgramTarget(youbind,$(YOUBIND_OBJS),,)
   SingleProgramTarget(sendto,$(SENDTO_OBJS),,)
 ***************
-*** 169,177 ****
-  install.man::
-  	csh -c "cp $(MANSRC_DIR)/*.man ."
+*** 166,177 ****
   
+  /* InstallAppDefaults(XYoubin) */
+  
+! install.man::
+! 	csh -c "cp $(MANSRC_DIR)/*.man ."
+! 
 ! InstallManPage(youbin,$(MANDIR))
 ! InstallManPage(youbin_sub,$(MANDIR))
 ! InstallManPage(youbind,$(MANDIR))
   
   DependTarget()
   LintTarget()
---- 170,178 ----
-  install.man::
-  	csh -c "cp $(MANSRC_DIR)/*.man ."
+--- 167,175 ----
+  
+  /* InstallAppDefaults(XYoubin) */
   
 ! InstallGenManPage(youbin,$(MANPATH)/man1,1)
 ! InstallGenManPage(youbin_sub,$(MANPATH)/man3,3)
