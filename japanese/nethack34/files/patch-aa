@@ -17,8 +17,9 @@
 +#define TEXTCOLOR	/* Use System V r3.2 terminfo color support */
  			/* or ANSI color support on termcap systems */
  			/* or X11 color	*/
- /* #define POSIX_JOB_CONTROL	/* use System V POSIX job control */
+-/* #define POSIX_JOB_CONTROL	/* use System V POSIX job control */
 -/* #define POSIX_TYPES	/* use POSIX types for system calls and termios */
++#define POSIX_JOB_CONTROL	/* use System V POSIX job control */
 +#define POSIX_TYPES	/* use POSIX types for system calls and termios */
                          /* define for platforms using the GNU libraries */
                          /* linux, etc .. */
