@@ -6,7 +6,7 @@
 #
 
 PORTNAME?=	tidy
-PORTVERSION=	030801
+PORTVERSION=	030815
 CATEGORIES=	www
 MASTER_SITES=	http://tidy.sourceforge.net/src/%SUBDIR%/	\
 		http://tidy.sourceforge.net/docs/:docs
@@ -55,9 +55,20 @@ post-patch:
 	@${CP} ${WRKSRC}/build/gmake/Makefile ${WRKSRC}
 .else
 	@${CP} -R -f ${WRKSRC}/build/gnuauto/* ${WRKSRC}
-	(cd ${WRKSRC}   \
-        && ${LIBTOOLIZE} --force --copy \
-        && ${ACLOCAL})
+.endif
+
+patch-libtool:
+.if defined(WITH_SHLIB)
+	@(cd ${WRKSRC}				\
+	&& ${LIBTOOLIZE} --force --copy		\
+	&& ${ACLOCAL})
+	@(cd ${PATCH_WRKSRC};			\
+	for file in ${LIBTOOLFILES}; do		\
+		${CP} $$file $$file.tmp;	\
+		${SED} -e "s^\$$ac_aux_dir/ltconfig^${LIBTOOL_SHAREDIR}/ltconfig${LIBTOOL_VERSION}^g" \
+			-e "/^ltmain=/!s^\$$ac_aux_dir/ltmain.sh^${LIBTOOLFLAGS} ${LIBTOOL_SHAREDIR}/ltmain.sh^g" \
+			$$file.tmp > $$file;	\
+	 done);
 .endif
 
 pre-install:
