@@ -1,7 +1,9 @@
-@unexec kldunload ltmdm || true
+@unexec sh %D/etc/rc.d/ltmdm.sh stop
 etc/rc.d/ltmdm.sh
 share/ltmdm/ltmdm.ko
 @dirrm share/ltmdm
-@exec rm -f /dev/cual0
-@exec mknod /dev/cual0 c 228 128 uucp:dialer
-@unexec rm -f /dev/cual0
+%%PORTDOCS%%share/doc/ltmdm/README.TXT
+%%PORTDOCS%%share/doc/ltmdm/README-en.TXT
+%%PORTDOCS%%share/doc/ltmdm/INSTALL.TXT
+%%PORTDOCS%%share/doc/ltmdm/INSTALL-en.TXT
+%%PORTDOCS%%@dirrm share/doc/ltmdm
