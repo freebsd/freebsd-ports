@@ -1,0 +1,57 @@
+--- configure.in.orig	Thu Sep 14 04:39:40 2000
++++ configure.in	Wed Oct  4 23:13:46 2000
+@@ -369,7 +369,7 @@
+ AC_CHECK_HEADERS(netinet/in_systm.h)
+ AC_CHECK_HEADERS(machine/types.h)
+ AC_CHECK_HEADERS(mntent.h sys/mnttab.h sys/systemcfg.h)
+-AC_CHECK_HEADERS(sys/mount.h sys/mntctl.h sys/vmount.h)
++AC_CHECK_HEADERS(sys/mount.h sys/mntctl.h sys/param.h sys/vmount.h)
+ AC_CHECK_HEADERS(bzlib.h libio.h zlib.h)
+ AC_CHECK_HEADERS(err.h mcheck.h)
+ 
+@@ -431,6 +431,9 @@
+ #ifdef HAVE_SYS_TYPES_H
+ #include <sys/types.h>
+ #endif
++#ifdef HAVE_SYS_PARAM_H
++#include <sys/param.h>
++#endif
+ #include <sys/mount.h> ],
+ 	[struct statfs sfs;],
+ 	[AC_MSG_RESULT(in sys/mount.h)
+@@ -744,7 +747,7 @@
+ AC_SUBST(ROOT_GROUP)
+ 
+ if test "x$varprefix" = "x"; then
+-    varprefix=`echo $prefix | sed 's/usr/var/'`
++    varprefix=`echo /var`
+     test "x$prefix" = xNONE && varprefix=`echo $ac_default_prefix | sed 's/usr/var/'`
+ fi
+ AC_SUBST(varprefix)
+@@ -872,7 +875,7 @@
+ RPMCONFIGDIR="`echo ${usrprefix}/lib/rpm`"
+ AC_DEFINE_UNQUOTED(RPMCONFIGDIR, "$RPMCONFIGDIR")
+ AC_SUBST(RPMCONFIGDIR)
+-SYSCONFIGDIR="`echo /etc/rpm`"
++SYSCONFIGDIR="`echo ${usrprefix}/etc/rpm`"
+ AC_DEFINE_UNQUOTED(SYSCONFIGDIR, "$SYSCONFIGDIR")
+ AC_SUBST(SYSCONFIGDIR)
+ LIBRPMRC_FILENAME="${RPMCONFIGDIR}/rpmrc"
+@@ -911,7 +914,6 @@
+ dnl # XXX Propagate -lucb to popt ...
+ dnl export LIBS INCPATH CONFIG_SITE
+ 
+-AC_CONFIG_SUBDIRS(popt)
+ AC_OUTPUT([Doxyfile Makefile rpmrc macros platform rpmpopt scripts/brp-redhat
+ 	lib/Makefile build/Makefile tools/Makefile scripts/Makefile
+ 	tests/Makefile tests/rpmrc tests/macros tests/hello-test/Makefile
+@@ -919,8 +921,7 @@
+ 	doc/Makefile doc/manual/Makefile
+ 	doc/ja/Makefile doc/pl/Makefile doc/ru/Makefile doc/sk/Makefile
+ 	python/Makefile perl/Makefile perl/Makefile.PL],
+-	[echo timestamp > popt/stamp-h.in
+-	echo timestamp > stamp-h.in])
++	[echo timestamp > stamp-h.in])
+ dnl	touch Makefile.in
+ dnl	sed -e "/POTFILES =/r po/POTFILES" po/Makefile.in > po/Makefile])
+ 

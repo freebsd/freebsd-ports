@@ -7,6 +7,7 @@
 
 PORTNAME=	rpm
 PORTVERSION=	3.0.6
+PORTREVISION=	1
 CATEGORIES=	misc
 MASTER_SITES=	ftp://ftp.rpm.org/pub/rpm/dist/rpm-3.0.x/
 
@@ -21,7 +22,7 @@ USE_LIBTOOL=	yes
 CONFIGURE_ARGS=	--with-glob
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LIBS="-L${LOCALBASE}/lib"
-INSTALL_SHLIB=	yes
+INSTALLS_SHLIB=	yes
 
 MANLANG=	"" ja pl ru
 
