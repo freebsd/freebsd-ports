@@ -8,13 +8,13 @@
 PORTNAME=	devtodo
 PORTVERSION=	0.1.11
 CATEGORIES=	devel
-MASTER_SITES=	${MASTER_SITE_LOCAL} \
-		http://activelysecure.net/~alec/development/devtodo/download.php?filename=${PORTVERSION}/
+MASTER_SITES=	http://activelysecure.net/~athomas/development/devtodo/download.php?filename=${PORTVERSION}/ \
+		${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	petef
 
 MAINTAINER=	petef@FreeBSD.org
 
-GNU_CONFIGURE=	Yes
+GNU_CONFIGURE=	yes
 
 MAN1=	devtodo.1
 MLINKS=	devtodo.1 tda.1 devtodo.1 tdd.1 devtodo.1 tde.1 devtodo.1 tdr.1 \
