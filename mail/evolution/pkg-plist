@@ -1301,6 +1301,9 @@ share/locale/zh_TW/LC_MESSAGES/evolution-1.4.mo
 @dirrm share/gnome/evolution/%%VERSION%%/default_user/local
 @dirrm share/gnome/evolution/%%VERSION%%/default_user
 @dirrm share/gnome/evolution/%%VERSION%%
+@dirrm share/gnome/evolution
+@dirrm libexec/evolution/%%VERSION%%
+@dirrm libexec/evolution
 @dirrm lib/evolution/%%VERSION%%/evolution-mail-importers
 @dirrm lib/evolution/%%VERSION%%/evolution-calendar-importers
 @dirrm lib/evolution/%%VERSION%%/components
