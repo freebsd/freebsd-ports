@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	db4
-PORTVERSION=	4.0.14
-PORTREVISION=	1
+PORTVERSION=	4.1.25
 CATEGORIES=	databases
 MASTER_SITES=	http://www.sleepycat.com/update/snapshot/
 DISTNAME=	db-${PORTVERSION}
@@ -25,7 +24,7 @@ USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_SCRIPT=	../dist/configure
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
-CONFIGURE_ARGS=	--enable-compat185 --enable-dump285 \
+CONFIGURE_ARGS=	--enable-compat185 --enable-dump185 \
 		--enable-cxx --enable-dynamic \
 		--includedir=${PREFIX}/include/db4
 INSTALLS_SHLIB=	yes
