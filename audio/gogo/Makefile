@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	gogo
-PORTVERSION=	2.39a
+PORTVERSION=	2.39b
 CATEGORIES=	audio
 MASTER_SITES=	http://homepage1.nifty.com/herumi/soft/gogo2/src/
-DISTNAME=	gogo239a
+DISTNAME=	gogo239b
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	nakai@FreeBSD.org
