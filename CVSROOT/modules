@@ -6045,6 +6045,7 @@ poink		ports/net/poink
 polygraph	ports/benchmarks/polygraph
 pop3gwd		ports/mail/pop3gwd
 pop3lite	ports/mail/pop3lite
+pop3vscan	ports/mail/pop3vscan
 popa3d		ports/mail/popa3d
 popa3d-before-sendmail	ports/mail/popa3d-before-sendmail
 popd		ports/mail/popd
