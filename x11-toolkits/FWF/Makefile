@@ -3,7 +3,7 @@
 # Date created:		14 July 1995
 # Whom:			jkh
 #
-# $Id: Makefile,v 1.3 1995/07/16 20:57:41 ats Exp $
+# $Id: Makefile,v 1.4 1995/07/17 16:22:21 jkh Exp $
 #
 
 DISTNAME=	fwf-3.8
@@ -16,8 +16,5 @@ USE_IMAKE=	yes
 WRKSRC=		${WRKDIR}/FWF
 PATCH_STRIP=	-p1
 XMKMF=		env X11BASE=${X11BASE} WRKSRC=${WRKSRC} ${FILESDIR}/xmkmf
-
-post-install:
-	ldconfig -m ${PREFIX}/lib
 
 .include <bsd.port.mk>
