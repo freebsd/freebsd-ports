@@ -7,7 +7,7 @@
 
 PORTNAME=		linux_base
 PORTVERSION=		7.1
-PORTREVISION=		4
+PORTREVISION=		5
 CATEGORIES=		emulators linux
 MASTER_SITES=		${MASTER_SITE_REDHAT_LINUX}
 MASTER_SITE_SUBDIR=	${PORTVERSION}/${LANG}/os/${MACHINE_ARCH}/RedHat/RPMS
@@ -67,7 +67,7 @@ UPD_SET1=		glibc-common-2.2.4-32.1.${MACHINE_ARCH}.rpm \
 UPD_SET1=		glibc-common-2.2.4-32.${MACHINE_ARCH}.rpm \
 			glibc-2.2.4-32.${MACHINE_ARCH}.rpm
 .endif
-UPD_SET2=		zlib-1.1.3-25.7.${MACHINE_ARCH}.rpm
+UPD_SET2=		zlib-1.1.4-8.7x.${MACHINE_ARCH}.rpm
 UPDATES=		${UPD_SET1} ${UPD_SET2}
 
 .ifdef USE_LINUX
