@@ -1,0 +1,10 @@
+--- epplets/E-SD.c.orig	Fri Dec 10 03:49:59 1999
++++ epplets/E-SD.c	Thu Jan 13 15:35:22 2000
+@@ -20,6 +20,7 @@
+ 
+ #include <stdio.h>
+ #include <stdlib.h>
++#include <sys/time.h>
+ #include <sys/resource.h>
+ #include <sys/socket.h>
+ #include <unistd.h>

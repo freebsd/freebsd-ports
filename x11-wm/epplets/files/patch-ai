@@ -1,0 +1,10 @@
+--- epplets/E-UrlWatch.c.orig	Thu Jan 13 15:16:22 2000
++++ epplets/E-UrlWatch.c	Thu Jan 13 15:16:37 2000
+@@ -20,6 +20,7 @@
+ 
+ #include <stdio.h>
+ #include <stdlib.h>
++#include <sys/time.h>
+ #include <sys/resource.h>
+ #include <sys/stat.h>
+ #include <sys/types.h>
