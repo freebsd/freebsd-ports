@@ -1,0 +1,11 @@
+--- pixmaps/Makefile.in.orig	Tue Mar 12 01:34:16 2002
++++ pixmaps/Makefile.in	Tue Mar 12 01:36:23 2002
+@@ -119,7 +119,7 @@
+ cflags_set = @cflags_set@
+ cxxflags_set = @cxxflags_set@
+ 
+-gsubedit_pixmapsdir = $(prefix)/@NO_PREFIX_PACKAGE_PIXMAPS_DIR@
++gsubedit_pixmapsdir = $(prefix)/share/gnome/pixmaps/gsubedit
+ 
+ gsubedit_pixmaps_DATA = \
+ 		      gsubedit_icon.png

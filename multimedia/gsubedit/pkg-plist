@@ -1,0 +1,13 @@
+bin/gsubedit
+share/doc/gsubedit/ABOUT-NLS
+share/doc/gsubedit/AUTHORS
+share/doc/gsubedit/COPYING
+share/doc/gsubedit/ChangeLog
+share/doc/gsubedit/INSTALL
+share/doc/gsubedit/README
+share/doc/gsubedit/TODO
+share/gnome/apps/Applications/gsubedit.desktop
+share/gnome/help/gsubedit/C/index.html
+share/gnome/help/gsubedit/C/topic.dat
+share/gnome/locale/sv/LC_MESSAGES/gsubedit.mo
+share/gnome/pixmaps/gsubedit/gsubedit_icon.png
