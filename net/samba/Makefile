@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	samba
-PORTVERSION=	2.2.6.r4
+PORTVERSION=	2.2.6
 CATEGORIES=	net
 MASTER_SITES=	http://us4.samba.org/samba/ftp/%SUBDIR%/
-MASTER_SITE_SUBDIR=	pre old-versions .
+MASTER_SITE_SUBDIR=	. old-versions
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/.r/rc/}
 
 MAINTAINER=	dwcjr@FreeBSD.org
