@@ -24,12 +24,8 @@ PKGMESSAGE=	${WRKDIR}/pkg-message
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} == "alpha" && ${OSVERSION} < 500000
-BROKEN=		"Does not compile on FreeBSD-4.x/Alpha"
-.endif
-
-.if ${ARCH} == "amd64"
-BROKEN=		"Does not compile on amd64 (needs -fPIC)"
+.if ${ARCH} != "i386"
+BROKEN=		"Does not compile on !i386"
 .endif
 
 post-patch:
