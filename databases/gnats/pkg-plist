@@ -39,7 +39,6 @@ man/man8/rmcat.8.gz
 share/emacs/site-lisp/gnats.el
 share/emacs/site-lisp/gnats.elc
 share/emacs/site-lisp/send-pr.el
-share/emacs/site-lisp/send-pr.elc
 share/gnats/cygnus
 share/gnats/dist/COPYING
 share/gnats/dist/INSTALL
