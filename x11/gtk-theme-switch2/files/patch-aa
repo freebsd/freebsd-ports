@@ -1,17 +1,18 @@
---- Makefile.orig	Mon Jul 24 19:42:17 2000
-+++ Makefile	Mon Jul 24 19:46:23 2000
-@@ -1,7 +1,6 @@
+--- Makefile.orig	Wed Aug 30 09:35:43 2000
++++ Makefile	Thu Sep 14 09:54:48 2000
+@@ -1,7 +1,7 @@
 -GCC = gcc
 -PREFIX=/usr/local
 -CFLAGS = -I/usr/lib/glib/include -I/usr/X11R6/include
 -LIBS = -L/usr/lib -L/usr/X11R6/lib -lgtk -lgdk -rdynamic -lgmodule -lglib -ldl -lXi -lXext -lX11 -lm
 +GCC = ${CC}
++PREFIX?=/usr/local
 +CFLAGS += `${X11BASE}/bin/gtk12-config --cflags`
 +LIBS = `${X11BASE}/bin/gtk12-config --libs`
- VERSION = 0.3
+ VERSION = 0.4
  all : gthemeswitch
  
-@@ -12,8 +11,8 @@
+@@ -12,8 +12,8 @@
  	-rm gthemeswitch *~
  install: all
         
