@@ -3,16 +3,18 @@
 # Date created:         15 March 1995
 # Whom:                 asami
 #
-# $Id: Makefile,v 1.2 1995/03/24 11:08:48 asami Exp $
+# $Id: Makefile,v 1.3 1995/04/01 12:45:21 jkh Exp $
 #
 
 DISTNAME=       xlife
-MASTER_SITES=	ftp://gatekeeper.dec.com/pub/X11/R5-contrib/
-CATEGORIES+=	games
-MAINTAINER=	asami@FreeBSD.ORG
-EXTRACT_SUFX=	.tar.Z
-USE_IMAKE=      yes
 PKGNAME=	xlife-3.0
+CATEGORIES+=	games
+MASTER_SITES=	ftp://gatekeeper.dec.com/pub/X11/R5-contrib/
+EXTRACT_SUFX=	.tar.Z
+
+MAINTAINER=	asami@FreeBSD.ORG
+
+USE_IMAKE=      yes
 
 pre-install:
 	@(cd ${WRKSRC}; make install.patterns)

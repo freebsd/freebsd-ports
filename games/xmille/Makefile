@@ -3,14 +3,16 @@
 # Date created:         30 Dec 1994
 # Whom:                 swallace
 #
-# $Id: Makefile,v 1.2 1995/02/11 13:49:12 asami Exp $
+# $Id: Makefile,v 1.3 1995/04/01 12:45:23 jkh Exp $
 #
 
 DISTNAME=       xmille
-MASTER_SITES=	ftp://gatekeeper.dec.com/.b/X11-contrib/
+PKGNAME=	2.0
 CATEGORIES+=	games
-USE_IMAKE=      yes
+MASTER_SITES=	ftp://gatekeeper.dec.com/.b/X11-contrib/
 EXTRACT_SUFX=   .tar.Z
+
+USE_IMAKE=      yes
 NO_WRKSUBDIR=	yes
 
 .include <bsd.port.mk>

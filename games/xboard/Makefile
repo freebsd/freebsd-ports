@@ -3,12 +3,14 @@
 # Date created:         2 Jan 1995
 # Whom:                 swallace
 #
-# $Id: Makefile,v 1.2 1995/02/13 19:17:17 ats Exp $
+# $Id: Makefile,v 1.3 1995/04/01 12:45:09 jkh Exp $
 #
 
 DISTNAME=       xboard-3.2.pl0
-MASTER_SITES=	ftp://ftp.x.org/contrib/games/
+PKGNAME=	xboard-3.2.0
 CATEGORIES+=	games
+MASTER_SITES=	ftp://ftp.x.org/contrib/games/
+
 HAS_CONFIGURE=  yes
 STRIP=
 CONFIGURE_ARGS= --prefix=${PREFIX}
