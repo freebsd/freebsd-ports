@@ -1,0 +1,91 @@
+--- configure.orig	Fri May 21 13:53:33 2004
++++ configure	Fri May 21 13:53:39 2004
+@@ -3098,7 +3098,7 @@
+   if test "$GXX" = "yes" || test "$CXX" = "KCC"; then
+     if test "$kde_use_debug_code" != "no"; then
+       if test "$CXX" = "KCC"; then
+-        CXXFLAGS="+K0 -Wall -pedantic -W -Wpointer-arith -Wmissing-prototypes -Wwrite-strings $CXXFLAGS"
++        CXXFLAGS="+K0 -Wall  -W -Wpointer-arith -Wmissing-prototypes -Wwrite-strings $CXXFLAGS"
+       else
+         if test "$kde_use_debug_code" = "full"; then
+           CXXFLAGS="-g3 $CXXFLAGS"
+@@ -3335,11 +3335,11 @@
+       if test "$GCC" = "yes"; then
+         case $host in
+           *-*-linux-gnu)
+-            CFLAGS="-ansi -W -Wall -pedantic -Wshadow -Wpointer-arith -Wmissing-prototypes -Wwrite-strings -D_XOPEN_SOURCE=500 -D_BSD_SOURCE $CFLAGS"
++            CFLAGS="-ansi -W -Wall  -Wshadow -Wpointer-arith -Wmissing-prototypes -Wwrite-strings -D_XOPEN_SOURCE=500 -D_BSD_SOURCE $CFLAGS"
+             CXXFLAGS="-ansi -D_XOPEN_SOURCE=500 -D_BSD_SOURCE -Wcast-align -Wconversion $CXXFLAGS"
+           ;;
+         esac
+-        CXXFLAGS="-Wall -pedantic -W -Wpointer-arith -Wmissing-prototypes -Wwrite-strings $CXXFLAGS"
++        CXXFLAGS="-Wall  -W -Wpointer-arith -Wmissing-prototypes -Wwrite-strings $CXXFLAGS"
+ 
+ echo "$as_me:3344: checking whether $CXX supports -Wundef" >&5
+ echo $ECHO_N "checking whether $CXX supports -Wundef... $ECHO_C" >&6
+@@ -14996,7 +14996,7 @@
+ fi
+ 
+ # This can be used to rebuild libtool when needed
+-LIBTOOL_DEPS="$ac_aux_dir/ltmain.sh"
++LIBTOOL_DEPS="--disable-ltlibs /usr/local/share/libtool13/ltmain.sh"
+ 
+ # Always use our own libtool.
+ LIBTOOL='$(SHELL) $(top_builddir)/libtool --silent'
+@@ -16553,7 +16553,7 @@
+ kde_safe_LIBS="$LIBS"
+ LIBS="$LIBS $X_EXTRA_LIBS"
+ if test "$GCC" = "yes"; then
+-CXXFLAGS="$CXXFLAGS -pedantic-errors"
++CXXFLAGS="$CXXFLAGS -errors"
+ fi
+ cat >conftest.$ac_ext <<_ACEOF
+ #line 16559 "configure"
+@@ -18767,8 +18767,8 @@
+       USE_THREADS=""
+       if test -z "$LIBPTHREAD"; then
+ 
+-echo "$as_me:18770: checking whether $CXX supports -pthread" >&5
+-echo $ECHO_N "checking whether $CXX supports -pthread... $ECHO_C" >&6
++echo "$as_me:18770: checking whether $CXX supports -lc_r" >&5
++echo $ECHO_N "checking whether $CXX supports -lc_r... $ECHO_C" >&6
+ kde_cache=`echo pthread | sed 'y% .=/+-%____p_%'`
+ if eval "test \"\${kde_cv_prog_cxx_$kde_cache+set}\" = set"; then
+   echo $ECHO_N "(cached) $ECHO_C" >&6
+@@ -18783,7 +18783,7 @@
+ ac_link='rm -rf SunWS_cache; ${CXX-g++} -o conftest${ac_exeext} $CXXFLAGS $CPPFLAGS $LDFLAGS conftest.$ac_ext $LIBS 1>&5'
+ 
+   save_CXXFLAGS="$CXXFLAGS"
+-  CXXFLAGS="$CXXFLAGS -pthread"
++  CXXFLAGS="$CXXFLAGS -lc_r"
+   cat >conftest.$ac_ext <<_ACEOF
+ #line 18788 "configure"
+ #include "confdefs.h"
+@@ -18827,7 +18827,7 @@
+  echo "$as_me:18827: result: yes" >&5
+ echo "${ECHO_T}yes" >&6
+  :
+- USE_THREADS="-pthread"
++ USE_THREADS="-lc_r"
+ else
+  echo "$as_me:18832: result: no" >&5
+ echo "${ECHO_T}no" >&6
+@@ -21614,15 +21614,15 @@
+    { (exit 1); exit 1; }; }
+ fi
+ 
+-echo "$as_me:21617: checking for magick/resource.h" >&5
+-echo $ECHO_N "checking for magick/resource.h... $ECHO_C" >&6
++echo "$as_me:21617: checking for magick/resource_.h" >&5
++echo $ECHO_N "checking for magick/resource_.h... $ECHO_C" >&6
+ if test "${ac_cv_header_magick_resource_h+set}" = set; then
+   echo $ECHO_N "(cached) $ECHO_C" >&6
+ else
+   cat >conftest.$ac_ext <<_ACEOF
+ #line 21623 "configure"
+ #include "confdefs.h"
+-#include <magick/resource.h>
++#include <magick/resource_.h>
+ _ACEOF
+ if { (eval echo "$as_me:21627: \"$ac_cpp conftest.$ac_ext\"") >&5
+   (eval $ac_cpp conftest.$ac_ext) 2>conftest.er1
