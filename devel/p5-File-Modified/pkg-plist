@@ -1,5 +1,9 @@
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/File/Modified/.packlist
 %%SITE_PERL%%/File/Modified.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/File/Modified/.packlist
+%%PORTDOCS%%%%EXAMPLESDIR%%/1.pl
+%%PORTDOCS%%%%EXAMPLESDIR%%/Export.cfg
+%%PORTDOCS%%%%EXAMPLESDIR%%/Import.cfg
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/File/Modified
 @unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/File 2>/dev/null || true
 @unexec rmdir %D/%%SITE_PERL%%/File 2>/dev/null || true
