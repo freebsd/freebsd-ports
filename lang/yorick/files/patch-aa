@@ -1,11 +1,11 @@
---- Yorick/sysdep.c.orig	Sat May  1 17:43:53 1999
-+++ Yorick/sysdep.c	Sat May  1 17:41:47 1999
-@@ -135,7 +135,7 @@
-   fp_trap(FP_TRAP_FASTMODE);
-   fp_enable(TRP_INVALID | TRP_DIV_BY_ZERO | TRP_OVERFLOW);
+--- Yorick/sysdep.c.orig	Mon Aug 30 20:26:38 1999
++++ Yorick/sysdep.c	Mon Aug 30 20:27:02 1999
+@@ -95,7 +95,7 @@
+   set_fpc_csr(csr | 0x0103c000);  /* core dumps */
+ # endif
  #endif
 -#ifndef linux
 +#if !defined(linux) && !defined(__FreeBSD__)
- #ifdef __alpha
-   /* References:   exception_intro, ieee man pages */
- #include <machine/fpu.h>
+ # ifdef sgi
+   /* See man page on handle_sigfpes -- must link with -lfpe */
+ #include <sigfpe.h>
