@@ -6,7 +6,8 @@
 #
 
 PORTNAME=	netsaint
-PORTVERSION=	0.0.7b8
+PORTVERSION=	0.0.7
+PORTEPOCH=	1
 CATEGORIES=	net
 MASTER_SITES=	http://netsaint.sourceforge.net/download/ \
 		${MASTER_SITE_LOCAL}

@@ -257,6 +257,7 @@ share/netsaint/sbin/cmd.cgi
 share/netsaint/sbin/config.cgi
 share/netsaint/sbin/extinfo.cgi
 share/netsaint/sbin/history.cgi
+share/netsaint/sbin/ministatus.cgi
 share/netsaint/sbin/notifications.cgi
 share/netsaint/sbin/outages.cgi
 share/netsaint/sbin/showlog.cgi
