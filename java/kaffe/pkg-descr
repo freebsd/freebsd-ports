@@ -17,7 +17,7 @@ Before running Kaffe it is necessary to configure the environment.
 This requires the setting of CLASSPATH, KAFFEHOME and LD_LIBRARY_PATH.
 For the standard installation these would be defined as follows:
 
- CLASSPATH=.:/usr/local/share/kaffe/classes.zip:/usr/local/share/kaffe/biss.zip
+ CLASSPATH=.:/usr/local/share/kaffe/classes.zip
  KAFFEHOME=/usr/local/share/kaffe
  LD_LIBRARY_PATH=/usr/lib:/usr/local/lib
 
@@ -26,9 +26,7 @@ you.
 
 What's in there
 ===============
-This package includes BISS-awt, an AWT-package
 
 For further info see the file README that comes with the distribution.
 ----
 * Java and Javasoft are registered trademark of Sun Microsystems, Inc.
-

@@ -3,15 +3,16 @@
 # Date created:         20 February 1995
 # Whom:                 Tim Wilkinson <tim@sarc.city.ac.uk>
 #
-# $Id: Makefile,v 1.27 1997/07/01 07:00:01 tg Exp $
+# $Id: Makefile,v 1.28 1997/11/21 23:10:10 fenner Exp $
 #
 
-DISTNAME=	kaffe-0.9.1
+DISTNAME=	kaffe-0.9.2
 CATEGORIES=	lang
-MASTER_SITES=	ftp://ftp.kaffe.org/pub/kaffe/
+MASTER_SITES=	ftp://ftp.kaffe.org/pub/kaffe/ \
+		ftp://ftp.cs.columbia.edu/pub/kaffe/ \
+		http://www.webcity.co.jp/info/andoh/java/kaffe/
 EXTRACT_SUFX=	.tgz
-DISTFILES=	${DISTNAME}.tgz kaffe-0.9.1-package-biss-net.com.tgz \
-		kaffe-0.9.1-package-javasoft.com.tgz
+DISTFILES=	${DISTNAME}.tgz kaffe-0.9.2-package-javasoft.com.tgz \
 
 MAINTAINER=	xaa@stack.nl
 
