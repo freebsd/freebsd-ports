@@ -41,9 +41,6 @@
 #  WITH_MUTT_QUOTE_PATCH
 #  This is a default knob and can be disabled by WITHOUT_MUTT_QUOTE_PATCH
 #
-# WITH_MUTT_SSL can be enabled if your IMAP/POP server is SSL capable.
-#  This is a default knob and can be disabled by WITHOUT_MUTT_SSL
-#
 # If you want to make SMIME outlook compatible define:
 #  WITH_MUTT_SMIME_OUTLOOK_COMPAT
 #  This is a default knob and can be disabled by
@@ -75,7 +72,7 @@
 
 PORTNAME=	mutt-devel
 PORTVERSION=	1.5.4
-PORTREVISION?=	5
+PORTREVISION?=	6
 CATEGORIES+=	mail ipv6
 .if defined(WITH_MUTT_NNTP)
 CATEGORIES+=	news
@@ -98,7 +95,7 @@ COMMENT?=	The Mongrel of Mail User Agents (part Elm, Pine, Mush, mh, etc.)
 
 DIST_SUBDIR=    mutt
 CONFIGURE_ENV=	CC="${CC} -I${LOCALBASE}/include" LDFLAGS=-L${LOCALBASE}/lib
-CONFIGURE_ARGS=	--enable-flock --disable-fcntl \
+CONFIGURE_ARGS=	--enable-flock --disable-fcntl --with-ssl=${OPENSSLBASE} \
 		--with-sharedir=${PREFIX}/share/mutt \
 		--with-docdir=${PREFIX}/share/doc/mutt \
 		--sysconfdir=${PREFIX}/etc --enable-external-dotlock \
@@ -109,6 +106,7 @@ CONFIGURE_ARGS+=	${MUTT_CONFIGURE_ARGS}
 
 USE_REINPLACE=	yes
 USE_AUTOMAKE=	yes
+USE_OPENSSL=	yes
 
 PLIST=		${WRKDIR}/PLIST
 PKGMESSAGE=	${WRKDIR}/pkg-message
@@ -173,9 +171,6 @@ CFLAGS+=	-I${PREFIX}/include/ncurses -I${PREFIX}/include
 .elif defined(USE_SLANG)
 LIB_DEPENDS+=	slang.1:${PORTSDIR}/devel/libslang
 .endif
-.if !defined(WITHOUT_MUTT_SSL)
-USE_OPENSSL=	yes
-.endif
 .if defined(WITH_MUTT_CYRUS_SASL)
 BROKEN=		"mutt-devel's SASL code appears to be broken"
 LIB_DEPENDS+=	sasl.8:${PORTSDIR}/security/cyrus-sasl
@@ -198,9 +193,6 @@ CONFIGURE_ARGS+=	--enable-locales-fix
 CONFIGURE_ARGS+=	--with-curses=${PREFIX}
 .elif defined(USE_SLANG)
 CONFIGURE_ARGS+=	--with-slang=${PREFIX}
-.endif
-.if !defined(WITHOUT_MUTT_SSL)
-CONFIGURE_ARGS+=	--with-ssl=${OPENSSLBASE}
 .endif
 .if defined(WITH_MUTT_CYRUS_SASL)
 CONFIGURE_ARGS+=	--with-sasl=${LOCALBASE}
@@ -310,6 +302,7 @@ pre-install:
 
 post-install:
 	@${ECHO} > ${PKGMESSAGE}
+	${INSTALL_DATA} ${WRKSRC}/Muttrc ${PREFIX}/etc/Muttrc.dist
 .if !defined(NOPORTDOCS)
 	@${ECHO} "===>   Installing Mutt documentation"
 	@${MKDIR} ${PREFIX}/share/doc/mutt && \
