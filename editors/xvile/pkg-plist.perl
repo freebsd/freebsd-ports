@@ -74,7 +74,6 @@ share/doc/xvile/modes.doc
 share/doc/xvile/oleauto.doc
 share/doc/xvile/perl.doc
 share/doc/xvile/visvile.doc
-share/doc/xvile/vile-perl-api.doc
 @dirrm share/doc/xvile
 share/xvile/vile/perl/Vile/Exporter.pm
 share/xvile/vile/perl/Vile/Manual.pm

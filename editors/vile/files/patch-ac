@@ -1,37 +1,11 @@
---- makefile.in.orig	Tue Nov 21 22:21:22 2000
-+++ makefile.in	Tue Nov 21 22:22:58 2000
-@@ -35,6 +35,7 @@
- INSTALL		= @INSTALL@
- INSTALL_PROGRAM	= @INSTALL_PROGRAM@
- INSTALL_DATA	= @INSTALL_DATA@
-+INSTALL_SCRIPT	= @INSTALL_SCRIPT@
- 
- EXTRA_CFLAGS	= @EXTRA_CFLAGS@
- CFLAGS		= @CFLAGS@ $(EXTRA_CFLAGS)
-@@ -51,7 +52,7 @@
+--- makefile.in.orig	Mon May  5 11:16:17 2003
++++ makefile.in	Mon May  5 11:16:30 2003
+@@ -52,7 +52,7 @@
  AWK		= @AWK@
  PERL		= @PERL@
  PERLLIB		= @perl_lib_path@
--INSTALL_SCRIPT	= $(srcdir)/sinstall.sh $(PERL) $(INSTALL_PROGRAM)
-+INSTALL_SCRIPTV	= $(srcdir)/sinstall.sh $(PERL) $(INSTALL_PROGRAM)
- INSTALL_MODULE	= $(srcdir)/sinstall.sh $(PERL) $(INSTALL_DATA)
+-INSTALL_SCRIPT	= $(SHELL) $(srcdir)/sinstall.sh $(PERL) $(INSTALL_PROGRAM)
++INSTALL_SCRIPT	= $(INSTALL) -m 555
+ INSTALL_MODULE	= $(SHELL) $(srcdir)/sinstall.sh $(PERL) $(INSTALL_DATA)
  
  prefix		= @prefix@
-@@ -282,7 +283,7 @@
- filters/@LIB_PREFIX@vlflt.a :
- 	cd filters && $(MAKE) $(MAKE_RECUR) @LIB_PREFIX@vlflt.a
- 
--$(TARGET): $(BUILTHDRS) $(OBJ) $(BUILTLIBS)
-+$(TARGET): $(BUILTHDRS) $(OBJ) $(BUILTLIBS) vile-perl-api.doc
- 	- mv $(TARGET) o$(TARGET)
- 	@ECHO_LD@$(LINK) $(LDFLAGS) -o $@ $(OBJ) $(X_LIBS) $(LIBS)
- 
-@@ -630,7 +631,7 @@
- 	$(INSTALL_PROGRAM)	$(TARGET) $@
- 
- $(BINDIR)/xshell.sh:		$(srcdir)/xshell.sh
--	$(INSTALL_PROGRAM)	$(srcdir)/xshell.sh $@
-+	$(INSTALL_SCRIPT)	$(srcdir)/xshell.sh $@
- $(BINDIR)/vileget:		$(srcdir)/perl/vileget
- 	$(INSTALL_SCRIPT)	$(srcdir)/perl/vileget $@
- 
