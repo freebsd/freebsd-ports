@@ -6,13 +6,13 @@
 #
 
 PORTNAME=	jing
-PORTVERSION=	2003.01.22
+PORTVERSION=	2003.01.31
 CATEGORIES=	textproc
 MASTER_SITES=	http://www.thaiopensource.com/relaxng/
 DISTNAME=	${PORTNAME}-bin
-DIST_SUBDIR=	${PORTNAME}-${PORTVERSION}
+DIST_SUBDIR=	${PORTNAME}-${PORTVERSION}/
 
-MAINTAINER=	fuyuki@hadaly.org
+MAINTAINER=	ports@FreeBSD.org
 
 RUN_DEPENDS=	${JAVAJARDIR}/crimson.jar:${PORTSDIR}/textproc/crimson
 
