@@ -11,7 +11,7 @@ CATEGORIES=	graphics devel
 MASTER_SITES=	ftp://ftp.ggi-project.org/pub/ggi/ggi/v2.0/
 DISTNAME=	${PORTNAME}-${PORTVERSION}.src
 
-MAINTAINER=	giffunip@yahoo.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A flexible drawing library
 
 LIB_DEPENDS=	gii.0:${PORTSDIR}/devel/libgii
