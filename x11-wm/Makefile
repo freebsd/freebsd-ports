@@ -1,8 +1,9 @@
-# $Id: Makefile,v 1.2 1998/08/11 08:50:58 tg Exp $
+# $Id: Makefile,v 1.3 1998/10/04 00:58:42 steve Exp $
 #
 
     SUBDIR += afterstep
     SUBDIR += afterstep-devel
+    SUBDIR += afterstep-i18n
     SUBDIR += amiwm
     SUBDIR += blackbox
     SUBDIR += ctwm
