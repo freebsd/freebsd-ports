@@ -10,8 +10,10 @@ PORTVERSION=	1.0.7
 CATEGORIES=	audio net
 MASTER_SITES=	http://developer.icecast.org/libshout/releases/
 
-MAINTAINER=	michaelnottebrock@gmx.net
-COMMENT=	A library providing routines for connecting and transmitting data to the icecast server
+MAINTAINER=	lofi@freebsd.org
+COMMENT=	Routines for connecting and transmitting data to the icecast server
+
+CONFLICTS=	libshout2-*
 
 GNU_CONFIGURE=	yes
 INSTALLS_SHLIB=	yes
