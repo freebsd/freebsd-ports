@@ -3,13 +3,14 @@
 # Date created:		29th April, 1997
 # Whom:			Joel Sutton <sutton@aardvark.apana.org.au>
 #
-# $Id: Makefile,v 1.1.1.1 1997/10/29 09:07:08 tg Exp $
+# $Id: Makefile,v 1.2 1998/08/07 23:56:17 asami Exp $
 #
 
 DISTNAME=	Atari800-0.8.1
 PKGNAME=	atari800-0.8.1
 CATEGORIES=	emulators
-MASTER_SITES=	http://www.signus.demon.co.uk/david/atari/
+MASTER_SITES=	http://www.signus.demon.co.uk/Software/Portable/Atari800e/ \
+		http://cas3.zlin.vutbr.cz/~stehlik/a800/
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${EXTRA_FILES}
 
 MAINTAINER=	sutton@aardvark.apana.org.au
