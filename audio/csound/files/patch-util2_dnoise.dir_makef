@@ -1,0 +1,24 @@
+$FreeBSD$
+
+--- util2/dnoise.dir/makef.orig	Sun Jul 14 16:02:59 2002
++++ util2/dnoise.dir/makef	Sun Jul 14 16:02:59 2002
+@@ -36,15 +36,15 @@ srconv:		$(SOBJS) 
+ 
+ install:	$(PROGS)
+ 		-strip $(PROGS)
+-		-rm $(DEST)/dnoise
+-		-rm $(DEST)/srconv
++		-rm -f $(DEST)/dnoise
++		-rm -f $(DEST)/srconv
+ 		cp $(PROGS) $(DEST)
+ 
+ clean:
+-		-rm $(COBS)
++		-rm -f $(COBS)
+ 
+ rmbak:
+-		-rm *.bak *~
++		-rm -f *.bak *~
+ 
+ depend:
+ 	gcc -M $(DEFINES) $(CSRCS) > deps

@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	csound
-PORTVERSION=	4.16
+PORTVERSION=	4.20
 CATEGORIES=	audio
 MASTER_SITES=	ftp://sunsite.univie.ac.at/pub/sound/csound/newest/ \
 		ftp://ftp.cs.bath.ac.uk/pub/dream/newest/

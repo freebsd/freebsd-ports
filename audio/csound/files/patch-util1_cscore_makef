@@ -1,0 +1,22 @@
+$FreeBSD$
+
+--- util1/cscore/makef.orig	Sun Jul 14 16:02:58 2002
++++ util1/cscore/makef	Sun Jul 14 16:02:58 2002
+@@ -16,7 +16,7 @@ $I/cscore.h:	$T/cscore.h
+ 		cp $T/cscore.h $I
+ 
+ cscore.a:	$(OBJS)
+-		-rm cscore.a
++		-rm -f cscore.a
+ 		ar q cscore.a $(OBJS)
+ 		-ranlib cscore.a
+ 
+@@ -33,7 +33,7 @@ $T/memalloc.o:
+ 
+ 
+ install:	includes cscore.a
+-		-rm $(LIB)/libcscore.a
++		-rm -f $(LIB)/libcscore.a
+ 		cp cscore.a $(LIB)/libcscore.a
+ 
+ clean:

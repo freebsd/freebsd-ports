@@ -1,13 +1,20 @@
---- main.c.orig	Sat Feb 24 14:16:18 2001
-+++ main.c	Mon Apr  9 23:04:12 2001
-@@ -150,10 +150,6 @@
+$FreeBSD$
+
+--- main.c.orig	Sat Jun  1 19:42:24 2002
++++ main.c	Thu Jul  4 19:32:12 2002
+@@ -92,12 +92,15 @@
+       return;
      }
- }
  
--void psignal(int sig, char *str)
--{
--    fprintf(stderr, "%s: %s\n", str, signal_to_string(sig));
--}
- #endif
- 
- #if defined(__BEOS__)
++#ifndef __FreeBSD__
+     /* lock all pages into physical memory */
+     if (mlockall(MCL_CURRENT | MCL_FUTURE) != 0) {
+       fprintf(stderr, "csound: cannot lock memory pages: %s\n",
+                        strerror(errno));
+       exit(-1);
+     }
++#endif
++
+     /* set round robin mode with max. priority */
+     p.sched_priority = sched_get_priority_max(SCHED_RR);
+     if (sched_setscheduler(0, SCHED_RR, &p) != 0) {
