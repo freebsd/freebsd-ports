@@ -58,6 +58,8 @@ post-install:
 	@cd ${WRKSRC} && ${INSTALL_DATA} COPYING README.FIRST.txt README.unix \
 	 ReleaseNotes_${PORTVERSION}.txt ${DOCSDIR}
 	@${TAR} cCf ${WRKSRC}/doc - . | ${TAR} xUCf ${DOCSDIR} -
+	@${MKDIR} ${EXAMPLESDIR}
+	@${INSTALL_DATA} ${WRKSRC}/sample.cfg ${EXAMPLESDIR}/omniORB.cfg
 .endif
 
 .include <bsd.port.mk>

@@ -335,6 +335,7 @@ libdata/pkgconfig/omnithread3.pc
 %%PORTDOCS%%%%DOCSDIR%%/utilities.html
 %%PORTDOCS%%%%DOCSDIR%%/utilities.pdf
 %%PORTDOCS%%%%DOCSDIR%%/utilities.ps
+%%PORTDOCS%%%%EXAMPLESDIR%%/omniORB.cfg
 %%DATADIR%%/idl/COS/CosCollection.idl
 %%DATADIR%%/idl/COS/CosCompoundLifeCycle.idl
 %%DATADIR%%/idl/COS/CosConcurrencyControl.idl
@@ -406,6 +407,7 @@ libdata/pkgconfig/omnithread3.pc
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/tex
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/omniORB
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%
 @dirrm %%PYTHON_SITELIBDIR%%/omniidl_be/cxx/skel
 @dirrm %%PYTHON_SITELIBDIR%%/omniidl_be/cxx/impl
 @dirrm %%PYTHON_SITELIBDIR%%/omniidl_be/cxx/header
