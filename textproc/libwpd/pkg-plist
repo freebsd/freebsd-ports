@@ -7,6 +7,6 @@ include/libwpd-1/libwpd/libwpd.h
 include/libwpd-1/libwpd/libwpd_support.h
 lib/libwpd-1.so
 lib/libwpd-1.so.7
-lib/pkgconfig/libwpd-1.pc
+libdata/pkgconfig/libwpd-1.pc
 @dirrm include/libwpd-1/libwpd
 @dirrm include/libwpd-1
