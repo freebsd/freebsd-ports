@@ -1,0 +1,19 @@
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Filter/CBC/.packlist
+lib/perl5/site_perl/%%PERL_VER%%/Filter/CBC.pm
+lib/perl5/site_perl/%%PERL_VER%%/Filter/cbc2code.pl
+%%PORTDOCS%%share/examples/Filter-CBC/autofilter.pl
+%%PORTDOCS%%share/examples/Filter-CBC/blowfish.pl
+%%PORTDOCS%%share/examples/Filter-CBC/defaults.pl
+%%PORTDOCS%%share/examples/Filter-CBC/des.pl
+%%PORTDOCS%%share/examples/Filter-CBC/des_ede3.pl
+%%PORTDOCS%%share/examples/Filter-CBC/gost.pl
+%%PORTDOCS%%share/examples/Filter-CBC/idea.pl
+%%PORTDOCS%%share/examples/Filter-CBC/null.pl
+%%PORTDOCS%%share/examples/Filter-CBC/rc6.pl
+%%PORTDOCS%%share/examples/Filter-CBC/rijndael.pl
+%%PORTDOCS%%share/examples/Filter-CBC/tea.pl
+%%PORTDOCS%%share/examples/Filter-CBC/twofish.pl
+%%PORTDOCS%%@dirrm share/examples/Filter-CBC
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Filter/CBC
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/Filter 2>/dev/null || true
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Filter 2>/dev/null || true

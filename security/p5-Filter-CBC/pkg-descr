@@ -1,0 +1,9 @@
+Filter::CBC is a Source filter that uses Cipher Block Chaining (CBC) to
+encrypt your code. The tricky part is that most CBC Algorithms have binary
+output. The textmode bypasses this obstacle, by converting the data to less
+scary data.
+
+WWW: http://search.cpan.org/search?dist=Filter-CBC
+
+-- Sergey Skvortsov
+skv@protey.ru
