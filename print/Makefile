@@ -17,6 +17,7 @@
     SUBDIR += auctex
     SUBDIR += bibcard
     SUBDIR += bibview
+    SUBDIR += bjfilter850
     SUBDIR += bjfiltercom
     SUBDIR += c2ps-a4
     SUBDIR += c2ps-letter
