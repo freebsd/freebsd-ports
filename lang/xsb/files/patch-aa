@@ -1,16 +1,16 @@
---- configure.old	Thu Jul  5 12:42:10 2001
-+++ configure	Sun Jul 29 15:51:36 2001
-@@ -1561,7 +1561,7 @@
- # if --with-gcc, take it as a sign of trouble 
- # with gcc and lower optimization levels
- if test -n "$with_gcc" ; then
+--- configure.orig	Sat Apr 27 11:18:26 2002
++++ configure	Sat Apr 27 11:02:49 2002
+@@ -1664,7 +1664,7 @@
+ 	CFLAGS=""
+ 	c_inline_level=""
+    else   
 -	emuloop_opt_level=-${optimization_level-"O4 -fomit-frame-pointer"}
 +	emuloop_opt_level=-${optimization_level-"O2 -fomit-frame-pointer"}
  	trutils_opt_level=-${optimization_level-"O1 -fomit-frame-pointer"}
  	builtins_opt_level=-${optimization_level-"O1 -fomit-frame-pointer"}
  	if test -n "$optimization_level"; then
-@@ -1572,9 +1572,9 @@
- 	CFLAGS="-Wall -ansi -pedantic"
+@@ -1676,9 +1676,9 @@
+    fi
  else
   case $CC in
 -   gcc) emuloop_opt_level=-${optimization_level-"O4 -fomit-frame-pointer"}
@@ -21,7 +21,7 @@
  	if test -n "$optimization_level"; then
  	   c_inline_level=""
  	else
-@@ -1583,23 +1583,23 @@
+@@ -1687,23 +1687,23 @@
  	CFLAGS="-Wall -ansi -pedantic"
  	 ;;
     cc)	if test "$__sunpro_c" = "no"; then
@@ -33,8 +33,7 @@
 +	   builtins_opt_level=-${optimization_level-"O2"}
  	else
  	   # emuloop_opt_level is the optimization level for emuloop.c
--	   # Using xO4 would take SunPro more than an hour, hence xO2.
-+	   # Using xO2 would take SunPro more than an hour, hence xO2.
+ 	   # Using xO4 would take SunPro more than an hour, hence xO2.
  	   emuloop_opt_level=-${optimization_level-"xO2"}
 -	   trutils_opt_level=-${optimization_level-"xO4"}
 -	   builtins_opt_level=-${optimization_level-"xO4"}
@@ -53,12 +52,7 @@
  	c_inline_level=""
  	CFLAGS="-Xa"
  	;;
-@@ -3006,16 +3006,16 @@
- #fi
- 
- 
--# Normally, the optimization level will be O4. 
-+# Normally, the optimization level will be O2. 
+@@ -3231,12 +3231,12 @@
  # SGI64 must have O1 and 32 bit SGI's can have O2
  if test "$__sunpro_c" = "no"; then
     if test "$CC" = "gcc" ; then
