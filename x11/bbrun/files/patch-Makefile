@@ -4,7 +4,8 @@
 -CC     = gcc
 -LIBDIR = -L/usr/lib -L/usr/X11R6/lib
 +LIBDIR = -L${LOCALBASE}/lib -L${X11BASE}/lib
- LIBS   = -lXpm `pkg-config --libs gtk+-2.0`
+-LIBS   = -lXpm `pkg-config --libs gtk+-2.0`
++LIBS   = -lXpm `pkg-config --libs gtk+-2.0` ${LDFLAGS}
  CFLAGS = `pkg-config --cflags gtk+-2.0`
  
 @@ -11,7 +10,7 @@
