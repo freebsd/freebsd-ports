@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	ami
-PORTVERSION=	1.0.9
-#PORTREVISION=	1
+PORTVERSION=	1.0.10
 CATEGORIES=	korean x11
 MASTER_SITES=	http://www.kr.freebsd.org/~hwang/ami/ \
 		http://master.debian-kr.org/~cwryu/archive/misc/
