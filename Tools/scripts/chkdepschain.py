@@ -187,7 +187,7 @@ class PortInfo:
                 topdeps.extend(botdeps)
             self.__bt_deps = tuple(topdeps)
         return self.__bt_deps
-        
+
     def get_rt_deps(self):
         if self.__rt_deps == None:
             topdeps = self.getdeps()

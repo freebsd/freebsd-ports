@@ -44,7 +44,7 @@ fi
 
 if [ "$nocvs" = "0" ]; then
 	echo "==> Updating source tree"
-	cvs -Rq update -Pd 
+	cvs -Rq update -Pd
 	error=$?
 	if [ "$error" != "0" ]; then
 		exit 1
@@ -60,7 +60,7 @@ if [ "$error" != "0" ]; then
 	exit $?
 fi
 
-echo "==> Cleaning up chroot" 
+echo "==> Cleaning up chroot"
 rm -rf /var/chroot/
 chflags -R noschg /var/chroot/
 rm -rf /var/chroot/

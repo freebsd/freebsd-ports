@@ -42,7 +42,7 @@ sub recurse {
     foreach $name (@{$pkg->{edep}}) {
         recurse($index{$name});
 	push(@deps, @{$index{$name}->{rdep}});
-    }    
+    }
     $pkg->{edep} = uniqify(@{$pkg->{edep}}, @deps);
 
   # same as above except for patch-depends this time
@@ -132,7 +132,7 @@ foreach $name (keys %index) {
 	my @edep = map { by_path($_, $name) } @{$pkg->{edep}};
 	$pkg->{edep} = \@edep;
     }
-  # 
+  #
     if (@{$pkg->{pdep}}) {
 	my @pdep = map { by_path($_, $name) } @{$pkg->{pdep}};
 	$pkg->{pdep} = \@pdep;
@@ -157,7 +157,7 @@ foreach $name (keys %index) {
 # With all that done we're finally ready to write out the new
 # INDEX file one port at a time.
 foreach $name (@names) {
-    my $pkg = $index{$name}; 
+    my $pkg = $index{$name};
     if (exists $pkg->{'PRINTED'}) {
         print STDERR "Warning: Duplicate INDEX entry: $name\n";
     } else {

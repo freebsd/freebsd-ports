@@ -32,7 +32,7 @@
 # of which may be empty. The fields are:
 #
 # distribution-name|port-path|installation-prefix|comment| \
-# description-file|maintainer|categories|build deps|run deps|www site  
+# description-file|maintainer|categories|build deps|run deps|www site
 
 
 use strict;
@@ -132,7 +132,7 @@ MAIN: {
 	@list = split(/\|/);
 
         $match = 1;
-				# All searches are case-insensitive! 
+				# All searches are case-insensitive!
 				# For ``-d'' search both build & run depends.
 				# Only fail to match if not found in either.
 	foreach $key (keys (%opts)) {

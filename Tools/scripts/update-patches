@@ -28,7 +28,7 @@
 # Find out all .orig files and strip the name to what diff will use
 cd $PATCH_WRKSRC && find . -type f -name '*.orig' | fgrep -v $DISTORIG | \
 sed -e "s,^./\(.*\)\.orig\$,\1," | {
-while read file 
+while read file
 do
     echo 1>&2 "Processing $file"
     # look in patchdir for an existing patchfile matching this
@@ -78,7 +78,7 @@ do
     case $i in \
     *.orig|*.rej|*~) ;;
     *)
-	for j in $accounted 
+	for j in $accounted
 	do
 	    if [ $j = $i ]
 	    then

@@ -100,7 +100,7 @@ proc main {} {
 			puts stderr "Couldn't parse open args from $cargs";
 			exit 1;
 		    }
-		    
+
 		    #puts stderr "Open with $flags, mode $mode";
 		    set interested [list $callname $flags $mode];
 		} elseif {$callname == "chdir"} {
@@ -174,7 +174,7 @@ proc main {} {
 			default {
 			    puts "Got a [lindex $interested 0] $fname";
 			}
-		    }    
+		    }
 		}
 	    }
 

@@ -37,4 +37,4 @@ sort ${duds} > ${duds}.tmp
 mv -f ${duds}.tmp ${duds}
 
 cp ${duds} ${duds}.orig
-grep -Ff ${duds}.orig ${index} | cut -f 1 -d \| > ${duds}.full 
+grep -Ff ${duds}.orig ${index} | cut -f 1 -d \| > ${duds}.full

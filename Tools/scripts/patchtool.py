@@ -231,7 +231,7 @@ def gendiff(path, wrksrc, outfile = ''):
 # Automatically generate a name for a patch based on its path relative to
 # wrksrc. Use simple scheme to ensute 1-to-1 mapping between path and
 # patchname - replace all '_' with '__' and all '/' with '_'.
-# 
+#
 def makepatchname(path, patchdir = ''):
 	SRS = Vars.SLASH_REPL_SYMBOL
 	retval = Vars.PATCH_PREFIX + \

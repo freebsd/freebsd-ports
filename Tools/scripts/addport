@@ -210,7 +210,7 @@ foreach my $thisdir (@dirs) {
 	}
 	chomp(my $cvs_category = $category);
 	$cvs_category =~ s/-/_/g;
- 
+
  	$module = "$l10nprefix{$category}$portname";
 
 	if ($interactive) {

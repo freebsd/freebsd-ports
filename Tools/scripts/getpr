@@ -5,7 +5,7 @@
 # $FreeBSD$
 #
 
-use strict; 
+use strict;
 
 my $pr = shift;
 my $user = shift;

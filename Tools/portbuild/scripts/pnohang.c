@@ -65,7 +65,7 @@ main(int argc, char *argv[])
 		    sigemptyset(&sv.sa_mask);
 		    sv.sa_flags = 0;
 		    sigaction(SIGTERM, &sv, 0);
-		    
+
 		    /* parent */
 		    child = wait(&status);
 		    /*printf("exited child is %d, status is %d\n", child, status);*/

@@ -20,7 +20,7 @@ getpr   - downloads a problem report from GNATS and attempts to extract
           the patch, shar, uuencoded file from it.
           this probably needs to be checked for potential security problems.
 gnomedepends - Analyse pkg/PLIST and give an advice as to which GNOME ports
-               should be listes in {RUN,LIB}_DEPENDS for this port 
+               should be listes in {RUN,LIB}_DEPENDS for this port
 plist - automate (mostly, at least) pkg-plist generation
 prpatch - just does `patch $1 < pr-patch' (pr-patch is created by getpr)
 prdone  - checks in the port, attempting to fill out the commit message using
@@ -40,7 +40,7 @@ Not on filesystem - jade from jade-1.2.1
 Only on filesystem - jadefoo
 No package md5 available for lessecho
 File nsgmls owned by multiple packages sp-1.3.4,jade-1.2.1
-No filesystem md5 available for setuser, but it exists                          
+No filesystem md5 available for setuser, but it exists
 For sgmlnorm, package md5 312d7b63d591e07629e0da4ae4a0ac07 is DIFFERENT from fs md5 of 19f1f901911b90d8e04c6ea69e1b0541!
 
 change $do_md5 to 0 to not check md5, and $do_fs to 0 to not check for

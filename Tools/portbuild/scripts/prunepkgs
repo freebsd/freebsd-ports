@@ -17,7 +17,7 @@ testprunelink() {
   if [ ! -e $1/ ]; then
     dest=$(readlink $1)
     echo "$1 -> $dest pruned."
-    if [ "${dummy}" = "0" ]; then 
+    if [ "${dummy}" = "0" ]; then
       rm -f $1
     fi
   fi

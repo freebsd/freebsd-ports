@@ -24,7 +24,7 @@ find.
      exported to the build machines.  (Hint: you should probably add
      "-alldirs" to /etc/exports.)
 
- (3) Setup ssh for root between the build machines and the master.  It 
+ (3) Setup ssh for root between the build machines and the master.  It
      has to work in both directions.
 
  (4) Put the list of machines you have in "mlist".  There is a sample
@@ -38,7 +38,7 @@ find.
      Because it takes the integer value this algorithm will select machines
      with loads in a certain range, not just the single least loaded machine.
 
-     Note that you can put the master here as well, but our experience 
+     Note that you can put the master here as well, but our experience
      is that our NFS is likely to act up when the master is too busy.
      Even with a two-processor P6-200, we had to refrain from running
      any compilations on the master to get NFS to work reliably.

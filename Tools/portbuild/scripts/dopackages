@@ -99,7 +99,7 @@ restrictedlist () {
   echo "restricted list generation ended at $(date)"
   echo $(grep -c '^#' ${pb}/${arch}/${branch}/restricted.sh) "ports in ${pb}/${arch}/${branch}/restricted.sh"
 }
-  
+
 # usage: cdromlist pb scripts branch
 cdromlist () {
   pb=$1
@@ -316,7 +316,7 @@ if [ "$skipstart" = 0 ]; then
     cvs -qR update -PdA
     # XXX Check for conflicts
   fi
-  
+
   if [ "$nocvs" = 0 ]; then
     echo "================================================"
     echo "running cvs update on ${SRCBASE}"
@@ -330,8 +330,8 @@ if [ "$skipstart" = 0 ]; then
   echo "running make checksubdirs"
   echo "================================================"
   cd ${PORTSDIR}
-  make checksubdirs 
-  
+  make checksubdirs
+
   # this one not run in background to check return status
   if [ "$noduds" = 0 ]; then
     makeduds ${pb} ${arch} ${scripts} ${branch}
@@ -362,13 +362,13 @@ if [ "$skipstart" = 0 ]; then
   if [ "$norestr" = 0 ]; then
     restrictedlist ${pb} ${arch} ${scripts} ${branch} &
   fi
-  
+
   if [ "$cdrom" = 1 ]; then
     cdromlist ${pb} ${arch} ${scripts} ${branch} &
   fi
 
   ${scripts}/makeparallel ${arch} ${branch}
-  
+
   if [ "$nodummy" = 0 ]; then
     dummypkgs=""
     for i in ${dummyports}; do
@@ -379,7 +379,7 @@ if [ "$skipstart" = 0 ]; then
       fi
     done
   fi
-  
+
   cd ${pb}/${arch}
   mkdir -p ${pb}/${arch}/${branch}/bak
   cd ${pb}/${arch}/${branch}/bak
@@ -405,7 +405,7 @@ if [ "$skipstart" = 0 ]; then
 
     echo "Removing $(wc -l ${pb}/${arch}/${branch}/.oldports) packages in preparation for incremental build"
     rm ${INDEXFILE}.old1 ${INDEXFILE}.1
-  
+
     cd ${PACKAGES}/All
     sed "s,$,${PKGSUFFIX}," ${pb}/${arch}/${branch}/.oldports | xargs rm -f
     ${scripts}/prunepkgs ${PORTSDIR}/${INDEXFILE} ${PACKAGES}
@@ -464,7 +464,7 @@ wait
 if [ "$nobuild" = 0 ]; then
   cd ${pb}/${arch}/${branch}
 
-  if [ "$cont" = 1 ]; then 
+  if [ "$cont" = 1 ]; then
     find errors/ -name \*.log | sed -e 's,\.log$,,' -e 's,^errors/,,' >> duds.errors
     cat duds duds.errors | sort -u > duds.new
     mv duds.new duds
@@ -497,7 +497,7 @@ if [ "$nobuild" = 0 ]; then
   cd ${pb}/${arch}/${branch}
   if grep -qE '(ptimeout|pnohang): killing' make.0; then
     echo "The following port(s) timed out:"
-    grep -E '(ptimeout|pnohang): killing' make.0 | sed -e 's/^.*ptimeout:/ptimeout:/' -e 's/^.*pnohang:/pnohang:/' 
+    grep -E '(ptimeout|pnohang): killing' make.0 | sed -e 's/^.*ptimeout:/ptimeout:/' -e 's/^.*pnohang:/pnohang:/'
   fi
 
   ls -asFlrt ${pb}/${arch}/${branch}/packages/All > ${pb}/${arch}/${branch}/logs/ls-lrt-1
@@ -547,7 +547,7 @@ if grep -qE '(ptimeout|pnohang): killing' make.1; then
 fi
 
 # Clean up temporary duds file
-if [ "$cont" = 1 ]; then                                               
+if [ "$cont" = 1 ]; then
   cp duds.orig duds
 fi
 
