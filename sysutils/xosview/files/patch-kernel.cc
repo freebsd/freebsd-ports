@@ -1,5 +1,5 @@
 --- bsd/kernel.cc.orig	Mon Jul  5 21:09:30 1999
-+++ bsd/kernel.cc	Sat Jun 10 14:25:05 2000
++++ bsd/kernel.cc	Tue Aug 21 10:49:26 2001
 @@ -284,7 +284,12 @@
    while (nlp && nlp->n_name) {
      if ((nlp->n_type == 0) || (nlp->n_value == 0))
@@ -13,6 +13,15 @@
      nlp++;
    }
  #ifdef HAVE_DEVSTAT
+@@ -457,7 +462,7 @@
+ //
+ 
+ void
+-BSDGetSwapCtlInfo(int *totalp, int *freep) {
++BSDGetSwapCtlInfo(long *totalp, long *freep) {
+   int	totalinuse, totalsize;
+   int rnswap, nswap = swapctl(SWAP_NSWAP, 0, 0);
+   struct swapent *swapiter;
 @@ -792,25 +797,25 @@
    OpenKDIfNeeded(); 
    nintr = (nlst[EINTRCNT_SYM_INDEX].n_value -
