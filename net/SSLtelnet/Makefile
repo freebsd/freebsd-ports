@@ -7,7 +7,9 @@
 PORTNAME=		SSLtelnet
 PORTVERSION=		0.13
 CATEGORIES=		net security
-MASTER_SITES=		ftp://ftp.psy.uq.oz.au/pub/Crypto/SSLapps/
+MASTER_SITES=		${MASTER_SITE_LOCAL} \
+			ftp://ftp.psy.uq.oz.au/pub/Crypto/SSLapps/
+MASTER_SITE_SUBDIR=	kris
 
 MAINTAINER=		issei@jp.FreeBSD.org
 
