@@ -35,6 +35,7 @@ ming		"ming library support" OFF \
 sockets		"sockets support" OFF \
 sysvsem		"System V semaphore support" OFF \
 sysvshm		"System V shared memory support" OFF \
+transsid	"Transparent session id" OFF \
 2> /tmp/checklist.tmp.$$
 
 	retval=$?
@@ -215,6 +216,9 @@ EOF
 			;;
 		\"sysvshm\")
 			echo "CONFIGURE_ARGS+=--enable-sysvshm"
+			;;
+		\"transsid\")
+			echo "CONFIGURE_ARGS+=--enable-trans-sid"
 			;;
 		*)
 			echo "Invalid option(s): $*" > /dev/stderr
