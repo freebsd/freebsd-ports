@@ -16,6 +16,8 @@ SWITCHING ON YOUR CISCO CORE OR DISTRIBUTION ROUTERS, WHAT PERFORMANCE IMPACT
 MIGHT BE INVOLVED WHEN DOING THIS, WITH THE GOAL, NOT TO LOOSE YOUR ROUTING/
 SWITCHING PERFORMANCE. BE WARNED !!!
 
+C) You need to configure SNMP on your Cisco Router.
+
 Post-installation tasks involve:
 a)	Configure cflowd properly for your needs, see above mentioned docu !
 	Example files reside in ${PREFIX}/etc, files:
