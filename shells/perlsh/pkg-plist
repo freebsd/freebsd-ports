@@ -1,10 +1,48 @@
 bin/psh
-share/perlsh/CHANGES
-share/perlsh/MANIFEST
-share/perlsh/README
-share/perlsh/TODO
-share/perlsh/psh.NEWS
-share/perlsh/pshrc
-share/perlsh/test.pl
-share/perlsh/psh.pod
-@dirrm share/perlsh
+lib/perl5/site_perl/%%PERL_VER%%/Psh.pm
+lib/perl5/site_perl/%%PERL_VER%%/Psh/OS/Unix.pm
+lib/perl5/site_perl/%%PERL_VER%%/Psh/OS/Win.pm
+lib/perl5/site_perl/%%PERL_VER%%/Psh/OS/Mac.pm
+lib/perl5/site_perl/%%PERL_VER%%/Psh/Joblist.pm
+lib/perl5/site_perl/%%PERL_VER%%/Psh/Builtins/Fallback/Ls.pm
+lib/perl5/site_perl/%%PERL_VER%%/Psh/Builtins/Fallback/Env.pm
+lib/perl5/site_perl/%%PERL_VER%%/Psh/Builtins/Readline.pm
+lib/perl5/site_perl/%%PERL_VER%%/Psh/Builtins/Bg.pm
+lib/perl5/site_perl/%%PERL_VER%%/Psh/Builtins/Symbols.pm
+lib/perl5/site_perl/%%PERL_VER%%/Psh/Builtins/Fg.pm
+lib/perl5/site_perl/%%PERL_VER%%/Psh/Builtins/Jobs.pm
+lib/perl5/site_perl/%%PERL_VER%%/Psh/Builtins/Which.pm
+lib/perl5/site_perl/%%PERL_VER%%/Psh/Builtins/Builtin.pm
+lib/perl5/site_perl/%%PERL_VER%%/Psh/Builtins/Exit.pm
+lib/perl5/site_perl/%%PERL_VER%%/Psh/Builtins/Help.pm
+lib/perl5/site_perl/%%PERL_VER%%/Psh/Builtins/Kill.pm
+lib/perl5/site_perl/%%PERL_VER%%/Psh/Builtins/Source.pm
+lib/perl5/site_perl/%%PERL_VER%%/Psh/Builtins/Strategy.pm
+lib/perl5/site_perl/%%PERL_VER%%/Psh/Completion.pm
+lib/perl5/site_perl/%%PERL_VER%%/Psh/Locale/Base.pm
+lib/perl5/site_perl/%%PERL_VER%%/Psh/Locale/Italian.pm
+lib/perl5/site_perl/%%PERL_VER%%/Psh/Locale/Default.pm
+lib/perl5/site_perl/%%PERL_VER%%/Psh/Locale/French.pm
+lib/perl5/site_perl/%%PERL_VER%%/Psh/Locale/Spanish.pm
+lib/perl5/site_perl/%%PERL_VER%%/Psh/Locale/German.pm
+lib/perl5/site_perl/%%PERL_VER%%/Psh/Locale/Portuguese.pm
+lib/perl5/site_perl/%%PERL_VER%%/Psh/PerlEval.pm
+lib/perl5/site_perl/%%PERL_VER%%/Psh/Strategy/Perlfunc.pm
+lib/perl5/site_perl/%%PERL_VER%%/Psh/Strategy/Fallback_builtin.pm
+lib/perl5/site_perl/%%PERL_VER%%/Psh/Strategy/Auto_resume.pm
+lib/perl5/site_perl/%%PERL_VER%%/Psh/Strategy/Auto_cd.pm
+lib/perl5/site_perl/%%PERL_VER%%/Psh/Strategy/Perlscript.pm
+lib/perl5/site_perl/%%PERL_VER%%/Psh/OS.pm
+lib/perl5/site_perl/%%PERL_VER%%/Psh/Job.pm
+lib/perl5/site_perl/%%PERL_VER%%/Psh/Util.pm
+lib/perl5/site_perl/%%PERL_VER%%/Psh/Prompt.pm
+lib/perl5/site_perl/%%PERL_VER%%/Psh/Builtins.pm
+lib/perl5/site_perl/%%PERL_VER%%/Psh/Parser.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/psh/.packlist
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/psh
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/Psh/Builtins/Fallback
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/Psh/Builtins
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/Psh/Locale
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/Psh/OS
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/Psh/Strategy
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/Psh

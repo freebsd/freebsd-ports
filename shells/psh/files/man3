@@ -1,0 +1,19 @@
+MAN3=	\
+	Psh::OS::Unix.3 \
+	Psh::Locale::French.3 \
+	Psh::Locale::Spanish.3 \
+	Psh::Joblist.3 \
+	Psh::Locale::German.3 \
+	Psh::Locale::Base.3 \
+	Psh::Completion.3 \
+	Psh::PerlEval.3 \
+	Psh::Job.3 \
+	Psh::Util.3 \
+	Psh::OS::Win.3 \
+	Psh::Locale::Italian.3 \
+	Psh::OS.3 \
+	Psh::OS::Mac.3 \
+	Psh::Locale::Default.3 \
+	Psh::Builtins.3 \
+	Psh::Parser.3 \
+	Psh::Locale::Portuguese.3

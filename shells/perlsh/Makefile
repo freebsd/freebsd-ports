@@ -1,31 +1,29 @@
 # New ports collection makefile for:	perlsh
-# Version required:	0.004pre2
+# Version required:	0.007
 # Date created:		11 Dec 1999
 # Whom:			Will Andrews <andrews@technologist.com>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	psh-0.004pre2
-CATEGORIES=	shells
+DISTNAME=	psh-${VERSION}
+PKGNAME=	perlsh-${VERSION}
+CATEGORIES=	shells perl5
 MASTER_SITES=	http://www.focusresearch.com/gregor/psh/
 
 MAINTAINER=	andrews@technologist.com
 
+VERSION=	0.007
+USE_PERL5=	yes
+FETCH_BEFORE_ARGS+=	-t
+MAKE_ENV+=	PPREFIX="${PREFIX}"
+MAN1=		psh.1
+MAN3PREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
+
+.include "${.CURDIR}/files/man3"
+
 do-build:
 	@(cd ${WRKSRC} && ${PERL} Makefile.PL && ${MAKE})
-
-post-build:
-	@${PERL} -pi -e "s/\/usr\/local\/bin\/perl/\/usr\/bin\/perl/g" ${WRKSRC}/psh
-
-do-install:
-.if !defined(NOPORTDOCS)
-	@${MKDIR} ${PREFIX}/share/perlsh
-.for DOC in CHANGES MANIFEST README TODO psh.NEWS pshrc test.pl psh.pod
-	@${INSTALL_DATA} ${WRKSRC}/${DOC} ${PREFIX}/share/perlsh
-.endfor
-.endif
-	@${INSTALL_SCRIPT} ${WRKSRC}/psh ${PREFIX}/bin
 
 post-install:   
 	@${ECHO} "Updating /etc/shells" 
