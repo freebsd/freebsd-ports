@@ -7,6 +7,7 @@
 
 PORTNAME=	drgenius
 PORTVERSION=	0.8.4
+PORTREVISION=	1
 CATEGORIES=	math
 MASTER_SITES=	http://www.ofset.org/drgenius/
 
@@ -17,16 +18,10 @@ BUILD_DEPENDS=	gob:${PORTSDIR}/x11-toolkits/gob
 LIB_DEPENDS=	guile.15:${PORTSDIR}/lang/guile
 
 USE_X_PREFIX=	yes
-USE_REINPLACE=	yes
 USE_GMAKE=	yes
-USE_GNOME=	gnomeprefix gnomehack libglade
+USE_GNOME=	gnomehack gnomeprefix gnometarget libglade
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LIBS="-L${LOCALBASE}/lib"
-CONFIGURE_TARGET=	--target=${MACHINE_ARCH}-unknown-freebsd${OSREL}
-
-post-patch:
-	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|g ; \
-		 s|DATADIRNAME=lib|DATADIRNAME=share|g' ${WRKSRC}/configure
+		LDFLAGS="-L${LOCALBASE}/lib"
 
 .include <bsd.port.mk>
