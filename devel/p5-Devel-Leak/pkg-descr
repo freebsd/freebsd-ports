@@ -11,7 +11,7 @@ NoteSV.  It re-walks the perl-internals and calls sv_dump() for any
 "things" which did not exist when NoteSV was called.  It returns a count
 of the number of "things" now allocated.
 
-WWW: http://search.cpan.org/search?dist=Devel-Leak
+WWW: http://search.cpan.org/dist/Devel-Leak/
 
 -- Sergey Skvortsov
 skv@FreeBSD.org

@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Devel-Leak
-PORTVERSION=	0.02
+PORTVERSION=	0.03
 CATEGORIES=	devel perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Devel
@@ -17,7 +17,6 @@ COMMENT=	Utility for looking for perl objects that are not reclaimed
 
 PERL_CONFIGURE=	yes
 
-MAN3PREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 MAN3=		Devel::Leak.3
 
 .include <bsd.port.mk>
