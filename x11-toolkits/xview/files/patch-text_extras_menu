@@ -1,0 +1,11 @@
+--- lib/libxview/textsw/txt_e_menu.c.orig	Sun Apr 27 11:56:09 2003
++++ lib/libxview/textsw/txt_e_menu.c	Sun Apr 27 11:56:37 2003
+@@ -159,7 +159,7 @@
+     }
+ 
+     /* Giving up, try with ancient way (SunView1) */
+-    (void) sprintf(tmp, "/usr/lib/.%s", EXTRASMENU);
++    (void) sprintf(tmp, "%s", EXTRASMENU);
+     result = xv_strsave(tmp);
+ 
+ found:
