@@ -17,7 +17,10 @@ USE_X_PREFIX=	yes
 USE_XPM=	yes
 GNU_CONFIGURE=	yes
 
-BINMODE=        4755
+BINMODE=	4755
+
+PLIST_FILES=	bin/wmnetmon share/examples/wmnetmon/wmnetmonrc
+PLIST_DIRS=	share/examples/wmnetmon
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/wmnetmon ${PREFIX}/bin
