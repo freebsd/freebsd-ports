@@ -19,15 +19,13 @@ LIB_DEPENDS=	iconv:${PORTSDIR}/converters/libiconv
 CONFIGURE_ARGS=	--with-libiconv=${LOCALBASE} --disable-debug
 
 USE_GNOME=	gnometarget libgsf
-USE_LIBTOOL_VER=13
-LIBTOOLFLAGS=	# none, we want to keep libwv2.la
+USE_INC_LIBTOOL_VER=13
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 INSTALLS_SHLIB=	yes
 USE_REINPLACE=	yes
 
 pre-configure:
-	@${TOUCH} ${WRKSRC}/config.h.in
 	@${REINPLACE_CMD} "s,-pedantic ,," ${WRKSRC}/configure
 
 .include <bsd.port.mk>
