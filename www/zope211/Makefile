@@ -13,7 +13,7 @@ MASTER_SITES=	http://www.zope.org/Products/Zope/${PORTVERSION}/
 DISTNAME=	Zope-${PORTVERSION}-src
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	ports@geeksrus.net
+MAINTAINER=	AlanE@FreeBSD.org
 
 USE_PYTHON=	yes
 PYTHON_VERSION=	python2.1

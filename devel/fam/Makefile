@@ -14,7 +14,7 @@ PATCH_SITES=		ftp://oss.sgi.com/projects/fam/download/patches/
 PATCH_DIST_STRIP=	-p1
 PATCHFILES=		freebsd-mntent.patch # freebsd-build.patch
 
-MAINTAINER=		ports@geeksrus.net
+MAINTAINER=		AlanE@FreeBSD.org
 
 CFLAGS+=		-Wno-deprecated
 

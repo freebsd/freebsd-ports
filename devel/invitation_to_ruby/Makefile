@@ -2,7 +2,7 @@
 #
 # New ports collection makefile for:	invitation_to_ruby
 # Date created:			2002/08/28
-# Whom:				Alan Eldridge <ports@geeksrus.net>
+# Whom:				Alan Eldridge <AlanE@FreeBSD.org>
 #
 # $FreeBSD$
 #
@@ -21,7 +21,7 @@ EXTRACT_SUFX=	.tgz
 #DIST_SUBDIR=	${PKGNAMEPREFIX}${PORTNAME}
 #EXTRACT_ONLY=
 
-MAINTAINER=	ports@geeksrus.net
+MAINTAINER=	AlanE@FreeBSD.org
 
 NO_BUILD=	yes
 

@@ -12,7 +12,7 @@ CATEGORIES=	audio
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=grip
 
-MAINTAINER=	ports@geeksrus.net
+MAINTAINER=	AlanE@FreeBSD.org
 
 LIB_DEPENDS=	id3-3.7.13:${PORTSDIR}/audio/id3lib \
 		ghttp.1:${PORTSDIR}/www/libghttp

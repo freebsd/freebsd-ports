@@ -12,7 +12,7 @@ MASTER_SITES=	# empty
 DISTFILES=	# none
 EXTRACT_ONLY=	# empty
 
-MAINTAINER=	ports@geeksrus.net
+MAINTAINER=	AlanE@FreeBSD.org
 
 LIB_DEPENDS?=	cups.2:${.CURDIR}/../../print/cups-base
 RUN_DEPENDS?=	espgs:${.CURDIR}/../../print/cups-pstoraster \

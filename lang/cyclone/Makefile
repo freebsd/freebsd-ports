@@ -2,7 +2,7 @@
 #
 # New ports collection makefile for:	cyclone
 # Date created:		2002/01/06
-# Whom:			AlanE <ports@geeksrus.net> et al
+# Whom:			AlanE <AlanE@FreeBSD.org> et al
 #
 # $FreeBSD$
 #
@@ -17,7 +17,7 @@ MASTER_SITES=	http://www.cs.cornell.edu/projects/cyclone/software/
 DISTFILES=	${PORTNAME}-${PORTVERSION}.tar.gz \
 		${PORTNAME}-${PORTVERSION}-docs.tar.gz
 
-MAINTAINER=	ports@geeksrus.net
+MAINTAINER=	AlanE@FreeBSD.org
 
 USE_GMAKE=	yes
 NO_PACKAGE=	'Neither CC nor CFLAGS safe.'

@@ -10,7 +10,7 @@ PORTVERSION=	${CUPS_PORTVER}
 PORTREVISION=	1
 CATEGORIES?=	print
 
-MAINTAINER=	ports@geeksrus.net
+MAINTAINER=	AlanE@FreeBSD.org
 
 LIB_DEPENDS=	cups.2:${.CURDIR}/../../print/cups-base
 
