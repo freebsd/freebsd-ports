@@ -7,10 +7,9 @@
 #
 
 PORTNAME=	mp32ogg
-PORTVERSION=	0.10
+PORTVERSION=	0.11
 CATEGORIES=	audio perl5
 MASTER_SITES=	ftp://ftp.faceprint.com/pub/software/scripts/
-DISTNAME=	${PORTNAME}
 EXTRACT_SUFX=	# empty
 
 MAINTAINER=	ports@FreeBSD.org
@@ -24,7 +23,7 @@ USE_PERL5=	yes
 NO_WRKSUBDIR=	yes
 EXTRACT_CMD=	${CP}
 EXTRACT_BEFORE_ARGS=	#
-EXTRACT_AFTER_ARGS=	${WRKSRC}
+EXTRACT_AFTER_ARGS=	${WRKSRC}/${PORTNAME}
 NO_BUILD=	yes
 
 post-patch:
