@@ -15,7 +15,7 @@ lib/libifcoremt.so
 lib/libifcoremt.so.5
 lib/libifport.so
 lib/libifport.so.5
-lib/libimf.so
 lib/libompstub.a
+lib/libsvml.so
 lib/libunwind.so
 lib/libunwind.so.5

@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ifc
-PORTVERSION=	8.0.046p050.1
+PORTVERSION=	8.1.023
 CATEGORIES=	lang linux devel
 MASTER_SITES=
 DISTNAME=	l_fc_pc_${PORTVERSION:C/p.+$//}
@@ -18,10 +18,11 @@ PATCHLEVEL=	${PORTVERSION:C/(.+p)(.+)$/pe\2/}
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
 .if ${PORTVERSION} != ${PATCHLEVEL}
 DISTFILES+=	${DISTNAME}_${PATCHLEVEL}${EXTRACT_SUFX}
+#PATCH_DEPENDS=		${LINUXBASE}/etc/redhat-release:${PORTSDIR}/emulators/linux_base
+PATCH_DEPENDS=		${LINUXBASE}/lib/libc-2.3.2.so:${PORTSDIR}/emulators/linux_base-8
 .endif
 
 EXTRACT_DEPENDS=	rpm2cpio.pl:${PORTSDIR}/archivers/rpm2cpio
-PATCH_DEPENDS=		${LINUXBASE}/etc/redhat-release:${PORTSDIR}/emulators/linux_base
 
 RESTRICTED=	Intel forbids any redistribution
 NO_PACKAGE=	${RESTRICTED}
@@ -30,7 +31,8 @@ NO_CDROM=	${RESTRICTED}
 ONLY_FOR_ARCHS=		i386
 CONFLICTS=		linux_devtools*
 
-USE_LINUX=		yes
+#USE_LINUX=		yes
+RUN_DEPENDS=		${LINUXBASE}/lib/libc-2.3.2.so:${PORTSDIR}/emulators/linux_base-8
 USE_REINPLACE=		yes
 NO_FILTER_SHLIBS=	yes
 
@@ -47,7 +49,6 @@ IFC_SITE=	http://www.intel.com/software/products/compilers/
 
 EXTRACT_AFTER_ARGS=	| tar -xf - \
 			--exclude intel-iidb\*.rpm \
-			--exclude intel-isubh\*.rpm \
 			--exclude \*ia64.rpm \
 			--exclude chklic.64 \
 			--exclude flexlm64
@@ -131,14 +132,15 @@ OBJCOPY_OPS=	--redefine-sym stdin=__stdinp \
 
 do-build:
 # Use the Linux ABI for the binaries
-.for i in codecov fortcom fpp ifcbin ifortbin profmerge proforder tselect xiar xild
+.for i in codecov fortcom fpp ifcbin ifortbin profmerge proforder profrun pronto_tool tselect xiar xild
 	@${BRANDELF} -t Linux ${WRKSRC}/opt/${COMPILERDIR}/bin/${i}
 .endfor
 # Fix unresolved references
 	@cd ${WRKSRC} && ${CC} ${CFLAGS} -c ${FILESDIR}/assert_fail.c \
 		${FILESDIR}/linux_file.c ${FILESDIR}/linux_stat.c \
 		${FILESDIR}/sysconf.c    \
-		${FILESDIR}/errno_location.c ${FILESDIR}/mcount.S
+		${FILESDIR}/errno_location.c ${FILESDIR}/mcount.S \
+		${FILESDIR}/memalign.c
 .if ( ${OSVERSION} < 502101 )
 	@cd ${WRKSRC} && ${CC} ${CFLAGS} -c ${FILESDIR}/cxa_atexit.c
 .endif
@@ -148,12 +150,13 @@ do-build:
 	@${CC} ${CFLAGS} -c -o ${WRKSRC}/stdout.o ${FILESDIR}/stdout.c
 	@${CC} ${CFLAGS} -c -o ${WRKSRC}/stderr.o ${FILESDIR}/stderr.c
 .endif
-.for i in libcprts.a libcxa.a libifcore.a libifcoremt.a libifport.a libimf.a libirc.a libircmt.a libunwind.a
+.for i in libcprts.a libcxa.a libifcore.a libifcore_pic.a libifcoremt.a libifport.a libimf.a libirc.a libirc_s.a libunwind.a
 	@${OBJCOPY} --redefine-sym __sigsetjmp=sigsetjmp \
+	        --redefine-sym __xpg_basename=basename \
 		${OBJCOPY_OPS} \
 		${WRKSRC}/opt/${COMPILERDIR}/lib/${i}
 .endfor
-.for i in ifcore ifcoremt ifport
+.for i in ifcore ifcore_pic ifcoremt ifport
 	@${OBJCOPY} --strip-symbol=stat \
 		--strip-symbol=fstat \
 		--strip-symbol=lstat \
@@ -161,7 +164,7 @@ do-build:
 		--redefine-sym lseek=l_lseek \
 		${WRKSRC}/opt/${COMPILERDIR}/lib/lib${i}.a
 .endfor
-.for i in ifcore ifcoremt
+.for i in ifcore ifcoremt ifcore_pic
 	@${OBJCOPY} \
 		--redefine-sym ftruncate=l_ftruncate \
 		--redefine-sym lseek64=lseek \
