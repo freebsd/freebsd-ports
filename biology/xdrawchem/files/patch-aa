@@ -1,21 +1,37 @@
---- Makefile.orig	Fri Mar 31 03:05:27 2000
-+++ Makefile	Sun Apr 16 12:57:25 2000
-@@ -13,10 +13,10 @@
- CFLAGS	=	-g -DRINGHOME=$(RINGDIR)
+--- Makefile.orig	Thu May 25 03:17:35 2000
++++ Makefile	Mon Sep 18 15:56:32 2000
+@@ -4,21 +4,21 @@
+ # if you change this variable, remember to put "\" before the directory,
+ # and \"" after it, so the preprocessor will insert quotes correctly
+ 
+-RINGDIR = "\"/usr/local/lib/xdrawchem/\""
++RINGDIR = "\"${PREFIX}/share/xdrawchem\""
+ #RINGDIR = "\"ring/\""
+ 
+ ## Compiler stuff
+ 
+-CXX	=	g++
+-CXXFLAGS = -g -DRINGHOME=$(RINGDIR)
+-CC	=	gcc
+-CFLAGS	=	-g -DRINGHOME=$(RINGDIR)
++CXX	?=	g++
++CXXFLAGS += -g -DRINGHOME=$(RINGDIR)
++CC	?=	gcc
++CFLAGS	+=	-DRINGHOME=$(RINGDIR)
  #INCPATH =	-I/usr/include -I/usr/people/herger/src/qt-2.0.2/include
  #LFLAGS	=	-L/usr/src/qt-2.0.2/lib -L/usr/lib
 -INCPATH =	-I/usr/include -I$(QTDIR)/include
 -LFLAGS	=	-g -L$(QTDIR)/lib -L/usr/lib -L/usr/X11R6/lib
 -LIBS	=	-lqt -lXext -lX11 -lm
 -MOC	=	moc
-+INCPATH =	-I/usr/include -I$(QTDIR)/include/qt2
-+LFLAGS	=	-L$(QTDIR)/lib -L/usr/lib -L/usr/X11R6/lib
++INCPATH =	-I$(QTDIR)/include/qt2
++LFLAGS	=	-L$(QTDIR)/lib
 +LIBS	=	-lqt2 -lXext -lX11 -lm
-+MOC	=	moc2
++MOC	=	$(QTDIR)/bin/moc2
  
  ####### Target
  
-@@ -157,3 +157,7 @@
+@@ -164,3 +164,9 @@
  
  moc_manual.cpp: manual.h
  	$(MOC) manual.h -o moc_manual.cpp
@@ -23,3 +39,5 @@
 +install:
 +	strip -s xdrawchem
 +	install -c -m 755 -o root -g wheel xdrawchem $(X11BASE)/bin/
++	install -d -m 755 -o root -g wheel $(X11BASE)/share/xdrawchem/
++	install -c -m 644 -o root -g wheel ring/* $(X11BASE)/share/xdrawchem/

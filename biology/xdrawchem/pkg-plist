@@ -1,1 +1,4 @@
 bin/xdrawchem
+share/xdrawchem/calix4.ring
+share/xdrawchem/naphthalene.ring
+@dirrm share/xdrawchem
