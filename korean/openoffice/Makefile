@@ -5,11 +5,11 @@
 # $FreeBSD$
 #
 
-CATEGORIES=	korean
+CATEGORIES=	korean editors
 
 LANG_PKGNAME=	kr
 LANG_EXT=	82
 LANG_CONFIGURE_ARG=	KOREAN
 MASTERDIR=	${.CURDIR}/../../editors/openoffice
 
-.include "${.CURDIR}/../../editors/openoffice/Makefile"
+.include "${MASTERDIR}/Makefile"
