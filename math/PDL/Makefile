@@ -28,7 +28,7 @@ SCRIPTS_ENV=	PERL=${PERL}
 
 .if defined(KITCHEN_SINK)
 LIB_DEPENDS+=	fftw.2:${PORTSDIR}/math/fftw \
-		gsl.0:${PORTSDIR}/math/gsl
+		gsl.3:${PORTSDIR}/math/gsl
 RUN_DEPENDS+=	ppmtogif:${PORTSDIR}/graphics/netpbm \
 		mpeg_encode:${PORTSDIR}/graphics/mpeg_encode \
 		saoimage:${PORTSDIR}/astro/saoimage
