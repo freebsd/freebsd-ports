@@ -4,15 +4,15 @@
 # Date created:			  Tue Jan 28, 1997
 # Whom:				  David O'Brien (obrien@NUXI.com)
 #
-# $Id: Makefile,v 1.8 1998/12/01 09:39:47 obrien Exp $
+# $Id: Makefile,v 1.9 1998/12/01 11:36:13 obrien Exp $
 #
 
-DISTNAME=	ddd-3.0.92
+DISTNAME=	ddd-3.1
 CATEGORIES=	devel
-MASTER_SITES=	ftp://Xftp.ips.cs.tu-bs.de/pub/local/softech/ddd/src/  \
-		ftp://richb-pc.acc.qc.edu/pub/ddd/src/  \
-		ftp://ftp.gre.ac.uk/pub/tools/debuggers/ddd/src/  \
+MASTER_SITES=	ftp://ftp.ips.cs.tu-bs.de/pub/local/softech/ddd/src/  \
 		ftp://uiarchive.cso.uiuc.edu/pub/packages/ddd/src/  \
+		ftp://ftp.gre.ac.uk/pub/tools/debuggers/ddd/src/  \
+		ftp://richb-pc.acc.qc.edu/pub/ddd/src/  \
 		ftp://ftp.th-darmstadt.de/pub/programming/tools/ddd/src/
 
 MAINTAINER=     obrien@FreeBSD.org
