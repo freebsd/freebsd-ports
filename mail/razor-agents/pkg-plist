@@ -8,5 +8,5 @@ lib/perl5/site_perl/%%PERL_VER%%/Razor/Errorhandler.pm
 lib/perl5/site_perl/%%PERL_VER%%/Razor/String.pm
 lib/perl5/site_perl/%%PERL_VER%%/Razor/Version.pm
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/razor-agents/.packlist
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/razor-agents
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/Razor
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/razor-agents 2>/dev/null || true
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/Razor 2>/dev/null || true

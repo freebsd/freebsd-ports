@@ -6,8 +6,8 @@
 #
 
 PORTNAME=	razor-agents
-PORTVERSION=	1.17
-PORTREVISION=	1
+PORTVERSION=	1.19
+PORTREVISION=	0
 CATEGORIES=	mail
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	razor
@@ -23,6 +23,5 @@ PERL_CONFIGURE=	yes
 
 MAN3PREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 MAN1=		razor-check.1 razor-discover.1 razor-report.1
-MAN3=		Razor::Client.3 Razor::Errorhandler.3
 
 .include <bsd.port.mk>
