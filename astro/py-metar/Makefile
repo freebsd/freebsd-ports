@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	metar
-PORTVERSION=	0.4
+PORTVERSION=	0.5
 CATEGORIES=	astro python
 MASTER_SITES=	http://unattached.i-no.de/pkgs/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
