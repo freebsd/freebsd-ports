@@ -1,5 +1,7 @@
 bin/gave
 %%RUBY_SITELIBDIR%%/numru/gave/draw.rb
+%%RUBY_SITELIBDIR%%/numru/gave/fileselection.rb
+%%RUBY_SITELIBDIR%%/numru/gave/fileselection.glade
 @dirrm %%RUBY_SITELIBDIR%%/numru/gave
 @unexec rmdir %B 2>/dev/null || true
 share/locale/ja/LC_MESSAGES/gave.mo

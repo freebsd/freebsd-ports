@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	gave
-PORTVERSION=	1.0.0
-PORTREVISION=	1
+PORTVERSION=	1.0.2
 CATEGORIES=	science graphics ruby
-MASTER_SITES=	http://www-mete.kugi.kyoto-u.ac.jp/seiya/tarball/
+MASTER_SITES=	http://ruby.gfd-dennou.org/products/gave/
 DIST_SUBDIR=	ruby
 
 MAINTAINER=	murakami@ahs.scitec.kobe-u.ac.jp
