@@ -3,7 +3,7 @@
 # Date created:		Fri Oct  3 18:50:53 CEST 1997
 # Whom:			Andreas Klemm <andreas@klemm.gtn.com>
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1997/10/03 22:16:34 andreas Exp $
 #
 
 DISTNAME=	SpecTcl1.1
@@ -20,14 +20,14 @@ NO_BUILD=	yes
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/bin/specJava ${PREFIX}/bin
 	${INSTALL_SCRIPT} ${WRKSRC}/bin/specTcl ${PREFIX}/bin
-	${MKDIR} -p ${PREFIX}/SpecTcl
+	${MKDIR} ${PREFIX}/SpecTcl
 	${INSTALL_DATA} ${WRKSRC}/changes ${PREFIX}/SpecTcl
 	${INSTALL_DATA} ${WRKSRC}/license.terms ${PREFIX}/SpecTcl
-	${MKDIR} -p ${PREFIX}/SpecTcl/lib
+	${MKDIR} ${PREFIX}/SpecTcl/lib
 	${CP} -r ${WRKSRC}/SpecTcl/* ${PREFIX}/SpecTcl/lib
-	${MKDIR} -p ${PREFIX}/SpecTcl/demo
+	${MKDIR} ${PREFIX}/SpecTcl/demo
 	${CP} -r ${WRKSRC}/demo/* ${PREFIX}/SpecTcl/demo
-	${MKDIR} -p ${PREFIX}/SpecTcl/examples
+	${MKDIR} ${PREFIX}/SpecTcl/examples
 	${CP} -r ${WRKSRC}/examples/* ${PREFIX}/SpecTcl/examples
 
 .include <bsd.port.mk>
