@@ -1,0 +1,55 @@
+--- mDNSPosix/#Client.c~	Mon Mar 14 14:59:47 2005
++++ mDNSPosix/Client.c	Mon Mar 14 14:59:47 2005
+@@ -272,7 +272,7 @@
+         result = 2;
+     }
+     if ( (result != 0) || (gMDNSPlatformPosixVerboseLevel > 0) ) {
+-        fprintf(stderr, "%s: Finished with status %ld, result %d\n", gProgramName, status, result);
++        fprintf(stderr, "%s: Finished with status %d, result %d\n", gProgramName, status, result);
+     }
+ 
+     return 0;
+--- mDNSPosix/#Identify.c~	Mon Mar 14 15:00:56 2005
++++ mDNSPosix/Identify.c	Mon Mar 14 15:00:56 2005
+@@ -400,7 +400,7 @@
+     	gRRCache, RR_CACHE_SIZE,
+     	mDNS_Init_DontAdvertiseLocalAddresses,
+     	mDNS_Init_NoInitCallback, mDNS_Init_NoInitCallbackContext);
+-	if (status) { fprintf(stderr, "Daemon start: mDNS_Init failed %ld\n", status); return(status); }
++	if (status) { fprintf(stderr, "Daemon start: mDNS_Init failed %d\n", status); return(status); }
+ 
+ 	signal(SIGINT, HandleSIG);	// SIGINT is what you get for a Ctrl-C
+ 	signal(SIGTERM, HandleSIG);
+--- mDNSPosix/#NetMonitor.c~	Mon Mar 14 15:01:26 2005
++++ mDNSPosix/NetMonitor.c	Mon Mar 14 15:01:26 2005
+@@ -1126,7 +1126,7 @@
+ 		}
+ 
+ 	status = mDNSNetMonitor();
+-	if (status) { fprintf(stderr, "%s: mDNSNetMonitor failed %ld\n", progname, status); return(status); }
++	if (status) { fprintf(stderr, "%s: mDNSNetMonitor failed %d\n", progname, status); return(status); }
+ 	return(0);
+ 
+ usage:
+--- mDNSPosix/#Responder.c~	Mon Mar 14 15:01:05 2005
++++ mDNSPosix/Responder.c	Mon Mar 14 15:01:05 2005
+@@ -832,7 +832,7 @@
+         result = 2;
+     }
+     if ( (result != 0) || (gMDNSPlatformPosixVerboseLevel > 0) ) {
+-        fprintf(stderr, "%s: Finished with status %ld, result %d\n", gProgramName, status, result);
++        fprintf(stderr, "%s: Finished with status %d, result %d\n", gProgramName, status, result);
+     }
+     
+     return result;
+--- mDNSPosix/#ProxyResponder.c~	Mon Mar 14 15:06:18 2005
++++ mDNSPosix/ProxyResponder.c	Mon Mar 14 15:06:19 2005
+@@ -322,7 +322,7 @@
+ 		mDNS_Init_NoCache, mDNS_Init_ZeroCacheSize,
+ 		mDNS_Init_DontAdvertiseLocalAddresses,
+ 		mDNS_Init_NoInitCallback, mDNS_Init_NoInitCallbackContext);
+-	if (status) { fprintf(stderr, "Daemon start: mDNS_Init failed %ld\n", status); return(status); }
++	if (status) { fprintf(stderr, "Daemon start: mDNS_Init failed %d\n", status); return(status); }
+ 
+ 	mDNSPosixListenForSignalInEventLoop(SIGINT);
+ 	mDNSPosixListenForSignalInEventLoop(SIGTERM);
