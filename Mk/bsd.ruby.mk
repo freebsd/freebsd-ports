@@ -95,7 +95,7 @@ Ruby_Include_MAINTAINER=	knu@FreeBSD.org
 # RUBY_ELISPDIR		- Installation path for emacs lisp files.
 #
 
-#.if ${ARCH} == alpha
+#.if ${ARCH} == alpha || ${ARCH} == sparc64
 #RUBY_VER?=		1.7
 #.endif
 
@@ -145,7 +145,7 @@ _RUBY_SITEDIR?=		${_RUBY_SYSLIBDIR}/ruby/site_ruby
 .endif
 #      defined(RUBY)
 
-#.if ${ARCH} == alpha
+#.if ${ARCH} == alpha || ${ARCH} == sparc64
 #RUBY_DEFAULT_VER?=	1.7
 #.else
 RUBY_DEFAULT_VER?=	1.6
@@ -397,7 +397,7 @@ RUN_DEPENDS+=		${DEPEND_RUBY_AMSTD}
 RUBY_NO_RD_HTML=	yes
 .endif
 
-.if ${ARCH} == alpha && ${RUBY_VER} <= 1.6
+.if (${ARCH} == alpha || ${ARCH} == sparc64) && ${RUBY_VER} <= 1.6
 RUBY_NO_RD_HTML=	yes
 .endif
 
