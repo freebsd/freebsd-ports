@@ -3526,6 +3526,7 @@ librsync	ports/net/librsync
 libscrypt	src/lib/libcrypt
 libscsi		src/lib/libscsi
 libsdb		ports/databases/libsdb
+libshbuf	ports/devel/libshbuf
 libshhcards	ports/games/libshhcards
 libshhmsg	ports/devel/libshhmsg
 libshhopt	ports/devel/libshhopt
