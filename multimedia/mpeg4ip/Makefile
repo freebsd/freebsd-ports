@@ -25,12 +25,10 @@ LIB_DEPENDS=	faac.0:${PORTSDIR}/audio/faac \
 		avcodec.1:${PORTSDIR}/multimedia/ffmpeg \
 		mp4v2.0:${PORTSDIR}/multimedia/mpeg4ip-libmp4v2
 
-USE_GNOME=	\
-		gtk20 \
-		lthack
+USE_GNOME=	gtk20
 USE_SDL=	sdl
 USE_GMAKE=	yes
-USE_INC_LIBTOOL_VER=15
+USE_LIBTOOL_VER=15
 USE_REINPLACE=	yes
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include -I${X11BASE}/include ${PTHREAD_CFLAGS}" \
 		LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib -L${X11BASE}/lib ${PTHREAD_LIBS}"
@@ -96,7 +94,7 @@ MAN3=	MP4.3 MP4AddAudioTrack.3 MP4AddHintTrack.3 MP4AddODTrack.3 \
 EXTRA_PATCHES+=	${FILESDIR}/extra-patch-lib::sdp::sdp_decode.c
 EXTRA_PATCHES+=	${FILESDIR}/extra-patch-player::src::codec::mp3::mp3_file.cpp
 .else
-USE_GCC=	3.4
+CFLAGS+=	-O2
 .endif
 
 ###
