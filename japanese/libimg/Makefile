@@ -3,11 +3,11 @@
 # Date created:		25 March 1999
 # Whom:			KIRIYAMA Kazuhiko <kiri@pis.toba-cmt.ac.jp>
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1999/05/03 04:08:14 steve Exp $
 #
 
 DISTNAME=	img1.2b2
-PKGNAME=	ja-img-1.2b2
+PKGNAME=	ja-libimg-1.2b2
 CATEGORIES=	graphics tk80 japanese
 MASTER_SITES=	ftp://ftp.neosoft.com/pub/tcl/sorted/packages-8.0/graphics/Img/1.2/ \
 		http://www.aaa-int.or.jp/~jfactory/TkStep/dist/
