@@ -1,0 +1,25 @@
+--- bin/tablify.orig	Mon May 17 22:08:20 2004
++++ bin/tablify	Mon May 17 22:15:35 2004
+@@ -283,18 +283,18 @@
+ 
+ my $fh;
+ if ( my $pager = $ENV{'PAGER'} ) {
+-    open $fh, "| $pager";
++    open FH, "| $pager";
+ }
+ else {
+-    $fh = \*STDOUT;
++    *FH = *STDOUT;
+ }
+ 
+-print $fh 
++print FH
+     ( $i )
+     ? $tab->render . sprintf("\n$i record%s returned\n", $i > 1 ? 's' : '')
+     : "No records returned\n";
+ 
+-close $fh;
++close FH;
+ 
+ # -------------------------------------------------------------------
+ 

@@ -1,3 +1,4 @@
+bin/tablify
 %%SITE_PERL%%/Text/RecordParser.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Text/RecordParser/.packlist
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Text/RecordParser
