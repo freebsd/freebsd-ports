@@ -7,7 +7,7 @@
 
 PORTNAME=	libsvm
 PORTVERSION=	2.71
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	science math
 MASTER_SITES=	http://www.csie.ntu.edu.tw/~cjlin/libsvm/ \
 		http://www.csie.ntu.edu.tw/~cjlin/libsvm/oldfiles/
@@ -16,16 +16,17 @@ MAINTAINER=	rafan@infor.org
 COMMENT=	A library for Support Vector Machines
 
 USE_ZIP=	yes
+USE_REINPLACE=	yes
+
 .if defined(WITH_PYTHON)
 CATEGORIES+=	python
 USE_PYTHON=	yes
-USE_REINPLACE=	yes
 PLIST_SUB+=	LIBSVM_PYTHON=""
-.else
-PLIST_SUB+=	LIBSVM_PYTHON="@comment "
 PYEXAMPLES=	python/cross_validation.py \
 		python/svm_test.py \
 		python/test_cross_validation.py
+.else
+PLIST_SUB+=	LIBSVM_PYTHON="@comment "
 .endif
 
 TXT_DOCS=	COPYRIGHT README FAQ.html README.python
@@ -37,6 +38,14 @@ TOOLS=		python/grid.py python/easy.py
 MSG_FILE=	${PKGDIR}/pkg-message
 PKGMESSAGE=	${WRKSRC}/pkg-message
 
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == "amd64"
+AMD64=	-fPIC
+.else
+AMD64=
+.endif
+
 pre-everything::
 .if defined(WITH_PYTHON)
 	@${ECHO_MSG} "Build with Python interface."
@@ -47,7 +56,9 @@ pre-everything::
 post-patch:
 .if defined(WITH_PYTHON)
 	@${REINPLACE_CMD} -e "s,%%PYTHON_INCLUDEDIR%%,${PYTHON_INCLUDEDIR}," ${WRKSRC}/python/Makefile
+	@${REINPLACE_CMD} -e "s,%%AMD64%%,${AMD64}," ${WRKSRC}/python/Makefile
 .endif
+	@${REINPLACE_CMD} -e "s,%%AMD64%%,${AMD64}," ${WRKSRC}/Makefile
 	@${SED} 's|%%DATADIR%%|${DATADIR}|g' ${MSG_FILE} > ${PKGMESSAGE}
 
 post-build:
@@ -82,4 +93,4 @@ do-install:
 	@${CAT} ${PKGMESSAGE}
 	@${ECHO} ""
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
