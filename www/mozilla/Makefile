@@ -30,6 +30,8 @@ WRKSRC=		${WRKDIR}/${PORTNAME}
 
 WITHOUT_CHATZILLA=	"Contains a buffer overflow reported at http://online.securityfocus.com/archive/1/270249"
 
+FORBIDDEN=	"Contains privacy leak documented at http://www.mozillazine.org/talkback.html?article=2467"
+
 USE_BZIP2=	yes
 EXTRACT_AFTER_ARGS=	| tar -xf - -X ${FILESDIR}/tar-exclude
 USE_X_PREFIX=	yes
