@@ -69,10 +69,6 @@ HTDOCS=		anoncvs bugs changes faq feedback index install-admin-mb \
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} == "amd64" || ${ARCH} == "ia64"
-BROKEN=		"Does not compile on amd64 or ia64 (missing -fPIC)"
-.endif
-
 post-patch:
 		@${REINPLACE_CMD} -e "s|/etc/|${PREFIX}/etc/|" \
 			${WRKSRC}/tools/mkimap

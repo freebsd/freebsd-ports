@@ -1,0 +1,13 @@
+Index: lib/Makefile.in
+diff -u lib/Makefile.in.orig lib/Makefile.in
+--- lib/Makefile.in.orig	Sun Jan  4 00:16:44 2004
++++ lib/Makefile.in	Sun Mar  7 23:44:51 2004
+@@ -60,7 +60,7 @@
+ CPPFLAGS = -I.. @CPPFLAGS@ @COM_ERR_CPPFLAGS@ @SASLFLAGS@
+ LIBS = @LIBS@
+ 
+-CFLAGS = @CFLAGS@
++CFLAGS = @CFLAGS@ @PERL_CCCDLFLAGS@
+ LDFLAGS = @LDFLAGS@
+ 
+ SHELL = /bin/sh

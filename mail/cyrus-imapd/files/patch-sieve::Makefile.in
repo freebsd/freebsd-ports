@@ -1,0 +1,13 @@
+Index: sieve/Makefile.in
+diff -u sieve/Makefile.in.orig sieve/Makefile.in
+--- sieve/Makefile.in.orig	Sun Jul 13 23:40:05 2003
++++ sieve/Makefile.in	Mon Mar  8 01:38:00 2004
+@@ -35,7 +35,7 @@
+ 
+ DEFS = @DEFS@
+ CPPFLAGS = -I. -I.. -I$(srcdir) -I$(srcdir)/../lib @COM_ERR_CPPFLAGS@ @CPPFLAGS@ @SASLFLAGS@
+-CFLAGS = @CFLAGS@
++CFLAGS = @CFLAGS@ @PERL_CCCDLFLAGS@
+ LDFLAGS = @LDFLAGS@
+ 
+ MAKEDEPEND = @MAKEDEPEND@

@@ -1,0 +1,13 @@
+Index: acap/Makefile.in
+diff -u acap/Makefile.in.orig acap/Makefile.in
+--- acap/Makefile.in.orig	Mon Jul 14 00:04:56 2003
++++ acap/Makefile.in	Mon Mar  8 02:10:58 2004
+@@ -54,7 +54,7 @@
+ CPPFLAGS = @CPPFLAGS@ @SASLFLAGS@ -I. -I.. -I$(srcdir) -I$(srcdir)/../lib
+ LIBS = @LIBS@
+ 
+-CFLAGS = @CFLAGS@
++CFLAGS = @CFLAGS@ @PERL_CCCDLFLAGS@
+ LDFLAGS = @LDFLAGS@
+ 
+ SHELL = /bin/sh
