@@ -39,6 +39,7 @@
     SUBDIR += pwm
     SUBDIR += qlwm
     SUBDIR += qvwm
+    SUBDIR += ratpoison
     SUBDIR += sapphire
     SUBDIR += sapphire-themes
     SUBDIR += sawfish
