@@ -86,7 +86,6 @@
     SUBDIR += jruby
     SUBDIR += jython
     SUBDIR += klone
-    SUBDIR += lcc
     SUBDIR += librep
     SUBDIR += linux-j
     SUBDIR += logo

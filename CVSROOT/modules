@@ -3255,7 +3255,6 @@ lbdb		ports/mail/lbdb
 lbrate		ports/archivers/lbrate
 lbreakout	ports/games/lbreakout
 lc		ports/misc/lc
-lcc		ports/lang/lcc
 lcms		ports/graphics/lcms
 ld		src/gnu/usr.bin/ld
 ldapsdk		ports/net/ldapsdk
