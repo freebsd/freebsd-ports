@@ -10,7 +10,7 @@ PORTVERSION=	0.7
 CATEGORIES=	security
 MASTER_SITES=	ftp://ftp.lysator.liu.se/pub/ident/tools/
 
-MAINTAINER=	nsayer@quack.kfu.com
+MAINTAINER=	nsayer@freebsd.org
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/libident.a:${PORTSDIR}/security/libident
 
