@@ -1,3 +1,4 @@
+@comment $FreeBSD$
 bin/pr-change
 bin/pr-new
 bin/pr-update
@@ -5,5 +6,6 @@ bin/testport
 %%PORTDOCS%%%%DOCSDIR%%/LICENSE
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%%%DOCSDIR%%/NEWS
+%%PORTDOCS%%%%DOCSDIR%%/THANKS
 %%PORTDOCS%%%%DOCSDIR%%/TODO
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
