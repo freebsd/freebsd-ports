@@ -8,7 +8,7 @@
 PORTNAME=	cdrdao
 PORTVERSION=	1.1.4
 CATEGORIES=	audio
-MASTER_SITES=	http://www.ping.de/sites/daneb/
+MASTER_SITES=	ftp://cdrdao.sourceforge.net/pub/cdrdao/
 EXTRACT_SUFX=	.src.tar.gz
 
 MAINTAINER=	futatuki@debug.gr.jp
