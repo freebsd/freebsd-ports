@@ -7,7 +7,7 @@
 
 PORTNAME=	cnews
 PORTVERSION=	cr.g
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	news
 MASTER_SITES=	ftp://ftp.cs.toronto.edu/pub/c-news/ \
 		ftp://ftp.funet.fi/pub/unix/news/cnews/ \
@@ -45,6 +45,8 @@ MAN8=		cnewsdo.8cn expire.8cn explode.8cn mergeactive.8 \
 		rnews.8cn
 PLIST_SUB+=	NEWSBIN=${NEWSBIN:S=${PREFIX}/==}
 PLIST_SUB+=	NEWSCTL=${NEWSCTL:S=${PREFIX}/==}
+PLIST_SUB+=	NEWSARTS=${NEWSARTS:S=${PREFIX}/==}
+PLIST_SUB+=	NEWSOV=${NEWSOV:S=${PREFIX}/==}
 
 MODIFY=		conf/quiz.def \
 		conf/substitutions \
