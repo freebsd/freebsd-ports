@@ -1,7 +1,2 @@
-tgif-j is  Xlib based interactive 2-D drawing facility under X11.
+tgif is Xlib based interactive 2-D drawing facility under X11.
 It can put out ps, eps, gif, xbm files.
-Japanese input is also available by means of kinput or kinput2.
-Over-the-spot kana-kanji conversion is available by setting X resource:
-Tgif*PreeditType:               OverTheSpot
-
-see /usr/X11R6/lib/X11/tgif/3.0J0.12-p13/ for more information.

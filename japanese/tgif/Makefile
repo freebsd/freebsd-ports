@@ -1,41 +1,25 @@
 # New ports collection makefile for:	tgif-j
-# Version required:	3.0.18
+# Version required:	4.0.17
 # Date created:		8 Dec 1995
 # Whom:			Mita Yoshio <mita@jp.FreeBSD.org>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	tgif-3.0.18
-PKGNAME=	ja-tgif-3.0.18
-CATEGORIES=	japanese graphics
-MASTER_SITES=	ftp://bourbon.cs.umd.edu/pub/tgif/ \
-		${MASTER_SITE_XCONTRIB} \
-		${MASTER_SITE_PORTS_JP} \
-		http://www.sunbit.or.jp/users/shin/software/
-MASTER_SITE_SUBDIR=	applications/tgif
-DISTFILES=	tgif-3.0.18.tar.gz tgif-3.0J0.12-p18-PSJISr1.gz
-
-PATCH_SITES=	http://www.venus.dti.ne.jp/~iisaka/
-PATCHFILES=	tgif-3.0J0.12-p18-patch.gz
-PATCH_DIST_STRIP=	-p1
+DISTNAME=	ja-tgif-980222
+PKGNAME=	ja-tgif-4.1.16
+CATEGORIES=	japanese
+MASTER_SITES=	http://home.jp.FreeBSD.org/~mita/LOCAL_PORTS/
 
 MAINTAINER=	mita@jp.FreeBSD.org
 
-RUN_DEPENDS=	giftopnm:${PORTSDIR}/graphics/netpbm \
-		pnmtotiff:${PORTSDIR}/graphics/netpbm \
-		ppmtoxpm:${PORTSDIR}/graphics/netpbm \
-		ppmtogif:${PORTSDIR}/graphics/netpbm \
-		xbmtopbm:${PORTSDIR}/graphics/netpbm \
-		xpmtoppm:${PORTSDIR}/graphics/netpbm
+RUN_DEPENDS=	tgif:${PORTSDIR}/graphics/tgif
 
-USE_IMAKE=	yes
-MAN1=			tgif.1 prtgif.1
-EXTRACT_ONLY=	tgif-3.0.18.tar.gz
-FETCH_CMD=	/usr/bin/fetch -Ab
+NO_BUILD=	yes
+WRKSRC=		${WRKDIR}
+USE_X_PREFIX=	yes
 
-post-patch:
-	 ${SETENV} DISTDIR="${DISTDIR}" GZCAT="${GZCAT}" \
-	 PATCH="${PATCH}" PATCH_DIST_ARGS="${PATCH_DIST_ARGS}" ${SH} ${FILESDIR}/setup.sh
+do-install:
+	${INSTALL_DATA} ${WRKSRC}/Tgif ${PREFIX}/lib/X11/app-defaults/
 
 .include <bsd.port.mk>
