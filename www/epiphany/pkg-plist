@@ -32,6 +32,7 @@ include/epiphany-1.0/epiphany/ephy-window.h
 include/epiphany-1.0/epiphany/session.h
 libdata/bonobo/servers/GNOME_Epiphany_Automation.server
 libdata/bonobo/servers/GNOME_Epiphany_NautilusView.server
+libdata/pkgconfig/epiphany-1.0.pc
 share/gnome/application-registry/epiphany.applications
 share/gnome/applications/bme.desktop
 share/gnome/applications/epiphany.desktop
@@ -60,19 +61,26 @@ share/gnome/epiphany/nautilus-epiphany-view.xml
 share/gnome/help/epiphany/C/epiphany.xml
 share/gnome/help/epiphany/C/figures/ephy-screenshot.png
 share/gnome/help/epiphany/C/legal.xml
+share/gnome/help/epiphany/nl/epiphany.xml
+share/gnome/help/epiphany/nl/figures/ephy-screenshot.png
+share/gnome/help/epiphany/nl/legal.xml
 share/gnome/omf/epiphany/epiphany-C.omf
 @exec scrollkeeper-install -q %D/share/gnome/omf/epiphany/epiphany-C.omf 2>/dev/null || /usr/bin/true
+share/gnome/omf/epiphany/epiphany-nl.omf
+@exec scrollkeeper-install -q %D/share/gnome/omf/epiphany/epiphany-nl.omf 2>/dev/null || /usr/bin/true
 share/gnome/pixmaps/epiphany-bookmarks.png
 share/locale/am/LC_MESSAGES/epiphany.mo
 share/locale/ar/LC_MESSAGES/epiphany.mo
 share/locale/be/LC_MESSAGES/epiphany.mo
 share/locale/ca/LC_MESSAGES/epiphany.mo
 share/locale/cs/LC_MESSAGES/epiphany.mo
+share/locale/cy/LC_MESSAGES/epiphany.mo
 share/locale/da/LC_MESSAGES/epiphany.mo
 share/locale/de/LC_MESSAGES/epiphany.mo
 share/locale/el/LC_MESSAGES/epiphany.mo
 share/locale/en_GB/LC_MESSAGES/epiphany.mo
 share/locale/es/LC_MESSAGES/epiphany.mo
+share/locale/fi/LC_MESSAGES/epiphany.mo
 share/locale/fr/LC_MESSAGES/epiphany.mo
 share/locale/hu/LC_MESSAGES/epiphany.mo
 share/locale/ja/LC_MESSAGES/epiphany.mo
@@ -111,3 +119,4 @@ share/locale/zh_TW/LC_MESSAGES/epiphany.mo
 @dirrm etc/gconf/gconf.xml.defaults/apps/epiphany/dialogs
 @dirrm etc/gconf/gconf.xml.defaults/apps/epiphany
 @unexec scrollkeeper-uninstall -q %D/share/gnome/omf/epiphany/epiphany-C.omf 2>/dev/null || /usr/bin/true
+@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/epiphany/epiphany-nl.omf 2>/dev/null || /usr/bin/true
