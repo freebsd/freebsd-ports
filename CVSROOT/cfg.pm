@@ -4,7 +4,7 @@
 ####################################################################
 # This file contains configuration for the CVSROOT perl scripts.
 # WARNING: You are strongly advised to check for syntax errors
-# in this file before committing it.  Use: perl -c cfg.pm
+# in this file before committing it.  Use: perl -cw cfg.pm
 ####################################################################
 ####################################################################
 
