@@ -6,9 +6,14 @@ share/aria/server.aria
 share/aria/server.aria.template.euc.gz
 share/aria/server.aria.template.gz
 share/aria/useragent.aria
+%%PORTDOCS%%share/doc/aria/README
+%%PORTDOCS%%share/doc/aria/README.euc
 share/locale/cs/LC_MESSAGES/aria.mo
 share/locale/de/LC_MESSAGES/aria.mo
+share/locale/es/LC_MESSAGES/aria.mo
 share/locale/fr/LC_MESSAGES/aria.mo
 share/locale/ja/LC_MESSAGES/aria.mo
+share/locale/pl/LC_MESSAGES/aria.mo
 share/locale/ru/LC_MESSAGES/aria.mo
 @dirrm share/aria
+%%PORTDOCS%%@dirrm share/doc/aria
