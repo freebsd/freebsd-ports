@@ -6,6 +6,8 @@
 # $FreeBSD$
 #
 
+CATEGORIES=	chinese
+
 MASTERDIR=	${.CURDIR}/../../mail/mutt
 
 MAINTAINER=	ycheng@sinica.edu.tw

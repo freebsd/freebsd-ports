@@ -6,6 +6,8 @@
 # $FreeBSD$
 #
 
+CATEGORIES=	chinese
+
 MASTERDIR=	${.CURDIR}/../../editors/emacs20
 
 MAINTAINER=	clive@FreeBSD.org

@@ -5,7 +5,7 @@
 # $FreeBSD$
 #
 
-CATEGORIES=	chinese graphics gnome
+CATEGORIES=	chinese
 
 PATCH_SITES=	ftp://freebsd.sinica.edu.tw/pub/keith/
 PATCHFILES=	zh-dia-0.86.diff.gz

@@ -8,7 +8,7 @@
 PORTNAME=	ghostscript
 PORTVERSION=	5.50
 PKGNAMESUFFIX=	-httf
-CATEGORIES=	print
+CATEGORIES=	korean print
 MASTER_SITES=	ftp://ftp.cs.wisc.edu/ghost/aladdin/gs550/ \
 		http://www.erdw.ethz.ch/~bonk/ftp/gs-driver-distrib/ \
 		http://www.ozemail.com.au/~geoffk/pdfencrypt/

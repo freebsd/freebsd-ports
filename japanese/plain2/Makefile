@@ -7,7 +7,7 @@
 
 PORTNAME=	plain2
 PORTVERSION=	2.54
-CATEGORIES=	textproc
+CATEGORIES=	japanese textproc
 MASTER_SITES=	ftp://ftp.nec.co.jp/pub/packages/plain2/
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/src

@@ -5,6 +5,8 @@
 # $FreeBSD$
 #
 
+CATEGORIES=	chinese
+
 MASTERDIR=	${.CURDIR}/../../audio/xmms
 
 PATCH_SITES=	${MASTER_SITE_LOCAL}

@@ -4,6 +4,9 @@
 #
 # $FreeBSD$
 #
+
+CATEGORIES=	chinese
+
 MASTERDIR=	${.CURDIR}/../../x11/rxvt
 .include "${MASTERDIR}/Makefile"
 

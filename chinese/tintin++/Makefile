@@ -5,6 +5,8 @@
 # $FreeBSD$
 #
 
+CATEGORIES=	chinese
+
 MASTERDIR=	${.CURDIR}/../../net/tintin++
 
 MAINTAINER=	foxfair@FreeBSD.org
