@@ -213,7 +213,7 @@
   #  define	HAVE_VSPRINTF
   #  define	BIND43
   # endif
-+ # if (defined(BSD) && (BSD >= 199506))
++ # if (defined(BSD) && (BSD >= 199306))
 + #  define	BSD44_DBM
 + # endif
   #endif
@@ -248,3 +248,32 @@
   #if defined(AUTHFILE)
   extern int  checkauthfile();
   #endif
+*** popauth.c	Sun Jun  9 12:56:38 1996
+--- popauth.c	Sun Jun  9 13:00:51 1996
+***************
+*** 36,43 ****
+  #include <sys/file.h>
+  #endif
+  
+! #ifdef BSDI
+! #define BSD44_DBM
+  #endif
+  
+  #ifdef NEED_STRERROR
+--- 36,51 ----
+  #include <sys/file.h>
+  #endif
+  
+! #ifdef		HAVE_PARAM_H
+! #include <sys/param.h>
+! # if (defined(BSD) && (BSD >= 199103))
+! #  define	HAVE_UNISTD_H
+! #  define	HAVE_VSPRINTF
+! #  define	BIND43
+! # endif
+! # if (defined(BSD) && (BSD >= 199306))
+! #  define	BSD44_DBM
+! # endif
+  #endif
+  
+  #ifdef NEED_STRERROR
