@@ -86,9 +86,9 @@ X
 X
 Xunpack:
 X	rm -f display.bin README.FreeBSD
-X	uudecode ../../../files/bootstrapper.uu
+X	uudecode ${FILESDIR}/bootstrapper.uu
 X	gunzip --force display.bin.gz
-X	cp -p ../../../files/README.FreeBSD README.FreeBSD
+X	cp -p ${FILESDIR}/README.FreeBSD README.FreeBSD
 END-of-bootstrap/Makefile
 echo x - bootstrap/crt0.S
 sed 's/^X//' >bootstrap/crt0.S << 'END-of-bootstrap/crt0.S'
