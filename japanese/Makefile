@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.11 1995/05/03 02:52:37 asami Exp $
+# $Id: Makefile,v 1.12 1995/05/13 07:37:25 asami Exp $
 #
 # restricted: none
 #
@@ -6,6 +6,6 @@
 #
 SUBDIR= Canna Wnn gawk grep groff gxditview \
 	kinput2-canna kinput2-canna+wnn kinput2-wnn \
-	kterm less mh mule-canna mule-wnn nkf sed tcl tk
+	kterm less mh mule-canna mule-wnn nethack nkf sed tcl tk
 
 .include <bsd.port.subdir.mk>
