@@ -1,0 +1,17 @@
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Glib/Glib.so
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Glib/Glib.bs
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Glib/.packlist
+%%SITE_PERL%%/%%PERL_ARCH%%/Glib.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Glib/Install/Files.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Glib/Install/gperl.h
+%%SITE_PERL%%/%%PERL_ARCH%%/Glib/Install/typemap
+%%SITE_PERL%%/%%PERL_ARCH%%/Glib/devel.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/Glib/xsapi.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/Glib/Object/Subclass.pm
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Glib
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Glib/Install
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Glib/Object
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Glib
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/Glib/Install 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/Glib/Object 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/Glib 2>/dev/null || true

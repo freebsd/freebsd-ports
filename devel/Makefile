@@ -673,6 +673,7 @@
     SUBDIR += p5-Getopt-Long
     SUBDIR += p5-Getopt-Mixed
     SUBDIR += p5-Glade-Perl
+    SUBDIR += p5-Glib2
     SUBDIR += p5-Heap
     SUBDIR += p5-IO
     SUBDIR += p5-IO-Multiplex
