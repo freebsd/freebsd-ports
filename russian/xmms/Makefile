@@ -11,8 +11,6 @@ CATEGORIES=	russian
 MAINTAINER=	be9-ml@be9.ru
 COMMENT=	RusXMMS - X Multimedia System with Russian encoding patch
 
-BROKEN=		"Doesn't build with multimedia/xmms version 1.2.10"
-
 MASTERDIR=	${.CURDIR}/../../multimedia/xmms
 
 CONFLICTS=	xmms-[0-9]*
