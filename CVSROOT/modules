@@ -3432,6 +3432,7 @@ kzip		src/usr.bin/kzip
 kzipboot	src/sys/i386/boot/kzipboot
 l0pht-watch	ports/security/l0pht-watch
 l0phtcrack	ports/security/l0phtcrack
+l5		ports/security/l5
 lablgl		ports/graphics/lablgl
 labrea		ports/security/labrea
 lacheck		ports/textproc/lacheck
