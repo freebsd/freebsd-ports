@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.36 1996/12/18 05:10:01 asami Exp $
+# $Id: Makefile,v 1.37 1996/12/31 21:31:14 peter Exp $
 #
 
     SUBDIR += elm
@@ -7,6 +7,7 @@
     SUBDIR += exmh2
     SUBDIR += faces
     SUBDIR += fetchmail
+    SUBDIR += imap-uw
     SUBDIR += mailagent
     SUBDIR += majordomo
     SUBDIR += metamail
