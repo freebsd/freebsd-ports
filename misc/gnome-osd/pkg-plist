@@ -7,6 +7,9 @@ libdata/bonobo/servers/GNOME_OSD.server
 %%PYTHON_SITELIBDIR%%/gconfsync.py
 %%PYTHON_SITELIBDIR%%/gconfsync.pyc
 %%PYTHON_SITELIBDIR%%/gconfsync.pyo
+%%PYTHON_SITELIBDIR%%/gnome_osd_conf.py
+%%PYTHON_SITELIBDIR%%/gnome_osd_conf.pyc
+%%PYTHON_SITELIBDIR%%/gnome_osd_conf.pyo
 %%PYTHON_SITELIBDIR%%/gosd.py
 %%PYTHON_SITELIBDIR%%/gosd.pyc
 %%PYTHON_SITELIBDIR%%/gosd.pyo
