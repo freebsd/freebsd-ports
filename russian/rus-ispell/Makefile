@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	rus-ispell
-PORTVERSION=    0.99d8
+PORTVERSION=    0.99d9
 CATEGORIES=	russian textproc
 MASTER_SITES=   ftp://mch5.chem.msu.su/pub/russian/ispell/
 
@@ -16,6 +16,10 @@ BUILD_DEPENDS=	ispell:${PORTSDIR}/textproc/ispell
 
 USE_GMAKE=      yes
 MAKE_ARGS=      YO=1
+.if defined(RUS_ISPELL_LOCAL_DICT)
+MAKE_ARGS+=     LOCAL_DICT=${RUS_ISPELL_LOCAL_DICT}
+.endif
+
 ALL_TARGET=     koi
 
 NO_WRKSUBDIR=   yes
