@@ -6,21 +6,34 @@
  *
  * $FreeBSD$
  *
+ * Upstream: $Id: fsck_ext2fs.c,v 1.2 2004/02/24 20:57:02 emma Exp $
+ *
  * format: gindent -kr
  */
 
+#include <sys/types.h>
 #include <unistd.h>
 #include <stdlib.h>
 #include <stdio.h>
 #include <string.h>
+#include <sys/wait.h>
+#include <sys/time.h>
+#include <sys/resource.h>
 
-int
-main(int argc, char **argv)
+__attribute__ ((noreturn))
+static int die(const char *tag)
 {
-	int ch, i = 1, force = 0;
+	perror(tag);
+	exit(EXIT_FAILURE);
+}
+
+int main(int argc, char **argv)
+{
+	int ch, i = 1, force = 0, status;
 	long block = 0;
 	enum { normal, preen, yes, no } mode = normal;
 	char *cmd[256];
+	pid_t pid;
 
 	cmd[0] = "/sbin/e2fsck";
 	while ((ch = getopt(argc, argv, "BFpfnyb:")) != -1) {
@@ -43,6 +56,8 @@ main(int argc, char **argv)
 		case 'B':
 		case 'F':
 		default:
+			fprintf(stderr, "%s: unknown option -%c\n",
+				argv[0], optopt);
 			exit(EXIT_FAILURE);
 		}
 	}
@@ -76,6 +91,24 @@ main(int argc, char **argv)
 
 	cmd[i++] = 0;
 
-	(void)execv(cmd[0], cmd);
-	exit(EXIT_FAILURE);
+	pid = fork();
+	switch (pid) {
+	case -1:
+		/* error */
+		die("fork");
+		break;
+	case 0:
+		/* child */
+		(void) execv(cmd[0], cmd);
+		perror("execve");
+		_exit(127);
+	default:
+		/* parent */
+		if (pid != waitpid(pid, &status, 0))
+			die("waitpid");
+		if (WIFSIGNALED(status)
+		    || (WIFEXITED(status) && WEXITSTATUS(status) >= 4))
+			exit(EXIT_FAILURE);
+	}
+	exit(EXIT_SUCCESS);
 }
