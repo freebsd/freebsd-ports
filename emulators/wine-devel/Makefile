@@ -58,7 +58,6 @@ post-configure:
 
 do-install:
 	cd ${WRKSRC} && ${GMAKE} install
-	${INSTALL_SCRIPT} ${WRKDIR}/regSet.sh ${PREFIX}/bin
 	${INSTALL_DATA} ${WRKSRC}/documentation/samples/config ${PREFIX}/etc/wine.conf.sample
 	[ -f ${PREFIX}/etc/wine.conf ] \
 		|| ${INSTALL_DATA} ${PREFIX}/etc/wine.conf.sample ${PREFIX}/etc/wine.conf
