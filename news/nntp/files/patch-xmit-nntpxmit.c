@@ -1,5 +1,5 @@
 --- xmit/nntpxmit.c.orig	Sat Dec  3 23:37:58 1994
-+++ xmit/nntpxmit.c	Mon Nov  4 05:55:31 2002
++++ xmit/nntpxmit.c	Thu Nov  7 19:40:02 2002
 @@ -64,8 +64,12 @@
  */
  
@@ -13,7 +13,17 @@
  #include <ctype.h>
  #include <sys/types.h>
  #include <sys/time.h>
-@@ -445,7 +449,7 @@
+@@ -75,7 +79,9 @@
+ #include <sys/times.h>
+ extern	time_t	time();
+ #endif
++#ifdef __FreeBSD__
+ #include <sys/file.h>
++#endif
+ #include <fcntl.h>
+ #include <signal.h>
+ #ifdef USG
+@@ -445,7 +451,7 @@
  			/* Hmph. The file didn't exist. */
  			error = sendcmd(".");
  		} else {
