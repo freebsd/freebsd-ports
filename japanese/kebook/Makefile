@@ -13,7 +13,7 @@ MASTER_SITES=	http://www.os.rim.or.jp/~s_mitu/library/kebook/ \
 
 MAINTAINER=	hige@higesoft.os.rim.or.jp
 
-LIB_DEPENDS=	eb.3:${PORTSDIR}/japanese/eb
+LIB_DEPENDS=	eb.3:${PORTSDIR}/japanese/eb2
 BUILD_DEPENDS=	msgfmt:${PORTSDIR}/devel/gettext-old
 
 USE_KDEBASE_VER=1
