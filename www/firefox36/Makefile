@@ -9,7 +9,7 @@
 
 PORTNAME=		phoenix
 PORTVERSION=		0.5
-PORTREVISION=		3
+PORTREVISION=		4
 CATEGORIES=		www # pita
 MASTER_SITES=		${MASTER_SITE_LOCAL} ${BSD_WEBDIR}
 MASTER_SITE_SUBDIR=	alane
@@ -102,6 +102,8 @@ CFLAGS+=		${PTHREAD_CFLAGS}
 LDFLAGS+=		-L${X11BASE}/lib
 LIBS+=			${PTHREAD_LIBS}
 
+EXTRA_SCRIPTS=		phoenix.rb
+
 pre-extract::
 	@${ECHO_MSG}
 	@${ECHO_MSG} "Extracting source (this takes a while) ..."
@@ -130,6 +132,11 @@ post-build:
 pre-install:
 	${RM} -fr ${LOCAL_PREFIX}
 
+install-extra:
+.for i in ${EXTRA_SCRIPTS}
+	${INSTALL_SCRIPT} ${FILESDIR}/${i} ${PREFIX}/bin
+.endfor # i in ${EXTRA_SCRIPTS}
+
 link-bins:
 	${RM} -f ${PREFIX}/bin/phoenix
 	${LN} -s ${LOCAL_PREFIX}/bin/phoenix \
@@ -138,6 +145,7 @@ link-bins:
 	${LN} -s ${LOCAL_PREFIX}/bin/mozilla-config \
 		${PREFIX}/bin/phoenix-config
 
+# not used because of undefined symbol errors
 link-java:
 	-${RM} -f ${PLUGINSDIR}/libjavaplugin_oji.so
 	-${LN} -sf \
@@ -152,6 +160,9 @@ cons-plist:
 	-${RM} -f ${PLIST}
 	${ECHO_CMD} bin/phoenix >>${PLIST}
 	${ECHO_CMD} bin/phoenix-config >>${PLIST}
+.for i in ${EXTRA_SCRIPTS}
+	${ECHO_CMD} bin/${i} >>${PLIST}
+.endfor # i in ${EXTRA_SCRIPTS}
 	cd ${PREFIX}; \
 	${FIND} ${LOCAL_SUBDIR} ! -type d | ${SORT} >>${PLIST}; \
 	${FIND} ${LOCAL_SUBDIR} -type d -empty | ${SORT} \
@@ -163,7 +174,7 @@ cons-plist:
 	${FIND} ${LOCAL_SUBDIR} -type d ! -empty | ${SORT} -r \
 		| ${SED} -e "s:^:@dirrm :" >> ${PLIST}
 
-.PHONY: link-bins link-java cleanup-install cons-plist
+.PHONY: install-extra link-bins link-java cleanup-install cons-plist
 
 .include <bsd.port.post.mk>
 
@@ -173,6 +184,6 @@ cons-plist:
 # dependency without trashing the actual code of the generate-plist
 # target. This is a limitation of the make(1) program itself. 
 # </alane>
-generate-plist: link-bins link-java cleanup-install cons-plist
+generate-plist: install-extra link-bins cleanup-install cons-plist
 
 #EOF
