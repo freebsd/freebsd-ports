@@ -1,0 +1,9 @@
+%%EXAMPLESDIR%%/INSTALLATION
+%%EXAMPLESDIR%%/memo2.py
+%%EXAMPLESDIR%%/memo2-gtodo.py
+share/gnome/gdesklets/Sensors/MemoOver/__init__.py
+share/gnome/gdesklets/Sensors/MemoOver/__init__.pyc
+share/gnome/gdesklets/Sensors/MemoOver/__init__.pyo
+share/gnome/gdesklets/Sensors/MemoOver/README
+@dirrm share/gnome/gdesklets/Sensors/MemoOver
+@dirrm %%EXAMPLESDIR%%
