@@ -23,6 +23,7 @@
     SUBDIR += nightfall
     SUBDIR += openuniverse
     SUBDIR += p5-Astro-ADS
+    SUBDIR += p5-Astro-DSS
     SUBDIR += p5-Astro-MoonPhase
     SUBDIR += p5-Astro-SIMBAD
     SUBDIR += p5-Astro-SunTime
