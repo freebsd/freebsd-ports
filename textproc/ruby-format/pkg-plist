@@ -1,5 +1,4 @@
 %%RUBY_SITELIBDIR%%/format.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/format/format_test.pl
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/format/test_format.rb
 %%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/format
-%%PORTDOCS%%%%RUBY_DOCDIR%%/format/format.html
-%%PORTDOCS%%@dirrm %%RUBY_DOCDIR%%/format
