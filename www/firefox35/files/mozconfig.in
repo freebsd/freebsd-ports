@@ -33,13 +33,12 @@ ac_add_options --with-system-zlib
 ac_add_options --with-system-png=@LOCALBASE@
 ac_add_options --with-system-mng=@LOCALBASE@
 ######################################################################
-# enable features
+# set compile/link features
 ac_add_options --with-pthreads
-ac_add_options --enable-xft
 ac_add_options --enable-reorder
 ac_add_options --enable-strip
 ######################################################################
-# disable unneeded to speed up and/or save space
+# disable unneeded/unavailable
 ac_add_options --disable-auto-deps
 ac_add_options --disable-bidi
 ac_add_options --disable-dtd-debug
@@ -47,10 +46,21 @@ ac_add_options --disable-jsd
 ac_add_options --disable-ldap
 ac_add_options --disable-pedantic
 ac_add_options --disable-xinerama
+######################################################################
+# conditional from port Makefile
 if test -n "$WITH_DEBUG"; then
     ac_add_options --enable-debug
+else
+    ac_add_options --disable-debug
+fi # test -n "$WITH_DEBUG"
+if test -n "$WITH_LOGGING"; then
     ac_add_options --enable-logging
 else
     ac_add_options --disable-logging
-fi # test -n "$WITH_DEBUG"
+fi # test -n "$WITH_LOGGING"
+if test -z "$WITHOUT_XFT"; then
+    ac_add_options --enable-xft
+else
+    ac_add_options --disable-xft
+fi # test -z "$WITHOUT_XFT"
 ######################################################################
