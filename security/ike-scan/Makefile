@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ike-scan
-PORTVERSION=	1.2
+PORTVERSION=	1.6
 CATEGORIES=	security
 MASTER_SITES=	http://www.nta-monitor.com/ike-scan/download/ \
 		http://berlin.ccc.de/~cryx/ike-scan/
@@ -15,7 +15,8 @@ MAINTAINER=	Yonatan@xpert.com
 COMMENT=	VPN scanner and identifier
 
 HAS_CONFIGURE=	yes
-CONFIGURE_ARGS+=	"--datadir=${DATADIR}"
+CONFIGURE_ARGS+=	"--datadir=${PREFIX}/share"
+MAN1=		ike-scan.1
 
 post-install:
 .	if !defined(NOPORTDOCS)
