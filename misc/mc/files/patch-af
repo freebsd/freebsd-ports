@@ -61,7 +61,7 @@
 +		$(DESTDIR)$(desktopdir) $(DESTDIR)$(mclibdir)
  
 --- src/Makefile.in.orig	Wed Apr 11 07:07:47 2001
-+++ src/Makefile.in	Fri Apr 20 14:03:52 2001
++++ src/Makefile.in	Thu May 17 12:29:24 2001
 @@ -121,6 +121,5 @@
  	$(mkinstalldirs) $(DESTDIR)$(mclibdir)
 -	$(INSTALL_PROGRAM) mc     $(DESTDIR)$(bindir)/$(binprefix)mc
@@ -70,3 +70,12 @@
  	$(SEDCMD2) < $(srcdir)/mc.hlp > $(DESTDIR)$(mclibdir)/mc.hlp 
 -	$(MAKE) install_mcview
  	$(MAKE) install_@MCEDIT@
+@@ -134,6 +133,6 @@
+ install_mcview:
+-	cd $(DESTDIR)$(bindir)/$(binprefix) && rm -f mcview && $(LN_S) mc mcview
++	cd $(DESTDIR)$(bindir)/$(binprefix) && rm -f mcview && $(LN_S) midc mcview
+ 
+ install_mcedit:
+-	cd $(DESTDIR)$(bindir)/$(binprefix) && rm -f mcedit && $(LN_S) mc mcedit
++	cd $(DESTDIR)$(bindir)/$(binprefix) && rm -f mcedit && $(LN_S) midc mcedit
+ 
