@@ -1,12 +1,11 @@
---- Makefile.in.orig	Sat Sep 27 16:42:19 1997
-+++ Makefile.in	Sun Jul 12 20:32:18 1998
-@@ -8,8 +8,9 @@
+--- Makefile.in.orig	Mon Jun 29 18:59:44 1998
++++ Makefile.in	Sat Sep  4 01:13:54 1999
+@@ -8,8 +8,8 @@
  
  
  RM=rm -f
 -#CC=gcc -ansi
 -#CC=/opt/SUNWspro/SC4.0/bin/cc
-+CC=cc
 +WCOLDIR=@prefix@/wcol
 +DEFAULT_POOLDIR?=/var/spool/wcol
  
@@ -25,17 +24,26 @@
  	-DLOGGING_LOCALTIME \
  	-DMAX_REQUEST_QUEUE=2048 \
  	-DMAX_HANDLER=4  -DNUM_HANDLER=4 \
-@@ -95,7 +100,8 @@
- JFILTER_OBJS = _jfilter.o
+@@ -72,7 +76,7 @@
+ 
+ LIBS = @LIBS@
+ 
+-CFLAGS = -g $(DEFS)
++CFLAGS += $(DEFS)
+ 
+ 
+ ###
+@@ -96,7 +100,8 @@
  ICP_OBJS    = _icp.o socket.o hname.o msg.o base.o url.o mem.o sigs.o
+ FLOOD_OBJS  = flood.o icp.o socket.o hname.o msg.o base.o url.o mem.o sigs.o misc.o
  PLIST_OBJS  = plist.o msg.o base.o url.o info.o mem.o misc.o \
 -    args.o rglobal.o accept.o pstate.o conv.o
 +    args.o rglobal.o accept.o pstate.o conv.o \
 +    reaper.o sigs.o ipc.o eqsort.o
  
  OBJS = $(WCOL_OBJS) $(SSTATE_OBJS) $(HSTATE_OBJS) $(REAPER_OBJS) \
-     $(FTP_OBJS) $(PARSE_OBJS) $(JFILTER_OBJS) $(ICP_OBJS) $(PLIST_OBJS)
-@@ -150,6 +156,27 @@
+     $(FTP_OBJS) $(PARSE_OBJS) $(JFILTER_OBJS) $(ICP_OBJS) $(FLOOD_OBJS) \
+@@ -155,6 +160,27 @@
  allclean:
  	-$(MAKE) clean
  	$(RM) config.h Makefile config.cache config.status
