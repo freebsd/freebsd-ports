@@ -32,6 +32,12 @@ USE_GNOME=	gtk12
 MAKE_ARGS=	GTK1=yes
 .endif
 
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == "sparc64"
+BROKEN=		"Build fails on sparc64"
+.endif
+
 do-install:
 	${MKDIR} ${PREFIX}/include/scintilla
 	${INSTALL_DATA} ${WRKSRC}/../include/*.h ${PREFIX}/include/scintilla
@@ -40,4 +46,4 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/../bin/libscintilla_lexers.so.1 ${PREFIX}/lib
 	${LN} -sf ${PREFIX}/lib/libscintilla_lexers.so.1 ${PREFIX}/lib/libscintilla_lexers.so
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

@@ -44,8 +44,14 @@ INFO=	gcl gcl-si gcl-tk
 
 PLIST_SUB=	GCL_VER=${PORTVERSION}
 
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == "sparc64"
+BROKEN=		"Does not compile on sparc64"
+.endif
+
 pre-configure:
 	${RM} -f ${WRKSRC}/configure
 	${SED} -i '.PRE-SED' -e 's|@@CFLAGS@@|${CFLAGS}|' ${WRKSRC}/h/FreeBSD.defs
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
