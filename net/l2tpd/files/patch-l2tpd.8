@@ -1,0 +1,29 @@
+
+$FreeBSD$
+
+--- l2tpd.8	2002/10/22 09:53:22	1.1
++++ l2tpd.8	2002/10/22 09:53:51
+@@ -28,20 +28,20 @@
+ 
+ .RS 3
+ Selects a different configuration file from the default, set at compile
+-time (typically /etc/l2tp/l2tpd.conf).
++time (typically %%PREFIX%%/etc/l2tp/l2tpd.conf).
+ See
+ .BR l2tpd.conf (5)
+ for more information.
+ .RE
+ .SH FILES
+ 
+-.B /etc/l2tp/l2tpd.conf
++.B %%PREFIX%%/etc/l2tp/l2tpd.conf
+ .RS 3
+ Configuration file for l2tpd, specifies virtually all information for its
+ operation.
+ .RE
+ 
+-.B /etc/l2tp/l2tp-secrets
++.B %%PREFIX%%/etc/l2tp/l2tp-secrets
+ .RS 3
+ Secrets used for challenge authentication and information hiding.
+ .RE

@@ -231,6 +231,7 @@
     SUBDIR += kopete
     SUBDIR += krdesktop
     SUBDIR += kxicq-devel
+    SUBDIR += l2tpd
     SUBDIR += lam
     SUBDIR += lambdamoo
     SUBDIR += ldapdiff

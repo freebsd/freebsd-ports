@@ -1,0 +1,43 @@
+
+$FreeBSD$
+
+--- Makefile.orig	Fri Jan 11 17:54:44 2002
++++ Makefile	Tue Oct 22 12:11:31 2002
+@@ -26,11 +26,11 @@
+ # become runtime options) debugging flags
+ #
+ #DFLAGS= -g -O2 -DDEBUG_PPPD
+-DFLAGS= -g -O2 -DDEBUG_PPPD -DDEBUG_CONTROL
++DFLAGS= -DDEBUG_PPPD -DDEBUG_CONTROL
+ #
+ # Uncomment the next line for Linux
+ #
+-OSFLAGS= -DLINUX -I/usr/include
++#OSFLAGS= -DLINUX -I/usr/include
+ #
+ # Uncomment the following to use the kernel interface under Linux
+ #
+@@ -38,7 +38,7 @@
+ #
+ # Uncomment the next line for FreeBSD
+ #
+-#OSFLAGS= -DFREEBSD
++OSFLAGS= -DFREEBSD -DPREFIX=\"$(PREFIX)\"
+ #
+ # Uncomment the next line for Solaris. For solaris, at least,
+ # we don't want to specify -I/usr/include because it is in
+@@ -48,7 +48,7 @@
+ #OSFLAGS= -DSOLARIS
+ #OSLIBS= -lnsl -lsocket
+ 
+-CFLAGS= $(DFLAGS) -Wall -DSANITY $(OSFLAGS)
++CFLAGS+= $(DFLAGS) -Wall -DSANITY $(OSFLAGS)
+ HDRS=l2tp.h avp.h misc.h control.h call.h scheduler.h file.h aaa.h md5.h
+ OBJS=l2tpd.o pty.o misc.o control.o avp.o call.o network.o avpsend.o scheduler.o file.o aaa.o md5.o
+ LIBS= $(OSLIB) # -lefence # efence for malloc checking
+@@ -62,4 +62,4 @@
+ 	rm -f $(OBJS) $(BIN)
+ 
+ $(BIN): $(OBJS) $(HDRS) 
+-	$(CC) -o $(BIN) $(DFLAGS) $(OBJS) $(LIBS)
++	$(CC) -o $(BIN) $(CFLAGS) $(DFLAGS) $(OBJS) $(LIBS)

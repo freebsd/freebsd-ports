@@ -1,0 +1,14 @@
+
+$FreeBSD$
+
+--- doc/l2tpd.conf.sample	2002/10/22 09:59:52	1.1
++++ doc/l2tpd.conf.sample	2002/10/22 10:00:14
+@@ -10,7 +10,7 @@
+ ;
+ ; [global]								; Global parameters:
+ ; port = 1701						 	; * Bind to port 1701
+-; auth file = /etc/l2tp/l2tp-secrets 	; * Where our challenge secrets are
++; auth file = %%PREFIX%%/etc/l2tp/l2tp-secrets 	; * Where our challenge secrets are
+ ; access control = yes					; * Refuse connections without IP match
+ ;
+ ; [lns default]							; Our fallthrough LNS definition
