@@ -1,5 +1,7 @@
 bin/kdirstat
 share/applnk/Utilities/kdirstat.desktop
+share/apps/kconf_update/fix_move_to_trash_bin.pl
+share/apps/kconf_update/kdirstat.upd
 share/apps/kdirstat/icons/hicolor/16x16/actions/symlink.png
 share/apps/kdirstat/icons/hicolor/32x32/actions/symlink.png
 share/apps/kdirstat/icons/hicolor/48x48/actions/symlink.png
@@ -18,6 +20,8 @@ share/icons/locolor/16x16/apps/kdirstat.png
 share/icons/locolor/32x32/apps/kdirstat.png
 share/locale/de/LC_MESSAGES/kdirstat.mo
 share/locale/fr/LC_MESSAGES/kdirstat.mo
+share/locale/hu/LC_MESSAGES/kdirstat.mo
+share/locale/it/LC_MESSAGES/kdirstat.mo
 share/locale/ja/LC_MESSAGES/kdirstat.mo
 @unexec rmdir %D/share/icons/locolor/32x32/apps 2>/dev/null || true
 @unexec rmdir %D/share/icons/locolor/32x32 2>/dev/null || true
@@ -45,6 +49,7 @@ share/locale/ja/LC_MESSAGES/kdirstat.mo
 @dirrm share/apps/kdirstat/icons/hicolor
 @dirrm share/apps/kdirstat/icons
 @dirrm share/apps/kdirstat
+@unexec rmdir %D/share/apps/kconf_update 2>/dev/null || true
 @unexec rmdir %D/share/apps 2>/dev/null || true
 @unexec rmdir %D/share/applnk/Utilities 2>/dev/null || true
 @unexec rmdir %D/share/applnk 2>/dev/null || true
