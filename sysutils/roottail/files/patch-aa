@@ -1,0 +1,25 @@
+--- ../root-tail-0.0.6/root-tail.c	Fri Mar  3 06:16:46 2000
++++ root-tail.c	Thu Jul 13 07:38:05 2000
+@@ -24,6 +24,7 @@
+ /*---------------- Let's define signals functions -------------*/
+ 
+ static void reopen (int);
++static void exit_now(int);
+ static void list_files (int);
+ static void force_refresh (int);
+ static void InstallSigHandler (void);
+@@ -109,6 +110,14 @@
+   signal (SIGHUP, reopen);
+   signal (SIGUSR1, list_files);
+   signal (SIGUSR2, force_refresh);
++  signal (SIGSEGV, exit_now);
++}
++
++void exit_now(int signal)
++{
++
++	fprintf (stderr, "Program exiting due to signal: %d\n", signal);
++ 	exit(-1);
+ }
+ 
+ 
