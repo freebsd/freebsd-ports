@@ -1,0 +1,98 @@
+#!/bin/sh
+
+of=index.html.new
+
+echo "<html><head><title>Package building errors</title>" >$of
+echo "<h1>Package building errors</h1>" >>$of
+echo "</head><body>" >>$of
+
+set *.log
+
+if [ $# = 1 -a "x$1" = "x*.log" ]; then
+  echo "No errors (yet)" >>$of
+else
+  num=$#
+  echo "(timestamp of newest log: $(ls -rtTl *.log | tail -1 | awk '{printf("%s %s %s %s\n",$6,$7,$8,$9)}'))<br><br>" >> $of
+  echo "<table border=1>" >>$of
+  echo "<tr><th>Log</th><th>Size</th><th>Repository</th><th>Maintainer</th><th>Reason</th></tr>" >>$of
+  while [ $# -gt 0 ]; do
+    echo -n "<tr><td>" >>$of
+    echo -n "<a name=\"$1\"></a>" >> $of
+    echo -n "<a href=\"$1\">" >>$of
+    echo -n $(basename $1 .log) >>$of
+    echo -n "</a>" >>$of
+    echo -n "</td><td align=right>" >>$of
+    size=$(/bin/ls -sk $1 | awk '{print $1}')
+    echo -n "$size KB" >>$of
+    echo -n "</td><td>" >>$of
+    dir=$(sed -n -e '3p' $1 | awk '{print $4}' | sed -e 's,^/[^/]*/[^/]*/,,')
+    echo -n "<a href=\"http://www.freebsd.org/cgi/cvsweb.cgi/ports/$dir\">$dir</a>" >>$of
+    echo -n "</td><td>" >>$of
+    maint=$(sed -n -e '4p' $1 | awk '{print $3}')
+    maints="$maints $maint"
+    echo -n "<a href=\"mailto:$maint\">$maint</a>" >>$of
+    echo -n "</td><td>" >>$of
+    if grep -q 'Checksum mismatch' $1; then
+      reason="checksum"; tag="checksum"
+    elif grep -q 'No checksum recorded for' $1; then
+      reason="files/md5 update"; tag="md5"
+    elif grep -qE '(configure: error:|script.*failed: here are the contents of)' $1; then
+      reason="configure error"; tag="configure"
+    elif grep -q "Couldn't fetch it - please try" $1; then
+      reason="fetch"; tag="fetch"
+    elif grep -q "out of .* hunks .*--saving rejects to" $1; then
+      reason="patch"; tag="patch"
+    elif grep -q 'undefined reference to `Xp' $1; then
+      reason="MOTIFLIB"; tag="motiflib"
+    elif grep -qi 'read-only file system' $1; then
+      reason="WRKDIR"; tag="wrkdir"
+    elif grep -q 'makeinfo: .* use --force' $1; then
+      reason="texinfo"; tag="texinfo"
+    elif grep -q 'means that you did not run the h2ph script' $1; then
+      reason="perl5"; tag="perl5"
+    elif grep -q "Error: shared library \".*\" does not exist" $1; then
+      reason="LIB_DEPENDS"; tag="libdepends"
+    elif grep -q ".*\.h: No such file" $1; then
+      if grep -q "X11/.*\.h: No such file" $1; then
+	if grep -q "XFree86-.*\.tgz" $1; then
+	  reason="missing header"; tag="header"
+	else
+	  reason="USE_XLIB"; tag="usexlib"
+	fi
+      else
+	reason="missing header"; tag="header"
+      fi
+    elif grep -q "cd: can't cd to" $1; then
+      reason="NFS"; tag="nfs"
+    elif grep -qE '(parse error|too (many|few) arguments to|argument.*doesn.*prototype)' $1; then
+      reason="compiler error"; tag="cc"
+    elif grep -qE '(undefined reference to|cannot open -l.*: No such file)' $1; then
+      reason="linker error"; tag="ld"
+    elif grep -q 'install: .*: No such file' $1; then
+      reason="install error"; tag="install"
+    elif grep -q "/usr/.*/man/.*: No such file or directory" $1; then
+      reason="manpage"; tag="manpage"
+    elif grep -q "tar: can't add file" $1; then
+      reason="PLIST"; tag="plist"
+    elif grep -q "Can't open display" $1; then
+      reason="DISPLAY"; tag="display"
+    else
+      reason="???"; tag="unknown"
+    fi
+    echo -n "<a href=\"../index.html#$tag\">$reason</a>" >>$of
+    echo "</td></tr>" >>$of
+    shift
+  done
+  echo "</table><br>" >> $of
+  echo "$num errors<br>" >> $of
+fi
+
+echo "<hr>" >> $of
+echo "<a href=\"../\">back to top</a>" >> $of
+
+echo "</body></html>" >>$of
+
+mv -f $of index.html
+
+echo $maints | sed -e 's/ /\
+/g' | sort -fu > maintainers
