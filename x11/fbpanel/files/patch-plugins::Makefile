@@ -1,0 +1,11 @@
+--- plugins/Makefile.orig	Tue Dec 14 19:59:15 2004
++++ plugins/Makefile	Tue Dec 14 19:59:23 2004
+@@ -7,7 +7,7 @@
+ INCS += -I../
+ SRC = image.c menu.c separator.c taskbar.c wincmd.c \
+ 	dclock.c launchbar.c pager.c space.c test.c \
+-	icons.c cpu.c deskno.c
++	icons.c deskno.c
+ 
+ SOBJ = $(SRC:%.c=%.so)
+ OBJ = $(SRC:%.c=%.o)

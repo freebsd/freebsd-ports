@@ -1,15 +1,29 @@
 bin/fbpanel
-share/fbpanel/default
-share/fbpanel/pager
-share/fbpanel/images/Desktop2.png
-share/fbpanel/images/Editor.png
-share/fbpanel/images/Emacs.png
-share/fbpanel/images/GNOME-Terminal.png
-share/fbpanel/images/Menu.png
-share/fbpanel/images/Networking.png
-share/fbpanel/images/bottom-left.xpm
-share/fbpanel/images/bottom-right.xpm
-share/fbpanel/images/top-left.xpm
-share/fbpanel/images/top-right.xpm
-@dirrm share/fbpanel/images
-@dirrm share/fbpanel
+%%DATADIR%%/default
+%%DATADIR%%/images/Desktop2.png
+%%DATADIR%%/images/Editor.png
+%%DATADIR%%/images/Emacs.png
+%%DATADIR%%/images/GNOME-Terminal.png
+%%DATADIR%%/images/Menu.png
+%%DATADIR%%/images/Networking.png
+%%DATADIR%%/images/bottom-left.xpm
+%%DATADIR%%/images/bottom-right.xpm
+%%DATADIR%%/images/top-left.xpm
+%%DATADIR%%/images/top-right.xpm
+%%DATADIR%%/pager
+%%DATADIR%%/plugins/dclock.so
+%%DATADIR%%/plugins/deskno.so
+%%DATADIR%%/plugins/icons.so
+%%DATADIR%%/plugins/image.so
+%%DATADIR%%/plugins/launchbar.so
+%%DATADIR%%/plugins/menu.so
+%%DATADIR%%/plugins/pager.so
+%%DATADIR%%/plugins/separator.so
+%%DATADIR%%/plugins/space.so
+%%DATADIR%%/plugins/taskbar.so
+%%DATADIR%%/plugins/test.so
+%%DATADIR%%/plugins/tray.so
+%%DATADIR%%/plugins/wincmd.so
+@dirrm %%DATADIR%%/images
+@dirrm %%DATADIR%%/plugins
+@dirrm %%DATADIR%%
