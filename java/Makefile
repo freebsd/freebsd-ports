@@ -4,6 +4,7 @@
     SUBDIR += collections
     SUBDIR += cos
     SUBDIR += cryptix-jce
+    SUBDIR += gnu-regexp
     SUBDIR += guavac
     SUBDIR += infobus
     SUBDIR += jaf
