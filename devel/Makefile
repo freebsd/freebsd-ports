@@ -380,6 +380,7 @@
     SUBDIR += libformat
     SUBDIR += libfs++
     SUBDIR += libg++
+    SUBDIR += libgconf-java
     SUBDIR += libgetline
     SUBDIR += libghthash
     SUBDIR += libgii
