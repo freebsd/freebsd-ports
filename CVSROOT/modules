@@ -324,6 +324,7 @@ arcboot		src/sys/boot/arc
 arch		ports/devel/arch
 archie		ports/net/archie
 archie.el	ports/net/archie.el
+archivemail	ports/mail/archivemail
 arena		ports/www/arena
 argparse	ports/misc/argparse
 argus		ports/net/argus
