@@ -11,5 +11,9 @@ share/traindir/train.ico
 share/traindir/tdicons/bridgeup.xpm
 share/traindir/tdicons/bridgedn.xpm
 share/traindir/tdicons/triangl.xpm
-@dirrm share/traindir/tdicons/
+share/traindir/locales/.traindir.it
+share/traindir/locales/.traindir.fr
+share/traindir/locales/README
+@dirrm share/traindir/tdicons
+@dirrm share/traindir/locales
 @dirrm share/traindir

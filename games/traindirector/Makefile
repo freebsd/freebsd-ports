@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	traindirector
-PORTVERSION=	1.18n
-PORTREVISION=	1
+PORTVERSION=	1.19
 CATEGORIES=	games
-MASTER_SITES=	http://xtsl.free.fr/118n/
+MASTER_SITES=	http://xtsl.free.fr/119/
 DISTNAME=	traindir-${PORTVERSION}-src
 
 MAINTAINER=	mad@madpilot.net
