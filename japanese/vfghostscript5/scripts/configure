@@ -12,7 +12,7 @@ sed -e "s;XINCLUDE=-I/usr/local/X/include;XINCLUDE=-I/usr/X11R6/include;" \
     -e "s;PSRCDIR=libpng;PSRCDIR=${WRKDIR}/libpng-0.96;" \
     -e "s;ZSRCDIR=zlib;ZSRCDIR=.;" \
     -e "s;CC=gcc;CC=cc;" \
-    -e "s;DEVICE_DEVS15=pdfwrite.dev;DEVICE_DEVS15=pdfwrite.dev stcolor.dev st800.dev uniprint.dev ${PRINTER_JAPAN};" \
+    -e "s;DEVICE_DEVS15=pdfwrite.dev;DEVICE_DEVS15=pdfwrite.dev stcolor.dev st800.dev uniprint.dev bmp16m.dev ${PRINTER_JAPAN};" \
     < ${WRKSRC}/unix-gcc.mak > ${WRKSRC}/unix-gcc.mak.bak && \
     mv ${WRKSRC}/unix-gcc.mak.bak ${WRKSRC}/unix-gcc.mak
 touch ${WRKSRC}/makefile
@@ -159,7 +159,7 @@ Have fun with this new configuration style !     -andreas \n\n\
    "bmpmono"  "Monochrome MS Windows .BMP file format" OFF \
    "bmp16"    "4-bit EGA/VGA .BMP file format" OFF \
    "bmp256"   "8-bit 256-color .BMP file format" OFF \
-   "bmp16m"   "24-bit .BMP file format" OFF \
+   "bmp16m"   "24-bit .BMP file format" ON \
    "cgmmono"  "Monochrome CGM -- LOW LEVEL OUTPUT ONLY" OFF \
    "cgm8"     "8-bit 256-color CGM -- DITTO" OFF \
    "cgm24"    "24-bit color CGM -- DITTO" OFF \
