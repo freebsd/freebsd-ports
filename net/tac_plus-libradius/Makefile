@@ -21,6 +21,12 @@ WRKSRC=		${WRKDIR}/${WRKPREFIX}/
 ALL_TARGET=	tac_plus
 MAN1=		tac_plus.1
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 500113
+BROKEN=		"Does not compile on FreeBSD ${OSVERSION}"
+.endif
+
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/tac_plus ${PREFIX}/sbin
 	${INSTALL_MAN} ${WRKSRC}/tac_plus.1 ${PREFIX}/man/man1/tac_plus.1
@@ -32,4 +38,4 @@ do-install:
 		${INSTALL_SCRIPT} -m 751 ${FILESDIR}/tac_plus.sh ${PREFIX}/etc/rc.d/tac_plus.sh.sample; \
 	fi
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
