@@ -3,7 +3,7 @@
 # Date created:         Sat Nov  5 17:11:01 PST 1994
 # Whom:                 hsu
 #
-# $Id: Makefile,v 1.4 1995/04/01 12:47:08 jkh Exp $
+# $Id: Makefile,v 1.5 1995/04/15 05:44:48 asami Exp $
 #
 
 DISTNAME=       scm
@@ -18,7 +18,7 @@ GNU_CONFIGURE=
 USE_GMAKE=
 MAKE_FLAGS=	CFLAGS=-O2 LDFLAGS=-s defines="-DSICP -DHAVE_CONFIG_H -DFLOATS -DIO_EXTENSIONS -DMEMOIZE_LOCALS -DGC_FREE_SEGMENTS" -f
 
-pre-install:
+pre-install: build
 	@if [ ! -e ${PREFIX}/lib ]; then mkdir -p ${PREFIX}/lib; fi
 	cp -rp ${WRKDIR}/slib ${PREFIX}/lib
 	@if [ ! -e /usr/local/info ]; then mkdir -p /usr/local/info; fi
