@@ -2,7 +2,7 @@
 
 u=sgeadmin
 g=sgeadmin
-ugid=96
+ugid=103
 homedir=/nonexistent
 shell=/sbin/nologin
 comment="Sun Grid Engine Admin"
