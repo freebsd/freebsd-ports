@@ -20,6 +20,8 @@ lib/ethereal/plugins/%%PORTVERSION%%/mgcp.la
 lib/ethereal/plugins/%%PORTVERSION%%/mgcp.so
 lib/ethereal/plugins/%%PORTVERSION%%/pcli.la
 lib/ethereal/plugins/%%PORTVERSION%%/pcli.so
+lib/ethereal/plugins/%%PORTVERSION%%/rtnet.la
+lib/ethereal/plugins/%%PORTVERSION%%/rtnet.so
 share/ethereal/diameter/dictionary.dtd
 share/ethereal/diameter/dictionary.xml
 share/ethereal/diameter/mobileipv4.xml
