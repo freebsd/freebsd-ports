@@ -3,7 +3,7 @@
 # Date created:		21 August 1995
 # Whom:			asami
 #
-# $Id: Makefile,v 1.21 1998/03/16 15:38:37 markm Exp $
+# $Id: Makefile,v 1.22 1998/04/04 07:36:45 asami Exp $
 #
 
 DISTNAME=       netscape-3.04
@@ -25,7 +25,7 @@ PKGNAME=	${DISTNAME}-gold
 .if defined(USE_128BIT) && defined(USA_RESIDENT) && ${USA_RESIDENT} == NO
 MASTER_SITES+=	ftp://ftp.fortify.net/pub/Fortify/ \
 		ftp://ftp.za.freebsd.org/pub/Fortify/
-DISTFILES+=	Fortify-1.2.1-unix.tar.gz
+DISTFILES+=	Fortify-1.2.6-unix-x86.tar.gz
 RESTRICTED=     "Contains strong cryptography"
 .endif
 
@@ -37,7 +37,7 @@ pre-extract:
 
 post-install:
 .if defined(USE_128BIT) && defined(USA_RESIDENT) && ${USA_RESIDENT} == NO
-	cd ${WRKSRC}/Fortify-1.2.1-unix && \
+	cd ${WRKSRC}/Fortify-1.2.6-unix-x86 && \
 		(${ECHO} yes ; ${ECHO} no) | ./Fortify.sh ${PREFIX}/lib/netscape/netscape.bin
 .endif
 	@${CAT} ${PKGDIR}/DESCR
