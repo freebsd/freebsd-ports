@@ -1,0 +1,29 @@
+# New ports collection makefile for:	icmpquery
+# Version required:			1.0.3
+# Date created:				Jan 7 1999
+# Whom:					dom@myrddin.demon.co.uk
+#
+# $Id$
+#
+
+DISTNAME=	icmpquery
+PKGNAME=	icmpquery-1.0.3
+CATEGORIES=	net
+MASTER_SITES=	http://www.angio.net/security/
+EXTRACT_SUFX=	.c
+
+MAINTAINER=	dom@myrddin.demon.co.uk
+
+NO_WRKSUBDIR=	YES
+ALL_TARGET=	icmpquery
+
+do-extract:
+		@${MKDIR} ${WRKDIR}
+		@${CP} ${DISTDIR}/${DISTFILES} ${WRKDIR}
+		@${CP} ${FILESDIR}/Makefile ${WRKDIR}
+
+do-install:
+		@${INSTALL_PROGRAM} ${WRKDIR}/icmpquery ${PREFIX}/bin
+		@chmod u+s ${PREFIX}/bin/icmpquery
+
+.include <bsd.port.mk>
