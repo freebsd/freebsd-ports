@@ -95,6 +95,7 @@
     SUBDIR += knapster
     SUBDIR += koog
     SUBDIR += krio
+    SUBDIR += ksmp3play
     SUBDIR += lame
     SUBDIR += lame-devel
     SUBDIR += liba52

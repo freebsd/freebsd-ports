@@ -1,0 +1,12 @@
+bin/ksmp3play
+%%PORTDOCS%%share/doc/ksmp3play/ksmp3play.html/ch-usage.html
+%%PORTDOCS%%share/doc/ksmp3play/ksmp3play.html/footnotes.html
+%%PORTDOCS%%share/doc/ksmp3play/ksmp3play.html/ch-intro.html
+%%PORTDOCS%%share/doc/ksmp3play/ksmp3play.html/index.html
+%%PORTDOCS%%share/doc/ksmp3play/ksmp3play.html/ch-install.html
+%%PORTDOCS%%share/doc/ksmp3play/ksmp3play.html/ch-qa.html
+%%PORTDOCS%%share/doc/ksmp3play/ksmp3play.pdf
+%%PORTDOCS%%share/doc/ksmp3play/ksmp3play.sgml
+%%PORTDOCS%%share/doc/ksmp3play/ksmp3play.txt
+%%PORTDOCS%%@dirrm share/doc/ksmp3play/ksmp3play.html
+%%PORTDOCS%%@dirrm share/doc/ksmp3play
