@@ -336,8 +336,6 @@ post-extract:
 
 post-patch:
 	@${MAKE} patch-mozilla
-	@${MAKE} fix-kdewrappers
-	@${MAKE} fix-gnomewrappers
 .if defined(WITH_TTF_BYTECODE_ENABLED)
 	@if [ "`echo ${PATCHDIR}/optpatch-*`" != "${PATCHDIR}/optpatch-*" ]; then \
 		${ECHO_MSG} "===>  Applying additional TTF bytecode patches for ${PKGNAME}" ; \
@@ -385,14 +383,6 @@ post-patch:
 		done; \
 	fi;
 .endif
-
-fix-kdewrappers:
-# 	@${PERL} -pi -e 's|"Exec", "\\"\<progpath\>/program/|"Exec", "\\"${PREFIX}/bin/openoffice_${RELEASE_NR}-|' \
-#		${WRKSRC}/../sysui/oounix/office/kde2/kdeint
-
-fix-gnomewrappers:
-#	@${PERL} -pi -e 's|"Exec", "<progpath>/program/|"Exec", "${PREFIX}/bin/openoffice_${RELEASE_NR}-|' \
-#		${WRKSRC}/../sysui/oounix/office/gnome/gnomeint
 
 extract-mozilla:
 .if ! exists(${WRKDIR}/mozilla/Makefile)
