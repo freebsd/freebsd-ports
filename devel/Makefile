@@ -613,6 +613,7 @@
     SUBDIR += py-vmaps
     SUBDIR += py-xoltar-toolkit
     SUBDIR += pychecker
+    SUBDIR += pyrex
     SUBDIR += qt-designer
     SUBDIR += qtez
     SUBDIR += qtk
