@@ -8,11 +8,11 @@
       if $PKG_CONFIG --atleast-pkgconfig-version $PKG_CONFIG_MIN_VERSION; then
 -        echo "$as_me:$LINENO: checking for libgnomeui-2.0 gtk+-2.0 libgtkhtml-3.0 gal-2.0 libxml-2.0 sword" >&5
 -echo $ECHO_N "checking for libgnomeui-2.0 gtk+-2.0 libgtkhtml-3.0 gal-2.0 libxml-2.0 sword... $ECHO_C" >&6
-+        echo "$as_me:$LINENO: checking for libgnomeui-2.0 gtk+-2.0 libgtkhtml-3.1 gal-2.2 libxml-2.0 sword" >&5
-+echo $ECHO_N "checking for libgnomeui-2.0 gtk+-2.0 libgtkhtml-3.1 gal-2.2 libxml-2.0 sword... $ECHO_C" >&6
++        echo "$as_me:$LINENO: checking for libgnomeui-2.0 gtk+-2.0 libgtkhtml-3.6 gal-2.4 libxml-2.0 sword" >&5
++echo $ECHO_N "checking for libgnomeui-2.0 gtk+-2.0 libgtkhtml-3.6 gal-2.4 libxml-2.0 sword... $ECHO_C" >&6
  
 -        if $PKG_CONFIG --exists "libgnomeui-2.0 gtk+-2.0 libgtkhtml-3.0 gal-2.0 libxml-2.0 sword" ; then
-+        if $PKG_CONFIG --exists "libgnomeui-2.0 gtk+-2.0 libgtkhtml-3.1 gal-2.2 libxml-2.0 sword" ; then
++        if $PKG_CONFIG --exists "libgnomeui-2.0 gtk+-2.0 libgtkhtml-3.6 gal-2.4 libxml-2.0 sword" ; then
              echo "$as_me:$LINENO: result: yes" >&5
  echo "${ECHO_T}yes" >&6
              succeeded=yes
@@ -20,14 +20,14 @@
              echo "$as_me:$LINENO: checking GNOME_CFLAGS" >&5
  echo $ECHO_N "checking GNOME_CFLAGS... $ECHO_C" >&6
 -            GNOME_CFLAGS=`$PKG_CONFIG --cflags "libgnomeui-2.0 gtk+-2.0 libgtkhtml-3.0 gal-2.0 libxml-2.0 sword"`
-+            GNOME_CFLAGS=`$PKG_CONFIG --cflags "libgnomeui-2.0 gtk+-2.0 libgtkhtml-3.1 gal-2.2 libxml-2.0 sword"`
++            GNOME_CFLAGS=`$PKG_CONFIG --cflags "libgnomeui-2.0 gtk+-2.0 libgtkhtml-3.6 gal-2.4 libxml-2.0 sword"`
              echo "$as_me:$LINENO: result: $GNOME_CFLAGS" >&5
  echo "${ECHO_T}$GNOME_CFLAGS" >&6
  
              echo "$as_me:$LINENO: checking GNOME_LIBS" >&5
  echo $ECHO_N "checking GNOME_LIBS... $ECHO_C" >&6
 -            GNOME_LIBS=`$PKG_CONFIG --libs "libgnomeui-2.0 gtk+-2.0 libgtkhtml-3.0 gal-2.0 libxml-2.0 sword"`
-+            GNOME_LIBS=`$PKG_CONFIG --libs "libgnomeui-2.0 gtk+-2.0 libgtkhtml-3.1 gal-2.2 libxml-2.0 sword"`
++            GNOME_LIBS=`$PKG_CONFIG --libs "libgnomeui-2.0 gtk+-2.0 libgtkhtml-3.6 gal-2.4 libxml-2.0 sword"`
              echo "$as_me:$LINENO: result: $GNOME_LIBS" >&5
  echo "${ECHO_T}$GNOME_LIBS" >&6
          else
@@ -36,7 +36,7 @@
              ## If we have a custom action on failure, don't print errors, but
              ## do set a variable so people can do so.
 -            GNOME_PKG_ERRORS=`$PKG_CONFIG --errors-to-stdout --print-errors "libgnomeui-2.0 gtk+-2.0 libgtkhtml-3.0 gal-2.0 libxml-2.0 sword"`
-+            GNOME_PKG_ERRORS=`$PKG_CONFIG --errors-to-stdout --print-errors "libgnomeui-2.0 gtk+-2.0 libgtkhtml-3.1 gal-2.2 libxml-2.0 sword"`
++            GNOME_PKG_ERRORS=`$PKG_CONFIG --errors-to-stdout --print-errors "libgnomeui-2.0 gtk+-2.0 libgtkhtml-3.6 gal-2.4 libxml-2.0 sword"`
  
          fi
  
