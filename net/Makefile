@@ -326,6 +326,7 @@
     SUBDIR += naim
     SUBDIR += nam
     SUBDIR += napshare
+    SUBDIR += nast
     SUBDIR += nat
     SUBDIR += nbtscan
     SUBDIR += nc
