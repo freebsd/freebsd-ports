@@ -54,6 +54,7 @@
     SUBDIR += bugbuddy
     SUBDIR += bugzilla
     SUBDIR += c2lib
+    SUBDIR += c2man
     SUBDIR += c4
     SUBDIR += c_c++_reference
     SUBDIR += camlp4
