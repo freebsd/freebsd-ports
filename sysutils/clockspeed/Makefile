@@ -17,6 +17,7 @@ MAINTAINER=	lioux@FreeBSD.org
 
 LIB_DEPENDS=	tai.1:${PORTSDIR}/devel/libtai
 
+ONLY_FOR_ARCHS=	i386
 ALL_TARGET=	it
 USE_REINPLACE=	yes
 INSTALL_TARGET=	setup check
