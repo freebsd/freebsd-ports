@@ -3,12 +3,12 @@
 # Date created:         2 Oct 1994
 # Whom:                 swallace
 #
-# $Id: Makefile,v 1.29 1996/12/20 23:46:22 ache Exp $
+# $Id: Makefile,v 1.30 1997/11/26 02:05:15 jseger Exp $
 #
 
 DISTNAME=       tracker-5.3
 CATEGORIES=     audio
-MASTER_SITES=   ftp://ftp.planix.com/pub/misc/
+MASTER_SITES=   ftp://ftp.uni-trier.de/pub/unix/audio/tracker/
 EXTRACT_SUFX=   .tgz
 
 MAINTAINER=     ache@FreeBSD.ORG
