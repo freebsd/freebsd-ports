@@ -109,6 +109,10 @@ lib/%%PYTHON_VERSION%%/site-packages/OpenGL/Tk/freebsd%%OSMAJOR%%-tk8.3/Togl.so
 lib/%%PYTHON_VERSION%%/site-packages/OpenGL/Tk/freebsd%%OSMAJOR%%-tk8.3/pkgIndex.tcl
 lib/%%PYTHON_VERSION%%/site-packages/OpenGL/__init__.py
 lib/%%PYTHON_VERSION%%/site-packages/OpenGL/__init__.pyc
+lib/%%PYTHON_VERSION%%/site-packages/OpenGL/doc/license.txt
+lib/%%PYTHON_VERSION%%/site-packages/OpenGL/doc/readme.txt
+lib/%%PYTHON_VERSION%%/site-packages/OpenGL/doc/releasenotes.txt
+lib/%%PYTHON_VERSION%%/site-packages/OpenGL/doc/todo.txt
 lib/%%PYTHON_VERSION%%/site-packages/OpenGL/dynload/__init__.py
 lib/%%PYTHON_VERSION%%/site-packages/OpenGL/dynload/__init__.pyc
 lib/%%PYTHON_VERSION%%/site-packages/OpenGL/dynload/freebsd%%OSMAJOR%%/_glu.so
@@ -120,6 +124,7 @@ lib/%%PYTHON_VERSION%%/site-packages/OpenGL/dynload/freebsd%%OSMAJOR%%/opengluti
 lib/%%PYTHON_VERSION%%/site-packages/OpenGL/dynload/freebsd%%OSMAJOR%%/openglutil_num.so
 @dirrm lib/%%PYTHON_VERSION%%/site-packages/OpenGL/dynload/freebsd%%OSMAJOR%%
 @dirrm lib/%%PYTHON_VERSION%%/site-packages/OpenGL/dynload
+@dirrm lib/%%PYTHON_VERSION%%/site-packages/OpenGL/doc
 @dirrm lib/%%PYTHON_VERSION%%/site-packages/OpenGL/Tk/freebsd%%OSMAJOR%%-tk8.3
 @dirrm lib/%%PYTHON_VERSION%%/site-packages/OpenGL/Tk
 @dirrm lib/%%PYTHON_VERSION%%/site-packages/OpenGL/GLUT
