@@ -19,7 +19,7 @@ All ports committers are allowed to commit to this file.
 
 GTK_DISABLE_DEPRECATED
 GDK_DISABLE_DEPRECATED
-GLIB_DISABLE_DEPRECATED
+G_DISABLE_DEPRECATED
 
 	The temporary solution is to either patch your port's Makefiles to,
 	or use an in-place regular expression to remove these macros.  The
