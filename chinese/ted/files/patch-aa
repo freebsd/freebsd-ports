@@ -1,6 +1,6 @@
---- Makefile.orig	Wed Jul 29 10:19:03 1998
-+++ Makefile	Fri Aug 14 18:29:35 1998
-@@ -1,14 +1,14 @@
+--- Makefile.orig	Thu Aug 12 09:53:41 1999
++++ Makefile	Sat Oct  9 23:45:22 1999
+@@ -1,15 +1,15 @@
 -CHINESE=0
 -TEDDIR=/usr/local/lib/Ted
 +CHINESE=1
@@ -16,29 +16,30 @@
  ###### HP-UX's ansi cc ####
 -CC=cc -Ae
 -LDFLAGS=-L/usr/lib/X11R5
--XINC=
 +#CC=cc -Ae
 +#LDFLAGS=-L/usr/lib/X11R5
+ #LDFLAGS=-L/usr/lib/X11R6
+-XINC=
 +#XINC=
  ###########################
  ########## IRIX ############
  #CC=cc -cckr
-@@ -30,20 +30,20 @@
+@@ -31,20 +31,20 @@
  #CC=cc
  #XINC=-I/usr/openwin/include
  #LDFLAGS= -L/usr/openwin/lib -lsocket
--CC=gcc
+-CC=cc
 -XINC=-I/usr/X11R6.3/include
 -LDFLAGS= -L/usr/X11R6.3/lib -lsocket
 -SUNKBD=-DSUNKBD
-+#CC=gcc
++#CC=cc
 +#XINC=-I/usr/X11R6.3/include
 +#LDFLAGS= -L/usr/X11R6.3/lib -lsocket
 +#SUNKBD=-DSUNKBD
  ###########################
  
 -CFLAGS = -O -DCHINESE=$(CHINESE) $(XINC) $(SUNKBD) -DTEDDIR=\"$(TEDDIR)\"
-+CFLAGS += -DCHINESE=$(CHINESE) $(XINC) $(SUNKBD) -DTEDDIR=\"$(TEDDIR)\"
++CFLAGS = -DCHINESE=$(CHINESE) $(XINC) $(SUNKBD) -DTEDDIR=\"$(TEDDIR)\"
  #CFLAGS = -g -DCHINESE=$(CHINESE) $(XINC) -DDEBUG $(SUNKBD) -DTEDDIR=\"$(TEDDIR)\"
  #CFLAGS = -g -DCHINESE=$(CHINESE) $(XINC) $(SUNKBD) -DTEDDIR=\"$(TEDDIR)\"
  
@@ -50,14 +51,14 @@
 +all:	ted tedrc #ref ctags
  ted:	$(OBJS)
  	$(CC) $(OBJS) -o $@ $(LDFLAGS) -lX11
- #	$(CC) $(OBJS) -o $@ $(LDFLAGS) -lX11 -lefence
-@@ -58,11 +58,17 @@
+ #	$(CC) $(OBJS) -o $@ $(LDFLAGS) -lXmu -lX11 -lefence
+@@ -59,11 +59,18 @@
  	$(CC) $(CFLAGS) ctags.c -o $@
  	strip $@
  install:
 -	cp ted ref ctags /usr/local/bin
 +#	cp ted ref ctags /usr/local/bin
-+	install -c -s -o bin -g bin -m 0755 ted /usr/X11R6/bin
++	install -c -s -o root -g wheel -m 0555 ted /usr/X11R6/bin
  	if [ ! -d $(TEDDIR) ]; then mkdir $(TEDDIR); fi
 -	cp tedrc tedrc.vi tedrc.grep ted.help tedrc.filevisit $(TEDDIR)
 -cli_xcin.o:
@@ -65,11 +66,12 @@
 +#	cp tedrc tedrc.vi tedrc.grep ted.help tedrc.filevisit $(TEDDIR)
 +#cli_xcin.o:
 +#	ln -s ../big5-pack/xcin/cli_xcin.o .
-+	install -c -o bin -g bin -m 0444 tedrc $(TEDDIR)
-+	install -c -o bin -g bin -m 0444 tedrc.filevisit $(TEDDIR)
-+	install -c -o bin -g bin -m 0444 tedrc.grep $(TEDDIR)
-+	install -c -o bin -g bin -m 0444 tedrc.vi $(TEDDIR)
-+	install -c -o bin -g bin -m 0444 ted.help $(TEDDIR)
++	install -c -o root -g wheel -m 0444 tedrc $(TEDDIR)
++	install -c -o root -g wheel -m 0444 tedrc.filevisit $(TEDDIR)
++	install -c -o root -g wheel -m 0444 tedrc.grep $(TEDDIR)
++	install -c -o root -g wheel -m 0444 tedrc.vi $(TEDDIR)
++	install -c -o root -g wheel -m 0444 ted.help $(TEDDIR)
++
  clean:
  	rm -f $(OBJS) ted core *~ *_
  clb5:
