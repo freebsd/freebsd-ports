@@ -516,6 +516,7 @@
     SUBDIR += p5-Algorithm-Networksort
     SUBDIR += p5-Algorithm-Numerical-Shuffle
     SUBDIR += p5-Algorithm-Permute
+    SUBDIR += p5-Algorithm-SVM
     SUBDIR += p5-Alias
     SUBDIR += p5-App-Info
     SUBDIR += p5-AppConfig
