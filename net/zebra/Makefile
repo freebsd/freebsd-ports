@@ -3,18 +3,20 @@
 # Date created:		So  31 Mai 1998 11:00:30 CEST
 # Whom:			Andreas Klemm <andreas@klemm.gtn.com>
 #
-# $Id: Makefile,v 1.4 1998/06/03 06:32:57 andreas Exp $
+# $Id: Makefile,v 1.5 1998/06/04 17:03:12 itojun Exp $
 #
 
 DISTNAME=	zebra-980604
 CATEGORIES=	net
 MASTER_SITES=	ftp://ftp.zebra.org/pub/zebra/
-# you might need debugging, it's a developer release !
-#CFLAGS+=	-g
 
 MAINTAINER=	andreas@FreeBSD.org
 
+BROKEN=		package
+
+# you might need debugging, it's a developer release !
+#CFLAGS+=	-g
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS+=--sysconfdir=${PREFIX}/etc/zebra
+CONFIGURE_ARGS=--sysconfdir=${PREFIX}/etc/zebra
 
 .include <bsd.port.mk>
