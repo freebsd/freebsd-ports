@@ -1,9 +1,9 @@
---- makefile.in.orig	Thu Aug 16 02:09:52 2001
-+++ makefile.in	Wed Oct 10 08:46:54 2001
-@@ -387,22 +387,19 @@
- 		fi ; \
- 		)'
- 	@-rm -f $(HELPDIR)/help_files.sed
+--- makefile.in.orig	Wed Jan  2 04:30:08 2002
++++ makefile.in	Fri Mar  1 19:56:04 2002
+@@ -350,22 +350,19 @@
+ 		if test "$(COMPRESS_PROG)" != "" ; then \
+ 			(cd $(HELPDIR) && $(COMPRESS_PROG) $$files ) \
+ 		fi'
 -	@echo Updating $(libdir)/lynx.cfg
 -	$(SHELL) -c 'if test -f $(LIBDIR)/lynx.cfg ; then \
 -		mv $(LIBDIR)/lynx.cfg $(LIBDIR)/lynx.tmp ; \
@@ -29,7 +29,7 @@
  
  LYHelp.h : help_files.sed LYHelp.hin
  	@echo Creating $@
-@@ -424,8 +421,7 @@
+@@ -387,8 +384,7 @@
  	$(SHELL) -c '$(srcdir)/cfg_defs.sh $(srcdir)'
  
  install-cfg : $(LIBDIR)

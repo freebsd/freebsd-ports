@@ -34,11 +34,13 @@ share/doc/lynx/test/TestComment.html
 share/doc/lynx/test/c1.html
 share/doc/lynx/test/iso8859-1.html
 share/doc/lynx/test/iso88592.html
+share/doc/lynx/test/quickbrown.html
 share/doc/lynx/test/raw8bit.html
 share/doc/lynx/test/sgml.html
 share/doc/lynx/test/spaces.html
 share/doc/lynx/test/tabtest.html
 share/doc/lynx/test/unicode.html
+share/doc/lynx/test/utf-8-demo.html
 share/locale/cs/LC_MESSAGES/lynx.mo
 share/locale/da/LC_MESSAGES/lynx.mo
 share/locale/de/LC_MESSAGES/lynx.mo
