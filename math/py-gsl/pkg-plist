@@ -1,13 +1,16 @@
 @cwd %%LOCALBASE%%
 %%PYTHON_SITELIBDIR%%/pygsl/__init__.py
 %%PYTHON_SITELIBDIR%%/pygsl/__init__.pyc
+%%PYTHON_SITELIBDIR%%/pygsl/__init__.pyo
 %%PYTHON_SITELIBDIR%%/pygsl/_rng.so
 %%PYTHON_SITELIBDIR%%/pygsl/const.so
 %%PYTHON_SITELIBDIR%%/pygsl/errors.py
 %%PYTHON_SITELIBDIR%%/pygsl/errors.pyc
+%%PYTHON_SITELIBDIR%%/pygsl/errors.pyo
 %%PYTHON_SITELIBDIR%%/pygsl/ieee.so
 %%PYTHON_SITELIBDIR%%/pygsl/init.so
 %%PYTHON_SITELIBDIR%%/pygsl/rng.py
 %%PYTHON_SITELIBDIR%%/pygsl/rng.pyc
+%%PYTHON_SITELIBDIR%%/pygsl/rng.pyo
 %%PYTHON_SITELIBDIR%%/pygsl/sf.so
 @dirrm %%PYTHON_SITELIBDIR%%/pygsl

@@ -1,5 +1,6 @@
 lib/%%PYTHON_VERSION%%/site-packages/wizard.py
 lib/%%PYTHON_VERSION%%/site-packages/wizard.pyc
+lib/%%PYTHON_VERSION%%/site-packages/wizard.pyo
 %%PORTDOCS%%share/doc/wizard/Makefile
 %%PORTDOCS%%share/doc/wizard/libwizard.tex
 %%PORTDOCS%%share/doc/wizard/wizard.css

@@ -6,6 +6,7 @@ include/%%PYTHON_VERSION%%/CXX/Objects.hxx
 @dirrm include/%%PYTHON_VERSION%%/CXX
 lib/%%PYTHON_VERSION%%/site-packages/CXX/__init__.py
 lib/%%PYTHON_VERSION%%/site-packages/CXX/__init__.pyc
+lib/%%PYTHON_VERSION%%/site-packages/CXX/__init__.pyo
 @dirrm lib/%%PYTHON_VERSION%%/site-packages/CXX
 share/%%PYTHON_VERSION%%/CXX/IndirectPythonInterface.cxx
 share/%%PYTHON_VERSION%%/CXX/cxx_extensions.cxx

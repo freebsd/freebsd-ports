@@ -1,5 +1,6 @@
 lib/%%PYTHON_VERSION%%/site-packages/log4py.py
 lib/%%PYTHON_VERSION%%/site-packages/log4py.pyc
+lib/%%PYTHON_VERSION%%/site-packages/log4py.pyo
 %%PORTDOCS%%share/doc/log4py/AUTHORS
 %%PORTDOCS%%share/doc/log4py/COPYING
 %%PORTDOCS%%share/doc/log4py/ChangeLog

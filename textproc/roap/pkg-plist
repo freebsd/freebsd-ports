@@ -1,14 +1,19 @@
 bin/roap
 lib/%%PYTHON_VERSION%%/site-packages/roaplib/__init__.py
 lib/%%PYTHON_VERSION%%/site-packages/roaplib/__init__.pyc
+lib/%%PYTHON_VERSION%%/site-packages/roaplib/__init__.pyo
 lib/%%PYTHON_VERSION%%/site-packages/roaplib/datasource.py
 lib/%%PYTHON_VERSION%%/site-packages/roaplib/datasource.pyc
+lib/%%PYTHON_VERSION%%/site-packages/roaplib/datasource.pyo
 lib/%%PYTHON_VERSION%%/site-packages/roaplib/generate.py
 lib/%%PYTHON_VERSION%%/site-packages/roaplib/generate.pyc
+lib/%%PYTHON_VERSION%%/site-packages/roaplib/generate.pyo
 lib/%%PYTHON_VERSION%%/site-packages/roaplib/matchobject.py
 lib/%%PYTHON_VERSION%%/site-packages/roaplib/matchobject.pyc
+lib/%%PYTHON_VERSION%%/site-packages/roaplib/matchobject.pyo
 lib/%%PYTHON_VERSION%%/site-packages/roaplib/roapxml.py
 lib/%%PYTHON_VERSION%%/site-packages/roaplib/roapxml.pyc
+lib/%%PYTHON_VERSION%%/site-packages/roaplib/roapxml.pyo
 @dirrm lib/%%PYTHON_VERSION%%/site-packages/roaplib
 %%PORTDOCS%%share/doc/roap/README
 %%PORTDOCS%%share/doc/roap/README.ja
