@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	fltk
-PORTVERSION= 	1.0.7
+PORTVERSION= 	1.0.9
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	ftp://ftp.fltk.org/pub/fltk/${VERSION}/ \
 		ftp://ftp.chg.ru/pub/X11/fltk/${VERSION}/ \
@@ -20,7 +20,7 @@ MAINTAINER=	dima@chg.ru
 
 LIB_DEPENDS=	GL.14:${PORTSDIR}/graphics/Mesa3
 
-VERSION=	1.0.7
+VERSION=	1.0.9
 USE_BZIP2=	yes
 INSTALLS_SHLIB=	yes
 GNU_CONFIGURE=	yes
@@ -28,11 +28,6 @@ CONFIGURE_ARGS+=	--enable-shared
 WRKSRC=		${WRKDIR}/${PKGNAME}
 USE_X_PREFIX=	yes
 MAN1=		fluid.1
-
-.include <bsd.port.pre.mk>
-.if (${PORTOBJFORMAT} == "aout")
-BROKEN=	requires ELF library format
-.endif
 
 post-install:
 	@ ${INSTALL_MAN} ${WRKSRC}/documentation/fluid.1 \
@@ -47,4 +42,4 @@ post-install:
 		${PREFIX}/share/doc/fltk
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

@@ -1,6 +1,6 @@
---- configure.orig	Sat May  8 08:04:02 1999
-+++ configure	Sat May  8 08:04:31 1999
-@@ -833,13 +833,13 @@
+--- configure.orig	Mon Jul  3 17:10:35 2000
++++ configure	Mon Jul  3 17:12:16 2000
+@@ -837,13 +837,13 @@
    CFLAGS="$ac_save_CFLAGS"
  elif test $ac_cv_prog_cc_g = yes; then
    if test "$GCC" = yes; then
@@ -16,7 +16,7 @@
    else
      CFLAGS=
    fi
-@@ -976,13 +976,13 @@
+@@ -980,13 +980,13 @@
    CXXFLAGS="$ac_save_CXXFLAGS"
  elif test $ac_cv_prog_cxx_g = yes; then
    if test "$GXX" = yes; then
@@ -32,25 +32,14 @@
    else
      CXXFLAGS=
    fi
-@@ -2701,8 +2701,8 @@
+@@ -2691,8 +2691,8 @@
      CFLAGS="-Wall $CFLAGS"
      CXXFLAGS="-Wall -Wno-return-type $CXXFLAGS"
      if test -z "$DEBUGFLAG"; then
--        CFLAGS="-O2 $CFLAGS"
--        CXXFLAGS="-O2 $CXXFLAGS"
-+        CFLAGS="$CFLAGS"
-+        CXXFLAGS="$CXXFLAGS"
+-        CFLAGS="-O2 -fforce-mem -fforce-addr -fcaller-saves $CFLAGS"
+-        CXXFLAGS="-O2 -fforce-mem -fforce-addr -fcaller-saves $CXXFLAGS"
++        CFLAGS="-fforce-mem -fforce-addr -fcaller-saves $CFLAGS"
++        CXXFLAGS="-fforce-mem -fforce-addr -fcaller-saves $CXXFLAGS"
      fi
      if test $PICFLAG = 1; then
      	CFLAGS="-fPIC $CFLAGS"
-@@ -2729,8 +2729,8 @@
-         	CXXFLAGS="+w +pp $CXXFLAGS"
- 	    fi
- 	    if test -z "$DEBUGFLAG"; then
--        	CFLAGS="-O2 $CFLAGS"
--        	CXXFLAGS="-O2 $CXXFLAGS"
-+        	CFLAGS="$CFLAGS"
-+        	CXXFLAGS="$CXXFLAGS"
- 	    fi
- 	    ;;
- 	HP-UX*)
