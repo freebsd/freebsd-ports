@@ -6,14 +6,14 @@
 #
 
 PORTNAME=	lwm
-PORTVERSION= 	0.06
+PORTVERSION= 	1.00
 CATEGORIES=	x11-wm
-MASTER_SITES=	http://users.ch.genedata.com/~enh/
+MASTER_SITES=	http://users.ch.genedata.com/~enh/lwm/
 DISTNAME=	${PORTNAME}
-EXTRACT_SUFX=	.tar.Z
 
-MAINTAINER=	hjh@photino.com
+MAINTAINER=	ports@FreeBSD.org
 
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 USE_IMAKE=	yes
 NO_INSTALL_MANPAGES=	yes
 
