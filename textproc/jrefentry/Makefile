@@ -7,7 +7,7 @@
 
 PORTNAME=	jrefentry
 PORTVERSION=	1.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	textproc
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	docbook
@@ -15,7 +15,7 @@ MASTER_SITE_SUBDIR=	docbook
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	DocBook XML JRefEntry DTD
 
-RUN_DEPENDS=	${LOCALBASE}/share/xml/docbook/catalog:${PORTSDIR}/textproc/docbook-xml
+RUN_DEPENDS=	${LOCALBASE}/share/xml/docbook/4.2/docbook.cat:${PORTSDIR}/textproc/docbook-xml
 
 NO_BUILD=	yes
 
