@@ -1,11 +1,9 @@
     This program aims to view many variously formated pictures
 easily. So far, it can treat below formats:
 
-  - archivers: bz2 exe dri gz libarc(*) misc pak tar
-  - loaders: ald bmp grp jpeg lfg mag pic p2 png pms pnm xmb xpm
+  - archivers: bz2 dri exe gz libarc misc pak tar
+  - loaders: ald bmp grp jpeg lfg mag p2 pic pms png pnm xmb xpm
   - savers: jpeg pms png
-
-    (*) libarc plug-in requires libarc library, so default is no.
 
     It has been implemented plug-in mechanism so that each user
 can choose each format support linked in main program or separated
