@@ -1,6 +1,6 @@
---- Makefile.orig	Wed Feb  9 09:59:09 2000
-+++ Makefile	Wed Feb  9 11:12:59 2000
-@@ -57,17 +57,18 @@
+--- Makefile.orig	Fri Aug 18 07:35:46 2000
++++ Makefile	Wed Jun  6 10:31:05 2001
+@@ -61,17 +61,17 @@
  #OPTIONS += -DHAVE_GETOPT_H
  
  # You may need to touch PREFIX, CC and CFLAGS.
@@ -17,16 +17,15 @@
  
  # Should be OK for GNU gcc.
 -CC      = gcc
--CFLAGS  = -O2 -Wall $(OPTIONS)
+-CFLAGS  = -O2 -Wall
 -LDFLAGS = -s
 +#CC      = gcc
-+#CFLAGS  = -O2 -Wall $(OPTIONS)
-+CFLAGS  += $(OPTIONS)
++#CFLAGS  = -O2 -Wall
 +#LDFLAGS = -s
  
  # For using BIND resolver instead of system resolver.
  #LIBS    += -lresolv	# Really old Linux has this.
-@@ -96,7 +97,7 @@
+@@ -100,7 +100,7 @@
  	$(RM) tproxy
  
  install:	tproxy

@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	transproxy
-PORTVERSION=	1.2
+PORTVERSION=	1.4
 CATEGORIES=	www
 MASTER_SITES=	ftp://ftp.nlc.net.au/pub/unix/transproxy/
 EXTRACT_SUFX=	.tgz
