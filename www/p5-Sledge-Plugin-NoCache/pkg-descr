@@ -1,0 +1,4 @@
+Sledge::Plugin::NoCache is a Sledge plug-in that outputs HTTP no-cache
+headers.
+
+WWW:	http://sl.edge.jp/
