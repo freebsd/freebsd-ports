@@ -1,0 +1,6 @@
+Imagesort is a flexible utility for managing a large number of images.
+Via a configuration file (~/.imagesortrc) various commands are bound
+to keys allowing you to quickly process your images while you flick
+throught them. Documentation can be found in share/doc/imagesort.
+
+WWW: http://sammy.net/~sammy/hacks/
