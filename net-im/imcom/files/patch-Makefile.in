@@ -1,0 +1,40 @@
+--- Makefile.in.orig	Thu Apr 10 11:11:05 2003
++++ Makefile.in	Thu Apr 10 11:18:55 2003
+@@ -2,21 +2,29 @@
+ exec_prefix = @exec_prefix@
+ bindir = @bindir@
+ datadir = @datadir@
++docdir = @datadir@/doc
+ mandir = @mandir@
+ 
++pythonprograms=	CLI.py LogHandler.py AccountCreator.py
++pythondata=	AutoStatus.py CICommands.py Colors.py DTCPSocketManager.py \
++		GUI.py GUI2.py GUIbackend.py IHTTPServer.py IMCom.py JIDLink.py \
++		JabberHandler.py JabberTags.py Preferences.py SocketWrapper.py \
++		VCardTags.py test.py testuni.py 
++
+ all:
+-	chmod +x imcom CLI.py LogHandler.py AccountCreator.py
+ 
+ install: all
+ 	mkdir -p ${datadir}/imcom
+-	mkdir -p ${datadir}/imcom/docs
+-	cp *.py ${datadir}/imcom
+-	mkdir -p ${bindir}
+-	cp imcom ${bindir}
+-	cp docs/*.html ${datadir}/imcom/docs
+-	cp CONTRIBUTORS LICENSE README README.autostatus TODO WHATSNEW ${datadir}/imcom/docs
++	${BSD_INSTALL_DATA} ${pythondata} ${datadir}/imcom
++	${BSD_INSTALL_SCRIPT} ${pythonprograms} ${datadir}/imcom
++	${BSD_INSTALL_SCRIPT} imcom ${bindir}/
++.if !defined(NOPORTDOCS)
++	mkdir -p ${docdir}/imcom/
++	${BSD_INSTALL_DATA} docs/*.html ${docdir}/imcom/
++	${BSD_INSTALL_DATA} CONTRIBUTORS LICENSE README README.autostatus TODO WHATSNEW ${docdir}/imcom
++.endif
+ 	mkdir -p ${mandir}/man1/
+-	cp docs/imcom.1 ${mandir}/man1/imcom.1
++	${BSD_INSTALL_MAN} docs/imcom.1 ${mandir}/man1/imcom.1
+ 
+ install-docs: install
+ 
