@@ -7,7 +7,7 @@
 
 PORTNAME=	p5-MIME-Tools
 PORTVERSION=	5.411a
-PORTREVISION=	5
+PORTREVISION=	6
 PORTEPOCH=	2
 CATEGORIES=	mail perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
@@ -29,6 +29,7 @@ WRKSRC=		${WRKDIR}/MIME-tools-5.411
 MAN3=	MIME::Body.3 \
 	MIME::Decoder.3	\
 	MIME::Decoder::Base64.3 \
+	MIME::Decoder::BinHex.3 \
 	MIME::Decoder::Binary.3 \
 	MIME::Decoder::Gzip64.3	\
 	MIME::Decoder::NBit.3 \
@@ -50,10 +51,7 @@ MAN3=	MIME::Body.3 \
 
 .include <bsd.port.pre.mk>
 
-
 post-patch:
-	@${RM} -f ${WRKSRC}/lib/MIME/Field/ParamVal.pm.orig \
-		${WRKSRC}/lib/MIME/Parser.pm.orig \
-		${WRKSRC}/lib/MIME/Words.pm.orig
+	@${FIND} ${WRKSRC} -name "*.orig" | ${XARGS} ${RM} -f
 
 .include <bsd.port.post.mk>
