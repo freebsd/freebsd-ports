@@ -6,21 +6,20 @@
 #
 
 PORTNAME=	roottail
-PORTVERSION=	0.0.4b
+PORTVERSION=	0.0.6
 CATEGORIES=	sysutils
-MASTER_SITES=	ftp://ftp.hypertek.net/misc/ \
-		http://www.fxp.org/~jedgar/distfiles/
-DISTNAME=	rt-0.0.4B
-EXTRACT_SUFX=	.tgz
+MASTER_SITES=	http://www.goof.com/pcg/marc/data/ \
+		ftp://www.goof.com/pub/pcg/marc/
+DISTNAME=	root-tail-0.0.6
 
-MAINTAINER=	jedgar@fxp.org
+MAINTAINER=	jedgar@FreeBSD.org
 
-MAN1=		rt.1
+MAN1=		root-tail.1
 USE_IMAKE=	yes
 MANCOMPRESSED=	no
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/rt ${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/rt.1 ${PREFIX}/man/man1
+	${INSTALL_PROGRAM} ${WRKSRC}/root-tail ${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/root-tail.man ${PREFIX}/man/man1/root-tail.1
 
 .include <bsd.port.mk>
