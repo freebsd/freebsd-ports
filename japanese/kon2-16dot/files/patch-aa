@@ -377,8 +377,8 @@ diff -c -r kon.cfg kon.cfg
   
   # Startup command definition (usually font loading commands are specified)
 + bdf-zcat:Startup
-+ 	gzip -cd /usr/local/fonts/k14.bdf.gz | /usr/local/bin/fld -t bdf -n
-+ 	gzip -cd /usr/local/fonts/7x14rk.bdf.gz | /usr/local/bin/fld -t bdf -n
++ 	gzip -cd /usr/local/lib/fonts/k14.bdf.gz | /usr/local/bin/fld -t bdf -n
++ 	gzip -cd /usr/local/lib/fonts/7x14rk.bdf.gz | /usr/local/bin/fld -t bdf -n
   minix:
   	/usr/bin/fld.minix -n /usr/share/fonts/publicfont.ank
   	/usr/bin/fld.minix -n /usr/share/fonts/publicfont.k14
