@@ -8,7 +8,7 @@
 PORTNAME=	docbook-xml
 PORTVERSION= 	4.0
 CATEGORIES=	textproc
-MASTER_SITES=	http://www.oasis-open.org/docbook/xml/4.0/
+MASTER_SITES=	http://www.docbook.org/xml/4.0/
 DISTNAME=	docbkx40
 
 MAINTAINER=	kuriyama@FreeBSD.org
