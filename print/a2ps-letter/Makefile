@@ -5,11 +5,12 @@
 # $FreeBSD$
 #
 
-PORTNAME=	a2ps-${PAPERSIZE}
+PORTNAME=	a2ps
 PORTVERSION=	4.12
 CATEGORIES=	print
 MASTER_SITES=	http://people.FreeBSD.org/~chuckr/ \
 		ftp://ftp.enst.fr/pub/unix/a2ps/
+PKGNAMESUFFIX=	-${PAPERSIZE}
 DISTFILES=	a2ps-${PORTVERSION}${EXTRACT_SUFX} sheets.map
 
 MAINTAINER=	chuckr@FreeBSD.org
