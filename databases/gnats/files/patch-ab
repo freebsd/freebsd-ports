@@ -1,5 +1,23 @@
---- gnats/Makefile.in.orig	Tue Sep 21 16:18:39 1999
-+++ gnats/Makefile.in	Fri Jan 21 10:06:19 2000
+--- gnats/Makefile.in.orig	Tue May  8 20:23:36 2001
++++ gnats/Makefile.in	Tue Aug 20 19:17:44 2002
+@@ -122,7 +122,7 @@
+ DIFFOPT = @DIFFOPT@
+ 
+ # These are set by autoconf.
+-DEFS = @DEFS@
++DEFS = @DEFS@ -DHAVE_PAM
+ LIBS = @LIBS@
+ KRBINCLUDE = @KRBINCLUDE@
+ 
+@@ -311,7 +311,7 @@
+ 
+ gnatsd: gnatsd.o cmds.o regex.o libgnats.a
+ 	$(CC) $(LDFLAGS) -o $@ gnatsd.o cmds.o regex.o db_conf.o \
+-		libgnats.a $(LIBRX) $(LIBIBERTY) $(LIBS)
++		libgnats.a $(LIBRX) $(LIBIBERTY) $(LIBS) -lpam
+ 
+ queue-pr: queue-pr.o libgnats.a
+ 	$(CC) $(LDFLAGS) -o $@ queue-pr.o \
 @@ -465,7 +465,7 @@
  
  getdate.c: getdate.y
