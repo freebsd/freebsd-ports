@@ -7,6 +7,7 @@
 
 PORTNAME=	PyGreSQL
 PORTVERSION=	3.1
+PORTREVISION=	1
 CATEGORIES=	databases python
 MASTER_SITES=	ftp://ftp.druid.net/pub/distrib/
 PKGNAMEPREFIX=	py-
