@@ -3,16 +3,14 @@
 %%PORTDOCS%%share/doc/nag/CREDITS
 %%PORTDOCS%%share/doc/nag/INSTALL
 %%PORTDOCS%%share/doc/nag/README
+%%PORTDOCS%%share/doc/nag/RELEASE_NOTES
 %%PORTDOCS%%share/doc/nag/TODO
 %%NAGDIR%%/config/conf.php
 %%NAGDIR%%/config/conf.php.dist
-%%NAGDIR%%/config/conf.php.dist.orig
 %%NAGDIR%%/config/html.php
 %%NAGDIR%%/config/html.php.dist
 %%NAGDIR%%/config/menu.php
 %%NAGDIR%%/config/menu.php.dist
-%%NAGDIR%%/config/motd.php
-%%NAGDIR%%/config/motd.php.dist
 %%NAGDIR%%/config/prefs.php
 %%NAGDIR%%/config/prefs.php.dist
 %%NAGDIR%%/graphics/add.gif
@@ -35,10 +33,12 @@
 %%NAGDIR%%/lib/constants.php
 %%NAGDIR%%/lib/version.php
 %%NAGDIR%%/list.php
+%%NAGDIR%%/locale/ar_SY/LC_MESSAGES/nag.mo
 %%NAGDIR%%/locale/bg_BG/LC_MESSAGES/nag.mo
 %%NAGDIR%%/locale/cs_CZ/LC_MESSAGES/nag.mo
 %%NAGDIR%%/locale/da_DK/LC_MESSAGES/nag.mo
 %%NAGDIR%%/locale/de_DE/LC_MESSAGES/nag.mo
+%%NAGDIR%%/locale/de_DE/help.xml
 %%NAGDIR%%/locale/el_GR/LC_MESSAGES/nag.mo
 %%NAGDIR%%/locale/en_US/help.xml
 %%NAGDIR%%/locale/es_ES/LC_MESSAGES/nag.mo
@@ -46,22 +46,28 @@
 %%NAGDIR%%/locale/fi_FI/help.xml
 %%NAGDIR%%/locale/fr_FR/LC_MESSAGES/nag.mo
 %%NAGDIR%%/locale/hu_HU/LC_MESSAGES/nag.mo
+%%NAGDIR%%/locale/hu_HU/help.xml
+%%NAGDIR%%/locale/id_ID/LC_MESSAGES/nag.mo
 %%NAGDIR%%/locale/it_IT/LC_MESSAGES/nag.mo
 %%NAGDIR%%/locale/ko_KR/LC_MESSAGES/nag.mo
 %%NAGDIR%%/locale/lt_LT/LC_MESSAGES/nag.mo
 %%NAGDIR%%/locale/nb_NO/LC_MESSAGES/nag.mo
 %%NAGDIR%%/locale/nl_NL/LC_MESSAGES/nag.mo
+%%NAGDIR%%/locale/nl_NL/help.xml
 %%NAGDIR%%/locale/nn_NO/LC_MESSAGES/nag.mo
 %%NAGDIR%%/locale/pt_BR/LC_MESSAGES/nag.mo
+%%NAGDIR%%/locale/ro_RO/LC_MESSAGES/nag.mo
 %%NAGDIR%%/locale/ru_RU/LC_MESSAGES/nag.mo
 %%NAGDIR%%/locale/ru_RU.KOI8-R/LC_MESSAGES/nag.mo
 %%NAGDIR%%/locale/sk_SK/LC_MESSAGES/nag.mo
+%%NAGDIR%%/locale/sk_SK/help.xml
 %%NAGDIR%%/locale/sv_SE/LC_MESSAGES/nag.mo
 %%NAGDIR%%/locale/zh_CN/LC_MESSAGES/nag.mo
 %%NAGDIR%%/locale/zh_TW/LC_MESSAGES/nag.mo
 %%NAGDIR%%/menu.php
 %%NAGDIR%%/po/Makefile
 %%NAGDIR%%/po/README
+%%NAGDIR%%/po/ar_SY.po
 %%NAGDIR%%/po/bg_BG.po
 %%NAGDIR%%/po/cs_CZ.po
 %%NAGDIR%%/po/da_DK.po
@@ -72,6 +78,7 @@
 %%NAGDIR%%/po/fi_FI.po
 %%NAGDIR%%/po/fr_FR.po
 %%NAGDIR%%/po/hu_HU.po
+%%NAGDIR%%/po/id_ID.po
 %%NAGDIR%%/po/it_IT.po
 %%NAGDIR%%/po/ko_KR.po
 %%NAGDIR%%/po/lt_LT.po
@@ -80,6 +87,7 @@
 %%NAGDIR%%/po/nl_NL.po
 %%NAGDIR%%/po/nn_NO.po
 %%NAGDIR%%/po/pt_BR.po
+%%NAGDIR%%/po/ro_RO.po
 %%NAGDIR%%/po/ru_RU.po
 %%NAGDIR%%/po/ru_RU.KOI8-R.po
 %%NAGDIR%%/po/sk_SK.po
@@ -90,7 +98,6 @@
 %%NAGDIR%%/po/xgettext.sh
 %%NAGDIR%%/prefs.php
 %%NAGDIR%%/scripts/drivers/nag_tasks.sql
-%%NAGDIR%%/scripts/drivers/nag_tasks.sql.orig
 %%NAGDIR%%/search.php
 %%NAGDIR%%/task.php
 %%NAGDIR%%/templates/common-footer.inc
@@ -124,6 +131,8 @@
 @dirrm %%NAGDIR%%/graphics
 @dirrm %%NAGDIR%%/lib/Driver
 @dirrm %%NAGDIR%%/lib
+@dirrm %%NAGDIR%%/locale/ar_SY/LC_MESSAGES
+@dirrm %%NAGDIR%%/locale/ar_SY
 @dirrm %%NAGDIR%%/locale/bg_BG/LC_MESSAGES
 @dirrm %%NAGDIR%%/locale/bg_BG
 @dirrm %%NAGDIR%%/locale/cs_CZ/LC_MESSAGES
@@ -143,6 +152,8 @@
 @dirrm %%NAGDIR%%/locale/fr_FR
 @dirrm %%NAGDIR%%/locale/hu_HU/LC_MESSAGES
 @dirrm %%NAGDIR%%/locale/hu_HU
+@dirrm %%NAGDIR%%/locale/id_ID/LC_MESSAGES
+@dirrm %%NAGDIR%%/locale/id_ID
 @dirrm %%NAGDIR%%/locale/it_IT/LC_MESSAGES
 @dirrm %%NAGDIR%%/locale/it_IT
 @dirrm %%NAGDIR%%/locale/ko_KR/LC_MESSAGES
@@ -157,6 +168,8 @@
 @dirrm %%NAGDIR%%/locale/nn_NO
 @dirrm %%NAGDIR%%/locale/pt_BR/LC_MESSAGES
 @dirrm %%NAGDIR%%/locale/pt_BR
+@dirrm %%NAGDIR%%/locale/ro_RO/LC_MESSAGES
+@dirrm %%NAGDIR%%/locale/ro_RO
 @dirrm %%NAGDIR%%/locale/ru_RU/LC_MESSAGES
 @dirrm %%NAGDIR%%/locale/ru_RU
 @dirrm %%NAGDIR%%/locale/ru_RU.KOI8-R/LC_MESSAGES
