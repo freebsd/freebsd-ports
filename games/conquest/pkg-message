@@ -1,0 +1,16 @@
+Before Conquest can be run it must be configured. First copy the sample
+configuration into place:
+
+# cp etc/conquest/conqrule.sample etc/conquest/conqrule
+
+Then you can initialise and enable the game:
+
+# sbin/conqoper -C
+# sbin/conqoper -Ie -E
+
+Conqoper is documented in share/doc/conquest/README.
+
+Also a file for the in-game news must be created. This package includes a
+sample news file you can copy into place:
+
+# cp share/conquest/conqnews.doc.sample share/conquest/conqnews.doc
