@@ -8,7 +8,7 @@
 PORTNAME=	icod
 PORTVERSION=	1.0
 CATEGORIES=	graphics
-MASTER_SITES=	http://www.linuxberg.com/files/x11/graphics/
+MASTER_SITES=	http://linux.tucows.com/files/x11/graphics/
 DISTNAME=	${PORTNAME}.${PORTVERSION}
 
 MAINTAINER=	jedgar@fxp.org
