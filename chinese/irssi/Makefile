@@ -18,6 +18,8 @@ CATEGORIES=	chinese
 
 MAINTAINER=	vanilla@FreeBSD.org
 
+BROKEN=		"Need to upgrade patch files"
+
 .include "${MASTERDIR}/Makefile"
 
 PKGNAMEPREFIX:= ${PKGNAMEPREFIX}tw-
