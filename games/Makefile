@@ -117,6 +117,7 @@
     SUBDIR += ptkei
     SUBDIR += pysol
     SUBDIR += qcc
+    SUBDIR += qix
     SUBDIR += qstat
     SUBDIR += quakeforge
     SUBDIR += quakeserver
