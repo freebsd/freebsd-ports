@@ -4,13 +4,14 @@
 # Date created:				11th Feb 1995
 # Whom:					gpalmer
 #
-# $Id: Makefile,v 1.4 1999/01/06 20:58:06 obrien Exp $
+# $Id: Makefile,v 1.5 1999/01/06 21:27:02 obrien Exp $
 #
 
 DISTNAME=	tcpdump-3.4
 PKGNAME=	smbtcpdump-3.4
 CATEGORIES=	net security
-MASTER_SITES=	ftp://ftp.ee.lbl.gov/
+MASTER_SITES=	ftp://ftp.ee.lbl.gov/  \
+		ftp://ftp.uu.net/networking/ip/trace/tcpdump/
 EXTRACT_SUFX=	.tar.Z
 
 PATCH_SITES=	ftp://ftp.samba.org/pub/samba/tcpdump-smb/
