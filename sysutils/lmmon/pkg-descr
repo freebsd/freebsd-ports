@@ -11,7 +11,10 @@ Currently, the /dev/smb0 interface is only supported in FreeBSD
 /dev/io interface may work with many motherboards in FreeBSD
 3.x and some non-LM78/79 motherboards.
 
+In addition, lmmon support simple text output that can be easily
+used by external programs (e.g. UCD SNMP Daemon) for monitoring.
+
 WWW: http://www.fxp.org/~jedgar/
 
 - Chris D. Faulhaber
-jedgar@fxp.org
+ <jedgar@FreeBSD.org>
