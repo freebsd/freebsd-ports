@@ -610,6 +610,7 @@
     SUBDIR += zope-cmf
     SUBDIR += zope-cmf13
     SUBDIR += zope-cmfactionicons
+    SUBDIR += zope-cmfformcontroller
     SUBDIR += zope-cmfforum
     SUBDIR += zope-cmfphoto
     SUBDIR += zope-cmfphotoalbum

@@ -1,0 +1,20 @@
+To complete the installation of CMFFormController:
+
+- Restart Zope.  This may be done from the Zope Control Panel.
+
+With CMFQuickInstaller (optional)
+
+- Use the QuickInstaller tool to register CMFFormController in your portal
+  instance
+
+Without CMFQuickInstaller
+
+    - Create an ExternalMethod object inside your portal object with the
+      following data:
+    
+      Id: install_CMFFormController
+      Title: installs CMFFormController to this portal
+      Module Name: CMFFormController.Install
+      Function Name: install
+
+    - Run this newly created ExternalMethod by clicking on the test tab.
