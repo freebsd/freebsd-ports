@@ -9,8 +9,7 @@
 #       Program and compiler flags are finetuned to gcc 2.95/3.1.
 
 PORTNAME=	atlas
-PORTVERSION=	3.5.5
-PORTREVISION=	1
+PORTVERSION=	3.5.6
 CATEGORIES=	math
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	math-atlas
@@ -94,9 +93,9 @@ do-install:
 	@${LN} -sf ${i}.so.1 ${PREFIX}/lib/${i}.so
 .endfor
 .for i in ${ATLAS_LIBS1}
-	@${INSTALL_DATA} ${WRKSRC}/lib/${THREADED_ATLAS}/${i}.a       ${PREFIX}/lib/${i}thr.a
-	@${INSTALL_DATA} ${WRKSRC}/lib/${THREADED_ATLAS}/${i}.so.1    ${PREFIX}/lib/${i}thr.so.1
-	@${LN} -sf ${i}thr.so.1 ${PREFIX}/lib/${i}thr.so
+	@${INSTALL_DATA} ${WRKSRC}/lib/${THREADED_ATLAS}/${i}.a       ${PREFIX}/lib/${i}_r.a
+	@${INSTALL_DATA} ${WRKSRC}/lib/${THREADED_ATLAS}/${i}.so.1    ${PREFIX}/lib/${i}_r.so.1
+	@${LN} -sf ${i}_r.so.1 ${PREFIX}/lib/${i}_r.so
 .endfor
 .for i in ${ATLAS_LIBS2}
 	@${INSTALL_DATA} ${WRKSRC}/lib/${THREADED_ATLAS}/${i}.a       ${PREFIX}/lib
