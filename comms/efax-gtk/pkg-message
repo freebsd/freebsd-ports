@@ -1,0 +1,8 @@
+Before sending or receiving faxes, you will need to add users to the 'dialer'
+group.
+
+To be able to use efax-gtk as a virtual printer, go to the CUPS administration
+interface and add an entry for socket://localhost:9900/ so that all jobs sent
+will be queued in efax-gtk and made available for faxing.  For proper
+functioning, please ensure that efax-gtk is started and is listening for
+connections.
