@@ -1,0 +1,7 @@
+lib/postgresql/pltcl.so
+@unexec rmdir %D/lib/postgresql 2>/dev/null || true
+bin/pltcl_loadmod
+bin/pltcl_delmod
+bin/pltcl_listmod
+share/postgresql/unknown.pltcl
+@unexec rmdir %D/share/postgresql 2>/dev/null || true
