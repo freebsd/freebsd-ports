@@ -1,6 +1,14 @@
 --- Makefile.in.orig	Wed Dec 11 08:18:41 2002
-+++ Makefile.in	Tue Dec  2 21:13:48 2003
-@@ -261,6 +261,7 @@
++++ Makefile.in	Thu Dec 25 03:14:14 2003
+@@ -253,6 +253,7 @@
+ TIX_SCRIPTS = \
+     $(SRC_DIR)/library/pref/*.fsc \
+     $(SRC_DIR)/library/pref/*.csc \
++    $(SRC_DIR)/library/pref/WmDefault.tcl \
+     $(SRC_DIR)/library/*.tcl
+ 
+ all: $(TIX_LIB_FILE) $(TIX_EXE_FILE) @TIX_SAM_TARGETS@
+@@ -261,6 +262,7 @@
  	rm -f $(TIX_LIB_FILE)
  	@TIX_MAKE_LIB@
  	$(TIX_RANLIB) $(TIX_LIB_FILE)
@@ -8,7 +16,7 @@
  
  $(TCL_SAM_FILE): $(TCL_SAM_OBJS)
  	rm -f $(TCL_SAM_FILE)
-@@ -387,7 +388,7 @@
+@@ -387,7 +389,7 @@
  	$(CC) -c $(CC_SWITCHES) $(GENERIC_DIR)/tixImgXpm.c
  
  tixInit.o: $(GENERIC_DIR)/tixInit.c
