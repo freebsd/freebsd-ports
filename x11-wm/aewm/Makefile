@@ -27,6 +27,8 @@ USE_GMAKE=	yes
 USE_X_PREFIX=	yes
 USE_GNOMENG=	yes
 WANT_GNOME=	yes
+USE_REINPLACE=	yes
+REINPLACE_ARGS=	-i'' -E
 
 .include <bsd.port.pre.mk>
 .if ${HAVE_GNOME:Mgtk12}!=""
@@ -35,13 +37,13 @@ PKGNAMESUFFIX=	-gtk
 .endif
 
 do-patch:
-	${PERL} -pi -e 's:/etc/X11/aewm/aewmrc:${PREFIX}/etc/aewmrc:g' \
+	${REINPLACE_CMD} 's:/etc/X11/aewm/aewmrc:${PREFIX}/etc/aewmrc:g' \
 		${WRKSRC}/aewm.h
-	${PERL} -pi -e 's:\+make:\+gmake:g' ${WRKSRC}/Makefile
+	${REINPLACE_CMD} 's:\+make:\+gmake:g' ${WRKSRC}/Makefile
 .if ${HAVE_GNOME:Mgtk12}!=""
-	${PERL} -pi -e 's:gtk-config:${GTK_CONFIG}:g' \
+	${REINPLACE_CMD} 's:gtk-config:${GTK_CONFIG}:g' \
 		${WRKSRC}/clients/Makefile
-	${PERL} -pi -e 's:/etc/X11/aewm/clientsrc:${PREFIX}/etc/clientsrc:g' \
+	${REINPLACE_CMD} 's:/etc/X11/aewm/clientsrc:${PREFIX}/etc/clientsrc:g' \
 		${WRKSRC}/clients/lib/aeclients.h
 .endif
 
