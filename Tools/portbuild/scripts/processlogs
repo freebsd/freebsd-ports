@@ -191,7 +191,13 @@ if [ $# != 1 -o "x$1" != "x*.log" ]; then
       reason="arch"; tag="arch"
     elif grep -qE "is only for.*, and you are running" $1;  then
       reason="arch"; tag="arch"
+    elif grep -q "not a valid 64 bit base/index expression" $1;  then
+      reason="arch"; tag="arch"
+    elif grep -qE "relocation R_X86_64_32.*can not be used when making a shared object" $1;  then
+      reason="arch"; tag="arch"
     elif grep -q "relocation truncated to fit: " $1;  then
+      reason="arch"; tag="arch"
+    elif grep -qE "The target cpu, .*, is not currently supported." $1;  then
       reason="arch"; tag="arch"
     elif grep -q "This architecture seems to be neither big endian nor little endian" $1;  then
       reason="arch"; tag="arch"
