@@ -1,0 +1,11 @@
+--- scd/Makefile.in	Wed Dec  4 14:13:18 2002
++++ scd/Makefile.in.new	Wed Jan 29 19:46:49 2003
+@@ -138,7 +138,7 @@
+ AM_CPPFLAGS = -I$(top_srcdir)/common $(OPENSC_CFLAGS) $(LIBGCRYPT_CFLAGS) \
+ 	      $(KSBA_CFLAGS)
+ 
+-LDFLAGS = @LDFLAGS@ 
++LDFLAGS = @LDFLAGS@ $(INTLLIBS)
+ 
+ scdaemon_SOURCES = \
+ 	scdaemon.c scdaemon.h \
