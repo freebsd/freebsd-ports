@@ -1,5 +1,5 @@
---- system.mk.orig	Wed Apr  7 09:15:54 2004
-+++ system.mk	Tue May 25 16:54:31 2004
+--- system.mk.orig	Tue Jun  1 16:35:23 2004
++++ system.mk	Wed Jun  2 05:15:27 2004
 @@ -7,7 +7,7 @@
  ## Installation paths
  ##
@@ -95,16 +95,4 @@
 +XOPEN_SOURCE=-D_XOPEN_SOURCE -D_XOPEN_SOURCE_EXTENDED
  # SunOS, (Irix)
  #XOPEN_SOURCE=-D__EXTENSIONS__
- 
-@@ -190,9 +190,9 @@
- ##
- 
- # Should work almost everywhere
--INSTALL=install
-+#INSTALL=install
- # On a system with pure BSD install, -c might be preferred
--#INSTALL=install -c
-+INSTALL=install -c
- 
- INSTALLDIR=mkdir -p
  

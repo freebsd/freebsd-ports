@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	ion-2
-PORTVERSION=	20040407
+PORTVERSION=	20040601
 CATEGORIES=	x11-wm
 MASTER_SITES=	http://modeemi.fi/~tuomov/ion/dl/
 
@@ -17,7 +17,7 @@ COMMENT=	Ion is a tiling tabbed window manager
 LIB_DEPENDS=	ltdl.4:${PORTSDIR}/devel/libltdl \
 		lua.5:${PORTSDIR}/lang/lua
 
-CONFLICTS=	ion-2002* ion-devel-*
+CONFLICTS=	ion-2002* ion-devel-* pwm-*
 
 USE_LIBTOOL_VER=15
 USE_X_PREFIX=	yes
