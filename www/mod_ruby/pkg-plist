@@ -1,6 +1,5 @@
+etc/apache/httpd.conf.mod_ruby
 libexec/apache/mod_ruby.so
-@exec %D/sbin/apxs -e -A -n ruby %D/%F
-@unexec %D/sbin/apxs -e -A -n ruby %D/%F
 %%PORTDOCS%%%%RUBY_DOCDIR%%/mod_ruby/ChangeLog
 %%PORTDOCS%%%%RUBY_DOCDIR%%/mod_ruby/README.en
 %%PORTDOCS%%%%RUBY_DOCDIR%%/mod_ruby/ja/README.ja

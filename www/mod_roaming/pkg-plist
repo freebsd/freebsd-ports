@@ -1,6 +1,5 @@
+etc/apache/httpd.conf.mod_roaming
 libexec/apache/mod_roaming.so
-@exec %D/sbin/apxs -e -A -n roaming %D/%F
-@unexec %D/sbin/apxs -e -A -n roaming %D/%F
 %%PORTDOCS%%share/doc/mod_roaming/CHANGES
 %%PORTDOCS%%share/doc/mod_roaming/INSTALL
 %%PORTDOCS%%share/doc/mod_roaming/LICENSE
