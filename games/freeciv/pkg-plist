@@ -1,0 +1,7 @@
+bin/civserver
+bin/civclient
+share/freeciv/Freeciv
+share/freeciv/intro.xpm
+share/freeciv/radar.xpm
+share/freeciv/tiles.xpm
+@dirrm share/freeciv
