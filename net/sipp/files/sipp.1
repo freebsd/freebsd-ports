@@ -1,0 +1,448 @@
+.\"
+.\" Standard preamble:
+.\" ========================================================================
+.de Sh \" Subsection heading
+.br
+.if t .Sp
+.ne 5
+.PP
+\fB\\$1\fR
+.PP
+..
+.de Sp \" Vertical space (when we can't use .PP)
+.if t .sp .5v
+.if n .sp
+..
+.de Vb \" Begin verbatim text
+.ft CW
+.nf
+.ne \\$1
+..
+.de Ve \" End verbatim text
+.ft R
+.fi
+..
+.\" Set up some character translations and predefined strings.  \*(-- will
+.\" give an unbreakable dash, \*(PI will give pi, \*(L" will give a left
+.\" double quote, and \*(R" will give a right double quote.  | will give a
+.\" real vertical bar.  \*(C+ will give a nicer C++.  Capital omega is used to
+.\" do unbreakable dashes and therefore won't be available.  \*(C` and \*(C'
+.\" expand to `' in nroff, nothing in troff, for use with C<>.
+.tr \(*W-|\(bv\*(Tr
+.ds C+ C\v'-.1v'\h'-1p'\s-2+\h'-1p'+\s0\v'.1v'\h'-1p'
+.ie n \{\
+.    ds -- \(*W-
+.    ds PI pi
+.    if (\n(.H=4u)&(1m=24u) .ds -- \(*W\h'-12u'\(*W\h'-12u'-\" diablo 10 pitch
+.    if (\n(.H=4u)&(1m=20u) .ds -- \(*W\h'-12u'\(*W\h'-8u'-\"  diablo 12 pitch
+.    ds L" ""
+.    ds R" ""
+.    ds C` ""
+.    ds C' ""
+'br\}
+.el\{\
+.    ds -- \|\(em\|
+.    ds PI \(*p
+.    ds L" ``
+.    ds R" ''
+'br\}
+.\"
+.\" If the F register is turned on, we'll generate index entries on stderr for
+.\" titles (.TH), headers (.SH), subsections (.Sh), items (.Ip), and index
+.\" entries marked with X<> in POD.  Of course, you'll have to process the
+.\" output yourself in some meaningful fashion.
+.if \nF \{\
+.    de IX
+.    tm Index:\\$1\t\\n%\t"\\$2"
+..
+.    nr % 0
+.    rr F
+.\}
+.\"
+.\" For nroff, turn off justification.  Always turn off hyphenation; it makes
+.\" way too many mistakes in technical documents.
+.hy 0
+.if n .na
+.\"
+.\" Accent mark definitions (@(#)ms.acc 1.5 88/02/08 SMI; from UCB 4.2).
+.\" Fear.  Run.  Save yourself.  No user-serviceable parts.
+.    \" fudge factors for nroff and troff
+.if n \{\
+.    ds #H 0
+.    ds #V .8m
+.    ds #F .3m
+.    ds #[ \f1
+.    ds #] \fP
+.\}
+.if t \{\
+.    ds #H ((1u-(\\\\n(.fu%2u))*.13m)
+.    ds #V .6m
+.    ds #F 0
+.    ds #[ \&
+.    ds #] \&
+.\}
+.    \" simple accents for nroff and troff
+.if n \{\
+.    ds ' \&
+.    ds ` \&
+.    ds ^ \&
+.    ds , \&
+.    ds ~ ~
+.    ds /
+.\}
+.if t \{\
+.    ds ' \\k:\h'-(\\n(.wu*8/10-\*(#H)'\'\h"|\\n:u"
+.    ds ` \\k:\h'-(\\n(.wu*8/10-\*(#H)'\`\h'|\\n:u'
+.    ds ^ \\k:\h'-(\\n(.wu*10/11-\*(#H)'^\h'|\\n:u'
+.    ds , \\k:\h'-(\\n(.wu*8/10)',\h'|\\n:u'
+.    ds ~ \\k:\h'-(\\n(.wu-\*(#H-.1m)'~\h'|\\n:u'
+.    ds / \\k:\h'-(\\n(.wu*8/10-\*(#H)'\z\(sl\h'|\\n:u'
+.\}
+.    \" troff and (daisy-wheel) nroff accents
+.ds : \\k:\h'-(\\n(.wu*8/10-\*(#H+.1m+\*(#F)'\v'-\*(#V'\z.\h'.2m+\*(#F'.\h'|\\n:u'\v'\*(#V'
+.ds 8 \h'\*(#H'\(*b\h'-\*(#H'
+.ds o \\k:\h'-(\\n(.wu+\w'\(de'u-\*(#H)/2u'\v'-.3n'\*(#[\z\(de\v'.3n'\h'|\\n:u'\*(#]
+.ds d- \h'\*(#H'\(pd\h'-\w'~'u'\v'-.25m'\f2\(hy\fP\v'.25m'\h'-\*(#H'
+.ds D- D\\k:\h'-\w'D'u'\v'-.11m'\z\(hy\v'.11m'\h'|\\n:u'
+.ds th \*(#[\v'.3m'\s+1I\s-1\v'-.3m'\h'-(\w'I'u*2/3)'\s-1o\s+1\*(#]
+.ds Th \*(#[\s+2I\s-2\h'-\w'I'u*3/5'\v'-.3m'o\v'.3m'\*(#]
+.ds ae a\h'-(\w'a'u*4/10)'e
+.ds Ae A\h'-(\w'A'u*4/10)'E
+.    \" corrections for vroff
+.if v .ds ~ \\k:\h'-(\\n(.wu*9/10-\*(#H)'\s-2\u~\d\s+2\h'|\\n:u'
+.if v .ds ^ \\k:\h'-(\\n(.wu*10/11-\*(#H)'\v'-.4m'^\v'.4m'\h'|\\n:u'
+.    \" for low resolution devices (crt and lpr)
+.if \n(.H>23 .if \n(.V>19 \
+\{\
+.    ds : e
+.    ds 8 ss
+.    ds o a
+.    ds d- d\h'-1'\(ga
+.    ds D- D\h'-1'\(hy
+.    ds th \o'bp'
+.    ds Th \o'LP'
+.    ds ae ae
+.    ds Ae AE
+.\}
+.rm #[ #] #H #V #F C
+.\" ========================================================================
+.\"
+.IX Title "sipp 1"
+.TH sipp 1 "2004-06-16" "sipp" "User Contributed Documentation"
+.SH "NAME"
+sipp \- A benchworking tool for the SIP protocol.
+.SH "DESCRIPTION"
+.IX Header "DESCRIPTION"
+Sipp is a performance test tool / traffic generator for the \s-1SIP\s0 
+protocol. It comes with a few basic SipStone user-agents
+scenarios (\s-1UAC\s0 & \s-1UAS\s0), establishing and releasing multiple 
+calls with the \s-1INVITE\s0 and \s-1BYE\s0 methods. 
+.PP
+It can also read \s-1XML\s0 scenario files describing any performance 
+testing configuration for \s-1SIP\s0.
+.SH "SYNTAX"
+.IX Header "SYNTAX"
+.Vb 1
+\&  sipp remote_host[:remote_port] [options]
+.Ve
+.SH "OPTIONS"
+.IX Header "OPTIONS"
+.Vb 1
+\&   -v               : Display version and copyright information.
+.Ve
+.PP
+.Vb 1
+\&   -bg              : Launch the tool in background mode.
+.Ve
+.PP
+.Vb 2
+\&   -p local_port    : Set the local port number. Default is a
+\&                      random free port chosen by the system.
+.Ve
+.PP
+.Vb 3
+\&   -i local_ip      : Set the local IP address for 'Contact:',
+\&                      'Via:', and 'From:' headers. Default is
+\&                      primary host IP address.
+.Ve
+.PP
+.Vb 5
+\&   -d duration      : Controls the length (in milliseconds) of
+\&                      of calls. More precisely, this controls
+\&                      the duration of 'pause' instructions in
+\&                      the scenario, if they do not have a
+\&                      'milliseconds' section. Default value is 0.
+.Ve
+.PP
+.Vb 3
+\&   -r rate (cps)    : Set the call rate (in calls per seconds).
+\&                      This value can be changed during test by
+\&                      pressing ENTER. Default is 10.
+.Ve
+.PP
+.Vb 5
+\&   -sf filename     : Loads an alternate xml scenario file.
+\&                      To learn more about XML scenario syntax,
+\&                      use the -sd option to dump embedded 
+\&                      scenarios. They contain all the necessary
+\&                      help.
+.Ve
+.PP
+.Vb 3
+\&   -sn name         : Use a default scenario (embedded in
+\&                      the sipp executable). Available values
+\&                      in this version:
+.Ve
+.PP
+.Vb 4
+\&                        'uac'      : Standard SipStone UAC (default).
+\&                        'uas'      : Simple UAS responder (UDP only).
+\&                        'regexp'   : Standard SipStone UAC - with
+\&                                     regexp and variables.
+.Ve
+.PP
+.Vb 1
+\&                      Default 3pcc scanerios (see -3pcc option):
+.Ve
+.PP
+.Vb 5
+\&                        '3pcc-C-A' : Controller A side (must be started
+\&                                     after all other 3pcc scenarios)
+\&                        '3pcc-C-B' : Controller B side.
+\&                        '3pcc-A'   : A side.
+\&                        '3pcc-B'   : B side.
+.Ve
+.PP
+.Vb 2
+\&   -sd name         : Dumps a default scenario (embeded in
+\&                      the sipp executable)
+.Ve
+.PP
+.Vb 1
+\&   -t [u1|un|t1|tn] : Set the transport mode:
+.Ve
+.PP
+.Vb 4
+\&                        u1: UDP with one socket (default),
+\&                        un: UDP with one socket per call,
+\&                        t1: TCP with one socket,
+\&                        tn: TCP with one socket per call.
+.Ve
+.PP
+.Vb 2
+\&   -trace_msg       : Displays sent and received SIP messages in
+\&                      sipp_messages.log
+.Ve
+.PP
+.Vb 3
+\&   -trace_stat      : Dumps all statistics in the <scenario_name.csv>
+\&                      file. Use the '-h stat' option for a detailed
+\&                      description of the statistics file content.
+.Ve
+.PP
+.Vb 6
+\&  The  -trace_stat option dumps all statistics in the
+\&  <scenario_name.csv> file. The dump starts with one header
+\&  line with all counters. All following lines are 'snapshots' of 
+\&  statistics counter given the statistics report frequency
+\&  (-fd option). This file can be easily imported in any
+\&  spreadsheet application, like Excel.
+.Ve
+.PP
+.Vb 3
+\&  In counter names, (P) means 'Periodic' - since last
+\&  statistic row and (C) means 'Cumulated' - since sipp was
+\&  started.
+.Ve
+.PP
+.Vb 1
+\&  Available statistics are:
+.Ve
+.PP
+.Vb 2
+\&  - StartTime: 
+\&    Date and time when the test has started.
+.Ve
+.PP
+.Vb 2
+\&  - LastResetTime:
+\&    Date and time when periodic counters where last reseted.
+.Ve
+.PP
+.Vb 2
+\&  - CurrentTime:
+\&    Date and time of the statistic row.
+.Ve
+.PP
+.Vb 2
+\&  - ElapsedTime:
+\&    Elapsed time.
+.Ve
+.PP
+.Vb 2
+\&  - CallRate:
+\&    Call rate (calls per seconds).
+.Ve
+.PP
+.Vb 2
+\&  - IncomingCall:
+\&    Number of incoming calls.
+.Ve
+.PP
+.Vb 2
+\&  - OutgoingCall:
+\&    Number of outgoing calls.
+.Ve
+.PP
+.Vb 2
+\&  - TotalCallCreated:
+\&    Number of calls created.
+.Ve
+.PP
+.Vb 2
+\&  - CurrentCall:
+\&    Number of calls currently ongoing.
+.Ve
+.PP
+.Vb 2
+\&  - SuccessfulCall:
+\&    Number of successful calls.
+.Ve
+.PP
+.Vb 2
+\&  - FailedCall:
+\&    Number of failed calls (all reasons).
+.Ve
+.PP
+.Vb 3
+\&  - FailedCannotSendMessage:
+\&    Number of failed calls because Sipp cannot send the
+\&    message (transport issue).
+.Ve
+.PP
+.Vb 3
+\&  - FailedMaxUDPRetrans:
+\&    Number of failed calls because the maximum number of
+\&    UDP retransmission attempts has been reached.
+.Ve
+.PP
+.Vb 3
+\&  - FailedUnexpectedMessage:
+\&    Number of failed calls because the SIP message received
+\&    cannot be associated to an existing call.
+.Ve
+.PP
+.Vb 4
+\&  - FailedCallRejected:
+\&    Number of failed calls because of Sipp internal error.
+\&    (a scenario sync command is not recognized or a scenario
+\&    action failed or a scenario variable assignment failed).
+.Ve
+.PP
+.Vb 4
+\&  - FailedCmdNotSent:
+\&    Number of failed calls because of inter-Sipp
+\&    communication error (a scenario sync command failed to
+\&    be sent).
+.Ve
+.PP
+.Vb 5
+\&  - FailedRegexpDoesntMatch:
+\&    Number of failed calls because of regexp that doesn't
+\&    match (there might be several regexp that don't match
+\&    during the call but the counter is increased only by
+\&    one).
+.Ve
+.PP
+.Vb 3
+\&  - FailedRegexpHdrNotFound:
+\&    Number of failed calls because of regexp with hdr    
+\&    option but no matching header found.
+.Ve
+.PP
+.Vb 1
+\&   -stf file_name   : Set the file name to use to dump statistics
+.Ve
+.PP
+.Vb 2
+\&   -trace_err       : Trace all unexpected messages in
+\&                      sipp_errors.log.
+.Ve
+.PP
+.Vb 2
+\&   -s service_name  : Set the username part of the resquest URI.
+\&                      Default is 'service'.
+.Ve
+.PP
+.Vb 2
+\&   -f frequency     : Set the statistics report frequency on screen
+\&                      (in seconds). Default is 1.
+.Ve
+.PP
+.Vb 2
+\&   -fd frequency    : Set the statistics dump log report frequency
+\&                      (in seconds). Default is 60.
+.Ve
+.PP
+.Vb 4
+\&   -l calls_limit   : Set the maximum number of simultaneous
+\&                      calls. Once this limit is reached, traffic
+\&                      is decreased until the number of open calls
+\&                      goes down. Default:
+.Ve
+.PP
+.Vb 1
+\&                        (3 * call_duration (s) * rate).
+.Ve
+.PP
+.Vb 2
+\&   -m calls         : Stop the test and exit when 'calls' calls are
+\&                      processed.
+.Ve
+.PP
+.Vb 3
+\&   -mp local_port   : Set the local RTP echo port number. Default
+\&                      is none. RTP/UDP packets received on that
+\&                      port are echoed to their sender.
+.Ve
+.PP
+.Vb 1
+\&   -mi local_rtp_ip : Set the local IP address for RTP echo.
+.Ve
+.PP
+.Vb 5
+\&   -3pcc ip:port    : Launch the tool in 3pcc mode ("Third Party
+\&                      call control"). The passed ip address
+\&                      is the address of the twin sipp 3pcc tool
+\&                      The used scenario must be a 3pcc relative
+\&                      scenario
+.Ve
+.PP
+.Vb 1
+\&   -nr              : Disable retransmission in UDP mode.
+.Ve
+.SH "EXIT CODE"
+.IX Header "EXIT CODE"
+.Vb 7
+\&   Upon exit (on fatal error or when the number of asked calls (-m
+\&   option) is reached, sipp exits with one of the following exit
+\&   code:
+\&    0: All calls were successful
+\&    1: At least one call failed
+\&   99: Normal exit without calls processed
+\&   -1: Fatal error
+.Ve
+.SH "EXAMPLES"
+.IX Header "EXAMPLES"
+.Vb 4
+\&   Run sipp with embedded server (uas) scenario:
+\&     sipp -sn uas
+\&   On the same host, run sipp with embedded client (uac) scenario
+\&     sipp -sn uac 127.0.0.1
+.Ve
+.SH "AUTHORS"
+.IX Header "AUTHORS"
+.Vb 2
+\&        Richard Gayraud <richard_gayraud@users.sourceforge.net>
+\&        O Jacques <ojacques@users.sourceforge.net>
+.Ve

@@ -611,6 +611,7 @@
     SUBDIR += silc-server
     SUBDIR += silky
     SUBDIR += simicq
+    SUBDIR += sipp
     SUBDIR += sipsak
     SUBDIR += sixxs-heartbeatd
     SUBDIR += slirp
