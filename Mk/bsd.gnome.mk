@@ -386,7 +386,7 @@ libgsf_USE_GNOME_IMPL=		glib20 libxml2
 
 libgsf_gnome_LIB_DEPENDS=	gsf-gnome-1.10:${PORTSDIR}/devel/libgsf-gnome
 libgsf_gnome_DETECT=		${LOCALBASE}/libdata/pkgconfig/libgsf-gnome-1.pc
-libgsf_gnome_USE_GNOME_IMPL=	gnomevfs2 libbonobo
+libgsf_gnome_USE_GNOME_IMPL=	libgsf gnomevfs2
 
 pygtk2_DETECT=			${PYTHON_SITELIBDIR}/gtk-2.0/gtk/__init__.py
 pygtk2_BUILD_DEPENDS=	${pygtk2_DETECT}:${PORTSDIR}/x11-toolkits/py-gtk2
