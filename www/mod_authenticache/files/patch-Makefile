@@ -1,6 +1,6 @@
 --- Makefile.orig	Sat Mar  6 02:03:42 2004
-+++ Makefile	Sat Mar  6 12:04:51 2004
-@@ -3,14 +3,16 @@
++++ Makefile	Mon Mar  8 11:36:41 2004
+@@ -3,16 +3,18 @@
  NAME = mod_authenticache
  VERSION = 2.0.8
  
@@ -18,8 +18,11 @@
 +all: $(NAME).so
 +
  $(NAME).so: $(OBJS) $(EXPS)
- 	$(CC) $(FLGS) -fpic -shared -o $@ $^ $(LIBS)
+-	$(CC) $(FLGS) -fpic -shared -o $@ $^ $(LIBS)
++	$(CC) $(FLGS) -fPIC -shared -o $@ $^ $(LIBS)
  
+ .c.o: $<
+ 	$(CC) $(FLGS) -c $< $(INCS) $(DEFS)
 @@ -21,7 +23,7 @@
  	-rm -f *.o *.so
  
