@@ -7,7 +7,7 @@
 
 PORTNAME=	irssi
 PORTVERSION=	0.8.9
-PORTREVISION?=	1
+PORTREVISION?=	2
 CATEGORIES?=	irc
 MASTER_SITES=	http://irssi.org/files/
 
@@ -18,16 +18,23 @@ USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 
 WANT_GNOME=	yes
+CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 
 MAN1=		irssi.1
 
-.include <bsd.port.pre.mk>
+# Set option defaults.
 
-.if ${OSVERSION} >= 502000
-BROKEN=		"Does not compile"
+.if ! defined(WITH_SSL)
+WITH_SSL=	yes
 .endif
 
-# Set option defaults.
+.if ${WITH_SSL:L} == "no"
+CONFIGURE_ARGS+=	--disable-ssl
+.else
+USE_OPENSSL=	yes
+.endif
+
+.include <bsd.port.pre.mk>
 
 .if ! defined(WITH_GLIB)
 .if exists(${LOCALBASE}/include/glib-2.0/glib.h)
@@ -51,10 +58,6 @@ WITH_SOCKS=	no
 
 .if ! defined(WITH_IPV6)
 WITH_IPV6=	yes
-.endif
-
-.if ! defined(WITH_SSL)
-WITH_SSL=	yes
 .endif
 
 .if ! defined(WITH_BOEHM_GC)
@@ -105,12 +108,6 @@ CATEGORIES+=	ipv6
 .endif
 .endif
 
-.if ${WITH_SSL:L} == "yes"
-USE_OPENSSL=	yes
-.else
-CONFIGURE_ARGS+=	--disable-ssl
-.endif
-
 .if ${WITH_BOEHM_GC:L} == "yes"
 LIB_DEPENDS+=	gc.1:${PORTSDIR}/devel/boehm-gc
 CONFIGURE_ENV+=	CPPFLAGS=-I${PREFIX}/include
@@ -136,7 +133,7 @@ pre-extract:
 	@${ECHO} ""
 
 pre-configure:
-	@cd ${WRKSRC} && ${MV} irssi.conf irssi.conf.sample
+	@cd ${WRKSRC} && ${MV} irssi.conf irssi.conf.sample || ${TRUE}
 
 post-install:
 	@if [ ! -f ${LOCALBASE}/etc/irssi.conf ]; then \
