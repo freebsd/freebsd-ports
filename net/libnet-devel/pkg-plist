@@ -6,3 +6,4 @@ include/libnet/libnet-headers.h
 include/libnet/libnet-macros.h
 include/libnet/libnet-structures.h
 lib/libnet.a
+@dirrm include/libnet
