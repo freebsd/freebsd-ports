@@ -123,6 +123,7 @@
     SUBDIR += pathalias
     SUBDIR += perdition
     SUBDIR += pflogsumm
+    SUBDIR += pgen
     SUBDIR += pgp4pine
     SUBDIR += pgpsendmail
     SUBDIR += pine4
