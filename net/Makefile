@@ -47,6 +47,7 @@
     SUBDIR += bsdproxy
     SUBDIR += cap
     SUBDIR += ccmsn
+    SUBDIR += cdonkey
     SUBDIR += cdpd
     SUBDIR += cdpr
     SUBDIR += centericq

@@ -1,0 +1,11 @@
+--- Makefile.in.orig	Wed Mar 26 16:52:39 2003
++++ Makefile.in	Wed Mar 26 16:52:49 2003
+@@ -50,7 +50,7 @@
+ CPPFLAGS = @CPPFLAGS@
+ CXX = @CXX@
+ CXXDEPMODE = @CXXDEPMODE@
+-CXXFLAGS = @CXXFLAGS@ -W -Wall -Wunused -Wformat -Wshadow -Wmultichar -Wpointer-arith -Wcast-qual -Wswitch -Werror @SVN_DB_INCLUDES@
++CXXFLAGS = @CXXFLAGS@ @SVN_DB_INCLUDES@
+ CYGPATH_W = @CYGPATH_W@
+ DEFS = @DEFS@
+ DEPDIR = @DEPDIR@
