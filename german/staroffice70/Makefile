@@ -8,28 +8,20 @@
 PORTNAME=	staroffice
 PORTVERSION=	5.2
 CATEGORIES=	editors linux
-MASTER_SITES=	ftp://ftp.inf.utfsm.cl/pub/UTFSM/StarOffice_5.2/ \
-		ftp://ftp.snerpa.is/pub/linux/ \
-		ftp://ftp.osb.hu/pub/mirrors/staroffice/linux/ \
-		ftp://ftp.uni-linz.ac.at/pub/staroffice_5.2/ \
-		ftp://sunsite.anu.edu.au/mnt/disk3/sun-info/sun-patches/ \
-		ftp://ftp.labyrinth.net.au/.5/kk/linux/star_office/ \
-		ftp://ftp.acs.oakland.edu/files/Linux/StarOffice/office52/ \
-		ftp://ftp.ctio.noao.edu/linux/ \
+MASTER_SITES=	ftp://ftp.csua.berkeley.edu/pub/.1/ports/distfiles/staroffice52/ \
 		ftp://sunsite.cnlab-switch.ch/mirror/staroffice/english/ \
+		ftp://ftp.snerpa.is/pub/linux/staroffice/ \
 		ftp://ftp.linux.tucows.com/pub/Linuxberg/ \
-		ftp://ftp.jcu.edu.au/pub/StarOffice/ \
-		ftp://ftp.uakom.sk/pub/mirrors/StarOffice/ \
 		ftp://ftp.linux.hr/pub/staroffice/5.2/ \
-		ftp://ftp.isst.fhg.de/ISST/Sun/Staroffice/5.2/ \
-		ftp://ftp.cityline.net/mirrors2/sun-patches-all/ \
-		ftp://ftp.gtn.com/os/Sun/patches/ \
-		ftp://ftp.jaist.ac.jp/.arc07/sun-info/sun-patches/ \
-		ftp://ftp.hu-berlin.de/pub/mirrors/sunsolve.sun.com/pub/patches/ \
+		ftp://ftp.sunsite.auc.dk/disk2/sun-patches/ \
 		ftp://sunsite.uio.no/pub/sun/sun-patches/ \
+		ftp://ftp.hu-berlin.de/pub/mirrors/sunsolve.sun.com/pub/patches/ \
 		ftp://ftp.sunet.se/pub7/security/vendor/sun/patches/
 DISTNAME=	so-5_2-ga-bin-linux-en.bin
-DISTFILES=	soa-5_2-ga-bin-linux-en.bin so-5_2-ga-bin-linux-en.bin 109939-02.tar.Z
+DISTFILES=	so-5_2-ga-bin-linux-en.bin 109939-02.tar.Z
+.if defined(WITH_ADABAS)
+DISTFILES+=	soa-5_2-ga-bin-linux-en.bin
+.endif
 EXTRACT_ONLY=	109939-02.tar.Z
 
 MAINTAINER=	mb@imp.ch
@@ -46,6 +38,8 @@ TMPDIR=		${WRKDIR}/tmp
 LD_PATH=	${TMPDIR}:${WRKSRC}:${LINUXBASE}/lib:${LINUXBASE}/usr/lib
 INSTDB.INS=	${PREFIX}/office52/program/instdb.ins
 SUNSOLVE=	${WRKDIR}/109939-02
+ADABAS_DIST=	soa-5_2-ga-bin-linux-en.bin
+SIZE!=		/bin/df -k . | /usr/bin/tail -n 1 | /usr/bin/awk '{print $$4}'
 
 .include <bsd.port.pre.mk>
 
@@ -61,6 +55,20 @@ pre-fetch:
 	@${ECHO} Please upgrade to FreeBSD 4.1
 	@${ECHO}
 	@${FALSE}
+.endif
+.if ${SIZE} < 250000
+	@${ECHO}
+	@${ECHO} There is too few free disk space in your port
+	@${ECHO} directory. To unpack Staroffice needs
+	@${ECHO} at least 250MB free diskspace.
+	@${FALSE}
+.endif
+.if !defined(WITH_ADABAS)
+	@ ${ECHO}
+	@ ${ECHO} If you like to install staroffice with ADABAS database support,
+	@ ${ECHO} cancel this installation now and start make again with
+	@ ${ECHO} WITH_ADABAS=YES. 
+	@ ${ECHO}
 .endif
 .if defined(WITH_CDROM)
 .if !exists(${CD_MOUNTPT}/linux/office52/setup)
@@ -90,11 +98,14 @@ do-extract:
 	@${MKDIR} ${WRKSRC}
 	@${MKDIR} ${TMPDIR}
 	@${CP} ${_DISTDIR}/${DISTNAME} ${WRKSRC}
-	@${CP} ${_DISTDIR}/soa-5_2-ga-bin-linux-en.bin ${WRKSRC}
 	@${CHMOD} 755 ${WRKSRC}/${DISTNAME}
-	@${CHMOD} 755 ${WRKSRC}/soa-5_2-ga-bin-linux-en.bin
+.if defined(WITH_ADABAS)
+	@${CP} ${_DISTDIR}/${ADABAS_DIST} ${WRKSRC}
+	@${CHMOD} 755 ${WRKSRC}/${ADABAS_DIST}
+.endif
 	@cd ${WRKSRC}
 	@SAL_IGNOREXERRORS=1 ${WRKSRC}/${DISTNAME} -extract ${WRKSRC}
+	@${RM} ${WRKSRC}/${DISTNAME}
 	@cd ../../
 	@for file in ${EXTRACT_ONLY}; do \
 		if ! (cd ${WRKDIR} && ${EXTRACT_CMD} ${EXTRACT_BEFORE_ARGS} \
@@ -145,7 +156,7 @@ post-install:
 	@${PATCH} -s ${PREFIX}/office52/program/setup ${FILESDIR}/setup.patch
 	@${PATCH} -s ${PREFIX}/office52/program/soffice ${FILESDIR}/soffice.patch
 	@${CP} ${INSTDB.INS} ${INSTDB.INS}.orig
-	@${SED} -e 's%DefaultDestPath = "/usr/local/office52%DefaultDestPath = "office52%' \
+	@${SED} -e 's%DefaultDestPath = "${PREFIX}/office52%DefaultDestPath = "office52%' \
 	    < ${INSTDB.INS}.orig > ${INSTDB.INS}
 
 install-user:
