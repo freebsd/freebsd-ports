@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	icecast2
-PORTVERSION=	2.0.1
+PORTVERSION=	2.0.2
 PORTEPOCH=	1
 CATEGORIES=	audio net ipv6
-MASTER_SITES=	http://www.icecast.org/files/
+MASTER_SITES=	http://svn.xiph.org/releases/icecast/
 DISTNAME=	icecast-${PORTVERSION}
 
 MAINTAINER=	lofi@freebsd.org
@@ -21,7 +21,7 @@ LIB_DEPENDS=	curl:${PORTSDIR}/ftp/curl \
 		xslt.2:${PORTSDIR}/textproc/libxslt
 
 USE_GMAKE=	yes
-USE_LIBTOOL_VER=	13
+USE_LIBTOOL_VER=15
 CONFIGURE_ENV=	OGG_PREFIX=${LOCALBASE}
 
 WRKSRC=		${WRKDIR}/icecast-${PORTVERSION}
