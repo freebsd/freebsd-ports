@@ -37,7 +37,6 @@ MASTER_SITE_AFTERSTEP+=	\
 	ftp://ftp.afterstep.org/%SUBDIR%/ \
 	ftp://ftp.digex.net/pub/X11/window-managers/afterstep/%SUBDIR%/ \
 	ftp://ftp.kddlabs.co.jp/X11/AfterStep/%SUBDIR%/ \
-	ftp://ftp.math.uni-bonn.de/pub/mirror/ftp.afterstep.org/pub/%SUBDIR%/ \
 	ftp://ftp.dti.ad.jp/pub/X/AfterStep/%SUBDIR%/ \
 	ftp://ftp.chg.ru/pub/X11/windowmanagers/afterstep/%SUBDIR%/
 
@@ -138,10 +137,8 @@ MASTER_SITE_NETBSD+=	\
 	ftp://ftp.uk.netbsd.org/pub/NetBSD/packages/distfiles/%SUBDIR%/ \
 	${MASTER_SITE_RINGSERVER:S,%SUBDIR%,NetBSD/packages/distfiles/&,} \
 	ftp://ftp.dti.ad.jp/pub/NetBSD/packages/distfiles/%SUBDIR%/ \
-	ftp://ftp.jaist.ac.jp/.arc07/NetBSD/packages/distfiles/%SUBDIR%/ \
 	ftp://ftp.tokyonet.ad.jp/NetBSD/packages/distfiles/%SUBDIR%/ \
 	ftp://ftp.sra.co.jp/pub/os/NetBSD/packages/distfiles/%SUBDIR%/ \
-	ftp://ftp.questnet.net.au/pub/NetBSD/packages/distfiles/%SUBDIR%/ \
 	ftp://melanoma.cs.rmit.edu.au/pub/NetBSD/packages/distfiles/%SUBDIR%/ \
 	ftp://ftp.nectec.or.th/pub/bsd-distributions/NetBSD/packages/distfiles/%SUBDIR%/ \
 	ftp://ftp.chg.ru/pub/NetBSD/packages/distfiles/%SUBDIR%/
@@ -239,14 +236,12 @@ MASTER_SITE_SOURCEFORGE+= \
 	http://ftp2.sourceforge.net/%SUBDIR%/ \
 	ftp://prdownload.sourceforge.net/pub/%SUBDIR%/ \
 	ftp://projects.sourceforge.net/pub/%SUBDIR%/ \
-	ftp://ftp.kddlabs.co.jp/sourceforge/%SUBDIR%/ \
-	ftp://ftp.mirror.ac.uk/sites/download.sourceforge.net/pub/sourceforge/%SUBDIR%/
+	ftp://ftp.kddlabs.co.jp/sourceforge/%SUBDIR%/
 
 MASTER_SITE_SUNSITE+=	\
 	ftp://metalab.unc.edu/pub/Linux/%SUBDIR%/ \
 	ftp://ftp.oit.unc.edu/pub/Linux/%SUBDIR%/ \
 	http://www.ibiblio.org/pub/Linux/%SUBDIR%/ \
-	ftp://ftp.nuri.net/pub/Linux/metalab/%SUBDIR%/ \
 	ftp://ftp.sourceforge.net/pub/mirrors/metalab/Linux/%SUBDIR%/ \
 	ftp://ftp.unicamp.br/pub/systems/Linux/%SUBDIR%/ \
 	ftp://ftp.tuwien.ac.at/z3/opsys/linux/ibiblio/%SUBDIR%/ \
@@ -277,7 +272,6 @@ MASTER_SITE_SUNSITE+=	\
 	ftp://ftp.funet.fi/pub/Linux/mirrors/metalab/%SUBDIR%/ \
 	ftp://sunsite.doc.ic.ac.uk/packages/linux/sunsite.unc-mirror/%SUBDIR%/ \
 	ftp://ftp.nluug.nl/vol/3/metalab/%SUBDIR%/ \
-	ftp://software.anu.edu.au/pub/linux/metalab/%SUBDIR%/ \
 	ftp://ftp.is.co.za/linux/sunsite/%SUBDIR%/ \
 	ftp://ftp.chg.ru/pub/Linux/sunsite/%SUBDIR%/
 
@@ -300,7 +294,6 @@ MASTER_SITE_TEX_CTAN+=  \
 	ftp://ctan.unsw.edu.au/tex-archive/%SUBDIR%/ \
 	ftp://ftp.cise.ufl.edu/tex-archive/%SUBDIR%/ \
 	ftp://ftp.tex.ac.uk/tex-archive/%SUBDIR%/  \
-	ftp://shadowmere.student.utwente.nl/pub/CTAN/%SUBDIR%/ \
 	ftp://ftp.kddlabs.co.jp/CTAN/%SUBDIR%/ \
 	ftp://sunsite.auc.dk/pub/tex/ctan/%SUBDIR%/ \
 	ftp://ctan.tug.org/tex-archive/%SUBDIR%/ \
@@ -326,7 +319,7 @@ MASTER_SITE_WINDOWMAKER+= \
 MASTER_SITE_XCONTRIB+=	\
 	ftp://crl.dec.com/pub/X11/contrib/%SUBDIR%/ \
 	ftp://ftp.net.ohio-state.edu/disk/d/X11/contrib/%SUBDIR%/ \
-	ftp://uiarchive.uiuc.edu/pub/X11/contrib/%SUBDIR%/ \
+	ftp://uiarchive.uiuc.edu/pub/ftp/ftp.x.org/contrib/%SUBDIR%/ \
 	ftp://ftp.gwdg.de/pub/x11/x.org/contrib/%SUBDIR%/ \
 	ftp://ftp.duke.edu/pub/X11/contrib/%SUBDIR%/ \
 	ftp://ftp.x.org/contrib/%SUBDIR%/ \
@@ -337,7 +330,6 @@ MASTER_SITE_XCONTRIB+=	\
 	ftp://sunsite.sut.ac.jp/pub/archives/X11/contrib/%SUBDIR%/ \
 	ftp://ftp.is.co.za/x/contrib/%SUBDIR%/ \
 	ftp://ftp.sunet.se/pub/X11/contrib/%SUBDIR%/ \
-	ftp://ftp.huji.ac.il/mirror/X11/contrib/%SUBDIR%/ \
 	ftp://ftp.chg.ru/pub/X11/contrib/%SUBDIR%/ \
 	${MASTER_SITE_RINGSERVER:S,%SUBDIR%,X/opengroup/contrib/&,} \
 	ftp://ftp.mirror.ac.uk/sites/ftp.x.org/contrib/%SUBDIR%/ \
