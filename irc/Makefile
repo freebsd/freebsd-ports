@@ -9,6 +9,7 @@
     SUBDIR += ezbounce
     SUBDIR += infobot
     SUBDIR += irc
+    SUBDIR += irc-transport
     SUBDIR += ircII
     SUBDIR += ircatlite
     SUBDIR += ircd-hybrid
