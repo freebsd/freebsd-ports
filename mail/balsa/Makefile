@@ -8,8 +8,8 @@
 PORTNAME=	balsa
 PORTVERSION= 	0.9.5
 CATEGORIES=	mail gnome
-MASTER_SITES=	ftp://ftp.newton.cx/pub/balsa/ \
-		http://www.theochem.kth.se/~pawsa/balsa/
+MASTER_SITES=	http://www.theochem.kth.se/~pawsa/balsa/ \
+		ftp://ftp.newton.cx/pub/balsa/
 
 MAINTAINER=	sobomax@FreeBSD.org
 
