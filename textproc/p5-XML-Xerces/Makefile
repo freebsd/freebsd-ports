@@ -24,7 +24,13 @@ CONFIGURE_ENV=	XERCES_INCLUDE=${LOCALBASE}/include \
 		XERCES_LIB=${LOCALBASE}/lib
 USE_GMAKE=	yes
 
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} < 500600
+IGNORE=		"requires perl 5.6.x or later. Install lang/perl5 and try again"
+.endif
+
 post-patch:
 	@${PERL} -pi -e "s|-lpthread|${PTHREAD_LIBS}|" ${WRKSRC}/Makefile.PL
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
