@@ -1,0 +1,11 @@
+--- plugins_src/accel/Makefile.orig	Wed Jan  5 00:51:37 2005
++++ plugins_src/accel/Makefile	        Wed Jan  5 00:57:55 2005
+@@ -58,7 +58,7 @@
+ else
+ $(LIBDIR)/wings_ogla_drv.so: wings_ogla_drv.c
+ 	install -d $(LIBDIR)
+-	gcc -o $(LIBDIR)/wings_ogla_drv.so -I$(ERL_INC) \
++	gcc -o $(LIBDIR)/wings_ogla_drv.so -I$(ERL_INC) -I/usr/X11R6/include -L/usr/X11R6/lib \
+   wings_ogla_drv.c $(LIBS) $(GL_LIBS)
+ endif
+ 
