@@ -1,0 +1,5 @@
+bin/ggv
+share/gnome/apps/Graphics/ggv.desktop
+share/locale/fr/LC_MESSAGES/ggv.mo
+share/locale/ko/LC_MESSAGES/ggv.mo
+share/locale/pt/LC_MESSAGES/ggv.mo
