@@ -114,9 +114,7 @@ remove-extras:
 # Post-patch
 #
 
-post-patch: patch-message
-
-patch-message:
+post-patch:
 	${SED} 's|%%FONTSDIR%%|${FONTSDIR}|g' ${MSG_FILE} > ${PKGMESSAGE}
 
 #
