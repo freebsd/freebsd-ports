@@ -29,6 +29,9 @@ games/scorched3d/data/accessories/hawkmissile/gradient.bmp
 games/scorched3d/data/accessories/hawkmissile/hawk.txt
 games/scorched3d/data/accessories/hawkmissile/white.bmp
 games/scorched3d/data/accessories/hawkmissile/yellow.bmp
+games/scorched3d/data/accessories/herring/body.bmp
+games/scorched3d/data/accessories/herring/eyes.bmp
+games/scorched3d/data/accessories/herring/herring.txt
 games/scorched3d/data/accessories/icbm/black.bmp
 games/scorched3d/data/accessories/icbm/gradient.bmp
 games/scorched3d/data/accessories/icbm/icbm.txt
@@ -89,7 +92,29 @@ games/scorched3d/data/accessories/v2missile/yellow.bmp
 games/scorched3d/data/accessories/white.bmp
 games/scorched3d/data/ainames.txt
 games/scorched3d/data/autoexec.xml
+games/scorched3d/data/avatars/agreement.txt
+games/scorched3d/data/avatars/animal.gif
+games/scorched3d/data/avatars/baby.gif
+games/scorched3d/data/avatars/bavia.gif
+games/scorched3d/data/avatars/computer.gif
+games/scorched3d/data/avatars/daisy.gif
+games/scorched3d/data/avatars/fish.gif
+games/scorched3d/data/avatars/flower.gif
+games/scorched3d/data/avatars/floyd.gif
+games/scorched3d/data/avatars/heart.gif
+games/scorched3d/data/avatars/lips.gif
+games/scorched3d/data/avatars/mxpx.gif
+games/scorched3d/data/avatars/pint.gif
+games/scorched3d/data/avatars/player.gif
+games/scorched3d/data/avatars/prot.gif
+games/scorched3d/data/avatars/termin.gif
+games/scorched3d/data/avatars/vader.gif
+games/scorched3d/data/avatars/web.gif
+games/scorched3d/data/avatars/yoda.gif
+games/scorched3d/data/fonts/courier.ttf
+games/scorched3d/data/fonts/licence.txt
 games/scorched3d/data/fonts/test.ttf
+games/scorched3d/data/fonts/testout.ttf
 games/scorched3d/data/globalmods/apoc/authors.txt
 games/scorched3d/data/globalmods/apoc/data/accessories.xml
 games/scorched3d/data/globalmods/apoc/data/accessories/black.bmp
@@ -604,6 +629,7 @@ games/scorched3d/data/tanks/ram.ase
 games/scorched3d/data/tanks/ram.bmp
 games/scorched3d/data/tanks/rapier.ase
 games/scorched3d/data/tanks/rapier.bmp
+games/scorched3d/data/tanks/rlauncher.bmp
 games/scorched3d/data/tanks/sa-19.ase
 games/scorched3d/data/tanks/sa-19.bmp
 games/scorched3d/data/tanks/sa6.ase
@@ -619,6 +645,8 @@ games/scorched3d/data/tanks/scud.ase
 games/scorched3d/data/tanks/scud.bmp
 games/scorched3d/data/tanks/seasparrow.ase
 games/scorched3d/data/tanks/seasparrow.bmp
+games/scorched3d/data/tanks/shark.bmp
+games/scorched3d/data/tanks/shark.txt
 games/scorched3d/data/tanks/siegetank.ase
 games/scorched3d/data/tanks/siegetank.bmp
 games/scorched3d/data/tanks/siegetank2.ase
@@ -1127,6 +1155,7 @@ games/scorched3d/documentation/html/screenshots/wind.gif
 @dirrm games/scorched3d/data/globalmods/apoc
 @dirrm games/scorched3d/data/globalmods
 @dirrm games/scorched3d/data/fonts
+@dirrm games/scorched3d/data/avatars
 @dirrm games/scorched3d/data/accessories/v2missile
 @dirrm games/scorched3d/data/accessories/smallpine
 @dirrm games/scorched3d/data/accessories/shell
@@ -1140,6 +1169,7 @@ games/scorched3d/documentation/html/screenshots/wind.gif
 @dirrm games/scorched3d/data/accessories/m48
 @dirrm games/scorched3d/data/accessories/littleboy
 @dirrm games/scorched3d/data/accessories/icbm
+@dirrm games/scorched3d/data/accessories/herring
 @dirrm games/scorched3d/data/accessories/hawkmissile
 @dirrm games/scorched3d/data/accessories/fatman
 @dirrm games/scorched3d/data/accessories/dirt
