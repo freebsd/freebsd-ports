@@ -6,86 +6,69 @@
 #
 
 PORTNAME=	smartdoc
-PORTVERSION=	0.7
+PORTVERSION=	1.0.0
 CATEGORIES=	textproc java
 MASTER_SITES=	http://www.asahi-net.or.jp/~dp8t-asm/java/tools/SmartDoc/
 DISTNAME=	setup${PORTVERSION:S/.//g}
-EXTRACT_SUFX=	.zip
 DIST_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	kunishi@acm.org
 
-BUILD_DEPENDS=	${JDKDIR}/bin/java:${PORTSDIR}/java/jdk12-beta \
-		${MKCATALOG}:${PORTSDIR}/textproc/mkcatalog \
-		nkf:${PORTSDIR}/japanese/nkf
-RUN_DEPENDS=	${JDKDIR}/bin/java:${PORTSDIR}/java/jdk12-beta \
-		${MKCATALOG}:${PORTSDIR}/textproc/mkcatalog
+BUILD_DEPENDS=	${MKCATALOG}:${PORTSDIR}/textproc/mkcatalog
+RUN_DEPENDS=	${MKCATALOG}:${PORTSDIR}/textproc/mkcatalog \
+		javavm:${PORTSDIR}/java/javavmwrapper
 
-SCRIPTS_ENV=	JDKDIR=${JDKDIR} JAVADIR=${JAVADIR}
+SCRIPTS_ENV=	JAVALIBDIR=${JAVALIBDIR}
 PLIST_SUB=	PORTVERSION=${PORTVERSION} MKCATALOG=${MKCATALOG}
 
-NO_BUILD=	yes
 WRKSRC=		${WRKDIR}/sdoc
+NO_BUILD=	yes
 USE_ZIP=	yes
+USE_JAVA=	1.2+
+NO_RUN_DEPENDS_JAVA=	yes
+EXTRACT_CMD=	${JAVA}
+EXTRACT_BEFORE_ARGS=	-jar ${DISTDIR}/${DIST_SUBDIR}/${DISTFILES} \
+			-batch -bindir:${WRKSRC}/bin -installbasedir:${WRKSRC}
+EXTRACT_AFTER_ARGS=	#
 
-JAVADIR=	${PREFIX}/share/java
-JDKVERSION?=	1.2.2
-JDKDIR=		${LOCALBASE}/jdk${JDKVERSION}
+JAVALIBDIR=	${PREFIX}/share/java
 XMLDIR=		${PREFIX}/share/xml
-DTDNAME=	smartdoc
-DTDDIR=		${XMLDIR}/${DTDNAME}
+EMACSLISPDIR=	${LOCALBASE}/share/emacs/site-lisp
+XEMACSLISPDIR=	${LOCALBASE}/lib/xemacs/site-lisp
+DTDDIR=		${XMLDIR}/${PORTNAME}
 MKCATALOG=	${LOCALBASE}/sbin/mkcatalog
-SJIS2EUC=	quick/Dl.sdoc \
-		quick/HelloWorld_ja.sdoc \
-		quick/NaturalP.sdoc \
-		quick/Ol.sdoc \
-		quick/P.sdoc \
-		quick/TableBasic.sdoc \
-		quick/TableCSV.sdoc \
-		quick/TreeTable.sdoc \
-		quick/Ul.sdoc \
-		quick/quick.sdoc \
-		refman/refman.sdoc \
-		sample/html.html \
-		sample/latex.tex \
-		sample/sample.sdoc \
-		sampleI18N/data.csv \
-		sampleI18N/html.html \
-		sampleI18N/latex.tex \
-		sampleI18N/sample.sdoc
-
-do-extract:
-	${MKDIR} ${WRKSRC}/bin
-	${JDKDIR}/bin/java -jar ${DISTDIR}/${DIST_SUBDIR}/${DISTFILES} -batch \
-		-bindir:${WRKSRC}/bin -installbasedir:${WRKSRC}
+DOCS=		COPYING.txt OroLICENSE.txt README README.sdoc \
+		README_en.html README_ja.html \
+		XalanLICENSE.txt XercesLICENSE.txt
+JARS=		SmartDoc.jar
+ELISPS=		sdoc-helper.el sdoc-mode.el
 
 post-extract:
+	${MKDIR} ${WRKSRC}/bin
 	${CP} ${FILESDIR}/sdoc.in ${WRKSRC}/bin/sdoc
 
-pre-patch:
-	cd ${WRKSRC}/doc; \
-	for f in ${SJIS2EUC}; do \
-		${MV} $${f} $${f}.tmp; \
-		nkf -xde $${f}.tmp > $${f}; \
-		${RM} -f $${f}.tmp; \
-	done
-
-pre-install:
-	${MKDIR} ${JAVADIR}/sdoc-${PORTVERSION}/bin ${JAVADIR}/classes ${DTDDIR}
-	find ${WRKSRC} \( -name \*.orig -o -name \*~ \) -exec ${RM} -f \{} \;
-
 do-install:
-	${CP} -R ${WRKSRC}/* ${JAVADIR}/sdoc-${PORTVERSION}
-	cd ${WRKSRC}; \
-	${INSTALL_SCRIPT} bin/sdoc ${JAVADIR}/sdoc-${PORTVERSION}/bin; \
-	${INSTALL_DATA} SmartDoc.jar ${JAVADIR}/classes
-	${LN} -sf ${JAVADIR}/sdoc-${PORTVERSION}/bin/sdoc ${PREFIX}/bin/sdoc
+	${INSTALL_SCRIPT} ${WRKSRC}/bin/sdoc ${PREFIX}/bin
+	${MKDIR} ${JAVALIBDIR}
+.for jar in ${JARS}
+	${INSTALL_DATA} ${WRKSRC}/${jar} ${JAVALIBDIR}/classes
+.endfor
+	${MKDIR} ${EXAMPLESDIR}
+	${CP} -R ${WRKSRC}/etc/* ${EXAMPLESDIR}
+.if !defined(NOPORTDOCS)
+	${MKDIR} ${DOCSDIR}
+.for doc in ${DOCS}
+	${INSTALL_DATA} ${WRKSRC}/${doc} ${DOCSDIR}
+.endfor
+	${CP} -R ${WRKSRC}/doc ${DOCSDIR}
+.endif
+	${MKDIR} ${DTDDIR} ${EMACSLISPDIR} ${XEMACSLISPDIR}
 	${INSTALL_DATA} ${FILESDIR}/catalog ${DTDDIR}
-	cd ${WRKSRC}/etc/pure; \
-	${INSTALL_DATA} PureSmartDoc.dtd PureSmartDoc.rlx article.css ${DTDDIR}
-
-post-install:
-	${MKCATALOG} -c ${PREFIX}/share/xml/catalog -q install ${DTDNAME}
-	@${CAT} ${PKGMESSAGE}
+	${INSTALL_DATA} ${WRKSRC}/etc/pure/PureSmartDoc.dtd ${DTDDIR}
+	${MKCATALOG} -c ${LOCALBASE}/share/xml/catalog -q install ${PORTNAME}
+.for file in ${ELISPS}
+	${INSTALL_DATA} ${WRKSRC}/etc/${file} ${EMACSLISPDIR}
+	${INSTALL_DATA} ${WRKSRC}/etc/${file} ${XEMACSLISPDIR}
+.endfor
 
 .include <bsd.port.mk>
