@@ -359,6 +359,7 @@
     SUBDIR += pharmacy
     SUBDIR += picprog
     SUBDIR += pinstall
+    SUBDIR += pkgconfig
     SUBDIR += pmake
     SUBDIR += popt
     SUBDIR += portcheckout
