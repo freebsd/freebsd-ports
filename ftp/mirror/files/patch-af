@@ -1,7 +1,7 @@
-*** lchat.pl.orig	Wed Jun  7 22:19:22 1995
---- lchat.pl	Tue Nov 25 09:20:20 1997
+*** lchat.pl.orig	Fri May 29 21:05:46 1998
+--- lchat.pl	Mon Jun  8 14:34:37 1998
 ***************
-*** 123,129 ****
+*** 161,167 ****
   # Similar to open_port, but does less.  Used for PASV code with ftp.pl
   # -Erez Zadok.
   sub open_newport { ## public
@@ -9,7 +9,7 @@
   
   	local($serveraddr,$serverproc);
   
---- 123,129 ----
+--- 161,167 ----
   # Similar to open_port, but does less.  Used for PASV code with ftp.pl
   # -Erez Zadok.
   sub open_newport { ## public
@@ -18,7 +18,7 @@
   	local($serveraddr,$serverproc);
   
 ***************
-*** 142,159 ****
+*** 180,197 ****
   	}
   	$serverproc = pack($sockaddr, 2, $port, $serveraddr);
   
@@ -37,7 +37,7 @@
   	return 1;
   }
   ##############################################################################
---- 142,159 ----
+--- 180,197 ----
   	}
   	$serverproc = pack($sockaddr, 2, $port, $serveraddr);
   
