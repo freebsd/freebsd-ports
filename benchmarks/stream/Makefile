@@ -6,23 +6,30 @@
 
 PORTNAME=	stream
 PORTVERSION=	1.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	benchmarks
 MASTER_SITES=	ftp://ftp.cs.virginia.edu/pub/stream/Code/
-DISTFILES=	second_cpu.c stream_d.c
+DISTFILES=	stream.c README
 DIST_SUBDIR=	stream-${PORTVERSION}
 
 MAINTAINER=	sf@slappy.org
 COMMENT=	Synthetic benchmark program that measures sustainable memory bandwidth
 
-MAKEFILE=	${FILESDIR}/Makefile
 PLIST_FILES=	bin/stream
+PORTDOCS=	stream.c README
 
 do-extract:
-	@${MKDIR} ${WRKDIR}
-	@${CP} -r ${_DISTDIR} ${WRKDIR}
+	@${MKDIR} ${BUILD_WRKSRC}
+	@${CP} ${_DISTDIR}/stream.c ${BUILD_WRKSRC}
 
-post-install:
-	${STRIP_CMD} ${PREFIX}/bin/stream
+do-build:
+	(cd ${BUILD_WRKSRC} ; ${CC} ${CFLAGS} -o stream stream.c -lm)
+
+do-install:
+	(cd ${BUILD_WRKSRC}; ${INSTALL_PROGRAM} stream ${PREFIX}/bin)
+.	if !defined(NOPORTDOCS)
+		${MKDIR} ${DOCSDIR}
+		(cd ${_DISTDIR}; ${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR})
+.	endif
 
 .include <bsd.port.mk>
