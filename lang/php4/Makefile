@@ -71,7 +71,8 @@ OPTIONS=	REDIRECT "Enable force-cgi-redirect support" off \
 OPTIONS=	APACHE2 "Use apache 2.x instead of apache 1.3.x" off
 .endif
 OPTIONS+=	DEBUG "Enable debug" off \
-		IPV6 "Enable ipv6 support" on
+		IPV6 "Enable ipv6 support" on \
+		OPENSSL "Build static OpenSSL extension" off
 
 EXT_DIR=	20020429
 
@@ -108,6 +109,13 @@ SAPI_FILE=	bin/php
 
 CONFIGURE_ENV=	ac_cv_pthreads_lib=${PTHREAD_LIBS} \
 		ac_cv_pthreads_cflags=${PTHREAD_CFLAGS}
+
+.if defined(WITH_OPENSSL)
+.include "${PORTSDIR}/Mk/bsd.openssl.mk"
+CONFIGURE_ARGS+=--with-openssl=${OPENSSLBASE} \
+                --with-openssl-dir=${OPENSSLBASE}
+LDFLAGS+=       -L${OPENSSLLIB} -lcrypto -lssl
+.endif
 
 .if defined(WITH_APACHE)
 .if exists(${LOCALBASE}/include/apache2/httpd.h)
@@ -182,6 +190,9 @@ post-build:
 	@${ECHO_CMD} "PHP_EXT_DIR=${EXT_DIR}" >> ${WRKDIR}/php.conf
 	@${ECHO_CMD} "PHP_PORT=\$${PORTSDIR}/${PHP_PORT}" >> ${WRKDIR}/php.conf
 	@${ECHO_CMD} "PHP_SAPI=${PHP_SAPI}" >> ${WRKDIR}/php.conf
+.if defined(WITH_OPENSSL)
+	@${ECHO_CMD} "PHP_EXT_INC=openssl" >> ${WRKDIR}/php.conf
+.endif
 
 post-install:
 	@${INSTALL_DATA} ${WRKSRC}/php.ini-dist ${PREFIX}/etc
