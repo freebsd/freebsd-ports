@@ -1,9 +1,9 @@
 #!/bin/sh
 
 # The user may have a tclsh they want to preserve
-if [ ! -f ${PKG_PREFIX}/bin/tclsh ] || [ \
-   `grep -a awieYJFnsuILOnfsYEW ${PKG_PREFIX}/bin/tclsh | sed -e 's/.*\*\*//'` \
-   -lt 001 ]
+ver=`grep -a awieYJFnsuILOnfsYEW ${PKG_PREFIX}/bin/tclsh 2> /dev/null \
+    | sed -e 's/.*\*\*//'`
+if [ ! -e ${PKG_PREFIX}/bin/tclsh ] || [ "$ver" != "" -a "$ver" -lt 001 ]
 then
 	[ -f ${PKG_PREFIX}/bin/tclsh ] && chmod u+w ${PKG_PREFIX}/bin/tclsh
 
@@ -28,5 +28,5 @@ done
 ) 1>&2
 exit 1
 EOF
-	chmod a+rx ${PKG_PREFIX}/bin/tclsh
+	chmod 555 ${PKG_PREFIX}/bin/tclsh
 fi
