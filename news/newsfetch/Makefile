@@ -3,7 +3,7 @@
 # Date created:		12 September 1997
 # Whom:			Jun-ichiro itojun Itoh <itojun@itojun.org>
 #
-# $Id: Makefile,v 1.3 1998/05/07 17:10:53 itojun Exp $
+# $Id: Makefile,v 1.4 1998/10/07 06:52:58 itojun Exp $
 #
 
 DISTNAME=	newsfetch-1.21
@@ -14,6 +14,6 @@ MASTER_SITE_SUBDIR=	system/news/readers
 MAINTAINER=	itojun@itojun.org
 
 MAN1=		newsfetch.1
-MAKE_ENV+=	INSTALL_PROGRAM="${INSTALL_PROGRAM}" INSTALL_MAN="${INSTALL_MAN}"
+MAKE_ENV=	INSTALL_PROGRAM="${INSTALL_PROGRAM}" INSTALL_MAN="${INSTALL_MAN}"
 
 .include <bsd.port.mk>
