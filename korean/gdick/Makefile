@@ -25,9 +25,9 @@ USE_REINPLACE=	yes
 USE_BZIP2=	yes
 PLIST_SUB=	${OPTPLIST_SUB}
 
-.include <bsd.port.pre.mk>
-
 USE_GNOME=	gnomehier
+
+.include <bsd.port.pre.mk>
 
 post-patch:
 	${REINPLACE_CMD} -e \

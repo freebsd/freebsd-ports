@@ -54,6 +54,8 @@ MLINKS+=	vim.1 gvim.1  vim.1 gview.1  vim.1 rgvim.1  vim.1 rgview.1  \
 		eview.1 gvimdiff.1
 .endif
 
+WANT_GNOME=	yes
+
 .include <bsd.port.pre.mk>
 
 .if !defined(LITE)

@@ -36,6 +36,8 @@ ANT?=	${LOCALBASE}/bin/ant
 TCSH?=	/bin/tcsh
 PASTE?= /usr/bin/paste
 
+USE_GNOME=	orbit gtk12
+
 .include <bsd.port.pre.mk>
 
 INSTALLATION_BASEDIR=	OpenOffice.org1.0
@@ -129,7 +131,6 @@ USE_PERL5=	yes
 USE_BZIP2=	yes
 USE_BISON=	yes
 USE_GMAKE=	yes
-USE_GNOME=	orbit gtk12
 
 EXTRACT_BEFORE_ARGS_R= -dc
 EXTRACT_AFTER_ARGS_R= | ${TAR} -xf -

@@ -20,6 +20,8 @@ COMMENT=	xBase and Clipper language compatible compiler
 
 USE_GETTEXT=	yes
 
+WANT_GNOME=	yes
+
 .include <bsd.port.pre.mk>
 
 BUILD_DEPENDS=	bash:${PORTSDIR}/shells/bash2			\

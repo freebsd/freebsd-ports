@@ -41,6 +41,8 @@ PKGMESSAGE=	${WRKDIR}/pkg-message
 FIXPREFIX=	Docs/man/gnokiid.8 Docs/DataCalls-QuickStart Docs/README \
 		common/cfgreader.c po/et.po po/sl.po
 
+WANT_GNOME=	yes
+
 .include <bsd.port.pre.mk>
 
 # If smsd is enabled check if MySQL or PostgreSQL are installed and
