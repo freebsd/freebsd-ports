@@ -6,38 +6,50 @@
 #
 
 PORTNAME=	generator
-PORTVERSION=	0.15
+PORTVERSION=	0.34
 CATEGORIES=	emulators
 MASTER_SITES=	http://www.squish.net/generator/files/
 
 MAINTAINER=	nakai@FreeBSD.org
 COMMENT=	SEGA Genesis emulator
 
-LIB_DEPENDS=	tcl82.1:${PORTSDIR}/lang/tcl82 \
-		tk82.1:${PORTSDIR}/x11-toolkits/tk82
+LIB_DEPENDS=	gtk12.2:${PORTSDIR}/x11-toolkits/gtk12 \
+		SDL-1.1.5:${PORTSDIR}/devel/sdl12
+.if (${MACHINE_ARCH} == "i386")
+BUILD_DEPENDS=	nasm:${PORTSDIR}/devel/nasm
+.endif
 
-CONFIGURE_ENV=	CFLAGS="-I${LOCALBASE}/include \
-		-I${LOCALBASE}/include/tk8.2 -I${LOCALBASE}/include/tcl8.2"
-CONFIGURE_ARGS=	--enable-tcltk
+SDL_CONFIG?=    ${LOCALBASE}/bin/sdl11-config
+GTK_CONFIG?=	${X11BASE}/bin/gtk12-config
 
 USE_GMAKE=	yes
-USE_X_PREFIX=	yes
+USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	--with-gtk
 
-nakai:
-	echo ${CONFIGURE_ARGS}
+.if (${MACHINE_ARCH} == "i386")
+CONFIGURE_ARGS+=	--with-raze
+.else
+CONFIGURE_ARGS+=	--with-cmz80
+.endif
 
-do-configure:
-	( cd ${WRKSRC}/src; ${CONFIGURE_ENV} ../compile/${CONFIGURE_SCRIPT} \
-	${CONFIGURE_ARGS} )
+MAKE_ENV+=	GTK_CONFIG="${GTK_CONFIG}" \
+		SDL_CONFIG="${SDL_CONFIG}"
+CONFIGURE_ENV+=	GTK_CONFIG="${GTK_CONFIG}" \
+		SDL_CONFIG="${SDL_CONFIG}"
 
-do-build:
-	( cd ${WRKSRC}/src; ${GMAKE} )
+.include <bsd.port.pre.mk>
 
-do-install:
-	${MKDIR} ${PREFIX}/bin
-	${MKDIR} ${PREFIX}/share/generator/
-	${INSTALL_PROGRAM} ${WRKSRC}/src/generator-tcltk ${PREFIX}/bin
-	${INSTALL_DATA} ${WRKSRC}/share/* ${PREFIX}/share/generator
+post-patch:
+.if ${OSVERSION} >= 500035
+	@${REINPLACE_CMD} -e \
+		's|-malign-loops|-falign-loops|g ; \
+		 s|-malign-jumps|-falign-jumps|g ; \
+		 s|-malign-functions|-falign-functions|g' ${WRKSRC}/configure.in
+	@${REINPLACE_CMD} -e \
+		's|-malign-loops|-falign-loops|g ; \
+		 s|-malign-jumps|-falign-jumps|g ; \
+		 s|-malign-functions|-falign-functions|g' ${WRKSRC}/configure
+.endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
