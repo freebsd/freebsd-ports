@@ -81,6 +81,10 @@ EXTRA_PATCHES+=		${FILESDIR}/gss-serv.c.patch
 EXTRA_PATCHES+=		${FILESDIR}/batch.patch
 .endif
 
+.if defined(WITH_OPENSSH_CHROOT)
+CFLAGS+=		-DCHROOT
+.endif
+
 .if defined(OPENSSH_OVERWRITE_BASE)
 WITH_OPENSSL_BASE=	yes
 BASE_SUFFIX=	-overwrite-base

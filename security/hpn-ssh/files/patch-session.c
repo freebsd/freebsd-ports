@@ -1,6 +1,6 @@
---- session.c.orig	Tue Sep 23 10:59:08 2003
-+++ session.c	Tue Sep 23 17:29:31 2003
-@@ -62,6 +62,11 @@
+--- session.c.orig	Thu Aug 12 14:40:25 2004
++++ session.c	Tue Sep 21 19:48:42 2004
+@@ -66,6 +66,11 @@
  #include "ssh-gss.h"
  #endif
  
@@ -12,7 +12,7 @@
  /* func */
  
  Session *session_new(void);
-@@ -411,6 +416,13 @@
+@@ -410,6 +415,13 @@
  		log_init(__progname, options.log_level, options.log_facility, log_stderr);
  
  		/*
@@ -26,7 +26,7 @@
  		 * Create a new session and process group since the 4.4BSD
  		 * setlogin() affects the entire process group.
  		 */
-@@ -516,6 +528,9 @@
+@@ -526,6 +538,9 @@
  {
  	int fdout, ptyfd, ttyfd, ptymaster;
  	pid_t pid;
@@ -36,7 +36,7 @@
  
  	if (s == NULL)
  		fatal("do_exec_pty: no session");
-@@ -535,6 +550,14 @@
+@@ -546,6 +561,14 @@
  
  		/* Child.  Reinitialize the log because the pid has changed. */
  		log_init(__progname, options.log_level, options.log_facility, log_stderr);
@@ -51,7 +51,7 @@
  		/* Close the master side of the pseudo tty. */
  		close(ptyfd);
  
-@@ -676,6 +699,18 @@
+@@ -692,6 +715,18 @@
  	struct sockaddr_storage from;
  	struct passwd * pw = s->pw;
  	pid_t pid = getpid();
@@ -70,7 +70,7 @@
  
  	/*
  	 * Get IP address of client. If the connection is not a socket, let
-@@ -710,6 +745,72 @@
+@@ -727,12 +762,101 @@
  	}
  #endif
  
@@ -143,9 +143,7 @@
  	if (check_quietlogin(s, command))
  		return;
  
-@@ -738,7 +849,30 @@
- 	}
- #endif /* NO_SSH_LASTLOG */
+ 	display_loginmsg();
  
 -	do_motd();
 +#ifdef HAVE_LOGIN_CAP
@@ -175,7 +173,7 @@
  }
  
  /*
-@@ -754,9 +888,9 @@
+@@ -748,9 +872,9 @@
  #ifdef HAVE_LOGIN_CAP
  		f = fopen(login_getcapstr(lc, "welcome", "/etc/motd",
  		    "/etc/motd"), "r");
@@ -187,7 +185,7 @@
  		if (f) {
  			while (fgets(buf, sizeof(buf), f))
  				fputs(buf, stdout);
-@@ -783,10 +917,10 @@
+@@ -777,10 +901,10 @@
  #ifdef HAVE_LOGIN_CAP
  	if (login_getcapbool(lc, "hushlogin", 0) || stat(buf, &st) >= 0)
  		return 1;
@@ -200,7 +198,7 @@
  	return 0;
  }
  
-@@ -973,6 +1107,10 @@
+@@ -967,6 +1091,10 @@
  	char buf[256];
  	u_int i, envsize;
  	char **env, *laddr, *path = NULL;
@@ -211,7 +209,7 @@
  	struct passwd *pw = s->pw;
  
  	/* Initialize the environment. */
-@@ -980,6 +1118,9 @@
+@@ -974,6 +1102,9 @@
  	env = xmalloc(envsize * sizeof(char *));
  	env[0] = NULL;
  
@@ -221,7 +219,7 @@
  #ifdef HAVE_CYGWIN
  	/*
  	 * The Windows environment contains some setting which are
-@@ -1034,9 +1175,21 @@
+@@ -1032,9 +1163,21 @@
  
  		/* Normal systems set SHELL by default. */
  		child_set_env(&env, &envsize, "SHELL", shell);
@@ -245,16 +243,52 @@
  
  	/* Set custom environment options from RSA authentication. */
  	if (!options.use_login) {
-@@ -1245,7 +1398,7 @@
- 		setpgid(0, 0);
- # endif
+@@ -1234,6 +1377,12 @@
+ void
+ do_setusercontext(struct passwd *pw)
+ {
++
++#ifdef CHROOT
++	char *user_dir;
++	char *new_root;
++#endif /* CHROOT */
++
+ #ifndef HAVE_CYGWIN
+ 	if (getuid() == 0 || geteuid() == 0)
+ #endif /* HAVE_CYGWIN */
+@@ -1254,10 +1403,30 @@
+ 		}
+ # endif /* USE_PAM */
  		if (setusercontext(lc, pw, pw->pw_uid,
 -		    (LOGIN_SETALL & ~LOGIN_SETPATH)) < 0) {
-+		    (LOGIN_SETALL & ~(LOGIN_SETENV|LOGIN_SETPATH))) < 0) {
++		    (LOGIN_SETALL & ~(LOGIN_SETENV|LOGIN_SETPATH|LOGIN_SETUSER))) < 0) {
  			perror("unable to set user context");
  			exit(1);
  		}
-@@ -1275,7 +1428,16 @@
++#ifdef CHROOT
++	user_dir = xstrdup(pw->pw_dir);
++	new_root = user_dir + 1;
++
++	while((new_root = strchr(new_root, '.')) != NULL) {
++		new_root--;
++		if(strncmp(new_root, "/./", 3) == 0) {
++			*new_root = '\0';
++			new_root += 2;
++
++			if(chroot(user_dir) != 0)
++				fatal("Couldn't chroot to user directory %s", user_dir);
++			pw->pw_dir = new_root;
++			break;
++		}
++
++		new_root += 2;
++	}
++#endif /* CHROOT */
++	permanently_set_uid(pw);
+ #else
+ # if defined(HAVE_GETLUID) && defined(HAVE_SETLUID)
+ 		/* Sets login uid for accounting */
+@@ -1284,7 +1453,16 @@
  		 * Reestablish them here.
  		 */
  		if (options.use_pam) {
@@ -272,16 +306,16 @@
  			do_pam_setcred(0);
  		}
  # endif /* USE_PAM */
-@@ -1411,7 +1573,7 @@
+@@ -1374,7 +1552,7 @@
  	 * initgroups, because at least on Solaris 2.3 it leaves file
  	 * descriptors open.
  	 */
 -	for (i = 3; i < 64; i++)
 +	for (i = 3; i < getdtablesize(); i++)
  		close(i);
+ }
  
- 	/*
-@@ -1429,6 +1591,31 @@
+@@ -1503,6 +1681,31 @@
  			exit(1);
  #endif
  	}
