@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	pyslsk
-PORTVERSION=	1.1.2
+PORTVERSION=	1.2.0
 CATEGORIES=	net
 MASTER_SITES=	http://www.sensi.org/~ak/pyslsk/ \
 		http://stud4.tuwien.ac.at/~e0125637/
@@ -19,7 +19,9 @@ RUN_DEPENDS=	${PYTHON_SITELIBDIR}/wxPython/__init__.py:${PORTSDIR}/x11-toolkits/
 .if !defined(WITHOUT_VORBIS)
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/ogg/vorbismodule.so:${PORTSDIR}/audio/py-vorbis
 .endif
-
+.if !defined(WITHOUT_BSDDB3)
+RUN_DEPENDS=	${PYTHON_SITELIBDIR}/bsddb3/__init__.py:${PORTSDIR}/databases/py-bsddb3
+.endif
 USE_PYTHON=	yes
 USE_PYDISTUTILS=yes
 
