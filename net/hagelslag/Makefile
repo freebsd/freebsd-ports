@@ -6,18 +6,17 @@
 #
 
 PORTNAME=	hagelslag
-PORTVERSION=	0.12.1
+PORTVERSION=	0.13
 CATEGORIES=	net
 MASTER_SITES=	http://tiefighter.et.tudelft.nl/hagelslag/ \
 		ftp://tiefighter.et.tudelft.nl/pub/hagelslag/v${PORTVERSION}/
-EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	johann@egenetics.com
+MAINTAINER=	ports@FreeBSD.org
 
 BUILD_DEPENDS=	makedepend:${PORTSDIR}/devel/makedepend
 
 USE_GMAKE=	yes
-MAKEFILES=	Makefile gui/Makefile gui-api/Makefile
+MAKEFILES=	Makefile gui/Makefile src/Makefile
 HS_DOCDIR=	${PREFIX}/share/doc/${PORTNAME}
 
 post-patch:
@@ -28,7 +27,7 @@ post-patch:
 post-install:
 .if !defined(NOPORTDOCS)
 	@ ${MKDIR} ${HS_DOCDIR}
-	@ ${INSTALL_MAN} ${WRKSRC}/doc/* ${HS_DOCDIR}
+	@ ${INSTALL_DATA} ${WRKSRC}/doc/* ${HS_DOCDIR}
 .endif
 
 .include <bsd.port.mk>

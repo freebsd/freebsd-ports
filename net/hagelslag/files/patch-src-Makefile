@@ -1,5 +1,5 @@
---- src/Makefile.orig	Thu Feb  1 16:27:37 2001
-+++ src/Makefile	Wed Feb 14 14:41:23 2001
+--- src/Makefile.orig	Sun Apr  8 19:58:59 2001
++++ src/Makefile	Mon May  7 12:18:41 2001
 @@ -1,5 +1,4 @@
  # Don't change this...
 -CXX=g++
@@ -15,12 +15,12 @@
  
  # Nothing below here should be changed
  
-@@ -70,7 +69,7 @@
- 	cp hagelslagd ../bin
+@@ -98,7 +97,7 @@
+ 	cp -f UserLib.a ../lib
  
  depend:
--	makedepend -Y -- $(CPP_FILES)
-+	makedepend -- $(CPP_FILES)
+-	makedepend -Y -- $(CPP_FILES) $(RC_CPP) $(USER_CPP)
++	makedepend -- $(CPP_FILES) $(RC_CPP) $(USER_CPP)
+ 	make -C RC depend
  
  clean:
- 	rm -f hagelslag hagelslagd hagelslagrouter *.o *~ core *.bak
