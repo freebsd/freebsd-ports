@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	metacity-setup
-PORTVERSION=	0.4.1
+PORTVERSION=	0.5
 CATEGORIES=	x11-wm
 MASTER_SITES=	http://plastercast.tzo.com/~plastercast/Projects/ \
 		http://www.marcuscom.com/downloads/ \
@@ -27,14 +27,14 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 CONFIGURE_TARGET=	--target=${MACHINE_ARCH}-unknown-freebsd${OSREL}
 
 pre-patch:
-	@${PERL} -pi -e 's|-lpthread|${PTHREAD_LIBS}|g ; \
+	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|g ; \
 		 s|DATADIRNAME=lib|DATADIRNAME=share|g' ${WRKSRC}/configure
-	@find ${WRKSRC} -name "Makefile.in*" | xargs ${PERL} -pi -e \
-		's|\$\(datadir\)/gnome/|\$\(datadir\)/|g ; \
-		 s|\$\(datadir\)/locale|\$\(prefix\)/share/locale|g'
+	@find ${WRKSRC} -name "Makefile.in*" | xargs ${REINPLACE_CMD} -e \
+		's|[(]datadir[)]/gnome/|(datadir)/|g ; \
+		 s|[(]datadir[)]/locale|(prefix)/share/locale|g'
 
 post-patch:
-	@${PERL} -pi -e 's|\%\%X11BASE\%\%|${X11BASE}|g' \
+	@${REINPLACE_CMD} -e 's|[%][%]X11BASE[%][%]|${X11BASE}|g' \
 		${WRKSRC}/src/callbacks.c
 
 .include <bsd.port.mk>

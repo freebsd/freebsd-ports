@@ -1,0 +1,15 @@
+--- Makefile.in.orig	Sun Jun 16 23:05:24 2002
++++ Makefile.in	Sun Jun 16 23:06:31 2002
+@@ -398,10 +398,10 @@
+ install-data-local:
+ 	@$(NORMAL_INSTALL)
+ 	if test -d $(srcdir)/pixmaps; then \
+-	  $(mkinstalldirs) $(DESTDIR)$(pkgdatadir)/pixmaps; \
++	  $(mkinstalldirs) $(pixmapdir); \
+ 	  for pixmap in $(srcdir)/pixmaps/*; do \
+ 	    if test -f $$pixmap; then \
+-	      $(INSTALL_DATA) $$pixmap $(DESTDIR)$(prefix)share/pixmaps; \
++	      $(INSTALL_DATA) $$pixmap $(pixmapdir); \
+ 	    fi \
+ 	  done \
+ 	fi
