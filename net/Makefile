@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.212 1998/12/24 15:29:21 flathill Exp $
+# $Id: Makefile,v 1.213 1998/12/24 18:54:08 sada Exp $
 #
 
     SUBDIR += SSLtelnet
@@ -16,6 +16,7 @@
     SUBDIR += bitchx
     SUBDIR += bnc
     SUBDIR += boclient
+    SUBDIR += bounce
     SUBDIR += cap
     SUBDIR += cftp
     SUBDIR += choparp
@@ -121,6 +122,7 @@
     SUBDIR += radiusd-cistron
     SUBDIR += ratoolset
     SUBDIR += rdist6
+    SUBDIR += relay
     SUBDIR += ripetools
     SUBDIR += rmsg
     SUBDIR += rshell
@@ -143,6 +145,7 @@
     SUBDIR += tcpshow
     SUBDIR += tcptrace
     SUBDIR += telnetx
+    SUBDIR += telserv
     SUBDIR += tik
     SUBDIR += tintin++
     SUBDIR += tinyfugue
