@@ -3,14 +3,12 @@
 # Date created:         So  17 Nov 1996 16:59:23 MET
 # Whom:                 Andreas Klemm <andreas@klemm.gtn.com>
 #
-# $Id: Makefile,v 1.19 1997/10/09 21:04:34 andreas Exp $
+# $Id: Makefile,v 1.20 1997/10/13 20:19:23 andreas Exp $
 #
 
-DISTNAME=	bb
-PKGNAME=	bb-1.04
+DISTNAME=	bb-1.06a
 CATEGORIES=	net
-MASTER_SITES=	http://www.iti.qc.ca/iti/users/sean/bb-dnld/
-EXTRACT_SUFX=   -src.tgz
+MASTER_SITES=	http://freefall.freebsd.org/~andreas/download/
 
 MAINTAINER=	andreas@FreeBSD.ORG
 
@@ -20,121 +18,71 @@ BUILD_DEPENDS=	${PREFIX}/sbin/httpd:${PORTSDIR}/www/apache
 # from the author, but others who wish to do likewise will have to
 # contact Sean MacGuire <sean@iti.qc.ca>.
 
+WRKSRC=		${WRKDIR}/bb
+
 post-configure:
 	( cd ${WRKSRC}/doc; ${SH} bbconfig freebsd )
 	@${CP} ${FILESDIR}/Makefile ${WRKSRC}
 
 do-install:
-	@${MKDIR} ${PREFIX}/${DISTNAME}/bin
-	@${MKDIR} ${PREFIX}/${DISTNAME}/doc
-	@${MKDIR} ${PREFIX}/${DISTNAME}/etc
-	@${MKDIR} ${PREFIX}/${DISTNAME}/web
-	@${MKDIR} ${PREFIX}/${DISTNAME}/www/gifs
-	@${MKDIR} ${PREFIX}/${DISTNAME}/www/logs
-	@${MKDIR} ${PREFIX}/${DISTNAME}/www/notes
-	@${MKDIR} ${PREFIX}/${DISTNAME}/tmp
-	@${TOUCH} ${PREFIX}/${DISTNAME}/tmp/.keep_me
+	@${MKDIR} ${PREFIX}/bb/bin
+	@${MKDIR} ${PREFIX}/bb/etc
+	@${MKDIR} ${PREFIX}/bb/web
+	@${MKDIR} ${PREFIX}/bb/www/gifs
+	@${MKDIR} ${PREFIX}/bb/www/logs
+	@${MKDIR} ${PREFIX}/bb/www/notes
+	@${MKDIR} ${PREFIX}/bb/tmp
+	@${MKDIR} ${PREFIX}/share/doc/bb
+	@${TOUCH} ${PREFIX}/bb/tmp/.keep_me
 	${INSTALL_SCRIPT} ${WRKSRC}/runbb.sh \
-				${PREFIX}/${DISTNAME}/runbb.sh
+				${PREFIX}/etc/rc.d
 	${INSTALL_DATA} ${WRKSRC}/README \
-				${PREFIX}/${DISTNAME}/README
-	${INSTALL_PROGRAM} ${WRKSRC}/bin/bb \
-				${PREFIX}/${DISTNAME}/bin/bb
-	${INSTALL_SCRIPT} ${WRKSRC}/bin/bb-local.sh \
-				${PREFIX}/${DISTNAME}/bin/bb-local.sh
-	${INSTALL_SCRIPT} ${WRKSRC}/bin/bb-network.sh \
-				${PREFIX}/${DISTNAME}/bin/bb-network.sh
-	${INSTALL_SCRIPT} ${WRKSRC}/bin/bb-page.sh \
-				${PREFIX}/${DISTNAME}/bin/bb-page.sh
-	${INSTALL_PROGRAM} ${WRKSRC}/bin/bbd \
-				${PREFIX}/${DISTNAME}/bin/bbd
-	${INSTALL_PROGRAM} ${WRKSRC}/bin/bbnet \
-				${PREFIX}/${DISTNAME}/bin/bbnet
-	${INSTALL_SCRIPT} ${WRKSRC}/bin/sendmsg \
-				${PREFIX}/${DISTNAME}/bin/sendmsg
-	${INSTALL_PROGRAM} ${WRKSRC}/bin/touchtime \
-				${PREFIX}/${DISTNAME}/bin/touchtime
-	${INSTALL_DATA} ${WRKSRC}/doc/README \
-				${PREFIX}/${DISTNAME}/doc/README
-	${INSTALL_DATA} ${WRKSRC}/doc/STRUCTURE \
-				${PREFIX}/${DISTNAME}/doc/STRUCTURE
-	${INSTALL_SCRIPT} ${WRKSRC}/doc/bbclient \
-				${PREFIX}/${DISTNAME}/doc/bbclient
-	${INSTALL_SCRIPT} ${WRKSRC}/doc/bbconfig \
-				${PREFIX}/${DISTNAME}/doc/bbconfig
-	${INSTALL_DATA} ${WRKSRC}/etc/bb-hosts \
-				${PREFIX}/${DISTNAME}/etc/bb-hosts
-	${INSTALL_SCRIPT} ${WRKSRC}/etc/bbdef.sh \
-				${PREFIX}/${DISTNAME}/etc/bbdef.sh
-	${INSTALL_SCRIPT} ${WRKSRC}/etc/bbinc.sh \
-				${PREFIX}/${DISTNAME}/etc/bbinc.sh
-	${INSTALL_DATA} ${WRKSRC}/etc/bbsys.freebsd \
-				${PREFIX}/${DISTNAME}/etc/bbsys.freebsd
-	${INSTALL_DATA} ${WRKSRC}/etc/bbsys.hpux \
-				${PREFIX}/${DISTNAME}/etc/bbsys.hpux
-	${INSTALL_DATA} ${WRKSRC}/etc/bbsys.linux \
-				${PREFIX}/${DISTNAME}/etc/bbsys.linux
-	${INSTALL_DATA} ${WRKSRC}/etc/bbsys.local \
-				${PREFIX}/${DISTNAME}/etc/bbsys.local
-	${INSTALL_SCRIPT} ${WRKSRC}/etc/bbsys.sh \
-				${PREFIX}/${DISTNAME}/etc/bbsys.sh
-	${INSTALL_DATA} ${WRKSRC}/etc/bbsys.solaris \
-				${PREFIX}/${DISTNAME}/etc/bbsys.solaris
-	${INSTALL_DATA} ${WRKSRC}/etc/bbsys.sunos \
-				${PREFIX}/${DISTNAME}/etc/bbsys.sunos
-	${INSTALL_SCRIPT} ${WRKSRC}/web/mkbb.bkg \
-				${PREFIX}/${DISTNAME}/web/mkbb.bkg
-	${INSTALL_SCRIPT} ${WRKSRC}/web/mkbb.cols \
-				${PREFIX}/${DISTNAME}/web/mkbb.cols
-	${INSTALL_SCRIPT} ${WRKSRC}/web/mkbb.sh \
-				${PREFIX}/${DISTNAME}/web/mkbb.sh
-	${INSTALL_SCRIPT} ${WRKSRC}/web/mkbb2.sh \
-				${PREFIX}/${DISTNAME}/web/mkbb2.sh
-	${INSTALL_DATA} ${WRKSRC}/www/bb-help.html \
-				${PREFIX}/${DISTNAME}/www/bb-help.html
-	${INSTALL_DATA} ${WRKSRC}/www/bb-info.html \
-				${PREFIX}/${DISTNAME}/www/bb-info.html
-	${INSTALL_DATA} ${WRKSRC}/www/bb-page.html \
-				${PREFIX}/${DISTNAME}/www/bb-page.html
+				${PREFIX}/bb/README
+.for file in	bb-local.sh bb-network.sh bb-page.sh sendmsg
+	${INSTALL_SCRIPT} ${WRKSRC}/bin/$(file) \
+		${PREFIX}/bb/bin
+.endfor
+.for file in	bb bbd bbnet touchtime
+	${INSTALL_PROGRAM} ${WRKSRC}/bin/$(file) \
+		${PREFIX}/bb/bin
+.endfor
+.for file in	FAQ README README.SMS STRUCTURE bbclient bbconfig
+	${INSTALL_DATA} ${WRKSRC}/doc/$(file) \
+		${PREFIX}/share/doc/bb
+.endfor
+.for file in	bb-hosts bbdef.sh bbinc.sh bbsys.aix bbsys.freebsd bbsys.hpux \
+		bbsys.hpux9 bbsys.irix bbsys.linux bbsys.local bbsys.netbsd \
+		bbsys.osf bbsys.redhat bbsys.sco bbsys.sco3 bbsys.sh \
+		bbsys.solaris bbsys.sunos bbsys.ultrix bbsys.unixware \
+		numeric.scr security.INFO sms.scr
+	${INSTALL_DATA} ${WRKSRC}/etc/$(file) \
+		${PREFIX}/bb/etc
+.endfor
+.for file in	mkbb.bkg mkbb.cols mkbb.sh mkbb2.sh
+	${INSTALL_SCRIPT} ${WRKSRC}/web/$(file) \
+		${PREFIX}/bb/web
+.endfor
+.for file in	bb-faq.html bb-help.html bb-info.html bb-page.html
+	${INSTALL_DATA} ${WRKSRC}/www/$(file) \
+		${PREFIX}/bb/www
+.endfor
 	${INSTALL_SCRIPT} ${WRKSRC}/www/bb-pager.sh \
 				${PREFIX}/www/cgi-bin/bb-pager.sh
 	@ln -sf ${PREFIX}/www/cgi-bin/bb-pager.sh \
-				${PREFIX}/${DISTNAME}/www/bb-pager.sh
-	${INSTALL_DATA} ${WRKSRC}/www/gifs/bb-diag.gif \
-				${PREFIX}/${DISTNAME}/www/gifs/bb-diag.gif
-	${INSTALL_DATA} ${WRKSRC}/www/gifs/bb.gif \
-				${PREFIX}/${DISTNAME}/www/gifs/bb.gif
-	${INSTALL_DATA} ${WRKSRC}/www/gifs/bkg-green.gif \
-				${PREFIX}/${DISTNAME}/www/gifs/bkg-green.gif
-	${INSTALL_DATA} ${WRKSRC}/www/gifs/bkg-purple.gif \
-				${PREFIX}/${DISTNAME}/www/gifs/bkg-purple.gif
-	${INSTALL_DATA} ${WRKSRC}/www/gifs/bkg-red.gif \
-				${PREFIX}/${DISTNAME}/www/gifs/bkg-red.gif
-	${INSTALL_DATA} ${WRKSRC}/www/gifs/bkg-yellow.gif \
-				${PREFIX}/${DISTNAME}/www/gifs/bkg-yellow.gif
-	${INSTALL_DATA} ${WRKSRC}/www/gifs/blue.gif \
-				${PREFIX}/${DISTNAME}/www/gifs/blue.gif
-	${INSTALL_DATA} ${WRKSRC}/www/gifs/buthelp.gif \
-				${PREFIX}/${DISTNAME}/www/gifs/buthelp.gif
-	${INSTALL_DATA} ${WRKSRC}/www/gifs/butinfo.gif \
-				${PREFIX}/${DISTNAME}/www/gifs/butinfo.gif
-	${INSTALL_DATA} ${WRKSRC}/www/gifs/butpage.gif \
-				${PREFIX}/${DISTNAME}/www/gifs/butpage.gif
-	${INSTALL_DATA} ${WRKSRC}/www/gifs/butview.gif \
-				${PREFIX}/${DISTNAME}/www/gifs/butview.gif
-	${INSTALL_DATA} ${WRKSRC}/www/gifs/green.gif \
-				${PREFIX}/${DISTNAME}/www/gifs/green.gif
-	${INSTALL_DATA} ${WRKSRC}/www/gifs/purple.gif \
-				${PREFIX}/${DISTNAME}/www/gifs/purple.gif
-	${INSTALL_DATA} ${WRKSRC}/www/gifs/red.gif \
-				${PREFIX}/${DISTNAME}/www/gifs/red.gif
-	${INSTALL_DATA} ${WRKSRC}/www/gifs/yellow.gif \
-				${PREFIX}/${DISTNAME}/www/gifs/yellow.gif
+				${PREFIX}/bb/www/bb-pager.sh
+.for file in	bb-diag.gif bb.gif bb2.gif bbbut.gif bkg-green.gif \
+		bkg-purple.gif bkg-red.gif bkg-yellow.gif blue.gif \
+		buthelp.gif butinfo.gif butpage.gif butview.gif clear.gif \
+		green.gif nb-bbbut.gif nb-red.gif nb-yellow.gif purple.gif \
+		red.gif yellow.gif
+	${INSTALL_DATA} ${WRKSRC}/www/gifs/$(file) \
+		${PREFIX}/bb/www/gifs
+.endfor
 	${INSTALL_DATA} ${WRKSRC}/www/logs/later \
-				${PREFIX}/${DISTNAME}/www/logs/later
+				${PREFIX}/bb/www/logs/later
 	@${RM} -f ${PREFIX}/www/data/bb
-	@ln -sf ${PREFIX}/${DISTNAME}/www ${PREFIX}/www/data/bb
-	@ln -sf bb.html ${PREFIX}/${DISTNAME}/www/index.html
+	@ln -sf ${PREFIX}/bb/www ${PREFIX}/www/data/bb
+	@ln -sf bb.html ${PREFIX}/bb/www/index.html
 	@echo ""
 	@echo "================================================================"
 	@echo "==== Configuration Notes:                                    ==="
@@ -142,15 +90,15 @@ do-install:
 	@echo ""
 	@echo "a) your hosts 'full qualified domain name' and IP-address"
 	@echo "b) 'watched' hosts 'full qualified domain name' and IP-address"
-	@echo "go here -> ${PREFIX}/${DISTNAME}/etc/bb-hosts"
+	@echo "go here -> ${PREFIX}/bb/etc/bb-hosts"
 	@echo ""
-	@echo "c) configure -> ${PREFIX}/${DISTNAME}/etc/bbdef.sh"
-	@echo "d) configure -> ${PREFIX}/${DISTNAME}/etc/bbinc.sh"
+	@echo "c) configure -> ${PREFIX}/bb/etc/bbdef.sh"
+	@echo "d) configure -> ${PREFIX}/bb/etc/bbinc.sh"
 	@echo ""
 	@echo "e) You need to have a running WWW server (apache)"
 	@echo ""
 	@echo "After that, you can startup the big brother service by typing"
-	@echo "        ${PREFIX}/${DISTNAME}/runbb.sh &"
+	@echo "        ${PREFIX}/bb/runbb.sh &"
 	@echo ""
 	@echo "and watching your systems status by viewing this URL with"
 	@echo "Netscape or another WWW browser"
