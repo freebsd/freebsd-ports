@@ -90,7 +90,7 @@
 +CFLAGSPROF=-pg
 +
 +# Compiler flags for debugging
-+CFLAGSDEBUG=-g
++CFLAGSDEBUG=-g -ggdb
  CFLAGSDBGUTIL=
 -CFLAGSOPT= -O2
 -CFLAGSNOOPT= -O

@@ -1,6 +1,18 @@
 --- configure.in.orig	Wed Apr 17 22:37:42 2002
-+++ configure.in	Tue Jun  4 14:11:42 2002
-@@ -103,6 +103,12 @@
++++ configure.in	Thu Jun  6 13:10:49 2002
+@@ -28,6 +28,11 @@
+ 
+                           Usage: --enable-gcc3
+ ],,)
++AC_ARG_ENABLE(debug,
++[  --enable-debug          if you like to build with debug symbols
++
++                          Usage: --enable-debug
++],,)
+ AC_ARG_WITH(stlport4-home,
+ [  --with-stlport4-home    The location that STLport4 is installed in. The STL
+                           header files are assumed to be in stlport4-home/stlport
+@@ -103,6 +108,12 @@
  
                            Usage: --with-asm-home=<path to ml.exe directory>
  ],,)
@@ -13,7 +25,7 @@
  AC_ARG_WITH(unzip-home,
  [  --with-unzip-home         For Windows users, please supply the path for 
                            unzip.exe.
-@@ -241,7 +247,7 @@
+@@ -241,7 +252,7 @@
  if test "$_os" != "WINNT" && test -z "$with_gcc_home"; then
     AC_PROG_CC
  fi
@@ -22,7 +34,7 @@
     dnl ******************************************
     dnl Testing for GNU compiler and version...
     dnl ******************************************
-@@ -277,13 +283,13 @@
+@@ -277,13 +288,13 @@
  
     if test $GCC; then
        AC_MSG_CHECKING([the GNU gcc compiler version])
@@ -39,7 +51,7 @@
        fi
        _gcc_major=`echo $_gcc_version | $AWK -F. '{ print \$1 }'` 
        if test -n "$enable_gcc3"; then 
-@@ -296,13 +302,13 @@
+@@ -296,13 +307,13 @@
             AC_MSG_WARN([found version "$_gcc_version", use version 2.95.2+ of the gcc compiler]) >> warn
             COMPATH="NO_GCC"
          else
@@ -55,7 +67,7 @@
                if test "$_gcc_minor" = "false"; then
                   AC_MSG_WARN([found version "$_gcc_version", use version 2.95.2+ of the gcc compiler])
                   AC_MSG_WARN([found version "$_gcc_version", use version 2.95.2+ of the gcc compiler]) >> warn
-@@ -366,8 +372,9 @@
+@@ -366,8 +377,9 @@
                       _gcc_include_path="NO_GCC_INCLUDE"
                    fi
                 else
@@ -67,7 +79,7 @@
  		else
                    AC_MSG_WARN([could not find 2.95.2/include directory of the gcc compiler])
                    AC_MSG_WARN([could not find 2.95.2/include directory of the gcc compiler]) >> warn
-@@ -408,6 +415,71 @@
+@@ -408,6 +420,71 @@
        fi
     fi
  fi
@@ -139,7 +151,7 @@
  if test "$_os" = "Darwin"; then
     if test "$CC" = "cc"; then
        AC_PATH_PROGS(_cc, cc)
-@@ -589,6 +661,26 @@
+@@ -589,6 +666,26 @@
     fi
  fi
  
@@ -166,7 +178,7 @@
  dnl **************************************************************
  dnl Testing for required  Solaris and workshop compiler patches...
  dnl **************************************************************
-@@ -815,6 +907,10 @@
+@@ -815,6 +912,10 @@
     fi
     if test "$_os" = "FreeBSD" -o "$_os" = "NetBSD"; then
        _jdk_middle=`echo $_jdk | $AWK -F. '{ if ($2 != 2) print "false"; else print "true" }'`
@@ -177,18 +189,32 @@
     fi
     if test "$_os" = "Linux" -a "$_machine_type" = "sparc"; then
        _jdk_middle=`echo $_jdk | $AWK -F. '{ if ($2 != 2) print "false"; else print "true" }'`
-@@ -1196,12 +1292,13 @@
+@@ -1169,6 +1270,12 @@
+    USE_GCC3="FALSE"
+ fi
+ 
++if test -n "$enable_debug"; then
++   ENABLE_DEBUG="TRUE"
++else
++   ENABLE_DEBUG="FALSE"
++fi
++
+ # Print args passed to set_soenv.
+ if test 1 = 1; then
+ echo
+@@ -1196,12 +1303,14 @@
  echo "\$MINGWIN32="$WITH_MINGWIN
  echo "\$with_use_shell="$with_use_shell
  echo "\$USE_GCC3="$USE_GCC3
 +echo "\$EXCEPTIONS="$exceptions_type
++echo "\$ENABLE_DEBUG="$ENABLE_DEBUG
  echo
  fi
  
  # Executing the set_soenv script to setup the environment variables.
  if test -z "$enable_check_only"; then
 -   './set_soenv' $COMPATH $_gcc_include_path $_gxx_include_path $JAVA_HOME $TCSH $PERL $x_libraries $x_includes $_LOCAL_SOLENV $_LOCAL_SOLVER $upd $CYGWIN $STLPORT4 $enable_xprint $with_lang $with_asm_home $with_unzip_home $WITH_MINGWIN $with_use_shell $USE_GCC3
-+   './set_soenv' $COMPATH $_gcc_include_path $_gxx_include_path $JAVA_HOME $TCSH $PERL $x_libraries $x_includes $_LOCAL_SOLENV $_LOCAL_SOLVER $upd $CYGWIN $STLPORT4 $enable_xprint $with_lang $with_asm_home $with_unzip_home $WITH_MINGWIN $with_use_shell $USE_GCC3 $with_os_version $PTHREAD_CFLAGS $PTHREAD_LIBS $CC $CXX $exceptions_type
++   './set_soenv' $COMPATH $_gcc_include_path $_gxx_include_path $JAVA_HOME $TCSH $PERL $x_libraries $x_includes $_LOCAL_SOLENV $_LOCAL_SOLVER $upd $CYGWIN $STLPORT4 $enable_xprint $with_lang $with_asm_home $with_unzip_home $WITH_MINGWIN $with_use_shell $USE_GCC3 $with_os_version $PTHREAD_CFLAGS $PTHREAD_LIBS $CC $CXX $exceptions_type $ENABLE_DEBUG
  else
     echo
     echo Test Complete

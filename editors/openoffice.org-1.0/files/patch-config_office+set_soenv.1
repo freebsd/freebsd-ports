@@ -1,11 +1,11 @@
 --- set_soenv.1.orig	Wed Apr 17 22:41:31 2002
-+++ set_soenv.1	Wed Jun  5 00:33:59 2002
++++ set_soenv.1	Thu Jun  6 13:10:51 2002
 @@ -40,7 +40,7 @@
  #
  # Set this value equal to the corresponding amount of
  # command line arguments. 
 -my $numArgs = 20;
-+my $numArgs = 26;
++my $numArgs = 27;
  # Determining the amount of arguments in the call.
  my $numEnter = $#ARGV + 1;
  if ( $numEnter != $numArgs ) 
@@ -28,7 +28,16 @@
  #
  #-------------------------------------------
  # IIc. Declaring the environment variables.
-@@ -145,7 +146,10 @@
+@@ -96,7 +97,7 @@
+      $SOLARINC, $LOCALINI, $MAC_LIB, $PATHEXTRA, $FRAMEWORKSHOME, $COMEX, $MULTITHREAD_OBJ, $PERL, 
+      $COMP_ENV, $IENV, $ILIB, $WIN_INCLUDE, $JAVAHOME, $WIN_LIB, $WIN_HOME, 
+      $BISON_HAIRY, $BISON_SIMPLE, $TEMP, $COMMON_BUILD_TOOLS, $WIN_GREP, $WIN_FIND, $WIN_LS,
+-     $WIN_GNUCOPY, $WIN_TOUCH, $STLPORT4, $USE_GCC3 );
++     $WIN_GNUCOPY, $WIN_TOUCH, $STLPORT4, $USE_GCC3, $ENABLE_DEBUG);
+ #
+ #-------------------------------------------
+ # IId. Declaring the aliases.
+@@ -145,7 +146,11 @@
  $STLPORT4	= $ARGV [ 12 ];     # Location of STLport4
  $MINGWIN32	= $ARGV [ 17 ];     # use MINGWIN32
  $use_shell	= $ARGV [ 18 ];     # preferred shell
@@ -37,10 +46,11 @@
 +$CC		= $ARGV [ 23 ];     # get cc from environment
 +$CXX		= $ARGV [ 24 ];     # use c++ from environment
 +$EXCEPTIONS	= $ARGV [ 25 ];     # Exception handling type
++$ENABLE_DEBUG	= $ARGV [ 26 ];     # Enable a debug build
  #
  #---------------------------------------------------------------
  # IIIb. Initialising the variables for the system commands, etc.
-@@ -316,7 +320,7 @@
+@@ -316,7 +321,7 @@
     $PROSWITCH      = "-DPRODUCT";
     $XPVERSION      = "3";
     $SOLAR_JAVA	   = "TRUE"; 
@@ -49,7 +59,7 @@
  } 
  elsif ( $platform eq "$FreeBSD" ) 
  {     print "Setting FreeBSD specific values... ";
-@@ -326,7 +330,14 @@
+@@ -326,7 +331,14 @@
        $COMPATH        = $ARGV[ 0 ]; 
        $CPU            = "I";
        $CPUNAME        = "INTEL";
@@ -64,7 +74,7 @@
        $DLLSUFFIX      = "fi";
        $GUI            = "UNX";
        $GUIBASE        = "unx";
-@@ -339,6 +350,9 @@
+@@ -339,6 +351,9 @@
        $PATH_SEPERATOR = $ps;
        $PROSWITCH      = "-DPRODUCT";
        $XPVERSION      = "3";
@@ -74,7 +84,7 @@
  } 
  elsif ( $platform eq "$Linux" ) 
  {
-@@ -934,15 +948,16 @@
+@@ -934,15 +949,16 @@
                          $D.$COM.
  			$D.$CVER.
                          $D.$GVER.
@@ -94,7 +104,7 @@
  {  $SOLARDEF         .= $D."GLIBC=".$GLIBC;
  }
  $SOLARDEF            .= $D."SUPD=$UPD".
-@@ -959,7 +974,7 @@
+@@ -959,7 +975,7 @@
                          $L.$USR_DT.$LIB.
                          $L.$USR_OPENWIN.$LIB.'"';
  }
@@ -103,7 +113,7 @@
  {  $SOLAREXTRALIB     = '"'.$L.$par_dir.$LIB.
                          $L.$LIB.
                          $L.$USR.$LIB.
-@@ -969,6 +984,11 @@
+@@ -969,6 +985,11 @@
  {  $SOLAREXTRALIB     = '"'.$L.$LIB.
                          $L.$USR.$LIB.'"';
  }
@@ -115,7 +125,7 @@
  # Compiler include search directory paths.
  if (($platform eq "$Solaris") || ($platform eq "$Linux") || ($platform eq "$FreeBSD") || ($platform eq "$NetBSD") || ($platform eq "$Tru64") || ($platform eq "$Irix") || ($platform eq "$Irix64")) 
  {  $SOLARINCLUDES     = '"'.$I.'$SOLARENV'.$INC.'"';
-@@ -1039,7 +1059,7 @@
+@@ -1039,7 +1060,7 @@
                          $ps.$USR.$LIB.
                          $ps.$USR_LOCAL.$BIN;
  }
@@ -124,7 +134,7 @@
  {  $PATH              = $cur_dir.
                          $ps.'$SOLARVER'.$ds.'$UPD'.$ds.'$INPATH'.$BIN.
                          $ps.'$SOLARENV'.$ds.'$OUTPATH'.$BIN.
-@@ -1058,6 +1078,22 @@
+@@ -1058,6 +1079,22 @@
  			$ps.$USR.$ds."X11".$BIN.
                          $ps.$USR.$LIB;
  }
@@ -147,7 +157,7 @@
  elsif ($platform eq "$Winnt")
  { 
     my ( $noldPATH );
-@@ -1155,7 +1191,7 @@
+@@ -1155,7 +1192,7 @@
  			$L_STLPORT_LIB.
                          $L.$XLIB.'"';
  }
@@ -156,7 +166,7 @@
  {  $SOLARLIB          = '"'.$L.$par_dir.$LIB.
  			$L.'$SOLARENV'.$ds.'$OUTPATH'.$LIB.
                          $L.'$SOLARVER'.$ds.'$UPD'.$ds.'$INPATH'.$LIB.
-@@ -1167,6 +1203,15 @@
+@@ -1167,6 +1204,15 @@
  			$L_STLPORT_LIB.
                          $L.$XLIB.'"';
  }
@@ -172,7 +182,7 @@
  elsif ($platform eq "$Winnt")
  {  $SOLARLIB          = '"'.$L.'$SOLARVER'.$ds.'$UPD'.$ds.'$INPATH'.$LIB.
                          $L.$par_dir.$LIB.
-@@ -1196,7 +1241,7 @@
+@@ -1196,7 +1242,7 @@
  	$SOLARINC            .= $I.$USR.$INCLUDE;
  }
  $SOLARINC	     .= $STLPORT_stlport;
@@ -181,7 +191,7 @@
  {
  # This simply adds an include path, so even cases that break the FHS work
  $SOLARINC            .= $STLPORT_inc_stlport;
-@@ -1210,11 +1255,6 @@
+@@ -1210,11 +1256,6 @@
  {  $SOLARINC         .= $I.'$COMPATH'.$ds."include";
  }
  
@@ -193,7 +203,17 @@
  $SOLARINC            .= $I.'$SOLARENV'.$INC.$ds."Xp31".
                          $I.'$JAVA_HOME'.$INCLUDE;
  
-@@ -1407,6 +1447,12 @@
+@@ -1382,6 +1423,9 @@
+ ToFile( "NEW_JAR_PACK",      $NEW_JAR_PACK,      "e" );
+ ToFile( "NO_BSYMBOLIC",      $NO_BSYMBOLIC,      "e" );
+ ToFile( "TF_FILTER",         "TRUE",             "e" );
++if ($ENABLE_DEBUG eq "TRUE") {
++ToFile( "debug",             "true",             "e" );
++}
+ if ( $platform ne "$Macosx" )
+ {  ToFile( "PSPRINT",           "TRUE",             "e" );
+ } elsif ( $GUIBASE eq "unx" ) {
+@@ -1407,6 +1451,12 @@
  ToFile( "GUIENV",            $GUIENV,            "e" );
  ToFile( "GVER",              $GVER,              "e" );
  ToFile( "OS",                $OS,                "e" );

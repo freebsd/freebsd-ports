@@ -15,23 +15,24 @@ MASTER_SITES=	ftp://sunsite.cnlab-switch.ch/mirror/OpenOffice/${PORTVERSION}/ \
 		ftp://ftp.cs.man.ac.uk/pub/toby/gpc/ \
 		http://people.freebsd.org/~mbr/distfiles/
 DISTFILES=	OOo_${PORTVERSION}_source.tar.bz2 gpc231.tar.Z \
-		oo_moz1.0RC3_includes.tgz
+		oo_moz1.0RC3_includes.tgz ${MOZILLADIST}
 
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} > 500000
 .if defined(USE_GCC) && ${USE_GCC} == 2.95
-DISTFILES+=	oo_moz1.0RC3_${ARCH}_FreeBSD-5-gcc2.95-ports.tar.gz
+MOZILLADIST=	oo_moz1.0RC3_${ARCH}_FreeBSD-5-gcc2.95-ports.tar.gz
 .else
-DISTFILES+=	oo_moz1.0RC3_${ARCH}_FreeBSD-5-gcc3.1-system.tar.gz
+MOZILLADIST=	oo_moz1.0RC3_${ARCH}_FreeBSD-5-gcc3.1-system.tar.gz
 .endif
 .else
 .if defined(USE_GCC) && ${USE_GCC} == 3.1
-DISTFILES+=	oo_moz1.0RC3_${ARCH}_FreeBSD-4-gcc3.1-ports.tar.gz
+MOZILLADIST=	oo_moz1.0RC3_${ARCH}_FreeBSD-4-gcc3.1-ports.tar.gz
 .else
-DISTFILES+=	oo_moz1.0RC3_${ARCH}_FreeBSD-4-gcc2.95-system.tar.gz
+MOZILLADIST=	oo_moz1.0RC3_${ARCH}_FreeBSD-4-gcc2.95-system.tar.gz
 .endif
 .endif
+
 EXTRACT_ONLY=	OOo_${PORTVERSION}_source.tar.bz2
 
 MAINTAINER=	mbr@FreeBSD.org
@@ -51,21 +52,7 @@ USE_GMAKE=	yes
 EXTRACT_BEFORE_ARGS_R= -dc
 EXTRACT_AFTER_ARGS_R= | ${TAR} -xf -
 EXTRACT_CMD_R= ${GZIP_CMD}
-.if ${OSVERSION} > 500000
-.if defined(USE_GCC) && ${USE_GCC} == 2.95
-EXTRACT_REST=	gpc231.tar.Z oo_moz1.0RC3_${ARCH}_FreeBSD-5-gcc2.95-ports.tar.gz
-.else
-EXTRACT_REST=	gpc231.tar.Z oo_moz1.0RC3_${ARCH}_FreeBSD-5-gcc3.1-system.tar.gz
-.endif
-.else
-.if defined(USE_GCC) && ${USE_GCC} == 3.1
-EXTRACT_REST=	gpc231.tar.Z oo_moz1.0RC3_${ARCH}_FreeBSD-4-gcc3.1-ports.tar.gz
-.else
-EXTRACT_REST=	gpc231.tar.Z oo_moz1.0RC3_${ARCH}_FreeBSD-4-gcc2.95-system.tar.gz
-.endif
-.endif
-
-EXTRACT_REST+=	oo_moz1.0RC3_includes.tgz
+EXTRACT_REST=	gpc231.tar.Z ${MOZILLADIST} oo_moz1.0RC3_includes.tgz
 
 JDK13DIR?=      ${LOCALBASE}/jdk1.3.1
 JAVAVM=         ${JDK13DIR}/bin/java
@@ -86,6 +73,10 @@ CONFIGURE_ARGS+=	--with-jdk-home=${JDK13DIR} \
 CONFIGURE_ARGS+=	--with-stlport4-home=${PREFIX}
 .endif
 
+.if defined(WITH_DEBUG)
+CONFIGURE_ARGS+=	--enable-debug
+.endif
+
 .if defined(USE_GCC) && (${USE_GCC} == 3.1 || ${USE_GCC} == 3.2)
 CONFIGURE_ARGS+=	--enable-gcc3
 .endif
@@ -95,35 +86,47 @@ CONFIGURE_ARGS+=	--enable-gcc3
 .endif
 
 pre-fetch:
+.if !defined(USE_GCC) || !defined(WITH_DEBUG)
+	@${ECHO}
+	@${ECHO} OPTIONS:
+.endif
 .if !defined(USE_GCC)
 	@${ECHO}
-	@${ECHO} You can compile openoffice with different
+	@${ECHO} You can compile OO with different
 	@${ECHO} gcc compiler versions:
 	@${ECHO}
-	@${ECHO} Use: USE_GCC=2.95 or USE_GCC=3.1
+	@${ECHO} Add USE_GCC=2.95 or USE_GCC=3.1
 	@${ECHO} to compile openoffice with your
 	@${ECHO} prefered compiler.
+.endif
+.if !defined(WITH_DEBUG)
 	@${ECHO}
+	@${ECHO} You can compile OO with debug symbols
+	@${ECHO} if you call make with WITH_DEBUG=YES
 .endif
 .if ${OSVERSION} < 450002
 	@${ECHO}
 	@${ECHO} OS-VERSION ${OSVERSION} too low
 	@${ECHO}
-	@${ECHO} Openoffice need some important libc_r and
+	@${ECHO} OO need some important libc_r and
 	@${ECHO} gcc fixes to build. Please upgrade to 4.6
-	@${ECHO} PRE-RELEASE or RELEASE.
+	@${ECHO} RELEASE or 4.6 STABLE.
 	@${FALSE}
 .endif
 	@${ECHO}
 	@${ECHO} NOTICE:
 	@${ECHO}
 	@${ECHO} To build Openoffice, you should have a lot
-	@${ECHO} of free diskspace \(~ 6GB\) and you should
+.if defined(WITH_DEBUG)
+	@${ECHO} of free diskspace \(~ 8GB\) and you should
+.else
+	@${ECHO} of free diskspace \(~ 4GB\) and you should
+.endif
 	@${ECHO} be an experienced port builder. This port
 	@${ECHO} has beta quality and does not yet work as
 	@${ECHO} stable as it should.
 	@${ECHO}
-pre-extract:
+	@${ECHO} KERNEL CONFIGURATION:
 	@${ECHO}
 	@${ECHO} Openoffice needs a larger stack- and
 	@${ECHO} datasize to build. Check your limit
@@ -143,8 +146,8 @@ pre-extract:
 	@${ECHO}
 	@${ECHO} langinfo.h is missing !
 	@${ECHO}
-	@${ECHO} Please upgrade to 4.5 STABLE or
-	@${ECHO} 4.6 RELEASE.
+	@${ECHO} Please upgrade to 4.6 RELEASE or
+	@${ECHO} 4.6 STABLE.
 	@${ECHO}
 	@${FALSE}
 .endif
@@ -158,20 +161,53 @@ post-extract:
 			exit 1; \
 		fi \
 	done
-	${CP} ${WRKDIR}/gpc231/gpc.c ${WRKSRC}/../external/gpc/
-	${CP} ${WRKDIR}/gpc231/gpc.h ${WRKSRC}/../external/gpc/
-	${CP} ${WRKDIR}/FREEBSDGCCIinc.zip ${WRKSRC}/../moz/zipped/
-	${CP} ${WRKDIR}/FREEBSDGCCIlib.zip ${WRKSRC}/../moz/zipped/
-	${CP} ${WRKDIR}/FREEBSDGCCIruntime.zip ${WRKSRC}/../moz/zipped/
+	@${CP} ${WRKDIR}/gpc231/gpc.c ${WRKSRC}/../external/gpc/
+	@${CP} ${WRKDIR}/gpc231/gpc.h ${WRKSRC}/../external/gpc/
+	@${CP} ${WRKDIR}/FREEBSDGCCIinc.zip ${WRKSRC}/../moz/zipped/
+	@${CP} ${WRKDIR}/FREEBSDGCCIlib.zip ${WRKSRC}/../moz/zipped/
+	@${CP} ${WRKDIR}/FREEBSDGCCIruntime.zip ${WRKSRC}/../moz/zipped/
 
 post-patch:
+.if defined(WITH_DEBUG)
+	@if [ "`echo ${PATCHDIR}/debugpatch-*`" != "${PATCHDIR}/debugpatch-*" ]; then \
+		${ECHO_MSG} "===>  Applying additional debug ${OPSYS} patches for ${PKGNAME}" ; \
+		PATCHES_APPLIED="" ; \
+		for i in ${PATCHDIR}/debugpatch-*; do \
+			case $$i in \
+				*.orig|*.rej|*~) \
+					${ECHO_MSG} "===>   Ignoring patchfile $$i" ; \
+					;; \
+				*) \
+					if [ ${PATCH_DEBUG_TMP} = yes ]; then \
+						${ECHO_MSG} "===>   Applying ${OPSYS} patch $$i" ; \
+					fi; \
+					if ${PATCH} ${PATCH_ARGS} < $$i ; then \
+						PATCHES_APPLIED="$$PATCHES_APPLIED $$i" ; \
+					else \
+						${ECHO_MSG} `${ECHO_CMD} ">> Patch $$i failed to apply cleanly." | ${SED} "s|${PATCHDIR}/||"` ; \
+						if [ x"$$PATCHES_APPLIED" != x"" ]; then \
+							${ECHO_MSG} `${ECHO_CMD} ">> Patch(es) $$PATCHES_APPLIED applied cleanly." | ${SED} "s|${PATCHDIR}/||g"` ; \
+						fi; \
+						${FALSE} ; \
+					fi; \
+					;; \
+			esac; \
+		done; \
+	fi;
+.endif
+	@${ECHO_MSG} "===>  Find old malloc.h defines and fix them in ${PKGNAME} source"
 	@${FIND} ${WRKSRC}/.. | ${EGREP} "\.(cxx|h|c)$$" | ${XARGS} \
 		${PERL} -pi -e "s|<malloc.h>|<stdlib.h>|g"
 
 do-build:
 	@cd ${WRKSRC}/.. && PATH="${PATH}:${LOCALBASE}/bin:${LOCALBASE}/sbin" ./bootstrap
+.if defined(WITH_DEBUG)
 	@cd ${WRKSRC}/.. && PATH="${PATH}:${LOCALBASE}/bin:${LOCALBASE}/sbin" && \
-		tcsh -c 'source FreeBSDEnv.Set && dmake'
+		tcsh -c 'source FreeBSDEnv.Set && dmake debug=true'
+.else
+	@cd ${WRKSRC}/.. && PATH="${PATH}:${LOCALBASE}/bin:${LOCALBASE}/sbin" && \
+		tcsh -c 'source FreeBSDEnv.Set && dmake strip=true'
+.endif
 
 pre-install:
 	@${SED} -e 's#%%PREFIX%%#${PREFIX}#g' < ${FILESDIR}/oo_setup.resp \
