@@ -1,0 +1,13 @@
+--- tunip.c.orig	Mon Aug 16 11:54:50 1999
++++ tunip.c	Mon Aug 16 12:27:07 1999
+@@ -57,8 +57,8 @@
+ 
+ #include "defs.h"
+ 
+-#define _PATH_CONF		"/etc/ipsec/pipsecd.conf"
+-#define _PATH_STARTUP		"/etc/ipsec/startup"
++#define _PATH_CONF              FILE_PREFIX "/etc/ipsec/pipsecd.conf"
++#define _PATH_STARTUP           FILE_PREFIX "/etc/ipsec/startup"
+ #define _PATH_DEV_RANDOM	"/dev/random"
+ 
+ #define MAX_HEADER	64

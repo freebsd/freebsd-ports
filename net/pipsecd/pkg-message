@@ -1,0 +1,19 @@
+This is the ported version of the pipsecd program
+from Pierre Beyssac at the ENST.
+
+The main difference with the original code are:
+- it compiles with OpenSSL-0.94
+- config files are in /usr/local/etc/ipsec
+
+
+Apart from that it works exactly as the original work from
+Pierre Beyssac.
+
+You can obtain the source distribution of pipsecd at:
+http://www.enst.fr/~beyssac/tunip.tar.gz
+
+Enjoy!
+
+Patrick Bihan-Faou - MindStep Corporation
+patrick@mindstep.com - http://www.mindstep.com/
+
