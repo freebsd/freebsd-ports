@@ -20,14 +20,14 @@ DISTFILES=	XFree86-4.4.0-src-1.tgz \
 MAINTAINER=	x11@FreeBSD.org
 COMMENT=	XFree86-4 client programs and related files
 
-CONFLICTS=	xorg-clients-*
-
 RUN_DEPENDS=	xterm-static:${PORTSDIR}/x11/xterm
 LIB_DEPENDS=	freetype.9:${PORTSDIR}/print/freetype2 \
 		expat.5:${PORTSDIR}/textproc/expat2 \
 		Xcursor.1:${PORTSDIR}/x11/XFree86-4-libraries \
 		png.5:${PORTSDIR}/graphics/png \
 		Xft.2:${PORTSDIR}/x11-fonts/libXft
+
+CONFLICTS=	xorg-clients-[0-9]*
 
 SCRIPTS_ENV=		InstallXdmConfig=${InstallXdmConfig} \
 			InstallXinitConfig=${InstallXinitConfig} \
@@ -45,7 +45,9 @@ XINSTALL_MAN_DIRS=	programs
 	   patch-programs::Imakefile \
 	   patch-programs::xdm::Imakefile \
 	   patch-programs::xdm::session.c \
-	   patch-programs::xdm::socket.c
+	   patch-programs::xdm::socket.c \
+	   patch-programs::xkbcomp::symbols::Imakefile \
+	   patch-programs::xkbcomp::symbols::pc::Imakefile
 EXTRA_PATCHES+=		${FILESDIR}/${pf}
 .endfor
 
