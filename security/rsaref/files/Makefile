@@ -38,4 +38,5 @@ install:
 	(cd ${PREFIX}/lib; ln -sf librsaref.so.2 librsaref.so)
 .else
 	install -c -m 644 -o bin -g bin librsaref.a librsaref.so.2.0 ${PREFIX}/lib
+	(cd ${PREFIX}/lib; ln -sf librsaref.so.2.0 librsaref.so)
 .endif
