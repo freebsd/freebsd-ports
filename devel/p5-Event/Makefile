@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Event
-PORTVERSION=	1.00
+PORTVERSION=	1.02
 CATEGORIES=	devel perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Event
@@ -18,7 +18,7 @@ COMMENT=	A Generic Perl Event Loop
 PERL_CONFIGURE=	yes
 DOCS=		Tutorial.pdf
 
-MAN3=		Event.3 Event::MakeMaker.3
+MAN3=		Event.3 Event::MakeMaker.3 Event::generic.3
 
 post-install:
 .ifndef(NOPORTDOCS)
