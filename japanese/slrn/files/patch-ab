@@ -1,12 +1,19 @@
-*** configure.org	Sun Apr 18 21:51:14 1999
---- configure	Sun Apr 18 22:04:15 1999
+*** configure.orig	Sun Sep  5 21:26:49 1999
+--- configure	Sun Sep  5 21:40:41 1999
 ***************
-*** 2486,2491 ****
---- 2486,2492 ----
-  # version.
+*** 2488,2494 ****
   
   JD_Search_Dirs="$JD_Search_Dirs \
-+ 		/usr/local/include/slang,/usr/local/lib \
-                  /usr/local/include,/usr/local/lib \
+                  $includedir,$libdir \
+!                 /usr/local/include,/usr/local/lib \
   		/usr/include,/usr/lib \
   		/usr/include/slang,/usr/lib \
+  		/usr/include/slang,/usr/lib/slang"
+--- 2488,2494 ----
+  
+  JD_Search_Dirs="$JD_Search_Dirs \
+                  $includedir,$libdir \
+!                 /usr/local/include/slang,/usr/local/lib \
+  		/usr/include,/usr/lib \
+  		/usr/include/slang,/usr/lib \
+  		/usr/include/slang,/usr/lib/slang"
