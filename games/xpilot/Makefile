@@ -3,7 +3,7 @@
 # Date created:         18 July 1995
 # Whom:                 jmacd
 #
-# $Id: Makefile,v 1.12 1999/03/09 00:11:23 steve Exp $
+# $Id: Makefile,v 1.13 1999/03/09 00:13:15 steve Exp $
 #
 
 DISTNAME=       xpilot-4.1.0
@@ -12,7 +12,7 @@ MASTER_SITES=	ftp://ftp.xpilot.org/pub/xpilot/ \
 		${MASTER_SITE_XCONTRIB}  \
 MASTER_SITE_SUBDIR=	games/multiplayer
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	sheldonh@iafrica.com
 
 USE_IMAKE=	yes
 MAN6=		xpilot.6 xpilots.6 xp-replay.6
