@@ -6,13 +6,13 @@
 #
 
 PORTNAME=	Sort-ArbBiLex
-PORTVERSION=	3.4
+PORTVERSION=	4.01
 CATEGORIES=	textproc perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Sort
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	tobez@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl module to make sort functions for arbitrary sort orders
 
 PERL_CONFIGURE=	yes
