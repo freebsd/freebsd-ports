@@ -19,13 +19,26 @@ LIB_DEPENDS=	gsm.1:${PORTSDIR}/audio/gsm \
 		speex.2:${PORTSDIR}/audio/speex \
 		osip.9:${PORTSDIR}/net/libosip
 
-USE_X_PREFIX=	yes
 USE_GMAKE=	yes
-USE_GNOME=	gnomehack gnomeprefix gnomepanel
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include ${PTHREAD_CFLAGS}" \
 		LDFLAGS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}"
-CONFIGURE_ARGS=	--enable-platform-gnome-2 --disable-ipv6
+CONFIGURE_ARGS=	--disable-ipv6
+.ifdef WITHOUT_GNOME
+CONFIGURE_ARGS+=--enable-gnome-ui=no \
+		--with-html-dir=${DOCSDIR}
+PLIST_SUB+=	GNOME="@comment " \
+		GNOME_PATH="" \
+		HTMLDOCSDIR="${DOCSDIR:S,^${PREFIX}/,,}"
+.else
+USE_X_PREFIX=	yes
+USE_GNOME=	gnomehack gnomeprefix gnomepanel
+DOCSDIR=	${GNOME_HTML_DIR}
+CONFIGURE_ARGS=	--enable-gnome-ui=yes
+PLIST_SUB+=	GNOME="" \
+		GNOME_PATH="gnome/" \
+		HTMLDOCSDIR="${GNOME_HTML_DIR:S,^${PREFIX}/,,}"
+.endif
 INSTALLS_SHLIB=	yes
 
 MAN1=		linphone.1 linphonec.1 sipomatic.1
