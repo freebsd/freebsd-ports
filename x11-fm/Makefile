@@ -36,5 +36,6 @@
     SUBDIR += xfe
     SUBDIR += xfm
     SUBDIR += xnc
+    SUBDIR += xplore
 
 .include <bsd.port.subdir.mk>
