@@ -33,7 +33,7 @@ LDFLAGS=	-L${LOCALBASE}/lib
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "amd64"
-BROKEN=		"Does not build"
+CFLAGS=		-O0
 .endif
 
 post-install:
