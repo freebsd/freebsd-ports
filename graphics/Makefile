@@ -243,6 +243,7 @@
     SUBDIR += xmagv
     SUBDIR += xmandel
     SUBDIR += xmfract
+    SUBDIR += xmms-avi
     SUBDIR += xmms-gforce
     SUBDIR += xmorph
     SUBDIR += xmountains
