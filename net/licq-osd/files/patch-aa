@@ -1,0 +1,11 @@
+--- src/licq-osd.cpp.orig	Wed Jul 16 13:00:53 2003
++++ src/licq-osd.cpp	Wed Jul 16 12:55:10 2003
+@@ -675,7 +675,7 @@
+ 
+     while ((fromsize>0) && (tosize>0))
+     {
+-	if ((int)iconv(conv, &msgptr, &fromsize, &resptr, &tosize)==-1)
++	if ((int)iconv(conv, (const char**)(&msgptr), &fromsize, &resptr, &tosize)==-1)
+ 	{
+ 	    // array is not enough
+ 	    if (errno == E2BIG)
