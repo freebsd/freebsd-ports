@@ -18,6 +18,8 @@ DISTNAME=       samba-2.2.0-alpha2
 
 MAINTAINER=	dwcjr@inethouston.net
 
+NO_LATEST_LINK=	"Unstable, development version."
+
 # directories
 VARDIR=		/var
 SAMBA_SPOOL=	${VARDIR}/spool/samba
