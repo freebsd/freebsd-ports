@@ -1,33 +1,35 @@
---- DNS-HOWTO.sgml.orig	Sat Oct  3 15:27:23 1998
-+++ DNS-HOWTO.sgml	Sat Oct  3 16:32:31 1998
+--- DNS-HOWTO.sgml.orig	Thu May  6 23:21:26 1999
++++ DNS-HOWTO.sgml	Thu May  6 23:45:20 1999
 @@ -1,4 +1,4 @@
 -<!doctype linuxdoc system>
 +<!doctype linuxdoc public "-//FreeBSD//DTD linuxdoc 1.1//EN">
  <!-- -*-SGML-*- -->
  <article>
  <title>DNS HOWTO
-@@ -50,9 +50,9 @@
- <p>For starters, DNS is is the Domain Name System.  DNS converts
- machine names to the IP numbers that are all the machines addresses,
- it maps from name to address and from address to name.  This HOWTO
--documents how to define such mappings using a Linux system.  A mapping
-+documents how to define such mappings using a FreeBSD system.  A mapping
- i simply a association between two things, in this case a machine
--name, like ftp.linux.org, and the machines IP number, 199.249.150.4.
-+name, like ftp.freebsd.org, and the machines IP number, 209.155.82.18.
+@@ -58,10 +58,10 @@
+ <p>DNS is is the Domain Name System.  DNS converts machine names to
+ the IP addresses that all machines on the net have.  It maps from name
+ to address and from address to name, and some other things.  This
+-HOWTO documents how to define such mappings using a Linux system.  A
++HOWTO documents how to define such mappings using a FreeBSD system.  A
+ mapping is simply a association between two things, in this case a
+-machine name, like <tt/ftp.linux.org/, and the machines IP number (or
+-address) <tt/199.249.150.4/.
++machine name, like <tt/ftp.freebsd.org/, and the machines IP number (or
++address) <tt/209.155.82.18/.
  
  <p>DNS is, to the uninitiated (you ;-), one of the more opaque areas
  of network administration.  This HOWTO will try to make a few things
-@@ -85,11 +85,14 @@
+@@ -94,11 +94,14 @@
  
  <p>Name serving on Unix is done by a program called <tt/named/.  This
- is a part of the bind package which is coordinated by Paul Vixie for
--The Internet Software Consortium.  <tt/Named/ is included in most
+ is a part of the ``bind'' package which is coordinated by Paul Vixie
+-for The Internet Software Consortium.  <tt/Named/ is included in most
 -Linux distributions and is usually installed as
 -<tt>/usr/sbin/named</tt>.  If you have a named you can probably use
 -it; if you don't have one you can get a binary off a Linux ftp site,
 -or get the latest and greatest source from <htmlurl
-+The Internet Software Consortium.  <tt/Named/ is included in all
++for The Internet Software Consortium.  <tt/Named/ is included in all
 +FreeBSD distributions and is installed as
 +<tt>/usr/sbin/named</tt>.
 +You can get the latest and greatest source from <htmlurl
@@ -38,9 +40,9 @@
  url="ftp://ftp.isc.org/isc/bind/src/cur/bind-8/"
  name="ftp.isc.org:/isc/bind/src/cur/bind-8/">.  This HOWTO is about
  bind version 8.  The old version of the HOWTO, about bind 4 is still
-@@ -124,14 +127,14 @@
- waiting time the next time significantly, esp. if you're on a slow
- connection.
+@@ -133,14 +136,14 @@
+ waiting time the next time significantly, especially if you're on a
+ slow connection.
  
 -<p>First you need a file called <tt>/etc/named.conf</tt>.  This is
 +<p>First you need a file called <tt>/etc/namedb/named.conf</tt>.  This is
@@ -55,7 +57,7 @@
  
  	// Uncommenting this might help if you have to go through a
  	// firewall and things are not working out:
-@@ -146,18 +149,17 @@
+@@ -155,18 +158,17 @@
  
  zone "0.0.127.in-addr.arpa" {
          type master;
@@ -79,10 +81,10 @@
 +<tt>/etc/namedb/named.root</tt> should contain something simular to this:
  
  <code>
- .			6D IN NS	G.ROOT-SERVERS.NET.
-@@ -195,16 +197,16 @@
+ ;
+@@ -208,16 +210,16 @@
  
- The next section in <tt/named.conf/ is the last <tt/zone/. I will
+ <p>The next section in <tt/named.conf/ is the last <tt/zone/. I will
  explain its use in a later chapter, for now just make this a file
 -named <tt/127.0.0/ in the subdirectory <tt/pz/:
 +named <tt/localhost.rev/ in the subdirectory <tt//etc/namedb/:
@@ -100,16 +102,7 @@
  1			PTR	localhost.
  </code>
  
-@@ -283,7 +285,7 @@
- the host name resolving routines to first look in <tt>/etc/hosts</tt>,
- then ask the name server (which you in <tt/resolv.conf/ said is at
- 127.0.0.1) These two latest files are documented in the resolv(8) man
--page (do `<tt/man 8 resolv/') in most Linux distributions.  That man
-+page (do `<tt/man 8 resolv/') in most FreeBSD distributions.  That man
- page is IMHO readable, and everyone, especially DNS admins, should
- read it.  Do it now, if you say to yourself "I'll do it later" you'll
- never get around to it.
-@@ -315,7 +317,7 @@
+@@ -326,7 +328,7 @@
  </verb></tscreen>
  
  <p>If there are any messages about errors then there is a mistake.
@@ -117,17 +110,17 @@
 +Named will name the file it is in (one of named.conf and named.root I
  hope :-) Kill named and go back and check the file.
  
- <p>Now it's time to start nslookup to examine your handy-work.
-@@ -587,7 +589,7 @@
+ <p>Now you can test your setup.  Start nslookup to examine your work.
+@@ -647,7 +649,7 @@
  <sect1>Our own domain
  
  <p>Now to define our own domain.  We're going to make the domain
--<em/linux.bogus/ and define machines in it.  I use a totally bogus
-+<em/freebsd.bogus/ and define machines in it.  I use a totally bogus
+-<tt/linux.bogus/ and define machines in it.  I use a totally bogus
++<tt/freebsd.bogus/ and define machines in it.  I use a totally bogus
  domain name to make sure we disturb no-one Out There.
  
  <p>One more thing before we start: Not all characters are allowed in
-@@ -601,24 +603,24 @@
+@@ -661,24 +663,24 @@
  <code>
  zone "0.0.127.in-addr.arpa" {
  	type master;
@@ -156,8 +149,8 @@
  1			PTR	localhost.
  </code>
  
-@@ -643,11 +645,11 @@
- Saves some typing that.  So the NS line really reads
+@@ -703,11 +705,11 @@
+ some typing that.  So the NS line could also be written
  
  <tscreen><verb>
 -0.0.127.in-addr.arpa.	IN	NS	ns.linux.bogus
@@ -170,18 +163,18 @@
  customary name for name-servers, but as with web servers who are
  customarily named <tt/www./<em/something/ the name may be anything.
  
-@@ -658,8 +660,8 @@
+@@ -717,8 +719,8 @@
+ 
  <p>The SOA record is the preamble to <em/all/ zone files, and there
- should be exactly one in each zone file, the very first record.  It
- describes the zone, where it comes from (a machine called
--<tt/ns.linux.bogus/), who is responsible for its contents
--(<tt/hostmaster@linux.bogus/), what version of the zone file this is
-+<tt/ns.freebsd.bogus/), who is responsible for its contents
-+(<tt/hostmaster@freebsd.bogus/), what version of the zone file this is
- (serial: 1), and other things having to do with caching and secondary
- DNS servers.  For the rest of the fields, refresh, retry, expire and
- minimum use the numbers used in this HOWTO and you should be safe.
-@@ -682,28 +684,28 @@
+ should be exactly one in each zone file.  It describes the zone, where
+-it comes from (a machine called <tt/ns.linux.bogus/), who is
+-responsible for its contents (<tt/hostmaster@linux.bogus/, you should
++it comes from (a machine called <tt/ns.freebsd.bogus/), who is
++responsible for its contents (<tt/hostmaster@freebsd.bogus/, you should
+ insert your e-mail address here), what version of the zone file this
+ is (serial: 1), and other things having to do with caching and
+ secondary DNS servers.  For the rest of the fields (refresh, retry,
+@@ -743,30 +745,30 @@
  </verb></tscreen>
  
  so it manages to get <tt/localhost/ from 127.0.0.1, good.  Now for our
@@ -195,15 +188,17 @@
  	notify no;
  	type master;
 -	file "pz/linux.bogus";
-+	file "freebsd.bogus";
++	file "pz/freebsd.bogus";
  };
  </code>
  
- <p>Note the continued lack of ending `<tt/./' on the domain name in the
+ <p>Note again the lack of ending `<tt/./' on the domain name in the
  <tt/named.conf/ file.
  
--<p>In the linux.bogus zone file we'll put some totally bogus data:
-+<p>In the freebsd.bogus zone file we'll put some totally bogus data:
+-<p>In the <tt/linux.bogus/ zone file we'll put some totally bogus
++<p>In the <tt/freebsd.bogus/ zone file we'll put some totally bogus
+ data:
+ 
  <code>
  ;
 -; Zone file for linux.bogus
@@ -216,7 +211,7 @@
  			199802151	; serial, todays date + todays serial #
  			8H		; refresh, seconds
  			2H		; retry, seconds
-@@ -711,7 +713,7 @@
+@@ -774,7 +776,7 @@
  			1D )		; minimum, seconds
  ;
  		NS	ns		; Inet Address of name server
@@ -225,12 +220,12 @@
  		MX	20 mail.friend.bogus.	; Secondary Mail Exchanger
  ;
  localhost	A	127.0.0.1
-@@ -719,11 +721,11 @@
+@@ -782,11 +784,11 @@
  mail		A	192.168.196.4
  </code>
  
--<p>Two things must be noted about the SOA record.  ns.linux.bogus
-+<p>Two things must be noted about the SOA record.  ns.freebsd.bogus
+-<p>Two things must be noted about the SOA record.  <tt/ns.linux.bogus/
++<p>Two things must be noted about the SOA record.  <tt/ns.freebsd.bogus/
  <em/must/ be a actual machine with a A record.  It is not legal to
  have a CNAME record for he machine mentioned in the SOA record.  It's
  name need not be `ns', it could be any legal host name.  Next,
@@ -239,7 +234,7 @@
  should be a mail alias, or a mailbox, where the person(s) maintaining
  DNS should read mail frequently.  Any mail regarding the domain will
  be sent to the address listed here.  The name need not be
-@@ -732,7 +734,7 @@
+@@ -795,7 +797,7 @@
  
  <p>There is one new RR type in this file, the MX, or Mail eXchanger
  RR.  It tells mail systems where to send mail that is addressed to
@@ -247,8 +242,8 @@
 +<tt/someone@freebsd.bogus/, namely too <tt/mail.freebsd.bogus/ or
  <tt/mail.friend.bogus/.  The number before each machine name is that
  MX RRs priority.  The RR with the lowest number (10) is the one mail
- should be sent to primarily.  If that fails it can be sent to one with
-@@ -745,51 +747,51 @@
+ should be sent to if possible.  If that fails the mail can be sent to
+@@ -808,51 +810,51 @@
  <tscreen><verb>
  $ nslookup
  > set q=any
@@ -316,7 +311,7 @@
  </code>
  
  or
-@@ -814,18 +816,18 @@
+@@ -877,18 +879,18 @@
  
  <code>
  ;
@@ -338,7 +333,7 @@
  		NS	ns		; Inet Address of name server
  		NS	ns.friend.bogus.
  		MX	10 mail		; Primary Mail Exchanger
-@@ -840,31 +842,31 @@
+@@ -903,31 +905,31 @@
  ns		A	192.168.196.2
  		MX	10 mail
  		MX	20 mail.friend.bogus.
@@ -375,16 +370,16 @@
  several names.  So www is an alias for ns. 
  
  <p>CNAME record usage is a bit controversial.  But it's safe to follow
-@@ -883,7 +885,7 @@
+@@ -946,7 +948,7 @@
  </code>
  
  <p>It's also safe to assume that a CNAME is not a legal host name for
--a e-mail address: <tt/webmaster@www.linux.bogus/ is an ilegal e-mail
-+a e-mail address: <tt/webmaster@www.freebsd.bogus/ is an ilegal e-mail
+-a e-mail address: <tt/webmaster@www.linux.bogus/ is an illegal e-mail
++a e-mail address: <tt/webmaster@www.freebsd.bogus/ is an illegal e-mail
  address given the setup above.  You can expect quite a few mail admins
  Out There to enforce this rule even if it works for you.  The way to
  avoid this is to use A records (and perhaps some others too, like a MX
-@@ -907,14 +909,14 @@
+@@ -970,14 +972,14 @@
  Default Server:  localhost
  Address:  127.0.0.1
  
@@ -401,7 +396,7 @@
  @                       1D IN SOA       ns hostmaster (
                                          199802151       ; serial
                                          8H              ; refresh
-@@ -924,7 +926,7 @@
+@@ -987,7 +989,7 @@
  
                          1D IN NS        ns
                          1D IN NS        ns.friend.bogus.
@@ -410,7 +405,7 @@
                          1D IN MX        10 mail
                          1D IN MX        20 mail.friend.bogus.
  gw                      1D IN A         192.168.196.1
-@@ -933,22 +935,22 @@
+@@ -996,22 +998,22 @@
  mail                    1D IN A         192.168.196.4
                          1D IN MX        10 mail
                          1D IN MX        20 mail.friend.bogus.
@@ -434,10 +429,10 @@
                          1D IN MX        20 mail.friend.bogus.
 -                        1D IN HINFO     "Pentium" "Linux 1.2"
 +                        1D IN HINFO     "Pentium" "FreeBSD 2.2"
- @                       1D IN SOA       ns hostmaster (
-                                         199802151       ; serial
-                                         8H              ; refresh
-@@ -962,25 +964,25 @@
+ </verb></tscreen>
+ 
+ <p>That's good.  As you see it looks a lot like the zone file itself.
+@@ -1019,25 +1021,25 @@
  
  <tscreen><verb>
  > set q=any
@@ -456,9 +451,9 @@
 +ns.freebsd.bogus  internet address = 192.168.196.2
  </verb></tscreen>
  
--<p>In other words, the real name of <tt>www.linux.bogus</tt> is
+-<p>In other words, the real name of <tt/www.linux.bogus/ is
 -<tt/ns.linux.bogus/, and it gives you some of the information it has
-+<p>In other words, the real name of <tt>www.freebsd.bogus</tt> is
++<p>In other words, the real name of <tt/www.freebsd.bogus/ is
 +<tt/ns.freebsd.bogus/, and it gives you some of the information it has
  about ns as well, enough to connect to it if you were a program.
  
@@ -471,7 +466,7 @@
  which they can connect to.  But also required is a reverse zone, one
  making DNS able to convert from an address to a name.  This name is
  used buy a lot of servers of different kinds (FTP, IRC, WWW and
-@@ -994,7 +996,7 @@
+@@ -1051,7 +1053,7 @@
  zone "196.168.192.in-addr.arpa" {
  	notify no;
          type master;
@@ -480,7 +475,7 @@
  };
  </code>
  
-@@ -1002,19 +1004,19 @@
+@@ -1059,19 +1061,19 @@
  contents are similar:
  
  <code>
@@ -507,7 +502,7 @@
  </code>
  
  <p>Now you restart your named (<tt/ndc restart/) and examine your
-@@ -1025,7 +1027,7 @@
+@@ -1082,7 +1084,7 @@
  Server:  localhost
  Address:  127.0.0.1
  
@@ -516,7 +511,7 @@
  Address:  192.168.196.4
  </code>
  
-@@ -1035,20 +1037,20 @@
+@@ -1092,20 +1094,20 @@
  > ls -d 196.168.192.in-addr.arpa
  [localhost]
  $ORIGIN 196.168.192.in-addr.arpa.
@@ -545,7 +540,7 @@
                                          199802151       ; serial
                                          8H              ; refresh
                                          2H              ; retry
-@@ -1086,19 +1088,19 @@
+@@ -1219,19 +1221,19 @@
  here differs a bit from what you find if you query LAND-5's name
  servers now.
  
@@ -553,11 +548,11 @@
 +<sect1>/etc/namedb/named.conf
  
  <p>Here we find master zone sections for the two reverse zones needed:
- the 127.0.0 net, as well as LAND-5's 206.6.177 subnet. And a primary
- line for land-5's forward zone land-5.com. Also note that instead of
--stuffing the files in a directory called <tt/pz/, as I do in this
-+stuffing the files in the <tt>namedb</tt>, as I do in this
- HOWTO, he puts them in a directory called <tt/zone/.
+ the 127.0.0 net, as well as LAND-5's <tt/206.6.177/ subnet. And a
+ primary line for land-5's forward zone <tt/land-5.com/. Also note that
+-instead of stuffing the files in a directory called <tt/pz/, as I do
++instead of stuffing the files in a directory called <tt/namedb/, as I do
+ in this HOWTO, he puts them in a directory called <tt/zone/.
  
  <code>
  // Boot file for LAND-5 name server
@@ -568,16 +563,16 @@
  };
  
  zone "." {
-@@ -1126,7 +1128,7 @@
- put <tt/notify no;/ in the zone sections for the two land-5 zones so
- as to avoid accidents.
+@@ -1259,7 +1261,7 @@
+ put ``<tt/notify no;/'' in the zone sections for the two <tt/land-5/
+ zones so as to avoid accidents.
  
 -<sect1>/var/named/root.hints
 +<sect1>/etc/namedb/named.root
  
  <p>Keep in mind that this file is dynamic, and the one listed here is
  old. You're better off using one produced now, with dig, as explained
-@@ -1178,7 +1180,7 @@
+@@ -1311,7 +1313,7 @@
  ;; MSG SIZE  sent: 17  rcvd: 436
  </code>
  
@@ -586,7 +581,7 @@
  
  <p>Just the basics, the obligatory SOA record, and a record that maps
  127.0.0.1 to <tt/localhost/.  Both are required.  No more should be in
-@@ -1197,7 +1199,7 @@
+@@ -1330,7 +1332,7 @@
  1                       PTR     localhost.
  </code>
  
@@ -594,27 +589,60 @@
 +<sect1>/etc/namedb/land-5.com
  
  <p>Here we see the mandatory SOA record, the needed NS records.  We
- can see that he has a secondary name server at ns2.psi.net.  This is
-@@ -1286,7 +1288,7 @@
- <p>We also see that funn.land-5.com is an alias for land-5.com, but
- using an A record, not a CNAME record.
+ can see that he has a secondary name server at <tt/ns2.psi.net/.  This
+@@ -1420,7 +1422,7 @@
+ <tt/land-5.com/, but using an A record, not a CNAME record.  This is a
+ good policy as noted earlier.
  
 -<sect1>/var/named/zone/206.6.177
 +<sect1>/etc/namedb/206.6.177
  
- <p>I'll comment on this file after it.
+ <p>I'll comment on this file below
  
-@@ -1394,25 +1396,25 @@
+@@ -1531,52 +1533,52 @@
+ (
+  echo "To: hostmaster <hostmaster>"
+  echo "From: system <root>"
+- echo "Subject: Automatic update of the root.hints file"
++ echo "Subject: Automatic update of the named.root file"
   echo
  
-  export PATH=/sbin:/usr/sbin:/bin:/usr/bin:
+  PATH=/sbin:/usr/sbin:/bin:/usr/bin:
+  export PATH
 - cd /var/named
 + cd /etc/namedb
  
-- dig @rs.internic.net . ns >root.hints.new
-+ dig @rs.internic.net . ns >named.root.new
+  # Are we online?  Ping a server at your ISP
+  case `ping -qnc some.machine.net` in
+    *'100% packet loss'*)
+-	echo "The network is DOWN. root.hints NOT updated"
++	echo "The network is DOWN. named.root NOT updated"
+ 	echo
+ 	exit 0
+ 	;;
+  esac
  
-  echo "The named.conf file has been updated to contain the following   
+- dig @rs.internic.net . ns >root.hints.new 2>&1
++ dig @rs.internic.net . ns >named.hints.new 2>&1
+ 
+- case `cat root.hints.new` in
++ case `cat named.root.new` in
+    *NOERROR*)
+ 	# It worked
+ 	:;;
+    *)
+-	echo "The root.hints file update has FAILED."
++	echo "The named.root file update has FAILED."
+    	echo "This is the dig output reported:"
+    	echo
+-   	cat root.hints.new
++   	cat named.root.new
+         exit 0
+ 	;;
+  esac
+ 
+- echo "The root.hints file has been updated to contain the following   
++ echo "The named.root file has been updated to contain the following   
  information:"
   echo
 - cat root.hints.new
@@ -625,7 +653,7 @@
 - rm -f root.hints.old
 - mv root.hints root.hints.old
 - mv root.hints.new root.hints
-+ chown root.root named.root.new
++ chown named.root named.root.new
 + chmod 444 named.root.new
 + rm -f named.root.old
 + mv named.root named.root.old
@@ -640,8 +668,8 @@
  ) 2>&1 | /usr/lib/sendmail -t
  exit 0
  </code>
-@@ -1433,7 +1435,7 @@
- style) for a cache-only name server:å
+@@ -1598,7 +1600,7 @@
+ style) for a cache-only name server:
  
  <code>
 -directory /var/named
@@ -649,7 +677,7 @@
  cache	.	                                root.hints
  primary	0.0.127.IN-ADDR.ARPA                    127.0.0.zone
  primary	localhost				localhost.zone	 	
-@@ -1454,7 +1456,7 @@
+@@ -1619,7 +1621,7 @@
  // generated by named-bootconf.pl
  
  options {
@@ -658,7 +686,7 @@
  };
  
  zone "." {
-@@ -1480,13 +1482,13 @@
+@@ -1645,13 +1647,13 @@
  
  <code>
  // This is a configuration file for named (from BIND 8.1 or later).
@@ -672,10 +700,10 @@
  options {
 -	directory "/var/named";
 +	directory "/etc/namedb";
- 	check-names master warn;		/* default. */
  	datasize 20M;
  };
-@@ -1556,9 +1558,9 @@
+ 
+@@ -1721,9 +1723,9 @@
    like this in the named.conf file of your secondary:
  
    <code>
