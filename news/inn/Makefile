@@ -3,7 +3,7 @@
 # Date created:		20 Oct 1994
 # Whom:			torstenb
 #
-# $Id: Makefile,v 1.11 1995/10/06 14:33:05 torstenb Exp $
+# $Id: Makefile,v 1.12 1995/10/10 07:24:14 asami Exp $
 #
 
 DISTNAME=	inn1.4sec
@@ -20,6 +20,9 @@ MAINTAINER=	torstenb@FreeBSD.ORG
 # too many compile-time options
 NO_PACKAGE=	yes
 NO_WRKSUBDIR=	yes
+
+pre-configure:
+	echo "${CFLAGS}" >/tmp/build-ports-news-inn-cflags
 
 pre-install:
 	mkdir -p ${PREFIX}/news
