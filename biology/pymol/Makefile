@@ -5,8 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	pymol
-PORTVERSION=	0.90
-PORTREVISION=	1
+PORTVERSION=	0.93
 CATEGORIES=	biology python
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	pymol
@@ -29,6 +28,14 @@ USE_PYTHON=	yes
 
 .include <bsd.port.pre.mk>
 
+.if !defined(PICFLAG)
+.if ${MACHINE_ARCH} == "sparc64"
+PICFLAG=-fPIC
+.else
+PICFLAG=-fpic
+.endif
+.endif
+
 pre-patch:
 	@${INSTALL_DATA} ${WRKSRC}/setup/Rules.linux ${WRKSRC}/Rules.make
 .if ${PYTHON_REL} >= 230
@@ -37,12 +44,13 @@ pre-patch:
 
 post-patch:
 	@${INSTALL_DATA} ${WRKSRC}/setup/pymol.com.linux-rh7x ${WRKSRC}/setup/pymol.com
-	@${REINPLACE_CMD} 's,@PREFIX@,${PREFIX},g' ${WRKSRC}/setup/pymol.com
+	@${REINPLACE_CMD} -e 's,@PREFIX@,${PREFIX},g' -e 's,@LOCALBASE@,${LOCALBASE},g' ${WRKSRC}/setup/pymol.com
 	@${REINPLACE_CMD} -e 's,@PREFIX@,${PREFIX},g' \
 		-e 's,examples\(/devel/cgo03.py\),${EXAMPLESDIR}\1,' \
 		${WRKSRC}/modules/pmg_tk/Demo.py
 	@${RM} -f ${WRKSRC}/modules/pmg_tk/Demo.py.*
-	@${REINPLACE_CMD} 's,@PYTHON_VERSION@,${PYTHON_VERSION},g' ${WRKSRC}/Rules.make
+	${REINPLACE_CMD} -e 's,@PYTHON_VERSION@,${PYTHON_VERSION},g' \
+		-e 's,@PICFLAG@,${PICFLAG},g' ${WRKSRC}/Rules.make
 
 do-install:
 	@${INSTALL_SCRIPT} ${WRKSRC}/setup/pymol.com ${PREFIX}/bin/pymol

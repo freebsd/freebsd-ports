@@ -215,6 +215,9 @@ share/pymol/modules/pymol/editor.pyo
 share/pymol/modules/pymol/embed/__init__.py
 share/pymol/modules/pymol/embed/__init__.pyc
 share/pymol/modules/pymol/embed/__init__.pyo
+share/pymol/modules/pymol/embed/epymol/__init__.pyo
+share/pymol/modules/pymol/embed/epymol/__init__.pyc    
+share/pymol/modules/pymol/embed/epymol/__init__.py
 share/pymol/modules/pymol/embed/wxpymol/__init__.py
 share/pymol/modules/pymol/embed/wxpymol/__init__.pyc
 share/pymol/modules/pymol/embed/wxpymol/__init__.pyo
@@ -366,6 +369,7 @@ share/pymol/modules/pymol/xwin.pyc
 share/pymol/modules/pymol/xwin.pyo
 share/pymol/test/README
 share/pymol/test/cyg
+share/pymol/test/dat/odd01.pdb
 share/pymol/test/dat/1tii.pdb
 share/pymol/test/dat/3al1.pdb
 share/pymol/test/dat/3al1.r3d
@@ -378,6 +382,10 @@ share/pymol/test/dat/pept.r3d
 share/pymol/test/dat/small01.mol
 share/pymol/test/dat/tiny.pdb
 share/pymol/test/dat/water.pdb
+share/pymol/test/inp/B04.py
+share/pymol/test/inp/B05.py
+share/pymol/test/inp/C0700odd.pml
+share/pymol/test/inp/C1100do.py
 share/pymol/test/inp/B01.py
 share/pymol/test/inp/B02.py
 share/pymol/test/inp/B03.py
@@ -423,6 +431,15 @@ share/pymol/test/inp/T02.py
 share/pymol/test/inp/T03.py
 share/pymol/test/inp/T04.py
 share/pymol/test/inp/U01.pml
+share/pymol/test/ref/C0700odd.1.pdb
+share/pymol/test/ref/C0700odd.2.pdb
+share/pymol/test/ref/C0700odd.3.pdb
+share/pymol/test/ref/C0700odd.4.pdb
+share/pymol/test/ref/C0700odd.5.pdb
+share/pymol/test/ref/C0700odd.6.pdb
+share/pymol/test/ref/C0700odd.7.pdb
+share/pymol/test/ref/C0700odd.log
+share/pymol/test/ref/C1100do.log
 share/pymol/test/ref/C0001quit.log
 share/pymol/test/ref/C0010hello.log
 share/pymol/test/ref/C0020pdb.log
@@ -482,6 +499,7 @@ share/pymol/test/win.py
 @dirrm share/pymol/modules/pymol/opengl/gl
 @dirrm share/pymol/modules/pymol/opengl
 @dirrm share/pymol/modules/pymol/embed/wxpymol
+@dirrm share/pymol/modules/pymol/embed/epymol
 @dirrm share/pymol/modules/pymol/embed
 @dirrm share/pymol/modules/pymol
 @dirrm share/pymol/modules/pmg_wx
@@ -520,6 +538,7 @@ share/pymol/test/win.py
 %%PORTDOCS%%%%EXAMPLESDIR%%/devel/sele_wiz.py
 %%PORTDOCS%%%%EXAMPLESDIR%%/devel/start_pymol.py
 %%PORTDOCS%%%%EXAMPLESDIR%%/devel/xmlrpc01.py
+%%PORTDOCS%%%%EXAMPLESDIR%%/devel/pick_wiz.py
 %%PORTDOCS%%%%EXAMPLESDIR%%/launching/README
 %%PORTDOCS%%%%EXAMPLESDIR%%/launching/launch.py
 %%PORTDOCS%%%%EXAMPLESDIR%%/launching/launch_demo.py
