@@ -18,6 +18,12 @@ COMMENT=	A multi-screen window manager
 GNU_CONFIGURE=	yes
 MAN1=		screen.1
 
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == "alpha"
+CFLAGS+=	-O0
+.endif
+
 post-patch:
 	@${RM} ${WRKSRC}/doc/screen.info*
 
@@ -27,4 +33,4 @@ post-install:
 		${CP} ${PREFIX}/etc/screenrc.sample ${PREFIX}/etc/screenrc ; \
 	fi
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
