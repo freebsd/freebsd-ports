@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	asmutils
-PORTVERSION=	0.13
+PORTVERSION=	0.14
 CATEGORIES=	devel
-MASTER_SITES=	ftp://ftp.linuxassembly.org/pub/asm/
+MASTER_SITES=	ftp://linuxassembly.org/pub/asm/
 
-MAINTAINER=	greid@ukug.uk.freebsd.org
+MAINTAINER=	greid@FreeBSD.org
 
 BUILD_DEPENDS=	nasm:${PORTSDIR}/devel/nasm
 
@@ -22,11 +22,11 @@ INSTALLS_SHLIB=	yes
 LDCONFIG_DIRS=	${PREFIX}/lib/asmutils
 
 # This will play merry hell with portlint
-BINARIES=	cat basename chmod chroot chown cp cpuinfo dirname echo \
-		env id extname factor grep head hostname httpd kill ln ls \
-		lzss mkdir more mv nc pwd renice rm sh sleep strings sync \
-		tee true uname wc yes md5sum rmdsum rc6crypt execve report \
-		asmutils domainname sln rmdir false arch cpuspeed regs
+BINARIES=	asmutils basename cat chmod chown chroot cp cpuinfo date \
+		dd dirname echo env execve extname factor grep head \
+		hexdump hostname httpd id init kill ln ls lzss md5sum \
+		mkdir more mv nc ping pwd rc6crypt renice report rm rmdsum \
+		sh sleep strings sync tee true uname wc yes
 
 DOCFILES=	Asmutils-HOWTO acknowledgements endorsements history \
 		index s-contrib s-debug s-include s-layout s-optimize
@@ -41,6 +41,14 @@ do-install:
 .for B in ${BINARIES}
 	${INSTALL_PROGRAM} ${WRKSRC}/src/$B ${PREFIX}/bin/asmutils
 .endfor
+	(cd ${PREFIX}/bin/asmutils && \
+		${LN} -sf uname arch && \
+		${LN} -sf cpuinfo cpuspeed && \
+		${LN} -sf hostname domainname && \
+		${LN} -sf true false && \
+		${LN} -sf execve regs && \
+		${LN} -sf mkdir rmdir && \
+		${LN} -sf ln sln)
 .for L in c crypto m
 	${INSTALL_PROGRAM} ${WRKSRC}/lib/lib$L.so.0 ${PREFIX}/lib/asmutils
 	${INSTALL_DATA} ${WRKSRC}/lib/lib$L.a ${PREFIX}/lib/asmutils
