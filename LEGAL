@@ -1,5 +1,5 @@
 # Creator:  Jordan Hubbard
-# $Id: LEGAL,v 1.89 1997/10/31 09:20:08 tg Exp $
+# $Id: LEGAL,v 1.90 1997/11/10 23:40:54 jraynard Exp $
 
 Some of the ports in this directory have restrictive copyrights prohibiting
 their actual redistribution on mass media.  When creating compilations
@@ -63,6 +63,7 @@ john-1.4		ports/security/john	crypt(); export-controlled
 JDK-*			ports/lang/jdk		Put copyright on packaging!
 kaffe-0.9.1		ports/lang/kaffe	Restrictive copyright
 libdes-*		ports/japanese/samba-des
+			ports/chinese/samba-des
 			ports/net/samba-des	Crypto; export-controlled
 maxima-5.0-beta		ports/math/maxima	License required
 mew-1.70.tar.gz		ports/mail/mew	ITAR export-controlled (hooks to pgp)
