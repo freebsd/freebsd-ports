@@ -7336,3 +7336,4 @@ zthread		ports/devel/zthread
 ztrack		ports/games/ztrack
 zziplib		ports/devel/zziplib
 p5-CDDB_get	ports/audio/p5-CDDB_get
+lame-devel	ports/audio/lame-devel
