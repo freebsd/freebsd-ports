@@ -6,9 +6,10 @@
 #
 
 PORTNAME=	metacity
-PORTVERSION=	2.4.1
+PORTVERSION=	2.4.2
 CATEGORIES=	x11-wm
-MASTER_SITES=	http://people.redhat.com/~hp/metacity/
+MASTER_SITES=	${MASTER_SITE_GNOME}
+MASTER_SITE_SUBDIR=	sources/metacity/2.4
 DIST_SUBDIR=	gnome2
 
 MAINTAINER=	gnome@FreeBSD.org

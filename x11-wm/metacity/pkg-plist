@@ -86,23 +86,24 @@ share/gnome/themes/Crux/metacity-1/inactive-top-right-border.png
 share/gnome/themes/Crux/metacity-1/inactive-top-right-corner.png
 share/gnome/themes/Crux/metacity-1/metacity-theme-1.xml
 share/gnome/themes/Esco/metacity-1/metacity-theme-1.xml
-share/gnome/themes/Gorilla/metacity-1/active-button.png
-share/gnome/themes/Gorilla/metacity-1/active-close-button.png
-share/gnome/themes/Gorilla/metacity-1/active-close-menu-icon.png
-share/gnome/themes/Gorilla/metacity-1/active-maximize-button.png
-share/gnome/themes/Gorilla/metacity-1/active-maximize-menu-icon.png
-share/gnome/themes/Gorilla/metacity-1/active-menu-button.png
-share/gnome/themes/Gorilla/metacity-1/active-minimize-button.png
-share/gnome/themes/Gorilla/metacity-1/active-minimize-menu-icon.png
-share/gnome/themes/Gorilla/metacity-1/inactive-close-button.png
-share/gnome/themes/Gorilla/metacity-1/inactive-maximize-button.png
-share/gnome/themes/Gorilla/metacity-1/inactive-menu-button.png
-share/gnome/themes/Gorilla/metacity-1/inactive-minimize-button.png
-share/gnome/themes/Gorilla/metacity-1/metacity-theme-1.xml
+share/gnome/themes/AgingGorilla/metacity-1/active-button.png
+share/gnome/themes/AgingGorilla/metacity-1/active-close-button.png
+share/gnome/themes/AgingGorilla/metacity-1/active-close-menu-icon.png
+share/gnome/themes/AgingGorilla/metacity-1/active-maximize-button.png
+share/gnome/themes/AgingGorilla/metacity-1/active-maximize-menu-icon.png
+share/gnome/themes/AgingGorilla/metacity-1/active-menu-button.png
+share/gnome/themes/AgingGorilla/metacity-1/active-minimize-button.png
+share/gnome/themes/AgingGorilla/metacity-1/active-minimize-menu-icon.png
+share/gnome/themes/AgingGorilla/metacity-1/inactive-close-button.png
+share/gnome/themes/AgingGorilla/metacity-1/inactive-maximize-button.png
+share/gnome/themes/AgingGorilla/metacity-1/inactive-menu-button.png
+share/gnome/themes/AgingGorilla/metacity-1/inactive-minimize-button.png
+share/gnome/themes/AgingGorilla/metacity-1/metacity-theme-1.xml
 share/gnome/themes/Metabox/metacity-1/metacity-theme-1.xml
 share/gnome/wm-properties/metacity.desktop
 share/locale/az/LC_MESSAGES/metacity.mo
 share/locale/ca/LC_MESSAGES/metacity.mo
+share/locale/cs/LC_MESSAGES/metacity.mo
 share/locale/da/LC_MESSAGES/metacity.mo
 share/locale/de/LC_MESSAGES/metacity.mo
 share/locale/el/LC_MESSAGES/metacity.mo
@@ -129,8 +130,8 @@ share/locale/zh_CN/LC_MESSAGES/metacity.mo
 share/locale/zh_TW/LC_MESSAGES/metacity.mo
 @dirrm share/gnome/themes/Metabox/metacity-1
 @dirrm share/gnome/themes/Metabox
-@dirrm share/gnome/themes/Gorilla/metacity-1
-@dirrm share/gnome/themes/Gorilla
+@dirrm share/gnome/themes/AgingGorilla/metacity-1
+@dirrm share/gnome/themes/AgingGorilla
 @dirrm share/gnome/themes/Esco/metacity-1
 @dirrm share/gnome/themes/Esco
 @dirrm share/gnome/themes/Crux/metacity-1
