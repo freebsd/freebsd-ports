@@ -1,6 +1,6 @@
 # Ports collection Makefile for:	libcoro
 # Date created:				22 June 2000
-# Whom:				Kelly Yancey <kbyanc@posi.net>
+# Whom:					Kelly Yancey <kbyanc@posi.net>
 #
 # $FreeBSD$
 #
@@ -13,22 +13,19 @@ MASTER_SITE_SUBDIR=	kbyanc
 DISTNAME=		coro-${PORTVERSION}
 
 MAINTAINER=		ports@FreeBSD.org
-COMMENT=	C library that implements coroutines
+COMMENT=		C library that implements coroutines
 
 ONLY_FOR_ARCHS=		i386
 
 HAS_CONFIGURE=		yes
 CONFIGURE_ARGS=		--arch arch/x86-freebsd
+NOPRECIOUSMAKEVARS=	yes
 
 MAN2=			coro.2
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 502126
-BROKEN=			"Broken by changes to make(1) on FreeBSD >= 5.x"
-.endif
-
 post-extract:
 	${CP} -r ${WRKSRC}/arch/x86-linux ${WRKSRC}/arch/x86-freebsd
+	${SED} -e '43,43s/$$/ __attribute__((noreturn,regparm(1)))/' \
+		${WRKSRC}/arch/x86-linux/coro.c > ${WRKSRC}/arch/x86-freebsd/coro.c
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
