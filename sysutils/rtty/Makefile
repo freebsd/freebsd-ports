@@ -6,13 +6,16 @@
 #
 
 PORTNAME=	rtty
-PORTVERSION=	3.2
+PORTVERSION=	4.0
 CATEGORIES=	sysutils
-MASTER_SITES=	ftp://ftp.vix.com/pub/vixie/ \
-		ftp://ftp.digital.com/pub/misc/vixie/
+MASTER_SITES=	ftp://ftp.vix.com/pub/vixie/
+EXTRACT_SUFX=	.shar.gz
 
 MAINTAINER=	ports@FreeBSD.org
 
+EXTRACT_CMD=	${GZCAT}
+EXTRACT_BEFORE_ARGS=
+EXTRACT_AFTER_ARGS=	|sh
 NO_WRKSUBDIR=	yes
 
 .include <bsd.port.mk>
