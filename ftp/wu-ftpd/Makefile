@@ -3,13 +3,12 @@
 # Date created:		18 Oct 1994
 # Whom:			torstenb
 #
-# $Id: Makefile,v 1.3 1995/04/15 05:42:06 asami Exp $
+# $Id: Makefile,v 1.4 1995/11/27 04:05:50 asami Exp $
 #
 
 DISTNAME=	wu-ftpd-2.4
 CATEGORIES+=	net
 MASTER_SITES=	ftp://ftp.wustl.edu/packages/wuarchive-ftpd/
-EXTRACT_SUFX=	.tar.Z
 
 pre-install:
 	@mkdir -p ${PREFIX}/bin
