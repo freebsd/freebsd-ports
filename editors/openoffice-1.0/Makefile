@@ -335,16 +335,16 @@ do-build:
 	@cd ${WRKSRC}/.. && PATH="${PATH}:${LOCALBASE}/bin:${LOCALBASE}/sbin" ./bootstrap
 .if !defined(DISPLAY)
 	@cd ${WRKSRC}/.. && DISPLAY=${DISPLAYHACK} PATH="${PATH}:${LOCALBASE}/bin:${LOCALBASE}/sbin" && \
-		tcsh -c 'source FreeBSDEnv.Set && ${DMAKE}'
+		tcsh -c 'source FreeBSDEnv.Set && unsetenv TOP && ${DMAKE}'
 	@${CAT} ${WRKDIR}/.Xvfb.pid | xargs kill
 	@${RM} -f ${WRKDIR}/.Xvfb.pid
 .else
 	@cd ${WRKSRC}/.. && DISPLAY=${DISPLAY} PATH="${PATH}:${LOCALBASE}/bin:${LOCALBASE}/sbin" && \
-		tcsh -c 'source FreeBSDEnv.Set && ${DMAKE}'
+		tcsh -c 'source FreeBSDEnv.Set && unsetenv TOP && ${DMAKE}'
 .endif
 .if defined(LANG_PKGNAME)
 	@cd ${WRKSRC}/.. && PATH="${PATH}:${LOCALBASE}/bin:${LOCALBASE}/sbin" && \
-		tcsh -c 'source FreeBSDEnv.Set && cd instsetoo/util && ${DMAKE} LANGEXT=${LANGEXT}'
+		tcsh -c 'source FreeBSDEnv.Set && unsetenv TOP && cd instsetoo/util && ${DMAKE} LANGEXT=${LANGEXT}'
 .endif
 
 pre-install:
