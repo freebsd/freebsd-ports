@@ -224,10 +224,17 @@ libpanel_USE_GNOME_IMPL=gnomelibs
 
 _USE_GNOME_SAVED:=${USE_GNOME}
 HAVE_GNOME?=
-.if defined(WANT_GNOME) && !defined(WITHOUT_GNOME)
+.if (defined(WANT_GNOME) && !defined(WITHOUT_GNOME)) || \
+  (defined(WITHOUT_GNOME) && ${WITHOUT_GNOME}!="yes" && \
+  ${WITHOUT_GNOME}!="1")
 . for component in ${_USE_GNOME_ALL}
-.  if exists(${${component}_DETECT}) || defined(WITH_GNOME)
+.  if !defined(WITHOUT_GNOME) || (defined(WITHOUT_GNOME) && \
+     ${WITHOUT_GNOME:M${component}}=="")
+.    if exists(${${component}_DETECT}) || (defined(WITH_GNOME) && \
+       (${WITH_GNOME}=="yes" || ${WITH_GNOME:M${component}}!="" || \
+       ${WITH_GNOME}=="1"))
 HAVE_GNOME+=	${component}
+.    endif
 .  endif
 . endfor
 .endif
@@ -247,6 +254,9 @@ ${component}_USE_GNOME_IMPL+=${${subcomponent}_USE_GNOME_IMPL}
 
 # Then use already expanded USE_GNOME_IMPL to expand USE_GNOME
 . for component in ${USE_GNOME}
+.  if ${_USE_GNOME_ALL:M${component}}==""
+BROKEN=	"Unknown component ${component}"
+.  endif
 _USE_GNOME+=	${${component}_USE_GNOME_IMPL} ${component}
 . endfor
 
