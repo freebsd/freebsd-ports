@@ -30,7 +30,7 @@
 #
 # $FreeBSD$
 #
-# MAINTAINER=	eik@FreeBSD.org
+# MAINTAINER=   eik@FreeBSD.org
 #
 # PORTVERSION and PKGORIGIN auditing script
 #
@@ -64,6 +64,7 @@ use Cwd 'abs_path';
 my $portsdir   = $ENV{PORTSDIR}   ? $ENV{PORTSDIR}   : '/usr/ports';
 my $versiondir = $ENV{VERSIONDIR} ? $ENV{VERSIONDIR} : '/var/db/chkversion';
 my $cvsblame   = $ENV{CVSBLAME}   ? 1                : 0;
+my $allports   = $ENV{ALLPORTS}   ? 1                : 0;
 
 my $make        = '/usr/bin/make';
 my $cvs         = '/usr/bin/cvs';
@@ -90,7 +91,7 @@ sub readfrom {
     my @childout = <CHILD>;
     close CHILD;
 
-    map { chomp } @childout;
+    map chomp, @childout;
 
     return wantarray ? @childout : $childout[0];
 }
@@ -116,8 +117,8 @@ sub wanted {
         $File::Find::prune = 1;
     }
     elsif ($File::Find::name =~ m"^$portsdir/([^/]+/[^/]+)$"os) {
-        my @makevar = readfrom $File::Find::name, $make, '-VPKGORIGIN',
-          '-VPKGNAME';
+        my @makevar = readfrom $File::Find::name,
+          $make, '-VPKGORIGIN', '-VPKGNAME';
 
         $pkgorigin{$1} = $makevar[0]
           if $makevar[0] && $1 ne $makevar[0];
@@ -128,7 +129,27 @@ sub wanted {
     }
 }
 
-find(\&wanted, $portsdir);
+if ($allports) {
+    find(\&wanted, $portsdir);
+}
+else {
+    my @categories = split ' ', readfrom $portsdir, $make, '-VSUBDIR';
+
+    foreach my $category (@categories) {
+        -f "$portsdir/$category/Makefile" || next;
+        my @ports = split ' ',
+          readfrom "$portsdir/$category", $make, '-VSUBDIR';
+        foreach (map "$category/$_", @ports) {
+            -f "$portsdir/$_/Makefile" || next;
+            my @makevar = readfrom "$portsdir/$_",
+              $make, '-VPKGORIGIN', '-VPKGNAME';
+            $pkgorigin{$_} = $makevar[0]
+              if $makevar[0] && $_ ne $makevar[0];
+            $pkgname{$_} = $makevar[1]
+              if $makevar[1];
+        }
+    }
+}
 
 my %backwards;
 
@@ -157,8 +178,8 @@ while (<VERSIONS>) {
         $newversion =~ s/^.*-//;
         $oldversion =~ s/^.*-//;
 
-        my $result = readfrom '', $pkg_version, '-t', $newversion,
-          $oldversion;
+        my $result = readfrom '',
+          $pkg_version, '-t', $newversion, $oldversion;
         if ($result eq '<') {
             $backwards{$origin} = "$pkgname{$origin} < $version";
             $pkgname{$origin}   = $version;
@@ -187,8 +208,8 @@ sub blame {
         foreach (sort keys %{$ports}) {
             print "- $_: $ports->{$_}\n";
             if ($cvsblame && -d "$portsdir/$_/CVS") {
-                my @cvslog = readfrom "$portsdir/$_", $cvs, '-R', 'log', '-N',
-                  '-r.', 'Makefile';
+                my @cvslog = readfrom "$portsdir/$_",
+                  $cvs, '-R', 'log', '-N', '-r.', 'Makefile';
                 print "  ", join("\n  " , grep(/^-/ .. /^=/, @cvslog)), "\n\n";
             }
         }
@@ -200,12 +221,8 @@ blame
   "** The following ports have a wrong PKGORIGIN **\n\n"
   . " PKGORIGIN connects packaged or installed ports to the directory they\n"
   . " originated from. This is essential for tools like pkg_version or\n"
-  . " portupgrade to work correctly.\n" . "\n"
-  . " Wrong PKGORIGINs are often caused by a wrong order of CATEGORIES after\n"
-  . " a repocopy. While it is normal that ports are broken for a short period\n"
-  . " after every repocopy, note that they can be installed even when they are\n"
-  . " not yet connected to the build (via an entry in its category's Makefile),\n"
-  . " therefore it is important that these are fixed as soon as possible.\n",
+  . " portupgrade to work correctly. Wrong PKGORIGINs are often caused by a\n"
+  . " wrong order of CATEGORIES after a repocopy.\n",
   \%pkgorigin;
 
 blame
