@@ -1,0 +1,45 @@
+--- bin/servletrunner.orig	Wed Apr 22 04:32:48 1998
++++ bin/servletrunner	Wed Jun 30 22:34:20 1999
+@@ -54,7 +54,7 @@
+     fi
+     if [ -z "$JAVA_HOME" ]
+     then
+-	JAVA_HOME=/usr/local/jdk1.1
++	JAVA_HOME=/usr/local/jdk1.1.8
+     fi
+ fi
+ 
+@@ -66,31 +66,12 @@
+     error "Cannot find the Java runtime. Please set JAVA_HOME."
+ fi
+ 
+-# If JSDK_HOME not specified then determine default location of JSDK
+-# from directory out of which this script was executed. Otherwise,
+-# JSDK_HOME must be set manually.
+-
+-d=`dirname $0`
+-if [ -n "$d" ]
+-  then
+-    JSDK_HOME=`cd $d/.. >/dev/null 2>&1 && pwd`
+-fi
+-if [ -z "$JSDK_HOME" ]
+-  then
+-    error "Cannot find the JSDK. Please set JSDK_HOME."
+-fi
+-
+-if [ ! -d "$JSDK_HOME" ]
+-then
+-    error "JSDK_HOME ($JSDK_HOME) must be a directory."
+-fi
+-
+ # Add JSDK classes to default class path.
+ 
+-CLASSPATH=$JSDK_HOME/classes:$JSDK_HOME/lib/jsdk.jar:$CLASSPATH
++CLASSPATH=%%PREFIX%%/share/java/classes/jsdk.jar:$CLASSPATH
+ export CLASSPATH
+ 
+ # Start server and pass any arguments specified on command line.
+ 
+-cd $JSDK_HOME
++cd %%PREFIX%%/share/java/classes
+ $JAVA_HOME/bin/java sun.servlet.http.HttpServer $*

@@ -1,99 +1,73 @@
-JSDK2.0/README
-JSDK2.0/bin/servletrunner
-JSDK2.0/doc/apidoc/AllNames.html
-JSDK2.0/doc/apidoc/Package-javax.servlet.html
-JSDK2.0/doc/apidoc/Package-javax.servlet.http.html
-JSDK2.0/doc/apidoc/images/OpenBookIcon.gif
-JSDK2.0/doc/apidoc/images/blue-ball-small.gif
-JSDK2.0/doc/apidoc/images/blue-ball.gif
-JSDK2.0/doc/apidoc/images/class-index.gif
-JSDK2.0/doc/apidoc/images/constructor-index.gif
-JSDK2.0/doc/apidoc/images/constructors.gif
-JSDK2.0/doc/apidoc/images/cyan-ball-small.gif
-JSDK2.0/doc/apidoc/images/cyan-ball.gif
-JSDK2.0/doc/apidoc/images/error-index.gif
-JSDK2.0/doc/apidoc/images/exception-index.gif
-JSDK2.0/doc/apidoc/images/green-ball-small.gif
-JSDK2.0/doc/apidoc/images/green-ball.gif
-JSDK2.0/doc/apidoc/images/interface-index.gif
-JSDK2.0/doc/apidoc/images/java.awt/GridBagEx.gif
-JSDK2.0/doc/apidoc/images/magenta-ball-small.gif
-JSDK2.0/doc/apidoc/images/magenta-ball.gif
-JSDK2.0/doc/apidoc/images/method-index.gif
-JSDK2.0/doc/apidoc/images/methods.gif
-JSDK2.0/doc/apidoc/images/package-index.gif
-JSDK2.0/doc/apidoc/images/red-ball-small.gif
-JSDK2.0/doc/apidoc/images/red-ball.gif
-JSDK2.0/doc/apidoc/images/variable-index.gif
-JSDK2.0/doc/apidoc/images/variables.gif
-JSDK2.0/doc/apidoc/images/yellow-ball-small.gif
-JSDK2.0/doc/apidoc/images/yellow-ball.gif
-JSDK2.0/doc/apidoc/javax.servlet.GenericServlet.html
-JSDK2.0/doc/apidoc/javax.servlet.Servlet.html
-JSDK2.0/doc/apidoc/javax.servlet.ServletConfig.html
-JSDK2.0/doc/apidoc/javax.servlet.ServletContext.html
-JSDK2.0/doc/apidoc/javax.servlet.ServletException.html
-JSDK2.0/doc/apidoc/javax.servlet.ServletInputStream.html
-JSDK2.0/doc/apidoc/javax.servlet.ServletOutputStream.html
-JSDK2.0/doc/apidoc/javax.servlet.ServletRequest.html
-JSDK2.0/doc/apidoc/javax.servlet.ServletResponse.html
-JSDK2.0/doc/apidoc/javax.servlet.SingleThreadModel.html
-JSDK2.0/doc/apidoc/javax.servlet.UnavailableException.html
-JSDK2.0/doc/apidoc/javax.servlet.http.Cookie.html
-JSDK2.0/doc/apidoc/javax.servlet.http.HttpServlet.html
-JSDK2.0/doc/apidoc/javax.servlet.http.HttpServletRequest.html
-JSDK2.0/doc/apidoc/javax.servlet.http.HttpServletResponse.html
-JSDK2.0/doc/apidoc/javax.servlet.http.HttpSession.html
-JSDK2.0/doc/apidoc/javax.servlet.http.HttpSessionBindingEvent.html
-JSDK2.0/doc/apidoc/javax.servlet.http.HttpSessionBindingListener.html
-JSDK2.0/doc/apidoc/javax.servlet.http.HttpSessionContext.html
-JSDK2.0/doc/apidoc/javax.servlet.http.HttpUtils.html
-JSDK2.0/doc/apidoc/packages.html
-JSDK2.0/doc/apidoc/tree.html
-JSDK2.0/doc/images/banner.gif
-JSDK2.0/doc/images/survey-reply.gif
-JSDK2.0/doc/servlet_tutorial.html
-JSDK2.0/examples/JdcSurvey.html
-JSDK2.0/examples/SessionServlet.class
-JSDK2.0/examples/SessionServlet.java
-JSDK2.0/examples/SimpleServlet.class
-JSDK2.0/examples/SimpleServlet.java
-JSDK2.0/examples/SnoopServlet.class
-JSDK2.0/examples/SnoopServlet.java
-JSDK2.0/examples/SurveyServlet.class
-JSDK2.0/examples/SurveyServlet.java
-JSDK2.0/examples/servlet.properties
-JSDK2.0/lib/jsdk.jar
-JSDK2.0/src/javax/servlet/GenericServlet.java
-JSDK2.0/src/javax/servlet/Servlet.java
-JSDK2.0/src/javax/servlet/ServletConfig.java
-JSDK2.0/src/javax/servlet/ServletContext.java
-JSDK2.0/src/javax/servlet/ServletException.java
-JSDK2.0/src/javax/servlet/ServletInputStream.java
-JSDK2.0/src/javax/servlet/ServletOutputStream.java
-JSDK2.0/src/javax/servlet/ServletRequest.java
-JSDK2.0/src/javax/servlet/ServletResponse.java
-JSDK2.0/src/javax/servlet/SingleThreadModel.java
-JSDK2.0/src/javax/servlet/UnavailableException.java
-JSDK2.0/src/javax/servlet/http/Cookie.java
-JSDK2.0/src/javax/servlet/http/HttpServlet.java
-JSDK2.0/src/javax/servlet/http/HttpServletRequest.java
-JSDK2.0/src/javax/servlet/http/HttpServletResponse.java
-JSDK2.0/src/javax/servlet/http/HttpSession.java
-JSDK2.0/src/javax/servlet/http/HttpSessionBindingEvent.java
-JSDK2.0/src/javax/servlet/http/HttpSessionBindingListener.java
-JSDK2.0/src/javax/servlet/http/HttpSessionContext.java
-JSDK2.0/src/javax/servlet/http/HttpUtils.java
-@dirrm JSDK2.0/bin
-@dirrm JSDK2.0/doc/apidoc/images/java.awt
-@dirrm JSDK2.0/doc/apidoc/images
-@dirrm JSDK2.0/doc/apidoc
-@dirrm JSDK2.0/doc/images
-@dirrm JSDK2.0/doc
-@dirrm JSDK2.0/examples
-@dirrm JSDK2.0/lib
-@dirrm JSDK2.0/src/javax/servlet/http
-@dirrm JSDK2.0/src/javax/servlet
-@dirrm JSDK2.0/src/javax
-@dirrm JSDK2.0/src
-@dirrm JSDK2.0
+bin/servletrunner
+share/java/classes/jsdk.jar
+share/java/jsdk20/README
+share/java/jsdk20/doc/apidoc/AllNames.html
+share/java/jsdk20/doc/apidoc/Package-javax.servlet.html
+share/java/jsdk20/doc/apidoc/Package-javax.servlet.http.html
+share/java/jsdk20/doc/apidoc/images/OpenBookIcon.gif
+share/java/jsdk20/doc/apidoc/images/blue-ball-small.gif
+share/java/jsdk20/doc/apidoc/images/blue-ball.gif
+share/java/jsdk20/doc/apidoc/images/class-index.gif
+share/java/jsdk20/doc/apidoc/images/constructor-index.gif
+share/java/jsdk20/doc/apidoc/images/constructors.gif
+share/java/jsdk20/doc/apidoc/images/cyan-ball-small.gif
+share/java/jsdk20/doc/apidoc/images/cyan-ball.gif
+share/java/jsdk20/doc/apidoc/images/error-index.gif
+share/java/jsdk20/doc/apidoc/images/exception-index.gif
+share/java/jsdk20/doc/apidoc/images/green-ball-small.gif
+share/java/jsdk20/doc/apidoc/images/green-ball.gif
+share/java/jsdk20/doc/apidoc/images/interface-index.gif
+share/java/jsdk20/doc/apidoc/images/java.awt/GridBagEx.gif
+share/java/jsdk20/doc/apidoc/images/magenta-ball-small.gif
+share/java/jsdk20/doc/apidoc/images/magenta-ball.gif
+share/java/jsdk20/doc/apidoc/images/method-index.gif
+share/java/jsdk20/doc/apidoc/images/methods.gif
+share/java/jsdk20/doc/apidoc/images/package-index.gif
+share/java/jsdk20/doc/apidoc/images/red-ball-small.gif
+share/java/jsdk20/doc/apidoc/images/red-ball.gif
+share/java/jsdk20/doc/apidoc/images/variable-index.gif
+share/java/jsdk20/doc/apidoc/images/variables.gif
+share/java/jsdk20/doc/apidoc/images/yellow-ball-small.gif
+share/java/jsdk20/doc/apidoc/images/yellow-ball.gif
+share/java/jsdk20/doc/apidoc/javax.servlet.GenericServlet.html
+share/java/jsdk20/doc/apidoc/javax.servlet.Servlet.html
+share/java/jsdk20/doc/apidoc/javax.servlet.ServletConfig.html
+share/java/jsdk20/doc/apidoc/javax.servlet.ServletContext.html
+share/java/jsdk20/doc/apidoc/javax.servlet.ServletException.html
+share/java/jsdk20/doc/apidoc/javax.servlet.ServletInputStream.html
+share/java/jsdk20/doc/apidoc/javax.servlet.ServletOutputStream.html
+share/java/jsdk20/doc/apidoc/javax.servlet.ServletRequest.html
+share/java/jsdk20/doc/apidoc/javax.servlet.ServletResponse.html
+share/java/jsdk20/doc/apidoc/javax.servlet.SingleThreadModel.html
+share/java/jsdk20/doc/apidoc/javax.servlet.UnavailableException.html
+share/java/jsdk20/doc/apidoc/javax.servlet.http.Cookie.html
+share/java/jsdk20/doc/apidoc/javax.servlet.http.HttpServlet.html
+share/java/jsdk20/doc/apidoc/javax.servlet.http.HttpServletRequest.html
+share/java/jsdk20/doc/apidoc/javax.servlet.http.HttpServletResponse.html
+share/java/jsdk20/doc/apidoc/javax.servlet.http.HttpSession.html
+share/java/jsdk20/doc/apidoc/javax.servlet.http.HttpSessionBindingEvent.html
+share/java/jsdk20/doc/apidoc/javax.servlet.http.HttpSessionBindingListener.html
+share/java/jsdk20/doc/apidoc/javax.servlet.http.HttpSessionContext.html
+share/java/jsdk20/doc/apidoc/javax.servlet.http.HttpUtils.html
+share/java/jsdk20/doc/apidoc/packages.html
+share/java/jsdk20/doc/apidoc/tree.html
+share/java/jsdk20/doc/images/banner.gif
+share/java/jsdk20/doc/images/survey-reply.gif
+share/java/jsdk20/doc/servlet_tutorial.html
+share/java/jsdk20/examples/JdcSurvey.html
+share/java/jsdk20/examples/SessionServlet.class
+share/java/jsdk20/examples/SessionServlet.java
+share/java/jsdk20/examples/SimpleServlet.class
+share/java/jsdk20/examples/SimpleServlet.java
+share/java/jsdk20/examples/SnoopServlet.class
+share/java/jsdk20/examples/SnoopServlet.java
+share/java/jsdk20/examples/SurveyServlet.class
+share/java/jsdk20/examples/SurveyServlet.java
+share/java/jsdk20/examples/servlet.properties
+@dirrm share/java/jsdk20/doc/apidoc/images/java.awt
+@dirrm share/java/jsdk20/doc/apidoc/images
+@dirrm share/java/jsdk20/doc/apidoc
+@dirrm share/java/jsdk20/doc/images
+@dirrm share/java/jsdk20/doc
+@dirrm share/java/jsdk20/examples
+@dirrm share/java/jsdk20
