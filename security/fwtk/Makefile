@@ -3,13 +3,11 @@
 # Date created:                         15th June 1996
 # Whom:                                 gpalmer
 #
-# $Id: Makefile,v 1.2 1996/06/16 15:30:04 markm Exp $
+# $Id: Makefile,v 1.3 1996/06/20 12:39:36 adam Exp $
 #
 
 DISTNAME=       fwtk-1.3
 CATEGORIES+=    security net
-MASTER_SITES=   ftp://ftp.tis.com/pub/firewalls/toolkit/
-DISTFILES=	fwtk-v1.3.tar.Z fwtk-doc-only.tar.Z
 
 MAINTAINER=     gpalmer@FreeBSD.ORG
 
@@ -30,6 +28,15 @@ DOCS=		sample-report.txt manpages.ps admin_guide.ps user_guide.ps \
 SBIN_BINS=	authdump authload authmgr
 LIBEXEC_BINS=	authsrv ftp-gw http-gw netacl plug-gw rlogin-gw smap smapd \
 		tn-gw x-gw
+
+fetch:
+	@if [ ! -f ${DISTDIR}/fwtk-v1.3.tar.Z ]; then \
+	  echo "Please read ftp://ftp.tis.com/pub/firewalls/toolkit/README"; \
+	  echo "for details of how to obtain the FTWK source. Put the files"; \
+	  echo "fwtk-v1.3.tar.Z and fwtk-doc-only.tar.Z in the directory"; \
+	  echo "${DISTDIR} and run make again"; \
+	  exit 1;\
+	fi
 
 post-install:
 	( cd ${PREFIX}/libexec ; strip ${SBIN_BINS} ${LIBEXEC_BINS} )
