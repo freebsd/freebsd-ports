@@ -135,6 +135,9 @@
 # 	because of conflicting glib versions, so it it is disabled if
 # 	mplayer is built with gtk1 graphical user interface
 #
+# WITH_FRIBIDI
+# default: autodetect
+#
 # WITH_CDPARANOIA
 # default: autodetect
 #
@@ -204,6 +207,7 @@
 
 PORTNAME=	mplayer
 PORTVERSION=	0.99.4
+PORTREVISION=	1
 CATEGORIES=	multimedia audio ipv6
 MASTER_SITES=	http://www1.mplayerhq.hu/MPlayer/releases/ \
 		http://www2.mplayerhq.hu/MPlayer/releases/ \
@@ -235,9 +239,11 @@ CONFIGURE_ARGS=	--with-extralibdir=${LOCALBASE}/lib \
 		--with-x11libdir=${X11BASE}/lib \
 		--with-x11incdir=${X11BASE}/include \
 		--enable-png \
+		--enable-menu \
 		--disable-libfame \
 		--disable-external-faad \
-		--disable-tv-v4l
+		--disable-tv-v4l \
+		--disable-caca
 
 .if defined(WITH_LANG)
 CONFIGURE_ARGS+=--language=${WITH_LANG}
@@ -271,6 +277,10 @@ PLIST_SUB+=	VIDIX="@comment "
 #.if exists(${LOCALBASE}/modules/rtc.ko)
 #WITH_RTC=	yes
 #.endif
+
+.if exists(${LOCALBASE}/lib/libfribidi.so.0)
+WITH_FRIBIDI=	yes
+.endif
 
 .if exists(${LOCALBASE}/lib/libartsc.so.0)
 WITH_ARTS=	yes
@@ -357,7 +367,7 @@ CONFIGURE_ARGS+=	--enable-debug
 CFLAGS+=	-O3 -ffast-math -fomit-frame-pointer
 .endif
 
-.if ${HAVE_GNOME:Mgtk12}!="" && !defined(WITHOUT_GUI) && !defined(WITH_GTK2)
+.if ${HAVE_GNOME:Mgtk12}!="" && !defined(WITHOUT_GUI)
 WITH_GTK1=	yes
 .endif
 
@@ -419,6 +429,13 @@ CONFIGURE_ARGS+=	--enable-arts
 CONFIGURE_ARGS+=	--disable-arts
 .endif
 
+.if defined(WITH_FRIBIDI)
+LIB_DEPENDS+=	fribidi.0:${PORTSDIR}/converters/fribidi
+CONFIGURE_ARGS+=	--enable-fribidi
+.else
+CONFIGURE_ARGS+=	--disable-fribidi
+.endif
+
 .if defined(WITH_CDPARANOIA)
 LIB_DEPENDS+=	cdda_paranoia.0:${PORTSDIR}/audio/cdparanoia
 .else
@@ -452,9 +469,9 @@ CONFIGURE_ARGS+=	--disable-mad
 .if defined(WITH_MATROSKA)
 BUILD_DEPENDS+=	${LOCALBASE}/lib/libmatroska.a:${PORTSDIR}/multimedia/libmatroska
 
-CONFIGURE_ARGS+=	--enable-matroska
+CONFIGURE_ARGS+=	--enable-external-matroska
 .else
-CONFIGURE_ARGS+=	--disable-matroska
+CONFIGURE_ARGS+=	--disable-external-matroska
 .endif
 
 .if defined(WITH_SVGALIB)
@@ -607,6 +624,10 @@ pre-everything::
 	@${ECHO_MSG} "make WITH_GTK1
 	@${ECHO_MSG} "builds MPlayer with GTK1-GUI support."
 
+.if defined(WITH_GTK2) && !defined(WITHOUT_GUI)
+	@${ECHO_MSG} "GTK2 plugin is not available at the moment."
+	@${ECHO_MSG} "Falling back to use GTK1 if installed on the system."
+.endif
 .if !defined(WITHOUT_GUI)
 	@${ECHO_MSG} "If you want to use the GUI, you can either install"
 	@${ECHO_MSG} "${PORTSDIR}/multimedia/mplayer-skins"
