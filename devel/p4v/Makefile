@@ -8,7 +8,9 @@
 PORTNAME=		p4v
 PORTVERSION=		2004.1
 CATEGORIES=		devel
-MASTER_SITES=		ftp://ftp.perforce.com/pub/perforce/r04.1/bin.freebsd4/
+MASTER_SITES=		\
+	http://www.perforce.com/downloads/perforce/r04.1/bin.freebsd4/ \
+	ftp://ftp.perforce.com/pub/perforce/r04.1/bin.freebsd4/
 DISTNAME=		${PORTNAME}
 EXTRACT_SUFX=		.tgz
 
