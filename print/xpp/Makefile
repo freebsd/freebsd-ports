@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	xpp
-PORTVERSION=	1.0
+PORTVERSION=	1.1
 CATEGORIES=	print
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	cups
@@ -23,5 +23,9 @@ USE_X_PREFIX=	yes
 CONFIGURE_ENV=	LDFLAGS="-L${X11BASE}/lib -L${LOCALBASE}/lib -lcups -lfltk \
 			-lGL -lXext ${PTHREAD_LIBS:S/"//g}" \
 		CPPFLAGS=-I${LOCALBASE}/include
+
+post-install:
+	$(MKDIR) $(PREFIX)/share/doc/xpp
+	$(INSTALL_DATA) $(WRKSRC)/README $(PREFIX)/share/doc/xpp
 
 .include <bsd.port.mk>
