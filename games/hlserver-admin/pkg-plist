@@ -1,4 +1,5 @@
 %%PORTDOCS%%%%HLDSDIR%%/Admin/README
+%%PORTDOCS%%%%HLDSDIR%%/Admin/UPDATE_INFO
 %%HLDSDIR%%/Admin/config/Samples/ips.ini
 %%HLDSDIR%%/Admin/config/Samples/maps.ini
 %%HLDSDIR%%/Admin/config/Samples/models.ini
@@ -146,7 +147,6 @@
 %%HLDSDIR%%/Admin/scripting/binaries/plugin_cheat.amx
 %%HLDSDIR%%/Admin/scripting/binaries/plugin_fun.amx
 %%HLDSDIR%%/Admin/scripting/binaries/plugin_hldsld_mapvote.amx
-%%HLDSDIR%%/Admin/scripting/binaries/plugin_logtest.amx
 %%HLDSDIR%%/Admin/scripting/binaries/plugin_message.amx
 %%HLDSDIR%%/Admin/scripting/binaries/plugin_retribution.amx
 %%HLDSDIR%%/Admin/scripting/binaries/plugin_spawn.amx
@@ -161,7 +161,6 @@
 %%HLDSDIR%%/Admin/scripting/examples/plugin_cheat.sma
 %%HLDSDIR%%/Admin/scripting/examples/plugin_fun.sma
 %%HLDSDIR%%/Admin/scripting/examples/plugin_hldsld_mapvote.sma
-%%HLDSDIR%%/Admin/scripting/examples/plugin_logtest.sma
 %%HLDSDIR%%/Admin/scripting/examples/plugin_message.sma
 %%HLDSDIR%%/Admin/scripting/examples/plugin_retribution.sma
 %%HLDSDIR%%/Admin/scripting/examples/plugin_spawn.sma
