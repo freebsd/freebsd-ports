@@ -2494,6 +2494,7 @@ hlserver-fa	ports/games/hlserver-fa
 hlserver-flf	ports/games/hlserver-flf
 hlserver-glbwar	ports/games/hlserver-glbwar
 hlserver-heroes	ports/games/hlserver-heroes
+hlserver-ns	ports/games/hlserver-ns
 hlserver-opera	ports/games/hlserver-opera
 hlserver-opfor	ports/games/hlserver-opfor
 hlserver-psychostats	ports/games/hlserver-psychostats
