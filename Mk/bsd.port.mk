@@ -1,7 +1,7 @@
 #-*- mode: Fundamental; tab-width: 4; -*-
 # ex:ts=4
 #
-#	$Id: bsd.port.mk,v 1.310 1999/04/23 02:20:45 stb Exp $
+#	$Id: bsd.port.mk,v 1.311 1999/04/28 06:20:12 asami Exp $
 #	$NetBSD: $
 #
 #	bsd.port.mk - 940820 Jordan K. Hubbard.
@@ -122,6 +122,10 @@ OpenBSD_MAINTAINER=	imp@OpenBSD.ORG
 # USE_AUTOCONF	- Says that the port uses autoconf.  Implies GNU_CONFIGURE.
 # AUTOCONF		- Set to path of GNU autoconf if not in $PATH (default:
 #				  autoconf).
+# USE_LIBTOOL	- Says that the port uses Libtool.  Implies GNU_CONFIGURE.
+# LIBTOOL		- Set to path of libtool (default: libtool).
+# LIBTOOLFILES	- Files to patch for libtool (defaults: "aclocal.m4" if
+#				  USE_AUTOCONF is set, "configure" otherwise).
 # USE_PERL5		- Says that the port uses perl5 for building and running.
 # PERL5			- Set to full path of perl5, either in the system or
 #				  installed from a port.
@@ -582,6 +586,15 @@ BUILD_DEPENDS+=		gmake:${PORTSDIR}/devel/gmake
 GNU_CONFIGURE=	yes
 BUILD_DEPENDS+=		autoconf:${PORTSDIR}/devel/autoconf
 .endif
+.if defined(USE_LIBTOOL)
+GNU_CONFIGURE=	yes
+BUILD_DEPENDS+=		libtool:${PORTSDIR}/devel/libtool
+.if defined(USE_AUTOCONF)
+LIBTOOLFILES?=		aclocal.m4
+.else
+LIBTOOLFILES?=		configure
+.endif
+.endif
 
 .if defined(REQUIRES_MOTIF)
 LIB_DEPENDS+=		Xpm.4:${PORTSDIR}/graphics/xpm
@@ -592,7 +605,7 @@ BUILD_DEPENDS+=		${X11BASE}/lib/libXm.a:${PORTSDIR}/x11-toolkits/Motif-dummy
 
 PKG_IGNORE_DEPENDS?=		'(XFree86-3\.3\.3\.1|Motif-2\.1\.10)'
 
-PERL_VERSION=	5.00502
+PERL_VERSION=	5.00503
 PERL_VER=		5.005
 PERL_ARCH=		${ARCH}-freebsd
 PLIST_SUB+=		PERL_VERSION=${PERL_VERSION} \
@@ -647,6 +660,7 @@ DO_NADA?=		/usr/bin/true
 # Miscellaneous overridable commands:
 GMAKE?=			gmake
 AUTOCONF?=		autoconf
+LIBTOOL?=		libtool
 XMKMF?=			xmkmf -a
 .if exists(/sbin/md5)
 MD5?=			/sbin/md5
@@ -895,7 +909,7 @@ MASTER_SITE_WINDOWMAKER+= \
 	ftp://ftp.windowmaker.org/pub/%SUBDIR%/ \
 	ftp://ftp.goldweb.com.au/pub/WindowMaker/%SUBDIR%/ \
 	ftp://ftp.io.com/pub/mirror/windowmaker/%SUBDIR%/ \
-	ftp://ftp.ensm-ales.fr/pub/mirrors/ftp.windowmaker.org/%SUBDIR/ \
+	ftp://ftp.ensm-ales.fr/pub/mirrors/ftp.windowmaker.org/%SUBDIR%/ \
 	ftp://ftp.freenews.de/pub/windowmaker/%SUBDIR%/ \
 	http://jgo.local.net/cool_downloads/wm/%SUBDIR%/ \
 	ftp://ftp.cybertrails.com/pub/windowmaker/%SUBDIR%/ \
@@ -1230,7 +1244,7 @@ IGNORE=	"is an interactive port"
 .elif (!defined(IS_INTERACTIVE) && defined(INTERACTIVE))
 IGNORE=	"is not an interactive port"
 .elif (defined(REQUIRES_MOTIF) && !defined(HAVE_MOTIF))
-IGNORE=	"requires Motif"
+IGNORE=	"requires Motif.  LessTif is an LGPL implementation of the Motif API.  A port is available in ports/x11-toolkits/lesstif.  Please see /etc/make.conf"
 .elif (defined(MOTIF_ONLY) && !defined(REQUIRES_MOTIF))
 IGNORE=	"does not require Motif"
 .elif (defined(NO_CDROM) && defined(FOR_CDROM))
@@ -1692,6 +1706,9 @@ _PORT_USE: .USE
 		${ECHO_MSG} "You may want to become root and try again to ensure correct permissions."; \
 	fi
 .endif
+	@if [ -d ${PREFIX}/info -a ! -f ${PREFIX}/info/dir -a -f /usr/share/info/dir ]; then \
+	  ${SED} -ne '1,/Menu:/p' /usr/share/info/dir > ${PREFIX}/info/dir; \
+	 fi
 .endif
 	@cd ${.CURDIR} && ${MAKE} ${.MAKEFLAGS} ${.TARGET:S/^real-/pre-/}
 	@if [ -f ${SCRIPTDIR}/${.TARGET:S/^real-/pre-/} ]; then \
@@ -1708,6 +1725,9 @@ _PORT_USE: .USE
 		cd ${.CURDIR} && ${SETENV} ${SCRIPTS_ENV} ${SH} \
 			${SCRIPTDIR}/${.TARGET:S/^real-/post-/}; \
 	fi
+.if make(real-patch) && defined(USE_LIBTOOL)
+	@cd ${.CURDIR} && ${MAKE} ${.MAKEFLAGS} patch-libtool
+.endif
 .if make(real-install) && (defined(_MANPAGES) || defined(_MLINKS))
 	@cd ${.CURDIR} && ${MAKE} ${.MAKEFLAGS} compress-man
 .endif
@@ -1808,6 +1828,21 @@ post-${name}:
 .endif
 
 .endfor
+
+# Patch-libtool
+#
+# Special target to automagically make libtool using ports use the
+# libtool port.  See above for default values of LIBTOOLFILES.
+
+.if !target(patch-libtool)
+patch-libtool:
+	@(cd ${WRKSRC}; \
+	 for file in ${LIBTOOLFILES}; do \
+		${CP} $$file $$file.tmp; \
+		${SED} -e s^\$$\(top_builddir\)/libtool^${LIBTOOL}^g \
+			$$file.tmp > $$file; \
+	 done);
+.endif
 
 # Checkpatch
 #
@@ -2357,7 +2392,10 @@ generate-plist:
 	@${ECHO} '@cwd ${PREFIX}' >> ${TMPPLIST}
 .endif
 .endfor
-	@${SED} ${_sedsubplist} ${PLIST} >> ${TMPPLIST}
+	@${SED} ${_sedsubplist} ${PLIST} | \
+	 ${SED} -e "/\@exec install-info.*$$/h" \
+		-e "s^^\@exec [ -f %D/info/dir -o ! -f /usr/share/info/dir ] || sed -ne '1,/Menu:/p' /usr/share/info/dir > %D/info/dir^g" \
+		-e "t fix" -e "b" -e ":fix" -e "G" >> ${TMPPLIST}
 .if !defined(NO_FILTER_SHLIBS)
 .if (${PORTOBJFORMAT} == "aout")
 	@${SED} -e 's,\(/lib.*\.so\.[0-9]*\)$$,\1.0,' ${TMPPLIST} > ${TMPPLIST}.tmp
