@@ -4,7 +4,7 @@
 # Date created:         Sat June 29, 1996
 # Whom:                 David O'Brien (obrien@cs.ucdavis.edu)
 #
-# $Id: Makefile,v 1.15 1997/12/28 14:02:23 obrien Exp $
+# $Id: Makefile,v 1.16 1998/01/14 02:40:04 obrien Exp $
 #
 
 DISTNAME=	vim-5.0u
@@ -16,9 +16,13 @@ MASTER_SITES=	ftp://nuxi.ucdavis.edu/pub/vim/beta-test/unix/ \
 		ftp://ftp.is.co.za/applications/editors/beta-test/vim/  \
 		ftp://ftp.progsoc.uts.edu.au/pub/beta-test/vim/
 
+PATCH_SITES=	${MASTER_SITES}
+PATCHFILES=	vim-50u-50u+.diff.gz
+
 MAINTAINER=     obrien@FreeBSD.org
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/src
+PATCH_DIST_ARGS=	-d ${WRKDIR}/${DISTNAME} --forward --quiet -E ${PATCH_DIST_STRIP}
 MAKE_FLAGS=	CONF_ARGS=--prefix=${PREFIX} -f
 ALL_TARGET=	#
 MAN1=		vim.1 xxd.1 ctags.1
