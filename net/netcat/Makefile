@@ -10,9 +10,7 @@ PORTNAME=	netcat
 PORTVERSION=	1.10
 CATEGORIES=	net
 MASTER_SITES=	ftp://avian.org/src/hacks/  \
-		ftp://coast.cs.purdue.edu/pub/mirrors/avian.org/netcat/  \
-		ftp://zippy.telcom.arizona.edu/pub/mirrors/avian.org/hacks/  \
-		ftp://ftp.sterling.com/mirrors/avian.org/src/hacks/  \
+		http://www.l0pht.com/users/10pht/  \
 		ftp://ftp.rge.com/pub/security/coast/mirrors/avian.org/netcat/
 DISTNAME=	nc110
 EXTRACT_SUFX=	.tgz
