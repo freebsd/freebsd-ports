@@ -7,7 +7,7 @@
 
 PORTNAME=	homard
 PORTVERSION=	5.5
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	french cad linux python
 MASTER_SITES=	http://www.code-aster.org/FICHIERS/homard/
 DISTNAME=	${PORTNAME}_linux_${PORTVERSION}
@@ -49,9 +49,9 @@ PLIST_SUB=	HOMARDDIR=${LHOMARDDIR} AHPY=${LHOMARDDIR}/${AHPY} \
 BRANDELF?=	/usr/bin/brandelf
 
 post-patch:
-	@${REINPLACE_CMD} -e "s#HOMARD_REP_PRO=/??????#HOMARD_REP_PRO=${ASTER_TOOLS}#"	\
-		-e "s#HOMARD_REP_EXE=/??????#HOMARD_REP_EXE=${PREFIX}/bin#"		\
-		-e "s#/??????#${PYTHON_CMD}#"		\
+	@${REINPLACE_CMD} -e "s#HOMARD_REP_PRO=??????#HOMARD_REP_PRO=${ASTER_TOOLS}#"	\
+		-e "s#HOMARD_REP_EXE=??????#HOMARD_REP_EXE=${PREFIX}/bin#"		\
+		-e "s#PYTHON_EXE=??????#PYTHON_EXE=${PYTHON_CMD}#"			\
 		${WRKSRC}/${PORTNAME}
 	@${CHMOD} u+w ${WRKSRC}/${AHPY}
 
