@@ -15,9 +15,9 @@
   #endif
   #endif
   
-!         DEFINES = -DDEFAULT_XBO_DIR=\"$(PREFIX)/etc/xbattle/xbos\" \
-!                   -DDEFAULT_XBT_DIR=\"$(PREFIX)/etc/xbattle/xbts\" \
-!                   -DDEFAULT_XBA_DIR=\"$(PREFIX)/etc/xbattle/xbas\"
+!         DEFINES = -DDEFAULT_XBO_DIR=\"$(PREFIX)/share/xbattle/xbos\" \
+!                   -DDEFAULT_XBT_DIR=\"$(PREFIX)/share/xbattle/xbts\" \
+!                   -DDEFAULT_XBA_DIR=\"$(PREFIX)/share/xbattle/xbas\"
   LOCAL_LIBRARIES = $(XLIB)
     SYS_LIBRARIES = -lm
              SRCS =	command.c		\
