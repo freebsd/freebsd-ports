@@ -8,8 +8,11 @@
 PORTNAME=	mosfet-liquid
 PORTVERSION=	0.9.5
 CATEGORIES=	x11-wm kde
-MASTER_SITES=	http://www.mosfet.org/ \
-		http://people.FreeBSD.org/~alane/mosfet/
+#mosfet.org is up but not working ...
+#if mosfet doesn't come to his senses, this may be
+#the end of the line for this port.
+#MASTER_SITES=	http://www.mosfet.org/ \
+MASTER_SITES=	http://people.FreeBSD.org/~alane/mosfet/
 DISTNAME=	${PORTNAME}${PORTVERSION}
 
 MAINTAINER=	ports@geeksrus.net
