@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	xcalendar
-PORTVERSION=	4.0
+PORTVERSION=	4.0.2002
 CATEGORIES=	deskutils
 MASTER_SITES=	ftp://daemon.jp.FreeBSD.org/pub/FreeBSD-jp/ports-jp/LOCAL_PORTS/
 DISTNAME=	${PORTNAME}-${PORTVERSION}+i18n
