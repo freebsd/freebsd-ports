@@ -7,7 +7,7 @@
 
 PORTNAME=	transcode
 PORTVERSION=	0.6.12
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	multimedia
 MASTER_SITES=	http://www.zebra.fh-weingarten.de/~transcode/pre/
 
@@ -116,7 +116,7 @@ WITH_NASM=	yes
 .endif
 
 .if defined(WITH_LIBTHEORA)
-LIB_DEPENDS+=	theora.0:${PORTSDIR}/graphics/libtheora
+LIB_DEPENDS+=	theora.1:${PORTSDIR}/multimedia/libtheora
 .else
 CONFIGURE_ARGS+=	--with-theora=no
 .endif

@@ -7,6 +7,7 @@
 
 PORTNAME=	gstreamer
 PORTVERSION=	0.8.7
+PORTREVISION=	1
 CATEGORIES=	multimedia audio
 MASTER_SITES=	http://gstreamer.freedesktop.org/src/gst-plugins/ \
 		${MASTER_SITE_GNOME}
@@ -777,7 +778,7 @@ PLIST_SUB+=	LIBSNDFILE=""
 CONFIGURE_ARGS+=	--disable-theora
 PLIST_SUB+=	LIBTHEORA="@comment "
 .else
-LIB_DEPENDS+=	theora.0:${PORTSDIR}/graphics/libtheora
+LIB_DEPENDS+=	theora.1:${PORTSDIR}/multimedia/libtheora
 PLIST_SUB+=	LIBTHEORA=""
 .endif
 
