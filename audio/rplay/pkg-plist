@@ -1,0 +1,13 @@
+@cwd /usr/local
+bin/rplay
+bin/rptp
+bin/xrplay
+bin/rplayd
+include/rplay.h
+lib/librplay.a
+man/man1/rplay.1
+man/man1/rplayd.1
+man/man1/rptp.1
+man/man5/rplay.conf.5
+man/man5/rplay.hosts.5
+man/man5/rplay.servers.5

@@ -1,0 +1,33 @@
+rplay is a flexible network audio system that allows sounds to be played to
+and from local and remote systems.  The rplay audio server currently
+supports SunOS 4.1.X, Solaris 2.X, Linux, SGI IRIX 4 & 5, HP9000/705,
+HP9000/710 and now FreeBSD.  The rplay clients and client library should 
+work on any system that supports Berkeley sockets.  X Windows is not required.
+
+Version 3.2.0beta
+-------------------
+
+* Supported systems include SunOS 4.1.X, Solaris 2.x, FreeBSD,  Linux,
+  SGI IRIX 4 and IRIX 5, and HP9000/710.
+
+* 8-bit & 16-bit audio input and output.
+
+* All audio sample rates.
+
+* .au, .snd, .aiff, .wav, .voc, .ub, .ul, G.721 4-bit, G.723 3-bit, and
+  G.723 5-bit audio files.
+
+* Stereo input and output. (2 channels)
+
+* Sounds can be played at any sample rate.
+
+* Compile rplayd with -DTEST_FLANGE for some fun.
+
+* Flexible audio configuration using the following long-named options:
+  --audio-device, --audio-bufsize, --audio-bits, --audio-channels,
+  --audio-close, --audio-flush, --audio-format, --audio-match, --audio-port,
+  --audio-rate, --audio-sample-rate, and no-audio.
+  (See `rplayd --help' for more details)
+
+* HTML documentation.
+
