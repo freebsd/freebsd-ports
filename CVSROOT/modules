@@ -865,6 +865,7 @@ contrib_libreadline	src/contrib/libreadline
 contrib_ncurses	src/contrib/ncurses
 contrib_ntp	src/contrib/ntp
 contrib_nvi	src/contrib/nvi
+contrib_openpam	src/contrib/openpam
 contrib_opie	src/contrib/opie
 contrib_patch	src/contrib/patch
 contrib_perl	src/contrib/perl5
