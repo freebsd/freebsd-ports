@@ -16,15 +16,15 @@ DISTNAME=	jakarta-tomcat-connectors-jk-${PORTVERSION}-src
 MAINTAINER=	girgen@pingpong.net
 COMMENT=	Apache JK module for connecting to Tomcat using AJP1X
 
+USE_APACHE=	YES
+
 .include <bsd.port.pre.mk>
 
 .if exists(${LOCALBASE}/include/apache2/apr.h)
-APACHE_PORT?=	${PORTSDIR}/www/apache2
-.else
-APACHE_PORT?=	${PORTSDIR}/www/apache13
+WITH_APACHE2=	YES
 .endif
 
-.if ${APACHE_PORT:S/${PORTSDIR}\///} == "www/apache2"
+.if defined(WITH_APACHE2)
 APACHE_VER=	2.0
 APACHE2=	2
 PLIST_SUB=	APACHE2=2
@@ -34,9 +34,6 @@ APACHE_VER=	1.3
 APACHE2=
 PLIST_SUB=	APACHE2=
 .endif
-
-BUILD_DEPENDS=	${APXS}:${PORTSDIR}/${APACHE_PORT}
-RUN_DEPENDS=	${APXS}:${PORTSDIR}/${APACHE_PORT}
 
 APACHE_CONF=	${LOCALBASE}/etc/apache${APACHE2}
 WRKSRC=		${WRKDIR}/jakarta-tomcat-connectors-jk-${PORTVERSION}-src/jk/native
