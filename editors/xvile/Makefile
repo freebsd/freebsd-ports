@@ -17,7 +17,11 @@ MAINTAINER=	gj@freebsd.org
 
 USE_XLIB=	yes
 MAKEFILE=	makefile
-GNU_CONFIGURE=	yes
+HAS_CONFIGURE=	yes
+
+CONFIGURE_ARGS=	--prefix=${PREFIX} \
+		--with-libdir-path=${PREFIX}/lib/xvile \
+		--datadir=${PREFIX}/share/xvile
 MAN1=		xvile.1
 
 pre-configure:
@@ -29,9 +33,9 @@ pre-configure:
 .endif
 
 .if defined(WITH_MENUS)
-CONFIGURE_ARGS= --with-screen=Xaw
+CONFIGURE_ARGS+= --with-screen=Xaw
 .else
-CONFIGURE_ARGS= --with-screen=x11
+CONFIGURE_ARGS+= --with-screen=x11
 .endif
 
 .if defined(WITH_PERL)
@@ -42,16 +46,16 @@ USE_PERL5=	yes
 
 post-install:
 .if !defined(NOPORTDOCS)
-	@if ! [ -d ${PREFIX}/share/doc/vile ]; then ${MKDIR} ${PREFIX}/share/doc/vile; fi
-	${INSTALL_DATA} ${WRKSRC}/doc/*.doc ${PREFIX}/share/doc/vile
+	@if ! [ -d ${PREFIX}/share/doc/xvile ]; then ${MKDIR} ${PREFIX}/share/doc/xvile; fi
+	${INSTALL_DATA} ${WRKSRC}/doc/*.doc ${PREFIX}/share/doc/xvile
 .endif
-	@if ! [ -d ${PREFIX}/share/vile/macros ]; then ${MKDIR} ${PREFIX}/share/vile/macros; fi
-	${INSTALL_DATA} ${WRKSRC}/macros/*.rc ${PREFIX}/share/vile/macros
-	${INSTALL_SCRIPT} ${WRKSRC}/macros/vile-pager ${PREFIX}/share/vile/macros
+	@if ! [ -d ${PREFIX}/share/xvile/macros ]; then ${MKDIR} ${PREFIX}/share/xvile/macros; fi
+	${INSTALL_DATA} ${WRKSRC}/macros/*.rc ${PREFIX}/share/xvile/macros
+	${INSTALL_SCRIPT} ${WRKSRC}/macros/vile-pager ${PREFIX}/share/xvile/macros
 .if defined(WITH_PERL)
-	${INSTALL_DATA} ${WRKSRC}/*.doc ${PREFIX}/share/doc/vile
+	${INSTALL_DATA} ${WRKSRC}/*.doc ${PREFIX}/share/doc/xvile
 .endif
-	@${ECHO_MSG} "Look in ${PREFIX}/share/doc/vile for documentation."
-	@${ECHO_MSG} "Look in ${PREFIX}/share/vile/macros for macros."
+	@${ECHO_MSG} "Look in ${PREFIX}/share/doc/xvile for documentation."
+	@${ECHO_MSG} "Look in ${PREFIX}/share/xvile/macros for macros."
 
 .include <bsd.port.mk>
