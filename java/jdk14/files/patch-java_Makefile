@@ -1,0 +1,11 @@
+--- ../../j2se/make/java/java/Makefile.orig	Mon Dec 13 12:38:14 2004
++++ ../../j2se/make/java/java/Makefile	Mon Dec 13 12:42:00 2004
+@@ -284,7 +284,7 @@
+ 	$(RM) -r $(TMPDIR)/GenerateCurrencyData
+ 	$(MKDIR) -p $(TMPDIR)/GenerateCurrencyData
+ 	$(JAVAC_BOOT) -d $(TMPDIR)/GenerateCurrencyData $(BUILDDIR)/tools/GenerateCurrencyData/GenerateCurrencyData.java
+-	$(JAVA_BOOT) -classpath $(TMPDIR)/GenerateCurrencyData GenerateCurrencyData < $(SHARE_SRC)/classes/java/util/CurrencyData.properties > $@
++	$(JAVA_BOOT) -classpath $(TMPDIR)/GenerateCurrencyData GenerateCurrencyData < $(SHARE_SRC)/classes/java/util/CurrencyData.properties | egrep -v '^Java HotSpot' > $@
+ 
+ clean:: 
+ 	$(RM) $(GENSRCDIR)/java/util/CurrencyData.java
