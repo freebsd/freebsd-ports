@@ -1295,6 +1295,7 @@ dk-openoffice	ports/editors/openoffice-dk
 dkimap4		ports/mail/dkimap4
 dlint		ports/dns/dlint
 dlx		ports/emulators/dlx
+dlume		ports/deskutils/dlume
 dmake		ports/devel/dmake
 dmalloc		ports/devel/dmalloc
 dmjava		ports/games/dmjava
