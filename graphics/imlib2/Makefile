@@ -6,13 +6,13 @@
 #
 
 PORTNAME=	imlib2
-PORTVERSION=	1.0.4
+PORTVERSION=	1.0.5
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.ca.us.rasterman.com/files/ \
 		${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	enlightenment
 
-MAINTAINER=	ishmael27@home.com
+MAINTAINER=	ports@FreeBSD.org
 
 LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
 		ltdl.1:${PORTSDIR}/devel/libtool \
