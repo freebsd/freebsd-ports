@@ -1,0 +1,18 @@
+XmlRpc++ is a C++ implementation of the XML-RPC protocol. The XmlRpc protocol
+was designed to make remote procedure calls easy: it encodes data in a simple
+XML format and uses HTTP for communication. XmlRpc++ is designed to make it
+easy to incorporate XML-RPC client and server support into C++ applications.
+
+Features:
+    * Easy - This library is easy to incorporate into C++ applications. No
+             other libraries are required, other than your system's socket
+             libraries. Simple XML parsing and HTTP support are built in.
+    * Fast - All IO is non-blocking, so a slow client or network will not
+             slow down the server.
+    * Portable - Written in standard C++ to the POSIX and Windows sockets
+             APIs. You do need a fairly recent compiler (g++ 3.1 or
+             MSVC++ .Net or MSVC++ 6 with the STL patches.)
+
+    * Free - This library is released under the GNU LGPL.
+
+WWW: http://xmlrpcpp.sourceforge.net/

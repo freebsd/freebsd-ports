@@ -1,0 +1,13 @@
+include/xmlrpc++/XmlRpc.h
+include/xmlrpc++/XmlRpcClient.h
+include/xmlrpc++/XmlRpcDispatch.h
+include/xmlrpc++/XmlRpcException.h
+include/xmlrpc++/XmlRpcServer.h
+include/xmlrpc++/XmlRpcServerConnection.h
+include/xmlrpc++/XmlRpcServerMethod.h
+include/xmlrpc++/XmlRpcSocket.h
+include/xmlrpc++/XmlRpcSource.h
+include/xmlrpc++/XmlRpcUtil.h
+include/xmlrpc++/XmlRpcValue.h
+@dirrm include/xmlrpc++
+lib/libXmlRpc.a
