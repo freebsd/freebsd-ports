@@ -1,4 +1,0 @@
-bin/nano
-@unexec install-info --delete %D/info/nano.info %D/info/dir
-info/nano.info
-@exec install-info %D/info/nano.info %D/info/dir

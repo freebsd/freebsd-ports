@@ -1,0 +1,15 @@
+
+$FreeBSD$
+
+--- config.h.in.orig	Fri Dec  7 06:51:38 2001
++++ config.h.in	Tue Dec 18 19:58:04 2001
+@@ -136,6 +136,9 @@
+ /* Define if you have the strcasecmp function.  */
+ #undef HAVE_STRCASECMP
+ 
++/* Define if you have the strcasestr function.  */
++#undef HAVE_STRCASESTR
++
+ /* Define if you have the strchr function.  */
+ #undef HAVE_STRCHR
+ 
