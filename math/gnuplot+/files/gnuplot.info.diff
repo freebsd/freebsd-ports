@@ -1,0 +1,13 @@
+--- /home/nakaji/tmp/gnuplot.info	Mon May 24 14:47:28 1999
++++ ./gnuplot.info	Mon May 24 14:49:54 1999
+@@ -1,5 +1,10 @@
+ This file is gnuplot.info created by doc2info from ./gnuplot.doc.
+ 
++INFO-DIR-SECTION 2-D graph tools
++START-INFO-DIR-ENTRY
++* Gnuplot: (gnuplot).		An Interactive Plotting Program.
++END-INFO-DIR-ENTRY
++
+ 
+ File: gnuplot.info, Node: Top, Prev: (dir), Next: gnuplot, Up: (dir)
+ 
