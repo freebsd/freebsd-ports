@@ -9,11 +9,12 @@ PORTNAME=	Cdk
 PORTVERSION=	4.9.6
 PORTREVISION=	1
 CATEGORIES=	devel perl5
-MASTER_SITES=	http://www.vexus.ca/release/
+MASTER_SITES=	http://www.vexus.ca/release/CDK/
 PKGNAMEPREFIX=	p5-
 DISTNAME=	cdkperl
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Perl5 module for Curses Development Kit
 
 LIB_DEPENDS=	cdk.4:${PORTSDIR}/devel/cdk
 
