@@ -1,6 +1,6 @@
---- emboss/acd/emboss.default.orig	Mon Jan 22 23:26:54 2001
-+++ emboss/acd/emboss.default	Mon Jan 29 16:23:15 2001
-@@ -1,9 +1,26 @@
+--- emboss/acd/emboss.default.orig	Sun Feb 18 16:57:08 2001
++++ emboss/acd/emboss.default	Tue Feb 20 10:45:57 2001
+@@ -1,9 +1,31 @@
 -SET emboss_tempdata /nfs/WWW/data/EMBOSS/test
 +#####################################################
 +### Configuration options for FreeBSD EMBOSS port ###
@@ -8,20 +8,26 @@
  
 -# Logfile - set this to a file that any user can append to
 -# and EMBOSS applications will automatically write log information
-+# This is the compiled-in default.  Change only if
-+# you know what you're doing!
++# The directory where EMBOSS expects to find run-time
++# databases.  This is the compiled-in default - change
++# only if you know what you're doing!
 +#
-+#SET emboss_data /usr/local/share/EMBOSS/data
++#SET emboss_data %%PREFIX%%/share/EMBOSS/data
  
-+# This is where your local databases reside
-+# (this will differ from site to site):
+-#SET emboss_logfile /packages/emboss/emboss/log
++# This is an alias which is internal to this
++# configuration file and is set here merely as a
++# convenience.  It points to the location where you
++# have placed your local databases (this will differ
++# from site to site).
 +#
-+SET emboss_tempdata /var/db/bio
++SET emboss_tempdata %%PREFIX%%/share/EMBOSS/databases
 +
-+# Logfile - set this to a file that any user can append to and EMBOSS
-+# applications will automatically write log information
++# Logfile.  If this is uncommented and set to a file
++# that any user can append to, EMBOSS applications
++# will automatically log usage information.
 +#
- #SET emboss_logfile /packages/emboss/emboss/log
++#SET emboss_logfile /var/log/emboss.log
 +
 +
 +###########################################
