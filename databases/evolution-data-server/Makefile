@@ -16,7 +16,8 @@ MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	The data backends for the Evolution integrated mail/PIM suite
 
 LIB_DEPENDS=	soup-2.2.7:${PORTSDIR}/devel/libsoup \
-		nss3.1:${PORTSDIR}/security/nss
+		nss3.1:${PORTSDIR}/security/nss \
+		tasn1.2:${PORTSDIR}/security/libtasn1
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes
