@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	File-Flat
-PORTVERSION=	0.92
+PORTVERSION=	0.95
 CATEGORIES=	devel perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	File
@@ -19,12 +19,16 @@ BUILD_DEPENDS=	${SITE_PERL}/Class/Autouse.pm:${PORTSDIR}/devel/p5-Class-Autouse 
 		${SITE_PERL}/Class/Inspector.pm:${PORTSDIR}/devel/p5-Class-Inspector \
 		${SITE_PERL}/File/Remove.pm:${PORTSDIR}/devel/p5-File-Remove \
 		${SITE_PERL}/File/Slurp.pm:${PORTSDIR}/devel/p5-File-Slurp \
-		${SITE_PERL}/File/NCopy.pm:${PORTSDIR}/devel/p5-File-NCopy
+		${SITE_PERL}/File/NCopy.pm:${PORTSDIR}/devel/p5-File-NCopy \
+		${SITE_PERL}/prefork.pm:${PORTSDIR}/devel/p5-prefork
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
 
 MAN3=		File::Flat.3
+
+post-patch:
+	@${PERL} -pi -e 's/^auto_install.*$$//' ${WRKSRC}/Makefile.PL
 
 .include <bsd.port.pre.mk>
 
