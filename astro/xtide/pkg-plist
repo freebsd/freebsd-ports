@@ -1,5 +1,4 @@
 bin/xtide
 bin/tide
-sbin/xttpd
 share/xtide/harmonics
 @dirrm share/xtide
