@@ -1,0 +1,13 @@
+his package brings the ObjectTeams paradigm to ruby.
+
+The ObjectTeams paradigm (see www.objectteams.org) is an aspect
+oriented approach to achieve advanced separation of concerns.
+
+ROT allows the programmer to encapsulate the interaction of a set of
+objects (roles) into a compound object (the team).  Aspects can be
+implemented as roles and are weaved into domain classes via a
+connector at runtime (runtime weaving).  These aspects can be
+explicitely activated and deactivated.
+
+Author:	Matthias Veit <matthias_veit@yahoo.de>
+WWW:	http://sourceforge.net/projects/robjectteam/

@@ -1,0 +1,77 @@
+%%RUBY_SITELIBDIR%%/objectteam.rb
+%%RUBY_SITELIBDIR%%/objectteam/BaseProxy.rb
+%%RUBY_SITELIBDIR%%/objectteam/Call.rb
+%%RUBY_SITELIBDIR%%/objectteam/Connector.rb
+%%RUBY_SITELIBDIR%%/objectteam/Deploy.rb
+%%RUBY_SITELIBDIR%%/objectteam/ExpectedHandler.rb
+%%RUBY_SITELIBDIR%%/objectteam/Interceptor.rb
+%%RUBY_SITELIBDIR%%/objectteam/Logger.rb
+%%RUBY_SITELIBDIR%%/objectteam/ObjectTeam.rb
+%%RUBY_SITELIBDIR%%/objectteam/ROTConfig.rb
+%%RUBY_SITELIBDIR%%/objectteam/Team.rb
+%%RUBY_SITELIBDIR%%/objectteam/TeamUtil.rb
+@dirrm %%RUBY_SITELIBDIR%%/objectteam
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/README
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/Version
+%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/composite/README
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/composite/composite.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/composite/deploy.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/composite/graphics.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/composite/start.sh
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/composite/test.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/flight/README
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/flight/bonus.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/flight/contextual.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/flight/flightbooking.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/flight/start.sh
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/flight/test.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/implicit_inheritance/ImplicitInheritance
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/implicit_inheritance/README
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/implicit_inheritance/factory.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/implicit_inheritance/person.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/implicit_inheritance/start.sh
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/implicit_inheritance/test.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/library/README
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/library/deploy.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/library/library.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/library/observerpattern.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/library/start.sh
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/library/test.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/observer/README
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/observer/deploy.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/observer/event.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/observer/observerpattern.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/observer/start.sh
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/observer/trace.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/rolecreation/README
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/rolecreation/block/start.sh
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/rolecreation/block/test.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/rolecreation/override/start.sh
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/rolecreation/override/test.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/rolecreation/weakconnector/start.sh
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/rolecreation/weakconnector/test.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/simple/README
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/simple/counter.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/simple/start.sh
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/suspend_resume/README
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/suspend_resume/bank.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/suspend_resume/deploy.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/suspend_resume/lock.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/suspend_resume/start.sh
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/suspend_resume/test.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/weakreference/README
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/weakreference/start.sh
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/weakreference/test.rb
+%%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/weakreference
+%%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/suspend_resume
+%%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/simple
+%%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/rolecreation/weakconnector
+%%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/rolecreation/override
+%%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/rolecreation/block
+%%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/rolecreation
+%%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/observer
+%%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/library
+%%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/implicit_inheritance
+%%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/flight
+%%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/composite
