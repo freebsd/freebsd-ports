@@ -1,5 +1,5 @@
 --- Makefile.orig	Sat Jul 25 12:05:46 1998
-+++ Makefile	Sun Dec 13 18:37:58 1998
++++ Makefile	Wed Apr 14 10:04:18 1999
 @@ -22,10 +22,10 @@
  #
  
@@ -39,35 +39,42 @@
  
  # Where to install things for "normal" sites.
  # BINDIR	= /usr/local/bin
-@@ -60,19 +60,19 @@
+@@ -60,17 +60,17 @@
  # MANDIR	= /usr/local/man/man1
  
  # Take these compilation flags for Linux with libncurses.
 -FLAGS	= -Wall -D_POSIX -D_SYSV -D_SELECT -pipe # -I/usr/include/ncurses
+-PROGS	= minicom runscript ascii-xfr
+-LFLAGS	= -s
+-LIBS	= -lncurses #-lintl
+-CC	= cc
 +# FLAGS	= -Wall -D_POSIX -D_SYSV -D_SELECT -pipe # -I/usr/include/ncurses
 +# PROGS	= minicom runscript ascii-xfr
 +# LFLAGS	= -s
 +# LIBS	= -lncurses #-lintl
 +# CC	= cc
-+
-+# Take these compilation flags for FreeBSD.
-+FLAGS	= -Wall -D_POSIX -D_BSD43 -D_SELECT -D_DCDFLOW -D_HAVE_MACROS
- PROGS	= minicom runscript ascii-xfr
- LFLAGS	= -s
--LIBS	= -lncurses #-lintl
-+LIBS	= -ltermcap -lcurses
- CC	= cc
  
--# Take these compilation flags for FreeBSD.
+ # Take these compilation flags for FreeBSD.
 -#FLAGS	= -Wall -D_POSIX -D_BSD43 -D_SELECT -D_DCDFLOW
 -#PROGS	= minicom runscript ascii-xfr
 -#LFLAGS	= -s
 -#LIBS	= -ltermcap
--#CC	= cc
--
++FLAGS	= -Wall -D_POSIX -D_BSD43 -D_SELECT -D_DCDFLOW -D_HAVE_MACROS
++PROGS	= minicom runscript ascii-xfr
++LFLAGS	= -s
++LIBS	= -ltermcap -lcurses
+ #CC	= cc
+ 
  # Take these flags for SCO unix.
- #FLAGS	= -D_SYSV -D_SCO -D_POSIX -D_SELECT
- #PROGS	= minicom runscript ascii-xfr
+@@ -178,7 +178,7 @@
+ SOBJS	= script.o sysdep1.o common.o
+ 
+ # fmg 8/22/97: merge in new OPFLAGS...
+-CFLAGS	= $(FLAGS) $(OPFLAGS) -DLIBDIR=\"$(LIBDIR)\"
++CFLAGS	+= $(FLAGS) $(OPFLAGS) -DLIBDIR=\"$(LIBDIR)\"
+ 
+ R	= $(ROOTDIR)
+ 
 @@ -188,7 +188,7 @@
  		$(CC) $(LFLAGS) -o minicom $(MOBJS) $(LIBS)
  
