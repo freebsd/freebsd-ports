@@ -31,13 +31,13 @@ INSTALL_TARGET=	install install.all
 .endif
 
 pre-fetch:
-.if !defined(NO_GSBIT)
+.if !defined(WITHOUT_GHOSTSCRIPT)
 	@${ECHO_MSG} "To build this port without Ghostscript support,"
 	@${ECHO_MSG} "define \"NO_GSBIT\"."
 .endif
 
 post-patch:
-.if defined(NO_GSBIT)
+.if defined(WITHOUT_GHOSTSCRIPT)
 	@${PERL} -pi -e 's|-DGSBIT ||g' ${WRKSRC}/Imakefile
 .endif
 
