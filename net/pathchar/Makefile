@@ -9,14 +9,14 @@
 PORTNAME=	pathchar
 PORTVERSION=	a1
 CATEGORIES=	net
-MASTER_SITES=	ftp://ftp.ee.lbl.gov/pathchar/  \
-		http://www.caida.org/tools/utilities/others/pathchar/ \
-		http://sitka.triumf.ca/net/  \
-		${MASTER_SITE_LOCAL}
-MASTER_SITE_SUBDIR=	obrien
+MASTER_SITES=	ftp://ftp.ee.lbl.gov/pathchar/:lbl  \
+		http://www.caida.org/tools/utilities/others/pathchar/:caida \
+		http://sitka.triumf.ca/net/:sitka  \
+		${MASTER_SITE_LOCAL:S/$/:local/}
+MASTER_SITE_SUBDIR=	obrien/:local
 DISTNAME=	pathchar-a1-freebsd-3.0
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX} pathcharnotes.html pathchar.8 \
-		pathchar.mantxt
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:lbl pathcharnotes.html:caida,local \
+		pathchar.8:local pathchar.mantxt:sitka,local
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	LBNL Internet path characterization tool
