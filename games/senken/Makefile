@@ -10,7 +10,7 @@ PORTREVISION=	2
 CATEGORIES=	games
 MASTER_SITES=	http://www.contrib.andrew.cmu.edu/~tmartin/senken/download/
 
-MAINTAINER=	tmartin@andrew.cmu.edu
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A city simulation game
 
 GNU_CONFIGURE=	yes
