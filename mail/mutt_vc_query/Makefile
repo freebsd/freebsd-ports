@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mutt_vc_query
-PORTVERSION=	001
+PORTVERSION=	002
 CATEGORIES=	mail
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	rolo
@@ -22,5 +22,13 @@ CFLAGS+=	-I${PREFIX}/include \
 		-L${PREFIX}/lib
 
 MAN1=		mutt_vc_query.1
+
+.if !defined(NOPORTDOCS)
+post-install:
+	@${MKDIR} ${DOCSDIR}
+.for DOC in AUTHORS ChangeLog NEWS README THANKS
+	@${INSTALL_DATA} ${WRKSRC}/${DOC} ${DOCSDIR}
+.endfor
+.endif
 
 .include <bsd.port.mk>
