@@ -3781,6 +3781,7 @@ jamlib		ports/mail/jamlib
 janosvm		ports/java/janosvm
 jargon		ports/misc/jargon
 jarl		ports/net/jarl
+jasmin		ports/java/jasmin
 jasper		ports/graphics/jasper
 java-beepcore	ports/net/java-beepcore
 java-checkstyle	ports/java/java-checkstyle
