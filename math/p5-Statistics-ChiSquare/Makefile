@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Statistics-ChiSquare
-PORTVERSION=	0.3
+PORTVERSION=	0.5
 CATEGORIES=	math perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Statistics
@@ -16,8 +16,6 @@ MAINTAINER=	tobez@FreeBSD.org
 COMMENT=	How random is your data?
 
 PERL_CONFIGURE=	yes
-
-WRKSRC=		${WRKDIR}/Statistics/ChiSquare-${PORTVERSION}
 
 MAN3=		Statistics::ChiSquare.3
 
