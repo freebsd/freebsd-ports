@@ -1,0 +1,6 @@
+TkTable is a full-featured 2D table widget (in the spreadsheet sense)
+extension for Tk.
+
+It supports images, embedded windows, varying colors and fonts, and more.
+
+WWW: http://tktable.sourceforge.net/
