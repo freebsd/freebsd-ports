@@ -1,0 +1,11 @@
+--- src/arch/unix/archdep.h.orig	Tue Nov 16 10:19:50 1999
++++ src/arch/unix/archdep.h	Wed Feb  2 15:17:12 2000
+@@ -52,7 +52,7 @@
+ 
+ /* Define the default system directory (where the ROMs are).  */
+ #define LIBDIR          PREFIX "/lib/vice"
+-#define DOCDIR          LIBDIR "/doc"
++#define DOCDIR          PREFIX "/share/doc/vice"
+ #define VICEUSERDIR     ".vice"
+ 
+ extern const char *archdep_home_path(void);

@@ -1,0 +1,11 @@
+--- doc/Makefile.in.orig	Tue Nov 23 18:42:37 1999
++++ doc/Makefile.in	Wed Feb  2 14:30:35 2000
+@@ -108,7 +108,7 @@
+ xpet_LDFLAGS = @xpet_LDFLAGS@
+ xvic_LDFLAGS = @xvic_LDFLAGS@
+ 
+-docdir = $(prefix)/lib/vice/doc
++docdir = $(prefix)/share/doc/vice
+ 
+ doc_DATA =  	64doc.txt 	Evaluation 	PETdoc.txt 	Readme.dos 	Win32-Howto.txt 	cbm_basic_tokens.txt 	drive_info.txt 	mnemonics.txt 	mon.txt 	serial.txt
+ 

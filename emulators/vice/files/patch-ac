@@ -1,11 +1,11 @@
---- ./man/vice.1.orig	Sat May 29 11:35:37 1999
-+++ ./man/vice.1	Sat May 29 11:35:49 1999
-@@ -32,7 +32,7 @@
+--- man/vice.1.orig	Sun Nov 21 16:25:55 1999
++++ man/vice.1	Wed Feb  2 15:18:42 2000
+@@ -31,7 +31,7 @@
  .PP
  The whole documentation for these programs is available in HTML
  format; the main file should be installed on your system as
 -/usr/local/lib/VICE/doc/vice_toc.html.
-+/usr/local/lib/vice/doc/vice_toc.html.
++/usr/local/share/doc/vice/vice_toc.html.
  .P
  For up to date news about VICE, have a look at the official home page
  at

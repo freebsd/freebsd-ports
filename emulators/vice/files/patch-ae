@@ -1,0 +1,11 @@
+--- doc/html/Makefile.in.orig	Tue Nov 23 18:42:38 1999
++++ doc/html/Makefile.in	Wed Feb  2 14:35:59 2000
+@@ -108,7 +108,7 @@
+ xpet_LDFLAGS = @xpet_LDFLAGS@
+ xvic_LDFLAGS = @xvic_LDFLAGS@
+ 
+-docdir = $(prefix)/lib/vice/doc
++docdir = $(prefix)/share/doc/vice
+ 
+ doc_DATA =  	vice_1.html 	vice_2.html 	vice_3.html 	vice_4.html 	vice_5.html 	vice_6.html 	vice_7.html 	vice_8.html 	vice_9.html 	vice_10.html 	vice_11.html 	vice_12.html 	vice_13.html 	vice_14.html 	vice_15.html 	vice_16.html 	vice_toc.html
+ 
