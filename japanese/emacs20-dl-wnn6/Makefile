@@ -1,13 +1,13 @@
 # New ports collection makefile for:	emacs20-dl-wnn6
-# Version required:	0.2.2
+# Version required:	0.3.6
 # Date created:		10 October 1998
 # Whom:			shige
 #
-# $Id: Makefile,v 1.4 1999/06/15 00:31:22 shige Exp $
+# $Id: Makefile,v 1.5 1999/07/25 12:17:51 asami Exp $
 #
 
-DISTNAME=	dl-wnn-0.2.2
-PKGNAME=	ja-emacs20-dl-wnn6-0.2.2
+DISTNAME=	dl-wnn-0.3.6
+PKGNAME=	ja-emacs20-dl-wnn6-0.3.6
 CATEGORIES=	japanese editors
 MASTER_SITES=	http://tt-www.cs.titech.ac.jp/~katsuya/emacs/
 
@@ -20,14 +20,16 @@ RUN_DEPENDS=	emacs-dl-${EMACS_VER}:${EMACSDL_DIR}
 
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--with-wnn-includes=${PREFIX}/include/wnn --with-wnn6 \
+CONFIGURE_ARGS=	--with-wnn6 \
+		--with-wnn-includes=${PREFIX}/include/wnn \
+		--with-wnn-libraries=${PREFIX}/lib \
 		--with-emacs-src=${WRKDIRPREFIX}${EMACSDL_DIR}/work/emacs-${EMACS_VER}
-CONFIGURE_ENV=	EMACS=emacs-dl-${EMACS_VER}
+CONFIGURE_ENV=	EMACS=${PREFIX}/bin/emacs-dl-${EMACS_VER}
 PLIST_SUB=	EMACS_VER=${EMACS_VER} EMACS_ARCH=${MACHINE_ARCH}--freebsd \
 		DOCDIR=${DOCDIR}
 
 DOCDIR=		share/doc/emacs20-dl-wnn6
-EMACS_VER=	20.3
+EMACS_VER=	20.4
 EMACSDL_DIR=	${.CURDIR}/../../editors/emacs20-dl
 
 post-install:
@@ -35,7 +37,7 @@ post-install:
 		${PREFIX}/share/emacs/site-lisp/egg/.eggrc
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${PREFIX}/${DOCDIR}
-	@${INSTALL_DATA} ${WRKSRC}/README.jp ${PREFIX}/${DOCDIR}
+	@${INSTALL_DATA} ${WRKSRC}/README.ja ${PREFIX}/${DOCDIR}
 	@${INSTALL_DATA} ${WRKSRC}/ChangeLog ${PREFIX}/${DOCDIR}
 .endif
 
