@@ -13,17 +13,24 @@ MASTER_SITE_SUBDIR=	CGI
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	petef@FreeBSD.org
+COMMENT=	Perl extension to cache output of time-intensive CGI scripts
 
 BUILD_DEPENDS=	${SITE_PERL}/File/Cache.pm:${PORTSDIR}/devel/p5-File-Cache \
-		${SITE_PERL}/File/Spec/Functions.pm:${PORTSDIR}/devel/p5-File-Spec \
 		${SITE_PERL}/Cache/SizeAwareFileCache.pm:${PORTSDIR}/devel/p5-Cache-Cache \
 		${SITE_PERL}/${PERL_ARCH}/Storable.pm:${PORTSDIR}/devel/p5-Storable
+
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} <= 500600
+BUILD_DEPENDS+=	${SITE_PERL}/File/Spec/Functions.pm:${PORTSDIR}/devel/p5-File-Spec
+.endif
+
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
-SITE_PERL=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}
+SITE_PERL?=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}
 PERL_CONFIGURE=	yes
 
 MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 MAN3=		CGI::Cache.3
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
