@@ -1,0 +1,9 @@
+lib/libvarconf.so.0
+lib/libvarconf.la
+lib/libvarconf.a
+include/varconf/Config.h
+include/varconf/parse_error.h
+include/varconf/variable.h
+include/varconf/varconf.h
+bin/conftest
+@dirrm include/varconf
