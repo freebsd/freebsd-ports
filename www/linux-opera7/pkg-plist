@@ -34,6 +34,7 @@ share/opera/buttons/default/hisecu.gif
 share/opera/buttons/default/home.gif
 share/opera/buttons/default/hotlist.gif
 share/opera/buttons/default/hotlstto.gif
+share/opera/buttons/default/html.gif
 share/opera/buttons/default/im.gif
 share/opera/buttons/default/incl.gif
 share/opera/buttons/default/keyb.gif
@@ -146,6 +147,10 @@ share/opera/buttons/examples/example_small.ini
 share/opera/buttons/examples/opera_22x22.png
 share/opera/buttons/examples/opera_32x32.png
 share/opera/buttons/standard/addressbar_high_security.png
+share/opera/buttons/standard/addressbar_html.png
+share/opera/buttons/standard/addressbar_html_alt2.png
+share/opera/buttons/standard/addressbar_html_alt3.png
+share/opera/buttons/standard/addressbar_html_alt4.png
 share/opera/buttons/standard/addressbar_load_images.png
 share/opera/buttons/standard/addressbar_low_security.png
 share/opera/buttons/standard/addressbar_medium_security.png
@@ -175,6 +180,14 @@ share/opera/buttons/standard/icons/boy06.png
 share/opera/buttons/standard/icons/boy07.png
 share/opera/buttons/standard/icons/boy08.png
 share/opera/buttons/standard/icons/boy09.png
+share/opera/buttons/standard/icons/boy10.png
+share/opera/buttons/standard/icons/boy11.png
+share/opera/buttons/standard/icons/boy13.png
+share/opera/buttons/standard/icons/boy14.png
+share/opera/buttons/standard/icons/boy15.png
+share/opera/buttons/standard/icons/boy16.png
+share/opera/buttons/standard/icons/close.png
+share/opera/buttons/standard/icons/dropdown.png
 share/opera/buttons/standard/icons/folder_closed.png
 share/opera/buttons/standard/icons/folder_find_results.png
 share/opera/buttons/standard/icons/folder_open.png
@@ -189,10 +202,22 @@ share/opera/buttons/standard/icons/girl06.png
 share/opera/buttons/standard/icons/girl07.png
 share/opera/buttons/standard/icons/girl08.png
 share/opera/buttons/standard/icons/girl09.png
+share/opera/buttons/standard/icons/girl10.png
+share/opera/buttons/standard/icons/girl11.png
+share/opera/buttons/standard/icons/girl12.png
+share/opera/buttons/standard/icons/girl13.png
+share/opera/buttons/standard/icons/girl14.png
+share/opera/buttons/standard/icons/girl15.png
+share/opera/buttons/standard/icons/girl16.png
 share/opera/buttons/standard/icons/news_read.png
 share/opera/buttons/standard/icons/news_subscribed.png
 share/opera/buttons/standard/icons/news_unread.png
 share/opera/buttons/standard/icons/news_unsubscribed.png
+share/opera/buttons/standard/icons/special01.png
+share/opera/buttons/standard/icons/special02.png
+share/opera/buttons/standard/icons/special03.png
+share/opera/buttons/standard/icons/special04.png
+share/opera/buttons/standard/icons/special05.png
 share/opera/buttons/standard/icons/status_away.png
 share/opera/buttons/standard/icons/status_no_messaging.png
 share/opera/buttons/standard/icons/status_not_available.png
@@ -235,6 +260,32 @@ share/opera/buttons/standard/search_music.png
 share/opera/buttons/standard/search_shopping.png
 share/opera/buttons/standard/search_stock.png
 share/opera/buttons/standard/search_web.png
+share/opera/buttons/standard/skin/drop_target_bottom.png
+share/opera/buttons/standard/skin/drop_target_left.png
+share/opera/buttons/standard/skin/drop_target_right.png
+share/opera/buttons/standard/skin/drop_target_top.png
+share/opera/buttons/standard/skin/pagebar_active_corner_bottomleft.png
+share/opera/buttons/standard/skin/pagebar_active_corner_bottomright.png
+share/opera/buttons/standard/skin/pagebar_active_corner_topleft.png
+share/opera/buttons/standard/skin/pagebar_active_corner_topright.png
+share/opera/buttons/standard/skin/pagebar_active_tile_bottom.png
+share/opera/buttons/standard/skin/pagebar_active_tile_center.png
+share/opera/buttons/standard/skin/pagebar_active_tile_left.png
+share/opera/buttons/standard/skin/pagebar_active_tile_right.png
+share/opera/buttons/standard/skin/pagebar_active_tile_top.png
+share/opera/buttons/standard/skin/pagebar_border_tile_bottom.png
+share/opera/buttons/standard/skin/pagebar_border_tile_left.png
+share/opera/buttons/standard/skin/pagebar_border_tile_right.png
+share/opera/buttons/standard/skin/pagebar_border_tile_top.png
+share/opera/buttons/standard/skin/pagebar_inactive_corner_bottomleft.png
+share/opera/buttons/standard/skin/pagebar_inactive_corner_bottomright.png
+share/opera/buttons/standard/skin/pagebar_inactive_corner_topleft.png
+share/opera/buttons/standard/skin/pagebar_inactive_corner_topright.png
+share/opera/buttons/standard/skin/pagebar_inactive_tile_bottom.png
+share/opera/buttons/standard/skin/pagebar_inactive_tile_center.png
+share/opera/buttons/standard/skin/pagebar_inactive_tile_left.png
+share/opera/buttons/standard/skin/pagebar_inactive_tile_right.png
+share/opera/buttons/standard/skin/pagebar_inactive_tile_top.png
 share/opera/buttons/standard/special_dropdown.png
 share/opera/buttons/standard/transfers_resume.png
 share/opera/buttons/standard/transfers_retransfer.png
@@ -311,9 +362,10 @@ share/opera/opera6.adr
 share/opera/plugins/libnpp.so
 share/opera/plugins/libnpp.so.0
 share/opera/plugins/libnpp.so.0.1
-share/opera/plugins/libnpp.so.0.1.5
+share/opera/plugins/libnpp.so.0.1.6
 share/opera/plugins/operamotifwrapper
 share/opera/skin/foreground.png
+share/opera/styles/OPF.CSS
 share/opera/styles/OPF.css
 share/opera/styles/about.css
 share/opera/styles/cache.css
@@ -325,7 +377,6 @@ share/opera/styles/history.css
 share/opera/styles/im.css
 share/opera/styles/mime.css
 share/opera/styles/mimehead.css
-share/opera/styles/opf.css
 share/opera/styles/plugins.css
 share/opera/styles/wml.css
 share/opera/unicode.dat
@@ -335,6 +386,7 @@ share/opera/unicode.dat
 @dirrm share/opera/images
 @dirrm share/opera/help
 @dirrm share/opera/config
+@dirrm share/opera/buttons/standard/skin
 @dirrm share/opera/buttons/standard/icons
 @dirrm share/opera/buttons/standard
 @dirrm share/opera/buttons/examples
