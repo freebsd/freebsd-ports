@@ -2,7 +2,6 @@ bin/xvile
 bin/xvile-pager
 bin/xshell.sh
 bin/vileget
-info/dir
 lib/vile/vile-c-filt
 lib/vile/vile-crypt
 lib/vile/vile-manfilt
