@@ -22,6 +22,10 @@ MAN1=		prcs.1
 
 .include <bsd.port.pre.mk>
 
+.if ${OSVERSION} >= 500113
+BROKEN=         "Does not compile (bad C++ code)"
+.endif
+
 .if exists(${LOCALBASE}/bin/emacs)
 PLIST_SUB+=	EMACS=''
 .else

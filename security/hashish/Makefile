@@ -20,6 +20,12 @@ COMMENT=	A file and string hashing utility
 BUILD_DEPENDS=	${LOCALBASE}/lib/libcryptopp.a:${PORTSDIR}/security/cryptopp
 LIB_DEPENDS=	wx_gtk:${PORTSDIR}/x11-toolkits/wxgtk-devel
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 500113
+BROKEN=         "Does not compile (bad C++ code)"
+.endif
+
 USE_REINPLACE=	yes
 WRKSRC=		${WRKDIR}/Hashish
 CFLAGS+=	-I${LOCALBASE}/include
@@ -34,4 +40,4 @@ post-patch:
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/hashish ${PREFIX}/bin
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
