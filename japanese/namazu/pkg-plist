@@ -1,0 +1,47 @@
+bin/mknmz
+bin/namazu
+namazu/bin/clnmz
+namazu/bin/gcnmz
+namazu/bin/gtnmz
+namazu/bin/mailutime
+namazu/bin/mknmz
+namazu/bin/namazu
+namazu/bin/rvnmz
+namazu/bin/vfnmz
+namazu/bin/wdnmz
+namazu/contrib/MHonArc-2.2.0-Japanize-Namazu.patch-1.3a.gz
+namazu/contrib/NamazuJAVA.030.tar.gz
+namazu/contrib/bnamazu
+namazu/contrib/namazu.el-19980928.02.gz
+namazu/contrib/pnamazu-98.12.16.tgz
+namazu/contrib/tknamazu-1.11.tar.gz
+namazu/doc/en/README.en
+namazu/doc/en/intro.html
+namazu/doc/en/manual.html
+namazu/doc/ja/FAQ.html
+namazu/doc/ja/README.ja
+namazu/doc/ja/history.html
+namazu/doc/ja/intro.html
+namazu/doc/ja/lynxcgi.html
+namazu/doc/ja/manual.html
+namazu/doc/ja/ml.html
+namazu/doc/ja/nmz_files.txt
+namazu/doc/ja/security.html
+namazu/doc/COPYING
+namazu/doc/ChangeLog
+namazu/doc/ToDo
+namazu/lib/NMZ.body.en
+namazu/lib/NMZ.body.ja
+namazu/lib/NMZ.foot.en
+namazu/lib/NMZ.foot.ja
+namazu/lib/NMZ.head.en
+namazu/lib/NMZ.head.ja
+namazu/lib/namazu.conf-dist
+@dirrm namazu/bin
+@dirrm namazu/contrib
+@dirrm namazu/doc/en
+@dirrm namazu/doc/ja
+@dirrm namazu/doc
+@dirrm namazu/index
+@dirrm namazu/lib
+@dirrm namazu
