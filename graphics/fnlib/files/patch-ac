@@ -1,0 +1,11 @@
+--- Fnlib/Makefile.in.orig	Wed Jun 24 22:58:50 1998
++++ Fnlib/Makefile.in	Wed Jun 24 22:59:03 1998
+@@ -98,7 +98,7 @@
+ file.c       \
+ misc.c
+ 
+-libFnlib_la_LDFLAGS    = -version-info 2:0:2
++libFnlib_la_LDFLAGS    = -version-info 0:2:0
+ libFnlib_la_LDDADD     = $(LIBS)
+ 
+ DEFS = 	-DSYSTEM_FNRC=\"@sysconfdir@/fnrc\"
