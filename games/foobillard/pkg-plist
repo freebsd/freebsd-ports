@@ -1,6 +1,8 @@
 bin/foobillard
+share/foobillard/ball_ball.raw
 share/foobillard/blende.png
 share/foobillard/bluebold.ttf
+share/foobillard/bumpref.png
 share/foobillard/cue_shadow.png
 share/foobillard/foobillard.gif
 share/foobillard/foobillard.png
@@ -9,7 +11,13 @@ share/foobillard/fullhalf_symbol.png
 share/foobillard/half_symbol.png
 share/foobillard/iomanoid.ttf
 share/foobillard/lightflare.png
+share/foobillard/negx.png
+share/foobillard/negy.png
+share/foobillard/negz.png
 share/foobillard/place_cue_ball.png
+share/foobillard/posx.png
+share/foobillard/posy.png
+share/foobillard/posz.png
 share/foobillard/queue.png
 share/foobillard/queue_shadow.png
 share/foobillard/shadow2.png
