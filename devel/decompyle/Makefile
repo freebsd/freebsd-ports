@@ -8,7 +8,7 @@
 PORTNAME=	decompyle
 PORTVERSION=	2.2.b1
 CATEGORIES=	devel python
-MASTER_SITES=	http://www.goebel-consult.de/decompyle/
+MASTER_SITES=	http://www.crazy-compilers.com/decompyle/
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/.b/beta/g}
 
 MAINTAINER=	perky@FreeBSD.org
@@ -17,7 +17,6 @@ COMMENT=	Python byte-code decompiler
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
 USE_REINPLACE=  yes
-PLIST_SUB=	PYTHON_SITELIBDIR=${PYTHON_SITELIBDIR:S,${LOCALBASE}/,,g}
 
 post-patch:
 	${REINPLACE_CMD} -e 's,/usr/bin/env python2,${PYTHON_CMD},' \
