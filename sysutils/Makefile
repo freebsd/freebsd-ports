@@ -50,8 +50,6 @@
     SUBDIR += lsof
     SUBDIR += manck
     SUBDIR += mei
-    SUBDIR += mkhybrid
-    SUBDIR += mkhybrid12
     SUBDIR += mkisofs
     SUBDIR += muse
     SUBDIR += no-login
