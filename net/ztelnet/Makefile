@@ -28,6 +28,12 @@ PATCH_STRIP=	-p1
 MAN1=		ztelnet.1
 PLIST_FILES=	bin/ztelnet
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 502126
+BROKEN=		"Install fails on FreeBSD >= 5.x"
+.endif
+
 post-patch:
 	# we can ignore warnings
 	@( cd ${WRKSRC}/ztelnet && \
@@ -49,4 +55,4 @@ do-install:
 	${INSTALL_PROGRAM} telnet/telnet ${PREFIX}/bin/ztelnet
 	${INSTALL_MAN} ${WRKSRC}/ztelnet.1 ${PREFIX}/man/man1/ztelnet.1
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
