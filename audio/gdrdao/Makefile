@@ -12,7 +12,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
 
-RUN_DEPENDS=	cdrdao:${PORTSDIR}/audio/cdrdao
+RUN_DEPENDS=	cdrdao:${PORTSDIR}/sysutils/cdrdao
 
 USE_GNOMENG=	yes
 USE_GNOME=	gnomeprefix gnomelibs
