@@ -1,5 +1,5 @@
 bin/epic
-bin/epic-EPIC4-0.10.1
+bin/epic-EPIC4-1.0
 libexec/wserv
 share/epic/help/1_General/away
 share/epic/help/1_General/describe
@@ -865,6 +865,8 @@ share/epic/script/debug.irc
 share/epic/script/dig
 share/epic/script/dns
 share/epic/script/edit
+share/epic/script/edit_topic
+share/epic/script/efnext
 share/epic/script/environment
 share/epic/script/events
 share/epic/script/events.hop
