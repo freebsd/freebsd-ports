@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	Auth
-PORTVERSION=	1.2.0
-PORTREVISION=	1
+PORTVERSION=	1.2.2
 CATEGORIES=	security www
 
 MAINTAINER=	ports@FreeBSD.org
@@ -20,6 +19,7 @@ RUN_DEPENDS=	${BUILD_DEPENDS}
 .include "${.CURDIR}/../../devel/pear-PEAR/Makefile.common"
 
 MANIFEST=	Auth.php Container Container.php
+TESTDIR=	${PEARDIR}/tests/${PORTNAME}
 
 do-install:
 	@${MKDIR} ${PEARDIR}/Auth
@@ -28,5 +28,13 @@ do-install:
 .endfor
 	@${CHOWN} -R ${SHAREOWN}:${SHAREGRP} ${PEARDIR}/Auth
 	@${CHMOD} -R a-x ${PEARDIR}/Auth/Container/*.php
+.if !defined(NOPORTDOCS)
+	@${MKDIR} ${TESTDIR}
+	@${CP} -Rp ${WRKSRC}/tests/* ${TESTDIR}
+	@${CHOWN} -R ${SHAREOWN}:${SHAREGRP} ${TESTDIR}
+	@${ECHO_MSG} "===> Examples installed in ${TESTDIR}."
+	@${ECHO_MSG} "     (These tests require PHPUnit - see"
+	@${ECHO_MSG} "     <http://pear.php.net/package-info.php?package=PHPUnit>;)."
+.endif
 
 .include <bsd.port.post.mk>
