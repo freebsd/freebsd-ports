@@ -5,10 +5,10 @@
 # $FreeBSD$
 #
 
-PORTNAME=	xmedcon
-PORTVERSION=	0.8.8
-CATEGORIES=	graphics
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+PORTNAME=		xmedcon
+PORTVERSION=		0.8.9
+CATEGORIES=		graphics
+MASTER_SITES=		${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	tdv94ped@cs.umu.se
@@ -40,8 +40,14 @@ USE_GNOME=	gtk12 gdkpixbuf
 PLIST_SUB=	X11=""
 .else
 CONFIGURE_ARGS=	--disable-gui
-PKGNAMESUFFIX=	-nox11
 PLIST_SUB=	X11="@comment "
+.endif
+
+.if !defined(WITH_GLIB)
+CONFIGURE_ARGS+=	--disable-glib
+.else
+USE_GNOMENG=	yes
+USE_GNOME+=	glib12
 .endif
 
 .if !defined(WITH_ACRNEMA) && !defined(WITH_DICOM)

@@ -1,23 +1,21 @@
---- etc/Makefile.in.orig	Sun Dec  8 01:39:58 2002
-+++ etc/Makefile.in	Mon Dec  9 13:14:55 2002
-@@ -180,13 +180,15 @@
+--- etc/Makefile.in.orig	Fri Jan 17 20:39:56 2003
++++ etc/Makefile.in	Fri Jan 17 20:40:57 2003
+@@ -190,15 +190,14 @@
  
- AUTOMAKE_OPTIONS = gnu
- 
-+.if(DO_XSUPPORT)
  RC_FILES = \
   xmedconrc \
 - xmedconrc.linux \
 - xmedconrc.win32
--
--
--ICONS = xmedcon.ico xmedcon.png
 + xmedconrc.linux
+ 
+ 
+-ICONS = xmedcon.ico xmedcon.png
 +ICONS = xmedcon.png
-+.else
-+RC_FILES =
-+ICONS =
-+.endif
  
  GTK_DIST = README $(RC_FILES) $(ICONS)
  
+-sysconf_DATA = $(RC_FILES) $(ICONS)
++@DO_XSUPPORT_TRUE@sysconf_DATA = $(RC_FILES) $(ICONS)
+ 
+ EXTRA_DIST = $(GTK_DIST)
+ subdir = etc

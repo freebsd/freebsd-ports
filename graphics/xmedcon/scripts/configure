@@ -12,6 +12,7 @@ else
 		--checklist "\n\
 Please select desired options:" -1 -1 11 \
 x11		"With X11" ON \
+glib		"With GLib convience functions" ON \
 acr/nema	"With Acr/Nema 2.0" ON \
 analyze		"With Analyze (SPM)" ON \
 concorde	"With Concorde æPET" ON \
@@ -49,6 +50,9 @@ while [ "$1" ]; do
 	case $1 in
 		\"x11\")
 			echo "WITH_X11=YES" >>${WRKDIRPREFIX}${REALCURDIR}/Makefile.inc
+			;;
+		\"glib\")
+			echo "WITH_GLIB=YES" >>${WRKDIRPREFIX}${REALCURDIR}/Makefile.inc
 			;;
 		\"acr/nema\")
 			echo "WITH_ACRNEMA=YES" >>${WRKDIRPREFIX}${REALCURDIR}/Makefile.inc
