@@ -1,0 +1,95 @@
+*** sim/spice/common/src/lib/fte/resource.c.orig	Sat Jan 29 18:48:28 1994
+--- sim/spice/common/src/lib/fte/resource.c	Sun Dec 12 14:38:33 1999
+***************
+*** 370,376 ****
+--- 370,378 ----
+  	long x;
+  	SIGNAL_TYPE	(*orig_signal)( );
+  
++ #ifndef __FreeBSD__
+  	if (getenv("SPICE_NO_DATASEG_CHECK"))
++ #endif
+  		return 0;
+  
+  	low = 0;
+*** sim/spice/common/src/include/misc.h.orig	Sat Jan 29 19:14:17 1994
+--- sim/spice/common/src/include/misc.h	Sun Dec 12 14:38:33 1999
+***************
+*** 86,92 ****
+--- 86,94 ----
+  extern char *realloc();
+  extern char *getenv();
+  extern int errno;
++ #ifndef __FreeBSD__
+  extern char *sys_errlist[];
++ #endif
+  extern char *getenv();
+  extern char *getwd();
+  extern int rand();
+***************
+*** 109,120 ****
+--- 111,124 ----
+  #    endif /* clearerr */
+  #  endif /* HAS_CLEARERR */
+  
++ #ifndef __FreeBSD__
+  #  ifndef bzero
+  extern int bzero();
+  #  endif
+  #  ifndef bcopy
+  extern void bcopy();
+  #  endif
++ #endif /* __FreeBSD__ */
+  
+  #  ifndef index
+  #    ifdef HAS_INDEX
+*** sim/spice/common/src/include/os_bsd.h.orig	Sat Jan 29 19:14:37 1994
+--- sim/spice/common/src/include/os_bsd.h	Sun Dec 12 14:38:33 1999
+***************
+*** 8,19 ****
+  
+  #include "os_unix.h"
+  
+  #define HAS_NO_ATRIGH_DECL	/* if asinh( ) is not in math.h		*/
+- #define HAS_ATRIGH		/* acosh( ), asinh( ), atanh( )         */
+  #define HAS_FTIME		/* ftime( ), <times.h>			*/
+  #define HAS_TERMCAP		/* tgetxxx( )				*/
+  #define HAS_VFORK		/* BSD-ism, should not be necessary	*/
+- #define HAS_INDEX		/* index( ) instead of strchr( )	*/
+  #define HAS_BCOPY		/* bcopy( ), bzero( )			*/
+  #define HAS_BSDRANDOM		/* srandom( ) and random( )		*/
+  #define HAS_BSDTTY		/* <sgtty.h>				*/
+--- 8,23 ----
+  
+  #include "os_unix.h"
+  
++ #ifndef __FreeBSD__
+  #define HAS_NO_ATRIGH_DECL	/* if asinh( ) is not in math.h		*/
+  #define HAS_FTIME		/* ftime( ), <times.h>			*/
++ #define HAS_INDEX		/* index( ) instead of strchr( )	*/
++ #define HAS_STRINGS		/* use <strings.h> instead of <string.h> */
++ #endif
++ 
++ #define HAS_ATRIGH		/* acosh( ), asinh( ), atanh( )         */
+  #define HAS_TERMCAP		/* tgetxxx( )				*/
+  #define HAS_VFORK		/* BSD-ism, should not be necessary	*/
+  #define HAS_BCOPY		/* bcopy( ), bzero( )			*/
+  #define HAS_BSDRANDOM		/* srandom( ) and random( )		*/
+  #define HAS_BSDTTY		/* <sgtty.h>				*/
+***************
+*** 22,25 ****
+  #define HAS_BSDRLIMIT		/* getrlimit( )				*/
+  #define HAS_DUP2
+  #define HAS_GETWD		/* getwd(buf)				*/
+! #define HAS_STRINGS		/* use <strings.h> instead of <string.h> */
+--- 26,35 ----
+  #define HAS_BSDRLIMIT		/* getrlimit( )				*/
+  #define HAS_DUP2
+  #define HAS_GETWD		/* getwd(buf)				*/
+! 
+! #ifdef __FreeBSD__
+! #define HAS_BSDSOCKETS		/* <net/inet.h>, socket( ), etc.	*/
+! #define HAS_BSDTIME		/* gettimeofday( ) return time		*/
+! #define HAS_FLOAT_H		/* float.h				*/
+! #define HAS_STRCHR		/* strchr( ) instead of index( )	*/
+! #endif

@@ -1,0 +1,9 @@
+all:
+	./util/build FreeBSD
+
+install:
+	./util/build FreeBSD install 
+	chmod a+rx ${PREFIX}/bin/cider
+	strip ${PREFIX}/bin/cider
+	chmod -R a+rX ${PREFIX}/share/cider
+	install -c -m 644 -o bin -g bin doc/cider.1 ${PREFIX}/man/man1/cider.1

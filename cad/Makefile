@@ -3,6 +3,7 @@
 
     SUBDIR += acs
     SUBDIR += chipmunk
+    SUBDIR += cider
     SUBDIR += felt
     SUBDIR += geda
     SUBDIR += irsim
