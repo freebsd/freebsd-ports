@@ -78,7 +78,7 @@
  #include <errno.h>
  #include <perror.h>
  #else
-+#ifndef __FreeBSD__
++#if !defined(__FreeBSD__) && !defined(__OpenBSD__) && !defined(__NetBSD__)
  	extern char *sys_errlist[];
 +#endif
  	extern int errno;
