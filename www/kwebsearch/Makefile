@@ -12,6 +12,7 @@ MASTER_SITES=	http://www.bawue.de/~rgoetz/
 
 MAINTAINER=	will@FreeBSD.org
 
+LIB_DEPENDS=	kdecore.3:${PORTSDIR}/x11/kdelibs11
 BUILD_DEPENDS=	${LOCALBASE}/bin/gettext:${PORTSDIR}/devel/gettext
 
 GNU_CONFIGURE=	yes
