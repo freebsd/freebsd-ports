@@ -1,10 +1,10 @@
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/URI/Sequin/.packlist
 lib/perl5/site_perl/%%PERL_VER%%/URI/Sequin.pm
-lib/perl5/site_perl/%%PERL_VER%%/URI/Sequin/examples/example.pl
-lib/perl5/site_perl/%%PERL_VER%%/URI/Sequin/examples/ref1.log
-lib/perl5/site_perl/%%PERL_VER%%/URI/Sequin/examples/ref2.log
+%%PORTDOCS%%lib/perl5/site_perl/%%PERL_VER%%/URI/Sequin/examples/example.pl
+%%PORTDOCS%%lib/perl5/site_perl/%%PERL_VER%%/URI/Sequin/examples/ref1.log
+%%PORTDOCS%%lib/perl5/site_perl/%%PERL_VER%%/URI/Sequin/examples/ref2.log
+%%PORTDOCS%%@dirrm lib/perl5/site_perl/%%PERL_VER%%/URI/Sequin/examples
+%%PORTDOCS%%@dirrm lib/perl5/site_perl/%%PERL_VER%%/URI/Sequin
 @dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/URI/Sequin
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/URI/Sequin/examples
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/URI/Sequin
 @unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/URI 2>/dev/null || true
 @unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/URI 2>/dev/null || true
