@@ -11,7 +11,7 @@ PORTREVISION=	1
 CATEGORIES=	emulators
 MASTER_SITES=	http://pknet.com/~joe/
 
-MAINTAINER=	sobomax@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A wonderful Sega Genesis/MegaDrive emulator
 
 BUILD_DEPENDS=	nasm:${PORTSDIR}/devel/nasm

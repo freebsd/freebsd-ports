@@ -12,7 +12,7 @@ CATEGORIES=	games
 MASTER_SITES=	http://www.mattdm.org/icebreaker/1.2.x/
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	sobomax@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A game similar to Jezzball or Barrack
 
 LIB_DEPENDS=	SDL_mixer.2:${PORTSDIR}/audio/sdl_mixer

@@ -12,7 +12,7 @@ MASTER_SITES=	http://www.dataway.ch/~lukasl/amph/files/
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 		${PORTNAME}-data-${DATAVERSION}${EXTRACT_SUFX}
 
-MAINTAINER=	sobomax@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A 2D - Jump'n'run shooter
 
 LIB_DEPENDS=  	SDL-1.1.5:${PORTSDIR}/devel/sdl12

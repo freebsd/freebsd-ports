@@ -13,7 +13,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	basilisk
 DISTNAME=	BasiliskII_src_31052001
 
-MAINTAINER=	sobomax@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A free, portable, Open Source 68k Mac emulator
 
 WRKSRC=		${WRKDIR}/BasiliskII-${PORTVERSION}/src/Unix

@@ -13,7 +13,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	wxwindows
 DISTNAME=	wxGTK-${PORTVERSION}
 
-MAINTAINER=	sobomax@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The wxWindows GUI toolkit with GTK+ bindings
 
 LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png \

@@ -10,7 +10,7 @@ PORTVERSION=	2.0.2
 CATEGORIES=	archivers devel
 MASTER_SITES=	http://www.onicos.com/staff/iz/release/
 
-MAINTAINER=	sobomax@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Tiny C library to decompress data in several popular compression formats
 
 INSTALLS_SHLIB=	yes

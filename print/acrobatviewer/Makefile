@@ -12,7 +12,7 @@ MASTER_SITES=	ftp://ftp.adobe.com/pub/adobe/magic/acrobatviewer/unix/1.x/
 DISTNAME=	viewer.bin
 EXTRACT_SUFX=
 
-MAINTAINER=	sobomax@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Viewer for the PDF files written in Java(TM)
 
 RUN_DEPENDS=	${JAVAVM}:${PORTSDIR}/java/javavmwrapper \

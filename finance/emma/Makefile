@@ -11,7 +11,7 @@ CATEGORIES=	misc gnome python
 MASTER_SITES=	http://rainbow.mimuw.edu.pl/~la181249/emma/packages/
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/.1/-1/}
 
-MAINTAINER=	sobomax@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A personal finance manager for Gnome
 
 BUILD_DEPENDS=	automake:${PORTSDIR}/devel/automake

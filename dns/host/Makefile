@@ -13,7 +13,7 @@ MASTER_SITES=	http://www.dtek.chalmers.se/~d3august/xt/ \
 DISTNAME=	${PORTNAME}
 EXTRACT_SUFX=	.tar.Z
 
-MAINTAINER=	sobomax@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An utility to query DNS servers
 
 NO_WRKSUBDIR=	yes

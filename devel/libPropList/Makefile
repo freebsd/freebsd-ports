@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_WINDOWMAKER}
 MASTER_SITE_SUBDIR=	libs
 DISTNAME=	libPropList-${PORTVERSION}
 
-MAINTAINER=	sobomax@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Property library for gnome and Window Maker
 
 USE_LIBTOOL=	yes

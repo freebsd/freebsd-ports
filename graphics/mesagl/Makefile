@@ -16,7 +16,7 @@ MASTER_SITE_SUBDIR=	mesa3d
 DISTFILES=	MesaLib-${PORTVERSION}${EXTRACT_SUFX} \
 		MesaDemos-${PORTVERSION}${EXTRACT_SUFX}
 
-MAINTAINER=	sobomax@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A graphics library similar to SGI's OpenGL
 
 USE_BZIP2=	yes

@@ -13,7 +13,7 @@ MASTER_SITE_SUBDIR=	py${PORTNAME}
 PKGNAMEPREFIX=	py-
 DISTNAME=	PyOpenGL-${PORTVERSION:S/.b/b/}
 
-MAINTAINER=	sobomax@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An OpenGL (and related library) interface for Python
 
 BUILD_DEPENDS=	${PYNUMERIC} \

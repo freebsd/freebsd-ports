@@ -10,7 +10,7 @@ PORTVERSION=	0.3
 CATEGORIES=	graphics gnome
 MASTER_SITES=	http://wine.sexcity.pl/morpheus/meat/
 
-MAINTAINER=	sobomax@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A mesh (3D model) viewer for GNOME desktop
 
 LIB_DEPENDS=	morph.0:${PORTSDIR}/graphics/libmorph \

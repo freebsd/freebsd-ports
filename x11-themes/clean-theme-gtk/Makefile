@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_THEMES}
 MASTER_SITE_SUBDIR= clean___
 DISTNAME=	clean___-${PORTVERSION}
 
-MAINTAINER=	sobomax@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The Clean GTK theme engine
 
 WRKSRC=		${WRKDIR}/gtk-clean-theme

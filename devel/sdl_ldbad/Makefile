@@ -11,7 +11,7 @@ CATEGORIES=	devel
 MASTER_SITES=	# none
 DISTFILES=	# none
 
-MAINTAINER=	sobomax@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A SDL Linux Developer's BandAiD
 
 LIB_DEPENDS=	SDL-1.1.5:${PORTSDIR}/devel/sdl12

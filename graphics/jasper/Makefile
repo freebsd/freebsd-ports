@@ -12,7 +12,7 @@ MASTER_SITES=	http://www.ece.uvic.ca/~mdadams/jasper/software/ \
 		${MASTER_SITE_IMAGEMAGICK}
 MASTER_SITE_SUBDIR=	ImageMagick/delegates
 
-MAINTAINER=	sobomax@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An implementation of the codec specified in the JPEG-2000 standard
 
 LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg

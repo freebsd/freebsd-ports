@@ -13,7 +13,7 @@ MASTER_SITES=	http://scigraphica.sourceforge.net/src/ \
 		http://magnet.fsu.edu/~feiguin/scigraphica/src/
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	sobomax@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A scientific application for data analysis and technical graphics
 
 BUILD_DEPENDS=	${PYNUMERIC}

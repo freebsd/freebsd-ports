@@ -11,7 +11,7 @@ CATEGORIES=	devel python
 MASTER_SITES=	http://pygame.seul.org/ftp/
 DISTNAME=	${PORTNAME:S/-//}-${PORTVERSION}
 
-MAINTAINER=	sobomax@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A module designed to write games in Python
 
 BUILD_DEPENDS=	${PYNUMERIC}

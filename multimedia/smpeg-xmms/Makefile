@@ -10,7 +10,7 @@ PORTVERSION=	0.3.4
 CATEGORIES=	multimedia gnome
 MASTER_SITES=	ftp://ftp.xmms.org/xmms/plugins/smpeg-xmms/
 
-MAINTAINER=	sobomax@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A mpeg video plugin for XMMS
 
 LIB_DEPENDS=	smpeg.1:${PORTSDIR}/multimedia/smpeg \

@@ -10,7 +10,7 @@ PORTVERSION=	0.1
 CATEGORIES=	games gnome
 MASTER_SITES=	http://www.informatik.fh-wiesbaden.de/~i820/downloads/
 
-MAINTAINER=	sobomax@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A clone of the famous Yatzi game, also known as Kniffel, for GNOME
 
 USE_BZIP2=	yes

@@ -11,7 +11,7 @@ PORTREVISION=	1
 CATEGORIES=	graphics devel
 MASTER_SITES=	http://www.svgalib.org/
 
-MAINTAINER=	sobomax@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A low level console graphics library
 
 USE_GMAKE=	yes

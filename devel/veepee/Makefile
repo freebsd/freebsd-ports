@@ -12,7 +12,7 @@ CATEGORIES=	devel python gnome
 MASTER_SITES=	http://www.river-bank.demon.co.uk/software/
 DISTNAME=	VeePee-${PORTVERSION}
 
-MAINTAINER=	sobomax@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A user orientated scripting environment for embedding in applications
 
 LIB_DEPENDS=	gd.4:${PORTSDIR}/graphics/gd2

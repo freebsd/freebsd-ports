@@ -10,7 +10,7 @@ PORTVERSION=	1.0
 CATEGORIES=	benchmarks python
 MASTER_SITES=	http://www.lemburg.com/files/python/
 
-MAINTAINER=	sobomax@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An extensible benchmark suite for Python
 
 WRKSRC=		${WRKDIR}/${PORTNAME}

@@ -10,7 +10,7 @@ PORTVERSION=	0.1.10
 CATEGORIES=	graphics
 MASTER_SITES=	ftp://wolfpack.twu.net/users/wolfpack/
 
-MAINTAINER=	sobomax@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A 3D modeller designed specifically for generating efficient game models
 
 LIB_DEPENDS=	gtkgl.5:${PORTSDIR}/x11-toolkits/gtkglarea \

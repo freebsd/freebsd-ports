@@ -18,7 +18,7 @@ DISTFILES=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX} \
 #PATCH_SITES=	ftp://heroes.sourceforge.net/pub/heroes/patches/
 #PATCHFILES=	heroes-0.7-errata.patch
 
-MAINTAINER=	sobomax@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A game of yore similar to the "Tron" and "Nibbles"
 
 LIB_DEPENDS=	SDL_mixer.2:${PORTSDIR}/audio/sdl_mixer \

@@ -12,7 +12,7 @@ CATEGORIES=	misc gnome
 MASTER_SITES=	# none
 DISTFILES=	# none
 
-MAINTAINER=	sobomax@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An utility port, installing hierarchy of common GNOME directories
 
 NO_BUILD=	yes

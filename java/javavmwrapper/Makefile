@@ -13,7 +13,7 @@ CATEGORIES=	java
 MASTER_SITES=	# none
 DISTFILES=	# none
 
-MAINTAINER=	sobomax@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Wrapper script for various Java Virtual Machines
 
 NO_BUILD=	yes

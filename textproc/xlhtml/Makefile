@@ -12,7 +12,7 @@ MASTER_SITES=	http://chicago.sourceforge.net/xlhtml/
 DISTNAME=	${PORTNAME}.${PORTVERSION}
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	sobomax@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Utilities converting Excel and PowerPoint files to HTML and text
 
 WRKSRC=		${WRKDIR}/${PORTNAME}

@@ -14,7 +14,7 @@ MASTER_SITES=	http://elysium.zoned.net/${PORTNAME}/ \
 		${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	sobomax@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A lightweight web browser for the Gnome Desktop Environment
 
 BROKEN=		"Does not fetch"

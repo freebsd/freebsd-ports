@@ -13,7 +13,7 @@ MASTER_SITES=	http://www.senet.com.au/squirm/ \
 		http://www.elab.co.za/squirm/
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	sobomax@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A fast & configurable redirector for the Squid
 
 RUN_DEPENDS=	${LOCALBASE}/sbin/squid:${PORTSDIR}/www/squid24

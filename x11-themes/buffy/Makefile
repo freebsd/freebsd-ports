@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_THEMES}
 MASTER_SITE_SUBDIR= buffy02
 DISTNAME=	buffy02-1.2
 
-MAINTAINER=	sobomax@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A GTK theme engine looking like SGI enhanced Motif (aka Roxy)
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}

@@ -10,7 +10,7 @@ PORTVERSION=	0.23a
 CATEGORIES=	comms
 MASTER_SITES=	ftp://ftp.usf.uni-kassel.de/pub/unix/modem/
 
-MAINTAINER=	sobomax@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Network modem sharing server
 
 MAKE_ARGS=	CC="${CC}" CCOPTS="${CFLAGS}"

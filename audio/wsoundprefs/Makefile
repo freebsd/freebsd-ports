@@ -11,7 +11,7 @@ CATEGORIES=	audio windowmaker
 MASTER_SITES=	ftp://shadowmere.student.utwente.nl/pub/WindowMaker/
 DISTNAME=	WSoundPrefs-${PORTVERSION}
 
-MAINTAINER=	sobomax@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A utility for configuring sounds to play for Window Maker events
 
 BUILD_DEPENDS=	wmaker:${PORTSDIR}/x11-wm/windowmaker
