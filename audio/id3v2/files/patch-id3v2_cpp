@@ -1,0 +1,29 @@
+--- id3v2.cpp.orig	Mon Nov 11 18:47:38 2002
++++ id3v2.cpp	Mon Nov 11 18:53:32 2002
+@@ -2,20 +2,21 @@
+ #include <config.h>
+ #endif
+                                                                                 
+-#include <stdio.h>
+-#include <iostream.h>
+-#include <string.h>
++#include <cstdio>
++#include <iostream>
++#include <cstring>
+ #include <id3/tag.h>
+ #include <getopt.h>
+-#include <stdlib.h>
++#include <cstdlib>
+ #include <id3/misc_support.h>
+ 
+ #include <sys/types.h>
+ #include <sys/stat.h>
+-#include <unistd.h>
+ 
+ #define VERSION_NUMBER "$Revision: 1.7 $"
+ #define MAXNOFRAMES 1000
++
++using namespace std;
+ 
+ /* Write both tags by default */
+ flags_t UpdFlags = ID3TT_ALL;

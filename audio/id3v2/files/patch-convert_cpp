@@ -1,0 +1,13 @@
+--- convert.cpp.orig	Mon Nov 11 18:53:12 2002
++++ convert.cpp	Mon Nov 11 18:54:36 2002
+@@ -1,6 +1,8 @@
+-#include <iostream.h>
++#include <iostream>
+ #include <id3/tag.h>
+-#include <stdlib.h>
++#include <cstdlib>
++
++using namespace std;
+ 
+ void DeleteTag(int argc, char *argv[], int optind, int whichTags)
+ {
