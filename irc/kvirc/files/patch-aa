@@ -1,0 +1,19 @@
+*** kvirc/kvi_support.cpp.orig	Mon Jan 25 00:32:30 1999
+--- kvirc/kvi_support.cpp	Mon Feb 15 02:10:42 1999
+***************
+*** 21,27 ****
+  
+  //#include "kvi_app.h"
+  #include <ctype.h>
+! #include <netinet/in.h>
+  #include <sys/types.h>
+  #include <sys/socket.h>      
+  #include <qstring.h> //includes <string.h> too
+--- 21,27 ----
+  
+  //#include "kvi_app.h"
+  #include <ctype.h>
+! // #include <netinet/in.h>
+  #include <sys/types.h>
+  #include <sys/socket.h>      
+  #include <qstring.h> //includes <string.h> too
