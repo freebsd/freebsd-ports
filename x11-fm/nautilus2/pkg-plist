@@ -213,28 +213,15 @@ share/locale/wa/LC_MESSAGES/nautilus.mo
 share/locale/yi/LC_MESSAGES/nautilus.mo
 share/locale/zh_CN/LC_MESSAGES/nautilus.mo
 share/locale/zh_TW/LC_MESSAGES/nautilus.mo
-@dirrm share/gnome/pixmaps/nautilus/throbber
 @dirrm share/gnome/pixmaps/nautilus/tahoe
 @dirrm share/gnome/pixmaps/nautilus/sierra
-@dirrm share/gnome/pixmaps/nautilus/sidebar_tab_pieces
-@dirrm share/gnome/pixmaps/nautilus/gnome/throbber
-@dirrm share/gnome/pixmaps/nautilus/gnome/sidebar_tab_pieces
 @dirrm share/gnome/pixmaps/nautilus/gnome
 @dirrm share/gnome/pixmaps/nautilus/default
-@dirrm share/gnome/pixmaps/nautilus/crux_teal/throbber
-@dirrm share/gnome/pixmaps/nautilus/crux_teal/sidebar_tab_pieces
-@dirrm share/gnome/pixmaps/nautilus/crux_teal/backgrounds
 @dirrm share/gnome/pixmaps/nautilus/crux_teal
-@dirrm share/gnome/pixmaps/nautilus/crux_eggplant/throbber
-@dirrm share/gnome/pixmaps/nautilus/crux_eggplant/sidebar_tab_pieces
-@dirrm share/gnome/pixmaps/nautilus/crux_eggplant/backgrounds
 @dirrm share/gnome/pixmaps/nautilus/crux_eggplant
 @dirrm share/gnome/pixmaps/nautilus
-@dirrm share/gnome/nautilus/services/text
-@dirrm share/gnome/nautilus/services
 @dirrm share/gnome/nautilus/patterns
 @dirrm share/gnome/nautilus/glade
-@dirrm share/gnome/nautilus/emblems
 @dirrm share/gnome/nautilus
 @dirrm include/nautilus/libnautilus-extension
 @dirrm include/nautilus
