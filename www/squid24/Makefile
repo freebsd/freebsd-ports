@@ -47,7 +47,7 @@ EXTRACT_SUFX=	-src.tar.gz
 DIST_SUBDIR=	squid2.4
 
 DEPRECATED=	This version no longer supported and contains vulnerabilities
-EXPIRATION_DATE=31st October 2004
+EXPIRATION_DATE=2004-11-31
 
 PATCH_SITES=	http://www.squid-cache.org/Versions/v2/2.4/bugs/
 PATCHFILES=	squid-2.4.STABLE7-url_port.patch \

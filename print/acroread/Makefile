@@ -21,7 +21,7 @@ LATEST_LINK=	acroread3
 
 FORBIDDEN=	http://vuxml.freebsd.org/78348ea2-ec91-11d8-b913-000c41e2cdad.html security
 DEPRECATED=	${FORBIDDEN}
-EXPIRATION_DATE=November 21, 2004
+EXPIRATION_DATE=2004-11-21
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	View, distribute and print PDF documents
