@@ -6,27 +6,31 @@
 #
 
 PORTNAME=	cadaver
-PORTVERSION=	0.22.0
-PORTREVISION=	1
+PORTVERSION=	0.22.1
 CATEGORIES=	www
 MASTER_SITES=	http://www.webdav.org/cadaver/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Commandline client for DAV
 
-LIB_DEPENDS=	expat.5:${PORTSDIR}/textproc/expat2 \
-		neon.24:${PORTSDIR}/www/neon
+LIB_DEPENDS=	neon:${PORTSDIR}/www/neon
 
 USE_GETOPT_LONG=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
-CONFIGURE_ARGS=	--enable-netrc \
-		--with-expat
+CONFIGURE_ARGS=	--enable-netrc
 ALL_TARGET=	cadaver
 
 MAN1=		cadaver.1
 PLIST_FILES=	bin/cadaver
+# Neither expat nor libneon are needed at all, but the configure 
+# script breaks if it can not find the Makefile* in them. Exclude
+# them to be sure, a stray .h is not included instead of what's
+# found under PREFIX (installed by the neon port):
+EXTRACT_AFTER_ARGS=       | ${TAR} -xf - \
+		--exclude '${PORTNAME}-${PORTVERSION}/expat/*.[ch]' \
+		--exclude '${PORTNAME}-${PORTVERSION}/libneon/*.[ch]'
 
 CPPFLAGS=	-I${LOCALBASE}/include
 LDFLAGS=	-L${LOCALBASE}/lib
