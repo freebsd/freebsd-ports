@@ -6,8 +6,7 @@
 #
 
 PORTNAME=       ettercap
-PORTVERSION=	0.4.3
-PORTREVISION=	1
+PORTVERSION=	0.5.0
 CATEGORIES=     net
 MASTER_SITES=   http://ettercap.sourceforge.net/download/
 
@@ -19,7 +18,7 @@ GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install install-doc
 .endif
 
-PLIST_SUB=	PORTVERSION=${PORTVERSION}
+PLIST_SUB+=	PORTVERSION=${PORTVERSION}
 
 MAN8=		ettercap.8
 
