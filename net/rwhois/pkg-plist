@@ -45,7 +45,6 @@ lib/rwhois/data/user/null.ca
 lib/rwhois/data/user/shoe-me.be.txt
 lib/rwhois/data/user/shoe-me.multiple.txt
 lib/rwhois/data/user/shoe.gif
-lib/rwhois/dev/zero
 lib/rwhois/etc/resolv.conf
 lib/rwhois/index_scripts/index_all
 lib/rwhois/index_scripts/index_asn
@@ -111,7 +110,6 @@ share/doc/rwhois/sample.data.explained
 @dirrm lib/rwhois/data/soa/
 @dirrm lib/rwhois/data/user/
 @dirrm lib/rwhois/data/
-@dirrm lib/rwhois/dev/
 @dirrm lib/rwhois/etc/
 @dirrm lib/rwhois/index_scripts/
 @dirrm lib/rwhois/output_templates/

@@ -1,5 +1,5 @@
 --- chroot.sh.orig	Wed Jul 31 15:34:34 1996
-+++ chroot.sh	Fri May 23 02:12:03 1997
++++ chroot.sh	Thu Jun  5 09:45:59 1997
 @@ -10,9 +10,15 @@
  #umask 022
  
@@ -17,7 +17,7 @@
  if test ! -d ${RWHOIS_ROOT_DIR}/etc 
  then
  	echo "make directory  ${RWHOIS_ROOT_DIR}/etc".
-@@ -35,20 +41,37 @@
+@@ -35,20 +41,30 @@
  then
  	echo "make directory  ${RWHOIS_ROOT_DIR}/usr"
  	mkdir $RWHOIS_ROOT_DIR/usr
@@ -51,11 +51,4 @@
 -	$COPY /usr/bin/sh /usr/bin/sort $RWHOIS_ROOT_DIR/bin
 +	$COPY /bin/sh /usr/bin/sort /bin/date $RWHOIS_ROOT_DIR/bin
  
-+# make /dev/zero
-+if test ! -d $RWHOIS_ROOT_DIR/dev
-+then
-+	echo "make directory ${RWHOIS_ROOT_DIR}/dev"
-+	mkdir $RWHOIS_ROOT_DIR/dev
-+	mknod $RWHOIS_ROOT_DIR/dev/zero c 2 12
-+fi
  echo "done"
