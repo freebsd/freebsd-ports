@@ -1,17 +1,53 @@
 bin/genius
 bin/gnome-genius
-include/genius/calc.h
+bin/loader.gel
+include/genius/compil.h
+include/genius/dict.h
 include/genius/eval.h
+include/genius/geloutput.h
+include/genius/lexer.h
+include/genius/matop.h
+include/genius/matrix.h
+include/genius/matrixw.h
+include/genius/mpwrap.h
+include/genius/mpzextra.h
 include/genius/plug_api.h
 include/genius/structs.h
+include/genius/utype.h
 lib/genius/libtestplugin.a
+lib/genius/libtestplugin.la
 lib/genius/libtestplugin.so
 lib/genius/libtestplugin.so.0
+libexec/genius-readline-helper-fifo
 @unexec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -R
 @exec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -m %B
-share/gnome/apps/Utilities/gnome-genius.desktop
-share/gnome/genius/gel/lib.gel
+share/gnome/applications/gnome-genius.desktop
+share/gnome/genius/gel/calculus/differentiation.gel
+share/gnome/genius/gel/calculus/integration.gel
+share/gnome/genius/gel/calculus/limits.gel
+share/gnome/genius/gel/calculus/sums_products.gel
+share/gnome/genius/gel/combinatorics/factorial.gel
+share/gnome/genius/gel/combinatorics/misc.gel
+share/gnome/genius/gel/combinatorics/recursive_sequences.gel
+share/gnome/genius/gel/equation_solving/find_root.gel
+share/gnome/genius/gel/functions/delta.gel
+share/gnome/genius/gel/functions/elementary.gel
+share/gnome/genius/gel/functions/numerical.gel
+share/gnome/genius/gel/functions/orthogonal_polynomials.gel
 share/gnome/genius/gel/lib.cgel
+share/gnome/genius/gel/linear_algebra/bilinear_forms.gel
+share/gnome/genius/gel/linear_algebra/linear_algebra.gel
+share/gnome/genius/gel/linear_algebra/misc.gel
+share/gnome/genius/gel/linear_algebra/special_matrices.gel
+share/gnome/genius/gel/linear_algebra/subspaces.gel
+share/gnome/genius/gel/misc/misc.gel
+share/gnome/genius/gel/number_theory/factoring.gel
+share/gnome/genius/gel/number_theory/misc.gel
+share/gnome/genius/gel/number_theory/modulus.gel
+share/gnome/genius/gel/number_theory/primes.gel
+share/gnome/genius/gel/number_theory/quadratic.gel
+share/gnome/genius/gel/statistics/basic.gel
+share/gnome/genius/manual.txt
 share/gnome/genius/plugins/test.plugin
 share/locale/cs/LC_MESSAGES/genius.mo
 share/locale/de/LC_MESSAGES/genius.mo
@@ -24,6 +60,14 @@ share/locale/pl/LC_MESSAGES/genius.mo
 share/locale/pt/LC_MESSAGES/genius.mo
 share/locale/sv/LC_MESSAGES/genius.mo
 @dirrm share/gnome/genius/plugins
+@dirrm share/gnome/genius/gel/calculus
+@dirrm share/gnome/genius/gel/combinatorics
+@dirrm share/gnome/genius/gel/equation_solving
+@dirrm share/gnome/genius/gel/functions
+@dirrm share/gnome/genius/gel/linear_algebra
+@dirrm share/gnome/genius/gel/misc
+@dirrm share/gnome/genius/gel/number_theory
+@dirrm share/gnome/genius/gel/statistics
 @dirrm share/gnome/genius/gel
 @dirrm share/gnome/genius
 @dirrm lib/genius
