@@ -12,7 +12,7 @@ MASTER_SITES=	http://steghide.sourceforge.net/download/
 
 MAINTAINER=	rasputin@submonkey.net
 
-LIB_DEPENDS=	mcrypt.6:${PORTSDIR}/security/libmcrypt \
+LIB_DEPENDS=	mcrypt.7:${PORTSDIR}/security/libmcrypt \
 		mhash.2:${PORTSDIR}/security/mhash
 
 GNU_CONFIGURE=	yes
