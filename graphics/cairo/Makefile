@@ -10,7 +10,7 @@ PORTVERSION=	0.3.0
 CATEGORIES=	graphics
 MASTER_SITES=	http://cairographics.org/snapshots/
 
-MAINTAINER=	ahze@FreeBSD.org
+MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Vector graphics library with cross-device output support
 
 LIB_DEPENDS=	pixman.1:${PORTSDIR}/graphics/libpixman \

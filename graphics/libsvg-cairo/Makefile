@@ -10,7 +10,7 @@ PORTVERSION=	0.1.5
 CATEGORIES=	graphics
 MASTER_SITES=	http://cairographics.org/snapshots/
 
-MAINTAINER=	ahze@FreeBSD.org
+MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	SVG rendering library
 
 LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
