@@ -18,7 +18,6 @@ MASTER_SITES=	ftp://ftp.xmms.org/xmms/1.2.x/ \
 
 PATCH_SITES=	${MASTER_SITE_LOCAL}
 PATCH_SITE_SUBDIR=	sobomax
-PATCHFILES=	xmms-1.2.1-3dnow-20000620.patch.gz
 
 MAINTAINER=	esk@ira.uka.de
 
@@ -72,6 +71,7 @@ CONFIGURE_ENV+=	GTK_CONFIG="${GTK_CONFIG}" \
 .include <bsd.port.pre.mk>
 
 .if !defined(WITHOUT_3DNOW) && ${OSVERSION} >= 400021
+PATCHFILES=	xmms-1.2.1-3dnow-20000620.patch.gz
 CONFIGURE_ARGS+=	--enable-3dnow
 .endif
 
