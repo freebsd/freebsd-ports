@@ -14,7 +14,7 @@ DISTNAME=	${PORTNAME:S/-//}${PORTVERSION}
 MAINTAINER=	q@uni.de
 COMMENT=	The most popular open source Internet Relay Chat bot
 
-.if !defined(WITH_TCL)
+.if !defined(WITHOUT_TCL)
 BUILD_DEPENDS+=		${LOCALBASE}/include/tcl8.3/tcl.h:${PORTSDIR}/lang/tcl83
 CONFIGURE_ARGS+=	--with-tcllib=${LOCALBASE}/lib/libtcl83.so \
 			--with-tclinc=${LOCALBASE}/include/tcl8.3/tcl.h
