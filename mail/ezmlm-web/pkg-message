@@ -11,3 +11,9 @@ use a .htaccess file, or provide some other means of security.
 
 Have a look at the README file in %%PREFIX%%/share/ezmlm-web for
 more information. There are also some sample files there.
+
+In order to make ezmlm-web work properly, you will have to create
+a configuration file for it in %%EZMLM_DIR%%/etc/ezmlm.
+A sample ezmlmwebrc (ezmlmwebrc.sample) file is provided in that 
+directory. This sample will work `as is', but allows you to customise
+ezmlm-web to your liking. At a minimum just cp ezmlmwebrc.sample ezmlmwebrc
