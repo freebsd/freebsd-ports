@@ -116,7 +116,6 @@
     SUBDIR += kbiff
     SUBDIR += kiltdown
     SUBDIR += kshowmail
-    SUBDIR += ksig
     SUBDIR += lbdb
     SUBDIR += liamail
     SUBDIR += libesmtp
