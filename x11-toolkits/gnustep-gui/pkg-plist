@@ -568,6 +568,7 @@ System/Library/Services/example.service/Resources/Info-gnustep.plist
 System/Library/Services/example.service/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu/example
 System/Makefiles/Additional/gui.make
 System/Tools/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu/gopen
+System/Tools/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu/gsnd
 System/Tools/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu/make_services
 System/Tools/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu/set_show_service
 @dirrm System/Library/Services/example.service/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu
