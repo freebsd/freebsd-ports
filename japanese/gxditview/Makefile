@@ -12,7 +12,7 @@ CATEGORIES=	japanese print
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	groff
 
-PATCH_SITES=	ftp://ftp.ae.keio.ac.jp/pub/GNU/ \
+PATCH_SITES=	ftp://ftp.lab.kdd.co.jp/Usenet/fj.sources/1996/jan/ \
 		ftp://ftp.hipecs.hokudai.ac.jp/pub/GNU/jp/
 PATCHFILES=	jgroff-0.99.diff.gz
 PATCH_DIST_ARGS=?	-d ${WRKSRC}/.. --forward --quiet -E -p1
