@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	gtk
-PORTVERSION=	1.99.15
+PORTVERSION=	1.99.16
 CATEGORIES=	x11-toolkits python
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/pygtk/1.99
@@ -17,7 +17,7 @@ MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	A set of Python bindings for GTK
 
 LIB_DEPENDS=	glade-2.0.0:${PORTSDIR}/devel/libglade2 \
-		gtkgl-2.0:${PORTSDIR}/x11-toolkits/gtkglarea2
+		gtkgl-2.0.1:${PORTSDIR}/x11-toolkits/gtkglarea2
 RUN_DEPENDS=	${PYNUMERIC}
 
 USE_BZIP2=	yes
