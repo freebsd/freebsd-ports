@@ -1,15 +1,22 @@
---- ../config_office/set_soenv.1.orig	Tue Apr  2 23:59:46 2002
-+++ ../config_office/set_soenv.1	Wed Apr  3 00:02:47 2002
+--- set_soenv.1.orig	Wed Apr 17 22:41:31 2002
++++ set_soenv.1	Wed May 29 14:17:31 2002
 @@ -40,7 +40,7 @@
  #
  # Set this value equal to the corresponding amount of
  # command line arguments. 
 -my $numArgs = 20;
-+my $numArgs = 23;
++my $numArgs = 25;
  # Determining the amount of arguments in the call.
  my $numEnter = $#ARGV + 1;
  if ( $numEnter != $numArgs ) 
-@@ -72,8 +72,9 @@
+@@ -66,14 +66,15 @@
+ my ( $CALL_CDECL, $COMMON_OUTDIR, $NO_SRS_PATCH, $PROFULLSWITCH, $BIG_GOODIES, $BMP_WRITES_FLAG, 
+      $common_build, $MK_UNROLL, $NO_REC_RES, $PROEXT, $SO3, $SOLAR_JAVA, 
+      $SOLAR_PLUGIN, $TF_PACKAGES, $TF_SDBAPI, $TF_FILEURL, $UPDATER, $BUILD_DELIVER, $USE_NEWCHARSET, $USE_NEW_RSC, $VCL, 
+-     $TF_CFGDATA, $TF_SVDATA,
++     $TF_CFGDATA, $TF_SVDATA, $CC, $CXX,
+      $USE_NAMESPACE, $BUILD_SOSL, $LOCAL_SOLENV, $ENABLEUNICODE, $NEW_JAR_PACK, $NO_BSYMBOLIC, 
+      $USE_XPRINT, $BUILD_SOSL_RELEASE );
  #
  # Platform dependent constant values.
  my ( $BIG_SVX, $COM, $CPU, $CPUNAME, $CVER, $DLLSUFFIX, $GLIBC, $GUI, $GUIBASE, $GUIENV, 
@@ -21,7 +28,18 @@
  #
  #-------------------------------------------
  # IIc. Declaring the environment variables.
-@@ -316,7 +317,7 @@
+@@ -145,7 +146,9 @@
+ $STLPORT4	= $ARGV [ 12 ];     # Location of STLport4
+ $MINGWIN32	= $ARGV [ 17 ];     # use MINGWIN32
+ $use_shell	= $ARGV [ 18 ];     # preferred shell
+-$USE_GCC3	= $ARGV [ 19 ];     # use gcc3 (only for unxlngi4 at the moment)
++$USE_GCC3	= $ARGV [ 19 ];     # use gcc3 (only for unxlngi4 and unxfbsd5i at the moment)
++$CC		= $ARGV [ 23 ];     # get cc from environment
++$CXX		= $ARGV [ 24 ];     # use c++ from environment
+ #
+ #---------------------------------------------------------------
+ # IIIb. Initialising the variables for the system commands, etc.
+@@ -316,7 +319,7 @@
     $PROSWITCH      = "-DPRODUCT";
     $XPVERSION      = "3";
     $SOLAR_JAVA	   = "TRUE"; 
@@ -30,7 +48,22 @@
  } 
  elsif ( $platform eq "$FreeBSD" ) 
  {     print "Setting FreeBSD specific values... ";
-@@ -339,6 +340,9 @@
+@@ -326,7 +329,14 @@
+       $COMPATH        = $ARGV[ 0 ]; 
+       $CPU            = "I";
+       $CPUNAME        = "INTEL";
++if ($USE_GCC3 eq  "TRUE")
++   {
++      $CVER           = "C300";
++   }
++else
++   {
+       $CVER           = "C295";
++}
+       $DLLSUFFIX      = "fi";
+       $GUI            = "UNX";
+       $GUIBASE        = "unx";
+@@ -339,6 +349,9 @@
        $PATH_SEPERATOR = $ps;
        $PROSWITCH      = "-DPRODUCT";
        $XPVERSION      = "3";
@@ -40,7 +73,7 @@
  } 
  elsif ( $platform eq "$Linux" ) 
  {
-@@ -929,15 +933,16 @@
+@@ -934,15 +947,16 @@
                          $D.$COM.
  			$D.$CVER.
                          $D.$GVER.
@@ -60,7 +93,7 @@
  {  $SOLARDEF         .= $D."GLIBC=".$GLIBC;
  }
  $SOLARDEF            .= $D."SUPD=$UPD".
-@@ -1034,7 +1039,7 @@
+@@ -1039,7 +1053,7 @@
                          $ps.$USR.$LIB.
                          $ps.$USR_LOCAL.$BIN;
  }
@@ -69,7 +102,7 @@
  {  $PATH              = $cur_dir.
                          $ps.'$SOLARVER'.$ds.'$UPD'.$ds.'$INPATH'.$BIN.
                          $ps.'$SOLARENV'.$ds.'$OUTPATH'.$BIN.
-@@ -1053,6 +1058,22 @@
+@@ -1058,6 +1072,22 @@
  			$ps.$USR.$ds."X11".$BIN.
                          $ps.$USR.$LIB;
  }
@@ -92,7 +125,7 @@
  elsif ($platform eq "$Winnt")
  { 
     my ( $noldPATH );
-@@ -1191,7 +1212,7 @@
+@@ -1196,7 +1226,7 @@
  	$SOLARINC            .= $I.$USR.$INCLUDE;
  }
  $SOLARINC	     .= $STLPORT_stlport;
@@ -101,7 +134,7 @@
  {
  # This simply adds an include path, so even cases that break the FHS work
  $SOLARINC            .= $STLPORT_inc_stlport;
-@@ -1205,11 +1226,6 @@
+@@ -1210,11 +1240,6 @@
  {  $SOLARINC         .= $I.'$COMPATH'.$ds."include";
  }
  
@@ -113,10 +146,12 @@
  $SOLARINC            .= $I.'$SOLARENV'.$INC.$ds."Xp31".
                          $I.'$JAVA_HOME'.$INCLUDE;
  
-@@ -1399,6 +1415,9 @@
+@@ -1407,6 +1432,11 @@
  ToFile( "GUIENV",            $GUIENV,            "e" );
  ToFile( "GVER",              $GVER,              "e" );
  ToFile( "OS",                $OS,                "e" );
++ToFile( "CC",                $CC,                "e" );
++ToFile( "CXX",               $CXX,               "e" );
 +ToFile( "OSVERSION",         $OSVERSION,         "e" );
 +ToFile( "PTHREAD_CFLAGS",    $PTHREAD_CFLAGS,    "e" );
 +ToFile( "PTHREAD_LIBS",      $PTHREAD_LIBS,      "e" );
