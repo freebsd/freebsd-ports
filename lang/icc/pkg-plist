@@ -1121,6 +1121,7 @@ intel/%%COMPILERDIR%%/ia32/include/mmintrin.h
 intel/%%COMPILERDIR%%/ia32/include/new
 intel/%%COMPILERDIR%%/ia32/include/new.h
 intel/%%COMPILERDIR%%/ia32/include/pgouser.h
+intel/%%COMPILERDIR%%/ia32/include/pmmintrin.h
 intel/%%COMPILERDIR%%/ia32/include/proto.h
 intel/%%COMPILERDIR%%/ia32/include/sse2mmx.h
 intel/%%COMPILERDIR%%/ia32/include/stdarg.h
