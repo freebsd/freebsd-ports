@@ -401,6 +401,7 @@
     SUBDIR += xdvik-vflib-pk400
     SUBDIR += xdvik-vflib-pk600
     SUBDIR += xdvik-vflib-pkall
+    SUBDIR += xemacs-devel-canna
     SUBDIR += xemacs21-canna
     SUBDIR += xemacs21-canna+freewnn
     SUBDIR += xemacs21-canna+wnn6
