@@ -71,6 +71,7 @@
     SUBDIR += fly
     SUBDIR += fnlib
     SUBDIR += fractorama
+    SUBDIR += frontline
     SUBDIR += fujiplay
     SUBDIR += fxtv
     SUBDIR += g2
