@@ -3,7 +3,7 @@
 # Date created:		14 February 1995
 # Whom:			asami
 #
-# $Id: Makefile,v 1.9 1998/09/16 02:24:49 steve Exp $
+# $Id: Makefile,v 1.10 1998/12/10 17:24:33 vanilla Exp $
 #
 
 DISTNAME=	xphoon
@@ -15,7 +15,7 @@ MASTER_SITES=	ftp://ftp.cdrom.com/pub/X11/R5contrib/ \
 		ftp://ftp.is.co.za/pub/x/R5contrib/
 EXTRACT_SUFX=	.tar.Z
 
-MAINTAINER=	ports@FreeBSD.ORG
+MAINTAINER=	andrews@technologist.com
 
 USE_IMAKE=	yes
 
