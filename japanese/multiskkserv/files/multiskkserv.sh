@@ -25,7 +25,7 @@ command=%%PREFIX%%/sbin/multiskkserv
 # set defaults
 
 multiskkserv_enable=${multiskkserv_enable:-"NO"}
-multiskkserv_flags=${multiskkserv_flags:-"%%PREFIX%%/%%SKKDIR%%/SKK-JISYO.%%SKKJISYO_TYPE%%.cdb"}
+multiskkserv_flags=${multiskkserv_flags:-"%%PREFIX%%/%%SKKDIR%%/SKK-JISYO.%%SKKJISYO_TYPE%%.cdb &"}
 
 load_rc_config ${name}
 run_rc_command "$1"
