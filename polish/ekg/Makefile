@@ -6,7 +6,7 @@
 
 PORTNAME=	ekg
 PORTVERSION=	1.1
-CATEGORIES=	net
+CATEGORIES=	polish net
 MASTER_SITES=	http://dev.null.pl/ekg/
 DISTNAME=	${PORTNAME}-${PORTVERSION}
 

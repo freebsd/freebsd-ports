@@ -5,12 +5,13 @@
 # $FreeBSD$
 #
 
-PORTNAME=	pl-aspell
+PORTNAME=	aspell
+CATEGORIES=	polish
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Aspell with Polish dictionary
 
-MASTERDIR=	${.CURDIR}/../aspell
+MASTERDIR=	${.CURDIR}/../../textproc/aspell
 
 ASPELL_PL=	tak
 
