@@ -521,6 +521,8 @@ jdk%%JDK_VERSION%%/index.html
 @unexec rmdir %D/share/java/classes
 @unexec rmdir %D/share/java
 @unexec rmdir %D/share/doc/java
+@exec %D/bin/registervm "%D/jdk%%JDK_VERSION%%/bin/java # JDK%%JDK_VERSION%%"
+@unexec %D/bin/unregistervm JDK%%JDK_VERSION%%
 @dirrm jdk%%JDK_VERSION%%/lib/security
 @dirrm jdk%%JDK_VERSION%%/lib/locale/ja_JP.UTF-8/app-defaults
 @dirrm jdk%%JDK_VERSION%%/lib/locale/ja_JP.UTF-8
