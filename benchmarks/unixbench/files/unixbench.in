@@ -1,0 +1,10 @@
+#!/bin/sh
+
+TMPDIR=${TMPDIR-/var/tmp}
+RESULTDIR=${RESULTDIR-/tmp}
+
+export TMPDIR RESULTDIR
+
+cd %%PREFIX%%/lib/unixbench
+
+exec ./Run "$@"
