@@ -88,12 +88,13 @@ CONFIGURE_ARGS+=--enable-netscapehack
 .endif
 
 .if defined(WITH_DRAC)
-BROKEN=	currently not supported due to lack of acconfig.h
 EXTRA_PATCHES+=	${WRKSRC}/contrib/drac_auth.patch
-#EXTRA_PATCHES+=	${FILESDIR}/drac_auth.patch
-EXTRA_PATCHES+=	${FILESDIR}/extra-patch-acconfig.h \
-		${FILESDIR}/extra-patch-aclocal.m4
-USE_AUTOHEADER=	YES
+#EXTRA_PATCHES+=	${FILESDIR}/extra-patch-acconfig.h
+EXTRA_PATCHES+=	${FILESDIR}/extra-patch-aclocal.m4
+EXTRA_PATCHES+=	${FILESDIR}/extra-patch-config.h.in
+#USE_AUTOHEADER=	YES
+USE_AUTOCONF=	YES
+WANT_AUTOCONF_VER=257
 CONFIGURE_ARGS+=--with-drac=${LOCALBASE}
 BUILD_DEPENDS+=	${LOCALBASE}/lib/libdrac.a:${PORTSDIR}/mail/drac
 .endif
@@ -155,6 +156,12 @@ pre-everything::
 		${ECHO_MSG} "exapmle, WITH_BDB_VER=4 for db4."; \
 		${ECHO_MSG} ""; \
 	fi
+.endif
+
+.if defined(WITH_DRAC)
+pre-patch:
+		@${REINPLACE_CMD} -e '/^Index: acconfig\.h/,/^Index: /d' \
+			${WRKSRC}/contrib/drac_auth.patch
 .endif
 
 post-patch:
