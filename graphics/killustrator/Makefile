@@ -3,7 +3,7 @@
 # Date created:        07 May 1998
 # Whom:                Yukihiro Nakai <Nakai@technologist.com>
 #
-# $Id: Makefile,v 1.4 1998/10/09 10:05:49 asami Exp $
+# $Id: Makefile,v 1.5 1999/01/12 16:50:56 vanilla Exp $
 #
 
 DISTNAME=	killustrator-0.2.1
@@ -12,7 +12,7 @@ MASTER_SITES=	http://wwwiti.cs.uni-magdeburg.de/~sattler/pub/killustrator/
 
 MAINTAINER=	nacai@iname.com
 
-LIB_DEPENDS=	kdecore.1:${PORTSDIR}/x11/kde
+LIB_DEPENDS=	kdecore.2:${PORTSDIR}/x11/kde11
 
 BROKEN=		upgrade
 
