@@ -124,10 +124,12 @@ post-install:
 #	${INSTALL_MAN} ${WRKDIR}/${DISTNAME}/doc/*ps.gz ${PREFIX}/share/doc/pgsql
 	@ ${CAT} ${PKGDIR}/pkg-plist.doc >> ${TMPPLIST}
 .endif
+	@ ${SED} 's|%%PREFIX%%|${PREFIX}|g' \
+		< ${FILESDIR}/dot.profile.in \
+		> ${PREFIX}/pgsql/dot.profile.dist;
 	@ if [ ! -f ${PREFIX}/pgsql/.profile ]; then \
-		${SED} 's|%%PREFIX%%|${PREFIX}|g' \
-			< ${FILESDIR}/dot.profile.in \
-			> ${PREFIX}/pgsql/.profile; \
+		${CP} ${PREFIX}/pgsql/dot.profile.dist \
+			${PREFIX}/pgsql/.profile; \
 	fi
 	@ ${CHOWN} -R pgsql:pgsql ${PREFIX}/pgsql
 	@ ${CHOWN} root:pgsql ${PREFIX}/pgsql/lib
