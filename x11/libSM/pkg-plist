@@ -1,0 +1,8 @@
+include/X11/SM/SM.h
+include/X11/SM/SMlib.h
+include/X11/SM/SMproto.h
+lib/libSM.a
+lib/libSM.la
+lib/libSM.so
+lib/libSM.so.6
+libdata/pkgconfig/sm.pc
