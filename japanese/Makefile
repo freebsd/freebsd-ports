@@ -1,6 +1,7 @@
 # $FreeBSD$
 #
 
+    SUBDIR += ASCIIdates98-fpw
     SUBDIR += Canna
     SUBDIR += FreeWnn-lib
     SUBDIR += FreeWnn-server
