@@ -110,7 +110,6 @@ PicMonger	ports/news/PicMonger
 R-a4		ports/math/R-a4
 R-letter	ports/math/R-letter
 SETIsupport	ports/astro/SETIsupport
-SN		ports/devel/SN
 SSLtelnet	ports/net/SSLtelnet
 STk		ports/lang/STk
 Sather		ports/lang/Sather
@@ -7209,6 +7208,7 @@ soundgrab	ports/audio/soundgrab
 soundtracker	ports/audio/soundtracker
 soup		ports/devel/soup
 source-highlight	ports/textproc/source-highlight
+sourcenav	ports/devel/sourcenav
 sox		ports/audio/sox
 sp		ports/textproc/sp
 spacearyarya	ports/games/spacearyarya
