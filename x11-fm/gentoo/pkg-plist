@@ -215,6 +215,7 @@ etc/gentoorc
 %%NLS%%share/locale/de/LC_MESSAGES/gentoo.mo
 %%NLS%%share/locale/fr/LC_MESSAGES/gentoo.mo
 %%NLS%%share/locale/it/LC_MESSAGES/gentoo.mo
+%%NLS%%share/locale/ja_JP.UTF-8/LC_MESSAGES/gentoo.mo
 %%NLS%%share/locale/pl/LC_MESSAGES/gentoo.mo
 %%NLS%%share/locale/ru_RU.CP1251/LC_MESSAGES/gentoo.mo
 %%NLS%%share/locale/ru_RU.KOI8-R/LC_MESSAGES/gentoo.mo
@@ -241,3 +242,5 @@ etc/gentoorc
 %%NLS%%@unexec rmdir %D/share/locale/ru_RU.UTF-8 2> /dev/null || true
 %%NLS%%@unexec rmdir %D/share/locale/ru_RU.utf8/LC_MESSAGES 2> /dev/null || true
 %%NLS%%@unexec rmdir %D/share/locale/ru_RU.utf8 2> /dev/null || true
+%%NLS%%@unexec rmdir %D/share/locale/ja_JP.UTF-8/LC_MESSAGES 2> /dev/null || true
+%%NLS%%@unexec rmdir %D/share/locale/ja_JP.UTF-8 2> /dev/null || true
