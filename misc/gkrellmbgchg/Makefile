@@ -9,7 +9,7 @@ PORTNAME=	gkrellmbgchg
 PORTVERSION=	0.0.4
 PORTREVISION=	1
 CATEGORIES=	misc
-MASTER_SITES=	http://www.personal.uni-jena.de/~p6best/comp/sources/
+MASTER_SITES=	http://www.bender-suhl.de/stefan/comp/sources/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A plugin for GKrellM, which changes the desktop's background image
