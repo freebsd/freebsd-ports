@@ -8,4 +8,4 @@ Lookup works on GNU Emacs 19.28 or later, XEmacs 20.3 or later, Mule
 NOTE: This package is a "meta-port" to depend on bitmap-emacs20 and
 ja-lookup-mule.
 
-WWW: http://openlab.ring.gr.jp/lookup/index.html.en
+WWW: http://openlab.ring.gr.jp/edict/lookup/index.html
