@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	ekg
-PORTVERSION=	1.1
+PORTVERSION=	1.3
 CATEGORIES=	polish net
 MASTER_SITES=	http://dev.null.pl/ekg/
 DISTNAME=	${PORTNAME}-${PORTVERSION}
