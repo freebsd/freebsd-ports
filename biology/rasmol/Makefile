@@ -18,6 +18,8 @@ WRKSRC=		${WRKDIR}/RasMol_2.7.2/src
 
 USE_X_PREFIX=	yes
 
+.include <bsd.port.pre.mk>
+
 .if ${XFREE86_VERSION} == 3
 BUILD_DEPENDS+=	imake:${PORTSDIR}/devel/imake
 .elif ${XFREE86_VERSION} == 4
@@ -38,4 +40,4 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/../data/1crn.pdb ${PREFIX}/lib/X11/rasmol
 	${INSTALL_DATA} ${WRKSRC}/../data/3cro.pdb ${PREFIX}/lib/X11/rasmol
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
