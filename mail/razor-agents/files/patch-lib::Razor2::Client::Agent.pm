@@ -15,3 +15,11 @@
          }
          next unless defined(my $line = <$fh>);
          if ($line =~ /^From /) {
+@@ -969,6 +969,7 @@
+     my @fns;
+     if (opendir D,$self->{razorhome}) {
+         @fns = map "$self->{razorhome}/$_", grep /^server\.[\S]+\.conf$/, readdir D;
++        @fns = map { /^(\S+)$/, $1 } @fns; # untaint
+         closedir D;
+     }
+     foreach (@fns) {
