@@ -1,6 +1,7 @@
 bin/wmd
 bin/wmk
 bin/wml
+bin/wmb
 bin/wml_p1_ipp
 bin/wml_p2_mhc
 bin/wml_p3_eperl
@@ -101,6 +102,7 @@ lib/wml/perl/lib/site_perl/IO.pm
 man/man1/wmd.1.gz
 man/man1/wmk.1.gz
 man/man1/wml.1.gz
+man/man1/wmb.1.gz
 man/man1/wml_p1_ipp.1.gz
 man/cat1/wml_p2_mhc.1.gz
 man/man1/wml_p3_eperl.1.gz
