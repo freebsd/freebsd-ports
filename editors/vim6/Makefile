@@ -4,14 +4,14 @@
 # Date created:         Sat June 29, 1996
 # Whom:                 David O'Brien (obrien@cs.ucdavis.edu)
 #
-# $Id: Makefile,v 1.22 1998/02/19 18:08:46 obrien Exp $
+# $Id: Makefile,v 1.23 1998/03/22 22:13:58 obrien Exp $
 #
 
-DISTNAME=	vim-5.0
+DISTNAME=	vim-5.1
 CATEGORIES=	editors
 MASTER_SITES=	ftp://nuxi.ucdavis.edu/pub/vim/unix/ \
 		ftp://ftp.nuxi.com/pub/vim/unix/ \
-		ftp://ftp.oce.nl/pub/misc/vim/unix/  \
+		ftp://ftp.oce.nl/pub/vim/unix/  \
 		ftp://ftp.prz.tu-berlin.de/pub/unix/editors/vim/unix/  \
 		ftp://ftp.is.co.za/applications/editors/vim/  \
 		ftp://ftp.progsoc.uts.edu.au/pub/vim/
