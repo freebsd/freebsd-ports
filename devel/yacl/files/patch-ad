@@ -1,0 +1,21 @@
+--- base/intseq.cxx.orig       Wed Feb 19 15:42:34 1997
++++ base/intseq.cxx    Wed Sep 15 02:14:05 1999
+@@ -35,6 +35,8 @@
+ 
+ 
+ #include "base/seqimp.cxx"
++#include "base/long.h"
++#include "base/intseq.h"
+ 
+ 
+ #if (defined(__GNUC__) && __GNUC_MINOR__ >= 6)
+@@ -47,9 +49,6 @@
+ #if defined(_MSC_VER)
+ template CL_Sequence<long>;
+ #endif
+-
+-#include "base/long.h"
+-#include "base/intseq.h"
+ 
+ 
+ 

@@ -1,0 +1,11 @@
+--- ui/strview.cxx.orig        Wed Sep 15 02:46:28 1999
++++ ui/strview.cxx     Sun Jun 29 21:32:38 1997
+@@ -1249,7 +1249,7 @@
+     } while (1);
+     _selection.AddDependent (bind);
+ #elif defined(__X_MOTIF__)
++    StrViewBind bind (this, &UI_StringView::_SelectionChanged);
+-    StrViewBind bind (this, UI_StringView::_SelectionChanged);
+     _selection.RemoveDependent (bind);
+     _selection.MakeEmpty ();
+     int* pos_list;
