@@ -1,0 +1,12 @@
+--- main/php_config.h.in.orig	Thu Jun 19 00:06:40 2003
++++ main/php_config.h.in	Sat Jun 28 15:47:56 2003
+@@ -1523,6 +1523,9 @@
+ #undef HAVE_GD_GIF_CREATE
+ 
+ /*   */
++#undef HAVE_GD_GIF_ANIM
++
++/*   */
+ #undef HAVE_GD_WBMP
+ 
+ /*   */
