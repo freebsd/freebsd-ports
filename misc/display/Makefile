@@ -6,24 +6,14 @@
 # $FreeBSD$
 #
 
-DISTNAME=		display
-PKGNAME=		display-1.0
+DISTNAME=		display-1.1
 CATEGORIES=		misc
-MASTER_SITES=		${MASTER_SITE_COMP_SOURCES}
-MASTER_SITE_SUBDIR=	unix/volume8
-EXTRACT_SUFX=		.Z
-
-PATCH_SITES=		${MASTER_SITES}
-PATCHFILES=		display.pch.Z
+MASTER_SITES=		http://www.ipsmart.com/src/
+EXTRACT_SUFX=		.tgz
 
 MAINTAINER=		ports@FreeBSD.org
 
-BUILD_DEPENDS=		gunshar:${PORTSDIR}/archivers/gshar+gunshar
-
-NO_WRKSUBDIR=		yes
-EXTRACT_CMD=		zcat
-EXTRACT_BEFORE_ARGS=
-EXTRACT_AFTER_ARGS=	| gunshar -d ${WRKDIR}
+GNU_CONFIGURE=		yes
 
 MAN1=			display.1
 
