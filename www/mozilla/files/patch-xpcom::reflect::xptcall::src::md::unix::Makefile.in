@@ -1,21 +1,16 @@
---- xpcom/reflect/xptcall/src/md/unix/Makefile.in.orig	Sun Jul 20 18:16:25 2003
-+++ xpcom/reflect/xptcall/src/md/unix/Makefile.in	Sun Jul 20 11:58:05 2003
-@@ -59,13 +59,11 @@
- CPPSRCS		:= xptcinvoke_gcc_x86_unix.cpp xptcstubs_gcc_x86_unix.cpp
+--- xpcom/reflect/xptcall/src/md/unix/Makefile.in	Thu Aug 14 21:00:23 2003
++++ xpcom/reflect/xptcall/src/md/unix/Makefile.in	Sat Dec 13 13:02:49 2003
+@@ -49,6 +49,9 @@
+ ifeq (86,$(findstring 86,$(OS_TEST)))
+ CPPSRCS		:= xptcinvoke_unixish_x86.cpp xptcstubs_unixish_x86.cpp
  endif
++ifeq (amd64,$(OS_TEST))
++CPPSRCS		:= xptcinvoke_amd64_freebsd.cpp xptcstubs_amd64_freebsd.cpp
++endif
  endif
--# IA64 Linux
--ifneq (,$(filter Linux,$(OS_ARCH)))
-+# IA64 Linux & FreeBSD
- ifneq (,$(findstring ia64,$(OS_TEST)))
- CPPSRCS		:= xptcinvoke_ipf64.cpp xptcstubs_ipf64.cpp
- ASFILES		:= xptcstubs_asm_ipf64.s xptcinvoke_asm_ipf64.s
- endif
--endif
  #
- # BeOS/Intel (uses the same unixish_x86 code)
- #
-@@ -106,9 +104,15 @@
+ # New code for Linux, et. al., with gcc
+@@ -106,9 +109,15 @@
  ASFILES		:= xptcinvoke_asm_osf1_alpha.s xptcstubs_asm_osf1_alpha.s
  endif
  #
@@ -32,7 +27,7 @@
  CPPSRCS		:= xptcinvoke_linux_alpha.cpp xptcstubs_linux_alpha.cpp
  endif
  #
-@@ -292,6 +296,15 @@
+@@ -294,6 +303,15 @@
  ifeq ($(OS_ARCH)$(OS_TEST),NetBSDsparc)
  CPPSRCS		:= xptcinvoke_sparc_netbsd.cpp xptcstubs_sparc_netbsd.cpp
  ASFILES		:= xptcinvoke_asm_sparc_netbsd.s xptcstubs_asm_sparc_netbsd.s
