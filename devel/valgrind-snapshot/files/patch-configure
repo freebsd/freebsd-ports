@@ -1,0 +1,11 @@
+--- configure.orig	Sat Aug 21 00:03:33 2004
++++ configure	Sat Aug 21 00:03:13 2004
+@@ -4020,7 +4020,7 @@
+ 
+         ;;
+ 
+-     *freebsd5*)
++     *freebsd[56]*)
+         echo "$as_me:$LINENO: result: ok (${host_os})" >&5
+ echo "${ECHO_T}ok (${host_os})" >&6
+         VG_PLATFORM="x86-freebsd"
