@@ -6,6 +6,7 @@
     SUBDIR += R-letter
     SUBDIR += abs
     SUBDIR += add
+    SUBDIR += algae
     SUBDIR += apc
     SUBDIR += arpack
     SUBDIR += asir2000

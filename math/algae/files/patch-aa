@@ -1,0 +1,17 @@
+--- Makefile.in.orig	Sun May 18 17:22:07 2003
++++ Makefile.in	Sun May 18 17:23:00 2003
+@@ -78,12 +78,12 @@
+ libdir = $(prefix)/lib
+ 
+ # Directory in which to install the man page.
+-mandir = $(datadir)/man/man$(manext)
++mandir = $(prefix)/man/man$(manext)
+ # The manpage extension
+ manext = 1
+ 
+ # Directory in which to install the Info files.
+-infodir = $(datadir)/info
++infodir = $(prefix)/info
+ 
+ # Directory in which to install the algae tools.
+ tooldir = $(datadir)/algae/$(VERSION_NUMBER)/tools
