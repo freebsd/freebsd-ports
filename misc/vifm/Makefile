@@ -6,13 +6,15 @@
 #
 
 PORTNAME=	vifm
-PORTVERSION=	0.1
+PORTVERSION=	0.2
 CATEGORIES=	misc
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	vifm
 
 MAINTAINER=	swalter@lettermax.de
 COMMENT=	Ncurses based file manager with vi like keybindings
+
+WRKSRC=		${WRKDIR}/${PORTNAME}
 
 .if defined(WITH_VIFM_SCREEN)
 RUN_DEPENDS=	screen:${PORTSDIR}/misc/screen
@@ -25,12 +27,16 @@ GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_REINPLACE=	yes
 
+post-patch:
+	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|g' \
+		${WRKSRC}/configure
+
 .if defined(WITH_VIFM_SCREEN)
 pre-build:
 	@${REINPLACE_CMD} -e "s/cfg.use_screen = 0/cfg.use_screen = 1/" \
-		${BUILD_WRKSRC}/src/config.c
+		${WRKSRC}/src/config.c
 	@${REINPLACE_CMD} -e "s/USE_SCREEN=0/USE_SCREEN=1/" \
-		${BUILD_WRKSRC}/src/vifmrc0.1
+		${WRKSRC}/src/vifmrc0.2
 .endif
 
 .include <bsd.port.mk>
