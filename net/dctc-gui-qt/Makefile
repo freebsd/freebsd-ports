@@ -16,6 +16,7 @@ DISTNAME=	dc-qt-${PORTVERSION}
 MAINTAINER=	lioux@FreeBSD.org
 COMMENT=	A Qt GUI for the Direct Connect (TM) dctc text client
 
+BUILD_DEPENDS=	qmake:${PORTSDIR}/devel/qmake
 RUN_DEPENDS=	dctc:${PORTSDIR}/net/dctc
 
 USE_QT_VER=	3
