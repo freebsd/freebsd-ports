@@ -23,7 +23,6 @@ RUN_DEPENDS=	wmaker:${PORTSDIR}/x11-wm/windowmaker
 USE_X_PREFIX=	yes
 INSTALLS_SHLIB=	yes
 USE_LIBTOOL=	yes
-MAKE_ARGS=	"-E CFLAGS"
 
 .if defined(WITH_ESD)
 ESD_DEPENDS=	esd.2:${PORTSDIR}/audio/esound
