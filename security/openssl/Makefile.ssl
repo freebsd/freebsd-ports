@@ -28,10 +28,13 @@
 	!defined(USE_OPENSSL_BETA) && \
 	!defined(USE_OPENSSL_PORT) && \
 	!exists(${LOCALBASE}/lib/libcrypto.so)
-#	4.7-STABLE has not yet 0.9.7a
-#	5.0-CURRENT has not yet 0.9.7a
+#	Security: version in base must be 0.9.7a
 .if exists(/usr/lib/libcrypto.so.3)
-#USE_OPENSSL_BASE=yes
+OPENSSLVER!=	${AWK} '/OPENSSL_VERSION_NUMBER/ { print $$3 }' \
+		/usr/include/openssl/opensslv.h
+.if ${OPENSSLVER} == 0x0090701fL
+USE_OPENSSL_BASE=yes
+.endif
 .endif
 .endif
 
