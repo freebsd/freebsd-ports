@@ -1,13 +1,13 @@
 # New ports collection makefile for:	squid
-# Version required:	1.1.beta16
+# Version required:	1.1.beta19
 # Date created:		Thu Nov  7 00:53:18 WST 1996
 # Whom:			Peter Wemm <peter@freebsd.org>
 #
-# $Id: Makefile,v 1.5 1996/11/12 08:26:06 peter Exp $
+# $Id: Makefile,v 1.6 1996/11/12 08:38:31 peter Exp $
 #
 
-DISTNAME=	squid-1.1.beta16
-PKGNAME=	squid-1.1b16
+DISTNAME=	squid-1.1.beta19
+PKGNAME=	squid-1.1b19
 CATEGORIES+=	www
 MASTER_SITES=  \
 	ftp://squid.nlanr.net/pub/squid-1.1.beta/ \
@@ -29,8 +29,8 @@ post-install:
 .for file in cachemgr.cgi client dnsserver ftpget pinger squid
 	strip ${PREFIX}/sbin/${file}
 .endfor
-	${MKDIR} ${PREFIX}/squid/logs
-	${MKDIR} ${PREFIX}/squid/cache
+	${MKDIR} -p ${PREFIX}/squid/logs
+	${MKDIR} -p ${PREFIX}/squid/cache
 	@if [ ! -f ${PREFIX}/etc/rc.d/squid.sh ]; then \
 		echo "Installing ${PREFIX}/etc/rc.d/squid.sh startup file."; \
 		echo "#!/bin/sh" > ${PREFIX}/etc/rc.d/squid.sh; \
