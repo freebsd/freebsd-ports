@@ -53,11 +53,13 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
       </body>
     </description>
     <references>
+      <cvename>CAN-2005-0687</cvename>
       <url>http://www.gentoo.org/security/en/glsa/glsa-200503-12.xml</url>
     </references>
     <dates>
       <discovery>2005-03-06</discovery>
       <entry>2005-04-02</entry>
+      <modified>2005-04-03</modified>
     </dates>
   </vuln>
 
