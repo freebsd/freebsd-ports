@@ -17,6 +17,6 @@ MAN1=          cronolog.1m cronosplit.1m
 GNU_CONFIGURE= yes
 
 post-install:
-	${STRIP} ${PREFIX}/sbin/cronolog ${PREFIX}/sbin/cronolog
+	${STRIP} ${PREFIX}/sbin/cronolog
 
 .include <bsd.port.mk>
