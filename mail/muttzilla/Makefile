@@ -13,8 +13,6 @@ MASTER_SITES=	http://www3.bc.sympatico.ca/brian_winters/mutt/
 
 MAINTAINER=	obrien@FreeBSD.org
 
-USE_GMAKE=	yes
-
 pre-configure:
 	@${PERL} -pi.orig \
 		-e "s:/etc/muttzilla.conf:${PREFIX}/etc/muttzilla.conf:g"  \
