@@ -34,6 +34,9 @@ PLIST_SUB+=	"GCCVERSION=${GCCVERSION}"
 NEWLIBNAME=	newlib-1.11.0
 PLIST=		${PKGDIR}/pkg-plist.${LCLTARGET}
 
+# autoheader is used by the port but autoconf is not, setting USE_AUTOCONF
+# will break the port.  Since USE_AUTOHEADER sets USE_AUTOCONF, this is
+# likely to break the port also.
 BUILD_DEPENDS=	autoheader:${PORTSDIR}/devel/autoconf \
 		${LCLTARGET}-as:${PORTSDIR}/devel/${LCLTARGET}-binutils \
 		${LCLTARGET}-ld:${PORTSDIR}/devel/${LCLTARGET}-binutils
