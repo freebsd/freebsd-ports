@@ -36,11 +36,11 @@ CFLAGS+=        -O3 -ffast-math -finline-functions -fomit-frame-pointer -funroll
 CFLAGS+=        -mcpu=i686 -march=i686 -mfancy-math-387
 .endif # i386
 .endif
-.if !defined(WITH_OPTIMIZED_FLAGS)
-	@${ECHO} "You can optimize by setting WITH_OPTIMIZED_FLAGS=yes."
-.endif
 
 pre-everything::
+.if !defined(WITH_OPTIMIZED_FLAGS)
+	@${ECHO_MSG} "You can optimize by setting WITH_OPTIMIZED_FLAGS=yes."
+.endif
 .if !defined(NOPORTDOCS) && !defined(TECH_DOC_INSTALL)
 	@${ECHO_MSG} "You can install technical documents"
 	@${ECHO_MSG} "by defining TECH_DOC_INSTALL"
