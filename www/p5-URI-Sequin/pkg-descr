@@ -6,5 +6,7 @@ Unlike traditional applications for doing this, it does not rely
 on a preset list of search engines and thus currently works with
 almost every search engine URL the author could get his hands on.
 
+WWW: http://search.cpan.org/search?dist=URI-Sequin
+
 -Anton
 <tobez@FreeBSD.org>

@@ -5,15 +5,16 @@
 # $FreeBSD$
 #
 
-PORTNAME=	Sequin
-PORTVERSION=	1.0
+PORTNAME=	URI-Sequin
+PORTVERSION=	1.1
 CATEGORIES=	www perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	URI
-PKGNAMEPREFIX=	p5-URI-
+PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	tobez@FreeBSD.org
 
+WRKSRC=		${WRKDIR}/sequin-${PORTVERSION}
 PERL_CONFIGURE=	yes
 
 MAN3=		URI::Sequin.3
@@ -26,7 +27,7 @@ pre-patch:
 
 post-install:
 	@${MKDIR} ${PREFIX}/lib/perl5/site_perl/${PERL_VER}/URI/Sequin/examples
-	@${INSTALL_DATA} ${WRKSRC}/Example.pl ${WRKSRC}/referer_log?.txt \
+	@${INSTALL_DATA} ${WRKSRC}/example.pl ${WRKSRC}/ref?.log \
 		${PREFIX}/lib/perl5/site_perl/${PERL_VER}/URI/Sequin/examples
 
 .include <bsd.port.mk>
