@@ -1,0 +1,23 @@
+--- configure.in.orig	Thu Nov  8 16:29:04 2001
++++ configure.in	Tue Dec 11 13:20:46 2001
+@@ -893,16 +893,11 @@
+ dnl>
+ dnl> user defined directory passed as option at configuration time
+ dnl>
+-  if test ".${GDCHART_ROOT}" != .; then
+-    if test -d $GDCHART_ROOT &&
+-       test -r $GDCHART_ROOT/libgdchart.a &&
+-       test -r $GDCHART_ROOT/gdc.h &&
+-       test -r $GDCHART_ROOT/gd-1.8.3/libgd.a &&
+-       test -r $GDCHART_ROOT/gd-1.8.3/gd.h &&
+-       test -r $GDCHART_ROOT/zlib-1.1.3/libz.a; then
++  if test 1; then
++    if test -d $GDCHART_ROOT; then
+          GDCHART_ROOT=`cd ${GDCHART_ROOT} && pwd`
+-         MORELIBS="${MORELIBS} -L$GDCHART_ROOT -lgdchart -L$GDCHART_ROOT/gd-1.8.3 -lgd -L$GDCHART_ROOT/gd-1.8.3/libpng-1.0.8 -lpng -L$GDCHART_ROOT/zlib-1.1.3 -lz"
+-         INCS="${INCS} -I$GDCHART_ROOT"
++         MORELIBS="${MORELIBS} -L${prefix}/lib -lgdchart -lgd -lpng -lz"
++         INCS="${INCS} -I${prefix}/include/gd"
+          AC_DEFINE(HAVE_GDCHART)
+          AC_MSG_RESULT([found in $GDCHART_ROOT])
+     else
