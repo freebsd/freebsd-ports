@@ -25,7 +25,8 @@ LIB_DEPENDS=	glib12.3:$(PORTSDIR)/devel/glib12 \
 		gtk12.2:$(PORTSDIR)/x11-toolkits/gtk12 \
 		nspr4.1:$(PORTSDIR)/devel/nspr
 .endif
-RUN_DEPENDS=	javavm:${PORTSDIR}/java/javavmwrapper
+RUN_DEPENDS=	javavm:${PORTSDIR}/java/javavmwrapper \
+		${X11BASE}/lib/X11/fonts/URW/fonts.dir:${PORTSDIR}/x11-fonts/urwfonts
 
 WRKSRC=		${WRKDIR}/j2sdk1.3.1/make
 
