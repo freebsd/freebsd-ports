@@ -7,7 +7,7 @@
 
 PORTNAME=	opera
 PORTVERSION=	7.11.20030515
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www linux
 MASTER_SITES=	ftp://ftp.opera.com/pub/opera/linux/711/final/en/i386/static/
 PKGNAMEPREFIX=	linux-
@@ -16,8 +16,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION:S/.2/-2/}.1-static-qt.i386
 MAINTAINER=	mezz7@cox.net
 COMMENT=	A blazingly fast, full-featured, standards-compliant browser
 
-RUN_DEPENDS=	${LINUXBASE}/usr/X11R6/lib/libXm.so.2:${PORTSDIR}/x11-toolkits/linux-openmotif \
-		${LINUXBASE}/usr/lib/libpng.so.2:${PORTSDIR}/graphics/linux-png
+RUN_DEPENDS=	${LINUXBASE}/usr/X11R6/lib/libXm.so.2:${PORTSDIR}/x11-toolkits/linux-openmotif
 
 USE_BZIP2=	yes
 USE_LINUX=	yes
