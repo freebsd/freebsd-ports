@@ -3,7 +3,7 @@
 # Date created:         So  17 Nov 1996 16:59:23 MET
 # Whom:                 Andreas Klemm <andreas@klemm.gtn.com>
 #
-# $Id: Makefile,v 1.6 1997/01/04 15:24:34 andreas Exp $
+# $Id: Makefile,v 1.7 1997/01/06 08:51:42 asami Exp $
 #
 
 DISTNAME=	bb
@@ -17,7 +17,10 @@ MAINTAINER=	andreas@klemm.gtn.com
 BUILD_DEPENDS=	${PREFIX}/sbin/httpd:${PORTSDIR}/www/apache
 RUN_DEPENDS=	netscape:${PORTSDIR}/www/netscape3
 
-NO_CDROM=	"It can't be sold"
+# The FreeBSD Ports Team has permission to include this in our CDROM
+# from the author, but others who wish to do likewise will have to
+# contact Sean MacGuire <sean@iti.qc.ca>.
+#NO_CDROM=	"It can't be sold"
 
 post-configure:
 	( cd ${WRKSRC}/doc; /bin/sh bbconfig freebsd )
