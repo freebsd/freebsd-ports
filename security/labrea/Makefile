@@ -14,16 +14,12 @@ EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	nick@rogness.net
 
-BUILD_DEPENDS+= ${LOCALBASE}/lib/libnet.a:${PORTSDIR}/net/libnet
+BUILD_DEPENDS=	${LOCALBASE}/lib/libnet.a:${PORTSDIR}/net/libnet
 
 WRKSRC=		${WRKDIR}/LaBrea
-ALL_TARGET=	LaBrea
 USE_REINPLACE=	yes
 
-pre-build:
-	${REINPLACE_CMD} -e "s@PREFIX=/usr/local@PREFIX=${PREFIX}@g;\
-		s@LOCALBASE=/usr/local@LOCALBASE=${LOCALBASE}@g" \
-		${WRKSRC}/Makefile
+MAKE_ARGS=	CC="${CC}" OPTFLAGS="${CFLAGS}"
 
 post-install:
 .if !defined(NOPORTDOCS)
