@@ -406,6 +406,7 @@
     SUBDIR += p5-Date-Calc
     SUBDIR += p5-Date-DayOfWeek
     SUBDIR += p5-Date-ICal
+    SUBDIR += p5-Date-ISO
     SUBDIR += p5-Date-Leapyear
     SUBDIR += p5-Date-Manip
     SUBDIR += p5-Date-Pcalc
