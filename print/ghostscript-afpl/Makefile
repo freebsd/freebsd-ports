@@ -170,6 +170,9 @@ post-patch:
 	${PERL} -pi -e 's|\. de|\.|g' \
 		${WRKSRC}/src/unixinst.mak
 # for HPinkjet driver
+	${PERL} -pi -e 's|CFLAGS="-O2 -Wall"|CFLAGS="\$$CFLAGS"|g ; \
+		 s|CXXFLAGS="-O2 -Wall"|CXXFLAGS="\$$CXXFLAGS"|g' \
+			${WRKSRC}/${HPIJS_NAME}/configure
 	find ${WRKSRC}/${HPIJS_NAME} -name '*.h' | xargs ${PERL} -pi -e \
 		's|#include <malloc.h>||g'
 
