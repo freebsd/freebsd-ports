@@ -6,7 +6,7 @@ fi
 
 /usr/bin/dialog --title "configuration options" --clear \
 	--checklist "\n\
-Please select desired options:" -1 -1 12 \
+Please select desired options:" -1 -1 14 \
 tuning		"Apache: performance tuning" OFF \
 modssl		"Apache: SSL support" OFF \
 GD		"PHP3:   GD library support" ON \
@@ -63,12 +63,12 @@ while [ "$1" ]; do
 			echo "PHP3_CONF_ARGS+=	--with-zlib" >> ${WRKDIRPREFIX}${CURDIR}/Makefile.inc
 			;;
 		\"mcrypt\")
-			echo "BUILD_DEPENDS+=		\${PREFIX}/lib/libmcrypt.a:\${PORTSDIR}/security/mcrypt" >> ${WRKDIRPREFIX}${CURDIR}/Makefile.inc
-			echo "PHP3_CONF_ARGS+=	--with-mcrypt" >> ${WRKDIRPREFIX}${CURDIR}/Makefile.inc
+			echo "LIB_DEPENDS+=		mcrypt.2:\${PORTSDIR}/security/libmcrypt" >> ${WRKDIRPREFIX}${CURDIR}/Makefile.inc
+			echo "PHP3_CONF_ARGS+=	--with-mcrypt=\${PREFIX}" >> ${WRKDIRPREFIX}${CURDIR}/Makefile.inc
 			;;
 		\"mhash\")
-			echo "BUILD_DEPENDS+=		\${PREFIX}/lib/libmhash.a:\${PORTSDIR}/security/mhash" >> ${WRKDIRPREFIX}${CURDIR}/Makefile.inc
-			echo "PHP3_CONF_ARGS+=	--with-mhash" >> ${WRKDIRPREFIX}${CURDIR}/Makefile.inc
+			echo "LIB_DEPENDS+=		mhash.1:\${PORTSDIR}/security/mhash" >> ${WRKDIRPREFIX}${CURDIR}/Makefile.inc
+			echo "PHP3_CONF_ARGS+=	--with-mhash=\${PREFIX}" >> ${WRKDIRPREFIX}${CURDIR}/Makefile.inc
 			;;
 		\"pdflib\")
 			echo "BUILD_DEPENDS+=		\${PREFIX}/lib/libpdf.a:\${PORTSDIR}/print/pdflib" >> ${WRKDIRPREFIX}${CURDIR}/Makefile.inc
