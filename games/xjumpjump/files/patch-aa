@@ -1,5 +1,5 @@
---- Makefile.orig	Wed Feb 26 15:21:57 1997
-+++ Makefile	Thu Apr 23 21:50:56 1998
+--- Makefile.orig	Wed Feb 26 21:21:57 1997
++++ Makefile	Thu Mar 15 23:12:59 2001
 @@ -8,16 +8,16 @@
  # Flags that might be overriden by top makefile
  #=================================================================
@@ -29,7 +29,7 @@
  CFLAGS  = $(CCFLAG) $(XINCLUDE)
  LDFLAGS = $(LDFLAG) 
 -LIBS    = -lforms $(SYSLIB) $(XLIB)
-+LIBS    = -lxforms $(SYSLIB) $(XLIB)
++LIBS    = -lforms $(SYSLIB) $(XLIB) -lXpm
  
  #=================================================================
  
