@@ -8,7 +8,7 @@
 
 DISTNAME=	unpv12e
 PKGNAME=	libunp-1.0
-CATEGORIES=     net
+CATEGORIES=     net ipv6
 MASTER_SITES=	ftp://ftp.kohala.com/pub/rstevens/ \
 		http://www.cs.columbia.edu/networks98/stevens/
 
