@@ -9,15 +9,15 @@ PORTNAME=	squidGuard
 PORTVERSION=	1.2.0
 PORTREVISION=	1
 CATEGORIES=	www
-MASTER_SITES=	http://ftp.ost.eltele.no/pub/www/proxy/squidGuard/ \
-		ftp://ftp.ost.eltele.no/pub/www/proxy/squidGuard/ \
+MASTER_SITES=	http://ftp.teledanmark.no/pub/www/proxy/squidGuard/ \
+		ftp://ftp.teledanmark.no/pub/www/proxy/squidGuard/ \
 		http://web01.ux.tyfon.net/ports/distfiles/
 
 MAINTAINER=	ports@tyfon.net
 COMMENT=	A fast redirector for squid
 
 LIB_DEPENDS=	db3.3:${PORTSDIR}/databases/db3
-RUN_DEPENDS=	${LOCALBASE}/sbin/squid:${PORTSDIR}/www/squid24
+RUN_DEPENDS=	${LOCALBASE}/sbin/squid:${PORTSDIR}/www/squid
 
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-db-inc=${LOCALBASE}/include/db3 \
