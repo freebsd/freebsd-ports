@@ -66,6 +66,7 @@
     SUBDIR += linux-sun-jdk13
     SUBDIR += linux-sun-jdk14
     SUBDIR += mmake
+    SUBDIR += netbeans
     SUBDIR += netcomponents
     SUBDIR += netrexx
     SUBDIR += openjit
