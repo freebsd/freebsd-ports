@@ -6,13 +6,12 @@
 #
 
 PORTNAME=	tcpcat
-PORTVERSION=	1.1.0
+PORTVERSION=	1.2.0
 CATEGORIES=	net
 MASTER_SITES=	http://www.gusnet.cx/proj/tcpcat/
 
 MAINTAINER=	roam@FreeBSD.org
 
 GNU_CONFIGURE=	yes
-USE_GMAKE=	yes
 
 .include <bsd.port.mk>
