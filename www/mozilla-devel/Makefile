@@ -38,6 +38,12 @@ BROKEN=		Mozilla-devel and Xft2 render the mozilla-fonts \
 .endif
 .endif
 
+.if defined(WITH_GTK2)
+LIB_DEPENDS+=	gtk-x11-2.0.0:${PORTSDIR}/x11-toolkits/gtk20
+.else
+USE_GNOME=	gtk12
+.endif
+
 LATEST_LINK=	mozilla-devel
 EXTRACT_AFTER_ARGS=	| ${TAR} -xf - --exclude */CVS/* \
 			--exclude */macbuild/*\
@@ -49,7 +55,7 @@ USE_X_PREFIX=	yes
 USE_PERL5=	yes
 USE_GMAKE=	yes
 USE_GNOMENG=	yes
-USE_GNOME=	orbit gtk12
+USE_GNOME+=	orbit
 USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=					\
@@ -59,7 +65,6 @@ CONFIGURE_ARGS=					\
 		--disable-cpp-rtti		\
 		--enable-crypto			\
 		--disable-debug			\
-		--enable-default-toolkit=gtk	\
 		--enable-double-buffer		\
 		--enable-dtd-debug		\
 		--enable-jsd			\
@@ -97,6 +102,17 @@ CONFIGURE_ARGS+=	--enable-extensions=default,irc,xmlterm
 CONFIGURE_ARGS+=	--enable-extensions=default,xmlterm
 .endif
 CONFIGURE_ENV=	MOZ_INTERNAL_LIBART_LGPL=1
+
+.if defined(WITHOUT_COMPOSER)
+CONFIGURE_ARGS+=	--disable-composer
+.endif
+
+.if defined(WITH_GTK2)
+CONFIGURE_ARGS+=	--enable-default-toolkit=gtk2
+EXTRA_PATCHES=		${FILESDIR}/mozilla_12b_patch
+.else
+CONFIGURE_ARGS+=	--enable-default-toolkit=gtk
+.endif
 
 .if !defined(WITHOUT_XFT)
 CONFIGURE_ARGS+=	--enable-xft
