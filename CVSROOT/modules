@@ -251,6 +251,7 @@ alephone-data	ports/games/alephone-data
 alevt		ports/misc/alevt
 align		ports/textproc/align
 allegro		ports/devel/allegro
+alloywm		ports/x11-wm/alloywm
 althea		ports/mail/althea
 altivore	ports/security/altivore
 amanda		ports/misc/amanda
