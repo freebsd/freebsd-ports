@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	cleanfeed
-PORTVERSION=	20010805
-PORTREVISION=	1
+PORTVERSION=	20011031
 CATEGORIES=	news
 MASTER_SITES=	http://www.bofh.it/~md/cleanfeed/
 EXTRACT_SUFX=	.tgz
@@ -22,6 +21,7 @@ BINOWN=		news
 BINGRP=		news
 SHAREOWN=	news
 SHAREGRP=	news
+INSTALL+=	-b
 
 post-patch:
 .for file in cleanfeed cleanfeed.local.sample
