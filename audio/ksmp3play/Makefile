@@ -16,15 +16,16 @@ COMMENT=	An curses-based MP3 player
 
 LIB_DEPENDS=	smpeg.1:${PORTSDIR}/multimedia/smpeg
 
-SDL_CONFIG?=	${LOCALBASE}/bin/sdl11-config
-
+USE_SDL=	yes
+USE_GETOPT_LONG=	yes
 USE_REINPLACE=	yes
-USE_GETOPT_LONG=yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	SDL_CONFIG=${SDL_CONFIG} \
-		CPPFLAGS="-I${LOCALBASE}/include" LDFLAGS="-L${LOCALBASE}/lib"
+CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 
-MAN1=	ksmp3play.1
+MAN1=		ksmp3play.1
+
+CPPFLAGS=	-I${LOCALBASE}/include
+LDFLAGS=	-L${LOCALBASE}/lib
 
 post-patch:
 	@${REINPLACE_CMD} -e "s,-lpthread,${PTHREAD_LIBS},g" ${WRKSRC}/configure
