@@ -6858,6 +6858,7 @@ sawfish2	ports/x11-wm/sawfish2
 saxon		ports/textproc/saxon
 sbagen		ports/audio/sbagen
 sbcl		ports/lang/sbcl
+sb16config	ports/sysutils/sb16config
 sbniconfig	ports/sysutils/sbniconfig
 sc		ports/math/sc
 scandoc		ports/devel/scandoc
