@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	gsasl
-PORTVERSION=	0.0.10
+PORTVERSION=	0.0.11
 CATEGORIES=	security
 MASTER_SITES=	http://josefsson.org/${PORTNAME}/releases/ \
 		${MASTER_SITE_GNU_ALPHA}
@@ -38,8 +38,9 @@ LDFLAGS=	-L${LOCALBASE}/lib
 post-install:
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
-	cd ${WRKSRC}/doc/html && ${FIND} . | \
-		cpio -pdm -L -R ${SHAREOWN}:${SHAREGRP} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/doc/*.html ${DOCSDIR}
+	@${MKDIR} ${DOCSDIR}/reference
+	${INSTALL_DATA} ${WRKSRC}/doc/reference/*.html ${DOCSDIR}/reference
 .endif
 
 .include "Makefile.man"
