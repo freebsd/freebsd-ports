@@ -86,10 +86,12 @@ bin/pyrexc
 %%PORTDOCS%%share/doc/pyrex/primes.c
 %%PORTDOCS%%share/doc/pyrex/special_methods.html
 %%PORTDOCS%%share/examples/pyrex/Makefile
+%%PORTDOCS%%share/examples/pyrex/Makefile.nodistutils
 %%PORTDOCS%%share/examples/pyrex/primes.pyx
 %%PORTDOCS%%share/examples/pyrex/pyprimes.py
 %%PORTDOCS%%share/examples/pyrex/run_primes.py
 %%PORTDOCS%%share/examples/pyrex/run_spam.py
+%%PORTDOCS%%share/examples/pyrex/setup.py
 %%PORTDOCS%%share/examples/pyrex/spam.pyx
 %%PORTDOCS%%@dirrm share/examples/pyrex
 %%PORTDOCS%%@dirrm share/doc/pyrex
