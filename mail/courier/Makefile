@@ -6,16 +6,14 @@
 #
 
 PORTNAME=	courier
-PORTVERSION=	0.37.0
+PORTVERSION=	0.37.2
 PORTREVISION=	0
 CATEGORIES=	mail ipv6
-MASTER_SITES=	http://www.courier-mta.org/beta/%SUBDIR%/ \
-		${MASTER_SITE_SOURCEFORGE}
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	courier
 
 MAINTAINER=	yds@CoolRat.org
 
-#BUILD_DEPENDS=	${LOCALBASE}/share/aclocal/sysconftool.m4:${PORTSDIR}/devel/sysconftool
 RUN_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/Net/CIDR.pm:${PORTSDIR}/net/p5-Net-CIDR
 
 #
@@ -76,9 +74,17 @@ CONFIGURE_ARGS=	--disable-root-check --with-db=db \
 		--enable-workarounds-for-imap-client-bugs
 CONFIGURE_ENV=	PATH="${PATH}:${SCRIPTDIR}"
 
+# Respect the make.conf(5) NOUUCP setting
+.if defined(NOUUCP)
+CONFIGURE_ARGS+=--with-transport='local esmtp dsn'
+PLIST_SUB+=	SUB_UUCP="@comment "
+.else
+PLIST_SUB+=	SUB_UUCP=""
+.endif
+
 PKGMESSAGE=	${WRKDIR}/.PKGMESSAGE
 
-INSTALL_TARGET=	install-strip
+INSTALL_TARGET=	install-strip install-perms
 
 PLIST_SUB+=	CACHEOWNER="${CACHEOWNER}"
 

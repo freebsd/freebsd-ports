@@ -1,18 +1,26 @@
---- courier/submit2.C.orig	Sat Dec 15 16:19:01 2001
-+++ courier/submit2.C	Mon Jan 14 20:32:21 2002
-@@ -800,6 +800,7 @@
+--- courier/submit2.C.orig	Tue Jan 15 17:44:37 2002
++++ courier/submit2.C	Mon Jan 21 15:38:40 2002
+@@ -777,6 +777,8 @@
+ {
+ int	is8bit=0, dorewrite=0, rwmode=0;
+ const	char *mime=getenv("MIME");
++const	char *q=getenv("BOFHACCEPT8BIT");
++const	int accept8bit=(q && *q == '1' ? 1 : 0);
+ unsigned	n;
+ struct	stat	stat_buf;
+ const char *rfcerr=NULL;
+@@ -800,12 +802,12 @@
  		return (1);
  	}
  
-+#if !defined(RFC2045_ERR8BITACCEPT)
- 	if (rwrfcptr->rfcviolation & RFC2045_ERR8BITHEADER)
+-	if (rwrfcptr->rfcviolation & RFC2045_ERR8BITHEADER)
++	if (!accept8bit && (rwrfcptr->rfcviolation & RFC2045_ERR8BITHEADER))
  	{
  		rfcerr= SYSCONFDIR "/rfcerr2047.txt";
-@@ -810,6 +811,7 @@
- 		rfcerr= SYSCONFDIR "/rfcerr2045.txt";
  		dorewrite=1;
          }
-+#endif
- 	else if (rwrfcptr->rfcviolation & RFC2045_ERRBADBOUNDARY)
+-	else if (rwrfcptr->rfcviolation & RFC2045_ERR8BITCONTENT)
++	else if (!accept8bit && (rwrfcptr->rfcviolation & RFC2045_ERR8BITCONTENT))
  	{
- 		rfcerr= SYSCONFDIR "/rfcerr2046.txt";
+ 		rfcerr= SYSCONFDIR "/rfcerr2045.txt";
+ 		dorewrite=1;

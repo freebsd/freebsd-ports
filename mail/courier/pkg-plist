@@ -79,7 +79,7 @@ etc/courier/maildropfilter
 etc/courier/module.dsn
 etc/courier/module.esmtp
 etc/courier/module.local
-etc/courier/module.uucp
+%%SUB_UUCP%%etc/courier/module.uucp
 etc/courier/pop3d-ssl.dist
 etc/courier/pop3d.authpam
 etc/courier/pop3d.cnf
@@ -142,7 +142,7 @@ libexec/courier/modules/esmtp/courieresmtpd
 libexec/courier/modules/local/courierdeliver
 libexec/courier/modules/local/courierlocal
 libexec/courier/modules/modules.ctl
-libexec/courier/modules/uucp/courieruucp
+%%SUB_UUCP%%libexec/courier/modules/uucp/courieruucp
 libexec/courier/pcpd
 libexec/courier/submit
 libexec/courier/submitmkdir
@@ -152,7 +152,7 @@ libexec/filters/dupfilter
 libexec/filters/perlfilter
 @dirrm libexec/authlib/changepwd
 @dirrm libexec/authlib
-@dirrm libexec/courier/modules/uucp
+%%SUB_UUCP%%@dirrm libexec/courier/modules/uucp
 @dirrm libexec/courier/modules/local
 @dirrm libexec/courier/modules/esmtp
 @dirrm libexec/courier/modules/dsn
@@ -178,7 +178,7 @@ sbin/makepercentrelay
 sbin/makesmtpaccess
 sbin/makesmtpaccess-msa
 sbin/makeuserdb
-sbin/makeuucpneighbors
+%%SUB_UUCP%%sbin/makeuucpneighbors
 sbin/mkesmtpdcert
 sbin/mkimapdcert
 sbin/mkpop3dcert
@@ -280,7 +280,7 @@ share/courier/makehosteddomains
 share/courier/makepercentrelay
 share/courier/makesmtpaccess
 share/courier/makeuserdb
-share/courier/makeuucpneighbors
+%%SUB_UUCP%%share/courier/makeuucpneighbors
 share/courier/mkesmtpdcert
 share/courier/mkimapdcert
 share/courier/mkpop3dcert
@@ -445,6 +445,7 @@ share/courier/sqwebmail/images/replyall.gif
 share/courier/sqwebmail/images/replylist.gif
 share/courier/sqwebmail/images/right.gif
 share/courier/sqwebmail/images/right2.gif
+share/courier/sqwebmail/images/save.gif
 share/courier/sqwebmail/images/sep.gif
 share/courier/sqwebmail/images/signin.gif
 share/courier/sqwebmail/images/sqwebmail.css
@@ -497,7 +498,7 @@ share/courier/webgpg
 %%PORTDOCS%%share/doc/courier/html/courierpop3d.html
 %%PORTDOCS%%share/doc/courier/html/couriertcpd.html
 %%PORTDOCS%%share/doc/courier/html/couriertls.html
-%%PORTDOCS%%share/doc/courier/html/courieruucp.html
+%%SUB_UUCP%%%%PORTDOCS%%share/doc/courier/html/courieruucp.html
 %%PORTDOCS%%share/doc/courier/html/deliverquota.html
 %%PORTDOCS%%share/doc/courier/html/dot-courier.html
 %%PORTDOCS%%share/doc/courier/html/dot-forward.html
@@ -592,7 +593,7 @@ share/courier/webgpg
 @exec chown courier:courier %D/etc/courier/module.dsn
 @exec chown courier:courier %D/etc/courier/module.esmtp
 @exec chown courier:courier %D/etc/courier/module.local
-@exec chown courier:courier %D/etc/courier/module.uucp
+%%SUB_UUCP%%@exec chown courier:courier %D/etc/courier/module.uucp
 @exec chown root:wheel %D/etc/courier/pop3d-ssl.dist
 @exec chown root:wheel %D/etc/courier/pop3d.authpam
 @exec chown root:wheel %D/etc/courier/pop3d.cnf
@@ -614,7 +615,7 @@ share/courier/webgpg
 @exec chown root:courier %D/libexec/courier/modules/esmtp/authstart
 @exec chown courier:courier %D/libexec/courier/modules/esmtp/courieresmtp
 @exec chown courier:courier %D/libexec/courier/modules/esmtp/courieresmtpd
-@exec chown courier:courier %D/libexec/courier/modules/uucp/courieruucp
+%%SUB_UUCP%%@exec chown courier:courier %D/libexec/courier/modules/uucp/courieruucp
 @exec chown courier:courier %D/libexec/courier/submit
 @exec chown courier:courier %D/libexec/courier/submitmkdir
 @exec chown courier:courier %D/sbin/showmodules

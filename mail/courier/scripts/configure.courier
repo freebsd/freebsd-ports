@@ -1,5 +1,5 @@
 #!/bin/sh
-# $FreeBSD: /tmp/pcvs/ports/mail/courier/scripts/Attic/configure.courier,v 1.1 2002-01-15 06:17:28 dwhite Exp $
+# $FreeBSD: /tmp/pcvs/ports/mail/courier/scripts/Attic/configure.courier,v 1.2 2002-01-22 04:44:18 dwhite Exp $
 
 [ -f ${WRKDIRPREFIX}${CURDIR}/Makefile.inc ] && exit
 
@@ -14,25 +14,19 @@ else
 fi
 
 if [ "${BATCH}" = "yes" ]; then
-	[ "x${ENABLE_ACCEPT8BIT}"	= "xYES" ] && OPTIONS="${OPTIONS} \"Accept8bit\""
-	[ "x${ENABLE_EXPECT}"		= "xYES" ] && OPTIONS="${OPTIONS} \"Expect\""
-	[ "x${ENABLE_GNUPG}"		= "xYES" ] && OPTIONS="${OPTIONS} \"GnuPG\""
-	[ "x${ENABLE_ASPELL}"		= "xYES" ] && OPTIONS="${OPTIONS} \"ASpell\""
-	[ "x${ENABLE_ISPELL}"		= "xYES" ] && OPTIONS="${OPTIONS} \"ISpell\""
-	[ "x${ENABLE_LDAP1}"		= "xYES" ] && OPTIONS="${OPTIONS} \"OpenLDAP1\""
-	[ "x${ENABLE_LDAP2}"		= "xYES" ] && OPTIONS="${OPTIONS} \"OpenLDAP2\""
-	[ "x${ENABLE_MYSQL}"		= "xYES" ] && OPTIONS="${OPTIONS} \"MySQL\""
-	[ "x${ENABLE_PGSQL}"		= "xYES" ] && OPTIONS="${OPTIONS} \"PostgreSQL\""
-	[ "x${ENABLE_VPOPMAIL}"		= "xYES" ] && OPTIONS="${OPTIONS} \"VPopMail\""
-	[ "x${ENABLE_PROCMAIL}"		= "xYES" ] && OPTIONS="${OPTIONS} \"Procmail\""
-	[ "x${ENABLE_IPV6}"		= "xYES" ] && OPTIONS="${OPTIONS} \"IPv6\""
+	[ "x${ENABLE_EXPECT}"	= "xYES" ] && OPTIONS="${OPTIONS} \"Expect\""
+	[ "x${ENABLE_GNUPG}"	= "xYES" ] && OPTIONS="${OPTIONS} \"GnuPG\""
+	[ "x${ENABLE_ASPELL}"	= "xYES" ] && OPTIONS="${OPTIONS} \"ASpell\""
+	[ "x${ENABLE_ISPELL}"	= "xYES" ] && OPTIONS="${OPTIONS} \"ISpell\""
+	[ "x${ENABLE_LDAP1}"	= "xYES" ] && OPTIONS="${OPTIONS} \"OpenLDAP1\""
+	[ "x${ENABLE_LDAP2}"	= "xYES" ] && OPTIONS="${OPTIONS} \"OpenLDAP2\""
+	[ "x${ENABLE_MYSQL}"	= "xYES" ] && OPTIONS="${OPTIONS} \"MySQL\""
+	[ "x${ENABLE_PGSQL}"	= "xYES" ] && OPTIONS="${OPTIONS} \"PostgreSQL\""
+	[ "x${ENABLE_VPOPMAIL}"	= "xYES" ] && OPTIONS="${OPTIONS} \"VPopMail\""
+	[ "x${ENABLE_PROCMAIL}"	= "xYES" ] && OPTIONS="${OPTIONS} \"Procmail\""
+	[ "x${ENABLE_IPV6}"	= "xYES" ] && OPTIONS="${OPTIONS} \"IPv6\""
 	[ -n "${OPTIONS}" ] && set ${OPTIONS}
 else
-	if [ "x${ENABLE_ACCEPT8BIT}" = "xYES" ]; then
-		SET_ACCEPT8BIT="ON"
-	else
-		SET_ACCEPT8BIT="OFF"
-	fi
 	if [ "x${ENABLE_EXPECT}" = "xYES" \
 	  -o -x ${LOCALBASE}/bin/expect ]; then
 		SET_EXPECT="ON"
@@ -107,7 +101,6 @@ else
 	/usr/bin/dialog --title "Courier configuration options" --clear \
 		--checklist "\n\
 Please select desired options:" -1 -1 16 \
-Accept8bit	"http://www.Courier-MTA.org/FAQ.html#esmtperr" ${SET_ACCEPT8BIT} \
 Expect		"Expect support for WebMail change passwd" ${SET_EXPECT} \
 GnuPG		"GNU Privacy Guard support for WebMail" ${SET_GNUPG} \
 ASpell		"ASpell support for WebMail" ${SET_ASPELL} \
@@ -155,9 +148,6 @@ SUB_PGSQL="@comment "
 
 while [ "$1" ]; do
 	case $1 in
-		\"Accept8bit\")
-			echo "CXXFLAGS+=	-DRFC2045_ERR8BITACCEPT"
-			;;
 		\"Expect\")
 			echo "BUILD_DEPENDS+=	expect:${PORTSDIR}/lang/expect"
 			;;
