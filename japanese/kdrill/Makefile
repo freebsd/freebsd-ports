@@ -14,6 +14,8 @@ DISTNAME=	${PORTNAME}${PORTVERSION}
 MAINTAINER=	sethk@meowfishies.com
 COMMENT=	A program to quiz you on the meanings of Kanji
 
+BROKEN=		Incomplete pkg-plist
+
 # Explictly state HTML'ized man pages in packing list since not all are
 # generated from imake.
 XFREE86_HTML_MAN=no
