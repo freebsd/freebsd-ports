@@ -1,0 +1,100 @@
+--- /usr/ports/distfiles/lemon.c	Tue Dec  5 20:52:24 2000
++++ ./lemon.c	Mon Jun  4 23:35:15 2001
+@@ -31,2 +31,5 @@
+ #include <ctype.h>
++#include <unistd.h>
++#include <stdlib.h>
++#include <sys/param.h>
+ 
+@@ -35,4 +38,2 @@
+ extern long strtol();
+-extern void free();
+-extern int access();
+ extern int atoi();
+@@ -55,3 +56,2 @@
+ char *msort();
+-extern void *malloc();
+ 
+@@ -2525,45 +2525,13 @@
+ 
+-/* Search for the file "name" which is in the same directory as
+-** the exacutable */
+-PRIVATE char *pathsearch(argv0,name,modemask)
+-char *argv0;
+-char *name;
+-int modemask;
++PRIVATE const char *pathsearch()
+ {
+-  char *pathlist;
+-  char *path,*cp;
+-  char c;
+-  extern int access();
++  const char *path;
+ 
+-#ifdef __WIN32__
+-  cp = strrchr(argv0,'\\');
+-#else
+-  cp = strrchr(argv0,'/');
+-#endif
+-  if( cp ){
+-    c = *cp;
+-    *cp = 0;
+-    path = (char *)malloc( strlen(argv0) + strlen(name) + 2 );
+-    if( path ) sprintf(path,"%s/%s",argv0,name);
+-    *cp = c;
+-  }else{
+-    extern char *getenv();
+-    pathlist = getenv("PATH");
+-    if( pathlist==0 ) pathlist = ".:/bin:/usr/bin";
+-    path = (char *)malloc( strlen(pathlist)+strlen(name)+2 );
+-    if( path!=0 ){
+-      while( *pathlist ){
+-        cp = strchr(pathlist,':');
+-        if( cp==0 ) cp = &pathlist[strlen(pathlist)];
+-        c = *cp;
+-        *cp = 0;
+-        sprintf(path,"%s/%s",pathlist,name);
+-        *cp = c;
+-        if( c==0 ) pathlist = "";
+-        else pathlist = &cp[1];
+-        if( access(path,modemask)==0 ) break;
+-      }
+-    }
+-  }
+-  return path;
++  path = getenv("LEMPAR");
++
++  if (path)
++    if (access(path, R_OK)) perror(path);
++    else return(path);
++
++  return(LEMPAR);
+ }
+@@ -2631,6 +2599,5 @@
+ {
+-  static char templatename[] = "lempar.c";
+-  char buf[1000];
++  char buf[MAXPATHLEN];
+   FILE *in;
+-  char *tpltname;
++  const char *tpltname;
+   char *cp;
+@@ -2643,10 +2610,9 @@
+   }
+-  if( access(buf,004)==0 ){
++  if( access(buf, R_OK)==0 ){
+     tpltname = buf;
+   }else{
+-    tpltname = pathsearch(lemp->argv0,templatename,0);
++    tpltname = pathsearch();
+   }
+   if( tpltname==0 ){
+-    fprintf(stderr,"Can't find the parser driver template file \"%s\".\n",
+-    templatename);
++    fprintf(stderr,"Can't find the parser driver template file.\n");
+     lemp->errorcnt++;
+@@ -2656,3 +2622,3 @@
+   if( in==0 ){
+-    fprintf(stderr,"Can't open the template file \"%s\".\n",templatename);
++    fprintf(stderr,"Can't open the template file \"%s\".\n", tpltname);
+     lemp->errorcnt++;

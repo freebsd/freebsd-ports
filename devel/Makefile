@@ -179,6 +179,7 @@
     SUBDIR += kpp
     SUBDIR += ktranslator
     SUBDIR += lclint
+    SUBDIR += lemon
     SUBDIR += libPropList
     SUBDIR += libU77
     SUBDIR += libcache
