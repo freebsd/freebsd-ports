@@ -13,7 +13,7 @@ MASTER_SITES=	ftp://kde.planetmirror.com/pub/enlightenment/epplets/ \
 
 DISTNAME=	epplet-base-${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	cmc@groupofnine.org
 
 WRKSRC=		${WRKDIR}/Epplets-${PORTVERSION}
 
