@@ -10,21 +10,23 @@ PORTVERSION=	7.7.1
 CATEGORIES=	lang
 MASTER_SITES=	ftp.swiss.ai.mit.edu/pub/mit-scheme/7.7/%SUBDIR%/
 MASTER_SITE_SUBDIR=	${PORTVERSION} OLD/${PORTVERSION}
-DISTNAME=	scheme-${PORTVERSION}-ix86-freebsd
+DISTNAME=	scheme-${PORTVERSION}-src-ucode
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
+		scheme-${PORTVERSION}-ix86-freebsd.tar.gz
 
 MAINTAINER=	olgeni@FreeBSD.org
 
-LIB_DEPENDS=	c.3:${PORTSDIR}/misc/compat3x
-
 ONLY_FOR_ARCHS=	i386
+GNU_CONFIGURE=	yes
+USE_GMAKE=	yes
 USE_XLIB=	yes
-NO_BUILD=	yes
-NO_WRKSUBDIR=	yes
+WRKSRC=		${WRKDIR}/scheme-${PORTVERSION}/src/microcode
+ALL_TARGET=	default-target
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/bin/scheme ${PREFIX}/bin
-	${INSTALL_PROGRAM} ${WRKSRC}/bin/bchscheme ${PREFIX}/bin
-	cd ${WRKSRC}/lib && pax -rw mit-scheme ${PREFIX}/lib
+	${INSTALL_PROGRAM} ${WRKSRC}/scheme ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/bchscheme ${PREFIX}/bin
+	cd ${WRKDIR}/lib && pax -rw mit-scheme ${PREFIX}/lib
 	${CHOWN} -R ${SHAREOWN}:${SHAREGRP} ${PREFIX}/lib/mit-scheme
 
 .include <bsd.port.mk>
