@@ -1,0 +1,36 @@
+--- proto.man.orig	Sun Jun 23 15:56:51 2002
++++ proto.man	Sun Jun 23 15:58:12 2002
+@@ -1,13 +1,8 @@
+-.TH PROTO 2
++.TH PROTO 5
+ .SH NAME
+ rdproto \- parse and process a proto file listing
+ .SH SYNOPSIS
+ .nf
+-.ft L
+-#include <u.h>
+-#include <libc.h>
+-#include <disk.h>
+-.ft
+ .PP
+ .B
+ typedef void Protoenum(char *new, char *old, Dir *d, void *a)
+@@ -116,16 +111,7 @@
+ if
+ .I proto 
+ was processed, \-1 if it could not be opened.
+-.SH FILES
+-.TF /sys/lib/sysconfig/proto/portproto
+-.TP
+-.B /sys/lib/sysconfig/proto/
+-directory of prototype files.
+-.TP
+-.B /sys/lib/sysconfig/proto/portproto
+-generic prototype file.
+ .SH SOURCE
+-.B /sys/src/libdisk/proto.c
++.B libunix/proto.c
+ .SH SEE ALSO
+-.IR mk9660 (8),
+-.IR mkfs (8)
++.IR mk9660 (8)

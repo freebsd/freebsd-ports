@@ -1,0 +1,15 @@
+Dump9660 is a tool for creating ISO 9660 compliant CD images suitable
+for use with tools such as FreeBSD's burncd.  Dump9660 supports the El
+Torrito bootable CD and Microsoft Joliet extensions as well as the
+Rock Ridge and Plan 9 system use extensions. Mk9660 is a front end for
+dump9660 that provides the traditional ability to create CD images
+from a subtree of the file system.  Dump9660 is similar in
+specification, but creates and updates backup CD images in the style
+of the Plan 9 dump file system.  The dump is file-based rather than
+block-based: if a file's contents have not changed since the last
+backup, only its directory entry will be rewritten.
+
+WWW: http://www.eecs.harvard.edu/~wkj/Software/dump9660/
+
+- William Josephson and Russ Cox
+dump9660-port@eecs.harvard.edu

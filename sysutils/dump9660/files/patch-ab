@@ -1,0 +1,92 @@
+--- mk9660.man.orig	Fri May 31 23:07:00 2002
++++ mk9660.man	Sun Jun 23 15:55:06 2002
+@@ -2,7 +2,7 @@
+ .SH NAME
+ dump9660, mk9660 \- create an ISO-9660 CD image
+ .SH SYNOPSIS
+-.B disk/mk9660
++.B mk9660
+ [
+ .B -:D
+ ]
+@@ -27,7 +27,7 @@
+ ]
+ .I image
+ .PP
+-.B disk/dump9660
++.B dump9660
+ [
+ .B -:D
+ ]
+@@ -62,8 +62,6 @@
+ an ISO-9660 CD image containing the
+ files named in
+ .I proto
+-(default
+-.BR /sys/lib/sysconfig/proto/allproto )
+ from the file tree
+ .I src
+ (default
+@@ -71,7 +69,9 @@
+ The
+ .I proto
+ file is formatted as described in
+-.IR mkfs (8).
++.IR proto (5)
++(see also Plan 9's
++.IR mkfs (8)).
+ .PP
+ The created CD image will be in ISO-9660
+ format, but by default the file names will
+@@ -100,7 +100,7 @@
+ flag is given, the system use fields at the end of
+ each directory entry will be populated with
+ Plan directory information (owner, group, mode,
+-full name); this is interpreted by
++full name); this is interpreted by Plan 9's
+ .IR 9660srv .
+ .PP
+ If the
+@@ -160,7 +160,7 @@
+ flag causes 
+ .B mk9660
+ to replace colons in scanned file names with spaces;
+-this is the inverse of the map applied by
++this is the inverse of the map applied by Plan 9's
+ .IR dossrv (4)
+ and is useful for writing Joliet CDs containing data
+ from FAT file systems.
+@@ -192,7 +192,7 @@
+ the 
+ .I dump
+ file system
+-(see
++(see Plan 9's
+ .IR fs (4)).
+ The dump is file-based rather than block-based:
+ if a file's contents have not changed since the last
+@@ -219,13 +219,16 @@
+ a Joliet directory tree.
+ .IP
+ .EX
+-disk/mk9660 -9cj -s /n/bootes -p plan9proto cdimage
++mk9660 -9cj -s /n/bootes -p plan9proto cdimage
+ .EE
+-.SH SOURCE
+-.B /sys/src/cmd/disk/9660
+ .SH "SEE ALSO"
+-.I 9660srv
+-(in
+-.IR dossrv (4)),
+-.IR cdfs (4),
+-.IR mkfs (8)
++.IR proto (5)
++.SH "HISTORY"
++.I Dump9660
++and
++.I mk9660
++were written in the fall of 2000 for Unix and Plan 9 by Russ Cox and
++William Josephson.  The first public release was as a part of the
++Fourth Edition Plan 9 distribution.  William Josephson subsequently
++cleaned up the Unix port and made it publicly available in the spring
++of 2002.
