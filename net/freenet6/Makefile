@@ -7,7 +7,7 @@
 
 PORTNAME=	freenet6
 PORTVERSION=	2.1.1
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	net ipv6
 MASTER_SITES=	http://www.hexago.com/files/
 DISTNAME=	tspc-${PORTVERSION}-src
@@ -17,6 +17,7 @@ MAINTAINER=	edwin@mavetju.org
 COMMENT=	Freenet6 Tunnel Setup Protocol Client - Free IPv6 tunnel
 
 USE_REINPLACE=	yes
+USE_RC_SUBR=	yes
 WRKSRC=		${WRKDIR}/tspc2
 
 MAN8=		tspc.8
@@ -48,7 +49,10 @@ post-install:
 
 post-patch:
 	@${CP} ${FILESDIR}/freenet6.sh.in ${WRKDIR}/freenet6.sh
-	@${REINPLACE_CMD} -e "s|@@PREFIX@@|${PREFIX}|g" ${WRKDIR}/freenet6.sh
+	@${REINPLACE_CMD} \
+		-e "s,%%PREFIX%%,${PREFIX},g" \
+		-e "s,%%RC_SUBR%%,${RC_SUBR},g" \
+		${WRKDIR}/freenet6.sh
 
 	@${CP} ${FILESDIR}/pkg-message.in ${WRKDIR}/pkg-message
 	@${REINPLACE_CMD} \

@@ -8,3 +8,7 @@ Now that the package is installed, please finish it with the following steps:
 
 Please note that tsps[12].freenet6.net are not in service anymore,
 please use broker.freenet6.net instead.
+
+Net/freenet6 now supports rc.subr.
+Please add 'freenet6_enable="YES"' to your /etc/rc.conf to make it
+start autoamtically at startup.
