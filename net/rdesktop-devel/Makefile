@@ -6,14 +6,14 @@
 #
 
 PORTNAME=	rdesktop
-PORTVERSION=	1.0.0.p19.7.5
+PORTVERSION=	1.0.0.p19.7.6
 CATEGORIES=	net comms
 MASTER_SITES=	http://bibl4.oru.se/projects/rdesktop/dist/releases/
 DISTNAME=	rdesktop-1.0.0
 
 PATCH_SITES=	http://bibl4.oru.se/projects/rdesktop/ \
 		http://bibl4.oru.se/projects/rdesktop/patch19/
-PATCHFILES=	rdesktop-unified-patch19-7-5.bz2
+PATCHFILES=	rdesktop-unified-patch19-7-6.bz2
 PATCH_DIST_STRIP=	-p2
 
 MAINTAINER=	chris@aims.com.au
