@@ -566,6 +566,10 @@ etc/rc.d/zope.sh
 %%ZOPEBASEDIR%%/lib/python/Products/ExternalMethod/methodEdit.dtml
 %%ZOPEBASEDIR%%/lib/python/Products/ExternalMethod/version.txt
 %%ZOPEBASEDIR%%/lib/python/Products/ExternalMethod/www/function.gif
+%%ZOPEBASEDIR%%/lib/python/Products/Hotfix_2000-10-02/__init__.py
+%%ZOPEBASEDIR%%/lib/python/Products/Hotfix_2000-10-02/README.txt
+%%ZOPEBASEDIR%%/lib/python/Products/Hotfix_2000-10-11/__init__.py
+%%ZOPEBASEDIR%%/lib/python/Products/Hotfix_2000-10-11/README.txt
 %%ZOPEBASEDIR%%/lib/python/Products/MIMETools/MIMETag.py
 %%ZOPEBASEDIR%%/lib/python/Products/MIMETools/MIMETag.pyc
 %%ZOPEBASEDIR%%/lib/python/Products/MIMETools/README.txt
@@ -1306,6 +1310,8 @@ etc/rc.d/zope.sh
 @dirrm %%ZOPEBASEDIR%%/lib/python/Products/ExternalMethod/help
 @dirrm %%ZOPEBASEDIR%%/lib/python/Products/ExternalMethod/www
 @dirrm %%ZOPEBASEDIR%%/lib/python/Products/ExternalMethod
+@dirrm %%ZOPEBASEDIR%%/lib/python/Products/Hotfix_2000-10-02
+@dirrm %%ZOPEBASEDIR%%/lib/python/Products/Hotfix_2000-10-11
 @dirrm %%ZOPEBASEDIR%%/lib/python/Products/MIMETools
 @dirrm %%ZOPEBASEDIR%%/lib/python/Products/MailHost/help
 @dirrm %%ZOPEBASEDIR%%/lib/python/Products/MailHost/release
