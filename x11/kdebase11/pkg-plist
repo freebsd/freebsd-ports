@@ -48,12 +48,10 @@ bin/klissie.kss
 bin/klock
 bin/kmatrix.kss
 bin/kmenuedit
-bin/kmorph3d.kss
 bin/konsole
 bin/konsole_grantpty
 bin/kpager
 bin/kpanel
-bin/kpipes.kss
 bin/kplayaudio
 bin/kpolygon.kss
 bin/kpyro.kss
@@ -63,7 +61,6 @@ bin/krootwm
 bin/kscience.kss
 bin/kslidescreen.kss
 bin/kslip.kss
-bin/kspace.kss
 bin/kstart
 bin/kswarm.kss
 bin/kthememgr
