@@ -1,0 +1,6 @@
+share/games/fortune/speed-info
+share/games/fortune/speed-info.dat
+share/games/fortune/fomenko
+share/games/fortune/fomenko.dat
+@dirrm share/games/fortune
+@dirrm share/games
