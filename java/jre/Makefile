@@ -65,6 +65,8 @@ do-build:
 
 do-install:
 	${MKDIR} ${PREFIX}/jre${JRE_VERSION}
+	${MKDIR} ${PREFIX}/share/java/classes
+	${MKDIR} ${PREFIX}/share/doc/java
 	(cd ${WRKSRC} && ${TAR} -c -f - .) \
 		| (cd ${PREFIX}/jre${JRE_VERSION} && ${TAR} --unlink -x -f -)
 	cd ${PREFIX}/jre${JRE_VERSION}/bin && \
