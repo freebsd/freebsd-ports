@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	vtcl
-PORTVERSION=	1.6.0b1
+PORTVERSION=	1.6.0b2
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -20,6 +20,7 @@ HAS_CONFIGURE=	yes
 NO_BUILD=	yes
 
 pre-configure:
+	@${CHMOD} +x ${WRKSRC}/configure ${WRKSRC}/vtsetup.tcl
 	@${PERL} -pi -e "s|%%LOCALBASE%%|${LOCALBASE}|g" ${WRKSRC}/configure
 
 do-install:
@@ -37,6 +38,6 @@ do-install:
 	@${MKDIR} ${PREFIX}/lib/vtcl/lib
 	${CP} -r ${WRKSRC}/lib/* ${PREFIX}/lib/vtcl/lib
 	@${MKDIR} ${PREFIX}/share/doc/vtcl
-	${INSTALL_DATA} ${WRKSRC}/doc/tutorial.txt ${PREFIX}/share/doc/vtcl
+	${INSTALL_DATA} ${WRKSRC}/doc/* ${PREFIX}/share/doc/vtcl
 
 .include <bsd.port.mk>

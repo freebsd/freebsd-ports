@@ -1,9 +1,8 @@
+@comment $FreeBSD$
 bin/vtcl
 lib/vtcl/ChangeLog
 lib/vtcl/LICENSE
 lib/vtcl/README
-lib/vtcl/vtcl.tcl
-lib/vtcl/vtsetup.tcl
 lib/vtcl/images/anchor.gif
 lib/vtcl/images/anchor_c.ppm
 lib/vtcl/images/anchor_e.ppm
@@ -20,6 +19,25 @@ lib/vtcl/images/curse.xbm
 lib/vtcl/images/delete_tag.gif
 lib/vtcl/images/down.gif
 lib/vtcl/images/down.xbm
+lib/vtcl/images/edit/add.gif
+lib/vtcl/images/edit/browse.gif
+lib/vtcl/images/edit/copy.gif
+lib/vtcl/images/edit/cut.gif
+lib/vtcl/images/edit/hide.gif
+lib/vtcl/images/edit/icons.gif
+lib/vtcl/images/edit/inswidg.gif
+lib/vtcl/images/edit/new.gif
+lib/vtcl/images/edit/ok.gif
+lib/vtcl/images/edit/open.gif
+lib/vtcl/images/edit/paste.gif
+lib/vtcl/images/edit/refresh.gif
+lib/vtcl/images/edit/remove.gif
+lib/vtcl/images/edit/replace.gif
+lib/vtcl/images/edit/save.gif
+lib/vtcl/images/edit/search.gif
+lib/vtcl/images/edit/show.gif
+lib/vtcl/images/edit/srchbak.gif
+lib/vtcl/images/edit/srchfwd.gif
 lib/vtcl/images/ellipses.gif
 lib/vtcl/images/fg.gif
 lib/vtcl/images/fontbase.gif
@@ -50,8 +68,8 @@ lib/vtcl/images/icon_hierarchy.gif
 lib/vtcl/images/icon_hierbox.gif
 lib/vtcl/images/icon_incrCombobox.gif
 lib/vtcl/images/icon_incrLabelFrame.gif
-lib/vtcl/images/icon_labelentry.gif
 lib/vtcl/images/icon_label.gif
+lib/vtcl/images/icon_labelentry.gif
 lib/vtcl/images/icon_listbox.gif
 lib/vtcl/images/icon_mclistbox.gif
 lib/vtcl/images/icon_menu.gif
@@ -62,8 +80,8 @@ lib/vtcl/images/icon_optionmenu.gif
 lib/vtcl/images/icon_panedwindow.gif
 lib/vtcl/images/icon_pointer.gif
 lib/vtcl/images/icon_progressbar.gif
-lib/vtcl/images/icon_radiobutton.gif
 lib/vtcl/images/icon_radiobox.gif
+lib/vtcl/images/icon_radiobutton.gif
 lib/vtcl/images/icon_scale_h.gif
 lib/vtcl/images/icon_scale_v.gif
 lib/vtcl/images/icon_scrollbar_h.gif
@@ -105,74 +123,11 @@ lib/vtcl/images/rel_ridge.gif
 lib/vtcl/images/rel_sunken.gif
 lib/vtcl/images/relief.gif
 lib/vtcl/images/tconsole.gif
-lib/vtcl/images/title_small.gif
+lib/vtcl/images/tip.gif
 lib/vtcl/images/title.gif
+lib/vtcl/images/title_small.gif
 lib/vtcl/images/unknown.gif
 lib/vtcl/images/up.gif
-lib/vtcl/images/edit/add.gif
-lib/vtcl/images/edit/browse.gif
-lib/vtcl/images/edit/copy.gif
-lib/vtcl/images/edit/cut.gif
-lib/vtcl/images/edit/hide.gif
-lib/vtcl/images/edit/icons.gif
-lib/vtcl/images/edit/inswidg.gif
-lib/vtcl/images/edit/new.gif
-lib/vtcl/images/edit/ok.gif
-lib/vtcl/images/edit/open.gif
-lib/vtcl/images/edit/paste.gif
-lib/vtcl/images/edit/refresh.gif
-lib/vtcl/images/edit/remove.gif
-lib/vtcl/images/edit/replace.gif
-lib/vtcl/images/edit/save.gif
-lib/vtcl/images/edit/search.gif
-lib/vtcl/images/edit/show.gif
-lib/vtcl/images/edit/srchbak.gif
-lib/vtcl/images/edit/srchfwd.gif
-lib/vtcl/lib/about.tcl
-lib/vtcl/lib/attrbar.tcl
-lib/vtcl/lib/balloon.tcl
-lib/vtcl/lib/bind.tcl
-lib/vtcl/lib/bgerror.tcl
-lib/vtcl/lib/color.tcl
-lib/vtcl/lib/command.tcl
-lib/vtcl/lib/compound.tcl
-lib/vtcl/lib/compounds.tcl
-lib/vtcl/lib/do.tcl
-lib/vtcl/lib/dragsize.tcl
-lib/vtcl/lib/dump.tcl
-lib/vtcl/lib/edit.tcl
-lib/vtcl/lib/file.tcl
-lib/vtcl/lib/font.tcl
-lib/vtcl/lib/globals.tcl
-lib/vtcl/lib/handle.tcl
-lib/vtcl/lib/help.tcl
-lib/vtcl/lib/images.tcl
-lib/vtcl/lib/input.tcl
-lib/vtcl/lib/lib_bwidget.tcl
-lib/vtcl/lib/lib_blt.tcl
-lib/vtcl/lib/lib_core.tcl
-lib/vtcl/lib/lib_itcl.tcl
-lib/vtcl/lib/lib_table.tcl
-lib/vtcl/lib/lib_tablelist.tcl
-lib/vtcl/lib/lib_tix.tcl
-lib/vtcl/lib/lib_vtcl.tcl
-lib/vtcl/lib/loadwidg.tcl
-lib/vtcl/lib/menu.tcl
-lib/vtcl/lib/menus.tcl
-lib/vtcl/lib/misc.tcl
-lib/vtcl/lib/name.tcl
-lib/vtcl/lib/new.tcl
-lib/vtcl/lib/prefs.tcl
-lib/vtcl/lib/proc.tcl
-lib/vtcl/lib/propmgr.tcl
-lib/vtcl/lib/tclet.tcl
-lib/vtcl/lib/tkcon.tcl
-lib/vtcl/lib/toolbar.tcl
-lib/vtcl/lib/tops.tcl
-lib/vtcl/lib/tree.tcl
-lib/vtcl/lib/var.tcl
-lib/vtcl/lib/vtclib.tcl
-lib/vtcl/lib/widget.tcl
 lib/vtcl/lib/Help/About.txt
 lib/vtcl/lib/Help/Main
 lib/vtcl/lib/Help/Preferences
@@ -291,6 +246,11 @@ lib/vtcl/lib/Widgets/tix/tixSelect.wgt
 lib/vtcl/lib/Widgets/vtcl/combobox.wgt
 lib/vtcl/lib/Widgets/vtcl/mclistbox.wgt
 lib/vtcl/lib/Widgets/vtcl/progressbar1.wgt
+lib/vtcl/lib/about.tcl
+lib/vtcl/lib/attrbar.tcl
+lib/vtcl/lib/balloon.tcl
+lib/vtcl/lib/bgerror.tcl
+lib/vtcl/lib/bind.tcl
 lib/vtcl/lib/bwidget/arrow.tcl
 lib/vtcl/lib/bwidget/bitmap.tcl
 lib/vtcl/lib/bwidget/button.tcl
@@ -303,30 +263,6 @@ lib/vtcl/lib/bwidget/dropsite.tcl
 lib/vtcl/lib/bwidget/dynhelp.tcl
 lib/vtcl/lib/bwidget/entry.tcl
 lib/vtcl/lib/bwidget/font.tcl
-lib/vtcl/lib/bwidget/init.tcl
-lib/vtcl/lib/bwidget/label.tcl
-lib/vtcl/lib/bwidget/labelentry.tcl
-lib/vtcl/lib/bwidget/labelframe.tcl
-lib/vtcl/lib/bwidget/listbox.tcl
-lib/vtcl/lib/bwidget/mainframe.tcl
-lib/vtcl/lib/bwidget/messagedlg.tcl
-lib/vtcl/lib/bwidget/notebook.tcl
-lib/vtcl/lib/bwidget/pagesmgr.tcl
-lib/vtcl/lib/bwidget/panedw.tcl
-lib/vtcl/lib/bwidget/passwddlg.tcl
-lib/vtcl/lib/bwidget/pkgIndex.tcl
-lib/vtcl/lib/bwidget/progressbar.tcl
-lib/vtcl/lib/bwidget/progressdlg.tcl
-lib/vtcl/lib/bwidget/scrollframe.tcl
-lib/vtcl/lib/bwidget/scrollview.tcl
-lib/vtcl/lib/bwidget/scrollw.tcl
-lib/vtcl/lib/bwidget/separator.tcl
-lib/vtcl/lib/bwidget/spinbox.tcl
-lib/vtcl/lib/bwidget/titleframe.tcl
-lib/vtcl/lib/bwidget/tree.tcl
-lib/vtcl/lib/bwidget/utils.tcl
-lib/vtcl/lib/bwidget/widget.tcl
-lib/vtcl/lib/bwidget/xpm2image.tcl
 lib/vtcl/lib/bwidget/images/bold.gif
 lib/vtcl/lib/bwidget/images/copy.gif
 lib/vtcl/lib/bwidget/images/cut.gif
@@ -358,29 +294,100 @@ lib/vtcl/lib/bwidget/images/target.xbm
 lib/vtcl/lib/bwidget/images/underline.gif
 lib/vtcl/lib/bwidget/images/undo.gif
 lib/vtcl/lib/bwidget/images/warning.gif
+lib/vtcl/lib/bwidget/init.tcl
+lib/vtcl/lib/bwidget/label.tcl
+lib/vtcl/lib/bwidget/labelentry.tcl
+lib/vtcl/lib/bwidget/labelframe.tcl
 lib/vtcl/lib/bwidget/lang/de.rc
 lib/vtcl/lib/bwidget/lang/en.rc
 lib/vtcl/lib/bwidget/lang/es.rc
 lib/vtcl/lib/bwidget/lang/fr.rc
+lib/vtcl/lib/bwidget/listbox.tcl
+lib/vtcl/lib/bwidget/mainframe.tcl
+lib/vtcl/lib/bwidget/messagedlg.tcl
+lib/vtcl/lib/bwidget/notebook.tcl
+lib/vtcl/lib/bwidget/pagesmgr.tcl
+lib/vtcl/lib/bwidget/panedw.tcl
+lib/vtcl/lib/bwidget/passwddlg.tcl
+lib/vtcl/lib/bwidget/pkgIndex.tcl
+lib/vtcl/lib/bwidget/progressbar.tcl
+lib/vtcl/lib/bwidget/progressdlg.tcl
+lib/vtcl/lib/bwidget/scrollframe.tcl
+lib/vtcl/lib/bwidget/scrollview.tcl
+lib/vtcl/lib/bwidget/scrollw.tcl
+lib/vtcl/lib/bwidget/separator.tcl
+lib/vtcl/lib/bwidget/spinbox.tcl
+lib/vtcl/lib/bwidget/titleframe.tcl
+lib/vtcl/lib/bwidget/tree.tcl
+lib/vtcl/lib/bwidget/utils.tcl
+lib/vtcl/lib/bwidget/widget.tcl
+lib/vtcl/lib/bwidget/xpm2image.tcl
+lib/vtcl/lib/color.tcl
+lib/vtcl/lib/command.tcl
+lib/vtcl/lib/compound.tcl
+lib/vtcl/lib/compounds.tcl
+lib/vtcl/lib/do.tcl
+lib/vtcl/lib/dragsize.tcl
+lib/vtcl/lib/dump.tcl
+lib/vtcl/lib/edit.tcl
+lib/vtcl/lib/file.tcl
+lib/vtcl/lib/font.tcl
+lib/vtcl/lib/globals.tcl
+lib/vtcl/lib/handle.tcl
+lib/vtcl/lib/help.tcl
+lib/vtcl/lib/images.tcl
+lib/vtcl/lib/input.tcl
+lib/vtcl/lib/lib_blt.tcl
+lib/vtcl/lib/lib_bwidget.tcl
+lib/vtcl/lib/lib_core.tcl
+lib/vtcl/lib/lib_itcl.tcl
+lib/vtcl/lib/lib_table.tcl
+lib/vtcl/lib/lib_tablelist.tcl
+lib/vtcl/lib/lib_tix.tcl
+lib/vtcl/lib/lib_vtcl.tcl
+lib/vtcl/lib/loadwidg.tcl
+lib/vtcl/lib/menu.tcl
+lib/vtcl/lib/menus.tcl
+lib/vtcl/lib/menus_old.tcl
+lib/vtcl/lib/misc.tcl
+lib/vtcl/lib/name.tcl
+lib/vtcl/lib/new.tcl
+lib/vtcl/lib/prefs.tcl
+lib/vtcl/lib/proc.tcl
+lib/vtcl/lib/propmgr.tcl
+lib/vtcl/lib/tclet.tcl
+lib/vtcl/lib/tkcon.tcl
+lib/vtcl/lib/toolbar.tcl
+lib/vtcl/lib/tops.tcl
+lib/vtcl/lib/tree.tcl
 lib/vtcl/lib/ttd/ttd.tcl
+lib/vtcl/lib/var.tcl
+lib/vtcl/lib/vtclib.tcl
+lib/vtcl/lib/widget.tcl
+lib/vtcl/vtcl.tcl
+lib/vtcl/vtsetup.tcl
+share/doc/vtcl/combobox.html
+share/doc/vtcl/mclistbox.html
+share/doc/vtcl/progressbar.html
+share/doc/vtcl/tutorial.html
 share/doc/vtcl/tutorial.txt
+@dirrm share/doc/vtcl
+@dirrm lib/vtcl/lib/ttd
+@dirrm lib/vtcl/lib/bwidget/lang
+@dirrm lib/vtcl/lib/bwidget/images
+@dirrm lib/vtcl/lib/bwidget
+@dirrm lib/vtcl/lib/Widgets/vtcl
+@dirrm lib/vtcl/lib/Widgets/user
+@dirrm lib/vtcl/lib/Widgets/tix
+@dirrm lib/vtcl/lib/Widgets/tablelist
+@dirrm lib/vtcl/lib/Widgets/table
+@dirrm lib/vtcl/lib/Widgets/itcl
+@dirrm lib/vtcl/lib/Widgets/core
+@dirrm lib/vtcl/lib/Widgets/bwidget
+@dirrm lib/vtcl/lib/Widgets/blt
+@dirrm lib/vtcl/lib/Widgets
+@dirrm lib/vtcl/lib/Help
+@dirrm lib/vtcl/lib
 @dirrm lib/vtcl/images/edit
 @dirrm lib/vtcl/images
-@dirrm lib/vtcl/lib/Help
-@dirrm lib/vtcl/lib/Widgets/blt
-@dirrm lib/vtcl/lib/Widgets/bwidget
-@dirrm lib/vtcl/lib/Widgets/core
-@dirrm lib/vtcl/lib/Widgets/itcl
-@dirrm lib/vtcl/lib/Widgets/table
-@dirrm lib/vtcl/lib/Widgets/tablelist
-@dirrm lib/vtcl/lib/Widgets/tix
-@dirrm lib/vtcl/lib/Widgets/user
-@dirrm lib/vtcl/lib/Widgets/vtcl
-@dirrm lib/vtcl/lib/Widgets
-@dirrm lib/vtcl/lib/bwidget/images
-@dirrm lib/vtcl/lib/bwidget/lang
-@dirrm lib/vtcl/lib/bwidget
-@dirrm lib/vtcl/lib/ttd
-@dirrm lib/vtcl/lib
 @dirrm lib/vtcl
-@dirrm share/doc/vtcl
