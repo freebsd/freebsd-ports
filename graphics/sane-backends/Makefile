@@ -7,6 +7,7 @@
 
 PORTNAME=	sane-backends
 PORTVERSION=	1.0.14
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	ftp://ftp.no.mostang.com/pub/sane/%SUBDIR%/
 MASTER_SITE_SUBDIR=	${PORTNAME}-${PORTVERSION}
@@ -14,21 +15,30 @@ MASTER_SITE_SUBDIR=	${PORTNAME}-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	API for access to scanners, digitals camera, frame grabbers etc
 
-LIB_DEPENDS=	usb-0.1.7:${PORTSDIR}/devel/libusb \
-		jpeg.9:${PORTSDIR}/graphics/jpeg
+LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg
 
 USE_GNOME=	gnometarget lthack
 USE_GMAKE=	yes
 USE_LIBTOOL_VER=	13
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
-MAKE_ENV=	NOPORTDOCS=${NOPORTDOCS}
+MAKE_ENV=	NOPORTDOCS=${NOPORTDOCS} \
+		DOCSDIR="${DOCSDIR}"
 INSTALLS_SHLIB=	yes
 
-OPTIONS=	NLS "NLS support" on \
+OPTIONS=	USB "USB support" on \
+		NLS "NLS support" on \
 		GPHOTO2 "gPhoto2 support" off
 
 .include <bsd.port.pre.mk>
+
+.if defined(WITHOUT_USB)
+CONFIGURE_ARGS+=	--disable-libusb
+PLIST_SUB+=	USB="@comment "
+.else
+LIB_DEPENDS+=	usb-0.1.7:${PORTSDIR}/devel/libusb
+PLIST_SUB+=	USB=""
+.endif
 
 .if defined(WITHOUT_NLS)
 CONFIGURE_ARGS+=	--disable-translations
