@@ -17,12 +17,17 @@ include/libvisual/lv_list.h
 include/libvisual/lv_log.h
 include/libvisual/lv_mem.h
 include/libvisual/lv_morph.h
+include/libvisual/lv_object.h
 include/libvisual/lv_palette.h
 include/libvisual/lv_param.h
 include/libvisual/lv_plugin.h
 include/libvisual/lv_random.h
 include/libvisual/lv_songinfo.h
+include/libvisual/lv_thread.h
 include/libvisual/lv_time.h
+include/libvisual/lv_transform.h
+include/libvisual/lv_types.h
+include/libvisual/lv_ui.h
 include/libvisual/lv_video.h
 include/libvisual/lvconfig.h
 lib/libvisual.a

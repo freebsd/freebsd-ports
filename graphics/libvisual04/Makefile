@@ -9,7 +9,7 @@
 # can work with it. Backwards compatiblity is known to be broken in the past.
 
 PORTNAME=	libvisual
-PORTVERSION=	0.1.7
+PORTVERSION=	0.2.0
 CATEGORIES=	graphics
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -21,13 +21,20 @@ USE_XLIBS=	yes
 USE_GNOME=	gnomehack pkgconfig
 USE_REINPLACE=	yes
 USE_LIBTOOL_VER=15
-CONFIGURE_ENV=	CFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
-		LIBS="-L${LOCALBASE}/lib -L${X11BASE}/lib"
+CONFIGURE_ENV=	CFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include ${PTHREAD_CFLAGS}" \
+		LIBS="-L${LOCALBASE}/lib -L${X11BASE}/lib ${PTHREAD_LIBS}"
+CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 INSTALLS_SHLIB=	yes
+
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 50001
+EXTRA_PATCHES=	${PATCHDIR}/extra-patch-libvisual_lv_cpu.c
+.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|-Wno-unused-variable||g' \
 		-e 's|-O3|${CFLAGS}|g' \
 		${WRKSRC}/libvisual/Makefile.in
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
