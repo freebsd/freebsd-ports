@@ -174,6 +174,7 @@
     SUBDIR += libsndfile
     SUBDIR += libtremor
     SUBDIR += libvorbis
+    SUBDIR += libvorbis-aotuv
     SUBDIR += libworkman
     SUBDIR += linux-arts
     SUBDIR += linux-esound

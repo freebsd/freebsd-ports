@@ -1,0 +1,15 @@
+aoTuV is a variant of libvorbis enhanced for sound quality, based on
+libvorbis 1.0.1 of Xiph.Org.
+
+On the frequency of 26kHz or more, q-2 (nominal 40kbps/44.1-48kHz) can
+be used.  A part of Nominal bitrate has changed.  Use of bitrate
+management mode is not recommended. (In the future, psy.c and
+mapping0.c will need to be improved.)
+
+Copyright (c) 2002, 2003 Xiph.Org Foundation
+Copyright (c) 2003, 2004 Aoyumi
+
+Licensed under the original libvorbis's BSD-style license
+
+Author:	aoyumi <aoyumi@inter7.jp>
+WWW:	http://www.geocities.jp/aoyoume/aotuv/
