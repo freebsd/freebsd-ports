@@ -1,0 +1,13 @@
+Patchutils is a small collection of programs that operate on patch files.
+Currently it contains interdiff and filterdiff. 
+
+Interdiff generates an incremental patch from two patches against a common
+source. For example, if you have applied a pre-patch to a source tree, and
+wish to apply another pre-patch (which is against the same original source
+tree), you can use interdiff to generate the patch that you need to apply.
+You can also use this to review changes between two pre-patches. 
+
+Filterdiff will select the portions of a patch file that apply to files
+matching (or, alternatively, not matching) a shell wildcard. 
+
+WWW: http://people.redhat.com/twaugh/patchutils/
