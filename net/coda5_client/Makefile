@@ -1,13 +1,12 @@
-# New ports collection makefile for:	coda
-# Version required:			4.6.5
-# Date created:				19 June 1998
-# Whom:					hmpierce <hmpierce@cs.cmu.edu>
-#
-# $Id: Makefile,v 1.1.1.1 1998/10/05 19:23:42 rvb Exp $
+# New ports collection makefile for:	coda-client
+# Version required:			5.0.1
+# Date created:				Fri Jan 22 15:19:11 EST 1999
+# Whom:					jaharkes#
+# $FreeBSD$
 #
 
-DISTNAME=	coda-4.6.6
-PKGNAME=	coda-client-4.6.6.1
+DISTNAME=	coda-5.0.1
+PKGNAME=	coda-client-5.0.1
 CATEGORIES=	net
 MASTER_SITES=	ftp://ftp.coda.cs.cmu.edu/pub/coda/src/
 EXTRACT_SUFX=	.tgz
