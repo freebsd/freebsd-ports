@@ -24,6 +24,10 @@ WANT_GNOME=	yes
 
 .include <bsd.port.pre.mk>
 
+.if ${ARCH} != "i386"
+BROKEN=		"Does not compile on !i386"
+.endif
+
 BUILD_DEPENDS=	bash:${PORTSDIR}/shells/bash2			\
 		wget:${PORTSDIR}/ftp/wget
 LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg		\

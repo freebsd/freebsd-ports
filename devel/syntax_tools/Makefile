@@ -25,6 +25,12 @@ PLIST_SUB=	VERSION="${PORTVERSION}"
 
 SYNTAX_TOOLS=	${PREFIX}/lib/erlang/lib/syntax_tools-${PORTVERSION}
 
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} != "i386"
+BROKEN=		"Does not compile on !i386"
+.endif
+
 post-extract:
 		@${RM} ${WRKSRC}/demo.erl ${WRKSRC}/test.erl
 
@@ -41,4 +47,4 @@ do-install:
 		@${INSTALL_DATA} ${WRKSRC}/doc/* ${SYNTAX_TOOLS}/doc
 		@${LN} -sf ${DISTNAME} ${PREFIX}/lib/erlang/lib/syntax_tools
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

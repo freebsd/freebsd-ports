@@ -31,6 +31,12 @@ USE_MOTIF=	yes
 CONFIGURE_ARGS=	--prefix=${PREFIX}
 DIRS=		iiimxcf/xiiimp.so iiimxcf/htt_xbe
 
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} != "i386"
+BROKEN=		"Does not compile on !i386"
+.endif
+
 post-patch:
 .for DIR in ${DIRS}
 	${REINPLACE_CMD} -e "s,-lpthread,-pthread,g" \
@@ -64,4 +70,4 @@ do-install:
 	cd ${WRKSRC}/${DIR} && ${GMAKE} install
 .endfor
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

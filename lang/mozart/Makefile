@@ -46,6 +46,12 @@ CONFIGURE_ARGS=	--prefix=${PREFIX}/lib/oz --disable-doc \
 	--with-tk-lib=${LOCALBASE}/lib \
 	--with-tkinclude=${LOCALBASE}/include/tk8.3
 
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} != "i386"
+BROKEN=		"Does not compile on !i386"
+.endif
+
 pre-extract:
 	@${ECHO}
 	@${ECHO} -----------------------------------------------------
@@ -90,4 +96,4 @@ post-install:
 	@cd ${WRKDIR} ; ex < ex.script
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

@@ -31,6 +31,10 @@ DOCS=		ChangeLog README TODO doc
 
 .include <bsd.port.pre.mk>
 
+.if ${ARCH} != "i386"
+BROKEN=		"Does not compile on !i386"
+.endif
+
 .if ${RUBY_VER} < 1.8
 IGNORE=		only works with ruby 1.8 or later
 .endif

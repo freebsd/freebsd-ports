@@ -31,10 +31,16 @@ GNU_CONFIGURE=	yes
 
 WRKSRC=		${WRKDIR}/${PKGNAMEPREFIX}${PORTNAME}_${PORTVERSION}
 
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} != "i386"
+BROKEN=		"Does not compile on !i386"
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} -e 's|gtk-config|${GTK_CONFIG}|g; \
 		s|-lgtk|`${GTK_CONFIG} --libs`|g; \
 		s|-O9||' \
 		${BUILD_WRKSRC}/src/Makefile.in
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
