@@ -39,3 +39,12 @@ $FreeBSD$
  	INTLLIBS="\$(top_builddir)/intl/libintl.a $LIBICONV"
  	LIBS=`echo " $LIBS " | sed -e 's/ -lintl / /' -e 's/^ //' -e 's/ $//'`
        fi
+@@ -4770,7 +4774,7 @@
+ EOF
+ 
+ SODIPODI_CFLAGS="$FRONTLINE_CFLAGS $SODIPODI_CFLAGS"
+-SODIPODI_LIBS="$FRONTLINE_LIBS $SODIPODI_LIBS"     
++SODIPODI_LIBS="$SODIPODI_LIBS $FRONTLINE_LIBS"     
+   else
+      echo "$ac_t""no" 1>&6
+      if test "$FRONTLINE_CONFIG" = "no" ; then
