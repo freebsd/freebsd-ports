@@ -3,7 +3,7 @@
 # Date created:		01 October 1995
 # Whom:			gena
 #
-# $Id: Makefile,v 1.1.1.1 1995/10/03 01:20:06 jkh Exp $
+# $Id: Makefile,v 1.2 1995/10/03 06:51:55 asami Exp $
 #
 
 DISTNAME=	xfmail
@@ -14,7 +14,7 @@ MASTER_SITES=	ftp://burka.netvision.net.il/pub/xfmail/work/
 MAINTAINER=	gena@NetVision.net.il
 
 LIB_DEPENDS=	Xpm\\.4\\.:${PORTSDIR}/graphics/xpm \
-		forms\\.0\\.:${PORTSDIR}/x11/xforms
+		xforms\\.0\\.:${PORTSDIR}/x11/xforms
 
 USE_X11=	yes
 WRKSRC=		${WRKDIR}/xfmail/ui
