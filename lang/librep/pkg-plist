@@ -239,6 +239,10 @@ share/rep/%%VERSION%%/lisp/rep/www/fetch-url.jl
 share/rep/%%VERSION%%/lisp/rep/www/fetch-url.jlc
 share/rep/%%VERSION%%/lisp/rep/www/quote-url.jl
 share/rep/%%VERSION%%/lisp/rep/www/quote-url.jlc
+share/rep/%%VERSION%%/lisp/rep/xml/printer.jl
+share/rep/%%VERSION%%/lisp/rep/xml/printer.jlc
+share/rep/%%VERSION%%/lisp/rep/xml/reader.jl
+share/rep/%%VERSION%%/lisp/rep/xml/reader.jlc
 share/rep/%%VERSION%%/lisp/ring.jl
 share/rep/%%VERSION%%/lisp/ring.jlc
 share/rep/%%VERSION%%/lisp/scheme.jl
@@ -267,6 +271,7 @@ share/rep/%%VERSION%%/lisp/unscheme/syntax.jl
 share/rep/%%VERSION%%/lisp/unscheme/syntax.jlc
 @dirrm share/rep/%%VERSION%%/lisp/unscheme
 @dirrm share/rep/%%VERSION%%/lisp/scheme
+@dirrm share/rep/%%VERSION%%/lisp/rep/xml
 @dirrm share/rep/%%VERSION%%/lisp/rep/www
 @dirrm share/rep/%%VERSION%%/lisp/rep/vm/compiler
 @dirrm share/rep/%%VERSION%%/lisp/rep/vm
