@@ -346,7 +346,7 @@ share/locale/zh_TW/LC_MESSAGES/mutt.mo
 %%SUB_HTML%%share/doc/mutt/html/manual332.html
 %%SUB_HTML%%share/doc/mutt/html/manual333.html
 %%SUB_HTML%%share/doc/mutt/html/manual334.html
-%%SUB_HTML%%%%SUB_PGP%%share/doc/mutt/html/manual335.html
+%%SUB_HTML%%%%SUB_PGP_A%%%%SUB_PGP%%share/doc/mutt/html/manual335.html
 %%SUB_HTML%%share/doc/mutt/html/manual34.html
 %%SUB_HTML%%share/doc/mutt/html/manual35.html
 %%SUB_HTML%%share/doc/mutt/html/manual36.html
