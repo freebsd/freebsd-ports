@@ -8,19 +8,19 @@ lib/swig_lib/ruby/ptrlang.i
 lib/swig_lib/ruby/ruby.swg
 lib/swig_lib/ruby/typemaps.i
 @dirrm lib/swig_lib/ruby
-share/doc/ruby/swigruby/ChangeLog
-share/doc/ruby/swigruby/README
-share/doc/ruby/swigruby/ja/README.ja
-@dirrm share/doc/ruby/swigruby/ja
-@dirrm share/doc/ruby/swigruby
-share/examples/ruby/swigruby/dbm/Makefile.swig
-share/examples/ruby/swigruby/dbm/DBM.i
-share/examples/ruby/swigruby/dbm/extconf.rb
-share/examples/ruby/swigruby/dbm/dbmtest.rb
-share/examples/ruby/swigruby/qt/Makefile.swig
-share/examples/ruby/swigruby/qt/qt.i
-share/examples/ruby/swigruby/qt/extconf.rb
-share/examples/ruby/swigruby/qt/hello.rb
-@dirrm share/examples/ruby/swigruby/dbm
-@dirrm share/examples/ruby/swigruby/qt
-@dirrm share/examples/ruby/swigruby
+%%RUBY_DOCDIR%%/swigruby/ChangeLog
+%%RUBY_DOCDIR%%/swigruby/README
+%%RUBY_DOCDIR%%/swigruby/ja/README.ja
+@dirrm %%RUBY_DOCDIR%%/swigruby/ja
+@dirrm %%RUBY_DOCDIR%%/swigruby
+%%RUBY_EXAMPLESDIR%%/swigruby/dbm/Makefile.swig
+%%RUBY_EXAMPLESDIR%%/swigruby/dbm/DBM.i
+%%RUBY_EXAMPLESDIR%%/swigruby/dbm/extconf.rb
+%%RUBY_EXAMPLESDIR%%/swigruby/dbm/dbmtest.rb
+%%RUBY_EXAMPLESDIR%%/swigruby/qt/Makefile.swig
+%%RUBY_EXAMPLESDIR%%/swigruby/qt/qt.i
+%%RUBY_EXAMPLESDIR%%/swigruby/qt/extconf.rb
+%%RUBY_EXAMPLESDIR%%/swigruby/qt/hello.rb
+@dirrm %%RUBY_EXAMPLESDIR%%/swigruby/dbm
+@dirrm %%RUBY_EXAMPLESDIR%%/swigruby/qt
+@dirrm %%RUBY_EXAMPLESDIR%%/swigruby

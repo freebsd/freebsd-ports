@@ -13,18 +13,12 @@ DIST_SUBDIR=	ruby
 
 MAINTAINER=	knu@FreeBSD.org
 
-BUILD_DEPENDS=	ruby:${PORTSDIR}/lang/ruby \
-		swig:${PORTSDIR}/devel/SWIG
-RUN_DEPENDS=	ruby:${PORTSDIR}/lang/ruby \
-		swig:${PORTSDIR}/devel/SWIG
+BUILD_DEPENDS=	swig:${PORTSDIR}/devel/SWIG
+RUN_DEPENDS=	swig:${PORTSDIR}/devel/SWIG
 
-USE_GMAKE=	YES
+USE_RUBY=	yes
 
-PLIST_SUB=	RUBY_VER="${RUBY_VER}" RUBY_ARCH="${RUBY_ARCH}"
-
-RUBY=		${LOCALBASE}/bin/ruby
-RUBY_VER=	1.4
-RUBY_ARCH=	${ARCH}-freebsd${OSREL}
+USE_GMAKE=	yes
 
 DOCS_EN=	ChangeLog README
 DOCS_JA=	README.ja
@@ -35,15 +29,17 @@ do-configure:
 
 post-install:
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${PREFIX}/share/examples/ruby/swigruby
-	${CP} -R ${WRKSRC}/examples/ ${PREFIX}/share/examples/ruby/swigruby/
-	${MKDIR} ${PREFIX}/share/doc/ruby/swigruby/ja
+	${MKDIR} ${RUBY_EXAMPLESDIR}/swigruby
+	${CP} -R ${WRKSRC}/examples/ ${RUBY_EXAMPLESDIR}/swigruby/
+	${MKDIR} ${RUBY_DOCDIR}/swigruby/ja
 .for f in ${DOCS_EN}
-	${INSTALL_DATA} ${WRKSRC}/${f} ${PREFIX}/share/doc/ruby/swigruby/
+	${INSTALL_DATA} ${WRKSRC}/${f} ${RUBY_DOCDIR}/swigruby/
 .endfor
 .for f in ${DOCS_JA}
-	${INSTALL_DATA} ${WRKSRC}/${f} ${PREFIX}/share/doc/ruby/swigruby/ja/
+	${INSTALL_DATA} ${WRKSRC}/${f} ${RUBY_DOCDIR}/swigruby/ja/
 .endfor
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+.include "${PORTSDIR}/Mk/bsd.ruby.mk"
+.include <bsd.port.post.mk>
