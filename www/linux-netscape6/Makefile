@@ -60,7 +60,7 @@ MAINTAINER?=	trevor@FreeBSD.org
 FORBIDDEN=	"see http://bugzilla.mozilla.org/show_bug.cgi?id=150339"
 
 BUILD_DEPENDS=	unzip:${PORTSDIR}/archivers/unzip
-RUN_DEPENDS=	${LINUXBASE}/usr/lib/libgtk-1.2.so.0.5.0:${PORTSDIR}/x11-toolkits/linux-gtk \
+RUN_DEPENDS=	${LINUXBASE}/usr/lib/libgtk-1.2.so.0.9.0:${PORTSDIR}/x11-toolkits/linux-gtk \
 		${LINUXBASE}/usr/lib/libjpeg.so.62.0.0:${PORTSDIR}/graphics/linux-jpeg
 
 LATEST_LINK=	linux-${MAJ}
