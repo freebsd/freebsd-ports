@@ -17,6 +17,7 @@
     SUBDIR += clisp
     SUBDIR += cmucl
     SUBDIR += compaq-cc
+    SUBDIR += crossgo32-f77
     SUBDIR += cu-prolog
     SUBDIR += dylan
     SUBDIR += egcs
