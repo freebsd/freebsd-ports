@@ -1,6 +1,6 @@
---- logtool/Makefile.orig	Sat Dec 30 16:57:27 2000
-+++ logtool/Makefile	Sat Dec 30 20:43:49 2000
-@@ -9,12 +9,13 @@
+--- logtool/Makefile.orig	Wed Jan 10 04:13:50 2001
++++ logtool/Makefile	Wed Jan 10 04:16:20 2001
+@@ -9,8 +9,8 @@
  	 csv.o html.o raw.o logtool.o main.o
  SRC = logtool.c
  # These options affect where logtool gets installed
@@ -10,14 +10,18 @@
 +ETCDIR = %%PREFIX%%/etc/logtool
  CC = gcc
  
+ INSTALL = /usr/bin/install
+@@ -18,7 +18,8 @@
+ # INSTALL = /usr/ucb/install
+ 
  # For RedHat (and most other) Linux'es, this should be ideal
 -CFLAGS= -Wall -O3 -ansi -pedantic -Werror # -DDEBUG -g # uncomment this for debugging stuff's
 +CFLAGS= -I/usr/local/include -Wall -O3 -ansi -pedantic -Werror # -DDEBUG -g # uncomment this for debugging stuff's
-+LIBS=	-L/usr/local/lib -lgnugetopt
++LIBS=  -L/usr/local/lib -lgnugetopt
  
  # For portability to non-linux'es/non-standard-linux'es, try this
- # CFLAGS = -Wall -Werror
-@@ -22,7 +23,7 @@
+ # CFLAGS = -Wall
+@@ -28,7 +29,7 @@
  
  ### The main build stuff
  logtool: logtool.o $(LIB)
@@ -26,12 +30,12 @@
  	@echo "strip $(PROG)"	
  	@strip $(PROG)
  
-@@ -56,7 +57,7 @@
+@@ -62,7 +63,7 @@
  
  ### How to install this puppy
  install: logtool
 -	mkdir -p /etc/logtool
 +	mkdir -p ${ETCDIR}
- 	install -c -m 0644 -o root ../conf/logtool.conf $(ETCDIR)/logtool.conf
- 	install -c -m 0644 -o root ../conf/green $(ETCDIR)/green
- 	install -c -m 0644 -o root ../conf/yellow $(ETCDIR)/yellow
+ 	$(INSTALL) -c -m 0644 -o root ../conf/logtool.conf $(ETCDIR)/logtool.conf
+ 	$(INSTALL) -c -m 0644 -o root ../conf/green $(ETCDIR)/green
+ 	$(INSTALL) -c -m 0644 -o root ../conf/yellow $(ETCDIR)/yellow

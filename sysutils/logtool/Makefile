@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	logtool
-PORTVERSION=	1.0.1
+PORTVERSION=	1.0.2
 CATEGORIES=	sysutils
 MASTER_SITES=	http://users.digitex.net/~max/
 
@@ -17,11 +17,24 @@ LIB_DEPENDS=	gnugetopt.1:${PORTSDIR}/devel/libgnugetopt
 USE_GMAKE=	yes
 ALL_TARGET=	build
 
+.if defined(NOPORTDOCS)
+NODOCS=		"@comment "
+.endif
+
+PLIST_SUB=	NOPORTDOCS=${NODOCS}
+
 post-patch:
 	@${PERL} -pi -e "s|make|${GMAKE}|g" ${WRKSRC}/Makefile
 .for file in logtool/Makefile logtail/Makefile
 	@${PERL} -pi -e "s|%%PREFIX%%|${PREFIX}|g" ${WRKSRC}/${file}
 .endfor
 	@${PERL} -pi -e "s|/etc|${PREFIX}/etc|g" ${WRKSRC}/logtool/config.h
+
+post-install:
+.if !defined(NOPORTDOCS)
+	@${ECHO_MSG} "===>   Installing logtool docs in ${PREFIX}/share/doc/logtool"
+	@${MKDIR} ${PREFIX}/share/doc/logtool && ${CHMOD} a+rx ${PREFIX}/share/doc/logtool
+	@${CP} -r ${WRKSRC}/doc/* ${PREFIX}/share/doc/logtool
+.endif
 
 .include <bsd.port.mk>

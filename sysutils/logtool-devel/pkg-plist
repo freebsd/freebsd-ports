@@ -5,4 +5,11 @@ etc/logtool/green
 etc/logtool/include
 etc/logtool/logtool.conf
 etc/logtool/yellow
+%%NOPORTDOCS%%share/doc/logtool/examples/README
+%%NOPORTDOCS%%share/doc/logtool/examples/cronjob.genwebpage.sh
+%%NOPORTDOCS%%share/doc/logtool/examples/cronjob.emailreport.sh
+%%NOPORTDOCS%%share/doc/logtool/examples/monitor.logs.sh
+%%NOPORTDOCS%%share/doc/logtool/logtool.txt
 @dirrm etc/logtool
+%%NOPORTDOCS%%@dirrm share/doc/logtool/examples
+%%NOPORTDOCS%%@dirrm share/doc/logtool
