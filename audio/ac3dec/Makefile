@@ -13,18 +13,28 @@ MASTER_SITES=	http://dara.notbsd.org/~aholtzma/ac3/tarballs/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Software for research in digital audio coding/decoding
 
-GNU_CONFIGURE=	yes
 ONLY_FOR_ARCHS=	i386 alpha
 
-post-patch:
-	@${SED} -e 's,machine/soundcard.h,sys/soundcard.h,' \
-	    < ${WRKSRC}/output.c > ${WRKSRC}/output.c.new
-	@${MV} ${WRKSRC}/output.c.new ${WRKSRC}/output.c
+USE_REINPLACE=	yes
+GNU_CONFIGURE=	yes
 
-pre-install:
+PORTDOCS=	README
+PLIST_FILES=	bin/ac3dec bin/extract_ac3
+
+post-patch:
+.for file in Makefile.in libac3/Makefile.in tools/Makefile.in
+	@${REINPLACE_CMD} -e \
+		's|^CFLAGS =.*$$|CFLAGS = @CFLAGS@|g' ${WRKSRC}/${file}
+.endfor
+.for file in output.c output_linux.c
+	@${REINPLACE_CMD} -e \
+		's|machine/soundcard.h|sys/soundcard.h|g' ${WRKSRC}/${file}
+.endfor
+
+post-install:
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${PREFIX}/share/doc/ac3dec
-	${INSTALL_DATA} ${WRKSRC}/README ${PREFIX}/share/doc/ac3dec/README
+	${MKDIR} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>
