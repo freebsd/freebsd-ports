@@ -1,0 +1,122 @@
+--- detex.l.orig	Thu Aug 12 08:54:46 1993
++++ detex.l	Mon Feb 17 23:01:15 1997
+@@ -76,7 +76,7 @@
+ 
+ <Normal>"\\begin"{S}"{"{S}"document"{S}"}"	{fLatex = !fForcetex; IGNORE;}
+ 
+-<Normal>"\\begin"     /* environment start */	{LaBEGIN LaBegin; IGNORE;}
++<Normal>"\\begin"     {/* environment start */	 LaBEGIN LaBegin; IGNORE;}
+ 
+ <LaBegin>{S}"{"{S}"verbatim"{S}"}"		{   if (BeginEnv("verbatim"))
+ 							BEGIN LaEnv;
+@@ -85,8 +85,8 @@
+ 						    IGNORE;
+ 						}
+ 
+-<LaVerbatim>"\\end"{S}"{"{S}"verbatim"{S}"}" /* verbatim mode */
+-						{BEGIN Normal; IGNORE;}
++<LaVerbatim>"\\end"{S}"{"{S}"verbatim"{S}"}" {/* verbatim mode */
++						BEGIN Normal; IGNORE;}
+ <LaVerbatim>.					ECHO;
+ 
+ <LaBegin>{W}					{   if (BeginEnv(yytext))
+@@ -98,11 +98,11 @@
+ <LaBegin>"\n"					NEWLINE;
+ <LaBegin>.					;
+ 
+-<LaEnv>"\\end"  /* absorb some environments */	{LaBEGIN LaEnd; IGNORE;}
++<LaEnv>"\\end"  {/* absorb some environments */	LaBEGIN LaEnd; IGNORE;}
+ <LaEnv>"\n"					NEWLINE;
+ <LaEnv>.					;
+ 
+-<LaEnd>{W}		 /* end environment */	{   if (EndEnv(yytext))
++<LaEnd>{W}		 {/* end environment */	   if (EndEnv(yytext))
+ 							BEGIN Normal;
+ 						    IGNORE;
+ 						}
+@@ -110,8 +110,8 @@
+ <LaEnd>"\n"					NEWLINE;
+ <LaEnd>.					;
+ 
+-<Normal>"\\bibitem"	    /* ignore args  */	{LaBEGIN LaMacro2; IGNORE;}
+-<Normal>"\\bibliography"    /* of these \cs */	{LaBEGIN LaMacro; IGNORE;}
++<Normal>"\\bibitem"	    {/* ignore args  */	 LaBEGIN LaMacro2; IGNORE;}
++<Normal>"\\bibliography"    {/* of these \cs */	LaBEGIN LaMacro; IGNORE;}
+ <Normal>"\\bibstyle"				{LaBEGIN LaMacro; IGNORE;}
+ <Normal>"\\cite"				{CITEBEGIN LaMacro2; IGNORE;}
+ <Normal>"\\documentstyle"			{LaBEGIN LaMacro; IGNORE;}
+@@ -122,8 +122,8 @@
+ <Normal>"\\pagestyle"				{LaBEGIN LaMacro; IGNORE;}
+ <Normal>"\\ref"					{CITEBEGIN LaMacro; IGNORE;}
+ <Normal>"\\setcounter"				{LaBEGIN LaMacro; IGNORE;}
+-<Normal>"\\verb" /* ignore \verb<char>...<char> */
+-						{   if (fLatex) {
++<Normal>"\\verb" {/* ignore \verb<char>...<char> */
++						   if (fLatex) {
+ 						 	char verbchar, c;
+ 						 	verbchar = input();
+ 						 	while ((c = input()) != verbchar)
+@@ -143,33 +143,33 @@
+ <LaMacro2>"\n"					NEWLINE;
+ <LaMacro2>.					;
+ 
+-<Normal>"\\def"		/* ignore def begin */	{BEGIN Define; IGNORE;}
++<Normal>"\\def"		{/* ignore def begin */	BEGIN Define; IGNORE;}
+ <Define>"{"					BEGIN Normal;
+ <Define>"\n"					NEWLINE;
+ <Define>.					;
+ 
+-<Normal>"\\("		/* formula mode */	{LaBEGIN LaFormula; IGNORE;}
++<Normal>"\\("		{/* formula mode */	LaBEGIN LaFormula; IGNORE;}
+ <LaFormula>"\\)"				BEGIN Normal;
+ <LaFormula>"\n"					NEWLINE;
+ <LaFormula>.					;
+ 
+-<Normal>"\\["		/* display mode */	{LaBEGIN LaDisplay; IGNORE;}
++<Normal>"\\["		{/* display mode */	LaBEGIN LaDisplay; IGNORE;}
+ <LaDisplay>"\\]"				BEGIN Normal;
+ <LaDisplay>"\n"					NEWLINE;
+ <LaDisplay>.					;
+ 
+-<Normal>"$$"		/* display mode */	{BEGIN Display; IGNORE;}
++<Normal>"$$"		{/* display mode */	BEGIN Display; IGNORE;}
+ <Display>"$$"					BEGIN Normal;
+ <Display>"\n"					NEWLINE;
+ <Display>.					;
+ 
+-<Normal>"$"		/* math mode */		{BEGIN Math; IGNORE;}
++<Normal>"$"		{/* math mode */		BEGIN Math; IGNORE;}
+ <Math>"$"					BEGIN Normal;
+ <Math>"\n"					NEWLINE;
+ <Math>"\\$"					;
+ <Math>.						;
+ 
+-<Normal>"\\include"	/* process files */	{LaBEGIN LaInclude; IGNORE;}
++<Normal>"\\include"	{/* process files */	LaBEGIN LaInclude; IGNORE;}
+ <LaInclude>[^{ \t\n}]+				{   IncludeFile(yytext);
+ 						    BEGIN Normal;
+ 						}
+@@ -192,11 +192,11 @@
+ <Input>"\n"					NEWLINE;
+ <Input>.					;
+ 
+-<Normal>\\(aa|AA|ae|AE|oe|OE|ss)[ \t]*[ \t\n}] /* handle ligatures */
+-						{(void)printf("%.2s", yytext+1);}
++<Normal>\\(aa|AA|ae|AE|oe|OE|ss)[ \t]*[ \t\n}] {/* handle ligatures */
++						(void)printf("%.2s", yytext+1);}
+ <Normal>\\[OoijLl][ \t]*[ \t\n}]		{(void)printf("%.1s", yytext+1);}
+ 
+-<Normal>\\[a-zA-Z@]+	/* ignore other \cs */	{BEGIN Control; IGNORE;}
++<Normal>\\[a-zA-Z@]+	{/* ignore other \cs */	BEGIN Control; IGNORE;}
+ <Normal>"\\ "					SPACE;
+ <Normal>\\.					IGNORE;
+ <Control>\\[a-zA-Z@]+				IGNORE;
+@@ -205,7 +205,7 @@
+ <Control>[ \t]*[{]*				{BEGIN Normal; IGNORE;}
+ <Control>.					{yyless(0);BEGIN Normal;}
+ 
+-<Normal>[{}\\|]	/* special characters */	IGNORE;
++<Normal>[{}\\|]	{/* special characters */	IGNORE;}
+ <Normal>[!?]"`"					IGNORE;
+ <Normal>~					SPACE;
+ 
