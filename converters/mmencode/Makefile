@@ -8,8 +8,8 @@
 PORTNAME=	mmencode
 PORTVERSION=	2.7
 CATEGORIES=	converters
-MASTER_SITES=	ftp://thumper.bellcore.com/pub/nsb/ \
-		http://ftp.dmz.digex.net/pub/packages/mail/metamail/ \
+MASTER_SITES=	ftp://wall.etl.go.jp/pub/mime/mm2.7/ \
+		ftp://ftp.delegate.org/pub/mime/mm2.7/ \
 		ftp://ftp.funet.fi/pub/unix/mail/metamail/
 DISTNAME=	mm${PORTVERSION}
 EXTRACT_SUFX=	.tar.Z
