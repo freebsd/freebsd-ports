@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	tmail
-PORTVERSION=	0.10.5
+PORTVERSION=	0.10.6
 CATEGORIES=	mail ruby
 MASTER_SITES=	http://www.loveruby.net/archive/%SUBDIR%/
 MASTER_SITE_SUBDIR=	${PORTNAME}
