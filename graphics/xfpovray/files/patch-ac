@@ -1,5 +1,5 @@
---- src/Imakefile.orig	Tue Feb 10 04:41:01 1998
-+++ src/Imakefile	Tue Feb 17 08:39:41 1998
+--- src/Imakefile.orig	Mon Feb 23 12:40:53 1998
++++ src/Imakefile	Wed Nov  1 10:01:38 2000
 @@ -9,8 +9,8 @@
  XCOMM * * * No need to edit below here * * *
  
@@ -11,8 +11,8 @@
  XFHELPDIR = $(XFLIBDIR)/help
  
  SRCS =  $(TOP)/build_pages.c \
-@@ -46,8 +46,8 @@
- 	$(TOP)/../help/Templates \
+@@ -49,12 +49,12 @@
+ 	$(TOP)/../help/Config_File \
  	$(TOP)/../help/help_topics
  			
 -EXTRA_LIBRARIES = -L$(XFORMS_LIBDIR) ../flx/libflx.a -lforms -lm
@@ -22,3 +22,8 @@
    EXTRA_DEFINES = -DHELP_DIR=\"$(XFHELPDIR)\"
           LDLIBS = $(EXTRA_LIBRARIES) $(XLIB)
  
+-ComplexProgramTarget(xfpovray)
++ComplexProgramTargetNoMan(xfpovray)
+ InstallMultipleDestFlags(install,$(XFHELP),$(XFHELPDIR),$(INSTDATFLAGS))
+ 
+ clean::
