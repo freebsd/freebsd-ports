@@ -6,5 +6,5 @@ bin/drawstate.pl
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/UML/State/.packlist
 @dirrm %%SITE_PERL%%/UML
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/UML/State
-@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH/auto/UML/State 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH/auto/UML 2>/dev/null || true
 @unexec rmdir %D/%%SITE_PERL%%/UML 2>/dev/null || true

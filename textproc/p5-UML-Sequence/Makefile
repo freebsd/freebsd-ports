@@ -20,6 +20,7 @@ RUN_DEPENDS=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	YES
 
+MAN1=		seq2svg.pl.1 genericseq.pl.1
 MAN3=		UML::Sequence.3 \
 		UML::Sequence::SimpleSeq.3 \
 		UML::Sequence::Activation.3 \
