@@ -3460,6 +3460,7 @@ kdestroy	src/eBones/kdestroy
 kdetoys3	ports/x11-clocks/kdetoys3
 kdeutils3	ports/misc/kdeutils3
 kdevelop	ports/devel/kdevelop
+kdiff3		ports/textproc/kdiff3
 kdump		src/usr.bin/kdump
 kelp		ports/devel/kelp
 kenny		ports/misc/kenny
