@@ -32,17 +32,8 @@ pre-patch:
 		${WRKSRC}/src/Makefile.am ${WRKSRC}/libhfsp/src/Makefile.am
 	@${REINPLACE_CMD} -e 's,doc/,,' ${WRKSRC}/index.html
 
-# it would really be best if the patch-libtool target was run just
-# after pre-configure instead of just before.  To get around this, we
-# touch LIBTOOLFILES so patch-libtool doesn't barf, then run
-# patch-libtool again after running aclocal and autoheader.  Hopefully
-# future changes to bsd.port.mk won't cause this to break.
-post-patch:
-	@cd ${WRKSRC} && ${TOUCH} ${LIBTOOLFILES}
-
 pre-configure:
 	@cd ${WRKSRC} && ${ACLOCAL} && ${AUTOHEADER}
-#	@${MAKE} patch-libtool
 
 post-install:
 	${INSTALL_MAN} ${WRKSRC}/doc/man/hfsp.man ${MAN1PREFIX}/man/man1/hfsp.1
@@ -57,9 +48,4 @@ post-install:
 BROKEN=	"Does not build on FreeBSD 4.x or earlier"
 .endif
 
-.if ${OSVERSION} >= 502000
-BROKEN=		"Broken pkg-plist"
-.endif
-
-DEPRECATED=	"Will be removed after April 15 if still broken"
 .include <bsd.port.post.mk>

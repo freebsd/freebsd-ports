@@ -9,7 +9,6 @@ bin/hppwd
 bin/hprm
 bin/hpumount
 lib/libhfsp.a
-lib/libhfsp.la
 lib/libhfsp.so
 lib/libhfsp.so.0
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS
