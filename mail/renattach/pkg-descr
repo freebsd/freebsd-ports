@@ -1,0 +1,20 @@
+renattach is a fast and efficient e-mail stream filter written by Jem
+Berkes. It can rename or delete potentially dangerous attachments or
+even eliminate entire messages to help sites deal with resource strains
+caused by virus floods. Unlike conventional virus scanners, there are no
+specific virus or worm definitions. Instead, attachments are classified
+based on file extension and executable encoded body content.
+
+Features
+- Fast, efficient, lightweight, little overhead, pure C code
+- Recognizes both MIME and uuencoded attachments
+- Compliant with RFC2047 and RFC2231, handles encoded filenames
+- Capable of reading filenames inside ZIP archives, on the fly
+- Can rename or delete attachments, or kill entire messages
+- Can detect executables that carry DOS/Windows signature
+- Supports list of banned filenames (great for handling floods)
+- Simple pipe/stream operation; can be used within many filtering systems
+- Can be used directly as a content_filter for Postfix MTA
+- Can be installed as a local delivery agent for Sendmail MTA
+
+WWW: http://www.pc-tools.net/unix/renattach/
