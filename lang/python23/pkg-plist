@@ -1158,7 +1158,7 @@ lib/%%PYTHON_VERSION%%/lib-dynload/readline.so
 lib/%%PYTHON_VERSION%%/lib-dynload/regex.so
 lib/%%PYTHON_VERSION%%/lib-dynload/resource.so
 %%X86_ONLY%%lib/%%PYTHON_VERSION%%/lib-dynload/rgbimg.so
-%%X86_ONLY%%lib/%%PYTHON_VERSION%%/lib-dynload/ossaudiodev.so
+lib/%%PYTHON_VERSION%%/lib-dynload/ossaudiodev.so
 lib/%%PYTHON_VERSION%%/lib-dynload/rotor.so
 lib/%%PYTHON_VERSION%%/lib-dynload/select.so
 lib/%%PYTHON_VERSION%%/lib-dynload/sha.so
