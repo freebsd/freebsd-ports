@@ -1,0 +1,8 @@
+OpenVRML is a free cross-platform runtime for VRML97 available under 
+the GNU Lesser General Public License.
+
+The basic OpenVRML distribution includes libraries you can use to 
+add VRML support to an application, and  "Lookat", a simple 
+stand-alone VRML browser.
+
+WWW: http://openvrml.sourceforge.net/

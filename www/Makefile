@@ -148,6 +148,7 @@
     SUBDIR += npc
     SUBDIR += nspostgres
     SUBDIR += oops
+    SUBDIR += openvrml
     SUBDIR += p5-Apache-ASP
     SUBDIR += p5-Apache-AddHostPath
     SUBDIR += p5-Apache-Archive
