@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	xmcd
-PORTVERSION=	3.2
+PORTVERSION=	3.2.1
 CATEGORIES=	audio
-MASTER_SITES=	http://www.ibiblio.org/tkan/download/xmcd/3.2.0/src/
-DISTNAME=	xmcd-3.2.0
+MASTER_SITES=	http://www.ibiblio.org/tkan/download/xmcd/3.2.1/src/
+DISTNAME=	xmcd-3.2.1
 
 MAINTAINER=	eischen@vigrid.com
 COMMENT=	Motif CD player
@@ -19,7 +19,7 @@ RUN_DEPENDS+=	lame:${PORTSDIR}/audio/lame
 
 USE_MOTIF=	yes
 USE_IMAKE=	yes
-WRKSRC=		${WRKDIR}/xmcd-3.2.0
+WRKSRC=		${WRKDIR}/xmcd-3.2.1
 PLIST_SUB+=	RELEASE=${OSREL:R} ARCH=${ARCH}
 
 MAN1=		cda.1 xmcd.1
