@@ -1,3 +1,5 @@
 bin/wine
 etc/wine.conf
 etc/wine.sym
+share/doc/ja/wine/README.jis
+@dirrm share/doc/ja/wine
