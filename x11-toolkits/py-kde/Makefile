@@ -34,6 +34,8 @@ NO_FILTER_SHLIBS=	yes
 
 .if ${OSVERSION} < 500000
 BROKEN=		"Does not run on 4.x"
+.else
+BROKEN=		"Unfetchable"
 .endif
 
 post-patch:
