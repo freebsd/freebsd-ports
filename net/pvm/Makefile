@@ -13,7 +13,7 @@ MASTER_SITES=	http://www.netlib.org/pvm3/	\
 DISTNAME=	pvm${PORTVERSION}
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	demon@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Parallel Virtual Machine libraries and environment
 
 .if defined(WITHOUT_X11)
