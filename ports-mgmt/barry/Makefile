@@ -12,8 +12,6 @@ MASTER_SITES=	http://frerich.ath.cx/barry/
 
 MAINTAINER=	so14k@so14k.com
 
-BROKEN=		"Does not install"
-
 USE_BZIP2=	yes
 USE_KDELIBS_VER=3
 MAKE_ENV=	QTDIR="${X11BASE}" KDEDIR="${LOCALBASE}" PREFIX="${PREFIX}"
@@ -27,5 +25,8 @@ do-build:
 		${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} .depend)
 	@(cd ${BUILD_WRKSRC}; ${SETENV} ${MAKE_ENV} ${MAKE} \
 		${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS})
+
+pre-install:
+	${MKDIR} ${DESTDIR}${PREFIX}/share/applnk/Utilities
 
 .include <bsd.port.mk>
