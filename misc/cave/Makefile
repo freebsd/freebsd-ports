@@ -7,19 +7,17 @@
 #
 
 PORTNAME=	cave
-PORTVERSION=	0.5
+PORTVERSION=	0.6
 CATEGORIES=	misc
 MASTER_SITES=	http://cyclic.sourceforge.net/cave/
 
 MAINTAINER=	ports@FreeBSD.org
 
+MANCOMPRESSED=	yes
 MAN1=	cave.1
 
 post-patch:
-	@${PERL} -pi -e "s,^CC,#CC,g ; s,^CFLAGS,#CFLAGS,g" ${WRKSRC}/Makefile
-
-do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/${MAN1} ${MAN1PREFIX}/man/man1
+	@${PERL} -pi -e "s,^CC,#CC,g ; s,^CFLAGS,#CFLAGS,g ; \
+		s,^PREFIX,#PREFIX,g" ${WRKSRC}/Makefile
 
 .include <bsd.port.mk>
