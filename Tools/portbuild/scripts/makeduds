@@ -1,6 +1,11 @@
 #!/bin/sh
 # usage: $0 branch
 
+# configurable variables
+pb=/var/portbuild
+
+. ${pb}/portbuild.conf
+
 # -j# to make duds
 DUDSJOBS=4
 
@@ -12,18 +17,6 @@ if [ $# != 1 ]; then
   usage
 fi
 case "x$1" in
-  x2.2)
-    branch=2.2
-    export PORTOBJFORMAT=aout
-    export OSREL=2.2.8
-    export OSVERSION=228001
-    ;;
-  x3)
-    branch=3
-    export PORTOBJFORMAT=elf
-    export OSREL=3.5
-    export OSVERSION=350001
-    ;;
   x4)
     branch=4
     export PORTOBJFORMAT=elf
@@ -47,8 +40,8 @@ case "x$1" in
     ;;
 esac
 
-export PORTSDIR=$(pwd)
-duds=../../${branch}/duds
+export PORTSDIR=${pb}/${branch}/ports
+duds=${pb}/${branch}/duds
 
 if [ "x$NODUMMY" = "x" ]; then
   unset XFREE86_VERSION
@@ -65,6 +58,7 @@ export PARALLEL_PACKAGE_BUILD=t
 export SRCBASE=/var/portbuild/${branch}/src
 #export NO_RESTRICTED=t
 #export FOR_CDROM=t
+cd ${PORTSDIR}
 make -j${DUDSJOBS} ignorelist ECHO_MSG=true > ${duds} || exit 1
 sort ${duds} > ${duds}.tmp
 mv -f ${duds}.tmp ${duds}
