@@ -40,7 +40,7 @@ INSTDB.INS=	${PREFIX}/office52/program/instdb.ins
 SUNSOLVE=	${WRKDIR}/109939-02
 ADABAS_DIST=	soa-5_2-ga-bin-linux-fr.bin
 SIZE!=		/bin/df -k . | /usr/bin/tail -n 1 | /usr/bin/awk '{print $$4}'
-LINPROCFS!=	mount | grep linprocfs | awk '{print $1}'
+LINPROCFS!=	/sbin/mount | /usr/bin/grep linprocfs | /usr/bin/awk '{print $1}'
 
 .include <bsd.port.pre.mk>
 
@@ -51,11 +51,11 @@ pre-fetch:
 .else
 	@${ECHO} -----------------------------------------------------------
 	@${ECHO}
-	@${ECHO} Staroffice dépend sur linprocfs qui n'est pas activée
-	@${ECHO} sur votre système. Veuiller lire le la page `man' de
-	@${ECHO} linprocfs(5) et ajouter la ligne suivante dans /etc/fstab:
+	@${ECHO} "Staroffice dépend sur linprocfs qui n'est pas activée"
+	@${ECHO} "sur votre système. Veuiller lire le la page 'man' de"
+	@${ECHO} "linprocfs(5) et ajouter la ligne suivante dans /etc/fstab:"
 	@${ECHO}
-	@${ECHO} linproc /compat/linux/proc linprocfs rw 0 0
+	@${ECHO} "linproc /compat/linux/proc linprocfs rw 0 0"
 	@${ECHO}
 	@${ECHO} -----------------------------------------------------------
 	@${FALSE}
@@ -64,34 +64,34 @@ pre-fetch:
 	@${ECHO}
 	@${ECHO} OS-VERSION ${OSVERSION}
 	@${ECHO}
-	@${ECHO} Staroffice dépend d\'une modification du script
-	@${ECHO} /usr/src/sys/i386/linux/linux_sysvec.c Celui-ci
-	@${ECHO} Doit être au moins en révision 1.55.2.1.
+	@${ECHO} "Staroffice dépend d\'une modification du script"
+	@${ECHO} "/usr/src/sys/i386/linux/linux_sysvec.c Celui-ci"
+	@${ECHO} "Doit être au moins en révision 1.55.2.1."
 	@${ECHO}
-	@${ECHO} Veuillez mettre à jour vers FreeBSD 4.1 SVP
+	@${ECHO} "Veuillez mettre à jour vers FreeBSD 4.1 SVP"
 	@${ECHO}
 	@${FALSE}
 .endif
 .if ${SIZE} < 250000
 	@${ECHO}
-	@${ECHO} Le répertoire /usr/ports ne contient pas suffisament
-	@${ECHO} d'espace libre. Staroffice a besoin au moins 250M
-	@${ECHO} d'espace libre.
+	@${ECHO} "Le répertoire /usr/ports ne contient pas suffisament"
+	@${ECHO} "d'espace libre. Staroffice a besoin au moins 250M"
+	@${ECHO} "d'espace libre."
 	@${ECHO}
 	@${FALSE}
 .endif
 .if !defined(WITH_ADABAS)
 	@${ECHO}
-	@${ECHO} Si vous voulez installer Staroffice avec support pour le système
-	@${ECHO} de base de données ADABAS, terminez cette installation et
-	@${ECHO} recommencez la avec l'option WITH_ADABAS=YES
+	@${ECHO} "Si vous voulez installer Staroffice avec support pour le système"
+	@${ECHO} "de base de données ADABAS, terminez cette installation et"
+	@${ECHO} "recommencez la avec l'option WITH_ADABAS=YES"
 	@${ECHO}
 .endif
 .if defined(WITH_CDROM)
 .if !exists(${CD_MOUNTPT}/linux/office52/setup)
 	@${ECHO}
-	@${ECHO} Montez le CDrom de Staroffice 5.2 dans le répertoire
-	@${ECHO} ${CD_MOUNTPT} et relancez l\'installation
+	@${ECHO} "Montez le CDrom de Staroffice 5.2 dans le répertoire"
+	@${ECHO} "${CD_MOUNTPT} et relancez l\'installation"
 	@${ECHO}
 	@${FALSE}
 .endif
