@@ -13,7 +13,9 @@ MASTER_SITE_SUBDIR=	wvware
 
 MAINTAINER=	mzaki@e-mail.ne.jp
 
-LIB_DEPENDS=	wmf.2:${PORTSDIR}/graphics/libwmf
+LIB_DEPENDS=	wmf.2:${PORTSDIR}/graphics/libwmf \
+		iconv.3:${PORTSDIR}/converters/libiconv \
+		png.5:${PORTSDIR}/graphics/png
 
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
