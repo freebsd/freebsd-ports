@@ -1,3 +1,4 @@
+include/TerrainSDK/vtdata/boost/directory.h
 include/TerrainSDK/vtdata/Array.h
 include/TerrainSDK/vtdata/Array.inl
 include/TerrainSDK/vtdata/Building.h
@@ -8,16 +9,15 @@ include/TerrainSDK/vtdata/ElevationGrid.h
 include/TerrainSDK/vtdata/Icosa.h
 include/TerrainSDK/vtdata/LULC.h
 include/TerrainSDK/vtdata/MathTypes.h
+include/TerrainSDK/vtdata/SOG.h
 include/TerrainSDK/vtdata/Plants.h
 include/TerrainSDK/vtdata/Projections.h
 include/TerrainSDK/vtdata/RoadMap.h
-include/TerrainSDK/vtdata/SOG.h
 include/TerrainSDK/vtdata/Selectable.h
+include/TerrainSDK/vtdata/shapelib/shapefil.h
+include/TerrainSDK/vtdata/StatePlane.h
 include/TerrainSDK/vtdata/Triangulate.h
-include/TerrainSDK/vtdata/directory.h
-include/TerrainSDK/vtdata/utm_cproj.h
 include/TerrainSDK/vtdata/vtDIB.h
-include/TerrainSDK/vtlib/core/AreaMap.h
 include/TerrainSDK/vtlib/core/AttribMap.h
 include/TerrainSDK/vtlib/core/Base.h
 include/TerrainSDK/vtlib/core/BryanTerrain.h
@@ -25,45 +25,57 @@ include/TerrainSDK/vtlib/core/Building3d.h
 include/TerrainSDK/vtlib/core/CustomTerrain.h
 include/TerrainSDK/vtlib/core/DynTerrain.h
 include/TerrainSDK/vtlib/core/Engine.h
-include/TerrainSDK/vtlib/core/FP8.h
 include/TerrainSDK/vtlib/core/Fences.h
+include/TerrainSDK/vtlib/core/FP8.h
 include/TerrainSDK/vtlib/core/FrameTimer.h
 include/TerrainSDK/vtlib/core/HeightField.h
 include/TerrainSDK/vtlib/core/IntersectionEngine.h
-include/TerrainSDK/vtlib/core/LKTerrain.h
 include/TerrainSDK/vtlib/core/Light.h
+include/TerrainSDK/vtlib/core/LKTerrain.h
 include/TerrainSDK/vtlib/core/LocalGrid.h
 include/TerrainSDK/vtlib/core/LocalProjection.h
 include/TerrainSDK/vtlib/core/Location.h
 include/TerrainSDK/vtlib/core/LodGrid.h
 include/TerrainSDK/vtlib/core/NavEngines.h
 include/TerrainSDK/vtlib/core/Roads.h
-include/TerrainSDK/vtlib/core/SMTerrain.h
 include/TerrainSDK/vtlib/core/SkyDome.h
-include/TerrainSDK/vtlib/core/TParams.h
-include/TerrainSDK/vtlib/core/TVTerrain.h
+include/TerrainSDK/vtlib/core/SMTerrain.h
+include/TerrainSDK/vtlib/core/Trees.h
 include/TerrainSDK/vtlib/core/Terrain.h
 include/TerrainSDK/vtlib/core/TerrainErr.h
 include/TerrainSDK/vtlib/core/TerrainPatch.h
 include/TerrainSDK/vtlib/core/TerrainScene.h
 include/TerrainSDK/vtlib/core/TerrainSurface.h
 include/TerrainSDK/vtlib/core/TimeEngines.h
-include/TerrainSDK/vtlib/core/Trees.h
+include/TerrainSDK/vtlib/core/TParams.h
+include/TerrainSDK/vtlib/core/TVTerrain.h
 include/TerrainSDK/vtlib/core/vtSOG.h
 include/TerrainSDK/vtlib/core/vtString.h
 include/TerrainSDK/vtlib/core/winglue.h
-include/TerrainSDK/vtlib/vtlib.h
 include/TerrainSDK/vtlib/vtosg/ImageOSG.h
 include/TerrainSDK/vtlib/vtosg/MathOSG.h
 include/TerrainSDK/vtlib/vtosg/MeshMat.h
 include/TerrainSDK/vtlib/vtosg/NodeOSG.h
 include/TerrainSDK/vtlib/vtosg/SceneOSG.h
+include/TerrainSDK/vtlib/vtplib/ImageSSG.h
+include/TerrainSDK/vtlib/vtplib/MeshMat.h
+include/TerrainSDK/vtlib/vtplib/NodeSSG.h
+include/TerrainSDK/vtlib/vtplib/SceneSSG.h
+include/TerrainSDK/vtlib/vtsgl/ImageSGL.h
+include/TerrainSDK/vtlib/vtsgl/MathSGL.h
+include/TerrainSDK/vtlib/vtsgl/MeshMat.h
+include/TerrainSDK/vtlib/vtsgl/NodeSGL.h
+include/TerrainSDK/vtlib/vtsgl/SceneSGL.h
+include/TerrainSDK/vtlib/vtlib.h
 lib/libvtdata.so
 lib/libvtdata.so.1
 lib/libvtosg.so
 lib/libvtosg.so.1
-@dirrm include/TerrainSDK/vtlib/vtosg
-@dirrm include/TerrainSDK/vtlib/core
-@dirrm include/TerrainSDK/vtlib
+@dirrm include/TerrainSDK/vtdata/boost
+@dirrm include/TerrainSDK/vtdata/shapelib
 @dirrm include/TerrainSDK/vtdata
-@dirrm include/TerrainSDK
+@dirrm include/TerrainSDK/vtlib/core
+@dirrm include/TerrainSDK/vtlib/vtosg
+@dirrm include/TerrainSDK/vtlib/vtplib
+@dirrm include/TerrainSDK/vtlib/vtsgl
+@dirrm include/TerrainSDK/vtlib
