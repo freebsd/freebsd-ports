@@ -6302,6 +6302,7 @@ pdumpfs		ports/sysutils/pdumpfs
 peacock		ports/www/peacock
 pear		ports/devel/pear
 pear-Archive_Tar	ports/archivers/pear-Archive_Tar
+pear-Auth_SASL	ports/security/pear-Auth_SASL
 pear-Console_Getopt	ports/devel/pear-Console_Getopt
 pear-Crypt_CBC	ports/security/pear-Crypt_CBC
 pear-Date	ports/devel/pear-Date
