@@ -19,6 +19,7 @@ BUILD_DEPENDS=	${LOCALBASE}/bin/nasm:${PORTSDIR}/devel/nasm
 ONLY_FOR_ARCHS=	i386
 USE_AUTOCONF=	yes
 USE_GMAKE=	yes
+USE_REINPLACE=	yes
 INSTALLS_SHLIB=	yes
 
 CONFIGURE_WRKSRC=	${WRKDIR}
@@ -35,12 +36,12 @@ pre-everything::
 
 post-patch:
 	@ ${FIND} ${WRKDIR} -type f | \
-		${XARGS} -n 10 -x ${PERL} -pi -e \
+		${XARGS} -n 10 -x ${REINPLACE_CMD} -e \
 		's|<malloc.h>|<stdlib.h>|'
 .ifndef(WITH_OPTIMIZED_CFLAGS)
-	@ ${PERL} -pi -e 's|(CFLAGS \+=).*|\1 ${CFLAGS}|' ${WRKSRC}/Makefile
+	@ ${REINPLACE_CMD} -E -e 's|(CFLAGS \+=).*|\1 ${CFLAGS}|' ${WRKSRC}/Makefile
 .else
-	@ ${PERL} -pi -e 's|(CFLAGS \+=.*)|\1 ${CFLAGS}|' ${WRKSRC}/Makefile
+	@ ${REINPLACE_CMD} -E -e 's|(CFLAGS \+=.*)|\1 ${CFLAGS}|' ${WRKSRC}/Makefile
 .endif
 
 # trick to detect existence of stdint.h
