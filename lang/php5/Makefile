@@ -59,6 +59,8 @@ COMMENT=	PHP Apache Module
 .endif
 .endif
 
+BROKEN=		Does not compile
+
 USE_BZIP2=	yes
 USE_SUBMAKE=	yes
 GNU_CONFIGURE=	yes
