@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	libstatgrab
-PORTVERSION=	0.4
+PORTVERSION=	0.5
 CATEGORIES=	devel
 MASTER_SITES=	http://snapshots.i-scream.org/%SUBDIR%/
 MASTER_SITE_SUBDIR=	${PORTNAME}
