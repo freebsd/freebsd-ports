@@ -9,7 +9,7 @@ PORTNAME=	dbus
 PORTVERSION=	0.22
 PORTREVISION=	1
 CATEGORIES?=	devel gnome
-MASTER_SITES=	http://freedesktop.org/Software/dbus/releases/
+MASTER_SITES=	http://freedesktop.org/software/dbus/releases/
 
 MAINTAINER?=	gnome@FreeBSD.org
 COMMENT?=	A message bus system for inter-application communication
