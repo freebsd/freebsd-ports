@@ -7,6 +7,7 @@
 
 PORTNAME=	galeon2
 PORTVERSION=	1.3.16
+PORTREVISION=	1
 CATEGORIES=	www gnome
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		http://osdn.dl.sourceforge.net/sourceforge/galeon/
@@ -38,8 +39,8 @@ HEADERS_SUFX=
 WRKSRC=		${WRKDIR}/${PORTNAME:S/2$//}-${PORTVERSION:S/a$//}
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes
-USE_GNOME=	gnomeprefix lthack intlhack gnomehack libgnomeui
-USE_LIBTOOL_VER=13
+USE_GNOME=	gnomeprefix intlhack gnomehack libgnomeui
+USE_LIBTOOL_VER=15
 USE_GMAKE=	yes
 USE_REINPLACE=	yes
 CONFIGURE_ARGS=	--with-mozilla-includes="${X11BASE}/include/mozilla${HEADERS_SUFX}" \
