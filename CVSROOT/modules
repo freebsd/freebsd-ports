@@ -883,6 +883,7 @@ cocor		ports/lang/cocor
 coda5_client	ports/net/coda5_client
 coda5_doc	ports/net/coda5_doc
 coda5_server	ports/net/coda5_server
+coda6_server	ports/net/coda6_server
 coda_doc	ports/net/coda_doc
 coda_intro	ports/net/coda_intro
 code2html	ports/textproc/code2html
