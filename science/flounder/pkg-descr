@@ -1,0 +1,21 @@
+Flounder is a quick way to visualize regularly spaced 4D data, i.e., a data
+set that is a function of x, y, z, and time.
+
+Features
+   - Animation
+   - 4D (x,y,z,t) display
+   - Display multiple data files linked by time
+   - 2D slices along prinicpal axes
+   - Adjustable colour scales and quantization levels
+   - Contour plots
+   - Isosurfaces
+   - 3D surface rendering
+   - 3D solid rendering
+   - Save images as gif, png or eps
+   - Save movies as animated gif or avi
+   - Display time series at a spatial location with zoom
+   - Vertical and horizontal profiles
+   - Tableau plots
+   - Adjustable colours and font
+
+WWW: http://www.enel.ucalgary.ca/~vigmond/flounder/
