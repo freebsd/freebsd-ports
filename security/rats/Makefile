@@ -12,7 +12,7 @@ MASTER_SITES=	http://www.securesoftware.com/rats/
 
 MAINTAINER=	kris@FreeBSD.org
 
-LIB_DEPENDS=	expat.2:${PORTSDIR}/textproc/expat2
+LIB_DEPENDS=	expat.3:${PORTSDIR}/textproc/expat2
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=--with-expat-lib=${LOCALBASE}/lib \
