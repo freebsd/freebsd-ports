@@ -1,40 +1,7 @@
 %%NOGNOME%%bin/ickle
 %%GNOME%%bin/ickle_applet
+%%ICKLECONTROL%%bin/ickle_control
 %%GNOME%%etc/CORBA/servers/ickle_applet.gnorba
-include/ickle/Cache.h
-include/ickle/Client.h
-include/ickle/Contact.h
-include/ickle/ContactList.h
-include/ickle/DCCache.h
-include/ickle/DirectClient.h
-include/ickle/ICBMCookie.h
-include/ickle/ICBMCookieCache.h
-include/ickle/ICQ.h
-include/ickle/RequestIDCache.h
-include/ickle/SNAC-BUD.h
-include/ickle/SNAC-GEN.h
-include/ickle/SNAC-LOC.h
-include/ickle/SNAC-MSG.h
-include/ickle/SNAC-SRV.h
-include/ickle/SNAC-UIN.h
-include/ickle/SNAC-base.h
-include/ickle/SNAC.h
-include/ickle/SeqNumCache.h
-include/ickle/TLV.h
-include/ickle/Translator.h
-include/ickle/UserInfoBlock.h
-include/ickle/Xml.h
-include/ickle/buffer.h
-include/ickle/constants.h
-include/ickle/custom_marshal.h
-include/ickle/events.h
-include/ickle/exceptions.h
-include/ickle/socket.h
-include/ickle/sstream_fix.h
-include/ickle/userinfoconstants.h
-lib/libicq2000.a
-lib/libicq2000.so
-lib/libicq2000.so.2
 %%GNOME%%%%ICKLEDATADIR%%applets/Network/ickle_applet.desktop
 %%ICKLEDATADIR%%ickle/icons/doors/away.xpm
 %%ICKLEDATADIR%%ickle/icons/doors/chat.xpm
@@ -48,7 +15,22 @@ lib/libicq2000.so.2
 %%ICKLEDATADIR%%ickle/icons/doors/offline.xpm
 %%ICKLEDATADIR%%ickle/icons/doors/online.xpm
 %%ICKLEDATADIR%%ickle/icons/doors/sms.xpm
+%%ICKLEDATADIR%%ickle/icons/doors/sysmsg.xpm
 %%ICKLEDATADIR%%ickle/icons/doors/url.xpm
+%%ICKLEDATADIR%%ickle/icons/eureka/away.xpm
+%%ICKLEDATADIR%%ickle/icons/eureka/chat.xpm
+%%ICKLEDATADIR%%ickle/icons/eureka/dnd.xpm
+%%ICKLEDATADIR%%ickle/icons/eureka/ffc.xpm
+%%ICKLEDATADIR%%ickle/icons/eureka/file.xpm
+%%ICKLEDATADIR%%ickle/icons/eureka/invisible.xpm
+%%ICKLEDATADIR%%ickle/icons/eureka/message.xpm
+%%ICKLEDATADIR%%ickle/icons/eureka/na.xpm
+%%ICKLEDATADIR%%ickle/icons/eureka/occ.xpm
+%%ICKLEDATADIR%%ickle/icons/eureka/offline.xpm
+%%ICKLEDATADIR%%ickle/icons/eureka/online.xpm
+%%ICKLEDATADIR%%ickle/icons/eureka/sms.xpm
+%%ICKLEDATADIR%%ickle/icons/eureka/sysmsg.xpm
+%%ICKLEDATADIR%%ickle/icons/eureka/url.xpm
 %%ICKLEDATADIR%%ickle/icons/gnomeicu/away.xpm
 %%ICKLEDATADIR%%ickle/icons/gnomeicu/chat.xpm
 %%ICKLEDATADIR%%ickle/icons/gnomeicu/dnd.xpm
@@ -61,6 +43,7 @@ lib/libicq2000.so.2
 %%ICKLEDATADIR%%ickle/icons/gnomeicu/offline.xpm
 %%ICKLEDATADIR%%ickle/icons/gnomeicu/online.xpm
 %%ICKLEDATADIR%%ickle/icons/gnomeicu/sms.xpm
+%%ICKLEDATADIR%%ickle/icons/gnomeicu/sysmsg.xpm
 %%ICKLEDATADIR%%ickle/icons/gnomeicu/url.xpm
 %%ICKLEDATADIR%%ickle/icons/ickle/away.xpm
 %%ICKLEDATADIR%%ickle/icons/ickle/chat.xpm
@@ -74,6 +57,7 @@ lib/libicq2000.so.2
 %%ICKLEDATADIR%%ickle/icons/ickle/offline.xpm
 %%ICKLEDATADIR%%ickle/icons/ickle/online.xpm
 %%ICKLEDATADIR%%ickle/icons/ickle/sms.xpm
+%%ICKLEDATADIR%%ickle/icons/ickle/sysmsg.xpm
 %%ICKLEDATADIR%%ickle/icons/ickle/url.xpm
 %%ICKLEDATADIR%%ickle/icons/icq/away.xpm
 %%ICKLEDATADIR%%ickle/icons/icq/chat.xpm
@@ -87,7 +71,22 @@ lib/libicq2000.so.2
 %%ICKLEDATADIR%%ickle/icons/icq/offline.xpm
 %%ICKLEDATADIR%%ickle/icons/icq/online.xpm
 %%ICKLEDATADIR%%ickle/icons/icq/sms.xpm
+%%ICKLEDATADIR%%ickle/icons/icq/sysmsg.xpm
 %%ICKLEDATADIR%%ickle/icons/icq/url.xpm
+%%ICKLEDATADIR%%ickle/icons/kit/away.xpm
+%%ICKLEDATADIR%%ickle/icons/kit/chat.xpm
+%%ICKLEDATADIR%%ickle/icons/kit/dnd.xpm
+%%ICKLEDATADIR%%ickle/icons/kit/ffc.xpm
+%%ICKLEDATADIR%%ickle/icons/kit/file.xpm
+%%ICKLEDATADIR%%ickle/icons/kit/invisible.xpm
+%%ICKLEDATADIR%%ickle/icons/kit/message.xpm
+%%ICKLEDATADIR%%ickle/icons/kit/na.xpm
+%%ICKLEDATADIR%%ickle/icons/kit/occ.xpm
+%%ICKLEDATADIR%%ickle/icons/kit/offline.xpm
+%%ICKLEDATADIR%%ickle/icons/kit/online.xpm
+%%ICKLEDATADIR%%ickle/icons/kit/sms.xpm
+%%ICKLEDATADIR%%ickle/icons/kit/sysmsg.xpm
+%%ICKLEDATADIR%%ickle/icons/kit/url.xpm
 %%ICKLEDATADIR%%ickle/icons/new/away.xpm
 %%ICKLEDATADIR%%ickle/icons/new/chat.xpm
 %%ICKLEDATADIR%%ickle/icons/new/dnd.xpm
@@ -100,6 +99,7 @@ lib/libicq2000.so.2
 %%ICKLEDATADIR%%ickle/icons/new/offline.xpm
 %%ICKLEDATADIR%%ickle/icons/new/online.xpm
 %%ICKLEDATADIR%%ickle/icons/new/sms.xpm
+%%ICKLEDATADIR%%ickle/icons/new/sysmsg.xpm
 %%ICKLEDATADIR%%ickle/icons/new/url.xpm
 %%ICKLEDATADIR%%ickle/translations/ASCII
 %%ICKLEDATADIR%%ickle/translations/CP437
@@ -138,15 +138,15 @@ lib/libicq2000.so.2
 %%ICKLEDATADIR%%ickle/translations/UNITED_KINGDOM_COM
 @dirrm %%ICKLEDATADIR%%ickle/translations
 @dirrm %%ICKLEDATADIR%%ickle/icons/new
+@dirrm %%ICKLEDATADIR%%ickle/icons/kit
 @dirrm %%ICKLEDATADIR%%ickle/icons/icq
 @dirrm %%ICKLEDATADIR%%ickle/icons/ickle
 @dirrm %%ICKLEDATADIR%%ickle/icons/gnomeicu
+@dirrm %%ICKLEDATADIR%%ickle/icons/eureka
 @dirrm %%ICKLEDATADIR%%ickle/icons/doors
 @dirrm %%ICKLEDATADIR%%ickle/icons
 @dirrm %%ICKLEDATADIR%%ickle
 @unexec rmdir %D/%%ICKLEDATADIR%%applets/Network 2>/dev/null || true
 @unexec rmdir %D/%%ICKLEDATADIR%%applets 2>/dev/null || true
-@unexec rmdir %D/%%ICKLEDATADIR%% 2>/dev/null || true
-@dirrm include/ickle
 @unexec rmdir %D/etc/CORBA/servers 2>/dev/null || true
 @unexec rmdir %D/etc/CORBA 2>/dev/null || true
