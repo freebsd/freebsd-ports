@@ -65,6 +65,7 @@
     SUBDIR += im
     SUBDIR += imap-uw
     SUBDIR += imp
+    SUBDIR += imp-devel
     SUBDIR += isync
     SUBDIR += junkfilter
     SUBDIR += kbiff

@@ -1,0 +1,31 @@
+# This is included in Apache's httpd.conf for IMP
+#
+# For security, don't serve pages from the IMP configuration and
+# library directories.
+#
+<Directory "/home/httpd/html/horde/imp/config">
+    order deny,allow
+    deny from all
+</Directory>
+<Directory "/home/httpd/html/horde/imp/lib">
+    order deny,allow
+    deny from all
+</Directory>
+<Directory "/home/httpd/html/horde/imp/locale">
+    order deny,allow
+    deny from all
+</Directory>
+<Directory "/home/httpd/html/horde/imp/po">
+    order deny,allow
+    deny from all
+</Directory>
+<Directory "/home/httpd/html/horde/imp/scripts">
+    order deny,allow
+    deny from all
+</Directory>
+<Directory "/home/httpd/html/horde/imp/templates">
+    order deny,allow
+    deny from all
+</Directory>
+# End of IMP configuration ================
+

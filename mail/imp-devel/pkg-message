@@ -1,0 +1,22 @@
+************************************************************************
+IMP has been installed in %%IMPDIR%% with your blank
+configuration files.
+
+Horde must be configured and the tables created; if not, see
+%%PORTSDIR%%/www/horde-devel/pkg-message.
+
+Then, you will have to tune the configuration files located in
+%%CONFDIR%%/, specially the files conf.php and
+servers.php.
+
+To protect your configuration files, you have to restart Apache.
+
+IMP requires an IMAP server. If you want to install one on this
+machine, you may install the ports mail/cyrus-imapd, or
+mail/imap-uw, or mail/courier-imap.
+
+Please refer to the file %%DOCSDIR%%/SECURITY
+on how to secure the IMP installation.
+It is at least recommended that you change the default database
+password used by horde and imp.
+************************************************************************

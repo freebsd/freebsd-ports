@@ -1,0 +1,265 @@
+%%PORTDOCS%%share/doc/imp/CHANGES
+%%PORTDOCS%%share/doc/imp/COPYING
+%%PORTDOCS%%share/doc/imp/CREDITS 
+%%PORTDOCS%%share/doc/imp/FEATURES 
+%%PORTDOCS%%share/doc/imp/INSTALL
+%%PORTDOCS%%share/doc/imp/PACKAGES
+%%PORTDOCS%%share/doc/imp/README
+%%PORTDOCS%%share/doc/imp/SECURITY
+%%IMPDIR%%/compose.php
+%%IMPDIR%%/config/conf.php
+%%IMPDIR%%/config/conf.php.dist
+%%IMPDIR%%/config/filter.txt
+%%IMPDIR%%/config/filter.txt.dist
+%%IMPDIR%%/config/header.txt
+%%IMPDIR%%/config/header.txt.dist
+%%IMPDIR%%/config/html.php
+%%IMPDIR%%/config/html.php.dist
+%%IMPDIR%%/config/imp.dt
+%%IMPDIR%%/config/menu.php
+%%IMPDIR%%/config/menu.php.dist
+%%IMPDIR%%/config/mime_drivers.php
+%%IMPDIR%%/config/mime_drivers.php.dist
+%%IMPDIR%%/config/mime_drivers.php.dist.orig
+%%IMPDIR%%/config/motd.php
+%%IMPDIR%%/config/motd.php.dist
+%%IMPDIR%%/config/prefs.php
+%%IMPDIR%%/config/prefs.php.dist
+%%IMPDIR%%/config/servers.php
+%%IMPDIR%%/config/servers.php.dist
+%%IMPDIR%%/config/servers.php.dist.orig
+%%IMPDIR%%/config/trailer.txt
+%%IMPDIR%%/config/trailer.txt.dist
+%%IMPDIR%%/filters.php
+%%IMPDIR%%/folders.php
+%%IMPDIR%%/graphics/addressbook-blue.gif
+%%IMPDIR%%/graphics/addressbook-red.gif
+%%IMPDIR%%/graphics/addressbook-yellow.gif
+%%IMPDIR%%/graphics/alternative.gif
+%%IMPDIR%%/graphics/answered.gif
+%%IMPDIR%%/graphics/attachment.gif
+%%IMPDIR%%/graphics/checkbox.gif
+%%IMPDIR%%/graphics/compose.gif
+%%IMPDIR%%/graphics/deleted.gif
+%%IMPDIR%%/graphics/down.gif
+%%IMPDIR%%/graphics/download.gif
+%%IMPDIR%%/graphics/draft.gif
+%%IMPDIR%%/graphics/expand.gif
+%%IMPDIR%%/graphics/fetchmail.gif
+%%IMPDIR%%/graphics/filters.gif
+%%IMPDIR%%/graphics/first-grey.gif
+%%IMPDIR%%/graphics/first.gif
+%%IMPDIR%%/graphics/folders.gif
+%%IMPDIR%%/graphics/folders/collapsed.gif
+%%IMPDIR%%/graphics/folders/empty.gif
+%%IMPDIR%%/graphics/folders/expanded.gif
+%%IMPDIR%%/graphics/folders/folder.gif
+%%IMPDIR%%/graphics/folders/folder_open.gif
+%%IMPDIR%%/graphics/folders/inbox.gif
+%%IMPDIR%%/graphics/folders/mbox.gif
+%%IMPDIR%%/graphics/folders/mbox_marked.gif
+%%IMPDIR%%/graphics/folders/mbox_noselect.gif
+%%IMPDIR%%/graphics/folders/mbox_unmarked.gif
+%%IMPDIR%%/graphics/folders/spacer.gif
+%%IMPDIR%%/graphics/imp.gif
+%%IMPDIR%%/graphics/important.gif
+%%IMPDIR%%/graphics/last-grey.gif
+%%IMPDIR%%/graphics/last.gif
+%%IMPDIR%%/graphics/lhand.gif
+%%IMPDIR%%/graphics/lock.gif
+%%IMPDIR%%/graphics/manage_attachments.gif
+%%IMPDIR%%/graphics/mime/html.gif
+%%IMPDIR%%/graphics/mime/text.gif
+%%IMPDIR%%/graphics/next-grey.gif
+%%IMPDIR%%/graphics/next.gif
+%%IMPDIR%%/graphics/personal.gif
+%%IMPDIR%%/graphics/prev-grey.gif
+%%IMPDIR%%/graphics/prev.gif
+%%IMPDIR%%/graphics/print.gif
+%%IMPDIR%%/graphics/reload.gif
+%%IMPDIR%%/graphics/rhand.gif
+%%IMPDIR%%/graphics/search.gif
+%%IMPDIR%%/graphics/signed.gif
+%%IMPDIR%%/graphics/spellcheck.gif
+%%IMPDIR%%/graphics/unseen.gif
+%%IMPDIR%%/graphics/up.gif
+%%IMPDIR%%/identities.php
+%%IMPDIR%%/index.php
+%%IMPDIR%%/intro.php
+%%IMPDIR%%/lib/Folder.php
+%%IMPDIR%%/lib/IMP.php
+%%IMPDIR%%/lib/Identity/IMP.php
+%%IMPDIR%%/lib/Maintenance/Task/delete_sentmail_monthly.php
+%%IMPDIR%%/lib/Maintenance/Task/purge_trash.php
+%%IMPDIR%%/lib/Maintenance/Task/rename_sentmail_monthly.php
+%%IMPDIR%%/lib/Maintenance/imp.php
+%%IMPDIR%%/lib/MIME/Viewer/html.php
+%%IMPDIR%%/lib/MIME/Viewer/text.php
+%%IMPDIR%%/lib/Message.php
+%%IMPDIR%%/lib/Tree.php
+%%IMPDIR%%/lib/api.php
+%%IMPDIR%%/lib/base.php
+%%IMPDIR%%/lib/version.php
+%%IMPDIR%%/locale/cs_CZ/LC_MESSAGES/imp.mo
+%%IMPDIR%%/locale/de_DE/LC_MESSAGES/imp.mo
+%%IMPDIR%%/locale/de_DE/help.xml
+%%IMPDIR%%/locale/el_GR/LC_MESSAGES/imp.mo
+%%IMPDIR%%/locale/en_EN/help.xml
+%%IMPDIR%%/locale/es_ES/LC_MESSAGES/imp.mo
+%%IMPDIR%%/locale/fr_FR/LC_MESSAGES/imp.mo
+%%IMPDIR%%/locale/fr_FR/help.xml
+%%IMPDIR%%/locale/it_IT/LC_MESSAGES/imp.mo
+%%IMPDIR%%/locale/it_IT/help.xml
+%%IMPDIR%%/locale/ko_KR/LC_MESSAGES/imp.mo
+%%IMPDIR%%/locale/nl_NL/LC_MESSAGES/imp.mo
+%%IMPDIR%%/locale/nl_NL/help.xml
+%%IMPDIR%%/locale/no_BOK/LC_MESSAGES/imp.mo
+%%IMPDIR%%/locale/pl_PL/LC_MESSAGES/imp.mo
+%%IMPDIR%%/locale/pt_BR/LC_MESSAGES/imp.mo
+%%IMPDIR%%/locale/ru_win/LC_MESSAGES/imp.mo
+%%IMPDIR%%/locale/uk/LC_MESSAGES/imp.mo
+%%IMPDIR%%/locale/zh_CN/LC_MESSAGES/imp.mo
+%%IMPDIR%%/locale/zh_TW/LC_MESSAGES/imp.mo
+%%IMPDIR%%/login.php
+%%IMPDIR%%/mailbox.php
+%%IMPDIR%%/menu.php
+%%IMPDIR%%/message.php
+%%IMPDIR%%/po/Makefile
+%%IMPDIR%%/po/README
+%%IMPDIR%%/po/cs_CZ.po
+%%IMPDIR%%/po/de_DE.po
+%%IMPDIR%%/po/el_GR.po
+%%IMPDIR%%/po/es_ES.po
+%%IMPDIR%%/po/extract.pl
+%%IMPDIR%%/po/fr_FR.po
+%%IMPDIR%%/po/it_IT.po
+%%IMPDIR%%/po/ko_KR.po
+%%IMPDIR%%/po/nl_NL.po
+%%IMPDIR%%/po/no_BOK.po
+%%IMPDIR%%/po/pl_PL.po
+%%IMPDIR%%/po/pt_BR.po
+%%IMPDIR%%/po/ru_win.po
+%%IMPDIR%%/po/shtool
+%%IMPDIR%%/po/uk.po
+%%IMPDIR%%/po/xgettext.sh
+%%IMPDIR%%/po/zh_CN.po
+%%IMPDIR%%/po/zh_TW.po
+%%IMPDIR%%/prefs.php
+%%IMPDIR%%/redirect.php
+%%IMPDIR%%/scripts/Imp.reg
+%%IMPDIR%%/scripts/imp-cleanup.cron
+%%IMPDIR%%/search.php
+%%IMPDIR%%/spelling.php
+%%IMPDIR%%/status.php
+%%IMPDIR%%/templates/common-footer.inc
+%%IMPDIR%%/templates/common-header.inc
+%%IMPDIR%%/templates/compose/bounce.inc
+%%IMPDIR%%/templates/compose/compose.inc
+%%IMPDIR%%/templates/compose/javascript.inc
+%%IMPDIR%%/templates/compose/spelling.inc
+%%IMPDIR%%/templates/filters/javascript.inc
+%%IMPDIR%%/templates/filters/list.inc
+%%IMPDIR%%/templates/filters/manage.inc
+%%IMPDIR%%/templates/folders/actions.inc
+%%IMPDIR%%/templates/folders/alert.inc
+%%IMPDIR%%/templates/folders/confirm.inc
+%%IMPDIR%%/templates/folders/foot.inc
+%%IMPDIR%%/templates/folders/head.inc
+%%IMPDIR%%/templates/folders/javascript.inc
+%%IMPDIR%%/templates/folders/row.inc
+%%IMPDIR%%/templates/identities/javascript.inc
+%%IMPDIR%%/templates/identities/manage.inc
+%%IMPDIR%%/templates/index/css.inc
+%%IMPDIR%%/templates/index/notconfigured.inc
+%%IMPDIR%%/templates/intro/main.inc
+%%IMPDIR%%/templates/javascript/open_compose_win.js
+%%IMPDIR%%/templates/javascript/open_print_win.js
+%%IMPDIR%%/templates/login/login.inc
+%%IMPDIR%%/templates/mailbox/actions.inc
+%%IMPDIR%%/templates/mailbox/alert.inc
+%%IMPDIR%%/templates/mailbox/empty_mailbox.inc
+%%IMPDIR%%/templates/mailbox/footer.inc
+%%IMPDIR%%/templates/mailbox/header.inc
+%%IMPDIR%%/templates/mailbox/javascript.inc
+%%IMPDIR%%/templates/mailbox/legend.inc
+%%IMPDIR%%/templates/mailbox/message_footers.inc
+%%IMPDIR%%/templates/mailbox/message_headers.inc
+%%IMPDIR%%/templates/mailbox/message_summaries.inc
+%%IMPDIR%%/templates/mailbox/navbar.inc
+%%IMPDIR%%/templates/mailbox/searchfolder.inc
+%%IMPDIR%%/templates/menu/menu.inc
+%%IMPDIR%%/templates/message/headers.inc
+%%IMPDIR%%/templates/message/javascript.inc
+%%IMPDIR%%/templates/message/message.inc
+%%IMPDIR%%/templates/message/navbar.inc
+%%IMPDIR%%/templates/message/navbar_aux_bottom.inc
+%%IMPDIR%%/templates/message/navbar_aux_top.inc
+%%IMPDIR%%/templates/prefs/filters.inc
+%%IMPDIR%%/templates/prefs/folderselect.inc
+%%IMPDIR%%/templates/prefs/identityselect.inc
+%%IMPDIR%%/templates/prefs/sourceselect.inc
+%%IMPDIR%%/templates/prefs/trashselect.inc
+%%IMPDIR%%/templates/search/javascript.inc
+%%IMPDIR%%/templates/search/main.inc
+%%IMPDIR%%/view.php
+%%PORTDOCS%%@dirrm share/doc/imp
+etc/horde/httpd.conf.imp
+@dirrm %%IMPDIR%%/config
+@dirrm %%IMPDIR%%/graphics/folders
+@dirrm %%IMPDIR%%/graphics/mime
+@dirrm %%IMPDIR%%/graphics
+@dirrm %%IMPDIR%%/lib/Identity
+@dirrm %%IMPDIR%%/lib/MIME/Viewer
+@dirrm %%IMPDIR%%/lib/MIME
+@dirrm %%IMPDIR%%/lib/Maintenance/Task
+@dirrm %%IMPDIR%%/lib/Maintenance
+@dirrm %%IMPDIR%%/lib
+@dirrm %%IMPDIR%%/locale/cs_CZ/LC_MESSAGES
+@dirrm %%IMPDIR%%/locale/cs_CZ
+@dirrm %%IMPDIR%%/locale/de_DE/LC_MESSAGES
+@dirrm %%IMPDIR%%/locale/de_DE
+@dirrm %%IMPDIR%%/locale/el_GR/LC_MESSAGES
+@dirrm %%IMPDIR%%/locale/el_GR
+@dirrm %%IMPDIR%%/locale/en_EN
+@dirrm %%IMPDIR%%/locale/es_ES/LC_MESSAGES
+@dirrm %%IMPDIR%%/locale/es_ES
+@dirrm %%IMPDIR%%/locale/fr_FR/LC_MESSAGES
+@dirrm %%IMPDIR%%/locale/fr_FR
+@dirrm %%IMPDIR%%/locale/it_IT/LC_MESSAGES
+@dirrm %%IMPDIR%%/locale/it_IT
+@dirrm %%IMPDIR%%/locale/ko_KR/LC_MESSAGES
+@dirrm %%IMPDIR%%/locale/ko_KR
+@dirrm %%IMPDIR%%/locale/nl_NL/LC_MESSAGES
+@dirrm %%IMPDIR%%/locale/nl_NL
+@dirrm %%IMPDIR%%/locale/no_BOK/LC_MESSAGES
+@dirrm %%IMPDIR%%/locale/no_BOK
+@dirrm %%IMPDIR%%/locale/pl_PL/LC_MESSAGES
+@dirrm %%IMPDIR%%/locale/pl_PL
+@dirrm %%IMPDIR%%/locale/pt_BR/LC_MESSAGES
+@dirrm %%IMPDIR%%/locale/pt_BR
+@dirrm %%IMPDIR%%/locale/ru_win/LC_MESSAGES
+@dirrm %%IMPDIR%%/locale/ru_win
+@dirrm %%IMPDIR%%/locale/uk/LC_MESSAGES
+@dirrm %%IMPDIR%%/locale/uk
+@dirrm %%IMPDIR%%/locale/zh_CN/LC_MESSAGES
+@dirrm %%IMPDIR%%/locale/zh_CN
+@dirrm %%IMPDIR%%/locale/zh_TW/LC_MESSAGES
+@dirrm %%IMPDIR%%/locale/zh_TW
+@dirrm %%IMPDIR%%/locale
+@dirrm %%IMPDIR%%/po
+@dirrm %%IMPDIR%%/scripts
+@dirrm %%IMPDIR%%/templates/compose
+@dirrm %%IMPDIR%%/templates/filters
+@dirrm %%IMPDIR%%/templates/folders
+@dirrm %%IMPDIR%%/templates/identities
+@dirrm %%IMPDIR%%/templates/index
+@dirrm %%IMPDIR%%/templates/intro
+@dirrm %%IMPDIR%%/templates/javascript
+@dirrm %%IMPDIR%%/templates/login
+@dirrm %%IMPDIR%%/templates/mailbox
+@dirrm %%IMPDIR%%/templates/menu
+@dirrm %%IMPDIR%%/templates/message
+@dirrm %%IMPDIR%%/templates/prefs
+@dirrm %%IMPDIR%%/templates/search
+@dirrm %%IMPDIR%%/templates
+@dirrm %%IMPDIR%%
