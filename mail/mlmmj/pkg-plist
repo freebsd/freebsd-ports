@@ -1,0 +1,18 @@
+bin/mlmmj-send
+bin/mlmmj-recieve
+bin/mlmmj-process
+bin/mlmmj-sub
+bin/mlmmj-unsub
+bin/mlmmj-bounce
+bin/mlmmj-maintd
+bin/mlmmj-make-ml.sh
+share/mlmmj/listtexts/bounce-probe
+share/mlmmj/listtexts/listhelp
+share/mlmmj/listtexts/moderation
+share/mlmmj/listtexts/notintocc
+share/mlmmj/listtexts/sub-confirm
+share/mlmmj/listtexts/sub-ok
+share/mlmmj/listtexts/unsub-confirm
+share/mlmmj/listtexts/unsub-ok
+@dirrm share/mlmmj/listtexts
+@dirrm share/mlmmj

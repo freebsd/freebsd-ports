@@ -191,6 +191,7 @@
     SUBDIR += mixmaster
     SUBDIR += mixminion
     SUBDIR += ml
+    SUBDIR += mlmmj
     SUBDIR += mls
     SUBDIR += mmc
     SUBDIR += mmr
