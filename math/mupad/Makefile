@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	mupad
-PORTVERSION=	2.5.1
+PORTVERSION=	2.5.2
 CATEGORIES=	math linux
 MASTER_SITES=	ftp://ftp.mupad.de/MuPAD/distrib/unix/ \
 		ftp://archives.cs.ehime-u.ac.jp/pub/MuPAD/distrib/unix/ \
 		ftp://ftp.uni-paderborn.de/pub/MuPAD/distrib/unix/
-DISTFILES=	bin_linux_scilab_251.tgz share_251.tgz
+DISTFILES=	bin_linux_scilab_252.tgz share_252.tgz
 DIST_SUBDIR=	mupad
 
 MAINTAINER=	maho@FreeBSD.org
@@ -34,8 +34,8 @@ NO_FILTER_SHLIBS=	yes
 NO_WRKSUBDIR=		yes
 NO_BUILD=		yes
 
-MAN1=		killpvmd.1 mmg.1 mmgd.1 mupad.1 pvmdstatus.1 scilabstop.1 xmupad.1
-MANN=		xrastool.n xview.n
+MAN1=		mmg.1 mmgd.1 mupad.1 xmupad.1
+
 do-install:
 	@${MKDIR} ${PREFIX}/mupad/freebsd
 	@${MKDIR} ${PREFIX}/mupad/share
@@ -53,11 +53,10 @@ do-install:
 	brandelf -t Linux ${PREFIX}/mupad/freebsd/bin/$d
 .endfor
 
-.for section in 1 n
-.for d in ${MAN${section:U}}
-	${INSTALL_MAN} ${WRKSRC}/share/doc/man/man${section}/$d ${PREFIX}/man/man${section}
+.for d in ${MAN1}
+	${INSTALL_MAN} ${WRKSRC}/share/doc/man/man1/$d ${PREFIX}/man/man1
 .endfor
-.endfor
+
 
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${PREFIX}/mupad/share/doc

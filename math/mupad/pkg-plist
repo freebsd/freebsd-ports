@@ -1405,9 +1405,6 @@ mupad/share/copyright/zlib/README
 %%PORTDOCS%%mupad/share/doc/dvi/student.mdvi
 %%PORTDOCS%%mupad/share/doc/dvi/transform.mdvi
 %%PORTDOCS%%mupad/share/doc/dvi/tutorium.mdvi
-%%PORTDOCS%%mupad/share/doc/man/CVS/Entries
-%%PORTDOCS%%mupad/share/doc/man/CVS/Repository
-%%PORTDOCS%%mupad/share/doc/man/CVS/Root
 %%PORTDOCS%%mupad/share/doc/man/man.cf
 mupad/share/lib/.MMMinit
 mupad/share/lib/lib.tar
@@ -1503,7 +1500,6 @@ mupad/share/unix/xvcam64.xpm
 @dirrm mupad/share/mmg/include
 @dirrm mupad/share/mmg
 @dirrm mupad/share/lib
-%%PORTDOCS%%@dirrm mupad/share/doc/man/CVS
 %%PORTDOCS%%@dirrm mupad/share/doc/man
 %%PORTDOCS%%@dirrm mupad/share/doc/dvi/fonts
 %%PORTDOCS%%@dirrm mupad/share/doc/dvi/PICTURES/zeta
