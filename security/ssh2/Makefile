@@ -53,6 +53,8 @@ CONFIGURE_ARGS+=	--with-libwrap="-L${LOCALBASE}/lib -lwrap"
 LIB_DEPENDS+=	wrap.7:${PORTSDIR}/security/tcp_wrapper
 .endif
 
+.include <bsd.port.pre.mk>
+
 .if defined(WITH_X11) || (exists(${X11BASE}/lib/libX11.a) \
 	&& !defined(WITHOUT_X11))
 USE_XLIB=	yes
@@ -61,8 +63,6 @@ PLIST_SUB=	WITH_X11:=""
 CONFIGURE_ARGS+=	--without-x
 PLIST_SUB=	WITH_X11:="@comment "
 .endif
-
-.include <bsd.port.pre.mk>
 
 MAN1=		ssh2.1 ssh-keygen2.1 ssh-add2.1 ssh-agent2.1 scp2.1 sftp2.1 \
 		sshregex.1 ssh-probe2.1 ssh-dummy-shell.1 ssh-pubkeymgr.1 \
