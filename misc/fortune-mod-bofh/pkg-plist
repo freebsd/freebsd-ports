@@ -1,0 +1,4 @@
+share/games/fortune/bofh
+share/games/fortune/bofh.dat
+@unexec rmdir %D/share/games/fortune 2>/dev/null || true
+@unexec rmdir %D/share/games 2>/dev/null || true
