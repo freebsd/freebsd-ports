@@ -27,7 +27,7 @@ include/ulxr_xmlparse.h
 @dirrm include/ulxmlrpcpp
 lib/libulxmlrpcpp.a
 lib/libulxmlrpcpp.so
-lib/libulxmlrpcpp.so.4
+lib/libulxmlrpcpp.so.5
 %%DATADIR%%/httpd/index.html
 %%DATADIR%%/httpd/logo-ulxmlrpcpp.png
 @dirrm %%DATADIR%%/httpd
