@@ -337,35 +337,35 @@ lib/%%DISTNAME%%/japanese/fvwm2/style.template
 lib/%%DISTNAME%%/japanese/fvwm2/tools.tcl
 lib/%%DISTNAME%%/japanese/fvwm2/version
 lib/%%DISTNAME%%/japanese/fvwm2/virtual.template
-%%PORTDOCS%%share/doc/dotfile/dotfile/config_page.jpg
-%%PORTDOCS%%share/doc/dotfile/dotfile/extentry1.jpg
-%%PORTDOCS%%share/doc/dotfile/dotfile/extentry2.jpg
-%%PORTDOCS%%share/doc/dotfile/dotfile/index.html
-%%PORTDOCS%%share/doc/dotfile/dotfile/job_control.gif
-%%PORTDOCS%%share/doc/dotfile/dotfile/logo.gif
-%%PORTDOCS%%share/doc/dotfile/dotfile/menu_window.jpg
-%%PORTDOCS%%share/doc/dotfile/dotfile/prompt.jpg
-%%PORTDOCS%%share/doc/dotfile/index.html
-%%PORTDOCS%%share/doc/dotfile/procmail/backup.jpg
-%%PORTDOCS%%share/doc/dotfile/procmail/general.jpg
-%%PORTDOCS%%share/doc/dotfile/procmail/gray-g3.gif
-%%PORTDOCS%%share/doc/dotfile/procmail/header.jpg
-%%PORTDOCS%%share/doc/dotfile/procmail/index.html
-%%PORTDOCS%%share/doc/dotfile/procmail/main.jpg
-%%PORTDOCS%%share/doc/dotfile/procmail/recipes-with-numbers.jpg
-%%PORTDOCS%%share/doc/dotfile/procmail/recipes.jpg
-%%PORTDOCS%%share/doc/dotfile/tcsh/index.html
-%%PORTDOCS%%share/doc/dotfile/tcsh/lil2cent.gif
-%%PORTDOCS%%share/doc/dotfile/tcsh/pattern.gif
-%%PORTDOCS%%share/doc/dotfile/tcsh/pattern2.gif
-%%PORTDOCS%%share/doc/dotfile/tcsh/posdef.gif
-%%PORTDOCS%%share/doc/dotfile/tcsh/prompt.gif
-%%PORTDOCS%%share/doc/dotfile/tcsh/time.gif
-%%PORTDOCS%%share/doc/dotfile/tcsh/userdef.gif
-%%PORTDOCS%%@dirrm share/doc/dotfile/tcsh
-%%PORTDOCS%%@dirrm share/doc/dotfile/procmail
-%%PORTDOCS%%@dirrm share/doc/dotfile/dotfile
-%%PORTDOCS%%@dirrm share/doc/dotfile
+%%PORTDOCS%%%%DOCSDIR%%/dotfile/config_page.jpg
+%%PORTDOCS%%%%DOCSDIR%%/dotfile/extentry1.jpg
+%%PORTDOCS%%%%DOCSDIR%%/dotfile/extentry2.jpg
+%%PORTDOCS%%%%DOCSDIR%%/dotfile/index.html
+%%PORTDOCS%%%%DOCSDIR%%/dotfile/job_control.gif
+%%PORTDOCS%%%%DOCSDIR%%/dotfile/logo.gif
+%%PORTDOCS%%%%DOCSDIR%%/dotfile/menu_window.jpg
+%%PORTDOCS%%%%DOCSDIR%%/dotfile/prompt.jpg
+%%PORTDOCS%%%%DOCSDIR%%/index.html
+%%PORTDOCS%%%%DOCSDIR%%/procmail/backup.jpg
+%%PORTDOCS%%%%DOCSDIR%%/procmail/general.jpg
+%%PORTDOCS%%%%DOCSDIR%%/procmail/gray-g3.gif
+%%PORTDOCS%%%%DOCSDIR%%/procmail/header.jpg
+%%PORTDOCS%%%%DOCSDIR%%/procmail/index.html
+%%PORTDOCS%%%%DOCSDIR%%/procmail/main.jpg
+%%PORTDOCS%%%%DOCSDIR%%/procmail/recipes-with-numbers.jpg
+%%PORTDOCS%%%%DOCSDIR%%/procmail/recipes.jpg
+%%PORTDOCS%%%%DOCSDIR%%/tcsh/index.html
+%%PORTDOCS%%%%DOCSDIR%%/tcsh/lil2cent.gif
+%%PORTDOCS%%%%DOCSDIR%%/tcsh/pattern.gif
+%%PORTDOCS%%%%DOCSDIR%%/tcsh/pattern2.gif
+%%PORTDOCS%%%%DOCSDIR%%/tcsh/posdef.gif
+%%PORTDOCS%%%%DOCSDIR%%/tcsh/prompt.gif
+%%PORTDOCS%%%%DOCSDIR%%/tcsh/time.gif
+%%PORTDOCS%%%%DOCSDIR%%/tcsh/userdef.gif
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/tcsh
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/procmail
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/dotfile
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm lib/%%DISTNAME%%/japanese/fvwm2/save-files
 @dirrm lib/%%DISTNAME%%/japanese/fvwm2/exports
 @dirrm lib/%%DISTNAME%%/japanese/fvwm2
