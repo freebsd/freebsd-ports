@@ -5,25 +5,8 @@ also includes a graphical user interface for workstations that allows the
 user to set-up, solve and post-process the problem in a single CAD-like 
 environment. 
 
-If you are using the Xaw3d widget set, you may want to apply this patch
-(cd work/FElt-3.02; patch -p < ../../pkg/DESCR).
+FElt Home Page:
+	http://www-cse.ucsd.edu/users/atkinson/FElt/
 
-*** src/Velvet/Velvet.ad.orig	Sat May 10 18:04:40 1997
---- src/Velvet/Velvet.ad	Sat Jun 14 22:00:38 1997
-***************
-*** 1046,1052 ****
-  
-  ! 3d specific defaults
-  
-! !*shapeStyle:					Rectangle
-! !*control*spacer.height:				43
-! !*control*MenuButton*height:			26
-! !*control*Command*height:			26
---- 1046,1052 ----
-  
-  ! 3d specific defaults
-  
-! *shapeStyle:					Rectangle
-! *control*spacer.height:				43
-! *control*MenuButton*height:			26
-! *control*Command*height:			26
+FElt Application Repository:
+	http://crunch.inf.bi.ruhr-uni-bochum.de/FAR/

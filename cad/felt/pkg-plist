@@ -4,6 +4,8 @@ bin/felt
 bin/patchwork
 bin/velvet
 bin/yardstick
+share/doc/FElt/FAQ.html
+@dirrm share/doc/FElt
 share/examples/FElt/frame3.flt
 share/examples/FElt/beam3d_b.flt
 share/examples/FElt/bridge.flt
