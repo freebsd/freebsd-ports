@@ -1,0 +1,27 @@
+share/doc/tct/README
+share/doc/tct/CHANGES
+share/doc/tct/COPYRIGHT
+share/doc/tct/INSTALL
+share/doc/tct/LICENSE
+share/doc/tct/MANIFEST
+share/doc/tct/OS-NOTES
+share/doc/tct/README.FIRST
+share/doc/tct/TODO
+share/doc/tct/design-notes
+share/doc/tct/grave-robber.README
+share/doc/tct/lazarus.README
+share/doc/tct/mac.README
+bin/ils
+bin/grave-robber
+bin/lastcomm
+bin/mactime
+bin/major_minor
+bin/pcat
+bin/unrm
+bin/strip_tct_home
+bin/timeout
+bin/lazarus
+bin/icat
+bin/md5
+bin/file
+@dirrm share/doc/tct

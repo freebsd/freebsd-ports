@@ -283,6 +283,7 @@
     SUBDIR += syslog-ng
     SUBDIR += task
     SUBDIR += tcplist
+    SUBDIR += tct
     SUBDIR += tdir
     SUBDIR += tentakel
     SUBDIR += thefish
