@@ -24,7 +24,8 @@ USE_PERL5=	yes
 USE_GNOMECTRL=	yes
 INSTALLS_SHLIB=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include \
+			  `gdk-pixbuf-config --cflags`" \
 		LIBS="-L${LOCALBASE}/lib"
 
 pre-patch:

@@ -1,0 +1,23 @@
+
+$FreeBSD$
+
+--- applets/gen_util/Makefile.in.orig	Tue Oct 30 14:16:35 2001
++++ applets/gen_util/Makefile.in	Tue Oct 30 14:30:29 2001
+@@ -157,7 +157,7 @@
+ 
+ SUBDIRS = help
+ 
+-INCLUDES = -I. -I$(srcdir) 					-I$(top_srcdir)/intl -I$(top_builddir)/intl		-I$(srcdir)/../../panel					-I$(top_builddir)/panel					-DGNOMELOCALEDIR=\""$(prefix)/share/locale"\"		-I$(includedir) $(GNOME_INCLUDEDIR)
++INCLUDES = -I. -I$(srcdir) 					-I$(top_srcdir)/intl -I$(top_builddir)/intl		-I$(srcdir)/../../panel					-I$(top_builddir)/panel					-DGNOMELOCALEDIR=\""$(prefix)/share/locale"\"		-I$(includedir) $(GNOME_INCLUDEDIR)	$(PIXBUF_CFLAGS)
+ 
+ 
+ lib_LTLIBRARIES = libgen_util_applet.la
+@@ -197,7 +197,7 @@
+ 
+ DEFS = @DEFS@ -I. -I$(srcdir) -I../..
+ LIBS = @LIBS@
+-libgen_util_applet_la_LDFLAGS = 
++libgen_util_applet_la_LDFLAGS = -version-info 5:0:0
+ libgen_util_applet_la_LIBADD = 
+ libgen_util_applet_la_OBJECTS =  main.lo mailcheck.lo popcheck.lo \
+ printer.lo clock.lo remote-helper.lo
