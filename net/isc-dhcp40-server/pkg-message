@@ -1,0 +1,24 @@
+****  To setup dhclient, you may need to edit /etc/rc.conf to bypass the
+      base system dhclient, such as :
+            dhcp_program="%%PREFIX%%/sbin/dhclient"
+            dhcp_flags="-q"
+      See dhclient(8) using the following command for details about the
+      possible options:
+            MANPATH=%%MAN1PREFIX%%/man man 8 dhclient
+      
+****  To setup dhcpd, you may need to copy %%PREFIX%%/etc/dhcpd.conf.sample
+      to %%PREFIX%%/etc/dhcpd.conf for editing.  Also, you have to rename
+      %%PREFIX%%/etc/rc.d/isc-dhcpd.sh.sample to %%PREFIX%%/etc/rc.d/isc-
+      dhcpd.sh.
+      
+      %%PREFIX%%/etc/rc.isc-dhcpd.conf may be edited to tune some startup
+      variables such as `dhcpd_options' or `dhcpd_ifaces', both defaulted
+      to nothing. See dhcpd(8) for details about the possible options.
+      
+****  To setup dhcrelay, you have to rename %%PREFIX%%/etc/rc.d/isc-
+      dhcrelay.sh.sample to %%PREFIX%%/etc/rc.d/isc-dhcrelay.sh.
+      
+      %%PREFIX%%/etc/rc.isc-dhcrelay.conf may need to be edited to setup
+      the `dhcrelay_servers' as required. you may also tune `dhcrelay_options'
+      and `dhcrelay_ifaces', both defaulted to nothing, if needed. See
+      dhcrelay(8) for details about the possible options.
