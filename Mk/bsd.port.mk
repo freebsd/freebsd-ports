@@ -1713,17 +1713,21 @@ maintainer:
 	@${ECHO_CMD} "${PKGNAME}: CATEGORIES is mandatory."
 	@${FALSE}
 .else
-VALID_CATEGORIES+=	afterstep archivers astro audio benchmarks biology \
-	cad chinese comms converters databases deskutils devel \
-	editors elisp emulators french ftp games german gnome graphics \
-	hebrew ipv6 irc japanese java kde korean lang linux \
-	mail math mbone misc net news \
-	offix palm perl5 picobsd plan9 print python ruby russian \
+
+VALID_CATEGORIES+= accessibility afterstep archivers astro audio \
+	benchmarks biology cad chinese comms converters databases \
+	deskutils devel editors elisp emulators finance french ftp \
+	games german gnome graphics haskell hebrew hungarian \
+	ipv6 irc japanese java kde korean lang linux \
+	mail math mbone misc multimedia net news \
+	offix palm parallel perl5 picobsd plan9 portuguese print python \
+	ruby russian \
 	science security shells sysutils \
 	tcl76 tcl80 tcl81 tcl82 tcl83 textproc \
 	tk42 tk80 tk82 tk83 tkstep80 \
 	ukrainian vietnamese windowmaker www \
 	x11 x11-clocks x11-fm x11-fonts x11-servers x11-toolkits x11-wm zope
+
 check-categories:
 .for cat in ${CATEGORIES}
 	@if ${ECHO_CMD} ${VALID_CATEGORIES} | ${GREP} -wq ${cat}; then \
