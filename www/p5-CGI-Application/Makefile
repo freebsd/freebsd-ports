@@ -15,7 +15,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	petef@databits.net
 
 BUILD_DEPENDS=	${SITE_PERL}/HTML/Template.pm:${PORTSDIR}/www/p5-HTML-Template \
-		${SITE_PERL}/CGI/Base.pm:${PORTSDIR}/www/p5-CGI
+		${SITE_PERL}/CGI/Base.pm:${PORTSDIR}/www/p5-CGI-modules
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 SITE_PERL=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}
