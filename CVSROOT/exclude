@@ -8,6 +8,8 @@
 ^CVSROOT/
 ^distrib/
 ^doc/
+^src/etc/
+^src/release/
 ^www/
 
 ^src/contrib/.*/FREEBSD-Xlist

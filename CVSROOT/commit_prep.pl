@@ -284,12 +284,6 @@ if ($directory =~ /^src\/contrib/) {
 if ($directory =~ /^src\/crypto/) {
 	$check_id = 3;
 }
-if ($directory =~ /^src\/release/) {
-	$check_id = 0;
-}
-if ($directory =~ /^src\/etc/) {
-	$check_id = 0;
-}
 #
 # Now check each file name passed in, except those excluded.
 #
