@@ -24,4 +24,4 @@ PLIST_SUB+=		PKGINFODIR=${PKGINFODIR}
 
 WITHOUT_OCTET_VIEWER=	yes
 
-.include <${MASTERDIR}/Makefile>
+.include "${MASTERDIR}/Makefile"

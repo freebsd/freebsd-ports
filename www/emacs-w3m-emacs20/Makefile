@@ -11,4 +11,4 @@ EMACS_PORT_NAME=	emacs20
 COMMENT=	Simple front-end to w3m for emacs20
 PLIST=			${.CURDIR}/pkg-plist
 
-.include <${MASTERDIR}/Makefile>
+.include "${MASTERDIR}/Makefile"
