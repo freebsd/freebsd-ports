@@ -3,64 +3,12 @@ camediaplay
 	digital camera engine.
 	It is known to work with:
 	- Olympus C-400/400L/800L/410L, D-200L/300L
-	- Epson CP-100
+	- Epson CP-100/500
 	- Sanyo VPC-G1
 	It should work with:
 	- Sanyo DSC-V1
 	- Agfa ePhoto307
-	- Epson CP-200/500?
-
-USAGE
-	camediaplay [options] port			query # of picts
-	camediaplay [options] -o port >foo.jpg		extract jpg to stdout
-	camediaplay [options] -g port			extract jpg to file
-	camediaplay [options] -S port			get settings of camera
-
-	common options:
-		-b#	Baudrate. (default: 19200bps)
-		-d	Dump mode.  Transaction longer than 30 bytes
-			will be truncated.
-		-d#	Dump mode.  You can specify threshold for truncation.
-		-u	Don't use uucp locking. (questionable option)
-		-v 	Verbose mode.
-		-D	Debug mode.
-		port	Serial port.  Can be full path (/dev/tty00),
-			or just device name (tty00).
-
-	options in -o/-g mode:
-		-a	Specify that you would like to download all the picts.
-		-s#	Specify picture # to start download.
-		-e#	Specify picture # to finish download.
-		-n#	Specify that you would like to download just 1 pict,
-			that is numbered with #.
-		-t	Get thumbnail instead of full-sized picts.
-
-	options in -g mode:
-		-Nxxx	Specify the output filename, in sprintf() format.
-			Default is: "pic%05d.jpg".
-			(Be careful about escaping shell meta characters!)
-		-i	Don't overwrite existing files.
-			If the file to be written is already there,
-			simply exit with error.
-
-		NOTICE: -o mode won't work with multiple pictures specified.
-
-EXAMPLE USAGE
-	% camediaplay cuaa0
-		get the number of picts.
-	% camediaplay -n10 -o cuaa0 > foo.jpg
-		get full-sized picture #10 to foo.jpg through stdout.
-	% camediaplay -n10 -t -o cuaa0 > foo.jpg
-		get thumbnail picture #10 to foo.jpg through stdout.
-	% camediaplay -a -g cuaa0
-		get all full-sized pictures into "pic00001.jpg", "pic00002.jpg"
-		and so forth.
-	% camediaplay -s2 -e4 -g cuaa0
-		get full-sized pictures from #2 to #4 into "pic00001.jpg",
-		"pic00002.jpg" and so forth.
-	% camediaplay -s2 -e4 -Npict%02d.jpg -g cuaa0
-		get full-sized pictures from #2 to #4 into "pict01.jpg",
-		"pict02.jpg" and so forth.
+	- Epson CP-200
 
 REPORTING BUGS
 	Please use one of the following methods:

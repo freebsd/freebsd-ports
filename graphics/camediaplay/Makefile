@@ -1,11 +1,12 @@
 # New ports collection makefile for:	camediaplay
+# Version required:	970703
 # Date created:		2 May 1997
 # Whom:			Jun-ichiro itojun Itoh <itojun@itojun.org>
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1997/05/20 06:28:56 asami Exp $
 #
 
-DISTNAME=	camediaplay-970418
+DISTNAME=	camediaplay-970703
 CATEGORIES=	graphics
 MASTER_SITES=   ftp://ftp.csl.sony.co.jp/pub/C-400L/unix/
 
