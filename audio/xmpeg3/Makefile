@@ -3,7 +3,7 @@
 # Date created:		7 July 1997
 # Whom:			doconnor@ist.flinders.edu.au
 #
-# $Id: Makefile,v 1.1.1.1 1997/10/29 12:16:52 tg Exp $
+# $Id: Makefile,v 1.2 1997/10/30 00:42:27 asami Exp $
 #
 
 DISTNAME=	xmp3_1.0.0
@@ -15,10 +15,13 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	ports@FreeBSD.ORG
 
 RUN_DEPENDS=	amp:${PORTSDIR}/audio/amp \
-		wish4.2:${PORTSDIR}/x11/tk42
+		wish8.0:${PORTSDIR}/x11/tk80
 
 WRKSRC=		${WRKDIR}/xmpeg3
 NO_BUILD=	yes
+
+post-patch:
+	@/usr/bin/perl -pi -e "s|@@PREFIX@@|${PREFIX}|;" ${WRKSRC}/xmpeg3
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/xmpeg3 ${PREFIX}/bin
