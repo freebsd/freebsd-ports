@@ -23,7 +23,7 @@ MAN1=		fakebo.1
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/fakebo ${PREFIX}/bin/
-	${INSTALL_DATA} ${WRKSRC}/fakebo.conf ${PREFIX}/etc/fakebo.conf.sample
+	${INSTALL_DATA} ${WRKSRC}/fakebo.conf.dist ${PREFIX}/etc/fakebo.conf.sample
 	${INSTALL_MAN} ${WRKSRC}/fakebo.1 ${PREFIX}/man/man1/
 
 .if !defined(NOPORTDOCS)
