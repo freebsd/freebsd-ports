@@ -1,23 +1,24 @@
 # New ports collection makefile for:    lynx
-# http://sol.slcc.edu/lynx/current/
-# Version required:     2.7.1ac
+# Version required:     2.7.1
 # Date created:         15 Dec 1994
 # Whom:                 ache
 #
-# $Id: Makefile,v 1.71 1997/11/24 19:35:30 ache Exp $
+# $Id: Makefile,v 1.72 1997/11/29 16:27:39 ache Exp $
 #
 
-DISTNAME=       lynx2.7.1ac-0.97
-PKGNAME=        lynx-2.7.1ac-0.97
+DISTNAME=       lynx2-7-1
+PKGNAME=        lynx-2.7.1
 CATEGORIES=	www
-MASTER_SITES=   http://sol.slcc.edu/lynx/current/
+MASTER_SITES=   http://sol.slcc.edu/lynx/fote/
+EXTRACT_SUFX=	.zip
 
-MAINTAINER=	ache@FreeBSD.ORG
+MAINTAINER=	jseger@FreeBSD.ORG
 
-WRKSRC=         ${WRKDIR}/lynx2-7-1
-GNU_CONFIGURE=  YES
-CONFIGURE_ARGS= --with-screen=ncurses --with-zlib --libdir="${PREFIX}/etc"
-MAKEFILE=       makefile
+BUILD_DEPENDS=	unzip:${PORTSDIR}/archivers/unzip
+
 MAN1=		lynx.1
+EXTRACT_CMD=	unzip
+EXTRACT_BEFORE_ARGS=	-qq
+ALL_TARGET=	freebsd-ncurses
 
 .include <bsd.port.mk>

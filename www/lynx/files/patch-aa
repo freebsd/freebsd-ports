@@ -1,0 +1,21 @@
+--- Makefile.orig	Thu Apr  3 09:55:28 1997
++++ Makefile	Mon Dec  1 18:22:13 1997
+@@ -14,15 +14,15 @@
+ 
+ ##change the next line if you want lynx installed somewhere
+ ##besides /usr/local/bin
+-exec= /usr/local/bin
++exec= ${PREFIX}/bin
+ 
+ ##change the next line if you want the lynx man file installed somewhere
+ ##besides /usr/local/man/man1
+-doc= /usr/local/man/man1
++doc= ${PREFIX}/man/man1
+ 
+ ##change the next line if you want the lynx.cfg file installed somewhere
+ ##besides /usr/local/lib
+-cfg= /usr/local/lib
++cfg= ${PREFIX}/etc
+ 
+ installbin= install -c -s -m 755
+ installdoc= install -c -m 444
