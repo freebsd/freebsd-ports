@@ -6,6 +6,8 @@
 #
 
 PORTNAME=	mozilla
+PORTREVISION=	0
+PORTEPOCH=	0
 CATEGORIES=	www
 
 MASTERDIR=	${.CURDIR}/../mozilla-devel
