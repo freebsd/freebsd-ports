@@ -290,6 +290,7 @@ amldb		src/usr.sbin/acpi/amldb
 amp		ports/audio/amp
 amphetamine	ports/games/amphetamine
 ample		ports/audio/ample
+amsn		ports/net/amsn
 amspsfnt	ports/print/amspsfnt
 amulet		ports/devel/amulet
 amyc		ports/www/amyc
