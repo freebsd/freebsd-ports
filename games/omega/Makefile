@@ -20,15 +20,16 @@ MAN6=		omega.6
 do-install:
 	@ ${INSTALL_PROGRAM} ${WRKSRC}/omega ${PREFIX}/bin
 	@ ${INSTALL_MAN} ${WRKSRC}/docs/omega.6 ${PREFIX}/man/man6
-	@ ${CHOWN} games:games ${PREFIX}/bin/omega
-	@ ${CHMOD} 4711 ${PREFIX}/bin/omega
+	@ ${CHOWN} root:games ${PREFIX}/bin/omega
+	@ ${CHMOD} 2711 ${PREFIX}/bin/omega
 	@ ${MKDIR} ${PREFIX}/share/omega
 	@ ${INSTALL_DATA} ${WRKSRC}/lib/* ${PREFIX}/share/omega
 	@ ${RM} ${PREFIX}/share/omega/license.old
-	@ ${CHMOD} 0600 ${PREFIX}/share/omega/omega.hi
-	@ ${CHMOD} 0600 ${PREFIX}/share/omega/omega.log
+	@ ${CHMOD} 0460 ${PREFIX}/share/omega/omega.hi
+	@ ${CHMOD} 0460 ${PREFIX}/share/omega/omega.log
 	@ ${CP} ${PREFIX}/share/omega/omega.hi ${PREFIX}/share/omega/omegahi.bak
-	@ ${CHOWN} -R games:games ${PREFIX}/share/omega
+	@ ${CHMOD} 0460 ${PREFIX}/share/omega/omegahi.bak
+	@ ${CHOWN} -R root:games ${PREFIX}/share/omega
 
 post-install:
 .if !defined(NOPORTDOCS)
