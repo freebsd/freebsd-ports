@@ -1,0 +1,86 @@
+--- messagewallstats.c.orig	Fri Oct 18 17:24:16 2002
++++ messagewallstats.c	Sun May  2 18:30:47 2004
+@@ -48,6 +48,8 @@
+ struct counter *virus = NULL;
+ struct counter *encoding = NULL;
+ struct counter *illegal_multipart = NULL;
++struct counter *dnsbl_domain_spam_score = NULL;
++struct counter *dnsbl_spam_score = NULL;
+ 
+ void increment(struct counter **head, char *name) {
+ 	struct counter *temp;
+@@ -96,9 +98,9 @@
+ 	int quit = 0;
+ 	int disconnect = 0;
+ 	int disconnect_data = 0;
+-        long bytes_total = 0;
+-        long bytes_delivered = 0;
+-        long bytes_received =0;
++	long bytes_total = 0;
++	long bytes_delivered = 0;
++	long bytes_received =0;
+ 	int idle = 0;
+ 	int errors = 0;
+ 	int bare_lf = 0;
+@@ -275,6 +277,15 @@
+ 				*end = '\0';
+ 				increment(&dnsbl,start);
+ 			}
++			
++			if (end != NULL) {
++				start = end + 1;
++				end = strchr(start, ':');
++				*end = '\0';
++				
++				increment(&dnsbl_spam_score,start);
++			}
++			
+ 			continue;
+ 		}
+ 
+@@ -286,6 +297,21 @@
+ 				*end = '\0';
+ 				increment(&dnsbl_domain,start);
+ 			}
++			
++			if (end != NULL) {
++				end++;
++				start = strchr(end, ':');
++				*start = '\0';
++				start = strchr(end, '.');
++				if (strchr(start+1, '.') != NULL) {
++					start++;
++				}
++				else {
++					start = end;
++				}
++				increment(&dnsbl_domain_spam_score,start);
++			}
++			
+ 			continue;
+ 		}
+ 
+@@ -607,11 +633,18 @@
+ 	print(encoding,"\t\t");
+ 	fprintf(stdout,"\tInvalid QP encoding: %d\n",filter_qp);
+ 	fprintf(stdout,"\tInvalid base64 encoding: %d\n",filter_base64);
+-        fprintf(stdout,"\n");
++	fprintf(stdout,"\n");
+ 
+-        fprintf(stdout,"Mail Traffic\n");
+-        fprintf(stdout,"\tBytes received: %ld\n",bytes_total);
+-        fprintf(stdout,"\tBytes rejected: %ld\n",bytes_total - bytes_delivered);
+-        fprintf(stdout,"\tBytes accepted: %ld\n",bytes_delivered);
++	fprintf(stdout,"Mail Traffic\n");
++	fprintf(stdout,"\tBytes received: %ld\n",bytes_total);
++	fprintf(stdout,"\tBytes rejected: %ld\n",bytes_total - bytes_delivered);
++	fprintf(stdout,"\tBytes accepted: %ld\n",bytes_delivered);
++	
++	fprintf(stdout, "\nSpammers");
++	fprintf(stdout, "\n\tDomain based:\n");
++	print(dnsbl_domain_spam_score,"\t\t");
++	fprintf(stdout, "\n\tIP based:\n");
++	print(dnsbl_spam_score,"\t\t");
++		
+ 	exit(0);
+ }
