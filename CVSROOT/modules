@@ -7568,6 +7568,7 @@ py-kjbuckets	ports/devel/py-kjbuckets
 py-kqueue	ports/devel/py-kqueue
 py-ldap1	ports/net/py-ldap1
 py-ldap2	ports/net/py-ldap2
+py-libmpdclient	ports/audio/py-libmpdclient
 py-libnet	ports/net/py-libnet
 py-lirc		ports/comms/py-lirc
 py-log4py	ports/devel/py-log4py
