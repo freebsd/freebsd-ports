@@ -6,13 +6,11 @@
 #
 
 PORTNAME=	ripenc
-PORTVERSION=	0.7
+PORTVERSION=	1.1
 CATEGORIES=	audio
-MASTER_SITES=	ftp://ftp.vision.net.au/ftp4/html/files/ \
-		ftp://ftp.loxinfo.co.th/pub/unix/cd-writer/
-DISTNAME=	${PORTNAME}${PORTVERSION}
+MASTER_SITES=	http://home.kc.rr.com/ripenc/
 
-MAINTAINER=	jonny@jonny.eng.br
+MAINTAINER=	freebsdports@arved.de
 
 WRKSRC=		${WRKDIR}/ripenc
 
