@@ -120,7 +120,6 @@
     SUBDIR += libwww
     SUBDIR += libxpg4-ns
     SUBDIR += linbot
-    SUBDIR += linemode
     SUBDIR += links
     SUBDIR += linux-flashplugin
     SUBDIR += linux-lesstif-ns
