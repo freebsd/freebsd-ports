@@ -1,0 +1,14 @@
+--- libs/m3core/src/C/FBSD_ALPHA/m3makefile.orig	Mon Jun  7 10:13:36 1999
++++ libs/m3core/src/C/FBSD_ALPHA/m3makefile	Tue Apr 22 10:07:18 2003
+@@ -10,8 +10,9 @@
+ Interface ("Csetjmp")
+ Interface ("Csignal")
+ Interface ("Cstring")
+-Module ("Cstdio")
++% Cstdio disabled because of incompatibilities introduced in FreeBSD-5.
++%Module ("Cstdio")
+ 
+-c_source ("CstdioC")
++%c_source ("CstdioC")
+ 
+ 

@@ -70,6 +70,11 @@ WORDSIZE=	64
 BOOTSTRAP=	pm3-${PORTVERSION}-${TARGET}-boot.tar.bz2
 .endif
 
+EXTRA_PATCHES!= echo ${PATCHDIR}/${TARGET}-patch-*
+.if ${EXTRA_PATCHES} == ${PATCHDIR}/${TARGET}-patch-*
+.undef EXTRA_PATCHES
+.endif
+
 .if !defined(TARGET)
 pre-fetch:
 	@${ECHO_MSG} "Cannot determine M3 target for this architecture"
