@@ -1,4 +1,5 @@
 bin/dopewars
+lib/charset.alias
 %%PORTDOCS%%share/doc/%%DOPEWARS%%/aiplayer.html
 %%PORTDOCS%%share/doc/%%DOPEWARS%%/clientplay.html
 %%PORTDOCS%%share/doc/%%DOPEWARS%%/commandline.html
@@ -9,6 +10,7 @@ bin/dopewars
 %%PORTDOCS%%share/doc/%%DOPEWARS%%/index.html
 %%PORTDOCS%%share/doc/%%DOPEWARS%%/installation.html
 %%PORTDOCS%%share/doc/%%DOPEWARS%%/metaserver.html
+%%PORTDOCS%%share/doc/%%DOPEWARS%%/protocol.html
 %%PORTDOCS%%share/doc/%%DOPEWARS%%/server.html
 %%PORTDOCS%%share/doc/%%DOPEWARS%%/servercommands.html
 %%PORTDOCS%%share/doc/%%DOPEWARS%%/windows.html
@@ -19,6 +21,7 @@ share/dopewars/pixmaps/dopewars-shot.png
 share/dopewars/pixmaps/dopewars-weed.png
 share/locale/de/LC_MESSAGES/dopewars.mo
 share/locale/fr/LC_MESSAGES/dopewars.mo
+share/locale/locale.alias
 share/locale/pl/LC_MESSAGES/dopewars.mo
 share/locale/pt_BR/LC_MESSAGES/dopewars.mo
 share/gnome/apps/Games/dopewars.desktop

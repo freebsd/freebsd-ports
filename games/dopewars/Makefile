@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	dopewars
-PORTVERSION=	1.5.2
+PORTVERSION=	1.5.3
 CATEGORIES=	games
 MASTER_SITES=	http://dopewars.sourceforge.net/ \
 		http://bellatrix.pcl.ox.ac.uk/~ben/dopewars/
@@ -18,7 +18,7 @@ GNU_CONFIGURE=	yes
 USE_GTK=	yes
 USE_X_PREFIX=	yes
 
-CONFIGURE_ARGS=	--enable-nls
+CONFIGURE_ARGS+=	--enable-nls --enable-networking
 
 .if defined(NOPORTDOCS)
 MAKE_ENV+=	NOPORTDOCS=yes
