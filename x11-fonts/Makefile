@@ -14,6 +14,7 @@
     SUBDIR += freefonts
     SUBDIR += getbdf
     SUBDIR += intlfonts
+    SUBDIR += jmk-x11-fonts
     SUBDIR += mozilla-fonts
     SUBDIR += nexfontsel
     SUBDIR += nucleus
