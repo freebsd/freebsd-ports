@@ -1,0 +1,19 @@
+This package includes two programs for adjusting sound mixers:  xmixer, which
+uses the Athena toolkit, and gmixer, based on GTK+.  From the README:
+
+    Features:
+     * For every device which is supported by the soundcard you can
+       change the volume via a slider. Unsupported devices are not shown.
+     * Select the input device(s) for recording.
+     * On startup a configuration file is read which restores device
+       settings.
+     * With a menu option you can save the current settings for the next
+       start up.
+     * Hide devices which you don't want to see.
+     * Batch support - just read and evaluate the settings in the
+       configuration file.
+
+WWW:  http://home.pages.de/~rasca/xmixer/
+
+Trevor Johnson
+trevor@jpj.net
