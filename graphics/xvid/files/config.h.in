@@ -1,5 +1,14 @@
+/* Define as 1 if you have sys/endian.h. */
+#undef HAVE_SYS_ENDIAN_H
+
+/* Define as 1 if you have sys/param.h. */
+#undef HAVE_SYS_PARAM_H
+
 /* Define as 1 if you have stdint.h. */
 #undef HAVE_STDINT_H
 
 /* Define as 1 if you have inttypes.h. */
 #undef HAVE_INTTYPES_H
+
+/* Define size of uintptr_t type. */
+#undef SIZEOF_UINTPTR_T

@@ -2,7 +2,10 @@ dnl Process this file with autoconf to produce a configure header
 AC_INIT(config.h.in)
 
 dnl Check for and header files
-AC_CHECK_HEADERS(stdint.h inttypes.h)
+AC_CHECK_HEADERS(sys/endian.h sys/param.h stdint.h inttypes.h)
+
+dnl Check size of pointer for cache size
+AC_CHECK_SIZEOF(uintptr_t)
 
 AC_CONFIG_HEADER([config.h])
 
