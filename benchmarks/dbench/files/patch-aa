@@ -1,0 +1,22 @@
+*** dbench.h.orig	Fri Jan  5 06:49:41 2001
+--- dbench.h	Sun Feb 17 02:06:34 2002
+***************
+*** 42,49 ****
+  #define MSG_WAITALL 0x100
+  #endif
+  
+  #define MIN(x,y) ((x)<(y)?(x):(y))
+! 
+  #define TCP_PORT 7003
+  #define TCP_OPTIONS "TCP_NODELAY SO_REUSEADDR"
+  
+--- 42,50 ----
+  #define MSG_WAITALL 0x100
+  #endif
+  
++ #ifndef MIN
+  #define MIN(x,y) ((x)<(y)?(x):(y))
+! #endif /* MIN */
+  #define TCP_PORT 7003
+  #define TCP_OPTIONS "TCP_NODELAY SO_REUSEADDR"
+  
