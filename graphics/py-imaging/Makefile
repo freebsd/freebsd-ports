@@ -26,7 +26,7 @@ WRKSRC=		${WRKDIR}/${DISTNAME}/libImaging
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-jpeg=${PREFIX}/lib
 CONFIGURE_ENV=	PYTHON=${PYTHON_CMD}
-MAKE_FLAGS=	OPT="${CFLAGS}"
+MAKE_FLAGS=	OPT="${CFLAGS} -fPIC"
 
 .include <bsd.port.pre.mk>
 
