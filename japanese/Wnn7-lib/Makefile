@@ -3,7 +3,7 @@
 # Date created:		22 November 1994
 # Whom:			asami
 #
-# $Id: Makefile,v 1.5 1995/01/11 07:20:03 asami Exp $
+# $Id: Makefile,v 1.6 1995/03/24 11:09:25 asami Exp $
 #
 
 DISTNAME=	Wnn4.2
@@ -11,8 +11,6 @@ MASTER_SITES=	ftp://utsun.s.u-tokyo.ac.jp/fj/
 MAINTAINER=	asami@FreeBSD.ORG
 IS_INTERACTIVE=	yes
 WRKSRC=		${WRKDIR}/Xsi
-PKG_ARGS?=	-v -c ${PKGDIR}/COMMENT -d ${PKGDIR}/DESCR -f ${PKGDIR}/PLIST \
-			-r ${PKGDIR}/REQ -i ${PKGDIR}/INSTALL -p ${PREFIX}
 
 # These are necesary because this package uses a different Makefile for
 #  building and installing etc.

@@ -18,8 +18,6 @@ _PATCH_COOKIE=	${.CURDIR}/work/._patch_done
 PATCHLIST=	${.CURDIR}/work/.patchlist
 PATCHLEVEL=	`tail -1 ${PATCHLIST} | sed 's/^.*\.\(.*\)\.gz$$/\1/'`
 WRKSRC=		${WRKDIR}/dgd/src
-PKG_ARGS=	-v -c ${PKGDIR}/COMMENT -d ${PKGDIR}/DESCR -f ${PKGDIR}/PLIST \
-		-r ${PKGDIR}/REQ
 
 pre-fetch:
 	@if [ ! -d ${DISTDIR}/${DISTNAME} ]; then mkdir -p ${DISTDIR}/${DISTNAME}; fi
