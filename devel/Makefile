@@ -272,6 +272,7 @@
     SUBDIR += p5-String-Approx
     SUBDIR += p5-String-Checker
     SUBDIR += p5-String-RexxParse
+    SUBDIR += p5-String-Strip
     SUBDIR += p5-Term-ANSIColor
     SUBDIR += p5-Term-Query
     SUBDIR += p5-Term-ReadKey
