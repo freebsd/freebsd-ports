@@ -1,0 +1,6 @@
+bin/tex2im
+%%PORTDOCS%%share/examples/tex2im/example1.png
+%%PORTDOCS%%share/examples/tex2im/example1.tex
+%%PORTDOCS%%share/examples/tex2im/example2.png
+%%PORTDOCS%%share/examples/tex2im/example2.tex
+%%PORTDOCS%%@dirrm share/examples/tex2im
