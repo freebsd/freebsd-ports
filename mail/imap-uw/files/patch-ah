@@ -1,5 +1,5 @@
---- src/ipopd/ipop3d.c.orig	Tue Apr 24 01:31:57 2001
-+++ src/ipopd/ipop3d.c	Tue Apr 24 01:34:34 2001
+--- src/ipopd/ipop3d.c.orig	Mon Oct  1 02:53:55 2001
++++ src/ipopd/ipop3d.c	Mon Oct  1 02:56:46 2001
 @@ -28,6 +28,11 @@
  #include <time.h>
  #include "c-client.h"
@@ -22,7 +22,7 @@
 +extern char *getenv ();
 +#endif /* DRAC_AUTH */
 +
- char *version = "2001.76";	/* server version */
+ char *version = "2001.77";	/* server version */
  short state = AUTHORIZATION;	/* server state */
  short critical = NIL;		/* non-zero if in critical code */
 @@ -100,7 +111,7 @@
