@@ -12,7 +12,7 @@ MASTER_SITES=	http://www9.limewire.com:82/download/
 DISTNAME=	LimeWireLinux
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	past@noc.ntua.gr
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A Java based gnutella client
 
 USE_JAVA=	1.3+
