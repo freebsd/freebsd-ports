@@ -1,0 +1,7 @@
+--- conf-ld.orig	Mon Sep 29 09:52:59 2003
++++ conf-ld	Mon Sep 29 09:53:12 2003
+@@ -1,3 +1,3 @@
+-gcc -s -L/usr/local/bglibs/lib
++gcc -s -L/usr/local/include/bglibs
+ 
+ This will be used to link .o and .a files into an executable.

@@ -312,6 +312,7 @@
     SUBDIR += tua
     SUBDIR += ucspi-ssl
     SUBDIR += ucspi-tcp
+    SUBDIR += ucspi-unix
     SUBDIR += udesc_dump
     SUBDIR += unquote
     SUBDIR += upsd

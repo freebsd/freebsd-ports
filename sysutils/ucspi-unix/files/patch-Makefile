@@ -1,0 +1,11 @@
+--- Makefile.orig	Tue Sep 23 16:31:18 2003
++++ Makefile	Tue Sep 23 16:31:37 2003
+@@ -55,7 +55,7 @@
+ load: conf-ld
+ 	( echo '#!/bin/sh';\
+ 	  echo 'main="$$1"; shift';\
+-	  echo exec `head -1 conf-ld` '-o "$$main" "$$main.o" $${1+"$$@"}' -lsysdeps;\
++	  echo exec `head -1 conf-ld` '-L/usr/local/lib -o "$$main" "$$main.o" $${1+"$$@"}' -lsysdeps;\
+ 	) >load
+ 	chmod 755 load
+ 
