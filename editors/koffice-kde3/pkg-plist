@@ -3084,11 +3084,10 @@ share/templates/Presentation.desktop
 share/templates/SpreadSheet.desktop
 share/templates/TextDocument.desktop
 @exec /bin/mkdir -p %D/share/doc/HTML/en/koffice-apidocs/lib/html
-@unexec /bin/rmdir %D/share/doc/HTML/en/koffice-apidocs/lib/html || true
+@exec /bin/mkdir -p %D/share/doc/HTML/en/koffice-apidocs/lib/html
+@exec /bin/mkdir -p %D/share/doc/HTML/en/koffice-apidocs/lib/html
 @dirrm share/templates/.source
 @dirrm share/templates
-@dirrm share/servicetypes
-@dirrm share/services
 @dirrm share/icons/locolor/32x32/apps
 @dirrm share/icons/locolor/32x32
 @dirrm share/icons/locolor/22x22/apps
@@ -3097,34 +3096,22 @@ share/templates/TextDocument.desktop
 @dirrm share/icons/locolor/16x16
 @dirrm share/icons/locolor
 @dirrm share/icons/crystalsvg/48x48/apps
-@dirrm share/icons/crystalsvg/48x48
-@dirrm share/icons/crystalsvg/32x32/mimetypes
 @dirrm share/icons/crystalsvg/32x32/apps
-@dirrm share/icons/crystalsvg/32x32/actions
-@dirrm share/icons/crystalsvg/32x32
 @dirrm share/icons/crystalsvg/22x22/apps
-@dirrm share/icons/crystalsvg/22x22/actions
-@dirrm share/icons/crystalsvg/22x22
-@dirrm share/icons/crystalsvg/16x16/mimetypes
 @dirrm share/icons/crystalsvg/16x16/apps
-@dirrm share/icons/crystalsvg/16x16/actions
-@dirrm share/icons/crystalsvg/16x16
-@dirrm share/icons/crystalsvg
-@dirrm share/icons
 @dirrm share/doc/HTML/en/thesaurus
 @dirrm share/doc/HTML/en/kword
 @dirrm share/doc/HTML/en/kugar
 @dirrm share/doc/HTML/en/kspread
 @dirrm share/doc/HTML/en/kpresenter
 @dirrm share/doc/HTML/en/koshell
+@dirrm share/doc/HTML/en/koffice-apidocs/lib/html
 @dirrm share/doc/HTML/en/koffice-apidocs/lib
 @dirrm share/doc/HTML/en/koffice-apidocs
 @dirrm share/doc/HTML/en/koffice
 @dirrm share/doc/HTML/en/kivio
 @dirrm share/doc/HTML/en/kformula
 @dirrm share/doc/HTML/en/kchart
-@dirrm share/doc/HTML/en
-@dirrm share/doc/HTML
 @dirrm share/apps/xsltfilter/export/kword/xslfo
 @dirrm share/apps/xsltfilter/export/kword
 @dirrm share/apps/xsltfilter/export
@@ -3320,8 +3307,6 @@ share/templates/TextDocument.desktop
 @dirrm share/apps/karbon/icons
 @dirrm share/apps/karbon/gradients
 @dirrm share/apps/karbon
-@dirrm share/apps
 @dirrm share/applnk/Office
 @dirrm share/applnk
-@dirrm lib/kde3
 @dirrm include/kword

@@ -784,6 +784,10 @@ share/locale/pt_BR/LC_MESSAGES/kmenuedit.mo
 share/locale/pt_BR/LC_MESSAGES/kmessedwords.mo
 share/locale/pt_BR/LC_MESSAGES/kmid.mo
 share/locale/pt_BR/LC_MESSAGES/kmidi.mo
+share/locale/pt_BR/LC_MESSAGES/kmilo_generic.mo
+share/locale/pt_BR/LC_MESSAGES/kmilo_kvaio.mo
+share/locale/pt_BR/LC_MESSAGES/kmilo_powerbook.mo
+share/locale/pt_BR/LC_MESSAGES/kmilod.mo
 share/locale/pt_BR/LC_MESSAGES/kmines.mo
 share/locale/pt_BR/LC_MESSAGES/kminipagerapplet.mo
 share/locale/pt_BR/LC_MESSAGES/kmix.mo

@@ -16,8 +16,6 @@ DIST_SUBDIR=	KDE
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Localized messages and documentation for koffice
 
-BROKEN=		Does not build anything
-
 BUILD_DEPENDS=	xgettext:${PORTSDIR}/devel/gettext
 
 USE_KDELIBS_VER=3

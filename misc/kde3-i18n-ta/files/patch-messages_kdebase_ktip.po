@@ -1,0 +1,10 @@
+--- messages/kdebase/ktip.po.orig	Thu Jun  3 17:51:18 2004
++++ messages/kdebase/ktip.po	Thu Jun  3 17:51:53 2004
+@@ -354,7 +354,6 @@
+ "<li>print through external program (generic).</li>\n"
+ "</ul>\n"
+ "<p align=\"right\"><strong>-->&nbsp;</strong></p>\n"
+-" "
+ 
+ #: tips.cpp:172
+ msgid ""

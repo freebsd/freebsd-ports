@@ -36,7 +36,7 @@ lib/kde3/libwebarchiverplugin.la
 lib/kde3/libwebarchiverplugin.so
 lib/kde3/webarchivethumbnail.la
 lib/kde3/webarchivethumbnail.so
-share/applications/kdeaddons-konq-plugins-3.2.2
+share/applications/kdeaddons-konq-plugins-3.2.3
 share/applnk/.hidden/babelfishplugin.desktop
 share/applnk/.hidden/crashesplugin.desktop
 share/applnk/.hidden/dirfilterplugin.desktop

@@ -897,6 +897,7 @@ share/locale/sk/LC_MESSAGES/kghostview.mo
 share/locale/sk/LC_MESSAGES/kgoldrunner.mo
 share/locale/sk/LC_MESSAGES/kgpg.mo
 share/locale/sk/LC_MESSAGES/kgpgcertmanager.mo
+share/locale/sk/LC_MESSAGES/kgreet_classic.mo
 share/locale/sk/LC_MESSAGES/khangman.mo
 share/locale/sk/LC_MESSAGES/khelpcenter.mo
 share/locale/sk/LC_MESSAGES/khexedit.mo
@@ -952,6 +953,10 @@ share/locale/sk/LC_MESSAGES/kmenuedit.mo
 share/locale/sk/LC_MESSAGES/kmessedwords.mo
 share/locale/sk/LC_MESSAGES/kmid.mo
 share/locale/sk/LC_MESSAGES/kmidi.mo
+share/locale/sk/LC_MESSAGES/kmilo_generic.mo
+share/locale/sk/LC_MESSAGES/kmilo_kvaio.mo
+share/locale/sk/LC_MESSAGES/kmilo_powerbook.mo
+share/locale/sk/LC_MESSAGES/kmilod.mo
 share/locale/sk/LC_MESSAGES/kmines.mo
 share/locale/sk/LC_MESSAGES/kminipagerapplet.mo
 share/locale/sk/LC_MESSAGES/kmix.mo

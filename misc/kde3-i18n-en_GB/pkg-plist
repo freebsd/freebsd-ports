@@ -969,8 +969,6 @@ share/locale/en_GB/LC_MESSAGES/webarchiver.mo
 share/locale/en_GB/charset
 share/locale/en_GB/entry.desktop
 share/locale/en_GB/flag.png
-@dirrm share/locale/en_GB/LC_MESSAGES
-@dirrm share/locale/en_GB
 @dirrm share/doc/HTML/en_GB/umbrello
 @dirrm share/doc/HTML/en_GB/kxkb
 @dirrm share/doc/HTML/en_GB/kwrite

@@ -291,11 +291,15 @@ share/locale/ca/LC_MESSAGES/kmag.mo
 share/locale/ca/LC_MESSAGES/kmahjongg.mo
 share/locale/ca/LC_MESSAGES/kmail.mo
 share/locale/ca/LC_MESSAGES/kmailcvt.mo
+share/locale/ca/LC_MESSAGES/kmathtool.mo
 share/locale/ca/LC_MESSAGES/kmcop.mo
 share/locale/ca/LC_MESSAGES/kmenuapplet.mo
 share/locale/ca/LC_MESSAGES/kmenuedit.mo
+share/locale/ca/LC_MESSAGES/kmessedwords.mo
 share/locale/ca/LC_MESSAGES/kmid.mo
 share/locale/ca/LC_MESSAGES/kmidi.mo
+share/locale/ca/LC_MESSAGES/kmilo_generic.mo
+share/locale/ca/LC_MESSAGES/kmilod.mo
 share/locale/ca/LC_MESSAGES/kmines.mo
 share/locale/ca/LC_MESSAGES/kminipagerapplet.mo
 share/locale/ca/LC_MESSAGES/kmix.mo
@@ -405,6 +409,7 @@ share/locale/ca/LC_MESSAGES/kviewscannerplugin.mo
 share/locale/ca/LC_MESSAGES/kviewshell.mo
 share/locale/ca/LC_MESSAGES/kviewtemplateplugin.mo
 share/locale/ca/LC_MESSAGES/kviewviewer.mo
+share/locale/ca/LC_MESSAGES/kvoctrain.mo
 share/locale/ca/LC_MESSAGES/kwalletmanager.mo
 share/locale/ca/LC_MESSAGES/kweather.mo
 share/locale/ca/LC_MESSAGES/kwifimanager.mo

@@ -1,0 +1,71 @@
+--- configure	Mon May 31 16:06:53 2004
++++ configure	Sun Jun  6 20:29:06 2004
+@@ -36349,7 +36349,7 @@
+ 
+ ( exit $ac_status )
+ 
+-	if test "$LIBPTHREAD" != "" ; then
++	if test "$kde_use_threading" = "yes" ; then
+ 	echo "$as_me:$LINENO: result: no, falling back on supplied libgadu-copy" >&5
+ echo "${ECHO_T}no, falling back on supplied libgadu-copy" >&6
+ 	use_libgadu_copy=yes
+@@ -36391,12 +36391,12 @@
+ CXXFLAGS="$ac_save_CXXFLAGS"
+ 
+ if test "$use_libgadu_copy" = "yes"; then
+-	cp ${srcdir}/kopete/protocols/gadu/libgadu/libgadu-config.h{.in,}
++	cp ${srcdir}/kopete/protocols/gadu/libgadu/libgadu-config.h.in ${srcdir}/kopete/protocols/gadu/libgadu/libgadu-config.h
+ 	if test "$ac_cv_c_bigendian" = "yes"; then
+ 
+ sed -e "s/#undef __GG_LIBGADU_BIGENDIAN/#define __GG_LIBGADU_BIGENDIAN/" \
+ ${srcdir}/kopete/protocols/gadu/libgadu/libgadu-config.h > ${srcdir}/kopete/protocols/gadu/libgadu/libgadu-config.h.1
+-mv ${srcdir}/kopete/protocols/gadu/libgadu/libgadu-config.h{.1,}
++mv ${srcdir}/kopete/protocols/gadu/libgadu/libgadu-config.h.1 ${srcdir}/kopete/protocols/gadu/libgadu/libgadu-config.h
+ 
+ 	fi
+ 
+@@ -36489,7 +36489,7 @@
+ 
+ sed -e "s/#undef __GG_LIBGADU_HAVE_LONG_LONG/#define __GG_LIBGADU_HAVE_LONG_LONG/" \
+ ${srcdir}/kopete/protocols/gadu/libgadu/libgadu-config.h > ${srcdir}/kopete/protocols/gadu/libgadu/libgadu-config.h.1
+-mv ${srcdir}/kopete/protocols/gadu/libgadu/libgadu-config.h{.1,}
++mv ${srcdir}/kopete/protocols/gadu/libgadu/libgadu-config.h.1 ${srcdir}/kopete/protocols/gadu/libgadu/libgadu-config.h
+ 
+ 	fi
+ 
+@@ -36777,7 +36777,7 @@
+ 
+ sed -e "s/#undef __GG_LIBGADU_HAVE_OPENSSL/#define __GG_LIBGADU_HAVE_OPENSSL/" \
+ ${srcdir}/kopete/protocols/gadu/libgadu/libgadu-config.h > ${srcdir}/kopete/protocols/gadu/libgadu/libgadu-config.h.1
+-mv ${srcdir}/kopete/protocols/gadu/libgadu/libgadu-config.h{.1,}
++mv ${srcdir}/kopete/protocols/gadu/libgadu/libgadu-config.h.1 ${srcdir}/kopete/protocols/gadu/libgadu/libgadu-config.h
+ 
+ 	fi
+ 	echo "$as_me:$LINENO: checking for C99-compatible vsnprintf()" >&5
+@@ -36821,7 +36821,7 @@
+ 
+ sed -e "s/#undef __GG_LIBGADU_HAVE_C99_VSNPRINTF/#define __GG_LIBGADU_HAVE_C99_VSNPRINTF/" \
+ ${srcdir}/kopete/protocols/gadu/libgadu/libgadu-config.h > ${srcdir}/kopete/protocols/gadu/libgadu/libgadu-config.h.1
+-mv ${srcdir}/kopete/protocols/gadu/libgadu/libgadu-config.h{.1,}
++mv ${srcdir}/kopete/protocols/gadu/libgadu/libgadu-config.h.1 ${srcdir}/kopete/protocols/gadu/libgadu/libgadu-config.h
+ 
+ 
+ else
+@@ -36938,7 +36938,7 @@
+ 
+ sed -e "s/#undef __GG_LIBGADU_HAVE_VA_COPY/#define __GG_LIBGADU_HAVE_VA_COPY/" \
+ ${srcdir}/kopete/protocols/gadu/libgadu/libgadu-config.h > ${srcdir}/kopete/protocols/gadu/libgadu/libgadu-config.h.1
+-mv ${srcdir}/kopete/protocols/gadu/libgadu/libgadu-config.h{.1,}
++mv ${srcdir}/kopete/protocols/gadu/libgadu/libgadu-config.h.1 ${srcdir}/kopete/protocols/gadu/libgadu/libgadu-config.h
+ 
+ fi
+ done
+@@ -37044,7 +37044,7 @@
+ 
+ sed -e "s/#undef __GG_LIBGADU_HAVE__VA_COPY/#define __GG_LIBGADU_HAVE__VA_COPY/" \
+ ${srcdir}/kopete/protocols/gadu/libgadu/libgadu-config.h > ${srcdir}/kopete/protocols/gadu/libgadu/libgadu-config.h.1
+-mv ${srcdir}/kopete/protocols/gadu/libgadu/libgadu-config.h{.1,}
++mv ${srcdir}/kopete/protocols/gadu/libgadu/libgadu-config.h.1 ${srcdir}/kopete/protocols/gadu/libgadu/libgadu-config.h
+ 
+ fi
+ done

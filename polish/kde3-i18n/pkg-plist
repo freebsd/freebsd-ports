@@ -130,6 +130,7 @@ share/locale/pl/LC_MESSAGES/kcmkontactnt.mo
 share/locale/pl/LC_MESSAGES/kcmktalkd.mo
 share/locale/pl/LC_MESSAGES/kcmkuick.mo
 share/locale/pl/LC_MESSAGES/kcmkurifilt.mo
+share/locale/pl/LC_MESSAGES/kcmkvaio.mo
 share/locale/pl/LC_MESSAGES/kcmkwallet.mo
 share/locale/pl/LC_MESSAGES/kcmkwindecoration.mo
 share/locale/pl/LC_MESSAGES/kcmkwintheme.mo
@@ -297,6 +298,10 @@ share/locale/pl/LC_MESSAGES/kmenuedit.mo
 share/locale/pl/LC_MESSAGES/kmessedwords.mo
 share/locale/pl/LC_MESSAGES/kmid.mo
 share/locale/pl/LC_MESSAGES/kmidi.mo
+share/locale/pl/LC_MESSAGES/kmilo_generic.mo
+share/locale/pl/LC_MESSAGES/kmilo_kvaio.mo
+share/locale/pl/LC_MESSAGES/kmilo_powerbook.mo
+share/locale/pl/LC_MESSAGES/kmilod.mo
 share/locale/pl/LC_MESSAGES/kmines.mo
 share/locale/pl/LC_MESSAGES/kminipagerapplet.mo
 share/locale/pl/LC_MESSAGES/kmix.mo
@@ -314,6 +319,7 @@ share/locale/pl/LC_MESSAGES/knotify.mo
 share/locale/pl/LC_MESSAGES/kodo.mo
 share/locale/pl/LC_MESSAGES/kolf.mo
 share/locale/pl/LC_MESSAGES/kolourpicker.mo
+share/locale/pl/LC_MESSAGES/kommander.mo
 share/locale/pl/LC_MESSAGES/kompare.mo
 share/locale/pl/LC_MESSAGES/konq_smbmounterplugin.mo
 share/locale/pl/LC_MESSAGES/konqsidebar_mediaplayer.mo
@@ -459,6 +465,7 @@ share/locale/pl/LC_MESSAGES/lyrics.mo
 share/locale/pl/LC_MESSAGES/mediacontrol.mo
 share/locale/pl/LC_MESSAGES/minitoolsplugin.mo
 share/locale/pl/LC_MESSAGES/naughtyapplet.mo
+share/locale/pl/LC_MESSAGES/nexscope.mo
 share/locale/pl/LC_MESSAGES/noatun.mo
 share/locale/pl/LC_MESSAGES/nsplugin.mo
 share/locale/pl/LC_MESSAGES/passwords.mo

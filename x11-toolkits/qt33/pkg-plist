@@ -2392,5 +2392,4 @@ translations/qt_sk.qm
 @dirrm share/doc/qt
 @dirrm lib/plugins/designer
 @dirrm lib/plugins
-@dirrm libdata/pkgconfig
 @dirrm include/private

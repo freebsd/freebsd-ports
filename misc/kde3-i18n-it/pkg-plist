@@ -23,6 +23,8 @@ share/doc/HTML/it/amor/common
 share/doc/HTML/it/amor/index.cache.bz2
 share/doc/HTML/it/amor/index.docbook
 share/doc/HTML/it/artsbuilder/digitalaudio.docbook
+share/doc/HTML/it/artsbuilder/glossary.docbook
+share/doc/HTML/it/artsbuilder/helping.docbook
 share/doc/HTML/it/artsbuilder/midiintro.docbook
 share/doc/HTML/it/artsbuilder/porting.docbook
 share/doc/HTML/it/artsbuilder/references.docbook
@@ -440,6 +442,9 @@ share/doc/HTML/it/kmessedwords/kmw1.png
 share/doc/HTML/it/kmessedwords/kmw2.png
 share/doc/HTML/it/kmessedwords/kmw3.png
 share/doc/HTML/it/kmessedwords/kmw4.png
+share/doc/HTML/it/kmid/common
+share/doc/HTML/it/kmid/index.cache.bz2
+share/doc/HTML/it/kmid/index.docbook
 share/doc/HTML/it/kmines/common
 share/doc/HTML/it/kmines/index.cache.bz2
 share/doc/HTML/it/kmines/index.docbook
@@ -1094,6 +1099,7 @@ share/locale/it/LC_MESSAGES/knotify.mo
 share/locale/it/LC_MESSAGES/kodo.mo
 share/locale/it/LC_MESSAGES/kolf.mo
 share/locale/it/LC_MESSAGES/kolourpicker.mo
+share/locale/it/LC_MESSAGES/kommander.mo
 share/locale/it/LC_MESSAGES/kompare.mo
 share/locale/it/LC_MESSAGES/konq_smbmounterplugin.mo
 share/locale/it/LC_MESSAGES/konqsidebar_mediaplayer.mo
@@ -1190,7 +1196,6 @@ share/locale/it/LC_MESSAGES/kviewtemplateplugin.mo
 share/locale/it/LC_MESSAGES/kviewviewer.mo
 share/locale/it/LC_MESSAGES/kvoctrain.mo
 share/locale/it/LC_MESSAGES/kwalletmanager.mo
-share/locale/it/LC_MESSAGES/kwatchgnupg.mo
 share/locale/it/LC_MESSAGES/kweather.mo
 share/locale/it/LC_MESSAGES/kwifimanager.mo
 share/locale/it/LC_MESSAGES/kwin.mo
@@ -1225,7 +1230,6 @@ share/locale/it/LC_MESSAGES/libkickermenu_kdeprint.mo
 share/locale/it/LC_MESSAGES/libkickermenu_konsole.mo
 share/locale/it/LC_MESSAGES/libkickermenu_prefmenu.mo
 share/locale/it/LC_MESSAGES/libkickermenu_recentdocs.mo
-share/locale/it/LC_MESSAGES/libkleopatra.mo
 share/locale/it/LC_MESSAGES/libkonq.mo
 share/locale/it/LC_MESSAGES/libkpimexchange.mo
 share/locale/it/LC_MESSAGES/libkscan.mo
@@ -1323,6 +1327,7 @@ share/locale/it/flag.png
 @dirrm share/doc/HTML/it/kmoon
 @dirrm share/doc/HTML/it/kmix
 @dirrm share/doc/HTML/it/kmines
+@dirrm share/doc/HTML/it/kmid
 @dirrm share/doc/HTML/it/kmessedwords
 @dirrm share/doc/HTML/it/kmenuedit
 @dirrm share/doc/HTML/it/kmathtool

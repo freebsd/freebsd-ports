@@ -1,17 +1,23 @@
 share/apps/ktuberling/sounds/ro/ceas.wav
 share/apps/ktuberling/sounds/ro/cercel.wav
+share/apps/ktuberling/sounds/ro/colier.wav
+share/apps/ktuberling/sounds/ro/corn.wav
+share/apps/ktuberling/sounds/ro/cravata.wav
+share/apps/ktuberling/sounds/ro/domnul-cartof.wav
+share/apps/ktuberling/sounds/ro/fular.wav
 share/apps/ktuberling/sounds/ro/gura.wav
 share/apps/ktuberling/sounds/ro/insigna.wav
 share/apps/ktuberling/sounds/ro/mustata.wav
 share/apps/ktuberling/sounds/ro/nas.wav
+share/apps/ktuberling/sounds/ro/ochelari-de-soare.wav
 share/apps/ktuberling/sounds/ro/ochelari.wav
-share/apps/ktuberling/sounds/ro/ochelaridesoare.wav
 share/apps/ktuberling/sounds/ro/ochi.wav
 share/apps/ktuberling/sounds/ro/palarie.wav
 share/apps/ktuberling/sounds/ro/papion.wav
+share/apps/ktuberling/sounds/ro/par.wav
+share/apps/ktuberling/sounds/ro/pinguin.wav
 share/apps/ktuberling/sounds/ro/sprinceana.wav
 share/apps/ktuberling/sounds/ro/tigara.wav
-share/apps/ktuberling/sounds/ro/tuberling.wav
 share/apps/ktuberling/sounds/ro/ureche.wav
 share/doc/HTML/ro/common/1.png
 share/doc/HTML/ro/common/10.png
@@ -105,8 +111,27 @@ share/doc/HTML/ro/khelpcenter/visualdict/pict8.png
 share/doc/HTML/ro/khelpcenter/visualdict/pict9.png
 share/doc/HTML/ro/khelpcenter/welcome.docbook
 share/doc/HTML/ro/khelpcenter/whatiskde.docbook
+share/doc/HTML/ro/kioslave/bzip.docbook
+share/doc/HTML/ro/kioslave/bzip2.docbook
 share/doc/HTML/ro/kioslave/cgi.docbook
+share/doc/HTML/ro/kioslave/data.docbook
 share/doc/HTML/ro/kioslave/file.docbook
+share/doc/HTML/ro/kioslave/imaps.docbook
+share/doc/HTML/ro/kioslave/ldap.docbook
+share/doc/HTML/ro/kioslave/mrml.docbook
+share/doc/HTML/ro/kioslave/nntp.docbook
+share/doc/HTML/ro/kioslave/pop3.docbook
+share/doc/HTML/ro/kioslave/pop3s.docbook
+share/doc/HTML/ro/kioslave/rlan.docbook
+share/doc/HTML/ro/kioslave/rlogin.docbook
+share/doc/HTML/ro/kioslave/sftp.docbook
+share/doc/HTML/ro/kioslave/smtp.docbook
+share/doc/HTML/ro/kioslave/tar.docbook
+share/doc/HTML/ro/kioslave/telnet.docbook
+share/doc/HTML/ro/kioslave/webdavs.docbook
+share/doc/kinfocenter/common
+share/doc/kinfocenter/index.cache.bz2
+share/doc/kinfocenter/index.docbook
 share/locale/ro/LC_MESSAGES/alarmdaemonctrl.mo
 share/locale/ro/LC_MESSAGES/alsaplayerui.mo
 share/locale/ro/LC_MESSAGES/amor.mo
@@ -412,6 +437,7 @@ share/locale/ro/LC_MESSAGES/kmidi.mo
 share/locale/ro/LC_MESSAGES/kmilo_generic.mo
 share/locale/ro/LC_MESSAGES/kmilo_kvaio.mo
 share/locale/ro/LC_MESSAGES/kmilo_powerbook.mo
+share/locale/ro/LC_MESSAGES/kmilod.mo
 share/locale/ro/LC_MESSAGES/kmines.mo
 share/locale/ro/LC_MESSAGES/kminipagerapplet.mo
 share/locale/ro/LC_MESSAGES/kmix.mo
@@ -429,6 +455,7 @@ share/locale/ro/LC_MESSAGES/knotify.mo
 share/locale/ro/LC_MESSAGES/kodo.mo
 share/locale/ro/LC_MESSAGES/kolf.mo
 share/locale/ro/LC_MESSAGES/kolourpicker.mo
+share/locale/ro/LC_MESSAGES/kommander.mo
 share/locale/ro/LC_MESSAGES/kompare.mo
 share/locale/ro/LC_MESSAGES/konq_smbmounterplugin.mo
 share/locale/ro/LC_MESSAGES/konqsidebar_mediaplayer.mo
@@ -602,6 +629,7 @@ share/locale/ro/LC_MESSAGES/webarchiver.mo
 share/locale/ro/charset
 share/locale/ro/entry.desktop
 share/locale/ro/flag.png
+@dirrm share/doc/kinfocenter
 @dirrm share/doc/HTML/ro/kioslave
 @dirrm share/doc/HTML/ro/khelpcenter/visualdict
 @dirrm share/doc/HTML/ro/khelpcenter

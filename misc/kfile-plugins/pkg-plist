@@ -6,7 +6,7 @@ lib/kde3/kfile_html.la
 lib/kde3/kfile_html.so
 lib/kde3/kfile_txt.la
 lib/kde3/kfile_txt.so
-share/applications/kdeaddons-kfile-plugins-3.2.2
+share/applications/kdeaddons-kfile-plugins-3.2.3
 share/services/kfile_desktop.desktop
 share/services/kfile_folder.desktop
 share/services/kfile_html.desktop
