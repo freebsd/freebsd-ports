@@ -4,3 +4,4 @@ bin/rsjis
 bin/rujis
 lib/recjis/sjis_tbl
 lib/recjis/ujis_tbl
+@dirrm lib/recjis
