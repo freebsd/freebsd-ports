@@ -18,6 +18,11 @@ LIB_DEPENDS=    	pth.14:${PORTSDIR}/devel/pth
 USE_MESA=		yes
 USE_KDELIBS_VER=	2
 
+post-patch:
+	${PERL} -pi.orig -e \
+		's,/usr/local,${LOCALBASE},g; \
+		 s,/usr/X11R6,${X11BASE},g' ${WRKSRC}/makefile
+
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/landscape ${PREFIX}/bin
 
