@@ -9077,6 +9077,7 @@ yodl		ports/textproc/yodl
 yorick		ports/lang/yorick
 yorick-doc	ports/lang/yorick-doc
 youbin		ports/mail/youbin
+yptransitd	ports/net/yptransitd
 ysm		ports/net/ysm
 ytalk		ports/net/ytalk
 ytree		ports/misc/ytree
