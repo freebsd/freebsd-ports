@@ -6,4 +6,5 @@ Grep searches the named input files (or standard input if no files are
 named, or the file name - is given) for lines containing a match to
 the given pattern. By default, grep prints the matching lines.
 
-Multi-byte patch by t^2(Takahiro Tanimoto, NBC02362@niftyserve.or.jp)
+Multi-byte code by Media Lab., Inc. (linux@mlb.co.jp)
+and t^2(Takahiro Tanimoto, NBC02362@niftyserve.or.jp).

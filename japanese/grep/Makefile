@@ -6,27 +6,31 @@
 #
 
 PORTNAME=	grep
-PORTVERSION=	2.0
-PORTREVISION=	1
+PORTVERSION=	2.4.2
 CATEGORIES=	japanese textproc
 MASTER_SITES=	${MASTER_SITE_GNU}
-MASTER_SITE_SUBDIR=	grep
+MASTER_SITE_SUBDIR=	${PORTNAME}
 
-PATCH_SITES=	ftp://ftp.hipecs.hokudai.ac.jp/pub/GNU/jp/
-PATCHFILES=	${DISTNAME}-mb1.04.diff.gz
+PATCH_SITES=	http://www.hinadori.dyn.to/~wills/program/
+PATCHFILES=	grep-2.4.2-mlb2.patch.gz
 PATCH_DIST_STRIP=	-p1
 
 MAINTAINER=	ports@FreeBSD.org
 
 GNU_CONFIGURE=	yes
-MAKE_ARGS=	binprefix=j
+CONFIGURE_ARGS=	--program-prefix=j --disable-nls
 
 MAN1=		jgrep.1
+MLINKS=		jgrep.1 jegrep.1 \
+		jgrep.1 jfgrep.1
+
+DOCSDIR=	${PREFIX}/share/doc/${PKGBASE}
 
 post-install:
 .if !defined(NOPORTDOCS)
-	@${MKDIR} ${PREFIX}/share/doc/ja/grep
-	${INSTALL_DATA} ${WRKSRC}/README.MB ${PREFIX}/share/doc/ja/grep
+	@${MKDIR} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/README.MB ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/README.mlb ${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>
