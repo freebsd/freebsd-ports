@@ -7,7 +7,7 @@
 #
 
 PORTNAME?=	vim
-PORTVERSION=	5.7.18
+PORTVERSION=	5.7.19
 CATEGORIES?=	editors
 MASTER_SITES=	ftp://nuxi.ucdavis.edu/pub/vim/unix/ \
 		ftp://ftp.nuxi.com/pub/vim/unix/ \
@@ -21,7 +21,7 @@ DISTNAME=	vim-5.7
 DISTFILES=	${DISTNAME}-src${EXTRACT_SUFX} ${DISTNAME}-rt${EXTRACT_SUFX}
 
 PATCH_SITES=	${MASTER_SITES:S/unix/patches/}
-.for p in 01 02 03 04 05 06 07 08 10 12 13 14 15 16 17 18
+.for p in 01 02 03 04 05 06 07 08 10 12 13 14 15 16 17 18 19
 PATCHFILES+=	5.7.0${p}
 .endfor
 
@@ -50,15 +50,18 @@ MLINKS+=	vim.1 gvim.1  vim.1 gview.1  vim.1 rgvim.1  vim.1 rgview.1
 
 .if !defined(LITE)
 MAKE_ARGS+=	X_LIBS=-lxpg4 CONF_OPT_MAX="--enable-max-features"
+I18N=		CONF_OPT_MULTIBYTE="--enable-multibyte --enable-fontset --enable-multibyte --enable-xim"
 
-.if defined(WITH_GTK)
+.if defined(WITH_ATHENA)
+MAKE_ARGS+=	CONF_OPT_GUI="--enable-gui=athena" ${I18N}
+.elif defined(WITH_GTK)
 USE_GTK=	yes
-MAKE_ARGS+=	CONF_OPT_GUI="--enable-gui=gtk --with-gtk-prefix=${X11BASE} --enable-multibyte --enable-fontset --enable-multibyte --enable-xim"
+MAKE_ARGS+=	CONF_OPT_GUI="--enable-gui=gtk --with-gtk-prefix=${X11BASE}" ${I18N}
 .elif defined(HAVE_MOTIF)
 USE_MOTIF=	yes
-MAKE_ARGS+=	CONF_OPT_GUI="--enable-gui=motif --with-motif-lib=\"${MOTIFLIB}\" --enable-multibyte --enable-fontset --enable-multibyte --enable-xim" MOTIFHOME=${X11BASE}
+MAKE_ARGS+=	CONF_OPT_GUI="--enable-gui=motif --with-motif-lib=\"${MOTIFLIB}\"" MOTIFHOME=${X11BASE} ${I18N}
 .else
-MAKE_ARGS+=	CONF_OPT_GUI="--enable-gui=athena --enable-multibyte --enable-fontset --enable-multibyte --enable-xim"
+MAKE_ARGS+=	CONF_OPT_GUI="--enable-gui=yes" ${I18N}
 .endif
 
 .if defined(PACKAGE_BUILDING)
