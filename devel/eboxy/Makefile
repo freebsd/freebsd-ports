@@ -34,7 +34,8 @@ CONFIGURE_ARGS=	--disable-lirc
 
 MAN1=		eboxy.1
 
-CPPFLAGS=	`${SDL_CONFIG} --cflags` -I${LOCALBASE}/include
+CPPFLAGS=	`${SDL_CONFIG} --cflags` -I${LOCALBASE}/include \
+		-DHAVE_DECL_GETOPT
 LDFLAGS=	`${SDL_CONFIG} --libs` -L${LOCALBASE}/lib
 
 post-patch:
