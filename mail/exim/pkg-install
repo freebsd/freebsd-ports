@@ -20,11 +20,11 @@ group=mail
 
 if [ "$2" = "PRE-INSTALL" ]; then
 	# uid=26(mailnull) gid=26(mailnull) groups=26(mailnull)
-	if ! /usr/bin/id ${uid} | /usr/bin/grep "uid=${uid}(${user})"; then
+	if ! /usr/bin/id ${uid} | /usr/bin/grep -q "uid=${uid}(${user})"; then
 		echo "Exim requires user ${user} (UID ${uid}).  Please update your system." 1>&2
 		exit 1
 	fi
-	if ! /usr/bin/grep "^${group}:[^:]*:${gid}:" < /etc/group; then
+	if ! /usr/bin/grep -q "^${group}:[^:]*:${gid}:" < /etc/group; then
 		echo "Exim requires group ${group} (GID ${gid}).  Please update your system." 1>&2
 		exit 1
 	fi
