@@ -1,0 +1,4 @@
+To finalize the leafnode install, proceed as follows:
+
+1. read ${PREFIX}/share/doc/leafnode/INSTALL, starting at item #5.
+2. read ${PREFIX}/share/doc/leafnode/README, mind the incompatible changes!
