@@ -6,12 +6,11 @@
 #
 
 PORTNAME=	dante
-PORTVERSION=	1.1.12.p1
+PORTVERSION=	1.1.12
 CATEGORIES=	net security
 MASTER_SITES=	ftp://ftp.inet.no/pub/socks/ \
 		ftp://ftp.nuug.no/pub/anders/distfiles/ \
 		http://atreides.freenix.no/~anders/
-DISTNAME=	${PORTNAME}-${PORTVERSION:S/.p/-pre/}
 
 MAINTAINER=	anders@FreeBSD.org
 
