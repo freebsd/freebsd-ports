@@ -1039,6 +1039,10 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     <topic>libpng denial-of-service</topic>
     <affects>
       <package>
+	<name>linux-png</name>
+	<range><lt>1.2.2</lt></range>
+      </package>
+      <package>
 	<name>png</name>
 	<range><lt>1.2.5_4</lt></range>
       </package>
@@ -1059,7 +1063,7 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     <dates>
       <discovery>2004-04-29</discovery>
       <entry>2004-05-02</entry>
-      <modified>2004-05-03</modified>
+      <modified>2004-05-21</modified>
     </dates>
   </vuln>
 
