@@ -170,6 +170,7 @@
     SUBDIR += gopher
     SUBDIR += gossip
     SUBDIR += gq
+    SUBDIR += grdesktop
     SUBDIR += gsk
     SUBDIR += gspoof
     SUBDIR += gtic

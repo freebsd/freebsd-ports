@@ -1,0 +1,42 @@
+bin/grdesktop
+etc/gconf/gconf.xml.defaults/apps/grdesktop/options/%gconf.xml
+etc/gconf/gconf.xml.defaults/apps/grdesktop/%gconf.xml
+etc/gconf/gconf.xml.defaults/schemas/apps/grdesktop/options/%gconf.xml
+etc/gconf/gconf.xml.defaults/schemas/apps/grdesktop/%gconf.xml
+etc/gconf/schemas/grdesktop.schemas
+share/gnome/application-registry/grdesktop.applications
+share/gnome/applications/grdesktop.desktop
+share/gnome/help/grdesktop/C/grdesktop.xml
+share/gnome/help/grdesktop/C/legal.xml
+share/gnome/mime-info/grdesktop.keys
+share/gnome/mime-info/grdesktop.mime
+share/gnome/omf/grdesktop/grdesktop-C.omf
+@exec scrollkeeper-install -q %D/share/gnome/omf/grdesktop/grdesktop-C.omf 2>/dev/null || /usr/bin/true
+@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/grdesktop/grdesktop-C.omf 2>/dev/null || /usr/bin/true
+share/gnome/pixmaps/grdesktop/animation.gif
+share/gnome/pixmaps/grdesktop/colors_1.png
+share/gnome/pixmaps/grdesktop/colors_2.png
+share/gnome/pixmaps/grdesktop/colors_3.png
+share/gnome/pixmaps/grdesktop/colors_4.png
+share/gnome/pixmaps/grdesktop/folder.png
+share/gnome/pixmaps/grdesktop/host.png
+share/gnome/pixmaps/grdesktop/icon.png
+share/gnome/pixmaps/grdesktop/icon.xpm
+share/gnome/pixmaps/grdesktop/keyboard.png
+share/gnome/pixmaps/grdesktop/monitor.png
+share/gnome/pixmaps/grdesktop/program.png
+share/gnome/pixmaps/grdesktop/settings.png
+share/gnome/pixmaps/grdesktop/sound.png
+share/gnome/pixmaps/grdesktop/topimage.png
+share/gnome/pixmaps/grdesktop/topimage2.png
+share/locale/de/LC_MESSAGES/grdesktop.mo
+share/locale/es/LC_MESSAGES/grdesktop.mo
+share/locale/fr/LC_MESSAGES/grdesktop.mo
+@dirrm share/gnome/pixmaps/grdesktop
+@dirrm share/gnome/omf/grdesktop
+@dirrm share/gnome/help/grdesktop/C
+@dirrm share/gnome/help/grdesktop
+@dirrm etc/gconf/gconf.xml.defaults/apps/grdesktop/options
+@dirrm etc/gconf/gconf.xml.defaults/apps/grdesktop
+@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/grdesktop/options
+@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/grdesktop
