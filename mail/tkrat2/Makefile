@@ -16,7 +16,7 @@ MAINTAINER=	ports@FreeBSD.org
 
 LIB_DEPENDS=	tcl82:${PORTSDIR}/lang/tcl82 \
 		tk82:${PORTSDIR}/x11-toolkits/tk82 \
-		c-client4.7:${PORTSDIR}/mail/cclient
+		c-client4.8:${PORTSDIR}/mail/cclient
 
 GNU_CONFIGURE=	yes
 
@@ -25,6 +25,8 @@ CONFIGURE_ARGS=	--with-tcl-config=${PREFIX}/lib/tcl8.2 \
 
 DOCFILES=	CONFIGURATION COPYRIGHT README doc/interface doc/userprocs \
 		doc/userproc.example
+
+MAN1=		tkrat.1
 
 post-install:
 .if !defined(NOPORTDOCS)
