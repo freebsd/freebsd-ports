@@ -1,0 +1,33 @@
+bin/Terminal
+bin/terminal
+libexec/TerminalHelp
+share/applications/Terminal.desktop
+share/Terminal/Terminal-toolbars.ui
+share/Terminal/Terminal.ui
+share/icons/hicolor/48x48/apps/Terminal.png
+share/icons/hicolor/scalable/apps/Terminal.svg
+share/pixmaps/terminal.xpm
+%%PORTDOCS%%%%DOCSDIR%%/C/images/terminal-compose-shortcut.png
+%%PORTDOCS%%%%DOCSDIR%%/C/images/terminal-edit-preferences.png
+%%PORTDOCS%%%%DOCSDIR%%/C/images/terminal-first-time.png
+%%PORTDOCS%%%%DOCSDIR%%/C/images/terminal-multiple-tabs.png
+%%PORTDOCS%%%%DOCSDIR%%/C/images/terminal-preferences-advanced.png
+%%PORTDOCS%%%%DOCSDIR%%/C/images/terminal-preferences-appearance.png
+%%PORTDOCS%%%%DOCSDIR%%/C/images/terminal-preferences-colors.png
+%%PORTDOCS%%%%DOCSDIR%%/C/images/terminal-preferences-general.png
+%%PORTDOCS%%%%DOCSDIR%%/C/images/terminal-preferences-shortcuts.png
+%%PORTDOCS%%%%DOCSDIR%%/C/images/terminal-set-title.png
+%%PORTDOCS%%%%DOCSDIR%%/C/images/terminal-toolbars.png
+%%PORTDOCS%%%%DOCSDIR%%/C/advanced.html
+%%PORTDOCS%%%%DOCSDIR%%/C/copyright.html
+%%PORTDOCS%%%%DOCSDIR%%/C/faq.html
+%%PORTDOCS%%%%DOCSDIR%%/C/getting-started.html
+%%PORTDOCS%%%%DOCSDIR%%/C/index.html
+%%PORTDOCS%%%%DOCSDIR%%/C/preferences.html
+%%PORTDOCS%%%%DOCSDIR%%/C/support.html
+%%PORTDOCS%%%%DOCSDIR%%/C/usage.html
+%%PORTDOCS%%%%DOCSDIR%%/terminal.css
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/C/images
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/C
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
+@dirrm share/Terminal

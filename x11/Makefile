@@ -7,6 +7,7 @@
     SUBDIR += 9box
     SUBDIR += 9menu
     SUBDIR += 9term
+    SUBDIR += Terminal
     SUBDIR += XFree86
     SUBDIR += XFree86-4
     SUBDIR += XFree86-4-clients
