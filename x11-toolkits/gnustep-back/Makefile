@@ -15,72 +15,56 @@ MASTER_SITE_SUBDIR=	core
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	GNUstep GUI backend
 
-BUILD_DEPENDS=	${COMBOLIBDIR}/libgnustep-gui.so:${PORTSDIR}/x11-toolkits/gnustep-gui
-BUILD_DEPENDS+=	${LOCALBASE}/lib/libcallback.a:${PORTSDIR}/devel/ffcall
-RUN_DEPENDS=	${COMBOLIBDIR}/libgnustep-gui.so:${PORTSDIR}/x11-toolkits/gnustep-gui
-LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
-		tiff.4:${PORTSDIR}/graphics/tiff \
-		Xft.2:${PORTSDIR}/x11-fonts/Xft
+LIB_DEPENDS+=	jpeg.9:${PORTSDIR}/graphics/jpeg
+LIB_DEPENDS+=	tiff.4:${PORTSDIR}/graphics/tiff
+LIB_DEPENDS+=	Xft.2:${PORTSDIR}/x11-fonts/Xft
 
 USE_XLIB=		yes
-BREAKS_IF_PEDANTIC=	yes
-USE_GCC=		3.2
+PREFIX=			${LOCALBASE}/GNUstep
+NO_MTREE=		yes
+GNU_CONFIGURE=		yes
+CONFIGURE_TARGET=
 CONFIGURE_ARGS+=	--with-tiff-library=${LOCALBASE}/lib
 CONFIGURE_ARGS+=	--with-tiff-include=${LOCALBASE}/include
 CONFIGURE_ARGS+=	--with-jpeg-library=${LOCALBASE}/lib
 CONFIGURE_ARGS+=	--with-jpeg-include=${LOCALBASE}/include
-CONFIGURE_ARGS+=	--enable-xlib
+#CPPFLAGS+=		-I${LOCALBASE}/include/freetype2
+CONFIGURE_ENV+=		CPPFLAGS="${CPPFLAGS}"
+USE_GMAKE=		yes
+MAKEFILE=
+MAKE_FLAGS+=		OPTFLAG="${CFLAGS} -I${X11BASE}/include"
+BREAKS_IF_PEDANTIC=	yes
+
+.if defined(WANT_GNUSTEP_XDPS)
+CONFIGURE_ARGS+=	--enable-graphics=xdps --with-name=xdps
+PLIST_SUB+=		BACK=xdps
+PLIST_SUB+=		USE_XLIB="@comment " USE_XDPS="" USE_ART="@comment "
+PKGNAMESUFFIX?=		-xdps
+.else
+.if defined(WANT_GNUSTEP_LIBART)
+LIB_DEPENDS+=		art_lgpl_2:${PORTSDIR}/graphics/libart_lgpl2
+CONFIGURE_ARGS+=	--enable-graphics=art --with-name=art
+PLIST_SUB+=		BACK=art USE_XLIB="@comment "
+PLIST_SUB+=		USE_XLIB="@comment " USE_XDPS="@comment " USE_ART=""
+PKGNAMESUFFIX?=		-art
+.else
+CONFIGURE_ARGS+=	--enable-graphics=xlib --with-name=back
+PLIST_SUB+=		BACK=back
+PLIST_SUB+=		USE_XLIB="" USE_XDPS="@comment " USE_ART="@comment "
+.endif
+.endif
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 300000
-BROKEN=		"Sorry, this port does not work on FreeBSD-2.2.x"
-.endif
-
-PREFIX=		${LOCALBASE}/GNUstep
-GNU_CONFIGURE=	yes
-CONFIGURE_TARGET=
-USE_GMAKE=	yes
-MAKEFILE=
-MAKE_FLAGS=	OPTFLAG="${CFLAGS}"
-NO_MTREE=	yes
-
-.if ${MACHINE_ARCH} == "i386"
-GNU_ARCH=	ix86
-.else
-GNU_ARCH=	${MACHINE_ARCH}
-.endif
-PLIST_SUB+=	GNU_ARCH=${GNU_ARCH} OPSYS=${OPSYS:L} VERSION=${PORTVERSION} \
-		MAJORVERSION=${PORTVERSION:C/([0-9]).*/\1/1}
-
-COMBOLIBDIR=	${PREFIX}/System/Libraries/${GNU_ARCH}/${OPSYS:L}/gnu-gnu-gnu
+USE_GNUSTEP_GUI=	yes
+USE_GNUSTEP_CONFIGURE=	yes
+USE_GNUSTEP_BUILD=	yes
+USE_GNUSTEP_INSTALL=	yes
+.include "${PORTSDIR}/devel/gnustep/bsd.gnustep.mk"
 
 post-extract:
 .for file in config.guess config.sub install-sh
 	@${CP} ${PREFIX}/System/Makefiles/${file} ${WRKSRC}
 .endfor
-
-do-configure:
-	@(cd ${WRKSRC}; . ${PREFIX}/System/Makefiles/GNUstep.sh; \
-	    if ! ${SETENV} CC="${CC}" CXX="${CXX}" \
-		CFLAGS="${CFLAGS}" CXXFLAGS="${CXXFLAGS}" \
-		INSTALL="/usr/bin/install -c -o ${BINOWN} -g ${BINGRP}" \
-		INSTALL_DATA="${INSTALL} -c" \
-		INSTALL_PROGRAM="${INSTALL} -c" \
-		INSTALL_SCRIPT="${INSTALL_SCRIPT}" \
-		${CONFIGURE_ENV} ./${CONFIGURE_SCRIPT} ${CONFIGURE_ARGS}; then \
-		    ${ECHO} "===>  Script \"${CONFIGURE_SCRIPT}\" failed: here are the contents of \"${CONFIGURE_LOG}\""; \
-		    ${CAT} ${CONFIGURE_LOG}; \
-		    ${ECHO} "(end of \"${CONFIGURE_LOG}\")"; \
-		    ${FALSE}; \
-	    fi)
-
-do-build:
-	@(cd ${WRKSRC}; . ${PREFIX}/System/Makefiles/GNUstep.sh; \
-		${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_FLAGS} ${MAKEFILE} ${ALL_TARGET})
-
-do-install:
-	@(cd ${WRKSRC}; . ${PREFIX}/System/Makefiles/GNUstep.sh; \
-		${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_FLAGS} ${MAKEFILE} ${INSTALL_TARGET})
 
 .include <bsd.port.post.mk>
