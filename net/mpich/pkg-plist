@@ -1,7 +1,6 @@
 mpich/bin/clog2alog
 mpich/bin/clog2slog
 mpich/bin/clog_print
-mpich/bin/execer
 mpich/bin/logviewer
 mpich/bin/mpereconfig
 mpich/bin/mpereconfig.dat
@@ -24,7 +23,6 @@ mpich/bin/mpirun_dbg.dbx
 mpich/bin/mpirun_dbg.ddd
 mpich/bin/mpirun_dbg.gdb
 mpich/bin/mpirun_dbg.totalview
-mpich/bin/mpirun_dbg.totalview.in.orig
 mpich/bin/mpirun_dbg.xxgdb
 mpich/bin/serv_p4
 mpich/bin/slog_print
@@ -36,16 +34,6 @@ mpich/etc/mpichconf.h.dat
 mpich/etc/mpichlib.conf
 mpich/etc/mpif77.conf
 mpich/etc/mpif90.conf
-mpich/examples/MPI-2-C++/Makefile
-mpich/examples/MPI-2-C++/Makefile.in
-mpich/examples/MPI-2-C++/README
-mpich/examples/MPI-2-C++/chapter_10_mpi2.cc
-mpich/examples/MPI-2-C++/hello_world.cc
-mpich/examples/MPI-2-C++/mpirun
-mpich/examples/MPI-2-C++/pi.cc
-mpich/examples/MPI-2-C++/ring.cc
-mpich/examples/MPI-2-C++/topology.cc
-mpich/examples/MPI-2-C++/user_bcast.cc
 mpich/examples/Makefile
 mpich/examples/Makefile.in
 mpich/examples/README
@@ -63,6 +51,7 @@ mpich/include/mpe.h
 mpich/include/mpe_graphics.h
 mpich/include/mpe_log.h
 mpich/include/mpeexten.h
+mpich/include/mpef.h
 mpich/include/mpetools.h
 mpich/include/mpi.h
 mpich/include/mpi2c++/comm.h
@@ -138,7 +127,9 @@ mpich/share/examples/Makefile
 mpich/share/examples/Makefile.in
 mpich/share/examples/cpi.c
 mpich/share/examples/cpilog.c
+mpich/share/examples/cxgraphics.c
 mpich/share/examples/fpi.f
+mpich/share/examples/fxgraphics.f
 mpich/share/examples/mpirun
 mpich/share/examples/srtest.c
 mpich/share/machines.freebsd
@@ -214,10 +205,12 @@ mpich/www/www3/MPI_Comm_compare.html
 mpich/www/www3/MPI_Comm_create.html
 mpich/www/www3/MPI_Comm_dup.html
 mpich/www/www3/MPI_Comm_free.html
+mpich/www/www3/MPI_Comm_get_name.html
 mpich/www/www3/MPI_Comm_group.html
 mpich/www/www3/MPI_Comm_rank.html
 mpich/www/www3/MPI_Comm_remote_group.html
 mpich/www/www3/MPI_Comm_remote_size.html
+mpich/www/www3/MPI_Comm_set_name.html
 mpich/www/www3/MPI_Comm_size.html
 mpich/www/www3/MPI_Comm_split.html
 mpich/www/www3/MPI_Comm_test_inter.html
