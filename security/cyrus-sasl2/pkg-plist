@@ -47,6 +47,7 @@ sbin/saslpasswd2
 %%PORTDOCS%%%%DOCSDIR%%/NEWS
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%%%DOCSDIR%%/ONEWS
+%%PORTDOCS%%%%DOCSDIR%%/Sendmail.README
 %%PORTDOCS%%%%DOCSDIR%%/TODO
 %%PORTDOCS%%%%DOCSDIR%%/draft-burdis-cat-srp-sasl-06.txt
 %%PORTDOCS%%%%DOCSDIR%%/draft-ietf-cat-sasl-gssapi-05.txt

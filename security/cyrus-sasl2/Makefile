@@ -7,7 +7,7 @@
 
 PORTNAME=	cyrus-sasl
 PORTVERSION=	2.1.7
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	security ipv6
 MASTER_SITES=	ftp://ftp.andrew.cmu.edu/pub/cyrus-mail/ \
 		ftp://ftp.westbend.net/pub/cyrus-mail/ \
@@ -109,10 +109,12 @@ pre-fetch:
 # Fix sasldb name in pkg-install/deinstall scripts
 post-patch:
 	@${SED} -e "s;%%SASLDB%%;${SASLDB_NAME};g" \
+		-e "s;%%PWCHECK_METHOD%%;${PWCHECK_METHOD};g" \
 		${.CURDIR}/pkg-install > ${PKGINSTALL}
 	@${SED} -e "s;%%SASLDB%%;${SASLDB_NAME};g" \
+		-e "s;%%PWCHECK_METHOD%%;${PWCHECK_METHOD};g" \
 		${.CURDIR}/pkg-deinstall > ${PKGDEINSTALL}
-	@${SED} -e "s;%%SASLDB%%;${SASLDB_NAME};g" \
+	@${SED} -e "s;%%PWCHECK_METHOD%%;${PWCHECK_METHOD};g" \
 		-e "s;%%PREFIX%%;${PREFIX};g" \
 		${.CURDIR}/pkg-message > ${PKGMESSAGE}
 
@@ -143,6 +145,7 @@ post-install:
 .for file in ${HTDOCS}
 	@${INSTALL_DATA} ${WRKSRC}/doc/${file}.html ${DOCSDIR}/html
 .endfor
+	@${INSTALL_DATA} ${FILESDIR}/Sendmail.README ${DOCSDIR}
 .endif
 	@PKG_PREFIX=${PREFIX} BATCH=${BATCH} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 	@${CAT} ${PKGMESSAGE}

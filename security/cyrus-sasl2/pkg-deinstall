@@ -34,9 +34,22 @@ delete_user() {
 
 }
 
+# This should really be uninstalled by Sendmail
+
+sendmail_conf() {
+	if [ -f ${PKG_PREFIX}/lib/sasl2/Sendmail.conf ]; then
+		echo "pwcheck_method: %%PWCHECK_METHOD%%" > ${PKG_PREFIX}/lib/sasl2/Sendmail.conf.tmp
+		if cmp -s ${PKG_PREFIX}/lib/sasl2/Sendmail.conf ${PKG_PREFIX}/lib/sasl2/Sendmail.conf.tmp; then
+			rm -f ${PKG_PREFIX}/lib/sasl2/Sendmail.conf
+		fi
+		rm -f ${PKG_PREFIX}/lib/sasl2/Sendmail.conf.tmp
+	fi
+}
+
 case $2 in
 	DEINSTALL)
 		delete_sasldb
+		sendmail_conf
 		;;
 	POST-DEINSTALL)
 		delete_user
