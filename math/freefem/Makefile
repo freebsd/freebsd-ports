@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	freefem
-PORTVERSION=	3.5.1
+PORTVERSION=	3.5.4
 CATEGORIES=	math cad
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	kfem
@@ -14,21 +14,26 @@ MASTER_SITE_SUBDIR=	kfem
 MAINTAINER=	ports@FreeBSD.org
 
 USE_X_PREFIX=	yes
-USE_LIBTOOL=	yes
-CONFIGURE_ARGS=	--enable-adapt --with-optimization
+GNU_CONFIGURE=	yes
+CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
+CONFIGURE_ARGS=	--with-optimization
+INSTALLS_SHLIB=	yes
 
 MAN1=		freefem.1
 
-do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/freefem/freefem ${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/debian/freefem.1 ${MANPREFIX}/man/man1
-	@${MKDIR} ${PREFIX}/share/examples/freefem
-	${INSTALL_DATA} ${WRKSRC}/examples/*.pde ${PREFIX}/share/examples/freefem
+post-patch:
+	@${PERL} -pi -e 's|-O3 |\$$CXXFLAGS |g' ${WRKSRC}/configure
+	@${PERL} -pi -e 's|debian doc freefem|debian freefem|g ; \
+		 s|^install-data-am:|install-data-am: #|g' ${WRKSRC}/Makefile.in
+
+post-install:
 .if !defined(NOPORTDOCS)
-	@${MKDIR} ${PREFIX}/share/doc/freefem
-.for file in ChangeLog NEWS README
-	${INSTALL_DATA} ${WRKSRC}/${file} ${PREFIX}/share/doc/freefem
+	@${MKDIR} ${DOCSDIR}
+.for file in ChangeLog NEWS README TODO
+	${INSTALL_DATA} ${WRKSRC}/${file} ${DOCSDIR}
 .endfor
+	@${MKDIR} ${EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/examples/*.pde ${EXAMPLESDIR}
 .endif
 
 .include <bsd.port.mk>
