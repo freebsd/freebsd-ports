@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	pen
-PORTVERSION=	0.10.0
+PORTVERSION=	0.10.1
 CATEGORIES=	net
 MASTER_SITES=	ftp://siag.nu/pub/pen/ \
 		http://siag.nu/pub/pen/
