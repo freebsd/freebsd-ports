@@ -3,7 +3,7 @@
 # Date created:         29 October 1995
 # Whom:                 piero
 #
-# $Id: Makefile,v 1.4 1995/04/12 20:31:54 asami Exp $
+# $Id: Makefile,v 1.5 1995/10/01 21:53:49 roberto Exp $
 #
 
 DISTNAME=	xearth-1.0
@@ -14,6 +14,8 @@ USE_IMAKE=	yes
 
 # Copy the list of FreeBSD sites
 post-install:
-	cp ${FILESDIR}/freebsd.markers ${PREFIX}/lib/X11
+	mkdir -p ${PREFIX}/lib/X11/xearth
+	cp ${FILESDIR}/freebsd.core.markers ${PREFIX}/lib/X11/xearth
+	cp ${FILESDIR}/freebsd.ftp.markers ${PREFIX}/lib/X11/xearth
 
 .include <bsd.port.mk>

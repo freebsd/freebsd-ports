@@ -1,0 +1,47 @@
+#
+# FreeBSD sites
+#
+37.8, -122.4, "freebsd.org"                   # San Francisco 
+#
+# North America
+#
+35.2,  -80.9, "ftp2.freebsd.org"              # Charlotte, NC 
+29.7,  -95.4, "ftp3.freebsd.org"              # Houston, TX (neosoft.com)
+38.6,  -77.0, "ftp4.freebsd.org"              # Arlington, VA (atinc.com)
+43.6,  -83.9, "ftp5.freebsd.org"              # Mt. Pleasant, MI (C-Mich U)
+#              "ftp6.freebsd.org"              # Blacksburg, VA (Va Tech)
+44.9,  -68.8, "ftp7.freebsd.org"              # Orono, ME (U of Maine)
+#              "ftp.ca.freebsd.org"            # Gatineau, Quebec (synapse.net)
+#
+# South America
+#
+#              "ftp.br.freebsd.org"
+# Europe
+#
+54.0,   -7.0, "ftp.ie.freebsd.org"            # Dublin, Ireland
+#              "ftp.de.freebsd.org"            # Aachen, DE (rwth-aachen)
+#              "ftp.uk.freebsd.org"            # UK (Imperial College)
+60.2,   25.0, "nic.funet.fi"                  # Helsinki?, Finland
+48.9,    2.4, "ftp.ibp.fr"                    # Paris, France
+#              "sunsite.mff.cuni.cz"           # Czech Republic
+#              "ftp.luth.se"                   # Sweden
+#              "ftp.ua.pt"                     # Portugal
+#              "ftp.kiae.su"                   # Russia
+#              "ftp.nl.net"                    # Netherlands
+#
+# Asia/Australia
+#
+35.7,  139.7, "ftp.jp.freebsd.org"            # Tokyo, Japan
+37.0,  127.0, "ftp.kr.freebsd.org"            # Seoul?, South Korea
+-33.55,151.1, "ftp.au.freebsd.org"            # Sydney, Australia.
+#              "ftp2.au.freebsd.org"           # adfa.oz.au
+-27.0, 153.0, "ftp3.au.freebsd.org"           # Brisbane (U of Q'sland)
+14.0,  101.0, "ftp.nectec.or.th"              # Bangkok?
+22.0,  114.0, "ftp.hk.super.net"              # Hong Kong 
+32.1,   34.8, "orgchem.weizmann.ac.il"         # Tel Aviv?, Israel
+#              "nctuccca.edu.tw"               # Taiwan
+#
+# Africa
+#
+-24.8,   28.1, "ftp.internat.freebsd.org"     # Pretoria
+#               "ftp.za.freebsd.org"           # South Africa

@@ -1,0 +1,14 @@
+#
+# FreeBSD core team members
+#
+37.8, -122.4,  "asami, gibbs, jkh"             # San Francisco, CA
+45.5, -122.6,  "davidg"                        # near Portland, OR 
+42.4,  -71.1,  "wollman"                       # Boston, MA
+56.0,   -4.5,  "gary"                          # Glasgow, UK 
+55.8,   37.6,  "ache"                          # Moscow 
+55.4,   11.3,  "phk, sos"                      # Denmark 
+52.0,   13.8,  "joerg"                         # Germany 
+29.7,  -95.4,  "rich"                          # Houston, TX
+39.8,  -86.2,  "dyson"                         # Indianapolis, IN
+-33.55,151.1,  "bde"                           # Sydney, Australia. 
+-31.58,115.49, "peter"                         # Perth, Australia. 
