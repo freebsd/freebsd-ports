@@ -19,7 +19,8 @@ COMMENT=	High-performance, dynamic web site authoring system
 BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Apache/Request.pm:${PORTSDIR}/www/p5-libapreq \
 		${SITE_PERL}/${PERL_ARCH}/Params/Validate.pm:${PORTSDIR}/devel/p5-Params-Validate \
 		${SITE_PERL}/Exception/Class.pm:${PORTSDIR}/devel/p5-Exception-Class \
-		${SITE_PERL}/Class/Container.pm:${PORTSDIR}/devel/p5-Class-Container
+		${SITE_PERL}/Class/Container.pm:${PORTSDIR}/devel/p5-Class-Container \
+		${SITE_PERL}/Cache/Cache.pm:${PORTSDIR}/devel/p5-Cache-Cache
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
