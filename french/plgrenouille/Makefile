@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	plgrenouille
-PORTVERSION=	0.61.5
-PORTREVISION=	1
+PORTVERSION=	0.61.6
 CATEGORIES=	french net
-MASTER_SITES=	ftp://blade.concept-micro.com/
+MASTER_SITES=	ftp://blade.concept-micro.com/debian/
 DISTNAME=	${PORTNAME}_${PORTVERSION:R}-${PORTVERSION:E}
 
 MAINTAINER=	cyrille.lefevre@laposte.net
