@@ -1,0 +1,16 @@
+
+$FreeBSD$
+
+--- po/el.po	2002/03/17 14:21:12	1.1
++++ po/el.po	2002/03/17 14:22:30
+@@ -11,8 +11,8 @@
+ "Last-Translator: Nikolaos Papagrigoriou <papanikos@freemail.gr>\n"
+ "Language-Team: Greek\n"
+ "MIME-Version: 1.0\n"
+-"Content-Type: text/plain; charset=el\n"
+-"Content-Transfer-Encoding: iso8859-7\n"
++"Content-Type: text/plain; charset=iso-8859-7\n"
++"Content-Transfer-Encoding: 8bit\n"
+ "**************************\n"
+ "Words from the maintainer in Greek:\n"
+ "Η μετάφραση είναι ακόμη σε αρχικό στάδιο. Τα μυνήματα που εμφανίζονται στην\n"

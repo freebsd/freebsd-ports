@@ -1,0 +1,14 @@
+
+$FreeBSD$
+
+--- WPrefs.app/po/bg.po	2002/03/17 14:21:12	1.1
++++ WPrefs.app/po/bg.po	2002/03/17 14:24:02
+@@ -10,7 +10,7 @@
+ "Last-Translator: Anton Zinoviev <anton@lml.bas.bg>\n"
+ "Language-Team: Bulgarian <dict@linux.home.bg>\n"
+ "MIME-Version: 1.0\n"
+-"Content-Type: text/plain; charset=windows-1251\n"
++"Content-Type: text/plain; charset=cp1251\n"
+ "Content-Transfer-Encoding: 8bit\n"
+ 
+ #: ../../WPrefs.app/main.c:74

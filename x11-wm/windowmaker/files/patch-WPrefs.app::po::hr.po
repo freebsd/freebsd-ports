@@ -1,0 +1,14 @@
+
+$FreeBSD$
+
+--- WPrefs.app/po/hr.po	2002/03/17 14:21:12	1.1
++++ WPrefs.app/po/hr.po	2002/03/17 14:24:20
+@@ -3,7 +3,7 @@
+ "Date: 1998-08-24 14:36:41-0300\n"
+ "From: Toni Biliæ tbilic@oliver.efos.hr \n"
+ "Language-Team: Croatian \n"
+-"Content-Type: text/plain; charset=ISO8859-2\n"
++"Content-Type: text/plain; charset=ISO-8859-2\n"
+ "Xgettext-Options: --default-domain=WPrefs --add-comments --keyword=_\n"
+ "Files: ../../WPrefs/Configurations.c ../../WPrefs/Expert.c ../../WPrefs/Focus.c ../../WPrefs/KeyboardSettings.c ../../WPrefs/KeyboardShortcuts.c ../../WPrefs/Menu.c ../../WPrefs/MenuGuru.c ../../WPrefs/MenuPreferences.c ../../WPrefs/MouseSettings.c ../../WPrefs/Paths.c ../../WPrefs/Preferences.c ../../WPrefs/Text.c ../../WPrefs/TextureAndColor.c ../../WPrefs/WPrefs.c ../../WPrefs/WindowHandling.c ../../WPrefs/Workspace.c ../../WPrefs/main.c ../../WPrefs/xmodifier.c\n"
+ 
