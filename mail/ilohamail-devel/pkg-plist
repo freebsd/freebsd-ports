@@ -9,14 +9,14 @@
 %%PORTDOCS%%%%DOCSDIR%%/THEMES
 %%PORTDOCS%%%%DOCSDIR%%/TODO
 %%PORTDOCS%%%%DOCSDIR%%/UPGRADING
-%%DATADIR%%/MySQL/0.7.3.sql
-%%DATADIR%%/MySQL/0.7.5.sql
-%%DATADIR%%/MySQL/0.7.6.sql
-%%DATADIR%%/MySQL/0.7.9.sql
-%%DATADIR%%/MySQL/0.8.0.sql
-%%DATADIR%%/MySQL/0.8.10.sql
-%%DATADIR%%/MySQL/0.8.5.sql
-%%DATADIR%%/MySQL/sql
+%%MYSQL%%%%DATADIR%%/MySQL/0.7.3.sql
+%%MYSQL%%%%DATADIR%%/MySQL/0.7.5.sql
+%%MYSQL%%%%DATADIR%%/MySQL/0.7.6.sql
+%%MYSQL%%%%DATADIR%%/MySQL/0.7.9.sql
+%%MYSQL%%%%DATADIR%%/MySQL/0.8.0.sql
+%%MYSQL%%%%DATADIR%%/MySQL/0.8.10.sql
+%%MYSQL%%%%DATADIR%%/MySQL/0.8.5.sql
+%%MYSQL%%%%DATADIR%%/MySQL/sql
 %%ILOHADIR%%/conf/conf.inc
 %%ILOHADIR%%/conf/custom_auth.inc
 %%ILOHADIR%%/conf/db_conf.php
@@ -827,7 +827,7 @@
 @dirrm %%ILOHADIR%%/data
 @dirrm %%ILOHADIR%%/conf
 @dirrm %%ILOHADIR%%
-@dirrm %%DATADIR%%/MySQL
-@dirrm %%DATADIR%%
+%%MYSQL%%@dirrm %%DATADIR%%/MySQL
+%%MYSQL%%@dirrm %%DATADIR%%
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/Manual
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
