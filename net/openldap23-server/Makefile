@@ -1,4 +1,4 @@
-# New ports collection makefile for:    OpenLDAP 1.x
+# New ports collection makefile for:    OpenLDAP 2.x
 # Date created:		20 Sep 1998
 # Whom:			Lachlan O'Dea
 #
@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	openldap
-PORTVERSION=	1.2.11
-PORTREVISION=	1
+PORTVERSION=	2.0.6
 CATEGORIES=	net databases
 MASTER_SITES=	ftp://ftp.OpenLDAP.org/pub/OpenLDAP/%SUBDIR%/ \
 		ftp://ftp.net.lut.ac.uk/openldap/%SUBDIR%/ \
@@ -21,13 +20,16 @@ MASTER_SITES=	ftp://ftp.OpenLDAP.org/pub/OpenLDAP/%SUBDIR%/ \
 MASTER_SITE_SUBDIR=	openldap-release
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	lodea@vet.com.au
+MAINTAINER=	knu@FreeBSD.org
 
+USE_AUTOCONF=	yes
 USE_LIBTOOL=	yes
+USE_OPENSSL=	yes
 
 CONFIGURE_ARGS=	--localstatedir=/var/run \
 		--enable-shared \
-		--enable-dns
+		--enable-dnssrv \
+		--with-tls=openssl
 
 # Include tcp-wrapper support
 .if exists(/usr/include/tcpd.h)
@@ -58,18 +60,13 @@ BINS=		bin/ldapadd \
 		libexec/rcpt500 \
 		libexec/rp500 \
 		libexec/slapd \
-		libexec/slurpd \
-		sbin/centipede \
-		sbin/ldbmcat \
-		sbin/ldbmtest \
-		sbin/ldif \
-		sbin/ldif2id2children \
-		sbin/ldif2id2entry \
-		sbin/ldif2index \
-		sbin/ldif2ldbm
+		libexec/slurpd
 
 .include <bsd.port.pre.mk>
 .include "${FILESDIR}/manpages"
+
+post-configure:
+	cd ${WRKSRC} ; ${PATCH} < ${FILESDIR}/libtool.diff
 
 pre-build:
 	cd ${WRKSRC} ; ${MAKE} depend

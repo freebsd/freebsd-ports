@@ -1,0 +1,19 @@
+--- libtool.orig	Tue Oct 31 01:43:06 2000
++++ libtool	Tue Oct 31 01:44:42 2000
+@@ -448,6 +448,16 @@
+   --mode) prevopt="--mode" prev=mode ;;
+   --mode=*) mode="$optarg" ;;
+ 
++  --only-shared)
++    build_libtool_libs=yes
++    build_old_libs=no
++    ;;
++
++  --only-static)
++    build_libtool_libs=no
++    build_old_libs=yes
++    ;;
++
+   --quiet | --silent)
+     show=:
+     ;;
