@@ -1,9 +1,5 @@
-Peacock is a GUI-based HTML Editor for GTK+/GNOME.
-Its still in its infancy. Very, very alpha.
-The version number speaks for itself.  Its not a WYSIWYG HTML Editor.
-Its like Homesite for Win32 (or much closer to home), Bluefish for GTK+.
-You have to type your HTML yourself. But there are these 'HTML Toolbars'
-which allow easy and quick entry of commonly used tags, thus saving you
-time and keystrokes. 
+Peacock is a GUI-based HTML Editor for GNOME 2. It is a WYSIWYG HTML
+editor, using GtkHTML control known from Evolution.  It supports most
+of HTML 4.0 standards, templates for documents, styles and images.
 
 http://peacock.sourceforge.net/
