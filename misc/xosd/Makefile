@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	xosd
-PORTVERSION=	2.1.3
+PORTVERSION=	2.2.1
 CATEGORIES=	misc
 MASTER_SITES=	http://www.ignavus.net/ \
 		${MASTER_SITE_LOCAL}
@@ -16,8 +16,10 @@ MAINTAINER=	perky@FreeBSD.org
 COMMENT=	X On-Screen-Display Library and XMMS plug-in
 
 LIB_DEPENDS=	gnugetopt.1:${PORTSDIR}/devel/libgnugetopt \
-		xmms.3:${PORTSDIR}/multimedia/xmms \
 		gdk_pixbuf.2:${PORTSDIR}/graphics/gdk-pixbuf
+.if !defined(WITHOUT_XMMS)
+LIB_DEPENDS+=	xmms.3:${PORTSDIR}/multimedia/xmms
+.endif
 
 XMMS_CONFIG?=	${X11BASE}/bin/xmms-config
 USE_X_PREFIX=	yes
@@ -30,6 +32,13 @@ CONFIGURE_ENV=	LIBS=${PTHREAD_LIBS}' -L${LOCALBASE}/lib -lgnugetopt' \
 		CFLAGS='${CFLAGS}' X11BASE='${X11BASE}' \
 		GTK_CONFIG='${GTK_CONFIG}' GLIB_CONFIG='${GLIB_CONFIG}' \
 		XMMS_PLUGINDIR=${X11BASE}/lib/xmms
+.if defined(WITHOUT_XMMS)
+CONFIGURE_ARGS=	--disable-new-plugin
+PLIST_SUB=	WITH_XMMS="@comment "
+PKGNAMESUFFIX=	-without-xmms
+.else
+PLIST_SUB=	WITH_XMMS=""
+.endif
 
 MAN1=		osd_cat.1 xosd-config.1
 MAN3=		xosd_destroy.3 xosd_is_onscreen.3 xosd_set_shadow_offset.3 \
@@ -39,6 +48,7 @@ MAN3=		xosd_destroy.3 xosd_is_onscreen.3 xosd_set_shadow_offset.3 \
 
 pre-patch:
 	${REINPLACE_CMD} -e 's,-lc_r,-lblahblah,g' ${WRKSRC}/ltmain.sh
+	${REINPLACE_CMD} -e 's,-lpthread,${PTHREAD_LIBS},g' ${WRKSRC}/configure
 .for f in src/libxosd/Makefile.in src/xmms_plugin/Makefile.in
 	${REINPLACE_CMD} -e 's,^\(CFLAGS =\)\(.*\)$$,\1 -I.. \2,g' ${WRKSRC}/$f
 .endfor
