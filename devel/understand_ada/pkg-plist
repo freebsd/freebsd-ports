@@ -8,9 +8,13 @@ lib/understand_ada/bin/pc-linux_elf/understand_ada
 @dirrm lib/understand_ada/bin/pc-linux_elf
 @dirrm lib/understand_ada/bin
 bin/understand_ada
+@exec %%LN%% understand_ada %D/bin/almd
+@exec %%LN%% understand_ada %D/bin/almhostid
+@exec %%LN%% understand_ada %D/bin/almstatus
+@exec %%LN%% understand_ada %D/bin/almtest
 @exec %%LN%% understand_ada %D/bin/repada
 @exec %%LN%% understand_ada %D/bin/undada
-@unexec %%RM%% %D/bin/repada %D/bin/undada
+@unexec %%RM%% %D/bin/almd %D/bin/almhostid %D/bin/almstatus %D/bin/almtest %D/bin/repada %D/bin/undada
 %%PORTDOCS%%share/doc/understand_ada/html/understand_ada/analyz4a.htm
 %%PORTDOCS%%share/doc/understand_ada/html/understand_ada/analyze.htm
 %%PORTDOCS%%share/doc/understand_ada/html/understand_ada/analyze2.htm
