@@ -629,3 +629,4 @@ www/chimera2||2003-10-18|Development discontinued, port no longer useful
 net/silc-doc||2003-10-25|Documentation is installed by silc-client now
 astro/x3arth||2003-10-26|FTP layout changed, port no longer works
 graphics/xmms-gforce||2003-10-27|Project disappeared, sources no longer available
+mail/smapi||2003-10-29|Superseded by news/husky-smapi
