@@ -12,7 +12,7 @@ MASTER_SITES=	http://ftp.debian.org/debian/pool/main/s/ssmtp/ \
 		ftp://ftp.icm.edu.pl/pub/Linux/debian/pool/main/s/ssmtp/
 DISTNAME=	ssmtp_2.38-9
 
-IGNORE=		pkg_add cannot create /etc/ssmtp/smmtp.conf
+IGNORE=		configures the hostname at compiletime instead of installtime
 
 MAINTAINER=	ns88@k.pl
 
