@@ -1,10 +1,11 @@
-# $Id: Makefile,v 1.35 1997/08/19 07:10:01 fenner Exp $
+# $Id: Makefile,v 1.36 1997/10/04 15:54:31 jkh Exp $
 #
 
 SUBDIR += archivers
 SUBDIR += astro
 SUBDIR += audio
 SUBDIR += benchmarks
+SUBDIR += biology
 SUBDIR += cad
 SUBDIR += chinese
 SUBDIR += comms
