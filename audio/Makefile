@@ -1,10 +1,11 @@
-# $Id: Makefile,v 1.45 1998/06/24 15:34:12 mph Exp $
+# $Id: Makefile,v 1.46 1998/07/13 22:52:30 dburr Exp $
 #
 
     SUBDIR += amp
     SUBDIR += cam
     SUBDIR += cddbd
     SUBDIR += cdplay
+    SUBDIR += esound
     SUBDIR += gmod
     SUBDIR += gsm
     SUBDIR += kdemultimedia
