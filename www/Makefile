@@ -18,6 +18,7 @@
     SUBDIR += ashe           # requires Motif
     SUBDIR += asp2php
     SUBDIR += aswedit
+    SUBDIR += august
     SUBDIR += bacon
     SUBDIR += bk2site
     SUBDIR += bkmrkconv
