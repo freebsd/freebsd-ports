@@ -1,37 +1,28 @@
-# New ports collection makefile for:	p5-Glade
-# Date created:				30 Oct 2000
-# Whom:					vanilla
+# New ports collection makefile for:	p5-Gtk2-GladeXML
+# Date created:		2004-08-03
+# Whom:			ports@c0decafe.net
 #
 # $FreeBSD$
 #
 
 PORTNAME=	Glade
-PORTVERSION=	0.7009
-PORTREVISION=	1
-CATEGORIES=	x11-toolkits lang perl5
+PORTVERSION=	1.00
+CATEGORIES=	x11-toolkits gnome perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
-MASTER_SITE_SUBDIR=	Gtk
+MASTER_SITE_SUBDIR=	../../authors/id/R/RM/RMCFARLA/Gtk2-Perl
 PKGNAMEPREFIX=	p5-
-DISTNAME=	Gtk-Perl-${PORTVERSION}
+PKGNAMESUFFIX=	2
+DISTNAME=	Gtk2-GladeXML-${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
-COMMENT=	The Glade interface files of Gtk-Perl
+MAINTAINER=	ports@c0decafe.net
+COMMENT=	Gtk2-Perl bindings to libglade2
 
-BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Gnome.pm:${PORTSDIR}/x11-toolkits/p5-Gnome
-RUN_DEPENDS=	${BUILD_DEPENDS}
+BUILD_DEPENDS=${SITE_PERL}/${PERL_ARCH}/Gtk2.pm:${PORTSDIR}/x11-toolkits/p5-Gtk2
+RUN_DEPENDS+=${BUILD_DEPENDS}
 
-USE_GNOME=	yes
+USE_GNOME=	libglade2
 PERL_CONFIGURE=	yes
-WRKSRC=		${WRKDIR}/${DISTNAME}/${PORTNAME}
 
-MAN3=		Gtk::GladeXML::reference.3pm
+MAN3=	Gtk2::GladeXML.3
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 500600
-IGNORE=		This port requires perl 5.6.0 or later. Install lang/perl5 then try again
-.else
-BROKEN=		"Build fails"
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
