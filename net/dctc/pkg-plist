@@ -9,6 +9,8 @@ bin/dctc
 %%PORTDOCS%%share/doc/dctc/Documentation/commands
 %%PORTDOCS%%share/doc/dctc/Documentation/output
 %%PORTDOCS%%share/doc/dctc/Documentation/programs
+%%PORTDOCS%%share/doc/dctc/Documentation/programs.nl
+%%PORTDOCS%%share/doc/dctc/Documentation/programs.pl
 %%PORTDOCS%%share/doc/dctc/INSTALL
 %%PORTDOCS%%share/doc/dctc/KNOWN_BUGS
 %%PORTDOCS%%share/doc/dctc/README

@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	dctc
-PORTVERSION=	0.71.1
+PORTVERSION=	0.73
 CATEGORIES=	net
 MASTER_SITES=	http://ac2i.tzo.com/dctc/
-DISTNAME=	${PORTNAME}-${PORTVERSION}
+DISTNAME=	${PORTNAME}-${PORTVERSION}.0
 
 MAINTAINER=	lioux@FreeBSD.org
 
@@ -29,6 +29,8 @@ DOC_FILES=      COPYING ChangeLog INSTALL README \
 		Documentation/DCextensions/search_by_content \
 		Documentation/GDL Documentation/VAR \
 		Documentation/commands \
+		Documentation/programs.nl \
+		Documentation/programs.pl \
 		Documentation/output Documentation/programs
 
 post-patch:
