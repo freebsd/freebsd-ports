@@ -1,0 +1,30 @@
+bin/wmxmms
+bin/xmms
+include/xmms/configfile.h
+include/xmms/dirbrowser.h
+include/xmms/plugin.h
+include/xmms/xmmsctrl.h
+lib/libxmms.a
+lib/libxmms.la
+lib/libxmms.so.9
+@exec ln -fs %D/%F %B/libxmms.so
+@unexec rm -f %B/libxmms.so
+lib/xmms/Effect/libecho.so
+lib/xmms/Effect/libsrndecho.so
+lib/xmms/Effect/libstereo.so
+lib/xmms/Effect/libvoice.so
+lib/xmms/General/libir.so
+lib/xmms/General/libsong_change.so
+lib/xmms/Input/libcdaudio.so
+lib/xmms/Input/libmpg123.so
+lib/xmms/Input/libwav.so
+lib/xmms/Output/libOSS.so
+lib/xmms/Output/libdisk_writer.so
+share/xmms/wmxmms.xpm
+@dirrm include/xmms
+@dirrm lib/xmms/Effect
+@dirrm lib/xmms/General
+@dirrm lib/xmms/Input
+@dirrm lib/xmms/Output
+@dirrm lib/xmms
+@dirrm share/xmms
