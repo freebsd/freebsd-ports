@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.199 1999/07/05 06:35:07 rse Exp $
+# $Id: Makefile,v 1.200 1999/07/09 20:24:57 marcel Exp $
 #
 
     SUBDIR += ElectricFence
@@ -59,7 +59,6 @@
     SUBDIR += gtksheet
     SUBDIR += id-utils
     SUBDIR += ilu
-    SUBDIR += irb
     SUBDIR += jam
     SUBDIR += ktranslator
     SUBDIR += lclint
