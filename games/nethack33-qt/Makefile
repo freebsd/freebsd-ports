@@ -11,4 +11,7 @@ MAINTAINER=	ports@FreeBSD.org
 
 PKGNAMESUFFIX=	-qt
 
+DEPRECATED=	"QT2 is obsolete"
+EXPIRATION_DATE=2004-07-14
+
 .include "${MASTERDIR}/Makefile"

@@ -22,6 +22,8 @@ LIB_DEPENDS=	mng.1:${PORTSDIR}/graphics/libmng \
 		jpeg.9:${PORTSDIR}/graphics/jpeg \
 		Xft.2:${PORTSDIR}/x11-fonts/libXft
 
+DEPRECATED=	"QT2 is obsolete"
+EXPIRATION_DATE=2004-07-14
 CONFLICTS=	qt-3.*
 
 NO_LATEST_LINK=	yes
@@ -68,7 +70,7 @@ PLIST_SUB+=	SHARED="" STATIC="@comment "
 
 .include <bsd.port.pre.mk>
 
-.if ${MACHINE_ARCH} == "alpha" && !defined(NO_ALPHA_UNOPTIMIZATION)
+.if ${ARCH} == "alpha" && !defined(NO_ALPHA_UNOPTIMIZATION)
 CFLAGS+=	-O0
 .endif
 

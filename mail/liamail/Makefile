@@ -16,6 +16,9 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A graphical mail client
 
+DEPRECATED=	"QT2 is obsolete"
+EXPIRATION_DATE=2004-07-14
+
 PLIST_FILES=	bin/liamail
 USE_REINPLACE=	yes
 USE_QT_VER=	2

@@ -17,6 +17,9 @@ COMMENT=	Toolkit for Oracle, a GUI db admin kit supporting MySQL only (for now)
 
 LIB_DEPENDS=	mysqlclient.10:${PORTSDIR}/databases/mysql323-client
 
+DEPRECATED=	"QT2 is obsolete"
+EXPIRATION_DATE=2004-07-14
+
 USE_GMAKE=	yes
 HAS_CONFIGURE=	yes
 USE_QT_VER=	2

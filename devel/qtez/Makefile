@@ -15,6 +15,9 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Qt Rapid Application Development Environment for X Window System
 
+DEPRECATED=	"QT2 is obsolete"
+EXPIRATION_DATE=2004-07-14
+
 USE_PERL5=	yes
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes
@@ -30,7 +33,7 @@ INSTALLS_SHLIB=	yes
 BROKEN=		"Does not compile"
 .endif
 
-.if ${MACHINE_ARCH} == "alpha"
+.if ${ARCH} == "alpha"
 CFLAGS+=	-O0
 .endif
 
