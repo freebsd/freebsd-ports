@@ -3380,6 +3380,7 @@ libfreenet	ports/net/libfreenet
 libftpio	src/lib/libftpio
 libfxp		ports/ftp/libfxp
 libg++		ports/devel/libg++
+libgail-gnome	ports/x11-toolkits/libgail-gnome
 libgda		ports/databases/libgda
 libgdgeda	ports/graphics/libgdgeda
 libgeda		ports/cad/libgeda
