@@ -250,6 +250,7 @@ share/jargon/html/B/bignum.html
 share/jargon/html/B/bigot.html
 share/jargon/html/B/bikeshedding.html
 share/jargon/html/B/binary-four.html
+share/jargon/html/B/bit-bang.html
 share/jargon/html/B/bit-bashing.html
 share/jargon/html/B/bit-bucket.html
 share/jargon/html/B/bit-decay.html
@@ -1122,6 +1123,7 @@ share/jargon/html/H/hysterical-reasons.html
 share/jargon/html/I-frame.html
 share/jargon/html/I.html
 share/jargon/html/I/I-didn-t-change-anything-.html
+share/jargon/html/I/I-for-one-welcome-our-new-X-overlords.html
 share/jargon/html/I/I-see-no-X-here-.html
 share/jargon/html/I/IANAL.html
 share/jargon/html/I/IBM.html
@@ -1231,6 +1233,7 @@ share/jargon/html/K/kluge-around.html
 share/jargon/html/K/kluge-up.html
 share/jargon/html/K/kluge.html
 share/jargon/html/K/knobs.html
+share/jargon/html/K/knurd.html
 share/jargon/html/K/koan.html
 share/jargon/html/K/kook.html
 share/jargon/html/K/kremvax.html
@@ -2185,6 +2188,7 @@ share/jargon/html/T/true-hacker.html
 share/jargon/html/T/tty.html
 share/jargon/html/T/tube-time.html
 share/jargon/html/T/tube.html
+share/jargon/html/T/tumbler.html
 share/jargon/html/T/tunafish.html
 share/jargon/html/T/tune.html
 share/jargon/html/T/turbo-nerd.html
