@@ -26,6 +26,6 @@ post-patch:
 do-install:
 	@${MKDIR} ${PREFIX}/include/${PORTNAME}
 	${INSTALL_DATA} ${WRKSRC}/*.h ${PREFIX}/include/${PORTNAME}
-	${INSTALL_PROGRAM} ${WRKSRC}/libnewmat.a ${PREFIX}/lib
+	${INSTALL_DATA} ${WRKSRC}/libnewmat.a ${PREFIX}/lib
 
 .include <bsd.port.mk>
