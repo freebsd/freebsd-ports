@@ -9,7 +9,7 @@ PORTNAME=	apache-jserv
 PORTVERSION=	1.1.2
 PORTREVISION=	2
 CATEGORIES=	www java
-MASTER_SITES=	http://java.apache.org/jserv/dist/
+MASTER_SITES=	http://archive.apache.org/dist/java/jserv/
 DISTNAME=	ApacheJServ-${PORTVERSION}
 
 MAINTAINER=	greg@greg.rim.or.jp

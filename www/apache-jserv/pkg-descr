@@ -5,15 +5,12 @@ What is it?
 	HTTP Server <http://www.apache.org/>.
 
 The Latest Version
-	Details  of  the  latest  version  can be found on the Java
-	Apache Project web site <http://java.apache.org/>.
+	Details  of  the  latest  version  can be found on the 
+	archive of the Java Apache Project web site 
+        <http://archive.apache.org/dist/java/jserv>.
 
-Documentation
-	Documentation   is   available  in HTML format, in the docs/
-	directory. The most up-to-date documentation can be found at
-	<http://java.apache.org/jserv/docs/>.
+WWW: http://archive.apache.org/dist/java/jserv/
 
-Licensing
-	Please see the file called LICENSE.
-
-WWW: http://java.apache.org/jserv/
+Note: this is using a historical archive of old software releases,
+as such it is probably wise to find a newer and actively maintained 
+solution.
