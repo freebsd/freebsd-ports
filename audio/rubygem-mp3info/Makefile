@@ -8,7 +8,7 @@
 PORTNAME=	mp3info
 PORTVERSION=	0.2.1
 CATEGORIES=	audio ruby
-MASTER_SITES=	http://rubyforge.org/download.php/91/
+MASTER_SITES=	http://rubyforge.org/frs/download.php/91/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
 DISTNAME=	ruby-${PORTNAME}-${PORTVERSION}
 DIST_SUBDIR=	ruby
