@@ -9,3 +9,4 @@
 ^src/sys/boot/common/help.common
 ^src/usr.bin/doscmd/fonts.dir
 ^src/usr.bin/more/more.help
+^src/.*\.ps
