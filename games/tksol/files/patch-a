@@ -1,0 +1,77 @@
+diff -cr tksol-0.9.orig/Makefile tksol-0.9/Makefile
+*** tksol-0.9.orig/Makefile	Fri Jan  7 21:30:02 1994
+--- tksol-0.9/Makefile	Sun Jun 25 19:28:08 1995
+***************
+*** 7,13 ****
+          CHMOD = chmod
+           ECHO = echo
+          MKDIR = mkdir -p
+!       INSTALL = install -c -m 644
+  
+      BINSCRIPT = -e 's+@cardbitmaps@+$(CARDBITMAPS)+g' \
+                  -e 's+@downbitmaps@+$(DOWNBITMAPS)+g' \
+--- 7,13 ----
+          CHMOD = chmod
+           ECHO = echo
+          MKDIR = mkdir -p
+!       INSTALL = install -c -m 644 -g bin -o bin
+  
+      BINSCRIPT = -e 's+@cardbitmaps@+$(CARDBITMAPS)+g' \
+                  -e 's+@downbitmaps@+$(DOWNBITMAPS)+g' \
+***************
+*** 19,45 ****
+  ############################################
+  # Absolute pathname of the wish executable #
+  ############################################
+! WISH = /usr/imports/bin/wish
+  
+  ####################################################
+  # Directory where the script tksol will be located #
+  ####################################################
+! BINDIR = /homes/bao/src/test/tksol
+  
+  #####################################################
+  # Directory where the tksol manpage will be located #
+  #####################################################
+! MANDIR = /homes/bao/src/man
+  
+  ####################################################################
+  # Directory where the bitmaps for the faceup cards will be located #
+  ####################################################################
+! CARDBITMAPS = /homes/bao/src/test/tksol/cardbitmaps
+  
+  ######################################################################
+  # Directory where the bitmaps for the facedown cards will be located #
+  ######################################################################
+! DOWNBITMAPS = /homes/bao/src/test/tksol/downbitmaps
+  
+  
+  all: tksol tksol.1
+--- 19,45 ----
+  ############################################
+  # Absolute pathname of the wish executable #
+  ############################################
+! WISH = ${PREFIX}/bin/wish
+  
+  ####################################################
+  # Directory where the script tksol will be located #
+  ####################################################
+! BINDIR = ${PREFIX}/bin
+  
+  #####################################################
+  # Directory where the tksol manpage will be located #
+  #####################################################
+! MANDIR = ${PREFIX}/man/man1
+  
+  ####################################################################
+  # Directory where the bitmaps for the faceup cards will be located #
+  ####################################################################
+! CARDBITMAPS = ${PREFIX}/lib/tk/tksol/cardbitmaps
+  
+  ######################################################################
+  # Directory where the bitmaps for the facedown cards will be located #
+  ######################################################################
+! DOWNBITMAPS = ${PREFIX}/lib/tk/tksol/downbitmaps
+  
+  
+  all: tksol tksol.1
