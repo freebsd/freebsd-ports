@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	clex
-PORTVERSION=	3.1.8
+PORTVERSION=	3.1.9
 CATEGORIES=	misc
 MASTER_SITES=	http://www.clex.sk/download/
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -17,6 +17,7 @@ COMMENT=	A commandline file manager
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 GNU_CONFIGURE=	yes
+USE_GMAKE=	yes
 
 MAN1=		clex.1
 PLIST_FILES=	bin/clex
