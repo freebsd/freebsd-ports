@@ -6,8 +6,8 @@
 #
 
 PORTNAME=	templates
-PORTVERSION=	1.1.0.20031010
-PORTREVISION=	1
+PORTVERSION=	1.1.0.20040612
+PORTREVISION=	0
 CATEGORIES=	japanese editors
 MASTER_SITES=	http://desktop.good-day.net/ooo11/
 PKGNAMEPREFIX=	ja-openoffice-
@@ -15,16 +15,16 @@ DISTNAME=	impress_templates
 DIST_SUBDIR?=	openoffice1.1
 
 MAINTAINER=	openoffice@FreeBSD.org
-COMMENT=	OpenOffice.org 1.1.0 Impress Templates
+COMMENT=	OpenOffice.org 1.1 Impress Templates
 PLIST=		${WRKDIR}/pkg-plist
-
-BROKEN=		"Checksum mismatch"
 
 RUN_DEPENDS=	${PREFIX}/${OPENOFFICE}/program/soffice:${PORTSDIR}/japanese/openoffice-1.1
 
-OPENOFFICE=	OpenOffice.org1.1.0
+OPENOFFICE=	OpenOffice.org1.1.1
 
-OOTEMPLATES=	Black-cyan-yellow.ja.sti	\
+OOTEMPLATES=	\
+		A4-kariert.sti			\
+		Black-cyan-yellow.ja.sti	\
 		Black-orange.ja.sti		\
 		Blue-yellow-white.ja.sti	\
 		BlueBoxes_ja_11.sti		\
@@ -32,9 +32,21 @@ OOTEMPLATES=	Black-cyan-yellow.ja.sti	\
 		BlueWavesTempl-1_ja_11.sti	\
 		Blue_Circles_ja_11.sti		\
 		Blue_Lines.sti			\
+		Butterflies.sti			\
 		Candy.ja.sti			\
 		Cheesy.ja.sti			\
 		Cubes_1x_ja_11.sti		\
+		DABlueChecker.sti		\
+		DABlueCircle.sti		\
+		DABlueCloud.sti			\
+		DABlueStars.sti			\
+		DABlueWhiteFlower.sti		\
+		DALetters.sti			\
+		DAMultiStars2.sti		\
+		DAOrangeTexture.sti		\
+		DAPinkCloud.sti			\
+		DASnowFlacks.sti		\
+		DASparkle.sti			\
 		Foot-prints.ja.sti		\
 		Grad-blue.ja.sti		\
 		Grad-blue_2.ja.sti		\
@@ -68,8 +80,24 @@ OOTEMPLATES=	Black-cyan-yellow.ja.sti	\
 		With-year-2005.ja.sti		\
 		With-years.ja.sti		\
 		blue.sti			\
+		bluesquares.sti			\
 		coolblack.sti			\
+		coolspace.sti			\
+		earthlight.sti			\
+		jp-temple.sti			\
+		karteikarte.sti			\
+		lamp.sti			\
 		landscape.sti			\
+		mondo_cyan.sti			\
+		mondo_green.sti			\
+		mondo_yellow.sti		\
+		openblue.sti			\
+		redStar.sti			\
+		relief.sti			\
+		sidepanel_blue.sti		\
+		sidepanel_cloud.sti		\
+		sidepanel_green.sti		\
+		sidepanel_red.sti		\
 		sun4.sti
 
 do-build:
