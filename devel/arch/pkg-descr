@@ -10,9 +10,8 @@ inteded to address deficiences in CVS(1).  Some of its claimed features are:
 - distributed and private repositories
 - easy server administration
 - scalable (distributed)
-- integrated web front-end
 
-Author: Tom Lord <lord@regexps.com>
-WWW:    http://www.regexps.com/arch.html
+Author: Tom Lord <lord@emf.net>
+WWW:    http://regexps.srparish.net/www/
 
 -- Johann Visagie <wjv@FreeBSD.org>

@@ -1,15 +1,16 @@
 # New ports collection makefile for:	arch
 # Date created:		6 February 2002
-# Whom:	      		Johann Visagie <wjv@FreeBSD.org>
+# Whom:			Johann Visagie <wjv@FreeBSD.org>
 #
 # $FreeBSD$
 #
 
 PORTNAME=	arch
-PORTVERSION=	1.0.p16
+PORTVERSION=	1.0.p25
 CATEGORIES=	devel
-MASTER_SITES=	ftp://regexps.com/pub/src/${PORTNAME}/
-DISTNAME=	${PORTNAME}-${PORTVERSION:S/.p/pre/}
+MASTER_SITES=	http://regexps.srparish.net/src/${PORTNAME}/ \
+		http://arch.quackerhead.com/~lord/releases/${PORTNAME}/
+DISTNAME=	${PORTNAME}${PORTVERSION:S/.p/pre/}
 
 MAINTAINER=	wjv@FreeBSD.org
 COMMENT=	A distributed source code management / revision control system
@@ -38,7 +39,6 @@ post-install:
 	@ ${INSTALL_DATA} ${WRKSRC}/docs/${format}/*.${format} \
 	  ${DOCSDIR}/${format}
 .endfor
-	@ ${INSTALL_DATA} ${WRKSRC}/docs/examples/README* ${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>
