@@ -15,7 +15,7 @@
 -
 +DEFS = -DOS_BSD
 +EXTRA_OBJS = cd_ll_bsd.o
-+CDDEVICE=\"/dev/acd0c\"
++CDDEVICE=\"/dev/cdrom\"
  
  # you shouldn't have to change anything below this line
  
