@@ -8,7 +8,7 @@
 -PALMDIR=os.path.join("@PLUCKERDIR@", "palm")
 +CONFIGDIR=os.path.join("@prefix@","etc", "plucker")
 +PALMDIR=os.path.join("@prefix@", "share", "plucker")
-+PILOTXFER=os.path.join("@prefix@", "pilot", "bin", "pilot-xfer")
++PILOTXFER=os.path.join("@prefix@", "bin", "pilot-xfer")
  
  if os.environ.has_key ('HOME'):
  	USERDIR = os.environ["HOME"]
