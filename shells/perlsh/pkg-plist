@@ -59,6 +59,3 @@ bin/psh
 @dirrm %%SITE_PERL%%/Psh/OS
 @dirrm %%SITE_PERL%%/Psh/Strategy
 @dirrm %%SITE_PERL%%/Psh
-@unexec rmdir %D/lib/perl5/%%PERL_VERSION%%/man/man1 2>/dev/null || true
-@unexec rmdir %D/lib/perl5/%%PERL_VERSION%%/man/man3 2>/dev/null || true
-@unexec rmdir %D/lib/perl5/%%PERL_VERSION%%/man 2>/dev/null || true
