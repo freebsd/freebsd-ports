@@ -1348,6 +1348,7 @@ fastdb		ports/databases/fastdb
 fastdnaml	ports/biology/fastdnaml
 fastjar		ports/archivers/fastjar
 fb		ports/editors/fb
+fbbi		ports/lang/fbbi
 fbm		ports/graphics/fbm
 fbsd-icons	ports/x11/fbsd-icons
 fc++		ports/devel/fc++
