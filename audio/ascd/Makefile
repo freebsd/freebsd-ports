@@ -3,15 +3,14 @@
 # Date created:			29 November 1998
 # Whom:				Jim Mock <jim@FreeBSD.org>
 #
-# $Id: Makefile,v 1.9 1999/05/04 15:35:56 flathill Exp $
+# $Id: Makefile,v 1.10 1999/08/13 06:45:18 jim Exp $
 #
 
 DISTNAME=	ascd-0.13.1-src
 PKGNAME=	ascd-0.13.1
 CATEGORIES=	audio afterstep windowmaker
 MASTER_SITES=	http://worldserver.oleane.com/rsn/Archives/
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${DATAFILES}
-EXTRACT_SUFX=	.tgz
+DISTFILES=	${DISTNAME}.tgz ${DATAFILES}
 
 MAINTAINER=	jim@FreeBSD.org
 
@@ -33,5 +32,5 @@ post-patch:
 post-install:
 	@${CP} ${FILESDIR}/install ${WRKDIR}/${THEMESDIR}
 	@(cd ${WRKDIR}/${THEMESDIR} && ./install)
-	
+
 .include <bsd.port.mk>
