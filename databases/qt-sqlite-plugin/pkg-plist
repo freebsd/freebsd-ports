@@ -1,0 +1,2 @@
+lib/plugins/sqldrivers/libqsqlsqlite.so
+@dirrm lib/plugins/sqldrivers
