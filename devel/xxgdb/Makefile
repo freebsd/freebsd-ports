@@ -21,9 +21,9 @@ MAN1=		xxgdb.1
 #  we have the cookie anyway and it's much easier this way
 #  than modifying the Imakefile.
 post-build:
-	cd ${WRKSRC}; gcc -o xxgdbiowin -O2 xxgdbiowin.c
+	cd ${WRKSRC} && ${CC} ${CFLAGS} -o xxgdbiowin xxgdbiowin.c
 
 post-install:
-	install -c -s ${WRKSRC}/xxgdbiowin ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/xxgdbiowin ${PREFIX}/bin
 
 .include <bsd.port.mk>

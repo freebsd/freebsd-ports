@@ -1,0 +1,21 @@
+--- calldbx.c.orig	Tue Jun 20 07:11:00 1995
++++ calldbx.c	Fri Nov 17 21:27:09 2000
+@@ -137,13 +137,17 @@
+ 
+ #ifndef sco
+ 	for (c='p'; c<'t'; c++) {
++#ifdef __FreeBSD__
++	for (i=0; i<32; i++) {
++#else
+ 	for (i=0; i<16; i++) {
++#endif
+ #else
+ 	c = 'p';
+ 	for (i=0; i<8; i++) {
+ #endif
+ 	    pty[8] = c;
+-	    pty[9] = "0123456789abcdef"[i];
++	    pty[9] = "0123456789abcdefghijklmnopqrstuv"[i];
+ 	    if ((master = open(pty, O_RDWR)) >= 0) 
+ 		return (master); 
+ 	}
