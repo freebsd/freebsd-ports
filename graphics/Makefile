@@ -392,6 +392,7 @@
     SUBDIR += pstoepsi
     SUBDIR += pvmpov
     SUBDIR += py-PyX
+    SUBDIR += py-cairo
     SUBDIR += py-cgkit
     SUBDIR += py-chart
     SUBDIR += py-exif
