@@ -1,0 +1,11 @@
+--- scrsize.c.orig	Tue Sep 23 12:10:26 2000
++++ scrsize.c	Tue Sep 23 12:22:17 2000
+@@ -14,7 +14,7 @@
+ 
+ #ifdef HAVE_SYS_TERMIO_H
+ #include <sys/termio.h>
+-#else
++#elif !defined(HAVE_SYS_IOCTL_H)
+ #include <sgtty.h>
+ #endif
+ 

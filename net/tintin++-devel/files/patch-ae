@@ -1,0 +1,11 @@
+--- rl.c.orig	Sun Aug 13 02:40:28 2000
++++ rl.c	Tue Sep 26 13:38:02 2000
+@@ -436,7 +436,7 @@
+ /* get a clean screen without the split crap; useful for ^Z, quitting, etc */
+ void cleanscreen(void)
+ {
+-  system("stty echo");	/* a hack, admittedly */
++  // system("stty echo");	/* a hack, admittedly */
+ 
+   if(!is_split)
+     return;
