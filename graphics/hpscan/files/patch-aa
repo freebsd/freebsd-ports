@@ -1,0 +1,33 @@
+*** Makefile.orig	Fri Jun  3 05:52:36 1994
+--- Makefile	Fri Jan 12 10:31:44 1996
+***************
+*** 1,13 ****
+! INCLUDES=	-I/usr/X386/include
+! LIBS=		-L/usr/X386/lib -lXaw -lXt -lXmu -lX11 -lm
+  OPT=		-g
+  CFLAGS=		$(OPT) $(INCLUDES)
+! CC=		gcc
+  
+  OBJS=		main.o scsi.o scanner.o scl.o gui.o colour.o Plain.o
+  
+! scan:	$(OBJS)
+  	$(CC) -o scanner $(OBJS) $(LIBS)
+  
+! tarfile:	
+! 	tar zcvf macbeth:/graphics/software/ftp/pub/scanner.tar.gz *.[ch] Makefile README TODO
+--- 1,15 ----
+! INCLUDES=	-I/usr/X11R6/include -I/sys
+! LIBS=		-L/usr/X11R6/lib -lXaw -lXt -lXmu -lX11 -lm
+  OPT=		-g
+  CFLAGS=		$(OPT) $(INCLUDES)
+! CC=		cc
+  
+  OBJS=		main.o scsi.o scanner.o scl.o gui.o colour.o Plain.o
+  
+! all:	scanner
+! 
+! scanner:	$(OBJS)
+  	$(CC) -o scanner $(OBJS) $(LIBS)
+  
+! install:
+! 	install -c -s -m 555 -o bin -g bin scanner ${X11BASE}/bin
