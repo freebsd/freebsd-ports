@@ -1,6 +1,6 @@
---- Makefile.in.orig	Sat Jul  6 16:04:36 2002
-+++ Makefile.in	Sat Jul  6 16:05:17 2002
-@@ -366,7 +366,7 @@
+--- Makefile.in.orig	Sat Oct 26 14:18:54 2002
++++ Makefile.in	Sat Oct 26 14:19:08 2002
+@@ -367,7 +367,7 @@
  install-data: install-data-recursive
  
  install-am: all-am

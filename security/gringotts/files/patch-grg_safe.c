@@ -1,38 +1,36 @@
---- src/grg_safe.c.orig	Sun Jun 16 18:41:21 2002
-+++ src/grg_safe.c	Fri Jul  5 19:12:36 2002
-@@ -24,13 +24,16 @@
+--- src/grg_safe.c.orig	Sat Oct 26 14:09:40 2002
++++ src/grg_safe.c	Sat Oct 26 14:15:28 2002
+@@ -34,6 +34,7 @@
+ 
  #include <stdlib.h>
- #include <stdio.h>
  #include <string.h>
 +#include <sys/types.h>
  #include <regex.h>
  #include <unistd.h>
  #include <fcntl.h>
- #include <unistd.h>
- #include <sys/mman.h>
-+#ifdef HAVE_SYS_FSUID_H
+@@ -43,7 +44,6 @@
  #include <sys/fsuid.h>
+ #endif
+ #include <sys/time.h>
 -#include <sys/types.h>
-+#endif
-+#include <sys/mman.h>
+ #include <sys/resource.h>
  
- #include <gtk/gtk.h>
- #include <gdk-pixbuf/gdk-pixbuf.h>
-@@ -131,12 +134,12 @@
- 	if (!geteuid())
- 	//the process is SUID root. I can mlockall() the memory in order to avoid swapping.
- 	{
--		gint res = mlockall (MCL_FUTURE);
-+//		gint res = mlockall (MCL_FUTURE);
+ #define GRG_SAFE			0
+@@ -64,8 +64,6 @@
+ #endif
  
--		if (res)
--			g_critical ("%s", _("The process is setuid root, but I can't lock memory paging"));
--		else
--			mem_safe = TRUE;
-+//		if (res)
-+//			g_critical ("%s", _("The process is setuid root, but I can't lock memory paging"));
-+//		else
-+//			mem_safe = TRUE;
+ 	//drop eventual group root privileges
+-	setgid(getgid ());
+-	setgid(getgid ()); //twice for counter "saved IDs", cfr. Secure Programming HowTo
+ #ifdef HAVE_SYS_FSUID_H
+ 	setfsgid(getgid ());
+ 	setfsgid(getgid ());
+@@ -84,8 +82,6 @@
+ #endif
  
  		//drop root privileges
- 		setuid(getuid());
+-		setuid(getuid());
+-		setuid(getuid());
+ #ifdef HAVE_SYS_FSUID_H
+ 		setfsuid(getuid());
+ 		setfsuid(getuid());
