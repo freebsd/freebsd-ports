@@ -44,6 +44,8 @@ PLIST_SUB=	VERSION="${PORTVERSION}"
 
 .if ${PERL_LEVEL} <= 500600
 IGNORE=	"perl 5.6 or higher is required to build this port"
+.else
+BROKEN=	"Broken pkg-plist"
 .endif
 
 .if ${OSVERSION} >= 500000
