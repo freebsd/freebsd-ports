@@ -33,5 +33,6 @@ include/mimelib/token.h
 include/mimelib/utility.h
 include/mimelib/uuencode.h
 lib/libmimelib.la
+lib/libmimelib.so
 lib/libmimelib.so.3
 @dirrm include/mimelib

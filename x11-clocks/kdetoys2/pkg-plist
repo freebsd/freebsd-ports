@@ -3,6 +3,7 @@ bin/kmoon
 bin/kteatime
 bin/kworldwatch
 lib/libkeyesapplet.la
+lib/libkeyesapplet.so
 lib/libkeyesapplet.so.1
 share/applnk/Toys/amor.desktop
 share/applnk/Toys/kmoon.desktop
