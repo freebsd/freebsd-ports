@@ -7,6 +7,7 @@
 
 PORTNAME=	swig
 PORTVERSION=	1.3.19
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -63,10 +64,10 @@ PLIST_SUB+=		WANT_SWIG_RUBY=""
 PLIST_SUB+=		WANT_SWIG_RUBY="@comment "
 .endif
 .if defined(WANT_SWIG_TCL)
-CATEGORIES+=		tcl83
-BUILD_DEPENDS+=		${LOCALBASE}/bin/tclsh8.3:${PORTSDIR}/lang/tcl83
-CONFIGURE_ARGS+=	--with-tclincl=${LOCALBASE}/include/tcl8.3/ \
-			--with-tcllib=${LOCALBASE}/lib/tcl8.3/
+CATEGORIES+=		tcl84
+BUILD_DEPENDS+=		${LOCALBASE}/bin/tclsh8.4:${PORTSDIR}/lang/tcl84
+CONFIGURE_ARGS+=	--with-tclincl=${LOCALBASE}/include/tcl8.4/ \
+			--with-tcllib=${LOCALBASE}/lib/tcl8.4/
 PLIST_SUB+=		WANT_SWIG_TCL=""
 .else
 PLIST_SUB+=		WANT_SWIG_TCL="@comment "
