@@ -11,8 +11,12 @@ etc/cups/client.conf.N
 @unexec if cmp -s %D/etc/cups/cupsd.conf.N %D/etc/cups/cupsd.conf; then rm -f %D/etc/cups/cupsd.conf; fi
 etc/cups/cupsd.conf.N
 @exec if test ! -f %D/etc/cups/cupsd.conf; then cp -p %D/etc/cups/cupsd.conf.N %D/etc/cups/cupsd.conf; fi
-etc/cups/mime.convs
-etc/cups/mime.types
+@unexec if cmp -s %D/etc/cups/mime.convs.N %D/etc/cups/mime.convs; then rm -f %D/etc/cups/mime.convs; fi
+etc/cups/mime.convs.N
+@exec if test ! -f %D/etc/cups/mime.convs; then cp -p %D/etc/cups/mime.convs.N %D/etc/cups/mime.convs; fi
+@unexec if cmp -s %D/etc/cups/mime.types.N %D/etc/cups/mime.types; then rm -f %D/etc/cups/mime.types; fi
+etc/cups/mime.types.N
+@exec if test ! -f %D/etc/cups/mime.types; then cp -p %D/etc/cups/mime.types.N %D/etc/cups/mime.types; fi
 @unexec if cmp -s %D/etc/cups/printers.conf.N %D/etc/cups/printers.conf; then rm -f %D/etc/cups/printers.conf; fi
 etc/cups/printers.conf.N
 @exec if test ! -f %D/etc/cups/printers.conf; then cp -p %D/etc/cups/printers.conf.N %D/etc/cups/printers.conf; fi

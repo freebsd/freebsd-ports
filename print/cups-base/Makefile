@@ -40,13 +40,10 @@ pre-install:
 
 post-install:
 	${MKDIR} ${CUPS_ETCDIR}
-.for f in classes.conf client.conf cupsd.conf printers.conf
+.for f in classes.conf client.conf cupsd.conf printers.conf mime.convs mime.types
 	${INSTALL_DATA} ${WRKSRC}/conf/${f} ${CUPS_ETCDIR}/${f}.N
 	cd ${CUPS_ETCDIR}; if test ! -f ${f}; then ${CP} -p ${f}.N ${f}; fi
 .endfor # classes.conf client.conf cupsd.conf printers.conf
-.for f in mime.convs mime.types
-	${INSTALL_DATA} ${WRKSRC}/conf/${f} ${CUPS_ETCDIR}/${f}
-.endfor # mime.convs mime.types
 	cd ${CUPS_RCDIR}; ${MV} cups cups.sh.sample
 	${FIND} ${PREFIX}/man/cat* -type l -name '*.0' -delete
 	${MKDIR} ${CUPS_SPOOLDIR} ${CUPS_SPOOLDIR}/tmp
