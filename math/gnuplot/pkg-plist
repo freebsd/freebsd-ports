@@ -1,0 +1,10 @@
+@cd /usr/local
+@owner bin
+@mode 755
+bin/gnuplot
+bin/gnuplot_x11
+bin/lasergnu
+@mode 644
+lib/gnuplot.gih
+man/man1/gnuplot.1
+man/man1/lasergnu.1
