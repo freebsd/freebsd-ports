@@ -3,7 +3,7 @@
 # Date created:		24 December 1996
 # Whom:			Kiriyama Kazuhiko <kiri@kiri.toba-cmt.ac.jp>
 #
-# $Id: Makefile,v 1.6 1999/03/27 22:15:53 asami Exp $
+# $Id: Makefile,v 1.7 1999/05/09 16:39:54 steve Exp $
 #
 
 DISTNAME=	ocaml-2.02
@@ -19,6 +19,10 @@ USE_XLIB=	yes
 HAS_CONFIGURE=	yes
 #USE_GMAKE=	yes
 ALL_TARGET=	world bootstrap opt ocamlc.opt ocamlopt.opt
+
+.if ${MACHINE_ARCH} != "i386"
+PLIST=		${PKGDIR}/PLIST.noprof
+.endif
 
 MAN1=		ocaml.1 ocamlc.1 ocamlcp.1 ocamldep.1 ocamllex.1 \
 		ocamlopt.1 ocamlprof.1 ocamlrun.1 ocamlyacc.1 ocamlmktop.1 \
