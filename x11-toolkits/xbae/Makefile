@@ -7,8 +7,8 @@
 # $FreeBSD$
 #
 
-PORTNAME=	xbae
-PORTVERSION=	4.50.0
+PORTNAME=	Xbae
+PORTVERSION=	4.50.91
 CATEGORIES=	x11-toolkits math
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	xbae
@@ -19,6 +19,7 @@ COMMENT=	A Motif-based widget which displays a grid of cells as a spreadsheet
 
 USE_LIBTOOL_VER=13
 INSTALLS_SHLIB=	yes
+CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 
 USE_MOTIF=	yes
 USE_X_PREFIX=	yes
