@@ -258,36 +258,24 @@ lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Image/Magick/autosplit.ix
 share/ImageMagick/Copyright.txt
 share/ImageMagick/QuickStart.txt
 %%PORTDOCS%%share/doc/ImageMagick/ImageMagick.html
-%%PORTDOCS%%share/doc/ImageMagick/images/authentica.jpg
 %%PORTDOCS%%share/doc/ImageMagick/images/background.gif
-%%PORTDOCS%%share/doc/ImageMagick/images/convert.png
 %%PORTDOCS%%share/doc/ImageMagick/images/examples.jpg
-%%PORTDOCS%%share/doc/ImageMagick/images/fade.png
-%%PORTDOCS%%share/doc/ImageMagick/images/home.png
 %%PORTDOCS%%share/doc/ImageMagick/images/logo.png
 %%PORTDOCS%%share/doc/ImageMagick/images/magick.png
-%%PORTDOCS%%share/doc/ImageMagick/images/magick_button_120x60.png
-%%PORTDOCS%%share/doc/ImageMagick/images/magick_button_88x31.png
-%%PORTDOCS%%share/doc/ImageMagick/images/magick_icon_16x16.png
-%%PORTDOCS%%share/doc/ImageMagick/images/magick_icon_32x32.png
-%%PORTDOCS%%share/doc/ImageMagick/images/magick_icons.ico
-%%PORTDOCS%%share/doc/ImageMagick/images/magick_small.png
-%%PORTDOCS%%share/doc/ImageMagick/images/mail.png
 %%PORTDOCS%%share/doc/ImageMagick/images/networkeleven.png
 %%PORTDOCS%%share/doc/ImageMagick/images/pair.png
 %%PORTDOCS%%share/doc/ImageMagick/images/promote.png
-%%PORTDOCS%%share/doc/ImageMagick/images/right_triangle.gif
 %%PORTDOCS%%share/doc/ImageMagick/images/right_triangle.png
 %%PORTDOCS%%share/doc/ImageMagick/images/right_triangle_option.png
 %%PORTDOCS%%share/doc/ImageMagick/images/screen.png
 %%PORTDOCS%%share/doc/ImageMagick/images/script.gif
+%%PORTDOCS%%share/doc/ImageMagick/images/sprite.png
 %%PORTDOCS%%share/doc/ImageMagick/images/star.png
 %%PORTDOCS%%share/doc/ImageMagick/images/top.jpg
 %%PORTDOCS%%share/doc/ImageMagick/images/twi.png
 %%PORTDOCS%%share/doc/ImageMagick/www/Changelog.html
 %%PORTDOCS%%share/doc/ImageMagick/www/Copyright.html
 %%PORTDOCS%%share/doc/ImageMagick/www/FAQ.html
-%%PORTDOCS%%share/doc/ImageMagick/www/ImageMagick.html
 %%PORTDOCS%%share/doc/ImageMagick/www/Magick++/Blob.html
 %%PORTDOCS%%share/doc/ImageMagick/www/Magick++/Cache.fig
 %%PORTDOCS%%share/doc/ImageMagick/www/Magick++/Cache.png
@@ -401,6 +389,7 @@ share/ImageMagick/QuickStart.txt
 %%PORTDOCS%%share/doc/ImageMagick/www/smile.c
 %%PORTDOCS%%share/doc/ImageMagick/www/sponsor.html
 %%PORTDOCS%%share/doc/ImageMagick/www/tools.html
+%%PORTDOCS%%share/doc/ImageMagick/www/utilities.html
 %%PORTDOCS%%share/doc/ImageMagick/www/windows.html
 %%PORTDOCS%%@dirrm share/doc/ImageMagick/www/api/types
 %%PORTDOCS%%@dirrm share/doc/ImageMagick/www/api
