@@ -33,6 +33,7 @@ WANT_GNOME=	yes
 .include <bsd.port.pre.mk>
 
 GNU_CONFIGURE=	yes
+CONFIGURE_ENV=	X_CFLAGS=-I${LOCALBASE}/include
 
 .if defined(WITH_STROKE)
 CONFIGURE_ARGS+=	--with-stroke --with-stroke-library=${LOCALBASE}/lib \
@@ -51,6 +52,12 @@ CONFIGURE_ARGS+=	--disable-shape
 LIB_DEPENDS+=	png.5:${PORTSDIR}/graphics/png
 CONFIGURE_ARGS+=	--with-png --with-png-includes=${LOCALBASE}/include \
 			--with-png-library=${LOCALBASE}/lib
+.endif
+
+.if !defined(WITHOUT_ICONV)
+LIB_DEPENDS+=	iconv.2:${PORTSDIR}/converters/iconv
+CONFIGURE_ARGS+=	--with-iconv-lib=/usr/local/lib \
+			--with-iconv-includes=/usr/local/include
 .endif
 
 PLIST_SUB+=	FVWM_VERSION="${PORTVERSION}"
