@@ -33,6 +33,7 @@ ARPHIC_FONTS_BIG5=	bkai00mp bsmi00lp
 ARPHIC_FONTS_GB2312=	gbsn00lp gkai00mp
 ALL_FONTS=		${ARPHIC_FONTS_BIG5} ${ARPHIC_FONTS_GB2312}
 FONT_SIZES=		16 24
+WEBFONTS_WRKSRC=	`cd ${PORTSDIR}/x11-fonts/webfonts/; make -V WRKSRC`
 
 post-extract:
 .for fn in ${ALL_FONTS}
@@ -40,7 +41,7 @@ post-extract:
 .endfor
 	@${LN} -sf ${WRKDIR}/BIG5 ${WRKSRC}/encodings/
 	@${LN} -sf ${WRKDIR}/GB2312 ${WRKSRC}/encodings/
-	@${LN} -sf ${PORTSDIR}/x11-fonts/webfonts/work/webfonts-0.21/arial.ttf ${WRKSRC}/
+	@${LN} -sf ${WEBFONTS_WRKSRC}/arial.ttf ${WRKSRC}/
 
 pre-patch:
 	@${ECHO_CMD} -e 'LDFLAGS=-lm `${FREETYPE_CONFIG} --libs` -liconv \
