@@ -4930,6 +4930,7 @@ npc		ports/www/npc
 nqc		ports/lang/nqc
 nroff		src/contrib/groff/nroff
 nrpe		ports/net/nrpe
+nrpep		ports/net/nrpep
 ns		ports/net/ns
 nsc		ports/net/nsc
 nscache		ports/www/nscache
