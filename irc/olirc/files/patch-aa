@@ -1,0 +1,11 @@
+--- src/Makefile.in.orig	Mon Aug  2 14:50:29 1999
++++ src/Makefile.in	Mon Aug  2 14:50:40 1999
+@@ -10,7 +10,7 @@
+ 			 prefs_dialogs.o network.o parse_msg.o ctcp.o ignores.o \
+           scripting.o main.o
+ 
+-CFLAGS  = @GTK_CFLAGS@ -O2 -Wall 
++CFLAGS  = @GTK_CFLAGS@ @CFLAGS@ -Wall 
+ LDFLAGS = @GTK_LIBS@
+ CC      = @CC@
+ 
