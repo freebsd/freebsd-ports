@@ -1,5 +1,9 @@
-The Hewlett-Packard Co. Linux Inkjet Driver Project is a add-on to
-the GNU Ghostscript application. This driver is based on the
-Hewlett-Packard Appliance APDK for deskjet printers.
+The Hewlett-Packard Co. Linux Inkjet Driver Project is an add-on to the
+GNU Ghostscript application. The driver provides printing support for more
+than 200 printer models, including, DeskJet, OfficeJet, Photosmart, Business
+Inkjet and some LaserJet.
 
 WWW: http://hpinkjet.sourceforge.net/
+
+- Doug Barton
+DougB@FreeBSD.org
