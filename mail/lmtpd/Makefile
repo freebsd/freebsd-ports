@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	lmtpd
-PORTVERSION=	0.9.16
-PORTREVISION=	1
+PORTVERSION=	0.9.18
 CATEGORIES=	mail
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITES=	ftp://ftp.oav.net/pll/ ${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	pll
 
 MAINTAINER=	kiwi@oav.net
@@ -23,6 +22,7 @@ OPTIONS=	PCRE "Support for PCRE" on
 OPTIONS+=	MYSQL "Support for MySQL Queries and Logs" on
 OPTIONS+=	DB3 "Support for DB3" on
 OPTIONS+=	DB4 "Support for DB4" off
+OPTIONS+=	TRE "Support for TRE regexp (Approx regexp)" on
 
 .include <bsd.port.pre.mk>
 
@@ -35,6 +35,13 @@ LIB_DEPENDS+=	pcre:${PORTSDIR}/devel/pcre
 CONFIGURE_ARGS+=	--with-pcre
 .else
 CONFIGURE_ARGS+=	--without-pcre
+.endif
+
+.if defined(WITH_TRE)
+LIB_DEPENDS+=	tre:${PORTSDIR}/textproc/libtre/
+CONFIGURE_ARGS+=	--with-tre
+.else
+CONFIGURE_ARGS+=	--without-tre
 .endif
 
 .if defined(WITH_MYSQL)
