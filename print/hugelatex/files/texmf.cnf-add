@@ -1,0 +1,15 @@
+
+% hugelatex settings
+% added by hugelatex package
+main_memory.hugelatex = 1100000
+param_size.hugelatex = 1500
+stack_size.hugelatex = 1500
+hash_extra.hugelatex = 15000
+string_vacancies.hugelatex = 45000
+pool_free.hugelatex = 47500 
+nest_size.hugelatex = 500
+save_size.hugelatex = 5000
+pool_size.hugelatex = 500000
+max_strings.hugelatex = 55000
+font_mem_size.hugelatex= 400000
+
