@@ -2,11 +2,11 @@ etc/ifhp.conf.sample
 libexec/filters/ifhp
 libexec/filters/textps
 libexec/filters/wrapper
-share/doc/ifhp/IFHP-HOWTO.html
-share/doc/ifhp/IFHP-HOWTO.pdf
-share/doc/ifhp/LPRng.jpg
-share/doc/ifhp/LPRngT-L.jpg
-share/doc/ifhp/LPRngT-S.jpg
-share/doc/ifhp/ifhp-S.jpg
+%%PORTDOCS%%%%DOCSDIR%%/IFHP-HOWTO.html
+%%PORTDOCS%%%%DOCSDIR%%/IFHP-HOWTO.pdf
+%%PORTDOCS%%%%DOCSDIR%%/LPRng.jpg
+%%PORTDOCS%%%%DOCSDIR%%/LPRngT-L.jpg
+%%PORTDOCS%%%%DOCSDIR%%/LPRngT-S.jpg
+%%PORTDOCS%%%%DOCSDIR%%/ifhp-S.jpg
 @dirrm libexec/filters
-@dirrm share/doc/ifhp
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
