@@ -70,6 +70,7 @@ USE_PERL5=	YES
 HAS_CONFIGURE=	YES
 USE_BZIP2=	YES
 USE_REINPLACE=	YES
+USE_LIBTOOL_VER=13
 
 CONFIGURE_ARGS=	\
 	--enable-cgibindir=${PREFIX}/${CGIBINDIR}/${CGIBINSUBDIR} \
@@ -221,6 +222,11 @@ post-patch:
 
 	@${REINPLACE_CMD} -e 's|^case x$$lockmethod in|${TEST} \&\& &|g' \
 		${WRKSRC}/liblock/configure
+
+	@${REINPLACE_CMD} -e 's|mkdir -p|${MKDIR}|g' ${WRKSRC}/pcp/configure
+
+	@${REINPLACE_CMD} -e 's|@LIBTOOL@|${LIBTOOL}|' \
+		${WRKSRC}/pcp/intl/Makefile.in
 
 post-install:
 	${INSTALL_SCRIPT} ${FILESDIR}/sqwebmail-sqwebmaild.sh \
