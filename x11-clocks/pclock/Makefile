@@ -8,7 +8,7 @@
 
 DISTNAME=	pclock-0.13
 CATEGORIES=	x11-clocks windowmaker afterstep
-MASTER_SITES=	ftp://ftp.kourakos.com/pub/
+MASTER_SITES=	ftp://ftp.kourakos.com/pub/pclock/
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	jim@FreeBSD.org
