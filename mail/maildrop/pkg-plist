@@ -1,0 +1,12 @@
+bin/dotlock
+bin/maildirmake
+bin/maildrop
+bin/maildrop.maildirmake
+bin/reformail
+share/doc/maildrop/README.html
+share/doc/maildrop/dotlock.html
+share/doc/maildrop/maildrop.html
+share/doc/maildrop/maildropex.html
+share/doc/maildrop/maildropfilter.html
+share/doc/maildrop/reformail.html
+@dirrm share/doc/maildrop
