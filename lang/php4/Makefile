@@ -20,8 +20,8 @@
 #
 
 PORTNAME=	php4
-PORTVERSION=	4.3.7
-PORTREVISION?=	3
+PORTVERSION=	4.3.8
+PORTREVISION?=	0
 CATEGORIES?=	lang devel www
 MASTER_SITES=	${MASTER_SITE_PHP:S,$,:release,} \
 		http://downloads.php.net/ilia/:rc \
