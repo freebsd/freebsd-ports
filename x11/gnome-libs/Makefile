@@ -1,13 +1,13 @@
 # New ports collection makefile for:   gnomelibs
-# Version required:    0.27
+# Version required:    0.30
 # Date created:        17 June 1998
 # Whom:                Yukihiro Nakai <Nakai@technologist.com>
 #
-# $Id: Makefile,v 1.10 1998/09/25 09:52:45 asami Exp $
+# $Id: Makefile,v 1.11 1998/09/26 00:02:36 asami Exp $
 #
 
-DISTNAME=	gnome-libs-0.27
-PKGNAME=	gnomelibs-0.27
+DISTNAME=	gnome-libs-0.30
+PKGNAME=	gnomelibs-0.30
 CATEGORIES=	x11
 MASTER_SITES=	ftp://ftp.jimpick.com/pub/mirrors/gnome/sources/ \
 		ftp://ftp.gnome.org/pub/GNOME/sources/
@@ -22,18 +22,21 @@ LIB_DEPENDS+=	jpeg.9:${PORTSDIR}/graphics/jpeg
 LIB_DEPENDS+=	gif.3:${PORTSDIR}/graphics/giflib
 LIB_DEPENDS+=	png.2:${PORTSDIR}/graphics/png
 LIB_DEPENDS+=	Xpm.4:${PORTSDIR}/graphics/xpm
+LIB_DEPENDS+=	ORBit.0:${PORTSDIR}/devel/ORBit
 
 USE_X_PREFIX=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--localstatedir=${PREFIX}/share/gnome \
 		--datadir=${PREFIX}/share/gnome
-CONFIGURE_ENV=	CPPFLAGS="${CFLAGS} -I${LOCALBASE}/include" \
-		LIBS="-L${LOCALBASE}/lib -lxpg4"
+CONFIGURE_ENV=	CPPFLAGS="${CFLAGS} -I${LOCALBASE}/include \
+		-I${X11BASE}/include" \
+		GTK_CONFIG="${X11BASE}/bin/gtk11-config" \
+		LIBS="-L${LOCALBASE}/lib -L${X11BASE}/lib -lxpg4"
 
 pre-build:
 	( cd ${WRKSRC}/support; ${GMAKE} gnomesupport.h )
 
 post-install:
-	${LDCONFIG} -m ${PREFIX}/lib
+	@${SETENV} OBJFORMAT=${PORTOBJFORMAT} ${LDCONFIG} -m ${PREFIX}/lib
 
 .include <bsd.port.mk>
