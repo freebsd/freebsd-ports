@@ -12,7 +12,7 @@ CATEGORIES=	games
 MASTER_SITES=	http://step.polymtl.ca/~coyote/tank/
 DISTFILES=	${DISTNAME}-src.tar.gz
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	erik@smluc.org
 COMMENT=	A 3-D network tank game that uses OpenGL/Mesa
 
 BUILD_DEPENDS=	${X11BASE}/lib/libaux.a:${PORTSDIR}/graphics/libaux

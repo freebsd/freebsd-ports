@@ -13,7 +13,7 @@ PKGNAMEPREFIX=	gauche-
 EXTRACT_SUFX=	.tgz
 DIST_SUBDIR=	gauche
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	erik@smluc.org
 COMMENT=	A pure gauche/scheme implementation of the Readline library
 
 RUN_DEPENDS=	gosh:${PORTSDIR}/lang/gauche

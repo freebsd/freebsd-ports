@@ -11,7 +11,7 @@ CATEGORIES=	audio
 MASTER_SITES=	http://math.smsu.edu/~erik/files/fbsd/\
 		http://www.smluc.org/~erik/files/fbsd/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	erik@smluc.org
 COMMENT=	A 3D positional spatialized sound library
 
 INFO=		openal

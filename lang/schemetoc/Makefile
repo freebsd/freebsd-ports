@@ -12,7 +12,7 @@ MASTER_SITES=	http://www.cs.indiana.edu/pub/scheme-repository/imp/Scheme-to-C/
 DISTNAME=	15mar93
 EXTRACT_SUFX=	.tar.Z
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	erik@smluc.org
 COMMENT=	Scheme-to-C, a compiler and interpreter for compiling scheme into C
 
 USE_REINPLACE=	yes

@@ -12,7 +12,7 @@ CATEGORIES=	games
 MASTER_SITES=	http://users.pandora.be/ceppe/linux/
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	erik@smluc.org
 COMMENT=	A launcher frontend for FlightGear
 
 RUN_DEPENDS=	fgfs:${PORTSDIR}/games/flightgear
