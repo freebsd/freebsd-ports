@@ -22,8 +22,8 @@
     SUBDIR += lesstif
     SUBDIR += linux-gtk
     SUBDIR += neXtaw
-    SUBDIR += openmotif
-    SUBDIR += openmotif-devel
+    SUBDIR += open-motif
+    SUBDIR += open-motif-devel
     SUBDIR += p5-Gtk
     SUBDIR += p5-Tcl-Tk
     SUBDIR += p5-Tk
