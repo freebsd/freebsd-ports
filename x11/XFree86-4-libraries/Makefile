@@ -3,7 +3,7 @@
 # Date created:         5 January 1995
 # Whom:                 jmz
 #
-# $Id: Makefile,v 1.22 1996/11/10 12:05:56 peter Exp $
+# $Id: Makefile,v 1.23 1996/11/25 02:29:26 jmz Exp $
 #
 
 DISTNAME=	xc
@@ -20,7 +20,7 @@ MAINTAINER=	jmz@FreeBSD.ORG
 
 # Define FORCE_PACKAGE from the command line if you want to override
 # this and build a package
-NO_PACKAGE=	yes
+NO_PACKAGE=	"Binary package distributed by XFree86 already"
 IS_INTERACTIVE=	yes	# configure script asks questions
 USE_X11=	yes
 ALL_TARGET=	World
