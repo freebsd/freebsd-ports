@@ -8341,6 +8341,7 @@ rockdodger	ports/games/rockdodger
 rocksndiamonds	ports/games/rocksndiamonds
 rolo		ports/deskutils/rolo
 romeo		ports/palm/romeo
+root		ports/devel/root
 roottail	ports/sysutils/roottail
 rosegarden	ports/audio/rosegarden
 rot		ports/textproc/rot
