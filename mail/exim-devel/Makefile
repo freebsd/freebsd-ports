@@ -99,7 +99,7 @@ SEDLIST+=	-e 's,^AUTH_PLAINTEXT,\#AUTH_PLAINTEXT,'
 .endif
 
 .if defined(WITH_PGSQL)
-LIB_DEPENDS+=	libpq.2:${PORTSDIR}/databases/postgresql
+LIB_DEPENDS+=	pq.2:${PORTSDIR}/databases/postgresql
 SEDLIST+=	-e 's,XX_PGSQL_LIBS_XX,-L${PREFIX}/pgsql/lib -lpq,' \
 		-e 's,XX_PGSQL_INCLUDE_XX,-I${PREFIX}/pgsql/include,' \
 		-e 's,^\# LOOKUP_PGSQL,LOOKUP_PGSQL,'
