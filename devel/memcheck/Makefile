@@ -6,14 +6,13 @@
 #
 
 PORTNAME=	memcheck
-PORTVERSION=	0.1.3
+PORTVERSION=	0.1.4
 CATEGORIES=	devel
 MASTER_SITES=	http://hald.dnsalias.net/projects/memcheck/
 
 MAINTAINER=	demon@FreeBSD.org
 COMMENT=	Memory Allocation Checker
 
-USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 INSTALLS_SHLIB=	yes
 
