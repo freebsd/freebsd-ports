@@ -30,6 +30,7 @@
     SUBDIR += bounce
     SUBDIR += bpft
     SUBDIR += brouted
+    SUBDIR += bsdproxy
     SUBDIR += cap
     SUBDIR += cdpd
     SUBDIR += centericq
