@@ -16,5 +16,6 @@
     SUBDIR += xorg-fontserver
     SUBDIR += xorg-printserver
     SUBDIR += xorg-server
+    SUBDIR += xorg-vfbserver
 
 .include <bsd.port.subdir.mk>
