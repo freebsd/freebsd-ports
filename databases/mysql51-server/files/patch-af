@@ -1,6 +1,6 @@
---- scripts/safe_mysqld.sh.orig	Thu Apr 19 10:11:02 2001
-+++ scripts/safe_mysqld.sh	Thu Apr 19 15:15:54 2001
-@@ -73,30 +73,9 @@
+--- scripts/safe_mysqld.sh.orig	Mon Jun  3 12:39:02 2002
++++ scripts/safe_mysqld.sh	Mon Jun 17 19:07:26 2002
+@@ -68,30 +68,9 @@
    done
  }
  
@@ -34,7 +34,7 @@
  
  MYSQL_UNIX_PORT=${MYSQL_UNIX_PORT:-@MYSQL_UNIX_ADDR@}
  MYSQL_TCP_PORT=${MYSQL_TCP_PORT:-@MYSQL_TCP_PORT@}
-@@ -240,34 +219,6 @@
+@@ -239,34 +218,6 @@
    if test ! -f $pid_file		# This is removed if normal shutdown
    then
      break
@@ -52,7 +52,7 @@
 -    I=1
 -    while test "$I" -le "$numofproces"
 -    do 
--      PROC=`ps xa | grep $ledir/$MYSQLD | grep -v "grep" | tail -1` 
+-      PROC=`ps xa | grep $ledir/$MYSQLD | grep -v "grep" | sed -n '$p'` 
 -	for T in $PROC
 -	do
 -	  break
