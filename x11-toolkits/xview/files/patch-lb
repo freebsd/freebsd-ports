@@ -1,0 +1,132 @@
+*** lib/libolgx/ol_button.c.orig	Fri Jan 22 16:13:24 1999
+--- lib/libolgx/ol_button.c	Fri Jan 22 16:19:41 1999
+***************
+*** 241,248 ****
+  				   x + ((centerx > 0) ? centerx : 0),
+  				   y + ((centery > 0) ? centery : 0),
+  				   (((Pixlabel *) label)->width > width)? 
+!                                                width:((Pixlabel *)label)->width ,
+! 				  (height) ? height : Button_Height(info) - 2, state);
+  	} else if (state & OLGX_LABEL_IS_XIMAGE) {
+  
+  	    int             centerx, centery;
+--- 241,252 ----
+  				   x + ((centerx > 0) ? centerx : 0),
+  				   y + ((centery > 0) ? centery : 0),
+  				   (((Pixlabel *) label)->width > width)? 
+! 						width:((Pixlabel *)label)->width ,
+! 				  (height) ? 
+! 				   ((((Pixlabel *) label)->height > height) ? 
+! 						 height : ((Pixlabel *)label)->height)
+!  					: Button_Height(info) - 2, state);
+!  
+  	} else if (state & OLGX_LABEL_IS_XIMAGE) {
+  
+  	    int             centerx, centery;
+***************
+*** 255,261 ****
+  				   y + ((centery > 0) ? centery : 0),
+  				   (((Pixlabel *) label)->width > width)? 
+                                                 width:((Pixlabel *)label)->width ,
+! 				  (height) ? height : Button_Height(info) - 2, state);
+         } else {
+  
+  
+--- 259,268 ----
+  				   y + ((centery > 0) ? centery : 0),
+  				   (((Pixlabel *) label)->width > width)? 
+                                                 width:((Pixlabel *)label)->width ,
+! 				  (height) ? 
+! 				   ((((Pixlabel *) label)->height > height) ? 
+! 					       height : ((Pixlabel *)label)->height)
+! 					: Button_Height(info) - 2, state);
+         } else {
+  
+  
+*** lib/libolgx/ol_init.c.orig	Tue Jun 29 00:18:28 1993
+--- lib/libolgx/ol_init.c	Fri Jan 22 17:09:26 1999
+***************
+*** 9,15 ****
+--- 9,18 ----
+  
+  #include <stdio.h>
+  #include <stdlib.h>
++ #include <sys/param.h>
++ #ifndef __STDC__
+  #include <malloc.h>
++ #endif
+  #include <X11/Xlib.h>
+  #include "olgx_impl.h"
+  #include "busy.h"
+***************
+*** 699,705 ****
+--- 702,718 ----
+  	    XSetFont(info->dpy, info->gc_rec[OLGX_TEXTGC]->gc,
+  		     info->textfont->fid);
+  
++  	    /* Even if !three_d, OLGX_TEXTGC_REV doesn't necessarily exist,
++ 	     * so we only set the font, if it does. I don't know if this is
++ 	     * the right place to change it, but this fixes a bug reported
++ 	     * on alt.toolkits.xview.
++ 	     * martin-2.buck@student.uni-ulm.de
++ 	     */
++ #if 1
++ 	    if (!info->three_d && info->gc_rec[OLGX_TEXTGC_REV])
++ #else
+  	    if (!info->three_d)
++ #endif
+  		/* Only 2d has TEXTGC_REV */
+  		XSetFont(info->dpy, info->gc_rec[OLGX_TEXTGC_REV]->gc,
+  			 info->textfont->fid);
+***************
+*** 711,718 ****
+--- 724,738 ----
+  	 */
+  
+  	XSetFont(info->dpy, info->gc_rec[OLGX_TEXTGC]->gc, font_info->fid);
++ 	/* See comment above.
++ 	 * martin-2.buck@student.uni-ulm.de
++ 	 */
++ #if 1
++ 	if (!info->three_d && info->gc_rec[OLGX_TEXTGC_REV])
++ #else
+  
+  	if (!info->three_d)
++ #endif
+  	    /* Only 2d has TEXTGC_REV */
+            XSetFont(info->dpy, info->gc_rec[OLGX_TEXTGC_REV]->gc, font_info->fid);
+  #endif /* OW_I18N */
+***************
+*** 925,931 ****
+--- 945,958 ----
+      if (! (Olgx_Flags(info) & OLGX_FONTSET)) {
+  #endif
+      info->gc_rec[OLGX_TEXTGC]->values.font = info->textfont->fid;
++     /* See comment above.
++      * martin-2.buck@student.uni-ulm.de
++      */
++ #if 1
++     if (!info->three_d && info->gc_rec[OLGX_TEXTGC_REV])
++ #else
+      if (!info->three_d)
++ #endif
+  	info->gc_rec[OLGX_TEXTGC_REV]->values.font = info->textfont->fid;
+  #ifdef OW_I18N
+      }
+*** lib/libolgx/ol_sb.c.orig	Tue Jun 29 00:18:29 1993
+--- lib/libolgx/ol_sb.c	Thu Jan 21 22:39:01 1999
+***************
+*** 11,17 ****
+--- 11,22 ----
+   */
+  
+  #include <stdio.h>
++ #include <sys/param.h>
++ #if (defined(BSD) && (BSD >= 199103))
++ #include <stdlib.h>
++ #else
+  #include <malloc.h>
++ #endif
+  #include <X11/Xlib.h>
+  #include <X11/Xutil.h>
+  #include "olgx_impl.h"

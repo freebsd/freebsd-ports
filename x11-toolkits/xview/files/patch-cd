@@ -1,0 +1,23 @@
+*** config/XView.rules.orig	Tue Jun 29 00:13:20 1993
+--- config/XView.rules	Thu Jan 21 18:27:53 1999
+***************
+*** 366,374 ****
+  #ifndef InstallSharedLibraryNoBuild
+  #define	InstallSharedLibraryNoBuild(libname,rev,dest)				@@\
+  install::  								@@\
+!         $(RM) /dest/lib/**/libname.so                                   @@\
+  	$(INSTALL) -c $(INSTSHAREDLIBFLAGS) lib/**/libname.so.rev dest	@@\
+!         (cd dest; $(LN) lib/**/libname.so.rev lib/**/libname.so)
+  
+  #endif /* InstallSharedLibraryNoBuild */
+  
+--- 366,374 ----
+  #ifndef InstallSharedLibraryNoBuild
+  #define	InstallSharedLibraryNoBuild(libname,rev,dest)				@@\
+  install::  								@@\
+! 	$(RM) /dest/lib/**/libname.so                                   @@\
+  	$(INSTALL) -c $(INSTSHAREDLIBFLAGS) lib/**/libname.so.rev dest	@@\
+! 	(cd dest; $(LN) lib/**/libname.so.rev lib/**/libname.so)
+  
+  #endif /* InstallSharedLibraryNoBuild */
+  

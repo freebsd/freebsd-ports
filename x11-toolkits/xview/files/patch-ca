@@ -1,0 +1,28 @@
+*** config/Imakefile.orig	Tue Jun 29 00:13:19 1993
+--- config/Imakefile	Thu Jan 21 16:39:50 1999
+***************
+*** 8,17 ****
+  /**/# config directory
+  /**/# @(#)Imakefile	1.9 28 Jun 1993 SMI
+  
+! XVFILES = XView.cf XView.lib XView.obj XView.rules XView.tmpl library.tmpl
+  CFFILES = $(XVFILES) $(HEADERS)
+  
+  InstallMultipleDestFlags(install,$(CFFILES),$(CONFIGDIR),$(INSTDATFLAGS))
+  
+  depend::
+  
+--- 8,20 ----
+  /**/# config directory
+  /**/# @(#)Imakefile	1.9 28 Jun 1993 SMI
+  
+! #XVFILES = XView.cf XView.lib XView.obj XView.rules XView.tmpl library.tmpl
+! XVFILES = XView.cf XView.lib XView.obj XView.rules XView.tmpl XView.prog
+  CFFILES = $(XVFILES) $(HEADERS)
+  
+  InstallMultipleDestFlags(install,$(CFFILES),$(CONFIGDIR),$(INSTDATFLAGS))
++ 
++ all::
+  
+  depend::
+  

@@ -1,0 +1,64 @@
+*** lib/libxview/notify/ndet_loop.c~	Tue Nov 22 04:40:21 1994
+--- lib/libxview/notify/ndet_loop.c	Tue Nov 22 05:35:17 1994
+***************
+*** 21,27 ****
+--- 21,31 ----
+  #include <xview_private/nint.h>
+  #include <xview_private/ndis.h>	/* For ndis_dispatch */
+  #ifndef SVR4
++ #ifndef __FreeBSD__
+  #include <syscall.h>
++ #else
++ #include <sys/syscall.h>
++ #endif
+  #else SVR4
+  #include <sys/syscall.h>
+  #include <sys/poll.h>
+*** lib/libxview/notify/sys_fcntl.c~	Mon Jun 28 22:18:17 1993
+--- lib/libxview/notify/sys_fcntl.c	Tue Nov 22 07:48:49 1994
+***************
+*** 15,21 ****
+--- 15,25 ----
+   */
+  
+  #ifndef SVR4
++ #ifndef __FreeBSD__
+  #include <syscall.h>
++ #else
++ #include <sys/syscall.h>
++ #endif
+  #else SVR4
+  #include <sys/syscall.h>
+  #endif SVR4
+*** lib/libxview/notify/sys_read.c~	Mon Jun 28 22:18:01 1993
+--- lib/libxview/notify/sys_read.c	Tue Nov 22 08:16:11 1994
+***************
+*** 15,21 ****
+--- 15,25 ----
+   */
+  
+  #ifndef SVR4
++ #ifndef __FreeBSD__
+  #include <syscall.h>
++ #else
++ #include <sys/syscall.h>
++ #endif
+  #else SVR4
+  #include <sys/syscall.h>
+  #endif SVR4
+*** lib/libxview/notify/sys_select.c~	Mon Jun 28 22:18:11 1993
+--- lib/libxview/notify/sys_select.c	Tue Nov 22 08:20:27 1994
+***************
+*** 15,21 ****
+--- 15,25 ----
+   */
+  
+  #ifndef SVR4
++ #ifndef __FreeBSD__
+  #include <syscall.h>
++ #else
++ #include <sys/syscall.h>
++ #endif
+  #else SVR4
+  #include <values.h>
+  #include <sys/time.h>

@@ -1,0 +1,239 @@
+*** lib/libxview/help/help_file.c.orig	Fri Jan 22 18:35:11 1999
+--- lib/libxview/help/help_file.c	Fri Jan 22 18:38:24 1999
+***************
+*** 18,24 ****
+  
+  #include <xview_private/i18n_impl.h>
+  
+! #define DEFAULT_HELP_DIRECTORY "/usr/lib/help"
+  #define MAX_MORE_HELP_CMD 128
+  
+  Xv_private char *xv_strtok();
+--- 18,24 ----
+  
+  #include <xview_private/i18n_impl.h>
+  
+! #define DEFAULT_HELP_DIRECTORY "/usr/X11R6/lib/help"
+  #define MAX_MORE_HELP_CMD 128
+  
+  Xv_private char *xv_strtok();
+*** lib/libxview/icon/icon.c.orig	Fri Jan 22 18:41:57 1999
+--- lib/libxview/icon/icon.c	Fri Jan 22 18:50:48 1999
+***************
+*** 343,357 ****
+      val.ts_x_origin = 0;
+      val.ts_y_origin = 0;	
+      val_mask = GCForeground | GCBackground | GCFunction | 
+!                GCPlaneMask | GCFillStyle | GCTileStipXOrigin | 
+                 GCTileStipYOrigin;
+      XChangeGC(display, gc, val_mask, &val );
+  
+      if (PR_NOT_MPR(((Pixrect *) icon->ic_mpr)))  {
+  	DRAWABLE_INFO_MACRO( (Xv_opaque) icon->ic_mpr, src_info );
+  	val.clip_mask = xv_xid(mask_info);
+! 	val.stipple = xv_xid(src_info);
+! 	val_mask = GCStipple | GCClipMask;
+  	XChangeGC(display, gc, val_mask, &val );
+  
+  	if ( xv_rop_internal( display, xid, gc, icon->ic_gfxrect.r_left + x,
+--- 343,374 ----
+      val.ts_x_origin = 0;
+      val.ts_y_origin = 0;	
+      val_mask = GCForeground | GCBackground | GCFunction | 
+!                GCPlaneMask | GCTileStipXOrigin | 
+                 GCTileStipYOrigin;
+      XChangeGC(display, gc, val_mask, &val );
+  
+      if (PR_NOT_MPR(((Pixrect *) icon->ic_mpr)))  {
+  	DRAWABLE_INFO_MACRO( (Xv_opaque) icon->ic_mpr, src_info );
++ 
++ 	/* stipple only if we have a bitmap icon */
++ 	if (xv_depth(src_info) == 1) {
++ 		val.stipple = xv_xid(src_info);
++ 		val.fill_style = FillOpaqueStippled;
++ 		val_mask = GCFillStyle | GCStipple;
++ 	} else if (xv_depth(info) == xv_depth(src_info)) {
++ 		val.tile = xv_xid(src_info);
++ 		val.fill_style = FillTiled;
++ 		val_mask = GCFillStyle | GCTile;
++ 	} else {
++ 		xv_error(NULL,
++ 			ERROR_STRING,
++ 		 	XV_MSG("icon: can't handle drawables of different depth"),
++ 		 	0);
++ 		return (XV_ERROR);
++ 	}	
++ 
+  	val.clip_mask = xv_xid(mask_info);
+! 	val_mask |= GCClipMask;
+  	XChangeGC(display, gc, val_mask, &val );
+  
+  	if ( xv_rop_internal( display, xid, gc, icon->ic_gfxrect.r_left + x,
+*** lib/libxview/win/win_input.c~	Tue Oct  8 22:51:45 1996
+--- lib/libxview/win/win_input.c	Wed Apr 17 02:26:55 1996
+***************
+*** 854,860 ****
+  #ifdef X11R6
+  	/* lumpi@dobag.in-berlin.de */
+  		int ksym_pcc;
+! 		XGetKeyboardMapping(display,NoSymbol,0,&ksym_pcc);
+  		for (index = 0; index < ksym_pcc; index++) {
+  #else
+  		for (index = 0; index < display->keysyms_per_keycode; index++) {
+--- 854,862 ----
+  #ifdef X11R6
+  	/* lumpi@dobag.in-berlin.de */
+  		int ksym_pcc;
+! 		int tc_min_keycode, tc_max_keycode;
+! 		XDisplayKeycodes(display, &tc_min_keycode, &tc_max_keycode);
+! 		XGetKeyboardMapping(display,tc_min_keycode,tc_max_keycode-tc_min_keycode-1,&ksym_pcc);
+  		for (index = 0; index < ksym_pcc; index++) {
+  #else
+  		for (index = 0; index < display->keysyms_per_keycode; index++) {
+***************
+*** 862,868 ****
+  		    if ((ksym = XLookupKeysym(ek, index)) != NoSymbol)
+  			if (IsKeypadKey(ksym)) {
+  			    /* See if key has been rebound. */
+! 			    if (!translate_key(display, ksym, ek->state,
+  					       buffer, BUFFERSIZE)) {
+  			        (void)win_translate_KP_keysym(ksym, buffer);
+  			    }
+--- 864,870 ----
+  		    if ((ksym = XLookupKeysym(ek, index)) != NoSymbol)
+  			if (IsKeypadKey(ksym)) {
+  			    /* See if key has been rebound. */
+! 			    if (translate_key(display, ksym, ek->state,
+  					       buffer, BUFFERSIZE)) {
+  			        (void)win_translate_KP_keysym(ksym, buffer);
+  			    }
+***************
+*** 2721,2728 ****
+   * Xlib's.
+   */
+  
+! #ifdef X11R6
+! /* lumpi@dobag.in-berlin.de */
+  static int
+  translate_key(dpy, symbol, modifiers, buffer, nbytes)
+      Display 		*dpy;
+--- 2723,2732 ----
+   * Xlib's.
+   */
+  
+! #ifdef X11R6 
+! /* lumpi@dobag.in-berlin.de  
+!    tom@sees.bangor.ac.uk this replacement for X11R6 doesn't work. At least 
+!    it should now return sensible values though. */
+  static int
+  translate_key(dpy, symbol, modifiers, buffer, nbytes)
+      Display 		*dpy;
+***************
+*** 2732,2742 ****
+      int 		 nbytes;
+  {
+  	/* This is _very_ rude ! */
+! 	strcpy(buffer,XKeysymToString(symbol));
+  }
+  
+- #else
+  
+  static int
+  translate_key(dpy, symbol, modifiers, buffer, nbytes)
+      Display 		*dpy;
+--- 2736,2753 ----
+      int 		 nbytes;
+  {
+  	/* This is _very_ rude ! */
+! 	char *string;
+! 	string = XKeysymToString(symbol);
+!      	if (string) {
+! 		strncpy(buffer,XKeysymToString(symbol),nbytes);
+! 		return(strlen(buffer));
+! 	}
+! 	else
+! 		return 0;
+  }
+  
+  
++ #else
+  static int
+  translate_key(dpy, symbol, modifiers, buffer, nbytes)
+      Display 		*dpy;
+***************
+*** 2762,2765 ****
+      }
+      return 0;
+  }
+! #endif
+--- 2773,2776 ----
+      }
+      return 0;
+  }
+! #endif 
+
+3.
+
+
+*** lib/libxview/ttysw/tty_mapkey.c~	Tue Jun 29 06:17:20 1993
+--- lib/libxview/ttysw/tty_mapkey.c	Tue Jan 16 23:58:56 1996
+***************
+*** 500,506 ****
+   * have more time.
+   */
+  
+! #ifdef i386
+  static void
+  ttysw_arrow_keys_to_string(xv_id, str)
+      unsigned        xv_id;
+--- 500,506 ----
+   * have more time.
+   */
+  
+! #if defined(i386) && !defined (__FreeBSD__)
+  static void
+  ttysw_arrow_keys_to_string(xv_id, str)
+      unsigned        xv_id;
+*** lib/libxview/ttysw/cim_size.c.orig  Tue Jun 29 06:17:14 1993
+--- lib/libxview/ttysw/cim_size.c       Sat Oct 25 00:53:49 1997
+***************
+*** 156,174 ****
+  {
+  
+      if (lines_ptr) {
+!         cfree((CHAR *) (lines_ptr));
+  	lines_ptr = NULL;
+      }
+      if (image) {
+!         cfree((CHAR **) image);
+  	image = NULL;
+      }
+      if (mode_ptr) {
+! 	cfree((char *) (mode_ptr));
+  	mode_ptr = NULL;
+      }
+      if (screenmode) {
+! 	cfree((char **) screenmode);
+  	screenmode = NULL;
+      }
+  }
+--- 156,174 ----
+  {
+  
+      if (lines_ptr) {
+!         free((CHAR *) (lines_ptr));
+  	lines_ptr = NULL;
+      }
+      if (image) {
+!         free((CHAR **) image);
+  	image = NULL;
+      }
+      if (mode_ptr) {
+! 	free((char *) (mode_ptr));
+  	mode_ptr = NULL;
+      }
+      if (screenmode) {
+! 	free((char **) screenmode);
+  	screenmode = NULL;
+      }
+  }

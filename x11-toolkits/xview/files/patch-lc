@@ -1,0 +1,14 @@
+--- lib/libxview/color/cms_pblc.c.orig	Tue Jun 29 14:15:53 1993
++++ lib/libxview/color/cms_pblc.c	Sat Jan  9 23:32:10 1999
+@@ -316,9 +316,10 @@
+ {
+     Cms_info		*cms = CMS_PRIVATE(cms_public);
+     Xv_opaque		value;
+-    Attr_avlist     	avlist = (Attr_avlist) args;
++    Attr_avlist     	avlist;
+     int			cms_status = 0;
+ 
++    MAKE_AVLIST(args, avlist);
+     switch (attr) {
+       case CMS_PIXEL: {
+ 	  unsigned long    index;

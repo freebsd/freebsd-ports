@@ -1,0 +1,2556 @@
+diff -rc ../old/xview3.2p1-X11R6/lib/libxview/attr/attr_copy.c ./lib/libxview/attr/attr_copy.c
+*** ../old/xview3.2p1-X11R6/lib/libxview/attr/attr_copy.c	Tue Jun 29 01:14:35 1993
+--- ./lib/libxview/attr/attr_copy.c	Sun Nov 20 13:39:00 1994
+***************
+*** 12,17 ****
+--- 12,22 ----
+  
+  #include <xview/attr.h>
+  
++ static int copy_1_attr();
++ static int copy_counted_list();
++ static int copy_singleton();
++ static int copy_null_list();
++ 
+  /*
+   * attr_copy:	copy an attribute list, returning the size in bytes
+   */
+diff -rc ../old/xview3.2p1-X11R6/lib/libxview/base/Imakefile ./lib/libxview/base/Imakefile
+*** ../old/xview3.2p1-X11R6/lib/libxview/base/Imakefile	Tue Jun 29 01:14:40 1993
+--- ./lib/libxview/base/Imakefile	Sun Nov 20 13:39:00 1994
+***************
+*** 37,43 ****
+  	drawable.o\
+  	xv_debug.o\
+  	xv_parse.o\
+! 	xv_list.o\ 
+  	xv_error.o
+  
+  SRCS=\
+--- 37,43 ----
+  	drawable.o\
+  	xv_debug.o\
+  	xv_parse.o\
+! 	xv_list.o\
+  	xv_error.o
+  
+  SRCS=\
+diff -rc ../old/xview3.2p1-X11R6/lib/libxview/base/base.h ./lib/libxview/base/base.h
+*** ../old/xview3.2p1-X11R6/lib/libxview/base/base.h	Tue Jun 29 01:14:42 1993
+--- ./lib/libxview/base/base.h	Sun Nov 20 13:39:00 1994
+***************
+*** 6,15 ****
+--- 6,20 ----
+   *	file for terms of the license.
+   */
+  
++ #include <sys/param.h>
+  #ifndef xview_base_DEFINED
+  #define xview_base_DEFINED
+  #include <string.h>
++ #ifdef __STDC__
++ #include <stdlib.h>
++ #else
+  #include <malloc.h>
++ #endif
+  
+  #include <xview/xv_c_types.h>
+  
+***************
+*** 54,63 ****
+   * non-SVR4 systems.
+   */
+  #ifndef SUNOS41
+  #define XV_OS_SVR4
+- #define XV_USE_TTCOMPAT
+  #define SYSV_WAIT 
+  #define SYSV_UCONTEXT 
+  #define XV_USE_XVFCNTL 
+  #endif
+   
+--- 59,70 ----
+   * non-SVR4 systems.
+   */
+  #ifndef SUNOS41
++ #if !(defined(BSD) && (BSD >= 199103))
+  #define XV_OS_SVR4
+  #define SYSV_WAIT 
+  #define SYSV_UCONTEXT 
++ #endif
++ #define XV_USE_TTCOMPAT
+  #define XV_USE_XVFCNTL 
+  #endif
+   
+diff -rc ../old/xview3.2p1-X11R6/lib/libxview/base/xv_debug.h ./lib/libxview/base/xv_debug.h
+*** ../old/xview3.2p1-X11R6/lib/libxview/base/xv_debug.h	Tue Jun 29 01:14:44 1993
+--- ./lib/libxview/base/xv_debug.h	Sun Nov 20 13:39:00 1994
+***************
+*** 9,19 ****
+  #ifndef _xv_debug_h_already_included
+  #define _xv_debug_h_already_included
+  
+  #ifndef FILE
+  #ifndef SVR4
+- #undef NULL
+  #endif SVR4
+  #include <stdio.h>
+  #endif FILE
+  #include <xview/pkg.h>		/* needed to get definition of Xv_private */
+    /* 
+--- 9,24 ----
+  #ifndef _xv_debug_h_already_included
+  #define _xv_debug_h_already_included
+  
++ #ifdef NULL
++ #undef NULL
++ #endif
+  #ifndef FILE
+  #ifndef SVR4
+  #endif SVR4
+  #include <stdio.h>
++ #ifndef NULL
++ #define NULL 0
++ #endif
+  #endif FILE
+  #include <xview/pkg.h>		/* needed to get definition of Xv_private */
+    /* 
+*** lib/libxview/base/xv_error.c.orig	Tue Jun 29 00:14:42 1993
+--- lib/libxview/base/xv_error.c	Fri Jan 22 17:30:59 1999
+***************
+*** 11,16 ****
+--- 11,17 ----
+   */
+  
+  #include <stdio.h>
++ #include <sys/param.h>
+  #include <xview/pkg_public.h>
+  #include <X11/Xlib.h>
+  #include <xview_private/i18n_impl.h>
+***************
+*** 18,27 ****
+  
+  /* Unix system error variables */
+  extern int      sys_nerr;
+  extern char    *sys_errlist[];
+  extern int      errno;
+  
+! Xv_private_data char *xv_app_name;
+  Xv_private int (*xv_error_proc) ();
+  
+  /*
+--- 19,32 ----
+  
+  /* Unix system error variables */
+  extern int      sys_nerr;
++ #if (defined(BSD) && (BSD >= 199306))
++ extern const char *const sys_errlist[];
++ #else
+  extern char    *sys_errlist[];
++ #endif
+  extern int      errno;
+  
+! extern Xv_private_data char *xv_app_name;
+  Xv_private int (*xv_error_proc) ();
+  
+  /*
+diff -rc ../old/xview3.2p1-X11R6/lib/libxview/dnd/dnd.c ./lib/libxview/dnd/dnd.c
+*** ../old/xview3.2p1-X11R6/lib/libxview/dnd/dnd.c	Tue Jun 29 01:15:57 1993
+--- ./lib/libxview/dnd/dnd.c	Sun Nov 20 13:39:00 1994
+***************
+*** 38,43 ****
+--- 38,47 ----
+  extern int  DndContactDSDM();
+  extern int  DndFindSite();
+  extern XID  DndGetCursor();
++ static int SendTrigger();
++ static int SendOldDndEvent();
++ static int WaitForAck();
++ static int IsV2App();
+  
+  Xv_public int
+  dnd_send_drop(dnd_public)
+diff -rc ../old/xview3.2p1-X11R6/lib/libxview/dnd/site.c ./lib/libxview/dnd/site.c
+*** ../old/xview3.2p1-X11R6/lib/libxview/dnd/site.c	Tue Jun 29 01:15:58 1993
+--- ./lib/libxview/dnd/site.c	Sun Nov 20 13:39:00 1994
+***************
+*** 19,24 ****
+--- 19,25 ----
+  #ifdef SVR4 
+  #include <stdlib.h> 
+  #endif SVR4
++ #include <sys/param.h>
+  
+  static     void 	TransCoords();
+  Xv_private Xv_Window	win_get_top_level();
+***************
+*** 246,252 ****
+--- 247,257 ----
+            /* (rectNode->rect) is of the wrong type. */
+            memmove(rect, &(rectNode->rect),  sizeof(Rect));
+  #else
++ #if (defined(BSD) && (BSD >= 199103))
++ 	  bcopy(&(rectNode->rect), rect, sizeof(Rect));
++ #else
+  	  bcopy(rectNode->rect, rect, sizeof(Rect));
++ #endif
+  #endif SVR4
+  
+  	  return((Xv_opaque)rect);
+diff -rc ../old/xview3.2p1-X11R6/lib/libxview/file_chooser/Imakefile ./lib/libxview/file_chooser/Imakefile
+*** ../old/xview3.2p1-X11R6/lib/libxview/file_chooser/Imakefile	Tue Jun 29 01:17:58 1993
+--- ./lib/libxview/file_chooser/Imakefile	Sun Nov 20 13:39:00 1994
+***************
+*** 27,61 ****
+  		path_impl.h hist_impl.h
+  
+  DATA_OBJS = fchsr_data.o\
+! 	   flist_data.o\
+! 	   path_data.o\
+! 	   hist_data.o
+  
+  TEXT_OBJS =\
+! 	file_chsr.o\
+          fc_layout.o\
+          file_list.o\
+          path.o\
+          xv_path_util.o\
+          hist_list.o\
+          hist_menu.o\
+! 	fchsr_data.o\
+!         flist_data.o\ 
+!         path_data.o\ 
+          hist_data.o
+  
+  
+  SRCS =\
+! 	file_chsr.c\
+! 	fc_layout.c\
+! 	file_list.c\
+! 	path.c\
+! 	xv_path_util.c\
+! 	hist_list.c\
+! 	hist_menu.c\
+! 	fchsr_data.c\
+!         flist_data.c\ 
+!         path_data.c\ 
+          hist_data.c
+  
+  LIBTARGET = xview
+--- 27,61 ----
+  		path_impl.h hist_impl.h
+  
+  DATA_OBJS = fchsr_data.o\
+!         flist_data.o\
+!         path_data.o\
+!         hist_data.o
+  
+  TEXT_OBJS =\
+!         file_chsr.o\
+          fc_layout.o\
+          file_list.o\
+          path.o\
+          xv_path_util.o\
+          hist_list.o\
+          hist_menu.o\
+!         fchsr_data.o\
+!         flist_data.o\
+!         path_data.o\
+          hist_data.o
+  
+  
+  SRCS =\
+!         file_chsr.c\
+!         fc_layout.c\
+!         file_list.c\
+!         path.c\
+!         xv_path_util.c\
+!         hist_list.c\
+!         hist_menu.c\
+!         fchsr_data.c\
+!         flist_data.c\
+!         path_data.c\
+          hist_data.c
+  
+  LIBTARGET = xview
+diff -rc ../old/xview3.2p1-X11R6/lib/libxview/file_chooser/fc_layout.c ./lib/libxview/file_chooser/fc_layout.c
+*** ../old/xview3.2p1-X11R6/lib/libxview/file_chooser/fc_layout.c	Tue Jun 29 01:17:55 1993
+--- ./lib/libxview/file_chooser/fc_layout.c	Sun Nov 20 13:39:01 1994
+***************
+*** 464,471 ****
+  
+  	new_height 
+  	    = (* private->exten_func)( FC_PUBLIC(private),
+! 				      private->rect,
+! 				      exten_rect,
+  				      COLS(2),
+  				      private->rect.r_width - COLS(2),
+  				      max_height
+--- 464,471 ----
+  
+  	new_height 
+  	    = (* private->exten_func)( FC_PUBLIC(private),
+! 				      &private->rect,
+! 				      &exten_rect,
+  				      COLS(2),
+  				      private->rect.r_width - COLS(2),
+  				      max_height
+diff -rc ../old/xview3.2p1-X11R6/lib/libxview/file_chooser/file_list.c ./lib/libxview/file_chooser/file_list.c
+*** ../old/xview3.2p1-X11R6/lib/libxview/file_chooser/file_list.c	Tue Jun 29 01:17:56 1993
+--- ./lib/libxview/file_chooser/file_list.c	Sun Nov 20 13:39:01 1994
+***************
+*** 23,28 ****
+--- 23,31 ----
+  #include <xview_private/flist_impl.h>
+  #include <xview_private/portable.h>
+  
++ #ifdef __FreeBSD__
++ #include <regex.h>
++ #endif
+  
+  
+  /* X bitmaps for default glyphs */
+***************
+*** 41,46 ****
+--- 44,50 ----
+  static int		flist_list_notify();
+  static int		validate_new_directory();
+  static void		flist_new_dir();
++ static int		flist_match_regex();
+  
+  #if defined(__STDC__) || defined(__cplusplus) || defined(c_plusplus)
+  static void	flist_error(File_list_private *private, char *format, ...);
+***************
+*** 521,527 ****
+--- 525,535 ----
+      if (status == DESTROY_CLEANUP) {
+  	xv_free_ref( private->directory );
+  	xv_free_ref( private->regex_pattern );
++ #ifndef __FreeBSD__
+  	xv_free_ref( private->regex_compile );
++ #else
++ 	xv_free_regex_t( (regex_t *)private->regex_compile );
++ #endif
+  	xv_free_ref( private->dotdot_string );
+  	if ( private->dir_ptr )
+  	    (void) closedir( private->dir_ptr );
+***************
+*** 1174,1187 ****
+  static int 	step();
+  #endif /* SVR4 */
+  
+! 
+  #include <regexp.h>
+  
+  
+  static void
+  flist_compile_regex( private )
+       File_list_private *private;
+  {
+      char compile_buf[MAXPATHLEN+1];
+      char *end_ptr;
+      size_t num_bytes;
+--- 1182,1197 ----
+  static int 	step();
+  #endif /* SVR4 */
+  
+! #ifndef __FreeBSD__
+  #include <regexp.h>
++ #endif
+  
+  
+  static void
+  flist_compile_regex( private )
+       File_list_private *private;
+  {
++ #ifndef __FreeBSD__
+      char compile_buf[MAXPATHLEN+1];
+      char *end_ptr;
+      size_t num_bytes;
+***************
+*** 1197,1202 ****
+--- 1207,1223 ----
+      xv_free_ref( private->regex_compile );
+      private->regex_compile = xv_alloc_n(char, num_bytes);
+      (void) XV_BCOPY(compile_buf, private->regex_compile, num_bytes);
++ #else
++     regex_t *compile_buf = malloc(sizeof(regex_t));
++     if (compile_buf == NULL){
++       fprintf(stderr, "Couldn't allocate compile buffer\n");
++       exit(-1);
++     } 
++     regcomp(compile_buf, private->regex_pattern, 0);
++     xv_free_regex_t((regex_t *)private->regex_compile);
++     private->regex_compile = (char *)compile_buf;
++ #endif
++ 
+  } 
+  
+  
+***************
+*** 1205,1211 ****
+--- 1226,1236 ----
+       char *s;
+       File_list_private *private;
+  {
++ #ifndef __FreeBSD__
+      return step(s, private->regex_compile);
++ #else
++     return !regexec((regex_t *)private->regex_compile, s, 0, NULL, 0);
++ #endif
+  }
+  
+  /****************************************************************************/
+diff -rc ../old/xview3.2p1-X11R6/lib/libxview/file_chooser/xv_path_util.h ./lib/libxview/file_chooser/xv_path_util.h
+*** ../old/xview3.2p1-X11R6/lib/libxview/file_chooser/xv_path_util.h	Sat Jun 25 21:05:20 1994
+--- ./lib/libxview/file_chooser/xv_path_util.h	Sun Nov 20 13:39:01 1994
+***************
+*** 41,46 ****
+--- 41,47 ----
+  
+  
+  #define xv_free_ref(str)	{if((str)) {xv_free((str)); (str) = NULL;}}
++ #define xv_free_regex_t(str)  {if((str)) {regfree((str)); free  ((str)); (str) = NULL;}}
+  
+  
+  EXTERN_FUNCTION(void  xv_error_sprintf, (Frame frame, int use_footer, char *format, DOTDOTDOT) );
+--- lib/libxview/filter/filter.c.orig	Tue Jun 29 06:14:57 1993
++++ lib/libxview/filter/filter.c	Tue Oct 21 23:57:30 1997
+@@ -39,11 +39,12 @@
+ 
+ char           *stream_fgets();
+ 
+-enum CharClass
++static enum CharClass
+                 breakProc();
+-struct CharAction
++static struct CharAction
+                 digits();
+-
++static
++		any_shell_meta();
+ 
+ struct filter_rec **
+ xv_parse_filter_table(in, filename)
+@@ -203,10 +204,10 @@
+ {
+     int             i;
+     for (i = 0; table[i] != NULL; i++) {
+-	cfree((char *) table[i]->call);
++	free((char *) table[i]->call);
+ 	free((char *) table[i]);
+     }
+-    cfree((char *) table);
++    free((char *) table);
+ }
+ 
+ static struct CharAction
+*** lib/libxview/font/font.c.orig	Tue Jun 29 00:15:01 1993
+--- lib/libxview/font/font.c	Sun Jan 24 22:58:32 1999
+***************
+*** 67,72 ****
+--- 67,76 ----
+  Xv_private char *xv_font_scale_cmdline();
+  Xv_private char *xv_font_scale();
+  
++ static int font_setup_defaults();
++ static int font_construct_name();
++ static int font_init_create_attrs();
++ 
+  /*
+   * delimiters
+   */
+diff -rc ../old/xview3.2p1-X11R6/lib/libxview/frame/fm_get.c ./lib/libxview/frame/fm_get.c
+*** ../old/xview3.2p1-X11R6/lib/libxview/frame/fm_get.c	Tue Jun 29 01:16:10 1993
+--- ./lib/libxview/frame/fm_get.c	Sun Nov 20 13:39:02 1994
+***************
+*** 10,15 ****
+--- 10,16 ----
+   *	file for terms of the license.
+   */
+  
++ #include <ctype.h>
+  #include <xview_private/fm_impl.h>
+  #include <xview_private/draw_impl.h>
+  #include <xview/server.h>
+diff -rc ../old/xview3.2p1-X11R6/lib/libxview/frame/fm_impl.h ./lib/libxview/frame/fm_impl.h
+*** ../old/xview3.2p1-X11R6/lib/libxview/frame/fm_impl.h	Tue Jun 29 01:16:15 1993
+--- ./lib/libxview/frame/fm_impl.h	Sun Nov 20 13:39:02 1994
+***************
+*** 17,27 ****
+  #define _frame_impl_h_already_included
+  
+  /* standard includes */
+  #ifndef FILE
+  #ifndef SVR4
+- #undef NULL
+  #endif SVR4
+  #include <stdio.h>
+  #endif FILE
+  #include <sys/time.h>
+  #ifdef OW_I18N
+--- 17,32 ----
+  #define _frame_impl_h_already_included
+  
+  /* standard includes */
++ #ifdef NULL
++ #undef NULL
++ #endif
+  #ifndef FILE
+  #ifndef SVR4
+  #endif SVR4
+  #include <stdio.h>
++ #ifndef NULL
++ #define NULL 0
++ #endif
+  #endif FILE
+  #include <sys/time.h>
+  #ifdef OW_I18N
+diff -rc ../old/xview3.2p1-X11R6/lib/libxview/frame/fm_props.h ./lib/libxview/frame/fm_props.h
+*** ../old/xview3.2p1-X11R6/lib/libxview/frame/fm_props.h	Tue Jun 29 01:16:14 1993
+--- ./lib/libxview/frame/fm_props.h	Sun Nov 20 13:39:02 1994
+***************
+*** 13,23 ****
+  #define _frame_props_h_already_included
+  
+  /* standard includes */
+  #ifndef FILE
+  #ifndef SVR4
+- #undef NULL
+  #endif SVR4
+  #include <stdio.h>
+  #endif FILE
+  #include <sys/time.h>
+  #include <xview/notify.h>
+--- 13,28 ----
+  #define _frame_props_h_already_included
+  
+  /* standard includes */
++ #ifdef NULL
++ #undef NULL
++ #endif
+  #ifndef FILE
+  #ifndef SVR4
+  #endif SVR4
+  #include <stdio.h>
++ #ifndef NULL
++ #define NULL 0
++ #endif
+  #endif FILE
+  #include <sys/time.h>
+  #include <xview/notify.h>
+diff -rc ../old/xview3.2p1-X11R6/lib/libxview/frame/fmcmd_set.c ./lib/libxview/frame/fmcmd_set.c
+*** ../old/xview3.2p1-X11R6/lib/libxview/frame/fmcmd_set.c	Tue Jun 29 01:16:07 1993
+--- ./lib/libxview/frame/fmcmd_set.c	Sun Nov 20 13:39:02 1994
+***************
+*** 18,23 ****
+--- 18,25 ----
+  #include <xview/panel.h>
+  #include <xview/server.h>
+  
++ static int update_default_pin_state();
++ 
+  Pkg_private     Xv_opaque
+  frame_cmd_set_avlist(frame_public, avlist)
+      Frame           frame_public;
+diff -rc ../old/xview3.2p1-X11R6/lib/libxview/frame/frame_base.h ./lib/libxview/frame/frame_base.h
+*** ../old/xview3.2p1-X11R6/lib/libxview/frame/frame_base.h	Tue Jun 29 01:16:14 1993
+--- ./lib/libxview/frame/frame_base.h	Sun Nov 20 13:39:02 1994
+***************
+*** 17,27 ****
+  #define _frame_base_h_already_included
+  
+  /* standard includes */
+  #ifndef FILE
+  #ifndef SVR4
+- #undef NULL
+  #endif SVR4
+  #include <stdio.h>
+  #endif FILE
+  #include <sys/time.h>
+  #include <xview/notify.h>
+--- 17,32 ----
+  #define _frame_base_h_already_included
+  
+  /* standard includes */
++ #ifdef NULL
++ #undef NULL
++ #endif
+  #ifndef FILE
+  #ifndef SVR4
+  #endif SVR4
+  #include <stdio.h>
++ #ifndef NULL
++ #define NULL 0
++ #endif
+  #endif FILE
+  #include <sys/time.h>
+  #include <xview/notify.h>
+diff -rc ../old/xview3.2p1-X11R6/lib/libxview/frame/frame_cmd.h ./lib/libxview/frame/frame_cmd.h
+*** ../old/xview3.2p1-X11R6/lib/libxview/frame/frame_cmd.h	Tue Jun 29 01:16:14 1993
+--- ./lib/libxview/frame/frame_cmd.h	Sun Nov 20 13:39:02 1994
+***************
+*** 17,27 ****
+  #define _frame_cmd_h_already_included
+  
+  /* standard includes */
+  #ifndef FILE
+  #ifndef SVR4
+- #undef NULL
+  #endif SVR4
+  #include <stdio.h>
+  #endif FILE
+  #include <sys/time.h>
+  #include <xview/notify.h>
+--- 17,32 ----
+  #define _frame_cmd_h_already_included
+  
+  /* standard includes */
++ #ifdef NULL
++ #undef NULL
++ #endif
+  #ifndef FILE
+  #ifndef SVR4
+  #endif SVR4
+  #include <stdio.h>
++ #ifndef NULL
++ #define NULL 0
++ #endif
+  #endif FILE
+  #include <sys/time.h>
+  #include <xview/notify.h>
+diff -rc ../old/xview3.2p1-X11R6/lib/libxview/frame/frame_help.h ./lib/libxview/frame/frame_help.h
+*** ../old/xview3.2p1-X11R6/lib/libxview/frame/frame_help.h	Tue Jun 29 01:16:10 1993
+--- ./lib/libxview/frame/frame_help.h	Sun Nov 20 13:39:02 1994
+***************
+*** 17,27 ****
+  #define _frame_help_h_already_included
+  
+  /* standard includes */
+  #ifndef FILE
+  #ifndef SVR4
+- #undef NULL
+  #endif SVR4
+  #include <stdio.h>
+  #endif FILE
+  #include <sys/time.h>
+  #include <xview/notify.h>
+--- 17,32 ----
+  #define _frame_help_h_already_included
+  
+  /* standard includes */
++ #ifdef NULL
++ #undef  NULL
++ #endif
+  #ifndef FILE
+  #ifndef SVR4
+  #endif SVR4
+  #include <stdio.h>
++ #ifndef NULL
++ #define NULL 0
++ #endif
+  #endif FILE
+  #include <sys/time.h>
+  #include <xview/notify.h>
+diff -rc ../old/xview3.2p1-X11R6/lib/libxview/io_stream/file_strms.c ./lib/libxview/io_stream/file_strms.c
+*** ../old/xview3.2p1-X11R6/lib/libxview/io_stream/file_strms.c	Tue Jun 29 01:15:07 1993
+--- ./lib/libxview/io_stream/file_strms.c	Sun Nov 20 13:39:02 1994
+***************
+*** 17,23 ****
+--- 17,27 ----
+  
+  #define GetFISData struct xv_file_input_stream_data *data = (struct xv_file_input_stream_data*) in->client_data
+  
++ #ifndef __FreeBSD__
+  static struct xv_file_input_stream_data {
++ #else
++ struct xv_file_input_stream_data {
++ #endif
+      FILE           *fp;
+      int             lineno;
+  };
+***************
+*** 156,162 ****
+--- 160,170 ----
+  
+  #define GetFOSData struct xv_file_output_stream_data *data = (struct xv_file_output_stream_data*) out->client_data
+  
++ #ifndef __FreeBSD__
+  static struct xv_file_output_stream_data {
++ #else
++ struct xv_file_output_stream_data {
++ #endif
+      FILE           *fp;
+      int             lineno;
+  };
+diff -rc ../old/xview3.2p1-X11R6/lib/libxview/io_stream/othr_strms.c ./lib/libxview/io_stream/othr_strms.c
+*** ../old/xview3.2p1-X11R6/lib/libxview/io_stream/othr_strms.c	Tue Jun 29 01:15:05 1993
+--- ./lib/libxview/io_stream/othr_strms.c	Sun Nov 20 13:39:03 1994
+***************
+*** 17,23 ****
+--- 17,27 ----
+  
+  #define GetFCSData struct xv_filter_comments_stream_data *data = (struct xv_filter_comments_stream_data*) in->client_data
+  
++ #ifndef __FreeBSD__
+  static struct xv_filter_comments_stream_data {
++ #else
++ struct xv_filter_comments_stream_data {
++ #endif
+      Bool            backed_up;
+      char            backup, lastchar;
+  };
+diff -rc ../old/xview3.2p1-X11R6/lib/libxview/io_stream/str_strms.c ./lib/libxview/io_stream/str_strms.c
+*** ../old/xview3.2p1-X11R6/lib/libxview/io_stream/str_strms.c	Tue Jun 29 01:15:06 1993
+--- ./lib/libxview/io_stream/str_strms.c	Sun Nov 20 13:39:03 1994
+***************
+*** 17,23 ****
+--- 17,27 ----
+  
+  #define GetSISData struct string_input_stream_data	*data = (struct string_input_stream_data*) in->client_data
+  
++ #ifndef __FreeBSD__
+  static struct string_input_stream_data {
++ #else
++ struct string_input_stream_data {
++ #endif
+      char           *string;
+      int             charpos;
+  };
+***************
+*** 148,154 ****
+--- 152,162 ----
+  
+  #define GetSOSData struct string_output_stream_data *data = (struct string_output_stream_data*) out->client_data
+  
++ #ifndef __FreeBSD__
+  static struct string_output_stream_data {
++ #else
++ struct string_output_stream_data {
++ #endif
+      char           *string;
+      int             charpos;
+  };
+diff -rc ../old/xview3.2p1-X11R6/lib/libxview/menu/Imakefile ./lib/libxview/menu/Imakefile
+*** ../old/xview3.2p1-X11R6/lib/libxview/menu/Imakefile	Tue Jun 29 01:16:27 1993
+--- ./lib/libxview/menu/Imakefile	Sun Nov 20 13:39:03 1994
+***************
+*** 28,34 ****
+  TEXT_OBJS =\
+  	omi.o\
+  	om_public.o\
+! 	om_render.o\ 
+  	om_set.o\
+  	om_get.o\
+  	om_compat.o
+--- 28,34 ----
+  TEXT_OBJS =\
+  	omi.o\
+  	om_public.o\
+! 	om_render.o\
+  	om_set.o\
+  	om_get.o\
+  	om_compat.o
+diff -rc ../old/xview3.2p1-X11R6/lib/libxview/menu/om_render.c ./lib/libxview/menu/om_render.c
+*** lib/libxview/menu/om_impl.h.orig	Fri Jan 22 18:57:34 1999
+--- lib/libxview/menu/om_impl.h	Fri Jan 22 19:04:41 1999
+***************
+*** 118,123 ****
+--- 118,129 ----
+      Xv_Server		server;
+      int			setting_default;
+      int			three_d;	/* TRUE: 3D, FALSE: 2D */
++ 	/* If we ran out of colors and reverted from 3D to 2D, we set
++ 	* three_d_override, so that future invocations of menu_show won't set
++ 	* three_d back to TRUE.
++ 	* 	martin-2.buck@student.uni-ulm.de
++ 	*/
++     int			three_d_override;
+  } Xv_menu_group_info;
+  
+  
+*** lib/libxview/menu/om_public.c.orig	Fri Jan 22 18:57:50 1999
+--- lib/libxview/menu/om_public.c	Fri Jan 22 19:08:31 1999
+***************
+*** 281,286 ****
+--- 281,287 ----
+  	}
+  	xv_set(server, XV_KEY_DATA, menu_group_info_key, group_info, 0);
+  	group_info->server = server;
++ 	group_info->three_d_override = FALSE;
+      }
+      group_info->client_window = win;
+      group_info->color_index = menu->color_index;
+***************
+*** 309,314 ****
+--- 310,319 ----
+  #else
+  	group_info->three_d = FALSE;
+  #endif
++       /* martin-2.buck@student.uni-ulm.de */
++       if (group_info->three_d_override) {
++ 	group_info->three_d = FALSE;
++       }
+  
+      if (enable_rectp)
+  	menu->enable_rect = *enable_rectp;
+*** lib/libxview/menu/om_render.c.orig	Tue Jun 29 00:16:26 1993
+--- lib/libxview/menu/om_render.c	Fri Jan 22 19:18:57 1999
+***************
+*** 174,179 ****
+--- 174,183 ----
+      Rect            shadowrect;
+      int		    status;
+      Rect            used_window_rect; /* width = 0 => window not reused */
++ #if 1
++     /* martin-2.buck@student.uni-ulm.de */
++     int             three_d_old;
++ #endif
+  
+      /*
+       * Initial setup: Pull out group information.
+***************
+*** 289,294 ****
+--- 293,302 ----
+  			      (Visual *)xv_get(group->client_window, XV_VISUAL))
+          xv_set(m->window, WIN_COLOR_INFO, color_info, 0);
+  
++ #if 1
++     /* martin-2.buck@student.uni-ulm.de */
++     three_d_old = m->group_info->three_d;
++ #endif
+      if (!m->ginfo)
+  	m->ginfo = xv_init_olgx(m->window, &m->group_info->three_d,
+  				  m->default_image.font);
+***************
+*** 306,311 ****
+--- 314,328 ----
+  	    }
+  	xv_set(m->window, WIN_BACKGROUND_COLOR, 0, 0);
+      }
++ #if 1
++     /* martin-2.buck@student.uni-ulm.de */
++     if (three_d_old != m->group_info->three_d) {
++ 	m->group_info->three_d_override = TRUE;
++     }
++     /* BUG: If we arrived here, we should get a new window, because now we
++      * need a border around it.
++      */
++ #endif
+  
+      /* Get the shadow window */
+      if (!m->group_info->three_d) { 
+***************
+*** 470,478 ****
+       * Define the menu and shadow window dimensions.  Note: shadow rect width &
+       * height = menu rect width & height
+       */
+!     xv_set(m->window, XV_RECT, m->fs_menurect, 0);
+      if (!m->group_info->three_d)
+! 	xv_set(m->shadow_window, XV_RECT, shadowrect, 0);
+  
+      XFlush(XV_DISPLAY_FROM_WINDOW(m->window));
+  
+--- 487,495 ----
+       * Define the menu and shadow window dimensions.  Note: shadow rect width &
+       * height = menu rect width & height
+       */
+!     xv_set(m->window, XV_RECT, &m->fs_menurect, 0);
+      if (!m->group_info->three_d)
+! 	xv_set(m->shadow_window, XV_RECT, &shadowrect, 0);
+  
+      XFlush(XV_DISPLAY_FROM_WINDOW(m->window));
+  
+diff -rc ../old/xview3.2p1-X11R6/lib/libxview/menu/om_set.c ./lib/libxview/menu/om_set.c
+*** ../old/xview3.2p1-X11R6/lib/libxview/menu/om_set.c	Tue Jun 29 01:16:24 1993
+--- ./lib/libxview/menu/om_set.c	Sun Nov 20 13:39:03 1994
+***************
+*** 12,17 ****
+--- 12,18 ----
+  
+  /* --------------------------------------------------------------------- */
+  #include <sys/types.h>
++ #include <ctype.h>
+  #include <xview_private/om_impl.h>
+  #include <xview_private/draw_impl.h>
+  #include <xview_private/fm_impl.h>
+diff -rc ../old/xview3.2p1-X11R6/lib/libxview/misc/Imakefile ./lib/libxview/misc/Imakefile
+*** ../old/xview3.2p1-X11R6/lib/libxview/misc/Imakefile	Tue Jun 29 01:16:36 1993
+--- ./lib/libxview/misc/Imakefile	Sun Nov 20 13:39:03 1994
+***************
+*** 29,36 ****
+                            xv_i18n.c     \
+                            xv_path.c
+  
+! OFILES.misc.3	= ${CFILES.misc.3:%.c=%.o}
+! OFILES.misc.4	= ${CFILES.misc.4:%.c=%.o}
+  
+  HFILES.misc.3          =
+  HFILES.misc.4          =
+--- 29,36 ----
+                            xv_i18n.c     \
+                            xv_path.c
+  
+! OFILES.misc.3	= ${CFILES.misc.3:.c=.o}
+! OFILES.misc.4	= ${CFILES.misc.4:.c=.o}
+  
+  HFILES.misc.3          =
+  HFILES.misc.4          =
+***************
+*** 43,49 ****
+  GETTEXT.C		=
+  #endif
+  
+! GETTEXT.O		= ${GETTEXT.C:%.c=%.o}
+  
+  HDRSPUBLIC=     cms_grays.h cms_mono.h cmsrainbow.h cms_rgb.h sun.h \
+                  window_hs.h expandname.h xv_c_types.h attrol.h db.h \
+--- 43,49 ----
+  GETTEXT.C		=
+  #endif
+  
+! GETTEXT.O		= ${GETTEXT.C:.c=.o}
+  
+  HDRSPUBLIC=     cms_grays.h cms_mono.h cmsrainbow.h cms_rgb.h sun.h \
+                  window_hs.h expandname.h xv_c_types.h attrol.h db.h \
+***************
+*** 57,63 ****
+  	demorandom.o\
+  	getlogindr.o\
+  	expandname.o\
+! 	expandpath.o\ 
+  	bitmask.o\
+  	hashfn.o\
+  	db_conv.o\
+--- 57,63 ----
+  	demorandom.o\
+  	getlogindr.o\
+  	expandname.o\
+! 	expandpath.o\
+  	bitmask.o\
+  	hashfn.o\
+  	db_conv.o\
+***************
+*** 76,82 ****
+  	demorandom.c\
+  	getlogindr.c\
+  	expandname.c\
+! 	expandpath.c\ 
+  	bitmask.c\
+  	hashfn.c\
+  	db_conv.c\
+--- 76,82 ----
+  	demorandom.c\
+  	getlogindr.c\
+  	expandname.c\
+! 	expandpath.c\
+  	bitmask.c\
+  	hashfn.c\
+  	db_conv.c\
+***************
+*** 95,101 ****
+  	demorandom.o\
+  	getlogindr.o\
+  	expandname.o\
+! 	expandpath.o\ 
+  	bitmask.o\
+  	hashfn.o\
+  	db_conv.o\
+--- 95,101 ----
+  	demorandom.o\
+  	getlogindr.o\
+  	expandname.o\
+! 	expandpath.o\
+  	bitmask.o\
+  	hashfn.o\
+  	db_conv.o\
+***************
+*** 115,121 ****
+  	demorandom.c\
+  	getlogindr.c\
+  	expandname.c\
+! 	expandpath.c\ 
+  	bitmask.c\
+  	hashfn.c\
+  	db_conv.c\
+--- 115,121 ----
+  	demorandom.c\
+  	getlogindr.c\
+  	expandname.c\
+! 	expandpath.c\
+  	bitmask.c\
+  	hashfn.c\
+  	db_conv.c\
+diff -rc ../old/xview3.2p1-X11R6/lib/libxview/misc/expandname.c ./lib/libxview/misc/expandname.c
+*** ../old/xview3.2p1-X11R6/lib/libxview/misc/expandname.c	Tue Jun 29 01:16:30 1993
+--- ./lib/libxview/misc/expandname.c	Sun Nov 20 13:39:03 1994
+***************
+*** 120,126 ****
+--- 120,128 ----
+      }
+      (void) close(pivec[0]);
+  #ifndef SVR4
++ #if !(defined(BSD) && (BSD >= 199103))
+      while (wait((union wait *) & status) != pid);
++ #endif
+  #else SVR4
+      while (wait( & status) != pid);
+  #endif SVR4
+diff -rc ../old/xview3.2p1-X11R6/lib/libxview/misc/getlogindr.c ./lib/libxview/misc/getlogindr.c
+*** ../old/xview3.2p1-X11R6/lib/libxview/misc/getlogindr.c	Tue Jun 29 01:16:30 1993
+--- ./lib/libxview/misc/getlogindr.c	Sun Nov 20 13:39:03 1994
+***************
+*** 17,22 ****
+--- 17,23 ----
+  
+  #include <stdio.h>
+  #include <pwd.h>
++ #include <sys/param.h>
+  #include <xview_private/i18n_impl.h>
+  #include <xview/xv_error.h>
+  
+diff -rc ../old/xview3.2p1-X11R6/lib/libxview/notice/notice_pt.c ./lib/libxview/notice/notice_pt.c
+*** ../old/xview3.2p1-X11R6/lib/libxview/notice/notice_pt.c	Tue Jun 29 01:16:40 1993
+--- ./lib/libxview/notice/notice_pt.c	Sun Nov 20 13:39:04 1994
+***************
+*** 58,63 ****
+--- 58,64 ----
+  static void     notice_copy_event();
+  static Xv_window	notice_get_focus_win();
+  static int	notice_show_focus_win();
++ static int	notice_quadrant();
+  
+  /*
+   * --------------------------- STATICS ------------------------------
+diff -rc ../old/xview3.2p1-X11R6/lib/libxview/notify/ndet.h ./lib/libxview/notify/ndet.h
+*** ../old/xview3.2p1-X11R6/lib/libxview/notify/ndet.h	Tue Jun 29 01:18:12 1993
+--- ./lib/libxview/notify/ndet.h	Sun Nov 20 13:39:04 1994
+***************
+*** 17,22 ****
+--- 17,27 ----
+  #ifndef	NDET_DEFINED
+  #define	NDET_DEFINED
+  
++ #include <sys/param.h>
++ #if (defined(BSD) && (BSD >= 199103))
++ #include <signal.h>
++ #endif
++ 
+  /*
+  ********************** Detector Loop Notes ****************************
+  Here is some notes on the detector loop:
+diff -rc ../old/xview3.2p1-X11R6/lib/libxview/notify/ndet_fcntl.c ./lib/libxview/notify/ndet_fcntl.c
+*** ../old/xview3.2p1-X11R6/lib/libxview/notify/ndet_fcntl.c	Tue Jun 29 01:18:03 1993
+--- ./lib/libxview/notify/ndet_fcntl.c	Sun Nov 20 13:39:04 1994
+***************
+*** 17,38 ****
+  
+  #include <xview_private/ntfy.h>
+  #include <xview_private/ndet.h>
+  #include <signal.h>
+  #include <fcntl.h>
+  #ifdef SVR4
+  #include <sys/file.h>
+  #endif SVR4
+! 
+  extern int
+  #ifdef SVR4
+  xv_fcntl(fd, cmd, arg)
+  #else
+  fcntl(fd, cmd, arg)
+  #endif SVR4
+      int             fd, cmd, arg;
+  {
+      fd_set          bit;
+      int             res;
+  
+      /* Set fd bit */
+      FD_ZERO(&bit);
+--- 17,55 ----
+  
+  #include <xview_private/ntfy.h>
+  #include <xview_private/ndet.h>
++ #include <sys/param.h>
+  #include <signal.h>
+  #include <fcntl.h>
+  #ifdef SVR4
+  #include <sys/file.h>
+  #endif SVR4
+! #if (defined(BSD) && (BSD >= 199103))
+! #include <stdarg.h>
+! #endif
+  extern int
+  #ifdef SVR4
+  xv_fcntl(fd, cmd, arg)
+  #else
++ #if (defined(BSD) && (BSD >= 199103))
++ fcntl(int fd, int cmd, ...)
++ #else
+  fcntl(fd, cmd, arg)
++ #endif
+  #endif SVR4
++ #if !(defined(BSD) && (BSD >= 199103))
+      int             fd, cmd, arg;
++ #endif
+  {
+      fd_set          bit;
+      int             res;
++ 
++ #if (defined(BSD) && (BSD >= 199103))
++     int arg;  
++     va_list valist;
++     va_start(valist, cmd);
++     arg = va_arg(valist, int);
++     va_end(valist);
++ #endif
+  
+      /* Set fd bit */
+      FD_ZERO(&bit);
+diff -rc ../old/xview3.2p1-X11R6/lib/libxview/notify/ndet_loop.c ./lib/libxview/notify/ndet_loop.c
+*** ../old/xview3.2p1-X11R6/lib/libxview/notify/ndet_loop.c	Tue Jun 29 01:18:19 1993
+--- ./lib/libxview/notify/ndet_loop.c	Sun Nov 20 13:39:04 1994
+***************
+*** 14,19 ****
+--- 14,20 ----
+   * Ndet_loop.c - Notification loop.
+   */
+  
++ #include <sys/param.h>
+  #include <xview_private/i18n_impl.h>
+  #include <xview_private/ntfy.h>
+  #include <xview_private/ndet.h>
+***************
+*** 224,230 ****
+  	     * will return with an EINTR when a signal arrives while IN
+  	     * select, not ON THE WAY into select).
+  	     */
+! #ifndef SVR4
+  	    nfds = syscall(SYS_select,
+  			   FD_SETSIZE, &ibits, &obits, &ebits,
+  		 (sigisempty(&ndet_sigs_received)) ? timer : &ndet_polling_tv);
+--- 225,232 ----
+  	     * will return with an EINTR when a signal arrives while IN
+  	     * select, not ON THE WAY into select).
+  	     */
+! 
+! #if !defined(SVR4) && !(defined(BSD) && (BSD >= 199103))
+  	    nfds = syscall(SYS_select,
+  			   FD_SETSIZE, &ibits, &obits, &ebits,
+  		 (sigisempty(&ndet_sigs_received)) ? timer : &ndet_polling_tv);
+diff -rc ../old/xview3.2p1-X11R6/lib/libxview/notify/ndet_read.c ./lib/libxview/notify/ndet_read.c
+*** ../old/xview3.2p1-X11R6/lib/libxview/notify/ndet_read.c	Tue Jun 29 01:18:04 1993
+--- ./lib/libxview/notify/ndet_read.c	Sun Nov 20 13:39:05 1994
+***************
+*** 15,20 ****
+--- 15,21 ----
+   * not already in the middle of it.
+   */
+  
++ #include <sys/param.h>
+  #include <xview_private/ntfy.h>
+  #include <xview_private/ndet.h>
+  #include <xview_private/ndis.h>	/* For ndis_client == NTFY_CLIENT_NULL check */
+***************
+*** 29,39 ****
+--- 30,45 ----
+  
+  static Notify_client ndet_read_nclient = (Notify_client) & ndet_read_done;
+  
++ #if !(defined(BSD) && (BSD >= 199103))
+  extern int
+  read(fd, buf, nbytes)
+      register int    fd;
+      char           *buf;
+      int             nbytes;
++ #else
++ extern int
++ read(int fd, void *buf, size_t nbytes)
++ #endif
+  {
+      int             ndelay;
+      Notify_error    return_code;
+diff -rc ../old/xview3.2p1-X11R6/lib/libxview/notify/ntfy.h ./lib/libxview/notify/ntfy.h
+*** ../old/xview3.2p1-X11R6/lib/libxview/notify/ntfy.h	Tue Jun 29 01:18:14 1993
+--- ./lib/libxview/notify/ntfy.h	Sun Nov 20 13:39:05 1994
+***************
+*** 22,27 ****
+--- 22,31 ----
+  #include <sys/rusage.h>
+  #endif
+  #include <sys/resource.h>
++ #if (defined(BSD) && (BSD >= 199103))
++ #include <sys/wait.h>
++ #include <sys/signal.h>
++ #endif
+  #include <xview/notify.h>
+  
+  /*
+***************
+*** 149,155 ****
+   */
+  typedef	struct ntfy_wait3_data {
+  	int	pid;			/* Process waiting for */
+! #ifndef SVR4
+  	union	wait status;		/* Return value from wait3 */
+  #else SVR4
+  	int 	status;		/* Return value from wait3 */
+--- 153,159 ----
+   */
+  typedef	struct ntfy_wait3_data {
+  	int	pid;			/* Process waiting for */
+! #if !defined(SVR4) && !(defined(BSD) && (BSD >= 199103))
+  	union	wait status;		/* Return value from wait3 */
+  #else SVR4
+  	int 	status;		/* Return value from wait3 */
+diff -rc ../old/xview3.2p1-X11R6/lib/libxview/notify/ntfy_test.c ./lib/libxview/notify/ntfy_test.c
+*** ../old/xview3.2p1-X11R6/lib/libxview/notify/ntfy_test.c	Tue Jun 29 01:18:12 1993
+--- ./lib/libxview/notify/ntfy_test.c	Sun Nov 20 13:39:05 1994
+***************
+*** 989,995 ****
+  	    fprintf(stderr, "%s in unknown destroy status\n", arg1);
+  	    goto Error;
+  	}
+! 	if ((ne = notify_post_destroy(client, status)) != NOTIFY_OK) {
+  	    if (!(status == DESTROY_CHECKING &&
+  		  ne == NOTIFY_DESTROY_VETOED)) {
+  		notify_perror("notify_destroy");
+--- 989,995 ----
+  	    fprintf(stderr, "%s in unknown destroy status\n", arg1);
+  	    goto Error;
+  	}
+! 	if ((ne = notify_post_destroy(client, status, NOTIFY_IMMEDIATE)) != NOTIFY_OK) {
+  	    if (!(status == DESTROY_CHECKING &&
+  		  ne == NOTIFY_DESTROY_VETOED)) {
+  		notify_perror("notify_destroy");
+***************
+*** 1781,1787 ****
+      }
+      /* Send only last client event */
+      if (*event_count_ptr > 0) {
+! 	(void) notify_event(nclient, *(events + (*event_count_ptr) - 1));
+  	*event_count_ptr--;
+      }
+      /* Send fd 1 input */
+--- 1781,1787 ----
+      }
+      /* Send only last client event */
+      if (*event_count_ptr > 0) {
+! 	(void) notify_event(nclient, *(events + (*event_count_ptr) - 1), 0);
+  	*event_count_ptr--;
+      }
+      /* Send fd 1 input */
+diff -rc ../old/xview3.2p1-X11R6/lib/libxview/notify/ntfyclient.c ./lib/libxview/notify/ntfyclient.c
+*** ../old/xview3.2p1-X11R6/lib/libxview/notify/ntfyclient.c	Tue Jun 29 01:18:11 1993
+--- ./lib/libxview/notify/ntfyclient.c	Sun Nov 20 13:39:05 1994
+***************
+*** 18,24 ****
+--- 18,26 ----
+  #include <xview_private/ntfy.h>
+  #include <xview_private/ndis.h>	/* For ndis_default_prioritizer */
+  #include <xview_private/ndet.h>	
++ #ifndef __FreeBSD__
+  #include <search.h>
++ #endif
+  #include <xview_private/portable.h>
+  
+  /* Variables used in paranoid enumerator (see ntfy_condition) */
+***************
+*** 60,65 ****
+--- 62,68 ----
+      if (*client_latest && (*client_latest)->nclient == nclient)
+  	return (*client_latest);
+  
++ #ifndef __FreeBSD__
+      if(( client_list == ndet_clients ) && ndet_clients ) {
+         dummy_client.nclient = nclient;
+         /* Find client */
+***************
+*** 73,79 ****
+             return (client);
+         }
+      }
+! 
+      else 
+          /* Search entire list */
+          for (client = client_list; client; client = next) {
+--- 76,84 ----
+             return (client);
+         }
+      }
+! #else
+!     if(0);
+! #endif
+      else 
+          /* Search entire list */
+          for (client = client_list; client; client = next) {
+***************
+*** 100,105 ****
+--- 105,111 ----
+      register NTFY_CLIENT *client;
+      static NTFY_CLIENT *new_client;
+  
++ #ifndef __FreeBSD__
+      if( client_list == &ndet_clients ) {
+          if( new_client  == NTFY_CLIENT_NULL ) {
+              if ((new_client = ntfy_alloc_client()) == NTFY_CLIENT_NULL)
+***************
+*** 119,125 ****
+          else
+              return client;
+      }
+! 
+      else if ((client = ntfy_find_nclient(*client_list, nclient,
+  				    client_latest)) != NTFY_CLIENT_NULL)
+          return client;
+--- 125,133 ----
+          else
+              return client;
+      }
+! #else
+!     if(0);
+! #endif
+      else if ((client = ntfy_find_nclient(*client_list, nclient,
+  				    client_latest)) != NTFY_CLIENT_NULL)
+          return client;
+***************
+*** 163,170 ****
+--- 171,180 ----
+  	ntfy_remove_condition(client, condition, who);
+      }
+      /* Remove & free client from client_list */
++ #ifndef __FreeBSD__
+      if( client_list == &ndet_clients )
+          tdelete( client, ndet_root, ndet_compar );
++ #endif
+      ntfy_remove_node((NTFY_NODE **) client_list, (NTFY_NODE *) client);
+      /* Invalidate condition hint */
+      *client_latest = NTFY_CLIENT_NULL;
+diff -rc ../old/xview3.2p1-X11R6/lib/libxview/openwin/ow_view.c ./lib/libxview/openwin/ow_view.c
+*** ../old/xview3.2p1-X11R6/lib/libxview/openwin/ow_view.c	Tue Jun 29 01:16:43 1993
+--- ./lib/libxview/openwin/ow_view.c	Sun Nov 20 13:39:05 1994
+***************
+*** 48,53 ****
+--- 48,54 ----
+  static          openwin_init_view();
+  static          openwin_free_view();
+  static          openwin_remove_scrollbars();
++ static int	openwin_check_view();
+  static          openwin_create_viewwindow();
+  static          openwin_test_for_sb();
+  static          openwin_link_view();
+diff -rc ../old/xview3.2p1-X11R6/lib/libxview/panel/item_set.c ./lib/libxview/panel/item_set.c
+*** ../old/xview3.2p1-X11R6/lib/libxview/panel/item_set.c	Tue Jun 29 01:16:50 1993
+--- ./lib/libxview/panel/item_set.c	Sun Nov 20 13:39:06 1994
+***************
+*** 28,33 ****
+--- 28,35 ----
+  
+  extern Notify_value panel_base_event_handler();
+  
++ static fix_positions();
++ 
+  Pkg_private     Xv_opaque
+  item_set_avlist(item_public, avlist)
+      Panel_item      item_public;
+diff -rc ../old/xview3.2p1-X11R6/lib/libxview/panel/p_btn.c ./lib/libxview/panel/p_btn.c
+*** ../old/xview3.2p1-X11R6/lib/libxview/panel/p_btn.c	Tue Jun 29 01:16:52 1993
+--- ./lib/libxview/panel/p_btn.c	Sun Nov 20 13:39:06 1994
+***************
+*** 203,209 ****
+  	if (pin_is_default) {
+  	    image.im_type = PIT_STRING;
+  	    image_string(&image) = NULL;
+! 	    label = "";
+  	} else if (!(image_string(&image) = (char *) xv_get(default_menu_item,
+  		MENU_STRING))) {
+  	    olgx_state |= OLGX_LABEL_IS_PIXMAP;
+--- 203,209 ----
+  	if (pin_is_default) {
+  	    image.im_type = PIT_STRING;
+  	    image_string(&image) = NULL;
+! 	    label = (Xv_opaque) "";
+  	} else if (!(image_string(&image) = (char *) xv_get(default_menu_item,
+  		MENU_STRING))) {
+  	    olgx_state |= OLGX_LABEL_IS_PIXMAP;
+diff -rc ../old/xview3.2p1-X11R6/lib/libxview/panel/p_choice.c ./lib/libxview/panel/p_choice.c
+*** ../old/xview3.2p1-X11R6/lib/libxview/panel/p_choice.c	Tue Jun 29 01:16:57 1993
+--- ./lib/libxview/panel/p_choice.c	Sun Nov 20 13:39:06 1994
+***************
+*** 106,111 ****
+--- 106,115 ----
+  static int      choice_number();
+  static int	choice_x_gap();
+  static int	choice_y_gap();
++ static int	find_choice();
++ static int	modify_choice();
++ static int	move_specified();
++ static int	re_alloc_choices();
+  static unsigned int choice_value();
+  static void     choice_create_menu();
+  static void	choice_images_to_menu_items();
+***************
+*** 120,126 ****
+  static void     update_item_rect();
+  static void     update_value_rect();
+  static Xv_opaque choice_do_menu_item();
+- 
+  
+  static Panel_ops ops = {
+      panel_default_handle_event,		/* handle_event() */
+--- 124,129 ----
+diff -rc ../old/xview3.2p1-X11R6/lib/libxview/panel/p_drop.c ./lib/libxview/panel/p_drop.c
+*** ../old/xview3.2p1-X11R6/lib/libxview/panel/p_drop.c	Tue Jun 29 01:17:04 1993
+--- ./lib/libxview/panel/p_drop.c	Sun Nov 20 13:39:06 1994
+***************
+*** 10,16 ****
+--- 10,21 ----
+   *	file for terms of the license.
+   */
+  
++ #include <sys/param.h>
++ #if (defined(BSD) && (BSD >= 199103))
++ #include <stdlib.h>
++ #else
+  #include <malloc.h>
++ #endif
+  #include <xview_private/draw_impl.h>
+  #include <xview_private/i18n_impl.h>
+  #include <xview_private/panel_impl.h>
+diff -rc ../old/xview3.2p1-X11R6/lib/libxview/panel/p_gauge.c ./lib/libxview/panel/p_gauge.c
+*** ../old/xview3.2p1-X11R6/lib/libxview/panel/p_gauge.c	Tue Jun 29 01:17:04 1993
+--- ./lib/libxview/panel/p_gauge.c	Sun Nov 20 13:39:07 1994
+***************
+*** 47,52 ****
+--- 47,53 ----
+  /* Local functions */
+  static void     paint_gauge();
+  static void     update_rects();
++ static int	etoi();
+  
+  static Panel_ops ops = {
+      panel_default_handle_event,		/* handle_event() */
+diff -rc ../old/xview3.2p1-X11R6/lib/libxview/panel/p_get.c ./lib/libxview/panel/p_get.c
+*** ../old/xview3.2p1-X11R6/lib/libxview/panel/p_get.c	Tue Jun 29 01:16:49 1993
+--- ./lib/libxview/panel/p_get.c	Sun Nov 20 13:39:07 1994
+***************
+*** 16,21 ****
+--- 16,22 ----
+  #include <xview/scrollbar.h>
+  
+  static int      shrink_to_fit();
++ static panel_shrink_margin();
+  
+  #define MAX_NEGATIVE_SHRINK 2000
+  #define SHRINK_MARGIN       4
+*** lib/libxview/panel/p_num_txt.c.orig	Sat Jan 23 19:24:30 1999
+--- lib/libxview/panel/p_num_txt.c	Sat Jan 23 19:29:03 1999
+***************
+*** 707,713 ****
+  
+  	event_init( &event ); /* send empty, bogus event */
+          if (ip->notify)
+!             (*ip->notify) (ITEM_PUBLIC(ip), event);
+  
+          /*
+             UP_INACTIVE flag is set in set_value(); if
+--- 707,713 ----
+  
+  	event_init( &event ); /* send empty, bogus event */
+          if (ip->notify)
+!             (*ip->notify) (ITEM_PUBLIC(ip), &event);
+  
+          /*
+             UP_INACTIVE flag is set in set_value(); if
+***************
+*** 724,730 ****
+  
+  	event_init( &event ); /* send empty, bogus event */
+          if (ip->notify)
+!             (*ip->notify) (ITEM_PUBLIC(ip), event);
+  
+          if (dp->btn_state & DOWN_INACTIVE)
+              panel_autoscroll_stop_itimer( item );
+--- 724,730 ----
+  
+  	event_init( &event ); /* send empty, bogus event */
+          if (ip->notify)
+!             (*ip->notify) (ITEM_PUBLIC(ip), &event);
+  
+          if (dp->btn_state & DOWN_INACTIVE)
+              panel_autoscroll_stop_itimer( item );
+*** lib/libxview/panel/p_set.c.orig	Tue Jun 29 00:16:59 1993
+--- lib/libxview/panel/p_set.c	Sat Jan 23 21:00:16 1999
+***************
+*** 14,20 ****
+  #include <xview/font.h>
+  #include <xview/scrollbar.h>
+  #include <xview/xv_xrect.h>
+- #include <xview/font.h>
+  #include <xview_private/draw_impl.h>
+  
+  Xv_private void	    win_set_no_focus();
+--- 14,19 ----
+***************
+*** 25,30 ****
+--- 24,31 ----
+  
+  static void panel_set_fonts();
+  
++ static int column_from_absolute_x();
++ static int row_from_absolute_y();
+  
+  Pkg_private     Xv_opaque
+  panel_set_avlist(panel_public, avlist)
+***************
+*** 509,516 ****
+  
+      font_info = (XFontStruct *) xv_get(glyph_font, FONT_INFO);
+      if (font_info->per_char) {
+! 	active_caret_info = font_info->per_char[OLGX_ACTIVE_CARET];
+! 	inactive_caret_info = font_info->per_char[OLGX_INACTIVE_CARET];
+      } else {
+  	active_caret_info = font_info->min_bounds;
+  	inactive_caret_info = font_info->min_bounds;
+--- 510,519 ----
+  
+      font_info = (XFontStruct *) xv_get(glyph_font, FONT_INFO);
+      if (font_info->per_char) {
+! 	active_caret_info = font_info->per_char[OLGX_ACTIVE_CARET -
+! 	    font_info->min_char_or_byte2];
+! 	inactive_caret_info = font_info->per_char[OLGX_INACTIVE_CARET -
+! 	    font_info->min_char_or_byte2];
+      } else {
+  	active_caret_info = font_info->min_bounds;
+  	inactive_caret_info = font_info->min_bounds;
+diff -rc ../old/xview3.2p1-X11R6/lib/libxview/panel/p_slider.c ./lib/libxview/panel/p_slider.c
+*** ../old/xview3.2p1-X11R6/lib/libxview/panel/p_slider.c	Tue Jun 29 01:17:02 1993
+--- ./lib/libxview/panel/p_slider.c	Sun Nov 20 13:39:08 1994
+***************
+*** 54,59 ****
+--- 54,61 ----
+  static Panel_setting get_value();
+  static void     paint_slider();
+  static void     update_rects();
++ static int	etoi();
++ static int	itoe();
+  
+  static Panel_ops ops = {
+      panel_default_handle_event,		/* handle_event() */
+diff -rc ../old/xview3.2p1-X11R6/lib/libxview/panel/p_txt.c ./lib/libxview/panel/p_txt.c
+*** ../old/xview3.2p1-X11R6/lib/libxview/panel/p_txt.c	Tue Jun 29 01:16:55 1993
+--- ./lib/libxview/panel/p_txt.c	Sun Nov 20 13:39:09 1994
+***************
+*** 10,16 ****
+--- 10,21 ----
+   *	file for terms of the license.
+   */
+  
++ #include <sys/param.h>
++ #if (defined(BSD) && (BSD >= 199103))
++ #include <stdlib.h>
++ #else
+  #include <malloc.h>
++ #endif
+  #include <string.h>
+  #include <ctype.h>
+  #include <X11/X.h>
+*** lib/libxview/panel/panel.c.orig	Tue Jun 29 00:16:57 1993
+--- lib/libxview/panel/panel.c	Sat Jan 23 19:43:05 1999
+***************
+*** 27,34 ****
+  Pkg_private int panel_destroy();
+  
+  static int      panel_layout();
+  
+! Xv_private_data Defaults_pairs xv_kbd_cmds_value_pairs[4];
+  
+  /* default timer value */
+  static struct itimerval PANEL_TIMER = {0, 500000, 0, 500000};
+--- 27,35 ----
+  Pkg_private int panel_destroy();
+  
+  static int      panel_layout();
++ static int	panel_unregister_view();
+  
+! extern Defaults_pairs xv_kbd_cmds_value_pairs[4];
+  
+  /* default timer value */
+  static struct itimerval PANEL_TIMER = {0, 500000, 0, 500000};
+diff -rc ../old/xview3.2p1-X11R6/lib/libxview/panel/panel_impl.h ./lib/libxview/panel/panel_impl.h
+*** ../old/xview3.2p1-X11R6/lib/libxview/panel/panel_impl.h	Tue Jun 29 01:16:50 1993
+--- ./lib/libxview/panel/panel_impl.h	Sun Nov 20 13:39:09 1994
+***************
+*** 9,19 ****
+  #ifndef panel_impl_defined
+  #define panel_impl_defined
+  
+  #ifndef FILE
+  #ifndef SVR4
+- #undef NULL
+  #endif SVR4
+  #include <stdio.h>
+  #endif FILE
+  #include <sys/types.h>
+  #include <X11/Xlib.h>
+--- 9,24 ----
+  #ifndef panel_impl_defined
+  #define panel_impl_defined
+  
++ #ifdef NULL
++ #undef NULL
++ #endif
+  #ifndef FILE
+  #ifndef SVR4
+  #endif SVR4
+  #include <stdio.h>
++ #ifndef NULL
++ #define NULL 0
++ #endif
+  #endif FILE
+  #include <sys/types.h>
+  #include <X11/Xlib.h>
+diff -rc ../old/xview3.2p1-X11R6/lib/libxview/rect/rect_util.c ./lib/libxview/rect/rect_util.c
+*** ../old/xview3.2p1-X11R6/lib/libxview/rect/rect_util.c	Tue Jun 29 01:15:17 1993
+--- ./lib/libxview/rect/rect_util.c	Sun Nov 20 13:39:09 1994
+***************
+*** 16,21 ****
+--- 16,23 ----
+  
+  #include <xview/rect.h>
+  
++ static int rect_nearest_edge();
++ 
+  /*
+   * Compute the distance from rect to (x, y). If (x, y) is in rect, zero is
+   * returned. If x_used or y_used are non-zero, the projection point is
+diff -rc ../old/xview3.2p1-X11R6/lib/libxview/sel/sel_agent.c ./lib/libxview/sel/sel_agent.c
+*** ../old/xview3.2p1-X11R6/lib/libxview/sel/sel_agent.c	Sun Jun 26 14:46:20 1994
+--- ./lib/libxview/sel/sel_agent.c	Sun Nov 20 13:39:09 1994
+***************
+*** 63,69 ****
+  static void     selection_agent_do_function();
+  static Atom 	get_atom();
+  static Seln_attribute save_atom();
+! 
+  
+  Xv_private Seln_result seln_convert_request_to_property();
+  /* called by seln_svc.c
+--- 63,69 ----
+  static void     selection_agent_do_function();
+  static Atom 	get_atom();
+  static Seln_attribute save_atom();
+! static int	waitforReadableTimeout();
+  
+  Xv_private Seln_result seln_convert_request_to_property();
+  /* called by seln_svc.c
+***************
+*** 309,315 ****
+--- 309,319 ----
+      struct stat     stat_buf;
+      int             count, size;
+      char           *destp;
++ #if (defined(BSD) && (BSD >= 199306))
++     extern off_t    lseek();
++ #else
+      extern long     lseek();
++ #endif
+  
+      if (fstat(fd, &stat_buf) != 0) {
+  	perror(XV_MSG("Agent couldn't reply about a file"));
+diff -rc ../old/xview3.2p1-X11R6/lib/libxview/sel/seln_impl.h ./lib/libxview/sel/seln_impl.h
+*** ../old/xview3.2p1-X11R6/lib/libxview/sel/seln_impl.h	Tue Jun 29 01:15:25 1993
+--- ./lib/libxview/sel/seln_impl.h	Sun Nov 20 13:39:09 1994
+***************
+*** 9,20 ****
+   *	file for terms of the license.
+   */
+  
+  #include <errno.h>
+  #ifndef FILE
+  #ifndef SVR4
+- #undef NULL
+  #endif SVR4
+  #include <stdio.h>
+  #endif FILE
+  #include <sys/time.h>
+  #include <sys/types.h>
+--- 9,25 ----
+   *	file for terms of the license.
+   */
+  
++ #ifdef NULL
++ #undef NULL
++ #endif
+  #include <errno.h>
+  #ifndef FILE
+  #ifndef SVR4
+  #endif SVR4
+  #include <stdio.h>
++ #ifndef NULL
++ #define NULL 0
++ #endif
+  #endif FILE
+  #include <sys/time.h>
+  #include <sys/types.h>
+diff -rc ../old/xview3.2p1-X11R6/lib/libxview/selection/sel_own.c ./lib/libxview/selection/sel_own.c
+*** ../old/xview3.2p1-X11R6/lib/libxview/selection/sel_own.c	Sat Jun 25 21:05:22 1994
+--- ./lib/libxview/selection/sel_own.c	Sun Nov 20 13:39:10 1994
+***************
+*** 35,40 ****
+--- 35,41 ----
+  static int sel_set_ownership(/* sel_owner */);
+  static int (*OldErrorHandler)();
+  static int SelOwnerErrorHandler();
++ static int SendIncr();
+  static int ValidatePropertyEvent();
+  
+  static void SelClean();
+diff -rc ../old/xview3.2p1-X11R6/lib/libxview/selection/sel_req.c ./lib/libxview/selection/sel_req.c
+*** ../old/xview3.2p1-X11R6/lib/libxview/selection/sel_req.c	Sat Jun 25 21:05:21 1994
+--- ./lib/libxview/selection/sel_req.c	Sun Nov 20 13:39:10 1994
+***************
+*** 55,61 ****
+  static int GetSelection();
+  static int ProcessReply();
+  static Requestor *SelGetReq();
+! 
+  
+  /*ARGSUSED*/
+  Pkg_private int
+--- 55,64 ----
+  static int GetSelection();
+  static int ProcessReply();
+  static Requestor *SelGetReq();
+! static int XvGetRequestedValue();
+! static int ProcessNonBlkIncr();
+! static int ProcessReq();
+! static int OldPkgIsOwner();
+  
+  /*ARGSUSED*/
+  Pkg_private int
+***************
+*** 1226,1232 ****
+  }
+  
+  
+! static XID 
+  SelGetOwnerXID( selReq )
+  Sel_req_info  *selReq;
+  {
+--- 1229,1235 ----
+  }
+  
+  
+! Pkg_private XID 
+  SelGetOwnerXID( selReq )
+  Sel_req_info  *selReq;
+  {
+diff -rc ../old/xview3.2p1-X11R6/lib/libxview/selection/sel_util.c ./lib/libxview/selection/sel_util.c
+*** ../old/xview3.2p1-X11R6/lib/libxview/selection/sel_util.c	Tue Jun 29 01:16:03 1993
+--- ./lib/libxview/selection/sel_util.c	Sun Nov 20 13:39:10 1994
+***************
+*** 23,28 ****
+--- 23,29 ----
+  static void FreeMultiProp();
+  static int	SelMatchReply();
+  static Sel_req_tbl *SelMatchReqTbl();
++ static int SelFindReply();
+  
+  Pkg_private struct timeval *
+  xv_sel_cvt_xtime_to_timeval( XTime )
+***************
+*** 601,607 ****
+  	reqTbl->reply = reply;
+  	reqTbl->next = NULL;
+  	(void)XSaveContext( dpy, DefaultRootWindow(dpy),replyCtx,
+! 			   (caddr_t *)reqTbl);
+  	return reqTbl;
+      }
+      return (Sel_req_tbl *) xv_sel_add_new_req( reqTbl, reply );
+--- 602,608 ----
+  	reqTbl->reply = reply;
+  	reqTbl->next = NULL;
+  	(void)XSaveContext( dpy, DefaultRootWindow(dpy),replyCtx,
+! 			   (XPointer)reqTbl);
+  	return reqTbl;
+      }
+      return (Sel_req_tbl *) xv_sel_add_new_req( reqTbl, reply );
+*** lib/libxview/server/server.c.orig	Sun Jun 26 13:53:40 1994
+--- lib/libxview/server/server.c	Sun Jan 24 23:07:12 1999
+***************
+*** 65,70 ****
+--- 65,71 ----
+  static unsigned int 	 string_to_modmask();
+  static Server_atom_type  save_atom();
+  static void 		 server_yield_modifiers();
++ static int		 xv_set_scheduler();
+  
+  Xv_private char		*xv_strtok();
+  
+***************
+*** 100,108 ****
+  Xv_private_data char 	*xv_shell_prompt;
+  
+  /* global default server parameters */
+! Xv_private_data Xv_Server xv_default_server;
+! Xv_private_data Xv_Screen xv_default_screen;
+! Xv_private_data Display *xv_default_display;
+  
+  /* Global data */
+  Xv_private_data Defaults_pairs xv_kbd_cmds_value_pairs[4] = {
+--- 101,109 ----
+  Xv_private_data char 	*xv_shell_prompt;
+  
+  /* global default server parameters */
+! extern Xv_Server xv_default_server;
+! extern Xv_Screen xv_default_screen;
+! extern Display *xv_default_display;
+  
+  /* Global data */
+  Xv_private_data Defaults_pairs xv_kbd_cmds_value_pairs[4] = {
+***************
+*** 440,446 ****
+    	/* lumpi@dobag.in-berlin.de */
+      if (XrmGetDatabase((Display *)server->xdisplay)) {
+  	server->db = XrmGetStringDatabase(
+! 				(XrmGetDatabase((Display *)server->xdisplay)));
+  #else
+      if (((Display *)server->xdisplay)->xdefaults) {
+  	server->db = XrmGetStringDatabase(
+--- 441,447 ----
+    	/* lumpi@dobag.in-berlin.de */
+      if (XrmGetDatabase((Display *)server->xdisplay)) {
+  	server->db = XrmGetStringDatabase(
+! 				(char *) (XrmGetDatabase((Display *)server->xdisplay)));
+  #else
+      if (((Display *)server->xdisplay)->xdefaults) {
+  	server->db = XrmGetStringDatabase(
+*** lib/libxview/server/svr_x.c.orig	Sat Jan 23 20:41:18 1999
+--- lib/libxview/server/svr_x.c	Sat Jan 23 20:42:42 1999
+***************
+*** 28,34 ****
+  #include <X11/keysym.h>
+  
+  extern Display *XOpenDisplay();
+! Xv_private_data Defaults_pairs xv_kbd_cmds_value_pairs[4];
+  
+  /*
+   * The following table describes the default key mappings for special 
+--- 28,34 ----
+  #include <X11/keysym.h>
+  
+  extern Display *XOpenDisplay();
+! extern Defaults_pairs xv_kbd_cmds_value_pairs[4];
+  
+  /*
+   * The following table describes the default key mappings for special 
+diff -rc ../old/xview3.2p1-X11R6/lib/libxview/textsw/ei_text.c ./lib/libxview/textsw/ei_text.c
+*** ../old/xview3.2p1-X11R6/lib/libxview/textsw/ei_text.c	Tue Jun 29 01:17:37 1993
+--- ./lib/libxview/textsw/ei_text.c	Sun Nov 20 13:39:11 1994
+***************
+*** 121,126 ****
+--- 121,127 ----
+  #endif
+  static struct ei_span_result ei_plain_text_span_of_group();
+  static struct ei_process_result ei_plain_text_expand();
++ static paint_batch();
+  
+  struct ei_ops   ei_plain_text_ops = {
+      ei_plain_text_destroy,
+diff -rc ../old/xview3.2p1-X11R6/lib/libxview/textsw/es_attr.c ./lib/libxview/textsw/es_attr.c
+*** ../old/xview3.2p1-X11R6/lib/libxview/textsw/es_attr.c	Tue Jun 29 01:17:31 1993
+--- ./lib/libxview/textsw/es_attr.c	Sun Nov 20 13:39:11 1994
+***************
+*** 22,28 ****
+  
+  Pkg_private int
+  #ifdef ANSI_FUNC_PROTO
+! es_set(register Es_handle esh, ...)
+  #else
+  es_set(esh, va_alist)
+      register Es_handle esh;
+--- 22,28 ----
+  
+  Pkg_private int
+  #ifdef ANSI_FUNC_PROTO
+! es_set(Es_handle esh, ...)
+  #else
+  es_set(esh, va_alist)
+      register Es_handle esh;
+diff -rc ../old/xview3.2p1-X11R6/lib/libxview/textsw/es_file.c ./lib/libxview/textsw/es_file.c
+*** ../old/xview3.2p1-X11R6/lib/libxview/textsw/es_file.c	Tue Jun 29 01:17:34 1993
+--- ./lib/libxview/textsw/es_file.c	Sun Nov 20 13:39:11 1994
+***************
+*** 110,117 ****
+--- 110,122 ----
+  
+  
+  extern int      errno, sys_nerr;
++ #if (defined(BSD) && (BSD >= 199306))
++ extern const char *const sys_err_list[];
++ extern off_t	lseek();
++ #else
+  extern char    *sys_errlist[];
+  extern long     lseek();
++ #endif
+  
+  static void update_read_buf();  /* update the read buf if overlaps write buf */
+  static Es_status es_file_commit();
+diff -rc ../old/xview3.2p1-X11R6/lib/libxview/textsw/ev_op_bdry.c ./lib/libxview/textsw/ev_op_bdry.c
+*** ../old/xview3.2p1-X11R6/lib/libxview/textsw/ev_op_bdry.c	Tue Jun 29 01:17:30 1993
+--- ./lib/libxview/textsw/ev_op_bdry.c	Sun Nov 20 13:39:11 1994
+***************
+*** 28,33 ****
+--- 28,36 ----
+  static Ev_finger_handle ev_insert_finger();
+  static Ev_mark_object last_generated_id;
+  
++ static int ev_find_finger_internal();
++ static ev_remove_finger_internal();
++ 
+  #define FORALL(index_var)						\
+  	for (index_var = 0; index_var < fingers->last_plus_one; index_var++)
+  
+diff -rc ../old/xview3.2p1-X11R6/lib/libxview/textsw/ps_impl.c ./lib/libxview/textsw/ps_impl.c
+*** ../old/xview3.2p1-X11R6/lib/libxview/textsw/ps_impl.c	Tue Jun 29 01:17:39 1993
+--- ./lib/libxview/textsw/ps_impl.c	Sun Nov 20 13:39:12 1994
+***************
+*** 62,67 ****
+--- 62,71 ----
+  static Es_index ps_replace(), ps_scratch_replace();
+  static int      ps_set();
+  
++ static int	get_current_offset();
++ 
++ static copy_pieces();
++ 
+  static Es_index write_header_etc();
+  
+  static struct es_ops ps_ops = {
+diff -rc ../old/xview3.2p1-X11R6/lib/libxview/textsw/txt_again.c ./lib/libxview/textsw/txt_again.c
+*** ../old/xview3.2p1-X11R6/lib/libxview/textsw/txt_again.c	Tue Jun 29 01:17:32 1993
+--- ./lib/libxview/textsw/txt_again.c	Sun Nov 20 13:39:12 1994
+***************
+*** 28,33 ****
+--- 28,35 ----
+  Pkg_private Es_index textsw_do_input();
+  Pkg_private Es_index textsw_do_pending_delete();
+  
++ static int textsw_string_min_free();
++ 
+  string_t        null_string = {0, 0, 0};
+  
+  #define	TEXT_DELIMITER	"\\"
+***************
+*** 182,187 ****
+--- 184,190 ----
+   * Following is stolen from 3.2ALPHA sprintf(str, fmt, va_alist) SIDE_EFFECT:
+   * TXTSW_STRING_FREE(ptr_to_string) is modified by this routine.
+   */
++ #ifndef __FreeBSD__
+  #ifndef SVR4
+  
+  /* VARARGS2 */
+***************
+*** 325,330 ****
+--- 328,358 ----
+  
+  #endif /* SVR4 */
+  
++ #else /* __FreeBSD__ */
++ /*inspiration taken from sprintf.c */
++ 
++ static int
++ textsw_printf(register string_t *ptr_to_string, char  *fmt, ...)
++ { 
++     FILE            _strbuf;
++     int             result;
++     va_list         args;
++     _strbuf._flags = __SWR | __SSTR;
++     _strbuf._bf._base = _strbuf._p = (char *) TXTSW_STRING_FREE(ptr_to_string);
++     _strbuf._bf._size = _strbuf._w = ptr_to_string->max_length - TXTSW_STRING_LENGTH(ptr_to_string);
++     VA_START(args, fmt);
++     result = vfprintf (&_strbuf, fmt, args);
++     va_end(args);
++     TXTSW_STRING_FREE(ptr_to_string) = (char *) _strbuf._p;
++ #ifndef lint
++     if (result >= 0)
++     putc('\0', &_strbuf);
++ #endif
++     return (result); 
++ }
++ 
++ #endif /* __FreeBSD__ */
++ 
+  static	void
+  textsw_record_buf(again, buffer, buffer_length)
+      register string_t *again;
+***************
+*** 619,624 ****
+--- 647,654 ----
+   */
+  /* VARARGS2 */
+  
++ #ifndef __FreeBSD__
++ 
+  static int
+  #ifdef ANSI_FUNC_PROTO
+  textsw_scanf(register string_t *ptr_to_string, register char  *fmt, ...)
+***************
+*** 705,710 ****
+--- 735,773 ----
+  
+  #endif /* OW_I18N */
+  }
++ #else /* __FreeBSD__ */
++ /*inspiration/code taken from sscanf.c */
++ 
++ static int
++ eofread(cookie, buf, len)
++         void *cookie;
++         char *buf;
++         int len;
++ {
++ 
++         return (0);
++ }   
++ 
++ static int
++ textsw_scanf(register string_t *ptr_to_string, char  *fmt, ...)
++ {
++     FILE            _strbuf;
++     int             result;
++     va_list         args;
++ 
++     _strbuf._flags = __SRD;
++     _strbuf._bf._base = _strbuf._p = (char *) TXTSW_STRING_BASE(ptr_to_string);
++     _strbuf._bf._size = _strbuf._r = TXTSW_STRING_LENGTH(ptr_to_string);
++     _strbuf._read = eofread;
++     _strbuf._ub._base = NULL;
++     _strbuf._lb._base = NULL;
++     VA_START(args, fmt);
++     result = __svfscanf(&_strbuf, fmt, args);
++     va_end(args);
++     TXTSW_STRING_BASE(ptr_to_string) = (char *) _strbuf._p;
++     return (result);
++ }       
++ #endif /* __FreeBSD__ */
+  
+  static int
+  textsw_next_is_delimiter(again)
+diff -rc ../old/xview3.2p1-X11R6/lib/libxview/textsw/txt_e_menu.c ./lib/libxview/textsw/txt_e_menu.c
+*** ../old/xview3.2p1-X11R6/lib/libxview/textsw/txt_e_menu.c	Tue Jun 29 01:17:42 1993
+--- ./lib/libxview/textsw/txt_e_menu.c	Sun Nov 20 13:39:12 1994
+***************
+*** 50,57 ****
+--- 50,61 ----
+  #define	ERROR	-1
+  
+  #define	MAX_FILES	40
++ #ifndef MAXPATHLEN
+  #define MAXPATHLEN	1024
++ #endif
++ #ifndef EXTRASMENU
+  #define	EXTRASMENU	"text_extras_menu"
++ #endif
+  #define	MAXSTRLEN	256
+  #define	MAXARGS		20
+  
+***************
+*** 78,83 ****
+--- 82,89 ----
+  
+  extern int      EXTRASMENU_FILENAME_KEY;
+  
++ static any_shell_meta();
++ 
+  Pkg_private char *
+  textsw_get_extras_filename(mi)
+      Menu_item       mi;
+***************
+*** 136,142 ****
+  	            goto found;
+  	}
+  
+! #ifdef notdef
+  	/* Gee, still?... We will try the old fashioned way */
+          (void) sprintf(tmp, "%s/lib/.%s",
+  		       filename, EXTRASMENU);
+--- 142,148 ----
+  	            goto found;
+  	}
+  
+! #ifdef __FreeBSD__
+  	/* Gee, still?... We will try the old fashioned way */
+          (void) sprintf(tmp, "%s/lib/.%s",
+  		       filename, EXTRASMENU);
+diff -rc ../old/xview3.2p1-X11R6/lib/libxview/textsw/txt_file.c ./lib/libxview/textsw/txt_file.c
+*** ../old/xview3.2p1-X11R6/lib/libxview/textsw/txt_file.c	Tue Jun 29 01:17:48 1993
+--- ./lib/libxview/textsw/txt_file.c	Sun Nov 20 13:39:12 1994
+***************
+*** 51,57 ****
+--- 51,61 ----
+  extern char    *getwd();
+  #endif /* SVR4 */
+  extern int      errno, sys_nerr;
++ #if (defined(BSD) && (BSD >= 199306))
++ extern const char *const sys_errlist[];
++ #else
+  extern char    *sys_errlist[];
++ #endif
+  
+  Pkg_private int textsw_change_directory();
+  Pkg_private void textsw_display(), textsw_display_view_margins();
+diff -rc ../old/xview3.2p1-X11R6/lib/libxview/textsw/txt_filter.c ./lib/libxview/textsw/txt_filter.c
+*** ../old/xview3.2p1-X11R6/lib/libxview/textsw/txt_filter.c	Tue Jun 29 01:17:39 1993
+--- ./lib/libxview/textsw/txt_filter.c	Sun Nov 20 13:39:13 1994
+***************
+*** 55,60 ****
+--- 55,63 ----
+  #define	REPLY_OKAY	 0
+  #define	REPLY_SEND	 1
+  
++ static int	talk_to_filter();
++ static int	start_filter();
++ 
+  /* performance: global cache of getdtablesize() */
+  extern int      dtablesize_cache;
+  
+diff -rc ../old/xview3.2p1-X11R6/lib/libxview/textsw/txt_input.c ./lib/libxview/textsw/txt_input.c
+*** ../old/xview3.2p1-X11R6/lib/libxview/textsw/txt_input.c	Tue Jun 29 01:17:42 1993
+--- ./lib/libxview/textsw/txt_input.c	Sun Nov 20 13:39:13 1994
+***************
+*** 57,62 ****
+--- 57,64 ----
+  Pkg_private     void textsw_implicit_commit_doit();
+  #endif
+  
++ static int textsw_do_newline();
++ 
+  #define SPACE_CHAR 0x20
+  
+  Pkg_private int
+diff -rc ../old/xview3.2p1-X11R6/lib/libxview/textsw/txt_move.c ./lib/libxview/textsw/txt_move.c
+*** ../old/xview3.2p1-X11R6/lib/libxview/textsw/txt_move.c	Tue Jun 29 01:17:47 1993
+--- ./lib/libxview/textsw/txt_move.c	Sun Nov 20 13:39:13 1994
+***************
+*** 55,61 ****
+  
+  static int dnd_data_key = 0; /* XXX: Don't do this at home kids. */
+  static int dnd_view_key = 0; 
+! static int DndConvertProc();
+  
+  Pkg_private Es_handle textsw_esh_for_span();
+  Pkg_private Es_index ev_resolve_xy();
+--- 55,61 ----
+  
+  static int dnd_data_key = 0; /* XXX: Don't do this at home kids. */
+  static int dnd_view_key = 0; 
+! int DndConvertProc();
+  
+  Pkg_private Es_handle textsw_esh_for_span();
+  Pkg_private Es_index ev_resolve_xy();
+***************
+*** 688,694 ****
+      xv_destroy(dnd_accept_cursor);
+  }
+  
+! static int
+  DndConvertProc(dnd, type, data, length, format)
+      Dnd      	 dnd;
+      Atom        *type;
+--- 688,694 ----
+      xv_destroy(dnd_accept_cursor);
+  }
+  
+! int
+  DndConvertProc(dnd, type, data, length, format)
+      Dnd      	 dnd;
+      Atom        *type;
+diff -rc ../old/xview3.2p1-X11R6/lib/libxview/textsw/txt_popup.c ./lib/libxview/textsw/txt_popup.c
+*** ../old/xview3.2p1-X11R6/lib/libxview/textsw/txt_popup.c	Tue Jun 29 01:17:38 1993
+--- ./lib/libxview/textsw/txt_popup.c	Sun Nov 20 13:39:13 1994
+***************
+*** 95,100 ****
+--- 95,104 ----
+  static int      TEXTSW_POPUP_KEY;  /* key data holding one of the above
+  				      key names */
+  
++ static void add_exten_item();
++ static int  fc_exten_func();
++ static void show_dot_files_proc();
++ 
+  Panel_item      store_panel_items[MAX_FILE_PANEL_ITEMS];
+  Panel_item      load_panel_items[MAX_FILE_PANEL_ITEMS];
+  Panel_item      include_panel_items[MAX_FILE_PANEL_ITEMS];
+***************
+*** 135,141 ****
+      Frame           popup_frame, base_frame;
+      Panel           panel = NULL;
+      char           *label;
+-     void            add_exten_item();
+  #ifdef OW_I18N
+      int		    win_use_im = ((popup_type != TEXTSW_MENU_SEL_MARK_TEXT) &&
+  				  (popup_type != TEXTSW_MENU_NORMALIZE_LINE));
+--- 139,144 ----
+***************
+*** 502,509 ****
+      int frame_width;
+      int frame_height;
+      Panel_item item;
+-     void show_dot_files_proc();
+-     int  fc_exten_func();
+   
+      
+      panel = xv_get(fc, FRAME_CMD_PANEL);
+--- 505,510 ----
+diff -rc ../old/xview3.2p1-X11R6/lib/libxview/textsw/txt_putkey.c ./lib/libxview/textsw/txt_putkey.c
+*** ../old/xview3.2p1-X11R6/lib/libxview/textsw/txt_putkey.c	Tue Jun 29 01:17:41 1993
+--- ./lib/libxview/textsw/txt_putkey.c	Sun Nov 20 13:39:13 1994
+***************
+*** 21,26 ****
+--- 21,28 ----
+  
+  extern int      errno;
+  
++ static int	textsw_do_put();
++ 
+  Pkg_private Ev_finger_handle ev_add_finger();
+  Pkg_private int      ev_get_selection();
+  Pkg_private Es_handle textsw_esh_for_span();
+diff -rc ../old/xview3.2p1-X11R6/lib/libxview/textsw/txt_selsvc.c ./lib/libxview/textsw/txt_selsvc.c
+*** ../old/xview3.2p1-X11R6/lib/libxview/textsw/txt_selsvc.c	Sat Jun 25 21:05:23 1994
+--- ./lib/libxview/textsw/txt_selsvc.c	Sun Nov 20 13:39:13 1994
+***************
+*** 24,29 ****
+--- 24,31 ----
+  #include <stdlib.h>
+  #endif /* SVR4 */
+  
++ static int textsw_should_ask_seln_svc();
++ 
+  extern int      errno;
+  
+  Pkg_private Es_status es_copy();
+diff -rc ../old/xview3.2p1-X11R6/lib/libxview/ttysw/cim_change.c ./lib/libxview/ttysw/cim_change.c
+*** ../old/xview3.2p1-X11R6/lib/libxview/ttysw/cim_change.c	Tue Jun 29 01:17:12 1993
+--- ./lib/libxview/ttysw/cim_change.c	Sun Nov 20 13:39:14 1994
+***************
+*** 17,26 ****
+  #include <xview_private/i18n_impl.h>
+  #include <sys/types.h>
+  #include <pixrect/pixrect.h>
+- #include <xview_private/ttyansi.h>
+  #include <xview_private/charimage.h>
+  #include <xview_private/charscreen.h>
+  #include <xview_private/tty_impl.h>
+  
+  char            boldify;
+  
+--- 17,26 ----
+  #include <xview_private/i18n_impl.h>
+  #include <sys/types.h>
+  #include <pixrect/pixrect.h>
+  #include <xview_private/charimage.h>
+  #include <xview_private/charscreen.h>
+  #include <xview_private/tty_impl.h>
++ #include <xview_private/ttyansi.h>
+  
+  char            boldify;
+  
+diff -rc ../old/xview3.2p1-X11R6/lib/libxview/ttysw/tty_gtty.c ./lib/libxview/ttysw/tty_gtty.c
+*** ../old/xview3.2p1-X11R6/lib/libxview/ttysw/tty_gtty.c	Tue Jun 29 01:17:20 1993
+--- ./lib/libxview/ttysw/tty_gtty.c	Sun Nov 20 13:39:14 1994
+***************
+*** 14,19 ****
+--- 14,20 ----
+   * Ttysw parameter retrieval mechanism to get original tty settings to pty.
+   */
+  
++ #include <sys/param.h>
+  #include <sys/types.h>
+  #include <stdio.h>
+  #include <xview_private/portable.h>	/* for tty_mode_t and XV* defines */
+***************
+*** 34,39 ****
+--- 35,41 ----
+   */
+  #ifdef	XV_USE_TERMIOS
+  
++ #if !(defined(BSD) && (BSD >= 199103))
+  static struct termios	default_modes = {
+  	BRKINT|ICRNL|IXON|IGNPAR|IMAXBEL,	    	/* input modes */
+  	OPOST|ONLCR,				    	/* output modes */
+***************
+*** 57,62 ****
+--- 59,78 ----
+  	CWERASE,	/* VWERASE */
+  	CLNEXT,		/* VLNEXT */
+  };
++ #else
++ #include <sys/ttydefaults.h>
++ static struct termios default_modes = {
++ 	TTYDEF_IFLAG,   /* input modes */
++ 	TTYDEF_OFLAG,   /* output modes */      
++ 	TTYDEF_CFLAG,   /* control modes */
++ 	TTYDEF_LFLAG,   /* local modes */
++ 	/* control characters */
++ 	{ CEOF,   CEOL,   CEOL,   CERASE, CWERASE, CKILL, CREPRINT,
++ 	_POSIX_VDISABLE, CINTR, CQUIT,  CSUSP,  CDSUSP, CSTART, CSTOP,  CLNEXT,
++ 	CDISCARD, CMIN, CTIME,  CSTATUS, _POSIX_VDISABLE },
++ 	TTYDEF_SPEED, TTYDEF_SPEED /* input and output speeds */
++ };    
++ #endif
+  
+  #else	/* XV_USE_TERMIOS */
+  
+diff -rc ../old/xview3.2p1-X11R6/lib/libxview/ttysw/tty_impl.h ./lib/libxview/ttysw/tty_impl.h
+*** ../old/xview3.2p1-X11R6/lib/libxview/ttysw/tty_impl.h	Tue Jun 29 01:17:18 1993
+--- ./lib/libxview/ttysw/tty_impl.h	Sun Nov 20 13:39:14 1994
+***************
+*** 14,19 ****
+--- 14,20 ----
+   * terminal emulation for teletype based programs.
+   */
+  
++ #include <sys/param.h>
+  #include <xview_private/portable.h>	/* tty and pty configuration info */
+  
+  #ifdef	XV_USE_TERMIOS
+***************
+*** 210,216 ****
+--- 211,223 ----
+   * Access functions for tty characteristics.
+   */
+  #ifdef	XV_USE_TERMIOS
++ #if (defined(BSD) && (BSD >= 199103))
++ #include <sys/ioctl.h>
++ #include <sys/ioctl_compat.h>
++ #define tty_gettabs(t)		((t)->termios.c_oflag & OXTABS)
++ #else   
+  #define	tty_gettabs(t)		((t)->termios.c_oflag & XTABS)
++ #endif
+  #define	tty_getdsuspc(t)	((int) ((t)->termios.c_cc[VDSUSP]))
+  #define	tty_geteofc(t)		((int) ((t)->termios.c_cc[VEOF]))
+  #define	tty_geteolc(t)		((int) ((t)->termios.c_cc[VEOL]))
+diff -rc ../old/xview3.2p1-X11R6/lib/libxview/ttysw/tty_init.c ./lib/libxview/ttysw/tty_init.c
+*** ../old/xview3.2p1-X11R6/lib/libxview/ttysw/tty_init.c	Tue Jun 29 01:17:19 1993
+--- ./lib/libxview/ttysw/tty_init.c	Sun Nov 20 13:39:14 1994
+***************
+*** 14,19 ****
+--- 14,20 ----
+   * Ttysw initialization, destruction and error procedures
+   */
+  
++ #include <sys/param.h>
+  #include <sys/time.h>
+  #include <sys/types.h>
+  #include <sys/stat.h>
+***************
+*** 82,88 ****
+--- 83,93 ----
+  
+  extern char    *strncpy();
+  extern char    *strcpy();
++ #if (defined(BSD) && (BSD >= 199306))
++ extern off_t	lseek();
++ #else
+  extern long     lseek();
++ #endif
+  char           *textsw_checkpoint_undo();
+  
+  /* static */ void ttysw_parseargs();
+***************
+*** 106,111 ****
+--- 111,117 ----
+  
+  extern int      ttysel_use_seln_service;
+  
++ static int	ttyinit();
+  
+  struct ttysw_createoptions {
+      int             becomeconsole;	/* be the console */
+***************
+*** 518,523 ****
+--- 524,532 ----
+      (void) dup2(ttysw->ttysw_tty, 2);
+      (void) close(ttysw->ttysw_tty);
+  
++ #if (defined(BSD) && (BSD >= 199103))
++     (void) ioctl(0, TIOCSCTTY, NULL);
++ #endif
+      if (*argv == (char *) NULL || strcmp("-c", *argv) == 0) {
+  	/* Process arg list */
+  	int             argc;
+***************
+*** 955,961 ****
+--- 964,974 ----
+      struct utmpx     utmp;
+  #endif
+      struct passwd  *passwdent;
++ #if !(defined(BSD) && (BSD >= 199103))
+      extern struct passwd *getpwuid();
++ #else
++     struct passwd *getpwuid __P((uid_t));
++ #endif
+      int             f;
+      char           *ttyn;
+      extern char    *ttyname();
+***************
+*** 1007,1019 ****
+--- 1020,1041 ----
+  		XV_MSG("Add tty[qrs][0-f] to /etc/ttys file.\n"));
+  	return (0);
+      }
++ #if !(defined(BSD) && (BSD >= 199103))
+      if ((f = open("/etc/utmp", 1)) >= 0) {
++ #else
++     if ((f = open(_PATH_UTMP, 1)) >= 0) {
++ #endif
+  	(void) lseek(f, (long) (ttyslotuse * sizeof(utmp)), 0);
+  	(void) write(f, (char *) &utmp, sizeof(utmp));
+  	(void) close(f);
+      } else {
+  	(void) fprintf(stderr, 
++ #if !(defined(BSD) && (BSD >= 199103))
+  	XV_MSG("make sure that you can write /etc/utmp!\n"));
++ #else
++ 	XV_MSG("make sure that you can write "));
++ 	    (void) fprintf(stderr, "%s!\n", _PATH_UTMP);
++ #endif
+  	return (0);
+      }
+      return (ttyslotuse);
+diff -rc ../old/xview3.2p1-X11R6/lib/libxview/ttysw/tty_main.c ./lib/libxview/ttysw/tty_main.c
+*** ../old/xview3.2p1-X11R6/lib/libxview/ttysw/tty_main.c	Tue Jun 29 01:17:22 1993
+--- ./lib/libxview/ttysw/tty_main.c	Sun Nov 20 13:39:14 1994
+***************
+*** 75,80 ****
+--- 75,85 ----
+  int     committed_left = 0;
+  #endif
+  
++ static int ttysw_process_point();
++ static int ttysw_process_adjust();
++ static int ttysw_process_motion();
++ static int ttysw_process_keyboard();
++ 
+  extern Textsw_index textsw_insert();
+  #ifdef OW_I18N
+  extern Textsw_index textsw_insert_wcs();
+***************
+*** 906,913 ****
+--- 911,922 ----
+  
+  	    if (int_ucntl == (tiocsti & 0xff))
+  		ttysw_process_STI(ttysw, owbp, cc - 1);
++ #ifndef XV_USE_TERMIOS
+  	    (void) ioctl(ttysw->ttysw_tty, TIOCGETC, &ttysw->tchars);
+  	    (void) ioctl(ttysw->ttysw_tty, TIOCGLTC, &ttysw->ltchars);
++ #else
++ 	    (void) tcgetattr(ttysw->ttysw_tty, &ttysw->termios);
++ #endif
+  	    ttysw_getp(TTY_VIEW_HANDLE_FROM_TTY_FOLIO(ttysw));	/* jcb for nng */
+  	} else
+  #ifdef OW_I18N
+diff -rc ../old/xview3.2p1-X11R6/lib/libxview/ttysw/tty_ntfy.c ./lib/libxview/ttysw/tty_ntfy.c
+*** ../old/xview3.2p1-X11R6/lib/libxview/ttysw/tty_ntfy.c	Tue Jun 29 01:17:17 1993
+--- ./lib/libxview/ttysw/tty_ntfy.c	Sun Nov 20 13:39:14 1994
+***************
+*** 171,180 ****
+--- 171,184 ----
+       * SIGWINCHes on resize.
+       */
+      /* Notify process group that terminal has changed. */
++ #if !(defined(BSD) && (BSD >= 199103))
+      if (ioctl(ttysw->ttysw_tty, TIOCGPGRP, &pgrp) == -1) {
+  	perror(XV_MSG("ttysw_sigwinch, can't get tty process group"));
+  	return;
+      }
++ #else
++     pgrp = tcgetpgrp(ttysw->ttysw_pty);
++ #endif
+      /*
+       * Only killpg when pgrp is not tool's.  This is the case of haven't
+       * completed ttysw_fork yet (or even tried to do it yet).
+***************
+*** 204,210 ****
+--- 208,218 ----
+  	return;
+      }
+      /* Send the signal to the process group of the controlling tty */
++ #if !(defined(BSD) && (BSD >= 199103))
+      if (ioctl(ttysw->ttysw_tty, TIOCGPGRP, &control_pg) >= 0) {
++ #else
++     if ((control_pg = tcgetpgrp(ttysw->ttysw_pty)) >= 0) {
++ #endif
+  	/*
+  	 * Flush our buffers of completed and partial commands. Be sure to do
+  	 * this BEFORE killpg, or we'll flush the prompt coming back from the
+***************
+*** 227,237 ****
+  	    termsw->cmd_started = 0;
+  	    termsw->pty_owes_newline = 0;
+  	}
+! #	if defined(XV_USE_SVR4_PTYS) || defined(sun)
+  	(void) ioctl(ttysw->ttysw_pty, TIOCSIGNAL, &sig);;
+! #	else
+  	(void) killpg(control_pg, sig);
+! #	endif
+      } else
+  	perror(XV_MSG("ioctl"));
+  }
+--- 235,245 ----
+  	    termsw->cmd_started = 0;
+  	    termsw->pty_owes_newline = 0;
+  	}
+! #if defined(XV_USE_SVR4_PTYS) || defined(sun)
+  	(void) ioctl(ttysw->ttysw_pty, TIOCSIGNAL, &sig);;
+! #else
+  	(void) killpg(control_pg, sig);
+! #endif
+      } else
+  	perror(XV_MSG("ioctl"));
+  }
+diff -rc ../old/xview3.2p1-X11R6/lib/libxview/ttysw/ttyansi.c ./lib/libxview/ttysw/ttyansi.c
+*** ../old/xview3.2p1-X11R6/lib/libxview/ttysw/ttyansi.c	Tue Jun 29 01:17:21 1993
+--- ./lib/libxview/ttysw/ttyansi.c	Sun Nov 20 13:39:15 1994
+***************
+*** 31,36 ****
+--- 31,40 ----
+  
+  #include <xview/sel_attrs.h>
+  
++ static int	send_input_to_textsw();
++ static int	ansi_lf();
++ static int	ansi_char();
++ 
+  char           *strncpy();
+  char           *textsw_checkpoint_undo();
+  Textsw_index    textsw_replace_i18n(), textsw_erase_i18n();
+diff -rc ../old/xview3.2p1-X11R6/lib/libxview/ttysw/ttyselect.c ./lib/libxview/ttysw/ttyselect.c
+*** ../old/xview3.2p1-X11R6/lib/libxview/ttysw/ttyselect.c	Sat Jun 25 21:05:23 1994
+--- ./lib/libxview/ttysw/ttyselect.c	Sun Nov 20 13:39:15 1994
+***************
+*** 75,80 ****
+--- 75,82 ----
+  #endif
+                  ttysel_reply();
+  
++ static ttysel_resynch();
++ 
+  static struct ttyselection *
+                  ttysel_from_rank();
+  
+diff -rc ../old/xview3.2p1-X11R6/lib/libxview/win/win_input.c ./lib/libxview/win/win_input.c
+*** ../old/xview3.2p1-X11R6/lib/libxview/win/win_input.c	Sun Jun 26 18:27:53 1994
+--- ./lib/libxview/win/win_input.c	Sun Nov 20 13:39:15 1994
+***************
+*** 56,61 ****
+--- 56,62 ----
+  static int      GetButtonEvent();
+  static int      win_translate_KP_keysym();
+  static int 	translate_key();
++ static int	xevent_to_event();
+  
+  extern struct rectlist *win_get_damage();
+  extern void     server_set_timestamp();

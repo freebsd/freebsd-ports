@@ -1,0 +1,82 @@
+diff -rc ../old/xview3.2p1-X11R6/bitmaps/Imakefile ./bitmaps/Imakefile
+*** ../old/xview3.2p1-X11R6/bitmaps/Imakefile	Tue Jun 29 01:19:54 1993
+--- ./bitmaps/Imakefile	Sun Nov 20 13:38:56 1994
+***************
+*** 36,42 ****
+  
+! all: $(SRCS)
+  
+! BuildIncludes($(INCLUDES_SRCS),$(BITMAP_INCDIR),/**/)
+  
+  install:: $(SRCS)
+  	$(MKDIRHIER) $(HEADER_DEST)/$(BITMAPINC)
+--- 36,42 ----
+  
+! all:: $(SRCS)
+  
+! BuildIncludes($(INCLUDES_SRCS),$(BITMAP_INCDIR),.)
+  
+  install:: $(SRCS)
+  	$(MKDIRHIER) $(HEADER_DEST)/$(BITMAPINC)
+diff -rc ../old/xview3.2p1-X11R6/doc/Imakefile ./doc/Imakefile
+*** ../old/xview3.2p1-X11R6/doc/Imakefile	Tue Jun 29 01:13:15 1993
+--- ./doc/Imakefile	Sun Nov 20 13:38:59 1994
+***************
+*** 17,23 ****
+  ALLFILES = $(DOCFILES)
+  
+  install::
+!         $(MKDIRHIER) $(DOC_DEST)
+  
+  InstallNonExecList($(DOCFILES),$(DOC_DEST))
+  PopulateSCCSTree(h,$(ALLFILES) README)
+--- 17,23 ----
+  ALLFILES = $(DOCFILES)
+  
+  install::
+! 	$(MKDIRHIER) $(DOC_DEST)
+  
+  InstallNonExecList($(DOCFILES),$(DOC_DEST))
+  PopulateSCCSTree(h,$(ALLFILES) README)
+diff -rc ../old/xview3.2p1-X11R6/images/Imakefile ./images/Imakefile
+*** ../old/xview3.2p1-X11R6/images/Imakefile	Tue Jun 29 01:18:41 1993
+--- ./images/Imakefile	Sun Nov 20 13:38:59 1994
+***************
+*** 101,107 ****
+  
+! all: $(SRCS)
+  
+! BuildIncludes($(INCLUDES_SRCS),$(IMAGE_INCDIR),/**/)
+  
+  install:: $(SRCS)
+  	$(MKDIRHIER) $(HEADER_DEST)/$(IMAGEINC)
+--- 101,107 ----
+  
+! all:: $(SRCS)
+  
+! BuildIncludes($(INCLUDES_SRCS),$(IMAGE_INCDIR),.)
+  
+  install:: $(SRCS)
+  	$(MKDIRHIER) $(HEADER_DEST)/$(IMAGEINC)
+diff -rc ../old/xview3.2p1-X11R6/lib/pixrect/Imakefile ./lib/pixrect/Imakefile
+*** ../old/xview3.2p1-X11R6/lib/pixrect/Imakefile	Tue Jun 29 01:18:39 1993
+--- ./lib/pixrect/Imakefile	Sun Nov 20 13:39:15 1994
+***************
+*** 41,48 ****
+  all:: 
+  
+  #if InstallPixrectHeaders
+! BuildIncludes($(HEADERS),$(PIXRECT_INCDIR),/**/)
+! BuildIncludes($(HEADERS2),$(INCDIR),/**/)
+   
+  install::
+  	$(MKDIRHIER) $(PIXRECT_HEADER_DEST)
+--- 41,48 ----
+  all:: 
+  
+  #if InstallPixrectHeaders
+! BuildIncludes($(HEADERS),$(PIXRECT_INCDIR),.)
+! BuildIncludes($(HEADERS2),$(INCDIR),.)
+   
+  install::
+  	$(MKDIRHIER) $(PIXRECT_HEADER_DEST)
