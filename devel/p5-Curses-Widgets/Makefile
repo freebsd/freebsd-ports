@@ -6,23 +6,33 @@
 #
 
 PORTNAME=	Curses-Widgets
-PORTVERSION=	1.2
+PORTVERSION=	1.997
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Curses
 PKGNAMEPREFIX=	p5-
-DISTNAME=	curses_widgets_${PORTVERSION:S/./_/}
+DISTNAME=	CursesWidgets-${PORTVERSION}
 
 MAINTAINER=	petef@FreeBSD.org
 
-BUILD_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/${PERL_ARCH}/Curses.pm:${PORTSDIR}/devel/p5-Curses
+BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Curses.pm:${PORTSDIR}/devel/p5-Curses
 RUN_DEPENDS=	${BUILD_DEPENDS}
-
-WRKSRC=		${WRKDIR}/curses_widgets-${PORTVERSION}
 
 PERL_CONFIGURE=	yes
 
 MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
-MAN3=		Curses::Widgets.3
+MAN3=	Curses::Widgets::Label.3 \
+	Curses::Widgets.3 \
+	Curses::Widgets::TextMemo.3 \
+	Curses::Widgets::ListBox.3 \
+	Curses::Widgets::Menu.3 \
+	Curses::Widgets::ButtonSet.3 \
+	Curses::Widgets::ComboBox.3 \
+	Curses::Widgets::TextField.3 \
+	Curses::Widgets::Tutorial.3 \
+	Curses::Widgets::Calendar.3 \
+	Curses::Widgets::ProgressBar.3 \
+	Curses::Widgets::ListBox::MultiColumn.3 \
+	Curses::Widgets::Tutorial::Creation.3
 
 .include <bsd.port.mk>
