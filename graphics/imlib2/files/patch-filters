@@ -1,0 +1,57 @@
+--- src/modules/filters/Makefile.in.orig	Mon Mar 21 09:53:49 2005
++++ src/modules/filters/Makefile.in	Mon Mar 21 09:55:08 2005
+@@ -104,13 +104,16 @@
+ pkg_LTLIBRARIES = testfilter.la bumpmap.la colormod.la
+ 
+ testfilter_la_SOURCES = filter_test.c
+-testfilter_la_LDFLAGS = -module -avoid-version
++testfilter_la_LDFLAGS = -module -avoid-version -L$(top_builddir)/src/lib/
++testfilter_la_LIBADD = -lImlib2
+ 
+ bumpmap_la_SOURCES = filter_bumpmap.c
+-bumpmap_la_LDFLAGS = -module -avoid-version
++bumpmap_la_LDFLAGS = -module -avoid-version -L$(top_builddir)/src/lib/
++bumpmap_la_LIBADD = -lImlib2
+ 
+ colormod_la_SOURCES = filter_colormod.c
+-colormod_la_LDFLAGS = -module -avoid-version
++colormod_la_LDFLAGS = -module -avoid-version -L$(top_builddir)/src/lib/
++colormod_la_LIBADD = -lImlib2
+ mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs
+ CONFIG_HEADER = ../../../config.h
+ CONFIG_CLEAN_FILES = 
+@@ -121,11 +124,11 @@
+ CPPFLAGS = @CPPFLAGS@
+ LDFLAGS = @LDFLAGS@
+ LIBS = @LIBS@
+-testfilter_la_LIBADD = 
++testfilter_la_DEPENDENCIES = 
+ testfilter_la_OBJECTS =  filter_test.lo
+-bumpmap_la_LIBADD = 
++bumpmap_la_DEPENDENCIES = 
+ bumpmap_la_OBJECTS =  filter_bumpmap.lo
+-colormod_la_LIBADD = 
++colormod_la_DEPENDENCIES = 
+ colormod_la_OBJECTS =  filter_colormod.lo
+ CFLAGS = @CFLAGS@
+ COMPILE = $(CC) $(DEFS) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS)
+--- src/modules/filters/Makefile.am.orig	Mon Mar 21 09:53:44 2005
++++ src/modules/filters/Makefile.am	Mon Mar 21 09:55:46 2005
+@@ -11,11 +11,14 @@
+ pkg_LTLIBRARIES       = testfilter.la bumpmap.la colormod.la
+ 
+ testfilter_la_SOURCES = filter_test.c
+-testfilter_la_LDFLAGS = -module -avoid-version
++testfilter_la_LDFLAGS = -module -avoid-version -L$(top_builddir)/src/lib/
++testfilter_la_LIBADD  = -lImlib2
+ 
+ bumpmap_la_SOURCES    = filter_bumpmap.c
+-bumpmap_la_LDFLAGS    = -module -avoid-version
++bumpmap_la_LDFLAGS    = -module -avoid-version -L$(top_builddir)/src/lib/
++bumpmap_la_LIBADD  = -lImlib2
+ 
+ colormod_la_SOURCES   = filter_colormod.c
+-colormod_la_LDFLAGS   = -module -avoid-version
++colormod_la_LDFLAGS   = -module -avoid-version -L$(top_builddir)/src/lib/
++colormod_la_LIBADD  = -lImlib2
+ 
