@@ -462,6 +462,7 @@
     SUBDIR += walker
     SUBDIR += whatmask
     SUBDIR += wide-dhcp
+    SUBDIR += wmnd
     SUBDIR += wmnet
     SUBDIR += wmnet2
     SUBDIR += wmnetmon
