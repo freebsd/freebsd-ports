@@ -21,7 +21,7 @@ USE_GMAKE=	yes
 MAN1=		sapserver.1
 PORTDOCS=	AUTHORS COPYING ChangeLog INSTALL NEWS README
 PLIST_FILES=	bin/sapserver etc/sap.cfg-dist etc/rc.d/sapserver.sh
-RC_SUBR?=	/etc/rc.subr
+USE_RC_SUBR=	yes
 PKGMESSAGE=	${WRKDIR}/pkg-message
 
 post-patch:
