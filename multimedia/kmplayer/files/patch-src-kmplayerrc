@@ -1,0 +1,11 @@
+--- src/kmplayerrc.orig	Thu Feb  5 21:12:54 2004
++++ src/kmplayerrc	Thu Feb  5 21:13:03 2004
+@@ -6,7 +6,7 @@
+ [KFileDialog Speedbar]
+ 
+ [MPlayer]
+-Post MPlayer 0.90=true
++Post MPlayer 0.90=false
+ Add Configure Button=true
+ Additional Arguments=
+ Mencoder Arguments=-oac mp3lame -ovc lavc
