@@ -1,0 +1,3 @@
+bin/ed2k_urlslave
+%%PORTDOCS%%share/doc/edonkey-gui-gtk-urlslave/README
+%%PORTDOCS%%@dirrm share/doc/edonkey-gui-gtk-urlslave
