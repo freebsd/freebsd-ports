@@ -29,9 +29,12 @@ share/smi/mibs/ietf/BGP4-MIB
 share/smi/mibs/ietf/BRIDGE-MIB
 share/smi/mibs/ietf/CHARACTER-MIB
 share/smi/mibs/ietf/CLNS-MIB
+share/smi/mibs/ietf/COPS-CLIENT-MIB
 share/smi/mibs/ietf/DECNET-PHIV-MIB
 share/smi/mibs/ietf/DIAL-CONTROL-MIB
 share/smi/mibs/ietf/DIRECTORY-SERVER-MIB
+share/smi/mibs/ietf/DISMAN-EVENT-MIB
+share/smi/mibs/ietf/DISMAN-EXPRESSION-MIB
 share/smi/mibs/ietf/DISMAN-NSLOOKUP-MIB
 share/smi/mibs/ietf/DISMAN-PING-MIB
 share/smi/mibs/ietf/DISMAN-SCHEDULE-MIB
@@ -56,6 +59,8 @@ share/smi/mibs/ietf/EtherLike-MIB
 share/smi/mibs/ietf/FDDI-SMT73-MIB
 share/smi/mibs/ietf/FIBRE-CHANNEL-FE-MIB
 share/smi/mibs/ietf/FLOW-METER-MIB
+share/smi/mibs/ietf/FR-ATM-PVC-SERVICE-IWF-MIB
+share/smi/mibs/ietf/FR-MFR-MIB
 share/smi/mibs/ietf/FRAME-RELAY-DTE-MIB
 share/smi/mibs/ietf/FRNETSERV-MIB
 share/smi/mibs/ietf/HCNUM-TC
@@ -65,12 +70,14 @@ share/smi/mibs/ietf/HPR-IP-MIB
 share/smi/mibs/ietf/HPR-MIB
 share/smi/mibs/ietf/IF-INVERTED-STACK-MIB
 share/smi/mibs/ietf/IF-MIB
+share/smi/mibs/ietf/IGMP-STD-MIB
 share/smi/mibs/ietf/INET-ADDRESS-MIB
 share/smi/mibs/ietf/INTEGRATED-SERVICES-GUARANTEED-MIB
 share/smi/mibs/ietf/INTEGRATED-SERVICES-MIB
 share/smi/mibs/ietf/IP-FORWARD-MIB
 share/smi/mibs/ietf/IP-MIB
 share/smi/mibs/ietf/IPATM-IPMC-MIB
+share/smi/mibs/ietf/IPMROUTE-STD-MIB
 share/smi/mibs/ietf/IPOA-MIB
 share/smi/mibs/ietf/IPV6-ICMP-MIB
 share/smi/mibs/ietf/IPV6-MIB
@@ -86,10 +93,12 @@ share/smi/mibs/ietf/MTA-MIB
 share/smi/mibs/ietf/Modem-MIB
 share/smi/mibs/ietf/NETWORK-SERVICES-MIB
 share/smi/mibs/ietf/NHRP-MIB
+share/smi/mibs/ietf/NOTIFICATION-LOG-MIB
 share/smi/mibs/ietf/OSPF-MIB
 share/smi/mibs/ietf/OSPF-TRAP-MIB
 share/smi/mibs/ietf/P-BRIDGE-MIB
 share/smi/mibs/ietf/PARALLEL-MIB
+share/smi/mibs/ietf/PIM-MIB
 share/smi/mibs/ietf/PPP-BRIDGE-NCP-MIB
 share/smi/mibs/ietf/PPP-IP-NCP-MIB
 share/smi/mibs/ietf/PPP-LCP-MIB
@@ -120,6 +129,7 @@ share/smi/mibs/ietf/RMON-MIB
 share/smi/mibs/ietf/RMON2-MIB
 share/smi/mibs/ietf/RS-232-MIB
 share/smi/mibs/ietf/RSVP-MIB
+share/smi/mibs/ietf/RTP-MIB
 share/smi/mibs/ietf/SIP-MIB
 share/smi/mibs/ietf/SLAPM-MIB
 share/smi/mibs/ietf/SMON-MIB

@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	libsmi
-PORTVERSION=	0.2.6
+PORTVERSION=	0.2.13
 CATEGORIES=	net
 MASTER_SITES=	ftp://ftp.ibr.cs.tu-bs.de/pub/local/libsmi/
 
@@ -16,7 +16,7 @@ MAINTAINER=	saper@system.pl
 
 #USE_X_PREFIX=	yes
 
-GNU_CONFIGURE=	yes
+USE_LIBTOOL=	yes
 INSTALLS_SHLIB=	yes
 USE_GMAKE=	yes
 MIBDIR=		${PREFIX}/share/smi/mibs
