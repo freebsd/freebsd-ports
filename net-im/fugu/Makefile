@@ -12,13 +12,11 @@ MASTER_SITES=	http://fugu.gale.org/dist/
 
 MAINTAINER=	peterh@sapros.com
 
-BUILD_DEPENDS=	python1.5:${PORTSDIR}/lang/python
-RUN_DEPENDS+= 	${LOCALBASE}/lib/python1.5/site-packages/Pmw:${PORTSDIR}/x11-toolkits/pmw
+RUN_DEPENDS+= 	${PYTHON_SITELIBDIR}/Pmw:${PORTSDIR}/x11-toolkits/pmw
 
-PYTHON_VERSION=		python1.5
-PYTHON_NO_DEPENDS=	yes
-USE_XLIB=		yes
-GNU_CONFIGURE=		yes
+USE_PYTHON=	yes
+USE_XLIB=	yes
+GNU_CONFIGURE=	yes
 
 CFLAGS+=	-I${LOCALBASE}/include -L${LOCALBASE}/lib
 CPPFLAGS+=	-I${LOCALBASE}/include -L${LOCALBASE}/lib
