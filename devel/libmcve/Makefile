@@ -20,4 +20,7 @@ USE_GMAKE=	yes
 INSTALLS_SHLIB=	yes
 CONFIGURE_ARGS=	--without-pthread
 
+post-install:
+	@${LN} -fs libmcve.so.4 ${PREFIX}/lib/libmcve.so.3
+
 .include <bsd.port.mk>
