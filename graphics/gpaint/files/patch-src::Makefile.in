@@ -1,0 +1,14 @@
+
+$FreeBSD$
+
+--- src/Makefile.in	2001/12/19 10:37:34	1.1
++++ src/Makefile.in	2001/12/19 10:37:53
+@@ -115,7 +115,7 @@
+ cxxflags_set = @cxxflags_set@
+ l = @l@
+ 
+-INCLUDES =  	-I$(top_srcdir)/intl 	$(GNOME_INCLUDEDIR)
++INCLUDES =  	$(GDK_PIXBUF_CFLAGS)	-I$(top_srcdir)/intl 	$(GNOME_INCLUDEDIR)
+ 
+ 
+ bin_PROGRAMS = gpaint
