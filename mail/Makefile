@@ -30,6 +30,7 @@
     SUBDIR += emil
     SUBDIR += evolution
     SUBDIR += exim
+    SUBDIR += exim-ldap
     SUBDIR += exmh2
     SUBDIR += ezmlm
     SUBDIR += ezmlm-idx
