@@ -1,0 +1,50 @@
+# New ports collection makefile for:	crafty
+# Version required:			15.10
+# Date created:				31 May 1998
+# Whom:					Stefan Eggers <seggers@semyam.dinoco.de>
+#
+# $Id$
+#
+
+DISTNAME=	crafty-15.10
+CATEGORIES=	games
+MASTER_SITES=	ftp://ftp.cis.uab.edu/pub/hyatt/ \
+		ftp://ftp.cis.uab.edu/pub/hyatt/common/ \
+		ftp://ftp.cis.uab.edu/pub/hyatt/v15/
+DISTFILES=	crafty-15.10.tar.gz crafty.doc crafty.faq read.me start.zip
+
+MAINTAINER=	seggers@semyam.dinoco.de
+
+BUILD_DEPENDS=	unzip:${PORTSDIR}/archivers/unzip
+
+ALL_TARGET=	crafty
+DIST_SUBDIR=	crafty
+EXTRACT_ONLY=	crafty-15.10.tar.gz
+
+MAN6=		crafty.6
+NO_CDROM=	yes
+NO_WRKSUBDIR=	yes
+RESTRICTED=	"found no copyright notice or anything else - better be safe than sorry"
+
+post-extract:
+	(cd ${WRKDIR}; unzip ${DISTDIR}/${DIST_SUBDIR}/start.zip)
+
+post-build:
+	(cd ${WRKDIR}; ./crafty <${FILESDIR}/books-building)
+
+do-install:
+	${INSTALL_PROGRAM} ${WRKDIR}/crafty ${PREFIX}/bin/crafty
+	${MKDIR} ${PREFIX}/lib/crafty
+	${INSTALL_DATA} ${WRKDIR}/books.bin ${PREFIX}/lib/crafty/books.bin
+	${INSTALL_MAN} ${FILESDIR}/crafty.6 ${MANPREFIX}/man/man6/crafty.6
+.if !defined(NOPORTDOCS)
+	${MKDIR} ${PREFIX}/share/doc/crafty
+	${INSTALL_DATA} ${DISTDIR}/${DIST_SUBDIR}/crafty.doc ${PREFIX}/share/doc/crafty/crafty.doc
+	${INSTALL_DATA} ${DISTDIR}/${DIST_SUBDIR}/crafty.faq ${PREFIX}/share/doc/crafty/crafty.faq
+	${INSTALL_DATA} ${DISTDIR}/${DIST_SUBDIR}/read.me ${PREFIX}/share/doc/crafty/read.me
+.endif
+
+post-install:
+	strip ${PREFIX}/bin/crafty
+
+.include <bsd.port.mk>

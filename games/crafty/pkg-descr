@@ -1,0 +1,7 @@
+This is crafty - a chess programm which is not just able to play a
+game and tell you the best move but also can annotate PGN files.
+
+The user interface is ASCII based.  For a graphical interface one can
+use xboard which interfaces very well with it.
+
+- Stefan Eggers <seggers@semyam.dinoco.de>
