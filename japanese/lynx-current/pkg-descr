@@ -1,0 +1,9 @@
+lynx is a program which allows a user to access World-Wide Web servers
+and other information servers.  It uses only ascii representation so
+that it can be used from ascii-terminals and dialin-lines.
+
+And this package is modified for multi-byte.
+Modified point is following:
+  . History and VisitedLinks
+  . Editing to FORM TEXTFIELD and TEXTAREA
+  . Bookmark
