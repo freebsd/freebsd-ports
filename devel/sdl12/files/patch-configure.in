@@ -22,8 +22,8 @@ $FreeBSD$
 +         #include <sys/kbio.h>
 +         #include <vgl.h>
 +        ],[
-+         VGLMode mode;
-+         exit(0);
++         VGLBitmap bitmap;
++         exit(bitmap.PyxelBytes);
 +        ],[
 +        video_vgl=yes
 +        ])

@@ -1,9 +1,9 @@
 
 $FreeBSD$
 
---- /dev/null	Mon Jan 22 20:53:09 2001
-+++ src/video/vgl/SDL_vglvideo.c	Mon Jan 22 20:04:39 2001
-@@ -0,0 +1,444 @@
+--- src/video/vgl/SDL_vglvideo.c.orig	Sat Jan 27 17:45:48 2001
++++ src/video/vgl/SDL_vglvideo.c	Sat Jan 27 18:13:31 2001
+@@ -0,0 +1,616 @@
 +/*
 +    SDL - Simple DirectMedia Layer
 +    Copyright (C) 1997, 1998, 1999, 2000  Sam Lantinga
@@ -56,8 +56,6 @@ $FreeBSD$
 +#include "SDL_vglmouse_c.h"
 +
 +
-+static VGLMode *VGLCurMode = NULL;
-+
 +/* Initialization/Query functions */
 +static int VGL_VideoInit(_THIS, SDL_PixelFormat *vformat);
 +static SDL_Rect **VGL_ListModes(_THIS, SDL_PixelFormat *format, Uint32 flags);
@@ -72,6 +70,10 @@ $FreeBSD$
 +static int VGL_FlipHWSurface(_THIS, SDL_Surface *surface);
 +static void VGL_UnlockHWSurface(_THIS, SDL_Surface *surface);
 +static void VGL_FreeHWSurface(_THIS, SDL_Surface *surface);
++
++/* Misc function */
++static VGLMode ** VGLListModes(int depth, int mem_model);
++static void VGLWaitRetrace(void);
 +
 +/* VGL driver bootstrap functions */
 +
@@ -133,7 +135,7 @@ $FreeBSD$
 +	device->SetHWAlpha = NULL;
 +	device->LockHWSurface = VGL_LockHWSurface;
 +	device->UnlockHWSurface = VGL_UnlockHWSurface;
-+	device->FlipHWSurface = NULL;
++	device->FlipHWSurface = VGL_FlipHWSurface;
 +	device->FreeHWSurface = VGL_FreeHWSurface;
 +	device->SetIcon = NULL;
 +	device->SetCaption = NULL;
@@ -242,10 +244,6 @@ $FreeBSD$
 +		SDL_SetError("Unable to initialize mouse");
 +		return -1;
 +	}
-+//	if (VGLMouseInit(VGL_MOUSEHIDE) != 0) {
-+//		SDL_SetError("Unable to initialize mouse");
-+//		return -1;
-+//	}
 +
 +	/* Determine the screen depth */
 +	if (VGLCurMode != NULL)
@@ -294,7 +292,7 @@ $FreeBSD$
 +static void VGL_BankedUpdate(_THIS, int numrects, SDL_Rect *rects);
 +
 +SDL_Surface *VGL_SetVideoMode(_THIS, SDL_Surface *current,
-+				int width, int height, int bpp, Uint32 flags)
++			      int width, int height, int bpp, Uint32 flags)
 +{
 +	int mode_found;
 +	int i;
@@ -326,25 +324,45 @@ $FreeBSD$
 +		SDL_SetError("Unable to switch to requested mode");
 +		return NULL;
 +	}
++
 +	VGLCurMode = realloc(VGLCurMode, sizeof(VGLMode));
 +	VGLCurMode->ModeInfo = *VGLDisplay;
 +	VGLCurMode->Depth = modes[i]->Depth;
 +	VGLCurMode->ModeId = modes[i]->ModeId;
++	VGLCurMode->Rmask = modes[i]->Rmask;
++	VGLCurMode->Gmask = modes[i]->Gmask;
++	VGLCurMode->Bmask = modes[i]->Bmask;
 +
 +	/* Workaround a bug in libvgl */
 +	if (VGLCurMode->ModeInfo.PixelBytes == 0)
 +		(VGLCurMode->ModeInfo.PixelBytes = 1);
 +
-+	current->flags = (SDL_FULLSCREEN | SDL_HWSURFACE);
-+	if (VGLCurMode->ModeInfo.Type == VIDBUF8)
-+		current->flags |= SDL_HWPALETTE;
 +	current->w = VGLCurMode->ModeInfo.Xsize;
 +	current->h = VGLCurMode->ModeInfo.Ysize;
 +	current->pixels = VGLCurMode->ModeInfo.Bitmap;
-+	current->pitch = VGLCurMode->ModeInfo.Xsize * VGLCurMode->ModeInfo.PixelBytes;
++	current->pitch = VGLCurMode->ModeInfo.Xsize *
++			 VGLCurMode->ModeInfo.PixelBytes;
++	current->flags = (SDL_FULLSCREEN | SDL_HWSURFACE);
 +
-+	/* FIXME - should set colormasks for bpp > 8*/
-+	if (! SDL_ReallocFormat(current, modes[i]->Depth, 0, 0, 0, 0)) {
++	/* Check if we are in a pseudo-color mode */
++	if (VGLCurMode->ModeInfo.Type == VIDBUF8)
++		current->flags |= SDL_HWPALETTE;
++
++	/* Check if we can do doublebuffering */
++	if (flags & SDL_DOUBLEBUF) {
++		if (VGLCurMode->ModeInfo.Xsize * 2 <=
++		    VGLCurMode->ModeInfo.VYsize) {
++			current->flags |= SDL_DOUBLEBUF;
++			flip_page = 0;
++			flip_address[0] = (byte *)current->pixels;
++			flip_address[1] = (byte *)current->pixels +
++					  current->h * current->pitch;
++			VGL_FlipHWSurface(this, current);
++		}
++	}
++
++	if (! SDL_ReallocFormat(current, modes[i]->Depth, VGLCurMode->Rmask,
++				VGLCurMode->Gmask, VGLCurMode->Bmask, 0)) {
 +		return NULL;
 +	}
 +
@@ -385,6 +403,15 @@ $FreeBSD$
 +
 +static int VGL_FlipHWSurface(_THIS, SDL_Surface *surface)
 +{
++//	VGLWaitRetrace();
++	if (VGLPanScreen(VGLDisplay, 0, flip_page * surface->h) < 0) {
++		SDL_SetError("VGLPanSreen() failed");
++                return -1;
++        }
++
++	flip_page = !flip_page;
++	surface->pixels = flip_address[flip_page];
++
 +	return 0;
 +}
 +
@@ -418,10 +445,12 @@ $FreeBSD$
 +{
 +	int i, j;
 +
-+	/* Reset the console video mode */
++	/* Return the keyboard to the normal state */
 +	VGLKeyboardEnd();
-+	VGLEnd();
++
++	/* Reset the console video mode if we actually initialised one */
 +	if (VGLCurMode != NULL) {
++		VGLEnd();
 +		free(VGLCurMode);
 +		VGLCurMode = NULL;
 +	}
@@ -448,3 +477,146 @@ $FreeBSD$
 +		this->screen->pixels = NULL;
 +	}
 +}
++
++#define VGL_RED_INDEX	0
++#define VGL_GREEN_INDEX	1
++#define VGL_BLUE_INDEX	2
++
++static VGLMode **
++VGLListModes(int depth, int mem_model)
++{
++  static VGLMode **modes = NULL;
++
++  VGLBitmap *vminfop;
++  VGLMode **modesp, *modescp;
++  video_info_t minfo;
++  int adptype, i, modenum;
++
++  if (modes == NULL) {
++    modes = malloc(sizeof(VGLMode *) * M_VESA_MODE_MAX);
++    bzero(modes, sizeof(VGLMode *) * M_VESA_MODE_MAX);
++  }
++  modesp = modes;
++
++  for (modenum = 0; modenum < M_VESA_MODE_MAX; modenum++) {
++    minfo.vi_mode = modenum;
++    if (ioctl(0, CONS_MODEINFO, &minfo) || ioctl(0, CONS_CURRENT, &adptype))
++      continue;
++    if (minfo.vi_mode != modenum)
++      continue;
++    if ((minfo.vi_flags & V_INFO_GRAPHICS) == 0)
++      continue;
++    if ((mem_model != -1) && ((minfo.vi_mem_model & mem_model) == 0))
++      continue;
++    if ((depth > 1) && (minfo.vi_depth != depth))
++      continue;
++
++    /* reallocf can fail */
++    if ((*modesp = reallocf(*modesp, sizeof(VGLMode))) == NULL)
++      return NULL;
++    modescp = *modesp;
++
++    vminfop = &(modescp->ModeInfo);
++    bzero(vminfop, sizeof(VGLBitmap));
++
++    vminfop->Type = NOBUF;
++
++    vminfop->PixelBytes = 1;	/* Good default value */
++    switch (minfo.vi_mem_model) {
++    case V_INFO_MM_PLANAR:
++      /* we can handle EGA/VGA planar modes only */
++      if (!(minfo.vi_depth != 4 || minfo.vi_planes != 4
++	    || (adptype != KD_EGA && adptype != KD_VGA)))
++	vminfop->Type = VIDBUF4;
++      break;
++    case V_INFO_MM_PACKED:
++      /* we can do only 256 color packed modes */
++      if (minfo.vi_depth == 8)
++	vminfop->Type = VIDBUF8;
++      break;
++    case V_INFO_MM_VGAX:
++      vminfop->Type = VIDBUF8X;
++      break;
++#if __FreeBSD_version >= 500000
++    case V_INFO_MM_DIRECT:
++      vminfop->PixelBytes = minfo.vi_pixel_size;
++      switch (vminfop->PixelBytes) {
++      case 2:
++	vminfop->Type = VIDBUF16;
++	break;
++#if notyet
++      case 3:
++	vminfop->Type = VIDBUF24;
++	break;
++#endif
++      case 4:
++	vminfop->Type = VIDBUF32;
++	break;
++      default:
++	break;
++      }
++#endif
++    default:
++      break;
++    }
++    if (vminfop->Type == NOBUF)
++      continue;
++
++    switch (vminfop->Type) {
++    case VIDBUF16:
++    case VIDBUF32:
++      modescp->Rmask = ((1 << minfo.vi_pixel_fsizes[VGL_RED_INDEX]) - 1) <<
++		       minfo.vi_pixel_fields[VGL_RED_INDEX];
++      modescp->Gmask = ((1 << minfo.vi_pixel_fsizes[VGL_GREEN_INDEX]) - 1) <<
++		       minfo.vi_pixel_fields[VGL_GREEN_INDEX];
++      modescp->Bmask = ((1 << minfo.vi_pixel_fsizes[VGL_BLUE_INDEX]) - 1) <<
++		       minfo.vi_pixel_fields[VGL_BLUE_INDEX];
++      break;
++
++    default:
++      break;
++    }
++
++    vminfop->Xsize = minfo.vi_width;
++    vminfop->Ysize = minfo.vi_height;
++    modescp->Depth = minfo.vi_depth;
++
++    /* XXX */
++    if (minfo.vi_mode >= M_VESA_BASE)
++      modescp->ModeId = _IO('V', minfo.vi_mode - M_VESA_BASE);
++    else
++      modescp->ModeId = _IO('S', minfo.vi_mode);
++
++    /* Sort list */
++    for (i = 0; modes + i < modesp ; i++) {
++      if (modes[i]->ModeInfo.Xsize * modes[i]->ModeInfo.Ysize >
++	  vminfop->Xsize * modes[i]->ModeInfo.Ysize)
++	continue;
++      if ((modes[i]->ModeInfo.Xsize * modes[i]->ModeInfo.Ysize ==
++	   vminfop->Xsize * vminfop->Ysize) &&
++	  (modes[i]->Depth >= modescp->Depth))
++	continue;
++      *modesp = modes[i];
++      modes[i] = modescp;
++      modescp = *modesp;
++      vminfop = &(modescp->ModeInfo);
++    }
++
++    modesp++;
++  }
++
++  if (*modesp != NULL) {
++    free(*modesp);
++    *modesp = NULL;
++  }
++
++  return modes;
++}
++
++static void
++VGLWaitRetrace(void)
++{
++  while (!(inb(0x3DA) & 8));
++  while (inb(0x3DA) & 8);
++}
++

@@ -1,8 +1,8 @@
 
 $FreeBSD$
 
---- /dev/null	Mon Jan 22 20:53:10 2001
-+++ src/video/vgl/SDL_vglmouse_c.h	Mon Jan 22 16:31:43 2001
+--- src/video/vgl/SDL_vglmouse_c.h.orig	Wed Jan 24 00:51:13 2001
++++ src/video/vgl/SDL_vglmouse_c.h	Wed Jan 24 00:51:13 2001
 @@ -0,0 +1,36 @@
 +/*
 +    SDL - Simple DirectMedia Layer
