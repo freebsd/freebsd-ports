@@ -9,19 +9,26 @@ PORTNAME=	xv
 PORTVERSION=	3.10a
 CATEGORIES+=	graphics
 MASTER_SITES=	ftp://ftp.cis.upenn.edu/pub/xv/ \
+		ftp://ftp.trilon.com/pub/xv/ \
+		ftp://ftp.trilon.com/pub/xv/patches/ \
 		ftp://ftp.airlab.cs.ritsumei.ac.jp/pub/X/xv-jp-extension/working/ \
 		${MASTER_SITE_LOCAL} \
 		http://www.yuasa.kuis.kyoto-u.ac.jp/~shige/FreeBSD/ports/xv/
 MASTER_SITE_SUBDIR=	ports/xv
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 		${PORTNAME}${PORTVERSION:S/.//}-jp-extension-rev5.3.3.tar.gz \
-		croppad.patch grabpatch jp-ext-bzip2.patch longname.patch \
-		mp-tiff-patch pdf.patch png-1.2d-fix.patch xv-png-1.2d.patch
+		jp-ext-bzip2.patch longname.patch pdf.patch \
+		xv-png-1.2d.patch xvpng-1.2d-fix3.patch
 DIST_SUBDIR=	${PORTNAME}
 EXTRACT_ONLY=	${DISTFILES:N*patch}
 
-PATCH_SITES=	ftp://ftp.cis.upenn.edu/pub/xv/
-PATCHFILES=	${DISTNAME}.JPEG-patch ${DISTNAME}.TIFF-patch
+PATCH_SITES=	ftp://ftp.cis.upenn.edu/pub/xv/ \
+		ftp://ftp.trilon.com/pub/xv/patches/
+# Note: xpm.patch appears to already be in xvdir.c
+PATCHFILES=	${DISTNAME}.JPEG-patch ${DISTNAME}.TIFF-patch \
+		croppad.patch grabpatch vispatch mp-tiff-patch \
+		deepcolor.patch gifpatch exceed_grab.patch \
+		tiff1200.patch gssafer.patch
 
 MAINTAINER?=	shige@FreeBSD.org
 
@@ -40,14 +47,11 @@ pre-patch:
 	@${PATCH} ${PATCH_ARGS} -p1 < ${WRKDIR}/xv-jp-extension/Patch.xv310a-ext-5.3.3
 
 post-patch:
-	@${PATCH} ${PATCH_ARGS} -p0 < ${XVDIST}/croppad.patch
-	@${PATCH} ${PATCH_ARGS} -p0 < ${XVDIST}/grabpatch
-	@${PATCH} ${PATCH_ARGS} -p1 < ${XVDIST}/longname.patch
-	@${PATCH} ${PATCH_ARGS} -p0 < ${XVDIST}/mp-tiff-patch
-	@${PATCH} ${PATCH_ARGS} -p1 < ${XVDIST}/pdf.patch
-	@${PATCH} ${PATCH_ARGS} -p1 < ${XVDIST}/xv-png-1.2d.patch
-	@${PATCH} ${PATCH_ARGS} -p1 < ${XVDIST}/png-1.2d-fix.patch
-	@${PATCH} ${PATCH_ARGS} -p1 < ${XVDIST}/jp-ext-bzip2.patch
+	${PATCH} ${PATCH_ARGS} -p1 < ${XVDIST}/longname.patch
+	${PATCH} ${PATCH_ARGS} -p1 < ${XVDIST}/pdf.patch
+	${PATCH} ${PATCH_ARGS} -p1 < ${XVDIST}/xv-png-1.2d.patch
+	${PATCH} ${PATCH_ARGS} -p0 < ${XVDIST}/xvpng-1.2d-fix3.patch
+	${PATCH} ${PATCH_ARGS} -p1 < ${XVDIST}/jp-ext-bzip2.patch
 	@${MV} ${WRKSRC}/config.h ${WRKSRC}/config.h.in
 	@${CAT} ${WRKSRC}/config.h.in | \
 		${SED} -e "s@%%LOCALBASE%%@${LOCALBASE}@" > ${WRKSRC}/config.h
