@@ -5,7 +5,7 @@
  
  cidr: $(OBJS)
 -	gcc -Wall -o cidr cidr.c
-+	gcc -Wall -o cidr $(OBJS)
++	$(CC) -Wall -o cidr $(OBJS)
  
  clean:
  	rm $(OBJS) cidr
