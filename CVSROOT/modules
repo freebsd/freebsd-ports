@@ -6509,6 +6509,7 @@ rev		src/usr.bin/rev
 revnetgroup	src/libexec/revnetgroup
 rexecd		src/libexec/rexecd
 rexx-imc	ports/lang/rexx-imc
+rfbproxy	ports/net/rfbproxy
 rfc		ports/misc/rfc
 rfksay		ports/games/rfksay
 rftp		ports/mail/rftp
