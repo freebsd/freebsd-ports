@@ -12,8 +12,10 @@ CATEGORIES=		emulators linux
 MASTER_SITES=		${MASTER_SITE_REDHAT_LINUX} \
 			${MASTER_SITE_REDHAT_LINUX:S/$/:i386/}
 MASTER_SITE_SUBDIR=	${PORTVERSION}/${LANG}/os/${ARCH}/RedHat/RPMS \
-			${PORTVERSION}/${LANG}/os/i386/RedHat/RPMS/:i386
-DISTFILES=		redhat-release-7.1-1.noarch.rpm:i386 \
+			${PORTVERSION}/${LANG}/os/i386/RedHat/RPMS/:i386 \
+			updates/${PORTVERSION}/${LANG}/os/${ARCH}
+DISTFILES=		${GLIBC} \
+			redhat-release-7.1-1.noarch.rpm:i386 \
 			${RPM_SETUP} \
 			filesystem-2.0.7-1.noarch.rpm \
 			basesystem-7.0-2.noarch.rpm \
@@ -37,11 +39,9 @@ DISTFILES=		redhat-release-7.1-1.noarch.rpm:i386 \
 			slang-1.4.2-2.${ARCH}.rpm \
 			sh-utils-2.0-13.${ARCH}.rpm \
 			rpm-4.0.2-8.${ARCH}.rpm \
-			${RPM_FREETYPE}
-
-PATCH_SITES=		${MASTER_SITE_REDHAT_LINUX}
-PATCH_SITE_SUBDIR=	updates/${PORTVERSION}/${LANG}/os/${ARCH}
-PATCHFILES=		${UPDATES}
+			zlib-1.1.4-8.7x.${ARCH}.rpm \
+			${RPM_FREETYPE} \
+			${RPM_XFREE86_LIBS}
 
 MAINTAINER=		ports@FreeBSD.org
 COMMENT=		The base set of packages needed in Linux mode
@@ -75,14 +75,12 @@ LANG=			en
 
 
 .if (${ARCH} == "alpha")
-UPD_SET1=		glibc-common-2.2.4-32.1.${ARCH}.rpm \
+GLIBC=			glibc-common-2.2.4-32.1.${ARCH}.rpm \
 			glibc-2.2.4-32.1.${ARCH}.rpm
 .else
-UPD_SET1=		glibc-common-2.2.4-33.${ARCH}.rpm \
+GLIBC=			glibc-common-2.2.4-33.${ARCH}.rpm \
 			glibc-2.2.4-33.${ARCH}.rpm
 .endif
-UPD_SET2=		${RPM_XFREE86_LIBS} zlib-1.1.4-8.7x.${ARCH}.rpm
-UPDATES=		${UPD_SET1} ${UPD_SET2}
 
 .if (${ARCH} == "amd64")
 LATEST_LINK=		${PORTNAME:C/linux_base/linux32_base/}
@@ -94,12 +92,11 @@ PORTREVISION=		7
 RPM_BZIP2=		bzip2-1.0.1-3.i386.rpm
 RPM_FREETYPE=		freetype-2.0.1-4.i386.rpm
 RPM_GDBM=		gdbm-1.8.0-5.i386.rpm
-RPM_LIBSTDCXX=
+RPM_LIBSTDCXX=		libstdc++-2.96-112.7.1.i386.rpm
 RPM_COMPAT_LIBSTDCXX=	compat-libstdc++-6.2-2.9.0.14.i386.rpm
 RPM_SETSERIAL=		setserial-2.17-2.i386.rpm
 RPM_SETUP=		setup-2.4.7-1.noarch.rpm
 RPM_XFREE86_LIBS=	XFree86-libs-4.1.0-50.i386.rpm
-UPD_SET2+=		libstdc++-2.96-112.7.1.i386.rpm
 .elif (${ARCH} == "alpha")
 RPM_BZIP2=		bzip2-1.0.1-4.alpha.rpm
 RPM_FREETYPE=		freetype-2.0.1-5.alpha.rpm
@@ -109,7 +106,6 @@ RPM_COMPAT_LIBSTDCXX=
 RPM_SETSERIAL=		setserial-2.17-3.alpha.rpm
 RPM_SETUP=		setup-2.4.7-2.noarch.rpm
 RPM_XFREE86_LIBS=	XFree86-libs-4.1.0-29.4hp.alpha.rpm
-UPD_SET2+=
 .else
 .error			Unsupported architecture ${ARCH}.
 .endif
@@ -160,7 +156,7 @@ do-install:
 	@${ECHO_MSG} ""
 	@sh -c "read line"
 .endif
-	@for R in ${UPD_SET1} ${DISTFILES:C/:.*//} ${UPD_SET2}; do \
+	@for R in ${DISTFILES:C/:.*//}; do \
 		${ECHO_MSG} $$R; \
 		${RPM} -U ${RPMFLAGS} ${RPMDIR}/$$R; \
 	done
@@ -183,7 +179,7 @@ do-install:
 # mtab in etc, albeit an empty one. This is needed in a couple of
 # cases. Most notably staroffice6.
 #
-	${INSTALL_DATA} ${FILESDIR}/yp.conf ${LINUXBASE}/etc
+	${INSTALL} ${COPY} -m 644 ${FILESDIR}/yp.conf ${LINUXBASE}/etc
 	${TOUCH} ${LINUXBASE}/etc/mtab
 #
 # Finish
