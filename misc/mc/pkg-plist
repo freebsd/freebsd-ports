@@ -16,4 +16,4 @@ lib/mc/mc.lib
 lib/mc/mc.tcl
 lib/mc/FAQ
 man/man1/mc.1.gz
-man/man8/mc.8.gz
+man/man8/mcserv.8.gz
