@@ -3,7 +3,7 @@
 # Date created:		16 March 1995  
 # Whom:			rmallory@csusb.edu
 #
-# $Id: Makefile,v 1.9 1998/01/21 20:02:07 fenner Exp $
+# $Id: Makefile,v 1.10 1998/09/22 19:10:12 asami Exp $
 #
 
 DISTNAME=       rplay-3.2.0b6
@@ -23,7 +23,7 @@ post-install:
 	@if [ ! -f ${PREFIX}/etc/rc.d/rplayd.sh ]; then \
 		echo "Installing ${PREFIX}/etc/rc.d/rplayd.sh startup file."; \
 		echo "#!/bin/sh" > ${PREFIX}/etc/rc.d/rplayd.sh; \
-		echo "[ -x /usr/local/sbin/rplayd ] && ( /usr/local/sbin/rplayd & ) && echo -n ' rplayd'" >> ${PREFIX}/etc/rc.d/rplayd.sh; \
+		echo "[ -x ${PREFIX}/sbin/rplayd ] && ( ${PREFIX}/sbin/rplayd & ) && echo -n ' rplayd'" >> ${PREFIX}/etc/rc.d/rplayd.sh; \
 		chmod 751 ${PREFIX}/etc/rc.d/rplayd.sh; \
 	fi
 	@if [ ! -f ${PREFIX}/etc/rplay.hosts ]; then \
