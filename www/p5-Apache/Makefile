@@ -3,7 +3,7 @@
 # Date created:				April 26th 1997
 # Whom:	      				James FitzGibbon <jfitz@FreeBSD.org>
 #
-#   $Id$
+#   $Id: Makefile,v 1.1.1.1 1997/05/05 00:41:07 jfitz Exp $
 #
 
 DISTNAME=	mod_perl-0.98
@@ -16,8 +16,8 @@ MAINTAINER=	jfitz@FreeBSD.ORG
 
 BUILD_DEPENDS=	${PREFIX}/lib/perl5/site_perl/ExtUtils/Embed.pm:${PORTSDIR}/devel/p5-ExtUtils-Embed \
 		${PREFIX}/lib/perl5/site_perl/CGI.pm:${PORTSDIR}/www/p5-CGI.pm \
-		perl5.003:${PORTSDIR}/lang/perl5
-RUN_DEPENDS=	perl5.003:${PORTSDIR}/lang/perl5
+		perl5.004:${PORTSDIR}/lang/perl5
+RUN_DEPENDS=	perl5.004:${PORTSDIR}/lang/perl5
 
 CONFIGURE_ENV+=	PORTSDIR=${PORTSDIR} INSTALL_PROGRAM="${INSTALL_PROGRAM}"
 

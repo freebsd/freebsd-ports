@@ -3,7 +3,7 @@
 # Date created:				October 21st 1996
 # Whom:	      				James FitzGibbon <jfitz@FreeBSD.org>
 #
-#   $Id: Makefile,v 1.4 1997/04/20 13:52:16 wosch Exp $
+#   $Id: Makefile,v 1.5 1997/04/20 21:26:16 jfitz Exp $
 #
 
 DISTNAME=	Ioctl-0_7
@@ -14,8 +14,8 @@ MASTER_SITE_SUBDIR=	Ioctl
 
 MAINTAINER=	jfitz@FreeBSD.ORG
 
-BUILD_DEPENDS= 	perl5.003:${PORTSDIR}/lang/perl5
-RUN_DEPENDS=	perl5.003:${PORTSDIR}/lang/perl5
+BUILD_DEPENDS= 	perl5.004:${PORTSDIR}/lang/perl5
+RUN_DEPENDS=	perl5.004:${PORTSDIR}/lang/perl5
 
 do-configure:
 		@ cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} ${PREFIX}/bin/perl Makefile.PL

@@ -3,7 +3,7 @@
 # Date created:				October 19th 1996
 # Whom:	      				James FitzGibbon <jfitz@FreeBSD.org>
 #
-#   $Id: Makefile,v 1.3 1996/11/18 08:46:44 asami Exp $
+#   $Id: Makefile,v 1.4 1997/04/20 13:52:46 wosch Exp $
 #
 
 DISTNAME=	perl_archie.1.5
@@ -14,8 +14,8 @@ MASTER_SITE_SUBDIR=	Archie
 
 MAINTAINER=	jfitz@FreeBSD.ORG
 
-BUILD_DEPENDS= 	perl5.003:${PORTSDIR}/lang/perl5
-RUN_DEPENDS=	perl5.003:${PORTSDIR}/lang/perl5
+BUILD_DEPENDS= 	perl5.004:${PORTSDIR}/lang/perl5
+RUN_DEPENDS=	perl5.004:${PORTSDIR}/lang/perl5
 
 NO_WRKSUBDIR=	YES
 NO_BUILD=	YES

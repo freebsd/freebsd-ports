@@ -3,7 +3,7 @@
 # Date created:				October 20th 1996
 # Whom:	      				James FitzGibbon <jfitz@FreeBSD.org>
 #
-#   $Id: Makefile,v 1.7 1997/04/20 21:26:38 jfitz Exp $
+#   $Id: Makefile,v 1.8 1997/04/27 00:14:27 asami Exp $
 #
 
 DISTNAME=	Convert-UU-0.04
@@ -14,8 +14,8 @@ MASTER_SITE_SUBDIR=	Convert
 
 MAINTAINER=	jfitz@FreeBSD.ORG
 
-BUILD_DEPENDS= 	perl5.003:${PORTSDIR}/lang/perl5
-RUN_DEPENDS=	perl5.003:${PORTSDIR}/lang/perl5
+BUILD_DEPENDS= 	perl5.004:${PORTSDIR}/lang/perl5
+RUN_DEPENDS=	perl5.004:${PORTSDIR}/lang/perl5
 
 MAN1=		puuencode.1 puudecode.1
 MAN3=		Convert::UU.3
