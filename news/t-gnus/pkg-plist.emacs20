@@ -231,37 +231,7 @@ share/doc/t-gnus-%%EMACS_PORT_NAME%%/TODO.ja
 @unexec install-info --delete %D/%%INFODIR%%/message-ja %D/%%INFODIR%%/dir
 %%INFODIR%%/emacs-mime
 %%INFODIR%%/gnus
-%%INFODIR%%/gnus-1
-%%INFODIR%%/gnus-10
-%%INFODIR%%/gnus-11
-%%INFODIR%%/gnus-12
-%%INFODIR%%/gnus-13
-%%INFODIR%%/gnus-14
-%%INFODIR%%/gnus-15
-%%INFODIR%%/gnus-16
-%%INFODIR%%/gnus-17
-%%INFODIR%%/gnus-18
-%%INFODIR%%/gnus-2
-%%INFODIR%%/gnus-3
-%%INFODIR%%/gnus-4
-%%INFODIR%%/gnus-5
-%%INFODIR%%/gnus-6
-%%INFODIR%%/gnus-7
-%%INFODIR%%/gnus-8
-%%INFODIR%%/gnus-9
 %%INFODIR%%/gnus-ja
-%%INFODIR%%/gnus-ja-1
-%%INFODIR%%/gnus-ja-10
-%%INFODIR%%/gnus-ja-11
-%%INFODIR%%/gnus-ja-12
-%%INFODIR%%/gnus-ja-2
-%%INFODIR%%/gnus-ja-3
-%%INFODIR%%/gnus-ja-4
-%%INFODIR%%/gnus-ja-5
-%%INFODIR%%/gnus-ja-6
-%%INFODIR%%/gnus-ja-7
-%%INFODIR%%/gnus-ja-8
-%%INFODIR%%/gnus-ja-9
 %%INFODIR%%/message
 %%INFODIR%%/message-ja
 @exec install-info %D/%%INFODIR%%/emacs-mime %D/%%INFODIR%%/dir
