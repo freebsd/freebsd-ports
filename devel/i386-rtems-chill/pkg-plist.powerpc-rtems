@@ -1,7 +1,20 @@
 bin/powerpc-rtems-chill
-@unexec install-info --delete %D/info/chill.info %D/info/dir
-info/chill.info
-@exec install-info %D/info/chill.info %D/info/dir
 lib/gcc-lib/powerpc-rtems/2.95.2/libchill.a
 lib/gcc-lib/powerpc-rtems/2.95.2/cc1chill
 lib/gcc-lib/powerpc-rtems/2.95.2/chillrt0.o
+lib/gcc-lib/powerpc-rtems/2.95.2/ca/libchill.a
+lib/gcc-lib/powerpc-rtems/2.95.2/ca/chillrt0.o
+lib/gcc-lib/powerpc-rtems/2.95.2/le/ca/libchill.a
+lib/gcc-lib/powerpc-rtems/2.95.2/le/ca/chillrt0.o
+lib/gcc-lib/powerpc-rtems/2.95.2/le/libchill.a
+lib/gcc-lib/powerpc-rtems/2.95.2/le/chillrt0.o
+lib/gcc-lib/powerpc-rtems/2.95.2/lin/libchill.a
+lib/gcc-lib/powerpc-rtems/2.95.2/lin/chillrt0.o
+lib/gcc-lib/powerpc-rtems/2.95.2/nof/ca/libchill.a
+lib/gcc-lib/powerpc-rtems/2.95.2/nof/ca/chillrt0.o
+lib/gcc-lib/powerpc-rtems/2.95.2/nof/le/ca/libchill.a
+lib/gcc-lib/powerpc-rtems/2.95.2/nof/le/ca/chillrt0.o
+lib/gcc-lib/powerpc-rtems/2.95.2/nof/le/libchill.a
+lib/gcc-lib/powerpc-rtems/2.95.2/nof/le/chillrt0.o
+lib/gcc-lib/powerpc-rtems/2.95.2/nof/libchill.a
+lib/gcc-lib/powerpc-rtems/2.95.2/nof/chillrt0.o
