@@ -1,7 +1,8 @@
+
 $FreeBSD$
 
---- libcharset/lib/Makefile.in	Wed Jun 27 18:56:56 2001
-+++ libcharset/lib/Makefile.in	Thu Aug 23 10:28:27 2001
+--- libcharset/lib/Makefile.in.orig	Thu Jun 28 01:56:56 2001
++++ libcharset/lib/Makefile.in	Mon Aug 27 12:32:43 2001
 @@ -10,6 +10,7 @@
  local_prefix = /usr/local
  exec_prefix = @exec_prefix@
@@ -10,6 +11,15 @@ $FreeBSD$
  
  # Programs used by "make":
  CC = @CC@
+@@ -38,7 +39,7 @@
+ 
+ # Before making a release, change this according to the libtool documentation,
+ # section "Library interface versions".
+-LIBCHARSET_VERSION_INFO = 1:0:0
++LIBCHARSET_VERSION_INFO = 1
+ 
+ # Needed by $(LIBTOOL).
+ top_builddir = ..
 @@ -53,7 +54,7 @@
  	$(LIBTOOL_LINK) $(CC) $(LDFLAGS) -o libcharset.la -rpath $(libdir) -version-info $(LIBCHARSET_VERSION_INFO) -no-undefined $(OBJECTS)
  

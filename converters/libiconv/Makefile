@@ -7,6 +7,7 @@
 
 PORTNAME=	libiconv
 PORTVERSION=	1.7
+PORTREVISION=	1
 CATEGORIES=	converters devel
 MASTER_SITES=	${MASTER_SITE_GNU} \
 		ftp://ftp.ilog.fr/pub/Users/haible/gnu/
@@ -14,20 +15,11 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	gnome@FreeBSD.org
 
-USE_LIBTOOL=	yes
-LIBTOOLFILES=	configure libcharset/configure
+GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-static
 INSTALLS_SHLIB=	yes
 
 MAN1=		giconv.1
 MAN3=		giconv.3 giconv_open.3 giconv_close.3
-MAKE_FLAGS+=	LIBTOOL="${LIBTOOL}" -ELIBTOOL
-
-post-patch:
-	# Patching the test scripts to exit -1 if a comparision fails:
-	@${PERL} -pi -e 's,(cmp [^\s]+\s[^\s]+)(\s*2>\s*/dev/null)?\s*\n,\1\
-		|| exit -1\n,,' ${WRKSRC}/tests/check-translit \
-			${WRKSRC}/tests/check-stateless \
-			${WRKSRC}/tests/check-stateful
 
 .include <bsd.port.mk>
