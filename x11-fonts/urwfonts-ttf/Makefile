@@ -19,10 +19,14 @@ NO_WRKSUBDIR=	yes
 
 USE_BZIP2=	yes
 NO_BUILD=	yes
+USE_X_PREFIX=	yes
 
 do-install:
-	${MKDIR} ${DATADIR}
-	${INSTALL_DATA} ${WRKSRC}/*.ttf ${WRKSRC}/fonts.* ${DATADIR}
-	${INSTALL_DATA} ${WRKSRC}/COPYING ${WRKSRC}/README ${DATADIR}
+	${MKDIR} ${PREFIX}/lib/X11/fonts/urwfonts-ttf
+	${INSTALL_DATA} ${WRKSRC}/*.ttf ${WRKSRC}/fonts.* ${PREFIX}/lib/X11/fonts/urwfonts-ttf
+	${INSTALL_DATA} ${WRKSRC}/COPYING ${WRKSRC}/README ${PREFIX}/lib/X11/fonts/urwfonts-ttf
 
+post-install:
+	@${CAT} ${PKGMESSAGE}
+		
 .include <bsd.port.mk>
