@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	DBD-ODBC
-PORTVERSION=	1.10
-PORTREVISION=	1
+PORTVERSION=	1.11
 CATEGORIES=	databases perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	DBD
@@ -45,6 +44,15 @@ post-configure:
 	@${PERL} -pi -e 's/-lodbc/-lodbc ${PTHREAD_LIBS}/g;' \
 		-e 's/$$/ ${PTHREAD_CFLAGS}/ if (/^CCFLAGS/);' \
 		${WRKSRC}/Makefile
+.endif
+
+.if !defined(NOPORTDOCS)
+PORTDOCS=	Changes README README.adabas README.informix
+
+post-install:
+	@${MKDIR} ${DOCSDIR}
+	@${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${DOCSDIR}
+	@${ECHO_MSG} "===> Documentation installed in ${DOCSDIR}."
 .endif
 
 post-patch:
