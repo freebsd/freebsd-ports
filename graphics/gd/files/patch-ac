@@ -1,5 +1,5 @@
 --- Makefile.orig	Fri Feb  2 05:23:56 2001
-+++ Makefile	Sat Feb  3 09:24:57 2001
++++ Makefile	Mon Feb 12 18:44:56 2001
 @@ -3,11 +3,11 @@
  #If you do not have gcc, change the setting for COMPILER, but you must
  #use an ANSI standard C compiler (NOT the old SunOS 4.1.3 cc
@@ -14,7 +14,7 @@
  
  #If you don't have FreeType, libjpeg and/or Xpm installed, including the
  #header files, uncomment this (default). You really must install
-@@ -16,8 +16,10 @@
+@@ -16,8 +16,14 @@
  
  #If you do have FreeType, libjpeg and/or Xpm fully installed, uncomment a
  #variation of this and comment out the line above. See also LIBS below.
@@ -24,10 +24,14 @@
 +.if defined(WITH_X11)
 +CFLAGS+=-DHAVE_LIBXPM
 +.endif
++
++.if defined(JISX0208)
++CFLAGS+=-DJISX0208
++.endif
  
  #To use the old FreeType 1.x library, add this additional #define
  #to the line above
-@@ -30,13 +32,15 @@
+@@ -30,13 +36,15 @@
  #Some systems are very picky about link order. They don't all agree
  #on the right order, either.
  
@@ -45,7 +49,7 @@
  
  #Note: for Freetype 1.x, use DHAVE_LIBTTF and -lttf instead.
  
-@@ -45,7 +49,10 @@
+@@ -45,7 +53,10 @@
  #ensure that the version of gd you are installing is used, and not an 
  #older release in your directory tree somewhere.
  
@@ -57,7 +61,7 @@
  
  #Typical install locations for freetype, zlib, xpm and libpng libraries.
  #If yours are somewhere else, other than a standard location
-@@ -55,16 +62,19 @@
+@@ -55,16 +66,19 @@
  #on your system can't cause conflicts while building a new one.
  #This line shouldn't hurt if you don't actually have some of the
  #optional libraries and directories.
@@ -81,7 +85,7 @@
  
  #
  #
-@@ -74,34 +84,44 @@
+@@ -74,34 +88,44 @@
  
  VERSION=1.8.4
  
@@ -147,7 +151,7 @@
  
  gddemo: gddemo.o libgd.a
  	$(CC) gddemo.o -o gddemo	$(LIBDIRS) $(LIBS)
-@@ -138,18 +158,21 @@
+@@ -138,18 +162,21 @@
  gdtestttf: gdtestttf.o libgd.a
  	$(CC) --verbose gdtestttf.o -o gdtestttf $(LIBDIRS) $(LIBS)
  
