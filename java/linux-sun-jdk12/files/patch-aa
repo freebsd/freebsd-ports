@@ -1,0 +1,15 @@
+$FreeBSD$
+
+--- bin/.java_wrapper.orig	Wed Mar 20 19:36:13 2002
++++ bin/.java_wrapper	Thu Jun 13 11:10:56 2002
+@@ -25,8 +25,8 @@
+ # Resolve symlinks. See 4152645.
+ while [ -L "$PRG" ]; do
+     ls=`/bin/ls -ld "$PRG"`
+-    link=`/usr/bin/expr "$ls" : '.*-> \(.*\)$'`
+-    if /usr/bin/expr "$link" : '/' > /dev/null; then
++    link=`/compat/linux/usr/bin/expr "$ls" : '.*-> \(.*\)$'`
++    if /compat/linux/usr/bin/expr "$link" : '/' > /dev/null; then
+ 	PRG="$link"
+     else
+ 	PRG="`/usr/bin/dirname $PRG`/$link"
