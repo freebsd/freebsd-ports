@@ -23,15 +23,16 @@ PORTNAME=	php4
 PORTVERSION=	4.3.3.r2
 PORTREVISION=	0
 CATEGORIES?=	lang devel www
-MASTER_SITES=	http://www.php.net/distributions/ \
-		http://it.php.net/distributions/ \
-		http://fi.php.net/distributions/ \
-		http://de.php.net/distributions/ \
-		http://gr.php.net/distributions/ \
-		http://fr.php.net/distributions/ \
-		http://es.php.net/distributions/ \
-		http://se.php.net/distributions/ \
-		http://downloads.php.net/jani/
+MASTER_SITES=	http://www.php.net/distributions/:release \
+		http://it.php.net/distributions/:release \
+		http://fi.php.net/distributions/:release \
+		http://de.php.net/distributions/:release \
+		http://gr.php.net/distributions/:release \
+		http://fr.php.net/distributions/:release \
+		http://es.php.net/distributions/:release \
+		http://se.php.net/distributions/:release \
+		http://downloads.php.net/ilia/:rc \
+		http://downloads.php.net/jani/:rc
 .if defined(WITHOUT_CLI) && !defined(WITHOUT_APACHE)
 PKGNAMEPREFIX=	mod_
 .else
@@ -44,6 +45,7 @@ PKGNAMESUFFIX=	-cli
 .endif
 .endif
 DISTNAME=	php-${PORTVERSION:S/.r/RC/}
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:rc
 
 MAINTAINER?=	sysadmin@alexdupre.com
 COMMENT=	PHP Scripting Language (Apache Module and CLI)
