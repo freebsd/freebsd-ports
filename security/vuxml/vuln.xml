@@ -194,11 +194,13 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
       </body>
     </description>
     <references>
+      <cvename>CAN-2004-0432</cvename>
       <url>http://bugs.proftpd.org/show_bug.cgi?id=2267</url>
     </references>
     <dates>
       <discovery>2004-11-04</discovery>
       <entry>2004-05-02</entry>
+      <modified>2004-05-03</modified>
     </dates>
   </vuln>
 
@@ -451,9 +453,9 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
       </package>
       <system>
 	<name>FreeBSD</name>
-	<range><ge>5.2</ge><lt>5.2.1p5</lt></range>
-	<range><ge>4.9</ge><lt>4.9p5</lt></range>
-	<range><ge>4.8</ge><lt>4.8p18</lt></range>
+	<range><ge>5.2</ge><lt>5.2.1_5</lt></range>
+	<range><ge>4.9</ge><lt>4.9_5</lt></range>
+	<range><ge>4.8</ge><lt>4.8_18</lt></range>
       </system>
     </affects>
     <description>
@@ -484,7 +486,7 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     <dates>
       <discovery>2004-04-14</discovery>
       <entry>2004-04-14</entry>
-      <modified>2004-04-15</modified>
+      <modified>2004-05-05</modified>
     </dates>
   </vuln>
 
@@ -669,8 +671,8 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     <affects>
       <system>
 	<name>FreeBSD</name>
-	<range><ge>5.2</ge><lt>5.2p1</lt></range>
-	<range><ge>5.1</ge><lt>5.1p12</lt></range>
+	<range><ge>5.2</ge><lt>5.2_1</lt></range>
+	<range><ge>5.1</ge><lt>5.1_12</lt></range>
       </system>
     </affects>
     <description>
@@ -704,6 +706,7 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     <dates>
       <discovery>2004-01-30</discovery>
       <entry>2004-04-07</entry>
+      <modified>2004-05-05</modified>
     </dates>
   </vuln>
 
@@ -712,12 +715,12 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     <affects>
       <system>
 	<name>FreeBSD</name>
-	<range><ge>5.2</ge><lt>5.2p2</lt></range>
-	<range><ge>5.1</ge><lt>5.1p14</lt></range>
-	<range><ge>5.0</ge><lt>5.0p20</lt></range>
-	<range><ge>4.9</ge><lt>4.9p2</lt></range>
-	<range><ge>4.8</ge><lt>4.8p15</lt></range>
-	<range><lt>4.7p25</lt></range>
+	<range><ge>5.2</ge><lt>5.2_2</lt></range>
+	<range><ge>5.1</ge><lt>5.1_14</lt></range>
+	<range><ge>5.0</ge><lt>5.0_20</lt></range>
+	<range><ge>4.9</ge><lt>4.9_2</lt></range>
+	<range><ge>4.8</ge><lt>4.8_15</lt></range>
+	<range><lt>4.7_25</lt></range>
       </system>
     </affects>
     <description>
@@ -741,6 +744,7 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     <dates>
       <discovery>2004-02-01</discovery>
       <entry>2004-04-07</entry>
+      <modified>2004-05-05</modified>
     </dates>
   </vuln>
 
@@ -749,7 +753,7 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     <affects>
       <system>
 	<name>FreeBSD</name>
-	<range><ge>5.1</ge><lt>5.1p14</lt></range>
+	<range><ge>5.1</ge><lt>5.1_14</lt></range>
 	<range><ge>5.2</ge><lt>5.2.1</lt></range>
       </system>
     </affects>
@@ -774,6 +778,7 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     <dates>
       <discovery>2004-02-19</discovery>
       <entry>2004-04-07</entry>
+      <modified>2004-05-05</modified>
     </dates>
   </vuln>
 
@@ -782,11 +787,11 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     <affects>
       <system>
 	<name>FreeBSD</name>
-	<range><ge>5.2</ge><lt>5.2.1p2</lt></range>
-	<range><ge>5.0</ge><lt>5.1p15</lt></range>
-	<range><ge>4.9</ge><lt>4.9p3</lt></range>
-	<range><ge>4.8</ge><lt>4.8p16</lt></range>
-	<range><lt>4.7p26</lt></range>
+	<range><ge>5.2</ge><lt>5.2.1_2</lt></range>
+	<range><ge>5.0</ge><lt>5.1_15</lt></range>
+	<range><ge>4.9</ge><lt>4.9_3</lt></range>
+	<range><ge>4.8</ge><lt>4.8_16</lt></range>
+	<range><lt>4.7_26</lt></range>
       </system>
     </affects>
     <description>
@@ -809,6 +814,7 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     <dates>
       <discovery>2004-02-18</discovery>
       <entry>2004-04-07</entry>
+      <modified>2004-05-05</modified>
     </dates>
   </vuln>
 
@@ -1186,7 +1192,7 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     <affects>
       <system>
 	<name>FreeBSD</name>
-	<range><ge>5.2</ge><lt>5.2.1p4</lt></range>
+	<range><ge>5.2</ge><lt>5.2.1_4</lt></range>
       </system>
     </affects>
     <description>
@@ -1211,6 +1217,7 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     <dates>
       <discovery>2004-03-29</discovery>
       <entry>2004-03-29</entry>
+      <modified>2004-05-05</modified>
     </dates>
   </vuln>
 
@@ -1413,10 +1420,10 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
       </package>
       <system>
         <name>FreeBSD</name>
-	<range><ge>4.0</ge><lt>4.8p17</lt></range>
-	<range><ge>4.9</ge><lt>4.9p4</lt></range>
-	<range><ge>5.0</ge><lt>5.1p16</lt></range>
-	<range><ge>5.2</ge><lt>5.2.1p3</lt></range>
+	<range><ge>4.0</ge><lt>4.8_17</lt></range>
+	<range><ge>4.9</ge><lt>4.9_4</lt></range>
+	<range><ge>5.0</ge><lt>5.1_16</lt></range>
+	<range><ge>5.2</ge><lt>5.2.1_3</lt></range>
       </system>
     </affects>
     <description>
@@ -1435,7 +1442,7 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     <dates>
       <discovery>2004-03-17</discovery>
       <entry>2004-03-17</entry>
-      <modified>2004-03-29</modified>
+      <modified>2004-05-05</modified>
     </dates>
   </vuln>
 
@@ -2754,14 +2761,14 @@ misc.c:
       </package>
       <system>
         <name>FreeBSD</name>
-        <range><ge>5.1</ge><lt>5.1p11</lt></range>
-        <range><ge>5.0</ge><lt>5.0p19</lt></range>
-        <range><ge>4.9</ge><lt>4.9p1</lt></range>
-        <range><ge>4.8</ge><lt>4.8p14</lt></range>
-        <range><ge>4.7</ge><lt>4.7p24</lt></range>
-        <range><ge>4.6</ge><lt>4.6.2p27</lt></range>
-        <range><ge>4.5</ge><lt>4.5p37</lt></range>
-        <range><lt>4.4p47</lt></range>
+        <range><ge>5.1</ge><lt>5.1_11</lt></range>
+        <range><ge>5.0</ge><lt>5.0_19</lt></range>
+        <range><ge>4.9</ge><lt>4.9_1</lt></range>
+        <range><ge>4.8</ge><lt>4.8_14</lt></range>
+        <range><ge>4.7</ge><lt>4.7_24</lt></range>
+        <range><ge>4.6</ge><lt>4.6.2_27</lt></range>
+        <range><ge>4.5</ge><lt>4.5_37</lt></range>
+        <range><lt>4.4_47</lt></range>
       </system>
     </affects>
     <description>
@@ -2784,6 +2791,7 @@ misc.c:
     <dates>
       <discovery>2003-11-28</discovery>
       <entry>2003-12-12</entry>
+      <modified>2004-05-05</modified>
     </dates>
   </vuln>
 
