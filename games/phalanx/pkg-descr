@@ -9,3 +9,5 @@ one CPU.
    It's also possible to run phalanx without xboard. Do "phalanx -h" to get
 a list of command line options. One important command of phalanx's ASCII
 interface is "help".
+
+WWW: http://www.crosswinds.net/~dobes/phalanx/

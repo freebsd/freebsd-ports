@@ -1,11 +1,11 @@
---- Imakefile	Wed Jul 29 00:07:09 1992
-+++ /home/andy/tmp/wrk/Imakefile	Wed Mar 18 00:09:33 1998
+--- Imakefile.orig	Wed Jul 29 09:07:09 1992
++++ Imakefile	Fri Mar 31 05:52:10 2000
 @@ -13,7 +13,7 @@
  #NO_GETDTABSIZE = -DNO_GETDTABSIZE
  
  #PROGNAME	= $(LIBDIR)$(PATHSEP)xvier_prog
 -PROGNAME	= /usr/games/lib/xvier_prog
-+PROGNAME	= /usr/X11R6/libexec/xvier_prog
++PROGNAME	= $(PROJECTROOT)/libexec/xvier_prog
  DEFINES		= $(XVIER_ASPECT) $(NO_FD_SET) $(NO_SELECT) \
  			$(NO_GETDTABSIZE) -DPROGNAME=\"$(PROGNAME)\"
  

@@ -1,5 +1,5 @@
---- Makefile.orig	Thu Apr 29 12:32:03 1999
-+++ Makefile	Thu Apr 29 12:32:30 1999
+--- Makefile.orig	Tue Mar 30 21:30:09 1999
++++ Makefile	Wed Mar 29 21:10:12 2000
 @@ -6,15 +6,14 @@
  #
  # Installation prefix
@@ -14,8 +14,8 @@
  CFLAGS+= -DPREFIX=\"$(PREFIX)\"
 -CFLAGS+= `gtk-config --cflags` 
 -CLIBS= `gtk-config --libs`
-+CFLAGS+= `gtk12-config --cflags` 
-+CLIBS= `gtk12-config --libs`
++CFLAGS+= `${GTK_CONFIG} --cflags` 
++CLIBS= `${GTK_CONFIG} --libs`
  
  RM=rm -f
  PROGS=gtkballs

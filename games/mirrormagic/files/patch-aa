@@ -1,7 +1,11 @@
---- Makefile	Wed Sep  6 11:56:17 1995
-+++ /home/andy/tmp/wrk/Makefile	Tue Mar 31 23:07:25 1998
-@@ -8,11 +8,17 @@
- CC = gcc
+--- Makefile.orig	Wed Sep  6 20:56:17 1995
++++ Makefile	Thu Mar 30 01:11:44 2000
+@@ -5,14 +5,20 @@
+ PROGNAME = mirrormagic
+ 
+ RM = rm -f
+-CC = gcc
++CC ?= gcc
  # CC = cc				# for HP-UX and others
  
 -GFX_PATH = -DGFX_PATH=\"./graphics\"	# path where the graphics are
@@ -37,8 +41,8 @@
  # LIBS = -lXpm -lX11 -lm
  # LIBS = -L/usr/lib/X11R5 -lXpm -lX11 -lm # for HP-UX and others
 -LIBS = -lXpm -lXpm -lXpm -lX11 -lm	# triple "-lXpm" because of Xpm error
-+INCL = -I/usr/X11R6/include
-+LIBS = -L/usr/X11R6/lib -lXpm -lX11 -lm	# triple "-lXpm" because of Xpm error
++INCL = -I${X11BASE}/include
++LIBS = -L${X11BASE}/lib -lXpm -lX11 -lm
  
  # CFLAGS = -O2 $(CONFIG) $(SYSTEM)
 -CFLAGS = $(DEBUG) $(CONFIG) $(SYSTEM) $(INCL)

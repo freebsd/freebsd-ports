@@ -1,11 +1,29 @@
---- ./Makefile.org	Sat Mar 29 16:36:44 1997
-+++ ./Makefile	Tue Jun 10 02:44:54 1997
-@@ -3,7 +3,7 @@
+--- Makefile.orig	Sun Mar 30 09:36:44 1997
++++ Makefile	Thu Mar 30 01:54:39 2000
+@@ -2,21 +2,17 @@
+ # Makefile for Starlanes
  #
  
- CC=gcc
+-CC=gcc
 -CCOPTS=-Wall
-+CCOPTS=-Wall ${CFLAGS}
++CC?=gcc
++CCOPTS=${CFLAGS}
  CURSESLIB=ncurses
- INSTALLDIR=/usr/local
+-INSTALLDIR=/usr/local
++INSTALLDIR=${PREFIX}
  
+ starlanes: starlanes.c
+ 	$(CC) $(CCOPTS) -o starlanes starlanes.c -l$(CURSESLIB)
+ 
+ install:
+-	cp starlanes $(INSTALLDIR)/games
+-	cp starlanes.6 $(INSTALLDIR)/man/man6
+-	chown bin:bin $(INSTALLDIR)/games/starlanes
+-	chown root:root $(INSTALLDIR)/man/man6/starlanes.6
+-	chmod 755 $(INSTALLDIR)/games/starlanes
+-	chmod 444 $(INSTALLDIR)/man/man6/starlanes.6
++	${BSD_INSTALL_PROGRAM} starlanes $(INSTALLDIR)/bin
++	${BSD_INSTALL_MAN} starlanes.6 $(INSTALLDIR)/man/man6
+ 
+ # fakeinstall just echos the install commands:
+ fakeinstall:

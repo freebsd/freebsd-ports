@@ -1,33 +1,23 @@
---- makefile	Sat Jan 30 00:26:13 1999
-+++ /home/andy/tmp/wrk/makefile	Sun May  2 16:46:44 1999
-@@ -1,9 +1,10 @@
+--- makefile.orig	Mon Jan 17 06:30:49 2000
++++ makefile	Thu Mar 30 01:42:40 2000
+@@ -1,9 +1,9 @@
  
 -CC = gcc
-+#CC = gcc
++CC ?= gcc
  
  ####### choose the line that makes the binary faster on your machine
  # CFLAGS = -O3 -Wall -fomit-frame-pointer -funroll-loops
--CFLAGS = -O -fomit-frame-pointer
-+#CFLAGS = -O -fomit-frame-pointer
-+CFLAGS+= -I${LOCALBASE}/include
+-CFLAGS = -O -Wall -fomit-frame-pointer
++CFLAGS += -I${LOCALBASE}/include
  
  ####### debug/tuning options for developers
  # CFLAGS = -O -Wall -g3 -static
-@@ -20,7 +21,7 @@
- ### -DLEARN_DIR=\"/var/local/lib\"
+@@ -21,7 +21,7 @@
  ### -DQCAPSONLY
  
--DEFINES = -DGNUFUN
-+DEFINES = -DGNUFUN -DPBOOK_DIR=\"${PREFIX}/share/phalanx\" -DSBOOK_DIR=\"${PREFIX}/share/phalanx\"
- LDFLAGS =
+ DEFINES = -DGNUFUN
+-LDFLAGS =
++LDFLAGS = -L${LOCALBASE}/lib -lgnugetopt
  
  OBJ = .o/phalanx.o .o/bcreate.o .o/search.o .o/io.o .o/data.o \
-@@ -28,7 +29,7 @@
-       .o/levels.o .o/book.o .o/killers.o .o/endgame.o .o/learn.o
- 
- phalanx: .o $(OBJ)
--	$(CC) $(CFLAGS) $(DEFINES) $(LDFLAGS) $(OBJ) -o phalanx
-+	$(CC) $(CFLAGS) $(DEFINES) $(LDFLAGS) $(OBJ) -o phalanx -L${LOCALBASE}/lib -lgnugetopt
- 	strip phalanx
- 
- .o/%.o: makefile %.c
+       .o/evaluate.o .o/genmoves.o .o/moving.o .o/hash.o .o/static.o \

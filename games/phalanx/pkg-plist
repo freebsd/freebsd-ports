@@ -1,5 +1,4 @@
 bin/phalanx
-share/doc/phalanx/COPYING
 share/doc/phalanx/README
 share/phalanx/pbook.phalanx
 share/phalanx/sbook.phalanx

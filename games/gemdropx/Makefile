@@ -1,32 +1,33 @@
 # New ports collection makefile for:	gemdropx
-# Version required:			0.4
+# Version required:			0.7
 # Date created:				9 March 1998
 # Whom:					Andrey Zakhvatov
 #
 # $FreeBSD$
 #
 
-DISTNAME=	gemdropx.0.4
-PKGNAME=	gemdropx-0.4
+DISTNAME=	gemdropx-0.7
 CATEGORIES=	games
 MASTER_SITES=	ftp://ftp.sonic.net/pub/users/nbs/unix/x/gemdropx/
 
 MAINTAINER=	ports@FreeBSD.org
 
-ALL_TARGET=	gemdropx
-MAKEFILE=	makefile
+LIB_DEPENDS=	SDL-1.0.2:${PORTSDIR}/devel/sdl
+
+USE_GMAKE=	yes
 USE_X_PREFIX=	yes
-WRKSRC=		${WRKDIR}/gemdropx
+ALL_TARGET=	nosound
+MAKE_ARGS=	JOY=NO DATA_PREFIX=${PREFIX}/share/gemdropx -f
 
 do-install:
-	@ ${INSTALL_PROGRAM} ${WRKSRC}/gemdropx ${PREFIX}/bin
-	@ ${MKDIR} ${PREFIX}/share/gemdropx/gfx
-	@ ${INSTALL_DATA} ${WRKSRC}/gfx/* ${PREFIX}/share/gemdropx/gfx
-	@ ${MKDIR} ${PREFIX}/share/gemdropx/sounds
-	@ ${INSTALL_DATA} ${WRKSRC}/sounds/* ${PREFIX}/share/gemdropx/sounds
+	${INSTALL_PROGRAM} ${WRKSRC}/gemdropx ${PREFIX}/bin
+	@${MKDIR} ${PREFIX}/share/gemdropx/images
+	${INSTALL_DATA} ${WRKSRC}/data/images/* ${PREFIX}/share/gemdropx/images
+	@${MKDIR} ${PREFIX}/share/gemdropx/sounds
+	${INSTALL_DATA} ${WRKSRC}/data/sounds/* ${PREFIX}/share/gemdropx/sounds
 .if !defined(NOPORTDOCS)
-	@ ${MKDIR} ${PREFIX}/share/doc/gemdropx
-	@ ${INSTALL_DATA} ${WRKSRC}/README.txt ${PREFIX}/share/doc/gemdropx
+	@${MKDIR} ${PREFIX}/share/doc/gemdropx
+	${INSTALL_DATA} ${WRKSRC}/README.txt ${PREFIX}/share/doc/gemdropx
 .endif
 
 .include <bsd.port.mk>

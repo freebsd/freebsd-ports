@@ -1,0 +1,16 @@
+--- Makefile.orig	Wed Mar 29 22:20:16 2000
++++ Makefile	Wed Mar 29 22:21:26 2000
+@@ -7,10 +7,11 @@
+ 
+ SOURCES = READ.ME Makefile blue.c blue.c.orig blue.6 blue.lsm *.spec
+ 
+-CFLAGS=-O
++CC?=cc
++CFLAGS?=-O
+ 
+ blue: blue.c
+-	cc $(CFLAGS) -DVERSION=\"$(V)\" blue.c -lncurses -o blue
++	$(CC) $(CFLAGS) -DVERSION=\"$(V)\" blue.c -lncurses -o blue
+ 
+ blue-$(V).tar.gz: $(SOURCES)
+ 	@ls $(SOURCES) | sed s:^:blue-$(V)/: >MANIFEST

@@ -1,0 +1,14 @@
+--- gemdropx.c.orig	Tue Dec 28 18:54:17 1999
++++ gemdropx.c	Thu Mar 30 00:25:25 2000
+@@ -2231,9 +2231,11 @@
+ 		 (JS_VERSION & 0x0000FF));
+ #endif
+ 
++#ifndef NOSOUND
+ 	  SDL_VERSION(&sdlver);
+ 	  printf("SDL version %d.%d.%d\n\n", sdlver.major,
+ 		 sdlver.minor, sdlver.patch);
++#endif
+ 
+ 	  exit(0);
+ 	}

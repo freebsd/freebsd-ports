@@ -1,5 +1,4 @@
 bin/gtkballs
-share/doc/gtkballs/COPYING
 share/doc/gtkballs/README
 share/doc/gtkballs/README.russian
 share/doc/gtkballs/TODO
@@ -20,9 +19,7 @@ share/gtkballs/paw_up_1.xpm
 share/gtkballs/paw_up_2.xpm
 share/gtkballs/pink_ball.xpm
 share/gtkballs/red_ball.xpm
-@mode 666
 share/gtkballs/score
-@mode
 share/gtkballs/small_blue_ball.xpm
 share/gtkballs/small_brown_ball.xpm
 share/gtkballs/small_cyan_ball.xpm

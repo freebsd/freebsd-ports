@@ -1,8 +1,11 @@
---- Makefile.orig	Mon Mar  6 04:47:27 1995
-+++ Makefile	Tue Jul 21 01:16:08 1998
-@@ -7,15 +7,15 @@
+--- Makefile.orig	Mon Mar  6 05:47:27 1995
++++ Makefile	Wed Mar 29 21:58:34 2000
+@@ -5,17 +5,17 @@
+ PROGNAME = affenspiel
+ 
  RM = rm -f
- CC = gcc
+-CC = gcc
++CC ?= gcc
  
 -FILE_CONFIG = -DSAVED_GAME_NAME=\"/tmp/affenspiel.saved\"
 +FILE_CONFIG = -DSAVED_GAME_NAME=\"affenspiel.saved\"
