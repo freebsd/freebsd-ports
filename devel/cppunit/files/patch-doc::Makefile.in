@@ -1,6 +1,6 @@
---- doc/Makefile.in.orig	Mon Feb 24 13:30:22 2003
-+++ doc/Makefile.in	Mon Feb 24 13:31:51 2003
-@@ -108,7 +108,7 @@
+--- doc/Makefile.in.orig	Wed Jul  7 16:33:12 2004
++++ doc/Makefile.in	Wed Jul  7 16:34:27 2004
+@@ -161,7 +161,7 @@
  # and an extra copy or two in the install-data-hook.  
  # However, the manpages do not appear to be tremendously useful, so
  # let's not bother.
@@ -8,13 +8,4 @@
 +@DOC_TRUE@htmldir = $(prefix)/share/doc/cppunit
  @DOC_TRUE@html_DATA = $(static_pages) html/index.html
  subdir = doc
- mkinstalldirs = $(SHELL) $(top_srcdir)/config/mkinstalldirs
-@@ -263,7 +263,7 @@
- 
- 
- @DOC_TRUE@install-data-hook:
--@DOC_TRUE@	cp -dpR html/* $(DESTDIR)$(htmldir)
-+@DOC_TRUE@	cp -pR html/* $(htmldir)
- 
- # Automake's "distcheck" is sensitive to having files left over
- # after "make uninstall", so we have to clean up the install hook.
+ ACLOCAL_M4 = $(top_srcdir)/aclocal.m4

@@ -5,31 +5,31 @@
 # $FreeBSD$
 
 PORTNAME=	cppunit
-PORTVERSION=	1.8.0
+PORTVERSION=	1.10.2
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-.if defined(WITH_DOXYGEN)
-BUILD_DEPENDS=	doxygen:${PORTSDIR}/devel/doxygen
-.endif
-
 MAINTAINER=	gcross@fastmail.fm
 COMMENT=	C++ port of the JUnit framework for unit testing
 
-HAS_CONFIGURE=	yes
-.if defined(WITH_DOXYGEN) && !defined(NOPORTDOCS)
-CONFIGURE_ARGS+= --enable-doc --enable-doxygen --enable-html-docs
-PLIST_SUB+=	DOXYGEN=""
-.else
-CONFIGURE_ARGS+= --disable-doc --disable-doxygen
-PLIST_SUB+=	DOXYGEN="@comment "
-.endif
+GNU_CONFIGURE=	yes
 INSTALLS_SHLIB=	yes
-.if !defined(NOMAN)
-MAN1=		cppunit-config.1
+
+.if defined(WITH_DOXYGEN)
+BUILD_DEPENDS+=	doxygen:${PORTSDIR}/devel/doxygen
+CONFIGURE_ARGS+=	--enable-doc --enable-doxygen --enable-html-docs
+PORTDOCS=	*
+.else
+CONFIGURE_ARGS+=	--disable-doc --disable-doxygen
 .endif
-MANCOMPRESSED=	no
+
+.if !defined(NOPORTDOCS)
+PORTDOCS=	*
+.endif
+
+MAN1=		cppunit-config.1
+#MANCOMPRESSED=	no
 
 pre-everything::
 .if !defined(WITH_DOXYGEN) && !defined(NOPORTDOCS)
@@ -39,13 +39,15 @@ pre-everything::
 .endif
 
 post-install:
+	@${FIND} ${PREFIX}/include/cppunit ! -type d | \
+		${SED} 's,^${PREFIX}/,,' >> ${TMPPLIST}
+	@${FIND} ${PREFIX}/include/cppunit -type d | ${SORT} -r | \
+		${SED} 's,^${PREFIX}/,@dirrm ,' >> ${TMPPLIST}
 .if !defined(NOPORTDOCS)
-.if !defined(WITH_DOXYGEN)
-	${MKDIR} -p ${PREFIX}/share/doc/cppunit
-	${INSTALL_MAN} ${WRKSRC}/doc/FAQ ${PREFIX}/share/doc/cppunit
-.endif	
-	${INSTALL_MAN} ${WRKSRC}/NEWS ${PREFIX}/share/doc/cppunit  
-	${INSTALL_MAN} ${WRKSRC}/README ${PREFIX}/share/doc/cppunit
+	@${MKDIR} ${DOCSDIR}
+	${INSTALL_MAN} ${WRKSRC}/doc/FAQ ${DOCSDIR}
+	${INSTALL_MAN} ${WRKSRC}/NEWS ${DOCSDIR}
+	${INSTALL_MAN} ${WRKSRC}/README ${DOCSDIR}
 .endif
 	
 .include <bsd.port.mk>
