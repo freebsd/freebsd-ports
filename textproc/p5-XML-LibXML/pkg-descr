@@ -4,6 +4,3 @@ XML::XPath-like findnodes() interface, providing access to the XPath API
 in libxml2.
 
 WWW: http://search.cpan.org/dist/XML-LibXML/
-
--- Sergey Skvortsov
-skv@FreeBSD.org
