@@ -168,6 +168,7 @@
     SUBDIR += p5-HTML-Tree
     SUBDIR += p5-HTTPD-Tools
     SUBDIR += p5-ParallelUA
+    SUBDIR += p5-WWW-Babelfish
     SUBDIR += p5-WWW-Search
     SUBDIR += p5-libapreq
     SUBDIR += p5-libwww
