@@ -12,7 +12,7 @@ CATEGORIES=	multimedia audio
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	lioux@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Multi-threaded branch of the well known mplayer media player
 
 LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \

@@ -12,7 +12,7 @@ CATEGORIES=	misc
 MASTER_SITES=	http://asdfnews.org/yargon/
 DISTNAME=	${PORTNAME}${PORTVERSION}
 
-MAINTAINER=	lioux@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GKrellM plugin that simply prints the current clock speed
 
 BUILD_DEPENDS=	${X11BASE}/include/gkrellm/gkrellm.h:${PORTSDIR}/sysutils/gkrellm

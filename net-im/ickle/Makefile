@@ -13,7 +13,7 @@ CATEGORIES=	net devel
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	lioux@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	ICQ2000 protocol implementation
 
 LIB_DEPENDS=	gtkmm:${PORTSDIR}/x11-toolkits/gtk-- \

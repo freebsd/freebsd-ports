@@ -14,7 +14,7 @@ MASTER_SITE_SUBDIR=	openquicktime
 DISTNAME=	${PORTNAME:L}-${PORTVERSION}
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	lioux@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A simple encoder using OpenQuicktime (TM)
 
 LIB_DEPENDS=	openquicktime.0:${PORTSDIR}/multimedia/openquicktime
