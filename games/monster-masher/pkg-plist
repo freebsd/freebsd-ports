@@ -1,0 +1,97 @@
+bin/monster-masher
+etc/gconf/gconf.xml.defaults/apps/monster-masher/%gconf.xml
+etc/gconf/gconf.xml.defaults/apps/monster-masher/player1/%gconf.xml
+etc/gconf/gconf.xml.defaults/apps/monster-masher/player2/%gconf.xml
+etc/gconf/gconf.xml.defaults/schemas/apps/monster-masher/%gconf.xml
+etc/gconf/gconf.xml.defaults/schemas/apps/monster-masher/player1/%gconf.xml
+etc/gconf/gconf.xml.defaults/schemas/apps/monster-masher/player2/%gconf.xml
+etc/gconf/schemas/monster-masher.schemas
+share/gnome/apps/Games/monster-masher.desktop
+share/gnome/monster-masher/glade/ui.glade
+share/gnome/monster-masher/pixmaps/block-24.png
+share/gnome/monster-masher/pixmaps/block-32.png
+share/gnome/monster-masher/pixmaps/egg-layer-egg-24.png
+share/gnome/monster-masher/pixmaps/egg-layer-egg-32.png
+share/gnome/monster-masher/pixmaps/egg-layer-gore-24.png
+share/gnome/monster-masher/pixmaps/egg-layer-gore-32.png
+share/gnome/monster-masher/pixmaps/egg-layer-monster-24.png
+share/gnome/monster-masher/pixmaps/egg-layer-monster-32.png
+share/gnome/monster-masher/pixmaps/footprint-down-leftmost.png
+share/gnome/monster-masher/pixmaps/footprint-down-rightmost.png
+share/gnome/monster-masher/pixmaps/footprint-left-down-leftmost.png
+share/gnome/monster-masher/pixmaps/footprint-left-down-rightmost.png
+share/gnome/monster-masher/pixmaps/footprint-left-leftmost.png
+share/gnome/monster-masher/pixmaps/footprint-left-rightmost.png
+share/gnome/monster-masher/pixmaps/footprint-left-up-leftmost.png
+share/gnome/monster-masher/pixmaps/footprint-left-up-rightmost.png
+share/gnome/monster-masher/pixmaps/footprint-right-down-leftmost.png
+share/gnome/monster-masher/pixmaps/footprint-right-down-rightmost.png
+share/gnome/monster-masher/pixmaps/footprint-right-leftmost.png
+share/gnome/monster-masher/pixmaps/footprint-right-rightmost.png
+share/gnome/monster-masher/pixmaps/footprint-right-up-leftmost.png
+share/gnome/monster-masher/pixmaps/footprint-right-up-rightmost.png
+share/gnome/monster-masher/pixmaps/footprint-up-leftmost.png
+share/gnome/monster-masher/pixmaps/footprint-up-rightmost.png
+share/gnome/monster-masher/pixmaps/freeze-box-24.png
+share/gnome/monster-masher/pixmaps/freeze-box-32.png
+share/gnome/monster-masher/pixmaps/hard-egg-24.png
+share/gnome/monster-masher/pixmaps/hard-egg-32.png
+share/gnome/monster-masher/pixmaps/hard-gore-24.png
+share/gnome/monster-masher/pixmaps/hard-gore-32.png
+share/gnome/monster-masher/pixmaps/hard-monster-24.png
+share/gnome/monster-masher/pixmaps/hard-monster-32.png
+share/gnome/monster-masher/pixmaps/hero-down-24.png
+share/gnome/monster-masher/pixmaps/hero-down-32.png
+share/gnome/monster-masher/pixmaps/hero-gore-24.png
+share/gnome/monster-masher/pixmaps/hero-gore-32.png
+share/gnome/monster-masher/pixmaps/hero-left-24.png
+share/gnome/monster-masher/pixmaps/hero-left-32.png
+share/gnome/monster-masher/pixmaps/hero-left-down-24.png
+share/gnome/monster-masher/pixmaps/hero-left-down-32.png
+share/gnome/monster-masher/pixmaps/hero-left-up-24.png
+share/gnome/monster-masher/pixmaps/hero-left-up-32.png
+share/gnome/monster-masher/pixmaps/hero-right-24.png
+share/gnome/monster-masher/pixmaps/hero-right-32.png
+share/gnome/monster-masher/pixmaps/hero-right-down-24.png
+share/gnome/monster-masher/pixmaps/hero-right-down-32.png
+share/gnome/monster-masher/pixmaps/hero-right-up-24.png
+share/gnome/monster-masher/pixmaps/hero-right-up-32.png
+share/gnome/monster-masher/pixmaps/hero-up-24.png
+share/gnome/monster-masher/pixmaps/hero-up-32.png
+share/gnome/monster-masher/pixmaps/levitation-24.png
+share/gnome/monster-masher/pixmaps/levitation-32.png
+share/gnome/monster-masher/pixmaps/monster-wall-24.png
+share/gnome/monster-masher/pixmaps/monster-wall-32.png
+share/gnome/monster-masher/pixmaps/plain-egg-24.png
+share/gnome/monster-masher/pixmaps/plain-egg-32.png
+share/gnome/monster-masher/pixmaps/plain-gore-24.png
+share/gnome/monster-masher/pixmaps/plain-gore-32.png
+share/gnome/monster-masher/pixmaps/plain-monster-24.png
+share/gnome/monster-masher/pixmaps/plain-monster-32.png
+share/gnome/monster-masher/pixmaps/power-up-explode-24.png
+share/gnome/monster-masher/pixmaps/power-up-explode-32.png
+share/gnome/monster-masher/pixmaps/power-up-freeze-24.png
+share/gnome/monster-masher/pixmaps/power-up-freeze-32.png
+share/gnome/monster-masher/pixmaps/power-up-reward-24.png
+share/gnome/monster-masher/pixmaps/power-up-reward-32.png
+share/gnome/monster-masher/pixmaps/seeker-egg-24.png
+share/gnome/monster-masher/pixmaps/seeker-egg-32.png
+share/gnome/monster-masher/pixmaps/seeker-gore-24.png
+share/gnome/monster-masher/pixmaps/seeker-gore-32.png
+share/gnome/monster-masher/pixmaps/seeker-monster-24.png
+share/gnome/monster-masher/pixmaps/seeker-monster-32.png
+share/gnome/monster-masher/pixmaps/wall-24.png
+share/gnome/monster-masher/pixmaps/wall-32.png
+share/gnome/monster-masher/sounds/clinck.wav
+share/gnome/monster-masher/sounds/splat.wav
+share/gnome/pixmaps/monster-masher.png
+@dirrm share/gnome/monster-masher/glade
+@dirrm share/gnome/monster-masher/pixmaps
+@dirrm share/gnome/monster-masher/sounds
+@dirrm share/gnome/monster-masher
+@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/monster-masher/player2
+@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/monster-masher/player1
+@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/monster-masher
+@dirrm etc/gconf/gconf.xml.defaults/apps/monster-masher/player2
+@dirrm etc/gconf/gconf.xml.defaults/apps/monster-masher/player1
+@dirrm etc/gconf/gconf.xml.defaults/apps/monster-masher

@@ -1,0 +1,13 @@
+--- src/Makefile.in.orig	Thu Oct  9 21:58:54 2003
++++ src/Makefile.in	Thu Oct  9 22:01:00 2003
+@@ -117,8 +117,8 @@
+ 
+ monster_masher_SOURCES =                        animation.cpp animation.hpp                       arena.cpp arena.hpp                       canvas-message.cpp canvas-message.hpp                       canvas.cpp canvas.hpp                       center-menu.cpp center-menu.hpp                       fading-decoration.cpp fading-decoration.hpp                       footsteps.cpp footsteps.hpp                       game.cpp game.hpp                       graphic.cpp graphic.hpp                       gui-helpers.hpp                       helpers.cpp helpers.hpp                       hero.cpp hero.hpp                       i18n.hpp                       image-cache.cpp image-cache.hpp                       intro.cpp intro.hpp                       main-window.cpp main-window.hpp                       main.cpp                       monsters.cpp monsters.hpp                       movement.cpp movement.hpp                       new-game-window.cpp new-game-window.hpp                       obstacles.cpp obstacles.hpp                       persistent.cpp persistent.hpp                       pixbuf-drawing.cpp pixbuf-drawing.hpp                       player.cpp player.hpp                       preferences-window.cpp preferences-window.hpp                       sound.cpp sound.hpp                       splat-helpers.cpp splat-helpers.hpp                       thing.cpp thing.hpp                       ucompose.hpp                       vector.hpp
+ 
+-@MAINTAINER_MODE_TRUE@CXXFLAGS = @CXXFLAGS@ $(DEPS_CFLAGS) -O0 -Wall
+-@MAINTAINER_MODE_FALSE@CXXFLAGS = @CXXFLAGS@ $(DEPS_CFLAGS) -Wall -O3
++@MAINTAINER_MODE_TRUE@CXXFLAGS = @CXXFLAGS@ $(DEPS_CFLAGS)  -Wall ${CFLAGS}
++@MAINTAINER_MODE_FALSE@CXXFLAGS = @CXXFLAGS@ $(DEPS_CFLAGS) -Wall ${CFLAGS}
+ 
+ LDADD = $(DEPS_LIBS)
+ 
