@@ -1,7 +1,0 @@
-%%PEARDIR%%/Date/Calc.php
-%%PEARDIR%%/Date/Human.php
-%%PEARDIR%%/Date/TimeZone.php
-%%PEARDIR%%/Date.php
-%%PKGREGDIR%%/package.xml
-@dirrm %%PEARDIR%%/Date
-@dirrm %%PKGREGDIR%%

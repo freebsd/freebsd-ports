@@ -7,6 +7,7 @@
 
 PORTNAME=	XML_Serializer
 PORTVERSION=	0.6
+PORTREVISION=	1
 CATEGORIES=	devel www pear
 
 MAINTAINER=	ports@FreeBSD.org
@@ -17,21 +18,11 @@ RUN_DEPENDS=	${BUILD_DEPENDS} \
 		${PEARDIR}/XML/Parser.php:${PORTSDIR}/devel/pear-XML_Parser \
 		${PEARDIR}/XML/Util.php:${PORTSDIR}/devel/pear-XML_Util
 
+CATEGORY=	XML
+FILES=		Serializer.php Unserializer.php
+EXAMPLES=	serializeObject.php serializeRDF.php unserializeAnyXML.php \
+		unserializeObject.php unserializeRDF.php
+
 .include <bsd.port.pre.mk>
-.include "${.CURDIR}/../../devel/pear-PEAR/Makefile.common"
-
-MANIFEST=	Serializer.php Unserializer.php
-
-do-install:
-	@${MKDIR} ${PEARDIR}/XML
-.for FILE in ${MANIFEST}
-	@${CP} -p ${WRKSRC}/${FILE} ${PEARDIR}/XML
-	@${CHOWN} -R ${SHAREOWN}:${SHAREGRP} ${PEARDIR}/XML/${FILE}
-.endfor
-.if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
-	@${CP} -Rp ${WRKSRC}/examples/* ${DOCSDIR}
-	@${ECHO_MSG} "===> Examples installed in ${DOCSDIR}."
-.endif
-
+.include "${PORTSDIR}/devel/pear-PEAR/Makefile.common"
 .include <bsd.port.post.mk>

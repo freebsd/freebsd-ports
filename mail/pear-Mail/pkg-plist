@@ -1,8 +1,0 @@
-%%PEARDIR%%/Mail/RFC822.php
-%%PEARDIR%%/Mail/mail.php
-%%PEARDIR%%/Mail/sendmail.php
-%%PEARDIR%%/Mail/smtp.php
-%%PEARDIR%%/Mail.php
-%%PKGREGDIR%%/package.xml
-@dirrm %%PKGREGDIR%%
-@unexec rmdir %D/share/pear/Mail 2> /dev/null || true

@@ -1,8 +1,0 @@
-%%PEARDIR%%/File/CSV.php
-%%PEARDIR%%/File.php
-%%PKGREGDIR%%/package.xml
-%%PEARDIR%%/tests/parser.php
-%%PEARDIR%%/tests/test.csv
-@dirrm %%PKGREGDIR%%
-@unexec rmdir %D/share/pear/tests 2> /dev/null || true
-@unexec rmdir %D/share/pear/File 2> /dev/null || true

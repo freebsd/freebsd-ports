@@ -7,6 +7,7 @@
 
 PORTNAME=	Archive_Tar
 PORTVERSION=	1.1
+PORTREVISION=	1
 CATEGORIES=	archivers www pear
 
 MAINTAINER=	ports@FreeBSD.org
@@ -15,17 +16,10 @@ COMMENT=	PEAR tar file management class
 BUILD_DEPENDS=	pear:${PORTSDIR}/lang/php4
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
+FILES=		Archive/Tar.php
+DOCS=		Archive_Tar.txt
+
 .include <bsd.port.pre.mk>
-.include "${.CURDIR}/../../devel/pear-PEAR/Makefile.common"
-
-do-install:
-	@${MKDIR} ${PEARDIR}/Archive
-	@${CP} -Rp ${WRKSRC}/Archive ${PEARDIR}
-	@${CHOWN} -R ${SHAREOWN}:${SHAREGRP} ${PEARDIR}/Archive
-.if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
-	@${INSTALL_DATA} ${WRKSRC}/docs/Archive_Tar.txt ${DOCSDIR}
-	@${ECHO_MSG} "===> Documentation installed in ${DOCSDIR}."
-.endif
-
+.include "${PORTSDIR}/lang/php4/bsd.php.mk"
+.include "${PORTSDIR}/devel/pear-PEAR/Makefile.common"
 .include <bsd.port.post.mk>
