@@ -1,0 +1,20 @@
+--- src/hdup.h.in.orig	Sat Jan 29 15:16:57 2005
++++ src/hdup.h.in	Sun Mar 13 19:57:25 2005
+@@ -11,7 +11,7 @@
+ 
+ #include "config.h"
+ 
+-#define TAR             "@tar@"
++#define TAR             "%%GNUTAR%%"
+ #define MCRYPT          "@mcrypt@"
+ #define GPG		"@gpg@"
+ #define DEFAULT_PROTO   "@ssh@"
+@@ -22,7 +22,7 @@
+ #define LZOP_PROG	"@lzop@"
+ #define SPLIT_PROG      "@split@"
+ #define UNSPLIT_PROG    "@cat@"
+-#define ETCFILE         "/etc/hdup/hdup.conf"
++#define ETCFILE         "@prefix@/etc/hdup/hdup.conf"
+ /* /usr/local/etc#"/etc/hdup/hdup.conf") */
+ #define REMOTE_HDUP     "@prefix@/sbin/hdup"
+ #define REMOTE_HDUP_OPT ""      /* default is empty */

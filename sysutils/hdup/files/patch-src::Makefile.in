@@ -1,0 +1,20 @@
+--- src/Makefile.in.orig	Sat Jan 29 15:19:00 2005
++++ src/Makefile.in	Sun Mar 13 18:22:35 2005
+@@ -16,7 +16,7 @@
+ exec_prefix = @exec_prefix@
+ sbindir = @sbindir@
+ mandir = @mandir@
+-sysconfdir = /etc
++sysconfdir = @sysconfdir@
+ ######################################
+ ######################################
+ .PHONY:	clean install all uninstall
+@@ -54,7 +54,7 @@
+ 	@mkdir -p ${sysconfdir}/hdup
+ 	@mkdir -p ${mandir}/man1
+ 	@mkdir -p ${mandir}/man5
+-	@[ -f ${sysconfdir}/hdup/hdup.conf ] || ${INSTALL} -m 600 ../hdup.conf.distr ${sysconfdir}/hdup/hdup.conf
++	@${INSTALL} -m 600 ../hdup.conf.distr ${sysconfdir}/hdup/hdup.conf-dist
+ 	@${INSTALL} hdup ${sbindir}/hdup
+ 	@${INSTALL_DATA} ../doc/hdup.1 ${mandir}/man1/hdup.1
+ 	@${INSTALL_DATA} ../doc/hdup.conf.5 ${mandir}/man5/hdup.conf.5
