@@ -30,7 +30,7 @@ RUN_DEPENDS+=	${PREFIX}/bin/wish4.2:${PORTSDIR}/x11-toolkits/tk42
 LANGEXT=	en
 DOCDIRNAME=	Doc
 DOCEXT=
-pAPERSIZE=	letter
+PAPERSIZE=	letter
 .elif (${LANGUAGE} == "Japanese")
 ALL_TARGET=	ja filters
 LIB_DEPENDS=	tcl76jp.1:${PORTSDIR}/japanese/tcl76
