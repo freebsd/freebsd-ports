@@ -1,0 +1,56 @@
+--- src/lsh-authorize.orig	Sun Feb  6 09:39:43 2000
++++ src/lsh-authorize	Sun Apr 16 13:32:57 2000
+@@ -1,4 +1,4 @@
+-#! /bin/sh
++#!/bin/sh
+ 
+ usage () {
+     echo Usage: $0 key-file
+@@ -29,7 +29,7 @@
+     exit 0
+ fi
+ 
+-create_dir () {
++create-dir () {
+     if mkdir $1 2>/dev/null; then
+ 	echo Created $1
+ 	chmod $2 $1 || exit 1
+@@ -37,22 +37,27 @@
+ }
+ 
+ # Create directories
+-create_dir ~/.lsh 0700
+-create_dir ~/.lsh/authorized_keys_sha1 0700
++create-dir ~/.lsh 0700
++create-dir ~/.lsh/authorized_keys_sha1 0700
+ 
+-SEXP_CONV=`PATH=$PATH:. \type -path sexp_conv`
++PATH=$PATH:`dirname $0`
+ 
+-if [ -z $SEXP_CONV ] ; then
+-    echo "Can't find the sexp_conv program"
+-    exit 1
+-fi
++SEXP_CONV="sexp_conv"
+ 
+ while [ $# != 0 ]; do
+-    hash=`$SEXP_CONV < $1 --once --hash sha1 --raw-hash`
+-    if [ -z $hash ] ; then
+-	echo $0: File $1 not found.
+-    else
++    if [ -f $1 ]; then
++      hash=`$SEXP_CONV < $1 --once --hash sha1 --raw-hash`
++      if [ $? = 127 ]; then
++        echo "Can't find the sexp_conv program"
++	exit 1
++      fi
++      if [ -z "$hash" ] ; then
++	echo $0: File $1 not readable.
++      else
+         $SEXP_CONV < $1 -o canonical --once > ~/.lsh/authorized_keys_sha1/$hash
++      fi
++    else
++      echo $0: File $1 not found.
+     fi
+     shift
+ done

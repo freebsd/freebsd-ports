@@ -1,0 +1,14 @@
+lsh is a client that can connect to the corresponding lshd server.  It uses
+the SECSH protocol, which means that it is compatible with SSH 2.0, except
+for file transfer, which is not part of SECSH.
+
+SECSH uses compression and encryption algorithms that are unencumbered, and
+lsh itself is GPL.
+
+lsh is not as feature-rich as OpenSSH, as it doesn't currently support
+password-protected keyrings, the SSH 1.X protocols, TCP wrappers, etc.
+On the other hand, it doesn't require OpenSSL, and doesn't take a lot of
+work to avoid patented algorithms.
+
+Port author's notes on usage and common problems can be found at
+WWW: http://gz.geekazoid.com/lsh/
