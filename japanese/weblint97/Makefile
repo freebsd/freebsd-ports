@@ -9,16 +9,18 @@
 DISTNAME=	weblint-97-0.12
 PKGNAME=	ja-weblint97-0.12
 CATEGORIES=	japanese www
-MASTER_SITES=	ftp://ftp.win.or.jp/pub/network/www/weblint/ \
-		ftp://ftp.sra.co.jp/pub/cmd/ \
+MASTER_SITES=	http://www.sfc.keio.ac.jp/~mimasa/jweblint/ \
+		ftp://ftp.win.ne.jp/pub/network/www/weblint/ \
 		ftp://ftp.hipecs.hokudai.ac.jp/pub/network/WWW/contrib/
 
-RUN_DEPENDS=   ${PREFIX}/lib/perl/jcode.pl:${PORTSDIR}/japanese/jcode.pl
+MAINTAINER=	ports@FreeBSD.org
 
-WRKSRC=         ${WRKDIR}/weblint-97
+RUN_DEPENDS=	${PREFIX}/lib/perl/jcode.pl:${PORTSDIR}/japanese/jcode.pl
+
+WRKSRC=		${WRKDIR}/weblint-97
 MANLANG=	ja
 MAN1=		jweblint.1
-MAKE_ENV=       PERLLIBDIR="${PERLLIBDIR}"
+MAKE_ENV=	PERLLIBDIR="${PERLLIBDIR}"
 ALL_TARGET=	euc-jp
 INSTALL_TARGET=	jinstall
 

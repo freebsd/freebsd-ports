@@ -12,6 +12,6 @@ To check one or more HTML files, run weblint thusly:
     % jweblint file1.html [... fileN.html]
 If a file is in fact a directory, weblint will recurse, checking all files.
 
-WWW: http://www.aichi-u.ac.jp/%7Emimasa/jweblint/victims.html
+WWW: http://www.sfc.keio.ac.jp/%7Emimasa/jweblint/
 
 -- Takayuki Ariga
