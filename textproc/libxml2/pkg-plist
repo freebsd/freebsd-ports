@@ -50,10 +50,14 @@ share/aclocal/libxml.m4
 %%PYTHON:%%share/doc/libxml2-python/examples/build.py
 %%PYTHON:%%share/doc/libxml2-python/examples/cutnpaste.py
 %%PYTHON:%%share/doc/libxml2-python/examples/error.py
+%%PYTHON:%%share/doc/libxml2-python/examples/inbuf.py
 %%PYTHON:%%share/doc/libxml2-python/examples/invalid.xml
+%%PYTHON:%%share/doc/libxml2-python/examples/outbuf.py
 %%PYTHON:%%share/doc/libxml2-python/examples/push.py
 %%PYTHON:%%share/doc/libxml2-python/examples/pushSAX.py
 %%PYTHON:%%share/doc/libxml2-python/examples/pushSAXhtml.py
+%%PYTHON:%%share/doc/libxml2-python/examples/regexp.py
+%%PYTHON:%%share/doc/libxml2-python/examples/resolver.py
 %%PYTHON:%%share/doc/libxml2-python/examples/serialize.py
 %%PYTHON:%%share/doc/libxml2-python/examples/tst.py
 %%PYTHON:%%share/doc/libxml2-python/examples/tst.xml
@@ -71,6 +75,8 @@ share/doc/libxml2/examples/testXPath.c
 share/doc/libxml2/examples/xmllint.c
 share/doc/libxml2/html/DOM.gif
 share/doc/libxml2/html/FAQ.html
+share/doc/libxml2/html/Libxml2-Logo-180x168.gif
+share/doc/libxml2/html/Libxml2-Logo-90x34.gif
 share/doc/libxml2/html/book1.html
 share/doc/libxml2/html/encoding.html
 share/doc/libxml2/html/index.sgml
