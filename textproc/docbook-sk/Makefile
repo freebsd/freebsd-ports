@@ -7,7 +7,7 @@
 
 PORTNAME=	docbook-sk
 PORTVERSION=	4.1.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	textproc
 MASTER_SITES=	http://www.docbook.org/xml/${PORTVERSION}/
 DISTNAME=	docbkx${PORTVERSION:S/.//g}
@@ -23,13 +23,11 @@ NO_WRKSUBDIR=	yes
 PLIST_SUB=	DTD_VERSION=${PORTVERSION} \
 		XMLCATMGR=${XMLCATMGR} \
 		DOCBOOKDIR=${DOCBOOKDIR} \
-		CATALOG_PORTS_SGML=${CATALOG_PORTS_SGML} \
-		CATALOG_PORTS_XML=${CATALOG_PORTS_XML}
+		CATALOG_PORTS_SGML=${CATALOG_PORTS_SGML}
 
 DOCBOOKDIR=	${PREFIX}/share/xml/${PORTNAME:S/-sk//}/${PORTVERSION}
 XMLCATMGR=	${LOCALBASE}/bin/xmlcatmgr
 CATALOG_PORTS_SGML=	${PREFIX}/share/sgml/catalog.ports
-CATALOG_PORTS_XML=	${PREFIX}/share/xml/catalog.ports
 
 pre-install:
 	@[ -d ${DOCBOOKDIR}/ent ] || ${MKDIR} ${DOCBOOKDIR}/ent
@@ -41,6 +39,5 @@ do-install:
 
 post-install:
 	@${XMLCATMGR} -sc ${CATALOG_PORTS_SGML} add CATALOG ${DOCBOOKDIR}/docbook.cat
-	@${XMLCATMGR} -c ${CATALOG_PORTS_XML} add nextCatalog ${DOCBOOKDIR}/catalog.xml
 
 .include <bsd.port.mk>
