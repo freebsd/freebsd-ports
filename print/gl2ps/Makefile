@@ -27,10 +27,10 @@ do-install:
 
 	@${MKDIR} ${EXAMPLESDIR}
 	${INSTALL_DATA} ${WRKSRC}/gl2psTest.c ${EXAMPLESDIR}
-	@${PERL} -pi -e 's|%%CC%%|${CC}|g; \
-			 s|%%RM%%|${RM}|g; \
-			 s|%%CFLAGS%%|${CFLAGS}|g; \
-			 s|%%X11BASE%%|${X11BASE}|g' \
+	@${SED} -e 's|%%CC%%|${CC}|g; \
+		    s|%%RM%%|${RM}|g; \
+		    s|%%CFLAGS%%|${CFLAGS}|g; \
+		    s|%%X11BASE%%|${X11BASE}|g' \
 		<${FILESDIR}/Makefile.ex >${EXAMPLESDIR}/Makefile
 
 .ifndef (NOPORTDOCS)
