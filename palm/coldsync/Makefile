@@ -7,7 +7,7 @@
 
 PORTNAME=	coldsync
 PORTVERSION=	2.2.5
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	palm comms
 MASTER_SITES=	http://www.coldsync.org/download/
 
