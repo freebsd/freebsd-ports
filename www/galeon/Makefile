@@ -21,7 +21,7 @@ RUN_DEPENDS=	${X11BASE}/lib/${MOZILLA}/libgtkembedmoz.so:${PORTSDIR}/www/${MOZIL
 
 #BROKEN=		"b0rken with Mozilla-0.9.9"
 
-#WITH_FULL_MOZILLA=	"Problems with missed scrollbars when linked with mozilla-embedded"
+WITH_FULL_MOZILLA=	"Problems with SSL, general performance, and usability"
 
 .if !defined(WITH_FULL_MOZILLA)
 MOZILLA=	mozilla-embedded
