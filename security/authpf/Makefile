@@ -7,6 +7,7 @@
 
 PORTNAME=	authpf
 PORTVERSION=	2.00
+PORTREVISION=	1
 CATEGORIES=	security ipv6
 MASTER_SITES=	http://pf4freebsd.love2party.net/
 .if defined(WITH_ALTQ) && (${WITH_ALTQ} == "yes")
@@ -18,7 +19,7 @@ MAINTAINER=	mlaier@freebsd.org
 COMMENT=	Authentification shell for pf gateways
 
 RUN_DEPENDS=	${LOCALBASE}/modules/pf.ko:${PORTSDIR}/security/pf
-.if defined(WITH_ALTQ) && (${WITH_ATLQ} == "yes")
+.if defined(WITH_ALTQ) && (${WITH_ALTQ} == "yes")
 RUN_DEPENDS+=	${LOCALBASE}/modules/pfaltq.ko:${PORTSDIR}/security/pf
 .endif
 
