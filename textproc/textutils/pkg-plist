@@ -26,7 +26,6 @@ bin/guniq
 bin/gwc
 @unexec install-info --delete %D/info/textutils.info %D/info/dir
 info/textutils.info
-@exec [ -f %D/info/dir ] || sed -ne '1,/Menu:/p' /usr/share/info/dir > %D/info/dir
 @exec install-info %D/info/textutils.info %D/info/dir
 share/locale/cs/LC_MESSAGES/textutils.mo
 share/locale/de/LC_MESSAGES/textutils.mo

@@ -73,9 +73,6 @@ pre-install:
 .endfor
 .endfor
 	(cd ${PREFIX}/lib/xemacs; ${MKDIR} info etc site-lisp)
-	if [ ! -f ${PREFIX}/lib/xemacs/info/dir ]; then \
-		${SED} -ne '1,/Menu:/p' /usr/share/info/dir > ${PREFIX}/lib/xemacs/info/dir; \
-	fi
 
 post-install::
 	@if [ -f ${PKGDIR}/INSTALL ]; then \
