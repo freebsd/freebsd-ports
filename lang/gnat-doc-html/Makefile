@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gnat-doc
-PORTVERSION=	3.14p
+PORTVERSION=	3.15p
 CATEGORIES=	lang
 MASTER_SITES=	ftp://cs.nyu.edu/pub/gnat/%SUBDIR%/ \
 		ftp://ftp.cdrom.com/pub/languages/ada/compiler/gnat/%SUBDIR%/ \
@@ -19,12 +19,12 @@ MASTER_SITES=	ftp://cs.nyu.edu/pub/gnat/%SUBDIR%/ \
 		ftp://ftp.fss.bme.hu/pub/ada/gnat/%SUBDIR%/
 MASTER_SITE_SUBDIR=	${PORTVERSION}
 PKGNAMESUFFIX=	-${DOCFORMAT}
-DISTNAME=	gnat-${PORTVERSION}-docs
+DISTNAME=	gnat-${PORTVERSION}-unx-docs
 
 MAINTAINER=	coop9211@uidaho.edu
 COMMENT=	Documentation for the GNAT compiler
 
-WRKSRC=		${WRKDIR}/gnat-${PORTVERSION}-docs
+WRKSRC=		${WRKDIR}/gnat-${PORTVERSION}-unx-docs
 NO_BUILD=	yes
 PLIST=		${MASTERDIR}/pkg-plist_${DOCFORMAT}
 PKGMESSAGE=	${MASTERDIR}/pkg-message_${DOCFORMAT}
@@ -61,9 +61,6 @@ do-install:
 .if ${DOCFORMAT} == "info"
 	@${MKDIR} ${PREFIX}/info
 	@${INSTALL_MAN} ${WRKSRC}/${DOCFORMAT}/* ${PREFIX}/info
-	@if [ ! -f ${PREFIX}/info/dir ]; then \
-		${SED} -ne '1,/Menu:/p' \/usr\/share\/info/dir > ${PREFIX}/info/dir; \
-	fi
 	@${INSTALL_INFO} --item=${ARM_LABEL} ${PREFIX}/info/arm95.info ${PREFIX}/info/dir
 	@${INSTALL_INFO} --item=${GCC_LABEL} ${PREFIX}/info/gcc.info ${PREFIX}/info/dir
 	@${INSTALL_INFO} --item=${RM_LABEL} ${PREFIX}/info/gnat_rm.info ${PREFIX}/info/dir
