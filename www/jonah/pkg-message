@@ -1,0 +1,23 @@
+************************************************************************
+Jonah has been installed in %%JONAHDIR%% with your blank
+configuration files.
+
+Horde must be configured; if not, see:
+- %%PORTSDIR%%/www/horde2/pkg-message
+
+Then, you may have to tune the configuration files located in
+%%CONFDIR%%/, specially the files conf.php.
+Check in %%PREFIX%%/www/horde/config/horde.php that 'admin' is
+treated as an administrator.
+
+Finally, beeing root, you must run %%PREFIX%%/bin/cli-backend.php
+to fetch the headlines. You might add an entry in your crontab to
+refresh them (hourly, for example).
+
+Then go to <URL:http://localhost/horde/>; and click on the newspaper
+to see the channels.
+
+There is a test script at <URL:http://localhost/horde/jonah/test.php>;.
+
+To protect your configuration files, you have to restart Apache.
+************************************************************************
