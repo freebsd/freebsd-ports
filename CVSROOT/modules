@@ -8913,6 +8913,7 @@ ski		ports/emulators/ski
 skill		ports/sysutils/skill
 skip		ports/security/skip
 skribe		ports/textproc/skribe
+sky2000		ports/astro/sky2000
 skyutils	ports/misc/skyutils
 sl		ports/games/sl
 sl-aspell	ports/textproc/sl-aspell
