@@ -8,7 +8,7 @@
 
 DISTNAME=	ipsc-0.4.2-src
 PKGNAME=	ipsc-0.4.2
-CATEGORIES=	sysutils gnome x11 
+CATEGORIES=	sysutils gnome
 MASTER_SITES=	http://www.interloper.net/~dan/software/dist/ipsc/
 
 MAINTAINER=	jeremy@external.org
@@ -19,6 +19,9 @@ LIB_DEPENDS=	gtk12.2:${PORTSDIR}/x11-toolkits/gtk12 \
 		gnome.3:${PORTSDIR}/x11/gnomelibs
 .endif
 
+.if defined(USE_GNOME)
+USE_XLIB=	YES
+.endif
 WRKSRC=		${WRKDIR}/ipsc/src
 
 post-extract:
