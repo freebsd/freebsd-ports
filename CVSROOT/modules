@@ -807,6 +807,7 @@ cam		ports/audio/cam
 camediaplay	ports/graphics/camediaplay
 caml-light	ports/lang/caml-light
 camlp4		ports/devel/camlp4
+camomile	ports/devel/camomile
 camserv		ports/multimedia/camserv
 cantus		ports/audio/cantus
 cap		ports/net/cap
