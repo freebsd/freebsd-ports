@@ -2233,6 +2233,7 @@ gltk		ports/graphics/gltk
 gltron		ports/games/gltron
 gltt		ports/graphics/gltt
 glui		ports/devel/glui
+glunarclock	ports/astro/glunarclock
 gm4		ports/devel/m4
 gma		ports/games/gma
 gmail		ports/mail/gmail
