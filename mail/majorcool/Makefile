@@ -15,7 +15,6 @@ COMMENT=	A Web Interface to Majordomo
 
 NO_WRKSUBDIR=	yes
 NO_BUILD=	yes
-NO_PACKAGE=	"Too many questions"
 IS_INTERACTIVE=	yes
 USE_PERL5=	yes
 
