@@ -70,6 +70,7 @@
     SUBDIR += unrar
     SUBDIR += untar
     SUBDIR += unzip
+    SUBDIR += upx
     SUBDIR += wzip
     SUBDIR += xdms
     SUBDIR += xmill
