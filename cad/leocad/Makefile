@@ -20,8 +20,6 @@ BUILD_DEPENDS=	unzip:${PORTSDIR}/archivers/unzip
 LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
 		png.5:${PORTSDIR}/graphics/png
 
-BROKEN=		Unknown problem
-
 USE_GMAKE=	yes
 USE_GNOMENG=	yes
 USE_GNOME=	gtk12
