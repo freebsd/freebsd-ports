@@ -28,9 +28,8 @@ ALL_TARGET=
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} >= 500023
-BUILD_DEPENDS=	${PREFIX}/include/gmp.h:${PORTSDIR}/math/libgmp-freebsd
-RUN_DEPENDS=	${PREFIX}/include/gmp.h:${PORTSDIR}/math/libgmp-freebsd
+.if ${OSVERSION} > 500023
+LIB_DEPENDS=	gmp.4:${PORTSDIR}/math/libgmp3
 .endif
 
 do-patch:
