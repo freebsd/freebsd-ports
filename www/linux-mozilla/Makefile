@@ -21,6 +21,8 @@ PATCHFILES=	linux-mozilla-${PORTVERSION}-generated-files.tar.gz
 
 MAINTAINER=	trevor@FreeBSD.org
 
+FORBIDDEN=	"malicious Web servers can upload files--see http://sec.greymagic.com/adv/gm001-ns/ or http://www.heise.de/ct/browsercheck/n6demo1.shtml "
+
 BUILD_DEPENDS=	unzip:${PORTSDIR}/archivers/unzip
 RUN_DEPENDS=	${LINUXBASE}/usr/lib/libgtk-1.2.so.0.5.0:${PORTSDIR}/x11-toolkits/linux-gtk
 
