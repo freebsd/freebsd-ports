@@ -67,6 +67,7 @@
     SUBDIR += p5-Tcl-Tk
     SUBDIR += p5-Tk
     SUBDIR += p5-Tk-Autoscroll
+    SUBDIR += p5-Tk-ColourChooser
     SUBDIR += panel--
     SUBDIR += pango
     SUBDIR += paragui
