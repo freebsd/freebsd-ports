@@ -8,6 +8,7 @@
 
 PORTNAME=	libdvdcss
 PORTVERSION=	1.0.1
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.videolan.org/pub/videolan/%SUBDIR%/
 MASTER_SITE_SUBDIR=	${PORTNAME}/${PORTVERSION}
@@ -27,6 +28,12 @@ CONFIGURE_ENV=	CPPFLAGS="${CXXFLAGS} -I${LOCALBASE}/include" \
 CONFIGURE_ARGS=	--enable-release
 USE_GMAKE=	yes
 INSTALLS_SHLIB=	yes
+
+post-patch:
+	@${PERL} -pi -e 's|(LIBDVDCSS_VERSION=)"[\d\.]+?\.(\d)"|\1"\2"|' \
+		${CONFIGURE_WRKSRC}/${CONFIGURE_SCRIPT}
+	@${PERL} -pi -e 's|^.+?ln.+?FULL_SO.+?MAJOR_SO.+\n||' \
+		${WRKSRC}/extras/libdvdcss/Makefile
 
 .include <bsd.port.pre.mk>
 
