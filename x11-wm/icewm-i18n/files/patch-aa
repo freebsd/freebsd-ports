@@ -1,0 +1,12 @@
+--- Makefile.orig	Sat May  1 23:20:32 1999
++++ Makefile	Sun May 16 09:33:07 1999
+@@ -12,8 +12,7 @@
+ GNOMEFILES  = src/icewm-gnome
+ 
+ all:
+-	cd src ; $(MAKE) LIBDIR=$(LIBDIR) ETCDIR=$(ETCDIR)
+-	cd doc ; $(MAKE)
++	cd src ; $(MAKE) LIBDIR=$(LIBDIR) ETCDIR=$(ETCDIR) PREFIX=$(PREFIX)
+ 
+ docs:
+ 	cd doc ; $(MAKE)

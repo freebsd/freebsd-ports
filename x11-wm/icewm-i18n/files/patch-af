@@ -1,0 +1,11 @@
+--- icewm.spec.in.orig	Wed Mar 17 00:12:01 1999
++++ icewm.spec.in	Wed Mar 17 00:12:22 1999
+@@ -36,7 +36,7 @@
+ %files
+ %defattr(-,root,root)
+ %doc README COPYING CHANGES TODO BUGS icewm.lsm FAQ doc/*.html doc/icewm.sgml
+-%{prefix}/lib/X11/icewm/
++%{prefix}/share/icewm/
+ %{prefix}/bin/icewm
+ %{prefix}/bin/icewmhint
+ %{prefix}/bin/icewmbg

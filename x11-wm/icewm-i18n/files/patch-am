@@ -1,0 +1,11 @@
+--- src/wmprog.cc.orig	Fri Dec 24 00:19:36 1999
++++ src/wmprog.cc	Fri Dec 24 00:21:50 1999
+@@ -459,7 +459,7 @@
+             gnomeicon = new YPixmap(gnome_logo, ICON_SMALL, ICON_SMALL);
+ #endif
+ 
+-        char * gnomeApps = gnome_datadir_file("gnome/apps/");
++        char * gnomeApps = gnome_datadir_file("apps/");
+ 
+         if (access(gnomeApps, X_OK | R_OK) == 0)  {
+             YMenu *sub = new GnomeMenu(0, gnomeApps);
