@@ -6,97 +6,94 @@
 #
 
 PORTNAME=	groff
-PORTVERSION=	1.17.2
-PORTREVISION=	5
+PORTVERSION=	1.18.1
 CATEGORIES=	japanese print
 MASTER_SITES=	${MASTER_SITE_LOCAL:S,%SUBDIR%,okazaki/&,} \
 		${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	groff
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${TMAC_DISTNAME}.tar.gz
 
-PATCH_SITES=	${MASTER_SITE_LOCAL}
-PATCH_SITE_SUBDIR=	okazaki/groff
-PATCHFILES=	${DISTNAME}-jgroff-0.0.2.diff.gz
+PATCH_SITES=	http://people.debian.org/~ukai/groff/
+PATCHFILES=	${DISTNAME:S,-,_,}-7.diff.gz
 PATCH_DIST_STRIP=	-p1
 
 MAINTAINER=	okazaki@FreeBSD.org
+COMMENT=	Japanese enhancement of GNU groff
 
-TMAC_DATE=	20020918
+LIB_DEPENDS=	iconv.3:${PORTSDIR}/converters/libiconv
+BUILD_DEPENDS=	pnmcut:${PORTSDIR}/graphics/netpbm
+RUN_DEPENDS=	pnmcut:${PORTSDIR}/graphics/netpbm
+
+TMAC_DATE=	20030303
 TMAC_DISTNAME=	tmac-${TMAC_DATE}
 
+GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
-# declare USE_AUTOCONF_VER as 213 until bsd.port.mk supports 252 (or later)
-USE_AUTOCONF_VER=	213
-.if ${USE_AUTOCONF_VER} == 213
 USE_REINPLACE=	yes
-.endif
 
-CONFIGURE_ARGS=	--program-prefix=g --enable-nippon
-CONFIGURE_ENV=	INSTALL_MAN="${INSTALL_MAN}"
+CONFIGURE_ARGS=	--enable-multibyte
+CONFIGURE_ENV=	INSTALL_MAN="${INSTALL_MAN}" \
+		LIBS="-L${LOCALBASE}/lib -liconv"
+CFLAGS+=	-I${LOCALBASE}/include
 
 TMACBASE=	${WRKDIR}/${TMAC_DISTNAME}
 TMACDIR=	share/groff/${PORTVERSION}/tmac
 SITETMACDIR=	share/groff/site-tmac
 MDOCDIR=	${TMACDIR}/mdoc
 INFODIR=	${PREFIX}/info
-DOCSDIR=	${PREFIX}/share/doc/jgroff
+DOCSDIR=	${PREFIX}/share/doc/groff/${PORTVERSION}
 PLIST_SUB=	GROFF_VERSION=${PORTVERSION}
 
-MAN1SRC=	eqn.1 indxbib.1 lookbib.1 neqn.1 nroff.1 pic.1 \
-		refer.1 soelim.1 tbl.1 troff.1 grn.1
-
-MAN1=		${MAN1SRC:S/^/g/g} \
-		addftinfo.1 afmtodit.1 grodvi.1 \
-		groff.1 grog.1 \
+MAN1=		addftinfo.1 afmtodit.1 \
+		eqn.1 eqn2graph.1 \
+		grn.1 grodvi.1 groff.1 groffer.1 grog.1 \
 		grohtml.1 grolbp.1 grolj4.1 grops.1 grotty.1 \
-		hpftodit.1 lkbib.1 pfbtops.1 tfmtodit.1
+		hpftodit.1 indxbib.1 lkbib.1 lookbib.1 mmroff.1 \
+		neqn.1 nroff.1 pfbtops.1 pic.1 pic2graph.1 \
+		refer.1 soelim.1 tbl.1 tfmtodit.1 troff.1
 MAN5=		groff_font.5 groff_out.5 groff_tmac.5
-MAN7=		groff.7 groff_char.7 groff_man.7 groff_mdoc.7 \
-		groff_me.7 groff_mm.7 groff_mmse.7 groff_ms.7 \
-		groff_mwww.7 mmroff.7 roff.7
+MAN7=		ditroff.7 groff.7 groff_char.7 groff_diff.7 \
+		groff_man.7 groff_mdoc.7 \
+		groff_me.7 groff_mm.7 groff_mmse.7 groff_mom.7 groff_ms.7 \
+		groff_trace.7 groff_www.7 roff.7
 
 SITETMACFILES=	mdoc.local
 TMACFILES=	tmac.orig_me tmac.vgrind \
 		an-old.tmac doc.tmac e.tmac
-MDOCFILES=	eucJP doc-common doc-syms
+MDOCFILES=	ja.eucJP doc-common doc-syms
 
-DOCUMENTS=	ChangeLog.jp NEWS PROBLEMS README README.jp \
-		doc/meintro.me doc/meref.me doc/pic.ms
+DOCUMENTS=	ChangeLog.jp NEWS PROBLEMS README README.jp
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 350001
+# formatting groff.info requires texinfo 4.2
+.if ${OSVERSION} < 470000
 WITHOUT_INFO=	yes
 PLIST_SUB+=	INFO="@comment "
 .else
 PLIST_SUB+=	INFO=""
 .endif
 
-# workaround for autoconf-2.13
-
-CONFIGUREIN_FILTER=	\
-		-e 's|AC_INIT|dnl|g;' \
-		-e 's|AC_CONFIG_SRCDIR|AC_INIT|g;' \
-		-e 's|AC_OUTPUT|dnl|g;' \
-		-e 's|AC_CONFIG_FILES|AC_OUTPUT|g;'
-
-ACLOCAL_FILTER=	\
-	-e 's/AC_LANG_POP[(]C[+][+][)]/AC_LANG_RESTORE/g;' \
-	-e 's/AC_LANG_PUSH[(]C[+][+][)]/AC_LANG_SAVE[]AC_LANG_CPLUSPLUS/g;'
+# wchar.h is exist since 4.4-RELEASE
+.if ${OSVERSION} < 440000
+WITHOUT_WCHAR_H=	yes
+.endif
 
 post-patch:
-.if ${USE_AUTOCONF_VER} == 213
-	${CP} -p ${WRKSRC}/configure.ac ${WRKSRC}/configure.in
-	${REINPLACE_CMD} ${CONFIGUREIN_FILTER} ${WRKSRC}/configure.in
-	${REINPLACE_CMD} ${ACLOCAL_FILTER} ${WRKSRC}/aclocal.m4
+.ifdef ${WITHOUT_WCHAR_H}
+	${REINPLACE_CMD} -e 's|#include <wchar[.]h>||g;' \
+		${WRKSRC}/src/libs/libgroff/encoding.cc
 .endif
 
 post-build:
+	${RM} -f ${WRKSRC}/doc/groff ${WRKSRC}/doc/groff-*
 .if !defined(WITHOUT_INFO)
 	cd ${WRKSRC}/doc && makeinfo --no-split groff.texinfo
 .endif
+	cd ${WRKSRC} && ${FIND} font -name DESC \
+	| xargs ${REINPLACE_CMD} -e 's|pro \(.*\)|pro ${PREFIX}/bin/\1|g;'
 
-post-install:
+post-install: install-links
 .if !defined(WITHOUT_INFO)
 	@${MAKE} install-info
 .endif
@@ -121,5 +118,10 @@ install-documents:
 install-info:
 	${INSTALL_DATA} ${WRKSRC}/doc/groff ${INFODIR}
 	install-info ${INFODIR}/groff ${INFODIR}/dir
+
+install-links:
+.for FILE in eqn neqn pic tbl
+	${LN} -sf ${FILE} ${PREFIX}/bin/g${FILE}
+.endfor
 
 .include <bsd.port.post.mk>

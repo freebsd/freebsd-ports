@@ -1,0 +1,18 @@
+--- tmac/troffrc~	Thu Mar  6 12:33:17 2003
++++ tmac/troffrc	Thu Mar  6 13:21:54 2003
+@@ -38,7 +38,15 @@
+ .\" Load hyphenation patterns from `hyphen.us' (in the tmac directory).
+ .do hpf hyphen.us
+ .
++.\" Disable SGR support in grotty(1).
++.if n \{\
++.  do nop \X'tty: sgr 0'
++.  sp -1
++.  nr nl 0-1
++.  nr % -1
++.\}
+ .\" for Japanese hack
+ .if "\V[LANG]"ja_JP.eucJP" .do mso euc-jp.tmac
++.if "\V[LANG]"ja_JP.EUC" .do mso euc-jp.tmac
+ .
+ .\" Don't let blank lines creep in here.
