@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	NetAddr-IP
-PORTVERSION=	3.09
+PORTVERSION=	3.10
 CATEGORIES=	net perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	NetAddr
@@ -25,5 +25,10 @@ post-patch:
 		-e '$$_="" if /require 5/;' \
 		-e '$$_="" if /use warnings/;' \
 		${WRKSRC}/IP.pm
+
+post-build:
+	@${PERL} -M5.6.0 -e '' >/dev/null 2>&1 || \
+	( ${ECHO_MSG} "===>	Please note that this module provides more functionality when" && \
+	${ECHO_MSG} "===>	used with perl 5.6.1 or perl 5.8.0 (both in the ports collection)." )
 
 .include <bsd.port.mk>
