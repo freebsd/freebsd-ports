@@ -82,7 +82,7 @@ CONFIGURE_ARGS+=	--enable-keymap=lynx
 
 .include <bsd.port.pre.mk>
 
-.if  ${OSVERSION} < 500016
+.if  ${OSVERSION} < 502102
 CONFIGURE_ENV=	DEFS="-I${LOCALBASE}/include ${PTHREAD_CFLAGS}" \
 		LIBS="${LIBS} ${PTHREAD_LIBS} -lc_r"
 .else
