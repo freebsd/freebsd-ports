@@ -32,7 +32,7 @@ do-install:
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} == "alpha" && ${OSVERSION} >= 502102
+.if ${ARCH} == "alpha"
 BROKEN=		"Does not compile (coredump)"
 .endif
 
