@@ -19,10 +19,11 @@ include/libxslt/transform.h
 include/libxslt/variables.h
 include/libxslt/xslt.h
 include/libxslt/xsltInternals.h
+include/libxslt/xsltconfig.h
 include/libxslt/xsltutils.h
 lib/libexslt.a
 lib/libexslt.so
-lib/libexslt.so.2
+lib/libexslt.so.3
 lib/libxslt.a
 lib/libxslt.so
 lib/libxslt.so.1
