@@ -26,6 +26,7 @@ WRKSRC=		${WRKDIR}/${PORTNAME}
 USE_QT_VER=	3
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
+USE_GETOPT_LONG=yes
 USE_REINPLACE=	yes
 CONFIGURE_ARGS+=	--with-qtdir=${X11BASE} --with-id3-libs=${LOCALBASE}\
 			--with-ogg-libs=${LOCALBASE} --with-vorbis-libs=${LOCALBASE}
