@@ -7,26 +7,21 @@
 
 PORTNAME=	Server
 PORTVERSION=	4.2.1
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	x11-servers
 MASTER_SITES=	${MASTER_SITE_XFREE:S/$/:x/} \
-		${MASTER_SITE_XFREE:S/source//g:S/$/:x421patch/} \
-		${MASTER_SITE_XFREE:S/source//g:S/$/:x421fixes/} \
 		${MASTER_SITE_LOCAL:S/$/:local/}
 MASTER_SITE_SUBDIR=	4.2.0/:x \
-			${PORTVERSION}/patches/:x421patch \
-			${PORTVERSION}/fixes/:x421fixes \
 			anholt/:local
 PKGNAMEPREFIX=	XFree86-
 DISTFILES=	X420src-1.tgz:x \
-		4.2.0-4.2.1.diff.gz:x421patch \
-		4.2.1-mit-shm-security.patch:x421fixes \
 		Wraphelp.gz:local
 EXTRACT_ONLY=	X420src-1.tgz
 
 PATCH_SITES=		${MASTER_SITE_LOCAL}
 PATCH_SITE_SUBDIR=	anholt/patches-4.2.0/
-PATCHFILES=		patch-nvchips.gz
+PATCHFILES=		4.2.0-4.2.1-1-freebsd.patch.gz \
+			patch-nvchips.gz
 
 MAINTAINER=	anholt@freebsd.org
 
@@ -35,7 +30,7 @@ USE_IMAKE=		YES
 DIST_SUBDIR=		xc
 WRKSRC=			${WRKDIR}/xc
 PATCHDIR=		${.CURDIR}/../../x11/XFree86-4-libraries/files
-.for pf in patch-text-mode.c patch-xf86Configure.c patch-xf86config.c
+.for pf in patch-text-mode.c patch-xf86Configure.c patch-xf86config.c patch-mga_driver.c
 EXTRA_PATCHES+=		${.CURDIR}/files/${pf}
 .endfor
 SCRIPTS_ENV=		OSVERSION=${OSVERSION} \
@@ -157,27 +152,14 @@ MAN4+=		citron.4 \
 PLIST_SUB+=	XIE:="@comment "
 .endif
 
-# matrox BETA driver is not ready for 4.2.0.
-# I don't confirm feather it is newer than the one which included in 4.2.0,
-# but you can try the BETA driver. Just set that variable.
-
-pre-everything::
-	@${ECHO_MSG} "********************************************************"
-	@${ECHO_MSG} "WARNING: MATROX DRIVERS NOT FULLY TESTED WITH XFREE86"
-	@${ECHO_MSG} "4.2.0!  ENABLE AT YOUR OWN RISK!"
-	@${ECHO_MSG} "********************************************************"
-
 .if ${ARCH} == i386
 .if !defined(WITH_MATROX_GXX_DRIVER)
 HaveMatroxHal=		NO
 PLIST_SUB+=		MATROX="@comment "
 pre-fetch::
 	@${ECHO_MSG} "********************************************************"
-	@${ECHO_MSG} "Define WITH_MATROX_GXX_DRIVER to enable the official"
-	@${ECHO_MSG} "Matrox drivers for the G200, G400, G450, and G550"
-	@${ECHO_MSG} "graphic adapters."
-	@${ECHO_MSG} ""
-	@${ECHO_MSG} "This has been tested on a G400 AGP card."
+	@${ECHO_MSG} "Define WITH_MATROX_GXX_DRIVER to include Matrox's extra"
+	@${ECHO_MSG} "\"HALLIB\" binary driver"
 	@${ECHO_MSG} "********************************************************"
 .else
 NO_PACKAGE=	"Matrox drivers may not be distributed"
@@ -189,32 +171,21 @@ DISTFILES+=		mgadrivers-${MGA_DRIVER_VERSION}-src.tgz:mga
 EXTRACT_ONLY+=		mgadrivers-${MGA_DRIVER_VERSION}-src.tgz
 RESTRICTED_FILES=	mgadrivers-${MGA_DRIVER_VERSION}-src.tgz
 PLIST_SUB+=		MATROX=""
-post-patch::
-	@(cd ${WRKSRC}; \
-	  ${MV} programs/Xserver/hw/xfree86/drivers/mga \
-		programs/Xserver/hw/xfree86/drivers/mga.old; \
-	  ${MV} ../mgadrivers-${MGA_DRIVER_VERSION}-src/4.2.0/drivers/src programs/Xserver/hw/xfree86/drivers/mga)
+post-extract::
+	${MV} ${WRKDIR}/mgadrivers-${MGA_DRIVER_VERSION}-src/4.2.0/drivers/src/HALlib/* \
+		${WRKSRC}/programs/Xserver/hw/xfree86/drivers/mga/HALlib/
 post-install::
-	${INSTALL_DATA} ${WRKSRC}/programs/Xserver/hw/xfree86/drivers/mga/README_HALLIB ${PREFIX}/lib/X11/doc/README.mga_HALLIB
+	${INSTALL_DATA} ${WRKDIR}/mgadrivers-${MGA_DRIVER_VERSION}-src/4.2.0/drivers/src/README_HALLIB \
+		${PREFIX}/lib/X11/doc/README.mga_HALLIB
 .endif	# !WITH_MATROX_GXX_DRIVER
 .else
 HaveMatroxHal=		NO
 PLIST_SUB+=		MATROX="@comment "
 .endif
 
-.if ${HaveMatroxHal} == NO
-EXTRA_PATCHES+=		${.CURDIR}/files/patch-mga_driver.c
-.endif
-
 post-extract::
 	${GUNZIP_CMD} -c ${DISTDIR}/${DIST_SUBDIR}/Wraphelp.gz > \
 		${WRKSRC}/lib/Xdmcp/Wraphelp.c
-
-pre-patch::
-	-@${GZCAT} ${DISTDIR}/${DIST_SUBDIR}/4.2.0-4.2.1.diff.gz \
-		| ${PATCH} -d ${PATCH_WRKSRC} --forward --quiet -E -p1 --batch
-	-@${CAT} ${DISTDIR}/${DIST_SUBDIR}/4.2.1-mit-shm-security.patch \
-		| ${PATCH} -d ${PATCH_WRKSRC} --forward --quiet -E -p1 --batch
 
 post-build:
 	@${RM} -f ${PKGMESSAGE}
