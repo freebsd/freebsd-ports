@@ -1,0 +1,13 @@
+Ruby/Google offers a higher-level abstraction of Google's new
+SOAP-driven Web API.  It allows you to programmatically query the
+Google search-engine from the comfort of your favourite programming
+language.
+
+The aim of the library is to make the details of the raw data
+structures returned by the Web API irrelevant, in the process making
+the API more accessible for everyday use.
+
+Demonstration programs are included in the archive.
+
+Author:	Ian Macdonald <ian@caliban.org>
+WWW:	http://www.caliban.org/ruby/

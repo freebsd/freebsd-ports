@@ -1,0 +1,9 @@
+%%RUBY_SITELIBDIR%%/google.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/google/cache.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/google/search.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/google/spell.rb
+%%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/google
+%%PORTDOCS%%%%RUBY_DOCDIR%%/google/Changelog
+%%PORTDOCS%%%%RUBY_DOCDIR%%/google/README
+%%PORTDOCS%%%%RUBY_DOCDIR%%/google/google.html
+%%PORTDOCS%%@dirrm %%RUBY_DOCDIR%%/google
