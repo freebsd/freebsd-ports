@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	mlmmj
-PORTVERSION=	1.0.0.r4
+PORTVERSION=	1.0.0
 CATEGORIES=	mail
 MASTER_SITES=	http://mlmmj.mmj.dk/files/
-DISTNAME=	mlmmj-1.0.0-RC4
 
 MAINTAINER=	xi@borderworlds.dk
 COMMENT=	Mailing list managing made joyful
@@ -49,6 +48,8 @@ USE_REINPLACE=	yes
 
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS+=	--prefix=${PREFIX}
+
+MAN1=		mlmmj-bounce.1 mlmmj-maintd.1 mlmmj-make-ml.1 mlmmj-process.1 mlmmj-recieve.1 mlmmj-send.1 mlmmj-sub.1 mlmmj-unsub.1
 
 post-patch:
 	@${REINPLACE_CMD} -e "s|%%PREFIX%%|${PREFIX}|g" ${WRKSRC}/src/mlmmj-make-ml.sh
