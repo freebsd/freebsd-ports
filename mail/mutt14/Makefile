@@ -31,26 +31,29 @@ PATCH_DIST_STRIP=	-p1
 
 MAINTAINER=	obrien@FreeBSD.org
 
-LIB_DEPENDS=    intl.1:${PORTSDIR}/devel/gettext
-.if defined(BATCH)
-LIB_DEPENDS=	slang.1:${PORTSDIR}/devel/libslang
+.if defined(PACKAGE_BUILDING)
+WITH_SLANG=	yes
 BUILD_DEPENDS=	ispell:${PORTSDIR}/textproc/ispell
+RUN_DEPENDS=	ispell:${PORTSDIR}/textproc/ispell \
+		urlview:${PORTSDIR}/textproc/urlview
 .if ${MACHINE_ARCH} != "alpha"
 #  coredump in sgmls
-BUILD_DEPENDS+=	sgmlfmt:${PORTSDIR}/textproc/sgmlformat
+WITH_DOCS=	yes
 .endif
-RUN_DEPENDS=	ispell:${PORTSDIR}/textproc/ispell
+.endif
+
+LIB_DEPENDS=    intl.1:${PORTSDIR}/devel/gettext
+.if defined(WITH_SLANG)
+LIB_DEPENDS+=	slang.1:${PORTSDIR}/devel/libslang
 .elif defined(WITH_NCURSES_PORT)
-LIB_DEPENDS=	ncurses.4:${PORTSDIR}/devel/ncurses
+LIB_DEPENDS+=	ncurses.4:${PORTSDIR}/devel/ncurses
 CFLAGS+=	-I${PREFIX}/include/ncurses
-.elif defined(WITH_SLANG)
-LIB_DEPENDS=	slang.1:${PORTSDIR}/devel/libslang
 .endif
 .if defined(WITH_SSL)
 USE_OPENSSL=    RSA
 .endif
-.if defined(PACKAGE_BUILDING)
-RUN_DEPENDS+=	urlview:${PORTSDIR}/textproc/urlview
+.if defined(WITH_DOCS)
+BUILD_DEPENDS+=	sgmlfmt:${PORTSDIR}/textproc/sgmlformat
 .endif
 
 DIST_SUBDIR=	mutt
@@ -63,7 +66,7 @@ CONFIGURE_ARGS= --enable-pop --enable-imap --enable-flock --disable-fcntl \
 .if defined(WITH_LOCALES_FIX)
 CONFIGURE_ARGS+=	--enable-locales-fix
 .endif
-.if defined(BATCH) || defined(WITH_SLANG)
+.if defined(WITH_SLANG)
 CONFIGURE_ARGS+=	--with-slang=${PREFIX}
 .elif defined(WITH_NCURSES_PORT)
 CONFIGURE_ARGS+=	--with-curses=${PREFIX}
@@ -88,7 +91,7 @@ post-build:
 	${PATCH} ${PATCH_ARGS} < ${FILESDIR}/patch-doc-ref
 	printf ",s|\$${PREFIX}|%s|g\nw\nq\n" ${PREFIX} | \
 		ed -s ${WRKSRC}/doc/mutt.man
-.if defined(BATCH)
+.if defined(WITH_DOCS)
 PLIST:=		${WRKDIR}/PLIST
 pre-install:
 	@${CAT} ${PKGDIR}/PLIST.htmlfiles >> ${PLIST}
@@ -103,8 +106,8 @@ post-install:
 	@${MKDIR} ${PREFIX}/share/doc/mutt && ${CHMOD} a+rx ${PREFIX}/share/doc/mutt
 	@cd ${WRKSRC}/doc ; ${INSTALL_MAN} manual.txt PGP-Notes.txt \
 		${PREFIX}/share/doc/mutt
-.if defined(BATCH)
-	${INSTALL_MAN} -d ${PREFIX}/share/doc/mutt/html
+.if defined(WITH_DOCS)
+	env MANMODE=0755 ${INSTALL_MAN} -d ${PREFIX}/share/doc/mutt/html
 	${INSTALL_MAN} ${WRKSRC}/doc/*.html ${PREFIX}/share/doc/mutt/html
 	${INSTALL_MAN} ${WRKSRC}/doc/*.latin1 ${PREFIX}/share/doc/mutt
 .endif
