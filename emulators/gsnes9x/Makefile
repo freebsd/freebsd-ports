@@ -15,6 +15,7 @@ MAINTAINER=	kbyanc@posi.net
 
 LIB_DEPENDS=	intl.1:${PORTSDIR}/devel/gettext \
 		gtk12.2:${PORTSDIR}/x11-toolkits/gtk12 \
+		gnome.4:${PORTSDIR}/x11/gnomelibs \
 		esd.2:${PORTSDIR}/audio/esound
 RUN_DEPENDS=	snes9x:${PORTSDIR}/emulators/snes9x
 
