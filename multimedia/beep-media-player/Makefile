@@ -7,7 +7,7 @@
 
 PORTNAME=	beep-media-player
 PORTVERSION=	0.9.6.1
-PORTREVISION=	1
+PORTREVISION=	2
 PORTEPOCH=	1
 CATEGORIES=	multimedia audio
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
@@ -18,14 +18,13 @@ MAINTAINER=	flynn@energyhq.es.eu.org
 COMMENT=	GTK2 mp3 player
 
 USE_GNOME=	gtk20
-USE_ICONV=	yes
 WANT_GNOME=	yes
 USE_X_PREFIX=	yes
 USE_REINPLACE=	yes
-USE_LIBTOOL_VER=13
+USE_LIBTOOL_VER=15
+LIBTOOLFILES=	configure libbeep/configure
 USE_GMAKE=	yes
 INSTALLS_SHLIB=	yes
-GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib" \
 		INPUT_PLUGINS="${INPUT_PLUGINS}" \
@@ -75,7 +74,7 @@ CONFIGURE_ARGS+=	--disable-esd
 PLIST_SUB+=	ESDPLUGIN:="@comment "
 .endif
 
-.if ${MACHINE_ARCH} != "i386"
+.if ${ARCH} != "i386"
 WITHOUT_3DNOW=	yes
 .endif
 
@@ -111,8 +110,8 @@ pre-extract:
 .endif
 
 post-patch:
-	@${FIND} ${WRKSRC} -name "Makefile.in*" | ${XARGS} ${REINPLACE_CMD} -e \
-		 's|\(datadir\)/aclocal|(prefix)/share/aclocal|g'
+	@${REINPLACE_CMD} -e 's|(libdir)/pkgconfig|(prefix)/libdata/pkgconfig|g' \
+		${WRKSRC}/Makefile.in
 	@${REINPLACE_CMD} -e 's|{datadir}/locale|{prefix}/share/locale|g' \
 		${WRKSRC}/configure
 	@${REINPLACE_CMD} -e 's,-pthread,${PTHREAD_LIBS},g' \
