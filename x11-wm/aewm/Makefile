@@ -13,6 +13,8 @@ MASTER_SITES=	http://www.red-bean.com/~decklin/aewm/
 MAINTAINER=	trevor@FreeBSD.org
 COMMENT=	ICCCM-compliant window manager based on 9wm
 
+BROKEN=		"Does not compile"
+
 GTKCLIENTS=	aemenu-gtk aepanel-gtk
 XAWCLIENTS=	set-gnome-pda \
 		aesession \
