@@ -9,7 +9,7 @@ PATH=/bin:/sbin:/usr/bin:/usr/sbin
 
 USER=mud
 GROUP=${USER}
-UID=91
+UID=97
 GID=${UID}
 
 if [ -z "${DATADIR}" ]; then
