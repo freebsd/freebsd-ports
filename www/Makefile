@@ -443,6 +443,7 @@
     SUBDIR += pound
     SUBDIR += privoxy
     SUBDIR += privoxy+ipv6
+    SUBDIR += pserv
     SUBDIR += publicfile
     SUBDIR += pwebstats
     SUBDIR += py-HTMLgen
