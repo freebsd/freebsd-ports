@@ -9,21 +9,16 @@
 %%PYTHON_SITELIBDIR%%/gtk-2.0/gnome/__init__.pyc
 %%PYTHON_SITELIBDIR%%/gtk-2.0/gnome/__init__.pyo
 %%PYTHON_SITELIBDIR%%/gtk-2.0/gnome/_gnome.so
-%%PYTHON_SITELIBDIR%%/gtk-2.0/gnome/applet.so
-%%PYTHON_SITELIBDIR%%/gtk-2.0/gnome/canvas.so
-%%PYTHON_SITELIBDIR%%/gtk-2.0/gnome/nautilus.so
+%%PYTHON_SITELIBDIR%%/gtk-2.0/gnome/canvas.py
+%%PYTHON_SITELIBDIR%%/gtk-2.0/gnome/canvas.pyc
+%%PYTHON_SITELIBDIR%%/gtk-2.0/gnome/canvas.pyo
 %%PYTHON_SITELIBDIR%%/gtk-2.0/gnome/ui.so
-%%PYTHON_SITELIBDIR%%/gtk-2.0/gnome/vfs.so
-%%PYTHON_SITELIBDIR%%/gtk-2.0/gnomeprint/__init__.py
-%%PYTHON_SITELIBDIR%%/gtk-2.0/gnomeprint/__init__.pyc
-%%PYTHON_SITELIBDIR%%/gtk-2.0/gnomeprint/__init__.pyo
-%%PYTHON_SITELIBDIR%%/gtk-2.0/gnomeprint/_print.so
-%%PYTHON_SITELIBDIR%%/gtk-2.0/gnomeprint/ui.so
-%%PYTHON_SITELIBDIR%%/gtk-2.0/gtkhtml2.so
+%%PYTHON_SITELIBDIR%%/gtk-2.0/gnome/vfs.py
+%%PYTHON_SITELIBDIR%%/gtk-2.0/gnome/vfs.pyc
+%%PYTHON_SITELIBDIR%%/gtk-2.0/gnome/vfs.pyo
+%%PYTHON_SITELIBDIR%%/gtk-2.0/gnomecanvas.so
+%%PYTHON_SITELIBDIR%%/gtk-2.0/gnomevfs.so
 libdata/pkgconfig/gnome-python-2.0.pc
-%%PORTDOCS%%share/examples/py-gnome/applet/GNOME_PythonAppletSample.server
-%%PORTDOCS%%share/examples/py-gnome/applet/README
-%%PORTDOCS%%share/examples/py-gnome/applet/applet.py
 %%PORTDOCS%%share/examples/py-gnome/bonobo/bonobo-application.py
 %%PORTDOCS%%share/examples/py-gnome/bonobo/bonoboui/Bonobo_Sample_Hello.xml
 %%PORTDOCS%%share/examples/py-gnome/bonobo/bonoboui/hello.py
@@ -34,30 +29,17 @@ libdata/pkgconfig/gnome-python-2.0.pc
 %%PORTDOCS%%share/examples/py-gnome/gconf/basic-gconf-app.py
 %%PORTDOCS%%share/examples/py-gnome/gconf/simple-controller.py
 %%PORTDOCS%%share/examples/py-gnome/gconf/simple-view.py
-%%PORTDOCS%%share/examples/py-gnome/gnomeprint/README
-%%PORTDOCS%%share/examples/py-gnome/gnomeprint/example_01.py
-%%PORTDOCS%%share/examples/py-gnome/gnomeprint/example_02.py
-%%PORTDOCS%%share/examples/py-gnome/gnomeprint/example_03.py
-%%PORTDOCS%%share/examples/py-gnome/gnomeprint/example_04.py
-%%PORTDOCS%%share/examples/py-gnome/gnomeprint/example_05.py
-%%PORTDOCS%%share/examples/py-gnome/gnomeprint/example_06.py
-%%PORTDOCS%%share/examples/py-gnome/gnomeprint/example_08.py
-%%PORTDOCS%%share/examples/py-gnome/gnomeprint/example_09.py
-%%PORTDOCS%%share/examples/py-gnome/gnomeprint/example_10.glade
-%%PORTDOCS%%share/examples/py-gnome/gnomeprint/example_10.py
-%%PORTDOCS%%share/examples/py-gnome/gnomeprint/example_11.py
-%%PORTDOCS%%share/examples/py-gnome/gnomeprint/sample-image.png
-%%PORTDOCS%%share/examples/py-gnome/gnomeprint/test-print.py
-%%PORTDOCS%%share/examples/py-gnome/gtkhtml2/simple-browser.py
-%%PORTDOCS%%share/examples/py-gnome/nautilus/Nautilus_View_pysample.server
-%%PORTDOCS%%share/examples/py-gnome/nautilus/README
-%%PORTDOCS%%share/examples/py-gnome/nautilus/sample.py
 %%PORTDOCS%%share/examples/py-gnome/popt/popt.py
+%%PORTDOCS%%share/examples/py-gnome/vfs/async-xfer.py
 %%PORTDOCS%%share/examples/py-gnome/vfs/async.py
 %%PORTDOCS%%share/examples/py-gnome/vfs/shell.py
-%%PORTDOCS%%share/examples/py-gnome/zvt/zvt-demo.py
-share/pygtk/2.0/defs/applet.defs
-share/pygtk/2.0/defs/art.defs
+%%PORTDOCS%%share/examples/py-gnome/vfs/sync-xfer.py
+share/pygtk/2.0/argtypes/bonobo-arg-types.py
+share/pygtk/2.0/argtypes/bonobo-arg-types.pyc
+share/pygtk/2.0/argtypes/bonobo-arg-types.pyo
+share/pygtk/2.0/argtypes/gconf-arg-types.py
+share/pygtk/2.0/argtypes/gconf-arg-types.pyc
+share/pygtk/2.0/argtypes/gconf-arg-types.pyo
 share/pygtk/2.0/defs/bonobo-types.defs
 share/pygtk/2.0/defs/bonobo.defs
 share/pygtk/2.0/defs/bonoboui-types.defs
@@ -66,24 +48,15 @@ share/pygtk/2.0/defs/canvas.defs
 share/pygtk/2.0/defs/gconf.defs
 share/pygtk/2.0/defs/gnome-types.defs
 share/pygtk/2.0/defs/gnome.defs
-share/pygtk/2.0/defs/gtkhtml2.defs
-share/pygtk/2.0/defs/nautilus.defs
-share/pygtk/2.0/defs/print.defs
-share/pygtk/2.0/defs/printui.defs
 share/pygtk/2.0/defs/ui.defs
-%%PORTDOCS%%@dirrm share/examples/py-gnome/zvt
+@dirrm share/pygtk/2.0/argtypes
 %%PORTDOCS%%@dirrm share/examples/py-gnome/vfs
 %%PORTDOCS%%@dirrm share/examples/py-gnome/popt
-%%PORTDOCS%%@dirrm share/examples/py-gnome/nautilus
-%%PORTDOCS%%@dirrm share/examples/py-gnome/gtkhtml2
-%%PORTDOCS%%@dirrm share/examples/py-gnome/gnomeprint
 %%PORTDOCS%%@dirrm share/examples/py-gnome/gconf
 %%PORTDOCS%%@dirrm share/examples/py-gnome/canvas
 %%PORTDOCS%%@dirrm share/examples/py-gnome/bonobo/echo
 %%PORTDOCS%%@dirrm share/examples/py-gnome/bonobo/bonoboui
 %%PORTDOCS%%@dirrm share/examples/py-gnome/bonobo
-%%PORTDOCS%%@dirrm share/examples/py-gnome/applet
 %%PORTDOCS%%@dirrm share/examples/py-gnome
-@dirrm %%PYTHON_SITELIBDIR%%/gtk-2.0/gnomeprint
 @dirrm %%PYTHON_SITELIBDIR%%/gtk-2.0/gnome
 @dirrm %%PYTHON_SITELIBDIR%%/gtk-2.0/bonobo
