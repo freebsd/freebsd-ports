@@ -1,3 +1,10 @@
+share/gnome/help/introduction-to-gnome/C/figures/desktop.png
+share/gnome/help/introduction-to-gnome/C/figures/microguiborder.png
+share/gnome/help/introduction-to-gnome/C/figures/naut_iconview_window.png
+share/gnome/help/introduction-to-gnome/C/figures/titlebar_anno_window.png
+share/gnome/help/introduction-to-gnome/C/figures/typical_anno_desktop.png
+share/gnome/help/introduction-to-gnome/C/introduction-to-gnome.xml
+share/gnome/help/introduction-to-gnome/C/legal.xml
 share/gnome/help/user-guide/C/figures/applet_popup.png
 share/gnome/help/user-guide/C/figures/ask_pointer.png
 share/gnome/help/user-guide/C/figures/cc_accessibility_window.png
@@ -165,6 +172,7 @@ share/gnome/help/user-guide/C/wgosnautilus.xml
 share/gnome/help/user-guide/C/wgosoverview.xml
 share/gnome/help/user-guide/C/wgospanel.xml
 share/gnome/help/user-guide/C/wgosstartsession.xml
+share/gnome/omf/gnome2-user-docs/introduction-to-gnome-C.omf
 share/gnome/omf/user-guide/gosbasic-C.omf
 share/gnome/omf/user-guide/goscustaccess-C.omf
 share/gnome/omf/user-guide/goscustdesk-C.omf
@@ -177,6 +185,10 @@ share/gnome/omf/user-guide/gosoverview-C.omf
 share/gnome/omf/user-guide/gospanel-C.omf
 share/gnome/omf/user-guide/gosstartsession-C.omf
 @dirrm share/gnome/omf/user-guide
+@dirrm share/gnome/omf/gnome2-user-docs
 @dirrm share/gnome/help/user-guide/C/figures
 @dirrm share/gnome/help/user-guide/C
 @dirrm share/gnome/help/user-guide
+@dirrm share/gnome/help/introduction-to-gnome/C/figures
+@dirrm share/gnome/help/introduction-to-gnome/C
+@dirrm share/gnome/help/introduction-to-gnome
