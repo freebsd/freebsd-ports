@@ -31,7 +31,6 @@
     SUBDIR += ircd-ru
     SUBDIR += irchat-pj-emacs20
     SUBDIR += irchat-pj-emacs21
-    SUBDIR += irchat-pj-xemacs-devel-mule
     SUBDIR += irchat-pj-xemacs21-mule
     SUBDIR += ircproxy
     SUBDIR += ircservices
@@ -62,7 +61,6 @@
     SUBDIR += psybnc
     SUBDIR += pure-emacs20
     SUBDIR += pure-emacs21
-    SUBDIR += pure-xemacs-devel-mule
     SUBDIR += pure-xemacs21-mule
     SUBDIR += py-irclib
     SUBDIR += py-supybot
