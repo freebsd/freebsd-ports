@@ -3,15 +3,42 @@ bin/jpilot-dump
 bin/jpilot-sync
 bin/jpilot-upgrade-99
 lib/jpilot/plugins/libexpense.a
+lib/jpilot/plugins/libexpense.la
 lib/jpilot/plugins/libexpense.so
 lib/jpilot/plugins/libexpense.so.1
+lib/jpilot/plugins/libkeyring.a
+lib/jpilot/plugins/libkeyring.la
+lib/jpilot/plugins/libkeyring.so
+lib/jpilot/plugins/libkeyring.so.1
 lib/jpilot/plugins/libsynctime.a
+lib/jpilot/plugins/libsynctime.la
 lib/jpilot/plugins/libsynctime.so
 lib/jpilot/plugins/libsynctime.so.1
 %%PORTDOCS%%share/doc/jpilot/manual.html
 %%PORTDOCS%%share/doc/jpilot/plugin.html
+%%PORTDOCS%%share/doc/jpilot/BUGS
+%%PORTDOCS%%share/doc/jpilot/CHANGELOG
+%%PORTDOCS%%share/doc/jpilot/COPYING
+%%PORTDOCS%%share/doc/jpilot/CREDITS
+%%PORTDOCS%%share/doc/jpilot/INSTALL
+%%PORTDOCS%%share/doc/jpilot/README
+%%PORTDOCS%%share/doc/jpilot/README.icons
+%%PORTDOCS%%share/doc/jpilot/TODO
+%%PORTDOCS%%share/doc/jpilot/UPGRADING
+%%PORTDOCS%%share/doc/jpilot/jpilot-address.png
+%%PORTDOCS%%share/doc/jpilot/jpilot-datebook.png
+%%PORTDOCS%%share/doc/jpilot/jpilot-expense.png
+%%PORTDOCS%%share/doc/jpilot/jpilot-install.png
+%%PORTDOCS%%share/doc/jpilot/jpilot-memo.png
+%%PORTDOCS%%share/doc/jpilot/jpilot-prefs.png
+%%PORTDOCS%%share/doc/jpilot/jpilot-print.png
+%%PORTDOCS%%share/doc/jpilot/jpilot-search.png
+%%PORTDOCS%%share/doc/jpilot/jpilot-todo.png
+%%PORTDOCS%%share/doc/jpilot/jpilot-toplogo.jpg
 share/jpilot/AddressDB.pdb
 share/jpilot/DatebookDB.pdb
+share/jpilot/ExpenseDB.pdb
+share/jpilot/Memo32DB.pdb
 share/jpilot/MemoDB.pdb
 share/jpilot/ToDoDB.pdb
 share/jpilot/jpilotrc.blue
@@ -19,16 +46,22 @@ share/jpilot/jpilotrc.default
 share/jpilot/jpilotrc.green
 share/jpilot/jpilotrc.purple
 share/jpilot/jpilotrc.steel
+share/jpilot/icons/jpilot-icon1.xpm
+share/jpilot/icons/jpilot-icon2.xpm
+share/jpilot/icons/jpilot-icon3.xpm
+share/jpilot/icons/jpilot-icon4.xpm
 share/locale/ca/LC_MESSAGES/jpilot.mo
 share/locale/cs/LC_MESSAGES/jpilot.mo
 share/locale/da/LC_MESSAGES/jpilot.mo
 share/locale/de/LC_MESSAGES/jpilot.mo
 share/locale/es/LC_MESSAGES/jpilot.mo
 share/locale/fr/LC_MESSAGES/jpilot.mo
+share/locale/it/LC_MESSAGES/jpilot.mo
 share/locale/ja/LC_MESSAGES/jpilot.mo
 share/locale/nl/LC_MESSAGES/jpilot.mo
 share/locale/no/LC_MESSAGES/jpilot.mo
 share/locale/sv/LC_MESSAGES/jpilot.mo
+@dirrm share/jpilot/icons
 @dirrm share/jpilot
 %%PORTDOCS%%@dirrm share/doc/jpilot
 @dirrm lib/jpilot/plugins
