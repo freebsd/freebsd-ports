@@ -6,17 +6,13 @@
 #
 
 PORTNAME=	tcping
-PORTVERSION=	1.3.3
+PORTVERSION=	1.3.4
 CATEGORIES=	net
 MASTER_SITES=	http://stud.fh-heilbronn.de/~kirchner/tcping/
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${DISTNAME}${EXTRACT_SUFX}.asc
-EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	dryice@liu.com.cn
 COMMENT=	Do a TCP connect to the given IP/port combination
 
-USE_GPG?=	yes
-SIG_FILES=	${DISTNAME}${EXTRACT_SUFX}.asc
 DOCS=		README
 
 do-build:
