@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	jakarta-tomcat
-PORTVERSION=	3.2.1
-PORTREVISION=	2
+PORTVERSION=	3.2.3
 CATEGORIES=	www
 MASTER_SITES=	http://jakarta.apache.org/builds/jakarta-tomcat/release/v${PORTVERSION}/bin/
 DIST_SUBDIR=	jakarta/tomcat/${PORTVERSION}

@@ -7,13 +7,13 @@ export TOMCAT_HOME
 
 case "$1" in
 	start)
-		if [ -x %%PREFIX%%/tomcat/bin/tomcat.sh ]; then
-			%%PREFIX%%/tomcat/bin/tomcat.sh start > /dev/null && echo ' tomcat'
+		if [ -f %%PREFIX%%/tomcat/bin/tomcat.sh ]; then
+			/bin/sh %%PREFIX%%/tomcat/bin/tomcat.sh start > /dev/null && echo ' tomcat'
 		fi
 		;;
 	stop)
-		if [ -x %%PREFIX%%/tomcat/bin/tomcat.sh ]; then
-			%%PREFIX%%/tomcat/bin/tomcat.sh stop > /dev/null && echo ' tomcat'
+		if [ -f %%PREFIX%%/tomcat/bin/tomcat.sh ]; then
+			/bin/sh %%PREFIX%%/tomcat/bin/tomcat.sh stop > /dev/null && echo ' tomcat'
 		fi
 		;;
 	*)
