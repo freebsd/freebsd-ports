@@ -22,6 +22,8 @@ COMMENT=	The gcc-2.95.2 cross-compiler for the 6811
 
 BUILD_DEPENDS=	${LOCALBASE}/bin/m6811-elf-as:${PORTSDIR}/devel/${PKGNAMEPREFIX}binutils
 
+BROKEN=		"Incorrect pkg-plist (removes files not installed by this port)"
+
 # Configuration alpha-unknown-freebsdelf not supported
 # Configuration sparc64-unknown-freebsdelf not supported
 #	compilation stops with intermal compiler errors.
