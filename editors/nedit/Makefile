@@ -19,7 +19,7 @@ LIB_DEPENDS=	Xpm.4:${PORTSDIR}/graphics/xpm
 REQUIRES_MOTIF=	yes
 USE_X_PREFIX=	yes
 EXTRACT_ONLY=	nedit-5.1.1-src.tar.gz
-MAN1=		nedit.1 nc.1
+MAN1=		nclient.1 nedit.1
 ALL_TARGET=	freebsd
 
 post-extract:

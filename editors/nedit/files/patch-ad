@@ -1,0 +1,19 @@
+--- nc.man.orig	Sun May 28 19:29:15 2000
++++ nc.man	Sun May 28 19:29:59 2000
+@@ -1,12 +1,12 @@
+-.TH NC 1
++.TH NCLIENT 1
+ .SH NAME
+-NC \- Client program for NEdit text editor
++NCLIENT \- Client program for NEdit text editor
+ .SH SYNOPSYS
+-.B nc [\-read] [\-create] [\-line n\ |\ +n] [\-do\ command]
++.B nclient [\-read] [\-create] [\-line n\ |\ +n] [\-do\ command]
+  [\-ask] [\-noask] [\-svrname\ name] [-svrcmd\ command]
+  [\-lm languagemode] [\-geometry\ geometry] [\-iconic] [file...]
+ .SH DESCRIPTION
+-nc is the client interface to the NEdit text editor.  To use nc, 
++nclient is the client interface to the NEdit text editor.  To use nclient, 
+ first run NEdit in server mode:
+ .PP
+ .EX
