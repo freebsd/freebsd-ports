@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	spacehulk
-PORTVERSION=	1.4.1
+PORTVERSION=	1.4.2
 CATEGORIES=	games kde
 MASTER_SITES=	http://savannah.nongnu.org/download/${PORTNAME}/main.pkg/${PORTVERSION}/
 
