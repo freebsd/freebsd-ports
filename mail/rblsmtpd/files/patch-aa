@@ -1,0 +1,19 @@
+--- hier.c.orig	Fri Oct 30 14:09:44 1998
++++ hier.c	Fri Oct 30 14:13:05 1998
+@@ -7,12 +7,9 @@
+   d(auto_home,"bin",-1,-1,0755);
+   d(auto_home,"man",-1,-1,0755);
+   d(auto_home,"man/man8",-1,-1,0755);
+-  d(auto_home,"man/cat8",-1,-1,0755);
+ 
+-  c(auto_home,"bin","rblsmtpd",-1,-1,0755);
+-  c(auto_home,"bin","antirbl",-1,-1,0755);
+-  c(auto_home,"man/man8","rblsmtpd.8",-1,-1,0644);
+-  c(auto_home,"man/man8","antirbl.8",-1,-1,0644);
+-  c(auto_home,"man/cat8","rblsmtpd.0",-1,-1,0644);
+-  c(auto_home,"man/cat8","antirbl.0",-1,-1,0644);
++  c(auto_home,"bin","rblsmtpd",3,7,0555);
++  c(auto_home,"bin","antirbl",3,7,0555);
++  c(auto_home,"man/man8","rblsmtpd.8",3,7,0444);
++  c(auto_home,"man/man8","antirbl.8",3,7,0444);
+ }

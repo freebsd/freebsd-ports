@@ -1,0 +1,10 @@
+#!/bin/sh
+#
+# Set up daemontools for the *BSD environment...
+#
+# @(#) $Id: configure,v 1.1.1.1 1998/07/09 10:18:38 dburr Exp $
+#
+
+# Tune the options we're given.
+echo ${PREFIX} > ${WRKSRC}/conf-home
+echo cc ${CFLAGS} > ${WRKSRC}/conf-cc

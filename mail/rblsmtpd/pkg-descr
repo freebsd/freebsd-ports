@@ -1,0 +1,15 @@
+rblsmtpd is a generic tool to block mail from RBL-listed sites. It works
+with any SMTP server that can run under tcpserver; in particular, any
+version of qmail or sendmail. Turning it on is easy: simply insert
+rblsmtpd in front of the real SMTP server in your inetd.conf (or
+tcpserver) invocation.
+
+rblsmtpd supports anti-RBL lists for sites that want to skip RBL lookups
+for preauthorized hosts. It also optionally pays attention to temporary
+RBL lookup errors. 
+
+See http://pobox.com/~djb/rblsmtpd.html for info and updates.
+
+See http://maps.vix.com/rbl/ for more information about the RBL. 
+
+-John Saunders <john@nlc.net.au>
