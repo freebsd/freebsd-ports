@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	swish++
-PORTVERSION=	5.9.2
+PORTVERSION=	5.9.3
 CATEGORIES=	www textproc
 MASTER_SITES=	http://homepage.mac.com/pauljlucas/software/
 
@@ -16,6 +16,7 @@ MAINTAINER=	obraun@informatik.unibw-muenchen.de
 RUN_DEPENDS=	wget:${PORTSDIR}/ftp/wget
 
 USE_PERL5=	yes
+USE_REINPLACE=	yes
 USE_GMAKE=	yes
 MAKEFILE=	GNUmakefile
 MAKE_ENV=	PTHREAD_LIB=${PTHREAD_LIBS} \
@@ -27,11 +28,9 @@ MAN4=	swish++.conf.4 swish++.index.4
 MAN8=	searchd.8 searchmonitor.8
 
 post-patch:
-	@(cd ${WRKSRC} ; \
-	  ${SED} '/^#error/d' config.h > config.h.tmp ; \
-	  ${MV} -f config.h.tmp config.h)
+	@${REINPLACE_CMD} -e '/^#error/d' ${WRKSRC}/config.h
 .for file in searchd searchmonitor
-	@${PERL} -pi -e "s,%%PREFIX%%,${PREFIX},g" ${WRKSRC}/${file}.in
+	@${REINPLACE_CMD} -e "s,%%PREFIX%%,${PREFIX},g" ${WRKSRC}/${file}.in
 .endfor
 
 post-install:

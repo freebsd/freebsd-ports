@@ -1,6 +1,15 @@
---- GNUmakefile.orig	Sun Apr  7 00:01:09 2002
-+++ GNUmakefile	Sun Apr  7 00:02:15 2002
-@@ -193,7 +193,7 @@
+--- GNUmakefile.orig	Sat Jun  1 01:19:02 2002
++++ GNUmakefile	Sun Jul 21 11:53:01 2002
+@@ -159,7 +159,7 @@
+ ##
+ 
+ extract: $(E_OBJECTS)
+-	$(CC) $(CFLAGS) -o $@ $^ $(E_LINK)
++	$(CC) $(CFLAGS) -o $@ $^ $(PTHREAD_LIB)
+ 
+ index: $(I_OBJECTS) $(CHARSET_LIB) $(ENCODING_LIB) $(MOD_LIBS)
+ 	$(CC) $(CFLAGS) $(CHARSET_LIB_PATH) $(ENCODING_LIB_PATH) \
+@@ -208,7 +208,7 @@
  	cd $(I_BIN) && $(STRIP) $(CPP_TARGET)
  
  install_lib: $(I_LIB)
