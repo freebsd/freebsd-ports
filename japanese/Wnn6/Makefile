@@ -3,7 +3,7 @@
 # Date created:		22 November 1994
 # Whom:			asami
 #
-# $Id: Makefile,v 1.12 1996/09/19 04:37:04 asami Exp $
+# $Id: Makefile,v 1.13 1996/11/11 10:11:43 max Exp $
 #
 
 DISTNAME=	Wnn4.2
@@ -14,7 +14,7 @@ MASTER_SITES=	ftp://utsun.s.u-tokyo.ac.jp/fj/
 MAINTAINER=	asami@FreeBSD.ORG
 
 WRKSRC=		${WRKDIR}/Xsi
-IS_INTERACTIVE=	yes
+IS_INTERACTIVE=	yes	# needs "wnn" user
 
 # These are necesary because this package uses a different Makefile for
 #  building and installing etc.
