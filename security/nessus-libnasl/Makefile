@@ -1,5 +1,5 @@
 # Ports collection makefile for:	nessus-libnasl
-# Version required:			0.99.2
+# Version required:			0.99.4
 # Date created:				07 November 1999
 # Whom:					Anders Nordby <anders@fix.no>
 #
@@ -28,14 +28,8 @@ NESSUS_REV=	${DISTNAME:S/libnasl-//g}
 DIST_SUBDIR=	nessus
 WRKSRC=		${WRKDIR}/libnasl
 
-GNU_CONFIGURE=	yes
+USE_LIBTOOL=	YES
 
 MAN1=		nasl-config.1
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 400001
-BROKEN=		"Can't be built successfully in -CURRENT"
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
