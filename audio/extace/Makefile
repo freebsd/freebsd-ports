@@ -22,7 +22,7 @@ USE_X_PREFIX=	yes
 USE_GNOME=	gnomehack gnomeprefix gtk12 imlib esound
 USE_REINPLACE=	yes
 USE_LIBTOOL=	yes
-CONFIGURE_ARGS=	--disable-alsa
+CONFIGURE_ARGS+=	--disable-alsa
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -DHAVE_LIBFFTW" \
 		LIBS="-L${LOCALBASE}/lib"
 
