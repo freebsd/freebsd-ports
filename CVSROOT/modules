@@ -200,7 +200,6 @@ acrobatviewer	ports/print/acrobatviewer
 acron		ports/misc/acron
 acroread	ports/print/acroread
 acroread-commfont	ports/print/acroread-commfont
-acroread4	ports/print/acroread4
 acroread5	ports/print/acroread5
 acroread5-commfont	ports/print/acroread5-commfont
 act		ports/biology/act
