@@ -6,7 +6,7 @@
 
 DISTNAME=	radio2.0.4
 PKGNAME=	radio-2.0.4
-CATEGORIES+=	audio networking
+CATEGORIES+=	audio net
 MASTER_SITES=	ftp://ftp.cwi.nl/pub/audio/
 
 NO_WRKSUBDIR=	yes
