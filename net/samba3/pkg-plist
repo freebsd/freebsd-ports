@@ -46,7 +46,6 @@ lib/samba/vfs/expand_msdfs.so
 lib/samba/vfs/extd_audit.so
 lib/samba/vfs/fake_perms.so
 lib/samba/vfs/full_audit.so
-%%I18N%%lib/samba/vfs/hex.so
 lib/samba/vfs/netatalk.so
 lib/samba/vfs/readonly.so
 lib/samba/vfs/recycle.so
@@ -74,6 +73,7 @@ lib/samba/charset/CP850.so
 %%SMBPASS%%%%EXAMPLESDIR%%/pam_smbpass/password-sync
 %%EXAMPLESDIR%%/LDAP/README
 %%EXAMPLESDIR%%/LDAP/convertSambaAccount
+%%EXAMPLESDIR%%/LDAP/get_next_oid
 %%EXAMPLESDIR%%/LDAP/ldapsync.pl
 %%EXAMPLESDIR%%/LDAP/samba-nds.schema
 %%EXAMPLESDIR%%/LDAP/samba-schema-netscapeds4.x
@@ -126,7 +126,7 @@ lib/samba/charset/CP850.so
 %%EXAMPLESDIR%%/VFS/skel_transparent.c
 %%EXAMPLESDIR%%/auth/Makefile
 %%EXAMPLESDIR%%/auth/auth_skel.c
-%%EXAMPLESDIR%%/autofs/auto.a
+%%EXAMPLESDIR%%/autofs/auto.smb
 %%EXAMPLESDIR%%/dce-dfs/README
 %%EXAMPLESDIR%%/dce-dfs/smb.conf
 %%EXAMPLESDIR%%/genlogon/genlogon.pl
