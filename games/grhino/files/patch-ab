@@ -1,0 +1,11 @@
+--- Makefile.in.orig	Tue Sep 24 23:30:09 2002
++++ Makefile.in	Thu Sep 26 09:34:21 2002
+@@ -43,7 +43,7 @@
+ etcdir		= @sysconfdir@
+ localedir	= @datadir@/locale
+ 
+-pattern_dir	= ${libdir}/${PACKAGE}-${VERSION}
++pattern_dir	= @datadir@/${PACKAGE}/${VERSION}
+ 
+ CC		= @CC@
+ CXX		= @CXX@

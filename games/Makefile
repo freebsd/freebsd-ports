@@ -125,6 +125,7 @@
     SUBDIR += gracer
     SUBDIR += grande
     SUBDIR += greed
+    SUBDIR += grhino
     SUBDIR += groundhog
     SUBDIR += gru
     SUBDIR += grubinvaders
