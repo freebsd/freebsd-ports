@@ -18,9 +18,13 @@ LIB_DEPENDS=		intl.1:${PORTSDIR}/devel/gettext
 
 GNU_CONFIGURE=		yes
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
-			LDFLAGS="-L${LOCALBASE}/lib -lintl"
+			LDFLAGS="-L${LOCALBASE}/lib -lintl" \
+			MAKEINFO="makeinfo --no-split"
 
 MAN1=			bison.1
+
+post-extract:
+	${RM} -f ${WRKSRC}/doc/bison.info*
 
 post-install:
 	@if [ ! -f ${PREFIX}/info/dir ]; then \
