@@ -14,9 +14,6 @@ DISTNAME=	apache_${VERSION_APACHE}
 DISTFILES=	apache_${VERSION_APACHE}${EXTRACT_SUFX}:apache \
 		mod_perl-${VERSION_MODPERL}${EXTRACT_SUFX}:modperl
 
-DEPRECATED=     http://vuxml.freebsd.org/6e6a6b8a-2fde-11d9-b3a2-0050fc56d258.html (vulnerability)
-EXPIRATION_DATE=2004-12-06
-
 MAINTAINER=	ports@rbt.ca
 COMMENT=	The Apache 1.3 webserver with a statically embedded perl interpreter
 
@@ -44,7 +41,7 @@ MAN3PREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 
 .include <bsd.port.pre.mk>
 
-VERSION_APACHE=	1.3.31
+VERSION_APACHE=	1.3.33
 VERSION_MODPERL=	1.29
 
 WRKSRC_MODPERL=	${WRKDIR}/mod_perl-${VERSION_MODPERL}
