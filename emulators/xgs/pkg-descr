@@ -1,0 +1,31 @@
+This emulator does a good job of emulating an Apple IIGS. Various IIGS
+hardware devices are also emulated (see README file) but this version
+is still an alpha so you might find a few things missing.
+
+XGS requires a copy of the IIGS ROM to boot up and this port should
+attempt to FTP a copy of it from the Asimov archives (if it is still
+available). If you have to obtain a copy of it manually then all you
+should need to do is drop it in the distfiles directory to allow the
+port to build. The md5 checksum file is specifically for the version 1
+ROM so you may have to alter it should you decide to use a version 3
+ROM. Also, this ROM cannot be distributed due to copyright reasons.
+
+Please check out the README file in either the working directory or
+/usr/local/share/xgs/ (or equivalent on your system). As this package
+has no man pages you will need to pick up the basics from there. All
+author credits can be found in these files also.
+
+When loading disk images be sure to use the full path of the
+file you're loading.  
+
+Check out the following for all sorts of Apple II goodies:
+
+	http://www.asimov.net/
+	http://www.optera.com/~invid/emulators/XGS/
+	comp.emulators.apple2
+
+Share and enjoy,
+
+Joel...
+:->
+suttonj@interconnect.com.au
