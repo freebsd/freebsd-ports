@@ -114,6 +114,7 @@
     SUBDIR += hlserver-dod
     SUBDIR += hlserver-fa
     SUBDIR += hlserver-flf
+    SUBDIR += hlserver-heroes
     SUBDIR += hlserver-opfor
     SUBDIR += hlserver-si
     SUBDIR += icbm3d
