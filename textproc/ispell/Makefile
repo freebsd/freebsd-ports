@@ -3,12 +3,12 @@
 # Date created:         6 November 1994
 # Whom:                 jmz
 #
-# $Id: Makefile,v 1.17 1997/02/07 23:03:11 jmz Exp $
+# $Id: Makefile,v 1.18 1997/02/10 16:16:02 jmz Exp $
 #
 
 DISTNAME=	ispell-3.1
 PKGNAME=	ispell-3.1.20
-CATEGORIES=	misc
+CATEGORIES=	textproc
 MASTER_SITES=	ftp://ftp.cs.ucla.edu/pub/ispell-3.1/
 DISTFILES=	ispell-3.1.20.tar.gz
 
