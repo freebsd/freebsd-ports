@@ -1,5 +1,6 @@
 # $FreeBSD$
 #
+    SUBDIR += metacity-theme-6nome
     SUBDIR += metacity-themes
     SUBDIR += gnome-icons
     SUBDIR += gnome-icons-aqua-fusion
