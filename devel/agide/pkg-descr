@@ -1,0 +1,14 @@
+The A-A-P GUI IDE is a framework in which separate tools can work
+together.  Like any other Integrated Development Environment it
+supports:
+
+  * Creating a project
+  * Building and executing a program
+  * Browsing files
+  * Debugging a program while displaying source code
+
+Instead of forming a monolitic application Agide provides
+interfaces to plugin existing tools.  Currently plugins for Vim
+and gdb are operational.  You can add your own plugins.
+
+WWW: http://www.agide.org/
