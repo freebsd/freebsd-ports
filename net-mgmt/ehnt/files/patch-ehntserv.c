@@ -2,7 +2,7 @@
 $FreeBSD$
 
 --- ehntserv.c.orig	Thu Oct  4 22:18:29 2001
-+++ ehntserv.c	Thu Nov 14 22:18:40 2002
++++ ehntserv.c	Fri May 30 14:16:22 2003
 @@ -33,8 +33,8 @@
  #define MAXCLIENTS 256
  #define MAXPACKET 8192
@@ -120,11 +120,18 @@ $FreeBSD$
      for (i=0; i<MAXCLIENTS; i++) {
        if (l_clients[i] > 0) {
  	if (FD_ISSET(l_clients[i],&write_fds)) {
-@@ -220,9 +230,9 @@
+@@ -215,14 +225,14 @@
+   if (FD_ISSET(l_fd,&read_fds)) {   /*we have a new TCP client*/
+     int l_connfd,new_index=-1;
+     socklen_t l_addrlen;
+-    struct sockaddr * l_cliaddr;
++    struct sockaddr l_cliaddr;
+ 
      /*    printf("incoming connection on tcp 4444\n");*/
      l_addrlen=sizeof(l_cliaddr);
-     if ( (l_connfd = accept(l_fd,(struct sockaddr *) l_cliaddr, &l_addrlen)) < 0)
+-    if ( (l_connfd = accept(l_fd,(struct sockaddr *) l_cliaddr, &l_addrlen)) < 0)
 -      { log_error("accept error"); exit(0); }
++    if ( (l_connfd = accept(l_fd, &l_cliaddr, &l_addrlen)) < 0)
 +      { log_error("accept error"); exit(1); }
  
 -    SetTCPOpts(l_connfd);
