@@ -3,7 +3,7 @@
 # Date created:	20 March 1997
 # Whom:		dlowe
 #
-# $Id: Makefile,v 1.4 1998/10/08 05:06:16 jkoshy Exp $
+# $Id: Makefile,v 1.5 1998/10/12 18:33:55 jseger Exp $
 #
 
 DISTNAME=	bulk_mailer-1.11
@@ -14,10 +14,7 @@ MAINTAINER=	dlowe@saturn5.com
 
 MAN1=		bulk_mailer.1
 
-BROKEN_ELF=	-s: not found
-
 WRKSRC=	${WRKDIR}/bulk_mailer
-#EXTRACT_BEFORE_ARGS=	-C ${WRKDIR} -xf
 
 HAS_CONFIGURE=	YES
 
@@ -28,8 +25,5 @@ do-install:
 	@ ${INSTALL_DATA} ${WRKSRC}/bulk_mailer.README \
  		${PREFIX}/share/doc/bulk_mailer.README
 	@ ${INSTALL_MAN} ${WRKSRC}/bulk_mailer.1 ${PREFIX}/man/man1/bulk_mailer.1
-
-post-install:
-	@ ${STRIP} ${PREFIX}/bin/bulk_mailer
 
 .include <bsd.port.mk>
