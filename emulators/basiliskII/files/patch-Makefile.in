@@ -1,0 +1,14 @@
+
+$FreeBSD$
+
+--- Makefile.in	2003/01/06 16:43:21	1.1
++++ Makefile.in	2003/01/06 16:43:58
+@@ -107,7 +107,7 @@
+ $(OBJ_DIR)/build68k: $(OBJ_DIR)/build68k.o
+ 	$(CC) $(LDFLAGS) -o $(OBJ_DIR)/build68k $(OBJ_DIR)/build68k.o
+ $(OBJ_DIR)/gencpu: $(OBJ_DIR)/gencpu.o $(OBJ_DIR)/readcpu.o $(OBJ_DIR)/cpudefs.o
+-	$(CC) $(LDFLAGS) -o $(OBJ_DIR)/gencpu $(OBJ_DIR)/gencpu.o $(OBJ_DIR)/readcpu.o $(OBJ_DIR)/cpudefs.o
++	$(CXX) $(LDFLAGS) -o $(OBJ_DIR)/gencpu $(OBJ_DIR)/gencpu.o $(OBJ_DIR)/readcpu.o $(OBJ_DIR)/cpudefs.o
+ cpudefs.cpp: $(OBJ_DIR)/build68k ../uae_cpu/table68k
+ 	$(OBJ_DIR)/build68k <../uae_cpu/table68k >cpudefs.cpp
+ cpustbl.cpp: cpuemu.cpp
