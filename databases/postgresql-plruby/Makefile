@@ -7,6 +7,7 @@
 
 PORTNAME=	plruby
 PORTVERSION=	0.2.9
+PORTREVISION=	1
 CATEGORIES=	databases ruby
 MASTER_SITES=	ftp://moulon.inra.fr/pub/ruby/
 PKGNAMEPREFIX=	postgresql-
@@ -14,7 +15,7 @@ DIST_SUBDIR=	ruby
 
 MAINTAINER=	knu@FreeBSD.org
 
-LIB_DEPENDS=	pq.2:${PGSQL_PORTDIR}
+LIB_DEPENDS=	pq.3:${PGSQL_PORTDIR}
 RUN_DEPENDS=	postgres:${PORTSDIR}/${POSTGRESQL_PORT}
 
 USE_RUBY=	yes
