@@ -47,7 +47,15 @@ LIB_DEPENDS+=	jpeg.9:${PORTSDIR}/graphics/jpeg \
 		png.5:${PORTSDIR}/graphics/png \
 		tiff.4:${PORTSDIR}/graphics/tiff
 
-WANT_AUTOCONF_VER=	253
+.if defined(WITH_PHP)
+CONFIGURE_ARGS+=	--with-php
+RUN_DEPENDS+=		php:${PORTSDIR}/lang/php4
+.endif
+
+.if defined(WITH_PYTHON)
+CONFIGURE_ARGS+=	--with-python
+USE_PYTHON=	yes
+.endif
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes
