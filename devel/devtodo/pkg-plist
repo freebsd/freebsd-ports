@@ -4,6 +4,8 @@ bin/tdd
 bin/tde
 bin/tdr
 bin/todo
+@unexec if cmp -s %D/etc/todorc %D/etc/todorc.sample; then rm -f %D/etc/todorc; fi
+etc/todorc.sample
 share/examples/devtodo/scripts.sh
 share/examples/devtodo/scripts.tcsh
 share/examples/devtodo/todorc.example
