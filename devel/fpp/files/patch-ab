@@ -1,7 +1,7 @@
-*** src/Makefile.common.orig	Mon Dec 30 17:31:01 1996
---- src/Makefile.common	Mon Dec 30 17:31:20 1996
+*** src/Makefile.common.orig	Wed Mar 19 04:23:18 1997
+--- src/Makefile.common	Mon Sep  8 04:14:24 1997
 ***************
-*** 21,27 ****
+*** 20,26 ****
   fpp:	$(OBJ) $(OBJ1) $(EXTRA_LIB)
   	$(CC) $(COPTS) -o $@ $(OBJ) $(OBJ1) $(EXTRA_LIB)
   
@@ -9,7 +9,7 @@
   	$(CC) -c $(ALL_OPTS) $(@:%.o=$(SRC)/%.c)
   
   y.tab.o: y.tab.c
---- 21,27 ----
+--- 20,26 ----
   fpp:	$(OBJ) $(OBJ1) $(EXTRA_LIB)
   	$(CC) $(COPTS) -o $@ $(OBJ) $(OBJ1) $(EXTRA_LIB)
   
@@ -18,7 +18,7 @@
   
   y.tab.o: y.tab.c
 ***************
-*** 35,42 ****
+*** 34,41 ****
   lint:	$(LINTFILES)
   	$(LINT) $(LINTFILES)
   
@@ -27,7 +27,7 @@
   
   clean:
   	$(RM) fpp *.o y.tab.c $(LINTFILES)
---- 35,42 ----
+--- 34,41 ----
   lint:	$(LINTFILES)
   	$(LINT) $(LINTFILES)
   

@@ -1,15 +1,15 @@
 # New ports collection makefile for: Sun fortran preprocessor fpp	
-# Version required:     ?
+# Version required:     1.1
 # Date created:		30 January 1996
 # Whom:		 	vazquez@iqm.unicamp.br	
 #
-# $Id: Makefile,v 1.1.1.1 1997/02/16 01:24:46 obrien Exp $
+# $Id: Makefile,v 1.1.1.1 1997/02/16 19:43:06 obrien Exp $
 #
 
 DISTNAME=	fdfpp
-PKGNAME=	fpp-1.0
+PKGNAME=	fpp-1.1
 CATEGORIES=	devel
-MASTER_SITES=	ftp://netlib.bell-labs.com/netlib/fortran/
+MASTER_SITES=	ftp://ftp.netlib.org/fortran/
 
 MAINTAINER=	vazquez@iqm.unicamp.br
 
