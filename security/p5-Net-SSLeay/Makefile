@@ -14,6 +14,7 @@ DISTNAME=	 Net_SSLeay.pm-1.05
 
 MAINTAINER=	andreas@FreeBSD.org
 
+RESTRICTED=	"Cryptography"
 USE_PERL5=	YES
 
 MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
