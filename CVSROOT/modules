@@ -7762,6 +7762,7 @@ wmpal		ports/misc/wmpal
 wmpccard	ports/sysutils/wmpccard
 wmpinboard	ports/deskutils/wmpinboard
 wmpop3		ports/mail/wmpop3
+wmproxyper	ports/misc/wmproxyper
 wmq3		ports/net/wmq3
 wmrecord	ports/audio/wmrecord
 wmshuffle	ports/games/wmshuffle
