@@ -3,12 +3,14 @@
 # Date created:         29 October 1995
 # Whom:                 piero
 #
-# $Id: Makefile,v 1.7 1996/10/31 10:45:39 asami Exp $
+# $Id: Makefile,v 1.8 1996/11/15 22:35:02 obrien Exp $
 #
 
 DISTNAME=	xearth-1.0
 CATEGORIES=	astro x11
 MASTER_SITES=	ftp://cag.lcs.mit.edu/pub/tuna/
+
+MAINTAINER=	ports@FreeBSD.ORG
 
 USE_IMAKE=	yes
 
