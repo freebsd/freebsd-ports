@@ -13,7 +13,7 @@ CATEGORIES=	java
 MASTER_SITES=	http://java.sun.com/docs/books/tutorial/download/
 DISTNAME=	tutorial
 
-MAINTAINER=	parv@pair.com
+MAINTAINER=	reso3w83@verizon.net
 COMMENT=	Official Java 2 SDK tutorial
 
 NO_WRKSUBDIR=	yes
