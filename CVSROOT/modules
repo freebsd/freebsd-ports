@@ -3230,6 +3230,7 @@ gtranslator	ports/devel/gtranslator
 gtray		ports/mail/gtray
 gts		ports/graphics/gts
 gtstarter	ports/x11/gtstarter
+gtubeclock	ports/x11-clocks/gtubeclock
 gturing		ports/games/gturing
 gtweakui	ports/deskutils/gtweakui
 gtypist		ports/games/gtypist
