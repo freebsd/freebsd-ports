@@ -3,15 +3,16 @@
 # Date created:         21 September 1994
 # Whom:                 jmz & David O'Brien (obrien@cs.ucdavis.edu)
 #
-# $Id: Makefile,v 1.11 1996/08/02 00:13:21 jmz Exp $
+# $Id: Makefile,v 1.12 1996/11/17 08:45:05 obrien Exp $
 #
 
-DISTNAME=	psutils
-PKGNAME=	psutils-${PAPERSIZE}-1.16
+DISTNAME=	psutils-p17
+PKGNAME=	psutils-${PAPERSIZE}-1.17
 CATEGORIES=	print
-MASTER_SITES=	ftp://colonsay.dcs.ed.ac.uk/pub/ajcd/
-
+MASTER_SITES=	ftp://ftp.dcs.ed.ac.uk//pub/ajcd/
 MAINTAINER=	jmz@FreeBSD.org
+
+WRKSRC=		${WRKDIR}/psutils
 
 MAKE_FLAGS?=	PAPER=${PAPERSIZE} -f
 MAN1=		psbook.1 psselect.1 pstops.1 epsffit.1 psnup.1 psresize.1 \

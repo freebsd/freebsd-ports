@@ -18,6 +18,7 @@ bin/fixdlsrps
 bin/extractres
 bin/includeres
 bin/psmerge
+bin/showchar
 man/man1/psbook.1.gz
 man/man1/psselect.1.gz
 man/man1/pstops.1.gz
