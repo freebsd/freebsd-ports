@@ -1,0 +1,24 @@
+--- gtkmozembed/Makefile.in.orig	Tue Sep 21 22:51:02 2004
++++ gtkmozembed/Makefile.in	Tue Sep 21 22:54:11 2004
+@@ -262,16 +262,16 @@
+ 
+ gecko-sharp.dll: $(build_sources) generated-stamp gecko-sharp.snk
+ 	$(MCS) --unsafe --target library -L $(GTKSHARP_PREFIX)/lib \
+-	/pkg:gtk-sharp \
++	`pkg-config --libs gtk-sharp` \
+ 	$(build_sources) generated/*.cs -o gecko-sharp.dll
+ 
+ install-data-local:
+-	echo "$(GACUTIL) /i $(ASSEMBLY) /f /package gecko-sharp /root $(DESTDIR)$(libdir)";  \
+-        $(GACUTIL) /i $(ASSEMBLY) /f /package gecko-sharp /root $(DESTDIR)$(libdir) || exit 1;
++	echo "$(GACUTIL) /i $(ASSEMBLY) /f /package gecko-sharp /root $(DESTDIR)$(libdir) /gacdir $(DESTDIR)$(libdir)";  \
++        $(GACUTIL) /i $(ASSEMBLY) /f /package gecko-sharp /root $(DESTDIR)$(libdir) /gacdir $(DESTDIR)$(libdir) || exit 1;
+ 
+ uninstall-local:
+-	echo "$(GACUTIL) /u $(ASSEMBLY_NAME) /package gecko-sharp /root $(DESTDIR)$(libdir)"; \
+-        $(GACUTIL) /u $(ASSEMBLY_NAME) /package gecko-sharp /root $(DESTDIR)$(libdir) || exit 1;
++	echo "$(GACUTIL) /u $(ASSEMBLY_NAME) /package gecko-sharp /root $(DESTDIR)$(libdir) /gacdir $(DESTDIR)$(libdir)"; \
++        $(GACUTIL) /u $(ASSEMBLY_NAME) /package gecko-sharp /root $(DESTDIR)$(libdir) /gacdir $(DESTDIR)$(libdir) || exit 1;
+ # Tell versions [3.59,3.63) of GNU make to not export all variables.
+ # Otherwise a system limit (for SysV at least) may be exceeded.
+ .NOEXPORT:
