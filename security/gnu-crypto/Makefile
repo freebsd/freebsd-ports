@@ -7,6 +7,7 @@
 
 PORTNAME=	gnu-crypto
 PORTVERSION=	2.0.1
+PORTREVISION=	1
 CATEGORIES=	security java
 MASTER_SITES=   ${MASTER_SITE_GNUPG}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -29,7 +30,6 @@ USE_JAVA=       yes
 JAVA_VERSION=   1.4+
 USE_ANT=	yes
 
-JAR_DIR=	share/java/jar/${PORTNAME}
 JAR_FILES=	\
 		javax-crypto.jar \
 		javax-security.jar \
@@ -39,10 +39,8 @@ INFO=		gnu-crypto
 MAKEINFOFLAGS=	--no-split
 
 .for jar in ${JAR_FILES}
-PLIST_FILES+=	${JAR_DIR}/${jar}
+PLIST_FILES+=	%%JAVAJARDIR%%/${jar}
 .endfor
-
-PLIST_DIRS+=	${JAR_DIR}
 
 post-extract:
 	@${RM} ${WRKSRC}/docs/*.info*
@@ -56,9 +54,8 @@ post-build:
 	@cd ${WRKSRC}/docs && ${GMAKE} all
 
 do-install:
-	@${MKDIR} ${PREFIX}/${JAR_DIR}
 .for jar in ${JAR_FILES}
-	@${INSTALL_DATA} ${WRKSRC}/lib/${jar} ${PREFIX}/${JAR_DIR}
+	@${INSTALL_DATA} ${WRKSRC}/lib/${jar} ${JAVAJARDIR}
 .endfor
 	@${MKDIR} ${PREFIX}/${INFO_PATH}
 	@${INSTALL_DATA} ${WRKSRC}/docs/${PORTNAME}.info \

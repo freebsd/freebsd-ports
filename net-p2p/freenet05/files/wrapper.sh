@@ -9,7 +9,7 @@ PREFIX="%%PREFIX%%"
 # java
 JAVA_VERSION="%%JAVA_VERSION%%"
 JAVAVM_CALL="%%JAVAVM%%"
-JAR_DIR="%%JAR_DIR%%"
+JAVAJARDIR="%%JAVAJARDIR%%"
 JAR_FILES="%%JAR_FILES%%"
 JAR_START="%%JAR_START%%"
 # data
@@ -84,10 +84,7 @@ prepare_home_dir () {
   # link the jar files
   for jar in ${JAR_FILES}
   do
-	if [ ! -h ${HOME_DIR}/${jar} ]
-	then
-		ln -sf ${PREFIX}/${JAR_DIR}/${jar} ${HOME_DIR}/${jar}
-	fi
+	ln -sf ${PREFIX}/${JAVAJARDIR}/${jar} ${HOME_DIR}/${jar}
   done
 }
 
