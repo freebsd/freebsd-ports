@@ -31,7 +31,7 @@ CONFIGURE_ARGS+=--with-qt-dir=${X11BASE} --enable-shared \
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${PREFIX}/include" \
 		MOC="${MOC}"
 USE_GMAKE=	yes
-MAKE_ENV=	SOMAJOR="${SOMAJOR}" SOMINOR="${SOMINOR}" \
+MAKE_ENV=	SOMAJOR="${SOMAJOR}" SOMINOR="${SOMINOR}"
 PLIST_SUB+=	LIBVER="${SOMAJOR}"
 
 post-install:
