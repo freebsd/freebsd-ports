@@ -9,10 +9,10 @@ PORTNAME=	cocoon
 PORTVERSION=	1.8.2
 PORTREVISION=	3
 CATEGORIES=	textproc www java
-MASTER_SITES=	http://xml.apache.org/cocoon/dist/cocoon1/ \
-		http://www.metaverse.nl/~ernst/ \
-		${MASTER_SITE_LOCAL}
-MASTER_SITE_SUBDIR=	znerd
+MASTER_SITES=	${MASTER_SITE_APACHE_XML} \
+		http://www.metaverse.nl/~ernst/
+MASTER_SITE_SUBDIR=	cocoon/cocoon1
+
 DISTNAME=	Cocoon-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
