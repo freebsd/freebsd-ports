@@ -9,7 +9,7 @@
 DISTNAME=	Mixer.app-1.4.1
 PKGNAME=	mixer.app-1.4.1
 CATEGORIES=	audio
-MASTER_SITES=	http://www.student.hk-r.se/~pt96pli/mixer/
+MASTER_SITES=	http://www.fukt.hk-r.se/~per/mixer/	
 
 MAINTAINER=	cpiazza@FreeBSD.org
 
