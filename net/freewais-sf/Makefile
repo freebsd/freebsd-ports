@@ -29,7 +29,7 @@ MAN3=	ftw.3 regexp.3 scandir.3
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} >= 500035
-BROKEN=		"Does not compile on 5.0"
+#BROKEN=		"Does not compile on 5.0"
 .endif
 
 post-extract:
