@@ -7,7 +7,7 @@
 
 PORTNAME=	webalizer
 PORTVERSION=	2.1.6
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES+=	www
 MASTER_SITES=	ftp://ftp.mrunix.net/pub/webalizer/ \
 		ftp://ftp.dinoex.de/pub/FreeBSD/distfiles/
@@ -34,6 +34,7 @@ CONFIGURE_ARGS+=	--enable-dns \
 			--with-gdlib=${PREFIX}/lib \
 			--with-gd=${PREFIX}/include/gd
 CONFIGURE_ENV+=	LDFLAGS="-L${PREFIX}/lib"
+CFLAGS+=	-DLINKLIST_MAX_STRING=256
 MAKE_ARGS+=	CFLAGS="${CFLAGS}"
 MAN1=		${PKGNAMEPREFIX}webalizer.1
 DOC1=		CHANGES COPYING Copyright INSTALL \

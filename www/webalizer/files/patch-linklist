@@ -1,0 +1,42 @@
+--- linklist.c.orig	Sat Jun 23 11:12:40 2001
++++ linklist.c	Sat Jun 23 11:19:54 2001
+@@ -190,12 +190,12 @@
+ int add_glist(char *str, GLISTPTR *list)
+ {
+    GLISTPTR newptr,cptr,pptr;
+-   char temp_buf[80];
++   char temp_buf[LINKLIST_MAX_STRING];
+    char *name=temp_buf;
+ 
+    /* make local copy of string */
+-   strncpy(temp_buf,str,79);
+-   temp_buf[79]=0;
++   strncpy(temp_buf,str,LINKLIST_MAX_STRING - 1);
++   temp_buf[LINKLIST_MAX_STRING - 1]=0;
+ 
+    while (!isspace((unsigned char)*name)&&*name!=0) name++;
+    if (*name==0) name=temp_buf;
+--- linklist.h.orig	Fri Sep 29 05:50:30 2000
++++ linklist.h	Sat Jun 23 11:15:57 2001
+@@ -1,12 +1,18 @@
+ #ifndef _LINKLIST_H
+ #define _LINKLIST_H
+ 
+-struct nlist {  char string[80];           /* list struct for HIDE items   */
++#ifndef	LINKLIST_MAX_STRING
++#define	LINKLIST_MAX_STRING	80
++#endif
++
++struct nlist {                             /* list struct for HIDE items   */
++              char string[LINKLIST_MAX_STRING];
+               struct nlist *next; };
+ typedef struct nlist *NLISTPTR;
+ 
+-struct glist {  char string[80];           /* list struct for GROUP items  */
+-                char name[80];
++struct glist {                             /* list struct for GROUP items  */
++              char string[LINKLIST_MAX_STRING];
++              char name[LINKLIST_MAX_STRING];
+               struct glist *next; };
+ typedef struct glist *GLISTPTR;
+ 
