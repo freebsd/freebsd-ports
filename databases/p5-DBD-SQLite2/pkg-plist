@@ -1,8 +1,7 @@
-%%SITE_PERL%%/%%PERL_ARCH%%/DBD/SQLite.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/DBD/getsqlite.pl
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/DBD/SQLite/SQLite.bs
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/DBD/SQLite/SQLite.so
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/DBD/SQLite/.packlist
-@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/DBD/SQLite 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/DBD        2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/DBD             2>/dev/null || true
+%%SITE_PERL%%/%%PERL_ARCH%%/DBD/SQLite2.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/DBD/SQLite2/SQLite2.bs
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/DBD/SQLite2/SQLite2.so
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/DBD/SQLite2/.packlist
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/DBD/SQLite2 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/DBD         2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/DBD              2>/dev/null || true
