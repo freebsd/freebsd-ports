@@ -15,7 +15,7 @@ DISTNAME=	Squishdot-${PORTVERSION:S/./-/g}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A web-based news publishing and discussion product for Zope
 
-RUN_DEPENDS=	${LOCALBASE}/${SZOPEBASEDIR}/z2.py:${PORTSDIR}/www/zope
+RUN_DEPENDS=	${ZOPEBASEDIR}/skel/bin/zopectl.in:${PORTSDIR}/www/zope
 
 USE_PYTHON=	yes
 USE_ZOPE=	yes

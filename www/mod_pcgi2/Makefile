@@ -14,7 +14,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}-src
 MAINTAINER=	perky@FreeBSD.org
 COMMENT=	Persistent CGI module for Apache and Zope
 
-RUN_DEPENDS=	${LOCALBASE}/${SZOPEBASEDIR}/z2.py:${PORTSDIR}/www/zope
+RUN_DEPENDS=	${ZOPEBASEDIR}/skel/bin/zopectl.in:${PORTSDIR}/www/zope
 
 .if defined(WITH_APACHE13)
 BUILD_DEPENDS=	${LOCALBASE}/include/apache/httpd.h:${PORTSDIR}/${APACHE_PORT}
