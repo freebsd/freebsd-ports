@@ -37,12 +37,10 @@ bin/klipper
 bin/klorenz.kss
 bin/kmatrix.kss
 bin/kmenuedit
-bin/kmorph3d.kss
 bin/konqueror
 bin/konsole
 bin/konsole_grantpty
 bin/kpager
-bin/kpipes.kss
 bin/kpolygon.kss
 bin/kpyro.kss
 bin/krandom.kss
@@ -53,7 +51,6 @@ bin/kscience.kss
 bin/kslidescreen.kss
 bin/kslideshow.kss
 bin/ksmserver
-bin/kspace.kss
 bin/ksplash
 bin/kstart
 bin/kswarm.kss
