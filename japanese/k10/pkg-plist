@@ -1,0 +1,12 @@
+lib/X11/fonts/misc/5x10B.pcf.Z
+lib/X11/fonts/misc/5x10a.pcf.Z
+lib/X11/fonts/misc/5x10rk.pcf.Z
+lib/X11/fonts/misc/knj10.pcf.Z
+lib/X11/fonts/misc/knj10B.pcf.Z
+share/doc/naga10/README
+@exec cd %D/lib/X11/fonts/misc ; mkfontdir
+@exec  echo "Updating misc/fonts.alias"
+@exec cd %D/lib/X11/fonts/misc ; touch fonts.alias ; cp fonts.alias fonts.alias.orig ; (cat fonts.alias.orig ; echo "k10 -misc-fixed-medium-r-normal--10-90-75-75-c-100-jisx0208.1983-0" ; echo "k10b -misc-fixed-bold-r-normal--10-90-75-75-c-100-jisx0208.1983-0" ; echo "a10 -misc-fixed-medium-r-normal--10-90-75-75-c-50-iso8859-1" ; echo "a10b -misc-fixed-bold-r-normal--10-90-75-75-c-50-iso8859-1" ; echo "r10 -misc-fixed-medium-r-normal--10-90-75-75-c-50-jisx0201.1976-0") > fonts.alias ; rm fonts.alias.orig
+@unexec cd %D/lib/X11/fonts/misc ; mkfontdir
+@unexec echo "updating fonts.alias" ; cd %D/lib/X11/fonts/misc; cp fonts.alias fonts.alias.orig; grep -v 'misc\-fixed\-medium\-r\-normal\-\-10' fonts.alias.orig | grep -v 'misc\-fixed\-bold\-r\-normal\-\-10' > fonts.alias; rm fonts.alias.orig
+@dirrm share/doc/naga10

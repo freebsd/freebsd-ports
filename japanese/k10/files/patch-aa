@@ -1,0 +1,22 @@
+--- /dev/null	Wed Feb 25 11:48:19 1998
++++ Makefile	Wed Feb 25 11:46:18 1998
+@@ -0,0 +1,19 @@
++all:
++	bdftopcf 5x10B.bdf | compress > 5x10B.pcf.Z
++	bdftopcf 5x10a.bdf | compress > 5x10a.pcf.Z
++	bdftopcf 5x10rk.bdf | compress > 5x10rk.pcf.Z
++	bdftopcf knj10.bdf | compress > knj10.pcf.Z
++	bdftopcf knj10B.bdf | compress > knj10B.pcf.Z
++
++install:
++	mkdir -p ${PREFIX}/lib/X11/fonts/misc
++	cp 5x10B.pcf.Z ${PREFIX}/lib/X11/fonts/misc/
++	cp 5x10a.pcf.Z ${PREFIX}/lib/X11/fonts/misc/
++	cp 5x10rk.pcf.Z ${PREFIX}/lib/X11/fonts/misc/
++	cp knj10.pcf.Z ${PREFIX}/lib/X11/fonts/misc/
++	cp knj10B.pcf.Z ${PREFIX}/lib/X11/fonts/misc/
++	cp fonts.alias.naga10 ${PREFIX}/lib/X11/fonts/misc/
++	cd ${PREFIX}/lib/X11/fonts/misc/ ; mkfontdir ; \
++	touch fonts.alias ; cp fonts.alias fonts.alias.orig ; \
++	cat fonts.alias.orig fonts.alias.naga10 > fonts.alias; \
++	rm fonts.alias.orig fonts.alias.naga10
