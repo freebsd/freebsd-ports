@@ -1,0 +1,3 @@
+@exec mkdir -p %D/libdata/pkgconfig
+bin/pkg-config
+@dirrm libdata/pkgconfig
