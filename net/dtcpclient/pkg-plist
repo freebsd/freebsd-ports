@@ -3,4 +3,3 @@ sbin/dtcpclient
 %%EXAMPLESDIR%%/dtcpclient.script
 @exec [ -f %D/etc/dtcpclient.script ] || cp %B/%f %D/etc/dtcpclient.script
 @dirrm %%EXAMPLESDIR%%
-etc/rc.d/dtcpclient.sh
