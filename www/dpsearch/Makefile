@@ -38,6 +38,10 @@ OPTIONS=        DPSEARCH_THREADS  "Enable pthreads"                       on  \
 		DPSEARCH_MYSQL    "Use MySQL  (mutually exclusive)"       off \
 		DPSEARCH_SQLITE   "Use SQLite (mutually exclusive)"       off \
 
+.if defined(PACKAGE_BUILDING)
+WITH_DPSEARCH_MYSQL=	yes
+.endif
+
 .include <bsd.port.pre.mk>
 
 CONFIGURE_ENV+= PORTNAME="${PORTNAME}"
