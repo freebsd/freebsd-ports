@@ -1,11 +1,20 @@
 --- amavis/av/clamavd.orig	Tue Feb 25 11:42:54 2003
-+++ amavis/av/clamavd	Sun May 30 13:26:34 2004
++++ amavis/av/clamavd	Mon Jun  7 01:16:46 2004
 @@ -5,7 +5,7 @@
  
  if ($clamd) {
      do_log(2,"Using clamd");
 -    my $sock = IO::Socket::INET->new('127.0.0.1:3310');
-+    my $sock = IO::Socket::UNIX->new('/var/run/clamav/clamd');
++    my $sock = IO::Socket::UNIX->new(Peer => '/var/run/clamav/clamd');
      if (defined $sock) {
  	$sock->print("SCAN $TEMPDIR/parts\n");
  	$sock->flush;
+@@ -15,7 +15,7 @@
+ 	if ($output =~ /FOUND$/) {	# no errors, a virus was found
+ 	    $scanner_errors = 0;
+ 	    @virusname = ($output =~ /: (.+) FOUND/g);
+-	    return 1;  # 'true' indicates virus found and stops further checking
++	    do_virus($output);
+ 	} elsif ($output =~ /OK$/) {            # no errors, no viruses
+ 	    $scanner_errors = 0;
+ 	} elsif ($output =~ /ERROR$/) {
