@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	net-geoip
-PORTVERSION=	0.05
+PORTVERSION=	0.06
 CATEGORIES=	net ruby
 MASTER_SITES=	http://www.rubynet.org/modules/net/geoip/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
