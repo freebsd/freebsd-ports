@@ -6,7 +6,7 @@
 
 PORTNAME=	teTeX-texmf
 PORTVERSION=	2.0.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	print
 MASTER_SITES=	ftp://sunsite.informatik.rwth-aachen.de/pub/comp/tex/teTeX/2.0/distrib/ \
 		${MASTER_SITE_TEX_CTAN} \
@@ -85,11 +85,10 @@ do-build:
 do-install:
 	${MKDIR} ${PREFIX}/${TEXMF}
 	cd ${PREFIX}/${TEXMF} && \
-		${TAR} xUfz ${DISTDIR}/${DIST_SUBDIR}/${TETEX_TEXMF}
+		${TAR} xzUf ${DISTDIR}/${DIST_SUBDIR}/${TETEX_TEXMF} --exclude "*/texmf.cnf"
 	${INSTALL_DATA} \
 		${FILESDIR}/listings.sty \
 		${PREFIX}/${TEXMF}/tex/latex/listings/
-	${RM} -f ${PREFIX}/${TEXMF}/web2c/texmf.cnf
 	cd ${PREFIX}/${TEXMF}/dvips/pstricks && \
 		${PATCH} --quiet < ${WRKDIR}/PSTricks.patch && \
 		${RM} -f pst-text.pro.orig
