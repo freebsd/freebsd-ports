@@ -46,7 +46,6 @@
     SUBDIR += netcdf
     SUBDIR += ngraph
     SUBDIR += ntl
-    SUBDIR += numpy
     SUBDIR += octave
     SUBDIR += oleo
     SUBDIR += p5-AI-NeuralNet-BackProp
@@ -79,6 +78,8 @@
     SUBDIR += plplot
     SUBDIR += pspp
     SUBDIR += py-gnuplot
+    SUBDIR += py-numeric
+    SUBDIR += py-numeric17
     SUBDIR += py-scientific
     SUBDIR += pygist
     SUBDIR += rascal
