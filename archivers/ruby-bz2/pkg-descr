@@ -1,0 +1,4 @@
+Ruby-BZ2 is a Ruby extension to use libbz2.
+
+Author:	Guy Decoux <ts@moulon.inra.fr>
+WWW:	http://moulon.inra.fr/ruby/bz2.html
