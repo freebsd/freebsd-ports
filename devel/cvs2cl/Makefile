@@ -8,7 +8,7 @@
 PORTNAME=	cvs2cl
 PORTVERSION=	2.4
 CATEGORIES=	devel
-MASTER_SITES=	ftp://ftp.FreeBSD.org/pub/FreeBSD/local-distfiles/knu/
+MASTER_SITES=	ftp://ftp.FreeBSD.org/pub/FreeBSD/ports/local-distfiles/knu/
 
 MAINTAINER=	knu@FreeBSD.org
 

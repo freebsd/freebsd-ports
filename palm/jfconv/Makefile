@@ -9,7 +9,7 @@ PORTNAME=	jconv
 PORTVERSION=	2000.05.17
 CATEGORIES=	palm databases
 MASTER_SITES=	http://www.land-j.com/files/ \
-		ftp://ftp.FreeBSD.org/pub/FreeBSD/local-distfiles/knu/
+		ftp://ftp.FreeBSD.org/pub/FreeBSD/ports/local-distfiles/knu/
 DISTNAME=	${PORTNAME}
 EXTRACT_SUFX=	.tgz
 

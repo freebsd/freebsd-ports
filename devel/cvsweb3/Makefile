@@ -8,8 +8,7 @@
 PORTNAME=	cvsweb
 PORTVERSION=	1.85
 CATEGORIES=	devel www
-MASTER_SITES=	ftp://ftp.FreeBSD.org/pub/FreeBSD/local-distfiles/knu/ \
-		http://people.FreeBSD.org/~knu/ports/distfiles/
+MASTER_SITES=	ftp://ftp.FreeBSD.org/pub/FreeBSD/ports/local-distfiles/knu/
 
 MAINTAINER=	knu@FreeBSD.org
 
