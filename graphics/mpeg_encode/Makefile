@@ -3,13 +3,13 @@
 # Date created:         
 # Whom:                 erich@FreeBSD.org
 #
-# $Id: Makefile,v 1.2 1996/08/02 07:32:41 asami Exp $
+# $Id: Makefile,v 1.3 1996/11/18 11:28:37 asami Exp $
 #
 
 DISTNAME=	mpeg_encode-1.5b-src
 PKGNAME=	mpeg_encode-1.5b
 CATEGORIES=	graphics
-MASTER_SITES=	ftp://s2k-ftp.CS.Berkeley.EDU/pub/multimedia/mpeg/encode/
+MASTER_SITES=	ftp://mm-ftp.CS.Berkeley.EDU/pub/multimedia/mpeg/encode/
 
 MAINTAINER=	erich@FreeBSD.org
 
