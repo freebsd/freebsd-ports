@@ -7,7 +7,7 @@
 # $FreeBSD$
 #
 
-SNAPDATE=	2000-02-07
+SNAPDATE=	2000-02-21
 SNAPVER=	${SNAPDATE:S/-//g}
 
 DISTNAME=	gcc-2.96
@@ -15,7 +15,6 @@ PKGNAME=	gcc-devel-${SNAPVER}
 CATEGORIES=	lang java
 MASTER_SITES=	ftp://egcs.cygnus.com/pub/egcs/snapshots/${SNAPDATE}/  \
 		ftp://ftp.ninemoons.com/pub/mirrors/egcs/snapshots/${SNAPDATE}/ \
-		ftp://ftp.nluug.nl/pub/languages/egcs/snapshots/${SNAPDATE}/ \
 		ftp://ftp.iij.ad.jp/pub/egcs/snapshots/${SNAPDATE}/ \
 		ftp://ftp.yggdrasil.com/mirrors/site/egcs.cygnus.com/pub/egcs/snapshots/${SNAPDATE}/  \
  		ftp://ftp.fu-berlin.de/unix/languages/egcs/snapshots/
