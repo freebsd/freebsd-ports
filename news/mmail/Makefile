@@ -1,0 +1,30 @@
+# ex:ts=8
+# Ports collection makefile for:	mmail
+# Date created:			18 September 2002
+# Whom:				Frederic Cambus
+#
+# $FreeBSD$
+#
+
+PORTNAME=	mmail
+PORTVERSION=	0.43
+CATEGORIES=	news
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
+		${MASTER_SITE_SUNSITE}
+MASTER_SITE_SUBDIR=	multimail \
+			system/bbs/mail
+
+MAINTAINER=	ports@FreeBSD.org
+
+RUN_DEPENDS=	zip:${PORTSDIR}/archivers/zip \
+		unzip:${PORTSDIR}/archivers/unzip
+
+USE_GMAKE=	yes
+
+MAN1=	mmail.1
+
+do-install:
+	${INSTALL_PROGRAM} ${WRKSRC}/mm ${PREFIX}/bin/mmail
+	${INSTALL_MAN} ${WRKSRC}/mm.1 ${MANPREFIX}/man/man1/mmail.1
+
+.include <bsd.port.mk>

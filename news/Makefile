@@ -36,6 +36,7 @@
     SUBDIR += knews
     SUBDIR += leafnode
     SUBDIR += leafnode+
+    SUBDIR += mmail
     SUBDIR += multisuck
     SUBDIR += newscache
     SUBDIR += newsfetch

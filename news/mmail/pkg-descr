@@ -1,0 +1,10 @@
+MultiMail is an offline mail packet reader for UNIX and other systems. It
+currently supports the Blue Wave, QWK, OMEN, and SOUP formats. It has a full
+screen, color user interface, built with the curses library. Features include
+auto-decompression of packets with external compress program, user-friendly
+menus to select packet, area, letter, etc., save whole area or one letter in a
+text file, enter mail in any area (using an external editor), insert tagline
+from a tagline file, reply mail with quote, write netmail, and netmail
+addressbook.
+
+WWW: http://multimail.sourceforge.net/
