@@ -15,15 +15,14 @@ MAINTAINER=	hanspb@persbraten.vgs.no
 
 BUILD_DEPENDS=	moc:${PORTSDIR}/x11-toolkits/qt142 \
 		msgfmt:${PORTSDIR}/devel/gettext
-LIB_DEPENDS=	qt.2:${PORTSDIR}/x11-toolkits/qt142 \
-		jpeg.9:${PORTSDIR}/graphics/jpeg \
+LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
 		kdecore.2:${PORTSDIR}/x11/kdelibs11 \
 		kdeui.2:${PORTSDIR}/x11/kdelibs11 \
 		kfm.2:${PORTSDIR}/x11/kdelibs11
 
-HAS_CONFIGURE=	yes
+GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
-CONFIGURE_ARGS=	"--prefix=$(PREFIX)"
+USE_QT=		yes
 
 CONFIGURE_ENV=	CXXFLAGS="$(CFLAGS)" \
 		INSTALL_SCRIPT="install -c -m 555"
