@@ -16,10 +16,8 @@ MAINTAINER?=	nobutaka@FreeBSD.org
 
 LIB_DEPENDS=	gc.1:${PORTSDIR}/devel/boehm-gc
 
-FORBIDDEN=	"Security vulnerability - access to local files"
-
-W3M_VERSION=			0.3.2
-M17N_VERSION=			20021116
+W3M_VERSION=			0.3.2.1
+M17N_VERSION=			20021107
 M17N_BASE_W3M_VERSION=		${W3M_VERSION}
 
 HAS_CONFIGURE=	yes
