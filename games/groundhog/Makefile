@@ -15,7 +15,8 @@ MAINTAINER=	edwin@mavetju.org
 LIB_DEPENDS=	gtk-x11-2.0:${PORTSDIR}/x11-toolkits/gtk20		\
 		glib-2.0.0:${PORTSDIR}/devel/glib20
 
-USE_GTK=	yes
+USE_GNOMENG=	yes
+USE_GNOME=	gtk12
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 

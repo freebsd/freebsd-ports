@@ -13,7 +13,8 @@ MASTER_SITES=	http://gtkballs.antex.ru/dist/
 MAINTAINER=	ports@FreeBSD.org
 
 USE_REINPLACE=	yes
-USE_GTK=	yes
+USE_GNOMENG=	yes
+USE_GNOME=	gtk12
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \

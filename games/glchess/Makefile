@@ -18,7 +18,8 @@ BUILD_DEPENDS=	automake14:${PORTSDIR}/devel/automake14 \
 		autoconf213:${PORTSDIR}/devel/autoconf213
 
 USE_X_PREFIX=	yes
-USE_GTK=	yes
+USE_GNOMENG=	yes
+USE_GNOME=	gtk12
 USE_GMAKE=	yes
 USE_MESA=	yes
 GNU_CONFIGURE=	yes

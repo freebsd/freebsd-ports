@@ -13,7 +13,8 @@ MASTER_SITES=	http://www.earth.li/projectpurple/files/
 MAINTAINER=	ports@FreeBSD.org
 
 USE_X_PREFIX=	yes
-USE_IMLIB=	yes
+USE_GNOMENG=	yes
+USE_GNOME=	imlib
 MAKE_ENV=	GRAPHICPATH="${GRAPHICPATH}" LEVELPATH="${LEVELPATH}"
 
 GRAPHICPATH=	${PREFIX}/share/hex/graphics

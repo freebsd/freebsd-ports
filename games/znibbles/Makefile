@@ -13,7 +13,8 @@ MASTER_SITES=	http://koala.ilog.fr/ftp/pub/games/znibbles/
 MAINTAINER=	yinjieh@csie.nctu.edu.tw
 
 USE_MOTIF=	yes
-USE_GTK=	yes
+USE_GNOMENG=	yes
+USE_GNOME=	gtk12
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--without-motif \
 		--disable-motif

@@ -8,6 +8,7 @@
 PKGNAMESUFFIX=	-gtk
 MASTERDIR=	${.CURDIR}/../freeciv
 
-WITH_GTK=	yes
+USE_GNOMENG=	yes
+USE_GNOME=	gtk12
 
 .include "${MASTERDIR}/Makefile"

@@ -13,7 +13,8 @@ MASTER_SITES=	ftp://ftp.seindal.dk/pub/rene/
 MAINTAINER=	nakai@FreeBSD.org
 
 USE_X_PREFIX=	yes
-USE_IMLIB=	yes
+USE_GNOMENG=	yes
+USE_GNOME=	imlib
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LIBS="-L${LOCALBASE}/lib"

@@ -18,8 +18,8 @@ MAINTAINER=	petef@FreeBSD.org
 LIB_DEPENDS=	intl.4:${PORTSDIR}/devel/gettext
 
 GNU_CONFIGURE=	yes
-USE_GTK=	yes
-USE_IMLIB=	yes
+USE_GNOMENG=	yes
+USE_GNOME=	imlib
 USE_X_PREFIX=	yes
 
 INSTALL_TARGET=	install install-man

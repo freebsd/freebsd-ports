@@ -14,7 +14,8 @@ MAINTAINER=	clive@FreeBSD.org
 
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
-USE_IMLIB=	yes
+USE_GNOMENG=	yes
+USE_GNOME=	imlib
 
 post-install:
 	@${CAT} ${PKGMESSAGE}
