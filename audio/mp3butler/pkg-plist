@@ -1,0 +1,7 @@
+bin/mp3butler
+%%PORTDOCS%%share/doc/mp3butler/COPYING
+%%PORTDOCS%%share/doc/mp3butler/ChangeLog
+%%PORTDOCS%%share/doc/mp3butler/INSTALL
+%%PORTDOCS%%share/doc/mp3butler/RANT
+%%PORTDOCS%%share/doc/mp3butler/README
+%%PORTDOCS%%@dirrm share/doc/mp3butler
