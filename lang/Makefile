@@ -28,6 +28,7 @@
     SUBDIR += forth
     SUBDIR += gawk
     SUBDIR += gcc-devel
+    SUBDIR += gcc27
     SUBDIR += gcc28
     SUBDIR += gcl
     SUBDIR += ghc
