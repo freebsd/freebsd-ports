@@ -1,0 +1,19 @@
+*** Makefile.in.orig	Fri Feb  4 04:55:20 2005
+--- Makefile.in	Fri Feb  4 04:55:31 2005
+***************
+*** 210,216 ****
+  target_vendor = @target_vendor@
+  SUBDIRS = Eris bindings test
+  EXTRA_DIST = autogen.sh Eris.pbproj/project.pbxproj eris.spec
+! pkgconfigdir = $(libdir)/pkgconfig
+  pkgconfig_DATA = eris-1.2.pc @ERIS_POLL_PKGCONFIGS@
+  all: config.h
+  	$(MAKE) $(AM_MAKEFLAGS) all-recursive
+--- 210,216 ----
+  target_vendor = @target_vendor@
+  SUBDIRS = Eris bindings test
+  EXTRA_DIST = autogen.sh Eris.pbproj/project.pbxproj eris.spec
+! pkgconfigdir = $(prefix)/libdata/pkgconfig
+  pkgconfig_DATA = eris-1.2.pc @ERIS_POLL_PKGCONFIGS@
+  all: config.h
+  	$(MAKE) $(AM_MAKEFLAGS) all-recursive

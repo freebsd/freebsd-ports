@@ -1,0 +1,31 @@
+*** bindings/Makefile.in.orig	Fri Feb  4 05:13:36 2005
+--- bindings/Makefile.in	Fri Feb  4 05:17:35 2005
+***************
+*** 489,509 ****
+--- 489,514 ----
+  
+  install-hook: perl-install
+  
++ @PERL_BINDINGS_FALSE@perl-makefile.stamp:
+  @PERL_BINDINGS_TRUE@perl-makefile.stamp: perl/Makefile.PL perl/*/Makefile.PL perl/compile_flags.pl \
+  @PERL_BINDINGS_TRUE@			$(top_builddir)/Eris/.libs/liberis-1.2.so perl/*.h
+  @PERL_BINDINGS_TRUE@	cd perl && perl Makefile.PL PREFIX=$(prefix) LIB=$(libdir)/perl
+  @PERL_BINDINGS_TRUE@	touch perl-makefile.stamp
+  
++ @PERL_BINDINGS_FALSE@perl-all:
+  @PERL_BINDINGS_TRUE@perl-all: perl-makefile.stamp
+  @PERL_BINDINGS_TRUE@	cd perl && make
+  
++ @PERL_BINDINGS_FALSE@perl-clean:
+  @PERL_BINDINGS_TRUE@perl-clean:
+  @PERL_BINDINGS_TRUE@	test -e perl-makefile.stamp && cd perl && make clean
+  @PERL_BINDINGS_TRUE@	rm -f perl-makefile.stamp
+  
++ @PERL_BINDINGS_FALSE@perl-check:
+  @PERL_BINDINGS_TRUE@perl-check: perl-makefile.stamp
+  @PERL_BINDINGS_TRUE@	cd perl && make test
+  
++ @PERL_BINDINGS_FALSE@perl-install: perl-makefile.stamp
+  @PERL_BINDINGS_TRUE@perl-install: perl-makefile.stamp
+  @PERL_BINDINGS_TRUE@	cd perl && make install
+  
