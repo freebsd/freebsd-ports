@@ -1,0 +1,11 @@
+--- Imakefile.orig	Wed Dec 16 01:04:35 1992
++++ Imakefile	Tue Jun 17 08:36:51 1997
+@@ -2,7 +2,7 @@
+ LOCAL_LIBRARIES = $(XLIB)
+         DEPLIBS = $(DEPXLIB)
+   SYS_LIBRARIES = -lm
+-    CDEBUGFLAGS = -g
++XCOMM    CDEBUGFLAGS = -g
+ 
+            SRCS = xfish.c medcut.c read.c gifread.c
+            OBJS = xfish.o medcut.o read.o gifread.o
