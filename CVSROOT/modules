@@ -2241,6 +2241,7 @@ grdb		ports/misc/grdb
 grdc		src/games/grdc
 greed		ports/ftp/greed
 greed_game	ports/games/greed
+green-card	ports/devel/green-card
 grep		src/gnu/usr.bin/grep
 grepmail	ports/mail/grepmail
 gretl		ports/misc/gretl
