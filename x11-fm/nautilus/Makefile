@@ -22,7 +22,7 @@ LIB_DEPENDS=	medusa.0:${PORTSDIR}/sysutils/medusa \
 
 .if !defined(WITHOUT_MOZILLA)
 MOZILLA=	mozilla-embedded
-BUILD_DEPENDS=	${X11BASE}/include/mozilla/gtkembedmoz/gtkmozembed.h:${PORTSDIR}/www/mozilla-headers \
+BUILD_DEPENDS+=	${X11BASE}/include/mozilla/gtkembedmoz/gtkmozembed.h:${PORTSDIR}/www/mozilla-headers \
 		${X11BASE}/lib/${MOZILLA}/libgtkembedmoz.so:${PORTSDIR}/www/${MOZILLA}
 RUN_DEPENDS=	${X11BASE}/lib/${MOZILLA}/libgtkembedmoz.so:${PORTSDIR}/www/${MOZILLA}
 .endif
