@@ -1,6 +1,6 @@
 #! /bin/sh
 #
-# $Id: build,v 1.2 1996/12/31 21:27:02 peter Exp $
+# $Id: build,v 1.3 1997/07/02 04:59:54 peter Exp $
 #
 
 VERSION="`sed -ne 's/^set vers \(.*\)/\1/p' ${WRKSRC}/exmh.install`"
@@ -9,6 +9,7 @@ DATE="`sed -ne 's/^set date \(.*\)/\1/p' ${WRKSRC}/exmh.install`"
 SEDFILE=sed.$$
 
 EXPECT="{}"
+EXPECTK="{}"
 FACES="{}"
 DOMAIN="{}"
 PGP="{}"
