@@ -643,4 +643,4 @@ share/doc/python/tut/tut.html
 @dirrm share/doc/python/ext
 @dirrm share/doc/python/doc
 @dirrm share/doc/python/api
-@unexec rmdir share/doc/python 2>/dev/null || true
+@unexec rmdir %D/share/doc/python 2>/dev/null || true

@@ -5,4 +5,4 @@ share/doc/python/lib.pdf
 share/doc/python/mac.pdf
 share/doc/python/ref.pdf
 share/doc/python/tut.pdf
-@unexec rmdir share/doc/python 2>/dev/null || true
+@unexec rmdir %D/share/doc/python 2>/dev/null || true
