@@ -1,120 +1,96 @@
-*** src/osdep/unix/Makefile.orig	Sat Nov 15 15:24:31 1997
---- src/osdep/unix/Makefile	Sat Nov 15 15:32:23 1997
-***************
-*** 32,37 ****
---- 32,38 ----
-  
-  
-  ARCHIVE=c-client.a
-+ SHLIB=libc-client.so.2.1
-  ARRC=ar rc
-  EXTRAAUTHENTICATORS=
-  DEFAULTAUTHENTICATORS=log
-***************
-*** 40,46 ****
-  	rfc822.o nntp.o smtp.o imap4r1.o pop3.o \
-  	bezerk.o mbox.o mbx.o mmdf.o tenex.o mtx.o news.o phile.o mh.o mx.o
-  CC=cc
-! CFLAGS=$(EXTRACFLAGS)
-  EXTRADRIVERS=mbox
-  DEFAULTDRIVERS=imap nntp pop3 mh mx mbx tenex mtx mmdf bezerk news phile dummy
-  LN=ln -s
---- 41,48 ----
-  	rfc822.o nntp.o smtp.o imap4r1.o pop3.o \
-  	bezerk.o mbox.o mbx.o mmdf.o tenex.o mtx.o news.o phile.o mh.o mx.o
-  CC=cc
-! SOFILES=${BINARIES:.o=.so}
-! CFLAGS+=$(EXTRACFLAGS)
-  EXTRADRIVERS=mbox
-  DEFAULTDRIVERS=imap nntp pop3 mh mx mbx tenex mtx mmdf bezerk news phile dummy
-  LN=ln -s
-***************
-*** 52,57 ****
---- 54,62 ----
-  RSHPATH=/usr/ucb/rsh
-  SHELL=/bin/sh
-  
-+ # Need this for the shared library rule to work correctly
-+ .SUFFIXES: .o .so
-+ 
-  missing:
-  	@echo "You must specify what type of system"
-  	@false
-***************
-*** 117,128 ****
-  		ACTIVEFILE=/usr/lib/news/active NEWSSPOOL=/usr/spool/news \
-  		CFLAGS="-g -Dconst= -DNFSKLUDGE $(EXTRACFLAGS)"
-  
-! bsf:	sigpsx	# FreeBSD
-! 	$(MAKE) $(ARCHIVE) OS=bsi EXTRADRIVERS="$(EXTRADRIVERS)" \
-  		STDPROTO=bezerkproto MAILSPOOL=/var/mail \
-  		ACTIVEFILE=/usr/local/news/lib/active NEWSSPOOL=/var/news \
-  		RSHPATH=/usr/bin/rsh \
-! 		CFLAGS="-g -O -pipe -DNFSKLUDGE $(EXTRACFLAGS)" \
-  		LDFLAGS="-lcrypt"
-  
-  bsi:	sigbsd	# BSD/i386
---- 122,133 ----
-  		ACTIVEFILE=/usr/lib/news/active NEWSSPOOL=/usr/spool/news \
-  		CFLAGS="-g -Dconst= -DNFSKLUDGE $(EXTRACFLAGS)"
-  
-! bsf:	sigbsd	# FreeBSD
-! 	$(MAKE) $(ARCHIVE) $(SHLIB) OS=bsi EXTRADRIVERS="$(EXTRADRIVERS)" \
-  		STDPROTO=bezerkproto MAILSPOOL=/var/mail \
-  		ACTIVEFILE=/usr/local/news/lib/active NEWSSPOOL=/var/news \
-  		RSHPATH=/usr/bin/rsh \
-! 		CFLAGS="$(CFLAGS) -DNFSKLUDGE $(EXTRACFLAGS)" \
-  		LDFLAGS="-lcrypt"
-  
-  bsi:	sigbsd	# BSD/i386
-***************
-*** 457,468 ****
---- 462,480 ----
-  
-  clean:
-  	$(RM) *.o linkage.[ch] auths.c $(ARCHIVE) osdep.* CCTYPE CFLAGS LDFLAGS
-+ 	$(RM) *.so
-  
-  $(ARCHIVE): $(BINARIES)
-  	$(RM) $(ARCHIVE)
-  	$(ARRC) $(ARCHIVE) $(BINARIES)
-  	$(RANLIB) $(ARCHIVE)
-  
-+ $(SHLIB): $(SOFILES)
-+ 	ld -Bshareable -x -o $(SHLIB) $(SOFILES)
-+ 
-+ .c.so: osdep.h
-+ 	$(CC) -fpic -DPIC -c $(CFLAGS) ${@:.so=.c} -o $@
-+ 
-  # Dependencies
-  
-  bezerk.o: mail.h misc.h osdep.h bezerk.h pseudo.h dummy.h
-***************
-*** 511,516 ****
---- 523,548 ----
-  	-DRSH=\"$(RSH)\" -DRSHPATH=\"$(RSHPATH)\" \
-  	$(EXTRAOSDEFS) -c os_$(OS).c
-  	$(MV) os_$(OS).o osdep.o
-+ 
-+ osdep.so: mail.h misc.h env.h fs.h ftl.h nl.h tcp.h \
-+ 	osdep.h env_unix.h tcp_unix.h \
-+ 	os_$(OS).c env_unix.c fs_unix.c ftl_unix.c nl_unix.c tcp_unix.c \
-+ 	flock.c fsync.c gethstid.c \
-+ 	gr_wait.c gr_wait4.c gr_waitp.c \
-+ 	auth_krb.c auth_log.c \
-+ 	log_std.c log_sv4.c \
-+ 	log_a41.c log_sco.c log_sec.c log_sha.c log_ssn.c log_ult.c \
-+ 	scandir.c setpgrp.c strerror.c truncate.c write.c \
-+ 	memmove.c memmove2.c memset.c \
-+ 	tz_bsd.c tz_nul.c tz_sv4.c \
-+ 	write.c \
-+ 	strerror.c strpbrk.c strstr.c strtok.c strtoul.c
-+ 	$(CC) -fpic -DPIC $(CFLAGS) -DSTDPROTO=$(STDPROTO) -DMAILSPOOL=\"$(MAILSPOOL)\" \
-+ 	-DANONYMOUSHOME=\"$(MAILSPOOL)/anonymous\" \
-+ 	-DACTIVEFILE=\"$(ACTIVEFILE)\" -DNEWSSPOOL=\"$(NEWSSPOOL)\" \
-+ 	-DRSH=\"$(RSH)\" -DRSHPATH=\"$(RSHPATH)\" \
-+ 	$(EXTRAOSDEFS) -c os_$(OS).c
-+ 	$(MV) os_$(OS).o osdep.so
-  
-  osdep.h: os_$(OS).h linkage
-  	$(RM) CCTYPE CFLAGS LDFLAGS osdep.h
+--- src/osdep/unix/Makefile.orig	Fri Oct 24 00:24:19 1997
++++ src/osdep/unix/Makefile	Mon Nov 17 13:29:00 1997
+@@ -32,6 +32,7 @@
+ 
+ 
+ ARCHIVE=c-client.a
++SHLIB=libc-client.so.2.1
+ ARRC=ar rc
+ EXTRAAUTHENTICATORS=
+ DEFAULTAUTHENTICATORS=log
+@@ -40,7 +41,8 @@
+ 	rfc822.o nntp.o smtp.o imap4r1.o pop3.o \
+ 	unix.o mbox.o mbx.o mmdf.o tenex.o mtx.o news.o phile.o mh.o mx.o
+ CC=cc
+-CFLAGS=$(EXTRACFLAGS)
++SOFILES=${BINARIES:.o=.so}
++CFLAGS+=$(EXTRACFLAGS)
+ EXTRADRIVERS=mbox
+ DEFAULTDRIVERS=imap nntp pop3 mh mx mbx tenex mtx mmdf unix news phile dummy
+ LN=ln -s
+@@ -52,6 +54,9 @@
+ RSHPATH=/usr/ucb/rsh
+ SHELL=/bin/sh
+ 
++# Need this for the shared library rule to work correctly
++.SUFFIXES: .o .so
++
+ missing: ../OSTYPE CCTYPE
+ 	$(MAKE) `cat ../OSTYPE` CC=`cat CCTYPE`
+ 
+@@ -124,13 +129,13 @@
+ 		ACTIVEFILE=/usr/lib/news/active NEWSSPOOL=/usr/spool/news \
+ 		CFLAGS="-g -Dconst= -DNFSKLUDGE $(EXTRACFLAGS)"
+ 
+-bsf:	sigpsx	# FreeBSD
+-	$(MAKE) $(ARCHIVE) OS=bsi EXTRADRIVERS="$(EXTRADRIVERS)" \
+-		STDPROTO=unixproto MAILSPOOL=/var/mail \
++bsf:	sigbsd	# FreeBSD
++		$(MAKE) $(ARCHIVE) $(SHLIB) OS=bsi EXTRADRIVERS="$(EXTRADRIVERS)" \
++		STDPROTO=bezerkproto MAILSPOOL=/var/mail \
+ 		ACTIVEFILE=/usr/local/news/lib/active NEWSSPOOL=/var/news \
+ 		RSHPATH=/usr/bin/rsh \
+-		CFLAGS="-g -O -pipe -DNFSKLUDGE $(EXTRACFLAGS)" \
+-		LDFLAGS="-lcrypt"
++		CFLAGS="$(CFLAGS) -DNFSKLUDGE $(EXTRACFLAGS)" \
++		LDFLAGS="-lcrypt"                                 
+ 
+ bsi:	sigbsd	# BSD/i386
+ 	$(MAKE) $(ARCHIVE) OS=$@ EXTRADRIVERS="$(EXTRADRIVERS)" \
+@@ -517,12 +522,19 @@
+ 
+ clean:
+ 	$(RM) *.o linkage.[ch] auths.c $(ARCHIVE) osdep.* CCTYPE CFLAGS LDFLAGS
++	$(RM) *.so
+ 
+ $(ARCHIVE): $(BINARIES)
+ 	$(RM) $(ARCHIVE)
+ 	$(ARRC) $(ARCHIVE) $(BINARIES)
+ 	$(RANLIB) $(ARCHIVE)
+ 
++$(SHLIB): $(SOFILES)
++	ld -Bshareable -x -o $(SHLIB) $(SOFILES)
++
++.c.so: osdep.h
++	$(CC) -fpic -DPIC -c $(CFLAGS) ${@:.so=.c} -o $@
++
+ # Dependencies
+ 
+ dummy.o: mail.h misc.h osdep.h dummy.h
+@@ -572,6 +584,26 @@
+ 	-DRSH=\"$(RSH)\" -DRSHPATH=\"$(RSHPATH)\" \
+ 	$(EXTRAOSDEFS) -c os_$(OS).c
+ 	$(MV) os_$(OS).o osdep.o
++
++osdep.so: mail.h misc.h env.h fs.h ftl.h nl.h tcp.h \
++	osdep.h env_unix.h tcp_unix.h \
++	os_$(OS).c env_unix.c fs_unix.c ftl_unix.c nl_unix.c tcp_unix.c \
++	flock.c fsync.c gethstid.c \
++	gr_wait.c gr_wait4.c gr_waitp.c \
++	auth_krb.c auth_log.c \
++	log_std.c log_sv4.c \
++	log_a41.c log_sco.c log_sec.c log_sha.c log_ssn.c log_ult.c \
++	scandir.c setpgrp.c strerror.c truncate.c write.c \
++	memmove.c memmove2.c memset.c \
++	tz_bsd.c tz_nul.c tz_sv4.c \
++	write.c \
++	strerror.c strpbrk.c strstr.c strtok.c strtoul.c
++	$(CC) -fpic -DPIC $(CFLAGS) -DSTDPROTO=$(STDPROTO) -DMAILSPOOL=\"$(MAILSPOOL)\" \
++	-DANONYMOUSHOME=\"$(MAILSPOOL)/anonymous\" \
++	-DACTIVEFILE=\"$(ACTIVEFILE)\" -DNEWSSPOOL=\"$(NEWSSPOOL)\" \
++	-DRSH=\"$(RSH)\" -DRSHPATH=\"$(RSHPATH)\" \
++	$(EXTRAOSDEFS) -c os_$(OS).c
++	$(MV) os_$(OS).o osdep.so
+ 
+ osdep.h: os_$(OS).h linkage
+ 	$(RM) CCTYPE CFLAGS LDFLAGS osdep.h
