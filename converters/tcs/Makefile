@@ -13,7 +13,7 @@ MASTER_SITES=	ftp://plan9.bell-labs.com/plan9/unixsrc/ \
 DISTNAME=	${PORTNAME}
 EXTRACT_SUFX=	.shar.Z
 
-MAINTAINER=	kuriyama@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 
 NO_WRKSUBDIR=	yes
 EXTRACT_CMD=	${GZCAT}
