@@ -7,7 +7,7 @@ start)
         echo -n " nagios-statd"
         ;;
 stop)
-        /usr/bin/killall nagios-statd
+        kill -3 `ps -x | grep nagios-statd | grep python | awk '{print $1}'`
         ;;
 restart)
         $0 stop
