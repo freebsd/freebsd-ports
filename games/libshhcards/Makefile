@@ -3,7 +3,7 @@
 # Date created:				12 April 1998
 # Whom:					Andrey Zakhvatov
 #
-# $Id: Makefile,v 1.4 1998/10/01 06:08:59 steve Exp $
+# $Id: Makefile,v 1.5 1998/11/14 09:43:13 asami Exp $
 #
 
 DISTNAME=	shhcards-1.0.3
@@ -13,6 +13,8 @@ MASTER_SITES=	http://www.computas.no/users/shh/pub-unix/files/ \
 		http://www.freebsd.org/~mph/distfiles/
 
 MAINTAINER=	andy@icc.surw.chel.su
+
+LIB_DEPENDS=	Xpm.4:${PORTSDIR}/graphics/xpm
 
 USE_GMAKE=	yes
 USE_X_PREFIX=	yes
