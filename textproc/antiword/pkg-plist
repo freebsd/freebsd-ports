@@ -14,6 +14,7 @@ bin/kantiword
 %%DATADIR%%/8859-7.txt
 %%DATADIR%%/8859-8.txt
 %%DATADIR%%/8859-9.txt
+%%DATADIR%%/MacCyrillic.txt
 %%DATADIR%%/MacRoman.txt
 %%DATADIR%%/UTF-8.txt
 %%DATADIR%%/cp1250.txt
@@ -23,6 +24,7 @@ bin/kantiword
 %%DATADIR%%/cp850.txt
 %%DATADIR%%/cp852.txt
 %%DATADIR%%/cp862.txt
+%%DATADIR%%/cp864.txt
 %%DATADIR%%/cp866.txt
 %%DATADIR%%/fontnames
 %%DATADIR%%/koi8-r.txt

@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	antiword
-PORTVERSION=	0.35
+PORTVERSION=	0.36
 CATEGORIES=	textproc
 MASTER_SITES=	http://www.winfield.demon.nl/linux/
 
@@ -21,12 +21,10 @@ PORTDOCS=	COPYING ChangeLog Emacs Exmh FAQ History Mozilla Mutt Netscape \
 		QandA ReadMe antiword.1 antiword.man antiword.php testdoc.doc
 
 post-patch:
-	@${REINPLACE_CMD} -e 's,/usr/local,${PREFIX},g' \
-		-e 's,/usr/share,${PREFIX}/share,g' \
-		${WRKSRC}/Makefile.* ${WRKSRC}/*.[ch]
-	@${REINPLACE_CMD} -e 's,gcc,${CC},g' \
-		-e 's,-O2,${CFLAGS},g' \
-		${WRKSRC}/${MAKEFILE} ${WRKSRC}/Makefile.*
+	@${FIND} ${WRKSRC} -type f | ${XARGS} ${REINPLACE_CMD} \
+		-e 's,/usr/local,${PREFIX},g' \
+		-e 's,/usr/share,${PREFIX}/share,g'
+	@${REINPLACE_CMD} -e 's,gcc,${CC},g' ${WRKSRC}/${MAKEFILE}
 
 post-install:
 	@${INSTALL_MAN} ${WRKSRC}/Docs/antiword.1 ${MANPREFIX}/man/man1
