@@ -1,10 +1,10 @@
---- pixmaps/Makefile.am.orig	Mon Nov 13 22:33:30 2000
-+++ pixmaps/Makefile.am	Mon Nov 13 22:33:40 2000
-@@ -4,5 +4,5 @@
- 	login_icon.xpm logoff_icon.xpm yahoo_away.xpm yahoo_online.xpm \
- 	icq_online.xpm icq_away.xpm aim_online.xpm aim_away.xpm \
- 	msn_online.xpm msn_away.xpm tb_mail_send.xpm tb_search.xpm
+--- pixmaps/Makefile.am.orig	Sun Jan 21 00:51:54 2001
++++ pixmaps/Makefile.am	Sun Jan 21 00:52:09 2001
+@@ -6,5 +6,5 @@
+ 	msn_online.xpm msn_away.xpm tb_mail_send.xpm tb_search.xpm \
+ 	line-wrap.xbm line-arrow.xbm ebicon.png jabber_online.xpm jabber_away.xpm \
+ 	ebicon.png
 -Utilitiesdir = $(datadir)/pixmaps
--Utilities_DATA = ebicon.xpm 
+-Utilities_DATA = ebicon.png
 +Utilitiesdir = 
 +Utilities_DATA = 
