@@ -5,9 +5,10 @@
 # $FreeBSD$
 
 PORTNAME=	imcom
-PORTVERSION=	1.32
+PORTVERSION=	1.33
 CATEGORIES=	net
-MASTER_SITES=	http://nafai.dyndns.org/files/
+MASTER_SITES=	http://nafai.dyndns.org/files/ \
+		http://imcom.floobin.cx/files/
 
 MAINTAINER=	martijn@pacno.net
 COMMENT=	IMCom is a command-line Jabber client written in Python

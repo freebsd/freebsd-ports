@@ -1,0 +1,20 @@
+--- configure.orig	Fri Jul 16 15:52:26 2004
++++ configure	Fri Jul 16 15:52:32 2004
+@@ -1277,7 +1277,7 @@
+ HAVE_PY_LIB_expat=$ac_cv_py_have_expat;
+ 
+ fi
+-if [ $HAVE_PY_LIB_expat == false ]; then
++if [ $HAVE_PY_LIB_expat = false ]; then
+ {
+     echo "expat is a required module... aborting.";
+     exit
+@@ -1325,7 +1325,7 @@
+ HAVE_PY_LIB_codecs=$ac_cv_py_have_codecs;
+ 
+ fi
+-if [ $HAVE_PY_LIB_codecs == false ]; then
++if [ $HAVE_PY_LIB_codecs = false ]; then
+ {
+     echo "codecs is a required module... aborting.";
+     exit
