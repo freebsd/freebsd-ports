@@ -61,15 +61,11 @@ CONFIGURE_ARGS+=							\
 	--with-cups-user=${CUPS_USER} --with-cups-group=${CUPS_GROUP}	\
 	--with-rcdir=${PREFIX}/etc/rc.d --without-pam
 
-COMPONENT=	${PORTNAME}
-MAKE_ARGS+=	COMPONENT=${COMPONENT}
-
 post-patch::
-	${RM} -f ${WRKSRC}/man/Makefile
-	${CP} -f ${.CURDIR}/../../print/cups/man-Makefile \
+	${RM} -f ${WRKSRC}/man/Makefile ${WRKSRC}/man/Makefile.common
+	${TOUCH} ${WRKSRC}/man/Makefile.common
+	${CP} -f ${.CURDIR}/../../print/cups/Makefile.man \
 		${WRKSRC}/man/Makefile
-	${CP} -f ${FILESDIR}/manfiles.${COMPONENT} \
-		${WRKSRC}/man/manfiles.${COMPONENT}
 	cd ${WRKSRC}; ${AUTOCONF} --force
 
 .endif # ${PORTNAME} != "cups"
