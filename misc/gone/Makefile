@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gone
-PORTVERSION=	1.3.2
+PORTVERSION=	1.3.2a
 CATEGORIES=	misc
 MASTER_SITES=	http://jaguar.ir.miami.edu/~marcus/
 
