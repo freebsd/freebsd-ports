@@ -4,5 +4,7 @@ the Ogg bitstream makes seeking, time stamping and error recovery
 possible, as well as mixing several separate, concurrent media
 streams into a single physical bitstream.
 
+WWW: http://www.xiph.org/ogg/
+
 - Theo van Klaveren
 t.vanklaveren@student.utwente.nl
