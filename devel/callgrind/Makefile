@@ -13,7 +13,7 @@ MASTER_SITES=	http://kcachegrind.sourceforge.net/
 MAINTAINER=	barner@FreeBSD.org
 COMMENT=	Valgrind skin for cache simulation and call tracing
 
-BROKEN=		Dumps core \(SIGBUS\). \(Also v. 0.9.10\!\)
+IGNORE=		Dumps core \(SIGBUS\). \(Also v. 0.9.10\!\)
 
 ONLY_FOR_ARCHS=	i386
 GNU_CONFIGURE=	yes
