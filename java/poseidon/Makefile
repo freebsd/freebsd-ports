@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	poseidon
-PORTVERSION=	2.4.1
+PORTVERSION=	2.5.0
 CATEGORIES=	java
 MASTER_SITES=	ftp://ftp.gentleware.org/
 DISTNAME=	${PORTNAME}${EDI}-${PORTVERSION}
@@ -66,6 +66,7 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/lib/*.jar ${DATADIR}/lib
 	${INSTALL_DATA} ${WRKSRC}/LICENSE.txt ${DATADIR}
 .if(defined(POSEIDON_PE))
+	${INSTALL_DATA} ${WRKSRC}/LICENSE-concurrent.txt ${DATADIR}
 	${INSTALL_DATA} ${WRKSRC}/lib/templates/* ${DATADIR}/lib/templates
 	${INSTALL_DATA} ${WRKSRC}/lib/templates.zip ${DATADIR}/lib
 .endif

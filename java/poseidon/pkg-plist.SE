@@ -1,2 +1,3 @@
 %%DATADIR%%/lib/templates.jar
 %%DATADIR%%/lib/umldoc.jar
+%%PORTDOCS%%%%DATADIR%%/docs/PoseidonUsersGuide.pdf
