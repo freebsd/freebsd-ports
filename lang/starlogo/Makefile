@@ -11,25 +11,23 @@ CATEGORIES=	lang java
 MASTER_SITES=	http://education.mit.edu/starlogo/download/
 DISTNAME=	${PORTNAME}-2.0
 
-MAINTAINER=	java@freebsd.org
-COMMENT=	StarLogo is a specialized version of the Logo programming language written in Java
+MAINTAINER=	java@FreeBSD.org
+COMMENT=	Specialized version of the Logo programming language written in Java
 
-USE_JAVA=       1.2+
+USE_JAVA=	yes
+JAVA_VERSION=	1.2+
 
 USE_ZIP=	yes
-USE_REINPLACE=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
+DATADIR=	${JAVASHAREDIR}/${PORTNAME}
 
 NO_BUILD=	yes
+SUB_FILES=	starlogo.sh
 
 do-install:
-	@${MKDIR} ${PREFIX}/share/java/starlogo
-	@${INSTALL_SCRIPT} ${FILESDIR}/starlogo ${PREFIX}/bin/starlogo
-	@${REINPLACE_CMD} -e \
-		"s|%%PREFIX%%|${PREFIX}|g ; s|%%LOCALBASE%%|${LOCALBASE}|g" \
-		${PREFIX}/bin/starlogo
-	@${RM} ${PREFIX}/bin/starlogo.bak
-	@(cd ${WRKSRC} && ${TAR} -c -f - .) \
-		| (cd ${PREFIX}/share/java/starlogo && ${TAR} --unlink -x -f -)
+	${INSTALL_SCRIPT} ${WRKDIR}/starlogo.sh ${PREFIX}/bin/starlogo
+	cd ${WRKSRC} \
+	  && ${FIND} . -type d -exec ${MKDIR} ${DATADIR}/{} \; \
+	  && ${FIND} . -type f -exec ${INSTALL_DATA} {} ${DATADIR}/{} \;
 
 .include <bsd.port.mk>

@@ -1,4 +1,0 @@
-#!/bin/sh
-STARLOGO_HOME=%%PREFIX%%/share/java/starlogo/
-cd ${STARLOGO_HOME}/sample-projects
-exec %%LOCALBASE%%/bin/javavm -cp ${STARLOGO_HOME}/starlogo.jar starlogo.Toplevel compiler english "init 100" $*
