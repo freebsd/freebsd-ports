@@ -2274,6 +2274,7 @@ freelibiberty	ports/devel/freelibiberty
 freemind	ports/deskutils/freemind
 freenet		ports/net/freenet
 freenet6	ports/net/freenet6
+freepops	ports/mail/freepops
 freeradius	ports/net/freeradius
 freeride	ports/devel/freeride
 freesbie	ports/sysutils/freesbie
