@@ -133,6 +133,7 @@
     SUBDIR += gsi
     SUBDIR += gsm
     SUBDIR += gspeakers
+    SUBDIR += gstreamer-monkeysaudio
     SUBDIR += gtick
     SUBDIR += gtkgep
     SUBDIR += gtkpod
