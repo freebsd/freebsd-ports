@@ -37,6 +37,7 @@ MAN6=	\
 	pig.6 \
 	quiz.6 \
 	robots.6 \
+	rogue.6 \
 	sail.6 \
 	snake.6 \
 	snscore.6 \
@@ -49,6 +50,7 @@ MANCOMPRESSED=	maybe
 IGNOREFILES=	freebsd-games-5.0.tar.bz2
 
 post-extract:
+	@${CP} ${FILESDIR}/Makefile ${BUILD_WRKSRC}
 	@(cd ${BUILD_WRKSRC}; ${SETENV} ${MAKE_ENV} \
 		${MAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} extract)
 
