@@ -8,7 +8,7 @@
 PORTNAME=	crafty-open-medium
 PORTVERSION=	19960910
 CATEGORIES=	games
-MASTER_SITES=	ftp://ftp.cis.uab.edu/pub/hyatt/common/
+MASTER_SITES=	ftp://ftp.cis.uab.edu/pub/hyatt/common/medium/
 DISTNAME=	medium
 
 MAINTAINER=	seggers@semyam.dinoco.de
