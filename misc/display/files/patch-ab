@@ -1,12 +1,19 @@
-*** ../display.c	Fri Sep 11 21:17:39 1998
---- display.c	Thu Sep 10 20:51:23 1998
-***************
-*** 67,72 ****
---- 67,73 ----
-  		addch(ch);
-  	}
-  	clrtoeol();
-+ 	clrtobot();
-  	refresh();
-  	pclose(fp);
-  }
+--- Makefile.in.orig	Tue Nov 16 12:44:10 1999
++++ Makefile.in	Tue Nov 16 12:43:58 1999
+@@ -2,10 +2,12 @@
+ # vix 15dec86 [stolen from 'which']
+ 
+ # start changing
+-CFLAGS		=	-O
+-DEST_DIR	=	/usr/local/bin
+-CURSES_LIBS	=	-lcurses -ltermcap
+-MAN_DIR		=	/usr/man/man1
++prefix		=	@prefix@
++exec_prefix	=	@exec_prefix@
++CFLAGS		=	@CFLAGS@
++DEST_DIR	=	@bindir@
++CURSES_LIBS	=	-lncurses
++MAN_DIR		=	@mandir@/man1
+ MAN_SUFFIX	=	1
+ SHAR_ARGS	=	-b -c -v
+ # stop changing
