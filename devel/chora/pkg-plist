@@ -147,3 +147,5 @@ etc/horde/httpd.conf.chora
 @dirrm %%CHORADIR%%/templates/log
 @dirrm %%CHORADIR%%/templates
 @dirrm %%CHORADIR%%
+@unexec if cmp -s %D/www/horde/config/mime_drivers.php %D/www/horde/config/mime_drivers.php.afterChora; then rm -f %D/www/horde/config/mime_drivers.php.afterChora; mv %D/www/horde/config/mime_drivers.php.beforeChora %D/www/horde/config/mime_drivers.php; fi
+@unexec if cmp -s %D/www/horde/config/registry.php %D/www/horde/config/registry.php.afterChora; then rm -f %D/www/horde/config/registry.php.afterChora; mv %D/www/horde/config/registry.php.beforeChora %D/www/horde/config/registry.php; fi
