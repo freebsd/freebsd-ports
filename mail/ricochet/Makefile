@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	ricochet
-PORTVERSION=	0.97
-PORTREVISION=   9
+PORTVERSION=    0.98
 CATEGORIES=	mail
 MASTER_SITES=	http://vipul.net/perl/sources/spamcontrol/ricochet/
 
@@ -21,6 +20,7 @@ RUN_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/Mail/Internet.pm:${POR
 		${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/LWP/UserAgent.pm:${PORTSDIR}/www/p5-libwww
 
 NO_BUILD=	yes
+NO_WRKSUBDIR=   yes
 PERL_CONFIGURE= yes
 
 do-configure:
