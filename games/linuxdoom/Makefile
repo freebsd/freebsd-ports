@@ -3,10 +3,11 @@
 # Date created:         Mon Dec  9 09:42:37 CST 1996
 # Whom:                 erich@rrnet.com
 #
-# $Id: Makefile,v 1.7 1998/12/18 02:13:03 asami Exp $
+# $Id: Makefile,v 1.8 1999/01/15 03:01:36 jmz Exp $
 #
 
 DISTNAME=	doom-1.8
+PKGNAME=	linuxdoom-1.8
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_SUNSITE}
 MASTER_SITE_SUBDIR=	games/doom
