@@ -63,7 +63,7 @@ BROKEN=		"Does not run on FreeBSD-4.x at this time"
 .endif
 
 EXPIRATION_DATE=2005-02-18
-DEPRECATED=	"Does not compile (5.x) or run (4.x)"
+DEPRECATED=	Does not compile (5.x) or run (4.x)
 
 .if ${ARCH} != "i386"
 BROKEN=		"Does not compile on !i386"
