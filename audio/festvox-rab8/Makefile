@@ -19,10 +19,8 @@ MAINTAINER=	trevor@FreeBSD.org
 COMMENT=	British English male voice, sampled at 8 kHz, for Festival
 
 RUN_DEPENDS=	\
-${LOCALBASE}/share/festival/lib/dicts/wsj.wp39.poslexR:\
-${PORTSDIR}/audio/festlex-poslex \
-${LOCALBASE}/share/festival/lib/dicts/oald/oaldlex.scm:\
-${PORTSDIR}/audio/festlex-oald
+${LOCALBASE}/share/festival/lib/dicts/wsj.wp39.poslexR:${PORTSDIR}/audio/festlex-poslex \
+${LOCALBASE}/share/festival/lib/dicts/oald/oaldlex.scm:${PORTSDIR}/audio/festlex-oald
 
 WRKSRC=		${WRKDIR}/festival
 
