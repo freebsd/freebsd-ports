@@ -1,0 +1,72 @@
+#!/bin/sh
+
+if ! PREFIX=$(expr $0 : "\(/.*\)/etc/rc\.d/$(basename $0)\$"); then
+	echo "$0: Cannot determine the PREFIX" >&2
+	exit 1
+fi
+
+# If there is a global system configuration file, suck it in.
+if [ -r /etc/defaults/rc.conf ]; then
+	. /etc/defaults/rc.conf
+	source_rc_confs
+elif [ -r /etc/rc.conf ]; then
+	. /etc/rc.conf
+fi
+
+ipacctd_enable=${ipacctd_enable:-YES}
+ipacctd_program=${ipacctd_program:-${PREFIX}/sbin/ipacctd}
+ipacctd_flags=${ipacctd_flags:-"-v"}
+
+#ipacctd_log_base=${ipacctd_log_base:-/var/log/ipacct}
+#ipacctd_log_ext=${ipacctd_log_ext:-%Y-%m-%d-%T}
+
+ipacctd_rules="xl0 ppp0"
+
+ipacctd_rule_xl0_flags=""
+ipacctd_rule_xl0_pid="/var/run/ipacctd.xl0"
+
+ipacctd_rule_ppp0_flags=""
+ipacctd_rule_ppp0_pid="/var/run/ipacctd.ppp0"
+
+case "$1" in
+start)
+	case "${ipacctd_enable}" in
+	[Yy][Ee][Ss])
+		if [ -f ${ipacctd_program} ]; then
+			echo -n ' ipacctd ['
+
+			for rule in ${ipacctd_rules}; do
+				echo -n " ${rule}"
+
+				eval ipacctd_rule_flags=\$ipacctd_rule_${rule}_flags
+				if [ -z $ipacctd_rule_flags ]; then
+					echo " you must define flags for rule ${rule}"
+					exit 1
+				fi
+
+				eval ipacctd_rule_pid=\${ipacctd_rule_${rule}_pid:-"/var/run/ipacctd.${rule}"}
+
+				${ipacctd_program} \
+					${ipacctd_flags} \
+					${ipacctd_rule_flags} \
+					-r ${ipacctd_rule_pid}
+					
+			done
+			echo -n " ]"
+		fi
+		;;
+	esac
+	;;
+stop)
+	for rule in ${ipacctd_rules}; do
+		eval ipacctd_rule_pid=\${ipacctd_rule_${rule}_pid:-"/var/run/ipacctd.${rule}"}
+		kill `cat ${ipacctd_rule_pid}`
+	done
+	;;
+*)
+	echo "Usage: `basename $0` {start|stop}" >&2
+	;;
+esac
+
+exit 0
+

@@ -1,0 +1,5 @@
+sbin/ipacctd
+etc/rc.d/%%STARTUP_SCRIPT%%
+%%PORTDOCS%%%%DOCSDIR%%/ru/README.ipacctd
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/ru
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
