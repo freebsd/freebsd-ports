@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.127 1997/03/03 16:28:48 obrien Exp $
+# $Id: Makefile,v 1.128 1997/03/06 10:15:57 tg Exp $
 #
 
     SUBDIR += FWF
@@ -71,6 +71,7 @@
     SUBDIR += xscreensaver
     SUBDIR += xsnow
     SUBDIR += xtacy
+    SUBDIR += xtestpicture
     SUBDIR += xview-clients
     SUBDIR += xview-config
     SUBDIR += xview-lib
