@@ -7,32 +7,43 @@
 #
 
 PORTNAME=	gdis
-PORTVERSION=	0.73.3
+PORTVERSION=	0.77.0
 CATEGORIES=	science
 MASTER_SITES=	ftp://ftp.seul.org/pub/gdis/
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
 
-LIB_DEPENDS=	gtkextra:${PORTSDIR}/x11-toolkits/gtkextra \
-		gtkgl:${PORTSDIR}/x11-toolkits/gtkglarea
+LIB_DEPENDS=	gtkgl.5:${PORTSDIR}/x11-toolkits/gtkglarea
 
-USE_REINPLACE=	yes
+USE_MESA=	yes
 USE_GNOMENG=	yes
 USE_GNOME=	gtk12
-USE_MESA=	yes
-WRKSRC=		${WRKDIR}/${PORTNAME}
+USE_REINPLACE=	yes
 USE_GMAKE=	yes
-ALL_TARGET=	# empty
+ALL_TARGET=	main
 
 post-patch:
-	@${REINPLACE_CMD} -e "s,^CC,#CC,g ; s,^CFLAGS,#CFLAGS,g ; \
-		s,gtk-config,${GTK_CONFIG},g" ${WRKSRC}/Makefile
-	@${REINPLACE_CMD} -e "s,%%DATADIR%%,${DATADIR},g" ${WRKSRC}/gdis.h
+	@${REINPLACE_CMD} -e 's|^CC|#CC|g ; \
+		 s|^CFLAGS|#CFLAGS|g ; \
+		 s|/usr/local/bin|${DATADIR}|g ; \
+		 s|gtk-config|${GTK_CONFIG}|g ; \
+		 s|-I/usr/local/include||g ; \
+		 s|-lgtkgl|-lgtkgl ${PTHREAD_LIBS:S/"//g}|g ; \
+		 s|-DGTK_GL|-DGTK_GL ${PTHREAD_CFLAGS}|g' ${WRKSRC}/Makefile
+	@${FIND} ${WRKSRC} -name "*.c" | ${XARGS} ${REINPLACE_CMD} -e \
+		's|<sys/dir.h>|<dirent.h>|g ; \
+		 s|struct direct|struct dirent|g'
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/gdis ${PREFIX}/bin
 	@${MKDIR} ${DATADIR}
-	${INSTALL_DATA} ${WRKSRC}/gdis.lib ${DATADIR}
+	${INSTALL_DATA} ${WRKSRC}/gdis.elements ${DATADIR}
+.if !defined(NOPORTDOCS)
+	@${MKDIR} ${DOCSDIR}
+.for file in CHANGELOG README TODO
+	${INSTALL_DATA} ${WRKSRC}/${file} ${DOCSDIR}
+.endfor
+.endif
 
 .include <bsd.port.mk>
