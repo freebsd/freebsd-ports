@@ -431,6 +431,7 @@
     SUBDIR += xbuffy
     SUBDIR += xc-mail
     SUBDIR += xfmail
+    SUBDIR += ximian-connector
     SUBDIR += xlbiff
     SUBDIR += xmail
     SUBDIR += xmailbox
