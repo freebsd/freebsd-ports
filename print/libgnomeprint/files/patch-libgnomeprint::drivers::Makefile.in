@@ -1,0 +1,21 @@
+
+$FreeBSD$
+
+--- libgnomeprint/drivers/Makefile.in	2002/03/19 16:44:23	1.1
++++ libgnomeprint/drivers/Makefile.in	2002/03/19 16:48:12
+@@ -118,13 +118,13 @@
+ OMNI2_SRC = gnome-print-omni2.cpp gnome-print-omni2.hpp
+ OMNI2_LAD = -L$(OMNI_LIBDIR) -lomni
+ libgnomeprint_omni2_la_SOURCES = $(OMNI2_SRC)
+-libgnomeprint_omni2_la_LDFLAGS = -version-info 0:0:0 -module
++libgnomeprint_omni2_la_LDFLAGS = -avoid-version -module
+ libgnomeprint_omni2_la_LIBADD = $(OMNI2_LAD)
+ 
+ FAX_LIB = libgnomeprint-fax.la
+ FAX_SRC = gnome-print-fax.c gnome-print-fax.h gnome-print-fax-g3.h
+ libgnomeprint_fax_la_SOURCES = $(FAX_SRC)
+-libgnomeprint_fax_la_LDFLAGS = -version-info 0:0:0 -module
++libgnomeprint_fax_la_LDFLAGS = -avoid-version -module
+ libgnomeprint_fax_la_LIBADD = 
+ 
+ libexecdir = $(libdir)/gnome-print-2.0/drivers
