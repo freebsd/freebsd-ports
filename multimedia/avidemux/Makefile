@@ -45,12 +45,12 @@ IGNORE=		requires an x86-32 processor, if you are using other platforms install 
 WITH_A52=	yes
 .endif
 
-.if exists(${LOCALBASE}/lib/libxvidcore.so.2)
+.if exists(${LOCALBASE}/lib/libxvidcore.so.4)
 WITH_XVID=	yes
 .endif
 
 .if defined(WITH_XVID)
-LIB_DEPENDS+=	xvidcore.2:${PORTSDIR}/multimedia/xvid
+LIB_DEPENDS+=	xvidcore.4:${PORTSDIR}/multimedia/xvid
 CONFIGURE_ARGS+=	--with-xvid-as-decoder
 .endif
 

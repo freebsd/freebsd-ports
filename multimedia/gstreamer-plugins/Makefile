@@ -339,7 +339,7 @@ WITH_XINE=yes
 .endif
 
 # xvid
-.if exists(${LOCALBASE}/lib/libxvidcore.so.2)
+.if exists(${LOCALBASE}/lib/libxvidcore.so.4)
 WITH_XVID=yes
 .endif
 
@@ -797,7 +797,7 @@ CONFIGURE_ARGS+=	--disable-xvid
 PLIST_SUB+=	XVID="@comment "
 #.undef WITH_XVID
 #.else
-#LIB_DEPENDS+=	xvidcore.2:${PORTSDIR}/multimedia/xvid
+#LIB_DEPENDS+=	xvidcore.4:${PORTSDIR}/multimedia/xvid
 #PLIST_SUB+=	XVID=""
 #.endif
 

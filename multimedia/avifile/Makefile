@@ -65,6 +65,8 @@ PLIST_SUB+=	QT="@comment "
 
 .include <bsd.port.pre.mk>
 
+WITHOUT_XVID=yes	# Does not support xvid 1.0.x
+
 .if (${ARCH} != "i386") && (${ARCH} != "amd64")
 WITHOUT_A52=yes
 WITHOUT_XVID=yes
@@ -157,7 +159,7 @@ PLIST_SUB+=	VORBIS="@comment "
 
 # xvid
 .if !defined(WITHOUT_XVID)
-LIB_DEPENDS+=	xvidcore.2:${PORTSDIR}/multimedia/xvid
+LIB_DEPENDS+=	xvidcore.4:${PORTSDIR}/multimedia/xvid
 
 CONFIGURE_ARGS+=	--with-xvid-prefix=${LOCALBASE}
 PLIST_SUB+=	XVID=""

@@ -45,7 +45,7 @@ WITH_MPEGENC=	yes
 WITH_A52=	yes
 .endif
 
-.if exists(${LOCALBASE}/lib/libxvidcore.so.2)
+.if exists(${LOCALBASE}/lib/libxvidcore.so.4)
 WITH_XVID=	yes
 .endif
 
@@ -54,7 +54,7 @@ RUN_DEPENDS+=	mpeg2enc:${PORTSDIR}/multimedia/mjpegtools
 .endif
 
 .if defined(WITH_XVID)
-LIB_DEPENDS+=	xvidcore.2:${PORTSDIR}/multimedia/xvid
+LIB_DEPENDS+=	xvidcore.4:${PORTSDIR}/multimedia/xvid
 CONFIGURE_ARGS+=	--with-xvid-as-decoder
 .endif
 
