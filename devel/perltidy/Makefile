@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	perltidy
-PORTVERSION=	20011020
+PORTVERSION=	20011128
 CATEGORIES=	devel perl5
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -24,8 +24,8 @@ post-patch:
 	@${PERL} -pi -e "s|%%PREFIX%%|${PREFIX}|g ; \
 		s|%%MANPREFIX%%|${MANPREFIX}|g" ${WRKSRC}/Makefile
 
-post-install:
 .if !defined(NOPORTDOCS)
+post-install:
 	@${MKDIR} ${DOCSDIR}
 .for file in BUGS ChangeLog perl2web perltidy tutorial
 .for ext in html txt
