@@ -14,7 +14,6 @@ MAINTAINER=	sobomax@freebsd.org
 
 USE_GMAKE=	yes
 INSTALLS_SHLIB=	yes
-CFLAGS+=	-DDEBUG
 
 ALL_TARGET=	shared static
 
