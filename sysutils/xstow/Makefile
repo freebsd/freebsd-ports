@@ -9,7 +9,7 @@
 
 PORTNAME=	xstow
 PORTVERSION=	0.4.6
-PORTREVISION=	0
+PORTREVISION=	1
 PORTEPOCH=	0
 CATEGORIES=	sysutils
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
@@ -19,6 +19,8 @@ MAINTAINER=	alane@geeksrus.net
 
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
+
+MAN1=		xstow.1
 
 .include <bsd.port.pre.mk>
 .include <bsd.port.post.mk>
