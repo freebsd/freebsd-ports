@@ -271,6 +271,7 @@
     SUBDIR += gdbmods
     SUBDIR += gengameng
     SUBDIR += gengetopt
+    SUBDIR += genproto
     SUBDIR += gettext
     SUBDIR += gettext-lint
     SUBDIR += getxml
