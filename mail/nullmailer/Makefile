@@ -19,6 +19,7 @@ MAINTAINER=	clive@FreeBSD.org
 
 HAS_CONFIGURE=	yes
 
+CXXFLAGS+=	-lstdc++
 MAN1=	nullmailer-inject.1 sendmail.1
 MAN7=	nullmailer.7
 MAN8=	nullmailer-queue.8 nullmailer-send.8
