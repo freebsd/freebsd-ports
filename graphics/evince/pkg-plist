@@ -17,11 +17,14 @@ share/locale/fi/LC_MESSAGES/evince.mo
 share/locale/fr/LC_MESSAGES/evince.mo
 share/locale/ja/LC_MESSAGES/evince.mo
 share/locale/ko/LC_MESSAGES/evince.mo
+share/locale/lt/LC_MESSAGES/evince.mo
 share/locale/nb/LC_MESSAGES/evince.mo
 share/locale/nl/LC_MESSAGES/evince.mo
 share/locale/no/LC_MESSAGES/evince.mo
 share/locale/pt_BR/LC_MESSAGES/evince.mo
+share/locale/rw/LC_MESSAGES/evince.mo
 share/locale/sv/LC_MESSAGES/evince.mo
+share/locale/wa/LC_MESSAGES/evince.mo
 share/locale/zh_CN/LC_MESSAGES/evince.mo
 share/locale/zh_TW/LC_MESSAGES/evince.mo
 @dirrm share/gnome/evince
