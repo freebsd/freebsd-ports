@@ -1,0 +1,44 @@
+--- tools/Makefile.bak	Fri Dec 17 17:18:13 2004
++++ tools/Makefile	Fri Dec 17 17:20:57 2004
+@@ -9,7 +9,7 @@
+ INSTALLMANDIR = $(DESTDIR)/usr/share/man/man1
+ 
+ CC ?= gcc
+-override CFLAGS += -g -Wall -I$(LIBOTR_DIR) -fPIC
++override CFLAGS += -g -Wall -I$(LIBOTR_DIR) -I%%LOCALBASE%%/include -L%%LOCALBASE%%/lib -fPIC
+ 
+ TARGETS = $(TARGET_DIR)/otr_parse \
+           $(TARGET_DIR)/otr_sesskeys \
+@@ -21,25 +21,25 @@
+ all: $(TARGETS)
+ 
+ $(TARGET_DIR)/otr_parse: otr_parse.o readotr.o parse.o sha1hmac.o $(LIBOTR_DIR)/libotr.a
+-	$(CC) -g $^ -o $@ -lgcrypt
++	$(CC) $(CFLAGS) $^ -o $@ -lgcrypt
+ 
+ $(TARGET_DIR)/otr_sesskeys: otr_sesskeys.o sesskeys.o parse.o sha1hmac.o $(LIBOTR_DIR)/libotr.a
+-	$(CC) -g $^ -o $@ -lgcrypt
++	$(CC) $(CFLAGS) $^ -o $@ -lgcrypt
+ 
+ $(TARGET_DIR)/otr_mackey: otr_mackey.o sesskeys.o parse.o sha1hmac.o $(LIBOTR_DIR)/libotr.a
+-	$(CC) -g $^ -o $@ -lgcrypt
++	$(CC) $(CFLAGS) $^ -o $@ -lgcrypt
+ 
+ $(TARGET_DIR)/otr_readforge: otr_readforge.o readotr.o sesskeys.o parse.o sha1hmac.o aes.o ctrmode.o $(LIBOTR_DIR)/libotr.a
+-	$(CC) -g $^ -o $@ -lgcrypt
++	$(CC) $(CFLAGS) $^ -o $@ -lgcrypt
+ 
+ $(TARGET_DIR)/otr_modify: otr_modify.o readotr.o parse.o sha1hmac.o $(LIBOTR_DIR)/libotr.a
+-	$(CC) -g $^ -o $@ -lgcrypt
++	$(CC) $(CFLAGS) $^ -o $@ -lgcrypt
+ 
+ $(TARGET_DIR)/otr_remac: otr_remac.o parse.o sha1hmac.o $(LIBOTR_DIR)/libotr.a
+-	$(CC) -g $^ -o $@ -lgcrypt
++	$(CC) $(CFLAGS) $^ -o $@ -lgcrypt
+ 
+ $(LIBOTR_DIR)/libotr.a: FORCE
+-	make -C $(LIBOTR_DIR) libotr.a
++	gmake -C $(LIBOTR_DIR) libotr.a
+ 
+ install: all
+ 	install -d $(INSTALLBINDIR)

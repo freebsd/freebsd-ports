@@ -1,0 +1,11 @@
+--- libotr/context.h.bak	Fri Dec 17 17:14:42 2004
++++ libotr/context.h	Fri Dec 17 17:14:53 2004
+@@ -20,7 +20,7 @@
+ #ifndef __CONTEXT_H__
+ #define __CONTEXT_H__
+ 
+-#include "gcrypt.h"
++#include <gcrypt.h>
+ #include "dh.h"
+ 
+ typedef enum {
