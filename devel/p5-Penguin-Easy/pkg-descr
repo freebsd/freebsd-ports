@@ -1,0 +1,17 @@
+Penguin::Easy
+=============
+
+This module came about by reading the Penguin mailing list, and looking for
+a simple way to execute Penguin for those of you who are interested in using
+it, but find that the damn thing has too many packages to include.
+
+Woe is over, use Penguin::Easy, create the object, and run the damn
+thing.  Simple.
+
+Also included is my Penguin Install guide,  that was pushed around the
+mailing list for quite a while.
+
+
+Regards,
+James Duncan.
+Tue Aug 27 14:19:11 EDT 1996

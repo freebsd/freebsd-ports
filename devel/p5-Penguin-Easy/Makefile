@@ -1,0 +1,32 @@
+# New ports collection makefile for:	p5-Penguin-Easy
+# Version required:			1.1
+# Date created:				May 28th 1997
+# Whom:	      				James FitzGibbon <jfitz@FreeBSD.org>
+#
+#   $Id$
+#
+
+DISTNAME=	Penguin-Easy-1.1
+PKGNAME=	p5-Penguin-Easy-1.1
+CATEGORIES=	devel security perl5
+MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
+MASTER_SITE_SUBDIR=	Penguin
+
+MAINTAINER=	jfitz@FreeBSD.ORG
+
+BUILD_DEPENDS= 	perl5.004:${PORTSDIR}/lang/perl5 \
+		${PREFIX}/lib/perl5/site_perl/Penguin.pm:${PORTSDIR}/devel/p5-Penguin
+RUN_DEPENDS=	perl5.004:${PORTSDIR}/lang/perl5
+
+MANPREFIX=	${PREFIX}/lib/perl5
+MAN3=		Penguin::Easy.3
+
+do-configure:
+		@ cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} ${PREFIX}/bin/perl Makefile.PL
+
+post-install:
+		${MKDIR} ${PREFIX}/lib/perl5/site_perl/Penguin/Easy/bin ${PREFIX}/lib/perl5/site_perl/Penguin/Easy/doc
+		${INSTALL} -c -o ${BINOWN} -g ${BINGRP} -m ${BINMODE} ${WRKSRC}/bin/ep ${PREFIX}/lib/perl5/site_perl/Penguin/Easy/bin
+		${INSTALL_DATA} ${WRKSRC}/Penguin-howto ${PREFIX}/lib/perl5/site_perl/Penguin/Easy/doc
+
+.include <bsd.port.mk>
