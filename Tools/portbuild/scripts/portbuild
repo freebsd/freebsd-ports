@@ -78,12 +78,12 @@ fi
 case ${branch} in
   5*)
 #    export OSREL=5.0
-    export OSVERSION=500017
+    export OSVERSION=500027
     # export PORTOBJFORMAT=elf
     ;;
   4*)
-    export OSREL=4.3
-    export OSVERSION=430000
+    export OSREL=4.5
+    export OSVERSION=450000
     # export PORTOBJFORMAT=elf
     ;;
   3*)
@@ -155,7 +155,7 @@ echo "with arguments: ${args}" | tee -a ${chroot}/tmp/${pkgname}.log
 # intentionally set up ${PORTSDIR} with symlink to catch broken ports
 mkdir -p ${chroot}/a/ports
 rm -rf ${chroot}/usr/ports
-mount -o -2 -r ${master}:${buildroot}/usr/ports ${chroot}/a/ports
+mount -o -2 -r ${master}:${buildroot}/${branch}/ports ${chroot}/a/ports
 ln -sf ../a/ports ${chroot}/usr/ports
 
 mkdir -p ${chroot}/usr/src ${chroot}/usr/opt/doc
@@ -187,7 +187,7 @@ chroot ${chroot} /sbin/ldconfig -aout -m /usr/lib/compat/aout
 chroot ${chroot} /sbin/ldconfig -aout -R
 
 while [ $# -gt 0 ]; do
-  if ssh -a ${master} [ -f ${packages}/All/$1 ]; then
+  if ssh -a -x ${master} [ -f ${packages}/All/$1 ]; then
     if [ ! -f ${chroot}/tmp/depends/$1 ]; then
       echo "copying package $1 for ${pkgname}"
       scp -p $master:${packages}/All/$1 ${chroot}/tmp/depends
@@ -208,10 +208,10 @@ error=$(cat ${chroot}/tmp/status)
 
 if [ "${error}" = 0 ]; then
 # make checksum succeeded
-  ssh -a $master mkdir -p ${buildroot}/distfiles/.pbtmp/${pkgname}
+  ssh -a -x $master mkdir -p ${buildroot}/${branch}/distfiles/.pbtmp/${pkgname}
   tar -C ${chroot}/tmp/distfiles -cf - . | \
-    ssh -a $master tar --unlink -C ${buildroot}/distfiles/.pbtmp/${pkgname} -xvf -
-  ssh -a $master touch ${buildroot}/distfiles/.pbtmp/${pkgname}/.done
+    ssh -a -x $master tar --unlink -C ${buildroot}/${branch}/distfiles/.pbtmp/${pkgname} -xvf -
+  ssh -a -x $master touch ${buildroot}/${branch}/distfiles/.pbtmp/${pkgname}/.done
 
 # phase 2, make package
   ln -sf ${pkgname}.log2 ${chroot}/tmp/make.log
@@ -225,8 +225,8 @@ if [ "${error}" = 0 ]; then
 
   if [ "${error}" = 0 ]; then
     tar -C ${chroot}/tmp -cf - packages | \
-      ssh -a $master tar --unlink -C ${buildroot}/${branch} -xvf -
-    ssh -a $master [ -f ${buildroot}/${branch}/packages/All/${pkgname}.tgz ] '&&' touch ${buildroot}/${branch}/packages/All/${pkgname}.tgz
+      ssh -a -x $master tar --unlink -C ${buildroot}/${branch} -xvf -
+    ssh -a -x $master [ -f ${buildroot}/${branch}/packages/All/${pkgname}.tgz ] '&&' touch ${buildroot}/${branch}/packages/All/${pkgname}.tgz
     ssh $master rm -f ${buildroot}/${branch}/errors/${pkgname}.log
   else
     scp ${chroot}/tmp/${pkgname}.log ${master}:${buildroot}/${branch}/errors/${pkgname}.log
