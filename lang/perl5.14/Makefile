@@ -34,6 +34,7 @@ CONFIGURE_ARGS=	-sde -Dprefix=${PREFIX} \
 	-Dsitelib=${PREFIX}/lib/perl5/site_perl/${PERL_VER} \
 	-Dscriptdir=${PREFIX}/bin \
 	-Ui_malloc -Ui_iconv -Uinstallusrbinperl \
+	-Dcc="${CC}" \
 	-Dccflags=-DAPPLLIB_EXP=\"${BSDPAN_DEST}\"
 # INSTALLS_SHLIB=	yes
 
