@@ -5119,6 +5119,7 @@ openoffice-1.0-it	ports/editors/openoffice-1.0-it
 openoffice-1.0-nl	ports/editors/openoffice-1.0-nl
 openoffice-1.0-se	ports/editors/openoffice-1.0-se
 openoffice-1.0-tr	ports/editors/openoffice-1.0-tr
+openoffice-1.1-dk	ports/editors/openoffice-1.1-dk
 openproducer	ports/graphics/openproducer
 openquicktime	ports/multimedia/openquicktime
 openradius	ports/net/openradius
