@@ -7,6 +7,7 @@
 
 PORTNAME=	hanterm
 PORTVERSION=	3.1.4
+PORTREVISION=	1
 CATEGORIES=	korean x11
 MASTER_SITES=	http://quagga.kaist.ac.kr/hanterm/download/
 
