@@ -9,7 +9,7 @@ PORTNAME=	xmms-uade
 PORTVERSION=	0.80
 PORTREVISION=	6
 CATEGORIES=	audio
-MASTER_SITES=	http://ee.tut.fi/~heikki/uade/
+MASTER_SITES=	http://uade.ton.tut.fi/uade/
 DISTNAME=	uade-${PORTVERSION}
 
 MAINTAINER=	mbr@FreeBSD.org
@@ -17,8 +17,6 @@ COMMENT=	Unix Amiga Delitracker Emulator with XMMS Input plugin
 
 LIB_DEPENDS=	xmms.4:${PORTSDIR}/multimedia/xmms
 BUILD_DEPENDS=	lha:${PORTSDIR}/archivers/lha
-
-BROKEN=		"Does not fetch, will be removed after Feb 2"
 
 USE_X_PREFIX=	yes
 USE_BZIP2=	yes
