@@ -10,8 +10,9 @@ PORTNAME=	hexedit
 PORTVERSION=	1.2.1
 CATEGORIES=	editors
 MASTER_SITES=	http://www.chez.com/prigaux/ \
+		${MASTER_SITE_LOCAL} \
 		${MASTER_SITE_SUNSITE}
-MASTER_SITE_SUBDIR=	utils/file/hex
+MASTER_SITE_SUBDIR=	utils/file/hex,obrien
 EXTRACT_SUFX=	.src.tgz
 
 MAINTAINER=	obrien@FreeBSD.org
