@@ -56,6 +56,8 @@ post-patch:
 		's|-release $$(VERSION)|-avoid-version|g'
 	@${REINPLACE_CMD} -e \
 		's|<malloc\.h>|<stdlib.h>|g' ${WRKSRC}/examples/gdbm.c
+	@${REINPLACE_CMD} -E -e \
+		's|volatile (mst_Boolean)|\1|g' ${WRKSRC}/libgst/interp.h
 
 post-install:
 	${INSTALL_DATA} ${WRKSRC}/*.el ${PREFIX}/share/emacs/site-lisp
