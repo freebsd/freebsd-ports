@@ -6,16 +6,12 @@
 #
 
 PORTNAME=	esf
-PORTVERSION=	1.0.0.b
-MASTER_SITES=	http://mirror.oktagone.net/games/half-life/mods/esf/ \
-		ftp://ftpuk.jolt.co.uk/games/halflife/mods/esf/ \
-		ftp://ftp.daddeln.de/pub/daddeln.de/halflife/Mods/esf/
-DISTNAME=	esfb100
+PORTVERSION=	1.1.1.b
+MASTER_SITES=	ftp://ftp.ngz-network.de/pub/135/18/pub/modificationen/teamplay/earths_special_forces/server/
+DISTNAME=	esfb111
 
 MAINTAINER=	lioux@FreeBSD.org
 COMMENT=	Half-Life mod Earth Special Forces (DBZ) full server package for Linux
-
-IGNORE=         Current version is no longer available anywhere
 
 HALFLIFE_COUNTERSTRIKE_MASTER=	${.CURDIR}/../hlserver-cs
 
