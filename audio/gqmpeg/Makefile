@@ -8,8 +8,8 @@
 PORTNAME=	gqmpeg
 PORTVERSION=	0.8.1
 CATEGORIES=	audio
-MASTER_SITES=	http://www.netpedia.net/hosting/gqview/packages/ \
-		http://www.geocities.com/SiliconValley/Haven/5235/packages/
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	lyngbol@candid.dk
 
