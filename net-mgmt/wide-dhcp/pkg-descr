@@ -24,25 +24,48 @@
 
 ------------------------------
 
-**Attention for this ports file>**
+** Attention for this ports file **
 
-   To use DHCP, your kernel  must  be rebuilt  with the following line
-   added to your kernel config file (/sys/i386/conf/<YourMachine>):
+	   To use DHCP, your kernel must be rebuilt with the following
+	line added to your kernel config file (/sys/i386/conf/<YourMachine>):
 
 pseudo-device	bpfilter	4	#Berkeley packet filter
 
-   and make bpf devices in your /dev directory: /dev/bpf[0-3].
+	and make bpf devices in your /dev directory: /dev/bpf[1-3].
 
 cd /dev
-./MAKEDEV bpf0
 ./MAKEDEV bpf1
 ./MAKEDEV bpf2
 ./MAKEDEV bpf3
 
-**Acknowledgements to this ports file**
+** CHECK_SUM Problem under FreeBSD 2.1.x **
+
+	  This port collection is use tzfile.h from FreeBSD-current source
+	tree. Because this file is frequently changed, md5 check sum of
+	this file in files/md5 is ``IGNORE''.
+
+	  If you use this port collection ***under FreeBSD 2.1-stable***:
+	2.1.0-RELEASE, 2.1.5-RELASE, 2.1.6-RELEASE, 2.1.7-RELEASE,
+	please make with ``make NO_CHECKSUM=yes'', or use latest
+	bsd.ports.mk and bsd.port.subdir.mk files in /usr/share/mk.
+
+** additional function **
+
+	   DHCP client(dhcpc) in this port is supported "dynamic change
+	/etc/resolv.conf and hostname via DHCP infomation".
+
+		  o `-r' is recreate /etc/resolv.conf
+		         (resolv.conf file is overwritten.)
+		  o `-n' is reset HOSTNAME
+
+** Acknowledgements to this ports file **
 	Special thanks to:
 		Hirotaka TAKETA<taketa@csk.co.jp>
 		Hajimu UMEMOTO<ume@calm.imasy.or.jp>
+		Tamotsu KANOH<kanoh@kanoh.iijnet.or.jp>
+		Junichi SATOH<junichi@astec.co.jp>
+		Hisashi HIRAMOTO<hiramoto@phys.chs.nihon-u.ac.jp>
+		Takeshi TAGUCHI<taguchi@tohoku.iij.ad.jp>
 
 - Yoshiro MIHIRA
 (sanpei@yy.cs.keio.ac.jp)
