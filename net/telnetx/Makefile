@@ -10,6 +10,7 @@ PORTVERSION=	940401
 CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_LOCAL} \
 		http://www.sfc.wide.ad.jp/~max/FreeBSD/ports/distfiles/
+MASTER_SITE_SUBDIR=	asami/LOCAL_PORTS
 DISTNAME=	telnetx+transit.src.940401
 
 MAINTAINER=	max@FreeBSD.org

@@ -11,6 +11,7 @@ PORTVERSION=	1.0
 CATEGORIES=	graphics
 MASTER_SITES=	${MASTER_SITE_LOCAL} \
 		ftp://ftp.cogsci.ed.ac.uk/pub/richard/
+MASTER_SITE_SUBDIR=	asami/LOCAL_PORTS
 DISTNAME=	scanner
 
 MAINTAINER=	jkh@FreeBSD.org

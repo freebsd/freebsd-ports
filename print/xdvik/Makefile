@@ -10,6 +10,7 @@ PORTVERSION=	20a
 CATEGORIES=	print
 MASTER_SITES=	ftp://ftp.ipc.chiba-u.ac.jp/pub/pub.yamaga/xdvik-20/ \
 		${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	asami/LOCAL_PORTS
 
 MAINTAINER=	JBD01226@niftyserve.ne.jp
 

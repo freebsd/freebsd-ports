@@ -17,6 +17,7 @@ MASTER_SITES=	ftp://ftp.appi.keio.ac.jp/pub/xdvi/ \
 		ftp://ftp.ascii.co.jp/pub/TeX/ascii-ptex/jvf/ \
 		ftp://ftp.tex.ac.uk/tex-archive/dviware/xdvik/ \
 		${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	asami/LOCAL_PORTS
 DISTNAME=	xdvik-${PORTVERSION}
 
 PATCH_SITES=	ftp://ftp.appi.keio.ac.jp/pub/xdvi/ \
@@ -24,6 +25,7 @@ PATCH_SITES=	ftp://ftp.appi.keio.ac.jp/pub/xdvi/ \
 		ftp://komadori.planet.sci.kobe-u.ac.jp/pub/xdvi/ \
 		ftp://ftp.chem.eng.himeji-tech.ac.jp/pub/xdvi/ \
 		${MASTER_SITE_LOCAL}
+PATCH_SITE_SUBDIR=	asami/LOCAL_PORTS
 PATCHFILES=	${DISTNAME}-j1.03.patch.gz
 PATCH_DIST_STRIP=	-p1
 

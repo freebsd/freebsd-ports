@@ -25,6 +25,8 @@ MASTER_SITES=	ftp://ftp.cs.wisc.edu/ghost/aladdin/gs550/ \
 		http://www.necs.co.jp/~umi/ \
 		http://plaza26.mbn.or.jp/~higamasa/gdevmd2k/ \
 		http://www.aial.hiroshima-u.ac.jp/~sakai/Linux/gs${PORTVERSION}/
+# former for ${MASTER_SITE_LOCAL}, latter for ${MASTER_SITE_PORTS_JP}
+MASTER_SITE_SUBDIR=	asami/LOCAL_PORTS .
 DISTNAME=	ghostscript-${PORTVERSION}
 DISTFILES=	${GS_SOURCES} ${GS_DRIVERS} ${GS_FONTS_STD} ${GS_FONTS_OTHER}
 

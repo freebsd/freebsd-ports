@@ -9,6 +9,7 @@ PORTNAME=	modula-3-lib
 PORTVERSION=	3.6
 CATEGORIES=	lang
 MASTER_SITES=	${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	asami/LOCAL_PORTS
 DISTFILES=	m3-fbsd-src-3.6.tar.gz \
 		m3-fbsd-m3cc-3.6.tar.gz \
 		m3-fbsd-m3ccelf-3.6.tar.gz \
