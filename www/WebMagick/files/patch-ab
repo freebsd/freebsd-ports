@@ -1,0 +1,33 @@
+Index: webmagick.js
+===================================================================
+RCS file: /cvsroot/webmagick/WebMagick/webmagick.js,v
+retrieving revision 1.42
+retrieving revision 1.44
+diff -u -r1.42 -r1.44
+--- webmagick.js	17 Aug 2002 00:29:58 -0000	1.42
++++ webmagick.js	7 Sep 2002 09:37:26 -0000	1.44
+@@ -1,5 +1,5 @@
+ //
+-// $Id: webmagick.js,v 1.42 2002/08/17 00:29:58 clindell Exp $
++// $Id: webmagick.js,v 1.44 2002/09/07 09:37:26 ache Exp $
+ //
+ // JavaScript routines to display a set of images
+ // Part of the WebMagick package
+@@ -767,7 +767,7 @@
+ 	      //PMF: the images of a given resolution are in a subdirectory with that name
+ 	      if (resolution != "") {
+ 		  //		  result += '<P ALIGN="center"><A HREF ="javascript:oldres = parent.webmagick.resolution;parent.webmagick.resolution='+"'';"+'parent.webmagick.displayImage();parent.webmagick.resolution=oldres;"><IMG SRC="' + resolution + escapeURL(image) + '" ALT=""></A></P>\n';
+-		  		  result += '<P ALIGN="center"><A HREF ="javascript:parent.webmagick.displayFullImage();"><IMG SRC="' + resolution + image + '" ALT=""></A></P>\n';	      
++				  result += '<P ALIGN="center"><A HREF ="javascript:parent.webmagick.displayFullImage();"><IMG SRC="' + resolution + image + '.jpeg" ALT=""></A></P>\n';
+ } else {
+ 		  result += '<P ALIGN="center"><IMG SRC="' + resolution + escapeURL(image) + '" ALT=""></P>\n';
+ 	      }
+@@ -1132,7 +1132,7 @@
+ //PMF: helper function to find the value of the selection
+ function choseResolution(numChoice){
+     var choice;
+-  alert("¡HOLA RADIOLA (2)!");
++  //alert("¡HOLA RADIOLA (2)!");
+ 
+     if (selectDisabled) {
+ 	selectDisabled = 0;

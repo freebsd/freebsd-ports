@@ -1,10 +1,11 @@
 Index: webmagick.in
 ===================================================================
 RCS file: /cvsroot/webmagick/WebMagick/webmagick.in,v
-retrieving revision 1.103
-diff -u -r1.103 webmagick.in
---- webmagick.in	28 Aug 2002 21:42:32 -0000	1.103
-+++ webmagick.in	7 Sep 2002 01:06:29 -0000
+retrieving revision 1.102
+retrieving revision 1.108
+diff -u -r1.102 -r1.108
+--- webmagick.in	21 Aug 2002 20:36:28 -0000	1.102
++++ webmagick.in	7 Sep 2002 09:26:20 -0000	1.108
 @@ -122,7 +122,6 @@
      $opt_lowresformat,
      $opt_lowresgeom,
@@ -13,6 +14,15 @@ diff -u -r1.103 webmagick.in
      $opt_coloralink,
      $opt_colorback,
      $opt_colorfore,
+@@ -302,7 +301,7 @@
+ $opt_serversidemap = 0;         # Enable server-side maps writting
+ 				
+ $perlVarsVersion = 0; # default this to 0 for it to be overidden by appropriate status files				
+-$requiredPerlVarsVersion = 2.2; # need this version to avoid regeneration of files
++$requiredPerlVarsVersion = 2.3; # need this version to avoid regeneration of files
+ 
+ #
+ # RC files
 @@ -459,11 +458,10 @@
  					#  this size will not be cached.
  
@@ -43,17 +53,18 @@ diff -u -r1.103 webmagick.in
  
      $currentDate = strftime ($opt_msg_date_format, localtime);
  
-@@ -1596,8 +1595,7 @@
+@@ -1596,8 +1595,8 @@
  	 'address'		=> $opt_address,	 
  	 'anonymous'		=> $opt_anonymous,
  	 'backgroundimg'	=> $opt_icons{'background'},
 -	 'cachedir'             => $opt_cachedir,
 -	 'lowresdir'             => $opt_lowresdir,
 +	 'cachedir'             => !$opt_tables ? "" : $opt_cachedir,
++	 'cacheformat'          => !$opt_tables ? "" : $opt_cacheformat,
  	 'coloralink'		=> $opt_coloralink,
  	 'colorback'		=> $opt_colorback,
  	 'colorfore'		=> $opt_colorfore,
-@@ -1903,15 +1901,14 @@
+@@ -1903,17 +1902,16 @@
      #
      # Clean up cached thumbnails
      #
@@ -71,9 +82,12 @@ diff -u -r1.103 webmagick.in
 -        my @extra;
 -        my %tarray;
  
-         grep( $tarray{$_}++, @imgfiles );
+-        grep( $tarray{$_}++, @imgfiles );
++	grep( $tarray{"$_.\L${opt_cacheformat}"}++, @imgfiles );
          @extra = grep( $_ = "$opt_cachedir/$_", grep( ! $tarray{$_}, @cacheFiles ));
-@@ -1922,14 +1919,13 @@
+         print( STDERR "Removing extra cache files @extra\n") if $opt_debug;
+         unlink( @extra );
+@@ -1922,16 +1920,15 @@
      # Clean up cached low resolution images
      #
      if( $opt_lowres && -d $opt_lowresdir ) {
@@ -89,9 +103,12 @@ diff -u -r1.103 webmagick.in
 -        my @extra;
 -        my %tarray;
  
-         grep( $tarray{$_}++, @imgfiles );
+-        grep( $tarray{$_}++, @imgfiles );
++	grep( $tarray{"$_.\L${opt_lowresformat}"}++, @imgfiles );
          @extra = grep( $_ = "$opt_lowresdir/$_", grep( ! $tarray{$_}, @lowresFiles ));
-@@ -2889,12 +2885,12 @@
+         print( STDERR "Removing extra lowres files @extra\n") if $opt_debug;
+         unlink( @extra );
+@@ -2889,12 +2886,12 @@
      #
      # If caching thumbnails then ensure that directory exists
      #
@@ -106,7 +123,7 @@ diff -u -r1.103 webmagick.in
  
      # Read images into PerlMagick object
      print( STDERR "\nReading images: ", join(' ', @{$imageNames[$pageNumber - 1]}), "\n" )
-@@ -2919,217 +2915,38 @@
+@@ -2919,217 +2916,38 @@
  READ:       
  	foreach $imagename (@{$imageNames[$pageNumber - 1]}) {
  
@@ -347,7 +364,55 @@ diff -u -r1.103 webmagick.in
  	    #
  	    # Add thumbnail to thumbs array
  	    #
-@@ -3910,7 +3727,10 @@
+@@ -3845,29 +3663,29 @@
+ #returns 0 if everything went fine, -1 if the image does not exist
+ sub createLowResolutionImage () {
+ 	my ($image, $a_dir, $imagename, $a_cache, $a_lowres, $a_tables,
+-			$a_force, $a_geometry, $a_cacheformat, $a_cachemin, 
+-			$a_prehook, $a_posthook) = @_;
++	    $a_force, $a_geometry, $a_cacheformat, $a_cachemin,
++	    $a_prehook, $a_posthook) = @_;
++
++	my (
++	    $newthumb,              # Set to 1 if new thumbnail
++	    $status         # Return status
++	   );
+ 
+ 	my (
+-			$newthumb,		# Set to 1 if new thumbnail
+-			$status		# Return status
+-		 );
+-
+-	    my (
+-		$width,		# Image width
+-		$height,	# Image height
+-		$base_columns,	# Original width
+-		$base_rows,	# Original height
+-		$class,		# Image class
+-		$comment,	# Image comment
+-		$depth,		# Image color depth
+-		$filesize,	# Image file size
+-		$magick,	# Image magick
+-		);
++	    $width,         # Image width
++	    $height,        # Image height
++	    $base_columns,  # Original width
++	    $base_rows,     # Original height
++	    $class,         # Image class
++	    $comment,       # Image comment
++	    $depth,         # Image color depth
++	    $filesize,      # Image file size
++	    $magick         # Image magick
++	   );
+ 	#
+ 	# Handle thumbnail/lowres cache
+ 	#
+-	my $cachename = "$a_dir/$imagename";
++	my $cachename = "${a_dir}/${imagename}.\L${a_cacheformat}";
+ 
+ 	$newthumb = 1;								# Start presuming that thumbnail is new
+ 	# If we are caching, and cache thumbnail exists and is newer then use it
+@@ -3910,7 +3728,10 @@
  		# the size specified (it returns a number of standard
  		# scaled sizes) but not smaller.
  		# This uses a feature available in PerlMagick 1.12 and beyond
@@ -359,8 +424,41 @@ diff -u -r1.103 webmagick.in
  		handleMagickError( __FILE__, __LINE__, "$a_geometry", $status) if "$status";
  		
  		# Read image
-@@ -3960,27 +3780,18 @@
- 			    if $opt_debug;
+@@ -3930,20 +3751,20 @@
+ 			#
+ 			if ( $a_prehook ) {
+ 				print("Evaluating thumbnail pre-hook ...\n$a_prehook\n" )
+-			    if $opt_debug;
++				    if $opt_debug;
+ 				eval $a_prehook;
+ 			}
+ 
+ 			# Obtain image parameters
+ 			( $width, $height, $filesize, $magick, $class, $depth ) =
+ 				$image->Get(
+-										'width',
+-										'height',
+-										'filesize',
+-										'magick',
+-										'class',
+-										'depth');
+-		    
++					    'width',
++					    'height',
++					    'filesize',
++					    'magick',
++					    'class',
++					    'depth');
++
+ 			if ( $opt_debug ) {
+ 				print("Image: ${width}x${height} $class $filesize bytes $magick $depth bits\n");
+ 			}
+@@ -3957,30 +3778,21 @@
+ 				$width = $base_columns;
+ 				$height = $base_rows;
+ 				print("Saving original image size ${base_columns}x${base_rows}\n")
+-			    if $opt_debug;
++				    if $opt_debug;
  			}
  
 -			my $geometry;
@@ -375,15 +473,17 @@ diff -u -r1.103 webmagick.in
  			my $a_sampling = 0;			# Set to 1 to enable sampling
  			if ( $class eq 'PseudoClass' && $a_sampling ) {
 -				print( STDERR "Sampling $imagename to geometry \"${geometry}>\" ...\n")
-+				print( STDERR "Sampling $imagename to geometry \"${a_geometry}>\" ...\n")
- 			    if $opt_debug;
+-			    if $opt_debug;
 -				$status = $image->Sample(geometry=>"${geometry}>");
++				print( STDERR "Sampling $imagename to geometry \"${a_geometry}>\" ...\n")
++				    if $opt_debug;
 +				$status = $image->Sample(geometry=>"${a_geometry}>");
  			
  			} else {
 -				print( STDERR "Zooming $imagename with geometry \"${geometry}>\" ...\n")
+-			    if $opt_debug;
 +				print( STDERR "Zooming $imagename with geometry \"${a_geometry}>\" ...\n")
- 			    if $opt_debug;
++				    if $opt_debug;
  				$status = $image->Zoom(filter=>"${opt_zoomfilter}",
 -															 blur=>0.6,
 -															 geometry=>"${geometry}>" );
@@ -392,7 +492,186 @@ diff -u -r1.103 webmagick.in
  			}
  		    
  			if ("$status") {
-@@ -4276,12 +4087,11 @@
+@@ -4000,9 +3812,8 @@
+ 
+ 		# If we are caching, thumbnail is new, and image is
+ 		# large enough, then write it to thumbnail cache
+-		# if we are using tables, then we cache as long as it's new
+-		if ( ($a_cache || $a_tables || $a_lowres) && $newthumb && ((($width*$height) > $a_cachemin) || $a_tables)) {
+-		
++		# if we are using tables or lowres, then we cache as long as it's new
++		if ( ($a_cache || $a_tables || $a_lowres) && $newthumb && ((($width*$height) > $a_cachemin) || ($a_tables || $a_lowres ))) {
+ 
+ 			my $comment="IMGINFO:${width}x${height} ${magick} file  (${filesize} bytes)";
+ 			print( STDERR "Applying image comment:\n${comment}\n") if $opt_debug;
+@@ -4011,21 +3822,21 @@
+ 			$status = $image->Comment( $comment );
+ 			handleMagickError( __FILE__, __LINE__, $cachename, $status) if "$status";
+ 		    
+-			print( STDERR "Writing ${cachename} with format ${a_cacheformat} ...\n" )
+-				if $opt_debug;
++			print( STDERR "Writing ${cachename} ...\n" )
++			    if $opt_debug;
+ 			#
+ 			# Give JPEG files special treatment
+ 			#
+ 			if ( $a_cacheformat eq 'JPEG' || $a_cacheformat eq 'JPG' ) {
+ 				$status = $image->Write(
+-																filename=>"${a_cacheformat}:${cachename}",
+-																interlace=>'None',
+-																quality=>85
+-															 );
++							filename=>"${a_cacheformat}:${cachename}",
++							interlace=>'None',
++							quality=>85
++						       );
+ 			} else {
+ 				$status = $image->Write(
+-																filename=>"${a_cacheformat}:${cachename}"
+-															 );
++							filename=>"${a_cacheformat}:${cachename}"
++						       );
+ 			}
+ 			handleMagickError( __FILE__, __LINE__, $cachename, $status) if "$status";
+ 			if (! $a_lowres) {
+@@ -4036,73 +3847,73 @@
+ 	}
+ 	
+ 	#
+-	    # Set image label
+-	    #
+-	    my $label = '';
+-	    if( $opt_thumblabel ne 'false' ) {
+-		if( defined( $imageLabels{$imagename} ) ) {
+-		    # Set image specific label
+-		    $label = $imageLabels{$imagename};
+-		} else {
+-		    # Set default label
+-		    $label = $opt_thumblabel;
+-		}
++	# Set image label
++	#
++	my $label = '';
++	if( $opt_thumblabel ne 'false' ) {
++	    if( defined( $imageLabels{$imagename} ) ) {
++		# Set image specific label
++		$label = $imageLabels{$imagename};
++	    } else {
++		# Set default label
++		$label = $opt_thumblabel;
+ 	    }
++	}
+ 
+-	    if ($label ne '') {
+-		my $sizestr;
+-		my $kb = 1024;
+-		my $mb = $kb * $kb;
+-		if( $filesize <= 9999 ) {
+-		    # print as bytes
+-		    $sizestr = "${filesize}b";
+-		} elsif( $filesize <= 9999999 ) {
+-		    # print as kilobytes
+-		    my $size = int($filesize/$kb);
+-		    $sizestr = "${size}kb";	    
+-		} else {
+-		    # print as megabytes
+-		    my $size = int($filesize/$mb);
+-		    $sizestr = "${size}Mb";
+-		}
+-
+-		#
+-		# Truncate label down to width $opt_thumblabelwidth
+-		#
+-		my $imagebase;
+-		($imagebase = $imagename) =~ s/\.[^\.]*$//g;
+-		# %b = file size
+-		# %d = directory (not implemented)
+-		# %e = extension (not implemented)
+-		# %f = full filename
+-		# %h = height
+-		# %m = magick
+-		# %n = filename minus extension
+-		# %s = scene number (not implemented)
+-		# %t = top of filename (not implemented)
+-		# %w = width
+-		$label =~ s/%b/$sizestr/g;
+-		$label =~ s/%f/$imagename/g;
+-		$label =~ s/%h/$height/g;
+-		$label =~ s/%m/$magick/g;
+-		$label =~ s/%n/$imagebase/g;
+-		$label =~ s/%w/$width/g;
+-		my @llines = split(/\\n/, $label);
+-		grep($_ = substr( $_, 0, $opt_thumblabelwidth), @llines);
+-		$label = join("\n", @llines);
+-		
+-		# put our label into the table image hash 
+-		
+-		$tableImageLabels{$imagename} = $label;
+-		$tableImageLabels{$imagename} =~ s/\n/<BR>/g;
+-		
+-		print( STDERR "Applying image label: \"${label}\"\n" )
+-		    if $opt_debug;
+-		$status = $image->Label( $label );
+-		handleMagickError( __FILE__, __LINE__, $imagename, $status) if "$status";
++	if ($label ne '') {
++	    my $sizestr;
++	    my $kb = 1024;
++	    my $mb = $kb * $kb;
++	    if( $filesize <= 9999 ) {
++		# print as bytes
++		$sizestr = "${filesize}b";
++	    } elsif( $filesize <= 9999999 ) {
++		# print as kilobytes
++		my $size = int($filesize/$kb);
++		$sizestr = "${size}kb";
++	    } else {
++		# print as megabytes
++		my $size = int($filesize/$mb);
++		$sizestr = "${size}Mb";
+ 	    }
+ 
+-	
++	    #
++	    # Truncate label down to width $opt_thumblabelwidth
++	    #
++	    my $imagebase;
++	    ($imagebase = $imagename) =~ s/\.[^\.]*$//g;
++	    # %b = file size
++	    # %d = directory (not implemented)
++	    # %e = extension (not implemented)
++	    # %f = full filename
++	    # %h = height
++	    # %m = magick
++	    # %n = filename minus extension
++	    # %s = scene number (not implemented)
++	    # %t = top of filename (not implemented)
++	    # %w = width
++	    $label =~ s/%b/$sizestr/g;
++	    $label =~ s/%f/$imagename/g;
++	    $label =~ s/%h/$height/g;
++	    $label =~ s/%m/$magick/g;
++	    $label =~ s/%n/$imagebase/g;
++	    $label =~ s/%w/$width/g;
++	    my @llines = split(/\\n/, $label);
++	    grep($_ = substr( $_, 0, $opt_thumblabelwidth), @llines);
++	    $label = join("\n", @llines);
++
++	    # put our label into the table image hash
++
++	    $tableImageLabels{$imagename} = $label;
++	    $tableImageLabels{$imagename} =~ s/\n/<BR>/g;
++
++	    print( STDERR "Applying image label: \"${label}\"\n" )
++		if $opt_debug;
++	    $status = $image->Label( $label );
++	    handleMagickError( __FILE__, __LINE__, $imagename, $status) if "$status";
++	}
++
++
+ 	return 0;
+ }
+ ######################################################################
+@@ -4274,12 +4085,11 @@
    --cachemin         Smallest image to cache in pixels. (default 300*200)
  
  Low resolution images:
