@@ -262,6 +262,7 @@
     SUBDIR += rinfo
     SUBDIR += robodoc
     SUBDIR += rpc2
+    SUBDIR += ruby-property
     SUBDIR += rvm
     SUBDIR += sdcc
     SUBDIR += sdl

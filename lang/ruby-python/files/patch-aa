@@ -1,0 +1,11 @@
+--- extconf.rb.orig	Sun Nov  7 15:38:30 1999
++++ extconf.rb	Mon Aug  7 12:34:46 2000
+@@ -29,7 +30,7 @@
+ exit(1) unless File.exists? py_makefile
+ 
+ $CFLAGS  = "-I#{py_includedir}"
+-$LDFLAGS = "-L#{py_configdir}"
++$LDFLAGS = "-L#{py_configdir} -pthread"
+ 
+ # If python is linked with extra libraries (e.g. -lpthread on Linux,
+ # -lsocket on Solaris, etc.), have_library test will fail and built

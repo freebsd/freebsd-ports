@@ -52,6 +52,7 @@
     SUBDIR += pygist
     SUBDIR += rcalc
     SUBDIR += rng
+    SUBDIR += ruby-bigfloat
     SUBDIR += sc
     SUBDIR += siag
     SUBDIR += simpack

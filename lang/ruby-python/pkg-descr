@@ -1,0 +1,14 @@
+Ruby extension library for embedding Python in Ruby.  With this
+library, Ruby scripts can directly call arbitrary Python modules.
+Both extension modules and modules written in Python can be used.
+
+Ruby and Python have some differences as described here.  This library
+enables Ruby users to have the advantages of both languages:
+
+  - Straightforward and easy-to-learn OO functionality of Ruby.
+  - Plenty of modules written for Python.
+
+If you are attracted by Python modules but not fully satisfied with
+Python's syntax or type system, try this library!
+
+WWW:	http://www.goto.info.waseda.ac.jp/~fukusima/ruby/python-e.html
