@@ -669,11 +669,12 @@ misc.c:
     </description>
     <references>
       <url>http://www.squid-cache.org/Advisories/SQUID-2004_1.txt</url>
-      <cvename>CVE-2004-0189</cvename>
+      <cvename>CAN-2004-0189</cvename>
     </references>
     <dates>
       <discovery>2004-02-29</discovery>
       <entry>2004-03-26</entry>
+      <modified>2004-03-30</modified>
     </dates>
   </vuln>
 
