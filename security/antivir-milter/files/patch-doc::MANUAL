@@ -22,7 +22,7 @@
 +set the access rights of user root and group to smmsp:
  
 -	# cp hbedv.key /usr/lib/AntiVir/
--	# chown uucp:uucp /usr/lib/AntiVir/avmgate.key
+-	# chown uucp:antivir /usr/lib/AntiVir/avmgate.key
 +	# cp hbedv.key %%PREFIX%%/AntiVir/
 +	# chown root:smmsp %%PREFIX%%/AntiVir/hbedv.key
 +	# chmod 440 %%PREFIX%%/AntiVir/hbedv.key
@@ -37,7 +37,7 @@
 +%%PREFIX%%/etc/avmilter/avmilter.conf:
  
 -# User				uucp
--# Group				uucp
+-# Group				antivir
 +# User				smmsp
 +# Group				smmsp
  # Postmaster			postmaster

@@ -18,8 +18,9 @@
  		;;
      stop)
 -		echo -n "Shutting down AntiVir Milter."
- 		killall -TERM avmilter
+-		killall -TERM /usr/sbin/avmilter > /dev/null 2>&1
 -		echo
++		killall -TERM avmilter > /dev/null 2>&1
 +		echo -n " avmilter"
  		;;
      restart)

@@ -11,8 +11,12 @@ INPUT_MAIL_FILTER(
 Don't forget to rebuild sendmail.cf and to restart Sendmail afterwards.
 
 For automated updates of the anti-virus engine and the virus definition
-file add the following line to your /etc/crontab:
+file either add the following line to your /etc/crontab to run them via
+cron(8):
 25 0 * * * root %%PREFIX%%/sbin/antivirupdater -q
+or execute the following command to enabled the AntiVir Updater daemon:
+cp %%PREFIX%%/etc/rc.d/avupdater.sh-dist_avmilter \
+%%PREFIX%%/etc/rc.d/avupdater.sh
 
 For full functionality of AntiVir Milter you need to obtain a license
 key from H+BEDV Datentechnik GmbH. To install it, execute the following
