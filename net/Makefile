@@ -565,6 +565,7 @@
     SUBDIR += pear-Net_UserAgent_Detect
     SUBDIR += pear-SOAP
     SUBDIR += pebrot
+    SUBDIR += pecl-radius
     SUBDIR += pecl-yaz
     SUBDIR += peercast
     SUBDIR += pen

@@ -1,0 +1,9 @@
+This package is based on the libradius of FreeBSD, with some modifications and
+extensions.
+
+This PECL provides full support for RADIUS authentication (RFC 2865) and
+RADIUS accounting (RFC 2866), works on Unix and on Windows. Its an easy way to
+authenticate your users against the user-database of your OS (for example
+against Windows Active-Directory via IAS).
+
+WWW: http://pecl.php.net/package/radius/
