@@ -16,13 +16,12 @@ DISTNAME=	gnomeicu-${PORTVERSION}
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	GNOME2 ICQ client
 
-LIB_DEPENDS+=	gnet-glib2.7:${PORTSDIR}/net/gnet-glib2 \
-		gdbm.3:${PORTSDIR}/databases/gdbm
+LIB_DEPENDS=	gdbm.3:${PORTSDIR}/databases/gdbm
 
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes
-USE_GNOME=	gnomeprefix gnomehack libglade2 gnomepanel libxml2
-USE_GMAKE=		yes
+USE_GNOME=	gnomeprefix gnomehack libglade2 gnomepanel lthack libxml2
+USE_GMAKE=	yes
 USE_LIBTOOL_VER=13
 USE_REINPLACE=	yes
 .if defined(WITH_DANTE)
@@ -47,8 +46,14 @@ CONFIGURE_ENV=	CPPFLAGS="${SOCKSFLAGS} -I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib" LIBS="-liconv ${SOCKSLIBS} -lintl" \
 		CFLAGS="${CFLAGS}"
 
+.ifndef(WITHOUT_GTKSPELL)
+LIB_DEPENDS+=	gtkspell.0:${PORTSDIR}/textproc/gtkspell2
+CONFIGURE_ARGS+=--enable-gtkspell
+.else
+CONFIGURE_ARGS+=--disable-gtkspell
+.endif
+
 post-patch:
-	@${REINPLACE_CMD} -e 's|gnet|gnet-glib2|g' ${WRKSRC}/configure
 	@${REINPLACE_CMD} -e 's|GNOME_PARAM_GNOME_DATADIR|GNOME_PARAM_APP_DATADIR|g' \
 		${WRKSRC}/src/gnomeicu.c
 
