@@ -29,6 +29,7 @@ EXTRA_PATCHES=	${PATCHDIR}/makeinclude.diff
 
 USE_X_PREFIX=	yes
 USE_GL=		yes
+USE_PERL5_BUILD=yes
 USE_REINPLACE=	yes
 ALL_TARGET=	freebsd docs
 MAKE_ARGS=	AR=${AR} \
