@@ -39,7 +39,7 @@ CONFIGURE_ARGS+= --enable-rfc1579
 # OPTIONAL: include ldap-support - currently ldap.2 needs minor fixes...
 #
 .if defined(WITH_LDAP)
-CONFIGURE_ARGS+=	--with-libldap
+CONFIGURE_ARGS+=	--with-libldap=${LOCALBASE}/lib
 LIB_DEPENDS+=		ldap.1:${PORTSDIR}/net/openldap12
 .else
 CONFIGURE_ARGS+=	--without-libldap
