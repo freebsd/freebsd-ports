@@ -1,6 +1,6 @@
---- ../php/configure.orig	Sat Jan  1 05:53:20 2000
-+++ ../php/configure	Sun Jan  2 17:34:39 2000
-@@ -5261,26 +5261,10 @@
+--- ../php/configure.orig	Fri Feb 25 21:49:48 2000
++++ ../php/configure	Tue Feb 29 22:29:05 2000
+@@ -5214,26 +5214,10 @@
    if test -n "$unique" && test "`eval $cmd`" = "" ; then
      eval "LIBPATH$unique=set"
      
@@ -28,3 +28,20 @@
    fi
  
  
+@@ -8961,7 +8945,7 @@
+    	fi
+     SYBASE_CT_INCLUDE=-I$SYBASE_CT_INCDIR
+     SYBASE_CT_LFLAGS="-L$SYBASE_CT_LIBDIR"
+-    SYBASE_CT_LIBS="-lcs -lct -lcomn -lintl"
++    SYBASE_CT_LIBS="-lct"
+     old_LDFLAGS=$LDFLAGS
+     LDFLAGS="$LDFLAGS -L$SYBASE_CT_LIBDIR"
+     echo $ac_n "checking for netg_errstr in -ltcl""... $ac_c" 1>&6
+@@ -9002,7 +8986,6 @@
+    SYBASE_CT_LIBS="$SYBASE_CT_LIBS -ltcl" 
+ else
+   echo "$ac_t""no" 1>&6
+- SYBASE_CT_LIBS="$SYBASE_CT_LIBS -lsybtcl" 
+ fi
+ 
+     echo $ac_n "checking for insck__getVdate in -linsck""... $ac_c" 1>&6

@@ -25,6 +25,7 @@ IMAP		"PHP:    IMAP support" OFF \
 MySQL		"PHP:    MySQL database support" ON \
 PostgreSQL	"PHP:    PostgreSQL database support" OFF \
 mSQL		"PHP:    mSQL database support" OFF \
+Sybase		"PHP:    Sybase/MS-SQL database support" OFF \
 dBase		"PHP:    dBase database support" OFF \
 OpenLDAP	"PHP:    OpenLDAP support" OFF \
 SNMP		"PHP:    SNMP support" OFF \
@@ -109,6 +110,12 @@ while [ "$1" ]; do
 		\"mSQL\")
 			echo "BUILD_DEPENDS+=	msql:\${PORTSDIR}/databases/msql"
 			echo "PHP_CONF_ARGS+=	--with-msql=\${PREFIX}"
+			;;
+		\"Sybase\")
+			echo "LIB_DEPENDS+=	sybdb.0:\${PORTSDIR}/databases/freetds"
+			echo "LIB_DEPENDS+=	ct.0:\${PORTSDIR}/databases/freetds"
+			echo "PHP_CONF_ARGS+=	--with-sybase=\${PREFIX}"
+			echo "PHP_CONF_ARGS+=	--with-sybase-ct=\${PREFIX}"
 			;;
 		\"dBase\")
 			echo "PHP_CONF_ARGS+=	--with-dbase"
