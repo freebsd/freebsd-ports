@@ -1,6 +1,7 @@
 bin/comp_err
 bin/isamchk
 bin/isamlog
+bin/make_win_src_distribution
 bin/msql2mysql
 bin/my_print_defaults
 bin/myisamchk
