@@ -12,7 +12,7 @@ MASTER_SITES=	ftp://ftp.netlib.org/fortran/
 DISTNAME=	fdfpp
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	vazquez@iqm.unicamp.br
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Fortran preprocessor for FORTRAN 77 and Fortran 90 programs
 
 USE_GMAKE=	yes

@@ -12,7 +12,7 @@ MASTER_SITES=		${MASTER_SITE_AFTERSTEP} \
 			http://www.bewoner.dma.be/Albert/software/
 MASTER_SITE_SUBDIR=	apps/asmem
 
-MAINTAINER=	jack@germanium.xtalwind.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An AfterStep look-n-feel memory utilization monitor
 
 USE_X_PREFIX=	yes

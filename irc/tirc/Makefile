@@ -10,7 +10,7 @@ PORTVERSION=	1.2
 CATEGORIES=	irc
 MASTER_SITES=	ftp://ftp.mayn.de/pub/unix/network/irc/tirc/
 
-MAINTAINER=	dr@astorit.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Token's 'Internet Relay Chat' Client
 
 USE_REINPLACE=	yes

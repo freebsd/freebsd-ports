@@ -10,7 +10,7 @@ PORTVERSION=   0.42
 CATEGORIES=    editors
 MASTER_SITES=  ftp://ftp.developerpit.com/puff/
 
-MAINTAINER=    bilbo@developerpit.com
+MAINTAINER=    ports@FreeBSD.org
 COMMENT=       Simple and efficient text editor
 
 WRKSRC=        ${WRKDIR}/puff

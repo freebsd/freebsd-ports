@@ -12,7 +12,7 @@ MASTER_SITES=	http://www.photodex.com/files.system/unix/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-i386-freebsd
 EXTRACT_ONLY=	# extracted directly in install target
 
-MAINTAINER=	abel@island.dhs.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Digital content manager
 
 NO_WRKSUBDIR=	yes

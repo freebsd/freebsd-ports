@@ -11,7 +11,7 @@ CATEGORIES=	devel
 MASTER_SITES=	http://oss.software.ibm.com/developerworks/opensource/icu/project/download/${PORTVERSION}/
 EXTRACT_SUFX=   .tgz
 
-MAINTAINER=	dwm@caimis.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	International Components for Unicode (from IBM)
 
 WRKSRC=		${WRKDIR}/${PORTNAME}/source

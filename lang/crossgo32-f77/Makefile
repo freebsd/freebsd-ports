@@ -15,7 +15,7 @@ DISTNAME=	f77-freebsd.0.3
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} g772952b.zip
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
-MAINTAINER=	hdcho@geni.cemtlo.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	G2c libraries and compatibility for DJGPP V2 crossgo32 crosscompiler
 
 BUILD_DEPENDS+=	unzip:${PORTSDIR}/archivers/unzip

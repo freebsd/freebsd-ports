@@ -11,7 +11,7 @@ CATEGORIES=	games
 MASTER_SITES=	http://dxkelly.freeshell.org/
 DISTNAME=	${PORTNAME}
 
-MAINTAINER=	bob@fly.homeunix.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Text based card game, the objective is to get rid of all your cards
 
 WRKSRC=		${WRKDIR}

@@ -10,7 +10,7 @@ PORTVERSION=	1.0.2
 CATEGORIES=	audio
 MASTER_SITES=	http://babblica.net/pub/mp3butler/
 
-MAINTAINER=	rbg@gayteenresource.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A program for renaming mp3 files
 
 USE_PERL5=	yes

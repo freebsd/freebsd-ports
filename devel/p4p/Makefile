@@ -17,7 +17,7 @@ DISTFILES=	${BIN_FILES} ${SBIN_FILES} ${MAN1:S/$/:man/}
 DIST_SUBDIR=	perforce/${VERSION}/${ARCH}
 EXTRACT_ONLY=	# none
 
-MAINTAINER=	marshall@chezmarshall.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Perforce client and server
 
 #

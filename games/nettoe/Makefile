@@ -11,7 +11,7 @@ CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	rbg@gayteenresource.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A tic-tac-toe game playable over the network
 
 MAN6=		nettoe.6

@@ -12,7 +12,7 @@ MASTER_SITES=	http://kst.spb.ru/bforce/
 PKGNAMESUFFIX=	-kst
 DISTNAME=	bforce-0.22.7.kst5
 
-MAINTAINER=	fox@furry.spb.ru
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Simple ifcico like Fidonet technology mailer
 
 USE_BZIP2=	yes

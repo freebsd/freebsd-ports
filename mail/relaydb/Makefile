@@ -10,7 +10,7 @@ PORTVERSION=	1.3
 CATEGORIES=	mail
 MASTER_SITES=	http://www.benzedrine.cx/
 
-MAINTAINER=	dolmant@dolmant.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Spam relay database
 
 MAN8=		relaydb.8
