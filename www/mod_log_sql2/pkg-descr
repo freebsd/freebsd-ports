@@ -1,0 +1,4 @@
+This add-on module allows the apache web server to use a MySQL database for
+logging of all operations.
+
+WWW: http://www.outoforder.cc/projects/apache/mod_log_sql/
