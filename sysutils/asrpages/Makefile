@@ -3,7 +3,7 @@
 # Date created:		6 Nov 1997
 # Whom:			Sheldon Hearn <axl@iafrica.com>
 #
-# $Id: Makefile,v 1.5 1998/09/19 05:48:06 steve Exp $
+# $Id: Makefile,v 1.6 1999/02/03 11:11:57 asami Exp $
 #
 
 DISTNAME=	asrpages
@@ -12,7 +12,7 @@ CATEGORIES=	sysutils
 MASTER_SITES=	ftp://ftp.winternet.com/users/eric/
 DISTFILES=	asr.pages.tar
 
-MAINTAINER=	axl@iafrica.com
+MAINTAINER=	sheldonh@FreeBSD.org
 
 EXTRACT_CMD=	${TAR}
 EXTRACT_BEFORE_ARGS=	-xf

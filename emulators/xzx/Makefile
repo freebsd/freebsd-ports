@@ -3,7 +3,7 @@
 # Date created:         13 Nov 1997
 # Whom:                 Sheldon Hearn <axl@iafrica.com>
 #
-# $Id: Makefile,v 1.9 1999/03/14 17:47:30 billf Exp $
+# $Id: Makefile,v 1.10 1999/05/09 14:15:00 flathill Exp $
 #
 
 DISTNAME=	xzx-2.8.1
@@ -11,7 +11,7 @@ CATEGORIES=	emulators
 MASTER_SITES=	${MASTER_SITE_SUNSITE}
 MASTER_SITE_SUBDIR= system/emulators/zx
 
-MAINTAINER=	sheldonh@iafrica.com
+MAINTAINER=	sheldonh@FreeBSD.org
 
 USE_X_PREFIX=	yes
 GNU_CONFIGURE=	yes

@@ -3,7 +3,7 @@
 # Date created:		25 November 1998
 # Whom:			Sheldon Hearn <axl@iafrica.com>
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1998/12/01 02:15:41 jkoshy Exp $
 #
 
 DISTNAME=	marc-search.4.3
@@ -11,7 +11,7 @@ PKGNAME=	marc-search-4.3
 CATEGORIES=	www
 MASTER_SITES=	http://www.oac.uci.edu/indiv/ehood/contrib/marc-search/
 
-MAINTAINER=	axl@iafrica.com
+MAINTAINER=	sheldonh@FreeBSD.org
 
 RUN_DEPENDS=	mhonarc:${PORTSDIR}/www/mhonarc \
 		${PREFIX}/lib/perl5/site_perl/${PERL_VER}/CGI_Lite.pm:${PORTSDIR}/www/p5-CGI_Lite
