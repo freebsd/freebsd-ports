@@ -1,9 +1,0 @@
---- config.h.in.old	Sat Jun 14 15:08:43 2003
-+++ config.h.in	Sat Jun 14 15:09:24 2003
-@@ -6,3 +6,6 @@
- /* Version number of package */
- #undef VERSION
- 
-+/* PREFIX needed for libproxychains.c */
-+#undef PREFIX
-+
