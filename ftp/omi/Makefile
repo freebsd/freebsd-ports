@@ -4,7 +4,7 @@
 # Date created:		19 August 1995
 # Whom:                 ache
 #
-# $Id: Makefile,v 1.1.1.1 1998/03/08 04:46:18 ache Exp $
+# $Id: Makefile,v 1.2 1998/05/18 20:20:54 ache Exp $
 #
 
 DISTNAME=       omi-alpha-8
@@ -20,6 +20,7 @@ do-install:
 	${INSTALL} -d -m 755 -o ${DOCOWN} -g ${DOCGRP} \
 		${PREFIX}/share/doc/omi
 	${INSTALL_DATA} ${WRKSRC}/README ${PREFIX}/share/doc/omi
+	${INSTALL_DATA} ${WRKSRC}/CHANGES ${PREFIX}/share/doc/omi
 	${INSTALL_DATA} ${WRKSRC}/BSD-COPYRIGHT ${PREFIX}/share/doc/omi
 
 .include <bsd.port.mk>
