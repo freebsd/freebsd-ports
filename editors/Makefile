@@ -1,6 +1,7 @@
-# $Id: Makefile,v 1.22 1995/10/03 11:45:06 asami Exp $
+# $Id: Makefile,v 1.23 1995/10/30 17:32:34 pst Exp $
 #
 
+RESTRICTED += ashe		# requires motif
     SUBDIR += axe
     SUBDIR += e93
     SUBDIR += emacs
@@ -13,7 +14,5 @@
     SUBDIR += xcoral
     SUBDIR += xemacs
     SUBDIR += xvile
-
-    NOBUILD += ashe		# requires motif
 
 .include <bsd.port.subdir.mk>
