@@ -102,6 +102,8 @@ MAKEFILE=	makefile
 post-extract:
 	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|g' \
 		${WRKSRC}/configure
+	@${SED} -e "s=%%PREFIX%%=${PREFIX}=g" ${FILESDIR}/squid.sh \
+		> ${WRKSRC}/squid.sh
 
 post-install:
 #	I don't think many people use the pinger nowadays, and if you
@@ -128,7 +130,7 @@ post-install:
 	fi
 	@if [ ! -f ${PREFIX}/etc/rc.d/squid.sh ]; then \
 		${ECHO} "Installing ${PREFIX}/etc/rc.d/squid.sh startup file."; \
-		${INSTALL_SCRIPT} -m 751 ${FILESDIR}/squid.sh ${PREFIX}/etc/rc.d/squid.sh; \
+		${INSTALL_SCRIPT} -m 751 ${WRKSRC}/squid.sh ${PREFIX}/etc/rc.d/squid.sh; \
 	fi
 
 .include <bsd.port.mk>
