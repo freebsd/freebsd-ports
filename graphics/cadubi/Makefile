@@ -8,7 +8,7 @@
 PORTNAME=	cadubi
 PORTVERSION=	1.2
 CATEGORIES=	graphics editors
-MASTER_SITES=	ftp://logicallemon.com/pub/cadubi/
+MASTER_SITES=	http://www.logicallemon.com/projects/cadubi/downloads/
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
