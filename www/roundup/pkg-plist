@@ -1,4 +1,6 @@
 bin/roundup-admin
+bin/roundup-demo
+bin/roundup-gettext
 bin/roundup-mailgw
 bin/roundup-server
 %%PYTHON_SITELIBDIR%%/roundup/__init__.py
@@ -13,12 +15,6 @@ bin/roundup-server
 %%PYTHON_SITELIBDIR%%/roundup/backends/back_anydbm.py
 %%PYTHON_SITELIBDIR%%/roundup/backends/back_anydbm.pyc
 %%PYTHON_SITELIBDIR%%/roundup/backends/back_anydbm.pyo
-%%PYTHON_SITELIBDIR%%/roundup/backends/back_bsddb.py
-%%PYTHON_SITELIBDIR%%/roundup/backends/back_bsddb.pyc
-%%PYTHON_SITELIBDIR%%/roundup/backends/back_bsddb.pyo
-%%PYTHON_SITELIBDIR%%/roundup/backends/back_bsddb3.py
-%%PYTHON_SITELIBDIR%%/roundup/backends/back_bsddb3.pyc
-%%PYTHON_SITELIBDIR%%/roundup/backends/back_bsddb3.pyo
 %%PYTHON_SITELIBDIR%%/roundup/backends/back_metakit.py
 %%PYTHON_SITELIBDIR%%/roundup/backends/back_metakit.pyc
 %%PYTHON_SITELIBDIR%%/roundup/backends/back_metakit.pyo
@@ -58,12 +54,12 @@ bin/roundup-server
 %%PYTHON_SITELIBDIR%%/roundup/cgi/MultiMapping.py
 %%PYTHON_SITELIBDIR%%/roundup/cgi/MultiMapping.pyc
 %%PYTHON_SITELIBDIR%%/roundup/cgi/MultiMapping.pyo
-%%PYTHON_SITELIBDIR%%/roundup/cgi/PageTemplates/ComputedAttribute.py
-%%PYTHON_SITELIBDIR%%/roundup/cgi/PageTemplates/ComputedAttribute.pyc
-%%PYTHON_SITELIBDIR%%/roundup/cgi/PageTemplates/ComputedAttribute.pyo
 %%PYTHON_SITELIBDIR%%/roundup/cgi/PageTemplates/Expressions.py
 %%PYTHON_SITELIBDIR%%/roundup/cgi/PageTemplates/Expressions.pyc
 %%PYTHON_SITELIBDIR%%/roundup/cgi/PageTemplates/Expressions.pyo
+%%PYTHON_SITELIBDIR%%/roundup/cgi/PageTemplates/GlobalTranslationService.py
+%%PYTHON_SITELIBDIR%%/roundup/cgi/PageTemplates/GlobalTranslationService.pyc
+%%PYTHON_SITELIBDIR%%/roundup/cgi/PageTemplates/GlobalTranslationService.pyo
 %%PYTHON_SITELIBDIR%%/roundup/cgi/PageTemplates/MultiMapping.py
 %%PYTHON_SITELIBDIR%%/roundup/cgi/PageTemplates/MultiMapping.pyc
 %%PYTHON_SITELIBDIR%%/roundup/cgi/PageTemplates/MultiMapping.pyo
@@ -82,6 +78,9 @@ bin/roundup-server
 %%PYTHON_SITELIBDIR%%/roundup/cgi/PageTemplates/__init__.py
 %%PYTHON_SITELIBDIR%%/roundup/cgi/PageTemplates/__init__.pyc
 %%PYTHON_SITELIBDIR%%/roundup/cgi/PageTemplates/__init__.pyo
+%%PYTHON_SITELIBDIR%%/roundup/cgi/TAL/DummyEngine.py
+%%PYTHON_SITELIBDIR%%/roundup/cgi/TAL/DummyEngine.pyc
+%%PYTHON_SITELIBDIR%%/roundup/cgi/TAL/DummyEngine.pyo
 %%PYTHON_SITELIBDIR%%/roundup/cgi/TAL/HTMLParser.py
 %%PYTHON_SITELIBDIR%%/roundup/cgi/TAL/HTMLParser.pyc
 %%PYTHON_SITELIBDIR%%/roundup/cgi/TAL/HTMLParser.pyo
@@ -100,6 +99,9 @@ bin/roundup-server
 %%PYTHON_SITELIBDIR%%/roundup/cgi/TAL/TALParser.py
 %%PYTHON_SITELIBDIR%%/roundup/cgi/TAL/TALParser.pyc
 %%PYTHON_SITELIBDIR%%/roundup/cgi/TAL/TALParser.pyo
+%%PYTHON_SITELIBDIR%%/roundup/cgi/TAL/TranslationContext.py
+%%PYTHON_SITELIBDIR%%/roundup/cgi/TAL/TranslationContext.pyc
+%%PYTHON_SITELIBDIR%%/roundup/cgi/TAL/TranslationContext.pyo
 %%PYTHON_SITELIBDIR%%/roundup/cgi/TAL/XMLParser.py
 %%PYTHON_SITELIBDIR%%/roundup/cgi/TAL/XMLParser.pyc
 %%PYTHON_SITELIBDIR%%/roundup/cgi/TAL/XMLParser.pyo
@@ -109,6 +111,12 @@ bin/roundup-server
 %%PYTHON_SITELIBDIR%%/roundup/cgi/TAL/markupbase.py
 %%PYTHON_SITELIBDIR%%/roundup/cgi/TAL/markupbase.pyc
 %%PYTHON_SITELIBDIR%%/roundup/cgi/TAL/markupbase.pyo
+%%PYTHON_SITELIBDIR%%/roundup/cgi/TAL/talgettext.py
+%%PYTHON_SITELIBDIR%%/roundup/cgi/TAL/talgettext.pyc
+%%PYTHON_SITELIBDIR%%/roundup/cgi/TAL/talgettext.pyo
+%%PYTHON_SITELIBDIR%%/roundup/cgi/TranslationService.py
+%%PYTHON_SITELIBDIR%%/roundup/cgi/TranslationService.pyc
+%%PYTHON_SITELIBDIR%%/roundup/cgi/TranslationService.pyo
 %%PYTHON_SITELIBDIR%%/roundup/cgi/ZTUtils/Batch.py
 %%PYTHON_SITELIBDIR%%/roundup/cgi/ZTUtils/Batch.pyc
 %%PYTHON_SITELIBDIR%%/roundup/cgi/ZTUtils/Batch.pyo
@@ -124,6 +132,9 @@ bin/roundup-server
 %%PYTHON_SITELIBDIR%%/roundup/cgi/actions.py
 %%PYTHON_SITELIBDIR%%/roundup/cgi/actions.pyc
 %%PYTHON_SITELIBDIR%%/roundup/cgi/actions.pyo
+%%PYTHON_SITELIBDIR%%/roundup/cgi/apache.py
+%%PYTHON_SITELIBDIR%%/roundup/cgi/apache.pyc
+%%PYTHON_SITELIBDIR%%/roundup/cgi/apache.pyo
 %%PYTHON_SITELIBDIR%%/roundup/cgi/cgitb.py
 %%PYTHON_SITELIBDIR%%/roundup/cgi/cgitb.pyc
 %%PYTHON_SITELIBDIR%%/roundup/cgi/cgitb.pyo
@@ -142,9 +153,15 @@ bin/roundup-server
 %%PYTHON_SITELIBDIR%%/roundup/cgi/zLOG.py
 %%PYTHON_SITELIBDIR%%/roundup/cgi/zLOG.pyc
 %%PYTHON_SITELIBDIR%%/roundup/cgi/zLOG.pyo
+%%PYTHON_SITELIBDIR%%/roundup/configuration.py
+%%PYTHON_SITELIBDIR%%/roundup/configuration.pyc
+%%PYTHON_SITELIBDIR%%/roundup/configuration.pyo
 %%PYTHON_SITELIBDIR%%/roundup/date.py
 %%PYTHON_SITELIBDIR%%/roundup/date.pyc
 %%PYTHON_SITELIBDIR%%/roundup/date.pyo
+%%PYTHON_SITELIBDIR%%/roundup/demo.py
+%%PYTHON_SITELIBDIR%%/roundup/demo.pyc
+%%PYTHON_SITELIBDIR%%/roundup/demo.pyo
 %%PYTHON_SITELIBDIR%%/roundup/exceptions.py
 %%PYTHON_SITELIBDIR%%/roundup/exceptions.pyc
 %%PYTHON_SITELIBDIR%%/roundup/exceptions.pyo
@@ -169,12 +186,12 @@ bin/roundup-server
 %%PYTHON_SITELIBDIR%%/roundup/mailgw.py
 %%PYTHON_SITELIBDIR%%/roundup/mailgw.pyc
 %%PYTHON_SITELIBDIR%%/roundup/mailgw.pyo
+%%PYTHON_SITELIBDIR%%/roundup/msgfmt.py
+%%PYTHON_SITELIBDIR%%/roundup/msgfmt.pyc
+%%PYTHON_SITELIBDIR%%/roundup/msgfmt.pyo
 %%PYTHON_SITELIBDIR%%/roundup/password.py
 %%PYTHON_SITELIBDIR%%/roundup/password.pyc
 %%PYTHON_SITELIBDIR%%/roundup/password.pyo
-%%PYTHON_SITELIBDIR%%/roundup/rcsv.py
-%%PYTHON_SITELIBDIR%%/roundup/rcsv.pyc
-%%PYTHON_SITELIBDIR%%/roundup/rcsv.pyo
 %%PYTHON_SITELIBDIR%%/roundup/rfc2822.py
 %%PYTHON_SITELIBDIR%%/roundup/rfc2822.pyc
 %%PYTHON_SITELIBDIR%%/roundup/rfc2822.pyo
@@ -187,6 +204,12 @@ bin/roundup-server
 %%PYTHON_SITELIBDIR%%/roundup/scripts/roundup_admin.py
 %%PYTHON_SITELIBDIR%%/roundup/scripts/roundup_admin.pyc
 %%PYTHON_SITELIBDIR%%/roundup/scripts/roundup_admin.pyo
+%%PYTHON_SITELIBDIR%%/roundup/scripts/roundup_demo.py
+%%PYTHON_SITELIBDIR%%/roundup/scripts/roundup_demo.pyc
+%%PYTHON_SITELIBDIR%%/roundup/scripts/roundup_demo.pyo
+%%PYTHON_SITELIBDIR%%/roundup/scripts/roundup_gettext.py
+%%PYTHON_SITELIBDIR%%/roundup/scripts/roundup_gettext.pyc
+%%PYTHON_SITELIBDIR%%/roundup/scripts/roundup_gettext.pyo
 %%PYTHON_SITELIBDIR%%/roundup/scripts/roundup_mailgw.py
 %%PYTHON_SITELIBDIR%%/roundup/scripts/roundup_mailgw.pyc
 %%PYTHON_SITELIBDIR%%/roundup/scripts/roundup_mailgw.pyo
@@ -196,22 +219,26 @@ bin/roundup-server
 %%PYTHON_SITELIBDIR%%/roundup/security.py
 %%PYTHON_SITELIBDIR%%/roundup/security.pyc
 %%PYTHON_SITELIBDIR%%/roundup/security.pyo
+%%PYTHON_SITELIBDIR%%/roundup/support.py
+%%PYTHON_SITELIBDIR%%/roundup/support.pyc
+%%PYTHON_SITELIBDIR%%/roundup/support.pyo
 %%PYTHON_SITELIBDIR%%/roundup/token.py
 %%PYTHON_SITELIBDIR%%/roundup/token.pyc
 %%PYTHON_SITELIBDIR%%/roundup/token.pyo
 %%PYTHON_SITELIBDIR%%/roundup/version_check.py
 %%PYTHON_SITELIBDIR%%/roundup/version_check.pyc
 %%PYTHON_SITELIBDIR%%/roundup/version_check.pyo
+share/locale/de/LC_MESSAGES/roundup.mo
+share/locale/en/LC_MESSAGES/roundup.mo
+share/locale/fr/LC_MESSAGES/roundup.mo
+share/locale/ru/LC_MESSAGES/roundup.mo
 %%DATADIR%%/cgi-bin/roundup.cgi
 %%DATADIR%%/templates/classic/TEMPLATE-INFO.txt
-%%DATADIR%%/templates/classic/__init__.py
-%%DATADIR%%/templates/classic/config.py
-%%DATADIR%%/templates/classic/dbinit.py
-%%DATADIR%%/templates/classic/detectors/__init__.py
 %%DATADIR%%/templates/classic/detectors/messagesummary.py
 %%DATADIR%%/templates/classic/detectors/nosyreaction.py
 %%DATADIR%%/templates/classic/detectors/statusauditor.py
 %%DATADIR%%/templates/classic/detectors/userauditor.py
+%%DATADIR%%/templates/classic/extensions/README.txt
 %%DATADIR%%/templates/classic/html/_generic.collision.html
 %%DATADIR%%/templates/classic/html/_generic.help.html
 %%DATADIR%%/templates/classic/html/_generic.index.html
@@ -236,13 +263,11 @@ bin/roundup-server
 %%DATADIR%%/templates/classic/html/user.item.html
 %%DATADIR%%/templates/classic/html/user.register.html
 %%DATADIR%%/templates/classic/html/user.rego_progress.html
-%%DATADIR%%/templates/classic/interfaces.py
+%%DATADIR%%/templates/classic/initial_data.py
+%%DATADIR%%/templates/classic/schema.py
 %%DATADIR%%/templates/minimal/TEMPLATE-INFO.txt
-%%DATADIR%%/templates/minimal/__init__.py
-%%DATADIR%%/templates/minimal/config.py
-%%DATADIR%%/templates/minimal/dbinit.py
-%%DATADIR%%/templates/minimal/detectors/__init__.py
 %%DATADIR%%/templates/minimal/detectors/userauditor.py
+%%DATADIR%%/templates/minimal/extensions/README.txt
 %%DATADIR%%/templates/minimal/html/_generic.collision.html
 %%DATADIR%%/templates/minimal/html/_generic.help.html
 %%DATADIR%%/templates/minimal/html/_generic.index.html
@@ -254,11 +279,15 @@ bin/roundup-server
 %%DATADIR%%/templates/minimal/html/user.index.html
 %%DATADIR%%/templates/minimal/html/user.item.html
 %%DATADIR%%/templates/minimal/html/user.register.html
-%%DATADIR%%/templates/minimal/interfaces.py
+%%DATADIR%%/templates/minimal/html/user.rego_progress.html
+%%DATADIR%%/templates/minimal/initial_data.py
+%%DATADIR%%/templates/minimal/schema.py
 @dirrm %%DATADIR%%/templates/minimal/html
+@dirrm %%DATADIR%%/templates/minimal/extensions
 @dirrm %%DATADIR%%/templates/minimal/detectors
 @dirrm %%DATADIR%%/templates/minimal
 @dirrm %%DATADIR%%/templates/classic/html
+@dirrm %%DATADIR%%/templates/classic/extensions
 @dirrm %%DATADIR%%/templates/classic/detectors
 @dirrm %%DATADIR%%/templates/classic
 @dirrm %%DATADIR%%/templates
