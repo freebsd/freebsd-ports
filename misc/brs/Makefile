@@ -22,10 +22,6 @@ MAN1=		bible.1
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} >= 501000
-BROKEN=		"Does not compile"
-.endif
-
 post-patch:
 	@${MV} ${WRKSRC}/brl.c ${WRKSRC}/brl.c.sed
 	${SED} -e "s=%%PREFIX%%=${PREFIX}=g" \
