@@ -1,4 +1,6 @@
 include/synce.h
+include/synce_hash.h
+include/synce_ini.h
 include/synce_log.h
 include/synce_socket.h
 include/synce_types.h
