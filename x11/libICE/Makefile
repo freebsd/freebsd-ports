@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	libICE
-PORTVERSION=	6.3.2
-PORTREVISION=	1
+PORTVERSION=	6.3.3
 CATEGORIES=	x11
 MASTER_SITES=	http://pdx.freedesktop.org/~xlibs/release/
 
