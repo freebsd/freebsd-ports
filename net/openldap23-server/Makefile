@@ -37,27 +37,44 @@ CONFIGURE_ARGS+=	--localstatedir=/var/run --enable-shared --enable-dns
 CONFIGURE_ARGS+= --enable-wrappers
 .endif
 
+BINS=		bin/ldapadd \
+		bin/ldapdelete \
+		bin/ldapmodrdn \
+		bin/ldapsearch \
+		bin/ud \
+		libexec/fax500 \
+		libexec/go500 \
+		libexec/go500gw \
+		libexec/in.xfingerd \
+		libexec/mail500 \
+		libexec/rcpt500 \
+		libexec/rp500 \
+		libexec/slapd \
+		libexec/slurpd \
+		sbin/centipede \
+		sbin/ldbmcat \
+		sbin/ldbmtest \
+		sbin/ldif \
+		sbin/ldif2id2children \
+		sbin/ldif2id2entry \
+		sbin/ldif2index \
+		sbin/ldif2ldbm \
+		bin/ldapmodify \
+		bin/ldappasswd
+
 .include <bsd.port.pre.mk>
 .include "${FILESDIR}/manpages"
 
 pre-build:
-	cd ${WRKSRC} ; make depend
+	cd ${WRKSRC} ; ${MAKE} depend
 
 post-build:
 	${SED} 's,@@PREFIX@@,${PREFIX},g' ${FILESDIR}/slapd.sh >${WRKDIR}/slapd.sh
 
 post-install:
-	strip ${PREFIX}/bin/ldapadd ${PREFIX}/bin/ldapdelete \
-	${PREFIX}/bin/ldapmodrdn ${PREFIX}/bin/ldapsearch ${PREFIX}/bin/ud \
-	${PREFIX}/libexec/fax500 ${PREFIX}/libexec/go500 \
-	${PREFIX}/libexec/go500gw ${PREFIX}/libexec/in.xfingerd \
-	${PREFIX}/libexec/mail500 ${PREFIX}/libexec/rcpt500 \
-	${PREFIX}/libexec/rp500 ${PREFIX}/libexec/slapd \
-	${PREFIX}/libexec/slurpd ${PREFIX}/sbin/centipede \
-	${PREFIX}/sbin/ldbmcat ${PREFIX}/sbin/ldbmtest ${PREFIX}/sbin/ldif \
-	${PREFIX}/sbin/ldif2id2children ${PREFIX}/sbin/ldif2id2entry \
-	${PREFIX}/sbin/ldif2index ${PREFIX}/sbin/ldif2ldbm \
-	${PREFIX}/bin/ldapmodify ${PREFIX}/bin/ldappasswd
+.for f in ${BINS}
+	strip ${PREFIX}/${f}
+.endfor
 	${INSTALL_SCRIPT} ${WRKDIR}/slapd.sh ${PREFIX}/etc/rc.d/slapd.sh.sample
 
 .include <bsd.port.post.mk>
