@@ -7129,6 +7129,7 @@ pear-Net_SMTP	ports/net/pear-Net_SMTP
 pear-Net_Sieve	ports/net/pear-Net_Sieve
 pear-Net_Socket	ports/net/pear-Net_Socket
 pear-Net_URL	ports/net/pear-Net_URL
+pear-OLE	ports/devel/pear-OLE
 pear-PEAR	ports/devel/pear-PEAR
 pear-PHPUnit	ports/devel/pear-PHPUnit
 pear-XML_Parser	ports/devel/pear-XML_Parser
