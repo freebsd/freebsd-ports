@@ -9,7 +9,7 @@
 PORTNAME=	qmc
 PORTVERSION=	0.92b3
 CATEGORIES=	misc
-MASTER_SITES=	http://www.pollaknet.at/qmc/program/
+MASTER_SITES=	http://qmc.pollaknet.at/program/
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/b/bbeta/}
 
 MAINTAINER=	ports@FreeBSD.org
@@ -18,9 +18,9 @@ COMMENT=	Quine-McClusky process simplification tool
 NO_WRKSUBDIR=	yes
 
 do-build:
-	@(cd ${WRKSRC} ; \
+	@cd ${WRKSRC} ; \
 	  ${RM} -f *.o ; \
-	  ${CXX} ${CXXFLAGS} -I. *.cc -o qmc)
+	  ${CXX} ${CXXFLAGS} -I. *.cc -o qmc
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/qmc ${PREFIX}/bin
