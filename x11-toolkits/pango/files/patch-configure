@@ -1,0 +1,20 @@
+
+$FreeBSD$
+
+--- configure	2001/08/01 16:52:43	1.1
++++ configure	2001/08/01 16:52:52
+@@ -7671,10 +7671,10 @@
+ s%@INSTALL_DATA@%$INSTALL_DATA%g
+ s%@PACKAGE@%$PACKAGE%g
+ s%@VERSION@%$VERSION%g
+-s%@ACLOCAL@%$ACLOCAL%g
+-s%@AUTOCONF@%$AUTOCONF%g
+-s%@AUTOMAKE@%$AUTOMAKE%g
+-s%@AUTOHEADER@%$AUTOHEADER%g
++s%@ACLOCAL@%/usr/bin/true%g
++s%@AUTOCONF@%/usr/bin/true%g
++s%@AUTOMAKE@%/usr/bin/true%g
++s%@AUTOHEADER@%/usr/bin/true%g
+ s%@MAKEINFO@%$MAKEINFO%g
+ s%@SET_MAKE@%$SET_MAKE%g
+ s%@CC@%$CC%g
