@@ -4786,6 +4786,7 @@ p5-CDDB-File	ports/audio/p5-CDDB-File
 p5-CDDB_get	ports/audio/p5-CDDB_get
 p5-CGI-Application	ports/www/p5-CGI-Application
 p5-CGI-Cache	ports/www/p5-CGI-Cache
+p5-CGI-Session	ports/www/p5-CGI-Session
 p5-CGI-SpeedyCGI	ports/www/p5-CGI-SpeedyCGI
 p5-CGI.pm	ports/www/p5-CGI.pm
 p5-Cache-Cache	ports/devel/p5-Cache-Cache
