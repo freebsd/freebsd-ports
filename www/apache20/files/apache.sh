@@ -19,7 +19,7 @@
 #                             Set it to yes to run `limits $limits_args`
 #                             just before apache starts.
 # apache2_flags (str):        Set to "" by default.
-#                             Extra flags passed to start command
+#                             Extra flags passed to start command.
 # apache2limits_args (str):   Default to "-e -C daemon"
 #                             Arguments of pre-start limits run.
 #

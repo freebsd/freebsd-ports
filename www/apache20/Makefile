@@ -146,7 +146,7 @@ show-options:
 	@${SED} -ne 's/^##//p' ${APACHEDIR}/Makefile.doc
 
 show-categories:
-.for category in ${ALL_MODULES_CATEGORIES:S/SLAVE_PORT//}
+.for category in ${ALL_MODULES_CATEGORIES}
 	@${ECHO_MSG} "${category} contains these modules:"
 	@${ECHO_MSG} "  ${${category}_MODULES}"
 .endfor
@@ -172,9 +172,9 @@ pre-everything::
 	@${ECHO_MSG}	" To disable a module category: WITHOUT_<CATEGORY>_MODULES"
 	@${ECHO_MSG}	""
 	@${ECHO_MSG}	" Per default categories are:"
-	@${ECHO_MSG}	"  ${DEFAULT_MODULES_CATEGORIES:C/SLAVE_PORT//}"
+	@${ECHO_MSG}	"  ${DEFAULT_MODULES_CATEGORIES}"
 	@${ECHO_MSG}	" Categories available:"
-	@${ECHO_MSG}	"  ${ALL_MODULES_CATEGORIES:C/SLAVE_PORT//}"
+	@${ECHO_MSG}	"  ${ALL_MODULES_CATEGORIES}"
 	@${ECHO_MSG}	""
 	@${ECHO_MSG}	"  To see all available knobs, type make show-options"
 	@${ECHO_MSG}	"  To see all modules in different categories, type make show-categories"
@@ -193,10 +193,8 @@ post-patch:
 	@${RM} -f ${WRKSRC}/docs/docroot/*.bak
 	@${SED} ${RC_SCRIPTS_SUB:S/$/!g/:S/^/ -e s!%%/:S/=/%%!/} \
 		${FILESDIR}/apache.sh > ${WRKDIR}/apache2.sh
-.if !defined(WITH_APR_FROM_PORTS)
 	@${SED} ${RC_SCRIPTS_SUB:S/$/!g/:S/^/ -e s!%%/:S/=/%%!/} \
 		${FILESDIR}/apache2libs.sh > ${WRKDIR}/apache2libs.sh
-.endif
 	@${RM} -f ${WRKSRC}/docs/manual/index.html.ko.euc-kr
 	@${REINPLACE_CMD} -e 's," PLATFORM ",FreeBSD,' \
 			${WRKSRC}/server/core.c

@@ -121,6 +121,11 @@ do-install:
 IGNORE=	"Sorry, ${SLAVENAME} and ${PORTNAME} versions are out of sync"
 .endif
 
+.if defined(SLAVE_PORT_MODULES)
+DEFAULT_MODULES_CATEGORIES+=	SLAVE_PORT
+ALL_MODULES_CATEGORIES+=	SLAVE_PORT
+.endif
+
 # Module selection
 .for category in ${DEFAULT_MODULES_CATEGORIES}
 DEFAULT_MODULES+=	${${category}_MODULES}
