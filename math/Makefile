@@ -184,6 +184,7 @@
     SUBDIR += py-numeric17
     SUBDIR += py-probstat
     SUBDIR += py-scientific
+    SUBDIR += qgfe
     SUBDIR += qhull
     SUBDIR += qscanplot
     SUBDIR += qalculate
