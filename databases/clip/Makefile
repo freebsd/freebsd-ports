@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	clip
-PORTVERSION=	1.1.5.1
-PORTREVISION=	1
+PORTVERSION=	1.1.9.1
 CATEGORIES=	databases lang
 MASTER_SITES=	ftp://ftp.linux.ru.net/mirrors/clip/	\
 		ftp://ftp.lastik.ru/clip/		\
@@ -26,8 +25,6 @@ WANT_GNOME=	yes
 
 .if ${ARCH} != "i386"
 BROKEN=		"Does not compile on !i386"
-.else
-BROKEN=		"Broken pkg-plist"
 .endif
 DEPRECATED=	${BROKEN}
 EXPIRATION_DATE=2004-06-18
@@ -80,7 +77,7 @@ USE_REINPLACE=		yes
 REINPLACE_ARGS=		-i ""
 USE_XLIB=		yes
 USE_XPM=		yes
-USE_GNOME=		gtk12
+USE_GNOME=		gtk12 gtk20
 HAS_CONFIGURE=		yes
 CONFIGURE_WRKSRC=	${WRKSRC}/clip
 ALL_TARGET=		local
