@@ -12,7 +12,7 @@ CATEGORIES=	devel
 MASTER_SITES=	ftp://ftp.stack.nl/pub/users/dimitri/
 EXTRACT_SUFX=	.src.tar.gz
 
-MAINTAINER=	bsdport@ddm.wox.org
+MAINTAINER=	kde@freebsd.org
 
 .ifndef NOPORTDOCS
 BUILD_DEPENDS=	dot:${PORTSDIR}/graphics/graphviz
