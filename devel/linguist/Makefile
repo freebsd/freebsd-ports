@@ -13,6 +13,8 @@ DISTNAME=	${PORTNAME}-pre
 
 MAINTAINER=	sobomax@FreeBSD.org
 
+BUILD_DEPENDS=	tmake:${PORTSDIR}/devel/tmake
+
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
 USE_QT2=	yes
