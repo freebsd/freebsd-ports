@@ -186,6 +186,7 @@
     SUBDIR += play
     SUBDIR += playmidi
     SUBDIR += py-ao
+    SUBDIR += py-ogg
     SUBDIR += py-xmms
     SUBDIR += pysol-sound-server
     SUBDIR += quelcom
