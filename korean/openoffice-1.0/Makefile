@@ -10,6 +10,6 @@ CATEGORIES=	korean editors
 LANG_PKGNAME=	ko
 LANG_EXT=	82
 LANG_CONFIGURE_ARG=	KOREAN
-MASTERDIR=	${.CURDIR}/../../editors/openoffice
+MASTERDIR=	${.CURDIR}/../../editors/openoffice-1.0
 
 .include "${MASTERDIR}/Makefile"

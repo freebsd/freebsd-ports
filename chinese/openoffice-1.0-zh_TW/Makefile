@@ -12,6 +12,6 @@ LANG_SUFFIX=	TW
 LANG_EXT=	88
 LANG_CONFIGURE_ARG=	CHINTRAD
 BUILD_DEPENDS+=	${PREFIX}/share/fonts/TrueType/bsmi00lp.ttf:${PORTSDIR}/chinese/arphicttf
-MASTERDIR=	${.CURDIR}/../../editors/openoffice
+MASTERDIR=	${.CURDIR}/../../editors/openoffice-1.0
 
 .include "${MASTERDIR}/Makefile"
