@@ -412,6 +412,7 @@
     SUBDIR += libical
     SUBDIR += libidn
     SUBDIR += libltdl15
+    SUBDIR += libmatheval
     SUBDIR += libmba
     SUBDIR += libmcve
     SUBDIR += libmimedir
