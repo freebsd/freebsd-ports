@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.12 1997/06/04 03:47:25 asami Exp $
+# $Id: Makefile,v 1.13 1997/07/07 11:28:05 max Exp $
 #
 
     SUBDIR += aftp
@@ -16,6 +16,7 @@
     SUBDIR += prodosemu
     SUBDIR += sim6811
     SUBDIR += spim
+    SUBDIR += stella
     SUBDIR += tkhfs
     SUBDIR += vgb
     SUBDIR += vmsbackup
