@@ -1,0 +1,28 @@
+--- Arena/Implementation/png.c.orig	Tue Aug 20 02:38:23 1996
++++ Arena/Implementation/png.c	Thu Apr 22 15:24:44 1999
+@@ -65,25 +65,6 @@
+   }
+ }
+ 
+-void
+-png_error(png_struct *png_ptr, char *message)
+-{
+-  fprintf(stderr,"libpng error: %s\n", message);
+-  /* Warn("libpng error: %s\n", message); */
+-  longjmp(png_ptr->jmpbuf, 1);
+-}
+-
+-void
+-png_warning(png_struct *png_ptr, char *message)
+-{
+-  if (!png_ptr)
+-    return;
+-
+-  fprintf(stderr,"libpng warning: %s\n", message);
+-  /* Warn("libpng warning: %s\n", message); */
+-}
+-
+-
+ /* Read image into displays 1,2 or 4 bit deep */
+ unsigned char *ReadPNGImage_1_2_4(png_struct *png_ptr, png_info *info_ptr, png_byte *png_image) 
+ {
