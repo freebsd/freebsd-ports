@@ -1,6 +1,17 @@
 --- config/cf/Imake.rules.orig	Wed Mar  8 00:54:17 2000
 +++ config/cf/Imake.rules	Wed Apr 12 18:00:00 2000
-@@ -1437,7 +1437,7 @@
+@@ -1297,8 +1297,8 @@
+ 									@@\
+ dest.suffix.html: file.man RmanCmdDependency				@@\
+ 	RemoveFiles(dest.suffix.html dest.suffix-html)			@@\
+-	RunProgram(RMAN,$(RMANOPTIONS) < file.man > dest.suffix-html) &&\ @@\
+-	  $(MV) dest.suffix-html $@					@@\
++	RunProgram(RMAN,$(RMANOPTIONS) < file.man > dest.suffix-html) && \ @@\
++	  $(MV) dest.suffix-html dest.suffix.html			@@\
+ 									@@\
+ install.man:: dest.suffix.html						@@\
+ 	MakeDir($(DESTDIR)$(DOCHTMLDIR))				@@\
+@@ -1533,7 +1533,7 @@
  	MakeDir(Concat($(DESTDIR),npath/mdir))				@@\
  	@MakeFlagsToShellFlags(i,set +e); \				@@\
  	if [ -d Concat($(DESTDIR),opath/cdir) ]; then \			@@\
