@@ -1,0 +1,20 @@
+Local/Applications/ImageViewer.app/ImageViewer
+Local/Applications/ImageViewer.app/Resources/COPYING
+Local/Applications/ImageViewer.app/Resources/FileIcon_.gif.tiff
+Local/Applications/ImageViewer.app/Resources/FileIcon_.jpg.tiff
+Local/Applications/ImageViewer.app/Resources/FileIcon_.tiff.tiff
+Local/Applications/ImageViewer.app/Resources/FileIcon_.xpm.tiff
+Local/Applications/ImageViewer.app/Resources/ImageViewer.desktop
+Local/Applications/ImageViewer.app/Resources/ImageViewer.tiff
+Local/Applications/ImageViewer.app/Resources/ImageViewerInfo.plist
+Local/Applications/ImageViewer.app/Resources/Info-gnustep.plist
+Local/Applications/ImageViewer.app/Resources/README
+Local/Applications/ImageViewer.app/Resources/genericImage.tiff
+Local/Applications/ImageViewer.app/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu/ImageViewer
+Local/Applications/ImageViewer.app/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu/library_paths.openapp
+Local/Applications/ImageViewer.app/stamp.make
+@dirrm Local/Applications/ImageViewer.app/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu
+@dirrm Local/Applications/ImageViewer.app/%%GNU_ARCH%%/%%OPSYS%%
+@dirrm Local/Applications/ImageViewer.app/%%GNU_ARCH%%
+@dirrm Local/Applications/ImageViewer.app/Resources
+@dirrm Local/Applications/ImageViewer.app
