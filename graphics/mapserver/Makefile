@@ -6,17 +6,17 @@
 #
 
 PORTNAME=		mapserver
-PORTVERSION=		4.0.2
-PORTREVISION?=		2
+PORTVERSION=		4.2.3
 CATEGORIES=		graphics www misc
 MASTER_SITES=		http://cvs.gis.umn.edu/dist/
 
-MAINTAINER=		rand@meridian-enviro.com
+MAINTAINER=		mharo@FreeBSD.org
 COMMENT=		System for developing web-based GIS applications
 
 LIB_DEPENDS=		gd.4:${PORTSDIR}/graphics/gd \
-			proj.3:${PORTSDIR}/graphics/proj
+			proj.4:${PORTSDIR}/graphics/proj
 
+USE_GMAKE=		yes
 GNU_CONFIGURE=		yes
 CONFIGURE_ARGS=		--enable-runpath \
 			--with-gd=${LOCALBASE} \
@@ -26,8 +26,9 @@ OPTIONS=		TIFF "Support for TIFF (but not GeoTIFF) files" off \
 			MING "Support for Macromedia Flash output" off \
 			PDF "Support for PDF output via pdflib" off \
 			GDAL "Support for a number of input raster formats" off \
-			POSTGRESQL "Support for PostgreSQL" off \
+			POSTGIS "Support for PostGIS" off \
 			PHP "Support for MapScript/PHP" off \
+			PERL "Support for MapScript/PERL" off \
 			WMS "Support for web map service server and client" off \
 			WFS "Support for web feature service" off \
 			DEBUG "Enable debugging output" off
@@ -35,8 +36,10 @@ OPTIONS=		TIFF "Support for TIFF (but not GeoTIFF) files" off \
 .include <bsd.port.pre.mk>
 
 .if defined(WITH_TIFF)
+.if !defined(WITH_GDAL)
 LIB_DEPENDS+=		tiff.4:${PORTSDIR}/graphics/tiff
 CONFIGURE_ARGS+=	--with-tiff=${LOCALBASE}
+.endif
 .else
 CONFIGURE_ARGS+=	--without-tiff
 .endif
@@ -63,20 +66,41 @@ CONFIGURE_ARGS+=	--with-wfs --with-wfsclient
 .endif
 
 .if defined(WITH_GDAL)
-BUILD_DEPENDS+=		gdal-config:${PORTSDIR}/graphics/gdal
+LIB_DEPENDS+=		gdal.4:${PORTSDIR}/graphics/gdal
 CONFIGURE_ARGS+=	--with-gdal=${LOCALBASE}/bin/gdal-config \
 			--with-ogr=${LOCALBASE}/bin/gdal-config
 .endif
 
-.if defined(WITH_POSTGRESQL)
-POSTGRESQL_PORT?=	databases/postgresql7
+.if defined(WITH_POSTGIS)
+POSTGRESQL_PORT?=	databases/postgis
 LIB_DEPENDS+=		pq.3:${PORTSDIR}/${POSTGRESQL_PORT}
 CONFIGURE_ARGS+=	--with-postgis=${LOCALBASE}/bin/pg_config
 .endif
 
 .if defined(WITH_PHP)
-BUILD_DEPENDS+=		mod_php4:${PORTSDIR}/www/mod_php4:
+.BEGIN:
+# make sure php was built with regex=system
+	@if [ `grep -q 'define REGEX 0' ${LOCALBASE}/include/php/main/php_config.h` ]; then \
+		${ECHO_MSG} "This port currently requires your php to have been built specifying the"; \
+		${ECHO_MSG} "flag --with-regex=system. To specify this flag when building php from ports,"; \
+		${ECHO_MSG} "use 'WITH_REGEX_TYPE=system'."; \
+		${ECHO_MSG} ""; \
+		sleep 2; \
+	fi
+BUILD_DEPENDS+=		php-config:${PORTSDIR}/www/php4-cgi
 CONFIGURE_ARGS+=	--with-php=${LOCALBASE}
+PHP_EXTENSION_DIR!=	${LOCALBASE}/bin/php-config --extension-dir | ${SED} -e 's,/usr/local/,,'
+PLIST_SUB+=		PHP_EXTENSION_DIR=${PHP_EXTENSION_DIR}
+PLIST_SUB+=		WITH_PHP=""
+.else
+PLIST_SUB+=		WITH_PHP="@comment "
+.endif
+
+.if defined(WITH_PERL)
+USE_PERL5=yes
+PLIST_SUB+=		WITH_PERL=""
+.else
+PLIST_SUB+=		WITH_PERL="@comment "
 .endif
 
 .if defined(WITH_CURL)
@@ -88,12 +112,26 @@ CONFIGURE_ARGS+=	--with-curl=${LOCALBASE}
 CONFIGURE_ARGS+=	--enable-debug
 .endif
 
-PROG_FILES=		mapserv legend scalebar shp2img shp2pdf shptree shptreetst shptreevis sortshp
+PROG_FILES=		legend scalebar shp2img shp2pdf shptree shptreetst shptreevis sortshp
+
+post-build:
+.if defined(WITH_PERL)
+	(cd ${WRKSRC}/mapscript/perl && ${PERL5} Makefile.PL && make)
+.endif
 
 do-install:
 .for f in ${PROG_FILES}
-	${INSTALL_PROGRAM} ${WRKSRC}/${f} ${LOCALBASE}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/${f} ${PREFIX}/bin
 .endfor
-	${INSTALL_SCRIPT} ${WRKSRC}/shp2mysql.pl ${LOCALBASE}/bin/shp2mysql
+	${INSTALL_PROGRAM} ${WRKSRC}/mapserv ${LOCALBASE}/www/cgi-bin/mapserv
+	${INSTALL_SCRIPT} ${WRKSRC}/shp2mysql.pl ${PREFIX}/bin/shp2mysql
+.if defined(WITH_PHP)
+	@${MKDIR} ${LOCALBASE}/${PHP_EXTENSION_DIR}
+	${INSTALL_PROGRAM} ${WRKSRC}/mapscript/php3/php_mapscript.so ${LOCALBASE}/${PHP_EXTENSION_DIR}/
+	${ECHO} "extension=php_mapscript.so" >> ${LOCALBASE}/etc/php/extensions.ini
+.endif
+.if defined(WITH_PERL)
+	(cd ${WRKSRC}/mapscript/perl && make install)
+.endif
 
 .include <bsd.port.post.mk>
