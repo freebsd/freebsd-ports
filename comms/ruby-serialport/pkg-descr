@@ -1,0 +1,5 @@
+Ruby/SerialPort is a Ruby library that allows you to communicate via
+the RS232 port.
+
+Author:	Guillaume Pierronnet <moumar@netcourrier.com>
+WWW:	http://davedd.free.fr/ruby-serialport/
