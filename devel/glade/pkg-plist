@@ -3,7 +3,9 @@ share/doc/glade/README
 share/doc/glade/TODO
 share/doc/glade/developer.txt
 share/doc/glade/file_format.txt
+share/doc/glade/generic.txt
 share/doc/glade/manual.txt
+share/doc/glade/portability.txt
 share/doc/glade/notes.txt
 share/doc/glade/source_code.txt
 @dirrm share/doc/glade
