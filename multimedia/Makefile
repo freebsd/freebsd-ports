@@ -26,6 +26,7 @@
     SUBDIR += fxtv
     SUBDIR += gaim-xmms-remote
     SUBDIR += gavl
+    SUBDIR += gdvrecv
     SUBDIR += gmencoder
     SUBDIR += goggles
     SUBDIR += gopchop

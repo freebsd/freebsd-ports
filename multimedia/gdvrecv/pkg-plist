@@ -1,0 +1,6 @@
+bin/dvrecv
+bin/gdvrecv
+%%PYTHON_SITELIBDIR%%/firewire.so
+share/pixmaps/gdvrecv/camcorder.png
+share/pixmaps/gdvrecv/dv.png
+@dirrm share/pixmaps/gdvrecv
