@@ -8,7 +8,7 @@
 PORTNAME=	si
 PORTVERSION=	0.97.0ra
 MASTER_SITES=	ftp://ftp2.extreme-players.de/hl/mod/si/ \
-		ftp://ftp.task.gda.pl/vol/d33/ftp.extreme-players.de/exp/hl/mod/si/
+		ftp://ftp.clanserver4u.de/exp/hl/mod/si/
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/.//g:S/0r//}-linux
 
 MAINTAINER=	lioux@FreeBSD.org
