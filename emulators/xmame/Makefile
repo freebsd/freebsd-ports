@@ -199,6 +199,7 @@ do-configure:
 		-e "s@/usr/X11R6@${X11BASE}@g" \
 		-e "s@ARCH  = linux@ARCH  = freebsd@g" \
 		-e "s@# X11_DGA@X11_DGA@g" \
+		-e "s@# JOY_USB@JOY_USB@g" \
 		-e "s@= x11@= ${DISPLAY_METHOD}@g" \
 		-e "s@= mame@= ${MAMEMESS}@g" \
 		-e "s@# X86_ASM@${ASM_COMMENT}X86_ASM@g" \
