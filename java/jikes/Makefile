@@ -14,7 +14,7 @@ MAINTAINER=	archie@freebsd.org
 
 MAN1=		jikes.1
 
-HAS_CONFIGURE=	yes
+GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 
 .include <bsd.port.mk>
