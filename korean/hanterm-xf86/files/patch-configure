@@ -1,0 +1,27 @@
+--- configure.orig	Tue Aug 28 14:36:15 2001
++++ configure	Tue Sep 11 18:52:18 2001
+@@ -5956,11 +5956,11 @@
+ 
+ int main (int argc, char **argv)
+ {
+-	const char *jp = "\x1B\x24\x42\x46\x7C\x4B\x5C\x38\x6C";
+-	const char *utf8 = "\xE6\x97\xA5\xE6\x9C\xAC\xE8\xAA\x9E";
+-	char *transbuf = malloc (10), *trans = transbuf;
++	const char *jp = "\xbe\xc8\xb3\xe7\xc7\xcf\xbc\xbc\xbf\xe4";
++	const char *utf8 = "\xec\x95\x88\xeb\x85\x95\xed\x95\x98\xec\x84\xb8\xec\x9a\x94";
++	char *transbuf = malloc (16), *trans = transbuf;
+ 	iconv_t cd;
+-	size_t jp_len = strlen (jp), utf8_len = 10;
++	size_t jp_len = strlen (jp), utf8_len = 16;
+ 	size_t utf8_real_len = strlen (utf8);
+ 
+ #ifdef HAVE_GNU_GET_LIBC_VERSION
+@@ -5969,7 +5969,7 @@
+ 		exit (1);
+ #endif
+ 
+-	cd = iconv_open ("UTF-8", "ISO-2022-JP");
++	cd = iconv_open ("UTF-8", "EUC-KR");
+ 	if (!cd)
+ 		exit (1);
+ 	if (iconv (cd, &jp, &jp_len, &trans, &utf8_len) == -1 || jp_len != 0)
