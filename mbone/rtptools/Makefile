@@ -1,26 +1,22 @@
 # New ports collection makefile for:	rtptools
-# Version required:	1.9
+# Version required:	1.14
 # Date created:		5 January 1998
 # Whom:			fenner
 #
 # $FreeBSD$
 #
 
-DISTNAME=	rtptools-1.9
+DISTNAME=	rtptools-1.14
 CATEGORIES=	mbone
-MASTER_SITES=	ftp://ftp.cs.columbia.edu/pub/schulzrinne/rtptools/
+MASTER_SITES=	http://www.cs.columbia.edu/~hgs/rtptools/src/
 
 MAINTAINER=	fenner@FreeBSD.org
 
-MAKE_ENV=	ARCH=freebsd CC=cc
+GNU_CONFIGURE=	yes
 
-BINFILES=	rtpdump rtpplay rtpsend rtptrans
 DOCFILES=	README CHANGES.html rtptools.html
 
-do-install:
-.for i in ${BINFILES}
-	${INSTALL_PROGRAM} ${WRKSRC}/freebsd/${i} ${PREFIX}/bin
-.endfor
+post-install:
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${PREFIX}/share/doc/rtptools
 .for i in ${DOCFILES}
