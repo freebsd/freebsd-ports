@@ -58,6 +58,11 @@ post-patch:
 	@${ECHO_MSG}  "===>  Applying neXtaw scrollbar patch"
 	@${PATCH} ${PATCH_ARGS} < ${PATCHDIR}/extra-patch-neXtaw
 .endif
+.if defined(WITH_TEKTRONIX)
+post-patch:
+	@${ECHO_MSG}  "===>  Applying Tektronix emulation patch"
+	@${PATCH} ${PATCH_ARGS} < ${PATCHDIR}/extra-patch-Tektronix
+.endif
 
 .endif
 
