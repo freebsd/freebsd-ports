@@ -11,12 +11,23 @@ share/gnome/vino/vino-preferences.glade
 share/gnome/vino/vino-prompt.glade
 share/locale/bg/LC_MESSAGES/vino.mo
 share/locale/bn/LC_MESSAGES/vino.mo
+share/locale/bs/LC_MESSAGES/vino.mo
 share/locale/cs/LC_MESSAGES/vino.mo
+share/locale/da/LC_MESSAGES/vino.mo
+share/locale/de/LC_MESSAGES/vino.mo
+share/locale/el/LC_MESSAGES/vino.mo
 share/locale/en_CA/LC_MESSAGES/vino.mo
 share/locale/en_GB/LC_MESSAGES/vino.mo
 share/locale/es/LC_MESSAGES/vino.mo
+share/locale/eu/LC_MESSAGES/vino.mo
+share/locale/fi/LC_MESSAGES/vino.mo
+share/locale/fr/LC_MESSAGES/vino.mo
 share/locale/gu/LC_MESSAGES/vino.mo
 share/locale/hu/LC_MESSAGES/vino.mo
+share/locale/ja/LC_MESSAGES/vino.mo
+share/locale/ko/LC_MESSAGES/vino.mo
+share/locale/ms/LC_MESSAGES/vino.mo
+share/locale/nb/LC_MESSAGES/vino.mo
 share/locale/nl/LC_MESSAGES/vino.mo
 share/locale/no/LC_MESSAGES/vino.mo
 share/locale/pa/LC_MESSAGES/vino.mo
@@ -27,4 +38,5 @@ share/locale/sq/LC_MESSAGES/vino.mo
 share/locale/sr/LC_MESSAGES/vino.mo
 share/locale/sr@Latn/LC_MESSAGES/vino.mo
 share/locale/sv/LC_MESSAGES/vino.mo
+share/locale/uk/LC_MESSAGES/vino.mo
 @dirrm share/gnome/vino
