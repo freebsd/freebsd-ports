@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	netatalk
-PORTVERSION=	1.5.3.1
-PORTREVISION=	1
+PORTVERSION=	1.5.5
 PORTEPOCH=	1
 CATEGORIES=	net print
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
@@ -60,6 +59,7 @@ CONFIGURE_ARGS+=	--with-did=last
 PLIST_SUB+=	NETATALKCNID="@comment "
 .endif
 GNU_CONFIGURE=	yes
+CONFIGURE_TARGET=       --target=${MACHINE_ARCH}-unknown-freebsd${OSREL}
 USE_GMAKE=	yes
 USE_PERL5=	yes
 FILES=		AppleVolumes.default AppleVolumes.system afpd.conf \

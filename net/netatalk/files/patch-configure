@@ -1,29 +1,39 @@
---- configure.orig	Wed Mar 27 17:20:55 2002
-+++ configure	Sun Mar 31 18:07:57 2002
-@@ -8483,14 +8483,14 @@
+--- configure.orig	Sun Sep  1 12:50:59 2002
++++ configure	Wed Oct  2 22:19:05 2002
+@@ -1499,10 +1499,6 @@
+ 
+ # The aliases save the names the user supplied, while $host etc.
+ # will get canonicalized.
+-test -n "$target_alias" &&
+-  test "$program_prefix$program_suffix$program_transform_name" = \
+-    NONENONEs,x,x, &&
+-  program_prefix=${target_alias}-
+ am__api_version="1.6"
+ # Find a good install program.  We prefer a C program (faster),
+ # so one script is as good as another.  But avoid the broken or
+@@ -12706,13 +12702,13 @@
  			savedldflags="$LDFLAGS"
  			CFLAGS="$CFLAGS -I$db3dir"
  			LDFLAGS="-L$db3libdir $LDFLAGS"
--			echo $ac_n "checking for main in -ldb""... $ac_c" 1>&6
--echo "configure:8488: checking for main in -ldb" >&5
-+			echo $ac_n "checking for main in -ldb3""... $ac_c" 1>&6
-+echo "configure:8488: checking for main in -ldb3" >&5
- ac_lib_var=`echo db'_'main | sed 'y%./+-%__p_%'`
- if eval "test \"`echo '$''{'ac_cv_lib_$ac_lib_var'+set}'`\" = set"; then
-   echo $ac_n "(cached) $ac_c" 1>&6
+-			echo "$as_me:$LINENO: checking for main in -ldb" >&5
+-echo $ECHO_N "checking for main in -ldb... $ECHO_C" >&6
++			echo "$as_me:$LINENO: checking for main in -ldb3" >&5
++echo $ECHO_N "checking for main in -ldb3... $ECHO_C" >&6
+ if test "${ac_cv_lib_db_main+set}" = set; then
+   echo $ECHO_N "(cached) $ECHO_C" >&6
  else
-   ac_save_LIBS="$LIBS"
+   ac_check_lib_save_LIBS=$LIBS
 -LIBS="-ldb  $LIBS"
 +LIBS="-ldb3  $LIBS"
- cat > conftest.$ac_ext <<EOF
- #line 8496 "configure"
+ cat >conftest.$ac_ext <<_ACEOF
+ #line $LINENO "configure"
  #include "confdefs.h"
-@@ -8517,7 +8517,7 @@
-   
+@@ -12759,7 +12755,7 @@
+ 
  				db3found=yes
  				DB3_CFLAGS="-I$db3dir"
 -				DB3_LIBS="-L$db3libdir -ldb"
 +				DB3_LIBS="-L$db3libdir -ldb3"
  				DB3_PATH="`echo $db3dir | sed 's,include/db3$,,'`"
- 			
- else
+ 
+ fi
