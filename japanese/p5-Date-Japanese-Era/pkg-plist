@@ -1,0 +1,12 @@
+lib/perl5/site_perl/%%PERL_VER%%/Date/Japanese/Era.ja.pod
+lib/perl5/site_perl/%%PERL_VER%%/Date/Japanese/Era.pm
+lib/perl5/site_perl/%%PERL_VER%%/Date/Japanese/Era/Table.pm
+lib/perl5/site_perl/%%PERL_VER%%/Date/Japanese/Era/Table/JIS_X0301.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Date/Japanese/Era/.packlist
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/Date/Japanese/Era/Table
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/Date/Japanese/Era
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/Date/Japanese 2>/dev/null || true
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/Date 2>/dev/null || true
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Date/Japanese/Era
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Date/Japanese 2>/dev/null || true
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Date 2>/dev/null || true
