@@ -1,0 +1,11 @@
+--- x11/ui.cpp~	Wed Jan 19 12:54:14 2000
++++ x11/ui.cpp	Thu Dec 21 19:41:38 2000
+@@ -1322,7 +1322,7 @@
+       
+       // Get font.  Use user-specified font if given.
+       // regular size font.
+-      char *theFont = fontName ? fontName : DEFAULT_FONT_NAME;
++      const char *theFont = fontName ? fontName : DEFAULT_FONT_NAME;
+       xvars.font[xvars.dpyMax] = 
+         XLoadQueryFont(xvars.dpy[xvars.dpyMax],theFont);
+       if (!xvars.font[xvars.dpyMax]) {

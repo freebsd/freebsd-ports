@@ -1,6 +1,10 @@
 bin/xevil
-lib/app-defaults/XEvil.iris
-lib/app-defaults/XEvil.mac
-lib/app-defaults/XEvil.sun3
-lib/app-defaults/XEvil.sun4_sparc
-@unexec rmdir %D/lib/app-defaults 2>/dev/null || true
+share/doc/xevil/instructions/UNIXSetControls.gif
+share/doc/xevil/instructions/UNIXShowControls.gif
+share/doc/xevil/instructions/UNIXmenu.gif
+share/doc/xevil/instructions/instructions.html
+share/doc/xevil/instructions/keysdlg.gif
+share/doc/xevil/instructions/optionsdlg.gif
+share/doc/xevil/readme.txt
+@dirrm share/doc/xevil/instructions
+@dirrm share/doc/xevil

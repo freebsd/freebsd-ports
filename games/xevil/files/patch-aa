@@ -1,19 +1,37 @@
-*** utils.h~	Mon Jul 24 22:22:34 1995
---- utils.h	Thu Sep 14 04:28:35 1995
-***************
-*** 54,60 ****
-  
-  
-  // Defines
-! #define MSEC_PER_CLOCK (1.0e3 / CLOCKS_PER_SEC) 
-  
-  #ifndef max
-  #define max(a,b)               (a<b ? b : a)
---- 54,60 ----
-  
-  
-  // Defines
-! #define MSEC_PER_CLOCK 8 // (1.0e3 / CLOCKS_PER_SEC) 
-  
-  #ifndef max
-  #define max(a,b)               (a<b ? b : a)
+--- config.mk.orig	Wed Jan 19 14:19:04 2000
++++ config.mk	Thu Dec 21 19:40:33 2000
+@@ -34,12 +34,12 @@
+ # You can add -DNDEBUG to speed up a release build by removing the assert() 
+ # calls.  But, on a really obscure Linux machine, this caused Xlib to blow up 
+ # internally, so you do so at your own risk.
+-DEBUG_OPT   =   -O #-DNDEBUG
++DEBUG_OPT   =   -DNDEBUG
+ 
+ LINK_OPT    =	
+ 
+ # The string that will be used for making the packaged .tar.Z file.
+-VERSION     =   2.01
++VERSION     =   2.02
+ 
+ #SRC_DIR and WORK_DIR are only used for `make workdir`
+ SRC_DIR		= 	/mit/hardts/src/X/xevil1.4.9
+@@ -83,7 +83,9 @@
+ #### Attempt to guesss the host architecture using the HOSTYPE and hostype
+ # variables.  Then call self with the architecture name.
+ default:
+-	@if [ $${HOSTTYPE-bob} != bob ] ; then \
++	@if [ $${OPSYS-bob} != bob ]; then \
++		archit=$$OPSYS ; \
++	elif [ $${HOSTTYPE-bob} != bob ] ; then \
+ 		archit=$$HOSTTYPE ; \
+ 	elif [ $${hosttype-bob} != bob ] ; then \
+ 		archit=$$hosttype ; \
+@@ -162,7 +164,7 @@
+ # XEvil is all screwed up.
+ freebsd:
+ 	@$(MAKE) CC="c++" \
+-CFLAGS="-DUSE_RANDOM -DPROTECTED_IS_PUBLIC -DMSEC_PER_CLOCK=8 -DUNAME_USR_BIN" \
++CFLAGS="-DUSE_RANDOM -DUSE_UINT_NET_LENGTH -DUNAME_USR_BIN ${CFLAGS}" \
+ INCL_DIRS="-I/usr/X11R6/include" LIBS_DIRS="-L/usr/X11R6/lib" \
+ OBJ_DIR=$(DEPTH)/x11/FREEBSD PCKG_NAME="freebsd" \
+ LIBS="-lXpm -lX11 -lm" $(TARGETS)
