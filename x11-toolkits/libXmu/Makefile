@@ -8,7 +8,7 @@
 PORTNAME=	libXmu
 PORTVERSION=	6.2.3
 CATEGORIES=	x11-toolkits
-MASTER_SITES=	http://pdx.freedesktop.org/~xlibs/release/
+MASTER_SITES=	http://freedesktop.org/~ajax/xlibs-release/
 
 MAINTAINER=	x11@FreeBSD.org
 COMMENT=	X Miscellaneous Utilities libraries

@@ -8,7 +8,7 @@
 PORTNAME=	randrext
 PORTVERSION=	1.0
 CATEGORIES=	x11
-MASTER_SITES=	http://pdx.freedesktop.org/~xlibs/release/
+MASTER_SITES=	http://freedesktop.org/~ajax/xlibs-release/
 
 MAINTAINER=	x11@FreeBSD.org
 COMMENT=	Header files and documentation for the X Resize and Rotate extension

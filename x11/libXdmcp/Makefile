@@ -8,7 +8,7 @@
 PORTNAME=	libXdmcp
 PORTVERSION=	0.1.3
 CATEGORIES=	x11
-MASTER_SITES=	http://pdx.freedesktop.org/~xlibs/release/:fdo \
+MASTER_SITES=	http://freedesktop.org/~ajax/xlibs-release/:fdo \
 		${MASTER_SITE_LOCAL:S/$/:local/}
 MASTER_SITE_SUBDIR=	anholt/:local
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:fdo \
