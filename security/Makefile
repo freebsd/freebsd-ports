@@ -153,6 +153,7 @@
     SUBDIR += py-gnupg
     SUBDIR += py-m2crypto
     SUBDIR += py-rijndael
+    SUBDIR += qident
     SUBDIR += qtfw
     SUBDIR += racoon
     SUBDIR += radiusniff
