@@ -1,0 +1,26 @@
+#!/bin/sh
+#
+# $FreeBSD$
+#
+
+PAX=/bin/pax
+ECHO_CMD=echo
+RM=/bin/rm
+BACKUPDIR=/var/backups
+
+PREFIX=${PKG_PREFIX:-/usr}
+if [ "${PREFIX}" = "/usr" ]; then
+  MANPREFIX="${PREFIX}/share"
+else
+  MANPREFIX="${PREFIX}"
+fi
+
+case $2 in
+POST-DEINSTALL)
+  if [ -e "${BACKUPDIR}/pkg_install.tgz" ]; then
+    ${PAX} -r -pe -z -f "${BACKUPDIR}/pkg_install.tgz"
+    ${RM} "${BACKUPDIR}/pkg_install.tgz"
+    ${ECHO_CMD} "===>  Base pkg_install restored."
+  fi
+  ;;
+esac

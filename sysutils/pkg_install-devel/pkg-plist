@@ -1,0 +1,7 @@
+sbin/pkg_add
+%%OPENSSL%%sbin/pkg_check
+sbin/pkg_create
+sbin/pkg_delete
+sbin/pkg_info
+%%OPENSSL%%sbin/pkg_sign
+sbin/pkg_version

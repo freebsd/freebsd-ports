@@ -1,0 +1,44 @@
+#!/bin/sh
+#
+# $FreeBSD$
+#
+
+PAX=/bin/pax
+ECHO_CMD=echo
+MKDIR="/bin/mkdir -p"
+RM=/bin/rm
+BACKUPDIR=/var/backups
+
+TOOLS="add check create delete info sign update version"
+
+PREFIX=${PKG_PREFIX:-/usr}
+if [ "${PREFIX}" = "/usr" ]; then
+  MANPREFIX="${PREFIX}/share"
+else
+  MANPREFIX="${PREFIX}"
+fi
+
+case $2 in
+PRE-INSTALL)
+  if [ -e "${BACKUPDIR}/pkg_install.tgz" ]; then
+    ${ECHO_CMD} "===>  Please remove \`\`${BACKUPDIR}/pkg_install.tgz'' manually."
+    exit 1
+  fi
+  if [ "${PREFIX}" = "/usr" ]; then
+    files=""
+    for tool in ${TOOLS}; do
+      if [ -e "${PREFIX}/sbin/pkg_${tool}" ]; then
+        files="${files} ${PREFIX}/sbin/pkg_${tool}"
+      fi
+      if [ -e "${MANPREFIX}/man/man1/pkg_${tool}.1.gz" ]; then
+        files="${files} ${MANPREFIX}/man/man1/pkg_${tool}.1.gz"
+        ${RM} -f "${MANPREFIX}/man/cat1/pkg_${tool}.1.gz"
+      fi
+    done
+    ${MKDIR} ${BACKUPDIR}
+    ${PAX} -w -z -f "${BACKUPDIR}/pkg_install.tgz" ${files}
+    ${RM} -f ${files}
+    ${ECHO_CMD} "===>  Base pkg_install saved."
+  fi
+  ;;
+esac
