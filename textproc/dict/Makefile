@@ -21,9 +21,10 @@ LIB_DEPENDS=	ltdl.4:${PORTSDIR}/devel/libltdl
 USE_BISON=	yes
 USE_REINPLACE=	yes
 USE_LIBTOOL_VER=	14
-CFLAGS+=	-I${PREFIX}/include
 CONFIGURE_ARGS=	--without-local-zlib --with-cflags="${CFLAGS}" \
 		--with-etcdir=${PREFIX}/etc
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
+		LDFLAGS="-L${LOCALBASE}/lib"
 USE_GMAKE=	yes
 ALL_TARGET=	dict
 INSTALL_TARGET=	install.dict

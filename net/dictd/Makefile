@@ -25,10 +25,10 @@ MAN8=		dictd.8
 USE_REINPLACE=	yes
 USE_BISON=	yes
 USE_LIBTOOL=	yes
-CFLAGS+=	-I${PREFIX}/include
 CONFIGURE_ARGS=	--with-etcdir=${PREFIX}/etc --with-cflags="${CFLAGS}" \
 		--without-local-zlib
-CONFIGURE_ENV=	CFLAGS="${CFLAGS}"
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
+		LDFLAGS="-L${LOCALBASE}/lib"
 USE_GMAKE=	yes
 
 ALL_TARGET=	dictd dictzip
