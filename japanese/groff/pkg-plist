@@ -73,7 +73,9 @@ share/groff/tmac/tmac.Xps
 share/groff/tmac/tmac.latin1
 share/groff/tmac/tmac.lj4
 share/groff/tmac/eqnrc
+share/groff/tmac/eqnrc.orig
 share/groff/tmac/troffrc
+share/groff/tmac/troffrc.orig
 share/groff/tmac/tmac.s
 share/groff/tmac/tmac.safer
 share/groff/tmac/tmac.e
@@ -86,6 +88,7 @@ share/groff/tmac/mdoc/doc-common
 share/groff/tmac/mdoc/doc-ditroff
 share/groff/tmac/mdoc/doc-nroff
 share/groff/tmac/mdoc/doc-syms
+@dirrm share/groff/tmac/mdoc
 share/groff/tmac/mm/0.MT
 share/groff/tmac/mm/5.MT
 share/groff/tmac/mm/4.MT
@@ -93,6 +96,8 @@ share/groff/tmac/mm/ms.cov
 share/groff/tmac/mm/se_ms.cov
 share/groff/tmac/mm/locale
 share/groff/tmac/mm/se_locale
+@dirrm share/groff/tmac/mm
+@dirrm share/groff/tmac
 share/groff/font/devnippon/R
 share/groff/font/devnippon/I
 share/groff/font/devnippon/B
@@ -100,6 +105,7 @@ share/groff/font/devnippon/BI
 share/groff/font/devnippon/M
 share/groff/font/devnippon/G
 share/groff/font/devnippon/DESC
+@dirrm share/groff/font/devnippon
 share/groff/font/devps/generate/Makefile
 share/groff/font/devps/generate/afmname
 share/groff/font/devps/generate/dingbatsmap
@@ -109,6 +115,7 @@ share/groff/font/devps/generate/symbol.sed
 share/groff/font/devps/generate/symbolchars
 share/groff/font/devps/generate/symbolsl.afm
 share/groff/font/devps/generate/textmap
+@dirrm share/groff/font/devps/generate
 share/groff/font/devps/DESC
 share/groff/font/devps/prologue
 share/groff/font/devps/symbolsl.pfa
@@ -154,6 +161,7 @@ share/groff/font/devps/TR
 share/groff/font/devps/ZCMI
 share/groff/font/devps/M
 share/groff/font/devps/G
+@dirrm share/groff/font/devps
 share/groff/font/devdvi/generate/CompileFonts
 share/groff/font/devdvi/generate/Makefile
 share/groff/font/devdvi/generate/msam.map
@@ -165,6 +173,7 @@ share/groff/font/devdvi/generate/texmi.map
 share/groff/font/devdvi/generate/texr.map
 share/groff/font/devdvi/generate/texsy.map
 share/groff/font/devdvi/generate/textt.map
+@dirrm share/groff/font/devdvi/generate
 share/groff/font/devdvi/DESC
 share/groff/font/devdvi/R
 share/groff/font/devdvi/I
@@ -181,19 +190,23 @@ share/groff/font/devdvi/SA
 share/groff/font/devdvi/SB
 share/groff/font/devdvi/M
 share/groff/font/devdvi/G
+@dirrm share/groff/font/devdvi
 share/groff/font/devascii/R
 share/groff/font/devascii/I
 share/groff/font/devascii/B
 share/groff/font/devascii/BI
 share/groff/font/devascii/DESC
+@dirrm share/groff/font/devascii
 share/groff/font/devlatin1/R
 share/groff/font/devlatin1/I
 share/groff/font/devlatin1/B
 share/groff/font/devlatin1/BI
 share/groff/font/devlatin1/DESC
+@dirrm share/groff/font/devlatin1
 share/groff/font/devlj4/generate/Makefile
 share/groff/font/devlj4/generate/special.map
 share/groff/font/devlj4/generate/text.map
+@dirrm share/groff/font/devlj4/generate
 share/groff/font/devlj4/ALBB
 share/groff/font/devlj4/ALBR
 share/groff/font/devlj4/AOB
@@ -231,6 +244,7 @@ share/groff/font/devlj4/UCI
 share/groff/font/devlj4/UCR
 share/groff/font/devlj4/UI
 share/groff/font/devlj4/UR
+@dirrm share/groff/font/devlj4
 share/groff/font/devX75/DESC
 share/groff/font/devX75/TR
 share/groff/font/devX75/TI
@@ -251,6 +265,7 @@ share/groff/font/devX75/NBI
 share/groff/font/devX75/S
 share/groff/font/devX75/M
 share/groff/font/devX75/G
+@dirrm share/groff/font/devX75
 share/groff/font/devX75-12/DESC
 share/groff/font/devX75-12/TR
 share/groff/font/devX75-12/TI
@@ -271,6 +286,7 @@ share/groff/font/devX75-12/NBI
 share/groff/font/devX75-12/S
 share/groff/font/devX75-12/M
 share/groff/font/devX75-12/G
+@dirrm share/groff/font/devX75-12
 share/groff/font/devX100/DESC
 share/groff/font/devX100/TR
 share/groff/font/devX100/TI
@@ -291,6 +307,7 @@ share/groff/font/devX100/NBI
 share/groff/font/devX100/S
 share/groff/font/devX100/M
 share/groff/font/devX100/G
+@dirrm share/groff/font/devX100
 share/groff/font/devX100-12/DESC
 share/groff/font/devX100-12/TR
 share/groff/font/devX100-12/TI
@@ -311,3 +328,6 @@ share/groff/font/devX100-12/NBI
 share/groff/font/devX100-12/S
 share/groff/font/devX100-12/M
 share/groff/font/devX100-12/G
+@dirrm share/groff/font/devX100-12
+@dirrm share/groff/font
+@dirrm share/groff
