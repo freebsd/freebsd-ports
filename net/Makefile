@@ -383,6 +383,7 @@
     SUBDIR += p5-Net-SSH
     SUBDIR += p5-Net-SSH-Perl
     SUBDIR += p5-Net-Server
+    SUBDIR += p5-Net-TCLink
     SUBDIR += p5-Net-Telnet
     SUBDIR += p5-Net-Traceroute
     SUBDIR += p5-Net-Traceroute6
