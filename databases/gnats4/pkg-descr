@@ -5,7 +5,7 @@ daemon.  GNATS stores all the information about problem reports in its
 databases, consisting of plain text files and it provides tools for
 querying, editing and maintaining these databases.
 
-WWW: http://www.gnu.org/software/gnats
+WWW: http://www.gnu.org/software/gnats/
 
 - Oliver Eikemeier
 eikemeier@fillmore-labs.com
