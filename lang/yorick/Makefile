@@ -3,16 +3,14 @@
 # Date created:         26 Oct 97
 # Whom:                 Pedro Giffuni <giffunip@asme.org>
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1997/11/24 09:23:00 tg Exp $
 #
 
 DISTNAME=	yorick-1.4
 PKGNAME=	yorick-1.4.1
 CATEGORIES=	lang math
 MASTER_SITES=	ftp://ftp-icf.llnl.gov/pub/Yorick/		\
-		ftp://wuarchive.wustl.edu/languages/yorick/	\
-		ftp://netlib.att.com/netlib/env/		\
-		ftp://netlib2.cs.utk.edu/env/
+		ftp://wuarchive.wustl.edu/languages/yorick/
 
 PATCH_SITES=	ftp://ftp-icf.llnl.gov/pub/Yorick/
 PATCHFILES=	yorick-1.4.diff.gz
