@@ -53,6 +53,7 @@
     SUBDIR += citrix_ica
     SUBDIR += click
     SUBDIR += clusterit
+    SUBDIR += cnd
     SUBDIR += cnet
     SUBDIR += coda5_client
     SUBDIR += coda5_doc
