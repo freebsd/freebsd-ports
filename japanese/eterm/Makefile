@@ -25,7 +25,7 @@ CONFIGURE_ARGS=	--enable-trans --enable-utmp \
 PKGDIR=		${.CURDIR}
 PLIST=		${MASTERDIR}/pkg-plist
 
-THEMES=		Eterm auto chooser trans
+THEMES=		Escreen Eterm auto trans
 
 post-configure:
 	for theme in ${THEMES} ; do \
