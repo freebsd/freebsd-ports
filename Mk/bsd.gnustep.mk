@@ -43,10 +43,17 @@
 GNUstep_Include_MAINTAINER=	dinoex@FreeBSD.org
 
 BUILD_DEPENDS+=	${LOCALBASE}/lib/libcallback.a:${PORTSDIR}/devel/ffcall
+.if !defined(GNUSTEP_WITHOUT_LIBOBJC)
 .if !defined(GNUSTEP_WITH_BASE_GCC)
-LIB_DEPENDS+=	objc:${PORTSDIR}/${GNUSTEP_OBJC_PORT}
+BUILD_DEPENDS+=	${TARGLIB}/libobjc.so:${PORTSDIR}/${GNUSTEP_GCC_PORT}
+RUN_DEPENDS+=	${TARGLIB}/libobjc.so:${PORTSDIR}/${GNUSTEP_GCC_PORT}
+.else
+BUILD_DEPENDS+=	${COMBOLIBDIR}/libobjc.so:${PORTSDIR}/${GNUSTEP_OBJC_PORT}
+RUN_DEPENDS+=	${COMBOLIBDIR}/libobjc.so:${PORTSDIR}/${GNUSTEP_OBJC_PORT}
+.endif
 .endif
 
+GNUSTEP_GCC_PORT?=	lang/gcc-objc
 GNUSTEP_MAKE_PORT?=	devel/gnustep-make
 GNUSTEP_OBJC_PORT?=	lang/gnustep-objc
 GNUSTEP_BASE_PORT?=	lang/gnustep-base
@@ -198,6 +205,10 @@ do-install:
 	rm -rf /root/GNUstep
 .endif
 
+.endif
+
+.if !defined(GNUSTEP_WITH_BASE_GCC)
+TARGLIB!=	(cd ${PORTSDIR}/${GNUSTEP_GCC_PORT} && make -V TARGLIB)
 .endif
 
 .endif
