@@ -333,6 +333,7 @@
     SUBDIR += xbmbrowser
     SUBDIR += xdgagrab
     SUBDIR += xdl
+    SUBDIR += xface.el
     SUBDIR += xfig
     SUBDIR += xfpovray
     SUBDIR += xfractint
