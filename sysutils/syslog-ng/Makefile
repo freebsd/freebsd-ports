@@ -1,16 +1,17 @@
 # New ports collection makefile for:	syslog-ng
 # Date created:		22 April 2000
-# Whom:			Vince Valenti <vince@bendnet.com>
+# Whom:			Vince Valenti <vince@blue-box.net>
 #
 # $FreeBSD$
 #
 
 PORTNAME=	syslog-ng
-PORTVERSION=	1.4.17
+PORTVERSION=	1.6.0.r1
 CATEGORIES=	sysutils
-MASTER_SITES=	http://www.balabit.hu/downloads/syslog-ng/1.4/
+MASTER_SITES=	http://www.balabit.com/downloads/syslog-ng/1.6/src/
+DISTNAME=	${PORTNAME}-1.6.0rc1
 
-MAINTAINER=	vince@bendnet.com
+MAINTAINER=	vince@blue-box.net
 COMMENT=	A powerfull syslogd replacement
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/libol.a:${PORTSDIR}/devel/libol
@@ -22,6 +23,10 @@ GNU_CONFIGURE=	yes
 USE_REINPLACE=	yes
 
 PKGMESSAGE=	${WRKDIR}/MESSAGE
+
+.if defined(WITH_TCP_WRAPPERS)
+CONFIGURE_ARGS+=--enable-tcp-wrapper
+.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e 's:__PREFIX__:${PREFIX}:g' ${WRKSRC}/src/syslog-ng.h

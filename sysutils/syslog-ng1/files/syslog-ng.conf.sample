@@ -21,6 +21,7 @@ destination security { file("/var/log/security"); };
 destination maillog { file("/var/log/maillog"); };
 destination lpd-errs { file("/var/log/lpd-errs"); };
 destination cron { file("/var/log/cron"); };
+destination consolelog { file("/var/log/console.log"); };
 destination all { file("/var/log/all.log"); };
 destination newscrit { file("/var/log/news/news.crit"); };
 destination newserr { file("/var/log/news/news.err"); };
@@ -28,7 +29,6 @@ destination newsnotice { file("/var/log/news/news.notice"); };
 destination slip { file("/var/log/slip.log"); };
 destination ppp { file("/var/log/ppp.log"); };
 destination console { file("/dev/console"); };
-destination root { usertty("root"); };
 destination allusers { usertty("*"); };
 #destination loghost { udp("loghost" port(514)); };
 
@@ -37,6 +37,7 @@ destination allusers { usertty("*"); };
 #
 filter f_auth { facility(auth); };
 filter f_authpriv { facility(authpriv); };
+filter f_console { facility(console); };
 filter f_cron { facility(cron); };
 filter f_daemon { facility(daemon); };
 filter f_ftp { facility(ftp); };
@@ -112,28 +113,19 @@ log { source(src); filter(f_lpr); filter(f_info); destination(lpd-errs); };
 log { source(src); filter(f_cron); destination(cron); };
 
 #
-# *.err							root
-#
-log { source(src); filter(f_err); destination(root); };
-
-#
-# *.notice;news.err					root
-#
-log { source(src); filter(f_notice); destination(root); };
-log { source(src); filter(f_news); filter(f_err); destination(root); };
-
-#
-# *.alert						root
-#
-log { source(src); filter(f_alert); destination(root); };
-
-#
 # *.emerg						*
 #
 log { source(src); filter(f_emerg); destination(allusers); };
 
 #
+# uncomment this to log all writes to /dev/console to /var/log/console.log
+# console.info						/var/log/console.log
+#
+#log { source(src); filter(f_console); filter(f_info); destination(consolelog); };
+
+#
 # uncomment this to enable logging of all log messages to /var/log/all.log
+# touch /var/log/all.log and chmod it to mode 600 before it will work
 # *.*							/var/log/all.log
 #
 #log { source(src); destination(all); };
