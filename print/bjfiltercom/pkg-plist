@@ -47,4 +47,4 @@ usr/local/share/printui/yellow_bar.xpm
 @dirrm usr/lib/bjlib
 @dirrm usr/local/share/printui
 @comment To maintain ${LINUXBASE}/var/lib/rpm/
-@unexec rpm -e %%RM_RPMFLAGS%% bjfiltercom-%%PORTVERSION%% > /dev/null 2>&1
+@unexec rpm -e %%RM_RPMFLAGS%% bjfiltercom-%%PORTVERSION%% > /dev/null 2>&1; true
