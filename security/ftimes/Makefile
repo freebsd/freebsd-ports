@@ -16,6 +16,7 @@ MAINTAINER=		klm@uidzero.org
 COMMENT=		A system baselining and evidence collection tool
 
 GNU_CONFIGURE=		YES
+USE_REINPLACE=		YES
 
 .if defined(WITHOUT_SSL)
 CONFIGURE_ARGS+=	--without-ssl
@@ -31,6 +32,9 @@ CFLAGS+=		-static
 .endif
 
 MAN1=			ftimes.1
+
+post-patch:
+	${REINPLACE_CMD} -e "s,-O2,${CFLAGS},g" ${WRKSRC}/configure
 
 post-install:
 	${STRIP_CMD} ${PREFIX}/bin/ftimes

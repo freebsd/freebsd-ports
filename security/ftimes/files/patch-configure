@@ -1,0 +1,11 @@
+--- configure.orig	Sat Feb 28 17:48:30 2004
++++ configure	Sat Feb 28 17:49:52 2004
+@@ -1441,6 +1441,8 @@
+ _ACEOF
+ 
+ 	;;
++amd64*)
++	;;
+ *)
+         echo
+         echo "The target cpu, $host_cpu, is not currently supported."
