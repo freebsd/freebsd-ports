@@ -1,6 +1,26 @@
---- voice/Makefile.orig	Mon Dec 29 23:06:36 1997
-+++ voice/Makefile	Mon Dec 29 23:07:18 1997
-@@ -89,11 +89,11 @@
+--- voice/Makefile.orig	Thu Sep 10 05:06:12 1998
++++ voice/Makefile	Tue Dec  1 01:39:38 1998
+@@ -13,6 +13,8 @@
+ LN=ln
+ MV=mv
+ RM=rm
++INSTALL=install -c -o root -g wheel
++INSTALL_PROGRAM=install -s -c -o root -g wheel
+ 
+ MGETTYLIB=../../getdisk.o ../../goodies.o ../../io.o \
+ 	../../locks.o ../../tio.o ../../modem.o \
+@@ -82,19 +84,19 @@
+ 	@echo "  Installing the voice extensions"
+ 	@echo "  -------------------------------"
+ 	@echo ""
+-	$(INSTALL) -m 700 vgetty/vgetty $(SBINDIR)
+-	$(INSTALL) -m 755 vm/vm $(BINDIR)
++	$(INSTALL_PROGRAM) -m 700 vgetty/vgetty $(SBINDIR)
++	$(INSTALL_PROGRAM) -m 755 vm/vm $(BINDIR)
+ 	for i in $(PVFTOOLS); \
+ 	do \
+-	     $(INSTALL) -m 755 pvftools/$$i $(BINDIR); \
++	     $(INSTALL_PROGRAM) -m 755 pvftools/$$i $(BINDIR); \
  	done
  	$(INSTALL) -m 644 man/man1/zplay.1 $(MAN1DIR)
  	$(INSTALL) -m 644 man/man1/pvf.1 $(MAN1DIR)

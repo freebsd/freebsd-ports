@@ -1,5 +1,5 @@
 --- doc/Makefile.orig	Fri Nov 28 04:33:26 1997
-+++ doc/Makefile	Mon Dec 29 22:31:59 1997
++++ doc/Makefile	Tue Dec  1 00:49:56 1998
 @@ -26,7 +26,7 @@
  
  all:
@@ -9,3 +9,12 @@
  
  manpages: $(MANSRC)
  
+@@ -43,7 +43,7 @@
+ 	-texi2html -verbose mgetty.texi
+ 
+ mgetty.info: mgetty.texi
+-	-makeinfo mgetty.texi
++	-makeinfo --no-split mgetty.texi
+ 
+ mgetty.ps: mgetty.dvi
+ 	-dvips -o mgetty.ps mgetty.dvi
