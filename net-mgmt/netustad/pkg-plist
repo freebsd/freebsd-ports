@@ -1,0 +1,39 @@
+sbin/netustad
+sbin/netustadctl
+sbin/netustadpasswd
+etc/rc.d/netustad.sh.sample
+@unexec if [ -f %D/etc/rc.d/netustad.sh ]; then rm -f %D/etc/rc.d/netustad.sh; fi
+@unexec if cmp -s %D/etc/netustad.conf %D/etc/netustad.conf-dist; then rm -f %D/etc/netustad.conf; fi
+etc/netustad.conf-dist
+@exec [ -f %B/netustad.conf ] || cp %B/%f %B/netustad.conf
+%%DATADIR%%/script/English
+%%DATADIR%%/script/Turkce
+%%DATADIR%%/script/action1.inc
+%%DATADIR%%/script/action2.inc
+%%DATADIR%%/script/addform
+%%DATADIR%%/script/addrule.inc
+%%DATADIR%%/script/authform
+%%DATADIR%%/script/bg.png
+%%DATADIR%%/script/delete.jpg
+%%DATADIR%%/script/edit-parse
+%%DATADIR%%/script/editform
+%%DATADIR%%/script/editrule.inc
+%%DATADIR%%/script/intf-parse
+%%DATADIR%%/script/loginform.inc
+%%DATADIR%%/script/maketable
+%%DATADIR%%/script/netustad.css
+%%DATADIR%%/script/proto.inc
+%%DATADIR%%/script/ruleoption1.inc
+%%DATADIR%%/script/ruleoption2.inc
+%%DATADIR%%/script/showrule
+%%DATADIR%%/script/static-parse
+%%PORTDOCS%%%%DOCSDIR%%/CHANGES
+%%PORTDOCS%%%%DOCSDIR%%/COPYING
+%%PORTDOCS%%%%DOCSDIR%%/FAQ
+%%PORTDOCS%%%%DOCSDIR%%/GPL-License
+%%PORTDOCS%%%%DOCSDIR%%/INSTALL
+%%PORTDOCS%%%%DOCSDIR%%/THANKS
+%%PORTDOCS%%%%DOCSDIR%%/TODO
+@dirrm %%DATADIR%%/script
+@dirrm %%DATADIR%%
+%%PORTDOCS%%@dirrm %%DOCSDIR%%

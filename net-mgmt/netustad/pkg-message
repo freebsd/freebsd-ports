@@ -1,0 +1,7 @@
+*************************************************
+* You must run this program as root		*
+* Program path       : %%PREFIX%%/sbin/netustad *
+* Your AdminUser     : admin			*
+* Your AdminPassword : admin		       	*
+* Don't forget to change your password!		*
+*************************************************
