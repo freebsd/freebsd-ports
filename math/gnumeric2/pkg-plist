@@ -7,7 +7,6 @@ etc/gconf/gconf.xml.defaults/apps/gnumeric/core/%gconf.xml
 etc/gconf/gconf.xml.defaults/apps/gnumeric/core/defaultfont/%gconf.xml
 etc/gconf/gconf.xml.defaults/apps/gnumeric/core/file/%gconf.xml
 etc/gconf/gconf.xml.defaults/apps/gnumeric/core/file/history/%gconf.xml
-etc/gconf/gconf.xml.defaults/apps/gnumeric/core/file/import/%gconf.xml
 etc/gconf/gconf.xml.defaults/apps/gnumeric/core/file/save/%gconf.xml
 etc/gconf/gconf.xml.defaults/apps/gnumeric/core/gui/%gconf.xml
 etc/gconf/gconf.xml.defaults/apps/gnumeric/core/gui/editing/%gconf.xml
@@ -34,7 +33,6 @@ etc/gconf/gconf.xml.defaults/schemas/apps/gnumeric/core/%gconf.xml
 etc/gconf/gconf.xml.defaults/schemas/apps/gnumeric/core/defaultfont/%gconf.xml
 etc/gconf/gconf.xml.defaults/schemas/apps/gnumeric/core/file/%gconf.xml
 etc/gconf/gconf.xml.defaults/schemas/apps/gnumeric/core/file/history/%gconf.xml
-etc/gconf/gconf.xml.defaults/schemas/apps/gnumeric/core/file/import/%gconf.xml
 etc/gconf/gconf.xml.defaults/schemas/apps/gnumeric/core/file/save/%gconf.xml
 etc/gconf/gconf.xml.defaults/schemas/apps/gnumeric/core/gui/%gconf.xml
 etc/gconf/gconf.xml.defaults/schemas/apps/gnumeric/core/gui/editing/%gconf.xml
@@ -129,6 +127,7 @@ lib/gnumeric/%%VERSION%%/plugins/xbase/plugin.xml
 lib/gnumeric/%%VERSION%%/plugins/xbase/xbase.so
 lib/gnumeric/%%VERSION%%/plugins/xml_sax/plugin.xml
 lib/gnumeric/%%VERSION%%/plugins/xml_sax/xml_sax.so
+lib/libfoocanvas.a
 libdata/bonobo/servers/GNOME_Gnumeric.server
 share/gnome/applications/gnumeric.desktop
 share/gnome/gnumeric/%%VERSION%%/autoformat-templates/3D/.category
@@ -525,6 +524,7 @@ share/gnome/gnumeric/%%VERSION%%/help/gnumeric/C/functions.xml
 share/gnome/gnumeric/%%VERSION%%/help/gnumeric/C/gnumeric.xml
 share/gnome/gnumeric/%%VERSION%%/help/gnumeric/C/graphs.xml
 share/gnome/gnumeric/%%VERSION%%/help/gnumeric/C/gui-elements.xml
+share/gnome/gnumeric/%%VERSION%%/help/gnumeric/C/keybinding-appendix.xml
 share/gnome/gnumeric/%%VERSION%%/help/gnumeric/C/license.xml
 share/gnome/gnumeric/%%VERSION%%/help/gnumeric/C/menus.xml
 share/gnome/gnumeric/%%VERSION%%/help/gnumeric/C/number-format.xml
@@ -786,7 +786,6 @@ share/locale/zh_TW/LC_MESSAGES/gnumeric.mo
 @dirrm etc/gconf/gconf.xml.defaults/schemas/apps/gnumeric/core/gui/editing
 @dirrm etc/gconf/gconf.xml.defaults/schemas/apps/gnumeric/core/gui
 @dirrm etc/gconf/gconf.xml.defaults/schemas/apps/gnumeric/core/file/save
-@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/gnumeric/core/file/import
 @dirrm etc/gconf/gconf.xml.defaults/schemas/apps/gnumeric/core/file/history
 @dirrm etc/gconf/gconf.xml.defaults/schemas/apps/gnumeric/core/file
 @dirrm etc/gconf/gconf.xml.defaults/schemas/apps/gnumeric/core/defaultfont
@@ -813,7 +812,6 @@ share/locale/zh_TW/LC_MESSAGES/gnumeric.mo
 @dirrm etc/gconf/gconf.xml.defaults/apps/gnumeric/core/gui/editing
 @dirrm etc/gconf/gconf.xml.defaults/apps/gnumeric/core/gui
 @dirrm etc/gconf/gconf.xml.defaults/apps/gnumeric/core/file/save
-@dirrm etc/gconf/gconf.xml.defaults/apps/gnumeric/core/file/import
 @dirrm etc/gconf/gconf.xml.defaults/apps/gnumeric/core/file/history
 @dirrm etc/gconf/gconf.xml.defaults/apps/gnumeric/core/file
 @dirrm etc/gconf/gconf.xml.defaults/apps/gnumeric/core/defaultfont

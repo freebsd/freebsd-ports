@@ -1,6 +1,6 @@
---- configure.orig	Thu Sep 12 00:39:10 2002
-+++ configure	Thu Sep 12 00:39:36 2002
-@@ -8114,6 +8114,7 @@
+--- configure.orig	Wed Nov 13 14:39:44 2002
++++ configure	Fri Nov 15 20:11:48 2002
+@@ -8244,6 +8244,7 @@
  
  # This can be used to rebuild libtool when needed
  LIBTOOL_DEPS="$ac_aux_dir/ltmain.sh"
@@ -8,12 +8,22 @@
  
  # Always use our own libtool.
  LIBTOOL='$(SHELL) $(top_builddir)/libtool'
-@@ -13797,7 +13798,7 @@
+@@ -9562,7 +9563,8 @@
+ int
+ main ()
+ {
+-FILE *f = fdopen(1, "r")
++FILE *f;
++f = fdopen(1, "r")
+   ;
+   return 0;
+ }
+@@ -13997,7 +13999,7 @@
  }'
  fi
  
 -DEFS=-DHAVE_CONFIG_H
 +DEFS="$DEFS -DHAVE_CONFIG_H"
  
- 
- 
+ ac_libobjs=
+ ac_ltlibobjs=
