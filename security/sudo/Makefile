@@ -38,6 +38,10 @@ CONFIGURE_ARGS+=--with-opie
 CONFIGURE_ARGS+=--with-skey
 .endif
 
+.if defined(WITH_SHELL_SETS_HOME)
+CONFIGURE_ARGS+=--enable-shell-sets-home
+.endif
+
 MAN5=		sudoers.5
 MAN8=		sudo.8 visudo.8
 
