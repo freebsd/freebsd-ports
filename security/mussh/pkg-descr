@@ -1,0 +1,6 @@
+Mussh is a shell script that allows you to execute a command or script
+over ssh on multiple hosts with one command. When possible mussh will use
+ssh-agent and RSA/DSA keys to minimize the need to enter your password
+more than once.
+
+WWW: http://sourceforge.net/projects/mussh/
