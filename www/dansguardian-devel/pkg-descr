@@ -11,8 +11,12 @@ It filters using multiple methods, including:
   - POST filtering
   - user and source IP filtering
 
+This version also includes support for filter groups (simple ACLs),
+pre-emptive blocking, improved URL caches,  and fork pooling for
+improved performance under heavy load.
+
 WWW: http://dansguardian.org
 WWW: http://backup.dansguardian.org
 
 - Freddie Cash
-fcash@bigfoot.com
+fcash@sd73.bc.ca

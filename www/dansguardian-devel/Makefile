@@ -6,18 +6,20 @@
 #
 
 PORTNAME=	dansguardian
-PORTVERSION=	2.4.6.5
+PORTVERSION=	2.7.6.7
 CATEGORIES=	www
 MASTER_SITES=	# empty, see below
 DISTNAME=	DansGuardian-${PORTVERSION:R}-${PORTVERSION:E}.source
 
 MAINTAINER=	fcash@bigfoot.com
-COMMENT=	A fast, simple web content filter for Squid proxy servers
+COMMENT=	A fast, feature-rich web content filter for Squid proxy servers
 
-RUN_DEPENDS=	${LOCALBASE}/sbin/squid:${PORTSDIR}/www/squid24:install \
+RUN_DEPENDS=	${LOCALBASE}/sbin/squid:${PORTSDIR}/www/squid:install \
 		${LOCALBASE}/sbin/httpd:${PORTSDIR}/${APACHE_PORT}:install
 
-WRKSRC=		${WRKDIR}/DansGuardian-${PORTVERSION:R}
+WRKSRC=		${WRKDIR}/DansGuardian-${PORTVERSION:R}-${PORTVERSION:E}
+
+CONFLICTS=	dansguardian*
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--prefix=${PREFIX} \
@@ -35,8 +37,15 @@ MAN8=		dansguardian.8
 
 NO_CDROM=	"Commercial download is restricted.  Check ${DG_URL} for more info"
 NO_PACKAGE=	"Redistribution is restricted.  Check ${DG_URL} for more info"
+RESTRICTED=	${NO_PACKAGE}
 
 .include <bsd.port.pre.mk>
+
+.if ${OSVERSION} > 500000 || defined(WITH_GCC3)
+CONFIGURE_ARGS+=	--gccver=3
+.else
+CONFIGURE_ARGS+=	--gccver=2
+.endif
 
 .if !(exists(${DISTDIR}/${DISTNAME}${EXTRACT_SUFX})) && !defined(PACKAGE_BUILDING)
 IGNORE="Commercial source download is restricted.  Please visit and read ${DG_URL} and download ${DISTNAME}${EXTRACT_SUFX} into ${DISTDIR} before running make"
