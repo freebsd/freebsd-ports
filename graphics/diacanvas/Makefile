@@ -13,6 +13,8 @@ MASTER_SITES=	http://www.linuxstart.com/~arjan/diacanvas/download/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A general drawing canvas from dia dialog editor
 
+BROKEN=		Does not patch, will be removed after Feb 2
+
 USE_X_PREFIX=	yes
 USE_GNOME=	yes
 USE_LIBTOOL=	yes
