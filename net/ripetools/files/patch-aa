@@ -1,9 +1,9 @@
---- Makefile.orig	Fri May 16 11:26:32 1997
-+++ Makefile	Sun Jun  8 12:12:48 1997
-@@ -16,26 +16,26 @@
+--- Makefile.orig	Thu Oct  1 18:28:49 1998
++++ Makefile	Tue Dec 22 14:57:27 1998
+@@ -16,15 +16,15 @@
  
  
- DEFINES= -DRIPE 
+ DEFINES= -DRIPE
 -PROG=	 whois cryptpw
 -DESTDIR= /usr/local/bin
 -MANDIR=  /usr/local/man/man1
@@ -12,7 +12,8 @@
 +MANDIR=  ${PREFIX}/man/man1
  INSTALL= install
  # LIBS=    -lresolv 
- CFLAGS=  ${DEFINES}
+-CFLAGS=  ${DEFINES}
++CFLAGS+=  ${DEFINES} -Wall -ansi -pedantic
  #
  # for BSDI
 -CC=shlicc2 -Wall -ansi -pedantic -O6 -m486
@@ -20,10 +21,7 @@
  #
  # for Linux
  #CC=gcc -Wall -ansi -pedantic -O6 -m486
- #
- # for most systems
--#CC=gcc -Wall -ansi -pedantic -O6
-+CC=gcc -Wall -ansi -pedantic -O2
+@@ -34,8 +34,8 @@
  
  all: $(PROG)
  
