@@ -5,9 +5,9 @@
 # $FreeBSD$
 
 PORTNAME=	subversion
-PORTVERSION=	0.27.0
+PORTVERSION=	0.28.2
 CATEGORIES=	devel
-MASTER_SITES=	http://subversion.tigris.org/files/documents/15/5642/
+MASTER_SITES=	http://subversion.tigris.org/files/documents/15/5940/
 MASTER_SITES+=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=		bmah
 
@@ -28,6 +28,7 @@ CONFIGURE_ARGS=	--with-ssl \
 		--with-neon=${LOCALBASE} \
 		--with-berkeley-db=${LOCALBASE}/include/db4:${LOCALBASE}/lib \
 		--with-swig=no
+
 
 MAN1=	svn.1 svnadmin.1
 MANCOMPRESSED=	no
@@ -57,6 +58,11 @@ CONFIGURE_ARGS+=--with-apr=${LOCALBASE} \
 .endif
 
 pre-extract:
+.if !defined (BATCH)
+	@dialog --title "-- URGENT UPGRADE INFORMATION --" --clear --yesno \
+	 "If you upgrade Subversion from pre-0.28.0 version, please,\ndump you repository with old (pre-0.28.0) svnadmin command.\nAfter this, install new version, remove old repository, create new\none with svnadmin & load dump created from old repository\n\nVersions after 0.28.0 have different repository format and\nyour old repository could not be used with versions 0.28.0 and up.\n\nRead\nhttp://svn.collab.net/repos/svn/trunk/notes/repos_upgrade_HOWTO\nfor details.\n\nDid you dump you repository and ready to install new version?" \
+	 18 70
+.endif
 .if defined(WITH_MOD_DAV_SVN)
 	@${ECHO_MSG} "mod_dav_svn module for Apache 2.X enabled."
 .else
