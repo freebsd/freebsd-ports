@@ -18,7 +18,7 @@ MAINTAINER=	dinoex@FreeBSD.org
 BUILD_DEPENDS=	${LOCALBASE}/lib/libmilter.a:${PORTSDIR}/mail/sendmail
 
 CTARGETS+=	vbsfilter-1.3
-CFLAGS+=	-Wall -I$(LOCALBASE)/include ${PTHREAD_CFLAGS}
+CFLAGS+=	-Wall -I$(LOCALBASE)/include ${PTHREAD_CFLAGS:S=""==}
 FLAGS+=		${PTHREAD_LIBS}
 LDFLAGS+=	-L$(LOCALBASE)/lib
 LIBS+=		-lmilter -lsmutil
