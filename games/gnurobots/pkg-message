@@ -1,0 +1,7 @@
+Where to find things
+  - A place to start: $PREFIX/share/doc/gnurobots/Robots-HOWTO
+  - Example maps:     $PREFIX/share/gnurobots/maps/
+  - Example robots:   $PREFIX/share/gnurobots/scheme/
+  - Binaries:         gnurobots, gnurobots_logfile, xgnurobots
+                      (this port adds the 'gnu' prefix to
+                       distinguish from /usr/games/robots)
