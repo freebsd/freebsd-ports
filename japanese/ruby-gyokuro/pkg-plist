@@ -1,0 +1,17 @@
+%%RUBY_SITELIBDIR%%/gyokuro/gyokuro.rb
+%%RUBY_SITELIBDIR%%/gyokuro/parser.rb
+%%RUBY_SITELIBDIR%%/gyokuro/parts.rb
+%%RUBY_SITELIBDIR%%/gyokuro/table.rb
+@dirrm %%RUBY_SITELIBDIR%%/gyokuro
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/gyokuro/example1.txt
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/gyokuro/example2.txt
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/gyokuro/example3.txt
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/gyokuro/inspect.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/gyokuro/katakana.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/gyokuro/morpheme.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/gyokuro/noun.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/gyokuro/wakachi.rb
+%%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/gyokuro
+%%PORTDOCS%%%%RUBY_DOCDIR%%/gyokuro/ja/README.ja.rd
+%%PORTDOCS%%@dirrm %%RUBY_DOCDIR%%/gyokuro/ja
+%%PORTDOCS%%@dirrm %%RUBY_DOCDIR%%/gyokuro

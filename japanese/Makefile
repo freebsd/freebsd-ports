@@ -327,6 +327,7 @@
     SUBDIR += rskkserv
     SUBDIR += ruby-chasen
     SUBDIR += ruby-eb
+    SUBDIR += ruby-gyokuro
     SUBDIR += ruby-kakasi
     SUBDIR += ruby-man
     SUBDIR += ruby-romkan
