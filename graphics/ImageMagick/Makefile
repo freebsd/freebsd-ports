@@ -7,7 +7,7 @@
 
 PORTNAME=	ImageMagick
 PORTVERSION=	5.5.6
-PORTREVISION=   2
+PORTREVISION=   3
 CATEGORIES=	graphics perl5
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		http://imagemagick.sourceforge.net/http/ \
@@ -48,7 +48,7 @@ MAN5=		quantize.5
 CPPFLAGS=	-I${LOCALBASE}/include
 LDFLAGS=	-L${LOCALBASE}/lib
 
-.if defined(WITH_IMAGEMAGICK_PERL)
+.if !defined(WITHOUT_IMAGEMAGICK_PERL)
 CONFIGURE_ARGS+=	--with-perl=${PERL5}
 MAN3=				Image::Magick.3
 MAN3PREFIX=			${PREFIX}/lib/perl5/${PERL_VERSION}
@@ -58,7 +58,7 @@ CONFIGURE_ARGS+=	--without-perl
 
 # PerlMagick not works with threads, if perl is not threaded, and vice versa
 .if defined(WITH_IMAGEMAGICK_THREADS) || \
-    (defined(WITH_IMAGEMAGICK_PERL) && \
+    (!defined(WITHOUT_IMAGEMAGICK_PERL) && \
      defined(PERL_THREADED) && ${PERL_THREADED} == "true")
 CONFIGURE_ARGS+=	--with-threads
 CPPFLAGS+=		${PTHREAD_CFLAGS}
@@ -87,65 +87,65 @@ PLIST_SUB+=		MODULES=''
 PLIST_SUB+=		MODULES='@comment '
 .endif
 
-.if defined(WITHOUT_IMAGEMAGICK_JPEG)
-CONFIGURE_ARGS+=	--without-jpeg
-.else
+.if !defined(WITHOUT_IMAGEMAGICK_JPEG)
 LIB_DEPENDS+=		jpeg.9:${PORTSDIR}/graphics/jpeg
+.else
+CONFIGURE_ARGS+=	--without-jpeg
 .endif
 
-.if defined(WITH_IMAGEMAGICK_PNG)
+.if !defined(WITHOUT_IMAGEMAGICK_PNG)
 LIB_DEPENDS+=		png.5:${PORTSDIR}/graphics/png
 .else
 CONFIGURE_ARGS+=	--without-png
 .endif
 
-.if defined(WITH_IMAGEMAGICK_TIFF)
+.if !defined(WITHOUT_IMAGEMAGICK_TIFF)
 LIB_DEPENDS+=		tiff.4:${PORTSDIR}/graphics/tiff
 .else
 CONFIGURE_ARGS+=	--without-tiff
 .endif
 
 # Produce BZip compressed MIFF images
-.if !defined(WITH_IMAGEMAGICK_BZLIB)
+.if defined(WITHOUT_IMAGEMAGICK_BZLIB)
 CONFIGURE_ARGS+=	--without-bzlib
 .endif
 
 # HDF (Hierarchical Data Format) images
-.if defined(WITH_IMAGEMAGICK_HDF)
+.if !defined(WITHOUT_IMAGEMAGICK_HDF)
 LIB_DEPENDS=		df.1:${PORTSDIR}/graphics/hdf
 CONFIGURE_ARGS+=	--with-hdf
 .endif
 
 # FPX (FlashPIX) images
-.if defined(WITH_IMAGEMAGICK_FPX)
+.if !defined(WITHOUT_IMAGEMAGICK_FPX)
 LIB_DEPENDS+=		fpx.1:${PORTSDIR}/graphics/libfpx
 .else
 CONFIGURE_ARGS+=	--without-fpx
 .endif
 
 # JBIG images (lossless compression for bi-level images)
-.if defined(WITH_IMAGEMAGICK_JBIG)
+.if !defined(WITHOUT_IMAGEMAGICK_JBIG)
 LIB_DEPENDS+=		jbig.1:${PORTSDIR}/graphics/jbigkit
 .else
 CONFIGURE_ARGS+=	--without-jbig
 .endif
 
 # JPEG2000 images (wavelet-based lossy compression)
-.if defined(WITH_IMAGEMAGICK_JPEG2000)
+.if !defined(WITHOUT_IMAGEMAGICK_JPEG2000)
 LIB_DEPENDS+=	jasper.4:${PORTSDIR}/graphics/jasper
 .else
 CONFIGURE_ARGS+=	--without-jp2
 .endif
 
 # LCMS (Little CMS) color management
-.if defined(WITH_IMAGEMAGICK_LCMS)
+.if !defined(WITHOUT_IMAGEMAGICK_LCMS)
 LIB_DEPENDS+=		lcms.1:${PORTSDIR}/graphics/lcms
 .else
 CONFIGURE_ARGS+=	--without-lcms
 .endif
 
 # TTF (TrueType Font) support
-.if defined(WITH_IMAGEMAGICK_TTF)
+.if !defined(WITHOUT_IMAGEMAGICK_TTF)
 BUILD_DEPENDS+=		freetype-config:${PORTSDIR}/print/freetype2	# XXX
 LIB_DEPENDS+=		freetype.9:${PORTSDIR}/print/freetype2
 NEED_GS=                yes
@@ -154,7 +154,7 @@ CONFIGURE_ARGS+=	--without-ttf
 .endif
 
 # WMF (Windows Meta File) images
-.if defined(WITH_IMAGEMAGICK_WMF)
+.if !defined(WITHOUT_IMAGEMAGICK_WMF)
 LIB_DEPENDS+=		wmf.2:${PORTSDIR}/graphics/libwmf
 .else
 CONFIGURE_ARGS+=	--without-wmf
@@ -162,7 +162,7 @@ CONFIGURE_ARGS+=	--without-wmf
 
 # SVG (Scalable Vector Graphics) images and MSL (Magick Scripting Language)
 # both require XML
-.if defined(WITH_IMAGEMAGICK_SVG) || defined(WITH_IMAGEMAGICK_MSL)
+.if !defined(WITHOUT_IMAGEMAGICK_SVG) || !defined(WITHOUT_IMAGEMAGICK_MSL)
 LIB_DEPENDS+=		xml2.5:${PORTSDIR}/textproc/libxml2
 MAN1+=			conjure.1
 .else
@@ -170,14 +170,14 @@ CONFIGURE_ARGS+=	--without-xml
 .endif
 
 # DPS (Display PostScript) support
-.if defined(WITH_IMAGEMAGICK_DPS)
+.if !defined(WITHOUT_IMAGEMAGICK_DPS)
 CONFIGURE_ARGS+=	--with-dps
 .else
 CONFIGURE_ARGS+=	--without-dps
 .endif
 
 # PDF (Adobe Portable Document Format) support
-.if defined(WITH_IMAGEMAGICK_PDF)
+.if !defined(WITHOUT_IMAGEMAGICK_PDF)
 CONFIGURE_ARGS+=	--with-gslib
 NEED_GS=                yes
 .else
@@ -193,7 +193,7 @@ CONFIGURE_ARGS+=	--with-x
 USE_XLIB=		yes
 MAN1+=			animate.1 display.1 import.1
 PLIST_SUB+=		X11=''
-.if defined(WITH_IMAGEMAGICK_MPEG2)
+.if !defined(WITHOUT_IMAGEMAGICK_MPEG2)
 CONFIGURE_ARGS+=	--with-mpeg2
 LIB_DEPENDS+=		mpeg2.0:${PORTSDIR}/multimedia/libmpeg2
 .else
@@ -237,11 +237,11 @@ post-patch:
 		${WRKSRC}/magick/xwindow.c
 
 post-install:
-.if !defined(WITH_IMAGEMAGICK_SVG) && !defined(WITH_IMAGEMAGICK_MSL)
+.if defined(WITHOUT_IMAGEMAGICK_SVG) && defined(WITHOUT_IMAGEMAGICK_MSL)
 	${GREP} -v "^bin/conjure" ${TMPPLIST} > ${TMPPLIST}.tmp
 	${MV} -f ${TMPPLIST}.tmp ${TMPPLIST}
 .endif
-.if !defined(WITH_IMAGEMAGICK_PERL)
+.if defined(WITHOUT_IMAGEMAGICK_PERL)
 	${GREP} -v "lib/perl5/site_perl" ${TMPPLIST} > ${TMPPLIST}.tmp
 	${MV} -f ${TMPPLIST}.tmp ${TMPPLIST}
 .endif
