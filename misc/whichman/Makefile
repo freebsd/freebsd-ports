@@ -6,13 +6,13 @@
 #
 
 PORTNAME=	whichman
-PORTVERSION=	1.9
+PORTVERSION=	2.0
 CATEGORIES=	misc
 MASTER_SITES=	${MASTER_SITE_SUNSITE} \
 		http://www.linuxfocus.org/~guido.socher/
 MASTER_SITE_SUBDIR=	apps/doctools
 
-MAINTAINER=	leeym@cae.ce.ntu.edu.tw
+MAINTAINER=	ports@FreeBSD.org
 
 MAN1=		whichman.1 ftff.1 ftwhich.1
 
