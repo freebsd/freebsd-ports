@@ -1,0 +1,21 @@
+--- src/ASDocGen/Makefile.in.orig	Wed Sep 15 07:55:46 2004
++++ src/ASDocGen/Makefile.in	Wed Sep 29 18:17:40 2004
+@@ -43,12 +43,12 @@
+ 	  		echo $(INSTALL_DATA) $$page_name.man $(AFTER_MAN_DIR)/$$page_name.1x; \
+ 	  		$(INSTALL_DATA) $$page_name.man $(AFTER_MAN_DIR)/$$page_name.1x; \
+ 		done; echo "Done"; \
+-		cd API; echo "Installing API man pages ..." ; \
+-		for f in `ls *.man`; do \
+-			page_name=`echo $$f| awk -F . '{print $$1}'`; \
+-	  		echo $(INSTALL_DATA) $$page_name.man $(AFTER_MAN_API_DIR)/$$page_name.3x; \
+-	  		$(INSTALL_DATA) $$page_name.man $(AFTER_MAN_API_DIR)/$$page_name.3x; \
+-		done; echo "Done"; \
++#		cd API; echo "Installing API man pages ..." ; \
++#		for f in `ls *.man`; do \
++#			page_name=`echo $$f| awk -F . '{print $$1}'`; \
++#	  		echo $(INSTALL_DATA) $$page_name.man $(AFTER_MAN_API_DIR)/$$page_name.3x; \
++#	  		$(INSTALL_DATA) $$page_name.man $(AFTER_MAN_API_DIR)/$$page_name.3x; \
++#		done; echo "Done"; \
+ 		cd ../..
+ 
+ install.data_html:  do_compile
