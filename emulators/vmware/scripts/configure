@@ -102,5 +102,5 @@ exec > ${WRKDIR}/Makefile.inc.net
 echo '#' `date`
 echo VMNET_HOST_IP=$host_ip
 echo VMNET_NETMASK=$netmask
-[ $networking -ne 0 ] && echo VMNET_NETWORKING=1
+echo VMNET_NETWORKING=$networking
 )
