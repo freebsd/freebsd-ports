@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gkrellm
-PORTVERSION=	0.9.8
+PORTVERSION=	0.9.9
 CATEGORIES=	sysutils ipv6
 MASTER_SITES=	http://web.wt.net/~billw/gkrellm/ \
 		http://people.FreeBSD.org/~ume/gkrellm/
@@ -19,6 +19,7 @@ LIB_DEPENDS=	gtk12.2:${PORTSDIR}/x11-toolkits/gtk12 \
 GTK_CONFIG?=	${X11BASE}/bin/gtk12-config
 
 USE_X_PREFIX=	yes
+USE_GMAKE=	yes
 MAKE_ENV=	GTK_CONFIG="${GTK_CONFIG}"
 
 INCLUDES=	gkrellm.h gkrellm_public_proto.h gkrellm_private_proto.h
@@ -45,17 +46,17 @@ BINMODE=	2111
 .endif
 
 post-patch:
-	@${MV} ${WRKSRC}/gkrellm.h ${WRKSRC}/gkrellm.h.orig
+	@${MV} ${WRKSRC}/src/gkrellm.h ${WRKSRC}/src/gkrellm.h.orig
 	@${SED} \
 	-e "s^/usr/share/gkrellm/themes^${PREFIX}/share/gkrellm/themes^" \
 	-e "s^/usr/share/gkrellm/plugins^${PREFIX}/libexec/gkrellm/plugins^" \
-		${WRKSRC}/gkrellm.h.orig > ${WRKSRC}/gkrellm.h
+		${WRKSRC}/src/gkrellm.h.orig > ${WRKSRC}/src/gkrellm.h
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/gkrellm ${PREFIX}/bin/gkrellm
+	${INSTALL_PROGRAM} ${WRKSRC}/src/gkrellm ${PREFIX}/bin/gkrellm
 	@${MKDIR} ${PREFIX}/include/gkrellm
 .for file in ${INCLUDES}
-	${INSTALL_DATA} ${WRKSRC}/${file} ${PREFIX}/include/gkrellm
+	${INSTALL_DATA} ${WRKSRC}/src/${file} ${PREFIX}/include/gkrellm
 .endfor
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${PREFIX}/share/doc/gkrellm
