@@ -1,0 +1,10 @@
+--- work.orig/sablevm-native-library-1.0.4/src/java-io/javaio.c	Tue Jan 22 16:16:06 2002
++++ work/sablevm-native-library-1.0.4/src/java-io/javaio.c	Fri Aug 30 10:21:47 2002
+@@ -43,7 +43,6 @@
+ #include <fcntl.h>
+ #include <unistd.h>
+ #include <sys/stat.h>
+-#include <malloc.h>
+ 
+ #include <jni.h>
+ #include <jcl.h>
