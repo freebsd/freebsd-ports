@@ -11,8 +11,7 @@ BINARIES =	bin/CompAudio \
 		bin/LPanal \
 		bin/LPsyn \
 		bin/ResampAudio
-MAINHEADERS =	include/AD.h \
-		include/AO.h \
+MAINHEADERS =	include/AO.h \
 		include/AObase.h \
 		include/libtsp.h
 SUBHEADERS =	include/libtsp/AFdataio.h \
