@@ -1,0 +1,13 @@
+
+$FreeBSD$
+
+--- configure	2002/07/02 12:33:37	1.1
++++ configure	2002/07/02 12:34:01
+@@ -2335,6 +2335,7 @@
+ 
+ CFLAGS="$CFLAGS $SDL_CFLAGS"
+ LIBS="$LIBS $SDL_LIBS"
++CC="$REAL_CC"
+ 
+ echo $ac_n "checking for sqrt in -lm""... $ac_c" 1>&6
+ echo "configure:2341: checking for sqrt in -lm" >&5
