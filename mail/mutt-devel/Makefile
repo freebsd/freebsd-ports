@@ -4,7 +4,7 @@
 # Date created:         Thur July 25, 1996
 # Whom:                 David O'Brien (obrien@NUXI.com)
 #
-# $Id: Makefile,v 1.28 1997/05/17 05:34:21 obrien Exp $
+# $Id: Makefile,v 1.30 1997/05/19 13:40:31 ache Exp $
 
 DISTNAME=	${PKGNAME}e
 PKGNAME=	mutt-0.74
@@ -30,6 +30,8 @@ WRKSRC=		${WRKDIR}/${PKGNAME}
 PATCH_DIST_STRIP=	-p1
 #PATCH_DIST_STRIP=	
 GNU_CONFIGURE=	yes
+CONFIGURE_ARGS= --enable-dsn --enable-pop --enable-8bitmime --enable-flock \
+		--disable-fcntl
 MAN1=		mutt.1
 
 
