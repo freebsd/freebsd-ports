@@ -1,0 +1,11 @@
+--- lib/iiimcf/Makefile.am.orig	Wed Aug 25 08:46:38 2004
++++ lib/iiimcf/Makefile.am	Sun Sep  5 02:30:16 2004
+@@ -2,7 +2,7 @@
+ SUBDIRS = . test
+ #libdir = /usr/local/lib
+ libiiimcf_la_LDFLAGS = -version-info $(LIBIIIMCF_MAJOR_VERSION):$(LIBIIIMCF_MINOR_VERSION) \
+-                       -export-dynamic -export-symbols libiiimcf.sym ../iiimp/libiiimp.la
++                       -export-dynamic -export-symbols libiiimcf.sym -L$(LOCALBASE)/lib -liiimp
+ libiiimcf_la_CFLAGS = -DDEBUG
+ libiiimcf_la_SOURCES = iiimcf.c input-method.c attr.c commit.c context.c event.c \
+                        lookup_choice.c message.c preedit.c status.c trigger.c \

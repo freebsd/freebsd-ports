@@ -5,40 +5,68 @@
 # $FreeBSD$
 #
 
-PORTNAME=	iiimf-client-lib
-PORTVERSION=	${IIIMF_VER:S/_/./:C/-.*//}
-PORTREVISION=	1
+PORTNAME=	client-lib
+PORTVERSION=	${IIIMF_VER:S/_/./g:C/-.*//}
 CATEGORIES=	textproc
-MASTER_SITES=	http://www.openi18n.org/download/docs/im-sdk/
+MASTER_SITES=	http://www.openi18n.org/download/im-sdk/src/
+PKGNAMEPREFIX=	iiimf-
 DISTNAME=	im-sdk
-DISTFILES=	${DISTNAME}.${IIIMF_VER:S/-/./}${EXTRACT_SUFX}
+DISTFILES=	${DISTNAME}-src-${IIIMF_VER}.tgz
 
 MAINTAINER=	kcwu@csie.org
 COMMENT=	Internet/Intranet Input Method Client Framework
 
 LIB_DEPENDS=	iiimp.0:${PORTSDIR}/textproc/iiimf-protocol-lib
 
-IIIMF_VER=	r11_4-1467
+IIIMF_VER=	r12_0_1-svn1891
 WRKSRC=		${WRKDIR}/${DISTNAME}-${IIIMF_VER}
 INSTALL_WRKSRC=	${WRKSRC}/lib/iiimcf
-USE_BZIP2=	yes
 USE_GMAKE=	yes
 INSTALLS_SHLIB=	yes
+USE_ICONV=	yes
 USE_REINPLACE=	yes
-HAS_CONFIGURE=	yes
-CONFIGURE_ENV=  CFLAGS="${CFLAGS} ${PTHREAD_FLAGS}" LDFLAGS="${LDFLAGS} ${PTHREAD_LIBS}"
-CONFIGURE_ARGS=	--prefix=${PREFIX} \
-		--includedir=${PREFIX}/include/iiimf
+USE_AUTOCONF_VER=	259
+USE_AUTOHEADER_VER=	259
+USE_AUTOMAKE_VER=	19
+USE_LIBTOOL_VER=	15
+CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
+CONFIGURE_ENV=	CFLAGS="${CFLAGS} -I${LOCALBASE}/include" \
+		LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib -liconv" \
+		PTHREAD_CFLAGS="${PTHREAD_CFLAGS}" PTHREAD_LIBS="${PTHREAD_LIBS}"
+CONFIGURE_ARGS=	--includedir=${PREFIX}/include/iiimf
 DIRS=		lib/EIMIL lib/iiimcf
 
 post-patch:
 .for DIR in ${DIRS}
-	${REINPLACE_CMD} -e "s,-lpthread,-pthread,g" \
-		-e "s,-D_POSIX_C_SOURCE=199506L,,g" \
-		-e "s,has_xiccallback=no,has_xiccallback=yes,g" \
-		-e "s,/usr/lib/im,${PREFIX}/lib/im,g" \
-		-e "s,-I\$$(IM_INCLUDEDIR),-I${LOCALBASE}/include/iiimf,g" \
-		${WRKSRC}/${DIR}/configure
+	${REINPLACE_CMD} -e "s,/usr/lib/im,${PREFIX}/lib/im,g" \
+		${WRKSRC}/${DIR}/configure.ac
+.endfor
+	${REINPLACE_CMD} -e "s,/usr/lib/im,${PREFIX}/lib/im,g" \
+		${WRKSRC}/acfiles/im_common.m4
+
+pre-configure:
+.for DIR in ${DIRS}
+	cd ${WRKSRC}/${DIR} && ${ACLOCAL} -I ${LOCALBASE}/share/aclocal -I ../../acfiles
+	${TOUCH} ${WRKSRC}/${DIR}/config.h.in
+.endfor
+
+# XXX following are dup what bsd.*.mk do. how to deal this neatly?
+run-autotools:
+.for DIR in ${DIRS}
+	@(cd ${WRKSRC}/${DIR} && ${SETENV} ${AUTOTOOLS_ENV} ${AUTOMAKE} \
+		${AUTOMAKE_ARGS})
+	@(cd ${WRKSRC}/${DIR} && ${SETENV} ${AUTOTOOLS_ENV} ${AUTOCONF} \
+		${AUTOCONF_ARGS})
+	@(cd ${WRKSRC}/${DIR} && ${SETENV} ${AUTOTOOLS_ENV} ${AUTOHEADER} \
+		${AUTOHEADER_ARGS})
+.endfor
+
+patch-autotools:
+.for DIR in ${DIRS}
+	cd ${WRKSRC}/${DIR} && ${REINPLACE_CMD} -e "s^\$$ac_aux_dir/ltconfig^${LTCONFIG}^g" \
+		-e "/^ltmain=/!s^\$$ac_aux_dir/ltmain.sh^${LIBTOOLFLAGS} ${LTMAIN}^g" \
+		-e '/^LIBTOOL=/s^\$$(top_builddir)/libtool^${LIBTOOL}^g' \
+		${LIBTOOLFILES}
 .endfor
 
 do-configure:
@@ -48,7 +76,7 @@ do-configure:
 
 do-build:
 .for DIR in ${DIRS}
-	cd ${WRKSRC}/${DIR} && ${GMAKE} all
+	cd ${WRKSRC}/${DIR} && ${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} ${ALL_TARGET}
 .endfor
 
 .include <bsd.port.mk>
