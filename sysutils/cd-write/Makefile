@@ -3,18 +3,18 @@
 # Date created:         1 May 1997
 # Whom:                 jmz
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1997/05/04 18:10:54 jmz Exp $
 #
 
 DISTNAME=       cd-write-1.1
-CATEGORIES=     sysutils x11
+CATEGORIES=     sysutils
 MASTER_SITES=   ftp://ftp.obs-besancon.fr/pub/outgoing/
 
 MAINTAINER=     jmz@FreeBSD.org
 
-WRKSRC=		${WRKDIR}/cd-write
-
 LIB_DEPENDS=	tixsam4175\\.1\\.:${PORTSDIR}/x11/tix
+
+WRKSRC=		${WRKDIR}/cd-write
 
 pre-build:
 	@cd ${WRKSRC}; mv Makefile Makefile~; \
