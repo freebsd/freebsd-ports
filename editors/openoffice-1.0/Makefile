@@ -303,6 +303,7 @@ post-extract:
 	@${CP} ${WRKDIR}/gpc231/gpc.h ${WRKSRC}/../external/gpc/
 	@${MAKE} extract-mozilla
 	@-${RM} ${WRKSRC}/../moz/zipped/*.zip
+	@${CHMOD} +x ${WRKSRC}/../solenv/bin/zipdep.pl
 .if defined(L10NHELP)
 	@${ECHO_MSG} "===>  Extracting L10NHELP sub project"
 	@${MKDIR} ${WRKDIR}/L10NHELP
