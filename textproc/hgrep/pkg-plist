@@ -1,1 +1,5 @@
 bin/hgrep
+bin/hagrep
+bin/hegrep
+bin/hfgrep
+bin/hngrep
