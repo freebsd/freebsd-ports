@@ -1,11 +1,11 @@
---- po/Makefile.in.orig	Wed Nov 22 02:57:08 2000
-+++ po/Makefile.in	Wed Nov 22 02:57:25 2000
+--- po/Makefile.in.orig	Thu Nov 30 19:23:18 2000
++++ po/Makefile.in	Sat Jan 20 06:54:57 2001
 @@ -23,7 +23,7 @@
  	for i in $(LANGS); do msgfmt -o $$i.mo $$i.po; done
  
  install:
 -	for i in $(LANGS); do install -D -m 644 $$i.mo ${datadir}/locale/$$i/LC_MESSAGES/centericq.mo; done
-+	for i in $(LANGS); do install -C -D -m 644 $$i.mo ${datadir}/locale/$$i/LC_MESSAGES/centericq.mo; done
++	for i in $(LANGS); do install -d -m 644 ${datadir}/locale/$$i/LC_MESSAGES; install -C -D -m 644 $$i.mo ${datadir}/locale/$$i/LC_MESSAGES/centericq.mo; done
  
  clean:
  #	for i in $(LANGS); do $(RM) $$i.mo; done
