@@ -1,4 +1,6 @@
-tif22pnm is a commandline utility that converts TIFF- sampled images to PNM
-images, using the libtiff library, but not using NetPBM. It is similar to
-tifftopnm utility in the NetPBM distribution, but handles a wider range of
-TIFF files and is able to output the alpha channel as a PBM or PGM file.
+tif22pnm is a command line utility that converts between TIFF sampled images
+and PNM images (both directions), using the libtiff library, but not using
+NetPBM. tif22pnm is similar to tifftopnm utility in the NetPBM distribution,
+but tif22pnm handles a wider range of TIFF files and it is able to output
+the alpha channel as a PBM or PGM file. png22pnm, a converter from PNG to
+PNM is also bundled into the distribution.
