@@ -487,6 +487,7 @@
     SUBDIR += rrdtool
     SUBDIR += rshell
     SUBDIR += rsync
+    SUBDIR += ruby-dict
     SUBDIR += ruby-drb
     SUBDIR += ruby-gserver
     SUBDIR += ruby-icmp
