@@ -48,6 +48,8 @@ post-patch:
 		 s| install-docDATA||g ; \
 		 s| install-figureDATA||g ; \
 		 s|[(]libdir[)]/pkgconfig|(prefix)/libdata/pkgconfig|g'
+	@${FIND} ${WRKSRC} -name "*.[ch]" | ${XARGS} ${REINPLACE_CMD} -e \
+		's|malloc\.h|stdlib.h|g'
 
 post-install:
 .if !defined(NOPORTDOCS)
