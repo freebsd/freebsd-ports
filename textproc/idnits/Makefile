@@ -5,13 +5,13 @@
 # $FreeBSD$
 
 PORTNAME=	idnits
-PORTVERSION=	1.33
+PORTVERSION=	1.45
 CATEGORIES=	textproc
 MASTER_SITES=	http://ietf.levkowetz.com/tools/idnits/
 DISTNAME=	${PORTNAME}-v${PORTVERSION}
 EXTRACT_SUFX=
 
-MAINTAINER=	fenner@research.att.com
+MAINTAINER=	fenner@FreeBSD.Org
 COMMENT=	Looks for problems in internet draft formatting
 
 EXTRACT_CMD=	${CP}
