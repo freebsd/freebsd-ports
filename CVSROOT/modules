@@ -1923,6 +1923,7 @@ golem		ports/x11-wm/golem
 gomoku.app	ports/games/gomoku.app
 gone		ports/misc/gone
 gonvert		ports/misc/gonvert
+googolplex	ports/net/googolplex
 gopher		ports/net/gopher
 gotmail		ports/mail/gotmail
 gozer		ports/graphics/gozer
