@@ -107,6 +107,8 @@ bin/zabbix_trapperd
 %%DATADIR%%/dbpatches/1.0beta8_to_1.0beta9/postgresql/patch.sql
 %%DATADIR%%/dbpatches/1.0beta9_to_1.0beta10/mysql/patch.sql
 %%DATADIR%%/dbpatches/1.0beta9_to_1.0beta10/postgresql/patch.sql
+%%DATADIR%%/dbpatches/1.0beta10_to_1.0beta11/mysql/patch.sql
+%%DATADIR%%/dbpatches/1.0beta10_to_1.0beta11/postgresql/patch.sql
 @dirrm etc/zabbix
 @dirrm %%DATADIR%%/php/audio
 @dirrm %%DATADIR%%/php/images/sysmaps
@@ -168,6 +170,9 @@ bin/zabbix_trapperd
 @dirrm %%DATADIR%%/dbpatches/1.0beta9_to_1.0beta10/mysql
 @dirrm %%DATADIR%%/dbpatches/1.0beta9_to_1.0beta10/postgresql
 @dirrm %%DATADIR%%/dbpatches/1.0beta9_to_1.0beta10
+@dirrm %%DATADIR%%/dbpatches/1.0beta10_to_1.0beta11/mysql
+@dirrm %%DATADIR%%/dbpatches/1.0beta10_to_1.0beta11/postgresql
+@dirrm %%DATADIR%%/dbpatches/1.0beta10_to_1.0beta11
 @dirrm %%DATADIR%%/dbpatches
 @dirrm %%DATADIR%%
 @exec ln -sf %D/etc/zabbix /etc/zabbix
