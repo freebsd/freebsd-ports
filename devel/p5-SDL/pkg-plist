@@ -1,0 +1,30 @@
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/SDL_perl/SDL_perl.so
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/SDL_perl/SDL_perl.bs
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/SDL_perl/.packlist
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/SDL/autosplit.ix
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/SDL/Cursor.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/SDL/TTFont.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/SDL/Color.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/SDL/Timer.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/SDL/App.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/SDL/Music.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/SDL/Event.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/SDL/OpenGL.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/SDL/OpenGL/Model.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/SDL/OpenGL/Cube.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/SDL/Mixer.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/SDL/Sound.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/SDL/Surface.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/SDL/Rect.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/SDL/Palette.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/SDL/Console.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/SDL/Cdrom.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/SDL/FontTool.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/SDL/Font.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/SDL/Shell.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/SDL/GraphicTool.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/SDL.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/SDL_perl.pm
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/SDL_perl
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/SDL/OpenGL
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/SDL
