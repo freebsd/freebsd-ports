@@ -1,1 +1,5 @@
 MD5 (squid2.4/squid-2.4.STABLE1-src.tar.gz) = 6a3977716571a8459cf66b96306f7c05
+MD5 (squid2.4/squid-2.4.stable1-wrong_sign_on_timestamp_check.patch) = bdb1b7fea05616286f6ca30057201bab
+MD5 (squid2.4/squid-2.4.stable1-high_cpu_with_peers.patch) = f358cc67f07ba9e9904d7c150eee4d8a
+MD5 (squid2.4/squid-2.4.stable1-force_valid_blksize.patch) = d6bd16c8059ea16da1cb276331119bf3
+MD5 (squid2.4/squid-2.4.stable1-kill_parent_on_child_sigkill.patch) = a1ad2ff574a0d0973af36a10e0333cab
