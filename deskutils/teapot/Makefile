@@ -6,15 +6,15 @@
 #
 
 PORTNAME=	teapot
-PORTVERSION=	1.06
+PORTVERSION=	1.07
 CATEGORIES=	deskutils
 MASTER_SITES=	http://www.moria.de/~michael/teapot/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Full-screen curses based spread sheet program
 
-MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS} -I./.curses.h -DNO_POSIX_SOURCE" \
-		LDFLAGS="" LIBS="-lcurses -mytinfo -lm" MAKEDEPEND=""
+MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS}" LDFLAGS="" LIBS="-lcurses -lm" \
+		MAKEDEPEND=""
 ALL_TARGET=	teapot
 MAN1=		teapot.1
 
