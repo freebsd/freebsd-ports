@@ -208,7 +208,9 @@ RUBY_FLAGS+=	-d
 USE_RUBY=		yes
 
 RUBY_EXTCONF?=		extconf.rb
-CONFIGURE_ARGS+=	--with-opt-dir="${LOCALBASE}"
+CONFIGURE_ARGS+=	--with-opt-dir="${LOCALBASE}" \
+			--with-pthread-cflags="${PTHREAD_CFLAGS}" \
+			--with-pthread-libs="${PTHREAD_LIBS}"
 
 do-configure:	ruby-extconf-configure
 
@@ -218,7 +220,12 @@ ruby-extconf-configure:
 	@${ECHO_MSG} "===>  Running ${RUBY_EXTCONF} in ${d} to configure"
 .if defined(RUBY_WITH_PTHREAD)
 	cd ${WRKSRC}/${d}; \
-	${RUBY} ${RUBY_FLAGS} -i -pe 'if ~ /\brequire\s+[\047"]mkmf[\047"]/ then $$_ += "$$libs.sub!(/-lc\\b/, \"\"); $$libs += \" -pthread \"\n"; end' ${RUBY_EXTCONF}
+	${RUBY} ${RUBY_FLAGS} -i -pe '~ /\brequire\s+[\047"]mkmf[\047"]/ \
+	and $$_ += %Q|\
+		$$libs.sub!(/-lc\\b/, "")\n \
+		$$libs += " " + with_config("pthread-libs") + " "\n \
+		$$CFLAGS += " " + with_config("pthread-cflags") + " "\n \
+	|' ${RUBY_EXTCONF}
 .endif
 	@cd ${WRKSRC}/${d}; \
 	${SETENV} ${CONFIGURE_ENV} ${RUBY} ${RUBY_FLAGS} ${RUBY_EXTCONF} ${CONFIGURE_ARGS}
@@ -227,7 +234,12 @@ ruby-extconf-configure:
 	@${ECHO_MSG} "===>  Running ${RUBY_EXTCONF} to configure"
 .if defined(RUBY_WITH_PTHREAD)
 	cd ${WRKSRC}; \
-	${RUBY} ${RUBY_FLAGS} -i -pe 'if ~ /\brequire\s+[\047"]mkmf[\047"]/ then $$_ += "$$libs.sub!(/-lc\\b/, \"\"); $$libs += \" -pthread \"\n"; end' ${RUBY_EXTCONF}
+	${RUBY} ${RUBY_FLAGS} -i -pe '~ /\brequire\s+[\047"]mkmf[\047"]/ \
+	and $$_ += %Q|\
+		$$libs.sub!(/-lc\\b/, "")\n \
+		$$libs += " " + with_config("pthread-libs") + " "\n \
+		$$CFLAGS += " " + with_config("pthread-cflags") + " "\n \
+	|' ${RUBY_EXTCONF}
 .endif
 	@cd ${WRKSRC}; \
 	${SETENV} ${CONFIGURE_ENV} ${RUBY} ${RUBY_FLAGS} ${RUBY_EXTCONF} ${CONFIGURE_ARGS}
