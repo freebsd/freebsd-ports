@@ -3,7 +3,7 @@
 # Date created:		30 May 1998
 # Whom:			Thomas Gellekum <tg@FreeBSD.ORG>
 #
-# $Id: Makefile,v 1.10 1998/08/11 07:38:01 tg Exp $
+# $Id: Makefile,v 1.11 1998/09/23 12:40:24 tg Exp $
 #
 
 DISTNAME=	pygtk-0.5.2
@@ -18,7 +18,7 @@ MASTER_SITES=	ftp://ftp.daa.com.au/pub/james/python/ \
 MAINTAINER=	ports@FreeBSD.ORG
 
 BUILD_DEPENDS=	python:${PORTSDIR}/lang/python
-LIB_DEPENDS=	Imlib\\.1\\.7:${PORTSDIR}/graphics/imlib
+LIB_DEPENDS=	Imlib.1:${PORTSDIR}/graphics/imlib
 RUN_DEPENDS=	python:${PORTSDIR}/lang/python
 
 GNU_CONFIGURE=	yes

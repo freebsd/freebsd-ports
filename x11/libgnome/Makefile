@@ -3,7 +3,7 @@
 # Date created:        17 June 1998
 # Whom:                Yukihiro Nakai <Nakai@technologist.com>
 #
-# $Id: Makefile,v 1.8 1998/09/19 01:33:47 steve Exp $
+# $Id: Makefile,v 1.9 1998/09/22 22:55:56 asami Exp $
 #
 
 DISTNAME=	gnome-libs-0.27
@@ -15,7 +15,7 @@ MASTER_SITES=	ftp://ftp.jimpick.com/pub/mirrors/gnome/sources/ \
 MAINTAINER=	Nakai@technologist.com
 
 BUILD_DEPENDS=	gettext:${PORTSDIR}/devel/gettext
-LIB_DEPENDS=	gdk_imlib\\.1\\.7:${PORTSDIR}/graphics/imlib
+LIB_DEPENDS=	gdk_Imlib.1:${PORTSDIR}/graphics/imlib
 LIB_DEPENDS+=	gtk11.1:${PORTSDIR}/x11-toolkits/gtk11
 LIB_DEPENDS+=	tiff34.1:${PORTSDIR}/graphics/tiff34
 LIB_DEPENDS+=	jpeg.9:${PORTSDIR}/graphics/jpeg
