@@ -4542,6 +4542,7 @@ ldmud		ports/games/ldmud
 le		ports/editors/le
 leafnode	ports/news/leafnode
 leafnode+	ports/news/leafnode+
+leafpad		ports/editors/leafpad
 leafpak		ports/graphics/leafpak
 leaktracer	ports/devel/leaktracer
 led		ports/editors/led
