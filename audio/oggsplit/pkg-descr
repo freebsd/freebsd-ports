@@ -1,0 +1,5 @@
+oggsplit is a simple tool for splitting multiplexed (grouped or chained) Ogg
+files into separate streams. It can thus be used to take apart two concatenated
+streams (i.e. it undoes the process of cat file1.ogg file2.ogg > file3.ogg) or
+to split two streams which are grouped, for example the video and audio streams
+in a theora+vorbis file.
