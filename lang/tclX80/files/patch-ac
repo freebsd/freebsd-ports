@@ -1,5 +1,5 @@
---- ../tk/unix/Makefile.in.ORIG	Sun May  3 18:54:47 1998
-+++ ../tk/unix/Makefile.in	Sun May  3 18:55:31 1998
+--- ../tk/unix/Makefile.in.orig	Sat Nov 29 17:19:07 1997
++++ ../tk/unix/Makefile.in	Mon Sep 28 14:14:16 1998
 @@ -85,7 +85,7 @@
  # If a link fails, purge the executable, as some systems leave invalid
  # executables around.
@@ -9,3 +9,24 @@
  
  static: wishx.static tktest.static
  
+@@ -112,6 +112,7 @@
+ 	${TCL_SHLIB_LD} -o ${TKX_SHLIB_NAME} ${SOBJS} \
+ 	    ${TK_BUILD_LIB_SPEC} ${TCLX_BUILD_LIB_SPEC} \
+ 	    ${TCL_BUILD_LIB_SPEC} ${TCL_SHLIB_LD_LIBS}
++	ln -sf ${TKX_SHLIB_NAME} `echo ${TKX_SHLIB_NAME} | sed 's/\.so.*$$/.so/'`
+ 
+ hello:	hello.c
+ 	${CC} ${LD_SWITCHES} -o $@ hello.c ${STATIC_LIBS}
+@@ -223,9 +224,11 @@
+ 	    ${INSTCOPY} ${TKX_STLIB_NAME} ${INSTALL_ROOT}${TKX_INST_LIB}; \
+ 	    ${RANLIB} ${INSTALL_ROOT}${TKX_INST_LIB}/${TKX_STLIB_NAME}; \
+ 	fi
+-	${INSTCOPY} tkxConfig.sh ${INSTALL_ROOT}${TKX_INST_LIB}
++	${INSTCOPY} tkxConfig.sh ${INSTALL_ROOT}${TKX_INST_RUNTIME}
+ 	if test "@BUILD_SHARED@" = "YES"; then \
+ 	    ${INSTCOPY} ${TKX_SHLIB_NAME} ${INSTALL_ROOT}${TKX_INST_LIB} ;\
++	    (cd ${INSTALL_ROOT}${TKX_INST_LIB} && \
++		ln -sf ${TKX_SHLIB_NAME} `echo ${TKX_SHLIB_NAME} | sed 's/\.so.*$$/.so/'`) ;\
+ 	    ${INSTCOPY} pkgIndex.tcl ${INSTALL_ROOT}${TKX_EXEC_RUNTIME} ;\
+ 	fi
+ 	${INSTCOPY} tclhelp ${INSTALL_ROOT}${TKX_INST_BIN}
