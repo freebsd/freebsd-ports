@@ -4,6 +4,7 @@ bin/icesh
 bin/icesound
 bin/icewm
 %%GNOMEDESKTOP%%bin/icewm-menu-gnome2
+bin/icewm-session
 bin/icewmbg
 bin/icewmhint
 bin/icewmtray

@@ -1,5 +1,5 @@
---- src/aapm.cc.orig	Sat Jan  4 01:25:45 2003
-+++ src/aapm.cc	Mon Jan  6 19:00:50 2003
+--- src/aapm.cc.orig	Sun Aug 24 23:59:24 2003
++++ src/aapm.cc	Wed Sep 17 03:11:49 2003
 @@ -26,6 +26,13 @@
  #include <string.h>
  #include <stdio.h>
@@ -28,7 +28,7 @@
      char driver[16];
      char apmver[16];
      int apmflags;
-@@ -60,9 +71,27 @@
+@@ -60,9 +71,31 @@
      char units[16];
  
      if (fd == -1) {
@@ -38,7 +38,6 @@
 +        error = 1;
          return ;
      }
--
 +#ifdef __FreeBSD__
 +    if (ioctl(fd,APMIO_GETINFO, &ai) == -1)
 +    {
@@ -50,14 +49,18 @@
 +        return;
 +    }
 +    close(fd);
-+    BATlife = ai.ai_batt_life;
-+    ACstatus = ai.ai_acline ;
+ 
++    sprintf(apmver, "%u.%u", ai.ai_major, ai.ai_minor);
++    ACstatus = ai.ai_acline;
 +    BATflag = ai.ai_batt_stat == 3 ? 8 : 0;
++    BATlife = ai.ai_batt_life;
++    BATtime = ai.ai_batt_time == 0 ? -1 : ai.ai_batt_time;
++    strcpy(units, "sec");
 +#else
      len = read(fd, buf, sizeof(buf) - 1);
      close(fd);
  
-@@ -76,10 +105,11 @@
+@@ -76,10 +109,11 @@
          static int error = 1;
          if (error) {
              error = 0;
