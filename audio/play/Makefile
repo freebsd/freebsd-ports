@@ -3,7 +3,7 @@
 # Date created:		20 May 1998
 # Whom:			Masanori Kiriake <seiken@nbs.co.jp>
 #
-# $Id: Makefile,v 1.1.1.1 1998/07/20 04:03:16 steve Exp $
+# $Id: Makefile,v 1.1.1.1 1998/07/25 21:36:06 steve Exp $
 #
 
 DISTNAME=	play-1.0
@@ -14,5 +14,5 @@ MAINTAINER=	seiken@nbs.co.jp
 
 MANLANG=	ja
 MAN1=		play.1
-MANCOMPRESSED = YES
+MANCOMPRESSED = yes
 .include <bsd.port.mk>
