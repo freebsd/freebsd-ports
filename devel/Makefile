@@ -686,6 +686,7 @@
     SUBDIR += py-xoltar-toolkit
     SUBDIR += pychecker
     SUBDIR += pyrex
+    SUBDIR += qssl
     SUBDIR += qt-designer
     SUBDIR += qtez
     SUBDIR += qtk
