@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	edonkey
-PORTVERSION=	1.1.1
+PORTVERSION=	1.1.2
 CATEGORIES=	net java
 MASTER_SITES=	http://www.edonkey2000.com/files/
 PKGNAMESUFFIX=	-gui-java
