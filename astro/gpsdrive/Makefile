@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	gpsdrive
-PORTVERSION=	1.31
-PORTREVISION=	1
+PORTVERSION=	1.33
 CATEGORIES=	astro
 MASTER_SITES=	http://gpsdrive.kraftvoll.at/     \
 		http://gpsdrive.dotdeguy.de/      \
