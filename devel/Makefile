@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.160 1999/03/09 01:08:46 nectar Exp $
+# $Id: Makefile,v 1.161 1999/03/10 16:04:29 jfitz Exp $
 #
 
     SUBDIR += ElectricFence
@@ -136,5 +136,6 @@
     SUBDIR += xmake
     SUBDIR += xwpe
     SUBDIR += xxgdb
+    SUBDIR += yacl
 
 .include <bsd.port.subdir.mk>
