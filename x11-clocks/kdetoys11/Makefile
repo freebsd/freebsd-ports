@@ -1,6 +1,6 @@
-# New ports collection makefile for:	kdetoys-i18n
+# New ports collection makefile for:	kdetoys
 # Date created:		18 may 1999
-# Whom:			imura@cs.titech.ac.jp
+# Whom:			imura@af.airnet.ne.jp
 #
 # $FreeBSD$
 #

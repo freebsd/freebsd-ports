@@ -10,7 +10,6 @@ PORTVERSION=	0.3.5
 CATEGORIES=	japanese kde
 MASTER_SITES=	http://www.os.rim.or.jp/~s_mitu/library/kebook/ \
 		ftp://ftp.kde.gr.jp/pub/kde/unstable/contrib/
-PKGNAMESUFFIX=	-i18n
 
 MAINTAINER=	hige@higesoft.os.rim.or.jp
 

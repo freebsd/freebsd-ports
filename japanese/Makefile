@@ -103,7 +103,7 @@
     SUBDIR += kappa20
     SUBDIR += kbanner
     SUBDIR += kcc
-    SUBDIR += kebook-i18n
+    SUBDIR += kebook
     SUBDIR += kinput2-canna
     SUBDIR += kinput2-canna+freewnn
     SUBDIR += kinput2-canna+freewnn+sj3
