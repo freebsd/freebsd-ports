@@ -60,7 +60,6 @@ share/gnome/galeon/spinners/pipeon/anim_12.png
 share/gnome/galeon/spinners/pipeon/anim_13.png
 share/gnome/galeon/spinners/pipeon/anim_14.png
 share/gnome/help/galeon/C/aboutbook.html
-share/gnome/help/galeon/C/apx-gloss.html
 share/gnome/help/galeon/C/authors.html
 share/gnome/help/galeon/C/bookmarks-importing.html
 share/gnome/help/galeon/C/bookmarks-my-portal.html
@@ -76,6 +75,8 @@ share/gnome/help/galeon/C/command-line-options.html
 share/gnome/help/galeon/C/compiling-from-source.html
 share/gnome/help/galeon/C/context-menus.html
 share/gnome/help/galeon/C/cookie-manager.html
+share/gnome/help/galeon/C/cookieman-images.html
+share/gnome/help/galeon/C/cookieman-sites.html
 share/gnome/help/galeon/C/docbook.css
 share/gnome/help/galeon/C/full-screen-mode.html
 share/gnome/help/galeon/C/getting-started.html
@@ -101,7 +102,7 @@ share/gnome/help/galeon/C/stylesheet-images/toc-plus.gif
 share/gnome/help/galeon/C/stylesheet-images/up.gif
 share/gnome/help/galeon/C/stylesheet-images/warning.gif
 share/gnome/help/galeon/C/toolbar.html
-share/gnome/oaf/galeon.oafinfo
+share/gnome/oaf/galeon.oaf
 share/gnome/pixmaps/galeon.png
 share/locale/az/LC_MESSAGES/galeon.mo
 share/locale/ca/LC_MESSAGES/galeon.mo
