@@ -1,37 +1,17 @@
---- bin/icc.orig	Tue Dec  9 19:55:19 2003
-+++ bin/icc	Tue Dec  9 20:03:34 2003
-@@ -1,6 +1,12 @@
+--- bin/icc.orig	Sun Mar  6 15:40:09 2005
++++ bin/icc	Sun Mar  6 15:44:30 2005
+@@ -1,5 +1,11 @@
  #!/bin/sh
  
--if [ -z INTEL_LICENSE_FILE ]
 +ICC_LOCALBASE=%%ICC_LOCALBASE%%
 +export ICC_LOCALBASE
 +
-+GXX_ROOT=<INSTALLDIR>/lib
++GXX_ROOT=${GXX_ROOT:-<INSTALLDIR>/lib}
 +export GXX_ROOT
 +
-+if [ -z "$INTEL_LICENSE_FILE" ]
+ if [ -z "$INTEL_LICENSE_FILE" ]
  then
- INTEL_LICENSE_FILE=<INSTALLDIR>/licenses;
- else
-@@ -8,7 +14,7 @@
- fi
- export INTEL_LICENSE_FILE;
- 
--if [ -z LD_LIBRARY_PATH ]
-+if [ -z "$LD_LIBRARY_PATH" ]
- then 
-  LD_LIBRARY_PATH=<INSTALLDIR>/lib;
- else
-@@ -16,7 +22,7 @@
- fi
- export LD_LIBRARY_PATH;
- 
--if [ -z PATH ]
-+if [ -z "$PATH" ]
- then
-  PATH=<INSTALLDIR>/bin;
- else
+  INTEL_LICENSE_FILE="<INSTALLDIR>/licenses";
 @@ -24,11 +30,46 @@
  fi
  export PATH;
