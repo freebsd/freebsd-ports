@@ -1,0 +1,11 @@
+bin/tinyca
+%%SITE_PERL%%/tinyca/CA.pm
+%%SITE_PERL%%/tinyca/CERT.pm
+%%SITE_PERL%%/tinyca/GUI.pm
+%%SITE_PERL%%/tinyca/KEY.pm
+%%SITE_PERL%%/tinyca/OpenSSL.pm
+%%SITE_PERL%%/tinyca/REQ.pm
+%%SITE_PERL%%/tinyca/TCONFIG.pm
+@dirrm %%SITE_PERL%%/tinyca/
+%%PORTDOCS%%%%DOCSDIR%%/INSTALL
+%%PORTDOCS%%@dirrm %%DOCSDIR%%

@@ -361,6 +361,7 @@
     SUBDIR += tea-total
     SUBDIR += termlog
     SUBDIR += tinc
+    SUBDIR += tinyca
     SUBDIR += trinokiller
     SUBDIR += tripwire
     SUBDIR += tripwire-131
