@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	mod_auth_external
-PORTVERSION=	2.2.8
+PORTVERSION=	2.2.9
 CATEGORIES=	www
 MASTER_SITES=	http://www.unixpapa.com/software/
 DIST_SUBDIR=	apache
