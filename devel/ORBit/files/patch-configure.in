@@ -1,8 +1,8 @@
 
 $FreeBSD$
 
---- configure.in	2001/10/27 12:08:05	1.1
-+++ configure.in	2001/10/27 12:33:26
+--- configure.in	2002/03/12 14:47:33	1.1
++++ configure.in	2002/03/12 14:47:53
 @@ -241,33 +241,29 @@
  dnl This generates warnings from autoconf...
  AC_C_BIGENDIAN
@@ -13,10 +13,9 @@ $FreeBSD$
 +#include <sys/types.h>
  #include <sys/uio.h>
 -#define NIOVECS 50
--int main(int argc, char *argv[])
 +#include <fcntl.h>
 +#include <stdio.h>
-+int main()
+ int main(int argc, char *argv[])
  {
 -	char dumbuf[20] = "\n";
 -	struct iovec iovecs[NIOVECS];

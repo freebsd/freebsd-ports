@@ -1,19 +1,29 @@
 
 $FreeBSD$
 
---- ltmain.sh.orig	Mon Jan  7 11:09:55 2002
-+++ ltmain.sh	Thu Jan 24 16:32:50 2002
-@@ -1795,6 +1795,9 @@
- 	*-*-cygwin* | *-*-mingw* | *-*-os2* | *-*-beos*)
- 	  # these systems don't actually have a c library (as such)!
- 	  ;;
-+	*-*-freebsd*)
-+	  # has libc, but it shouldn't be explicitly linked in
-+	  ;;
-         *-*-rhapsody*)
- 	  # rhapsody is a little odd...
- 	  deplibs="$deplibs -framework System"
-@@ -3360,10 +3366,12 @@
+--- ltmain.sh.orig	Mon Mar 11 14:42:39 2002
++++ ltmain.sh	Tue Mar 12 16:38:49 2002
+@@ -1042,6 +1042,9 @@
+ 	    # These systems don't actually have a C library (as such)
+ 	    test "X$arg" = "X-lc" && continue
+ 	    ;;
++	  *-*-freebsd*)
++	    # has libc, but it shouldn't be explicitly linked in
++	    ;;
+ 	  esac
+ 	fi
+ 	deplibs="$deplibs $arg"
+@@ -2438,6 +2441,9 @@
+ 	  *-*-netbsd*)
+ 	    # Don't link with libc until the a.out ld.so is fixed.
+ 	    ;;
++	  *-*-freebsd*)
++	    # has libc, but it shouldn't be explicitly linked in
++	    ;;
+ 	  *)
+ 	    # Add libc to deplibs on all other systems if necessary.
+ 	    if test $build_libtool_need_lc = "yes"; then
+@@ -4223,10 +4229,12 @@
  	fi
  
  	# Install the pseudo-library for information purposes.
