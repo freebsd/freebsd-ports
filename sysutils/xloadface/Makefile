@@ -23,6 +23,12 @@ XLOADFACEDIR=	$(X11BASE)/lib/X11/xloadface
 MAN1=		xloadface.1
 MANLANG=	ja
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 500113
+BROKEN=		"Does not compile on FreeBSD ${OSVERSION}"
+.endif
+
 pre-build:
 	${LOCALBASE}/bin/nkf -e ${WRKSRC}/xloadface.1 > ${WRKSRC}/xloadface.man
 
@@ -37,4 +43,4 @@ pre-install:
 	${INSTALL_DATA} ${WRKSRC}/bitmap/*   $(XLOADFACEDIR)/bitmap
 	${INSTALL_DATA} ${WRKSRC}/catfaces/* $(XLOADFACEDIR)/catfaces
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
