@@ -208,6 +208,7 @@
     SUBDIR += lbreakout2
     SUBDIR += lexter
     SUBDIR += lgeneral
+    SUBDIR += lgeneral-data
     SUBDIR += libshhcards
     SUBDIR += lincity
     SUBDIR += linux-nwserver
