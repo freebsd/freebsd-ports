@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	nessus-libraries
-PORTVERSION=	1.2.5
+PORTVERSION=	1.2.6
 CATEGORIES=	security
 MASTER_SITES=	ftp://ftp.cis.fed.gov/pub/nessus/nessus-${PORTVERSION}/src/ \
 		ftp://ftp.nessus.org/pub/nessus/nessus-${PORTVERSION}/src/ \
@@ -25,7 +25,9 @@ DIST_SUBDIR=	nessus
 WRKSRC=		${WRKDIR}/nessus-libraries
 
 USE_LIBTOOL=	YES
-CONFIGURE_ARGS=	--enable-cipher
+CONFIGURE_ARGS=	--enable-cipher --sharedstatedir=${PREFIX}/etc/nessus/com \
+		--localstatedir=${PREFIX}/etc/nessus/var
+
 INSTALLS_SHLIB=	YES
 
 MAN1=		nessus-config.1
