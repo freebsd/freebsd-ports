@@ -13,7 +13,7 @@ MASTER_SITES=	http://www.ccl.net/cca/software/SOURCES/FORTRAN/mopac7_sources/
 DISTNAME=	mopac7
 DISTFILES=	mopac7.tar.Z  mopac7-man.tar.Z
 
-PATCH_SITES=	ftp://ftp.ccl.net/pub/chemistry/software/LINUX/mopac7/old-version-95.06.21/
+PATCH_SITES=	http://www.ccl.net/cca/software/LINUX/mopac7/old-version-95.06.21/
 PATCHFILES=	mopac7-linux.diff.Z
 PATCH_DIST_STRIP=	-p1
 
