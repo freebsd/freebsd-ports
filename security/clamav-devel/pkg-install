@@ -4,11 +4,12 @@ if [ -z "${CLAMAVUSER}" ]; then
 	CLAMAVUSER=clamav
 fi
 
-if [ -z "${SPOOLDIR}" ]; then
-	SPOOLDIR=/var/clamd
+if [ -z "${CLAMAVGROUP}" ]; then
+	CLAMAVGROUP=clamav
 fi
 
-CLAMAVGROUP=${CLAMAVUSER}
+CLAMRUN=/var/run/clamav
+CLAMLOG=/var/log/clamav
 
 echo "===> Adding user \"${CLAMAVUSER}\" if necessary."
 if ! pw groupshow "${CLAMAVGROUP}" 2>/dev/null 1>&2; then
@@ -22,7 +23,7 @@ fi
 
 if ! pw usershow "${CLAMAVUSER}" 2>/dev/null 1>&2; then
 	if pw useradd ${CLAMAVUSER} -g ${CLAMAVGROUP} -h - \
-		-s "/usr/sbin/nologin" -d "${SPOOLDIR}" \
+		-s "/usr/sbin/nologin" -d "/nonexistent" \
 		-c "Clam Antivirus"; \
         then
                 echo "===> Added user \"${CLAMAVUSER}\"."
@@ -33,7 +34,10 @@ if ! pw usershow "${CLAMAVUSER}" 2>/dev/null 1>&2; then
 fi
 
 echo "===> Setting permissions..."
-mkdir ${SPOOLDIR}
-chown -R ${CLAMAVUSER}:${CLAMAVGROUP} ${PKG_PREFIX}/share/clamav ${SPOOLDIR}
+mkdir -p "${CLAMRUN}"
+chown "${CLAMAVUSER}:${CLAMAVGROUP}" "${CLAMRUN}"
+
+mkdir -p "${CLAMLOG}"
+chown "${CLAMAVUSER}:${CLAMAVGROUP}" "${CLAMLOG}"
 
 exit 0

@@ -10,10 +10,17 @@ sbin/clamd
 include/clamav.h
 lib/libclamav.so.1
 lib/libclamav.so
-lib/libclamav.la
 lib/libclamav.a
-share/clamav/mirrors.txt
-@dirrm share/clamav
+@unexec if cmp -s %D/etc/clamav.conf %D/etc/clamav.conf.default; then rm -f %D/etc/clamav.conf; fi
+etc/clamav.conf.default
+@exec [ -f %B/clamav.conf ] || cp %B/%f %B/clamav.conf
+@owner %%CLAMAVUSER%%
+@group %%CLAMAVGROUP%%
+%%DATADIR%%/mirrors.txt
+@exec chown %%CLAMAVUSER%%:%%CLAMAVGROUP%% %B
+@dirrm %%DATADIR%%
+@unexec rmdir /var/run/clamav 2>/dev/null || true
+@unexec rmdir /var/log/clamav 2>/dev/null || true
 @unexec echo ""
 @unexec echo "========================================================="
 @unexec echo " If you want to deinstall this package permanently then"
