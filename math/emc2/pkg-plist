@@ -1,0 +1,21 @@
+bin/emc2
+bin/prf_f3d
+%%PORTDOCS%%%%DOCSDIR%%/COPYRIGHT
+%%PORTDOCS%%%%DOCSDIR%%/emc2.doc.en.ps.gz
+%%PORTDOCS%%%%DOCSDIR%%/emc2.doc.fr.ps.gz
+%%PORTDOCS%%%%EXAMPLESDIR%%/c.emc2_bd
+%%PORTDOCS%%%%EXAMPLESDIR%%/cooler.emc2_bd
+%%PORTDOCS%%%%EXAMPLESDIR%%/culot1.emc2_bd
+%%PORTDOCS%%%%EXAMPLESDIR%%/demi_carre.emc2_bd
+%%PORTDOCS%%%%EXAMPLESDIR%%/fissure.emc2_bd
+%%PORTDOCS%%%%EXAMPLESDIR%%/gruyere.emc2_bd
+%%PORTDOCS%%%%EXAMPLESDIR%%/houman.emc2_bd
+%%PORTDOCS%%%%EXAMPLESDIR%%/levier.emc2_bd
+%%PORTDOCS%%%%EXAMPLESDIR%%/mos.emc2_bd
+%%PORTDOCS%%%%EXAMPLESDIR%%/naca.f
+%%PORTDOCS%%%%EXAMPLESDIR%%/naca.pts
+%%PORTDOCS%%%%EXAMPLESDIR%%/naca012.emc2_bd
+%%PORTDOCS%%%%EXAMPLESDIR%%/q.emc2_bd
+%%PORTDOCS%%%%EXAMPLESDIR%%/rotor.emc2_bd
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%

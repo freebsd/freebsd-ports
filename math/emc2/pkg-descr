@@ -1,0 +1,13 @@
+Emc2 is a portable, interactive and graphic software Edition of two
+dimensional geometry and mesh. We can create and modify the geometry
+(CAD), define the discretization on the lines, define the subdomains,
+and define some reference numbers to take into account the boundary
+conditions and material properties. The elements of the mesh are triangles
+and quadrilaterals. We have two kind of meshes: grid mesh and Delaunay
+Voronoo (automatic mesh). We make the edition of the mesh by moving,
+removing, adding vertices, by regularization, or by transformations
+(symmetry, rotation,..), etc.
+
+Suggested add-on: the port math/bamg.
+
+WWW: http://www-rocq1.inria.fr/gamma/cdrom/www/emc2/eng.htm
