@@ -64,6 +64,8 @@
     SUBDIR += dirtree
     SUBDIR += display
     SUBDIR += dnetc
+    SUBDIR += dnetc-alpha
+    SUBDIR += dnetc-sparc64
     SUBDIR += documancer
     SUBDIR += dog
     SUBDIR += dotfile
