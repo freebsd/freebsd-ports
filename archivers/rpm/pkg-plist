@@ -11,3 +11,5 @@ man/man8/rpm.8.gz
 man/man8/rpm2cpio.8.gz
 share/misc/rpmrc
 share/misc/rpmpopt
+@dirrm share/misc
+@dirrm include/rpm
