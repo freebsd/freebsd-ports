@@ -15,8 +15,6 @@ DISTNAME=	${PORTNAME}-${PORTVERSION:C/.0$/-0/}.shared.${ARCH}-${OPSYS}
 
 MAINTAINER=	holger@e-gitt.net
 
-LIB_DEPENDS=	c.4:${PORTSDIR}/misc/compat4x
-
 ONLY_FOR_ARCHS=	alpha i386
 USE_BZIP2=	yes
 NO_BUILD=	yes
@@ -46,4 +44,10 @@ do-install:
 post-install:
 	@${SED} -e 's|/usr/local/|${PREFIX}/|' ${PKGMESSAGE}
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 500000
+LIB_DEPENDS+=	c_r.4:${PORTSDIR}/misc/compat4x
+.endif
+
+.include <bsd.port.post.mk>
