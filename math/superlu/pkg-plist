@@ -12,6 +12,5 @@ lib/libsuperlu.a
 @dirrm include/superlu
 %%PORTDOCS%%share/doc/superlu/SLU_general.ps.gz
 %%PORTDOCS%%share/doc/superlu/simax95.ps.gz
-%%PORTDOCS%%share/doc/superlu/ug.ps.gz
+%%PORTDOCS%%share/doc/superlu/superlu_ug.ps.gz
 %%PORTDOCS%%@dirrm share/doc/superlu
-

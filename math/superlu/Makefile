@@ -46,10 +46,9 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/SRC/*.h ${PREFIX}/include/superlu
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/INSTALL/*.ps ${DOCSDIR}
-	${GZIP_CMD} ${DOCSDIR}/*.ps
 	${INSTALL_DATA} ${DISTDIR}/${DIST_SUBDIR}/SLU_general.ps.gz ${DOCSDIR}
 	${INSTALL_DATA} ${DISTDIR}/${DIST_SUBDIR}/simax95.ps.gz ${DOCSDIR}
+	${INSTALL_DATA} ${DISTDIR}/${DIST_SUBDIR}/superlu_ug.ps.gz ${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>
