@@ -1,18 +1,19 @@
 # New ports collection makefile for:	flim for emacs
-# Version required:	1.12.7
 # Date created:		9 May 1999
 # Whom:			Shigeyuki FUKUSHIMA <shige@FreeBSD.org>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	flim-${FLIM_VER}
+PORTNAME=	flim-${EMACS_PORT}
+PORTVERSION=	${FLIM_VER}
 CATEGORIES=	editors elisp
 MASTER_SITES=	ftp://ftp.etl.go.jp/pub/mule/flim/flim-1.12/ \
 		ftp://ftp.media.kyoto-u.ac.jp/pub/mule/flim/flim-1.12/ \
 		ftp://ftp.win.or.jp/pub/word/mule/flim/flim-1.12/ \
 		ftp://ftp.eos.hokudai.ac.jp/pub/GNU/emacs/mule/flim/flim-1.12/
 MAINTAINER?=	shige@FreeBSD.org
+DISTNAME=	flim-${FLIM_VER}
 
 PORTCLASS?=	master
 
@@ -39,7 +40,6 @@ REQUIRE_SETUPEL= YES
 ALL_TARGET?=	elc
 
 .if defined(EMACS_PORT)
-PKGNAME=	flim-${EMACS_PORT}-${FLIM_VER}
 EMACS_CMD?=	${PREFIX}/bin/${EMACS_NAME}-${EMACS_VER}
 BUILD_DEPENDS+=	${EMACS_CMD}:${PORTSDIR}/editors/${EMACS_PORT}
 .if defined(HAS_COMMON_PORT) && (${HAS_COMMON_PORT} == "YES")

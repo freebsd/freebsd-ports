@@ -1,5 +1,4 @@
 # New ports collection makefile for:	yudit
-# Version required:	1.3
 # Date created:		October 3, 1998
 # Whom:			rch@richard.eu.org
 #
@@ -9,7 +8,8 @@
 #
 #
 
-DISTNAME=	yudit-1.5
+PORTNAME=	yudit
+PORTVERSION=	1.5
 CATEGORIES=	editors converters print
 MASTER_SITES=	${MASTER_SITE_SUNSITE}
 MASTER_SITE_SUBDIR= apps/editors/X

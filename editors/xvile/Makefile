@@ -1,16 +1,16 @@
 # New ports collection makefile for:    xvile
-# Version required:     9.1
 # Date created:         Wed Nov 26, 1996
 # Whom:                 pgf
 #
 # $FreeBSD$
 #
 
-DISTNAME=	vile-9.1
-PKGNAME=	xvile-9.1
+PORTNAME=	xvile
+PORTVERSION=	9.1
 CATEGORIES=	editors
 MASTER_SITES=	ftp://ftp.phred.org/pub/vile/ \
 		ftp://id.wing.net/pub/pgf/vile/
+DISTNAME=	vile-${PORTVERSION}
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	gj@freebsd.org

@@ -1,14 +1,15 @@
 # New ports collection makefile for:	bitmap for emacs20
-# Version required:	8.2
 # Date created:		23 September 1998
 # Whom:			Shigeyuki FUKUSHIMA <shige@FreeBSD.org>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	bitmap-mule-${BITMAP_VER}
+PORTNAME=	bitmap-${EMACS_PORT}
+PORTVERSION=	${BITMAP_PKG_VER}
 CATEGORIES=	editors elisp
 MASTER_SITES=	ftp://ftp.jpl.org/pub/elisp/bitmap/
+DISTNAME=	bitmap-mule-${BITMAP_VER}
 
 MAINTAINER=	shige@FreeBSD.org
 
@@ -28,7 +29,6 @@ EMACS_LIBDIR_WITH_VER=	${EMACS_LIBDIR}/${EMACS_VER}
 # target name for make build
 ALL_TARGET=	elc
 
-PKGNAME=	bitmap-${EMACS_PORT}-${BITMAP_PKG_VER}
 EMACS_CMD=	${PREFIX}/bin/${EMACS_NAME}-${EMACS_VER}
 BUILD_DEPENDS=	${EMACS_CMD}:${PORTSDIR}/editors/${EMACS_PORT} \
 		uncompface:${PORTSDIR}/mail/faces

@@ -1,15 +1,16 @@
 # New ports collection makefile for:	apel for emacs
-# Version required:	9.23
 # Date created:		23 September 1998
 # Whom:			Shigeyuki FUKUSHIMA <shige@FreeBSD.org>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	apel-${APEL_VER}
+PORTNAME=	apel-${EMACS_PORT}
+PORTVERSION=	${APEL_VER}
 CATEGORIES=	editors elisp
 MASTER_SITES=	ftp://ftp.etl.go.jp/pub/mule/apel/ \
 		ftp://ftp.center.osaka-u.ac.jp/mule/apel/
+DISTNAME=	apel-${APEL_VER}
 
 MAINTAINER?=	shige@FreeBSD.org
 
@@ -38,7 +39,6 @@ REQUIRE_SETUPEL=  YES
 ALL_TARGET?=	elc
 
 .if defined(EMACS_PORT)
-PKGNAME=	apel-${EMACS_PORT}-${APEL_VER}
 EMACS_CMD?=	${PREFIX}/bin/${EMACS_NAME}-${EMACS_VER}
 BUILD_DEPENDS=	${EMACS_CMD}:${PORTSDIR}/editors/${EMACS_PORT}
 .if defined(HAVE_COMMON_PORT) && (${HAVE_COMMON_PORT} == "YES")

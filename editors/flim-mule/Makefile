@@ -1,5 +1,4 @@
 # New ports collection makefile for:	flim for mule
-# Version required:	1.12.7
 # Date created:		9 May 1999
 # Whom:			Shigeyuki FUKUSHIMA <shige@FreeBSD.org>
 #
