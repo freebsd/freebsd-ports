@@ -14,9 +14,9 @@ MASTER_SITES=	ftp://nuis.nuie.nagoya-u.ac.jp/info/nagoya-u/ \
 
 MAINTAINER=	max@FreeBSD.ORG
 
-FORBIDDEN=	see PR# 6180 about exploitable security hole
-
 LIB_DEPENDS=	Xpm.4:${PORTSDIR}/graphics/xpm
+
+FORBIDDEN=	see PR# 6180 about exploitable security hole
 
 USE_IMAKE=	yes
 PREFIX=         ${LOCALBASE}
@@ -30,13 +30,13 @@ STARTUP_SCRIPT=	${PREFIX}/etc/rc.d/youbind.sh.sample
 
 post-install:
 	@if [ ! -f ${STARTUP_SCRIPT} ]; then				\
-		echo "Creating startup script '${STARTUP_SCRIPT}'" ;	\
-		echo "#!/bin/sh" > ${STARTUP_SCRIPT} ;			\
-		echo "if [ -f ${PREFIX}/sbin/youbind ]; then"		\
+		${ECHO} "Creating startup script '${STARTUP_SCRIPT}'" ;	\
+		${ECHO} "#!/bin/sh" > ${STARTUP_SCRIPT} ;			\
+		${ECHO} "if [ -f ${PREFIX}/sbin/youbind ]; then"		\
 			>> ${STARTUP_SCRIPT} ;				\
-		echo "    ${PREFIX}/sbin/youbind ; echo -n ' youbind'"	\
+		${ECHO} "    ${PREFIX}/sbin/youbind ; ${ECHO} -n ' youbind'"	\
 			>> ${STARTUP_SCRIPT} ;				\
-		echo "fi" >> ${STARTUP_SCRIPT} ;			\
+		${ECHO} "fi" >> ${STARTUP_SCRIPT} ;			\
 		${CHMOD} 755 ${STARTUP_SCRIPT} ;				\
 	fi
 	@${SETENV} PKG_PREFIX=${PREFIX} ${SH} ${PKGDIR}/INSTALL ${PKGNAME} POST-INSTALL
