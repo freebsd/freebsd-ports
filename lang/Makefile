@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.42 1996/01/31 09:14:31 asami Exp $
+# $Id: Makefile,v 1.43 1996/02/07 06:20:54 jkh Exp $
 #
 
     SUBDIR += Gofer
@@ -7,7 +7,7 @@
     SUBDIR += bwbasic
     SUBDIR += eiffel
     SUBDIR += elk
-    BROKEN += expect      # no package files yet
+    SUBDIR += expect
     SUBDIR += forth
     SUBDIR += g77
     SUBDIR += gcl
