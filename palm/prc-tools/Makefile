@@ -7,6 +7,7 @@
 
 PORTNAME=	prc-tools
 PORTVERSION=	2.3
+PORTREVISION=	1
 CATEGORIES=	palm
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} ${MASTER_SITE_SOURCEWARE}
 MASTER_SITE_SUBDIR=	prc-tools binutils/releases \
@@ -22,10 +23,6 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Collection of tools supporting C and C++ programming for Palm OS
 
 BUILD_DEPENDS=	${LOCALBASE}/bin/autoheader:${PORTSDIR}/devel/autoconf
-
-BROKEN=		"Patch fails"
-DEPRECATED=	${BROKEN}
-EXPIRATION_DATE=2004-04-15
 
 # it is unknown whether it could actually be made to work elsewhere,
 # but right now it does not.
