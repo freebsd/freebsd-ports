@@ -8,8 +8,7 @@
 PORTNAME=	strobe
 PORTVERSION=	1.06
 CATEGORIES=	security
-MASTER_SITES=	ftp://ftp.win.ne.jp/pub/network/misc/
-EXTRACT_SUFX=	.tgz
+MASTER_SITES=	ftp://ftp.win.ne.jp/pub/misc/
 
 MAINTAINER=	ports@FreeBSD.org
 
