@@ -1,0 +1,15 @@
+diff -ru ../cam-1.02-virgin/cam.h ./cam.h
+--- ../cam-1.02-virgin/cam.h	Mon Oct 21 13:08:08 1996
++++ ./cam.h	Sun Nov 10 12:19:52 1996
+@@ -23,7 +23,11 @@
+ #include <stdio.h>
+ #include <ncurses.h>
+ #include <signal.h>
++#ifdef __FreeBSD__
++#include <machine/soundcard.h>
++#else
+ #include <sys/soundcard.h> 
++#endif
+ #include <fcntl.h>
+ 
+ #include "sounds.h"
