@@ -1,5 +1,5 @@
---- makefile.orig	Fri Nov 22 00:41:30 2002
-+++ makefile	Sun Dec  1 07:54:01 2002
+--- makefile.orig	Tue Dec 10 00:22:22 2002
++++ makefile	Tue Jan 14 18:57:13 2003
 @@ -32,8 +32,8 @@
  SUFF=
  else
@@ -11,21 +11,22 @@
  else 
  TFLAGS=-D_REENTRANT -D_THREAD_SAFE
  THRLIBS=-lpthread
-@@ -65,7 +65,6 @@
+@@ -65,7 +65,7 @@
  
  WEB_EXAMPLES = cgistub bugdb clidb
  
 -CC = g++
++CC = ${CXX}
  
  # Possible FastDB compile time parameters (-Dxxx should be added to DEFS macro):
- # 1. USE_LOCALE_SETTING - use C locale for string comparison operations
-@@ -101,13 +100,13 @@
+ # 1. USE_LOCALE_SETTINGS - use C locale for string comparison operations
+@@ -101,13 +101,13 @@
  DEFS = -DUSE_QUEUE_MANAGER -DUSE_LOCALE_SETTINGS
  
  #CFLAGS = $(TFLAGS) -c -Wall -O5 -g $(DEFS) 
 -CFLAGS = -c -Wall -O0 -g $(DEFS) $(TFLAGS)
-+CFLAGS += -c $(DEFS) $(TFLAGS)
- #CFLAGS = -c -Wall -O0 -DDEBUG=DEBUG_TRACE -g $(DEFS) $(TFLAGS)
++CFLAGS = -c ${CXXFLAGS} $(DEFS) $(TFLAGS)
+ #CFLAGS = -c -Wall -O0 -DFASTDB_DEBUG=DEBUG_TRACE -g $(DEFS) $(TFLAGS)
 -SHFLAGS=-shared
 +SHFLAGS=-shared -Wl,-soname,$@
  
@@ -36,7 +37,7 @@
  
  AR = ar
  ARFLAGS = -cru
-@@ -326,14 +325,13 @@
+@@ -326,14 +326,13 @@
  
  install: subsql installlib
  	mkdir -p $(BINSPATH)
