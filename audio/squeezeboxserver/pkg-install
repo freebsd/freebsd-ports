@@ -1,6 +1,7 @@
 #!/bin/sh
 # $FreeBSD$
 
+name=slimserver
 u=slimserv
 g=slimserv
 ugid=104
@@ -8,6 +9,10 @@ homedir=/nonexistent
 shell=/sbin/nologin
 comment="Slim Devices SlimServer pseudo-user"
 statedir=/var/db/slimserver
+pidfile=/var/run/${name}.pid
+logfile=/var/log/slimserver.log
+logcomment="# added by audio/slimserver port"
+logline="${logfile}	${u}:${g} 644 3	   100	*     Z     ${pidfile}"
 
 case $2 in
 PRE-INSTALL)
@@ -37,6 +42,13 @@ POST-INSTALL)
 	if [ ! -d ${statedir} ]; then
 		mkdir -p ${statedir}
 		chown -R ${u}:${g} ${statedir}
+	fi
+	if egrep -q "^${logfile}\>" /etc/newsyslog.conf; then
+		echo "Using existing /etc/newsyslog.conf entry."
+	else
+		echo "Adding slimserver log entry to /etc/newsyslog.conf."
+		echo "$logcomment" >> /etc/newsyslog.conf
+		echo "$logline" >> /etc/newsyslog.conf
 	fi
 	;;
 esac

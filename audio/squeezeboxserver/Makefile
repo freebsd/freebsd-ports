@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	slimserver
-PORTVERSION=	5.1.1
+PORTVERSION=	5.1.5
 CATEGORIES=	audio
 MASTER_SITES=	http://www.slimdevices.com/downloads/SlimServer_v${PORTVERSION}/
 DISTNAME=	SlimServer_v${PORTVERSION}
@@ -24,49 +24,49 @@ RUN_DEPENDS+=	${LOCALBASE}/bin/mDNSResponderPosix:${PORTSDIR}/net/mDNSResponder 
 		${SITE_PERL}/${PERL_ARCH}/MIME/Base64.pm:${PORTSDIR}/converters/p5-MIME-Base64 \
 		${SITE_PERL}/MP3/Info.pm:${PORTSDIR}/audio/p5-MP3-Info \
 		${SITE_PERL}/${PERL_ARCH}/Net/DNS.pm:${PORTSDIR}/dns/p5-Net-DNS \
-		${SITE_PERL}/${PERL_ARCH}/Time/HiRes.pm:${PORTSDIR}/devel/p5-Time-HiRes \
-		${SITE_PERL}/URI.pm:${PORTSDIR}/net/p5-URI
+		${SITE_PERL}/${PERL_ARCH}/Template.pm:${PORTSDIR}/www/p5-Template-Toolkit \
+		${SITE_PERL}/${PERL_ARCH}/Time/HiRes.pm:${PORTSDIR}/devel/p5-Time-HiRes
 
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 502110
 RUN_DEPENDS+=	${LOCALBASE}/bin/pgrep:${PORTSDIR}/sysutils/pkill
+PGREPBASE=	${LOCALBASE}
+.else
+PGREPBASE=	/usr
 .endif
 
 NO_BUILD=	yes
 USE_RC_SUBR=	yes
 DOCFILES=	Changelog.html Installation.txt
-EXCEPTFILES=	${DOCFILES} \
-		Changes \
-		MANIFEST \
-		Makefile.PL \
-		README \
-		test_tone.wav \
-		.exists
+EXCEPTFILES=	${DOCFILES}
 EXCEPTDIRS=	Bin \
 		CPAN/arch \
 		CPAN/Audio/Wav \
 		CPAN/Class \
 		CPAN/File \
+		CPAN/HTML \
 		CPAN/HTTP \
 		CPAN/IO \
 		CPAN/LWP \
 		CPAN/MIME \
 		CPAN/MP3 \
 		CPAN/Net \
+		CPAN/Template \
 		CPAN/URI
 
 CPIOARGS=	--quiet -pdum -R
 PLIST_SUB=	SLIMDIR=${SLIMDIR}
 
 SED_SCRIPT+=	-e 's,%%PREFIX%%,${PREFIX},g' \
+		-e 's,%%PGREPBASE%%,${PGREPBASE},g' \
 		-e 's,%%RC_SUBR%%,${RC_SUBR},g' \
 		-e 's,%%SLIMDIR%%,${SLIMDIR},g'
 
 pre-fetch:
 .if !defined(SLIMDIR)
 	@${ECHO_MSG} ""
-	@${ECHO_MSG} "Define SLIMDIR to override default of 'slimdir'."
+	@${ECHO_MSG} "Define SLIMDIR to override default of 'slimserver'."
 	@${ECHO_MSG} ""
 .endif
 
@@ -92,6 +92,8 @@ do-install:
 
 post-install:
 	@${SH} ${.CURDIR}/pkg-install ${PKGNAME} POST-INSTALL
+	@${ECHO}
+	@${CAT} ${PKGMESSAGE}
 
 ########################################################################
 # The following targets are for the port maintainer.  Use are your own #
