@@ -3,13 +3,14 @@
 # Date created:		19 Nov1997
 # Whom:			Wu Ching-hong <woju@FreeBSD.ee.Ntu.edu.TW>
 #
-# $Id: Makefile,v 1.2 1997/12/02 04:23:43 asami Exp $
+# $Id: Makefile,v 1.3 1998/07/21 14:11:30 vanilla Exp $
 #
 
 DISTNAME=       pine4.00
 PKGNAME=        zh-pine-4.00
 CATEGORIES=     chinese mail news
-MASTER_SITES=	ftp://ftp.cac.washington.edu/pine/
+MASTER_SITES=	ftp://ftp.cac.washington.edu/pine/old/
+EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=	avatar@www.mmlab.cse.yzu.edu.tw
 
