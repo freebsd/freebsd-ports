@@ -3,7 +3,7 @@
 # Date created:		30 Jul 1995
 # Whom:			torstenb@FreeBSD.ORG
 #
-# $Id: Makefile,v 1.16 1996/03/16 17:23:01 markm Exp $
+# $Id: Makefile,v 1.17 1996/03/21 14:41:19 ache Exp $
 #
 
 DISTNAME=       ssh-1.2.13
@@ -87,7 +87,7 @@ post-install:
 
 # Following stuff must be after <bsd.port.mk> to expand exists() properly
 
-.if defined(USE_WISH)
+.if defined(USE_WISH) && ${USE_WISH} == YES
 .if exists(${PREFIX}/bin/wish4.0)
 BUILD_DEPENDS+= wish4.0:${PORTSDIR}/x11/tk4
 CONFIGURE_ENV+= WISH=${PREFIX}/bin/wish4.0
