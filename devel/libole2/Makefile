@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	libole2
-PORTVERSION=	0.2.3
+PORTVERSION=	0.2.4
 CATEGORIES=	devel gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	unstable/sources/libole2
@@ -15,7 +15,8 @@ MAINTAINER=	gnome@FreeBSD.org
 
 USE_GMAKE=	yes
 USE_GLIB=	yes
-USE_LIBTOOL=	yes
+GNU_CONFIGURE=	yes
 INSTALLS_SHLIB=	yes
+CONFIGURE_TARGET=	--target=${MACHINE_ARCH}-unknown-freebsd${OSREL}
 
 .include <bsd.port.mk>
