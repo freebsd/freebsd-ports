@@ -3,12 +3,13 @@
 # Date created:         3 Nov 1995
 # Whom:                 markm@FreeBSD.org
 #
-# $Id: Makefile,v 1.22 1998/10/31 09:28:05 markm Exp $
+# $Id: Makefile,v 1.23 1999/01/06 04:27:54 simokawa Exp $
 #
 
-DISTNAME=	linux_lib-2.6
+DISTNAME=	linux_lib-2.6.1
 CATEGORIES=	emulators
-MASTER_SITES=	${MASTER_SITE_LOCAL}
+MASTER_SITES=	${MASTER_SITE_LOCAL} \
+		ftp://relay.nuxi.com/pub/FreeBSD/
 
 MAINTAINER=	erich@FreeBSD.org
 
