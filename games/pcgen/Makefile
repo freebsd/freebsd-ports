@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	pcgen
-PORTVERSION=	5.5.7
+PORTVERSION=	5.5.9
 CATEGORIES=	games java
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	pcgen
@@ -28,7 +28,7 @@ PLIST_SUB+=	T=${PORTDESTDIR:S/^${PREFIX}//}
 
 .if !defined(NOPORTDOCS)
 PORTDOCS=	acknowledgments faqpages gmgen greetings.html index.html \
-		installationpages listfilepages menupages navlistindex.html \
+		images installationpages listfilepages menupages navlistindex.html \
 		navtokenindex.html navtree navtree.html outputsheetpages \
 		pcgen.css systemimages tabpages walkthroughpages
 .endif

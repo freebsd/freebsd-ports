@@ -277,6 +277,7 @@ bin/pcgen.sh
 %%T%%/data/d20ogl/fantasyflightgames/dragonstar/starfarershandbook/starfarershb_equip_weap_ranged.lst
 %%T%%/data/d20ogl/fantasyflightgames/dragonstar/starfarershandbook/starfarershb_feats.lst
 %%T%%/data/d20ogl/fantasyflightgames/dragonstar/starfarershandbook/starfarershb_feats_hidden.lst
+%%T%%/data/d20ogl/fantasyflightgames/dragonstar/starfarershandbook/starfarershb_languages.lst
 %%T%%/data/d20ogl/fantasyflightgames/dragonstar/starfarershandbook/starfarershb_races.lst
 %%T%%/data/d20ogl/fantasyflightgames/dragonstar/starfarershandbook/starfarershb_skills.lst
 %%T%%/data/d20ogl/fantasyflightgames/dragonstar/starfarershandbook/starfarershb_spells.lst
@@ -934,6 +935,10 @@ bin/pcgen.sh
 %%T%%/lib/xalan-2.5.2.jar
 %%T%%/lib/xercesImpl-2.5.0.jar
 %%T%%/lib/xml-apis.jar
+%%T%%/lib/javacc.LICENSE.txt
+%%T%%/lib/javacc.jar
+%%T%%/lib/junit.LICENSE.txt
+%%T%%/lib/junit.jar
 %%T%%/lib/themes/aquathemepack.zip
 %%T%%/lib/themes/bbjthemepack.zip
 %%T%%/lib/themes/beosthemepack.zip
