@@ -6,15 +6,14 @@
 #
 
 PORTNAME=		local
-PORTVERSION=		0.2.0
+PORTVERSION=		0.2.1
 CATEGORIES=		audio www
-MASTER_SITES=		${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	streamtuner
+MASTER_SITES=		http://savannah.nongnu.org/download/streamtuner/streamtuner-local.pkg/${PORTVERSION}/
 PKGNAMEPREFIX=		streamtuner-
 DISTNAME=		${PKGNAMEPREFIX}${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=		jylefort@brutele.be
-COMMENT=	A plugin for streamtuner that browses a local MP3 repository
+COMMENT=		A plugin for streamtuner that browses a local MP3 repository
 
 BUILD_DEPENDS=		${X11BASE}/include/streamtuner/streamtuner.h:${PORTSDIR}/audio/streamtuner
 RUN_DEPENDS=		${X11BASE}/bin/streamtuner:${PORTSDIR}/audio/streamtuner
