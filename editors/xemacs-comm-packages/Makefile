@@ -6,8 +6,8 @@
 #
 
 PORTNAME=	xemacs-comm-packages
-PORTVERSION=	1.0
-CATEGORIES=	editors
+PORTVERSION=	1.1
+CATEGORIES=	editors elisp
 MASTER_SITES=	\
 		ftp://ftp.xemacs.org/pub/xemacs/packages/ \
 		ftp://ftp.mpi-sb.mpg.de/pub/gnu/mirror/ftp.xemacs.org/xemacs/packages/ \
@@ -25,7 +25,7 @@ DISTFILES=	\
 		mh-e-1.12-pkg.tar.gz \
 		rmail-1.11-pkg.tar.gz \
 		supercite-1.14-pkg.tar.gz \
-		tm-1.22-pkg.tar.gz \
+		tm-1.23-pkg.tar.gz \
 		vm-1.22-pkg.tar.gz \
 		zenirc-1.07-pkg.tar.gz
 

@@ -6,8 +6,8 @@
 #
 
 PORTNAME=	xemacs-wp-packages
-PORTVERSION=	1.0
-CATEGORIES=	editors
+PORTVERSION=	1.1
+CATEGORIES=	editors elisp
 MASTER_SITES=	\
 		ftp://ftp.xemacs.org/pub/xemacs/packages/ \
 		ftp://ftp.mpi-sb.mpg.de/pub/gnu/mirror/ftp.xemacs.org/xemacs/packages/ \
@@ -18,7 +18,7 @@ MASTER_SITES=	\
 DISTFILES=	\
 		crisp-1.11-pkg.tar.gz \
 		edt-1.09-pkg.tar.gz \
-		reftex-1.18-pkg.tar.gz \
+		reftex-1.20-pkg.tar.gz \
 		textools-1.10-pkg.tar.gz \
 		tpu-1.10-pkg.tar.gz
 
