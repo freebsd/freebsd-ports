@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	limewire
-PORTVERSION=	4.0.8
+PORTVERSION=	4.2.5
 CATEGORIES=	net java
 MASTER_SITES=	http://www9.limewire.com:82/download/
 DISTNAME=	LimeWireLinux
@@ -28,10 +28,10 @@ NO_PACKAGE=	${RESTRICTED}
 
 DATADIR=	${JAVASHAREDIR}/${PORTNAME}
 DATAFILES=	LimeWire.jar MessagesBundle.properties MessagesBundles.jar \
-		ProgressTabs.jar collections.jar commons-httpclient.jar \
-		commons-logging.jar hashes i18n.jar icu4j.jar id3v2.jar \
-		jl011.jar logicrypto.jar mp3sp14.jar themes.jar update.ver \
-		xerces.jar xml.war
+		ProgressTabs.jar commons-httpclient.jar commons-logging.jar \
+		daap.jar hashes i18n.jar icu4j.jar id3v2.jar jcraft.jar \
+		jl011.jar jmdns.jar logicrypto.jar looks.jar mp3sp14.jar \
+		themes.jar tritonus.jar update.ver vorbis.jar xerces.jar xml.war
 PLIST_FILES=	bin/limewire ${DATAFILES:S,^,%%DATADIR%%/,}
 
 post-patch:
