@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.255 1999/04/30 17:11:18 taoka Exp $
+# $Id: Makefile,v 1.256 1999/04/30 17:16:33 taoka Exp $
 #
 
     SUBDIR += SSLtelnet
@@ -171,6 +171,7 @@
     SUBDIR += tac_plus
     SUBDIR += tcpshow
     SUBDIR += tcptrace
+    SUBDIR += tdetect
     SUBDIR += telnetx
     SUBDIR += telserv
     SUBDIR += tik
