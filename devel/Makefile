@@ -137,6 +137,7 @@
     SUBDIR += pccts
     SUBDIR += pcre
     SUBDIR += pharmacy
+    SUBDIR += picprog
     SUBDIR += pmake
     SUBDIR += portcheckout
     SUBDIR += portlint
