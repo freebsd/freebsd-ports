@@ -7326,6 +7326,7 @@ p5-Switch	ports/lang/p5-Switch
 p5-Sys-CpuLoad	ports/sysutils/p5-Sys-CpuLoad
 p5-Sys-Hostname-Long	ports/sysutils/p5-Sys-Hostname-Long
 p5-Sys-Mmap	ports/devel/p5-Sys-Mmap
+p5-Sys-Utmp	ports/sysutils/p5-Sys-Utmp
 p5-SyslogScan	ports/sysutils/p5-SyslogScan
 p5-System2	ports/devel/p5-System2
 p5-T2		ports/databases/p5-T2
