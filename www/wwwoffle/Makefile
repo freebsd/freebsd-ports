@@ -7,16 +7,21 @@
 
 PORTNAME=	wwwoffle
 PORTVERSION= 	2.6
+PORTREVISION=	1
 CATEGORIES=	www ipv6
 MASTER_SITES=	ftp://ftp.demon.co.uk/pub/unix/httpd/ \
 		${MASTER_SITE_SUNSITE}
 MASTER_SITE_SUBDIR=	apps/www/servers
 EXTRACT_SUFX=	.tgz
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 400014
 PATCH_SITES=	ftp://ftp.kame.net/pub/kame/misc/ \
 		ftp://ftp.pasta.cs.uit.no/pub/IPv6/misc/
-PATCHFILES=	wwwoffle-26-v6-20001121.diff.gz
+PATCHFILES=	wwwoffle-26-v6-20001122.diff.gz
 PATCH_DIST_STRIP=	-p1
+.endif
 
 MAINTAINER=	sumikawa@FreeBSD.org
 
@@ -57,6 +62,7 @@ post-install:
 	@${MKDIR} ${SPOOL}/wwwoffle
 	@${INSTALL_SCRIPT} ${WRKSRC}/upgrade-config.pl ${SPOOL}/wwwoffle
 	@${SED} 's@%PREFIX%@${LOCALBASE}@' ${FILESDIR}/wwwoffled.sh > ${PREFIX}/etc/rc.d/wwwoffled.sh
+	@${CHMOD} +x ${PREFIX}/etc/rc.d/wwwoffled.sh
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
