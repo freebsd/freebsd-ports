@@ -1,0 +1,31 @@
+*** global.h.orig	Wed Aug 27 05:26:59 1997
+--- global.h	Wed Aug 27 05:28:53 1997
+***************
+*** 18,23 ****
+--- 18,24 ----
+   */
+  /* $Id: global.h,v 1.13 1996/08/31 08:14:40 suz Exp $ */
+  #include <stdio.h>
++ #include <string.h>
+  #include "comm.h"
+  #include "ss.h"
+  
+***************
+*** 40,47 ****
+  #define index 	strchr
+  #define rindex 	strrchr
+  #endif
+! extern char *index();
+! extern char *rindex();
+  
+  
+  extern FILE *plog;	/* protocol logging */
+--- 41,48 ----
+  #define index 	strchr
+  #define rindex 	strrchr
+  #endif
+! /*extern char *index();
+! extern char *rindex();*/
+  
+  
+  extern FILE *plog;	/* protocol logging */

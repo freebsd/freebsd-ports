@@ -1,0 +1,642 @@
+*** xui/src/xui/Makefile.orig	Wed Aug 27 04:42:07 1997
+--- xui/src/xui/Makefile	Wed Aug 27 04:54:54 1997
+***************
+*** 18,24 ****
+  GT=../gt
+  UT=../util
+  INT=../int
+! NM=../../..
+  #NMOBJS=../netmaj-1.2.x/client.o $(NM)/libnetmaj.a 
+  NMOBJS=$(NM)/client.o $(NM)/libnetmaj.a 
+  PLVOBJS=$(NM)/plview.o $(NM)/libnetmaj.a 
+--- 18,24 ----
+  GT=../gt
+  UT=../util
+  INT=../int
+! NM=../../../netmaj
+  #NMOBJS=../netmaj-1.2.x/client.o $(NM)/libnetmaj.a 
+  NMOBJS=$(NM)/client.o $(NM)/libnetmaj.a 
+  PLVOBJS=$(NM)/plview.o $(NM)/libnetmaj.a 
+***************
+*** 70,78 ****
+    ../gt/dev/x11gdev.h   ../gt/dev/x11spr.h ../gt/dev/x11gdevd.h \
+    ../gt/widget/itemtype.h  ../gt/widget/resource.h \
+    ../gt/widget/event.h ../gt/widget/funcdecl.h ../gt/widget/widgetde.h \
+!   ../util/util.h flags.h geom.h decl.h xnetmaj.h ../../..//pai.h \
+!   ../../..//global.h  ../../..//comm.h  \
+!     ../../..//result.h pixread.h \
+    pixdec.h pixbdig.h pixmisc.h pixyaku.h pmutil.h ../misc/mydir.h
+  
+  advice.o: advice.c xnet.h   \
+--- 70,78 ----
+    ../gt/dev/x11gdev.h   ../gt/dev/x11spr.h ../gt/dev/x11gdevd.h \
+    ../gt/widget/itemtype.h  ../gt/widget/resource.h \
+    ../gt/widget/event.h ../gt/widget/funcdecl.h ../gt/widget/widgetde.h \
+!   ../util/util.h flags.h geom.h decl.h xnetmaj.h ../../../netmaj/pai.h \
+!   ../../../netmaj/global.h  ../../../netmaj/comm.h  \
+!     ../../../netmaj/result.h pixread.h \
+    pixdec.h pixbdig.h pixmisc.h pixyaku.h pmutil.h ../misc/mydir.h
+  
+  advice.o: advice.c xnet.h   \
+***************
+*** 81,91 ****
+     ../gt/dev/x11spr.h ../gt/dev/x11gdevd.h \
+    ../gt/widget/itemtype.h  ../gt/widget/resource.h \
+    ../gt/widget/event.h ../gt/widget/funcdecl.h ../gt/widget/widgetde.h \
+!   ../util/util.h flags.h geom.h decl.h xnetmaj.h ../../..//pai.h \
+!   ../../..//global.h  ../../..//comm.h  \
+!     ../../..//result.h pixread.h \
+    pixdec.h pixbdig.h pixmisc.h pixyaku.h pmutil.h ../misc/mydir.h \
+!     ../../..//ahand.h \
+    bitmap/misc/adv.xpm
+  advice2.o: advice2.c xnet.h   \
+    ../gt/widget/widget.h ../gt/include/deftype.h ../gt/dev/gdev.h \
+--- 81,91 ----
+     ../gt/dev/x11spr.h ../gt/dev/x11gdevd.h \
+    ../gt/widget/itemtype.h  ../gt/widget/resource.h \
+    ../gt/widget/event.h ../gt/widget/funcdecl.h ../gt/widget/widgetde.h \
+!   ../util/util.h flags.h geom.h decl.h xnetmaj.h ../../../netmaj/pai.h \
+!   ../../../netmaj/global.h  ../../../netmaj/comm.h  \
+!     ../../../netmaj/result.h pixread.h \
+    pixdec.h pixbdig.h pixmisc.h pixyaku.h pmutil.h ../misc/mydir.h \
+!     ../../../netmaj/ahand.h \
+    bitmap/misc/adv.xpm
+  advice2.o: advice2.c xnet.h   \
+    ../gt/widget/widget.h ../gt/include/deftype.h ../gt/dev/gdev.h \
+***************
+*** 93,101 ****
+     ../gt/dev/x11spr.h ../gt/dev/x11gdevd.h \
+    ../gt/widget/itemtype.h  ../gt/widget/resource.h \
+    ../gt/widget/event.h ../gt/widget/funcdecl.h ../gt/widget/widgetde.h \
+!   ../util/util.h flags.h geom.h decl.h xnetmaj.h ../../..//pai.h \
+!   ../../..//global.h  ../../..//comm.h  \
+!     ../../..//result.h pixread.h \
+    pixdec.h pixbdig.h pixmisc.h pixyaku.h pmutil.h ../misc/mydir.h \
+      bitmap/attr/252/tiny0.xpm \
+    bitmap/attr/252/tiny1.xpm bitmap/attr/252/tiny2.xpm \
+--- 93,101 ----
+     ../gt/dev/x11spr.h ../gt/dev/x11gdevd.h \
+    ../gt/widget/itemtype.h  ../gt/widget/resource.h \
+    ../gt/widget/event.h ../gt/widget/funcdecl.h ../gt/widget/widgetde.h \
+!   ../util/util.h flags.h geom.h decl.h xnetmaj.h ../../../netmaj/pai.h \
+!   ../../../netmaj/global.h  ../../../netmaj/comm.h  \
+!     ../../../netmaj/result.h pixread.h \
+    pixdec.h pixbdig.h pixmisc.h pixyaku.h pmutil.h ../misc/mydir.h \
+      bitmap/attr/252/tiny0.xpm \
+    bitmap/attr/252/tiny1.xpm bitmap/attr/252/tiny2.xpm \
+***************
+*** 109,117 ****
+     ../gt/dev/x11spr.h ../gt/dev/x11gdevd.h \
+    ../gt/widget/itemtype.h  ../gt/widget/resource.h \
+    ../gt/widget/event.h ../gt/widget/funcdecl.h ../gt/widget/widgetde.h \
+!   ../util/util.h flags.h geom.h decl.h xnetmaj.h ../../..//pai.h \
+!   ../../..//global.h  ../../..//comm.h  \
+!     ../../..//result.h pixread.h \
+    pixdec.h pixbdig.h pixmisc.h pixyaku.h pmutil.h ../misc/mydir.h \
+     
+  auto.o: auto.c xnet.h   \
+--- 109,117 ----
+     ../gt/dev/x11spr.h ../gt/dev/x11gdevd.h \
+    ../gt/widget/itemtype.h  ../gt/widget/resource.h \
+    ../gt/widget/event.h ../gt/widget/funcdecl.h ../gt/widget/widgetde.h \
+!   ../util/util.h flags.h geom.h decl.h xnetmaj.h ../../../netmaj/pai.h \
+!   ../../../netmaj/global.h  ../../../netmaj/comm.h  \
+!     ../../../netmaj/result.h pixread.h \
+    pixdec.h pixbdig.h pixmisc.h pixyaku.h pmutil.h ../misc/mydir.h \
+     
+  auto.o: auto.c xnet.h   \
+***************
+*** 120,128 ****
+     ../gt/dev/x11spr.h ../gt/dev/x11gdevd.h \
+    ../gt/widget/itemtype.h  ../gt/widget/resource.h \
+    ../gt/widget/event.h ../gt/widget/funcdecl.h ../gt/widget/widgetde.h \
+!   ../util/util.h flags.h geom.h decl.h xnetmaj.h ../../..//pai.h \
+!   ../../..//global.h  ../../..//comm.h  \
+!     ../../..//result.h pixread.h \
+    pixdec.h pixbdig.h pixmisc.h pixyaku.h pmutil.h ../misc/mydir.h \
+     
+  bdcolor.o: bdcolor.c xnet.h   \
+--- 120,128 ----
+     ../gt/dev/x11spr.h ../gt/dev/x11gdevd.h \
+    ../gt/widget/itemtype.h  ../gt/widget/resource.h \
+    ../gt/widget/event.h ../gt/widget/funcdecl.h ../gt/widget/widgetde.h \
+!   ../util/util.h flags.h geom.h decl.h xnetmaj.h ../../../netmaj/pai.h \
+!   ../../../netmaj/global.h  ../../../netmaj/comm.h  \
+!     ../../../netmaj/result.h pixread.h \
+    pixdec.h pixbdig.h pixmisc.h pixyaku.h pmutil.h ../misc/mydir.h \
+     
+  bdcolor.o: bdcolor.c xnet.h   \
+***************
+*** 131,139 ****
+     ../gt/dev/x11spr.h ../gt/dev/x11gdevd.h \
+    ../gt/widget/itemtype.h  ../gt/widget/resource.h \
+    ../gt/widget/event.h ../gt/widget/funcdecl.h ../gt/widget/widgetde.h \
+!   ../util/util.h flags.h geom.h decl.h xnetmaj.h ../../..//pai.h \
+!   ../../..//global.h  ../../..//comm.h  \
+!     ../../..//result.h pixread.h \
+    pixdec.h pixbdig.h pixmisc.h pixyaku.h pmutil.h ../misc/mydir.h \
+     
+  bg.o: bg.c
+--- 131,139 ----
+     ../gt/dev/x11spr.h ../gt/dev/x11gdevd.h \
+    ../gt/widget/itemtype.h  ../gt/widget/resource.h \
+    ../gt/widget/event.h ../gt/widget/funcdecl.h ../gt/widget/widgetde.h \
+!   ../util/util.h flags.h geom.h decl.h xnetmaj.h ../../../netmaj/pai.h \
+!   ../../../netmaj/global.h  ../../../netmaj/comm.h  \
+!     ../../../netmaj/result.h pixread.h \
+    pixdec.h pixbdig.h pixmisc.h pixyaku.h pmutil.h ../misc/mydir.h \
+     
+  bg.o: bg.c
+***************
+*** 143,151 ****
+     ../gt/dev/x11spr.h ../gt/dev/x11gdevd.h \
+    ../gt/widget/itemtype.h  ../gt/widget/resource.h \
+    ../gt/widget/event.h ../gt/widget/funcdecl.h ../gt/widget/widgetde.h \
+!   ../util/util.h flags.h geom.h decl.h xnetmaj.h ../../..//pai.h \
+!   ../../..//global.h  ../../..//comm.h  \
+!     ../../..//result.h pixread.h \
+    pixdec.h pixbdig.h pixmisc.h pixyaku.h pmutil.h ../misc/mydir.h \
+      ../gt/widget/text.h \
+    pfinfo.h
+--- 143,151 ----
+     ../gt/dev/x11spr.h ../gt/dev/x11gdevd.h \
+    ../gt/widget/itemtype.h  ../gt/widget/resource.h \
+    ../gt/widget/event.h ../gt/widget/funcdecl.h ../gt/widget/widgetde.h \
+!   ../util/util.h flags.h geom.h decl.h xnetmaj.h ../../../netmaj/pai.h \
+!   ../../../netmaj/global.h  ../../../netmaj/comm.h  \
+!     ../../../netmaj/result.h pixread.h \
+    pixdec.h pixbdig.h pixmisc.h pixyaku.h pmutil.h ../misc/mydir.h \
+      ../gt/widget/text.h \
+    pfinfo.h
+***************
+*** 157,165 ****
+     ../gt/dev/x11spr.h ../gt/dev/x11gdevd.h \
+    ../gt/widget/itemtype.h  ../gt/widget/resource.h \
+    ../gt/widget/event.h ../gt/widget/funcdecl.h ../gt/widget/widgetde.h \
+!   ../util/util.h flags.h geom.h decl.h xnetmaj.h ../../..//pai.h \
+!   ../../..//global.h  ../../..//comm.h  \
+!     ../../..//result.h pixread.h \
+    pixdec.h pixbdig.h pixmisc.h pixyaku.h pmutil.h ../misc/mydir.h \
+     
+  getline.o: getline.c   \
+--- 157,165 ----
+     ../gt/dev/x11spr.h ../gt/dev/x11gdevd.h \
+    ../gt/widget/itemtype.h  ../gt/widget/resource.h \
+    ../gt/widget/event.h ../gt/widget/funcdecl.h ../gt/widget/widgetde.h \
+!   ../util/util.h flags.h geom.h decl.h xnetmaj.h ../../../netmaj/pai.h \
+!   ../../../netmaj/global.h  ../../../netmaj/comm.h  \
+!     ../../../netmaj/result.h pixread.h \
+    pixdec.h pixbdig.h pixmisc.h pixyaku.h pmutil.h ../misc/mydir.h \
+     
+  getline.o: getline.c   \
+***************
+*** 172,180 ****
+     ../gt/dev/x11spr.h ../gt/dev/x11gdevd.h \
+    ../gt/widget/itemtype.h  ../gt/widget/resource.h \
+    ../gt/widget/event.h ../gt/widget/funcdecl.h ../gt/widget/widgetde.h \
+!   ../util/util.h flags.h geom.h decl.h xnetmaj.h ../../..//pai.h \
+!   ../../..//global.h  ../../..//comm.h  \
+!     ../../..//result.h pixread.h \
+    pixdec.h pixbdig.h pixmisc.h pixyaku.h pmutil.h ../misc/mydir.h \
+     
+  hora.o: hora.c xnet.h   \
+--- 172,180 ----
+     ../gt/dev/x11spr.h ../gt/dev/x11gdevd.h \
+    ../gt/widget/itemtype.h  ../gt/widget/resource.h \
+    ../gt/widget/event.h ../gt/widget/funcdecl.h ../gt/widget/widgetde.h \
+!   ../util/util.h flags.h geom.h decl.h xnetmaj.h ../../../netmaj/pai.h \
+!   ../../../netmaj/global.h  ../../../netmaj/comm.h  \
+!     ../../../netmaj/result.h pixread.h \
+    pixdec.h pixbdig.h pixmisc.h pixyaku.h pmutil.h ../misc/mydir.h \
+     
+  hora.o: hora.c xnet.h   \
+***************
+*** 183,191 ****
+     ../gt/dev/x11spr.h ../gt/dev/x11gdevd.h \
+    ../gt/widget/itemtype.h  ../gt/widget/resource.h \
+    ../gt/widget/event.h ../gt/widget/funcdecl.h ../gt/widget/widgetde.h \
+!   ../util/util.h flags.h geom.h decl.h xnetmaj.h ../../..//pai.h \
+!   ../../..//global.h  ../../..//comm.h  \
+!     ../../..//result.h pixread.h \
+    pixdec.h pixbdig.h pixmisc.h pixyaku.h pmutil.h ../misc/mydir.h \
+     
+  init.o: init.c xnet.h   \
+--- 183,191 ----
+     ../gt/dev/x11spr.h ../gt/dev/x11gdevd.h \
+    ../gt/widget/itemtype.h  ../gt/widget/resource.h \
+    ../gt/widget/event.h ../gt/widget/funcdecl.h ../gt/widget/widgetde.h \
+!   ../util/util.h flags.h geom.h decl.h xnetmaj.h ../../../netmaj/pai.h \
+!   ../../../netmaj/global.h  ../../../netmaj/comm.h  \
+!     ../../../netmaj/result.h pixread.h \
+    pixdec.h pixbdig.h pixmisc.h pixyaku.h pmutil.h ../misc/mydir.h \
+     
+  init.o: init.c xnet.h   \
+***************
+*** 194,202 ****
+     ../gt/dev/x11spr.h ../gt/dev/x11gdevd.h \
+    ../gt/widget/itemtype.h  ../gt/widget/resource.h \
+    ../gt/widget/event.h ../gt/widget/funcdecl.h ../gt/widget/widgetde.h \
+!   ../util/util.h flags.h geom.h decl.h xnetmaj.h ../../..//pai.h \
+!   ../../..//global.h  ../../..//comm.h  \
+!     ../../..//result.h pixread.h \
+    pixdec.h pixbdig.h pixmisc.h pixyaku.h pmutil.h ../misc/mydir.h \
+     
+  intint.o: intint.c
+--- 194,202 ----
+     ../gt/dev/x11spr.h ../gt/dev/x11gdevd.h \
+    ../gt/widget/itemtype.h  ../gt/widget/resource.h \
+    ../gt/widget/event.h ../gt/widget/funcdecl.h ../gt/widget/widgetde.h \
+!   ../util/util.h flags.h geom.h decl.h xnetmaj.h ../../../netmaj/pai.h \
+!   ../../../netmaj/global.h  ../../../netmaj/comm.h  \
+!     ../../../netmaj/result.h pixread.h \
+    pixdec.h pixbdig.h pixmisc.h pixyaku.h pmutil.h ../misc/mydir.h \
+     
+  intint.o: intint.c
+***************
+*** 208,216 ****
+     ../gt/dev/x11spr.h ../gt/dev/x11gdevd.h \
+    ../gt/widget/itemtype.h  ../gt/widget/resource.h \
+    ../gt/widget/event.h ../gt/widget/funcdecl.h ../gt/widget/widgetde.h \
+!   ../util/util.h flags.h geom.h decl.h xnetmaj.h ../../..//pai.h \
+!   ../../..//global.h  ../../..//comm.h  \
+!     ../../..//result.h pixread.h \
+    pixdec.h pixbdig.h pixmisc.h pixyaku.h pmutil.h ../misc/mydir.h \
+     
+  msg.o: msg.c xnet.h   \
+--- 208,216 ----
+     ../gt/dev/x11spr.h ../gt/dev/x11gdevd.h \
+    ../gt/widget/itemtype.h  ../gt/widget/resource.h \
+    ../gt/widget/event.h ../gt/widget/funcdecl.h ../gt/widget/widgetde.h \
+!   ../util/util.h flags.h geom.h decl.h xnetmaj.h ../../../netmaj/pai.h \
+!   ../../../netmaj/global.h  ../../../netmaj/comm.h  \
+!     ../../../netmaj/result.h pixread.h \
+    pixdec.h pixbdig.h pixmisc.h pixyaku.h pmutil.h ../misc/mydir.h \
+     
+  msg.o: msg.c xnet.h   \
+***************
+*** 219,227 ****
+     ../gt/dev/x11spr.h ../gt/dev/x11gdevd.h \
+    ../gt/widget/itemtype.h  ../gt/widget/resource.h \
+    ../gt/widget/event.h ../gt/widget/funcdecl.h ../gt/widget/widgetde.h \
+!   ../util/util.h flags.h geom.h decl.h xnetmaj.h ../../..//pai.h \
+!   ../../..//global.h  ../../..//comm.h  \
+!     ../../..//result.h pixread.h \
+    pixdec.h pixbdig.h pixmisc.h pixyaku.h pmutil.h ../misc/mydir.h \
+      bitmap/misc/tting.xpm \
+    bitmap/misc/failconn.xpm bitmap/misc/connect.xpm bitmap/misc/disconne.xpm \
+--- 219,227 ----
+     ../gt/dev/x11spr.h ../gt/dev/x11gdevd.h \
+    ../gt/widget/itemtype.h  ../gt/widget/resource.h \
+    ../gt/widget/event.h ../gt/widget/funcdecl.h ../gt/widget/widgetde.h \
+!   ../util/util.h flags.h geom.h decl.h xnetmaj.h ../../../netmaj/pai.h \
+!   ../../../netmaj/global.h  ../../../netmaj/comm.h  \
+!     ../../../netmaj/result.h pixread.h \
+    pixdec.h pixbdig.h pixmisc.h pixyaku.h pmutil.h ../misc/mydir.h \
+      bitmap/misc/tting.xpm \
+    bitmap/misc/failconn.xpm bitmap/misc/connect.xpm bitmap/misc/disconne.xpm \
+***************
+*** 240,248 ****
+     ../gt/dev/x11spr.h ../gt/dev/x11gdevd.h \
+    ../gt/widget/itemtype.h  ../gt/widget/resource.h \
+    ../gt/widget/event.h ../gt/widget/funcdecl.h ../gt/widget/widgetde.h \
+!   ../util/util.h flags.h geom.h decl.h xnetmaj.h ../../..//pai.h \
+!   ../../..//global.h  ../../..//comm.h  \
+!     ../../..//result.h pixread.h \
+    pixdec.h pixbdig.h pixmisc.h pixyaku.h pmutil.h ../misc/mydir.h \
+      pfinfo.h \
+     
+--- 240,248 ----
+     ../gt/dev/x11spr.h ../gt/dev/x11gdevd.h \
+    ../gt/widget/itemtype.h  ../gt/widget/resource.h \
+    ../gt/widget/event.h ../gt/widget/funcdecl.h ../gt/widget/widgetde.h \
+!   ../util/util.h flags.h geom.h decl.h xnetmaj.h ../../../netmaj/pai.h \
+!   ../../../netmaj/global.h  ../../../netmaj/comm.h  \
+!     ../../../netmaj/result.h pixread.h \
+    pixdec.h pixbdig.h pixmisc.h pixyaku.h pmutil.h ../misc/mydir.h \
+      pfinfo.h \
+     
+***************
+*** 278,286 ****
+     ../gt/dev/x11spr.h ../gt/dev/x11gdevd.h \
+    ../gt/widget/itemtype.h  ../gt/widget/resource.h \
+    ../gt/widget/event.h ../gt/widget/funcdecl.h ../gt/widget/widgetde.h \
+!   ../util/util.h flags.h geom.h decl.h xnetmaj.h ../../..//pai.h \
+!   ../../..//global.h  ../../..//comm.h  \
+!     ../../..//result.h pixread.h \
+    pixdec.h pixbdig.h pixmisc.h pixyaku.h pmutil.h ../misc/mydir.h \
+      bitmap/misc/digit0.xpm \
+    bitmap/misc/digit1.xpm bitmap/misc/digit2.xpm bitmap/misc/digit3.xpm \
+--- 278,286 ----
+     ../gt/dev/x11spr.h ../gt/dev/x11gdevd.h \
+    ../gt/widget/itemtype.h  ../gt/widget/resource.h \
+    ../gt/widget/event.h ../gt/widget/funcdecl.h ../gt/widget/widgetde.h \
+!   ../util/util.h flags.h geom.h decl.h xnetmaj.h ../../../netmaj/pai.h \
+!   ../../../netmaj/global.h  ../../../netmaj/comm.h  \
+!     ../../../netmaj/result.h pixread.h \
+    pixdec.h pixbdig.h pixmisc.h pixyaku.h pmutil.h ../misc/mydir.h \
+      bitmap/misc/digit0.xpm \
+    bitmap/misc/digit1.xpm bitmap/misc/digit2.xpm bitmap/misc/digit3.xpm \
+***************
+*** 314,322 ****
+     ../gt/dev/x11spr.h ../gt/dev/x11gdevd.h \
+    ../gt/widget/itemtype.h  ../gt/widget/resource.h \
+    ../gt/widget/event.h ../gt/widget/funcdecl.h ../gt/widget/widgetde.h \
+!   ../util/util.h flags.h geom.h decl.h xnetmaj.h ../../..//pai.h \
+!   ../../..//global.h  ../../..//comm.h  \
+!     ../../..//result.h pixread.h \
+    pixdec.h pixbdig.h pixmisc.h pixyaku.h pmutil.h ../misc/mydir.h 
+  
+  pixread.o: pixread.c pixread.h ../gt/widget/widget.h ../gt/include/deftype.h \
+--- 314,322 ----
+     ../gt/dev/x11spr.h ../gt/dev/x11gdevd.h \
+    ../gt/widget/itemtype.h  ../gt/widget/resource.h \
+    ../gt/widget/event.h ../gt/widget/funcdecl.h ../gt/widget/widgetde.h \
+!   ../util/util.h flags.h geom.h decl.h xnetmaj.h ../../../netmaj/pai.h \
+!   ../../../netmaj/global.h  ../../../netmaj/comm.h  \
+!     ../../../netmaj/result.h pixread.h \
+    pixdec.h pixbdig.h pixmisc.h pixyaku.h pmutil.h ../misc/mydir.h 
+  
+  pixread.o: pixread.c pixread.h ../gt/widget/widget.h ../gt/include/deftype.h \
+***************
+*** 331,339 ****
+     ../gt/dev/x11spr.h ../gt/dev/x11gdevd.h \
+    ../gt/widget/itemtype.h  ../gt/widget/resource.h \
+    ../gt/widget/event.h ../gt/widget/funcdecl.h ../gt/widget/widgetde.h \
+!   ../util/util.h flags.h geom.h decl.h xnetmaj.h ../../..//pai.h \
+!   ../../..//global.h  ../../..//comm.h  \
+!     ../../..//result.h pixread.h \
+    pixdec.h pixbdig.h pixmisc.h pixyaku.h pmutil.h ../misc/mydir.h \
+      bitmap/yaku/yaku.xpm \
+    bitmap/misc/rryukyok.xpm bitmap/misc/rtumo.xpm bitmap/misc/rron.xpm \
+--- 331,339 ----
+     ../gt/dev/x11spr.h ../gt/dev/x11gdevd.h \
+    ../gt/widget/itemtype.h  ../gt/widget/resource.h \
+    ../gt/widget/event.h ../gt/widget/funcdecl.h ../gt/widget/widgetde.h \
+!   ../util/util.h flags.h geom.h decl.h xnetmaj.h ../../../netmaj/pai.h \
+!   ../../../netmaj/global.h  ../../../netmaj/comm.h  \
+!     ../../../netmaj/result.h pixread.h \
+    pixdec.h pixbdig.h pixmisc.h pixyaku.h pmutil.h ../misc/mydir.h \
+      bitmap/yaku/yaku.xpm \
+    bitmap/misc/rryukyok.xpm bitmap/misc/rtumo.xpm bitmap/misc/rron.xpm \
+***************
+*** 346,354 ****
+     ../gt/dev/x11spr.h ../gt/dev/x11gdevd.h \
+    ../gt/widget/itemtype.h  ../gt/widget/resource.h \
+    ../gt/widget/event.h ../gt/widget/funcdecl.h ../gt/widget/widgetde.h \
+!   ../util/util.h flags.h geom.h decl.h xnetmaj.h ../../..//pai.h \
+!   ../../..//global.h  ../../..//comm.h  \
+!     ../../..//result.h pixread.h \
+    pixdec.h pixbdig.h pixmisc.h pixyaku.h pmutil.h ../misc/mydir.h \
+      ../gt/widget/text.h \
+    pfinfo.h
+--- 346,354 ----
+     ../gt/dev/x11spr.h ../gt/dev/x11gdevd.h \
+    ../gt/widget/itemtype.h  ../gt/widget/resource.h \
+    ../gt/widget/event.h ../gt/widget/funcdecl.h ../gt/widget/widgetde.h \
+!   ../util/util.h flags.h geom.h decl.h xnetmaj.h ../../../netmaj/pai.h \
+!   ../../../netmaj/global.h  ../../../netmaj/comm.h  \
+!     ../../../netmaj/result.h pixread.h \
+    pixdec.h pixbdig.h pixmisc.h pixyaku.h pmutil.h ../misc/mydir.h \
+      ../gt/widget/text.h \
+    pfinfo.h
+***************
+*** 358,371 ****
+     ../gt/dev/x11spr.h ../gt/dev/x11gdevd.h \
+    ../gt/widget/itemtype.h  ../gt/widget/resource.h \
+    ../gt/widget/event.h ../gt/widget/funcdecl.h ../gt/widget/widgetde.h \
+!   ../util/util.h flags.h geom.h decl.h xnetmaj.h ../../..//pai.h \
+!   ../../..//global.h  ../../..//comm.h  \
+!     ../../..//result.h pixread.h \
+    pixdec.h pixbdig.h pixmisc.h pixyaku.h pmutil.h ../misc/mydir.h \
+      pfinfo.h
+! rc.o: rc.c xnetmaj.h ../../..//pai.h ../../..//global.h  \
+!    ../../..//comm.h  \
+!    ../../..//result.h xnet.h  \
+    ../gt/widget/widget.h ../gt/include/deftype.h ../gt/dev/gdev.h \
+    ../gt/dev/x11gdev.h  \
+    ../gt/dev/x11spr.h ../gt/dev/x11gdevd.h ../gt/widget/itemtype.h \
+--- 358,371 ----
+     ../gt/dev/x11spr.h ../gt/dev/x11gdevd.h \
+    ../gt/widget/itemtype.h  ../gt/widget/resource.h \
+    ../gt/widget/event.h ../gt/widget/funcdecl.h ../gt/widget/widgetde.h \
+!   ../util/util.h flags.h geom.h decl.h xnetmaj.h ../../../netmaj/pai.h \
+!   ../../../netmaj/global.h  ../../../netmaj/comm.h  \
+!     ../../../netmaj/result.h pixread.h \
+    pixdec.h pixbdig.h pixmisc.h pixyaku.h pmutil.h ../misc/mydir.h \
+      pfinfo.h
+! rc.o: rc.c xnetmaj.h ../../../netmaj/pai.h ../../../netmaj/global.h  \
+!    ../../../netmaj/comm.h  \
+!    ../../../netmaj/result.h xnet.h  \
+    ../gt/widget/widget.h ../gt/include/deftype.h ../gt/dev/gdev.h \
+    ../gt/dev/x11gdev.h  \
+    ../gt/dev/x11spr.h ../gt/dev/x11gdevd.h ../gt/widget/itemtype.h \
+***************
+*** 380,410 ****
+     ../gt/dev/x11spr.h ../gt/dev/x11gdevd.h \
+    ../gt/widget/itemtype.h  ../gt/widget/resource.h \
+    ../gt/widget/event.h ../gt/widget/funcdecl.h ../gt/widget/widgetde.h \
+!   ../util/util.h flags.h geom.h decl.h xnetmaj.h ../../..//pai.h \
+!   ../../..//global.h  ../../..//comm.h  \
+!     ../../..//result.h pixread.h \
+    pixdec.h pixbdig.h pixmisc.h pixyaku.h pmutil.h ../misc/mydir.h \
+!     ../../..//ahand.h
+  rule.o: rule.c xnet.h   \
+    ../gt/widget/widget.h ../gt/include/deftype.h ../gt/dev/gdev.h \
+    ../gt/dev/x11gdev.h   \
+     ../gt/dev/x11spr.h ../gt/dev/x11gdevd.h \
+    ../gt/widget/itemtype.h  ../gt/widget/resource.h \
+    ../gt/widget/event.h ../gt/widget/funcdecl.h ../gt/widget/widgetde.h \
+!   ../util/util.h flags.h geom.h decl.h xnetmaj.h ../../..//pai.h \
+!   ../../..//global.h  ../../..//comm.h  \
+!     ../../..//result.h pixread.h \
+    pixdec.h pixbdig.h pixmisc.h pixyaku.h pmutil.h ../misc/mydir.h \
+!     ../../..//ruledef.h
+  talkcmd.o: talkcmd.c   \
+     xnet.h  ../gt/widget/widget.h \
+    ../gt/include/deftype.h ../gt/dev/gdev.h ../gt/dev/x11gdev.h \
+    ../gt/dev/x11spr.h ../gt/dev/x11gdevd.h ../gt/widget/itemtype.h \
+     ../gt/widget/resource.h ../gt/widget/event.h \
+    ../gt/widget/funcdecl.h ../gt/widget/widgetde.h ../util/util.h flags.h \
+!   geom.h decl.h xnetmaj.h ../../..//pai.h ../../..//global.h \
+!    ../../..//comm.h  \
+!   ../../..//result.h pixread.h pixdec.h pixbdig.h pixmisc.h pixyaku.h pmutil.h \
+    ../misc/mydir.h  
+  testpai.o: testpai.c xnet.h   \
+    ../gt/widget/widget.h ../gt/include/deftype.h ../gt/dev/gdev.h \
+--- 380,410 ----
+     ../gt/dev/x11spr.h ../gt/dev/x11gdevd.h \
+    ../gt/widget/itemtype.h  ../gt/widget/resource.h \
+    ../gt/widget/event.h ../gt/widget/funcdecl.h ../gt/widget/widgetde.h \
+!   ../util/util.h flags.h geom.h decl.h xnetmaj.h ../../../netmaj/pai.h \
+!   ../../../netmaj/global.h  ../../../netmaj/comm.h  \
+!     ../../../netmaj/result.h pixread.h \
+    pixdec.h pixbdig.h pixmisc.h pixyaku.h pmutil.h ../misc/mydir.h \
+!     ../../../netmaj/ahand.h
+  rule.o: rule.c xnet.h   \
+    ../gt/widget/widget.h ../gt/include/deftype.h ../gt/dev/gdev.h \
+    ../gt/dev/x11gdev.h   \
+     ../gt/dev/x11spr.h ../gt/dev/x11gdevd.h \
+    ../gt/widget/itemtype.h  ../gt/widget/resource.h \
+    ../gt/widget/event.h ../gt/widget/funcdecl.h ../gt/widget/widgetde.h \
+!   ../util/util.h flags.h geom.h decl.h xnetmaj.h ../../../netmaj/pai.h \
+!   ../../../netmaj/global.h  ../../../netmaj/comm.h  \
+!     ../../../netmaj/result.h pixread.h \
+    pixdec.h pixbdig.h pixmisc.h pixyaku.h pmutil.h ../misc/mydir.h \
+!     ../../../netmaj/ruledef.h
+  talkcmd.o: talkcmd.c   \
+     xnet.h  ../gt/widget/widget.h \
+    ../gt/include/deftype.h ../gt/dev/gdev.h ../gt/dev/x11gdev.h \
+    ../gt/dev/x11spr.h ../gt/dev/x11gdevd.h ../gt/widget/itemtype.h \
+     ../gt/widget/resource.h ../gt/widget/event.h \
+    ../gt/widget/funcdecl.h ../gt/widget/widgetde.h ../util/util.h flags.h \
+!   geom.h decl.h xnetmaj.h ../../../netmaj/pai.h ../../../netmaj/global.h \
+!    ../../../netmaj/comm.h  \
+!   ../../../netmaj/result.h pixread.h pixdec.h pixbdig.h pixmisc.h pixyaku.h pmutil.h \
+    ../misc/mydir.h  
+  testpai.o: testpai.c xnet.h   \
+    ../gt/widget/widget.h ../gt/include/deftype.h ../gt/dev/gdev.h \
+***************
+*** 412,420 ****
+     ../gt/dev/x11spr.h ../gt/dev/x11gdevd.h \
+    ../gt/widget/itemtype.h  ../gt/widget/resource.h \
+    ../gt/widget/event.h ../gt/widget/funcdecl.h ../gt/widget/widgetde.h \
+!   ../util/util.h flags.h geom.h decl.h xnetmaj.h ../../..//pai.h \
+!   ../../..//global.h  ../../..//comm.h  \
+!     ../../..//result.h pixread.h \
+    pixdec.h pixbdig.h pixmisc.h pixyaku.h pmutil.h ../misc/mydir.h \
+     
+  title.o: title.c xnet.h   \
+--- 412,420 ----
+     ../gt/dev/x11spr.h ../gt/dev/x11gdevd.h \
+    ../gt/widget/itemtype.h  ../gt/widget/resource.h \
+    ../gt/widget/event.h ../gt/widget/funcdecl.h ../gt/widget/widgetde.h \
+!   ../util/util.h flags.h geom.h decl.h xnetmaj.h ../../../netmaj/pai.h \
+!   ../../../netmaj/global.h  ../../../netmaj/comm.h  \
+!     ../../../netmaj/result.h pixread.h \
+    pixdec.h pixbdig.h pixmisc.h pixyaku.h pmutil.h ../misc/mydir.h \
+     
+  title.o: title.c xnet.h   \
+***************
+*** 423,431 ****
+     ../gt/dev/x11spr.h ../gt/dev/x11gdevd.h \
+    ../gt/widget/itemtype.h  ../gt/widget/resource.h \
+    ../gt/widget/event.h ../gt/widget/funcdecl.h ../gt/widget/widgetde.h \
+!   ../util/util.h flags.h geom.h decl.h xnetmaj.h ../../..//pai.h \
+!   ../../..//global.h  ../../..//comm.h  \
+!     ../../..//result.h pixread.h \
+    pixdec.h pixbdig.h pixmisc.h pixyaku.h pmutil.h ../misc/mydir.h \
+     
+  version.o: version.c
+--- 423,431 ----
+     ../gt/dev/x11spr.h ../gt/dev/x11gdevd.h \
+    ../gt/widget/itemtype.h  ../gt/widget/resource.h \
+    ../gt/widget/event.h ../gt/widget/funcdecl.h ../gt/widget/widgetde.h \
+!   ../util/util.h flags.h geom.h decl.h xnetmaj.h ../../../netmaj/pai.h \
+!   ../../../netmaj/global.h  ../../../netmaj/comm.h  \
+!     ../../../netmaj/result.h pixread.h \
+    pixdec.h pixbdig.h pixmisc.h pixyaku.h pmutil.h ../misc/mydir.h \
+     
+  version.o: version.c
+***************
+*** 435,443 ****
+     ../gt/dev/x11spr.h ../gt/dev/x11gdevd.h \
+    ../gt/widget/itemtype.h  ../gt/widget/resource.h \
+    ../gt/widget/event.h ../gt/widget/funcdecl.h ../gt/widget/widgetde.h \
+!   ../util/util.h flags.h geom.h decl.h xnetmaj.h ../../..//pai.h \
+!   ../../..//global.h  ../../..//comm.h  \
+!     ../../..//result.h pixread.h \
+    pixdec.h pixbdig.h pixmisc.h pixyaku.h pmutil.h ../misc/mydir.h \
+      rc.c ../int/export.h
+  yaku.o: yaku.c xnet.h   \
+--- 435,443 ----
+     ../gt/dev/x11spr.h ../gt/dev/x11gdevd.h \
+    ../gt/widget/itemtype.h  ../gt/widget/resource.h \
+    ../gt/widget/event.h ../gt/widget/funcdecl.h ../gt/widget/widgetde.h \
+!   ../util/util.h flags.h geom.h decl.h xnetmaj.h ../../../netmaj/pai.h \
+!   ../../../netmaj/global.h  ../../../netmaj/comm.h  \
+!     ../../../netmaj/result.h pixread.h \
+    pixdec.h pixbdig.h pixmisc.h pixyaku.h pmutil.h ../misc/mydir.h \
+      rc.c ../int/export.h
+  yaku.o: yaku.c xnet.h   \
+***************
+*** 446,454 ****
+     ../gt/dev/x11spr.h ../gt/dev/x11gdevd.h \
+    ../gt/widget/itemtype.h  ../gt/widget/resource.h \
+    ../gt/widget/event.h ../gt/widget/funcdecl.h ../gt/widget/widgetde.h \
+!   ../util/util.h flags.h geom.h decl.h xnetmaj.h ../../..//pai.h \
+!   ../../..//global.h  ../../..//comm.h  \
+!     ../../..//result.h pixread.h \
+    pixdec.h pixbdig.h pixmisc.h pixyaku.h pmutil.h ../misc/mydir.h \
+  
+  xui2.o: xui2.c xnet.h   \
+--- 446,454 ----
+     ../gt/dev/x11spr.h ../gt/dev/x11gdevd.h \
+    ../gt/widget/itemtype.h  ../gt/widget/resource.h \
+    ../gt/widget/event.h ../gt/widget/funcdecl.h ../gt/widget/widgetde.h \
+!   ../util/util.h flags.h geom.h decl.h xnetmaj.h ../../../netmaj/pai.h \
+!   ../../../netmaj/global.h  ../../../netmaj/comm.h  \
+!     ../../../netmaj/result.h pixread.h \
+    pixdec.h pixbdig.h pixmisc.h pixyaku.h pmutil.h ../misc/mydir.h \
+  
+  xui2.o: xui2.c xnet.h   \
+***************
+*** 457,465 ****
+     ../gt/dev/x11spr.h ../gt/dev/x11gdevd.h \
+    ../gt/widget/itemtype.h  ../gt/widget/resource.h \
+    ../gt/widget/event.h ../gt/widget/funcdecl.h ../gt/widget/widgetde.h \
+!   ../util/util.h flags.h geom.h decl.h xnetmaj.h ../../..//pai.h \
+!   ../../..//global.h  ../../..//comm.h  \
+!     ../../..//result.h pixread.h \
+    pixdec.h pixbdig.h pixmisc.h pixyaku.h pmutil.h ../misc/mydir.h \
+      misc.h
+  config.o: config.c xnet.h   \
+--- 457,465 ----
+     ../gt/dev/x11spr.h ../gt/dev/x11gdevd.h \
+    ../gt/widget/itemtype.h  ../gt/widget/resource.h \
+    ../gt/widget/event.h ../gt/widget/funcdecl.h ../gt/widget/widgetde.h \
+!   ../util/util.h flags.h geom.h decl.h xnetmaj.h ../../../netmaj/pai.h \
+!   ../../../netmaj/global.h  ../../../netmaj/comm.h  \
+!     ../../../netmaj/result.h pixread.h \
+    pixdec.h pixbdig.h pixmisc.h pixyaku.h pmutil.h ../misc/mydir.h \
+      misc.h
+  config.o: config.c xnet.h   \
+***************
+*** 468,476 ****
+     ../gt/dev/x11spr.h ../gt/dev/x11gdevd.h \
+    ../gt/widget/itemtype.h  ../gt/widget/resource.h \
+    ../gt/widget/event.h ../gt/widget/funcdecl.h ../gt/widget/widgetde.h \
+!   ../util/util.h flags.h geom.h decl.h xnetmaj.h ../../..//pai.h \
+!   ../../..//global.h  ../../..//comm.h  \
+!     ../../..//result.h pixread.h \
+    pixdec.h pixbdig.h pixmisc.h pixyaku.h pmutil.h ../misc/mydir.h \
+      lang.h
+  board2.o: board2.c xnet.h   \
+--- 468,476 ----
+     ../gt/dev/x11spr.h ../gt/dev/x11gdevd.h \
+    ../gt/widget/itemtype.h  ../gt/widget/resource.h \
+    ../gt/widget/event.h ../gt/widget/funcdecl.h ../gt/widget/widgetde.h \
+!   ../util/util.h flags.h geom.h decl.h xnetmaj.h ../../../netmaj/pai.h \
+!   ../../../netmaj/global.h  ../../../netmaj/comm.h  \
+!     ../../../netmaj/result.h pixread.h \
+    pixdec.h pixbdig.h pixmisc.h pixyaku.h pmutil.h ../misc/mydir.h \
+      lang.h
+  board2.o: board2.c xnet.h   \
+***************
+*** 479,486 ****
+     ../gt/dev/x11spr.h ../gt/dev/x11gdevd.h \
+    ../gt/widget/itemtype.h  ../gt/widget/resource.h \
+    ../gt/widget/event.h ../gt/widget/funcdecl.h ../gt/widget/widgetde.h \
+!   ../util/util.h flags.h geom.h decl.h xnetmaj.h ../../..//pai.h \
+!   ../../..//global.h  ../../..//comm.h  \
+!     ../../..//result.h pixread.h \
+    pixdec.h pixbdig.h pixmisc.h pixyaku.h pmutil.h ../misc/mydir.h \
+     
+--- 479,486 ----
+     ../gt/dev/x11spr.h ../gt/dev/x11gdevd.h \
+    ../gt/widget/itemtype.h  ../gt/widget/resource.h \
+    ../gt/widget/event.h ../gt/widget/funcdecl.h ../gt/widget/widgetde.h \
+!   ../util/util.h flags.h geom.h decl.h xnetmaj.h ../../../netmaj/pai.h \
+!   ../../../netmaj/global.h  ../../../netmaj/comm.h  \
+!     ../../../netmaj/result.h pixread.h \
+    pixdec.h pixbdig.h pixmisc.h pixyaku.h pmutil.h ../misc/mydir.h \
+     
