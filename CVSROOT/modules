@@ -7896,6 +7896,7 @@ tvision		ports/devel/tvision
 tvmet		ports/math/tvmet
 tvp		ports/games/tvp
 tvtwm		ports/x11-wm/tvtwm
+twig		ports/www/twig
 twin		ports/emulators/twin
 twitch		ports/games/twitch
 twoftpd		ports/ftp/twoftpd
