@@ -13,11 +13,9 @@ MASTER_SITES=	ftp://ftp.cs.wisc.edu/ghost/aladdin/gs601/ \
 		http://www.ozemail.com.au/~geoffk/pdfencrypt/ \
 		http://www.proaxis.com/~mgelhaus/linux/software/hp880c/1.31/
 DISTFILES=	${GS_SOURCES} ${GS_FONTS_STD} ${GS_FONTS_OTHER} \
-		${DECRYPT_PDF} ${HP880_DRV}
+		${DECRYPT_PDF} ${HP8XX_DRV}
 
 MAINTAINER=	andreas@FreeBSD.org
-
-BROKEN=		"needs more work, does not built cleanly"
 
 Y2K=		http://www.cs.wisc.edu/~ghost/aladdin/y2k.html
 
@@ -49,7 +47,7 @@ GS_FONTS_OTHER=	ghostscript-fonts-other-6.0.tar.gz
 # Additional Drivers:
 
 # http://www.proaxis.com/~mgelhaus/linux/software/hp880c/hp880c.html
-HP880_DRV=	gdevcd8.tar.gz
+HP8XX_DRV=	gdevcd8.tar.gz
 
 # contributed uniprint profiles
 CONTRIB_UPP=	lqx70ch.upp lqx70cl.upp lqx70cm.upp \
@@ -75,7 +73,7 @@ pre-fetch:
 
 post-extract:
 	@${LN} -s ${PORTSDIR}/graphics/jpeg/work/jpeg-6b ${WRKSRC}/jpeg
-	@cd ${WRKSRC}; ${TAR} -xzf ${DISTDIR}/${HP850_DRV}
+	@cd ${WRKSRC}/src; ${TAR} -xzf ${DISTDIR}/${HP8XX_DRV}
 
 do-configure:
 .if defined(BATCH)

@@ -1,5 +1,5 @@
 --- src/unix-gcc.mak.orig	Sat Mar 18 05:13:40 2000
-+++ src/unix-gcc.mak	Sat Mar 25 15:43:57 2000
++++ src/unix-gcc.mak	Sat Mar 25 21:47:45 2000
 @@ -52,11 +52,10 @@
  # the directories also define the default search path for the
  # initialization files (gs_*.ps) and the fonts.
@@ -74,7 +74,7 @@
  # not in $(XINCLUDE).
  
 -XINCLUDE=-I/usr/local/X/include
-+XINCLUDE=-I$(X11BASE)/include
++XINCLUDE=-I$(X11BASE)/include -I$(PREFIX)/include
  
  # Define the directory/ies and library names for the X11 library files.
  # XLIBDIRS is for ld and should include -L; XLIBDIR is for LD_RUN_PATH
