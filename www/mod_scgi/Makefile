@@ -18,6 +18,8 @@ COMMENT=	Apache module that implements the client side of the SCGI protocol
 USE_APACHE=	yes
 WRKSRC=		${WRKDIR}/${DISTNAME}/${APACHE_DIR}
 
+BROKEN=		"Does not build"
+
 .include <bsd.port.pre.mk>
 .if exists(${LOCALBASE}/include/apache2/apr.h)
 WITH_APACHE2=	yes

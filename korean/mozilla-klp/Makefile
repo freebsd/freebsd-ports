@@ -21,6 +21,8 @@ COMMENT=	Mozilla Korean Language Pack (KLP)
 BUILD_DEPENDS=	${X11BASE}/lib/mozilla/regxpcom:${PORTSDIR}/www/mozilla
 RUN_DEPENDS=	mozilla:${PORTSDIR}/www/mozilla
 
+BROKEN=		"Does not build"
+
 WRKSRC=		${WRKDIR}/bin
 
 USE_X_PREFIX=	yes
