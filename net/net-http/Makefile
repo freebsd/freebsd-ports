@@ -21,7 +21,11 @@ GNU_CONFIGURE=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}
 NO_BUILD=	yes
 
-do-install:
-	${CP} -R ${WRKSRC}/net/ ${LOCALBASE}/share/guile/1.4.1/net/
+.include <bsd.port.pre.mk>
 
-.include <bsd.port.mk>
+GUILE_VER!=	(cd ${PORTSDIR}/lang/guile && make -V GUILE_VER)
+
+do-install:
+	${CP} -R ${WRKSRC}/net/ ${LOCALBASE}/share/guile/${GUILE_VER}/net/
+
+.include <bsd.port.post.mk>
