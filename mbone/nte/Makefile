@@ -3,21 +3,21 @@
 # Date created:				5 September 1996
 # Whom:	      Bill Fenner <fenner@FreeBSD.ORG>
 #
-#   $Id: Makefile,v 1.5 1997/01/14 00:02:05 fenner Exp $
+#   $Id: Makefile,v 1.6 1997/04/20 13:19:23 wosch Exp $
 #
 
 DISTNAME=	nt.1.5a23
 PKGNAME=	nte-1.5a23
-CATEGORIES=	mbone tk41
+CATEGORIES=	mbone tk42
 MASTER_SITES=	ftp://cs.ucl.ac.uk/mice/nte/
 
 MAINTAINER=	fenner@FreeBSD.org
 
-TK_DIR=         ${PORTSDIR}/x11/tk41
-TK_SRC=		${TK_DIR}/work/tk4.1
+TK_DIR=         ${PORTSDIR}/x11/tk42
+TK_SRC=		${TK_DIR}/work/tk4.2p2
 
 DEPENDS=	${TK_DIR}
-LIB_DEPENDS=	tk41\\.1:${TK_DIR}
+LIB_DEPENDS=	tk42\\.1:${TK_DIR}
 
 RESTRICTED=	"Contains DES encryption"
 NO_WRKSUBDIR=	yes
