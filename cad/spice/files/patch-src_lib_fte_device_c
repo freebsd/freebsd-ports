@@ -1,0 +1,13 @@
+--- src/lib/fte/device.c.orig	Thu Jul 29 21:09:59 1993
++++ src/lib/fte/device.c	Thu Jul 17 00:47:50 2003
+@@ -661,7 +661,9 @@
+     }
+ 
+     dv = ft_evaluate(n2->pn_right);
+-    free_pnode(names);
++    /* prevent names from getting freed twice
++       Guenther Roehrich 22-Jan-99 */
++    /* free_pnode(names); */
+     if (!dv)
+ 	return;
+     if (dv->v_length < 1) {

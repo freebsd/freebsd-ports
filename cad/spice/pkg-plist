@@ -4,33 +4,34 @@ bin/sconvert
 bin/help
 bin/proc2mod
 bin/multidec
-%%PORTDOCS%%share/examples/spice3/bjtnoise.cir
-%%PORTDOCS%%share/examples/spice3/bsim1tst.cir
-%%PORTDOCS%%share/examples/spice3/bsim2tst.cir
-%%PORTDOCS%%share/examples/spice3/diffpair.cir
-%%PORTDOCS%%share/examples/spice3/diodisto.cir
-%%PORTDOCS%%share/examples/spice3/ltra_1.cir
-%%PORTDOCS%%share/examples/spice3/ltra_2.cir
-%%PORTDOCS%%share/examples/spice3/ltra_3.cir
-%%PORTDOCS%%share/examples/spice3/mixdisto.cir
-%%PORTDOCS%%share/examples/spice3/mos6inv.cir
-%%PORTDOCS%%share/examples/spice3/mosamp2.cir
-%%PORTDOCS%%share/examples/spice3/mosmem.cir
-%%PORTDOCS%%share/examples/spice3/pz2.cir
-%%PORTDOCS%%share/examples/spice3/pzt.cir
-%%PORTDOCS%%share/examples/spice3/rc.cir
-%%PORTDOCS%%share/examples/spice3/rca3040.cir
-%%PORTDOCS%%share/examples/spice3/resnoise.cir
-%%PORTDOCS%%share/examples/spice3/rtlinv.cir
-%%PORTDOCS%%share/examples/spice3/schmitt.cir
-%%PORTDOCS%%share/examples/spice3/simplepz.cir
-share/spice3/helpdir/spice.txt
-share/spice3/helpdir/spice.idx
-share/spice3/scripts/setplot
-share/spice3/scripts/spinit
-share/spice3/mfbcap
-share/spice3/news
-%%PORTDOCS%%@dirrm share/examples/spice3
-@dirrm share/spice3/helpdir
-@dirrm share/spice3/scripts
-@dirrm share/spice3
+share/spice/helpdir/spice.txt
+share/spice/helpdir/spice.idx
+share/spice/scripts/setplot
+share/spice/scripts/spinit
+share/spice/mfbcap
+share/spice/news
+@dirrm share/spice/helpdir
+@dirrm share/spice/scripts
+@dirrm share/spice
+%%PORTDOCS%%%%DOCSDIR%%/spice3f3.ps.gz
+%%PORTDOCS%%%%EXAMPLESDIR%%/bjtnoise.cir
+%%PORTDOCS%%%%EXAMPLESDIR%%/bsim1tst.cir
+%%PORTDOCS%%%%EXAMPLESDIR%%/bsim2tst.cir
+%%PORTDOCS%%%%EXAMPLESDIR%%/diffpair.cir
+%%PORTDOCS%%%%EXAMPLESDIR%%/diodisto.cir
+%%PORTDOCS%%%%EXAMPLESDIR%%/ltra_1.cir
+%%PORTDOCS%%%%EXAMPLESDIR%%/ltra_2.cir
+%%PORTDOCS%%%%EXAMPLESDIR%%/ltra_3.cir
+%%PORTDOCS%%%%EXAMPLESDIR%%/mixdisto.cir
+%%PORTDOCS%%%%EXAMPLESDIR%%/mos6inv.cir
+%%PORTDOCS%%%%EXAMPLESDIR%%/mosamp2.cir
+%%PORTDOCS%%%%EXAMPLESDIR%%/mosmem.cir
+%%PORTDOCS%%%%EXAMPLESDIR%%/pz2.cir
+%%PORTDOCS%%%%EXAMPLESDIR%%/pzt.cir
+%%PORTDOCS%%%%EXAMPLESDIR%%/rc.cir
+%%PORTDOCS%%%%EXAMPLESDIR%%/rca3040.cir
+%%PORTDOCS%%%%EXAMPLESDIR%%/resnoise.cir
+%%PORTDOCS%%%%EXAMPLESDIR%%/rtlinv.cir
+%%PORTDOCS%%%%EXAMPLESDIR%%/schmitt.cir
+%%PORTDOCS%%%%EXAMPLESDIR%%/simplepz.cir
+%%PORTDOCS%%@dirrm share/examples/spice

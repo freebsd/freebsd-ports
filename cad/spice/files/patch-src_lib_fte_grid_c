@@ -1,0 +1,62 @@
+--- src/lib/fte/grid.c.orig	Sun Apr 25 16:53:11 1993
++++ src/lib/fte/grid.c	Thu Jul 17 00:47:51 2003
+@@ -1230,7 +1230,10 @@
+ 
+     /* SetLinestyle(1); takes too long */
+     /* Problems with Suns on very large radii && linestyle */
+-    SetLinestyle(0);
++    /* SetLinestyle(0); */
++    /* linestyle 1 looks better
++       Guenther Roehrich 22-Jan-99 */
++    SetLinestyle(1);
+ 
+     /* Now plot all the arc sets.  Go as high as 5 times the radius that
+      * will fit on the screen.  The base magnitude is one more than 
+@@ -1409,7 +1412,10 @@
+     /* Let's be lazy and just draw everything -- we won't get called too
+      * much and the circles get clipped anyway...
+      */
+-    SetColor(18);
++    /* SetColor(18); */
++    /* draw everything in black
++       Guenther Roehrich 22-Jan-99 */
++    SetColor(1);
+ 
+     cliparc((double) (centx + xoffset + radoff - rad),
+ 	    (double) (centy + yoffset), rad, 2*angle,
+@@ -1424,7 +1430,10 @@
+             M_PI - 2 * angle, centx, centy, maxrad, 0);
+ 
+     /* Draw the upper and lower circles.  */
+-    SetColor(19);
++    /* SetColor(19); */
++    /* draw everything in black
++       Guenther Roehrich 22-Jan-99 */
++    SetColor(1);
+     aclip = cliparc((double) (centx + xoffset + radoff),
+ 	    (double) (centy + yoffset + irad), irad,
+ 	    (double) (M_PI * 1.5 + 2 * iangle),
+@@ -1441,7 +1450,10 @@
+ 	adddeglabel(graph, ndeg, xlab, ylab,
+ 	    gr_xcenter, gr_ycenter, gr_xcenter, gr_ycenter);
+  */
+-	SetColor(19);
++	/* SetColor(19); */
++	/* draw everything in black
++	   Guenther Roehrich 22-Jan-99 */
++	SetColor(1);
+ 	}
+     }
+     aclip = cliparc((double) (centx + xoffset + radoff),
+@@ -1455,7 +1467,10 @@
+ 	SetColor(1);
+ 	adddeglabel(graph, ndeg, xlab, ylab,
+ 	    gr_xcenter, gr_ycenter, gr_xcenter, gr_ycenter);
+-	SetColor(19);
++	/* SetColor(19); */
++	/* draw everything in black
++	   Guenther Roehrich 22-Jan-99 */
++	SetColor(1);
+     }
+     
+     /* Now toss the labels on... */

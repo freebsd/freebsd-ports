@@ -1,0 +1,82 @@
+--- src/lib/fte/vectors.c.orig	Sat Jul 17 19:28:05 1999
++++ src/lib/fte/vectors.c	Sat Jul 17 19:28:05 1999
+@@ -200,7 +200,7 @@
+ {
+     struct dvec *d, *end = NULL, *newv = NULL;
+     struct plot *pl;
+-    char buf[BSIZE_SP], *s, *wd, *name, *param;
++    char buf[BSIZE_SP], *s, *wd, *whole, *name = NULL, *param;
+     int i = 0;
+     struct variable *vv;
+ 
+@@ -251,19 +251,28 @@
+             fprintf(cp_err, 
+             "Error: plot wildcard (name %s) matches nothing\n",
+                     word);
++                    
++            	/* MW. I don't want core leaks here */
++            tfree(wd);
+             return (NULL);
+         }
+     }
++    
+     if (!d && (*word == SPECCHAR)) {
+         /* This is a special quantity... */
+         if (ft_nutmeg) {
+             fprintf(cp_err,
+         "Error: circuit parameters only available with spice\n");
++        
++	    tfree(wd); 	/* MW. Memory leak fixed again */       		
+             return (false);
+         }
+-        name = ++word;
++        
++	whole=copy(word);
++        name = ++word;        
+         for (param = name; *param && (*param != '['); param++)
+-            ;
++            ;		
++            
+         if (*param) {
+             *param++ = '\0';
+             for (s = param; *s && *s != ']'; s++)
+@@ -271,27 +280,36 @@
+             *s = '\0';
+         } else
+             param = NULL;
+-
++            
++	
+ 	if (ft_curckt) {
++	
+ 	    vv = (*if_getparam)(ft_curckt->ci_ckt, &name, param, 0, 0);
+ 	    if (!vv) {
++	        tfree(whole);
++		tfree(wd);
+ 		return (NULL);
+ 	    }
+ 	} else {
+             fprintf(cp_err, "Error: No circuit loaded.\n");
++	    tfree(whole);
++	    tfree(wd);
+ 	    return (NULL);
+ 	}
+ 
+-        tfree(wd);
+         d = alloc(struct dvec);
+ 	ZERO(d, struct dvec);
+-        d->v_name = copy(word);
++        d->v_name = copy(whole); /* MW. The same as word before */
+         d->v_type = SV_NOTYPE;
+         d->v_flags |= VF_REAL;  /* No complex values yet... */
+         d->v_realdata = (double *) tmalloc(sizeof (double));
+         d->v_length = 1;
+         *d->v_realdata = vv->va_real;
++        
++        tfree(wd);	
+         vec_new(d);
++	tfree(whole);
++	tfree(wd);
+         return (d);
+     }
+ 

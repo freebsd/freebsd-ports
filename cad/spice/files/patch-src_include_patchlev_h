@@ -1,0 +1,5 @@
+--- src/include/patchlev.h.orig	Thu Jul 29 05:30:30 1993
++++ src/include/patchlev.h	Thu Jul 17 00:21:33 2003
+@@ -1 +1 @@
+-#define PATCHLEVEL	0
++#define PATCHLEVEL	2

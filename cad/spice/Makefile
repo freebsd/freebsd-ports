@@ -8,26 +8,37 @@
 PORTNAME=	spice
 PORTVERSION=	3f5.2
 CATEGORIES=	cad
-MASTER_SITES=	ftp://ic.eecs.berkeley.edu/pub/Spice3/
-DISTNAME=	sp3f4.kit
+MASTER_SITES=	ftp://ic.eecs.berkeley.edu/pub/Spice3/:sources	\
+		ftp://ic.eecs.berkeley.edu/pub/Spice3/um.3f3.ps/:docs
 EXTRACT_SUFX=	.tar.Z
+DISTFILES=	sp3f4.kit${EXTRACT_SUFX}:sources	\
+		cp.ps:docs toc.ps:docs doc.ps:docs
+DIST_SUBDIR=	spice
+EXTRACT_ONLY=	sp3f4.kit${EXTRACT_SUFX}
 
-MAINTAINER=	maho@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A general-purpose circuit simulation program
 
-# documentation in ftp://ic.eecs.berkeley.edu/pub/Spice3/um.3f3.ps/
-
 USE_XLIB=	yes
+USE_REINPLACE=	yes
 NO_WRKSUBDIR=	yes
 MAN1=		sconvert.1 nutmeg.1 spice.1
 MAN3=		mfb.3
 MAN5=		mfbcap.5
 MLINKS=		spice.1 spice3.1
 
+post-configure:
+	@${REINPLACE_CMD} -e 's+@CC@+${CC}+ ; s+@CFLAGS@+${CFLAGS}+ ; \
+	s+@X11BASE@+${X11BASE}+;' \
+	${WRKSRC}/conf/FreeBSD
+
 post-install:
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${PREFIX}/share/examples/spice3
-	${INSTALL_DATA} ${WRKSRC}/examples/*.cir ${PREFIX}/share/examples/spice3
+	${MKDIR} ${DOCSDIR}
+	${CAT} ${DISTDIR}/${DIST_SUBDIR}/*.ps > ${DOCSDIR}/spice3f3.ps
+	${GZIP_CMD} ${DOCSDIR}/*.ps
+	${MKDIR} ${EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/examples/*.cir ${EXAMPLESDIR}
 .endif
 
 .include <bsd.port.mk>

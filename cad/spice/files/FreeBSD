@@ -1,8 +1,8 @@
 # FreeBSD config exception file
 
 MAKE		= /usr/bin/make
-INTERFACE_OPTS  = -DWANT_X11
-CC		= cc
-CC_OPT_SAFE     += -O2
-LDFLAGS		= -L$(X11BASE)/lib -lm -ltermcap
+INTERFACE_OPTS	= -DWANT_MFB -DWANT_X11
+CC		= @CC@
+CC_OPT		+= @CFLAGS@
+LDFLAGS		+= -L@X11BASE@/lib -lm -ltermcap
 SYS_CFLAGS	= -Dbsd
