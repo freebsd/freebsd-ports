@@ -10,7 +10,7 @@ PORTVERSION=	1.0
 CATEGORIES=	math
 MASTER_SITES= 	http://members.global2000.net/~eagriff/
 
-MAINTAINER=	eagriff@global2000.net
+MAINTAINER=	eric@talesfromthereal.com
 
 LIB_DEPENDS=	forms.1:${PORTSDIR}/x11-toolkits/xforms
 
