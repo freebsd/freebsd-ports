@@ -1,8 +1,8 @@
 
 $FreeBSD$
 
---- src/transports/udp6.c.orig	Fri Oct  1 01:38:25 2004
-+++ src/transports/udp6.c	Fri Oct  1 01:39:15 2004
+--- src/transports/udp6.c.orig
++++ src/transports/udp6.c
 @@ -275,6 +275,7 @@
  #endif
      /* quick test of the packet, if failed, repeat! */
