@@ -16,25 +16,4 @@ etc/apcupsd/cgi/upsfstats.cgi
 etc/apcupsd/cgi/upsimage.cgi
 etc/apcupsd/cgi/upsstats.cgi
 etc/rc.d/%%STARTUP_SCRIPT%%
-%%PORTDOCS%%%%DOCSDIR%%/apcupsd.pdf
-%%PORTDOCS%%%%DOCSDIR%%/manual.html
-%%PORTDOCS%%%%DOCSDIR%%/apcupsd.png
-%%PORTDOCS%%%%DOCSDIR%%/back.png
-%%PORTDOCS%%%%DOCSDIR%%/charging.png
-%%PORTDOCS%%%%DOCSDIR%%/home.png
-%%PORTDOCS%%%%DOCSDIR%%/main_configs.png
-%%PORTDOCS%%%%DOCSDIR%%/multimon.png
-%%PORTDOCS%%%%DOCSDIR%%/next.png
-%%PORTDOCS%%%%DOCSDIR%%/onbatt.png
-%%PORTDOCS%%%%DOCSDIR%%/online.png
-%%PORTDOCS%%%%DOCSDIR%%/status.png
-%%PORTDOCS%%%%DOCSDIR%%/thanks.png
-%%PORTDOCS%%%%DOCSDIR%%/wininstall1.png
-%%PORTDOCS%%%%DOCSDIR%%/wininstall2.png
-%%PORTDOCS%%%%DOCSDIR%%/wininstall3.png
-%%PORTDOCS%%%%DOCSDIR%%/wininstall4.png
-%%PORTDOCS%%%%DOCSDIR%%/wininstall5.png
-%%PORTDOCS%%%%DOCSDIR%%/wininstall6.png
-%%PORTDOCS%%%%DOCSDIR%%/wininstall7.png
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm etc/apcupsd/cgi

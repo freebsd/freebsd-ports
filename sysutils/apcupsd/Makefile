@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	apcupsd
-PORTVERSION=	3.10.6
+PORTVERSION=	3.10.9
 #PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
@@ -27,8 +27,13 @@ CONFIGURE_ARGS=	--prefix=${PREFIX} --sbindir=${PREFIX}/sbin \
 		--disable-install-distdir --enable-usb \
 		--sysconfdir=${PREFIX}/etc/apcupsd \
 		--with-serial-dev=/dev/usv \
-		--enable-cgi --with-cgi-bin=${PREFIX}/etc/apcupsd/cgi \
-		--enable-master-slave
+		--enable-cgi --with-cgi-bin=${PREFIX}/etc/apcupsd/cgi
+.if defined(WITH_CLIENT_ONLY)
+CONFIGURE_ARGS+=--enable-net
+.else
+CONFIGURE_ARGS+=--enable-master-slave
+.endif
+
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -L${LOCALBASE}/lib" \
 		CFLAGS="-I${LOCALBASE}/include -L${LOCALBASE}/lib"   \
 		LDFLAGS="-L${LOCALBASE}/lib"
@@ -50,6 +55,17 @@ PORTDOCS=	apcupsd.pdf manual.html \
 		multimon.png next.png onbatt.png online.png status.png thanks.png \
 		wininstall1.png wininstall2.png	wininstall3.png wininstall4.png \
 		wininstall5.png wininstall6.png wininstall7.png
+
+pre-everything::
+.if !defined(WITH_CLIENT_ONLY)
+	@${ECHO_MSG} ""
+	@${ECHO_MSG} "You may use the following build options:"
+	@${ECHO_MSG} ""
+	@${ECHO_MSG} "  WITH_CLIENT_ONLY=yes            if you only want a network client."
+	@${ECHO_MSG} ""
+.else
+	@${ECHO_MSG} "===> Building network client."
+.endif
 
 post-configure:
 	${REINPLACE_CMD} -e "s|%PREFIX%|${PREFIX}|g" ${WRKSRC}/doc/apcupsd.man
