@@ -1,7 +1,4 @@
 bin/stardict
-@unexec env GCONF_CONFIG_SOURCE=xml::%D/etc/gconf/gconf.xml.defaults gconftool-2 --makefile-uninstall-rule %D/etc/gconf/schemas/stardict.schemas > /dev/null || /usr/bin/true
-etc/gconf/schemas/stardict.schemas
-@exec env GCONF_CONFIG_SOURCE=xml::%D/etc/gconf/gconf.xml.defaults gconftool-2 --makefile-install-rule %D/etc/gconf/schemas/stardict.schemas > /dev/null || /usr/bin/true
 libdata/bonobo/servers/GNOME_Stardict.server
 share/gnome/applications/stardict.desktop
 share/gnome/help/stardict/C/figures/stardict_float_window.png
@@ -19,24 +16,28 @@ share/gnome/help/stardict/ru/figures/stardict_main_window.png
 share/gnome/help/stardict/ru/figures/stardict_notification_area.png
 share/gnome/help/stardict/ru/legal.xml
 share/gnome/help/stardict/ru/stardict.xml
+share/gnome/help/stardict/uk/figures/stardict_float_window.png
+share/gnome/help/stardict/uk/figures/stardict_main_window.png
+share/gnome/help/stardict/uk/figures/stardict_notification_area.png
+share/gnome/help/stardict/uk/legal.xml
+share/gnome/help/stardict/uk/stardict.xml
 share/gnome/help/stardict/zh_CN/figures/stardict_float_window.png
 share/gnome/help/stardict/zh_CN/figures/stardict_main_window.png
 share/gnome/help/stardict/zh_CN/figures/stardict_notification_area.png
 share/gnome/help/stardict/zh_CN/legal.xml
 share/gnome/help/stardict/zh_CN/stardict.xml
+share/gnome/help/stardict/zh_TW/figures/stardict_float_window.png
+share/gnome/help/stardict/zh_TW/figures/stardict_main_window.png
+share/gnome/help/stardict/zh_TW/figures/stardict_notification_area.png
+share/gnome/help/stardict/zh_TW/legal.xml
+share/gnome/help/stardict/zh_TW/stardict.xml
 share/gnome/idl/GNOME_Stardict.idl
 share/gnome/omf/stardict/stardict-C.omf
-@exec scrollkeeper-install -q %D/share/gnome/omf/stardict/stardict-C.omf 2>/dev/null || /usr/bin/true
-@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/stardict/stardict-C.omf 2>/dev/null || /usr/bin/true
 share/gnome/omf/stardict/stardict-mk.omf
-@exec scrollkeeper-install -q %D/share/gnome/omf/stardict/stardict-mk.omf 2>/dev/null || /usr/bin/true
-@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/stardict/stardict-mk.omf 2>/dev/null || /usr/bin/true
 share/gnome/omf/stardict/stardict-ru.omf
-@exec scrollkeeper-install -q %D/share/gnome/omf/stardict/stardict-ru.omf 2>/dev/null || /usr/bin/true
-@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/stardict/stardict-ru.omf 2>/dev/null || /usr/bin/true
+share/gnome/omf/stardict/stardict-uk.omf
 share/gnome/omf/stardict/stardict-zh_CN.omf
-@exec scrollkeeper-install -q %D/share/gnome/omf/stardict/stardict-zh_CN.omf 2>/dev/null || /usr/bin/true
-@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/stardict/stardict-zh_CN.omf 2>/dev/null || /usr/bin/true
+share/gnome/omf/stardict/stardict-zh_TW.omf
 share/gnome/pixmaps/stardict.png
 share/gnome/stardict/pixmaps/docklet_normal.png
 share/gnome/stardict/pixmaps/docklet_scan.png
@@ -53,14 +54,19 @@ share/locale/mk/LC_MESSAGES/stardict.mo
 share/locale/ru/LC_MESSAGES/stardict.mo
 share/locale/sk/LC_MESSAGES/stardict.mo
 share/locale/uk/LC_MESSAGES/stardict.mo
+share/locale/vi/LC_MESSAGES/stardict.mo
 share/locale/zh_CN/LC_MESSAGES/stardict.mo
 share/locale/zh_TW/LC_MESSAGES/stardict.mo
 @dirrm share/gnome/stardict/sounds
 @dirrm share/gnome/stardict/pixmaps
 @dirrm share/gnome/stardict
 @dirrm share/gnome/omf/stardict
+@dirrm share/gnome/help/stardict/zh_TW/figures
+@dirrm share/gnome/help/stardict/zh_TW
 @dirrm share/gnome/help/stardict/zh_CN/figures
 @dirrm share/gnome/help/stardict/zh_CN
+@dirrm share/gnome/help/stardict/uk/figures
+@dirrm share/gnome/help/stardict/uk
 @dirrm share/gnome/help/stardict/ru/figures
 @dirrm share/gnome/help/stardict/ru
 @dirrm share/gnome/help/stardict/mk/figures
