@@ -27,7 +27,7 @@ USE_GMAKE=	yes
 USE_LIBTOOL_VER=15
 USE_PYTHON=	yes
 USE_SDL=	mixer
-USE_GNOME=	gnomehack lthack gnomeprefix libgnomeui pygnome2
+USE_GNOME=	gnomehack intlhack gnomeprefix libgnomeui pygnome2
 INSTALLS_SHLIB=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib" \
