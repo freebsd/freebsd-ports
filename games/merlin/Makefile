@@ -8,7 +8,7 @@
 PORTNAME=	merlin
 PORTVERSION=	1.0
 CATEGORIES=	games
-MASTER_SITES=	http://www-dse.doc.ic.ac.uk/~np2/software/download/
+MASTER_SITES=	http://www.doc.ic.ac.uk/~np2/software/download/
 DISTNAME=	${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
