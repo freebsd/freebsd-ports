@@ -3,7 +3,7 @@
 # Date created:		15 Aug 1997
 # Whom:			markm@freebsd.org
 #
-# $Id: Makefile,v 1.16 1998/02/17 21:14:23 markm Exp $
+# $Id: Makefile,v 1.17 1998/07/06 04:55:30 itojun Exp $
 
 DISTNAME=		SSLeay-0.8.1b
 CATEGORIES=		devel security
@@ -24,7 +24,7 @@ pre-fetch:
 	@false
 .elif defined(USA_RESIDENT)
 .if ${USA_RESIDENT} == YES
-BUILD_DEPENDS=		rsaref\\.2\\.:${PORTSDIR}/security/rsaref
+LIB_DEPENDS=		rsaref\\.2\\.:${PORTSDIR}/security/rsaref
 
 post-configure:
 	${CP} ${WRKSRC}/rsaref/rsaref.h ${WRKSRC}/include/rsaref.h
