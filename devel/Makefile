@@ -667,6 +667,7 @@
     SUBDIR += p5-Memoize
     SUBDIR += p5-Module-Build
     SUBDIR += p5-Module-Info
+    SUBDIR += p5-Module-ScanDeps
     SUBDIR += p5-OLE-Storage_Lite
     SUBDIR += p5-ORBit
     SUBDIR += p5-Object-Realize-Later
