@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.52 1998/08/25 02:04:42 vanilla Exp $
+# $Id: Makefile,v 1.53 1998/09/16 12:54:46 vanilla Exp $
 #
 
     SUBDIR += 8hz-mp3
@@ -24,6 +24,7 @@
     SUBDIR += playmidi
     SUBDIR += radio
     SUBDIR += rosegarden
+    SUBDIR += replay
     SUBDIR += rplay
     SUBDIR += rsynth
     SUBDIR += s3mod
