@@ -6,24 +6,21 @@
 #
 
 PORTNAME=	opendchub
-PORTVERSION=	0.6.6
+PORTVERSION=	0.7.3
 CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	ports@freebsd.org
+MAINTAINER=	ports@FreeBSD.org
 
-GNU_CONFIGURE=	yes
+USE_PERL5=	yes
 USE_GMAKE=	yes
-
-DOC_FILES=	COPYING README
+GNU_CONFIGURE=	yes
 
 post-install:
-.ifndef(NOPORTDOCS)
+.if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
-.for file in ${DOC_FILES}
-	@${INSTALL_DATA} ${WRKSRC}/${file} ${DOCSDIR}
-.endfor
+	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>
