@@ -6,14 +6,14 @@
 #
 
 PORTNAME=	ghostscript
-PORTVERSION=	7.00
+PORTVERSION=	7.03
 CATEGORIES=	print
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		http://members.ozemail.com.au/~geoffk/pdfencrypt/ \
 		http://www.gelhaus.net/hp880c/1.4beta/ \
 		http://home.t-online.de/home/Martin.Lottermoser/pcl3dist/ \
 		http://www.harsch.net/Download/ \
-		ftp://mirror.cs.wisc.edu/pub/mirrors/ghost/AFPL/gs700/ \
+		ftp://mirror.cs.wisc.edu/pub/mirrors/ghost/AFPL/gs703/ \
 		ftp://mirror.cs.wisc.edu/pub/mirrors/ghost/AFPL/fonts/
 MASTER_SITE_SUBDIR=	${PORTNAME} gimp-print hpinkjet
 PKGNAMESUFFIX=	-afpl
@@ -89,7 +89,7 @@ HPDJ_MAN1=	gs-hpdj.1
 # additional driver for HP PCL3 Printers, by Martin Lottermoser
 # http://home.t-online.de/home/Martin.Lottermoser/pcl3.html
 PCL3=		pcl3
-PCL3_VERS=	3.2
+PCL3_VERS=	3.3
 PCL3_NAME=	${PCL3}-${PCL3_VERS}
 PCL3_SRC=	${PCL3_NAME}.tar.gz
 PCL3_MAN1=	gs-pcl3.1 pcl3opts.1
@@ -188,7 +188,7 @@ pre-configure:
 		>> ${WRKSRC}/src/contrib.mak
 # for PCL3 driver
 	${ECHO_MSG} ">>>   adding ${PCL3} driver to contrib.mak ..."
-	${CAT} ${WRKSRC}/${PCL3_NAME}/src/contrib.mak-6.50.add \
+	${CAT} ${WRKSRC}/${PCL3_NAME}/src/contrib.mak-7.00.add \
 		>> ${WRKSRC}/src/contrib.mak
 # for HP DeskJet 970 driver
 	${ECHO_MSG} ">>>   adding DJ970 driver to contrib.mak ..."
@@ -257,7 +257,7 @@ post-install:
 		${DATADIR}/${PORTVERSION}/hpdj
 .endfor
 # for PCL3 driver
-	${ECHO_MSG} ">>> installing ${PCL3} manpages ..."
+	${ECHO_MSG} ">>>   installing ${PCL3} manpages ..."
 .for i in ${PCL3_MAN1}
 	${INSTALL_MAN} ${WRKSRC}/${PCL3_NAME}/doc/${i} ${PREFIX}/man/man1
 .endfor
