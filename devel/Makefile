@@ -1185,6 +1185,7 @@
     SUBDIR += prototype
     SUBDIR += psvn
     SUBDIR += pth
+    SUBDIR += ptmalloc
     SUBDIR += ptypes
     SUBDIR += publib
     SUBDIR += pwlib
