@@ -22,9 +22,6 @@ USE_MOTIF=      yes
 USE_XPM=        yes
 USE_X_PREFIX=	yes
 
-# Hardcoding FETCH_CMD is necessary since -A argument causes problems
-FETCH_CMD=	/usr/bin/fetch
-
 # License forbids redistribution
 NO_CDROM=	Redistribution forbidden by license
 NO_PACKAGE=	Redistribution forbidden by license
