@@ -1,7 +1,12 @@
-This is ytalk-3.1
+YTalk is a compatible replacement for the BSD talk(1) program.
 
-YTalk is in essence a multi-user chat program.  It works almost
-exactly like the UNIX talk program and even communicates with the same
-talk daemon(s), but YTalk allows for multiple connections.
+The main advantage of YTalk is the ability to communicate with any
+arbitrary number of users at once.  It supports both talk protocols
+("talk" and "ntalk") and can communicate with several different talk
+daemons at the same time.
 
-WWW: http://www.iagora.com/~espel/ytalk/ytalk.html
+You may also spawn a command shell in your talk window and let other
+users watch.  YTalk supports a basic set of VT100 control codes, as
+well as job control (BSD support added in 3.1.3)
+
+WWW: http://www.impul.se/ytalk/
