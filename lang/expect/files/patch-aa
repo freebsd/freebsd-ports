@@ -1,24 +1,40 @@
-diff -cdNr expect-5.18.ORG/configure expect-5.18/configure
-*** expect-5.18.ORG/configure	Tue Nov 21 23:38:23 1995
---- configure	Thu Dec  7 23:35:09 1995
-***************
-*** 704,709 ****
---- 704,711 ----
-  # It thinks the first close brace ends the variable substitution.
-  test -z "$INSTALL_PROGRAM" && INSTALL_PROGRAM='${INSTALL}'
-  
-+ test -z "$INSTALL_SCRIPT" && INSTALL_SCRIPT='${INSTALL}'
-+ 
-  test -z "$INSTALL_DATA" && INSTALL_DATA='${INSTALL} -m 644'
-  
-  
-***************
-*** 4601,4606 ****
---- 4603,4609 ----
-  s%@CPP@%$CPP%g
-  s%@RANLIB@%$RANLIB%g
-  s%@INSTALL_PROGRAM@%$INSTALL_PROGRAM%g
-+ s%@INSTALL_SCRIPT@%$INSTALL_SCRIPT%g
-  s%@INSTALL_DATA@%$INSTALL_DATA%g
-  s%@subdirs@%$subdirs%g
-  s%@TCLHDIR@%$TCLHDIR%g
+--- configure.orig	Sat Dec 28 03:18:44 1996
++++ configure	Mon Jan  6 18:38:40 1997
+@@ -1159,6 +1159,8 @@
+ # It thinks the first close brace ends the variable substitution.
+ test -z "$INSTALL_PROGRAM" && INSTALL_PROGRAM='${INSTALL}'
+ 
++test -z "$INSTALL_SCRIPT" && INSTALL_SCRIPT='${INSTALL}'
++
+ test -z "$INSTALL_DATA" && INSTALL_DATA='${INSTALL} -m 644'
+ 
+ 
+@@ -5719,15 +5721,17 @@
+     EXP_LIB_VERSION=$EXP_VERSION_NODOTS
+ fi
+ 
++VERSION=${EXP_LIB_VERSION}
++
+ EXP_BUILD_LIB_SPEC="-L`pwd` -lexpect${EXP_LIB_VERSION}"
+ EXP_LIB_SPEC="-L\${exec_prefix}/lib -lexpect${EXP_LIB_VERSION}"
+-EXP_NONSHARED_LIB_FILE=libexpect${EXP_LIB_VERSION}.a
++eval EXP_NONSHARED_LIB_FILE=libexpect${TCL_UNSHARED_LIB_SUFFIX}
+ 
+ echo $ac_n "checking for type of library to build""... $ac_c" 1>&6
+ echo "configure:5728: checking for type of library to build" >&5
+-if test "$enable_shared" = "yes" && test "x${TCL_SHLIB_SUFFIX}" != "x" ; then
++if test "$enable_shared" = "yes" -a "x${TCL_SHARED_LIB_SUFFIX}" != "x" ; then
+   EXP_SHLIB_CFLAGS=$TCL_SHLIB_CFLAGS
+-  EXP_SHARED_LIB_FILE=libexpect$EXP_LIB_VERSION$TCL_SHLIB_SUFFIX
++  eval EXP_SHARED_LIB_FILE=libexpect${TCL_SHARED_LIB_SUFFIX}
+   EXP_LIB_FILE=$EXP_SHARED_LIB_FILE
+   EXP_LIB_FILES="$EXP_SHARED_LIB_FILE $EXP_NONSHARED_LIB_FILE"
+   echo "$ac_t""both shared and nonshared" 1>&6
+@@ -5899,6 +5903,7 @@
+ s%@TK_LIB_SPEC@%$TK_LIB_SPEC%g
+ s%@CC@%$CC%g
+ s%@INSTALL_PROGRAM@%$INSTALL_PROGRAM%g
++s%@INSTALL_SCRIPT@%$INSTALL_SCRIPT%g
+ s%@INSTALL_DATA@%$INSTALL_DATA%g
+ s%@subdirs@%$subdirs%g
+ s%@CPP@%$CPP%g
