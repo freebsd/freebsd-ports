@@ -1,4 +1,4 @@
-bin/babel
+bin/openbabel
 share/openbabel/aromatic.txt
 share/openbabel/atomtyp.txt
 share/openbabel/element.txt
