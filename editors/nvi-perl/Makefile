@@ -7,7 +7,7 @@
 
 PORTNAME=	nvi
 PORTVERSION=	1.79
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	editors
 MASTER_SITES=	ftp://sleepy.vwh.net/pub/ \
 		ftp://ftp.foretune.co.jp/pub/tools/nvi-m17n/
@@ -18,10 +18,6 @@ COMMENT=	A clone of vi/ex, with perl5 linked into
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} > 500000
-BROKEN=		"Does not compile"
-.endif
-
 # can't say PATCH_DIST_STRIP=-p1 because contains files outside ${WRKSRC}
 PATCH_DIST_ARGS=-d ${WRKSRC}/.. --forward --quiet -E -p0
 PATCH_ARGS=	-d ${WRKSRC}/.. --forward --quiet -E -p0
@@ -31,6 +27,7 @@ USE_PERL5=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	OPTFLAG='-D_PATH_SYSEXRC=\"${PREFIX}/etc/vi.exrc\"'
 CONFIGURE_ARGS=	--enable-perlinterp --program-prefix=pn
+CFLAGS+=	-DPERL_POLLUTE
 
 MAN1=		pnvi.1
 MLINKS=		pnvi.1 pnex.1  pnvi.1 pnview.1
