@@ -1,0 +1,11 @@
+Turba is the Horde contact management application. It is currently in
+the development stages, and makes heavy use of the Horde framework to
+provide integration with other applications.
+
+Right now, Turba is a fairly complete basic contact management
+application. SQL and LDAP backends are available and fairly well tested.
+You can define the fields in your addressbooks in a very flexible way,
+just by changing the config files.
+And there are Horde API functions to add and search for contacts.
+
+WWW: http://horde.org/turba/

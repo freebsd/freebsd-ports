@@ -1,0 +1,17 @@
+************************************************************************
+Turba has been installed in %%TURBADIR%% with your blank
+configuration files.
+
+Horde must be configured; if not, see
+%%PORTSDIR%%/www/horde-devel/pkg-message.
+
+Then, you will have to tune the configuration files located in
+%%CONFDIR%%/, specially the files conf.php and
+sources.php.
+
+You have to create a table in your database; please see
+%%TURBADIR%%/scripts/drivers.
+
+If %%APACHE_CONF%% has been updated,
+you have to restart Apache.
+************************************************************************

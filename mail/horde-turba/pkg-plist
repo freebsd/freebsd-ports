@@ -1,0 +1,176 @@
+%%PORTDOCS%%share/doc/turba/CHANGES
+%%PORTDOCS%%share/doc/turba/COPYING
+%%PORTDOCS%%share/doc/turba/CREDITS
+%%PORTDOCS%%share/doc/turba/INSTALL
+%%PORTDOCS%%share/doc/turba/README
+%%PORTDOCS%%share/doc/turba/turba.dia
+%%PORTDOCS%%share/doc/turba/turba.pdf
+%%TURBADIR%%/addobject.php
+%%TURBADIR%%/addobjectaction.php
+%%TURBADIR%%/advanced.php
+%%TURBADIR%%/config/attributes.php
+%%TURBADIR%%/config/attributes.php.dist
+%%TURBADIR%%/config/conf.php
+%%TURBADIR%%/config/conf.php.dist
+%%TURBADIR%%/config/conf.php.dist.orig
+%%TURBADIR%%/config/html.php
+%%TURBADIR%%/config/html.php.dist
+%%TURBADIR%%/config/menu.php
+%%TURBADIR%%/config/menu.php.dist
+%%TURBADIR%%/config/prefs.php
+%%TURBADIR%%/config/prefs.php.dist
+%%TURBADIR%%/config/prefs.php.dist.orig
+%%TURBADIR%%/config/sources.php
+%%TURBADIR%%/config/sources.php.dist
+%%TURBADIR%%/config/sources.php.dist.orig
+%%TURBADIR%%/config/turba.dt
+%%TURBADIR%%/data.php
+%%TURBADIR%%/deleteobject.php
+%%TURBADIR%%/displayobject.php
+%%TURBADIR%%/editobject.php
+%%TURBADIR%%/editobjectaction.php
+%%TURBADIR%%/graphics/add.gif
+%%TURBADIR%%/graphics/group.gif
+%%TURBADIR%%/graphics/search.gif
+%%TURBADIR%%/graphics/turba.gif
+%%TURBADIR%%/index.php
+%%TURBADIR%%/lib/AbstractObject.php
+%%TURBADIR%%/lib/Driver.php
+%%TURBADIR%%/lib/Driver/ldap.php
+%%TURBADIR%%/lib/Driver/sql.php
+%%TURBADIR%%/lib/Group.php
+%%TURBADIR%%/lib/List.php
+%%TURBADIR%%/lib/List/Plain.php
+%%TURBADIR%%/lib/List/Tree.php
+%%TURBADIR%%/lib/ListView.php
+%%TURBADIR%%/lib/ListView/Rolodex.php
+%%TURBADIR%%/lib/ListView/Tree.php
+%%TURBADIR%%/lib/Object.php
+%%TURBADIR%%/lib/ObjectView.php
+%%TURBADIR%%/lib/ObjectView/List.php
+%%TURBADIR%%/lib/ObjectView/PhotoID.php
+%%TURBADIR%%/lib/Source.php
+%%TURBADIR%%/lib/Turba.php
+%%TURBADIR%%/lib/api.php
+%%TURBADIR%%/lib/base.php
+%%TURBADIR%%/lib/version.php
+%%TURBADIR%%/locale/cs_CZ/LC_MESSAGES/turba.mo
+%%TURBADIR%%/locale/de_DE/LC_MESSAGES/turba.mo
+%%TURBADIR%%/locale/el_GR/LC_MESSAGES/turba.mo
+%%TURBADIR%%/locale/es_ES/LC_MESSAGES/turba.mo
+%%TURBADIR%%/locale/fr_FR/LC_MESSAGES/turba.mo
+%%TURBADIR%%/locale/it_IT/LC_MESSAGES/turba.mo
+%%TURBADIR%%/locale/ko_KR/LC_MESSAGES/turba.mo
+%%TURBADIR%%/locale/nl_NL/LC_MESSAGES/turba.mo
+%%TURBADIR%%/locale/pl_PL/LC_MESSAGES/turba.mo
+%%TURBADIR%%/locale/pt_BR/LC_MESSAGES/turba.mo
+%%TURBADIR%%/locale/ru_koi/LC_MESSAGES/turba.mo
+%%TURBADIR%%/locale/ru_win/LC_MESSAGES/turba.mo
+%%TURBADIR%%/locale/sv_SE/LC_MESSAGES/turba.mo
+%%TURBADIR%%/locale/zh_CN/LC_MESSAGES/turba.mo
+%%TURBADIR%%/locale/zh_TW/LC_MESSAGES/turba.mo
+%%TURBADIR%%/menu.php
+%%TURBADIR%%/po/Makefile
+%%TURBADIR%%/po/README
+%%TURBADIR%%/po/cs_CZ.po
+%%TURBADIR%%/po/de_DE.po
+%%TURBADIR%%/po/el_GR.po
+%%TURBADIR%%/po/es_ES.po
+%%TURBADIR%%/po/extract.pl
+%%TURBADIR%%/po/fr_FR.po
+%%TURBADIR%%/po/it_IT.po
+%%TURBADIR%%/po/ko_KR.po
+%%TURBADIR%%/po/nl_NL.po
+%%TURBADIR%%/po/pl_PL.po
+%%TURBADIR%%/po/pt_BR.po
+%%TURBADIR%%/po/ru_koi.po
+%%TURBADIR%%/po/ru_win.po
+%%TURBADIR%%/po/shtool
+%%TURBADIR%%/po/sv_SE.po
+%%TURBADIR%%/po/xgettext.sh
+%%TURBADIR%%/po/zh_CN.po
+%%TURBADIR%%/po/zh_TW.po
+%%TURBADIR%%/scripts/drivers/turba.sql
+%%TURBADIR%%/search.php
+%%TURBADIR%%/status.php
+%%TURBADIR%%/templates/add/add.inc
+%%TURBADIR%%/templates/add/noadd.inc
+%%TURBADIR%%/templates/add/select.inc
+%%TURBADIR%%/templates/advanced/criteria.inc
+%%TURBADIR%%/templates/advanced/foot.inc
+%%TURBADIR%%/templates/advanced/head.inc
+%%TURBADIR%%/templates/advanced/results_head.inc
+%%TURBADIR%%/templates/common-footer.inc
+%%TURBADIR%%/templates/common-header.inc
+%%TURBADIR%%/templates/data/export.inc
+%%TURBADIR%%/templates/data/import.inc
+%%TURBADIR%%/templates/display/display.inc
+%%TURBADIR%%/templates/edit/edit.inc
+%%TURBADIR%%/templates/index/css.inc
+%%TURBADIR%%/templates/index/notconfigured.inc
+%%TURBADIR%%/templates/menu/menu.inc
+%%TURBADIR%%/templates/search/foot.inc
+%%TURBADIR%%/templates/search/head.inc
+%%TURBADIR%%/templates/search/oldrow.inc
+%%TURBADIR%%/templates/search/row.inc
+%%TURBADIR%%/templates/wml/common-footer.inc
+%%TURBADIR%%/templates/wml/common-header.inc
+%%TURBADIR%%/templates/wml/menu/menu.inc
+%%TURBADIR%%/templates/wml/search/foot.inc
+%%TURBADIR%%/templates/wml/search/head.inc
+%%TURBADIR%%/templates/wml/search/row.inc
+%%PORTDOCS%%@dirrm share/doc/turba
+@dirrm %%TURBADIR%%/config
+@dirrm %%TURBADIR%%/graphics
+@dirrm %%TURBADIR%%/lib/Driver
+@dirrm %%TURBADIR%%/lib/List
+@dirrm %%TURBADIR%%/lib/ListView
+@dirrm %%TURBADIR%%/lib/ObjectView
+@dirrm %%TURBADIR%%/lib
+@dirrm %%TURBADIR%%/locale/cs_CZ/LC_MESSAGES
+@dirrm %%TURBADIR%%/locale/cs_CZ
+@dirrm %%TURBADIR%%/locale/de_DE/LC_MESSAGES
+@dirrm %%TURBADIR%%/locale/de_DE
+@dirrm %%TURBADIR%%/locale/el_GR/LC_MESSAGES
+@dirrm %%TURBADIR%%/locale/el_GR
+@dirrm %%TURBADIR%%/locale/es_ES/LC_MESSAGES
+@dirrm %%TURBADIR%%/locale/es_ES
+@dirrm %%TURBADIR%%/locale/fr_FR/LC_MESSAGES
+@dirrm %%TURBADIR%%/locale/fr_FR
+@dirrm %%TURBADIR%%/locale/it_IT/LC_MESSAGES
+@dirrm %%TURBADIR%%/locale/it_IT
+@dirrm %%TURBADIR%%/locale/ko_KR/LC_MESSAGES
+@dirrm %%TURBADIR%%/locale/ko_KR
+@dirrm %%TURBADIR%%/locale/nl_NL/LC_MESSAGES
+@dirrm %%TURBADIR%%/locale/nl_NL
+@dirrm %%TURBADIR%%/locale/pl_PL/LC_MESSAGES
+@dirrm %%TURBADIR%%/locale/pl_PL
+@dirrm %%TURBADIR%%/locale/pt_BR/LC_MESSAGES
+@dirrm %%TURBADIR%%/locale/pt_BR
+@dirrm %%TURBADIR%%/locale/ru_koi/LC_MESSAGES
+@dirrm %%TURBADIR%%/locale/ru_koi
+@dirrm %%TURBADIR%%/locale/ru_win/LC_MESSAGES
+@dirrm %%TURBADIR%%/locale/ru_win
+@dirrm %%TURBADIR%%/locale/sv_SE/LC_MESSAGES
+@dirrm %%TURBADIR%%/locale/sv_SE
+@dirrm %%TURBADIR%%/locale/zh_CN/LC_MESSAGES
+@dirrm %%TURBADIR%%/locale/zh_CN
+@dirrm %%TURBADIR%%/locale/zh_TW/LC_MESSAGES
+@dirrm %%TURBADIR%%/locale/zh_TW
+@dirrm %%TURBADIR%%/locale
+@dirrm %%TURBADIR%%/po
+@dirrm %%TURBADIR%%/scripts/drivers
+@dirrm %%TURBADIR%%/scripts
+@dirrm %%TURBADIR%%/templates/add
+@dirrm %%TURBADIR%%/templates/advanced
+@dirrm %%TURBADIR%%/templates/data
+@dirrm %%TURBADIR%%/templates/display
+@dirrm %%TURBADIR%%/templates/edit
+@dirrm %%TURBADIR%%/templates/index
+@dirrm %%TURBADIR%%/templates/menu
+@dirrm %%TURBADIR%%/templates/search
+@dirrm %%TURBADIR%%/templates/wml/menu
+@dirrm %%TURBADIR%%/templates/wml/search
+@dirrm %%TURBADIR%%/templates/wml
+@dirrm %%TURBADIR%%/templates
+@dirrm %%TURBADIR%%

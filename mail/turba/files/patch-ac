@@ -1,0 +1,16 @@
+--- config/prefs.php.dist.orig	Mon Oct 22 09:09:23 2001
++++ config/prefs.php.dist	Sun Nov 18 01:21:42 2001
+@@ -16,4 +16,13 @@
+     'type' => 'select',
+     'desc' => _("Select your preferred language:")
+ );
++
++// Addressbook
++$_prefs['searchsource'] = array(
++    'value' => 'localsql',
++    'locked' => false,
++    'shared' => true,
++    'type' => 'select',
++    'desc' => _("from")
++);
+ ?>
