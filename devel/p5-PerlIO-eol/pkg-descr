@@ -1,0 +1,4 @@
+This layer normalizes any of CR, LF, CRLF and Native into the designated
+line ending. It works for both input and output handles.
+
+WWW: http://search.cpan.org/~autrijus/PerlIO-eol/

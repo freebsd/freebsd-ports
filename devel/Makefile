@@ -931,6 +931,7 @@
     SUBDIR += p5-Path-Class
     SUBDIR += p5-Penguin
     SUBDIR += p5-Penguin-Easy
+    SUBDIR += p5-PerlIO-eol
     SUBDIR += p5-PerlIO-via-dynamic
     SUBDIR += p5-PerlIO-via-symlink
     SUBDIR += p5-PerlMenu
