@@ -22,6 +22,11 @@ GNU_CONFIGURE=	yes
 
 CONFIGURE_ARGS+=	--libexecdir=${PREFIX}/libexec/nagios --bindir=${PREFIX}/sbin --sysconfdir=${PREFIX}/etc
 
+OPTIONS=		SSL "SSL support" off \
+			ARGS "Enable command arguments *POTENTIAL SECURITY RISK*" off
+
+.include <bsd.port.pre.mk>
+
 .if defined(WITH_SSL)
 USE_OPENSSL=	yes
 CONFIGURE_ARGS+=	--enable-ssl
@@ -29,10 +34,8 @@ CONFIGURE_ARGS+=	--enable-ssl
 CONFIGURE_ARGS+=	--disable-ssl
 .endif
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 502126
-BROKEN=		"Does not install on FreeBSD >= 5.x"
+.if defined(WITH_ARGS)
+CONFIGURE_ARGS+=	--enable-command-args
 .endif
 
 do-install:
