@@ -2,7 +2,7 @@
 $FreeBSD$
 
 --- configure.orig	Mon Jan 27 13:16:04 2003
-+++ configure	Fri Feb 28 01:08:49 2003
++++ configure	Fri Feb 28 18:50:31 2003
 @@ -8786,6 +8786,7 @@
  
  # This can be used to rebuild libtool when needed
@@ -11,3 +11,26 @@ $FreeBSD$
  
  # Always use our own libtool.
  LIBTOOL='$(SHELL) $(top_builddir)/libtool'
+@@ -11010,19 +11011,19 @@
+ 
+ 
+ cat >>confdefs.h <<_ACEOF
+-#define PACKAGE_LOCALE_DIR "${prefix}/${DATADIRNAME}/locale"
++#define PACKAGE_LOCALE_DIR "${prefix}/share/locale"
+ _ACEOF
+ 
+ 
+ 
+ cat >>confdefs.h <<_ACEOF
+-#define PACKAGE_DATA_DIR "${prefix}/${DATADIRNAME}"
++#define PACKAGE_DATA_DIR "${prefix}/share/gnome"
+ _ACEOF
+ 
+ 
+ 
+ cat >>confdefs.h <<_ACEOF
+-#define PACKAGE_SOUND_DIR "${prefix}/${DATADIRNAME}/sounds/linphone"
++#define PACKAGE_SOUND_DIR "${prefix}/share/gnome/sounds/linphone"
+ _ACEOF
+ 
+ 
