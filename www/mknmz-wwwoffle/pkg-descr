@@ -1,0 +1,6 @@
+mknmz-wwwoffle performs full-text search over the cache created by WWWOFFLE,
+using full-text search system Namazu (http://www.namazu.org/).  mknmz-wwwoffle
+adds a filter for mknmz which is used to generate index files for cache entries
+in WWWOFFLE.
+
+WWW: http://www.naney.org/comp/distrib/mknmz-wwwoffle/
