@@ -17,7 +17,7 @@
 # OpenBSD and NetBSD will be accepted.
 #
 # $FreeBSD$
-# $Id: portlint.pl,v 1.22 2003/11/09 00:41:10 marcus Exp $
+# $Id: portlint.pl,v 1.26 2003/11/15 22:08:28 marcus Exp $
 #
 
 use vars qw/ $opt_a $opt_A $opt_b $opt_c $opt_h $opt_t $opt_v $opt_M $opt_N $opt_B $opt_V /;
@@ -40,7 +40,7 @@ $portdir = '.';
 # version variables
 my $major = 2;
 my $minor = 4;
-my $micro = 7;
+my $micro = 8;
 
 sub l { '[{(]'; }
 sub r { '[)}]'; }
@@ -342,6 +342,13 @@ if ($committer) {
 	}
 
 	find(\&find_proc, '.');
+
+	# Check for ports that may break INDEX
+	my $indexerr = `env LOCALBASE=/nonexistentlocal X11BASE=/nonexistentx make $makeenv describe 2>&1 >/dev/null`;
+	chomp $indexerr;
+	$indexerr =~ tr/\n/ /s;
+	&perror("FATAL: breaks INDEX ($indexerr).")
+		if ($indexerr);
 }
 if ($err || $warn) {
 	print "$err fatal errors and $warn warnings found.\n"
@@ -776,6 +783,7 @@ sub checkmakefile {
 	my($portname, $portversion, $distfiles, $distname, $extractsufx) = ('', '', '', '', '');
 	my $masterport = 0;
 	my $slaveport = 0;
+	my $use_gnome_hack = 0;
 	my($realwrksrc, $wrksrc, $nowrksubdir) = ('', '', '');
 	my(@mman, @pman);
 
@@ -839,6 +847,7 @@ sub checkmakefile {
 	# whole file: blank lines.
 	#
 	$whole = "\n" . $rawwhole;
+	study $whole;
 	print "OK: checking contiguous blank lines in $file.\n"
 		if ($verbose);
 	$i = "\n" x ($contblank + 2);
@@ -979,12 +988,17 @@ ldconfig ln md5 mkdir mv patch perl rm rmdir ruby sed sh touch tr which xargs xm
 	# note that we leave the command as is, since we need to check the
 	# use of echo itself.
 	$j = $whole;
-	$j =~ s/([ \t][\@-]?)(echo|\$[\{\(]ECHO[\}\)]|\$[\{\(]ECHO_MSG[\}\)])[ \t]+("(\\'|\\"|[^"])*"|'(\\'|\\"|[^'])*')[ \t]*[;\n]/$1$2;/; #"
+	$j =~ s/([ \t][\@\-]{0,2})(echo|\$[\{\(]ECHO[\}\)]|\$[\{\(]ECHO_MSG[\}\)])[ \t]+("(\\'|\\"|[^"])*"|'(\\'|\\"|[^'])*')[ \t]*[;\n]/$1$2;/; #"
 	foreach my $i (keys %cmdnames) {
 		# XXX This is a hack.  Really, we should break $j up into individual
 		# lines, and go through each one.
-		if ($j =~ /(\n[^ \t\/]*[ \t\/]$i[ \t\n;][^\n]*\n?)/) {
+		if ($j =~ /([^ \t\/]*[ \t\/][\@\-]{0,2}$i[ \t\n;][^\n]*\n?)/) {
 			if ($1 !~ /\n[A-Z]+_TARGET[?+]?=[^\n]+$i/
+				&& $1 !~ /\nIGNORE(.)?=[^\n]+$i/
+				&& $1 !~ /\nBROKEN(.)?=[^\n]+$i/
+				&& $1 !~ /\nRESTRICTED(.)?=[^\n]+$i/
+				&& $1 !~ /\nNO_PACKAGE(.)?=[^\n]+$i/
+				&& $1 !~ /\nNO_CDROM(.)?=[^\n]+$i/
 				&& $1 !~ /\nCOMMENT(.)?=[^\n]+$i/) {
 					&perror("WARN: possible direct use of command \"$i\" ".
 						"found. use $cmdnames{$i} instead.");
@@ -994,10 +1008,15 @@ ldconfig ln md5 mkdir mv patch perl rm rmdir ruby sed sh touch tr which xargs xm
 
 	foreach my $i (keys %autocmdnames) {
 		# XXX Same hack as above.
-		if ($j =~ /(\n[^ \t\/]*[ \t\/]($i\d*)[ \t\n;][^\n]*\n?)/) {
+		if ($j =~ /([^ \t\/]*[ \t\/][\@\-]{0,2}($i\d*)[ \t\n;][^\n]*\n?)/) {
 			my $lm = $1;
 			my $sm = $2;
 			if ($lm !~ /\n[A-Z]+_TARGET[?+]?=[^\n]+($i\d*)/
+				&& $1 !~ /\nIGNORE(.)?=[^\n]+$i/
+				&& $1 !~ /\nBROKEN(.)?=[^\n]+$i/
+				&& $1 !~ /\nRESTRICTED(.)?=[^\n]+$i/
+				&& $1 !~ /\nNO_PACKAGE(.)?=[^\n]+$i/
+				&& $1 !~ /\nNO_CDROM(.)?=[^\n]+$i/
 				&& $lm !~ /\nCOMMENT(.)?=[^\n]+($i\d*)/) {
 					&perror("WARN: possible direct use of command \"$sm\" ".
 						"found. Use $autocmdnames{$i} instead and ".
@@ -1055,11 +1074,26 @@ ldconfig ln md5 mkdir mv patch perl rm rmdir ruby sed sh touch tr which xargs xm
 	}
 
 	#
+	# whole file: USE_GNOME check
+	#
+	if ($whole =~ /^USE_GNOME[?:]?=\s*(.*)$/m) {
+		if ($1 =~ /gnomehack/) {
+			$use_gnome_hack = 1;
+		}
+	}
+
+	#
 	# slave port check
 	#
 	my $masterdir = $makevar{MASTERDIR};
 	if ($masterdir ne '' && $masterdir ne $makevar{'.CURDIR'}) {
 		$slaveport = 1;
+		print "OK: slave port detected, checking for inclusion of $masterdir/Makefile.\n"
+			if ($verbose);
+		if ($whole !~ /\n\.include\s+[<"]\$\{MASTERDIR\}\/Makefile[">]\s*$/) {
+			&perror('FATAL: the last line of a slave port\'s Makefile has to be'.
+				' .include "${MASTERDIR}/Makefile"');
+		}
 		print "OK: checking master port in $masterdir.\n" if ($verbose);
 		if (! -e "$masterdir/Makefile") {
 			&perror("WARN: unable to locate master port in $masterdir");
@@ -1788,6 +1822,11 @@ FETCH_DEPENDS DEPENDS DEPENDS_TARGET
 	# check for incorrect use of the pre-everything target.
 	if ($tmp =~ /\npre-everything:[^:]/) {
 		&perror("FATAL: use pre-everything:: instead of pre-everything:");
+	}
+
+	if ($tmp =~ /^pre-patch:/m && $use_gnome_hack) {
+		&perror("FATAL: pre-patch target overwrites gnomehack component. ".
+			"use post-patch instead.");
 	}
 
 	1;
