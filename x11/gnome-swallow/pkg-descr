@@ -1,0 +1,5 @@
+Gnome-swallow is a pseudo-applet that allows one to swallow any X11
+application into the GNOME 2 panel.  This restores the functionality that
+used to exist in GNOME 1.x.
+
+WWW: http://www-unix.oit.umass.edu/~tetron/technology/swallow/

@@ -1,0 +1,11 @@
+--- Makefile.in.orig	Wed Apr 16 03:11:46 2003
++++ Makefile.in	Wed Apr 16 03:11:57 2003
+@@ -103,7 +103,7 @@
+ sysconfdir = @sysconfdir@
+ target_alias = @target_alias@
+ paneldir = $(prefix)/lib/gnome-panel
+-serversdir = $(prefix)/lib/bonobo/servers
++serversdir = $(prefix)/libdata/bonobo/servers
+ docdir = $(prefix)/share/doc/gnome-swallow
+ 
+ dist_doc_DATA = README

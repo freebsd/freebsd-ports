@@ -43,6 +43,7 @@
     SUBDIR += gnoclip
     SUBDIR += gnome
     SUBDIR += gnome-fifth-toe
+    SUBDIR += gnome-swallow
     SUBDIR += gnome2
     SUBDIR += gnome2-fifth-toe
     SUBDIR += gnomeapplets
