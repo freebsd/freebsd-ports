@@ -3,7 +3,7 @@
 # Date created:         2 Jun 1998
 # Whom:                 Don Croyle <croyle@gelemna.ft-wayne.in.us>
 #
-# $Id: Makefile,v 1.4 1998/09/15 11:13:12 asami Exp $
+# $Id: Makefile,v 1.5 1998/09/17 00:32:36 asami Exp $
 #
 
 DISTNAME=	xconq-7.2.2
@@ -11,6 +11,8 @@ CATEGORIES=	games
 MASTER_SITES=	ftp://ftp.cygnus.com/pub/xconq/
 
 MAINTAINER=	croyle@gelemna.ft-wayne.in.us
+
+BROKEN_ELF=	does not link
 
 LIB_DEPENDS=	Xpm.4:${PORTSDIR}/graphics/xpm
 
