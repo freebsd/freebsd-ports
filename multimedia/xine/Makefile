@@ -17,4 +17,7 @@ GNU_CONFIGURE=		yes
 USE_X_PREFIX=		yes
 USE_IMLIB=		yes
 
+post-install:
+	@${CAT} ${PKGMESSAGE}
+
 .include <bsd.port.mk>
