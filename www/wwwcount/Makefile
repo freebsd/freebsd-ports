@@ -9,7 +9,7 @@
 DISTNAME=       wwwcount2.5
 PKGNAME=        wwwcount-2.5
 CATEGORIES=     www
-MASTER_SITES=   http://www.fccc.edu/users/muquit/src/wwwcount2.5/
+MASTER_SITES=   http://www.muquit.com/muquit/software/Count/src/wwwcount2.5/
 
 MAINTAINER=     dervish@ikhala.tcimet.net
 
