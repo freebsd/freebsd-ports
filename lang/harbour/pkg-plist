@@ -63,6 +63,8 @@ include/hbvmpub.h
 lib/libcodepage.a
 lib/libcommon.a
 lib/libdbfcdx.a
+lib/libdbfdbt.a
+lib/libdbffpt.a
 lib/libdbfntx.a
 lib/libdebug.a
 lib/libgtcgi.a
