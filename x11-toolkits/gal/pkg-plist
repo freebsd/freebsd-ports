@@ -59,6 +59,7 @@ include/gal/e-table/e-tree-selection-model.h
 include/gal/e-table/e-tree-sorted.h
 include/gal/e-table/e-tree-table-adapter.h
 include/gal/e-table/e-tree.h
+include/gal/e-text/e-completion-match.h
 include/gal/e-text/e-completion-view.h
 include/gal/e-text/e-completion.h
 include/gal/e-text/e-entry.h
@@ -98,11 +99,11 @@ include/gal/widgets/e-canvas-utils.h
 include/gal/widgets/e-canvas-vbox.h
 include/gal/widgets/e-canvas.h
 include/gal/widgets/e-categories-master-list-array.h
+include/gal/widgets/e-categories-master-list-combo.h
 include/gal/widgets/e-categories-master-list-dialog-model.h
 include/gal/widgets/e-categories-master-list-dialog.h
 include/gal/widgets/e-categories-master-list.h
 include/gal/widgets/e-categories.h
-include/gal/widgets/e-charset-picker.h
 include/gal/widgets/e-colors.h
 include/gal/widgets/e-cursors.h
 include/gal/widgets/e-font.h
@@ -126,7 +127,7 @@ include/gal/widgets/widget-color-combo.h
 include/gal/widgets/widget-pixmap-combo.h
 lib/libgal.a
 lib/libgal.so
-lib/libgal.so.7
+lib/libgal.so.8
 share/gnome/etable/%%VERSION%%/glade/e-table-config.glade
 share/gnome/etable/%%VERSION%%/glade/e-table-field-chooser.glade
 share/gnome/etable/%%VERSION%%/glade/e-table-group.glade
@@ -142,6 +143,7 @@ share/gnome/gal/html/gal.signals
 share/gnome/gal/html/gal.types
 share/locale/az/LC_MESSAGES/gal.mo
 share/locale/ca/LC_MESSAGES/gal.mo
+share/locale/cs/LC_MESSAGES/gal.mo
 share/locale/da/LC_MESSAGES/gal.mo
 share/locale/de/LC_MESSAGES/gal.mo
 share/locale/en_GB/LC_MESSAGES/gal.mo
@@ -161,6 +163,7 @@ share/locale/ro/LC_MESSAGES/gal.mo
 share/locale/ru/LC_MESSAGES/gal.mo
 share/locale/sk/LC_MESSAGES/gal.mo
 share/locale/sv/LC_MESSAGES/gal.mo
+share/locale/ta/LC_MESSAGES/gal.mo
 share/locale/tr/LC_MESSAGES/gal.mo
 share/locale/uk/LC_MESSAGES/gal.mo
 @dirrm share/gnome/gal/%%VERSION%%/glade

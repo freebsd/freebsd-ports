@@ -4,10 +4,10 @@
  CFLAGS="$CFLAGS $ICONV_CFLAGS"
 -LDFLAGS="$LDFLAGS $ICONV_LIBS -liconv"
 -echo $ac_n "checking for iconv in -liconv""... $ac_c" 1>&6
--echo "configure:5021: checking for iconv in -liconv" >&5
+-echo "configure:5081: checking for iconv in -liconv" >&5
 +LDFLAGS="$LDFLAGS $ICONV_LIBS -lgiconv"
 +echo $ac_n "checking for iconv in -lgiconv""... $ac_c" 1>&6
-+echo "configure:5021: checking for iconv in -lgiconv" >&5
++echo "configure:5081: checking for iconv in -lgiconv" >&5
  if eval "test \"`echo '$''{'ac_cv_libiconv'+set}'`\" = set"; then
 @@ -5027,3 +5027,3 @@
  
