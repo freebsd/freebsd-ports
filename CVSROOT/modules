@@ -1298,6 +1298,7 @@ cxref		ports/devel/cxref
 cxsc		ports/math/cxsc
 cxxtest		ports/devel/cxxtest
 cy-aspell	ports/textproc/cy-aspell
+cyberbit-ttfonts	ports/x11-fonts/cyberbit-ttfonts
 cybercalendar	ports/www/cybercalendar
 cyclone		ports/lang/cyclone
 cymbaline	ports/audio/cymbaline
