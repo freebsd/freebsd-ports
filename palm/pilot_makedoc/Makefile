@@ -3,13 +3,15 @@
 # Date created:				May 10th 1997
 # Whom:					jfitz@FreeBSD.ORG
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1997/05/30 20:07:45 jfitz Exp $
 #
 
 PKGNAME=	pilot_makedoc-0.7
 CATEGORIES=	textproc
 MASTER_SITES=	http://www.concentric.net/~rbram/
 DISTFILES=	makedoc7.cpp
+
+MAINTAINER=	jfitz@FreeBSD.ORG
 
 NO_WRKSUBDIR=	YES
 
