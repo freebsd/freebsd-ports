@@ -7,6 +7,7 @@
 
 PORTNAME=	elmo
 PORTVERSION=	0.8.3
+PORTREVISION=	1
 CATEGORIES=	mail
 MASTER_SITES=	\
 	http://savannah.nongnu.org/download/elmo/unstable.pkg/${PORTVERSION}/
@@ -23,6 +24,7 @@ MAKE_ENV=	PTHREAD_LIBS="${PTHREAD_LIBS}" \
 		PTHREAD_CFLAGS="${PTHREAD_CFLAGS}"
 MAN1=		elmo.1 elmoconf.pl.1
 PLIST=		${WRKDIR}/pkg-plist
+USE_PERL5=	yes
 
 pre-extract:
 	@${CAT} ${PKGMESSAGE}
