@@ -22,6 +22,7 @@ RUN_DEPENDS=	${SITE_PERL}/Mail/Internet.pm:${PORTSDIR}/mail/p5-Mail-Tools \
 
 NO_BUILD=	yes
 PERL_CONFIGURE= yes
+USE_REINPLACE=	yes
 
 do-configure:
 .for file in install ricochet

@@ -17,6 +17,7 @@ COMMENT=	A user interface builder for GTK+/GNOME
 USE_X_PREFIX=	yes
 USE_GNOME=	gnomeprefix gnomehack bonobo gnomedb
 USE_LIBTOOL=	yes
+USE_REINPLACE=	yes
 CONFIGURE_ARGS=	--with-bonobo --enable-gnome-db
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LIBS="-L${LOCALBASE}/lib"

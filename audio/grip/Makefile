@@ -17,6 +17,7 @@ COMMENT=	GTK front-end to external cd rippers and mp3 encoders
 LIB_DEPENDS=	id3-3.8.2:${PORTSDIR}/audio/id3lib \
 		ghttp.1:${PORTSDIR}/www/libghttp
 
+USE_REINPLACE=	yes
 USE_X_PREFIX=	yes
 USE_GNOME=	gnomehack gnomeprefix gnometarget libgnomeui vte
 USE_GMAKE=	yes

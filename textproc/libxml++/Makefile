@@ -17,6 +17,7 @@ COMMENT=	XML API for C++
 
 USE_GNOME=	gnomehack gnometarget libxml2 pkgconfig
 USE_LIBTOOL=	yes
+USE_REINPLACE=	yes
 INSTALLS_SHLIB=	yes
 
 .include <bsd.port.pre.mk>
