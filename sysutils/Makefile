@@ -287,6 +287,7 @@
     SUBDIR += sleuthkit
     SUBDIR += slmon
     SUBDIR += sloth
+    SUBDIR += smartmontools
     SUBDIR += socket
     SUBDIR += socklog
     SUBDIR += spinner
