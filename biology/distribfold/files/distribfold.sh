@@ -45,7 +45,7 @@ stop)
 		# dir for current cpu
 		dir="${prefix}/cpu${ncpu}"
 
-		rm $dir/foldtrajlite.lock
+		rm -f $dir/foldtrajlite.lock
 	done
 
 	# give clients enough time to shutdown
