@@ -8,7 +8,8 @@
 PORTNAME=	kdissert
 PORTVERSION=	0.3.1
 CATEGORIES=	deskutils kde
-MASTER_SITES=	http://freehackers.org/~tnagy/kdissert/
+MASTER_SITES=	http://freehackers.org/~tnagy/kdissert/ \
+		ftp://ftp.fasta.fh-dortmund.de/mirror/gentoo/distfiles/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	KDE mindmapping tool
@@ -24,7 +25,7 @@ MAKE_ARGS=	CXX="${CXX}" \
 		COMMONCXXFLAGS="${CXXFLAGS} ${PTHREAD_CFLAGS}" \
 		LIBTOOL="${LIBTOOL} --silent --tag=CXX" \
 		SUBLIBS="${PTHREAD_LIBS}" \
-		SHELL="${LOCALBASE}/bin/bash" 
+		SHELL="${LOCALBASE}/bin/bash"
 INSTALLS_SHLIB=	yes
 
 post-patch:
