@@ -8,8 +8,7 @@
 PORTNAME=	truereality
 PORTVERSION=	${DATE}
 CATEGORIES=	emulators devel
-MASTER_SITES=	http://www.emuhq.com/emulators/ \
-		ftp://ftp.mayn.de/pub/unix/emulators/console/n64/
+MASTER_SITES=	ftp://ftp.mayn.de/pub/unix/emulators/console/n64/
 DISTNAME=	TrueReality-${PORTVERSION}
 
 MAINTAINER=	lioux@FreeBSD.org
