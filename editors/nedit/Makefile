@@ -16,6 +16,7 @@ MAINTAINER=	deischen@iworks.InterWorks.org
 
 LIB_DEPENDS=	Xpm\\.4\\.:${PORTSDIR}/graphics/xpm
 
+REQUIRES_MOTIF=	yes
 USE_X11=	yes
 NO_WRKSUBDIR=	yes
 EXTRACT_BEFORE_ARGS=	-C ${WRKDIR} -xf
