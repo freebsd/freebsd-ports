@@ -1,8 +1,17 @@
 
 $FreeBSD$
 
---- conf.php.orig	Mon Aug 11 15:56:15 2003
-+++ conf.php	Tue Oct 28 11:59:38 2003
+--- conf.php.orig	Mon Nov 10 10:54:16 2003
++++ conf.php	Thu Feb 12 18:40:24 2004
+@@ -5,7 +5,7 @@
+ #
+ $majorversion = 2;
+ $minorversion = 5;
+-$microversion = 4;
++$microversion = 5;
+ #
+ # The name of the directory in "./templates" which contains the
+ # templates that you want to use. Templates are like a skin for the
 @@ -22,12 +22,12 @@
  #$gmetad_root = "/usr/local/gmetad";
  
