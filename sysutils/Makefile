@@ -35,6 +35,7 @@
     SUBDIR += consolehm
     SUBDIR += contool
     SUBDIR += copytape
+    SUBDIR += cotty
     SUBDIR += cpbk
     SUBDIR += cpdup
     SUBDIR += cpuburn

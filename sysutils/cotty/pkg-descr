@@ -1,0 +1,10 @@
+Simple command-line pseudo terminal manager:
+allows to run coprocesses talking to each other thru their tty and/or pty.
+
+Most useful to drive from scripts programs that want a tty, as in
+	cotty -d -- pppd silent 192.168.0.1:192.168.0.2 \
+		-- ssh -t root@remote pppd
+This particular use has been obsoleted under Linux
+(but probably not under the various free BSDs and proprietary Unices),
+as it can be done without cotty with
+	pppd pty 'ssh -t root@remote pppd' silent 192.168.0.1:192.168.0.2
