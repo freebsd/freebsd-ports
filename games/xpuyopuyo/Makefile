@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	xpuyopuyo
-PORTVERSION=	0.9.3
+PORTVERSION=	0.9.8
 CATEGORIES=	games
-MASTER_SITES=	http://chaos2.org/xpuyopuyo/ \
-		http://lenin.dabney.caltech.edu/~justins/xpuyopuyo/
+MASTER_SITES=	http://chaos2.org/xpuyopuyo/
 
 MAINTAINER=	yinjieh@csie.nctu.edu.tw
 COMMENT=	A puzzle game, somewhat like Tetris
