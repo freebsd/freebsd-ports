@@ -1,8 +1,3 @@
-eclipse/plugins/com.objectlearn.j2ee.gmf.core.editor_3.0.0/gmfeditor.jar
-eclipse/plugins/com.objectlearn.j2ee.gmf.core.editor_3.0.0/icons/full/obj16/J2eeModelFile.gif
-eclipse/plugins/com.objectlearn.j2ee.gmf.core.editor_3.0.0/icons/full/wizban/NewJ2ee.gif
-eclipse/plugins/com.objectlearn.j2ee.gmf.core.editor_3.0.0/license.html
-eclipse/plugins/com.objectlearn.j2ee.gmf.core.editor_3.0.0/plugin.xml
 eclipse/plugins/com.objectlearn.j2ee.gmf.core.edit_3.0.0/gmfedit.jar
 eclipse/plugins/com.objectlearn.j2ee.gmf.core.edit_3.0.0/icons/full/ctool16/CreateActivationConfigPropertyType_activationConfigPropertyName_ConfigPropertyNameType.gif
 eclipse/plugins/com.objectlearn.j2ee.gmf.core.edit_3.0.0/icons/full/ctool16/CreateActivationConfigPropertyType_activationConfigPropertyName_DescriptionType.gif
@@ -1680,81 +1675,81 @@ eclipse/plugins/com.objectlearn.j2ee.gmf.emitter_3.0.0/license.html
 eclipse/plugins/com.objectlearn.j2ee.gmf.emitter_3.0.0/plugin.xml
 eclipse/plugins/com.objectlearn.j2ee.gmf.emitter_3.0.0/schema/com.objectlearn.j2ee.gmf.emitter.emitter.exsd
 eclipse/plugins/com.objectlearn.j2ee.gmf.emitter_3.0.0/schema/emitter.exsd
-eclipse/plugins/com.objectlearn.j2ee.gmf.xdoclet_3.0.0/ejb-merge.xml
-eclipse/plugins/com.objectlearn.j2ee.gmf.xdoclet_3.0.0/gmfxdoclet.jar
-eclipse/plugins/com.objectlearn.j2ee.gmf.xdoclet_3.0.0/license.html
-eclipse/plugins/com.objectlearn.j2ee.gmf.xdoclet_3.0.0/plugin.xml
-eclipse/plugins/com.objectlearn.j2ee.gmf.xdoclet_3.0.0/templates/ejb/entity/fields.javajet
-eclipse/plugins/com.objectlearn.j2ee.gmf.xdoclet_3.0.0/templates/ejb/entity/methodStubs.javajet
-eclipse/plugins/com.objectlearn.j2ee.gmf.xdoclet_3.0.0/templates/ejb/entity/typeComment.javajet
-eclipse/plugins/com.objectlearn.j2ee.gmf.xdoclet_3.0.0/templates/ejb/entity/typeStub.javajet
-eclipse/plugins/com.objectlearn.j2ee.gmf.xdoclet_3.0.0/templates/ejb/message/fields.javajet
-eclipse/plugins/com.objectlearn.j2ee.gmf.xdoclet_3.0.0/templates/ejb/message/methodStubs.javajet
-eclipse/plugins/com.objectlearn.j2ee.gmf.xdoclet_3.0.0/templates/ejb/message/typeComment.javajet
-eclipse/plugins/com.objectlearn.j2ee.gmf.xdoclet_3.0.0/templates/ejb/message/typeStub.javajet
-eclipse/plugins/com.objectlearn.j2ee.gmf.xdoclet_3.0.0/templates/ejb/session/fields.javajet
-eclipse/plugins/com.objectlearn.j2ee.gmf.xdoclet_3.0.0/templates/ejb/session/methodStubs.javajet
-eclipse/plugins/com.objectlearn.j2ee.gmf.xdoclet_3.0.0/templates/ejb/session/typeComment.javajet
-eclipse/plugins/com.objectlearn.j2ee.gmf.xdoclet_3.0.0/templates/ejb/session/typeStub.javajet
-eclipse/plugins/com.objectlearn.j2ee.gmf.xdoclet_3.0.0/templates/test.javajet
-eclipse/plugins/com.objectlearn.jdt.j2ee.editor_3.0.0/about.html
-eclipse/plugins/com.objectlearn.jdt.j2ee.editor_3.0.0/icons/ejbdoc.gif
-eclipse/plugins/com.objectlearn.jdt.j2ee.editor_3.0.0/icons/jspdoc.gif
-eclipse/plugins/com.objectlearn.jdt.j2ee.editor_3.0.0/icons/jspdocgray.gif
-eclipse/plugins/com.objectlearn.jdt.j2ee.editor_3.0.0/license.html
-eclipse/plugins/com.objectlearn.jdt.j2ee.editor_3.0.0/lombozeditor.jar
-eclipse/plugins/com.objectlearn.jdt.j2ee.editor_3.0.0/plugin.xml
-eclipse/plugins/com.objectlearn.jdt.j2ee_3.0.0/about.html
-eclipse/plugins/com.objectlearn.jdt.j2ee_3.0.0/icons/container.gif
-eclipse/plugins/com.objectlearn.jdt.j2ee_3.0.0/icons/decorators/ebean.gif
-eclipse/plugins/com.objectlearn.jdt.j2ee_3.0.0/icons/decorators/ejbjar.gif
-eclipse/plugins/com.objectlearn.jdt.j2ee_3.0.0/icons/decorators/run_exc.gif
-eclipse/plugins/com.objectlearn.jdt.j2ee_3.0.0/icons/decorators/sbean.gif
-eclipse/plugins/com.objectlearn.jdt.j2ee_3.0.0/icons/decorators/Thumbs.db
-eclipse/plugins/com.objectlearn.jdt.j2ee_3.0.0/icons/decorators/war.gif
-eclipse/plugins/com.objectlearn.jdt.j2ee_3.0.0/icons/full/ctool16/bean.jpg
-eclipse/plugins/com.objectlearn.jdt.j2ee_3.0.0/icons/full/ctool16/editor.gif
-eclipse/plugins/com.objectlearn.jdt.j2ee_3.0.0/icons/full/ctool16/jspdoc.gif
-eclipse/plugins/com.objectlearn.jdt.j2ee_3.0.0/icons/full/ctool16/nspace.jpg
-eclipse/plugins/com.objectlearn.jdt.j2ee_3.0.0/icons/full/ctool16/servlet_wiz.gif
-eclipse/plugins/com.objectlearn.jdt.j2ee_3.0.0/icons/full/ctool16/servlet_wizbanner.jpg
-eclipse/plugins/com.objectlearn.jdt.j2ee_3.0.0/icons/full/ctool16/soapclient_wizban.jpg
-eclipse/plugins/com.objectlearn.jdt.j2ee_3.0.0/icons/full/ctool16/Thumbs.db
-eclipse/plugins/com.objectlearn.jdt.j2ee_3.0.0/icons/jar_l_obj.gif
-eclipse/plugins/com.objectlearn.jdt.j2ee_3.0.0/icons/jspdoc.gif
-eclipse/plugins/com.objectlearn.jdt.j2ee_3.0.0/icons/newHTML.gif
-eclipse/plugins/com.objectlearn.jdt.j2ee_3.0.0/icons/newjprj_wiz.gif
-eclipse/plugins/com.objectlearn.jdt.j2ee_3.0.0/icons/newJSP.gif
-eclipse/plugins/com.objectlearn.jdt.j2ee_3.0.0/icons/soap_l.GIF
-eclipse/plugins/com.objectlearn.jdt.j2ee_3.0.0/icons/Thumbs.db
-eclipse/plugins/com.objectlearn.jdt.j2ee_3.0.0/license.html
-eclipse/plugins/com.objectlearn.jdt.j2ee_3.0.0/lomboz.jar
-eclipse/plugins/com.objectlearn.jdt.j2ee_3.0.0/plugin.xml
-eclipse/plugins/com.objectlearn.jdt.j2ee_3.0.0/servers/jboss244.server
-eclipse/plugins/com.objectlearn.jdt.j2ee_3.0.0/servers/jboss244.server.bak
-eclipse/plugins/com.objectlearn.jdt.j2ee_3.0.0/servers/jboss244Tomcat.server
-eclipse/plugins/com.objectlearn.jdt.j2ee_3.0.0/servers/jboss300.server
-eclipse/plugins/com.objectlearn.jdt.j2ee_3.0.0/servers/jboss300all.server
-eclipse/plugins/com.objectlearn.jdt.j2ee_3.0.0/servers/jboss32x.server
-eclipse/plugins/com.objectlearn.jdt.j2ee_3.0.0/servers/jboss32x.server.bak
-eclipse/plugins/com.objectlearn.jdt.j2ee_3.0.0/servers/jonas.server
-eclipse/plugins/com.objectlearn.jdt.j2ee_3.0.0/servers/jonas.server.bak
-eclipse/plugins/com.objectlearn.jdt.j2ee_3.0.0/servers/jonas4.server
-eclipse/plugins/com.objectlearn.jdt.j2ee_3.0.0/servers/jrun.server
-eclipse/plugins/com.objectlearn.jdt.j2ee_3.0.0/servers/oc4j.server
-eclipse/plugins/com.objectlearn.jdt.j2ee_3.0.0/servers/orion.server
-eclipse/plugins/com.objectlearn.jdt.j2ee_3.0.0/servers/resin21.server
-eclipse/plugins/com.objectlearn.jdt.j2ee_3.0.0/servers/resin30.server
-eclipse/plugins/com.objectlearn.jdt.j2ee_3.0.0/servers/tomcat401.server
-eclipse/plugins/com.objectlearn.jdt.j2ee_3.0.0/servers/tomcat403.server
-eclipse/plugins/com.objectlearn.jdt.j2ee_3.0.0/servers/tomcat410.server
-eclipse/plugins/com.objectlearn.jdt.j2ee_3.0.0/servers/tomcat50x.server
-eclipse/plugins/com.objectlearn.jdt.j2ee_3.0.0/servers/tomcat50x.server.bak
-eclipse/plugins/com.objectlearn.jdt.j2ee_3.0.0/servers/weblogic61.server
-eclipse/plugins/com.objectlearn.jdt.j2ee_3.0.0/servers/weblogic61.server.bak
-eclipse/plugins/com.objectlearn.jdt.j2ee_3.0.0/servers/weblogic70.server
-eclipse/plugins/com.objectlearn.jdt.j2ee_3.0.0/servers/weblogic81.server
-eclipse/plugins/com.objectlearn.jdt.j2ee_3.0.0/servers/websphere50.server
+eclipse/plugins/com.objectlearn.j2ee.gmf.xdoclet_3.0.1/ejb-merge.xml
+eclipse/plugins/com.objectlearn.j2ee.gmf.xdoclet_3.0.1/gmfxdoclet.jar
+eclipse/plugins/com.objectlearn.j2ee.gmf.xdoclet_3.0.1/license.html
+eclipse/plugins/com.objectlearn.j2ee.gmf.xdoclet_3.0.1/plugin.xml
+eclipse/plugins/com.objectlearn.j2ee.gmf.xdoclet_3.0.1/templates/ejb/entity/fields.javajet
+eclipse/plugins/com.objectlearn.j2ee.gmf.xdoclet_3.0.1/templates/ejb/entity/methodStubs.javajet
+eclipse/plugins/com.objectlearn.j2ee.gmf.xdoclet_3.0.1/templates/ejb/entity/typeComment.javajet
+eclipse/plugins/com.objectlearn.j2ee.gmf.xdoclet_3.0.1/templates/ejb/entity/typeStub.javajet
+eclipse/plugins/com.objectlearn.j2ee.gmf.xdoclet_3.0.1/templates/ejb/message/fields.javajet
+eclipse/plugins/com.objectlearn.j2ee.gmf.xdoclet_3.0.1/templates/ejb/message/methodStubs.javajet
+eclipse/plugins/com.objectlearn.j2ee.gmf.xdoclet_3.0.1/templates/ejb/message/typeComment.javajet
+eclipse/plugins/com.objectlearn.j2ee.gmf.xdoclet_3.0.1/templates/ejb/message/typeStub.javajet
+eclipse/plugins/com.objectlearn.j2ee.gmf.xdoclet_3.0.1/templates/ejb/session/fields.javajet
+eclipse/plugins/com.objectlearn.j2ee.gmf.xdoclet_3.0.1/templates/ejb/session/methodStubs.javajet
+eclipse/plugins/com.objectlearn.j2ee.gmf.xdoclet_3.0.1/templates/ejb/session/typeComment.javajet
+eclipse/plugins/com.objectlearn.j2ee.gmf.xdoclet_3.0.1/templates/ejb/session/typeStub.javajet
+eclipse/plugins/com.objectlearn.j2ee.gmf.xdoclet_3.0.1/templates/test.javajet
+eclipse/plugins/com.objectlearn.jdt.j2ee.editor_3.0.1/about.html
+eclipse/plugins/com.objectlearn.jdt.j2ee.editor_3.0.1/icons/ejbdoc.gif
+eclipse/plugins/com.objectlearn.jdt.j2ee.editor_3.0.1/icons/jspdoc.gif
+eclipse/plugins/com.objectlearn.jdt.j2ee.editor_3.0.1/icons/jspdocgray.gif
+eclipse/plugins/com.objectlearn.jdt.j2ee.editor_3.0.1/license.html
+eclipse/plugins/com.objectlearn.jdt.j2ee.editor_3.0.1/lombozeditor.jar
+eclipse/plugins/com.objectlearn.jdt.j2ee.editor_3.0.1/plugin.xml
+eclipse/plugins/com.objectlearn.jdt.j2ee_3.0.1/about.html
+eclipse/plugins/com.objectlearn.jdt.j2ee_3.0.1/icons/container.gif
+eclipse/plugins/com.objectlearn.jdt.j2ee_3.0.1/icons/decorators/ebean.gif
+eclipse/plugins/com.objectlearn.jdt.j2ee_3.0.1/icons/decorators/ejbjar.gif
+eclipse/plugins/com.objectlearn.jdt.j2ee_3.0.1/icons/decorators/run_exc.gif
+eclipse/plugins/com.objectlearn.jdt.j2ee_3.0.1/icons/decorators/sbean.gif
+eclipse/plugins/com.objectlearn.jdt.j2ee_3.0.1/icons/decorators/Thumbs.db
+eclipse/plugins/com.objectlearn.jdt.j2ee_3.0.1/icons/decorators/war.gif
+eclipse/plugins/com.objectlearn.jdt.j2ee_3.0.1/icons/full/ctool16/bean.jpg
+eclipse/plugins/com.objectlearn.jdt.j2ee_3.0.1/icons/full/ctool16/editor.gif
+eclipse/plugins/com.objectlearn.jdt.j2ee_3.0.1/icons/full/ctool16/jspdoc.gif
+eclipse/plugins/com.objectlearn.jdt.j2ee_3.0.1/icons/full/ctool16/nspace.jpg
+eclipse/plugins/com.objectlearn.jdt.j2ee_3.0.1/icons/full/ctool16/servlet_wiz.gif
+eclipse/plugins/com.objectlearn.jdt.j2ee_3.0.1/icons/full/ctool16/servlet_wizbanner.jpg
+eclipse/plugins/com.objectlearn.jdt.j2ee_3.0.1/icons/full/ctool16/soapclient_wizban.jpg
+eclipse/plugins/com.objectlearn.jdt.j2ee_3.0.1/icons/full/ctool16/Thumbs.db
+eclipse/plugins/com.objectlearn.jdt.j2ee_3.0.1/icons/jar_l_obj.gif
+eclipse/plugins/com.objectlearn.jdt.j2ee_3.0.1/icons/jspdoc.gif
+eclipse/plugins/com.objectlearn.jdt.j2ee_3.0.1/icons/newHTML.gif
+eclipse/plugins/com.objectlearn.jdt.j2ee_3.0.1/icons/newjprj_wiz.gif
+eclipse/plugins/com.objectlearn.jdt.j2ee_3.0.1/icons/newJSP.gif
+eclipse/plugins/com.objectlearn.jdt.j2ee_3.0.1/icons/soap_l.GIF
+eclipse/plugins/com.objectlearn.jdt.j2ee_3.0.1/icons/Thumbs.db
+eclipse/plugins/com.objectlearn.jdt.j2ee_3.0.1/license.html
+eclipse/plugins/com.objectlearn.jdt.j2ee_3.0.1/lomboz.jar
+eclipse/plugins/com.objectlearn.jdt.j2ee_3.0.1/plugin.xml
+eclipse/plugins/com.objectlearn.jdt.j2ee_3.0.1/servers/jboss244.server
+eclipse/plugins/com.objectlearn.jdt.j2ee_3.0.1/servers/jboss244.server.bak
+eclipse/plugins/com.objectlearn.jdt.j2ee_3.0.1/servers/jboss244Tomcat.server
+eclipse/plugins/com.objectlearn.jdt.j2ee_3.0.1/servers/jboss300.server
+eclipse/plugins/com.objectlearn.jdt.j2ee_3.0.1/servers/jboss300all.server
+eclipse/plugins/com.objectlearn.jdt.j2ee_3.0.1/servers/jboss32x.server
+eclipse/plugins/com.objectlearn.jdt.j2ee_3.0.1/servers/jboss32x.server.bak
+eclipse/plugins/com.objectlearn.jdt.j2ee_3.0.1/servers/jonas.server
+eclipse/plugins/com.objectlearn.jdt.j2ee_3.0.1/servers/jonas.server.bak
+eclipse/plugins/com.objectlearn.jdt.j2ee_3.0.1/servers/jonas4.server
+eclipse/plugins/com.objectlearn.jdt.j2ee_3.0.1/servers/jrun.server
+eclipse/plugins/com.objectlearn.jdt.j2ee_3.0.1/servers/oc4j.server
+eclipse/plugins/com.objectlearn.jdt.j2ee_3.0.1/servers/orion.server
+eclipse/plugins/com.objectlearn.jdt.j2ee_3.0.1/servers/resin21.server
+eclipse/plugins/com.objectlearn.jdt.j2ee_3.0.1/servers/resin30.server
+eclipse/plugins/com.objectlearn.jdt.j2ee_3.0.1/servers/tomcat401.server
+eclipse/plugins/com.objectlearn.jdt.j2ee_3.0.1/servers/tomcat403.server
+eclipse/plugins/com.objectlearn.jdt.j2ee_3.0.1/servers/tomcat410.server
+eclipse/plugins/com.objectlearn.jdt.j2ee_3.0.1/servers/tomcat50x.server
+eclipse/plugins/com.objectlearn.jdt.j2ee_3.0.1/servers/tomcat50x.server.bak
+eclipse/plugins/com.objectlearn.jdt.j2ee_3.0.1/servers/weblogic61.server
+eclipse/plugins/com.objectlearn.jdt.j2ee_3.0.1/servers/weblogic61.server.bak
+eclipse/plugins/com.objectlearn.jdt.j2ee_3.0.1/servers/weblogic70.server
+eclipse/plugins/com.objectlearn.jdt.j2ee_3.0.1/servers/weblogic81.server
+eclipse/plugins/com.objectlearn.jdt.j2ee_3.0.1/servers/websphere50.server
 eclipse/plugins/org.apache.axis_1.1.0/apachelicense.txt
 eclipse/plugins/org.apache.axis_1.1.0/axis.jar
 eclipse/plugins/org.apache.axis_1.1.0/jaxrpc.jar
@@ -1822,30 +1817,25 @@ eclipse/plugins/sf.net.xdoclet_1.2.1/xjavadoc-1.0.3.jar
 @dirrm eclipse/plugins/org.apache.jasper_5.0.25
 @dirrm eclipse/plugins/org.apache.commons_1.0.0
 @dirrm eclipse/plugins/org.apache.axis_1.1.0
-@dirrm eclipse/plugins/com.objectlearn.jdt.j2ee_3.0.0/servers
-@dirrm eclipse/plugins/com.objectlearn.jdt.j2ee_3.0.0/icons/full/ctool16
-@dirrm eclipse/plugins/com.objectlearn.jdt.j2ee_3.0.0/icons/full
-@dirrm eclipse/plugins/com.objectlearn.jdt.j2ee_3.0.0/icons/decorators
-@dirrm eclipse/plugins/com.objectlearn.jdt.j2ee_3.0.0/icons
-@dirrm eclipse/plugins/com.objectlearn.jdt.j2ee_3.0.0
-@dirrm eclipse/plugins/com.objectlearn.jdt.j2ee.editor_3.0.0/icons
-@dirrm eclipse/plugins/com.objectlearn.jdt.j2ee.editor_3.0.0
-@dirrm eclipse/plugins/com.objectlearn.j2ee.gmf.xdoclet_3.0.0/templates/ejb/session
-@dirrm eclipse/plugins/com.objectlearn.j2ee.gmf.xdoclet_3.0.0/templates/ejb/message
-@dirrm eclipse/plugins/com.objectlearn.j2ee.gmf.xdoclet_3.0.0/templates/ejb/entity
-@dirrm eclipse/plugins/com.objectlearn.j2ee.gmf.xdoclet_3.0.0/templates/ejb
-@dirrm eclipse/plugins/com.objectlearn.j2ee.gmf.xdoclet_3.0.0/templates
-@dirrm eclipse/plugins/com.objectlearn.j2ee.gmf.xdoclet_3.0.0
+@dirrm eclipse/plugins/com.objectlearn.jdt.j2ee_3.0.1/servers
+@dirrm eclipse/plugins/com.objectlearn.jdt.j2ee_3.0.1/icons/full/ctool16
+@dirrm eclipse/plugins/com.objectlearn.jdt.j2ee_3.0.1/icons/full
+@dirrm eclipse/plugins/com.objectlearn.jdt.j2ee_3.0.1/icons/decorators
+@dirrm eclipse/plugins/com.objectlearn.jdt.j2ee_3.0.1/icons
+@dirrm eclipse/plugins/com.objectlearn.jdt.j2ee_3.0.1
+@dirrm eclipse/plugins/com.objectlearn.jdt.j2ee.editor_3.0.1/icons
+@dirrm eclipse/plugins/com.objectlearn.jdt.j2ee.editor_3.0.1
+@dirrm eclipse/plugins/com.objectlearn.j2ee.gmf.xdoclet_3.0.1/templates/ejb/session
+@dirrm eclipse/plugins/com.objectlearn.j2ee.gmf.xdoclet_3.0.1/templates/ejb/message
+@dirrm eclipse/plugins/com.objectlearn.j2ee.gmf.xdoclet_3.0.1/templates/ejb/entity
+@dirrm eclipse/plugins/com.objectlearn.j2ee.gmf.xdoclet_3.0.1/templates/ejb
+@dirrm eclipse/plugins/com.objectlearn.j2ee.gmf.xdoclet_3.0.1/templates
+@dirrm eclipse/plugins/com.objectlearn.j2ee.gmf.xdoclet_3.0.1
 @dirrm eclipse/plugins/com.objectlearn.j2ee.gmf.emitter_3.0.0/schema
 @dirrm eclipse/plugins/com.objectlearn.j2ee.gmf.emitter_3.0.0
 @dirrm eclipse/plugins/com.objectlearn.j2ee.gmf.core_3.0.0/j2ee1.4-xsd
 @dirrm eclipse/plugins/com.objectlearn.j2ee.gmf.core_3.0.0/dtd
 @dirrm eclipse/plugins/com.objectlearn.j2ee.gmf.core_3.0.0
-@dirrm eclipse/plugins/com.objectlearn.j2ee.gmf.core.editor_3.0.0/icons/full/wizban
-@dirrm eclipse/plugins/com.objectlearn.j2ee.gmf.core.editor_3.0.0/icons/full/obj16
-@dirrm eclipse/plugins/com.objectlearn.j2ee.gmf.core.editor_3.0.0/icons/full
-@dirrm eclipse/plugins/com.objectlearn.j2ee.gmf.core.editor_3.0.0/icons
-@dirrm eclipse/plugins/com.objectlearn.j2ee.gmf.core.editor_3.0.0
 @dirrm eclipse/plugins/com.objectlearn.j2ee.gmf.core.edit_3.0.0/icons/full/obj16
 @dirrm eclipse/plugins/com.objectlearn.j2ee.gmf.core.edit_3.0.0/icons/full/ctool16
 @dirrm eclipse/plugins/com.objectlearn.j2ee.gmf.core.edit_3.0.0/icons/full
