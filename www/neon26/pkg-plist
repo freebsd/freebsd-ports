@@ -11,7 +11,6 @@ include/neon/http_redirect.h
 include/neon/http_request.h
 include/neon/http_utils.h
 include/neon/ne_alloc.h
-include/neon/neon_config.h
 include/neon/neon_defs.h
 include/neon/neon_i18n.h
 include/neon/neon_md5.h
@@ -21,7 +20,7 @@ include/neon/uri.h
 lib/libneon.a
 lib/libneon.la
 lib/libneon.so
-lib/libneon.so.9
+lib/libneon.so.11
 %%PORTDOCS%%share/doc/neon/using-neon.txt
 %%PORTDOCS%%@dirrm share/doc/neon
 @dirrm include/neon
