@@ -86,12 +86,14 @@
     SUBDIR += icmpquery
     SUBDIR += icqlib
     SUBDIR += icqnix
+    SUBDIR += ip-tun
     SUBDIR += ipfm
     SUBDIR += iplog
     SUBDIR += ipw
     SUBDIR += isc-dhcp2
     SUBDIR += isic
     SUBDIR += ivs
+    SUBDIR += jabber-transport
     SUBDIR += kdenetwork11
     SUBDIR += kdenetwork11-i18n
     SUBDIR += kdetelnet
@@ -101,7 +103,9 @@
     SUBDIR += lambdamoo
     SUBDIR += ldap
     SUBDIR += ldapsdk
+    SUBDIR += libetherx
     SUBDIR += libicq
+    SUBDIR += libjabber
     SUBDIR += libnet
     SUBDIR += libnids
     SUBDIR += libsmi
