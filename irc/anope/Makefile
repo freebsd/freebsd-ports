@@ -7,6 +7,7 @@
 
 PORTNAME=	anope
 PORTVERSION=	1.6.3
+PORTREVISION=	1
 CATEGORIES=	irc
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -109,9 +110,9 @@ pre-configure: #--{{{
 .endif
 # XXX Add here other arch which needs -fPIC :-)
 .if ${ARCH} == "amd64" || ${ARCH} == "ia64"
-	@${ECHO_CMD} CC_FLAGS=\"-O -fPIC\" >> ${CONFIG_CACHE}
+	@${ECHO_CMD} CC_FLAGS=\"${CFLAGS} -fPIC\" >> ${CONFIG_CACHE}
 .else
-	@${ECHO_CMD} CC_FLAGS=\"-O\" >> ${CONFIG_CACHE}
+	@${ECHO_CMD} CC_FLAGS=\"${CFLAGS}\" >> ${CONFIG_CACHE}
 .endif
 #}}}
 
