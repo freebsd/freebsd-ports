@@ -13,17 +13,17 @@ lib/sbcl/sbcl.core
 %%PORTDOCS%%%%DOCSDIR%%/html/implementation.html
 %%PORTDOCS%%%%DOCSDIR%%/html/index.html
 %%PORTDOCS%%%%DOCSDIR%%/html/intro.html
-%%PORTDOCS%%%%DOCSDIR%%/html/x1072.html
-%%PORTDOCS%%%%DOCSDIR%%/html/x1131.html
-%%PORTDOCS%%%%DOCSDIR%%/html/x1143.html
-%%PORTDOCS%%%%DOCSDIR%%/html/x1166.html
-%%PORTDOCS%%%%DOCSDIR%%/html/x1270.html
-%%PORTDOCS%%%%DOCSDIR%%/html/x282.html
-%%PORTDOCS%%%%DOCSDIR%%/html/x42.html
-%%PORTDOCS%%%%DOCSDIR%%/html/x452.html
-%%PORTDOCS%%%%DOCSDIR%%/html/x801.html
-%%PORTDOCS%%%%DOCSDIR%%/html/x967.html
-%%PORTDOCS%%%%DOCSDIR%%/html/z1296.html
+%%PORTDOCS%%%%DOCSDIR%%/html/x1099.html
+%%PORTDOCS%%%%DOCSDIR%%/html/x1158.html
+%%PORTDOCS%%%%DOCSDIR%%/html/x1170.html
+%%PORTDOCS%%%%DOCSDIR%%/html/x1193.html
+%%PORTDOCS%%%%DOCSDIR%%/html/x1297.html
+%%PORTDOCS%%%%DOCSDIR%%/html/x280.html
+%%PORTDOCS%%%%DOCSDIR%%/html/x40.html
+%%PORTDOCS%%%%DOCSDIR%%/html/x450.html
+%%PORTDOCS%%%%DOCSDIR%%/html/x829.html
+%%PORTDOCS%%%%DOCSDIR%%/html/x994.html
+%%PORTDOCS%%%%DOCSDIR%%/html/z1322.html
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/html
 @dirrm %%DOCSDIR%%
 @dirrm lib/sbcl
