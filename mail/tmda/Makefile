@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	tmda
-PORTVERSION=	0.67
+PORTVERSION=	0.68
 CATEGORIES=	mail python
 MASTER_SITES=	http://tmda.net/releases/%SUBDIR%/
 MASTER_SITE_SUBDIR=	. old
@@ -29,6 +29,8 @@ do-install:
 		${PYTHON_SITELIBDIR}/TMDA/pythonlib/email
 	${MKDIR} ${DATADIR}
 	${INSTALL_DATA} ${WRKSRC}/templates/*.txt ${DATADIR}
+	@${RM} ${WRKSRC}/bin/tmda-gui
+	@${RM} ${WRKSRC}/bin/tmda-manager
 	${INSTALL_SCRIPT} ${WRKSRC}/bin/tmda-* ${PREFIX}/bin
 
 post-install:
