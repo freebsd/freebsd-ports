@@ -18,6 +18,8 @@ PATCH_SITES=	ftp://ftp.oarcorp.com/pub/rtems/betas/rtems-4.5.0-beta/c_tools/sour
 
 MAINTAINER=	jim@thehousleys.net
 
+BUILD_DEPENDS=	autoheader:${PORTSDIR}/devel/autoconf
+
 DIST_SUBDIR=	rtems
 
 LCLTARGET?=	i386-rtems
@@ -32,7 +34,7 @@ RUN_DEPENDS=	${LCLTARGET}-gcc:${PORTSDIR}/devel/${LCLTARGET}-gcc
 
 PKGNAMEPREFIX=	${LCLTARGET}-
 USE_GMAKE=	yes
-USE_AUTOCONF=	yes
+GNU_CONFIGURE=	yes
 ALL_TARGET=	all info
 
 CONFIGURE_TARGET?=	--target=${LCLTARGET}
