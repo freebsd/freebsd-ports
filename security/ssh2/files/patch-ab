@@ -1,9 +1,9 @@
-*** configure.old	Tue Oct 22 02:36:46 1996
---- configure	Tue Oct 22 02:40:51 1996
+*** configure.orig	Wed Oct 30 04:27:56 1996
+--- configure	Fri Nov 15 07:18:17 1996
 ***************
-*** 1302,1313 ****
-      ;;
-  esac
+*** 1331,1342 ****
+  
+  export CFLAGS CC
   
 - # Socket pairs appear to be broken on several systems.  I don't know exactly
 - # where, so I'll use pipes everywhere for now.
@@ -14,9 +14,9 @@
   
   echo $ac_n "checking that the compiler works""... $ac_c" 1>&6
   if test "$cross_compiling" = yes; then
---- 1302,1307 ----
+--- 1331,1336 ----
 ***************
-*** 5092,5098 ****
+*** 5140,5146 ****
   EOF
   cat >> $CONFIG_STATUS <<EOF
   
@@ -24,7 +24,7 @@
   EOF
   cat >> $CONFIG_STATUS <<\EOF
   for ac_file in .. $CONFIG_FILES; do if test "x$ac_file" != x..; then
---- 5086,5092 ----
+--- 5134,5140 ----
   EOF
   cat >> $CONFIG_STATUS <<EOF
   
@@ -33,13 +33,16 @@
   cat >> $CONFIG_STATUS <<\EOF
   for ac_file in .. $CONFIG_FILES; do if test "x$ac_file" != x..; then
 ***************
-*** 5284,5289 ****
---- 5278,5285 ----
+*** 5332,5338 ****
+--- 5326,5336 ----
     done
   
-    for ac_config_dir in gmp-2.0.2; do
-+ 
+    for ac_config_dir in gmp-2.0.2-ssh-2; do
++   
 + continue # XXX don't configure gmp
   
++       # Do not complain, so a configure script can configure whichever
++       # parts of a large source tree are present.
       # Do not complain, so a configure script can configure whichever
       # parts of a large source tree are present.
+      if test ! -d $srcdir/$ac_config_dir; then
