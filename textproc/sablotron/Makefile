@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	Sablot
-PORTVERSION=	0.97
+PORTVERSION=	0.98
 CATEGORIES=	textproc
 MASTER_SITES=	http://download-2.gingerall.cz/download/sablot/
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX} sablot-docs-02.10.01${EXTRACT_SUFX}
 
 MAINTAINER=	skv@FreeBSD.org
 COMMENT=	XML toolkit implementing XSLT 1.0, XPath 1.0 and DOM Level2
@@ -32,9 +31,8 @@ PLIST_SUB+=	SHLIB_MAJOR="${SHLIB_MAJOR}"
 CONFIGURE_ENV=	CPPFLAGS=-I${LOCALBASE}/include LIBTOOL=${LIBTOOL} \
 		LDFLAGS="-L${LOCALBASE}/lib -lstdc++"
 USE_GMAKE=	yes
-USE_AUTOMAKE=	yes
-AUTOMAKE_ARGS=	-a
 USE_LIBTOOL=	yes
+USE_PERL5_BUILD=	yes
 
 MAN1=	sabcmd.1
 
@@ -64,28 +62,25 @@ CONFIGURE_ARGS+=	--enable-check-leaks
 CONFIGURE_ARGS+=	--enable-debugger
 .endif
 
-WRKSRCDOC=	${WRKDIR}/sablot-docs
-DOCSLIST=	README README_JS RELEASE
-DOCSDIRLIST=	jsdom-ref sablot sxp
+.ifndef(NOPORTDOCS)
+BUILD_DEPENDS+=		${SITE_PERL}/mach/XML/Parser.pm:${PORTSDIR}/textproc/p5-XML-Parser
+CONFIGURE_ARGS+=	--with-html-dir=${DOCSDIR}
+.endif
 
-pre-patch:
+DOCSLIST=	README README_JS RELEASE doc/misc/DEBUGGER doc/misc/NOTES
+
+post-patch:
 	@${PERL} -pi -e \
 	's!(?<=libsablot_la_LDFLAGS = -version-info )(\d+):(\d+):\1!${SHLIB_MAJOR}:$$1:${SHLIB_MAJOR}!;' \
-		${WRKSRC}/src/engine/Makefile.am
-	@${ECHO} "SUBDIRS = man" > ${WRKSRC}/doc/Makefile.am
+		${WRKSRC}/src/engine/Makefile.in
+.if defined(NOPORTDOCS)
+	@${PERL} -pi -e 's!(?<=SUBDIRS = )(.*)!man!' ${WRKSRC}/doc/Makefile.in
+.endif
 
 post-install:
 .ifndef(NOPORTDOCS)
-	@${ECHO_MSG} "===>   Installing documentation for ${PKGNAME}"
-	@${MKDIR} ${DOCSDIR}
+	@${ECHO_MSG} "===>   Installing additional documentation for ${PKGNAME}"
 	@${INSTALL_DATA} ${DOCSLIST:S!^!${WRKSRC}/!}	${DOCSDIR}
-.for _DOCSDIR in ${DOCSDIRLIST}
-	@${MKDIR} ${DOCSDIR}/${_DOCSDIR}/apidocs
-	@${INSTALL_DATA} ${WRKSRCDOC}/${_DOCSDIR}/*.html ${DOCSDIR}/${_DOCSDIR}
-	@${INSTALL_DATA} ${WRKSRCDOC}/${_DOCSDIR}/apidocs/*.css \
-		${WRKSRCDOC}/${_DOCSDIR}/apidocs/*.html \
-		${DOCSDIR}/${_DOCSDIR}/apidocs/
-.endfor
 .endif
 
 .include <bsd.port.post.mk>

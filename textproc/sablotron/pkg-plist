@@ -10,6 +10,8 @@ lib/libsablot.a
 lib/libsablot.la
 lib/libsablot.so
 lib/libsablot.so.%%SHLIB_MAJOR%%
+%%PORTDOCS%%%%DOCSDIR%%/DEBUGGER
+%%PORTDOCS%%%%DOCSDIR%%/NOTES
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%%%DOCSDIR%%/README_JS
 %%PORTDOCS%%%%DOCSDIR%%/RELEASE
@@ -79,6 +81,7 @@ lib/libsablot.so.%%SHLIB_MAJOR%%
 %%PORTDOCS%%%%DOCSDIR%%/jsdom-ref/apidocs/sparse-toc-abc.html
 %%PORTDOCS%%%%DOCSDIR%%/jsdom-ref/apidocs/sparse-toc-grp.html
 %%PORTDOCS%%%%DOCSDIR%%/jsdom-ref/apidocs/sparse-toc.html
+%%PORTDOCS%%%%DOCSDIR%%/jsdom-ref/apidocs/sidebar-toc.html
 %%PORTDOCS%%%%DOCSDIR%%/jsdom-ref/complete-frameset.html
 %%PORTDOCS%%%%DOCSDIR%%/jsdom-ref/sparse-frameset.html
 %%PORTDOCS%%%%DOCSDIR%%/sablot/complete-frameset.html
@@ -153,6 +156,8 @@ lib/libsablot.so.%%SHLIB_MAJOR%%
 %%PORTDOCS%%%%DOCSDIR%%/sablot/apidocs/sparse-toc-abc.html
 %%PORTDOCS%%%%DOCSDIR%%/sablot/apidocs/sparse-toc-grp.html
 %%PORTDOCS%%%%DOCSDIR%%/sablot/apidocs/sparse-toc.html
+%%PORTDOCS%%%%DOCSDIR%%/sablot/apidocs/api-SablotGetOptions.html
+%%PORTDOCS%%%%DOCSDIR%%/sablot/apidocs/sidebar-toc.html
 %%PORTDOCS%%%%DOCSDIR%%/sxp/apidocs/api-content.css
 %%PORTDOCS%%%%DOCSDIR%%/sxp/apidocs/api-toc.css
 %%PORTDOCS%%%%DOCSDIR%%/sxp/apidocs/api-.Building.html
@@ -213,6 +218,7 @@ lib/libsablot.so.%%SHLIB_MAJOR%%
 %%PORTDOCS%%%%DOCSDIR%%/sxp/apidocs/complete-toc.html
 %%PORTDOCS%%%%DOCSDIR%%/sxp/apidocs/sparse-toc-abc.html
 %%PORTDOCS%%%%DOCSDIR%%/sxp/apidocs/sparse-toc-grp.html
+%%PORTDOCS%%%%DOCSDIR%%/sxp/apidocs/sidebar-toc.html
 %%PORTDOCS%%%%DOCSDIR%%/sxp/complete-frameset.html
 %%PORTDOCS%%%%DOCSDIR%%/sxp/sparse-frameset.html
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/jsdom-ref/apidocs
