@@ -1,19 +1,17 @@
 bin/koncd
+share/applnk/Multimedia/koncd.desktop
+share/apps/koncd/AUTHORS
+share/apps/koncd/COPYING
+share/apps/koncd/ChangeLog
+share/apps/koncd/FAQ
+share/apps/koncd/INSTALL
+share/apps/koncd/README
+share/apps/koncd/TODO
+share/apps/koncd/koncdrc.example
 share/apps/koncd/pics/startlogo.png
-share/doc/HTML/en/koncd/images/audiocd.jpg
-share/doc/HTML/en/koncd/images/copycd.jpg
-share/doc/HTML/en/koncd/images/imagetype.jpg
-share/doc/HTML/en/koncd/images/koncd_logo.jpg
-share/doc/HTML/en/koncd/images/mastercd.jpg
-share/doc/HTML/en/koncd/images/setup.jpg
-share/doc/HTML/en/koncd/images/tools.jpg
-share/doc/HTML/en/koncd/audio_cd.htm
-share/doc/HTML/en/koncd/copy_cd.htm
-share/doc/HTML/en/koncd/index.html
-share/doc/HTML/en/koncd/master_cd.htm
-share/doc/HTML/en/koncd/setup.htm
-share/doc/HTML/en/koncd/tips.htm
-share/doc/HTML/en/koncd/tools.htm
+share/doc/HTML/de/koncd/audio_cd.htm
+share/doc/HTML/de/koncd/einstellungen.htm
+share/doc/HTML/de/koncd/erzeuge_cd.htm
 share/doc/HTML/de/koncd/images/audiocd.jpg
 share/doc/HTML/de/koncd/images/copycd.jpg
 share/doc/HTML/de/koncd/images/imagetype.jpg
@@ -21,22 +19,51 @@ share/doc/HTML/de/koncd/images/koncd_logo.jpg
 share/doc/HTML/de/koncd/images/mastercd.jpg
 share/doc/HTML/de/koncd/images/setup.jpg
 share/doc/HTML/de/koncd/images/tools.jpg
-share/doc/HTML/de/koncd/audio_cd.htm
-share/doc/HTML/de/koncd/einstellungen.htm
-share/doc/HTML/de/koncd/erzeuge_cd.htm
 share/doc/HTML/de/koncd/index.html
 share/doc/HTML/de/koncd/kopiere_cd.htm
 share/doc/HTML/de/koncd/tipps.htm
 share/doc/HTML/de/koncd/werkzeuge.htm
-share/locale/de/LC_MESSAGES/koncd.mo
-share/applnk/Multimedia/koncd.desktop
+share/doc/HTML/en/koncd/audio_cd.htm
+share/doc/HTML/en/koncd/copy_cd.htm
+share/doc/HTML/en/koncd/images/audiocd.jpg
+share/doc/HTML/en/koncd/images/copycd.jpg
+share/doc/HTML/en/koncd/images/imagetype.jpg
+share/doc/HTML/en/koncd/images/koncd_logo.jpg
+share/doc/HTML/en/koncd/images/mastercd.jpg
+share/doc/HTML/en/koncd/images/setup.jpg
+share/doc/HTML/en/koncd/images/tools.jpg
+share/doc/HTML/en/koncd/index.html
+share/doc/HTML/en/koncd/master_cd.htm
+share/doc/HTML/en/koncd/setup.htm
+share/doc/HTML/en/koncd/tips.htm
+share/doc/HTML/en/koncd/tools.htm
+share/icons/hicolor/16x16/apps/koncd.png
+share/icons/hicolor/32x32/apps/koncd.png
 share/icons/locolor/16x16/apps/koncd.png
 share/icons/locolor/32x32/apps/koncd.png
-share/icons/hicolor/32x32/apps/koncd.png
-share/icons/hicolor/16x16/apps/koncd.png
-@dirrm share/apps/koncd/pics
-@dirrm share/apps/koncd
+share/locale/de/LC_MESSAGES/koncd.mo
+@dirrm share/locale/de/LC_MESSAGES
+@dirrm share/locale/de
+@dirrm share/icons/locolor/32x32/apps
+@dirrm share/icons/locolor/32x32
+@dirrm share/icons/locolor/16x16/apps
+@dirrm share/icons/locolor/16x16
+@dirrm share/icons/locolor
+@dirrm share/icons/hicolor/32x32/apps
+@dirrm share/icons/hicolor/32x32
+@dirrm share/icons/hicolor/16x16/apps
+@dirrm share/icons/hicolor/16x16
+@dirrm share/icons/hicolor
+@dirrm share/icons
 @dirrm share/doc/HTML/en/koncd/images
 @dirrm share/doc/HTML/en/koncd
+@dirrm share/doc/HTML/en
 @dirrm share/doc/HTML/de/koncd/images
 @dirrm share/doc/HTML/de/koncd
+@dirrm share/doc/HTML/de
+@dirrm share/doc/HTML
+@dirrm share/apps/koncd/pics
+@dirrm share/apps/koncd
+@dirrm share/apps
+@dirrm share/applnk/Multimedia
+@dirrm share/applnk
