@@ -9,7 +9,9 @@ PORTNAME=	xorg-clients
 PORTVERSION=	6.7.0
 PORTREVISION=	3
 CATEGORIES=	x11
-MASTER_SITES=	http://freedesktop.org/~xorg/X11R6.7.0/src/
+MASTER_SITES=	http://freedesktop.org/~xorg/X11R6.7.0/src/ \
+		${MASTER_SITE_XORG}
+MASTER_SITE_SUBDIR=	R6.7/tars
 DISTFILES=	X11R6.7.0-src1.tar.gz \
 		X11R6.7.0-src2.tar.gz \
 		X11R6.7.0-src3.tar.gz

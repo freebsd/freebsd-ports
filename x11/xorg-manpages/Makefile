@@ -8,7 +8,9 @@
 PORTNAME=	manpages
 PORTVERSION=	6.7.0
 CATEGORIES=	x11
-MASTER_SITES=	http://freedesktop.org/~xorg/X11R6.7.0/src/
+MASTER_SITES=	http://freedesktop.org/~xorg/X11R6.7.0/src/ \
+		${MASTER_SITE_XORG}
+MASTER_SITE_SUBDIR=	R6.7/tars
 PKGNAMEPREFIX=	xorg-
 DISTFILES=	X11R6.7.0-src1.tar.gz \
 		X11R6.7.0-src3.tar.gz

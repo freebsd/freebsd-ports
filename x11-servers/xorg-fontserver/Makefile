@@ -8,7 +8,9 @@
 PORTNAME=	xorg-fontserver
 PORTVERSION=	6.7.0
 CATEGORIES=	x11-servers
-MASTER_SITES=	http://freedesktop.org/~xorg/X11R6.7.0/src/
+MASTER_SITES=	http://freedesktop.org/~xorg/X11R6.7.0/src/ \
+		${MASTER_SITE_XORG}
+MASTER_SITE_SUBDIR=	R6.7/tars
 DISTFILES=	X11R6.7.0-src1.tar.gz \
 		X11R6.7.0-src2.tar.gz
 

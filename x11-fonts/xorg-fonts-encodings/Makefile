@@ -8,7 +8,9 @@
 PORTNAME=	xorg-fonts-encodings
 PORTVERSION=	6.7.0
 CATEGORIES=	x11-fonts
-MASTER_SITES=	http://freedesktop.org/~xorg/X11R6.7.0/src/
+MASTER_SITES=	http://freedesktop.org/~xorg/X11R6.7.0/src/ \
+		${MASTER_SITE_XORG}
+MASTER_SITE_SUBDIR=	R6.7/tars
 DISTNAME=	X11R6.7.0-src1
 
 MAINTAINER=	x11@FreeBSD.org
