@@ -53,9 +53,4 @@ CONFIGURE_ARGS+=	--enable-snmp=no --without-ucdsnmp --without-net-snmp
 
 MAN1+=		editcap.1 idl2eth.1 mergecap.1 tethereal.1 text2pcap.1
 
-pre-install:
-.for i in ${MAN1}
-	${INSTALL_MAN} ${WRKSRC}/${i} ${PREFIX}/man/man1
-.endfor
-
 .include <bsd.port.mk>
