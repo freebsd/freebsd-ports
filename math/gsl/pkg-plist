@@ -27,6 +27,10 @@ include/gsl/gsl_block_ushort.h
 include/gsl/gsl_cblas.h
 include/gsl/gsl_complex.h
 include/gsl/gsl_complex_math.h
+include/gsl/gsl_const.h
+include/gsl/gsl_const_cgs.h
+include/gsl/gsl_const_mks.h
+include/gsl/gsl_const_num.h
 include/gsl/gsl_dft_complex.h
 include/gsl/gsl_dft_complex_float.h
 include/gsl/gsl_dht.h
@@ -39,6 +43,7 @@ include/gsl/gsl_fft_halfcomplex.h
 include/gsl/gsl_fft_halfcomplex_float.h
 include/gsl/gsl_fft_real.h
 include/gsl/gsl_fft_real_float.h
+include/gsl/gsl_fit.h
 include/gsl/gsl_heapsort.h
 include/gsl/gsl_histogram.h
 include/gsl/gsl_histogram2d.h
@@ -70,6 +75,8 @@ include/gsl/gsl_monte.h
 include/gsl/gsl_monte_miser.h
 include/gsl/gsl_monte_plain.h
 include/gsl/gsl_monte_vegas.h
+include/gsl/gsl_multifit.h
+include/gsl/gsl_multifit_nlin.h
 include/gsl/gsl_multimin.h
 include/gsl/gsl_multiroots.h
 include/gsl/gsl_odeiv.h
@@ -214,12 +221,12 @@ info/gsl-ref.info-17
 lib/libgsl.a
 lib/libgsl.so
 lib/libgsl.so.0
+lib/libgslblas.a
+lib/libgslblas.so
+lib/libgslblas.so.0
 lib/libgslblascblas.a
 lib/libgslblascblas.so
 lib/libgslblascblas.so.0
-lib/libgslblasnative.a
-lib/libgslblasnative.so
-lib/libgslblasnative.so.0
 share/aclocal/gsl.m4
 share/doc/gsl/gsl-ref.ps
 @dirrm include/gsl
