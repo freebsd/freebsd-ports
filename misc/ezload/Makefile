@@ -18,9 +18,9 @@ MANCOMPRESSED=	yes
 MAKE_ENV=	BINDIR="${PREFIX}/bin" MANDIR="${PREFIX}/man/man" MKDIR="${MKDIR}" INSTALL_DATA="${INSTALL_DATA}" FORCE="${FORCE}"
 
 .include <bsd.port.pre.mk>
- 
+
 .if ${OSVERSION} < 400012
 IGNORE=		'This port only works on 4.00012'
 .endif
-   
+
 .include <bsd.port.post.mk>
