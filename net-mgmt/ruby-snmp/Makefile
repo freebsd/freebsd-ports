@@ -18,6 +18,8 @@ DIST_SUBDIR=	ruby
 MAINTAINER=	seanc@FreeBSD.org
 COMMENT=	Ruby interface to UCD-SNMP library
 
+BROKEN=		"Unusable, cf. ports/47957"
+
 LIB_DEPENDS=	snmp.4:${PORTSDIR}/net-mgmt/net-snmp4
 
 USE_RUBY=	yes
