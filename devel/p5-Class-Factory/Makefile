@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Class-Factory
-PORTVERSION=	0.03
+PORTVERSION=	1.00
 CATEGORIES=	devel perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Class
@@ -17,7 +17,6 @@ COMMENT=	Base class for dynamic factory classes
 
 PERL_CONFIGURE=	yes
 
-MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 MAN3=		Class::Factory.3
 
 .include <bsd.port.mk>
