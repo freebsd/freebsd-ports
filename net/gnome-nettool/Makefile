@@ -5,29 +5,28 @@
 # $FreeBSD$
 #
 
-PORTNAME=	gnomenetwork
-PORTVERSION=	1.99.5
-PORTREVISION=	3
+PORTNAME=	gnomenettool
+PORTVERSION=	0.99.1
 CATEGORIES=	net gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
-MASTER_SITE_SUBDIR=	sources/gnome-network/1.99
-DISTNAME=	gnome-network-${PORTVERSION}
+MASTER_SITE_SUBDIR=	sources/gnome-nettool/0.99
+DISTNAME=	gnome-nettool-${PORTVERSION}
 DIST_SUBDIR=	gnome2
 
 MAINTAINER=	gnome@FreeBSD.org
-COMMENT=	A library for writing networked servers & clients
+COMMENT=	A GNOME utility that provides network information statistics
 
 USE_X_PREFIX=	yes
 USE_BZIP2=	yes
-USE_GNOME=	gnomehack gnomeprefix libgnomeui
+USE_GNOME=	gnomehack intlhack lthack gnomeprefix libgnomeui
 USE_GMAKE=	yes
 USE_LIBTOOL_VER=13
-CONFIGURE_ARGS=	CPPFLAGS="-I${LOCALBASE}/include" \
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
-post-patch:
-	${FIND} ${WRKSRC} -name "intltool-merge.in" | ${XARGS} ${REINPLACE_CMD} -e \
-		's|mkdir $$lang or|mkdir $$lang, 0777 or| ; \
-		 s|^push @INC, "/.*|push @INC, "${LOCALBASE}/share/intltool";|'
+post-install:
+	${MKDIR} ${PREFIX}/share/gnome/pixmaps
+	${LN} -sf ${PREFIX}/share/gnome/gnome-nettool/pixmaps/gnome-nettool.png \
+		${PREFIX}/share/gnome/pixmaps/gnome-nettool.png
 
 .include <bsd.port.mk>

@@ -168,6 +168,7 @@
     SUBDIR += gnomeicu2
     SUBDIR += gnomemeeting
     SUBDIR += gnomenetstatus
+    SUBDIR += gnomenettool
     SUBDIR += gnomenetwork
     SUBDIR += gnometelnet
     SUBDIR += gnosamba
