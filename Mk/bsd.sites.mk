@@ -376,7 +376,7 @@ MASTER_SITE_GNU+=	\
 	ftp://sunsite.org.uk/Mirrors/ftp.gnu.org/pub/gnu/%SUBDIR%/ \
 	ftp://ftp.informatik.hu-berlin.de/pub/gnu/%SUBDIR%/ \
 	ftp://ftp.informatik.rwth-aachen.de/pub/mirror/ftp.gnu.org/pub/gnu/%SUBDIR%/ \
-	ftp://ftp.rediris.es/mirror/gnu/%SUBDIR%/ \
+	ftp://ftp.rediris.es/sites/ftp.gnu.org/pub/%SUBDIR%/ \
 	ftp://ftp.lip6.fr/pub/gnu/%SUBDIR%/ \
 	ftp://ftp.tuwien.ac.at/linux/gnu/gnusrc/%SUBDIR%/ \
 	ftp://ftp.chg.ru/pub/gnu/%SUBDIR%/
