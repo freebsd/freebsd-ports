@@ -331,6 +331,7 @@
     SUBDIR += pngwriter
     SUBDIR += pornview
     SUBDIR += potrace
+    SUBDIR += potracegui
     SUBDIR += povray
     SUBDIR += povray31
     SUBDIR += ppmcaption
