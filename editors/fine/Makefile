@@ -19,7 +19,7 @@ USE_QT=		yes
 WRKSRC=		${WRKDIR}/fine
 
 do-install:
-	@${MKDIR} ${PREIFX}/share/fine
+	@${MKDIR} ${PREFIX}/share/fine
 	${INSTALL_DATA} ${WRKSRC}/.editor ${PREFIX}/share/fine/editor
 .for template in C++.template LaTeX.template h.template  html.template
 	${INSTALL_DATA} ${WRKSRC}/${template} ${PREFIX}/share/fine/
