@@ -1,7 +1,6 @@
 # $FreeBSD$
 
 MAN1=	ftp.1 \
-	kauth.1 \
 	kdestroy.1 \
 	kf.1 \
 	kgetcred.1 \
@@ -20,7 +19,8 @@ MAN1=	ftp.1 \
 	tenletxr.1 \
 	xnlock.1
 
-MAN3=	editline.3 \
+MAN3=	arg_printusage.3 \
+	editline.3 \
 	getarg.3 \
 	k_afs_cell_of_file.3 \
 	k_hasafs.3 \
