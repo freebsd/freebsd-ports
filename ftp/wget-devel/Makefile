@@ -1,12 +1,12 @@
 # New ports collection makefile for:	wget
-# Version required:	1.5.1
+# Version required:	1.5.2
 # Date created:		31 December 1996
 # Whom:			Thomas Gellekum <tg@FreeBSD.ORG>
 #
-# $Id: Makefile,v 1.6 1998/04/30 11:42:14 tg Exp $
+# $Id: Makefile,v 1.7 1998/05/19 10:52:10 tg Exp $
 #
 
-DISTNAME=	wget-1.5.1
+DISTNAME=	wget-1.5.2
 CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_GNU}
 
