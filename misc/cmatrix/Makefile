@@ -24,8 +24,8 @@ do-install:
 	${INSTALL_MAN} ${WRKSRC}/cmatrix.1 ${PREFIX}/man/man1
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
-.for file in ChangeLog README TODO
-	${INSTALL_DATA} ${WRKSRC}/${file} ${DOCSDIR}
+.for f in ChangeLog README TODO
+	${INSTALL_DATA} ${WRKSRC}/${f} ${DOCSDIR}
 .endfor
 .endif
 
