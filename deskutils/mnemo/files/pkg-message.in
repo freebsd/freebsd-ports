@@ -7,7 +7,7 @@ Horde must be configured; if not, see `pkg_info -D -x horde'.
 Then, you have to create the table mnemo_memos, from the SQL script
 %%MNEMODIR%%/scripts/sql/mnemo.sql
 For example, if your database is MySQL, you may run
-mysql --user=root --password=yourpass horde < mnemo_memos.sql
+mysql --user=root --password=yourpass horde < mnemo.sql
 
 WARNING! if you are upgrading from Mnemo v. 1.1.x, you have to alter your
 ******** schema. Please read the doc %%DOCSDIR%%/UPGRADING.
