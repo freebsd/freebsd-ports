@@ -7,9 +7,11 @@
 
 PORTNAME=	dodbeta
 PORTVERSION=	1.1
-MASTER_SITES=	http://ftp1download.gamespy.com/fileplanet/fpnew/action/half-life/modifications/dod/
+MASTER_SITES=	ftp://ftp.gigabell.net/pub/exp/hl/mod/dod/ \
+		ftp://ftp.task.gda.pl/vol/d33/ftp.extreme-players.de/exp/hl/mod/dod/ \
+		http://www.thekillinggrounds.com/downloads/
 DISTNAME=	dod_linux_beta11_full
-EXTRACT_SUFX=	.tgz
+EXTRACT_SUFX=	.tar
 
 WRKSRC=		${WRKDIR}/dod
 
