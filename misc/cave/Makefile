@@ -9,7 +9,7 @@
 PORTNAME=	cave
 PORTVERSION=	0.3
 CATEGORIES=	misc
-MASTER_SITES=	http://m-net.arbornet.org/~bjk/cave/download/
+MASTER_SITES=	http://cyclic.sourceforge.net/cave/
 
 MAINTAINER=	ports@FreeBSD.org
 
