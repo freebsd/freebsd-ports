@@ -5,6 +5,7 @@ if ! export PREFIX=$(expr $0 : "\(/.*\)/etc/cvsup/update\.sh\$"); then
     exit 1
 fi
 
+export CVSUP_ARGS="$*"
 export PATH=/bin:/usr/bin:${PREFIX}/bin
 
 lock=/var/spool/lock/cvsup.lock
@@ -42,7 +43,7 @@ colldir=sup.client
 startup=${PREFIX}/etc/rc.d
 eval chome=~${cuser}
 cmd="env HOME=${chome} cvsup"
-options="-1gL 1 -b ${base} -c ${colldir}"
+options="-1gL 1 -b ${base} -c ${colldir} ${CVSUP_ARGS}"
 
 umask 2
 ok=yes
