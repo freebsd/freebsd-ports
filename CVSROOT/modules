@@ -3193,6 +3193,7 @@ jailer		ports/sysutils/jailer
 jailutils	ports/sysutils/jailutils
 jakarta-ant	ports/devel/jakarta-ant
 jakarta-bcel	ports/java/jakarta-bcel
+jakarta-commons-lang	ports/java/jakarta-commons-lang
 jakarta-jmeter	ports/www/jakarta-jmeter
 jakarta-log4j	ports/java/jakarta-log4j
 jakarta-oro	ports/java/jakarta-oro
