@@ -1,0 +1,7 @@
+The Bitmechanic JDBC Connection Pool provides developers a way to easily
+cache open connections to databases. This is useful in server environments
+since opening database connections can be slow.
+
+For more details see:
+
+WWW: http://www.bitmechanic.com/projects/jdbcpool/

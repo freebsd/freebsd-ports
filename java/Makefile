@@ -8,6 +8,7 @@
     SUBDIR += java-cup
     SUBDIR += javac_netscape
     SUBDIR += javamail
+    SUBDIR += jdbcpool
     SUBDIR += jdk
     SUBDIR += jdk-doc
     SUBDIR += jdk-tutorial
