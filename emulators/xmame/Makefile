@@ -6,7 +6,7 @@
 #
 
 PORTNAME?=	xmame
-PORTVERSION?=	0.53.1
+PORTVERSION?=	0.54.1
 CATEGORIES=	emulators
 MASTER_SITES=	http://x.mame.net/download/ \
 		ftp://ftp.kaupp.cx/pub/xmame/ \
@@ -69,9 +69,7 @@ XMAMEDOCS=	changes.mame \
 XMESSDOCS=	changes.mess \
 		gamelist.mess \
 		readme.mess \
-		messold.txt \
-		messroms.txt \
-		credits.txt
+		messroms.txt
 PINMAMEDOCS=	pinmame/simulation.txt \
 		pinmame/whatsnew.txt \
 		pinmame/pinmame.txt \
@@ -201,6 +199,19 @@ JOYUSBCOMMENT=\#\
 JOYUSBCOMMENT=
 .endif
 
+# Esound audio - handy for a GNOME environment
+.if defined(WITH_ESOUND) && ${WITH_ESOUND} == "yes"
+ESOUNDCOMMENT=
+USE_ESOUND=	yes
+.else
+ESOUNDCOMMENT=\#\ 
+.if !defined(WITH_ESOUND)
+pre-everything::
+	@echo "===> If you want to build ${MAMEMESS:U} with support for ESound,"
+	@echo "     use \"make WITH_ESOUND=yes\""
+.endif
+.endif
+
 # Some simple patches that don't warrant a separate patch
 post-patch:
 	${PERL} -pi -e 's@SDL/@SDL11/@' ${WRKSRC}/src/unix/video-drivers/SDL.c
@@ -224,6 +235,7 @@ do-configure:
 		-e "s@= x11@= ${DISPLAY_METHOD}@g" \
 		-e "s@= mame@= ${MAMEMESS}@g" \
 		-e "s@# X86_ASM@${ASM_COMMENT}X86_ASM@g" \
+		-e "s@# SOUND_ESOUND@${ESOUNDCOMMENT}SOUND_ESOUND@g" \
 		-e "s@GLLIBS=.-ldl@GLLIBS= ${PTHREAD_LIBS}@g" \
 			${WRKSRC}/makefile.unix > ${WRKSRC}/Makefile
 
@@ -256,11 +268,10 @@ post-install:
 .for file in ${ALLDOCS}
 	${INSTALL_DATA} ${WRKSRC}/doc/${file} ${PREFIX}/share/doc/x${MAMEMESS}
 .endfor
-.if ${MAMEMESS} == "mess"
-	${MKDIR} ${PREFIX}/share/doc/x${MAMEMESS}/sysinfo
-	${INSTALL_DATA} ${WRKSRC}/doc/sysinfo/* \
-		${PREFIX}/share/doc/x${MAMEMESS}/sysinfo
 .endif
+.if ${MAMEMESS} == "mess"
+	${INSTALL_DATA} ${WRKSRC}/doc/sysinfo.dat \
+				${PREFIX}/share/xmess/history.dat
 .endif
 .if ${MAMEMESS} == "mame" && defined(WITH_DATFILES) && ${WITH_DATFILES} == "yes"
 	${INSTALL_DATA} ${WRKDIR}/hiscore.dat ${PREFIX}/share/xmame
