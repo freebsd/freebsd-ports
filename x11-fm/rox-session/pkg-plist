@@ -7,6 +7,7 @@ apps/ROX-Session/Help/Changes
 apps/ROX-Session/Help/README
 apps/ROX-Session/Login
 apps/ROX-Session/MakeDefault.sh
+apps/ROX-Session/Options.xml
 apps/ROX-Session/Setup
 apps/ROX-Session/Styles
 apps/ROX-Session/WindowMans

@@ -1,0 +1,10 @@
+--- ROX-Session/src/session.c.orig	Thu May 23 23:36:57 2002
++++ ROX-Session/src/session.c	Thu May 23 23:37:05 2002
+@@ -25,6 +25,7 @@
+ #include <sys/wait.h>
+ #include <fcntl.h>
+ #include <ctype.h>
++#include <signal.h>
+ 
+ #include <gdk/gdkx.h>
+ #include <gtk/gtk.h>
