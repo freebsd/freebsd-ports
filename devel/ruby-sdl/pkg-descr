@@ -1,0 +1,6 @@
+Ruby/SDL is a Ruby extension library to use SDL library.
+Currently 3D features are unsupported.
+
+SGE support will be enabled after SGE is ported.
+
+Author: Ippei Obayashi <ohai@kmc.kyoto-u.ac.jp>
