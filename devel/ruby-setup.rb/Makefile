@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	setup.rb
-PORTVERSION=	2.1.0
+PORTVERSION=	2.2.1
 CATEGORIES=	devel ruby
 MASTER_SITES=	http://www.loveruby.net/archive/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
@@ -19,7 +19,7 @@ USE_RUBY=	yes
 
 NO_BUILD=	yes
 
-DOCS_EN=	doc.en/*
+DOCS_EN=	TODO doc.en/*
 DOCS_JA=	doc.ja/*
 
 do-install:
