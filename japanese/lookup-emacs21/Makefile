@@ -65,7 +65,7 @@ post-install:
 	${RM} -f ${WRKDIR}/${MANIFEST}
 	emacsdir=`${ECHO} ${EMACSDIR} | ${SED} -e "s;^${PREFIX}/;;"`; \
 	${CAT} ${PLIST} | ${GREP} -e "^$${emacsdir}" | \
-		${SED} -e "s;^${EMACSDIR}/;;" > ${WRKDIR}/${MANIFEST}
+		${SED} -e "s;^$${emacsdir}/;;" > ${WRKDIR}/${MANIFEST}
 	${MKDIR} ${EMACSDIR}/pkginfo
 	${INSTALL_DATA} ${WRKDIR}/${MANIFEST} \
 		${EMACSDIR}/pkginfo/
