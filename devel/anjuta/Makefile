@@ -38,4 +38,10 @@ post-install:
 .endfor
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 500000
+IGNORE=	"Crashes when trying to build a project"
+.endif
+
+.include <bsd.port.post.mk>
