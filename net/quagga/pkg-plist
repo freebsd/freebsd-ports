@@ -1,29 +1,31 @@
 sbin/bgpd
-sbin/isisd
+%%ISISD_SBIN%%
 sbin/ospf6d
 %%OSPFAPI_SBIN%%
 sbin/ospfd
 sbin/ripd
 sbin/ripngd
+sbin/watchquagga
 sbin/zebra
 bin/vtysh
 lib/libospf.a
-%%OSPFAPI_LIB%%
+lib/libospf.so
+lib/libospf.so.0
+%%OSPFAPI_LIBA%%
+%%OSPFAPI_LIBSO%%
+%%OSPFAPI_LIBSO0%%
 lib/libzebra.a
-info/quagga.info
-info/quagga.info-1
-info/quagga.info-2
-info/quagga.info-3
-info/quagga.info-4
+lib/libzebra.so
+lib/libzebra.so.0
 include/quagga/buffer.h
 include/quagga/command.h
-include/quagga/debug.h
 include/quagga/distribute.h
 include/quagga/filter.h
 include/quagga/getopt.h
 include/quagga/hash.h
 include/quagga/if.h
 include/quagga/if_rmap.h
+include/quagga/jhash.h
 include/quagga/keychain.h
 include/quagga/linklist.h
 include/quagga/log.h
@@ -41,6 +43,7 @@ include/quagga/ospfd/ospf_nsm.h
 include/quagga/ospfd/ospf_opaque.h
 include/quagga/ospfd/ospfd.h
 include/quagga/plist.h
+include/quagga/pqueue.h
 include/quagga/prefix.h
 include/quagga/privs.h
 include/quagga/routemap.h
@@ -55,19 +58,21 @@ include/quagga/thread.h
 include/quagga/vector.h
 include/quagga/version.h
 include/quagga/vty.h
+include/quagga/zassert.h
 include/quagga/zclient.h
 include/quagga/zebra.h
-share/examples/quagga/bgpd.conf.sample
-share/examples/quagga/bgpd.conf.sample2
-share/examples/quagga/isisd.conf.sample
-share/examples/quagga/ospf6d.conf.sample
-share/examples/quagga/ospfd.conf.sample
-share/examples/quagga/ripd.conf.sample
-share/examples/quagga/ripngd.conf.sample
-share/examples/quagga/vtysh.conf.sample
-share/examples/quagga/zebra.conf.sample
+info/quagga.info
 @unexec install-info --delete %D/info/quagga.info %D/info/dir
 @exec install-info %D/info/quagga.info %D/info/dir
+%%EXAMPLESDIR%%/bgpd.conf.sample
+%%EXAMPLESDIR%%/bgpd.conf.sample2
+%%ISISD_CONF%%
+%%EXAMPLESDIR%%/ospf6d.conf.sample
+%%EXAMPLESDIR%%/ospfd.conf.sample
+%%EXAMPLESDIR%%/ripd.conf.sample
+%%EXAMPLESDIR%%/ripngd.conf.sample
+%%EXAMPLESDIR%%/vtysh.conf.sample
+%%EXAMPLESDIR%%/zebra.conf.sample
 %%OSPFAPI_PATH%%
 @dirrm include/quagga/ospfd
 @dirrm include/quagga
@@ -75,4 +80,5 @@ share/examples/quagga/zebra.conf.sample
 @dirrm etc/quagga
 @cwd %%RC_DIR%%
 quagga%%RC_SUFX%%
+watchquagga%%RC_SUFX%%
 @unexec rmdir %%LOCALSTATE_DIR%% 2>/dev/null || true
