@@ -1,0 +1,14 @@
+--- lib/strerror.c.orig	Tue Jan  7 18:03:01 1997
++++ lib/strerror.c	Thu Dec 10 08:19:59 1998
+@@ -11,9 +11,11 @@
+ 
+ #include <sys/errno.h>
+ 
++/*
+ extern	int	errno;
+ extern	char	*sys_errlist[];
+ extern	int	sys_nerr;
++*/
+ 
+ char	*
+ strerror(x)
