@@ -328,3 +328,4 @@ bin/x2dhf
 %%PORTDOCS%%@dirrm %%EXAMPLESDIR%%//gaf
 %%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/li2
 %%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/fh
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%
