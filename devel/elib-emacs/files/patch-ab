@@ -1,0 +1,13 @@
+--- elib.texi~	Mon Dec 11 09:50:55 1995
++++ elib.texi	Thu Feb 24 15:29:26 2000
+@@ -21,6 +21,10 @@
+ @comment the Free Software Foundation, 675 Mass Ave, Cambridge, MA 02139, USA.
+ @setfilename elib.info
+ @settitle Elib - The Emacs Lisp Library
++@dircategory The Emacs editor and associated tools
++@direntry
++* ELIB: (elib).			The Emacs Lisp Library.
++@end direntry
+ @setchapternewpage odd
+ @syncodeindex fn cp
+      
