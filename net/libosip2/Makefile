@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	libosip2
-PORTVERSION=	2.0.7
+PORTVERSION=	2.0.9
 CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	osip
@@ -15,10 +15,9 @@ MASTER_SITE_SUBDIR=	osip
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A low layer of SIP implementation
 
-USE_GNOME=	gnometarget lthack
+USE_GNOME=	gnometarget
 USE_REINPLACE=	yes
-USE_INC_LIBTOOL_VER=	13
-LIBTOOLFLAGS=	--disable-ltlibs --release-ignore
+USE_LIBTOOL_VER=	15
 CONFIGURE_ARGS=	--disable-debug --disable-trace
 INSTALLS_SHLIB=	yes
 
