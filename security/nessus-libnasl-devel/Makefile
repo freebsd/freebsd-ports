@@ -19,7 +19,7 @@ MASTER_SITES=	ftp://ftp.cis.fed.gov/pub/nessus/nessus-${PORTVERSION}/src/ \
 		ftp://ftp.sekure.net/pub/nessus/nessus-${PORTVERSION}/src/
 DISTNAME=	libnasl-${PORTVERSION}
 
-MAINTAINER=	anders@fix.no
+MAINTAINER=	ports@freebsd.org
 
 LIB_DEPENDS=	nessus.1:${PORTSDIR}/security/nessus-libraries
 
