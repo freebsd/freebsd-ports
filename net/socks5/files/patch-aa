@@ -1,0 +1,36 @@
+*** configure.orig	Tue Dec  3 07:54:48 1996
+--- configure	Tue Dec  3 08:10:47 1996
+***************
+*** 3418,3424 ****
+  	UNIX_SV*|UNIX_System_V*)
+  		SHLIB_LFLAGS="-G"
+  		;;
+! 	FreeBSD*2*)
+  		SHLIB_LFLAGS="-Bshareable"
+  		SHLIB_CFLAGS="-fpic"
+  		PRELOADS="LD_PRELOAD"
+--- 3418,3424 ----
+  	UNIX_SV*|UNIX_System_V*)
+  		SHLIB_LFLAGS="-G"
+  		;;
+! 	FreeBSD*)
+  		SHLIB_LFLAGS="-Bshareable"
+  		SHLIB_CFLAGS="-fpic"
+  		PRELOADS="LD_PRELOAD"
+***************
+*** 3466,3472 ****
+  		UNIX_SV*|UNIX_System_V*)
+  			SHLIB_CFLAGS=
+  			;;
+! 		FreeBSD*2*)
+  			;;
+  		*)
+  			SHLIB_LD="gcc"
+--- 3466,3472 ----
+  		UNIX_SV*|UNIX_System_V*)
+  			SHLIB_CFLAGS=
+  			;;
+! 		FreeBSD*)
+  			;;
+  		*)
+  			SHLIB_LD="gcc"
