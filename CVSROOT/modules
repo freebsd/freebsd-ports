@@ -1129,7 +1129,7 @@ docbook		ports/textproc/docbook
 docbook-241	ports/textproc/docbook-241
 docbook-300	ports/textproc/docbook-300
 docbook-310	ports/textproc/docbook-310
-docbook-410/	ports/textproc/docbook-410/
+docbook-410	ports/textproc/docbook-410
 docbook-tdg	ports/textproc/docbook-tdg
 docbook-to-man	ports/textproc/docbook-to-man
 docbook-xml	ports/textproc/docbook-xml
@@ -2606,7 +2606,7 @@ ja-platex209-euc	ports/japanese/platex209-euc
 ja-platex209-jis	ports/japanese/platex209-jis
 ja-platex209-sjis	ports/japanese/platex209-sjis
 ja-port_man	ports/japanese/man
-ja-porters-handbook	doc/ja_JP.eucJP/books/porters-handbook/
+ja-porters-handbook	doc/ja_JP.eucJP/books/porters-handbook
 ja-postgresql	ports/japanese/postgresql
 ja-postgresql7	ports/japanese/postgresql7
 ja-ppxp		ports/japanese/ppxp
