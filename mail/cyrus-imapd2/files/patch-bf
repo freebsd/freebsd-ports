@@ -1,0 +1,3 @@
+700a701,702
+>     dnl Kerberos IV on FreeBSD depends on libcom_err, so check for it
+>     AC_CHECK_LIB(com_err, init_error_table)
