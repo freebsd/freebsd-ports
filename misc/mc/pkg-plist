@@ -2,14 +2,11 @@ bin/midc
 bin/mcmfmt
 sbin/mcserv
 lib/mc/FAQ
-lib/mc/gd.tcl
-lib/mc/gui.tcl
 lib/mc/mc.ext
 lib/mc/mc.hint
 lib/mc/mc.hlp
 lib/mc/mc.lib
 lib/mc/mc.menu
-lib/mc/mc.tcl
 lib/mc/bin/mcfn_install
 lib/mc/extfs/README
 lib/mc/extfs/a
