@@ -5,6 +5,7 @@
 # $FreeBSD$
 #
 
+CATEGORIES=		lang
 PKGNAMESUFFIX=		-objc
 
 MAINTAINER=	dinoex@FreeBSD.org
