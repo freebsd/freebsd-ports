@@ -37,6 +37,7 @@ CONFIGURE_ARGS+=	--with-tcp-wrappers
 .endif
 
 .if defined(OPENSSH_OVERWRITE_BASE)
+PKGNAMESUFFIX=	-overwrite-base
 PREFIX=		/usr
 MANPREFIX=	${PREFIX}/share
 CONFIGURE_ARGS+=	--mandir=${MANPREFIX}/man \
