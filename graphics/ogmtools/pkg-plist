@@ -1,6 +1,0 @@
-%%WITH_DVDREAD%%bin/dvdxchap
-bin/ogmcat
-bin/ogmdemux
-bin/ogminfo
-bin/ogmmerge
-bin/ogmsplit

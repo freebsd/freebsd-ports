@@ -1,7 +1,0 @@
-bin/divxPlayer
-bin/divxPlayer.bin
-share/divxplayer/Skins/Corner.zip
-share/divxplayer/Skins/Default.dps
-share/divxplayer/Skins/divxexplorer.dps
-@dirrm share/divxplayer/Skins
-@dirrm share/divxplayer
