@@ -14,7 +14,7 @@ EXTRACT_SUFX=	.shar.gz
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A simple menu patterened after plan9
-#BROKEN=		unfetchable
+BROKEN=		"Checksum mismatch"
 
 PLIST_FILES=		bin/9menu
 USE_XLIB=		yes
