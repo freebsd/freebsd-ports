@@ -67,6 +67,7 @@
     SUBDIR += fhist
     SUBDIR += flick
     SUBDIR += flux
+    SUBDIR += fnorb
     SUBDIR += fortran-utils
     SUBDIR += fpp
     SUBDIR += freelibiberty
