@@ -3,10 +3,10 @@
 # Date created:		02.Jun 1998
 # Whom:			dirk.meyer@dinoex.sub.org
 #
-# $Id: Makefile,v 1.5 1999/01/26 02:18:07 steve Exp $
+# $Id: Makefile,v 1.6 1999/03/31 15:15:13 steve Exp $
 
-DISTNAME=	webalizer-1.22-03-src
-PKGNAME=	webalizer-1.22.3
+DISTNAME=	webalizer-1.22-06-src
+PKGNAME=	webalizer-1.22.6
 CATEGORIES=	www
 MASTER_SITES=	ftp://ftp.mrunix.net/pub/webalizer/ \
 		ftp://ftp.dinoex.sub.de/pub/approved/
@@ -16,19 +16,25 @@ MAINTAINER=	dirk.meyer@dinoex.sub.org
 
 BUILD_DEPENDS=	${PREFIX}/lib/libgd.a:${PORTSDIR}/graphics/gd
 
+GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	--prefix=${PREFIX}
 BIN1=		webalizer
 MAN1=		webalizer.1
 DOC1=		CHANGES COPYING Copyright INSTALL \
 		README country-codes.txt webalizer.LSM
-SUPP_LANG=	english german french spanish dutch italian polish \
-		catalan czech portuguese_brazil russian slovak swedish \
-		portugues
-WRKSRC=		${WRKDIR}/webalizer-1.22-03
+SUPP_LANG=	catalan chinese czech dutch english french \
+		german italian korean polish portuguese \
+		portuguese_brazil romanian russain slowak \
+		spanish swedish
+WRKSRC=		${WRKDIR}/webalizer-1.22-06
 
 .if defined(BATCH)
 WEBALIZER_LANG=english
 .endif
-WEBALIZER_LANG=english
+
+.if defined(WEBALIZER_LANG)
+CONFIGURE_ARGS+=	--with-language=${WEBALIZER_LANG}
+.endif
 
 pre-fetch:
 .if !defined(WEBALIZER_LANG)
@@ -37,15 +43,6 @@ pre-fetch:
 		@${ECHO_MSG} "make WEBALIZER_LANG=${i}"
 .endfor
 .endif
-
-post-configure:
-.for i in ${SUPP_LANG}
-.if defined(WEBALIZER_LANG) && ${WEBALIZER_LANG} == ${i}
-		@${ECHO_MSG} "===> customizing for ${i}"
-		@cd ${WRKSRC}; \
-		${LN} -sf lang/webalizer_lang.${i} webalizer_lang.h
-.endif
-.endfor
 
 do-install:
 .for i in ${BIN1}
