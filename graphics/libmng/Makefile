@@ -6,11 +6,9 @@
 #
 
 PORTNAME=	libmng
-PORTVERSION=	1.0.0
-PORTREVISION=	3
+PORTVERSION=	1.0.2
 CATEGORIES=	graphics
-MASTER_SITES=	http://www.3-t.com/libmng/download/ \
-		${MASTER_SITE_SOURCEFORGE} \
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		http://www.libmng.com/download/
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
@@ -28,8 +26,9 @@ MAN3=		libmng.3
 MAN5=		mng.5 jng.5
 
 post-patch:
-	test ! -e ${PREFIX}/include/lcms.h || ${PERL} -pi -e \
-		's%lcms/lcms.h%lcms.h%' ${WRKSRC}/libmng_types.h
+.if exists(${PREFIX}/include/lcms.h)
+	${PERL} -pi -e 's%lcms/lcms.h%lcms.h%' ${WRKSRC}/libmng_types.h
+.endif
 
 post-install:
 	cd ${WRKSRC}/doc/man && ${INSTALL_MAN} ${MAN3} ${PREFIX}/man/man3 \
