@@ -13,6 +13,9 @@ lib/libclamav.a
 @unexec if cmp -s %D/etc/clamav.conf %D/etc/clamav.conf.default; then rm -f %D/etc/clamav.conf; fi
 etc/clamav.conf.default
 @exec [ -f %B/clamav.conf ] || cp %B/%f %B/clamav.conf
+@unexec if cmp -s %D/etc/freshclam.conf %D/etc/freshclam.conf.default; then rm -f %D/etc/freshclam.conf; fi
+etc/freshclam.conf.default
+@exec [ -f %B/freshclam.conf ] || cp %B/%f %B/freshclam.conf
 @owner %%CLAMAVUSER%%
 @group %%CLAMAVGROUP%%
 %%DATADIR%%/mirrors.txt
