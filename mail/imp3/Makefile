@@ -7,10 +7,10 @@
 
 PORTNAME=	imp
 PORTVERSION=	3.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	mail www
-MASTER_SITES=	ftp://ftp.horde.org/pub/imp/tarballs/
-DISTNAME=	${PORTNAME}-${PORTVERSION}-RC3
+MASTER_SITES=	ftp://ftp.horde.org/pub/imp/tarballs/%SUBDIR%/
+MASTER_SITE_SUBDIR=	. old
 
 MAINTAINER=	thierry@pompo.net
 
