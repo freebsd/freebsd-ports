@@ -29,6 +29,7 @@
     SUBDIR += match
     SUBDIR += mymoon
     SUBDIR += nightfall
+    SUBDIR += nova
     SUBDIR += openuniverse
     SUBDIR += p5-Astro-ADS
     SUBDIR += p5-Astro-Catalog

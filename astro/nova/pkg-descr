@@ -1,0 +1,14 @@
+The Nova project is a free Integrated Observational Environment for amatuer
+astronomers. It combines Ephemeris, Sky view, Observatory control and basic
+Image manipulation functionality into a single application.
+
+Features
+    * Virtual view of night sky
+    * Ephemeris calculation and plotting.
+    * Telescope control
+    * CCD control
+    * Image manipulation
+    * Supports most ASCII astronomical object catalogs
+    * Automatic scheduling of observational activity.
+
+WWW: http://nova.sourceforge.net/

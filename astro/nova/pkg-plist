@@ -1,0 +1,23 @@
+bin/nova
+bin/catbuilder
+%%DATADIR%%/pixmaps/asteroid-small.xpm
+%%DATADIR%%/pixmaps/comet-small.xpm
+%%DATADIR%%/pixmaps/earth-small.xpm
+%%DATADIR%%/pixmaps/galaxy-small.xpm
+%%DATADIR%%/pixmaps/jupiter-small.xpm
+%%DATADIR%%/pixmaps/mars-small.xpm
+%%DATADIR%%/pixmaps/mercury-small.xpm
+%%DATADIR%%/pixmaps/moon-small.xpm
+%%DATADIR%%/pixmaps/nebula-small.xpm
+%%DATADIR%%/pixmaps/neptune-small.xpm
+%%DATADIR%%/pixmaps/other-small.xpm
+%%DATADIR%%/pixmaps/pluto-small.xpm
+%%DATADIR%%/pixmaps/saturn-small.xpm
+%%DATADIR%%/pixmaps/star6.xpm
+%%DATADIR%%/pixmaps/star8.xpm
+%%DATADIR%%/pixmaps/sun-small.xpm
+%%DATADIR%%/pixmaps/uranus-small.xpm
+%%DATADIR%%/pixmaps/venus-small.xpm
+%%DATADIR%%/pixmaps/nova_logo.png
+@dirrm %%DATADIR%%/pixmaps
+@unexec rmdir %D/%%DATADIR%% 2>/dev/null || true
