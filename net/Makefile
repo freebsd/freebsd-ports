@@ -360,6 +360,7 @@
     SUBDIR += p5-Net-DNS-ZoneFile
     SUBDIR += p5-Net-Daemon
     SUBDIR += p5-Net-Dict
+    SUBDIR += p5-Net-Finger
     SUBDIR += p5-Net-Google
     SUBDIR += p5-Net-ICQ2000
     SUBDIR += p5-Net-IP
