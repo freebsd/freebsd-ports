@@ -100,11 +100,12 @@ OPTIONS=CALENDAR "Enable the Calendar module" off \
 	DEBUG "Enable debugging (i.e. gdb) support" off \
 	LDAP "Enable LDAP support for Mailnews" on \
 	CHATZILLA "Enable the Chatzilla IRC module" on \
-	JAVASCRIPT_DEBUGGER "Enable the DTD and JavaScript debuggers" off \
+	JAVASCRIPT_DEBUGGER "Enable DTD and JavaScript debuggers" off \
 	OPTIMIZED_CFLAGS "Enable -O2 optimizations" off \
-	SMB "Enable smb:// URI support using gnomevfs" off \
-	MENU_ENTRY "Add mozilla-devel to the GNOME menu" on \
-	CAIRO "Enable Cairo-specific Canvas features" off
+	CAIRO_RENDER "Enable SVG rendering with Cairo" off \
+	CAIRO "Enable Cairo-specific Canvas features" off \
+	SMB "Enable smb:// URI support via gnomevfs" off \
+	MENU_ENTRY "Add Mozilla to the GNOME menu" on
 
 .include <bsd.port.pre.mk>
 
