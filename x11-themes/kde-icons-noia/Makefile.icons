@@ -35,11 +35,11 @@ PLIST_FILE_PATTERN_EXTRA?=	.
 post-patch:
 # correctly inherits crystal per default
 .for file in ${INDEX_FILES}
-	@if [ -f "${WRKSRC}/${file}" ]; then \
+	@if [ -f ${WRKSRC:Q}/${file:Q} ]; then \
 		${REINPLACE_CMD} -E \
 		-e 's|||' \
 		-e 's|^Inherits.*$$|Inherits=crystalsvg|' \
-		"${WRKSRC}/${file}" ; \
+		${WRKSRC:Q}/${file:Q} ; \
 		fi
 .endfor
 
@@ -61,12 +61,12 @@ generate-install-scripts:
 # annotate dirs
 	@${CAT} ${WRKDIR}/dirs.list \
 		| ${SED} -E \
-			-e 's|^\.|${MKDIR} -m 755 ${PREFIX}/share/icons/${PORT_SHAREDIR:S/"//g}|' \
+			-e 's|^\.(.+)$$|${MKDIR} -m 755 ${PREFIX:Q}/share/icons/${PORT_SHAREDIR:S/"//g:Q}/\"\1\"|' \
 			> ${WRKDIR}/dirs.sh
 # annotate files
 	@${CAT} ${WRKDIR}/files.list \
 		| ${SED} -E \
-			-e 's|^\./(.+)$$|${INSTALL_DATA} ${WRKSRC}/\1 ${PREFIX}/share/icons/${PORT_SHAREDIR:S/"//g}/\1|' \
+			-e 's|^\./(.+)$$|${INSTALL_DATA} ${WRKSRC:Q}/\"\1\" ${PREFIX:Q}/share/icons/${PORT_SHAREDIR:S/"//g:Q}/\"\1\"|' \
 			> ${WRKDIR}/files.sh
 
 # generate on the fly packaging lists based on aforementioned annotations
