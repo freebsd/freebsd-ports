@@ -31,8 +31,6 @@
     SUBDIR += bluefish
     SUBDIR += bmsync
     SUBDIR += boa
-    SUBDIR += bsdi-netscape47-communicator
-    SUBDIR += bsdi-netscape47-navigator
     SUBDIR += cadaver
     SUBDIR += calamaris
     SUBDIR += cgi-lib
