@@ -2,12 +2,6 @@ bin/base64-decode
 bin/base64-encode
 bin/qp-decode
 bin/qp-encode
-@unexec install-info --delete %D/info/vm.info %D/info/dir
-info/vm.info
-info/vm.info-1
-info/vm.info-2
-info/vm.info-3
-@exec install-info %D/info/vm.info %D/info/dir
 %%EMACS_LIBDIR_WITH_VER%%/etc/vm/audio_stamp-colorful.xpm
 %%EMACS_LIBDIR_WITH_VER%%/etc/vm/audio_stamp-simple.xpm
 %%EMACS_LIBDIR_WITH_VER%%/etc/vm/autofile-dn.xbm
