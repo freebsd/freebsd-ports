@@ -1,0 +1,17 @@
+Hyperlatex is a package that allows you to prepare documents in HTML,
+and, at the same time, to produce a neatly printed document from your
+input. Unlike some other systems that you may have seen, Hyperlatex is
+not a general LaTeX-to-HTML converter. In Hyperlatex's author's eyes,
+conversion is not a solution to HTML authoring. A well written HTML
+document must differ from a printed copy in a number of rather subtle
+ways. He doubts that these differences can be recognized mechanically,
+and believes that converted LaTeX can never be as readable as a
+document written in HTML.
+
+The basic idea of Hyperlatex is to make it possible to write a
+document that will look like a flawless LaTeX document when printed
+and like a handwritten HTML document when viewed with an HTML browser.
+
+WWW: http://www.cs.ust.hk/~otfried/Hyperlatex/
+
+-- Robert Withrow <witr@rwwa.com>
