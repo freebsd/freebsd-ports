@@ -29,6 +29,7 @@ do-build:
 	${GUNZIP_CMD} -c ${WRKSRC}/MarathonEvilData.tar.gz | ${TAR} -xf -
 
 do-install:
+	${MKDIR} ${PREFIX}/share/AlephOne
 	${INSTALL_DATA} ${WRKSRC}/Cursed.Data ${PREFIX}/share/AlephOne/Cursed.Data
 	${INSTALL_DATA} ${WRKSRC}/Cursed.Images ${PREFIX}/share/AlephOne/Cursed.Images
 	${INSTALL_DATA} ${WRKSRC}/Cursed.Map ${PREFIX}/share/AlephOne/Cursed.Map
