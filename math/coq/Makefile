@@ -12,7 +12,6 @@ MASTER_SITES=	ftp://ftp.inria.fr/INRIA/coq/V8.0pl1/
 DISTNAME=	coq-8.0pl1
 
 PATCH_SITES=	${MASTER_SITES}
-#only for Ocaml 3.08.1 :
 PATCHFILES=	patch-coq-8.0pl1-ocaml-3.08.1
 
 MAINTAINER=	r.c.ladan@student.tue.nl
@@ -32,7 +31,7 @@ ALL_TARGET=	world
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} == "ia64" || ${ARCH} == "amd64"
+.if ${ARCH} == "ia64"
 BROKEN=	"OCaml bug prevents compilation"
 .endif
 
