@@ -24,6 +24,7 @@
     SUBDIR += gbuffy
     SUBDIR += gensig
     SUBDIR += glbiff
+    SUBDIR += grepmail
     SUBDIR += hbiff
     SUBDIR += im
     SUBDIR += imap-uw
