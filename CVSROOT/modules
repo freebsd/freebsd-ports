@@ -3722,6 +3722,7 @@ libgmp4		ports/math/libgmp4
 libgnome	ports/x11/libgnome
 libgnomecanvas	ports/graphics/libgnomecanvas
 libgnomecanvasmm	ports/graphics/libgnomecanvasmm
+libgnomecups	ports/print/libgnomecups
 libgnomedb	ports/databases/libgnomedb
 libgnomemm	ports/x11/libgnomemm
 libgnomeprint	ports/print/libgnomeprint
