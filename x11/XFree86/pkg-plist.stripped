@@ -586,6 +586,8 @@ lib/libX11.so.6
 lib/libXIE.a
 lib/libXIE.so
 lib/libXIE.so.6
+lib/libXThrStub.so
+lib/libXThrStub.so.6
 lib/libXau.a
 lib/libXaw.a
 lib/libXaw.so
