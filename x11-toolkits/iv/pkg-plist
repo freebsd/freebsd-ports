@@ -522,6 +522,10 @@ interviews/lib/all/styles/smallpage.sty
 interviews/lib/all/styles/thesis.sty
 interviews/lib/all/styles/times.sty
 interviews/man/refman.PS
+lib/libIV.so
+lib/libIV.so.3
+lib/libUnidraw.so
+lib/libUnidraw.so.3
 @exec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -m %B
 @unexec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -R
 @dirrm interviews/bin/FREEBSD
