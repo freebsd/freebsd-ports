@@ -9,6 +9,8 @@
 DISTNAME=	src/usr.bin/ssh
 PKGNAME=	OpenSSH-1.2
 CATEGORIES=	security net
+MASTER_SITES=	anoncvs@anoncvs1.ca.openbsd.org:/cvs \
+		:pserver:anoncvs@anoncvs1.usa.openbsd.org:/cvs
 
 MAINTAINER=	green@FreeBSD.org
 
@@ -21,8 +23,7 @@ CAT?=		/bin/cat
 DISTFILES!=	${CAT} ${FILESDIR}/distfiles
 
 CVS_CMD?=	cvs -z3
-CVS_DATE=	Tue Nov 16 16:45:45 PST 1999
-CVS_SITE?=	anoncvs@anoncvs1.ca.openbsd.org:/cvs
+CVS_DATE=	Wed Nov 17 14:09:01 EST 1999
 CRYPTOLIBS=	-L${PREFIX}/lib -lcrypto
 .if defined(USA_RESIDENT) && ${USA_RESIDENT} == YES
 CRYPTOLIBS+=	-lRSAglue -lrsaref
@@ -52,9 +53,19 @@ do-fetch:
 			export CVS_RSH="${PORTS_CVS_RSH}"; \
 		fi; \
 		${MKDIR} ${DISTDIR}/${PKGNAME} && \
-		cd ${DISTDIR}/${PKGNAME} && \
-		${CVS_CMD} -d ${CVS_SITE} co -D "${CVS_DATE}" ${DISTNAME} && \
-		${ECHO} -n ${CVS_DATE} > ${STAMPFILE}; \
+		cd ${DISTDIR}/${PKGNAME} || exit; \
+		for CVS_SITE in ${MASTER_SITES}; do \
+			${ECHO_MSG} ">> Attempting to CVS checkout from\
+			$${CVS_SITE}."; \
+			${CVS_CMD} -d $${CVS_SITE} co -D "${CVS_DATE}" \
+				${DISTNAME} && { ${ECHO} -n ${CVS_DATE} > \
+				${STAMPFILE} && exit; }; \
+		done; \
+		${ECHO_MSG} ">> Couldn't CVS checkout ${PKGNAME}.  Please try\
+			to retrieve"; \
+		${ECHO_MSG} ">> this port manually into ${_DISTDIR} and try\
+			again."; \
+		exit 1; \
 	fi
 
 do-extract:
@@ -72,11 +83,17 @@ post-patch:
 		${WRKSRC}/*.[ch]
 
 pre-install:
-	@cd ${WRKSRC} && ${MAKE} DESTDIR=${PREFIX} distribution
+	@if [ ! -f ${PREFIX}/etc/sshd_config ]; then \
+		cd ${WRKSRC} && ${MAKE} DESTDIR=${PREFIX} distribution; \
+	else \
+		${ECHO} ">> ${PREFIX}/etc/sshd_config exists, not being replaced!"; \
+		${ECHO} ">> If this is left over from another version of SSH, you will"; \
+		${ECHO} ">> need to update it to work with OpenSSH."; \
+	fi
 
 post-install:
 	@if [ ! -f ${PREFIX}/etc/rc.d/sshd.sh ]; then \
-		${ECHO} "Installing ${PREFIX}/etc/rc.d/sshd.sh startup file."; \
+		${ECHO} ">> Installing ${PREFIX}/etc/rc.d/sshd.sh startup file."; \
 		${ECHO} "#!/bin/sh" > ${PREFIX}/etc/rc.d/sshd.sh; \
 		${ECHO} "[ -x ${PREFIX}/sbin/sshd ] && ${PREFIX}/sbin/sshd &&" \
 			"${ECHO} -n ' sshd'" >> ${PREFIX}/etc/rc.d/sshd.sh; \
