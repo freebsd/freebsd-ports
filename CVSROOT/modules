@@ -8793,6 +8793,7 @@ xcruise		ports/x11-fm/xcruise
 xcubes		ports/games/xcubes
 xcut		ports/x11/xcut
 xd		ports/misc/xd
+xd3d		ports/graphics/xd3d
 xdaliclock	ports/x11-clocks/xdaliclock
 xdeblock	ports/games/xdeblock
 xdelta		ports/misc/xdelta
