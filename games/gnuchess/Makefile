@@ -7,6 +7,7 @@
 
 PORTNAME=	gnuchess
 PORTVERSION=	5.06
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	chess
@@ -22,5 +23,8 @@ CONFIGURE_ENV=	LIBS="${PTHREAD_LIBS}"
 post-patch:
 	@${REINPLACE_CMD} -e 's|-D_THREAD_SAFE|${PTHREAD_CFLAGS:S/"//g}|g ; \
 		 s|-pthread ||g' ${WRKSRC}/configure
+
+post-install:
+	${LN} -f ${PREFIX}/bin/gnuchess ${PREFIX}/bin/gnuchessx
 
 .include <bsd.port.mk>
