@@ -2143,6 +2143,7 @@ glabels		ports/deskutils/glabels
 glacier		ports/mail/glacier
 glade		ports/devel/glade
 glade2		ports/devel/glade2
+glademm		ports/devel/glademm
 glame		ports/audio/glame
 glark		ports/textproc/glark
 glasteroids	ports/games/glasteroids
