@@ -50,6 +50,7 @@
     SUBDIR += latte
     SUBDIR += latex2html
     SUBDIR += libxml
+    SUBDIR += libxml2
     SUBDIR += libxode
     SUBDIR += linuxdoc
     SUBDIR += lotusxsl
