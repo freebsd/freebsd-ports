@@ -1,0 +1,4 @@
+LibVNCServer is ripped out of Xvnc to provide an easy API to write one's own
+vnc server.
+
+WWW: http://libvncserver.sourceforge.net/
