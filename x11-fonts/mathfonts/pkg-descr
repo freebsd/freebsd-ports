@@ -1,0 +1,6 @@
+Mathematica 4.1 Fonts, to be used for example with a Xft enabled version
+of Mozilla or Firefox, in order to display MathML webpages.
+
+With this port, you should also install the port x11-fonts/texcm-ttf.
+
+WWW: http://support.wolfram.com/mathematica/systems/windows/general/latestfonts.html
