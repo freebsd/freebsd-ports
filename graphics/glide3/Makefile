@@ -8,7 +8,7 @@
 PORTNAME=	glide3
 PORTVERSION=	20020113
 CATEGORIES=	graphics
-MASTER_SITES=	http://gladstone.uoregon.edu/~eanholt/dri/
+MASTER_SITES=	http://people.freebsd.org/~anholt/dri/files/
 .ifdef WITH_VOODOO3
 PKGNAMESUFFIX=	-v3
 .else
@@ -18,7 +18,7 @@ DISTNAME=	Glide3-FreeBSD-${PORTVERSION}
 EXTRACT_SUFX=	.tar.bz2
 #The distfile is CVS Glide3-FreeBSD branch with */glide3/tests/* removed
 
-MAINTAINER=	eanholt@gladstone.uoregon.edu
+MAINTAINER=	anholt@freebsd.org
 
 USE_BZIP2=		yes
 WRKSRC=			${WRKDIR}/Glide3

@@ -15,7 +15,7 @@ DISTFILES=	Xmod.tgz:x Xbin.tgz:x \
 		linux-dri-tools.tar.gz:anholt
 DIST_SUBDIR=	linux_dri-${PORTVERSION}
 
-MAINTAINER=	eta@lclark.edu
+MAINTAINER=	anholt@freebsd.org
 
 WRKSRC=		${WRKDIR}/lib
 NO_BUILD=	yes
