@@ -1,0 +1,24 @@
+Replace the dvipdfm.def in your LaTex distribution with the one
+provided by the latest dvipdfm distribution.  This is necessary for
+.eps and .png file support.  The install script will not do this
+for you because I do not believe it is healthy to overwrite a file
+supplied by a different distribution.  If you want to use hyperref
+with "breaklinks" support, you may want to replace hdvipdfm.def
+with the version in this distribution.
+
+The files dvipdfm.def and hdvipdfm.def from the latest dvipdfm
+distribution may be found in /usr/local/share/dvipdfm.  The files
+that should to be replaced may be found in 
+/usr/local/share/texmf/tex/latex/graphics.
+
+Edit the config script in the texmf/dvipdfm directory and change to
+suit your needs.  An important configuration option is to set the
+helper application for converting PS/EPS files to PDF format.  By
+default this is setup for GhostScript.  If the idea
+of executing running a command in a shell scares you,
+comment out the line with the command string.  Alternatively,
+if you really want to disable it, comment the #define HAVE_SYSTEM
+in config.h 
+
+IMPORTANT: If you installed this from the packages rather than the
+ports, you MUST run mktexlsr as root.

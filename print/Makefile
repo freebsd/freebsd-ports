@@ -23,6 +23,7 @@
     SUBDIR += detex
     SUBDIR += dvi2tty
     SUBDIR += dvi2xx
+    SUBDIR += dvipdfm
     SUBDIR += dvips
     SUBDIR += dvips2ascii
     SUBDIR += dviselect

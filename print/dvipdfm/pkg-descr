@@ -1,0 +1,13 @@
+Dvipdfm is a DVI to PDF translator, developed by Mark A. Wicks.
+It tends to produce nicer output than by using, say, dvips 
+followed by ps2pdf.
+
+This port is designed to be used with teTeX, which it will load
+as a dependency.  teTeX is incompatible with other versions of
+tex (such as that from /usr/ports/print/tex) and latex, etc,
+and these should be deinstalled first.
+
+WWW: http://odo.kettering.edu/dvipdfm/
+
+Stephen Montgomery-Smith
+stephen@math.missouri.edu
