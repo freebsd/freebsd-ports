@@ -1,0 +1,11 @@
+This program is an implementation of a greylist policy service for
+postfix (2.1.0 and later).  Greylisting is a concept to reduce the
+amount of UCE ('spam') by technical means.  Tests on production
+systems show that greylisting is hugely effective.
+
+Read more about greylisting on:
+WWW: http://www.greylisting.org and
+WWW: http://projects.puremagic.com/greylisting/whitepaper.html
+
+Also, please consult homepage of this program:
+WWW: http://mimo.gn.apc.org/gps/

@@ -336,6 +336,7 @@
     SUBDIR += postfinger
     SUBDIR += postfix
     SUBDIR += postfix-current
+    SUBDIR += postfix-gps
     SUBDIR += postfix1
     SUBDIR += postfixadmin
     SUBDIR += postgrey

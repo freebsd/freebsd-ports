@@ -1,0 +1,12 @@
+--- configure.in.orig	Fri Sep 17 07:55:55 2004
++++ configure.in	Mon Sep 20 01:48:31 2004
+@@ -20,9 +20,6 @@
+ 
+ AC_LANG_CPLUSPLUS
+ AC_PROG_CXX
+-AM_PROG_LIBTOOL
+-AC_PROG_LD
+-AM_PROG_LD
+ dnl AC_CHECK_LIB(dbi, libdbi)
+ 
+ AC_HAVE_HEADERS(syslog.h)
