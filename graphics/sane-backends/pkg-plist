@@ -1,0 +1,64 @@
+bin/scanimage
+sbin/saned
+man/man1/scanimage.1.gz
+man/man1/xscanimage.1.gz
+man/man1/saned.1.gz
+man/man5/sane-dll.5.gz
+man/man5/sane-hp.5.gz
+man/man5/sane-mustek.5.gz
+man/man5/sane-net.5.gz
+man/man5/sane-pnm.5.gz
+man/man5/sane-pint.5.gz
+man/man5/sane-qcam.5.gz
+man/man5/sane-umax.5.gz
+man/man5/sane-scsi.5.gz
+lib/libsane-hp.so.0.65
+@exec /sbin/ldconfig -m %D/lib
+lib/libsane-hp.so
+lib/libsane-hp.la
+lib/libsane-hp.a
+lib/libsane-mustek.so.0.65
+@exec /sbin/ldconfig -m %D/lib
+lib/libsane-mustek.so
+lib/libsane-mustek.la
+lib/libsane-mustek.a
+lib/libsane-net.so.0.65
+@exec /sbin/ldconfig -m %D/lib
+lib/libsane-net.so
+lib/libsane-net.la
+lib/libsane-net.a
+lib/libsane-pnm.so.0.65
+@exec /sbin/ldconfig -m %D/lib
+lib/libsane-pnm.so
+lib/libsane-pnm.la
+lib/libsane-pnm.a
+lib/libsane-umax.so.0.65
+@exec /sbin/ldconfig -m %D/lib
+lib/libsane-umax.so
+lib/libsane-umax.la
+lib/libsane-umax.a
+lib/libsane-dll.so.0.65
+@exec /sbin/ldconfig -m %D/lib
+lib/libsane-dll.so
+lib/libsane-dll.la
+lib/libsane-dll.a
+@exec /sbin/ldconfig -m %D/lib
+lib/libsane.so
+lib/libsane.a
+share/sane-style.rc
+include/sane/sane.h
+include/sane/sanei.h
+include/sane/sanei_codec_bin.h
+include/sane/sanei_debug.h
+include/sane/sanei_net.h
+include/sane/sanei_scsi.h
+include/sane/sanei_wire.h
+include/sane/saneopts.h
+include/sane/config.h
+include/sane/sanei_backend.h
+include/sane/sanei_codec_ascii.h
+etc/sane.d/mustek.conf
+etc/sane.d/net.conf
+etc/sane.d/umax.conf
+etc/sane.d/dll.conf
+etc/sane.d/hp.conf
