@@ -6,8 +6,8 @@
 # $Id: Makefile,v 1.8 1998/06/07 14:54:07 eivind Exp $
 #
 
-DISTNAME=	xscavenger-136
-PKGNAME=	xscavenger-1.3.6
+DISTNAME=	xscavenger-135
+PKGNAME=	xscavenger-1.3.5
 CATEGORIES=	games
 MASTER_SITES=	http://www.xdr.com/dash/
 EXTRACT_SUFX=	.tgz
