@@ -4,6 +4,7 @@ libexec/xyaku/dict.sh
 libexec/xyaku/edict.sh
 libexec/xyaku/help.ja
 libexec/xyaku/help.sh
+libexec/xyaku/ndtp.rb
 libexec/xyaku/openurl.sh
 libexec/xyaku/searcheb.rb
 libexec/xyaku/showrc.sh
