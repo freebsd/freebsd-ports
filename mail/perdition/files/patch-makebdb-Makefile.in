@@ -1,0 +1,11 @@
+--- makebdb/Makefile.in.orig	Sun Jun 15 18:30:18 2003
++++ makebdb/Makefile.in	Sun Jun 15 18:30:35 2003
+@@ -145,7 +145,7 @@
+ makebdb_SOURCES =          makebdb.c         options.c         options.h
+ 
+ 
+-makebdb_LDADD = -L../libjain -L../libjain/.libs/ -ljain -ldb -lpopt @dmalloc_lib@
++makebdb_LDADD = -L../libjain -L../libjain/.libs/ -ljain -ldb3 -lpopt @dmalloc_lib@
+ 
+ 
+ INCLUDES = -I$(top_srcdir)/libjain
