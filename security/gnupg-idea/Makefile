@@ -45,7 +45,13 @@ do-extract:
 	@${RM} -rf ${WRKDIR}
 	@${MKDIR} ${WRKDIR}
 .for i in ${DISTFILES}
-	${CP} ${_DISTDIR}/${i} ${WRKSRC}/${i}
+	@${CP} ${_DISTDIR}/${i} ${WRKSRC}/${i}
+.endfor
+
+do-patch:
+.for i in ${CONTRIB}
+	@${ECHO_MSG} "===>  Applying extra patch ${i}.c"
+	@${PATCH} ${PATCH_ARGS} < ${PATCHDIR}/patch-${i}.c
 .endfor
 
 do-build:
