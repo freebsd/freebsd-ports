@@ -9,7 +9,7 @@ PORTVERSION=	0.10
 CATEGORIES=	games
 MASTER_SITES=	http://www.eecs.umich.edu/~pelzlpj/jools/
 
-MAINTAINER=	adamw@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Addictive jewel-swapping puzzle game
 
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/pygame/__init__.py:${PORTSDIR}/devel/py-game
