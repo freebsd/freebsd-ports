@@ -9,7 +9,7 @@ PORTNAME=	tclX
 PORTVERSION=	8.2.0
 PORTREVISION=	2
 CATEGORIES=	lang tcl${TCL_DVER} tk${TCL_DVER}
-MASTER_SITES=	ftp://ftp.neosoft.com/pub/tcl/tclx-distrib/
+MASTER_SITES=	http://www.neosoft.com/tcl/ftparchive/TclX/
 DISTNAME=	tclX8.2.0
 
 MAINTAINER=	mi@aldan.algebra.com
