@@ -42,12 +42,8 @@ EXTRADOCS=	README CHANGES
 JARFILE=	${DISTNAME}-bin.jar
 JDCLASSPATH=	${WRKSRC}:${WRKSRC}/lib/jdbc2_0-stdext.jar:${WRKSRC}/lib/jta-spec1_0_1.jar:${CLASSPATH}
 
-.include <bsd.port.pre.mk>
-
-.if ${USE_JAVA:C/[.+]//g} >= 14
-PLIST_SUB+=	JAVA14=""
-.else
-PLIST_SUB+=	JAVA14="@comment "
+.if !defined(NOPORTDOCS)
+PORTDOCS=	*
 .endif
 
 do-build:
@@ -81,4 +77,4 @@ do-install-apidocs:
 	@${ECHO_CMD} " [ DONE ]"
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
