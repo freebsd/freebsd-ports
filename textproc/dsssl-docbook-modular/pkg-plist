@@ -13,6 +13,8 @@ share/sgml/docbook/dsssl/modular/common/dbcommon.dsl
 share/sgml/docbook/dsssl/modular/common/dbl10n.dsl
 share/sgml/docbook/dsssl/modular/common/dbl1ca.dsl
 share/sgml/docbook/dsssl/modular/common/dbl1ca.ent
+share/sgml/docbook/dsssl/modular/common/dbl1cs.dsl
+share/sgml/docbook/dsssl/modular/common/dbl1cs.ent
 share/sgml/docbook/dsssl/modular/common/dbl1da.dsl
 share/sgml/docbook/dsssl/modular/common/dbl1da.ent
 share/sgml/docbook/dsssl/modular/common/dbl1de.dsl
@@ -41,6 +43,8 @@ share/sgml/docbook/dsssl/modular/common/dbl1ro.dsl
 share/sgml/docbook/dsssl/modular/common/dbl1ro.ent
 share/sgml/docbook/dsssl/modular/common/dbl1ru.dsl
 share/sgml/docbook/dsssl/modular/common/dbl1ru.ent
+share/sgml/docbook/dsssl/modular/common/dbl1sk.dsl
+share/sgml/docbook/dsssl/modular/common/dbl1sk.ent
 share/sgml/docbook/dsssl/modular/common/dbl1sv.dsl
 share/sgml/docbook/dsssl/modular/common/dbl1sv.ent
 share/sgml/docbook/dsssl/modular/common/dbtable.dsl
@@ -67,6 +71,7 @@ share/sgml/docbook/dsssl/modular/print/dbindex.dsl
 share/sgml/docbook/dsssl/modular/print/dbinfo.dsl
 share/sgml/docbook/dsssl/modular/print/dbinline.dsl
 share/sgml/docbook/dsssl/modular/print/dbl1ca.dsl
+share/sgml/docbook/dsssl/modular/print/dbl1cs.dsl
 share/sgml/docbook/dsssl/modular/print/dbl1da.dsl
 share/sgml/docbook/dsssl/modular/print/dbl1de.dsl
 share/sgml/docbook/dsssl/modular/print/dbl1en.dsl
@@ -82,6 +87,7 @@ share/sgml/docbook/dsssl/modular/print/dbl1pl.dsl
 share/sgml/docbook/dsssl/modular/print/dbl1pt.dsl
 share/sgml/docbook/dsssl/modular/print/dbl1ro.dsl
 share/sgml/docbook/dsssl/modular/print/dbl1ru.dsl
+share/sgml/docbook/dsssl/modular/print/dbl1sk.dsl
 share/sgml/docbook/dsssl/modular/print/dbl1sv.dsl
 share/sgml/docbook/dsssl/modular/print/dblink.dsl
 share/sgml/docbook/dsssl/modular/print/dblists.dsl
@@ -125,6 +131,7 @@ share/sgml/docbook/dsssl/modular/html/dbinfo.dsl
 share/sgml/docbook/dsssl/modular/html/dbinline.dsl
 share/sgml/docbook/dsssl/modular/html/dbl10n.dsl
 share/sgml/docbook/dsssl/modular/html/dbl1ca.dsl
+share/sgml/docbook/dsssl/modular/html/dbl1cs.dsl
 share/sgml/docbook/dsssl/modular/html/dbl1da.dsl
 share/sgml/docbook/dsssl/modular/html/dbl1de.dsl
 share/sgml/docbook/dsssl/modular/html/dbl1en.dsl
@@ -139,6 +146,7 @@ share/sgml/docbook/dsssl/modular/html/dbl1pl.dsl
 share/sgml/docbook/dsssl/modular/html/dbl1pt.dsl
 share/sgml/docbook/dsssl/modular/html/dbl1ro.dsl
 share/sgml/docbook/dsssl/modular/html/dbl1ru.dsl
+share/sgml/docbook/dsssl/modular/html/dbl1sk.dsl
 share/sgml/docbook/dsssl/modular/html/dbl1sv.dsl
 share/sgml/docbook/dsssl/modular/html/dblink.dsl
 share/sgml/docbook/dsssl/modular/html/dblists.dsl
