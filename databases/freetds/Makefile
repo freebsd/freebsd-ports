@@ -6,6 +6,7 @@
 
 PORTNAME=	freetds
 PORTVERSION=	0.51
+PORTREVISION=	1
 CATEGORIES=	databases
 MASTER_SITES=	${MASTER_SITE_SUNSITE}
 MASTER_SITE_SUBDIR=	ALPHA/freetds
@@ -13,11 +14,14 @@ EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
 
-USE_LIBTOOL=	yes
-INSTALLS_SHLIB=	yes
-CONFIGURE_ARGS=	--prefix=${PREFIX} \
-		--with-tdsver=7.0 \
-		--enable-dbmfix
 USE_GMAKE=	yes
+USE_LIBTOOL=	yes
+CONFIGURE_ARGS=	--with-tdsver=7.0 \
+		--enable-dbmfix
+INSTALLS_SHLIB=	yes
+
+post-patch:
+	@find ${WRKSRC}/src -name Makefile.in | xargs ${PERL} -pi -e \
+		's| install-includeHEADERS||g'
 
 .include <bsd.port.mk>
