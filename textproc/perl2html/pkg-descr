@@ -9,3 +9,5 @@ Perl2html offers the following features:
     - easy integration with webservers - browse your sources colourized
     - gzips http output for browsers to save bandwidth (only in CGI mode)
     - documentation and manpage included
+
+Homepage:  http://user.cs.tu-berlin.de/~schintke/x2html/index.html

@@ -1,11 +1,14 @@
-c2html is  a  syntax highlighter for C   source  code that produces  a
-highlighted html   file as  output. The output   can  be  read by  any
-graphical WWW-Browser.  If the  browser understands the tags to change
-font colors  (as Netscape does) the  output will look like highlighted
-by emacs.  Otherwise it will  not look  so   nice, but readability  is
-increased too.
+C2html is a syntax highlighter for C source code that produces a
+highlighted html file as output.
 
-c2html can also work as a  CGI program and convert your sources on the
-fly.   To use  in this  way  copy it  to your  /cgi-bin directory  and
-configure  your webserver to  call c2html  for *.c  and *.h  files. An
-example that works with Apache is described in the manpage.
+C2html offers the following features:
+   
+    - fast (single pass conversion using flex)
+    - doesn't change formatting - only adds <FONT COLOR=#XXXX> tags
+        and properly escapes non-ascii characters
+    - easy integration with webservers - browse your sources colourized!
+    - gzips http output for browsers to save bandwidth (only in CGI mode)
+    - documentation and manpage included
+
+Please use the java2html port for converting C++ sources!
+Homepage:  http://user.cs.tu-berlin.de/~schintke/x2html/index.html
