@@ -62,8 +62,8 @@ fi
 # Create soffice.cfg if it does not exist.
 #
 if [ ! -z $OOHOME ] && [ -e $OOHOME/setup ]; then
-	if [ ! -e $OOHOME/user/config/soffice.cfg ]; then
-		touch $OOHOME/user/config/soffice.cfg
+	if [ ! -d $OOHOME/user/config/soffice.cfg ]; then
+		mkdir $OOHOME/user/config/soffice.cfg
 	fi
 fi
 
