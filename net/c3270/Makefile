@@ -15,6 +15,8 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Full-screen curses-based remote login to IBM mainframes
 
+BROKEN=		Incomplete pkg-plist
+
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:C/([0-9]\.[0-9])(\..*)/\1/}
 
 USE_GMAKE=	yes

@@ -13,6 +13,8 @@ PKGNAMEPREFIX=		cl-
 MAINTAINER=		ports@FreeBSD.org
 COMMENT=		A system definition facility for Common Lisp
 
+BROKEN=			Incomplete pkg-plist
+
 WRKSRC=			${WRKDIR}/${PORTNAME}
 NO_BUILD=		yes # Sources only, see cl-asdf-[cmucl|sbcl|clisp]
 CL_LIBDIR=		${PREFIX}/lib/common-lisp

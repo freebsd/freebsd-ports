@@ -13,6 +13,8 @@ PKGNAMEPREFIX=	gauche-
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An unit testing framework in Gauche
 
+BROKEN=		Incomplete pkg-plist
+
 BUILD_DEPENDS=	gosh:${PORTSDIR}/lang/gauche
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
