@@ -1,5 +1,5 @@
---- configure.orig	Tue Jul 13 10:35:02 1999
-+++ configure	Sat Sep 11 18:25:14 1999
+--- configure.orig	Tue Jul 13 09:35:02 1999
++++ configure	Thu Feb  3 15:38:42 2000
 @@ -932,14 +932,14 @@
    echo "$ac_t""no" 1>&6
  fi
@@ -35,3 +35,88 @@
  
  else
    echo "$ac_t""no" 1>&6
+@@ -1053,53 +1053,6 @@
+ fi
+ rm -f conftest*
+ 
+-echo $ac_n "checking for SSL directory""... $ac_c" 1>&6
+-echo "configure:1058: checking for SSL directory" >&5
+-for dir in /usr/local/ssl /usr/lib/ssl /usr/pkg /usr/local /usr; do
+-    ssldir="$dir"
+-    if test -f "$dir/include/openssl/ssl.h"; then
+-        cat >> confdefs.h <<\EOF
+-#define HAVE_OPENSSL 1
+-EOF
+-
+-        break
+-    fi
+-    if test -f "$dir/include/ssl.h"; then
+-        break
+-    fi
+-done
+-echo "$ac_t""$ssldir" 1>&6
+-
+-cat >> confdefs.h <<EOF
+-#define ssldir "$ssldir"
+-EOF
+-
+-CFLAGS="$CFLAGS -I$ssldir/include"
+-LIBS="$LIBS -L$ssldir/lib -lssl -lcrypto"
+-
+-echo $ac_n "checking for RSAref library""... $ac_c" 1>&6
+-echo "configure:1082: checking for RSAref library" >&5
+-saved_LIBS="$LIBS"
+-LIBS="$saved_LIBS -lRSAglue -lrsaref"
+-cat > conftest.$ac_ext <<EOF
+-#line 1086 "configure"
+-#include "confdefs.h"
+-
+-int main() {
+-
+-; return 0; }
+-EOF
+-if { (eval echo configure:1093: \"$ac_link\") 1>&5; (eval $ac_link) 2>&5; } && test -s conftest; then
+-  rm -rf conftest*
+-  echo "$ac_t""yes" 1>&6; 
+-else
+-  echo "configure: failed program was:" >&5
+-  cat conftest.$ac_ext >&5
+-  rm -rf conftest*
+-  echo "$ac_t""no" 1>&6; LIBS="$saved_LIBS"
+-fi
+-rm -f conftest*
+-
+ # AC_HEADER_DIRENT
+ # AC_HEADER_STDC
+ # AC_HEADER_SYS_WAIT
+@@ -1266,6 +1219,30 @@
+   echo "$ac_t""no" 1>&6
+ fi
+ done
++
++echo $ac_n "checking for SSL directory""... $ac_c" 1>&6
++echo "configure:1058: checking for SSL directory" >&5
++for dir in /usr %%LOCALBASE%% /usr/local/ssl /usr/lib/ssl /usr/pkg; do
++    ssldir="$dir"
++    if test -f "$dir/include/openssl/ssl.h"; then
++        cat >> confdefs.h <<\EOF
++#define HAVE_OPENSSL 1
++EOF
++
++        break
++    fi
++    if test -f "$dir/include/ssl.h"; then
++        break
++    fi
++done
++echo "$ac_t""$ssldir" 1>&6
++
++cat >> confdefs.h <<EOF
++#define ssldir "$ssldir"
++EOF
++
++CFLAGS="$CFLAGS -I$ssldir/include"
++LIBS="$LIBS -L$ssldir/lib -lssl -lcrypto \${EXTRA_SSL_LIBS}"
+ 
+ 
+ trap '' 1 2 15
