@@ -18,7 +18,7 @@ COMMENT=	A library which provides OO thread interface for C++ programmers
 USE_GMAKE=	yes
 USE_REINPLACE=	yes
 MAKE_ENV=	PTHREAD_LIBS=${PTHREAD_LIBS}
-ONLY_FOR_ARCHS=         i386
+INSTALLS_SHLIB=	yes
 
 WRKSRC=		${WRKDIR}/${DISTNAME}
 MAKEFILE=	GNUmakefile
@@ -28,12 +28,10 @@ ALL_TARGET=	opt
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} >= 502126
-BROKEN=		"Does not compile on FreeBSD >= 5.x"
-.endif
-
 post-patch:
 	@${REINPLACE_CMD} -e 's,%%CXXFLAGS%%,${CXXFLAGS},g' \
 	${WRKSRC}/Make/makedefs
+	@${FIND} ${WRKSRC} -name '*.o' -delete
+	@${FIND} ${WRKSRC} -name '*.so' -delete
 
 .include <bsd.port.post.mk>
