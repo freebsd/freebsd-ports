@@ -1,0 +1,14 @@
+--- picprog.1.orig	Sun Nov 29 16:03:13 1998
++++ picprog.1	Sun Nov 29 16:04:06 1998
+@@ -31,9 +31,9 @@
+ .B \-\-burn
+ .B \-q \-h \-?
+ .SH DESCRIPTION
+-See <URL:http://www.iki.fi/hyvatti/pic/picprog.html>.
++See <URL:http://www.iki.fi/hyvatti/pic/picprog.html>, or /usr/local/share/doc/picprog/picprog.html.
+ .SH OPTIONS
+-See <URL:http://www.iki.fi/hyvatti/pic/picprog.html>.
++See <URL:http://www.iki.fi/hyvatti/pic/picprog.html>, or /usr/local/share/doc/picprog/picprog.html.
+ .SH AUTHOR
+ Jaakko Hyvätti
+ .LP

@@ -1,0 +1,11 @@
+--- hexfile.h.orig	Tue Aug 31 11:51:09 1999
++++ hexfile.h	Tue Aug 31 11:53:58 1999
+@@ -48,7 +48,7 @@
+ #include "picport.h"
+ 
+ class hexfile {
+-  const int size = 0x4000;
++  static const int size = 0x4000;
+   short pgm [size];
+ 
+   int program_location (picport& pic, int addr, bool data) const;
