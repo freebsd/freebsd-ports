@@ -1,5 +1,6 @@
 bin/skkdic-count
 bin/skkdic-expr
+%%WITHOUT_GNOME:%%bin/skkdic-expr2
 bin/skkdic-sort
 %%WITHOUT_GNOME:%%%%DOCSDIR%%/README.skkdic-expr2
 %%DOCSDIR%%/README.skktools
