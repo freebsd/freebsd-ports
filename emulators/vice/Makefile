@@ -3,13 +3,15 @@
 # Date created:		Mar 28, 1998
 # Whom:			dchapes@ddm.on.ca
 #
-# $Id: Makefile,v 1.2 1998/07/13 01:25:02 dburr Exp $
+# $Id: Makefile,v 1.3 1998/07/13 11:57:58 dburr Exp $
 
 DISTNAME=	vice-0.14.1
 CATEGORIES=	emulators
 MASTER_SITES=	ftp://ftp.funet.fi/pub/cbm/crossplatform/emulators/VICE/
 
 MAINTAINER=	dchapes@ddm.on.ca
+
+LIB_DEPENDS=	Xaw3d\\.6\\.:${PORTSDIR}/x11/Xaw3d
 
 WRKSRC=		${WRKDIR}/vice-0.14.1/src
 
