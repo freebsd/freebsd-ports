@@ -1,0 +1,18 @@
+bin/geonext-%%LANG%%
+share/geonext-%%LANG%%/geonext-%%LANG%%
+share/geonext-%%LANG%%/cacerts
+share/geonext-%%LANG%%/didmat.crt
+share/geonext-%%LANG%%/g.gif
+share/geonext-%%LANG%%/geonext.html
+share/geonext-%%LANG%%/geonext.jar
+share/geonext-%%LANG%%/gn.gif
+share/geonext-%%LANG%%/gni.gif
+share/geonext-%%LANG%%/geoint.png
+share/geonext-%%LANG%%/gx.gif
+share/geonext-%%LANG%%/gxt.gif
+share/geonext-%%LANG%%/index.html
+share/geonext-%%LANG%%/license.txt
+share/geonext-%%LANG%%/pixel.gif
+share/geonext-%%LANG%%/x.ico
+share/geonext-%%LANG%%/ubt.gif
+@dirrm share/geonext-%%LANG%%
