@@ -4,6 +4,10 @@ bin/mint
 bin/mono
 bin/monodis
 bin/monograph
+bin/monoresgen.exe
+bin/monosn
+etc/mono/config
+etc/mono/machine.config
 include/mono/cil/opcode.def
 include/mono/io-layer/access.h
 include/mono/io-layer/atomic.h
@@ -60,22 +64,48 @@ include/mono/metadata/verify.h
 include/mono/utils/mono-digest.h
 include/mono/utils/mono-hash.h
 include/mono/utils/monobitset.h
+lib/Accessibility.dll
+lib/Cscompmgd.dll
+lib/I18N.CJK.dll
+lib/I18N.MidEast.dll
+lib/I18N.Other.dll
+lib/I18N.Rare.dll
+lib/I18N.West.dll
+lib/I18N.dll
+lib/Microsoft.VisualBasic.dll
+lib/Mono.CSharp.Debugger.dll
+lib/Mono.Data.MySql.dll
+lib/Mono.Data.PostgreSqlClient.dll
+lib/Mono.Data.SqliteClient.dll
+lib/Mono.Data.SybaseClient.dll
+lib/Mono.Data.Tds.dll
+lib/Mono.Data.TdsClient.dll
+lib/Mono.GetOptions.dll
+lib/Mono.PEToolkit.dll
+lib/NUnitCore_mono.dll
+lib/System.Configuration.Install.dll
 lib/System.Data.dll
 lib/System.Drawing.dll
+lib/System.EnterpriseServices.dll
+lib/System.Runtime.Remoting.dll
+lib/System.Runtime.Serialization.Formatters.Soap.dll
+lib/System.Web.Services.dll
 lib/System.Web.dll
+lib/System.Windows.Forms.dll
 lib/System.Xml.dll
 lib/System.dll
 lib/corlib.dll
 lib/libmono.a
-lib/libmono.la
+lib/libmono.so
 lib/libmono.so.0
 libdata/pkgconfig/mono.pc
 share/mono/cil/cil-opcodes.xml
+@dirrm share/mono/cil
+@dirrm share/mono
 @dirrm include/mono/cil
 @dirrm include/mono/io-layer
 @dirrm include/mono/jit
 @dirrm include/mono/metadata
 @dirrm include/mono/utils
 @dirrm include/mono
-@dirrm share/mono/cil
-@dirrm share/mono
+@dirrm etc/mono
