@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.93 1997/10/27 15:20:16 itojun Exp $
+# $Id: Makefile,v 1.94 1997/11/12 05:13:26 itojun Exp $
 #
 
     SUBDIR += Canna
@@ -19,6 +19,7 @@
     SUBDIR += gawk
     SUBDIR += ghostscript
     SUBDIR += gn-gnspool
+    SUBDIR += gn-mnews
     SUBDIR += gp
     SUBDIR += grep
     SUBDIR += groff
