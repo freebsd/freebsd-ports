@@ -7,7 +7,7 @@
 
 CATEGORIES=	japanese editors
 
-LANG_PKGNAME=	jp
+LANG_PKGNAME=	ja
 LANG_EXT=	81
 LANG_CONFIGURE_ARG=	JAPN
 MASTERDIR=	${.CURDIR}/../../editors/openoffice
