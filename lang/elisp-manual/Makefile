@@ -3,12 +3,13 @@
 # Date created:		18 November 1997
 # Whom:			Don Croyle <croyle@gelemna.ft-wayne.in.us>
 #
-# $Id: Makefile,v 1.1.1.1 1998/04/27 14:53:00 kuriyama Exp $
+# $Id: Makefile,v 1.2 1998/09/18 21:51:42 vanilla Exp $
 #
 
 DISTNAME=	elisp-manual-20-2.5
 CATEGORIES=	lang
 MASTER_SITES=	${MASTER_SITE_GNU}
+MASTER_SITE_SUBDIR=	emacs
 
 MAINTAINER=	croyle@gelemna.ft-wayne.in.us
 
