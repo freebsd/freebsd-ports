@@ -1,0 +1,10 @@
+--- configure.orig	Sat Nov 20 12:35:49 2004
++++ configure	Sat Nov 20 12:36:13 2004
+@@ -11797,6 +11797,7 @@
+   *-*-freebsd3*) plat_name="FreeBSD";  plat_def="__freebsd__";  os_v="3";;
+   *-*-freebsd4*) plat_name="FreeBSD";  plat_def="__freebsd__";  os_v="4";;
+   *-*-freebsd5*) plat_name="FreeBSD";  plat_def="__freebsd__";  os_v="5";;
++  *-*-freebsd6*) plat_name="FreeBSD";  plat_def="__freebsd__";  os_v="6";;
+   *-*-openbsd*)  plat_name="OpenBSD";  plat_def="__openbsd__";  os_v="3";;
+   *-*-sco*)      plat_name="OSR5";     plat_def="__osr5__";     os_v="5";;
+ esac
