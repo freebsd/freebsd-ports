@@ -5,10 +5,10 @@
 # $FreeBSD$
 #
 
-# "?=" lines are for sharing this Makefile with japanese/exmh2.
+# "+=" and "?=" lines are for sharing this Makefile with japanese/exmh2.
 PORTNAME=	exmh
 PORTVERSION=	2.1.1
-CATEGORIES?=	mail tk82
+CATEGORIES+=	mail tk82
 MASTER_SITES=	ftp://ftp.scriptics.com/pub/tcl/exmh/
 
 MAINTAINER?=	markm@FreeBSD.org
@@ -33,7 +33,7 @@ RUN_DEPENDS+=	repl:${PORTSDIR}/japanese/mh
 RUN_DEPENDS+=	repl:${PORTSDIR}/mail/mh
 .else
 RUN_DEPENDS+=	repl:${PORTSDIR}/mail/nmh
-SCRIPT_ENV+=	USE_NMH=YES
+SCRIPTS_ENV+=	USE_NMH=YES
 .endif
 .endif
 

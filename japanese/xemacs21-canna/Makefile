@@ -21,7 +21,7 @@
 #	LIB_INPUT_METHOD  : LIB_DEPENDS list of Input Methods
 #	BUILD_INPUT_METHOD: BUILD_DEPENDS list of Input Methods
 
-CATEGORIES=	japanese editors
+CATEGORIES=	japanese
 
 MANLANG=	ja
 MAN1=		xemacs-ja.1

@@ -9,10 +9,7 @@
 
 PORTNAME=	ppxp
 PORTVERSION=	0.99120923
-CATEGORIES=	net tk82
-.if defined(USE_TCLJP)
-CATEGORIES+=	japanese
-.endif
+CATEGORIES+=	net tk82
 MASTER_SITES=	http://www.dsl.gr.jp/~manabe/PPxP/packages/	\
 		http://www.linet.gr.jp/~manabe/PPxP/packages/	\
 		http://www.dsl.ics.tut.ac.jp/~manabe/PPxP/packages/

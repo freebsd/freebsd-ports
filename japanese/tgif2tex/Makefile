@@ -5,7 +5,7 @@
 # $FreeBSD$
 #
 
-CATEGORIES=	japanese print
+CATEGORIES=	japanese
 
 RUN_DEPENDS=	nkf:${PORTSDIR}/japanese/nkf
 

@@ -8,6 +8,8 @@
 
 BROKEN=		"doesn't build properly from version 1.7.1"
 
+CATEGORIES=	japanese
+
 MAKE_ENV+=	JAPANESE=yes
 
 MASTERDIR=	${.CURDIR}/../../deskutils/plan

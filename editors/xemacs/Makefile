@@ -7,7 +7,7 @@
 
 PORTNAME=	xemacs
 PORTVERSION=	${XEMACS_VER}
-CATEGORIES?=	editors
+CATEGORIES+=	editors
 MASTER_SITES=	\
 		ftp://ftp.xemacs.org/pub/xemacs/xemacs-${XEMACS_REL}/ \
 		ftp://ftp.mpi-sb.mpg.de/pub/gnu/mirror/ftp.xemacs.org/xemacs/xemacs-${XEMACS_REL}/ \

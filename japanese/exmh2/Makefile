@@ -5,7 +5,7 @@
 # $FreeBSD$
 #
 
-CATEGORIES=	japanese mail tk80
+CATEGORIES=	japanese
 
 MAINTAINER=	ports@FreeBSD.org
 

@@ -5,7 +5,7 @@
 # $FreeBSD$
 #
 
-CATEGORIES=	japanese x11-toolkits
+CATEGORIES=	japanese
 
 MAINTAINER=	yasuf@big.or.jp
 

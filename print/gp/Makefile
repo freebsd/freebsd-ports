@@ -7,7 +7,7 @@
 
 PORTNAME=	gp
 PORTVERSION=	2.5.p2
-CATEGORIES?=	print tk42
+CATEGORIES+=	print tk42
 MASTER_SITES=	http://www.itbrain.co.jp/~ueda/GP/
 DISTNAME=	GP-2.5p2	
 
