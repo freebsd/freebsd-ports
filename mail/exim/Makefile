@@ -6,13 +6,12 @@
 #
 
 PORTNAME=	exim
-PORTVERSION=	3.22
-PORTREVISION=	7
+PORTVERSION=	3.30
 CATEGORIES=	mail
 MASTER_SITES=	ftp://ftp.csx.cam.ac.uk/pub/software/email/exim/ \
 		http://www.exim.org/ftp/ \
 		ftp://ftp.is.co.za/networking/mail/transport/exim/
-DISTFILES=	exim-3.22.tar.gz exim-texinfo-3.20.tar.gz
+DISTFILES=	exim-3.30.tar.gz exim-texinfo-3.30.tar.gz
 
 MAINTAINER=	sheldonh@FreeBSD.org
 
@@ -167,7 +166,7 @@ do-configure:
 	${SED} ${SEDLIST} < ${WRKSRC}/src/EDITME > ${WRKSRC}/Local/Makefile
 	${CP} ${WRKSRC}/exim_monitor/EDITME ${WRKSRC}/Local/eximon.conf
 	cd ${WRKSRC}/doc && \
-	for i in ../../exim-texinfo-3.20/doc/* ; do \
+	for i in ../../exim-texinfo-3.30/doc/* ; do \
 		${LN} -sf $$i ; \
 	done
 
