@@ -18,7 +18,6 @@
 # be added at the tail.
 #
 # Port|Moved to|Date|Why
-games/xblast-beta|games/xblast|2004-12-28|xblast is newest version now
 net/ratoolset|net/irrtoolset|2002-11-16|software was renamed
 chinese/linux-netscape47-communicator||2002-11-17|security vulnerability
 chinese/linux-netscape47-navigator||2002-11-17|security vulnerability
@@ -1368,3 +1367,4 @@ x11-toolkits/xtermcontrol|x11/xtermcontrol|2004-12-25|new category
 multimedia/gstreamer-player||2004-12-26|Unmaintained by developers
 www/horde2|www/horde|2004-12-26|Resurrect www/horde
 mail/imp3|mail/imp|2004-12-26|Resurrect mail/imp
+games/xblast-beta|games/xblast|2004-12-28|xblast is newest version now
