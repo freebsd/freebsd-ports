@@ -1,0 +1,25 @@
+Index: config/cf/FreeBSD.cf
+===================================================================
+RCS file: /cvsroot/dri/xc/xc/config/cf/FreeBSD.cf,v
+retrieving revision 1.15.24.1
+diff -u -r1.15.24.1 FreeBSD.cf
+--- config/cf/FreeBSD.cf	15 Jul 2002 20:20:54 -0000	1.15.24.1
++++ config/cf/FreeBSD.cf	23 Aug 2002 22:44:33 -0000
+@@ -144,6 +144,7 @@
+  *
+  *    ld: warning: libXThrStub.so.6, needed by libX11.so, not found
+  */
++/*
+ #if BuildThreadStubLibrary && !UseInstalled
+ # define CcCmd			$(CLIENTENVSETUP) cc
+ # define CplusplusCmd		$(CLIENTENVSETUP) c++
+@@ -151,6 +152,9 @@
+ # define CcCmd			cc
+ # define CplusplusCmd		c++
+ #endif
++*/
++#define CcCmd			${FBSDCC}
++#define CplusplusCmd		${FBSDCXX}
+ 
+ #define CppCmd			/usr/bin/cpp
+ #define PreProcessCmd		CppCmd
