@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	pyslsk
-PORTVERSION=	1.2.0
+PORTVERSION=	1.2.4
 CATEGORIES=	net
-MASTER_SITES=	http://www.sensi.org/~ak/pyslsk/ \
-		http://stud4.tuwien.ac.at/~e0125637/
+MASTER_SITES=	http://www.sensi.org/~ak/pyslsk/
 
 MAINTAINER=	shoesoft@gmx.net
 COMMENT=	"Client for SoulSeek filesharing system"
