@@ -6,36 +6,33 @@
 #
 
 PORTNAME=	kdissert
-PORTVERSION=	0.2.9
+PORTVERSION=	0.3.0
 CATEGORIES=	deskutils kde
 MASTER_SITES=	http://freehackers.org/~tnagy/kdissert/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	KDE mindmapping tool
 
-BUILD_DEPENDS=	qmake:${PORTSDIR}/devel/qmake
+BUILD_DEPENDS=	bash:${PORTSDIR}/shells/bash
 
 USE_BZIP2=	yes
 USE_KDELIBS_VER=	3
 USE_REINPLACE=	yes
 USE_GMAKE=	yes
 WANT_LIBTOOL_VER=	15
-MAKE_ARGS=	QTDIR="${QT_PREFIX}" LIBTOOL="${LIBTOOL} --tag=CXX"
+MAKE_ARGS=	CXX="${CXX}" \
+		COMMONCXXFLAGS="${CXXFLAGS} ${PTHREAD_CFLAGS}" \
+		LIBTOOL="${LIBTOOL} --silent --tag=CXX" \
+		SUBLIBS="${PTHREAD_LIBS}" \
+		SHELL="${LOCALBASE}/bin/bash" 
 INSTALLS_SHLIB=	yes
 
+post-patch:
+	@${REINPLACE_CMD} -e 's|#!/bin/bash|!#!${LOCALBASE}/bin/bash|g ; \
+		 s|-en|-n|g' ${WRKSRC}/configure
+
 do-configure:
-	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} qmake \
-		-spec ${LOCALBASE}/share/qt/mkspecs/freebsd-g++ main.pro
-
-pre-install:
-	@${MKDIR} ${PREFIX}/share/apps/kdissert/pics
-	@${MKDIR} ${PREFIX}/share/apps/kdissert/templatedata
-	@${MKDIR} ${PREFIX}/share/doc/HTML/en/kdissert
-.for size in 16 32 64 128
-	@${MKDIR} ${PREFIX}/share/icons/hicolor/${size}x${size}/apps
-.endfor
-
-post-install:
-	@${STRIP_CMD} ${PREFIX}/bin/kdissert
+	@cd ${WRKSRC} \
+		&& QTDIR="${QT_PREFIX}" ./configure --prefix="${PREFIX}"
 
 .include <bsd.port.mk>
