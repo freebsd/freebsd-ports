@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	quota
-PORTVERSION=	0.4.1
+PORTVERSION=	0.5.0
 CATEGORIES=	sysutils ruby
 MASTER_SITES=	http://kt-www.jaist.ac.jp/~ttate/ftp/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
