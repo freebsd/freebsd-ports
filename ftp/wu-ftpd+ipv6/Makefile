@@ -1,6 +1,6 @@
-# New ports collection makefile for:	wu-ftpd
-# Date created:		18 Oct 1994
-# Whom:			torstenb
+# New ports collection makefile for:	wu-ftpd+ipv6
+# Date created:		30 Aug 2002
+# Whom:			sumikawa
 #
 # $FreeBSD$
 #
@@ -9,14 +9,19 @@
 
 PORTNAME=	wu-ftpd
 PORTVERSION=    2.6.2
-CATEGORIES=	ftp
+CATEGORIES=	ftp ipv6
 MASTER_SITES=	ftp://ftp.wu-ftpd.org/pub/wu-ftpd/
 
-MAINTAINER=	ache@FreeBSD.org
+PATCH_SITES=	ftp://ftp.kame.net/pub/kame/misc/
+PATCHFILES=	wu-ftpd-262-v6-20020830.diff.gz
+PATCH_DIST_STRIP=	-p1
+
+MAINTAINER=	sumikawa@FreeBSD.org
 
 USE_AUTOCONF=   yes
 CONFIGURE_ARGS=	--enable-rfc931 --disable-pasvip --enable-opie \
 		--enable-noop --disable-numericuid  --enable-nlst-dirs \
+		--enable-ipv6 \
 		--prefix=${PREFIX} --with-etc-dir=${PREFIX}/etc
 
 MAN1=		ftpcount.1 ftpwho.1
