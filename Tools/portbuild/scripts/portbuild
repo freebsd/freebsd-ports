@@ -81,7 +81,11 @@ if [ "x$1" = "x-nodummy" ]; then
   export NODUMMY=1
   shift
 fi
-
+nodistfiles=1
+if [ "x$1" = "x-distfiles" ]; then
+  nodistfiles=0
+  shift
+fi
 args="$*"
 
 buildenv ${pb} ${arch} ${branch}
@@ -249,16 +253,19 @@ fi
 if [ "${error}" = 0 ]; then
 # make checksum succeeded
   ssh -a -x ${user}@$master mkdir -p ${pb}/${arch}/${branch}/distfiles/.pbtmp/${pkgname}
-  tar -C ${chroot}/tmp/distfiles -cf - . | \
-    ssh -a -x ${user}@$master tar --unlink -C ${pb}/${arch}/${branch}/distfiles/.pbtmp/${pkgname} -xvf -
-  ssh -a -x ${user}@$master touch ${pb}/${arch}/${branch}/distfiles/.pbtmp/${pkgname}/.done
+  if [ "$nodistfiles" = "0" ]; then
+    tar -C ${chroot}/tmp/distfiles -cf - . | \
+      ssh -a -x ${user}@$master tar --unlink -C ${pb}/${arch}/${branch}/distfiles/.pbtmp/${pkgname} -xvf -
+    ssh -a -x ${user}@$master touch ${pb}/${arch}/${branch}/distfiles/.pbtmp/${pkgname}/.done
+  fi
 
 # phase 2, make package
   ln -sf ${pkgname}.log2 ${chroot}/tmp/make.log
 
-  ifconfig lo0 alias 10.${ip1}.${ip2}.${ip3}/32
-  jail ${chroot} jail-${chroot} 10.${ip1}.${ip2}.${ip3} /usr/bin/nice -n $nice /buildscript ${dirname} 2 > ${chroot}/tmp/${pkgname}.log2 2>&1
-  ifconfig lo0 delete 10.${ip1}.${ip2}.${ip3}
+#  ifconfig lo0 alias 10.${ip1}.${ip2}.${ip3}/32
+#  jail ${chroot} jail-${chroot} 10.${ip1}.${ip2}.${ip3} /usr/bin/nice -n $nice /buildscript ${dirname} 2 > ${chroot}/tmp/${pkgname}.log2 2>&1
+#  ifconfig lo0 delete 10.${ip1}.${ip2}.${ip3}
+  chroot ${chroot} /buildscript ${dirname} 2 > ${chroot}/tmp/${pkgname}.log2 2>&1
 
   grep pnohang ${chroot}/tmp/${pkgname}.log2
   cat ${chroot}/tmp/${pkgname}.log2 >> ${chroot}/tmp/${pkgname}.log
