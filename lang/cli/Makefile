@@ -18,6 +18,7 @@ COMMENT=	An implementation of the ECMA CLI and the ECMA C\# language
 WRKSRC=		${WRKDIR}/sscli
 
 RESTRICTED=	"license terms need to be reviewed"
+ONLY_FOR_ARCHS=	i386
 
 BROKEN=		"Does not compile"
 
