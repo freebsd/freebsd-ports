@@ -30,11 +30,13 @@ lib/scm/slib/arraymap.scm
 lib/scm/slib/batch.scm
 lib/scm/slib/break.scm
 lib/scm/slib/byte.scm
+lib/scm/slib/bytenumb.scm
 lib/scm/slib/chap.scm
 lib/scm/slib/charplot.scm
 lib/scm/slib/cltime.scm
 lib/scm/slib/coerce.scm
 lib/scm/slib/collect.scm
+lib/scm/slib/collectx.scm
 lib/scm/slib/color.scm
 lib/scm/slib/colornam.scm
 lib/scm/slib/colorspc.scm
@@ -46,6 +48,7 @@ lib/scm/slib/cvs.scm
 lib/scm/slib/daylight.scm
 lib/scm/slib/db2html.scm
 lib/scm/slib/dbcom.scm
+lib/scm/slib/dbinterp.scm
 lib/scm/slib/dbrowse.scm
 lib/scm/slib/dbsyn.scm
 lib/scm/slib/dbutil.scm
@@ -61,12 +64,11 @@ lib/scm/slib/eval.scm
 lib/scm/slib/factor.scm
 lib/scm/slib/fft.scm
 lib/scm/slib/fluidlet.scm
-lib/scm/slib/format.scm
-lib/scm/slib/formatst.scm
 lib/scm/slib/genwrite.scm
 lib/scm/slib/getopt.scm
 lib/scm/slib/getparam.scm
 lib/scm/slib/glob.scm
+lib/scm/slib/grapheps.scm
 lib/scm/slib/hash.scm
 lib/scm/slib/hashtab.scm
 lib/scm/slib/html4each.scm
@@ -76,9 +78,11 @@ lib/scm/slib/lineio.scm
 lib/scm/slib/logical.scm
 lib/scm/slib/macrotst.scm
 lib/scm/slib/macwork.scm
+lib/scm/slib/manifest.scm
 lib/scm/slib/matfile.scm
 lib/scm/slib/mbe.scm
 lib/scm/slib/minimize.scm
+lib/scm/slib/mkclrnam.scm
 lib/scm/slib/mklibcat.scm
 lib/scm/slib/modular.scm
 lib/scm/slib/mulapply.scm
@@ -119,7 +123,6 @@ lib/scm/slib/rdms.scm
 lib/scm/slib/recobj.scm
 lib/scm/slib/record.scm
 lib/scm/slib/repl.scm
-lib/scm/slib/report.scm
 lib/scm/slib/require.scm
 lib/scm/slib/root.scm
 lib/scm/slib/sc2.scm
@@ -140,6 +143,9 @@ lib/scm/slib/solid.scm
 lib/scm/slib/sort.scm
 lib/scm/slib/soundex.scm
 lib/scm/slib/srfi-1.scm
+lib/scm/slib/srfi-2.scm
+lib/scm/slib/srfi-8.scm
+lib/scm/slib/srfi-9.scm
 lib/scm/slib/srfi.scm
 lib/scm/slib/stdio.scm
 lib/scm/slib/strcase.scm
@@ -151,6 +157,7 @@ lib/scm/slib/synchk.scm
 lib/scm/slib/synclo.scm
 lib/scm/slib/synrul.scm
 lib/scm/slib/timezone.scm
+lib/scm/slib/top-refs.scm
 lib/scm/slib/trace.scm
 lib/scm/slib/transact.scm
 lib/scm/slib/tree.scm
@@ -159,6 +166,7 @@ lib/scm/slib/tsort.scm
 lib/scm/slib/tzfile.scm
 lib/scm/slib/uri.scm
 lib/scm/slib/values.scm
+lib/scm/slib/vet.scm
 lib/scm/slib/withfile.scm
 lib/scm/slib/wttest.scm
 lib/scm/slib/wttree.scm

@@ -6,11 +6,12 @@
 #
 
 PORTNAME=	scm
-PORTVERSION=	5d8
+PORTVERSION=	5d9
 CATEGORIES=	lang scheme
-MASTER_SITES=	http://swissnet.ai.mit.edu/ftpdir/scm/
-DISTFILES=	scm5d8.zip slib2d6.zip slib-psd1-3.tar.gz
-EXTRACT_ONLY=	scm5d8.zip slib2d6.zip
+MASTER_SITES=	http://swissnet.ai.mit.edu/ftpdir/scm/%SUBDIR%/
+MASTER_SITE_SUBDIR=	. OLD
+DISTFILES=	scm5d9.zip slib3a1.zip slib-psd1-3.tar.gz
+EXTRACT_ONLY=	scm5d9.zip slib3a1.zip
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A scheme interpreter
@@ -23,7 +24,7 @@ USE_GMAKE=	yes
 MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS}"
 ALL_TARGET=	scmlit
 MAN1=		scm.1
-INFO=		scm slib
+INFO=		scm
 
 PLIST_SUB=	VERSION=${PORTVERSION}
 
@@ -79,8 +80,6 @@ do-install:
 	${INSTALL_DATA} ${WRKDIR}/slib/psd/*.scm ${PREFIX}/lib/scm/slib/psd
 	${INSTALL_DATA} ${WRKDIR}/scm/scm.info ${PREFIX}/info
 	@install-info ${PREFIX}/info/scm.info ${PREFIX}/info/dir
-	${INSTALL_DATA} ${WRKDIR}/slib/slib.info ${PREFIX}/info
-	@install-info ${PREFIX}/info/slib.info ${PREFIX}/info/dir
 	cd ${PREFIX}/lib/scm && ${PREFIX}/bin/scm -lmkimpcat.scm
 
 .include <bsd.port.mk>
