@@ -6,13 +6,13 @@
 #
 
 PORTNAME=	LDAP-Account-Manager
-PORTVERSION=	0.4
+PORTVERSION=	0.4.1
 CATEGORIES=	sysutils www
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	lam
-DISTNAME=	${PORTNAME}-${PORTVERSION}-0
+DISTNAME=	${PORTNAME:L}_${PORTVERSION}
 
-MAINTAINER=	sheepkiller@cultdeadsheep.org
+MAINTAINER=	clement@FreeBSD.org
 COMMENT=	Webfrontend for managing accounts stored in an OpenLDAP server
 
 RUN_DEPENDS=	${LOCALBASE}/${MOD_DIR}/libphp4.so:${PORTSDIR}/lang/php4-horde \
@@ -20,7 +20,7 @@ RUN_DEPENDS=	${LOCALBASE}/${MOD_DIR}/libphp4.so:${PORTSDIR}/lang/php4-horde \
 		${SITE_PERL}/Net/LDAP.pm:${PORTSDIR}/net/p5-perl-ldap
 
 NO_BUILD=	YES
-WRKSRC=		${WRKDIR}/lam
+WRKSRC=		${WRKDIR}/${PORTNAME:L}-${PORTVERSION}
 
 .if defined(WITH_APACHE2)
 MOD_DIR=	libexec/apache2
