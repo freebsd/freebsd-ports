@@ -1,3 +1,7 @@
 %%RUBY_SITEARCHLIBDIR%%/GDChart.so
+%%PORTDOCS%%%%RUBY_DOCDIR%%/gdchart/ChangeLog
 %%PORTDOCS%%%%RUBY_DOCDIR%%/gdchart/README.en
 %%PORTDOCS%%@dirrm %%RUBY_DOCDIR%%/gdchart
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/gdchart/bar_sample.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/gdchart/pie_sample.rb
+%%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/gdchart
