@@ -1,0 +1,6 @@
+VMailMgr (short for Virtual MAIL ManaGeR) is a package of programs
+designed to manage multiple domains of mail addresses and mailboxes
+on a single host. It co-operates with qmail for mail delivery and
+program control.
+
+WWW: http://www.vmailmgr.org/
