@@ -19,6 +19,24 @@ F=$WRKDIR/.config
 configure () {
 rm -f $F
 
+# Tk detection
+tkversion=
+for v in 0 1 2 3 4; do
+  if `ls /usr/local/lib/libtk4.$v.so* >/dev/null 2>&1`; then
+    tkversion=$v
+  fi
+done
+if [ X$tkversion != X ]; then
+  echo "Using tk-4.$tkversion"
+  echo "#define HasTk			YES" >>$F
+  echo "#define TkLibDir		/usr/local/lib" >>$F
+  echo "#define TkIncDir		/usr/local/include" >>$F
+  echo "#define TkLibName		tk4.$tkversion" >>$F
+  echo "#define HasTcl			YES" >>$F
+  echo "#define TclLibDir		/usr/lib" >>$F
+  echo "#define TclIncDir		/usr/include" >>$F
+  echo "#define TclLibName		tcl75" >>$F
+fi
 cat <<END
  Which servers do you wish to build, you can save a lot of disk space
  by only compiling the server you will be using.  It will also save you
