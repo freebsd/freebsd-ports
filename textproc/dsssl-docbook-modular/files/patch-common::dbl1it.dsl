@@ -1,5 +1,5 @@
---- common/dbl1it.dsl.orig	Wed Sep 18 10:13:28 2002
-+++ common/dbl1it.dsl	Wed Sep 18 10:13:42 2002
+--- common/dbl1it.dsl.orig	Wed Jun 20 14:50:47 2001
++++ common/dbl1it.dsl	Thu Mar 13 23:01:54 2003
 @@ -22,6 +22,7 @@
  
  ;; Contributors:
@@ -69,3 +69,26 @@
  	(list (normalize "step")        "&step; %n")
  	(list (normalize "table")       "&Table; %n")))
  
+@@ -221,8 +222,8 @@
+    (list (normalize "sect5")		"&Section;")
+    (list (normalize "section")		"&Section;")
+    (list (normalize "simplesect")	"&Section;")
+-   (list (normalize "seeie")		"&See;")
+-   (list (normalize "seealsoie")	"&Seealso;")
++   (list (normalize "seeie")		"&see;")
++   (list (normalize "seealsoie")	"&seealso;")
+    (list (normalize "set")		"&Set;")
+    (list (normalize "sidebar")		"&Sidebar;")
+    (list (normalize "step")		"&step;")
+@@ -441,9 +442,9 @@
+ 
+ (define %gentext-it-table-endnotes% "&TableNotes;:")
+ 
+-(define %gentext-it-index-see% "&See;")
++(define %gentext-it-index-see% "&see;")
+ 
+-(define %gentext-it-index-seealso% "&SeeAlso;")
++(define %gentext-it-index-seealso% "&seealso;")
+ 
+ 
+ (define (gentext-it-nav-prev prev) 
