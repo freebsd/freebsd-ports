@@ -6813,7 +6813,6 @@ p5-Inline-Filters	ports/devel/p5-Inline-Filters
 p5-Inline-Java	ports/devel/p5-Inline-Java
 p5-Inline-Tcl	ports/devel/p5-Inline-Tcl
 p5-Ioctl	ports/devel/p5-Ioctl
-p5-JUNOScript	ports/net-mgmt/p5-JUNOScript
 p5-Jabber-Connection	ports/net/p5-Jabber-Connection
 p5-Kwiki	ports/www/p5-Kwiki
 p5-Kwiki-Archive-Rcs	ports/www/p5-Kwiki-Archive-Rcs
