@@ -1,0 +1,2 @@
+C<Tk::HistEntry> defines entry widgets with history capabilities. The widgets
+come in two flavours:
