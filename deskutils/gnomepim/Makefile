@@ -41,7 +41,7 @@ pre-extract:
 	@${ECHO} "You can add gnomepilot support by defining WITH_GNOMEPILOT"
 .endif
 
-post-extract:
+pre-patch:
 	@${PERL} -pi -e 's|-lpthread|-pthread|g ; \
 		 s|DATADIRNAME=lib|DATADIRNAME=share|g' ${WRKSRC}/configure
 	@find ${WRKSRC} -name "Makefile.in" | xargs ${PERL} -pi -e \
