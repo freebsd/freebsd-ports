@@ -1,0 +1,10 @@
+--- configure.orig	Tue Sep  9 19:20:27 2003
++++ configure	Tue Sep  9 19:20:50 2003
+@@ -4891,6 +4891,7 @@
+ cat >conftest.$ac_ext <<_ACEOF
+ #line $LINENO "configure"
+ #include "confdefs.h"
++$ac_includes_default
+ #include <utmp.h>
+ #ifdef F77_DUMMY_MAIN
+ #  ifdef __cplusplus

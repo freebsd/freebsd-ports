@@ -1,0 +1,140 @@
+--- ftpd.8.TLS.orig	Thu May 16 15:07:51 2002
++++ ftpd.8.TLS	Tue Sep  9 02:33:26 2003
+@@ -35,13 +35,13 @@
+ .\"     @(#)ftpd.8	8.2 (Berkeley) 4/19/94
+ .\"
+ .Dd June 18, 1996
+-.Dt FTPD 8
++.Dt FTPD-TLS 8
+ .Os
+ .Sh NAME
+-.Nm ftpd
+-.Nd Internet File Transfer Protocol server
++.Nm ftpd-tls
++.Nd Internet File Transfer Protocol server supporting AUTH TLS
+ .Sh SYNOPSIS
+-.Nm ftpd
++.Nm ftpd-tls
+ .Op Fl AdDhlMPSU46
+ .Op Fl T Ar maxtimeout
+ .Op Fl t Ar timeout
+@@ -62,7 +62,7 @@
+ .Bl -tag -width Ds
+ .It Fl A
+ Permit only anonymous ftp connections, accounts listed in
+-.Pa /etc/ftpchroot
++.Pa %%PREFIX%%/etc/ftpd-tls/ftpchroot
+ or users in a login class with the
+ .Dq ftp-chroot
+ variable set (see below).
+@@ -107,7 +107,7 @@
+ .It Fl P
+ Permit illegal port numbers or addresses for PORT command initiated connects.
+ By default
+-.Xr ftpd 8
++.Xr ftpd-tls 8
+ violates the RFC and thus constrains the PORT command to non-reserved ports
+ and requires it use the same source address as the connection came from.
+ This prevents the "FTP bounce attack" against services on both the local
+@@ -116,7 +116,7 @@
+ With this option set,
+ .Nm
+ logs all anonymous downloads to the file
+-.Pa /var/log/ftpd
++.Pa /var/log/ftpd-tls
+ when this file exists.
+ .It Fl U
+ Each concurrent
+@@ -182,14 +182,14 @@
+ .Nm
+ displays it and exits.
+ If the file
+-.Pa /etc/ftpwelcome
++.Pa %%PREFIX%%/etc/ftpd-tls/ftpwelcome
+ exists,
+ .Nm
+ prints it before issuing the
+ .Dq ready
+ message.
+ If the welcome file exists
+-.Pa ( /etc/motd
++.Pa ( %%PREFIX%%/etc/ftpd-tls/motd
+ by default),
+ .Nm
+ prints it after a successful login.
+@@ -320,13 +320,13 @@
+ file operations may be performed.
+ .It
+ The login name must not appear in the file
+-.Pa /etc/ftpusers .
++.Pa %%PREFIX%%/etc/ftpd-tls/ftpusers .
+ .It
+ The user must have a standard shell as described by
+ .Xr shells 5 .
+ .It
+ If the user name appears in the file
+-.Pa /etc/ftpchroot
++.Pa %%PREFIX%%/etc/ftpd-tls/ftpchroot
+ the session's root will be changed to the user's login directory by
+ .Xr chroot 2
+ as for an
+@@ -432,7 +432,7 @@
+ .El
+ .Pp
+ If logging to the
+-.Pa /var/log/ftpd
++.Pa /var/log/ftpd-tls
+ file is enabled, information will be written in the following format:
+ .Pp
+ .Bl -tag -width XXXXXXXXXXXXXX -offset indent -compact
+@@ -514,24 +514,24 @@
+ .It Pa welcome
+ The path of the file containing the welcome message.
+ If this variable is not set,
+-.Pa /etc/motd
++.Pa %%PREFIX%%/etc/ftpd-tls/motd
+ is used.
+ .El
+ .Sh FILES
+-.Bl -tag -width /var/run/ftpd.pid -compact
+-.It Pa /etc/ftpusers
++.Bl -tag -width /var/run/ftpd-tls.pid -compact
++.It Pa %%PREFIX%%/etc/ftpd-tls/ftpusers
+ list of unwelcome/restricted users
+-.It Pa /etc/ftpchroot
++.It Pa %%PREFIX%%/etc/ftpd-tls/ftpchroot
+ list of normal users who should be chrooted
+-.It Pa /etc/ftpwelcome
++.It Pa %%PREFIX%%/etc/ftpd-tls/ftpwelcome
+ welcome notice
+ .It Pa /etc/nologin
+ displayed and access refused
+ .It Pa /var/run/utmp
+ list of users on the system
+-.It Pa /var/run/ftpd.pid
++.It Pa /var/run/ftpd-tls.pid
+ process ID if running in daemon mode
+-.It Pa /var/log/ftpd
++.It Pa /var/log/ftpd-tls
+ log file for anonymous downloads
+ .El
+ .Sh SEE ALSO
+@@ -541,14 +541,16 @@
+ .Xr chroot 2 ,
+ .Xr login.conf 5 ,
+ .Xr shells 5 ,
++.Xr ftpd 8 ,
+ .Xr inetd 8 ,
+ .Xr syslogd 8 ,
+-.Xr ftp-proxy 8
+ .Sh HISTORY
+ The
+-.Nm
++.Ic ftpd
+ command appeared in
+ .Bx 4.2 .
++.Pp
++AUTH TLS support added by Peter 'Luna' Runestig <peter@runestig.com>.
+ .Sh BUGS
+ The server must run as the superuser to create sockets with
+ privileged port numbers.

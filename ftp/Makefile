@@ -19,6 +19,7 @@
     SUBDIR += ftp4all
     SUBDIR += ftpcopy
     SUBDIR += ftpcube
+    SUBDIR += ftpd-tls
     SUBDIR += ftpfind
     SUBDIR += ftplocate
     SUBDIR += ftpmirror
