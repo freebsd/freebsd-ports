@@ -6,30 +6,38 @@
 #
 
 PORTNAME=	cube
-PORTVERSION=	2002.10.20
-PORTREVISION=	2
+PORTVERSION=	2004.05.22
 CATEGORIES=	games
-MASTER_SITES=	http://tunes.org/~eihrul/ \
-		http://www.idi.ntnu.no/~jonasf/cube/
-DISTNAME=	${PORTNAME}_${PORTVERSION:S/./_/:S/./_/}
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	${PORTNAME}
+DISTNAME=	${PORTNAME}_${PORTVERSION:S/./_/g}
 
 MAINTAINER=	avleeuwen@piwebs.com
 COMMENT=	An OpenGL 3D First Person Shooter game
 
-USE_SDL=	image mixer sdl
-USE_ZIP=	yes
-USE_GMAKE=	yes
+EXTRACT_DEPENDS+=       unzip:${PORTSDIR}/archivers/unzip
 
+USE_SDL=	image mixer sdl
+USE_GMAKE=	yes
+USE_REINPLACE=	yes
+GNU_CONFIGURE=	yes
+
+WRKSRC=		${WRKDIR}/${PORTNAME}
 BUILD_WRKSRC=	${WRKSRC}/source/src
-EXTRACT_BEFORE_ARGS=-q -a
-EXTRACT_AFTER_ARGS=-d ${WRKDIR}/${DISTNAME}/
 DATADIR=	${PREFIX}/share/cube
+CONFIGURE_WRKSRC=	${WRKSRC}/source/enet
 
 post-extract:
-	@ unzip -a -q -o ${WRKSRC}/source/${DISTNAME}_src.zip -d ${WRKSRC}/source/
+	@ ${UNZIP_CMD} -a -q -o ${WRKSRC}/source/${DISTNAME}_src.zip -d ${WRKSRC}/source/
 
 post-patch:
-	${ECHO_CMD} '#define DATADIR "${DATADIR}"' >> ${BUILD_WRKSRC}/cube.h
+	@${ECHO_CMD} '#define DATADIR "${DATADIR}"' >> ${BUILD_WRKSRC}/cube.h
+	@${REINPLACE_CMD} -e 's|%%CXX%%|${CXX}|g ; \
+		s|%%CXXFLAGS%%|${CXXFLAGS}|g ; s|%%X11BASE%%|${X11BASE}|g' \
+			${BUILD_WRKSRC}/Makefile
+
+pre-configure:
+	@${CHMOD} u+x ${CONFIGURE_WRKSRC}/configure
 
 do-install:
 	${INSTALL_PROGRAM} ${BUILD_WRKSRC}/cube_client ${PREFIX}/bin
@@ -38,6 +46,5 @@ do-install:
 	${CP} -Rp ${WRKSRC}/packages ${DATADIR}
 	${CP} -Rp ${WRKSRC}/data ${DATADIR}
 	${INSTALL_DATA} ${WRKSRC}/autoexec.cfg ${DATADIR}
-	${INSTALL_DATA} ${WRKSRC}/servers.cfg ${DATADIR}
 
 .include <bsd.port.mk>
