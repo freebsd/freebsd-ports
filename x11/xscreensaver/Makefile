@@ -23,7 +23,8 @@ WANT_GNOME=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--without-pam --with-gl --with-gle --with-xpm --with-xml \
 		--with-hackdir=${PREFIX}/bin/xscreensaver-hacks/ \
-		--with-configdir=${PREFIX}/share/xscreensaver/config/
+		--with-configdir=${PREFIX}/share/xscreensaver/config/ \
+		--with-jpeg=${LOCALBASE}
 
 .include <bsd.port.pre.mk>
 
