@@ -10,6 +10,3 @@ static interface.  You can call Class-method> directly, without having
 to pass an instantiation around constantly.
 
 WWW: http://search.cpan.org/dist/Class-Default/
-
--- Sergey Skvortsov
-skv@FreeBSD.org
