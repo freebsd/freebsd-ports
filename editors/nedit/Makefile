@@ -6,14 +6,14 @@
 #
 
 PORTNAME=	nedit
-PORTVERSION=	5.4
+PORTVERSION=	5.5
 CATEGORIES=	editors
-MASTER_SITES=	ftp://nl.nedit.org/pub/NEdit/v5_4/ \
-		ftp://nl.nedit.org/pub/NEdit/contrib/misc/ \
-		http://nl.nedit.org/ftp/v5_4/ \
-		http://nl.nedit.org/ftp/contrib/misc/
-DISTFILES=	nedit-5.4-source.tar.bz2 nedit.app-defaults
-EXTRACT_ONLY=	nedit-5.4-source.tar.bz2
+MASTER_SITES=	ftp://ftp.nedit.org/pub/NEdit/v5_5/ \
+		ftp://ftp.nedit.org/pub/NEdit/contrib/misc/ \
+		http://www.nedit.org/ftp/v5_5/ \
+		http://www.nedit.org/ftp/contrib/misc/
+DISTFILES=	nedit-5.5-src.tar.bz2 nedit.app-defaults
+EXTRACT_ONLY=	nedit-5.5-src.tar.bz2
 
 MAINTAINER=	deischen@freebsd.org
 COMMENT=	An X11/Motif GUI text editor for programs and plain text files
