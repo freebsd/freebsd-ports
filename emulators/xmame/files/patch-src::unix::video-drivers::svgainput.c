@@ -1,10 +1,10 @@
---- src/unix/video-drivers/svgainput.c.orig	Tue Oct 16 11:06:30 2001
-+++ src/unix/video-drivers/svgainput.c	Tue Oct 16 11:05:37 2001
+--- src/unix/video-drivers/svgainput.c.orig	Fri May  3 02:53:54 2002
++++ src/unix/video-drivers/svgainput.c	Thu Oct 31 12:46:04 2002
 @@ -12,6 +12,10 @@
  #include "devices.h"
  #include "keyboard.h"
  
-+#ifdef __FreeBSD__
++#if defined(__ARCH_freebsd)
 +#define	SIGUNUSED	SIGUSR2
 +#endif
 +
