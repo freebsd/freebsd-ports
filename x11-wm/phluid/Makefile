@@ -11,15 +11,14 @@ CATEGORIES=	x11-wm
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	phluid
 
-LIB_DEPENDS=	Imlib2.2:${PORTSDIR}/graphics/imlib2
-
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	a window manager that emphasizes efficiency, speed, and beauty
+COMMENT=	A window manager that emphasizes efficiency, speed, and beauty
 
 USE_X_PREFIX=	yes
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
+USE_GNOME=	imlib
 CONFIGURE_ENV=	CPPFLAGS='-I${X11BASE}/include' \
-		LIBS='-L${X11BASE}/lib -lX11'
+		LIBS='-L${X11BASE}/lib -lX11 -lImlib'
 
 .include <bsd.port.mk>
