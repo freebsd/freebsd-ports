@@ -6,6 +6,22 @@ You should get into the habit of checking this file for changes each
 time you update your ports collection, before attempting any port
 upgrades.
 
+20040703:
+  AFFECTS: users of net/netatalk-devel
+
+  Netatalk-devel has been converted to use RCng.  That means all of the
+  netatalk daemons must be enabled in /etc/rc.conf before they will start
+  (previously, all netatalk daemons would start by default).  The following
+  variables are used by the new netatalk.sh script:
+
+  atalkd_enable
+  cnid_metad_enable
+  papd_enable
+  afpd_enable
+  timelord_enable
+
+  See the netatalk.sh script for more details.
+
 20040701:
   AFFECTS: users of security/portaudit
 
