@@ -41,9 +41,6 @@ PLIST_SUB=	SHLIBNAME=${SHLIBNAME} SHLIBBASE=${SHLIBBASE}
 SHLIBNAME=	lib${SHLIBBASE}.so.${SHLIBMAJ}.0
 .endif
 
-post-extract:
-	@${CP} ${FILESDIR}/safegets.[ch] ${WRKSRC}/src/mtest/
-
 post-configure:
 	@${ECHO_MSG} ">> The c-client shared library will be named ${SHLIBNAME}"
 .if ${PAMAUTH} != "no"
