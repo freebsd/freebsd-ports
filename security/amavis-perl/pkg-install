@@ -20,7 +20,7 @@ elsif ( -f '/etc/sendmail.cf' ) {
 my $cf="$cfg/sendmail.cf";
 my $new="$cfg/amavis.cf";
 
-print "===> Adding neccessary hooks to sendmail.cf file\n";
+print "===> Adding necessary hooks to sendmail.cf file\n";
 
 open(IN, $cf) || die "Cannot open $cf";
 open(OUT, ">$new") || die "Cannot create $new";
