@@ -19,4 +19,10 @@ PERL_CONFIGURE=	yes
 
 MAN3=		ExtUtils::Depends.3
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} < 500800
+BROKEN=		"Does not compile with this version of perl"
+.endif
+
+.include <bsd.port.post.mk>
