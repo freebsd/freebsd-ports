@@ -4,15 +4,15 @@
  PROGRAM = 	xmysql
  
  # PROGRAM install path
--INSTALLPATH = /usr/local/xmysql-1.9
+-INSTALLPATH = /usr/local/xmysql-1.10
 +INSTALLPATH = ${PREFIX}/bin
  
  # pixmap location
--XMYSQL_XPMPATH = /usr/local/xmysql-1.9
+-XMYSQL_XPMPATH = /usr/local/xmysql-1.10
 +XMYSQL_XPMPATH = ${X11BASE}/include/X11/pixmaps
  
  # help path
--XMYSQL_HELPPATH = /usr/local/xmysql-1.9
+-XMYSQL_HELPPATH = /usr/local/xmysql-1.10
 +XMYSQL_HELPPATH = ${X11BASE}/lib/X11/xmysql
  
  # Compilation Details
