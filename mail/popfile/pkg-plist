@@ -3,16 +3,22 @@ sbin/popfile.sh
 %%DATADIR%%/Classifier/MailParse.pm
 %%DATADIR%%/Classifier/WordMangle.pm
 %%DATADIR%%/Classifier/popfile.sql
+%%DATADIR%%/POPFile/API.pm
 %%DATADIR%%/POPFile/Configuration.pm
+%%DATADIR%%/POPFile/History.pm
 %%DATADIR%%/POPFile/Loader.pm
 %%DATADIR%%/POPFile/Logger.pm
 %%DATADIR%%/POPFile/MQ.pm
 %%DATADIR%%/POPFile/Module.pm
 %%DATADIR%%/POPFile/popfile_version
+%%DATADIR%%/Proxy/NNTP.pm
 %%DATADIR%%/Proxy/POP3.pm
 %%DATADIR%%/Proxy/Proxy.pm
+%%DATADIR%%/Proxy/SMTP.pm
+%%DATADIR%%/Services/IMAP.pm
 %%DATADIR%%/UI/HTML.pm
 %%DATADIR%%/UI/HTTP.pm
+%%DATADIR%%/UI/XMLRPC.pm
 %%DATADIR%%/bayes.pl
 %%DATADIR%%/black.gif
 %%DATADIR%%/favicon.ico
@@ -32,6 +38,7 @@ sbin/popfile.sh
 %%DATADIR%%/languages/Hellenic.msg
 %%DATADIR%%/languages/Hungarian.msg
 %%DATADIR%%/languages/Italiano.msg
+%%DATADIR%%/languages/Klingon.msg
 %%DATADIR%%/languages/Korean.msg
 %%DATADIR%%/languages/Nederlands.msg
 %%DATADIR%%/languages/Nihongo.msg
@@ -88,68 +95,155 @@ sbin/popfile.sh
 %%DATADIR%%/manual/p_popfile3.gif
 %%DATADIR%%/manual/zonealaram.gif
 %%DATADIR%%/otto.gif
+%%DATADIR%%/otto.png
 %%DATADIR%%/pipe.pl
 %%DATADIR%%/pix.gif
 %%DATADIR%%/popfile.pl
-%%DATADIR%%/skins/CoolBlue.css
-%%DATADIR%%/skins/CoolBrown.css
-%%DATADIR%%/skins/CoolGreen.css
-%%DATADIR%%/skins/CoolOrange.css
-%%DATADIR%%/skins/CoolYellow.css
-%%DATADIR%%/skins/LRCLaptop.css
-%%DATADIR%%/skins/Lavish.css
-%%DATADIR%%/skins/PRJBlueGrey.css
-%%DATADIR%%/skins/PRJSteelBeach.css
-%%DATADIR%%/skins/SimplyBlue.css
-%%DATADIR%%/skins/Sleet-RTL.css
-%%DATADIR%%/skins/Sleet.css
-%%DATADIR%%/skins/StrawberryRose.css
-%%DATADIR%%/skins/blue.css
-%%DATADIR%%/skins/chipped_obsidian.gif
-%%DATADIR%%/skins/default.css
-%%DATADIR%%/skins/glassblue.css
-%%DATADIR%%/skins/green.css
-%%DATADIR%%/skins/lavishImages/bottom.gif
-%%DATADIR%%/skins/lavishImages/bottomLeft.gif
-%%DATADIR%%/skins/lavishImages/bottomRight.gif
-%%DATADIR%%/skins/lavishImages/buttonSelected.gif
-%%DATADIR%%/skins/lavishImages/buttonUnselected.gif
-%%DATADIR%%/skins/lavishImages/left.gif
-%%DATADIR%%/skins/lavishImages/right.gif
-%%DATADIR%%/skins/lavishImages/top.gif
-%%DATADIR%%/skins/lavishImages/topLeft.gif
-%%DATADIR%%/skins/lavishImages/topRight.gif
-%%DATADIR%%/skins/metalback.gif
-%%DATADIR%%/skins/orange.css
-%%DATADIR%%/skins/orangeCream.css
-%%DATADIR%%/skins/outlook.css
-%%DATADIR%%/skins/sleetImages/bottom.gif
-%%DATADIR%%/skins/sleetImages/bottomLeft.gif
-%%DATADIR%%/skins/sleetImages/bottomRight.gif
-%%DATADIR%%/skins/sleetImages/button.gif
-%%DATADIR%%/skins/sleetImages/left.gif
-%%DATADIR%%/skins/sleetImages/menu.gif
-%%DATADIR%%/skins/sleetImages/menuButton.gif
-%%DATADIR%%/skins/sleetImages/right.gif
-%%DATADIR%%/skins/sleetImages/top.gif
-%%DATADIR%%/skins/sleetImages/topLeft.gif
-%%DATADIR%%/skins/sleetImages/topRight.gif
-%%DATADIR%%/skins/smalldefault.css
-%%DATADIR%%/skins/smallgrey.css
-%%DATADIR%%/skins/tinydefault.css
-%%DATADIR%%/skins/tinygrey.css
-%%DATADIR%%/skins/white.css
-%%DATADIR%%/skins/windows.css
+%%DATADIR%%/skins/blue/style.css
+%%DATADIR%%/skins/coolblue/style.css
+%%DATADIR%%/skins/coolbrown/style.css
+%%DATADIR%%/skins/coolgreen/style.css
+%%DATADIR%%/skins/coolorange/style.css
+%%DATADIR%%/skins/coolyellow/style.css
+%%DATADIR%%/skins/default/advanced-page.thtml
+%%DATADIR%%/skins/default/bucket-page.thtml
+%%DATADIR%%/skins/default/common-bottom.thtml
+%%DATADIR%%/skins/default/common-middle.thtml
+%%DATADIR%%/skins/default/common-top.thtml
+%%DATADIR%%/skins/default/configuration-page.thtml
+%%DATADIR%%/skins/default/corpus-page.thtml
+%%DATADIR%%/skins/default/history-navigator-widget.thtml
+%%DATADIR%%/skins/default/history-page.thtml
+%%DATADIR%%/skins/default/history-search-filter-widget.thtml
+%%DATADIR%%/skins/default/imap-bucket-folders.thtml
+%%DATADIR%%/skins/default/imap-connection-details.thtml
+%%DATADIR%%/skins/default/imap-options.thtml
+%%DATADIR%%/skins/default/imap-update-mailbox-list.thtml
+%%DATADIR%%/skins/default/imap-watch-folders.thtml
+%%DATADIR%%/skins/default/imap-watch-more-folders.thtml
+%%DATADIR%%/skins/default/magnet-navigator.thtml
+%%DATADIR%%/skins/default/magnet-page.thtml
+%%DATADIR%%/skins/default/magnet.png
+%%DATADIR%%/skins/default/nntp-force-fork.thtml
+%%DATADIR%%/skins/default/nntp-port.thtml
+%%DATADIR%%/skins/default/nntp-security-local.thtml
+%%DATADIR%%/skins/default/nntp-separator.thtml
+%%DATADIR%%/skins/default/password-page.thtml
+%%DATADIR%%/skins/default/pop3-chain-panel.thtml
+%%DATADIR%%/skins/default/pop3-configuration-panel.thtml
+%%DATADIR%%/skins/default/pop3-security-panel.thtml
+%%DATADIR%%/skins/default/security-page.thtml
+%%DATADIR%%/skins/default/session-page.thtml
+%%DATADIR%%/skins/default/shutdown-page.thtml
+%%DATADIR%%/skins/default/smtp-chain-server-port.thtml
+%%DATADIR%%/skins/default/smtp-chain-server.thtml
+%%DATADIR%%/skins/default/smtp-configuration.thtml
+%%DATADIR%%/skins/default/smtp-security-local.thtml
+%%DATADIR%%/skins/default/socks-widget.thtml
+%%DATADIR%%/skins/default/style.css
+%%DATADIR%%/skins/default/view-page.thtml
+%%DATADIR%%/skins/default/view-quickmagnets-widget.thtml
+%%DATADIR%%/skins/default/view-scores-widget.thtml
+%%DATADIR%%/skins/default/windows-configuration.thtml
+%%DATADIR%%/skins/default/xmlrpc-local.thtml
+%%DATADIR%%/skins/default/xmlrpc-port.thtml
+%%DATADIR%%/skins/glassblue/style.css
+%%DATADIR%%/skins/green/style.css
+%%DATADIR%%/skins/lavish/bottom.gif
+%%DATADIR%%/skins/lavish/bottomLeft.gif
+%%DATADIR%%/skins/lavish/bottomRight.gif
+%%DATADIR%%/skins/lavish/buttonSelected.gif
+%%DATADIR%%/skins/lavish/buttonUnselected.gif
+%%DATADIR%%/skins/lavish/left.gif
+%%DATADIR%%/skins/lavish/right.gif
+%%DATADIR%%/skins/lavish/style.css
+%%DATADIR%%/skins/lavish/top.gif
+%%DATADIR%%/skins/lavish/topLeft.gif
+%%DATADIR%%/skins/lavish/topRight.gif
+%%DATADIR%%/skins/lrclaptop/style.css
+%%DATADIR%%/skins/oceanblue/common-bottom.thtml
+%%DATADIR%%/skins/oceanblue/common-middle.thtml
+%%DATADIR%%/skins/oceanblue/common-top.thtml
+%%DATADIR%%/skins/oceanblue/style.css
+%%DATADIR%%/skins/orange/style.css
+%%DATADIR%%/skins/orangecream/style.css
+%%DATADIR%%/skins/osx/style.css
+%%DATADIR%%/skins/outlook/style.css
+%%DATADIR%%/skins/prjbluegrey/style.css
+%%DATADIR%%/skins/prjsteelbeach/chipped_obsidian.gif
+%%DATADIR%%/skins/prjsteelbeach/metalback.gif
+%%DATADIR%%/skins/prjsteelbeach/style.css
+%%DATADIR%%/skins/simplyblue/style.css
+%%DATADIR%%/skins/sleet-rtl/bottom.gif
+%%DATADIR%%/skins/sleet-rtl/bottomLeft.gif
+%%DATADIR%%/skins/sleet-rtl/bottomRight.gif
+%%DATADIR%%/skins/sleet-rtl/button.gif
+%%DATADIR%%/skins/sleet-rtl/button2.gif
+%%DATADIR%%/skins/sleet-rtl/left.gif
+%%DATADIR%%/skins/sleet-rtl/menu.gif
+%%DATADIR%%/skins/sleet-rtl/menuButton.gif
+%%DATADIR%%/skins/sleet-rtl/right.gif
+%%DATADIR%%/skins/sleet-rtl/style.css
+%%DATADIR%%/skins/sleet-rtl/top.gif
+%%DATADIR%%/skins/sleet-rtl/topLeft.gif
+%%DATADIR%%/skins/sleet-rtl/topRight.gif
+%%DATADIR%%/skins/sleet/bottom.gif
+%%DATADIR%%/skins/sleet/bottomLeft.gif
+%%DATADIR%%/skins/sleet/bottomRight.gif
+%%DATADIR%%/skins/sleet/button.gif
+%%DATADIR%%/skins/sleet/button2.gif
+%%DATADIR%%/skins/sleet/left.gif
+%%DATADIR%%/skins/sleet/menu.gif
+%%DATADIR%%/skins/sleet/menuButton.gif
+%%DATADIR%%/skins/sleet/right.gif
+%%DATADIR%%/skins/sleet/style.css
+%%DATADIR%%/skins/sleet/top.gif
+%%DATADIR%%/skins/sleet/topLeft.gif
+%%DATADIR%%/skins/sleet/topRight.gif
+%%DATADIR%%/skins/smalldefault/style.css
+%%DATADIR%%/skins/smallgrey/style.css
+%%DATADIR%%/skins/strawberryrose/style.css
+%%DATADIR%%/skins/tinydefault/style.css
+%%DATADIR%%/skins/tinygrey/style.css
+%%DATADIR%%/skins/white/style.css
+%%DATADIR%%/skins/windows/style.css
 %%DATADIR%%/stopwords
 %%DATADIR%%/v%%PORTVERSION%%.change
-@dirrm %%DATADIR%%/Classifier
-@dirrm %%DATADIR%%/POPFile
-@dirrm %%DATADIR%%/Proxy
-@dirrm %%DATADIR%%/UI
+@dirrm %%DATADIR%%/skins/windows
+@dirrm %%DATADIR%%/skins/white
+@dirrm %%DATADIR%%/skins/tinygrey
+@dirrm %%DATADIR%%/skins/tinydefault
+@dirrm %%DATADIR%%/skins/strawberryrose
+@dirrm %%DATADIR%%/skins/smallgrey
+@dirrm %%DATADIR%%/skins/smalldefault
+@dirrm %%DATADIR%%/skins/sleet-rtl
+@dirrm %%DATADIR%%/skins/sleet
+@dirrm %%DATADIR%%/skins/simplyblue
+@dirrm %%DATADIR%%/skins/prjsteelbeach
+@dirrm %%DATADIR%%/skins/prjbluegrey
+@dirrm %%DATADIR%%/skins/outlook
+@dirrm %%DATADIR%%/skins/osx
+@dirrm %%DATADIR%%/skins/orangecream
+@dirrm %%DATADIR%%/skins/orange
+@dirrm %%DATADIR%%/skins/oceanblue
+@dirrm %%DATADIR%%/skins/lrclaptop
+@dirrm %%DATADIR%%/skins/lavish
+@dirrm %%DATADIR%%/skins/green
+@dirrm %%DATADIR%%/skins/glassblue
+@dirrm %%DATADIR%%/skins/default
+@dirrm %%DATADIR%%/skins/coolyellow
+@dirrm %%DATADIR%%/skins/coolorange
+@dirrm %%DATADIR%%/skins/coolgreen
+@dirrm %%DATADIR%%/skins/coolbrown
+@dirrm %%DATADIR%%/skins/coolblue
+@dirrm %%DATADIR%%/skins/blue
+@dirrm %%DATADIR%%/skins
 @dirrm %%DATADIR%%/manual/en
 @dirrm %%DATADIR%%/manual
 @dirrm %%DATADIR%%/languages
-@dirrm %%DATADIR%%/skins/lavishImages
-@dirrm %%DATADIR%%/skins/sleetImages
-@dirrm %%DATADIR%%/skins
+@dirrm %%DATADIR%%/UI
+@dirrm %%DATADIR%%/Services
+@dirrm %%DATADIR%%/Proxy
+@dirrm %%DATADIR%%/POPFile
+@dirrm %%DATADIR%%/Classifier
 @dirrm %%DATADIR%%
