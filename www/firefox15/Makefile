@@ -92,6 +92,10 @@ LIBS+=			${PTHREAD_LIBS}
 
 EXTRA_SCRIPTS=		firebird.rb
 
+.if ${ARCH} == "alpha" && ${OSVERSION} < 500035
+IGNORE=	"core dumps on alpha during post-build"
+.endif
+
 pre-extract::
 	@${ECHO_MSG}
 	@${ECHO_MSG} "Extracting source (this takes a while) ..."

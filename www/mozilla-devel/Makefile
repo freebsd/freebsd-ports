@@ -168,7 +168,7 @@ CONFIGURE_ARGS+=	--enable-optimize=-O2
 .endif
 
 .if ${ARCH} == "alpha" && ${OSVERSION} < 500035
-BROKEN=	"core dumps on alpha during post-build"
+IGNORE=	"core dumps on alpha during post-build"
 .endif
 
 .if exists(${LOCALBASE}/include/freetype/freetype.h)
