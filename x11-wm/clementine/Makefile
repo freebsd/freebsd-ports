@@ -22,7 +22,7 @@ USE_GMAKE=	yes
 USE_X_PREFIX=	yes
 DOCS=		COPYING HISTORY LICENSE
 
-do-patch:
+post-patch:
 	${PERL} -pi -e 's:^CFLAGS:IGNORE:g ; s:^DEFINES:IGNORE:g' \
 		${WRKSRC}/Makefile
 	${PERL} -pi -e 's:./clementine:${PREFIX}/bin/clementine:g' \
