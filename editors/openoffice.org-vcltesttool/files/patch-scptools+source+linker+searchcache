@@ -1,0 +1,34 @@
+Index: files/patch-scptools::source::linker::searchcache
+===================================================================
+RCS file: files/patch-scptools::source::linker::searchcache
+diff -N files/patch-scptools::source::linker::searchcache
+--- /dev/null	1 Jan 1970 00:00:00 -0000
++++ files/patch-scptools::source::linker::searchcache	4 Aug 2002 15:28:04 -0000
+@@ -0,0 +1,27 @@
++--- ../scptools/source/linker/searchcache.hxx.orig	Fri Aug  2 22:53:46 2002
+++++ ../scptools/source/linker/searchcache.hxx	Fri Aug  2 22:54:50 2002
++@@ -72,11 +72,11 @@
++ //	types
++ ///////////////////////////////////////////////////////////////////////////////
++ 
++-DECLARE_LIST( FileList, ByteString* )
+++DECLARE_LIST( SCacheFileList, ByteString* )
++ struct Include
++ {
++ 	ByteString	aBaseDir;
++-	FileList	aFileLst;
+++	SCacheFileList	aFileLst;
++ };
++ DECLARE_LIST( IncludeList, Include* )
++ 
++--- ../scptools/source/linker/searchcache.cxx.orig	Fri Aug  2 22:53:35 2002
+++++ ../scptools/source/linker/searchcache.cxx	Fri Aug  2 22:55:14 2002
++@@ -218,7 +218,7 @@
++ 		rPath += aDelim;
++ }
++ 
++-void ScanFileList( const ByteString& rPath, FileList& rLst )
+++void ScanFileList( const ByteString& rPath, SCacheFileList& rLst )
++ {
++ 	Dir aFiles( rPath, FSYS_KIND_FILE );
++ 	for( USHORT i = 0; i < aFiles.Count(); ++i )
