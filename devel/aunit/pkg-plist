@@ -1,0 +1,23 @@
+include/aunit/aunit-assertions.adb
+include/aunit/aunit-assertions.ads
+include/aunit/aunit-lists.adb
+include/aunit/aunit-lists.ads
+include/aunit/aunit-options.adb
+include/aunit/aunit-options.ads
+include/aunit/aunit-test_cases-registration.adb
+include/aunit/aunit-test_cases-registration.ads
+include/aunit/aunit-test_cases.adb
+include/aunit/aunit-test_cases.ads
+include/aunit/aunit-test_results-text_reporter.adb
+include/aunit/aunit-test_results-text_reporter.ads
+include/aunit/aunit-test_results.adb
+include/aunit/aunit-test_results.ads
+include/aunit/aunit-test_runner.adb
+include/aunit/aunit-test_runner.ads
+include/aunit/aunit-test_suites.adb
+include/aunit/aunit-test_suites.ads
+include/aunit/aunit-tests.ads
+include/aunit/aunit.ads
+@dirrm include/aunit
+%%PORTDOCS%%share/doc/aunit/AUnit.html
+%%PORTDOCS%%@dirrm share/doc/aunit
