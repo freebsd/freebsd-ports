@@ -49,6 +49,7 @@ DATAFILES=	WindowMaker-extra-0.1.tar.bz2
 
 .if defined(HAVE_GNOME)
 CONFIGURE_ARGS+=	--enable-gnome
+USE_GNOME=	yes
 .endif
 
 .if defined(WITH_KDE)
