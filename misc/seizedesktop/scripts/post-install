@@ -1,0 +1,31 @@
+#!/bin/sh
+
+installdir=${PREFIX}/JDE/SeizeDesktop; export installdir
+
+case ${LANGUAGE} in
+    Japanese)
+	for f in SeizeDesktop.app PrefDesktop.app; do
+	    ${PERL} -pi -e '
+		s/^(exec[ \t]+)wishstep[^ \t]*([ \t]+.*)$/$1wishstep$ENV{VERSION}jp$2/
+		' ${installdir}/bin/${f}
+	done
+    ;;
+    *)
+    ;;
+esac
+for f in SeizeDesktop SeizeDesktop.app PrefDesktop.app; do
+    case ${f} in
+	SeizeDesktop.app|PrefDesktop.app)
+	    target=${installdir}/bin/${f}
+	;;
+	SeizeDesktop)
+	    target=${installdir}/default/${f}
+	;;
+    esac
+    ${PERL} -pi -e '
+        s/^([ \t]*set[ \t]+dtLib[ \t]+)"[^"]*"$/$1"$ENV{installdir}"/;
+        ' ${target}
+done
+
+${LN} -sf ${installdir}/bin/SeizeDesktop.app ${PREFIX}/bin
+${LN} -sf ${installdir}/bin/PrefDesktop.app ${PREFIX}/bin
