@@ -21,7 +21,8 @@ BUILD_DEPENDS=	grepmail:${PORTSDIR}/mail/grepmail \
 RUN_DEPENDS=	grepmail:${PORTSDIR}/mail/grepmail \
 		${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/${PERL_ARCH}/Gnome.pm:${PORTSDIR}/x11-toolkits/p5-Gnome \
 		${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/Date/Manip.pm:${PORTSDIR}/devel/p5-Date-Manip \
-		${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/URI.pm:${PORTSDIR}/net/p5-URI
+		${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/URI.pm:${PORTSDIR}/net/p5-URI \
+		${X11BASE}/bin/gnome-help-browser:${PORTSDIR}/x11/gnomecore
 
 PERL_CONFIGURE=	YES
 
