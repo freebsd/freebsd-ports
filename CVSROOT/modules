@@ -1484,6 +1484,7 @@ documancer	ports/misc/documancer
 dodgindiamond2	ports/games/dodgindiamond2
 dog		ports/misc/dog
 dolly		ports/sysutils/dolly
+dolly+		ports/sysutils/dolly+
 domc		ports/textproc/domc
 domtools	ports/dns/domtools
 donkey		ports/security/donkey
