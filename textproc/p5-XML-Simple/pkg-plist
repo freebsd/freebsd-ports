@@ -1,5 +1,6 @@
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/XML/Simple/.packlist
-lib/perl5/site_perl/%%PERL_VER%%/XML/Simple.pm
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/XML/Simple
-@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/XML 2>/dev/null || true
-@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/XML 2>/dev/null || true
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/Simple/.packlist
+%%SITE_PERL%%/XML/Simple.pm
+%%SITE_PERL%%/XML/Simple/FAQ.pod
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/Simple
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/XML 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/XML 2>/dev/null || true
