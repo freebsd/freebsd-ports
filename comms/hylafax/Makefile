@@ -1,15 +1,17 @@
 # ports collection makefile for:	hylafax
-# Version required:	v4.0pl1
+# Version required:	v4.0pl2
 # Date created:		19 Apr 1997
 # Whom:			Jun-ichiro itojun Itoh <itojun@itojun.org>
 #
-# $Id: Makefile,v 1.10 1997/11/05 15:37:36 tg Exp $
+# $Id: Makefile,v 1.11 1997/12/01 08:07:14 tg Exp $
 #
 
-DISTNAME=	hylafax-v4.0pl1
-PKGNAME=	hylafax-4.0.1
+DISTNAME=	hylafax-v4.0pl2
+PKGNAME=	hylafax-4.0.2
 CATEGORIES=	comms
-MASTER_SITES=	ftp://ftp.sgi.com/sgi/fax/source/
+MASTER_SITES=	ftp://ftp.sgi.com/sgi/fax/source/ \
+		ftp://ftp.leo.org/pub/comp/os/unix/networking/fax/hylafax/source/ \
+		ftp://ftp.sisis.de/pub/hylafax/source/
 EXTRACT_SUFX=	-tar.gz
 
 MAINTAINER=	itojun@itojun.org
