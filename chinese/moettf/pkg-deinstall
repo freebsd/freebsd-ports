@@ -9,7 +9,7 @@ PREFIX=${PKG_PREFIX}
 TTFM=${PKG_PREFIX}/bin/ttfm.sh
 
 FONTDIR=${PREFIX}/share/fonts/TrueType
-FONTS="moe_lishu.ttf moe_kai.ttf moe_sung.ttf moe_sungext.ttf moe_sungsym.ttf"
+FONTS="moe_lishu.ttf moe_kai.ttf moe_sung.ttf moe_sungext.ttf moe_sungsym.ttf moe_kai_pc.ttf"
 
 if [ -r $FONTDIR/$PKGNAME ]; then
     for i in `cat $FONTDIR/$PKGNAME`; do

@@ -9,14 +9,14 @@ PREFIX=${PKG_PREFIX}
 TTFM=${PREFIX}/bin/ttfm.sh
 
 FONTDIR=${PREFIX}/share/fonts/TrueType
-FONTS="moe_lishu.ttf moe_kai.ttf moe_sung.ttf moe_sungext.ttf moe_sungsym.ttf"
+FONTS="moe_lishu.ttf moe_kai.ttf moe_sung.ttf moe_sungext.ttf moe_sungsym.ttf moe_kai_pc.ttf"
 if [ "X$DEFAULT" != "X" ]; then
     DEFAULTMING="moe_sung.ttf"
     DEFAULTKAI="moe_kai.ttf"
 fi
 
 TEMPFILE=`mktemp -q /tmp/moettf.XXXX`
-XFONTDIR=/usr/X11R6/lib/X11/fonts/TrueType
+XFONTDIR=${X11BASE}/lib/X11/fonts/TrueType
 
 if [ ! -x $TTFM ]; then
     echo "$TTFM not found!"

@@ -7,12 +7,15 @@
 
 PORTNAME=	moettf
 PORTVERSION=	2.0
+PORTREVISION=	1
 CATEGORIES=	chinese x11-fonts
-MASTER_SITES=	ftp://www.edu.tw/download/mandr/biauword/5879/ \
-		ftp://www.edu.tw/download/mandr/allbook/lishu/ \
+MASTER_SITES=	http://www.edu.tw/download/mandr/biauword/5879/ \
+		http://www.edu.tw/download/mandr/allbook/lishu/ \
+		http://www.edu.tw/download/mandr/biauword/kai/ \
 		ftp://freebsd.sinica.edu.tw/pub/keith/moettf/ \
 		ftp://ftp.cc.ntut.edu.tw/OS/Linux/packages/chinese/fonts/twmoefont/ttf/
-DISTFILES=	moe_kai.ttf moe_sung.ttf edustds1.exe edustds2.exe edustd-15.exe
+DISTFILES=	moe_kai.ttf moe_sung.ttf edustds1.exe edustds2.exe \
+		edustd-15.exe kai-pc.ttf
 
 MAINTAINER=	keith@FreeBSD.org
 COMMENT=	Three Chinese BIG5 TrueType fonts: Kai LiShu Sung SungExt
@@ -83,6 +86,7 @@ do-install:
 .endif
 	@${INSTALL_DATA} ${WRKDIR}/moe_lishu.ttf ${FONTDIR}
 	@${INSTALL_DATA} ${DISTDIR}/${DIST_SUBDIR}/moe_kai.ttf ${FONTDIR}
+	@${INSTALL_DATA} ${DISTDIR}/${DIST_SUBDIR}/kai-pc.ttf ${FONTDIR}/moe_kai_pc.ttf
 	@${INSTALL_DATA} ${DISTDIR}/${DIST_SUBDIR}/moe_sung.ttf ${FONTDIR}
 	@${INSTALL_DATA} ${WRKDIR}/moe_sungext.ttf ${FONTDIR}
 	@${INSTALL_DATA} ${WRKDIR}/moe_sungsym.ttf ${FONTDIR}
