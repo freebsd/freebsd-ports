@@ -232,11 +232,12 @@ info/gsl-ref.info-19
 info/gsl-ref.info-20
 info/gsl-ref.info-21
 info/gsl-ref.info-22
+info/gsl-ref.info-23
 @exec install-info %D/info/gsl-ref.info %D/info/dir
 lib/libgsl.a
 lib/libgsl.la
 lib/libgsl.so
-lib/libgsl.so.3
+lib/libgsl.so.4
 lib/libgslcblas.a
 lib/libgslcblas.la
 lib/libgslcblas.so
