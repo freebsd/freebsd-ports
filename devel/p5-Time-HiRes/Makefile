@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Time-HiRes
-PORTVERSION=	1.47
+PORTVERSION=	1.50
 PORTEPOCH=	1
 CATEGORIES=	devel perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
@@ -17,10 +17,8 @@ MAINTAINER=	tobez@FreeBSD.org
 COMMENT=	A perl5 module implementing High resolution time, sleep, and alarm
 
 PERL_CONFIGURE=	yes
+CONFIGURE_ARGS= INSTALLDIRS=site
 
 MAN3=		Time::HiRes.3
-
-post-patch:
-	${PERL} -pi -e '$$_ = "" if /MAN3PODS|INSTALLDIRS/' ${WRKSRC}/Makefile.PL
 
 .include <bsd.port.mk>
