@@ -6011,6 +6011,7 @@ ruby-gimp	ports/graphics/ruby-gimp
 ruby-gnome	ports/x11/ruby-gnome
 ruby-gnuplot	ports/math/ruby-gnuplot
 ruby-gnustep	ports/devel/ruby-gnustep
+ruby-google	ports/www/ruby-google
 ruby-graph	ports/graphics/ruby-graph
 ruby-gserver	ports/net/ruby-gserver
 ruby-gsl	ports/math/ruby-gsl
