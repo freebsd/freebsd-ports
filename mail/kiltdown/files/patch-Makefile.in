@@ -1,5 +1,5 @@
 --- kiltdown/Makefile.in.orig	Mon May 14 05:25:23 2001
-+++ kiltdown/Makefile.in	Sat Jun 16 14:02:23 2001
++++ kiltdown/Makefile.in	Thu Dec 27 06:20:25 2001
 @@ -21,7 +21,7 @@
  ###################################################################
  #
@@ -14,7 +14,7 @@
  CFLAGS=$(CFLAGSBASE) -fno-implicit-templates
  LDFLAGS= $(SYS_LDFLAGS) -L$(QTLIB) -L$(DBLIB) -L$(X11LIB) $(USER_LPATH)
 -LIBS=-lSM -lX11 -lXext -lICE -lqt-mt -ldb $(JPEGLIB) $(SYS_LIBS) $(USER_LIBS)
-+LIBS=-lSM -lX11 -lXext -lICE -lqt2-mt -ldb $(JPEGLIB) $(SYS_LIBS) $(USER_LIBS)
++LIBS=-lSM -lX11 -lXext -lICE -lqt2-mt -ldb3 $(JPEGLIB) $(SYS_LIBS) $(USER_LIBS)
  
  #
  ###################################################################
