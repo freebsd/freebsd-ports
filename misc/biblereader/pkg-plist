@@ -1,3 +1,4 @@
 bin/biblereader
-%%DATADIR%%/kjv
+%%PORTDOCS%%%%DOCSDIR%%/README
 @dirrm %%DATADIR%%
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
