@@ -1,5 +1,8 @@
+@comment $FreeBSD$
 bin/autopoint
+bin/envsubst
 bin/gettext
+bin/gettext.sh
 bin/gettextize
 bin/msgattrib
 bin/msgcat
@@ -27,12 +30,12 @@ lib/libgettextlib-%%VERSION%%.so
 lib/libgettextlib.so
 lib/libgettextpo.a
 lib/libgettextpo.so
-lib/libgettextpo.so.0
+lib/libgettextpo.so.1
 lib/libgettextsrc-%%VERSION%%.so
 lib/libgettextsrc.so
 lib/libintl.a
 lib/libintl.so
-lib/libintl.so.5
+lib/libintl.so.6
 libdata/gettext-tools/hostname
 libdata/gettext-tools/project-id
 libdata/gettext-tools/urlget
@@ -42,6 +45,7 @@ share/aclocal/gettext.m4
 share/aclocal/glibc21.m4
 share/aclocal/iconv.m4
 share/aclocal/intdiv0.m4
+share/aclocal/intmax.m4
 share/aclocal/inttypes-pri.m4
 share/aclocal/inttypes.m4
 share/aclocal/inttypes_h.m4
@@ -50,15 +54,493 @@ share/aclocal/lcmessage.m4
 share/aclocal/lib-ld.m4
 share/aclocal/lib-link.m4
 share/aclocal/lib-prefix.m4
+share/aclocal/longdouble.m4
+share/aclocal/longlong.m4
 share/aclocal/nls.m4
 share/aclocal/po.m4
+share/aclocal/printf-posix.m4
 share/aclocal/progtest.m4
+share/aclocal/signed.m4
+share/aclocal/size_max.m4
 share/aclocal/stdint_h.m4
 share/aclocal/uintmax_t.m4
 share/aclocal/ulonglong.m4
+share/aclocal/wchar_t.m4
+share/aclocal/wint_t.m4
+share/aclocal/xsize.m4
 %%DOCSDIR%%/autopoint.1.html
 %%DOCSDIR%%/bind_textdomain_codeset.3.html
 %%DOCSDIR%%/bindtextdomain.3.html
+%%DOCSDIR%%/envsubst.1.html
+%%DOCSDIR%%/examples/README
+%%DOCSDIR%%/examples/config/gcj.m4
+%%DOCSDIR%%/examples/config/javacomp.m4
+%%DOCSDIR%%/examples/config/javacomp.sh.in
+%%DOCSDIR%%/examples/config/javaexec.m4
+%%DOCSDIR%%/examples/config/javaexec.sh.in
+%%DOCSDIR%%/examples/hello-c++-gnome/INSTALL
+%%DOCSDIR%%/examples/hello-c++-gnome/Makefile.am
+%%DOCSDIR%%/examples/hello-c++-gnome/autoclean.sh
+%%DOCSDIR%%/examples/hello-c++-gnome/autogen.sh
+%%DOCSDIR%%/examples/hello-c++-gnome/configure.ac
+%%DOCSDIR%%/examples/hello-c++-gnome/hello.cc
+%%DOCSDIR%%/examples/hello-c++-gnome/m4/Makefile.am
+%%DOCSDIR%%/examples/hello-c++-gnome/m4/gnome-gnorba-check.m4
+%%DOCSDIR%%/examples/hello-c++-gnome/m4/gnome-orbit-check.m4
+%%DOCSDIR%%/examples/hello-c++-gnome/m4/gnome.m4
+%%DOCSDIR%%/examples/hello-c++-gnome/m4/gtk--.m4
+%%DOCSDIR%%/examples/hello-c++-gnome/m4/gtk.m4
+%%DOCSDIR%%/examples/hello-c++-gnome/po/LINGUAS
+%%DOCSDIR%%/examples/hello-c++-gnome/po/Makevars
+%%DOCSDIR%%/examples/hello-c++-gnome/po/POTFILES.in
+%%DOCSDIR%%/examples/hello-c++-gnome/po/ca.po
+%%DOCSDIR%%/examples/hello-c++-gnome/po/de.po
+%%DOCSDIR%%/examples/hello-c++-gnome/po/es.po
+%%DOCSDIR%%/examples/hello-c++-gnome/po/fr.po
+%%DOCSDIR%%/examples/hello-c++-gnome/po/ja.po
+%%DOCSDIR%%/examples/hello-c++-gnome/po/pl.po
+%%DOCSDIR%%/examples/hello-c++-gnome/po/ro.po
+%%DOCSDIR%%/examples/hello-c++-gnome/po/sr.po
+%%DOCSDIR%%/examples/hello-c++-gnome/po/zh_CN.po
+%%DOCSDIR%%/examples/hello-c++-kde/INSTALL
+%%DOCSDIR%%/examples/hello-c++-kde/Makefile.am
+%%DOCSDIR%%/examples/hello-c++-kde/autoclean.sh
+%%DOCSDIR%%/examples/hello-c++-kde/autogen.sh
+%%DOCSDIR%%/examples/hello-c++-kde/configure.in.in
+%%DOCSDIR%%/examples/hello-c++-kde/hello.cc
+%%DOCSDIR%%/examples/hello-c++-kde/hellowindow.cc
+%%DOCSDIR%%/examples/hello-c++-kde/hellowindow.h
+%%DOCSDIR%%/examples/hello-c++-kde/m4/Makefile.am
+%%DOCSDIR%%/examples/hello-c++-kde/po/LINGUAS
+%%DOCSDIR%%/examples/hello-c++-kde/po/Makevars
+%%DOCSDIR%%/examples/hello-c++-kde/po/POTFILES.in
+%%DOCSDIR%%/examples/hello-c++-kde/po/ca.po
+%%DOCSDIR%%/examples/hello-c++-kde/po/de.po
+%%DOCSDIR%%/examples/hello-c++-kde/po/es.po
+%%DOCSDIR%%/examples/hello-c++-kde/po/fr.po
+%%DOCSDIR%%/examples/hello-c++-kde/po/ja.po
+%%DOCSDIR%%/examples/hello-c++-kde/po/pl.po
+%%DOCSDIR%%/examples/hello-c++-kde/po/ro.po
+%%DOCSDIR%%/examples/hello-c++-kde/po/sr.po
+%%DOCSDIR%%/examples/hello-c++-kde/po/zh_CN.po
+%%DOCSDIR%%/examples/hello-c++-qt/INSTALL
+%%DOCSDIR%%/examples/hello-c++-qt/Makefile.am
+%%DOCSDIR%%/examples/hello-c++-qt/autoclean.sh
+%%DOCSDIR%%/examples/hello-c++-qt/autogen.sh
+%%DOCSDIR%%/examples/hello-c++-qt/configure.ac
+%%DOCSDIR%%/examples/hello-c++-qt/hello.cc
+%%DOCSDIR%%/examples/hello-c++-qt/m4/Makefile.am
+%%DOCSDIR%%/examples/hello-c++-qt/m4/qt.m4
+%%DOCSDIR%%/examples/hello-c++-qt/po/LINGUAS
+%%DOCSDIR%%/examples/hello-c++-qt/po/Makefile.am
+%%DOCSDIR%%/examples/hello-c++-qt/po/ca.po
+%%DOCSDIR%%/examples/hello-c++-qt/po/de.po
+%%DOCSDIR%%/examples/hello-c++-qt/po/es.po
+%%DOCSDIR%%/examples/hello-c++-qt/po/fr.po
+%%DOCSDIR%%/examples/hello-c++-qt/po/ja.po
+%%DOCSDIR%%/examples/hello-c++-qt/po/pl.po
+%%DOCSDIR%%/examples/hello-c++-qt/po/ro.po
+%%DOCSDIR%%/examples/hello-c++-qt/po/sr.po
+%%DOCSDIR%%/examples/hello-c++-qt/po/zh_CN.po
+%%DOCSDIR%%/examples/hello-c++/INSTALL
+%%DOCSDIR%%/examples/hello-c++/Makefile.am
+%%DOCSDIR%%/examples/hello-c++/autoclean.sh
+%%DOCSDIR%%/examples/hello-c++/autogen.sh
+%%DOCSDIR%%/examples/hello-c++/configure.ac
+%%DOCSDIR%%/examples/hello-c++/hello.cc
+%%DOCSDIR%%/examples/hello-c++/m4/Makefile.am
+%%DOCSDIR%%/examples/hello-c++/po/LINGUAS
+%%DOCSDIR%%/examples/hello-c++/po/Makevars
+%%DOCSDIR%%/examples/hello-c++/po/POTFILES.in
+%%DOCSDIR%%/examples/hello-c++/po/ca.po
+%%DOCSDIR%%/examples/hello-c++/po/de.po
+%%DOCSDIR%%/examples/hello-c++/po/es.po
+%%DOCSDIR%%/examples/hello-c++/po/fr.po
+%%DOCSDIR%%/examples/hello-c++/po/ja.po
+%%DOCSDIR%%/examples/hello-c++/po/pl.po
+%%DOCSDIR%%/examples/hello-c++/po/ro.po
+%%DOCSDIR%%/examples/hello-c++/po/sr.po
+%%DOCSDIR%%/examples/hello-c++/po/zh_CN.po
+%%DOCSDIR%%/examples/hello-c-gnome/INSTALL
+%%DOCSDIR%%/examples/hello-c-gnome/Makefile.am
+%%DOCSDIR%%/examples/hello-c-gnome/autoclean.sh
+%%DOCSDIR%%/examples/hello-c-gnome/autogen.sh
+%%DOCSDIR%%/examples/hello-c-gnome/configure.ac
+%%DOCSDIR%%/examples/hello-c-gnome/hello.c
+%%DOCSDIR%%/examples/hello-c-gnome/m4/Makefile.am
+%%DOCSDIR%%/examples/hello-c-gnome/m4/gnome-gnorba-check.m4
+%%DOCSDIR%%/examples/hello-c-gnome/m4/gnome-orbit-check.m4
+%%DOCSDIR%%/examples/hello-c-gnome/m4/gnome.m4
+%%DOCSDIR%%/examples/hello-c-gnome/po/LINGUAS
+%%DOCSDIR%%/examples/hello-c-gnome/po/Makevars
+%%DOCSDIR%%/examples/hello-c-gnome/po/POTFILES.in
+%%DOCSDIR%%/examples/hello-c-gnome/po/ca.po
+%%DOCSDIR%%/examples/hello-c-gnome/po/de.po
+%%DOCSDIR%%/examples/hello-c-gnome/po/es.po
+%%DOCSDIR%%/examples/hello-c-gnome/po/fr.po
+%%DOCSDIR%%/examples/hello-c-gnome/po/ja.po
+%%DOCSDIR%%/examples/hello-c-gnome/po/pl.po
+%%DOCSDIR%%/examples/hello-c-gnome/po/ro.po
+%%DOCSDIR%%/examples/hello-c-gnome/po/sr.po
+%%DOCSDIR%%/examples/hello-c-gnome/po/zh_CN.po
+%%DOCSDIR%%/examples/hello-c/INSTALL
+%%DOCSDIR%%/examples/hello-c/Makefile.am
+%%DOCSDIR%%/examples/hello-c/autoclean.sh
+%%DOCSDIR%%/examples/hello-c/autogen.sh
+%%DOCSDIR%%/examples/hello-c/configure.ac
+%%DOCSDIR%%/examples/hello-c/hello.c
+%%DOCSDIR%%/examples/hello-c/m4/Makefile.am
+%%DOCSDIR%%/examples/hello-c/po/LINGUAS
+%%DOCSDIR%%/examples/hello-c/po/Makevars
+%%DOCSDIR%%/examples/hello-c/po/POTFILES.in
+%%DOCSDIR%%/examples/hello-c/po/ca.po
+%%DOCSDIR%%/examples/hello-c/po/de.po
+%%DOCSDIR%%/examples/hello-c/po/es.po
+%%DOCSDIR%%/examples/hello-c/po/fr.po
+%%DOCSDIR%%/examples/hello-c/po/ja.po
+%%DOCSDIR%%/examples/hello-c/po/pl.po
+%%DOCSDIR%%/examples/hello-c/po/ro.po
+%%DOCSDIR%%/examples/hello-c/po/sr.po
+%%DOCSDIR%%/examples/hello-c/po/zh_CN.po
+%%DOCSDIR%%/examples/hello-clisp/INSTALL
+%%DOCSDIR%%/examples/hello-clisp/Makefile.am
+%%DOCSDIR%%/examples/hello-clisp/autoclean.sh
+%%DOCSDIR%%/examples/hello-clisp/autogen.sh
+%%DOCSDIR%%/examples/hello-clisp/configure.ac
+%%DOCSDIR%%/examples/hello-clisp/hello.lisp.in
+%%DOCSDIR%%/examples/hello-clisp/m4/Makefile.am
+%%DOCSDIR%%/examples/hello-clisp/po/LINGUAS
+%%DOCSDIR%%/examples/hello-clisp/po/Makefile.am
+%%DOCSDIR%%/examples/hello-clisp/po/ca.po
+%%DOCSDIR%%/examples/hello-clisp/po/de.po
+%%DOCSDIR%%/examples/hello-clisp/po/es.po
+%%DOCSDIR%%/examples/hello-clisp/po/fr.po
+%%DOCSDIR%%/examples/hello-clisp/po/ja.po
+%%DOCSDIR%%/examples/hello-clisp/po/pl.po
+%%DOCSDIR%%/examples/hello-clisp/po/ro.po
+%%DOCSDIR%%/examples/hello-clisp/po/sr.po
+%%DOCSDIR%%/examples/hello-clisp/po/zh_CN.po
+%%DOCSDIR%%/examples/hello-gawk/INSTALL
+%%DOCSDIR%%/examples/hello-gawk/Makefile.am
+%%DOCSDIR%%/examples/hello-gawk/autoclean.sh
+%%DOCSDIR%%/examples/hello-gawk/autogen.sh
+%%DOCSDIR%%/examples/hello-gawk/configure.ac
+%%DOCSDIR%%/examples/hello-gawk/hello.awk
+%%DOCSDIR%%/examples/hello-gawk/m4/Makefile.am
+%%DOCSDIR%%/examples/hello-gawk/po/LINGUAS
+%%DOCSDIR%%/examples/hello-gawk/po/Makefile.am
+%%DOCSDIR%%/examples/hello-gawk/po/ca.po
+%%DOCSDIR%%/examples/hello-gawk/po/de.po
+%%DOCSDIR%%/examples/hello-gawk/po/es.po
+%%DOCSDIR%%/examples/hello-gawk/po/fr.po
+%%DOCSDIR%%/examples/hello-gawk/po/ja.po
+%%DOCSDIR%%/examples/hello-gawk/po/pl.po
+%%DOCSDIR%%/examples/hello-gawk/po/ro.po
+%%DOCSDIR%%/examples/hello-gawk/po/sr.po
+%%DOCSDIR%%/examples/hello-gawk/po/zh_CN.po
+%%DOCSDIR%%/examples/hello-java-awt/Hello.java
+%%DOCSDIR%%/examples/hello-java-awt/INSTALL
+%%DOCSDIR%%/examples/hello-java-awt/Makefile.am
+%%DOCSDIR%%/examples/hello-java-awt/autoclean.sh
+%%DOCSDIR%%/examples/hello-java-awt/autogen.sh
+%%DOCSDIR%%/examples/hello-java-awt/configure.ac
+%%DOCSDIR%%/examples/hello-java-awt/m4/Makefile.am
+%%DOCSDIR%%/examples/hello-java-awt/m4/TestAWT.class
+%%DOCSDIR%%/examples/hello-java-awt/m4/TestAWT.java
+%%DOCSDIR%%/examples/hello-java-awt/po/LINGUAS
+%%DOCSDIR%%/examples/hello-java-awt/po/Makefile.am
+%%DOCSDIR%%/examples/hello-java-awt/po/ca.po
+%%DOCSDIR%%/examples/hello-java-awt/po/de.po
+%%DOCSDIR%%/examples/hello-java-awt/po/es.po
+%%DOCSDIR%%/examples/hello-java-awt/po/fr.po
+%%DOCSDIR%%/examples/hello-java-awt/po/ja.po
+%%DOCSDIR%%/examples/hello-java-awt/po/pl.po
+%%DOCSDIR%%/examples/hello-java-awt/po/ro.po
+%%DOCSDIR%%/examples/hello-java-awt/po/sr.po
+%%DOCSDIR%%/examples/hello-java-awt/po/zh_CN.po
+%%DOCSDIR%%/examples/hello-java-swing/Hello.java
+%%DOCSDIR%%/examples/hello-java-swing/INSTALL
+%%DOCSDIR%%/examples/hello-java-swing/Makefile.am
+%%DOCSDIR%%/examples/hello-java-swing/autoclean.sh
+%%DOCSDIR%%/examples/hello-java-swing/autogen.sh
+%%DOCSDIR%%/examples/hello-java-swing/configure.ac
+%%DOCSDIR%%/examples/hello-java-swing/m4/Makefile.am
+%%DOCSDIR%%/examples/hello-java-swing/m4/TestAWT.class
+%%DOCSDIR%%/examples/hello-java-swing/m4/TestAWT.java
+%%DOCSDIR%%/examples/hello-java-swing/po/LINGUAS
+%%DOCSDIR%%/examples/hello-java-swing/po/Makefile.am
+%%DOCSDIR%%/examples/hello-java-swing/po/ca.po
+%%DOCSDIR%%/examples/hello-java-swing/po/de.po
+%%DOCSDIR%%/examples/hello-java-swing/po/es.po
+%%DOCSDIR%%/examples/hello-java-swing/po/fr.po
+%%DOCSDIR%%/examples/hello-java-swing/po/ja.po
+%%DOCSDIR%%/examples/hello-java-swing/po/pl.po
+%%DOCSDIR%%/examples/hello-java-swing/po/ro.po
+%%DOCSDIR%%/examples/hello-java-swing/po/sr.po
+%%DOCSDIR%%/examples/hello-java-swing/po/zh_CN.po
+%%DOCSDIR%%/examples/hello-java/Hello.java
+%%DOCSDIR%%/examples/hello-java/INSTALL
+%%DOCSDIR%%/examples/hello-java/Makefile.am
+%%DOCSDIR%%/examples/hello-java/autoclean.sh
+%%DOCSDIR%%/examples/hello-java/autogen.sh
+%%DOCSDIR%%/examples/hello-java/configure.ac
+%%DOCSDIR%%/examples/hello-java/m4/Makefile.am
+%%DOCSDIR%%/examples/hello-java/po/LINGUAS
+%%DOCSDIR%%/examples/hello-java/po/Makefile.am
+%%DOCSDIR%%/examples/hello-java/po/ca.po
+%%DOCSDIR%%/examples/hello-java/po/de.po
+%%DOCSDIR%%/examples/hello-java/po/es.po
+%%DOCSDIR%%/examples/hello-java/po/fr.po
+%%DOCSDIR%%/examples/hello-java/po/ja.po
+%%DOCSDIR%%/examples/hello-java/po/pl.po
+%%DOCSDIR%%/examples/hello-java/po/ro.po
+%%DOCSDIR%%/examples/hello-java/po/sr.po
+%%DOCSDIR%%/examples/hello-java/po/zh_CN.po
+%%DOCSDIR%%/examples/hello-librep/INSTALL
+%%DOCSDIR%%/examples/hello-librep/Makefile.am
+%%DOCSDIR%%/examples/hello-librep/autoclean.sh
+%%DOCSDIR%%/examples/hello-librep/autogen.sh
+%%DOCSDIR%%/examples/hello-librep/configure.ac
+%%DOCSDIR%%/examples/hello-librep/hello.jl.in
+%%DOCSDIR%%/examples/hello-librep/m4/Makefile.am
+%%DOCSDIR%%/examples/hello-librep/po/LINGUAS
+%%DOCSDIR%%/examples/hello-librep/po/Makefile.am
+%%DOCSDIR%%/examples/hello-librep/po/ca.po
+%%DOCSDIR%%/examples/hello-librep/po/de.po
+%%DOCSDIR%%/examples/hello-librep/po/es.po
+%%DOCSDIR%%/examples/hello-librep/po/fr.po
+%%DOCSDIR%%/examples/hello-librep/po/ja.po
+%%DOCSDIR%%/examples/hello-librep/po/pl.po
+%%DOCSDIR%%/examples/hello-librep/po/ro.po
+%%DOCSDIR%%/examples/hello-librep/po/sr.po
+%%DOCSDIR%%/examples/hello-librep/po/zh_CN.po
+%%DOCSDIR%%/examples/hello-objc-gnome/INSTALL
+%%DOCSDIR%%/examples/hello-objc-gnome/Makefile.am
+%%DOCSDIR%%/examples/hello-objc-gnome/autoclean.sh
+%%DOCSDIR%%/examples/hello-objc-gnome/autogen.sh
+%%DOCSDIR%%/examples/hello-objc-gnome/configure.ac
+%%DOCSDIR%%/examples/hello-objc-gnome/hello.m
+%%DOCSDIR%%/examples/hello-objc-gnome/m4/Makefile.am
+%%DOCSDIR%%/examples/hello-objc-gnome/m4/gnome-gnorba-check.m4
+%%DOCSDIR%%/examples/hello-objc-gnome/m4/gnome-orbit-check.m4
+%%DOCSDIR%%/examples/hello-objc-gnome/m4/gnome.m4
+%%DOCSDIR%%/examples/hello-objc-gnome/po/LINGUAS
+%%DOCSDIR%%/examples/hello-objc-gnome/po/Makevars
+%%DOCSDIR%%/examples/hello-objc-gnome/po/POTFILES.in
+%%DOCSDIR%%/examples/hello-objc-gnome/po/ca.po
+%%DOCSDIR%%/examples/hello-objc-gnome/po/de.po
+%%DOCSDIR%%/examples/hello-objc-gnome/po/es.po
+%%DOCSDIR%%/examples/hello-objc-gnome/po/fr.po
+%%DOCSDIR%%/examples/hello-objc-gnome/po/ja.po
+%%DOCSDIR%%/examples/hello-objc-gnome/po/pl.po
+%%DOCSDIR%%/examples/hello-objc-gnome/po/ro.po
+%%DOCSDIR%%/examples/hello-objc-gnome/po/sr.po
+%%DOCSDIR%%/examples/hello-objc-gnome/po/zh_CN.po
+%%DOCSDIR%%/examples/hello-objc-gnustep/AppController.h
+%%DOCSDIR%%/examples/hello-objc-gnustep/AppController.m
+%%DOCSDIR%%/examples/hello-objc-gnustep/GNUmakefile
+%%DOCSDIR%%/examples/hello-objc-gnustep/Hello.h
+%%DOCSDIR%%/examples/hello-objc-gnustep/Hello.m
+%%DOCSDIR%%/examples/hello-objc-gnustep/INSTALL
+%%DOCSDIR%%/examples/hello-objc-gnustep/autoclean.sh
+%%DOCSDIR%%/examples/hello-objc-gnustep/autogen.sh
+%%DOCSDIR%%/examples/hello-objc-gnustep/main.m
+%%DOCSDIR%%/examples/hello-objc-gnustep/po/GNUmakefile
+%%DOCSDIR%%/examples/hello-objc-gnustep/po/LINGUAS
+%%DOCSDIR%%/examples/hello-objc-gnustep/po/LocaleAliases
+%%DOCSDIR%%/examples/hello-objc-gnustep/po/ca.po
+%%DOCSDIR%%/examples/hello-objc-gnustep/po/de.po
+%%DOCSDIR%%/examples/hello-objc-gnustep/po/es.po
+%%DOCSDIR%%/examples/hello-objc-gnustep/po/fr.po
+%%DOCSDIR%%/examples/hello-objc-gnustep/po/ja.po
+%%DOCSDIR%%/examples/hello-objc-gnustep/po/pl.po
+%%DOCSDIR%%/examples/hello-objc-gnustep/po/ro.po
+%%DOCSDIR%%/examples/hello-objc-gnustep/po/sr.po
+%%DOCSDIR%%/examples/hello-objc-gnustep/po/zh_CN.po
+%%DOCSDIR%%/examples/hello-objc/INSTALL
+%%DOCSDIR%%/examples/hello-objc/Makefile.am
+%%DOCSDIR%%/examples/hello-objc/autoclean.sh
+%%DOCSDIR%%/examples/hello-objc/autogen.sh
+%%DOCSDIR%%/examples/hello-objc/configure.ac
+%%DOCSDIR%%/examples/hello-objc/hello.m
+%%DOCSDIR%%/examples/hello-objc/m4/Makefile.am
+%%DOCSDIR%%/examples/hello-objc/po/LINGUAS
+%%DOCSDIR%%/examples/hello-objc/po/Makevars
+%%DOCSDIR%%/examples/hello-objc/po/POTFILES.in
+%%DOCSDIR%%/examples/hello-objc/po/ca.po
+%%DOCSDIR%%/examples/hello-objc/po/de.po
+%%DOCSDIR%%/examples/hello-objc/po/es.po
+%%DOCSDIR%%/examples/hello-objc/po/fr.po
+%%DOCSDIR%%/examples/hello-objc/po/ja.po
+%%DOCSDIR%%/examples/hello-objc/po/pl.po
+%%DOCSDIR%%/examples/hello-objc/po/ro.po
+%%DOCSDIR%%/examples/hello-objc/po/sr.po
+%%DOCSDIR%%/examples/hello-objc/po/zh_CN.po
+%%DOCSDIR%%/examples/hello-pascal/INSTALL
+%%DOCSDIR%%/examples/hello-pascal/Makefile.am
+%%DOCSDIR%%/examples/hello-pascal/autoclean.sh
+%%DOCSDIR%%/examples/hello-pascal/autogen.sh
+%%DOCSDIR%%/examples/hello-pascal/configure.ac
+%%DOCSDIR%%/examples/hello-pascal/hello.pas
+%%DOCSDIR%%/examples/hello-pascal/hello.rst
+%%DOCSDIR%%/examples/hello-pascal/m4/Makefile.am
+%%DOCSDIR%%/examples/hello-pascal/po/LINGUAS
+%%DOCSDIR%%/examples/hello-pascal/po/Makefile.am
+%%DOCSDIR%%/examples/hello-pascal/po/ca.po
+%%DOCSDIR%%/examples/hello-pascal/po/de.po
+%%DOCSDIR%%/examples/hello-pascal/po/es.po
+%%DOCSDIR%%/examples/hello-pascal/po/fr.po
+%%DOCSDIR%%/examples/hello-pascal/po/ja.po
+%%DOCSDIR%%/examples/hello-pascal/po/pl.po
+%%DOCSDIR%%/examples/hello-pascal/po/ro.po
+%%DOCSDIR%%/examples/hello-pascal/po/sr.po
+%%DOCSDIR%%/examples/hello-pascal/po/zh_CN.po
+%%DOCSDIR%%/examples/hello-perl/INSTALL
+%%DOCSDIR%%/examples/hello-perl/Makefile.am
+%%DOCSDIR%%/examples/hello-perl/autoclean.sh
+%%DOCSDIR%%/examples/hello-perl/autogen.sh
+%%DOCSDIR%%/examples/hello-perl/configure.ac
+%%DOCSDIR%%/examples/hello-perl/hello.pl
+%%DOCSDIR%%/examples/hello-perl/m4/Makefile.am
+%%DOCSDIR%%/examples/hello-perl/po/LINGUAS
+%%DOCSDIR%%/examples/hello-perl/po/Makefile.am
+%%DOCSDIR%%/examples/hello-perl/po/ca.po
+%%DOCSDIR%%/examples/hello-perl/po/de.po
+%%DOCSDIR%%/examples/hello-perl/po/es.po
+%%DOCSDIR%%/examples/hello-perl/po/fr.po
+%%DOCSDIR%%/examples/hello-perl/po/ja.po
+%%DOCSDIR%%/examples/hello-perl/po/pl.po
+%%DOCSDIR%%/examples/hello-perl/po/ro.po
+%%DOCSDIR%%/examples/hello-perl/po/sr.po
+%%DOCSDIR%%/examples/hello-perl/po/zh_CN.po
+%%DOCSDIR%%/examples/hello-php/INSTALL
+%%DOCSDIR%%/examples/hello-php/Makefile.am
+%%DOCSDIR%%/examples/hello-php/README
+%%DOCSDIR%%/examples/hello-php/autoclean.sh
+%%DOCSDIR%%/examples/hello-php/autogen.sh
+%%DOCSDIR%%/examples/hello-php/configure.ac
+%%DOCSDIR%%/examples/hello-php/hello.php
+%%DOCSDIR%%/examples/hello-php/m4/Makefile.am
+%%DOCSDIR%%/examples/hello-php/po/LINGUAS
+%%DOCSDIR%%/examples/hello-php/po/Makefile.am
+%%DOCSDIR%%/examples/hello-php/po/ca.po
+%%DOCSDIR%%/examples/hello-php/po/de.po
+%%DOCSDIR%%/examples/hello-php/po/es.po
+%%DOCSDIR%%/examples/hello-php/po/fr.po
+%%DOCSDIR%%/examples/hello-php/po/ja.po
+%%DOCSDIR%%/examples/hello-php/po/pl.po
+%%DOCSDIR%%/examples/hello-php/po/ro.po
+%%DOCSDIR%%/examples/hello-php/po/sr.po
+%%DOCSDIR%%/examples/hello-php/po/zh_CN.po
+%%DOCSDIR%%/examples/hello-python/INSTALL
+%%DOCSDIR%%/examples/hello-python/Makefile.am
+%%DOCSDIR%%/examples/hello-python/autoclean.sh
+%%DOCSDIR%%/examples/hello-python/autogen.sh
+%%DOCSDIR%%/examples/hello-python/configure.ac
+%%DOCSDIR%%/examples/hello-python/hello.py.in
+%%DOCSDIR%%/examples/hello-python/m4/Makefile.am
+%%DOCSDIR%%/examples/hello-python/po/LINGUAS
+%%DOCSDIR%%/examples/hello-python/po/Makefile.am
+%%DOCSDIR%%/examples/hello-python/po/ca.po
+%%DOCSDIR%%/examples/hello-python/po/de.po
+%%DOCSDIR%%/examples/hello-python/po/es.po
+%%DOCSDIR%%/examples/hello-python/po/fr.po
+%%DOCSDIR%%/examples/hello-python/po/ja.po
+%%DOCSDIR%%/examples/hello-python/po/pl.po
+%%DOCSDIR%%/examples/hello-python/po/ro.po
+%%DOCSDIR%%/examples/hello-python/po/sr.po
+%%DOCSDIR%%/examples/hello-python/po/zh_CN.po
+%%DOCSDIR%%/examples/hello-sh/INSTALL
+%%DOCSDIR%%/examples/hello-sh/Makefile.am
+%%DOCSDIR%%/examples/hello-sh/autoclean.sh
+%%DOCSDIR%%/examples/hello-sh/autogen.sh
+%%DOCSDIR%%/examples/hello-sh/configure.ac
+%%DOCSDIR%%/examples/hello-sh/hello.sh
+%%DOCSDIR%%/examples/hello-sh/m4/Makefile.am
+%%DOCSDIR%%/examples/hello-sh/po/LINGUAS
+%%DOCSDIR%%/examples/hello-sh/po/Makefile.am
+%%DOCSDIR%%/examples/hello-sh/po/ca.po
+%%DOCSDIR%%/examples/hello-sh/po/de.po
+%%DOCSDIR%%/examples/hello-sh/po/es.po
+%%DOCSDIR%%/examples/hello-sh/po/fr.po
+%%DOCSDIR%%/examples/hello-sh/po/ja.po
+%%DOCSDIR%%/examples/hello-sh/po/pl.po
+%%DOCSDIR%%/examples/hello-sh/po/ro.po
+%%DOCSDIR%%/examples/hello-sh/po/sr.po
+%%DOCSDIR%%/examples/hello-sh/po/zh_CN.po
+%%DOCSDIR%%/examples/hello-smalltalk/INSTALL
+%%DOCSDIR%%/examples/hello-smalltalk/Makefile.am
+%%DOCSDIR%%/examples/hello-smalltalk/autoclean.sh
+%%DOCSDIR%%/examples/hello-smalltalk/autogen.sh
+%%DOCSDIR%%/examples/hello-smalltalk/configure.ac
+%%DOCSDIR%%/examples/hello-smalltalk/hello.st.in
+%%DOCSDIR%%/examples/hello-smalltalk/m4/Makefile.am
+%%DOCSDIR%%/examples/hello-smalltalk/po/LINGUAS
+%%DOCSDIR%%/examples/hello-smalltalk/po/Makefile.am
+%%DOCSDIR%%/examples/hello-smalltalk/po/ca.po
+%%DOCSDIR%%/examples/hello-smalltalk/po/de.po
+%%DOCSDIR%%/examples/hello-smalltalk/po/es.po
+%%DOCSDIR%%/examples/hello-smalltalk/po/fr.po
+%%DOCSDIR%%/examples/hello-smalltalk/po/ja.po
+%%DOCSDIR%%/examples/hello-smalltalk/po/pl.po
+%%DOCSDIR%%/examples/hello-smalltalk/po/ro.po
+%%DOCSDIR%%/examples/hello-smalltalk/po/sr.po
+%%DOCSDIR%%/examples/hello-smalltalk/po/zh_CN.po
+%%DOCSDIR%%/examples/hello-tcl-tk/INSTALL
+%%DOCSDIR%%/examples/hello-tcl-tk/Makefile.am
+%%DOCSDIR%%/examples/hello-tcl-tk/autoclean.sh
+%%DOCSDIR%%/examples/hello-tcl-tk/autogen.sh
+%%DOCSDIR%%/examples/hello-tcl-tk/configure.ac
+%%DOCSDIR%%/examples/hello-tcl-tk/hello.tcl
+%%DOCSDIR%%/examples/hello-tcl-tk/m4/Makefile.am
+%%DOCSDIR%%/examples/hello-tcl-tk/po/LINGUAS
+%%DOCSDIR%%/examples/hello-tcl-tk/po/Makefile.am
+%%DOCSDIR%%/examples/hello-tcl-tk/po/ca.po
+%%DOCSDIR%%/examples/hello-tcl-tk/po/de.po
+%%DOCSDIR%%/examples/hello-tcl-tk/po/es.po
+%%DOCSDIR%%/examples/hello-tcl-tk/po/fr.po
+%%DOCSDIR%%/examples/hello-tcl-tk/po/ja.po
+%%DOCSDIR%%/examples/hello-tcl-tk/po/pl.po
+%%DOCSDIR%%/examples/hello-tcl-tk/po/ro.po
+%%DOCSDIR%%/examples/hello-tcl-tk/po/sr.po
+%%DOCSDIR%%/examples/hello-tcl-tk/po/zh_CN.po
+%%DOCSDIR%%/examples/hello-tcl/INSTALL
+%%DOCSDIR%%/examples/hello-tcl/Makefile.am
+%%DOCSDIR%%/examples/hello-tcl/autoclean.sh
+%%DOCSDIR%%/examples/hello-tcl/autogen.sh
+%%DOCSDIR%%/examples/hello-tcl/configure.ac
+%%DOCSDIR%%/examples/hello-tcl/hello.tcl
+%%DOCSDIR%%/examples/hello-tcl/m4/Makefile.am
+%%DOCSDIR%%/examples/hello-tcl/po/LINGUAS
+%%DOCSDIR%%/examples/hello-tcl/po/Makefile.am
+%%DOCSDIR%%/examples/hello-tcl/po/ca.po
+%%DOCSDIR%%/examples/hello-tcl/po/de.po
+%%DOCSDIR%%/examples/hello-tcl/po/es.po
+%%DOCSDIR%%/examples/hello-tcl/po/fr.po
+%%DOCSDIR%%/examples/hello-tcl/po/ja.po
+%%DOCSDIR%%/examples/hello-tcl/po/pl.po
+%%DOCSDIR%%/examples/hello-tcl/po/ro.po
+%%DOCSDIR%%/examples/hello-tcl/po/sr.po
+%%DOCSDIR%%/examples/hello-tcl/po/zh_CN.po
+%%DOCSDIR%%/examples/hello-ycp/INSTALL
+%%DOCSDIR%%/examples/hello-ycp/Makefile.am
+%%DOCSDIR%%/examples/hello-ycp/autoclean.sh
+%%DOCSDIR%%/examples/hello-ycp/autogen.sh
+%%DOCSDIR%%/examples/hello-ycp/configure.ac
+%%DOCSDIR%%/examples/hello-ycp/hello.ycp
+%%DOCSDIR%%/examples/hello-ycp/m4/Makefile.am
+%%DOCSDIR%%/examples/hello-ycp/po/LINGUAS
+%%DOCSDIR%%/examples/hello-ycp/po/Makefile.am
+%%DOCSDIR%%/examples/hello-ycp/po/ca.po
+%%DOCSDIR%%/examples/hello-ycp/po/de.po
+%%DOCSDIR%%/examples/hello-ycp/po/es.po
+%%DOCSDIR%%/examples/hello-ycp/po/fr.po
+%%DOCSDIR%%/examples/hello-ycp/po/ja.po
+%%DOCSDIR%%/examples/hello-ycp/po/pl.po
+%%DOCSDIR%%/examples/hello-ycp/po/ro.po
+%%DOCSDIR%%/examples/hello-ycp/po/sr.po
+%%DOCSDIR%%/examples/hello-ycp/po/zh_CN.po
+%%DOCSDIR%%/examples/installpaths
 %%DOCSDIR%%/gettext.1.html
 %%DOCSDIR%%/gettext.3.html
 %%DOCSDIR%%/gettext_1.html
@@ -190,11 +672,21 @@ share/gettext/intl/plural-exp.c
 share/gettext/intl/plural-exp.h
 share/gettext/intl/plural.c
 share/gettext/intl/plural.y
+share/gettext/intl/printf-args.c
+share/gettext/intl/printf-args.h
+share/gettext/intl/printf-parse.c
+share/gettext/intl/printf-parse.h
+share/gettext/intl/printf.c
 share/gettext/intl/ref-add.sin
 share/gettext/intl/ref-del.sin
 share/gettext/intl/relocatable.c
 share/gettext/intl/relocatable.h
 share/gettext/intl/textdomain.c
+share/gettext/intl/vasnprintf.c
+share/gettext/intl/vasnprintf.h
+share/gettext/intl/vasnwprintf.h
+share/gettext/intl/wprintf-parse.h
+share/gettext/intl/xsize.h
 share/gettext/mkinstalldirs
 share/gettext/msgunfmt.tcl
 share/gettext/po/Makefile.in.in
@@ -267,18 +759,54 @@ share/locale/pt/LC_MESSAGES/gettext-runtime.mo
 share/locale/pt/LC_MESSAGES/gettext-tools.mo
 share/locale/pt_BR/LC_MESSAGES/gettext-runtime.mo
 share/locale/pt_BR/LC_MESSAGES/gettext-tools.mo
+share/locale/ro/LC_MESSAGES/gettext-runtime.mo
+share/locale/ro/LC_MESSAGES/gettext-tools.mo
 share/locale/ru/LC_MESSAGES/gettext-runtime.mo
 share/locale/ru/LC_MESSAGES/gettext-tools.mo
 share/locale/sk/LC_MESSAGES/gettext-runtime.mo
 share/locale/sk/LC_MESSAGES/gettext-tools.mo
 share/locale/sl/LC_MESSAGES/gettext-runtime.mo
 share/locale/sl/LC_MESSAGES/gettext-tools.mo
+share/locale/sr/LC_MESSAGES/gettext-runtime.mo
+share/locale/sr/LC_MESSAGES/gettext-tools.mo
 share/locale/sv/LC_MESSAGES/gettext-runtime.mo
 share/locale/sv/LC_MESSAGES/gettext-tools.mo
 share/locale/tr/LC_MESSAGES/gettext-runtime.mo
 share/locale/tr/LC_MESSAGES/gettext-tools.mo
+share/locale/uk/LC_MESSAGES/gettext-runtime.mo
+share/locale/zh_CN/LC_MESSAGES/gettext-runtime.mo
+share/locale/zh_CN/LC_MESSAGES/gettext-tools.mo
 share/locale/zh_TW/LC_MESSAGES/gettext-runtime.mo
 share/locale/zh_TW/LC_MESSAGES/gettext-tools.mo
+@dirrm share/locale/zh_TW/LC_MESSAGES
+@dirrm share/locale/zh_TW
+@dirrm share/locale/zh_CN/LC_MESSAGES
+@dirrm share/locale/uk/LC_MESSAGES
+@dirrm share/locale/sr/LC_MESSAGES
+@dirrm share/locale/sr
+@dirrm share/locale/sk/LC_MESSAGES
+@dirrm share/locale/sk
+@dirrm share/locale/ro/LC_MESSAGES
+@dirrm share/locale/ro
+@dirrm share/locale/pt_BR/LC_MESSAGES
+@dirrm share/locale/pt_BR
+@dirrm share/locale/nn/LC_MESSAGES
+@dirrm share/locale/nn
+@dirrm share/locale/ja/LC_MESSAGES
+@dirrm share/locale/ja
+@dirrm share/locale/id/LC_MESSAGES
+@dirrm share/locale/id
+@dirrm share/locale/gl/LC_MESSAGES
+@dirrm share/locale/gl
+@dirrm share/locale/fi/LC_MESSAGES
+@dirrm share/locale/fi
+@dirrm share/locale/en@quot/LC_MESSAGES
+@dirrm share/locale/en@quot
+@dirrm share/locale/en@boldquot/LC_MESSAGES
+@dirrm share/locale/en@boldquot
+@dirrm share/locale/el/LC_MESSAGES
+@dirrm share/locale/el
+@dirrm share/locale/be/LC_MESSAGES
 @dirrm share/gettext/projects/TP
 @dirrm share/gettext/projects/KDE
 @dirrm share/gettext/projects/GNOME
@@ -292,7 +820,80 @@ share/locale/zh_TW/LC_MESSAGES/gettext-tools.mo
 @dirrm %%DOCSDIR%%/javadoc2
 @dirrm %%DOCSDIR%%/javadoc1/images
 @dirrm %%DOCSDIR%%/javadoc1
-@dirrm share/doc/gettext
+@dirrm %%DOCSDIR%%/examples/hello-ycp/po
+@dirrm %%DOCSDIR%%/examples/hello-ycp/m4
+@dirrm %%DOCSDIR%%/examples/hello-ycp
+@dirrm %%DOCSDIR%%/examples/hello-tcl/po
+@dirrm %%DOCSDIR%%/examples/hello-tcl/m4
+@dirrm %%DOCSDIR%%/examples/hello-tcl-tk/po
+@dirrm %%DOCSDIR%%/examples/hello-tcl-tk/m4
+@dirrm %%DOCSDIR%%/examples/hello-tcl-tk
+@dirrm %%DOCSDIR%%/examples/hello-tcl
+@dirrm %%DOCSDIR%%/examples/hello-smalltalk/po
+@dirrm %%DOCSDIR%%/examples/hello-smalltalk/m4
+@dirrm %%DOCSDIR%%/examples/hello-smalltalk
+@dirrm %%DOCSDIR%%/examples/hello-sh/po
+@dirrm %%DOCSDIR%%/examples/hello-sh/m4
+@dirrm %%DOCSDIR%%/examples/hello-sh
+@dirrm %%DOCSDIR%%/examples/hello-python/po
+@dirrm %%DOCSDIR%%/examples/hello-python/m4
+@dirrm %%DOCSDIR%%/examples/hello-python
+@dirrm %%DOCSDIR%%/examples/hello-php/po
+@dirrm %%DOCSDIR%%/examples/hello-php/m4
+@dirrm %%DOCSDIR%%/examples/hello-php
+@dirrm %%DOCSDIR%%/examples/hello-perl/po
+@dirrm %%DOCSDIR%%/examples/hello-perl/m4
+@dirrm %%DOCSDIR%%/examples/hello-perl
+@dirrm %%DOCSDIR%%/examples/hello-pascal/po
+@dirrm %%DOCSDIR%%/examples/hello-pascal/m4
+@dirrm %%DOCSDIR%%/examples/hello-pascal
+@dirrm %%DOCSDIR%%/examples/hello-objc/po
+@dirrm %%DOCSDIR%%/examples/hello-objc/m4
+@dirrm %%DOCSDIR%%/examples/hello-objc-gnustep/po
+@dirrm %%DOCSDIR%%/examples/hello-objc-gnustep
+@dirrm %%DOCSDIR%%/examples/hello-objc-gnome/po
+@dirrm %%DOCSDIR%%/examples/hello-objc-gnome/m4
+@dirrm %%DOCSDIR%%/examples/hello-objc-gnome
+@dirrm %%DOCSDIR%%/examples/hello-objc
+@dirrm %%DOCSDIR%%/examples/hello-librep/po
+@dirrm %%DOCSDIR%%/examples/hello-librep/m4
+@dirrm %%DOCSDIR%%/examples/hello-librep
+@dirrm %%DOCSDIR%%/examples/hello-java/po
+@dirrm %%DOCSDIR%%/examples/hello-java/m4
+@dirrm %%DOCSDIR%%/examples/hello-java-swing/po
+@dirrm %%DOCSDIR%%/examples/hello-java-swing/m4
+@dirrm %%DOCSDIR%%/examples/hello-java-swing
+@dirrm %%DOCSDIR%%/examples/hello-java-awt/po
+@dirrm %%DOCSDIR%%/examples/hello-java-awt/m4
+@dirrm %%DOCSDIR%%/examples/hello-java-awt
+@dirrm %%DOCSDIR%%/examples/hello-java
+@dirrm %%DOCSDIR%%/examples/hello-gawk/po
+@dirrm %%DOCSDIR%%/examples/hello-gawk/m4
+@dirrm %%DOCSDIR%%/examples/hello-gawk
+@dirrm %%DOCSDIR%%/examples/hello-clisp/po
+@dirrm %%DOCSDIR%%/examples/hello-clisp/m4
+@dirrm %%DOCSDIR%%/examples/hello-clisp
+@dirrm %%DOCSDIR%%/examples/hello-c/po
+@dirrm %%DOCSDIR%%/examples/hello-c/m4
+@dirrm %%DOCSDIR%%/examples/hello-c-gnome/po
+@dirrm %%DOCSDIR%%/examples/hello-c-gnome/m4
+@dirrm %%DOCSDIR%%/examples/hello-c-gnome
+@dirrm %%DOCSDIR%%/examples/hello-c++/po
+@dirrm %%DOCSDIR%%/examples/hello-c++/m4
+@dirrm %%DOCSDIR%%/examples/hello-c++-qt/po
+@dirrm %%DOCSDIR%%/examples/hello-c++-qt/m4
+@dirrm %%DOCSDIR%%/examples/hello-c++-qt
+@dirrm %%DOCSDIR%%/examples/hello-c++-kde/po
+@dirrm %%DOCSDIR%%/examples/hello-c++-kde/m4
+@dirrm %%DOCSDIR%%/examples/hello-c++-kde
+@dirrm %%DOCSDIR%%/examples/hello-c++-gnome/po
+@dirrm %%DOCSDIR%%/examples/hello-c++-gnome/m4
+@dirrm %%DOCSDIR%%/examples/hello-c++-gnome
+@dirrm %%DOCSDIR%%/examples/hello-c++
+@dirrm %%DOCSDIR%%/examples/hello-c
+@dirrm %%DOCSDIR%%/examples/config
+@dirrm %%DOCSDIR%%/examples
+@dirrm %%DOCSDIR%%
 @dirrm libdata/gettext-tools
 @unexec rmdir %D/share/locale/*/LC_MESSAGES 2>/dev/null || true
 @unexec rmdir %D/share/locale/* 2>/dev/null || true

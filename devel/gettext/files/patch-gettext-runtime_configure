@@ -1,3 +1,5 @@
+$FreeBSD$
+
 --- gettext-runtime/configure.orig	Wed Jun 11 17:21:41 2003
 +++ gettext-runtime/configure	Wed Jun 11 17:21:56 2003
 @@ -1875,7 +1875,7 @@

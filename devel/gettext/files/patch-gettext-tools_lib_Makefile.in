@@ -1,3 +1,5 @@
+$FreeBSD$
+
 --- gettext-tools/lib/Makefile.in.orig	Thu May 22 09:41:20 2003
 +++ gettext-tools/lib/Makefile.in	Wed Jun 11 14:05:44 2003
 @@ -67,7 +67,7 @@
