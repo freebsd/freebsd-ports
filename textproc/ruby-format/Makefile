@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	format
-PORTVERSION=	0.92
+PORTVERSION=	0.93
 CATEGORIES=	textproc ruby
 #MASTER_SITES=	http://www.crhc.uiuc.edu/~rubel/
 MASTER_SITES=	${MASTER_SITE_LOCAL}
