@@ -3,7 +3,6 @@ etc/sdr/plugins/sdr2.plugin.S100.audio.rtp.mpa.freeamp
 %%LIBARTS%%lib/freeamp/plugins/arts.pmo
 lib/freeamp/plugins/cd.lmc
 lib/freeamp/plugins/cd.pmo
-lib/freeamp/plugins/corba.ui
 lib/freeamp/plugins/download.ui
 %%ESOUND%%lib/freeamp/plugins/esound.pmo
 lib/freeamp/plugins/freeamp.ui
