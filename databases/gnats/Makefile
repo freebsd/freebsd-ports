@@ -1,5 +1,5 @@
 # New ports collection makefile for:	gnats
-# Version required:     3.107-beta
+# Version required:     3.112.1
 # Date created:		10 November 1995
 # Whom:			pst
 #
