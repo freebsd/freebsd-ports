@@ -183,6 +183,7 @@
     SUBDIR += ruby-ming
     SUBDIR += ruby-opengl
     SUBDIR += ruby-qt2gl
+    SUBDIR += s10sh
     SUBDIR += sane
     SUBDIR += sced
     SUBDIR += scrot
