@@ -18,10 +18,15 @@ WRKSRC=		${WRKDIR}/privoxy-3.0.0-stable
 
 USE_GMAKE=	yes
 USE_AUTOCONF=	yes
+USE_REINPLACE=	yes
 
 MAKEFILE=	GNUmakefile
 
 MAN1=		privoxy.1
+
+post-patch:
+	@${REINPLACE_CMD} -e 's,/usr/local,$${PREFIX},' \
+					${WRKSRC}/GNUmakefile.in
 
 pre-configure:
 	@(cd ${WRKSRC}; autoheader${USE_AUTOCONF_VER})
