@@ -187,6 +187,7 @@
     SUBDIR += p5-CSS-Tiny
     SUBDIR += p5-Data-FormValidator
     SUBDIR += p5-DelimMatch
+    SUBDIR += p5-Filter-Simple
     SUBDIR += p5-FreeBSD-Ports
     SUBDIR += p5-HTML-Format
     SUBDIR += p5-LJ-SpellCheck

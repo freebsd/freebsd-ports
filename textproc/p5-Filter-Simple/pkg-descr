@@ -1,0 +1,10 @@
+Filter::Simple - Simplified source filtering
+
+Source filtering is an immensely powerful feature of recent versions of Perl.
+It allows one to extend the language itself (e.g. the Switch module), to
+simplify the language (e.g. Language::Pythonesque), or to completely recast the
+language (e.g. Lingua::Romana::Perligata). Effec- tively, it allows one to use
+the full power of Perl as its own, recur- sively applied, macro language.
+
+Philip M. Gollucci
+<philip@p6m7g8.com>
