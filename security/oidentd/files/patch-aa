@@ -1,0 +1,14 @@
+--- src/freebsd.c.orig	Tue Jan 18 02:37:19 2000
++++ src/freebsd.c	Wed Mar 29 09:39:27 2000
+@@ -22,9 +22,9 @@
+ #include <sys/queue.h>
+ #include <sys/uio.h>
+ #include <sys/socketvar.h>
+-#define KERNEL
++#define _KERNEL
+ #include <sys/file.h>
+-#undef KERNEL
++#undef _KERNEL
+ #include <sys/user.h>
+ #include <sys/filedesc.h>
+ #include <sys/proc.h>
