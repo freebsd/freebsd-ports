@@ -10,7 +10,7 @@ PORTNAME=	faces
 PORTVERSION=	1.6.1
 PORTREVISION=	1
 CATEGORIES=	mail
-MASTER_SITES=	ftp://ftp.cs.indiana.edu/pub/faces/faces/
+MASTER_SITES=	ftp://ftp.cs.indiana.edu/pub/faces/faces/faces-1.6.1/
 EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=	Lars.Koeller@Uni-Bielefeld.DE
