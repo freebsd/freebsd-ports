@@ -1,12 +1,28 @@
---- config/cf/FreeBSD.cf.dist	Wed Jul 19 06:13:11 2000
-+++ config/cf/FreeBSD.cf	Wed Jul 19 06:15:46 2000
-@@ -335,3 +335,3 @@
+--- config/cf/FreeBSD.cf.orig	Sun Feb 11 08:23:51 2001
++++ config/cf/FreeBSD.cf	Sun Feb 11 08:33:30 2001
+@@ -60,7 +60,7 @@
+ #define MkdirHierCmd		mkdir -p
+ 
+ #define CcCmd			cc
+-#define CppCmd			/usr/libexec/cpp
++#define CppCmd			/usr/bin/cpp
+ #define PreProcessCmd		CppCmd
+ #define StandardCppDefines	-traditional
+ #if defined(UseInstalled) && (!defined(XF86LinkKit) || !XF86LinkKit)
+@@ -333,14 +333,14 @@
+ /* The GCC strength-reduce bug is fixed for FreeBSD 2.1.5 and later */
+ #ifndef DefaultGcc2i386Opt
  #if OSMajorVersion > 2 || (OSMajorVersion == 2 && OSMinorVersion > 1) || (OSMajorVersion == 2 && OSMinorVersion == 1 && OSTeenyVersion >= 5)
 -#define DefaultGcc2i386Opt -O2
-+#define DefaultGcc2i386Opt -O
++#define DefaultGcc2i386Opt
  #endif
-@@ -342,3 +342,3 @@
+ #endif
+ 
+ #ifdef i386Architecture
+ # define OptimizedCDebugFlags DefaultGcc2i386Opt
  #else
 -# define OptimizedCDebugFlags -O2
-+# define OptimizedCDebugFlags -O
++# define OptimizedCDebugFlags
  #endif
+ 
+ #ifndef PreIncDir
