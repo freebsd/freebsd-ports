@@ -218,6 +218,7 @@
     SUBDIR += pgperl
     SUBDIR += pgplot
     SUBDIR += photopc
+    SUBDIR += phplot
     SUBDIR += picturebook
     SUBDIR += piddle
     SUBDIR += pixmap
