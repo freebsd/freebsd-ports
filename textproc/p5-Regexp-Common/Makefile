@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Regexp-Common
-PORTVERSION=	2.117
+PORTVERSION=	2.118
 CATEGORIES=	textproc perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Regexp
@@ -19,6 +19,7 @@ PERL_CONFIGURE=	yes
 
 MAN3=		\
 		Regexp::Common.3 \
+		Regexp::Common::CC.3 \
 		Regexp::Common::SEN.3 \
 		Regexp::Common::URI.3 \
 		Regexp::Common::URI::RFC1035.3 \
@@ -39,6 +40,7 @@ MAN3=		\
 		Regexp::Common::URI::telnet.3 \
 		Regexp::Common::URI::tv.3 \
 		Regexp::Common::URI::wais.3 \
+		Regexp::Common::_support.3 \
 		Regexp::Common::balanced.3 \
 		Regexp::Common::comment.3 \
 		Regexp::Common::delimited.3 \

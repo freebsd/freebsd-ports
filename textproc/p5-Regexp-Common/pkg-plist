@@ -1,4 +1,5 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Regexp/Common/.packlist
+%%SITE_PERL%%/Regexp/Common/CC.pm
 %%SITE_PERL%%/Regexp/Common/SEN.pm
 %%SITE_PERL%%/Regexp/Common/URI/fax.pm
 %%SITE_PERL%%/Regexp/Common/URI/file.pm
@@ -18,6 +19,7 @@
 %%SITE_PERL%%/Regexp/Common/URI/RFC2384.pm
 %%SITE_PERL%%/Regexp/Common/URI/RFC2396.pm
 %%SITE_PERL%%/Regexp/Common/URI/news.pm
+%%SITE_PERL%%/Regexp/Common/_support.pm
 %%SITE_PERL%%/Regexp/Common/lingua.pm
 %%SITE_PERL%%/Regexp/Common/net.pm
 %%SITE_PERL%%/Regexp/Common/number.pm
