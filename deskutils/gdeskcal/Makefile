@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	gdeskcal
-PORTVERSION=	0.57
+PORTVERSION=	0.57.1
 CATEGORIES=	deskutils python gnome
 MASTER_SITES=	http://www.pycage.de/download/
-DISTNAME=	gDeskCal-${PORTVERSION:S/./_/}
+DISTNAME=	gDeskCal-${PORTVERSION:S/./_/g}
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	A calendar for the gnome2 desktop with smooth alpha-blending
