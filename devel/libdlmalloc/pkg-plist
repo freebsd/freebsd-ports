@@ -1,3 +1,4 @@
 lib/libdlmalloc.a
 @exec ranlib %D/%F
 lib/libdlmalloc.so.2.5
+@exec ldconfig -m %B

@@ -678,3 +678,4 @@ interviews/man/mann/globals.n.gz
 interviews/man/mann/mailbox.n.gz
 interviews/man/mann/stateviews.n.gz
 interviews/man/refman.PS
+@exec ldconfig -m %D/lib

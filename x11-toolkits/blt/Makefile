@@ -3,7 +3,7 @@
 # Date created:		14 December 1994
 # Whom:			wollman
 #
-# $Id: Makefile,v 1.3 1995/04/01 12:50:43 jkh Exp $
+# $Id: Makefile,v 1.4 1995/04/12 20:30:53 asami Exp $
 #
 
 DISTNAME=	blt-1.7
@@ -16,5 +16,7 @@ LIB_DEPENDS=	tk\\.3\\.:${PORTSDIR}/x11/tk
 GNU_CONFIGURE=	yes
 ALL_TARGET=	all sharedlib
 
-.include <bsd.port.mk>
+post-install:
+	ldconfig -m ${PREFIX}/lib
 
+.include <bsd.port.mk>

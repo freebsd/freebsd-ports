@@ -3,7 +3,7 @@
 # Date created:         31 October 1994
 # Whom:                 ljo
 #
-# $Id: Makefile,v 1.6 1995/04/22 11:30:05 asami Exp $
+# $Id: Makefile,v 1.7 1995/04/28 13:35:32 jkh Exp $
 #
 
 DISTNAME=	eispack
@@ -42,5 +42,8 @@ pre-build:
 
 pre-extract:
 	chmod +x scripts/uncomp
+
+post-install:
+	ldconfig -m ${PREFIX}/lib
 
 .include <bsd.port.mk>

@@ -3,7 +3,7 @@
 # Date created:		23.sept.1994
 # Whom:			adam
 #
-# $Id: Makefile,v 1.8 1995/05/31 06:01:49 asami Exp $
+# $Id: Makefile,v 1.9 1995/06/04 01:12:38 asami Exp $
 #
 
 VERSION=	3.1
@@ -34,5 +34,6 @@ post-install:
 # need these in ${PREFIX}/lib so that ldconfig can find them
 	ln -fs ../interviews/lib/FREEBSD/libIV.so.3.1 ${PREFIX}/lib
 	ln -fs ../interviews/lib/FREEBSD/libUnidraw.so.3.1 ${PREFIX}/lib
+	ldconfig -m ${PREFIX}/lib
 
 .include <bsd.port.mk>

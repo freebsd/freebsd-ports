@@ -3,7 +3,7 @@
 # Date created:		3 June 1995
 # Whom:			roberto
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1995/06/04 05:29:57 asami Exp $
 #
 
 DISTNAME=	dlmalloc
@@ -22,5 +22,8 @@ do-extract:
 	@mkdir -p ${WRKDIR}
 	cp -p ${DISTDIR}/${DISTFILES} ${WRKDIR}
 	cp -p ${FILESDIR}/Makefile ${WRKDIR}
+
+post-install:
+	ldconfig -m ${PREFIX}/lib
 
 .include <bsd.port.mk>

@@ -3,7 +3,7 @@
 # Date created:		28 March 1995
 # Whom:			Akito FUJITA <fujita@zoo.ncl.omron.co.jp>
 #
-# $Id: Makefile,v 1.1.1.1 1995/03/30 10:16:11 asami Exp $
+# $Id: Makefile,v 1.2 1995/04/01 12:46:28 jkh Exp $
 #
 
 DISTNAME=	mh-6.8.3
@@ -34,5 +34,8 @@ pre-install:
 		return 1; \
 		;; \
 	  esac)
+
+post-install:
+	ldconfig -m ${PREFIX}/lib
 
 .include <bsd.port.mk>

@@ -3,7 +3,7 @@
 # Date created:         27 October 1994
 # Whom:                 ljo
 #
-# $Id: Makefile,v 1.6 1995/04/22 11:29:56 asami Exp $
+# $Id: Makefile,v 1.7 1995/05/03 02:22:18 asami Exp $
 #
 
 DISTNAME=	blas
@@ -51,5 +51,7 @@ pre-build:
 pre-extract:
 	chmod +x scripts/uncomp
 
-.include <bsd.port.mk>
+post-install:
+	ldconfig -m ${PREFIX}/lib
 
+.include <bsd.port.mk>

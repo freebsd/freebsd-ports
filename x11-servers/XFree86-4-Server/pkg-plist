@@ -374,6 +374,7 @@ lib/libXtst.so.6.0
 lib/liblbxXext.a
 lib/liboldX.a
 lib/liboldX.so.6.0
+@exec ldconfig -m %B
 @mode 444
 lib/X11/Cards
 lib/X11/XErrorDB
