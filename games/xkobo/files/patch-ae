@@ -25,7 +25,7 @@
      void make_maze(int x, int y, int difx, int dify);
      void convert(int ratio);   /* ratio < 64 */
 -    inline char& pos(int x, int y){ return data[(y<<sx_log2) + x];}
-+    inline char& pos(int x, int y){ return data[(y<<MAP_SIZEY_LOG2) + x];}
++    inline char& pos(int x, int y){ return data[(y<<MAP_SIZEX_LOG2) + x];}
  };  
  
  
