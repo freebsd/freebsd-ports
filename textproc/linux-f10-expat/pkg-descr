@@ -1,0 +1,13 @@
+This is a Linux/i386 binary port of Expat.
+
+from the README:
+
+	This is Expat, a C library for parsing XML, written by James
+	Clark.  Expat is a stream-oriented XML parser.  This means
+	that you register handlers with the parser before starting
+	the parse.  These handlers are called when the parser
+	discovers the associated structures in the document being
+	parsed.  A start tag is an example of the kind of structures
+	for which you may register handlers.
+
+WWW:  http://www.libexpat.org/
