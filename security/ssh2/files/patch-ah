@@ -1,6 +1,81 @@
---- apps/ssh/sshchsession.c.bak	Mon Jan 18 13:32:24 1999
-+++ apps/ssh/sshchsession.c	Fri Feb  5 08:49:14 1999
-@@ -628,12 +628,20 @@
+--- apps/ssh/sshchsession.c.orig	Mon Jan 18 13:32:24 1999
++++ apps/ssh/sshchsession.c	Sat Feb  6 04:20:26 1999
+@@ -80,6 +80,11 @@
+ #include <ulimit.h>
+ #endif /* ULIMIT_H */
+ 
++#ifdef HAVE_LOGIN_CAP_H
++#include <login_cap.h>
++extern char **environ;
++#endif
++
+ #define SSH_DEBUG_MODULE "Ssh2ChannelSession"
+ 
+ #define SSH_SESSION_INTERACTIVE_WINDOW                 10000
+@@ -405,6 +410,62 @@
+   if (getenv("TZ"))
+     ssh_child_set_env(envp, envsizep, "TZ", getenv("TZ"));
+ 
++#ifdef HAVE_LOGIN_CAP_H
++   {
++    char *p, *s, **tmpenv;
++    struct passwd *pwd;
++
++    pwd = getpwnam(user_name);
++    if (!pwd)
++      {
++	ssh_warning("Can't getpwnam %s: %s", user_name, strerror(errno));
++      }
++    else
++      {
++      /* Save previous environment array
++       */
++      tmpenv = environ;
++      environ = *envp;
++
++      /* Set the user's login environment
++       */
++      if (setusercontext(NULL, pwd,
++			 ssh_user_uid(session->common->user_data),
++			 LOGIN_SETPATH|LOGIN_SETENV) == 0)
++	{
++	  p = getenv("PATH");
++	  s = ssh_xmalloc((p != NULL ? strlen(p) + 1 : 0)
++			  + sizeof(SSH_BINDIR));
++	  *s = '\0';
++	  if (p != NULL)
++	    {
++	      strcat(s, p);
++	      strcat(s, ":");
++	    }
++	  strcat(s, SSH_BINDIR);
++
++	  *envp = environ;
++	  environ = tmpenv; /* Restore parent environment */
++	  for (*envsizep = 0; (*envp)[*envsizep] != NULL; (*envsizep)++)
++	    ;
++	  (*envsizep)++;
++          (*envsizep) += 50;
++	  (*envp) = ssh_xrealloc(*envp, (*envsizep) * sizeof(char *));
++
++	  ssh_child_set_env(envp, envsizep, "PATH", s);
++	  ssh_xfree(s);
++	}
++      else
++	{
++	  *envp = environ;
++	  environ = tmpenv; /* Restore parent environment */
++	  ssh_warning("Can't setusercontext env. variables: %s", strerror(errno));
++	}
++      }
++    endpwent();
++  }
++#endif /* HAVE_LOGIN_CAP_H */
++
+   /* Set SSH_CLIENT. */
+   snprintf(buf, sizeof(buf), "%s %s %s %s",
+            session->common->remote_ip, session->common->remote_port,
+@@ -628,12 +689,20 @@
    char buff[100], *time_string;
    
    /* Check /etc/nologin. */
@@ -21,3 +96,15 @@
        while (fgets(buf, sizeof(buf), f))
          fputs(buf, stderr);
        fclose(f);
+@@ -754,7 +823,11 @@
+           {
+             struct stat mailbuf;
+             if (stat(mailbox, &mailbuf) == -1 || mailbuf.st_size == 0)
++#ifndef __FreeBSD__
+               printf("No mail.\n");
++#else
++	      ;
++#endif
+             else if (mailbuf.st_atime > mailbuf.st_mtime)
+               printf("You have mail.\n");
+             else
