@@ -1,5 +1,8 @@
---- configure.orig	Sun Aug  2 06:48:40 1998
-+++ configure	Fri Sep  8 00:13:50 2000
+
+$FreeBSD$
+
+--- configure.orig	Sun Aug  2 16:48:40 1998
++++ configure	Wed Jan  2 14:14:55 2002
 @@ -571,7 +571,7 @@
  if test "${with_perl+set}" = set; then
    withval="$with_perl"
@@ -27,3 +30,21 @@
  	* ) 
  	    perlvnum=`echo $perlvers | sed -e 's/\.//' -e 's/_//'` ;; 
  esac
+@@ -1028,7 +1030,7 @@
+     CFLAGS="-Wall -g -ggdb3"
+     LDFLAGS="-g -ggdb3"
+ else
+-    CFLAGS="-g"
++#    CFLAGS="-g"
+     LDFLAGS="-g"
+ fi
+ x="enabled"
+@@ -1039,7 +1041,7 @@
+ 
+ 
+ else
+-  CFLAGS=""
++#  CFLAGS=""
+ LDFLAGS=""
+ x=disabled
+ debug=off

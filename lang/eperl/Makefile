@@ -35,6 +35,10 @@ MAN1=	eperl.1
 test:
 	@(cd ${WRKSRC}; make test)
 
+post-patch:
+	@find ${WRKSRC} -type f -name "*.[ch]" | xargs ${GREP} -l strnstr | \
+		xargs ${PERL} -pi -e 's|strnstr|ePerl_strnstr|g'
+
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/eperl ${PREFIX}/bin/eperl
 	${INSTALL_MAN} ${WRKSRC}/eperl.1 ${PREFIX}/man/man1/eperl.1
