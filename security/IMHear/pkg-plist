@@ -1,0 +1,4 @@
+bin/hear
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/msn_protocol_10.html
+@dirrm %%PORTDOCS%%%%DOCSDIR%%

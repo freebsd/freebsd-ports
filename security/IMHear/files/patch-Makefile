@@ -1,0 +1,6 @@
+--- Makefile.orig	Mon Oct  6 05:09:39 2003
++++ Makefile	Mon Oct  6 05:09:48 2003
+@@ -1,2 +1,2 @@
+ all: hear.c
+-	gcc -o hear hear.c -lpcap
++	${CC} ${CFLAGS} -o hear hear.c -lpcap
