@@ -82,97 +82,104 @@ my $BadVersion = "
 #
 ############################################################
 
+# Write a single line to a file.
 sub write_line {
-    local($filename, $line) = @_;
-    open(FILE, ">$filename") || die("Cannot open $filename, stopped");
-    print(FILE $line, "\n");
-    close(FILE);
+	my $filename = shift;	# File to write to.
+	my $line = shift;	# Line to write to the file.
+
+	open FILE, ">$filename" or die "Cannot open $filename, stopped\n";
+	print FILE "$line\n";
+	close FILE;
 }
 
 sub check_version {
-    local($id, $rname, $version, $bareid, $exclude, $path);
-    local($filename, $directory, $hastag, $cvsversion) = @_;
+	local($id, $rname, $version, $bareid, $exclude, $path);
+	local($filename, $directory, $hastag, $cvsversion) = @_;
 
-    if (! -f $filename) {
-	return(0);	# not present - either removed or let cvs deal with it.
-    }
-    open(FILE, $filename) || die("Cannot open $filename, stopped");
-    # requiring the header within the first 'n' lines isn't useful.
-    while (1) {
-	$pos = -1;
-	last if eof(FILE);
-	$line = <FILE>;
-	$pos = index($line, "\$$HEADER");
-	last if ($pos >= 0);
-    }
-
-    if ($pos == -1) {
-	$exclude = $cvsroot . "/CVSROOT/exclude";
-	$path = $directory . "/" . $filename;
-	open(EX, "<$exclude") || die("cannot open $exclude: $!");
-	while (<EX>) {
-	    local($line);
-
-	    chop;
-	    $line = $_;
-
-	    if ($line =~ /^#/) {
-		next;
-	    }
-	    if ($path =~ /$line/) {
-		close(EX);
-		return(0);
-	    }
+	if (! -f $filename) {
+		return(0);	# not present - either removed or let
+				# cvs deal with it.
 	}
-	close(EX);
-    }
-    if ($pos == -1) {
-	printf($NoId, $filename);
-	return(1);
-    }
-    $bareid = (index($line, "\$$HEADER: \$") >= 0 ||
-		index($line, "\$$HEADER\$") >= 0);
-    if (!$bareid && $line !~ /\$$HEADER: .* \$/) {
-	printf($BadId, $filename);
-	return(1);
-    }
-    # Ignore version mismatches (MFC spamming etc) on branches.
-    if ($hastag) {
-	return (0);
-    }
-    ($id, $rname, $version) = split(' ', substr($line, $pos));
-    if ($cvsversion{$filename} eq '0') {
-	if (!$bareid) {
-	    printf($NoName, $filename);
-	    return(1);
+
+	open FILE, $filename or die "Cannot open $filename, stopped\n";
+	# requiring the header within the first 'n' lines isn't useful.
+	while (1) {
+		$pos = -1;
+		last if eof(FILE);
+		$line = <FILE>;
+		$pos = index($line, "\$$HEADER");
+		last if ($pos >= 0);
+	}
+
+	if ($pos == -1) {
+		$exclude = $cvsroot . "/CVSROOT/exclude";
+		$path = $directory . "/" . $filename;
+		open(EX, "<$exclude") || die("cannot open $exclude: $!");
+		while (<EX>) {
+			local($line);
+
+			chop;
+			$line = $_;
+
+			if ($line =~ /^#/) {
+				next;
+			}
+			if ($path =~ /$line/) {
+				close(EX);
+				return(0);
+			}
+		}
+		close(EX);
+	}
+	if ($pos == -1) {
+		printf($NoId, $filename);
+		return(1);
+	}
+	$bareid = (index($line, "\$$HEADER: \$") >= 0 ||
+	   index($line, "\$$HEADER\$") >= 0);
+	if (!$bareid && $line !~ /\$$HEADER: .* \$/) {
+		printf($BadId, $filename);
+		return(1);
+	}
+	# Ignore version mismatches (MFC spamming etc) on branches.
+	if ($hastag) {
+		return (0);
+	}
+	($id, $rname, $version) = split(' ', substr($line, $pos));
+	if ($cvsversion{$filename} eq '0') {
+		if (!$bareid) {
+			printf($NoName, $filename);
+			return(1);
+		}
+		return(0);
+	}
+	if ($bareid) {
+		return (0);
+#		if ($directory =~ /^ports\//) {
+#			return (0);	# ok for ports
+#		}
+#		# Don't know whether to allow or trap this.  It means
+#		# one could bypass the version spam checks by simply
+#		# using a bare tag.
+#		printf($DelPath, $filename);
+#		return(1);
+	}
+	if ($rname ne "$directory/$filename,v") {
+		# If ports and the pathname is just the basename
+		# (eg: somebody sent in a port with $Id$ and the
+		# committer changed Id -> $HEADER and the version
+		# numbers otherwise match.
+		if (!($directory =~ /^ports\// && $rname eq "$filename,v")) {
+			printf($BadName, "$directory/$filename,v", $rname);
+			return(1);
+		}
+	}
+	if ($cvsversion{$filename} ne $version) {
+		printf($BadVersion, $filename, $cvsversion{$filename},
+		    $version, $filename);
+		return(1);
 	}
 	return(0);
-    }
-    if ($bareid) {
-	return (0);
-#	if ($directory =~ /^ports\//) {
-#	    return (0);	# ok for ports
-#	}
-#	# Don't know whether to allow or trap this.  It means one could
-#	# bypass the version spam checks by simply using a bare tag.
-#	printf($DelPath, $filename);
-#	return(1);
-    }
-    if ($rname ne "$directory/$filename,v") {
-	# If ports and the pathname is just the basename (eg: somebody sent
-	# in a port with $Id$ and the committer changed Id -> $HEADER and
-	# the version numbers otherwise match.
-	if (!($directory =~ /^ports\// && $rname eq "$filename,v")) {
-	    printf($BadName, "$directory/$filename,v", $rname);
-	    return(1);
-	}
-    }
-    if ($cvsversion{$filename} ne $version) {
-	printf($BadVersion, $filename, $cvsversion{$filename},
-	       $version, $filename);
-	return(1);
-    }
-    return(0);
 }
 
 #############################################################
@@ -189,12 +196,13 @@ sub check_version {
 #
 open(ENTRIES, $ENTRIES) || die("Cannot open $ENTRIES.\n");
 while (<ENTRIES>) {
-    chop;
-    next if (/^D/);
-    local($filename, $version, $stamp, $opt, $tag) = split('/', substr($_, 1));
-    $cvsversion{$filename} = $version;
-    $cvstag{$filename} = $tag;
-    $stamp = $opt;	#silence -w
+	chop;
+	next if (/^D/);
+	local($filename, $version, $stamp, $opt, $tag) =
+	    split('/', substr($_, 1));
+	$cvsversion{$filename} = $version;
+	$cvstag{$filename} = $tag;
+	$stamp = $opt;	#silence -w
 }
 close(ENTRIES);
 
@@ -227,19 +235,20 @@ if ($directory =~ /^src\/etc/) {
 # are considered to be administrative files by this script.
 #
 if ($check_id != 0) {
-    $failed = 0;
-    foreach $arg (@ARGV) {
-	local($hastag) = ($cvstag{$arg} ne '');
-	next if (index($arg, ".") == 0);
-	next if ($check_id == 2 && $arg ne "Makefile");
-	next if ($check_id == 3 && $hastag);
-	$failed += &check_version($arg, $directory, $hastag, $cvsversion);
-    }
-    if ($failed) {
-	print "\n";
-	unlink($cfg::LAST_FILE);
-	exit(1);
-    }
+	$failed = 0;
+	foreach $arg (@ARGV) {
+		local($hastag) = ($cvstag{$arg} ne '');
+		next if (index($arg, ".") == 0);
+		next if ($check_id == 2 && $arg ne "Makefile");
+		next if ($check_id == 3 && $hastag);
+		$failed += &check_version($arg, $directory, $hastag,
+		    $cvsversion);
+	}
+	if ($failed) {
+		print "\n";
+		unlink($cfg::LAST_FILE);
+		exit(1);
+	}
 }
 
 #
