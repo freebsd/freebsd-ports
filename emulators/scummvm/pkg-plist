@@ -1,3 +1,5 @@
 bin/scummvm
-%%PORTDOCS%%share/doc/scummvm/README
-%%PORTDOCS%%@dirrm share/doc/scummvm
+%%PORTDOCS%%%%DOCSDIR%%/NEWS
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/TODO
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
