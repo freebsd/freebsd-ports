@@ -15,6 +15,8 @@ EXTRACT_SUFX=   .tgz
 MAINTAINER=	maho@FreeBSD.org
 COMMENT=	Drawing organic molecules easily and store them (developer version)
 
+BROKEN=		"Checksum mismatch"
+
 LIB_DEPENDS=    EMF.1:${PORTSDIR}/graphics/libemf
 RUN_DEPENDS=	transfig:${PORTSDIR}/print/transfig
 
