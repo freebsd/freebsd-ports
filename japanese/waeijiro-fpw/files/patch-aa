@@ -1,0 +1,18 @@
+--- Makefile.~1~	Wed Mar 27 19:32:34 2002
++++ Makefile	Mon Sep  9 14:00:51 2002
+@@ -1,10 +1,13 @@
+-SRC_DICT=/dose/tmp/dic/waeiji52.txt
++ifeq (,${SRC_DICT})
++SRC_DICT = waeiji52.txt
++endif
++#SRC_DICT=/dose/tmp/dic/waeiji52.txt
+ INSTALLDIR=/home/dict
+ DIR=WAEIJIRO
+ 
+ # don't modify below
+ 
+ FPWPARSER = waeijiro-fpw.pl
+-FPWPARSERFLAGS = $(SRC_DICT)
++FPWPARSERFLAGS = -- $(SRC_DICT)
+ 
+ include fpwutils.mk

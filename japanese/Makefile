@@ -396,6 +396,7 @@
     SUBDIR += w3
     SUBDIR += w3m
     SUBDIR += w3m-img
+    SUBDIR += waeijiro-fpw
     SUBDIR += wdic-fpw
     SUBDIR += weather-emacs20
     SUBDIR += web1913-fpw

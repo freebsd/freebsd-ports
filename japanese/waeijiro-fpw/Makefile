@@ -1,0 +1,55 @@
+# New ports collection makefile for:	WAEIJIRO Dictionary - JIS X 4081 version
+# Date created:        	2002.9.9
+# Whom:			Satoshi Taoka <taoka@FreeBSD.org>
+#
+# $FreeBSD$
+#
+
+PORTNAME=	waeijiro-fpw
+PORTVERSION=	1.0
+CATEGORIES=	japanese
+#MASTER_SITES=	http://openlab.ring.gr.jp/edict/fpw/dist/eijiro/
+MASTER_SITES=	http://www.dsl.gr.jp/~tf/
+#DISTNAME=	${PORTNAME}${PORTVERSION}-src
+
+MAINTAINER=	taoka@FreeBSD.org
+
+BUILD_DEPENDS=	${LOCALBASE}/share/doc/freepwing/fpwutils.mk:${PORTSDIR}/japanese/freepwing \
+		${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/${PERL_ARCH}/Jcode.pm:${PORTSDIR}/japanese/p5-Jcode
+
+RESTRICTED=	"The original dictionary is not free"
+NO_PACKAGE=	"The original dictionary is not free"
+USE_GMAKE=	yes
+DICT_PATH?=	/cdrom
+SRCFILE?=	waeiji52.txt
+MAKE_ENV=	SRC_DICT=${DICT_PATH}/${SRCFILE}
+
+post-extract:
+	@if [ ! -f ${DICT_PATH}/${SRCFILE} ]; then \
+	  ${ECHO} "###################################################"; \
+	  ${ECHO} "I cannot find a file ${DICT_PATH}/${SRCFILE}"; \
+	  ${ECHO} "Specify the Waeijiro Dictionary file with the full path"; \
+	  ${ECHO} "and excecute the following command again:"; \
+	  ${ECHO} "  make DICT_PATH=${DICT_PATH} SRCFILE=${SRCFILE}"; \
+	  ${ECHO} ""; \
+	  ${ECHO} "Notice: DICT_PATH must be a full path to the file."; \
+	  ${ECHO} "###################################################"; \
+	  ${FALSE}; \
+	fi
+	${CP} ${LOCALBASE}/share/doc/freepwing/fpwutils.mk ${WRKSRC}
+
+post-build:
+	cd ${WRKSRC}; fpwmake catalogs
+
+do-install:
+	${MKDIR} ${PREFIX}/share/dict/waeijiro-fpw/waeijiro/data
+	${INSTALL_DATA} ${WRKSRC}/honmon ${PREFIX}/share/dict/waeijiro-fpw/waeijiro/data
+	${INSTALL_DATA} ${WRKSRC}/catalogs ${PREFIX}/share/dict/waeijiro-fpw
+.if !defined(NOPORTDOCS)
+	${MKDIR} ${PREFIX}/share/doc/waeijiro-fpw
+.for i in README
+	${INSTALL_DATA} ${WRKSRC}/$i ${PREFIX}/share/doc/waeijiro-fpw
+.endfor
+.endif
+
+.include <bsd.port.mk>
