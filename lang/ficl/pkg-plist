@@ -15,7 +15,7 @@ bin/ficl
 %%PORTDOCS%%%%DOCSDIR%%/source/dpans.ht
 %%PORTDOCS%%%%DOCSDIR%%/source/debugger.ht
 %%PORTDOCS%%%%DOCSDIR%%/source/api.ht
-@dirrm %%PORTDOCS%%%%DOCSDIR%%/source
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/source
 %%PORTDOCS%%%%DOCSDIR%%/releases.html
 %%PORTDOCS%%%%DOCSDIR%%/parsesteps.html
 %%PORTDOCS%%%%DOCSDIR%%/oop.html
@@ -30,7 +30,7 @@ bin/ficl
 %%PORTDOCS%%%%DOCSDIR%%/graphics/ficl.4.64.jpg
 %%PORTDOCS%%%%DOCSDIR%%/graphics/ficl.4.128.jpg
 %%PORTDOCS%%%%DOCSDIR%%/graphics/4ring.gif
-@dirrm %%PORTDOCS%%%%DOCSDIR%%/graphics
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/graphics
 %%PORTDOCS%%%%DOCSDIR%%/ficl.html
 %%PORTDOCS%%%%DOCSDIR%%/favicon.ico
 %%PORTDOCS%%%%DOCSDIR%%/dpans.html
@@ -39,5 +39,6 @@ bin/ficl
 %%PORTDOCS%%%%DOCSDIR%%/articles/oo_in_c.html
 %%PORTDOCS%%%%DOCSDIR%%/articles/jwsforml.pdf
 %%PORTDOCS%%%%DOCSDIR%%/articles/ficlddj.pdf
-@dirrm %%PORTDOCS%%%%DOCSDIR%%/articles
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/articles
 %%PORTDOCS%%%%DOCSDIR%%/api.html
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
