@@ -17,7 +17,7 @@ COMMENT=	The Gnome livejournal client
 LIB_DEPENDS=	curl.3:${PORTSDIR}/ftp/curl
 
 USE_X_PREFIX=	yes
-USE_GNOME=	gnomeprefix gnomehack libgnomeui intlhack
+USE_GNOME=	gnomeprefix gnomehack libgnomeui intlhack gtksourceview
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_LIBTOOL_VER=15
