@@ -3470,6 +3470,7 @@ info_to_html	ports/textproc/info_to_html
 infobot		ports/irc/infobot
 infobus		ports/java/infobus
 inform		ports/games/inform
+ingo		ports/mail/ingo
 inilib		ports/devel/inilib
 initutil	ports/devel/initutil
 inkscape	ports/graphics/inkscape
