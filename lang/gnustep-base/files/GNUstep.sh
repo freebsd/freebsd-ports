@@ -13,9 +13,9 @@ case "$1" in
 start)
 	if [ -e ${GNUSTEP_SYSTEM_ROOT}/Makefiles/GNUstep.sh ]; then
 		. ${GNUSTEP_SYSTEM_ROOT}/Makefiles/GNUstep.sh
-		if [ -x ${GNUSTEP_SYSTEM_ROOT}/Tools/gdomap ]; then
+		if [ -x ${GNUSTEP_SYSTEM_ROOT}/Tools/${GNUSTEP_HOST_CPU}/${GNUSTEP_HOST_OS}/gdomap ]; then
 			rm -f ${PIDFILE}
-			${GNUSTEP_SYSTEM_ROOT}/Tools/gdomap -a ${IFFILE} -I ${PIDFILE}
+			${GNUSTEP_SYSTEM_ROOT}/Tools/${GNUSTEP_HOST_CPU}/${GNUSTEP_HOST_OS}/gdomap -a ${IFFILE} -I ${PIDFILE}
 			echo -n ' GNUstep'
 		fi
 	fi
