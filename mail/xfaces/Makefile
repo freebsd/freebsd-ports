@@ -5,7 +5,7 @@
 # With some 
 # modifications from:	Andreas Klemm <andreas@FreeBSD.ORG>
 #
-# $Id: Makefile,v 1.10 1998/09/15 11:13:28 asami Exp $
+# $Id: Makefile,v 1.11 1998/09/17 00:32:45 asami Exp $
 #
 
 DISTNAME=	xfaces-3.3
@@ -17,8 +17,8 @@ DISTFILES=	${DISTNAME}.tar.Z xfaces-sounds.tar.gz
 
 MAINTAINER=	Lars.Koeller@Uni-Bielefeld.DE
 
-BUILD_DEPENDS= 	${X11BASE}/lib/libaudio.a:${PORTSDIR}/audio/nas
-LIB_DEPENDS=	compface\\.1\\.:${PORTSDIR}/mail/faces \
+BUILD_DEPENDS=	${X11BASE}/lib/libaudio.a:${PORTSDIR}/audio/nas
+LIB_DEPENDS=	compface.1:${PORTSDIR}/mail/faces \
 		Xpm.4:${PORTSDIR}/graphics/xpm
 
 USE_IMAKE=	YES
