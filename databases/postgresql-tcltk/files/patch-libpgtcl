@@ -1,0 +1,9 @@
+--- src/interfaces/libpgtcl/Makefile	Thu May 10 21:46:33 2001
++++ src/interfaces/libpgtcl/Makefile	Fri Mar 29 05:11:10 2002
+@@ -26,5 +26,5 @@
+ # to be referenced separately to keep (broken) linkers happy.  (This is
+ # braindead; users of libpq should not need to know what it depends on.)
+-SHLIB_LINK+= $(filter -L%, $(LDFLAGS)) $(filter -lcrypt, $(LIBS))
++SHLIB_LINK+= $(filter -L%, $(LDFLAGS)) $(filter -lcrypt -L% -ltcl83 -ltcl84, $(LIBS))
+ 
+ all: submake all-lib
