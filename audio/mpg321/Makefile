@@ -9,7 +9,7 @@
 PORTNAME=	mpg321
 PORTVERSION=	0.0.5.1
 CATEGORIES=	audio
-MASTER_SITES=	http://gemini.woot.net/~hosehead/packages/
+MASTER_SITES=	http://www.linuxberg.com/files/
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
