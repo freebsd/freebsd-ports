@@ -18,7 +18,8 @@ MAINTAINER=	freebsd@simplerezo.com
 COMMENT=	Content/Anti-virus Scanner for qmail
 
 BUILD_DEPENDS=	${QMAIL_QUEUE}:${PORTSDIR}/mail/qmail \
-		reformime:${PORTSDIR}/mail/maildrop
+		reformime:${PORTSDIR}/mail/maildrop \
+		${SITE_PERL}/${PERL_ARCH}/Time/HiRes.pm:${PORTSDIR}/devel/p5-Time-HiRes
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 # A normal qmail installation puts everything into /var/qmail/.
@@ -145,10 +146,4 @@ post-deinstall:
 test:
 	@${WRKSRC}/contrib/test_installation.sh -doit
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 500800
-BUILD_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/Time/HiRes.pm:${PORTSDIR}/devel/p5-Time-HiRes
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
