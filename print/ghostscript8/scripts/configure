@@ -251,7 +251,7 @@ Have fun with this new configuration style !     -andreas \n\n\
   "lex7000"  "Lexmark 7000 [LEX7000]" "$status_lex7000" \
   "cp50"     "Mitsubishi CP50 color" "$status_cp50" \
   "necp6"    "NEC PinWriter P6/P6+/P60, 360x360 DPI resol" "$status_necp6" \
-  "npdl"     "NEC Printer Description Language [NPDL]" "$status_npdl" \
+  "npdl"     "NEC Printer Description Language [LIPS]" "$status_npdl" \
   "oce9050"  "OCE 9050 printer" "$status_oce9050" \
   "oki182"   "Okidata MicroLine 182" "$status_oki182" \
   "okiibm"   "Okidata MicroLine IBM-compatible printers" "$status_okiibm" \
