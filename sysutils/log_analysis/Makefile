@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	log_analysis
-PORTVERSION=	0.41
+PORTVERSION=	0.42
 CATEGORIES=	sysutils
 MASTER_SITES=	http://lug.umbc.edu/~mabzug1/
 
@@ -19,14 +19,13 @@ GNU_CONFIGURE=	yes
 
 MAN1=	log_analysis.1
 
-post-patch:
-	@${PERL} -pi -e 's!perldoc!pod2man!' ${WRKSRC}/configure
-
 post-install:
-	@${MKDIR} ${PREFIX}/share/examples/log_analysis
-	${INSTALL_DATA} ${WRKSRC}/doc/sample-new.conf \
-		${PREFIX}/share/examples/log_analysis
-	${INSTALL_DATA} ${WRKSRC}/doc/sample-qpopper.conf \
-		${PREFIX}/share/examples/log_analysis
+	@${MKDIR} ${EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/doc/sample-* ${EXAMPLESDIR}
+.if !defined(NOPORTDOCS)
+	@${MKDIR} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/doc/Tutorial ${DOCSDIR}
+.endif
 
 .include <bsd.port.mk>
