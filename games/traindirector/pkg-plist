@@ -1,1 +1,15 @@
-bin/trsim
+bin/traindir
+bin/gentt
+bin/setup_trdir.sh
+share/traindir/default.sch
+share/traindir/default.trk
+share/traindir/demoitin.trk
+share/traindir/southst.trk
+share/traindir/tdirico1.ico
+share/traindir/tdirico2.ico
+share/traindir/train.ico
+share/traindir/tdicons/bridgeup.xpm
+share/traindir/tdicons/bridgedn.xpm
+share/traindir/tdicons/triangl.xpm
+@dirrm share/traindir/tdicons/
+@dirrm share/traindir

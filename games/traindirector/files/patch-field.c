@@ -1,5 +1,5 @@
---- field.c.orig	Sun Sep  7 23:43:51 2003
-+++ field.c	Sun Sep  7 23:43:58 2003
+--- field.c.orig	Mon Sep  8 04:53:57 2003
++++ field.c	Mon Sep  8 04:54:03 2003
 @@ -22,7 +22,6 @@
  #include <stdio.h>
  #include <string.h>

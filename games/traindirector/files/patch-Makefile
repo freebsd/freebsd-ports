@@ -1,0 +1,25 @@
+--- Makefile.orig	Tue Mar 25 20:50:38 2003
++++ Makefile	Mon Sep  8 12:31:58 2003
+@@ -4,8 +4,8 @@
+ #
+ VERSION=1.18e
+ 
+-BINDIR=/usr/local/bin
+-SAMPLEDIR=/usr/local/share
++BINDIR=$(PREFIX)/bin
++SAMPLEDIR=$(PREFIX)/share
+ 
+ SHELL = /bin/sh
+ INSTALL = install
+@@ -16,9 +16,9 @@
+ GLIBINC=`glib-config --cflags`
+ GLIBLIB=`glib-config --libs`
+ 
+-CFLAGS = -g ${GLIBINC} ${GTKINC} -Dunix
++CFLAGS += -g ${GLIBINC} ${GTKINC} -Dunix
+ 
+-CC = cc
++CC ?= cc
+ 
+ LIBS = ${GLIBLIB} ${GTKLIB}
+ 
