@@ -1,0 +1,60 @@
+bin/waimea
+bin/waimeactl
+%%DATADIR%%/actions/sloppyfocusopaque/action.conf
+%%DATADIR%%/actions/sloppyfocusnonopaque/action.conf
+%%DATADIR%%/actions/clicktofocusopaque/action.conf
+%%DATADIR%%/actions/clicktofocusnonopaque/action.conf
+%%DATADIR%%/actions/key-bindings.conf
+%%DATADIR%%/actions/button-mappings.conf
+%%DATADIR%%/actions/common.conf
+%%DATADIR%%/styles/freedesktop/style.conf
+%%DATADIR%%/styles/freedesktop/window.conf
+%%DATADIR%%/styles/freedesktop/menu.conf
+%%DATADIR%%/styles/freedesktop/dockapp.conf
+%%DATADIR%%/styles/freedesktop/root.conf
+%%DATADIR%%/styles/freedesktop/freedesktop.png
+%%DATADIR%%/styles/freedesktop/freedesktop.svg
+%%DATADIR%%/styles/logo.conf
+%%DATADIR%%/menus/icons/actions.png
+%%DATADIR%%/menus/icons/desktops.png
+%%DATADIR%%/menus/icons/editors.png
+%%DATADIR%%/menus/icons/emacs.png
+%%DATADIR%%/menus/icons/evolution.png
+%%DATADIR%%/menus/icons/exit.png
+%%DATADIR%%/menus/icons/galeon.png
+%%DATADIR%%/menus/icons/gimp.png
+%%DATADIR%%/menus/icons/graphics.png
+%%DATADIR%%/menus/icons/gvim.png
+%%DATADIR%%/menus/icons/info.png
+%%DATADIR%%/menus/icons/lock.png
+%%DATADIR%%/menus/icons/mozilla.png
+%%DATADIR%%/menus/icons/multimedia.png
+%%DATADIR%%/menus/icons/network.png
+%%DATADIR%%/menus/icons/restart.png
+%%DATADIR%%/menus/icons/rootmenu.png
+%%DATADIR%%/menus/icons/settings.png
+%%DATADIR%%/menus/icons/styles.png
+%%DATADIR%%/menus/icons/window-list.png
+%%DATADIR%%/menus/icons/window.png
+%%DATADIR%%/menus/icons/xmms.png
+%%DATADIR%%/menus/icons/xterm.png
+%%DATADIR%%/menus/menu.conf
+%%DATADIR%%/scripts/icons/styles.png
+%%DATADIR%%/scripts/icons/actions.png
+%%DATADIR%%/scripts/actioncfgmenu.pl
+%%DATADIR%%/scripts/stylecfgmenu.pl
+%%DATADIR%%/scripts/file2textop.pl
+%%DATADIR%%/waimearc
+%%DATADIR%%/waimea.dtd
+@dirrm %%DATADIR%%/styles/freedesktop
+@dirrm %%DATADIR%%/styles
+@dirrm %%DATADIR%%/scripts/icons
+@dirrm %%DATADIR%%/scripts
+@dirrm %%DATADIR%%/menus/icons
+@dirrm %%DATADIR%%/menus
+@dirrm %%DATADIR%%/actions/sloppyfocusopaque
+@dirrm %%DATADIR%%/actions/sloppyfocusnonopaque
+@dirrm %%DATADIR%%/actions/clicktofocusopaque
+@dirrm %%DATADIR%%/actions/clicktofocusnonopaque
+@dirrm %%DATADIR%%/actions
+@dirrm %%DATADIR%%

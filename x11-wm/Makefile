@@ -98,6 +98,7 @@
     SUBDIR += vtwm
     SUBDIR += w9wm
     SUBDIR += waimea
+    SUBDIR += waimea-devel
     SUBDIR += wampager
     SUBDIR += weewm
     SUBDIR += windowlab
