@@ -1,1 +1,4 @@
 GNUstep/Apps/WMMail.app/WMMail
+share/doc/WMMail/WMMail.defaults
+@dirrm GNUstep/Apps/WMMail.app
+@dirrm share/doc/WMMail
