@@ -7055,6 +7055,7 @@ ruby-gnome-all	ports/x11/ruby-gnome-all
 ruby-gnome2	ports/x11/ruby-gnome2
 ruby-gnome2-all	ports/x11/ruby-gnome2-all
 ruby-gnomecanvas2	ports/graphics/ruby-gnomecanvas2
+ruby-gnomevfs	ports/devel/ruby-gnomevfs
 ruby-gnuplot	ports/math/ruby-gnuplot
 ruby-gnustep	ports/devel/ruby-gnustep
 ruby-google	ports/www/ruby-google
