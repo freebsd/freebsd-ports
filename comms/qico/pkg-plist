@@ -1,6 +1,6 @@
 bin/qcc
 etc/qico.conf.sample
 libexec/qico
-share/doc/qico/FAQ.ru
-share/doc/qico/README.ru
-@dirrm share/doc/qico
+%%PORTDOCS%%share/doc/qico/FAQ.ru
+%%PORTDOCS%%share/doc/qico/README.ru
+%%PORTDOCS%%@dirrm share/doc/qico
