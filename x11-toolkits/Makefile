@@ -104,7 +104,6 @@
     SUBDIR += libbonobouimm
     SUBDIR += libgail-gnome
     SUBDIR += libgnomeprintui
-    SUBDIR += libgnomeprintui20
     SUBDIR += libgnomeui
     SUBDIR += libgnomeuimm
     SUBDIR += libgtkeditor
