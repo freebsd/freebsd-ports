@@ -1,14 +1,14 @@
 # New ports collection makefile for:	pine
 # http://www.washington.edu/pine/
-# Version required:     4.05
+# Version required:     4.10
 # Date created:		09 July 1998
 # Whom:			Adrian Penisoara <ady@freebsd.ady.ro>
 #
-# $Id: Makefile,v 1.28 1999/01/13 02:47:31 scrappy Exp $
+# $Id: Makefile,v 1.29 1999/03/11 21:47:15 scrappy Exp $
 #
 
-DISTNAME=       pine4.05
-PKGNAME=        pine-4.05
+DISTNAME=       pine4.10
+PKGNAME=        pine-4.10
 CATEGORIES=     mail news
 MASTER_SITES=	ftp://ftp.cac.washington.edu/pine/
 
@@ -68,9 +68,5 @@ do-install:
 post-install:
 	${PREFIX}/bin/pine -P ${PREFIX}/etc/pine.conf -conf >${WRKSRC}/pine.conf
 	${INSTALL_DATA} ${WRKSRC}/pine.conf ${PREFIX}/etc/pine.conf
-	@${ECHO} "	- - - - - - - - - - - - - - - - - - - - - - - - -"
-	@${ECHO} "	If Pine exits with \"Received abort signal\" try"
-	@${ECHO} "	disabling the \"quell-folder-internal-msg\" feature"
-	@${ECHO} "	- - - - - - - - - - - - - - - - - - - - - - - - -"
 
 .include <bsd.port.mk>

@@ -1,7 +1,7 @@
-*** doc/pine.1.orig	Wed Sep  2 21:31:57 1998
---- doc/pine.1	Sat Sep 12 21:58:23 1998
+*** doc/pine.1.orig	Thu Feb  4 20:42:05 1999
+--- doc/pine.1	Tue Feb  9 22:11:26 1999
 ***************
-*** 271,281 ****
+*** 294,304 ****
   .br
   /etc/mime.types	System-wide file ext. to MIME type mapping
   .br
@@ -13,7 +13,7 @@
   .br
   /tmp/.\\usr\\spool\\mail\\xxxx	Per-folder mailbox lock files.
   .br
---- 271,281 ----
+--- 294,304 ----
   .br
   /etc/mime.types	System-wide file ext. to MIME type mapping
   .br

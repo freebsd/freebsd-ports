@@ -1,5 +1,5 @@
-*** build.orig	Fri Sep  4 03:01:15 1998
---- build	Sun Sep 20 00:52:36 1998
+*** build.orig	Wed Dec 16 01:53:29 1998
+--- build	Tue Feb  9 21:38:45 1999
 ***************
 *** 80,87 ****
    pine   The Pine mailer. Once compiled this should work just fine on
@@ -20,7 +20,7 @@
    pico   The standalone editor similar to the Pine message composer.
           This is a very simple straight forward text editor.
 ***************
-*** 274,284 ****
+*** 277,287 ****
   
           if [ -s c-client ] ; then rm -f c-client ; fi
           ln -s imap/c-client c-client
@@ -32,7 +32,7 @@
           eval echo make "$makeargs" "$K1" "$K2" $ccltarg
           cd $PHOME/imap
           eval make "$makeargs" "$K1" "$K2" $ccltarg
---- 274,284 ----
+--- 277,287 ----
   
           if [ -s c-client ] ; then rm -f c-client ; fi
           ln -s imap/c-client c-client
@@ -45,7 +45,7 @@
           cd $PHOME/imap
           eval make "$makeargs" "$K1" "$K2" $ccltarg
 ***************
-*** 299,312 ****
+*** 302,315 ****
           cd $PHOME/bin
           rm -f pine mtest imapd pico pilot
           if [ -s ../pine/pine ] ;      then ln ../pine/pine  pine      ; fi
@@ -60,7 +60,7 @@
           echo "Done"
           ;;
   
---- 299,312 ----
+--- 302,315 ----
           cd $PHOME/bin
           rm -f pine mtest imapd pico pilot
           if [ -s ../pine/pine ] ;      then ln ../pine/pine  pine      ; fi
@@ -76,7 +76,7 @@
           ;;
   
 ***************
-*** 317,326 ****
+*** 320,329 ****
   	make clean
           echo "Cleaning Pine"
           cd $PHOME/pine
@@ -87,7 +87,7 @@
           echo "Done"
           cd $PHOME
           ;;
---- 317,326 ----
+--- 320,329 ----
   	make clean
           echo "Cleaning Pine"
           cd $PHOME/pine
