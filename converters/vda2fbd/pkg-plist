@@ -1,2 +1,3 @@
 bin/vda2fbd
 %%PORTDOCS%%%%DOCSDIR%%/model.ps.gz
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
