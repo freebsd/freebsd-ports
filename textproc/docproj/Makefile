@@ -15,7 +15,6 @@ DISTFILES=	# empty
 MAINTAINER=	nik@freebsd.org
 
 RUN_DEPENDS=	instant:${PORTSDIR}/textproc/sgmlformat \
-		sgmlnorm:${PORTSDIR}/textproc/sp \
 		jade:${PORTSDIR}/textproc/jade \
 		tidy:${PORTSDIR}/www/tidy \
 		w3m:${PORTSDIR}/www/w3m \
