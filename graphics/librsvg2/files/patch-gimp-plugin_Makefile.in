@@ -1,0 +1,11 @@
+--- gimp-plugin/Makefile.in.orig	Sun Mar 23 19:17:25 2003
++++ gimp-plugin/Makefile.in	Sun Mar 23 19:17:41 2003
+@@ -103,7 +103,7 @@
+ VERSION = @VERSION@
+ VERSION_INFO = @VERSION_INFO@
+ 
+-gimpdir = $(libdir)/gimp/1.3/plug-ins
++gimpdir = $(libexecdir)/gimp/1.3/plug-ins
+ 
+ INCLUDES = \
+ 	$(LIBRSVG_CFLAGS) \
