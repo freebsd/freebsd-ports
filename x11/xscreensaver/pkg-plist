@@ -53,6 +53,7 @@ bin/noseguy
 bin/pedal
 bin/penetrate
 bin/penrose
+bin/petri
 bin/phosphor
 bin/pyro
 bin/qix
@@ -60,6 +61,7 @@ bin/rd-bomb
 bin/rocks
 bin/rorschach
 bin/rotor
+bin/shadebobs
 bin/sierpinski
 bin/slidescreen
 bin/slip
@@ -74,8 +76,10 @@ bin/swirl
 bin/t3d
 bin/triangle
 bin/truchet
+bin/vidwhacker
 bin/vines
 bin/wander
+bin/webcollage
 bin/worm
 bin/xflame
 bin/xjack
