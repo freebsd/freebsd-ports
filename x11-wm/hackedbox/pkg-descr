@@ -2,4 +2,6 @@ Openbox is based on, and similar to, blackbox.  In this port/package,
 bsetbg and bsetroot are renamed to osetbg and osetroot in order to
 avoid conflict with blackbox.
 
+Internationalization/localization does not work in this port.
+
 WWW: http://openbox.sunsite.dk/
