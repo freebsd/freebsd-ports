@@ -16,7 +16,7 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:exim FAQ.txt.bz2:exim
 DIST_SUBDIR=	exim
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
-MAINTAINER=	eik@FreeBSD.org
+MAINTAINER=	krion@FreeBSD.org
 COMMENT?=	High performance MTA for Unix systems on the Internet
 
 .include "options"
