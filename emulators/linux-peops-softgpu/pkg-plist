@@ -1,0 +1,12 @@
+lib/linux-psemupro/plugins/libgpuPeopsSoftX.so.1.0.12
+libexec/linux-psemupro/cfg/cfgPeopsSoft
+share/linux-psemupro/cfg/gpuPeopsSoftX.cfg
+@dirrm lib/linux-psemupro/plugins
+@dirrm lib/linux-psemupro
+@dirrm libexec/linux-psemupro/cfg
+@dirrm libexec/linux-psemupro
+@dirrm share/linux-psemupro/cfg
+@dirrm share/linux-psemupro
+%%PORTDOCS%%share/doc/linux-peops-softgpu/readme_1_12.txt
+%%PORTDOCS%%share/doc/linux-peops-softgpu/version_1_12.txt
+%%PORTDOCS%%@dirrm share/doc/linux-peops-softgpu
