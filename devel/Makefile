@@ -806,6 +806,7 @@
     SUBDIR += pear-XML_Parser
     SUBDIR += pear-XML_Tree
     SUBDIR += pear-XML_Util
+    SUBDIR += pear-XML_XPath
     SUBDIR += pedisassem
     SUBDIR += perforce
     SUBDIR += perltidy

@@ -1,0 +1,7 @@
+This is an XML parser based on PHP's built-in xml extension.  It
+supports two basic modes of operation: "func" and "event".  In "func"
+mode, it will look for a function named after each element
+(xmltag_ELEMENT for start tags and xmltag_ELEMENT_ for end tags), and
+in "event" mode it uses a set of generic callbacks.
+
+WWW: http://pear.php.net/package-info.php?package=XML_Parser
