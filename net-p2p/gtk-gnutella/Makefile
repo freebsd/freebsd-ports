@@ -7,6 +7,7 @@
 
 PORTNAME=	gtk-gnutella
 PORTVERSION=	0.18
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		http://gtk-gnutella.sourceforge.net/download/ \
