@@ -1,0 +1,10 @@
+Mined was the first text mode editor with Unicode support. It now has both
+extensive Unicode and CJK support offering many specific features and
+covering special cases that other editors are not aware of (like auto-
+detection features and automatic handling of terminal variations).
+
+And basically, it is an editor tailored to efficient editing of plain text
+documents and programs, with features and interactive behaviour designed
+for this purpose.
+
+WWW: http://towo.net/mined/

@@ -1,0 +1,11 @@
+--- makemined.orig	Wed Apr 23 17:16:42 2003
++++ makemined	Sat Dec 25 10:55:07 2004
+@@ -5,7 +5,7 @@
+ Linux*)	make -f makefile.linux $1;;
+ Sun*)	make -f makefile.sun $1;;
+ HP*)	make -f makefile.hp $1;;
+-*BSD*)	make -f makefile.bsd $1;;
++*BSD*)	${GMAKE} -f makefile.bsd $1;;
+ CYG*)	make -f makefile.cygwin $1;;
+ Darwin*) make -f makefile.osx $1;;
+ esac

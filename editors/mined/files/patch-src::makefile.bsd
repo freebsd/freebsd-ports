@@ -1,0 +1,29 @@
+--- ./src/makefile.bsd.orig	Fri Mar 14 12:25:01 2003
++++ ./src/makefile.bsd	Sat Dec 25 12:33:55 2004
+@@ -6,7 +6,7 @@
+ # Where and how to install
+ prefix	= $(PREFIX)
+ bindir	= $(prefix)/bin
+-helpdir	= $(prefix)/share/help
++helpdir	= $(prefix)/share/doc/mined/help
+ mandir	= $(prefix)/man
+ INSTALL = install
+ #INSTALL = /bin/cp -p
+@@ -54,7 +54,7 @@
+ # link options
+ 
+ # link dynamically
+-LDOPTS=-d y	# -d n links statically
++LDOPTS=		# -d n links statically
+ GLDOPTS=	# -static links statically
+ 
+ 
+@@ -62,7 +62,7 @@
+ # compiler selection and compiler-specific options
+ # (source warnings, optimisation and debug)
+ 
+-CC=gcc
++#CC=gcc
+ include mkinclud.$(CC)
+ 
+ 
