@@ -1,0 +1,59 @@
+*** Imakefile.orig	Wed Mar 20 00:17:56 1996
+--- Imakefile	Tue Mar 26 06:34:59 1996
+***************
+*** 58,67 ****
+  XCOMM -- always available in the /pub/podlipec directory on ftp.portal.com
+  XCOMM **********************************************************************
+  XCOMM =========
+! XCOMM XA_VIDEO_DEFS = -DXA_CINEPAK -DXA_INDEO
+! XCOMM XA_VIDEO_LIBS = xa2.0_cvid_sparcCOFF.o xa2.0_iv32_sparcCOFF.o
+! XA_VIDEO_DEFS =
+! XA_VIDEO_LIBS =
+  XA_VIDEO_INCS =
+  XA_VIDEO_DEPS =
+  XCOMM
+--- 58,67 ----
+  XCOMM -- always available in the /pub/podlipec directory on ftp.portal.com
+  XCOMM **********************************************************************
+  XCOMM =========
+! XA_VIDEO_DEFS = -DXA_CINEPAK -DXA_INDEO
+! XA_VIDEO_LIBS = xa2.0_cvid_netbsd386.o xa2.0_iv32_netbsd386.o
+! XCOMM XA_VIDEO_DEFS =
+! XCOMM XA_VIDEO_LIBS =
+  XA_VIDEO_INCS =
+  XA_VIDEO_DEPS =
+  XCOMM
+***************
+*** 149,155 ****
+  XCOMM XA_AUDIO_DEFS =
+  XCOMM
+  XCOMM -- Sun Sparcs -----------------------------------------------------------
+! XA_AUDIO_DEFS = -DXA_SPARC_AUDIO
+  XCOMM
+  XCOMM NOTE: Imakefile should add the -DSVR4 to Sun Solaris machines, if not
+  XCOMM       use the following:
+--- 149,155 ----
+  XCOMM XA_AUDIO_DEFS =
+  XCOMM
+  XCOMM -- Sun Sparcs -----------------------------------------------------------
+! XCOMM XA_AUDIO_DEFS = -DXA_SPARC_AUDIO
+  XCOMM
+  XCOMM NOTE: Imakefile should add the -DSVR4 to Sun Solaris machines, if not
+  XCOMM       use the following:
+***************
+*** 185,191 ****
+  XCOMM XA_MACH_LIBS = -lc
+  XCOMM 
+  XCOMM -- Also FreeBSD, and BSDI with SBlast-BSD-1.5 (development stages)-------
+! XCOMM XA_AUDIO_DEFS = -DXA_LINUX_AUDIO -DXA_LINUX_NEWER_SND
+  XCOMM XA_AUDIO_LIBS = -lc
+  XCOMM
+  XCOMM -- SGI Indigo -----------------------------------------------------------
+--- 185,191 ----
+  XCOMM XA_MACH_LIBS = -lc
+  XCOMM 
+  XCOMM -- Also FreeBSD, and BSDI with SBlast-BSD-1.5 (development stages)-------
+! XA_AUDIO_DEFS = -DXA_LINUX_AUDIO -DXA_LINUX_NEWER_SND
+  XCOMM XA_AUDIO_LIBS = -lc
+  XCOMM
+  XCOMM -- SGI Indigo -----------------------------------------------------------
