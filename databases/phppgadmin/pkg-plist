@@ -1,4 +1,3 @@
-%%PGADMDIR%%/BUGS
 %%PGADMDIR%%/CREDITS
 %%PGADMDIR%%/DEVELOPERS
 %%PGADMDIR%%/FAQ
@@ -12,6 +11,7 @@
 %%PGADMDIR%%/bottombar.php
 %%PGADMDIR%%/browser.php
 %%PGADMDIR%%/casts.php
+%%PGADMDIR%%/classes/Gui.php
 %%PGADMDIR%%/classes/HTML_TreeMenu/TreeMenu.js
 %%PGADMDIR%%/classes/HTML_TreeMenu/TreeMenu.php
 %%PGADMDIR%%/classes/HTML_TreeMenu/images/branch.gif
@@ -46,8 +46,8 @@
 %%PGADMDIR%%/constraints.php
 %%PGADMDIR%%/conversions.php
 %%PGADMDIR%%/database.php
-%%PGADMDIR%%/databases.php
 %%PGADMDIR%%/dataexport.php
+%%PGADMDIR%%/dataimport.php
 %%PGADMDIR%%/dbexport.php
 %%PGADMDIR%%/display.php
 %%PGADMDIR%%/domains.php
@@ -188,6 +188,7 @@
 %%PGADMDIR%%/triggers.php
 %%PGADMDIR%%/types.php
 %%PGADMDIR%%/users.php
+%%PGADMDIR%%/viewproperties.php
 %%PGADMDIR%%/views.php
 @dirrm %%PGADMDIR%%/themes/default
 @dirrm %%PGADMDIR%%/themes
