@@ -9,7 +9,7 @@ PORTNAME=	xopps
 PORTVERSION=	1.13
 CATEGORIES=	deskutils
 MASTER_SITES=	ftp://ftp.weird.com/pub/mirror/ \
-		ftp://devvax.jpl.nasa.gov/pub/xopps/
+		http://dl.droso.net/ports/
 DISTNAME=	${PORTNAME}.${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
