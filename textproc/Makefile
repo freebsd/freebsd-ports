@@ -76,7 +76,8 @@
     SUBDIR += py-xml
     SUBDIR += rand
     SUBDIR += rman
-    SUBDIR += ruby-racc
+    SUBDIR += ruby-html-parser
+    SUBDIR += ruby-rdtool
     SUBDIR += sarep
     SUBDIR += se-ispell
     SUBDIR += sgmlformat
