@@ -1,5 +1,5 @@
---- Makefile.orig	Mon Jul  6 02:15:59 1998
-+++ Makefile	Tue Jul  4 21:40:59 2000
+--- Makefile.orig	Sun Jul  5 17:15:59 1998
++++ Makefile	Sun Apr 29 23:29:53 2001
 @@ -8,7 +8,7 @@
  ###########################################################################
  
@@ -18,15 +18,15 @@
  INSTLIBDIR	= $(INSTBASEDIR)/lib
  INSTINCDIR	= $(INSTBASEDIR)/include
 -INSTALL		= install -m 644
--MKDIRP		= install -d -m 755
 +INSTALL		= ${BSD_INSTALL_DATA}
-+MKDIRP		= install -d -m 755
+ MKDIRP		= install -d -m 755
  
  ###########################################################################
  
 -CC		= gcc
+-OPTIM		= -O2
 +#CC		= gcc
- OPTIM		= -O2
++OPTIM		= ${CFLAGS}
  
  LIBDIR		= -L.
  INCDIR		= -I.
