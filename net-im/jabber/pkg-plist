@@ -1,0 +1,12 @@
+bin/jserver
+etc/jserver.xml.default
+lib/jabber/mod_auth_sha1.so
+lib/jabber/mod_echo.so
+lib/jabber/mod_time.so
+lib/jabber/mod_version.so
+lib/jabber/svc_hell.so
+lib/jabber/svc_http.so
+lib/jabber/svc_irc.so
+lib/jabber/svc_telnet.so
+@dirrm lib/jabber
+@unexec rmdir /var/jspool 2>/dev/null || true

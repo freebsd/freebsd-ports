@@ -1,0 +1,20 @@
+--- src/Makefile.in.orig	Tue Mar 28 22:56:31 2000
++++ src/Makefile.in	Fri Apr  7 20:58:29 2000
+@@ -444,14 +444,15 @@
+ 
+ 
+ install-data-local:
++	$(INSTALL_DATA) $(top_builddir)/src/jserver.xml $(sysconfdir)/jserver.xml.default
+ 	$(SH) if test ! -f $(sysconfdir)/jserver.xml; then \
+ 	$(mkinstalldirs) $(sysconfdir); \
+ 	$(INSTALL_DATA) $(top_builddir)/src/jserver.xml $(sysconfdir)/jserver.xml; \
+ 	else \
+ 		echo "You already have a jserver.xml installed, not overwriting"; \
+ 	fi
+-	$(mkinstalldirs) $(prefix)/var/jspool
+-	$(mkinstalldirs) $(prefix)/var/log
++	$(mkinstalldirs) /var/jspool
++	chmod 700 /var/jspool
+ 
+ # Tell versions [3.59,3.63) of GNU make to not export all variables.
+ # Otherwise a system limit (for SysV at least) may be exceeded.
