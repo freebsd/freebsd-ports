@@ -1,7 +1,6 @@
-mod_dav: a DAV module for Apache
-
-mod_dav is an Apache module that provides DAV capabilities 
-for your Apache web server. 
+This is an Apache module that provides DAV capabilities for your
+Apache 1.X Web server.  Apache 2.X is packaged with a more featureful
+version of mod_dav.
 
 mod_dav is made by Greg Stein.
 
