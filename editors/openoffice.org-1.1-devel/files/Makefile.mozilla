@@ -20,10 +20,11 @@ build-mozilla:
 		-e 's|--enable-strip||' \
 		< ${WRKDIR}/mozilla/Makefile.new > ${WRKDIR}/mozilla/Makefile
 .endif
+#XXX FIXME! we shuold add CFLAGS="${CLFAGS}" to honor CFLAGS!!
 .if defined(USE_GCC)
-	@cd ${WRKDIR}/mozilla ; ${MAKE} CXX="${CXX}" CC="${CC}" CFLAGS="${CFLAGS}" USE_GCC=${USE_GCC} build WRKDIRPREFIX=""
+	@cd ${WRKDIR}/mozilla ; ${MAKE} CXX="${CXX}" CC="${CC}" USE_GCC=${USE_GCC} build WRKDIRPREFIX=""
 .else
-	@cd ${WRKDIR}/mozilla ; ${MAKE} CXX="${CXX}" CC="${CC}" CFLAGS="${CFLAGS}" build WRKDIRPREFIX=""
+	@cd ${WRKDIR}/mozilla ; ${MAKE} CXX="${CXX}" CC="${CC}" build WRKDIRPREFIX=""
 .endif
 	@${CP} ${FILESDIR}/zipmoz.sh ${WRKDIR}
 	@${CHMOD} 755 ${WRKDIR}/zipmoz.sh
