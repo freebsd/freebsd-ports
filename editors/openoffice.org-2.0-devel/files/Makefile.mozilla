@@ -1,0 +1,61 @@
+extract-mozilla:
+.if ! exists(${WRKDIR}/mozilla/Makefile)
+	@${ECHO_MSG} "===>  Extracting mozilla sub project"
+	@cd ${WRKDIR} && tar -xzf ${DISTDIR}/${DIST_SUBDIR}/mozilla-vendor-1.0.2a.tgz
+.endif
+	@cd ${WRKDIR}/mozilla && ${MAKE} extract WRKDIRPREFIX=""
+
+patch-mozilla:
+	@${CP} ${DISTDIR}/${DIST_SUBDIR}/patch-openoffice-mozilla101-2002-10-14 \
+		${WRKDIR}/mozilla/files/
+	@cd ${WRKDIR}/mozilla && ${MAKE} patch WRKDIRPREFIX=""
+
+build-mozilla:
+.if ! exists(${WRKDIR}/FREEBSDGCCIruntime.zip)
+	@${ECHO_MSG} "===>  Building mozilla sub project"
+.if defined(WITH_DEBUG)
+	@${CP} ${WRKDIR}/mozilla/Makefile ${WRKDIR}/mozilla/Makefile.new
+	@${SED} -e 's|--disable-debug||' \
+		-e 's|--disable-cpp-rtti||' \
+		-e 's|--enable-strip||' \
+		< ${WRKDIR}/mozilla/Makefile.new > ${WRKDIR}/mozilla/Makefile
+.endif
+.if defined(USE_GCC)
+	@cd ${WRKDIR}/mozilla && ${MAKE} CXX="${CXX}" CC="${CC}" CFLAGS="${CFLAGS}" USE_GCC=${USE_GCC} build WRKDIRPREFIX=""
+.else
+	@cd ${WRKDIR}/mozilla && ${MAKE} CFLAGS="${CFLAGS}" build WRKDIRPREFIX=""
+.endif
+	@${CP} ${FILESDIR}/zipmoz.sh ${WRKDIR}
+	@${CHMOD} 755 ${WRKDIR}/zipmoz.sh
+	@${WRKDIR}/zipmoz.sh ${WRKDIR}/mozilla/work/mozilla/dist FREEBSDGCCI ${WRKDIR}
+.endif
+
+install-mozilla:
+	@${CP} ${WRKDIR}/FREEBSDGCCIinc.zip ${WRKSRC}/../moz/zipped/
+	@${CP} ${WRKDIR}/FREEBSDGCCIlib.zip ${WRKSRC}/../moz/zipped/
+	@${CP} ${WRKDIR}/FREEBSDGCCIruntime.zip ${WRKSRC}/../moz/zipped/
+
+register-mozilla:
+.if exists(${WRKDIR}/mozilla-runtime)
+	@${RM} -rf ${WRKDIR}/mozilla-runtime
+.endif
+	@${MKDIR} ${WRKDIR}/mozilla-runtime
+	@cd ${WRKDIR}/mozilla-runtime && ${UNZIP} -o ${WRKDIR}/FREEBSDGCCIruntime.zip
+	@cd ${WRKDIR}/mozilla-runtime && ${UNZIP} -o ${WRKDIR}/FREEBSDGCCIlib.zip
+	@${CP} ${WRKDIR}/mozilla/work/mozilla/dist/bin/regxpcom ${WRKDIR}/mozilla-runtime/
+	@-${RM} ${WRKDIR}/mozilla-runtime/components/component.reg
+	@cd ${WRKDIR}/mozilla-runtime && export MOZILLA_FIVE_HOME=. \
+		&& export LD_LIBRARY_PATH=.:./lib && ./regxpcom
+	@${CP} ${WRKDIR}/mozilla-runtime/components/xpti.dat \
+		${WRKDIR}/mozilla-runtime/components/xptitemp.dat
+	@${RM} ${WRKDIR}/FREEBSDGCCIruntime.zip ${WRKDIR}/mozilla-runtime/regxpcom
+	@cd ${WRKDIR}/mozilla-runtime && ${FIND} . -type f \
+		| ${ZIP} ${WRKDIR}/FREEBSDGCCIruntime.zip -@
+
+mozilla:
+	@${MAKE} extract-mozilla
+	@${MAKE} patch-mozilla
+	@${MAKE} build-mozilla
+	@${MAKE} register-mozilla
+	@${MAKE} install-mozilla
+

@@ -1,0 +1,13 @@
+Mysterious :)
+
+http://qa.openoffice.org/issues/show_bug.cgi?id=23917
+--- ../cppuhelper/source/gcc3_linux_intel.map.orig	Sat Sep 13 22:15:22 2003
++++ ../cppuhelper/source/gcc3_linux_intel.map	Sat Sep 13 22:16:01 2003
+@@ -299,6 +299,7 @@
+ _ZNK4cppu6UnoUrl11getProtocolEv;
+ _ZNK4cppu6UnoUrl13getConnectionEv;
+ _ZNK4cppu6UnoUrl13getObjectNameEv;
++_end;
+ 
+ 	local:
+ 		*;

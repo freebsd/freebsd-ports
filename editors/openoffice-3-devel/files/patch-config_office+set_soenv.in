@@ -1,0 +1,13 @@
+#i27028
+http://qa.openoffice.org/issues/show_bug.cgi?id=27028
+
+--- ../config_office/set_soenv.in.old	Tue Mar  9 21:31:38 2004
++++ ../config_office/set_soenv.in	Sun Mar 28 09:56:03 2004
+@@ -1419,6 +1419,7 @@
+ ToFile( "XSLTPROC",          "@XSLTPROC@",       "e" );
+ ToFile( "ANT_HOME",          "@ANT_HOME@",       "e" );
+ ToFile( "ANT_LIB",           "@ANT_LIB@",        "e" );
++ToFile( "ANT",               "@ANT@",            "e" );
+ ToFile( "JDKLIB",            $JAVA_LIB,          "e" );
+ ToFile( "STLPORT4",          $STLPORT4,          "e" );
+ ToFile( "ASM_PATH",          $ASM_PATH,          "e" );

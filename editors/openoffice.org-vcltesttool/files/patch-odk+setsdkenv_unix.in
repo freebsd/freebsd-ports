@@ -1,0 +1,27 @@
+http://qa.openoffice.org/issues/show_bug.cgi?id=24142
+--- ../odk/setsdkenv_unix.in	Sun Jan 25 18:41:01 2004
++++ ../odk/setsdkenv_unix.in	Sun Jan 25 18:42:00 2004
+@@ -2,7 +2,8 @@
+ 
+ # This script starts a new shell and sets all enviroment variables, which
+ # are necessary for building the examples of the Office Development Kit.
+-# The Script was developed for the operating systems Solaris and Linux.
++# The script was developed for the operating systems Solaris, Linux, MacOS X
++# and FreeBSD.
+ 
+ # Installation directory of the Software Development Kit.
+ # Example: OO_SDK_HOME=/work/StarOffice_SDK
+@@ -76,6 +77,13 @@
+     LD_LIBRARY_PATH=$OO_SDK_HOME/$directoryname/lib:$OO_SDK_HOME/$exampleout/lib:$OFFICE_PROGRAM_PATH:.:$LD_LIBRARY_PATH
+     export LD_LIBRARY_PATH
+     ;;
++
++  FreeBSD)
++    directoryname=freebsd
++    exampleout=FREEBSDexample.out
++    LD_LIBRARY_PATH=$OO_SDK_HOME/$directoryname/lib:$OO_SDK_HOME/$exampleout/lib:$OFFICE_PROGRAM_PATH:.:$LD_LIBRARY_PATH
++    export LD_LIBRARY_PATH
++    ;;
+ esac
+ 
+ # Add directory of the SDK tools to the path.
