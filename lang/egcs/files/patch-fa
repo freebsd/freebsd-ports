@@ -1,5 +1,5 @@
 --- gcc/c-common.c.orig	Mon Feb 15 16:40:05 1999
-+++ gcc/c-common.c	Tue Mar 30 03:35:22 1999
++++ gcc/c-common.c	Sat Dec  2 06:04:12 2000
 @@ -61,7 +61,7 @@
  					       int, int, int));
  static void init_attributes		PROTO((void));
@@ -9,14 +9,14 @@
  static void record_international_format	PROTO((tree, tree, int));
  
  /* Keep a stack of if statements.  We record the number of compound
-@@ -669,6 +669,7 @@
- 	      = TREE_VALUE (TREE_CHAIN (TREE_CHAIN (args)));
- 	    int format_num;
- 	    int first_arg_num;
-+	    XXX:int null_format_ok;
+@@ -672,6 +672,7 @@
  	    enum format_type format_type;
  	    tree argument;
  	    int arg_num;
++	    int null_format_ok;
+ 
+ 	    if (TREE_CODE (decl) != FUNCTION_DECL)
+ 	      {
 @@ -682,7 +683,7 @@
  	
  	    if (TREE_CODE (format_type_id) != IDENTIFIER_NODE)
@@ -75,14 +75,14 @@
    { "di",	0,	T_I,	T_I,	T_I,	T_L,	T_LL,	T_LL,	T_ST,	"-wp0 +"	},
    { "oxX",	0,	T_UI,	T_UI,	T_UI,	T_UL,	T_ULL,	T_ULL,	T_ST,	"-wp0#"		},
    { "u",	0,	T_UI,	T_UI,	T_UI,	T_UL,	T_ULL,	T_ULL,	T_ST,	"-wp0"		},
-@@ -1070,6 +1091,7 @@
-   tree name;			/* identifier such as "printf" */
-   tree assembler_name;		/* optional mangled identifier (for C++) */
+@@ -1072,6 +1093,7 @@
    enum format_type format_type;	/* type of format (printf, scanf, etc.) */
-+  XXX:int null_format_ok;		/* TRUE if the format string may be NULL */
    int format_num;		/* number of format argument */
    int first_arg_num;		/* number of first arg (zero for varargs) */
++  int null_format_ok;		/* TRUE if the format string may be NULL */
  } function_format_info;
+ 
+ static function_format_info *function_format_list = NULL;
 @@ -1102,25 +1124,25 @@
  init_function_format_info ()
  {
@@ -119,28 +119,29 @@
  
    record_international_format (get_identifier ("gettext"), NULL_TREE, 1);
    record_international_format (get_identifier ("dgettext"), NULL_TREE, 2);
-@@ -1137,11 +1159,12 @@
-    (e.g. for varargs such as vfprintf).  */
+@@ -1138,12 +1160,13 @@
  
  static void
--record_function_format (name, assembler_name, format_type,
-+record_function_format (name, assembler_name, format_type, XXX:null_format_ok,
- 			format_num, first_arg_num)
+ record_function_format (name, assembler_name, format_type,
+-			format_num, first_arg_num)
++			format_num, first_arg_num, null_format_ok)
        tree name;
        tree assembler_name;
        enum format_type format_type;
-+      XXX:int null_format_ok;
        int format_num;
        int first_arg_num;
++      int null_format_ok;
  {
-@@ -1165,6 +1188,7 @@
-     }
+   function_format_info *info;
  
+@@ -1167,6 +1190,7 @@
    info->format_type = format_type;
-+  XXX:info->null_format_ok = null_format_ok;
    info->format_num = format_num;
    info->first_arg_num = first_arg_num;
++  info->null_format_ok = null_format_ok;
  }
+ 
+ /* Record information for the names of function that modify the format
 @@ -1314,7 +1338,8 @@
  
    if (integer_zerop (format_tree))
