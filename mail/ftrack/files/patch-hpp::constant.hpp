@@ -9,12 +9,3 @@
  #   elif defined(sun)
  #      define OsType      "/SUN"
  #   elif defined(_AIX)
-@@ -38,7 +38,7 @@
- #define FTrackProductLo 0xff
- #define FTrackProductHi 0x0c
- #define Copyright      "(C) 1998-2002 Fyodor Ustinov (2:5020/79)"
--#define DefaultConfig  "ftrack.cfg"
-+#define DefaultConfig  "/usr/local/etc/ftrack/ftrack.cfg"
- 
- #ifdef UNIX
- #define MsgExtension   ".msg"
