@@ -1,15 +1,15 @@
 bin/xldlas
-share/xldlas/help/analysis.help
-share/xldlas/help/data.help
-share/xldlas/help/file.help
-share/xldlas/help/general.help
-share/xldlas/help/graph.help
-share/xldlas/help/license.help
-share/xldlas/help/log.help
-share/xldlas/help/tutorial.help
-share/xldlas/help/tutorial_data.lda
-share/xldlas/help/test.help
-share/xldlas/help/filter.help
-share/xldlas/help/.directory
-@dirrm share/xldlas/help
-@dirrm share/xldlas
+%%DATADIR%%/help/analysis.help
+%%DATADIR%%/help/data.help
+%%DATADIR%%/help/file.help
+%%DATADIR%%/help/general.help
+%%DATADIR%%/help/graph.help
+%%DATADIR%%/help/license.help
+%%DATADIR%%/help/log.help
+%%DATADIR%%/help/tutorial.help
+%%DATADIR%%/help/tutorial_data.lda
+%%DATADIR%%/help/test.help
+%%DATADIR%%/help/filter.help
+%%DATADIR%%/help/.directory
+@dirrm %%DATADIR%%/help
+@dirrm %%DATADIR%%

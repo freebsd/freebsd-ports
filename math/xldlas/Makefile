@@ -8,9 +8,7 @@
 PORTNAME=	xldlas
 PORTVERSION=	0.85
 CATEGORIES=	math
-MASTER_SITES=	http://a42.com/~thor/xldlas/			\
-		http://sunsite.math.klte.hu/mirrors/xldlas/	\
-		${MASTER_SITE_SUNSITE}
+MASTER_SITES=	${MASTER_SITE_SUNSITE}
 MASTER_SITE_SUBDIR=	apps/graphics/visualization
 EXTRACT_SUFX=	-source.tgz
 
@@ -28,7 +26,7 @@ MAN1=	xldlas.1
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/xldlas ${PREFIX}/bin
 	${INSTALL_MAN} ${WRKSRC}/xldlas.1 ${PREFIX}/man/man1
-	${MKDIR} ${PREFIX}/share/xldlas
-	${CP} -R ${WRKSRC}/help ${PREFIX}/share/xldlas
+	${MKDIR} ${DATADIR}
+	${CP} -R ${WRKSRC}/help ${DATADIR}
 
 .include <bsd.port.mk>
