@@ -1,36 +1,26 @@
-*** Makefile.in.orig	Thu Feb 20 18:54:20 1997
---- Makefile.in	Thu Apr  3 04:16:37 1997
-***************
-*** 98,104 ****
-  streamcache.c subdir.c toupper.c tty.o vfat.c xdf_io.c mkmanifest.c
-  
-  
-! SCRIPTS = mcheck mxtar uz tgz xcopy mcomp
-  
-  LINKS=mattrib mcd mcopy mdel mdeltree mdir mformat minfo mlabel \
-  mmd mmount mmove mpartition mrd mread mren mtype mwrite mtoolstest \
---- 98,104 ----
-  streamcache.c subdir.c toupper.c tty.o vfat.c xdf_io.c mkmanifest.c
-  
-  
-! SCRIPTS = mcheck mxtar xcopy mcomp
-  
-  LINKS=mattrib mcd mcopy mdel mdeltree mdir mformat minfo mlabel \
-  mmd mmount mmove mpartition mrd mread mren mtype mwrite mtoolstest \
-***************
-*** 195,201 ****
-  install-scripts: $(bindir)/mtools
-  	@$(top_srcdir)/mkinstalldirs $(bindir)
-  	@for j in $(SCRIPTS) ; do \
-! 		$(INSTALL_PROGRAM) $(srcdir)/scripts/$$j $(bindir)/$$j ; \
-  		echo $(bindir)/$$j ; \
-  	done
-  	rm -f $(bindir)/lz
---- 195,201 ----
-  install-scripts: $(bindir)/mtools
-  	@$(top_srcdir)/mkinstalldirs $(bindir)
-  	@for j in $(SCRIPTS) ; do \
-! 		install -o bin -g bin -m 755 $(srcdir)/scripts/$$j $(bindir)/$$j ; \
-  		echo $(bindir)/$$j ; \
-  	done
-  	rm -f $(bindir)/lz
+--- Makefile.in.orig	Wed May  6 21:57:14 1998
++++ Makefile.in	Wed May  6 21:59:13 1998
+@@ -102,7 +102,7 @@
+ xdf_io.c mkmanifest.c
+ 
+ 
+-SCRIPTS = mcheck mxtar uz tgz mcomp
++SCRIPTS = mcheck mxtar mcomp
+ 
+ LINKS=mattrib mcd mcopy mdel mdeltree mdir mdu mformat minfo mlabel \
+ mmd mmount mmove mpartition mrd mread mren mtype mtoolstest mshowfat \
+@@ -200,11 +200,11 @@
+ install-scripts: $(bindir)/mtools
+ 	@$(top_srcdir)/mkinstalldirs $(bindir)
+ 	@for j in $(SCRIPTS) ; do \
+-		$(INSTALL_PROGRAM) $(srcdir)/scripts/$$j $(bindir)/$$j ; \
++		install -o bin -g bin -m 755 $(srcdir)/scripts/$$j $(bindir)/$$j ; \
+ 		echo $(bindir)/$$j ; \
+ 	done
+-	rm -f $(bindir)/lz
+-	$(LN_S) uz $(bindir)/lz
++#	rm -f $(bindir)/lz
++#	$(LN_S) uz $(bindir)/lz
+ 
+ install-man:
+ 	@$(top_srcdir)/mkinstalldirs $(MAN1DIR)

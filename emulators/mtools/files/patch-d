@@ -1,11 +1,11 @@
---- configure.38-1611	Wed Jan 21 00:15:20 1998
-+++ configure	Wed Jan 21 00:19:56 1998
-@@ -2067,7 +2067,7 @@
- fi
- 
- echo "$ac_t""$cf_cv_dcl_sys_errlist" 1>&6
--test $cf_cv_dcl_sys_errlist = no && cat >> confdefs.h <<\EOF
-+test $cf_cv_dcl_sys_errlist = no || cat >> confdefs.h <<\EOF
- #define DECL_SYS_ERRLIST 1
- EOF
- 
+--- configure.orig	Mon Dec 29 23:10:02 1997
++++ configure	Wed May  6 22:09:37 1998
+@@ -2108,7 +2108,7 @@
+ 	    CFLAGS="$CFLAGS -ZP"
+ 	    MACHDEPLIBS="-lposix -UTIL"
+     fi	
+-    CFLAGS="$CFLAGS -O4 $Wall"
++    CFLAGS="$CFLAGS $Wall"
+ else
+     if [ $host_os3 = hpux ] ; then
+ 	    CPPFLAGS="$CPPFLAGS -Ae"
