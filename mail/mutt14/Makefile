@@ -28,6 +28,8 @@ PATCH_DIST_STRIP=	-p1
 MAINTAINER?=	udo.schweigert@siemens.com
 COMMENT?=	The Mongrel of Mail User Agents (part Elm, Pine, Mush, mh, etc.)
 
+CONFLICTS=	mutt-devel-*
+
 .if defined(PACKAGE_BUILDING)
 WITH_SLANG=	yes
 BUILD_DEPENDS=	ispell:${PORTSDIR}/textproc/ispell
