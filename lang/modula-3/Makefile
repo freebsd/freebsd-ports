@@ -3,7 +3,7 @@
 # Date created:		18 Mar 1996
 # Whom:			John Polstra <jdp@polstra.com>
 #
-# $Id: Makefile,v 1.15 1997/07/11 05:16:31 jdp Exp $
+# $Id: Makefile,v 1.16 1997/07/13 18:49:21 max Exp $
 #
 
 DISTNAME=	modula-3-3.6
@@ -93,6 +93,6 @@ do-install:
 	    find -X lib/m3 -type d | xargs chown ${BINOWN}.${BINGRP}; \
 	    find -X lib/m3 -type d | xargs chmod 755
 	@echo "Running ldconfig"
-	@/sbin/ldconfig -m ${PREFIX}/lib/m3/FreeBSD2
+	@${LDCONFIG} -m ${PREFIX}/lib/m3/FreeBSD2
 
 .include <bsd.port.mk>

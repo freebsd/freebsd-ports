@@ -3,7 +3,7 @@
 # Date created:		28 March 1995
 # Whom:			Akito FUJITA <fujita@zoo.ncl.omron.co.jp>
 #
-# $Id: Makefile,v 1.6 1996/11/18 14:01:51 asami Exp $
+# $Id: Makefile,v 1.7 1997/01/07 07:47:20 max Exp $
 #
 
 DISTNAME=	mh-6.8.3
@@ -35,6 +35,6 @@ pre-build:
 	@(cd ${WRKSRC} ; make clean)
 
 post-install:
-	ldconfig -m ${PREFIX}/lib
+	${LDCONFIG} -m ${PREFIX}/lib
 
 .include <bsd.port.mk>

@@ -3,7 +3,7 @@
 # Date created:		28 Oct 1996
 # Whom:			John Polstra <jdp@polstra.com>
 #
-# $Id: Makefile,v 1.7 1997/04/30 03:18:04 asami Exp $
+# $Id: Makefile,v 1.8 1997/07/13 18:49:22 max Exp $
 #
 
 DISTNAME=	modula-3-lib-3.6
@@ -139,6 +139,6 @@ do-install:
 	    chmod 755 ${startup_script}; \
 	fi
 	@echo "Running ldconfig"
-	@/sbin/ldconfig -m ${PREFIX}/lib/m3/FreeBSD2
+	@${LDCONFIG} -m ${PREFIX}/lib/m3/FreeBSD2
 
 .include <bsd.port.mk>

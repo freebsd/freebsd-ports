@@ -3,7 +3,7 @@
 # Date created:		16 January 1997
 # Whom:			Thomas Gellekum <tg@freebsd.org>
 #
-# $Id: Makefile,v 1.2 1997/04/02 00:25:40 fenner Exp $
+# $Id: Makefile,v 1.3 1997/06/12 18:01:07 asami Exp $
 #
 
 DISTNAME=	neXtaw-0.5
@@ -20,6 +20,6 @@ post-extract:
 	@ln -sf exports/include ${WRKSRC}/X11
 
 post-install:
-	/sbin/ldconfig -m ${PREFIX}/lib
+	${LDCONFIG} -m ${PREFIX}/lib
 
 .include <bsd.port.mk>

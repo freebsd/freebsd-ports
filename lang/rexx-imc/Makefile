@@ -3,7 +3,7 @@
 # Date created:				Septermber 21 96
 # Whom:	      				James FitzGibbon <jfitz@FreeBSD.org>
 #
-#   $Id: Makefile,v 1.1.1.1 1996/09/23 15:50:09 jfitz Exp $
+#   $Id: Makefile,v 1.2 1996/11/12 02:19:01 obrien Exp $
 #
 
 DISTNAME=	rexx-imc-1.6d
@@ -36,6 +36,6 @@ do-install:
 .endif		
 
 post-install:
-		@ ldconfig -m ${PREFIX}/lib
+		@ ${LDCONFIG} -m ${PREFIX}/lib
 
 .include <bsd.port.mk>

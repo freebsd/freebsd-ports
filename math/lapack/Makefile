@@ -3,7 +3,7 @@
 # Date created:         2 July 1994
 # Whom:                 jmz
 #
-# $Id: Makefile,v 1.2 1996/06/10 21:19:55 asami Exp $
+# $Id: Makefile,v 1.3 1996/11/18 11:32:23 asami Exp $
 #
 
 DISTNAME=	LAPACK
@@ -17,7 +17,7 @@ MAINTAINER=	jmz@FreeBSD.org
 do-install:
 	install -c -o bin -g bin ${WRKSRC}/BLAS/SRC/libblas.* ${PREFIX}/lib
 	install -c -o bin -g bin ${WRKSRC}/SRC/liblapack.* ${PREFIX}/lib
-	/sbin/ldconfig -m ${PREFIX}/lib
+	${LDCONFIG} -m ${PREFIX}/lib
 .if !defined(NOMANCOMPRESS)
 	cd ${WRKDIR}/blas/man/manl; \
 	   for i in *.l; do gzip -9f < $$i >${PREFIX}/man/manl/$$i.gz; done

@@ -3,7 +3,7 @@
 # Date Created:		04 Aug 1996
 # Whom:			Tim Vanderhoek <ac199@freenet.hamilton.on.ca>
 #
-# $Id: Makefile,v 1.9 1997/04/01 18:53:30 obrien Exp $
+# $Id: Makefile,v 1.10 1997/04/26 23:55:25 asami Exp $
 #
 
 DISTNAME=       uudeview-0.5.13
@@ -32,7 +32,7 @@ DOCFILES+=	doc/test.txt
 
 do-install:
 	${INSTALL_DATA} ${WRKSRC}/uulib/libuu.so.1.0 ${PREFIX}/lib
-	@/sbin/ldconfig -m ${PREFIX}/lib
+	@${LDCONFIG} -m ${PREFIX}/lib
 	${INSTALL_DATA} ${WRKSRC}/uulib/libuu.a ${PREFIX}/lib
 	@/usr/bin/ranlib ${PREFIX}/lib/libuu.a
 	${INSTALL_DATA} ${WRKSRC}/uulib/uudeview.h ${PREFIX}/include/uu.h

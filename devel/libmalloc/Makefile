@@ -3,7 +3,7 @@
 # Date created:		11 January 1995
 # Whom:			jkh
 #
-# $Id: Makefile,v 1.10 1997/04/28 14:49:38 obrien Exp $
+# $Id: Makefile,v 1.11 1997/04/28 14:54:34 obrien Exp $
 #
 
 DISTNAME=	malloc-1.18
@@ -14,7 +14,7 @@ MASTER_SITES=	ftp://ftp.cs.toronto.edu/pub/moraes/
 MAINTAINER=	obrien@FreeBSD.org
 
 post-install:
-	/sbin/ldconfig -m ${PREFIX}/lib
+	${LDCONFIG} -m ${PREFIX}/lib
 	@(cd ${PREFIX}/include ; ln -sf malloc.h libmalloc.h)
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${PREFIX}/share/doc/libmalloc

@@ -3,7 +3,7 @@
 # Date created:         5 January 1995
 # Whom:                 jmz
 #
-# $Id: Makefile,v 1.32 1997/07/13 18:49:30 max Exp $
+# $Id: Makefile,v 1.33 1997/07/14 06:36:30 asami Exp $
 #
 
 DISTNAME=	xc
@@ -25,6 +25,6 @@ INSTALL_TARGET=	install install.man
 DIST_SUBDIR=	xc
 
 post-install:
-	/sbin/ldconfig -m ${PREFIX}/lib
+	${LDCONFIG} -m ${PREFIX}/lib
 
 .include <bsd.port.mk>

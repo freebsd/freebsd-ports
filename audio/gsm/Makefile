@@ -3,7 +3,7 @@
 # Date created:		5 January 1995
 # Whom:			pst
 #
-# $Id: Makefile,v 1.8 1996/11/18 13:56:40 asami Exp $
+# $Id: Makefile,v 1.9 1997/07/10 15:50:48 pst Exp $
 #
 
 DISTNAME=       gsm-1.0.10
@@ -17,6 +17,6 @@ MAN1=		toast.1
 MAN3=		gsm.3 gsm_explode.3 gsm_option.3 gsm_print.3
 
 post-install:
-	/sbin/ldconfig -m ${PREFIX}/lib
+	${LDCONFIG} -m ${PREFIX}/lib
 
 .include <bsd.port.mk>

@@ -3,7 +3,7 @@
 # Date created:		6 November 1994
 # Whom:			smace
 #
-# $Id: Makefile,v 1.12 1996/11/16 00:54:46 ache Exp $
+# $Id: Makefile,v 1.13 1996/11/18 14:00:09 asami Exp $
 #
 
 DISTNAME=       jpegsrc.v6a
@@ -17,6 +17,6 @@ INSTALL_TARGET= install install-lib
 MAN1=		cjpeg.1 djpeg.1 jpegtran.1 rdjpgcom.1 wrjpgcom.1
 
 post-install:
-	/sbin/ldconfig -m ${PREFIX}/lib
+	${LDCONFIG} -m ${PREFIX}/lib
 
 .include <bsd.port.mk>

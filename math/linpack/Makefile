@@ -3,7 +3,7 @@
 # Date created:         31 October 1994
 # Whom:                 ljo
 #
-# $Id: Makefile,v 1.10 1996/11/18 11:32:26 asami Exp $
+# $Id: Makefile,v 1.11 1997/04/03 01:17:23 fenner Exp $
 #
 
 DISTNAME=	linpack
@@ -55,6 +55,6 @@ pre-extract:
 	chmod +x ${SCRIPTDIR}/uncomp
 
 post-install:
-	ldconfig -m ${PREFIX}/lib
+	${LDCONFIG} -m ${PREFIX}/lib
 
 .include <bsd.port.mk>
