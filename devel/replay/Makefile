@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	devel-replay
-PORTVERSION=	1.0.3
+PORTVERSION=	1.0.4
 CATEGORIES=	devel
 MASTER_SITES=	http://people.freebsd.org/~alfred/sources/replay/
 DISTNAME=	replay-${PORTVERSION}
