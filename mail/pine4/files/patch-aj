@@ -1,9 +1,9 @@
-*** imap/ANSI/c-client/os_bsi.h.bak	Wed Feb  7 12:01:07 1996
---- imap/ANSI/c-client/os_bsi.h	Sun Jul 20 01:47:23 1997
+*** imap/src/osdep/unix/os_bsi.h.orig	Thu Feb 13 07:25:33 1997
+--- imap/src/osdep/unix/os_bsi.h	Fri Jul 10 00:12:36 1998
 ***************
-*** 36,42 ****
---- 36,47 ----
-  #include <stdlib.h>
+*** 37,43 ****
+--- 37,48 ----
+  #include <unistd.h>
   #include <string.h>
   #include <sys/types.h>
 + #ifdef __FreeBSD__
@@ -12,6 +12,6 @@
 + #else
   #include <sys/dir.h>
 + #endif
-  #include <sys/uio.h>		/* needed for writev() prototypes */
   #include <fcntl.h>
   #include <syslog.h>
+  #include <sys/file.h>

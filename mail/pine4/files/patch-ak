@@ -1,50 +1,29 @@
-*** imap/Makefile.orig	Thu May 30 07:33:10 1996
---- imap/Makefile	Sun Jan 12 17:05:17 1997
+*** imap/Makefile.orig	Wed Apr 29 02:38:46 1998
+--- imap/Makefile	Sat Jul 11 01:58:29 1998
 ***************
-*** 47,53 ****
+*** 250,261 ****
+  	$(TOOLS)/$@ "$(LN)" src/charset c-client
+  	$(LN) `pwd`/src/kerberos/* c-client
+  	$(TOOLS)/$@ "$(LN)" src/osdep/$(SYSTEM) c-client
+! 	$(TOOLS)/$@ "$(LN)" src/mtest mtest
+! 	$(TOOLS)/$@ "$(LN)" src/ipopd ipopd
+! 	$(TOOLS)/$@ "$(LN)" src/imapd imapd
+  	$(LN) $(TOOLS)/$@ .
   
-  # ANSI compiler ports.  Note for SCO you may have to set LN to "copy -rom"
+! build:	OSTYPE rebuild rebuildclean bundled
   
-! a32 a41 aix bsi d-g drs lnx lyn mct mnt neb nxt osf sc5 sco sgi slx sos:
-  	$(MAKE) build SYSTYPE=ANSI OS=$@
+  OSTYPE:
+  	@echo Building c-client for $(OS)...
+--- 250,261 ----
+  	$(TOOLS)/$@ "$(LN)" src/charset c-client
+  	$(LN) `pwd`/src/kerberos/* c-client
+  	$(TOOLS)/$@ "$(LN)" src/osdep/$(SYSTEM) c-client
+! #	$(TOOLS)/$@ "$(LN)" src/mtest mtest
+! #	$(TOOLS)/$@ "$(LN)" src/ipopd ipopd
+! #	$(TOOLS)/$@ "$(LN)" src/imapd imapd
+  	$(LN) $(TOOLS)/$@ .
   
-  # Non-ANSI compiler ports.
---- 47,53 ----
+! build:	OSTYPE rebuild rebuildclean # bundled
   
-  # ANSI compiler ports.  Note for SCO you may have to set LN to "copy -rom"
-  
-! a32 a41 aix bsi bsf d-g drs lnx lyn mct mnt neb nxt osf sc5 sco sgi slx sos:
-  	$(MAKE) build SYSTYPE=ANSI OS=$@
-  
-  # Non-ANSI compiler ports.
-***************
-*** 82,87 ****
---- 82,90 ----
-  bs2:
-  	$(MAKE) build SYSTYPE=ANSI OS=bsi
-  
-+ bsf:
-+ 	$(MAKE) build OS=bsf PROCESS=an
-+ 
-  pt1:
-  	$(MAKE) build SYSTYPE=non-ANSI OS=ptx
-  
-***************
-*** 92,99 ****
-  	$(LN) $(SYSTYPE) systype
-  	cd $(SYSTYPE)/c-client; $(MAKE) $(OS)
-  	cd $(SYSTYPE)/ms;$(MAKE)
-! 	cd $(SYSTYPE)/ipopd;$(MAKE)
-! 	cd $(SYSTYPE)/imapd;$(MAKE)
-  
-  clean:
-  	$(RM) systype
---- 95,102 ----
-  	$(LN) $(SYSTYPE) systype
-  	cd $(SYSTYPE)/c-client; $(MAKE) $(OS)
-  	cd $(SYSTYPE)/ms;$(MAKE)
-! #       cd $(SYSTYPE)/ipopd;$(MAKE)
-! #       cd $(SYSTYPE)/imapd;$(MAKE)
-  
-  clean:
-  	$(RM) systype
+  OSTYPE:
+  	@echo Building c-client for $(OS)...
