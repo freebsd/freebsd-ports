@@ -4,10 +4,10 @@ share/locale/ven/LC_MESSAGES/example.mo
 share/locale/ven/LC_MESSAGES/graphite.mo
 share/locale/ven/LC_MESSAGES/karbon.mo
 share/locale/ven/LC_MESSAGES/kchart.mo
+share/locale/ven/LC_MESSAGES/kexi.mo
 share/locale/ven/LC_MESSAGES/kfile_koffice.mo
 share/locale/ven/LC_MESSAGES/kformula.mo
 share/locale/ven/LC_MESSAGES/kformulalatexfilter.mo
-share/locale/ven/LC_MESSAGES/kformulalib.mo
 share/locale/ven/LC_MESSAGES/kformulapngfilter.mo
 share/locale/ven/LC_MESSAGES/kivio.mo
 share/locale/ven/LC_MESSAGES/koconverter.mo

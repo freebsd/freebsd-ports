@@ -1,16 +1,14 @@
 bin/kcron
 bin/kpackage
 bin/kuser
-bin/kxconfig
 bin/secpolicy
 lib/kde3/kfile_deb.la
 lib/kde3/kfile_deb.so
 lib/kde3/kfile_rpm.la
 lib/kde3/kfile_rpm.so
-share/applnk/Settings/Peripherals/kxconfig.desktop
-share/applnk/System/kcron.desktop
-share/applnk/System/kpackage.desktop
-share/applnk/System/kuser.desktop
+share/applications/kde/kcron.desktop
+share/applications/kde/kpackage.desktop
+share/applications/kde/kuser.desktop
 share/apps/kpackage/kpackageui.rc
 share/apps/kpackage/pics/bnew.png
 share/apps/kpackage/pics/bsd.png
@@ -44,30 +42,6 @@ share/apps/kuser/icons/crystalsvg/22x22/actions/edit_user.png
 share/apps/kuser/kuserui.rc
 share/apps/kuser/pics/group.png
 share/apps/kuser/pics/user.png
-share/apps/kxconfig/XF86Config-4.default
-share/apps/kxconfig/XF86Config-4.template
-share/apps/kxconfig/hwdata/Monitors
-share/apps/kxconfig/hwdata/VideoCards
-share/apps/kxconfig/pics/ati.png
-share/apps/kxconfig/pics/decreaseX.png
-share/apps/kxconfig/pics/decreaseY.png
-share/apps/kxconfig/pics/down.png
-share/apps/kxconfig/pics/fonts.png
-share/apps/kxconfig/pics/general.png
-share/apps/kxconfig/pics/increaseX.png
-share/apps/kxconfig/pics/increaseY.png
-share/apps/kxconfig/pics/keyboard.png
-share/apps/kxconfig/pics/layout.png
-share/apps/kxconfig/pics/left.png
-share/apps/kxconfig/pics/matrox.png
-share/apps/kxconfig/pics/monitor.png
-share/apps/kxconfig/pics/pointer.png
-share/apps/kxconfig/pics/resolution.png
-share/apps/kxconfig/pics/right.png
-share/apps/kxconfig/pics/threed.png
-share/apps/kxconfig/pics/up.png
-share/apps/kxconfig/pics/videocard.png
-share/apps/kxconfig/pics/xlogo_small.png
 share/doc/HTML/en/kcron/common
 share/doc/HTML/en/kcron/index.cache.bz2
 share/doc/HTML/en/kcron/index.docbook
@@ -79,9 +53,21 @@ share/doc/HTML/en/kcron/print.png
 share/doc/HTML/en/kdat/common
 share/doc/HTML/en/kdat/index.cache.bz2
 share/doc/HTML/en/kdat/index.docbook
+share/doc/HTML/en/kpackage/bsdloc.png
 share/doc/HTML/en/kpackage/common
+share/doc/HTML/en/kpackage/debaptloc.png
+share/doc/HTML/en/kpackage/debloc.png
+share/doc/HTML/en/kpackage/handle.png
 share/doc/HTML/en/kpackage/index.cache.bz2
 share/doc/HTML/en/kpackage/index.docbook
+share/doc/HTML/en/kpackage/install.png
+share/doc/HTML/en/kpackage/left.png
+share/doc/HTML/en/kpackage/right-change.png
+share/doc/HTML/en/kpackage/right-files.png
+share/doc/HTML/en/kpackage/right-prop.png
+share/doc/HTML/en/kpackage/rpmloc.png
+share/doc/HTML/en/kpackage/slackloc.png
+share/doc/HTML/en/kpackage/uninstall.png
 share/doc/HTML/en/ksysv/common
 share/doc/HTML/en/ksysv/index.cache.bz2
 share/doc/HTML/en/ksysv/index.docbook
@@ -89,20 +75,6 @@ share/doc/HTML/en/kuser/common
 share/doc/HTML/en/kuser/index.cache.bz2
 share/doc/HTML/en/kuser/index.docbook
 share/doc/HTML/en/kuser/kuser.png
-share/doc/HTML/en/kwuftpd/common
-share/doc/HTML/en/kwuftpd/directories.png
-share/doc/HTML/en/kwuftpd/index.cache.bz2
-share/doc/HTML/en/kwuftpd/index.docbook
-share/doc/HTML/en/kwuftpd/logging.png
-share/doc/HTML/en/kwuftpd/messages.png
-share/doc/HTML/en/kwuftpd/ratios.png
-share/doc/HTML/en/kwuftpd/security.png
-share/doc/HTML/en/kwuftpd/uploads.png
-share/doc/HTML/en/kwuftpd/user_classes.png
-share/doc/HTML/en/kwuftpd/virtual.png
-share/doc/HTML/en/kxconfig/common
-share/doc/HTML/en/kxconfig/index.cache.bz2
-share/doc/HTML/en/kxconfig/index.docbook
 share/icons/crystalsvg/128x128/apps/kpackage.png
 share/icons/crystalsvg/128x128/apps/kuser.png
 share/icons/crystalsvg/16x16/apps/kcron.png
@@ -111,33 +83,23 @@ share/icons/crystalsvg/16x16/apps/kuser.png
 share/icons/crystalsvg/32x32/apps/kcron.png
 share/icons/crystalsvg/32x32/apps/kpackage.png
 share/icons/crystalsvg/32x32/apps/kuser.png
-share/icons/crystalsvg/32x32/apps/kxconfig.png
 share/icons/crystalsvg/48x48/apps/kpackage.png
 share/icons/crystalsvg/48x48/apps/kuser.png
 share/icons/crystalsvg/64x64/apps/kpackage.png
 share/icons/crystalsvg/64x64/apps/kuser.png
-share/icons/locolor/16x16/apps/kxconfig.png
 share/mimelnk/application/x-debian-package.desktop
 share/services/kfile_deb.desktop
 share/services/kfile_rpm.desktop
-@dirrm share/icons/locolor/16x16/apps
-@dirrm share/icons/locolor/16x16
-@dirrm share/icons/locolor
 @dirrm share/icons/crystalsvg/64x64/apps
 @dirrm share/icons/crystalsvg/48x48/apps
 @dirrm share/icons/crystalsvg/32x32/apps
 @dirrm share/icons/crystalsvg/16x16/apps
 @dirrm share/icons/crystalsvg/128x128/apps
-@dirrm share/doc/HTML/en/kxconfig
-@dirrm share/doc/HTML/en/kwuftpd
 @dirrm share/doc/HTML/en/kuser
 @dirrm share/doc/HTML/en/ksysv
 @dirrm share/doc/HTML/en/kpackage
 @dirrm share/doc/HTML/en/kdat
 @dirrm share/doc/HTML/en/kcron
-@dirrm share/apps/kxconfig/pics
-@dirrm share/apps/kxconfig/hwdata
-@dirrm share/apps/kxconfig
 @dirrm share/apps/kuser/pics
 @dirrm share/apps/kuser/icons/crystalsvg/22x22/actions
 @dirrm share/apps/kuser/icons/crystalsvg/22x22
@@ -147,5 +109,3 @@ share/services/kfile_rpm.desktop
 @dirrm share/apps/kpackage/toolbar
 @dirrm share/apps/kpackage/pics
 @dirrm share/apps/kpackage
-@dirrm share/applnk/System
-@dirrm share/applnk/Settings/Peripherals

@@ -28,12 +28,17 @@ share/locale/zh_TW/LC_MESSAGES/kthesaurus.mo
 share/locale/zh_TW/LC_MESSAGES/kudesigner.mo
 share/locale/zh_TW/LC_MESSAGES/kugar.mo
 share/locale/zh_TW/LC_MESSAGES/kword.mo
+share/locale/zh_TW/LC_MESSAGES/kwordabiwordfilter.mo
 share/locale/zh_TW/LC_MESSAGES/kwordasciifilter.mo
 share/locale/zh_TW/LC_MESSAGES/kwordhtmlexportfilter.mo
 share/locale/zh_TW/LC_MESSAGES/kwordhtmlfilter.mo
 share/locale/zh_TW/LC_MESSAGES/kwordhtmlimportfilter.mo
+share/locale/zh_TW/LC_MESSAGES/kwordlatexexportfilter.mo
 share/locale/zh_TW/LC_MESSAGES/kwordlatexfilter.mo
+share/locale/zh_TW/LC_MESSAGES/kwordlateximportfilter.mo
+share/locale/zh_TW/LC_MESSAGES/kwordmswordfilter.mo
 share/locale/zh_TW/LC_MESSAGES/kwordmswritefilter.mo
+share/locale/zh_TW/LC_MESSAGES/kwordpdfimport.mo
 share/locale/zh_TW/LC_MESSAGES/olefilterswinword97filter.mo
 share/locale/zh_TW/LC_MESSAGES/xsltexportfilter.mo
 share/locale/zh_TW/LC_MESSAGES/xsltfilter.mo

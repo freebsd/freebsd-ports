@@ -8,14 +8,13 @@
 
 PORTNAME?=	kde
 PORTVERSION=	${KDE_VERSION}
-PORTREVISION=	1
 CATEGORIES=	x11 kde
 MASTER_SITES=	# empty
 DISTFILES=	# none
 EXTRACT_ONLY=	# empty
 
-MAINTAINER?=	kde@FreeBSD.org
-COMMENT?=	The "meta-port" for KDE
+MAINTAINER=	kde@FreeBSD.org
+COMMENT=	The "meta-port" for KDE
 
 # This port conflicts with the kde-lite port, so make it known.
 .if defined(IS_INTERACTIVE)
@@ -34,9 +33,9 @@ CONFIG_FILE=	${LOCALBASE}/etc/kde-meta.conf
 ## The list of all modules that make up KDE, excluding the base modules
 ## arts, kdebase and kdelibs
 
-ALL_MODULES=	KDEADDONS KDEADMIN KDEARTWORK KDEVELOP KDEEDU KDEGAMES \
-		KDEGRAPHICS KDEMULTIMEDIA KDENETWORK KOFFICE KDEPIM KDESDK \
-		KDETOYS KDEUTILS QUANTA
+ALL_MODULES=	KDEACCESSIBILITY KDEADDONS KDEADMIN KDEARTWORK KDEVELOP KDEEDU\
+		KDEGAMES KDEGRAPHICS KDEMULTIMEDIA KDENETWORK KOFFICE KDEPIM\
+		KDESDK KDETOYS KDEUTILS QUANTA
 
 ## Forwards parts of the environment to scripts/configure.kde3
 
@@ -152,6 +151,9 @@ RUN_DEPENDS+=	kmoon:${PORTSDIR}/x11-clocks/kdetoys3
 .endif
 .if !defined(WITHOUT_KDEARTWORK)
 RUN_DEPENDS+=	kmatrix.kss:${PORTSDIR}/x11-wm/kdeartwork3
+.endif
+.if !defined(WITHOUT_KDEACCESSIBILITY)
+RUN_DEPENDS+=	kmag:${PORTSDIR}/accessibility/kdeaccessibility
 .endif
 
 .if make(package)

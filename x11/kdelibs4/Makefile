@@ -8,24 +8,24 @@
 
 PORTNAME=	kdelibs
 PORTVERSION=	${KDE_VERSION}
-PORTREVISION=	2
 CATEGORIES=	x11 kde
 MASTER_SITES=	${MASTER_SITE_KDE}
-MASTER_SITE_SUBDIR=	stable/${KDE_VERSION}/src
+MASTER_SITE_SUBDIR=	stable/${PORTVERSION:S/.0//}/src
 DIST_SUBDIR=	KDE
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	This is the base set of libraries needed by KDE programs
 
 BUILD_DEPENDS=	mkfontdir:${PORTSDIR}/x11/XFree86-4-clients
-LIB_DEPENDS=	tiff.4:${PORTSDIR}/graphics/tiff \
+LIB_DEPENDS=	art_lgpl_2.5:${PORTSDIR}/graphics/libart_lgpl2 \
 		artsc.0:${PORTSDIR}/audio/arts \
+		cups.2:${PORTSDIR}/print/cups-base \
 		fam.0:${PORTSDIR}/devel/fam \
+		jasper:${PORTSDIR}/graphics/jasper \
+		tiff.4:${PORTSDIR}/graphics/tiff \
 		xml2.5:${PORTSDIR}/textproc/libxml2 \
 		xslt.2:${PORTSDIR}/textproc/libxslt \
-		pcre.0:${PORTSDIR}/devel/pcre \
-		art_lgpl_2.5:${PORTSDIR}/graphics/libart_lgpl2 \
-		cups.2:${PORTSDIR}/print/cups-base
+		pcre.0:${PORTSDIR}/devel/pcre
 RUN_DEPENDS=	${FONTSCALE}:${PORTSDIR}/x11-fonts/XFree86-4-fontScalable \
 		${FONTENCOD}:${PORTSDIR}/x11-fonts/XFree86-4-fontEncodings
 
@@ -44,8 +44,8 @@ LDCONFIG_DIRS+=	%%PREFIX%%/lib %%PREFIX%%/lib/kde3
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=--disable-ltdl-install	\
-		--enable-mt		\
-		--enable-cups
+		--enable-mt
+
 KDE_BUILD_PLIST=	yes
 
 FONTSCALE=	${X11BASE}/lib/X11/fonts/TTF/luximb.ttf
@@ -61,7 +61,10 @@ LIB_DEPENDS+=	bz2.1:${PORTSDIR}/archivers/bzip2
 
 pre-configure:
 	${REINPLACE_CMD} "s, kspell,,g" ${WRKSRC}/doc/Makefile.in
-	${REINPLACE_CMD} "s,-pedantic ,," ${WRKSRC}/configure
+
+post-configure:
+	${TOUCH} ${WRKSRC}/dcop/dcop-path.h.in
+	${TOUCH} ${WRKSRC}/kio/kssl/ksslconfig.h.in
 
 post-install:
 	${MKDIR} ${PREFIX}/etc/rc.d

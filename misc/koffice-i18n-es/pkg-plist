@@ -1,9 +1,17 @@
+share/apps/koffice/autocorrect/es.xml
 share/doc/HTML/es/kchart/common
 share/doc/HTML/es/kchart/index.cache.bz2
 share/doc/HTML/es/kchart/index.docbook
 share/doc/HTML/es/kformula/common
 share/doc/HTML/es/kformula/index.cache.bz2
 share/doc/HTML/es/kformula/index.docbook
+share/doc/HTML/es/kivio/common
+share/doc/HTML/es/kivio/credits.docbook
+share/doc/HTML/es/kivio/index.cache.bz2
+share/doc/HTML/es/kivio/index.docbook
+share/doc/HTML/es/kivio/introduction.docbook
+share/doc/HTML/es/kivio/usage.docbook
+share/doc/HTML/es/kivio/working.docbook
 share/doc/HTML/es/koffice/common
 share/doc/HTML/es/koffice/index.cache.bz2
 share/doc/HTML/es/koffice/index.docbook
@@ -37,6 +45,7 @@ share/doc/HTML/es/kugar/templatedtd.docbook
 share/doc/HTML/es/kugar/tutorial.docbook
 share/doc/HTML/es/kword/basics.docbook
 share/doc/HTML/es/kword/bookmarks.docbook
+share/doc/HTML/es/kword/chapnumb.docbook
 share/doc/HTML/es/kword/columns.docbook
 share/doc/HTML/es/kword/common
 share/doc/HTML/es/kword/doccomments.docbook
@@ -54,14 +63,15 @@ share/doc/HTML/es/kword/frames.docbook
 share/doc/HTML/es/kword/fundimentals.docbook
 share/doc/HTML/es/kword/graphics.docbook
 share/doc/HTML/es/kword/headerfooter.docbook
+share/doc/HTML/es/kword/horizline.docbook
 share/doc/HTML/es/kword/index.cache.bz2
 share/doc/HTML/es/kword/index.docbook
 share/doc/HTML/es/kword/insertfile.docbook
-share/doc/HTML/es/kword/insertmisc.docbook
 share/doc/HTML/es/kword/kparts.docbook
 share/doc/HTML/es/kword/lists.docbook
 share/doc/HTML/es/kword/mailmerge.docbook
 share/doc/HTML/es/kword/mbtb.docbook
+share/doc/HTML/es/kword/migrating.docbook
 share/doc/HTML/es/kword/opt.docbook
 share/doc/HTML/es/kword/pageformat.docbook
 share/doc/HTML/es/kword/storeprint.docbook
@@ -78,18 +88,22 @@ share/doc/HTML/es/thesaurus/index.docbook
 share/locale/es/LC_MESSAGES/csvfilter.mo
 share/locale/es/LC_MESSAGES/desktop_koffice.mo
 share/locale/es/LC_MESSAGES/example.mo
-share/locale/es/LC_MESSAGES/graphite.mo
 share/locale/es/LC_MESSAGES/karbon.mo
+share/locale/es/LC_MESSAGES/karbonepsfilter.mo
 share/locale/es/LC_MESSAGES/kchart.mo
+share/locale/es/LC_MESSAGES/kdgantt.mo
+share/locale/es/LC_MESSAGES/kexi.mo
 share/locale/es/LC_MESSAGES/kfile_koffice.mo
+share/locale/es/LC_MESSAGES/kfile_ooo.mo
+share/locale/es/LC_MESSAGES/kformdesigner.mo
 share/locale/es/LC_MESSAGES/kformula.mo
 share/locale/es/LC_MESSAGES/kformulalatexfilter.mo
+share/locale/es/LC_MESSAGES/kformulamathmlfilter.mo
 share/locale/es/LC_MESSAGES/kformulapngfilter.mo
 share/locale/es/LC_MESSAGES/kivio.mo
 share/locale/es/LC_MESSAGES/koconverter.mo
 share/locale/es/LC_MESSAGES/kocryptfilter.mo
 share/locale/es/LC_MESSAGES/koffice.mo
-share/locale/es/LC_MESSAGES/kontour.mo
 share/locale/es/LC_MESSAGES/koshell.mo
 share/locale/es/LC_MESSAGES/kounavail.mo
 share/locale/es/LC_MESSAGES/kplato.mo
@@ -99,15 +113,25 @@ share/locale/es/LC_MESSAGES/krita.mo
 share/locale/es/LC_MESSAGES/kscan_plugin.mo
 share/locale/es/LC_MESSAGES/kspread.mo
 share/locale/es/LC_MESSAGES/kspreadcalc_calc.mo
+share/locale/es/LC_MESSAGES/kspreaddbasefilter.mo
+share/locale/es/LC_MESSAGES/kspreadexcelimportfilter.mo
+share/locale/es/LC_MESSAGES/kspreadlatexexportfilter.mo
+share/locale/es/LC_MESSAGES/kspreadopencalcfilter.mo
 share/locale/es/LC_MESSAGES/kspreadqprofilter.mo
 share/locale/es/LC_MESSAGES/kthesaurus.mo
 share/locale/es/LC_MESSAGES/kugar.mo
 share/locale/es/LC_MESSAGES/kword.mo
+share/locale/es/LC_MESSAGES/kwordabiwordfilter.mo
 share/locale/es/LC_MESSAGES/kwordasciifilter.mo
 share/locale/es/LC_MESSAGES/kwordhtmlexportfilter.mo
 share/locale/es/LC_MESSAGES/kwordhtmlimportfilter.mo
+share/locale/es/LC_MESSAGES/kwordlatexexportfilter.mo
 share/locale/es/LC_MESSAGES/kwordlatexfilter.mo
+share/locale/es/LC_MESSAGES/kwordlateximportfilter.mo
+share/locale/es/LC_MESSAGES/kwordmswordfilter.mo
 share/locale/es/LC_MESSAGES/kwordmswritefilter.mo
+share/locale/es/LC_MESSAGES/kwordoowriterfilter.mo
+share/locale/es/LC_MESSAGES/kwordpdfimport.mo
 share/locale/es/LC_MESSAGES/olefilterswinword97filter.mo
 share/locale/es/LC_MESSAGES/thesaurus_tool.mo
 share/locale/es/LC_MESSAGES/xsltexportfilter.mo
@@ -119,6 +143,9 @@ share/locale/es/LC_MESSAGES/xsltimportfilter.mo
 @dirrm share/doc/HTML/es/kpresenter
 @dirrm share/doc/HTML/es/koshell
 @dirrm share/doc/HTML/es/koffice
+@dirrm share/doc/HTML/es/kivio
 @dirrm share/doc/HTML/es/kformula
 @dirrm share/doc/HTML/es/kchart
 @dirrm share/doc/HTML/es
+@dirrm share/apps/koffice/autocorrect
+@dirrm share/apps/koffice

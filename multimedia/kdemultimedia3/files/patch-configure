@@ -1,0 +1,27 @@
+--- configure.orig	Fri May  2 15:23:56 2003
++++ configure	Fri May  2 15:24:28 2003
+@@ -26016,7 +26016,7 @@ fi
+ 
+ echo "$as_me:$LINENO: result: $ac_cv_x86_sse" >&5
+ echo "${ECHO_T}$ac_cv_x86_sse" >&6
+-if eval "test \"`echo `$ac_cv_x86_sse\" = yes"; then
++if test $ac_cv_x86_sse = yes; then
+ 
+ cat >>confdefs.h <<\_ACEOF
+ #define HAVE_X86_SSE 1
+--- configure.orig	Tue Feb  3 11:30:24 2004
++++ configure	Tue Feb  3 11:30:53 2004
+@@ -32539,13 +32539,6 @@
+ echo "${ECHO_T}$ac_cv_header_linux_cdrom_h" >&6
+ 
+ fi
+-if test $ac_cv_header_linux_cdrom_h = yes; then
+-  :
+-else
+-  { echo "$as_me:$LINENO: WARNING: This doesn't seem to be a Linux system. KAudioCreator has been disabled." >&5
+-echo "$as_me: WARNING: This doesn't seem to be a Linux system. KAudioCreator has been disabled." >&2;}
+-enable_kac=no
+-fi
+ 
+ 
+    CPPFLAGS=$kde_safe_cppflags

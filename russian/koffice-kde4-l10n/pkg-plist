@@ -1,17 +1,20 @@
+share/doc/HTML/ru/kivio/credits.docbook
+share/doc/HTML/ru/kivio/introduction.docbook
+share/doc/HTML/ru/kivio/usage.docbook
+share/doc/HTML/ru/kivio/working.docbook
 share/doc/HTML/ru/koshell/common
 share/doc/HTML/ru/koshell/index.cache.bz2
 share/doc/HTML/ru/koshell/index.docbook
 share/doc/HTML/ru/kpresenter/faq.docbook
+share/doc/HTML/ru/kpresenter/great-presentations.docbook
 share/doc/HTML/ru/kpresenter/guides.docbook
+share/doc/HTML/ru/kpresenter/menus.docbook
 share/doc/HTML/ru/kpresenter/options.docbook
 share/doc/HTML/ru/kpresenter/screen.docbook
 share/doc/HTML/ru/kpresenter/tutorial.docbook
-share/doc/HTML/ru/kugar/common
 share/doc/HTML/ru/kugar/datadtd.docbook
 share/doc/HTML/ru/kugar/dataref.docbook
 share/doc/HTML/ru/kugar/designer.docbook
-share/doc/HTML/ru/kugar/index.cache.bz2
-share/doc/HTML/ru/kugar/index.docbook
 share/doc/HTML/ru/kugar/progguide.docbook
 share/doc/HTML/ru/kugar/starting.docbook
 share/doc/HTML/ru/kugar/template-elements.docbook
@@ -21,7 +24,6 @@ share/doc/HTML/ru/kugar/tutorial.docbook
 share/doc/HTML/ru/kword/basics.docbook
 share/doc/HTML/ru/kword/bookmarks.docbook
 share/doc/HTML/ru/kword/columns.docbook
-share/doc/HTML/ru/kword/common
 share/doc/HTML/ru/kword/doccomments.docbook
 share/doc/HTML/ru/kword/doclinks.docbook
 share/doc/HTML/ru/kword/docstruct.docbook
@@ -37,10 +39,7 @@ share/doc/HTML/ru/kword/frames.docbook
 share/doc/HTML/ru/kword/fundimentals.docbook
 share/doc/HTML/ru/kword/graphics.docbook
 share/doc/HTML/ru/kword/headerfooter.docbook
-share/doc/HTML/ru/kword/index.cache.bz2
-share/doc/HTML/ru/kword/index.docbook
 share/doc/HTML/ru/kword/insertfile.docbook
-share/doc/HTML/ru/kword/insertmisc.docbook
 share/doc/HTML/ru/kword/kparts.docbook
 share/doc/HTML/ru/kword/lists.docbook
 share/doc/HTML/ru/kword/mailmerge.docbook
@@ -61,19 +60,21 @@ share/doc/HTML/ru/thesaurus/index.docbook
 share/locale/ru/LC_MESSAGES/csvfilter.mo
 share/locale/ru/LC_MESSAGES/desktop_koffice.mo
 share/locale/ru/LC_MESSAGES/example.mo
-share/locale/ru/LC_MESSAGES/graphite.mo
 share/locale/ru/LC_MESSAGES/karbon.mo
+share/locale/ru/LC_MESSAGES/karbonepsfilter.mo
 share/locale/ru/LC_MESSAGES/kchart.mo
+share/locale/ru/LC_MESSAGES/kexi.mo
 share/locale/ru/LC_MESSAGES/kfile_koffice.mo
+share/locale/ru/LC_MESSAGES/kfile_ooo.mo
+share/locale/ru/LC_MESSAGES/kformdesigner.mo
 share/locale/ru/LC_MESSAGES/kformula.mo
 share/locale/ru/LC_MESSAGES/kformulalatexfilter.mo
-share/locale/ru/LC_MESSAGES/kformulalib.mo
+share/locale/ru/LC_MESSAGES/kformulamathmlfilter.mo
 share/locale/ru/LC_MESSAGES/kformulapngfilter.mo
 share/locale/ru/LC_MESSAGES/kivio.mo
 share/locale/ru/LC_MESSAGES/koconverter.mo
 share/locale/ru/LC_MESSAGES/kocryptfilter.mo
 share/locale/ru/LC_MESSAGES/koffice.mo
-share/locale/ru/LC_MESSAGES/kontour.mo
 share/locale/ru/LC_MESSAGES/koshell.mo
 share/locale/ru/LC_MESSAGES/kounavail.mo
 share/locale/ru/LC_MESSAGES/kplato.mo
@@ -83,16 +84,25 @@ share/locale/ru/LC_MESSAGES/krita.mo
 share/locale/ru/LC_MESSAGES/kscan_plugin.mo
 share/locale/ru/LC_MESSAGES/kspread.mo
 share/locale/ru/LC_MESSAGES/kspreadcalc_calc.mo
+share/locale/ru/LC_MESSAGES/kspreaddbasefilter.mo
+share/locale/ru/LC_MESSAGES/kspreadexcelimportfilter.mo
+share/locale/ru/LC_MESSAGES/kspreadlatexexportfilter.mo
+share/locale/ru/LC_MESSAGES/kspreadopencalcfilter.mo
 share/locale/ru/LC_MESSAGES/kspreadqprofilter.mo
 share/locale/ru/LC_MESSAGES/kthesaurus.mo
 share/locale/ru/LC_MESSAGES/kugar.mo
 share/locale/ru/LC_MESSAGES/kword.mo
+share/locale/ru/LC_MESSAGES/kwordabiwordfilter.mo
 share/locale/ru/LC_MESSAGES/kwordasciifilter.mo
 share/locale/ru/LC_MESSAGES/kwordhtmlexportfilter.mo
-share/locale/ru/LC_MESSAGES/kwordhtmlfilter.mo
 share/locale/ru/LC_MESSAGES/kwordhtmlimportfilter.mo
+share/locale/ru/LC_MESSAGES/kwordlatexexportfilter.mo
 share/locale/ru/LC_MESSAGES/kwordlatexfilter.mo
+share/locale/ru/LC_MESSAGES/kwordlateximportfilter.mo
+share/locale/ru/LC_MESSAGES/kwordmswordfilter.mo
 share/locale/ru/LC_MESSAGES/kwordmswritefilter.mo
+share/locale/ru/LC_MESSAGES/kwordoowriterfilter.mo
+share/locale/ru/LC_MESSAGES/kwordpdfimport.mo
 share/locale/ru/LC_MESSAGES/olefilterswinword97filter.mo
 share/locale/ru/LC_MESSAGES/thesaurus_tool.mo
 share/locale/ru/LC_MESSAGES/xsltexportfilter.mo
@@ -102,4 +112,5 @@ share/locale/ru/LC_MESSAGES/xsltimportfilter.mo
 @dirrm share/doc/HTML/ru/kugar
 @dirrm share/doc/HTML/ru/kpresenter
 @dirrm share/doc/HTML/ru/koshell
+@dirrm share/doc/HTML/ru/kivio
 @dirrm share/doc/HTML/ru

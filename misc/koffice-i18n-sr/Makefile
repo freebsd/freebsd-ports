@@ -18,8 +18,6 @@ COMMENT=	Localized messages and documentation for koffice
 
 BUILD_DEPENDS=	xgettext:${PORTSDIR}/devel/gettext
 
-IGNORE=		This port will turn active with the release of KDE 3.2
-
 USE_KDELIBS_VER=3
 USE_BZIP2=	yes
 USE_GMAKE=	yes

@@ -7,10 +7,9 @@
 
 PORTNAME=	kde-i18n
 PORTVERSION=	3.0.5
-PORTREVISION=	1
 CATEGORIES?=	misc kde
 MASTER_SITES=	${MASTER_SITE_KDE}
-MASTER_SITE_SUBDIR=	stable/${PORTVERSION}a/src/kde-i18n
+MASTER_SITE_SUBDIR=	stable/3.2/src/kde-i18n
 PKGNAMEPREFIX=	id-
 DIST_SUBDIR=	KDE
 
@@ -18,9 +17,10 @@ MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Localized messages and documentation for KDE3
 IGNORE=		Needs update from vendor.
 
+BUILD_DEPENDS=	xgettext:${PORTSDIR}/devel/gettext
+
 USE_KDELIBS_VER=3
 USE_BZIP2=	yes
-USE_GETTEXT=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 KDE_I18N=	yes

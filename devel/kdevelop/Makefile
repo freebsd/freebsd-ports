@@ -6,17 +6,18 @@
 #
 
 PORTNAME=	kdevelop
-PORTVERSION=	2.1.5
-PORTREVISION=	1
+PORTVERSION=	3.0.0
 CATEGORIES?=	devel kde
 MASTER_SITES=	${MASTER_SITE_KDE}
-MASTER_SITE_SUBDIR=	stable/kdevelop-${PORTVERSION}/src
-DISTNAME=	${KDE_DISTNAME}
+MASTER_SITE_SUBDIR=	stable/${PORTVERSION:S/.0//}/src
+# DISTNAME=	${KDE_DISTNAME}
 DIST_SUBDIR=	KDE
 
 MAINTAINER?=	kde@FreeBSD.org
 COMMENT=	Powerful IDE for developing KDE/Qt-based apps
 
+BUILD_DEPENDS=  msgfmt:${PORTSDIR}/devel/gettext
+LIB_DEPENDS=    db41:${PORTSDIR}/databases/db41
 RUN_DEPENDS=	extractrc:${PORTSDIR}/devel/kdesdk3 \
 		gmake:${PORTSDIR}/devel/gmake
 .if defined(WITH_OPTIONAL_DEPENDS)
@@ -28,7 +29,7 @@ RUN_DEPENDS+=	autoconf:${PORTSDIR}/devel/autoconf \
 		a2ps:${PORTSDIR}/print/a2ps-letter
 .endif
 
-KDE_DISTNAME=		${PORTNAME}-${PORTVERSION}_for_KDE_3.1
+# KDE_DISTNAME=		${PORTNAME}-${PORTVERSION}_for_KDE_3.1
 USE_KDELIBS_VER=3
 USE_BZIP2=	yes
 USE_GMAKE=	yes
@@ -47,8 +48,17 @@ pre-everything::
 	@${ECHO_MSG}
 .endif
 
+post-patch:
+	${TOUCH} -t 200401252012 ${WRKSRC}/Makefile.am.in
+	${TOUCH} -t 200401252014 ${WRKSRC}/Makefile.am
+
 pre-configure:
-	${REINPLACE_CMD} -e 's@extractrc@@g' ${WRKSRC}/kdevelop/Makefile.in
-	${REINPLACE_CMD} -e 's@-pedantic @@g' ${WRKSRC}/configure
+	${REINPLACE_CMD} -e 's@extractrc@@g' ${WRKSRC}/Makefile.in
+	${REINPLACE_CMD} -e 's@$$CXXFLAGS $$X_CFLAGS -ldb@-I/usr/local/include/db41 $$CXXFLAGS $$X_CFLAGS -L/usr/local/lib -ldb41@' ${WRKSRC}/configure
+	${REINPLACE_CMD} -e 's@INCLUDES = $$(all_includes)@INCLUDES = -I/usr/local/include/db41 $$(all_includes)@' ${WRKSRC}/lib/catalog/Makefile.in
+	${REINPLACE_CMD} -e 's@libkdevcatalog_la_LIBADD = -ldb@libkdevcatalog_la_LIBADD = -L/usr/local/lib -ldb41@' ${WRKSRC}/lib/catalog/Makefile.in
+	${REINPLACE_CMD} -e 's@^all_includes = @all_includes = -I/usr/local/include/db41 @' ${WRKSRC}/languages/cpp/Makefile.in
+	${REINPLACE_CMD} -e 's@^all_includes = @all_includes = -I/usr/local/include/db41 @' ${WRKSRC}/languages/java/Makefile.in
+	${REINPLACE_CMD} -e 's@^all_includes = @all_includes = -I/usr/local/include/db41 @' ${WRKSRC}/languages/pascal/Makefile.in
 
 .include <bsd.port.post.mk>

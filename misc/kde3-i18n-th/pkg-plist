@@ -181,7 +181,6 @@ share/locale/th/LC_MESSAGES/kfile_xbm.mo
 share/locale/th/LC_MESSAGES/kfindpart.mo
 share/locale/th/LC_MESSAGES/kfloppy.mo
 share/locale/th/LC_MESSAGES/kfmclient.mo
-share/locale/th/LC_MESSAGES/kfmexec.mo
 share/locale/th/LC_MESSAGES/kfontviewpart.mo
 share/locale/th/LC_MESSAGES/kfouleggs.mo
 share/locale/th/LC_MESSAGES/kget.mo
@@ -208,6 +207,7 @@ share/locale/th/LC_MESSAGES/kio_sftp.mo
 share/locale/th/LC_MESSAGES/kio_smb.mo
 share/locale/th/LC_MESSAGES/kio_smbro.mo
 share/locale/th/LC_MESSAGES/kio_smtp.mo
+share/locale/th/LC_MESSAGES/kioexec.mo
 share/locale/th/LC_MESSAGES/kit.mo
 share/locale/th/LC_MESSAGES/kjobviewer.mo
 share/locale/th/LC_MESSAGES/kjots.mo

@@ -1,0 +1,3 @@
+lib/kde3/libmswordimport.la
+lib/kde3/libmswordimport.so
+share/services/kword_msword_import.desktop

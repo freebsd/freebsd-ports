@@ -3,8 +3,9 @@ bin/ktalkdlg
 bin/mail.local
 lib/kde3/kcm_ktalkd.la
 lib/kde3/kcm_ktalkd.so
-share/applnk/Settings/Network/kcmktalkd.desktop
+share/applications/kde/kcmktalkd.desktop
 share/config/ktalkdrc
+share/icons/crystalsvg/128x128/apps/ktalkd.png
 share/icons/crystalsvg/16x16/apps/ktalkd.png
 share/icons/crystalsvg/32x32/apps/ktalkd.png
 share/icons/crystalsvg/48x48/apps/ktalkd.png

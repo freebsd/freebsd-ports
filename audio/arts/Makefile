@@ -8,11 +8,15 @@
 
 PORTNAME=	arts
 PORTVERSION=	1.1.4
-PORTREVISION=	1
+PORTREVISION=	0
 PORTEPOCH=	1
 CATEGORIES=	audio kde
-MASTER_SITES=	${MASTER_SITE_KDE}
-MASTER_SITE_SUBDIR=	stable/${KDE_VERSION}/src
+MASTER_SITES=	http://mirrors.isc.org/pub/kde/stable/3.1.4/FreeBSD/patches/ \
+		${MASTER_SITE_KDE}
+MASTER_SITE_SUBDIR=	stable/3.1.4/src
+DISTFILES=	arts-1.1.4.tar.bz2 \
+		arts-2003092201-configure.tar.bz2 \
+		patch-ltmain.sh
 DIST_SUBDIR=	KDE
 
 MAINTAINER=	kde@FreeBSD.org

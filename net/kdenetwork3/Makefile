@@ -8,18 +8,15 @@
 
 PORTNAME=	kdenetwork
 PORTVERSION=	${KDE_VERSION}
-PORTREVISION=	2
-CATEGORIES?=	net news kde
+CATEGORIES?=	net kde
 MASTER_SITES=	${MASTER_SITE_KDE}
-MASTER_SITE_SUBDIR=	stable/${KDE_VERSION}/src
+MASTER_SITE_SUBDIR=	stable/${PORTVERSION:S/.0//}/src
 DIST_SUBDIR=	KDE
 
 MAINTAINER?=	kde@FreeBSD.org
 COMMENT=	Network-related programs and modules for KDE
 
-LIB_DEPENDS=	uu.3:${PORTSDIR}/converters/uulib
-
-CONFLICTS=	mimelib-1.1.*
+CONFLICTS=	kopete-*
 
 USE_KDELIBS_VER=3
 PREFIX=		${KDE_PREFIX}
@@ -27,6 +24,7 @@ KDE_BUILD_PLIST=yes
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes
+USE_REINPLACE=	yes
 
 GNU_CONFIGURE=	yes
 INSTALLS_SHLIB=	yes

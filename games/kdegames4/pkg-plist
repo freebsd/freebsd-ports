@@ -7,6 +7,7 @@ bin/kblackbox
 bin/kbounce
 bin/kenolaba
 bin/kfouleggs
+bin/kgoldrunner
 bin/kjumpingcube
 bin/klickety
 bin/klines
@@ -30,7 +31,6 @@ bin/kwin4
 bin/kwin4proc
 bin/lskat
 bin/lskatproc
-bin/megami
 include/atlantic/atlantic_core.h
 include/atlantic/auction.h
 include/atlantic/estate.h
@@ -39,7 +39,6 @@ include/atlantic/player.h
 include/atlantic/trade.h
 include/atlantik/ui/auction_widget.h
 include/atlantik/ui/board.h
-include/atlantik/ui/display_widget.h
 include/atlantik/ui/estatedetails.h
 include/atlantik/ui/estateview.h
 include/atlantik/ui/portfolioestate.h
@@ -51,6 +50,8 @@ include/kcarddialog.h
 include/kchat.h
 include/kchatbase.h
 include/kchatdialog.h
+include/kexthighscore.h
+include/kexthighscore_item.h
 include/kgame/kgame.h
 include/kgame/kgamechat.h
 include/kgame/kgameconnectdialog.h
@@ -67,12 +68,16 @@ include/kgame/kgameproperty.h
 include/kgame/kgamepropertyarray.h
 include/kgame/kgamepropertyhandler.h
 include/kgame/kgamepropertylist.h
+include/kgame/kgamesequence.h
+include/kgame/kgameversion.h
 include/kgame/kmessageclient.h
 include/kgame/kmessageio.h
 include/kgame/kmessageserver.h
 include/kgame/kplayer.h
+include/kgamelcd.h
 include/kgamemisc.h
 include/kgameprogress.h
+include/kgrid2d.h
 include/khighscore.h
 include/kolf/ball.h
 include/kolf/canvasitem.h
@@ -92,52 +97,54 @@ lib/kde3/kolf.la
 lib/kde3/kolf.so
 lib/libatlantic.la
 lib/libatlantic.so
-lib/libatlantic.so.2
+lib/libatlantic.so.3
 lib/libatlantikclient.la
 lib/libatlantikclient.so
-lib/libatlantikclient.so.2
+lib/libatlantikclient.so.3
 lib/libatlantikui.la
 lib/libatlantikui.so
-lib/libatlantikui.so.2
+lib/libatlantikui.so.3
 lib/libkdegames.la
 lib/libkdegames.so
-lib/libkdegames.so.2
+lib/libkdegames.so.3
+lib/libkdeinit_kolf.la
+lib/libkdeinit_kolf.so
 lib/libkolf.la
 lib/libkolf.so
-lib/libkolf.so.0
-share/applnk/Games/Arcade/kasteroids.desktop
-share/applnk/Games/Arcade/kbounce.desktop
-share/applnk/Games/Arcade/kfouleggs.desktop
-share/applnk/Games/Arcade/klickety.desktop
-share/applnk/Games/Arcade/kolf.desktop
-share/applnk/Games/Arcade/ksirtet.desktop
-share/applnk/Games/Arcade/ksmiletris.desktop
-share/applnk/Games/Arcade/ksnake.desktop
-share/applnk/Games/Arcade/kspaceduel.desktop
-share/applnk/Games/Arcade/ktron.desktop
-share/applnk/Games/Board/atlantik.desktop
-share/applnk/Games/Board/kbackgammon.desktop
-share/applnk/Games/Board/kbattleship.desktop
-share/applnk/Games/Board/kblackbox.desktop
-share/applnk/Games/Board/kenolaba.desktop
-share/applnk/Games/Board/kmahjongg.desktop
-share/applnk/Games/Board/kreversi.desktop
-share/applnk/Games/Board/kshisen.desktop
-share/applnk/Games/Board/kwin4.desktop
-share/applnk/Games/Card/kpat.desktop
-share/applnk/Games/Card/kpoker.desktop
-share/applnk/Games/Card/lskat.desktop
-share/applnk/Games/Card/megami.desktop
-share/applnk/Games/Kidsgames/ktuberling.desktop
-share/applnk/Games/TacticStrategy/katomic.desktop
-share/applnk/Games/TacticStrategy/kjumpingcube.desktop
-share/applnk/Games/TacticStrategy/klines.desktop
-share/applnk/Games/TacticStrategy/kmines.desktop
-share/applnk/Games/TacticStrategy/konquest.desktop
-share/applnk/Games/TacticStrategy/ksame.desktop
-share/applnk/Games/TacticStrategy/ksokoban.desktop
-share/applnk/Toys/ktuberling.desktop
+lib/libkolf.so.3
+share/applications/kde/KGoldrunner.desktop
+share/applications/kde/atlantik.desktop
+share/applications/kde/kasteroids.desktop
+share/applications/kde/katomic.desktop
+share/applications/kde/kbackgammon.desktop
+share/applications/kde/kbattleship.desktop
+share/applications/kde/kblackbox.desktop
+share/applications/kde/kbounce.desktop
+share/applications/kde/kenolaba.desktop
+share/applications/kde/kfouleggs.desktop
+share/applications/kde/kjumpingcube.desktop
+share/applications/kde/klickety.desktop
+share/applications/kde/klines.desktop
+share/applications/kde/kmahjongg.desktop
+share/applications/kde/kmines.desktop
+share/applications/kde/kolf.desktop
+share/applications/kde/konquest.desktop
+share/applications/kde/kpat.desktop
+share/applications/kde/kpoker.desktop
+share/applications/kde/kreversi.desktop
+share/applications/kde/ksame.desktop
+share/applications/kde/kshisen.desktop
+share/applications/kde/ksirtet.desktop
+share/applications/kde/ksmiletris.desktop
+share/applications/kde/ksnake.desktop
+share/applications/kde/ksokoban.desktop
+share/applications/kde/kspaceduel.desktop
+share/applications/kde/ktron.desktop
+share/applications/kde/ktuberling.desktop
+share/applications/kde/kwin4.desktop
+share/applications/kde/lskat.desktop
 share/apps/atlantik/atlantikui.rc
+share/apps/atlantik/eventsrc
 share/apps/atlantik/icons/crystalsvg/16x16/actions/jail_pay.png
 share/apps/atlantik/icons/crystalsvg/22x22/actions/atlantik_buy_estate.png
 share/apps/atlantik/icons/crystalsvg/22x22/actions/jail_pay.png
@@ -151,6 +158,24 @@ share/apps/atlantik/pics/qmark-blue.png
 share/apps/atlantik/pics/qmark-red.png
 share/apps/atlantik/pics/token.png
 share/apps/atlantik/pics/train.png
+share/apps/atlantik/themes/default/tokens/badge.png
+share/apps/atlantik/themes/default/tokens/beachball.png
+share/apps/atlantik/themes/default/tokens/bell.png
+share/apps/atlantik/themes/default/tokens/bomb.png
+share/apps/atlantik/themes/default/tokens/cat.png
+share/apps/atlantik/themes/default/tokens/cookie.png
+share/apps/atlantik/themes/default/tokens/cube.png
+share/apps/atlantik/themes/default/tokens/eyeball.png
+share/apps/atlantik/themes/default/tokens/flag.png
+share/apps/atlantik/themes/default/tokens/ghost.png
+share/apps/atlantik/themes/default/tokens/globe.png
+share/apps/atlantik/themes/default/tokens/hamburger.png
+share/apps/atlantik/themes/default/tokens/lips.png
+share/apps/atlantik/themes/default/tokens/puzzle.png
+share/apps/atlantik/themes/default/tokens/pyramid.png
+share/apps/atlantik/themes/default/tokens/skull.png
+share/apps/atlantik/themes/default/tokens/traffic_light.png
+share/apps/atlantik/themes/default/tokens/wizard.png
 share/apps/carddecks/cards-aisleriot/1.png
 share/apps/carddecks/cards-aisleriot/10.png
 share/apps/carddecks/cards-aisleriot/11.png
@@ -1026,6 +1051,8 @@ share/apps/katomic/levels/level_8
 share/apps/katomic/levels/level_80
 share/apps/katomic/levels/level_81
 share/apps/katomic/levels/level_82
+share/apps/katomic/levels/level_83
+share/apps/katomic/levels/level_84
 share/apps/katomic/levels/level_9
 share/apps/katomic/pics/abilder.png
 share/apps/katomic/pics/molek.png
@@ -1037,6 +1064,7 @@ share/apps/kbackgammon/sounds/kbackgammon-lost.wav
 share/apps/kbackgammon/sounds/kbackgammon-move.wav
 share/apps/kbackgammon/sounds/kbackgammon-roll.wav
 share/apps/kbackgammon/sounds/kbackgammon-won.wav
+share/apps/kbattleship/eventsrc
 share/apps/kbattleship/kbattleshipui.rc
 share/apps/kbattleship/pictures/border.png
 share/apps/kbattleship/pictures/death.png
@@ -1128,10 +1156,190 @@ share/apps/kenolaba/toolbar/stop.xpm
 share/apps/kenolaba/toolbar/undo.xpm
 share/apps/kenolaba/toolbar/warning.xpm
 share/apps/kenolaba/toolbar/yellowball.xpm
-share/apps/kfouleggs/kfouleggsconfig.rc
+share/apps/kfouleggs/eventsrc
 share/apps/kfouleggs/kfouleggsui.rc
+share/apps/kgoldrunner/kgoldrunnerui.rc
+share/apps/kgoldrunner/system/games.dat
+share/apps/kgoldrunner/system/hi_level.dat
+share/apps/kgoldrunner/system/hi_plws.dat
+share/apps/kgoldrunner/system/hi_plwv.dat
+share/apps/kgoldrunner/system/hi_wad.dat
+share/apps/kgoldrunner/system/levels/fred
+share/apps/kgoldrunner/system/levels/level000.grl
+share/apps/kgoldrunner/system/levels/level001.grl
+share/apps/kgoldrunner/system/levels/level002.grl
+share/apps/kgoldrunner/system/levels/level003.grl
+share/apps/kgoldrunner/system/levels/level004.grl
+share/apps/kgoldrunner/system/levels/level005.grl
+share/apps/kgoldrunner/system/levels/level006.grl
+share/apps/kgoldrunner/system/levels/level007.grl
+share/apps/kgoldrunner/system/levels/level008.grl
+share/apps/kgoldrunner/system/levels/level009.grl
+share/apps/kgoldrunner/system/levels/level010.grl
+share/apps/kgoldrunner/system/levels/level011.grl
+share/apps/kgoldrunner/system/levels/level012.grl
+share/apps/kgoldrunner/system/levels/level013.grl
+share/apps/kgoldrunner/system/levels/level014.grl
+share/apps/kgoldrunner/system/levels/level015.grl
+share/apps/kgoldrunner/system/levels/level016.grl
+share/apps/kgoldrunner/system/levels/level017.grl
+share/apps/kgoldrunner/system/levels/level018.grl
+share/apps/kgoldrunner/system/levels/plws001.grl
+share/apps/kgoldrunner/system/levels/plws002.grl
+share/apps/kgoldrunner/system/levels/plws003.grl
+share/apps/kgoldrunner/system/levels/plws004.grl
+share/apps/kgoldrunner/system/levels/plws005.grl
+share/apps/kgoldrunner/system/levels/plws006.grl
+share/apps/kgoldrunner/system/levels/plws007.grl
+share/apps/kgoldrunner/system/levels/plws008.grl
+share/apps/kgoldrunner/system/levels/plws009.grl
+share/apps/kgoldrunner/system/levels/plws010.grl
+share/apps/kgoldrunner/system/levels/plws011.grl
+share/apps/kgoldrunner/system/levels/plws012.grl
+share/apps/kgoldrunner/system/levels/plws013.grl
+share/apps/kgoldrunner/system/levels/plws014.grl
+share/apps/kgoldrunner/system/levels/plws015.grl
+share/apps/kgoldrunner/system/levels/plws016.grl
+share/apps/kgoldrunner/system/levels/plws017.grl
+share/apps/kgoldrunner/system/levels/plws018.grl
+share/apps/kgoldrunner/system/levels/plws019.grl
+share/apps/kgoldrunner/system/levels/plws020.grl
+share/apps/kgoldrunner/system/levels/plws021.grl
+share/apps/kgoldrunner/system/levels/plws022.grl
+share/apps/kgoldrunner/system/levels/plws023.grl
+share/apps/kgoldrunner/system/levels/plws024.grl
+share/apps/kgoldrunner/system/levels/plws025.grl
+share/apps/kgoldrunner/system/levels/plws026.grl
+share/apps/kgoldrunner/system/levels/plws027.grl
+share/apps/kgoldrunner/system/levels/plws028.grl
+share/apps/kgoldrunner/system/levels/plws029.grl
+share/apps/kgoldrunner/system/levels/plws030.grl
+share/apps/kgoldrunner/system/levels/plws031.grl
+share/apps/kgoldrunner/system/levels/plws032.grl
+share/apps/kgoldrunner/system/levels/plws033.grl
+share/apps/kgoldrunner/system/levels/plws034.grl
+share/apps/kgoldrunner/system/levels/plws035.grl
+share/apps/kgoldrunner/system/levels/plws036.grl
+share/apps/kgoldrunner/system/levels/plws037.grl
+share/apps/kgoldrunner/system/levels/plws038.grl
+share/apps/kgoldrunner/system/levels/plws039.grl
+share/apps/kgoldrunner/system/levels/plws040.grl
+share/apps/kgoldrunner/system/levels/plws041.grl
+share/apps/kgoldrunner/system/levels/plws042.grl
+share/apps/kgoldrunner/system/levels/plws043.grl
+share/apps/kgoldrunner/system/levels/plws044.grl
+share/apps/kgoldrunner/system/levels/plws045.grl
+share/apps/kgoldrunner/system/levels/plws046.grl
+share/apps/kgoldrunner/system/levels/plws047.grl
+share/apps/kgoldrunner/system/levels/plws048.grl
+share/apps/kgoldrunner/system/levels/plws049.grl
+share/apps/kgoldrunner/system/levels/plws050.grl
+share/apps/kgoldrunner/system/levels/plws051.grl
+share/apps/kgoldrunner/system/levels/plws052.grl
+share/apps/kgoldrunner/system/levels/plws053.grl
+share/apps/kgoldrunner/system/levels/plws054.grl
+share/apps/kgoldrunner/system/levels/plws055.grl
+share/apps/kgoldrunner/system/levels/plws056.grl
+share/apps/kgoldrunner/system/levels/plws057.grl
+share/apps/kgoldrunner/system/levels/plws058.grl
+share/apps/kgoldrunner/system/levels/plws059.grl
+share/apps/kgoldrunner/system/levels/plws060.grl
+share/apps/kgoldrunner/system/levels/plws061.grl
+share/apps/kgoldrunner/system/levels/plws062.grl
+share/apps/kgoldrunner/system/levels/plws063.grl
+share/apps/kgoldrunner/system/levels/plws064.grl
+share/apps/kgoldrunner/system/levels/plws065.grl
+share/apps/kgoldrunner/system/levels/plws066.grl
+share/apps/kgoldrunner/system/levels/plws067.grl
+share/apps/kgoldrunner/system/levels/plws068.grl
+share/apps/kgoldrunner/system/levels/plws069.grl
+share/apps/kgoldrunner/system/levels/plws070.grl
+share/apps/kgoldrunner/system/levels/plws071.grl
+share/apps/kgoldrunner/system/levels/plws072.grl
+share/apps/kgoldrunner/system/levels/plws073.grl
+share/apps/kgoldrunner/system/levels/plws074.grl
+share/apps/kgoldrunner/system/levels/plws075.grl
+share/apps/kgoldrunner/system/levels/plws076.grl
+share/apps/kgoldrunner/system/levels/plws077.grl
+share/apps/kgoldrunner/system/levels/plws078.grl
+share/apps/kgoldrunner/system/levels/plws079.grl
+share/apps/kgoldrunner/system/levels/plws080.grl
+share/apps/kgoldrunner/system/levels/plws081.grl
+share/apps/kgoldrunner/system/levels/plws082.grl
+share/apps/kgoldrunner/system/levels/plws083.grl
+share/apps/kgoldrunner/system/levels/plws084.grl
+share/apps/kgoldrunner/system/levels/plws085.grl
+share/apps/kgoldrunner/system/levels/plws086.grl
+share/apps/kgoldrunner/system/levels/plws087.grl
+share/apps/kgoldrunner/system/levels/plws088.grl
+share/apps/kgoldrunner/system/levels/plws089.grl
+share/apps/kgoldrunner/system/levels/plws090.grl
+share/apps/kgoldrunner/system/levels/plws091.grl
+share/apps/kgoldrunner/system/levels/plws092.grl
+share/apps/kgoldrunner/system/levels/plws093.grl
+share/apps/kgoldrunner/system/levels/plws094.grl
+share/apps/kgoldrunner/system/levels/plws095.grl
+share/apps/kgoldrunner/system/levels/plws096.grl
+share/apps/kgoldrunner/system/levels/plws097.grl
+share/apps/kgoldrunner/system/levels/plws098.grl
+share/apps/kgoldrunner/system/levels/plws099.grl
+share/apps/kgoldrunner/system/levels/plws100.grl
+share/apps/kgoldrunner/system/levels/plwv001.grl
+share/apps/kgoldrunner/system/levels/plwv002.grl
+share/apps/kgoldrunner/system/levels/plwv003.grl
+share/apps/kgoldrunner/system/levels/plwv004.grl
+share/apps/kgoldrunner/system/levels/plwv005.grl
+share/apps/kgoldrunner/system/levels/plwv006.grl
+share/apps/kgoldrunner/system/levels/plwv007.grl
+share/apps/kgoldrunner/system/levels/plwv008.grl
+share/apps/kgoldrunner/system/levels/plwv009.grl
+share/apps/kgoldrunner/system/levels/plwv010.grl
+share/apps/kgoldrunner/system/levels/plwv011.grl
+share/apps/kgoldrunner/system/levels/plwv012.grl
+share/apps/kgoldrunner/system/levels/plwv013.grl
+share/apps/kgoldrunner/system/levels/plwv014.grl
+share/apps/kgoldrunner/system/levels/plwv015.grl
+share/apps/kgoldrunner/system/levels/plwv016.grl
+share/apps/kgoldrunner/system/levels/plwv017.grl
+share/apps/kgoldrunner/system/levels/plwv018.grl
+share/apps/kgoldrunner/system/levels/plwv019.grl
+share/apps/kgoldrunner/system/levels/plwv020.grl
+share/apps/kgoldrunner/system/levels/tute001.grl
+share/apps/kgoldrunner/system/levels/tute002.grl
+share/apps/kgoldrunner/system/levels/tute003.grl
+share/apps/kgoldrunner/system/levels/tute004.grl
+share/apps/kgoldrunner/system/levels/tute005.grl
+share/apps/kgoldrunner/system/levels/tute006.grl
+share/apps/kgoldrunner/system/levels/tute007.grl
+share/apps/kgoldrunner/system/levels/tutea001.grl
+share/apps/kgoldrunner/system/levels/tutea002.grl
+share/apps/kgoldrunner/system/levels/tutea003.grl
+share/apps/kgoldrunner/system/levels/tutea004.grl
+share/apps/kgoldrunner/system/levels/tutea005.grl
+share/apps/kgoldrunner/system/levels/wad001.grl
+share/apps/kgoldrunner/system/levels/wad002.grl
+share/apps/kgoldrunner/system/levels/wad003.grl
+share/apps/kgoldrunner/system/levels/wad004.grl
+share/apps/kgoldrunner/system/levels/wad005.grl
+share/apps/kgoldrunner/system/levels/wad006.grl
+share/apps/kgoldrunner/system/levels/wad007.grl
+share/apps/kgoldrunner/system/levels/wad008.grl
+share/apps/kgoldrunner/system/levels/wad009.grl
+share/apps/kgoldrunner/system/levels/wad010.grl
+share/apps/kgoldrunner/system/levels/wad011.grl
+share/apps/kgoldrunner/system/levels/wad012.grl
+share/apps/kgoldrunner/system/levels/wad013.grl
+share/apps/kgoldrunner/system/levels/wad014.grl
+share/apps/kgoldrunner/system/levels/wad015.grl
+share/apps/kgoldrunner/system/levels/wad016.grl
+share/apps/kgoldrunner/system/levels/wad017.grl
+share/apps/kgoldrunner/system/levels/wad018.grl
+share/apps/kgoldrunner/system/levels/wad019.grl
+share/apps/kgoldrunner/system/levels/wad020.grl
+share/apps/kgoldrunner/system/levels/wad021.grl
+share/apps/kgoldrunner/system/levels/wad022.grl
 share/apps/kjumpingcube/kjumpingcubeui.rc
-share/apps/klickety/klicketyconfig.rc
+share/apps/klickety/eventsrc
 share/apps/klickety/klicketyui.rc
 share/apps/klines/balls.jpg
 share/apps/klines/field.jpg
@@ -1161,7 +1369,7 @@ share/apps/kmahjongg/pics/traditional.tileset
 share/apps/kmahjongg/pics/triangle.layout
 share/apps/kmahjongg/pics/wood.bgnd
 share/apps/kmahjongg/toolbar/newnum.xpm
-share/apps/kmines/kminesconfig.rc
+share/apps/kmines/eventsrc
 share/apps/kmines/kminesui.rc
 share/apps/kolf/courses/Classic.kolf
 share/apps/kolf/courses/Easy.kolf
@@ -1170,6 +1378,7 @@ share/apps/kolf/courses/Impossible
 share/apps/kolf/courses/Medium.kolf
 share/apps/kolf/courses/Practice
 share/apps/kolf/courses/ReallyEasy
+share/apps/kolf/courses/USApro
 share/apps/kolf/intro
 share/apps/kolf/kolfui.rc
 share/apps/kolf/pics/cup.png
@@ -1204,36 +1413,29 @@ share/apps/kpoker/sounds/cardflip.wav
 share/apps/kpoker/sounds/hold.wav
 share/apps/kpoker/sounds/lose.wav
 share/apps/kpoker/sounds/win.wav
-share/apps/kreversi/pics/background/Dark_Wood.xpm
-share/apps/kreversi/pics/background/Earth.xpm
-share/apps/kreversi/pics/background/Granite.xpm
-share/apps/kreversi/pics/background/Hexagon.xpm
-share/apps/kreversi/pics/background/Light_Wood.xpm
-share/apps/kreversi/pics/background/Mystique.xpm
-share/apps/kreversi/pics/background/Ocean.xpm
-share/apps/kreversi/pics/background/Pipes.xpm
-share/apps/kreversi/pics/background/Puzzle.xpm
-share/apps/kreversi/pics/background/Stones.xpm
+share/apps/kreversi/kreversiui.rc
+share/apps/kreversi/pics/background/Dark_Wood.png
+share/apps/kreversi/pics/background/Earth.png
+share/apps/kreversi/pics/background/Granite.png
+share/apps/kreversi/pics/background/Hexagon.png
+share/apps/kreversi/pics/background/Light_Wood.png
+share/apps/kreversi/pics/background/Mystique.png
+share/apps/kreversi/pics/background/Ocean.png
+share/apps/kreversi/pics/background/Pipes.png
+share/apps/kreversi/pics/background/Puzzle.png
+share/apps/kreversi/pics/background/Stones.png
 share/apps/kreversi/pics/chips.png
 share/apps/kreversi/pics/chips_mono.png
-share/apps/kreversi/pics/help.xpm
-share/apps/kreversi/pics/hint.xpm
-share/apps/kreversi/pics/logo.xpm
-share/apps/kreversi/pics/stop.xpm
-share/apps/kreversi/pics/undo.xpm
-share/apps/kreversi/pics/zoomin.xpm
-share/apps/kreversi/pics/zoomout.xpm
 share/apps/kreversi/sounds/reversi-click.wav
 share/apps/kreversi/sounds/reversi-lost.wav
 share/apps/kreversi/sounds/reversi-won.wav
 share/apps/ksame/eventsrc
 share/apps/ksame/ksameui.rc
 share/apps/ksame/stones.png
-share/apps/kshisen/kshisen.xpm
 share/apps/kshisen/kshisen_bgnd.xpm
 share/apps/kshisen/kshisenui.rc
-share/apps/kshisen/paused.xpm
-share/apps/ksirtet/ksirtetconfig.rc
+share/apps/kshisen/tileset.png
+share/apps/ksirtet/eventsrc
 share/apps/ksirtet/ksirtetui.rc
 share/apps/ksmiletris/data/bg1.bmp
 share/apps/ksmiletris/data/bg10.bmp
@@ -1847,7 +2049,15 @@ share/apps/lskat/grafix/type1.png
 share/apps/lskat/grafix/type2.png
 share/apps/lskat/grafix/type3.png
 share/apps/lskat/lskatui.rc
-share/apps/megami/megamiui.rc
+share/config.kcfg/kasteroids.kcfg
+share/config.kcfg/kfouleggs.kcfg
+share/config.kcfg/kjumpingcube.kcfg
+share/config.kcfg/klines.kcfg
+share/config.kcfg/kmahjongg.kcfg
+share/config.kcfg/kreversi.kcfg
+share/config.kcfg/ksirtet.kcfg
+share/config.kcfg/kspaceduel.kcfg
+share/config.kcfg/ktron.kcfg
 share/config/magic/kolf.magic
 share/doc/HTML/en/atlantik/common
 share/doc/HTML/en/atlantik/index.cache.bz2
@@ -1876,6 +2086,7 @@ share/doc/HTML/en/kbounce/index.docbook
 share/doc/HTML/en/kbounce/jezball_corridor1.png
 share/doc/HTML/en/kbounce/jezball_corridor2.png
 share/doc/HTML/en/kbounce/jezball_newWall.png
+share/doc/HTML/en/kdegames-apidocs/common
 share/doc/HTML/en/kenolaba/common
 share/doc/HTML/en/kenolaba/index.cache.bz2
 share/doc/HTML/en/kenolaba/index.docbook
@@ -1884,6 +2095,16 @@ share/doc/HTML/en/kfouleggs/common
 share/doc/HTML/en/kfouleggs/gamescreen.png
 share/doc/HTML/en/kfouleggs/index.cache.bz2
 share/doc/HTML/en/kfouleggs/index.docbook
+share/doc/HTML/en/kgoldrunner/common
+share/doc/HTML/en/kgoldrunner/editbar.png
+share/doc/HTML/en/kgoldrunner/enemy.png
+share/doc/HTML/en/kgoldrunner/hero.png
+share/doc/HTML/en/kgoldrunner/index.cache.bz2
+share/doc/HTML/en/kgoldrunner/index.docbook
+share/doc/HTML/en/kgoldrunner/kgoldrunner.png
+share/doc/HTML/en/kgoldrunner/level010.png
+share/doc/HTML/en/kgoldrunner/select.png
+share/doc/HTML/en/kgoldrunner/tute008.png
 share/doc/HTML/en/kjumpingcube/common
 share/doc/HTML/en/kjumpingcube/index.cache.bz2
 share/doc/HTML/en/kjumpingcube/index.docbook
@@ -1942,8 +2163,6 @@ share/doc/HTML/en/ksokoban/index.docbook
 share/doc/HTML/en/kspaceduel/common
 share/doc/HTML/en/kspaceduel/index.cache.bz2
 share/doc/HTML/en/kspaceduel/index.docbook
-share/doc/HTML/en/kspaceduel/kspaceduel1.png
-share/doc/HTML/en/kspaceduel/kspaceduel2.png
 share/doc/HTML/en/kspaceduel/kspaceduel3.png
 share/doc/HTML/en/ktron/common
 share/doc/HTML/en/ktron/index.cache.bz2
@@ -1973,9 +2192,7 @@ share/doc/HTML/en/kwin4/index.docbook
 share/doc/HTML/en/lskat/common
 share/doc/HTML/en/lskat/index.cache.bz2
 share/doc/HTML/en/lskat/index.docbook
-share/doc/HTML/en/megami/common
-share/doc/HTML/en/megami/index.cache.bz2
-share/doc/HTML/en/megami/index.docbook
+share/icons/crystalsvg/128x128/apps/ksmiletris.png
 share/icons/crystalsvg/16x16/actions/endturn.png
 share/icons/crystalsvg/16x16/actions/highscore.png
 share/icons/crystalsvg/16x16/actions/roll.png
@@ -2038,7 +2255,6 @@ share/icons/crystalsvg/32x32/apps/ktron.png
 share/icons/crystalsvg/32x32/apps/ktuberling.png
 share/icons/crystalsvg/32x32/apps/kwin4.png
 share/icons/crystalsvg/32x32/apps/lskat.png
-share/icons/crystalsvg/32x32/apps/megami.png
 share/icons/crystalsvg/48x48/apps/atlantik.png
 share/icons/crystalsvg/48x48/apps/kasteroids.png
 share/icons/crystalsvg/48x48/apps/kbackgammon.png
@@ -2060,7 +2276,9 @@ share/icons/crystalsvg/48x48/apps/ksnake.png
 share/icons/crystalsvg/48x48/apps/ksokoban.png
 share/icons/crystalsvg/48x48/apps/kwin4.png
 share/icons/crystalsvg/48x48/apps/lskat.png
-share/icons/hicolor/32x32/apps/megami.png
+share/icons/crystalsvg/64x64/apps/ksmiletris.png
+share/icons/hicolor/16x16/apps/kgoldrunner.png
+share/icons/hicolor/32x32/apps/kgoldrunner.png
 share/icons/locolor/16x16/apps/kbounce.png
 share/icons/locolor/16x16/apps/kspaceduel.png
 share/icons/locolor/16x16/apps/lskat.png
@@ -2069,7 +2287,11 @@ share/icons/locolor/32x32/apps/kspaceduel.png
 share/icons/locolor/32x32/apps/lskat.png
 share/mimelnk/application/x-kolf.desktop
 share/mimelnk/application/x-kourse.desktop
+share/mimelnk/application/x-tuberling.desktop
 share/services/atlantik.protocol
+@exec /bin/mkdir -p %D/share/doc/HTML/en/kdegames-apidocs/libkdegames/html
+@exec /bin/mkdir -p %D/share/doc/HTML/en/kdegames-apidocs/libkdegames/html
+@exec /bin/mkdir -p %D/share/doc/HTML/en/kdegames-apidocs/libkdegames/html
 @dirrm share/icons/locolor/32x32/apps
 @dirrm share/icons/locolor/32x32
 @dirrm share/icons/locolor/16x16/apps
@@ -2077,10 +2299,13 @@ share/services/atlantik.protocol
 @dirrm share/icons/locolor
 @dirrm share/icons/hicolor/32x32/apps
 @dirrm share/icons/hicolor/32x32
+@dirrm share/icons/hicolor/16x16/apps
+@dirrm share/icons/hicolor/16x16
+@dirrm share/icons/crystalsvg/64x64/apps
 @dirrm share/icons/crystalsvg/48x48/apps
 @dirrm share/icons/crystalsvg/32x32/apps
 @dirrm share/icons/crystalsvg/16x16/apps
-@dirrm share/doc/HTML/en/megami
+@dirrm share/icons/crystalsvg/128x128/apps
 @dirrm share/doc/HTML/en/lskat
 @dirrm share/doc/HTML/en/kwin4
 @dirrm share/doc/HTML/en/ktuberling
@@ -2100,8 +2325,12 @@ share/services/atlantik.protocol
 @dirrm share/doc/HTML/en/klines
 @dirrm share/doc/HTML/en/klickety
 @dirrm share/doc/HTML/en/kjumpingcube
+@dirrm share/doc/HTML/en/kgoldrunner
 @dirrm share/doc/HTML/en/kfouleggs
 @dirrm share/doc/HTML/en/kenolaba
+@dirrm share/doc/HTML/en/kdegames-apidocs/libkdegames/html
+@dirrm share/doc/HTML/en/kdegames-apidocs/libkdegames
+@dirrm share/doc/HTML/en/kdegames-apidocs
 @dirrm share/doc/HTML/en/kbounce
 @dirrm share/doc/HTML/en/kblackbox
 @dirrm share/doc/HTML/en/kbattleship
@@ -2110,7 +2339,7 @@ share/services/atlantik.protocol
 @dirrm share/doc/HTML/en/kasteroids
 @dirrm share/doc/HTML/en/atlantik
 @dirrm share/config/magic
-@dirrm share/apps/megami
+@dirrm share/config.kcfg
 @dirrm share/apps/lskat/grafix
 @dirrm share/apps/lskat
 @dirrm share/apps/kwin4/grafix/default
@@ -2171,6 +2400,9 @@ share/services/atlantik.protocol
 @dirrm share/apps/klines
 @dirrm share/apps/klickety
 @dirrm share/apps/kjumpingcube
+@dirrm share/apps/kgoldrunner/system/levels
+@dirrm share/apps/kgoldrunner/system
+@dirrm share/apps/kgoldrunner
 @dirrm share/apps/kfouleggs
 @dirrm share/apps/kenolaba/toolbar
 @dirrm share/apps/kenolaba
@@ -2214,6 +2446,9 @@ share/services/atlantik.protocol
 @dirrm share/apps/carddecks/cards-default
 @dirrm share/apps/carddecks/cards-aisleriot
 @dirrm share/apps/carddecks
+@dirrm share/apps/atlantik/themes/default/tokens
+@dirrm share/apps/atlantik/themes/default
+@dirrm share/apps/atlantik/themes
 @dirrm share/apps/atlantik/pics
 @dirrm share/apps/atlantik/icons/locolor/16x16/actions
 @dirrm share/apps/atlantik/icons/locolor/16x16
@@ -2227,13 +2462,6 @@ share/services/atlantik.protocol
 @dirrm share/apps/atlantik/icons/crystalsvg
 @dirrm share/apps/atlantik/icons
 @dirrm share/apps/atlantik
-@dirrm share/applnk/Toys
-@dirrm share/applnk/Games/TacticStrategy
-@dirrm share/applnk/Games/Kidsgames
-@dirrm share/applnk/Games/Card
-@dirrm share/applnk/Games/Board
-@dirrm share/applnk/Games/Arcade
-@dirrm share/applnk/Games
 @dirrm include/kolf
 @dirrm include/kgame
 @dirrm include/atlantik/ui

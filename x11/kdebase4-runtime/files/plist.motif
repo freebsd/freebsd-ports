@@ -1,5 +1,7 @@
 bin/nspluginscan
 bin/nspluginviewer
-lib/libnsplugin.la
-lib/libnsplugin.so
-lib/libnsplugin.so.1
+lib/kde3/kcm_nsplugins.la
+lib/kde3/kcm_nsplugins.so
+lib/kde3/libnsplugin.la
+lib/kde3/libnsplugin.so
+share/applications/kde/khtml_plugins.desktop

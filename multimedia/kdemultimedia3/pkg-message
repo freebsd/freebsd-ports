@@ -19,5 +19,9 @@ you have activated ATAPICAM in your kernel, change the permissions for
 the CAM transport layer and CAM passthrough layer devices to 666, i.e.: 
 
 	chmod 666 /dev/xpt0 /dev/pass0
+
+In order to make these changes permanent on FreeBSD 5.x, you have to
+add them to /etc/devfs.conf. Further instructions and examples on how
+to do this, can be found there as well.
  
 ======================================================================

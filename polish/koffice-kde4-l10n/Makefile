@@ -6,19 +6,20 @@
 #
 
 PORTNAME=	koffice-i18n
-PORTVERSION=	1.2.1
-PORTREVISION=	1
+PORTVERSION=	1.3
 CATEGORIES?=	polish kde
 MASTER_SITES=	${MASTER_SITE_KDE}
 MASTER_SITE_SUBDIR=	stable/koffice-${PORTVERSION}/src
+PKGNAMEPREFIX=	pl-
 DIST_SUBDIR=	KDE
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Localized messages and documentation for koffice
 
+BUILD_DEPENDS=	xgettext:${PORTSDIR}/devel/gettext
+
 USE_KDELIBS_VER=3
 USE_BZIP2=	yes
-USE_GETTEXT=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 KDE_I18N=	yes

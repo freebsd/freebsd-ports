@@ -67,7 +67,8 @@ if [ -z "${BATCH}" ]; then
 	--checklist "\n\
 Please select what additional KDE modules you would like to install.\n\n" \
 -1 -1 15 \
-"KDEADDONS"     "Additional plugins and scripts for some KDE applications" "$status_kdeaddons" \
+"KDEACCESS."    "Accessibility applications for KDE" "$status_kdeaccessibility" \
+"KDEADDONS"     "Additional plugins and scripts for some applications" "$status_kdeaddons" \
 "KDEADMIN"      "KDE applications related to system administration" "$status_kdeadmin" \
 "KDEARTWORK"    "Additional themes, sounds, wallpapers and window styles" "$status_kdeartwork" \
 "KDEVELOP"      "Powerful IDE for developing KDE/Qt-based applications" "$status_kdevelop" \
@@ -75,9 +76,9 @@ Please select what additional KDE modules you would like to install.\n\n" \
 "KDEGAMES"      "Games like kolf, patience, atlantik, etc" "$status_kdegames" \
 "KDEGRAPHICS"   "Graphics utilities like kview, kpaint, kghostview, etc" "$status_kdegraphics" \
 "KDEMULTIMEDIA" "Multimedia utilities like noatun, kmix, etc" "$status_kdemultimedia" \
-"KDENETWORK"    "Network-related programs like kmail, knode, kppp, etc" "$status_kdenetwork" \
+"KDENETWORK"    "Network-related programs like kopete, kppp, etc" "$status_kdenetwork" \
 "KOFFICE"       "Office Suite including wordprocessor, spreadsheet, etc" "$status_koffice" \
-"KDEPIM"        "Personal Information Management" "$status_kdepim" \
+"KDEPIM"        "Personal Information Management: Mail, News, Calendar" "$status_kdepim" \
 "KDESDK"        "KDE software development kit" "$status_kdesdk" \
 "KDETOYS"       "Miscellaneous small applications" "$status_kdetoys" \
 "KDEUTILS"      "Utilities like kcalc, kcharselect, ark, kedit, etc" "$status_kdeutils" \

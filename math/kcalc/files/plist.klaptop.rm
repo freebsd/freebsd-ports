@@ -1,3 +1,4 @@
+@dirrm share/services/kded
 @dirrm share/apps/klaptopdaemon/icons/crystalsvg/32x32/actions
 @dirrm share/apps/klaptopdaemon/icons/crystalsvg/32x32
 @dirrm share/apps/klaptopdaemon/icons/crystalsvg/22x22/actions
@@ -7,4 +8,3 @@
 @dirrm share/apps/klaptopdaemon/icons/crystalsvg
 @dirrm share/apps/klaptopdaemon/icons
 @dirrm share/apps/klaptopdaemon
-@dirrm share/applnk/Settings/PowerControl

@@ -7,10 +7,10 @@
 
 PORTNAME=	kdeutils
 PORTVERSION=	${KDE_VERSION}
-PORTREVISION=	1
+PORTREVISION=	0
 CATEGORIES?=	misc kde
 MASTER_SITES=		${MASTER_SITE_KDE}
-MASTER_SITE_SUBDIR=	stable/${PORTVERSION}/src
+MASTER_SITE_SUBDIR=	stable/${PORTVERSION:S/.0//}/src
 DIST_SUBDIR=	KDE
 
 MAINTAINER?=	kde@FreeBSD.org
@@ -24,6 +24,10 @@ USE_BZIP2=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 USE_REINPLACE=	yes
+DO_NOT_COMPILE+=kmilo kdepasswd
+CONFIGURE_ENV+= DO_NOT_COMPILE="${DO_NOT_COMPILE}"
+
+CONFLICTS=	kgpg-*
 
 INSTALLS_SHLIB=	yes
 LDCONFIG_DIRS+=	%%PREFIX%%/lib %%PREFIX%%/lib/kde3
@@ -31,7 +35,7 @@ LDCONFIG_DIRS+=	%%PREFIX%%/lib %%PREFIX%%/lib/kde3
 #klaptop needs APM, which is i386 only 
 .if ${MACHINE_ARCH} != "i386"
 WITHOUT_KLAPTOP	=yes
-.endif 
+.endif # ${MACHINE_ARCH} == "alpha"
 
 .if defined(WITHOUT_KLAPTOP)
 DO_NOT_COMPILE+=klaptopdaemon
@@ -51,11 +55,6 @@ CONFIGURE_ENV+=	DO_NOT_COMPILE="${DO_NOT_COMPILE}"
 .endif # defined(DO_NOT_COMPILE)
 
 .include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 500107
-post-patch:
-	${REINPLACE_CMD} -e 's,selectdevs,devstat_selectdevs,' ${WRKSRC}/configure
-.endif
 
 .include "${.CURDIR}/../../x11/kde3/Makefile.kde"
 
