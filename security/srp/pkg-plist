@@ -18,24 +18,3 @@ lib/pam_eps_passwd.so
 sbin/eps_chkpwd
 sbin/ftpd
 sbin/telnetd
-share/doc/srp/Acknowledgements
-share/doc/srp/Copyrights
-share/doc/srp/LICENSE
-share/doc/srp/copyright.c
-share/doc/srp/draft-altman-rfc2942bis-00.txt
-share/doc/srp/draft-altman-rfc2944bis-01.txt
-share/doc/srp/draft-altman-telnet-fwdx-02.txt
-share/doc/srp/draft-ietf-tn3270e-telnet-tls-05.txt
-share/doc/srp/rfc2941.txt
-share/doc/srp/rfc2942.txt
-share/doc/srp/rfc2944.txt
-share/doc/srp/rfc2945.txt
-share/doc/srp/rfc2946.txt
-share/doc/srp/rfc2947.txt
-share/doc/srp/rfc2948.txt
-share/doc/srp/rfc2949.txt
-share/doc/srp/rfc2950.txt
-share/doc/srp/rfc2952.txt
-share/doc/srp/rfc2953.txt
-share/doc/srp/srp.ps
-@dirrm share/doc/srp
