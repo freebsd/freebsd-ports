@@ -13,9 +13,10 @@ MASTER_SITES=	http://odur.let.rug.nl/~kleiweg/abclock/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Clock for X that displays hours and minutes in an analog fashion
 
-BROKEN=		Size mismatch
+PLIST_FILES=	bin/abclock bin/abc_img
 
 USE_X_PREFIX=	yes
+MAKE_ARGS=	CC="${CC}" OPT="${CFLAGS}"
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/abclock ${PREFIX}/bin
