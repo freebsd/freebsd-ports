@@ -27,6 +27,8 @@ ONLY_FOR_ARCHS=	i386
 USE_XPM=	yes
 USE_BISON=	yes
 USE_GMAKE=	yes
+# GCC 3.2 also seems fine, but the ports collection requires specifying
+# a concrete version.
 USE_GCC=	3.3
 USE_REINPLACE=	yes
 
