@@ -28,9 +28,11 @@ INFO=	gcrypt
 
 pre-extract:
 .if exists(${PREFIX}/bin/gpg)
+	@${MKDIR} ${WRKDIR}
 	@${ECHO_CMD} "===> Verifying GnuPG Signature."
-	-${PREFIX}/bin/gpg --keyserver pgp.mit.edu --recv-key 57548DCD
-	cd ${DISTDIR}; ${PREFIX}/bin/gpg --verify \
+	-${PREFIX}/bin/gpg --no-default-keyring --keyring ${WRKDIR}/keyring \
+		--keyserver pgp.mit.edu --recv-key 57548DCD
+	cd ${DISTDIR}; ${PREFIX}/bin/gpg --keyring ${WRKDIR}/keyring --verify \
 		${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX}.sig \
 		${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX}
 .else
