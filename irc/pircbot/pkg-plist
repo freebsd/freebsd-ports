@@ -42,8 +42,10 @@ share/java/classes/pircbot.jar
 %%PORTDOCS%%%%DOCSDIR%%/help-doc.html
 %%PORTDOCS%%%%DOCSDIR%%/pircbot-style.css
 %%PORTDOCS%%%%DOCSDIR%%/stylesheet.css
+%%PORTDOCS%%%%DOCSDIR%%/resources/inherit.gif
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/org/jibble/pircbot/class-use
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/org/jibble/pircbot
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/org/jibble
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/org
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/resources
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
