@@ -3,7 +3,7 @@
 # Date created:				14 Aug 1998
 # Whom:					Josh Tiefenbach <josh@ican.net>
 #
-# $Id: Makefile,v 1.22 1998/08/14 12:05:26 thepish Exp $
+# $Id: Makefile,v 1.23 1998/08/20 13:29:17 asami Exp $
 #
 
 DISTNAME=	mysql-3.21.33
@@ -41,7 +41,7 @@ pre-install:
 post-install:
 	${MKDIR} ${PREFIX}/share/mysql/mysql
 	${CP} ${WRKSRC}/data/mysql/*.frm ${PREFIX}/share/mysql/mysql
-	${WRKSRC}/scripts/mysql_install_db
+	(cd ${WRKSRC};scripts/mysql_install_db)
 	@ /usr/bin/killall mysqld
 	@ ${ECHO} "#!/bin/sh" > ${PREFIX}/etc/rc.d/mysql.sh
 	@ ${ECHO} "#" >> ${PREFIX}/etc/rc.d/mysql.sh
