@@ -1,9 +1,15 @@
 bin/gtk-imonc
-share/gtk-imonc/pixmaps/fli4l.xpm
-share/gtk-imonc/pixmaps/gtk-imonc.png
-share/gtk-imonc/pixmaps/offline.xpm
-share/gtk-imonc/pixmaps/online.xpm
 share/gnome/apps/Internet/gtk-imonc.desktop
+share/gtk-imonc/pixmaps/docklet-inactive.png
+share/gtk-imonc/pixmaps/docklet-offline.png
+share/gtk-imonc/pixmaps/docklet-online.png
+share/gtk-imonc/pixmaps/gtk-imonc.png
+share/gtk-imonc/pixmaps/offline.png
+share/gtk-imonc/pixmaps/offline.xpm
+share/gtk-imonc/pixmaps/online.png
+share/gtk-imonc/pixmaps/online.xpm
+share/gtk-imonc/pixmaps/reboot.png
+share/gtk-imonc/pixmaps/shutdown.png
 share/locale/de/LC_MESSAGES/gtk-imonc.mo
 share/pixmaps/gtk-imonc.png
 @dirrm share/gtk-imonc/pixmaps
