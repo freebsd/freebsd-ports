@@ -1,0 +1,33 @@
+*** diskfile.C.orig	Thu Apr 17 14:57:15 1997
+--- diskfile.C	Thu Apr 17 15:06:28 1997
+***************
+*** 50,56 ****
+  #if defined(linux)
+  extern "C" void setbuffer(FILE*, char*, int);
+  #else
+! #if !defined( sgi ) && !defined( sun )
+  extern "C" int setbuffer(FILE*, char*, int);
+  #endif
+  #endif
+--- 50,56 ----
+  #if defined(linux)
+  extern "C" void setbuffer(FILE*, char*, int);
+  #else
+! #if !defined( sgi ) && !defined( sun ) && !defined( __FreeBSD__ )
+  extern "C" int setbuffer(FILE*, char*, int);
+  #endif
+  #endif
+***************
+*** 193,198 ****
+--- 193,203 ----
+        rw &= ~01;
+      if (fp->_flags & _IO_NO_WRITES)
+        rw &= ~02;
++ #elif defined(__FreeBSD__)
++     if (fp->_flags & (__SRD|__SRW))
++       rw |= 01;
++     if (fp->_flags & (__SWR|__SRW|__SAPP))
++       rw |= 02;
+  #else
+      if (fp->_flag & (_IOREAD|_IORW))
+        rw |= 01;

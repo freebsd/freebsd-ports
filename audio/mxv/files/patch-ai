@@ -1,0 +1,37 @@
+*** /dev/null	Thu Apr 17 15:41:53 1997
+--- MiXViews.res	Thu Apr 17 16:08:47 1997
+***************
+*** 0 ****
+--- 1,32 ----
++ ! This file must be renamed "MiXViews", and installed either in your home
++ ! directory (if you are the only one using mxv) or in the X res dir
++ ! (/usr/lib/X11/app-defaults) or in the InterViews res dir
++ ! (<installed InterViews dir>/lib/app-defaults).
++ 
++ MiXViews*font:                        -*-times-medium-r-normal--14-*   
++ MiXViews*PulldownCommandMenu*background:		light blue
++ MiXViews*Command*background:				lightskyblue2
++ MiXViews*PullrightCommandMenu*background:		lightskyblue
++ MiXViews*MenuBar*font:        -*-helvetica-bold-r-normal--17-*   
++ MiXViews*MenuItem*font:        -*-helvetica-medium-r-normal--14-*   
++ MiXViews*PullrightMenu*font:        -*-helvetica-medium-r-normal--14-*   
++ MiXViews*DialogBox*Title*font:        -*-helvetica-bold-r-normal--14-*   
++ MiXViews*DialogBox*Subtitle*font:        -*-helvetica-medium-r-normal--12-*   
++ MiXViews*Alert*Title*foreground:			Red
++ MiXViews*InputDialog*FileSelector*font: -*-times-medium-r-normal--14-*
++ MiXViews*PushButton*font:        -*-helvetica-medium-r-normal--14-*   
++ MiXViews*HorizontalScale*font:        -*-helvetica-medium-r-normal--8-*   
++ MiXViews*VerticalScale*font:        -*-helvetica-medium-r-normal--8-*   
++ MiXViews*StatusBar*font:        -*-helvetica-medium-r-normal--12-*   
++ MiXViews*FrameGraph*font:        -*-helvetica-medium-r-normal--8-*   
++ MiXViews*HorizontalScaleLabel*foreground:        White   
++ MiXViews*HorizontalScaleLabel*background:        Black   
++ MiXViews*VerticalScaleLabel*foreground:        White   
++ MiXViews*VerticalScaleLabel*background:        Black   
++ MiXViews*LPCWindowDisplayChannels:        4   
++ MiXViews*FFTWindowDisplayChannels:        4   
++ MiXViews*FFTWindow*PlotStyle:        Line   
++ MiXViews*PvocWindowDisplayChannels:        4   
++ MiXViews*PvocWindow*VerticalScaleLabel*font: -*-helvetica-medium-r-normal--10-*   
++ MiXViews*malloc_debug:	off
++ 

@@ -1,0 +1,801 @@
+***************
+Sun Aug 25 10:17:47 PDT 1996
+***************
+diff -c -r old/channelview.C ./channelview.C
+*** old/channelview.C	Mon Aug 14 14:42:15 1995
+--- ./channelview.C	Sun Jul 14 20:31:15 1996
+***************
+*** 323,331 ****
+  		framesVisible.set(point - margin, point + margin);
+  		setVisibleFrameRange(framesVisible);
+  	}		
+! 	if(!chansVisible.includes(chansToSelect) && scroll == true) {
+! 		Range displayChans = chansToSelect;
+! 		displayChans.expandBy(1);
+  		setChannelRange(displayChans);
+  	}
+      struct InsertSetter : public ChannelRangeBlock {
+--- 323,344 ----
+  		framesVisible.set(point - margin, point + margin);
+  		setVisibleFrameRange(framesVisible);
+  	}		
+! 	if(scroll && !chansVisible.includes(chansToSelect)) {
+! 		Range displayChans;
+! 		if(chansVisible.spread() >= chansToSelect.spread()) {
+! 			// keep same number of visible channels, but shift up
+! 			displayChans = chansVisible;
+! 			int shift = chansToSelect.intMax() -
+! 			                chansVisible.intMax();
+! 			displayChans += shift;
+! 			// make sure range is non-negative
+! 			while(displayChans.includes(-1)) displayChans += 1;
+! 		}
+! 		else {
+! 			// use requested channels plus one on each side
+! 			displayChans = chansToSelect;
+! 			displayChans.expandBy(1);
+! 		}
+  		setChannelRange(displayChans);
+  	}
+      struct InsertSetter : public ChannelRangeBlock {
+diff -c -r old/dataview.C ./dataview.C
+*** old/dataview.C	Mon Aug 14 14:42:16 1995
+--- ./dataview.C	Sat Jul 13 22:43:40 1996
+***************
+*** 434,439 ****
+--- 434,441 ----
+  DataView::addGraph(Graph *graph) {
+  	if(graphsShown == maxGraphs)
+  		expandGraphArray();
++ 	if(graphsShown == maxGraphs)
++ 		return;			// failed to expand!
+  	graphs[graphsShown] = graph;	// add to array
+  	Scale *vscale = new VScale(
+  		graph->verticalScaleLabel(),
+***************
+*** 452,465 ****
+  DataView::expandGraphArray() {
+  	int newMax = maxGraphs + 4;
+  	Graph **newGraphs = new Graph *[newMax + 1];	// plus 1 for EOA
+! 	int i;
+! 	for(i=0; i < maxGraphs; i++)
+! 		newGraphs[i] = graphs[i];	// copy existing graphs if any
+! 	for(i = maxGraphs; i <= newMax; i++)
+! 		newGraphs[i] = nil;
+! 	delete [] graphs;
+! 	graphs = newGraphs;
+! 	maxGraphs = newMax;
+  }
+  
+  // remove one graph and its associated scale from frame 
+--- 454,469 ----
+  DataView::expandGraphArray() {
+  	int newMax = maxGraphs + 4;
+  	Graph **newGraphs = new Graph *[newMax + 1];	// plus 1 for EOA
+! 	if(newGraphs) {
+! 		int i;
+! 		for(i=0; i < maxGraphs; i++)
+! 			newGraphs[i] = graphs[i]; // copy existing graphs if any
+! 		for(i = maxGraphs; i <= newMax; i++)
+! 			newGraphs[i] = nil;
+! 		delete [] graphs;
+! 		graphs = newGraphs;
+! 		maxGraphs = newMax;
+! 	}
+  }
+  
+  // remove one graph and its associated scale from frame 
+diff -c -r old/edit_menus.C ./edit_menus.C
+*** old/edit_menus.C	Sun Mar 24 19:14:18 1996
+--- ./edit_menus.C	Sun Jul 14 20:37:12 1996
+***************
+*** 61,68 ****
+  	{ "Channel Display",			"",		0L,		false, channelSubmenu },
+  	{ "display copy buffer",	"I",	XK_I },
+  	{ "close current view",			"W",	XK_W },
+- 	{ "show program version",		" ",	XK_yen },
+- 	{ "quit program",				"Q",	XK_Q },
+  	{ nil }
+  };
+  
+--- 61,66 ----
+***************
+*** 86,91 ****
+--- 84,91 ----
+  	{ "change file comment...",		"\"",	XK_quotedbl },
+  	{ "file information...",		"?",	XK_question },
+  	{ "data dump of selection...",	"}",	XK_braceright },
++ 	{ "show program version",		" ",	XK_yen },
++ 	{ "quit program",				"Q",	XK_Q },
+  	{ nil }
+  };
+  
+***************
+*** 124,129 ****
+--- 124,137 ----
+  	{ nil }
+  };
+  
++ static MenuInfo analysisMenu[] = {
++ 	{ "locate next zero crossing",	"0",	XK_0 },
++ 	{ "find slope change",		"1",	XK_1 },
++ 	{ "show maxamp sample location","2",	XK_2 },
++ 	{ "extract amplitude envelope",	"3",	XK_3 },
++ 	{ nil }
++ };
++ 
+  static MenuInfo styleSubmenu[] = {
+  	{ "line",	"%",	XK_percent },
+  	{ "bar",	"^",	XK_asciicircum },
+***************
+*** 241,262 ****
+  // And now the structs containing the various menu templates
+  
+  static MenuBarInfo defaultChannelMenuBar[] = {
+- 	{ "  View  ", viewMenu },
+  	{ "  File  ", fileMenu },
+  	{ "  Edit  ", editMenu },
+! 	{ "  Display  ", channelDisplayMenu },
+  	{ nil }
+  };
+  
+  static MenuBarInfo soundMenuBar[] = {
+- 	{ "  View  ", viewMenu },
+  	{ "  File  ", fileMenu },
+  	{ "  Edit  ", editMenu },
+! 	{ "  Modify  ", soundModifyMenu },
+! 	{ "  Sound  ", soundSpecialMenu },
+! 	{ "  Analysis  ", soundAnalysisMenu },
+! 	{ "  Display  ", channelDisplayMenu },
+! 	{ "  Options  ", optionsMenu },
+  	{ nil }
+  };
+  
+--- 249,271 ----
+  // And now the structs containing the various menu templates
+  
+  static MenuBarInfo defaultChannelMenuBar[] = {
+  	{ "  File  ", fileMenu },
++ 	{ "  View  ", viewMenu },
+  	{ "  Edit  ", editMenu },
+! 	{ " Analysis ", analysisMenu },
+! 	{ " Display ", channelDisplayMenu },
+  	{ nil }
+  };
+  
+  static MenuBarInfo soundMenuBar[] = {
+  	{ "  File  ", fileMenu },
++ 	{ "  View  ", viewMenu },
+  	{ "  Edit  ", editMenu },
+! 	{ " Modify ", soundModifyMenu },
+! 	{ " Sound ", soundSpecialMenu },
+! 	{ " Analysis ", soundAnalysisMenu },
+! 	{ " Display ", channelDisplayMenu },
+! 	{ " Options ", optionsMenu },
+  	{ nil }
+  };
+  
+***************
+*** 273,285 ****
+  };
+  
+  static MenuBarInfo lpcMenuBar[] = {
+- 	{ "  View  ", viewMenu },
+  	{ "  File  ", fileMenu },
+  	{ "  Edit  ", editMenu },
+! 	{ "  Modify  ", modifyMenu },
+  	{ "  LPC  ", lpcSpecialMenu },
+! 	{ "  Display  ", channelDisplayMenu },
+! 	{ "  Options  ", optionsMenu },
+  	{ nil }
+  };
+  
+--- 282,295 ----
+  };
+  
+  static MenuBarInfo lpcMenuBar[] = {
+  	{ "  File  ", fileMenu },
++ 	{ "  View  ", viewMenu },
+  	{ "  Edit  ", editMenu },
+! 	{ " Modify ", modifyMenu },
+  	{ "  LPC  ", lpcSpecialMenu },
+! 	{ " Analysis ", analysisMenu },
+! 	{ " Display ", channelDisplayMenu },
+! 	{ " Options ", optionsMenu },
+  	{ nil }
+  };
+  
+***************
+*** 293,305 ****
+  };
+  
+  static MenuBarInfo envelopeMenuBar[] = {
+- 	{ "  View  ", viewMenu },
+  	{ "  File  ", fileMenu },
+  	{ "  Edit  ", editMenu },
+! 	{ "  Modify  ", modifyMenu },
+! 	{ "  Envelope  ", envelopeSpecialMenu },
+! 	{ "  Display  ", channelDisplayMenu },
+! 	{ "  Options  ", optionsMenu },
+  	{ nil }
+  };
+  
+--- 303,316 ----
+  };
+  
+  static MenuBarInfo envelopeMenuBar[] = {
+  	{ "  File  ", fileMenu },
++ 	{ "  View  ", viewMenu },
+  	{ "  Edit  ", editMenu },
+! 	{ " Modify ", modifyMenu },
+! 	{ " Envelope ", envelopeSpecialMenu },
+! 	{ " Analysis ", analysisMenu },
+! 	{ " Display ", channelDisplayMenu },
+! 	{ " Options ", optionsMenu },
+  	{ nil }
+  };
+  
+***************
+*** 310,322 ****
+  };
+  
+  static MenuBarInfo pitchMenuBar[] = {
+- 	{ "  View  ", viewMenu },
+  	{ "  File  ", fileMenu },
+  	{ "  Edit  ", editMenu },
+! 	{ "  Modify  ", modifyMenu },
+! 	{ "  Pitch ", pitchSpecialMenu },
+! 	{ "  Display  ", channelDisplayMenu },
+! 	{ "  Options  ", optionsMenu },
+  	{ nil }
+  };
+  
+--- 321,334 ----
+  };
+  
+  static MenuBarInfo pitchMenuBar[] = {
+  	{ "  File  ", fileMenu },
++ 	{ "  View  ", viewMenu },
+  	{ "  Edit  ", editMenu },
+! 	{ " Modify ", modifyMenu },
+! 	{ " Pitch ", pitchSpecialMenu },
+! 	{ " Analysis ", analysisMenu },
+! 	{ " Display ", channelDisplayMenu },
+! 	{ " Options ", optionsMenu },
+  	{ nil }
+  };
+  
+***************
+*** 339,354 ****
+  };
+  
+  static MenuBarInfo defaultFrameMenuBar[] = {
+- 	{ "  View  ", viewMenu },
+  	{ "  File  ", fileMenu },
+! 	{ "  Display  ", frameDisplayMenu },
+  	{ nil }
+  };
+  
+  static MenuInfo pvocSpecialMenu[] = {
+! 	{ "harmonically shift spectrum", 		"0",	XK_0 },
+! 	{ "stretch/shrink shift spectrum", 		"1",	XK_1 },
+! 	{ "expand/compress spectrum", 			"2",	XK_2, Inactive },
+  	{ "change file length...",				"l",	XK_l },
+  	{ "pvoc options...", 					" ", 	XK_degree, Inactive },
+  	{ nil }
+--- 351,366 ----
+  };
+  
+  static MenuBarInfo defaultFrameMenuBar[] = {
+  	{ "  File  ", fileMenu },
+! 	{ "  View  ", viewMenu },
+! 	{ " Display ", frameDisplayMenu },
+  	{ nil }
+  };
+  
+  static MenuInfo pvocSpecialMenu[] = {
+! 	{ "harmonically shift spectrum", 		"t",	XK_t },
+! 	{ "stretch/shrink shift spectrum", 		"T",	XK_T },
+! 	{ "expand/compress spectrum", 			"X",	XK_X, Inactive },
+  	{ "change file length...",				"l",	XK_l },
+  	{ "pvoc options...", 					" ", 	XK_degree, Inactive },
+  	{ nil }
+***************
+*** 355,367 ****
+  };
+  
+  static MenuBarInfo pvocMenuBar[] = {
+- 	{ "  View  ", viewMenu },
+  	{ "  File  ", fileMenu },
+  	{ "  Edit  ", editMenu },
+! 	{ "  Modify  ", modifyMenu },
+  	{ "  PVoc  ", pvocSpecialMenu },
+! 	{ "  Display  ", channelDisplayMenu },
+! 	{ "  Options  ", optionsMenu },
+  	{ nil }
+  };
+  
+--- 367,380 ----
+  };
+  
+  static MenuBarInfo pvocMenuBar[] = {
+  	{ "  File  ", fileMenu },
++ 	{ "  View  ", viewMenu },
+  	{ "  Edit  ", editMenu },
+! 	{ " Modify ", modifyMenu },
+  	{ "  PVoc  ", pvocSpecialMenu },
+! 	{ " Analysis ", analysisMenu },
+! 	{ " Display ", channelDisplayMenu },
+! 	{ " Options ", optionsMenu },
+  	{ nil }
+  };
+  
+diff -c -r old/editor.C ./editor.C
+*** old/editor.C	Sat May 11 21:38:27 1996
+--- ./editor.C	Sat Jul 13 15:38:38 1996
+***************
+*** 861,867 ****
+  	int peakchan, peakloc;
+  	data->maxValue(&peakchan, &peakloc);
+  	Range chan(peakchan, peakchan);
+! 	controller->showInsertPoint(peakloc, chan);
+  	return Succeed;
+  }
+  
+--- 861,867 ----
+  	int peakchan, peakloc;
+  	data->maxValue(&peakchan, &peakloc);
+  	Range chan(peakchan, peakchan);
+! 	controller->showInsertPoint(peakloc, chan, true);
+  	return Succeed;
+  }
+  
+***************
+*** 1001,1007 ****
+  	PulseGenerator pgen(pulses, pulseFrameSize/pulsePerFrame);
+  	pgen.apply();
+  	FormantFilter filter(pulses, pulses, selected, 1.0);
+! 	filter.apply();
+  	Envelope* amplitudes = new Envelope(lpcLen * pulsePerFrame);
+  	amplitudes->setFrameRangeLabel("LPC Analysis Frames");
+  	amplitudes->setRangeFactor(1.0/pulsePerFrame);
+--- 1001,1008 ----
+  	PulseGenerator pgen(pulses, pulseFrameSize/pulsePerFrame);
+  	pgen.apply();
+  	FormantFilter filter(pulses, pulses, selected, 1.0);
+! 	if(!filter.apply())
+! 		return Fail;
+  	Envelope* amplitudes = new Envelope(lpcLen * pulsePerFrame);
+  	amplitudes->setFrameRangeLabel("LPC Analysis Frames");
+  	amplitudes->setRangeFactor(1.0/pulsePerFrame);
+***************
+*** 1026,1032 ****
+  	Application::inform("Creating test pattern...");
+  	pgen.apply();
+  	FormantFilter filter(pulses, pulses, selected, 1.0);
+! 	filter.apply();
+  	Application::inform("Analyzing formants...");
+  	// fft size depends on npoles
+  	FFT_Function analyzer(
+--- 1027,1034 ----
+  	Application::inform("Creating test pattern...");
+  	pgen.apply();
+  	FormantFilter filter(pulses, pulses, selected, 1.0);
+! 	if(!filter.apply())
+! 		return Fail;
+  	Application::inform("Analyzing formants...");
+  	// fft size depends on npoles
+  	FFT_Function analyzer(
+diff -c -r old/filecommand.C ./filecommand.C
+*** old/filecommand.C	Sun Mar 10 13:35:00 1996
+--- ./filecommand.C	Mon Aug  5 23:45:29 1996
+***************
+*** 132,138 ****
+  	request->appendValue("Duration (seconds):", &client->duration,
+  		 PositiveIntegers);
+  	request->appendValue("Sample rate:", &client->sampleRate, PositiveIntegers);
+! 	request->appendChoice("Channels:", "|1|2|4|", &client->channels, true);
+  	FormatRequester::configureRequest(request);
+  }
+  
+--- 132,138 ----
+  	request->appendValue("Duration (seconds):", &client->duration,
+  		 PositiveIntegers);
+  	request->appendValue("Sample rate:", &client->sampleRate, PositiveIntegers);
+! 	request->appendValue("Channels:", &client->channels, PositiveIntegers);
+  	FormatRequester::configureRequest(request);
+  }
+  
+diff -c -r old/header.h ./header.h
+*** old/header.h	Tue Mar  5 09:53:28 1996
+--- ./header.h	Mon Aug  5 23:43:58 1996
+***************
+*** 110,116 ****
+  	int data_offset;
+  	int data_size;
+  	unsigned short data_type;
+! 	unsigned short nchans;
+  	Comment *comment;
+  private:
+  	boolean forceSwapped;	// used to override header default during raw read
+--- 110,116 ----
+  	int data_offset;
+  	int data_size;
+  	unsigned short data_type;
+! 	int nchans;
+  	Comment *comment;
+  private:
+  	boolean forceSwapped;	// used to override header default during raw read
+diff -c -r old/header_config.C ./header_config.C
+*** old/header_config.C	Sat Jun  8 14:49:21 1996
+--- ./header_config.C	Mon Aug  5 23:42:51 1996
+***************
+*** 94,102 ****
+  void
+  SoundHeader::SoundConfigRequester::configureRequest(Request* request) {
+  	SoundHeader* sh = (SoundHeader *) myHeader;
+! 	request->appendValue("Sample rate:", &sh->samprate,
+! 	                    PositiveIntegers);
+! 	request->appendChoice("Channels:", "|1|2|4|", &sh->nchans, true);
+  	FormatRequester::configureRequest(request);
+  	ConfigRequester::configureRequest(request);
+  }
+--- 94,101 ----
+  void
+  SoundHeader::SoundConfigRequester::configureRequest(Request* request) {
+  	SoundHeader* sh = (SoundHeader *) myHeader;
+! 	request->appendValue("Sample rate:", &sh->samprate, PositiveIntegers);
+! 	request->appendValue("Channels:", &sh->nchans, PositiveIntegers);
+  	FormatRequester::configureRequest(request);
+  	ConfigRequester::configureRequest(request);
+  }
+diff -c -r old/pvoceditor.C ./pvoceditor.C
+*** old/pvoceditor.C	Sun Mar 24 19:14:47 1996
+--- ./pvoceditor.C	Sat Jul 13 15:00:58 1996
+***************
+*** 40,49 ****
+  PvocEditor::keyCommand(unsigned long sym) {
+  	boolean interested = true;
+  	switch (sym) {
+! 	case XK_0:
+  		harmonicShift();
+  		break;
+! 	case XK_1:
+  		stretchShift();
+  		break;
+  	default:
+--- 40,49 ----
+  PvocEditor::keyCommand(unsigned long sym) {
+  	boolean interested = true;
+  	switch (sym) {
+! 	case XK_t:
+  		harmonicShift();
+  		break;
+! 	case XK_T:
+  		stretchShift();
+  		break;
+  	default:
+diff -c -r old/soundheader.C ./soundheader.C
+*** old/soundheader.C	Tue Apr 30 20:29:59 1996
+--- ./soundheader.C	Mon Aug  5 23:05:47 1996
+***************
+*** 122,129 ****
+  	char msg[64];
+  	msg[0] = '\0';	// null for later check
+  	int retcode = 0;
+! 	if(nchans != 1 && nchans != 2 && nchans != 4)
+! 		sprintf(msg, "%d-channel sounds not supported", nchans);
+  	else if(samprate < 1000 || samprate > 128000)
+  		sprintf(msg, "Invalid sound samp rate (%d)", samprate);
+  	else if(data_type == NoData)
+--- 122,130 ----
+  	char msg[64];
+  	msg[0] = '\0';	// null for later check
+  	int retcode = 0;
+! 	if(!isRaw() && !validChannels(nchans))
+! 		sprintf(msg, "Illegal channel count for this header type: %d",
+! 		        nchans);
+  	else if(samprate < 1000 || samprate > 128000)
+  		sprintf(msg, "Invalid sound samp rate (%d)", samprate);
+  	else if(data_type == NoData)
+diff -c -r old/soundheader.h ./soundheader.h
+*** old/soundheader.h	Tue Apr 30 20:29:11 1996
+--- ./soundheader.h	Mon Aug  5 23:02:26 1996
+***************
+*** 71,76 ****
+--- 71,77 ----
+  	redefined int secondsToBytes(double);
+  	redefined int checkHeader();
+  	virtual boolean isValid(DataType)=0;
++ 	virtual boolean validChannels(int chans) { return chans > 0; }
+  	SoundHeader(DataType, int rate, int chans, double peak, int magic);
+  	class SoundConfigRequester
+  			: public Header::ConfigRequester, public FormatRequester {
+***************
+*** 198,203 ****
+--- 199,207 ----
+  	redefined boolean isMagic();
+  	redefined boolean isValid(DataType t) {
+  		return (t == ShortData || t == FloatData);
++ 	}
++ 	redefined boolean validChannels(int chans) {
++ 		return chans == 1 || chans == 2 || chans == 4;
+  	}
+  	redefined int writeInfo(DataFile *);
+  };
+diff -c -r old/version.C ./version.C
+*** old/version.C	Fri Dec 22 23:22:26 1995
+--- ./version.C	Sun Aug 25 10:17:39 1996
+***************
+*** 24,27 ****
+  
+  #include "version.h"
+  
+! const char MXV_version_string[] = "MiXViews (mxv) version 1.1 pl 00";
+--- 24,27 ----
+  
+  #include "version.h"
+  
+! const char MXV_version_string[] = "MiXViews (mxv) version 1.1 pl 01";
+diff -c -r old/viewchanger.C ./viewchanger.C
+*** old/viewchanger.C	Tue Mar 19 21:26:41 1996
+--- ./viewchanger.C	Sat Jul 13 23:23:15 1996
+***************
+*** 41,48 ****
+  class MinMaxRequester : public TitledRequester {
+  public:
+  	MinMaxRequester(const char* title,
+! 	                const char* minlabel, T& minval, const Range &,
+! 	                const char* maxlabel, T& maxval, const Range &);
+  protected:
+  	redefined void configureRequest(Request *);
+  protected:
+--- 41,48 ----
+  class MinMaxRequester : public TitledRequester {
+  public:
+  	MinMaxRequester(const char* title,
+! 	                const char* minlabel, T& minval, const Range,
+! 	                const char* maxlabel, T& maxval, const Range);
+  protected:
+  	redefined void configureRequest(Request *);
+  protected:
+***************
+*** 50,63 ****
+  	const char* maxLabel;
+  	T &minVal;
+  	T &maxVal;
+! 	const Range &minRange;
+! 	const Range &maxRange;
+  };
+  
+  template <class T>
+  MinMaxRequester<T>::MinMaxRequester(const char* title,
+! 		const char* minlabel, T& minval, const Range& minrange,
+! 		const char* maxlabel, T& maxval, const Range& maxrange)
+  	: TitledRequester(title), minLabel(minlabel), maxLabel(maxlabel),
+  	  minVal(minval), maxVal(maxval),
+  	  minRange(minrange), maxRange(maxrange) {}
+--- 50,63 ----
+  	const char* maxLabel;
+  	T &minVal;
+  	T &maxVal;
+! 	const Range minRange;
+! 	const Range maxRange;
+  };
+  
+  template <class T>
+  MinMaxRequester<T>::MinMaxRequester(const char* title,
+! 		const char* minlabel, T& minval, const Range minrange,
+! 		const char* maxlabel, T& maxval, const Range maxrange)
+  	: TitledRequester(title), minLabel(minlabel), maxLabel(maxlabel),
+  	  minVal(minval), maxVal(maxval),
+  	  minRange(minrange), maxRange(maxrange) {}
+***************
+*** 248,254 ****
+  
+  class EditFramesRequester : public MinMaxRequester<int> {
+  public:
+! 	EditFramesRequester(int&, int&, int&, int&, const Range&);
+  protected:
+  	redefined void configureRequest(Request *);
+  private:
+--- 248,254 ----
+  
+  class EditFramesRequester : public MinMaxRequester<int> {
+  public:
+! 	EditFramesRequester(int&, int&, int&, int&, const Range);
+  protected:
+  	redefined void configureRequest(Request *);
+  private:
+***************
+*** 258,264 ****
+  
+  EditFramesRequester::EditFramesRequester(int& minframe, int& maxframe,
+                                           int& startchan, int& endchan,
+!                                          const Range& channelRange)
+  	: MinMaxRequester<int>(
+  		"Set Edit Region:",
+  		"Start Channel:", startchan, channelRange,
+--- 258,264 ----
+  
+  EditFramesRequester::EditFramesRequester(int& minframe, int& maxframe,
+                                           int& startchan, int& endchan,
+!                                          const Range channelRange)
+  	: MinMaxRequester<int>(
+  		"Set Edit Region:",
+  		"Start Channel:", startchan, channelRange,
+***************
+*** 274,280 ****
+  
+  class EditTimeRequester : public MinMaxRequester<int> {
+  public:
+! 	EditTimeRequester(double&, double&, int&, int&, const Range &);
+  protected:
+  	redefined void configureRequest(Request *);
+  private:
+--- 274,280 ----
+  
+  class EditTimeRequester : public MinMaxRequester<int> {
+  public:
+! 	EditTimeRequester(double&, double&, int&, int&, const Range);
+  protected:
+  	redefined void configureRequest(Request *);
+  private:
+***************
+*** 285,291 ****
+  EditTimeRequester::EditTimeRequester(
+  		double& mintime, double& maxtime,
+  		int& startchan, int& endchan,
+! 		const Range& channelRange)
+  	: MinMaxRequester<int>(
+  		"Set Edit Region:",
+  		"Start Channel:", startchan, channelRange,
+--- 285,291 ----
+  EditTimeRequester::EditTimeRequester(
+  		double& mintime, double& maxtime,
+  		int& startchan, int& endchan,
+! 		const Range channelRange)
+  	: MinMaxRequester<int>(
+  		"Set Edit Region:",
+  		"Start Channel:", startchan, channelRange,
+diff -c -r old/vw_converter.C ./vw_converter.C
+*** old/vw_converter.C	Sun Jan 28 20:26:05 1996
+--- ./vw_converter.C	Mon Aug  5 22:44:36 1996
+***************
+*** 43,49 ****
+  
+  boolean
+  VW_Converter::isPlayableFormat(DataType type) {
+! 	return (type < FloatData && type != SignedCharData);
+  }
+  
+  // what is best format to play (if given choice)
+--- 45,51 ----
+  
+  boolean
+  VW_Converter::isPlayableFormat(DataType type) {
+! 	return (type < IntData && type != SignedCharData);
+  }
+  
+  // what is best format to play (if given choice)
+***************
+*** 60,70 ****
+  	return false;
+  }
+  
+- // add any specific code needed to stop play or record
+- 
+  int
+  VW_Converter::stop() {
+! 	return Super::stop();
+  }
+  
+  int
+--- 62,70 ----
+  	return false;
+  }
+  
+  int
+  VW_Converter::stop() {
+! 	return ioctl(SNDCTL_DSP_RESET, 0) && Super::stop();
+  }
+  
+  int
+***************
+*** 87,92 ****
+--- 87,93 ----
+  		int sampleFormat = 0;
+  		switch(dataType()) {
+  			case UnsignedCharData: sampleFormat = AFMT_U8; break;
++ 			case SignedCharData: sampleFormat = AFMT_S8; break;
+  //			case ALawData: sampleFormat = AFMT_A_LAW; break;
+  			case MuLawData: sampleFormat = AFMT_MU_LAW; break;
+  			case ShortData: sampleFormat = AFMT_S16_LE; break;
+***************
+*** 93,119 ****
+  			default: break;
+  		};
+  		int confirmedFormat = sampleFormat;
+! 		if (!ioctl (SNDCTL_DSP_SPEED, (char *) &dsp_speed))
+! 			error("Unable to set converter sample rate.");
+  		else if (!ioctl(SNDCTL_DSP_STEREO, (char *) &dsp_stereo))
+! 			error("Unable to set converter channel attribute.");
+! 		else if (!ioctl(SNDCTL_DSP_SETFMT, (char *) &confirmedFormat)
+! 			|| confirmedFormat != sampleFormat)
+! 			error("Unable to set sample size.");
+  		else if(!ioctl(SNDCTL_DSP_GETBLKSIZE, (char *) &audioBufferSize))
+  			error("Unable to get audio buffer size.");
+- 		else if(audioBufferSize < 1024 || audioBufferSize > (2*65536)) {
+- 			char msg[128];
+- 			sprintf(msg, "Invalid audio buffer size %d", audioBufferSize);
+- 			error(msg);
+- 		}
+  		else status = true;
+  	}
+  	return status;
+  }
+  
+  // return size of buffer, in bytes, to be written to the device during play
+- // this can either be computed or just a static value
+  
+  int
+  VW_Converter::writeSize() {
+--- 94,141 ----
+  			default: break;
+  		};
+  		int confirmedFormat = sampleFormat;
+! 
+! 		int sizeCode = 0x1;
+! 		// desired buffer size is 1/10 of a second's worth of sound
+! 		int bufferSize = type_to_sampsize(dataType()) *
+! 		                 round(float(channels()) * sampleRate() / 10.0);
+! #ifdef DEBUG
+! 		fprintf(stderr, "requesting buffer size %d\n", bufferSize);
+! #endif
+! 		while(pow(double(2.0), long(sizeCode)) < double(bufferSize))
+! 			sizeCode <<= 1;
+! 
+! 		sizeCode >>= 1; // back out by one
+! 		sizeCode |= 2 << 16;
+! 
+! 		// sizeCode = 0x0002XXXX where XXXX is (int) log2(bufsize)
+! 		// and 0002 is 2 max number of fragments
+! 
+! #ifdef DEBUG
+! 		fprintf(stderr, "setting frag size code to 0x%x\n", sizeCode);
+! #endif
+! 
+! 		if (!ioctl (SNDCTL_DSP_SETFRAGMENT, (char *) &sizeCode))
+! 			error("Unable to set fragment size.");
+! 		else if (!ioctl(SNDCTL_DSP_SETFMT, (char *) &confirmedFormat))
+! 			error("Unable to set sample format.");
+! 		else if(confirmedFormat != sampleFormat)
+! 			error("This sample format not supported by hardware.");
+  		else if (!ioctl(SNDCTL_DSP_STEREO, (char *) &dsp_stereo))
+! 			error("Unable to set channel attribute.");
+! 		else if (!ioctl (SNDCTL_DSP_SPEED, (char *) &dsp_speed))
+! 			error("Unable to set sample rate.");
+  		else if(!ioctl(SNDCTL_DSP_GETBLKSIZE, (char *) &audioBufferSize))
+  			error("Unable to get audio buffer size.");
+  		else status = true;
++ #ifdef DEBUG
++ 		fprintf(stderr, "audio buffer size is %d\n", audioBufferSize);
++ #endif
+  	}
+  	return status;
+  }
+  
+  // return size of buffer, in bytes, to be written to the device during play
+  
+  int
+  VW_Converter::writeSize() {
+***************
+*** 121,127 ****
+  }
+  
+  // return size of buffer, in bytes, to be read from the device during record
+- // this can either be computed or just a static value
+  
+  int
+  VW_Converter::readSize() {
+--- 143,148 ----

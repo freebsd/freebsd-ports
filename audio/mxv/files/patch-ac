@@ -1,0 +1,30 @@
+*** application.C.orig	Thu Apr 17 15:23:34 1997
+--- application.C	Thu Apr 17 15:26:03 1997
+***************
+*** 41,47 ****
+  #include <iostream.h>
+  #include "localdefs.h"
+  
+! #ifndef NeXT
+  #include <errno.h>
+  extern char *sys_errlist[];
+  char *strerror(int errn) {
+--- 41,48 ----
+  #include <iostream.h>
+  #include "localdefs.h"
+  
+! #if !defined(__FreeBSD__)
+! #if !defined(NeXT)
+  #include <errno.h>
+  extern char *sys_errlist[];
+  char *strerror(int errn) {
+***************
+*** 53,58 ****
+--- 54,60 ----
+  	int sleep(unsigned);
+  }
+  #endif /* NeXT */
++ #endif
+  
+  class GlobalResourceList {
+  	friend Application;

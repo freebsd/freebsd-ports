@@ -1,0 +1,16 @@
+*** smartmem.C.orig	Thu Apr 17 15:32:03 1997
+--- smartmem.C	Thu Apr 17 15:33:41 1997
+***************
+*** 64,70 ****
+--- 64,74 ----
+  void
+  SmartMemory::free(void* ptr, unsigned size) {
+  	if(ptr) {
++ #ifdef __FreeBSD__
++ 		::free(ptr);
++ #else
+  		::cfree(ptr);
++ #endif
+  		totalBytes_Allocated -= size;
+  	}
+  }

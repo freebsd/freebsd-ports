@@ -1,0 +1,40 @@
+*** Imakefile.orig	Wed Feb 28 16:16:02 1996
+--- Imakefile	Thu Apr 17 15:14:45 1997
+***************
+*** 139,144 ****
+--- 139,159 ----
+  ARCH_OBJS = utils.o
+  #endif
+  
++ #if defined(FreeBSDArchitecture)
++ XCOMM Extra defines, include directories, loading flags, and libraries needed
++ XCOMM for the FreeBSD version.  The assumption is that you are using Gnu gcc/g++
++ 
++ ARCH_CCDEFINES = -DVOXWARE_DACS -DXDisplay=_XDisplay
++ ARCH_CCFLAGS =
++ ARCH_CCINCLUDES =
++ ARCH_CCLDFLAGS =
++ ARCH_CCLDLIBS = $(APP_FORTLIBS) -lm
++ DEBUG_CCFLAGS = -Ddebug
++ 
++ DAC_OBJS = conv_config.o conv_device.o vw_converter.o
++ ARCH_OBJS = utils.o
++ #endif
++ 
+  #if defined(i386SVR4Architecture)
+  XCOMM This assumes you have the SoundBlaster card on your machine
+  ARCH_CCDEFINES = -DSOUNDBLASTER
+***************
+*** 253,258 ****
+--- 268,278 ----
+  MakeObjectFromSrcFlags(sgi_dac, $(OPTIMIZE_CCFLAGS))
+  #endif
+  #if defined(LinuxArchitecture)
++ MakeObjectFromSrcFlags(utils, $(OPTIMIZE_CCFLAGS))
++ MakeObjectFromSrcFlags(conv_device, $(OPTIMIZE_CCFLAGS))
++ MakeObjectFromSrcFlags(vw_converter, $(OPTIMIZE_CCFLAGS))
++ #endif
++ #if defined(FreeBSDArchitecture)
+  MakeObjectFromSrcFlags(utils, $(OPTIMIZE_CCFLAGS))
+  MakeObjectFromSrcFlags(conv_device, $(OPTIMIZE_CCFLAGS))
+  MakeObjectFromSrcFlags(vw_converter, $(OPTIMIZE_CCFLAGS))
