@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	HTTP-WebTest
-PORTVERSION=	2.03
-PORTREVISION=	1
+PORTVERSION=	2.04
 CATEGORIES=	www perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	HTTP
@@ -16,20 +15,14 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	kuriyama@FreeBSD.org
 COMMENT=	Tests remote URLs or local web files
 
-BUILD_DEPENDS=	\
+BUILD_DEPENDS=	${BUILD_DEPENDS_56} \
 	${SITE_PERL}/Algorithm/Diff.pm:${PORTSDIR}/devel/p5-Algorithm-Diff \
 	${SITE_PERL}/LWP/UserAgent.pm:${PORTSDIR}/www/p5-libwww \
-	${SITE_PERL}/${PERL_ARCH}/MIME/Base64.pm:${PORTSDIR}/converters/p5-MIME-Base64 \
-	${SITE_PERL}/Net/SMTP.pm:${PORTSDIR}/net/p5-Net \
-	${SITE_PERL}/Text/Balanced.pm:${PORTSDIR}/textproc/p5-Text-Balanced \
-	${SITE_PERL}/${PERL_ARCH}/Time/HiRes.pm:${PORTSDIR}/devel/p5-Time-HiRes \
-	${SITE_PERL}/Test/Builder.pm:${PORTSDIR}/devel/p5-Test-Simple \
 	${SITE_PERL}/Test/Builder/Tester.pm:${PORTSDIR}/devel/p5-Test-Builder-Tester \
 	${SITE_PERL}/Test/MockObject.pm:${PORTSDIR}/devel/p5-Test-MockObject \
-	${SITE_PERL}/URI.pm:${PORTSDIR}/net/p5-URI
-RUN_DEPENDS=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
+INSTALL_TARGET=	pure_install
 
 MAN1=		wt.1
 MAN3=		Bundle::HTTP::WebTest.3 \
@@ -54,4 +47,17 @@ MAN3=		Bundle::HTTP::WebTest.3 \
 		HTTP::WebTest::Utils.3
 MAN3PREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} < 500800
+BUILD_DEPENDS_56=	\
+	${SITE_PERL}/${PERL_ARCH}/MIME/Base64.pm:${PORTSDIR}/converters/p5-MIME-Base64 \
+	${SITE_PERL}/Net/SMTP.pm:${PORTSDIR}/net/p5-Net \
+	${SITE_PERL}/Text/Balanced.pm:${PORTSDIR}/textproc/p5-Text-Balanced \
+	${SITE_PERL}/${PERL_ARCH}/Time/HiRes.pm:${PORTSDIR}/devel/p5-Time-HiRes \
+	${SITE_PERL}/Test/Builder.pm:${PORTSDIR}/devel/p5-Test-Simple \
+	${SITE_PERL}/URI.pm:${PORTSDIR}/net/p5-URI
+.endif
+RUN_DEPENDS=	${BUILD_DEPENDS}
+
+.include <bsd.port.post.mk>
