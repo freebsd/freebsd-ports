@@ -129,6 +129,7 @@
     SUBDIR += mailfront
     SUBDIR += mailgraph
     SUBDIR += mailman
+    SUBDIR += mailmgr
 #   SUBDIR += mailman-devel
     SUBDIR += mailscanner
     SUBDIR += mailsync
