@@ -1,0 +1,9 @@
+arts++ is a support package for CAIDA's cflowd and skitter.
+
+It provides a C++ class library and simple applications for handling
+data produced by cflowd and skitter.
+
+See:	http://www.caida.org/tools/measurement/cflowd/
+	http://www.caida.org/tools/measurement/skitter/
+
+WWW:	http://www.caida.org/tools/utilities/arts/
