@@ -58,7 +58,7 @@ MAN3=		Bundle::Net::LDAP.3 \
 
 .include <bsd.port.pre.mk>
 
-pre-configure:
+post-patch:
 	@${PERL} -ni'.bak' -e 'next if 2../^__END__$$/; print' \
 		'${CONFIGURE_WRKSRC}/${CONFIGURE_SCRIPT}'
 
