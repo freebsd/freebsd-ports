@@ -10,12 +10,11 @@ DISTNAME=	xenon-0.6.6
 CATEGORIES=	editors
 MASTER_SITES=	ftp://ftp.proximity.com.au/pub/xenon/
 
-MAINTAINER=	jedgar@fxp.org
+MAINTAINER=	jedgar@FreeBSD.org
 
 LIB_DEPENDS=	Xpm.4:${PORTSDIR}/graphics/xpm
 
 USE_X_PREFIX=	yes
-USE_GMAKE=	yes
 
 MAN1=		xe.1
 
