@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ImageMagick
-PORTVERSION=	6.1.6.6
+PORTVERSION=	6.1.6.7
 CATEGORIES=	graphics perl5
 MASTER_SITES=	ftp://ftp.imagemagick.org/pub/%SUBDIR%/ \
 		ftp://gd.tuwien.ac.at/pub/graphics/%SUBDIR%/ \
@@ -65,8 +65,7 @@ PLIST_SUB+=		WITH_PERL='@comment '
     (!defined(WITHOUT_IMAGEMAGICK_PERL) && \
      defined(PERL_THREADED) && ${PERL_THREADED} == "true")
 CONFIGURE_ARGS+=	--with-threads
-CPPFLAGS+=		${PTHREAD_CFLAGS}
-LDFLAGS+=		${PTHREAD_LIBS}
+CONFIGURE_ENV+=		PTHREAD_CFLAGS="${PTHREAD_CFLAGS}" PTHREAD_LIBS="${PTHREAD_LIBS}"
 .else
 CONFIGURE_ARGS+=	--without-threads
 .endif
