@@ -1,6 +1,7 @@
 bin/rd2
 bin/rdswap
 bin/rmi2html
+bin/rmi2html.rb
 lib/ruby/site_ruby/%%RUBY_VER%%/rd/dot.rd2rc
 lib/ruby/site_ruby/%%RUBY_VER%%/rd/filter.rb
 lib/ruby/site_ruby/%%RUBY_VER%%/rd/rd2html-lib.rb

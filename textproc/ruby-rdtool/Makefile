@@ -60,7 +60,8 @@ post-build:
 .endif
 
 post-install:
-	${INSTALL_SCRIPT} ${WRKSRC}/rmi2html.rb ${PREFIX}/bin/rmi2html
+	${INSTALL_SCRIPT} ${WRKSRC}/rmi2html.rb ${PREFIX}/bin/
+	${LN} -sf rmi2html.rb ${PREFIX}/bin/rmi2html
 	${INSTALL_DATA} ${WRKSRC}/rd/rd2rmi-lib.rb ${RUBY_SITELIBDIR}/rd/
 	${MKDIR} ${EMACSLISPDIR}
 	${INSTALL_DATA} ${WRKSRC}/utils/rd-mode.el ${EMACSLISPDIR}/
