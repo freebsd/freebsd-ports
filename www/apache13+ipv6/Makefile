@@ -12,7 +12,7 @@ MASTER_SITES=   ${MASTER_SITE_APACHE_HTTPD}
 DISTNAME=	apache_${PORTVERSION}
 
 PATCH_SITES=	http://www.tendra.org/~asmodai/ipv6/
-PATCHFILES=	apache-1.3.29-v6-20031028.diff.gz
+PATCHFILES=	apache-1.3.29-v6-20031112.diff.gz
 
 MAINTAINER=	sumikawa@FreeBSD.org
 COMMENT=	The extremely popular Apache http server.  Very fast, very clean
