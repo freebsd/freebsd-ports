@@ -1,0 +1,11 @@
+--- libncftp/Makefile.in.orig	Wed Nov 12 17:43:48 1997
++++ libncftp/Makefile.in	Sat Dec 13 16:47:46 1997
+@@ -55,7 +55,7 @@
+ 
+ $(LIBSO): $(SOBJS)
+ 	/bin/rm -f $(LIBSO) $(LIBSOS)
+-	gcc -shared -Wl,-soname,$(LIBSO) -o $(LIBSO) $(SOBJS)
++	gcc -shared -Wl,-x -o $(LIBSO) `lorder $(SOBJS) | tsort -q`
+ 	/bin/ln -s $(LIBSO) $(LIBSOS)
+ 	-@/bin/ls -l $(LIBSO)
+ 

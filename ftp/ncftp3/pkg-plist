@@ -1,2 +1,14 @@
-bin/ncftp2
-man/man1/ncftp2.1.gz
+lib/libStrn.so.1
+lib/libncftp.so.2
+@exec /sbin/ldconfig -m %D/lib
+bin/ncftp3
+bin/ncftpbatch
+bin/ncftpget
+bin/ncftpls
+bin/ncftpput
+man/man1/ncftp3.1.gz
+man/man1/ncftpbatch.1.gz
+man/man1/ncftpget.1.gz
+man/man1/ncftpls.1.gz
+man/man1/ncftpput.1.gz
+man/man3/Strn.3.gz
