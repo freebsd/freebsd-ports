@@ -3,7 +3,7 @@
 # Date created:         7 Mar 1996
 # Whom:                 se
 #
-# $Id: Makefile,v 1.18 1998/05/24 03:04:27 steve Exp $
+# $Id: Makefile,v 1.19 1998/07/14 03:26:34 jseger Exp $
 #
 
 DISTNAME=       dhcp-2.0b1pl6
@@ -24,6 +24,7 @@ _MANPAGES+=	${CAT8:S%^%${MANPREFIX}/man/cat8/%}
 
 post-install:
 	${TOUCH} /var/db/dhcpd.leases
+	${TOUCH} /etc/dhclient.conf
 .for file in dhclient dhcpd dhcrelay
 	if [ -f ${PREFIX}/sbin/${file} ]; then \
 		strip ${PREFIX}/sbin/${file}; \
