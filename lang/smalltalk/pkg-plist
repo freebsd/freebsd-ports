@@ -27,6 +27,7 @@ lib/smalltalk/regex.so
 lib/smalltalk/tcp.la
 lib/smalltalk/tcp.so
 share/aclocal/gst.m4
+share/aclocal/snprintfv.m4
 share/smalltalk/Load.st
 share/smalltalk/Reload.st
 share/smalltalk/blox/BrowShell.st
