@@ -22,7 +22,7 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 		951109.04.Z
 DIST_SUBDIR=	xdvi
 
-MAINTAINER=	mita@jp.FreeBSD.org
+MAINTAINER=	mita@FreeBSD.org
 
 LIB_DEPENDS=	VFlib2.24:${PORTSDIR}/japanese/vflib
 RUN_DEPENDS=	${LOCALBASE}/lib/fonts/pk${RESOLUTION}:${PORTSDIR}/print/pkfonts${RESOLUTION}
@@ -31,6 +31,8 @@ NO_WRKSUBDIR=	yes
 USE_IMAKE=      yes
 XMKMF=          xmkmf
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
+
+MAN1=		xdvi.1
 
 .if !defined(RESOLUTION)
 RESOLUTION=     300
