@@ -6,7 +6,7 @@
 
 PORTNAME=	antivir-milter
 PORTVERSION=	1.1.b
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	security mail
 #MASTER_SITES=	ftp://ftp.antivir.de/freebsd/ \
 #		http://www.antivir.de/dateien/antivir/release/
@@ -32,7 +32,7 @@ PKGMESSAGE=	${WRKDIR}/pkg-message
 
 .include <bsd.port.pre.mk>
 
-.if (!exists(/usr/lib/libmilter.a)) && (!exists(${PREFIX}/lib/libmilter.a))
+.if (!exists(/usr/lib/libmilter.a)) && (!exists(${LOCALBASE}/lib/libmilter.a))
 IGNORE=		requires Sendmail 8.12
 .endif
 
@@ -43,7 +43,8 @@ LIB_DEPENDS=	c.4:${PORTSDIR}/misc/compat4x
 post-patch:
 .for i in doc/MANUAL etc/antivir.conf etc/avmilter.conf init/rc.avmilter \
 	script/avq
-	@${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|g' ${WRKSRC}/${i}
+	@${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|g; \
+		s|%%PREFIX%%|${PREFIX}|g' ${WRKSRC}/${i}
 .endfor
 	@${SED} 's|%%PREFIX%%|${PREFIX}|g' ${PKGDIR}/pkg-message > \
 		${WRKDIR}/pkg-message
