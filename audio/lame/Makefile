@@ -1,13 +1,13 @@
 # ports collection makefile for:   lame
-# Version required:    3.11
+# Version required:    3.13
 # Date created:        11 January 1998
 # Whom:                yoshiaki Uchikawa
 #
-# $Id$
+# $Id: Makefile,v 1.3 1999/06/11 14:28:19 sada Exp $
 #
 
-DISTNAME=	lame3.11
-PKGNAME=	lame-3.11
+DISTNAME=	lame3.13
+PKGNAME=	lame-3.13
 CATEGORIES=	audio
 MASTER_SITES=	ftp://geek.rcc.se/pub/mp3encoder/lame/
 
