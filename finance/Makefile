@@ -6,6 +6,7 @@
     SUBDIR += grisbi
     SUBDIR += khacc
     SUBDIR += libofx
+    SUBDIR += myphpmoney
     SUBDIR += openhbci
     SUBDIR += p5-Business-CreditCard
     SUBDIR += p5-Business-OnlinePayment
