@@ -1,0 +1,11 @@
+SIMLIB/C++ is the SIMulation LIBrary for C++ programming language. You can
+create models directly in C++ language with the use of predefined simulation
+tools from the library. SIMLIB allows object-oriented description of models
+based on simulation abstractions. Current version allows a description of
+continuous, discrete, combined, 2D/3D vector, and fuzzy models.
+
+SIMLIB/C++ is developed at the Department of Computer Science and Engineering,
+Faculty of Electrical Engineering and Computer Science, Brno University of
+Technology since 1991.
+
+WWW: http://www.fit.vutbr.cz/~peringer/SIMLIB/index.html.en
