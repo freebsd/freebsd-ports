@@ -1,10 +1,11 @@
 etc/rc.d/apache_ssl.sh
-etc/apache-SSL/httpd.conf
-etc/apache-SSL/srm.conf
+@exec mkdir -p %D/www/cgi-bin %D/www/data
 etc/apache-SSL/access.conf
+etc/apache-SSL/httpd.conf
 etc/apache-SSL/httpd.conf-SSL
 etc/apache-SSL/mime.types
 etc/apache-SSL/mime.types-SSL
+etc/apache-SSL/srm.conf
 sbin/httpsd
 www/icons/README
 www/icons/a.gif
@@ -82,4 +83,3 @@ www/icons/uu.gif
 www/icons/uuencoded.gif
 www/icons/world1.gif
 www/icons/world2.gif
-@unexec rmdir %B
