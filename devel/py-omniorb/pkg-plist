@@ -12,6 +12,8 @@ include/omniORBpy.h
 %%PYTHON_SITELIBDIR%%/PortableServer.pyc
 %%PYTHON_SITELIBDIR%%/PortableServer__POA.py
 %%PYTHON_SITELIBDIR%%/PortableServer__POA.pyc
+%%PYTHON_SITELIBDIR%%/__init__.py
+%%PYTHON_SITELIBDIR%%/__init__.pyc
 %%PYTHON_SITELIBDIR%%/_omnicodesetsmodule.so
 %%PYTHON_SITELIBDIR%%/_omnicodesetsmodule.so.2
 %%PYTHON_SITELIBDIR%%/_omnicodesetsmodule.so.2.0
@@ -469,4 +471,3 @@ include/omniORBpy.h
 @dirrm %%PYTHON_SITELIBDIR%%/omniORB
 @dirrm %%PYTHON_SITELIBDIR%%/CosNaming__POA
 @dirrm %%PYTHON_SITELIBDIR%%/CosNaming
-@dirrm include/omniORB4
