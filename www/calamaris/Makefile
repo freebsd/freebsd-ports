@@ -18,7 +18,7 @@ NO_BUILD=	yes
 MAN1=		calamaris.1
 
 post-patch:
-	@ ${PERL} -pi -e 's#/usr/bin/perl#${PERL5}#' ${WRKSRC}/calamaris
+	@ ${PERL} -pi -e 's#/usr/bin/perl#${PERL}#' ${WRKSRC}/calamaris
 
 do-install:
 	@ ${INSTALL_MAN} ${WRKSRC}/calamaris.1 ${PREFIX}/man/man1/calamaris.1
