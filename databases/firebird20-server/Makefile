@@ -15,7 +15,7 @@ DISTFILES=	firebird-boot-kit.tar.gz \
 		interbase0.9-4-v5examples.tar.gz \
 		interbase0.9-4src.tar.gz
 
-MAINTAINER=	geoff@sea-incorporated.com
+MAINTAINER=	chris@aims.com.au
 
 WRKSRC=		${WRKDIR}/interbase
 INSTALLS_SHLIB=	yes
