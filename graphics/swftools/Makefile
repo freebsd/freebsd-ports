@@ -7,20 +7,25 @@
 #
 
 PORTNAME=	swftools
-PORTVERSION=	0.2.2
+PORTVERSION=	0.3.1
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.quiss.org/swftools/
 
 MAINTAINER=	ports@FreeBSD.org
 
-LIB_DEPENDS=	jpeg:${PORTSDIR}/graphics/jpeg \
-		t1:${PORTSDIR}/devel/t1lib
+LIB_DEPENDS=	t1.4:${PORTSDIR}/devel/t1lib \
+		jpeg.9:${PORTSDIR}/graphics/jpeg
 
-GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CPPFLAGS="${CXXFLAGS} -I${LOCALBASE}/include" \
-		LIBS="-L${LOCALBASE}/lib"
 USE_GMAKE=	yes
+GNU_CONFIGURE=	yes
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
+		LIBS="-L${LOCALBASE}/lib"
 
-MAN1=	jpeg2swf.1 pdf2swf.1 swfcombine.1 swfdump.1 swfextract.1 swfstrings.1
+MAN1=	jpeg2swf.1 pdf2swf.1 png2swf.1 swfcombine.1 swfdump.1 swfextract.1 \
+	swfstrings.1 wav2swf.1
+
+post-patch:
+	@${PERL} -pi -e 's|^CFLAGS=|#CFLAGS=|g ; \
+		 s|^CXXFLAGS=|#CXXFLAGS=|g' ${WRKSRC}/configure
 
 .include <bsd.port.mk>

@@ -1,10 +1,11 @@
 bin/jpeg2swf
 bin/pdf2swf
+bin/png2swf
 bin/swfcombine
 bin/swfdump
 bin/swfextract
 bin/swfstrings
-share/swftools/fonts/FontDataBase
+bin/wav2swf
 share/swftools/fonts/d050000l.afm
 share/swftools/fonts/d050000l.pfb
 share/swftools/fonts/n019003l.afm
@@ -39,6 +40,6 @@ share/swftools/swfs/default_viewer.swf
 share/swftools/swfs/simple_viewer.swf
 share/swftools/swfs/swft_loader.swf
 share/swftools/swfs/tessel_loader.swf
-@dirrm share/swftools/fonts
 @dirrm share/swftools/swfs
+@dirrm share/swftools/fonts
 @dirrm share/swftools
