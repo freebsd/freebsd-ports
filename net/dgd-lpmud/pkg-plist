@@ -1,4 +1,3 @@
-@cwd /usr/local/dgd
 lpmud.dgd
 runlpmud
 bin/hname

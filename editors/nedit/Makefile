@@ -4,7 +4,7 @@
 #
 # Whom:	Daniel Eischen <deischen@iworks.InterWorks.org>
 #
-# $Id: $
+# $Id: Makefile,v 1.3 1996/10/10 00:33:02 max Exp $
 #
 DISTNAME=	nedit-4.0.1
 CATEGORIES=	editors x11
@@ -21,6 +21,7 @@ USE_X11=	yes
 NO_WRKSUBDIR=	yes
 EXTRACT_BEFORE_ARGS=	-C ${WRKDIR} -xf
 EXTRACT_ONLY=	nedit_source.tar
+MAN1=		nedit.1 nc.1
 
 post-extract:
 	${CP} ${DISTDIR}/nedit.app-defaults ${WRKSRC}/NEdit

@@ -3,7 +3,7 @@
 # Date created:         17 October 1994
 # Whom:                 jmz
 #
-# $Id: Makefile,v 1.5 1996/05/04 12:30:40 ache Exp $
+# $Id: Makefile,v 1.6 1996/11/12 02:17:43 obrien Exp $
 #
 
 DISTNAME=       unzip-5.2
@@ -18,5 +18,6 @@ ALL_TARGET=     bsd
 MAKE_FLAGS=     LOCAL_UNZIP="${CFLAGS}" \
 		INSTALL="install -c -o bin -g bin" \
 		prefix=${PREFIX} -f
+MAN1=		funzip.1 unzip.1 unzipsfx.1 zipinfo.1
 
 .include <bsd.port.mk>

@@ -3,7 +3,7 @@
 # Date created:		26 Apr 1995
 # Whom:			thomas@ghpc8.ihf.rwth-aachen.de
 #
-# $Id: Makefile,v 1.3 1996/03/06 08:20:13 asami Exp $
+# $Id: Makefile,v 1.4 1996/11/18 11:32:40 asami Exp $
 #
 
 DISTNAME=	octave-1.1.1
@@ -16,8 +16,8 @@ RUN_DEPENDS=	gnuplot:${PORTSDIR}/math/gnuplot
 
 HAS_CONFIGURE=	yes
 USE_GMAKE=	yes
-
 PATCH_STRIP=	-p1
 MAKE_FLAGS=	CFLAGS="-O2 -pipe -m486" CXXFLAGS="-O2 -pipe -m486" LDFLAGS="-s" -f
+MAN1=		octave.1
 
 .include <bsd.port.mk>

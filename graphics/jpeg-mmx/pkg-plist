@@ -3,11 +3,11 @@ bin/djpeg
 bin/jpegtran
 bin/rdjpgcom
 bin/wrjpgcom
-man/man1/cjpeg.1
-man/man1/djpeg.1
-man/man1/jpegtran.1
-man/man1/rdjpgcom.1
-man/man1/wrjpgcom.1
+man/man1/cjpeg.1.gz
+man/man1/djpeg.1.gz
+man/man1/jpegtran.1.gz
+man/man1/rdjpgcom.1.gz
+man/man1/wrjpgcom.1.gz
 include/jconfig.h
 include/jpeglib.h
 include/jmorecfg.h

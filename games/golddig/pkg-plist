@@ -1,10 +1,5 @@
-@cd /usr/local
-@owner games
-@mode 755
 bin/golddig
-@mode 4755
 bin/makelev
-@mode 644
 lib/golddig/default
 lib/golddig/goldlev001
 lib/golddig/goldlev002
@@ -24,7 +19,5 @@ lib/golddig/goldlev015
 lib/golddig/goldlev016
 lib/golddig/goldlev017
 lib/golddig/goldlev018
-@mode 666
 lib/golddig/scores
-@mode 644
-man/man6/golddig.6
+man/man6/golddig.6.gz

@@ -1,3 +1,4 @@
+@cd /usr/local
 bin/faxspool
 bin/faxq
 bin/faxrm

@@ -3,7 +3,7 @@
 # Date created:         14 October 1994
 # Whom:                 jmz
 #
-# $Id: Makefile,v 1.10 1996/07/04 21:59:26 gpalmer Exp $
+# $Id: Makefile,v 1.11 1996/11/17 08:44:25 obrien Exp $
 #
 
 DISTNAME=	dvi2xx
@@ -12,6 +12,8 @@ DISTFILES=	dvi2xx.tar.gz
 CATEGORIES=	print
 
 MAINTAINER=	jmz@FreeBSD.ORG
+
+MAN1=		dvi2xx.1
 
 #other equivalent sites: ftp.shsu.edu ftp.dante.de
 CTAN?=		ftp.tex.ac.uk

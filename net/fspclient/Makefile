@@ -3,7 +3,7 @@
 # Date created:         7 Nov 1994
 # Whom:                 ache
 #
-# $Id: Makefile,v 1.6 1995/11/27 04:04:54 asami Exp $
+# $Id: Makefile,v 1.7 1996/11/18 11:34:48 asami Exp $
 #
 
 DISTNAME=       fspclient.0.0-h+
@@ -16,5 +16,6 @@ MAINTAINER=     ache@FreeBSD.ORG
 
 WRKSRC=		${WRKDIR}/fspclient
 GNU_CONFIGURE=	yes
+MAN1=		fsp.1
 
 .include <bsd.port.mk>

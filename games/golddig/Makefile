@@ -3,7 +3,7 @@
 # Date created:         20 November 1994
 # Whom:                 jmz
 #
-# $Id: Makefile,v 1.4 1995/04/11 00:20:13 asami Exp $
+# $Id: Makefile,v 1.5 1996/11/18 11:24:32 asami Exp $
 #
 
 DISTNAME=	golddig2
@@ -13,6 +13,8 @@ MASTER_SITES=	ftp://qiclab.scn.rain.com/pub/games/
 EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=	jmz@FreeBSD.org
+
+MAN6=		golddig.6
 
 pre-patch:
 	@(cd ${WRKSRC}; for i in 245 244 246 247; do \

@@ -1,4 +1,3 @@
-@cwd /usr/X11R6
 bin/knews
 bin/knewsd
 lib/X11/app-defaults/Knews

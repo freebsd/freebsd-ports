@@ -3,7 +3,7 @@
 # Date created:         22 Dec 1994
 # Whom:                 ache
 #
-# $Id: Makefile,v 1.6 1996/05/04 11:34:16 ache Exp $
+# $Id: Makefile,v 1.7 1996/11/12 02:17:55 obrien Exp $
 #
 
 DISTNAME=       zip21
@@ -21,5 +21,6 @@ EXTRACT_ARGS=   -oq
 NO_WRKSUBDIR=   yes
 MAKEFILE=       unix/Makefile
 ALL_TARGET=     generic
+MAN1=		zip.1 zipgrep.1
 
 .include <bsd.port.mk>

@@ -1,4 +1,3 @@
-@cd /usr/local
 bin/ecu
 lib/ecu/funckeymap
 lib/ecu/ecuhelp.data

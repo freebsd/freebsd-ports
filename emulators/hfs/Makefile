@@ -3,7 +3,7 @@
 # Date created:         17 November 1994
 # Whom:                 jmz
 #
-# $Id: Makefile,v 1.7 1995/11/22 11:48:10 asami Exp $
+# $Id: Makefile,v 1.8 1996/11/12 02:16:45 obrien Exp $
 #
 
 DISTNAME=	hfs0_37
@@ -14,6 +14,7 @@ MASTER_SITES=	ftp://ftp.obs-besancon.fr/pub/outgoing/
 MAINTAINER=	jmz@FreeBSD.org
 
 USE_GMAKE=	yes
+MAN1=		hfs.1
 
 pre-install:
 	@${MKDIR} ${PREFIX}/bin

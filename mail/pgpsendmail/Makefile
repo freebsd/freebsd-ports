@@ -3,7 +3,7 @@
 # Date created:         20 Jan 1995
 # Whom:                 ache
 #
-# $Id: Makefile,v 1.8 1995/09/23 17:13:54 ache Exp $
+# $Id: Makefile,v 1.9 1996/11/10 21:32:16 obrien Exp $
 #
 
 DISTNAME=       PGPsendmail-v1.4
@@ -17,5 +17,7 @@ BUILD_DEPENDS += pgp:${PORTSDIR}/security/pgp
 
 WRKSRC=         ${WRKDIR}/pgpsendmail
 INSTALL_TARGET= all_install
+MAN1=		pgppipe.1 sendpgppass.1
+MAN8=		pgpsendmail.8 pgpdaemon.8
 
 .include <bsd.port.mk>

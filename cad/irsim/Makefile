@@ -3,7 +3,7 @@
 # Date created:         18 Dec 1994
 # Whom:                 swallace
 #
-# $Id: Makefile,v 1.4 1995/07/29 08:49:29 asami Exp $
+# $Id: Makefile,v 1.5 1996/11/15 23:30:55 obrien Exp $
 #
 
 DISTNAME=       irsim-9.2
@@ -14,5 +14,8 @@ EXTRACT_SUFX=   .tar.Z
 MAINTAINER=	swallace@FreeBSD.org
 
 WRKSRC=		${.CURDIR}/work/irsim
+MAN1=		irsim.1
+MAN3=		irsim-analyzer.3
+MAN5=		netchange.5
 
 .include <bsd.port.mk>

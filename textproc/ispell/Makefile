@@ -3,7 +3,7 @@
 # Date created:         6 November 1994
 # Whom:                 jmz
 #
-# $Id: Makefile,v 1.13 1996/11/11 05:49:39 obrien Exp $
+# $Id: Makefile,v 1.14 1996/11/17 09:05:56 obrien Exp $
 #
 
 DISTNAME=	ispell-3.1
@@ -21,6 +21,9 @@ MAINTAINER=	jmz@FreeBSD.org
 DISTFILES+=	   ${EXTRA_DICT}
 
 MAKE_FLAGS=	TMPDIR=${.CURDIR} -f 
+MAN1=		buildhash.1 findaffix.1 ispell.1 munchlist.1 \
+		sq.1 tryaffix.1 unsq.1
+MAN4=		ispell.4 english.4
 
 pre-extract:
 .if !defined(LANG) 

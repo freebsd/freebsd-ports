@@ -3,7 +3,7 @@
 # Date created:         31 Dec 1994
 # Whom:                 ache
 #
-# $Id: Makefile,v 1.3 1995/04/12 04:48:15 asami Exp $
+# $Id: Makefile,v 1.4 1996/11/12 02:17:13 obrien Exp $
 #
 
 DISTNAME=       arc521e.pl8
@@ -15,5 +15,6 @@ EXTRACT_SUFX=   .tar.Z
 MAINTAINER=     ache@FreeBSD.ORG
 
 NO_WRKSUBDIR=	yes
+MAN1=		arc.1
 
 .include <bsd.port.mk>

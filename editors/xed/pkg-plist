@@ -1,4 +1,3 @@
-@cwd /usr/X11R6
 bin/xed
 lib/X11/xed/xed.help
 lib/X11/app-defaults/Xed

@@ -3,7 +3,7 @@
 # Date created:         21 September 1994
 # Whom:                 jmz
 #
-# $Id: Makefile,v 1.11 1996/09/14 01:59:33 asami Exp $
+# $Id: Makefile,v 1.12 1996/11/17 03:01:02 obrien Exp $
 #
 
 DISTNAME=	mgetty-0.99
@@ -15,6 +15,11 @@ MAINTAINER=	jmz@FreeBSD.org
 
 IS_INTERACTIVE= yes
 MAKE_FLAGS=	prefix=${PREFIX} -f 
+MAN1=		coverpg.1 fax.1 faxq.1 faqrm.1 faxrunq.1 faxspool.1 \
+		g3cat.1 g3topbm.1 pbmtog3.1
+MAN4=		mgettydefs.4
+MAN5=		faxqueue.5
+MAN8=		sendfax.8 mgetty.8 callback.8
 
 pre-install:
 	@(cd ${WRKSRC}/doc; ${GMAKE} manpages)

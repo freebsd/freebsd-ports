@@ -1,4 +1,3 @@
-@mode 755
 bin/bytebench
 lib/bytebench/Run
 lib/bytebench/pgms/looper
@@ -30,7 +29,6 @@ lib/bytebench/pgms/execl
 lib/bytebench/pgms/dhry2
 lib/bytebench/pgms/dhry2reg
 lib/bytebench/pgms/byte.logo
-@mode 644
 lib/bytebench/Makefile
 lib/bytebench/README
 lib/bytebench/doc/bench3.doc

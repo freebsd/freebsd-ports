@@ -1,4 +1,3 @@
-@cwd /usr/local
 bin/mailpatch
 bin/mailhelp
 bin/maillist

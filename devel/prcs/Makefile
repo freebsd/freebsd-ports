@@ -3,7 +3,7 @@
 # Date created:         17 Sep 96
 # Whom:                 jmacd@FreeBSD.ORG
 #
-# $Id: Makefile,v 1.3 1996/10/08 07:32:33 asami Exp $
+# $Id: Makefile,v 1.4 1996/11/18 11:23:34 asami Exp $
 #
 
 DISTNAME= 	prcs-1.0.1
@@ -14,5 +14,6 @@ MAINTAINER=	jmacd@FreeBSD.ORG
 
 USE_GMAKE=	yes
 HAS_CONFIGURE=	yes
+MAN1=		prcs.1
 
 .include <bsd.port.mk>

@@ -3,7 +3,7 @@
 # Date created:         22 November 1994
 # Whom:                 jmz
 #
-# $Id: Makefile,v 1.13 1996/11/05 13:19:57 asami Exp $
+# $Id: Makefile,v 1.14 1996/11/15 23:14:37 obrien Exp $
 #
 
 DISTNAME=	xcd-1.5
@@ -15,5 +15,6 @@ MAINTAINER=	jmz@FreeBSD.org
 RUN_DEPENDS=    wish4.1:${PORTSDIR}/x11/tk41
 
 WRKSRC=		${WRKDIR}/xcd
+MAN1=		cdplayer.1 xcd.1
 
 .include <bsd.port.mk>

@@ -3,7 +3,7 @@
 # Date created:				24 Apr 1996
 # Whom:					pst
 #
-# $Id: Makefile,v 1.7 1996/08/14 18:52:40 jdp Exp $
+# $Id: Makefile,v 1.8 1996/11/18 11:36:28 asami Exp $
 #
 
 PKGNAME=	socks5-0.16.6
@@ -32,5 +32,7 @@ CONFIGURE_ARGS=	--with-libconffile=${PREFIX}/etc/libsocks5.conf \
 		--with-srvpidfile=/var/run/socks5.pid \
 		--with-srvidtfile=/var/run/socks5.ident \
 		${EXTRA_CONFIGURE_ARGS}
+MAN1=		runsocks.1 socks5.1 stopsocks.1
+MAN5=		libsocks5.conf.5 socks5.conf.5
 
 .include <bsd.port.mk>

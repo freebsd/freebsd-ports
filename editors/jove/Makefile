@@ -3,7 +3,7 @@
 # Date created:		21 August 1994
 # Whom:			jkh
 #
-# $Id: Makefile,v 1.13 1996/09/25 12:58:53 erich Exp $
+# $Id: Makefile,v 1.14 1996/11/11 05:07:11 obrien Exp $
 #
 
 DISTNAME=	jove-4.16
@@ -13,5 +13,6 @@ MASTER_SITES=	ftp://relay.cs.toronto.edu/pub/moraes/jove/
 MAINTAINER=	erich@FreeBSD.ORG
 
 WRKSRC=		${WRKDIR}/jove
+MAN1=		jove.1 teachjove.1 xjove.1 jovetool.1
 
 .include <bsd.port.mk>

@@ -1,10 +1,7 @@
-@owner games
-@mode 555
 bin/acm
 bin/acms
 bin/kill-acms
-man/man1/acm.1
-@mode 444
+man/man1/acm.1.gz
 games/acm/default-scene
 games/acm/maui-scene
 games/acm/kauai-scene

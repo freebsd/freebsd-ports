@@ -1,5 +1,3 @@
-@owner nobody
-@group nobody
 www/cgi-bin/Count.cgi
 etc/Counter
 etc/Counter/conf
@@ -19,11 +17,9 @@ lib/Counter/digits/D/strip.gif
 lib/Counter/digits/D/lenna.gif
 lib/Counter/digits/E
 lib/Counter/digits/E/strip.gif
-@owner bin
-@group bin
 lib/Counter/digits/mkstrip.sh
 bin/mkstrip
-man/man1/mkstrip.1
+man/man1/mkstrip.1.gz
 @exec touch /var/log/Counter.log
 @exec chown nobody.nobody /var/log/Counter.log
 @exec chmod 644 /var/log/Counter.log

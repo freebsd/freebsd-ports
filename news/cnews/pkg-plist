@@ -1,4 +1,3 @@
-@cwd /usr/local
 @comment Package is not complete without minimal /var/news installation :-(
 @comment Basically just in.* and out.*    /var/news might be a symbolic link
 @comment and it might not exist yet :-(

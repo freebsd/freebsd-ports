@@ -1,5 +1,5 @@
 bin/xmahjongg
-man/man6/xmahjongg.6
+man/man6/xmahjongg.6.gz
 lib/X11/xmahjongg
 @dirrm lib/X11/xmahjongg
 lib/X11/fonts/misc/xmahjongg.bdf 

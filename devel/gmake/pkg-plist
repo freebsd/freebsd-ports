@@ -1,5 +1,5 @@
 bin/gmake
-man/man1/gmake.1
+man/man1/gmake.1.gz
 info/make.info
 info/make.info-1
 info/make.info-2

@@ -1,7 +1,3 @@
-@cwd /usr/X11R6
 man/man6/xrobots.6.gz
-@group games
-@mode 02755
 bin/xrobots
-@mode 0664
 lib/X11/xrobotscores

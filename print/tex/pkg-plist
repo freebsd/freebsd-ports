@@ -1,6 +1,3 @@
-@cd /usr/local
-@owner bin
-@mode 755
 bin/tex
 bin/mf
 bin/cmmf
@@ -25,7 +22,6 @@ bin/bibtex
 bin/tangle
 bin/weave
 bin/pooltype
-@mode 644
 lib/texmf/fonts/texfonts.map
 lib/texmf/fonts/tfm/cmb10.tfm
 lib/texmf/fonts/tfm/cmbsy10.tfm
@@ -257,29 +253,29 @@ lib/texmf/ini/cmmf.base
 lib/texmf/ini/plain.base
 lib/texmf/ini/tex.pool
 lib/texmf/ini/mf.pool
-man/man1/bibtex.1
-man/man1/dvitype.1
-man/man1/gftodvi.1
-man/man1/gftopk.1
-man/man1/gftype.1
-man/man1/latex.1
-man/man1/mf.1
-man/man1/mft.1
-man/man1/pktogf.1
-man/man1/pktype.1
-man/man1/pltotf.1
-man/man1/slitex.1
-man/man1/tangle.1
-man/man1/tex.1
-man/man1/tftopl.1
-man/man1/vftovp.1
-man/man1/vptovf.1
-man/man1/weave.1
-man/man1/etex.1
-man/man1/amslatex.1
-man/man1/amstex.1
-man/man1/initex.1
-man/man1/lamstex.1
-man/man1/patgen.1
-man/man1/pooltype.1
-man/man1/virtex.1
+man/man1/bibtex.1.gz
+man/man1/dvitype.1.gz
+man/man1/gftodvi.1.gz
+man/man1/gftopk.1.gz
+man/man1/gftype.1.gz
+man/man1/latex.1.gz
+man/man1/mf.1.gz
+man/man1/mft.1.gz
+man/man1/pktogf.1.gz
+man/man1/pktype.1.gz
+man/man1/pltotf.1.gz
+man/man1/slitex.1.gz
+man/man1/tangle.1.gz
+man/man1/tex.1.gz
+man/man1/tftopl.1.gz
+man/man1/vftovp.1.gz
+man/man1/vptovf.1.gz
+man/man1/weave.1.gz
+man/man1/etex.1.gz
+man/man1/amslatex.1.gz
+man/man1/amstex.1.gz
+man/man1/initex.1.gz
+man/man1/lamstex.1.gz
+man/man1/patgen.1.gz
+man/man1/pooltype.1.gz
+man/man1/virtex.1.gz

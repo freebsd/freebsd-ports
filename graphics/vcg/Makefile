@@ -3,7 +3,7 @@
 # Date created: 19 February 1995
 # Whom: hsu
 #
-# $Id: Makefile,v 1.4 1995/05/16 11:34:33 asami Exp $
+# $Id: Makefile,v 1.5 1996/11/18 11:29:26 asami Exp $
 #
 
 DISTNAME=	vcg.1.30
@@ -13,6 +13,7 @@ MASTER_SITES=	ftp://ftp.cs.uni-sb.de/pub/graphics/vcg/
 DISTFILES=	vcg.1.30.r3.17.tgz
 
 USE_X11=	yes
+MANL=		pbmrot90.l pbmshift.l pbm2hp.l vcgdemomaker.l vcg.l xvcg.l
 
 pre-patch:
 	@mkdir -p ${WRKSRC}/preconf/X11ccFreeBSD

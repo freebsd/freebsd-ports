@@ -1,6 +1,3 @@
-@name kaffe
-@owner bin
-@group bin
 bin/javac
 bin/javadoc
 bin/kaffe

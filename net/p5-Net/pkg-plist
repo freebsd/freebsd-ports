@@ -14,7 +14,7 @@ lib/perl5/man/man3/Net::DummyInetd.3.gz
 lib/perl5/man/man3/Net::NNTP.3.gz
 lib/perl5/man/man3/Net::SNPP.3.gz
 lib/perl5/man/man3/Net::POP3.3.gz
-lib/perl5/man/man3/Net::SMTP.3.gz 
+lib/perl5/man/man3/Net::SMTP.3.gz
 lib/perl5/man/man3/Net::Domain.3.gz
 lib/perl5/man/man3/Net::FTP.3.gz
 lib/perl5/man/man3/Net::Netrc.3.gz

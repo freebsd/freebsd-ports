@@ -1,8 +1,4 @@
-@cd /usr/local
-@owner bin
-@mode 555
 bin/calc
-@mode 444
 lib/calc/help/intro 
 lib/calc/help/overview 
 lib/calc/help/help 
@@ -60,9 +56,7 @@ lib/calc/surd.cal
 lib/calc/test1000.cal
 lib/calc/unitfrac.cal
 lib/calc/varargs.cal
-@mode 644
 lib/calc/libcalc.a
-@mode 444
 lib/calc/alloc.h 
 lib/calc/args.h 
 lib/calc/cmath.h 
@@ -74,4 +68,4 @@ lib/calc/longbits.h
 lib/calc/qmath.h 
 lib/calc/stdarg.h 
 lib/calc/zmath.h 
-man/man1/calc.1
+man/man1/calc.1.gz

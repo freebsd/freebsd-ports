@@ -58,4 +58,4 @@ lib/ical/v2.1b2/support.tcl
 lib/ical/v2.1b2/timerange.tcl
 lib/ical/v2.1b2/trigger.tcl
 lib/ical/v2.1b2/tclIndex
-man/man1/ical.1
+man/man1/ical.1.gz

@@ -3,7 +3,7 @@
 # Date created:         12 October 1994
 # Whom:                 jmz
 #
-# $Id: Makefile,v 1.8 1995/11/22 13:18:05 asami Exp $
+# $Id: Makefile,v 1.9 1996/11/17 08:44:33 obrien Exp $
 #
 
 DISTNAME=	dviselect
@@ -12,6 +12,8 @@ CATEGORIES=	print
 MASTER_SITES=	ftp://ftp.cs.umn.edu/pub/latex/software/
 
 MAINTAINER=	jmz@FreeBSD.org
+
+MAN1=		dviselect.1
 
 pre-install:
 	@${MKDIR} ${PREFIX}/man/man1

@@ -3,7 +3,7 @@
 # Date created:         Sat Nov  5 17:11:01 PST 1994
 # Whom:                 hsu
 #
-# $Id: Makefile,v 1.9 1995/11/22 13:13:13 asami Exp $
+# $Id: Makefile,v 1.10 1996/11/12 02:19:08 obrien Exp $
 #
 
 DISTNAME=       scm
@@ -17,6 +17,7 @@ DISTFILES=      scm4e1.tar.gz \
 GNU_CONFIGURE=	yes
 USE_GMAKE=
 MAKE_FLAGS=	CFLAGS=-O2 LDFLAGS=-s defines="-DSICP -DHAVE_CONFIG_H -DFLOATS -DIO_EXTENSIONS -DMEMOIZE_LOCALS -DGC_FREE_SEGMENTS" -f
+MAN1=		scm.1
 
 pre-install:
 	${CP} -rp ${WRKDIR}/slib ${PREFIX}/lib

@@ -1,15 +1,11 @@
-@cwd /usr/X11R6
-@mode 755
 bin/fdesign
-@mode 644
 lib/libxforms.a
 lib/libxforms.so.0.81
 @exec ldconfig -m %B
 @exec ranlib %D/lib/libxforms.a
-@mode 444
 include/X11/forms.h
-man/man1/fdesign.1
-man/man5/xforms.5
+man/man1/fdesign.1.gz
+man/man5/xforms.5.gz
 lib/X11/xforms/arrowbutton
 lib/X11/xforms/borderwidth
 lib/X11/xforms/boxtype

@@ -1,4 +1,4 @@
 bin/less
 bin/lesskey
-man/man1/less.1
-man/man1/lesskey.1
+man/man1/less.1.gz
+man/man1/lesskey.1.gz

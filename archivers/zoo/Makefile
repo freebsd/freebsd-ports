@@ -3,7 +3,7 @@
 # Date created:         18 October 1994
 # Whom:                 jmz
 #
-# $Id: Makefile,v 1.4 1995/04/15 04:45:25 asami Exp $
+# $Id: Makefile,v 1.5 1996/11/12 02:17:57 obrien Exp $
 #
 
 DISTNAME=       zoo-2.10pl1
@@ -16,5 +16,6 @@ MAINTAINER=	jmz@FreeBSD.org
 NO_WRKSUBDIR=	yes
 ALL_TARGET=     bsdansi
 MAKEFILE=       makefile
+MAN1=		fiz.1 zoo.1
 
 .include <bsd.port.mk>

@@ -1,20 +1,10 @@
-@cwd /usr/local
-@mode 555
-@owner bin
-@group bin
 libexec/gnat1
-@mode 555
-@owner bin
-@group bin
 bin/gnatbind
 bin/gnatf
 bin/gnatk8
 bin/gnatchp
 bin/gnatchop
 bin/gnatbl
-@mode 444
-@owner bin
-@group bin
 include/adainclude/a-calcon.adb
 include/adainclude/a-calcon.ads
 include/adainclude/a-caldel.adb

@@ -3,7 +3,7 @@
 # Date created:		30 June 1995
 # Whom:			janek@gaja.ipan.lublin.pl
 #
-# $Id$
+# $Id: Makefile,v 1.4 1996/11/18 13:38:46 asami Exp $
 #
 
 DISTNAME=	xmix-2.1
@@ -21,6 +21,6 @@ WRKSRC=		$(WRKDIR)/xmix
 
 pre-install:
 	${CP} ${WRKSRC}/xmix.1 ${WRKSRC}/xmix.man
-	${INSTALL_DATA} $(WRKSRC)/XMix /usr/X11R6/lib/X11/app-defaults
+	${INSTALL_DATA} $(WRKSRC)/XMix ${PREFIX}/lib/X11/app-defaults
 
 .include <bsd.port.mk>
