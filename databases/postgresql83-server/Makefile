@@ -179,11 +179,13 @@ MAN7=		abort.7 alter_aggregate.7 alter_conversion.7 alter_database.7 \
 		create_operator.7 create_operator_class.7		      \
 		create_rule.7 create_schema.7 create_sequence.7		      \
 		create_table.7 create_table_as.7 create_trigger.7	      \
-		create_type.7 create_user.7 create_view.7 delete.7	      \
+		create_type.7 create_user.7 create_view.7 deallocate.7	      \
+		declare.7 delete.7					      \
 		drop_aggregate.7 drop_cast.7 drop_conversion.7		      \
 		drop_database.7 drop_domain.7 drop_function.7		      \
 		drop_group.7 drop_index.7 drop_language.7		      \
-		drop_operator.7 drop_schema.7 drop_sequence.7		      \
+		drop_operator.7 drop_operator_class.7 drop_rule.7	      \
+		drop_schema.7 drop_sequence.7 drop_table.7 drop_trigger.7     \
 		drop_type.7 drop_user.7 drop_view.7 end.7 execute.7	      \
 		explain.7 fetch.7 grant.7 insert.7 listen.7 load.7	      \
 		lock.7 move.7 notify.7 prepare.7 reindex.7 reset.7	      \
@@ -192,7 +194,8 @@ MAN7=		abort.7 alter_aggregate.7 alter_conversion.7 alter_database.7 \
 		set_session_authorization.7 start_transaction.7		      \
 		spi_connect.7 spi_copytuple.7 spi_cursor_close.7	      \
 		spi_cursor_fetch.7 spi_cursor_find.7 spi_cursor_move.7	      \
-		spi_execp.7 spi_execute.7 spi_execute_plan.7		      \
+		spi_cursor_open.7 spi_exec.7 spi_execp.7 spi_execute.7	      \
+		spi_execute_plan.7					      \
 		spi_finish.7 spi_fname.7 spi_fnumber.7 spi_freeplan.7	      \
 		spi_freetuple.7 spi_freetuptable.7 spi_getargcount.7	      \
 		spi_getargtypeid.7 spi_getbinval.7 spi_getrelname.7	      \
