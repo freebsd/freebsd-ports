@@ -21,6 +21,8 @@ MAINTAINER=	nakaji@jp.FreeBSD.org
 
 BUILD_DEPENDS=	msgfmt:${PORTSDIR}/devel/gettext
 
+NO_LATEST_LINK=	yes
+
 SAMBA_VERSION=		2.0.10
 SAMBA_JA_VERSION=	1.2
 
