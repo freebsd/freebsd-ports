@@ -1,0 +1,5 @@
+lib/%%PYTHON_VERSION%%/site-packages/mingcmodule.so
+lib/%%PYTHON_VERSION%%/site-packages/ming.py
+share/examples/%%PYTHON_VERSION%%/ming/shape.py
+share/examples/%%PYTHON_VERSION%%/ming/test.py
+@dirrm share/examples/%%PYTHON_VERSION%%/ming
