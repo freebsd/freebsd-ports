@@ -2,4 +2,7 @@
 bin/jove
 bin/teachjove
 lib/jove
-man/cat1/jove.0
+man/man1/jove.1
+man/man1/teachjove.1
+man/man1/xjove.1
+man/man1/jovetool.1
