@@ -1,0 +1,41 @@
+$FreeBSD$
+
+--- Makefile.orig	Wed Jan 22 08:23:18 2003
++++ Makefile	Tue Feb 15 13:32:02 2005
+@@ -2,22 +2,26 @@
+ # $Id: Makefile,v 1.0 2003/01/12 13:17:37 jt Exp $
+ #
+ 
+-BINDIR = /usr/local/bin
+-MANDIR = /usr/local/man/man8
++BINDIR  ?= /usr/local/bin
++CONFDIR ?= /usr/local/etc
+ 
+-CC	= gcc
+-CFLAGS	= -Wall -O 
++CC      ?= gcc
++CFLAGS  ?= -Wall -O
+ 
+-MAN	= sscep.8
+-PROG	= sscep
++PROG    = sscep
++MKREQ   = mkrequest
+ OBJS    = sscep.o init.o net.o sceputils.o pkcs7.o ias.o fileutils.o
++CONF    = sscep.conf
++
++all: $(PROG)
+ 
+ $(PROG): $(OBJS)
+-	$(CC) $(CFLAGS) -lcrypto -o $(PROG) $(OBJS) 
++	$(CC) $(CFLAGS) -lcrypto -o $(PROG) $(OBJS)
+ 
+ clean:
+-	rm -f $(PROG) $(OBJS) $(MAN) core
++	rm -f $(PROG) $(OBJS) core
+ 
+ install:
+-	./install-sh $(PROG) $(BINDIR)
+-	./install-sh $(MAN) $(MANDIR)
++	cp $(PROG) $(BINDIR)
++	cp $(MKREQ) $(BINDIR)
++	cp $(CONF) $(CONFDIR)/sscep.conf.sample

@@ -1,0 +1,6 @@
+SCEP is a client-only implementation of the SCEP (Cisco System's Simple
+Certificate Enrollment Protocol). SSCEP is designed for OpenBSD's isakmpd,
+but it will propably work with any Unix system with a recent compiler and
+OpenSSL toolkit libraries installed.
+
+WWW: http://www.klake.org/~jt/sscep/
