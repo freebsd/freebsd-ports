@@ -503,7 +503,7 @@ post-install:
 # for EPLASER driver
 	${ECHO_MSG} ">>>   installing ${EPLASER} docs ..."
 	${MKDIR} ${DOCSDIR}/${GS_VERSION}/${EPLASER}
-.for i in readme-eplaser-705.euc readme-eplaser-705-jp.euc
+.for i in readme-eplaser-705.euc
 	${INSTALL_DATA} ${WRKSRC}/${EPLASER_NAME}/${i} \
 		${DOCSDIR}/${GS_VERSION}/${EPLASER}
 .endfor
