@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	smokeping
-PORTVERSION=	1.26
+PORTVERSION=	1.27
 CATEGORIES=	net www
 MASTER_SITES=	http://people.ee.ethz.ch/~oetiker/webtools/smokeping/pub/
 
