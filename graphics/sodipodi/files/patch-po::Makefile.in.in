@@ -1,8 +1,5 @@
-
-$FreeBSD$
-
---- po/Makefile.in.in	2001/09/28 13:21:12	1.1
-+++ po/Makefile.in.in	2001/09/28 13:21:31
+--- po/Makefile.in.in.orig	Wed Sep 11 11:51:02 2002
++++ po/Makefile.in.in	Wed Sep 11 11:51:50 2002
 @@ -106,7 +106,7 @@
  	@catalogs='$(CATALOGS)'; \
  	for cat in $$catalogs; do \
@@ -27,6 +24,6 @@ $FreeBSD$
  	  cat=`basename $$cat`; \
 -	  lang=`echo $$cat | sed 's/\.gmo$$//'`; \
 +	  lang=`echo $$cat | sed 's/\.mo$$//'`; \
+ 	  cp $$lang.po $$lang.old.po; \
  	  echo "$$lang:"; \
- 	  if $(MSGMERGE) $$lang.po $(PACKAGE).pot -o $$lang.new.po; then \
- 	    mv -f $$lang.new.po $$lang.po; \
+ 	  if $(MSGMERGE) $$lang ; then \
