@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	xinetd
-PORTVERSION=	2.3.8
+PORTVERSION=	2.3.9
 PORTREVISION=	0
 CATEGORIES=	security
 MASTER_SITES=	http://www.xinetd.org/
@@ -20,6 +20,12 @@ CONFIGURE_ARGS+=	--with-loadavg --with-libwrap
 
 MAN5=		xinetd.conf.5
 MAN8=		xconv.8 xinetd.8 xinetd.log.8
+
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 500029
+EXTRA_PATCHES!= ${ECHO_CMD} ${PKGDIR}/files.5/patch-*
+.endif
 
 post-patch:
 	${FIND} ${WRKSRC}/libs/src -name Makefile.in | ${XARGS} \
@@ -35,4 +41,4 @@ post-install:
 	fi
 	@${STRIP_CMD} ${PREFIX}/sbin/xinetd
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
