@@ -243,6 +243,8 @@ share/scwm/themes/mwm.tar.gz
 share/scwm/themes/twm.tar.gz
 share/scwm/themes/win95.tar.gz
 share/scwm/themes/woven.tar.gz
+@exec install-info %D/info/scwm.info %D/info/dir
+@unexec install-info --delete %D/info/scwm.info %D/info/dir
 @dirrm lib/scwm/modules/app/scwm
 @dirrm lib/scwm/modules/app
 @dirrm lib/scwm/modules
