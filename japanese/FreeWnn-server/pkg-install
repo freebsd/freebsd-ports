@@ -58,7 +58,7 @@ PRE-INSTALL)
     if [ X"$id_wnn" != X ];then
 	exit 0
     elif [ X"$id_69" != X ]; then
-cat <<EOF
+	cat <<EOF
 
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 This system already has an account whose name is not 'wnn' and ID
@@ -97,14 +97,14 @@ POST-INSTALL)
 	wnnserver=${PKG_PREFIX}/bin/Wnn4/jserver
 	wnnname=Wnn
 	;;
-      cn-Wnn-4.2)
+      zh-Wnn-4.2)
 	sys_dirs="${PKG_PREFIX}/lib/wnn/zh_CN/dic/sys ${PKG_PREFIX}/lib/wnn/zh_TW/dic/sys"
 	usr_dirs="${PKG_PREFIX}/lib/wnn/zh_CN/dic/usr ${PKG_PREFIX}/lib/wnn/zh_TW/dic/usr"
 	wnntouch=${PKG_PREFIX}/bin/cWnn4/cwnntouch
 	wnnserver=${PKG_PREFIX}/bin/cWnn4/cserver
 	wnnname=cWnn
 	;;
-      kr-Wnn-4.2)
+      ko-Wnn-4.2)
 	sys_dirs="${PKG_PREFIX}/lib/wnn/ko_KR/dic/sys"
 	usr_dirs=${PKG_PREFIX}/lib/wnn/ko_KR/dic/usr
 	wnntouch=${PKG_PREFIX}/bin/kWnn4/kwnntouch
