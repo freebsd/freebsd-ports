@@ -217,11 +217,11 @@ share/examples/XmHTML-1.1.0/examples/test-pages/unclosed1.html
 lib/libXmHTML.a
 lib/libXmHTML.so
 lib/libXmHTML.so.1
-include/XmHTML.h
-include/XmHTMLP.h
-include/HTML.h
-include/Parser.h
-include/ParserP.h
+include/XmHTML/XmHTML.h
+include/XmHTML/XmHTMLP.h
+include/XmHTML/HTML.h
+include/XmHTML/Parser.h
+include/XmHTML/ParserP.h
 @dirrm share/examples/XmHTML-1.1.0/examples/test-pages
 @dirrm share/examples/XmHTML-1.1.0/examples
 @dirrm share/examples/XmHTML-1.1.0/book
@@ -229,3 +229,4 @@ include/ParserP.h
 @dirrm share/examples/XmHTML-1.1.0
 @dirrm share/doc/XmHTML-1.1.0/man
 @dirrm share/doc/XmHTML-1.1.0
+@dirrm include/XmHTML
