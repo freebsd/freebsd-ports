@@ -1,6 +1,6 @@
---- modules//mod_auth.c.orig	Sun Jun  7 16:17:57 1998
-+++ modules/mod_auth.c	Sun Jun  7 16:21:29 1998
-@@ -177,7 +177,7 @@
+--- modules/mod_auth.c.orig	Sat Oct 17 22:24:41 1998
++++ modules/mod_auth.c	Mon Dec 14 15:26:02 1998
+@@ -61,7 +61,7 @@
    /* Is this the proper behavior when timing out? */
    send_response_async(R_421,"Login Timeout (%d seconds): closing control connection.",
                        TimeoutLogin);
@@ -9,20 +9,32 @@
             (void*)0,NULL);
    remove_timer(TIMER_IDLE,ANY_MODULE);
    remove_timer(TIMER_NOXFER,ANY_MODULE);
-@@ -763,10 +763,10 @@
-   }
+@@ -763,13 +763,13 @@
+     resolve_anonymous_dirs(c->subset);
  
    if(c)
--    log_auth(LOG_NOTICE,"ANONYMOUS FTP login as '%s' from %s [%s]",
-+    log_auth(LOG_INFO,"ANONYMOUS FTP login as '%s' from %s [%s]",
-     origuser,session.c->remote_name,inet_ntoa(*session.c->remote_ipaddr));
+-    log_auth(LOG_NOTICE,"ANONYMOUS FTP login as '%s' from %s [%s] to %s:%i",
++    log_auth(LOG_INFO,"ANONYMOUS FTP login as '%s' from %s [%s] to %s:%i",
+       origuser,session.c->remote_name,
+       inet_ascii(p,session.c->remote_ipaddr),
+       inet_ascii(p,session.c->local_ipaddr),
+       session.c->local_port);
    else
--    log_auth(LOG_NOTICE,"FTP login as '%s' from %s [%s]",
-+    log_auth(LOG_INFO,"FTP login as '%s' from %s [%s]",
-     origuser,session.c->remote_name,inet_ntoa(*session.c->remote_ipaddr));
+-    log_auth(LOG_NOTICE,"FTP login as '%s' from %s [%s] to %s:%i",
++    log_auth(LOG_INFO,"FTP login as '%s' from %s [%s] to %s:%i",
+       origuser,session.c->remote_name,
+       inet_ascii(p,session.c->remote_ipaddr),
+       inet_ascii(p,session.c->local_ipaddr),
+@@ -1132,7 +1132,7 @@
+       send_response(R_530,"%s",
+                     sreplace(cmd->tmp_pool,maxstr,"%m",maxn,NULL));
  
-   session.user = pstrdup(permanent_pool,auth_map_uid(pw->pw_uid));
-@@ -987,7 +987,7 @@
+-      log_auth(LOG_NOTICE,"connection refused (max clients per host %d)",
++      log_auth(LOG_INFO,"connection refused (max clients per host %d)",
+                max);
+       end_login(0);
+     }
+@@ -1156,7 +1156,7 @@
        send_response(R_530,"%s",
                      sreplace(cmd->tmp_pool,maxstr,"%m",maxn,NULL));
  
@@ -31,3 +43,12 @@
                 max);
        end_login(0);
      }
+@@ -1243,7 +1243,7 @@
+ 
+     if(++auth_tries >= max) {
+       send_response(R_530,"Login incorrect");
+-      log_auth(LOG_NOTICE,"Maximum login attempts exceeded from %s [%s] to %s:%i",
++      log_auth(LOG_INFO,"Maximum login attempts exceeded from %s [%s] to %s:%i",
+                session.c->remote_name,
+                inet_ascii(cmd->tmp_pool,session.c->remote_ipaddr),
+ 	       inet_ascii(cmd->tmp_pool,session.c->local_ipaddr),
