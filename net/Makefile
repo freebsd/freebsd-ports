@@ -86,6 +86,7 @@
     SUBDIR += dnswalk
     SUBDIR += doc
     SUBDIR += domtools
+    SUBDIR += easysoap
     SUBDIR += echoping
     SUBDIR += ehnt
     SUBDIR += etherape
