@@ -357,6 +357,7 @@
     SUBDIR += p5-WWW-Babelfish
     SUBDIR += p5-WWW-IMDb
     SUBDIR += p5-WWW-Link
+    SUBDIR += p5-WWW-Mechanize
     SUBDIR += p5-WWW-Robot
     SUBDIR += p5-WWW-Search
     SUBDIR += p5-WWW-Search-AltaVista
