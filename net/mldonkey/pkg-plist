@@ -1,7 +1,6 @@
 bin/kill_mldonkey
 bin/mldonkey
 bin/mldonkey-real
-bin/mldonkey_previewer
 %%PORTDOCS%%share/doc/mldonkey/AUTHORS
 %%PORTDOCS%%share/doc/mldonkey/BUGS
 %%PORTDOCS%%share/doc/mldonkey/ChangeLog

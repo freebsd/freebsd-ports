@@ -6,13 +6,11 @@
 #
 
 PORTNAME=	mldonkey
-PORTVERSION=	2.02.0
-PORTREVISION=	1
+PORTVERSION=	2.04.r1
 CATEGORIES=	net
-MASTER_SITES=	http://ernie.eit.uni-kl.de/mldonkey/ \
-		http://savannah.nongnu.org/download/mldonkey/stable/
+MASTER_SITES=	http://savannah.nongnu.org/download/mldonkey/release-${PORTVERSION:S/.r/rc/}/
 PKGNAMESUFFIX=	-src
-DISTNAME=	${PORTNAME}-${PORTVERSION:C/.0$/-0/}.sources
+DISTNAME=	${PORTNAME}-${PORTVERSION:S/.r/rc/}.sources
 
 MAINTAINER=	holger@e-gitt.net
 COMMENT=	A OCAML client for eDonkey and Overnet peer-to-peer networks
@@ -20,18 +18,20 @@ COMMENT=	A OCAML client for eDonkey and Overnet peer-to-peer networks
 BUILD_DEPENDS=	ocamlc:${PORTSDIR}/lang/ocaml
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--disable-multinet
+CONFIGURE_ARGS=	--disable-multinet \
+		--enable-pthread
 WRKSRC=		${WRKDIR}/${PORTNAME}
 USE_GMAKE=	yes
 ALL_TARGET=	depend all
 
 .if defined(WITHOUT_GUI)
 # have no 'without-' flag
-CONFIGURE_ENV=	GTK_CONFIG=no
+CONFIGURE_ARGS+=	--disable-gui
 PLIST_SUB+=	GUI="@comment "
 .else
 PLIST_SUB+=	GUI=""
-BUILD_DEPENDS+=	lablgtk:${PORTSDIR}/x11-toolkits/ocaml-lablgtk
+BUILD_DEPENDS+=	lablgtk:${PORTSDIR}/x11-toolkits/ocaml-lablgtk \
+		${LOCALBASE}/lib/ocaml/jabbr.cma:${PORTSDIR}/net/ocaml-jabbr
 # we don't need lablgtk as RUN dependency, but we need gtk+glib
 USE_GNOMENG=	yes
 USE_GNOME=	gtk12
@@ -51,14 +51,16 @@ post-patch:
 
 do-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/mldonkey		${PREFIX}/bin/mldonkey-real
-	@${INSTALL_SCRIPT} ${WRKSRC}/distrib/mldonkey_previewer	${PREFIX}/bin
 	@${INSTALL_SCRIPT} ${FILESDIR}/kill_mldonkey	${PREFIX}/bin
 	@${INSTALL_SCRIPT} ${WRKDIR}/wrapper.sh		${PREFIX}/bin/mldonkey
 .ifndef(WITHOUT_GUI)
+	@${INSTALL_SCRIPT} ${WRKSRC}/distrib/mldonkey_previewer ${PREFIX}/bin
 	@${INSTALL_PROGRAM} ${WRKSRC}/mldonkey_guistarter	${PREFIX}/bin
 	@${INSTALL_PROGRAM} ${WRKSRC}/mldonkey_gui	${PREFIX}/bin
 	@${INSTALL_PROGRAM} ${WRKSRC}/mldonkey_gui2	${PREFIX}/bin
+	@${INSTALL_PROGRAM} ${WRKSRC}/mldonkey+gui	${PREFIX}/bin
 	@${INSTALL_PROGRAM} ${WRKSRC}/mlchat		${PREFIX}/bin
+	@${INSTALL_PROGRAM} ${WRKSRC}/mlim		${PREFIX}/bin
 .endif
 .ifndef(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
@@ -73,9 +75,9 @@ post-install:
 install-user: extract
 .if !defined(LANG)
 	@${ECHO_MSG} "Please call as:  make install-user LANG=<lang>"
-	@${ECHO_MSG} "with <lang> one of en,de,fr,fr.noaccents !"
+	@${ECHO_MSG} "with <lang> one of en,de,fr,fr.noaccents,sp !"
 .else
-	@${CP} ${WRKSRC}/i18n/gui_messages.ini.${LANG}\
+	@${CP} ${WRKSRC}/distrib/i18n/gui_messages.ini.${LANG}\
 		${HOME}/.mldonkey_gui_messages.ini
 .endif
 
