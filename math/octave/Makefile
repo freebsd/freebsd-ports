@@ -3,7 +3,7 @@
 # Date created:		28 June 1997
 # Whom:			chuckr@freebsd.org
 #
-# $Id: Makefile,v 1.10 1997/08/13 17:10:48 chuckr Exp $
+# $Id: Makefile,v 1.11 1997/10/15 23:20:44 max Exp $
 #
 
 DISTNAME=	octave-2.0.9
@@ -13,6 +13,8 @@ MASTER_SITES=	ftp://ftp.che.wisc.edu/pub/octave/
 MAINTAINER=	chuckr@FreeBSD.ORG
 
 RUN_DEPENDS=	gnuplot:${PORTSDIR}/math/gnuplot
+
+MANUAL_PACKAGE_BUILD=	"installs libreadline shared library"
 
 HAS_CONFIGURE=	yes
 CONFIGURE_ENV=	${SETENV} "INSTALL_DATA=$(INSTALL_DATA)" "INSTALL_PROGRAM=$(INSTALL_SCRIPT)"
