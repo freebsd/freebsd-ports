@@ -11,7 +11,7 @@ PORTNAME=	apache+ssl
 PORTVERSION=	${APACHE_VERSION}.${APACHE_SSL_VERSION}
 PORTREVISION=	1
 CATEGORIES=	www security
-MASTER_SITES=	http://www.apache.org/dist/ \
+MASTER_SITES=	http://www.apache.org/dist/httpd/ \
 		ftp://ftp.ox.ac.uk/pub/crypto/SSL/Apache-SSL/ \
 		ftp://src.doc.ic.ac.uk/packages/apache/dist/ \
 		ftp://ftp.gbnet.net/pub/apache/dist/ \
@@ -40,11 +40,8 @@ EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	ports@freebsd.org
 
-FORBIDDEN=	"Vulnerable to denial-of-service.  See" \
-		"http://httpd.apache.org/info/security_bulletin_20020617.txt"
-
-APACHE_VERSION=		1.3.12
-APACHE_SSL_VERSION=	1.40
+APACHE_VERSION=		1.3.26
+APACHE_SSL_VERSION=	1.48
 
 USE_OPENSSL=	YES
 USE_PERL5=	YES

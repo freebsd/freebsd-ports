@@ -1,11 +1,15 @@
---- SSLpatch.orig	Thu Sep  9 14:40:45 1999
-+++ SSLpatch	Sun Sep 26 20:21:09 1999
-@@ -95,7 +95,7 @@
+--- SSLpatch.orig	Thu Jun 20 13:00:27 2002
++++ SSLpatch	Sun Sep 15 14:18:42 2002
+@@ -60,9 +60,9 @@
+ +SSL_BASE=/usr/local/ssl
  +SSL_INCLUDE= -I$(SSL_BASE)/include
  +SSL_CFLAGS= -DAPACHE_SSL
- +SSL_LIB_DIR= $(SSL_BASE)
+-+SSL_LIB_DIR=/usr/local/ssl/lib
 -+SSL_LIBS= -L$(SSL_LIB_DIR) -lssl -lcrypto
+-+SSL_APP_DIR=/usr/local/ssl/bin
+++SSL_LIB_DIR=$(SSL_BASE)
 ++SSL_LIBS= -L$(SSL_LIB_DIR) -lssl -lcrypto $(EXTRA_SSL_LIBS)
- +SSL_APP_DIR= $(SSL_BASE)/apps
- +SSL_APP=/usr/home/ben/work/openssl/apps/openssl
+++SSL_APP_DIR=$(SSL_BASE)/apps
+ +SSL_APP=/usr/local/ssl/bin/openssl
  +
+  ################################################################
