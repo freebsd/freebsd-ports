@@ -48,6 +48,17 @@ share/sgml/docbook/dsssl/modular/common/dbl1sk.ent
 share/sgml/docbook/dsssl/modular/common/dbl1sv.dsl
 share/sgml/docbook/dsssl/modular/common/dbl1sv.ent
 share/sgml/docbook/dsssl/modular/common/dbtable.dsl
+share/sgml/docbook/dsssl/modular/images/callouts/ChangeLog
+share/sgml/docbook/dsssl/modular/images/callouts/1.gif
+share/sgml/docbook/dsssl/modular/images/callouts/10.gif
+share/sgml/docbook/dsssl/modular/images/callouts/2.gif
+share/sgml/docbook/dsssl/modular/images/callouts/3.gif
+share/sgml/docbook/dsssl/modular/images/callouts/4.gif
+share/sgml/docbook/dsssl/modular/images/callouts/5.gif
+share/sgml/docbook/dsssl/modular/images/callouts/6.gif
+share/sgml/docbook/dsssl/modular/images/callouts/7.gif
+share/sgml/docbook/dsssl/modular/images/callouts/8.gif
+share/sgml/docbook/dsssl/modular/images/callouts/9.gif
 share/sgml/docbook/dsssl/modular/lib/ChangeLog
 share/sgml/docbook/dsssl/modular/lib/Oldversion.sgm
 share/sgml/docbook/dsssl/modular/lib/README
@@ -197,8 +208,12 @@ share/sgml/docbook/dsssl/modular/doc/html/always-format-variablelist-as-table.ht
 share/sgml/docbook/dsssl/modular/doc/html/annotate-toc.html
 share/sgml/docbook/dsssl/modular/doc/html/biblio-citation-check.html
 share/sgml/docbook/dsssl/modular/doc/html/biblio-number.html
+share/sgml/docbook/dsssl/modular/doc/html/biblio-xref-title.html
 share/sgml/docbook/dsssl/modular/doc/html/body-attr.html
 share/sgml/docbook/dsssl/modular/doc/html/callout-default-col.html
+share/sgml/docbook/dsssl/modular/doc/html/callout-graphics-number-limit.html
+share/sgml/docbook/dsssl/modular/doc/html/callout-graphics-path.html
+share/sgml/docbook/dsssl/modular/doc/html/callout-graphics.html
 share/sgml/docbook/dsssl/modular/doc/html/cals-table-class.html
 share/sgml/docbook/dsssl/modular/doc/html/chapter-autolabel.html
 share/sgml/docbook/dsssl/modular/doc/html/content-title-end-punct.html
@@ -290,22 +305,23 @@ share/sgml/docbook/dsssl/modular/doc/html/olink-sysid.html
 share/sgml/docbook/dsssl/modular/doc/html/othername-in-middle.html
 share/sgml/docbook/dsssl/modular/doc/html/output-dir.html
 share/sgml/docbook/dsssl/modular/doc/html/qanda-inherit-numeration.html
-share/sgml/docbook/dsssl/modular/doc/html/r1063.htm
-share/sgml/docbook/dsssl/modular/doc/html/r1133.htm
-share/sgml/docbook/dsssl/modular/doc/html/r1191.htm
-share/sgml/docbook/dsssl/modular/doc/html/r1275.htm
-share/sgml/docbook/dsssl/modular/doc/html/r1353.htm
-share/sgml/docbook/dsssl/modular/doc/html/r1664.htm
-share/sgml/docbook/dsssl/modular/doc/html/r1751.htm
+share/sgml/docbook/dsssl/modular/doc/html/r1047.htm
+share/sgml/docbook/dsssl/modular/doc/html/r1115.htm
+share/sgml/docbook/dsssl/modular/doc/html/r1185.htm
+share/sgml/docbook/dsssl/modular/doc/html/r1260.htm
+share/sgml/docbook/dsssl/modular/doc/html/r1344.htm
+share/sgml/docbook/dsssl/modular/doc/html/r1422.htm
+share/sgml/docbook/dsssl/modular/doc/html/r1733.htm
 share/sgml/docbook/dsssl/modular/doc/html/r1820.htm
-share/sgml/docbook/dsssl/modular/doc/html/r1990.htm
+share/sgml/docbook/dsssl/modular/doc/html/r1889.htm
+share/sgml/docbook/dsssl/modular/doc/html/r2059.htm
 share/sgml/docbook/dsssl/modular/doc/html/r22.htm
 share/sgml/docbook/dsssl/modular/doc/html/r228.htm
 share/sgml/docbook/dsssl/modular/doc/html/r396.htm
 share/sgml/docbook/dsssl/modular/doc/html/r463.htm
-share/sgml/docbook/dsssl/modular/doc/html/r534.htm
-share/sgml/docbook/dsssl/modular/doc/html/r624.htm
-share/sgml/docbook/dsssl/modular/doc/html/r995.htm
+share/sgml/docbook/dsssl/modular/doc/html/r515.htm
+share/sgml/docbook/dsssl/modular/doc/html/r586.htm
+share/sgml/docbook/dsssl/modular/doc/html/r676.htm
 share/sgml/docbook/dsssl/modular/doc/html/refentry-generate-name.html
 share/sgml/docbook/dsssl/modular/doc/html/refentry-xref-italic.html
 share/sgml/docbook/dsssl/modular/doc/html/refentry-xref-manvolnum.html
@@ -435,6 +451,7 @@ share/sgml/docbook/dsssl/modular/doc/print/article-title-quadding.html
 share/sgml/docbook/dsssl/modular/doc/print/bf-size.html
 share/sgml/docbook/dsssl/modular/doc/print/biblio-citation-check.html
 share/sgml/docbook/dsssl/modular/doc/print/biblio-number.html
+share/sgml/docbook/dsssl/modular/doc/print/biblio-xref-title.html
 share/sgml/docbook/dsssl/modular/doc/print/block-sep.html
 share/sgml/docbook/dsssl/modular/doc/print/block-start-indent.html
 share/sgml/docbook/dsssl/modular/doc/print/body-font-family.html
@@ -545,20 +562,20 @@ share/sgml/docbook/dsssl/modular/doc/print/qanda-inherit-numeration.html
 share/sgml/docbook/dsssl/modular/doc/print/r1203.htm
 share/sgml/docbook/dsssl/modular/doc/print/r1271.htm
 share/sgml/docbook/dsssl/modular/doc/print/r1315.htm
-share/sgml/docbook/dsssl/modular/doc/print/r1667.htm
-share/sgml/docbook/dsssl/modular/doc/print/r1734.htm
+share/sgml/docbook/dsssl/modular/doc/print/r1683.htm
+share/sgml/docbook/dsssl/modular/doc/print/r1750.htm
 share/sgml/docbook/dsssl/modular/doc/print/r177.htm
-share/sgml/docbook/dsssl/modular/doc/print/r1896.htm
-share/sgml/docbook/dsssl/modular/doc/print/r1954.htm
-share/sgml/docbook/dsssl/modular/doc/print/r1973.htm
-share/sgml/docbook/dsssl/modular/doc/print/r2007.htm
-share/sgml/docbook/dsssl/modular/doc/print/r2085.htm
-share/sgml/docbook/dsssl/modular/doc/print/r2120.htm
-share/sgml/docbook/dsssl/modular/doc/print/r2193.htm
+share/sgml/docbook/dsssl/modular/doc/print/r1912.htm
+share/sgml/docbook/dsssl/modular/doc/print/r1987.htm
+share/sgml/docbook/dsssl/modular/doc/print/r2006.htm
+share/sgml/docbook/dsssl/modular/doc/print/r2040.htm
+share/sgml/docbook/dsssl/modular/doc/print/r2118.htm
+share/sgml/docbook/dsssl/modular/doc/print/r2153.htm
 share/sgml/docbook/dsssl/modular/doc/print/r22.htm
-share/sgml/docbook/dsssl/modular/doc/print/r2297.htm
-share/sgml/docbook/dsssl/modular/doc/print/r2352.htm
-share/sgml/docbook/dsssl/modular/doc/print/r2543.htm
+share/sgml/docbook/dsssl/modular/doc/print/r2226.htm
+share/sgml/docbook/dsssl/modular/doc/print/r2330.htm
+share/sgml/docbook/dsssl/modular/doc/print/r2385.htm
+share/sgml/docbook/dsssl/modular/doc/print/r2576.htm
 share/sgml/docbook/dsssl/modular/doc/print/r329.htm
 share/sgml/docbook/dsssl/modular/doc/print/r471.htm
 share/sgml/docbook/dsssl/modular/doc/print/r736.htm
@@ -586,6 +603,7 @@ share/sgml/docbook/dsssl/modular/doc/print/tex-backend.html
 share/sgml/docbook/dsssl/modular/doc/print/text-width.html
 share/sgml/docbook/dsssl/modular/doc/print/title-font-family.html
 share/sgml/docbook/dsssl/modular/doc/print/titlepage-in-info-order.html
+share/sgml/docbook/dsssl/modular/doc/print/titlepage-n-columns.html
 share/sgml/docbook/dsssl/modular/doc/print/top-margin.html
 share/sgml/docbook/dsssl/modular/doc/print/two-side.html
 share/sgml/docbook/dsssl/modular/doc/print/verbatim-default-width.html
@@ -613,6 +631,7 @@ share/sgml/docbook/dsssl/modular/test/refentry.sgm
 share/sgml/docbook/dsssl/modular/test/struct.sgm
 share/sgml/docbook/dsssl/modular/test/tennis.jpg
 share/sgml/docbook/dsssl/modular/test/tennis.mpeg
+share/sgml/docbook/dsssl/modular/test/xarticle.dsl
 share/sgml/docbook/dsssl/modular/test/xarticle.sgm
 share/sgml/docbook/dsssl/modular/test/xbadtag.sgm
 share/sgml/docbook/dsssl/modular/test/xbiblio2.sgm
@@ -708,6 +727,7 @@ share/sgml/docbook/dsssl/modular/frames/navbar.htm
 @dirrm share/sgml/docbook/dsssl/modular/print
 @dirrm share/sgml/docbook/dsssl/modular/olink
 @dirrm share/sgml/docbook/dsssl/modular/lib
+@dirrm share/sgml/docbook/dsssl/modular/images/callouts
 @dirrm share/sgml/docbook/dsssl/modular/images
 @dirrm share/sgml/docbook/dsssl/modular/html
 @dirrm share/sgml/docbook/dsssl/modular/frames
