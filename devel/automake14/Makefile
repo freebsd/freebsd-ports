@@ -48,7 +48,7 @@ pre-configure:
 	@${REINPLACE_CMD} -i -e "s,%%X11BASE%%,${X11BASE}," \
 		${WRKSRC}/aclocal.in
 
-pre-su-install:
+pre-install:
 	${RM} -fr ${PREFIX}/share/automake${BUILD_VERSION}
 	${MKDIR} ${PREFIX}/share/automake${BUILD_VERSION}
 	${MKDIR} ${PREFIX}/share/aclocal${BUILD_VERSION}
