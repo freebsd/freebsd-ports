@@ -1,3 +1,14 @@
 bin/quake-x11
+bin/quake-sdl
 bin/qw-client-x11
+bin/qw-client-sdl
 bin/qw-server
+share/doc/quakeforge/README.source
+share/doc/quakeforge/gl_notes.txt
+share/doc/quakeforge/quake_manual.txt
+share/doc/quakeforge/qw_exit_screen.txt
+share/doc/quakeforge/qw_protocol_notes.txt
+share/doc/quakeforge/solaris_notes.txt
+share/doc/quakeforge/tech_info.txt
+share/doc/quakeforge/winquake_notes.txt
+@dirrm share/doc/quakeforge
