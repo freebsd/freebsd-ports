@@ -4730,6 +4730,7 @@ mscompress	ports/archivers/mscompress
 msdosfs		src/sys/fs/msdosfs
 msend		ports/net/msend
 mserver		ports/comms/mserver
+msgconvert	ports/mail/msgconvert
 msgs		src/usr.bin/msgs
 mshell		ports/misc/mshell
 msp430-binutils		ports/devel/msp430-binutils
