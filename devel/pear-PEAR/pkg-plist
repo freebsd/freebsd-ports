@@ -1,3 +1,6 @@
+@exec mv %D/lib/php/PEAR %D/lib/php/PEAR.dist
+@exec mv %D/lib/php/PEAR.php %D/lib/php/PEAR.php.dist
+@exec mv %D/lib/php/System.php %D/lib/php/System.php.dist
 %%PEARDIR%%/package.dtd
 %%PEARDIR%%/template.spec
 %%PEARDIR%%/PEAR.php
