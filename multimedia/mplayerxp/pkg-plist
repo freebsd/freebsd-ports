@@ -1,4 +1,4 @@
-%%FIBMAP%%bin/fibmap_mplayerxp
+%%DVD%%bin/fibmap_mplayerxp
 bin/mplayerxp
 etc/mplayerxp/codecs.conf
 include/vidix/fourcc.h

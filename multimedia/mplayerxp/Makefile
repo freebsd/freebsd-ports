@@ -42,14 +42,6 @@ DIRS_TO_CREATE= etc/mplayerxp \
 
 .include <bsd.port.pre.mk>
 
-# XXX - fibmap_mplayerxp is not compiled in -CURRENT
-# this issue has to be investigated
-.if ${OSVERSION} >= 500000
-PLIST_SUB+=	FIBMAP="@comment "
-.else
-PLIST_SUB+=	FIBMAP=""
-.endif
-
 # add this after <bsd.port.pre.mk> so that we inherit /etc/make.conf
 CONFIGURE_ARGS+= --with-extralibdir=${LOCALBASE}/lib \
 		--with-extraincdir=${LOCALBASE}/include \
@@ -135,6 +127,9 @@ CONFIGURE_ARGS+=	--disable-cdparanoia
 LIB_DEPENDS+=	dvdread.3:${PORTSDIR}/multimedia/libdvdread
 
 CONFIGURE_ARGS+=	--with-csslibdir=${LOCALBASE}/lib
+PLIST_SUB+=	DVD=''
+.else
+PLIST_SUB+=	DVD='@comment '
 .endif
 # xine libdvdnav
 .if defined(WITH_LIBDVDNAV) && !defined(WITHOUT_LIBDVDNAV)
