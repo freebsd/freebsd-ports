@@ -1,14 +1,19 @@
 bin/dbmmanage
 bin/htdigest
 bin/htpasswd
+@unexec if cmp -s %D/etc/apache/access.conf %D/etc/apache/access.conf.default; then rm -f %D/etc/apache/access.conf; fi
 etc/apache/access.conf.default
 @exec [ ! -f %B/access.conf ] && cp %B/%f %B/access.conf
+@unexec if cmp -s %D/etc/apache/httpd.conf %D/etc/apache/httpd.conf.default; then rm -f %D/etc/apache/httpd.conf; fi
 etc/apache/httpd.conf.default
 @exec [ ! -f %B/httpd.conf ] && cp %B/%f %B/httpd.conf
+@unexec if cmp -s %D/etc/apache/magic %D/etc/apache/magic.default; then rm -f %D/etc/apache/magic; fi
 etc/apache/magic.default
 @exec [ ! -f %B/magic ] && cp %B/%f %B/magic
+@unexec if cmp -s %D/etc/apache/mime.types %D/etc/apache/mime.types.default; then rm -f %D/etc/apache/mime.types; fi
 etc/apache/mime.types.default
 @exec [ ! -f %B/mime.types ] && cp %B/%f %B/mime.types
+@unexec if cmp -s %D/etc/apache/srm.conf %D/etc/apache/srm.conf.default; then rm -f %D/etc/apache/srm.conf; fi
 etc/apache/srm.conf.default
 @exec [ ! -f %B/srm.conf ] && cp %B/%f %B/srm.conf
 etc/rc.d/apache.sh
@@ -341,6 +346,8 @@ www/icons/uuencoded.gif
 www/icons/world1.gif
 www/icons/world2.gif
 @exec mkdir -p %D/www/proxy
+@unexec if [ -L %D/www/cgi-bin ]; then rm -f %D/www/cgi-bin; fi
+@unexec if [ -L %D/www/data ]; then rm -f %D/www/data; fi
 @dirrm etc/apache
 @dirrm include/apache/xml
 @dirrm include/apache
