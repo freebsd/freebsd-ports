@@ -6,7 +6,7 @@
 #
 
 PORTNAME=		WiKicker
-PORTVERSION=		0.21
+PORTVERSION=		0.22
 CATEGORIES+=		japanese www perl5
 MASTER_SITES=		\
 			http://www.naney.org/comp/distrib/WiKicker/archive/
@@ -31,7 +31,8 @@ RUN_DEPENDS+=		\
 			${SITE_PERL}/${PERL_ARCH}/Storable.pm:${PORTSDIR}/devel/p5-Storable \
 			${SITE_PERL}/${PERL_ARCH}/Jcode.pm:${PORTSDIR}/japanese/p5-Jcode \
 			${SITE_PERL}/LWP.pm:${PORTSDIR}/www/p5-libwww \
-			${SITE_PERL}/URI.pm:${PORTSDIR}/net/p5-URI
+			${SITE_PERL}/URI.pm:${PORTSDIR}/net/p5-URI \
+			${SITE_PERL}/Log/Log4perl.pm:${PORTSDIR}/devel/p5-Log-Log4perl
 
 .include <bsd.port.pre.mk>
 
@@ -42,8 +43,15 @@ BUILD_DEPENDS+=		${SITE_PERL}/Locale/Maketext.pm:${PORTSDIR}/devel/p5-Locale-Mak
 .if defined(WITH_WIKICKER_RECENTLOG)
 RUN_DEPENDS+=		${SITE_PERL}/${PERL_ARCH}/IPC/ShareLite.pm:${PORTSDIR}/devel/p5-IPC-ShareLite
 .endif
+# DiKicker needed
+.if defined(WITH_WIKICKER_DB_FILE_LOCK)
+RUN_DEPENDS+=		${SITE_PERL}/DB_File/Lock.pm:${PORTSDIR}/devel/p5-DB_File-Lock
+.endif
 .if !defined(WITHOUT_WIKICKER_MEMCACHED)
-RUN_DEPENDS+=		memcached:${PORTSDIR}/databases/memcached
+.if ${PERL_LEVEL} < 500600
+IGNORE=	requires Perl 5.6 or newer to run. Either install new Perl or define WITHOUT_WIKICKER_MEMCACHED
+.endif
+RUN_DEPENDS+=		${SITE_PERL}/Cache/Memcached.pm:${PORTSDIR}/databases/p5-Cache-Memcached
 .endif
 
 PERL_CONFIGURE=		yes
@@ -61,7 +69,7 @@ post-install:
 	@${ECHO_MSG} "============================================================="
 
 	@${MKDIR} ${DOCSDIR}
-.for FILE in AUTHORS ChangeLog MANIFEST.SKIP MANIFEST NEWS README THANKS
+.for FILE in AUTHORS ChangeLog NEWS README THANKS
 	${INSTALL_DATA} ${WRKSRC}/${FILE} ${DOCSDIR}
 .endfor
 	@cd ${DOCSDIR} && ${FIND} . -type f -o -type l | ${SED} -e 's,^\.,${DOCSDIR:S|${LOCALBASE}/||},' >>${TMPPLIST}
