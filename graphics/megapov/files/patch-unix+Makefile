@@ -1,0 +1,74 @@
+--- unix/Makefile.orig	Sun Dec 29 19:59:23 2002
++++ unix/Makefile	Sun Jul 27 21:02:31 2003
+@@ -1,4 +1,4 @@
+-##############################################################################
++#############################################################################
+ #
+ #  Makefile for MegaPOV 1.0 - Linux version
+ #
+@@ -73,14 +73,14 @@
+ builddir = $(rootdir)/build_unix
+ testdir = $(rootdir)/test
+ 
+-prefix = /usr/local
++prefix = %%PREFIX%%
+ sysconfdir = $(prefix)/etc
+-installdir = /usr/local/bin
++installdir = %%PREFIX%%/bin
+ 
+-CC = gcc
+-CPP = gcc -E
+-CXX = g++
+-CXXCPP = g++ -E
++CC = %%CC%%
++CPP = %%CC%% -E
++CXX = %%CXX%%
++CXXCPP = %%CXX%% -E
+ PACKAGE = megapov
+ VERSION = 3.50c
+ 
+@@ -415,9 +415,9 @@
+ 	-DHAVE_LIBVGA=1 \
+ 	-DHAVE_LIBVGAGL=1
+ 
+-LDFLAGS_DISP =  -I/usr/X11R6/include -I/usr/local/include -L/usr/X11R6/lib -L/usr/local/lib $(STATIC)
++LDFLAGS_DISP =  -I%%X11BASE%%/include -I%%LOCALBASE%%/include -L%%X11BASE%%/lib -L%%LOCALBASE%%/lib $(STATIC)
+ 
+-LIBS_DISP = -ltiff -ljpeg -lpng -lz -lm -lvgagl -lvga -lX11 -ldl
++LIBS_DISP = -ltiff -ljpeg -lpng -lz -lm -lvgagl -lvga -lX11
+ 
+ # ---- without X11 and VGALib support ----
+ 
+@@ -425,7 +425,7 @@
+ 	-DX_DISPLAY_MISSING=1
+ 
+ 
+-LDFLAGS_NODISP =  -I/usr/local/include -L/usr/local/lib $(STATIC)
++LDFLAGS_NODISP =  -I%%LOCALBASE%%/include -L%%LOCALBASE%%/lib $(STATIC)
+ 
+ LIBS_NODISP = -ltiff -ljpeg -lpng -lz -lm
+ 
+@@ -433,12 +433,12 @@
+ 
+ 
+ 
+-INCLUDES = -I$(srcdir) -I$(sys_srcdir) -I$(patch_srcdir)
++INCLUDES = -I$(srcdir) -I$(sys_srcdir) -I$(patch_srcdir) -I%%X11BASE%%/include -I%%LOCALBASE%%/include
+ 
+ povray_LDADD = $(LDADD)
+ povray_LDFLAGS =
+ 
+-CPPFLAGS = -O3 -Wunused-variable
++CPPFLAGS = %%CXXFLAGS%% 
+ NOMULTICHAR = `if [ "X$(CC)" = "Xgcc" ]; then echo "-Wno-multichar"; fi `
+ CXXFLAGS = $(NOMULTICHAR)
+ CXXCOMPILE_DISP = $(CXX) $(DEFS) $(DEFS_ADD_DISP) $(INCLUDES) $(CPPFLAGS) $(CXXFLAGS)
+@@ -448,7 +448,7 @@
+ CXXLINK_NODISP = $(CXXLD) $(CXXFLAGS) $(LDFLAGS_NODISP) -o $@
+ 
+ 
+-CFLAGS = -g -O3
++CFLAGS = %%CFLAGS%%
+ COMPILE_DISP = $(CC) $(DEFS) $(DEFS_ADD_DISP) $(INCLUDES) $(CPPFLAGS) $(CFLAGS)
+ COMPILE_NODISP = $(CC) $(DEFS) $(DEFS_ADD_NODISP) $(INCLUDES) $(CPPFLAGS) $(CFLAGS)
+ CCLD = $(CC)

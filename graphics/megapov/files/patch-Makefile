@@ -1,0 +1,32 @@
+--- Makefile.org	Sat Jul 26 13:29:28 2003
++++ Makefile	Sat Jul 26 13:30:01 2003
+@@ -15,8 +15,8 @@
+ ##############################################################################
+ 
+ 
+-libdir = /usr/local/share/megapov
+-docdir = /usr/local/share/doc/megapov-1.0
++libdir = ${PREFIX}/share/megapov
++docdir = ${PREFIX}/share/doc/megapov-1.0
+ 
+ #
+ # make stuff
+@@ -32,14 +32,14 @@
+ 
+ install:
+ 	cd unix && $(MAKE) install
+-	@if test ! -d /usr/local/share; \
+-	then mkdir /usr/local/share; \
++	@if test ! -d ${PREFIX}/share; \
++	then mkdir ${PREFIX}/share; \
+ 	fi;
+ 	@if test ! -d $(libdir); \
+ 	then mkdir $(libdir); \
+ 	fi;
+-	@if test ! -d /usr/local/share/doc; \
+-	then mkdir /usr/local/share/doc; \
++	@if test ! -d ${PREFIX}/share/doc; \
++	then mkdir ${PREFIX}/share/doc; \
+ 	fi;
+ 	@if test ! -d $(docdir); \
+ 	then mkdir $(docdir); \

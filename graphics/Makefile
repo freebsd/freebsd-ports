@@ -217,6 +217,7 @@
     SUBDIR += linux_mesa3
     SUBDIR += lodju
     SUBDIR += maverik
+    SUBDIR += megapov
     SUBDIR += mesagl
     SUBDIR += meshviewer
     SUBDIR += metapixel
