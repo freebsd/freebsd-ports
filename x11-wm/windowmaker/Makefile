@@ -50,6 +50,10 @@ MAN1=		geticonset.1x getstyle.1x seticons.1x setstyle.1x wdwrite.1x \
 
 LINGUAS!=	/bin/cat ${FILESDIR}/LINGUAS
 
+.if defined(WITH_XKB_STATUS)
+CONFIGURE_ARGS+=	--enable-modelock       
+.endif
+
 .if defined(HAVE_GNOME)
 CONFIGURE_ARGS+=	--enable-gnome
 .endif
