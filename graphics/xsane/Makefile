@@ -40,7 +40,7 @@ CONFIGURE_ARGS+=	--disable-gimp
 USE_GNOME=	gtk20
 .else
 USE_GNOME=	gtk12
-CONFIGURE_ARGS= --disable-gtk2
+CONFIGURE_ARGS+= --disable-gtk2
 .endif
 
 pre-everything::
