@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	xpdf
-PORTVERSION=	1.01
+PORTVERSION=	2.00
 CATEGORIES=	graphics print
 MASTER_SITES=	ftp://ftp.foolabs.com/pub/xpdf/ \
 		${MASTER_SITE_TEX_CTAN}
@@ -18,13 +18,14 @@ BUILD_DEPENDS=	freetype-config:${PORTSDIR}/print/freetype2
 LIB_DEPENDS=	t1.4:${PORTSDIR}/devel/t1lib \
 		freetype.9:${PORTSDIR}/print/freetype2
 
-USE_GMAKE=	yes
 USE_X_PREFIX=	yes
-USE_XPM=	yes
+USE_MOTIF=	yes
+
+USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
-CONFIGURE_ARGS=	--with-gzip --enable-opi \
+CONFIGURE_ARGS=	--with-gzip --enable-opi --with-x \
 		--with-t1-library="${LOCALBASE}/lib" \
 		--with-t1-includes="${LOCALBASE}/include" \
 		--with-freetype2-library="${LOCALBASE}/lib" \
@@ -41,5 +42,13 @@ MAN1=		pdffonts.1 \
 		pdftotext.1 \
 		xpdf.1
 MAN5=		xpdfrc.5
+
+post-install:
+.if !defined(NOPORTDOCS)
+	@${MKDIR} ${DOCSDIR}
+.for file in ANNOUNCE CHANGES INSTALL README misc/hello.pdf
+	${INSTALL_DATA} ${WRKSRC}/${file} ${DOCSDIR}
+.endfor
+.endif
 
 .include <bsd.port.mk>
