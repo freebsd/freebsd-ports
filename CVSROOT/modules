@@ -913,7 +913,6 @@ cdbakeoven	ports/sysutils/cdbakeoven
 cdbkup		ports/sysutils/cdbkup
 cdce		ports/comms/cdce
 cdcl		ports/science/cdcl
-cdcl-gtk	ports/science/cdcl-gtk
 cdecl		ports/devel/cdecl
 cdf		ports/sysutils/cdf
 cdialog		ports/devel/cdialog
@@ -9845,7 +9844,6 @@ ruby-dbd_sqlite	ports/databases/ruby-dbd_sqlite
 ruby-dbdbd	ports/databases/ruby-dbdbd
 ruby-dbi	ports/databases/ruby-dbi
 ruby-dcl	ports/science/ruby-dcl
-ruby-dcl-gtk	ports/science/ruby-dcl-gtk
 ruby-dialogs	ports/devel/ruby-dialogs
 ruby-dict	ports/net/ruby-dict
 ruby-diff	ports/textproc/ruby-diff
