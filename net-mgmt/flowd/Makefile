@@ -22,6 +22,7 @@ MAN8=		flowd.8 flowd-reader.8
 MAN5=		flowd.conf.5
 PORTDOCS=	README INSTALL
 FLOWD_USER?=	_flowd
+PKGDEINSTALL=	${WRKDIR}/pkg-deinstall
 
 .if defined(WITH_PERL)
 USE_PERL5=	yes
@@ -54,8 +55,8 @@ pre-extract:
 .endif
 
 post-patch:
-	@${REINPLACE_CMD} -e "s;%%FLOWD_USER%%;${FLOWD_USER};g" \
-		${PKGDEINSTALL}
+	@${SED} -e "s;%%FLOWD_USER%%;${FLOWD_USER};g" \
+		${.CURDIR}/pkg-deinstall > ${PKGDEINSTALL}
 	@${REINPLACE_CMD} -e "s;%%FLOWD_USER%%;${FLOWD_USER};g" \
 		${WRKSRC}/flowd.h
 
