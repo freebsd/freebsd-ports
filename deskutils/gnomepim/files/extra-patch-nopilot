@@ -1,0 +1,26 @@
+--- configure.orig	Fri Jun  2 12:19:04 2000
++++ configure	Fri Jun  2 12:19:38 2000
+@@ -3629,23 +3629,7 @@
+ 
+ 	echo $ac_n "checking for gnome-pilot environment""... $ac_c" 1>&6
+ echo "configure:3632: checking for gnome-pilot environment" >&5
+-if eval "test \"`echo '$''{'gnome_cv_pilot_found'+set}'`\" = set"; then
+-  echo $ac_n "(cached) $ac_c" 1>&6
+-else
+-  
+-		if test "x$GNOME_CONFIG" = "xno"; then
+ 			gnome_cv_pilot_found=no
+-		else
+-			# gnome-config doesn't return a useful error status,
+-			# so we check if it outputs anything to stderr
+-			if test "x`$GNOME_CONFIG gpilot 2>&1 > /dev/null`" = "x"; then
+-				gnome_cv_pilot_found=yes
+-			else
+-				gnome_cv_pilot_found=no
+-			fi
+-		fi
+-	
+-fi
+ 
+ echo "$ac_t""$gnome_cv_pilot_found" 1>&6
+ 	
