@@ -165,6 +165,7 @@
     SUBDIR += pib
     SUBDIR += pkg_remove
     SUBDIR += pkg_tree
+    SUBDIR += pkgview
     SUBDIR += pkill
     SUBDIR += pmap
     SUBDIR += portupgrade
