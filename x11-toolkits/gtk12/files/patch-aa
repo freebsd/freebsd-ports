@@ -19,22 +19,13 @@
  
  .texi.dvi:
  	TEXINPUTS=$(srcdir):$$TEXINPUTS \
---- configure.orig	Sun Dec 14 15:40:40 1997
-+++ configure	Mon Dec 15 11:19:00 1997
-@@ -584,6 +584,7 @@
+--- configure.orig	Sun Jan  4 01:16:42 1998
++++ configure	Mon Jan  5 23:09:23 1998
+@@ -590,6 +590,7 @@
  # AFS /usr/afsws/bin/install, which mishandles nonexistent args
  # SVR4 /usr/ucb/install, which tries to use the nonexistent group "staff"
  # ./install, which can be erroneously created by make from ./install.sh.
 +INSTALL="/usr/bin/install -c"
  echo $ac_n "checking for a BSD compatible install""... $ac_c" 1>&6
- echo "configure:589: checking for a BSD compatible install" >&5
+ echo "configure:595: checking for a BSD compatible install" >&5
  if test -z "$INSTALL"; then
-@@ -2989,7 +2990,7 @@
-   echo "$ac_t""$need_x_locale" 1>&6
- fi
- if test $need_x_locale = yes; then
--  CFLAGS="$CFLAGS -DX_LOCALE"
-+  CFLAGS="$CFLAGS"
- fi
- 
- # Checks for header files.
