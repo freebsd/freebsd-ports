@@ -9,14 +9,14 @@
  #endif
  
  #define BYTE_ORD_24_RGB 0
---- gdk_imlib/gdk_imlib_private.h.orig	Wed Dec 16 11:14:01 1998
-+++ gdk_imlib/gdk_imlib_private.h	Thu Dec 24 06:01:57 1998
-@@ -57,7 +57,7 @@
- #include <tiffio.h>
- #endif
- #ifdef HAVE_LIBGIF
+--- gdk_imlib/io-gif.c.orig	Wed Jan 13 05:56:51 1999
++++ gdk_imlib/io-gif.c	Thu Jan 14 18:12:05 1999
+@@ -8,7 +8,7 @@
+ 	return NULL;
+ }
+ #else
 -#include <gif_lib.h>
 +#include <giflib/gif_lib.h>
- #endif
  
- #define BYTE_ORD_24_RGB 0
+ unsigned char      *
+ loader_gif(FILE *f, int *w, int *h, int *t)

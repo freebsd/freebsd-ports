@@ -1,15 +1,35 @@
---- configure.orig	Wed Dec 16 11:14:28 1998
-+++ configure	Sun Jan  3 15:06:35 1999
-@@ -1711,143 +1711,6 @@
-   rm -f conf.gtktest
+--- configure.orig	Thu Jan 14 17:51:21 1999
++++ configure	Thu Jan 14 17:56:31 1999
+@@ -1725,8 +1725,8 @@
+ echo "configure:1726: checking If dynamic linking works on this system" >&5
+   oLIBS="$LIBS"
+   oCFLAGS="$CFLAGS"
+-  LIBS="$LIBS `glib-config --libs gmodule`"
+-  CFLAGS="$CFLAGS `glib-config --cflags gmodule`"
++  LIBS="$LIBS `glib11d-config --libs gmodule`"
++  CFLAGS="$CFLAGS `glib11d-config --cflags gmodule`"
+   if test "$cross_compiling" = yes; then
+     { echo "configure: error: can not run test program while cross compiling" 1>&2; exit 1; }
+ else
+@@ -1763,8 +1763,8 @@
+ #define USE_GMODULE 1
+ EOF
  
- 
--
--
+-   GMODULE_LIBS="`glib-config --libs gmodule`"
+-   GMODULE_FLAGS="`glib-config --cflags gmodule`"
++   GMODULE_LIBS="`glib11d-config --libs gmodule`"
++   GMODULE_FLAGS="`glib11d-config --cflags gmodule`"
+    
+    
+    echo "$ac_t""yes" 1>&6
+@@ -1788,140 +1788,6 @@
+   DYNAMIC_MODULES_WORK_TRUE='#'
+   DYNAMIC_MODULES_WORK_FALSE=
+ fi
 -# Extract the first word of "djpeg", so it can be a program name with args.
 -set dummy djpeg; ac_word=$2
 -echo $ac_n "checking for $ac_word""... $ac_c" 1>&6
--echo "configure:1720: checking for $ac_word" >&5
+-echo "configure:1795: checking for $ac_word" >&5
 -if eval "test \"`echo '$''{'ac_cv_path_DJPEG_PROG'+set}'`\" = set"; then
 -  echo $ac_n "(cached) $ac_c" 1>&6
 -else
@@ -40,7 +60,7 @@
 -# Extract the first word of "cjpeg", so it can be a program name with args.
 -set dummy cjpeg; ac_word=$2
 -echo $ac_n "checking for $ac_word""... $ac_c" 1>&6
--echo "configure:1751: checking for $ac_word" >&5
+-echo "configure:1826: checking for $ac_word" >&5
 -if eval "test \"`echo '$''{'ac_cv_path_CJPEG_PROG'+set}'`\" = set"; then
 -  echo $ac_n "(cached) $ac_c" 1>&6
 -else
@@ -72,7 +92,7 @@
 -# Extract the first word of "convert", so it can be a program name with args.
 -set dummy convert; ac_word=$2
 -echo $ac_n "checking for $ac_word""... $ac_c" 1>&6
--echo "configure:1783: checking for $ac_word" >&5
+-echo "configure:1858: checking for $ac_word" >&5
 -if eval "test \"`echo '$''{'ac_cv_path_CONVERT_PROG'+set}'`\" = set"; then
 -  echo $ac_n "(cached) $ac_c" 1>&6
 -else
@@ -108,7 +128,7 @@
 -# Extract the first word of "giftopnm", so it can be a program name with args.
 -set dummy giftopnm; ac_word=$2
 -echo $ac_n "checking for $ac_word""... $ac_c" 1>&6
--echo "configure:1819: checking for $ac_word" >&5
+-echo "configure:1894: checking for $ac_word" >&5
 -if eval "test \"`echo '$''{'ac_cv_path_GIFTOPNM_PROG'+set}'`\" = set"; then
 -  echo $ac_n "(cached) $ac_c" 1>&6
 -else
@@ -140,58 +160,57 @@
 -NETPBM_PATH=`echo $GIFTOPNM_PROG | sed 's/\/giftopnm//'`
 -echo "NETPBM_PATH is $NETPBM_PATH"
 -
--
+ 
  echo $ac_n "checking how to run the C preprocessor""... $ac_c" 1>&6
- echo "configure:1853: checking how to run the C preprocessor" >&5
- # On Suns, sometimes $CPP names a directory.
-@@ -3452,7 +3315,7 @@
+ echo "configure:1928: checking how to run the C preprocessor" >&5
+@@ -3527,7 +3393,7 @@
    echo $ac_n "(cached) $ac_c" 1>&6
  else
    ac_save_LIBS="$LIBS"
 -LIBS="-lXext $X_LIBS $LIBS"
 +LIBS="-lXext -lX11 $X_LIBS $LIBS"
  cat > conftest.$ac_ext <<EOF
- #line 3458 "configure"
+ #line 3533 "configure"
  #include "confdefs.h"
-@@ -3786,7 +3649,7 @@
+@@ -3862,7 +3728,7 @@
    echo $ac_n "(cached) $ac_c" 1>&6
  else
    ac_save_LIBS="$LIBS"
 -LIBS="-ltiff $GX_LIBS $LIBS"
 +LIBS="-ltiff -ljpeg -lz $GX_LIBS $LIBS"
  cat > conftest.$ac_ext <<EOF
- #line 3792 "configure"
+ #line 3868 "configure"
  #include "confdefs.h"
-@@ -4010,16 +3873,16 @@
+@@ -4089,16 +3955,16 @@
  
  
  
 -ac_safe=`echo "gif_lib.h" | sed 'y%./+-%__p_%'`
 -echo $ac_n "checking for gif_lib.h""... $ac_c" 1>&6
--echo "configure:4016: checking for gif_lib.h" >&5
+-echo "configure:4095: checking for gif_lib.h" >&5
 +ac_safe=`echo "giflib/gif_lib.h" | sed 'y%./+-%__p_%'`
 +echo $ac_n "checking for giflib/gif_lib.h""... $ac_c" 1>&6
-+echo "configure:4016: checking for giflib/gif_lib.h" >&5
++echo "configure:4095: checking for giflib/gif_lib.h" >&5
  if eval "test \"`echo '$''{'ac_cv_header_$ac_safe'+set}'`\" = set"; then
    echo $ac_n "(cached) $ac_c" 1>&6
  else
    cat > conftest.$ac_ext <<EOF
- #line 4021 "configure"
+ #line 4100 "configure"
  #include "confdefs.h"
 -#include <gif_lib.h>
 +#include <giflib/gif_lib.h>
  EOF
  ac_try="$ac_cpp conftest.$ac_ext >/dev/null 2>conftest.out"
- { (eval echo configure:4026: \"$ac_try\") 1>&5; (eval $ac_try) 2>&5; }
-@@ -4234,24 +4097,6 @@
+ { (eval echo configure:4105: \"$ac_try\") 1>&5; (eval $ac_try) 2>&5; }
+@@ -4317,26 +4183,6 @@
  else
    echo "configure: warning: *** Native PNG support will not be built (PNG header file not found) ***" 1>&2
  fi
 -
 -echo $ac_n "checking for libpng version other than 1.0.2""... $ac_c" 1>&6
--echo "configure:4240: checking for libpng version other than 1.0.2" >&5
+-echo "configure:4323: checking for libpng version other than 1.0.2" >&5
 -cat > conftest.$ac_ext <<EOF
--#line 4242 "configure"
+-#line 4325 "configure"
 -#include "confdefs.h"
 -#include <png.h>
 -PNG_LIBPNG_VER_STRING
@@ -205,6 +224,8 @@
 -  png_ok=yes
 -fi
 -rm -f conftest*
+-
+-echo "$ac_t""$png_ok" 1>&6
  
- echo "$ac_t""$png_ok" 1>&6
- 
+ if test "$png_ok" = yes; then
+ 	PNGLIBS="-lpng -lz"
