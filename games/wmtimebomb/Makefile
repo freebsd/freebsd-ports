@@ -13,7 +13,7 @@ DISTNAME=	wmtimebomb.20
 MAINTAINER=	ports@FreeBSD.org
 
 LIB_DEPENDS=	PropList.2:${PORTSDIR}/devel/libPropList \
-		wraster.3:${PORTSDIR}/x11-wm/windowmaker
+		wraster.4:${PORTSDIR}/x11-wm/windowmaker
 
 WRKSRC=		${WRKDIR}/wmtimebomb.app
 USE_IMAKE=	yes

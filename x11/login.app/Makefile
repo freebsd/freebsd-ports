@@ -15,7 +15,7 @@ DISTFILES=	Login.app-${PORTVERSION:S/.a/-Alpha-/}${EXTRACT_SUFX} \
 
 MAINTAINER=	sobomax@FreeBSD.org
 
-LIB_DEPENDS=	wraster.3:${PORTSDIR}/x11-wm/windowmaker \
+LIB_DEPENDS=	wraster.4:${PORTSDIR}/x11-wm/windowmaker \
 		PropList.2:${PORTSDIR}/devel/libPropList
 
 WRKSRC=		${WRKDIR}/Login.app-${PORTVERSION:S/.a/-Alpha-/}

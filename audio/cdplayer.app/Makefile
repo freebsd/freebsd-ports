@@ -15,7 +15,7 @@ MAINTAINER=	dsh@vlink.ru
 
 LIB_DEPENDS=	PropList.2:${PORTSDIR}/devel/libPropList \
 		cdaudio.1:${PORTSDIR}/audio/libcdaudio \
-		wraster.3:${PORTSDIR}/x11-wm/windowmaker
+		wraster.4:${PORTSDIR}/x11-wm/windowmaker
 
 USE_X_PREFIX=	yes
 
