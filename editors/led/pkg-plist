@@ -1,9 +1,19 @@
 bin/led
-lib/led/c.so
-lib/led/html.so
-lib/led/mbox.so
-lib/led/python.so
-lib/led/sh.so
+lib/led/modules/perlapi.so
+share/led/syntax/conf
+share/led/syntax/c
+share/led/syntax/h
+share/led/syntax/cc
+share/led/syntax/ledrc
+share/led/syntax/cs
+share/led/syntax/mail
+share/led/syntax/perl
+share/led/syntax/python
+share/led/syntax/sh
+share/led/syntax/syntax
+share/led/syntax/tex
+share/led/color
+@dirrm share/led/syntax
+@dirrm share/led
+@dirrm lib/led/modules
 @dirrm lib/led
-%%PORTDOCS%%share/doc/led/sample.ledrc
-%%PORTDOCS%%@dirrm share/doc/led
