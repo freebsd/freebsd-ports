@@ -7,6 +7,7 @@
 
 PORTNAME=	msgconvert
 PORTVERSION=	20040531
+PORTREVISION=	1
 CATEGORIES=	mail perl5
 MASTER_SITES=	http://www.webonaut.com/distfiles/
 DISTNAME=	${PORTNAME}-${PORTVERSION}.pl
@@ -17,17 +18,23 @@ COMMENT=	Convert .MSG files to multipart MIME messages (mbox)
 
 RUN_DEPENDS=	${SITE_PERL}/OLE/Storage_Lite.pm:${PORTSDIR}/devel/p5-OLE-Storage_Lite \
 		${SITE_PERL}/MIME/Words.pm:${PORTSDIR}/mail/p5-MIME-Tools \
-		${SITE_PERL}/Pod/Parser.pm:${PORTSDIR}/textproc/p5-PodParser
+		${SITE_PERL}/Date/Format.pm:${PORTSDIR}/devel/p5-TimeDate
 
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
 
 USE_BZIP2=	yes
 USE_PERL5=	yes
-EXTRACT_AFTER_ARGS= > ${PORTNAME}.pl
+EXTRACT_AFTER_ARGS=	> ${PORTNAME}.pl
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKDIR}/${PORTNAME}.pl ${PREFIX}/bin/${PORTNAME}.pl
 	${LN} -s ${PREFIX}/bin/${PORTNAME}.pl ${PREFIX}/bin/${PORTNAME}
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} < 500601
+RUN_DEPENDS+=	${SITE_PERL}/Pod/Usage.pm:${PORTSDIR}/textproc/p5-PodParser
+.endif
+
+.include <bsd.port.post.mk>
