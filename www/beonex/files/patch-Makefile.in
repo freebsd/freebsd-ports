@@ -1,0 +1,16 @@
+$FreeBSD$
+
+Avoid compilation error.
+
+author:  Trevor Johnson
+
+--- Makefile.in.orig	Fri May 24 23:46:25 2002
++++ Makefile.in	Thu Sep 26 23:45:58 2002
+@@ -169,7 +169,6 @@
+ endif
+ 
+ ifdef MOZ_INTERNAL_LIBART_LGPL
+-tier_9_dirs	+= other-licenses/libart_lgpl
+ endif
+ 
+ tier_9_dirs	+= \
