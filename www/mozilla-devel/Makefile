@@ -67,9 +67,7 @@ post-build:
 	  ${ECHO} skin,install,select,classic/1.0 >> chrome/installed-chrome.txt; \
 	  ${ECHO} locale,install,select,en-US >> chrome/installed-chrome.txt; \
 	  ${SETENV} LD_LIBRARY_PATH=. MOZILLA_FIVE_HOME=. ./regchrome)
-	# Prune empty chrome dirs, so we don't have to pollute PLIST with
-	# zillion "@exec mkdir" and "@dirrm"
-	@/usr/bin/find ${WRKSRC}/dist/bin -type d | \
+	@/usr/bin/find ${WRKSRC}/dist/bin -type d | /usr/bin/sort -r | \
 		/usr/bin/xargs ${RMDIR} 2> /dev/null || ${TRUE}
 
 do-install:
