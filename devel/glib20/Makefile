@@ -39,17 +39,4 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		PTHREAD_CFLAGS="${PTHREAD_CFLAGS}" \
 		PTHREAD_LIBS="${PTHREAD_LIBS}"
 
-pre-everything::
-	@${ECHO_CMD} '******************************************'
-	@${ECHO_CMD}
-	@${ECHO_CMD} If you have not updated your GNOME ports in the manner outlined in
-	@${ECHO_CMD}   http://www.FreeBSD.org/gnome/docs/faq26.html
-	@${ECHO_CMD} then you should abort this build immediately and follow the directions
-	@${ECHO_CMD} outlined in that document.
-	@${ECHO_CMD}
-	@${ECHO_CMD} Failure to follow the above directions will result in everything
-	@${ECHO_CMD} GNOME-related breaking.
-	@${ECHO_CMD}
-	@${ECHO_CMD} '******************************************'
-
 .include <bsd.port.mk>
