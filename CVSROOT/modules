@@ -7336,6 +7336,7 @@ schemetoc	ports/lang/schemetoc
 scid		ports/games/scid
 scigraphica	ports/math/scigraphica
 scilab		ports/math/scilab
+scimark2c	ports/benchmarks/scimark2c
 scintilla	ports/x11-toolkits/scintilla
 scite		ports/editors/scite
 scli		ports/net/scli
