@@ -3,7 +3,7 @@
 # Date created:         6 November 1994
 # Whom:                 jmz & David O'Brien (obrien@cs.ucdavis.edu)
 #
-# $Id: Makefile,v 1.12 1997/11/27 02:12:33 obrien Exp $
+# $Id: Makefile,v 1.13 1997/12/04 10:54:58 asami Exp $
 #
 
 DISTNAME=	a2ps
@@ -32,22 +32,17 @@ a4-install::
 	${MAKE} PAPERSIZE=a4 install
 
 
-.if !defined(PAPERSIZE)
-PAPERSIZE=a4
-WIDTH=8.27
-HEIGHT=11.64
-A4_PAPERSIZE=1
+.if !defined(PAPERSIZE) || ${PAPERSIZE} == letter || ${PAPERSIZE} == LETTER || ${PAPERSIZE} == Letter
+PAPERSIZE=letter
+WIDTH=8.5
+HEIGHT=11.0
+A4_PAPERSIZE=0
 PAPERSIZE_UNSPECIFIED=	yes
 .elif ${PAPERSIZE} == A4 || ${PAPERSIZE} == a4 
 PAPERSIZE=a4
 WIDTH=8.27
 HEIGHT=11.64
 A4_PAPERSIZE=1
-.elif ${PAPERSIZE} == letter || ${PAPERSIZE} == LETTER
-PAPERSIZE=letter
-WIDTH=8.5
-HEIGHT=11.0
-A4_PAPERSIZE=0
 .else
 PAPERSIZE_INVALID= yes
 .endif	# not defined PAPERSIZE
