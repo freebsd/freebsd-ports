@@ -1,6 +1,7 @@
 #!/bin/sh
 
 if [ "${BATCH}" ]; then
+	${MKDIR} ${WRKDIRPREFIX}${CURDIR}
 	${TOUCH} ${WRKDIRPREFIX}${CURDIR}/Makefile.inc
 	exit
 fi
@@ -46,7 +47,7 @@ case $retval in
 		;;
 esac
 
-mkdir -p ${WRKDIRPREFIX}${CURDIR}
+${MKDIR} -p ${WRKDIRPREFIX}${CURDIR}
 exec > ${WRKDIRPREFIX}${CURDIR}/Makefile.inc
 
 while [ "$1" ]; do
