@@ -8,6 +8,7 @@
 
 PORTNAME=	wide-dhcp
 PORTVERSION=	1.4.0.6
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	ftp://sh.wide.ad.jp/WIDE/free-ware/dhcp/ \
 		ftp://ftp.netlab.is.tsukuba.ac.jp/pub/network/wide-dhcp/ \
@@ -16,47 +17,23 @@ MASTER_SITES=	ftp://sh.wide.ad.jp/WIDE/free-ware/dhcp/ \
 DISTNAME=	dhcp-1.4.0p6
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	Dynamic Host Configuration Protocol, WIDE-Implimentation
+COMMENT=	Dynamic Host Configuration Protocol, WIDE Implementation
 
 MAKE_ENV=	OSTYPE=${OPSYS}
 
-MAN5=	dhcpdb.server.5 dhcpdb.pool.5 dhcpdb.relay.5
-MAN8=	dhcpc.8 dhcps.8 relay.8 dhcpm.8
-
-STARTUP_SCRIPT=	${PREFIX}/etc/rc.d/wide-dhcps.sh.sample
+MAN5=		dhcpdb.server.5 dhcpdb.pool.5 dhcpdb.relay.5
+MAN8=		dhcpc.8 dhcps.8 relay.8 dhcpm.8
+DOCS=		README README.jis db_sample/intro.dhcp db_sample/intro.dhcp.jis
+EXAMPLES=	dhcpdb.pool dhcpdb.relay dhcpdb.server
 
 post-install:
+	${INSTALL_SCRIPT} ${FILESDIR}/wide-dhcps.sh.sample ${PREFIX}/etc/rc.d
+	@${MKDIR} ${EXAMPLESDIR}
+	@cd ${WRKSRC}/db_sample && ${INSTALL_DATA} ${EXAMPLES} ${EXAMPLESDIR}
 .if !defined(NOPORTDOCS)
-	@if [ ! -d ${PREFIX}/share/doc/dhcp ]; then \
-		${MKDIR} ${PREFIX}/share/doc/dhcp; \
-	fi
-	@if [ ! -d ${PREFIX}/share/examples/dhcp ]; then \
-		${MKDIR} ${PREFIX}/share/examples/dhcp; \
-	fi
-	@${CP} ${WRKSRC}/README ${PREFIX}/share/doc/dhcp/
-	@${CP} ${WRKSRC}/README.jis ${PREFIX}/share/doc/dhcp/
-	@${CP} ${WRKSRC}/db_sample/dhcpdb.pool  \
-		${PREFIX}/share/examples/dhcp/dhcpdb.pool.sample
-	@${CP} ${WRKSRC}/db_sample/dhcpdb.relay  \
-		${PREFIX}/share/examples/dhcp/dhcpdb.relay.sample
-	@${CP} ${WRKSRC}/db_sample/dhcpdb.server  \
-		${PREFIX}/share/examples/dhcp/dhcpdb.server.sample
-	@${CP} ${WRKSRC}/db_sample/intro.dhcp ${PREFIX}/share/doc/dhcp/
-	@${CP} ${WRKSRC}/db_sample/intro.dhcp.jis  \
-		${PREFIX}/share/doc/dhcp/
+	@${MKDIR} ${DOCSDIR}
+	@cd ${WRKSRC} && ${INSTALL_DATA} ${DOCS} ${DOCSDIR}
 .endif
-	@if [ ! -f ${STARTUP_SCRIPT} ]; then				    \
-		${ECHO} "Installing ${STARTUP_SCRIPT} startup file.";	    \
-		${INSTALL_SCRIPT} ${FILESDIR}/wide-dhcps.sh.sample ${STARTUP_SCRIPT}; \
-	fi
-	@if [ ! -c /dev/bpf1 ]; then \
-	    ${ECHO} "********************************************************";\
-	    ${ECHO} "*                   W a r n i n g                      *";\
-	    ${ECHO} "* DHCP the needs Berkeley Packet Filter (bpf).         *";\
-	    ${ECHO} "* To use DHCP, your kernel must be rebuilt with bpf,   *";\
-	    ${ECHO} "* and make bpf devices on /dev directory.              *";\
-	    ${ECHO} "* Please read the info file by \`pkg_info ${PKGNAME}'. *";\
-	    ${ECHO} "********************************************************";\
-	fi
+	@${SH} ${PKGREQ} ${PKGNAME} INSTALL
 
 .include <bsd.port.mk>
