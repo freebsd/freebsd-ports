@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	tgif2tex
-PORTVERSION=	2.01
+PORTVERSION=	2.05
 CATEGORIES+=	print
-MASTER_SITES=	http://camphor.elcom.nitech.ac.jp/~nakano/tgif2tex/
+MASTER_SITES=	http://www.jaist.ac.jp/~knakano/tgif2tex/
 
 MAINTAINER=	taoka@FreeBSD.org
 
