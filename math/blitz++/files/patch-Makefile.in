@@ -1,17 +1,23 @@
---- Makefile.in.orig	Fri Nov  7 23:43:47 2003
-+++ Makefile.in	Fri Nov  7 23:46:09 2003
-@@ -153,8 +153,12 @@ target_vendor = @target_vendor@
- 
- AUTOMAKE_OPTIONS = foreign
- 
--SUBDIRS = bin compiler blitz random src lib testsuite \
--	examples benchmarks doc manual
+--- ./Makefile.in.orig	Thu Jan  6 21:51:56 2005
++++ Makefile.in	Thu Jan  6 23:01:59 2005
+@@ -276,13 +276,18 @@
+ target_os = @target_os@
+ target_vendor = @target_vendor@
+ ACLOCAL_AMFLAGS = -I m4
++
 +ifndef NOPORTDOCS
-+DOCS = doc manual
++DOCS = doc
 +endif
 +
-+SUBDIRS = bin compiler blitz random src lib  $(DOCS)
-+	
+ SUBDIRS = bin blitz random lib testsuite \
+-	examples benchmarks doc
++	examples benchmarks $(DOCS) 
  
+ EXTRA_DIST = LEGAL LICENSE README.binutils README-VS.NET.txt Blitz-VS.NET.zip \
+ 	ChangeLog.1 
  
- EXTRA_DIST = LEGAL LICENSE README.binutils README-VS.NET Blitz-VS.NET.zip \
+-pkgconfigdir = $(libdir)/pkgconfig
++pkgconfigdir = libdata/pkgconfig
+ pkgconfig_DATA = blitz.pc blitz-uninstalled.pc
+ all: all-recursive
+ 

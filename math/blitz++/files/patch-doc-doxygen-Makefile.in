@@ -1,0 +1,11 @@
+--- ./doc/doxygen/Makefile.in.orig	Tue Feb 22 18:32:47 2005
++++ ./doc/doxygen/Makefile.in	Tue Feb 22 18:33:07 2005
+@@ -244,7 +244,7 @@ target_alias = @target_alias@
+ target_cpu = @target_cpu@
+ target_os = @target_os@
+ target_vendor = @target_vendor@
+-docdir = $(datadir)/doc/$(PACKAGE)-$(VERSION)/doxygen
++docdir = $(datadir)/doc/$(PACKAGE)/doxygen
+ DISTCLEANFILES = Doxyfile doxygen-warning 
+ all: all-am
+ 

@@ -7,30 +7,36 @@
 #
 
 PORTNAME=	blitz++
-PORTVERSION=	0.7
-PORTREVISION=	1
+PORTVERSION=	0.8
 CATEGORIES=	math
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	blitz
-DISTNAME=	Blitz++-${PORTVERSION}
+DISTNAME=	blitz-${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	olivier.saut@gmail.com
 COMMENT=	A C++ class library for scientific computing
+
+.ifndef NOPORTDOCS
+BUILD_DEPENDS=	doxygen:${PORTSDIR}/devel/doxygen	\
+		texi2dvi:${PORTSDIR}/print/teTeX-base
+INFO=		blitz
+.else
+MAKE_ARGS=	NOPORTDOCS=yes
+.endif
 
 USE_REINPLACE=	yes
 USE_GMAKE=	yes
-GNU_CONFIGURE=	yes
+USE_LIBTOOL_VER=15
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
-CONFIGURE_ARGS=	--with-cxx=gcc --enable-optimize --disable-debug
-MAKE_ARGS=	ACLOCAL="${TRUE}" AUTOCONF="${TRUE}" AUTOMAKE="${TRUE}" \
+CONFIGURE_ARGS=	--with-cxx=gcc
+MAKE_ARGS+=	ACLOCAL="${TRUE}" AUTOCONF="${TRUE}" AUTOMAKE="${TRUE}" \
 		AUTOHEADER="${TRUE}"
 
-INFO=		blitz
 DOCSDIR=	${PREFIX}/share/doc/blitz
 
+INSTALLS_SHLIB=	yes
+
 post-patch:
-	@${FIND} ${WRKSRC}/manual -name "Makefile.in" | ${XARGS} \
-		${REINPLACE_CMD} -e 's|[(]prefix[)]|(datadir)|g'
 	@${REINPLACE_CMD} -e 's|g++|\$${CXX}|g ; \
 		 s|"-ftemplate-depth-30|"\$${CXXFLAGS} -ftemplate-depth-30|g ; \
 		 s|-O2||g' ${WRKSRC}/configure
