@@ -1,0 +1,23 @@
+--- client/dhclient.8.orig	Wed May 10 02:36:03 2000
++++ client/dhclient.8	Wed May 10 02:39:43 2000
+@@ -34,7 +34,7 @@
+ .B -q
+ ]
+ [
+-.B -c
++.B -1
+ ]
+ [
+ .B -lf
+@@ -170,6 +170,11 @@
+ .B -q
+ flag prevents any messages other than errors from being printed to the
+ standard error descriptor.
++.PP
++The
++.B -1
++flag cause dhclient to try once to get a lease.  If it fails, dhclient exits
++with exit code two.
+ .PP
+ The DHCP client normally gets its configuration information from
+ .B ETCDIR/dhclient.conf,
