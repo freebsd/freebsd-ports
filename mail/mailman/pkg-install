@@ -2,80 +2,58 @@
 #
 # $FreeBSD$
 
-make_account() {
-  local u uid g gid gcos home shell
-
-  u=$1
-  uid=$2
-  g=$3
-  gid=$4
-  gcos=$5
-  home=$6
-  shell=$7
-
-  if pw group show "${g}" >/dev/null 2>&1; then
-    echo "You already have a group \"${g}\", so I will use it."
-  else
-    echo -n "Adding group \"${g}\" (${gid})... "
-    if which -s pw; then
-      pw groupadd ${g} -g ${gid} || exit
-      echo "done."
-    else
-      exit 1
-    fi
-  fi
-
-  if pw user show "${u}" >/dev/null 2>&1; then
-    echo "You already have a user \"${u}\", so I will use it."
-  else
-    echo -n "Adding user \"${u}\" (${uid})... "
-    if which -s pw; then
-      pw useradd ${u} -u ${uid} -g ${g} -h - -d ${home} \
-        -s ${shell} -c "${gcos}" || exit
-      echo "done."
-    else
-      exit 1
-    fi
-  fi
-
-  if [ x"$home" != x ]; then
-    if [ ! -d "${home}" ]; then
-      echo -n "Creating ${u}'s home directory (${home})... "
-      (umask 002 && mkdir -p ${home}) || exit
-      chown -R ${u}:${g} ${home} || exit
-      chmod g+s ${home} || exit
-      echo "done."
-    fi
-  fi
-}
-
-create_crontab() {
-  local u file
-
-  u=$1
-  file=$2
-
-  echo -n "Creating crontab(5) file for Mailman user... "
-  crontab -u ${u} ${file} || exit
-  echo "done."
-
-}
-
-fix_perms() {
-  echo -n "Checking (and fixing) permissions... "
-  %%MAILMANDIR%%/bin/check_perms -f >/dev/null 2>&1
-  echo "done."
-}
+PATH=/bin:/usr/bin:/usr/sbin
 
 case $2 in
 
 PRE-INSTALL)
-  make_account %%USER%% %%UID%% %%GROUP%% %%GID%% \
-    "Mailman User" "%%MAILMANDIR%%" "/sbin/nologin"
+  echo "---> Starting install script:"
+
+  if [ -z "%%MAILMANDIR%%" -o \
+       -z "%%USER%%" -o -z "%%GROUP%%" -o \
+       -z "%%UID%%" -o -z "%%GID%%" ]; then
+    echo "ERROR: A required pragma was empty"
+    exit 1
+  fi
+
+  # Create group if required
+  if pw group show "%%GROUP%%" >/dev/null 2>&1; then
+    echo "---> Using existing group \"%%GROUP%%\""
+  else
+    echo "---> Adding group \"%%GROUP%%\" (%%GID%%)"
+    /usr/sbin/pw groupadd %%GROUP%% -g %%GID%% || exit 1
+  fi
+
+  # Create user if required
+  if pw user show "%%USER%%" >/dev/null 2>&1; then
+    echo "---> Using existing user \"%%USER%%\""
+  else
+    echo "---> Adding user \"%%USER%%\" (%%UID%%)"
+    pw useradd "%%USER%%" -u "%%UID%%" -g "%%GROUP%%" -h - \
+      -d "%%MAILMANDIR%%" -s "/sbin/nologin" -c "Mailman Owner" || exit 1
+  fi
+
+  # Create home directory if required
+  if [ -d "%%MAILMANDIR%%" ]; then
+    echo "---> Using existing Mailman directory (%%MAILMANDIR%%)"
+    echo "     (There may be existing active mailing lists - this installation will"
+    echo "     attempt to preserve them.)"
+  else
+    echo "---> Creating Mailman directory (%%MAILMANDIR%%)"
+    (umask 002 && /bin/mkdir -p "%%MAILMANDIR%%") || exit 1
+    /usr/sbin/chown -R "%%USER%%:%%GROUP%%" "%%MAILMANDIR%%" || exit 1
+    /bin/chmod g+s "%%MAILMANDIR%%" || exit 1
+  fi
   ;;
 
 POST-INSTALL)
-  create_crontab %%USER%% "%%MAILMANDIR%%/cron/crontab.in"
-  fix_perms
+  echo "---> Starting post-install script:"
+
+  echo "---> Creating crontab(5) file for user \"%%USER%%\""
+  /usr/bin/crontab -u "%%USER%%" "%%MAILMANDIR%%/cron/crontab.in" || exit 1
+
+  echo "---> Checking (and fixing) file and directory permissions"
+  %%MAILMANDIR%%/bin/check_perms -f >/dev/null 2>&1
   ;;
+
 esac

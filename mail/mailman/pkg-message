@@ -17,8 +17,8 @@ activate Mailman's web interface:
 
 Remember to reload your mail aliases if required, and to restart your httpd!
 
-See %%DOCSDIR%%/INSTALL for further post-installation
-instructions.
+See INSTALL and UPGRADING in %%DOCSDIR%% for further
+post-installation instructions.
 
 Note:  The entire Mailman installation resides under %%MAILMANDIR%%.
 The command-line scripts necessary to administer Mailman have been installed

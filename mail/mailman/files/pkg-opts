@@ -30,7 +30,8 @@
 
     ----------------------------------------------------
     MTA     | MAIL_GID       | Submitted by
-    Exim    | nobody (65534) | <wjv@FreeBSD.org>
+    Exim3   | nobody (65534) | <wjv@FreeBSD.org>
+    Exim4   | mail   (6)     | <wjv@FreeBSD.org>
     Postfix | nobody (65534) | <shamrock@cypherpunks.to>
     Qmail   | ???            |
     ----------------------------------------------------
