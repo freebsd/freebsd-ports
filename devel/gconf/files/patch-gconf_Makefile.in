@@ -1,0 +1,10 @@
+--- gconf/Makefile.in.orig	Fri Sep 27 00:28:12 2002
++++ gconf/Makefile.in	Fri Sep 27 00:28:46 2002
+@@ -154,6 +154,7 @@
+ 	-DGCONF_ETCDIR=\""$(sysconfdir)/gconf"\"			\
+ 	-DGCONF_BUILDDIR=\""$(top_builddir)"\"				\
+ 	-DGCONF_BINDIR=\""$(bindir)"\"					\
++	-DGCONF_PREFIX=\""$(prefix)"\"					\
+ 	-DGCONF_BACKEND_DIR=\""$(pkglibdir)/$(MAJOR_VERSION)"\"		\
+ 	-DVERSION=\""$(VERSION)"\"					\
+ 	-DIID=\""OAFIID:gconfd:19991118"\"				\
