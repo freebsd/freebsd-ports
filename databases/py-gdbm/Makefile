@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gdbm
-PORTVERSION= 	${PYTHON_PORTVERSION}
+PORTVERSION=	${PYTHON_PORTVERSION}
 CATEGORIES=	databases python
 MASTER_SITES=	ftp://www.python.org/pub/python/src/ \
 		ftp://ftp.cwi.nl/pub/python/src/
