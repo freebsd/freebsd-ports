@@ -1,0 +1,22 @@
+--- docs/Makefile.in.orig	Wed Oct 31 15:57:19 2001
++++ docs/Makefile.in	Wed Oct 31 15:58:10 2001
+@@ -1,5 +1,6 @@
+ prefix = @prefix@
+-docdir = $(prefix)/doc/gvd
++docdir = $(prefix)/share/doc/gvd
++infodir = $(prefix)/info
+ 
+ MKDIR = mkdir -p
+ INSTALL = @INSTALL@
+@@ -24,9 +25,9 @@
+ 	dvips gvd.dvi -o gvd.ps
+ 
+ install:
+-	$(MKDIR) $(docdir)
++	$(MKDIR) $(docdir) $(infodir)
+ 	$(INSTALL_DATA) gvd.html $(docdir)
+-	$(INSTALL_DATA) gvd.info $(docdir)
++	$(INSTALL_DATA) gvd.info $(infodir)
+ 	-$(INSTALL_DATA) gvd.ps  $(docdir)
+ 	$(INSTALL_DATA) gvd.txt  $(docdir)
+ 	for img in $(IMAGES); do \
