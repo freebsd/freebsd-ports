@@ -1,0 +1,11 @@
+--- config/Makedefs.in.orig	Sun Oct  6 16:43:39 2002
++++ config/Makedefs.in	Sun Oct  6 16:43:47 2002
+@@ -65,7 +65,7 @@
+ CFLAGS=$(CDEBUGFLAGS) @DEFS@ $(FCPATH_DEF) $(INCLUDES)
+ 
+ LIBBASE=libfontconfig.so
+-LIBFILE=$(LIBBASE).@PACKAGE_MAJOR@.@PACKAGE_MINOR@
++LIBFILE=$(LIBBASE).@PACKAGE_MAJOR@
+ LIBMAJOR=$(LIBBASE).@PACKAGE_MAJOR@
+ 
+ LIBFONTCONFIG=-L$(SRCDIR) -lfontconfig

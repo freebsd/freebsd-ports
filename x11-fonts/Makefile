@@ -12,6 +12,7 @@
     SUBDIR += bdfresize
     SUBDIR += bitmap-fonts
     SUBDIR += etlfonts
+    SUBDIR += fontconfig
     SUBDIR += freefonts
     SUBDIR += geminifonts
     SUBDIR += getbdf
