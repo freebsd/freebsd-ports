@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	png
-PORTVERSION=	1.2.0
-PORTREVISION=	1
+PORTVERSION=    1.2.1
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.libpng.org/pub/png/src/ \
 		ftp://swrinde.nde.swri.edu/pub/png/src/ \
