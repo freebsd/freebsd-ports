@@ -289,6 +289,7 @@
     SUBDIR += xmlppm
     SUBDIR += xp
     SUBDIR += xsl-docbook-modular
+    SUBDIR += xslide.el
     SUBDIR += xslint
     SUBDIR += xt
     SUBDIR += xxdiff
