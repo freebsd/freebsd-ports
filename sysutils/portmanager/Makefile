@@ -7,7 +7,7 @@
 
 PORTNAME=	portmanager
 PORTVERSION=	0.2.4
-PORTREVISION=	0
+PORTREVISION=	1
 #-----------------------------------------
 #for local use, remove before submitting PR
 CATEGORIES=		sysutils
@@ -44,7 +44,7 @@ INSTALL_TARGET=         install info
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|g ;	\
-	s|0.2.4|${PORTVERSION}_${PORTREVISION}|g ;	\
+	s|0.2.5|${PORTVERSION}_${PORTREVISION}|g ;	\
 	s|%%PORTSDIR%%|${PORTSDIR}|g ;	\
 	s|%%PKG_DBDIR%%|${PKG_DBDIR}|g' ${WRKSRC}/libPMGR/src/libPMGR.h
 
