@@ -960,10 +960,8 @@ jdk%%JDK_VERSION%%/src.jar
 @dirrm jdk%%JDK_VERSION%%/jre/lib/i386/classic
 @dirrm jdk%%JDK_VERSION%%/jre/lib/i386
 @dirrm jdk%%JDK_VERSION%%/jre/lib/fonts
-@dirrm jdk%%JDK_VERSION%%/jre/lib/ext
 @dirrm jdk%%JDK_VERSION%%/jre/lib/cmm
 @dirrm jdk%%JDK_VERSION%%/jre/lib/audio
-@dirrm jdk%%JDK_VERSION%%/jre/lib/applet
 @dirrm jdk%%JDK_VERSION%%/jre/lib
 @dirrm jdk%%JDK_VERSION%%/jre/bin/i386/native_threads
 @dirrm jdk%%JDK_VERSION%%/jre/bin/i386/green_threads
