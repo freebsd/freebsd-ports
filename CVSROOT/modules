@@ -1046,6 +1046,7 @@ csv2latex	ports/textproc/csv2latex
 ct		ports/net/ct
 cthumb		ports/graphics/cthumb
 ctrace		ports/net/ctrace
+ctrlproxy	ports/irc/ctrlproxy
 ctwm		ports/x11-wm/ctwm
 cu-prolog	ports/lang/cu-prolog
 cube		ports/games/cube
