@@ -1,0 +1,21 @@
+--- rsync.1.orig	Tue Sep  5 19:46:43 2000
++++ rsync.1	Thu Mar  8 03:34:47 2001
+@@ -89,2 +89,2 @@
+-Once installed you can use rsync to any machine that you can use rsh
+-to\&.  rsync uses rsh for its communications, unless both the source and
++Once installed you can use rsync to any machine that you can use ssh
++to\&.  rsync uses ssh for its communications, unless both the source and
+@@ -93 +93 @@
+-You can also specify an alternative to rsh, by either using the -e
++You can also specify an alternative to ssh, by either using the -e
+@@ -273 +273 @@
+- -e, --rsh=COMMAND           specify rsh replacement
++ -e, --rsh=COMMAND           specify rsh replacement (default ssh)
+@@ -566,2 +566,2 @@
+-remote copies of rsync\&. By default, rsync will use rsh, but you may
+-like to instead use ssh because of its high security\&.
++remote copies of rsync\&. By default, rsync will use ssh, but you may
++need to use the much less secure rsh for compatibility reasons\&.
+@@ -890 +890 @@
+-   rsh remotehost /bin/true > out\&.dat
++   ssh remotehost /bin/true > out\&.dat
