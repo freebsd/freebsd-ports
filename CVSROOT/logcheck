@@ -68,6 +68,7 @@ shift @log_in unless $log_in[0];
 # Filter out blank templated entries, and type check if necessary.
 # (looking from the end of the commit message backwards)
 my $j = scalar(@log_in) - 1;
+my $error = 0;
 while ($j >= 0  and  my $header = $log_in[$j]) {
 	--$j;
 
@@ -78,7 +79,7 @@ while ($j >= 0  and  my $header = $log_in[$j]) {
 
 		# Warn and ignore unrecognised headers.
 		unless (defined($pattern)) {
-			print "Warning: unrecognised header: $header\n";
+			print "Warning: unknown template header: $header\n";
 			next;
 		}
 
@@ -90,13 +91,15 @@ while ($j >= 0  and  my $header = $log_in[$j]) {
 
 		# Type check the header
 		unless ($value =~ /^$pattern$/) {
-			print "Parse error in header ($header)\n";
-			exit 1;
+			print "Error: syntax check failed for: $header\n";
+			++$error;
+			next;
 		}
 
 	} else {
-		print "Malformed line in with headers: $header\n";
-		exit 1;
+		print "Error: malformed line in template headers: $header\n";
+		++$error;
+		next;
 	}
 }
 
@@ -109,10 +112,23 @@ print OUT map { "$_\n" } @log_in;
 close OUT;
 
 
+# Stop the commit if there was a problem with the template headers.
+if ($error) {
+	print "There were $error errors in the template headers.\n";
+	print "Please fix the log message and commit again.\n";
+	print "A copy of your log message was saved in $tmpfile.\n";
+	exit 1;
+}
+
+
+
 # Nuke likely editor backups.
 unlink "$filename.~";
 unlink "$filename.bak";
 
+
+# Overwrite the log message with our sanitised one.  (See the comment
+# block at the top of this script for an explaination of why.)
 rename($tmpfile, $filename) or
     die "logcheck: Could not rename $tmpfile to $filename: $!";
 
