@@ -25,8 +25,7 @@ USE_XPM=        yes
 USE_X_PREFIX=	yes
 
 # License forbids redistribution
-NO_CDROM=	Redistribution forbidden by license
-NO_PACKAGE=	Redistribution forbidden by license
+RESTRICTED=	Redistribution forbidden by license
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-oss
