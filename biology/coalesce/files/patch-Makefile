@@ -1,0 +1,25 @@
+--- Makefile.orig	Thu Feb 29 18:00:09 1996
++++ Makefile	Mon Aug  6 16:32:10 2001
+@@ -1,20 +1,9 @@
+ LIBS    = -lm
+ BINDIR  = ./bin
+-CFLAGS  = -g
+-CC        = cc $(CFLAGS)
++CFLAGS += -g
+ DCC     = gcc -g -DDMALLOC_FUNC_CHECK -ansi -pedantic
+ DLIBS   = -lm -L/usr/local/lib -ldmalloc
+-# -O
+ PROGS   =          coalesce fluctuate
+ 
+ coalesce :  coalesce.c constants.h lamarc.h
+-	$(CC) coalesce.c $(LIBS) -o coalesce
+-
+-modellike.o : modellike.c
+-	$(CC) -c modellike.c
+-
+-fluctuate.o : fluctuate.c
+-	$(CC) -c fluctuate.c
+-
+-fluctuate : fluctuate.o modellike.o
+-	$(CC) fluctuate.o modellike.o $(LIBS) -o fluctuate
++	$(CC) $(CFLAGS) coalesce.c $(LIBS) -o coalesce

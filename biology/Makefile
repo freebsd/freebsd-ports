@@ -5,6 +5,7 @@
     SUBDIR += biojava
     SUBDIR += chemeq
     SUBDIR += clustalw
+    SUBDIR += coalesce
     SUBDIR += deft
     SUBDIR += emboss
     SUBDIR += fasta
