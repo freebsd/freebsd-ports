@@ -15,7 +15,7 @@ DIST_SUBDIR=		rpm
 MAINTAINER=		jylefort@brutele.be
 COMMENT=		Bluecurve theme for GTK1 and GTK2 from RedHat 8.0 (Linux version)
 
-EXTRACT_DEPENDS=	rpm2cpio:${PORTSDIR}/archivers/rpm2cpio
+EXTRACT_DEPENDS=	rpm2cpio.pl:${PORTSDIR}/archivers/rpm2cpio
 
 NO_WRKSUBDIR=		yes
 USE_LINUX_PREFIX=	yes
