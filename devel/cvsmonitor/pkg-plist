@@ -54,10 +54,14 @@
 %%CVSMON%%/modules/CVSMonitor/Statistics.pm
 %%CVSMON%%/modules/CVSMonitor/Util.pm
 %%CVSMON%%/modules/CVSMonitor/VersionNumber.pm
+%%CVSMON%%/modules/CVSMonitor/Backend/CCVS.pm
+%%CVSMON%%/modules/CVSMonitor/Backend/DataCache.pm
 %%CVSMON%%/modules/CVSMonitor/Graph/Files.pm
 %%CVSMON%%/modules/CVSMonitor/Graph/Karma.pm
 %%CVSMON%%/modules/CVSMonitor/Graph/Lines.pm
 %%CVSMON%%/modules/CVSMonitor/Graph/Range.pm
+%%CVSMON%%/modules/CVSMonitor/HTML/Form.pm
+%%CVSMON%%/modules/CVSMonitor/HTML/Table.pm
 %%CVSMON%%/modules/CVSMonitor/Range/Basics.pm
 %%CVSMON%%/modules/CVSMonitor/Range/Files.pm
 %%CVSMON%%/modules/CVSMonitor/MetaData/Activity.pm
@@ -104,7 +108,9 @@
 @dirrm %%CVSMON%%/html
 @dirrm %%CVSMON%%/modules/AppLib/Interface
 @dirrm %%CVSMON%%/modules/AppLib
+@dirrm %%CVSMON%%/modules/CVSMonitor/Backend
 @dirrm %%CVSMON%%/modules/CVSMonitor/Graph
+@dirrm %%CVSMON%%/modules/CVSMonitor/HTML
 @dirrm %%CVSMON%%/modules/CVSMonitor/Range
 @dirrm %%CVSMON%%/modules/CVSMonitor/MetaData/Abstract
 @dirrm %%CVSMON%%/modules/CVSMonitor/MetaData
@@ -115,4 +121,4 @@
 @dirrm %%CVSMON%%/static/style
 @dirrm %%CVSMON%%/static/images
 @dirrm %%CVSMON%%/static
-@dirrm %%CVSMON%%
+@unexec rmdir %D/%%CVSMON%% 2>/dev/null || true
