@@ -1,15 +1,18 @@
 #!/bin/sh
 
-if [ "$2" = "PRE-INSTALL" ]; then
+
+if [ "$2" != "PRE-INSTALL" ]; then
+    chown -R clamav:clamav ${PKG_PREFIX}/share/clamav
+fi
 
 USER=clamav
 GROUP=clamav
 
 if ! pw groupshow "$GROUP" 2>/dev/null 1>&2; then
 	if pw groupadd $GROUP; then
-		echo "=> Added group \"$GROUP\"."
+		echo "===> Added group \"$GROUP\"."
 	else
-                echo "=> Adding group \"$GROUP\" failed..."
+                echo "===> Adding group \"$GROUP\" failed..."
                 exit 1
         fi
 fi
@@ -19,20 +22,10 @@ if ! pw usershow "$USER" 2>/dev/null 1>&2; then
                 -s "/sbin/nologin" -d "/nonexistent" \
                 -c "Clam Antivirus"; \
         then
-                echo "=> Added user \"$USER\"."
+                echo "===> Added user \"$USER\"."
         else
-                echo "=> Adding user \"$USER\" failed..."
+                echo "===> Adding user \"$USER\" failed..."
                 exit 1
         fi
 fi
-fi
-
-if [ "$2" = "POST-INSTALL" ]; then
-        chown -R clamav:clamav ${PKG_PREFIX}/share/clamav
-fi
-
-if [ "$2" != "POST-INSTALL" ] && [ "$2" != "PRE-INSTALL" ]; then
-	exit 0
-fi
-
 exit 0

@@ -37,6 +37,7 @@
     SUBDIR += chrootuid
     SUBDIR += cksfv
     SUBDIR += clamav
+    SUBDIR += clamav-devel
     SUBDIR += cops
     SUBDIR += cp2fwb
     SUBDIR += crack
