@@ -2441,6 +2441,7 @@ ident2		ports/security/ident2
 identify	ports/security/identify
 idled		ports/sysutils/idled
 idlefork	ports/devel/idlefork
+ifc		ports/lang/ifc
 ifconfig	src/sbin/ifconfig
 ifhp		ports/print/ifhp
 ifile		ports/mail/ifile
