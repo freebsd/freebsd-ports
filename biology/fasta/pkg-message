@@ -1,0 +1,15 @@
+--------------------------------------------------------------------------
+
+The FASTA3 package has been successfully installed.
+
+NB:  A sample configuration file has been installed to %%PREFIX%%/etc as
+"fastlibs.sample".  This may be renamed to "fastlibs" and edited
+to suit the requirements of a particular site.
+
+In order to use the FASTA3 programs, a user must set the environment
+variable FASTLIBS to contain the full path of the FASTA3 configuration
+file, e.g.:
+
+- set FASTLIBS to:  "%%PREFIX%%/etc/fastlibs"
+
+--------------------------------------------------------------------------
