@@ -1,0 +1,4 @@
+@exec rm -r %D/lib/php.DIST_PHP 2>/dev/null || true
+@exec cp -Rp %D/lib/php %D/lib/php.DIST_PHP
+@unexec rm -r %D/lib/php || true
+@unexec mv %D/lib/php.DIST_PHP %D/lib/php || true

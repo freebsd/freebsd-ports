@@ -1,0 +1,5 @@
+PEAR classes providing easy access to read/write to files along with
+some common routines to deal with paths. Also provides interface for
+handling CSV files.
+
+WWW: http://pear.php.net/manual/en/packages.file.php

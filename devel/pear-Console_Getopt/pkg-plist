@@ -1,0 +1,3 @@
+@exec mv %D/lib/php/Console/Getopt.php %D/lib/php/Console/Getopt.php.dist
+%%PEARDIR%%/Console/Getopt.php
+@unexec mv %D/lib/php/Console/Getopt.php.dist %D/lib/php/Console/Getopt.php || true

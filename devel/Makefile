@@ -623,6 +623,10 @@
     SUBDIR += pcre
     SUBDIR += pcre++
     SUBDIR += pcsc-lite
+    SUBDIR += pear
+    SUBDIR += pear-Console_Getopt
+    SUBDIR += pear-PEAR
+    SUBDIR += pear-install
     SUBDIR += pedisassem
     SUBDIR += perforce
     SUBDIR += perltidy

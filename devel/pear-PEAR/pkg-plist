@@ -1,0 +1,34 @@
+%%PEARDIR%%/package.dtd
+%%PEARDIR%%/template.spec
+%%PEARDIR%%/PEAR.php
+%%PEARDIR%%/System.php
+%%PEARDIR%%/OS/Guess.php
+%%PEARDIR%%/PEAR/Autoloader.php
+%%PEARDIR%%/PEAR/Command.php
+%%PEARDIR%%/PEAR/Command/Auth.php
+%%PEARDIR%%/PEAR/Command/Build.php
+%%PEARDIR%%/PEAR/Command/Common.php
+%%PEARDIR%%/PEAR/Command/Config.php
+%%PEARDIR%%/PEAR/Command/Install.php
+%%PEARDIR%%/PEAR/Command/Package.php
+%%PEARDIR%%/PEAR/Command/Registry.php
+%%PEARDIR%%/PEAR/Command/Remote.php
+%%PEARDIR%%/PEAR/Common.php
+%%PEARDIR%%/PEAR/Config.php
+%%PEARDIR%%/PEAR/Dependency.php
+%%PEARDIR%%/PEAR/Frontend/CLI.php
+%%PEARDIR%%/PEAR/Builder.php
+%%PEARDIR%%/PEAR/Installer.php
+%%PEARDIR%%/PEAR/Packager.php
+%%PEARDIR%%/PEAR/Registry.php
+%%PEARDIR%%/PEAR/Remote.php
+%%PEARDIR%%/scripts/pear.in
+%%PEARDIR%%/scripts/pear.bat
+@dirrm %%PEARDIR%%/OS
+@dirrm %%PEARDIR%%/PEAR/Command
+@dirrm %%PEARDIR%%/PEAR/Frontend
+@dirrm %%PEARDIR%%/PEAR
+@dirrm %%PEARDIR%%/scripts
+@unexec mv %D/lib/php/PEAR.dist %D/lib/php/PEAR || true
+@unexec mv %D/lib/php/PEAR.php.dist %D/lib/php/PEAR.php || true
+@unexec mv %D/lib/php/System.php.dist %D/lib/php/System.php || true

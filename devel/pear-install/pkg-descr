@@ -1,0 +1,6 @@
+This port does not install anything, but it prepares the installation of
+new PEAR packages.
+
+It is required by every pear- package in the FreeBSD ports tree.
+
+WWW: http://pear.php.net/

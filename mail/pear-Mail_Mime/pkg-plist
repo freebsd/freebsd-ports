@@ -1,0 +1,5 @@
+%%PEARDIR%%/Mail/mime.php
+%%PEARDIR%%/Mail/mimeDecode.php
+%%PEARDIR%%/Mail/mimePart.php
+%%PEARDIR%%/Mail/xmail.dtd
+%%PEARDIR%%/Mail/xmail.xsl

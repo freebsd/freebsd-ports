@@ -1,0 +1,6 @@
+PEAR Log framework providing an abstracted logging system.
+
+It supports logging to console, file, syslog, SQL, mail, and mcal targets.
+It also provides a subject - observer mechanism.
+
+WWW: http://pear.php.net/manual/en/packages.log.php

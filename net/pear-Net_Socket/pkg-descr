@@ -1,0 +1,7 @@
+Net_Socket is a PEAR class interface to TCP sockets.
+
+It provides blocking and non-blocking operation, with different reading
+and writing modes (byte-wise, block-wise, line-wise and special formats
+like network byte-order ip addresses).
+
+WWW: http://pear.php.net/manual/en/core.networking.net_socket.php
