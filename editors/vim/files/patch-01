@@ -99,9 +99,3 @@
 -	cd $(DEST_MAN); ln -s $(EVIMNAME).1 $(EVIEWNAME).1
 +	cd $(DEST_MAN); ln -sf $(EVIMNAME).1 $(EVIEWNAME).1
  
-@@ -1951,3 +1952,4 @@
- 	-@echo 'char_u *default_vimruntime_dir = (char_u *)"$(VIMRUNTIMEDIR)";' >> $@
--	-@echo 'char_u *all_cflags = (char_u *)"$(CC) -c -I$(srcdir) $(ALL_CFLAGS)";' >>  $@
-+	-@echo 'char_u *all_cflags = (char_u *)' >> $@
-+	-@echo '$(CC) -c -I$(srcdir) $(ALL_CFLAGS)' | sed -e 's/\"/\\"/g' -e 's/\(^.*\)/	"\1";/' >> $@
- 	-@echo 'char_u *all_lflags = (char_u *)"$(CC) $(ALL_LIB_DIRS) $(LDFLAGS) -o $(VIMTARGET) $(ALL_LIBS) ";' >>  $@
