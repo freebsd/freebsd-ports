@@ -1,0 +1,81 @@
+bin/kxicq
+lib/kxicq/plugins/liblastOnline.so
+lib/kxicq/plugins/liblastOnline.so.0
+lib/kxicq/plugins/librussianConverter.so
+lib/kxicq/plugins/librussianConverter.so.0
+lib/kxicq/plugins/libesound.so
+lib/kxicq/plugins/libesound.so.0
+share/locale/nl/LC_MESSAGES/kxicq.mo
+share/locale/ja/LC_MESSAGES/kxicq.mo
+share/locale/de/LC_MESSAGES/kxicq.mo
+share/locale/sv/LC_MESSAGES/kxicq.mo
+share/locale/hr/LC_MESSAGES/kxicq.mo
+share/locale/it/LC_MESSAGES/kxicq.mo
+share/doc/HTML/en/kxicq/index-1.html
+share/doc/HTML/en/kxicq/index-2.html
+share/doc/HTML/en/kxicq/index-3.html
+share/doc/HTML/en/kxicq/index-4.html
+share/doc/HTML/en/kxicq/index-5.html
+share/doc/HTML/en/kxicq/index-6.html
+share/doc/HTML/en/kxicq/index.html
+share/doc/HTML/en/kxicq/index.sgml
+share/doc/HTML/en/kxicq/registration-1.html
+share/doc/HTML/en/kxicq/registration-2-KXicq.html
+share/doc/HTML/en/kxicq/registration-3.html
+share/doc/HTML/en/kxicq/registration-4.html
+share/doc/HTML/en/kxicq/registration-5.html
+share/doc/HTML/en/kxicq/index-7.html
+share/doc/HTML/en/kxicq/layout_default.gif
+share/apps/kxicq/wavs/message.wav
+share/apps/kxicq/icons/default/invisible.xpm
+share/apps/kxicq/icons/default/available.xpm
+share/apps/kxicq/icons/default/send.xpm
+share/apps/kxicq/icons/default/away.xpm
+share/apps/kxicq/icons/default/na.xpm
+share/apps/kxicq/icons/default/dnd.xpm
+share/apps/kxicq/icons/default/occupied.xpm
+share/apps/kxicq/icons/default/ffc.xpm
+share/apps/kxicq/icons/default/exit.xpm
+share/apps/kxicq/icons/default/history.xpm
+share/apps/kxicq/icons/default/newmsg.xpm
+share/apps/kxicq/icons/default/offline.xpm
+share/apps/kxicq/icons/default/online.xpm
+share/apps/kxicq/icons/default/selecttext.xpm
+share/apps/kxicq/icons/default/selectcolor.xpm
+share/apps/kxicq/icons/icq/invisible.xpm
+share/apps/kxicq/icons/icq/available.xpm
+share/apps/kxicq/icons/icq/send.xpm
+share/apps/kxicq/icons/icq/away.xpm
+share/apps/kxicq/icons/icq/na.xpm
+share/apps/kxicq/icons/icq/dnd.xpm
+share/apps/kxicq/icons/icq/occupied.xpm
+share/apps/kxicq/icons/icq/ffc.xpm
+share/apps/kxicq/icons/icq/exit.xpm
+share/apps/kxicq/icons/icq/history.xpm
+share/apps/kxicq/icons/icq/newmsg.xpm
+share/apps/kxicq/icons/icq/offline.xpm
+share/apps/kxicq/icons/icq/online.xpm
+share/apps/kxicq/icons/icq/selecttext.xpm
+share/apps/kxicq/icons/icq/selectcolor.xpm
+share/apps/kxicq/pics/startlogo.bmp
+share/apps/kxicq/skins/computer/computer.kxskin
+share/apps/kxicq/skins/computer/Frame.xpm
+share/apps/kxicq/skins/computer/MenuButtonDown.xpm
+share/apps/kxicq/skins/computer/MenuButtonUp.xpm
+share/apps/kxicq/skins/computer/field.xpm
+share/apps/kxicq/utils/ping.kxutil
+share/apps/kxicq/utils/pine.kxutil
+share/applnk/Applications/kxicq.kdelnk
+include/ltdl.h
+@dirrm share/doc/HTML/en/kxicq
+@dirrm share/apps/kxicq/wavs
+@dirrm share/apps/kxicq/icons/default
+@dirrm share/apps/kxicq/icons/icq
+@dirrm share/apps/kxicq/icons
+@dirrm share/apps/kxicq/utils
+@dirrm share/apps/kxicq/skins/computer
+@dirrm share/apps/kxicq/skins
+@dirrm share/apps/kxicq/pics
+@dirrm share/apps/kxicq
+@dirrm lib/kxicq/plugins
+@dirrm lib/kxicq
