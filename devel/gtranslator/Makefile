@@ -15,7 +15,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	sobomax@FreeBSD.org
 
-LIB_DEPENDS=	gal.6:${PORTSDIR}/x11-toolkits/gal
+LIB_DEPENDS=	gal.7:${PORTSDIR}/x11-toolkits/gal
 
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes
