@@ -1,0 +1,14 @@
+--- kiklib/configure.orig	Fri Jun 20 10:53:24 2003
++++ kiklib/configure	Fri Jun 20 10:54:08 2003
+@@ -7174,11 +7174,6 @@
+     top_srcdir="$ac_dots$ac_given_srcdir" ;;
+   esac
+ 
+-  case "$ac_given_INSTALL" in
+-  [/$]*) INSTALL="$ac_given_INSTALL" ;;
+-  *) INSTALL="$ac_dots$ac_given_INSTALL" ;;
+-  esac
+-
+   echo creating "$ac_file"
+   rm -f "$ac_file"
+   configure_input="Generated automatically from `echo $ac_file_in|sed 's%.*/%%'` by configure."
