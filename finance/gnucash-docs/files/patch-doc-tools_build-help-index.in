@@ -1,0 +1,11 @@
+--- doc-tools/build-help-index.in.orig	Mon Feb 17 22:31:20 2003
++++ doc-tools/build-help-index.in	Mon Feb 17 22:31:25 2003
+@@ -3,7 +3,7 @@
+ 
+ use strict;
+ use File::Basename;
+-use bytes;
++#use bytes;
+ 
+ my %contents;
+ 
