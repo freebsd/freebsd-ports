@@ -68,7 +68,8 @@ my $NoName = "
 #$DelPath = "
 #%s - The old path and version has been deleted from \$$HEADER\$.\n";
 
-my $BadId = "%s - The \$$HEADER\$ is mangled.\n";
+my $BadId = "
+%s - The \$$HEADER\$ is mangled.\n";
 
 my $BadName = "
 %s - The pathname '%s'
