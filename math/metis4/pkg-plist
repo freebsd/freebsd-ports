@@ -16,3 +16,4 @@ include/metis/rename.h
 include/metis/struct.h
 share/doc/METIS/manual.ps
 @dirrm share/doc/METIS
+@dirrm include/metis
