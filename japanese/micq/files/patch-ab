@@ -1,11 +1,14 @@
---- Makefile.orig	Wed Jul  7 10:20:59 1999
-+++ Makefile	Wed Jul  7 10:22:34 1999
-@@ -2,7 +2,7 @@
+--- Makefile.orig	Sun Sep 12 18:42:33 1999
++++ Makefile	Mon Nov  1 17:19:29 1999
+@@ -1,8 +1,9 @@
+ # Anyone who knows how to make Makefiles please help out.
  # I have no clue but this appears to work fairly well
  # be sure to use gmake
- CC = gcc
+-CC = gcc
 -CFLAGS = -O4 -Wall -DUNIX -DANSI_COLOR 
-+CFLAGS = -Wall -DUNIX -DANSI_COLOR 
++#CC = gcc
++#CFLAGS = -O4 -Wall -DUNIX -DANSI_COLOR
++CFLAGS += -Wall -DUNIX -DANSI_COLOR
+ CFLAGS += -DMAX_CONTACTS=255
  CFLAGS += -DUSE_MREADLINE
- #CFLAGS += -DENGLISH_LANG
- #CFLAGS += -DBRAZIL_LANG
+ #CFLAGS += -DCOLOR_SCHEME_A
