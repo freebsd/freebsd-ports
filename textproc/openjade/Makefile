@@ -34,11 +34,7 @@ post-install:
 # 'march=-mpentium -Os' produces core dumps with certain input files
 # Therefore, we'd better remove all machine optimizations and any -O
 # other than -O{0,1,}. Idea taken from palm/prc-tools-gcc.
-# The following sed does not reproduce the awk result. Odd.
-# ${SED} -e 's/-m[0-9a-zA-Z]+(=[0-9a-zA-Z]*)?//g' -e 's/-O[s2-9]+//g'
-CFLAGS!=	${ECHO} "${CFLAGS}" | ${AWK} 'BEGIN \
-			{ RS="-m[0-9a-zA-Z]+(=[0-9a-zA-Z]*)?|-O[s2-9]+" ; \
-				ORS="" } ; \
-			{ if (RT == "") { print $0 } else print }'
+CFLAGS!=	${ECHO} "${CFLAGS}" | ${SED} -E -e 's/-m[0-9a-zA-Z]+(=[0-9a-zA-Z]*)?//g' \
+			-e 's/-O[s2-9]+//g'
 
 .include <bsd.port.post.mk>
