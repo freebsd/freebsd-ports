@@ -33,13 +33,13 @@
 +drive a: file="/dev/fd0"
 +drive b: file="/dev/fd1"
 +
-+# Drive T: is a 1.72M floppy format with 80 cylinders, double sided (2 heads),
-+#          and 43 sectors of size 256 bytes per track.  It uses the same
++# Drive T: is a 1.72M floppy format with 82 cylinders, double sided (2 heads),
++#          and 21 sectors of size 512 bytes per track.  It uses the same
 +#          floppy disk drive (fd0) as drive A: above.
 +#
 +# Example: To prepare and use a 1.72M floppy on FreeBSD:
 +#   [1] low level format with ......... fdformat /dev/fd0.1720
-+#   [2] write a file system with ...... mformat -t 80 -h 2 -s 43 -S 1 t:
++#   [2] write a file system with ...... mformat -t 82 -h 2 -n 21 t:
 +#   [3] then use mcopy/mdir etc. in the usual way.
 +#
 +# The above note on access permissions applies to /dev/fd0.1720 as well.
