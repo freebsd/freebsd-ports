@@ -1,5 +1,5 @@
 Japanese dvi file previewer for X.
-(xdvik-22.05b + xdvik-22.02-j1.02)
+(xdvik-22.15 + xdvik-22.15-j1.03)
 
     1. support dvi file of ASCII Japanese TeX(and pTeX) and NTT jTeX.
     2. require METAFONT and VFlib (vector font library).
@@ -8,5 +8,6 @@ Japanese dvi file previewer for X.
     5. built-in EPS preview (need to any ghostscript)
     6. print out from this program (use lpr).
     7. convert dvi -> ps (default use japanese/dvipsk).
+    8. support wheel mouse.
 
 - Kentaro Inagaki <inagaki@tg.rim.or.jp>

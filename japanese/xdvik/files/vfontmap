@@ -1,23 +1,47 @@
 ## ---- start of defaults ----
-#dg		goth	# for NTT
-#dm		min		# for NTT
 
-#ngoth	goth	# for ASCII
-#tgoth	goth	# for ASCII
-#goth	goth	# for ASCII
-#nmin	min		# for ASCII
-#tmin	min		# for ASCII
-#min	min		# for ASCII
+## ---- NTT jTeX fontset ----
+#dg	goth
+#dm	min
+
+## ---- pTeX fontset ----
+#goth	goth
+#min	min
+#ngoth	goth
+#nmin	min
+#tgoth	goth
+#tmin	min
 ## ---- end of defaults ----
+
+## ---- jis fontset ----
+#jis	min
+#jisg	goth
+
+## ---- morisawa 5 fontset ----
+#Ryumin-Light-H		min
+#Ryumin-Light-J		min
+#Ryumin-Light-V		min
+#GothicBBB-Medium-H	goth
+#GothicBBB-Medium-J	goth
+#GothicBBB-Medium-V	goth
+#FutoMinA101-Bold-H	min
+#FutoMinA101-Bold-J	min
+#FutoMinA101-Bold-V	min
+#FutoGoB101-Bold-H	goth
+#FutoGoB101-Bold-J	goth
+#FutoGoB101-Bold-V	goth
+#Jun101-Light-H		min
+#Jun101-Light-J		min
+#Jun101-Light-V		min
 
 ## ---- other ----
 #mgoth	maru
 #fmin	fmin
 #fgoth	goth
 
-## ---- tate fonts ----
-#tmin    tmin     # for ASCII
-#tgoth   tgoth    # for ASCII
+## ---- pTeX tate fonts ----
+#tmin    tmin
+#tgoth   tgoth
 
 ## ---- not use pTeX TFM (VF) ----
 #rml     min
