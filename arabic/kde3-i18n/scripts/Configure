@@ -7,7 +7,7 @@ if [ "${LINGUAS}" ]; then
 	set `echo $LINGUAS`
 else
 if [ "${BATCH}" ]; then
-	set \"ca\" \"cs\" \"da\" \"de\" \"el\" \"eo\" \"es\" \"et\" \"fi\" \"fr\" \"he\" \"hu\" \"ja\" \"is\" \"ko\" \"it\" \"nl\" \"no\" \"no_NY\" \"pl\" \"pt\" \"pt_BR\" \"ro\" \"ru\" \"sk\" \"sl\" \"sr\" \"sv\" \"tr\" \"uk\" \"zh_CN.GB2312\" \"zh_TW.Big5\"
+	set \"ca\" \"cs\" \"da\" \"el\" \"eo\" \"es\" \"et\" \"fi\" \"he\" \"hu\" \"is\" \"it\" \"nl\" \"no\" \"no_NY\" \"pl\" \"pt\" \"pt_BR\" \"ro\" \"sk\" \"sl\" \"sr\" \"sv\" \"tr\" \"uk\"
 else
 	/usr/bin/dialog --title "Select languages" --clear \
 		--checklist "\n\
