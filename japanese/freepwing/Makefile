@@ -13,8 +13,11 @@ MASTER_SITES=	ftp://ftp.sra.co.jp/pub/misc/freepwing/freepwing/
 
 MAINTAINER=	taoka@FreeBSD.org
 
+RUN_DEPENDS=	gmake:${PORTSDIR}/devel/gmake
+
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--datadir=${PREFIX}/share/doc
+USE_GMAKE=	yes
 USE_PERL5=	yes
 
 .include <bsd.port.mk>
