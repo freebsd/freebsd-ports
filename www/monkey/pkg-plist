@@ -11,21 +11,23 @@ etc/monkey/monkey.conf-dist
 etc/monkey/monkey.deny-dist
 @exec [ -f %B/monkey.deny ] || cp %B/%f %B/monkey.deny
 etc/rc.d/monkey.sh.sample
-sbin/monkey
 sbin/banana
+sbin/monkey
 www/cgi-bin/test.pl
-www/data/imgs/logonooficial.jpg
-www/data/imgs/titulo.jpg
-www/data/php/index.php
 www/data/docs/monkey+php.en.html
 www/data/docs/monkey+php.es.html
+www/data/docs/monkey+php.fr.html
 www/data/docs/monkey+php.ru.html
 www/data/docs/monkey+php.sv.html
+www/data/imgs/hola chao.txt
+www/data/imgs/logonooficial.jpg
+www/data/imgs/titulo.jpg
 www/data/index.html
+www/data/php/index.php
 @dirrm etc/monkey
-@dirrm www/cgi-bin
-@dirrm www/data/docs
-@dirrm www/data/imgs
 @dirrm www/data/php
+@dirrm www/data/imgs
+@dirrm www/data/docs
 @dirrm www/data
-@dirrm www/
+@dirrm www/cgi-bin
+@dirrm www
