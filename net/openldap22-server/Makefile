@@ -160,7 +160,7 @@ WITH_BDB_VER?=		42
 CONFIGURE_ARGS+=	--enable-bdb
 BDBLIB=			db-4.2.2
 .elif ${WITH_BDB_VER} == 41
-CONFIGURE_ARGS+=	--enable-bdb
+CONFIGURE_ARGS+=	--disable-bdb
 BDBLIB=			db41.1
 .elif ${WITH_BDB_VER} == 4
 CONFIGURE_ARGS+=	--disable-bdb
