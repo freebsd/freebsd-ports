@@ -3615,6 +3615,7 @@ kmyirc		ports/irc/kmyirc
 knews		ports/news/knews
 knights		ports/games/knights
 knocker		ports/security/knocker
+knoda		ports/databases/knoda
 knowit		ports/deskutils/knowit
 knowlan		ports/net/knowlan
 knowledgekit	ports/www/knowledgekit
