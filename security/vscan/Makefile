@@ -7,7 +7,7 @@
 
 PORTNAME=	uvscan
 PORTVERSION=	4.32e
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	security
 MASTER_SITES=	http://download.nai.com/products/evaluation/virusscan/english/cmdline/bsd/v4.32/
 DISTNAME=	vbsd432e
@@ -23,12 +23,21 @@ RUN_DEPENDS+=	${LOCALBASE}/sbin/update_dat:${PORTSDIR}/security/uvscan-dat
 LIB_DEPENDS+=	c.3:${PORTSDIR}/misc/compat3x
 .endif
 
-ONLY_FOR_ARCHS=	i386
-NO_BUILD=	YES
-NO_WRKSUBDIR=	YES
+.if !defined(COMPAT4X)
+.if !exists(/usr/lib/libm.so.2) && !exists(/lib/libm.so.2)
+LIB_DEPENDS+=	m.2:${PORTSDIR}/misc/compat4x
+.endif
+.endif
+
+ONLY_FOR_ARCHS=		i386
+NO_BUILD=		YES
+NO_WRKSUBDIR=		YES
+INSTALLS_SHLIBS=	YES
 
 LICENSE=	shareware
 RESTRICTED=	"restrictive 30 day evaluation license"
+
+PORTDOCS=	e4320upg.pdf license.txt
 
 do-configure:
 	${SED} <${FILESDIR}/uvscan.sh >${WRKSRC}/uvscan.sh \
@@ -45,8 +54,11 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/${file} ${PREFIX}/libexec/uvscan
 .endfor
 	${MKDIR} ${PREFIX}/share/doc/uvscan
-.for file in e4320upg.pdf license.txt
-	${INSTALL_DATA} ${WRKSRC}/${file} ${PREFIX}/share/doc/uvscan
+.if !defined(NOPORTDOCS)
+	${MKDIR} ${DOCSDIR}
+.for file in ${PORTDOCS}
+	${INSTALL_DATA} ${WRKSRC}/${file} ${DOCSDIR}
 .endfor
+.endif
 
 .include <bsd.port.mk>

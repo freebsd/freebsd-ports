@@ -6,5 +6,3 @@ lib/libbsdfv.so.4
 libexec/uvscan/uvscan
 libexec/uvscan/license.dat
 libexec/uvscan/messages.dat
-share/doc/uvscan/e4320upg.pdf
-share/doc/uvscan/license.txt
