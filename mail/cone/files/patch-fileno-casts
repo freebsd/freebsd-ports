@@ -1,0 +1,49 @@
+--- libmail/mbox.C~	Tue Apr  6 04:06:36 2004
++++ libmail/mbox.C	Sat Apr 17 22:05:27 2004
+@@ -1243,7 +1243,7 @@
+ 				// Remember how big the saveFile was,
+ 				// originally.
+ 
+-				if (fstat(fileno(*saveFile), &stat_buf) < 0)
++				if (fstat(fileno(static_cast<FILE *>(*saveFile)), &stat_buf) < 0)
+ 				{
+ 					return false;
+ 				}
+@@ -1280,7 +1280,7 @@
+ 			{
+ 				// Potential short cut.
+ 
+-				if (fstat(fileno(scanFile), &stat_buf) < 0)
++				if (fstat(fileno(static_cast<FILE *>(scanFile)), &stat_buf) < 0)
+ 				{
+ 					return false;
+ 				}
+--- libmail/mboxadd.C~	Wed Aug 27 04:37:22 2003
++++ libmail/mboxadd.C	Sat Apr 17 22:06:10 2004
+@@ -99,13 +99,13 @@
+ {
+ 	struct stat st;
+ 
+-	mail::mbox::sighandler updating(fileno(file));
++	mail::mbox::sighandler updating(fileno(static_cast<FILE *>(file)));
+ 
+ 	try {
+ 
+ 		// Make sure the mboxAccount file ends with a trailing newline
+ 
+-		if (fstat(fileno(file), &st) < 0)
++		if (fstat(fileno(static_cast<FILE *>(file)), &st) < 0)
+ 		{
+ 			fail(strerror(errno));
+ 			return;
+--- libmail/mboxgetmessage.C~	Wed Aug 27 04:37:22 2003
++++ libmail/mboxgetmessage.C	Sat Apr 17 22:06:42 2004
+@@ -81,7 +81,7 @@
+ 	{
+ 		struct stat stat_buf;
+ 
+-		if (fstat(fileno(file), &stat_buf) < 0)
++		if (fstat(fileno(static_cast<FILE *>(file)), &stat_buf) < 0)
+ 			endingPos=stat_buf.st_size;
+ 	}
+ 	else
