@@ -1,8 +1,8 @@
 
 $FreeBSD$
 
---- config/configure.in.orig	Thu May  2 08:42:15 2002
-+++ config/configure.in	Sat Jul 19 12:19:25 2003
+--- config/configure.in.orig	Thu May  2 01:42:15 2002
++++ config/configure.in	Mon Sep  1 11:11:00 2003
 @@ -69,9 +69,10 @@
  
  GTK_VERSION=`$GTK_CONFIG --version | awk -F. '{ print $1*65536+$2*256+$3 }'`
@@ -15,3 +15,12 @@ $FreeBSD$
  
  
  if test "x$GNOME" != "xno"; then
+@@ -122,7 +123,7 @@
+ ERLC_FLAGS=
+ EI_DIR=`$ERLC eiconf.erl; $ERL -noshell -s eiconf`
+ EI_CFLAGS="-I$EI_DIR/include"
+-EI_LIBS="-L$EI_DIR/lib -lerl_interface -lei"
++EI_LIBS="-L$EI_DIR/lib -lerl_interface_st -lei_st"
+ dnl
+ dnl Check if the erl_interface is capable of represent/store functions
+ dnl

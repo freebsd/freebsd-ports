@@ -12,10 +12,11 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	erlgtk
 DIST_SUBDIR=	erlang
 
-MAINTAINER=	cpressey@catseye.mb.ca
+MAINTAINER=	chris_pressey@yahoo.ca
 COMMENT=	GTK+ 1.2 binding for Erlang/OTP
 
 BUILD_DEPENDS=	erlc:${PORTSDIR}/lang/erlang
+RUN_DEPENDS=	erlc:${PORTSDIR}/lang/erlang
 
 PLIST_SUB=	VERSION="${PORTVERSION}"
 
