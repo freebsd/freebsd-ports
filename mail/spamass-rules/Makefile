@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	spamass-rules
-PORTVERSION=	20041105
+PORTVERSION=	20041130
 CATEGORIES=	mail
 MASTER_SITES=	http://www.ranner.jawa.at/stuff/ \
 		http://web.inforum.at/downloads/
@@ -28,6 +28,7 @@ OPTIONS=	AHBL "Check AHBL Blacklist" off \
 		FRENCH "Catches spam written in French" off \
 		GERMAN "Catches spam written in German" off \
 		MANGLED "Looks for obfuscated/gappy words" off \
+		MIMEVLD "Some mime validation rules" off \
 		RANDOM "Detects spamware mistakes like: %RANDOM_WORD" on \
 		SARE "Installs safe SARE rules" on \
 		SARE1 "Installs more restrictive SARE rules" off \
@@ -99,6 +100,10 @@ SPAMASS_FILES+=	$i
 SPAMASS_FILES+=	mangled.cf
 .endif
 
+.if defined(WITH_MIMEVLD)
+SPAMASS_FILES+=	mime_validate.cf
+.endif
+
 .if !defined(WITHOUT_RANDOM)
 SPAMASS_FILES+=	random.cf
 .endif
@@ -149,7 +154,7 @@ do-build:
 	@${DO_NADA}
 
 pre-install:
-	@${SED} -e 's|%%LOCALBASE%%|${LOCALBASE}|g' ${.CURDIR}/pkg-message > ${PKGMESSAGE}
+	@${SED} -e 's|%%LOCALBASE%%|${PREFIX}|g' ${.CURDIR}/pkg-message > ${PKGMESSAGE}
 
 do-install:
 	@${MKDIR} ${INSTALL_DIR}
