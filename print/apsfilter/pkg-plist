@@ -26,6 +26,7 @@ share/doc/apsfilter/features
 share/doc/apsfilter/methods
 share/doc/apsfilter/paper
 share/doc/apsfilter/printer
+share/doc/apsfilter/readme.hp8
 @dirrm apsfilter/bin
 @dirrm apsfilter/filter
 @dirrm apsfilter/global
