@@ -157,6 +157,16 @@ MAN5=		fonts-conf.5
 
 .include <bsd.port.pre.mk>
 
+.if defined(WITH_CJK)
+PATCH_SITES=	http://firefly.idv.tw/setfont-xft/patches/fontconfig/2.2.3/ \
+		http://download.linuxsir.org/fontconfig/ \
+		http://bsdchat.com/dist/firefly-cjk-patchset/
+PATCHFILES=	fontconfig-2.2.3-default_config-20041114.patch \
+		fontconfig-2.2.3-include_CJK_charmaps-20041114.patch \
+		cjk-patch-fontconfig-20041115.diff.gz
+PATCH_DIST_STRIP=	-p1:CJK_charmaps
+.endif
+
 .if ${X_WINDOW_SYSTEM:L} == xfree86-3
 MTREE_FILE=	/etc/mtree/BSD.x11.dist
 .else

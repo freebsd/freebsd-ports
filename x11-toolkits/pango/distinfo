@@ -1,2 +1,4 @@
 MD5 (gnome2/pango-1.6.0.tar.bz2) = 6c732bbc5fba5a0f1f8086e8aa4f490d
 SIZE (gnome2/pango-1.6.0.tar.bz2) = 951911
+MD5 (gnome2/cjk-patch-pango-20041115.diff.gz) = 76e545d0bda595aced674ecf397eab63
+SIZE (gnome2/cjk-patch-pango-20041115.diff.gz) = 1930

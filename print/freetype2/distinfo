@@ -1,2 +1,4 @@
 MD5 (freetype-2.1.7.tar.bz2) = d71723948d7c0e44c401b5733c50857e
 SIZE (freetype-2.1.7.tar.bz2) = 930766
+MD5 (cjk-patch-freetype2-20041115.diff.gz) = c1e52458b877a78636a4cdbb97badb11
+SIZE (cjk-patch-freetype2-20041115.diff.gz) = 16052
