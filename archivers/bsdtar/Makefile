@@ -5,29 +5,25 @@
 # $FreeBSD$
 
 PORTNAME=	bsdtar
-PORTVERSION=	2004.07.14
+PORTVERSION=	1.01.011
+PORTEPOCH=	1
 CATEGORIES=	archivers
 MASTER_SITES=	http://people.freebsd.org/~kientzle/libarchive/src/
-DISTNAME=	${PORTNAME}-${PORTVERSION:S/./-/g}
-EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	martin@tradex.sk
 COMMENT=	New tar archiver from FreeBSD-CURRENT
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/libarchive.a:${PORTSDIR}/archivers/libarchive
 
-WRKSRC=		${WRKDIR}/${PORTNAME}
-
 CFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 
-MAKE_FLAGS+=	BINDIR=${PREFIX}/bin \
-		MANDIR=${PREFIX}/man/man
+GNU_CONFIGURE=	yes
+CONFIGURE_ENV+=	LDFLAGS="${LDFLAGS}"
 
 PLIST_FILES=	bin/bsdtar
 
-USE_REINPLACE=	yes
-
-MANCOMPRESSED=	yes
+MANCOMPRESSED=	no
 MAN1=		bsdtar.1
 
 .include <bsd.port.pre.mk>
@@ -35,12 +31,5 @@ MAN1=		bsdtar.1
 .if ${OSVERSION} >= 502111
 IGNORE=		is in the base system
 .endif
-
-.if ${OSVERSION} < 500000
-EXTRA_PATCHES=	${PATCHDIR}/diff-bsdtar.h
-.endif
-
-post-patch:
-	@${REINPLACE_CMD} -e "s|%%LOCALBASE%%|${LOCALBASE}|g" ${WRKSRC}/Makefile
 
 .include <bsd.port.post.mk>
