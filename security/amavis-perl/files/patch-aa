@@ -1,0 +1,38 @@
+--- configure.orig	Thu Dec  7 19:04:06 2000
++++ configure	Sun Dec 31 15:22:09 2000
+@@ -1109,16 +1109,16 @@
+   { echo "configure: error: Sorry, you need the "file" command" 1>&2; exit 1; }
+ fi
+ 
+-echo $ac_n "checking if file can be brief""... $ac_c" 1>&6
+-echo "configure:1114: checking if file can be brief" >&5
+-$file -b /bin/sh > /dev/null 2>&1
+-if test $? -ne 0 ; then
+-  { echo "configure: error: 
+-You need a "file" command that supports -b
+-Check ftp://ftp.astron.com/pub/file/" 1>&2; exit 1; }
+-else
+-  echo "$ac_t""yes" 1>&6
+-fi
++#echo $ac_n "checking if file can be brief""... $ac_c" 1>&6
++#echo "configure:1114: checking if file can be brief" >&5
++#$file -b /bin/sh > /dev/null 2>&1
++#if test $? -ne 0 ; then
++#  { echo "configure: error: 
++#You need a "file" command that supports -b
++#Check ftp://ftp.astron.com/pub/file/" 1>&2; exit 1; }
++#else
++#  echo "$ac_t""yes" 1>&6
++#fi
+ 
+ for ac_prog in grep
+ do
+@@ -1775,7 +1775,7 @@
+   if test ! -f "$sendmail_cf_orig" ; then
+     if test -f /etc/sendmail.cf ; then
+       sendmail_cf_orig=/etc/sendmail.orig.cf
+-    elif test -f /etc/mail/sendmail.orig.cf ; then
++    elif test -f /etc/mail/sendmail.cf ; then
+       sendmail_cf_orig=/etc/mail/sendmail.orig.cf
+     else
+       { echo "configure: error: 

@@ -1,0 +1,99 @@
+#!/usr/bin/perl
+# Roman Shterenzon <roman@xpert.com> 27/12/2000 
+# $FreeBSD$
+
+use strict;
+
+$ENV{'PATH'}='/bin:/usr/bin';
+
+my $cfg;
+my $result;
+
+exit 0 if $ARGV[1] ne "POST-INSTALL";
+
+if ( -f '/etc/mail/sendmail.cf' ) {
+  $cfg='/etc/mail';
+}
+elsif ( -f '/etc/sendmail.cf' ) {
+  $cfg='/etc';
+}
+my $cf="$cfg/sendmail.cf";
+my $new="$cfg/amavis.cf";
+
+print "===> Adding neccessary hooks to sendmail.cf file\n";
+
+open(IN, $cf) || die "Cannot open $cf";
+open(OUT, ">$new") || die "Cannot create $new";
+
+my $replace=0;
+
+while(<IN>) {
+  if ( /^O QueueDirectory/ ) {
+    $_="O QueueDirectory=/var/spool/mqamavis\n";
+    $replace++;
+  }
+  elsif ( /O StatusFile/ ) {
+    $_="O StatusFile=/var/log/amavis.st\n";
+    $replace++;
+  }
+  elsif ( /^Mlocal/ ) {
+    print OUT <<'EOF';
+Mamavis,	P=/usr/local/sbin/amavis, F=mlsACDFMS5:/|@qhP, S=0, R=0
+		T=DNS/RFC822/X-Unix,
+		A=amavis $f $u 
+
+EOF
+    $replace++;
+  }
+  elsif ( /\s+final\s+parsing$/ ) {
+    print OUT "R\$*\t\t\t\$#amavis \$:\$1\n";
+    $replace++;
+  }
+  s/^(DZ.*)/$1av/;
+  print OUT;
+}
+close(OUT);
+close(IN);
+die "I couldn't patch the sendmail.cf file, its format is unknown to me\n"
+	unless ( $replace == 4 );
+
+print "===> Adding alias for virusalert to the aliases file\n";
+if ( ! -f "$cfg/aliases" ) {
+  print "Can't find aliases file, you have to add an alias for virusalert by yourself\n";
+}
+else {
+  open (IN, "$cfg/aliases") || die "Cannot open aliases file for reading\n";
+  my $found;
+  while(<IN>) {
+    $found=1, last if /^virusalert/;
+  }
+  close(IN);
+  unless ($found) {
+    open(OUT, ">>$cfg/aliases") || die "Cannot open aliases file for writing\n";
+    print OUT "virusalert:\troot\n";
+    close(OUT);
+    $result=system("newaliases");
+    die "Failed to run newaliases command\n" if $result;
+  }
+}
+
+print "===> Creating /var/spool/mqamavis directory\n";
+if ( ! -d "/var/spool/mqamavis" ) {
+  mkdir "/var/spool/mqamavis",0755 || die "Can't create /var/spool/mqamavis\n";
+}
+my $gid=getgrnam('daemon');
+chown 0, $gid, "/var/spool/mqamavis";
+
+print "===> Creating /var/spool/quarantine directory\n";
+if ( ! -d "/var/spool/quarantine" ) {
+  mkdir "/var/spool/quarantine",0755 || die "Can't create /var/spool/quarantine\n";
+}
+chown 0, $gid, "/var/spool/quarantine";
+
+die "There's already a $cf.pre-amavis, is amavis already installed?\n"
+  if -f "$cf.pre-amavis";
+$result=system("cp $cf $cf.pre-amavis");
+die "Failed to copy $cf to $cf.pre-amavis\n" if $result;
+rename "$cf", "${cfg}/sendmail.orig.cf" ||
+  die "Unable to rename $cf to ${cfg}/sendmail.orig.cf\n";
+rename "$new", "$cf" || die "Unable to rename $new to $cf\n";

@@ -1,0 +1,8 @@
+sbin/amavis
+%%NOPORTDOCS%%share/doc/amavis/amavis.txt
+%%NOPORTDOCS%%share/doc/amavis/README
+%%NOPORTDOCS%%share/doc/amavis/README.exim
+%%NOPORTDOCS%%share/doc/amavis/README.postfix
+%%NOPORTDOCS%%share/doc/amavis/README.sendmail
+%%NOPORTDOCS%%share/doc/amavis/README.scanners
+%%NOPORTDOCS%%@dirrm share/doc/amavis

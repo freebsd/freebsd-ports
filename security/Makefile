@@ -5,6 +5,7 @@
     SUBDIR += acid
     SUBDIR += aescrypt
     SUBDIR += aide
+    SUBDIR += amavis-perl
     SUBDIR += bjorb
     SUBDIR += bro
     SUBDIR += bugs
