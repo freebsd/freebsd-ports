@@ -22,6 +22,7 @@ lib/perl5/site_perl/%%PERL_VER%%/auto/Mail/Internet/autosplit.ix
 lib/perl5/site_perl/%%PERL_VER%%/auto/Mail/Internet/escape_from.al
 lib/perl5/site_perl/%%PERL_VER%%/auto/Mail/Internet/nntppost.al
 lib/perl5/site_perl/%%PERL_VER%%/auto/Mail/Internet/reply.al
+lib/perl5/site_perl/%%PERL_VER%%/auto/Mail/Internet/send.al
 lib/perl5/site_perl/%%PERL_VER%%/auto/Mail/Internet/sign.al
 lib/perl5/site_perl/%%PERL_VER%%/auto/Mail/Internet/smtpsend.al
 lib/perl5/site_perl/%%PERL_VER%%/auto/Mail/Internet/unescape_from.al

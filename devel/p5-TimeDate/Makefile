@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	TimeDate
-PORTVERSION=	1.08
+PORTVERSION=	1.09
 CATEGORIES=	devel perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Date
@@ -16,7 +16,9 @@ MAINTAINER=	dima@Chg.RU
 
 USE_PERL5=	YES
 
-MAN3=		Date::Format.3 Date::Parse.3 Time::Zone.3
+MAN3=		Date::Format.3 \
+		Date::Parse.3 \
+		Time::Zone.3
 
 MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 

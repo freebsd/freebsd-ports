@@ -5,13 +5,13 @@
 # $FreeBSD$
 #
 
-PORTNAME=	p5-XML-Parser
-PORTVERSION= 	2.27
+PORTNAME=	XML-Parser
+PORTVERSION= 	2.28
 CATEGORIES=	textproc perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN} \
 		http://wwwx.netheaven.com/~coopercc/xmlparser/
 MASTER_SITE_SUBDIR=	../by-authors/id/C/CO/COOPERCL
-DISTNAME=	XML-Parser-2.27
+PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	kuriyama@FreeBSD.org
 
@@ -22,11 +22,5 @@ MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 
 do-configure:
 	@cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} ${PERL5} Makefile.PL
-
-post-build:
-	@cd ${WRKSRC}/Expat/expat; ${MAKE}
-
-post-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/Expat/expat/xmlwf/xmlwf ${PREFIX}/bin/
 
 .include <bsd.port.mk>

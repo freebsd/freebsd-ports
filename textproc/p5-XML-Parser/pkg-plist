@@ -1,4 +1,3 @@
-bin/xmlwf
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/XML/Parser/Expat/Expat.bs
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/XML/Parser/Expat/Expat.so
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/XML/Parser/.packlist
@@ -28,10 +27,4 @@ lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/XML/Parser/Expat.pm
 @dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/XML/Parser/Encodings
 @dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/XML/Parser
 @dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/XML
-@unexec rmdir %D/lib/perl5/%%PERL_VERSION%%/man/man3 2>/dev/null || true
-@unexec rmdir %D/lib/perl5/%%PERL_VERSION%%/man 2>/dev/null || true
-@unexec rmdir %D/lib/perl5/%%PERL_VERSION%% 2>/dev/null || true
-@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto 2>/dev/null || true
-@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%% 2>/dev/null || true
-@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%% 2>/dev/null || true
-@unexec rmdir %D/lib/perl5/site_perl 2>/dev/null || true
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/XML 2>/dev/null || true

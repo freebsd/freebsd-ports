@@ -1,6 +1,14 @@
 lib/perl5/site_perl/%%PERL_VER%%/Date/Format.pm
 lib/perl5/site_perl/%%PERL_VER%%/Date/Language.pm
+lib/perl5/site_perl/%%PERL_VER%%/Date/Language/Austrian.pm
+lib/perl5/site_perl/%%PERL_VER%%/Date/Language/Czech.pm
+lib/perl5/site_perl/%%PERL_VER%%/Date/Language/English.pm
+lib/perl5/site_perl/%%PERL_VER%%/Date/Language/French.pm
+lib/perl5/site_perl/%%PERL_VER%%/Date/Language/German.pm
+lib/perl5/site_perl/%%PERL_VER%%/Date/Language/Italian.pm
+lib/perl5/site_perl/%%PERL_VER%%/Date/Language/Norwegian.pm
 lib/perl5/site_perl/%%PERL_VER%%/Date/Parse.pm
 lib/perl5/site_perl/%%PERL_VER%%/Time/Zone.pm
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/TimeDate/.packlist
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/Date/Language
 @dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/TimeDate
