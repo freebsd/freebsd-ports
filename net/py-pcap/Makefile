@@ -1,6 +1,6 @@
 # New ports collection makefile for:	py-pcap
 # Date created:		24 Nov 2001
-# Whom:			Hye-Shik Chang <perky@fallin.lv>
+# Whom:			Hye-Shik Chang
 #
 # $FreeBSD$
 #
@@ -18,8 +18,6 @@ MAINTAINER=	perky@FreeBSD.org
 COMMENT=	Python interface to LBL Packet Capture library (libpcap)
 
 BUILD_DEPENDS=	swig:${PORTSDIR}/devel/swig11
-
-BROKEN=		Runtime failure after python 2.4 update
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
