@@ -471,6 +471,9 @@ RUN_DEPENDS+=		${DEPEND_JAVA}
 .		if defined(USE_ANT)
 ANT?=				${LOCALBASE}/bin/ant
 MAKE_ENV+=			JAVA_HOME=${JAVA_HOME}
+.			if defined(HAVE_JIKES)
+MAKE_ARGS+=			-Dbuild.compiler=jikes
+.			endif
 BUILD_DEPENDS+=		${ANT}:${PORTSDIR}/devel/apache-ant
 ALL_TARGET?=
 .			if !target(do-build)
