@@ -3,7 +3,7 @@
 # Date created:		12 November 1997
 # Whom:			Sheldon Hearn <axl@iafrica.com>
 #
-# $Id: Makefile,v 1.5 1998/07/07 03:22:33 jdp Exp $
+# $Id: Makefile,v 1.6 1998/08/17 21:44:57 jdp Exp $
 #
 
 DISTNAME=	cvsup-bin-15.4.2
@@ -18,6 +18,7 @@ MAINTAINER=	axl@iafrica.com
 NO_BUILD=	yes
 
 MAN1=	cvsup.1
+STRIP=
 
 do-configure:
 	cd ${WRKSRC}; gunzip cvsup.1.gz
