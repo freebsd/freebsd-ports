@@ -1,0 +1,12 @@
+--- party.h.orig	Thu Jan 27 21:04:32 2000
++++ party.h	Thu Jan 27 21:05:01 2000
+@@ -470,7 +470,8 @@
+ struct passwd *getpwnam(), *getpwuid();
+ struct chnname *who_clist(), *addchn();
+ char *leafname();
+-long time(), backup();
++long backup();
++time_t time();
+ vint (*oldsigpipe)();
+ vint (*(signal()))();
+ FILE *upopen();

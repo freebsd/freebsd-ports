@@ -1,0 +1,11 @@
+--- jedi/random.c.orig	Thu Jan 27 22:04:58 2000
++++ jedi/random.c	Thu Jan 27 22:12:50 2000
+@@ -29,7 +29,7 @@
+ {
+     int i, j;
+     int random_code;
+-    long time();
++    time_t time();
+ 
+     /*
+      * generate random seed

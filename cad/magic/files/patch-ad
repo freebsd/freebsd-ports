@@ -1,0 +1,11 @@
+--- misc/niceabort.c.orig	Thu Jan 27 21:59:20 2000
++++ misc/niceabort.c	Thu Jan 27 21:59:33 2000
+@@ -52,7 +52,7 @@
+ bool AbortFatal = FALSE;
+ 
+ /* For lint */
+-long time();
++time_t time();
+ char *ctime();
+ 
+ void

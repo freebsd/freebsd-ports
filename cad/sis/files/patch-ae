@@ -1,0 +1,11 @@
+--- nova/ihybrid_code.c.orig	Thu Jan 27 22:21:28 2000
++++ nova/ihybrid_code.c	Thu Jan 27 22:21:37 2000
+@@ -932,7 +932,7 @@
+ 
+ {
+ 
+-    long time();
++    time_t time();
+     int code_bits,i,new_code,increment,range,seed,trandom();
+ 
+     if (VERBOSE) printf("\nI generated a random code\n");
