@@ -19,10 +19,10 @@ DISTNAME=	ElectricFence-${PORTVERSION}
 MAINTAINER=	obrien@FreeBSD.org
 
 CFLAGS+=	-D__USE_BSD
-MAN3=		libefence.3
+MAN3=		efence.3
 
 do-install:
 	${INSTALL_DATA} ${WRKSRC}/libefence.a ${PREFIX}/lib
-	${INSTALL_MAN} ${WRKSRC}/libefence.3 ${PREFIX}/man/man3
+	${INSTALL_MAN} ${WRKSRC}/efence.3 ${PREFIX}/man/man3
 
 .include <bsd.port.mk>
