@@ -1720,6 +1720,7 @@ flink		ports/mail/flink
 flip		ports/graphics/flip
 floatator	ports/misc/floatator
 flog		ports/sysutils/flog
+flounder	ports/science/flounder
 flow-tools	ports/net/flow-tools
 flowscan	ports/net/flowscan
 fltk		ports/x11-toolkits/fltk
