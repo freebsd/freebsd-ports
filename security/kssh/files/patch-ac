@@ -1,0 +1,11 @@
+--- kssh/kssh.desktop.orig	Sat Nov 18 23:25:40 2000
++++ kssh/kssh.desktop	Sat Nov 18 23:25:47 2000
+@@ -1,7 +1,7 @@
+ [Desktop Entry]
+ Type=Application
+ Exec=kssh   
+-Icon=kssh.png
++Icon=kssh
+ DocPath=kssh/index.html
+ Comment= A front-end to ssh
+ Comment[it]= Front-end per ssh
