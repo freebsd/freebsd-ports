@@ -8,7 +8,7 @@
 #
 
 DISTNAME=	vim-5.4
-PKGNAME=	vim-5.4.49
+PKGNAME?=	vim-5.4.49
 CATEGORIES=	editors
 MASTER_SITES=	ftp://nuxi.ucdavis.edu/pub/vim/unix/ \
 		ftp://ftp.nuxi.com/pub/vim/unix/ \
