@@ -7,6 +7,7 @@
 
 PORTNAME=	gstreamer
 PORTVERSION=	0.8.1
+PORTREVISION=	1
 CATEGORIES=	multimedia
 MASTER_SITES=	http://gstreamer.freedesktop.org/src/gst-ffmpeg/
 PKGNAMESUFFIX=	-ffmpeg
@@ -15,7 +16,7 @@ DISTNAME=	gst-ffmpeg-${PORTVERSION}
 MAINTAINER=	kwm@rainbow-runner.nl
 COMMENT=	GStreamer plug-in for manipulating MPEG video streams
 
-LIB_DEPENDS=	gstreamer-0.8.4:${PORTSDIR}/multimedia/gstreamer
+LIB_DEPENDS=	gstreamer-0.8.5:${PORTSDIR}/multimedia/gstreamer
 
 USE_X_PREFIX=	yes
 USE_BZIP2=	yes
