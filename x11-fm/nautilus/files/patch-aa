@@ -1,36 +1,36 @@
 
 $FreeBSD$
 
---- configure.orig	Tue May 22 15:47:27 2001
-+++ configure	Tue May 22 15:55:11 2001
-@@ -3433,7 +3433,7 @@
+--- configure.orig	Thu Oct 25 18:17:31 2001
++++ configure	Thu Oct 25 18:18:56 2001
+@@ -7003,7 +7003,7 @@
  
  CC="$_save_cc"
  
 -LDFLAGS="$_save_ldflags -L$_mozilla_lib_place $_mozilla_all_nspr_flags -lgtksuperwin"
 +LDFLAGS="$_save_ldflags -L$_mozilla_lib_place $_mozilla_all_nspr_flags -lstdc++ -lgtksuperwin"
+ _mozilla_gtk_super_win_libs=
  echo $ac_n "checking for gdk_superwin_get_type in -lgtksuperwin""... $ac_c" 1>&6
- echo "configure:3439: checking for gdk_superwin_get_type in -lgtksuperwin" >&5
- ac_lib_var=`echo gtksuperwin'_'gdk_superwin_get_type | sed 'y%./+-%__p_%'`
-@@ -3475,7 +3475,7 @@
+ echo "configure:7010: checking for gdk_superwin_get_type in -lgtksuperwin" >&5
+@@ -7046,7 +7046,7 @@
  fi
  
  
 -LDFLAGS="$_save_ldflags -L$_mozilla_lib_place $_mozilla_all_nspr_flags -lgtkembedmoz $_mozilla_xpcom_libs"
-+LDFLAGS="$_save_ldflags -L$_mozilla_lib_place $_mozilla_all_nspr_flags -lgtkembedmoz -lgtksuperwin $_mozilla_xpcom_libs"
++LDFLAGS="$_save_ldflags -L$_mozilla_lib_place $_mozilla_all_nspr_flags -lstdc++ -lgtkembedmoz $_mozilla_xpcom_libs"
+ _mozilla_gtk_moz_embed_libs=
  echo $ac_n "checking for gtk_moz_embed_get_type in -lgtkembedmoz""... $ac_c" 1>&6
- echo "configure:3481: checking for gtk_moz_embed_get_type in -lgtkembedmoz" >&5
- ac_lib_var=`echo gtkembedmoz'_'gtk_moz_embed_get_type | sed 'y%./+-%__p_%'`
-@@ -3483,7 +3483,7 @@
+ echo "configure:7053: checking for gtk_moz_embed_get_type in -lgtkembedmoz" >&5
+@@ -7055,7 +7055,7 @@
    echo $ac_n "(cached) $ac_c" 1>&6
  else
    ac_save_LIBS="$LIBS"
 -LIBS="-lgtkembedmoz  $LIBS"
 +LIBS="-lgtkembedmoz  -lgtksuperwin $LIBS"
  cat > conftest.$ac_ext <<EOF
- #line 3489 "configure"
+ #line 7061 "configure"
  #include "confdefs.h"
-@@ -5472,7 +5472,7 @@
+@@ -9018,7 +9018,7 @@
  fi
  
  if test x$SCROLLKEEPER_CONFIG = xno; then

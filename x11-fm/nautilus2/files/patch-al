@@ -1,9 +1,16 @@
---- helper-scripts/Makefile.in.orig	Fri Jan 12 12:04:47 2001
-+++ helper-scripts/Makefile.in	Fri Jan 12 12:24:05 2001
-@@ -267,4 +267,4 @@
+
+$FreeBSD$
+
+--- helper-scripts/Makefile.in.orig	Thu Oct 25 18:21:43 2001
++++ helper-scripts/Makefile.in	Thu Oct 25 18:22:45 2001
+@@ -328,8 +328,8 @@
+ 	$(mkinstalldirs) $(DESTDIR)$(prefix)/bin
+ 	@list='nautilus-verify-rpm.sh nautilus-restore-settings-to-default.sh'; for p in $$list; do\
  	  if test -f $(srcdir)/$$p; then \
--	    echo "  $(INSTALL_PROGRAM) $(srcdir)/$$p $(DESTDIR)/$(prefix)/bin/$$p"; \
--	    $(INSTALL_PROGRAM) $(srcdir)/$$p $(DESTDIR)/$(prefix)/bin/$$p; \
-+	    echo "  $(INSTALL_SCRIPT) $(srcdir)/$$p $(DESTDIR)/$(prefix)/bin/$$p"; \
-+	    $(INSTALL_SCRIPT) $(srcdir)/$$p $(DESTDIR)/$(prefix)/bin/$$p; \
+-	    echo "  $(INSTALL_PROGRAM) $(srcdir)/$$p $(DESTDIR)$(prefix)/bin/$$p"; \
+-	    $(INSTALL_PROGRAM) $(srcdir)/$$p $(DESTDIR)$(prefix)/bin/$$p; \
++	    echo "  $(INSTALL_SCRIPT) $(srcdir)/$$p $(DESTDIR)$(prefix)/bin/$$p"; \
++	    $(INSTALL_SCRIPT) $(srcdir)/$$p $(DESTDIR)$(prefix)/bin/$$p; \
  	  else :; fi; \
+ 	done
+ 

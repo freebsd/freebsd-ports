@@ -28,6 +28,15 @@ bin/nautilus-xml-migrate
 bin/run-nautilus
 etc/CORBA/servers/nautilus-launcher-applet.gnorba
 etc/CORBA/servers/nautilus-preferences-applet.gnorba
+etc/X11/serverconfig/.directory
+etc/X11/starthere/.directory
+etc/X11/starthere/favorites.desktop
+etc/X11/starthere/preferences.desktop
+etc/X11/starthere/programs.desktop
+etc/X11/starthere/serverconfig.desktop
+etc/X11/starthere/sysconfig.desktop
+etc/X11/sysconfig/.directory
+etc/nautilusConf.sh
 etc/vfs/modules/help-methods.conf
 include/libnautilus/libnautilus.h
 include/libnautilus/nautilus-bonobo-ui.h
@@ -48,9 +57,10 @@ lib/libnautilus-tree-view.so
 lib/libnautilus-tree-view.so.0
 lib/libnautilus.so
 lib/libnautilus.so.0
-lib/nautilusConf.sh
 lib/vfs/modules/libvfs-help.so
+share/gnome/apps/Applications/nautilus-help.desktop
 share/gnome/apps/Applications/nautilus.desktop
+share/gnome/apps/nautilus-help.desktop
 share/gnome/help/gnufdl/C/gnufdl.sgml
 share/gnome/help/gnugpl/C/gnugpl.sgml
 share/gnome/help/nautilus-quick-reference/C/figures/backgrounds_nqr.png
@@ -264,6 +274,7 @@ share/gnome/nautilus/emblems/ohno.png
 share/gnome/nautilus/emblems/personal.png
 share/gnome/nautilus/emblems/special.png
 share/gnome/nautilus/emblems/urgent.png
+share/gnome/nautilus/filesystem-attributes.xml
 share/gnome/nautilus/linksets/apps.xml
 share/gnome/nautilus/linksets/desktop.xml
 share/gnome/nautilus/linksets/home.xml
@@ -306,6 +317,8 @@ share/gnome/nautilus/patterns/terracotta.png
 share/gnome/nautilus/patterns/wavy_white.png
 share/gnome/nautilus/services/text/google.xml
 share/gnome/nautilus/services/text/webster.xml
+share/gnome/nautilus/starthere-link.desktop
+share/gnome/nautilus/starthere.desktop
 share/gnome/nautilus/static_bookmarks.xml
 share/gnome/oaf/Nautilus_ComponentAdapterFactory_std.oaf
 share/gnome/oaf/Nautilus_Control_throbber.oaf
@@ -332,6 +345,8 @@ share/gnome/omf/nautilus/nautilus-release-notes-C.omf
 share/gnome/omf/nautilus/nautilus-user-manual-C.omf
 share/gnome/omf/nautilus/nautilus-user-manual-es.omf
 share/gnome/omf/nautilus/nautilus-user-manual-ko.omf
+share/gnome/pixmaps/gnome-starthere-96.png
+share/gnome/pixmaps/gnome-starthere.png
 share/gnome/pixmaps/nautilus-launch-icon.png
 share/gnome/pixmaps/nautilus/About_Image.png
 share/gnome/pixmaps/nautilus/Back.png
@@ -556,28 +571,6 @@ share/gnome/pixmaps/nautilus/default.xml
 share/gnome/pixmaps/nautilus/druid_header.png
 share/gnome/pixmaps/nautilus/druid_header_stretch.png
 share/gnome/pixmaps/nautilus/druid_sidebar.png
-share/gnome/pixmaps/nautilus/eazel-logos/About_Image.png
-share/gnome/pixmaps/nautilus/eazel-logos/LICENSE
-share/gnome/pixmaps/nautilus/eazel-logos/about_background.png
-share/gnome/pixmaps/nautilus/eazel-logos/default.xml
-share/gnome/pixmaps/nautilus/eazel-logos/druid_header.png
-share/gnome/pixmaps/nautilus/eazel-logos/eazel-logo-right-side-logo.png
-share/gnome/pixmaps/nautilus/eazel-logos/throbber/001.png
-share/gnome/pixmaps/nautilus/eazel-logos/throbber/002.png
-share/gnome/pixmaps/nautilus/eazel-logos/throbber/003.png
-share/gnome/pixmaps/nautilus/eazel-logos/throbber/004.png
-share/gnome/pixmaps/nautilus/eazel-logos/throbber/005.png
-share/gnome/pixmaps/nautilus/eazel-logos/throbber/006.png
-share/gnome/pixmaps/nautilus/eazel-logos/throbber/007.png
-share/gnome/pixmaps/nautilus/eazel-logos/throbber/008.png
-share/gnome/pixmaps/nautilus/eazel-logos/throbber/009.png
-share/gnome/pixmaps/nautilus/eazel-logos/throbber/010.png
-share/gnome/pixmaps/nautilus/eazel-logos/throbber/011.png
-share/gnome/pixmaps/nautilus/eazel-logos/throbber/012.png
-share/gnome/pixmaps/nautilus/eazel-logos/throbber/013.png
-share/gnome/pixmaps/nautilus/eazel-logos/throbber/014.png
-share/gnome/pixmaps/nautilus/eazel-logos/throbber/015.png
-share/gnome/pixmaps/nautilus/eazel-logos/throbber/rest.png
 share/gnome/pixmaps/nautilus/emblem-OK.svg
 share/gnome/pixmaps/nautilus/emblem-broken-link.png
 share/gnome/pixmaps/nautilus/emblem-certified.svg
@@ -1064,7 +1057,6 @@ share/gnome/ui/nautilus-icon-view-ui.xml
 %%MOZILLA:%%share/gnome/ui/nautilus-mozilla-ui.xml
 share/gnome/ui/nautilus-sample-content-view-ui.xml
 share/gnome/ui/nautilus-search-list-view-ui.xml
-share/gnome/ui/nautilus-service-ui.xml
 share/gnome/ui/nautilus-shell-ui.xml
 share/gnome/ui/nautilus-sidebar-loser-ui.xml
 share/gnome/ui/nautilus-text-view-ui.xml
@@ -1085,10 +1077,12 @@ share/locale/it/LC_MESSAGES/nautilus.mo
 share/locale/ja/LC_MESSAGES/nautilus.mo
 share/locale/ko/LC_MESSAGES/nautilus.mo
 share/locale/lt/LC_MESSAGES/nautilus.mo
+share/locale/lv/LC_MESSAGES/nautilus.mo
 share/locale/nl/LC_MESSAGES/nautilus.mo
 share/locale/nn/LC_MESSAGES/nautilus.mo
 share/locale/no/LC_MESSAGES/nautilus.mo
 share/locale/pl/LC_MESSAGES/nautilus.mo
+share/locale/pt/LC_MESSAGES/nautilus.mo
 share/locale/pt_BR/LC_MESSAGES/nautilus.mo
 share/locale/ro/LC_MESSAGES/nautilus.mo
 share/locale/ru/LC_MESSAGES/nautilus.mo
@@ -1098,7 +1092,14 @@ share/locale/sv/LC_MESSAGES/nautilus.mo
 share/locale/ta/LC_MESSAGES/nautilus.mo
 share/locale/tr/LC_MESSAGES/nautilus.mo
 share/locale/uk/LC_MESSAGES/nautilus.mo
-share/locale/zh_TW.Big5/LC_MESSAGES/nautilus.mo
+share/locale/zh_TW/LC_MESSAGES/nautilus.mo
+@dirrm share/gnome/sgml/docbook/xsl-stylesheets-1.29/lib
+@dirrm share/gnome/sgml/docbook/xsl-stylesheets-1.29/html
+@dirrm share/gnome/sgml/docbook/xsl-stylesheets-1.29/common
+@dirrm share/gnome/sgml/docbook/xsl-stylesheets-1.29
+@dirrm share/gnome/sgml/docbook/gnome-customization-0.1
+@dirrm share/gnome/sgml/docbook
+@dirrm share/gnome/sgml
 @dirrm share/gnome/pixmaps/nautilus/throbber
 @dirrm share/gnome/pixmaps/nautilus/tahoe
 @dirrm share/gnome/pixmaps/nautilus/sierra
@@ -1106,8 +1107,6 @@ share/locale/zh_TW.Big5/LC_MESSAGES/nautilus.mo
 @dirrm share/gnome/pixmaps/nautilus/gnome/throbber
 @dirrm share/gnome/pixmaps/nautilus/gnome/sidebar_tab_pieces
 @dirrm share/gnome/pixmaps/nautilus/gnome
-@dirrm share/gnome/pixmaps/nautilus/eazel-logos/throbber
-@dirrm share/gnome/pixmaps/nautilus/eazel-logos
 @dirrm share/gnome/pixmaps/nautilus/crux_teal/throbber
 @dirrm share/gnome/pixmaps/nautilus/crux_teal/sidebar_tab_pieces
 @dirrm share/gnome/pixmaps/nautilus/crux_teal/backgrounds
@@ -1161,3 +1160,7 @@ share/locale/zh_TW.Big5/LC_MESSAGES/nautilus.mo
 @dirrm share/gnome/help/gnufdl/C
 @dirrm share/gnome/help/gnufdl
 @dirrm include/libnautilus
+@dirrm etc/X11/sysconfig
+@dirrm etc/X11/starthere
+@dirrm etc/X11/serverconfig
+@dirrm etc/X11

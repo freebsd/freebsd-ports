@@ -1,37 +1,25 @@
 
 $FreeBSD$
 
---- Makefile.in.orig	Mon May 14 16:45:52 2001
-+++ Makefile.in	Mon May 14 16:45:53 2001
-@@ -675,8 +675,8 @@
- 	$(mkinstalldirs) $(DESTDIR)/$(prefix)/bin
+--- Makefile.in.orig	Mon Oct 29 11:36:40 2001
++++ Makefile.in	Mon Oct 29 12:16:14 2001
+@@ -243,7 +243,7 @@
+ 
+ bin_SCRIPTS = $(top_builddir)/nautilus-config
+ 
+-confexecdir = $(libdir)
++confexecdir = $(sysconfdir)
+ confexec_DATA =  	nautilusConf.sh					$(NULL)
+ 
+ ACLOCAL_M4 = $(top_srcdir)/aclocal.m4
+@@ -684,8 +684,8 @@
+ 	$(mkinstalldirs) $(DESTDIR)$(prefix)/bin
  	@list='nautilus-clean.sh'; for p in $$list; do\
  	  if test -f $(srcdir)/$$p; then \
--	    echo "  $(INSTALL_PROGRAM) $(srcdir)/$$p $(DESTDIR)/$(prefix)/bin/$$p"; \
--	    $(INSTALL_PROGRAM) $(srcdir)/$$p $(DESTDIR)/$(prefix)/bin/$$p; \
-+	    echo "  $(INSTALL_SCRIPT) $(srcdir)/$$p $(DESTDIR)/$(prefix)/bin/$$p"; \
-+	    $(INSTALL_SCRIPT) $(srcdir)/$$p $(DESTDIR)/$(prefix)/bin/$$p; \
+-	    echo "  $(INSTALL_PROGRAM) $(srcdir)/$$p $(DESTDIR)$(prefix)/bin/$$p"; \
+-	    $(INSTALL_PROGRAM) $(srcdir)/$$p $(DESTDIR)$(prefix)/bin/$$p; \
++	    echo "  $(INSTALL_SCRIPT) $(srcdir)/$$p $(DESTDIR)$(prefix)/bin/$$p"; \
++	    $(INSTALL_SCRIPT) $(srcdir)/$$p $(DESTDIR)$(prefix)/bin/$$p; \
  	  else :; fi; \
  	done
  
-@@ -688,16 +688,16 @@
- 	@list='$(EAZEL_LOGOS_ICONS)'; \
- 	for i in $$list; \
- 	do \
--		echo $(INSTALL_PROGRAM) $$i $(icondir)/`basename $$i`; \
--		$(INSTALL_PROGRAM) $$i $(icondir)/`basename $$i`; \
-+		echo $(INSTALL_DATA) $$i $(icondir)/`basename $$i`; \
-+		$(INSTALL_DATA) $$i $(icondir)/`basename $$i`; \
- 	done
- 
- 	$(mkinstalldirs) $(throbberdir)
- 	@list='$(EAZEL_LOGOS_THROBBER)'; \
- 	for i in $$list; \
- 	do \
--		echo $(INSTALL_PROGRAM) $$i $(throbberdir)/`basename $$i`; \
--		$(INSTALL_PROGRAM) $$i $(throbberdir)/`basename $$i`; \
-+		echo $(INSTALL_DATA) $$i $(throbberdir)/`basename $$i`; \
-+		$(INSTALL_DATA) $$i $(throbberdir)/`basename $$i`; \
- 	done
- 
- # Tell versions [3.59,3.63) of GNU make to not export all variables.
