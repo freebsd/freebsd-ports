@@ -1,5 +1,5 @@
---- configure.orig	Wed Dec 15 04:59:18 1999
-+++ configure	Sun Jan 27 14:59:38 2002
+--- configure.orig	Tue Dec 14 19:59:18 1999
++++ configure	Mon Dec 16 11:52:34 2002
 @@ -4648,7 +4648,7 @@
      EXTRA_CFLAGS=""
      TCL_EXPORT_FILE_SUFFIX=""
@@ -23,8 +23,9 @@
  if eval "test \"`echo '$ac_cv_header_'$ac_safe`\" = yes"; then
    echo "$ac_t""yes" 1>&6
 -  
- 		SHLIB_CFLAGS="-fpic"
+-		SHLIB_CFLAGS="-fpic"
 -		SHLIB_LD="ld -Bshareable -x"
++		SHLIB_CFLAGS="-fPIC"
  		SHLIB_LD_LIBS=""
  		SHLIB_SUFFIX=".so"
  		DL_OBJS="tclLoadDl.o"
