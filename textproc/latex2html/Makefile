@@ -3,7 +3,7 @@
 # Date created:		3 May 1998
 # Whom:			brett@peloton.physics.montana.edu
 #
-# $Id: Makefile,v 1.5 1999/01/02 00:12:21 asami Exp $
+# $Id: Makefile,v 1.6 1999/06/28 06:03:45 cpiazza Exp $
 #
 
 DISTNAME=	latex2html-98.1p1
@@ -27,6 +27,12 @@ NO_PACKAGE=	An interrogation follows installation
 
 post-patch:
 	@${PERL} -pi -e 's:/usr/local/bin/perl:${PERL}:' ${WRKSRC}/latex2html
+	@${PERL} -pi -e 's:/usr/local/bin/perl:${PERL}:' ${WRKSRC}/configure-pstoimg
+	@${PERL} -pi -e 's:/usr/local/bin/perl:${PERL}:' ${WRKSRC}/install-test
+	@${PERL} -pi -e 's:/usr/local/bin/perl:${PERL}:' ${WRKSRC}/makemap
+	@${PERL} -pi -e 's:/usr/local/bin/perl:${PERL}:' ${WRKSRC}/psttoimg
+	@${PERL} -pi -e 's:/usr/local/bin/perl:${PERL}:' ${WRKSRC}/pstoimg_nopipes
+	@${PERL} -pi -e 's:/usr/local/bin/perl:${PERL}:' ${WRKSRC}/texexpand
 
 do-install:
 	@${MKDIR} ${PREFIX}/share/latex2html
