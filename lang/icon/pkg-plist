@@ -6,3 +6,4 @@ share/icon/dlrgint.o
 share/icon/rt.a
 share/icon/rt.db
 share/icon/rt.h
+@dirrm share/icon
