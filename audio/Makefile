@@ -207,6 +207,7 @@
     SUBDIR += rebler
     SUBDIR += replay
     SUBDIR += resid
+    SUBDIR += rexima
     SUBDIR += rio
     SUBDIR += rio500
     SUBDIR += rioutil
