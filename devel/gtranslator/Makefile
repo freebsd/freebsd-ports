@@ -33,4 +33,8 @@ pre-patch:
 		's|\$\(datadir\)/gnome/|\$\(datadir\)/|g ; \
 		 s|\$\(datadir\)/locale|\$\(prefix\)/share/locale|g'
 
+.if defined(PARALLEL_PACKAGE_BUILD)
+FORBIDDEN=	hang
+.endif
+
 .include <bsd.port.mk>
