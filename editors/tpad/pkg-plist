@@ -1,3 +1,18 @@
 bin/tpad
 bin/tview
 etc/tpad.conf.sample
+%%DATADIR%%/Makefile
+%%DATADIR%%/tpad-tips
+%%DATADIR%%/tpad-tips.dat
+%%LIBDIR%%/BSDfmt.tcl
+%%LIBDIR%%/GNUfmt.tcl
+%%LIBDIR%%/ascii.tcl
+%%LIBDIR%%/msgs/en.msg
+%%LIBDIR%%/msgs/it.msg
+%%LIBDIR%%/pkgIndex.tcl
+%%LIBDIR%%/tidy.tcl
+%%LIBDIR%%/tpad.tcl
+%%LIBDIR%%/xmlwf.tcl
+@dirrm %%DATADIR%%
+@dirrm %%LIBDIR%%/msgs
+@dirrm %%LIBDIR%%
