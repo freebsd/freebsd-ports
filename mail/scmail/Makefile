@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	scmail
-PORTVERSION=	1.0
+PORTVERSION=	1.1
 CATEGORIES=	mail
 MASTER_SITES=	http://www.namazu.org/~satoru/scmail/
 
@@ -19,9 +19,7 @@ RUN_DEPENDS=	${LOCALBASE}/share/gauche/${GAUCHE_VER}/lib/dbm/gdbm.scm:${PORTSDIR
 USE_REINPLACE=	yes
 MAKE_ARGS=	PREFIX="${PREFIX}" DATADIR="${EXAMPLESDIR}"
 
-.if !defined(NOPORTDOCS)
 PORTDOCS=	scbayes-ja.html scbayes.html scmail-ja.html scmail.html
-.endif
 
 .include <bsd.port.pre.mk>
 
@@ -39,7 +37,9 @@ post-patch:
 post-install:
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/doc/* ${DOCSDIR}
+.for f in ${PORTDOCS}
+	${INSTALL_DATA} ${WRKSRC}/doc/${f} ${DOCSDIR}
+.endfor
 .endif
 
 .include <bsd.port.post.mk>
