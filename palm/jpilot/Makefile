@@ -18,11 +18,17 @@ COMMENT=	Desktop Organizer Software for the Palm Pilot
 LIB_DEPENDS=	pisock.8:${PORTSDIR}/palm/pilot-link \
 		intl.5:${PORTSDIR}/devel/gettext
 
+CONFIGURE_ARGS+=	--with-pilot-prefix=${PREFIX}
+.if defined(WITH_GTK2)
+USE_GNOME=	gtk20
+CONFIGURE_ARGS+=	--enable-gtk2=yes
+.else
 USE_GNOME=	gtk12
+.endif
+
 USE_LIBTOOL=	yes
 INSTALLS_SHLIB=	yes
 LDCONFIG_DIRS=	%%PREFIX%%/lib/jpilot/plugins
-CONFIGURE_ARGS+=	--with-pilot-prefix=${PREFIX}
 CFLAGS+=	-I${PREFIX}/include
 CONFIGURE_ENV+=	CPPFLAGS="-I${PREFIX}/include" LDFLAGS="-L${PREFIX}/lib"
 
