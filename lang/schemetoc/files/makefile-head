@@ -1,0 +1,27 @@
+#
+# This is the header file for constructing make files for FreeBSD.
+#
+
+# Default flags to use when invoking the C compiler.
+
+CFLAGS = -O2
+CC = gcc
+
+# Assembly language object files.
+
+Aruntime = x86.o 
+
+# Profiled library
+
+Plib = libsc_p.a
+
+# Installation tools
+
+RANLIB = ranlib
+
+# X library
+
+XLIB = -lX11
+XLIBCFLAGS =
+
+# End of FREEBSD header.

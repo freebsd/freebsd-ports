@@ -1,0 +1,11 @@
+@cwd /usr/local
+bin/sci
+bin/scc
+bin/sccomp
+bin/scixl
+bin/sccxl
+man/man1/sci.1.gz
+man/man1/scc.1.gz
+man/man1/scixl.1.gz
+man/man1/sccxl.1.gz
+lib/schemetoc
